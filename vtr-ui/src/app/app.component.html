@@ -1,10 +1,12 @@
-<div class="vtr-app" [ngStyle]="{'background-image': 'url(' + env.imgRoot + env.bkgImg + ')'}">
-	<div class="vtr-widget">
-		<div class="widget-upper">
-			<vtr-menu-main></vtr-menu-main>
+<div class="vtr-app container-fluid">
+	<div class="row">
+		<div class="col">
+			Welcome to Lenovo Vantage!
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
 			<router-outlet></router-outlet>
 		</div>
-		<vtr-widget-lower></vtr-widget-lower>
 	</div>
-	<vtr-clock></vtr-clock>
 </div>
