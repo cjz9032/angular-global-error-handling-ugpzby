@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SecurityService } from '../../services/security/security.service';
+import { SecurityService } from '../../../services/security/security.service';
 
 @Component({
 	selector: 'vtr-page-security',

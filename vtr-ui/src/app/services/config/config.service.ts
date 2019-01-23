@@ -3,9 +3,10 @@ import { Injectable } from '@angular/core';
 @Injectable({
 	providedIn: 'root'
 })
-export class DeviceService {
+export class ConfigService {
 
-	deviceModel = 'Ideapad 720s';
+	appBrand = 'Lenovo';
+	appName = 'Vantage';
 
 	constructor() { }
 }
