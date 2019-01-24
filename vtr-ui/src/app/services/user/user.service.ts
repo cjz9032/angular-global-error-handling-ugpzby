@@ -11,12 +11,19 @@ export class UserService {
 	auth = false;
 	token = '';
 
+	firstName = 'John';
+	lastName = 'Doe';
+	initials = '';
+
 	constructor(
 		private cookieService: CookieService,
 		private commsService: CommsService,
 		private devService: DevService,
 		private containerService: ContainerService
-	) { }
+	) {
+		// DUMMY
+		this.setName(this.firstName, this.lastName);
+	}
 
 	checkCookies() {
 		this.cookies = this.cookieService.getAll();
@@ -50,6 +57,12 @@ export class UserService {
 		this.token = token;
 		this.commsService.token = token;
 		this.cookieService.set('token', token, 99999999999999999, '/');
+	}
+
+	setName(firstName, lastName) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.initials = this.firstName[0] + this.lastName[0];
 	}
 
 }

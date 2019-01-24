@@ -1,1 +1,59 @@
 @import '../../app.theme';
+
+.vtr-menu-main {
+	.navbar {
+		height: 9rem;
+		background-color: $main_darker;
+		color: $light;
+		.navbar-brand {
+			font-size: 5rem;
+			font-weight: 700;
+			width: 9rem;
+			height: 100%;
+			background-color: $main;
+			text-align: center;
+			color: $light;
+		}
+		.navbar-text {
+			margin-left: 2rem;
+			.app-title {
+				text-transform: uppercase;
+				font-size: 2rem;
+				.app-name {
+					font-weight: 600;
+				}
+			}
+			.device-type {
+				font-size: 1.6rem;
+			}
+		}
+		.navbar-collapse {
+			.navbar-nav {
+				.nav-item {
+					.nav-link {
+						font-size: 1.6rem;
+						line-height: 9rem;
+						color: $light;
+						padding: 0 2rem;
+						&.user {
+							padding: 2rem 4rem 2rem 2rem;
+							height: 9rem;
+							line-height: 4.6rem;
+							background-color: $main_darkest;
+							.user-initials {
+								display: inline-block;
+								text-align: center;
+								font-size: 2rem;
+								width: 4.6rem;
+								height: 4.6rem;
+								border-radius: 2.3rem;
+								background-color: $main_darker;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+	}
+}

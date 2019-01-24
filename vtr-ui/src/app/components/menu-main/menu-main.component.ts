@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -95,7 +96,8 @@ export class MenuMainComponent implements OnInit {
 	constructor(
 		private router: Router,
 		public configService: ConfigService,
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
+		public userService: UserService
 	) { }
 
 	ngOnInit() {
