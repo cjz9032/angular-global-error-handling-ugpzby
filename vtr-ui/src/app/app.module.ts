@@ -39,6 +39,7 @@ import { DashboardService } from './services/dashboard/dashboard.service';
 import { DeviceService } from './services/device/device.service';
 import { SecurityService } from './services/security/security.service';
 import { UserService } from './services/user/user.service';
+import { WidgetStatusComponent } from './components/widgets/widget-status/widget-status.component';
 
 
 
@@ -57,7 +58,8 @@ import { UserService } from './services/user/user.service';
 		WidgetDeviceComponent,
 		WidgetSecurityComponent,
 		WidgetQuestionsComponent,
-		PageQuestionsComponent
+		PageQuestionsComponent,
+		WidgetStatusComponent
 	],
 	imports: [
 		BrowserModule,

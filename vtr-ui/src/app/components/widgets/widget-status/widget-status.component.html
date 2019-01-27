@@ -1,0 +1,33 @@
+<div class="vtr-widget-status">
+  <div class="rectangle-13">
+    <div class="rectangle-13-1">
+      <div class="title">
+        {{title}}
+      </div>
+      <div class="description">
+        {{description}}
+      </div>
+    </div>
+    <div class="rectangle-13-2">
+      <ul class="rectangle-13-2-1">
+        <li *ngFor="let item of items">
+          <div class="clearfix">
+            <div class="outer-icon">
+              <div [ngClass]="['icon',!item.status?'check':'cross']"></div>
+            </div>
+            <div class="outer-arrow">
+              <a [routerLink]="item.route.path" href="#">
+                <div class="arrow"></div>
+              </a>
+            </div>
+            <div class="outer-detail">
+              <div class="detail"><a [ngClass]="[item.status?'clickable':'unclickable']"
+                                     href="#">{{item.description}}</a></div>
+            </div>
+            <div [ngClass]="[!item.status?'content-check':'content-cross']">{{item.title}}</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
