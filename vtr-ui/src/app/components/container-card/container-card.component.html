@@ -1,0 +1,82 @@
+<div class="container"
+ *ngIf="type =='4X3'">
+	<div class="row">
+		<div class="card43 at-img-placeholder-1">
+			<div class="row root">
+				<div class="col-xs-8 content">
+					<div class="col-md-12 ">
+						<div *ngIf="title"
+						 class="title">{{title}}</div>
+						<div *ngIf="caption"
+						 class='moto-360-run-free '>{{caption}}</div>
+						<div *ngIf="logo || logoText"
+						 class="readmore">
+							<span class="oval-7">L</span>
+							<span *ngIf="logo"
+							 class="lenovo-special"> {{logoText}}</span>
+						</div>
+						<div class="clearfix"></div>
+						<div *ngIf="readMore">{{readMore}}</div>
+					</div>
+				</div>
+				<div class="col-xs-3 icon">
+					<div class="bottomright"><img [src]="img"
+						 *ngIf="img"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container"
+ *ngIf="type =='8X4'">
+	<div class="row">
+		<div class="card84 at-img-placeholder-1">
+			<div class="row root">
+				<div class="col-xs-8 content">
+					<div class="col-md-12 ">
+						<div *ngIf="title"
+						 class="title">{{title}}</div>
+						<div *ngIf="caption"
+						 class='moto-360-run-free '>{{caption}}</div>
+						<div *ngIf="logo || logoText"
+						 class="readmore">
+							<span class="oval-7">L</span>
+							<span *ngIf="logo"
+							 class="lenovo-special"> {{logoText}}</span>
+						</div>
+						<div class="clearfix"></div>
+						<div *ngIf="readMore">{{readMore}}</div>
+					</div>
+				</div>
+				<div class="col-xs-3 icon">
+					<div class="lenovo-smartphone-moto-360-spo bottomright"><img [src]="img"
+						 *ngIf="img"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container"
+ *ngIf="type =='4X4'">
+	<div class="row">
+		<div class="card44 card"
+		 style="height: 418.533px;">
+			<div class="card-content">
+				<img class="card-img-top cube-feature-1-jpg "
+				 [src]="img"
+				 *ngIf="img"
+				 alt="Card image cap">
+				<div class="card-body">
+					<h4 class="card-title">{{title}}</h4>
+					<p class="card-text">{{caption}}</p>
+					<a href="#"
+					 *ngIf="readMore"
+					 class="read-more ">{{readMore}} <i class="fa fa-long-arrow-right"
+						 style="font-size:24px"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+</div>
