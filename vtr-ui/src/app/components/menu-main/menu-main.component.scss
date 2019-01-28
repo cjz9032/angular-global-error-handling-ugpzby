@@ -7,7 +7,7 @@
 		color: $light;
 		.navbar-brand {
 			font-size: 5rem;
-			font-weight: 700;
+			font-weight: $weight_bold;
 			width: 9rem;
 			height: 100%;
 			background-color: $main;
@@ -20,7 +20,7 @@
 				text-transform: uppercase;
 				font-size: 2rem;
 				.app-name {
-					font-weight: 600;
+					font-weight: $weight_medium;
 				}
 			}
 			.device-type {
