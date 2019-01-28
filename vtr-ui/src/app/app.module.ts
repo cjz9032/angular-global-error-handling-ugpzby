@@ -39,8 +39,9 @@ import { DashboardService } from './services/dashboard/dashboard.service';
 import { DeviceService } from './services/device/device.service';
 import { SecurityService } from './services/security/security.service';
 import { UserService } from './services/user/user.service';
+import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
 	declarations: [
@@ -57,13 +58,15 @@ import { UserService } from './services/user/user.service';
 		WidgetDeviceComponent,
 		WidgetSecurityComponent,
 		WidgetQuestionsComponent,
-		PageQuestionsComponent
+		PageQuestionsComponent,
+		ModalWelcomeComponent
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		FormsModule,
-		HttpClientModule
+		HttpClientModule,
+    NgbModule
 	],
 	providers: [
 		CookieService,
@@ -76,6 +79,7 @@ import { UserService } from './services/user/user.service';
 		SecurityService,
 		UserService
 	],
-	bootstrap: [AppComponent]
+	bootstrap: [AppComponent],
+  entryComponents:[ModalWelcomeComponent]
 })
 export class AppModule { }
