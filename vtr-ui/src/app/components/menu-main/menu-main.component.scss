@@ -37,6 +37,7 @@
 						padding: 0 2rem;
 						&.user {
 							padding: 2rem 4rem 2rem 2rem;
+							margin-left: 2rem;
 							height: 9rem;
 							line-height: 4.6rem;
 							background-color: $main_darkest;
@@ -50,6 +51,59 @@
 								background-color: $main_darker;
 							}
 						}
+					}
+					.dropdown-menu {
+						border: none;
+						border-radius: .7rem;
+						box-shadow: 0 0 1.5rem 0 $screen_dark_15;
+						margin-top: -1rem;
+						padding: 2.5rem 1.5rem;
+						&.user {
+							margin-left: -1.5rem;
+							border-radius: 0;
+							margin-top: 0;
+						}
+						fa-icon {
+							position: absolute;
+							top: -1.5rem;
+							left: 50%;
+							margin-left: -1.5rem;
+							color: $light;
+							font-size: 3rem;
+							transform: rotate(45deg);
+							z-index: 0;
+						}
+						.dropdown-item {
+							position: relative;
+							z-index: 1;
+							color: $shade_darker;
+							font-size: 1.2rem;
+							line-height: 2.2rem;
+							font-weight: $weight_medium;
+							&.link {
+								font-weight: $weight_light;
+								text-decoration: underline;
+								&:hover {
+									color: $main;
+									text-decoration: none;
+								}
+							}
+						}
+						// &:after {
+						// 	bottom: 100%;
+						// 	left: 50%;
+						// 	border: solid transparent;
+						// 	content: " ";
+						// 	height: 0;
+						// 	width: 0;
+						// 	position: absolute;
+						// 	pointer-events: none;
+						// 	border-color: rgba(136, 183, 213, 0);
+						// 	border-bottom-color: $light;
+						// 	border-radius: 1rem;
+						// 	border-width: 1.5rem;
+						// 	margin-left: -1.5rem;
+						// }
 					}
 				}
 			}

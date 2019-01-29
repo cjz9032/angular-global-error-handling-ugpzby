@@ -36,9 +36,9 @@ export class MenuMainComponent implements OnInit {
 				icon: '',
 				subitems: []
 			}, {
-				id: 'hardware-scan',
-				label: 'Hardware Scan',
-				path: 'hardware-scan',
+				id: 'system-updates',
+				label: 'System Updates',
+				path: 'system-updates',
 				icon: '',
 				subitems: []
 			}]

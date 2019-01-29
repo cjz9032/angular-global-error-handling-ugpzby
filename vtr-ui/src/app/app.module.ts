@@ -30,7 +30,7 @@ import { WidgetDeviceComponent } from './components/widgets/widget-device/widget
 import { WidgetSecurityComponent } from './components/widgets/widget-security/widget-security.component';
 import { WidgetQuestionsComponent } from './components/widgets/widget-questions/widget-questions.component';
 
-//APPLICATION SERVICES
+// APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
 import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
@@ -41,7 +41,11 @@ import { SecurityService } from './services/security/security.service';
 import { UserService } from './services/user/user.service';
 import { ContainerCardComponent } from './components/container-card/container-card.component';
 
-
+// FONT AWESOME
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+library.add(fas);
 
 @NgModule({
 	declarations: [
@@ -65,7 +69,8 @@ import { ContainerCardComponent } from './components/container-card/container-ca
 		BrowserModule,
 		AppRoutingModule,
 		FormsModule,
-		HttpClientModule
+		HttpClientModule,
+		FontAwesomeModule
 	],
 	providers: [
 		CookieService,

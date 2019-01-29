@@ -5,7 +5,6 @@ import { ContainerService } from './services/container/container.service';
 import { DevService } from './services/dev/dev.service';
 import { DisplayService } from './services/display/display.service';
 import { environment } from '../environments/environment';
-
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
