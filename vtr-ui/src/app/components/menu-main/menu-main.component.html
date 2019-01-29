@@ -40,7 +40,7 @@
 						</a>
 						<div class="dropdown-menu"
 						 aria-labelledby="navbarDropdown">
-						 	<fa-icon [icon]="['fas', 'square']"></fa-icon>
+						 	<fa-icon [icon]="['fas', 'square']" class="menu-pointer"></fa-icon>
 							<a *ngFor="let subitem of item.subitems; let ii=index"
 							 class="dropdown-item link"
 							 routerLink="/{{subitem.path}}">{{subitem.label}}</a>
