@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageSupportComponent implements OnInit {
 
+	title = 'Get Support';
+
 	constructor() { }
 
 	ngOnInit() {

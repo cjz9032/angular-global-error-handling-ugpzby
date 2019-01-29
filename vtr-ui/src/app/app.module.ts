@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 // APPLICATION BASE COMPONENTS
 import { AppComponent } from './app.component';
 import { MenuMainComponent } from './components/menu-main/menu-main.component';
+import { HeaderMainComponent } from './components/header-main/header-main.component';
 import { ClockComponent } from './components/clock/clock.component';
 
 // APPLICATION PAGE COMPONENTS
@@ -45,6 +46,12 @@ import { ContainerCardComponent } from './components/container-card/container-ca
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { PageDeviceSettingsComponent } from './components/pages/page-device-settings/page-device-settings.component';
+import { PageDeviceUpdatesComponent } from './components/pages/page-device-updates/page-device-updates.component';
+import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
+import { PageSecurityWifiComponent } from './components/pages/page-security-wifi/page-security-wifi.component';
+import { PageSecurityPasswordComponent } from './components/pages/page-security-password/page-security-password.component';
+import { PageSecurityInternetComponent } from './components/pages/page-security-internet/page-security-internet.component';
 library.add(fas);
 
 @NgModule({
@@ -63,7 +70,14 @@ library.add(fas);
 		WidgetSecurityComponent,
 		WidgetQuestionsComponent,
 		PageQuestionsComponent,
-		ContainerCardComponent
+		ContainerCardComponent,
+		HeaderMainComponent,
+		PageDeviceSettingsComponent,
+		PageDeviceUpdatesComponent,
+		PageSecurityAntivirusComponent,
+		PageSecurityWifiComponent,
+		PageSecurityPasswordComponent,
+		PageSecurityInternetComponent
 	],
 	imports: [
 		BrowserModule,

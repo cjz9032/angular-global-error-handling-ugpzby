@@ -8,6 +8,8 @@ import { DeviceService } from '../../../services/device/device.service';
 })
 export class PageDeviceComponent implements OnInit {
 
+	title = 'My Device';
+
 	constructor(
 		public deviceService: DeviceService
 	) { }
