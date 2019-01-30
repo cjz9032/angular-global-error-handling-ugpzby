@@ -1,3 +1,16 @@
 <div class="vtr-widget-feedback">
-	
+	<div [ngClass]="{'rectangle-13': true }">
+
+		<div [ngClass]="{'title':  true }"
+		 *ngIf="title">{{title}}</div>
+
+		<div [ngClass]="{'description': true }"
+		 *ngIf="description">{{description | uppercase }}</div>
+
+		<button *ngIf="actionName && action"
+		 type="button"
+		 class="button-label"
+		 (click)="submitAction()">{{actionName}} </button>
+
+	</div>
 </div>
