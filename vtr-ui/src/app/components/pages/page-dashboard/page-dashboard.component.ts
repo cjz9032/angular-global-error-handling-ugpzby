@@ -1,20 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { DashboardService } from '../../../services/dashboard/dashboard.service';
+import {Component, OnInit} from '@angular/core';
+import {DashboardService} from '../../../services/dashboard/dashboard.service';
 
 @Component({
-	selector: 'vtr-page-dashboard',
-	templateUrl: './page-dashboard.component.html',
-	styleUrls: ['./page-dashboard.component.scss']
+  selector: 'vtr-page-dashboard',
+  templateUrl: './page-dashboard.component.html',
+  styleUrls: ['./page-dashboard.component.scss']
 })
 export class PageDashboardComponent implements OnInit {
 
-	title = 'Dashboard';
-	forwardLink = {
-		path: 'dashboard-customize',
-		label: 'Customize Dashboard'
-	}
+  title = 'Dashboard';
+  forwardLink = {
+    path: 'dashboard-customize',
+    label: 'Customize Dashboard'
+  }
 
-  data: any=[{
+  data: any = [{
     "albumId": 1,
     "id": 1,
     "title": "accusamus beatae ad facilis cum similique qui sunt",
@@ -42,11 +42,13 @@ export class PageDashboardComponent implements OnInit {
       "url": "assets/images/banner1.jpeg",
       "thumbnailUrl": "https://via.placeholder.com/150/d32776"
     }];
-	constructor(
-		public dashboardService: DashboardService
-	) { }
 
-	ngOnInit() {
-	}
+  constructor(
+    public dashboardService: DashboardService
+  ) {
+  }
+
+  ngOnInit() {
+  }
 
 }
