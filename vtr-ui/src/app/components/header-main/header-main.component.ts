@@ -9,6 +9,7 @@ export class HeaderMainComponent implements OnInit {
 
 	@Input() title: string;
 	@Input() forwardLink: { path: string, label: string };
+	@Input() menuItems: any[];
 
 	constructor() { }
 

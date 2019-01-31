@@ -2,13 +2,13 @@
 
 .vtr-menu-main {
 	.navbar {
-		height: 9rem;
+		height: $menu_height;
 		background-color: $main_darker;
 		color: $light;
 		.navbar-brand {
 			font-size: 5rem;
 			font-weight: $weight_bold;
-			width: 9rem;
+			width: $menu_height;
 			height: 100%;
 			background-color: $main;
 			text-align: center;
@@ -32,13 +32,13 @@
 				.nav-item {
 					.nav-link {
 						font-size: 1.6rem;
-						line-height: 9rem;
+						line-height: $menu_height;
 						color: $light;
 						padding: 0 2rem;
 						&.user {
 							padding: 2rem 4rem 2rem 2rem;
 							margin-left: 2rem;
-							height: 9rem;
+							height: $menu_height;
 							line-height: 4.6rem;
 							background-color: $main_darkest;
 							.user-initials {

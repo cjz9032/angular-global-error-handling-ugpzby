@@ -1,0 +1,42 @@
+@import '../../app.theme';
+
+.vtr-menu-header {
+	.menu-header-tab {
+		cursor: pointer;
+		position: relative;
+		display: inline-block;
+		color: $light;
+		opacity: .5;
+		margin: 0 2rem;
+		&:first-child {
+			margin-left: .5rem;
+		}
+		&.active,
+		&:hover {
+			opacity: 1;
+			.menu-pointer{
+				display: inline-block;
+			}
+		}
+		&:focus {
+			outline: none;
+		}
+		.tab-label {
+			font-size: 2rem;
+			padding-bottom: 2rem;
+		}
+		fa-icon {
+			&.menu-pointer {
+				display: none;
+				position: absolute;
+				bottom: -2.5rem;
+				left: 50%;
+				margin-left: -1.5rem;
+				color: $light;
+				font-size: 3rem;
+				transform: rotate(45deg);
+				z-index: 0;
+			}
+		}
+	}
+}

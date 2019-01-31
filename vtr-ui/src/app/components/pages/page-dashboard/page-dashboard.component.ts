@@ -12,7 +12,7 @@ export class PageDashboardComponent implements OnInit {
 	forwardLink = {
 		path: 'dashboard-customize',
 		label: 'Customize Dashboard'
-	}
+	};
 
 	constructor(
 		public dashboardService: DashboardService

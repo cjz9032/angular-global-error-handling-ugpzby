@@ -52,6 +52,10 @@ import { PageSecurityAntivirusComponent } from './components/pages/page-security
 import { PageSecurityWifiComponent } from './components/pages/page-security-wifi/page-security-wifi.component';
 import { PageSecurityPasswordComponent } from './components/pages/page-security-password/page-security-password.component';
 import { PageSecurityInternetComponent } from './components/pages/page-security-internet/page-security-internet.component';
+import { MenuHeaderComponent } from './components/menu-header/menu-header.component';
+import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
+import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
+import { SubpageDeviceSettingsDisplayComponent } from './components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
 library.add(fas);
 
 @NgModule({
@@ -77,7 +81,11 @@ library.add(fas);
 		PageSecurityAntivirusComponent,
 		PageSecurityWifiComponent,
 		PageSecurityPasswordComponent,
-		PageSecurityInternetComponent
+		PageSecurityInternetComponent,
+		MenuHeaderComponent,
+		SubpageDeviceSettingsPowerComponent,
+		SubpageDeviceSettingsAudioComponent,
+		SubpageDeviceSettingsDisplayComponent
 	],
 	imports: [
 		BrowserModule,
