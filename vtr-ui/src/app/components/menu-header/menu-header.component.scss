@@ -18,6 +18,9 @@
 				display: inline-block;
 			}
 		}
+		&:focus {
+			outline: none;
+		}
 		.tab-label {
 			font-size: 2rem;
 			padding-bottom: 2rem;

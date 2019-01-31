@@ -1,7 +1,5 @@
 <div class="vtr-header-main">
-	<div class="title">
-		{{title}}
-	</div>
+	<h1 class="title">{{title}}</h1>
 	<div *ngIf="forwardLink" class="forward-link">
 		<a routerLink="/{{forwardLink.path}}"><span class="forward-link-label">{{forwardLink.label}}</span><fa-icon [icon]="['fas', 'arrow-right']" class="forward-link-icon"></fa-icon></a>
 	</div>

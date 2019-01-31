@@ -1,8 +1,22 @@
 <div class="vtr-page-device-settings vtr-page">
-	<div class="vtr-page-header">
-		<vtr-header-main [title]="title" [menuItems]="menuItems"></vtr-header-main>
+	<div class="row vtr-page-header">
+		<div class="col vtr-col">
+			<vtr-header-main [title]="title"
+			 [menuItems]="menuItems"></vtr-header-main>
+		</div>
 	</div>
-	<div class="vtr-page-content">
-		<router-outlet></router-outlet>
+	<div class="row vtr-page-content">
+		<div class="col vtr-col">
+			<div class="container-fluid">
+				<div class="row h-100">
+					<div class="col col-8 vtr-page-left-column">
+						<router-outlet></router-outlet>
+					</div>
+					<div class="col col-4 vtr-page-right-column">
+						Right Column Content Here...
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
