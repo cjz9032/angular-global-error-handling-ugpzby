@@ -31,6 +31,7 @@ import { WidgetDeviceComponent } from './components/widgets/widget-device/widget
 import { WidgetSecurityComponent } from './components/widgets/widget-security/widget-security.component';
 import { WidgetQuestionsComponent } from './components/widgets/widget-questions/widget-questions.component';
 import {WidgetCarouselComponent} from './components/widgets/widget-carousel/widget-carousel.component';
+import {WidgetQuicksettingsComponent} from './components/widgets/widget-quicksettings/widget-quicksettings.component'
 
 // APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
@@ -41,6 +42,7 @@ import { DashboardService } from './services/dashboard/dashboard.service';
 import { DeviceService } from './services/device/device.service';
 import { SecurityService } from './services/security/security.service';
 import { UserService } from './services/user/user.service';
+
 import { ContainerCardComponent } from './components/container-card/container-card.component';
 
 // FONT AWESOME
@@ -59,8 +61,10 @@ import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-dev
 import { SubpageDeviceSettingsDisplayComponent } from './components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
 library.add(fas);
 
+import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -77,6 +81,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 		WidgetSecurityComponent,
 		WidgetQuestionsComponent,
     WidgetCarouselComponent,
+    WidgetQuicksettingsComponent,
 		PageQuestionsComponent,
 		ContainerCardComponent,
 		HeaderMainComponent,
@@ -89,14 +94,19 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 		MenuHeaderComponent,
 		SubpageDeviceSettingsPowerComponent,
 		SubpageDeviceSettingsAudioComponent,
-		SubpageDeviceSettingsDisplayComponent
+		SubpageDeviceSettingsDisplayComponent,
+    PageQuestionsComponent,
+		ModalWelcomeComponent
+
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		FormsModule,
 		HttpClientModule,
+
 		FontAwesomeModule,
+
     NgbModule
 	],
 	providers: [
@@ -110,6 +120,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 		SecurityService,
 		UserService
 	],
-	bootstrap: [AppComponent]
+	bootstrap: [AppComponent],
+  entryComponents:[ModalWelcomeComponent]
 })
 export class AppModule { }

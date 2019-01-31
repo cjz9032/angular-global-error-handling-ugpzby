@@ -1,10 +1,11 @@
+
 <div class="vtr-page-dashboard vtr-page">
   <vtr-header-main [title]="title"
                    [forwardLink]="forwardLink"></vtr-header-main>
   <div class="row pl-40 pr-40 mt--50">
     <div class="col-12">
       <div class="row">
-        <div class="col-8">
+        <div class="col-7">
           <div class="row  pa-20">
             <div class="col">
               <vtr-widget-carousel [data]="data" title="title" [interval]="1000" subtitle="title" pauseOnHover="true"
@@ -104,7 +105,7 @@
             </div>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-5">
           <div class="row pa-20">
             <div class="col" style="height:218px;border:1px solid blue;border-radius:5px;">
 
@@ -112,8 +113,8 @@
           </div>
 
           <div class="row pa-20">
-            <div class="col" style="height:319px;border:1px solid blue;border-radius:5px;">
-
+            <div class="col" style="height:319px">
+              <vtr-widget-quicksettings></vtr-widget-quicksettings>
             </div>
           </div>
 
@@ -134,8 +135,8 @@
             </div>
           </div>
           <div class="row pa-20">
-            <div class="col" style="height:480px;border:1px solid blue;border-radius:5px;">
-
+            <div class="col">
+              <vtr-widget-questions [title]="qAndA.title" [description]="qAndA.description" [data]="qAndA.data"></vtr-widget-questions>
             </div>
           </div>
         </div>
