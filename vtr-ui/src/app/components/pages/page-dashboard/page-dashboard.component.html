@@ -13,7 +13,24 @@
 						Left Column Content Here...
 					</div>
 					<div class="col col-4 vtr-page-right-column">
-						Right Column Content Here...
+						<div class="row">
+							<div class="col">
+                  <vtr-widget-status [title]="'System Status'"
+                  [description]="'System Status Component'"
+                  [items]="data">
+
+								</vtr-widget-status>
+							</div>
+						</div>
+						<div class="row">
+								<div class="col">
+									<vtr-widget-status [title]="'Security Status'"
+									 [description]="'Security Status Component'"
+									 [items]="data2">
+
+									</vtr-widget-status>
+								</div>
+							</div>
 					</div>
 				</div>
 			</div>

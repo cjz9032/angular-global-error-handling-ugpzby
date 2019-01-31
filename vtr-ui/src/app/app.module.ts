@@ -30,6 +30,7 @@ import { WidgetSettingsComponent } from './components/widgets/widget-settings/wi
 import { WidgetDeviceComponent } from './components/widgets/widget-device/widget-device.component';
 import { WidgetSecurityComponent } from './components/widgets/widget-security/widget-security.component';
 import { WidgetQuestionsComponent } from './components/widgets/widget-questions/widget-questions.component';
+import { WidgetStatusComponent } from './components/widgets/widget-status/widget-status.component';
 
 // APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
@@ -73,6 +74,7 @@ library.add(fas);
 		WidgetDeviceComponent,
 		WidgetSecurityComponent,
 		WidgetQuestionsComponent,
+		WidgetStatusComponent,
 		PageQuestionsComponent,
 		ContainerCardComponent,
 		HeaderMainComponent,
