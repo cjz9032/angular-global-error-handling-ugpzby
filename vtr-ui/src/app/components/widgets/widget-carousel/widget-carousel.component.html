@@ -1,0 +1,13 @@
+<div class="vtr-widget-carousel">
+  <ngb-carousel *ngIf="carouselModel">
+    <ng-template *ngFor="let model of carouselModel" ngbSlide>
+      <a [href]="model.link" class="carousel-link">
+        <img [src]="model.image" class="image img-fluid">
+        <div class="carousel-caption">
+          <h3 class="title">{{model.title}}</h3>
+          <p class="subtitle">{{model.subtitle}}</p>
+        </div>
+      </a>
+    </ng-template>
+  </ngb-carousel>
+</div>

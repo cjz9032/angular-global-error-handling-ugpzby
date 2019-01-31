@@ -1,11 +1,69 @@
 @import 'app.theme';
 
 .vtr-app {
-	height: calc(100% - #{$menu_height});
+
+	//height: calc(100% - #{$menu_height});
+
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+//	height: 100%;
+	min-width: 400px;
+	overflow: hidden;
+	.vtr-widget {
+		background: $screen_dark_70;
+		max-width: 33%;
+		height: 100%;
+		.widget-upper {
+			width: 100%;
+			padding-top: 20px;
+			vtr-menu-main {
+				display: inline-block;
+				vertical-align: top;
+			}
+		}
+		vtr-widget-lower {
+			display: none;
+		}
+	}
+	vtr-clock {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+
 }
 
 @media only screen and (max-width:400px) {
 	.vtr-app {
 		zoom: .7;
 	}
+
 }
+
+
+@media only screen and (max-width:800px) {
+	.vtr-app {
+		background-image: none !important;
+		background: $light;
+		.vtr-widget {
+			background: transparent;
+			max-width: 100%;
+			height: auto;
+			.widget-upper {
+				min-height: 400px;
+				padding-top: 0;
+				background: $shade_lighter;
+				background: linear-gradient(to bottom, $light 0%,$shade_lighter 100%);
+			}
+			vtr-widget-lower {
+				display: block;
+			}
+		}
+		vtr-clock {
+			display: none;
+		}
+	}
+	
+}
+

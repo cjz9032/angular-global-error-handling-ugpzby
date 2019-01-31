@@ -1,0 +1,32 @@
+
+.vtr-widget-carousel {
+  .carousel-caption {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    padding: 0;
+    right: 0 !important;
+    text-align: left;
+    z-index: 1;
+  }
+
+  .image {
+    border-radius: 0.3125rem;
+  }
+
+  .subtitle {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    color: #FFFFFF;
+  }
+
+  .title {
+    opacity: 0.7;
+    color: #FFFFFF;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.0625rem;
+  }
+
+
+}

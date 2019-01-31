@@ -30,6 +30,7 @@ import { WidgetSettingsComponent } from './components/widgets/widget-settings/wi
 import { WidgetDeviceComponent } from './components/widgets/widget-device/widget-device.component';
 import { WidgetSecurityComponent } from './components/widgets/widget-security/widget-security.component';
 import { WidgetQuestionsComponent } from './components/widgets/widget-questions/widget-questions.component';
+import {WidgetCarouselComponent} from './components/widgets/widget-carousel/widget-carousel.component';
 
 // APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
@@ -58,6 +59,8 @@ import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-dev
 import { SubpageDeviceSettingsDisplayComponent } from './components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
 library.add(fas);
 
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -73,6 +76,7 @@ library.add(fas);
 		WidgetDeviceComponent,
 		WidgetSecurityComponent,
 		WidgetQuestionsComponent,
+    WidgetCarouselComponent,
 		PageQuestionsComponent,
 		ContainerCardComponent,
 		HeaderMainComponent,
@@ -92,7 +96,8 @@ library.add(fas);
 		AppRoutingModule,
 		FormsModule,
 		HttpClientModule,
-		FontAwesomeModule
+		FontAwesomeModule,
+    NgbModule
 	],
 	providers: [
 		CookieService,
