@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i');
+@import url("https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i");
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "./styles-bootstrap.scss";
+
+@import "app/app.theme";
 
 html {
 	margin: 0;
@@ -9,7 +11,7 @@ html {
 	width: 100%;
 	height: 100%;
 	font-size: 62.5%;
-	letter-spacing: .1em;
+	letter-spacing: 0.1em;
 }
 
 body {
@@ -17,6 +19,38 @@ body {
 	padding: 0;
 	width: 100%;
 	height: 100%;
-	font-family: 'Rubik';
+	font-family: "Rubik";
 	font-weight: 300;
+}
+
+.vtr-page {
+	height: 100%;
+	.vtr-col {
+	}
+	.vtr-page-header {
+		position: relative;
+		z-index: 0;
+		height: $header_height;
+	}
+	.vtr-page-content {
+		position: relative;
+		z-index: 1;
+		height: calc(100% - #{$header_height});
+		.container-fluid {
+			height: 100%;
+			.row {
+				height: 100%;
+				.vtr-page-left-column {
+					background-color: $shade_extralight;
+					h2 {
+						margin:0;
+						color: $shade_darker;
+						font-size: 4.5rem;
+						font-weight: $weight_light;
+						padding: 7rem $padding_side 0 $padding_side;
+					}
+				}
+			}
+		}
+	}
 }

@@ -8,6 +8,12 @@ import { DashboardService } from '../../../services/dashboard/dashboard.service'
 })
 export class PageDashboardComponent implements OnInit {
 
+	title = 'Dashboard';
+	forwardLink = {
+		path: 'dashboard-customize',
+		label: 'Customize Dashboard'
+	}
+
 	constructor(
 		public dashboardService: DashboardService
 	) { }

@@ -2,13 +2,13 @@
 
 .vtr-menu-main {
 	.navbar {
-		height: 9rem;
+		height: $menu_height;
 		background-color: $main_darker;
 		color: $light;
 		.navbar-brand {
 			font-size: 5rem;
-			font-weight: 700;
-			width: 9rem;
+			font-weight: $weight_bold;
+			width: $menu_height;
 			height: 100%;
 			background-color: $main;
 			text-align: center;
@@ -20,7 +20,7 @@
 				text-transform: uppercase;
 				font-size: 2rem;
 				.app-name {
-					font-weight: 600;
+					font-weight: $weight_medium;
 				}
 			}
 			.device-type {
@@ -32,12 +32,13 @@
 				.nav-item {
 					.nav-link {
 						font-size: 1.6rem;
-						line-height: 9rem;
+						line-height: $menu_height;
 						color: $light;
 						padding: 0 2rem;
 						&.user {
 							padding: 2rem 4rem 2rem 2rem;
-							height: 9rem;
+							margin-left: 2rem;
+							height: $menu_height;
 							line-height: 4.6rem;
 							background-color: $main_darkest;
 							.user-initials {
@@ -48,6 +49,46 @@
 								height: 4.6rem;
 								border-radius: 2.3rem;
 								background-color: $main_darker;
+							}
+						}
+					}
+					.dropdown-menu {
+						border: none;
+						border-radius: .7rem;
+						box-shadow: 0 0 1.5rem 0 $screen_dark_15;
+						margin-top: -1rem;
+						padding: 2.5rem 1.5rem;
+						&.user {
+							margin-left: -1.5rem;
+							border-radius: 0;
+							margin-top: 0;
+						}
+						fa-icon {
+							&.menu-pointer {
+								position: absolute;
+								top: -1.5rem;
+								left: 50%;
+								margin-left: -1.5rem;
+								color: $light;
+								font-size: 3rem;
+								transform: rotate(45deg);
+								z-index: 0;
+							}
+						}
+						.dropdown-item {
+							position: relative;
+							z-index: 1;
+							color: $shade_darker;
+							font-size: 1.2rem;
+							line-height: 2.2rem;
+							font-weight: $weight_medium;
+							&.link {
+								font-weight: $weight_light;
+								text-decoration: underline;
+								&:hover {
+									color: $main;
+									text-decoration: none;
+								}
 							}
 						}
 					}

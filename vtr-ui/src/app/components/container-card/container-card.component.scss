@@ -1,0 +1,88 @@
+@import '../../app.theme';
+
+.container-card {
+	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+	border-radius: .7rem;
+	background-color: #ffffff;
+	position: relative;
+	overflow: hidden;
+	&.card4X3{
+		height: 23rem;
+		width: 43rem;
+	}
+	&.card4X4 {
+		height: 42rem;
+		width: 43rem;
+	}
+	&.card8X4 {
+		height: 23rem;
+		width: 91rem;
+	}
+	.root {
+		display: inline-flex;
+		padding: 1.5rem;
+	}
+	.content {
+		display: flex;
+		.title {
+			color: $main_dark;
+			font-size: 2.5rem;
+			font-weight: 800;
+			line-height: 2.9rem;
+		}
+		.description {
+			color: $main_dark;
+			font-size: 1.1rem;
+			font-weight: 500;
+			letter-spacing: .1rem;
+			line-height: 1.3rem;
+		}
+		.caption {
+			color: $main_dark;
+			font-size: 2.3rem;
+			line-height: 3.4rem;
+		}
+		.logo {
+			padding-top: 3rem;
+			.logo-bkg {
+				height: 2.4rem;
+				width: 2.4rem;
+				background-color: $alt;
+				display: inline-block;
+				text-align: center;
+				vertical-align: middle;
+				border-radius: 50%;
+				color: $light;
+				font-weight: $weight_medium;
+			}
+			.logo-text {
+				color: $alt;
+				font-size: 1.4em;
+				font-weight: $weight_bold;
+				letter-spacing: .1rem;
+				line-height: 1.7rem;
+			}
+		}
+		.read-more {
+			color: $main;
+			font-size: 1.3rem;
+			font-weight: 500;
+			letter-spacing: .1rem;
+			line-height: 1.5rem;
+			i {
+				font-size: 2.4rem;
+			}
+		}
+	}
+	.bottomright {
+		align-self: flex-end;
+		position: absolute;
+		bottom: 0;
+		right: -5rem;
+		img {
+			height: 95%;
+			width: 85%;
+		}
+	}
+	
+}

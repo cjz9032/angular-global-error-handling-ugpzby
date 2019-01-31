@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 // APPLICATION BASE COMPONENTS
 import { AppComponent } from './app.component';
 import { MenuMainComponent } from './components/menu-main/menu-main.component';
+import { HeaderMainComponent } from './components/header-main/header-main.component';
 import { ClockComponent } from './components/clock/clock.component';
 
 // APPLICATION PAGE COMPONENTS
@@ -30,7 +31,7 @@ import { WidgetDeviceComponent } from './components/widgets/widget-device/widget
 import { WidgetSecurityComponent } from './components/widgets/widget-security/widget-security.component';
 import { WidgetQuestionsComponent } from './components/widgets/widget-questions/widget-questions.component';
 
-//APPLICATION SERVICES
+// APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
 import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
@@ -39,9 +40,23 @@ import { DashboardService } from './services/dashboard/dashboard.service';
 import { DeviceService } from './services/device/device.service';
 import { SecurityService } from './services/security/security.service';
 import { UserService } from './services/user/user.service';
-import { WidgetStatusComponent } from './components/widgets/widget-status/widget-status.component';
+import { ContainerCardComponent } from './components/container-card/container-card.component';
 
-
+// FONT AWESOME
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { PageDeviceSettingsComponent } from './components/pages/page-device-settings/page-device-settings.component';
+import { PageDeviceUpdatesComponent } from './components/pages/page-device-updates/page-device-updates.component';
+import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
+import { PageSecurityWifiComponent } from './components/pages/page-security-wifi/page-security-wifi.component';
+import { PageSecurityPasswordComponent } from './components/pages/page-security-password/page-security-password.component';
+import { PageSecurityInternetComponent } from './components/pages/page-security-internet/page-security-internet.component';
+import { MenuHeaderComponent } from './components/menu-header/menu-header.component';
+import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
+import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
+import { SubpageDeviceSettingsDisplayComponent } from './components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
+library.add(fas);
 
 @NgModule({
 	declarations: [
@@ -59,13 +74,25 @@ import { WidgetStatusComponent } from './components/widgets/widget-status/widget
 		WidgetSecurityComponent,
 		WidgetQuestionsComponent,
 		PageQuestionsComponent,
-		WidgetStatusComponent
+		ContainerCardComponent,
+		HeaderMainComponent,
+		PageDeviceSettingsComponent,
+		PageDeviceUpdatesComponent,
+		PageSecurityAntivirusComponent,
+		PageSecurityWifiComponent,
+		PageSecurityPasswordComponent,
+		PageSecurityInternetComponent,
+		MenuHeaderComponent,
+		SubpageDeviceSettingsPowerComponent,
+		SubpageDeviceSettingsAudioComponent,
+		SubpageDeviceSettingsDisplayComponent
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		FormsModule,
-		HttpClientModule
+		HttpClientModule,
+		FontAwesomeModule
 	],
 	providers: [
 		CookieService,

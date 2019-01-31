@@ -1,7 +1,17 @@
-.navbar {
+.navbar,
+.container-fluid,
+.row,
+.col {
+	margin: 0;
 	padding: 0;
 }
 
 .dropdown:hover>.dropdown-menu {
 	display: block;
+}
+
+.dropdown-item {
+	&:hover {
+		background-color: transparent;
+	}
 }
