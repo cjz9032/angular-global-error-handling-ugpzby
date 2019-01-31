@@ -3,6 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
 import { PageDeviceComponent } from './components/pages/page-device/page-device.component';
 import { PageDeviceSettingsComponent } from './components/pages/page-device-settings/page-device-settings.component';
+import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
+import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
+import { SubpageDeviceSettingsDisplayComponent } from './components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
 import { PageDeviceUpdatesComponent } from './components/pages/page-device-updates/page-device-updates.component';
 import { PageSecurityComponent } from './components/pages/page-security/page-security.component';
 import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
@@ -24,7 +27,23 @@ const routes: Routes = [
 		component: PageDeviceComponent
 	}, {
 		path: 'device-settings',
-		component: PageDeviceSettingsComponent
+		component: PageDeviceSettingsComponent,
+		children: [
+			{
+				path: '',
+				redirectTo: 'power',
+				pathMatch: 'full'
+			}, {
+				path: 'power',
+				component: SubpageDeviceSettingsPowerComponent
+			}, {
+				path: 'audio',
+				component: SubpageDeviceSettingsAudioComponent
+			}, {
+				path: 'display-camera',
+				component: SubpageDeviceSettingsDisplayComponent
+			}
+		]
 	}, {
 		path: 'system-updates',
 		component: PageDeviceUpdatesComponent
