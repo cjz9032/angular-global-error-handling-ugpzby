@@ -1,36 +1,47 @@
 <div class="vtr-widget-status">
-	<div class="rectangle-13">
-		<div class="rectangle-13-1">
-			<div class="title">
-				{{title}}
-			</div>
-			<div class="description">
-				{{description}}
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<div class="title">{{title}}</div>
+				<div class="description">{{description}}</div>
 			</div>
 		</div>
-		<div class="rectangle-13-2">
-			<ul class="rectangle-13-2-1">
-				<li *ngFor="let item of items">
-					<div class="clearfix">
-						<div class="outer-icon">
-							<div [ngClass]="['icon',!item.status?'check':'cross']"></div>
-						</div>
-						<div class="outer-arrow">
-							<a [routerLink]="item.route.path"
-							 href="#"
-							 title="{{item.title | titlecase}}">
-								<div class="arrow"></div>
-							</a>
-						</div>
-						<div class="outer-detail">
-							<div class="detail">
-								<a [ngClass]="[item.isDescClickable || item.isDescClickable == true ?'clickable':'detail']"
-								 href="#"
-								 title="{{item.title | titlecase}}">{{item.description}}</a>
+	</div>
+	<div class="row">
+		<div class="col">
+			<ul class="status-list">
+				<li *ngFor="let item of items"
+				 [ngClass]="[!item.status?'good':'bad']">
+					<a routerLink="/{{item.path}}">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-1">
+									<div class="status-icon">
+										<div class="icon-bkg">
+											<fa-icon [icon]="['fas', !item.status?'check':'times']"></fa-icon>
+										</div>
+									</div>
+								</div>
+								<div class="col-5">
+									<div class="title"
+									 [ngClass]="[!item.status?'good':'bad']">
+										{{item.title}}
+									</div>
+								</div>
+								<div class="col-5 text-right">
+									<div class="detail"
+									 [ngClass]="{'highlight':item.asLink}">
+										{{item.detail}}
+									</div>
+								</div>
+								<div class="col-1">
+									<div class="arrow">
+										<fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div [ngClass]="[!item.status?'content-check':'content-cross']">{{item.title | titlecase}}</div>
-					</div>
+					</a>
 				</li>
 			</ul>
 		</div>
