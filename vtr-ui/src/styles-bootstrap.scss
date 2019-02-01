@@ -1,3 +1,5 @@
+@import "app/app.theme";
+
 .navbar,
 .container-fluid,
 .row,
@@ -35,7 +37,7 @@
 }
 
 
-@media only screen and (max-width:1800px) {
+@media #{$mediaquery_1} {
 	.nmx-40 {
 		margin-left: -3.5rem !important;
 		margin-right: -3.5rem !important;
@@ -55,7 +57,7 @@
 	}
 }
 
-@media only screen and (max-width:1600px) {
+@media #{$mediaquery_2} {
 	.nmx-40 {
 		margin-left: -3rem !important;
 		margin-right: -3rem !important;
@@ -75,7 +77,7 @@
 	}
 }
 
-@media only screen and (max-width:1400px) {
+@media #{$mediaquery_3} {
 	.nmx-40 {
 		margin-left: -2.5rem !important;
 		margin-right: -2.5rem !important;
@@ -95,7 +97,7 @@
 	}
 }
 
-@media only screen and (max-width:1200px) {
+@media #{$mediaquery_4} {
 	.nmx-40 {
 		margin-left: -2rem !important;
 		margin-right: -2rem !important;

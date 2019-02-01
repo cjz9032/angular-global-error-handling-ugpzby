@@ -16,25 +16,25 @@ html {
 	letter-spacing: 0.1em;
 }
 
-@media only screen and (max-width:1800px) {
+@media #{$mediaquery_1} {
 	html {
 		font-size: 55%;
 	}
 }
 
-@media only screen and (max-width:1600px) {
+@media #{$mediaquery_2} {
 	html {
 		font-size: 50%;
 	}
 }
 
-@media only screen and (max-width:1400px) {
+@media #{$mediaquery_3} {
 	html {
 		font-size: 40%;
 	}
 }
 
-@media only screen and (max-width:1200px) {
+@media #{$mediaquery_4} {
 	html {
 		font-size: 30%;
 	}
