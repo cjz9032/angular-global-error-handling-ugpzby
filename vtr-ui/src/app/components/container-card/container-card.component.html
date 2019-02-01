@@ -1,5 +1,4 @@
-<div #containerCard
- class="container-card card-{{type}}"
+<div class="container-card card-{{type}}"
  *ngIf="type === 'corner'"
  [style.height.px]="containerHeight">
 	<div class="container-fluid">
@@ -26,8 +25,7 @@
 </div>
 
 
-<div #containerCard
- class="container-card card-{{type}}"
+<div class="container-card card-{{type}}"
  *ngIf="type === 'highlight'"
  [style.background-image]="'url('+img+')'"
  [style.height.px]="containerHeight">
@@ -45,8 +43,7 @@
 
 
 
-<div #containerCard
- class="container-card card-{{type}}"
+<div class="container-card card-{{type}}"
  *ngIf="type === 'article'"
  [style.height.px]="containerHeight">
 	<div class="container-fluid">
@@ -68,7 +65,8 @@
 					<div *ngIf="readMore"
 					 class="read-more">
 						<a href="{{readMore}}">
-							<span class="link-label">Read More</span><fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+							<span class="link-label">Read More</span>
+							<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 						</a>
 					</div>
 				</div>
