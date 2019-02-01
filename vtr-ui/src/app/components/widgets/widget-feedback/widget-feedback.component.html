@@ -1,3 +1,22 @@
-<div class="vtr-widget-feedback">
-	
+<div class="vtr-widget-feedback" >
+        <div  [ngClass]="{'rectangle-13': isWideScreenResolution == false, 'wide-screen-rectangle-13': isWideScreenResolution == true }">
+          <div [ngClass]="{'title': isWideScreenResolution == false, 'wide-screen-title': isWideScreen == true }"
+            *ngIf="title">{{title}}</div>
+          <div [ngClass]="{'description': isWideScreenResolution == false, 'wide-screen-description': isWideScreenResolution == true }"
+            *ngIf="description">{{description | uppercase }}</div>
+
+
+          <button *ngIf="actionName && action && isWideScreenResolution == false"
+            type="button"
+            class="button-label"
+            (click)="submitAction()">{{actionName}} </button>
+
+
+          <div *ngIf="isWideScreenResolution == true">
+
+          </div>
+        </div>
 </div>
+
+
+

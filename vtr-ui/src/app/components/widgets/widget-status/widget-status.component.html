@@ -1,0 +1,49 @@
+<div class="vtr-widget-status">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<div class="title">{{title}}</div>
+				<div class="description">{{description}}</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<ul class="status-list">
+				<li *ngFor="let item of items"
+				 [ngClass]="[!item.status?'good':'bad']">
+					<a routerLink="/{{item.path}}">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-1">
+									<div class="status-icon">
+										<div class="icon-bkg">
+											<fa-icon [icon]="['fas', !item.status?'check':'times']"></fa-icon>
+										</div>
+									</div>
+								</div>
+								<div class="col-5">
+									<div class="title"
+									 [ngClass]="[!item.status?'good':'bad']">
+										{{item.title}}
+									</div>
+								</div>
+								<div class="col-5 text-right">
+									<div class="detail"
+									 [ngClass]="{'highlight':item.asLink}">
+										{{item.detail}}
+									</div>
+								</div>
+								<div class="col-1">
+									<div class="arrow">
+										<fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
+									</div>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

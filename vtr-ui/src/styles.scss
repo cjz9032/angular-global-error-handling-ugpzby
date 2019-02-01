@@ -28,8 +28,6 @@ body {
 
 .vtr-page {
 	height: 100%;
-	.vtr-col {
-	}
 	.vtr-page-header {
 		position: relative;
 		z-index: 0;
@@ -53,8 +51,14 @@ body {
 						padding: 7rem $padding_side 0 $padding_side;
 					}
 				}
+				.vtr-page-right-column {
+					padding: 0 $padding_side 4rem 4rem;
+				}
 			}
 		}
+	}
+	.vtr-page-shift-up {
+		margin-top: $shift_up_small;
 	}
 }
 
