@@ -1,10 +1,7 @@
-.heading {
-  height: 42px;
-  opacity: 0.8;
-  color: #34495E;
-  font-family: Rubik;
-  font-size: 35px;
-  line-height: 42px;
-  margin-bottom: 31px;
+@import '../../../app.theme.scss';
 
+.heading {
+	color: $main_dark;
+	color: $main_darker;
+	font-size: 3.5rem;
 }
