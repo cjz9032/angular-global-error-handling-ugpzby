@@ -14,32 +14,106 @@ export class PageDashboardComponent implements OnInit {
 		label: 'Customize Dashboard'
 	}
 
+
+
+	dummySystem = [
+		{
+			'status': 0,
+			'id': 'memory',
+			'title': 'Memory',
+			'detail': '4.00 GB of 6 GB',
+			'path': 'support',
+			'asLink': false
+		},
+		{
+			'status': 0,
+			'id': 'disk',
+			'title': 'Disk Space',
+			'detail': '12.7 GB of 256 GB',
+			'path': 'support',
+			'asLink': false
+		},
+		{
+			'status': 0,
+			'id': 'warranty',
+			'title': 'Warranty',
+			'detail': 'Unitil 01/01/2020',
+			'path': 'support',
+			'asLink': false
+		},
+		{
+			'status': 1,
+			'id': 'systemupdate',
+			'title': 'System Update',
+			'detail': 'Update',
+			'path': 'support',
+			'asLink': true
+		}
+	];
+	dummySecurity = [
+		{
+			'status': 0,
+			'id': 'anti-virus',
+			'title': 'Anti-Virus',
+			'path': 'security'
+		},
+		{
+			'status': 0,
+			'id': 'wifi-security',
+			'title': 'Wifi Security',
+			'path': 'security'
+		},
+		{
+			'status': 0,
+			'id': 'pwdmgr',
+			'title': 'Password Manager',
+			'path': 'security'
+		},
+		{
+			'status': 1,
+			'id': 'vpn',
+			'title': 'VPN',
+			'path': 'security'
+		}
+	];
+
+
+
+
+
+
+
+
 	data: any = [{
 		"albumId": 1,
 		"id": 1,
-		"title": "accusamus beatae ad facilis cum similique qui sunt",
+		"source": "Vantage Exclusive",
+		"title": "Accusamus Beatae ad Facilis ci Similique Qui Sunt",
 		"url": "assets/images/banner1.jpeg",
 		"thumbnailUrl": "https://via.placeholder.com/150/92c952"
 	},
 	{
 		"albumId": 1,
 		"id": 2,
-		"title": "reprehenderit est deserunt velit ipsam",
+		"source": "Vantage Exclusive",
+		"title": "Reprehenderit est Deserunt Velit Ipsam",
 		"url": "assets/images/banner2.jpeg",
 		"thumbnailUrl": "https://via.placeholder.com/150/771796"
 	},
 	{
 		"albumId": 1,
 		"id": 3,
-		"title": "officia porro iure quia iusto qui ipsa ut modi",
-		"url": "assets/images/banner2.jpeg",
+		"source": "Vantage Exclusive",
+		"title": "Officia Porro Iure quia Iusto qui Ipsa ut Modi",
+		"url": "assets/images/banner1.jpeg",
 		"thumbnailUrl": "https://via.placeholder.com/150/24f355"
 	},
 	{
 		"albumId": 1,
 		"id": 4,
-		"title": "culpa odio esse rerum omnis laboriosam voluptate repudiandae",
-		"url": "assets/images/banner1.jpeg",
+		"source": "Vantage Exclusive",
+		"title": "Culpa Odio esse Rerum Omnis Laboriosam Voluptate Repudiandae",
+		"url": "assets/images/banner2.jpeg",
 		"thumbnailUrl": "https://via.placeholder.com/150/d32776"
 	}];
 

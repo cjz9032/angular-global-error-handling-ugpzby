@@ -1,49 +1,76 @@
-<div class="container-card"
- *ngIf="type === '4X3' || type === '8X4'">
-	<div class="row">
-		<div class="card card{{type}}">
-			<div class="row root">
-				<div class="col-xs-8 content">
-					<div class="col-md-12 ">
-						<div *ngIf="title"
-						 class="title">{{title}}</div>
-						<div *ngIf="caption"
-						 class="caption">{{caption}}</div>
-						<div *ngIf="logo || logoText"
-						 class="logo">
-							<span class="logo-bkg">L</span>
-							<span *ngIf="logo"
-							 class="logo-text">{{logoText}}</span>
-						</div>
-						<div class="clearfix"></div>
-						<div *ngIf="readMore" 
-						class="read-more">{{readMore}}</div>
-					</div>
+<div #containerCard
+ class="container-card card-{{type}}"
+ *ngIf="type === 'corner'"
+ [style.height.px]="containerHeight">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col col-8 content">
+				<div *ngIf="title"
+				 class="title">{{title}}</div>
+				<div *ngIf="caption"
+				 class="caption">{{caption}}</div>
+				<div *ngIf="logo || logoText"
+				 class="logo">
+					<span class="logo-img">
+						<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
+					</span>
+					<span class="logo-text">{{logoText}}</span>
 				</div>
-				<div class="col-xs-3 icon">
-					<div class="bottomright"><img [src]="img"
-						 *ngIf="img"></div>
-				</div>
+			</div>
+			<div class="col col-4 image">
+				<div class="bottomright {{cornerShift}}"><img [src]="img"
+					 *ngIf="img"></div>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="container card{{type}}"
- *ngIf="type =='4X4'">
-	<div class="row">
-		<div class="card card{{type}}">
-			<div class="content">
-				<img class="card-img-top"
-				 [src]="img"
-				 *ngIf="img"
-				 alt="Card image cap">
-				<div class="content">
-					<h4 class="title">{{title}}</h4>
-					<p class="caption">{{caption}}</p>
-					<a href="#"
-					 *ngIf="readMore"
-					 class="read-more ">{{readMore}} <i class="fa fa-long-arrow-right"></i></a>
+
+<div #containerCard
+ class="container-card card-{{type}}"
+ *ngIf="type === 'highlight'"
+ [style.background-image]="'url('+img+')'"
+ [style.height.px]="containerHeight">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col col-4">
+			</div>
+			<div class="col col-8 content">
+				<div *ngIf="title"
+				 class="title">{{title}}</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div #containerCard
+ class="container-card card-{{type}}"
+ *ngIf="type === 'article'"
+ [style.height.px]="containerHeight">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col col-12 image"
+			 [style.background-image]="'url('+img+')'">
+				<div *ngIf="logo || logoText"
+				 class="logo">
+					<span class="logo-img">
+						<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
+					</span>
+					<span class="logo-text">{{logoText}}</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-12 content">
+					<div *ngIf="title"
+					 class="title">{{title}}</div>
+					<div *ngIf="readMore"
+					 class="read-more">
+						<a href="{{readMore}}">
+							<span class="link-label">Read More</span><fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>

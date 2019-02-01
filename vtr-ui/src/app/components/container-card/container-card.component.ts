@@ -1,48 +1,50 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, Input } from '@angular/core';
 
 @Component({
 	selector: 'vtr-container-card',
 	templateUrl: './container-card.component.html',
 	styleUrls: ['./container-card.component.scss']
 })
-export class ContainerCardComponent implements OnInit {
+export class ContainerCardComponent implements OnInit, AfterViewInit {
 
-	@Input() img: string = this.img || '';
-	@Input() caption: string = this.caption || '';
-	@Input() title: string = this.title || '';
-	@Input() logo: string = this.logo || '';
-	@Input() logoText: string = this.logoText || '';
-	@Input() readMore: string = this.readMore || '';
-	@Input() type: string = this.type || '';
+	@ViewChild('containerCard') containerCard;
+
+	@Input() img: string = '';
+	@Input() caption: string = '';
+	@Input() title: string = '';
+	@Input() logo: string = '';
+	@Input() logoText: string = '';
+	@Input() readMore: string = '';
+	@Input() type: string = '';
+	@Input() ratioX: number = 1;
+	@Input() ratioY: number = 1;
+	@Input() cornerShift: String = '';
+
+	ratio = 1;
+	containerHeight = 100;
 
 	constructor() { }
 
-	getType() {
-		let cardType = 1;
-		switch (this.type) {
-			case '4X4': {
-				cardType = 1;
-				break;
-			}
-			case '8X4': {
-				cardType = 2;
-				break;
-			}
-			case '4X4': {
-				cardType = 3;
-				break;
-			}
-			default: {
-				cardType = 1;
-				break;
-			}
-		}
-
-		return cardType;
-
+	ngOnInit() {
+		this.ratio = this.ratioY / this.ratioX;
+		const self = this;
+		window.onresize = function () {
+			self.calcHeight(self.containerCard);
+		};
 	}
 
-	ngOnInit() {
+	ngAfterViewInit() {
+		const self = this;
+		const delay = setTimeout(function(){
+			self.calcHeight(self.containerCard);
+		},500)
+	}
+
+	calcHeight(containerCard){
+		// console.log('RESIZE CONTAINER CARD', this.title, this.ratio, containerCard, containerCard.nativeElement.clientWidth);
+		if(containerCard){
+			this.containerHeight = containerCard.nativeElement.clientWidth * this.ratio;
+		}
 	}
 
 }

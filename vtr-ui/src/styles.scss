@@ -42,6 +42,7 @@ body {
 			.row {
 				height: 100%;
 				.vtr-page-left-column {
+					padding: 0 4rem 4rem $padding_side;
 					background-color: $shade_extralight;
 					h2 {
 						margin:0;
