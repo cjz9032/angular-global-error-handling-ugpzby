@@ -42,7 +42,7 @@ import { SubpageDeviceSettingsDisplayComponent } from './components/pages/page-d
 
 // APPLICATION WIDGET COMPONENTS
 import { WidgetFeedbackComponent } from './components/widgets/widget-feedback/widget-feedback.component';
-import { WidgetSettingsComponent } from './components/widgets/widget-settings/widget-settings.component';
+import { WidgetSwitchIconComponent } from './components/widgets/widget-switch-icon/widget-switch-icon.component';
 import { WidgetDeviceComponent } from './components/widgets/widget-device/widget-device.component';
 import { WidgetSecurityComponent } from './components/widgets/widget-security/widget-security.component';
 import { WidgetQuestionsComponent } from './components/widgets/widget-questions/widget-questions.component';
@@ -84,7 +84,7 @@ library.add(fab);
 		PageSecurityComponent,
 		PageSupportComponent,
 		WidgetFeedbackComponent,
-		WidgetSettingsComponent,
+		WidgetSwitchIconComponent,
 		WidgetDeviceComponent,
 		WidgetSecurityComponent,
 		WidgetQuestionsComponent,

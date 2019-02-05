@@ -1,0 +1,20 @@
+<div class="vtr-widget-switch-icon">
+	<div [ngClass]="['rectangle-34-copy',isChecked?'checked':'unchecked']">
+		<div class="heading parent">
+			<div class="child">{{title}}</div>
+		</div>
+		<div class="parent">
+			<div class="icon child relative">
+				<i [ngClass]="['fa','fa-3x',icon,'icon-center']"></i>
+			</div>
+		</div>
+		<div class="parent">
+			<div class="child">
+				<input type="checkbox"
+				 id="{{id}}"
+				 (click)="checkUnCheck($event)" />
+				<label for="{{id}}"></label>
+			</div>
+		</div>
+	</div>
+</div>
