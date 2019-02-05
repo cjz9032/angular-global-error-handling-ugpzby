@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DeviceService } from '../../../services/device/device.service';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 // @ts-ignore
 @Component({
@@ -10,10 +11,8 @@ import { DeviceService } from '../../../services/device/device.service';
 export class WidgetSwitchIconComponent implements OnInit {
 
 	@Input() title: string;
-	@Input() icon: string;
-	@Input() isChecked: boolean = false;
-
-	public id: string = "a" + new Date().getTime() + Math.floor(Math.random() * 100);
+	@Input() iconDefinition: string[];
+	@Input() value: boolean = false;
 
 	constructor(
 		public deviceService: DeviceService
@@ -21,16 +20,12 @@ export class WidgetSwitchIconComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		console.log(this.title, this.icon);
+		console.log(this.title, this.iconDefinition);
 	}
 
-	checkUnCheck($event) {
-		if ($event.target.checked) {
-			this.isChecked = true;
-		} else {
-			this.isChecked = false;
-		}
-
+	onChange(event) {
+		this.value = event.switchValue;
+		console.log('WIDGET SWITCH ICON VALUE', this.value);
 	}
 
 }
