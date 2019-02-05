@@ -68,6 +68,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import { ContainerCollapsibleComponent } from './components/container-collapsible/container-collapsible.component';
 library.add(fas);
 library.add(fab);
 
@@ -105,7 +106,8 @@ library.add(fab);
 		SubpageDeviceSettingsAudioComponent,
 		SubpageDeviceSettingsDisplayComponent,
 		PageQuestionsComponent,
-		ModalWelcomeComponent
+		ModalWelcomeComponent,
+		ContainerCollapsibleComponent
 
 	],
 	imports: [

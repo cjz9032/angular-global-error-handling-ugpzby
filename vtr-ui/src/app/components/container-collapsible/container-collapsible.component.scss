@@ -1,0 +1,32 @@
+
+.vtr-container-collapsible {
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+
+
+  .header {
+    color: #4A81FD;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 24px;
+
+  }
+
+  .border-top {
+    border-bottom: 1px solid #ECF0F1;
+  }
+
+  .text-collapse {
+    color: #34495E;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .fa-angle-down,.fa-angle-up{
+    color: #4A81FD;
+  }
+
+  /deep/ .body .divider {
+    border-bottom: 1px solid #ECF0F1;
+  }
+}
