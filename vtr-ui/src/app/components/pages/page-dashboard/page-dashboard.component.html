@@ -87,14 +87,29 @@
 					</div>
 					<div class="col col-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
-							<vtr-widget-status [title]="'System Status'"
-							 [description]="'System Status Component'"
-							 [items]="dummySystem">
-							</vtr-widget-status>
-							<vtr-widget-status [title]="'Security Status'"
-							 [description]="'Security Status Component'"
-							 [items]="dummySecurity">
-							</vtr-widget-status>
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col col-12 pb-40">
+										<vtr-widget-quicksettings></vtr-widget-quicksettings>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col col-12 py-40">
+										<vtr-widget-status [title]="'System Status'"
+										 [description]="'System Status Component'"
+										 [items]="dummySystem">
+										</vtr-widget-status>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col col-12 py-40">
+										<vtr-widget-status [title]="'Security Status'"
+										 [description]="'Security Status Component'"
+										 [items]="dummySecurity">
+										</vtr-widget-status>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

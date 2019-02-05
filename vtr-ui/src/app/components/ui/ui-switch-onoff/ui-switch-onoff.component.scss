@@ -1,0 +1,155 @@
+@import "../../../app.theme";
+
+
+.checkbox {
+	display: block;
+	position: relative;
+	margin-bottom: 1rem;
+}
+
+.checkbox input {
+	display: none;
+}
+
+.checkbox label {
+	padding-left: 0;
+}
+
+.switch {
+	border-radius: 100px;
+	cursor: pointer;
+	display: inline-block;
+	width: 44px;
+	position: relative;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	vertical-align: middle;
+}
+
+.switch,
+.switch > small {
+	background-color: $light;
+	height: 22px;
+}
+
+input + .switch {
+	background: linear-gradient($gradient_angle, $shade_light 0%, $shade_lightest 100%);
+	margin-right: 7px;
+}
+
+input:checked + .switch {
+	background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+	transition: background 1.2s;
+}
+
+.checkbox-double .switch {
+	position: relative;
+	margin-left: 7px;
+	margin-right: 7px;
+}
+
+.switch > small {
+	background-color: #fff;
+	border-radius: 100px;
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	left: 0;
+	top: 2px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+	transition: background-color 0.4s, left 0.2s;
+}
+
+input:checked + .switch > small {
+	left: 22px;
+	transition: background-color 0.4s, left 0.2s;
+	background-color: rgb(255, 255, 255);
+}
+
+/* LARGE - LG */
+
+input:checked + .switch.switch-lg > small {
+	left: 26px;
+}
+
+.switch.switch-lg {
+	margin-top: -4px;
+	height: 26px;
+	width: 52px;
+}
+
+.switch-lg small {
+	height: 26px;
+	width: 26px;
+}
+
+/* SMALL - SM */
+
+input:checked + .switch.switch-sm > small {
+	left: 18px;
+}
+
+.switch.switch-sm {
+	margin-top: 0;
+	height: 18px;
+	width: 36px;
+}
+
+.switch-sm small {
+	height: 18px;
+	width: 18px;
+}
+
+/* EXTRA SMALL - XS */
+
+input:checked + .switch.switch-xs > small {
+	left: 31px;
+}
+
+.switch.switch-xs {
+	margin-top: 2px;
+	height: 18px;
+	width: 48px;
+}
+
+.switch-xs small {
+	height: 14px;
+	width: 14px;
+}
+
+/* DISABLED */
+
+.disabled .switch {
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+
+/* Full Width Switch - Right Aligned */
+
+.checkbox.checkbox-right label {
+	display: block;
+}
+
+.checkbox.checkbox-right .switch {
+	position: absolute;
+	left: auto;
+	right: 0;
+}
+
+
+
+.switch-label {
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	color: $light;
+	font-weight: $weight_medium;
+	position: absolute;
+	top: 4px;
+	left: 10px;
+	&.off-label {
+		left: 17px;
+		color: $main_shade;
+	}
+}

@@ -1,4 +1,5 @@
-import { Component, OnInit, AfterViewInit, ViewChild, Input } from '@angular/core';
+import { Component, Self, ElementRef, OnInit, AfterViewInit, Input } from '@angular/core';
+import { DisplayService } from '../../services/display/display.service';
 
 @Component({
 	selector: 'vtr-container-card',
@@ -6,8 +7,6 @@ import { Component, OnInit, AfterViewInit, ViewChild, Input } from '@angular/cor
 	styleUrls: ['./container-card.component.scss']
 })
 export class ContainerCardComponent implements OnInit, AfterViewInit {
-
-	@ViewChild('containerCard') containerCard;
 
 	@Input() img: string = '';
 	@Input() caption: string = '';
@@ -23,27 +22,32 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 	ratio = 1;
 	containerHeight = 100;
 
-	constructor() { }
+	resizeListener;
+
+	constructor(
+		@Self() private element: ElementRef,
+		private displayService: DisplayService
+	) { }
 
 	ngOnInit() {
 		this.ratio = this.ratioY / this.ratioX;
 		const self = this;
-		window.onresize = function () {
-			self.calcHeight(self.containerCard);
-		};
+		this.resizeListener = this.displayService.windowResizeListener().subscribe((event) => {
+			self.calcHeight(self.element);
+		});
 	}
 
 	ngAfterViewInit() {
 		const self = this;
 		const delay = setTimeout(function(){
-			self.calcHeight(self.containerCard);
+			self.calcHeight(self.element);
 		},500)
 	}
 
 	calcHeight(containerCard){
-		// console.log('RESIZE CONTAINER CARD', this.title, this.ratio, containerCard, containerCard.nativeElement.clientWidth);
 		if(containerCard){
-			this.containerHeight = containerCard.nativeElement.clientWidth * this.ratio;
+			this.containerHeight = containerCard.nativeElement.firstElementChild.clientWidth * this.ratio;
+			console.log('RESIZE CONTAINER CARD', this.title, this.ratio, containerCard, this.containerHeight);
 		}
 	}
 

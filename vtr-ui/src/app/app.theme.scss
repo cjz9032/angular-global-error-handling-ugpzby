@@ -1,7 +1,11 @@
-$main: #316CDE;
-$main_dark: #194A65;
-$main_darker: #2F3447;
+
+
+
 $main_darkest: #1C2238;
+$main_darker: #2F3447;
+$main_dark: #194A65;
+$main_shade: #697293;
+$main: #316CDE;
 $main_light: #5086cb;
 $main_lighter: #b5d0f4;
 $main_lightest: #eaf2fd;
@@ -19,7 +23,7 @@ $stop_dark: #D94839;
 
 $shade_extradark: #1B1B1B;
 $shade_darkest: #333;
-$shade_darker: #697293;
+$shade_darker: #6b6b6b;
 $shade_dark: #9D9D9D;
 $shade: #adadad;
 $shade_light: #C8CBCB;
@@ -52,12 +56,13 @@ $header_height: 20.5rem;
 
 $padding_side: 8.5rem;
 $gradient_angle: 135deg;
+$gradient_angle_reverse: 315deg;
 $border_radius: .7rem;
 
-
-
-
-
+$mediaquery_1: "only screen and (max-width : 1800px)";
+$mediaquery_2: "only screen and (max-width : 1600px)";
+$mediaquery_3: "only screen and (max-width : 1400px)";
+$mediaquery_4: "only screen and (max-width : 1200px)";
 
 
 

@@ -5,7 +5,6 @@
 	background-color:$light;
 	box-shadow: $drop_shadow;
 	padding: 4rem;
-	margin-bottom: 8rem;
 	.title {
 		color: $main_darker;
 		font-size: 2.5rem;
@@ -73,24 +72,32 @@
 					}
 				}
 			}
-			.title {
-				line-height: 2.8rem;
-				font-size: 1.4rem;
-				font-weight: $weight_medium;
-			}
-			.detail {
-				line-height: 2.8rem;
-				font-size: 1.2rem;
-				color: $shade_dark;
-				font-style: italic;
-				&.highlight {
-					color: $shade_darker;
-					text-decoration: underline;
-					&:hover {
-						text-decoration: none;
+			.status-text {
+				overflow: hidden;
+				.title {
+					line-height: 2.8rem;
+					font-size: 1.4rem;
+					font-weight: $weight_medium;
+					float: left;
+				}
+				.detail {
+					padding-right: .5rem;
+					float: right;
+					text-align: right;
+					line-height: 2.8rem;
+					font-size: 1.2rem;
+					color: $shade_dark;
+					font-style: italic;
+					&.highlight {
+						color: $main_shade;
+						text-decoration: underline;
+						&:hover {
+							text-decoration: none;
+						}
 					}
 				}
 			}
+			
 			.arrow {
 				color: $main_darker;
 				line-height: 2.8rem;

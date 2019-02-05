@@ -42,7 +42,7 @@ import { SubpageDeviceSettingsDisplayComponent } from './components/pages/page-d
 
 // APPLICATION WIDGET COMPONENTS
 import { WidgetFeedbackComponent } from './components/widgets/widget-feedback/widget-feedback.component';
-import { WidgetSettingsComponent } from './components/widgets/widget-settings/widget-settings.component';
+import { WidgetSwitchIconComponent } from './components/widgets/widget-switch-icon/widget-switch-icon.component';
 import { WidgetDeviceComponent } from './components/widgets/widget-device/widget-device.component';
 import { WidgetSecurityComponent } from './components/widgets/widget-security/widget-security.component';
 import { WidgetQuestionsComponent } from './components/widgets/widget-questions/widget-questions.component';
@@ -68,7 +68,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+<<<<<<< HEAD
 import { ContainerCollapsibleComponent } from './components/container-collapsible/container-collapsible.component';
+=======
+import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switch-onoff.component';
+>>>>>>> e5972126ee6abbf772ecb468d0932901f168f8c5
 library.add(fas);
 library.add(fab);
 
@@ -85,7 +89,7 @@ library.add(fab);
 		PageSecurityComponent,
 		PageSupportComponent,
 		WidgetFeedbackComponent,
-		WidgetSettingsComponent,
+		WidgetSwitchIconComponent,
 		WidgetDeviceComponent,
 		WidgetSecurityComponent,
 		WidgetQuestionsComponent,
@@ -107,9 +111,8 @@ library.add(fab);
 		SubpageDeviceSettingsDisplayComponent,
 		PageQuestionsComponent,
 		ModalWelcomeComponent,
-		ContainerCollapsibleComponent
-
-	],
+		ContainerCollapsibleComponent,
+		UiSwitchOnoffComponent],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
