@@ -9,118 +9,107 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col col-8 vtr-page-left-column">
-							<div class="vtr-page-shift-up">
-						
-									<div class="vtr-device-information">
-											<div class="container-fluid">
-												<div class="row">
-													<div class="col">
-														<div class="family">{{family}}</div>
-													</div>
-												</div>
-												<div class="row">
-													<div class="device-sub-header">Serial: {{serial}}</div>
-													<div class="sub-header-separator">
-														<fa-icon [icon]="['fas', 'minus']"></fa-icon>
-													</div>
-													<div class="device-sub-header">Product number: {{productNumber}}</div>
-													<div class="sub-header-separator">
-														<fa-icon [icon]="['fas', 'minus']"></fa-icon>
-													</div>
-													<div class="device-sub-header">Bios version: {{bios}}</div>
-												</div>
-												<div class="row">
-													<div class="col">
-														<div class="subheader">{{subtitle}}</div>
-													</div>
-												</div>
-												<div class="row">
-													<div class="col">
-														<ul class="status-list">
-															<li *ngFor="let item of dummyDeviceInformation"
-															 [ngClass]="[!item.status?'good':'bad']">
-																	<div class="container-fluid">
-																		<div class="row">
-																			<div class="col-1">
-																				<div class="status-icon">
-																					<div class="icon-bkg">
-																						<fa-icon [icon]="['fas', 'check']"></fa-icon>
-																					</div>
-																				</div>
-																			</div>
-																			<div class="col-7">
-																				<div class="title"
-																				 [ngClass]="[!item.status?'good':'bad']">
-																					{{item.title}}
-																				</div>
-																				<div class="description row">{{item.description}}</div>
-																			</div>
-																			<div class="col-3 text-right">
-																				<a routerLink="/{{item.path}}">
-																						<div class="detail"
-																						[ngClass]="{'highlight':item.asLink}">
-																							{{item.detail}}
-																						</div>
-																				</a>
-																				</div>
-																			
-																			<div class="col-1">
-																				<div class="arrow">
-																					<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-
+						<div class="vtr-page-shift-up">
+							<div class="vtr-device-information">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col">
+											<div class="family">{{family}}</div>
 										</div>
+									</div>
+									<div class="row">
+										<div class="device-sub-header">Serial: {{serial}}</div>
+										<div class="sub-header-separator">
+											<fa-icon [icon]="['fas', 'minus']"></fa-icon>
+										</div>
+										<div class="device-sub-header">Product number: {{productNumber}}</div>
+										<div class="sub-header-separator">
+											<fa-icon [icon]="['fas', 'minus']"></fa-icon>
+										</div>
+										<div class="device-sub-header">Bios version: {{bios}}</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<div class="subheader">{{subtitle}}</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<ul class="status-list">
+												<li *ngFor="let item of dummyDeviceInformation"
+												 [ngClass]="[!item.status?'good':'bad']">
+													<div class="container-fluid">
+														<div class="row">
+															<div class="col-1">
+																<div class="status-icon">
+																	<div class="icon-bkg">
+																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
+																	</div>
+																</div>
+															</div>
+															<div class="col-7">
+																<div class="title"
+																 [ngClass]="[!item.status?'good':'bad']">
+																	{{item.title}}
+																</div>
+																<div class="description row">{{item.description}}</div>
+															</div>
+															<div class="col-3 text-right">
+																<a routerLink="/{{item.path}}">
+																	<div class="detail"
+																	 [ngClass]="{'highlight':item.asLink}">
+																		{{item.detail}}
+																	</div>
+																</a>
+															</div>
+
+															<div class="col-1">
+																<div class="arrow">
+																	<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+							</div>
 						</div>
 					</div>
 					<div class="col col-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
-								<!-- <div class="vtr-card-antivirus">
-								<div class="container-fluid">
-									<div class="row">
-										
-										<vtr-container-card [type]="'4x4'" [title]="'Test'"
-											[caption]="'testcaption'" [img] = "virusImage"></vtr-container-card>
-										
+							<div class="container-fluid">
+								<div class="row mb-40">
+									<div class="col col-12">
+										<vtr-container-card [img]="'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg'"
+										 [title]="'Try out McAfee anti-virus software for 6 months'"
+										 [logoText]="'LENEVO SPECIAL'"
+										 [readMore]="'http://www.google.com'"
+										 [type]="'article'"
+										 [ratioX]="4"
+										 [ratioY]="4">
+										</vtr-container-card>
 									</div>
 								</div>
-								</div> -->
-								<div class="container-fluid">
-								<div class="row">
-										<div class="col col-12">
-											<vtr-container-card [img]="'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg'"
-											 [title]="'Try out McAfee anti-virus software for 6 months'"
-											 [logoText]="'LENEVO SPECIAL'"
-											 [readMore]="'http://www.google.com'"
-											 [type]="'article'"
-											 [ratioX]="4"
-											 [ratioY]="4">
-											</vtr-container-card>
-										</div>
-							</div>
-						
+
 								<div class="row">
 									<div class="col col-12 aritcle-card">
-											<vtr-container-card [img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
-											[title]="'Ideas on how to handle all your passwords online'"
-											[readMore]="'http://www.google.com'"
-											[type]="'partnerarticle'"
-											[ratioX]="4"
-											[ratioY]="2.5">
-										   </vtr-container-card>
-										</div>
+										<vtr-container-card [img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
+										 [title]="'Ideas on how to handle all your passwords online'"
+										 [readMore]="'http://www.google.com'"
+										 [type]="'partnerarticle'"
+										 [ratioX]="4"
+										 [ratioY]="2.5">
+										</vtr-container-card>
+									</div>
+								</div>
 							</div>
 						</div>
-						</div>
 					</div>
-					
+
 				</div>
 			</div>
 		</div>

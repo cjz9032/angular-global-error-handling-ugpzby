@@ -63,22 +63,13 @@
 		
 	}
 	&.card-partnerarticle {
-		// .image {
-		// 	height: 100%;
-		// 	background-size: cover;
-		// 	background-position: 50% 50%;
-		// 	background-repeat: no-repeat;
-		// }
 		.content {
 			padding: 3rem 4rem;
-			// height: 40%;
 			.title {
 				font-weight: $weight_light;
-				color: #fff;
-				font-family: Rubik;
-				font-size: 34px;
-				font-weight: 300;
-				line-height: 46px;
+				color: $light;
+				font-size: 3.4rem;
+				line-height: 4.6rem;
 			}
 			.read-more {
 				position: absolute;
@@ -97,14 +88,9 @@
 					}
 					.link-label {
 						padding-bottom: .2rem;
-						//border-bottom: .2rem solid $main;
-							opacity: 0.58;
-							color: #FFFFFF;
-							font-family: Rubik;
-							font-size: 11px;
-							font-weight: 500;
-							letter-spacing: 0.7px;
-							line-height: 13px;
+							color: $shade_light;
+							font-size: 1.1rem;
+							font-weight: $weight_bold;
 							text-transform: uppercase;
 							padding-top:1rem;
 					}

@@ -24,7 +24,6 @@
 	</div>
 </div>
 
-
 <div class="container-card card-{{type}}"
  *ngIf="type === 'highlight'"
  [style.background-image]="'url('+img+')'"
@@ -40,8 +39,6 @@
 		</div>
 	</div>
 </div>
-
-
 
 <div class="container-card card-{{type}}"
  *ngIf="type === 'article'"
@@ -90,19 +87,18 @@
 					<span class="logo-text">{{logoText}}</span>
 				</div>
 				<div class="row">
-						<div class="col col-12 content">
-							<div *ngIf="title"
-							 class="title">{{title}}</div>
-							<div *ngIf="readMore"
-							 class="read-more">
-								<a href="{{readMore}}">
-									<span class="link-label">Partner Article</span>
-								</a>
-							</div>
+					<div class="col col-12 content">
+						<div *ngIf="title"
+						 class="title">{{title}}</div>
+						<div *ngIf="readMore"
+						 class="read-more">
+							<a href="{{readMore}}">
+								<span class="link-label">Partner Article</span>
+							</a>
 						</div>
 					</div>
+				</div>
 			</div>
-			
 		</div>
 	</div>
 </div>
