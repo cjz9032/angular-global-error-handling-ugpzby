@@ -69,6 +69,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switch-onoff.component';
+import { UiSwitchTristateComponent } from './components/ui/ui-switch-tristate/ui-switch-tristate.component';
 library.add(fas);
 library.add(fab);
 
@@ -107,7 +108,8 @@ library.add(fab);
 		SubpageDeviceSettingsDisplayComponent,
 		PageQuestionsComponent,
 		ModalWelcomeComponent,
-		UiSwitchOnoffComponent
+		UiSwitchOnoffComponent,
+		UiSwitchTristateComponent
 
 	],
 	imports: [
