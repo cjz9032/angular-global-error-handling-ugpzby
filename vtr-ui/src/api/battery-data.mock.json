@@ -1,0 +1,60 @@
+[
+	{
+		"batteryGaugeDetail": {
+			"heading": "Build In Battery Gauge Reset",
+			"pillText": "Phase 1",
+			"barCode": "033-8039-0010-82F",
+			"status": "1 of 3:full charge",
+			"remaining": 100,
+			"logDateTime": "2/26/2014 6:05:09 PM",
+			"lastRunStatus": "Failed. Cancelled by user"
+		},
+		"heading": "Primary Battery",
+		"chargeStatus": "Discharging",
+		"remainingPercent": 90,
+		"remainingTime": "5 hours 40 minutes",
+		"remainingCapacity": 45.58,
+		"fullChargeCapacity": 46.76,
+		"voltage": 12.61,
+		"wattage": 11.23,
+		"temperature": 30,
+		"cycleCount": 191,
+		"manufacturer": "Sanyo",
+		"manufactureDate": "5/3/2015",
+		"firstUseDate": "5/3/2016",
+		"barCode": "AX456987SS",
+		"deviceChemistry": "Li-Polymer",
+		"designCapacity": 52.55,
+		"designVoltage": 11.4,
+		"firmwareVersion": "033-8039-0010-82F"
+	},
+	{
+		"batteryGaugeDetail": {
+			"heading": "Build In Battery Gauge Reset",
+			"pillText": "Phase 2",
+			"barCode": "033-8039-0010-82F",
+			"status": "1 of 3:full charge",
+			"remaining": 100,
+			"logDateTime": "2/26/2016 9:09:09 PM",
+			"lastRunStatus": "Failed. Cancelled by user"
+		},
+		"heading": "Secondary Battery",
+		"chargeStatus": "Discharging",
+		"remainingPercent": 90,
+		"remainingTime": "5 hours 40 minutes",
+		"remainingCapacity": 45.58,
+		"fullChargeCapacity": 46.76,
+		"voltage": 12.61,
+		"wattage": 11.23,
+		"temperature": 30,
+		"cycleCount": 191,
+		"manufacturer": "Sanyo",
+		"manufactureDate": "5/3/2015",
+		"firstUseDate": "5/3/2016",
+		"barCode": "AX456987SS",
+		"deviceChemistry": "Li-Polymer",
+		"designCapacity": 52.55,
+		"designVoltage": 11.4,
+		"firmwareVersion": "033-8039-0010-82F"
+	}
+]
