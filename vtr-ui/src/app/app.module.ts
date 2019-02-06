@@ -47,7 +47,7 @@ import { WidgetDeviceComponent } from './components/widgets/widget-device/widget
 import { WidgetSecurityComponent } from './components/widgets/widget-security/widget-security.component';
 import { WidgetQuestionsComponent } from './components/widgets/widget-questions/widget-questions.component';
 import { WidgetCarouselComponent } from './components/widgets/widget-carousel/widget-carousel.component';
-import { WidgetQuicksettingsComponent } from './components/widgets/widget-quicksettings/widget-quicksettings.component'
+import { WidgetQuicksettingsComponent } from './components/widgets/widget-quicksettings/widget-quicksettings.component';
 import { WidgetStatusComponent } from './components/widgets/widget-status/widget-status.component';
 
 // APPLICATION MODALS
@@ -69,6 +69,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switch-onoff.component';
+import { BatteryChargeThresholdSettingsComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/children/battery-charge-threshold-settings/battery-charge-threshold-settings.component';
 library.add(fas);
 library.add(fab);
 
@@ -107,7 +108,8 @@ library.add(fab);
 		SubpageDeviceSettingsDisplayComponent,
 		PageQuestionsComponent,
 		ModalWelcomeComponent,
-		UiSwitchOnoffComponent
+		UiSwitchOnoffComponent,
+		BatteryChargeThresholdSettingsComponent,
 
 	],
 	imports: [
