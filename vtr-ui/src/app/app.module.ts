@@ -68,11 +68,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-<<<<<<< HEAD
+
 import { ContainerCollapsibleComponent } from './components/container-collapsible/container-collapsible.component';
-=======
 import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switch-onoff.component';
->>>>>>> e5972126ee6abbf772ecb468d0932901f168f8c5
 library.add(fas);
 library.add(fab);
 
