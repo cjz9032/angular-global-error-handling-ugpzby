@@ -24,7 +24,6 @@
 	</div>
 </div>
 
-
 <div class="container-card card-{{type}}"
  *ngIf="type === 'highlight'"
  [style.background-image]="'url('+img+')'"
@@ -40,8 +39,6 @@
 		</div>
 	</div>
 </div>
-
-
 
 <div class="container-card card-{{type}}"
  *ngIf="type === 'article'"
@@ -68,6 +65,37 @@
 							<span class="link-label">Read More</span>
 							<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-card card-{{type}}"
+ *ngIf="type === 'partnerarticle'"
+ [style.height.px]="containerHeight">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col col-12 image"
+			 [style.background-image]="'url('+img+')'">
+				<div *ngIf="logo || logoText"
+				 class="logo">
+					<span class="logo-img">
+						<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
+					</span>
+					<span class="logo-text">{{logoText}}</span>
+				</div>
+				<div class="row">
+					<div class="col col-12 content">
+						<div *ngIf="title"
+						 class="title">{{title}}</div>
+						<div *ngIf="readMore"
+						 class="read-more">
+							<a href="{{readMore}}">
+								<span class="link-label">Partner Article</span>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
