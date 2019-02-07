@@ -1,0 +1,80 @@
+@import '../../../app.theme.scss';
+
+.vtr-battery-charge-threshold-settings {
+
+	.threshold-for-built-in-battery {
+		color: #34495E;
+		font-size: 0.875rem;
+		font-weight: $weight_bold;
+		letter-spacing: 0.055625rem;
+		line-height: 1.4375rem;
+		text-transform: uppercase;
+		margin:0.5rem;
+	}
+	.select-box {
+		border: 0.0625rem solid #E0E0E0;
+		border-radius: 0.3125rem;
+		background-color: #FFFFFF;
+		box-shadow: 0 0 10.3125rem 0 rgba(0, 0, 0, 0.15);
+		padding: 0.25rem;
+		position: relative;
+    margin:0.5rem;
+	}
+  .label {
+    color: rgba(66, 78, 123, 0.4);
+    font-size: 0.6875rem;
+    font-weight: $weight_medium;
+    line-height: 0.8125rem;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    padding: 0.25rem;
+  }
+
+  .custom-select {
+    border: none;
+    color: #34495E;
+    font-size: 1rem;
+    font-weight: $weight_light;
+    line-height: 1.1875rem;
+  }
+
+	.row-seperator {
+		height: 0.0625rem;
+		background-color: #ECF0F1;
+		margin:1rem;
+	}
+	.checkbox {
+		height: 1.25rem;
+		width: 1.25rem;
+		border: 0.0625rem solid #E6EAEB;
+	}
+
+	.custom-control-label {
+		height: 1.25rem;
+		color: #667481;
+		font-size: 0.875rem;
+		font-weight: $weight_light;
+		line-height: 1.25rem;
+		 margin:0.5rem;
+	}
+
+	.note-box {
+		border: 0.0625rem solid #ECF0F1;
+		border-radius: 0.25rem;
+		background-color: #F5F7F8;
+		box-shadow: 0 0 1.25rem 0 rgba(0,0,0,0.2);
+		margin:0.5rem;
+
+		.note {
+			color: #E74C3C;
+			font-family: Rubik;
+			font-size: 0.875rem;
+			font-weight: $weight_light;
+			line-height: 1.4375rem;
+			margin:0.5rem;
+			padding:0.5rem;
+		}
+	}
+
+
+}
