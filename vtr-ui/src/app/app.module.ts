@@ -70,6 +70,9 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switch-onoff.component';
 import { BatteryChargeThresholdSettingsComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/children/battery-charge-threshold-settings/battery-charge-threshold-settings.component';
+import { BatteryDetailComponent } from './components/battery/battery-detail/battery-detail.component';
+
+
 library.add(fas);
 library.add(fab);
 
@@ -110,7 +113,7 @@ library.add(fab);
 		ModalWelcomeComponent,
 		UiSwitchOnoffComponent,
 		BatteryChargeThresholdSettingsComponent,
-
+		BatteryDetailComponent,
 	],
 	imports: [
 		BrowserModule,
