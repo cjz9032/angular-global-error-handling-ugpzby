@@ -19,7 +19,7 @@
 		//width: 21.875rem;
 		color: $dark_blue_02;
 		font-size: 0.6875rem;
-		font-weight: 500;
+		font-weight: $weight_medium;
 		letter-spacing: 0.04375rem;
 		line-height: 0.8125rem;
 		margin: 2.5rem;
@@ -39,7 +39,7 @@
 	border: none;
 	color: white;
 	font-size: 0.9375rem;
-	font-weight: 500;
+	font-weight: $weight_medium;
 	letter-spacing: 0.0625rem;
 	line-height: 1.125rem;
 	text-align: center;
@@ -53,10 +53,7 @@
 	padding-top: 1.0625rem;
 	padding-bottom: 1.125rem;
 }
-
 }
-
-
 }
 
 
