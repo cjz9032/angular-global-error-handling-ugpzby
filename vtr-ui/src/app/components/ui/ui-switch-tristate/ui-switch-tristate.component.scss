@@ -1,4 +1,5 @@
-  /* height */
+@import "../../../app.theme";
+ /* height */
 $h: 2.6rem;
 /* width */
 $w: $h * 4;
@@ -15,7 +16,7 @@ $ta: 6s;
 /* label text color */
 $text-color: white;
 /* colors: si, ?, no*/
-$colors: #008000, #ff6c00, #ff0000;
+$colors: $go, $main_light, $alt;
 
 @mixin borderColor($i) {
   border: $bt solid nth($colors, $i);
@@ -83,7 +84,7 @@ $colors: #008000, #ff6c00, #ff0000;
   }
 }
 #yes_radio:checked {
-  background: red;
+  background: $alt;
   
   ~ .toggle {
     @include borderColor(1);
@@ -91,7 +92,7 @@ $colors: #008000, #ff6c00, #ff0000;
   }
 }
 #no_radio:checked {
-  background: red;
+  background: $alt;
   ~ .toggle {
     @include borderColor(3);
     left: $w * 2 / 3 - ($tw - $h) / 2;
