@@ -1,23 +1,23 @@
 <div class="wrapper">
 	<label for="no_radio"
 	 id="no-lbl">{{offLabel}}</label>
-	<input type="radio"
-	 value="{{offValue}}"
-	 (change)="onChange($event)"
+	<input #off type="radio"
+	 [value]="offValue"
+	 (change)="onChange(off.value)"
 	 name="choice_radio"
 	 id="no_radio"
 	 checked="checked">
 	<label for="maybe_radio"
-	 id="maybe-lbl">{{autoLabel}}</label><input type="radio"
-	 value="{{autoValue}}"
+	 id="maybe-lbl">{{autoLabel}}</label><input #auto type="radio"
+	 [value]="autoValue"
 	 name="choice_radio"
-	 (change)="onChange($event)"
+	 (change)="onChange(auto.value)"
 	 id="maybe_radio">
 	<label for="yes_radio"
-	 id="yes-lbl">{{onLabel}}</label><input type="radio"
-	 value="{{onValue}}"
+	 id="yes-lbl">{{onLabel}}</label><input #on type="radio"
+	 [value]="onValue"
 	 name="choice_radio"
-	 (change)="onChange($event)"
+	 (change)="onChange(on.value)"
 	 id="yes_radio">
 	<div class="toggle"></div>
 </div>
