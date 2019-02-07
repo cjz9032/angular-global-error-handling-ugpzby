@@ -5,6 +5,11 @@ import { ContainerService } from './services/container/container.service';
 import { DevService } from './services/dev/dev.service';
 import { DisplayService } from './services/display/display.service';
 import { environment } from '../environments/environment';
+
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {ModalWelcomeComponent} from "./components/modal/modal-welcome/modal-welcome.component";
+
+
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
@@ -15,13 +20,22 @@ export class AppComponent implements OnInit {
 	env = environment;
 	title = 'vtr-ui';
 
-	constructor(
-		private route: ActivatedRoute,
-		private userService: UserService,
-		private containerService: ContainerService,
-		private devService: DevService,
-		private displayService: DisplayService
-	) { }
+  constructor(
+    private route: ActivatedRoute,
+    private userService: UserService,
+    private containerService: ContainerService,
+    private devService: DevService,
+    private displayService: DisplayService,
+    private modalService: NgbModal
+  ) {
+
+    /*this.modalService.open(ModalWelcomeComponent, {
+      backdrop: 'static',
+      size: 'lg',
+      centered: true,
+      windowClass: 'modal-body'
+    });*/
+  }
 
 	ngOnInit() {
 		this.devService.writeLog('APP INIT', window.location.href);

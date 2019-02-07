@@ -1,8 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { DevService } from '../dev/dev.service';
 
 @Injectable()
 export class DisplayService {
+
+	@Output() windowResize: EventEmitter<any> = new EventEmitter();
 
 	loading = 0;
 	windowWidth = 0;
@@ -32,6 +34,7 @@ export class DisplayService {
 	calcSize(service) {
 		service.windowWidth = window.outerWidth;
 		service.windowHeight = window.outerHeight;
+		this.windowResize.emit();
 		this.devService.writeLog('CALC SIZE', service.windowWidth, service.windowHeight);
 	}
 
@@ -39,6 +42,10 @@ export class DisplayService {
 		const delay = setTimeout(function () {
 			window.dispatchEvent(new Event('resize'));
 		}, 100);
+	}
+
+	windowResizeListener() {
+		return this.windowResize;
 	}
 
 }

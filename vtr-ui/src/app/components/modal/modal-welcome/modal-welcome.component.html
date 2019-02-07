@@ -1,0 +1,161 @@
+
+<div class="modal-body vtr-modal-welcome" [ngSwitch]="page">
+  <div *ngSwitchCase="1">
+    <div class="mask-leftside">
+      <div class="parent">
+        <div class="child img-container-1">
+
+        </div>
+      </div>
+      <div class="parent">
+        <div class="child">
+          <span class="title">{{data.page1.title}}</span>
+        </div>
+
+      </div>
+      <div class="parent margin-bottom-25">
+        <div class="child">
+        <span class="subtitle">
+      {{data.page1.subtitle}}
+        </span>
+        </div>
+      </div>
+      <div class="parent margin-bottom-50">
+        <div class="child">
+          <button type="button" class="btn btn-primary btn-lg btn-radius button-label" (click)="page=2">
+            Start personalizing
+          </button>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="at-steps-step-1">
+        <ul>
+          <li class="active"><span class="text">1</span></li>
+          <li></li>
+          <li></li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div *ngSwitchCase="2">
+    <div class="mask-leftside">
+      <div class="parent">
+        <div class="child img-container-2"></div>
+      </div>
+      <div class="parent">
+        <div class="child"><span class="title">{{data.page2.title}}</span></div>
+      </div>
+
+      <div class="parent margin-bottom-25">
+        <div class="child">
+          <span class="subtitle">{{data.page2.subtitle}}</span>
+        </div>
+      </div>
+
+      <div class="parent margin-bottom-50">
+        <div class="child">
+          <input type="radio" name="radio" id="radio1" value="business" [(ngModel)]="data.page2.radioValue"/>
+          <label for="radio1" class="radio-label">BUSINESS</label>
+          <input type="radio" name="radio" id="radio2" value="personal" [(ngModel)]="data.page2.radioValue"/>
+          <label for="radio2" class="radio-label">PERSONAL</label>
+          <input type="radio" name="radio" id="radio3" value="custom" [(ngModel)]="data.page2.radioValue"/>
+          <label for="radio3" class="radio-label">CUSTOM</label>
+        </div>
+      </div>
+      <div class="line margin-per-4-bottom"></div>
+      <div class="at-steps-step-1">
+        <ul>
+
+          <li class="green-background checked"></li>
+          <li class="active"><span class="text">2</span></li>
+          <li></li>
+
+        </ul>
+        <div class="skip-button">
+          <button type="button" class="btn btn-primary btn-radius btn-margin btn-lg button-label" (click)="page=3">
+            {{data.page2.radioValue?'Next':'Skip'}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngSwitchCase="3">
+    <div class="mask-leftside">
+      <div class="parent">
+        <div class="img-container-3 child"></div>
+      </div>
+      <div class="parent">
+        <div class="child"><span class="title">{{data.page3.title}}</span></div>
+      </div>
+
+      <div class="parent margin-bottom-25">
+        <div class="child">
+          <span class="subtitle">{{data.page3.subtitle}}</span>
+        </div>
+      </div>
+
+      <div class="parent btn-container">
+        <div class="child  margin-bottom-px-25">
+          <div class="inline-block">
+            <input type="checkbox" id="checkbox1"/>
+            <label for="checkbox1" class="btn btn-gray btn-radius btn-margin btn-lg">GAMES</label>
+          </div>
+          <div class="inline-block">
+            <input type="checkbox" id="checkbox2"/>
+            <label for="checkbox2" class="btn btn-gray btn-radius btn-margin btn-lg">NEWS</label>
+          </div>
+          <div class="inline-block">
+            <input type="checkbox" id="checkbox3"/>
+            <label for="checkbox3" class="btn btn-gray btn-radius btn-margin btn-lg">ENTERTAINMENT</label>
+          </div>
+          <div class="inline-block">
+            <input type="checkbox" id="checkbox4"/>
+            <label for="checkbox4" class="btn btn-gray btn-radius btn-margin btn-lg">ARTS</label>
+          </div>
+
+        </div>
+        <div class="child  margin-bottom-px-25">
+          <input type="checkbox" id="checkbox5"/>
+          <label for="checkbox5" class="btn btn-gray btn-radius btn-margin btn-lg">TECHNOLOGY</label>
+          <input type="checkbox" id="checkbox6"/>
+          <label for="checkbox6" class="btn btn-gray btn-radius btn-margin btn-lg">POLITICS</label>
+          <input type="checkbox" id="checkbox7"/>
+          <label for="checkbox7" class="btn btn-gray btn-radius btn-margin btn-lg">SPORTS</label>
+
+        </div>
+        <div class="child margin-bottom-px-25">
+          <input type="checkbox" id="checkbox8"/>
+          <label for="checkbox8" class="btn btn-gray btn-radius btn-margin btn-lg">REGIONAL NEWS</label>
+          <input type="checkbox" id="checkbox9"/>
+          <label for="checkbox9" class="btn btn-gray btn-radius btn-margin btn-lg">TECHNOLOG</label>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="at-steps-step-1">
+        <ul>
+
+          <li class="checked green-background"></li>
+
+          <li class="checked green-background"></li>
+          <li class="active"><span class="text">3</span></li>
+
+        </ul>
+        <div class="skip-button">
+          <button type="button" class="btn btn-primary btn-radius btn-margin btn-lg button-label"
+                  (click)="activeModal.close()">Next
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="btn-close">
+    <button type="button" class="close" aria-hidden="true" (click)="activeModal.dismiss()">
+      &times;
+    </button>
+  </div>
+
+
+</div>
