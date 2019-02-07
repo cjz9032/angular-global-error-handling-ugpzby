@@ -11,6 +11,7 @@ export class WidgetFeedbackComponent implements OnInit {
 	@Input() description: string = this.description || '';
 	@Input() actionName: string = this.actionName || '';
 	@Input() action: string = this.action || '';
+	@Input() isWideScreenResolution: boolean = this.isWideScreenResolution || false;
 
 
 	constructor() { }
