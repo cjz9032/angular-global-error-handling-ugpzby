@@ -18,25 +18,28 @@
 		box-shadow: 0 0 10.3125rem 0 rgba(0, 0, 0, 0.15);
 		padding: 0.25rem;
 		position: relative;
-    margin:0.5rem;
-	}
-  .label {
-    color: rgba(66, 78, 123, 0.4);
-    font-size: 0.6875rem;
-    font-weight: $weight_medium;
-    line-height: 0.8125rem;
-    text-transform: uppercase;
-    margin-top: 0.5rem;
-    padding: 0.25rem;
-  }
+		margin:0.5rem;
 
-  .custom-select {
-    border: none;
-    color: #34495E;
-    font-size: 1rem;
-    font-weight: $weight_light;
-    line-height: 1.1875rem;
-  }
+		.label {
+			color: rgba(66, 78, 123, 0.4);
+			font-size: 0.6875rem;
+			font-weight: $weight_medium;
+			line-height: 0.8125rem;
+			text-transform: uppercase;
+			margin-top: 0.5rem;
+			padding: 0.25rem;
+		  }
+
+		  .custom-select {
+			border: none;
+			color: #34495E;
+			font-size: 1rem;
+			font-weight: $weight_light;
+			line-height: 1.1875rem;
+		  }
+
+	}
+
 
 	.row-seperator {
 		height: 0.0625rem;

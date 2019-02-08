@@ -12,7 +12,7 @@ export class PageDashboardComponent implements OnInit {
 	forwardLink = {
 		path: 'dashboard-customize',
 		label: 'Customize Dashboard'
-	}
+	};
 
 
 
@@ -85,36 +85,36 @@ export class PageDashboardComponent implements OnInit {
 
 
 	data: any = [{
-		"albumId": 1,
-		"id": 1,
-		"source": "Vantage Exclusive",
-		"title": "Accusamus Beatae ad Facilis ci Similique Qui Sunt",
-		"url": "assets/images/banner1.jpeg",
-		"thumbnailUrl": "https://via.placeholder.com/150/92c952"
+		'albumId': 1,
+		'id': 1,
+		'source': 'Vantage Exclusive',
+		'title': 'Accusamus Beatae ad Facilis ci Similique Qui Sunt',
+		'url': 'assets/images/banner1.jpeg',
+		'thumbnailUrl': 'https://via.placeholder.com/150/92c952'
 	},
 	{
-		"albumId": 1,
-		"id": 2,
-		"source": "Vantage Exclusive",
-		"title": "Reprehenderit est Deserunt Velit Ipsam",
-		"url": "assets/images/banner2.jpeg",
-		"thumbnailUrl": "https://via.placeholder.com/150/771796"
+		'albumId': 1,
+		'id': 2,
+		'source': 'Vantage Exclusive',
+		'title': 'Reprehenderit est Deserunt Velit Ipsam',
+		'url': 'assets/images/banner2.jpeg',
+		'thumbnailUrl': 'https://via.placeholder.com/150/771796'
 	},
 	{
-		"albumId": 1,
-		"id": 3,
-		"source": "Vantage Exclusive",
-		"title": "Officia Porro Iure quia Iusto qui Ipsa ut Modi",
-		"url": "assets/images/banner1.jpeg",
-		"thumbnailUrl": "https://via.placeholder.com/150/24f355"
+		'albumId': 1,
+		'id': 3,
+		'source': 'Vantage Exclusive',
+		'title': 'Officia Porro Iure quia Iusto qui Ipsa ut Modi',
+		'url': 'assets/images/banner1.jpeg',
+		'thumbnailUrl': 'https://via.placeholder.com/150/24f355'
 	},
 	{
-		"albumId": 1,
-		"id": 4,
-		"source": "Vantage Exclusive",
-		"title": "Culpa Odio esse Rerum Omnis Laboriosam Voluptate Repudiandae",
-		"url": "assets/images/banner2.jpeg",
-		"thumbnailUrl": "https://via.placeholder.com/150/d32776"
+		'albumId': 1,
+		'id': 4,
+		'source': 'Vantage Exclusive',
+		'title': 'Culpa Odio esse Rerum Omnis Laboriosam Voluptate Repudiandae',
+		'url': 'assets/images/banner2.jpeg',
+		'thumbnailUrl': 'https://via.placeholder.com/150/d32776'
 	}];
 
 	qAndA = {
@@ -128,7 +128,7 @@ export class PageDashboardComponent implements OnInit {
 			{ icon: 'fa-envira', question: 'Can I use my Ideapad while in an airplane?' },
 			{ icon: 'fa-chrome', question: 'Will the security control scanner damage' }
 		]
-	}
+	};
 	constructor(
 		public dashboardService: DashboardService
 	) {
