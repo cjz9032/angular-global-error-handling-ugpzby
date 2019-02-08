@@ -1,4 +1,5 @@
 <div class="vtr-battery-charge-threshold-settings">
+	<form #batterySettingsForm="ngForm" name="batterySettingsForm+type">
 	<div class="container-fluid">
 		<div class="row"
 			*ngIf="title && displayNoteOnly === false">
@@ -13,12 +14,11 @@
 			<div class="col">
 				<div class="select-box">
 					<div class="label">Start charging when below</div>
-					<select class="form-control"
+					<select class="form-control" [id]="minChargeInput+type"
 						name="minCharge"
 						[disabled]="isCheckedAuto ? true:false"
 						required
 						[(ngModel)]="selMinCharge"
-						name="minCharge"
 						#minCharge="ngModel"
 						(ngModelChange)="onMaxChargeChange($event)">
 						<option *ngFor="let charge of minChargeOptions"
@@ -33,11 +33,10 @@
 			<div class="col">
 				<div class="select-box">
 					<div class="label">Stop charging at</div>
-					<select class="form-control"
+					<select class="form-control" [id]="maxChargeInput+type"
 						name="maxCharge"
 						required
 						[(ngModel)]="selMaxCharge"
-						name="selMaxCharge"
 						#maxCharge="ngModel"
 						(ngModelChange)="onMaxChargeChange($event)">
 
@@ -54,15 +53,15 @@
 		<div class="row"  *ngIf="displayNoteOnly === false">
 			<div class="col">
 				<div class="custom-control custom-checkbox">
-					<input type="checkbox"
-						name="active"
+					<input type="checkbox" [id]="isCheckedAutoInput+type"
+						name="isCheckedAuto"
 						class="custom-control-input"
 						[(ngModel)]="isCheckedAuto"
 						(ngModelChange)='toggleAutoSettings($event)'
-						id='isCheckedAutoId'>
+						>
 
 					<label class="custom-control-label"
-						for="isCheckedAutoId">Automatically set to start "charging at %" to 5% below the "stop chargint
+						[for]="isCheckedAutoInput+type">Automatically set to start "charging at %" to 5% below the "stop chargint
 						at
 						%"</label>
 				</div>
@@ -87,5 +86,5 @@
 			</div>
 		</div>
 	</div>
-
+</form>
 </div>

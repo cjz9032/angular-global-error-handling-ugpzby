@@ -20,6 +20,10 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	maxChargeOptions = this.chargeOptions.slice(1, this.chargeOptions.length);
 
 
+	minChargeInput = 'minCharge';
+	maxChargeInput = 'minCharge';
+	isCheckedAutoInput = 'isCheckedAuto';
+
 	constructor() { }
 
 	ngOnInit() {
