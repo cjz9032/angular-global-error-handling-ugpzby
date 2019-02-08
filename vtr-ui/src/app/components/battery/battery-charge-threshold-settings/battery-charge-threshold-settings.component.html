@@ -1,7 +1,7 @@
 <div class="vtr-battery-charge-threshold-settings">
 	<div class="container-fluid">
 		<div class="row"
-			*ngIf="title">
+			*ngIf="title && displayNoteOnly === false">
 			<div class="col">
 				<div class="threshold-for-built-in-battery">
 					{{ title }}
@@ -9,9 +9,8 @@
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row" *ngIf="displayNoteOnly === false">
 			<div class="col">
-
 				<div class="select-box">
 					<div class="label">Start charging when below</div>
 					<select class="form-control"
@@ -52,7 +51,7 @@
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row"  *ngIf="displayNoteOnly === false">
 			<div class="col">
 				<div class="custom-control custom-checkbox">
 					<input type="checkbox"
@@ -70,13 +69,13 @@
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row" *ngIf="displayNoteOnly === false">
 			<div class="col">
 				<div class="row-seperator">&nbsp;</div>
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row" *ngIf="displayNoteOnly !== false">
 			<div class="col">
 				<div class="note-box">
 					<div class="note">
