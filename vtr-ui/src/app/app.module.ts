@@ -47,7 +47,7 @@ import { WidgetDeviceComponent } from './components/widgets/widget-device/widget
 import { WidgetSecurityComponent } from './components/widgets/widget-security/widget-security.component';
 import { WidgetQuestionsComponent } from './components/widgets/widget-questions/widget-questions.component';
 import { WidgetCarouselComponent } from './components/widgets/widget-carousel/widget-carousel.component';
-import { WidgetQuicksettingsComponent } from './components/widgets/widget-quicksettings/widget-quicksettings.component'
+import { WidgetQuicksettingsComponent } from './components/widgets/widget-quicksettings/widget-quicksettings.component';
 import { WidgetStatusComponent } from './components/widgets/widget-status/widget-status.component';
 
 // APPLICATION MODALS
@@ -70,12 +70,11 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switch-onoff.component';
 import { BatteryDetailComponent } from './components/battery/battery-detail/battery-detail.component';
-
+import { BatteryCardComponent } from './components/battery/battery-card/battery-card.component';
+import { BatteryIndicatorComponent } from './components/battery/battery-indicator/battery-indicator.component';
 
 library.add(fas);
 library.add(fab);
-
-
 
 @NgModule({
 	declarations: [
@@ -112,6 +111,8 @@ library.add(fab);
 		ModalWelcomeComponent,
 		UiSwitchOnoffComponent,
 		BatteryDetailComponent,
+		BatteryCardComponent,
+		BatteryIndicatorComponent
 	],
 	imports: [
 		BrowserModule,
@@ -137,4 +138,4 @@ library.add(fab);
 	bootstrap: [AppComponent],
 	entryComponents: [ModalWelcomeComponent]
 })
-export class AppModule { }
+export class AppModule {}

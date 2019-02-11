@@ -1,8 +1,10 @@
 <div class="vtr-page-device-settings vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main [title]="title"
-			 [menuItems]="menuItems"></vtr-header-main>
+			<vtr-header-main
+				[title]="title"
+				[menuItems]="menuItems"
+			></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -13,7 +15,15 @@
 						<router-outlet></router-outlet>
 					</div>
 					<div class="col col-4 vtr-page-right-column">
-						Right Column Content Here...
+						<div class="vtr-page-shift-up">
+							<div class="container-fluid">
+								<div class="row mb-40">
+									<div class="col col-12">
+										<vtr-battery-card> </vtr-battery-card>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

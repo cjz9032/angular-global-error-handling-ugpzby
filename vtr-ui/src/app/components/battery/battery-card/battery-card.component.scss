@@ -1,0 +1,48 @@
+$header_title: #34495e;
+$font_family: Rubik;
+
+.vtr-battery-card {
+	font-family: $font_family;
+	.container {
+		height: 32.1rem;
+		width: 43rem;
+		border-radius: 1rem;
+		background-color: #ffffff;
+		box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+
+		.battery-gauge-label {
+			opacity: 0.58;
+			color: $header_title;
+			font-size: 1.1rem;
+			font-weight: 500;
+			letter-spacing: 0.1rem;
+			line-height: 1.3rem;
+		}
+
+		.battery-health {
+			color: $header_title;
+			font-size: 3.5rem;
+			line-height: 4.2rem;
+		}
+
+		.battery-frame {
+			box-sizing: border-box;
+		}
+
+		.battery-image {
+			width: 35rem;
+		}
+
+		.battery-detail-button {
+			height: 5rem;
+			width: 35rem;
+			border-radius: 2.5rem;
+			background: linear-gradient(270deg, #4980fc 0%, #2e62d9 100%),
+				linear-gradient(236.79deg, rgba(255, 255, 255, 0.7) 0%, #ffffff 100%);
+			color: #ffffff;
+			font-size: 1.5rem;
+			font-weight: 500;
+			letter-spacing: 0.1rem;
+		}
+	}
+}
