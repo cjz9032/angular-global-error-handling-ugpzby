@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 	selector: 'vtr-battery-card',
@@ -6,7 +7,23 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./battery-card.component.scss']
 })
 export class BatteryCardComponent implements OnInit {
-	constructor() {}
+	constructor(private modalService: NgbModal) {}
 
 	ngOnInit() {}
+
+	public showDetailModal(content: any): void {
+		this.modalService
+			.open(content, {
+				size: 'lg',
+				windowClass: 'battery-modal-size'
+			})
+			.result.then(
+				result => {
+					// on open
+				},
+				reason => {
+					// on close
+				}
+			);
+	}
 }

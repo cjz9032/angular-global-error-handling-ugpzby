@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 
 @Component({
 	selector: 'vtr-battery-indicator',
@@ -9,6 +9,11 @@ export class BatteryIndicatorComponent implements OnInit {
 	@ViewChild('battery') battery: ElementRef;
 	@ViewChild('batteryShadow') batteryShadow: ElementRef;
 	@ViewChild('acidLevel') acidLevel: ElementRef;
+
+	@Input() percentage = 0;
+	@Input() remainingHour = 0;
+	@Input() remainingMinutes = 0;
+
 	constructor() {}
 
 	ngOnInit() {
@@ -45,5 +50,17 @@ export class BatteryIndicatorComponent implements OnInit {
 			'--acid-height',
 			level * this.battery.nativeElement.clientWidth + 'px'
 		);
+	}
+
+	getTimeRemaining() {
+		const hours =
+			this.remainingHour > 0 && this.remainingHour < 2 ? 'hour' : 'hours';
+		const minutes =
+			this.remainingHour > 0 && this.remainingHour < 2
+				? 'minute'
+				: 'minutes';
+		return `${this.remainingHour} ${hours} ${
+			this.remainingMinutes
+		} ${minutes}`;
 	}
 }

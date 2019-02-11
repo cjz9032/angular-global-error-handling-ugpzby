@@ -3,16 +3,16 @@
 		<div #batteryShadow class="battery-shadow"></div>
 		<div #battery class="battery">
 			<div class="acid-container">
-				<div class="acid">
-					<div #acidLevel class="fill"></div>
-					<div class="percentage text-center">
-						70
-						<span class="percentage-symbol">
-							%
-						</span>
-						<div class="remaining-time">
-							3 hours 9 minutes
-						</div>
+				<div class="white-background"></div>
+				<div class="black-background" #acidLevel></div>
+				<div class="fill"></div>
+				<div class="percentage">
+					{{ percentage }}
+					<span class="percentage-symbol">
+						%
+					</span>
+					<div class="remaining-time">
+						{{ getTimeRemaining() }}
 					</div>
 				</div>
 			</div>

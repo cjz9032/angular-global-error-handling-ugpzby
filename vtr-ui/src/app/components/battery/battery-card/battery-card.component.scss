@@ -3,6 +3,10 @@ $font_family: Rubik;
 
 .vtr-battery-card {
 	font-family: $font_family;
+	.battery-detail-modal-title {
+		color: #194a65;
+		font-size: 2.5rem;
+	}
 	.container {
 		height: 32.1rem;
 		width: 43rem;

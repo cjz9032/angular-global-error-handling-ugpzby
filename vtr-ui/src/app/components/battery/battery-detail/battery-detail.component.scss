@@ -2,6 +2,13 @@ $header_title: #34495e;
 $font_family: Rubik;
 
 .vtr-battery-detail {
+	.battery-indicator {
+		width: 35rem;
+	}
+	hr {
+		background-color: #d8d8d8;
+		border: 1px solid #f5f7f8;
+	}
 	font-family: $font_family;
 	.battery-button {
 		font-size: 1.5rem;
@@ -58,13 +65,8 @@ $font_family: Rubik;
 	}
 
 	.battery-detail-max-height {
-		max-height: 90vh;
+		max-height: 85vh;
 		overflow-x: hidden;
 		overflow-y: auto;
-	}
-
-	.battery-detail-modal-title {
-		color: #194a65;
-		font-size: 2.5rem;
 	}
 }

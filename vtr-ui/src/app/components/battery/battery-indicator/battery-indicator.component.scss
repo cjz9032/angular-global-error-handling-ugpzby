@@ -16,25 +16,6 @@
 		position: relative;
 	}
 
-	.percentage {
-		position: absolute;
-		font-size: 5rem;
-		font-weight: bold;
-		line-height: 1;
-		left: 30%;
-	}
-
-	.percentage-symbol {
-		position: relative;
-		font-size: 2rem;
-		left: -1.2rem;
-	}
-
-	.remaining-time {
-		position: relative;
-		font-size: 1.3rem;
-	}
-
 	.battery {
 		position: relative;
 		width: 90%;
@@ -86,17 +67,58 @@
 		margin: 4px;
 	}
 
-	.acid-container .acid {
-		height: 250px;
-		display: flex;
-		flex-direction: row;
+	.white-background {
+		background: white;
+		width: calc(100% - 8px);
+		z-index: 1;
+		position: absolute;
+		height: calc(100% - 8px);
 	}
 
-	.acid-container .acid .fill {
-		background: var(--acid-fill-gradient);
-		height: 100%;
+	.black-background {
+		background: black;
 		width: var(--acid-height);
+		z-index: 2;
+		position: absolute;
+		height: calc(100% - 8px);
+	}
+
+	.fill {
+		background: linear-gradient(302.26deg, #f17f14 0%, #ed4e04 100%);
+		mix-blend-mode: screen;
+		width: calc(100% - 8px);
+		z-index: 4;
+		position: absolute;
+		height: calc(100% - 8px);
+
+		display: flex;
+		flex-direction: row;
 		flex-shrink: 0;
-		transition: width 2s ease-in-out;
+	}
+
+	.percentage {
+		font-size: 6rem;
+		font-weight: bold;
+		position: absolute;
+		mix-blend-mode: difference;
+		color: white;
+		z-index: 3;
+		left: 35%;
+	}
+
+	.percentage-symbol {
+		position: relative;
+		font-size: 2rem;
+		left: -1.2rem;
+	}
+
+	.remaining-time {
+		position: relative;
+		font-size: 1.3rem;
+		mix-blend-mode: difference;
+		color: white;
+		z-index: 3;
+		font-weight: normal;
+		top: -15px;
 	}
 }
