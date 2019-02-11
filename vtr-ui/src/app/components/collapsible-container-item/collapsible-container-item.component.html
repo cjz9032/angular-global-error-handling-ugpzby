@@ -1,0 +1,58 @@
+<div class="container-fluid item-list">
+	<div>
+		<div class="row">
+			<div class="col-1 align-self-center text-center">
+				<img [src]="leftImageSource"
+				 alt="" />
+			</div>
+			<div class="col align-self-center">
+				<h3>{{ header }}</h3>
+			</div>
+			<div class="col-1"
+			 *ngIf="isSwitchVisible">
+				<vtr-ui-switch-onoff (change)="onOnOffChange($event)"></vtr-ui-switch-onoff>
+			</div>
+			<div class="col-2"
+			 *ngIf="isCheckBoxVisible">
+				<label class="form-check-label">
+					<input class="form-check-input"
+					 type="checkbox"
+					 value=""
+					 (change)="onCheckBoxChange($event)" />
+					Auto detection
+				</label>
+			</div>
+			<div class="col-1 align-self-center text-center">
+				<button type="button"
+				 class="btn btn-link"
+				 (click)="onTooltipClick($event)"></button>
+				<!-- src will be parameter, can add css class also in param for more control -->
+				<img [src]="rightImageSource"
+				 alt="" />
+			</div>
+		</div>
+
+		<div class="row"
+		 *ngIf="subHeader.length > 0">
+			<div class="col-1"></div>
+			<div class="col">
+				<span>
+					{{ subHeader }}
+				</span>
+
+			</div>
+			<div class="col-1"></div>
+			<div class="col-1"></div>
+		</div>
+		<div class="row"
+		 *ngIf="!childContent.innerHTML.trim()">
+			<div class="col-1"></div>
+			<div class="col">
+				<span>
+					<ng-content #childContent></ng-content>
+				</span>
+				<div class="col-1"></div>
+			</div>
+		</div>
+	</div>
+</div>

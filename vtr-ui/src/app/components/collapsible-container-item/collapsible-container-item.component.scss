@@ -1,0 +1,9 @@
+@import "../../app.theme";
+.item-list {
+	margin-top: 1.5rem;
+	list-style: none;
+	padding: 0;
+	background-color: $light;
+	border-bottom: 0.1rem solid $shade_dark;
+}
+ 

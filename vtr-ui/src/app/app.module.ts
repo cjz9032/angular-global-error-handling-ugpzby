@@ -70,6 +70,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switch-onoff.component';
 import { BatteryDetailComponent } from './components/battery/battery-detail/battery-detail.component';
+import { CollapsibleContainerItemComponent } from './components/collapsible-container-item/collapsible-container-item.component';
 
 
 library.add(fas);
@@ -112,6 +113,7 @@ library.add(fab);
 		ModalWelcomeComponent,
 		UiSwitchOnoffComponent,
 		BatteryDetailComponent,
+		CollapsibleContainerItemComponent,
 	],
 	imports: [
 		BrowserModule,
