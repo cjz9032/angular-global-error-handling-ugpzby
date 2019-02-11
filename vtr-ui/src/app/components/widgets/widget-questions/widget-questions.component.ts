@@ -1,4 +1,5 @@
-import {Component, OnInit,Input} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
+
 
 @Component({
 	selector: 'vtr-widget-questions',
@@ -7,16 +8,34 @@ import {Component, OnInit,Input} from '@angular/core';
 })
 export class WidgetQuestionsComponent implements OnInit {
 
-  @Input() title: string;
-  @Input() description: string;
-  @Input() data: any;
-	constructor() { }
+	@Input() title: string;
+	@Input() subtitle: string;
+	@Input() data: QAndA[];
+
+	constructor() {
+	}
+
 
 	ngOnInit() {
+		this.title = this.title || "Q&A's for your machine";
+		this.subtitle = this.subtitle || "FIND ANSWERS FOR YOUR IDEAPAD";
+		this.data = this.data || [{
+			icon: 'fa-plane',
+			text: ' Reduced batterylife working outside.',
+			route: '/support'
+		}, {icon: 'fa-plane', text: 'Can I use my Ideapad while in an airplane?', route: '/support'}, {
+			icon: 'fa-plane',
+			text: 'Will the security control scanner damage',
+			route: '/support'
+		}, {icon: 'fa-plane', text: 'Will the security control scanner damage', route: '/support'}]
 	}
 
 }
 
 
-
+interface QAndA {
+	icon: string;
+	text: string;
+	route: string;
+}
 

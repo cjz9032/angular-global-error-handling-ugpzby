@@ -1,33 +1,29 @@
 <div class="vtr-widget-questions">
-  <div class="row question-container no-gutters">
-    <div class="col-md-1">
 
-    </div>
-    <div class="col-md-10">
-      <div class="header">
-        <div class="title">
-          {{title}}
-        </div>
-        <div class="description">
-          {{description}}
-        </div>
-      </div>
-      <div class="body">
-        <div *ngFor="let item of data" class="row no-gutters body-row">
-          <div class="col-xs-2 col-sm-2 col-md-2">
-            <div class="icon center-both"><i [ngClass]="['fa',item.icon,'fa-lg']"></i></div>
-          </div>
-          <div class="col-xs-8 col-sm-8 col-md-8">
-            <div class="text center-both">{{item.question}}</div>
-          </div>
-          <div class="col-xs-2 col-sm-2 col-md-2"><a class="center-both" href="#"><i
-            class="fa fa-angle-right fa-2x"></i></a></div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-1">
+	<div class="card shadow p-5">
+		<div class="card-body px-0">
+			<div class="font-weight-bold"> {{title}}</div>
+			<div class="text-muted">{{subtitle}}</div>
+		</div>
+		<ul class="list-group">
+			<li class="list-group-item  list-group-item-action py-4" *ngFor="let item of data">
+				<a href="#" class="link" [routerLink]="item.route">
+					<div class="row">
+						<div class="col-auto px-0">
+							<i [ngClass]="['fa',item.icon,'fa-2x']"></i>
+						</div>
+						<div class="col-10 mr-auto px-3 text-dark text-truncate">
+							{{item.text}}
+						</div>
+						<div class="col-auto px-0">
+							<i class="fa fa-angle-right fa-2x"></i>
+						</div>
+					</div>
 
-    </div>
-  </div>
+				</a>
+			</li>
+		</ul>
+	</div>
+
 </div>
 
