@@ -1,9 +1,19 @@
 @import '../../../app.theme.scss';
 
+$charge_settings_dark_01:#34495E;
+$charge_settings_dark_02:rgba(66, 78, 123, 0.4);
+$charge_settings_dark_03:#667481;
+$charge_settings_light_01:#E0E0E0;
+$charge_settings_light_02:#ECF0F1;
+$charge_settings_light_03:#E6EAEB;
+$charge_settings_red_01:#E74C3C;
+$charge_settings_light_04:#F5F7F8;
+
+
 .vtr-battery-charge-threshold-settings {
 
 	.threshold-for-built-in-battery {
-		color: #34495E;
+		color:$charge_settings_dark_01;
 		font-size: 0.875rem;
 		font-weight: $weight_bold;
 		letter-spacing: 0.055625rem;
@@ -12,16 +22,17 @@
 		margin:0.5rem;
 	}
 	.select-box {
-		border: 0.0625rem solid #E0E0E0;
+		border: 0.0625rem solid $charge_settings_light_01;
 		border-radius: 0.3125rem;
-		background-color: #FFFFFF;
-		box-shadow: 0 0 10.3125rem 0 rgba(0, 0, 0, 0.15);
+		background-color:$light;
+		box-shadow: 0 0 10.3125rem 0 $screen_dark_15;
 		padding: 0.25rem;
 		position: relative;
 		margin:0.5rem;
 
+
 		.label {
-			color: rgba(66, 78, 123, 0.4);
+			color: $charge_settings_dark_02;
 			font-size: 0.6875rem;
 			font-weight: $weight_medium;
 			line-height: 0.8125rem;
@@ -32,7 +43,7 @@
 
 		  .custom-select {
 			border: none;
-			color: #34495E;
+			color:$charge_settings_dark_01;
 			font-size: 1rem;
 			font-weight: $weight_light;
 			line-height: 1.1875rem;
@@ -40,21 +51,21 @@
 
 	}
 
-
 	.row-seperator {
 		height: 0.0625rem;
-		background-color: #ECF0F1;
+		background-color: $charge_settings_light_02;
 		margin:1rem;
 	}
 	.checkbox {
 		height: 1.25rem;
 		width: 1.25rem;
-		border: 0.0625rem solid #E6EAEB;
+		border: 0.0625rem solid $charge_settings_light_03;
 	}
+
 
 	.custom-control-label {
 		height: 1.25rem;
-		color: #667481;
+		color:$charge_settings_dark_03;
 		font-size: 0.875rem;
 		font-weight: $weight_light;
 		line-height: 1.25rem;
@@ -62,15 +73,14 @@
 	}
 
 	.note-box {
-		border: 0.0625rem solid #ECF0F1;
+		border: 0.0625rem solid $charge_settings_light_02;
 		border-radius: 0.25rem;
-		background-color: #F5F7F8;
-		box-shadow: 0 0 1.25rem 0 rgba(0,0,0,0.2);
+		background-color:$charge_settings_light_04;
+		box-shadow: 0 0 1.25rem 0 $screen_dark_20;
 		margin:0.5rem;
 
 		.note {
-			color: #E74C3C;
-			font-family: Rubik;
+			color:$charge_settings_red_01;
 			font-size: 0.875rem;
 			font-weight: $weight_light;
 			line-height: 1.4375rem;
