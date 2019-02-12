@@ -1,32 +1,18 @@
 
 .vtr-container-collapsible {
-  border-radius: 0.625rem;
-  background-color: #FFFFFF;
-  box-shadow: 0 0 0.9375rem 0 rgba(0, 0, 0, 0.15);
 
 
-  .header {
-    color: #4A81FD;
-    font-size: 1.25rem;
-    font-weight: 300;
-    line-height: 1.5rem;
+	.header {
+		color: #4A81FD;
+		font-size: 1.25rem;
+		font-weight: 300;
+		line-height: 1.5rem;
 
-  }
+	}
 
-  .border-top {
-    border-bottom: 0.0625rem solid #ECF0F1;
-  }
-
-  .text-collapse {
-    color: #34495E;
-    font-size: 0.875rem;
-    line-height: 1.0625rem;
-  }
-  .fa-angle-down,.fa-angle-up{
-    color: #4A81FD;
-  }
-
-  /deep/ .body .divider {
-    border-bottom: 0.0625rem solid #ECF0F1;
-  }
+	.text-collapse {
+		color: #34495E;
+		font-size: 0.875rem;
+		line-height: 1.0625rem;
+	}
 }

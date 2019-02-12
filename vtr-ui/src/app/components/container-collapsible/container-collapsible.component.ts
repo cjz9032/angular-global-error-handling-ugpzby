@@ -10,7 +10,7 @@ export class ContainerCollapsibleComponent implements OnInit {
   @Input()
   header:string;
   constructor() { }
-
+	isCollapsed:boolean=false;
   ngOnInit() {
   }
 
