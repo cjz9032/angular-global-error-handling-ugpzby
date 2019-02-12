@@ -1,18 +1,21 @@
+@import '../../app.theme';
 
 .vtr-container-collapsible {
+	.card-header {
+		background: $light;
+		.header {
+			color: $main;
+			font-size: 1.2rem;
+			font-weight: 300;
+			line-height: 1.5rem;
 
+		}
 
-	.header {
-		color: #4A81FD;
-		font-size: 1.25rem;
-		font-weight: 300;
-		line-height: 1.5rem;
-
+		.text-collapse {
+			color: $main 	;
+			font-size: 0.8rem;
+			line-height: 1rem;
+		}
 	}
 
-	.text-collapse {
-		color: #34495E;
-		font-size: 0.875rem;
-		line-height: 1.0625rem;
-	}
 }

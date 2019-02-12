@@ -1,27 +1,27 @@
-<script src="container-collapsible.component.spec.ts"></script>
 <div class="vtr-container-collapsible">
-<div class="row">
-	<div class="col">
-       <div class="card shadow-lg">
-		   <div class="card-header bg-white rounded">
-           <div class="row py-2">
-			   <div class="col-auto px-2 text-left text-primary mr-auto header">
-              {{header}}
-			   </div>
-			   <div class="col-auto px-0 text-collapse">
-                Collapse
-			   </div>
-			   <div class="col-auto px-3 text-primary">
-                    <a href="#" (click)="$event.preventDefault();isCollapsed=!isCollapsed;"><i class="fa fa-angle-down"></i></a>
-			   </div>
-		   </div>
-		   </div>
-		   <div class="card-body" [ngbCollapse]="isCollapsed">
-			   <ng-content></ng-content>
-		   </div>
-	   </div>
+	<div class="row">
+		<div class="col">
+			<div class="card shadow-lg">
+				<div class="card-header 	">
+					<div class="container-fluid">
+						<div class="row py-2">
+							<div class="col-auto px-2 text-left mr-auto header">
+								{{header}}
+							</div>
+							<div class="col-auto px-0 text-collapse">
+								Collapse
+							</div>
+							<div class="col-auto px-3">
+								<a href="#" (click)="$event.preventDefault();isCollapsed=!isCollapsed;">
+									<i class="fa fa-angle-down"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-body" [ngbCollapse]="isCollapsed">
+					<ng-content></ng-content>
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
-
-
 </div>
