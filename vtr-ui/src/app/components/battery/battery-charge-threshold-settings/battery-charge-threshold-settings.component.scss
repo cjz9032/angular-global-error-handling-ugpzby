@@ -150,8 +150,7 @@ $charge_settings_light_04:#F5F7F8;
 		display: inline-block;
 		color: #666;
 	}
-	[type="checkbox"]:checked + label:before,
-	[type="checkbox"]:not(:checked) + label:before {
+	[type="checkbox"]:not(:checked) + label:before{
 		content: '';
 		position: absolute;
 		left: 0;
@@ -159,18 +158,34 @@ $charge_settings_light_04:#F5F7F8;
 		width: 14px;
 		height: 14px;
 		border: 1px solid #ddd;
-		background: #00a69c;
+		background: #FFF;
+		border-radius:2px;
+	}
+	[type="checkbox"]:checked + label:before{
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 14px;
+		height: 14px;
+		border: 1px solid #ddd;
+		background: $main;
+		border-radius:2px;
 	}
 	[type="checkbox"]:checked + label:after{
 		content: '';
-		width: 9px;
-		height: 5px;
+		width: 6px;
+		height: 3px;
 		position: absolute;
-		top: 3px;
-		left: 3px;
+		top: 4px;
+		left: 4px;
 		border-left:1px solid white;
 		border-bottom:1px solid white;
+
 		transform: rotate(-45deg);
 
+	}
+	input[type="checkbox"]:focus + label:before {
+		box-shadow: none;
 	}
 }
