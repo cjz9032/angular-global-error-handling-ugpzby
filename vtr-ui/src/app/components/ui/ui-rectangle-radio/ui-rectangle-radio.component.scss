@@ -50,18 +50,18 @@
 			line-height: 1.6rem;
 		}
 
-		i.icon {
+		fa-icon.icon {
 			position: absolute;
 			left: 7.8rem;
-			top: 1.5rem;
+			top: 1rem;
 			font-size: 3.2rem;
 			color: $main;
 		}
 
-		i.question {
+		span.question {
 			position: absolute;
 			left: 9.5rem;
-			top: 9.5rem;
+			top: 9.3rem;
 			font-size: 1.8rem;
 			color: $main;
 		}

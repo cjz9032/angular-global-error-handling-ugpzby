@@ -5,6 +5,7 @@
 
 <br/><br/>
 
-<vtr-ui-rectangle-radio [radioId]="'radio1'" [group]="'radio'" [label]="'DYNAMIC'" [value]="'DYNAMIC'" (change)="onRadioChange($event)"></vtr-ui-rectangle-radio>
-<vtr-ui-rectangle-radio [radioId]="'radio2'" [group]="'radio'" [label]="'MOVIE'" [value]="'MOVIE'" (change)="onRadioChange($event)"></vtr-ui-rectangle-radio>
-<vtr-ui-rectangle-radio [radioId]="'radio3'" [group]="'radio'" [label]="'MUSIC'" [value]="'MUSIC'" (change)="onRadioChange($event)"></vtr-ui-rectangle-radio>
+<vtr-ui-rectangle-radio [radioId]="'radio1'" [group]="'radio'" [label]="'DYNAMIC'" [value]="'DYNAMIC'" [checked]="false" tooltip="This is first example text." (change)="onRadioChange($event)"></vtr-ui-rectangle-radio>
+<vtr-ui-rectangle-radio [radioId]="'radio2'" [group]="'radio'" [label]="'MOVIE'" [value]="'MOVIE'" [checked]="true" (change)="onRadioChange($event)"></vtr-ui-rectangle-radio>
+<vtr-ui-rectangle-radio [radioId]="'radio3'" [group]="'radio'" [label]="'MUSIC'" [value]="'MUSIC'" [checked]="false" tooltip="This is second example text." (change)="onRadioChange($event)"></vtr-ui-rectangle-radio>
+
