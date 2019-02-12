@@ -112,7 +112,7 @@ library.add(far);
 		PageQuestionsComponent,
 		ModalWelcomeComponent,
 		UiSwitchOnoffComponent,
-    	UiRectangleRadioComponent,
+		UiRectangleRadioComponent,
 		BatteryDetailComponent,
 	],
 	imports: [
