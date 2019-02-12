@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild ,HostBinding,HostListener,ElementRef} from '@angular/core';
+import { Component, OnInit, Input, ViewChild, HostBinding, HostListener, ElementRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -22,22 +22,37 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	uid = Math.floor(new Date().valueOf() * Math.random()); // new Date().getUTCMilliseconds();
 
 	/** Input fields names */
-	minChargeInput = 'minCharge';
-	maxChargeInput = 'minCharge';
+	startChargeInput = 'startAtCharge';
+	stopAtChargeInput = 'stopAtCharge';
 	isCheckedAutoInput = 'isCheckedAuto';
 
-    selectedValue:number=25;
+	// selectedValue:number=25;
 
 	constructor(private _el: ElementRef) { }
 
 	ngOnInit() {
 	}
 
-	onChargeChange(event: Event) {
-		console.log('onChargeChange');
+
+	onChargeChange(id: string, newCharge: number, event: Event) {
+		console.log('onChargeChange' + event + '\n' + id + '\n' + newCharge);
 		if (this.isCheckedAuto) {
 			this.autoStartStopAtCharge();
 		}
+
+		if (id === this.startChargeInput) {
+			if (this.selStartAtCharge !== newCharge) {
+				console.log('values got changed for selStartAtCharge ');
+				this.selStartAtCharge = newCharge;
+			}
+		} else {
+			if (this.selStopAtCharge !== newCharge) {
+				console.log('values got changed for selStopAtCharge ');
+				this.selStopAtCharge = newCharge;
+			}
+
+		}
+
 	}
 
 

@@ -14,8 +14,12 @@
 			<div class="row"
 				*ngIf="displayNoteOnly === false">
 				<div class="col">
-					<div class="btn-group" ngbDropdown >
-						<button class="btn btn-outline-shadow p-3" ngbDropdownToggle type="button">
+					<div class="btn-group"
+						ngbDropdown
+						[ngClass]="['disabled',isCheckedAuto === true ?'disabled':'']">
+						<button class="btn btn-outline-shadow p-3"
+							ngbDropdownToggle
+							type="button">
 							<div class="row justify-content-center align-items-center">
 								<div class="col">
 									<div class="row">
@@ -24,7 +28,7 @@
 										</div>
 										<div class="w-100"></div>
 										<div class="col-auto select-text">
-											{{selectedValue}}%
+											{{selStartAtCharge}}%
 										</div>
 									</div>
 								</div>
@@ -34,48 +38,49 @@
 							</div>
 
 						</button>
-						<div  ngbDropdownMenu  aria-labelledby="">
-							<a [ngClass]="['dropdown-item',item>selStopAtCharge?'disabled':'']"  *ngFor="let item of chargeOptions"(click)="selectedValue=item;$event.preventDefault();" href="#">{{item}}%</a>
+						<div ngbDropdownMenu
+							aria-labelledby="">
+							<a [ngClass]="['dropdown-item',item >= selStopAtCharge?'disabled':'']"
+								*ngFor="let item of startAtChargeOptions"
+								(click)="onChargeChange('startAtCharge', item , $event);$event.preventDefault();"
+								href="#">{{item}}%</a>
 						</div>
 					</div>
 
-					<!--<div class="select-box">
-						<div class="label">Start charging when below</div>
-
-						<select class="custom-select"
-							[id]="minChargeInput+uid"
-							name="minChargeInput"
-							[disabled]="isCheckedAuto ? true : false"
-							[(ngModel)]="selStartAtCharge"
-							#minCharge="ngModel"
-							(ngModelChange)="onChargeChange($event)">
-							<option *ngFor="let charge of startAtChargeOptions"
-								[value]="charge"
-								[disabled]="((isCheckedAuto === false) && ( charge >= selStopAtCharge ))">
-								{{charge+ "%" }}
-							</option>
-						</select>
-
-					</div>-->
-
 				</div>
 				<div class="col">
-					<div class="select-box">
-						<div class="label">Stop charging at</div>
-						<select class="custom-select"
-							[id]="maxChargeInput+uid"
-							name="maxChargeInput"
-							[(ngModel)]="selStopAtCharge"
-							#maxCharge="ngModel"
-							(ngModelChange)="onChargeChange($event)">
-							<option *ngFor="let charge of stopAtChargeOptions"
-								[value]="charge"
-								[disabled]="((isCheckedAuto === false) && ( charge <= selStartAtCharge ))">
-								{{charge+ "%"}}
-							</option>
-						</select>
-					</div>
+					<div class="btn-group"
+						ngbDropdown
+						[ngClass]="['disabled',isCheckedAuto === true ?'disabled':'']">
+						<button class="btn btn-outline-shadow p-3"
+							ngbDropdownToggle
+							type="button">
+							<div class="row justify-content-center align-items-center">
+								<div class="col">
+									<div class="row">
+										<div class="col-auto text-muted select-title">
+											Stop charging at
+										</div>
+										<div class="w-100"></div>
+										<div class="col-auto select-text">
+											{{selStopAtCharge}}%
+										</div>
+									</div>
+								</div>
+								<div class="col-auto">
+									<i class="fa fa-angle-down text-primary fa-3x"></i>
+								</div>
+							</div>
 
+						</button>
+						<div ngbDropdownMenu
+							aria-labelledby="">
+							<a [ngClass]="['dropdown-item',item <= selStartAtCharge?'disabled':'']"
+								*ngFor="let item of stopAtChargeOptions"
+								(click)="onChargeChange('stopAtCharge', item , $event);$event.preventDefault();"
+								href="#">{{item}}%</a>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -91,33 +96,36 @@
 							(ngModelChange)='toggleAutoChargeSettings($event)'>
 
 						<label class="custom-control-label"
-							[for]="isCheckedAutoInput+uid">Automatically set to start "charging at %" to 5% below the
+							[for]="isCheckedAutoInput+uid">Automatically set to start "charging at %" to 5% below
+							the
 							"stop chargint
 							at
 							%"</label>
 					</div>
 				</div>
 			</div>
+		</div>
 
-			<div class="row"
-				*ngIf="displayNoteOnly === false">
-				<div class="col">
-					<div class="row-seperator">&nbsp;</div>
-				</div>
+		<div class="row"
+			*ngIf="displayNoteOnly === false">
+			<div class="col">
+				<div class="row-seperator">&nbsp;</div>
 			</div>
+		</div>
 
-			<div class="row"
-				*ngIf="displayNoteOnly !== false">
-				<div class="col">
-					<div class="note-box">
-						<div class="note">
-							<b>Note:</b>Battery Charge Threshold is still not fully active. Please unplug your machine
-							and
-							allow your battery to drain to or below the stop-charging threshold.
-						</div>
+		<div class="row"
+			*ngIf="displayNoteOnly !== false">
+			<div class="col">
+				<div class="note-box">
+					<div class="note">
+						<b>Note:</b>Battery Charge Threshold is still not fully active. Please unplug your
+						machine
+						and
+						allow your battery to drain to or below the stop-charging threshold.
 					</div>
 				</div>
 			</div>
 		</div>
+
 	</form>
 </div>
