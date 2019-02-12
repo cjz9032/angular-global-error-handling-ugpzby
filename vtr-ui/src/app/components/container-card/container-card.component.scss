@@ -1,7 +1,7 @@
 @import "../../app.theme";
 
 .container-card {
-	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+	box-shadow: $drop_shadow;
 	border-radius: $border_radius;
 	background-color: $light;
 	position: relative;

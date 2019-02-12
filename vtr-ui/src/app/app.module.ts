@@ -20,6 +20,12 @@ import { ClockComponent } from './components/clock/clock.component';
 
 // APPLICATION REUSABLE COMPONENTS
 import { ContainerCardComponent } from './components/container-card/container-card.component';
+import { ContainerCollapsibleComponent } from './components/container-collapsible/container-collapsible.component';
+
+// APPLICATION UI COMPONENTS
+import { UiSwitchTristateComponent } from './components/ui/ui-switch-tristate/ui-switch-tristate.component';
+import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switch-onoff.component';
+import { BatteryDetailComponent } from './components/battery/battery-detail/battery-detail.component';
 
 // APPLICATION PAGE COMPONENTS
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
@@ -41,11 +47,9 @@ import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-dev
 import { SubpageDeviceSettingsDisplayComponent } from './components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
 
 // APPLICATION WIDGET COMPONENTS
-import { WidgetFeedbackComponent } from './components/widgets/widget-feedback/widget-feedback.component';
 import { WidgetSwitchIconComponent } from './components/widgets/widget-switch-icon/widget-switch-icon.component';
 import { WidgetDeviceComponent } from './components/widgets/widget-device/widget-device.component';
 import { WidgetSecurityComponent } from './components/widgets/widget-security/widget-security.component';
-import { WidgetQuestionsComponent } from './components/widgets/widget-questions/widget-questions.component';
 import { WidgetCarouselComponent } from './components/widgets/widget-carousel/widget-carousel.component';
 import { WidgetQuicksettingsComponent } from './components/widgets/widget-quicksettings/widget-quicksettings.component'
 import { WidgetStatusComponent } from './components/widgets/widget-status/widget-status.component';
@@ -68,9 +72,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switch-onoff.component';
-import { BatteryDetailComponent } from './components/battery/battery-detail/battery-detail.component';
-import { UiSwitchTristateComponent } from './components/ui/ui-switch-tristate/ui-switch-tristate.component';
 
 library.add(fas);
 library.add(fab);
@@ -87,11 +88,9 @@ library.add(fab);
 		PageDeviceComponent,
 		PageSecurityComponent,
 		PageSupportComponent,
-		WidgetFeedbackComponent,
 		WidgetSwitchIconComponent,
 		WidgetDeviceComponent,
 		WidgetSecurityComponent,
-		WidgetQuestionsComponent,
 		WidgetCarouselComponent,
 		WidgetQuicksettingsComponent,
 		WidgetStatusComponent,
@@ -110,6 +109,7 @@ library.add(fab);
 		SubpageDeviceSettingsDisplayComponent,
 		PageQuestionsComponent,
 		ModalWelcomeComponent,
+		ContainerCollapsibleComponent,
 		UiSwitchOnoffComponent,
 		UiSwitchTristateComponent,
 		BatteryDetailComponent,
