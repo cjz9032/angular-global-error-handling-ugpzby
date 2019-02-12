@@ -6,6 +6,7 @@
 	box-shadow: 0 0 0.9375rem 0 $shadow_black_01;
 
 	.title {
+		text-transform: uppercase;
 		height: 0.728125rem;
 		//width: 21.875rem;
 		color:$dark_blue_01;
@@ -15,6 +16,7 @@
 	}
 
 	.description {
+		text-transform: uppercase;
 		height: 0.296875rem;
 		//width: 21.875rem;
 		color: $dark_blue_02;

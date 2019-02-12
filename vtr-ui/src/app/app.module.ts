@@ -45,7 +45,6 @@ import { WidgetFeedbackComponent } from './components/widgets/widget-feedback/wi
 import { WidgetSwitchIconComponent } from './components/widgets/widget-switch-icon/widget-switch-icon.component';
 import { WidgetDeviceComponent } from './components/widgets/widget-device/widget-device.component';
 import { WidgetSecurityComponent } from './components/widgets/widget-security/widget-security.component';
-import { WidgetQuestionsComponent } from './components/widgets/widget-questions/widget-questions.component';
 import { WidgetCarouselComponent } from './components/widgets/widget-carousel/widget-carousel.component';
 import { WidgetQuicksettingsComponent } from './components/widgets/widget-quicksettings/widget-quicksettings.component'
 import { WidgetStatusComponent } from './components/widgets/widget-status/widget-status.component';
@@ -91,7 +90,6 @@ library.add(fab);
 		WidgetSwitchIconComponent,
 		WidgetDeviceComponent,
 		WidgetSecurityComponent,
-		WidgetQuestionsComponent,
 		WidgetCarouselComponent,
 		WidgetQuicksettingsComponent,
 		WidgetStatusComponent,
