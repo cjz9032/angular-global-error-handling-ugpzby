@@ -122,9 +122,16 @@ $charge_settings_light_04:#F5F7F8;
 	.dropdown-menu {
 		width:98%;
 	}
-	.dropdown:hover .dropdown-menu {
-		display: none;
+
+
+	.dropdown .dropdown-menu:not(.show){
+		display:none;
 	}
+
+	.dropdown dropdown-menu.show{
+		display:block;
+	}
+
 
 
 
