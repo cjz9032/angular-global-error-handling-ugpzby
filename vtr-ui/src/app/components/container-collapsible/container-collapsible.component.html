@@ -1,19 +1,20 @@
 <div class="vtr-container-collapsible">
 	<div class="row">
 		<div class="col">
-			<div class="card shadow-lg">
-				<div class="card-header 	">
+			<div class="card">
+				<div class="card-header">
 					<div class="container-fluid">
-						<div class="row py-2">
+						<div class="row align-items-center py-2">
 							<div class="col-auto px-2 text-left mr-auto header">
-								{{header}}
-							</div>
-							<div class="col-auto px-0 text-collapse">
-								Collapse
+								{{title}}
 							</div>
 							<div class="col-auto px-3">
-								<a href="#" (click)="$event.preventDefault();isCollapsed=!isCollapsed;">
-									<i class="fa fa-angle-down"></i></a>
+								<div class="collapse-control" (click)="$event.preventDefault();isCollapsed=!isCollapsed;">
+									<div *ngIf="isCollapsed" class="collapse-text">Expand</div>
+									<div *ngIf="!isCollapsed" class="collapse-text">Collapse</div>
+									<fa-icon *ngIf="isCollapsed" [icon]="['fas', 'chevron-down']"></fa-icon>
+									<fa-icon *ngIf="!isCollapsed" [icon]="['fas', 'chevron-up']"></fa-icon>
+								</div>
 							</div>
 						</div>
 					</div>
