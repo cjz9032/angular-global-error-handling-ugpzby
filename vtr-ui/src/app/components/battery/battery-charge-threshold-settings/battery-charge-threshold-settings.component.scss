@@ -161,8 +161,7 @@ $charge_settings_light_04:#F5F7F8;
 		border: 1px solid #ddd;
 		background: #00a69c;
 	}
-	[type="checkbox"]:checked + label:after,
-	[type="checkbox"]:not(:checked) + label:after {
+	[type="checkbox"]:checked + label:after{
 		content: '';
 		width: 9px;
 		height: 5px;
@@ -171,21 +170,7 @@ $charge_settings_light_04:#F5F7F8;
 		left: 3px;
 		border-left:1px solid white;
 		border-bottom:1px solid white;
-		-webkit-transform: rotate(45deg);
+		transform: rotate(-45deg);
 
 	}
-	[type="checkbox"]:not(:checked) + label:after {
-		opacity: 0;
-		-webkit-transform: scale(0);
-		transform: scale(0);
-	}
-	[type="checkbox"]:checked + label:after {
-		opacity: 1;
-		-webkit-transform: scale(1);
-		transform: scale(1);
-	}
-
-
-
-
 }
