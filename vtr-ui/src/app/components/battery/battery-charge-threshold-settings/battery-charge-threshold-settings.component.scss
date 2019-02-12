@@ -89,5 +89,41 @@ $charge_settings_light_04:#F5F7F8;
 		}
 	}
 
+	.dropdown-toggle::after {
+		display: none;
+	}
+
+	.select-title{
+		font-size: 7px;
+		font-weight: 500;
+		line-height: 13px;
+	}
+	.select-text{
+
+		color: #34495E;
+		font-family: Rubik;
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 19px;
+
+	}
+
+	.btn-outline-shadow{
+		border: 1px solid #E0E0E0;
+		border-radius: 5px;
+		background-color: #FFFFFF;
+		box-shadow: 0 0 15px 0 rgba(0,0,0,0.15);
+	}
+	.btn:focus,.btn:active {
+		outline: none !important;
+		box-shadow: 0 0 15px 0 rgba(0,0,0,0.15);
+	}
+
+	.dropdown-menu {
+		width:98%;
+	}
+
+
+
 
 }

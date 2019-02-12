@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild ,HostBinding,HostListener,ElementRef} from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -26,7 +26,9 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	maxChargeInput = 'minCharge';
 	isCheckedAutoInput = 'isCheckedAuto';
 
-	constructor() { }
+    selectedValue:number=25;
+
+	constructor(private _el: ElementRef) { }
 
 	ngOnInit() {
 	}
