@@ -20,9 +20,9 @@
 		position: relative;
 		width: 90%;
 		height: 12rem;
-		border: 1px solid var(--border-color);
-		border-radius: 3px;
-		left: 0px;
+		border: 0.1rem solid var(--border-color);
+		border-radius: 0.3rem;
+		left: 0rem;
 	}
 
 	/* battery notch */
@@ -30,10 +30,10 @@
 		position: absolute;
 		top: 32%;
 		left: 100%;
-		width: 12px;
+		width: 1.2rem;
 		height: 35%;
 		background-color: var(--background-color);
-		border-radius: 0px 3px 3px 0px;
+		border-radius: 0rem 0.3rem 0.3rem 0rem;
 		content: "";
 		border-left-width: 0;
 	}
@@ -41,10 +41,10 @@
 	.battery-shadow {
 		position: absolute;
 		width: 90%;
-		height: 120px;
-		border: 3px solid var(--border-color);
-		border-radius: 8px;
-		filter: blur(3px);
+		height: 12rem;
+		border: 0.3rem solid var(--border-color);
+		border-radius: 0.8rem;
+		filter: blur(0.3rem);
 	}
 
 	/* battery notch */
@@ -52,27 +52,27 @@
 		position: absolute;
 		top: 32%;
 		left: 102%;
-		width: 10px;
+		width: 1rem;
 		height: 35%;
 		background-color: var(--background-color);
-		border-radius: 0px 3px 3px 0px;
+		border-radius: 0rem 0.3rem 0.3rem 0rem;
 		content: "";
 		border-left-width: 0;
 	}
 
 	.acid-container {
 		overflow: hidden;
-		height: calc(100% - 8px);
-		border-radius: 2px;
-		margin: 4px;
+		height: calc(100% - 0.8rem);
+		border-radius: 0.2rem;
+		margin: 0.4rem;
 	}
 
 	.white-background {
 		background: white;
-		width: calc(100% - 8px);
+		width: calc(100% - 0.8rem);
 		z-index: 1;
 		position: absolute;
-		height: calc(100% - 8px);
+		height: calc(100% - 0.8rem);
 	}
 
 	.black-background {
@@ -80,16 +80,16 @@
 		width: var(--acid-height);
 		z-index: 2;
 		position: absolute;
-		height: calc(100% - 8px);
+		height: calc(100% - 0.8rem);
 	}
 
 	.fill {
 		background: linear-gradient(302.26deg, #f17f14 0%, #ed4e04 100%);
 		mix-blend-mode: screen;
-		width: calc(100% - 8px);
+		width: calc(100% - 0.8rem);
 		z-index: 4;
 		position: absolute;
-		height: calc(100% - 8px);
+		height: calc(100% - 0.8rem);
 
 		display: flex;
 		flex-direction: row;
@@ -119,6 +119,6 @@
 		color: white;
 		z-index: 3;
 		font-weight: normal;
-		top: -15px;
+		top: -1.5rem;
 	}
 }
