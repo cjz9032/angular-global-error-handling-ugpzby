@@ -20,6 +20,11 @@ import { ClockComponent } from './components/clock/clock.component';
 
 // APPLICATION REUSABLE COMPONENTS
 import { ContainerCardComponent } from './components/container-card/container-card.component';
+import { BatteryDetailComponent } from './components/battery/battery-detail/battery-detail.component';
+
+// APPLICATION UI COMPONENTS
+import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switch-onoff.component';
+import { UiRectangleRadioComponent } from './components/ui/ui-rectangle-radio/ui-rectangle-radio.component';
 
 // APPLICATION PAGE COMPONENTS
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
@@ -69,10 +74,6 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
-import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switch-onoff.component';
-import { UiRectangleRadioComponent } from './components/ui/ui-rectangle-radio/ui-rectangle-radio.component';
-
-import { BatteryDetailComponent } from './components/battery/battery-detail/battery-detail.component';
 
 library.add(fas);
 library.add(fab);
