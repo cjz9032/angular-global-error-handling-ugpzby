@@ -20,14 +20,14 @@ export class WidgetQuestionsComponent implements OnInit {
 		this.title = this.title || "Q&A's for your machine";
 		this.subtitle = this.subtitle || "FIND ANSWERS FOR YOUR IDEAPAD";
 		this.data = this.data || [{
-			icon: 'fa-plane',
+			icon: 'plane',
 			text: ' Reduced batterylife working outside.',
 			route: '/support'
-		}, {icon: 'fa-plane', text: 'Can I use my Ideapad while in an airplane?', route: '/support'}, {
-			icon: 'fa-plane',
+		}, {icon: 'plane', text: 'Can I use my Ideapad while in an airplane?', route: '/support'}, {
+			icon: 'plane',
 			text: 'Will the security control scanner damage',
 			route: '/support'
-		}, {icon: 'fa-plane', text: 'Will the security control scanner damage', route: '/support'}]
+		}, {icon: 'plane', text: 'Will the security control scanner damage', route: '/support'}]
 	}
 
 }
