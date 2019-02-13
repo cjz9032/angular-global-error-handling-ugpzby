@@ -20,11 +20,14 @@ import { ClockComponent } from './components/clock/clock.component';
 
 // APPLICATION REUSABLE COMPONENTS
 import { ContainerCardComponent } from './components/container-card/container-card.component';
-import { ContainerCollapsibleComponent } from './components/container-collapsible/container-collapsible.component';
+import { UiRowSwitchComponent } from './components/ui/ui-row-switch/ui-row-switch.component';
+import { BatteryDetailComponent } from './components/battery/battery-detail/battery-detail.component';
 
 // APPLICATION UI COMPONENTS
 import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switch-onoff.component';
-import { BatteryDetailComponent } from './components/battery/battery-detail/battery-detail.component';
+import { UiSwitchTristateComponent } from './components/ui/ui-switch-tristate/ui-switch-tristate.component';
+import { UiRectangleRadioComponent } from './components/ui/ui-rectangle-radio/ui-rectangle-radio.component';
+import { ContainerCollapsibleComponent } from './components/container-collapsible/container-collapsible.component';
 
 // APPLICATION PAGE COMPONENTS
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
@@ -71,11 +74,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
 
 library.add(fas);
 library.add(fab);
-
-
+library.add(far);
 
 @NgModule({
 	declarations: [
@@ -110,16 +113,17 @@ library.add(fab);
 		ModalWelcomeComponent,
 		ContainerCollapsibleComponent,
 		UiSwitchOnoffComponent,
+		UiRectangleRadioComponent,
+		UiSwitchTristateComponent,
 		BatteryDetailComponent,
+		UiRowSwitchComponent,
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		FormsModule,
 		HttpClientModule,
-
 		FontAwesomeModule,
-
 		NgbModule
 	],
 	providers: [
