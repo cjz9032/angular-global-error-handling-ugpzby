@@ -14,7 +14,4 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	onRadioChange(event) {
-		console.log('event', event);
-	}
 }
