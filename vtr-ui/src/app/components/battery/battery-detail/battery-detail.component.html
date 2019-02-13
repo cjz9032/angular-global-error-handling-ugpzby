@@ -7,7 +7,7 @@
 						<vtr-battery-indicator
 							[remainingHour]="2"
 							[remainingMinutes]="30"
-							[percentage]="50"
+							[percentage]="10"
 						></vtr-battery-indicator>
 					</div>
 				</div>
@@ -148,16 +148,6 @@
 										class="text-uppercase pr-3 battery-gauge-heading"
 									>
 										{{ model.batteryGaugeDetail.heading }}
-									</span>
-									<span
-										class="badge badge-pill battery-gauge-pill"
-									>
-										<span class="battery-gauge-pill-text">
-											{{
-												model.batteryGaugeDetail
-													.pillText
-											}}
-										</span>
 									</span>
 								</h4>
 							</div>
