@@ -3,15 +3,15 @@
 		<div class="row">
 			<div class="col">
 				<div class="title"
-					*ngIf="title">{{title}}</div>
+					 *ngIf="title">{{title}}</div>
 				<div class="description"
-					*ngIf="description">{{description}}</div>
+					 *ngIf="description">{{description}}</div>
 
 				<div class="button-box">
 					<button *ngIf="actionName && action"
-						type="button"
-						class="button"
-						(click)="submitAction()">{{actionName}} </button>
+							type="button"
+							class="button"
+							(click)="submitAction()">{{actionName}} </button>
 				</div>
 			</div>
 		</div>
