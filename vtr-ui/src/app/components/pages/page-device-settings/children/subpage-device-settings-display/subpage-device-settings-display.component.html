@@ -1,1 +1,83 @@
-<h2>{{title}}</h2>
+<div class="vtr-display-and-camera">
+	<div>{{ title }}</div>
+
+	<!-- Camera preview & setting section  -->
+	<div class="p-5">
+		<vtr-container-collapsible [title]="'Camera'">
+			<!-- not sure if camera section will be used somewhere else or not -->
+			<div class="container-fluid">
+				<div class="row p-5">
+					<div class="col-6">
+						<video #cameraPreview class="camera-preview"></video>
+					</div>
+					<div class="col-6">
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item border-top">
+								<div class="slider-item-text text-uppercase">
+									Brightness
+								</div>
+								<input
+									type="range"
+									min="1"
+									max="100"
+									value="50"
+									class="slider-control"
+								/>
+							</li>
+							<li class="list-group-item">
+								<div class="slider-item-text text-uppercase">
+									Contrast
+								</div>
+								<input
+									type="range"
+									min="1"
+									max="100"
+									value="50"
+									class="slider-control"
+								/>
+							</li>
+							<li class="list-group-item">
+								<div class="d-flex justify-content-between">
+									<div
+										class="slider-item-text text-uppercase"
+									>
+										Auto Exposure
+									</div>
+									<div class="float-right">
+										<vtr-ui-switch-onoff
+											(change)="
+												onAutoExposureChange($event)
+											"
+										></vtr-ui-switch-onoff>
+									</div>
+								</div>
+
+								<input
+									*ngIf="isAutoExposureEnabled"
+									type="range"
+									min="1"
+									max="100"
+									value="50"
+									class="slider-control"
+								/>
+							</li>
+							<li class="list-group-item">
+								<div
+									class="slider-item-text text-uppercase d-flex justify-content-between"
+								>
+									<div>
+										Auto Focus
+									</div>
+
+									<div>
+										<vtr-ui-switch-onoff></vtr-ui-switch-onoff>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</vtr-container-collapsible>
+	</div>
+</div>

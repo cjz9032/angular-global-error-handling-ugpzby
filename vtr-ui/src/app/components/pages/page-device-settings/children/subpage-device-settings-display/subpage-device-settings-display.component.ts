@@ -6,12 +6,13 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./subpage-device-settings-display.component.scss']
 })
 export class SubpageDeviceSettingsDisplayComponent implements OnInit {
-
 	title = 'Display & Camera Settings';
+	public isAutoExposureEnabled = false;
+	constructor() {}
 
-	constructor() { }
+	ngOnInit() {}
 
-	ngOnInit() {
+	public onAutoExposureChange($event) {
+		this.isAutoExposureEnabled = $event.switchValue;
 	}
-
 }

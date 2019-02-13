@@ -1,0 +1,27 @@
+.vtr-display-and-camera {
+	.camera-preview {
+		height: 258px;
+		object-fit: cover;
+		width: 100%;
+		background-color: black;
+	}
+
+	.slider-item-text {
+		color: #34495e;
+		font-size: 12px;
+		font-weight: bold;
+		letter-spacing: 0.76px;
+		line-height: 23px;
+	}
+	.border-top {
+		border-top-width: 1px;
+	}
+
+	.slider-control {
+		width: 100%;
+	}
+
+	.inline-item {
+		display: -webkit-inline-box;
+	}
+}
