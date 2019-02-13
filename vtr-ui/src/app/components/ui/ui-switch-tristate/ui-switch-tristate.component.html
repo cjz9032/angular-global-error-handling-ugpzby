@@ -1,23 +1,34 @@
-<div class="wrapper">
+<div class="wrapper"
+ [ngClass]="{'on':value===onValue,'auto':value===autoValue,'off':value===offValue}">
 	<label for="no_radio"
-	 id="no-lbl">{{offLabel}}</label>
-	<input #off type="radio"
+	 id="no-lbl">
+		{{offLabel}}
+	</label>
+	<input type="radio"
 	 [value]="offValue"
-	 (change)="onChange(off.value)"
+	 (change)="onChange($event)"
 	 name="choice_radio"
 	 id="no_radio"
 	 checked="checked">
 	<label for="maybe_radio"
-	 id="maybe-lbl">{{autoLabel}}</label><input #auto type="radio"
+	 id="maybe-lbl">
+		{{autoLabel}}
+	</label>
+	<input
+	 type="radio"
 	 [value]="autoValue"
 	 name="choice_radio"
-	 (change)="onChange(auto.value)"
+	 (change)="onChange($event)"
 	 id="maybe_radio">
 	<label for="yes_radio"
-	 id="yes-lbl">{{onLabel}}</label><input #on type="radio"
+	 id="yes-lbl">
+		{{onLabel}}
+	</label>
+	<input
+	 type="radio"
 	 [value]="onValue"
 	 name="choice_radio"
-	 (change)="onChange(on.value)"
+	 (change)="onChange($event)"
 	 id="yes_radio">
 	<div class="toggle"></div>
 </div>

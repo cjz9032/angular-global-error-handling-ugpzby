@@ -6,20 +6,28 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 	styleUrls: ['./ui-switch-tristate.component.scss']
 })
 export class UiSwitchTristateComponent implements OnInit {
-	@Output() changedValue: EventEmitter<string> = new EventEmitter();
-	// @Input() value: string;
-	onLabel = 'on';
-	offLabel = 'off';
-	autoLabel = "Auto";
-	onValue = "1";
-	offValue = "0";
-	autoValue = "2";
+
+	@Input() onLabel = 'On';
+	@Input() offLabel = 'Off';
+	@Input() autoLabel = "Auto";
+
+	@Input() onValue = "on";
+	@Input() offValue = "off";
+	@Input() autoValue = "auto";
+
+	@Output() change: EventEmitter<string> = new EventEmitter();
+
+	value;
+
 	constructor() { }
 
 	ngOnInit() {
-
+		this.value = this.offValue;
 	}
-	onChange(value) {
-		this.changedValue.emit(value);
+
+	onChange(event) {
+		this.value = event.target.value;
+		this.change.emit(this.value);
+		console.log('TRISTATE CHANGE', this.value, event);
 	}
 }
