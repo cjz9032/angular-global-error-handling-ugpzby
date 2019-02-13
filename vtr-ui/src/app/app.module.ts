@@ -20,6 +20,7 @@ import { ClockComponent } from './components/clock/clock.component';
 
 // APPLICATION REUSABLE COMPONENTS
 import { ContainerCardComponent } from './components/container-card/container-card.component';
+import { UiRowSwitchComponent } from './components/ui/ui-row-switch/ui-row-switch.component';
 import { BatteryDetailComponent } from './components/battery/battery-detail/battery-detail.component';
 
 // APPLICATION UI COMPONENTS
@@ -73,10 +74,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-
-
-import { CollapsibleContainerItemComponent } from './components/collapsible-container-item/collapsible-container-item.component';
-
 import { far } from '@fortawesome/free-regular-svg-icons';
 
 library.add(fas);
@@ -119,7 +116,7 @@ library.add(far);
 		UiRectangleRadioComponent,
 		UiSwitchTristateComponent,
 		BatteryDetailComponent,
-		CollapsibleContainerItemComponent,
+		UiRowSwitchComponent,
 	],
 	imports: [
 		BrowserModule,

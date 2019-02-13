@@ -1,20 +1,17 @@
 <h2>{{title}}</h2>
-<div class="row">
-	<div class="col col-12 p-40">
-		<div class="container-card">
-				<ul class="">
-						<li *ngFor="let item of dummyCollapsibleContainerItemArray">
-							<vtr-collapsible-container-item [header]="item.header"
-							 [subHeader]="item.subHeader" [isSwitchVisible]=true
-							 [leftImageSource]="item.leftImageSource"  >
-							</vtr-collapsible-container-item>
-						</li>
-					</ul>
-
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-10">
+			<div class="container-card">
+				<ng-container *ngFor="let item of dummyCollapsibleContainerItemArray">
+					<vtr-ui-row-switch [title]="item.title"
+					 [caption]="item.caption"
+					 [isSwitchVisible]=true
+					 [leftIcon]="item.leftIcon"
+					 [rightIcon]="item.rightIcon">
+					</vtr-ui-row-switch>
+				</ng-container>
+			</div>
 		</div>
-	 
-			
-	 
-		
 	</div>
 </div>

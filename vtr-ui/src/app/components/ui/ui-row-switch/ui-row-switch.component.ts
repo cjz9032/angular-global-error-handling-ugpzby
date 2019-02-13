@@ -8,25 +8,27 @@ import {
 } from '@angular/core';
 
 @Component({
-	selector: 'vtr-collapsible-container-item',
-	templateUrl: './collapsible-container-item.component.html',
-	styleUrls: ['./collapsible-container-item.component.scss']
+	selector: 'vtr-ui-row-switch',
+	templateUrl: './ui-row-switch.component.html',
+	styleUrls: ['./ui-row-switch.component.scss']
 })
-export class CollapsibleContainerItemComponent implements OnInit {
+export class UiRowSwitchComponent implements OnInit {
+
 	@ViewChild('childContent') childContent: any;
 
-	@Input() readMoreText = "";
-	@Input() rightImageSource = "";
-	@Input() leftImageSource = "";
-	@Input() header = "";
-	@Input() subHeader = "";
-	@Input() isCheckBoxVisible = false;
+	// Use Fort Awesome Font Awesome Icon Reference Array (library, icon class) ['fas', 'arrow-right']
+	@Input() rightIcon = [];
+	@Input() leftIcon = []; 
+	
+	@Input() showChildContent = false;
+	@Input() readMoreText = '';
+	@Input() title = '';
+	@Input() caption = '';
 	@Input() isSwitchVisible = false;
 
 	@Output() toggleOnOff = new EventEmitter<boolean>();
 	@Output() readMoreClick = new EventEmitter<boolean>();
 	@Output() tooltipClick = new EventEmitter<boolean>();
-	@Output() checkBoxChange = new EventEmitter<boolean>();
 
 	constructor() { }
 
@@ -43,11 +45,7 @@ export class CollapsibleContainerItemComponent implements OnInit {
 		this.readMoreClick.emit($event);
 	}
 
-	public onTooltipClick($event) {
+	public onRightIconClick($event) {
 		this.tooltipClick.emit($event);
-	}
-
-	public onCheckBoxChange($event) {
-		this.checkBoxChange.emit($event);
 	}
 }

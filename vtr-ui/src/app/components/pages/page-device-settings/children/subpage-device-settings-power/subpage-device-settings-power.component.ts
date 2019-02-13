@@ -10,21 +10,17 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	title = 'Power Settings';
 	dummyCollapsibleContainerItemArray = [
 		{
-			'readMoreText':'Always on USB',
-			'rightImageSource': '',
-			'leftImageSource': './assets/images/coll-container-item-img.png',
-			'header': 'Always on USB',
-			'subHeader': 'Charge USb devices through the Always on USB connector on the computer',
-			'isCheckBoxVisible': false,
+			'rightIcon': ['far', 'question-circle'],
+			'leftIcon': ['fas', 'power-off'],
+			'title': 'Always on USB',
+			'caption': 'Charge USB devices through the Always on USB connector on the computer orem ipsum dolor sit amet del Lorem ipsum dolor sit amet delorem ipsum dolor sit amet del Lorem ipsum dolor sit amet del',
 			'isSwitchVisible': false
 		},
 		{
-			'readMoreText': 'Easy Resume',
-			'rightImageSource': 'processor',
-			'leftImageSource': './assets/images/coll-container-item-img.png',
-			'header': 'Easy Resume',
-			'subHeader': 'orem ipsum dolor sit amet del Lorem ipsum dolor sit amet del',
-			'isCheckBoxVisible': false,
+			'rightIcon': ['far', 'question-circle'],
+			'leftIcon': ['fas', 'plug'],
+			'title': 'Easy Resume',
+			'caption': 'orem ipsum dolor sit amet del Lorem ipsum dolor sit amet del',
 			'isSwitchVisible': false
 		}		
 	];
