@@ -125,13 +125,8 @@ library.add(far);
 		FormsModule,
 		HttpClientModule,
 		FontAwesomeModule,
-<<<<<<< HEAD
-
 		NgbModule,
 		Ng5SliderModule
-=======
-		NgbModule
->>>>>>> develop
 	],
 	providers: [
 		CookieService,
