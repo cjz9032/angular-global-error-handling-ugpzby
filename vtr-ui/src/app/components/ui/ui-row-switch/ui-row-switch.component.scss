@@ -1,0 +1,29 @@
+@import "../../../app.theme";
+.vtr-ui-switch-row {
+	padding: 1.5rem;
+	background-color: $light;
+	border-bottom: 0.1rem solid $shade_lighter;
+	.left-icon {
+		font-size: 2rem;
+		color: $main;
+	}
+	.right-icon {
+		font-size: 1.8rem;
+		color: $main;
+		cursor: pointer;
+		&:hover {
+			color: $highlight;
+		}
+	}
+	.title {
+		font-size: 1.8rem;
+		color: $shade_darker;
+		letter-spacing: .05rem;
+	}
+	.caption {
+		font-size: 1.1rem;
+		color: $shade_darker;
+		max-width: 80%;
+	}
+}
+ 
