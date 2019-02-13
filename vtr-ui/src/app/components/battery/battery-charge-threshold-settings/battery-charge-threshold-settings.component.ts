@@ -26,7 +26,6 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	stopAtChargeInput = 'stopAtCharge';
 	isCheckedAutoInput = 'isCheckedAuto';
 
-	// selectedValue:number=25;
 
 	constructor(private _el: ElementRef) { }
 
@@ -36,10 +35,8 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 
 	onChargeChange(id: string, newCharge: number, event: Event) {
 		console.log('onChargeChange' + event + '\n' + id + '\n' + newCharge);
-		if (this.isCheckedAuto) {
-			this.autoStartStopAtCharge();
-		}
 
+		// check whether va
 		if (id === this.startChargeInput) {
 			if (this.selStartAtCharge !== newCharge) {
 				console.log('values got changed for selStartAtCharge ');
@@ -49,10 +46,12 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 			if (this.selStopAtCharge !== newCharge) {
 				console.log('values got changed for selStopAtCharge ');
 				this.selStopAtCharge = newCharge;
+
+				if (this.isCheckedAuto) {
+					this.autoStartStopAtCharge();
+				}
 			}
-
 		}
-
 	}
 
 
