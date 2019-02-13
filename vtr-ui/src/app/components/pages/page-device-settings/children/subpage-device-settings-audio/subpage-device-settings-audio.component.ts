@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SubpageDeviceSettingsAudioComponent implements OnInit {
 
 	title = 'Audio Settings';
-	
+
 	constructor() { }
 
 	ngOnInit() {

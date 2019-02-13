@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 // THIRD PARTY MODULES
 import { CookieService } from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Ng5SliderModule } from 'ng5-slider';
 
 // ROUTING MODULES
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +21,14 @@ import { ClockComponent } from './components/clock/clock.component';
 
 // APPLICATION REUSABLE COMPONENTS
 import { ContainerCardComponent } from './components/container-card/container-card.component';
+import { ContainerCollapsibleComponent } from './components/container-collapsible/container-collapsible.component';
+import { BatteryDetailComponent } from './components/battery/battery-detail/battery-detail.component';
+
+// APPLICATION UI COMPONENTS
+import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switch-onoff.component';
+import { UiSwitchTristateComponent } from './components/ui/ui-switch-tristate/ui-switch-tristate.component';
+import { UiRectangleRadioComponent } from './components/ui/ui-rectangle-radio/ui-rectangle-radio.component';
+import { RangeSliderComponent } from './components/ui/range-slider/range-slider.component';
 
 // APPLICATION PAGE COMPONENTS
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
@@ -41,11 +50,9 @@ import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-dev
 import { SubpageDeviceSettingsDisplayComponent } from './components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
 
 // APPLICATION WIDGET COMPONENTS
-import { WidgetFeedbackComponent } from './components/widgets/widget-feedback/widget-feedback.component';
 import { WidgetSwitchIconComponent } from './components/widgets/widget-switch-icon/widget-switch-icon.component';
 import { WidgetDeviceComponent } from './components/widgets/widget-device/widget-device.component';
 import { WidgetSecurityComponent } from './components/widgets/widget-security/widget-security.component';
-import { WidgetQuestionsComponent } from './components/widgets/widget-questions/widget-questions.component';
 import { WidgetCarouselComponent } from './components/widgets/widget-carousel/widget-carousel.component';
 import { WidgetQuicksettingsComponent } from './components/widgets/widget-quicksettings/widget-quicksettings.component';
 import { WidgetStatusComponent } from './components/widgets/widget-status/widget-status.component';
@@ -68,13 +75,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switch-onoff.component';
-import { BatteryDetailComponent } from './components/battery/battery-detail/battery-detail.component';
-import { RangeSliderComponent } from './components/ui/range-slider/range-slider.component';
-import { Ng5SliderModule } from 'ng5-slider';
+import { far } from '@fortawesome/free-regular-svg-icons';
 
 library.add(fas);
 library.add(fab);
+library.add(far);
 
 @NgModule({
 	declarations: [
@@ -86,11 +91,9 @@ library.add(fab);
 		PageDeviceComponent,
 		PageSecurityComponent,
 		PageSupportComponent,
-		WidgetFeedbackComponent,
 		WidgetSwitchIconComponent,
 		WidgetDeviceComponent,
 		WidgetSecurityComponent,
-		WidgetQuestionsComponent,
 		WidgetCarouselComponent,
 		WidgetQuicksettingsComponent,
 		WidgetStatusComponent,
@@ -109,7 +112,10 @@ library.add(fab);
 		SubpageDeviceSettingsDisplayComponent,
 		PageQuestionsComponent,
 		ModalWelcomeComponent,
+		ContainerCollapsibleComponent,
 		UiSwitchOnoffComponent,
+		UiRectangleRadioComponent,
+		UiSwitchTristateComponent,
 		BatteryDetailComponent,
 		RangeSliderComponent
 	],
@@ -118,11 +124,14 @@ library.add(fab);
 		AppRoutingModule,
 		FormsModule,
 		HttpClientModule,
-
 		FontAwesomeModule,
+<<<<<<< HEAD
 
 		NgbModule,
 		Ng5SliderModule
+=======
+		NgbModule
+>>>>>>> develop
 	],
 	providers: [
 		CookieService,
