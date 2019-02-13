@@ -55,7 +55,7 @@ import { WidgetSecurityComponent } from './components/widgets/widget-security/wi
 import { WidgetCarouselComponent } from './components/widgets/widget-carousel/widget-carousel.component';
 import { WidgetQuicksettingsComponent } from './components/widgets/widget-quicksettings/widget-quicksettings.component'
 import { WidgetStatusComponent } from './components/widgets/widget-status/widget-status.component';
-
+import {WidgetQuestionsComponent} from './components/widgets/widget-questions/widget-questions.component';
 // APPLICATION MODALS
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 
@@ -96,6 +96,7 @@ library.add(far);
 		WidgetCarouselComponent,
 		WidgetQuicksettingsComponent,
 		WidgetStatusComponent,
+		WidgetQuestionsComponent,
 		PageQuestionsComponent,
 		ContainerCardComponent,
 		HeaderMainComponent,

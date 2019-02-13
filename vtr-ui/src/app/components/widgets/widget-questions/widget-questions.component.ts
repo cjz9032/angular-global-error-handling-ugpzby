@@ -1,6 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
 
-
 @Component({
 	selector: 'vtr-widget-questions',
 	templateUrl: './widget-questions.component.html',

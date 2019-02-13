@@ -8,6 +8,7 @@
 		<ul class="list-group">
 			<li class="list-group-item  list-group-item-action py-4" *ngFor="let item of data">
 				<a href="#" class="link" [routerLink]="item.route">
+					<div class="container-fluid">
 					<div class="row">
 						<div class="col-auto px-0">
 							<fa-icon [icon]="['fas',item.icon]"></fa-icon>
@@ -19,7 +20,7 @@
 							<fa-icon [icon]="['fas','chevron-right']"></fa-icon>
 						</div>
 					</div>
-
+					</div>
 				</a>
 			</li>
 		</ul>

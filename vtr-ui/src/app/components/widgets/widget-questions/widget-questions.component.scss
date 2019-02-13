@@ -7,12 +7,12 @@
 
 		.card-body {
 			.title {
-				color: #194A65;
+				color: $dark;
 				font-size: 2.5rem;
 			}
 
 			.subtitle {
-				color: $screen_dark_20;
+				color: $screen_dark_30;
 				font-size: 1.1rem;
 				font-weight: 500;
 			}
@@ -21,14 +21,27 @@
 	}
 
 	.list-group {
+
 		border-radius: $border-radius;
+
+
+		.list-group-item:first-child {
+			border-top-left-radius: $border_radius;
+			border-top-right-radius: $border_radius;
+		}
+
+		.list-group-item:last-child {
+			border-bottom-left-radius: $border_radius;
+			border-bottom-right-radius: $border_radius;
+		}
 
 		.list-group-item {
 			.text {
 				color: $dark;
 			}
+
 			font-size: 1.4rem;
-			background-color: $screen_dark_05;
+			background-color: $shade_lightest;
 
 		}
 
