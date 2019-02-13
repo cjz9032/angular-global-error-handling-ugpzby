@@ -1,23 +1,18 @@
 <div class="vtr-widget-feedback">
-	<div class="row"
-	 *ngIf="title">
-		<div class="col">
-			<div class="title">{{title}}</div>
-		</div>
-	</div>
-	<div class="row"
-	 *ngIf="description">
-		<div class="col">
-			<div class="description">{{description}}</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col">
-			<div class="button-box">
-				<button *ngIf="actionName && action"
-				 type="button"
-				 class="button"
-				 (click)="submitAction()">{{actionName}} </button>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<div class="title"
+					*ngIf="title">{{title}}</div>
+				<div class="description"
+					*ngIf="description">{{description}}</div>
+
+				<div class="button-box">
+					<button *ngIf="actionName && action"
+						type="button"
+						class="button"
+						(click)="submitAction()">{{actionName}} </button>
+				</div>
 			</div>
 		</div>
 	</div>

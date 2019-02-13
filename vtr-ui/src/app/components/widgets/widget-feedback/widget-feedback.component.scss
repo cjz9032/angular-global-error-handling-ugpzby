@@ -1,62 +1,43 @@
-@import '../../../app.theme';
+@import "../../../app.theme";
 
 .vtr-widget-feedback {
-	border-radius: 0.625rem;
-	background-color: $light;
-	box-shadow: 0 0 0.9375rem 0 $shadow_black_01;
+  border-radius: $border_radius;
+  background-color: $light;
+  box-shadow: $drop_shadow;
+  padding: 4rem;
 
-	.title {
-		text-transform: uppercase;
-		height: 0.728125rem;
-		//width: 21.875rem;
-		color:$dark_blue_01;
-		font-size: 1.5625rem;
-		line-height: 1.8125rem;
-		margin: 2.625rem 2.5rem 0rem 2.5rem;
-	}
+  .title {
+    color: $main_darker;
+    font-size: 2.5rem;
+  }
+  .description {
+    color: $shade;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: $weight_medium;
+  }
 
-	.description {
-		text-transform: uppercase;
-		height: 0.296875rem;
-		//width: 21.875rem;
-		color: $dark_blue_02;
-		font-size: 0.6875rem;
-		font-weight: $weight_medium;
-		letter-spacing: 0.04375rem;
-		line-height: 0.8125rem;
-		margin: 2.5rem;
-	}
-
-
-.button-box {
-	align-content: center;
-	//margin-right: 2.75rem;
-	//margin-left : 2.25rem;
-
-.button {
-	height: 3.125rem;
-	width: 21.875rem;
-	border-radius: 1.5625rem;
-	background: linear-gradient(270deg, $light_blue_01 0%,$light_blue_02 100%), linear-gradient(236.79deg, $light_white_04 0%, $light 100%);
-	border: none;
-	color: white;
-	font-size: 0.9375rem;
-	font-weight: $weight_medium;
-	letter-spacing: 0.0625rem;
-	line-height: 1.125rem;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	margin-right: 2.75rem;
-	margin-left : 2.25rem;
-	margin-top:1.964375rem;
-	margin-bottom:3.5rem;
-	cursor: pointer;
-	padding-top: 1.0625rem;
-	padding-bottom: 1.125rem;
+  .button-box {
+    padding: 0;
+    margin-top: 2.7rem;
+    .button {
+      height: 3.125rem;
+      width: 100%;
+      border-radius: $border_button_radius;
+      background: linear-gradient(270deg, $light_blue_01 0%, $light_blue_02 100%),
+        linear-gradient(236.79deg, $light_white_04 0%, $light 100%);
+      border: none;
+      color: $light;
+      font-size: 0.9375rem;
+      font-weight: $weight_medium;
+      letter-spacing: 0.0625rem;
+      line-height: 1.125rem;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      padding-top: 1.0625rem;
+      padding-bottom: 1.125rem;
+    }
+  }
 }
-}
-}
-
-
-
