@@ -50,9 +50,9 @@ import { WidgetSwitchIconComponent } from './components/widgets/widget-switch-ic
 import { WidgetDeviceComponent } from './components/widgets/widget-device/widget-device.component';
 import { WidgetSecurityComponent } from './components/widgets/widget-security/widget-security.component';
 import { WidgetCarouselComponent } from './components/widgets/widget-carousel/widget-carousel.component';
-import { WidgetQuicksettingsComponent } from './components/widgets/widget-quicksettings/widget-quicksettings.component'
+import { WidgetQuicksettingsComponent } from './components/widgets/widget-quicksettings/widget-quicksettings.component';
 import { WidgetStatusComponent } from './components/widgets/widget-status/widget-status.component';
-
+import { WidgetFeedbackComponent } from './components/widgets/widget-feedback/widget-feedback.component';
 // APPLICATION MODALS
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 
@@ -92,6 +92,7 @@ library.add(fab);
 		WidgetSecurityComponent,
 		WidgetCarouselComponent,
 		WidgetQuicksettingsComponent,
+		WidgetFeedbackComponent,
 		WidgetStatusComponent,
 		PageQuestionsComponent,
 		ContainerCardComponent,
