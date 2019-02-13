@@ -28,7 +28,7 @@ import { BatteryDetailComponent } from './components/battery/battery-detail/batt
 import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switch-onoff.component';
 import { UiSwitchTristateComponent } from './components/ui/ui-switch-tristate/ui-switch-tristate.component';
 import { UiRectangleRadioComponent } from './components/ui/ui-rectangle-radio/ui-rectangle-radio.component';
-import { RangeSliderComponent } from './components/ui/range-slider/range-slider.component';
+import { UiRangeSliderComponent } from './components/ui/ui-range-slider/ui-range-slider.component';
 
 // APPLICATION PAGE COMPONENTS
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
@@ -117,7 +117,7 @@ library.add(far);
 		UiRectangleRadioComponent,
 		UiSwitchTristateComponent,
 		BatteryDetailComponent,
-		RangeSliderComponent
+		UiRangeSliderComponent
 	],
 	imports: [
 		BrowserModule,

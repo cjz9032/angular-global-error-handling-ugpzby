@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RangeSliderComponent } from './range-slider.component';
+import { UiRangeSliderComponent } from './ui-range-slider.component';
 
-describe('RangeSliderComponent', () => {
-	let component: RangeSliderComponent;
-	let fixture: ComponentFixture<RangeSliderComponent>;
+describe('UiRangeSliderComponent', () => {
+	let component: UiRangeSliderComponent;
+	let fixture: ComponentFixture<UiRangeSliderComponent>;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [RangeSliderComponent]
+			declarations: [UiRangeSliderComponent]
 		}).compileComponents();
 	}));
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(RangeSliderComponent);
+		fixture = TestBed.createComponent(UiRangeSliderComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

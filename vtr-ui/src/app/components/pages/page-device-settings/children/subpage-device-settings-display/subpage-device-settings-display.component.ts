@@ -6,12 +6,23 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./subpage-device-settings-display.component.scss']
 })
 export class SubpageDeviceSettingsDisplayComponent implements OnInit {
-
 	title = 'Display & Camera Settings';
+	constructor() {}
 
-	constructor() { }
+	ngOnInit() {}
 
-	ngOnInit() {
+	//#region demo code section for code review
+
+	// tslint:disable-next-line: member-ordering
+	public sliderValue = 0; // demo code for code review
+
+	public onSliderChange($event: number) {
+		this.sliderValue = $event;
 	}
 
+	public onValueChange($event: number) {
+		this.sliderValue = $event;
+	}
+
+	//#endregion
 }
