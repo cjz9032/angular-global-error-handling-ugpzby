@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WidgetQuestionsComponent } from './widget-questions.component';
+import { UiRowSwitchComponent } from './ui-row-switch.component';
 
-describe('WidgetQuestionsComponent', () => {
-  let component: WidgetQuestionsComponent;
-  let fixture: ComponentFixture<WidgetQuestionsComponent>;
+describe('UiRowSwitchComponent', () => {
+  let component: UiRowSwitchComponent;
+  let fixture: ComponentFixture<UiRowSwitchComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WidgetQuestionsComponent ]
+      declarations: [ UiRowSwitchComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WidgetQuestionsComponent);
+    fixture = TestBed.createComponent(UiRowSwitchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
