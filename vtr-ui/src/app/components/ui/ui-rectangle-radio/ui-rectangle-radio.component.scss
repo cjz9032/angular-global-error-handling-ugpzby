@@ -1,0 +1,80 @@
+@import "../../../app.theme";
+
+.vtr-ui-rectangle-radio {
+	box-sizing: border-box;
+	background-color: $light;
+	display: inline-block;
+	margin-right: 2rem;
+	position: relative;
+	width: 13rem;
+	height: 13rem;
+	border-radius: 0.5rem;
+
+	label {
+		box-sizing: border-box;
+		padding: 0rem;
+		width: 100%;
+		height: 100%;
+		display: block;
+		border: 0.1rem solid $main_lightest;
+		border-radius: 0.5rem;
+		position: relative;
+		z-index: 2;
+		overflow: hidden;
+
+		&:after {
+			box-sizing: border-box;
+			position: absolute;
+			left: 2rem;
+			top: 2rem;
+			width: 2rem;
+			height: 2rem;
+			content: "";
+			border: 0.1rem solid $main;
+			background-color: $light;
+			border-radius: 1rem;
+			z-index: 2;
+			cursor: pointer;
+			transition: all 200ms ease-in;
+		}
+
+		span {
+			position: absolute;
+			left: 1.9rem;
+			top: 9.8rem;
+			color: $main_darkest;
+			font-family: Rubik;
+			font-size: 1.1rem;
+			font-weight: bold;
+			letter-spacing: 0rem;
+			line-height: 1.6rem;
+		}
+
+		fa-icon.icon {
+			position: absolute;
+			left: 7.8rem;
+			top: 1rem;
+			font-size: 3.2rem;
+			color: $main;
+		}
+
+		span.question {
+			position: absolute;
+			left: 9.5rem;
+			top: 9.3rem;
+			font-size: 1.8rem;
+			color: $main;
+		}
+	}
+
+	input:checked ~ label {
+		&:after {
+			background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2,9a7,7 0 1,0 14,0a7,7 0 1,0 -14,0' fill='%234A81FD' fill-rule='nonzero'/%3E%3C/svg%3E ");
+		}
+	}
+
+	input {
+		position: absolute;
+		visibility: hidden;
+	}
+}
