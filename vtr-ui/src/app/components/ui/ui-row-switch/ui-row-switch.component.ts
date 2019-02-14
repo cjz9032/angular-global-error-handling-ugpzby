@@ -25,6 +25,7 @@ export class UiRowSwitchComponent implements OnInit {
 	@Input() title = '';
 	@Input() caption = '';
 	@Input() isSwitchVisible = false;
+	@Input() theme: string = 'white';
 
 	@Output() toggleOnOff = new EventEmitter<boolean>();
 	@Output() readMoreClick = new EventEmitter<boolean>();
