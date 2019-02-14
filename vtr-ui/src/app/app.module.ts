@@ -151,4 +151,4 @@ library.add(far);
 	bootstrap: [AppComponent],
 	entryComponents: [ModalWelcomeComponent]
 })
-export class AppModule {}
+export class AppModule { }
