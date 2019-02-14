@@ -31,4 +31,32 @@
 			color: $main;
 		}
 	}
+
+	.smartsettings-card {
+		.subtitle {
+			width: 100%;
+
+			h2 {
+				opacity: 0.8;
+				color: $light;
+				font-size: 1.6rem;
+				line-height: 2.8rem;
+				margin-top: 1.5rem;
+			}
+
+			p {
+				opacity: 0.8;
+				color: $light;
+				font-size: 1.6rem;
+				line-height: 2.8rem;
+				padding-bottom: 2.5rem;
+				border-bottom: 0.1rem solid $shade_dark;
+			}
+		}
+
+		ul.list-group {
+			list-style-type: none;
+			padding-bottom: 3rem;
+		}
+	}
 }

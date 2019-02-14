@@ -6,12 +6,15 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./subpage-device-settings-audio.component.scss']
 })
 export class SubpageDeviceSettingsAudioComponent implements OnInit {
-
 	title = 'Audio Settings';
+	automaticDolbyAudioSettings: boolean = false;
 
 	constructor() { }
 
-	ngOnInit() {
+	onToggleOnOff(event) {
+		this.automaticDolbyAudioSettings = event.switchValue;
 	}
 
+	ngOnInit() {
+	}
 }
