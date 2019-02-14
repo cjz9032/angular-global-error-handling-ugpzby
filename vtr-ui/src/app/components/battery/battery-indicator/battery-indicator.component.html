@@ -13,18 +13,20 @@
 					</span>
 				</div>
 				<div class="battery-error" *ngIf="!(percentage > 0)">
-					X
+					<fa-icon [icon]="['fas', 'times']"></fa-icon>
 				</div>
 			</div>
 
-			<div class="remaining-time">
-				{{ getTimeRemaining() }}
-			</div>
-			<div class="remaining-text text-uppercase" *ngIf="!isCharging">
-				Remaining Time
-			</div>
-			<div class="remaining-text text-uppercase" *ngIf="isCharging">
-				Time To Fully Charge
+			<div *ngIf="percentage >= 0">
+				<div class="remaining-time">
+					{{ getTimeRemaining() }}
+				</div>
+				<div class="remaining-text text-uppercase" *ngIf="!isCharging">
+					Remaining Time
+				</div>
+				<div class="remaining-text text-uppercase" *ngIf="isCharging">
+					Time To Fully Charge
+				</div>
 			</div>
 		</div>
 		<div class="battery-charging">
