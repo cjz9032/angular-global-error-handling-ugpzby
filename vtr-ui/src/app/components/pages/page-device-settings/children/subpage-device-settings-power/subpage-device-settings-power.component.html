@@ -1,1 +1,127 @@
-<h2>{{title}}</h2>
+<div class="subpage-device-settings-power">
+	<div class="row">
+		<div class="col-11 mx-auto">
+			<div class="row">
+				<div class="col-auto px-0">
+					<div class="row py-5">
+						<div class="col title">
+							Power Settings
+						</div>
+					</div>
+					<div class="row left-border align-items-start">
+						<div class="col">
+							<div class="row align-items-start">
+								<div class="col-auto  text-wrap subtitle">
+									This section enables you to dynamically adjust thermal performance and maximize the
+									battery life. It also has other
+									popular power-related features. You can check the default settings in this section
+									and customize your system according
+									to your needs.
+								</div>
+							</div>
+							<div class="row pt-5">
+								<div class="col-auto mr-auto jump-to-settings">
+									JUMP TO SETTINGS
+								</div>
+							</div>
+							<div class="row py-3">
+								<div class="col-auto btn-label">
+									Battery <i class="fa fa-angle-down"></i>
+								</div>
+								<div class="col-auto btn-label">
+									Power <i class="fa fa-angle-down"></i>
+								</div>
+								<div class="col-auto btn-label">
+									Cooling <i class="fa fa-angle-down"></i>
+								</div>
+								<div class="col-auto mr-auto btn-label">
+									Other <i class="fa fa-angle-down"></i>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row py-5 smartsettings-card">
+		<div class="col-10 mx-auto ">
+			<vtr-container-collapsible title="Power Smartsettings"
+				[isCollapsed]="false"
+				[allowCollapse]="false"
+				[theme]="'blue'">
+				<div class="row">
+					<div class="col-auto text-wrap subtitle">
+						<h2>INTELLIGENT COOLING</h2>
+						<p>This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings
+							to keep the device cooler while being held, and optimizes performance while the device is on
+							a stable surface. When off, you can manually set thermal priority.</p>
+					</div>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="">
+						<vtr-ui-row-switch [title]="'Intelligent cooling'"
+							[caption]="''"
+							[isSwitchVisible]=true
+							[leftIcon]="['fas', 'search']"
+							[rightIcon]="['far', 'question-circle']"
+							[readMoreText]="''"
+							[showChildContent]="true"
+							[theme]="'blue'"
+							(toggleOnOff)="onIntelligentCoolingToggle($event)">
+							<div *ngIf="!intelligentCooling">
+								<vtr-ui-rectangle-radio [radioId]="'radio1'"
+									[group]="'radio'"
+									[label]="'QUIET'"
+									[value]="'QUIET'"></vtr-ui-rectangle-radio>
+								<vtr-ui-rectangle-radio [radioId]="'radio2'"
+									[group]="'radio'"
+									[label]="'PERFORMANCE'"
+									[value]="'PERFORMANCE'"></vtr-ui-rectangle-radio>
+							</div>
+						</vtr-ui-row-switch>
+					</li>
+				</ul>
+			</vtr-container-collapsible>
+		</div>
+	</div>
+
+	<div class="row py-5">
+		<div class="col-10 mx-auto ">
+			<vtr-container-collapsible title="Battery Settings">
+				<ul class="list-group list-group-flush">
+					<li class=""
+						*ngFor="let item of dummyCollapsibleContainerItemArray">
+						<vtr-ui-row-switch [title]="item.header"
+							[caption]="item.subHeader"
+							[isSwitchVisible]=true
+							[leftIcon]="item.leftImageSource"
+							[rightIcon]="item.rightImageSource"
+							[readMoreText]="item.readMoreText">
+						</vtr-ui-row-switch>
+					</li>
+				</ul>
+			</vtr-container-collapsible>
+		</div>
+	</div>
+	<div class="row py-5">
+		<div class="col-10 mx-auto ">
+			<vtr-container-collapsible title="Microphone">
+				<ul class="list-group list-group-flush">
+					<li class=""
+						*ngFor="let item of dummyCollapsibleContainerItemArray">
+						<vtr-ui-row-switch [title]="item.header"
+							[caption]="item.subHeader"
+							[isSwitchVisible]=true
+							[leftIcon]="item.leftImageSource"
+							[rightIcon]="item.rightImageSource"
+							[readMoreText]="item.readMoreText">
+						</vtr-ui-row-switch>
+					</li>
+				</ul>
+			</vtr-container-collapsible>
+		</div>
+	</div>
+</div>

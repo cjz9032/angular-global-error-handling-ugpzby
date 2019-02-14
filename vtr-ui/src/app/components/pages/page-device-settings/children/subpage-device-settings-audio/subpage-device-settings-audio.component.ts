@@ -11,7 +11,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit {
 
 	constructor() { }
 
-	onToggleOnOff(event) {
+	onAutomaticDolbyAudioToggleOnOff(event) {
 		this.automaticDolbyAudioSettings = event.switchValue;
 	}
 
