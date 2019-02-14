@@ -8,6 +8,8 @@ import { UserService } from '../../../services/user/user.service';
 })
 export class PageUserComponent implements OnInit {
 
+	title = 'User Settings';
+
 	constructor(
 		public userService: UserService
 	) { }

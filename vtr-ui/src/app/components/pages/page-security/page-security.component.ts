@@ -8,6 +8,8 @@ import { SecurityService } from '../../../services/security/security.service';
 })
 export class PageSecurityComponent implements OnInit {
 
+	title = 'Dashboard';
+	
 	constructor(
 		public securityService: SecurityService
 	) { }

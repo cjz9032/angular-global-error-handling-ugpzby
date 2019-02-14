@@ -1,0 +1,12 @@
+<div class="checkbox">
+	<label>
+		<input type="checkbox"
+		 class="switch"
+		 [value]="value"
+		 (change)="onChange($event)"
+		 [checked]="value" />
+		<span class="switch {{ size }}"> <small></small> </span>
+		<div *ngIf="!value" class="switch-label off-label">{{ offLabel }}</div>
+		<div *ngIf="value" class="switch-label on-label">{{ onLabel }}</div>
+	</label>
+</div>

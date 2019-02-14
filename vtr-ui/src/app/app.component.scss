@@ -1,10 +1,13 @@
 @import 'app.theme';
 
 .vtr-app {
+
+	//height: calc(100% - #{$menu_height});
+
 	background-position: 50% 50%;
 	background-size: cover;
 	background-repeat: no-repeat;
-	height: 100%;
+//	height: 100%;
 	min-width: 400px;
 	overflow: hidden;
 	.vtr-widget {
@@ -28,12 +31,14 @@
 		right: 0;
 		bottom: 0;
 	}
+
 }
 
 @media only screen and (max-width:400px) {
 	.vtr-app {
 		zoom: .7;
 	}
+
 }
 
 
@@ -61,3 +66,4 @@
 	}
 	
 }
+

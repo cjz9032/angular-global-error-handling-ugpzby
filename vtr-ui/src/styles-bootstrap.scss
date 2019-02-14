@@ -1,7 +1,131 @@
-.navbar {
+@import "app/app.theme";
+
+.navbar,
+.container-fluid,
+.row,
+.col {
+	margin: 0;
 	padding: 0;
 }
 
-.dropdown:hover>.dropdown-menu {
+.dropdown:hover > .dropdown-menu {
 	display: block;
+}
+
+.dropdown-item {
+	&:hover {
+		background-color: transparent;
+	}
+}
+
+.nmx-40 {
+	margin-left: -4rem !important;
+	margin-right: -4rem !important;
+}
+
+.mb-40 {
+	margin-bottom: 4rem !important;
+}
+
+.px-40 {
+	padding-left: 4rem !important;
+	padding-right: 4rem !important;
+}
+
+.py-40 {
+	padding-top: 4rem !important;
+	padding-bottom: 4rem !important;
+}
+
+.pb-40 {
+	padding-bottom: 4rem !important;
+}
+
+.p-40 {
+	padding: 4rem !important;
+}
+
+@media #{$mediaquery_1} {
+	.nmx-40 {
+		margin-left: -3.5rem !important;
+		margin-right: -3.5rem !important;
+	}
+
+	.px-40 {
+		padding-left: 3.5rem !important;
+		padding-right: 3.5rem !important;
+	}
+
+	.pb-40 {
+		padding-bottom: 3.5rem !important;
+	}
+
+	.p-40 {
+		padding: 3.5rem !important;
+	}
+}
+
+@media #{$mediaquery_2} {
+	.nmx-40 {
+		margin-left: -3rem !important;
+		margin-right: -3rem !important;
+	}
+
+	.px-40 {
+		padding-left: 3rem !important;
+		padding-right: 3rem !important;
+	}
+
+	.pb-40 {
+		padding-bottom: 3rem !important;
+	}
+
+	.p-40 {
+		padding: 3rem !important;
+	}
+}
+
+@media #{$mediaquery_3} {
+	.nmx-40 {
+		margin-left: -2.5rem !important;
+		margin-right: -2.5rem !important;
+	}
+
+	.px-40 {
+		padding-left: 2.5rem !important;
+		padding-right: 2.5rem !important;
+	}
+
+	.pb-40 {
+		padding-bottom: 2.5rem !important;
+	}
+
+	.p-40 {
+		padding: 2.5rem !important;
+	}
+}
+
+@media #{$mediaquery_4} {
+	.nmx-40 {
+		margin-left: -2rem !important;
+		margin-right: -2rem !important;
+	}
+
+	.px-40 {
+		padding-left: 2rem !important;
+		padding-right: 2rem !important;
+	}
+
+	.pb-40 {
+		padding-bottom: 2rem !important;
+	}
+
+	.p-40 {
+		padding: 2rem !important;
+	}
+}
+
+// override for bootstrap modal size
+.battery-modal-size .modal-dialog {
+	max-width: 150rem;
 }

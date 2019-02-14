@@ -1,0 +1,10 @@
+<div class="vtr-menu-header">
+	<ng-container *ngFor="let tab of menuItems; let i=index;">
+		<div class="menu-header-tab {{tab.prop}}"
+		routerLink="/{{tab.path}}"
+		routerLinkActive="active">
+			<div class="tab-label">{{tab.label}}</div>
+			<fa-icon [icon]="['fas', 'square']" class="menu-pointer"></fa-icon>
+		</div>
+	</ng-container>
+</div>

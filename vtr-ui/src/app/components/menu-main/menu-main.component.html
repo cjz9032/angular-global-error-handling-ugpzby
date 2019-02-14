@@ -40,8 +40,9 @@
 						</a>
 						<div class="dropdown-menu"
 						 aria-labelledby="navbarDropdown">
+						 	<fa-icon [icon]="['fas', 'square']" class="menu-pointer"></fa-icon>
 							<a *ngFor="let subitem of item.subitems; let ii=index"
-							 class="dropdown-item"
+							 class="dropdown-item link"
 							 routerLink="/{{subitem.path}}">{{subitem.label}}</a>
 						</div>
 					</li>
@@ -59,10 +60,10 @@
 								{{userService.initials}}
 							</div>
 						</a>
-						<div class="dropdown-menu"
+						<div class="dropdown-menu {{item.id}}"
 						 aria-labelledby="navbarDropdown">
 							<div class="dropdown-item">Welcome, {{userService.firstName}}</div>
-							<a class="dropdown-item"
+							<a class="dropdown-item link"
 							 routerLink="/logout">Logout</a>
 						</div>
 					</li>
