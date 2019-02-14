@@ -56,12 +56,15 @@ import { WidgetSecurityComponent } from './components/widgets/widget-security/wi
 import { WidgetCarouselComponent } from './components/widgets/widget-carousel/widget-carousel.component';
 import { WidgetQuicksettingsComponent } from './components/widgets/widget-quicksettings/widget-quicksettings.component';
 import { WidgetStatusComponent } from './components/widgets/widget-status/widget-status.component';
+import { WidgetQuestionsComponent } from './components/widgets/widget-questions/widget-questions.component';
+import { WidgetFeedbackComponent } from './components/widgets/widget-feedback/widget-feedback.component';
 
 // APPLICATION MODALS
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 
 // APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
+import { MockService } from './services/mock/mock.service';
 import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
 import { CommsService } from './services/comms/comms.service';
@@ -75,11 +78,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { far } from '@fortawesome/free-regular-svg-icons';
+import { UiListChevronComponent } from './components/ui/ui-list-chevron/ui-list-chevron.component';
 
 library.add(fas);
 library.add(fab);
-library.add(far);
+
+
 
 @NgModule({
 	declarations: [
@@ -96,7 +100,9 @@ library.add(far);
 		WidgetSecurityComponent,
 		WidgetCarouselComponent,
 		WidgetQuicksettingsComponent,
+		WidgetFeedbackComponent,
 		WidgetStatusComponent,
+		WidgetQuestionsComponent,
 		PageQuestionsComponent,
 		ContainerCardComponent,
 		HeaderMainComponent,
@@ -114,16 +120,16 @@ library.add(far);
 		ModalWelcomeComponent,
 		ContainerCollapsibleComponent,
 		UiSwitchOnoffComponent,
-		UiRectangleRadioComponent,
-		UiSwitchTristateComponent,
 		BatteryDetailComponent,
-		UiRangeSliderComponent
+		UiRangeSliderComponent,
+		UiListChevronComponent
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		FormsModule,
 		HttpClientModule,
+
 		FontAwesomeModule,
 		NgbModule,
 		Ng5SliderModule
@@ -131,6 +137,7 @@ library.add(far);
 	providers: [
 		CookieService,
 		DevService,
+		MockService,
 		DisplayService,
 		ContainerService,
 		CommsService,
