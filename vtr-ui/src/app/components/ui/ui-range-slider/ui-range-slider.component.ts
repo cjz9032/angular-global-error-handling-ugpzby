@@ -19,7 +19,7 @@ export class UiRangeSliderComponent implements OnInit {
 	@Output() change: EventEmitter<number> = new EventEmitter();
 	@Output() valueChange: EventEmitter<number> = new EventEmitter();
 
-	constructor() {}
+	constructor() { }
 
 	ngOnInit() {
 		this.options = {
