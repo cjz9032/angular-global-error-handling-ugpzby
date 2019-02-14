@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WidgetQuestionsComponent } from './widget-questions.component';
+import { UiSwitchTristateComponent } from './ui-switch-tristate.component';
 
-describe('WidgetQuestionsComponent', () => {
-  let component: WidgetQuestionsComponent;
-  let fixture: ComponentFixture<WidgetQuestionsComponent>;
+describe('UiSwitchTristateComponent', () => {
+  let component: UiSwitchTristateComponent;
+  let fixture: ComponentFixture<UiSwitchTristateComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WidgetQuestionsComponent ]
+      declarations: [ UiSwitchTristateComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WidgetQuestionsComponent);
+    fixture = TestBed.createComponent(UiSwitchTristateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

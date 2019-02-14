@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
 	selector: 'vtr-widget-feedback',
@@ -11,10 +11,10 @@ export class WidgetFeedbackComponent implements OnInit {
 	@Input() description: string = this.description || '';
 	@Input() actionName: string = this.actionName || '';
 	@Input() action: string = this.action || '';
-	@Input() isWideScreenResolution: boolean = this.isWideScreenResolution || false;
 
 
-	constructor() { }
+	constructor() {
+	}
 
 	ngOnInit() {
 	}

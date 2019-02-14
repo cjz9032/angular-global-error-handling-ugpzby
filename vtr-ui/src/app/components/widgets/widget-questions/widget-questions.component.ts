@@ -1,4 +1,4 @@
-import {Component, OnInit,Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
 	selector: 'vtr-widget-questions',
@@ -7,16 +7,14 @@ import {Component, OnInit,Input} from '@angular/core';
 })
 export class WidgetQuestionsComponent implements OnInit {
 
-  @Input() title: string;
-  @Input() description: string;
-  @Input() data: any;
-	constructor() { }
+	@Input() title: string;
+	@Input() description: string;
+	@Input() items: any[];
+
+	constructor() {
+	}
 
 	ngOnInit() {
 	}
-
 }
-
-
-
 
