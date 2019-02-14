@@ -124,6 +124,7 @@ library.add(far);
 		BatteryDetailComponent,
 		UiRangeSliderComponent,
 		UiListChevronComponent,
+		UiRectangleRadioComponent,
 		UiRowSwitchComponent
 	],
 	imports: [
