@@ -27,5 +27,11 @@
 				Time To Fully Charge
 			</div>
 		</div>
+		<div class="battery-charging">
+			<fa-icon
+				[icon]="['fas', 'bolt']"
+				[ngClass]="{ transparent: !isCharging }"
+			></fa-icon>
+		</div>
 	</div>
 </div>

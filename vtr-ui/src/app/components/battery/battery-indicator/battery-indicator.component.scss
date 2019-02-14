@@ -1,34 +1,50 @@
-@import "./../../../app.theme.scss";
+@import './../../../app.theme.scss';
 
 .vtr-battery-indicator {
-	/* Start : below are --css-variables will be used in TS file. */
+	/* start variables : below are --css-variables will be used in .ts file. */
 
 	--acid-width: 0;
-	--background-color: #f17f14;
-	--border-color: rgb(241, 127, 20);
-	--acid-fill-gradient: linear-gradient($gradient_angle_reverse, #f17f14 0%, #ed4e04 100%);
+	--background-color: 0;
+	--border-color: 0;
+	--acid-fill-gradient: 0;
 
 	// battery error
 	--background-color-error: #{$shade_extradark};
 	--border-color-error: #{rgba($shade_extradark, 0.4)};
-	--acid-fill-gradient-error: linear-gradient(#{$gradient_angle_reverse}, #{$shade_extradark} 0%, #{$dark} 100%);
+	--acid-fill-gradient-error: linear-gradient(
+		#{$gradient_angle_reverse},
+		#{$shade_extradark} 0%,
+		#{$dark} 100%
+	);
 
 	// when % is between 0-14
 	--background-color-0-14: #{$stop_dark};
 	--border-color-0-14: #{rgba($stop_dark, 0.4)};
-	--acid-fill-gradient-0-14: linear-gradient(#{$gradient_angle_reverse}, #{$stop_dark} 0%, #{$alt} 100%);
+	--acid-fill-gradient-0-14: linear-gradient(
+		#{$gradient_angle_reverse},
+		#{$stop_dark} 0%,
+		#{$alt} 100%
+	);
 
 	// when % is between 15-24
 	--background-color-15-24: #{$yellow_light};
 	--border-color-15-24: #{rgba($yellow_light, 0.4)};
-	--acid-fill-gradient-15-24: linear-gradient(#{$gradient_angle_reverse}, #{$yellow_light} 0%, #{$yellow} 100%);
+	--acid-fill-gradient-15-24: linear-gradient(
+		#{$gradient_angle_reverse},
+		#{$yellow_light} 0%,
+		#{$yellow} 100%
+	);
 
 	// when % is between 25-100
 	--background-color-25-100: #{$go_light};
 	--border-color-25-100: #{rgba($go_light, 0.4)};
-	--acid-fill-gradient-25-100: linear-gradient(#{$gradient_angle_reverse}, #{$go_light} 0%, #{$go} 100%);
+	--acid-fill-gradient-25-100: linear-gradient(
+		#{$gradient_angle_reverse},
+		#{$go_light} 0%,
+		#{$go} 100%
+	);
 
-	/* End of variables*/
+	/* end of variables */
 
 	.cell {
 		width: 100%;
@@ -44,21 +60,22 @@
 			position: absolute;
 			width: 90%;
 			height: 12rem;
-			border: 0.3rem solid var(--border-color);
-			opacity: 0.4;
-			border-radius: 0.8rem;
+			border: 0.5rem solid var(--border-color);
+			opacity: 0.8;
+			border-radius: 0.5rem;
 			filter: blur(0.3rem);
+			left: 3%;
 
 			/* battery notch */
 			&:after {
 				position: absolute;
 				top: 32%;
 				left: 102%;
-				width: 1rem;
+				width: 1.9rem;
 				height: 35%;
 				background-color: var(--background-color);
 				border-radius: 0rem 0.3rem 0.3rem 0rem;
-				content: "";
+				content: '';
 				border-left-width: 0;
 			}
 		}
@@ -76,11 +93,11 @@
 				position: absolute;
 				top: 32%;
 				left: 100%;
-				width: 1.2rem;
+				width: 2rem;
 				height: 35%;
 				background-color: var(--background-color);
 				border-radius: 0rem 0.3rem 0.3rem 0rem;
-				content: "";
+				content: '';
 				border-left-width: 0;
 			}
 
@@ -169,6 +186,16 @@
 				bottom: 5%;
 				font-size: 1rem;
 				font-weight: 500;
+			}
+		}
+		.battery-charging {
+			z-index: 5;
+			font-size: 2rem;
+			padding-left: 0.3rem;
+			color: $light;
+
+			.transparent {
+				color: transparent;
 			}
 		}
 	}
