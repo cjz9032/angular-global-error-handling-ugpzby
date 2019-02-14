@@ -2,8 +2,45 @@
 
 .vtr-page-support {
 	.vtr-page-content {
-	   .mn-6{
-		   margin-top:$shift_up_small;
-	   }
+		.vtr-page-left-column {
+			background: $shade_lighter;
+
+			.card {
+				border-radius: $border_radius;
+				box-shadow: $drop_shadow;
+
+				.text {
+					color: $shade_extradark;
+					font-size: 16px;
+					font-weight: 300;
+					line-height: 25px;
+				}
+
+				.title {
+					color: $shade_extradark;
+					font-size: 25px;
+					font-weight: 300;
+					line-height: 30px;
+				}
+
+				.subtitle {
+					color:$shade_light;
+					font-size: 11px;
+					font-weight: 500;
+					letter-spacing: 0.7px;
+					line-height: 13px;
+				}
+
+				.border {
+					border-radius: $border_radius;
+					background: $shade_lighter;
+				}
+			}
+		}
+
+
+		.mn-6 {
+			margin-top: $shift_up_small;
+		}
 	}
 }
