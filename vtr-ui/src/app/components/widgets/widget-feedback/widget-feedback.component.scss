@@ -1,45 +1,37 @@
 @import "../../../app.theme";
 
 .vtr-widget-feedback {
-  border-radius: $border_radius;
-  background-color: $light;
-  box-shadow: $drop_shadow;
-  padding: 4rem;
-
-  .title {
-    color: $main_darker;
-    font-size: 2.5rem;
-  }
-
-  .description {
-    color: $shade;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    font-weight: $weight_medium;
-  }
-
-  .button-box {
-    padding: 0;
-    margin-top: 2.7rem;
-
-    .button {
-      height: 3.1rem;
-      width: 100%;
-      border-radius: $border_button_radius;
-      background: linear-gradient(270deg, $light_blue_01 0%, $light_blue_02 100%),
-        linear-gradient(236.79deg, $light_white_04 0%, $light 100%);
-      border: none;
-      color: $light;
-      font-size: 0.9375rem;
-      font-weight: $weight_medium;
-      letter-spacing: 0.07rem;
-      line-height: 1.1rem;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      cursor: pointer;
-      padding-top: 1rem;
-      padding-bottom: 1.1rem;
-    }
-  }
+	border-radius: $border_radius;
+	background-color: $light;
+	box-shadow: $drop_shadow;
+	padding: 4rem;
+	.title {
+		color: $main_darker;
+		font-size: 2.5rem;
+	}
+	.description {
+		color: $shade;
+		font-size: 1.1rem;
+		text-transform: uppercase;
+		font-weight: $weight_medium;
+	}
+	.button-box {
+		padding: 0;
+		margin-top: 2.7rem;
+		.button {
+			text-transform: uppercase;
+			height: 5.5rem;
+			width: 100%;
+			border-radius: 2.25rem;
+			background: $button_bkg;
+			border: none;
+			color: $light;
+			font-size: 1.4rem;
+			font-weight: $weight_medium;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			cursor: pointer;
+		}
+	}
 }
