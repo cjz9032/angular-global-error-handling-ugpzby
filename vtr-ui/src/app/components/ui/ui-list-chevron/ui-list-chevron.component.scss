@@ -1,20 +1,6 @@
 @import '../../../app.theme.scss';
 
-.vtr-widget-status {
-	border-radius: $border_radius;
-	background-color:$light;
-	box-shadow: $drop_shadow;
-	padding: 4rem;
-	.title {
-		color: $main_darker;
-		font-size: 2.5rem;
-	}
-	.description {
-		color: $shade;
-		font-size: 1.1rem;
-		text-transform: uppercase;
-		font-weight: $weight_medium;
-	}
+.vtr-ui-list-chevron {
 	.chevron-list {
 		margin-top: 2.7rem;
 		list-style: none;

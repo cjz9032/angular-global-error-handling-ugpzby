@@ -9,39 +9,7 @@
 	</div>
 	<div class="row">
 		<div class="col">
-			<ul class="status-list">
-				<li *ngFor="let item of items"
-				 [ngClass]="[!item.status?'good':'bad']">
-					<a routerLink="/{{item.path}}">
-						<div class="container-fluid">
-							<div class="row">
-								<div class="col col-2 text-center">
-									<div class="status-icon">
-										<div class="icon-bkg">
-											<fa-icon [icon]="['fas', !item.status?'check':'times']"></fa-icon>
-										</div>
-									</div>
-								</div>
-								<div class="col col-9 status-text">
-									<div class="title"
-									 [ngClass]="[!item.status?'good':'bad']">
-										{{item.title}}
-									</div>
-									<div class="detail"
-									 [ngClass]="{'highlight':item.asLink}">
-										{{item.detail}}
-									</div>
-								</div>
-								<div class="col col-1 text-center">
-									<div class="arrow">
-										<fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-			</ul>
+			<vtr-ui-list-chevron [items]="items"></vtr-ui-list-chevron>
 		</div>
 	</div>
 </div>
