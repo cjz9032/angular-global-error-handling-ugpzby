@@ -21,15 +21,13 @@ import { ClockComponent } from './components/clock/clock.component';
 // APPLICATION REUSABLE COMPONENTS
 import { ContainerCardComponent } from './components/container-card/container-card.component';
 import { UiRowSwitchComponent } from './components/ui/ui-row-switch/ui-row-switch.component';
-import { BatteryDetailComponent } from './components/battery/battery-detail/battery-detail.component';
 import { BatteryCardComponent } from './components/battery/battery-card/battery-card.component';
 import { BatteryIndicatorComponent } from './components/battery/battery-indicator/battery-indicator.component';
+import { ContainerCollapsibleComponent } from './components/container-collapsible/container-collapsible.component';
 
 // APPLICATION UI COMPONENTS
 import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switch-onoff.component';
-import { UiSwitchTristateComponent } from './components/ui/ui-switch-tristate/ui-switch-tristate.component';
-import { UiRectangleRadioComponent } from './components/ui/ui-rectangle-radio/ui-rectangle-radio.component';
-import { ContainerCollapsibleComponent } from './components/container-collapsible/container-collapsible.component';
+import { BatteryDetailComponent } from './components/battery/battery-detail/battery-detail.component';
 
 // APPLICATION PAGE COMPONENTS
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
@@ -57,7 +55,7 @@ import { WidgetSecurityComponent } from './components/widgets/widget-security/wi
 import { WidgetCarouselComponent } from './components/widgets/widget-carousel/widget-carousel.component';
 import { WidgetQuicksettingsComponent } from './components/widgets/widget-quicksettings/widget-quicksettings.component';
 import { WidgetStatusComponent } from './components/widgets/widget-status/widget-status.component';
-
+import { WidgetFeedbackComponent } from './components/widgets/widget-feedback/widget-feedback.component';
 // APPLICATION MODALS
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 
@@ -76,11 +74,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { far } from '@fortawesome/free-regular-svg-icons';
 
 library.add(fas);
 library.add(fab);
-library.add(far);
 
 @NgModule({
 	declarations: [
@@ -97,6 +93,7 @@ library.add(far);
 		WidgetSecurityComponent,
 		WidgetCarouselComponent,
 		WidgetQuicksettingsComponent,
+		WidgetFeedbackComponent,
 		WidgetStatusComponent,
 		PageQuestionsComponent,
 		ContainerCardComponent,
@@ -115,8 +112,6 @@ library.add(far);
 		ModalWelcomeComponent,
 		ContainerCollapsibleComponent,
 		UiSwitchOnoffComponent,
-		UiRectangleRadioComponent,
-		UiSwitchTristateComponent,
 		BatteryDetailComponent,
 		BatteryCardComponent,
 		BatteryIndicatorComponent,
@@ -127,7 +122,9 @@ library.add(far);
 		AppRoutingModule,
 		FormsModule,
 		HttpClientModule,
+
 		FontAwesomeModule,
+
 		NgbModule
 	],
 	providers: [

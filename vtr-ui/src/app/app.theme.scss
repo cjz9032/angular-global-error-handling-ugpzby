@@ -56,10 +56,19 @@ $gradient_angle: 135deg;
 $gradient_angle_reverse: 315deg;
 $border_radius: 0.7rem;
 
-$mediaquery_1: "only screen and (max-width : 1800px)";
-$mediaquery_2: "only screen and (max-width : 1600px)";
-$mediaquery_3: "only screen and (max-width : 1400px)";
-$mediaquery_4: "only screen and (max-width : 1200px)";
+$button_bkg: linear-gradient(270deg, $main 0%, $main_light 100%);
+
+$mediaquery_1: 'only screen and (max-width : 1800px)';
+$mediaquery_2: 'only screen and (max-width : 1600px)';
+$mediaquery_3: 'only screen and (max-width : 1400px)';
+$mediaquery_4: 'only screen and (max-width : 1200px)';
+
+$shadow_black_01: rgba(0, 0, 0, 0.15);
+$dark_blue_02: rgba(66, 78, 123, 0.4);
+$light_blue_01: #4980fc;
+$light_blue_02: #2e62d9;
+$light_white_04: rgba(255, 255, 255, 0.7);
+$border_button_radius: 1.5625rem;
 
 // for battery indicator
 $yellow: #e6e73c;
