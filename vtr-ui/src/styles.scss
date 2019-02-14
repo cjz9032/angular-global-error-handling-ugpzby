@@ -1,9 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i");
 @import "~bootstrap/dist/css/bootstrap.css";
-@import "./styles-bootstrap.scss";@import "~bootstrap/dist/css/bootstrap.css";
+@import "./styles-bootstrap.scss";
+@import "~bootstrap/dist/css/bootstrap.css";
 $fa-font-path: "~font-awesome/fonts";
-@import '~font-awesome/scss/font-awesome';
+@import "~font-awesome/scss/font-awesome";
 
 @import "app/app.theme";
 
@@ -53,7 +54,6 @@ button {
 	letter-spacing: 0.1em;
 }
 
-
 .vtr-page {
 	height: 100%;
 	.vtr-page-header {
@@ -68,18 +68,11 @@ button {
 		.container-fluid {
 			height: 100%;
 			.row {
-				height: 100%;
-				// .container-fluid {
-				// 	height: auto;
-				// 	.row {
-				// 		height: auto;
-				// 	}
-				// }
 				.vtr-page-left-column {
 					padding: 0 4rem 4rem $padding_side;
 					background-color: $shade_extralight;
 					h2 {
-						margin:0;
+						margin: 0;
 						color: $main_shade;
 						font-size: 4.5rem;
 						font-weight: $weight_light;
@@ -95,4 +88,8 @@ button {
 	.vtr-page-shift-up {
 		margin-top: $shift_up_small;
 	}
+}
+
+.vtr-subpage {
+	padding: 6rem 10%;
 }

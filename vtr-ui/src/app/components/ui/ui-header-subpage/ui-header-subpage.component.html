@@ -1,0 +1,36 @@
+<div class="vtr-ui-header-subpage container-fluid">
+	<div class="row">
+		<div class="col">
+			<h2 class="title">
+				{{title}}
+			</h2>
+		</div>
+		<div class="row left-border">
+			<div class="col px-20">
+				<div class="row">
+					<div class="col">
+						<div class="caption">
+							{{caption}}
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div class="menu-title">
+							{{menuTitle}}:
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div *ngFor="let item of items; let i=index"
+					 class="col-auto p-0">
+						<div class="menu-item"
+						 (click)="menuItemClick($event, item)">
+							{{item.title}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

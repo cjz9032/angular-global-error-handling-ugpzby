@@ -81,6 +81,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { UiListChevronComponent } from './components/ui/ui-list-chevron/ui-list-chevron.component';
+import { UiHeaderSubpageComponent } from './components/ui/ui-header-subpage/ui-header-subpage.component';
 
 library.add(fas);
 library.add(fab);
@@ -125,7 +126,8 @@ library.add(far);
 		UiRangeSliderComponent,
 		UiListChevronComponent,
 		UiRectangleRadioComponent,
-		UiRowSwitchComponent
+		UiRowSwitchComponent,
+		UiHeaderSubpageComponent
 	],
 	imports: [
 		BrowserModule,

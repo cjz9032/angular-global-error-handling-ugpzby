@@ -6,7 +6,30 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./subpage-device-settings-power.component.scss']
 })
 export class SubpageDeviceSettingsPowerComponent implements OnInit {
+
 	title = 'Power Settings';
+	headerCaption = 'This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.';
+	headerMenuTitle = 'Jump to Settings';
+
+	headerMenuItems = [
+		{
+			title: 'Battery',
+			path: '/battery'
+		},
+		{
+			title: 'Power',
+			path: '/power'
+		},
+		{
+			title: 'Cooling',
+			path: '/cooling'
+		},
+		{
+			title: 'Other',
+			path: '/other'
+		}
+	]
+
 
 	dummyCollapsibleContainerItemArray = [
 		{
