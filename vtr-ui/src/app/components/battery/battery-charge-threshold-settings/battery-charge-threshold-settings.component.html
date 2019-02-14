@@ -1,9 +1,9 @@
 <div class="vtr-battery-charge-threshold-settings">
 	<form #batterySettingsForm="ngForm"
-		name="batterySettingsForm+type">
+	 name="batterySettingsForm+type">
 		<div class="container-fluid">
 			<div class="row"
-				*ngIf="title && displayNoteOnly === false">
+			 *ngIf="title && displayNoteOnly === false">
 				<div class="col">
 					<div class="threshold-for-built-in-battery">
 						{{ title }}
@@ -12,15 +12,15 @@
 			</div>
 
 			<div class="row"
-				*ngIf="displayNoteOnly === false">
+			 *ngIf="displayNoteOnly === false">
 				<div class="col">
 					<div class="btn-group btn-block"
-						ngbDropdown
-						[ngClass]="['disabled',isCheckedAuto === true ?'disabled':'']">
+					 ngbDropdown
+					 [ngClass]="['disabled',isCheckedAuto === true ?'disabled':'']">
 						<button [ngClass]="['btn','btn-outline-shadow','p-3',isCheckedAuto?'disabled':'']"
-							ngbDropdownToggle
-							[disabled]="isCheckedAuto?true:false"
-							type="button">
+						 ngbDropdownToggle
+						 [disabled]="isCheckedAuto?true:false"
+						 type="button">
 							<div class="row justify-content-center align-items-center">
 								<div class="col">
 									<div class="row">
@@ -40,21 +40,21 @@
 
 						</button>
 						<div ngbDropdownMenu
-							aria-labelledby="">
+						 aria-labelledby="">
 							<a [ngClass]="['dropdown-item',item >= selStopAtCharge?'disabled':'']"
-								*ngFor="let item of startAtChargeOptions"
-								(click)="onChargeChange('startAtCharge', item , $event);$event.preventDefault();"
-								href="#">{{item}}%</a>
+							 *ngFor="let item of startAtChargeOptions"
+							 (click)="onChargeChange('startAtCharge', item , $event);$event.preventDefault();"
+							 href="#">{{item}}%</a>
 						</div>
 					</div>
 
 				</div>
 				<div class="col pl-5">
 					<div class="btn-group btn-block"
-						ngbDropdown>
+					 ngbDropdown>
 						<button [ngClass]="['btn','btn-outline-shadow','p-3']"
-							ngbDropdownToggle
-							type="button">
+						 ngbDropdownToggle
+						 type="button">
 							<div class="row justify-content-center align-items-center">
 								<div class="col">
 									<div class="row">
@@ -74,53 +74,46 @@
 
 						</button>
 						<div ngbDropdownMenu
-							aria-labelledby="">
+						 aria-labelledby="">
 							<a [ngClass]="['dropdown-item',isCheckedAuto ===false && (item <= selStartAtCharge) ?'disabled':'']"
-								*ngFor="let item of stopAtChargeOptions"
-								(click)="onChargeChange('stopAtCharge', item , $event);$event.preventDefault();"
-								href="#">{{item}}%</a>
+							 *ngFor="let item of stopAtChargeOptions"
+							 (click)="onChargeChange('stopAtCharge', item , $event);$event.preventDefault();"
+							 href="#">{{item}}%</a>
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="row"
-				*ngIf="displayNoteOnly === false">
+			 *ngIf="displayNoteOnly === false">
 				<div class="col">
 					<div class="custom-control-checkbox">
 						<input type="checkbox"
-							[id]="isCheckedAutoInput+uid"
-							[name]="isCheckedAutoInput+uid"
-							[(ngModel)]="isCheckedAuto"
-							(ngModelChange)='toggleAutoChargeSettings($event)'>
+						 [id]="isCheckedAutoInput+uid"
+						 [name]="isCheckedAutoInput+uid"
+						 [(ngModel)]="isCheckedAuto"
+						 (ngModelChange)='toggleAutoChargeSettings($event)'>
 
 						<label class="custom-control-label"
-							[for]="isCheckedAutoInput+uid">Automatically set to start "charging at %" to 5% below
-							the
-							"stop chargint
-							at
-							%"</label>
+						 [for]="isCheckedAutoInput+uid">Automatically set to start "charging at %" to 5% below the "stop charging at %"</label>
 					</div>
 				</div>
 			</div>
 		</div>
 
 		<div class="row"
-			*ngIf="displayNoteOnly === false">
+		 *ngIf="displayNoteOnly === false">
 			<div class="col">
 				<div class="row-seperator">&nbsp;</div>
 			</div>
 		</div>
 
 		<div class="row"
-			*ngIf="displayNoteOnly !== false">
+		 *ngIf="displayNoteOnly !== false">
 			<div class="col">
 				<div class="note-box">
 					<div class="note">
-						<b>Note:</b>Battery Charge Threshold is still not fully active. Please unplug your
-						machine
-						and
-						allow your battery to drain to or below the stop-charging threshold.
+						<b>Note:</b>Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.
 					</div>
 				</div>
 			</div>
