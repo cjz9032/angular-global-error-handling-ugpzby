@@ -60,6 +60,7 @@ import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-we
 
 // APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
+import { MockService } from './services/mock/mock.service';
 import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
 import { CommsService } from './services/comms/comms.service';
@@ -73,6 +74,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import { UiListChevronComponent } from './components/ui/ui-list-chevron/ui-list-chevron.component';
 
 library.add(fas);
 library.add(fab);
@@ -115,6 +117,7 @@ library.add(fab);
 		ContainerCollapsibleComponent,
 		UiSwitchOnoffComponent,
 		BatteryDetailComponent,
+		UiListChevronComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -129,6 +132,7 @@ library.add(fab);
 	providers: [
 		CookieService,
 		DevService,
+		MockService,
 		DisplayService,
 		ContainerService,
 		CommsService,
