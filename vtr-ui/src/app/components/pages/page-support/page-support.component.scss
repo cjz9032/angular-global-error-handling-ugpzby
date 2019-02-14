@@ -12,24 +12,24 @@
 
 				.text {
 					color: $shade_extradark;
-					font-size: 16px;
-					font-weight: 300;
-					line-height: 25px;
+					font-size: 2.5rem;
+					font-weight: $weight_light;
+					line-height: 3.9rem;
 				}
 
 				.title {
 					color: $shade_extradark;
-					font-size: 25px;
-					font-weight: 300;
-					line-height: 30px;
+					font-size: 3.9rem;
+					font-weight: $weight_light;
+					line-height: 4.6rem;
 				}
 
 				.subtitle {
-					color:$shade_light;
-					font-size: 11px;
-					font-weight: 500;
-					letter-spacing: 0.7px;
-					line-height: 13px;
+					color: $shade_light;
+					font-size: 1.7rem;
+					font-weight: $weight_medium;
+					letter-spacing: 0.1rem;
+					line-height: 2rem;
 				}
 
 				.border {
@@ -37,8 +37,36 @@
 					background: $shade_lighter;
 				}
 			}
-		}
 
+			.sub-title {
+				color: $shade_darkest;
+				font-size: 2.1rem;
+				font-weight: $weight-medium;
+				line-height: 8.4rem;
+
+			}
+
+			.icon {
+				color: $main;
+			}
+
+			.btn-label {
+
+				border-radius: 3.9rem;
+				background: linear-gradient(270deg, #4980FC 0%, #2E62D9 100%),
+				linear-gradient(236.79deg, rgba(255, 255, 255, 0.7) 0%, #FFFFFF 100%);
+
+				color: $light;
+
+				font-size: 2rem;
+				font-weight: $weight_medium;
+				letter-spacing: 0.1rem;
+				line-height: 4.6rem;
+				text-align: center;
+
+
+			}
+		}
 
 		.mn-6 {
 			margin-top: $shift_up_small;
