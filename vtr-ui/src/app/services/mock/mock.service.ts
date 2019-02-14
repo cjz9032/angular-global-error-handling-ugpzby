@@ -43,7 +43,7 @@ export class MockService {
 			'id': 'memory',
 			'title': 'Memory',
 			'detail': '4.00 GB of 6 GB',
-			'path': 'support',
+			'path': '/support',
 			'asLink': false
 		},
 		{
@@ -51,7 +51,7 @@ export class MockService {
 			'id': 'disk',
 			'title': 'Disk Space',
 			'detail': '12.7 GB of 256 GB',
-			'path': 'support',
+			'path': '/support',
 			'asLink': false
 		},
 		{
@@ -59,7 +59,7 @@ export class MockService {
 			'id': 'warranty',
 			'title': 'Warranty',
 			'detail': 'Unitil 01/01/2020',
-			'path': 'support',
+			'path': '/support',
 			'asLink': false
 		},
 		{
@@ -67,7 +67,7 @@ export class MockService {
 			'id': 'systemupdate',
 			'title': 'System Update',
 			'detail': 'Update',
-			'path': 'support',
+			'path': '/support',
 			'asLink': true
 		}
 	];
@@ -77,25 +77,50 @@ export class MockService {
 			'status': 0,
 			'id': 'anti-virus',
 			'title': 'Anti-Virus',
-			'path': 'security'
+			'path': '/security'
 		},
 		{
 			'status': 0,
 			'id': 'wifi-security',
 			'title': 'Wifi Security',
-			'path': 'security'
+			'path': '/security'
 		},
 		{
 			'status': 0,
-			'id': 'pwdmgr',
 			'title': 'Password Manager',
-			'path': 'security'
+			'path': '/security'
 		},
 		{
 			'status': 1,
-			'id': 'vpn',
 			'title': 'VPN',
-			'path': 'security'
+			'path': '/security'
+		}
+	];
+
+	qA = [
+		{
+			'icon': ['fas', 'plane'],
+			'title': ' Reduced batterylife working outside.',
+			'path': '/support',
+			'lightTitle': true
+		},
+		{
+			'icon': ['fas', 'plane'],
+			'title': 'Can I use my Ideapad while in an airplane?',
+			'path': '/support',
+			'lightTitle': true
+		},
+		{
+			'icon': ['fas', 'plane'],
+			'title': 'Will the security control scanner damage',
+			'path': '/support',
+			'lightTitle': true
+		},
+		{
+			'icon': ['fas', 'plane'],
+			'title': 'Will the security control scanner damage',
+			'path': '/support',
+			'lightTitle': true
 		}
 	];
 

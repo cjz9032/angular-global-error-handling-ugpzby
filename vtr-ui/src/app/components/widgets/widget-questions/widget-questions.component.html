@@ -1,30 +1,15 @@
 <div class="vtr-widget-questions">
-
-	<div class="card p-5">
-		<div class="card-body px-0">
-			<div class="title"> {{title}}</div>
-			<div class="subtitle">{{subtitle}}</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<div class="title">{{title}}</div>
+				<div class="description">{{description}}</div>
+			</div>
 		</div>
-		<ul class="list-group">
-			<li class="list-group-item  list-group-item-action py-4" *ngFor="let item of data">
-				<a href="#" class="link" [routerLink]="item.route">
-					<div class="container-fluid">
-					<div class="row">
-						<div class="col-auto px-0">
-							<fa-icon [icon]="['fas',item.icon]"></fa-icon>
-						</div>
-						<div class="col-10 mr-auto px-3 text-truncate text">
-							{{item.text}}
-						</div>
-						<div class="col-auto pl-0">
-							<fa-icon [icon]="['fas','chevron-right']"></fa-icon>
-						</div>
-					</div>
-					</div>
-				</a>
-			</li>
-		</ul>
+		<div class="row">
+			<div class="col">
+				<vtr-ui-list-chevron [items]="items"></vtr-ui-list-chevron>
+			</div>
+		</div>
 	</div>
-
 </div>
-

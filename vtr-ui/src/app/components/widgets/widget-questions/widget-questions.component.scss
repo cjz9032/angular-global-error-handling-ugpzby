@@ -1,55 +1,18 @@
-@import "../../../app.theme";
+@import '../../../app.theme.scss';
 
 .vtr-widget-questions {
-	.card {
-		border-radius: $border_radius;
-		box-shadow: $drop_shadow;
-
-		.card-body {
-			.title {
-				color: $dark;
-				font-size: 2.5rem;
-			}
-
-			.subtitle {
-				color: $screen_dark_30;
-				font-size: 1.1rem;
-				font-weight: 500;
-			}
-
-		}
+	border-radius: $border_radius;
+	background-color:$light;
+	box-shadow: $drop_shadow;
+	padding: 4rem;
+	.title {
+		color: $main_darker;
+		font-size: 2.5rem;
 	}
-
-	.list-group {
-
-		border-radius: $border-radius;
-
-
-		.list-group-item:first-child {
-			border-top-left-radius: $border_radius;
-			border-top-right-radius: $border_radius;
-		}
-
-		.list-group-item:last-child {
-			border-bottom-left-radius: $border_radius;
-			border-bottom-right-radius: $border_radius;
-		}
-
-		.list-group-item {
-			.text {
-				color: $dark;
-			}
-
-			font-size: 1.4rem;
-			background-color: $shade_lightest;
-
-		}
-
+	.description {
+		color: $shade;
+		font-size: 1.1rem;
+		text-transform: uppercase;
+		font-weight: $weight_medium;
 	}
 }
-
-.link:hover {
-	text-decoration: none;
-}
-
-
