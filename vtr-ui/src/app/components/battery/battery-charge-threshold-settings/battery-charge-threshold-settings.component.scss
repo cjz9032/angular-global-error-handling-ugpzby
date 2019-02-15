@@ -6,7 +6,7 @@
     font-size: 2rem;
     font-weight: $weight_bold;
     letter-spacing: 0.1rem;
-    line-height: 1.2rem;
+    line-height: 2.3rem;
     text-transform: uppercase;
     margin: 1rem;
   }
@@ -16,20 +16,21 @@
   }
 
   .select-title {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: $weight_medium;
-    line-height: 1.2rem;
+    line-height: 1.3rem;
     text-transform: uppercase;
+    color: $blue_dark_01;
   }
   .select-text {
     color: $blue_dark_01;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: $weight_light;
     line-height: 1.2rem;
   }
 
   .btn-outline-shadow {
-    border: 0.06rem solid light_01;
+    border: 0.1rem solid $light_01;
     border-radius: $border_radius_sm;
     background-color: $light;
     box-shadow: $drop_shadow_01;
