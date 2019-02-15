@@ -34,7 +34,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 
 	batterySettings = [
 		{
-			'readMoreText': 'Readmore',
+			'readMoreText': 'Read More',
 			'rightImageSource': ['far', 'question-circle'],
 			'leftImageSource': ['far', 'gem'],
 			'header': 'Airplane Power Mode',
@@ -43,7 +43,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			'isSwitchVisible': true
 		},
 		{
-			'readMoreText': 'Readmore',
+			'readMoreText': 'Read More',
 			'rightImageSource': ['far', 'question-circle'],
 			'leftImageSource': ['far', 'gem'],
 			'header': 'Battery Charge Threshold',
@@ -52,7 +52,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			'isSwitchVisible': false
 		},
 		{
-			'readMoreText': 'Readmore',
+			'readMoreText': 'Read More',
 			'rightImageSource': ['far', 'question-circle'],
 			'leftImageSource': ['far', 'gem'],
 			'header': 'Express Charging',
@@ -61,7 +61,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			'isSwitchVisible': false
 		},
 		{
-			'readMoreText': 'Readmore',
+			'readMoreText': 'Read More',
 			'rightImageSource': ['far', 'question-circle'],
 			'leftImageSource': ['far', 'gem'],
 			'header': 'Conservation Mode',
@@ -73,7 +73,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 
 	powerSettings = [
 		{
-			'readMoreText': 'Readmore',
+			'readMoreText': 'Read More',
 			'rightImageSource': ['far', 'question-circle'],
 			'leftImageSource': ['far', 'gem'],
 			'header': 'Always on USB*',
@@ -82,7 +82,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			'isSwitchVisible': true
 		},
 		{
-			'readMoreText': 'Readmore',
+			'readMoreText': 'Read More',
 			'rightImageSource': ['far', 'question-circle'],
 			'leftImageSource': ['far', 'gem'],
 			'header': 'Easy Resume',
@@ -94,7 +94,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 
 	otherSettings = [
 		{
-			'readMoreText': 'Readmore',
+			'readMoreText': 'Read More',
 			'rightImageSource': ['far', 'question-circle'],
 			'leftImageSource': ['far', 'gem'],
 			'header': 'Lenovo Vantage Toolbar',
