@@ -1,0 +1,32 @@
+@import "../../../../../app.theme";
+
+.subpage-device-settings-audio {
+
+	.smartsettings-card {
+		.subtitle {
+			width: 100%;
+
+			h2 {
+				opacity: 0.8;
+				color: $light;
+				font-size: 1.6rem;
+				line-height: 2.8rem;
+				margin-top: 1.5rem;
+			}
+
+			p {
+				opacity: 0.8;
+				color: $light;
+				font-size: 1.6rem;
+				line-height: 2.8rem;
+				padding-bottom: 2.5rem;
+				border-bottom: 0.1rem solid $screen_light_15;
+			}
+		}
+	}
+
+	ul.list-group {
+		list-style-type: none;
+		padding-bottom: 3rem;
+	}
+}

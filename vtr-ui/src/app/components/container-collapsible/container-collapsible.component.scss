@@ -1,36 +1,41 @@
-@import '../../app.theme';
+@import "../../app.theme";
 
-.vtr-container-collapsible {
-	box-shadow: $drop_shadow;
-	border-radius: $border_radius;
-	background: $light;
-	.card {
-		border: none;
-		background: none;
-		.card-header {
+@mixin theme($name, $background, $color, $border) {
+	.vtr-container-collapsible.#{$name} {
+		box-shadow: $drop_shadow;
+		border-radius: $border_radius;
+		background: $background;
+		.card {
+			border: none;
 			background: none;
-			.header {
-				color: $main;
-				font-size: 2rem;
-				font-weight: 300;
-				line-height: 3rem;
-			}
-			.collapse-control {
-				cursor: pointer;
-				.collapse-text {
-					display: inline-block;
-					color: $main;
-					font-size: 1.2rem;
-					margin-right: 1rem;
-					vertical-align: middle;
+			.card-header {
+				background: none;
+				border-color: $border;
+				.header {
+					color: $color;
+					font-size: 2rem;
+					font-weight: 300;
+					line-height: 3rem;
 				}
-				fa-icon {
-					font-size: 2.4rem;
-					color: $main;
-					vertical-align: middle;
+				.collapse-control {
+					cursor: pointer;
+					.collapse-text {
+						display: inline-block;
+						color: $main;
+						font-size: 1.2rem;
+						margin-right: 1rem;
+						vertical-align: middle;
+					}
+					fa-icon {
+						font-size: 2.4rem;
+						color: $main;
+						vertical-align: middle;
+					}
 				}
 			}
 		}
 	}
-
 }
+
+@include theme(white-theme, $light, $main, $screen_dark_10);
+@include theme(blue-theme, $gradient_main, $light, $screen_light_15);

@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 // THIRD PARTY MODULES
 import { CookieService } from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Ng5SliderModule } from 'ng5-slider';
 
 // ROUTING MODULES
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +21,7 @@ import { ClockComponent } from './components/clock/clock.component';
 
 // APPLICATION REUSABLE COMPONENTS
 import { ContainerCardComponent } from './components/container-card/container-card.component';
+import { ContainerCollapsibleComponent } from './components/container-collapsible/container-collapsible.component';
 import { BatteryDetailComponent } from './components/battery/battery-detail/battery-detail.component';
 import { BatteryCardComponent } from './components/battery/battery-card/battery-card.component';
 import { BatteryIndicatorComponent } from './components/battery/battery-indicator/battery-indicator.component';
@@ -28,7 +30,10 @@ import { BatteryIndicatorComponent } from './components/battery/battery-indicato
 import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switch-onoff.component';
 import { UiSwitchTristateComponent } from './components/ui/ui-switch-tristate/ui-switch-tristate.component';
 import { UiRectangleRadioComponent } from './components/ui/ui-rectangle-radio/ui-rectangle-radio.component';
-import { ContainerCollapsibleComponent } from './components/container-collapsible/container-collapsible.component';
+import { UiRangeSliderComponent } from './components/ui/ui-range-slider/ui-range-slider.component';
+import { UiRowSwitchComponent } from './components/ui/ui-row-switch/ui-row-switch.component';
+import { UiListChevronComponent } from './components/ui/ui-list-chevron/ui-list-chevron.component';
+import { UiHeaderSubpageComponent } from './components/ui/ui-header-subpage/ui-header-subpage.component';
 
 // APPLICATION PAGE COMPONENTS
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
@@ -56,12 +61,15 @@ import { WidgetSecurityComponent } from './components/widgets/widget-security/wi
 import { WidgetCarouselComponent } from './components/widgets/widget-carousel/widget-carousel.component';
 import { WidgetQuicksettingsComponent } from './components/widgets/widget-quicksettings/widget-quicksettings.component';
 import { WidgetStatusComponent } from './components/widgets/widget-status/widget-status.component';
+import { WidgetQuestionsComponent } from './components/widgets/widget-questions/widget-questions.component';
+import { WidgetFeedbackComponent } from './components/widgets/widget-feedback/widget-feedback.component';
 
 // APPLICATION MODALS
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 
 // APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
+import { MockService } from './services/mock/mock.service';
 import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
 import { CommsService } from './services/comms/comms.service';
@@ -76,6 +84,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
+
 
 library.add(fas);
 library.add(fab);
@@ -96,7 +105,9 @@ library.add(far);
 		WidgetSecurityComponent,
 		WidgetCarouselComponent,
 		WidgetQuicksettingsComponent,
+		WidgetFeedbackComponent,
 		WidgetStatusComponent,
+		WidgetQuestionsComponent,
 		PageQuestionsComponent,
 		ContainerCardComponent,
 		HeaderMainComponent,
@@ -114,23 +125,30 @@ library.add(far);
 		ModalWelcomeComponent,
 		ContainerCollapsibleComponent,
 		UiSwitchOnoffComponent,
-		UiRectangleRadioComponent,
-		UiSwitchTristateComponent,
 		BatteryDetailComponent,
 		BatteryCardComponent,
-		BatteryIndicatorComponent
+		BatteryIndicatorComponent,
+		UiRangeSliderComponent,
+		UiListChevronComponent,
+		UiRectangleRadioComponent,
+		UiRowSwitchComponent,
+		UiHeaderSubpageComponent,
+		UiSwitchTristateComponent
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		FormsModule,
 		HttpClientModule,
+
 		FontAwesomeModule,
-		NgbModule
+		NgbModule,
+		Ng5SliderModule
 	],
 	providers: [
 		CookieService,
 		DevService,
+		MockService,
 		DisplayService,
 		ContainerService,
 		CommsService,

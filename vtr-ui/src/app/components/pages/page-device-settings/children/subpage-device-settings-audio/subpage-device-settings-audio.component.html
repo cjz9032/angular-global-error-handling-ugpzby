@@ -1,2 +1,78 @@
-<h2>{{title}}</h2>
+<div class="subpage-device-settings-audio vtr-subpage">
+	<div class="row">
+		<div class="col">
+			<vtr-ui-header-subpage [title]="title"
+			 [caption]="headerCaption"
+			 [menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
+		</div>
+	</div>
+	<div class="row py-5 smartsettings-card">
+		<div class="col-10 mx-auto ">
+			<vtr-container-collapsible title="Audio Smartsettings"
+			 [isCollapsed]="false"
+			 [allowCollapse]="false"
+			 [theme]="'blue'">
+				<div class="row">
+					<div class="col-auto text-wrap subtitle">
+						<h2>Application-Based Settings</h2>
+						<p>Automatically adjust audio settings according to different apps you are using.</p>
+					</div>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="">
+						<vtr-ui-row-switch [title]="'Automatic Dolby Audio settings'"
+						 [caption]="''"
+						 [isSwitchVisible]=true
+						 [leftIcon]="['fas', 'search']"
+						 [rightIcon]="['far', 'question-circle']"
+						 [readMoreText]="''"
+						 [showChildContent]="true"
+						 [theme]="'blue'"
+						 (toggleOnOff)="onAutomaticDolbyAudioToggleOnOff($event)">
 
+							<div class="my-3" *ngIf="!automaticDolbyAudioSettings">
+								<vtr-ui-rectangle-radio [radioId]="'radio1'"
+								 [group]="'radio'"
+								 [label]="'DYNAMIC'"
+								 [value]="'DYNAMIC'"
+								 [tooltip]="'Sample tooltip'"></vtr-ui-rectangle-radio>
+								<vtr-ui-rectangle-radio [radioId]="'radio2'"
+								 [group]="'radio'"
+								 [label]="'MOVIE'"
+								 [value]="'MOVIE'"></vtr-ui-rectangle-radio>
+								<vtr-ui-rectangle-radio [radioId]="'radio3'"
+								 [group]="'radio'"
+								 [label]="'MUSIC'"
+								 [value]="'MUSIC'"
+								 [tooltip]="'Sample tooltip'"></vtr-ui-rectangle-radio>
+								<vtr-ui-rectangle-radio [radioId]="'radio4'"
+								 [group]="'radio'"
+								 [label]="'GAME'"
+								 [value]="'GAME'"
+								 [tooltip]="'Sample tooltip'"></vtr-ui-rectangle-radio>
+								<vtr-ui-rectangle-radio [radioId]="'radio5'"
+								 [group]="'radio'"
+								 [label]="'VOICE'"
+								 [value]="'VOICE'"
+								 [tooltip]="'Sample tooltip'"></vtr-ui-rectangle-radio>
+
+							</div>
+
+						</vtr-ui-row-switch>
+					</li>
+					<li class="">
+						<vtr-ui-row-switch [title]="'Automatic Audio Optimization for VoIP'"
+						 [caption]="''"
+						 [isSwitchVisible]=true
+						 [leftIcon]="['fas', 'search']"
+						 [rightIcon]="['far', 'question-circle']"
+						 [readMoreText]="''"
+						 [showChildContent]="false"
+						 [theme]="'blue'">
+						</vtr-ui-row-switch>
+					</li>
+				</ul>
+			</vtr-container-collapsible>
+		</div>
+	</div>
+</div>
