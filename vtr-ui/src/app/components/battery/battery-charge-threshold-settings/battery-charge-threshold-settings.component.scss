@@ -27,6 +27,7 @@
     font-size: 1.2rem;
     font-weight: $weight_light;
     line-height: 1.2rem;
+    padding-top: 0.5rem;
   }
 
   .btn-outline-shadow {
@@ -57,12 +58,12 @@
   }
 
   .custom-control-checkbox {
-    margin-top: 1rem;
+    margin-top: 2rem;
 
     .custom-control-label {
-      height: 1.2rem;
+      //height: 1.2rem;
       color: $dark_grey_01;
-      font-size: 1.5rem;
+      font-size: 2rem;
       font-weight: $weight_light;
       line-height: 1.2rem;
     }
@@ -71,11 +72,12 @@
     [type="checkbox"]:not(:checked) {
       position: absolute;
       left: -624.9375rem;
+      padding-left: 1.5rem;
     }
     [type="checkbox"]:checked + label,
     [type="checkbox"]:not(:checked) + label {
       position: relative;
-      padding-left: 1.2rem;
+      padding-left: 1.5rem;
       cursor: pointer;
       line-height: 1.2rem;
       display: inline-block;
@@ -127,9 +129,9 @@
 
     .note {
       color: $red_01;
-      font-size: 1.5rem;
+      font-size: 2rem;
       font-weight: $weight_light;
-      line-height: 1.2rem;
+      line-height: 2rem;
       padding: 1rem;
     }
   }
