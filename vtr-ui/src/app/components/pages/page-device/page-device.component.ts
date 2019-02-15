@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DeviceService } from '../../../services/device/device.service';
+import { MockService } from "../../../services/mock/mock.service"
 
 @Component({
 	selector: 'vtr-page-device',
@@ -69,8 +70,10 @@ export class PageDeviceComponent implements OnInit {
 			'asLink': false
 		},
 	];
+
 	constructor(
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
+		public mockService: MockService
 	) { }
 
 	ngOnInit() {
