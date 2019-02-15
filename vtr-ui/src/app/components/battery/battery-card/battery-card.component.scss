@@ -10,7 +10,7 @@
 		width: 43rem;
 		border-radius: 1rem;
 		background-color: $light;
-		box-shadow: 0 0 1.5rem 0 $dark;
+		box-shadow: $drop_shadow;
 
 		.battery-gauge-label {
 			opacity: 0.58;
