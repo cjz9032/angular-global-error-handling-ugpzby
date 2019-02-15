@@ -13,81 +13,97 @@
 	<!-- Camera preview & setting section  -->
 	<div class="p-5">
 		<vtr-container-collapsible [title]="'Camera'" [isCollapsed]="false">
-			<vtr-ui-row-switch [title]="'Camera privacy mode'">
+			<vtr-ui-row-switch
+				[title]="'Camera privacy mode'"
+				[isSwitchVisible]="true"
+			>
 			</vtr-ui-row-switch>
-			<!-- not sure if camera section will be used somewhere else or not -->
-			<div class="container-fluid">
-				<div class="row p-5">
-					<div class="col-6">
-						<video #cameraPreview class="camera-preview"></video>
-					</div>
-					<div class="col-6">
-						<ul class="list-group list-group-flush">
-							<li class="list-group-item border-top">
-								<div class="slider-item-text text-uppercase">
-									Brightness
-								</div>
-								<vtr-ui-range-slider
-									[step]="1"
-									[minValue]="1"
-									[maxValue]="10"
-									[value]="3"
-								>
-								</vtr-ui-range-slider>
-							</li>
-							<li class="list-group-item">
-								<div class="slider-item-text text-uppercase">
-									Contrast
-								</div>
-								<vtr-ui-range-slider
-									[step]="1"
-									[minValue]="1"
-									[maxValue]="10"
-									[value]="5"
-								>
-								</vtr-ui-range-slider>
-							</li>
-							<li class="list-group-item">
-								<div class="d-flex justify-content-between">
+			<vtr-ui-row-switch
+				[title]="'Camera'"
+				[readMoreText]="'Reset factory settings'"
+				[showChildContent]="true"
+			>
+				<!-- not sure if camera section will be used somewhere else or not -->
+				<div class="container-fluid">
+					<div class="row p-5">
+						<div class="col-6">
+							<video
+								#cameraPreview
+								class="camera-preview"
+							></video>
+						</div>
+						<div class="col-6">
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item border-top">
 									<div
 										class="slider-item-text text-uppercase"
 									>
-										Auto Exposure
+										Brightness
 									</div>
-									<div class="float-right">
-										<vtr-ui-switch-onoff
-											(change)="
-												onAutoExposureChange($event)
-											"
-										></vtr-ui-switch-onoff>
+									<vtr-ui-range-slider
+										[step]="1"
+										[minValue]="1"
+										[maxValue]="10"
+										[value]="3"
+									>
+									</vtr-ui-range-slider>
+								</li>
+								<li class="list-group-item">
+									<div
+										class="slider-item-text text-uppercase"
+									>
+										Contrast
 									</div>
-								</div>
-								<vtr-ui-range-slider
-									[step]="1"
-									[minValue]="1"
-									[maxValue]="10"
-									[value]="8"
-									*ngIf="isAutoExposureEnabled"
-								>
-								</vtr-ui-range-slider>
-							</li>
-							<li class="list-group-item">
-								<div
-									class="slider-item-text text-uppercase d-flex justify-content-between"
-								>
-									<div>
-										Auto Focus
+									<vtr-ui-range-slider
+										[step]="1"
+										[minValue]="1"
+										[maxValue]="10"
+										[value]="5"
+									>
+									</vtr-ui-range-slider>
+								</li>
+								<li class="list-group-item">
+									<div class="d-flex justify-content-between">
+										<div
+											class="slider-item-text text-uppercase"
+										>
+											Auto Exposure
+										</div>
+										<div class="float-right">
+											<vtr-ui-switch-onoff
+												(change)="
+													onAutoExposureChange($event)
+												"
+											></vtr-ui-switch-onoff>
+										</div>
 									</div>
+									<vtr-ui-range-slider
+										[step]="1"
+										[minValue]="1"
+										[maxValue]="10"
+										[value]="8"
+										*ngIf="isAutoExposureEnabled"
+									>
+									</vtr-ui-range-slider>
+								</li>
+								<li class="list-group-item">
+									<div
+										class="slider-item-text text-uppercase d-flex justify-content-between"
+									>
+										<div>
+											Auto Focus
+										</div>
 
-									<div>
-										<vtr-ui-switch-onoff></vtr-ui-switch-onoff>
+										<div>
+											<vtr-ui-switch-onoff></vtr-ui-switch-onoff>
+										</div>
 									</div>
-								</div>
-							</li>
-						</ul>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
-			</div>
+			</vtr-ui-row-switch>
 		</vtr-container-collapsible>
 	</div>
 </div>
