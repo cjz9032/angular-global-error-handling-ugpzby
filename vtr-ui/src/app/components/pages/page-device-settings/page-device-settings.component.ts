@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DevService } from 'src/app/services/dev/dev.service';
+import { MockService } from "../../../services/mock/mock.service"
+import { DevService } from '../../../services/dev/dev.service';
+ 
+
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -36,7 +39,8 @@ export class PageDeviceSettingsComponent implements OnInit {
 	]
 
 	constructor(
-		private devService: DevService
+		private devService: DevService,
+		public mockService:MockService
 	) { }
 
 	ngOnInit() {

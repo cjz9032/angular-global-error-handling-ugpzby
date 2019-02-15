@@ -96,7 +96,11 @@
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""
+<<<<<<< HEAD
 						*ngFor="let item of otherSettings">
+=======
+						*ngFor="let item of dummyCollapsibleContainerItemArray">
+>>>>>>> origin/develop
 						<vtr-ui-row-switch [title]="item.header"
 							[caption]="item.subHeader"
 							[isSwitchVisible]=true
@@ -109,4 +113,21 @@
 			</vtr-container-collapsible>
 		</div>
 	</div>
+<<<<<<< HEAD
+=======
+	<div class="row py-60">
+		<div class="col-10 mx-auto">
+			<vtr-battery-charge-threshold-settings [title]="'Threshold for Built in battery'"
+				[type]="'primary'">
+			</vtr-battery-charge-threshold-settings>
+
+			<vtr-battery-charge-threshold-settings [title]="'Threshold for Removable battery'"
+				[type]="'secondary'">
+			</vtr-battery-charge-threshold-settings>
+
+			<vtr-battery-charge-threshold-settings [displayNoteOnly]="true">
+			</vtr-battery-charge-threshold-settings>
+		</div>
+	</div>
+>>>>>>> origin/develop
 </div>
