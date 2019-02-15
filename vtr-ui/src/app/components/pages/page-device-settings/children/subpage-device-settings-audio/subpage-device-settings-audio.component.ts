@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./subpage-device-settings-audio.component.scss']
 })
 export class SubpageDeviceSettingsAudioComponent implements OnInit {
+
 	title = 'Audio Settings';
+	headerCaption = 'This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.';
+
 	automaticDolbyAudioSettings: boolean = false;
 
 	constructor() { }

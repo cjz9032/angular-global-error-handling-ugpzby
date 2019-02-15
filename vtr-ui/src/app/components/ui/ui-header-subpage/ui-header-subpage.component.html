@@ -14,14 +14,14 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row" *ngIf="menuTitle">
 					<div class="col">
 						<div class="menu-title">
 							{{menuTitle}}:
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row" *ngIf="items">
 					<div *ngFor="let item of items; let i=index"
 					 class="col-auto p-0">
 						<div class="menu-item"
