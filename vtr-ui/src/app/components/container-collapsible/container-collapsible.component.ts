@@ -6,15 +6,13 @@ import { Component, OnInit, Input } from '@angular/core';
 	styleUrls: ['./container-collapsible.component.scss']
 })
 export class ContainerCollapsibleComponent implements OnInit {
-
 	@Input() title: string;
-
-	isCollapsed: boolean = false;
+	@Input() isCollapsed: boolean = true;
+	@Input() allowCollapse: boolean = true;
+	@Input() theme: string = 'white';
 
 	constructor() { }
-	
+
 	ngOnInit() {
 	}
-
-
 }
