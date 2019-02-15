@@ -1,0 +1,50 @@
+@import "./../../../app.theme.scss";
+
+.vtr-battery-card {
+	.battery-detail-modal-title {
+		color: $main_dark;
+		font-size: 2.5rem;
+	}
+	.container {
+		height: 32.1rem;
+		width: 43rem;
+		border-radius: 1rem;
+		background-color: $light;
+		box-shadow: $drop_shadow;
+
+		.battery-gauge-label {
+			opacity: 0.58;
+			color: $main_dark;
+			font-size: 1.1rem;
+			font-weight: 500;
+			letter-spacing: 0.1rem;
+			line-height: 1.3rem;
+		}
+
+		.battery-health {
+			color: $main_dark;
+			font-size: 3.5rem;
+			line-height: 4.2rem;
+		}
+
+		.battery-frame {
+			box-sizing: border-box;
+		}
+
+		.battery-image {
+			width: 35rem;
+		}
+
+		.battery-detail-button {
+			height: 5rem;
+			width: 35rem;
+			border-radius: 2.5rem;
+			background: linear-gradient($gradient_angle_reverse, $main_light 0%, $main 100%),
+				linear-gradient($gradient_angle, $light 0%, $light 100%);
+			color: $light;
+			font-size: 1.5rem;
+			font-weight: 500;
+			letter-spacing: 0.1rem;
+		}
+	}
+}

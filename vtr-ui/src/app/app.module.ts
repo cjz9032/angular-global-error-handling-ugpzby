@@ -22,6 +22,8 @@ import { ClockComponent } from './components/clock/clock.component';
 // APPLICATION REUSABLE COMPONENTS
 import { ContainerCardComponent } from './components/container-card/container-card.component';
 import { ContainerCollapsibleComponent } from './components/container-collapsible/container-collapsible.component';
+import { BatteryCardComponent } from './components/battery/battery-card/battery-card.component';
+import { BatteryIndicatorComponent } from './components/battery/battery-indicator/battery-indicator.component';
 import { BatteryDetailComponent } from './components/battery/battery-detail/battery-detail.component';
 import { BatteryChargeThresholdSettingsComponent } from './components/battery/battery-charge-threshold-settings/battery-charge-threshold-settings.component';
 
@@ -30,7 +32,9 @@ import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switc
 import { UiSwitchTristateComponent } from './components/ui/ui-switch-tristate/ui-switch-tristate.component';
 import { UiRectangleRadioComponent } from './components/ui/ui-rectangle-radio/ui-rectangle-radio.component';
 import { UiRangeSliderComponent } from './components/ui/ui-range-slider/ui-range-slider.component';
+import { UiRowSwitchComponent } from './components/ui/ui-row-switch/ui-row-switch.component';
 import { UiListChevronComponent } from './components/ui/ui-list-chevron/ui-list-chevron.component';
+import { UiHeaderSubpageComponent } from './components/ui/ui-header-subpage/ui-header-subpage.component';
 
 // APPLICATION PAGE COMPONENTS
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
@@ -80,13 +84,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-
+import { far } from '@fortawesome/free-regular-svg-icons';
 
 
 library.add(fas);
 library.add(fab);
-
-
+library.add(far);
 
 @NgModule({
 	declarations: [
@@ -123,12 +126,16 @@ library.add(fab);
 		ModalWelcomeComponent,
 		ContainerCollapsibleComponent,
 		UiSwitchOnoffComponent,
+		UiSwitchTristateComponent,
 		BatteryDetailComponent,
 		BatteryChargeThresholdSettingsComponent,
 		UiRangeSliderComponent,
 		UiListChevronComponent,
-		UiSwitchTristateComponent,
-		UiRectangleRadioComponent
+		UiRectangleRadioComponent,
+		BatteryCardComponent,
+		BatteryIndicatorComponent,
+		UiRowSwitchComponent,
+		UiHeaderSubpageComponent
 	],
 	imports: [
 		BrowserModule,
@@ -154,4 +161,4 @@ library.add(fab);
 	bootstrap: [AppComponent],
 	entryComponents: [ModalWelcomeComponent]
 })
-export class AppModule {}
+export class AppModule { }

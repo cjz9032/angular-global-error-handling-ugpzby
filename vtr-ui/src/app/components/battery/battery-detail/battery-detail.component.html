@@ -1,153 +1,210 @@
-<ng-template #content
- let-modal>
-	<div class="vtr-battery-detail">
-		<div class="modal-header">
-			<h4 class="modal-title battery-detail-modal-title pl-5">
-				Battery Details
-			</h4>
-
-			<button type="button"
-			 class="close"
-			 aria-label="Close"
-			 (click)="modal.dismiss('Cross click')">
-				<img src="assets/icons/Close.svg">
-			</button>
-		</div>
-		<div class="modal-body">
-			<div class="p-5 battery-detail-max-height">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col">
-							WIP : Battery SVG image with % indicator
-						</div>
+<div class="vtr-battery-detail">
+	<div class="p-5 battery-detail-max-height">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col">
+					<div class="battery-indicator pb-5">
+						<vtr-battery-indicator
+							[remainingHour]="2"
+							[remainingMinutes]="30"
+							[percentage]="10"
+						></vtr-battery-indicator>
 					</div>
-					<!-- repeat battery-detail information -->
-					<div *ngFor="let model of dataSource"
-					 class="line-height-2-5 mb-3">
+				</div>
+			</div>
+			<hr />
+			<!-- repeat battery-detail information -->
+			<div *ngFor="let model of dataSource" class="line-height-2-5 mb-3">
+				<div class="row mb-3">
+					<div class="col">
+						<!-- Section Title like Primary Battery -->
+						<h2 class="battery-header">
+							{{ model.heading }}
+						</h2>
+					</div>
+				</div>
+				<!-- row-1 -->
+				<div class="row">
+					<div class="col-2 p-0 battery-label-text">Status</div>
+					<div class="col-2 p-0 battery-value-text">
+						{{ model.chargeStatus }}
+					</div>
+					<div class="col-2 p-0 battery-label-text">Wattage</div>
+					<div class="col-2 p-0 battery-value-text">
+						{{ model.wattage }} W
+					</div>
+					<div class="col-2 p-0 battery-label-text">Bar-Code</div>
+					<div class="col-2 p-0 battery-value-text">
+						{{ model.barCode }}
+					</div>
+				</div>
+				<!-- row-2 -->
+				<div class="row">
+					<div class="col-2 p-0 battery-label-text">
+						Remaining percentage
+					</div>
+					<div class="col-2 p-0 battery-value-text">
+						{{ model.remainingPercent }}%
+					</div>
+					<div class="col-2 p-0 battery-label-text">
+						Temperature
+					</div>
+					<div class="col-2 p-0 battery-value-text">
+						{{ model.temperature }} &#176;C
+					</div>
+					<div class="col-2 p-0 battery-label-text">
+						Device chemistry
+					</div>
+					<div class="col-2 p-0 battery-value-text">
+						{{ model.deviceChemistry }}
+					</div>
+				</div>
+				<!-- row-3 -->
+				<div class="row">
+					<div class="col-2 p-0 battery-label-text">
+						Remaining time
+					</div>
+					<div class="col-2 p-0 battery-value-text">
+						{{ model.remainingTime }}
+					</div>
+					<div class="col-2 p-0 battery-label-text">
+						Cycle count
+					</div>
+					<div class="col-2 p-0 battery-value-text">
+						{{ model.cycleCount }}
+					</div>
+					<div class="col-2 p-0 battery-label-text">
+						Design capacity
+					</div>
+					<div class="col-2 p-0 battery-value-text">
+						{{ model.designCapacity }}
+					</div>
+				</div>
+				<!-- row-4 -->
+				<div class="row">
+					<div class="col-2 p-0 battery-label-text">
+						Remaining capacity
+					</div>
+					<div class="col-2 p-0 battery-value-text">
+						{{ model.remainingCapacity }} Wh
+					</div>
+					<div class="col-2 p-0 battery-label-text">
+						Manufacturer
+					</div>
+					<div class="col-2 p-0 battery-value-text">
+						{{ model.manufacturer }}
+					</div>
+					<div class="col-2 p-0 battery-label-text">
+						Design voltage
+					</div>
+					<div class="col-2 p-0 battery-value-text">
+						{{ model.designVoltage }} V
+					</div>
+				</div>
+				<!-- row-5 -->
+				<div class="row">
+					<div class="col-2 p-0 battery-label-text">
+						Full charge capacity
+					</div>
+					<div class="col-2 p-0 battery-value-text">
+						{{ model.fullChargeCapacity }} Wh
+					</div>
+					<div class="col-2 p-0 battery-label-text">
+						Manufacture date
+					</div>
+					<div class="col-2 p-0 battery-value-text">
+						{{ model.manufactureDate }}
+					</div>
+					<div class="col-2 p-0 battery-label-text">
+						Firmware version
+					</div>
+					<div class="col-2 p-0 battery-value-text">
+						{{ model.firmwareVersion }}
+					</div>
+				</div>
+				<!-- row-5 -->
+				<div class="row">
+					<div class="col-2 p-0 battery-label-text">Voltage</div>
+					<div class="col-2 p-0 battery-value-text">
+						{{ model.voltage }} V
+					</div>
+					<div class="col-2 p-0 battery-label-text">
+						First use date
+					</div>
+					<div class="col-2 p-0 battery-value-text">
+						{{ model.firstUseDate }}
+					</div>
+					<div class="col-2 p-0 battery-label-text"></div>
+					<div class="col-2 p-0 battery-value-text"></div>
+				</div>
+
+				<!-- battery gauge section -->
+				<div class="battery-gauge p-5 mt-5">
+					<div class="container-fluid">
 						<div class="row mb-3">
 							<div class="col">
-								<!-- Section Title like Primary Battery -->
-								<h2 class="battery-header">
-									{{model.heading}}
-								</h2>
+								<h4 class="align-middle">
+									<span
+										class="text-uppercase pr-3 battery-gauge-heading"
+									>
+										{{ model.batteryGaugeDetail.heading }}
+									</span>
+								</h4>
 							</div>
 						</div>
-						<!-- row-1 -->
 						<div class="row">
-							<div class="col-2 p-0 battery-label-text">Status</div>
-							<div class="col-2 p-0 battery-value-text">{{ model.chargeStatus }}</div>
-							<div class="col-2 p-0 battery-label-text">Wattage</div>
-							<div class="col-2 p-0 battery-value-text">{{ model.wattage }} W</div>
-							<div class="col-2 p-0 battery-label-text">Bar-Code</div>
-							<div class="col-2 p-0 battery-value-text">{{ model.barCode }}</div>
-						</div>
-						<!-- row-2 -->
-						<div class="row">
-							<div class="col-2 p-0 battery-label-text">Remaining percentage</div>
-							<div class="col-2 p-0 battery-value-text">{{ model.remainingPercent }}%</div>
-							<div class="col-2 p-0 battery-label-text">Temperature</div>
-							<div class="col-2 p-0 battery-value-text">{{ model.temperature }} &#176;C</div>
-							<div class="col-2 p-0 battery-label-text">Device chemistry</div>
-							<div class="col-2 p-0 battery-value-text">{{ model.deviceChemistry }}</div>
-						</div>
-						<!-- row-3 -->
-						<div class="row">
-							<div class="col-2 p-0 battery-label-text">Remaining time</div>
-							<div class="col-2 p-0 battery-value-text">{{ model.remainingTime }}</div>
-							<div class="col-2 p-0 battery-label-text">Cycle count</div>
-							<div class="col-2 p-0 battery-value-text">{{ model.cycleCount }}</div>
-							<div class="col-2 p-0 battery-label-text">Design capacity</div>
-							<div class="col-2 p-0 battery-value-text">{{ model.designCapacity }}</div>
-						</div>
-						<!-- row-4 -->
-						<div class="row">
-							<div class="col-2 p-0 battery-label-text">Remaining capacity</div>
-							<div class="col-2 p-0 battery-value-text">{{ model.remainingCapacity }} Wh</div>
-							<div class="col-2 p-0 battery-label-text">Manufacturer</div>
-							<div class="col-2 p-0 battery-value-text">{{ model.manufacturer }}</div>
-							<div class="col-2 p-0 battery-label-text">Design voltage</div>
-							<div class="col-2 p-0 battery-value-text">{{ model.designVoltage }} V</div>
-						</div>
-						<!-- row-5 -->
-						<div class="row">
-							<div class="col-2 p-0 battery-label-text">Full charge capacity</div>
-							<div class="col-2 p-0 battery-value-text">{{ model.fullChargeCapacity }} Wh</div>
-							<div class="col-2 p-0 battery-label-text">Manufacture date</div>
-							<div class="col-2 p-0 battery-value-text">{{ model.manufactureDate }}</div>
-							<div class="col-2 p-0 battery-label-text">Firmware version</div>
-							<div class="col-2 p-0 battery-value-text">{{ model.firmwareVersion }}</div>
-						</div>
-						<!-- row-5 -->
-						<div class="row">
-							<div class="col-2 p-0 battery-label-text">Voltage</div>
-							<div class="col-2 p-0 battery-value-text">{{ model.voltage }} V</div>
-							<div class="col-2 p-0 battery-label-text">First use date</div>
-							<div class="col-2 p-0 battery-value-text">{{ model.firstUseDate }}</div>
-							<div class="col-2 p-0 battery-label-text"></div>
-							<div class="col-2 p-0 battery-value-text"></div>
-						</div>
-
-						<!-- battery gauge section -->
-						<div class="battery-gauge p-5 mt-5">
-							<div class="container-fluid">
-								<div class="row mb-3">
-									<div class="col">
-										<h4 class="align-middle">
-											<span class="text-uppercase pr-3 battery-gauge-heading">
-												{{ model.batteryGaugeDetail.heading }}
-											</span>
-											<span class="badge badge-pill battery-gauge-pill">
-												<span class="battery-gauge-pill-text">
-													{{ model.batteryGaugeDetail.pillText }}
-												</span>
-											</span>
-										</h4>
+							<div class="p-0 col-8">
+								<div class="row">
+									<div class="p-0 col-3 battery-label-text">
+										Bar-Code
+									</div>
+									<div class="p-0 col-3 battery-value-text">
+										{{ model.batteryGaugeDetail.barCode }}
+									</div>
+									<div class="p-0 col-3 battery-label-text">
+										Log
+									</div>
+									<div class="p-0 col-3 battery-value-text">
+										{{
+											model.batteryGaugeDetail.logDateTime
+										}}
 									</div>
 								</div>
-								<div class="row align-items-center1">
-									<div class="p-0 col-8">
-										<div class="row">
-											<div class="p-0 col-3 battery-label-text">
-												Bar-Code
-											</div>
-											<div class="p-0 col-3 battery-value-text">
-												{{ model.batteryGaugeDetail.barCode }}
-											</div>
-											<div class="p-0 col-3 battery-label-text">
-												Log
-											</div>
-											<div class="p-0 col-3 battery-value-text">
-												{{ model.batteryGaugeDetail.logDateTime }}
-											</div>
-										</div>
-										<div class="row">
-											<div class="p-0 col-3 battery-label-text">
-												Status
-											</div>
-											<div class="p-0 col-3 battery-value-text">
-												{{ model.batteryGaugeDetail.status }}
-											</div>
-											<div class="p-0 col-3"></div>
-											<div class="p-0 col-3 battery-value-text">
-												{{ model.batteryGaugeDetail.lastRunStatus }}
-											</div>
-										</div>
-										<div class="row">
-											<div class="p-0 col-3 battery-label-text">
-												Remaining
-											</div>
-											<div class="p-0 col-3 battery-value-text">
-												{{ model.batteryGaugeDetail.remaining }}%
-											</div>
-											<div class="p-0 col-3"></div>
-											<div class="p-0 col-3"></div>
-										</div>
+								<div class="row">
+									<div class="p-0 col-3 battery-label-text">
+										Status
 									</div>
-									<div class="col-4 align-self-center text-center">
-										<button type="button"
-										 class="btn btn-primary btn-lg battery-button text-uppercase">Perform Gauge Reset</button>
+									<div class="p-0 col-3 battery-value-text">
+										{{ model.batteryGaugeDetail.status }}
+									</div>
+									<div class="p-0 col-3"></div>
+									<div class="p-0 col-3 battery-value-text">
+										{{
+											model.batteryGaugeDetail
+												.lastRunStatus
+										}}
 									</div>
 								</div>
+								<div class="row">
+									<div class="p-0 col-3 battery-label-text">
+										Remaining
+									</div>
+									<div class="p-0 col-3 battery-value-text">
+										{{
+											model.batteryGaugeDetail.remaining
+										}}%
+									</div>
+									<div class="p-0 col-3"></div>
+									<div class="p-0 col-3"></div>
+								</div>
+							</div>
+							<div class="col-4 align-self-center text-center">
+								<button
+									type="button"
+									class="btn btn-primary btn-lg battery-button text-uppercase"
+								>
+									Perform Gauge Reset
+								</button>
 							</div>
 						</div>
 					</div>
@@ -155,7 +212,4 @@
 			</div>
 		</div>
 	</div>
-</ng-template>
-
-<button class="btn btn-lg btn-outline-primary"
- (click)="open(content)">Launch demo modal</button>
+</div>

@@ -1,10 +1,107 @@
-<h2>{{title}}</h2>
+<div class="subpage-device-settings-power vtr-subpage">
+	<div class="row">
+		<div class="col">
+			<vtr-ui-header-subpage [items]="headerMenuItems"
+				[title]="title"
+				[caption]="headerCaption"
+				[menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
+		</div>
+	</div>
+	<div class="row py-5 smartsettings-card">
+		<div class="col-10 mx-auto ">
+			<vtr-container-collapsible title="Power Smartsettings"
+				[isCollapsed]="false"
+				[allowCollapse]="false"
+				[theme]="'blue'">
+				<div class="row">
+					<div class="col-auto text-wrap subtitle">
+						<h2>INTELLIGENT COOLING</h2>
+						<p>This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings
+							to keep the device cooler while being held, and optimizes performance while the device is on
+							a stable surface. When off, you can manually set thermal priority.</p>
+					</div>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="">
+						<vtr-ui-row-switch [title]="'Intelligent cooling'"
+							[caption]="''"
+							[isSwitchVisible]=true
+							[leftIcon]="['fas', 'search']"
+							[rightIcon]="['far', 'question-circle']"
+							[readMoreText]="''"
+							[showChildContent]="true"
+							[theme]="'blue'"
+							(toggleOnOff)="onIntelligentCoolingToggle($event)">
+							<div class="my-3"
+								*ngIf="!intelligentCooling">
+								<vtr-ui-rectangle-radio [radioId]="'radio1'"
+									[group]="'radio'"
+									[label]="'QUIET'"
+									[value]="'QUIET'"></vtr-ui-rectangle-radio>
+								<vtr-ui-rectangle-radio [radioId]="'radio2'"
+									[group]="'radio'"
+									[label]="'PERFORMANCE'"
+									[value]="'PERFORMANCE'"></vtr-ui-rectangle-radio>
+							</div>
+						</vtr-ui-row-switch>
+					</li>
+				</ul>
+			</vtr-container-collapsible>
+		</div>
+	</div>
 
-<vtr-battery-charge-threshold-settings [title]="'treshold for Built in battery'" [type]="'primary'">
-</vtr-battery-charge-threshold-settings>
+	<div class="row py-5">
+		<div class="col-10 mx-auto ">
+			<vtr-container-collapsible title="Battery Settings">
+				<ul class="list-group list-group-flush">
+					<li class=""
+						*ngFor="let item of dummyCollapsibleContainerItemArray">
+						<vtr-ui-row-switch [title]="item.header"
+							[caption]="item.subHeader"
+							[isSwitchVisible]=true
+							[leftIcon]="item.leftImageSource"
+							[rightIcon]="item.rightImageSource"
+							[readMoreText]="item.readMoreText">
+						</vtr-ui-row-switch>
+					</li>
+				</ul>
+			</vtr-container-collapsible>
+		</div>
+	</div>
+	<div class="row py-5">
+		<div class="col-10 mx-auto ">
+			<vtr-container-collapsible title="Microphone">
+				<ul class="list-group list-group-flush">
+					<li class=""
+						*ngFor="let item of dummyCollapsibleContainerItemArray">
+						<vtr-ui-row-switch [title]="item.header"
+							[caption]="item.subHeader"
+							[isSwitchVisible]=true
+							[leftIcon]="item.leftImageSource"
+							[rightIcon]="item.rightImageSource"
+							[readMoreText]="item.readMoreText">
+						</vtr-ui-row-switch>
+					</li>
+				</ul>
+			</vtr-container-collapsible>
+		</div>
+	</div>
+	<div class="row py-5">
+		<div class="col-10 mx-auto ">
+			<br /><br /><br />
+			<hr />
+			<h1>Component Demo (vtr-battery-charge-threshold-settings)</h1>
 
-<vtr-battery-charge-threshold-settings [title]="'treshold for Removable battery'" [type]="'secondary'">
-</vtr-battery-charge-threshold-settings>
+			<vtr-battery-charge-threshold-settings [title]="'treshold for Built in battery'"
+				[type]="'primary'">
+			</vtr-battery-charge-threshold-settings>
 
-<vtr-battery-charge-threshold-settings  [displayNoteOnly]="true">
-	</vtr-battery-charge-threshold-settings>
+			<vtr-battery-charge-threshold-settings [title]="'treshold for Removable battery'"
+				[type]="'secondary'">
+			</vtr-battery-charge-threshold-settings>
+
+			<vtr-battery-charge-threshold-settings [displayNoteOnly]="true">
+			</vtr-battery-charge-threshold-settings>
+		</div>
+	</div>
+</div>

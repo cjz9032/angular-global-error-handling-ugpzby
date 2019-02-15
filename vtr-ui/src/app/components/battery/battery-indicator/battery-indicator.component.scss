@@ -1,0 +1,202 @@
+@import './../../../app.theme.scss';
+
+.vtr-battery-indicator {
+	/* start variables : below are --css-variables will be used in .ts file. */
+
+	--acid-width: 0;
+	--background-color: 0;
+	--border-color: 0;
+	--acid-fill-gradient: 0;
+
+	// battery error
+	--background-color-error: #{$shade_extradark};
+	--border-color-error: #{rgba($shade_extradark, 0.4)};
+	--acid-fill-gradient-error: linear-gradient(
+		#{$gradient_angle_reverse},
+		#{$shade_extradark} 0%,
+		#{$dark} 100%
+	);
+
+	// when % is between 0-14
+	--background-color-0-14: #{$stop_dark};
+	--border-color-0-14: #{rgba($stop_dark, 0.4)};
+	--acid-fill-gradient-0-14: linear-gradient(
+		#{$gradient_angle_reverse},
+		#{$stop_dark} 0%,
+		#{$alt} 100%
+	);
+
+	// when % is between 15-24
+	--background-color-15-24: #{$yellow_light};
+	--border-color-15-24: #{rgba($yellow_light, 0.4)};
+	--acid-fill-gradient-15-24: linear-gradient(
+		#{$gradient_angle_reverse},
+		#{$yellow_light} 0%,
+		#{$yellow} 100%
+	);
+
+	// when % is between 25-100
+	--background-color-25-100: #{$go_light};
+	--border-color-25-100: #{rgba($go_light, 0.4)};
+	--acid-fill-gradient-25-100: linear-gradient(
+		#{$gradient_angle_reverse},
+		#{$go_light} 0%,
+		#{$go} 100%
+	);
+
+	/* end of variables */
+
+	.cell {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		position: relative;
+
+		/* battery shadow/blur background */
+		.battery-shadow {
+			position: absolute;
+			width: 90%;
+			height: 12rem;
+			border: 0.5rem solid var(--border-color);
+			opacity: 0.8;
+			border-radius: 0.5rem;
+			filter: blur(0.3rem);
+			left: 3%;
+
+			/* battery notch */
+			&:after {
+				position: absolute;
+				top: 32%;
+				left: 102%;
+				width: 1.9rem;
+				height: 35%;
+				background-color: var(--background-color);
+				border-radius: 0rem 0.3rem 0.3rem 0rem;
+				content: '';
+				border-left-width: 0;
+			}
+		}
+
+		.battery {
+			position: relative;
+			width: 90%;
+			height: 12rem;
+			border: 0.1rem solid var(--border-color);
+			border-radius: 0.3rem;
+			left: 0rem;
+
+			/* battery notch */
+			&:after {
+				position: absolute;
+				top: 32%;
+				left: 100%;
+				width: 2rem;
+				height: 35%;
+				background-color: var(--background-color);
+				border-radius: 0rem 0.3rem 0.3rem 0rem;
+				content: '';
+				border-left-width: 0;
+			}
+
+			.acid-container {
+				overflow: hidden;
+				height: calc(100% - 0.8rem);
+				border-radius: 0.2rem;
+				margin: 0.4rem;
+
+				.white-background {
+					background: $light;
+					width: calc(100% - 0.8rem);
+					z-index: 1;
+					position: absolute;
+					height: calc(100% - 0.8rem);
+				}
+
+				.black-background {
+					background: $dark;
+					width: var(--acid-width);
+					z-index: 2;
+					position: absolute;
+					height: calc(100% - 0.8rem);
+				}
+
+				.fill {
+					background: var(--acid-fill-gradient);
+					mix-blend-mode: screen;
+					width: calc(100% - 0.8rem);
+					z-index: 4;
+					position: absolute;
+					height: calc(100% - 0.8rem);
+					display: flex;
+					flex-direction: row;
+					flex-shrink: 0;
+				}
+
+				.base-percentage-text {
+					position: absolute;
+					mix-blend-mode: difference;
+					z-index: 3;
+					text-align: center;
+					width: calc(100% - 0.8rem);
+					font-size: 6rem;
+					font-weight: bold;
+				}
+
+				.battery-error {
+					@extend .base-percentage-text;
+					font-size: 9rem;
+					color: $alt;
+					top: calc(-5%);
+				}
+
+				.percentage {
+					@extend .base-percentage-text;
+					color: $light;
+
+					.percentage-symbol {
+						position: relative;
+						font-size: 2rem;
+						left: -1.2rem;
+					}
+				}
+			}
+
+			.base-remaining-text {
+				position: absolute;
+				font-size: 1.1rem;
+				z-index: 5;
+				font-weight: 600;
+				width: 100%;
+				text-align: center;
+				letter-spacing: 0;
+			}
+
+			.remaining-time {
+				@extend .base-remaining-text;
+				bottom: 16%;
+				color: $shade_extradark;
+			}
+
+			.remaining-text {
+				@extend .base-remaining-text;
+				color: $shade_darker;
+				bottom: 5%;
+				font-size: 1rem;
+				font-weight: 500;
+			}
+		}
+		.battery-charging {
+			z-index: 5;
+			font-size: 2rem;
+			padding-left: 0.3rem;
+			color: $light;
+
+			.transparent {
+				color: transparent;
+			}
+		}
+	}
+}

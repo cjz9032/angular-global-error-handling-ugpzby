@@ -1,13 +1,10 @@
-<h2>{{ title }}</h2>
-
-<vtr-ui-range-slider
-	title="delete demo code after review"
-	[value]="sliderValue"
-	[minValue]="1"
-	[maxValue]="10"
-	[step]="1"
-	(change)="onSliderChange($event)"
-	(valueChange)="onValueChange($event)"
-></vtr-ui-range-slider>
-
-<p title="delete demo code after review">Value : {{ sliderValue }}</p>
+<div class="subpage-device-settings-power vtr-subpage">
+	<div class="row">
+		<div class="col">
+			<vtr-ui-header-subpage [items]="headerMenuItems"
+			 [title]="title"
+			 [caption]="headerCaption"
+			 [menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
+		</div>
+	</div>
+</div>

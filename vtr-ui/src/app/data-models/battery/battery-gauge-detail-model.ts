@@ -2,7 +2,6 @@ class BatteryGaugeDetail {
 	//#region UI related properties
 
 	public heading: string;
-	public pillText: string;
 
 	//#endregion
 
