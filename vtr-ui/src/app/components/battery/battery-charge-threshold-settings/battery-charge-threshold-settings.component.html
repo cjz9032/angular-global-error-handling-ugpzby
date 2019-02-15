@@ -2,7 +2,7 @@
 	<div class="container-fluid">
 		<!--start of display title in row-->
 		<div class="row"
-			*ngIf="title && displayNoteOnly === false">
+			*ngIf="title && !displayNoteOnly">
 			<div class="col">
 				<div class="threshold-for-built-in-battery">
 					{{ title }}
@@ -13,7 +13,7 @@
 
 		<!--start of display inputs for action in row-->
 		<div class="row"
-			*ngIf="displayNoteOnly === false">
+			*ngIf="!displayNoteOnly">
 			<div class="col">
 				<div class="inputSection">
 					<div class="row">
@@ -34,7 +34,7 @@
 												</div>
 												<div class="w-100"></div>
 												<div class="col-auto select-text">
-													{{selStartAtCharge}}%
+													{{selectedStartAtCharge}}%
 												</div>
 											</div>
 										</div>
@@ -44,19 +44,15 @@
 											</div>
 										</div>
 									</div>
-
 								</button>
-
 								<div ngbDropdownMenu
 									aria-labelledby="">
-									<a [ngClass]="['dropdown-item',item >= selStopAtCharge?'disabled':'']"
+									<a [ngClass]="['dropdown-item',item >= selectedStopAtCharge?'disabled':'']"
 										*ngFor="let item of startAtChargeOptions"
 										(click)="onChargeChange('startAtCharge', item , $event);$event.preventDefault();"
 										href="#">{{item}}%</a>
-
 								</div>
 							</div>
-
 						</div>
 						<!--end of left dropdown box for action in row-->
 
@@ -75,7 +71,7 @@
 												</div>
 												<div class="w-100"></div>
 												<div class="col-auto select-text">
-													{{selStopAtCharge}}%
+													{{selectedStopAtCharge}}%
 												</div>
 											</div>
 										</div>
@@ -83,59 +79,43 @@
 											<div class="text-primary">
 												<fa-icon [icon]="['fas', 'chevron-down']"></fa-icon>
 											</div>
-
 										</div>
 									</div>
-
 								</button>
-
 								<div ngbDropdownMenu
 									aria-labelledby="">
-									<a [ngClass]="['dropdown-item',isCheckedAuto ===false && (item <= selStartAtCharge) ?'disabled':'']"
+									<a [ngClass]="['dropdown-item',isCheckedAuto ===false && (item <= selectedStartAtCharge) ?'disabled':'']"
 										*ngFor="let item of stopAtChargeOptions"
 										(click)="onChargeChange('stopAtCharge', item , $event);$event.preventDefault();"
 										href="#">{{item}}%</a>
 								</div>
 							</div>
-
 						</div>
-
 						<!--end of right dropdown box for action in row-->
-
 					</div>
-
 					<div class="row"
-						*ngIf="displayNoteOnly === false">
+						*ngIf="!displayNoteOnly">
 						<div class="col">
 							<div class="custom-control-checkbox">
 								<input type="checkbox"
-									[id]="isCheckedAutoInput+uid"
-									[name]="isCheckedAutoInput+uid"
+									[id]="isCheckedAutoInput + randomNumber"
+									[name]="isCheckedAutoInput + randomNumber"
 									[(ngModel)]="isCheckedAuto"
 									(ngModelChange)='toggleAutoChargeSettings($event)'>
 
 								<label class="custom-control-label"
-									[for]="isCheckedAutoInput+uid">Automatically set to start "charging at %" to 5%
-									below
-									the
-									"stop charging
-									at
-									%"</label>
+									[for]="isCheckedAutoInput + randomNumber">Automatically set to start "charging at %"
+									to 5% below the "stop charging at %"</label>
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
-
 			<!--end of display inputs for action in row-->
-
-
-
 		</div>
 		<!--start of row seperator-->
 		<div class="row"
-			*ngIf="displayNoteOnly === false">
+			*ngIf="!displayNoteOnly">
 			<div class="col">
 				<div class="row-seperator">&nbsp;</div>
 			</div>
@@ -144,13 +124,11 @@
 
 		<!--start of Note -->
 		<div class="row"
-			*ngIf="displayNoteOnly !== false">
+			*ngIf="displayNoteOnly">
 			<div class="col">
 				<div class="note-box">
 					<div class="note">
-						<b>Note:</b>Battery Charge Threshold is still not fully active. Please unplug your
-						machine
-						and
+						<b>Note:</b> Battery Charge Threshold is still not fully active. Please unplug your machine and
 						allow your battery to drain to or below the stop-charging threshold.
 					</div>
 				</div>
