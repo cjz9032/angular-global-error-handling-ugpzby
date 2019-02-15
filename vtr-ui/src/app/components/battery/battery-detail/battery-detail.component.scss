@@ -1,70 +1,61 @@
-$header_title: #34495e;
-$font_family: Rubik;
+@import "./../../../app.theme.scss";
 
 .vtr-battery-detail {
-	font-family: $font_family;
-	.battery-button {
-		font-size: 1.5rem;
-		height: 5.5rem;
-		width: 24.4rem;
-		border-radius: 2.5rem;
-		background: linear-gradient(270deg, #4980fc 0%, #2e62d9 100%),
-			linear-gradient(236.79deg, rgba(255, 255, 255, 0.7) 0%, #ffffff 100%);
-	}
-
-	.battery-header {
-		color: $header_title;
-		font-size: 2.5rem;
-		font-weight: bold;
-		line-height: 2.9rem;
-	}
-
-	.battery-label-text {
-		font-size: 1.4rem;
-		color: rgba(66, 78, 123, 0.4);
-	}
-	.battery-value-text {
-		font-size: 1.6rem;
-		color: $header_title;
-	}
-
-	.battery-gauge {
-		height: 20rem;
-		border: 1px solid #ecf0f1;
-		border-radius: 0.4rem;
-		background-color: #f5f7f8;
-	}
-
-	.battery-gauge-heading {
-		color: $header_title;
-		font-size: 1.4rem;
-		font-weight: bold;
-		letter-spacing: 0.1rem;
-		line-height: 2.3rem;
-	}
-
-	.battery-gauge-pill {
-		padding: 0.6rem 1rem;
-		height: 2.3rem;
-		border-radius: 11.5px;
-		background-color: #e74c3c;
-		color: #ffffff;
-		font-size: 1.1rem;
-		font-weight: 500;
-	}
-
-	.line-height-2-5 {
-		line-height: 2.5rem;
-	}
-
 	.battery-detail-max-height {
-		max-height: 90vh;
+		max-height: 85vh;
 		overflow-x: hidden;
 		overflow-y: auto;
-	}
 
-	.battery-detail-modal-title {
-		color: #194a65;
-		font-size: 2.5rem;
+		.battery-indicator {
+			width: 35rem;
+		}
+		hr {
+			background-color: $shade_light;
+			border: 0.1rem solid $shade_lighter;
+		}
+
+		.line-height-2-5 {
+			line-height: 2.5rem;
+
+			.battery-header {
+				color: $main_dark;
+				font-size: 2.5rem;
+				font-weight: bold;
+				line-height: 2.9rem;
+			}
+
+			.battery-label-text {
+				font-size: 1.4rem;
+				color: $shade_darkest;
+			}
+			.battery-value-text {
+				font-size: 1.6rem;
+				color: $main_dark;
+			}
+
+			.battery-gauge {
+				height: 20rem;
+				border: 0.1rem solid $shade_lighter;
+				border-radius: 0.4rem;
+				background-color: $shade_extralight;
+
+				.battery-gauge-heading {
+					color: $main_dark;
+					font-size: 1.4rem;
+					font-weight: bold;
+					letter-spacing: 0.1rem;
+					line-height: 2.3rem;
+				}
+
+				.battery-button {
+					font-size: 1.5rem;
+					height: 5.5rem;
+					width: 24.4rem;
+					border-radius: 2.5rem;
+					background: linear-gradient($gradient_angle_reverse, $main_light 0%, $main 100%),
+						linear-gradient($gradient_angle, $light 0%, $light 100%);
+				}
+			}
+		}
 	}
 }

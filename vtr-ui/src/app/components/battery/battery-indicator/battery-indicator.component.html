@@ -1,0 +1,39 @@
+<div class="vtr-battery-indicator" #batteryIndicator>
+	<div class="cell">
+		<div class="battery-shadow"></div>
+		<div #battery class="battery">
+			<div class="acid-container">
+				<div class="white-background"></div>
+				<div class="black-background"></div>
+				<div class="fill"></div>
+				<div class="percentage" *ngIf="percentage >= 0">
+					{{ percentage }}
+					<span class="percentage-symbol">
+						%
+					</span>
+				</div>
+				<div class="battery-error" *ngIf="!(percentage > 0)">
+					<fa-icon [icon]="['fas', 'times']"></fa-icon>
+				</div>
+			</div>
+
+			<div *ngIf="percentage >= 0">
+				<div class="remaining-time">
+					{{ getTimeRemaining() }}
+				</div>
+				<div class="remaining-text text-uppercase" *ngIf="!isCharging">
+					Remaining Time
+				</div>
+				<div class="remaining-text text-uppercase" *ngIf="isCharging">
+					Time To Fully Charge
+				</div>
+			</div>
+		</div>
+		<div class="battery-charging">
+			<fa-icon
+				[icon]="['fas', 'bolt']"
+				[ngClass]="{ transparent: !isCharging }"
+			></fa-icon>
+		</div>
+	</div>
+</div>

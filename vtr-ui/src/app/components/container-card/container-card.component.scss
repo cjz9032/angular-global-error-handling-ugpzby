@@ -6,6 +6,9 @@
 	background-color: $light;
 	position: relative;
 	overflow: hidden;
+	.row {
+		height: 100%;
+	}
 	&.card-highlight {
 		background-size: cover;
 		background-position: 0 50%;

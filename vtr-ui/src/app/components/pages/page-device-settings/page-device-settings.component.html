@@ -7,13 +7,19 @@
 	</div>
 	<div class="row vtr-page-content">
 		<div class="col vtr-col">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col col-8 vtr-page-left-column">
-						<router-outlet></router-outlet>
-					</div>
-					<div class="col col-4 vtr-page-right-column">
-						Right Column Content Here...
+			<div class="row">
+				<div class="col col-8 vtr-page-left-column">
+					<router-outlet></router-outlet>
+				</div>
+				<div class="col col-4 vtr-page-right-column">
+					<div class="vtr-page-shift-up">
+						<div class="container-fluid">
+							<div class="row mb-40">
+								<div class="col col-12">
+									<vtr-battery-card> </vtr-battery-card>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
