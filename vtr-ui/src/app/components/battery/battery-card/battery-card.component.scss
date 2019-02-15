@@ -1,22 +1,20 @@
-$header_title: #34495e;
-$font_family: Rubik;
+@import "./../../../app.theme.scss";
 
 .vtr-battery-card {
-	font-family: $font_family;
 	.battery-detail-modal-title {
-		color: #194a65;
+		color: $main_dark;
 		font-size: 2.5rem;
 	}
 	.container {
 		height: 32.1rem;
 		width: 43rem;
 		border-radius: 1rem;
-		background-color: #ffffff;
-		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+		background-color: $light;
+		box-shadow: 0 0 1.5rem 0 $dark;
 
 		.battery-gauge-label {
 			opacity: 0.58;
-			color: $header_title;
+			color: $main_dark;
 			font-size: 1.1rem;
 			font-weight: 500;
 			letter-spacing: 0.1rem;
@@ -24,7 +22,7 @@ $font_family: Rubik;
 		}
 
 		.battery-health {
-			color: $header_title;
+			color: $main_dark;
 			font-size: 3.5rem;
 			line-height: 4.2rem;
 		}
@@ -41,9 +39,9 @@ $font_family: Rubik;
 			height: 5rem;
 			width: 35rem;
 			border-radius: 2.5rem;
-			background: linear-gradient(270deg, #4980fc 0%, #2e62d9 100%),
-				linear-gradient(236.79deg, rgba(255, 255, 255, 0.7) 0%, #ffffff 100%);
-			color: #ffffff;
+			background: linear-gradient($gradient_angle_reverse, $main_light 0%, $main 100%),
+				linear-gradient($gradient_angle, $light 0%, $light 100%);
+			color: $light;
 			font-size: 1.5rem;
 			font-weight: 500;
 			letter-spacing: 0.1rem;

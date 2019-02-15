@@ -22,9 +22,9 @@ import { ClockComponent } from './components/clock/clock.component';
 // APPLICATION REUSABLE COMPONENTS
 import { ContainerCardComponent } from './components/container-card/container-card.component';
 import { ContainerCollapsibleComponent } from './components/container-collapsible/container-collapsible.component';
-import { BatteryDetailComponent } from './components/battery/battery-detail/battery-detail.component';
 import { BatteryCardComponent } from './components/battery/battery-card/battery-card.component';
 import { BatteryIndicatorComponent } from './components/battery/battery-indicator/battery-indicator.component';
+import { BatteryDetailComponent } from './components/battery/battery-detail/battery-detail.component';
 
 // APPLICATION UI COMPONENTS
 import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switch-onoff.component';
@@ -134,7 +134,8 @@ library.add(far);
 		UiRectangleRadioComponent,
 		UiRowSwitchComponent,
 		UiHeaderSubpageComponent,
-		UiSwitchTristateComponent
+		UiSwitchTristateComponent,
+		UiRowSwitchComponent
 	],
 	imports: [
 		BrowserModule,

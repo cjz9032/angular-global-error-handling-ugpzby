@@ -2,7 +2,6 @@
 	{
 		"batteryGaugeDetail": {
 			"heading": "Build In Battery Gauge Reset",
-			"pillText": "Phase 1",
 			"barCode": "033-8039-0010-82F",
 			"status": "1 of 3:full charge",
 			"remaining": 100,
@@ -31,7 +30,6 @@
 	{
 		"batteryGaugeDetail": {
 			"heading": "Build In Battery Gauge Reset",
-			"pillText": "Phase 2",
 			"barCode": "033-8039-0010-82F",
 			"status": "1 of 3:full charge",
 			"remaining": 100,
