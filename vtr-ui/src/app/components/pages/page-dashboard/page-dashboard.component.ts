@@ -16,19 +16,6 @@ export class PageDashboardComponent implements OnInit {
 		label: 'Customize Dashboard'
 	};
 
-
-
-	
-
-
-
-
-
-
-
-
-	
-
 	qAndA = {
 		title: 'Q&A\'s for your machine',
 		description: 'Description of component',
