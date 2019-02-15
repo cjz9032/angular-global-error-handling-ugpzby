@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, ViewChild, HostBinding, HostListener, ElementRef } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
 
 @Component({
 	selector: 'vtr-battery-charge-threshold-settings',
@@ -7,8 +6,8 @@ import { NgForm } from '@angular/forms';
 	styleUrls: ['./battery-charge-threshold-settings.component.scss']
 })
 export class BatteryChargeThresholdSettingsComponent implements OnInit {
-	@Input() title: string = this.title || '';
-	@Input() type: string = this.type || 'primary';
+	@Input() title = '';
+	@Input() type = 'primary';
 	@Input() displayNoteOnly: boolean = this.displayNoteOnly || false;
 	isCheckedAuto: boolean = this.isCheckedAuto || false;
 
