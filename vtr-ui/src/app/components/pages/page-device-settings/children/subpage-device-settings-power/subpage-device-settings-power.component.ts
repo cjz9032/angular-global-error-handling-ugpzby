@@ -11,6 +11,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	headerCaption = 'This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.';
 	headerMenuTitle = 'Jump to Settings';
 
+	intelligentCooling: boolean = false;
+
 	headerMenuItems = [
 		{
 			title: 'Battery',
@@ -28,15 +30,53 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			title: 'Other',
 			path: '/other'
 		}
-	]
+	];
 
-
-	dummyCollapsibleContainerItemArray = [
+	batterySettings = [
 		{
 			'readMoreText': 'Readmore',
 			'rightImageSource': ['far', 'question-circle'],
 			'leftImageSource': ['far', 'gem'],
-			'header': 'Always on USB',
+			'header': 'Airplane Power Mode',
+			'subHeader': ' fdasdfads ',
+			'isCheckBoxVisible': true,
+			'isSwitchVisible': true
+		},
+		{
+			'readMoreText': 'Readmore',
+			'rightImageSource': ['far', 'question-circle'],
+			'leftImageSource': ['far', 'gem'],
+			'header': 'Battery Charge Threshold',
+			'subHeader': 'This feature dynamically adjusts thermal settings to your needs.',
+			'isCheckBoxVisible': false,
+			'isSwitchVisible': false
+		},
+		{
+			'readMoreText': 'Readmore',
+			'rightImageSource': ['far', 'question-circle'],
+			'leftImageSource': ['far', 'gem'],
+			'header': 'Express Charging',
+			'subHeader': 'Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery.',
+			'isCheckBoxVisible': false,
+			'isSwitchVisible': false
+		},
+		{
+			'readMoreText': 'Readmore',
+			'rightImageSource': ['far', 'question-circle'],
+			'leftImageSource': ['far', 'gem'],
+			'header': 'Conservation Mode',
+			'subHeader': 'This function is useful to extend the lifespan of your battery when plugged.',
+			'isCheckBoxVisible': false,
+			'isSwitchVisible': false
+		}
+	];
+
+	powerSettings = [
+		{
+			'readMoreText': 'Readmore',
+			'rightImageSource': ['far', 'question-circle'],
+			'leftImageSource': ['far', 'gem'],
+			'header': 'Always on USB*',
 			'subHeader': 'Charge USb devices through the Always on USB connector on the computer',
 			'isCheckBoxVisible': true,
 			'isSwitchVisible': true
@@ -52,7 +92,17 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 		}
 	];
 
-	intelligentCooling: boolean = false;
+	otherSettings = [
+		{
+			'readMoreText': 'Readmore',
+			'rightImageSource': ['far', 'question-circle'],
+			'leftImageSource': ['far', 'gem'],
+			'header': 'Lenovo Vantage Toolbar',
+			'subHeader': 'Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings.',
+			'isCheckBoxVisible': true,
+			'isSwitchVisible': true
+		}
+	];
 
 	constructor() { }
 
