@@ -17,18 +17,6 @@ export class PageDashboardComponent implements OnInit {
 	};
 
 
-
-	
-
-
-
-
-
-
-
-
-	
-
 	qAndA = {
 		title: 'Q&A\'s for your machine',
 		description: 'Description of component',

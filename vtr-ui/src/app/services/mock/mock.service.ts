@@ -77,23 +77,38 @@ export class MockService {
 			'status': 0,
 			'id': 'anti-virus',
 			'title': 'Anti-Virus',
-			'path': '/security'
+			'detail': 'Enabled',
+			'path': 'anti-virus'
 		},
 		{
 			'status': 0,
 			'id': 'wifi-security',
 			'title': 'Wifi Security',
-			'path': '/security'
-		},
-		{
-			'status': 0,
-			'title': 'Password Manager',
-			'path': '/security'
+			'detail': 'Enabled',
+			'path': 'wifi-security'
+
 		},
 		{
 			'status': 1,
+			'id': 'pwdmgr',
+			'title': 'Password Manager',
+			'detail': 'Installed',
+			'path': 'password-protection'
+		},
+		{
+			'status': 1,
+			'id': 'vpn',
 			'title': 'VPN',
-			'path': '/security'
+			'detail': 'Installed',
+			'path': 'internet-protection'
+		},
+		{
+			'status': 2,
+			'id': 'windows-hello',
+			'title': 'Windows Hello',
+			'detail': 'disabled',
+			'path': 'security'
+
 		}
 	];
 
