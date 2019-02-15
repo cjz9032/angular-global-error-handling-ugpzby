@@ -125,6 +125,7 @@ library.add(far);
 		ModalWelcomeComponent,
 		ContainerCollapsibleComponent,
 		UiSwitchOnoffComponent,
+		UiSwitchTristateComponent,
 		BatteryDetailComponent,
 		BatteryCardComponent,
 		BatteryIndicatorComponent,
