@@ -7,7 +7,7 @@
 			 [menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
 		</div>
 	</div>
-	<!-- <div class="row py-5 smartsettings-card">
+	<div class="row py-5 smartsettings-card">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible title="Power Smartsettings"
 			 [isCollapsed]="false"
@@ -16,9 +16,7 @@
 				<div class="row">
 					<div class="col-auto text-wrap subtitle">
 						<h2>INTELLIGENT COOLING</h2>
-						<p>This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings
-							to keep the device cooler while being held, and optimizes performance while the device is on
-							a stable surface. When off, you can manually set thermal priority.</p>
+						<p>This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler while being held, and optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.</p>
 					</div>
 				</div>
 				<ul class="list-group list-group-flush">
@@ -32,7 +30,7 @@
 						 [showChildContent]="true"
 						 [theme]="'blue'"
 						 (toggleOnOff)="onIntelligentCoolingToggle($event)">
-							<div *ngIf="!intelligentCooling">
+							<div class="my-3" *ngIf="!intelligentCooling">
 								<vtr-ui-rectangle-radio [radioId]="'radio1'"
 								 [group]="'radio'"
 								 [label]="'QUIET'"
@@ -84,5 +82,5 @@
 				</ul>
 			</vtr-container-collapsible>
 		</div>
-	</div> -->
+	</div>
 </div>

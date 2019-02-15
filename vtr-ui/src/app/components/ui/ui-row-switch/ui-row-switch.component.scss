@@ -1,12 +1,12 @@
 @import "../../../app.theme";
 
-@mixin theme($name, $background, $color) {
+@mixin theme($name, $background, $color, $border) {
 	.vtr-ui-switch-row.#{$name} {
 		padding: 0.7rem;
 		padding-left: 0px;
 		margin: 0rem 1.7rem 0rem;
 		background-color: none;
-		border-bottom: 0.1rem solid $shade_dark;
+		border-bottom: 1px solid $border;
 		.left-icon-column {
 			padding-left: 0px;
 			.left-icon {
@@ -35,5 +35,5 @@
 	}
 }
 
-@include theme(white-theme, $light, $main);
-@include theme(blue-theme, $main, $light);
+@include theme(white-theme, $light, $main, $screen_dark_10);
+@include theme(blue-theme, $gradient_main, $light, $screen_light_15);

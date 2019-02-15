@@ -1,6 +1,6 @@
 @import "../../app.theme";
 
-@mixin theme($name, $background, $color) {
+@mixin theme($name, $background, $color, $border) {
 	.vtr-container-collapsible.#{$name} {
 		box-shadow: $drop_shadow;
 		border-radius: $border_radius;
@@ -10,6 +10,7 @@
 			background: none;
 			.card-header {
 				background: none;
+				border-color: $border;
 				.header {
 					color: $color;
 					font-size: 2rem;
@@ -36,5 +37,5 @@
 	}
 }
 
-@include theme(white-theme, $light, $main);
-@include theme(blue-theme, $main, $light);
+@include theme(white-theme, $light, $main, $screen_dark_10);
+@include theme(blue-theme, $gradient_main, $light, $screen_light_15);
