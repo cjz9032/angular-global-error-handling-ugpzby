@@ -29,21 +29,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit {
 
 	ngOnInit() {}
 
-	//#region demo code section for code review
-
-	// tslint:disable-next-line: member-ordering
-	public sliderValue = 0; // demo code for code review
-
-	public onSliderChange($event: number) {
-		this.sliderValue = $event;
-	}
-
-	public onValueChange($event: number) {
-		this.sliderValue = $event;
-	}
-
-	//#endregion
-
 	public onAutoExposureChange($event) {
 		this.isAutoExposureEnabled = $event.switchValue;
 	}

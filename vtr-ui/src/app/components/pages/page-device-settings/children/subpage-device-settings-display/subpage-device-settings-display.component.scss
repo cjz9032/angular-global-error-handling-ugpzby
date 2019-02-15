@@ -5,11 +5,11 @@
 		height: 258px;
 		object-fit: cover;
 		width: 100%;
-		background-color: black;
+		background-color: $dark;
 	}
 
 	.slider-item-text {
-		color: #34495e;
+		color: $main_darker;
 		font-size: 12px;
 		font-weight: bold;
 		letter-spacing: 0.76px;

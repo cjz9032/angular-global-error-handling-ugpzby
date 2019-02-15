@@ -12,7 +12,7 @@
 
 	<!-- Camera preview & setting section  -->
 	<div class="p-5">
-		<vtr-container-collapsible [title]="'Camera'">
+		<vtr-container-collapsible [title]="'Camera'" [isCollapsed]="false">
 			<vtr-ui-row-switch [title]="'Camera privacy mode'">
 			</vtr-ui-row-switch>
 			<!-- not sure if camera section will be used somewhere else or not -->
@@ -27,25 +27,25 @@
 								<div class="slider-item-text text-uppercase">
 									Brightness
 								</div>
-								<input
-									type="range"
-									min="1"
-									max="100"
-									value="50"
-									class="slider-control"
-								/>
+								<vtr-ui-range-slider
+									[step]="1"
+									[minValue]="1"
+									[maxValue]="10"
+									[value]="3"
+								>
+								</vtr-ui-range-slider>
 							</li>
 							<li class="list-group-item">
 								<div class="slider-item-text text-uppercase">
 									Contrast
 								</div>
-								<input
-									type="range"
-									min="1"
-									max="100"
-									value="50"
-									class="slider-control"
-								/>
+								<vtr-ui-range-slider
+									[step]="1"
+									[minValue]="1"
+									[maxValue]="10"
+									[value]="5"
+								>
+								</vtr-ui-range-slider>
 							</li>
 							<li class="list-group-item">
 								<div class="d-flex justify-content-between">
@@ -62,15 +62,14 @@
 										></vtr-ui-switch-onoff>
 									</div>
 								</div>
-
-								<input
+								<vtr-ui-range-slider
+									[step]="1"
+									[minValue]="1"
+									[maxValue]="10"
+									[value]="8"
 									*ngIf="isAutoExposureEnabled"
-									type="range"
-									min="1"
-									max="100"
-									value="50"
-									class="slider-control"
-								/>
+								>
+								</vtr-ui-range-slider>
 							</li>
 							<li class="list-group-item">
 								<div
@@ -92,15 +91,3 @@
 		</vtr-container-collapsible>
 	</div>
 </div>
-<!-- =======
-<div class="subpage-device-settings-power vtr-subpage">
-	<div class="row">
-		<div class="col">
-			<vtr-ui-header-subpage [items]="headerMenuItems"
-			 [title]="title"
-			 [caption]="headerCaption"
-			 [menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
-		</div>
-	</div>
-</div>
->>>>>>> develop -->
