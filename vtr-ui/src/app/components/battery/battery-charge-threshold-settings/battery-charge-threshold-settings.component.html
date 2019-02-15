@@ -1,0 +1,132 @@
+<div class="vtr-battery-charge-threshold-settings">
+	<div class="container-fluid">
+		<!--start of display title in row-->
+		<div class="row"
+		 *ngIf="title && !displayNoteOnly">
+			<div class="col px-20">
+				<div class="threshold-for-built-in-battery">
+					{{ title }}
+				</div>
+			</div>
+		</div>
+		<!--end of display title in row-->
+
+		<!--start of display inputs for action in row-->
+		<div class="row"
+		 *ngIf="!displayNoteOnly">
+			<div class="col">
+				<div class="inputSection">
+					<div class="row">
+						<!--start of left dropdown box for action in row-->
+						<div class="col px-20">
+							<div class="btn-group btn-block dropdown-left"
+							 ngbDropdown
+							 [ngClass]="['disabled',isCheckedAuto === true ?'disabled':'']" placement="bottom-right">
+								<button [ngClass]="['btn','btn-outline-shadow',isCheckedAuto?'disabled':'']"
+								 ngbDropdownToggle
+								 [disabled]="isCheckedAuto?true:false"
+								 type="button">
+									<div class="row justify-content-center align-items-center text-left">
+										<div class="col">
+											<div class="select-title">
+												Start charging when below
+											</div>
+
+											<div class="select-text">
+												{{selectedStartAtCharge}}%
+											</div>
+										</div>
+										<div class="col-auto">
+											<div class="dropdown-icon">
+												<fa-icon [icon]="['fas', 'chevron-down']"></fa-icon>
+											</div>
+										</div>
+									</div>
+								</button>
+								<div ngbDropdownMenu
+								 aria-labelledby="">
+									<a [ngClass]="['dropdown-item',item >= selectedStopAtCharge?'disabled':'']"
+									 *ngFor="let item of startAtChargeOptions"
+									 (click)="onChargeChange('startAtCharge', item , $event);$event.preventDefault();"
+									 href="#">{{item}}%</a>
+								</div>
+							</div>
+						</div>
+						<!--end of left dropdown box for action in row-->
+
+						<!--start of right dropdown box for action in row-->
+						<div class="col px-20">
+							<div class="btn-group btn-block dropdown-right"
+							 ngbDropdown placement="bottom-right">
+								<button [ngClass]="['btn','btn-outline-shadow']"
+								 ngbDropdownToggle
+								 type="button">
+									<div class="row justify-content-center align-items-center text-left">
+										<div class="col">
+											<div class="select-title">
+												Stop charging at
+											</div>
+											<div class="select-text">
+												{{selectedStopAtCharge}}%
+											</div>
+										</div>
+										<div class="col-auto">
+											<div class="dropdown-icon">
+												<fa-icon [icon]="['fas', 'chevron-down']"></fa-icon>
+											</div>
+										</div>
+									</div>
+								</button>
+								<div ngbDropdownMenu
+								 aria-labelledby="">
+									<a [ngClass]="['dropdown-item',isCheckedAuto ===false && (item <= selectedStartAtCharge) ?'disabled':'']"
+									 *ngFor="let item of stopAtChargeOptions"
+									 (click)="onChargeChange('stopAtCharge', item , $event);$event.preventDefault();"
+									 href="#">{{item}}%</a>
+								</div>
+							</div>
+						</div>
+						<!--end of right dropdown box for action in row-->
+					</div>
+					<div class="row"
+					 *ngIf="!displayNoteOnly">
+						<div class="col px-20">
+							<div class="auto-set-checkbox">
+								<input type="checkbox"
+								 [id]="isCheckedAutoInput + randomNumber"
+								 [name]="isCheckedAutoInput + randomNumber"
+								 [(ngModel)]="isCheckedAuto"
+								 (ngModelChange)='toggleAutoChargeSettings($event)'>
+
+								<label
+								 [for]="isCheckedAutoInput + randomNumber">Automatically set to start "charging at %" to 5% below the "stop charging at %"</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--end of display inputs for action in row-->
+		</div>
+		<!--start of row seperator-->
+		<div class="row"
+		 *ngIf="!displayNoteOnly">
+			<div class="col px-20">
+				<div class="row-seperator">&nbsp;</div>
+			</div>
+		</div>
+		<!--end of row seperator-->
+
+		<!--start of Note -->
+		<div class="row"
+		 *ngIf="displayNoteOnly">
+			<div class="col px-20">
+				<div class="note-box">
+					<div class="note">
+						<b>Note:</b> Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--end of Note -->
+	</div>
+</div>
