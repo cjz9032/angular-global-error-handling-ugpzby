@@ -1,156 +1,156 @@
 @import "../../../app.theme.scss";
 
 .vtr-battery-charge-threshold-settings {
-  padding-top: 1rem;
-  .threshold-for-built-in-battery {
-    color: $blue_dark_01;
-    font-size: 2.1rem;
-    font-weight: $weight_bold;
-    letter-spacing: 0.1rem;
-    line-height: 3.6rem;
-    text-transform: uppercase;
-  }
-  .inputSection {
-    margin-top: 1rem;
+	padding-top: 1rem;
+	.threshold-for-built-in-battery {
+		color: $blue_dark_01;
+		font-size: 2.1rem;
+		font-weight: $weight_bold;
+		letter-spacing: 0.1rem;
+		line-height: 3.6rem;
+		text-transform: uppercase;
+	}
+	.inputSection {
+		margin-top: 1rem;
 
-    .dropdown-toggle::after {
-      display: none;
-    }
+		.dropdown-toggle::after {
+			display: none;
+		}
 
-    .dropdown-left {
-      padding-right: 2rem;
-    }
+		.dropdown-left {
+			padding-right: 2rem;
+		}
 
-    .dropdown-right {
-      padding-left: 2rem;
-    }
+		.dropdown-right {
+			padding-left: 2rem;
+		}
 
-    .select-title {
-      font-size: 1.2rem;
-      font-weight: $weight_medium;
-      line-height: 1.3rem;
-      text-transform: uppercase;
-      color: $blue_dark_01;
-      padding: 0.2rem;
-    }
-    .select-text {
-      color: $blue_dark_01;
-      font-size: 1.2rem;
-      font-weight: $weight_light;
-      line-height: 1.2rem;
-      padding: 0.2rem;
-    }
+		.select-title {
+			font-size: 1.2rem;
+			font-weight: $weight_medium;
+			line-height: 1.3rem;
+			text-transform: uppercase;
+			color: $blue_dark_01;
+			padding: 0.2rem;
+		}
+		.select-text {
+			color: $blue_dark_01;
+			font-size: 1.2rem;
+			font-weight: $weight_light;
+			line-height: 1.2rem;
+			padding: 0.2rem;
+		}
 
-    .btn-block {
-      height: 6rem;
-    }
-    .btn-outline-shadow {
-      border: 0.1rem solid $light_01;
-      border-radius: $border_radius_sm;
-      background-color: $light;
-      box-shadow: $drop_shadow_01;
-    }
-    .btn:focus,
-    .btn:active {
-      outline: none !important;
-      box-shadow: $drop_shadow_01;
-    }
+		.btn-block {
+			height: 6rem;
+		}
+		.btn-outline-shadow {
+			border: 0.1rem solid $light_01;
+			border-radius: $border_radius_sm;
+			background-color: $light;
+			box-shadow: $drop_shadow_01;
+		}
+		.btn:focus,
+		.btn:active {
+			outline: none !important;
+			box-shadow: $drop_shadow_01;
+		}
 
-    .dropdown-menu {
-      width: 95%;
-    }
+		.dropdown-menu {
+			width: 95%;
+		}
 
-    .dropdown .dropdown-menu:not(.show) {
-      display: none;
-    }
+		.dropdown .dropdown-menu:not(.show) {
+			display: none;
+		}
 
-    .dropdown dropdown-menu.show {
-      display: block;
-    }
-    .disabled {
-      background-color: $light_04;
-    }
+		.dropdown dropdown-menu.show {
+			display: block;
+		}
+		.disabled {
+			background-color: $light_04;
+		}
 
-    .custom-control-checkbox {
-      margin-top: 2rem;
+		.custom-control-checkbox {
+			margin-top: 2rem;
 
-      .checkbox {
-        padding: 0 2rem 0;
-      }
-      .custom-control-label {
-        color: $dark_grey_01;
-        font-size: 2rem;
-        font-weight: $weight_light;
-        line-height: 1.2rem;
-        padding: 0 2rem 0 2rem;
-        text-align: center;
-      }
+			.checkbox {
+				padding: 0 2rem 0;
+			}
+			.custom-control-label {
+				color: $dark_grey_01;
+				font-size: 2rem;
+				font-weight: $weight_light;
+				line-height: 1.2rem;
+				padding: 0 2rem 0 2rem;
+				text-align: center;
+			}
 
-      [type="checkbox"]:checked,
-      [type="checkbox"]:not(:checked) {
-        position: absolute;
-        left: -624.9375rem;
-      }
-      [type="checkbox"]:checked + label,
-      [type="checkbox"]:not(:checked) + label {
-        position: relative;
-        cursor: pointer;
-        line-height: 2rem;
-        display: inline-block;
-        color: $dark_grey_02;
-      }
-      [type="checkbox"]:not(:checked) + label:before,
-      [type="checkbox"]:checked + label:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 1.5rem;
-        height: 1.5rem;
-        border: 0.1rem solid $light_05;
-        background: $light;
-        border-radius: $border_radius_ex_sm;
-        margin-right: 1rem;
-      }
-      [type="checkbox"]:checked + label:after {
-        content: "✔";
-        width: 1.5rem;
-        color: white;
-        height: 1.5rem;
-        position: absolute;
-        top: 0.1rem;
-        left: 0.1rem;
-        font-size: 0.6rem;
-        line-height: 1;
-        background: $main;
-        align-content: center;
-      }
-      input[type="checkbox"]:focus + label:before {
-        box-shadow: none;
-      }
-    }
-  }
+			[type="checkbox"]:checked,
+			[type="checkbox"]:not(:checked) {
+				position: absolute;
+				left: -624.9375rem;
+			}
+			[type="checkbox"]:checked + label,
+			[type="checkbox"]:not(:checked) + label {
+				position: relative;
+				cursor: pointer;
+				line-height: 2rem;
+				display: inline-block;
+				color: $dark_grey_02;
+			}
+			[type="checkbox"]:not(:checked) + label:before,
+			[type="checkbox"]:checked + label:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 1.5rem;
+				height: 1.5rem;
+				border: 0.1rem solid $light_05;
+				background: $light;
+				border-radius: $border_radius_ex_sm;
+				margin-right: 1rem;
+			}
+			[type="checkbox"]:checked + label:after {
+				content: "✔";
+				width: 1.5rem;
+				color: white;
+				height: 1.5rem;
+				position: absolute;
+				top: 0.1rem;
+				left: 0.1rem;
+				font-size: 0.6rem;
+				line-height: 1;
+				background: $main;
+				align-content: center;
+			}
+			input[type="checkbox"]:focus + label:before {
+				box-shadow: none;
+			}
+		}
+	}
 
-  .row-seperator {
-    width: 100%;
-    height: 0.2rem;
-    background-color: $light_02;
-    margin-top: 1.5rem;
-  }
+	.row-seperator {
+		width: 100%;
+		height: 0.2rem;
+		background-color: $light_02;
+		margin-top: 1.5rem;
+	}
 
-  .note-box {
-    border: 0.1rem solid $light_02;
-    border-radius: 0.3rem;
-    background-color: $light_04;
-    box-shadow: $drop_shadow_02;
-    margin-top: 1.5rem;
+	.note-box {
+		border: 0.1rem solid $light_02;
+		border-radius: 0.3rem;
+		background-color: $light_04;
+		box-shadow: $drop_shadow_02;
+		margin-top: 1.5rem;
 
-    .note {
-      color: $red_01;
-      font-size: 2rem;
-      font-weight: $weight_light;
-      line-height: 2rem;
-      padding: 1.5rem;
-    }
-  }
+		.note {
+			color: $red_01;
+			font-size: 2rem;
+			font-weight: $weight_light;
+			line-height: 2rem;
+			padding: 1.5rem;
+		}
+	}
 }
