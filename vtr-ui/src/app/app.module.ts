@@ -84,6 +84,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
+import { EyeCareModeComponent } from './components/display/eye-care-mode/eye-care-mode.component';
 
 
 library.add(fas);
@@ -135,7 +136,8 @@ library.add(far);
 		UiRowSwitchComponent,
 		UiHeaderSubpageComponent,
 		UiSwitchTristateComponent,
-		UiRowSwitchComponent
+		UiRowSwitchComponent,
+		EyeCareModeComponent
 	],
 	imports: [
 		BrowserModule,
