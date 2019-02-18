@@ -116,25 +116,25 @@ export class MockService {
 		{
 			'icon': ['fas', 'plane'],
 			'title': ' Reduced batterylife working outside.',
-			'path': '/support',
+			'path': '/support-detail',
 			'lightTitle': true
 		},
 		{
 			'icon': ['fas', 'plane'],
 			'title': 'Can I use my Ideapad while in an airplane?',
-			'path': '/support',
+			'path': '/support-detail',
 			'lightTitle': true
 		},
 		{
 			'icon': ['fas', 'plane'],
 			'title': 'Will the security control scanner damage',
-			'path': '/support',
+			'path': '/support-detail',
 			'lightTitle': true
 		},
 		{
 			'icon': ['fas', 'plane'],
 			'title': 'Will the security control scanner damage',
-			'path': '/support',
+			'path': '/support-detail',
 			'lightTitle': true
 		}
 	];
