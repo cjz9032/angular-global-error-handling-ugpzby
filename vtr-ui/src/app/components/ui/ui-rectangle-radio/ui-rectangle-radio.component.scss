@@ -2,12 +2,12 @@
 
 .vtr-ui-rectangle-radio {
 	box-sizing: border-box;
-	background-color: $light;
+	background-color: $shade_lightest;
 	display: inline-block;
 	margin-right: 2rem;
 	position: relative;
-	width: 13rem;
-	height: 13rem;
+	width: 15rem;
+	height: 15rem;
 	border-radius: 0.5rem;
 
 	label {
@@ -27,8 +27,8 @@
 			position: absolute;
 			left: 2rem;
 			top: 2rem;
-			width: 2rem;
-			height: 2rem;
+			width: 2.2rem;
+			height: 2.2rem;
 			content: "";
 			border: 0.1rem solid $main;
 			background-color: $light;
@@ -40,20 +40,22 @@
 
 		span {
 			position: absolute;
-			left: 1.9rem;
-			top: 9.8rem;
+			left: 5.5rem;
+			top: 2.0rem;
 			color: $main_darkest;
 			font-family: Rubik;
-			font-size: 1.1rem;
+			font-size: 1.35rem;
 			font-weight: bold;
-			letter-spacing: 0rem;
+			letter-spacing: 0.1rem;
 			line-height: 1.6rem;
+			word-wrap: break-word;
+			word-break: break-all;
 		}
 
 		fa-icon.icon {
 			position: absolute;
-			left: 7.8rem;
-			top: 1rem;
+			left: 9rem;
+			top: 9rem;
 			font-size: 3.2rem;
 			color: $main;
 		}
