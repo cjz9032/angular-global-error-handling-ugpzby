@@ -68,7 +68,7 @@ const routes: Routes = [
 		component: PageSupportComponent
 	}, {
 		path: 'support-detail',
-		component: PageSupportComponent
+		component: PageSupportDetailComponent
 	}, {
 		path: 'user',
 		component: PageUserComponent

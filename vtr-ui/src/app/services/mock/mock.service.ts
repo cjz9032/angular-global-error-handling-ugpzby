@@ -139,5 +139,14 @@ export class MockService {
 		}
 	];
 
+	documentation = [
+		{
+			'icon': ['fas', 'plane'],
+			'title': 'User Guide',
+			'path': 'https://support.lenovo.com',
+			'lightTitle': true
+		}
+	];
+
 	constructor() { }
 }
