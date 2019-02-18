@@ -6,7 +6,22 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./subpage-device-settings-display.component.scss']
 })
 export class SubpageDeviceSettingsDisplayComponent implements OnInit {
+
 	title = 'Display & Camera Settings';
+	headerCaption = 'This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.';
+	headerMenuTitle = 'Jump to Settings';
+
+	headerMenuItems = [
+		{
+			title: 'Display',
+			path: '/display'
+		},
+		{
+			title: 'Camera',
+			path: '/camera'
+		}
+	]
+
 	constructor() {}
 
 	ngOnInit() {}

@@ -8,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class SubpageDeviceSettingsAudioComponent implements OnInit {
 
 	title = 'Audio Settings';
+	headerCaption = 'This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.';
+	headerMenuTitle = 'Jump to Settings';
+
+	automaticDolbyAudioSettings: boolean = false;
 
 	constructor() { }
 
-	ngOnInit() {
+	onAutomaticDolbyAudioToggleOnOff(event) {
+		this.automaticDolbyAudioSettings = event.switchValue;
 	}
 
+	ngOnInit() {
+	}
 }
