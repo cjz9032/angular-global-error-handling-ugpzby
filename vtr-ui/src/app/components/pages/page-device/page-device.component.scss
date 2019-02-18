@@ -2,122 +2,129 @@
 
 // @import '../../../app.theme.scss';
 
-.vtr-device-information {
-	border-radius: $border_radius;
-	background-color: $light;
-	box-shadow: $drop_shadow;
-	padding: 4rem;
-	margin-bottom: 4rem;
-	.family {
-		color: $main_darker;
-		font-size: 3.5rem;
-	}
-	.device-sub-header {
-		color: $shade;
-		font-size: 1.5rem;
-	}
+.vtr-page-device {
+  border-radius: $border_radius;
+  background-color: $light;
+  box-shadow: $drop_shadow;
+  padding: 4rem;
+  margin-bottom: 4rem;
 
-	.sub-header-separator {
-		color: $shade;
-		margin-left: 1.5rem;
-		margin-right: 1.5rem;
-		font-size: 1.5rem;
-	}
+  .heading {
+    color: $main_dark;
+    color: $main_darker;
+    font-size: 4rem;
+    margin-top: 4rem;
+  }
 
-	.subheader {
-		color: $main_darker;
-		font-size: 2.5rem;
-		margin-top: 4rem;
-		font-weight: $weight_bold;
-	}
+  .family {
+    color: $main_darker;
+    font-size: 3.5rem;
+  }
+  .device-sub-header {
+    color: $shade;
+    font-size: 1.5rem;
+  }
 
-	.status-list {
-		margin-top: 2.7rem;
-		list-style: none;
-		padding: 0;
-		background-color: $light;
-		border: 0.1rem solid $shade_lightest;
-		li {
-			height: 12rem;
-			margin-top: 2.5rem;
-			padding: 1.5rem 1rem 1.5rem 0;
-			border-bottom: 0.1rem solid $shade_lighter;
-			&:last-child {
-				border: none;
-			}
-			&:hover {
-				background-color: $shade_extralight;
-			}
-			&.good {
-				.status-icon {
-					.icon-bkg {
-						background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
-						border-color: $go_dark;
-						margin-top: 1rem;
-					}
-				}
-			}
-			&.bad {
-				.status-icon {
-					.icon-bkg {
-						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
-						border-color: $stop_dark;
-						margin-top: 1rem;
-					}
-				}
-				.detail {
-					color: $stop;
-				}
-				.arrow {
-					color: $stop;
-				}
-			}
-			a {
-				&:hover {
-					text-decoration: none;
-				}
-			}
-			.status-icon {
-				.icon-bkg {
-					display: inline-block;
-					border-radius: 50%;
-					height: 2.4rem;
-					width: 2.4rem;
-					border-width: 0.2rem;
-					border-style: solid;
-					text-align: center;
-					fa-icon {
-						font-size: 1.2rem;
-						line-height: 2rem;
-						color: $light;
-					}
-				}
-			}
-			.title {
-				font-size: 1.5rem;
-				font-weight: $weight_medium;
-			}
-			.description {
-				font-size: 1.1rem;
-			}
-			.detail {
-				font-size: 1.4rem;
-				text-decoration: underline;
-				color: $shade_dark;
-				&.highlight {
-					color: $shade_darker;
-					text-decoration: underline;
-					&:hover {
-						text-decoration: underline;
-					}
-				}
-			}
-			.arrow {
-				color: $main_darker;
-				line-height: 3.8rem;
-				font-size: 1rem;
-			}
-		}
-	}
+  .sub-header-separator {
+    color: $shade;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .subheader {
+    color: $main_darker;
+    font-size: 2.5rem;
+    margin-top: 4rem;
+    font-weight: $weight_bold;
+  }
+
+  .status-list {
+    margin-top: 2.7rem;
+    list-style: none;
+    padding: 0;
+    background-color: $light;
+    border: 0.1rem solid $shade_lightest;
+    li {
+      height: 12rem;
+      margin-top: 2.5rem;
+      padding: 1.5rem 1rem 1.5rem 0;
+      border-bottom: 0.1rem solid $shade_lighter;
+      &:last-child {
+        border: none;
+      }
+      &:hover {
+        background-color: $shade_extralight;
+      }
+      &.good {
+        .status-icon {
+          .icon-bkg {
+            background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+            border-color: $go_dark;
+            margin-top: 1rem;
+          }
+        }
+      }
+      &.bad {
+        .status-icon {
+          .icon-bkg {
+            background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+            border-color: $stop_dark;
+            margin-top: 1rem;
+          }
+        }
+        .detail {
+          color: $stop;
+        }
+        .arrow {
+          color: $stop;
+        }
+      }
+      a {
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      .status-icon {
+        .icon-bkg {
+          display: inline-block;
+          border-radius: 50%;
+          height: 2.4rem;
+          width: 2.4rem;
+          border-width: 0.2rem;
+          border-style: solid;
+          text-align: center;
+          fa-icon {
+            font-size: 1.2rem;
+            line-height: 2rem;
+            color: $light;
+          }
+        }
+      }
+      .title {
+        font-size: 1.5rem;
+        font-weight: $weight_medium;
+      }
+      .description {
+        font-size: 1.1rem;
+      }
+      .detail {
+        font-size: 1.4rem;
+        text-decoration: underline;
+        color: $shade_dark;
+        &.highlight {
+          color: $shade_darker;
+          text-decoration: underline;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      .arrow {
+        color: $main_darker;
+        line-height: 3.8rem;
+        font-size: 1rem;
+      }
+    }
+  }
 }
-
