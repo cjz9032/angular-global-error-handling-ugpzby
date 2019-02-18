@@ -7,7 +7,7 @@
 				[menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
 		</div>
 	</div>
-	<div class="row py-5 smartsettings-card">
+	<div class="row py-5 smartsettings-card" id="cooling">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible title="Power Smartsettings"
 				[isCollapsed]="false"
@@ -24,11 +24,11 @@
 				<ul class="list-group list-group-flush">
 					<li class="">
 						<vtr-ui-row-switch [title]="'Intelligent cooling'"
-							[caption]="''"
+							[caption]="'Charge USb devices through the Always on USB connector on the computer'"
 							[isSwitchVisible]=true
 							[leftIcon]="['fas', 'search']"
 							[rightIcon]="['far', 'question-circle']"
-							[readMoreText]="''"
+							[readMoreText]="'Read More'"
 							[showChildContent]="true"
 							[theme]="'blue'"
 							(toggleOnOff)="onIntelligentCoolingToggle($event)">
@@ -50,27 +50,67 @@
 		</div>
 	</div>
 
-	<div class="row py-5">
+	<div class="row py-5" id="battery">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible title="Battery Settings"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
-					<li class=""
-						*ngFor="let item of batterySettings">
-						<vtr-ui-row-switch [title]="item.header"
-							[caption]="item.subHeader"
+					<li class="">
+						<vtr-ui-row-switch [title]="'Airplane Power Mode'"
+							[caption]="''"
 							[isSwitchVisible]=true
-							[leftIcon]="item.leftImageSource"
-							[rightIcon]="item.rightImageSource"
-							[readMoreText]="item.readMoreText">
+							[leftIcon]="['far', 'gem']"
+							[rightIcon]="['far', 'question-circle']"
+							[readMoreText]="'Read More'">
 						</vtr-ui-row-switch>
 					</li>
+					<li class="">
+						<vtr-ui-row-switch [title]="'Battery Charge Threshold'"
+										   [caption]="'This feature dynamically adjusts thermal settings to your needs'"
+										   [isSwitchVisible]=true
+										   [leftIcon]="['far', 'gem']"
+										   [rightIcon]="['far', 'question-circle']"
+										   [readMoreText]="'Read More'"
+										   [showChildContent]="true" (toggleOnOff)="showBatteryThreshold=$event.switchValue;">
+							<div *ngIf="showBatteryThreshold">
+							<vtr-battery-charge-threshold-settings [title]="'Threshold for Built in battery'"
+																   [type]="'primary'">
+							</vtr-battery-charge-threshold-settings>
+
+							<vtr-battery-charge-threshold-settings [title]="'Threshold for Removable battery'"
+																   [type]="'secondary'">
+							</vtr-battery-charge-threshold-settings>
+
+							<vtr-battery-charge-threshold-settings [displayNoteOnly]="true">
+							</vtr-battery-charge-threshold-settings>
+							</div>
+						</vtr-ui-row-switch>
+					</li>
+					<li class="">
+						<vtr-ui-row-switch [title]="'Express Charging'"
+										   [caption]="'orem ipsum dolor sit amet del Lorem ipsum dolor sit amet del'"
+										   [isSwitchVisible]=true
+										   [leftIcon]="['far', 'gem']"
+										   [rightIcon]="['far', 'question-circle']"
+										   [readMoreText]="'Read More'">
+						</vtr-ui-row-switch>
+					</li>
+					<li class="">
+						<vtr-ui-row-switch [title]="'Conservation Mode'"
+										   [caption]="'Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings'"
+										   [isSwitchVisible]=true
+										   [leftIcon]="['far', 'gem']"
+										   [rightIcon]="['far', 'question-circle']"
+										   [readMoreText]="'Read More'">
+						</vtr-ui-row-switch>
+					</li>
+
 				</ul>
 			</vtr-container-collapsible>
 		</div>
 	</div>
 
-	<div class="row py-5">
+	<div class="row py-5" id="power">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible title="Power Settings"
 				[isCollapsed]="false">
@@ -90,7 +130,7 @@
 		</div>
 	</div>
 
-	<div class="row py-5">
+	<div class="row py-5" id="other">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible title="Other Settings"
 				[isCollapsed]="false">
@@ -109,18 +149,5 @@
 			</vtr-container-collapsible>
 		</div>
 	</div>
-	<div class="row py-60">
-		<div class="col-10 mx-auto">
-			<vtr-battery-charge-threshold-settings [title]="'Threshold for Built in battery'"
-				[type]="'primary'">
-			</vtr-battery-charge-threshold-settings>
 
-			<vtr-battery-charge-threshold-settings [title]="'Threshold for Removable battery'"
-				[type]="'secondary'">
-			</vtr-battery-charge-threshold-settings>
-
-			<vtr-battery-charge-threshold-settings [displayNoteOnly]="true">
-			</vtr-battery-charge-threshold-settings>
-		</div>
-	</div>
 </div>

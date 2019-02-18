@@ -14,11 +14,12 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit {
 	headerMenuItems = [
 		{
 			title: 'Display',
-			path: '/display'
+			path: 'display'
+
 		},
 		{
 			title: 'Camera',
-			path: '/camera'
+			path: 'camera'
 		}
 	]
 

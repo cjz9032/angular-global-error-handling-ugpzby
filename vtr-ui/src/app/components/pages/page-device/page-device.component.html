@@ -37,7 +37,7 @@
 										<div class="col">
 											<ul class="status-list">
 												<li *ngFor="let item of dummyDeviceInformation"
-												 [ngClass]="[!item.status?'good':'bad']">
+													[ngClass]="[!item.status?'good':'bad']">
 													<div class="container-fluid">
 														<div class="row">
 															<div class="col-1">
@@ -49,7 +49,7 @@
 															</div>
 															<div class="col-7">
 																<div class="title"
-																 [ngClass]="[!item.status?'good':'bad']">
+																	 [ngClass]="[!item.status?'good':'bad']">
 																	{{item.title}}
 																</div>
 																<div class="description row">{{item.description}}</div>
@@ -57,7 +57,7 @@
 															<div class="col-3 text-right">
 																<a routerLink="/{{item.path}}">
 																	<div class="detail"
-																	 [ngClass]="{'highlight':item.asLink}">
+																		 [ngClass]="{'highlight':item.asLink}">
 																		{{item.detail}}
 																	</div>
 																</a>
@@ -85,12 +85,12 @@
 								<div class="row mb-40">
 									<div class="col col-12">
 										<vtr-container-card [img]="'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg'"
-										 [title]="'Try out McAfee anti-virus software for 6 months'"
-										 [logoText]="'LENEVO SPECIAL'"
-										 [readMore]="'http://www.google.com'"
-										 [type]="'article'"
-										 [ratioX]="4"
-										 [ratioY]="4">
+															[title]="'Try out McAfee anti-virus software for 6 months'"
+															[logoText]="'LENEVO SPECIAL'"
+															[readMore]="'http://www.google.com'"
+															[type]="'article'"
+															[ratioX]="4"
+															[ratioY]="4">
 										</vtr-container-card>
 									</div>
 								</div>
@@ -98,11 +98,11 @@
 								<div class="row">
 									<div class="col col-12 aritcle-card">
 										<vtr-container-card [img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
-										 [title]="'Ideas on how to handle all your passwords online'"
-										 [readMore]="'http://www.google.com'"
-										 [type]="'partnerarticle'"
-										 [ratioX]="4"
-										 [ratioY]="2.5">
+															[title]="'Ideas on how to handle all your passwords online'"
+															[readMore]="'http://www.google.com'"
+															[type]="'partnerarticle'"
+															[ratioX]="4"
+															[ratioY]="2.5">
 										</vtr-container-card>
 									</div>
 								</div>
@@ -111,8 +111,8 @@
 									<div class="col col-12 cont">
 										<div class="heading mb-40">Helpful content</div>
 										<vtr-widget-questions [title]="'Q&A\'s for your Machine'"
-											[description]="'Find answers for your Ideapad'"
-											[items]="mockService.qA"></vtr-widget-questions>
+															  [description]="'Find answers for your Ideapad'"
+															  [items]="mockService.qA"></vtr-widget-questions>
 									</div>
 								</div>
 							</div>

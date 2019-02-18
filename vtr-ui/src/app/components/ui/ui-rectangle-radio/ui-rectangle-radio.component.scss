@@ -22,7 +22,7 @@
 		z-index: 2;
 		overflow: hidden;
 
-		&:after {
+		&:before {
 			box-sizing: border-box;
 			position: absolute;
 			left: 2rem;
@@ -32,6 +32,21 @@
 			content: "";
 			border: 0.1rem solid $main;
 			background-color: $light;
+			border-radius: 1rem;
+			z-index: 2;
+			cursor: pointer;
+			transition: all 200ms ease-in;
+		}
+
+		&:after {
+			box-sizing: border-box;
+			position: absolute;
+			left: 2.5rem;
+			top: 2.4rem;
+			width: 1rem;
+			height: 1rem;
+			content: "";
+			background-color: $main;
 			border-radius: 1rem;
 			z-index: 2;
 			cursor: pointer;
@@ -67,10 +82,12 @@
 		}
 	}
 
-	input:checked ~ label {
-		&:after {
-			background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 22 22' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2,9a7,7 0 1,0 14,0a7,7 0 1,0 -14,0' fill='%234A81FD' fill-rule='nonzero'/%3E%3C/svg%3E ");
-		}
+	input[type="radio"]:not(:checked)+ label::after {
+		opacity:0;
+		transition: all 1s ease;
+	}
+	input:checked + label::after {
+           opacity:1;
 	}
 
 	input {

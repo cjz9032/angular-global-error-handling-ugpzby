@@ -12,6 +12,16 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit {
 	headerMenuTitle = 'Jump to Settings';
 
 	automaticDolbyAudioSettings: boolean = false;
+	headerMenuItems = [
+		{
+			title: 'Audio',
+			path: 'audio',
+		},
+		{
+			title: 'Microphone',
+			path: 'microphone',
+		}
+	];
 
 	constructor() { }
 
