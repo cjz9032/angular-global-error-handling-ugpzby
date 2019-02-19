@@ -30,14 +30,12 @@
 					<li class="">
 						<vtr-ui-row-switch [title]="'Display Priority Control'"
 							[caption]="'Configures microphone effect to enhance your audio experience by different scenarios and environment.'"
-							[isSwitchVisible]=true
+							[isSwitchVisible]=false
 							[leftIcon]="['far', 'gem']"
 							[readMoreText]="''"
 							[showChildContent]="true"
-							[theme]="'white'"
-							(toggleOnOff)="onAutomaticDolbyAudioToggleOnOff($event)">
-							<div class="my-3"
-								*ngIf="!automaticDolbyAudioSettings">
+							[theme]="'white'">
+							<div class="my-3">
 								<vtr-ui-rectangle-radio [radioId]="'radio1'"
 									[group]="'radio'"
 									[label]="'HDMI'"
@@ -46,8 +44,6 @@
 									[group]="'radio'"
 									[label]="'USB TYPE-c'"
 									[value]="'MOVIE'"></vtr-ui-rectangle-radio>
-
-
 							</div>
 						</vtr-ui-row-switch>
 					</li>

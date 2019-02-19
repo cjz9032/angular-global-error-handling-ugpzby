@@ -1,12 +1,13 @@
-@import '../../../app.theme.scss';
-.heading {
-	color: $main_dark;
-	color: $main_darker;
-	font-size: 4.0rem;
-}
-.vtr-page-right-column {	
-	background-color: $shade_extralight;
-	.align-center{
-		padding: 0 6rem 0rem 6rem;
+@import "../../../app.theme.scss";
+
+.vtr-page {
+	.vtr-page-content {
+		.vtr-page-left-column {
+			background-color: $light;
+		}
 	}
+}
+
+.vtr-page-right-column {
+	background-color: $shade_extralight;
 }
