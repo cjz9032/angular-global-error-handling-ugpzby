@@ -86,6 +86,10 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { EyeCareModeComponent } from './components/display/eye-care-mode/eye-care-mode.component';
+import { UiButtonComponent } from './components/ui/ui-button/ui-button.component';
+import { ConnectedHomeSecurityComponent } from './components/wifi/connected-home-security/connected-home-security.component';
+import { MyConnectedHomeComponent } from './components/wifi/connected-home-security/children/my-connected-home/my-connected-home.component';
+
 
 
 library.add(fas);
@@ -140,7 +144,10 @@ library.add(far);
 		UiSwitchTristateComponent,
 		UiRowSwitchComponent,
 		EyeCareModeComponent,
-		UiHeaderSubpageComponent
+		UiHeaderSubpageComponent,
+		UiButtonComponent,
+		ConnectedHomeSecurityComponent,
+		MyConnectedHomeComponent
 	],
 	imports: [
 		BrowserModule,

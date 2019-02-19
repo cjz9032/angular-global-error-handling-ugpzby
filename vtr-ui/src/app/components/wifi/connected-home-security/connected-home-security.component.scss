@@ -1,0 +1,114 @@
+@import "../../../app.theme.scss";
+
+.vtr-connected-home-security {
+  box-shadow: $drop_shadow;
+  border-radius: $border_radius;
+  background-color: $light;
+  padding: 2rem;
+
+  .heading {
+    color: $main_dark;
+    font-size: 2.5rem;
+    font-weight: $weight_medium;
+  }
+
+  .sub-heading {
+    color: $main_dark;
+    font-size: 2rem;
+    font-weight: $weight_medium;
+    text-transform: uppercase;
+  }
+
+  .text-regular {
+    color: $main_dark;
+    font-size: 2rem;
+    font-weight: $weight_regular;
+  }
+
+  .bullet-list {
+    margin-top: 1rem;
+    list-style: none;
+    padding: 0;
+    background-color: $light;
+
+    li {
+      margin: 0;
+      padding: 1rem 1rem 1rem 0;
+      color: $main_dark;
+
+      &.good {
+        .bullet-icon {
+          .icon-bkg {
+            background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+            border-color: $go_dark;
+          }
+        }
+      }
+
+      .bullet-icon {
+        .icon-bkg {
+          display: inline-block;
+          border-radius: 50%;
+          height: 3.3rem;
+          width: 3.3rem;
+          border-width: 3px;
+          border-style: solid;
+          text-align: center;
+          fa-icon {
+            font-size: 1.6rem;
+            line-height: 2.9rem;
+            color: $light;
+          }
+        }
+      }
+    }
+  }
+
+  .gem-box {
+    margin: 2rem;
+    padding: 2rem;
+    .gem {
+      box-sizing: border-box;
+      background-color: $shade_lightest;
+      display: inline-block;
+      margin-right: 2rem;
+      position: relative;
+      width: 20rem;
+      height: 20rem;
+      border-radius: $border_radius_sm;
+      margin-top: 2.7rem;
+      fa-icon.icon {
+        position: absolute;
+        font-size: 3.2rem;
+        color: $main;
+      }
+    }
+  }
+
+  .button-box {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .invitation-code-box {
+    padding: 1rem;
+    background-color: $shade_lightest;
+    border: 0.1rem solid $shade_lighter;
+    border-radius: $border_radius;
+
+    .sub-heading {
+      color: $main_dark;
+      font-size: 2rem;
+      font-weight: $weight_medium;
+      text-transform: uppercase;
+      padding: 1rem;
+    }
+
+    .text-regular {
+      color: $main_dark;
+      font-size: 2rem;
+      font-weight: $weight_regular;
+      padding: 1rem;
+    }
+  }
+}
