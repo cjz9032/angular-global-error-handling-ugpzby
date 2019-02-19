@@ -64,6 +64,7 @@ import { WidgetQuicksettingsComponent } from './components/widgets/widget-quicks
 import { WidgetStatusComponent } from './components/widgets/widget-status/widget-status.component';
 import { WidgetQuestionsComponent } from './components/widgets/widget-questions/widget-questions.component';
 import { WidgetFeedbackComponent } from './components/widgets/widget-feedback/widget-feedback.component';
+import { WidgetSysupdateComponent } from './components/widgets/widget-sysupdate/widget-sysupdate.component';
 import { WidgetSysupdateSettingsComponent } from './components/widgets/widget-sysupdate-settings/widget-sysupdate-settings.component';
 
 // APPLICATION MODALS
@@ -111,6 +112,7 @@ library.add(far);
 		WidgetFeedbackComponent,
 		WidgetStatusComponent,
 		WidgetQuestionsComponent,
+		WidgetSysupdateComponent,
 		WidgetSysupdateSettingsComponent,
 		PageQuestionsComponent,
 		ContainerCardComponent,
