@@ -25,6 +25,13 @@
 				*ngIf="isSwitchVisible">
 				<vtr-ui-switch-onoff (change)="onOnOffChange($event)"></vtr-ui-switch-onoff>
 			</div>
+			<div *ngIf="!isSwitchVisible && linkText"
+				class="col link-text">
+				<a routerLink="/{{linkPath}}"
+					class="link-text">
+					{{linkText}}
+				</a>
+			</div>
 			<div class="col-auto p-0 pl-2"
 				*ngIf="rightIcon.length > 0">
 				<fa-icon class="right-icon"
