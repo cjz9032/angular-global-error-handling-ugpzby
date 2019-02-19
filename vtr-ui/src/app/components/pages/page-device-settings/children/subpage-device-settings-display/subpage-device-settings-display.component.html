@@ -1,4 +1,4 @@
-<div class="vtr-display-and-camera  vtr-subpage">
+<div class="subpage-device-settings-display vtr-subpage">
 	<div class="row">
 		<div class="col">
 			<vtr-ui-header-subpage
@@ -9,22 +9,77 @@
 			></vtr-ui-header-subpage>
 		</div>
 	</div>
-
-	<!-- Camera preview & setting section  -->
-	<div class="p-5">
-		<vtr-container-collapsible [title]="'Camera'" [isCollapsed]="false">
-			<vtr-ui-row-switch
-				[title]="'Camera privacy mode'"
-				[isSwitchVisible]="true"
+	<div class="row py-5 smartsettings-card">
+		<div class="col-10 mx-auto ">
+			<vtr-container-collapsible
+				title="Display"
+				[isCollapsed]="false"
+				[allowCollapse]="true"
+				[theme]="'white'"
 			>
-			</vtr-ui-row-switch>
-			<vtr-ui-row-switch
-				[title]="'Camera'"
-				[readMoreText]="'Reset factory settings'"
-				[showChildContent]="true"
+				<ul class="list-group list-group-flush">
+					<li class="">
+						<vtr-ui-row-switch
+							[title]="'Eye Care Mode'"
+							[caption]=""
+							[isSwitchVisible]="true"
+							[leftIcon]="['far', 'gem']"
+							[rightIcon]="['far', 'question-circle']"
+							[readMoreText]="''"
+							[showChildContent]="true"
+							[theme]="'white'"
+						>
+							<vtr-ui-range-slider></vtr-ui-range-slider>
+						</vtr-ui-row-switch>
+					</li>
+					<li class="">
+						<vtr-ui-row-switch
+							[title]="'Display Priority Control'"
+							[caption]="
+								'Configures microphone effect to enhance your audio experience by different scenarios and environment.'
+							"
+							[isSwitchVisible]="false"
+							[leftIcon]="['far', 'gem']"
+							[readMoreText]="''"
+							[showChildContent]="true"
+							[theme]="'white'"
+						>
+							<div class="my-3">
+								<vtr-ui-rectangle-radio
+									[radioId]="'radio1'"
+									[group]="'radio'"
+									[label]="'HDMI'"
+									[value]="'DYNAMIC'"
+								></vtr-ui-rectangle-radio>
+								<vtr-ui-rectangle-radio
+									[radioId]="'radio2'"
+									[group]="'radio'"
+									[label]="'USB TYPE-c'"
+									[value]="'MOVIE'"
+								></vtr-ui-rectangle-radio>
+							</div>
+						</vtr-ui-row-switch>
+					</li>
+				</ul>
+			</vtr-container-collapsible>
+		</div>
+	</div>
+	<div class="row py-5 smartsettings-card">
+		<div class="col-10 mx-auto ">
+			<vtr-container-collapsible
+				title="Camera"
+				[isCollapsed]="false"
+				[allowCollapse]="true"
+				[theme]="'white'"
 			>
-				<!-- not sure if camera section will be used somewhere else or not -->
-				<div class="container-fluid">
+				<ul class="list-group list-group-flush">
+					<vtr-ui-row-switch
+						[title]="'Camera privacy mode'"
+						[isSwitchVisible]="true"
+					>
+					</vtr-ui-row-switch>
+				</ul>
+				<ul class="list-group list-group-flush">
 					<div class="row p-5">
 						<div class="col-6">
 							<video
@@ -102,8 +157,8 @@
 							</ul>
 						</div>
 					</div>
-				</div>
-			</vtr-ui-row-switch>
-		</vtr-container-collapsible>
+				</ul>
+			</vtr-container-collapsible>
+		</div>
 	</div>
 </div>
