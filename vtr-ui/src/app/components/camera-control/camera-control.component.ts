@@ -10,11 +10,16 @@ import {
 } from '@angular/core';
 import { CameraDetail } from 'src/app/data-models/camera/camera-detail.model';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
+import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
+import { CameraDetailMockService } from 'src/app/services/camera/camera-detail/camera-detail.mock.service';
 
 @Component({
 	selector: 'vtr-camera-control',
 	templateUrl: './camera-control.component.html',
-	styleUrls: ['./camera-control.component.scss']
+	styleUrls: ['./camera-control.component.scss'],
+	providers: [
+		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
+	]
 })
 export class CameraControlComponent
 	implements OnInit, OnDestroy, OnChanges, AfterViewInit {
@@ -24,7 +29,10 @@ export class CameraControlComponent
 	public dataSource: CameraDetail;
 	private _video: HTMLVideoElement;
 
-	constructor(public cameraFeedService: CameraFeedService) {
+	constructor(
+		public cameraFeedService: CameraFeedService,
+		public baseCameraDetail: BaseCameraDetail
+	) {
 		this.dataSource = new CameraDetail();
 	}
 
