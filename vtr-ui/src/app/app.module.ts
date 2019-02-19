@@ -25,6 +25,7 @@ import { ContainerCollapsibleComponent } from './components/container-collapsibl
 import { BatteryCardComponent } from './components/battery/battery-card/battery-card.component';
 import { BatteryIndicatorComponent } from './components/battery/battery-indicator/battery-indicator.component';
 import { BatteryDetailComponent } from './components/battery/battery-detail/battery-detail.component';
+import { BatteryChargeThresholdSettingsComponent } from './components/battery/battery-charge-threshold-settings/battery-charge-threshold-settings.component';
 
 // APPLICATION UI COMPONENTS
 import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switch-onoff.component';
@@ -128,23 +129,24 @@ library.add(far);
 		UiSwitchOnoffComponent,
 		UiSwitchTristateComponent,
 		BatteryDetailComponent,
-		BatteryCardComponent,
-		BatteryIndicatorComponent,
+		BatteryChargeThresholdSettingsComponent,
 		UiRangeSliderComponent,
 		UiListChevronComponent,
 		UiRectangleRadioComponent,
+		BatteryCardComponent,
+		BatteryIndicatorComponent,
 		UiRowSwitchComponent,
 		UiHeaderSubpageComponent,
 		UiSwitchTristateComponent,
 		UiRowSwitchComponent,
-		EyeCareModeComponent
+		EyeCareModeComponent,
+		UiHeaderSubpageComponent
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		FormsModule,
 		HttpClientModule,
-
 		FontAwesomeModule,
 		NgbModule,
 		Ng5SliderModule
@@ -164,4 +166,4 @@ library.add(far);
 	bootstrap: [AppComponent],
 	entryComponents: [ModalWelcomeComponent]
 })
-export class AppModule {}
+export class AppModule { }
