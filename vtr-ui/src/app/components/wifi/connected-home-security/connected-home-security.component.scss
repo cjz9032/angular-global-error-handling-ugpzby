@@ -17,12 +17,13 @@
     font-size: 2rem;
     font-weight: $weight_medium;
     text-transform: uppercase;
+    margin-bottom: 1rem;
   }
 
   .text-regular {
     color: $main_dark;
     font-size: 2rem;
-    font-weight: $weight_regular;
+    font-weight: $weight_light;
   }
 
   .bullet-list {
@@ -35,6 +36,12 @@
       margin: 0;
       padding: 1rem 1rem 1rem 0;
       color: $main_dark;
+
+      .text-regular {
+        color: $main_dark;
+        font-size: 2rem;
+        font-weight: $weight_light;
+      }
 
       &.good {
         .bullet-icon {
@@ -91,12 +98,14 @@
   }
 
   .invitation-code-box {
-    padding: 1rem;
+    padding: 0.5rem;
     background-color: $shade_lightest;
     border: 0.1rem solid $shade_lighter;
     border-radius: $border_radius;
+    text-align: center;
 
     .sub-heading {
+      margin-top: 1rem;
       color: $main_dark;
       font-size: 2rem;
       font-weight: $weight_medium;
@@ -107,8 +116,8 @@
     .text-regular {
       color: $main_dark;
       font-size: 2rem;
-      font-weight: $weight_regular;
-      padding: 1rem;
+      font-weight: $weight_light;
+      padding: 0.5rem;
     }
   }
 }
