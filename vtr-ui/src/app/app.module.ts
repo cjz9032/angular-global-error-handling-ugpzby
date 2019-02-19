@@ -64,6 +64,7 @@ import { WidgetQuicksettingsComponent } from './components/widgets/widget-quicks
 import { WidgetStatusComponent } from './components/widgets/widget-status/widget-status.component';
 import { WidgetQuestionsComponent } from './components/widgets/widget-questions/widget-questions.component';
 import { WidgetFeedbackComponent } from './components/widgets/widget-feedback/widget-feedback.component';
+import { WidgetSysupdateSettingsComponent } from './components/widgets/widget-sysupdate-settings/widget-sysupdate-settings.component';
 
 // APPLICATION MODALS
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
@@ -110,6 +111,7 @@ library.add(far);
 		WidgetFeedbackComponent,
 		WidgetStatusComponent,
 		WidgetQuestionsComponent,
+		WidgetSysupdateSettingsComponent,
 		PageQuestionsComponent,
 		ContainerCardComponent,
 		HeaderMainComponent,
