@@ -86,6 +86,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { PageSupportDetailComponent } from './components/pages/page-support-detail/page-support-detail.component';
+import { WidgetSupportComponent } from './components/widgets/widget-support/widget-support.component';
+import { UiListSupportComponent } from './components/ui/ui-list-support/ui-list-support.component';
 
 
 library.add(fas);
@@ -137,7 +139,9 @@ library.add(far);
 		BatteryIndicatorComponent,
 		UiRowSwitchComponent,
 		UiHeaderSubpageComponent,
-		PageSupportDetailComponent
+		PageSupportDetailComponent,
+		WidgetSupportComponent,
+		UiListSupportComponent
 	],
 	imports: [
 		BrowserModule,

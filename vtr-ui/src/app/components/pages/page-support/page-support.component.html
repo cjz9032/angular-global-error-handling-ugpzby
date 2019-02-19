@@ -10,39 +10,42 @@
 				<div class="row">
 					<div class="col col-8 vtr-page-left-column">
 						<div class="vtr-page-shift-up nmx-40">
-							
+
 							<div class="row">
 								<div class="col col-12 px-40 pb-40">
-									<vtr-container-card [img]="''"
-										[title]="'Search hear'"
-										[logoText]="'LENEVO SPECIAL'"
-										[type]="'highlight'"
-										[ratioX]="8"
-										[ratioY]="2">
-									</vtr-container-card>
+									<form action="" class="card p-20">
+										<div class="input-group p-1">
+											<div class="input-group-prepend">
+												<div class="input-group-text">
+													<fa-icon [icon]="['fas', 'search']"></fa-icon>
+												</div>
+											</div>
+											<input type="text" class="form-control px-3" placeholder="Input help here" aria-label="Input help here" aria-describedby="basic-addon1" #searchInput (keyup)="0">
+											<div class="input-group-append">
+												<button class="btn button" type="button" (click)="search(searchInput.value)">SEARCH FOR HELP</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="row" *ngIf="searchWords">
+								<div class="col px-40 pt-4">
+									<div class="title m-0">
+										Results that match "<span class="special">{{searchWords}}</span>"
+									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col col-6 p-40">
-									<vtr-container-card
-										[img]="'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg'"
-										[title]="'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit'"
-										[logoText]="'LENEVO SPECIAL'"
-										[readMore]="'/#/support-detail'"
-										[type]="'article'"
-										[ratioX]="4"
-										[ratioY]="4">
+									<vtr-container-card [img]="'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg'"
+									 [title]="'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit'" [logoText]="'LENEVO SPECIAL'"
+									 [readMore]="'/#/support-detail'" [type]="'article'" [ratioX]="4" [ratioY]="4">
 									</vtr-container-card>
 								</div>
 								<div class="col col-6 p-40">
-									<vtr-container-card
-										[img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
-										[title]="'Lenovo Announces Accusamus Beatae ad Facilis Officia Porro Iure'"
-										[logoText]="'LENEVO SPECIAL'"
-										[readMore]="'/#/support-detail'"
-										[type]="'article'"
-										[ratioX]="4"
-										[ratioY]="4">
+									<vtr-container-card [img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
+									 [title]="'Lenovo Announces Accusamus Beatae'" [logoText]="'LENEVO SPECIAL'"
+									 [readMore]="'/#/support-detail'" [type]="'article'" [ratioX]="4" [ratioY]="4">
 									</vtr-container-card>
 								</div>
 							</div>
@@ -54,9 +57,19 @@
 
 								<div class="row">
 									<div class="col col-12 pb-40">
-										<vtr-widget-questions [title]="'Documentation'"
-											[description]="'LOREM IPSUM EL DOLOR'"
-											[items]="mockService.documentation"></vtr-widget-questions>
+										<vtr-widget-support [title]="'Documentation'" [description]="'LOREM IPSUM EL DOLOR'" [items]="mockService.documentation"></vtr-widget-support>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col col-12 pb-40">
+										<vtr-widget-support [title]="'Need Help?'" [description]="'CONTACT US TO HELP YOU OUT.'" [items]="mockService.needHelp"></vtr-widget-support>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col col-12 pb-40">
+										<vtr-widget-support [title]="'Quiklinks'" [description]="'CONTACT US TO HELP YOU OUT.'" [items]="mockService.quicklink"></vtr-widget-support>
 									</div>
 								</div>
 							</div>

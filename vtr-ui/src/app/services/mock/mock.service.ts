@@ -141,10 +141,52 @@ export class MockService {
 
 	documentation = [
 		{
-			'icon': ['fas', 'plane'],
+			'icon': ['fas', 'book'],
 			'title': 'User Guide',
-			'path': 'https://support.lenovo.com',
-			'lightTitle': true
+			'path': '',
+			'url': 'https://support.lenovo.com',
+			'target': '_blank',
+		}
+	];
+
+	needHelp = [
+		{
+			'icon': ['fas', 'comment-alt'],
+			'title': 'Lenovo Community',
+			'path': '',
+			'url': 'https://community.lenovo.com',
+			'target': '_blank',
+		},
+		{
+			'icon': ['fas', 'share-alt'],
+			'title': 'Contact Costumer service',
+			'path': '',
+			'url': 'https://support.lenovo.com/',
+			'target': '_blank',
+		},
+		{
+			'icon': ['fab', 'weixin'],
+			'title': 'Contact us on WeChat',
+			'path': '',
+			'url': '',
+			'hideArrow': true,
+			'image': 'assets/images/wechat-qrcode.png'
+		}
+	];
+	quicklink = [
+		{
+			'icon': ['fas', 'ticket-alt'],
+			'title': 'Get support with E-ticket',
+			'path': '',
+			'url': 'https://pcsupport.lenovo.com/us/en/eticketwithservice',
+			'target': '_blank',
+		},
+		{
+			'icon': ['fas', 'briefcase'],
+			'title': 'Find a service provider',
+			'path': '',
+			'url': 'https://www.lenovo.com/us/en/ordersupport/',
+			'target': '_blank',
 		}
 	];
 

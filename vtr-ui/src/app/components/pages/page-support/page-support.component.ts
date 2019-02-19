@@ -9,12 +9,17 @@ import { MockService } from '../../../services/mock/mock.service';
 export class PageSupportComponent implements OnInit {
 
 	title = 'Get Support';
+	searchWords = ''
 
 	constructor(
 		public mockService: MockService
 	) { }
 
 	ngOnInit() {
+	}
+
+	search(words: string) {
+		this.searchWords = words
 	}
 
 }
