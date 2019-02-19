@@ -18,7 +18,7 @@
 				[theme]="'white'"
 			>
 				<ul class="list-group list-group-flush">
-					<li class="">
+					<li class="pt-3">
 						<vtr-ui-row-switch
 							[title]="'Eye Care Mode'"
 							[caption]=""
@@ -29,10 +29,11 @@
 							[showChildContent]="true"
 							[theme]="'white'"
 						>
-							<vtr-ui-range-slider></vtr-ui-range-slider>
+							<vtr-eye-care-mode></vtr-eye-care-mode>
+							<br />
 						</vtr-ui-row-switch>
 					</li>
-					<li class="">
+					<li class="pt-3">
 						<vtr-ui-row-switch
 							[title]="'Display Priority Control'"
 							[caption]="
@@ -72,91 +73,180 @@
 				[allowCollapse]="true"
 				[theme]="'white'"
 			>
-				<ul class="list-group list-group-flush">
-					<vtr-ui-row-switch
-						[title]="'Camera privacy mode'"
-						[isSwitchVisible]="true"
-					>
-					</vtr-ui-row-switch>
-				</ul>
-				<ul class="list-group list-group-flush">
-					<div class="row p-5">
-						<div class="col-6">
-							<video
-								#cameraPreview
-								class="camera-preview"
-							></video>
-						</div>
-						<div class="col-6">
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item border-top">
-									<div
-										class="slider-item-text text-uppercase"
-									>
-										Brightness
-									</div>
-									<vtr-ui-range-slider
-										[step]="1"
-										[minValue]="1"
-										[maxValue]="10"
-										[value]="3"
-									>
-									</vtr-ui-range-slider>
-								</li>
-								<li class="list-group-item">
-									<div
-										class="slider-item-text text-uppercase"
-									>
-										Contrast
-									</div>
-									<vtr-ui-range-slider
-										[step]="1"
-										[minValue]="1"
-										[maxValue]="10"
-										[value]="5"
-									>
-									</vtr-ui-range-slider>
-								</li>
-								<li class="list-group-item">
-									<div class="d-flex justify-content-between">
-										<div
-											class="slider-item-text text-uppercase"
-										>
-											Auto Exposure
-										</div>
-										<div class="float-right">
-											<vtr-ui-switch-onoff
-												(change)="
-													onAutoExposureChange($event)
-												"
-											></vtr-ui-switch-onoff>
-										</div>
-									</div>
-									<vtr-ui-range-slider
-										[step]="1"
-										[minValue]="1"
-										[maxValue]="10"
-										[value]="8"
-										*ngIf="isAutoExposureEnabled"
-									>
-									</vtr-ui-range-slider>
-								</li>
-								<li class="list-group-item">
-									<div
-										class="slider-item-text text-uppercase d-flex justify-content-between"
-									>
-										<div>
-											Auto Focus
-										</div>
-
-										<div>
-											<vtr-ui-switch-onoff></vtr-ui-switch-onoff>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
+				<div
+					class="alert alert-secondary no-camera-access"
+					*ngIf="!dataSource.hasAccessToCamera"
+				>
+					<div>
+						<strong>Note:</strong> Lenovo Vantage does not have
+						permissions to access your camera. Please turn on access
+						to your camera for the Lenovo Vantage app.
 					</div>
+					<button
+						type="button"
+						class="btn btn-link privacy-button pl-0"
+						(click)="onPrivacySettingClick($event)"
+					>
+						Go to windows privacy settings
+					</button>
+				</div>
+
+				<ul
+					class="list-group list-group-flush"
+					*ngIf="dataSource.hasAccessToCamera"
+				>
+					<li class="pt-3">
+						<vtr-ui-row-switch
+							[title]="'Camera privacy mode'"
+							[isSwitchVisible]="true"
+							[leftIcon]="['far', 'gem']"
+							[rightIcon]="['far', 'question-circle']"
+							(toggleOnOff)="onPrivacyModeChange($event)"
+							[isSwitchChecked]="dataSource.isPrivacyModeEnabled"
+						>
+						</vtr-ui-row-switch>
+					</li>
+					<li class="pt-3">
+						<vtr-ui-row-switch
+							[title]="'Camera'"
+							[isSwitchVisible]="false"
+							[leftIcon]="['far', 'gem']"
+							[showChildContent]="true"
+							[resetText]="'Reset factory settings'"
+						>
+							<div class="row p-5">
+								<div class="col-6">
+									<div class="camera-preview">
+										<video
+											*ngIf="
+												!dataSource.isPrivacyModeEnabled
+											"
+											#cameraPreview
+											class="feed"
+										></video>
+										<div
+											*ngIf="
+												dataSource.isPrivacyModeEnabled
+											"
+											class="privacy text-center"
+										>
+											<fa-icon
+												[icon]="['far', 'gem']"
+											></fa-icon>
+										</div>
+									</div>
+								</div>
+								<div class="col-6">
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item border-top">
+											<div
+												class="slider-item-text text-uppercase"
+											>
+												Brightness
+											</div>
+											<vtr-ui-range-slider
+												[step]="
+													dataSource.brightnessStepValue
+												"
+												[minValue]="
+													dataSource.brightnessMinValue
+												"
+												[maxValue]="
+													dataSource.brightnessMaxValue
+												"
+												[value]="
+													dataSource.brightnessValue
+												"
+											>
+											</vtr-ui-range-slider>
+										</li>
+										<li class="list-group-item">
+											<div
+												class="slider-item-text text-uppercase"
+											>
+												Contrast
+											</div>
+											<vtr-ui-range-slider
+												[step]="
+													dataSource.contrastStepValue
+												"
+												[minValue]="
+													dataSource.contrastMinValue
+												"
+												[maxValue]="
+													dataSource.contrastMaxValue
+												"
+												[value]="
+													dataSource.contrastValue
+												"
+											>
+											</vtr-ui-range-slider>
+										</li>
+										<li class="list-group-item">
+											<div
+												class="d-flex justify-content-between"
+											>
+												<div
+													class="slider-item-text text-uppercase"
+												>
+													Auto Exposure
+												</div>
+												<div class="float-right">
+													<vtr-ui-switch-onoff
+														[value]="
+															dataSource.isAutoExposureEnabled
+														"
+														(change)="
+															onAutoExposureChange(
+																$event
+															)
+														"
+													></vtr-ui-switch-onoff>
+												</div>
+											</div>
+											<vtr-ui-range-slider
+												[step]="
+													dataSource.autoExposureStepValue
+												"
+												[minValue]="
+													dataSource.autoExposureMinValue
+												"
+												[maxValue]="
+													dataSource.autoExposureMaxValue
+												"
+												[value]="
+													dataSource.autoExposureValue
+												"
+												*ngIf="
+													!dataSource.isAutoExposureEnabled
+												"
+											>
+											</vtr-ui-range-slider>
+										</li>
+										<li class="list-group-item">
+											<div
+												class="d-flex justify-content-between"
+											>
+												<div
+													class="slider-item-text text-uppercase "
+												>
+													Auto Focus
+												</div>
+
+												<div class="float-right">
+													<vtr-ui-switch-onoff
+														[value]="
+															dataSource.isAutoFocusEnabled
+														"
+													></vtr-ui-switch-onoff>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</vtr-ui-row-switch>
+					</li>
 				</ul>
 			</vtr-container-collapsible>
 		</div>

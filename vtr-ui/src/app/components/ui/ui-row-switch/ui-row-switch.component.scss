@@ -34,11 +34,14 @@
 		}
 		.read-more {
 			color: $icon_color;
-			margin-top: .3rem;
+			margin-top: 0.3rem;
 			cursor: pointer;
 			&:hover {
 				text-decoration: underline;
 			}
+		}
+		.text {
+			font-size: 1.4rem;
 		}
 	}
 }

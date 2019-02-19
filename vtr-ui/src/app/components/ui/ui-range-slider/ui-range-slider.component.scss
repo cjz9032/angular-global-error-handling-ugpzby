@@ -30,12 +30,25 @@ but not to any other element on the page. using ::ng-deep
 				background: linear-gradient($gradient_angle_reverse, $main_light 0%, $main 100%),
 					linear-gradient($gradient_angle, $light 0%, $light 100%);
 				&::after {
-					display: none;
+					background: transparent;
+					font-family: FontAwesome;
+					font-size: 1.6rem;
+					top: 2px;
+					left: 6px;
+					font-weight: normal;
+					color: $light;
+					content: "\f07e"; // unicode for font awesome two sided arrow
 				}
 				&:focus {
 					outline: none;
 				}
+				&:hover {
+					&::after {
+						background: transparent;
+					}
+				}
 			}
+
 			.ng5-slider-bubble {
 				bottom: 1.4rem;
 			}
