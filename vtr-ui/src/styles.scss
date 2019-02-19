@@ -64,25 +64,22 @@ button {
 	.vtr-page-content {
 		position: relative;
 		z-index: 1;
-		height: calc(100% - #{$header_height});
-		.container-fluid {
-			height: 100%;
-			.row {
-				.vtr-page-left-column {
-					padding: 0 4rem 4rem $padding_side;
-					background-color: $shade_extralight;
-					h2 {
-						margin: 0;
-						color: $main_shade;
-						font-size: 4.5rem;
-						font-weight: $weight_light;
-						padding: 7rem $padding_side 0 $padding_side;
-					}
-				}
-				.vtr-page-right-column {
-					padding: 0 $padding_side 4rem 4rem;
-				}
+		.vtr-page-left-column {
+			padding: 0 4rem 4rem $padding_side;
+			background-color: $shade_extralight;
+			h2 {
+				margin: 0;
+				color: $main_shade;
+				font-size: 4.5rem;
+				font-weight: $weight_light;
+				padding: 7rem 0 0 $padding_side;
 			}
+			.header-subpage-content {
+				margin-left: $padding_side;
+			}
+		}
+		.vtr-page-right-column {
+			padding: 0 $padding_side 4rem 4rem;
 		}
 	}
 	.vtr-page-shift-up {
@@ -91,8 +88,12 @@ button {
 	.vtr-page-shift-up-medium {
 		margin-top: $shift_up_medium;
 	}
+	.widget-heading {
+		color: $main_shade;
+		font-size: 4rem;
+		margin-top: 4rem;
+	}
 }
 
 .vtr-subpage {
-	padding: 6rem 10%;
 }

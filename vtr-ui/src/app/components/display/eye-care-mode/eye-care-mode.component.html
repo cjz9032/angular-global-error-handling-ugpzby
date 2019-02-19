@@ -1,0 +1,34 @@
+<div class="vtr-eye-care-mode">
+	<div class="row">
+		<div class="col">
+			<vtr-ui-range-slider
+				[minValueLegend]="'Warm (Better for eyes)'"
+				[maxValueLegend]="'Cold'"
+				[stepsArray]="stepsArray"
+				[legendPositionFunction]="legendPosition"
+				(change)="sliderChange($event)"
+			>
+			</vtr-ui-range-slider>
+		</div>
+		<div class="reset-temperature align-self-center text-center">
+			<button
+				type="button"
+				class="btn btn-link text"
+				(click)="onResetTemperature()"
+			>
+				Reset temperature
+			</button>
+		</div>
+	</div>
+	<div class="custom-control custom-checkbox eye-care-checkbox">
+		<input
+			id="cb-eye-care-schedule"
+			type="checkbox"
+			class="custom-control-input"
+			checked=""
+		/>
+		<label class="custom-control-label " for="cb-eye-care-schedule">
+			Schedule eye care mode from sunset to sunrise
+		</label>
+	</div>
+</div>

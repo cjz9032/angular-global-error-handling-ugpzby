@@ -83,7 +83,7 @@ export class MockService {
 		{
 			'status': 0,
 			'id': 'wifi-security',
-			'title': 'Wifi Security',
+			'title': 'WiFi Security',
 			'detail': 'Enabled',
 			'path': 'wifi-security'
 
