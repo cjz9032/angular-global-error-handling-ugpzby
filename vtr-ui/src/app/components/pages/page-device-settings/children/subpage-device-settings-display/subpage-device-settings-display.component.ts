@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CameraDetailMockService } from 'src/app/services/camera-detail/camera-detail.mock.service';
-import { BaseCameraDetail } from 'src/app/services/camera-detail/base-camera-detail.service';
 import { CameraDetail } from 'src/app/data-models/camera/camera-detail.model';
+import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
+import { CameraDetailMockService } from 'src/app/services/camera/camera-detail/camera-detail.mock.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-display',
@@ -39,10 +39,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit {
 		this.getCameraDetails();
 	}
 
-	public onAutoExposureChange($event: any) {
-		this.dataSource.isAutoExposureEnabled = !$event.switchValue;
-	}
-
 	/**
 	 * When Go to windows privacy settings link button is clicked
 	 */
@@ -57,9 +53,12 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit {
 
 	private getCameraDetails() {
 		this.baseCameraDetail
-			.getCameraDetails()
-			.subscribe((response: CameraDetail) => {
+			.getCameraDetail()
+			.then((response: CameraDetail) => {
 				this.dataSource = response;
+			})
+			.catch(error => {
+				console.log(error);
 			});
 	}
 }

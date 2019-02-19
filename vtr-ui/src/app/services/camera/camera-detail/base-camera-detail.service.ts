@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
 
 import { CameraDetail } from 'src/app/data-models/camera/camera-detail.model';
 
@@ -11,5 +10,12 @@ import { CameraDetail } from 'src/app/data-models/camera/camera-detail.model';
 	providedIn: 'root'
 })
 export abstract class BaseCameraDetail {
-	abstract getCameraDetails(): Observable<CameraDetail>;
+	abstract cameraDetail: CameraDetail;
+	abstract getCameraDetail(): Promise<CameraDetail>;
+	/**
+	 * this function set cameraDetail variable with passed param value.
+	 * this local variable will be used as cached CameraDetail which can be used by other components.
+	 * @param cameraDetail CameraDetail object
+	 */
+	abstract setCameraDetail(cameraDetail: CameraDetail): void;
 }

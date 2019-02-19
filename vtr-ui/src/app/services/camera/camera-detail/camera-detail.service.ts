@@ -8,10 +8,16 @@ import { CameraDetail } from 'src/app/data-models/camera/camera-detail.model';
 @Injectable({
 	providedIn: 'root'
 })
-export class CameraDetailMockService implements BaseCameraDetail {
+export class CameraDetailService implements BaseCameraDetail {
+	cameraDetail: CameraDetail;
+
 	constructor(private http: HttpClient) {}
 
-	public getCameraDetails(): Observable<CameraDetail> {
-		return this.http.get<CameraDetail>(`api/camera.mock.json`);
+	public getCameraDetail(): Promise<CameraDetail> {
+		return null;
+	}
+
+	public setCameraDetail(cameraDetail: CameraDetail): void {
+		this.cameraDetail = cameraDetail;
 	}
 }
