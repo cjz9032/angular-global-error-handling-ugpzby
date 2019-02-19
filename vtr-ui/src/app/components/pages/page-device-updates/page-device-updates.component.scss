@@ -13,9 +13,9 @@
 		padding-right: 0rem !important;
 	}
 	.installation-history-container {
-		border-radius: 5px;
-		border-top-left-radius: 0px;
-		border-top-right-radius: 0px;
+		border-radius: 0.5rem;
+		border-top-left-radius: 0rem;
+		border-top-right-radius: 0rem;
 		height: 100%;
 		width: 100%;
 		background: $light;
@@ -130,7 +130,7 @@
 		color: $main;
 		font-size: 1.3rem;
 		font-weight: $weight_medium;
-		letter-spacing: 0.46px;
+		letter-spacing: 0rem;
 		line-height: 1.5rem;
 		padding-top: 5rem;
 		padding-bottom: 5rem;
