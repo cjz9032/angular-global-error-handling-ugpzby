@@ -37,16 +37,15 @@
 
 		span {
 			position: absolute;
-			left: 5rem;
-			top: 2rem;
+			left: 4.8rem;
+			top: 2.2rem;
 			color: $main_darkest;
 			font-size: 1.3rem;
 			font-weight: bold;
-			letter-spacing: 0.1rem;
-			line-height: 1.6rem;
 			word-wrap: break-word;
 			word-break: break-all;
 			padding-right: 1rem;
+			text-transform: uppercase;
 		}
 
 		fa-icon.icon {

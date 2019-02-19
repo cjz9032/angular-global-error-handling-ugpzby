@@ -2,7 +2,7 @@
 	[ngClass]="{'white-theme': theme === 'white', 'blue-theme': theme === 'blue'}">
 	<div class="container-fluid p-0">
 		<div class="row m-0">
-			<div class="col-10">
+			<div class="col-auto">
 				<div class="container-fluid p-0">
 					<div class="row m-0">
 						<div class="col-auto left-icon-column"
@@ -21,11 +21,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="col"
+			<div class="col-auto ml-auto p-0"
 				*ngIf="isSwitchVisible">
 				<vtr-ui-switch-onoff (change)="onOnOffChange($event)"></vtr-ui-switch-onoff>
 			</div>
-			<div class="col"
+			<div class="col-auto p-0 pl-2"
 				*ngIf="rightIcon.length > 0">
 				<fa-icon class="right-icon"
 					[icon]="rightIcon"
