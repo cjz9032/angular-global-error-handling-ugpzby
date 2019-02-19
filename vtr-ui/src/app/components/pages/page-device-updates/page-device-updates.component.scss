@@ -1,0 +1,141 @@
+@import "../../../app.theme";
+
+.vtr-page-device-updates {
+	.vtr-page-right-column {
+		background-color: $light;
+		.align-center {
+			padding: 0 6rem 0rem 6rem;
+		}
+	}
+
+	.px-40 {
+		padding-left: 0rem !important;
+		padding-right: 0rem !important;
+	}
+	.installation-history-container {
+		border-radius: 5px;
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+		height: 100%;
+		width: 100%;
+		background: $light;
+		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+		.installation-history {
+			padding-left: 5rem;
+			padding-top: 5rem;
+			padding-right: 5rem;
+			padding-bottom: 5rem;
+			color: $main_shade;
+			font-size: 2.5rem;
+			font-weight: $weight_light;
+			line-height: 2.9rem;
+		}
+		.installation-history-div {
+			padding-left: 5rem;
+			padding-right: 5rem;
+			.installation-history-ellipses {
+				border-radius: 2.5rem;
+				background-color: $shade_extralight;
+				padding-top: 2rem;
+				padding-bottom: 2rem;
+				text-align: center;
+				font-size: 1.1rem;
+			}
+			.installation-history-dash {
+				border-radius: 2.5rem;
+				background-color: $shade_extralight;
+				padding-top: 2rem;
+				padding-bottom: 2rem;
+				text-align: center;
+				font-size: 1.1rem;
+			}
+			.installation-history-text {
+				border-radius: 2.5rem;
+				background-color: $shade_extralight;
+				padding-top: 2rem;
+				padding-bottom: 1rem;
+				text-align: center;
+			}
+			.status-list {
+				list-style: none;
+				padding: 0;
+				border-radius: $border_radius;
+				li {
+					display: in-line;
+					width: 33%;
+					.installation-date {
+						color: $main_shade;
+						font-size: 1.1rem;
+						line-height: 1.3rem;
+						text-align: right;
+					}
+					&:last-child {
+						border: none;
+					}
+					&:hover {
+						background-color: $shade_extralight;
+					}
+					&.good {
+						.status-icon {
+							.icon-bkg {
+								background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+								border-color: $go_dark;
+							}
+						}
+						.title {
+							color: $main_shade;
+						}
+					}
+					&.bad {
+						.status-icon {
+							.icon-bkg {
+								background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+								border-color: $stop_dark;
+							}
+						}
+						.title {
+							color: $main_shade;
+						}
+					}
+					.status-icon {
+						.icon-bkg {
+							display: inline-block;
+							border-radius: 50%;
+							height: 3rem;
+							width: 3rem;
+							border-width: 0.2rem;
+							border-style: solid;
+							text-align: center;
+							fa-icon {
+								font-size: 1.2rem;
+								line-height: 2.8rem;
+								color: $light;
+							}
+						}
+					}
+					.status-text {
+						overflow: hidden;
+						.title {
+							line-height: 2.8rem;
+							font-size: 1.4rem;
+							font-weight: $weight_medium;
+							float: left;
+						}
+					}
+				}
+			}
+		}
+	}
+	.full-history {
+		color: $main;
+		font-size: 1.3rem;
+		font-weight: $weight_medium;
+		letter-spacing: 0.46px;
+		line-height: 1.5rem;
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+		padding-left: 5rem;
+		padding-right: 5rem;
+		text-transform: uppercase;
+	}
+}

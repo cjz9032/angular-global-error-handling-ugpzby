@@ -8,6 +8,55 @@ import { Component, OnInit } from '@angular/core';
 export class PageDeviceUpdatesComponent implements OnInit {
 
 	title = 'System Updates';
+	lastUpdatedDate = '8/10/2018 at 9:34 AM';
+	nextUpdatedDate = '11/12/2018 at 10:00 AM';
+	installationHistory = 'Installation History';
+	installationHistoryList = [
+		{
+			status: 1,
+			installationDate: '14 FEB 2018'
+		},
+		{
+			status: 1,
+			installationDate: '16 MAR 2018'
+		},
+		{
+			status: 1,
+			installationDate: '21 JUL 2018'
+		},
+	]
+
+	dummyUpdates = [
+		{
+			'readMoreText': '',
+			'rightImageSource': ['far', 'question-circle'],
+			'leftImageSource': ['fas', 'battery-three-quarters'],
+			'header': 'Critical Updates',
+			'subHeader': '',
+			'isCheckBoxVisible': true,
+			'isSwitchVisible': true
+		},
+		{
+			'readMoreText': '',
+			'rightImageSource': ['far', 'question-circle'],
+			'leftImageSource': ['fas', 'battery-three-quarters'],
+			'header': 'Recommended Updates',
+			'subHeader': '',
+			'isCheckBoxVisible': false,
+			'isSwitchVisible': true
+		},
+		{
+			'readMoreText': '',
+			'rightImageSource': '',
+			'leftImageSource': ['fas', 'battery-three-quarters'],
+			'header': 'Windows Updates',
+			'subHeader': '',
+			'isCheckBoxVisible': false,
+			'isSwitchVisible': false,
+			'linkText': 'Windows Settings',
+			'linkPath': ''
+		}
+	];
 
 	constructor() { }
 
