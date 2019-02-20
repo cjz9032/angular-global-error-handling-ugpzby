@@ -139,6 +139,14 @@ export class MockService {
 		}
 	];
 
+	warranty = {
+		'status': 1, // 0 IN WARRANTY | 1 WARRANTY EXPIRED | 2 Not Found Warranty
+		'dayDiff': 1,
+		'startDate': '2017-12-13T09:12:43.083Z',
+		'endDate': '2018-12-12T09:12:43.083Z',
+		'url': 'https://pcsupport.lenovo.com/us/en/warrantylookup',
+	};
+
 	documentation = [
 		{
 			'icon': ['fas', 'book'],

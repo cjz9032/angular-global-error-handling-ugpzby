@@ -88,6 +88,7 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { PageSupportDetailComponent } from './components/pages/page-support-detail/page-support-detail.component';
 import { WidgetSupportComponent } from './components/widgets/widget-support/widget-support.component';
 import { UiListSupportComponent } from './components/ui/ui-list-support/ui-list-support.component';
+import { WidgetWarrantyComponent } from './components/widgets/widget-warranty/widget-warranty.component';
 
 
 library.add(fas);
@@ -141,7 +142,8 @@ library.add(far);
 		UiHeaderSubpageComponent,
 		PageSupportDetailComponent,
 		WidgetSupportComponent,
-		UiListSupportComponent
+		UiListSupportComponent,
+		WidgetWarrantyComponent
 	],
 	imports: [
 		BrowserModule,
