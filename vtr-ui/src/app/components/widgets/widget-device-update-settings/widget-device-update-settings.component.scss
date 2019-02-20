@@ -1,0 +1,55 @@
+@import "../../../app.theme.scss";
+
+.vtr-widget-device-update-settings {
+	border-radius: $border_radius;
+	background-color: $light;
+	box-shadow: $drop_shadow;
+	padding: 4rem;
+	.title {
+		color: $main_darker;
+		font-size: 2.5rem;
+	}
+	.description {
+		color: $shade;
+		font-size: 1.1rem;
+		text-transform: uppercase;
+		font-weight: $weight_medium;
+	}
+
+	.settings-container {
+		margin-top: 2.7rem;
+		list-style: none;
+		padding: 0;
+		border: 0.1rem solid $shade_lighter;
+		border-radius: 0.9rem;
+	}
+}
+
+// ng-deep required, without this style cannot be overridden.
+::ng-deep {
+	.vtr-widget-device-update-settings {
+		.settings-container {
+			vtr-ui-row-switch {
+				.vtr-ui-switch-row {
+					margin: 0;
+					padding: 1.5rem 1.5rem 1.5rem 0;
+					&:last-child {
+						border-bottom: none;
+					}
+					.row {
+						align-items: center;
+					}
+					.left-icon-column {
+						padding-right: 0;
+					}
+					vtr-ui-switch-onoff {
+						.checkbox {
+							margin: 0;
+						}
+					}
+
+				}
+			}
+		}
+	}
+}
