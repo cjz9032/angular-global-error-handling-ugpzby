@@ -4,60 +4,55 @@ import {
 	Input,
 	ViewChild,
 	OnDestroy,
-	OnChanges,
-	SimpleChanges,
-	AfterViewInit
+	ElementRef
 } from '@angular/core';
 import { CameraDetail } from 'src/app/data-models/camera/camera-detail.model';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
-import { CameraDetailMockService } from 'src/app/services/camera/camera-detail/camera-detail.mock.service';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
 	selector: 'vtr-camera-control',
 	templateUrl: './camera-control.component.html',
-	styleUrls: ['./camera-control.component.scss'],
-	providers: [
-		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
-	]
+	styleUrls: ['./camera-control.component.scss']
 })
-export class CameraControlComponent
-	implements OnInit, OnDestroy, OnChanges, AfterViewInit {
-	@ViewChild('cameraPreview') cameraPreview: any;
+export class CameraControlComponent implements OnInit, OnDestroy {
+	private cameraPreview: ElementRef;
+	@ViewChild('cameraPreview') set content(content: ElementRef) {
+		// when camera preview video element is visible then start camera feed
+		this.cameraPreview = content;
+		if (content && !this.cameraDetail.isPrivacyModeEnabled) {
+			this.activateCamera();
+		} else {
+			this.deactivateCamera();
+		}
+	}
+
 	@Input() cameraDetail: CameraDetail;
 
 	public dataSource: CameraDetail;
 	private _video: HTMLVideoElement;
+	private cameraDetailSubscription: Subscription;
 
 	constructor(
 		public cameraFeedService: CameraFeedService,
 		public baseCameraDetail: BaseCameraDetail
-	) {
-		this.dataSource = new CameraDetail();
-	}
+	) {}
 
 	ngOnInit() {
-		this.dataSource = this.cameraDetail;
-	}
-
-	ngAfterViewInit(): void {
-		this._video = this.cameraPreview.nativeElement;
+		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
+			(cameraDetail: CameraDetail) => {
+				this.dataSource = cameraDetail;
+			},
+			error => {
+				console.log(error);
+			}
+		);
 	}
 
 	ngOnDestroy() {
 		this.deactivateCamera();
-	}
-
-	ngOnChanges(changes: SimpleChanges): void {
-		console.log(changes);
-
-		// if (changes['cameraDetail']) {
-		// 	if (!this.dataSource.isPrivacyModeEnabled) {
-		// 		this.activateCamera();
-		// 	} else {
-		// 		this.deactivateCamera();
-		// 	}
-		// }
+		this.cameraDetailSubscription.unsubscribe();
 	}
 
 	public onAutoExposureChange($event: any) {
@@ -65,6 +60,7 @@ export class CameraControlComponent
 	}
 
 	private activateCamera() {
+		this._video = this.cameraPreview.nativeElement;
 		this.cameraFeedService
 			.activateCamera()
 			.then((stream: MediaStream) => {
@@ -77,6 +73,8 @@ export class CameraControlComponent
 
 	private deactivateCamera() {
 		this.cameraFeedService.deactivateCamera();
-		this._video.pause();
+		if (this._video) {
+			this._video.pause();
+		}
 	}
 }

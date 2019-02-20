@@ -1,5 +1,5 @@
 {
-	"isPrivacyModeEnabled": false,
+	"isPrivacyModeEnabled": true,
 	"isAutoExposureEnabled": false,
 	"isAutoFocusEnabled": false,
 	"hasAccessToCamera": true,

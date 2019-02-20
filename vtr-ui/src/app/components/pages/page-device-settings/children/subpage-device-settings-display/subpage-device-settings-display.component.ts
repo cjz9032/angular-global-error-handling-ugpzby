@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CameraDetail } from 'src/app/data-models/camera/camera-detail.model';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
-import { CameraDetailMockService } from 'src/app/services/camera/camera-detail/camera-detail.mock.service';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-display',
 	templateUrl: './subpage-device-settings-display.component.html',
-	styleUrls: ['./subpage-device-settings-display.component.scss'],
-	providers: [
-		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
-	]
+	styleUrls: ['./subpage-device-settings-display.component.scss']
 })
-export class SubpageDeviceSettingsDisplayComponent implements OnInit {
+export class SubpageDeviceSettingsDisplayComponent
+	implements OnInit, OnDestroy {
 	title = 'Display & Camera Settings';
 	public dataSource: CameraDetail;
+	private cameraDetailSubscription: Subscription;
 
 	headerCaption =
 		'This section enables you to improve your visual experience and configure your camera properties.' +
@@ -37,6 +36,21 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit {
 
 	ngOnInit() {
 		this.getCameraDetails();
+
+		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
+			cameraDetail => {
+				console.log(cameraDetail);
+
+				this.dataSource = cameraDetail;
+			},
+			error => {
+				console.log(error);
+			}
+		);
+	}
+
+	ngOnDestroy() {
+		this.cameraDetailSubscription.unsubscribe();
 	}
 
 	/**
@@ -48,7 +62,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit {
 	 * When Camera Privacy Mode radio is toggled
 	 */
 	public onPrivacyModeChange($event: any) {
-		this.dataSource.isPrivacyModeEnabled = $event.switchValue;
+		this.baseCameraDetail.setCameraPrivacyMode($event.switchValue);
 	}
 
 	private getCameraDetails() {

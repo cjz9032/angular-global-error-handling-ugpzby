@@ -78,6 +78,8 @@ import { DashboardService } from './services/dashboard/dashboard.service';
 import { DeviceService } from './services/device/device.service';
 import { SecurityService } from './services/security/security.service';
 import { UserService } from './services/user/user.service';
+import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
+import { CameraDetailMockService } from './services/camera/camera-detail/camera-detail.mock.service';
 
 // FONT AWESOME
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -87,7 +89,6 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { EyeCareModeComponent } from './components/display/eye-care-mode/eye-care-mode.component';
 import { CameraControlComponent } from './components/camera-control/camera-control.component';
-
 
 library.add(fas);
 library.add(fab);
@@ -163,9 +164,10 @@ library.add(far);
 		DashboardService,
 		DeviceService,
 		SecurityService,
-		UserService
+		UserService,
+		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
 	bootstrap: [AppComponent],
 	entryComponents: [ModalWelcomeComponent]
 })
-export class AppModule { }
+export class AppModule {}

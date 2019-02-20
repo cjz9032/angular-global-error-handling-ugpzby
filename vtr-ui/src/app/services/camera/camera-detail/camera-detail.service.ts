@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Subject } from 'rxjs/internal/Subject';
 import { Observable } from 'rxjs/internal/Observable';
 
 import { BaseCameraDetail } from './base-camera-detail.service';
@@ -9,7 +10,7 @@ import { CameraDetail } from 'src/app/data-models/camera/camera-detail.model';
 	providedIn: 'root'
 })
 export class CameraDetailService implements BaseCameraDetail {
-	cameraDetail: CameraDetail;
+	public cameraDetailObservable: Observable<CameraDetail>;
 
 	constructor(private http: HttpClient) {}
 
@@ -17,7 +18,7 @@ export class CameraDetailService implements BaseCameraDetail {
 		return null;
 	}
 
-	public setCameraDetail(cameraDetail: CameraDetail): void {
-		this.cameraDetail = cameraDetail;
+	setCameraPrivacyMode(value: boolean): void {
+		console.log('setCameraPrivacyMode', value);
 	}
 }
