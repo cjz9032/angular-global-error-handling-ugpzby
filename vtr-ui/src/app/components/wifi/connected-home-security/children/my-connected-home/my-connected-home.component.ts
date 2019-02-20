@@ -12,4 +12,4 @@ export class MyConnectedHomeComponent implements OnInit {
 	ngOnInit() {
 	}
 
-}
+} g
