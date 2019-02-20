@@ -13,22 +13,24 @@
 							<div class="vtr-device-information position-relative">
 								<div class="container-fluid">
 									<div class="row">
-										<div class="col-auto mr-auto text-truncate">
+										<div class="col-auto mr-auto">
 											<div class="row">
 												<div class="col">
 													<div class="family">{{deviceService.family}}</div>
 												</div>
 											</div>
 											<div class="row">
-												<div class="device-sub-header">Serial: {{deviceService.serial}}</div>
-												<div class="sub-header-separator">
-													<fa-icon [icon]="['fas', 'minus']"></fa-icon>
+												<div class="col">
+													<div class="device-sub-header">Serial: {{deviceService.serial}}</div>
+													<div class="sub-header-separator">
+														<fa-icon [icon]="['fas', 'minus']"></fa-icon>
+													</div>
+													<div class="device-sub-header">Product number: {{deviceService.productNumber}}</div>
+													<div class="sub-header-separator">
+														<fa-icon [icon]="['fas', 'minus']"></fa-icon>
+													</div>
+													<div class="device-sub-header">Bios version: {{deviceService.bios}}</div>
 												</div>
-												<div class="device-sub-header">Product number: {{deviceService.productNumber}}</div>
-												<div class="sub-header-separator">
-													<fa-icon [icon]="['fas', 'minus']"></fa-icon>
-												</div>
-												<div class="device-sub-header">Bios version: {{deviceService.bios}}</div>
 											</div>
 											<div class="row">
 												<div class="col">
