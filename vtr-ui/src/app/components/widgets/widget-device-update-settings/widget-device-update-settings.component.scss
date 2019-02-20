@@ -24,3 +24,32 @@
 		border-radius: 0.9rem;
 	}
 }
+
+// ng-deep required, without this style cannot be overridden.
+::ng-deep {
+	.vtr-widget-device-update-settings {
+		.settings-container {
+			vtr-ui-row-switch {
+				.vtr-ui-switch-row {
+					margin: 0;
+					padding: 1.5rem 1.5rem 1.5rem 0;
+					&:last-child {
+						border-bottom: none;
+					}
+					.row {
+						align-items: center;
+					}
+					.left-icon-column {
+						padding-right: 0;
+					}
+					vtr-ui-switch-onoff {
+						.checkbox {
+							margin: 0;
+						}
+					}
+
+				}
+			}
+		}
+	}
+}

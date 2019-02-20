@@ -34,17 +34,14 @@
 			padding-right: 5rem;
 			.action-button {
 				border-radius: 2.5rem;
-				background: linear-gradient($gradient_angle_reverse, $main 0%, $main_light 100%);
+				background: $gradient_main;
 				text-transform: uppercase;
-				padding-top: 2rem;
-				padding-bottom: 2rem;
-				padding-left: 2rem;
-				padding-right: 2rem;
+				padding: 0 3rem;
 				color: $light;
 				font-size: 1.5rem;
+				height: 5rem;
 				font-weight: $weight_medium;
-				letter-spacing: 0.1rem;
-				line-height: 1.8rem;
+				line-height: 5rem;
 				text-align: center;
 				border: 0rem;
 			}

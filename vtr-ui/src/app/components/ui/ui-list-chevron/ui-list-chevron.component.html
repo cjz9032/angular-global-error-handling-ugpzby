@@ -4,7 +4,7 @@
 		 [ngClass]="{'good':item.status===0,'bad':item.status===1}">
 			<a routerLink="/{{item.path}}">
 				<div class="container-fluid">
-					<div class="row">
+					<div class="row align-items-center">
 						<div class="col col-2 text-center">
 							<div class="item-icon status"
 							 *ngIf="item.status!==undefined&&item.status!==''">
