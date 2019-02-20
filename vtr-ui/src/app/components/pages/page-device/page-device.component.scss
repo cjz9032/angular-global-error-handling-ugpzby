@@ -19,12 +19,7 @@
 		font-size: 1.5rem;
 	}
 
-	.img-absolute{
-		position:absolute;
-		left:50%;
-		top:50%;
-		transform:translate(-50%,-50%);
-	}
+
 
 	.sub-header-separator {
 		color: $shade;
@@ -39,15 +34,23 @@
 		margin-top: 4rem;
 		font-weight: $weight_bold;
 	}
+
 	.quarterCircleBottomRight{
-		width:300px;
-		height:300px;
+		width:50rem;
+		height:50rem;
 		background-color: #F6F8F8;
 		border-radius:50%;
 		position:absolute;
 		z-index:101;
 		top:-100%;
 		right:-250%;
+
+		.img-absolute{
+			position:absolute;
+			left:50%;
+			top:50%;
+			transform:translate(-50%,-50%);
+		}
 	}
 	.status-list {
 		margin-top: 2.7rem;
