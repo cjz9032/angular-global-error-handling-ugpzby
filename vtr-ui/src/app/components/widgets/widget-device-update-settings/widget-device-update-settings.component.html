@@ -1,0 +1,26 @@
+<div class="vtr-widget-device-update-settings">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<div class="title">{{title}}</div>
+				<div class="description">{{description}}</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="settings-container">
+					<vtr-ui-row-switch *ngFor="let item of items"
+						[title]="item.header"
+						[caption]="item.subHeader"
+						[isSwitchVisible]="item.isSwitchVisible"
+						[leftIcon]="item.leftImageSource"
+						[rightIcon]="item.rightImageSource"
+						[linkText]="item.linkText"
+						[linkPath]="item.linkPath"
+						[readMoreText]="item.readMoreText">
+					</vtr-ui-row-switch>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

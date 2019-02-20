@@ -23,6 +23,8 @@ export class UiRowSwitchComponent implements OnInit {
 	@Input() readMoreText = '';
 	@Input() title = '';
 	@Input() caption = '';
+	@Input() linkPath = '';
+	@Input() linkText = '';
 	@Input() isSwitchVisible = false;
 	@Input() theme = 'white';
 	@Input() resetText = '';
