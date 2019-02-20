@@ -50,6 +50,7 @@ import { PageSecurityWifiComponent } from './components/pages/page-security-wifi
 import { PageSecurityPasswordComponent } from './components/pages/page-security-password/page-security-password.component';
 import { PageSecurityInternetComponent } from './components/pages/page-security-internet/page-security-internet.component';
 
+
 // APPLICATION SUBPAGE COMPONENTS
 import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
@@ -88,6 +89,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { EyeCareModeComponent } from './components/display/eye-care-mode/eye-care-mode.component';
+import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
 
 
 library.add(fas);
@@ -144,7 +146,8 @@ library.add(far);
 		UiSwitchTristateComponent,
 		UiRowSwitchComponent,
 		EyeCareModeComponent,
-		UiHeaderSubpageComponent
+		UiHeaderSubpageComponent,
+		PageSecurityWindowsHelloComponent
 	],
 	imports: [
 		BrowserModule,
