@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-	selector: 'vtr-widget-sysupdate',
-	templateUrl: './widget-sysupdate.component.html',
-	styleUrls: ['./widget-sysupdate.component.scss']
+	selector: 'vtr-widget-device-update',
+	templateUrl: './widget-device-update.component.html',
+	styleUrls: ['./widget-device-update.component.scss']
 })
-export class WidgetSysupdateComponent implements OnInit {
+export class WidgetDeviceUpdateComponent implements OnInit {
 	@Input() title: string = this.title || '';
 	@Input() subTitle1: string = this.subTitle1 || '';
 	@Input() subTitle2: string = this.subTitle2 || '';
