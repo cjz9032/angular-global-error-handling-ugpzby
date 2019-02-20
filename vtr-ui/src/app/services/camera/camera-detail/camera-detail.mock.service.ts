@@ -15,8 +15,6 @@ export class CameraDetailMockService implements BaseCameraDetail {
 	private cameraDetailSubject: BehaviorSubject<CameraDetail>;
 
 	constructor(private http: HttpClient) {
-		console.log('CameraDetailMockService...');
-
 		this.cameraDetailSubject = new BehaviorSubject<CameraDetail>(
 			new CameraDetail()
 		);
@@ -42,9 +40,16 @@ export class CameraDetailMockService implements BaseCameraDetail {
 		});
 	}
 
-	setCameraPrivacyMode(value: boolean): void {
+	toggleCameraPrivacyMode(value: boolean): void {
 		if (this.cameraDetail) {
 			this.cameraDetail.isPrivacyModeEnabled = value;
+			this.notifyChanges();
+		}
+	}
+
+	toggleAutoExposure(value: boolean): void {
+		if (this.cameraDetail) {
+			this.cameraDetail.isAutoExposureEnabled = value;
 			this.notifyChanges();
 		}
 	}

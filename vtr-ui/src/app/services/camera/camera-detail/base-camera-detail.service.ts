@@ -13,5 +13,6 @@ import { CameraDetail } from 'src/app/data-models/camera/camera-detail.model';
 export abstract class BaseCameraDetail {
 	abstract cameraDetailObservable: Observable<CameraDetail>;
 	abstract getCameraDetail(): Promise<CameraDetail>;
-	abstract setCameraPrivacyMode(value: boolean): void;
+	abstract toggleCameraPrivacyMode(value: boolean): void;
+	abstract toggleAutoExposure(value: boolean): void;
 }

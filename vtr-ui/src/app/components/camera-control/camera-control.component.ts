@@ -56,7 +56,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	public onAutoExposureChange($event: any) {
-		this.dataSource.isAutoExposureEnabled = !$event.switchValue;
+		this.baseCameraDetail.toggleAutoExposure($event.switchValue);
 	}
 
 	private activateCamera() {

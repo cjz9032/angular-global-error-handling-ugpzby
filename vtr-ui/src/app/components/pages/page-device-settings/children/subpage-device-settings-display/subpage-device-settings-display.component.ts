@@ -39,8 +39,6 @@ export class SubpageDeviceSettingsDisplayComponent
 
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			cameraDetail => {
-				console.log(cameraDetail);
-
 				this.dataSource = cameraDetail;
 			},
 			error => {
@@ -62,7 +60,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	 * When Camera Privacy Mode radio is toggled
 	 */
 	public onPrivacyModeChange($event: any) {
-		this.baseCameraDetail.setCameraPrivacyMode($event.switchValue);
+		this.baseCameraDetail.toggleCameraPrivacyMode($event.switchValue);
 	}
 
 	private getCameraDetails() {
