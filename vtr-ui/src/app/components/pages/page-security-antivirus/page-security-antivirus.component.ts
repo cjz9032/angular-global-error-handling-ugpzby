@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageSecurityAntivirusComponent implements OnInit {
 
-	title = "Anti-Virus"
+	title = 'Anti-Virus';
 
 	constructor() { }
 
