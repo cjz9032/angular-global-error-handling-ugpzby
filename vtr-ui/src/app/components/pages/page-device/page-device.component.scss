@@ -7,6 +7,8 @@
 	background-color: $light;
 	box-shadow: $drop_shadow;
 	padding: 4rem;
+	overflow:hidden;
+	z-index:100;
 	margin-bottom: 4rem;
 	.family {
 		color: $main_darker;
@@ -15,6 +17,13 @@
 	.device-sub-header {
 		color: $shade;
 		font-size: 1.5rem;
+	}
+
+	.img-absolute{
+		position:absolute;
+		left:50%;
+		top:50%;
+		transform:translate(-50%,-50%);
 	}
 
 	.sub-header-separator {
@@ -30,7 +39,16 @@
 		margin-top: 4rem;
 		font-weight: $weight_bold;
 	}
-
+	.quarterCircleBottomRight{
+		width:300px;
+		height:300px;
+		background-color: #F6F8F8;
+		border-radius:50%;
+		position:absolute;
+		z-index:101;
+		top:-100%;
+		right:-250%;
+	}
 	.status-list {
 		margin-top: 2.7rem;
 		list-style: none;
