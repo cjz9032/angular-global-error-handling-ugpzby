@@ -12,6 +12,15 @@
         ></vtr-privacy-score>
     </div>
 
+    <div class="breaches-block breaches-block__wrapper">
+        <h3 class="breaches-block__title">8 breached accounts</h3>
+        <p class="breaches-block__text">Looks like some of your personal info is floating around online, making it easy for others to access your accounts without your knowledge. You should change your passwords right now.</p>
+        <vtr-breached-account [breached_accounts]="breached_accounts"></vtr-breached-account>
+        <p>Ready to take control of your privacy?
+            <a href="">Get Lenovo Privacy by FigLeaf</a>
+        </p>
+    </div>
+
 
     <button (click)="openPopUp()">Who tracks me?</button>
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'vtr-breached-account',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./breached-account.component.scss']
 })
 export class BreachedAccountComponent implements OnInit {
+  @Input() breached_accounts: any[];
 
   constructor() { }
 
