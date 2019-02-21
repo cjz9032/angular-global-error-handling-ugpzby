@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-	selector: 'vtr-connected-home-security',
-	templateUrl: './connected-home-security.component.html',
-	styleUrls: ['./connected-home-security.component.scss']
+	selector: 'vtr-connected-home',
+	templateUrl: './connected-home.component.html',
+	styleUrls: ['./connected-home.component.scss']
 })
-export class ConnectedHomeSecurityComponent implements OnInit {
+export class ConnectedHomeComponent implements OnInit {
 
 	constructor() { }
 

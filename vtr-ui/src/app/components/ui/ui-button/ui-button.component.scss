@@ -1,21 +1,21 @@
 @import "../../../app.theme";
 .vtr-ui-button {
-  .button-box {
-    padding: 0.5rem;
-    .button {
-      text-transform: uppercase;
-      height: 6rem;
-      width: 100%;
-      border-radius: 2.25rem;
-      background: $gradient_main;
-      border: none;
-      color: $light;
-      font-size: 2rem;
-      font-weight: $weight_medium;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      cursor: pointer;
-    }
-  }
+	.button-box {
+		padding: 0.5rem;
+		.button {
+			text-transform: uppercase;
+			height: 6rem;
+			width: 100%;
+			border-radius: 3rem;
+			background: $gradient_main;
+			border: none;
+			color: $light;
+			font-size: 1.6rem;
+			font-weight: $weight_medium;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			cursor: pointer;
+		}
+	}
 }
