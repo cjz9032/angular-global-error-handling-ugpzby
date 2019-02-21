@@ -1,0 +1,132 @@
+@import '../../../app.theme.scss';
+
+.vtr-ui-list-support {
+	.support-list {
+		margin-top: 2.7rem;
+		list-style: none;
+		padding: 0;
+		background-color: $shade_lightest;
+		border: .1rem solid $shade_lighter;
+		border-radius: $border_radius;
+
+		li {
+			min-height: 6rem;
+			padding: 1.5rem 1rem 1.5rem 0;
+			border-bottom: .1rem solid $shade_lighter;
+			color: $main_darker;
+
+			&.pointer {
+				cursor: pointer;
+				&:hover {
+					background-color: $shade_extralight;
+				}
+			}
+
+			&:last-child {
+				border: none;
+			}
+
+
+			&.good {
+				.item-icon {
+					.icon-bkg {
+						background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+						border-color: $go_dark;
+					}
+				}
+			}
+
+			&.bad {
+				.item-icon {
+					.icon-bkg {
+						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+						border-color: $stop_dark
+					}
+				}
+			}
+
+			a {
+				color: $main_darker;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+
+			.item-icon {
+				&.status {
+					.icon-bkg {
+						display: inline-block;
+						border-radius: 50%;
+						height: 2.4rem;
+						width: 2.4rem;
+						border-width: .2rem;
+						border-style: solid;
+						text-align: center;
+
+						fa-icon {
+							font-size: 1.2rem;
+							line-height: 2rem;
+							color: $light;
+						}
+					}
+				}
+
+				fa-icon {
+					color: $main;
+					font-size: 1.9rem;
+					line-height: 3rem;
+				}
+			}
+
+			.item-text {
+				overflow: hidden;
+				display: flex;
+				align-items: center;
+
+				.title {
+					line-height: 1.8rem;
+					font-size: 1.4rem;
+					font-weight: $weight_medium;
+					float: left;
+
+					&.light-title {
+						font-weight: $weight_light;
+					}
+				}
+
+				.detail {
+					padding-right: .5rem;
+					float: right;
+					text-align: right;
+					line-height: 2.8rem;
+					font-size: 1.2rem;
+					color: $shade_dark;
+					font-style: italic;
+
+					&.highlight {
+						color: $main_shade;
+						text-decoration: underline;
+
+						&:hover {
+							text-decoration: none;
+						}
+					}
+				}
+			}
+
+			.arrow {
+				color: $main_darker;
+				line-height: 2.8rem;
+				font-size: 2rem;
+			}
+
+			.image{
+				display: inline-block;
+				img{
+					width: 74%;
+				}
+			}
+		}
+	}
+}
