@@ -27,6 +27,7 @@ import { ServerCommunicationService } from './common-services/server-communicati
 import { SidebarPreviewComponent } from './main-layout/sidebar/sidebar-preview/sidebar-preview.component';
 import { FaqComponent } from './main-layout/sidebar/faq/faq.component';
 import { BreachedAccountComponent } from './common-ui/breached-account/breached-account.component';
+import { SidebarBenefitsWidgetComponent } from './main-layout/sidebar/sidebar-benefits-widget/sidebar-benefits-widget.component';
 
 @NgModule({
 	imports: [
@@ -55,6 +56,7 @@ import { BreachedAccountComponent } from './common-ui/breached-account/breached-
 		PrivacyScoreComponent,
 		FaqComponent,
 		BreachedAccountComponent,
+		SidebarBenefitsWidgetComponent,
 	],
 	providers: [ServerCommunicationService],
 })

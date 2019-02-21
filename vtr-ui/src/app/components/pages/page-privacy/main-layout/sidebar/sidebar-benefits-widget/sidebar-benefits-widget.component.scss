@@ -1,0 +1,47 @@
+@import "../../../styles/common-blocks";
+
+.sidebar-benefits-widget {
+  @extend %common-block-wrapper;
+
+  &__inner {
+    text-align: center;
+    padding: 3.9rem 4rem;
+  }
+
+  &__hidden-inner {
+    border-top: 1px solid #ECF0F1;
+    padding: 3.9rem 4rem;
+  }
+
+  &__main-image {
+    display: block;
+    vertical-align: top;
+    margin: 0 0 2.6rem;
+  }
+
+  &__text {
+    color: #34495E;
+    font-size: 1.6rem;
+    line-height: 3rem;
+    padding: 0 (8.5rem - 4rem);
+    margin: 1.9rem 0 1.1rem;
+  }
+
+  &__text-strong {
+    display: block;
+    font-weight: 600;
+  }
+
+  &__text-light {
+    display: block;
+    font-weight: 300;
+  }
+
+  &__button {
+
+  }
+
+  &__show-more {
+
+  }
+}
