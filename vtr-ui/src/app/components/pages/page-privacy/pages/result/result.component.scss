@@ -20,3 +20,15 @@
     //width: 25%;
   }
 }
+
+.more-breaches {
+  &__number {
+    color: #4A81FD;
+    font-size: 44px;
+    font-weight: bold;
+    line-height: 23px;
+  }
+  &__plus {
+    font-weight: 300;
+  }
+}

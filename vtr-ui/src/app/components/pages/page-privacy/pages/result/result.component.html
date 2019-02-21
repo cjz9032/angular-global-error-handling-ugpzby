@@ -18,7 +18,10 @@
         <div class="breaches-block__accounts-container">
             <vtr-breached-account *ngFor="let account of breached_accounts_show" [breached_account]="account" class="breaches-block__account"></vtr-breached-account>
             <div *ngIf="breached_accounts.length > 3" class="breaches-block__see-more more-breaches">
-                <div class="more-breaches__number">+ {{breached_accounts.length - 3}}</div>
+                <div class="more-breaches__number">
+                    <span class="more-breaches__plus">+</span>
+                    {{breached_accounts.length - 3}}
+                </div>
                 <span class="more-breaches__description">breached accounts</span>
                 <div class="more-breaches__btn">Show details</div>
             </div>
