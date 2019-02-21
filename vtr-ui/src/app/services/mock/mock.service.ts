@@ -92,7 +92,7 @@ export class MockService {
 			'status': 1,
 			'id': 'pwdmgr',
 			'title': 'Password Manager',
-			'detail': 'Unintalled',
+			'detail': 'Uninstalled',
 			'path': 'password-protection'
 		},
 		{
