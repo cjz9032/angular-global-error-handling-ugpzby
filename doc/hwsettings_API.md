@@ -195,11 +195,15 @@ Camera related features need import “hws.camera-feature.js”.
 	}
 
 ###Camera Privacy
-*CameraFeature*.getPrivacyStatus()
+*CameraFeature*.getCameraPrivacyStatus()
 
-	Get camera privacy mode status, true/false
+	Get camera privacy mode status
+	{
+		available: true|false, // false mean camara not exist,
+		status:true|false, //true means on otherwise off
+	}
 
-*CameraFeature*.setPrivacyStatus(state)
+*CameraFeature*.setCameraPrivacyStatus(state)
 
 	Set camera privacy mode status, true/false
 ####Feature List:
