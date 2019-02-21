@@ -27,11 +27,11 @@ They can support most of audio APIs.
 
 *DolbyFeature*.setDolbyProfile(value)
 
-	True means turn on Dolby profile.
+	True means turn on Dolby profile. Here value is bool type.
 
 *DolbyFeature*.setDolbyMode(value)
 
-	Pass the Dolby mode with const string
+	Pass the Dolby mode with const string. Here value is string type, you can use Dynamic/Movie/Music/Games/Voip
 
 
 ####Comment
@@ -60,23 +60,23 @@ Maxx audio and Dolby are different vendors, at most only one feature will suppor
 
 *MicrophoneFeature*.setMicrophoneVolume(volume)
 
-	Pass the value user selected from the slider control.
+	Pass the value user selected from the slider control. volume is the int number.
 
-*MicrophoneFeature*.setMicrophoneOptimization(index)
+*MicrophoneFeature*.setMicrophoneOptimization(name)
 
-	Pass the index of the microphone opitimaztion
+	Pass the index of the microphone opitimaztion. name is the string,   VoiceRecognition/MultipleVoices/OnlyMyVoice/Normal
 
 *MicrophoneFeature*.setMicrophoneAutoOptimization(value)
 
-	True means this feature will be enabled.
+	True means this feature will be enabled. Here value is bool value.
 
 *MicrophoneFeature*.setMicrophoneAEC(value)
 
-	True means this feature will be enabled.
+	True means this feature will be enabled.. Here value is bool value.
 
-*MicrophoneFeature*.setMicrophoneSuppress(value)
+*MicrophoneFeature*.setMicrophoneKeyboardNoiseSuppression(value)
 
-	True means this feature will be enabled.
+	True means this feature will be enabled. Here value is bool value.
 
 *MicrophoneFeature*.startMonitor(callback)
 
