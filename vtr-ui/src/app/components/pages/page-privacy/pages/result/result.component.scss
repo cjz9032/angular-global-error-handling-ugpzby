@@ -2,6 +2,7 @@
 
 .breaches-block {
   margin: 50px 0 0 0;
+  padding: 35px 65px 30px 40px;
   &__wrapper {
     @extend %common-block-wrapper;
   }
@@ -10,5 +11,8 @@
   }
   &__text {
     @extend %text-common;
+  }
+  &__accounts-container {
+    display: flex;
   }
 }

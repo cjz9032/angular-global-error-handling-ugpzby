@@ -13,10 +13,10 @@
     </div>
 
     <div class="breaches-block breaches-block__wrapper">
-        <h3 class="breaches-block__title">8 breached accounts</h3>
+        <h3 class="breaches-block__title">{{breached_accounts.length}} breached accounts</h3>
         <p class="breaches-block__text">Looks like some of your personal info is floating around online, making it easy for others to access your accounts without your knowledge. You should change your passwords right now.</p>
-        <div class="breaches-block__accounts-container" *ngFor="let account of breached_accounts">
-            <vtr-breached-account [breached_account]="account"></vtr-breached-account>
+        <div class="breaches-block__accounts-container">
+            <vtr-breached-account *ngFor="let account of breached_accounts" [breached_account]="account"></vtr-breached-account>
         </div>
         <p>Ready to take control of your privacy?
             <a href="">Get Lenovo Privacy by FigLeaf</a>
