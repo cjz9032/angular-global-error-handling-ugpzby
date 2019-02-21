@@ -1,9 +1,9 @@
 
-<div *ngFor="let account of breached_accounts" class="breached-account">
-  <img class="breached-account__img" src="" alt="">
-  <h4 class="breached-account__title">{{account.domain}}</h4>
-  <span class="breached-account__date">Breached on {{account.date}}</span>
-  <p class="breached-account__email">{{account.breachedEmail}}</p>
-  <p class="breached-account__pass">{{account.breachedPassword}}</p>
+<div class="breached-account">
+  <img class="breached-account__img" [src]="breached_account.image" alt="">
+  <h4 class="breached-account__title">{{breached_account.domain}}</h4>
+  <span class="breached-account__date">Breached on {{breached_account.breachDate}}</span>
+  <p class="breached-account__email">{{breached_account.breachedEmail}}</p>
+  <p class="breached-account__pass">{{breached_account.breachedPassword}}</p>
   <a href="">See details</a>
 </div>

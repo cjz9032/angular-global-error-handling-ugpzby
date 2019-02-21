@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./breached-account.component.scss']
 })
 export class BreachedAccountComponent implements OnInit {
-  @Input() breached_accounts: any[];
+  @Input() breached_account: {domain: string, breachDate: string, breachedEmail: string, breachedPassword: string, image: string};
 
   constructor() { }
 
