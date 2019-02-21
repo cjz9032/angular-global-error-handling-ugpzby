@@ -138,7 +138,71 @@ Display related features need import “hws.display-feature.js”.
 We support this feature from Win10 RS2.
 
 ##3.Camera
-###Camera Privacy
+Camera related features need import “hws.camera-feature.js”.
+###Camera Privew
 
+*CameraFeature*.startCameraPrivew(id)
+
+	Init and start camera privew for video UI control, need video control id
+	code sample: 
+	<video id="cameraPreview" class="cameraPreview"></video>
+	CameraFeature.startCameraPrivew(cameraPreview)
+
+
+*CameraFeature*.stopCameraPrivew(id)
+
+	Stop and clean camera privew stream. 
+###Camera Settings
+*CameraFeature*.getCameraSettings()
+
+	Get all camera settings state, include brigtness, contrast, exposure, focus
+	mock data:
+	{
+		"brightness": {
+		"supported": true, // true means brightness slider bar can be shown
+		"min": -64, // slider bar min value
+		"max": 64, // slider bar max value
+		"step": 1, // step frequnce
+		"default": 0, // 
+		"value": 0 // current value
+		},
+		"contrast": {
+		"supported": true,
+		"min": 0,
+		"max": 95,
+		"step": 1,
+		"default": 0,
+		"value": 0
+		},
+		"exposure": {
+		"autoModeSupported": true, // true means auto exposure mode toggle button can be shown 
+		"autoValue": true, // true means auto exposure mode enabled
+		"supported": true, // true means exposure slider bar can be shown
+		"min": -10,
+		"max": -2,
+		"default": -5,
+		"value": -5
+		},
+		"focus": {
+		"autoModeSupported": false,
+		"autoValue": false,
+		"supported": false,
+		"min": 0,
+		"max": 0,
+		"default": 0,
+		"value": 0
+		}
+	}
+
+###Camera Privacy
+*CameraFeature*.getPrivacyStatus()
+
+	Get camera privacy mode status
+
+*CameraFeature*.setPrivacyStatus(state)
+
+	Set camera privacy mode status, true/false
 ####Feature List:
+- Show camera privew
+- Get/Set camera settings
 - Turn on/off camera privacy
