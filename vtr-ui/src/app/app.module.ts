@@ -81,6 +81,8 @@ import { DashboardService } from './services/dashboard/dashboard.service';
 import { DeviceService } from './services/device/device.service';
 import { SecurityService } from './services/security/security.service';
 import { UserService } from './services/user/user.service';
+import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
+import { CameraDetailMockService } from './services/camera/camera-detail/camera-detail.mock.service';
 
 // FONT AWESOME
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -90,6 +92,11 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { EyeCareModeComponent } from './components/display/eye-care-mode/eye-care-mode.component';
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
+import { CameraControlComponent } from './components/camera-control/camera-control.component';
+import { PageSupportDetailComponent } from './components/pages/page-support-detail/page-support-detail.component';
+import { WidgetSupportComponent } from './components/widgets/widget-support/widget-support.component';
+import { UiListSupportComponent } from './components/ui/ui-list-support/ui-list-support.component';
+import { WidgetWarrantyComponent } from './components/widgets/widget-warranty/widget-warranty.component';
 
 
 library.add(fas);
@@ -147,7 +154,12 @@ library.add(far);
 		UiRowSwitchComponent,
 		EyeCareModeComponent,
 		UiHeaderSubpageComponent,
-		PageSecurityWindowsHelloComponent
+		PageSecurityWindowsHelloComponent,
+		CameraControlComponent,
+		PageSupportDetailComponent,
+		WidgetSupportComponent,
+		UiListSupportComponent,
+		WidgetWarrantyComponent
 	],
 	imports: [
 		BrowserModule,
@@ -168,9 +180,10 @@ library.add(far);
 		DashboardService,
 		DeviceService,
 		SecurityService,
-		UserService
+		UserService,
+		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
 	bootstrap: [AppComponent],
 	entryComponents: [ModalWelcomeComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,4 +1,4 @@
-@import "../../../../../app.theme";
+@import "../../../../../app.theme.scss";
 
 .subpage-device-settings-display {
 	.title {
@@ -50,7 +50,19 @@
 				font-size: 1.6rem;
 				line-height: 2.8rem;
 				padding-bottom: 2.5rem;
-				border-bottom: 1px solid $screen_light_15;
+				border-bottom: 0.1rem solid $screen_light_15;
+			}
+		}
+
+		.no-camera-access {
+			background-color: $shade_lightest;
+			font-size: 1.4rem;
+			color: $alt;
+			border: 1px solid $shade_lighter;
+
+			.privacy-button {
+				font-size: 1.2rem;
+				letter-spacing: 0.76px;
 			}
 		}
 	}
@@ -58,5 +70,24 @@
 	ul.list-group {
 		list-style-type: none;
 		padding-bottom: 3rem;
+	}
+
+	.slider-item-text {
+		color: $main_darker;
+		font-size: 1.2rem;
+		font-weight: bold;
+		letter-spacing: 0.1rem;
+		line-height: 2.3rem;
+	}
+	.border-top {
+		border-top-width: 0.1rem;
+	}
+
+	.slider-control {
+		width: 100%;
+	}
+
+	.inline-item {
+		display: -webkit-inline-box;
 	}
 }

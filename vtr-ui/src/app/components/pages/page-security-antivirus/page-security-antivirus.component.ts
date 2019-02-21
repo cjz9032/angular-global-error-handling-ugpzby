@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MockService } from 'src/app/services/mock/mock.service';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageSecurityAntivirusComponent implements OnInit {
 
-	title = "Anti-Virus"
+	title = 'Anti-Virus';
 
-	constructor() { }
+	constructor(public mockService: MockService) { }
 
 	ngOnInit() {
 	}
