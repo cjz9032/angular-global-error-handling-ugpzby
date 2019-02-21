@@ -23,9 +23,10 @@ import { MainHeaderComponent } from './main-layout/main-header/main-header.compo
 import { PrivacyRoutingModule } from './privacy-routing.module';
 // import {ScanModule} from "./pages/scan/scan.module";
 // import { ResultModule } from './pages/result/result.module';
-import { serverCommunication } from './common-services/server-communication.service';
+import { ServerCommunicationService } from './common-services/server-communication.service';
 import { SidebarPreviewComponent } from './main-layout/sidebar/sidebar-preview/sidebar-preview.component';
 import { FaqComponent } from './main-layout/sidebar/faq/faq.component';
+import { BreachedAccountComponent } from './common-ui/breached-account/breached-account.component';
 
 @NgModule({
 	imports: [
@@ -53,8 +54,9 @@ import { FaqComponent } from './main-layout/sidebar/faq/faq.component';
 		PageBannerComponent,
 		PrivacyScoreComponent,
 		FaqComponent,
+		BreachedAccountComponent,
 	],
-	providers: [serverCommunication],
+	providers: [ServerCommunicationService],
 })
 export class PrivacyModule {
 }

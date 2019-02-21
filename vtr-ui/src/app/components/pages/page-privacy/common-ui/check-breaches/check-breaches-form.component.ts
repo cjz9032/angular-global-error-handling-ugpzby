@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { serverCommunication } from '../../common-services/server-communication.service';
+import { ServerCommunicationService } from '../../common-services/server-communication.service';
 
 @Component({
 	selector: 'vtr-check-breaches-form',
@@ -13,7 +13,7 @@ export class CheckBreachesFormComponent implements OnInit {
 	public islenovoIdOpen: boolean;
 	public inputValue: string;
 
-	constructor(public router: Router, private serverCommunication: serverCommunication) {
+	constructor(public router: Router, private serverCommunication: ServerCommunicationService) {
 		this.isLoading = false;
 		this.islenovoIdOpen = false;
 		this.inputValue = '';

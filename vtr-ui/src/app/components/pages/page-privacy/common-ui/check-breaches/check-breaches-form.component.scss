@@ -12,10 +12,10 @@
     display: flex;
     width: 100%;
     background: #FFFFFF;
-    border-radius: 7px;
+    border-radius: 0.7rem;
     box-shadow: 0 0 15px 0 rgba(0,0,0,0.15);
     min-height: 9rem;
-    padding: 0 2rem 0 3rem;
+    padding: 0 2rem 0 0;
     justify-content: space-between;
     border: 2px solid transparent;
     transition: border-color .1s linear;
@@ -32,7 +32,9 @@
     height: 100%;
     outline: none;
     border: none;
+    border-radius: 0.7rem;
     font-size: 1.6rem;
+    padding: 0 0 0 3rem;
     &::placeholder {
       color: #D7D8D8;
       font-weight: 500;
@@ -57,6 +59,7 @@
 .lenovo-id {
   position: absolute;
   top: calc(100% - 6px);
+  left: 3rem;
   padding: 1.3rem 3rem;
   min-width: 46rem;
   max-width: 100%;

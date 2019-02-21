@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class serverCommunication {
+export class ServerCommunicationService {
+	public breachedAccounts = [];
 
 	getLenovoId() {
 		return new Promise((resolve) => {
@@ -32,6 +33,7 @@ export class serverCommunication {
 		return new Promise((resolve) => {
 			setTimeout(() => {
 				resolve(mockBreachedAccounts);
+				this.breachedAccounts = mockBreachedAccounts;
 			}, 3000);
 		});
 	}
