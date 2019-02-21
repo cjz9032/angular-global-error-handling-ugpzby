@@ -3,7 +3,9 @@
   <img class="breached-account__img" [src]="breached_account.image" alt="">
   <h4 class="breached-account__title">{{breached_account.domain}}</h4>
   <span class="breached-account__date">Breached on {{breached_account.breachDate}}</span>
-  <p class="breached-account__email">{{breached_account.breachedEmail}}</p>
-  <p class="breached-account__pass">{{breached_account.breachedPassword}}</p>
-  <a href="">See details</a>
+  <div class="breached-account__credentials">
+    <p class="breached-account__email">{{breached_account.breachedEmail}}</p>
+    <p class="breached-account__pass">{{breached_account.breachedPassword}}</p>
+  </div>
+  <a class="breached-account__details" href="">See details</a>
 </div>
