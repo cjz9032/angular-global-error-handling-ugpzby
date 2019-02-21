@@ -2,13 +2,14 @@
 	<div class="row">
 		<div class="col">
 			<vtr-ui-header-subpage [title]="title"
-
-				[caption]="headerCaption"
-				[menuTitle]="headerMenuTitle" [items]="headerMenuItems"></vtr-ui-header-subpage>
+			 [caption]="headerCaption"
+			 [menuTitle]="headerMenuTitle"
+			 [items]="headerMenuItems"></vtr-ui-header-subpage>
 
 		</div>
 	</div>
-	<div class="row py-5 smartsettings-card" id="audio">
+	<div class="row py-5 smartsettings-card"
+	 id="audio">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible title="Audio Smartsettings"
 			 [isCollapsed]="false"
@@ -16,9 +17,8 @@
 			 [theme]="'blue'">
 				<div class="row">
 					<div class="col-auto text-wrap subtitle">
-
-						<h3 class="text-uppercase">Application-Based Settings</h3>
-						<p>Automatically adjust audio settings according to different apps you are using.</p>
+						<h3>Application-Based Settings</h3>
+						<p>Automatically adjust audio settings according todifferent apps you are using.</p>
 					</div>
 				</div>
 				<ul class="list-group list-group-flush">
@@ -77,7 +77,8 @@
 			</vtr-container-collapsible>
 		</div>
 	</div>
-	<div class="row py-5 smartsettings-card" id="microphone">
+	<div class="row py-5 smartsettings-card"
+	 id="microphone">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible title="Microphone"
 			 [isCollapsed]="false"

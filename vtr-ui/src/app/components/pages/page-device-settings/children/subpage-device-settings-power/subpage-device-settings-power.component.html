@@ -55,56 +55,16 @@
 			<vtr-container-collapsible title="Battery Settings"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
-					<li class="">
-						<vtr-ui-row-switch [title]="'Airplane Power Mode'"
-							[caption]="''"
+						<li class=""
+						*ngFor="let item of batterySettings">
+						<vtr-ui-row-switch [title]="item.header"
+							[caption]="item.subHeader"
 							[isSwitchVisible]=true
-							[leftIcon]="['far', 'gem']"
-							[rightIcon]="['far', 'question-circle']"
-							[readMoreText]="'Read More'">
+							[leftIcon]="item.leftImageSource"
+							[rightIcon]="item.rightImageSource"
+							[readMoreText]="item.readMoreText">
 						</vtr-ui-row-switch>
 					</li>
-					<li class="">
-						<vtr-ui-row-switch [title]="'Battery Charge Threshold'"
-										   [caption]="'This feature dynamically adjusts thermal settings to your needs'"
-										   [isSwitchVisible]=true
-										   [leftIcon]="['far', 'gem']"
-										   [rightIcon]="['far', 'question-circle']"
-										   [readMoreText]="'Read More'"
-										   [showChildContent]="true" (toggleOnOff)="showBatteryThreshold=$event.switchValue;">
-							<div *ngIf="showBatteryThreshold">
-							<vtr-battery-charge-threshold-settings [title]="'Threshold for Built in battery'"
-																   [type]="'primary'">
-							</vtr-battery-charge-threshold-settings>
-
-							<vtr-battery-charge-threshold-settings [title]="'Threshold for Removable battery'"
-																   [type]="'secondary'">
-							</vtr-battery-charge-threshold-settings>
-
-							<vtr-battery-charge-threshold-settings [displayNoteOnly]="true">
-							</vtr-battery-charge-threshold-settings>
-							</div>
-						</vtr-ui-row-switch>
-					</li>
-					<li class="">
-						<vtr-ui-row-switch [title]="'Express Charging'"
-										   [caption]="'orem ipsum dolor sit amet del Lorem ipsum dolor sit amet del'"
-										   [isSwitchVisible]=true
-										   [leftIcon]="['far', 'gem']"
-										   [rightIcon]="['far', 'question-circle']"
-										   [readMoreText]="'Read More'">
-						</vtr-ui-row-switch>
-					</li>
-					<li class="">
-						<vtr-ui-row-switch [title]="'Conservation Mode'"
-										   [caption]="'Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings'"
-										   [isSwitchVisible]=true
-										   [leftIcon]="['far', 'gem']"
-										   [rightIcon]="['far', 'question-circle']"
-										   [readMoreText]="'Read More'">
-						</vtr-ui-row-switch>
-					</li>
-
 				</ul>
 			</vtr-container-collapsible>
 		</div>
