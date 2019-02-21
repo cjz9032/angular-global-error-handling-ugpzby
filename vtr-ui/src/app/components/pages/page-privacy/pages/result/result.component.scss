@@ -1,8 +1,8 @@
 @import "../../styles/common-blocks";
 
 .breaches-block {
-  margin: 50px 0 0 0;
-  padding: 35px 65px 30px 40px;
+  margin: 5rem 0 0 0;
+  padding: 3.5rem 6.5rem 3rem 4rem;
   &__wrapper {
     @extend %common-block-wrapper;
   }
@@ -14,5 +14,9 @@
   }
   &__accounts-container {
     display: flex;
+    justify-content: space-between;
+  }
+  &__account {
+    //width: 25%;
   }
 }
