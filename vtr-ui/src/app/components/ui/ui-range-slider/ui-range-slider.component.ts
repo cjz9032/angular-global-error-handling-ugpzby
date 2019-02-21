@@ -38,8 +38,8 @@ export class UiRangeSliderComponent implements OnInit {
 			showSelectionBar: true,
 			hideLimitLabels: true,
 			hidePointerLabels: true,
-			showTicks: true,
-			// customValueToPosition: this.legendPositionFunction,
+			showTicks: this.stepsArray && this.stepsArray.length > 0,
+			customValueToPosition: this.legendPositionFunction,
 			stepsArray: this.stepsArray,
 			floor: this.minValue, // min value
 			ceil: this.maxValue, // max value
