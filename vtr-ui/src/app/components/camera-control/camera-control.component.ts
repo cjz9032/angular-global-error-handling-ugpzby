@@ -1,11 +1,4 @@
-import {
-	Component,
-	OnInit,
-	Input,
-	ViewChild,
-	OnDestroy,
-	ElementRef
-} from '@angular/core';
+import { Component, OnInit, Input, ViewChild, OnDestroy, ElementRef } from '@angular/core';
 import { CameraDetail } from 'src/app/data-models/camera/camera-detail.model';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
@@ -16,6 +9,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 	templateUrl: './camera-control.component.html',
 	styleUrls: ['./camera-control.component.scss']
 })
+
 export class CameraControlComponent implements OnInit, OnDestroy {
 	private cameraPreview: ElementRef;
 	@ViewChild('cameraPreview') set content(content: ElementRef) {

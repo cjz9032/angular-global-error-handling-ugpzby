@@ -1,64 +1,55 @@
-<div
-	class="vtr-ui-switch-row"
-	[ngClass]="{
+<div class="vtr-ui-switch-row"
+ [ngClass]="{
 		'white-theme': theme === 'white',
 		'blue-theme': theme === 'blue'
-	}"
->
+	}">
 	<div class="container-fluid p-0">
 		<div class="row m-0">
 			<div class="col">
 				<div class="container-fluid p-0">
 					<div class="row m-0">
-						<div
-							class="col-auto left-icon-column"
-							*ngIf="leftIcon.length > 0"
-						>
-							<fa-icon
-								class="left-icon"
-								[icon]="leftIcon"
-							></fa-icon>
+						<div class="col-auto left-icon-column"
+						 *ngIf="leftIcon.length > 0">
+							<fa-icon class="left-icon"
+							 [icon]="leftIcon"></fa-icon>
 						</div>
 						<div class="col">
 							<div class="title">{{ title }}</div>
-							<div class="caption" *ngIf="caption.length > 0">
+							<div class="caption"
+							 *ngIf="caption.length > 0">
 								{{ caption }}
 							</div>
-							<div
-								class="read-more"
-								*ngIf="readMoreText.length > 0"
-								(click)="onReadMoreClick($event)"
-							>
+							<div class="read-more"
+							 *ngIf="readMoreText.length > 0"
+							 (click)="onReadMoreClick($event)">
 								{{ readMoreText }}
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="ml-auto p-0" *ngIf="resetText.length > 0">
-				<button
-					type="button"
-					class="btn btn-link text"
-					(click)="onResetClick($event)"
-				>
+			<div class="ml-auto p-0"
+			 *ngIf="resetText.length > 0">
+				<button type="button"
+				 class="btn btn-link text"
+				 (click)="onResetClick($event)">
 					{{ resetText }}
 				</button>
 			</div>
-			<div class="p-0" *ngIf="isSwitchVisible">
-				<vtr-ui-switch-onoff
-					[value]="isSwitchChecked"
-					(change)="onOnOffChange($event)"
-				></vtr-ui-switch-onoff>
+			<div class="p-0"
+			 *ngIf="isSwitchVisible">
+				<vtr-ui-switch-onoff [value]="isSwitchChecked"
+				 (change)="onOnOffChange($event)"></vtr-ui-switch-onoff>
 			</div>
-			<div class="p-0 pl-2" *ngIf="rightIcon.length > 0">
-				<fa-icon
-					class="right-icon"
-					[icon]="rightIcon"
-					(click)="onRightIconClick($event)"
-				></fa-icon>
+			<div class="p-0 pl-2"
+			 *ngIf="rightIcon.length > 0">
+				<fa-icon class="right-icon"
+				 [icon]="rightIcon"
+				 (click)="onRightIconClick($event)"></fa-icon>
 			</div>
 		</div>
-		<div class="row m-0" *ngIf="showChildContent">
+		<div class="row m-0"
+		 *ngIf="showChildContent">
 			<div class="col-1"></div>
 			<div class="col">
 				<ng-content #childContent></ng-content>

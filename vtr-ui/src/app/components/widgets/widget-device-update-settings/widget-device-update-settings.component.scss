@@ -30,17 +30,16 @@
 	.vtr-widget-device-update-settings {
 		.settings-container {
 			vtr-ui-row-switch {
-				.vtr-ui-switch-row {
-					margin: 0;
-					padding: 1.5rem 1.5rem 1.5rem 0;
-					&:last-child {
+				&:last-child {
+					.vtr-ui-switch-row {
 						border-bottom: none;
 					}
+				}
+				.vtr-ui-switch-row {
+					margin: 0;
+					padding: 1.5rem;
 					.row {
 						align-items: center;
-					}
-					.left-icon-column {
-						padding-right: 0;
 					}
 					vtr-ui-switch-onoff {
 						.checkbox {
