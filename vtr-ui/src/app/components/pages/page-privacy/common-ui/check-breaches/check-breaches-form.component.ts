@@ -11,11 +11,13 @@ export class CheckBreachesFormComponent implements OnInit {
 	public isLoading: boolean;
 	public lenovoId: string;
 	public islenovoIdOpen: boolean;
+	public isFormFocused: boolean;
 	public inputValue: string;
 
 	constructor(public router: Router, private serverCommunication: ServerCommunicationService) {
 		this.isLoading = false;
 		this.islenovoIdOpen = false;
+		this.isFormFocused = false;
 		this.inputValue = '';
 	}
 
@@ -27,18 +29,31 @@ export class CheckBreachesFormComponent implements OnInit {
 
 	changeInputValue(event) {
 		this.inputValue = event.target.value;
-	}
-
-	openLenovoId() {
-		if (this.lenovoId && this.inputValue !== this.lenovoId) {
-			this.islenovoIdOpen = true;
+		if (this.lenovoId && this.lenovoId.includes(this.inputValue)) {
+			this.openLenovoId();
+		} else {
+			this.closeLenovoId();
 		}
 	}
 
-	closeLenovoId() {
+	handleFocus() {
+		this.isFormFocused = true;
+		this.openLenovoId();
+	}
+
+	handleBlur() {
+		this.isFormFocused = false;
 		setTimeout(() => {
-			this.islenovoIdOpen = false;
+			this.closeLenovoId();
 		}, 200); // added because blur event should be after 'id' selection by click
+	}
+
+	openLenovoId() {
+		this.islenovoIdOpen = true;
+	}
+
+	closeLenovoId() {
+		this.islenovoIdOpen = false;
 	}
 
 	setLenovoId() {

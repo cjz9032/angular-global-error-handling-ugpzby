@@ -1,10 +1,10 @@
 <div class="check-breaches">
     <form class="check-breaches__form" (submit)="scanEmail($event)">
-        <div class="check-breaches__input-wrapper" [class.check-breaches__input-wrapper--focused]="islenovoIdOpen">
+        <div class="check-breaches__input-wrapper" [class.check-breaches__input-wrapper--focused]="isFormFocused">
             <div class="check-breaches__input-with-id">
                 <input class="check-breaches__input" type="text"
-                       (focus)="openLenovoId()" (blur)="closeLenovoId()"
-                       (change)="changeInputValue($event)" value="{{inputValue}}"
+                       (focus)="handleFocus()" (blur)="handleBlur()"
+                       (input)="changeInputValue($event)" value="{{inputValue}}"
                        placeholder="Enter your email"
                 >
                 <div *ngIf="islenovoIdOpen" class="check-breaches__lenovo-id lenovo-id" (click)="setLenovoId()">
