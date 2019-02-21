@@ -91,6 +91,11 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { EyeCareModeComponent } from './components/display/eye-care-mode/eye-care-mode.component';
 import { CameraControlComponent } from './components/camera-control/camera-control.component';
+import { PageSupportDetailComponent } from './components/pages/page-support-detail/page-support-detail.component';
+import { WidgetSupportComponent } from './components/widgets/widget-support/widget-support.component';
+import { UiListSupportComponent } from './components/ui/ui-list-support/ui-list-support.component';
+import { WidgetWarrantyComponent } from './components/widgets/widget-warranty/widget-warranty.component';
+
 
 library.add(fas);
 library.add(fab);
@@ -147,7 +152,11 @@ library.add(far);
 		UiRowSwitchComponent,
 		EyeCareModeComponent,
 		UiHeaderSubpageComponent,
-		CameraControlComponent
+		CameraControlComponent,
+		PageSupportDetailComponent,
+		WidgetSupportComponent,
+		UiListSupportComponent,
+		WidgetWarrantyComponent
 	],
 	imports: [
 		BrowserModule,
