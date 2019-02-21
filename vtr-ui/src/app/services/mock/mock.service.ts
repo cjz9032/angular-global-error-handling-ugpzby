@@ -83,7 +83,7 @@ export class MockService {
 		{
 			'status': 0,
 			'id': 'wifi-security',
-			'title': 'Wifi Security',
+			'title': 'WiFi Security',
 			'detail': 'Enabled',
 			'path': 'wifi-security'
 
@@ -116,26 +116,85 @@ export class MockService {
 		{
 			'icon': ['fas', 'plane'],
 			'title': ' Reduced batterylife working outside.',
-			'path': '/support',
+			'path': '/support-detail',
 			'lightTitle': true
 		},
 		{
 			'icon': ['fas', 'plane'],
 			'title': 'Can I use my Ideapad while in an airplane?',
-			'path': '/support',
+			'path': '/support-detail',
 			'lightTitle': true
 		},
 		{
 			'icon': ['fas', 'plane'],
 			'title': 'Will the security control scanner damage',
-			'path': '/support',
+			'path': '/support-detail',
 			'lightTitle': true
 		},
 		{
 			'icon': ['fas', 'plane'],
 			'title': 'Will the security control scanner damage',
-			'path': '/support',
+			'path': '/support-detail',
 			'lightTitle': true
+		}
+	];
+
+	warranty = {
+		'status': 1, // 0 IN WARRANTY | 1 WARRANTY EXPIRED | 2 Not Found Warranty
+		'dayDiff': 1,
+		'startDate': '2017-12-13T09:12:43.083Z',
+		'endDate': '2018-12-12T09:12:43.083Z',
+		'url': 'https://pcsupport.lenovo.com/us/en/warrantylookup',
+	};
+
+	documentation = [
+		{
+			'icon': ['fas', 'book'],
+			'title': 'User Guide',
+			'path': '',
+			'url': 'https://support.lenovo.com',
+			'target': '_blank',
+		}
+	];
+
+	needHelp = [
+		{
+			'icon': ['fas', 'comment-alt'],
+			'title': 'Lenovo Community',
+			'path': '',
+			'url': 'https://community.lenovo.com',
+			'target': '_blank',
+		},
+		{
+			'icon': ['fas', 'share-alt'],
+			'title': 'Contact Costumer service',
+			'path': '',
+			'url': 'https://support.lenovo.com/',
+			'target': '_blank',
+		},
+		{
+			'icon': ['fab', 'weixin'],
+			'title': 'Contact us on WeChat',
+			'path': '',
+			'url': '',
+			'hideArrow': true,
+			'image': 'assets/images/wechat-qrcode.png'
+		}
+	];
+	quicklink = [
+		{
+			'icon': ['fas', 'ticket-alt'],
+			'title': 'Get support with E-ticket',
+			'path': '',
+			'url': 'https://pcsupport.lenovo.com/us/en/eticketwithservice',
+			'target': '_blank',
+		},
+		{
+			'icon': ['fas', 'briefcase'],
+			'title': 'Find a service provider',
+			'path': '',
+			'url': 'https://www.lenovo.com/us/en/ordersupport/',
+			'target': '_blank',
 		}
 	];
 

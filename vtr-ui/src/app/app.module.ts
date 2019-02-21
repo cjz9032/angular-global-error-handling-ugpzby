@@ -64,6 +64,8 @@ import { WidgetQuicksettingsComponent } from './components/widgets/widget-quicks
 import { WidgetStatusComponent } from './components/widgets/widget-status/widget-status.component';
 import { WidgetQuestionsComponent } from './components/widgets/widget-questions/widget-questions.component';
 import { WidgetFeedbackComponent } from './components/widgets/widget-feedback/widget-feedback.component';
+import { WidgetDeviceUpdateComponent } from './components/widgets/widget-device-update/widget-device-update.component';
+import { WidgetDeviceUpdateSettingsComponent } from './components/widgets/widget-device-update-settings/widget-device-update-settings.component';
 
 // APPLICATION MODALS
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
@@ -85,6 +87,11 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
+import { EyeCareModeComponent } from './components/display/eye-care-mode/eye-care-mode.component';
+import { PageSupportDetailComponent } from './components/pages/page-support-detail/page-support-detail.component';
+import { WidgetSupportComponent } from './components/widgets/widget-support/widget-support.component';
+import { UiListSupportComponent } from './components/ui/ui-list-support/ui-list-support.component';
+import { WidgetWarrantyComponent } from './components/widgets/widget-warranty/widget-warranty.component';
 
 
 library.add(fas);
@@ -109,6 +116,8 @@ library.add(far);
 		WidgetFeedbackComponent,
 		WidgetStatusComponent,
 		WidgetQuestionsComponent,
+		WidgetDeviceUpdateComponent,
+		WidgetDeviceUpdateSettingsComponent,
 		PageQuestionsComponent,
 		ContainerCardComponent,
 		HeaderMainComponent,
@@ -135,7 +144,15 @@ library.add(far);
 		BatteryCardComponent,
 		BatteryIndicatorComponent,
 		UiRowSwitchComponent,
-		UiHeaderSubpageComponent
+		UiHeaderSubpageComponent,
+		UiSwitchTristateComponent,
+		UiRowSwitchComponent,
+		EyeCareModeComponent,
+		UiHeaderSubpageComponent,
+		PageSupportDetailComponent,
+		WidgetSupportComponent,
+		UiListSupportComponent,
+		WidgetWarrantyComponent
 	],
 	imports: [
 		BrowserModule,

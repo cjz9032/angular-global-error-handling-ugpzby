@@ -1,0 +1,33 @@
+.vtr-eye-care-mode {
+	.mode-slider {
+		width: 100%;
+	}
+	.reset-temperature {
+		width: 17rem;
+		.text {
+			font-size: 1.4rem;
+		}
+	}
+	.eye-care-checkbox {
+		font-size: 1.4rem;
+	}
+
+	.custom-control-label {
+		padding-left: 0.5rem;
+
+		// rounded square-box background
+		&::before {
+			top: 0.2rem;
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+
+		// tick mark
+		&::after {
+			top: 0rem;
+			width: 2rem;
+			height: 2rem;
+			left: -1.7rem;
+		}
+	}
+}

@@ -36,12 +36,13 @@
 		.subtitle {
 			width: 100%;
 
-			h2 {
+			h3 {
 				opacity: 0.8;
 				color: $light;
 				font-size: 1.6rem;
 				line-height: 2.8rem;
 				margin-top: 1.5rem;
+				text-transform: uppercase;
 			}
 
 			p {

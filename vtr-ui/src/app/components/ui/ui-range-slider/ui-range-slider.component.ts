@@ -1,5 +1,13 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Options, ChangeContext } from 'ng5-slider';
+import {
+	Component,
+	OnInit,
+	Input,
+	Output,
+	EventEmitter,
+	SimpleChanges,
+	OnChanges
+} from '@angular/core';
+import { Options, ChangeContext, ValueToPositionFunction } from 'ng5-slider';
 
 @Component({
 	selector: 'vtr-ui-range-slider',
@@ -13,19 +21,26 @@ export class UiRangeSliderComponent implements OnInit {
 
 	@Input() value = 0; // initial slider value
 	@Input() minValue = 0; // slider minimum end value
-	@Input() maxValue = 0; // slider maximum end value
+	@Input() maxValue = 10; // slider maximum end value
 	@Input() step = 1; // ticks or steps to change on each slide
+	@Input() minValueLegend = ''; // label to display at the start of slider
+	@Input() maxValueLegend = ''; // label to display at the end of slider
+	@Input() legendPositionFunction: ValueToPositionFunction; // function to handle legend position for Eye Care
+	@Input() stepsArray: Array<any>; // array with legend value for Eye care
 
 	@Output() change: EventEmitter<number> = new EventEmitter();
 	@Output() valueChange: EventEmitter<number> = new EventEmitter();
 
-	constructor() { }
+	constructor() {}
 
 	ngOnInit() {
 		this.options = {
 			showSelectionBar: true,
 			hideLimitLabels: true,
 			hidePointerLabels: true,
+			showTicks: true,
+			// customValueToPosition: this.legendPositionFunction,
+			stepsArray: this.stepsArray,
 			floor: this.minValue, // min value
 			ceil: this.maxValue, // max value
 			step: this.step // value to change on each slide, default is 1

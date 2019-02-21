@@ -1,3 +1,65 @@
 <div class="vtr-widget-device">
-	
+	<div class="container-fluid p-40">
+		<div class="row mt-20">
+			<div class="col">
+				<div class="family">{{family}}</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="device-sub-header">Serial: {{serial}}</div>
+			<div class="sub-header-separator">
+				<fa-icon [icon]="['fas', 'minus']"></fa-icon>
+			</div>
+			<div class="device-sub-header">Product number: {{productNumber}}</div>
+			<div class="sub-header-separator">
+				<fa-icon [icon]="['fas', 'minus']"></fa-icon>
+			</div>
+			<div class="device-sub-header">Bios version: {{bios}}</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="subheader">{{subtitle}}</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<ul class="status-list">
+					<li *ngFor="let item of dummyDeviceInformation"
+					 [ngClass]="[!item.status?'good':'bad']">
+						<div class="container-fluid">
+							<div class="row align-items-center">
+								<div class="col-auto">
+									<div class="status-icon">
+										<div class="icon-bkg">
+											<fa-icon [icon]="['fas', 'check']"></fa-icon>
+										</div>
+									</div>
+								</div>
+								<div class="col-auto p-0">
+									<div class="title"
+									 [ngClass]="[!item.status?'good':'bad']">
+										{{item.title}}
+									</div>
+									<div class="description row">{{item.description}}</div>
+								</div>
+								<div class="col-auto text-right ml-auto">
+									<a routerLink="/{{item.path}}">
+										<div class="detail"
+										 [ngClass]="{'highlight':item.asLink}">
+											{{item.detail}}
+										</div>
+									</a>
+								</div>
+								<div class="col-auto">
+									<div class="arrow">
+										<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>

@@ -6,8 +6,11 @@
 	background-color: $light;
 	position: relative;
 	overflow: hidden;
-	.row {
+	.container-fluid {
 		height: 100%;
+		.row {
+			height: 100%;
+		}
 	}
 	&.card-highlight {
 		background-size: cover;

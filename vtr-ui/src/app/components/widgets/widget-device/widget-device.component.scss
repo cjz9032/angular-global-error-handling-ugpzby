@@ -1,1 +1,119 @@
-@import '../../../app.theme';
+@import "../../../app.theme";
+
+.vtr-widget-device {
+	box-shadow: $drop_shadow;
+	border-radius: $border_radius;
+	background-color: $light;
+
+	.family {
+		color: $main_dark;
+		font-size: 3.5rem;
+	}
+	.device-sub-header {
+		color: $shade;
+		font-size: 1.5rem;
+	}
+
+	.sub-header-separator {
+		color: $shade;
+		margin-left: 1.5rem;
+		margin-right: 1.5rem;
+		font-size: 1.5rem;
+	}
+
+	.subheader {
+		color: $main_dark;
+		font-size: 2.5rem;
+		margin-top: 4rem;
+		font-weight: $weight_bold;
+	}
+
+	.status-list {
+		margin-top: 2.7rem;
+		list-style: none;
+		padding: 0;
+		background-color: $light;
+		border: 0.1rem solid $shade_lightest;
+		li {
+			margin: 0;
+			padding: 3rem 1.3rem 3rem 0;
+			border-bottom: 1px solid $shade_lighter;
+			&:last-child {
+				border: none;
+			}
+			&:hover {
+				background-color: $shade_extralight;
+			}
+			&.good {
+				.status-icon {
+					.icon-bkg {
+						background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+						border-color: $go_dark;
+					}
+				}
+			}
+			&.bad {
+				.status-icon {
+					.icon-bkg {
+						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+						border-color: $stop_dark;
+					}
+				}
+				.detail {
+					color: $stop;
+				}
+				.arrow {
+					color: $stop;
+				}
+			}
+			a {
+				&:hover {
+					text-decoration: none;
+				}
+			}
+			.status-icon {
+				.icon-bkg {
+					display: inline-block;
+					border-radius: 50%;
+					height: 3.3rem;
+					width: 3.3rem;
+					border-width: 3px;
+					border-style: solid;
+					text-align: center;
+					fa-icon {
+						font-size: 1.6rem;
+						line-height: 2.9rem;
+						color: $light;
+					}
+				}
+			}
+			.title {
+				font-size: 1.5rem;
+				font-weight: $weight_medium;
+				margin-bottom: .5rem;
+				color: $main_darker;
+			}
+			.description {
+				font-size: 1.4rem;
+				color: $shade;
+			}
+			.detail {
+				font-size: 1.4rem;
+				text-decoration: underline;
+				color: $shade_dark;
+				&.highlight {
+					color: $shade_darker;
+					text-decoration: underline;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+			.arrow {
+				color: $main_darker;
+				line-height: 3.8rem;
+				font-size: 1rem;
+			}
+		}
+	}
+}
