@@ -5,7 +5,7 @@
 		margin-top: 2.7rem;
 		list-style: none;
 		padding: 0;
-		background-color: $shade_lightest;
+		background-color: $shade_extralight;
 		border: .1rem solid $shade_lighter;
 		border-radius: $border_radius;
 		li {
@@ -67,7 +67,6 @@
 			.item-text {
 				overflow: hidden;
 				.title {
-					line-height: 1.8rem;
 					font-size: 1.4rem;
 					font-weight: $weight_medium;
 					float: left;
@@ -79,7 +78,6 @@
 					padding-right: .5rem;
 					float: right;
 					text-align: right;
-					line-height: 2.8rem;
 					font-size: 1.2rem;
 					color: $shade_dark;
 					font-style: italic;

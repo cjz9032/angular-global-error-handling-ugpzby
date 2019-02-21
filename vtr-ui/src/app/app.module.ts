@@ -50,6 +50,7 @@ import { PageSecurityWifiComponent } from './components/pages/page-security-wifi
 import { PageSecurityPasswordComponent } from './components/pages/page-security-password/page-security-password.component';
 import { PageSecurityInternetComponent } from './components/pages/page-security-internet/page-security-internet.component';
 
+
 // APPLICATION SUBPAGE COMPONENTS
 import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
@@ -64,6 +65,8 @@ import { WidgetQuicksettingsComponent } from './components/widgets/widget-quicks
 import { WidgetStatusComponent } from './components/widgets/widget-status/widget-status.component';
 import { WidgetQuestionsComponent } from './components/widgets/widget-questions/widget-questions.component';
 import { WidgetFeedbackComponent } from './components/widgets/widget-feedback/widget-feedback.component';
+import { WidgetDeviceUpdateComponent } from './components/widgets/widget-device-update/widget-device-update.component';
+import { WidgetDeviceUpdateSettingsComponent } from './components/widgets/widget-device-update-settings/widget-device-update-settings.component';
 
 // APPLICATION MODALS
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
@@ -78,6 +81,8 @@ import { DashboardService } from './services/dashboard/dashboard.service';
 import { DeviceService } from './services/device/device.service';
 import { SecurityService } from './services/security/security.service';
 import { UserService } from './services/user/user.service';
+import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
+import { CameraDetailMockService } from './services/camera/camera-detail/camera-detail.mock.service';
 
 // FONT AWESOME
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -90,6 +95,12 @@ import { UiButtonComponent } from './components/ui/ui-button/ui-button.component
 import { ConnectedHomeSecurityComponent } from './components/wifi/connected-home-security/connected-home-security.component';
 import { MyConnectedHomeComponent } from './components/wifi/connected-home-security/children/my-connected-home/my-connected-home.component';
 
+import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
+import { CameraControlComponent } from './components/camera-control/camera-control.component';
+import { PageSupportDetailComponent } from './components/pages/page-support-detail/page-support-detail.component';
+import { WidgetSupportComponent } from './components/widgets/widget-support/widget-support.component';
+import { UiListSupportComponent } from './components/ui/ui-list-support/ui-list-support.component';
+import { WidgetWarrantyComponent } from './components/widgets/widget-warranty/widget-warranty.component';
 
 
 library.add(fas);
@@ -114,6 +125,8 @@ library.add(far);
 		WidgetFeedbackComponent,
 		WidgetStatusComponent,
 		WidgetQuestionsComponent,
+		WidgetDeviceUpdateComponent,
+		WidgetDeviceUpdateSettingsComponent,
 		PageQuestionsComponent,
 		ContainerCardComponent,
 		HeaderMainComponent,
@@ -147,7 +160,13 @@ library.add(far);
 		UiHeaderSubpageComponent,
 		UiButtonComponent,
 		ConnectedHomeSecurityComponent,
-		MyConnectedHomeComponent
+		MyConnectedHomeComponent,
+		PageSecurityWindowsHelloComponent,
+		CameraControlComponent,
+		PageSupportDetailComponent,
+		WidgetSupportComponent,
+		UiListSupportComponent,
+		WidgetWarrantyComponent
 	],
 	imports: [
 		BrowserModule,
@@ -168,9 +187,10 @@ library.add(far);
 		DashboardService,
 		DeviceService,
 		SecurityService,
-		UserService
+		UserService,
+		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
 	bootstrap: [AppComponent],
 	entryComponents: [ModalWelcomeComponent]
 })
-export class AppModule { }
+export class AppModule {}

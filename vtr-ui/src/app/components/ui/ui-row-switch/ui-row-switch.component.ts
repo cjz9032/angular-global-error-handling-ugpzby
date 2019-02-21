@@ -13,7 +13,6 @@ import {
 	styleUrls: ['./ui-row-switch.component.scss']
 })
 export class UiRowSwitchComponent implements OnInit {
-
 	@ViewChild('childContent') childContent: any;
 
 	// Use Fort Awesome Font Awesome Icon Reference Array (library, icon class) ['fas', 'arrow-right']
@@ -24,14 +23,19 @@ export class UiRowSwitchComponent implements OnInit {
 	@Input() readMoreText = '';
 	@Input() title = '';
 	@Input() caption = '';
+	@Input() linkPath = '';
+	@Input() linkText = '';
 	@Input() isSwitchVisible = false;
-	@Input() theme: string = 'white';
+	@Input() theme = 'white';
+	@Input() resetText = '';
+	@Input() isSwitchChecked = false;
 
 	@Output() toggleOnOff = new EventEmitter<boolean>();
 	@Output() readMoreClick = new EventEmitter<boolean>();
 	@Output() tooltipClick = new EventEmitter<boolean>();
+	@Output() resetClick = new EventEmitter<Event>();
 
-	constructor() { }
+	constructor() {}
 
 	ngOnInit() {
 		this.childContent = {};
@@ -48,5 +52,9 @@ export class UiRowSwitchComponent implements OnInit {
 
 	public onRightIconClick($event) {
 		this.tooltipClick.emit($event);
+	}
+
+	public onResetClick($event: Event) {
+		this.resetClick.emit($event);
 	}
 }

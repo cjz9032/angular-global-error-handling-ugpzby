@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+// import { ArticlesService } from '../../../services/articles/articles.service';
+import { MockService } from '../../../services/mock/mock.service';
+
 
 @Component({
 	selector: 'vtr-page-support',
@@ -8,24 +11,29 @@ import { Component, OnInit } from '@angular/core';
 export class PageSupportComponent implements OnInit {
 
 	title = 'Get Support';
+	searchWords = '';
+	articles: any;
 
-
-  qAndA = {
-    title: 'Q&A\'s for your machine',
-    description: 'Description of component',
-    data: [
-      { icon: 'fa-plane', question: 'Reduced batterylife working outside.' },
-      { icon: 'fa-plane', question: 'Can I use my Ideapad while in an airplane?' },
-      { icon: 'fa-edge', question: 'Will the security control scanner damage' },
-      { icon: 'fa-amazon', question: 'Reduced batterylife working outside.' },
-      { icon: 'fa-envira', question: 'Can I use my Ideapad while in an airplane?' },
-      { icon: 'fa-chrome', question: 'Will the security control scanner damage' }
-    ]
-  }
-
-	constructor() { }
+	constructor(
+		// public articlesService: ArticlesService,
+		public mockService: MockService,
+	) {
+		// this.getArticles();
+	}
 
 	ngOnInit() {
 	}
+
+	search(words: string) {
+		this.searchWords = words;
+	}
+
+	// getArticles() {
+	// 	this.articlesService.getArticles()
+	// 		.subscribe((data) => {
+	// 			console.log(data);
+	// 			this.articles = data;
+	// 		});
+	// }
 
 }

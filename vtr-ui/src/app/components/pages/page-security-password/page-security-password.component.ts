@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MockService } from 'src/app/services/mock/mock.service';
 
 @Component({
 	selector: 'vtr-page-security-password',
@@ -9,7 +10,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 
 	title = 'Password Health';
 
-	constructor() { }
+	constructor(public mockService: MockService) { }
 
 	ngOnInit() {
 	}

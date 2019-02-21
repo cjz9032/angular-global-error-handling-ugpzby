@@ -1,0 +1,141 @@
+@import "../../../app.theme";
+.vtr-widget-device-update {
+	.systemupdate-background {
+		border-radius: 0.5rem;
+		border-bottom-left-radius: 0rem;
+		border-bottom-right-radius: 0rem;
+		height: 100%;
+		width: 100%;
+		background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
+		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+		.title {
+			color: $light;
+			font-size: 3.5rem;
+			font-weight: $weight_light;
+			line-height: 4.2rem;
+			padding-left: 5rem;
+			padding-top: 5rem;
+			padding-bottom: 2rem;
+			padding-right: 5rem;
+		}
+		.row1 {
+			opacity: 0.5;
+			color: $light;
+			font-size: 1.4rem;
+			line-height: 2.1rem;
+			padding-left: 5rem;
+			padding-top: 0rem;
+			padding-right: 5rem;
+		}
+		.button-row {
+			padding-left: 5rem;
+			padding-bottom: 5rem;
+			padding-top: 3rem;
+			padding-right: 5rem;
+			.action-button {
+				border-radius: 2.5rem;
+				background: $gradient_main;
+				text-transform: uppercase;
+				padding: 0 3rem;
+				color: $light;
+				font-size: 1.5rem;
+				height: 5rem;
+				font-weight: $weight_medium;
+				line-height: 5rem;
+				text-align: center;
+				border: 0rem;
+			}
+		}
+		.progress-div {
+			padding-left: 5rem;
+			padding-right: 5rem;
+			margin-top: 3rem;
+			border-top: 0.1rem solid;
+			border-color: rgba(255, 255, 255, 0.18);
+			.progress-title {
+				color: $light;
+				font-size: 2.5rem;
+				font-weight: $weight_light;
+				line-height: 2.9rem;
+				padding-top: 5rem;
+				padding-bottom: 2rem;
+				padding-right: 5rem;
+			}
+			.progress-percent-text {
+				color: $light;
+				font-size: 2.5rem;
+				font-weight: $weight_light;
+				line-height: 2.9rem;
+				padding-top: 5rem;
+				padding-bottom: 2rem;
+				float: right;
+				.progress-right {
+					float: right;
+					.progress-value-text {
+						color: $light;
+						font-size: 1.4rem;
+						font-weight: $weight_light;
+						line-height: 2.9rem;
+						padding-right: 0rem;
+						padding-left: 0rem;
+						text-align: left;
+						font-size: 3rem !important;
+					}
+					.progress-complete-text {
+						color: $light;
+						font-size: 1.4rem;
+						font-weight: $weight_light;
+						line-height: 2.9rem;
+						padding-right: 0rem;
+						padding-left: 2rem;
+						text-align: left;
+					}
+				}
+			}
+		}
+		.progress-bar-div-container {
+			padding-left: 5rem;
+			padding-right: 5rem;
+
+			.progress-bar-div {
+				padding-left: 5rem;
+				padding-bottom: 1rem;
+				padding-top: 1rem;
+				padding-right: 5rem;
+				border-radius: 1.5rem;
+				background: linear-gradient($gradient_angle_reverse, $main_darkest 0%, $main_darker 100%);
+				::ng-deep .mat-progress-bar-fill::after {
+					background: linear-gradient(90deg, $go 0%, $go 100%);
+				}
+
+				::ng-deep .mat-progress-bar-buffer {
+					background: $light;
+				}
+
+				::ng-deep .mat-progress-bar {
+					border-radius: 0.4rem;
+				}
+			}
+		}
+		.cancel-check {
+			color: $light;
+			font-size: 1.3rem;
+			font-weight: $weight_medium;
+			line-height: 1.5rem;
+			text-align: center;
+			padding-left: 5rem;
+			padding-top: 5rem;
+			padding-bottom: 5rem;
+			padding-right: 5rem;
+			text-transform: uppercase;
+
+			.cancel-check-text {
+				text-decoration: underline;
+				&:hover {
+					color: $light;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}

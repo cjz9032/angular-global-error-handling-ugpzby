@@ -23,19 +23,37 @@ but not to any other element on the page. using ::ng-deep
 			}
 			/* slider thumb */
 			.ng5-slider-pointer {
-				top: calc(100% - 1.4rem);
+				top: calc(100% - 1.6rem);
 				height: $thumb-size;
 				width: $thumb-size;
 				border-radius: 2.8rem;
 				background: linear-gradient($gradient_angle_reverse, $main_light 0%, $main 100%),
 					linear-gradient($gradient_angle, $light 0%, $light 100%);
 				&::after {
-					display: none;
+					background: transparent;
+					font-family: FontAwesome;
+					font-size: 1.6rem;
+					top: calc(100% - 2.5rem);
+					left: calc(100% - 2.2rem);
+					font-weight: normal;
+					color: $light;
+					content: "\f07e"; // unicode for font awesome two sided arrow
 				}
 				&:focus {
 					outline: none;
 				}
+				&:hover {
+					&::after {
+						background: transparent;
+					}
+				}
+				&.ng5-slider-pointer {
+					&:after {
+						background-color: transparent;
+					}
+				}
 			}
+
 			.ng5-slider-bubble {
 				bottom: 1.4rem;
 			}
@@ -48,7 +66,7 @@ but not to any other element on the page. using ::ng-deep
 				margin-left: 0.4rem;
 				border-radius: 0;
 				background: $shade_lighter;
-				top: -16px;
+				top: -1.6rem;
 				left: 0.9rem;
 
 				&.ng5-slider-selected {
