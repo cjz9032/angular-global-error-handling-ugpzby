@@ -19,9 +19,22 @@
   &__account {
     //width: 25%;
   }
+  &__get-figleaf-text {
+    margin: 30px 0 0 0;
+    color: #667481;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 23px;
+  }
+  &__get-figleaf-link {
+
+  }
 }
 
 .more-breaches {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   &__number {
     color: #4A81FD;
     font-size: 44px;
@@ -30,5 +43,8 @@
   }
   &__plus {
     font-weight: 300;
+  }
+  &__btn {
+    @extend %theme-btn;
   }
 }

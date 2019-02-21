@@ -9,5 +9,43 @@
   &__img {
     max-width: 3rem;
     max-height: 3rem;
+    margin: 0 0 7px 0;
+  }
+  &__title {
+    text-transform: uppercase;
+    color: #34495E;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 23px;
+  }
+  &__date {
+    color: #E74C3C;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 14px;
+  }
+  &__credentials {
+    padding: 0 0 0 5px;
+    margin: 10px 0 6px 0;
+    border-left: 1px solid #E74C3C;
+  }
+  &__email {
+    color: #34495E;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 25px;
+  }
+  &__pass {
+    color: #34495E;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 25px;
+  }
+  &__details {
+    color: #4A81FD;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 23px;
+    text-decoration: underline;
   }
 }
