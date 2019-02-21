@@ -1,0 +1,11 @@
+<div class="faq">
+  <div class="faq__head">
+    <h4 class="faq__title">{{mainTitle}}</h4>
+    <a href="{{seeMoreLink}}" class="faq__see-more-link">{{seeMoreText}}</a>
+  </div>
+  <ul class="faq__list">
+    <li class="faq__item" *ngFor="let item of questions">
+      <span class="faq__list-text">{{item.text}}</span>
+    </li>
+  </ul>
+</div>

@@ -72,7 +72,10 @@ const routes: Routes = [
 	}, {
 		path: 'user',
 		component: PageUserComponent
-	}
+	}, {
+        path: 'privacy',
+        loadChildren: './components/pages/page-privacy/privacy.module#PrivacyModule',
+    },
 ];
 
 @NgModule({

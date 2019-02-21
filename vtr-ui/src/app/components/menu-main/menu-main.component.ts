@@ -85,6 +85,12 @@ export class MenuMainComponent implements OnInit {
 			icon: 'support',
 			subitems: []
 		}, {
+            id: 'privacy',
+            label: 'Privacy',
+            path: 'privacy',
+            icon: 'privacy',
+            subitems: []
+        }, {
 			id: 'user',
 			label: 'User',
 			path: 'user',

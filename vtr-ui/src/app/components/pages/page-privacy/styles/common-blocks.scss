@@ -1,0 +1,35 @@
+// abstract fonts classes
+@import "fonts";
+
+%common-block-wrapper {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+}
+
+%subtitle {
+  font-size: $subtitle;
+  color: #34495E;
+  font-weight: 300;
+  line-height: 4.2rem;
+}
+
+%text-common {
+  font-size: $text-block;
+  color: #667481;
+  font-weight: 300;
+  line-height: 4.2rem;
+}
+
+%theme-btn {
+  min-width: 15rem;
+  min-height: 5rem;
+  max-width: 100%;
+  padding: 1.5rem 0.5rem;
+  background-image: linear-gradient(-270deg, #4980FC 0%, #2E62D9 100%);
+  border-radius: 2.5rem;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  letter-spacing: 0.1rem;
+  text-align: center;
+}

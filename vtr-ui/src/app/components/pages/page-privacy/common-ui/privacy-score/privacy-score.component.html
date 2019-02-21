@@ -1,0 +1,14 @@
+<div class="privacy-score">
+  <div class="privacy-score__picture score-pic">
+    <div [class]="'score-pic__circle score-pic__circle--'+privacyLevel">
+      <div class="score-pic__number">
+        {{score}} <span class="score-pic__percent">%</span>
+      </div>
+    </div>
+  </div>
+  <div class="privacy-score__text-block score-description">
+    <h4 class="score-description__title">{{title}}</h4>
+    <p class="score-description__text">{{text}}</p>
+  </div>
+  <div class="privacy-score__btn">{{btn_text}}</div>
+</div>

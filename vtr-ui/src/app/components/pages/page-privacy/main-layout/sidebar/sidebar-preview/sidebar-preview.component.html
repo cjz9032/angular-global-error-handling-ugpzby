@@ -1,0 +1,16 @@
+<div class="sidebar-preview">
+    <div class="sidebar-preview__head">
+        <h4 class="sidebar-preview__title">{{data.mainTitle}}</h4>
+        <a href="{{data.allArticlesLink}}" class="sidebar-preview__see-more-link">{{data.allArticlesText}}</a>
+    </div>
+
+    <a class="sidebar-preview__content" *ngFor="let item of data.items" href="{{item.articleLink}}">
+        <div class="sidebar-preview__image">
+            <img class="sidebar-preview__img" src="{{item.imagePath}}" alt="{{item.title}}"/>
+        </div>
+        <div class="sidebar-preview__text" [class.sidebar-preview__text_up]="item.modifyMode === 'up'">
+            <span class="sidebar-preview__name">{{item.title}}</span>
+            <span class="sidebar-preview__type">{{item.articleType}}</span>
+        </div>
+    </a>
+</div>

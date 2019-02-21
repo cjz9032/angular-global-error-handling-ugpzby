@@ -1,0 +1,35 @@
+@import "../../styles/common-blocks";
+
+.page-banner {
+  background: url("../../../../../../assets/images/privacy-tab/banner.png") center center no-repeat;
+  background-size: cover;
+  border-radius: 1rem;
+  box-shadow: 0 0 1.5rem 0 rgba(0,0,0,0.15);
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  padding: 5rem 3.5rem 5rem 4.2rem;
+  &__text-block {
+    max-width: 57rem;
+    padding: 0 3.8rem 0 0;
+  }
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 2.9rem;
+    margin: 0 0 1.7rem 0;
+  }
+  &__text {
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 3rem;
+  }
+  &__btn {
+    @extend %theme-btn;
+    text-transform: uppercase;
+    min-width: 23.8rem;
+    color: #4A81FD;
+    background: #fff;
+    align-self: center;
+  }
+}

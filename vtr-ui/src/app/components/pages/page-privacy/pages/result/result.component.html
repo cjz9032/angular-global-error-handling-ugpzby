@@ -1,0 +1,22 @@
+<section class="result-page">
+    <h3>Privacy - Overview page</h3>
+    <button (click)="backClicked()"><= back</button>
+
+
+    <div class="result-page__score">
+        <vtr-privacy-score
+                [title]="'Low privacy score'"
+                [text]="'A lot of your personal info is out there. Take control of your privacy by choosing when to be private and what to share on every site you interact with.'"
+                [score]="10"
+                [btn_text]="'Review issues'"
+        ></vtr-privacy-score>
+    </div>
+
+
+    <button (click)="openPopUp()">Who tracks me?</button>
+
+    <tracking-browser-popup
+            [style.visibility]="isPopupOpen ? 'visible' : 'hidden'"
+            (popupClosed)="closePopUp()"
+    ></tracking-browser-popup>
+</section>
