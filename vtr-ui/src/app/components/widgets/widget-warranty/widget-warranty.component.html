@@ -16,6 +16,11 @@
 						<div class="pb-2">Status: <b>{{status.detail[item.status]}}</b></div>
 					</div>
 				</div>
+				<div class="content" *ngIf="item.status == 2">
+					<div class="sub-description pb-40">
+						We were unable to locate warranty details for your device, to have more warranty options, please visit our support website.
+					</div>
+				</div>
 				<div class="button-box">
 					<a role="button" href="{{item.url}}" class="button" target="_blank">VIEW WARRANTY OPTIONS</a>
 				</div>
