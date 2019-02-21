@@ -44,7 +44,7 @@
       &.shift-left {
         top: 20%;
         left: 20%;
-        transform: translate(-20%, -20%);
+        transform: translate(-12%, -12%);
         padding-top: 1rem 0.5rem 0.5rem 0rem;
         margin: 1rem 0.5rem 0.5rem 0rem;
       }
@@ -118,8 +118,10 @@
         font-size: 15rem;
         color: $main;
         text-align: center;
-        display: inline-block;
+        position: relative;
         padding: 4rem;
+        top: 25%;
+        left: 10%;
       }
     }
   }
