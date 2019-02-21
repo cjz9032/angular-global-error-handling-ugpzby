@@ -3,17 +3,16 @@
 
 		<div class="row mt-20">
 			<div class="col">
-				<div class="heading">Connected Home Security</div>
+				<div class="header">
+					<div class="heading">Connected Home Security</div>
+					<div class="text-regular">
+						Connected Home Protection keeps you safe in three ways:
+					</div>
+				</div>
+
 			</div>
 		</div>
 
-		<div class="row mt-20">
-			<div class="col">
-				<div class="text-regular">
-					Connected Home Protection keeps you safe in three ways:
-				</div>
-			</div>
-		</div>
 
 		<div class="row mt-20">
 			<div class="col">
@@ -121,23 +120,31 @@
 
 		<div class="row">
 			<div class="col">
-				<div class="sub-heading">Peace of Mind</div>
-				<div class="text-regular">Connected Home Protection will send you an alert if it detects a vulnerability
-					in your device or home network, or if you are connected to a potentially malicious network. Learn
-					even more in about Connected Home Protection in Tips and Tricks. </div>
+				<div class="peace-of-mind">
+					<div class="sub-heading">Peace of Mind</div>
+					<div class="text-regular">Connected Home Protection will send you an alert if it detects a
+						vulnerability
+						in your device or home network, or if you are connected to a potentially malicious network.
+						Learn
+						even more in about Connected Home Protection in Tips and Tricks. </div>
+
+					<div class="col-sm-3">
+						<div class="button-box shift-left">
+							<vtr-ui-button (onClick)="startTrial($event)"
+								[label]="'Start Trial'"></vtr-ui-button>
+						</div>
+
+					</div>
+				</div>
 
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="col-4">
-				<div class="button-box">
-					<vtr-ui-button [eventBy]="'startTrial'"
-						[name]="'Start Trial'"></vtr-ui-button>
-				</div>
+			<div class="col">
+				<div class="row-seperator">&nbsp;</div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col">
 				<div class="invitation-code-box">
@@ -145,15 +152,16 @@
 						<div class="col">
 							<div class="sub-heading">
 								Already have Connected home security?
+								<div class="text-regular">To fully use this feature lorem ipsum el dolor sit </div>
 							</div>
 
-							<div class="text-regular">To fully use this feature lorem ipsum el dolor sit </div>
+
 
 						</div>
-						<div class="col">
-							<div class="button-box">
-								<vtr-ui-button [eventBy]="'enter-invitation-code'"
-									[name]="'Enter invitation code'"></vtr-ui-button>
+						<div class="col-5">
+							<div class="button-box shift-right">
+								<vtr-ui-button (onClick)="enterActivationCode($event)"
+									[label]="'Enter invitation code'"></vtr-ui-button>
 							</div>
 						</div>
 					</div>

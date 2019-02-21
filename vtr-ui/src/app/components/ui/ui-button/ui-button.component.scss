@@ -1,16 +1,16 @@
 @import "../../../app.theme";
 .vtr-ui-button {
   .button-box {
-    padding: 0rem;
+    padding: 0.5rem;
     .button {
       text-transform: uppercase;
-      height: 5.5rem;
+      height: 6rem;
       width: 100%;
       border-radius: 2.25rem;
       background: $gradient_main;
       border: none;
       color: $light;
-      font-size: 1.4rem;
+      font-size: 2rem;
       font-weight: $weight_medium;
       text-align: center;
       text-decoration: none;

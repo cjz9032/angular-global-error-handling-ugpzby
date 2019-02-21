@@ -12,4 +12,11 @@ export class ConnectedHomeSecurityComponent implements OnInit {
 	ngOnInit() {
 	}
 
+	startTrial(event) {
+		console.log('startTrial', event);
+	}
+
+	enterActivationCode(event) {
+		console.log('enterActivationCode', event);
+	}
 }
