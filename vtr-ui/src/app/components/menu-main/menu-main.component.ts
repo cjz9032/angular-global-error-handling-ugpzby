@@ -77,6 +77,12 @@ export class MenuMainComponent implements OnInit {
 				path: 'internet-protection',
 				icon: '',
 				subitems: []
+			}, {
+				id: 'windows-hello',
+				label: 'Windows Hello',
+				path: 'windows-hello',
+				icon: '',
+				subitems: []
 			}]
 		}, {
 			id: 'support',
