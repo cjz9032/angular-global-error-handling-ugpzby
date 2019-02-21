@@ -2,10 +2,17 @@
 
 This document descripts the APIs between UI and feature set of Hardware Settings.
 
-##1.Audio
-Audio related features need import “hwsettings_base.js” and “hwsettings_audio.js”.
+We expose the APIs as "FeatureSet", these classes would hide the requests to hardware or plugins. For UI level, we can simply invoke functions, or get properties.
 
-We create an object named "hws.audio", which can support most of audio APIs, you can invoke its sub functions to get or set properties.
+We use "data" as property prefix string because there are so many fields for Javascript, it is hard to remember or find the key information. "data" prefix can help us to use intellisense of IDE like VS Code.
+
+
+##1.Audio
+Audio related features need import “hws.audio-feature.js”.
+
+For audio feature, we have two clesses which named "DolbyFeature" and "MicrophoneFeatre". You **MUST** create instance from them.
+
+They can support most of audio APIs.
 
 ###Dolby
 
@@ -14,15 +21,15 @@ We create an object named "hws.audio", which can support most of audio APIs, you
 - Change Dolby mode
 
 ####Command
-hws.audio.dolby.getSettings()
+*DolbyFeature*.getDolbySettings()
 
-	Get all the Dolby related settigns.
+	Get all the Dolby related settigns. Please notice that here DolbyFeature is the instance object.
 
-hws.audio.dolby.SetProfile(value)
+*DolbyFeature*.setDolbyProfile(value)
 
 	True means turn on Dolby profile.
 
-hws.audio.dolby.SetMode(value)
+*DolbyFeature*.setDolbyMode(value)
 
 	Pass the Dolby mode with const string
 
@@ -43,38 +50,41 @@ Maxx audio and Dolby are different vendors, at most only one feature will suppor
 - Turn on/off “Automatic Audio optimization”
 
 ####Command
-hws.audio.microphone.setMicrophoneMute(mute)
+*MicrophoneFeature*.getMicrophoneSettings()
+
+	Get all the microphone settings. Please notice that here MicrophoneFeature is the instance object.
+
+*MicrophoneFeature*.setMicrophoneMute(mute)
 
 	If you want to mute microphone, you should pass true, else use false.
 
-hws.audio.microphone.setMicrophoneVolume(volume)
+*MicrophoneFeature*.setMicrophoneVolume(volume)
 
 	Pass the value user selected from the slider control.
 
-hws.audio.microphone.setMicrophoneOptimization(index)
+*MicrophoneFeature*.setMicrophoneOptimization(index)
 
 	Pass the index of the microphone opitimaztion
 
-hws.audio.microphone.setMicrophoneAutoOptimization(value)
+*MicrophoneFeature*.setMicrophoneAutoOptimization(value)
 
 	True means this feature will be enabled.
 
-hws.audio.microphone.setMicrophoneAEC(value)
+*MicrophoneFeature*.setMicrophoneAEC(value)
 
 	True means this feature will be enabled.
 
-hws.audio.microphone.setMicrophoneSuppress(value)
+*MicrophoneFeature*.setMicrophoneSuppress(value)
 
 	True means this feature will be enabled.
 
-
-hws.audio.microphone.startMonitor(callback)
+*MicrophoneFeature*.startMonitor(callback)
 
 	You should call this function when user enter the audio page or dashboard page. Or restore the app at these pages. The background is user may use hotkey to change microphone settings outside the Vantage app, so we need to monitor these changes, and update our stauts as well.
 
 	The argument "callback" is the fucntion we will invoke when change happens.
 
-hws.audio.microphone.stopMonitor()
+*MicrophoneFeature*.stopMonitor()
 
 	You should call this funtion when user leave the audio page or dashboard page. Or minimum the app, then plugin will stop to monitor the microphone changes.
 
@@ -83,7 +93,8 @@ hws.audio.microphone.stopMonitor()
 Please notice that, not all the systems support “Suppress keyboard noise”, "Acoustic Echo Cancellation”, “Automatic Audio optimization” features, please check API response.
 
 ##2.Display
-Audio related features need import “hwsettings_base.js” and “hwsettings_display.js”.
+Display related features need import “hws.display-feature.js”.
+
 ###EyeCare Mode
 
 ####Feature List:
@@ -92,25 +103,33 @@ Audio related features need import “hwsettings_base.js” and “hwsettings_di
 - Turn on/off auto care mode
 
 ####Command
-hws.display.eyecaremode.setQuickMode(value)
+*EyeCareModeFeature*.getSettings()
+
+	Get all the settings for Eye Care Mode. Please notice that here EyeCareModeFeature is the instance object.
+
+*EyeCareModeFeature*.setQuickMode(value)
 
 	True means the pluign will change to 4500K directly.
 
-hws.display.eyecaremode.setEyeCareValue(value)
+*EyeCareModeFeature*.setEyeCareValue(value)
 
 	Plugin will change the color tempreture to this value.
 
-hws.display.eyecaremode.setAutoMode(value)
+*EyeCareModeFeature*.setAutoMode(value)
 
 	Plugin will change the color tempreture based on user location.
 
-hws.display.eyecaremode.startMonitor()
+*EyeCareModeFeature*.resetSettings()
+
+	Reset all the settings to the default settings from hardware or plugin.
+
+*EyeCareModeFeature*.startMonitor(callback)
 
 	You should call this function when user enter the audio page or dashboard page. Or restore the app at these pages. The background is user may change color tempreture in Windows Settings, so we need to monitor and update our stauts as well.
 
 	The argument "callback" is the fucntion we will invoke when change happens.
 
-hws.display.eyecaremode.stopMonitor()
+*EyeCareModeFeature*.stopMonitor()
 
 	You should call this funtion when user leave the audio page or dashboard page. Or minimum the app, then plugin will stop to monitor the change.
 
