@@ -1,0 +1,85 @@
+@import "../../../app.theme.scss";
+
+.vtr-widget-reboot {
+	border-radius: $border_radius;
+	background: $main;
+	background-size: cover;
+	color: $light;
+	box-shadow: $drop_shadow;
+	padding: 4rem;
+	letter-spacing: 0;
+
+	.container-fluid {
+		.col {
+			z-index: 1;
+		}
+	}
+
+	.title {
+		font-size: 2.5rem;
+		font-weight: $weight_bold;
+		padding-bottom: 1rem;
+	}
+
+	.description {
+		font-size: 1.3rem;
+		font-weight: $weight_medium;
+		opacity: 0.8;
+		padding-bottom: 1rem;
+	}
+
+	.button-box {
+		display: inline-block;
+	}
+
+	.button {
+		text-transform: uppercase;
+		display: inline-block;
+		height: 5rem;
+		border: none;
+		border-radius: 10rem;
+		background: $light;
+		padding: 1.5rem 3rem;
+		color: $main;
+		font-size: 1.5rem;
+		letter-spacing: 0.1rem;
+		font-weight: 500;
+		text-align: center;
+		text-decoration: none;
+		cursor: pointer;
+
+		&:hover {
+			box-shadow: none;
+			background: $main_lightest;
+		}
+
+		&:focus {
+			box-shadow: none;
+		}
+	}
+
+	.link {
+		text-transform: uppercase;
+		display: inline-block;
+		padding: 0rem 0rem 0rem 2rem;
+		color: $light;
+		font-size: 1.5rem;
+		letter-spacing: 0.1rem;
+		text-align: center;
+		text-decoration: underline;
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: 0rem;
+		top: 75%;
+		left: 10%;
+		width: 0rem;
+		height: 0rem;
+		border: 2.5rem solid transparent;
+		border-color: $main;
+		border-radius: 1rem;
+		transform: rotate(45deg);
+	}
+}

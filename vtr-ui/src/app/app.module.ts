@@ -101,6 +101,7 @@ import { PageSupportDetailComponent } from './components/pages/page-support-deta
 import { WidgetSupportComponent } from './components/widgets/widget-support/widget-support.component';
 import { UiListSupportComponent } from './components/ui/ui-list-support/ui-list-support.component';
 import { WidgetWarrantyComponent } from './components/widgets/widget-warranty/widget-warranty.component';
+import { WidgetRebootComponent } from './components/widgets/widget-reboot/widget-reboot.component';
 
 
 library.add(fas);
@@ -166,7 +167,8 @@ library.add(far);
 		PageSupportDetailComponent,
 		WidgetSupportComponent,
 		UiListSupportComponent,
-		WidgetWarrantyComponent
+		WidgetWarrantyComponent,
+		WidgetRebootComponent
 	],
 	imports: [
 		BrowserModule,
