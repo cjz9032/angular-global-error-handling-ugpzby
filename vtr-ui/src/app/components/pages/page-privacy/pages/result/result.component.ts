@@ -10,6 +10,7 @@ import { ServerCommunicationService } from '../../common-services/server-communi
 export class ResultComponent implements OnInit{
 	public isPopupOpen: boolean;
 	public breached_accounts: any[];
+	public breached_accounts_show: any[];
 
 	constructor(private _location: Location, private serverCommunicationService: ServerCommunicationService) {
 		this.isPopupOpen = false;
@@ -17,6 +18,7 @@ export class ResultComponent implements OnInit{
 
 	ngOnInit() {
 		this.breached_accounts = this.serverCommunicationService.breachedAccounts;
+		this.breached_accounts_show = this.breached_accounts.slice(0, 3);
 	}
 
 	backClicked() {
