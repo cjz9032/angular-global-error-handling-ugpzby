@@ -1,95 +1,16 @@
 <div class="vtr-page-device vtr-page">
-	<div class="row vtr-page-header">
-		<div class="col vtr-col">
-			<vtr-header-main [title]="title"></vtr-header-main>
+		<div class="row vtr-page-header">
+			<div class="col vtr-col">
+				<vtr-header-main [title]="title"></vtr-header-main>
+			</div>
 		</div>
-	</div>
-	<div class="row vtr-page-content">
-		<div class="col vtr-col">
-			<div class="container-fluid">
+		<div class="row vtr-page-content">
+			<div class="col vtr-col">
 				<div class="row">
 					<div class="col col-8 vtr-page-left-column">
-						<div class="vtr-page-shift-up">
-							<div class="vtr-device-information position-relative">
-								<div class="container-fluid">
-									<div class="row">
-										<div class="col-auto mr-auto">
-											<div class="row">
-												<div class="col">
-													<div class="family">{{deviceService.family}}</div>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col">
-													<div class="device-sub-header">Serial: {{deviceService.serial}}</div>
-													<div class="sub-header-separator">
-														<fa-icon [icon]="['fas', 'minus']"></fa-icon>
-													</div>
-													<div class="device-sub-header">Product number: {{deviceService.productNumber}}</div>
-													<div class="sub-header-separator">
-														<fa-icon [icon]="['fas', 'minus']"></fa-icon>
-													</div>
-													<div class="device-sub-header">Bios version: {{deviceService.bios}}</div>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col">
-													<div class="subheader">{{deviceService.subtitle}}</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-auto">
-											<div class="quarterCircleBottomRight">
-												<img class="img-absolute img-fluid" src="./../../../../assets/images/laptop.png"/>
-											</div>
-										</div>
-									</div>
-
-									<div class="row position-relative" style="z-index:102;">
-										<div class="col">
-											<ul class="status-list">
-												<li *ngFor="let item of deviceService.dummyDeviceInformation"
-													[ngClass]="[!item.status?'good':'bad']">
-													<div class="container-fluid">
-														<div class="row">
-															<div class="col-1">
-																<div class="status-icon">
-																	<div class="icon-bkg">
-																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
-																	</div>
-																</div>
-															</div>
-															<div class="col-7">
-																<div class="title"
-																	 [ngClass]="[!item.status?'good':'bad']">
-																	{{item.title}}
-																</div>
-																<div class="description row">{{item.description}}</div>
-															</div>
-															<div class="col-3 text-right">
-																<a routerLink="/{{item.path}}">
-																	<div class="detail"
-																		 [ngClass]="{'highlight':item.asLink}">
-																		{{item.detail}}
-																	</div>
-																</a>
-															</div>
-
-															<div class="col-1">
-																<div class="arrow">
-																	<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
-																</div>
-															</div>
-														</div>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</div>
-
-
-								</div>
-
+						<div class="vtr-subpage">
+							<div class="vtr-page-shift-up">
+								<vtr-widget-device></vtr-widget-device>
 							</div>
 						</div>
 					</div>
@@ -99,42 +20,40 @@
 								<div class="row mb-40">
 									<div class="col col-12">
 										<vtr-container-card [img]="'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg'"
-															[title]="'Try out McAfee anti-virus software for 6 months'"
-															[logoText]="'LENEVO SPECIAL'"
-															[readMore]="'http://www.google.com'"
-															[type]="'article'"
-															[ratioX]="4"
-															[ratioY]="4">
+										 [title]="'Try out McAfee anti-virus software for 6 months'"
+										 [logoText]="'LENEVO SPECIAL'"
+										 [readMore]="'http://www.google.com'"
+										 [type]="'article'"
+										 [ratioX]="4"
+										 [ratioY]="4">
 										</vtr-container-card>
 									</div>
 								</div>
-
+	
 								<div class="row">
 									<div class="col col-12 aritcle-card">
 										<vtr-container-card [img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
-															[title]="'Ideas on how to handle all your passwords online'"
-															[readMore]="'http://www.google.com'"
-															[type]="'partnerarticle'"
-															[ratioX]="4"
-															[ratioY]="2.5">
+										 [title]="'Ideas on how to handle all your passwords online'"
+										 [readMore]="'http://www.google.com'"
+										 [type]="'partnerarticle'"
+										 [ratioX]="4"
+										 [ratioY]="2.5">
 										</vtr-container-card>
 									</div>
 								</div>
-
+	
 								<div class="row mb-40">
 									<div class="col col-12 cont">
-										<div class="heading mb-40">Helpful content</div>
+										<div class="widget-heading mb-40">Helpful content</div>
 										<vtr-widget-questions [title]="'Q&A\'s for your Machine'"
-															  [description]="'Find answers for your Ideapad'"
-															  [items]="mockService.qA"></vtr-widget-questions>
+										 [description]="'Find answers for your Ideapad'"
+										 [items]="mockService.qA"></vtr-widget-questions>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
