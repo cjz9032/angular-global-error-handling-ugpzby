@@ -33,18 +33,31 @@
 
 .more-breaches {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
+  &__number-wrapper {
+    align-self: flex-end;
+    justify-content: center;
+  }
   &__number {
     color: #4A81FD;
     font-size: 44px;
     font-weight: bold;
     line-height: 23px;
+    display: flex;
+    justify-content: center;
   }
   &__plus {
     font-weight: 300;
   }
+  &__description {
+    color: #34495E;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 17px;
+  }
   &__btn {
     @extend %theme-btn;
+    align-self: flex-end;
   }
 }
