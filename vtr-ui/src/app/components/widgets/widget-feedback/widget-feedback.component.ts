@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
 	selector: 'vtr-widget-feedback',
@@ -19,8 +19,8 @@ export class WidgetFeedbackComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	submitAction() {
-		console.log('submit action is clicked');
+	feedback() {
+		console.log('Give Feedback button is clicked');
 		window.alert('Under construction');
 	}
 }

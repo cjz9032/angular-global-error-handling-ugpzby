@@ -107,7 +107,7 @@ export class MockService {
 			'id': 'windows-hello',
 			'title': 'Windows Hello',
 			'detail': 'disabled',
-			'path': 'security'
+			'path': 'windows-hello'
 
 		}
 	];
