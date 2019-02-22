@@ -37,7 +37,7 @@
 				border-radius: 2.5rem;
 				background-color: $shade_extralight;
 				padding-top: 2rem;
-				padding-bottom: 2rem;
+				padding-bottom: 1rem;
 				text-align: center;
 				font-size: 1.1rem;
 			}
@@ -45,15 +45,15 @@
 				border-radius: 2.5rem;
 				background-color: $shade_extralight;
 				padding-top: 2rem;
-				padding-bottom: 2rem;
+				padding-bottom: 1rem;
 				text-align: center;
 				font-size: 1.1rem;
 			}
 			.installation-history-text {
 				border-radius: 2.5rem;
 				background-color: $shade_extralight;
-				padding-top: 2rem;
-				padding-bottom: 1rem;
+				padding-top: 1rem;
+				padding-bottom: 0rem;
 				text-align: center;
 			}
 			.status-list {
@@ -75,7 +75,7 @@
 					&:hover {
 						background-color: $shade_extralight;
 					}
-					&.good {
+					&.success {
 						.status-icon {
 							.icon-bkg {
 								background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
@@ -86,7 +86,18 @@
 							color: $main_shade;
 						}
 					}
-					&.bad {
+					&.fail {
+						.status-icon {
+							.icon-bkg {
+								background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+								border-color: $stop_dark;
+							}
+						}
+						.title {
+							color: $main_shade;
+						}
+					}
+					&.pause {
 						.status-icon {
 							.icon-bkg {
 								background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
