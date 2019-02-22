@@ -19,12 +19,12 @@
 							<div class="row inset-content align-items-center justify-content-center py-3">
 
 								<div class="col-auto ml-auto px-0">
-									<div class="icon-bkg text-center">
+									<div class="icon-bkg text-center cursor-pointer" (click)="qa.like=!qa.like">
 										<fa-icon [icon]="['far','thumbs-up']"></fa-icon>
 									</div>
 								</div>
 								<div class="col-auto px-2 ">
-									<div class="icon-bkg text-center">
+									<div class="icon-bkg text-center cursor-pointer" (click)="qa.dislike=!qa.dislike">
 										<fa-icon [icon]="['far','thumbs-down']"></fa-icon>
 									</div>
 								</div>

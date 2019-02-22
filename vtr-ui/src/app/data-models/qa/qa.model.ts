@@ -1,7 +1,9 @@
 export class QA{
 	id:number;
-	icon:string;
+	iconPath:string;
 	path:string;
 	title:string;
 	description:string;
+	like:boolean;
+	dislike:boolean;
 }
