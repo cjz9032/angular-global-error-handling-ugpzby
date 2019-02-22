@@ -27,11 +27,11 @@ They can support most of audio APIs.
 
 *DolbyFeature*.setDolbyProfile(value)
 
-	True means turn on Dolby profile.
+	True means turn on Dolby profile. Here value is bool type.
 
 *DolbyFeature*.setDolbyMode(value)
 
-	Pass the Dolby mode with const string
+	Pass the Dolby mode with const string. Here value is string type, you can use Dynamic/Movie/Music/Games/Voip
 
 
 ####Comment
@@ -60,23 +60,23 @@ Maxx audio and Dolby are different vendors, at most only one feature will suppor
 
 *MicrophoneFeature*.setMicrophoneVolume(volume)
 
-	Pass the value user selected from the slider control.
+	Pass the value user selected from the slider control. volume is the int number.
 
-*MicrophoneFeature*.setMicrophoneOptimization(index)
+*MicrophoneFeature*.setMicrophoneOptimization(name)
 
-	Pass the index of the microphone opitimaztion
+	Pass the index of the microphone opitimaztion. name is the string,   VoiceRecognition/MultipleVoices/OnlyMyVoice/Normal
 
 *MicrophoneFeature*.setMicrophoneAutoOptimization(value)
 
-	True means this feature will be enabled.
+	True means this feature will be enabled. Here value is bool value.
 
 *MicrophoneFeature*.setMicrophoneAEC(value)
 
-	True means this feature will be enabled.
+	True means this feature will be enabled.. Here value is bool value.
 
-*MicrophoneFeature*.setMicrophoneSuppress(value)
+*MicrophoneFeature*.setMicrophoneKeyboardNoiseSuppression(value)
 
-	True means this feature will be enabled.
+	True means this feature will be enabled. Here value is bool value.
 
 *MicrophoneFeature*.startMonitor(callback)
 
@@ -138,7 +138,98 @@ Display related features need import “hws.display-feature.js”.
 We support this feature from Win10 RS2.
 
 ##3.Camera
+Camera related features need import “hws.camera-feature.js”.
+###Camera Privew
+
+*CameraFeature*.startCameraPrivew(id)
+
+	Init and start camera privew for video UI control, need video control id
+	code sample: 
+	<video id="cameraPreview" class="cameraPreview"></video>
+	CameraFeature.startCameraPrivew(cameraPreview)
+
+
+*CameraFeature*.stopCameraPrivew(id)
+
+	Stop and clean camera privew stream. 
+###Camera Settings
+*CameraFeature*.getCameraSettings()
+
+	Get all camera settings state, include brigtness, contrast, exposure, focus
+	mock data:
+	{
+		"brightness": {
+		"supported": true, // true means brightness slider bar can be shown
+		"min": -64, // slider bar min value
+		"max": 64, // slider bar max value
+		"step": 1, // step frequnce
+		"default": 0, // 
+		"value": 0 // current value
+		},
+		"contrast": {
+		"supported": true,
+		"min": 0,
+		"max": 95,
+		"step": 1,
+		"default": 0,
+		"value": 0
+		},
+		"exposure": {
+		"autoModeSupported": true, // true means auto exposure mode toggle button can be shown 
+		"autoValue": true, // true means auto exposure mode enabled
+		"supported": true, // true means exposure slider bar can be shown
+		"min": -10,
+		"max": -2,
+		"default": -5,
+		"value": -5
+		},
+		"focus": {
+		"autoModeSupported": false,
+		"autoValue": false,
+		"supported": false,
+		"min": 0,
+		"max": 0,
+		"default": 0,
+		"value": 0
+		}
+	}
+
 ###Camera Privacy
+*CameraFeature*.getCameraPrivacyStatus()
+
+	Get camera privacy mode status
+	{
+		available: true|false, // false mean camara not exist,
+		status:true|false, //true means on otherwise off
+	}
+
+*CameraFeature*.setCameraPrivacyStatus(state)
+
+	Set camera privacy mode status, true/false
+####Feature List:
+- Show camera privew
+- Get/Set camera settings
+- Turn on/off camera privacy
+
+##4.Smart Settings
+Smart Settings related features need import “hws.smartsettings-feature.js”.
+
+###Application-based Settings
 
 ####Feature List:
-- Turn on/off camera privacy
+- Turn on/off "Automatic Dolby Audio Settings" (key: Audio)
+- Turn on/off "Smart Mute" function (key: SmartMute)
+- Turn on/off "Full Screen" function (key: FullScreen)
+- Turn on/off "Touch Screen" function (key: TouchScreen)
+
+####Command
+*ABSFeature*.getFeatureStatus()
+
+	ABSFeature is the instance object, and the function is to list the supported ABS features and status. Please show the feature toggles depends on the response list, and please notice the item "Touch Screen" function will always be returned, but you can show it only if the "Full Screen" function are supported.
+
+*ABSFeature*.setFeatureStatus(key, value)
+
+	key is one of features you need to set in the Feature List upper, and the value is Open/Close.
+
+
+####Comment

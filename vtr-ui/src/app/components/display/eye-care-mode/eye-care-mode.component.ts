@@ -18,8 +18,6 @@ export class EyeCareModeComponent implements OnInit {
 	ngOnInit() {}
 
 	public legendPosition(index: number): number {
-		console.log(index);
-
 		if (index === 1) {
 			return 0.5;
 		} else if (index === 2) {
