@@ -9,7 +9,7 @@ import { MockService } from 'src/app/services/mock/mock.service';
 export class PageSecurityPasswordComponent implements OnInit {
 
 	title = 'Password Health';
-
+	IsDashlaneInstalled: string="not-installed";
 	constructor(public mockService: MockService) { }
 
 	ngOnInit() {
