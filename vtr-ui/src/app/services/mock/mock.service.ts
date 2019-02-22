@@ -167,7 +167,7 @@ export class MockService {
 		},
 		{
 			'icon': ['fas', 'share-alt'],
-			'title': 'Contact Costumer service',
+			'title': 'Contact Customer service',
 			'path': '',
 			'url': 'https://support.lenovo.com/',
 			'target': '_blank',
