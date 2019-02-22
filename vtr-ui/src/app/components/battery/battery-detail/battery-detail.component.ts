@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
 import { BatteryDetailMockService } from 'src/app/services/battery-detail/battery-detail.mock.service';
@@ -16,10 +15,7 @@ import { BaseBatteryDetail } from 'src/app/services/battery-detail/base-battery-
 export class BatteryDetailComponent implements OnInit {
 	public dataSource: BatteryDetail[];
 
-	constructor(
-		private modalService: NgbModal,
-		private batteryDetailService: BaseBatteryDetail
-	) {
+	constructor(private batteryDetailService: BaseBatteryDetail) {
 		this.batteryDetailService
 			.getBatteryDetail()
 			.subscribe((response: BatteryDetail[]) => {
