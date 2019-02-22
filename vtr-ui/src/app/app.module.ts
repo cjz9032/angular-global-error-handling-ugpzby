@@ -101,6 +101,7 @@ import { PageSupportDetailComponent } from './components/pages/page-support-deta
 import { WidgetSupportComponent } from './components/widgets/widget-support/widget-support.component';
 import { UiListSupportComponent } from './components/ui/ui-list-support/ui-list-support.component';
 import { WidgetWarrantyComponent } from './components/widgets/widget-warranty/widget-warranty.component';
+import { ModalLenovoIdComponent } from './modal-lenovo-id/modal-lenovo-id.component';
 
 
 library.add(fas);
@@ -166,7 +167,8 @@ library.add(far);
 		PageSupportDetailComponent,
 		WidgetSupportComponent,
 		UiListSupportComponent,
-		WidgetWarrantyComponent
+		WidgetWarrantyComponent,
+		ModalLenovoIdComponent
 	],
 	imports: [
 		BrowserModule,

@@ -35,7 +35,14 @@ export class UserService {
 	}
 
 	setAuth() {
-		this.auth = true;
+		this.devService.writeLog('SET AUTH');
+		const self = this;
+		this.commsService.login().subscribe((res) => {
+			self.devService.writeLog('LOGIN RES', res);
+			this.auth = true;
+		}, (err) => {
+			self.commsService.handleAPIError('Login Error', err);
+		});
 	}
 
 	removeAuth() {
