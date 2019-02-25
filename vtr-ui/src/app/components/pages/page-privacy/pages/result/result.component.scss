@@ -2,7 +2,7 @@
 
 .breaches-block {
   margin: 5rem 0 0 0;
-  padding: 3.5rem 6.5rem 3rem 4rem;
+  padding: 3.5rem 4rem 3rem 4rem;
   &__wrapper {
     @extend %common-block-wrapper;
   }
@@ -12,13 +12,21 @@
   &__text {
     @extend %text-common;
   }
-  &__accounts-container {
+  &__accounts-raw {
+    width: 100%;
     display: flex;
     justify-content: space-between;
   }
+  &__accounts-container {
+    display: flex;
+    justify-content: space-between;
+    width: 66%;
+    :last-child {
+      margin: 0;
+    }
+  }
   &__account {
-    width: 22%;
-    margin: 0 10px 0 0;
+    width: calc(100% / 3 - 15px);
   }
   &__get-figleaf-text {
     margin: 30px 0 0 0;
@@ -36,7 +44,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: calc(34% - 30px);
+  width: 34%;
   &__number-wrapper {
     align-self: flex-end;
     justify-content: center;
@@ -47,7 +55,6 @@
     color: #4A81FD;
     font-size: 44px;
     font-weight: bold;
-    line-height: 23px;
     display: flex;
     justify-content: center;
   }
@@ -62,6 +69,7 @@
   }
   &__btn {
     @extend %theme-btn;
+    min-width: 180px;
     align-self: flex-end;
     font-weight: 500;
     text-transform: uppercase;
