@@ -1,23 +1,23 @@
 @import '../../../app.theme';
 
+.vtr-page-dashboard {
+	.p-30 {
+		padding: 1.875rem;
+	}
 
-.p-30 {
-  padding: 1.875rem
-}
+	.pl-40 {
+		padding-left: 2.5rem;
+	}
 
+	.pr-40 {
+		padding-right: 2.5rem;
+	}
 
-.pl-40 {
-  padding-left: 2.5rem;
-}
+	.pa-20 {
+		padding: 1.25rem;
+	}
 
-.pr-40 {
-  padding-right: 2.5rem;
-}
-
-.pa-20 {
-  padding: 1.25rem
-}
-
-.mt--50 {
-  margin-top: -5.3125rem;
+	.mt--50 {
+		margin-top: -5.3125rem;
+	}
 }
