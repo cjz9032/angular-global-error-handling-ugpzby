@@ -2,12 +2,11 @@
 
 .vtr-widget-reboot {
 	border-radius: $border_radius;
-	background: $main;
+	background: $gradient_main;
 	background-size: cover;
 	color: $light;
 	box-shadow: $drop_shadow;
-	padding: 4rem;
-	letter-spacing: 0;
+	padding: 3rem 4rem;
 
 	.container-fluid {
 		.col {
@@ -16,16 +15,15 @@
 	}
 
 	.title {
-		font-size: 2.5rem;
-		font-weight: $weight_bold;
+		font-size: 2.2rem;
+		font-weight: $weight_medium;
 		padding-bottom: 1rem;
 	}
 
 	.description {
 		font-size: 1.3rem;
-		font-weight: $weight_medium;
-		opacity: 0.8;
 		padding-bottom: 1rem;
+		color: $shade_lighter;
 	}
 
 	.button-box {
@@ -47,6 +45,7 @@
 		text-align: center;
 		text-decoration: none;
 		cursor: pointer;
+		margin: 1rem 0;
 
 		&:hover {
 			box-shadow: none;
@@ -72,13 +71,12 @@
 	&:after {
 		content: "";
 		position: absolute;
-		bottom: 0rem;
-		top: 75%;
-		left: 10%;
+		bottom: 2rem;
+		left: 4rem;
 		width: 0rem;
 		height: 0rem;
 		border: 2.5rem solid transparent;
-		border-color: $main;
+		border-color: $main_gstart;
 		border-radius: 1rem;
 		transform: rotate(45deg);
 	}
