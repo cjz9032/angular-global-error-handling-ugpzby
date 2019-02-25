@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ServerCommunicationService } from "../../common-services/server-communication.service";
 
 @Component({
@@ -7,6 +7,8 @@ import { ServerCommunicationService } from "../../common-services/server-communi
 	styleUrls: ['./browser-accounts-block.component.scss']
 })
 export class BrowserAccountsBlockComponent implements OnInit {
+	@Input() inputData?: {title: string, showDetailAction: 'expand' | 'link'};
+
 	public installedBrowsersNames: Array<string>;
 	public installedBrowsers: Array<object>;
 

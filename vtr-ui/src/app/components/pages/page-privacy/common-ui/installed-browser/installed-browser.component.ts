@@ -8,10 +8,10 @@ import { ServerCommunicationService } from "../../common-services/server-communi
 })
 export class InstalledBrowserComponent implements OnInit {
 	@Input() showDetailAction: 'link' | 'expand';
-	@Input() installedBrowser: object;
+	@Input() installedBrowser: {name: string, image_url: string};
 
 	public isDetailsExpanded: boolean;
-	public browserAccounts;
+	public browserAccounts: {email?: string, password?: string, image?: string};
 
 	constructor(private serverCommunicationService: ServerCommunicationService) {
 	}

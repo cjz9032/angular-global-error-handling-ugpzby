@@ -12,7 +12,7 @@
   </div>
   <div *ngIf="isDetailsExpanded" class="installed-browser__content">
     <div *ngIf="!browserAccounts || !browserAccounts.length" class="browser-preview">
-      <p class="browser-preview__text">Find out what password are being stored unsafely in Chrome</p>
+      <p class="browser-preview__text">Find out what password are being stored unsafely in {{installedBrowser.name}}</p>
       <button class="browser-preview__btn" (click)="showBrowserAccounts()">Show me</button>
     </div>
     <div *ngIf="browserAccounts && browserAccounts.length" class="browser-accounts">
