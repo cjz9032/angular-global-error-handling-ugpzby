@@ -85,4 +85,25 @@
 }
 
 .browser-accounts {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+}
+
+.browser-account {
+  padding: 2rem;
+  border: 1px solid #ECF0F1;
+  border-top: 0;
+  display: flex;
+  align-items: center;
+  &--first {
+    border-top: 1px solid #ECF0F1;
+  }
+  &__img {
+    max-width: 25px;
+    max-height: 25px;
+  }
+  &__email {
+    padding: 0 0 0 14px;
+  }
 }

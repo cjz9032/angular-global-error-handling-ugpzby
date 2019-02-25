@@ -32,7 +32,7 @@ export class MainHeaderComponent implements OnInit {
                     case 'breaches':
                         return this.title = 'Breached accounts';
                     case 'browser-accounts':
-                        return this.title = 'Accounts stored in Chrome';
+                        return this.title = 'Accounts stored in Browsers';
 					default:
 						return '';
                 }

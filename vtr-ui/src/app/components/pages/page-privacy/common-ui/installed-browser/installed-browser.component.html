@@ -15,10 +15,10 @@
       <p class="browser-preview__text">Find out what password are being stored unsafely in Chrome</p>
       <button class="browser-preview__btn" (click)="showBrowserAccounts()">Show me</button>
     </div>
-    <div *ngIf="browserAccounts && browserAccounts.length">
-      <div *ngFor="let account of browserAccounts" class="browser-accounts">
-        <div class="browser-accounts__item browser-account">
-          <img src="" alt="" class="browser-account__img">
+    <div *ngIf="browserAccounts && browserAccounts.length" class="browser-accounts">
+      <div *ngFor="let account of browserAccounts; let i = index;">
+        <div class="browser-accounts__item browser-account" [class.browser-account--first]="i === 0">
+          <img src="{{account.image}}" alt="account stored in browser image" class="browser-account__img">
           <p class="browser-account__email">{{account.email}}</p>
           <p class="browser-account__pass">{{account.password}}</p>
         </div>
