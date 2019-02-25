@@ -24,12 +24,12 @@
     font-size: 1.6rem;
     line-height: 3rem;
     padding: 0 (8.5rem - 4rem);
-    margin: 1.9rem 0 1.1rem;
+    margin: 1.9rem 0;
   }
 
   &__text-strong {
     display: block;
-    font-weight: 600;
+    font-weight: bold;
   }
 
   &__text-light {
@@ -38,10 +38,16 @@
   }
 
   &__button {
-
+    @extend %theme-btn;
+    display: block;
+    margin: 0 auto 0.7rem;
   }
 
   &__show-more {
+    @extend %button-link;
+  }
 
+  &__show-more-text {
+    @extend %button-link__text;
   }
 }
