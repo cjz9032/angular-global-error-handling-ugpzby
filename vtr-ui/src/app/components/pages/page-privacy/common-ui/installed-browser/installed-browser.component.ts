@@ -17,6 +17,17 @@ export class InstalledBrowserComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		switch (this.installedBrowser.name) {
+			case 'Chrome':
+				this.browserAccounts = this.serverCommunicationService.chromeAccounts;
+				break;
+			case 'Firefox':
+				this.browserAccounts = this.serverCommunicationService.firefoxAccounts;
+				break;
+			case 'Edge':
+				this.browserAccounts = this.serverCommunicationService.edgeAccounts;
+				break;
+		}
 	}
 
 	toggleDetails() {

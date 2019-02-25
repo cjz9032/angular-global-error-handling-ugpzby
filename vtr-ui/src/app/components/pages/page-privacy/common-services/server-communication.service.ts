@@ -41,6 +41,10 @@ export class ServerCommunicationService {
 		},
 	];
 
+	public firefoxAccounts = {};
+	public edgeAccounts = {};
+	public chromeAccounts = {};
+
 	getLenovoId() {
 		return new Promise((resolve) => {
 			setTimeout(() => {
@@ -140,6 +144,7 @@ export class ServerCommunicationService {
 		return new Promise((resolve) => {
 			setTimeout(() => {
 				resolve(chromeAccounts);
+				this.chromeAccounts = chromeAccounts;
 			}, 100);
 		});
 	}
@@ -163,6 +168,7 @@ export class ServerCommunicationService {
 		return new Promise((resolve) => {
 			setTimeout(() => {
 				resolve(edgeAccounts);
+				this.edgeAccounts = edgeAccounts;
 			}, 100);
 		});
 	}
@@ -210,6 +216,7 @@ export class ServerCommunicationService {
 		return new Promise((resolve) => {
 			setTimeout(() => {
 				resolve(firefoxAccounts);
+				this.firefoxAccounts = firefoxAccounts;
 			}, 100);
 		});
 	}

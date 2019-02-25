@@ -11,7 +11,7 @@
     <button *ngIf="showDetailAction === 'expand'" class="installed-browser__btn" (click)="toggleDetails()" [class.installed-browser__btn--expanded]="isDetailsExpanded">{{isDetailsExpanded ? 'Hide' : 'Show'}} details</button>
   </div>
   <div *ngIf="isDetailsExpanded" class="installed-browser__content">
-    <div *ngIf="!browserAccounts" class="browser-preview">
+    <div *ngIf="!browserAccounts || !browserAccounts.length" class="browser-preview">
       <p class="browser-preview__text">Find out what password are being stored unsafely in Chrome</p>
       <button class="browser-preview__btn" (click)="showBrowserAccounts()">Show me</button>
     </div>
