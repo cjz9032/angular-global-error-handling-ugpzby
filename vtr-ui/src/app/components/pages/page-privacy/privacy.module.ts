@@ -30,6 +30,7 @@ import { BreachedAccountComponent } from './common-ui/breached-account/breached-
 import { SidebarBenefitsWidgetComponent } from './main-layout/sidebar/sidebar-benefits-widget/sidebar-benefits-widget.component';
 import { BrowserAccountsBlockComponent } from './common-ui/browser-accounts-block/browser-accounts-block.component';
 import { InstalledBrowserComponent } from './common-ui/installed-browser/installed-browser.component';
+import { LightPrivacyBannerComponent } from './common-ui/light-privacy-banner/light-privacy-banner.component';
 
 @NgModule({
 	imports: [
@@ -61,6 +62,7 @@ import { InstalledBrowserComponent } from './common-ui/installed-browser/install
 		SidebarBenefitsWidgetComponent,
 		BrowserAccountsBlockComponent,
 		InstalledBrowserComponent,
+		LightPrivacyBannerComponent,
 	],
 	providers: [ServerCommunicationService],
 })

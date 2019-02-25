@@ -1,0 +1,10 @@
+@import "../../styles/common-blocks";
+
+.light-privacy-banner {
+  &__img {}
+  &__title {}
+  &__text {}
+  &__btn {
+    @extend %theme-btn;
+  }
+}
