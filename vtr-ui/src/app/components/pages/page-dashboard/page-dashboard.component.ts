@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../../services/dashboard/dashboard.service';
 import { MockService } from '../../../services/mock/mock.service';
+import {QaService} from "../../../services/qa/qa.service";
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -18,7 +19,8 @@ export class PageDashboardComponent implements OnInit {
 
 	constructor(
 		public dashboardService: DashboardService,
-		public mockService: MockService
+		public mockService: MockService,
+		public qaService:QaService
 	) {
 	}
 
