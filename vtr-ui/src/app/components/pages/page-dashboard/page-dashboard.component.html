@@ -127,7 +127,7 @@
 											[action]="'feedback'"
 											[actionName]="'Give feedback'"
 											(feedBackClick)="
-												onFeedBackClick(feedBackModal)
+												onFeedBackClick(true)
 											"
 										>
 										</vtr-widget-feedback>
@@ -181,22 +181,4 @@
 			</div>
 		</div>
 	</div>
-	<ng-template #feedBackModal let-modal>
-		<div class="modal-header">
-			<h4 class="modal-title battery-detail-modal-title pl-5">
-				Feedback
-			</h4>
-			<button
-				type="button"
-				class="close"
-				aria-label="Close"
-				(click)="modal.dismiss('Cross click')"
-			>
-				<img src="assets/icons/Close.svg" />
-			</button>
-		</div>
-		<div class="modal-body">
-			<h2>Placeholder for feed back form</h2>
-		</div>
-	</ng-template>
 </div>
