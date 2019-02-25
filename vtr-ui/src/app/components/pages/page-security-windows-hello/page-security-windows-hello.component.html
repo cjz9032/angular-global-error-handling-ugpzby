@@ -79,7 +79,7 @@
 										</div>
 									</div>
 									<div class="container-fluid p-40 security-card"
-										*ngIf="IsWindowsHelloInstalled==='not-installed'">
+										*ngIf="IsWindowsHelloInstalled==='active'">
 										<div class="row">
 											<div class="col">
 												<div class="heading">Windows Hello</div>
@@ -250,7 +250,7 @@
 							</div>
 						</div>
 						<div class="row vtr-connected-security-password"
-							*ngIf="IsWindowsHelloInstalled==='not-installed'">
+							*ngIf="IsWindowsHelloInstalled==='active'">
 							<div class="row">
 								<div class="col mt-40">
 									<div>
