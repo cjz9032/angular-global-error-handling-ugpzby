@@ -91,12 +91,18 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { EyeCareModeComponent } from './components/display/eye-care-mode/eye-care-mode.component';
+import { UiButtonComponent } from './components/ui/ui-button/ui-button.component';
+import { ConnectedHomeComponent } from './components/pages/page-security-wifi/children/connected-home/connected-home.component';
+import { ConnectedHomeMyHomeComponent } from './components/pages/page-security-wifi/children/connected-home-my-home/connected-home-my-home.component';
+
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
 import { CameraControlComponent } from './components/camera-control/camera-control.component';
 import { PageSupportDetailComponent } from './components/pages/page-support-detail/page-support-detail.component';
 import { WidgetSupportComponent } from './components/widgets/widget-support/widget-support.component';
 import { UiListSupportComponent } from './components/ui/ui-list-support/ui-list-support.component';
 import { WidgetWarrantyComponent } from './components/widgets/widget-warranty/widget-warranty.component';
+import { SanitizeHtmlPipe } from './pipe/sanitizehtml.pipe';
+import { WidgetRebootComponent } from './components/widgets/widget-reboot/widget-reboot.component';
 
 
 library.add(fas);
@@ -154,12 +160,17 @@ library.add(far);
 		UiRowSwitchComponent,
 		EyeCareModeComponent,
 		UiHeaderSubpageComponent,
+		UiButtonComponent,
+		ConnectedHomeComponent,
+		ConnectedHomeMyHomeComponent,
 		PageSecurityWindowsHelloComponent,
 		CameraControlComponent,
 		PageSupportDetailComponent,
 		WidgetSupportComponent,
 		UiListSupportComponent,
-		WidgetWarrantyComponent
+		WidgetWarrantyComponent,
+		SanitizeHtmlPipe,
+		WidgetRebootComponent
 	],
 	imports: [
 		BrowserModule,

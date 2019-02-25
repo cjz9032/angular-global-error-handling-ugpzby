@@ -67,7 +67,7 @@ export class MockService {
 			'id': 'systemupdate',
 			'title': 'System Update',
 			'detail': 'Update',
-			'path': '/support',
+			'path': '/system-updates',
 			'asLink': true
 		}
 	];
@@ -92,14 +92,14 @@ export class MockService {
 			'status': 1,
 			'id': 'pwdmgr',
 			'title': 'Password Manager',
-			'detail': 'Installed',
+			'detail': 'Uninstalled',
 			'path': 'password-protection'
 		},
 		{
 			'status': 1,
 			'id': 'vpn',
 			'title': 'VPN',
-			'detail': 'Installed',
+			'detail': 'Uninstalled',
 			'path': 'internet-protection'
 		},
 		{
@@ -107,7 +107,7 @@ export class MockService {
 			'id': 'windows-hello',
 			'title': 'Windows Hello',
 			'detail': 'disabled',
-			'path': 'security'
+			'path': 'windows-hello'
 
 		}
 	];
