@@ -12,7 +12,7 @@
   &__text {
     @extend %text-common;
   }
-  &__accounts-raw {
+  &__accounts-row {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -21,12 +21,12 @@
     display: flex;
     justify-content: space-between;
     width: 66%;
-    :last-child {
-      margin: 0;
-    }
   }
   &__account {
     width: calc(100% / 3 - 15px);
+    &:last-child {
+      margin: 0;
+    }
   }
   &__get-figleaf-text {
     margin: 30px 0 0 0;

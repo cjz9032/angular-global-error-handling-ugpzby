@@ -1,0 +1,7 @@
+<div class="browser-accounts-block browser-accounts-block__wrapper">
+  <h3 class="browser-accounts-block__title">Easily accessible passwords</h3>
+  <p class="browser-accounts-block__text">You're storing some of your passwords in your web browser, but these passwords are usually not well encrypted, making your accounts vulnerable to hacking.</p>
+  <div class="browser-accounts-block__browser installed-browser">
+    <vtr-installed-browser *ngFor="let browser of installedBrowsers" [installedBrowser]="browser"></vtr-installed-browser>
+  </div>
+</div>

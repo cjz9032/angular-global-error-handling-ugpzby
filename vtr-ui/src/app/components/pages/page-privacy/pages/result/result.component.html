@@ -15,7 +15,7 @@
     <div class="breaches-block breaches-block__wrapper">
         <h3 class="breaches-block__title">{{breached_accounts.length}} breached accounts</h3>
         <p class="breaches-block__text">Looks like some of your personal info is floating around online, making it easy for others to access your accounts without your knowledge. You should change your passwords right now.</p>
-        <div class="breaches-block__accounts-raw">
+        <div class="breaches-block__accounts-row">
             <div class="breaches-block__accounts-container">
                 <vtr-breached-account *ngFor="let account of breached_accounts_show" [breached_account]="account" class="breaches-block__account"></vtr-breached-account>
             </div>
@@ -42,4 +42,6 @@
             [style.visibility]="isPopupOpen ? 'visible' : 'hidden'"
             (popupClosed)="closePopUp()"
     ></tracking-browser-popup>
+
+    <vtr-browser-accounts-block></vtr-browser-accounts-block>
 </section>

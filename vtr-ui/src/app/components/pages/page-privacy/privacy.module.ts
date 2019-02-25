@@ -28,6 +28,8 @@ import { SidebarPreviewComponent } from './main-layout/sidebar/sidebar-preview/s
 import { FaqComponent } from './main-layout/sidebar/faq/faq.component';
 import { BreachedAccountComponent } from './common-ui/breached-account/breached-account.component';
 import { SidebarBenefitsWidgetComponent } from './main-layout/sidebar/sidebar-benefits-widget/sidebar-benefits-widget.component';
+import { BrowserAccountsBlockComponent } from './common-ui/browser-accounts-block/browser-accounts-block.component';
+import { InstalledBrowserComponent } from './common-ui/installed-browser/installed-browser.component';
 
 @NgModule({
 	imports: [
@@ -57,6 +59,8 @@ import { SidebarBenefitsWidgetComponent } from './main-layout/sidebar/sidebar-be
 		FaqComponent,
 		BreachedAccountComponent,
 		SidebarBenefitsWidgetComponent,
+		BrowserAccountsBlockComponent,
+		InstalledBrowserComponent,
 	],
 	providers: [ServerCommunicationService],
 })
