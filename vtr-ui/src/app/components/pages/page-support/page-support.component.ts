@@ -18,14 +18,14 @@ export class PageSupportComponent implements OnInit {
 		public articlesService: ArticlesService,
 		public mockService: MockService,
 	) {
-		this.getArticles();
+		// this.getArticles();
 	}
 
 	ngOnInit() {
 	}
 
-	search(words: string) {
-		this.searchWords = words;
+	search(value: string) {
+		this.searchWords = value;
 	}
 
 	getArticles() {
