@@ -23,17 +23,17 @@
     width: 66%;
   }
   &__account {
-    width: calc(100% / 3 - 15px);
+    width: calc(100% / 3 - 1.5rem);
     &:last-child {
       margin: 0;
     }
   }
   &__get-figleaf-text {
-    margin: 30px 0 0 0;
+    margin: 3rem 0 0 0;
     color: #667481;
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 300;
-    line-height: 23px;
+    line-height: 2.3rem;
   }
   &__get-figleaf-link {
 
@@ -53,7 +53,7 @@
   }
   &__number {
     color: #4A81FD;
-    font-size: 44px;
+    font-size: 4.4rem;
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -63,13 +63,13 @@
   }
   &__description {
     color: #34495E;
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 300;
-    line-height: 17px;
+    line-height: 1.7rem;
   }
   &__btn {
     @extend %theme-btn;
-    min-width: 180px;
+    min-width: 18rem;
     align-self: flex-end;
     font-weight: 500;
     text-transform: uppercase;

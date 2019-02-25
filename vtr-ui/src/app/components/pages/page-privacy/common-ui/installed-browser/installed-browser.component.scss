@@ -3,5 +3,13 @@
 .installed-browser {
   &__wrapper {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ECF0F1;
+    padding: 2.5rem 2rem;
+  }
+  &__detail-col {
+    display: flex;
+    align-items: center;
   }
 }

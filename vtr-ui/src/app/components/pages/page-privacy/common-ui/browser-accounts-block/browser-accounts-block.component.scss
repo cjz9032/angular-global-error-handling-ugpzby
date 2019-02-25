@@ -2,8 +2,14 @@
 
 .browser-accounts-block {
   @extend %common-block-wrapper;
-  padding: 35px 40px 40px 40px;
+  padding: 3.5rem 4rem 4rem 4rem;
   &__title {
     @extend %subtitle;
   }
+}
+
+.installed-browser {
+  border-radius: 5px;
+  background-color: #F5F7F8;
+  box-shadow: 0 0 2rem 0 rgba(0,0,0,0.2);
 }
