@@ -8,11 +8,22 @@
       </div>
     </div>
     <button *ngIf="showDetailAction === 'link'" class="installed-browser__btn" routerLink="../browser-accounts">Show details</button>
-    <button *ngIf="showDetailAction === 'expand'" class="installed-browser__btn" (click)="toggleDetails()">Show details</button>
+    <button *ngIf="showDetailAction === 'expand'" class="installed-browser__btn" (click)="toggleDetails()" [class.installed-browser__btn--expanded]="isDetailsExpanded">{{isDetailsExpanded ? 'Hide' : 'Show'}} details</button>
   </div>
-  <div *ngIf="isDetailsExpanded" class="browser-preview">
-    <p class="browser-preview__text">Find out what password are being stored unsafely in Chrome</p>
-    <button class="browser-preview__btn">Show me</button>
+  <div *ngIf="isDetailsExpanded" class="installed-browser__content">
+    <div *ngIf="!browserAccounts" class="browser-preview">
+      <p class="browser-preview__text">Find out what password are being stored unsafely in Chrome</p>
+      <button class="browser-preview__btn" (click)="showBrowserAccounts()">Show me</button>
+    </div>
+    <div *ngIf="browserAccounts && browserAccounts.length">
+      <div *ngFor="let account of browserAccounts" class="browser-accounts">
+        <div class="browser-accounts__item browser-account">
+          <img src="" alt="" class="browser-account__img">
+          <p class="browser-account__email">{{account.email}}</p>
+          <p class="browser-account__pass">{{account.password}}</p>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>

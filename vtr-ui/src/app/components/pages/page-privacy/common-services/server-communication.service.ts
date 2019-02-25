@@ -120,4 +120,82 @@ export class ServerCommunicationService {
 
 	getTrackersFirefox() {
 	}
+
+	getAccountsChrome() {
+		const chromeAccounts = [
+			{
+				email: 'sometest@gmail.com',
+				password: 'some234pass5'
+			}, {
+				email: 'haha1981@yahoo.com',
+				password: 'secret_pass'
+			},{
+				email: 'john_doe@gmail.com',
+				password: 'some234pass5'
+			},
+		];
+		return new Promise((resolve) => {
+			setTimeout(() => {
+				resolve(chromeAccounts);
+			}, 100);
+		});
+	}
+
+	getAccountsEdge() {
+		const edgeAccounts = [
+			{
+				email: 'sometest@gmail.com',
+				password: 'some234pass5'
+			}, {
+				email: 'haha1981@yahoo.com',
+				password: 'secret_pass'
+			},{
+				email: 'john_doe@gmail.com',
+				password: 'some234pass5'
+			},
+		];
+		return new Promise((resolve) => {
+			setTimeout(() => {
+				resolve(edgeAccounts);
+			}, 100);
+		});
+	}
+
+	getAccountsFirefox() {
+		const firefoxAccounts = [
+			{
+				email: 'sometest@gmail.com',
+				password: 'some234pass5'
+			}, {
+				email: 'haha1981@yahoo.com',
+				password: 'secret_pass'
+			},{
+				email: 'john_doe@gmail.com',
+				password: 'some234pass5'
+			}, {
+				email: 'sometest@gmail.com',
+				password: 'some234pass5'
+			}, {
+				email: 'haha1981@yahoo.com',
+				password: 'secret_pass'
+			},{
+				email: 'john_doe@gmail.com',
+				password: 'some234pass5'
+			}, {
+				email: 'sometest@gmail.com',
+				password: 'some234pass5'
+			}, {
+				email: 'haha1981@yahoo.com',
+				password: 'secret_pass'
+			},{
+				email: 'john_doe@gmail.com',
+				password: 'some234pass5'
+			},
+		];
+		return new Promise((resolve) => {
+			setTimeout(() => {
+				resolve(firefoxAccounts);
+			}, 100);
+		});
+	}
 }

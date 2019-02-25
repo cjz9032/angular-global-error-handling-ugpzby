@@ -43,13 +43,24 @@
   &__btn {
     @extend %theme-btn;
     text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    &--expanded {
+      background: #fff;
+      color: #4A81FD;
+      border-color: transparent;
+    }
+  }
+  &__content {
+    height: 30rem;
+    overflow: auto;
+    margin-top: 2rem;
   }
 }
 
 .browser-preview {
   width: 100%;
-  min-height: 30rem;
-  margin-top: 2rem;
+  height: 100%;
   border-radius: 6px;
   background-color: rgba(86,108,127,0.1);
   display: flex;
@@ -71,4 +82,7 @@
     text-transform: uppercase;
     min-width: 24rem;
   }
+}
+
+.browser-accounts {
 }
