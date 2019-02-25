@@ -1,4 +1,6 @@
 @mixin href($color: #4A81FD, $colorHover: darken(#4A81FD, 5%), $colorActive: darken(#4A81FD, 15%), $colorVisited: #4A81FD){
+  color: $color;
+
   &:visited{
     color: $colorVisited;
   }
