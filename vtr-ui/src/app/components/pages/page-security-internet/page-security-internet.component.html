@@ -9,7 +9,338 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col col-8 vtr-page-left-column">
-						Left Column Content Here...
+						<div class="vtr-subpage">
+							<div class="vtr-page-shift-up">
+								<div class="vtr-page-security-internet">
+									<div class="container-fluid p-40 security-card"
+										*ngIf="IsDashlaneInstalled==='not-installed'">
+										<div class="row">
+											<div class="col">
+												<div class="heading">SurfEasy Virtual Private Network</div>
+											</div>
+											<div class="pull right"><img class="surfeasy_logo_teal"
+													src="../../../../assets/images/SurfEasy-logo.png" /></div>
+										</div>
+										<div class="row mt-20">
+											<div class="col">
+												<div class="text-regular">
+													A Virtual Private Network provider helps you protect you when you are surfing the internet. Without a VPN, you PC
+													may be more vulnerable to attackers and identity thieves. A VPN run silently in the background and provides safety and privacy measures.
+												</div>
+											</div>
+										</div>
+										<div class="row mt-40">
+											<div class="col">
+												<div class="get-app-code-box">
+													<div class="row">
+														<div class="col col-1">
+															<div>
+																<ul class="bullet-list">
+																	<li class="bad">
+																		<div class="bullet-icon">
+																			<div class="icon-bkg">
+																				<fa-icon [icon]="['fas', 'times']">
+																				</fa-icon>
+																			</div>
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+														<div class="col col-2">
+															<div class="sub-heading">
+																SURFEASY VPN
+															</div>
+														</div>
+														<div>
+															<div class="button-box">
+																<button type="button"
+																	class="btn btn-danger btn-round-xs text-uppercase">
+																	Not Installed
+																</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row mt-40">
+											<div class="col">
+												<div class="text-regular">Stop worrying about your computer safety and
+													get SurfEasy <a href="">See comparision</a></div>
+											</div>
+											<div class=" pull right">
+												<div class="col-12">
+													<button type="button"
+														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
+														Get SurfEasy
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="container-fluid p-40 security-card"
+										*ngIf="IsDashlaneInstalled==='active'">
+										<div class="row">
+											<div class="col">
+												<div class="heading">SurfEasy</div>
+											</div>
+											<div class="pull right"><img class="surfeasy_logo_teal"
+													src="../../../../assets/images/SurfEasy-logo.png" /></div>
+										</div>
+										<div class="row mt-20">
+											<div class="col">
+												<div class="text-regular">
+														A VPN provider helps you protect you while you are
+														surfing the internet. Without a VPN, your PC may be more vulnerable to
+														attackers and identity thievs. A VPN runs silently in the background and
+														provides safety and privacy measures.
+												</div>
+											</div>
+										</div>
+										<div class="row mt-40">
+											<div class="col">
+												<div class="get-app-code-box">
+													<div class="row">
+														<div class="col col-1">
+															<div>
+																<ul class="bullet-list">
+																	<li class="installed">
+																		<div class="bullet-icon">
+																			<div class="icon-bkg icon-installed">
+																				<fa-icon [icon]="['fas', 'dot']">
+																				</fa-icon>
+																			</div>
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+														<div class="col col-2">
+															<div class="sub-heading">
+																	SurfEasy VPN
+															</div>
+														</div>
+														<div>
+															<div class="button-box">
+																<button type="button"
+																	class="btn btn-primary btn-round-xs text-uppercase">
+																	Installed
+																</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row mt-40">
+											<div class="col">
+												<div class="text-regular">Stop worrying about your computer safety and
+													get SurfEasy <a href="">See comparision</a></div>
+											</div>
+											<div class=" pull right">
+												<div class="col-12">
+													<button type="button"
+														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
+														Open SurfEasy
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row vtr-page-security-internet"
+							*ngIf="IsDashlaneInstalled==='not-installed'">
+							<div class="row">
+								<div class="col mt-40">
+									<div>
+										<p class="title"> Why SurfEasy?</p>
+										<p class="text-regular">A VPN provider helps you protect you while you are
+											surfing the internet. Without a VPN, your PC may be more vulnerable to
+											attackers and identity thievs. A VPN runs silently in the background and
+											provides safety and privacy measures.</p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col col-6 mt-40">
+									<div class="col">
+										<img src="../../../../assets/images/surfeasy-left-img.png"
+											class="surfeasy-side-left-img" />
+									</div>
+								</div>
+								<div class="col col-6 mt-40">
+									<div class="col">
+										<div class="list-heading">
+											<p class="adjust-left">Start using SurfEsay Today</p>
+										</div>
+										<ul class="bullet-list">
+											<li class="good">
+												<div class="container-fluid">
+													<div class="row align-items-center">
+														<div class="col-auto">
+															<div class="bullet-icon">
+																<div class="icon-bkg">
+																	<fa-icon [icon]="['fas', 'check']"></fa-icon>
+																</div>
+															</div>
+														</div>
+														<div class="col">
+															<div class="text-regular">
+																Using a VPN adds Security. Surfeasy Encrypts your data
+																adding anonymity & security?
+															</div>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="good">
+												<div class="container-fluid">
+													<div class="row align-items-center">
+														<div class="col-auto">
+															<div class="bullet-icon">
+																<div class="icon-bkg">
+																	<fa-icon [icon]="['fas', 'check']"></fa-icon>
+																</div>
+															</div>
+														</div>
+														<div class="col">
+															<div class="text-regular">
+																	SurfEasy runs silently in the background so everything
+																runs the same but better
+															</div>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="good">
+												<div class="container-fluid">
+													<div class="row align-items-center">
+														<div class="col-auto">
+															<div class="bullet-icon">
+																<div class="icon-bkg">
+																	<fa-icon [icon]="['fas', 'check']"></fa-icon>
+																</div>
+															</div>
+														</div>
+														<div class="col">
+															<div class="text-regular">
+																Start using SurfEasy to protect yourself while browsing
+																the internet.
+															</div>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="good">
+												<div class="container-fluid">
+													<div class="row align-items-center">
+														<div class="col-auto">
+															<div class="bullet-icon">
+																<div class="icon-bkg">
+																	<fa-icon [icon]="['fas', 'check']"></fa-icon>
+																</div>
+															</div>
+														</div>
+														<div class="col">
+															<div class="text-regular">
+																As a SurfEasy user, enjoy 250 MB of free data every 30
+																days for Lenovo customers.
+															</div>
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col col-12 ">
+								<div class="row top-line">
+									<div class="col">
+										<div class="list-heading">Powered By SurfEasy</div>
+										<p class="text-regular">Read more on the <a href="">Privacy policy</a> and <a
+												href="">Privacy policy</a></p>
+									</div>
+									<div class="pull right"><img class="surfeasy_logo_bottom"
+											src="../../../../assets/images/SurfEasy-logo.png" /></div>
+								</div>
+							</div>
+						</div>
+						<div class="row vtr-connected-security-internet"
+							*ngIf="IsDashlaneInstalled==='active'">
+							<div class="row">
+								<div class="col mt-40">
+									<div>
+										<p class="title"> How to get started with SurfEasy?</p>
+										<p class="text-regular">A VPN provider helps you protect you while you are
+											surfing the internet. Without a VPN, your PC may be more vulnerable to
+											attackers and identity thievs. A VPN runs silently in the background and
+											provides safety and privacy measures.</p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+
+								<div class="col col-6 mt-40">
+									<div class="col">
+										<div class="list-heading">
+											<p class="adjust-left">See how it works</p>
+										</div>
+										<div class="number-list">
+											<ol>
+												<li>
+													<div class="text-regular">
+														Using a VPN adds Security. Surfeasy Encrypts your data
+														adding anonymity & security?
+													</div>
+												</li>
+												<li>
+													<div class="text-regular">
+															SurfEasy runs silently in the background so everything
+														runs the same but better
+													</div>
+												</li>
+												<li>
+													<div class="text-regular">
+														Start using SurfEasy to protect yourself while browsing
+														the internet.
+													</div>
+												</li>
+												<li>
+													<div class="col">
+														<div class="text-regular">
+															As a SurfEasy user, enjoy 250 MB of free data every 30
+															days for Lenovo customers.
+														</div>
+													</div>
+												</li>
+											</ol>
+										</div>
+
+									</div>
+								</div>
+								<div class="col col-6 mt-40">
+									<div class="col">
+										<img src="../../../../assets/images/dashlane-right-img.png"
+											class="surfeasy-side-right-img pull-right" />
+									</div>
+								</div>
+							</div>
+							<div class="col col-12 ">
+								<div class="row top-line">
+									<div class="col">
+										<div class="list-heading">Powered By SurfEasy</div>
+										<p class="text-regular">Read more on the <a href="">Privacy policy</a> and <a
+												href="">Privacy policy</a></p>
+									</div>
+									<div class="pull right"><img class="surfeasy_logo_teal"
+											src="../../../../assets/images/SurfEasy-logo.png" /></div>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="col col-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
