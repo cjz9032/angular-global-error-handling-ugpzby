@@ -8,6 +8,7 @@ import { environment } from '../environments/environment';
 
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ModalWelcomeComponent } from "./components/modal/modal-welcome/modal-welcome.component";
+import { ModalLenovoIdComponent } from "./components/modal/modal-lenovo-id/modal-lenovo-id.component";
 
 
 @Component({
@@ -29,12 +30,19 @@ export class AppComponent implements OnInit {
 		private modalService: NgbModal
 	) {
 
-		/*this.modalService.open(ModalWelcomeComponent, {
-		  backdrop: 'static',
-		  size: 'lg',
-		  centered: true,
-		  windowClass: 'modal-body'
-		});*/
+		// this.modalService.open(ModalWelcomeComponent, {
+		//   backdrop: 'static',
+		//   size: 'lg',
+		//   centered: true
+		// });
+		
+		// Uncomment to popup Lenovo ID modal dialog
+		// this.modalService.open(ModalLenovoIdComponent, {
+		//   backdrop: 'static',
+		//   size: 'lg',
+		//   centered: true
+		// });
+		
 	}
 
 	ngOnInit() {

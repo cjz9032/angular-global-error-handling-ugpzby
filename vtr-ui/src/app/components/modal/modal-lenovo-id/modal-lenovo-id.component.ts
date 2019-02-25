@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'vtr-modal-lenovo-id',
@@ -7,9 +8,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalLenovoIdComponent implements OnInit {
 
-  constructor() { }
+  constructor(public activeModal: NgbActiveModal) {
+  }
 
   ngOnInit() {
+    //for typescript we need to declare the data types for ms-webView and variables exist in the functions and events
+    interface WebViewEvent {
+      isSuccess?: boolean
+      hasContent?: boolean
+    }
+
+    interface MsWebView {
+      src?: string
+      navigate?: Function
+      addEventListener?: Function
+      invokeScriptAsync?: Function
+      //...more interface you need
+    }
+
+    var webView = document.querySelector("#lid-webview") as MsWebView;
+    webView.src = 'https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null';
+    var _this = this;
+    webView.addEventListener("MSWebViewNavigationCompleted", function (EventArgs) {
+      var webViewEvent = EventArgs as WebViewEvent;
+      if (webViewEvent.isSuccess) {
+        //_this.captureWebViewContent(webView);
+      } else {
+        //handle error
+      }
+    });
   }
 
 }

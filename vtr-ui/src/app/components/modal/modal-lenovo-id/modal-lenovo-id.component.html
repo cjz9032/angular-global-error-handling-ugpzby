@@ -1,4 +1,8 @@
-<div class="modal-body vtr-modal-lenovo-id" [ngSwitch]="page">
+<div class="modal-body vtr-modal-lenovo-id">
+  <div>
+      <x-ms-webview class="container" id="lid-webview"></x-ms-webview>
+  </div>
+
   <div class="btn-close">
     <button type="button" class="close" aria-hidden="true" (click)="activeModal.dismiss()">
       &times;
