@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
 	selector: 'vtr-widget-feedback',
@@ -10,16 +10,13 @@ export class WidgetFeedbackComponent implements OnInit {
 	@Input() description: string = this.description || '';
 	@Input() actionName: string = this.actionName || '';
 	@Input() action: string = this.action || '';
-	@Input() actionUrl = '';
-	@Input() actionTarget = '_blank';
-
-	@Output() feedBackClick = new EventEmitter<any>();
 
 	constructor() {}
 
 	ngOnInit() {}
 
-	submitAction($event) {
-		this.feedBackClick.emit($event);
+	feedback() {
+		console.log('Give Feedback button is clicked');
+		window.alert('Under construction');
 	}
 }

@@ -16,9 +16,9 @@
 										<vtr-widget-device-update [title]="
 												'An up-to-date system is a healthy system.'
 											"
-										 [subTitle1]="'Last update was on'"
-										 [subTitle2]="'Next updated scan is scheduled on '"
-										 [checkForUpdates]="'Check For Updates'"></vtr-widget-device-update>
+											[subTitle1]="'Last update was on'"
+											[subTitle2]="'Next updated scan is scheduled on '"
+											[checkForUpdates]="'Check For Updates'"></vtr-widget-device-update>
 									</div>
 								</div>
 								<div class="row">
@@ -41,14 +41,16 @@
 														<ul class="status-list">
 															<div class="row">
 																<li *ngFor="let item of installationHistoryList"
-																 [ngClass]="[!item.status ? 'good' : 'bad']">
+																	[ngClass]="[!item.status ? 'good' : 'bad']">
 																	<a routerLink="/{{item.path}}">
 																		<div class="container-fluid">
 																			<div class="row">
 																				<div class="col col-2 text-center">
 																					<div class="status-icon">
 																						<div class="icon-bkg">
-																							<fa-icon [icon]="['fas', !item.status ? 'check' : 'times']"></fa-icon>
+																							<fa-icon
+																								[icon]="['fas', !item.status ? 'check' : 'times']">
+																							</fa-icon>
 																						</div>
 																					</div>
 																				</div>
@@ -87,22 +89,30 @@
 							<div class="row mb-40">
 								<div class="col col-12 cont">
 									<vtr-widget-device-update-settings [title]="'Auto update settings'"
-									 [description]="'Automatically Install Updates'"
-									 [items]="dummyUpdates"></vtr-widget-device-update-settings>
+										[description]="'Automatically Install Updates'"
+										[items]="dummyUpdates"></vtr-widget-device-update-settings>
 								</div>
 							</div>
 							<div class="row mb-40">
 								<div class="col col-12">
-									<vtr-container-card [img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
-									 [title]="'Lenovo Support website'"
-									 [logoText]="'LENEVO SPECIAL'"
-									 [readMore]="'http://www.google.com'"
-									 [type]="'partnerarticle'"
-									 [ratioX]="4"
-									 [ratioY]="2">
+									<vtr-container-card
+										[img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
+										[title]="'Lenovo Support website'"
+										[logoText]="'LENEVO SPECIAL'"
+										[readMore]="'http://www.google.com'"
+										[type]="'partnerarticle'"
+										[ratioX]="4"
+										[ratioY]="2">
 									</vtr-container-card>
 								</div>
 							</div>
+
+							<div class="row">
+								<div class="col col-12 pb-40">
+									<vtr-widget-reboot></vtr-widget-reboot>
+								</div>
+							</div>
+
 						</div>
 					</div>
 				</div>

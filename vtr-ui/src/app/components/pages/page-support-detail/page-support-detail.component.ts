@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {QaService} from "../../../services/qa/qa.service";
+import {QA} from "../../../data-models/qa/qa.model";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'vtr-page-support-detail',
@@ -9,7 +12,7 @@ export class PageSupportDetailComponent implements OnInit {
 
 	title = 'Support Detail';
 
-
+    qa:QA;
   qAndA = {
     title: 'Q&A\'s for your machine',
     description: 'Description of component',
@@ -23,7 +26,11 @@ export class PageSupportDetailComponent implements OnInit {
     ]
   }
 
-  constructor() { }
+  constructor(public qaService:QaService,private activateRoute:ActivatedRoute) {
+  	this.activateRoute.params.subscribe((params)=>{
+  		this.qa=this.qaService.getById(parseInt(params['id']));
+	})
+  }
 
   ngOnInit() {
   }

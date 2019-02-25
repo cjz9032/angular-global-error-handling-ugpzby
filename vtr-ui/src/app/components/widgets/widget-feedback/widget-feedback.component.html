@@ -6,25 +6,11 @@
 				<div class="description" *ngIf="description">
 					{{ description }}
 				</div>
-
 				<div class="button-box">
-					<button
-						*ngIf="actionName && action"
-						type="button"
-						class="button"
-						(click)="submitAction()"
-					>
-						{{ actionName }}
-					</button>
-
-					<a
-						*ngIf="actionUrl.length > 0"
-						class="anchor-button"
-						[href]="actionUrl"
-						[target]="actionTarget"
-					>
-						{{ actionName }}</a
-					>
+					<vtr-ui-button
+						(onClick)="feedback()"
+						[label]="'Give feedback'"
+					></vtr-ui-button>
 				</div>
 			</div>
 		</div>
