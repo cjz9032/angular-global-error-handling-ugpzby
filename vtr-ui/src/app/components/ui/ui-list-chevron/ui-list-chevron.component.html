@@ -13,11 +13,17 @@
 								</div>
 							</div>
 							<div class="item-icon"
-							 *ngIf="item.status===undefined||item.status===''">
+							 *ngIf="item.icon">
 								<div class="icon-bkg">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
+							<div class="item-icon-image" *ngIf="item.iconPath">
+
+								<img [src]="item.iconPath"/>
+
+							</div>
+
 						</div>
 						<div class="col col-9 item-text">
 							<div class="title"

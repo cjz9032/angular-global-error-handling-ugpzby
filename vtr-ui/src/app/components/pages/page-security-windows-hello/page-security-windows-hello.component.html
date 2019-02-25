@@ -12,7 +12,20 @@
 						Left Column Content Here...
 					</div>
 					<div class="col col-4 vtr-page-right-column">
-						Right Column Content Here...
+						<div class="vtr-page-shift-up">
+							<div class="container-fluid">
+								<!--Start of Security Card Advisor-->
+								<div class="row mb-40">
+									<div class="col col-12">
+										<vtr-widget-status [title]="'Security Advisor'"
+											[description]="'Security Status Component'"
+											[items]="mockService.securityStatus">
+										</vtr-widget-status>
+									</div>
+								</div>
+								<!--End of Security Card Advisor-->
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
