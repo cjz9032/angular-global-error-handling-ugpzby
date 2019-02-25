@@ -210,3 +210,26 @@ Camera related features need import “hws.camera-feature.js”.
 - Show camera privew
 - Get/Set camera settings
 - Turn on/off camera privacy
+
+##4.Smart Settings
+Smart Settings related features need import “hws.smartsettings-feature.js”.
+
+###Application-based Settings
+
+####Feature List:
+- Turn on/off "Automatic Dolby Audio Settings" (key: Audio)
+- Turn on/off "Smart Mute" function (key: SmartMute)
+- Turn on/off "Full Screen" function (key: FullScreen)
+- Turn on/off "Touch Screen" function (key: TouchScreen)
+
+####Command
+*ABSFeature*.getFeatureStatus()
+
+	ABSFeature is the instance object, and the function is to list the supported ABS features and status. Please show the feature toggles depends on the response list, and please notice the item "Touch Screen" function will always be returned, but you can show it only if the "Full Screen" function are supported.
+
+*ABSFeature*.setFeatureStatus(key, value)
+
+	key is one of features you need to set in the Feature List upper, and the value is Open/Close.
+
+
+####Comment
