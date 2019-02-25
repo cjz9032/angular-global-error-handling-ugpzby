@@ -11,6 +11,7 @@
   }
   &__text {
     @extend %text-common;
+    margin: 2rem 0;
   }
   &__accounts-row {
     width: 100%;

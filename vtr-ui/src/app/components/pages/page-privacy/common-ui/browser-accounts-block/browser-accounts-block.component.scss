@@ -5,6 +5,11 @@
   padding: 3.5rem 4rem 4rem 4rem;
   &__title {
     @extend %subtitle;
+    margin: 0;
+  }
+  &__text {
+    @extend %text-common;
+    margin: 2rem 0;
   }
 }
 

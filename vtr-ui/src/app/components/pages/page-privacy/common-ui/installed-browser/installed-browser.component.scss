@@ -12,4 +12,30 @@
     display: flex;
     align-items: center;
   }
+  &__icon {
+    max-width: 4.3rem;
+    max-height: 4.3rem;
+  }
+  &__description {
+    padding: 0 0 0 1.3rem;
+  }
+  &__title {
+    text-transform: uppercase;
+    color: #34495E;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    margin: 0;
+  }
+  &__text {
+    color: #667481;
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 2.3rem;
+    margin: 0;
+  }
+  &__btn {
+    @extend %theme-btn;
+    text-transform: uppercase;
+  }
 }
