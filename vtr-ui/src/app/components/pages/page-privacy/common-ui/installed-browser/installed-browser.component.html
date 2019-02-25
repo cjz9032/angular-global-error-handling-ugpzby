@@ -1,10 +1,18 @@
 <div class="installed-browser__wrapper">
-  <div class="installed-browser__detail-col">
-    <img class="installed-browser__icon" src="{{installedBrowser.image_url}}" alt="">
-    <div class="installed-browser__description">
-      <p class="installed-browser__title">6 accounts stored in {{installedBrowser.name}}</p>
-      <p class="installed-browser__text">{{installedBrowser.name}}’s user data can be easily read by any program on your computer</p>
+  <div class="installed-browser__collapsed">
+    <div class="installed-browser__detail-col">
+      <img class="installed-browser__icon" src="{{installedBrowser.image_url}}" alt="">
+      <div class="installed-browser__description">
+        <p class="installed-browser__title">Some accounts stored in {{installedBrowser.name}}</p>
+        <p class="installed-browser__text">{{installedBrowser.name}}’s user data can be easily read by any program on your computer</p>
+      </div>
     </div>
+    <button *ngIf="showDetailAction === 'link'" class="installed-browser__btn" routerLink="../browser-accounts">Show details</button>
+    <button *ngIf="showDetailAction === 'expand'" class="installed-browser__btn" (click)="toggleDetails()">Show details</button>
   </div>
-  <button class="installed-browser__btn">Show details</button>
+  <div *ngIf="isDetailsExpanded" class="browser-preview">
+    <p class="browser-preview__text">Find out what password are being stored unsafely in Chrome</p>
+    <button class="browser-preview__btn">Show me</button>
+  </div>
+
 </div>
