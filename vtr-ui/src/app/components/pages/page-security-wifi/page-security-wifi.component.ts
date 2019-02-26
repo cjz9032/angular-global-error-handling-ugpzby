@@ -9,6 +9,7 @@ import { MockService } from 'src/app/services/mock/mock.service';
 export class PageSecurityWifiComponent implements OnInit {
 
 	title = 'Wifi Security';
+	isLWSEnabled = false;
 
 	constructor(public mockService: MockService) { }
 

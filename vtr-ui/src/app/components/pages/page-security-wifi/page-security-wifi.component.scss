@@ -1,0 +1,40 @@
+@import "../../../app.theme.scss";
+.vtr-page-security-wifi {
+  .vtr-security-advisor {
+    border-radius: $border_radius;
+    background-color: $light;
+    box-shadow: $drop_shadow;
+    padding: 4rem;
+    .title {
+      color: $main_darker;
+      font-size: 2.5rem;
+    }
+    .description {
+      color: $shade;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      font-weight: $weight_medium;
+    }
+
+    .home-security {
+      color: $main_darker;
+      font-size: 2.5rem;
+      margin-top: 1rem;
+    }
+
+    coronet-section {
+      margin-top: 1rem;
+
+      .view-security-check {
+        color: $icon_color;
+        margin-top: 0.3rem;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .coronet-icon {
+      }
+    }
+  }
+}

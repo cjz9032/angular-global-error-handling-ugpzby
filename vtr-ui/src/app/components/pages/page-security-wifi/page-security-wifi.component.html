@@ -21,9 +21,13 @@
 					</div>
 					<div class="col col-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
+
 							<div class="container-fluid">
+
+								<!--Start of Security Card Advisor for LWS enabled-->
 								<!--Start of Security Card Advisor-->
-								<div class="row mb-40">
+								<div class="row mb-40"
+									*ngIf="isLWSEnabled===true">
 									<div class="col col-12">
 										<vtr-widget-status [title]="'Security Advisor'"
 											[description]="'Security Status Component'"
@@ -31,8 +35,98 @@
 										</vtr-widget-status>
 									</div>
 								</div>
-								<!--End of Security Card Advisor-->
+								<!--end of Security Card Advisor-->
+
+								<!--Start of Security Health Advisor-->
+								<div class="row mb-40"
+									*ngIf="isLWSEnabled===true">
+									<div class="col col-12">
+										<vtr-widget-status [title]="'Security Health'"
+											[description]="'Description of component'"
+											[items]="mockService.securityHealth">
+										</vtr-widget-status>
+									</div>
+								</div>
+								<!--end of Security Health Advisor-->
+								<!--End of Security Card Advisor for LWS enabled-->
+
+								<!--Start of Security Card Advisor for LWS diabled-->
+								<div class="row mb-40"
+									*ngIf="isLWSEnabled===false">
+									<div class="col col-12">
+										<div class="vtr-security-advisor">
+											<div class="container-fluid">
+												<!--Start of  Security Advisor-->
+												<div class="row">
+													<div class="col">
+														<div class="title">{{'Security Advisor'}}</div>
+														<div class="description">{{'Security Status Component'}}</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col">
+													<vtr-ui-list-chevron [items]="mockService.securityStatus">
+													</vtr-ui-list-chevron>
+												</div>
+											</div>
+											<!--End of  Security Advisor-->
+
+											<!--Start of Home Security Advisor-->
+											<div class="container-fluid">
+												<!--Start of  Security Advisor-->
+												<div class="row">
+													<div class="col">
+														<div class="home-security">{{'Home Security' | uppercase }}
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col">
+													<vtr-ui-list-chevron [items]="mockService.securityStatus">
+													</vtr-ui-list-chevron>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col">
+													<div class="heading">Dashlane</div>
+												</div>
+												<div class="pull right"><img class="dashlane_logo_teal"
+														src="../../../../assets/images/Dashlane_Logo_Teal _Web.png" />
+												</div>
+											</div>
+
+											<!--End of Home Security Advisor-->
+										</div>
+
+
+
+
+									</div>
+								</div>
+
+								<!--End of Security Card Advisor for LWS diabled-->
+
+								<!--start of Antivirus ad-->
+								<div class="row mb-40">
+									<div class="col col-12">
+										<vtr-container-card
+											[img]="'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg'"
+											[title]="'Try out McAfee anti-virus software for 6 months'"
+											[logoText]="'LENEVO SPECIAL'"
+											[readMore]="'http://www.google.com'"
+											[type]="'article'"
+											[ratioX]="4"
+											[ratioY]="4">
+										</vtr-container-card>
+									</div>
+								</div>
+								<!--end of Antivirus ad-->
+
 							</div>
+
 						</div>
 					</div>
 				</div>
