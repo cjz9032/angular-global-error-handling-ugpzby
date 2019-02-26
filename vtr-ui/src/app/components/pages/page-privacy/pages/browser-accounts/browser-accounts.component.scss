@@ -1,9 +1,4 @@
 @import "../../styles/common-blocks";
 
-.browser-accounts-block {
-  @extend %common-block-wrapper;
-  padding: 35px 40px 40px 40px;
-  &__text {
-    @extend %text-common;
-  }
+.browser-accounts-page {
 }

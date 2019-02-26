@@ -1,7 +1,9 @@
-<div class="page-banner">
+<div class="page-banner"
+     [ngStyle]="{'background-image': 'url(' + data.image_url + ')'}">
     <div class="page-banner__text-block">
-        <p class="page-banner__title">{{title}}</p>
-        <p class="page-banner__text">{{text}}</p>
+        <p class="page-banner__title">{{data.title}}</p>
+        <p class="page-banner__text">{{data.text}}</p>
     </div>
     <button class="page-banner__btn">Try Lenovo Privacy</button>
+    <!--<a href="{{data.read_more_link}}">Read more</a>-->
 </div>
