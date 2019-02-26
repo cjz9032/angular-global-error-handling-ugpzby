@@ -32,6 +32,8 @@ import { BrowserStoredAccountsComponent } from './common-ui/browser-stored-accou
 import { InstalledBrowserComponent } from './common-ui/installed-browser/installed-browser.component';
 import { LightPrivacyBannerComponent } from './common-ui/light-privacy-banner/light-privacy-banner.component';
 import { ArticlePromoComponent } from './common-ui/article-promo/article-promo.component';
+import { PromoFeaturesListComponent } from './common-ui/promo-features-list/promo-features-list.component';
+import { PromoVideoComponent } from './common-ui/promo-video/promo-video.component';
 
 @NgModule({
 	imports: [
@@ -65,6 +67,8 @@ import { ArticlePromoComponent } from './common-ui/article-promo/article-promo.c
 		InstalledBrowserComponent,
 		LightPrivacyBannerComponent,
 		ArticlePromoComponent,
+		PromoFeaturesListComponent,
+		PromoVideoComponent,
 	],
 	providers: [ServerCommunicationService],
 })

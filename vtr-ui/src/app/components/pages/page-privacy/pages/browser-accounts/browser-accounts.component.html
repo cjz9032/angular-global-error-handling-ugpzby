@@ -4,7 +4,17 @@
 
     <vtr-article-promo></vtr-article-promo>
 
-    <vtr-page-banner [data]="pageBannerData"></vtr-page-banner>
+    <div class="promo">
+        <h3 class="promo__title">We recommend to keep your data private</h3>
+        <p class="promo__text">Lenovo Privacy by FigLeaf can keep your data private and can even create masked emails and hard-to-crack passwords for you. Everything remains private and fully encrypted.</p>
+
+        <vtr-promo-video></vtr-promo-video>
+
+        <vtr-promo-features-list></vtr-promo-features-list>
+
+        <vtr-page-banner [data]="pageBannerData"></vtr-page-banner>
+    </div>
+
 
     <h3>Privacy - Browser accounts page</h3>
     <button (click)="backClicked()"><= back</button>
