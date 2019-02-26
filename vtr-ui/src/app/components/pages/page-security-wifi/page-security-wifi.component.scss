@@ -1,4 +1,5 @@
 @import "../../../app.theme.scss";
+
 .vtr-page-security-wifi {
   .vtr-security-advisor {
     border-radius: $border_radius;
@@ -26,14 +27,16 @@
       margin-top: 1rem;
 
       .view-security-check {
-        color: $icon_color;
+        color: $main;
         margin-top: 0.3rem;
         cursor: pointer;
         &:hover {
           text-decoration: underline;
         }
       }
-      .coronet-icon {
+      .coronet_logo_teal {
+        height: 6rem;
+        width: 18rem;
       }
     }
   }

@@ -10,6 +10,7 @@ export class PageSecurityWifiComponent implements OnInit {
 
 	title = 'Wifi Security';
 	isLWSEnabled = false;
+	viewSecChkRoute = 'viewSecChkRoute';
 
 	constructor(public mockService: MockService) { }
 

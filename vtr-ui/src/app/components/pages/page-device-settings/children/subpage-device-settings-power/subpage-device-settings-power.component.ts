@@ -15,7 +15,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 
 	intelligentCooling = false;
 
-	showBatteryThreshold:boolean=false;
+	showBatteryThreshold = false;
 
 	headerMenuItems = [
 		{
@@ -114,11 +114,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 		}
 	];
 
-	constructor() {}
+	constructor() { }
 
 	onIntelligentCoolingToggle(event) {
 		this.intelligentCooling = event.switchValue;
 	}
 
-	ngOnInit() {}
+	ngOnInit() { }
 }
