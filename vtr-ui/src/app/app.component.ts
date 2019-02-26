@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute,NavigationEnd } from '@angular/router';
 import { UserService } from './services/user/user.service';
 import { ContainerService } from './services/container/container.service';
 import { DevService } from './services/dev/dev.service';
@@ -26,7 +26,8 @@ export class AppComponent implements OnInit {
 		private containerService: ContainerService,
 		private devService: DevService,
 		private displayService: DisplayService,
-		private modalService: NgbModal
+		private modalService: NgbModal,
+		private router:Router
 	) {
 
 		/*this.modalService.open(ModalWelcomeComponent, {
@@ -49,6 +50,22 @@ export class AppComponent implements OnInit {
 		const urlParams = new URLSearchParams(window.location.search);
 		this.devService.writeLog('GOT PARAMS', urlParams.toString());
 
+
+          /********* add this for navigation within a page **************/
+		this.router.events.subscribe(s => {
+			if (s instanceof NavigationEnd) {
+
+				const tree = this.router.parseUrl(this.router.url);
+				if (tree.fragment) {
+					const element = document.querySelector("#" + tree.fragment);
+					if (element) {
+						element.scrollIntoView(true);
+					}
+				}
+			}
+		});
+
 	}
+
 
 }

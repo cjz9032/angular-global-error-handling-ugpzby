@@ -13,9 +13,9 @@ export class WidgetFeedbackComponent implements OnInit {
 
 	@Output() feedBackClick = new EventEmitter<Event>();
 
-	constructor() {}
+	constructor() { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	feedback($event) {
 		this.feedBackClick.emit($event);

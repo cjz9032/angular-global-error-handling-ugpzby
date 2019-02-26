@@ -15,22 +15,24 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 
 	intelligentCooling = false;
 
+	showBatteryThreshold:boolean=false;
+
 	headerMenuItems = [
 		{
 			title: 'Battery',
-			path: '/battery'
+			path: 'battery',
 		},
 		{
 			title: 'Power',
-			path: '/power'
+			path: 'power'
 		},
 		{
 			title: 'Cooling',
-			path: '/cooling'
+			path: 'cooling'
 		},
 		{
 			title: 'Other',
-			path: '/other'
+			path: 'other'
 		}
 	];
 
