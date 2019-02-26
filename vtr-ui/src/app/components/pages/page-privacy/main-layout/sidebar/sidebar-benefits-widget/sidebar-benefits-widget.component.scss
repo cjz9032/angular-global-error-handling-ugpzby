@@ -35,19 +35,56 @@
   &__text-light {
     display: block;
     font-weight: 300;
+
+    &--sm {
+
+    }
   }
 
   &__button {
     @extend %theme-btn;
     display: block;
-    margin: 0 auto 0.7rem;
+    margin: 0 auto;
   }
 
   &__show-more {
     @extend %button-link;
+    margin-top: 1.2rem;
   }
 
   &__show-more-text {
     @extend %button-link__text;
+  }
+
+  &__hidden-inner {
+
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #F5F7F8;
+    border: 1px solid #ECF0F1;
+    border-radius: 0.5rem;
+  }
+
+  &__item {
+
+  }
+
+  &__item-content {
+    padding: 1.3rem 2rem 1.3rem 8rem;
+  }
+
+  &__text-strong {
+
+  }
+
+  &__title {
+    font-weight: 400;
+    color: #194A65;
+    font-size: 2.5rem;
+    line-height: 2.9rem;
   }
 }
