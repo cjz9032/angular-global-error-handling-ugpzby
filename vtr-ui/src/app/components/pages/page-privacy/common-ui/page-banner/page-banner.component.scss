@@ -52,5 +52,8 @@
     font-weight: 500;
     text-transform: uppercase;
     text-decoration: underline;
+    &:before {
+      background-image: url("/assets/icons/privacy-tab/icon-white-arrow.svg");
+    }
   }
 }
