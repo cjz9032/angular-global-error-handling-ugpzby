@@ -1,4 +1,4 @@
-<form name="feedBack" class="feedback-form" (submit)="onFeedBackSubmit()" [formGroup]="feedbackForm" novalidate>
+<form name="feedBack" class="feedback-form" (submit)="onFeedBackSubmit($event)" [formGroup]="feedbackForm" novalidate>
 	<div class="row">
 		<div class="col">
 			<input autocomplete="off" placeholder="Email (optional)" type="email"
@@ -16,7 +16,7 @@
 	<div class="row">
 		<div class="col text-center">
 			<button type="submit" class="btn btn-primary btn-lg user-submit" [disabled]="feedbackForm.invalid">
-				Submit
+				{{ buttonText }}
 			</button>
 		</div>
 	</div>

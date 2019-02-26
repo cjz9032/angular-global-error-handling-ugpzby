@@ -11,7 +11,9 @@ import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 	providers: [NgbModalConfig, NgbModal]
 })
 export class PageDashboardComponent implements OnInit {
+	submit = 'Submit';
 	title = 'Dashboard';
+	feedbackButtonText = this.submit;
 
 	forwardLink = {
 		path: 'dashboard-customize',
@@ -29,9 +31,9 @@ export class PageDashboardComponent implements OnInit {
 		config.keyboard = false;
 	}
 
-	ngOnInit() {}
+	ngOnInit() { }
 
-	onFeedBackClick(content: any) {
+	onFeedbackModal(content: any) {
 		this.modalService
 			.open(content, {
 				centered: true
@@ -44,5 +46,13 @@ export class PageDashboardComponent implements OnInit {
 					// on close
 				}
 			);
+	}
+
+	public onFeedbackClick() {
+		this.feedbackButtonText = 'Thank you for your feedback !';
+		setTimeout(() => {
+			this.modalService.dismissAll();
+			this.feedbackButtonText = this.submit;
+		}, 3000);
 	}
 }
