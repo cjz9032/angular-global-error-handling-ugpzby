@@ -1,14 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { CameraDetail } from 'src/app/data-models/camera/camera-detail.model';
+import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-display',
 	templateUrl: './subpage-device-settings-display.component.html',
 	styleUrls: ['./subpage-device-settings-display.component.scss']
 })
-export class SubpageDeviceSettingsDisplayComponent implements OnInit {
-
+export class SubpageDeviceSettingsDisplayComponent
+	implements OnInit, OnDestroy {
 	title = 'Display & Camera Settings';
-	headerCaption = 'This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.';
+	public dataSource: CameraDetail;
+	private cameraDetailSubscription: Subscription;
+
+	headerCaption =
+		'This section enables you to improve your visual experience and configure your camera properties.' +
+		' Explore more features and customize your display experience here.';
 	headerMenuTitle = 'Jump to Settings';
 
 	headerMenuItems = [
@@ -21,24 +29,49 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit {
 			title: 'Camera',
 			path: 'camera'
 		}
-	]
+	];
 
-	constructor() {}
-
-	ngOnInit() {}
-
-	//#region demo code section for code review
-
-	// tslint:disable-next-line: member-ordering
-	public sliderValue = 0; // demo code for code review
-
-	public onSliderChange($event: number) {
-		this.sliderValue = $event;
+	constructor(public baseCameraDetail: BaseCameraDetail) {
+		this.dataSource = new CameraDetail();
 	}
 
-	public onValueChange($event: number) {
-		this.sliderValue = $event;
+	ngOnInit() {
+		this.getCameraDetails();
+
+		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
+			cameraDetail => {
+				this.dataSource = cameraDetail;
+			},
+			error => {
+				console.log(error);
+			}
+		);
 	}
 
-	//#endregion
+	ngOnDestroy() {
+		this.cameraDetailSubscription.unsubscribe();
+	}
+
+	/**
+	 * When Go to windows privacy settings link button is clicked
+	 */
+	public onPrivacySettingClick() {}
+
+	/**
+	 * When Camera Privacy Mode radio is toggled
+	 */
+	public onPrivacyModeChange($event: any) {
+		this.baseCameraDetail.toggleCameraPrivacyMode($event.switchValue);
+	}
+
+	private getCameraDetails() {
+		this.baseCameraDetail
+			.getCameraDetail()
+			.then((response: CameraDetail) => {
+				this.dataSource = response;
+			})
+			.catch(error => {
+				console.log(error);
+			});
+	}
 }

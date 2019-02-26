@@ -1,0 +1,38 @@
+<div class="vtr-ui-list-checkbox">
+	<ul class="checkbox-list">
+		<li *ngFor="let item of items">
+			<div class="container-fluid">
+				<div class="row align-items-center">
+					<div class="col col-11 item-text">
+						<div class="custom-control custom-checkbox update-checkbox">
+							<input id="{{ 'updateCheckbox' + randomNumber + item.id }}"
+								type="checkbox"
+								class="custom-control-input"
+								checked="" />
+							<label class="custom-control-label "
+								for="{{ 'updateCheckbox' + randomNumber + item.id }}">
+								<span class="title"
+									[ngClass]="{'light-title':item.lightTitle}">
+									{{item.title}}</span>
+								<span class="detail"
+									[ngClass]="{'highlight':item.asLink}">
+									{{item.detail}}</span>
+							</label>
+						</div>
+						<div class="button-box"
+							*ngIf="item.rebootRequired">
+							<div class="btn-round-sm">
+								<fa-icon [icon]="['fas', 'undo']"></fa-icon> Reboot required
+							</div>
+						</div>
+					</div>
+					<div class="col col-1 text-right">
+						<div class="question">
+							<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>

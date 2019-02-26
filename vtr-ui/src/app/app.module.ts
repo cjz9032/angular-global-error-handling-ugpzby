@@ -34,6 +34,7 @@ import { UiRectangleRadioComponent } from './components/ui/ui-rectangle-radio/ui
 import { UiRangeSliderComponent } from './components/ui/ui-range-slider/ui-range-slider.component';
 import { UiRowSwitchComponent } from './components/ui/ui-row-switch/ui-row-switch.component';
 import { UiListChevronComponent } from './components/ui/ui-list-chevron/ui-list-chevron.component';
+import { UiListCheckboxComponent } from './components/ui/ui-list-checkbox/ui-list-checkbox.component';
 import { UiHeaderSubpageComponent } from './components/ui/ui-header-subpage/ui-header-subpage.component';
 
 // APPLICATION PAGE COMPONENTS
@@ -45,10 +46,12 @@ import { PageUserComponent } from './components/pages/page-user/page-user.compon
 import { PageQuestionsComponent } from './components/pages/page-questions/page-questions.component';
 import { PageDeviceSettingsComponent } from './components/pages/page-device-settings/page-device-settings.component';
 import { PageDeviceUpdatesComponent } from './components/pages/page-device-updates/page-device-updates.component';
+import { AvailableUpdatesComponent } from './components/pages/page-device-updates/children/available-updates/available-updates.component';
 import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
 import { PageSecurityWifiComponent } from './components/pages/page-security-wifi/page-security-wifi.component';
 import { PageSecurityPasswordComponent } from './components/pages/page-security-password/page-security-password.component';
 import { PageSecurityInternetComponent } from './components/pages/page-security-internet/page-security-internet.component';
+
 
 // APPLICATION SUBPAGE COMPONENTS
 import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
@@ -80,6 +83,8 @@ import { DashboardService } from './services/dashboard/dashboard.service';
 import { DeviceService } from './services/device/device.service';
 import { SecurityService } from './services/security/security.service';
 import { UserService } from './services/user/user.service';
+import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
+import { CameraDetailMockService } from './services/camera/camera-detail/camera-detail.mock.service';
 
 // FONT AWESOME
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -88,10 +93,18 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { EyeCareModeComponent } from './components/display/eye-care-mode/eye-care-mode.component';
+import { UiButtonComponent } from './components/ui/ui-button/ui-button.component';
+import { ConnectedHomeComponent } from './components/pages/page-security-wifi/children/connected-home/connected-home.component';
+import { ConnectedHomeMyHomeComponent } from './components/pages/page-security-wifi/children/connected-home-my-home/connected-home-my-home.component';
+
+import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
+import { CameraControlComponent } from './components/camera-control/camera-control.component';
 import { PageSupportDetailComponent } from './components/pages/page-support-detail/page-support-detail.component';
 import { WidgetSupportComponent } from './components/widgets/widget-support/widget-support.component';
 import { UiListSupportComponent } from './components/ui/ui-list-support/ui-list-support.component';
 import { WidgetWarrantyComponent } from './components/widgets/widget-warranty/widget-warranty.component';
+import { SanitizeHtmlPipe } from './pipe/sanitizehtml.pipe';
+import { WidgetRebootComponent } from './components/widgets/widget-reboot/widget-reboot.component';
 
 
 library.add(fas);
@@ -123,6 +136,7 @@ library.add(far);
 		HeaderMainComponent,
 		PageDeviceSettingsComponent,
 		PageDeviceUpdatesComponent,
+		AvailableUpdatesComponent,
 		PageSecurityAntivirusComponent,
 		PageSecurityWifiComponent,
 		PageSecurityPasswordComponent,
@@ -140,6 +154,7 @@ library.add(far);
 		BatteryChargeThresholdSettingsComponent,
 		UiRangeSliderComponent,
 		UiListChevronComponent,
+		UiListCheckboxComponent,
 		UiRectangleRadioComponent,
 		BatteryCardComponent,
 		BatteryIndicatorComponent,
@@ -149,10 +164,17 @@ library.add(far);
 		UiRowSwitchComponent,
 		EyeCareModeComponent,
 		UiHeaderSubpageComponent,
+		UiButtonComponent,
+		ConnectedHomeComponent,
+		ConnectedHomeMyHomeComponent,
+		PageSecurityWindowsHelloComponent,
+		CameraControlComponent,
 		PageSupportDetailComponent,
 		WidgetSupportComponent,
 		UiListSupportComponent,
-		WidgetWarrantyComponent
+		WidgetWarrantyComponent,
+		SanitizeHtmlPipe,
+		WidgetRebootComponent
 	],
 	imports: [
 		BrowserModule,
@@ -173,7 +195,8 @@ library.add(far);
 		DashboardService,
 		DeviceService,
 		SecurityService,
-		UserService
+		UserService,
+		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
 	bootstrap: [AppComponent],
 	entryComponents: [ModalWelcomeComponent]

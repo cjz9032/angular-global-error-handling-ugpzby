@@ -1,0 +1,81 @@
+<div class="vtr-camera-control">
+	<div class="row">
+		<div class="col-6">
+			<div class="camera-preview">
+				<video
+					*ngIf="!dataSource.isPrivacyModeEnabled"
+					#cameraPreview
+					class="feed"
+				></video>
+				<div
+					*ngIf="dataSource.isPrivacyModeEnabled"
+					class="privacy text-center"
+				>
+					<fa-icon [icon]="['far', 'gem']"></fa-icon>
+				</div>
+			</div>
+		</div>
+		<div class="col-6">
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item border-top">
+					<div class="slider-item-text text-uppercase">
+						Brightness
+					</div>
+					<vtr-ui-range-slider
+						[step]="dataSource.brightnessStepValue"
+						[minValue]="dataSource.brightnessMinValue"
+						[maxValue]="dataSource.brightnessMaxValue"
+						[value]="dataSource.brightnessValue"
+					>
+					</vtr-ui-range-slider>
+				</li>
+				<li class="list-group-item">
+					<div class="slider-item-text text-uppercase">
+						Contrast
+					</div>
+					<vtr-ui-range-slider
+						[step]="dataSource.contrastStepValue"
+						[minValue]="dataSource.contrastMinValue"
+						[maxValue]="dataSource.contrastMaxValue"
+						[value]="dataSource.contrastValue"
+					>
+					</vtr-ui-range-slider>
+				</li>
+				<li class="list-group-item">
+					<div class="d-flex justify-content-between">
+						<div class="slider-item-text text-uppercase">
+							Auto Exposure
+						</div>
+						<div class="float-right">
+							<vtr-ui-switch-onoff
+								[value]="dataSource.isAutoExposureEnabled"
+								(change)="onAutoExposureChange($event)"
+							></vtr-ui-switch-onoff>
+						</div>
+					</div>
+					<vtr-ui-range-slider
+						[step]="dataSource.autoExposureStepValue"
+						[minValue]="dataSource.autoExposureMinValue"
+						[maxValue]="dataSource.autoExposureMaxValue"
+						[value]="dataSource.autoExposureValue"
+						*ngIf="!dataSource.isAutoExposureEnabled"
+					>
+					</vtr-ui-range-slider>
+				</li>
+				<li class="list-group-item">
+					<div class="d-flex justify-content-between">
+						<div class="slider-item-text text-uppercase ">
+							Auto Focus
+						</div>
+
+						<div class="float-right">
+							<vtr-ui-switch-onoff
+								[value]="dataSource.isAutoFocusEnabled"
+							></vtr-ui-switch-onoff>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

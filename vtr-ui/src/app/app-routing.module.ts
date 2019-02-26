@@ -15,6 +15,7 @@ import { PageSecurityInternetComponent } from './components/pages/page-security-
 import { PageSupportComponent } from './components/pages/page-support/page-support.component';
 import { PageSupportDetailComponent } from './components/pages/page-support-detail/page-support-detail.component';
 import { PageUserComponent } from './components/pages/page-user/page-user.component';
+import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
 
 const routes: Routes = [
 	{
@@ -63,11 +64,15 @@ const routes: Routes = [
 	}, {
 		path: 'internet-protection',
 		component: PageSecurityInternetComponent
+	}, 
+	{
+		path: 'windows-hello',
+		component: PageSecurityWindowsHelloComponent
 	}, {
 		path: 'support',
 		component: PageSupportComponent
 	}, {
-		path: 'support-detail',
+		path: 'support-detail/:id',
 		component: PageSupportDetailComponent
 	}, {
 		path: 'user',

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MockService } from 'src/app/services/mock/mock.service';
 
 @Component({
 	selector: 'vtr-page-security-password',
@@ -8,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class PageSecurityPasswordComponent implements OnInit {
 
 	title = 'Password Health';
-
-	constructor() { }
+	IsDashlaneInstalled: string="not-installed";
+	constructor(public mockService: MockService) { }
 
 	ngOnInit() {
 	}
