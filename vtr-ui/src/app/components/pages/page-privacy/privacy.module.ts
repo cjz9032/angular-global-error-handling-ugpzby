@@ -28,7 +28,7 @@ import { SidebarPreviewComponent } from './main-layout/sidebar/sidebar-preview/s
 import { FaqComponent } from './main-layout/sidebar/faq/faq.component';
 import { BreachedAccountComponent } from './common-ui/breached-account/breached-account.component';
 import { SidebarBenefitsWidgetComponent } from './main-layout/sidebar/sidebar-benefits-widget/sidebar-benefits-widget.component';
-import { BrowserAccountsBlockComponent } from './common-ui/browser-accounts-block/browser-accounts-block.component';
+import { BrowserStoredAccountsComponent } from './common-ui/browser-stored-accounts/browser-stored-accounts.component';
 import { InstalledBrowserComponent } from './common-ui/installed-browser/installed-browser.component';
 import { LightPrivacyBannerComponent } from './common-ui/light-privacy-banner/light-privacy-banner.component';
 
@@ -60,7 +60,7 @@ import { LightPrivacyBannerComponent } from './common-ui/light-privacy-banner/li
 		FaqComponent,
 		BreachedAccountComponent,
 		SidebarBenefitsWidgetComponent,
-		BrowserAccountsBlockComponent,
+		BrowserStoredAccountsComponent,
 		InstalledBrowserComponent,
 		LightPrivacyBannerComponent,
 	],

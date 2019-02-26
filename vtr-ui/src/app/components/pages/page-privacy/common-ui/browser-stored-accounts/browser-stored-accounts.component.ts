@@ -3,10 +3,10 @@ import { ServerCommunicationService } from "../../common-services/server-communi
 
 @Component({
 	selector: 'vtr-browser-accounts-block',
-	templateUrl: './browser-accounts-block.component.html',
-	styleUrls: ['./browser-accounts-block.component.scss']
+	templateUrl: './browser-stored-accounts.component.html',
+	styleUrls: ['./browser-stored-accounts.component.scss']
 })
-export class BrowserAccountsBlockComponent implements OnInit {
+export class BrowserStoredAccountsComponent implements OnInit {
 	@Input() inputData?: {title: string, showDetailAction: 'expand' | 'link'};
 
 	public installedBrowsersNames: Array<string>;
