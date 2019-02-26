@@ -24,15 +24,15 @@ export class DashboardService {
 		return this.dashboardBridge.getMicphoneStaus();
 	}
 
-	public setMicrophoneStatus(value: boolean) {
-		this.dashboardBridge.setMicphoneStatus(value);
+	public setMicrophoneStatus(value: boolean): Promise<boolean> {
+		return this.dashboardBridge.setMicphoneStatus(value);
 	}
 
 	public getCameraStatus(): Promise<FeatureStatus> {
 		return this.dashboardBridge.getCamaraStatus();
 	}
 
-	public setCameraStatus(value: boolean) {
-		this.dashboardBridge.setCamaraStatus(value);
+	public setCameraStatus(value: boolean): Promise<boolean> {
+		return this.dashboardBridge.setCamaraStatus(value);
 	}
 }

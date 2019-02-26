@@ -14,7 +14,7 @@ export class WidgetQuicksettingsComponent implements OnInit {
 
 	@Output() toggle = new EventEmitter<{ sender: string; value: boolean }>();
 
-	constructor(public dashboardService: DashboardService) {}
+	constructor(public dashboardService: DashboardService) { }
 
 	ngOnInit() {
 		this.getQuickSettingStatus();
@@ -41,11 +41,23 @@ export class WidgetQuicksettingsComponent implements OnInit {
 	}
 
 	public onCameraStatusToggle($event: boolean) {
-		// this.dashboardService
+		this.dashboardService.setCameraStatus($event)
+			.then((value: boolean) => {
+				// TODO : check for value is if action is completed or not
+				// and accordingly show/hide spinner
+			}).catch(error => {
+				console.log('getCameraStatus', error);
+			});
 	}
 
 	public onMicrophoneStatusToggle($event: boolean) {
-		console.log('WidgetQuicksettingsComponent', $event);
+		this.dashboardService.setMicrophoneStatus($event)
+			.then((value: boolean) => {
+				// TODO : check for value is if action is completed or not
+				// and accordingly show/hide spinner
+			}).catch(error => {
+				console.log('getCameraStatus', error);
+			});
 	}
 
 	public onEyeCareModeToggle($event: boolean) {
