@@ -7,12 +7,15 @@ import { ServerCommunicationService } from "../../common-services/server-communi
 	styleUrls: ['./browser-stored-accounts.component.scss']
 })
 export class BrowserStoredAccountsComponent implements OnInit {
-	@Input() inputData?: {title: string, showDetailAction: 'expand' | 'link'};
+	@Input() inputData: {title?: string, showDetailAction: 'expand' | 'link', showBanner?: boolean};
 
 	public installedBrowsersNames: Array<string>;
 	public installedBrowsers: Array<object>;
 	// static Data transferred to html
-	public data = {title: 'Take back control over your data with Lenovo Privacy', text: 'A simple comprehensive app that gives YOU back control over your privacy'};
+	public LightPrivacyBannerData = {
+		title: 'Take back control over your data with Lenovo Privacy',
+		text: 'A simple comprehensive app that gives YOU back control over your privacy',
+	};
 
 	private chromeDefaultDetail = {
 		name: 'Chrome',
