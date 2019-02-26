@@ -25,6 +25,11 @@
     font-weight: 300;
     line-height: 3rem;
   }
+  &__btns-col {
+    display: flex;
+    align-self: center;
+    position: relative;
+  }
   &__btn {
     @extend %theme-btn;
     text-transform: uppercase;
@@ -32,5 +37,18 @@
     color: #4A81FD;
     background: #fff;
     align-self: center;
+  }
+  &__link {
+    @include href();
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 2.3rem 0 0 0;
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: underline;
   }
 }

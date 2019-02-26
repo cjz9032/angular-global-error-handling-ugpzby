@@ -4,6 +4,8 @@
         <p class="page-banner__title">{{data.title}}</p>
         <p class="page-banner__text">{{data.text}}</p>
     </div>
-    <button class="page-banner__btn">Try Lenovo Privacy</button>
-    <!--<a href="{{data.read_more_link}}">Read more</a>-->
+    <div class="page-banner__btns-col">
+        <button class="page-banner__btn">Try Lenovo Privacy</button>
+        <a *ngIf="data.read_more_link && data.read_more_link.length" class="page-banner__link" href="{{data.read_more_link}}">Read more</a>
+    </div>
 </div>
