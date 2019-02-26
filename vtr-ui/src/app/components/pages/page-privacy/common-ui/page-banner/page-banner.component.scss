@@ -41,13 +41,13 @@
   &__link {
     @extend %button-link;
     @extend %button-link--to-right;
-    @include href();
+    @include href(#fff, darken(#fff, 5%), darken(#fff, 10%), #fff);
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
     margin: 2.3rem 0 0 0;
-    color: #FFFFFF;
+    color: #fff;
     font-size: 1.3rem;
     font-weight: 500;
     text-transform: uppercase;
