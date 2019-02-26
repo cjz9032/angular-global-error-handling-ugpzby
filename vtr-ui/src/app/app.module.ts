@@ -1,7 +1,7 @@
 // ANGULAR MODULES
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 // THIRD PARTY MODULES
@@ -26,6 +26,7 @@ import { BatteryCardComponent } from './components/battery/battery-card/battery-
 import { BatteryIndicatorComponent } from './components/battery/battery-indicator/battery-indicator.component';
 import { BatteryDetailComponent } from './components/battery/battery-detail/battery-detail.component';
 import { BatteryChargeThresholdSettingsComponent } from './components/battery/battery-charge-threshold-settings/battery-charge-threshold-settings.component';
+import { FeedbackFormComponent } from './components/feedback-form/feedback-form/feedback-form.component';
 
 // APPLICATION UI COMPONENTS
 import { UiSwitchOnoffComponent } from './components/ui/ui-switch-onoff/ui-switch-onoff.component';
@@ -90,6 +91,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
+
 import { EyeCareModeComponent } from './components/display/eye-care-mode/eye-care-mode.component';
 import { UiButtonComponent } from './components/ui/ui-button/ui-button.component';
 import { ConnectedHomeComponent } from './components/pages/page-security-wifi/children/connected-home/connected-home.component';
@@ -103,7 +105,6 @@ import { UiListSupportComponent } from './components/ui/ui-list-support/ui-list-
 import { WidgetWarrantyComponent } from './components/widgets/widget-warranty/widget-warranty.component';
 import { SanitizeHtmlPipe } from './pipe/sanitizehtml.pipe';
 import { WidgetRebootComponent } from './components/widgets/widget-reboot/widget-reboot.component';
-
 
 library.add(fas);
 library.add(fab);
@@ -170,7 +171,8 @@ library.add(far);
 		UiListSupportComponent,
 		WidgetWarrantyComponent,
 		SanitizeHtmlPipe,
-		WidgetRebootComponent
+		WidgetRebootComponent,
+		FeedbackFormComponent
 	],
 	imports: [
 		BrowserModule,
@@ -179,7 +181,8 @@ library.add(far);
 		HttpClientModule,
 		FontAwesomeModule,
 		NgbModule,
-		Ng5SliderModule
+		Ng5SliderModule,
+		ReactiveFormsModule
 	],
 	providers: [
 		CookieService,

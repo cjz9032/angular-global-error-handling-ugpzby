@@ -168,17 +168,18 @@
 	.user-email {
 		font-size: 2rem;
 		height: 4.2rem;
-		border: 0.1rem solid $dark;
 	}
 	.user-comment {
 		font-size: 2rem;
 		height: 16.2rem;
-		border: 0.1rem solid $dark;
 	}
 	.user-submit {
 		font-size: 2rem;
 		padding: 1.5rem 8rem;
 		border-radius: 5rem;
+	}
+	.border {
+		border: 0.1rem solid $dark;
 	}
 }
 

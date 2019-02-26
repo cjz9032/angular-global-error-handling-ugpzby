@@ -12,7 +12,6 @@ import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class PageDashboardComponent implements OnInit {
 	title = 'Dashboard';
-	feedBackFormModel: any = {};
 
 	forwardLink = {
 		path: 'dashboard-customize',
@@ -35,9 +34,7 @@ export class PageDashboardComponent implements OnInit {
 	onFeedBackClick(content: any) {
 		this.modalService
 			.open(content, {
-				centered: true,
-				// size: 'lg',
-				windowClass: 'battery-modal-size1'
+				centered: true
 			})
 			.result.then(
 				result => {
@@ -47,12 +44,5 @@ export class PageDashboardComponent implements OnInit {
 					// on close
 				}
 			);
-	}
-
-	onFeedBackSubmit() {
-		console.log(
-			'onFeedBackSubmit: ',
-			JSON.stringify(this.feedBackFormModel)
-		);
 	}
 }
