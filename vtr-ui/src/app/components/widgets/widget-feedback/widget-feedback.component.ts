@@ -19,7 +19,7 @@ export class WidgetFeedbackComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	feedback() {
+	feedback(event) {
 		console.log('Give Feedback button is clicked');
 		window.alert('Under construction');
 	}
