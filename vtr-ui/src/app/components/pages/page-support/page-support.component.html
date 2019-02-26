@@ -21,7 +21,7 @@
 												</div>
 											</div>
 											<input type="text" class="form-control px-3" placeholder="Input help here" aria-label="Input help here"
-											 aria-describedby="basic-addon1" #searchInput  (keyup.enter)="search(searchInput.value)">
+											 aria-describedby="basic-addon1" #searchInput (keyup.enter)="search(searchInput.value)">
 											<div class="input-group-append">
 												<button class="btn button" type="button" (click)="search(searchInput.value)">SEARCH FOR HELP</button>
 											</div>
@@ -29,10 +29,17 @@
 									</form>
 								</div>
 							</div>
-							<div class="row" *ngIf="searchWords">
+							<div class="row" *ngIf="searchWords" class="search-result-text">
 								<div class="col px-40 pt-4">
-									<div class="title m-0">
+									<div class="title m-0" *ngIf="searchCount > 0">
 										35 Results that match "<span class="special">{{searchWords}}</span>"
+									</div>
+									<div class="title m-0" *ngIf="searchCount === 0">
+										<div>0 result found.</div>
+										<div>
+											<span class="mr-5">Would you like to go for more help?</span>
+											<a href="https://community.lenovo.com" target="_blank" class="btn button" type="button">GO TO FURUM</a>
+										</div>
 									</div>
 								</div>
 							</div>

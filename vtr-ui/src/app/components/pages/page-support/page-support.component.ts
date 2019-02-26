@@ -12,6 +12,7 @@ export class PageSupportComponent implements OnInit {
 
 	title = 'Get Support';
 	searchWords = '';
+	searchCount = 1;
 	articles: any;
 
 	constructor(
