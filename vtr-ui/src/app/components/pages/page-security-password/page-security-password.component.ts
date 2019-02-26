@@ -14,5 +14,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 
 	ngOnInit() {
 	}
-
+	dashlane() {
+		window.open("https://www.dashlane.com/lenovo/")
+   	}
 }
