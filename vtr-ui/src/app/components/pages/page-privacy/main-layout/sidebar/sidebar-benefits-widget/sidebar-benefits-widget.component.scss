@@ -2,6 +2,7 @@
 
 .sidebar-benefits-widget {
   @extend %common-block-wrapper;
+  margin-top: -5.6rem;
 
   &__inner {
     text-align: center;

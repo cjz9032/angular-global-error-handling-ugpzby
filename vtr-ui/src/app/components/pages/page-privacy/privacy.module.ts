@@ -11,7 +11,6 @@ import { ResultComponent } from './pages/result/result.component';
 import { TrackingBrowserPopupComponent } from './pages/result/tracking-browser-popup/tracking-browser-popup.component';
 
 // Common UI components
-import { SidebarComponent } from './main-layout/sidebar/sidebar.component';
 import { CheckBreachesFormComponent } from './common-ui/check-breaches/check-breaches-form.component';
 import { PageBannerComponent } from './common-ui/page-banner/page-banner.component';
 import { PrivacyScoreComponent } from './common-ui/privacy-score/privacy-score.component';
@@ -19,6 +18,7 @@ import { PrivacyScoreComponent } from './common-ui/privacy-score/privacy-score.c
 // Main Layout Components
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { MainHeaderComponent } from './main-layout/main-header/main-header.component';
+import { SidebarComponent } from './main-layout/sidebar/sidebar.component';
 
 import { PrivacyRoutingModule } from './privacy-routing.module';
 // import {ScanModule} from "./pages/scan/scan.module";

@@ -1,4 +1,9 @@
 <aside class="sidebar">
+    <vtr-sidebar-benefits-widget></vtr-sidebar-benefits-widget>
+    <vtr-sidebar-preview [data]="news"></vtr-sidebar-preview>
+    <vtr-sidebar-preview [data]="tips"></vtr-sidebar-preview>
+    <vtr-faq></vtr-faq>
+
     <nav style="font-size: 12px"> <!-- Links to all pages (just for test)-->
         <a routerLink="./result" routerLinkActive="active">Result </a>
         <a routerLink="./trackers" routerLinkActive="active">Trackers </a>
@@ -6,9 +11,4 @@
         <a routerLink="./installed" routerLinkActive="active">Installed </a>
         <a routerLink="./browser-accounts" routerLinkActive="active">BrowserAccounts </a>
     </nav>
-
-    <vtr-sidebar-benefits-widget></vtr-sidebar-benefits-widget>
-    <vtr-sidebar-preview [data]="news"></vtr-sidebar-preview>
-    <vtr-sidebar-preview [data]="tips"></vtr-sidebar-preview>
-    <vtr-faq></vtr-faq>
 </aside>
