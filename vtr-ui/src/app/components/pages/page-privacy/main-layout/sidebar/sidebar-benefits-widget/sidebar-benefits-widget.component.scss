@@ -51,6 +51,10 @@
   &__show-more {
     @extend %button-link;
     margin-top: 1.2rem;
+
+    &--open {
+      @extend %button-link--open;
+    }
   }
 
   &__show-more-text {
@@ -82,7 +86,7 @@
     position: absolute;
     left: 2.2rem;
     top: 50%;
-    transform: translateY(-40%);
+    transform: translateY(-50%);
     width: 4rem;
     height: 4rem;
   }
