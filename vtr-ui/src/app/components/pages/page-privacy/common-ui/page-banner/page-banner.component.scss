@@ -11,7 +11,7 @@
   color: #fff;
   padding: 5rem 3.5rem 5rem 4.2rem;
   &__text-block {
-    max-width: 57rem;
+    max-width: 70%;
     padding: 0 3.8rem 0 0;
   }
   &__title {
@@ -39,6 +39,8 @@
     align-self: center;
   }
   &__link {
+    @extend %button-link;
+    @extend %button-link--to-right;
     @include href();
     position: absolute;
     top: 100%;

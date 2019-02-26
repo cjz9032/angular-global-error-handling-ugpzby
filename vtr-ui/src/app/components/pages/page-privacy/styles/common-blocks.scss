@@ -82,6 +82,12 @@
     border-bottom: 1px solid;
   }
 
+  &--to-right {
+    &:before {
+      transform: translateY(-50%) rotate(90deg);
+    }
+  }
+
   &--open {
     &:before {
       transform: translateY(-50%) rotate(0deg);
