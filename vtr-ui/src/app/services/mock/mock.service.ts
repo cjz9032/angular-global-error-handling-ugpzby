@@ -198,5 +198,95 @@ export class MockService {
 		}
 	];
 
+	criticalUpdates = [
+		{
+			'id': '1',
+			'icon': ['fas', 'plane'],
+			'title': 'Lenovo intelligent Thermal Solutions Driver',
+			'detail': ' - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'rebootRequired': true
+		},
+		{
+			'id': '2',
+			'icon': ['fas', 'plane'],
+			'title': 'Intel Wireless LAN driver',
+			'detail': ' - (Windows 10 Build 1709 And Later) - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'rebootRequired': false
+		},
+		{
+			'id': '3',
+			'icon': ['fas', 'plane'],
+			'title': 'Lenovo Intelligent Thermal Solution Driver',
+			'detail': ' - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'rebootRequired': false
+		}
+	];
+
+	recommendedUpdates = [
+		{
+			'id': '1',
+			'icon': ['fas', 'plane'],
+			'title': 'Lenovo intelligent Thermal Solutions Driver',
+			'detail': ' - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'rebootRequired': false
+		},
+		{
+			'id': '2',
+			'icon': ['fas', 'plane'],
+			'title': 'Intel Wireless LAN driver',
+			'detail': ' - (Windows 10 Build 1709 And Later) - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'rebootRequired': false
+		},
+		{
+			'id': '3',
+			'icon': ['fas', 'plane'],
+			'title': 'Lenovo Intelligent Thermal Solution Driver',
+			'detail': ' - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'rebootRequired': true
+		}
+	];
+
+	optionalUpdates = [
+		{
+			'id': '1',
+			'icon': ['fas', 'plane'],
+			'title': 'Lenovo intelligent Thermal Solutions Driver',
+			'detail': ' - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'rebootRequired': true
+		},
+		{
+			'id': '2',
+			'icon': ['fas', 'plane'],
+			'title': 'Intel Wireless LAN driver',
+			'detail': ' - (Windows 10 Build 1709 And Later) - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'rebootRequired': false
+		},
+		{
+			'id': '3',
+			'icon': ['fas', 'plane'],
+			'title': 'Lenovo Intelligent Thermal Solution Driver',
+			'detail': ' - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'rebootRequired': false
+		}
+	];
+
 	constructor() { }
 }

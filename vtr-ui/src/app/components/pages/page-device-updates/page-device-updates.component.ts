@@ -12,17 +12,20 @@ export class PageDeviceUpdatesComponent implements OnInit {
 	installationHistory = 'Installation History';
 	installationHistoryList = [
 		{
-			status: 1,
+			status: 'fail',
+			icon: 'times',
 			installationDate: '14 FEB 2018',
 			path: '/'
 		},
 		{
-			status: 1,
+			status: 'pause',
+			icon: 'minus',
 			installationDate: '16 MAR 2018',
 			path: '/'
 		},
 		{
-			status: 1,
+			status: 'success',
+			icon: 'check',
 			installationDate: '21 JUL 2018',
 			path: '/'
 		}
