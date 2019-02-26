@@ -1,13 +1,17 @@
+@import "../../styles/common-blocks";
+
 .breaches-page {}
 
 .breached-accounts {
+  @extend %common-block-wrapper;
+  padding: 3.5rem 4rem 4rem 4rem;
   &__acc-container {
     display: flex;
     flex-wrap: wrap;
-    margin: -10px -15px;
+    margin: -1rem -1.5rem;
   }
   &__account {
-    width: calc(25% - 30px);
-    margin: 10px 15px;
+    width: calc(25% - 3rem);
+    margin: 1rem 1.5rem;
   }
 }
