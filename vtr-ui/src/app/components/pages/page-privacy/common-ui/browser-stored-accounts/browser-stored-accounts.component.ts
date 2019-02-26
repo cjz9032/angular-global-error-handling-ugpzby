@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ServerCommunicationService } from "../../common-services/server-communication.service";
 
 @Component({
-	selector: 'vtr-browser-accounts-block',
+	selector: 'vtr-browser-stored-accounts',
 	templateUrl: './browser-stored-accounts.component.html',
 	styleUrls: ['./browser-stored-accounts.component.scss']
 })

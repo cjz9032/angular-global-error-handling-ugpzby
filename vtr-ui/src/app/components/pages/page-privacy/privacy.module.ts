@@ -31,6 +31,7 @@ import { SidebarBenefitsWidgetComponent } from './main-layout/sidebar/sidebar-be
 import { BrowserStoredAccountsComponent } from './common-ui/browser-stored-accounts/browser-stored-accounts.component';
 import { InstalledBrowserComponent } from './common-ui/installed-browser/installed-browser.component';
 import { LightPrivacyBannerComponent } from './common-ui/light-privacy-banner/light-privacy-banner.component';
+import { ArticlePromoComponent } from './common-ui/article-promo/article-promo.component';
 
 @NgModule({
 	imports: [
@@ -63,6 +64,7 @@ import { LightPrivacyBannerComponent } from './common-ui/light-privacy-banner/li
 		BrowserStoredAccountsComponent,
 		InstalledBrowserComponent,
 		LightPrivacyBannerComponent,
+		ArticlePromoComponent,
 	],
 	providers: [ServerCommunicationService],
 })

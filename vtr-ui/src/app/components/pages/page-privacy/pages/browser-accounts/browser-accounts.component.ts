@@ -7,6 +7,9 @@ import {Location} from '@angular/common';
     styleUrls: ['./browser-accounts.component.scss']
 })
 export class BrowserAccountsComponent {
+	// static Data for html
+	public browserStoredAccountsData = {showDetailAction: 'expand', showBanner: true};
+
     constructor(private _location: Location) {
     }
 
