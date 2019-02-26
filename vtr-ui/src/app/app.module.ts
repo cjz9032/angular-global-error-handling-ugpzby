@@ -34,6 +34,7 @@ import { UiRectangleRadioComponent } from './components/ui/ui-rectangle-radio/ui
 import { UiRangeSliderComponent } from './components/ui/ui-range-slider/ui-range-slider.component';
 import { UiRowSwitchComponent } from './components/ui/ui-row-switch/ui-row-switch.component';
 import { UiListChevronComponent } from './components/ui/ui-list-chevron/ui-list-chevron.component';
+import { UiListCheckboxComponent } from './components/ui/ui-list-checkbox/ui-list-checkbox.component';
 import { UiHeaderSubpageComponent } from './components/ui/ui-header-subpage/ui-header-subpage.component';
 
 // APPLICATION PAGE COMPONENTS
@@ -45,6 +46,7 @@ import { PageUserComponent } from './components/pages/page-user/page-user.compon
 import { PageQuestionsComponent } from './components/pages/page-questions/page-questions.component';
 import { PageDeviceSettingsComponent } from './components/pages/page-device-settings/page-device-settings.component';
 import { PageDeviceUpdatesComponent } from './components/pages/page-device-updates/page-device-updates.component';
+import { AvailableUpdatesComponent } from './components/pages/page-device-updates/children/available-updates/available-updates.component';
 import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
 import { PageSecurityWifiComponent } from './components/pages/page-security-wifi/page-security-wifi.component';
 import { PageSecurityPasswordComponent } from './components/pages/page-security-password/page-security-password.component';
@@ -134,6 +136,7 @@ library.add(far);
 		HeaderMainComponent,
 		PageDeviceSettingsComponent,
 		PageDeviceUpdatesComponent,
+		AvailableUpdatesComponent,
 		PageSecurityAntivirusComponent,
 		PageSecurityWifiComponent,
 		PageSecurityPasswordComponent,
@@ -151,6 +154,7 @@ library.add(far);
 		BatteryChargeThresholdSettingsComponent,
 		UiRangeSliderComponent,
 		UiListChevronComponent,
+		UiListCheckboxComponent,
 		UiRectangleRadioComponent,
 		BatteryCardComponent,
 		BatteryIndicatorComponent,
@@ -197,4 +201,4 @@ library.add(far);
 	bootstrap: [AppComponent],
 	entryComponents: [ModalWelcomeComponent]
 })
-export class AppModule {}
+export class AppModule { }

@@ -21,6 +21,9 @@
 											[checkForUpdates]="'Check For Updates'"></vtr-widget-device-update>
 									</div>
 								</div>
+
+								<vtr-available-updates></vtr-available-updates>
+
 								<div class="row">
 									<div class="col col-12 installation-history-container">
 										<div class="row">
@@ -41,7 +44,7 @@
 														<ul class="status-list">
 															<div class="row">
 																<li *ngFor="let item of installationHistoryList"
-																	[ngClass]="[!item.status ? 'good' : 'bad']">
+																	[ngClass]="[item.status]">
 																	<a routerLink="/{{item.path}}">
 																		<div class="container-fluid">
 																			<div class="row">
@@ -49,7 +52,7 @@
 																					<div class="status-icon">
 																						<div class="icon-bkg">
 																							<fa-icon
-																								[icon]="['fas', !item.status ? 'check' : 'times']">
+																								[icon]="['fas', item.icon]">
 																							</fa-icon>
 																						</div>
 																					</div>
