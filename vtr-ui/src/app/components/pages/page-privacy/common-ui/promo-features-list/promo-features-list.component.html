@@ -2,7 +2,9 @@
 <div class="promo-features">
   <ul class="promo-features__list">
     <li *ngFor="let feature of data" class="promo-feature">
-      <div class="promo-feature__circle"></div>
+      <div class="promo-feature__circle">
+        <img class="promo-feature__img" src="/assets/images/privacy-tab/default-white.svg" alt="">
+      </div>
       <div class="promo-feature__description">
         <p class="promo-feature__title">{{feature.title}}</p>
         <p class="promo-feature__text">{{feature.text}}</p>
