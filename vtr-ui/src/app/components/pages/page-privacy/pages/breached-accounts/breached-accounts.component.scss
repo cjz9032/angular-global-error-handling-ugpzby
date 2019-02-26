@@ -15,3 +15,19 @@
     margin: 1rem 1.5rem;
   }
 }
+
+.promo {
+  @extend %common-block-wrapper;
+  padding: 3.5rem 4rem 4rem 4rem;
+  &__title {
+    @extend %subtitle;
+    margin: 0 0 2rem 0;
+  }
+  &__text {
+    @extend %text-common;
+    margin: 0 0 2rem 0;
+  }
+  &__features-list {
+    margin: 3.7rem 0;
+  }
+}
