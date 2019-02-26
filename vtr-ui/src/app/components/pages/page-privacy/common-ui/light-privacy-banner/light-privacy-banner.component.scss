@@ -1,9 +1,37 @@
 @import "../../styles/common-blocks";
 
 .light-privacy-banner {
-  &__img {}
-  &__title {}
-  &__text {}
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 3.3rem 3.1rem 2.5rem;
+  border: 1px solid #ECF0F1;
+  border-radius: 5px;
+  background-color: #F5F7F8;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+  margin-bottom: 4rem;
+  &__details-container {
+    display: flex;
+    align-items: center;
+  }
+  &__img {
+    width: 100%;
+    max-width: 10rem;
+  }
+  &__description {
+    padding: 0 1rem 0 2.5rem;
+  }
+  &__title {
+    color: #34495E;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    margin: 0;
+  }
+  &__text {
+    @extend %text-common;
+    margin: 0;
+  }
   &__btn {
     @extend %theme-btn;
   }

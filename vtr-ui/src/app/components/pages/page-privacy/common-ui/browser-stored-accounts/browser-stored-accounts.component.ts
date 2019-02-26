@@ -11,6 +11,8 @@ export class BrowserStoredAccountsComponent implements OnInit {
 
 	public installedBrowsersNames: Array<string>;
 	public installedBrowsers: Array<object>;
+	// static Data transferred to html
+	public data = {title: 'Take back control over your data with Lenovo Privacy', text: 'A simple comprehensive app that gives YOU back control over your privacy'};
 
 	private chromeDefaultDetail = {
 		name: 'Chrome',
