@@ -15,6 +15,21 @@ export class BrowserAccountsComponent {
 		image_url: '/assets/images/privacy-tab/banner.png',
         read_more_link: 'https://figleafapp.com/',
     };
+	public promoFeaturesData = [
+		{
+			title: 'Scan foor breaches',
+			text: 'Start by finding out if any of your accounts have been part of data breach',
+		}, {
+			title: 'Block online trackers',
+			text: 'Do what you love online without being tracked by advertisers and others',
+		}, {
+			title: 'Monitor for future breaches',
+			text: 'If any of your accounts stored in Lenovo Privacy by FigLeaf are part of a breach, You’ll know about it.',
+		}, {
+			title: 'Mask your email',
+			text: 'Sign up at new sites without giving out your real email address',
+		},
+	];
 
     constructor(private _location: Location) {
     }

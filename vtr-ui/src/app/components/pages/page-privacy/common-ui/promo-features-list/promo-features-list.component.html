@@ -1,14 +1,11 @@
-<p>
-  promo-features-list works!
-</p>
 
 <div class="promo-features">
   <ul class="promo-features__list">
-    <li class="promo-feature">
+    <li *ngFor="let feature of data" class="promo-feature">
       <div class="promo-feature__circle"></div>
       <div class="promo-feature__description">
-        <p class="promo-feature__title"></p>
-        <p class="promo-feature__text"></p>
+        <p class="promo-feature__title">{{feature.title}}</p>
+        <p class="promo-feature__text">{{feature.text}}</p>
       </div>
     </li>
   </ul>
