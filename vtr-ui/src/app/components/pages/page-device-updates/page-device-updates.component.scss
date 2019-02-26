@@ -8,6 +8,10 @@
 		}
 	}
 
+	.vtr-device-information {
+		box-shadow: $drop_shadow;
+	}
+
 	.px-40 {
 		padding-left: 0rem !important;
 		padding-right: 0rem !important;
@@ -16,15 +20,15 @@
 		border-radius: 0.5rem;
 		border-top-left-radius: 0rem;
 		border-top-right-radius: 0rem;
+		border-top: 0rem;
 		height: 100%;
 		width: 100%;
 		background: $light;
-		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 		.installation-history {
 			padding-left: 5rem;
-			padding-top: 5rem;
+			padding-top: 0rem;
 			padding-right: 5rem;
-			padding-bottom: 5rem;
+			padding-bottom: 4rem;
 			color: $main_shade;
 			font-size: 2.5rem;
 			font-weight: $weight_light;
