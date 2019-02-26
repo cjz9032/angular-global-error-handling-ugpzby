@@ -11,7 +11,7 @@
   color: #fff;
   padding: 5rem 3.5rem 5rem 4.2rem;
   &__text-block {
-    max-width: 57rem;
+    max-width: 70%;
     padding: 0 3.8rem 0 0;
   }
   &__title {
@@ -25,6 +25,11 @@
     font-weight: 300;
     line-height: 3rem;
   }
+  &__btns-col {
+    display: flex;
+    align-self: center;
+    position: relative;
+  }
   &__btn {
     @extend %theme-btn;
     text-transform: uppercase;
@@ -32,5 +37,20 @@
     color: #4A81FD;
     background: #fff;
     align-self: center;
+  }
+  &__link {
+    @extend %button-link;
+    @extend %button-link--to-right;
+    @include href(#fff, darken(#fff, 5%), darken(#fff, 10%), #fff);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 2.3rem 0 0 0;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: underline;
   }
 }
