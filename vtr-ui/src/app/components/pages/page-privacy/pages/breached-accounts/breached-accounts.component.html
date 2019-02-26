@@ -1,3 +1,18 @@
 <h3>Privacy - Breached accounts page</h3>
 
 <button (click)="backClicked()"><= back</button>
+
+
+<section class="breaches-page">
+
+    <div class="breached-accounts">
+        <p class="breached-accounts__text">Looks like some of your personal info is floating around online, making it easy for others to access your accounts without your knowledge. You should change your passwords right now.</p>
+
+        <vtr-light-privacy-banner [data]="LightPrivacyBannerData"></vtr-light-privacy-banner>
+
+        <div class="breached-accounts__acc-container">
+            <vtr-breached-account *ngFor="let account of breached_accounts" [breached_account]="account" class="breached-accounts__account"></vtr-breached-account>
+        </div>
+
+    </div>
+</section>

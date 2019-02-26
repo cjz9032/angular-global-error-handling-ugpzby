@@ -1,4 +1,13 @@
-.input-container {
-  display: flex;
-  flex-direction: column;
+.breaches-page {}
+
+.breached-accounts {
+  &__acc-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px -15px;
+  }
+  &__account {
+    width: calc(25% - 30px);
+    margin: 10px 15px;
+  }
 }
