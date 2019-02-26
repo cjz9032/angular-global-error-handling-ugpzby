@@ -18,13 +18,6 @@ export class SidebarComponent {
 				articleType: 'Privacy News',
 				modifyMode: undefined
 			},
-			{
-				articleLink: 'https://figleafapp.com?all-news=1',
-				title: '1 Google knows what you are doing online. Should you be worried?',
-				imagePath: '/assets/images/privacy-tab/_cube-feature-1.jpg.jpg',
-				articleType: 'Privacy News',
-				modifyMode: undefined
-			},
 		]
 	};
 	tips = {
@@ -35,13 +28,6 @@ export class SidebarComponent {
 			{
 				articleLink: 'https://figleafapp.com?all-tips=1',
 				title: 'Google knows you better than your best friends',
-				imagePath: '/assets/images/privacy-tab/_cube-feature-1.jpg.jpg',
-				articleType: 'Privacy Tips',
-				modifyMode: 'up'
-			},
-			{
-				articleLink: 'https://figleafapp.com?all-tips=1',
-				title: '2Google knows you better than your best friends',
 				imagePath: '/assets/images/privacy-tab/_cube-feature-1.jpg.jpg',
 				articleType: 'Privacy Tips',
 				modifyMode: 'up'

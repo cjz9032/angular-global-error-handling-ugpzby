@@ -22,4 +22,8 @@ describe('SidebarBenefitsWidgetComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should be false', () => {
+    expect(component.isOpen).toEqual(false);
+  })
 });
