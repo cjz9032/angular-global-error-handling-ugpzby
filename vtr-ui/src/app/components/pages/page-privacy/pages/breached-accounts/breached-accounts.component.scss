@@ -1,6 +1,8 @@
 @import "../../styles/common-blocks";
 
-.breaches-page {}
+.breaches-page {
+  margin-top: -5.6rem;
+}
 
 .breached-accounts {
   @extend %common-block-wrapper;
