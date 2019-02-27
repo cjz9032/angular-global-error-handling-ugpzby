@@ -7,16 +7,18 @@
 
     <div class="confirm-content">
       <div class="confirm-content__container-top">
-        <p class="confirm-content__title">Enter code</p>
-        <div class="verification-input">
-          <input class="verification-input__input"
-                 type="text" maxlength="6" numbersOnly
-                 value="{{verificationCode}}"
-                 (input)="onInput($event)">
-        </div>
-        <div class="confirm-failure">
-          <p class="confirm-failure__text">Didn't get the code?</p>
-          <button class="confirm-failure__btn">send it again</button>
+        <div class="confirm-content__inner-wrapper">
+          <p class="confirm-content__title">Enter code</p>
+          <div class="verification-input">
+            <input class="verification-input__input"
+                   type="text" maxlength="6" numbersOnly
+                   value="{{verificationCode}}"
+                   (input)="onInput($event)">
+          </div>
+          <div class="confirm-failure">
+            <p class="confirm-failure__text">Didn't get the code?</p>
+            <button class="confirm-failure__btn">send it again</button>
+          </div>
         </div>
       </div>
 
