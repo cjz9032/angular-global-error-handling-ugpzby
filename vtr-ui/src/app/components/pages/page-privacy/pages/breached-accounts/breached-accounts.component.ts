@@ -35,6 +35,12 @@ export class BreachedAccountsComponent {
 			text: 'Sign up at new sites without giving out your real email address',
 		},
 	];
+	public promoArticleData = {
+		title: 'What is the risk?',
+		text: 'Major web browsers let you store your usernames and passwords for your favorite sites, so you can log in quickly. But these passwords are usually not well encrypted, making your accounts vulnerable to hacking.',
+		link_href: 'https://figleafapp.com/',
+		image_url: '/assets/images/privacy-tab/default.png'
+	};
 
 	constructor(private _location: Location, private serverCommunicationService: ServerCommunicationService) {
 	}

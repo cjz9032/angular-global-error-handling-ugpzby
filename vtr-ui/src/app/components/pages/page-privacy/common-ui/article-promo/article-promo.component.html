@@ -1,12 +1,12 @@
 <div class="article-promo">
   <div class="article-promo__text-col">
-    <p class="article-promo__title">What is the risk?</p>
-    <p class="article-promo__text">Major web browsers let you store your usernames and passwords for your favorite sites, so you can log in quickly. But these passwords are usually not well encrypted, making your accounts vulnerable to hacking.</p>
-    <a class="article-promo__link" href="">Tell me more</a>
+    <p class="article-promo__title">{{data.title}}</p>
+    <p class="article-promo__text">{{data.text}}</p>
+    <a class="article-promo__link" href="{{data.link_href}}">Tell me more</a>
   </div>
   <div class="article-promo__img-col">
     <div class="article-promo__placeholder">
-      <img class="article-promo__img" src="/assets/images/privacy-tab/default.png" alt="">
+      <img class="article-promo__img" src="{{data.image_url}}" alt="">
     </div>
   </div>
 </div>
