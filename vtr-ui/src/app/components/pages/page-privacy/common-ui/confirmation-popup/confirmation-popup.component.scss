@@ -1,4 +1,7 @@
+@import '../../styles/common-blocks';
+
 .confirm-popup {
+  position: relative;
   &__overlay {
     position: fixed;
     width: 100%;
@@ -14,10 +17,64 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    height: 100%;
-    max-width: 500px;
-    max-height: 500px;
-    border: 2px dotted red;
+    max-width: 63rem;
     background: #fff;
+    padding: 3.5rem 4rem 3rem 4rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__close-btn {
+    position: absolute;
+    top: 2.3rem;
+    right: 2.3rem;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 2rem;
+    height: 2rem;
+    background: url("/assets/icons/privacy-tab/close-icon.png") center center no-repeat;
+    background-size: contain;
+  }
+  &__confirm-btn {
+    @extend %theme-btn;
+    align-self: center;
   }
 }
+
+.confirm-content {
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.15);
+  &__container-top {
+    background: #F5F7F8;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &--error {
+      border-radius: 10px 0 0 10px;
+    }
+  }
+  &__steps {
+    padding: 3rem 1.5rem 2.8rem 1.5rem;
+  }
+}
+
+.verification-input {
+  &__input {
+    height: 5rem;
+    width: 30rem;
+    border: 2px solid #E6EAEB;
+    border-radius: 6px;
+    text-align: center;
+    letter-spacing: 1.1rem;
+    color: #34495E;
+    font-size: 25px;
+    font-weight: 500;
+  }
+}
+

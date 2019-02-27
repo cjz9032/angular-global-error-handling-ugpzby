@@ -8,17 +8,26 @@
     <div class="confirm-content">
       <div class="confirm-content__container-top">
         <p class="confirm-content__title">Enter code</p>
-        <input class="confirm-input"type="text">
+        <div class="verification-input">
+          <input class="verification-input__input"
+                 type="text" maxlength="6" numbersOnly
+                 value="{{verificationCode}}"
+                 (input)="onInput($event)">
+        </div>
         <div class="confirm-failure">
           <p class="confirm-failure__text">Didn't get the code?</p>
           <button class="confirm-failure__btn">send it again</button>
         </div>
       </div>
 
-      <vtr-scan-steps></vtr-scan-steps>
+      <div class="confirm-error"></div>
+
+      <div class="confirm-content__steps">
+        <vtr-scan-steps></vtr-scan-steps>
+      </div>
 
     </div>
 
-    <button class="confirm-popup__confirm-btn" (click)="confirm()">CONFIRM</button>
+    <button class="confirm-popup__confirm-btn" (click)="confirm()">Confirm email</button>
   </div>
 </div>

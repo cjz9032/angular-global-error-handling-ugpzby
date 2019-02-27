@@ -9,6 +9,7 @@ import { ServerCommunicationService } from "../../common-services/server-communi
 })
 export class ConfirmationPopupComponent implements OnInit {
 	public isPopupOpen: boolean;
+	public verificationCode: string = '';
 
 	constructor(private confirmationPopupService: ConfirmationPopupService, private serverCommunicationService: ServerCommunicationService) {}
 
@@ -23,10 +24,14 @@ export class ConfirmationPopupComponent implements OnInit {
 		this.confirmationPopupService.closePopup();
 	}
 
+	onInput(ev) {
+		console.log('ev.target.value', ev.target.value);
+		this.verificationCode = ev.target.value;
+	}
+
 	confirm() {
-		this.serverCommunicationService.validateVerificationCode('123455').then(() => {
+		this.serverCommunicationService.validateVerificationCode(this.verificationCode).then(() => {
 			this.confirmationPopupService.closePopup();
 		})
 	}
-
 }

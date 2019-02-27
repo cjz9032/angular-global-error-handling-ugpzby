@@ -2,7 +2,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable()
 export class ConfirmationPopupService {
-	public isPopupOpen = false;
+	public isPopupOpen = true;
 	public popupOpenStateUpdated = new EventEmitter();
 
 	constructor() {

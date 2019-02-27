@@ -40,6 +40,7 @@ import { PromoFeaturesListComponent } from './common-ui/promo-features-list/prom
 import { PromoVideoComponent } from './common-ui/promo-video/promo-video.component';
 import { ConfirmationPopupComponent } from './common-ui/confirmation-popup/confirmation-popup.component';
 import { ScanStepsComponent } from './common-ui/scan-steps/scan-steps.component';
+import { NumpersOnlyDirective } from './common-directives/numpers-only.directive';
 
 @NgModule({
 	imports: [
@@ -60,6 +61,8 @@ import { ScanStepsComponent } from './common-ui/scan-steps/scan-steps.component'
 		ScanComponent,
 		ResultComponent,
 		TrackingBrowserPopupComponent, // result page
+		// Directives
+		NumpersOnlyDirective,
 		// Common UI components
 		SidebarComponent,
 		CheckBreachesFormComponent,
