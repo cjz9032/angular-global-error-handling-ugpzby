@@ -17,15 +17,19 @@ import {
 export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	private cssStyleDeclaration: CSSStyleDeclaration;
 
+	public fillWidth = 0;
+	public fillStartColor = '#ff0000';
+	public fillEndColor = '#00ff00';
+
 	@ViewChild('battery') battery: ElementRef;
 	@ViewChild('batteryIndicator') batteryIndicator: ElementRef;
 
 	@Input() isCharging = true; // boolean indicator if its changing or not
-	@Input() percentage = 0; // number without % symbol
+	@Input() percentage = 50; // number without % symbol
 	@Input() remainingHour = 0; // number of hours remaining
 	@Input() remainingMinutes = 0; // number of minutes remaining
 
-	constructor() {}
+	constructor() { }
 
 	ngOnInit() {
 		this.getCssDeclaration();
@@ -50,6 +54,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	 * @param level decimal value ranging from 0.0 to 1.0
 	 */
 	refreshLevel() {
+		return;
 		let level = 1,
 			fillWidth = 100;
 		if (this.percentage > 0 && this.percentage <= 100) {
@@ -83,7 +88,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 		);
 	}
 
-	getLevelCssValues(level: number): any {
+	private getLevelCssValues(level: number): any {
 		// Green:	RemainTimePercent >= 25%
 		// Yellow:	RemainTimePercent  in [15%, 24%]
 		// Red:		RemainTimePercent < 15%
@@ -136,7 +141,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 		return { borderColor, backgroundColor, fillColor };
 	}
 
-	getTimeRemaining(): string {
+	private getTimeRemaining(): string {
 		const hours =
 			this.remainingHour > 0 && this.remainingHour < 2 ? 'hour' : 'hours';
 		const minutes =
@@ -145,20 +150,26 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				: 'minutes';
 		return `${this.remainingHour} ${hours} ${
 			this.remainingMinutes
-		} ${minutes}`;
+			} ${minutes}`;
 	}
 
 	// returns windows object
-	getCssPropertyValue(propertyName: string): string {
+	private getCssPropertyValue(propertyName: string): string {
 		if (this.cssStyleDeclaration) {
 			return this.cssStyleDeclaration.getPropertyValue(propertyName);
 		}
 		return '';
 	}
 
-	getCssDeclaration() {
+	private getCssDeclaration() {
+		return;
 		this.cssStyleDeclaration = window.getComputedStyle(
 			this.batteryIndicator.nativeElement
 		);
+	}
+
+	public onSlide($event) {
+		this.percentage = $event.target.value;
+		this.fillWidth = (88 * this.percentage) / 100;
 	}
 }

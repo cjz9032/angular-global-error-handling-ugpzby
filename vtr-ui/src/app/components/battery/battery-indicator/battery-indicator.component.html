@@ -1,4 +1,78 @@
-<div class="vtr-battery-indicator" #batteryIndicator>
+<input type="range" name="battery-range" id="battery-range" min="1" max="100" step="1" (input)="onSlide($event)">
+<br>
+
+<div class="vtr-battery-indicator">
+	<svg class="svg" id="batter-indicator" viewBox="0 0 350 120" width="350px" height="120px">
+
+		<!-- start of - battery shadow which is blurred -->
+		<!-- <g class="battery-shadow" style="filter:url(#filter4864);stroke-opacity:1;">
+		<rect class="frame" rx="3" height="5.9rem" width="14rem" />
+		<rect class="notch" width="15" height="36" alignment-baseline="middle" />
+	</g>
+	<defs id="defs852">
+		<filter id="filter4864" width="1.0663623" height="1.1734744" x="-0.033181153" y="-0.086737223"
+			style="color-interpolation-filters:sRGB">
+			<feGaussianBlur id="feGaussianBlur4866" stdDeviation="3.4333272" />
+		</filter>
+	</defs> -->
+		<!-- end of - battery shadow which is blurred -->
+
+		<!-- start of - battery frame -->
+		<g class="battery-body">
+			<rect class="frame" rx="2" height="86%" width="90%" />
+			<rect class="notch" rx="2" width="5%" height="40%" />
+		</g>
+		<!-- end of - battery frame -->
+
+		<!-- start of - battery acid fill -->
+		<g style="stroke-width:0">
+			<rect class="battery-fill" height="81%" attr.width="{{fillWidth}}%" rx="2" />
+		</g>
+		<!-- end of - battery frame -->
+
+		<!-- <text class="percent-container">
+		<tspan text-anchor="middle" id="battery-percent-text">50</tspan>
+		<tspan text-anchor="end" x="43" class="percent-symbol">%</tspan>
+	</text> -->
+
+		<!-- <defs>
+			<linearGradient id="gradient" class="percent-text" x1="0%" y1="0%" x2="100%" y2="0%">
+				<stop offset="0%" attr.stop-color="{{fillEndColor}}" />
+				<stop attr.offset="{{percentage}}%" attr.stop-color="{{fillEndColor}}" />
+				<stop attr.offset="{{percentage}}%" attr.stop-color="{{fillStartColor}}" />
+				<stop offset="100%" attr.stop-color="{{fillStartColor}}" />
+			</linearGradient>
+		</defs>
+		<text class="percent-container" fill="url(#gradient)">
+			<tspan x="57%" y="60%" text-anchor="end" id="battery-percent-text">{{ percentage }}</tspan>
+			<tspan x="57%" y="60%" text-anchor="start" class="percent-symbol">%</tspan>
+		</text> -->
+
+		<!-- <mask id="percent-text-mask" x="0" y="0" width="100" height="100">
+			<text class="percent-container">
+				<tspan x="57%" y="60%" text-anchor="end" id="battery-percent-text">{{ percentage }}</tspan>
+				<tspan x="57%" y="60%" text-anchor="start" class="percent-symbol">%</tspan>
+			</text>
+		</mask>
+		<g style="stroke-width:0">
+			<rect class="battery-fill" height="81%" width="100%" rx="2" fill="#0f0" mask="url(#percent-text-mask)" />
+		</g> -->
+
+		<rect class="knockout-text-bg" width="100%" height="100%" fill="#000" x="0" y="0" fill-opacity="1"
+			mask="url(#knockout-text)" />
+
+		<mask id="knockout-text">
+			<rect width="100%" height="100%" fill="#f00" x="0" y="0" />
+			<text class="percent-container">
+				<tspan x="57%" y="60%" text-anchor="end" id="battery-percent-text">{{ percentage }}</tspan>
+				<tspan x="57%" y="60%" text-anchor="start" class="percent-symbol">%</tspan>
+			</text>
+		</mask>
+	</svg>
+</div>
+
+
+<!-- <div class="vtr-battery-indicator" #batteryIndicator>
 	<div class="cell">
 		<div class="battery-shadow"></div>
 		<div #battery class="battery">
@@ -36,4 +110,4 @@
 			></fa-icon>
 		</div>
 	</div>
-</div>
+</div> -->
