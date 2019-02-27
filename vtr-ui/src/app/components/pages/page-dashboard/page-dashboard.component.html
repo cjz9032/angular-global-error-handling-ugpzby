@@ -91,9 +91,9 @@
 									<div class="col col-12 pb-40">
 										<vtr-widget-feedback [title]="'Give feedback'"
 										 [description]="'Tell us what you think about vantage'"
-										 [action]="'feedback'"
 										 [actionName]="'Give feedback'"
-										 (feedBackClick)="onFeedBackClick(true)">
+										 [action]="'feedback'"
+										 (feedBackClick)="onFeedbackModal(feedBackModal)">
 										</vtr-widget-feedback>
 									</div>
 								</div>
@@ -123,8 +123,7 @@
 									<div class="col col-12 py-40">
 										<vtr-widget-questions [title]="'Q&A\'s for your machine'"
 										 [description]="'Find answers for your Ideapad'"
-										 [items]="qaService.qas">
-										</vtr-widget-questions>
+										 [items]="qaService.qas"></vtr-widget-questions>
 									</div>
 								</div>
 							</div>
@@ -134,4 +133,22 @@
 			</div>
 		</div>
 	</div>
+
+	<ng-template #feedBackModal
+	 let-modal>
+		<div class="modal-header">
+			<h4 class="modal-title battery-detail-modal-title pl-5"></h4>
+			<button type="button"
+			 class="close"
+			 aria-label="Close"
+			 (click)="modal.dismiss('Cross click')">
+				<img src="assets/icons/Close.svg" />
+			</button>
+		</div>
+		<div class="modal-body">
+			<vtr-feedback-form (feedbackClick)="onFeedbackClick()"
+			 [buttonText]="feedbackButtonText">
+			</vtr-feedback-form>
+		</div>
+	</ng-template>
 </div>

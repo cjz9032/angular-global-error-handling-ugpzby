@@ -1,1 +1,10 @@
-@import '../../../app.theme';
+@import "../../../app.theme";
+
+.vtr-page-security {
+	.vtr-page-right-column {
+		background-color: $light;
+		.align-center {
+			padding: 0 6rem 0rem 6rem;
+		}
+	}
+}

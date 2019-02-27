@@ -7,9 +7,8 @@ import { SecurityService } from '../../../services/security/security.service';
 	styleUrls: ['./page-security.component.scss']
 })
 export class PageSecurityComponent implements OnInit {
+	title = 'Security';
 
-	title = 'Dashboard';
-	
 	constructor(
 		public securityService: SecurityService
 	) { }
