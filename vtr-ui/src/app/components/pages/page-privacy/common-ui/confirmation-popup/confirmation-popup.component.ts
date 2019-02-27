@@ -17,6 +17,9 @@ export class ConfirmationPopupComponent implements OnInit {
 		this.isPopupOpen = this.confirmationPopupService.isPopupOpen;
 		this.confirmationPopupService.popupOpenStateUpdated.subscribe((isOpen) => {
 			this.isPopupOpen = isOpen;
+			if (!isOpen) {
+				this.resetVerificationCode();
+			}
 		});
 	}
 
