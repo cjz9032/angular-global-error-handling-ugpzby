@@ -78,35 +78,54 @@
 												<div class="row">
 													<div class="col">
 														<div class="home-security">{{'Home Security' | uppercase }}
+
 														</div>
 													</div>
 												</div>
 											</div>
 											<div class="row">
 												<div class="col">
-													<vtr-ui-list-chevron [items]="mockService.securityStatus">
-													</vtr-ui-list-chevron>
-												</div>
-											</div>
-
-											<div class="row coronet-section">
-												<div class="col ">
-													<div class="view-security-check">
-														<a routerLink="/{{viewSecChkRoute}}">View more security
-															checks</a>
+													<div class="opaq-disabled">
+														<div class="peace-of-mind">
+															Do you want more
+															peace of mind?
+														</div>
+														<div class="button-box shift-left">
+															<vtr-ui-button (onClick)="enableWiFiSecurity($event)"
+																[label]="'Enable Wifi security'"></vtr-ui-button>
+														</div>
 													</div>
 												</div>
-												<div class="pull right"><img class="coronet_logo_teal"
-														src="../../../../assets/images/coronet-icon.png" />
-												</div>
 											</div>
 
+											<div class="row">
+												<div class="col">
+													<div class="coronet-section">
+
+														<div class="row">
+															<div class="col">
+																<div class="pull left view-security-check">
+																	<a routerLink="/{{viewSecChkRoute}}">View more
+																		security
+																		checks</a>
+																</div>
+															</div>
+
+															<div class="col-4 p-0">
+																<div class="pull right">
+																	<a routerLink="/{{viewSecChkRoute}}">
+																		<img class="coronet_logo_teal"
+																			src="../../../../assets/images/coronet-icon.png" /></a>
+																</div>
+															</div>
+														</div>
+
+
+													</div>
+												</div>
+											</div>
 											<!--End of Home Security Advisor-->
 										</div>
-
-
-
-
 									</div>
 								</div>
 

@@ -6,6 +6,7 @@
     background-color: $light;
     box-shadow: $drop_shadow;
     padding: 4rem;
+
     .title {
       color: $main_darker;
       font-size: 2.5rem;
@@ -19,26 +20,60 @@
 
     .home-security {
       color: $main_darker;
-      font-size: 2.5rem;
+      font-size: 2rem;
       margin-top: 1rem;
+      font-weight: $weight_bold;
     }
 
-    coronet-section {
+    .opaq-disabled {
+      background-color: $shade;
+      border: 0.1rem solid $shade_lighter;
+      border-radius: $border_radius;
+      opacity: 1;
+      filter: alpha(opacity=50); /* For IE8 and earlier */
+      padding: 1rem 0rem 0rem 0rem;
+      background-size: cover;
+      margin: 1.5rem 0rem 0rem 0rem;
+      background: url("../../../../assets/images/home-security-disabled.png");
+      height: 100%;
+
+      .peace-of-mind {
+        margin: 7rem 1rem 1rem 1rem;
+        color: $main_dark;
+        font-size: 3rem;
+        font-weight: $weight_light;
+        text-align: center;
+      }
+
+      .button-box {
+        padding: 1rem 1rem 3rem 0.25rem;
+        margin: 1rem 1rem 3rem 0.25rem;
+        width: 100%;
+      }
+    }
+
+    .coronet-section {
+      .p-0 {
+        padding: 0rem;
+      }
       margin-top: 1rem;
 
       .view-security-check {
-        color: $main;
-        margin-top: 0.3rem;
+        padding: 0rem;
+        margin-top: 1rem;
         text-align: center;
-        font-size: 1rem;
+        font-size: 2rem;
         cursor: pointer;
-        &:hover {
-          text-decoration: underline;
+        a {
+          color: $main;
+          &:hover {
+            text-decoration: none;
+          }
         }
       }
       .coronet_logo_teal {
-        height: 6rem;
-        width: 18rem;
+        padding: 0rem 0.5rem 0rem 0rem;
+        margin-top: 0.5rem;
       }
     }
   }

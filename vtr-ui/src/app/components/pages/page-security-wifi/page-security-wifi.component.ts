@@ -16,5 +16,8 @@ export class PageSecurityWifiComponent implements OnInit {
 
 	ngOnInit() {
 	}
+	enableWiFiSecurity(event) {
+		console.log('enableWiFiSecurity button clicked');
+	}
 
 }
