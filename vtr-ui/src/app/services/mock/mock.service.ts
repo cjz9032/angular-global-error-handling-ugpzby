@@ -72,6 +72,76 @@ export class MockService {
 		}
 	];
 
+
+	securityHealth = [
+		{
+			'status': 1,
+			'id': 'apps-src-unknown',
+			'title': 'Apps from unknown sources',
+			'detail': 'Failed',
+			'path': 'apps-src-unknown'
+		},
+		{
+			'status': 1,
+			'id': 'dev-mode',
+			'title': 'Developer mode',
+			'detail': 'FAILED',
+			'path': 'dev-mode'
+
+		},
+		{
+			'status': 1,
+			'id': 'uac-notification',
+			'title': 'UAC Notification',
+			'detail': 'FAILED',
+			'path': 'uac-notification'
+		},
+		{
+			'status': 0,
+			'id': 'anti-virus-availability',
+			'title': 'Anti-Virus availability',
+			'detail': 'PASSED',
+			'path': 'anti-virus-availability'
+		},
+		{
+			'status': 0,
+			'id': 'drive-encryption',
+			'title': 'Drive encryption',
+			'detail': 'PASSED',
+			'path': 'drive-encryption'
+
+		},
+		{
+			'status': 0,
+			'id': 'firewall-availability',
+			'title': 'Firewall availability',
+			'detail': 'PASSED',
+			'path': 'firewall-availability'
+
+		},
+		{
+			'status': 0,
+			'id': 'os-integrity',
+			'title': 'OS integrity',
+			'detail': 'PASSED',
+			'path': 'OS integrity'
+		},
+		{
+			'status': 0,
+			'id': 'os-version',
+			'title': 'OS version',
+			'detail': 'PASSED',
+			'path': 'os-version'
+		},
+		{
+			'status': 0,
+			'id': 'pin-pwd',
+			'title': 'Pin or Password',
+			'detail': 'PASSED',
+			'path': 'pin-pwd'
+		}
+	];
+
 	securityStatus = [
 		{
 			'status': 0,

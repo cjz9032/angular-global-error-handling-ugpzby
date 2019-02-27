@@ -9,10 +9,15 @@ import { MockService } from 'src/app/services/mock/mock.service';
 export class PageSecurityWifiComponent implements OnInit {
 
 	title = 'Wifi Security';
+	isLWSEnabled = true;
+	viewSecChkRoute = 'viewSecChkRoute';
 
 	constructor(public mockService: MockService) { }
 
 	ngOnInit() {
+	}
+	enableWiFiSecurity(event) {
+		console.log('enableWiFiSecurity button clicked');
 	}
 
 }
