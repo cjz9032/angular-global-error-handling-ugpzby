@@ -4,7 +4,7 @@ import { Location } from "@angular/common";
 @Component({
     // selector: 'app-admin',
     templateUrl: './installed.component.html',
-    styleUrls: ['./installed.component.scss']
+    styleUrls: ['./installed.component.scss', './privacy-dashboard.component.scss']
 })
 export class InstalledComponent {
     constructor(private _location: Location) {

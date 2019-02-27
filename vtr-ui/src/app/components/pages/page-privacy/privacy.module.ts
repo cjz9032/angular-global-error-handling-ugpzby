@@ -40,6 +40,7 @@ import { PromoFeaturesListComponent } from './common-ui/promo-features-list/prom
 import { PromoVideoComponent } from './common-ui/promo-video/promo-video.component';
 import { ConfirmationPopupComponent } from './common-ui/confirmation-popup/confirmation-popup.component';
 import { ScanStepsComponent } from './common-ui/scan-steps/scan-steps.component';
+import { PrivacyDashboardListComponent } from './pages/installed/privacy-dashboard-list/privacy-dashboard-list.component';
 
 @NgModule({
 	imports: [
@@ -77,6 +78,7 @@ import { ScanStepsComponent } from './common-ui/scan-steps/scan-steps.component'
 		PromoVideoComponent,
 		ConfirmationPopupComponent,
 		ScanStepsComponent,
+		PrivacyDashboardListComponent,
 	],
 	providers: [ServerCommunicationService, ConfirmationPopupService, TrackersPopupService],
 })

@@ -41,7 +41,6 @@ export class SidebarBenefitsWidgetComponent implements OnInit {
 	];
 
 	constructor(private router: Router) {
-		console.log(this.router.url);
 		router.events.forEach((event) => {
 			if (event instanceof NavigationEnd ) {
 				if (event.url === '/privacy/result') {
