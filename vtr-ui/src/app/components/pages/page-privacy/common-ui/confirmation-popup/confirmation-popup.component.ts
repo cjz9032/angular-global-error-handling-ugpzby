@@ -22,11 +22,16 @@ export class ConfirmationPopupComponent implements OnInit {
 
 	closePopup() {
 		this.confirmationPopupService.closePopup();
+		this.resetVerificationCode();
 	}
 
 	onInput(ev) {
 		console.log('ev.target.value', ev.target.value);
 		this.verificationCode = ev.target.value;
+	}
+
+	resetVerificationCode() {
+		this.verificationCode = '';
 	}
 
 	confirm() {
