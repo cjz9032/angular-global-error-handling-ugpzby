@@ -1,21 +1,35 @@
-<form name="feedBack" class="feedback-form" (submit)="onFeedBackSubmit($event)" [formGroup]="feedbackForm" novalidate>
+<form name="feedBack"
+ class="feedback-form"
+ (submit)="onFeedBackSubmit($event)"
+ [formGroup]="feedbackForm"
+ novalidate>
 	<div class="row">
 		<div class="col">
-			<input autocomplete="off" placeholder="Email (optional)" type="email"
-				class="form-control user-email text-center" formControlName="userEmail" email />
+			<input autocomplete="off"
+			 placeholder="Email (optional)"
+			 type="email"
+			 class="form-control user-email text-center"
+			 formControlName="userEmail"
+			 email />
 		</div>
 	</div>
 	<br />
 	<div class="row">
 		<div class="col">
-			<textarea placeholder="Comments..." class="form-control user-comment text-center" cols="30" rows="10"
-				formControlName="userComment" required></textarea>
+			<textarea placeholder="Comments..."
+			 class="form-control user-comment text-center"
+			 cols="30"
+			 rows="10"
+			 formControlName="userComment"
+			 required></textarea>
 		</div>
 	</div>
 	<br />
 	<div class="row">
 		<div class="col text-center">
-			<button type="submit" class="btn btn-primary btn-lg user-submit" [disabled]="feedbackForm.invalid">
+			<button type="submit"
+			 class="btn btn-primary btn-lg user-submit"
+			 [disabled]="feedbackForm.invalid">
 				{{ buttonText }}
 			</button>
 		</div>
