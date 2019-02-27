@@ -2,15 +2,15 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
-				<div class="title" *ngIf="title">{{ title }}</div>
-				<div class="description" *ngIf="description">
+				<div class="title"
+				 *ngIf="title">{{ title }}</div>
+				<div class="description"
+				 *ngIf="description">
 					{{ description }}
 				</div>
 				<div class="button-box">
-					<vtr-ui-button
-						(onClick)="feedback()"
-						[label]="'Give feedback'"
-					></vtr-ui-button>
+					<vtr-ui-button (onClick)="feedback()"
+					 [label]="'Give feedback'"></vtr-ui-button>
 				</div>
 			</div>
 		</div>

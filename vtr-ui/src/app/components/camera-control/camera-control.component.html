@@ -2,8 +2,11 @@
 	<div class="row">
 		<div class="col-6">
 			<div class="camera-preview">
-				<video *ngIf="!cameraDetail.isPrivacyModeEnabled" #cameraPreview class="feed"></video>
-				<div *ngIf="cameraDetail.isPrivacyModeEnabled" class="privacy text-center">
+				<video *ngIf="!cameraDetail.isPrivacyModeEnabled"
+				 #cameraPreview
+				 class="feed"></video>
+				<div *ngIf="cameraDetail.isPrivacyModeEnabled"
+				 class="privacy text-center">
 					<fa-icon [icon]="['far', 'gem']"></fa-icon>
 				</div>
 			</div>
@@ -15,8 +18,9 @@
 						Brightness
 					</div>
 					<vtr-ui-range-slider [step]="cameraDetail.brightnessStepValue"
-						[minValue]="cameraDetail.brightnessMinValue" [maxValue]="cameraDetail.brightnessMaxValue"
-						[value]="cameraDetail.brightnessValue">
+					 [minValue]="cameraDetail.brightnessMinValue"
+					 [maxValue]="cameraDetail.brightnessMaxValue"
+					 [value]="cameraDetail.brightnessValue">
 					</vtr-ui-range-slider>
 				</li>
 				<li class="list-group-item">
@@ -24,8 +28,9 @@
 						Contrast
 					</div>
 					<vtr-ui-range-slider [step]="cameraDetail.contrastStepValue"
-						[minValue]="cameraDetail.contrastMinValue" [maxValue]="cameraDetail.contrastMaxValue"
-						[value]="cameraDetail.contrastValue">
+					 [minValue]="cameraDetail.contrastMinValue"
+					 [maxValue]="cameraDetail.contrastMaxValue"
+					 [value]="cameraDetail.contrastValue">
 					</vtr-ui-range-slider>
 				</li>
 				<li class="list-group-item">
@@ -35,12 +40,14 @@
 						</div>
 						<div class="float-right">
 							<vtr-ui-switch-onoff [value]="cameraDetail.isAutoExposureEnabled"
-								(change)="onAutoExposureChange($event)"></vtr-ui-switch-onoff>
+							 (change)="onAutoExposureChange($event)"></vtr-ui-switch-onoff>
 						</div>
 					</div>
 					<vtr-ui-range-slider [step]="cameraDetail.autoExposureStepValue"
-						[minValue]="cameraDetail.autoExposureMinValue" [maxValue]="cameraDetail.autoExposureMaxValue"
-						[value]="cameraDetail.autoExposureValue" *ngIf="!cameraDetail.isAutoExposureEnabled">
+					 [minValue]="cameraDetail.autoExposureMinValue"
+					 [maxValue]="cameraDetail.autoExposureMaxValue"
+					 [value]="cameraDetail.autoExposureValue"
+					 *ngIf="!cameraDetail.isAutoExposureEnabled">
 					</vtr-ui-range-slider>
 				</li>
 				<li class="list-group-item">
