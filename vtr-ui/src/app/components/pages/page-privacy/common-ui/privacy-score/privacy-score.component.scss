@@ -7,12 +7,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 4rem;
+  &__btn-container {
+    flex-shrink: 0;
+  }
   &__btn {
     @extend %theme-btn;
-    min-width: 17.5rem;
     text-transform: uppercase;
     font-weight: 500;
-    width: 30%;
   }
 }
 
