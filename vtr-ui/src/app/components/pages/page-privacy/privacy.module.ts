@@ -23,6 +23,9 @@ import { TrackersPopupService } from './common-services/popups/trackers-popup.se
 // Modules
 import { PrivacyRoutingModule } from './privacy-routing.module';
 
+//Directives
+import { NumpersOnlyDirective } from './common-directives/numpers-only.directive';
+
 // Common UI components
 import { CheckBreachesFormComponent } from './common-ui/check-breaches/check-breaches-form.component';
 import { PageBannerComponent } from './common-ui/page-banner/page-banner.component';
@@ -40,7 +43,7 @@ import { PromoFeaturesListComponent } from './common-ui/promo-features-list/prom
 import { PromoVideoComponent } from './common-ui/promo-video/promo-video.component';
 import { ConfirmationPopupComponent } from './common-ui/confirmation-popup/confirmation-popup.component';
 import { ScanStepsComponent } from './common-ui/scan-steps/scan-steps.component';
-import { NumpersOnlyDirective } from './common-directives/numpers-only.directive';
+import { PrivacyDashboardListComponent } from './pages/installed/privacy-dashboard-list/privacy-dashboard-list.component';
 
 @NgModule({
 	imports: [
@@ -80,6 +83,7 @@ import { NumpersOnlyDirective } from './common-directives/numpers-only.directive
 		PromoVideoComponent,
 		ConfirmationPopupComponent,
 		ScanStepsComponent,
+		PrivacyDashboardListComponent,
 	],
 	providers: [ServerCommunicationService, ConfirmationPopupService, TrackersPopupService],
 })

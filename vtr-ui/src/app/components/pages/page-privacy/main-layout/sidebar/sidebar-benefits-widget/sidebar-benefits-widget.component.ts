@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
 	selector: 'vtr-sidebar-benefits-widget',
@@ -13,6 +14,8 @@ export class SidebarBenefitsWidgetComponent implements OnInit {
 
 	isOpen = false;
 	linkButtonText = this.isOpen ? 'Hide details' : 'Tell me more';
+
+	needToShow = false;
 
 	benefitsItems = [
 		{
@@ -37,7 +40,16 @@ export class SidebarBenefitsWidgetComponent implements OnInit {
 		},
 	];
 
-	constructor() {
+	constructor(private router: Router) {
+		router.events.forEach((event) => {
+			if (event instanceof NavigationEnd ) {
+				if (event.url === '/privacy/result') {
+					this.needToShow = true;
+				} else {
+					this.needToShow = false;
+				}
+			}
+		});
 	}
 
 	ngOnInit() {

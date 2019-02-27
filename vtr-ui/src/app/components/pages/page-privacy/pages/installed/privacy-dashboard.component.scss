@@ -1,0 +1,11 @@
+@import "../../styles/common-blocks";
+
+.privacy-dashboard {
+  @extend %common-block-wrapper;
+
+
+  &__title {
+    @extend %subtitle;
+    margin-bottom: 4.4rem;
+  }
+}
