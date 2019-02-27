@@ -1,20 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServerCommunicationService } from '../../common-services/server-communication.service';
+import { ConfirmationPopupService } from '../../common-services/popups/confirmation-popup.service';
 
 @Component({
 	selector: 'vtr-check-breaches-form',
 	templateUrl: './check-breaches-form.component.html',
 	styleUrls: ['./check-breaches-form.component.scss'],
 })
-export class CheckBreachesFormComponent implements OnInit {
+export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	public isLoading: boolean;
 	public lenovoId: string;
 	public islenovoIdOpen: boolean;
 	public isFormFocused: boolean;
 	public inputValue: string;
+	private validationStatusChanged;
 
-	constructor(public router: Router, private serverCommunication: ServerCommunicationService) {
+	constructor(public router: Router, private serverCommunication: ServerCommunicationService, private confirmationPopupService: ConfirmationPopupService) {
 		this.isLoading = false;
 		this.islenovoIdOpen = false;
 		this.isFormFocused = false;
@@ -25,6 +27,23 @@ export class CheckBreachesFormComponent implements OnInit {
 		this.serverCommunication.getLenovoId().then((lenovoId: string) => {
 			this.lenovoId = lenovoId;
 		});
+		this.validationStatusChanged = this.serverCommunication.validationStatusChanged;
+
+		this.validationStatusChanged.subscribe((isResultPositive) => {
+			this.isLoading = true;
+			if (isResultPositive) {
+				this.serverCommunication.getBreachedAccounts(this.inputValue).then((breachesArr) => {
+					console.log('breachesArr', breachesArr);
+					this.isLoading = false;
+					this.validationStatusChanged.unsubscribe();
+					this.router.navigate(['privacy/result']);
+				});
+			}
+		})
+	}
+
+	ngOnDestroy() {
+		this.validationStatusChanged.unsubscribe();
 	}
 
 	changeInputValue(event) {
@@ -64,11 +83,7 @@ export class CheckBreachesFormComponent implements OnInit {
 	scanEmail(event) {
 		event.preventDefault();
 		// TODO validate this.inputValue here
-		this.isLoading = true;
-		this.serverCommunication.getBreachedAccounts(this.inputValue).then((breachesArr) => {
-			console.log('breachesArr', breachesArr);
-			this.isLoading = false;
-			this.router.navigate(['privacy/result']);
-		});
+		this.serverCommunication.sendVerificationCode();
+		this.confirmationPopupService.openPopup();
 	}
 }

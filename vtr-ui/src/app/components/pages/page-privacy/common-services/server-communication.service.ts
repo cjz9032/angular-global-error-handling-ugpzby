@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 @Injectable()
 export class ServerCommunicationService {
@@ -8,10 +8,26 @@ export class ServerCommunicationService {
 	public edgeAccounts = {};
 	public chromeAccounts = {};
 
+	public validationStatusChanged = new EventEmitter();
+
 	getLenovoId() {
 		return new Promise((resolve) => {
 			setTimeout(() => {
 				resolve('my_lenovo_id');
+			}, 200);
+		});
+	}
+
+	sendVerificationCode() {
+		// send some request to API
+	}
+
+	validateVerificationCode(code) {
+		return new Promise((resolve) => {
+			setTimeout(() => {
+				// send to server verification code and receive result if it's valid
+				resolve();
+				this.validationStatusChanged.emit(true);
 			}, 200);
 		});
 	}

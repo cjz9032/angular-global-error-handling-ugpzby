@@ -1,0 +1,26 @@
+<div *ngIf="isPopupOpen" class="popup">
+  <div class="popup__overlay" (click)="closePopup()"></div>
+  <div class="popup__body">
+    <h2 class="popup__title">Some PopUp Title</h2>
+    <p class="popup__subtitle"></p>
+    <div class="popup__browsers">
+
+      <label for="chrome-btn">
+        <input type="radio" name="choose-tracking-browser" id="chrome-btn">
+        Choose chrome
+      </label>
+
+      <label for="firefox-btn">
+        <input type="radio" name="choose-tracking-browser" id="firefox-btn">
+        Choose firefox
+      </label>
+
+      <label for="edge-btn">
+        <input type="radio" name="choose-tracking-browser" id="edge-btn">
+        Choose edge
+      </label>
+    </div>
+
+    <button (click)="confirm()">CONFIRM</button>
+  </div>
+</div>
