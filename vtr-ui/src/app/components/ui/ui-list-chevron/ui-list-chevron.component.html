@@ -5,7 +5,17 @@
 			<a routerLink="/{{item.path}}">
 				<div class="container-fluid">
 					<div class="row align-items-center">
-						<div class="col col-2 text-center">
+						<div class="col col-10 item-text">
+							<div class="title"
+								[ngClass]="{'light-title':item.lightTitle}">
+								{{item.title}}
+							</div>
+							<div class="detail"
+								[ngClass]="{'highlight':item.asLink}">
+								{{item.detail}}
+							</div>
+						</div>
+						<div class="col col-1 text-center">
 							<div class="item-icon status"
 							 *ngIf="item.status!==undefined&&item.status!==''">
 								<div class="icon-bkg">
@@ -18,21 +28,11 @@
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
-							<div class="item-icon-image" *ngIf="item.iconPath">
+							<div class="item-icon-image"
+								*ngIf="item.iconPath">
 
-								<img [src]="item.iconPath"/>
+								<img [src]="item.iconPath" />
 
-							</div>
-
-						</div>
-						<div class="col col-9 item-text">
-							<div class="title"
-							 [ngClass]="{'light-title':item.lightTitle}">
-								{{item.title}}
-							</div>
-							<div class="detail"
-							 [ngClass]="{'highlight':item.asLink}">
-								{{item.detail}}
 							</div>
 						</div>
 						<div class="col col-1 text-center">

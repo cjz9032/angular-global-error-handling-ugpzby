@@ -71,6 +71,7 @@
 			}
 			.item-text {
 				overflow: hidden;
+				padding-left: 1rem;
 				.title {
 					font-size: 1.4rem;
 					font-weight: $weight_medium;
@@ -85,7 +86,6 @@
 					text-align: right;
 					font-size: 1.2rem;
 					color: $shade_dark;
-					font-style: italic;
 					&.highlight {
 						color: $main_shade;
 						text-decoration: underline;
