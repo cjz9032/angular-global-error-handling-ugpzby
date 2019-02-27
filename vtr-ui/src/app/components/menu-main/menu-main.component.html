@@ -63,9 +63,9 @@
 						<div class="dropdown-menu {{item.id}}"
 						 aria-labelledby="navbarDropdown">
 							<div class="dropdown-item">Welcome, {{userService.firstName}}</div>
-							<a class="dropdown-item link"
-							 routerLink="/login">Login</a>
-							 <a class="dropdown-item link"
+							<a class="dropdown-item link" href="#" (click)="OpenLenovoId()"
+							>Login</a>
+							 <a *ngIf="isLoggedIn" class="dropdown-item link"
 							 routerLink="/logout">Logout</a>
 						</div>
 					</li>

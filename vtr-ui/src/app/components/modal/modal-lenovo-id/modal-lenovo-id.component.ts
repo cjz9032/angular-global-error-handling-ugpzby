@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+ 
 
 @Component({
   selector: 'vtr-modal-lenovo-id',
@@ -9,6 +10,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class ModalLenovoIdComponent implements OnInit {
 
   constructor(public activeModal: NgbActiveModal) {
+ 
   }
 
   ngOnInit() {
@@ -32,9 +34,13 @@ export class ModalLenovoIdComponent implements OnInit {
     webView.addEventListener("MSWebViewNavigationCompleted", function (EventArgs) {
       var webViewEvent = EventArgs as WebViewEvent;
       if (webViewEvent.isSuccess) {
+		  alert("s");
         //_this.captureWebViewContent(webView);
       } else {
-        //handle error
+		//handle error
+		this.activeModal.dismiss();
+		console.log("not success");
+		
       }
     });
   }
