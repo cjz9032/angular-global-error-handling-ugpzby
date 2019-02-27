@@ -14,5 +14,7 @@ export class PageSecurityInternetComponent implements OnInit {
 
 	ngOnInit() {
 	}
-
+	surfeasy() {
+		 window.open("https://www.surfeasy.com/lenovo/")
+	}
 }

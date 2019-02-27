@@ -6,8 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 	styleUrls: ['./ui-switch-onoff.component.scss']
 })
 export class UiSwitchOnoffComponent implements OnInit {
-
-	@Output() change: EventEmitter<any> = new EventEmitter();
+	@Output() toggle: EventEmitter<any> = new EventEmitter();
 
 	@Input() value: boolean;
 
@@ -15,15 +14,13 @@ export class UiSwitchOnoffComponent implements OnInit {
 	offLabel = 'off';
 	size = 'switch-xs';
 
-	constructor() { }
+	constructor() {}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	onChange(event) {
 		this.value = !this.value;
 		event.switchValue = this.value;
-		this.change.emit(event);
+		this.toggle.emit(event);
 	}
-
 }
