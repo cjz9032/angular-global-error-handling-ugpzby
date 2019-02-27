@@ -40,7 +40,7 @@
 						</div>
 						<div class="float-right">
 							<vtr-ui-switch-onoff [value]="cameraDetail.isAutoExposureEnabled"
-							 (change)="onAutoExposureChange($event)"></vtr-ui-switch-onoff>
+							 (toggle)="onAutoExposureChange($event)"></vtr-ui-switch-onoff>
 						</div>
 					</div>
 					<vtr-ui-range-slider [step]="cameraDetail.autoExposureStepValue"
