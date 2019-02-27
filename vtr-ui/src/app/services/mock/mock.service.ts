@@ -112,6 +112,74 @@ export class MockService {
 		}
 	];
 
+	securityAntivirus = [
+		{
+			'status': 0,
+			'id': 'anti-virus',
+			'title': 'Anti-Virus',
+			'detail': 'Enabled',
+			'path': ''
+		},
+		{
+			'status': 1,
+			'id': 'firewall',
+			'title': 'Firewall',
+			'detail': 'Disabled',
+			'path': ''
+
+		}
+	];
+
+	securityPasswordHealth = [
+		{
+			'status': 0,
+			'id': 'password-manager',
+			'title': 'Password Manager',
+			'detail': 'Installed',
+			'path': ''
+		}
+	];
+
+	securityVPN = [
+		{
+			'status': 0,
+			'id': 'virtual-private-network',
+			'title': 'Virtual Private Network',
+			'detail': 'Installed',
+			'path': ''
+		}
+	];
+
+	securityWifi = [
+		{
+			'status': 0,
+			'id': 'wifi-security',
+			'title': 'WiFi Security',
+			'detail': 'Enabled',
+			'path': ''
+		}
+	];
+
+	securityConnectedHome = [
+		{
+			'status': 0,
+			'id': 'connected-home-security',
+			'title': 'Connected Home Security',
+			'detail': 'Enabled',
+			'path': ''
+		}
+	];
+
+	securityWindowsHello = [
+		{
+			'status': 0,
+			'id': 'fingerprint-reader',
+			'title': 'Fingerprint reader',
+			'detail': 'Enabled',
+			'path': ''
+		}
+	];
+
 	qA = [
 		{
 			'icon': ['fas', 'plane'],

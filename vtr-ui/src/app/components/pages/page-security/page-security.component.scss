@@ -2,9 +2,73 @@
 
 .vtr-page-security {
 	.vtr-page-right-column {
-		background-color: $light;
 		.align-center {
 			padding: 0 6rem 0rem 6rem;
+		}
+	}
+
+	.vtr-page-left-column-inner {
+		box-shadow: $drop_shadow;
+		border-radius: $border_radius;
+
+		.security-widgets-container.left {
+			border-right: solid 1px $main_lightest;
+		}
+
+		.security-widgets-container {
+			.security-widget {
+				border-bottom: solid 1px $main_lightest;
+				padding: 3rem;
+
+				.security-widget-inner {
+					.title {
+						font-size: 2.5rem;
+						font-weight: $weight_medium;
+						margin-bottom: -1.5rem;
+					}
+				}
+			}
+			.security-widget.anti-virus {
+				.security-widget-inner {
+					.title {
+						color: $alt;
+					}
+				}
+			}
+			.security-widget.password-health {
+				.security-widget-inner {
+					.title {
+						fa-icon {
+							color: $main;
+						}
+					}
+				}
+			}
+			.security-widget.vpn-security {
+				border-bottom: none;
+				.security-widget-inner {
+					.title {
+						fa-icon {
+							color: $main;
+						}
+					}
+				}
+			}
+			.security-widget.wifi-connected-home {
+				.security-widget-inner {
+					.title {
+						color: $go_dark;
+					}
+				}
+			}
+			.security-widget.windows-hello {
+				border-bottom: none;
+				.security-widget-inner {
+					.title {
+						color: $go_dark;
+					}
+				}
+			}
 		}
 	}
 }
