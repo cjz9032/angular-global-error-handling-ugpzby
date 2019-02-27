@@ -29,8 +29,6 @@
       background-color: $shade;
       border: 0.1rem solid $shade_lighter;
       border-radius: $border_radius;
-      opacity: 1;
-      filter: alpha(opacity=50); /* For IE8 and earlier */
       padding: 1rem 0rem 0rem 0rem;
       background-size: cover;
       margin: 1.5rem 0rem 0rem 0rem;
@@ -53,16 +51,17 @@
     }
 
     .coronet-section {
+      margin-top: 1.5rem;
       .p-0 {
         padding: 0rem;
       }
-      margin-top: 1rem;
 
       .view-security-check {
         padding: 0rem;
         margin-top: 1rem;
         text-align: center;
         font-size: 2rem;
+        font-weight: $weight_regular;
         cursor: pointer;
         a {
           color: $main;
