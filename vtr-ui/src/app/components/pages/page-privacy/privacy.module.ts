@@ -39,6 +39,7 @@ import { ArticlePromoComponent } from './common-ui/article-promo/article-promo.c
 import { PromoFeaturesListComponent } from './common-ui/promo-features-list/promo-features-list.component';
 import { PromoVideoComponent } from './common-ui/promo-video/promo-video.component';
 import { ConfirmationPopupComponent } from './common-ui/confirmation-popup/confirmation-popup.component';
+import { ScanStepsComponent } from './common-ui/scan-steps/scan-steps.component';
 
 @NgModule({
 	imports: [
@@ -75,6 +76,7 @@ import { ConfirmationPopupComponent } from './common-ui/confirmation-popup/confi
 		PromoFeaturesListComponent,
 		PromoVideoComponent,
 		ConfirmationPopupComponent,
+		ScanStepsComponent,
 	],
 	providers: [ServerCommunicationService, ConfirmationPopupService, TrackersPopupService],
 })

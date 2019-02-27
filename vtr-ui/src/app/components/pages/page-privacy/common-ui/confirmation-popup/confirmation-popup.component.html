@@ -1,26 +1,24 @@
-<div *ngIf="isPopupOpen" class="popup">
-  <div class="popup__overlay" (click)="closePopup()"></div>
-  <div class="popup__body">
-    <h2 class="popup__title">Some PopUp Title</h2>
-    <p class="popup__subtitle"></p>
-    <div class="popup__browsers">
+<div *ngIf="isPopupOpen" class="confirm-popup">
+  <div class="confirm-popup__overlay" (click)="closePopup()"></div>
+  <div class="confirm-popup__body">
+    <button class="confirm-popup__close-btn"></button>
 
-      <label for="chrome-btn">
-        <input type="radio" name="choose-tracking-browser" id="chrome-btn">
-        Choose chrome
-      </label>
+    <h2 class="confirm-popup__title">Let’s confirm your email</h2>
 
-      <label for="firefox-btn">
-        <input type="radio" name="choose-tracking-browser" id="firefox-btn">
-        Choose firefox
-      </label>
+    <div class="confirm-content">
+      <div class="confirm-content__container-top">
+        <p class="confirm-content__title">Enter code</p>
+        <input class="confirm-input"type="text">
+        <div class="confirm-failure">
+          <p class="confirm-failure__text">Didn't get the code?</p>
+          <button class="confirm-failure__btn">send it again</button>
+        </div>
+      </div>
 
-      <label for="edge-btn">
-        <input type="radio" name="choose-tracking-browser" id="edge-btn">
-        Choose edge
-      </label>
+      <vtr-scan-steps></vtr-scan-steps>
+
     </div>
 
-    <button (click)="confirm()">CONFIRM</button>
+    <button class="confirm-popup__confirm-btn" (click)="confirm()">CONFIRM</button>
   </div>
 </div>
