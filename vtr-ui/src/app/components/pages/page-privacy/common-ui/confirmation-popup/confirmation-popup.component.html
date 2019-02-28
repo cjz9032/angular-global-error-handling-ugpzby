@@ -1,6 +1,6 @@
 <div *ngIf="isPopupOpen" class="confirm-popup">
   <div class="confirm-popup__overlay" (click)="closePopup()"></div>
-  <div class="confirm-popup__body">
+  <form action="" class="confirm-popup__body">
     <button class="confirm-popup__close-btn" (click)="closePopup()"></button>
 
     <h2 class="confirm-popup__title">Let’s confirm your email</h2>
@@ -31,5 +31,5 @@
     </div>
 
     <button class="confirm-popup__confirm-btn" (click)="confirm()">Confirm email</button>
-  </div>
+  </form>
 </div>
