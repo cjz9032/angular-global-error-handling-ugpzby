@@ -107,6 +107,7 @@ import { UiListSupportComponent } from './components/ui/ui-list-support/ui-list-
 import { WidgetWarrantyComponent } from './components/widgets/widget-warranty/widget-warranty.component';
 import { SanitizeHtmlPipe } from './pipe/sanitizehtml.pipe';
 import { WidgetRebootComponent } from './components/widgets/widget-reboot/widget-reboot.component';
+import { ContainerArticleComponent } from './components/container-article/container-article.component';
 
 library.add(fas);
 library.add(fab);
@@ -176,7 +177,8 @@ library.add(far);
 		WidgetWarrantyComponent,
 		SanitizeHtmlPipe,
 		WidgetRebootComponent,
-		FeedbackFormComponent
+		FeedbackFormComponent,
+		ContainerArticleComponent
 	],
 	imports: [
 		BrowserModule,

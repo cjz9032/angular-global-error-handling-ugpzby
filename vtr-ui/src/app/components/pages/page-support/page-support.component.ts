@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { ArticlesService } from '../../../services/articles/articles.service';
+import { ArticlesService } from '../../../services/articles/articles.service';
 import { MockService } from '../../../services/mock/mock.service';
 
 
@@ -12,10 +12,11 @@ export class PageSupportComponent implements OnInit {
 
 	title = 'Get Support';
 	searchWords = '';
+	searchCount = 1;
 	articles: any;
 
 	constructor(
-		// public articlesService: ArticlesService,
+		public articlesService: ArticlesService,
 		public mockService: MockService,
 	) {
 		// this.getArticles();
@@ -24,16 +25,16 @@ export class PageSupportComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	search(words: string) {
-		this.searchWords = words;
+	search(value: string) {
+		this.searchWords = value;
 	}
 
-	// getArticles() {
-	// 	this.articlesService.getArticles()
-	// 		.subscribe((data) => {
-	// 			console.log(data);
-	// 			this.articles = data;
-	// 		});
-	// }
+	getArticles() {
+		this.articlesService.getArticles()
+			.subscribe((data) => {
+				console.log(data);
+				this.articles = data;
+			});
+	}
 
 }
