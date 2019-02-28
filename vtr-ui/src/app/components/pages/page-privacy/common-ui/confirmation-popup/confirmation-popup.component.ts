@@ -37,7 +37,8 @@ export class ConfirmationPopupComponent implements OnInit {
 		this.verificationCode = '';
 	}
 
-	confirm() {
+	confirm(ev) {
+		ev.preventDefault();
 		this.serverCommunicationService.validateVerificationCode(this.verificationCode).then(() => {
 			this.confirmationPopupService.closePopup();
 		})
