@@ -24,10 +24,8 @@
 
 							<div class="container-fluid">
 
-								<!--Start of Security Card Advisor for LWS enabled-->
 								<!--Start of Security Card Advisor-->
-								<div class="row mb-40"
-									*ngIf="isLWSEnabled===true">
+								<div class="row mb-40">
 									<div class="col col-12">
 										<vtr-widget-status [title]="'Security Advisor'"
 											[description]="'Security Status Component'"
@@ -38,95 +36,78 @@
 								<!--end of Security Card Advisor-->
 
 								<!--Start of Security Health Advisor-->
-								<div class="row mb-40"
-									*ngIf="isLWSEnabled===true">
+								<div class="row mb-40">
 									<div class="col col-12">
-										<vtr-widget-status [title]="'Security Health'"
-											[description]="'Learn more about each of these components here. Make &quot;here&quot; a hyperlink. We will work on creating an article that links to this content'"
-											[items]="mockService.securityHealth">
-										</vtr-widget-status>
-									</div>
-								</div>
-								<!--end of Security Health Advisor-->
-								<!--End of Security Card Advisor for LWS enabled-->
-
-								<!--Start of Security Card Advisor for LWS diabled-->
-								<div class="row mb-40"
-									*ngIf="isLWSEnabled===false">
-									<div class="col col-12">
-										<div class="vtr-security-advisor">
+										<div class="vtr-security-health">
 											<div class="container-fluid">
-												<!--Start of  Security Advisor-->
 												<div class="row">
 													<div class="col">
-														<div class="title">{{'Security Advisor'}}</div>
-														<div class="description">{{'Security Status Component'}}</div>
+														<div class="title">{{'Security Health'}}</div>
+														<div class="description">
+															{{'Learn more about each of these components here. Make &quot;here&quot; a hyperlink. We will work on creating an article that links to this content'}}
+														</div>
 													</div>
 												</div>
-											</div>
-											<div class="row">
-												<div class="col">
-													<vtr-ui-list-chevron [items]="mockService.securityStatus">
-													</vtr-ui-list-chevron>
-												</div>
-											</div>
-											<!--End of  Security Advisor-->
 
-											<!--Start of Home Security Advisor-->
-											<div class="container-fluid">
-												<!--Start of  Security Advisor-->
 												<div class="row">
 													<div class="col">
-														<div class="home-security">{{'Home Security' | uppercase }}
 
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col">
-													<div class="opaq-disabled">
-														<div class="peace-of-mind">
-															Do you want more
-															peace of mind?
-														</div>
-														<div class="button-box shift-left">
-															<vtr-ui-button (onClick)="enableWiFiSecurity($event)"
-																[label]="'Enable Wifi security'"></vtr-ui-button>
-														</div>
-													</div>
-												</div>
-											</div>
+														<!--Start of Security Health Advisor When LWS is enabled-->
+														<vtr-ui-list-chevron [items]="mockService.securityHealth"
+															*ngIf="isLWSEnabled===true">
+														</vtr-ui-list-chevron>
+														<!--end of Security Health Advisor When LWS is enabled-->
 
-											<div class="row">
-												<div class="col">
-													<div class="coronet-section">
+														<!--Start of Security Health Advisor When LWS is disabled-->
+														<div class="security-health-disabled"
+															*ngIf="isLWSEnabled===false">
+															<div class="security-health-disabled-list">
 
-														<div class="row">
-															<div class="col">
-																<div class="pull left view-security-check">
-																	<a routerLink="/{{viewSecChkRoute}}">View more
-																		security
-																		checks</a>
+																<div class="peace-of-mind">
+																	Do you want more
+																	peace of mind?
+																</div>
+																<div class="button-box shift-left">
+																	<vtr-ui-button
+																		(onClick)="enableWiFiSecurity($event)"
+																		[label]="'Enable Wifi security'">
+																	</vtr-ui-button>
 																</div>
 															</div>
 
-															<div class="col-4 p-0">
-																<div class="pull right">
-																	<a routerLink="/{{viewSecChkRoute}}">
-																		<img class="coronet_logo_teal"
-																			src="../../../../assets/images/coronet-icon.png" /></a>
+															<div class="coronet-section">
+																<div class="row">
+																	<div class="col">
+																		<div class="pull left view-security-check">
+																			<a routerLink="/{{viewSecChkRoute}}">View
+																				more
+																				security
+																				checks</a>
+																		</div>
+
+																	</div>
+
+																	<div class="col-4 p-0">
+																		<div class="pull right">
+																			<a routerLink="/{{viewSecChkRoute}}">
+																				<img class="coronet_logo_teal"
+																					src="../../../../assets/images/coronet-icon.png" /></a>
+																		</div>
+																	</div>
 																</div>
 															</div>
 														</div>
+
+														<!--end of Security Health Advisor When LWS is disabled-->
+
 													</div>
 												</div>
 											</div>
-											<!--End of Home Security Advisor-->
 										</div>
 									</div>
 								</div>
-								<!--End of Security Card Advisor for LWS diabled-->
+								<!--end of Security Health Advisor-->
+
 
 								<!--start of Antivirus ad-->
 								<div class="row mb-40">
