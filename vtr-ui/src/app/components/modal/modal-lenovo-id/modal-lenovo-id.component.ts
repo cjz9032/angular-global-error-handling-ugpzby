@@ -1,5 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { UserService } from '../../../services/user/user.service';
+//import { Phoenix } from '@lenovo/tan-client-bridge';
 import { Subscription, timer } from "rxjs";
 
 //TODO: Create facebook new account within UWP WebView control will increase memory rapidly and crash app fianlly,
@@ -15,7 +17,10 @@ export class ModalLenovoIdComponent implements OnInit {
   private cacheCleared: boolean;
   private detectConnectionStatusSub: Subscription;
   private detectConnectionStatusTimer = timer(5000, 5000);
-  constructor(public activeModal: NgbActiveModal) {
+  constructor(
+    public activeModal: NgbActiveModal,
+    private userService: UserService
+  ) {
     this.isOnline = false;
     this.cacheCleared = false;
   }
@@ -37,6 +42,7 @@ export class ModalLenovoIdComponent implements OnInit {
     }).catch(function (error) {
       // Error
     });
+    return promise;
   }
 
   ngOnInit() {
@@ -67,17 +73,18 @@ export class ModalLenovoIdComponent implements OnInit {
 
     var webView = document.querySelector("#lid-webview") as MsWebView;
     // TODO: call JS bridge to get logon url and navigate to it
-    //var logonUrl = getLoginUrl();
-    //var logonUrl = 'https://sso.lenovo.com/ssoserver/authorizeclient/v1/login?aid=e4af23f9161ef931df61ef4a1af95fa16e91640af2bdd3dabee0f74309e5123b&did=6435aa64a36a7877afd654952a78cbabafa24bb3a0dd42f35d11484f514b80ab0&sid=5d155e36125acf071a5c1d8bd49032219fbb72832d271716d76f5fcdea17d80d&sign=6ee531118054a38be312e60ba2548b9af87e9ea429c7e1b8696a0cd3701901d0';
+    //var logonUrl = Phoenix.getLoginUrl();
+    //var logonUrl = 'https://sso.lenovo.com/ssoserver/authorizeclient/v1/login?aid=e4af23f9161ef931df61ef4a1af95fa16e91640af2bdd3dabee0f74309e5123b&did=6435aa64a36a7877afd654952a78cbabafa24bb3a0dd42f35d11484f514b80ab0&sid=5c13238222d5c3a0a4ff930ea5de6c5a24875dbb63ef6d6837be1dc972a03591&sign=d7b7806c03fc5594f01c8ee77d73b494c1f99070f9e508013666b463e3a75a3b';
     var logonUrl = 'https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null';
-    if (logonUrl.indexOf("sso.lenovo.com") === -1) {
+    //Uncomment when use logon url from JS bridge
+    //if (logonUrl.indexOf("sso.lenovo.com") === -1) {
       // TODO: Set success return code and close this logon dialog
-      return;
-    } else {
+    //  return;
+    //} else {
       // TODO: call JS bridge to get current system local and set to url
-    }
+    //}
     webView.src = logonUrl;
-    var _this = this;
+    var self = this;
     webView.addEventListener("MSWebViewNavigationCompleted", function (EventArgs) {
       var webViewEvent = EventArgs as WebViewEvent;
       if (webViewEvent.isSuccess) {
@@ -87,27 +94,35 @@ export class ModalLenovoIdComponent implements OnInit {
           return;
         };
         if (EventArgs.srcElement.documentTitle.startsWith("Login success")) {
-          var htmlContent = _this.captureWebViewContent(webView);
-          // Parse html content to get username, useruad, userid, userguid, firstname and lastname
-          var el = document.createElement('dummy_html');
-          el.innerHTML = String(htmlContent);
-          var username = el.getElementsByTagName('username');
-          var useruad = el.getElementsByTagName('useruad');
-          var userid = el.getElementsByTagName('userid');
-          var userguid = el.getElementsByTagName('userguid');
-          var firstname = el.getElementsByTagName('firstname');
-          var lastname = el.getElementsByTagName('lastname');
-          // TODO: call JS bridge to enable sso
-          // EnableSSO(useruad, username, userid, userguid)
-          // TODO: pass username, firstname and lastname to global scope (eg. via common service), 
-          // UI will show them in common header
-
+          self.captureWebViewContent(webView).then((htmlContent: any) => {
+            try {
+              // Parse html content to get username, useruad, userid, userguid, firstname and lastname
+              var parser = new DOMParser();
+              var el = parser.parseFromString(htmlContent, "text/html").documentElement;
+              var username = (el.querySelector('#username') as HTMLInputElement).value;
+              var useruad = (el.querySelector('#useruad') as HTMLInputElement).value;
+              var userid = (el.querySelector('#userid') as HTMLInputElement).value;
+              var userguid = (el.querySelector('#userguid') as HTMLInputElement).value;
+              var firstname = (el.querySelector('#firstname') as HTMLInputElement).value;
+              var lastname = (el.querySelector('#lastname') as HTMLInputElement).value;
+              // TODO: call JS bridge to enable sso
+              // Phoenix.EnableSSO(useruad, username, userid, userguid)
+              self.userService.setName(firstname, lastname);
+              self.userService.setToken(useruad);
+              self.userService.setAuth();
+              // Close logon dialog
+              self.activeModal.dismiss();
+              console.log("login success");
+            } catch(error) {
+              console.log(error);
+            }
+          })
+          .catch(console.error);
         }
       } else {
         // Handle error
         this.activeModal.dismiss();
-        console.log("not success");
-		
+        console.log("login not success");
       }
     });
   }
