@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MockService } from "../../../services/mock/mock.service"
+import { MockService } from '../../../services/mock/mock.service';
 import { DevService } from '../../../services/dev/dev.service';
- 
+
 
 
 @Component({
@@ -36,11 +36,11 @@ export class PageDeviceSettingsComponent implements OnInit {
 			subitems: [],
 			active: false
 		}
-	]
+	];
 
 	constructor(
 		private devService: DevService,
-		public mockService:MockService
+		public mockService: MockService
 	) { }
 
 	ngOnInit() {

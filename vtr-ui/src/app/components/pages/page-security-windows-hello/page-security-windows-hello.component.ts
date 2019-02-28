@@ -9,6 +9,7 @@ import { MockService } from 'src/app/services/mock/mock.service';
 export class PageSecurityWindowsHelloComponent implements OnInit {
 
 	title = 'Windows Hello';
+	IsWindowsHelloInstalled: string="not-installed";
 	constructor(public mockService: MockService) { }
 
 	ngOnInit() {

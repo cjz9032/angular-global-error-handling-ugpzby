@@ -1,12 +1,14 @@
 <div class="vtr-widget-switch-icon">
-	<div class="switch-container"
-	 [ngClass]="[value?'checked':'unchecked']">
-		<div class="title">{{title}}</div>
+	<div class="switch-container" [ngClass]="[value ? 'checked' : 'unchecked']">
+		<div class="title">{{ title }}</div>
 		<div class="icon-container">
 			<fa-icon [icon]="iconDefinition"></fa-icon>
 		</div>
 		<div class="switch">
-			<vtr-ui-switch-onoff [value]="value" (change)="onChange($event)"></vtr-ui-switch-onoff>
+			<vtr-ui-switch-onoff
+				[value]="value"
+				(toggle)="onChange($event)"
+			></vtr-ui-switch-onoff>
 		</div>
 	</div>
 </div>
