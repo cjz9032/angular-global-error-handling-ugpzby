@@ -104,6 +104,30 @@ export class ServerCommunicationService {
 	getTrackersFirefox() {
 	}
 
+	isChromeHasAccounts() {
+		return new Promise((resolve) => {
+			setTimeout(() => {
+				resolve(false);
+			}, 200);
+		});
+	}
+
+	isEdgeHasAccounts() {
+		return new Promise((resolve) => {
+			setTimeout(() => {
+				resolve(true);
+			}, 200);
+		});
+	}
+
+	isFirefoxHasAccounts() {
+		return new Promise((resolve) => {
+			setTimeout(() => {
+				resolve(true);
+			}, 200);
+		});
+	}
+
 	getAccountsChrome() {
 		const chromeAccounts = [
 			{

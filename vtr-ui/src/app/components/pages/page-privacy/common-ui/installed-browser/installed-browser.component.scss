@@ -120,3 +120,23 @@
     margin: 0;
   }
 }
+
+.accounts-safe {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2ECC71 0%, #35E6B9 100%);
+  border: 2px solid #2ECC71;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    width: 2rem;
+    height: 1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-40deg);
+    border-bottom: 0.3rem solid #fff;
+    border-left: 0.3rem solid #fff;
+  }
+}

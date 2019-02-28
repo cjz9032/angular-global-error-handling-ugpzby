@@ -10,20 +10,23 @@ export class BrowserStoredAccountsComponent implements OnInit {
 	@Input() inputData: {showDetailAction: 'expand' | 'link'};
 
 	public installedBrowsersNames: Array<string>;
-	public installedBrowsers: Array<object>;
+	public installedBrowsers: Array<{name: string, image_url: string, has_stored_accounts: boolean}>;
 
 	// static Data transferred to html
 	private chromeDefaultDetail = {
 		name: 'Chrome',
 		image_url: "/assets/images/privacy-tab/Chrome.png",
+		has_stored_accounts: false,
 	};
 	private firefoxDefaultDetail = {
 		name: 'Firefox',
 		image_url: "/assets/images/privacy-tab/Chrome.png",
+		has_stored_accounts: false,
 	};
 	private edgeDefaultDetail = {
 		name: 'Edge',
 		image_url: "/assets/images/privacy-tab/Edge.png",
+		has_stored_accounts: false,
 	};
 
 	constructor(private serverCommunicationService: ServerCommunicationService) {}
@@ -36,13 +39,22 @@ export class BrowserStoredAccountsComponent implements OnInit {
 			this.installedBrowsersNames.forEach((browserName) => {
 				switch (browserName) {
 					case 'chrome':
-						return this.installedBrowsers.push(this.chromeDefaultDetail);
+						this.serverCommunicationService.isChromeHasAccounts().then((hasStoredAccounts) => {
+							this.installedBrowsers.push(Object.assign(this.chromeDefaultDetail, {has_stored_accounts: hasStoredAccounts}));
+						});
+						break;
 					case 'firefox':
-						return this.installedBrowsers.push(this.firefoxDefaultDetail);
+						this.serverCommunicationService.isFirefoxHasAccounts().then((hasStoredAccounts) => {
+							this.installedBrowsers.push(Object.assign(this.firefoxDefaultDetail, {has_stored_accounts: hasStoredAccounts}));
+						});
+						break;
 					case 'edge':
-						return this.installedBrowsers.push(this.edgeDefaultDetail);
+						this.serverCommunicationService.isEdgeHasAccounts().then((hasStoredAccounts) => {
+							this.installedBrowsers.push(Object.assign(this.edgeDefaultDetail, {has_stored_accounts: hasStoredAccounts}));
+						});
+						break;
 				}
-			})
+			});
 		});
 	}
 
