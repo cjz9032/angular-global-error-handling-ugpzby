@@ -40,7 +40,7 @@
   }
   &__link {
     @extend %button-link;
-    @extend %button-link--to-right;
+    @extend %button-link--to-right-white;
     @include href(#fff, darken(#fff, 5%), darken(#fff, 10%), #fff);
     position: absolute;
     top: 100%;
@@ -52,8 +52,5 @@
     font-weight: 500;
     text-transform: uppercase;
     text-decoration: underline;
-    &:before {
-      background-image: url("/assets/icons/privacy-tab/icon-white-arrow.svg");
-    }
   }
 }

@@ -1,0 +1,32 @@
+@import "../../styles/common-blocks";
+
+.installed-page {
+  @extend %common-block-wrapper;
+
+  &__title-line {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 2rem;
+  }
+
+  &__title {
+    @extend %subtitle;
+  }
+
+  &__read-more-link {
+    @extend %button-link;
+    @extend %button-link--to-right;
+
+    span {
+      @extend %button-link__text;
+    }
+  }
+
+  &__text {
+    color: #667481;
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 2.3rem;
+    margin: 0;
+  }
+}
