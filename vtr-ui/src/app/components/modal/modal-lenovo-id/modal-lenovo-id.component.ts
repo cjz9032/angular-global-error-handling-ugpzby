@@ -20,7 +20,7 @@ export class ModalLenovoIdComponent implements OnInit {
     this.cacheCleared = false;
   }
 
-  //Capture the html content in webView
+  // Capture the html content in webView
   captureWebViewContent(msWebView) {
     var promise = new Promise(function (resolve, reject) {
       var op = msWebView.invokeScriptAsync("eval", "document.documentElement.outerHTML");
@@ -32,10 +32,10 @@ export class ModalLenovoIdComponent implements OnInit {
     });
 
     promise.then(function (result) {
-      //for result
+      // For result
       console.log(result);
     }).catch(function (error) {
-      //error
+      // Error
     });
   }
 
@@ -52,7 +52,7 @@ export class ModalLenovoIdComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    //for typescript we need to declare the data types for ms-webView and variables exist in the functions and events
+    // For typescript we need to declare the data types for ms-webView and variables exist in the functions and events
     interface WebViewEvent {
       isSuccess?: boolean
       hasContent?: boolean
@@ -66,13 +66,15 @@ export class ModalLenovoIdComponent implements OnInit {
     }
 
     var webView = document.querySelector("#lid-webview") as MsWebView;
-    //TODO: call JS bridget to get logon url and navigate to it
+    // TODO: call JS bridge to get logon url and navigate to it
     //var logonUrl = getLoginUrl();
+    //var logonUrl = 'https://sso.lenovo.com/ssoserver/authorizeclient/v1/login?aid=e4af23f9161ef931df61ef4a1af95fa16e91640af2bdd3dabee0f74309e5123b&did=6435aa64a36a7877afd654952a78cbabafa24bb3a0dd42f35d11484f514b80ab0&sid=5d155e36125acf071a5c1d8bd49032219fbb72832d271716d76f5fcdea17d80d&sign=6ee531118054a38be312e60ba2548b9af87e9ea429c7e1b8696a0cd3701901d0';
     var logonUrl = 'https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null';
     if (logonUrl.indexOf("sso.lenovo.com") === -1) {
+      // TODO: Set success return code and close this logon dialog
       return;
     } else {
-      //TODO: set current lang to url
+      // TODO: call JS bridge to get current system local and set to url
     }
     webView.src = logonUrl;
     var _this = this;
@@ -86,19 +88,30 @@ export class ModalLenovoIdComponent implements OnInit {
         };
         if (EventArgs.srcElement.documentTitle.startsWith("Login success")) {
           var htmlContent = _this.captureWebViewContent(webView);
-          //TODO: parse html content to get username, useruad, userid, userguid, firstname and lastname
-          // and call JS bridget to enable sso, save firstname and lastname locally
+          // Parse html content to get username, useruad, userid, userguid, firstname and lastname
+          var el = document.createElement('dummy_html');
+          el.innerHTML = String(htmlContent);
+          var username = el.getElementsByTagName('username');
+          var useruad = el.getElementsByTagName('useruad');
+          var userid = el.getElementsByTagName('userid');
+          var userguid = el.getElementsByTagName('userguid');
+          var firstname = el.getElementsByTagName('firstname');
+          var lastname = el.getElementsByTagName('lastname');
+          // TODO: call JS bridge to enable sso
           // EnableSSO(useruad, username, userid, userguid)
+          // TODO: pass username, firstname and lastname to global scope (eg. via common service), 
+          // UI will show them in common header
+
         }
       } else {
-        //handle error
+        // Handle error
       }
     });
   }
 
   @HostListener('window:offline', ['$event']) onOffline() {
     this.isOnline = false;
-    //TODO: show error message when network get disconnected
+    // TODO: show error message when network get disconnected
     //PopErrorMessage(SSOErrorType.SSO_ErrorType_DisConnect);
     //"Oops! Connection failed! Please check your Internet connection and try again."
     if (this.detectConnectionStatusSub) {
