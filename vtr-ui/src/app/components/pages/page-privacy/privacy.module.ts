@@ -18,6 +18,7 @@ import { SidebarComponent } from './main-layout/sidebar/sidebar.component';
 // Services
 import { ServerCommunicationService } from './common-services/server-communication.service';
 import { ConfirmationPopupService } from './common-services/popups/confirmation-popup.service';
+import { VideoPopupService } from './common-services/popups/video-popup.service';
 import { TrackersPopupService } from './common-services/popups/trackers-popup.service';
 
 // Modules
@@ -44,12 +45,12 @@ import { PromoVideoComponent } from './common-ui/promo-video/promo-video.compone
 import { ConfirmationPopupComponent } from './common-ui/confirmation-popup/confirmation-popup.component';
 import { ScanStepsComponent } from './common-ui/scan-steps/scan-steps.component';
 import { PrivacyDashboardListComponent } from './pages/installed/privacy-dashboard-list/privacy-dashboard-list.component';
+import { VideoPopupComponent } from './common-ui/video-popup/video-popup.component';
 
 @NgModule({
 	imports: [
 		PrivacyRoutingModule,
 		CommonModule,
-		// ScanModule,
 		// ResultModule,
 	],
 	declarations: [
@@ -84,8 +85,9 @@ import { PrivacyDashboardListComponent } from './pages/installed/privacy-dashboa
 		ConfirmationPopupComponent,
 		ScanStepsComponent,
 		PrivacyDashboardListComponent,
+		VideoPopupComponent,
 	],
-	providers: [ServerCommunicationService, ConfirmationPopupService, TrackersPopupService],
+	providers: [ServerCommunicationService, ConfirmationPopupService, TrackersPopupService, VideoPopupService],
 })
 export class PrivacyModule {
 }
