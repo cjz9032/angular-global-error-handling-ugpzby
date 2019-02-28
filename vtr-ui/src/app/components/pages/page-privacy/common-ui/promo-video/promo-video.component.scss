@@ -5,7 +5,6 @@
     align-items: center;
     border-radius: 1rem;
     background-color: #6F7C88;
-    background-image: url("../../../../../../assets/images/privacy-tab/Video.png");
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
@@ -19,6 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
   &__btn-triangle {
     width: 0;

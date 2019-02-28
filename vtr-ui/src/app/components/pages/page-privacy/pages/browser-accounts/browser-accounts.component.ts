@@ -36,6 +36,14 @@ export class BrowserAccountsComponent {
 		link_href: 'https://figleafapp.com/',
 		image_url: '/assets/images/privacy-tab/default.png'
 	};
+	public promoVideoData = {
+		image_url: '/assets/images/privacy-tab/Video.png'
+	};
+	public promoVideoPopupData = {
+		title: 'Promo for breached accaunts page',
+		video_url: 'https://www.youtube.com/embed/tgbNymZ7vqY'
+	};
+
 
 	constructor(private _location: Location) {
 	}
