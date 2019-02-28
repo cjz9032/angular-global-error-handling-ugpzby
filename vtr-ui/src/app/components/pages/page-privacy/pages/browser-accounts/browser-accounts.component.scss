@@ -4,6 +4,15 @@
   margin-top: -5.6rem;
 }
 
+.browser-accounts-block {
+  @extend %common-block-wrapper;
+  padding: 3.5rem 4rem 4rem 4rem;
+  &__text {
+    @extend %text-common;
+    margin: 0 0 2rem 0;
+  }
+}
+
 .promo {
   @extend %common-block-wrapper;
   padding: 3.5rem 4rem 4rem 4rem;

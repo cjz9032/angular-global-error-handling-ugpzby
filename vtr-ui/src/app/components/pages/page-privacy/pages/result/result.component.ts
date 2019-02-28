@@ -12,7 +12,7 @@ export class ResultComponent implements OnInit{
 	public breached_accounts: any[];
 	public breached_accounts_show: any[];
 	// static Data for html
-	public browserStoredAccountsData = {title: 'Easily accessible passwords', showDetailAction: 'link'};
+	public browserStoredAccountsData = { showDetailAction: 'link'};
 
 	constructor(private _location: Location, private serverCommunicationService: ServerCommunicationService) {
 		this.isPopupOpen = false;
