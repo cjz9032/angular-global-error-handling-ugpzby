@@ -15,6 +15,7 @@ export class BrowserStoredAccountsComponent implements OnInit {
 	public LightPrivacyBannerData = {
 		title: 'Take back control over your data with Lenovo Privacy',
 		text: 'A simple comprehensive app that gives YOU back control over your privacy',
+		image_url: '/assets/images/privacy-tab/privacy-search.png',
 	};
 
 	private chromeDefaultDetail = {

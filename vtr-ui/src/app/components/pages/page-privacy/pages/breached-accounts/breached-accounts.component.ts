@@ -12,7 +12,8 @@ export class BreachedAccountsComponent {
 	// static Data transferred to html
 	public LightPrivacyBannerData = {
 		title: 'Fix breaches and watch for future ones',
-        text: 'Get the app that puts you back in control of your privacy'
+        text: 'Get the app that puts you back in control of your privacy',
+		image_url: '/assets/images/privacy-tab/privacy-search.png'
 	};
 	public pageBannerData = {
 		title: 'Lenovo Privacy by FigLeaf — free for 14 days',

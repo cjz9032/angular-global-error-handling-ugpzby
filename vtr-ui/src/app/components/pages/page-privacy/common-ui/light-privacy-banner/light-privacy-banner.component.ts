@@ -1,16 +1,17 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'vtr-light-privacy-banner',
-  templateUrl: './light-privacy-banner.component.html',
-  styleUrls: ['./light-privacy-banner.component.scss']
+	selector: 'vtr-light-privacy-banner',
+	templateUrl: './light-privacy-banner.component.html',
+	styleUrls: ['./light-privacy-banner.component.scss']
 })
 export class LightPrivacyBannerComponent implements OnInit {
-  @Input() data: {title: string, text, string};
+	@Input() data: { title: string, text: string, image_url: string };
 
-  constructor() { }
+	constructor() {
+	}
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
 
 }
