@@ -177,7 +177,7 @@ library.add(far);
 		WidgetWarrantyComponent,
 		SanitizeHtmlPipe,
 		WidgetRebootComponent,
-		FeedbackFormComponent
+		FeedbackFormComponent,
 		ContainerArticleComponent
 	],
 	imports: [
