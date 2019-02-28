@@ -84,6 +84,7 @@ import { SecurityService } from './services/security/security.service';
 import { UserService } from './services/user/user.service';
 import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
 import { CameraDetailMockService } from './services/camera/camera-detail/camera-detail.mock.service';
+ 
 
 // FONT AWESOME
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -102,6 +103,7 @@ import { PageSupportDetailComponent } from './components/pages/page-support-deta
 import { WidgetSupportComponent } from './components/widgets/widget-support/widget-support.component';
 import { UiListSupportComponent } from './components/ui/ui-list-support/ui-list-support.component';
 import { WidgetWarrantyComponent } from './components/widgets/widget-warranty/widget-warranty.component';
+
 
 library.add(fas);
 library.add(fab);
@@ -190,6 +192,7 @@ library.add(far);
 		SecurityService,
 		UserService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
+		 
 	],
 	bootstrap: [AppComponent],
 	entryComponents: [ModalLenovoIdComponent],

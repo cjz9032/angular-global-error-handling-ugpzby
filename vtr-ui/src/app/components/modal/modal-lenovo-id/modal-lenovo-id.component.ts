@@ -105,6 +105,9 @@ export class ModalLenovoIdComponent implements OnInit {
         }
       } else {
         // Handle error
+        this.activeModal.dismiss();
+        console.log("not success");
+		
       }
     });
   }

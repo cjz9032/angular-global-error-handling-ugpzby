@@ -31,17 +31,13 @@ export class AppComponent implements OnInit {
 	) {
 
 		// this.modalService.open(ModalWelcomeComponent, {
-		//   backdrop: 'static',
+		 //  backdrop: 'static',
 		//   size: 'lg',
 		//   centered: true
 		// });
 		
-		// Uncomment to popup Lenovo ID modal dialog
-		// this.modalService.open(ModalLenovoIdComponent, {
-		//   backdrop: 'static',
-		//   size: 'lg',
-		//   centered: true
-		// });
+		
+	
 		
 	}
 
