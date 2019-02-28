@@ -24,7 +24,9 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	@ViewChild('battery') battery: ElementRef;
 	@ViewChild('batteryIndicator') batteryIndicator: ElementRef;
 
+	@Input() isVoltageError = false; // boolean indicator if its changing or not
 	@Input() isCharging = true; // boolean indicator if its changing or not
+	@Input() isExpressCharging = true; // boolean indicator if its express changing or not
 	@Input() percentage = 50; // number without % symbol
 	@Input() remainingHour = 0; // number of hours remaining
 	@Input() remainingMinutes = 0; // number of minutes remaining
@@ -54,19 +56,23 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	 * @param level decimal value ranging from 0.0 to 1.0
 	 */
 	refreshLevel() {
-		return;
 		let level = 1,
-			fillWidth = 100;
-		if (this.percentage > 0 && this.percentage <= 100) {
-			level = this.percentage / 100;
-			fillWidth = this.percentage;
+			fillWidth = 0;
+		let percentage = this.percentage;
+
+		if (this.isVoltageError) {
+			percentage = 0;
 		}
 
+		if (percentage > 0 && percentage <= 100) {
+			level = percentage / 100;
+			fillWidth = percentage;
+		}
 		const {
 			borderColor,
 			backgroundColor,
 			fillColor
-		} = this.getLevelCssValues(this.percentage);
+		} = this.getLevelCssValues(percentage);
 
 		this.batteryIndicator.nativeElement.style.setProperty(
 			'--background-color',
@@ -141,7 +147,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 		return { borderColor, backgroundColor, fillColor };
 	}
 
-	private getTimeRemaining(): string {
+	public getTimeRemaining(): string {
 		const hours =
 			this.remainingHour > 0 && this.remainingHour < 2 ? 'hour' : 'hours';
 		const minutes =
@@ -162,14 +168,8 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	}
 
 	private getCssDeclaration() {
-		return;
 		this.cssStyleDeclaration = window.getComputedStyle(
 			this.batteryIndicator.nativeElement
 		);
-	}
-
-	public onSlide($event) {
-		this.percentage = $event.target.value;
-		this.fillWidth = (88 * this.percentage) / 100;
 	}
 }

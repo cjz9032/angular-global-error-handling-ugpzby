@@ -4,11 +4,9 @@
 			<div class="row">
 				<div class="col">
 					<div class="battery-indicator pb-5">
-						<vtr-battery-indicator
-							[remainingHour]="2"
-							[remainingMinutes]="30"
-							[percentage]="10"
-						></vtr-battery-indicator>
+						<vtr-battery-indicator [remainingHour]="2" [remainingMinutes]="30" [percentage]="10"
+							[isCharging]="true" [isExpressCharging]="false" [isVoltageError]="true">
+						</vtr-battery-indicator>
 					</div>
 				</div>
 			</div>
@@ -144,9 +142,7 @@
 						<div class="row mb-3">
 							<div class="col">
 								<h4 class="align-middle">
-									<span
-										class="text-uppercase pr-3 battery-gauge-heading"
-									>
+									<span class="text-uppercase pr-3 battery-gauge-heading">
 										{{ model.batteryGaugeDetail.heading }}
 									</span>
 								</h4>
@@ -199,10 +195,7 @@
 								</div>
 							</div>
 							<div class="col-4 align-self-center text-center">
-								<button
-									type="button"
-									class="btn btn-primary btn-lg battery-button text-uppercase"
-								>
+								<button type="button" class="btn btn-primary btn-lg battery-button text-uppercase">
 									Perform Gauge Reset
 								</button>
 							</div>

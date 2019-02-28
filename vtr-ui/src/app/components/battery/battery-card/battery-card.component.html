@@ -1,14 +1,10 @@
 <div class="vtr-battery-card">
-	<ng-template #batteryDetail
-		let-modal>
+	<ng-template #batteryDetail let-modal>
 		<div class="modal-header">
 			<h4 class="modal-title battery-detail-modal-title pl-5">
 				Battery Details
 			</h4>
-			<button type="button"
-				class="close"
-				aria-label="Close"
-				(click)="modal.dismiss('Cross click')">
+			<button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
 				<img src="assets/icons/Close.svg" />
 			</button>
 		</div>
@@ -24,15 +20,12 @@
 			Battery healthy
 		</div>
 		<div class="pt-4 battery-frame pr-3">
-			<vtr-battery-indicator [remainingHour]="2"
-				[remainingMinutes]="30"
-				[percentage]="50"
-				[isCharging]="false">
+			<vtr-battery-indicator [remainingHour]="2" [remainingMinutes]="30" [percentage]="50" [isCharging]="true"
+				[isExpressCharging]="false" [isVoltageError]="false">
 			</vtr-battery-indicator>
 		</div>
 		<div class="pt-4 text-center">
-			<button type="button"
-				class="btn btn-primary btn-lg battery-detail-button text-uppercase"
+			<button type="button" class="btn btn-primary btn-lg battery-detail-button text-uppercase"
 				(click)="showDetailModal(batteryDetail)">
 				See Battery Details
 			</button>
