@@ -1,9 +1,8 @@
 @import 'app.theme';
 
 .vtr-app {
-
 	//height: calc(100% - #{$menu_height});
-
+	margin-top: $menu_height;
 	background-position: 50% 50%;
 	background-size: cover;
 	background-repeat: no-repeat;

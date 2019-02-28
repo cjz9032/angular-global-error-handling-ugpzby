@@ -27,6 +27,10 @@
 	margin-top: 2rem !important;
 }
 
+.mt-10 {
+	margin-top: 1rem !important;
+}
+
 .mt-40 {
 	margin-top: 4rem !important;
 }
@@ -160,3 +164,27 @@
 .battery-modal-size .modal-dialog {
 	max-width: 150rem;
 }
+
+// feedback modal start:
+// overriding style inside feedback modal. doesn't work from component SCSS file
+
+.feedback-form {
+	.user-email {
+		font-size: 2rem;
+		height: 4.2rem;
+	}
+	.user-comment {
+		font-size: 2rem;
+		height: 16.2rem;
+	}
+	.user-submit {
+		font-size: 2rem;
+		padding: 1.5rem 5rem;
+		border-radius: 5rem;
+	}
+	.border {
+		border: 0.1rem solid $dark;
+	}
+}
+
+// feedback modal end

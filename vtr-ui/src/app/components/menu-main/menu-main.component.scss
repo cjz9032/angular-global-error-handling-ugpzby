@@ -1,6 +1,10 @@
 @import '../../app.theme';
 
 .vtr-menu-main {
+	position: fixed;
+	top: 0;
+	z-index: 10000;
+	width: 100%;
 	.navbar {
 		height: $menu_height;
 		background-color: $main_darker;
