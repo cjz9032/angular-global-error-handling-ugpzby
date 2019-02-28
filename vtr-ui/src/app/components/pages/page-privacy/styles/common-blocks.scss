@@ -86,7 +86,19 @@
 
   &--to-right {
     &:before {
-      transform: translateY(-50%) rotate(90deg);
+      transform: translateY(-50%) rotate(0deg);
+      width: 1.4rem;
+      height: 1.4rem;
+      background-image: url("/assets/icons/privacy-tab/blue-arrow-right-long.svg");
+    }
+  }
+
+  &--to-right-white {
+    &:before {
+      transform: translateY(-50%) rotate(0deg);
+      width: 1.4rem;
+      height: 1.4rem;
+      background-image: url("/assets/icons/privacy-tab/white-arrow-right-long.svg");
     }
   }
 
