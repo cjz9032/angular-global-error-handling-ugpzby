@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { DashboardService } from '../../../services/dashboard/dashboard.service';
 import { MockService } from '../../../services/mock/mock.service';
-import {QaService} from "../../../services/qa/qa.service";
+import { QaService } from '../../../services/qa/qa.service';
+import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
-	styleUrls: ['./page-dashboard.component.scss']
+	styleUrls: ['./page-dashboard.component.scss'],
+	providers: [NgbModalConfig, NgbModal]
 })
 export class PageDashboardComponent implements OnInit {
-
+	submit = 'Submit';
 	title = 'Dashboard';
+	feedbackButtonText = this.submit;
 
 	forwardLink = {
 		path: 'dashboard-customize',
@@ -20,11 +23,36 @@ export class PageDashboardComponent implements OnInit {
 	constructor(
 		public dashboardService: DashboardService,
 		public mockService: MockService,
-		public qaService:QaService
+		public qaService: QaService,
+		private modalService: NgbModal,
+		config: NgbModalConfig
 	) {
+		config.backdrop = 'static';
+		config.keyboard = false;
 	}
 
-	ngOnInit() {
+	ngOnInit() { }
+
+	onFeedbackModal(content: any) {
+		this.modalService
+			.open(content, {
+				centered: true
+			})
+			.result.then(
+				result => {
+					// on open
+				},
+				reason => {
+					// on close
+				}
+			);
 	}
 
+	public onFeedbackClick() {
+		this.feedbackButtonText = 'Thank you for your feedback !';
+		setTimeout(() => {
+			this.modalService.dismissAll();
+			this.feedbackButtonText = this.submit;
+		}, 3000);
+	}
 }

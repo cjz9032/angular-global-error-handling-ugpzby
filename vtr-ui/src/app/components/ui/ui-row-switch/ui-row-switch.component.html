@@ -39,7 +39,7 @@
 			<div class="p-0"
 				*ngIf="isSwitchVisible">
 				<vtr-ui-switch-onoff [value]="isSwitchChecked"
-					(change)="onOnOffChange($event)"></vtr-ui-switch-onoff>
+					(toggle)="onOnOffChange($event)"></vtr-ui-switch-onoff>
 			</div>
 			<div *ngIf="!isSwitchVisible && linkText"
 				class="p-0 link-text">

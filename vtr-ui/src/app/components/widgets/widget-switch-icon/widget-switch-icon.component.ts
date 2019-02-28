@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DeviceService } from '../../../services/device/device.service';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 // @ts-ignore
 @Component({
@@ -9,15 +8,13 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 	styleUrls: ['./widget-switch-icon.component.scss']
 })
 export class WidgetSwitchIconComponent implements OnInit {
-
 	@Input() title: string;
 	@Input() iconDefinition: string[];
-	@Input() value: boolean = false;
+	@Input() value = false;
 
-	constructor(
-		public deviceService: DeviceService
-	) {
-	}
+	@Output() toggle = new EventEmitter<boolean>();
+
+	constructor(public deviceService: DeviceService) {}
 
 	ngOnInit() {
 		console.log(this.title, this.iconDefinition);
@@ -26,6 +23,6 @@ export class WidgetSwitchIconComponent implements OnInit {
 	onChange(event) {
 		this.value = event.switchValue;
 		console.log('WIDGET SWITCH ICON VALUE', this.value);
+		this.toggle.emit(this.value);
 	}
-
 }
