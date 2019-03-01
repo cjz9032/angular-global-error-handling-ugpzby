@@ -8,8 +8,8 @@
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col col-8 vtr-page-left-column">
-						<div class="mcafee d-none">
+					<div class="col col-8 vtr-page-left-column" [ngSwitch]="avType">
+						<div class="mcafee" *ngSwitchCase="1">
 							<div class="header">
 								<div class="mt-minus p-5 rounded-card-with-shadow bg-white">
 									<div class="row">
@@ -24,18 +24,18 @@
 									<div class="subtitle py-3">
 										You are currently protected by McAfee LiveSafe.
 									</div>
-									<div class="rounded-card bg-light">
-										<ul class="list-group list-group-flush">
+									<div>
+										<ul class="list-group">
 											<li class="list-group-item">
 												<div class="row">
 													<div class="col-auto">
 
 													</div>
-													<div class="col-auto title">
+													<div class="col-auto title py-4">
 														VIRUS SCAN
 													</div>
 													<div class="col-auto align-self-center px-0">
-														<span class="badge badge-pill badge-success">ENABLED</span>
+														<h3><span class="badge badge-pill badge-success">ENABLED</span></h3>
 													</div>
 												</div>
 
@@ -45,11 +45,11 @@
 													<div class="col-auto">
 
 													</div>
-													<div class="col-auto title">
+													<div class="col-auto title py-4">
 														FIREWALL
 													</div>
 													<div class="col-auto align-self-center px-0">
-														<span class="badge badge-pill badge-success">ENABLED</span>
+														<h3><span class="badge badge-pill badge-success">ENABLED</span></h3>
 													</div>
 												</div>
 											</li>
@@ -214,7 +214,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="windows">
+						<div class="windows" *ngSwitchCase="2">
 							<div class="header">
                                <div class="rounded-card-with-shadow mt-minus p-5">
                                    <div class="row">
@@ -388,9 +388,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="other d-none">
-
-						</div>
+						<div class="other" *ngSwitchCase="3"></div>
 					</div>
 					<div class="col col-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">

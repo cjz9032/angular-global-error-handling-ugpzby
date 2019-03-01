@@ -41,7 +41,7 @@
 		border-top-left-radius: $border_radius !important;
 	}
 
-	 .list-group-item:last-child {
+	.list-group-item:last-child {
 		border-bottom-right-radius: $border_radius !important;
 		border-bottom-left-radius: $border_radius !important;
 	}
@@ -52,7 +52,6 @@
 			.rounded-card-with-shadow {
 				box-shadow: $drop_shadow;
 				border-radius: $border_radius;
-
 				.card {
 					.title {
 						color: $screen_dark_70;
@@ -61,31 +60,30 @@
 						letter-spacing: 0.89px;
 					}
 				}
+				.list-group-item {
+					background: $shade_extralight;
 
-				.rounded-card {
+				}
+				.rounded-card{
 					border-radius: $border_radius;
 					border: 1px solid $screen_dark_15;
 
-					.list-group-item {
-						background: $shade_light;
-						padding: 2rem 0;
-					}
+				}
 
-					.text {
-						color: $go_dark;
-						font-size: 1.6rem;
-						font-weight: bold;
-						line-height: 3rem;
-					}
+				.text {
+					color: $go_dark;
+					font-size: 1.6rem;
+					font-weight: bold;
+					line-height: 3rem;
+				}
 
-					.title {
-						color: $dark;
-						font-size: 1.4rem;
-						font-weight: bold;
-						letter-spacing: 0.89px;
-						line-height: 2.3rem;
+				.title {
+					color: $dark;
+					font-size: 1.4rem;
+					font-weight: bold;
+					letter-spacing: 0.89px;
+					line-height: 2.3rem;
 
-					}
 				}
 			}
 

@@ -10,6 +10,8 @@ export class PageSecurityAntivirusComponent implements OnInit {
 
 	title = 'Anti-Virus';
 
+	avType:number=2;
+
 	constructor(public mockService: MockService) { }
 
 	ngOnInit() {
