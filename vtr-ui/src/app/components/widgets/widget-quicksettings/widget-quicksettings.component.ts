@@ -21,6 +21,7 @@ export class WidgetQuicksettingsComponent implements OnInit {
 	}
 
 	private getQuickSettingStatus() {
+		return;
 		this.dashboardService
 			.getCameraStatus()
 			.then((featureStatus: FeatureStatus) => {

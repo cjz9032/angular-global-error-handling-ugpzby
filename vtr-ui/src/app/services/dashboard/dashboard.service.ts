@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 
 import * as DashboardBridge from '@lenovo/tan-client-bridge/src/features/dashboard-feature';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -12,8 +13,8 @@ import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 export class DashboardService {
 	private dashboardBridge: DashboardBridge.default;
 
-	constructor() {
-		this.dashboardBridge = new DashboardBridge.default();
+	constructor(vantageShellService: VantageShellService) {
+		// this.dashboardBridge = new DashboardBridge.default();
 	}
 
 	public getFeedbackUrl(): string {
@@ -21,7 +22,7 @@ export class DashboardService {
 	}
 
 	public getMicrophoneStatus(): Promise<FeatureStatus> {
-		return this.dashboardBridge.getMicphoneStaus();
+		return this.dashboardBridge.getMicphoneStatus();
 	}
 
 	public setMicrophoneStatus(value: boolean): Promise<boolean> {
@@ -29,10 +30,10 @@ export class DashboardService {
 	}
 
 	public getCameraStatus(): Promise<FeatureStatus> {
-		return this.dashboardBridge.getCamaraStatus();
+		return this.dashboardBridge.getCameraStatus();
 	}
 
 	public setCameraStatus(value: boolean): Promise<boolean> {
-		return this.dashboardBridge.setCamaraStatus(value);
+		return this.dashboardBridge.setCameraStatus(value);
 	}
 }
