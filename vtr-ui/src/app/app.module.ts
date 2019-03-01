@@ -98,6 +98,7 @@ import { EyeCareModeComponent } from './components/display/eye-care-mode/eye-car
 import { UiButtonComponent } from './components/ui/ui-button/ui-button.component';
 import { ConnectedHomeComponent } from './components/pages/page-security-wifi/children/connected-home/connected-home.component';
 import { ConnectedHomeMyHomeComponent } from './components/pages/page-security-wifi/children/connected-home-my-home/connected-home-my-home.component';
+import { WifiSecurityComponent } from './components/pages/page-security-wifi/children/wifi-security/wifi-security.component';
 
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
 import { CameraControlComponent } from './components/camera-control/camera-control.component';
@@ -169,6 +170,7 @@ library.add(far);
 		UiButtonComponent,
 		ConnectedHomeComponent,
 		ConnectedHomeMyHomeComponent,
+		WifiSecurityComponent,
 		PageSecurityWindowsHelloComponent,
 		CameraControlComponent,
 		PageSupportDetailComponent,
