@@ -1,4 +1,4 @@
-@import '../../app.theme';
+@import "../../app.theme";
 
 .vtr-menu-main {
 	position: fixed;
@@ -99,6 +99,13 @@
 				}
 			}
 		}
-		
+		.navbar-toggler {
+			font-size: 5rem;
+			color: $shade_light;
+
+			&:hover {
+				color: $shade_extralight;
+			}
+		}
 	}
 }
