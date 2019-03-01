@@ -1,16 +1,20 @@
-<div class="vtr-battery-indicator" #batteryIndicator>
+<div class="vtr-battery-indicator"
+ #batteryIndicator>
 	<div class="cell">
 		<div class="battery-shadow"></div>
-		<div #battery class="battery">
+		<div #battery
+		 class="battery">
 			<div class="acid-container">
 				<div class="fill"></div>
-				<div class="percentage" *ngIf="!isVoltageError">
+				<div class="percentage"
+				 *ngIf="!isVoltageError">
 					{{ percentage }}
 					<span class="percentage-symbol">
 						%
 					</span>
 				</div>
-				<div class="battery-error" *ngIf="isVoltageError">
+				<div class="battery-error"
+				 *ngIf="isVoltageError">
 					<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon>
 					<span class="voltage-incorrect"> Battery voltage incorrect</span>
 				</div>
@@ -20,17 +24,22 @@
 				<div class="remaining-time">
 					{{ getTimeRemaining() }}
 				</div>
-				<div class="remaining-text text-uppercase" *ngIf="!isCharging">
+				<div class="remaining-text text-uppercase"
+				 *ngIf="!isCharging">
 					Remaining Time
 				</div>
-				<div class="remaining-text text-uppercase" *ngIf="isCharging">
+				<div class="remaining-text text-uppercase"
+				 *ngIf="isCharging">
 					Time To Fully Charge
 				</div>
 			</div>
-			<div class="battery-charging" *ngIf="!isVoltageError">
-				<fa-icon [icon]="['fas', 'bolt']" *ngIf="(isCharging && !isExpressCharging)">
+			<div class="battery-charging"
+			 *ngIf="!isVoltageError">
+				<fa-icon [icon]="['fas', 'bolt']"
+				 *ngIf="(isCharging && !isExpressCharging)">
 				</fa-icon>
-				<fa-icon [icon]="['fas', 'plug']" *ngIf="(isCharging && isExpressCharging)">
+				<fa-icon [icon]="['fas', 'plug']"
+				 *ngIf="(isCharging && isExpressCharging)">
 				</fa-icon>
 			</div>
 		</div>
