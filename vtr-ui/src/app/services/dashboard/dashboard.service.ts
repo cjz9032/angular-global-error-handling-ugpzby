@@ -21,6 +21,7 @@ export class DashboardService {
 	}
 
 	public getMicrophoneStatus(): Promise<FeatureStatus> {
+		// return Promise.resolve(null);
 		return this.dashboardBridge.getMicphoneStaus();
 	}
 
@@ -29,10 +30,12 @@ export class DashboardService {
 	}
 
 	public getCameraStatus(): Promise<FeatureStatus> {
+		// return Promise.resolve(null);
 		return this.dashboardBridge.getCamaraStatus();
 	}
 
 	public setCameraStatus(value: boolean): Promise<boolean> {
+		// return Promise.resolve(null);
 		return this.dashboardBridge.setCamaraStatus(value);
 	}
 }
