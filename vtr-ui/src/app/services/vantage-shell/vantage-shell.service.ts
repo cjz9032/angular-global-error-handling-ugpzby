@@ -29,4 +29,14 @@ export class VantageShellService {
 		const win: any = window;
 		return win.VantageShellExtension;
 	}
+
+	/**
+	 * base VantageShellService object of JS Bridge
+	 */
+	public getDashboard(): any {
+		if (this.phoenix) {
+			return this.phoenix.dashboard;
+		}
+		return undefined;
+	}
 }
