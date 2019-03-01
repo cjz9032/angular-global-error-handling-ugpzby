@@ -15,7 +15,7 @@ export class ConfirmationPopupComponent implements OnInit {
 	constructor(private confirmationPopupService: ConfirmationPopupService, private serverCommunicationService: ServerCommunicationService) {}
 
 	ngOnInit() {
-		this.isPopupOpen = this.confirmationPopupService.isPopupOpen || true;
+		this.isPopupOpen = this.confirmationPopupService.isPopupOpen;
 		this.confirmationPopupService.popupOpenStateUpdated.subscribe((isOpen) => {
 			this.isPopupOpen = isOpen;
 			if (!isOpen) {
