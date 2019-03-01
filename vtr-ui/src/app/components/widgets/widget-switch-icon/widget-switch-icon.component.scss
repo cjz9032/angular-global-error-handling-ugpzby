@@ -32,7 +32,7 @@
 			text-transform: uppercase;
 			text-align: center;
 			font-size: 1.1rem;
-			margin: .5em 0;
+			margin: 0.5em 0;
 			font-weight: $weight_medium;
 			letter-spacing: 0;
 		}
@@ -41,17 +41,28 @@
 			height: 6rem;
 			border-radius: 50%;
 			overflow: hidden;
-			margin: .7rem auto;
+			margin: 0.7rem auto;
 			text-align: center;
+			position: relative;
+
 			fa-icon {
 				font-size: 4rem;
 				line-height: 6rem;
 			}
+
+			.feature-off {
+				position: absolute;
+				color: $alt;
+				font-weight: 300;
+				font-size: 5.5rem;
+				left: 28%;
+				top: -16%;
+				transform: rotate(-25deg);
+			}
 		}
 		.switch {
 			width: 5.3rem;
-			margin: .5rem auto;
+			margin: 0.5rem auto;
 		}
-
 	}
 }
