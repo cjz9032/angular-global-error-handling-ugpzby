@@ -32,19 +32,19 @@
 			.circle.percent-0,
 			.circle.percent-20,
 			.circle.percent-25 {
-				background: #ff7d70;
+				background: $pink;
 			}
 			.circle.percent-40,
 			.circle.percent-50 {
-				background: orange;
+				background: $orange;
 			}
 			.circle.percent-60,
 			.circle.percent-75 {
-				background: #ffdf70;
+				background: $yellow_light
 			}
 			.circle.percent-80,
 			.circle.percent-100 {
-				background: #35e6b9;
+				background: $teal;
 			}
 		}
 		.title {
