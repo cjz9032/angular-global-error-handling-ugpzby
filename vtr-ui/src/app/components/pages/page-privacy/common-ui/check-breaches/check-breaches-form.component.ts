@@ -14,6 +14,8 @@ export class CheckBreachesFormComponent implements OnInit {
 	public islenovoIdOpen: boolean;
 	public isFormFocused: boolean;
 	public inputValue: string;
+	public isValidationError = false; // change to 'true' to see all error styles
+	public isServerError = false; // change to 'true' to see all error styles
 
 	constructor(public router: Router, private serverCommunication: ServerCommunicationService, private confirmationPopupService: ConfirmationPopupService) {
 		this.isLoading = false;
