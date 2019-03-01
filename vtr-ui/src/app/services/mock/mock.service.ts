@@ -182,6 +182,74 @@ export class MockService {
 		}
 	];
 
+	securityAntivirus = [
+		{
+			'status': 0,
+			'id': 'anti-virus',
+			'title': 'Anti-Virus',
+			'detail': 'Enabled',
+			'path': ''
+		},
+		{
+			'status': 1,
+			'id': 'firewall',
+			'title': 'Firewall',
+			'detail': 'Disabled',
+			'path': ''
+
+		}
+	];
+
+	securityPasswordHealth = [
+		{
+			'status': 0,
+			'id': 'password-manager',
+			'title': 'Password Manager',
+			'detail': 'Installed',
+			'path': ''
+		}
+	];
+
+	securityVPN = [
+		{
+			'status': 0,
+			'id': 'virtual-private-network',
+			'title': 'Virtual Private Network',
+			'detail': 'Installed',
+			'path': ''
+		}
+	];
+
+	securityWifi = [
+		{
+			'status': 0,
+			'id': 'wifi-security',
+			'title': 'WiFi Security',
+			'detail': 'Enabled',
+			'path': ''
+		}
+	];
+
+	securityConnectedHome = [
+		{
+			'status': 0,
+			'id': 'connected-home-security',
+			'title': 'Connected Home Security',
+			'detail': 'Enabled',
+			'path': ''
+		}
+	];
+
+	securityWindowsHello = [
+		{
+			'status': 0,
+			'id': 'fingerprint-reader',
+			'title': 'Fingerprint reader',
+			'detail': 'Enabled',
+			'path': ''
+		}
+	];
+
 	qA = [
 		{
 			'icon': ['fas', 'plane'],
@@ -237,7 +305,7 @@ export class MockService {
 		},
 		{
 			'icon': ['fas', 'share-alt'],
-			'title': 'Contact Costumer service',
+			'title': 'Contact Customer service',
 			'path': '',
 			'url': 'https://support.lenovo.com/',
 			'target': '_blank',
@@ -266,6 +334,64 @@ export class MockService {
 			'url': 'https://www.lenovo.com/us/en/ordersupport/',
 			'target': '_blank',
 		}
+	];
+	articles = [
+		{
+			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'thumbnailUrl': '',
+			'logo': 'assets/images/test-logo.svg',
+			'logoText': 'LENEVO SPECIAL',
+			'readMore': '/#/support-detail',
+		},
+		{
+			'title': '',
+			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
+			'logo': 'assets/images/test-logo.svg',
+			'logoText': 'LENEVO SPECIAL',
+			'readMore': '/#/support-detail',
+		},
+		{
+			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
+			'logo': '',
+			'logoText': 'LENEVO SPECIAL',
+			'readMore': '/#/support-detail',
+		},
+		{
+			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
+			'logo': 'assets/images/test-logo.svg',
+			'logoText': 'LENEVO SPECIAL',
+			'readMore': '/#/support-detail',
+		},
+		{
+			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
+			'logo': 'assets/images/test-logo.svg',
+			'logoText': 'LENEVO SPECIAL',
+			'readMore': '/#/support-detail',
+		},
+		{
+			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'thumbnailUrl': '',
+			'logo': '',
+			'logoText': 'LENEVO SPECIAL',
+			'readMore': '/#/support-detail',
+		},
+		{
+			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
+			'logo': 'assets/images/test-logo.svg',
+			'logoText': 'LENEVO SPECIAL',
+			'readMore': '/#/support-detail',
+		},
+		{
+			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
+			'logo': '',
+			'logoText': 'LENEVO SPECIAL',
+			'readMore': '/#/support-detail',
+		},
 	];
 
 	criticalUpdates = [

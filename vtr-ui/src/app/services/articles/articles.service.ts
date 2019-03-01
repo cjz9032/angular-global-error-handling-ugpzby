@@ -16,7 +16,7 @@ export class ArticlesService {
 
 	baseUrl = 'https://qa.csw.lenovo.com';
 	// articlesUrl = `${this.baseUrl}/api/v1/articles`;
-	articlesUrl = `http://qa.csw.lenovo.com/api/v1/articlecategories `;
+	articlesUrl = `https://qa.csw.lenovo.com/api/v1/articles`;
 	articles: any;
 
 	constructor(
