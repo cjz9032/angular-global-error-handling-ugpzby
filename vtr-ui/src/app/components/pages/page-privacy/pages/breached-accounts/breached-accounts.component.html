@@ -10,6 +10,14 @@
             <vtr-breached-account *ngFor="let account of breached_accounts" [breached_account]="account" class="breached-accounts__account"></vtr-breached-account>
         </div>
 
+        <div class="breaches-promo">
+            <img class="breaches-promo__img" src="/assets/images/privacy-tab/default.png" alt="">
+            <div class="breaches-promo__text-col">
+                <div class="breaches-promo__text">Use another email? Make sure it’s safe too.</div>
+                <a class="breaches-promo__link" href="https://figleafapp.com/">Get Lenovo Privacy by FigLeaf</a>
+            </div>
+        </div>
+
     </div>
 
     <vtr-article-promo [data]="promoArticleData"></vtr-article-promo>
