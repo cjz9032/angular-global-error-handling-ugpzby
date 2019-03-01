@@ -15,24 +15,24 @@
         position: absolute;
         height: 1px;
         background: #E6EAEB;
-        width: calc(100% - 91px); // 51px (width of circle) + 20px (from design) + 20px (from design)
-        top: 25px;
-        right: calc(50% + 51px);
+        width: calc(100% - 9.1rem); // 51px (width of circle) + 20px (from design) + 20px (from design)
+        top: 2.5rem;
+        right: calc(50% + 5.1rem);
       }
       &:after {
         content: '';
         position: absolute;
         height: 1px;
         background: #E6EAEB;
-        width: calc(100% - 91px); // 51px (width of circle) + 20px (from design) + 20px (from design)
-        top: 25px;
-        left: calc(50% + 51px);
+        width: calc(100% - 9.1rem); // 51px (width of circle) + 20px (from design) + 20px (from design)
+        top: 2.5rem;
+        left: calc(50% + 5.1rem);
       }
     }
   }
   &__number-wrapper {
-    height: 51px;
-    width: 51px;
+    height: 5.1rem;
+    width: 5.1rem;
     border: 1px solid #E6EAEB;
     border-radius: 50%;
     display: flex;
