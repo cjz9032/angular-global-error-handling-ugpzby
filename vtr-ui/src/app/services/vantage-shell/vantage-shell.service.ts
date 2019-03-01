@@ -31,7 +31,7 @@ export class VantageShellService {
 	}
 
 	/**
-	 * base VantageShellService object of JS Bridge
+	 * returns dashboard object from VantageShellService of JS Bridge
 	 */
 	public getDashboard(): any {
 		if (this.phoenix) {
