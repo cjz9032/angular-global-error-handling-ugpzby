@@ -49,6 +49,9 @@
   &__confirm-btn {
     @extend %theme-btn;
     align-self: center;
+    &--error {
+      background: linear-gradient(270deg, #E2E2E2 0%, #C2C6CF 100%);
+    }
   }
 }
 
@@ -96,10 +99,15 @@
     border: 2px solid #E6EAEB;
     border-radius: 6px;
     text-align: center;
-    letter-spacing: 2.3rem;
+    letter-spacing: 2rem;
     color: #34495E;
     font-size: 25px;
     font-weight: 500;
+    outline: none;
+    &--error {
+      border: 2px solid #F66A5B;
+      color: #F66A5B;
+    }
   }
 }
 
@@ -125,5 +133,25 @@
     line-height: 2.3rem;
     margin: 0;
     padding: 0;
+  }
+}
+
+.confirm-error {
+  border-radius: 0 0 6px 6px;
+  background-color: #F66A5B;
+  padding: 0.7rem 2rem 0.6rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__img {
+    height: 2.3rem;
+    width: auto;
+  }
+  &__text {
+    color: #FFFFFF;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2.3rem;
+    margin: 0 0 0 1.4rem;
   }
 }

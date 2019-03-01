@@ -10,11 +10,12 @@ import { ServerCommunicationService } from "../../common-services/server-communi
 export class ConfirmationPopupComponent implements OnInit {
 	public isPopupOpen: boolean;
 	public verificationCode: string = '';
+	public isError = false; // change on 'true' to see all styles for errors
 
 	constructor(private confirmationPopupService: ConfirmationPopupService, private serverCommunicationService: ServerCommunicationService) {}
 
 	ngOnInit() {
-		this.isPopupOpen = this.confirmationPopupService.isPopupOpen;
+		this.isPopupOpen = this.confirmationPopupService.isPopupOpen || true;
 		this.confirmationPopupService.popupOpenStateUpdated.subscribe((isOpen) => {
 			this.isPopupOpen = isOpen;
 			if (!isOpen) {
