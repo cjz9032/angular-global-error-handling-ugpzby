@@ -149,7 +149,7 @@ export class MockService {
 			'title': 'Anti-Virus',
 			'detail': 'Enabled',
 			'path': 'anti-virus',
-			'type': 'security blue'
+			'type': 'security'
 
 		},
 		{
