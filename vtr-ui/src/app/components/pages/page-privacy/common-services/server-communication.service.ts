@@ -13,7 +13,7 @@ export class ServerCommunicationService {
 	getLenovoId() {
 		return new Promise((resolve) => {
 			setTimeout(() => {
-				resolve('my_lenovo_id');
+				resolve({emails:  ['john_doe@lenovo.com']});
 			}, 200);
 		});
 	}

@@ -25,8 +25,8 @@ export class CheckBreachesFormComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.serverCommunication.getLenovoId().then((lenovoId: string) => {
-			this.lenovoId = lenovoId;
+		this.serverCommunication.getLenovoId().then((lenovoIdResponse: {emails: Array<string>}) => {
+			this.lenovoId = lenovoIdResponse.emails[0];
 		});
 	}
 
