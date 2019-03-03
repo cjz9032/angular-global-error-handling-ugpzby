@@ -23,13 +23,14 @@ export class ServerCommunicationService {
 	}
 
 	validateVerificationCode(code) {
-		return new Promise((resolve) => {
-			setTimeout(() => {
-				// send to server verification code and receive result if it's valid
-				resolve();
-				this.validationStatusChanged.emit(true);
-			}, 200);
-		});
+		setTimeout(() => {
+			// send to server verification code and receive result if it's valid
+			this.validationStatusChanged.emit({
+				type: 'validateConfirmationCode',
+				status: 0, // test status number, has no secret meaning (mock means 300 = error)
+				payload: {}
+			});
+		}, 200);
 	}
 
 	getBreachedAccounts(login) {

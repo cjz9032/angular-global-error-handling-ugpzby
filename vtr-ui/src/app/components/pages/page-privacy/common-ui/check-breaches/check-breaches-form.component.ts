@@ -82,8 +82,8 @@ export class CheckBreachesFormComponent implements OnInit {
 			}
 		});
 
-		this.serverCommunication.validationStatusChanged.subscribe((isResultPositive) => {
-			if (isResultPositive) {
+		this.serverCommunication.validationStatusChanged.subscribe((validationResponse) => {
+			if (validationResponse.status === 0) {
 				this.isLoading = true;
 				this.serverCommunication.getBreachedAccounts(this.inputValue)
 			}
