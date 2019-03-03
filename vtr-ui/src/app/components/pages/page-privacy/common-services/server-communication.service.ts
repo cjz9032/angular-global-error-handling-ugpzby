@@ -9,6 +9,7 @@ export class ServerCommunicationService {
 	public chromeAccounts = {};
 
 	public validationStatusChanged = new EventEmitter();
+	public onGetBreachedAccountsResponse = new EventEmitter();
 
 	getLenovoId() {
 		return new Promise((resolve) => {
@@ -78,12 +79,27 @@ export class ServerCommunicationService {
 			},
 		];
 
-		return new Promise((resolve) => {
-			setTimeout(() => {
-				resolve(mockBreachedAccounts);
-				this.breachedAccounts = mockBreachedAccounts;
-			}, 3000);
-		});
+		setTimeout(() => {
+			// not conformed // TODO uncomment to see 'not conformed' behaviour
+			this.onGetBreachedAccountsResponse.emit({
+				type: 'getBreachedAccounts',
+				status: 300, // test status number, has no secret meaning (mock means 300 = not confirmed)
+				payload: {}
+			});
+			// error // TODO uncomment to see 'error' behaviour
+			// this.onGetBreachedAccountsResponse.emit({
+			// 	type: 'getBreachedAccounts',
+			// 	status: 400, // test status number, has no secret meaning (mock means 400 = error)
+			// 	payload: {}
+			// });
+			// success // TODO uncomment to see 'success' behaviour
+			// this.onGetBreachedAccountsResponse.emit({
+			// 	type: 'getBreachedAccounts',
+			// 	status: 0, // test status number, has no secret meaning (mock means 0 = success)
+			// 	payload: {mockBreachedAccounts}
+			// });
+			// this.breachedAccounts = mockBreachedAccounts;
+		}, 1000);
 	}
 
 	getInstalledBrowser() {

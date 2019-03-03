@@ -67,18 +67,26 @@ export class CheckBreachesFormComponent implements OnInit {
 	scanEmail(event) {
 		event.preventDefault();
 		// TODO validate this.inputValue here
-		this.serverCommunication.sendVerificationCode();
-		this.confirmationPopupService.openPopup();
+		this.isLoading = true;
+		this.serverCommunication.getBreachedAccounts(this.inputValue);
+		this.serverCommunication.onGetBreachedAccountsResponse.subscribe((response) => {
+			this.isLoading = false;
+			if (response.status === 0) {
+				this.router.navigate(['privacy/result']);
+			} else if (response.status === 300) {
+				this.serverCommunication.sendVerificationCode();
+				this.confirmationPopupService.openPopup();
+			} else if (response.status === 400) {
+				this.isServerError = true;
+			}
+		});
 
 		this.serverCommunication.validationStatusChanged.subscribe((isResultPositive) => {
-			this.isLoading = true;
 			if (isResultPositive) {
-				this.serverCommunication.getBreachedAccounts(this.inputValue).then((breachesArr) => {
-					console.log('breachesArr', breachesArr);
-					this.isLoading = false;
-					this.router.navigate(['privacy/result']);
-				});
+				this.isLoading = true;
+				this.serverCommunication.getBreachedAccounts(this.inputValue)
 			}
 		})
+
 	}
 }
