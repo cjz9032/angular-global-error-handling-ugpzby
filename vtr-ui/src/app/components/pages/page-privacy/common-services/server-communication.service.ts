@@ -10,13 +10,12 @@ export class ServerCommunicationService {
 
 	public validationStatusChanged = new EventEmitter();
 	public onGetBreachedAccountsResponse = new EventEmitter();
+	public onGetLenovoId = new EventEmitter();
 
 	getLenovoId() {
-		return new Promise((resolve) => {
-			setTimeout(() => {
-				resolve({emails:  ['john_doe@lenovo.com']});
-			}, 200);
-		});
+		setTimeout(() => {
+			this.onGetLenovoId.emit({emails:  ['john_doe@lenovo.com']});
+		}, 200);
 	}
 
 	sendVerificationCode() {

@@ -11,7 +11,7 @@
                        (input)="changeInputValue($event)" value="{{inputValue}}"
                        placeholder="Enter your email"
                 >
-                <div *ngIf="islenovoIdOpen" class="check-breaches__lenovo-id lenovo-id" (click)="setLenovoId()">
+                <div *ngIf="lenovoId && islenovoIdOpen" class="check-breaches__lenovo-id lenovo-id" (click)="setLenovoId()">
                     <p class="lenovo-id__text">Use my lenovo id:
                         <span class="lenovo-id__id">{{lenovoId}}</span>
                     </p>

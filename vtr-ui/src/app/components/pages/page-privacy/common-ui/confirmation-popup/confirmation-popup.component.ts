@@ -30,7 +30,6 @@ export class ConfirmationPopupComponent implements OnInit {
 	}
 
 	onInput(ev) {
-		console.log('ev.target.value', ev.target.value);
 		this.verificationCode = ev.target.value;
 	}
 
