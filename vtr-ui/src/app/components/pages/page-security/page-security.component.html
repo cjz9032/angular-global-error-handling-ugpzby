@@ -13,12 +13,11 @@
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col col-12">
-										<vtr-widget-device-update [title]="
-												'Not fully protected'
-											"
-											[subTitle1]="'You are not fully protected. Learn how to better protect yourself now.'"
-											[subTitle2]="''"
-											[checkForUpdates]="'Security Advisor 101'"></vtr-widget-device-update>
+										<vtr-widget-security [title]="'Not fully protected'"
+										 [subTitle1]="'You are not fully protected. Learn how to better protect yourself now.'"
+										 [subTitle2]="''"
+										 [buttonText]="'Security Advisor 101'"
+										 percentValue=80></vtr-widget-security>
 									</div>
 								</div>
 
@@ -36,7 +35,7 @@
 												<vtr-ui-list-chevron [items]="mockService.securityAntivirus">
 												</vtr-ui-list-chevron>
 												<div class="pull"><img class="mcafee-logo"
-														src="../../../../assets/images/mcafee_logo.svg" />
+													 src="../../../../assets/images/mcafee_logo.svg" />
 												</div>
 											</div>
 										</div>
@@ -52,7 +51,7 @@
 												<vtr-ui-list-chevron [items]="mockService.securityPasswordHealth">
 												</vtr-ui-list-chevron>
 												<div class="pull right"><img class="dashlane-logo"
-														src="../../../../assets/images/Dashlane_Logo_Teal _Web.png" />
+													 src="../../../../assets/images/Dashlane_Logo_Teal _Web.png" />
 												</div>
 											</div>
 										</div>
@@ -68,7 +67,7 @@
 												<vtr-ui-list-chevron [items]="mockService.securityVPN">
 												</vtr-ui-list-chevron>
 												<div class="pull"><img class="surfeasy-logo"
-														src="../../../../assets/images/surfeasy-logo.svg" />
+													 src="../../../../assets/images/surfeasy-logo.svg" />
 												</div>
 											</div>
 										</div>
@@ -87,7 +86,7 @@
 												<vtr-ui-list-chevron [items]="mockService.securityConnectedHome">
 												</vtr-ui-list-chevron>
 												<div class="pull"><img class="coronet-logo"
-														src="../../../../assets/images/coronet-logo.svg" />
+													 src="../../../../assets/images/coronet-logo.svg" />
 												</div>
 											</div>
 										</div>
@@ -102,7 +101,7 @@
 												<vtr-ui-list-chevron [items]="mockService.securityWindowsHello">
 												</vtr-ui-list-chevron>
 												<div class="pull"><img class="windows-logo"
-														src="../../../../assets/images/windows-logo.svg" />
+													 src="../../../../assets/images/windows-logo.svg" />
 												</div>
 											</div>
 										</div>
@@ -117,27 +116,25 @@
 						<div class="container-fluid">
 							<div class="row mb-40">
 								<div class="col col-12">
-									<vtr-container-card
-										[img]="'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg'"
-										[title]="'Try our McAfee anti-virus software for 6 months'"
-										[logoText]="'LENEVO SPECIAL'"
-										[readMore]="'http://www.google.com'"
-										[type]="'article'"
-										[ratioX]="4"
-										[ratioY]="4">
+									<vtr-container-card [img]="'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg'"
+									 [title]="'Try our McAfee anti-virus software for 6 months'"
+									 [logoText]="'LENEVO SPECIAL'"
+									 [readMore]="'http://www.google.com'"
+									 [type]="'article'"
+									 [ratioX]="4"
+									 [ratioY]="4">
 									</vtr-container-card>
 								</div>
 							</div>
 
 							<div class="row mb-40">
 								<div class="col col-12 aritcle-card">
-									<vtr-container-card
-										[img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
-										[title]="'Ideas on how to handle all your passwords online'"
-										[readMore]="'http://www.google.com'"
-										[type]="'partnerarticle'"
-										[ratioX]="4"
-										[ratioY]="2.5">
+									<vtr-container-card [img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
+									 [title]="'Ideas on how to handle all your passwords online'"
+									 [readMore]="'http://www.google.com'"
+									 [type]="'partnerarticle'"
+									 [ratioX]="4"
+									 [ratioY]="2.5">
 									</vtr-container-card>
 								</div>
 							</div>
@@ -145,9 +142,9 @@
 							<div class="row mb-40">
 								<div class="col col-12 ">
 									<vtr-widget-feedback [title]="'Discover our top ideapad offers for the holidays '"
-										[description]="'Lenovo Exclusive'"
-										[actionName]="''"
-										[action]="''">
+									 [description]="'Lenovo Exclusive'"
+									 [actionName]="''"
+									 [action]="''">
 									</vtr-widget-feedback>
 								</div>
 							</div>
