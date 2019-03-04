@@ -93,3 +93,22 @@
     text-transform: uppercase;
   }
 }
+
+.trackers {
+  @extend %common-block-wrapper;
+  margin: 5rem 0;
+  &__header-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 1.6rem 0;
+  }
+  &__title {
+    @extend %subtitle;
+  }
+  &__text {
+    @extend %text-common;
+  }
+  &__popup-btn {
+    @extend %theme-btn;
+  }
+}

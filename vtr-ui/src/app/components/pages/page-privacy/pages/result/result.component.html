@@ -32,8 +32,13 @@
         </p>
     </div>
 
-
-    <button (click)="openPopUp()">Who tracks me?</button>
+    <div class="trackers">
+        <div class="trackers__header-row">
+            <h3 class="trackers__title">What are website trackers?</h3>
+            <button class="trackers__popup-btn" (click)="openPopUp()">Who tracks me?</button>
+        </div>
+        <p class="trackers__text">Tracking companies make money by following you online, collecting info about you, and selling these details to advertisers. What kind of info? Things like what device you use, where you shop, and what you buy.</p>
+    </div>
 
     <tracking-browser-popup
             [style.visibility]="isPopupOpen ? 'visible' : 'hidden'"
