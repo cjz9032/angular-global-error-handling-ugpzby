@@ -15,14 +15,14 @@ export class UiListChevronComponent implements OnInit {
 		0: 'good',
 		1: 'bad',
 		2: 'blue'
-	}
+	};
 
 	/** object having item status icon list*/
 	itemStatusIconClass = {
 		0: 'check',
 		1: 'times',
 		2: 'circle'
-	}
+	};
 
 	constructor() { }
 
@@ -57,7 +57,7 @@ export class UiListChevronComponent implements OnInit {
 	}
 
 	getItemDetailClasses(item) {
-		let itemDetailClass = {};
+		const itemDetailClass = {};
 
 		if (item.asLink !== undefined && item.asLink) {
 			itemDetailClass['highlight'] = true;
