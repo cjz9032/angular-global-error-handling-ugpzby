@@ -3,7 +3,8 @@
 		<a class="navbar-brand"
 		 href="#">L</a>
 		<div class="navbar-text">
-			<div class="app-title">{{configService.appBrand}} <span class="app-name">{{configService.appName}}</span></div>
+			<div class="app-title">{{configService.appBrand}} <span class="app-name">{{configService.appName}}</span>
+			</div>
 			<div class="device-type">{{deviceService.deviceModel}}</div>
 		</div>
 		<button class="navbar-toggler"
@@ -13,7 +14,8 @@
 		 aria-controls="navbarSupportedContent"
 		 aria-expanded="false"
 		 aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
+			<fa-icon [icon]="['fas', 'bars']">
+			</fa-icon>
 		</button>
 
 		<div class="collapse navbar-collapse"
@@ -40,7 +42,8 @@
 						</a>
 						<div class="dropdown-menu"
 						 aria-labelledby="navbarDropdown">
-						 	<fa-icon [icon]="['fas', 'square']" class="menu-pointer"></fa-icon>
+							<fa-icon [icon]="['fas', 'square']"
+							 class="menu-pointer"></fa-icon>
 							<a *ngFor="let subitem of item.subitems; let ii=index"
 							 class="dropdown-item link"
 							 routerLink="/{{subitem.path}}">{{subitem.label}}</a>
