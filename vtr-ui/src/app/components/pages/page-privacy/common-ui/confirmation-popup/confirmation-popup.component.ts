@@ -33,6 +33,10 @@ export class ConfirmationPopupComponent implements OnInit {
 		this.verificationCode = ev.target.value;
 	}
 
+	resendConfirmationCode() {
+		this.serverCommunicationService.sendVerificationCode();
+	}
+
 	resetVerificationCode() {
 		this.verificationCode = '';
 	}
