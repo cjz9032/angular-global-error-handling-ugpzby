@@ -17,47 +17,47 @@ export class WidgetQuicksettingsComponent implements OnInit {
 	constructor(public dashboardService: DashboardService) { }
 
 	ngOnInit() {
-		this.getQuickSettingStatus();
+		// this.getQuickSettingStatus();
 	}
 
-	private getQuickSettingStatus() {
-		this.dashboardService
-			.getCameraStatus()
-			.then((featureStatus: FeatureStatus) => {
-				this.cameraStatus = featureStatus;
-			})
-			.catch(error => {
-				console.log('getCameraStatus', error);
-			});
+	// private getQuickSettingStatus() {
+	// 	this.dashboardService
+	// 		.getCameraStatus()
+	// 		.then((featureStatus: FeatureStatus) => {
+	// 			this.cameraStatus = featureStatus;
+	// 		})
+	// 		.catch(error => {
+	// 			console.log('getCameraStatus', error);
+	// 		});
 
-		this.dashboardService
-			.getMicrophoneStatus()
-			.then((featureStatus: FeatureStatus) => {
-				this.microphoneStatus = featureStatus;
-			})
-			.catch(error => {
-				console.log('getCameraStatus', error);
-			});
-	}
+	// 	this.dashboardService
+	// 		.getMicrophoneStatus()
+	// 		.then((featureStatus: FeatureStatus) => {
+	// 			this.microphoneStatus = featureStatus;
+	// 		})
+	// 		.catch(error => {
+	// 			console.log('getCameraStatus', error);
+	// 		});
+	// }
 
 	public onCameraStatusToggle($event: boolean) {
-		this.dashboardService.setCameraStatus($event)
-			.then((value: boolean) => {
-				// TODO : check for value is if action is completed or not
-				// and accordingly show/hide spinner
-			}).catch(error => {
-				console.log('getCameraStatus', error);
-			});
+		// this.dashboardService.setCameraStatus($event)
+		// 	.then((value: boolean) => {
+		// 		// TODO : check for value is if action is completed or not
+		// 		// and accordingly show/hide spinner
+		// 	}).catch(error => {
+		// 		console.log('getCameraStatus', error);
+		// 	});
 	}
 
 	public onMicrophoneStatusToggle($event: boolean) {
-		this.dashboardService.setMicrophoneStatus($event)
-			.then((value: boolean) => {
-				// TODO : check for value is if action is completed or not
-				// and accordingly show/hide spinner
-			}).catch(error => {
-				console.log('getCameraStatus', error);
-			});
+		// this.dashboardService.setMicrophoneStatus($event)
+		// 	.then((value: boolean) => {
+		// 		// TODO : check for value is if action is completed or not
+		// 		// and accordingly show/hide spinner
+		// 	}).catch(error => {
+		// 		console.log('getCameraStatus', error);
+		// 	});
 	}
 
 	public onEyeCareModeToggle($event: boolean) {

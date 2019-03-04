@@ -1,7 +1,7 @@
 <div class="vtr-ui-list-chevron">
 	<ul class="chevron-list">
 		<li *ngFor="let item of items"
-			[ngClass]="{'good':item.status===0,'bad':item.status===1}">
+			[ngClass]="getItemStatusClass(item)">
 			<a routerLink="/{{item.path}}">
 				<div class="container-fluid">
 					<div class="row align-items-center">
@@ -11,7 +11,7 @@
 								{{item.title}}
 							</div>
 							<div class="detail"
-								[ngClass]="{'highlight':item.asLink}">
+								[ngClass]="getItemDetailClasses(item)">
 								{{item.detail}}
 							</div>
 						</div>
@@ -19,7 +19,7 @@
 							<div class="item-icon status"
 								*ngIf="item.status!==undefined&&item.status!==''">
 								<div class="icon-bkg">
-									<fa-icon [icon]="['fas', !item.status?'check':'times']"></fa-icon>
+									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
 							<div class="item-icon"
