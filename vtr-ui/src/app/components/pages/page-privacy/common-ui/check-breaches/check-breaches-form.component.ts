@@ -75,7 +75,7 @@ export class CheckBreachesFormComponent implements OnInit {
 			if (response.status === 0) {
 				this.router.navigate(['privacy/result']);
 			} else if (response.status === 300) {
-				this.serverCommunication.sendVerificationCode();
+				this.serverCommunication.sendConfirmationCode();
 				this.confirmationPopupService.openPopup();
 			} else if (response.status === 400) {
 				this.isServerError = true;

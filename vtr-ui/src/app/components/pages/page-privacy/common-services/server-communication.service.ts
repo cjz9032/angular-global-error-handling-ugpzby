@@ -20,7 +20,7 @@ export class ServerCommunicationService {
 		}, 200);
 	}
 
-	sendVerificationCode() {
+	sendConfirmationCode() {
 		// send some request to API
 	}
 

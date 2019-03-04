@@ -34,7 +34,7 @@ export class ConfirmationPopupComponent implements OnInit {
 	}
 
 	resendConfirmationCode() {
-		this.serverCommunicationService.sendVerificationCode();
+		this.serverCommunicationService.sendConfirmationCode();
 	}
 
 	resetVerificationCode() {
