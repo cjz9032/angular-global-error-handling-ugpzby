@@ -3,8 +3,7 @@
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
 
-import bootstrap from '@lenovo/tan-client-bridge/src/index';
-
+import bootstrap from '@lenovo/tan-client-bridge'
 
 @Injectable({
     providedIn: 'root'
@@ -31,9 +30,15 @@ export class VantageShellService {
     }
 
     public getLoginUrl(): any {
-        if (this.phoenix && this.phoenix.LID) {
-			this.phoenix.LID
-            return this.phoenix.LID.getLoginUrl();
+        if (this.phoenix && this.phoenix.lid) {
+            return this.phoenix.lid.getLoginUrl();
+        }
+        return undefined;
+    }
+
+    public enableSSO(useruad, username, userid, userguid): any {
+        if (this.phoenix && this.phoenix.lid) {
+            return this.phoenix.lid.enableSSO(useruad, username, userid, userguid);
         }
         return undefined;
     }

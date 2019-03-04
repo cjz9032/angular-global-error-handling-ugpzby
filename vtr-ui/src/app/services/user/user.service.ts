@@ -34,7 +34,7 @@ export class UserService {
 		}
 	}
 
-	setAuth() {
+	setAuth(auth = false) {
 		this.devService.writeLog('SET AUTH');
 		const self = this;
 		this.commsService.login().subscribe((res) => {
