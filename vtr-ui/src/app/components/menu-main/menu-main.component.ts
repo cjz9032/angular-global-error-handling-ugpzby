@@ -16,13 +16,13 @@ export class MenuMainComponent implements OnInit {
 			id: 'dashboard',
 			label: 'Dashboard',
 			path: 'dashboard',
-			icon: 'dashboard',
+			icon: 'columns',
 			subitems: []
 		}, {
 			id: 'device',
 			label: 'Device',
 			path: 'device',
-			icon: 'device',
+			icon: 'laptop',
 			subitems: [{
 				id: 'device',
 				label: 'My Device',
@@ -46,7 +46,7 @@ export class MenuMainComponent implements OnInit {
 			id: 'security',
 			label: 'Security',
 			path: 'security',
-			icon: 'security',
+			icon: 'lock',
 			subitems: [{
 				id: 'security',
 				label: 'My Security',
@@ -88,7 +88,7 @@ export class MenuMainComponent implements OnInit {
 			id: 'support',
 			label: 'Support',
 			path: 'support',
-			icon: 'support',
+			icon: 'wrench',
 			subitems: []
 		}, {
 			id: 'user',
