@@ -20,22 +20,22 @@ export class DashboardService {
 		return this.dashboardBridge.feedbackLink;
 	}
 
-	public getMicrophoneStatus(): Promise<FeatureStatus> {
-		// return Promise.resolve(null);
-		return this.dashboardBridge.getMicphoneStaus();
-	}
+	// public getMicrophoneStatus(): Promise<FeatureStatus> {
+	// 	// return Promise.resolve(null);
+	// 	return this.dashboardBridge.getMicphoneStaus();
+	// }
 
-	public setMicrophoneStatus(value: boolean): Promise<boolean> {
-		return this.dashboardBridge.setMicphoneStatus(value);
-	}
+	// public setMicrophoneStatus(value: boolean): Promise<boolean> {
+	// 	return this.dashboardBridge.setMicphoneStatus(value);
+	// }
 
-	public getCameraStatus(): Promise<FeatureStatus> {
-		// return Promise.resolve(null);
-		return this.dashboardBridge.getCamaraStatus();
-	}
+	// public getCameraStatus(): Promise<FeatureStatus> {
+	// 	// return Promise.resolve(null);
+	// 	return this.dashboardBridge.getCamaraStatus();
+	// }
 
-	public setCameraStatus(value: boolean): Promise<boolean> {
-		// return Promise.resolve(null);
-		return this.dashboardBridge.setCamaraStatus(value);
-	}
+	// public setCameraStatus(value: boolean): Promise<boolean> {
+	// 	// return Promise.resolve(null);
+	// 	return this.dashboardBridge.setCamaraStatus(value);
+	// }
 }

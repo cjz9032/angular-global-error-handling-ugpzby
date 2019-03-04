@@ -173,7 +173,7 @@ export class MockService {
 			'path': 'internet-protection'
 		},
 		{
-			'status': 2,
+			'status': 1,
 			'id': 'windows-hello',
 			'title': 'Windows Hello',
 			'detail': 'disabled',
