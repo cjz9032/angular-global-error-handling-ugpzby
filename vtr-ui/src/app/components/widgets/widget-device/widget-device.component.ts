@@ -23,14 +23,14 @@ export class WidgetDeviceComponent implements OnInit {
 			'id': 'processor',
 			'title': 'Processor(Intel core i7-8545 @ 1.9GHz)',
 			'description': 'Lorem ipsum dolor sit amet del Lorem ipsum dolor sit amet del',
-			'detail': 'Lear more',
+			'detail': 'Learn more',
 			'path': 'support',
 			'asLink': false
 		},
 		{
 			'status': 1,
 			'id': 'memory',
-			'title': 'Memory(16GB if DDR3 RAM)',
+			'title': 'Memory(16GB of DDR3 RAM)',
 			'description': 'Lorem ipsum dolor sit amet del Lorem ipsum dolor sit amet del',
 			'detail': 'Free memory',
 			'path': 'support',
