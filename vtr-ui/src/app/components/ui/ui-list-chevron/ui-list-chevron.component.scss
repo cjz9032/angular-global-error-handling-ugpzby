@@ -1,4 +1,4 @@
-@import '../../../app.theme.scss';
+@import "../../../app.theme.scss";
 
 .vtr-ui-list-chevron {
 	.chevron-list {
@@ -6,12 +6,12 @@
 		list-style: none;
 		padding: 0;
 		background-color: $shade_extralight;
-		border: .1rem solid $shade_lighter;
+		border: 0.1rem solid $shade_lighter;
 		border-radius: $border_radius;
 		li {
 			height: 6rem;
 			padding: 1.5rem 1rem 1.5rem 0;
-			border-bottom: .1rem solid $shade_lighter;
+			border-bottom: 0.1rem solid $shade_lighter;
 			color: $main_darker;
 			&:last-child {
 				border: none;
@@ -30,8 +30,16 @@
 			&.bad {
 				.item-icon {
 					.icon-bkg {
-						background: linear-gradient($gradient_angle, $stop 0%,$stop_light 100%);
-						border-color: $stop_dark
+						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+						border-color: $stop_dark;
+					}
+				}
+			}
+			&.blue {
+				.item-icon {
+					.icon-bkg {
+						background: linear-gradient($gradient_angle, $main 0%, $main_light 100%);
+						border-color: $main_gstart;
 					}
 				}
 			}
@@ -48,7 +56,7 @@
 						border-radius: 50%;
 						height: 2.4rem;
 						width: 2.4rem;
-						border-width: .2rem;
+						border-width: 0.2rem;
 						border-style: solid;
 						text-align: center;
 						fa-icon {
@@ -64,13 +72,14 @@
 					line-height: 3rem;
 				}
 			}
-			.item-icon-image{
+			.item-icon-image {
 				display: inline-block;
-				height:3rem;
-				width:3rem;
+				height: 3rem;
+				width: 3rem;
 			}
 			.item-text {
 				overflow: hidden;
+				padding-left: 1rem;
 				.title {
 					font-size: 1.4rem;
 					font-weight: $weight_medium;
@@ -80,12 +89,27 @@
 					}
 				}
 				.detail {
-					padding-right: .5rem;
+					padding-right: 0.5rem;
 					float: right;
 					text-align: right;
 					font-size: 1.2rem;
 					color: $shade_dark;
-					font-style: italic;
+
+					&.good {
+						color: $go_dark;
+					}
+					&.bad {
+						color: $stop_dark;
+					}
+					&.blue {
+						color: $main_gstart;
+					}
+
+					&.security {
+						text-transform: uppercase;
+						font-weight: 500;
+					}
+
 					&.highlight {
 						color: $main_shade;
 						text-decoration: underline;

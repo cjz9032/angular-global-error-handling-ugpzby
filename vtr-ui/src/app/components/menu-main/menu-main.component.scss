@@ -1,14 +1,16 @@
-@import '../../app.theme';
+@import "../../app.theme";
 
 .vtr-menu-main {
 	position: fixed;
 	top: 0;
 	z-index: 10000;
 	width: 100%;
+
 	.navbar {
 		height: $menu_height;
 		background-color: $main_darker;
 		color: $light;
+
 		.navbar-brand {
 			font-size: 5rem;
 			font-weight: $weight_bold;
@@ -18,33 +20,41 @@
 			text-align: center;
 			color: $light;
 		}
+
 		.navbar-text {
 			margin-left: 2rem;
+
 			.app-title {
 				text-transform: uppercase;
 				font-size: 2rem;
+
 				.app-name {
 					font-weight: $weight_medium;
 				}
 			}
+
 			.device-type {
 				font-size: 1.6rem;
 			}
 		}
+
 		.navbar-collapse {
 			.navbar-nav {
 				.nav-item {
 					.nav-link {
+						display: inline-table;
 						font-size: 1.6rem;
 						line-height: $menu_height;
 						color: $light;
-						padding: 0 2rem;
+						padding: 0 1rem;
+
 						&.user {
 							padding: 2rem 4rem 2rem 2rem;
 							margin-left: 2rem;
 							height: $menu_height;
 							line-height: 4.6rem;
 							background-color: $main_darkest;
+
 							.user-initials {
 								display: inline-block;
 								text-align: center;
@@ -56,17 +66,29 @@
 							}
 						}
 					}
+
+					.active {
+						line-height: 8.5rem;
+						border-bottom: $main solid 0.5rem;
+
+						.fa-icon {
+							color: $main;
+						}
+					}
+
 					.dropdown-menu {
 						border: none;
 						border-radius: $border_radius;
 						box-shadow: $drop_shadow;
 						margin-top: -1rem;
 						padding: 2.5rem 1.5rem;
+
 						&.user {
 							margin-left: -1.5rem;
 							border-radius: 0;
 							margin-top: 0;
 						}
+
 						fa-icon {
 							&.menu-pointer {
 								position: absolute;
@@ -79,6 +101,7 @@
 								z-index: 0;
 							}
 						}
+
 						.dropdown-item {
 							position: relative;
 							z-index: 1;
@@ -86,9 +109,11 @@
 							font-size: 1.2rem;
 							line-height: 2.2rem;
 							font-weight: $weight_medium;
+
 							&.link {
 								font-weight: $weight_light;
 								text-decoration: underline;
+
 								&:hover {
 									color: $main;
 									text-decoration: none;
@@ -99,6 +124,19 @@
 				}
 			}
 		}
-		
+
+		.navbar-toggler {
+			font-size: 5rem;
+			color: $shade_light;
+
+			&:hover {
+				color: $shade_extralight;
+			}
+		}
+
+		.fa-icon {
+			padding-right: 0.3rem;
+			font-size: 2.1rem;
+		}
 	}
 }
