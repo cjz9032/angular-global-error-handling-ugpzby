@@ -46,7 +46,7 @@
     color: #34495E;
     font-size: 1.6rem;
     font-weight: bold;
-    line-height: 30px;
+    padding: 0 1.5rem 0 0;
   }
   &__link {
     @include href();
