@@ -9,7 +9,7 @@
 	}
 	.title{
 		color: $main_dark;
-		font-size: 4.5rem;
+		font-size: 4.2rem;
 		font-weight: $weight_light;
 	}
 	.heading {
@@ -67,6 +67,9 @@
 	}
 	.surfeasy-side-right-img{
 		width: 90%;
+	}
+	.learnmore{
+		text-decoration: underline;
 	}
   .bullet-list {
     margin-top: 1rem;
@@ -159,7 +162,6 @@
 		margin: 1.2rem;
 	}
 	.get-app-code-box {
-		padding: 0.5rem;
 		background-color: $shade_lightest;
 		border: 0.1rem solid $shade_lighter;
 		border-radius: $border_radius;

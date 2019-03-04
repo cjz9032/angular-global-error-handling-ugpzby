@@ -13,19 +13,17 @@
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col col-12">
-										<vtr-widget-device-update [title]="
-												'Not fully protected'
-											"
+										<vtr-widget-security [title]="'Not fully protected'"
 											[subTitle1]="'You are not fully protected. Learn how to better protect yourself now.'"
 											[subTitle2]="''"
-											[checkForUpdates]="'Security Advisor 101'"></vtr-widget-device-update>
+											[buttonText]="'Security Advisor 101'"
+											percentValue=80></vtr-widget-security>
 									</div>
 								</div>
 
 
 								<div class="row">
 									<div class="col security-widgets-container left">
-
 										<div class="security-widget anti-virus">
 											<div class="security-widget-inner">
 												<div class="title">
@@ -34,9 +32,11 @@
 														Anti-Virus
 													</span>
 												</div>
-
 												<vtr-ui-list-chevron [items]="mockService.securityAntivirus">
 												</vtr-ui-list-chevron>
+												<div class="pull"><img class="mcafee-logo"
+														src="../../../../assets/images/mcafee_logo.svg" />
+												</div>
 											</div>
 										</div>
 
@@ -48,9 +48,11 @@
 														Password health
 													</span>
 												</div>
-
 												<vtr-ui-list-chevron [items]="mockService.securityPasswordHealth">
 												</vtr-ui-list-chevron>
+												<div class="pull right"><img class="dashlane-logo"
+														src="../../../../assets/images/Dashlane_Logo_Teal _Web.png" />
+												</div>
 											</div>
 										</div>
 
@@ -64,6 +66,9 @@
 												</div>
 												<vtr-ui-list-chevron [items]="mockService.securityVPN">
 												</vtr-ui-list-chevron>
+												<div class="pull"><img class="surfeasy-logo"
+														src="../../../../assets/images/surfeasy-logo.svg" />
+												</div>
 											</div>
 										</div>
 									</div>
@@ -80,6 +85,9 @@
 												</vtr-ui-list-chevron>
 												<vtr-ui-list-chevron [items]="mockService.securityConnectedHome">
 												</vtr-ui-list-chevron>
+												<div class="pull"><img class="coronet-logo"
+														src="../../../../assets/images/coronet-logo.svg" />
+												</div>
 											</div>
 										</div>
 										<div class="security-widget windows-hello">
@@ -92,6 +100,9 @@
 												</div>
 												<vtr-ui-list-chevron [items]="mockService.securityWindowsHello">
 												</vtr-ui-list-chevron>
+												<div class="pull"><img class="windows-logo"
+														src="../../../../assets/images/windows-logo.svg" />
+												</div>
 											</div>
 										</div>
 									</div>
