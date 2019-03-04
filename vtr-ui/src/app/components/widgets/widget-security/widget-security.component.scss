@@ -1,1 +1,89 @@
-@import '../../../app.theme';
+@import "../../../app.theme";
+.vtr-widget-security {
+	.security-background {
+		border-radius: 0.5rem;
+		border-bottom-left-radius: 0rem;
+		border-bottom-right-radius: 0rem;
+		height: 100%;
+		width: 100%;
+		background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
+		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+
+		.circle-container {
+			padding-left: 4rem;
+			padding-top: 5rem;
+
+			.circle {
+				width: 16rem;
+				height: 16rem;
+				border-radius: 50%;
+				font-size: 5rem;
+				color: $light;
+				line-height: 16rem;
+				text-align: center;
+				font-weight: $weight_bold;
+				background: $main_darkest;
+
+				span.percent {
+					font-size: 2.5rem;
+				}
+			}
+
+			.circle.percent-0,
+			.circle.percent-20,
+			.circle.percent-25 {
+				background: $pink;
+			}
+			.circle.percent-40,
+			.circle.percent-50 {
+				background: $orange;
+			}
+			.circle.percent-60,
+			.circle.percent-75 {
+				background: $yellow_light
+			}
+			.circle.percent-80,
+			.circle.percent-100 {
+				background: $teal;
+			}
+		}
+		.title {
+			color: $light;
+			font-size: 3.5rem;
+			font-weight: $weight_light;
+			line-height: 4.2rem;
+			padding-left: 1rem;
+			padding-top: 5rem;
+			padding-bottom: 2rem;
+			padding-right: 5rem;
+		}
+		.row1 {
+			opacity: 0.5;
+			color: $light;
+			font-size: 1.4rem;
+			line-height: 2.1rem;
+			padding-left: 1rem;
+			padding-top: 0rem;
+			padding-right: 5rem;
+		}
+		.button-row {
+			padding-left: 1rem;
+			padding-bottom: 5rem;
+			padding-top: 3rem;
+			padding-right: 5rem;
+			.action-button {
+				border-radius: 2.5rem;
+				background: $gradient_main;
+				text-transform: uppercase;
+				padding: 0 3rem;
+				color: $light;
+				font-size: 1.5rem;
+				height: 5rem;
+				font-weight: $weight_medium;
+				line-height: 5rem;
+				text-align: center;
+				border: 0rem;
+			}
+		}
+	}
+}
