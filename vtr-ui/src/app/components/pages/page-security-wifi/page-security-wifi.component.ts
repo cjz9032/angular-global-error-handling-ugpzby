@@ -18,6 +18,8 @@ export class PageSecurityWifiComponent implements OnInit {
 	}
 	enableWiFiSecurity(event) {
 		console.log('enableWiFiSecurity button clicked');
+		this.isLWSEnabled = !this.isLWSEnabled;
+
 	}
 
 }
