@@ -9,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class UiListChevronComponent implements OnInit {
 
 	@Input() items: any[];
+	@Input() iconPlacement: string = 'right';
 
 	/** object having item class list*/
 	itemStatusClass = {
