@@ -9,6 +9,8 @@ import { MockService } from 'src/app/services/mock/mock.service';
 export class PageSecurityInternetComponent implements OnInit {
 
 	title = 'VPN Security';
+	back="BACK";
+	backarrow="< ";
 	IsDashlaneInstalled: string="not-installed";
 	constructor(public mockService: MockService) { }
 

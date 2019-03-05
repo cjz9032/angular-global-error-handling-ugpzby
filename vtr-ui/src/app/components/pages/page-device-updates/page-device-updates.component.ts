@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageDeviceUpdatesComponent implements OnInit {
 	title = 'System Updates';
+	back="BACK";
+	backarrow="< ";
 	lastUpdatedDate = '8/10/2018 at 9:34 AM';
 	nextUpdatedDate = '11/12/2018 at 10:00 AM';
 	installationHistory = 'Installation History';

@@ -18,6 +18,19 @@
 		display: inline-block;
 		margin: 0;
 	}
+	.back {
+		color: $light;
+		font-size: 1.5rem;
+		font-weight: $weight_medium;		 
+		margin:0;
+		display: block;
+	 	position: relative;
+		cursor: pointer;
+		a{
+			border-bottom: 0.1rem solid $light ;		 
+		}
+	 
+	}
 	.forward-link {
 		float: right;
 		margin-top: 3.5rem;

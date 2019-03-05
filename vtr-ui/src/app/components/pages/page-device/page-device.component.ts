@@ -10,6 +10,8 @@ import { MockService } from "../../../services/mock/mock.service"
 export class PageDeviceComponent implements OnInit {
 
 	title = 'My Device';
+	back = 'BACK';
+	backarrow="< ";
 
 	constructor(
 		public deviceService: DeviceService,
