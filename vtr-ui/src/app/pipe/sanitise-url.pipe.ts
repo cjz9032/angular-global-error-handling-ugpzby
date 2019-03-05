@@ -2,9 +2,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Pipe({
-	name: 'sanitiseUrl'
+	name: 'sanitizeUrl'
 })
-export class SanitiseUrlPipe implements PipeTransform {
+export class SanitizeUrlPipe implements PipeTransform {
 
 	constructor(private sanitizer: DomSanitizer) { }
 	/** Fix issue with unsafe when opening link from angular 7

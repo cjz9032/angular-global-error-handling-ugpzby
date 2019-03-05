@@ -46,7 +46,7 @@
 				</div>
 			</a>
 			<!--Open Windows Settings /subapges if isSystemLink is not undefined or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
-			<a [href]="(item.path | sanitiseUrl)"
+			<a [href]="(item.path | sanitizeUrl)"
 				*ngIf="item.isSystemLink!==undefined">
 				<div class="container-fluid">
 					<div class="row align-items-center">
