@@ -3,6 +3,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { CommsService } from '../comms/comms.service';
 import { DevService } from '../dev/dev.service';
 import { ContainerService } from '../container/container.service';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service'
 
 @Injectable()
 export class UserService {
@@ -11,15 +12,15 @@ export class UserService {
 	auth = false;
 	token = '';
 
-	firstName = 'John';
-	lastName = 'Doe';
+	firstName = 'Lenovo';
+	lastName = 'User';
 	initials = '';
 
 	constructor(
 		private cookieService: CookieService,
 		private commsService: CommsService,
 		private devService: DevService,
-		private containerService: ContainerService
+		private vantageShellService: VantageShellService
 	) {
 		// DUMMY
 		this.setName(this.firstName, this.lastName);
@@ -30,19 +31,14 @@ export class UserService {
 		this.devService.writeLog('CHECK COOKIES:', this.cookies);
 		if (this.cookies['token']) {
 			this.setToken(this.cookies['token']);
-			this.setAuth();
 		}
 	}
 
 	setAuth(auth = false) {
 		this.devService.writeLog('SET AUTH');
 		const self = this;
-		this.commsService.login().subscribe((res) => {
-			self.devService.writeLog('LOGIN RES', res);
-			this.auth = true;
-		}, (err) => {
-			self.commsService.handleAPIError('Login Error', err);
-		});
+		self.devService.writeLog('LOGIN RES', auth);
+		this.auth = auth;
 	}
 
 	removeAuth() {
@@ -50,17 +46,18 @@ export class UserService {
 		const self = this;
 		this.cookieService.deleteAll('/');
 		this.cookies = this.cookieService.getAll();
-		this.commsService.logout().subscribe((res) => {
-			self.devService.writeLog('LOGOUT RES', res);
-		}, (err) => {
-			self.commsService.handleAPIError('Logout Settings', err);
+		self.vantageShellService.logout().then(function (result) {
+			if (result.success && result.status === 0) {
+				self.setName("Lenovo", "User");
+				self.auth = false;
+			}
+			this.devService.writeLog('LOGOUT: ', result.success);
 		});
-		this.auth = false;
 	}
 
 	setToken(token) {
 		this.devService.writeLog('SET TOKEN', token);
-		this.setAuth();
+		this.setAuth(true);
 		this.token = token;
 		this.commsService.token = token;
 		this.cookieService.set('token', token, 99999999999999999, '/');

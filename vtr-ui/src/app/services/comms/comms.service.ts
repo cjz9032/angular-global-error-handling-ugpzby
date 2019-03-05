@@ -37,11 +37,4 @@ export class CommsService {
 		this.devService.writeLog('LOGIN: ', url);
 		return this.flatGetCall(url);
 	}
-
-	logout() {
-		const url = this.env.ssoLogout + this.env.ssoCallback;
-		this.devService.writeLog('LOGOUT: ', url);
-		return this.flatGetCall(url);
-	}
-
 }

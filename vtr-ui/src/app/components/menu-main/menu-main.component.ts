@@ -108,12 +108,13 @@ export class MenuMainComponent implements OnInit {
 		private modalService: NgbModal
 	) { }
 
-	ngOnInit() {	 
+	ngOnInit() {
 	}
 
 	menuItemClick(event, path) {
 		this.router.navigateByUrl(path);
 	}
+	
 	//  to popup Lenovo ID modal dialog
 	OpenLenovoId(){
 		this.modalService.open(ModalLenovoIdComponent, {
@@ -121,6 +122,10 @@ export class MenuMainComponent implements OnInit {
 			size: 'lg',
 			centered: true
 		  });
+	}
+
+	onLogout(){
+		this.userService.removeAuth();
 	}
 
 }

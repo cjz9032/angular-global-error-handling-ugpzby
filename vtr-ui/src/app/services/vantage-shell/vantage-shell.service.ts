@@ -42,4 +42,11 @@ export class VantageShellService {
         }
         return undefined;
     }
+    
+    public logout(): any {
+        if (this.phoenix && this.phoenix.lid) {
+            return this.phoenix.lid.logout();
+        }
+        return undefined;
+    }
 }

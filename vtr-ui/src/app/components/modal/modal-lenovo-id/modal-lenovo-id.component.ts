@@ -6,6 +6,7 @@ import { Subscription, timer } from "rxjs";
 
 //TODO: Create facebook new account within UWP WebView control will increase memory rapidly and crash app fianlly,
 // Test if same issue happen in WINJS webview control.
+// Verified the same issue happen in MS-webview control. Need to fix.
 
 @Component({
   selector: 'vtr-modal-lenovo-id',
