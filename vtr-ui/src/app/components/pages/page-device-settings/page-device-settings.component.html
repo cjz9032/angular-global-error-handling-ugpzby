@@ -2,7 +2,7 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [title]="title"
-				[menuItems]="menuItems"></vtr-header-main>
+			 [menuItems]="menuItems"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -23,28 +23,27 @@
 								<div class="col col-12 cont">
 									<div class="widget-heading mb-40">Helpful content</div>
 									<vtr-widget-questions [title]="'Q&A\'s for your machine'"
-										[description]="'Find answers for your Ideapad'"
+									 [description]="'Find answers for your Ideapad'"
 									 [items]="qaService.qas"></vtr-widget-questions>
 								</div>
 							</div>
 							<div class="row mb-40">
 								<div class="col col-12 aritcle-card">
-									<vtr-container-card
-										[img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
-										[title]="'Ideas on how to handle all your passwords online'"
-										[readMore]="'http://www.google.com'"
-										[type]="'partnerarticle'"
-										[ratioX]="4.0"
-										[ratioY]="2.5">
+									<vtr-container-card [img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
+									 [title]="'Ideas on how to handle all your passwords online'"
+									 [readMore]="'http://www.google.com'"
+									 [type]="'partnerarticle'"
+									 [ratioX]="4.0"
+									 [ratioY]="2.5">
 									</vtr-container-card>
 								</div>
 							</div>
 							<div class="row mb-40">
 								<div class="col col-12 ">
 									<vtr-widget-feedback [title]="'Discover our top ideapad offers for the holidays '"
-										[description]="'Lenovo Exclusive'"
-										[actionName]="''"
-										[action]="''">
+									 [description]="'Lenovo Exclusive'"
+									 [actionName]="''"
+									 [action]="''">
 									</vtr-widget-feedback>
 								</div>
 							</div>
