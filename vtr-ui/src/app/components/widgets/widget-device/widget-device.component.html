@@ -1,6 +1,6 @@
 <div class="vtr-widget-device">
 	<div class="container-fluid p-40">
-		<div class="circleimage"><img src="../../../../assets/images/circle.png"/> </div>
+		<div class="circleimage"><img src="../../../../assets/images/circle.png" /> </div>
 		<div class="row mt-20">
 			<div class="col">
 				<div class="family">{{family}}</div>
@@ -26,7 +26,7 @@
 			<div class="col">
 				<ul class="status-list">
 					<li *ngFor="let item of dummyDeviceInformation"
-					 [ngClass]="[!item.status?'good':'bad']">
+						[ngClass]="[!item.status?'good':'bad']">
 						<div class="container-fluid">
 							<div class="row align-items-center">
 								<div class="col-auto">
@@ -38,7 +38,7 @@
 								</div>
 								<div class="col-auto p-0">
 									<div class="title"
-									 [ngClass]="[!item.status?'good':'bad']">
+										[ngClass]="[!item.status?'good':'bad']">
 										{{item.title}}
 									</div>
 									<div class="description row">{{item.description}}</div>
@@ -46,7 +46,7 @@
 								<div class="col-auto text-right ml-auto">
 									<a routerLink="/{{item.path}}">
 										<div class="detail"
-										 [ngClass]="{'highlight':item.asLink}">
+											[ngClass]="{'highlight':item.asLink}">
 											{{item.detail}}
 										</div>
 									</a>

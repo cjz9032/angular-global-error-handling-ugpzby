@@ -9,8 +9,8 @@ import { MockService } from 'src/app/services/mock/mock.service';
 export class PageSecurityWifiComponent implements OnInit {
 
 	title = 'WiFi and Connected Home Security';
-	back="BACK";
-	backarrow="< ";
+	back = 'BACK';
+	backarrow = '< ';
 	isLWSEnabled = false;
 	viewSecChkRoute = 'viewSecChkRoute';
 

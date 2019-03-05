@@ -19,11 +19,12 @@ export class UiHeaderSubpageComponent implements OnInit {
 	}
 
 	menuItemClick(event, item) {
-		const element = document.querySelector("#" + item.path);
-		if (element) { element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-		//Fix for Edge browser
-		window.scrollBy(0, -60);
-	 }
+		const element = document.querySelector('#' + item.path);
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+			// Fix for Edge browser
+			window.scrollBy(0, -60);
+		}
 	}
 
 }
