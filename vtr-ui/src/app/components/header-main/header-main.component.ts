@@ -8,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class HeaderMainComponent implements OnInit {
 
 	@Input() title: string;
+	@Input() back: string;
+	@Input() backarrow: string;
 	@Input() forwardLink: { path: string, label: string };
 	@Input() menuItems: any[];
 
@@ -15,5 +17,7 @@ export class HeaderMainComponent implements OnInit {
 
 	ngOnInit() {
 	}
-
+	 goBack() {
+		window.history.back();
+	  }
 }

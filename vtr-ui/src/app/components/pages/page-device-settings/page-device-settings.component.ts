@@ -10,7 +10,8 @@ import { DevService } from '../../../services/dev/dev.service';
 export class PageDeviceSettingsComponent implements OnInit {
 
 	title = 'Device Settings';
-
+	back = 'BACK';
+	backarrow = '< ';
 	menuItems = [
 		{
 			id: 'power',

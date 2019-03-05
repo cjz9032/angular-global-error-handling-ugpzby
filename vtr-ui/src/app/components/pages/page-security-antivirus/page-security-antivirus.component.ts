@@ -9,7 +9,8 @@ import { MockService } from 'src/app/services/mock/mock.service';
 export class PageSecurityAntivirusComponent implements OnInit {
 
 	title = 'Anti-Virus';
-
+	back = 'BACK';
+	backarrow = '< ';
 	constructor(public mockService: MockService) { }
 
 	ngOnInit() {
