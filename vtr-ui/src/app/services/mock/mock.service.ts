@@ -43,16 +43,18 @@ export class MockService {
 			'id': 'memory',
 			'title': 'Memory',
 			'detail': '4.00 GB of 6 GB',
-			'path': '/support',
-			'asLink': false
+			'path': 'ms-settings:about',
+			'asLink': false,
+			'isSystemLink': true
 		},
 		{
 			'status': 0,
 			'id': 'disk',
 			'title': 'Disk Space',
 			'detail': '12.7 GB of 256 GB',
-			'path': '/support',
-			'asLink': false
+			'path': 'ms-settings:storagesense',
+			'asLink': false,
+			'isSystemLink': true
 		},
 		{
 			'status': 0,

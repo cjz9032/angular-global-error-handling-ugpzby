@@ -109,6 +109,7 @@ import { WidgetWarrantyComponent } from './components/widgets/widget-warranty/wi
 import { SanitizeHtmlPipe } from './pipe/sanitizehtml.pipe';
 import { WidgetRebootComponent } from './components/widgets/widget-reboot/widget-reboot.component';
 import { ContainerArticleComponent } from './components/container-article/container-article.component';
+import { SanitiseUrlPipe } from './pipe/sanitise-url.pipe';
 
 library.add(fas);
 library.add(fab);
@@ -180,7 +181,8 @@ library.add(far);
 		SanitizeHtmlPipe,
 		WidgetRebootComponent,
 		FeedbackFormComponent,
-		ContainerArticleComponent
+		ContainerArticleComponent,
+		SanitiseUrlPipe
 	],
 	imports: [
 		BrowserModule,
