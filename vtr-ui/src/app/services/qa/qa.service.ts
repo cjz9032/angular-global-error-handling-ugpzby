@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {QA} from "../../data-models/qa/qa.model";
+import { Injectable } from '@angular/core';
+import { QA } from "../../data-models/qa/qa.model";
 
 @Injectable({
 	providedIn: 'root'
@@ -76,6 +76,6 @@ export class QaService {
 	getById(id: number): QA {
 		return this.qas.find((element, index, array) => {
 			return element.id === id;
-		})
+		});
 	}
 }

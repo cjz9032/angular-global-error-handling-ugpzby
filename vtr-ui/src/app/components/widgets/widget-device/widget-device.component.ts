@@ -8,7 +8,7 @@ import { DeviceService } from '../../../services/device/device.service';
 })
 export class WidgetDeviceComponent implements OnInit {
 
-	subtitle = "My device status";
+	subtitle = 'My device status';
 
 	family = 'Ideapad 720s  (14")';
 	serial = '123123131';
