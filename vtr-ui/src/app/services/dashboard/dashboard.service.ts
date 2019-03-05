@@ -5,14 +5,15 @@ import { Injectable } from '@angular/core';
 
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { BaseShellService } from '../vantage-shell/base-shell.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class DashboardService {
 	private dashboard: any;
-	constructor(private vantageShellService: VantageShellService) {
-		this.dashboard = vantageShellService.getDashboard();
+	constructor(shellService: BaseShellService) {
+		this.dashboard = shellService.getDashboard();
 	}
 
 	public getFeedbackUrl(): string {

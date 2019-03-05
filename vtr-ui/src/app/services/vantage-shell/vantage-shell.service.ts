@@ -13,15 +13,13 @@ export class VantageShellService {
 
 	private phoenix: any;
 	constructor() {
-		console.log('VantageShellService');
-
 		const shell = this.getVantageShell();
 		if (shell) {
-			this.phoenix = bootstrap(
-				new inversify.Container(),
-				new shell.VantageRpcClient()
-			);
-			console.log('VantageRpcClient', JSON.stringify(this.phoenix));
+			// this.phoenix = bootstrap(
+			// 	new inversify.Container(),
+			// 	new shell.VantageRpcClient()
+			// );
+			// console.log('VantageRpcClient', JSON.stringify(this.phoenix));
 		}
 	}
 
