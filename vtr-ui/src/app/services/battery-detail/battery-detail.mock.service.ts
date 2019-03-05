@@ -20,7 +20,7 @@ export class BatteryDetailMockService implements BaseBatteryDetail {
 	 */
 	getBatteryDetail(): Observable<BatteryDetail[]> {
 		return this.http.get<BatteryDetail[]>(
-			`api/battery-data.mock.json`
+			`mock-api/battery-data.mock.json`
 		);
 	}
 }

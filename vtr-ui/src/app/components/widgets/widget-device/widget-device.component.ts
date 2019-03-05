@@ -8,7 +8,7 @@ import { DeviceService } from '../../../services/device/device.service';
 })
 export class WidgetDeviceComponent implements OnInit {
 
-	subtitle = "My device status";
+	subtitle = 'My device status';
 
 	family = 'Ideapad 720s  (14")';
 	serial = '123123131';
@@ -24,8 +24,9 @@ export class WidgetDeviceComponent implements OnInit {
 			'title': 'Processor(Intel core i7-8545 @ 1.9GHz)',
 			'description': 'Lorem ipsum dolor sit amet del Lorem ipsum dolor sit amet del',
 			'detail': 'Learn more',
-			'path': 'support',
-			'asLink': false
+			'path': 'ms-settings:about',
+			'asLink': false,
+			'isSystemLink': true
 		},
 		{
 			'status': 1,
@@ -33,8 +34,9 @@ export class WidgetDeviceComponent implements OnInit {
 			'title': 'Memory(16GB of DDR3 RAM)',
 			'description': 'Lorem ipsum dolor sit amet del Lorem ipsum dolor sit amet del',
 			'detail': 'Free memory',
-			'path': 'support',
-			'asLink': false
+			'path': 'ms-settings:about',
+			'asLink': false,
+			'isSystemLink': true
 		},
 		{
 			'status': 1,
@@ -42,8 +44,9 @@ export class WidgetDeviceComponent implements OnInit {
 			'title': 'Disk space(256GB Toshiba SSD)',
 			'description': 'Lorem ipsum dolor sit amet del Lorem ipsum dolor sit amet del',
 			'detail': 'Learn more',
-			'path': 'support',
-			'asLink': false
+			'path': 'ms-settings:storagesense',
+			'asLink': false,
+			'isSystemLink': true
 		},
 		{
 			'status': 0,
