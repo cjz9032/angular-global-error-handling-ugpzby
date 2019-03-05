@@ -10,6 +10,8 @@ export class ServerCommunicationService {
 	public edgeAccounts = {};
 	public chromeAccounts = {};
 
+	public userEmail = '';
+
 	public validationStatusChanged = new EventEmitter();
 	public onGetBreachedAccountsResponse = new EventEmitter();
 	public onGetLenovoId = new EventEmitter();
@@ -35,7 +37,8 @@ export class ServerCommunicationService {
 		}, 200);
 	}
 
-	getBreachedAccounts(login) {
+	getBreachedAccounts(userEmail) {
+		this.userEmail = userEmail;
 		const mockBreachedAccounts = [
 			{
 				domain: 'facebook',
@@ -99,12 +102,12 @@ export class ServerCommunicationService {
 			// });
 			if (!this.firstRequest) { //  TODO delete (just for test)
 				// success // TODO uncomment to see 'success' behaviour
+				this.breachedAccounts = mockBreachedAccounts;
 				this.onGetBreachedAccountsResponse.emit({
 					type: 'getBreachedAccounts',
 					status: 0, // test status number, has no secret meaning (mock means 0 = success)
-					payload: {mockBreachedAccounts}
+					payload: {breaches: mockBreachedAccounts}
 				});
-				this.breachedAccounts = mockBreachedAccounts;
 			}
 		}, 1000);
 	}

@@ -9,6 +9,7 @@ import { ServerCommunicationService } from '../../common-services/server-communi
 })
 export class ResultComponent implements OnInit{
 	public isPopupOpen: boolean;
+	public userEmail: string;
 	public breached_accounts: any[];
 	public breached_accounts_show: any[];
 	// static Data for html
@@ -21,6 +22,12 @@ export class ResultComponent implements OnInit{
 	ngOnInit() {
 		this.breached_accounts = this.serverCommunicationService.breachedAccounts;
 		this.breached_accounts_show = this.breached_accounts.slice(0, 3);
+		this.userEmail = this.serverCommunicationService.userEmail;
+		this.serverCommunicationService.onGetBreachedAccountsResponse.subscribe(() => {
+			this.breached_accounts = this.serverCommunicationService.breachedAccounts;
+			this.breached_accounts_show = this.breached_accounts.slice(0, 3);
+			this.userEmail = this.serverCommunicationService.userEmail;
+		});
 	}
 
 	backClicked() {
