@@ -5,42 +5,59 @@ import { Injectable } from '@angular/core';
 
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { BaseShellService } from '../vantage-shell/base-shell.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class DashboardService {
 	private dashboard: any;
-	constructor(shellService: BaseShellService) {
+	public isShellAvailable = false;
+	constructor(shellService: VantageShellService) {
 		this.dashboard = shellService.getDashboard();
-	}
-
-	public getFeedbackUrl(): string {
-		return this.dashboard.feedbackLink;
+		if (this.dashboard) {
+			this.isShellAvailable = true;
+		}
 	}
 
 	public getMicrophoneStatus(): Promise<FeatureStatus> {
-		return this.dashboard.getMicphoneStatus();
+		if (this.dashboard) {
+			return this.dashboard.getMicphoneStatus();
+		}
+		return undefined;
 	}
 
 	public setMicrophoneStatus(value: boolean): Promise<boolean> {
-		return this.dashboard.setMicphoneStatus(value);
+		if (this.dashboard) {
+			return this.dashboard.setMicphoneStatus(value);
+		}
+		return undefined;
 	}
 
 	public getCameraStatus(): Promise<FeatureStatus> {
-		return this.dashboard.getCameraStatus();
+		if (this.dashboard) {
+			return this.dashboard.getCameraStatus();
+		}
+		return undefined;
 	}
 
 	public setCameraStatus(value: boolean): Promise<boolean> {
-		return this.dashboard.setCameraStatus(value);
+		if (this.dashboard) {
+			return this.dashboard.setCameraStatus(value);
+		}
+		return undefined;
 	}
 
 	public getEyeCareMode(): Promise<FeatureStatus> {
-		return this.dashboard.getEyecareMode();
+		if (this.dashboard) {
+			return this.dashboard.getEyecareMode();
+		}
+		return undefined;
 	}
 
 	public setEyeCareMode(value: boolean): Promise<boolean> {
-		return this.dashboard.setEyecareMode(value);
+		if (this.dashboard) {
+			return this.dashboard.setEyecareMode(value);
+		}
+		return undefined;
 	}
 }

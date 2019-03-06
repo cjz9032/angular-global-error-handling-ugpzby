@@ -2,24 +2,22 @@
 
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
-
 import bootstrap from '@lenovo/tan-client-bridge/src/index';
-
 
 @Injectable({
 	providedIn: 'root'
 })
 export class VantageShellService {
 
-	private phoenix: any;
+	private phoenixShell: any;
 	constructor() {
 		const shell = this.getVantageShell();
 		if (shell) {
-			// this.phoenix = bootstrap(
-			// 	new inversify.Container(),
-			// 	new shell.VantageRpcClient()
-			// );
-			// console.log('VantageRpcClient', JSON.stringify(this.phoenix));
+			this.phoenixShell = bootstrap(
+				new inversify.Container(),
+				new shell.VantageRpcClient()
+			);
+			console.log('VantageRpcClient', JSON.stringify(this.phoenixShell));
 		}
 	}
 
@@ -32,8 +30,8 @@ export class VantageShellService {
 	 * returns dashboard object from VantageShellService of JS Bridge
 	 */
 	public getDashboard(): any {
-		if (this.phoenix) {
-			return this.phoenix.dashboard;
+		if (this.phoenixShell) {
+			return this.phoenixShell.dashboard;
 		}
 		return undefined;
 	}

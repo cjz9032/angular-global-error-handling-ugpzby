@@ -108,8 +108,6 @@ import { WidgetWarrantyComponent } from './components/widgets/widget-warranty/wi
 import { SanitizeHtmlPipe } from './pipe/sanitizehtml.pipe';
 import { WidgetRebootComponent } from './components/widgets/widget-reboot/widget-reboot.component';
 import { ContainerArticleComponent } from './components/container-article/container-article.component';
-import { VantageShellWorkaroundService } from './services/vantage-shell/vantage-shell.workaround.service';
-import { BaseShellService } from './services/vantage-shell/base-shell.service';
 
 library.add(fas);
 library.add(fab);
@@ -203,8 +201,7 @@ library.add(far);
 		DeviceService,
 		SecurityService,
 		UserService,
-		{ provide: BaseCameraDetail, useClass: CameraDetailMockService },
-		{ provide: BaseShellService, useClass: VantageShellWorkaroundService }
+		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
 	bootstrap: [AppComponent],
 	entryComponents: [ModalWelcomeComponent]

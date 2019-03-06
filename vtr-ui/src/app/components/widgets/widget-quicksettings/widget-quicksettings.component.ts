@@ -22,64 +22,71 @@ export class WidgetQuicksettingsComponent implements OnInit {
 	}
 
 	private getQuickSettingStatus() {
+		if (this.dashboardService.isShellAvailable) {
+			this.dashboardService
+				.getCameraStatus()
+				.then((featureStatus: FeatureStatus) => {
+					console.log('getCameraStatus.then', featureStatus);
+					this.cameraStatus = featureStatus;
+				})
+				.catch(error => {
+					console.error('getCameraStatus', error);
+				});
 
-		this.dashboardService
-			.getCameraStatus()
-			.then((featureStatus: FeatureStatus) => {
-				console.log('getCameraStatus.then', featureStatus);
-				this.cameraStatus = featureStatus;
-			})
-			.catch(error => {
-				console.error('getCameraStatus', error);
-			});
+			this.dashboardService
+				.getMicrophoneStatus()
+				.then((featureStatus: FeatureStatus) => {
+					console.log('getMicrophoneStatus.then', featureStatus);
 
-		this.dashboardService
-			.getMicrophoneStatus()
-			.then((featureStatus: FeatureStatus) => {
-				console.log('getMicrophoneStatus.then', featureStatus);
+					this.microphoneStatus = featureStatus;
+				})
+				.catch(error => {
+					console.error('getCameraStatus', error);
+				});
 
-				this.microphoneStatus = featureStatus;
-			})
-			.catch(error => {
-				console.error('getCameraStatus', error);
-			});
+			this.dashboardService
+				.getEyeCareMode()
+				.then((featureStatus: FeatureStatus) => {
+					console.log('getEyeCareMode.then', featureStatus);
 
-		this.dashboardService
-			.getEyeCareMode()
-			.then((featureStatus: FeatureStatus) => {
-				console.log('getEyeCareMode.then', featureStatus);
-
-				this.eyeCareModeStatus = featureStatus;
-			})
-			.catch(error => {
-				console.error('getEyeCareMode', error);
-			});
+					this.eyeCareModeStatus = featureStatus;
+				})
+				.catch(error => {
+					console.error('getEyeCareMode', error);
+				});
+		}
 	}
 
 	public onCameraStatusToggle($event: boolean) {
-		this.dashboardService.setCameraStatus($event)
-			.then((value: boolean) => {
-				console.log('getCameraStatus.then', value);
-			}).catch(error => {
-				console.error('getCameraStatus', error);
-			});
+		if (this.dashboardService.isShellAvailable) {
+			this.dashboardService.setCameraStatus($event)
+				.then((value: boolean) => {
+					console.log('getCameraStatus.then', value);
+				}).catch(error => {
+					console.error('getCameraStatus', error);
+				});
+		}
 	}
 
 	public onMicrophoneStatusToggle($event: boolean) {
-		this.dashboardService.setMicrophoneStatus($event)
-			.then((value: boolean) => {
-				console.log('setMicrophoneStatus.then', value);
-			}).catch(error => {
-				console.error('setMicrophoneStatus', error);
-			});
+		if (this.dashboardService.isShellAvailable) {
+			this.dashboardService.setMicrophoneStatus($event)
+				.then((value: boolean) => {
+					console.log('setMicrophoneStatus.then', value);
+				}).catch(error => {
+					console.error('setMicrophoneStatus', error);
+				});
+		}
 	}
 
 	public onEyeCareModeToggle($event: boolean) {
-		this.dashboardService.setEyeCareMode($event)
-			.then((value: boolean) => {
-				console.log('setEyeCareMode.then', value);
-			}).catch(error => {
-				console.error('setEyeCareMode', error);
-			});
+		if (this.dashboardService.isShellAvailable) {
+			this.dashboardService.setEyeCareMode($event)
+				.then((value: boolean) => {
+					console.log('setEyeCareMode.then', value);
+				}).catch(error => {
+					console.error('setEyeCareMode', error);
+				});
+		}
 	}
 }
