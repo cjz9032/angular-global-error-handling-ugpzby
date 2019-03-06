@@ -111,6 +111,8 @@ import { WidgetRebootComponent } from './components/widgets/widget-reboot/widget
 import { ContainerArticleComponent } from './components/container-article/container-article.component';
 import { SanitizeUrlPipe } from './pipe/sanitise-url.pipe';
 import { UniqueIdPipe } from './pipe/unique-id.pipe';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 library.add(fas);
 library.add(fab);
@@ -194,7 +196,8 @@ library.add(far);
 		FontAwesomeModule,
 		NgbModule,
 		Ng5SliderModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
 	],
 	providers: [
 		CookieService,
