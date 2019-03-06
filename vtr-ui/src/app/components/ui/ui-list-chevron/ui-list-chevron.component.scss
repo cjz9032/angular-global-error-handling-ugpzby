@@ -10,7 +10,7 @@
 		border-radius: $border_radius;
 		li {
 			height: 6rem;
-			padding: 1.5rem 1rem 1.5rem 0;
+			padding: 1.5rem 1rem;
 			border-bottom: 0.1rem solid $shade_lighter;
 			color: $main_darker;
 			.item-icon {
@@ -34,16 +34,14 @@
 					color: $main;
 					font-size: 1.9rem;
 					line-height: 3rem;
-
 				}
-
 			}
 			&:last-child {
 				border: none;
 			}
-			&:hover {
-				background-color: $shade_extralight;
-			}
+			// &:hover {
+			// 	background-color: $shade_extralight;
+			// }
 			&.good {
 				.item-icon {
 					.icon-bkg {
@@ -65,7 +63,7 @@
 					.icon-bkg {
 						background: linear-gradient($gradient_angle, $main 0%, $main_light 100%);
 						border-color: $main_gstart;
-						fa-icon{
+						fa-icon {
 							font-size: 0.8rem;
 							line-height: 2.2rem;
 						}
