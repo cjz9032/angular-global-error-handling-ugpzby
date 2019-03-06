@@ -5,11 +5,11 @@
 				<div class="col">
 					<div class="battery-indicator pb-5">
 						<vtr-battery-indicator [remainingHour]="2"
-						 [remainingMinutes]="30"
-						 [percentage]="10"
-						 [isCharging]="true"
-						 [isExpressCharging]="false"
-						 [isVoltageError]="true">
+							[remainingMinutes]="30"
+							[percentage]="50"
+							[isCharging]="true"
+							[isExpressCharging]="false"
+							[isVoltageError]="false">
 						</vtr-battery-indicator>
 					</div>
 				</div>
@@ -17,7 +17,7 @@
 			<hr />
 			<!-- repeat battery-detail information -->
 			<div *ngFor="let model of dataSource"
-			 class="line-height-2-5 mb-3">
+				class="line-height-2-5 mb-3">
 				<div class="row mb-3">
 					<div class="col">
 						<!-- Section Title like Primary Battery -->
@@ -201,7 +201,7 @@
 							</div>
 							<div class="col-4 align-self-center text-center">
 								<button type="button"
-								 class="btn btn-primary btn-lg battery-button text-uppercase">
+									class="btn btn-primary btn-lg battery-button text-uppercase">
 									Perform Gauge Reset
 								</button>
 							</div>
