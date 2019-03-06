@@ -12,6 +12,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit {
 	, such as Dolby settings, microphone, etc.`;
 	automaticDolbyAudioSettings = false;
 
+	radioGroupAutoDolbySettings = 'radio-grp-auto-dolby-settings';
+	radioOptimiseMicSettings = 'radio-grp-optimise-mic-settings';
+
 	constructor() { }
 
 	onAutomaticDolbyAudioToggleOnOff(event) {

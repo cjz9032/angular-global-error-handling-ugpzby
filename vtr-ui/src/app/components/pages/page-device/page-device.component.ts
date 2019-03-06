@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DeviceService } from '../../../services/device/device.service';
-import { MockService } from "../../../services/mock/mock.service"
+import { QaService } from '../../../services/qa/qa.service';
 
 @Component({
 	selector: 'vtr-page-device',
@@ -10,10 +10,12 @@ import { MockService } from "../../../services/mock/mock.service"
 export class PageDeviceComponent implements OnInit {
 
 	title = 'My Device';
+	back = 'BACK';
+	backarrow = '< ';
 
 	constructor(
 		public deviceService: DeviceService,
-		public mockService: MockService
+		public qaService: QaService
 	) { }
 
 	ngOnInit() {

@@ -11,8 +11,9 @@ import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 	providers: [NgbModalConfig, NgbModal]
 })
 export class PageDashboardComponent implements OnInit {
+	private firstName = 'James'; // todo: read it from local storage once lenovo id is integrated
 	submit = 'Submit';
-	title = 'Dashboard';
+	title = `Looking energized today ${this.firstName}!`;
 	feedbackButtonText = this.submit;
 
 	forwardLink = {

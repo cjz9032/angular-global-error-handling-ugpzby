@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MenuMainComponent } from './menu-main.component';
+import { WifiSecurityComponent } from './wifi-security.component';
 
-describe('MenuMainComponent', () => {
-	let component: MenuMainComponent;
-	let fixture: ComponentFixture<MenuMainComponent>;
+describe('WifiSecurityComponent', () => {
+	let component: WifiSecurityComponent;
+	let fixture: ComponentFixture<WifiSecurityComponent>;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [MenuMainComponent]
+			declarations: [WifiSecurityComponent]
 		})
 			.compileComponents();
 	}));
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(MenuMainComponent);
+		fixture = TestBed.createComponent(WifiSecurityComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

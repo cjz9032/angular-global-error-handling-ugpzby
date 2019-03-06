@@ -1,12 +1,12 @@
-import {Injectable} from '@angular/core';
-import {QA} from "../../data-models/qa/qa.model";
+import { Injectable } from '@angular/core';
+import { QA } from '../../data-models/qa/qa.model';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class QaService {
 
-	imagePath: string = '../../../assets/images/qa';
+	imagePath = '../../../assets/images/qa';
 	qas: QA[] = [
 		{
 			id: 1,
@@ -76,6 +76,6 @@ export class QaService {
 	getById(id: number): QA {
 		return this.qas.find((element, index, array) => {
 			return element.id === id;
-		})
+		});
 	}
 }
