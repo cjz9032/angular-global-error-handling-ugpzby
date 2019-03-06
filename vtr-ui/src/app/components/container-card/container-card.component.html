@@ -1,15 +1,15 @@
 <div class="container-card card-{{type}}"
- *ngIf="type === 'corner'"
- [style.height.px]="containerHeight">
+	*ngIf="type === 'corner'"
+	[style.height.px]="containerHeight">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-8 content">
 				<div *ngIf="title"
-				 class="title">{{title}}</div>
+					class="title">{{title}}</div>
 				<div *ngIf="caption"
-				 class="caption">{{caption}}</div>
+					class="caption">{{caption}}</div>
 				<div *ngIf="logo || logoText"
-				 class="logo">
+					class="logo">
 					<span class="logo-img">
 						<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 					</span>
@@ -18,37 +18,37 @@
 			</div>
 			<div class="col col-4 image">
 				<div class="bottomright {{cornerShift}}"><img [src]="img"
-					 *ngIf="img"></div>
+						*ngIf="img"></div>
 			</div>
 		</div>
 	</div>
 </div>
 
 <div class="container-card card-{{type}}"
- *ngIf="type === 'highlight'"
- [style.background-image]="'url('+img+')'"
- [style.height.px]="containerHeight">
+	*ngIf="type === 'highlight'"
+	[style.background-image]="'url('+img+')'"
+	[style.height.px]="containerHeight">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-4">
 			</div>
 			<div class="col col-8 content">
 				<div *ngIf="title"
-				 class="title">{{title}}</div>
+					class="title">{{title}}</div>
 			</div>
 		</div>
 	</div>
 </div>
 
 <div class="container-card card-{{type}}"
- *ngIf="type === 'article'"
- [style.height.px]="containerHeight">
+	*ngIf="type === 'article'"
+	[style.height.px]="containerHeight">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-12 image"
-			 [style.background-image]="'url('+img+')'">
+				[style.background-image]="'url('+img+')'">
 				<div *ngIf="logo || logoText"
-				 class="logo">
+					class="logo">
 					<span class="logo-img">
 						<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 					</span>
@@ -58,9 +58,9 @@
 			<div class="row">
 				<div class="col col-12 content">
 					<div *ngIf="title"
-					 class="title">{{title}}</div>
+						class="title">{{title}}</div>
 					<div *ngIf="readMore"
-					 class="read-more">
+						class="read-more">
 						<a href="{{readMore}}">
 							<span class="link-label">Read More</span>
 							<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
@@ -73,14 +73,14 @@
 </div>
 
 <div class="container-card card-{{type}}"
- *ngIf="type === 'partnerarticle'"
- [style.height.px]="containerHeight">
+	*ngIf="type === 'partnerarticle'"
+	[style.height.px]="containerHeight">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-12 image"
-			 [style.background-image]="'url('+img+')'">
+				[style.background-image]="'url('+img+')'">
 				<div *ngIf="logo || logoText"
-				 class="logo">
+					class="logo">
 					<span class="logo-img">
 						<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 					</span>
@@ -89,9 +89,9 @@
 				<div class="row">
 					<div class="col col-12 content">
 						<div *ngIf="title"
-						 class="title">{{title}}</div>
+							class="title">{{title}}</div>
 						<div *ngIf="readMore"
-						 class="read-more">
+							class="read-more">
 							<a href="{{readMore}}">
 								<span class="link-label">Partner Article</span>
 							</a>

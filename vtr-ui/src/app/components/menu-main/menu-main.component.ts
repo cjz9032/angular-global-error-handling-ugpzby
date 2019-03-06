@@ -25,19 +25,19 @@ export class MenuMainComponent implements OnInit {
 			icon: 'laptop',
 			subitems: [{
 				id: 'device',
-				label: 'My Device',
+				label: 'My device',
 				path: 'device',
 				icon: '',
 				subitems: []
 			}, {
 				id: 'device-settings',
-				label: 'My Device Settings',
+				label: 'My device settings',
 				path: 'device-settings',
 				icon: '',
 				subitems: []
 			}, {
 				id: 'system-updates',
-				label: 'System Updates',
+				label: 'System updates',
 				path: 'system-updates',
 				icon: '',
 				subitems: []
