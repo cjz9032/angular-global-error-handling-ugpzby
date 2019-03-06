@@ -7,36 +7,36 @@
 @import "app/app.theme";
 
 html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  font-size: 62.5%;
-  letter-spacing: 0.1em;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	font-size: 62.5%;
+	letter-spacing: 0.1em;
 }
 
 @media #{$mediaquery_1} {
-  html {
-    font-size: 55%;
-  }
+	html {
+		font-size: 55%;
+	}
 }
 
 @media #{$mediaquery_2} {
-  html {
-    font-size: 50%;
-  }
+	html {
+		font-size: 50%;
+	}
 }
 
 @media #{$mediaquery_3} {
-  html {
-    font-size: 40%;
-  }
+	html {
+		font-size: 40%;
+	}
 }
 
 @media #{$mediaquery_4} {
-  html {
-    font-size: 30%;
-  }
+	html {
+		font-size: 30%;
+	}
 }
 
 /* @media #{$mediaquery_5} {
@@ -46,67 +46,67 @@ html {
 } */
 
 body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  font-family: "Rubik";
-  font-weight: 300;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	font-family: "Rubik";
+	font-weight: 300;
 }
 
 button {
-  letter-spacing: 0.1em;
+	letter-spacing: 0.1em;
 }
 
 .vtr-page {
-  height: 100%;
-  .vtr-page-header {
-    position: relative;
-    z-index: 0;
-    height: $header_height;
-  }
-  .vtr-page-content {
-    position: relative;
-    z-index: 1;
-    .vtr-page-left-column {
-      padding: 0 4rem 4rem $padding_side;
-      background-color: $shade_extralight;
-      h2 {
-        margin: 0;
-        color: $main_shade;
-        font-size: 4.5rem;
-        font-weight: $weight_light;
-        padding: 7rem 0 0 $padding_side;
-      }
-      .header-subpage-content {
-        margin-left: $padding_side;
-      }
-    }
-    .vtr-page-right-column {
-      padding: 0 $padding_side 4rem 4rem;
-    }
-  }
-  .vtr-page-shift-up {
-    margin-top: $shift_up_small;
-  }
-  .vtr-page-shift-up-medium {
-    margin-top: $shift_up_medium;
-  }
-  .widget-heading {
-    color: $main_shade;
-    font-size: 4rem;
-    margin-top: 4rem;
-  }
+	height: 100%;
+	.vtr-page-header {
+		position: relative;
+		z-index: 0;
+		height: $header_height;
+	}
+	.vtr-page-content {
+		position: relative;
+		z-index: 1;
+		.vtr-page-left-column {
+			padding: 0 4rem 4rem $padding_side;
+			background-color: $shade_extralight;
+			h2 {
+				margin: 0;
+				color: $main_shade;
+				font-size: 4.5rem;
+				font-weight: $weight_light;
+				padding: 7rem 0 0 $padding_side;
+			}
+			.header-subpage-content {
+				margin-left: $padding_side;
+			}
+		}
+		.vtr-page-right-column {
+			padding: 0 $padding_side 4rem 4rem;
+		}
+	}
+	.vtr-page-shift-up {
+		margin-top: $shift_up_small;
+	}
+	.vtr-page-shift-up-medium {
+		margin-top: $shift_up_medium;
+	}
+	.widget-heading {
+		color: $main_shade;
+		font-size: 4rem;
+		margin-top: 4rem;
+	}
 }
 
 .list-group-item:first-child {
-  border-top-right-radius: $border_radius !important;
-  border-top-left-radius: $border_radius !important;
+	border-top-right-radius: $border_radius !important;
+	border-top-left-radius: $border_radius !important;
 }
 
 .list-group-item:last-child {
-  border-bottom-right-radius: $border_radius !important;
-  border-bottom-left-radius: $border_radius !important;
+	border-bottom-right-radius: $border_radius !important;
+	border-bottom-left-radius: $border_radius !important;
 }
 
 .vtr-subpage {

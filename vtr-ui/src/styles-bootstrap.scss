@@ -4,194 +4,194 @@
 .container-fluid,
 .row,
 .col {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 .dropdown:hover > .dropdown-menu {
-  display: block;
+	display: block;
 }
 
 .dropdown-item {
-  &:hover {
-    background-color: transparent;
-  }
+	&:hover {
+		background-color: transparent;
+	}
 }
 
 .nmx-40 {
-  margin-left: -4rem !important;
-  margin-right: -4rem !important;
+	margin-left: -4rem !important;
+	margin-right: -4rem !important;
 }
 
 .mt-20 {
-  margin-top: 2rem !important;
+	margin-top: 2rem !important;
 }
 
 .mt-10 {
-  margin-top: 1rem !important;
+	margin-top: 1rem !important;
 }
 
 .mt-40 {
-  margin-top: 4rem !important;
+	margin-top: 4rem !important;
 }
 
 .mb-40 {
-  margin-bottom: 4rem !important;
+	margin-bottom: 4rem !important;
 }
 
 .px-20 {
-  padding-left: 2rem !important;
-  padding-right: 2rem !important;
+	padding-left: 2rem !important;
+	padding-right: 2rem !important;
 }
 
 .px-40 {
-  padding-left: 4rem !important;
-  padding-right: 4rem !important;
+	padding-left: 4rem !important;
+	padding-right: 4rem !important;
 }
 
 .py-40 {
-  padding-top: 4rem !important;
-  padding-bottom: 4rem !important;
+	padding-top: 4rem !important;
+	padding-bottom: 4rem !important;
 }
 
 .px-60 {
-  padding-left: 6rem !important;
-  padding-right: 6rem !important;
+	padding-left: 6rem !important;
+	padding-right: 6rem !important;
 }
 
 .py-60 {
-  padding-top: 6rem !important;
-  padding-bottom: 6rem !important;
+	padding-top: 6rem !important;
+	padding-bottom: 6rem !important;
 }
 
 .pb-60 {
-  padding-bottom: 6rem !important;
+	padding-bottom: 6rem !important;
 }
 
 .pb-40 {
-  padding-bottom: 4rem !important;
+	padding-bottom: 4rem !important;
 }
 
 .p-20 {
-  padding: 2rem !important;
+	padding: 2rem !important;
 }
 
 .p-40 {
-  padding: 4rem !important;
+	padding: 4rem !important;
 }
 
 @media #{$mediaquery_1} {
-  .nmx-40 {
-    margin-left: -3.5rem !important;
-    margin-right: -3.5rem !important;
-  }
+	.nmx-40 {
+		margin-left: -3.5rem !important;
+		margin-right: -3.5rem !important;
+	}
 
-  .px-40 {
-    padding-left: 3.5rem !important;
-    padding-right: 3.5rem !important;
-  }
+	.px-40 {
+		padding-left: 3.5rem !important;
+		padding-right: 3.5rem !important;
+	}
 
-  .pb-40 {
-    padding-bottom: 3.5rem !important;
-  }
+	.pb-40 {
+		padding-bottom: 3.5rem !important;
+	}
 
-  .p-40 {
-    padding: 3.5rem !important;
-  }
+	.p-40 {
+		padding: 3.5rem !important;
+	}
 }
 
 @media #{$mediaquery_2} {
-  .nmx-40 {
-    margin-left: -3rem !important;
-    margin-right: -3rem !important;
-  }
+	.nmx-40 {
+		margin-left: -3rem !important;
+		margin-right: -3rem !important;
+	}
 
-  .px-40 {
-    padding-left: 3rem !important;
-    padding-right: 3rem !important;
-  }
+	.px-40 {
+		padding-left: 3rem !important;
+		padding-right: 3rem !important;
+	}
 
-  .pb-40 {
-    padding-bottom: 3rem !important;
-  }
+	.pb-40 {
+		padding-bottom: 3rem !important;
+	}
 
-  .p-40 {
-    padding: 3rem !important;
-  }
+	.p-40 {
+		padding: 3rem !important;
+	}
 }
 
 @media #{$mediaquery_3} {
-  .nmx-40 {
-    margin-left: -2.5rem !important;
-    margin-right: -2.5rem !important;
-  }
+	.nmx-40 {
+		margin-left: -2.5rem !important;
+		margin-right: -2.5rem !important;
+	}
 
-  .px-40 {
-    padding-left: 2.5rem !important;
-    padding-right: 2.5rem !important;
-  }
+	.px-40 {
+		padding-left: 2.5rem !important;
+		padding-right: 2.5rem !important;
+	}
 
-  .pb-40 {
-    padding-bottom: 2.5rem !important;
-  }
+	.pb-40 {
+		padding-bottom: 2.5rem !important;
+	}
 
-  .p-40 {
-    padding: 2.5rem !important;
-  }
+	.p-40 {
+		padding: 2.5rem !important;
+	}
 }
 
 @media #{$mediaquery_4} {
-  .nmx-40 {
-    margin-left: -2rem !important;
-    margin-right: -2rem !important;
-  }
+	.nmx-40 {
+		margin-left: -2rem !important;
+		margin-right: -2rem !important;
+	}
 
-  .px-40 {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
-  }
+	.px-40 {
+		padding-left: 2rem !important;
+		padding-right: 2rem !important;
+	}
 
-  .pb-40 {
-    padding-bottom: 2rem !important;
-  }
+	.pb-40 {
+		padding-bottom: 2rem !important;
+	}
 
-  .p-40 {
-    padding: 2rem !important;
-  }
+	.p-40 {
+		padding: 2rem !important;
+	}
 }
 //Added new media query for max-width:800 where vtr-page-right-column margin-left , margin-top css are added to fix VAN-1049 issue.
 @media #{$mediaquery_5} {
-  .vtr-page-right-column {
-    margin-left: 4.2rem;
-    margin-top: 4rem;
-  }
+	.vtr-page-right-column {
+		margin-left: 4.2rem;
+		margin-top: 4rem;
+	}
 }
 
 // override for bootstrap modal size
 .battery-modal-size .modal-dialog {
-  max-width: 150rem;
+	max-width: 150rem;
 }
 
 // feedback modal start:
 // overriding style inside feedback modal. doesn't work from component SCSS file
 
 .feedback-form {
-  .user-email {
-    font-size: 2rem;
-    height: 4.2rem;
-  }
-  .user-comment {
-    font-size: 2rem;
-    height: 16.2rem;
-  }
-  .user-submit {
-    font-size: 2rem;
-    padding: 1.5rem 5rem;
-    border-radius: 5rem;
-  }
-  .border {
-    border: 0.1rem solid $dark;
-  }
+	.user-email {
+		font-size: 2rem;
+		height: 4.2rem;
+	}
+	.user-comment {
+		font-size: 2rem;
+		height: 16.2rem;
+	}
+	.user-submit {
+		font-size: 2rem;
+		padding: 1.5rem 5rem;
+		border-radius: 5rem;
+	}
+	.border {
+		border: 0.1rem solid $dark;
+	}
 }
 
 // feedback modal end
