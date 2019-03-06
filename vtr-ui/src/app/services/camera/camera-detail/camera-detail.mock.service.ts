@@ -55,7 +55,7 @@ export class CameraDetailMockService implements BaseCameraDetail {
 	}
 
 	private getCameraDetailFromAPI(): Observable<CameraDetail> {
-		return this.http.get<CameraDetail>(`api/camera.mock.json`);
+		return this.http.get<CameraDetail>(`mock-api/camera.mock.json`);
 	}
 
 	private notifyChanges() {

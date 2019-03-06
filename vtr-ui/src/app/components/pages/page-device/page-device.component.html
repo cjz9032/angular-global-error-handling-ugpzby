@@ -1,7 +1,9 @@
 <div class="vtr-page-device vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main [title]="title"></vtr-header-main>
+			<vtr-header-main [backarrow]="backarrow"
+				[back]="back"
+				[title]="title"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -19,25 +21,27 @@
 						<div class="container-fluid">
 							<div class="row mb-40">
 								<div class="col col-12">
-									<vtr-container-card [img]="'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg'"
-									 [title]="'Try out McAfee anti-virus software for 6 months'"
-									 [logoText]="'LENEVO SPECIAL'"
-									 [readMore]="'http://www.google.com'"
-									 [type]="'article'"
-									 [ratioX]="4"
-									 [ratioY]="4">
+									<vtr-container-card
+										[img]="'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg'"
+										[title]="'Try out McAfee anti-virus software for 6 months'"
+										[logoText]="'LENEVO SPECIAL'"
+										[readMore]="'http://www.google.com'"
+										[type]="'article'"
+										[ratioX]="4"
+										[ratioY]="4">
 									</vtr-container-card>
 								</div>
 							</div>
 
 							<div class="row">
 								<div class="col col-12 aritcle-card">
-									<vtr-container-card [img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
-									 [title]="'Ideas on how to handle all your passwords online'"
-									 [readMore]="'http://www.google.com'"
-									 [type]="'partnerarticle'"
-									 [ratioX]="4"
-									 [ratioY]="2.5">
+									<vtr-container-card
+										[img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
+										[title]="'Ideas on how to handle all your passwords online'"
+										[readMore]="'http://www.google.com'"
+										[type]="'partnerarticle'"
+										[ratioX]="4"
+										[ratioY]="2.5">
 									</vtr-container-card>
 								</div>
 							</div>
@@ -46,8 +50,8 @@
 								<div class="col col-12 cont">
 									<div class="widget-heading mb-40">Helpful content</div>
 									<vtr-widget-questions [title]="'Answers on power'"
-									 [description]="'Relevant questions for your ideapad'"
-									 [items]="mockService.qA"></vtr-widget-questions>
+										[description]="'Relevant questions for your ideapad'"
+										[items]="qaService.qas"></vtr-widget-questions>
 								</div>
 							</div>
 						</div>

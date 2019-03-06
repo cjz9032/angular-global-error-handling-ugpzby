@@ -1,7 +1,9 @@
 <div class="vtr-page-security-wifi vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main [title]="title"></vtr-header-main>
+			<vtr-header-main [backarrow]="backarrow"
+				[back]="back"
+				[title]="title"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -9,14 +11,13 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col col-8 vtr-page-left-column">
-						<div class="row">
-							<div class="col">
-								<div class="vtr-subpage">
-									<div class="vtr-page-shift-up vtr-page-shift-down">
-										<vtr-connected-home></vtr-connected-home>
-									</div>
-								</div>
+						<div class="vtr-subpage">
+							<div class="vtr-page-shift-up">
+								<wifi-security></wifi-security>
 							</div>
+						</div>
+						<div class="connected-home-container">
+							<vtr-connected-home></vtr-connected-home>
 						</div>
 					</div>
 					<div class="col col-4 vtr-page-right-column">

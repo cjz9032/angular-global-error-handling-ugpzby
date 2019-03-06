@@ -4,10 +4,21 @@
 	box-shadow: $drop_shadow;
 	border-radius: $border_radius;
 	background-color: $light;
+	overflow: hidden;
+ 	position: relative;
+	 .circleimage{
+		 img{
+			 position: absolute;
+			 top:-13rem;
+			 right:-10rem;			 
+			 width:45rem;
+			 height: 45rem			 
+		 }
+	 }
 
 	.family {
 		color: $main_dark;
-		font-size: 3.5rem;
+		font-size: 3.8rem;
 	}
 	.device-sub-header {
 		color: $shade;
@@ -23,7 +34,7 @@
 
 	.subheader {
 		color: $main_dark;
-		font-size: 2.5rem;
+		font-size: 3.0rem;
 		margin-top: 4rem;
 		font-weight: $weight_bold;
 	}
@@ -100,6 +111,7 @@
 			.detail {
 				font-size: 1.4rem;
 				text-decoration: underline;
+				margin-right: -3rem;
 				color: $shade_dark;
 				&.highlight {
 					color: $shade_darker;
@@ -112,7 +124,7 @@
 			.arrow {
 				color: $main_darker;
 				line-height: 3.8rem;
-				font-size: 1rem;
+				font-size: 1.3rem;				 
 			}
 		}
 	}
