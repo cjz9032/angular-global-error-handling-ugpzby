@@ -49,4 +49,25 @@ export class VantageShellService {
         }
         return undefined;
     }
+
+    public getLoginStatus(): any {
+        if (this.phoenix && this.phoenix.lid) {
+            return this.phoenix.lid.getLoginStatus();
+        }
+        return undefined;
+    }
+
+    public loginSilently(): any {
+        if (this.phoenix && this.phoenix.lid) {
+            return this.phoenix.lid.loginSilently();
+        }
+        return undefined;
+    }
+
+    public getUserProfile(): any {
+        if (this.phoenix && this.phoenix.lid) {
+            return this.phoenix.lid.getUserProfile();
+        }
+        return undefined;
+    }
 }

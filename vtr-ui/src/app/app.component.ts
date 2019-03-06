@@ -53,6 +53,9 @@ export class AppComponent implements OnInit {
 		const urlParams = new URLSearchParams(window.location.search);
 		this.devService.writeLog('GOT PARAMS', urlParams.toString());
 
+		// When startup try to login Lenovo ID silently (in background), 
+		//  if user has already logged in before, this will login automatically and update UI
+		this.userService.loginSilently();
 	}
 
 }

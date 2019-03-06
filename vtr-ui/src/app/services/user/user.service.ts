@@ -12,8 +12,8 @@ export class UserService {
 	auth = false;
 	token = '';
 
-	firstName = 'Lenovo';
-	lastName = 'User';
+	firstName = 'User';
+	lastName = '';
 	initials = '';
 
 	constructor(
@@ -32,6 +32,21 @@ export class UserService {
 		if (this.cookies['token']) {
 			this.setToken(this.cookies['token']);
 		}
+	}
+
+	loginSilently() {
+		const self = this;
+		self.vantageShellService.loginSilently().then(function (result) {
+			if (result.success && result.status === 0) {
+				self.vantageShellService.getUserProfile().then(function (result) {
+					if (result.success && result.status === 0) {
+						self.setName(result.firstName, result.lastName);
+						self.auth = true;
+					}
+				});
+			}
+		});
+		this.devService.writeLog('LOGIN(SILENTLY): ', self.auth);
 	}
 
 	setAuth(auth = false) {
@@ -66,7 +81,8 @@ export class UserService {
 	setName(firstName, lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.initials = this.firstName[0] + this.lastName[0];
+		this.initials = this.firstName ? this.firstName[0] : "" + 
+			this.lastName ? this.lastName[0] : "";
 	}
 
 }

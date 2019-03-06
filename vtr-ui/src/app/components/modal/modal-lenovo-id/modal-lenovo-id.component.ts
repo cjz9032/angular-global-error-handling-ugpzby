@@ -112,12 +112,14 @@ export class ModalLenovoIdComponent implements OnInit {
               var lastname = (el.querySelector('#lastname') as HTMLInputElement).value;
               // Default to enable SSO after login success
               self.vantageShellService.enableSSO(useruad, username, userid, userguid).then(function (result) {
-                self.userService.setName(firstname, lastname);
-                self.userService.setToken(useruad);
-                self.userService.setAuth(true);
-                // Close logon dialog
-                self.activeModal.dismiss();
-                console.log("login success");
+                if (result.success && result.status === 0) {
+                  self.userService.setName(firstname, lastname);
+                  self.userService.setToken(useruad);
+                  self.userService.setAuth(true);
+                  // Close logon dialog
+                  self.activeModal.dismiss();
+                  console.log("login success");
+                }
               });
             } catch(error) {
               console.log(error);
