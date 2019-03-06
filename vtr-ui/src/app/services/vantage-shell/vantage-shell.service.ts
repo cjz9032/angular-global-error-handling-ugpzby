@@ -3,71 +3,71 @@
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
 
-import bootstrap from '@lenovo/tan-client-bridge'
+import bootstrap from '@lenovo/tan-client-bridge';
 
 @Injectable({
-    providedIn: 'root'
+	providedIn: 'root'
 })
 export class VantageShellService {
 
-    private phoenix: any;
-    constructor() {
-        console.log('VantageShellService');
+	private phoenix: any;
+	constructor() {
+		console.log('VantageShellService');
 
-        const shell = this.getVantageShell();
-        if (shell) {
-            this.phoenix = bootstrap(
-                new inversify.Container(),
-                new shell.VantageRpcClient()
-            );
-            console.log('VantageRpcClient', JSON.stringify(this.phoenix));
-        }
-    }
+		const shell = this.getVantageShell();
+		if (shell) {
+			this.phoenix = bootstrap(
+				new inversify.Container(),
+				new shell.VantageRpcClient()
+			);
+			console.log('VantageRpcClient', JSON.stringify(this.phoenix));
+		}
+	}
 
-    private getVantageShell(): any {
-        const win: any = window;
-        return win.VantageShellExtension;
-    }
+	private getVantageShell(): any {
+		const win: any = window;
+		return win.VantageShellExtension;
+	}
 
-    public getLoginUrl(): any {
-        if (this.phoenix && this.phoenix.lid) {
-            return this.phoenix.lid.getLoginUrl();
-        }
-        return undefined;
-    }
+	public getLoginUrl(): any {
+		if (this.phoenix && this.phoenix.lid) {
+			return this.phoenix.lid.getLoginUrl();
+		}
+		return undefined;
+	}
 
-    public enableSSO(useruad, username, userid, userguid): any {
-        if (this.phoenix && this.phoenix.lid) {
-            return this.phoenix.lid.enableSSO(useruad, username, userid, userguid);
-        }
-        return undefined;
-    }
-    
-    public logout(): any {
-        if (this.phoenix && this.phoenix.lid) {
-            return this.phoenix.lid.logout();
-        }
-        return undefined;
-    }
+	public enableSSO(useruad, username, userid, userguid): any {
+		if (this.phoenix && this.phoenix.lid) {
+			return this.phoenix.lid.enableSSO(useruad, username, userid, userguid);
+		}
+		return undefined;
+	}
 
-    public getLoginStatus(): any {
-        if (this.phoenix && this.phoenix.lid) {
-            return this.phoenix.lid.getLoginStatus();
-        }
-        return undefined;
-    }
+	public logout(): any {
+		if (this.phoenix && this.phoenix.lid) {
+			return this.phoenix.lid.logout();
+		}
+		return undefined;
+	}
 
-    public loginSilently(): any {
-        if (this.phoenix && this.phoenix.lid) {
-            return this.phoenix.lid.loginSilently();
-        }
-        return undefined;
-    }
+	public getLoginStatus(): any {
+		if (this.phoenix && this.phoenix.lid) {
+			return this.phoenix.lid.getLoginStatus();
+		}
+		return undefined;
+	}
 
-    public getUserProfile(): any {
-        if (this.phoenix && this.phoenix.lid) {
-            return this.phoenix.lid.getUserProfile();
-        }
-        return undefined;
-    }
+	public loginSilently(): any {
+		if (this.phoenix && this.phoenix.lid) {
+			return this.phoenix.lid.loginSilently();
+		}
+		return undefined;
+	}
+
+	public getUserProfile(): any {
+		if (this.phoenix && this.phoenix.lid) {
+			return this.phoenix.lid.getUserProfile();
+		}
+		return undefined;
+	}
 }

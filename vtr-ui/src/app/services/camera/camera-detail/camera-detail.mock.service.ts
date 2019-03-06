@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 import { BaseCameraDetail } from './base-camera-detail.service';
 import { CameraDetail } from 'src/app/data-models/camera/camera-detail.model';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 @Injectable({
 	providedIn: 'root'
@@ -55,7 +55,7 @@ export class CameraDetailMockService implements BaseCameraDetail {
 	}
 
 	private getCameraDetailFromAPI(): Observable<CameraDetail> {
-		return this.http.get<CameraDetail>(`api/camera.mock.json`);
+		return this.http.get<CameraDetail>(`mock-api/camera.mock.json`);
 	}
 
 	private notifyChanges() {

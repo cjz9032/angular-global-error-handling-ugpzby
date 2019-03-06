@@ -1,4 +1,149 @@
 @import "../../../app.theme";
 
 .vtr-page-security-antivirus {
+	.mt-minus {
+		margin-top: $shift_up_small;
+	}
+
+	.footer {
+		.title {
+			color: $dark;
+			font-size: 2.5rem;
+			font-weight: bold;
+			line-height: 2.9rem;
+		}
+
+		.subtitle {
+			color: $highlight;
+			font-size: 1.4rem;
+			font-weight: 300;
+			line-height: 2.3rem;
+		}
+	}
+
+	.divider {
+		margin: 3.4rem 0;
+		height: 0.2rem;
+		background-color: $shade_lighter;
+	}
+
+	.mt-60 {
+		margin-top: 60px;
+	}
+
+	.header {
+		.rounded-card-with-shadow {
+			box-shadow: $drop_shadow;
+			border-radius: $border_radius;
+			background: $main_darkest;
+
+			.title {
+				color: $light;
+				font-size: 2.5rem;
+				font-weight: bold;
+				line-height: 2.9rem;
+			}
+
+			.subtitle {
+				color: $light;
+				font-size: 1.4rem;
+				line-height: 2.1rem;
+			}
+		}
+	}
+
+	.subheader {
+		.rounded-card-with-shadow {
+			box-shadow: $drop_shadow;
+			border-radius: $border_radius;
+			background: $light;
+
+			.list-group {
+				border-radius: $border_radius;
+
+				.list-group-item {
+					background: $shade_extralight;
+				}
+
+				.text {
+					color: $screen_dark_70;
+					padding: 2rem 0;
+					font-size: 1.4rem;
+					font-weight: bold;
+					letter-spacing: 0.89px;
+					line-height: 2.3rem;
+				}
+			}
+
+			.title {
+				color: $screen_dark_70;
+				font-size: 2.5rem;
+				font-weight: 300;
+				line-height: 2.9rem;
+			}
+
+			.subtitle {
+				color: $shade_dark;
+				font-size: 1.4rem;
+				font-weight: 300;
+				line-height: 2.3rem;
+			}
+		}
+	}
+	.description {
+		margin-top: 5rem;
+		.title {
+			color: $dark;
+			font-size: 3.5rem;
+			font-weight: 300;
+			line-height: 4.2rem;
+		}
+
+		.subtitle {
+			color: $dark;
+			font-size: 1.4rem;
+			font-weight: 300;
+			line-height: 2.3rem;
+		}
+
+		.inner-body {
+			.title {
+				color: $dark;
+				font-size: 1.4rem;
+				font-weight: bold;
+				letter-spacing: 0.89px;
+				line-height: 2.3rem;
+			}
+
+			.subtitle {
+				color: $dark;
+				font-size: 1.4rem;
+				font-weight: 300;
+				line-height: 2.3rem;
+			}
+		}
+	}
+
+	.body {
+		.title {
+			color: $screen_dark_70;
+			font-size: 3.5rem;
+			font-weight: 300;
+			line-height: 4.2rem;
+		}
+
+		.subtitle {
+			color: $screen_dark_70;
+			font-size: 2.5rem;
+			font-weight: bold;
+			line-height: 2.9rem;
+		}
+
+		.text {
+			color: $screen_dark_70;
+			font-size: 1.4rem;
+			font-weight: 300;
+			line-height: 2.3rem;
+		}
+	}
 }

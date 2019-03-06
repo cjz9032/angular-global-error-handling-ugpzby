@@ -3,7 +3,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { CommsService } from '../comms/comms.service';
 import { DevService } from '../dev/dev.service';
 import { ContainerService } from '../container/container.service';
-import { VantageShellService } from '../vantage-shell/vantage-shell.service'
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 @Injectable()
 export class UserService {
@@ -36,11 +36,11 @@ export class UserService {
 
 	loginSilently() {
 		const self = this;
-		self.vantageShellService.loginSilently().then(function (result) {
+		self.vantageShellService.loginSilently().then((result) => {
 			if (result.success && result.status === 0) {
-				self.vantageShellService.getUserProfile().then(function (result) {
-					if (result.success && result.status === 0) {
-						self.setName(result.firstName, result.lastName);
+				self.vantageShellService.getUserProfile().then((profile) => {
+					if (profile.success && profile.status === 0) {
+						self.setName(profile.firstName, profile.lastName);
 						self.auth = true;
 					}
 				});
@@ -63,14 +63,14 @@ export class UserService {
 		this.cookies = this.cookieService.getAll();
 		self.vantageShellService.logout().then(function (result) {
 			if (result.success && result.status === 0) {
-				self.setName("Lenovo", "User");
+				self.setName('Lenovo', 'User');
 				self.auth = false;
 			}
 			this.devService.writeLog('LOGOUT: ', result.success);
 		});
 	}
 
-	setToken(token) {
+	setToken(token: any) {
 		this.devService.writeLog('SET TOKEN', token);
 		this.setAuth(true);
 		this.token = token;
@@ -78,11 +78,11 @@ export class UserService {
 		this.cookieService.set('token', token, 99999999999999999, '/');
 	}
 
-	setName(firstName, lastName) {
+	setName(firstName: string, lastName: string) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.initials = this.firstName ? this.firstName[0] : "" + 
-			this.lastName ? this.lastName[0] : "";
+		this.initials = this.firstName ? this.firstName[0] : '' +
+			this.lastName ? this.lastName[0] : '';
 	}
 
 }

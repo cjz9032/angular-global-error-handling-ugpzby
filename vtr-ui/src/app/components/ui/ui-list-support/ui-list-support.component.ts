@@ -23,7 +23,7 @@ export class UiListSupportComponent implements OnInit {
 		if (item.path !== '') {
 			this.router.navigate(['/' + item.path]);
 		} else if (item.url !== '') {
-			window.open(item.url, '_blank');
+			window.open(item.url);
 		}
 	}
 

@@ -20,7 +20,8 @@
 													<fa-icon [icon]="['fas', 'search']"></fa-icon>
 												</div>
 											</div>
-											<input type="text" class="form-control px-3" placeholder="Input help here" aria-label="Input help here" aria-describedby="basic-addon1" #searchInput (keyup)="0">
+											<input type="text" class="form-control px-3" placeholder="Input help here" aria-label="Input help here"
+											 aria-describedby="basic-addon1" #searchInput (keyup.enter)="search(searchInput.value)">
 											<div class="input-group-append">
 												<button class="btn button" type="button" (click)="search(searchInput.value)">SEARCH FOR HELP</button>
 											</div>
@@ -28,27 +29,22 @@
 									</form>
 								</div>
 							</div>
-							<div class="row" *ngIf="searchWords">
+							<div class="row" *ngIf="searchWords" class="search-result-text">
 								<div class="col px-40 pt-4">
-									<div class="title m-0">
+									<div class="title m-0" *ngIf="searchCount > 0">
 										35 Results that match "<span class="special">{{searchWords}}</span>"
+									</div>
+									<div class="title m-0" *ngIf="searchCount === 0">
+										<div>0 result found.</div>
+										<div>
+											<span class="mr-5">Would you like to go for more help?</span>
+											<a href="https://community.lenovo.com" target="_blank" class="btn button" type="button">GO TO FURUM</a>
+										</div>
 									</div>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col col-6 p-40">
-									<vtr-container-card [img]="'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg'"
-									 [title]="'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit'" [logoText]="'LENEVO SPECIAL'"
-									 [readMore]="'/#/support-detail'" [type]="'article'" [ratioX]="4" [ratioY]="4">
-									</vtr-container-card>
-								</div>
-								<div class="col col-6 p-40">
-									<vtr-container-card [img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
-									 [title]="'Lenovo Announces Accusamus Beatae'" [logoText]="'LENEVO SPECIAL'"
-									 [readMore]="'/#/support-detail'" [type]="'article'" [ratioX]="4" [ratioY]="4">
-									</vtr-container-card>
-								</div>
-							</div>
+							<vtr-container-article [items]="mockService.articles">
+							</vtr-container-article>
 						</div>
 					</div>
 					<div class="col col-4 vtr-page-right-column">
@@ -63,7 +59,7 @@
 
 								<div class="row">
 									<div class="col col-12 pb-60">
-										<vtr-widget-support [title]="'Documentation'" [description]="'LOREM IPSUM EL DOLOR'" [items]="mockService.documentation"></vtr-widget-support>
+										<vtr-widget-support [title]="'Documentation'" [description]="''" [items]="mockService.documentation"></vtr-widget-support>
 									</div>
 								</div>
 
@@ -75,7 +71,7 @@
 
 								<div class="row">
 									<div class="col col-12 pb-60">
-										<vtr-widget-support [title]="'Quiklinks'" [description]="'CONTACT US TO HELP YOU OUT.'" [items]="mockService.quicklink"></vtr-widget-support>
+										<vtr-widget-support [title]="'Quicklinks'" [description]="'CONTACT US TO HELP YOU OUT.'" [items]="mockService.quicklink"></vtr-widget-support>
 									</div>
 								</div>
 							</div>

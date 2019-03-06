@@ -3,8 +3,6 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "./styles-bootstrap.scss";
 @import "~bootstrap/dist/css/bootstrap.css";
-$fa-font-path: "~font-awesome/fonts";
-@import "~font-awesome/scss/font-awesome";
 
 @import "app/app.theme";
 
@@ -40,6 +38,12 @@ html {
 		font-size: 30%;
 	}
 }
+
+/* @media #{$mediaquery_5} {
+  html {
+    font-size: 25%;
+  }
+} */
 
 body {
 	margin: 0;
@@ -93,6 +97,16 @@ button {
 		font-size: 4rem;
 		margin-top: 4rem;
 	}
+}
+
+.list-group-item:first-child {
+	border-top-right-radius: $border_radius !important;
+	border-top-left-radius: $border_radius !important;
+}
+
+.list-group-item:last-child {
+	border-bottom-right-radius: $border_radius !important;
+	border-bottom-left-radius: $border_radius !important;
 }
 
 .vtr-subpage {

@@ -1,1 +1,96 @@
-@import '../../../app.theme';
+@import "../../../app.theme";
+
+.vtr-page-security {
+	.vtr-page-right-column {
+		.align-center {
+			padding: 0 6rem 0rem 6rem;
+		}
+	}
+
+	.vtr-page-left-column-inner {
+		background-color: $light;
+		box-shadow: $drop_shadow;
+		border-radius: $border_radius;
+
+		.security-widgets-container.left {
+			border-right: solid 1px $main_lightest;
+		}
+
+		.security-widgets-container {
+			.security-widget {
+				border-bottom: solid 1px $main_lightest;
+				padding: 3rem;
+
+				.security-widget-inner {
+					.title {
+						font-size: 2.5rem;
+						font-weight: $weight_regular;
+						margin-bottom: -1.5rem;
+					}
+				}
+			}
+			.security-widget.anti-virus {
+				.security-widget-inner {
+					.title {
+						color: $alt;
+					}
+
+					.mcafee-logo {
+						width: 10rem;
+						padding-top: 1rem;
+					}
+				}
+			}
+			.security-widget.password-health {
+				.security-widget-inner {
+					.title {
+						fa-icon {
+							color: $main;
+						}
+					}
+					.dashlane-logo {
+						width: 10rem;
+						padding-top: 1rem;
+					}
+				}
+			}
+			.security-widget.vpn-security {
+				border-bottom: none;
+				.security-widget-inner {
+					.title {
+						fa-icon {
+							color: $main;
+						}
+					}
+					.surfeasy-logo {
+						width: 9rem;
+						padding-top: 1.1rem;
+					}
+				}
+			}
+			.security-widget.wifi-connected-home {
+				.security-widget-inner {
+					.title {
+						color: $go_dark;
+					}
+					.coronet-logo {
+						width: 9rem;
+						padding-top: 1rem;
+					}
+				}
+			}
+			.security-widget.windows-hello {
+				border-bottom: none;
+				.security-widget-inner {
+					.title {
+						color: $go_dark;
+					}
+					.windows-logo {
+						width: 9rem;
+						padding-top: 1rem;
+					}
+				}
+			}
+		}
+	}
+}

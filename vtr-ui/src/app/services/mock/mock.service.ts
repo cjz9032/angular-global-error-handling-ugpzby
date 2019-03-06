@@ -43,16 +43,18 @@ export class MockService {
 			'id': 'memory',
 			'title': 'Memory',
 			'detail': '4.00 GB of 6 GB',
-			'path': '/support',
-			'asLink': false
+			'path': 'ms-settings:about',
+			'asLink': false,
+			'isSystemLink': true
 		},
 		{
 			'status': 0,
 			'id': 'disk',
 			'title': 'Disk Space',
 			'detail': '12.7 GB of 256 GB',
-			'path': '/support',
-			'asLink': false
+			'path': 'ms-settings:storagesense',
+			'asLink': false,
+			'isSystemLink': true
 		},
 		{
 			'status': 0,
@@ -72,43 +74,187 @@ export class MockService {
 		}
 	];
 
+
+	securityHealth = [
+		{
+			'status': 1,
+			'id': 'apps-src-unknown',
+			'title': 'Apps from unknown sources',
+			'detail': 'Failed',
+			'path': 'apps-src-unknown'
+		},
+		{
+			'status': 1,
+			'id': 'dev-mode',
+			'title': 'Developer mode',
+			'detail': 'FAILED',
+			'path': 'dev-mode'
+
+		},
+		{
+			'status': 1,
+			'id': 'uac-notification',
+			'title': 'UAC Notification',
+			'detail': 'FAILED',
+			'path': 'uac-notification'
+		},
+		{
+			'status': 0,
+			'id': 'anti-virus-availability',
+			'title': 'Anti-Virus availability',
+			'detail': 'PASSED',
+			'path': 'anti-virus-availability'
+		},
+		{
+			'status': 0,
+			'id': 'drive-encryption',
+			'title': 'Drive encryption',
+			'detail': 'PASSED',
+			'path': 'drive-encryption'
+
+		},
+		{
+			'status': 0,
+			'id': 'firewall-availability',
+			'title': 'Firewall availability',
+			'detail': 'PASSED',
+			'path': 'firewall-availability'
+
+		},
+		{
+			'status': 0,
+			'id': 'os-integrity',
+			'title': 'OS integrity',
+			'detail': 'PASSED',
+			'path': 'OS integrity'
+		},
+		{
+			'status': 0,
+			'id': 'os-version',
+			'title': 'OS version',
+			'detail': 'PASSED',
+			'path': 'os-version'
+		},
+		{
+			'status': 0,
+			'id': 'pin-pwd',
+			'title': 'Pin or Password',
+			'detail': 'PASSED',
+			'path': 'pin-pwd'
+		}
+	];
+
 	securityStatus = [
 		{
 			'status': 0,
 			'id': 'anti-virus',
 			'title': 'Anti-Virus',
 			'detail': 'Enabled',
-			'path': 'anti-virus'
+			'path': 'anti-virus',
+			'type': 'security'
+
 		},
 		{
 			'status': 0,
 			'id': 'wifi-security',
 			'title': 'WiFi Security',
 			'detail': 'Enabled',
-			'path': 'wifi-security'
+			'path': 'wifi-security',
+			'type': 'security'
 
-		},
-		{
-			'status': 1,
-			'id': 'pwdmgr',
-			'title': 'Password Manager',
-			'detail': 'Uninstalled',
-			'path': 'password-protection'
-		},
-		{
-			'status': 1,
-			'id': 'vpn',
-			'title': 'VPN',
-			'detail': 'Uninstalled',
-			'path': 'internet-protection'
 		},
 		{
 			'status': 2,
+			'id': 'pwdmgr',
+			'title': 'Password Manager',
+			'detail': 'Installed',
+			'path': 'password-protection',
+			'type': 'security'
+		},
+		{
+			'status': 2,
+			'id': 'vpn',
+			'title': 'VPN',
+			'detail': 'Installed',
+			'path': 'internet-protection',
+			'type': 'security'
+		},
+		{
+			'status': 1,
 			'id': 'windows-hello',
 			'title': 'Windows Hello',
 			'detail': 'disabled',
-			'path': 'security'
+			'path': 'windows-hello',
+			'type': 'security'
 
+		}
+	];
+
+	securityAntivirus = [
+		{
+			'status': 0,
+			'id': 'anti-virus',
+			'title': 'Anti-Virus',
+			'detail': 'Enabled',
+			'path': ''
+		},
+		{
+			'status': 1,
+			'id': 'firewall',
+			'title': 'Firewall',
+			'detail': 'Disabled',
+			'path': ''
+
+		}
+	];
+
+	securityPasswordHealth = [
+		{
+			'status': 2,
+			'id': 'password-manager',
+			'title': 'Password Manager',
+			'detail': 'Installed',
+			'path': ''
+		}
+	];
+
+	securityVPN = [
+		{
+			'status': 2,
+			'id': 'virtual-private-network',
+			'title': 'Virtual Private Network',
+			'detail': 'Installed',
+			'path': ''
+		}
+	];
+
+	securityWifi = [
+		{
+			'status': 0,
+			'id': 'wifi-security',
+			'title': 'WiFi Security',
+			'detail': 'Enabled',
+			'path': ''
+		}
+	];
+
+	securityConnectedHome = [
+		{
+			'status': 0,
+			'id': 'connected-home-security',
+			'title': 'Connected Home Security',
+			'detail': 'Enabled',
+			'path': ''
+		}
+	];
+
+	securityWindowsHello = [
+		{
+			'status': 0,
+			'id': 'fingerprint-reader',
+			'title': 'Fingerprint reader',
+			'detail': 'Enabled',
+			'path': ''
 		}
 	];
 
@@ -167,7 +313,7 @@ export class MockService {
 		},
 		{
 			'icon': ['fas', 'share-alt'],
-			'title': 'Contact Costumer service',
+			'title': 'Contact Customer service',
 			'path': '',
 			'url': 'https://support.lenovo.com/',
 			'target': '_blank',
@@ -195,6 +341,154 @@ export class MockService {
 			'path': '',
 			'url': 'https://www.lenovo.com/us/en/ordersupport/',
 			'target': '_blank',
+		}
+	];
+	articles = [
+		{
+			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'thumbnailUrl': '',
+			'logo': 'assets/images/test-logo.svg',
+			'logoText': 'LENEVO SPECIAL',
+			'readMore': '/#/support-detail',
+		},
+		{
+			'title': '',
+			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
+			'logo': 'assets/images/test-logo.svg',
+			'logoText': 'LENEVO SPECIAL',
+			'readMore': '/#/support-detail',
+		},
+		{
+			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
+			'logo': '',
+			'logoText': 'LENEVO SPECIAL',
+			'readMore': '/#/support-detail',
+		},
+		{
+			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
+			'logo': 'assets/images/test-logo.svg',
+			'logoText': 'LENEVO SPECIAL',
+			'readMore': '/#/support-detail',
+		},
+		{
+			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
+			'logo': 'assets/images/test-logo.svg',
+			'logoText': 'LENEVO SPECIAL',
+			'readMore': '/#/support-detail',
+		},
+		{
+			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'thumbnailUrl': '',
+			'logo': '',
+			'logoText': 'LENEVO SPECIAL',
+			'readMore': '/#/support-detail',
+		},
+		{
+			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
+			'logo': 'assets/images/test-logo.svg',
+			'logoText': 'LENEVO SPECIAL',
+			'readMore': '/#/support-detail',
+		},
+		{
+			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
+			'logo': '',
+			'logoText': 'LENEVO SPECIAL',
+			'readMore': '/#/support-detail',
+		},
+	];
+
+	criticalUpdates = [
+		{
+			'id': '1',
+			'icon': ['fas', 'plane'],
+			'title': 'Lenovo intelligent Thermal Solutions Driver',
+			'detail': ' - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'rebootRequired': true
+		},
+		{
+			'id': '2',
+			'icon': ['fas', 'plane'],
+			'title': 'Intel Wireless LAN driver',
+			'detail': ' - (Windows 10 Build 1709 And Later) - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'rebootRequired': false
+		},
+		{
+			'id': '3',
+			'icon': ['fas', 'plane'],
+			'title': 'Lenovo Intelligent Thermal Solution Driver',
+			'detail': ' - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'rebootRequired': false
+		}
+	];
+
+	recommendedUpdates = [
+		{
+			'id': '1',
+			'icon': ['fas', 'plane'],
+			'title': 'Lenovo intelligent Thermal Solutions Driver',
+			'detail': ' - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'rebootRequired': false
+		},
+		{
+			'id': '2',
+			'icon': ['fas', 'plane'],
+			'title': 'Intel Wireless LAN driver',
+			'detail': ' - (Windows 10 Build 1709 And Later) - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'rebootRequired': false
+		},
+		{
+			'id': '3',
+			'icon': ['fas', 'plane'],
+			'title': 'Lenovo Intelligent Thermal Solution Driver',
+			'detail': ' - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'rebootRequired': true
+		}
+	];
+
+	optionalUpdates = [
+		{
+			'id': '1',
+			'icon': ['fas', 'plane'],
+			'title': 'Lenovo intelligent Thermal Solutions Driver',
+			'detail': ' - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'rebootRequired': true
+		},
+		{
+			'id': '2',
+			'icon': ['fas', 'plane'],
+			'title': 'Intel Wireless LAN driver',
+			'detail': ' - (Windows 10 Build 1709 And Later) - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'rebootRequired': false
+		},
+		{
+			'id': '3',
+			'icon': ['fas', 'plane'],
+			'title': 'Lenovo Intelligent Thermal Solution Driver',
+			'detail': ' - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'rebootRequired': false
 		}
 	];
 

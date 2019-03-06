@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 	providedIn: 'root'
 })
 export class DeviceService {
-
+	
 	deviceModel = 'Ideapad 720s';
 
 	constructor() { }

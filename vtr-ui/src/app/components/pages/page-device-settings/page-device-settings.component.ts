@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MockService } from "../../../services/mock/mock.service"
+import { QaService } from '../../../services/qa/qa.service';
 import { DevService } from '../../../services/dev/dev.service';
- 
-
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -12,7 +10,8 @@ import { DevService } from '../../../services/dev/dev.service';
 export class PageDeviceSettingsComponent implements OnInit {
 
 	title = 'Device Settings';
-
+	back = 'BACK';
+	backarrow = '< ';
 	menuItems = [
 		{
 			id: 'power',
@@ -36,11 +35,11 @@ export class PageDeviceSettingsComponent implements OnInit {
 			subitems: [],
 			active: false
 		}
-	]
+	];
 
 	constructor(
 		private devService: DevService,
-		public mockService:MockService
+		public qaService: QaService
 	) { }
 
 	ngOnInit() {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SecurityService } from '../../../services/security/security.service';
+import { MockService } from '../../../services/mock/mock.service';
 
 @Component({
 	selector: 'vtr-page-security',
@@ -7,11 +8,11 @@ import { SecurityService } from '../../../services/security/security.service';
 	styleUrls: ['./page-security.component.scss']
 })
 export class PageSecurityComponent implements OnInit {
+	title = 'Security';
 
-	title = 'Dashboard';
-	
 	constructor(
-		public securityService: SecurityService
+		public securityService: SecurityService,
+		public mockService: MockService
 	) { }
 
 	ngOnInit() {
