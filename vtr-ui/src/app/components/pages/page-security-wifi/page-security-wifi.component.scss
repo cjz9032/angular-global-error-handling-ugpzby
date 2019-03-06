@@ -1,6 +1,10 @@
 @import "../../../app.theme.scss";
 
 .vtr-page-security-wifi {
+	.connected-home-container {
+		margin-top: 5rem;
+	}
+
 	.vtr-security-health {
 		border-radius: $border_radius;
 		background-color: $light;

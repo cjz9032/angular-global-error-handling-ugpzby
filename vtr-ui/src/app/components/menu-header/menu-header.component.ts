@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DevService } from 'src/app/services/dev/dev.service';
 import { R3TargetBinder } from '@angular/compiler';
 
@@ -29,14 +29,14 @@ export class MenuHeaderComponent implements OnInit {
 		return activeTab;
 	}
 
-	tabClick($event, tab){
+	tabClick($event, tab) {
 		this.setActiveTab(tab);
 	}
 
-	setActiveTab(tab){
-		for (let item of this.menuItems) {
+	setActiveTab(tab) {
+		for (const item of this.menuItems) {
 			item.active = false;
-			if(item.id === tab.id) {
+			if (item.id === tab.id) {
 				item.active = true;
 			}
 		}

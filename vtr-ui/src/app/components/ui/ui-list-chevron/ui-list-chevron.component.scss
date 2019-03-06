@@ -13,6 +13,31 @@
 			padding: 1.5rem 1rem 1.5rem 0;
 			border-bottom: 0.1rem solid $shade_lighter;
 			color: $main_darker;
+			.item-icon {
+				&.status {
+					.icon-bkg {
+						display: inline-block;
+						border-radius: 50%;
+						height: 2.4rem;
+						width: 2.4rem;
+						border-width: 0.2rem;
+						border-style: solid;
+						text-align: center;
+						fa-icon {
+							font-size: 1.2rem;
+							line-height: 2rem;
+							color: $light;
+						}
+					}
+				}
+				fa-icon {
+					color: $main;
+					font-size: 1.9rem;
+					line-height: 3rem;
+
+				}
+
+			}
 			&:last-child {
 				border: none;
 			}
@@ -35,35 +60,25 @@
 					}
 				}
 			}
+			&.blue {
+				.item-icon {
+					.icon-bkg {
+						background: linear-gradient($gradient_angle, $main 0%, $main_light 100%);
+						border-color: $main_gstart;
+						fa-icon{
+							font-size: 0.8rem;
+							line-height: 2.2rem;
+						}
+					}
+				}
+			}
 			a {
 				color: $main_darker;
 				&:hover {
 					text-decoration: none;
 				}
 			}
-			.item-icon {
-				&.status {
-					.icon-bkg {
-						display: inline-block;
-						border-radius: 50%;
-						height: 2.4rem;
-						width: 2.4rem;
-						border-width: 0.2rem;
-						border-style: solid;
-						text-align: center;
-						fa-icon {
-							font-size: 1.2rem;
-							line-height: 2rem;
-							color: $light;
-						}
-					}
-				}
-				fa-icon {
-					color: $main;
-					font-size: 1.9rem;
-					line-height: 3rem;
-				}
-			}
+
 			.item-icon-image {
 				display: inline-block;
 				height: 3rem;
@@ -86,6 +101,21 @@
 					text-align: right;
 					font-size: 1.2rem;
 					color: $shade_dark;
+					font-weight: $weight_medium;
+
+					&.good {
+						color: $go_dark;
+					}
+					&.bad {
+						color: $stop_dark;
+					}
+					&.blue {
+						color: $main_gstart;
+					}
+					&.security {
+						text-transform: uppercase;
+						font-weight: 500;
+					}
 					&.highlight {
 						color: $main_shade;
 						text-decoration: underline;
