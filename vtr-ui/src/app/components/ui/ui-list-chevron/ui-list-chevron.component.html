@@ -32,7 +32,7 @@
 								{{item.title}}
 							</div>
 							<div class="detail text-uppercase"
-							 [ngClass]="getItemDetailClasses(item)">
+							[ngClass]="{'good': item.status == 0, 'bad': item.status ==1,'blue': item.status ==2 }">
 								{{item.detail}}
 							</div>
 						</div>
