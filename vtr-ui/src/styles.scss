@@ -93,5 +93,15 @@ button {
 	}
 }
 
+.list-group-item:first-child {
+	border-top-right-radius: $border_radius !important;
+	border-top-left-radius: $border_radius !important;
+}
+
+.list-group-item:last-child {
+	border-bottom-right-radius: $border_radius !important;
+	border-bottom-left-radius: $border_radius !important;
+}
+
 .vtr-subpage {
 }
