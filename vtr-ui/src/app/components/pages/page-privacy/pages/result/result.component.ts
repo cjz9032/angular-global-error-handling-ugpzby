@@ -16,7 +16,7 @@ export class ResultComponent implements OnInit{
 	public browserStoredAccountsData = { showDetailAction: 'link'};
 
 	public scoreParameters = { // TODO just mock, add logic
-		fixedBreaches: 20,
+		fixedBreaches: 12,
 		unfixedBreaches: 3,
 		fixedStorages: 3,
 		unfixedStorages: 3,

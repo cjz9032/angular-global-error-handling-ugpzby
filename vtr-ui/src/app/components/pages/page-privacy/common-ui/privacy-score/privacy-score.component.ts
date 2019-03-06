@@ -104,8 +104,10 @@ export class PrivacyScoreComponent implements OnInit {
 	ngOnInit() {
 		const score = this.calculate(this.scoreParameters);
 		this.score = score;
-		if (score < 45) {
+		if (score < 40) {
 			this.privacyLevel = 'low';
+		} else if (score < 60) {
+			this.privacyLevel = 'medium-low';
 		} else if (score < 80) {
 			this.privacyLevel = 'medium';
 		} else {
