@@ -15,6 +15,15 @@ export class ResultComponent implements OnInit{
 	// static Data for html
 	public browserStoredAccountsData = { showDetailAction: 'link'};
 
+	public scoreParameters = { // TODO just mock, add logic
+		fixedBreaches: 20,
+		unfixedBreaches: 3,
+		fixedStorages: 3,
+		unfixedStorages: 3,
+		monitoringEnabled: false,
+		trackingEnabled: false
+	};
+
 	constructor(private _location: Location, private serverCommunicationService: ServerCommunicationService) {
 		this.isPopupOpen = false;
 	}
