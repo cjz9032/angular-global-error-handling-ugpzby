@@ -6,7 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./scan-steps.component.scss']
 })
 export class ScanStepsComponent implements OnInit {
-
+  @Input() innerIndent: boolean;
+  @Input() steps: Array<{text: string, subtext: string}>;
   constructor() { }
 
   ngOnInit() {

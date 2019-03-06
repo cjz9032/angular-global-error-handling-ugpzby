@@ -1,6 +1,10 @@
 .scan-steps {
   display: flex;
   justify-content: center;
+
+  &--inner-indent {
+    padding: 0 2rem;
+  }
   &__item {
     width: calc(100%/3);
     display: flex;
@@ -8,7 +12,7 @@
     align-items: center;
     text-align: center;
     position: relative;
-    padding: 0 1rem;
+    padding: 0 2rem;
     &:nth-child(2) {
       &:before {
         content: '';

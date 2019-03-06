@@ -1,26 +1,9 @@
-<div class="scan__steps scan-steps">
-  <div class="scan-steps__item">
+<div class="scan-steps" [class.scan-steps--inner-indent]="innerIndent">
+  <div class="scan-steps__item" *ngFor="let step of steps; let i = index;">
     <div class="scan-steps__number-wrapper">
-      <div class="scan-steps__number">1</div>
+      <div class="scan-steps__number">{{i+1}}</div>
     </div>
-    <h4 class="scan-steps__title">Enter your email</h4>
-    <p class="scan-steps__text">We’ll search the internet
-      and the dark web for your info</p>
-  </div>
-  <div class="scan-steps__item">
-    <div class="scan-steps__number-wrapper">
-      <div class="scan-steps__number">2</div>
-    </div>
-    <h4 class="scan-steps__title">Verify it’s you</h4>
-    <p class="scan-steps__text">Check your email
-      for a verification code</p>
-  </div>
-  <div class="scan-steps__item">
-    <div class="scan-steps__number-wrapper">
-      <div class="scan-steps__number">3</div>
-    </div>
-    <h4 class="scan-steps__title">See your privacy level</h4>
-    <p class="scan-steps__text">Find out if you have control
-      of your privacy online.</p>
+    <h4 class="scan-steps__title">{{step.text}}</h4>
+    <p class="scan-steps__text">{{step.subtext}}</p>
   </div>
 </div>
