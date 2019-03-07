@@ -46,6 +46,7 @@ import { ConfirmationPopupComponent } from './common-ui/confirmation-popup/confi
 import { ScanStepsComponent } from './common-ui/scan-steps/scan-steps.component';
 import { PrivacyDashboardListComponent } from './pages/installed/privacy-dashboard-list/privacy-dashboard-list.component';
 import { VideoPopupComponent } from './common-ui/video-popup/video-popup.component';
+import { SupportBannerComponent } from './common-ui/support-banner/support-banner.component';
 
 @NgModule({
 	imports: [
@@ -86,6 +87,7 @@ import { VideoPopupComponent } from './common-ui/video-popup/video-popup.compone
 		ScanStepsComponent,
 		PrivacyDashboardListComponent,
 		VideoPopupComponent,
+		SupportBannerComponent,
 	],
 	providers: [ServerCommunicationService, ConfirmationPopupService, TrackersPopupService, VideoPopupService],
 })

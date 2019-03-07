@@ -47,6 +47,18 @@
   &:hover {
     background-size: 150% auto;
   }
+
+  &--transparent {
+    background: none;
+    border: 1px solid #4A81FD;
+    color: #4A81FD;
+
+    &:focus,
+    &:hover {
+      color: darken(#4A81FD, 10%);
+      border-color: darken(#4A81FD, 10%);
+    }
+  }
 }
 
 %button-link {
