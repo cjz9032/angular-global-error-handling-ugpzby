@@ -11,12 +11,12 @@
 		color: $main_dark;
 		font-size: 4.5rem;
 		font-weight: $weight_light;
-	}	 
+	}
 	.heading {
 		color: $main_dark;
 		font-size: 2.5rem;
 		font-weight: $weight_light;
-	}    
+	}
 	.sub-heading {
 		color: $main_dark;
 		font-size: 2rem;
@@ -26,11 +26,11 @@
 	}
 	.sub-heading-2 {
 		color: $main_dark;
-		font-size: 3rem; 
+		font-size: 3rem;
 	}
 	.sub-heading-text {
 		color: $main_dark;
-		font-size: 1.5rem;			 
+		font-size: 1.5rem;
 		margin-top: 2.3rem;
 	}
 	.list-heading{
@@ -78,14 +78,14 @@
   	.bullet-list {
 		margin-top: 1rem;
 		list-style: none;
-		padding: 0;    
+		padding: 0;
 		li {
 			margin: 0;
 			padding: 1rem 1rem 1rem 0;
 			color: $main_dark;
 			.text-regular {
 			color: $main_dark;
-			font-size: 1.6rem;        
+			font-size: 1.6rem;
 			}
       	&.good {
         	.bullet-icon {
@@ -115,12 +115,12 @@
 				border-radius: 50%;
 				height: 3rem;
 				width: 3rem;
-				border-width: 3px;
+				border-width:0.2rem;;
 				border-style: solid;
 				text-align: center;
 				fa-icon {
 					font-size: 1.6rem;
-					line-height: 2.5rem;
+					line-height: 2.8rem;
 					color: $light;
 				}
 			}
@@ -140,22 +140,22 @@
 			margin:0 0 1.5rem;
 			padding:0;
 			counter-reset:item;
-			box-sizing:border-box; 
-		}	 
+			box-sizing:border-box;
+		}
 		.ol>li {
 			margin:0;
 			padding:0 0 0 2rem;
 			text-indent:-2rem;
 			list-style-type:none;
 			counter-increment:item;
-		}	 
+		}
 		.ol>li:before {
 			display:inline-block;
 			width:1.5rem;
 			padding-right:0.5rem;
 			text-align:right;
 			content:counter(item) ".";
-		}	
+		}
    }
 	.button-box {
 		padding: 1rem;
