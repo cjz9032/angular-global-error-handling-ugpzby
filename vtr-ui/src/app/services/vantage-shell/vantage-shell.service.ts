@@ -17,7 +17,6 @@ export class VantageShellService {
 				new inversify.Container(),
 				new shell.VantageRpcClient()
 			);
-			console.log('VantageRpcClient', JSON.stringify(this.phoenixShell));
 		}
 	}
 
