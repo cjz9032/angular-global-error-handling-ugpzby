@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
 		this.devService.writeLog('GOT PARAMS', urlParams.toString());
 
 		// When startup try to login Lenovo ID silently (in background),
-		//  if user has already logged in before, this will login automatically and update UI
+		//  if user has already logged in before, this call will login automatically and update UI
 		this.userService.loginSilently();
 
 		/********* add this for navigation within a page **************/

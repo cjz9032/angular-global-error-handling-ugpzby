@@ -16,6 +16,8 @@ export class UserService {
 	lastName = '';
 	initials = '';
 
+	private lid: any;
+
 	constructor(
 		private cookieService: CookieService,
 		private commsService: CommsService,
@@ -24,6 +26,10 @@ export class UserService {
 	) {
 		// DUMMY
 		this.setName(this.firstName, this.lastName);
+		this.lid = vantageShellService.getLenovoId();
+		if (this.lid === undefined) {
+			this.devService.writeLog('UserService constructor: lid object is undefined');
+		}
 	}
 
 	checkCookies() {
@@ -36,17 +42,54 @@ export class UserService {
 
 	loginSilently() {
 		const self = this;
-		self.vantageShellService.loginSilently().then((result) => {
-			if (result.success && result.status === 0) {
-				self.vantageShellService.getUserProfile().then((profile) => {
-					if (profile.success && profile.status === 0) {
-						self.setName(profile.firstName, profile.lastName);
-						self.auth = true;
-					}
-				});
-			}
-		});
+		if (this.lid !== undefined) {
+			this.lid.loginSilently().then((result) => {
+				if (result.success && result.status === 0) {
+					this.lid.getUserProfile().then((profile) => {
+						if (profile.success && profile.status === 0) {
+							self.setName(profile.firstName, profile.lastName);
+							self.auth = true;
+						}
+					});
+				}
+			});
+		}
 		this.devService.writeLog('LOGIN(SILENTLY): ', self.auth);
+	}
+
+	public getLoginUrl(): any {
+		if (this.lid !== undefined) {
+			return this.lid.getLoginUrl();
+		}
+		return undefined;
+	}
+
+	public enableSSO(useruad, username, userid, userguid): any {
+		if (this.lid !== undefined) {
+			return this.lid.enableSSO(useruad, username, userid, userguid);
+		}
+		return undefined;
+	}
+
+	public logout(): any {
+		if (this.lid !== undefined) {
+			return this.lid.logout();
+		}
+		return undefined;
+	}
+
+	public getLoginStatus(): any {
+		if (this.lid !== undefined) {
+			return this.lid.getLoginStatus();
+		}
+		return undefined;
+	}
+
+	public getUserProfile(): any {
+		if (this.lid !== undefined) {
+			return this.lid.getUserProfile();
+		}
+		return undefined;
 	}
 
 	setAuth(auth = false) {
@@ -61,13 +104,15 @@ export class UserService {
 		const self = this;
 		this.cookieService.deleteAll('/');
 		this.cookies = this.cookieService.getAll();
-		self.vantageShellService.logout().then(function (result) {
-			if (result.success && result.status === 0) {
-				self.setName('Lenovo', 'User');
-				self.auth = false;
-			}
-			this.devService.writeLog('LOGOUT: ', result.success);
-		});
+		if (this.lid !== undefined) {
+			this.lid.logout().then(function (result) {
+				if (result.success && result.status === 0) {
+					self.setName('User', '');
+					self.auth = false;
+				}
+				this.devService.writeLog('LOGOUT: ', result.success);
+			});
+		}
 	}
 
 	setToken(token: any) {

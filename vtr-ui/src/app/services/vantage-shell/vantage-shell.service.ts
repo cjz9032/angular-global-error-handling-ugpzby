@@ -29,44 +29,9 @@ export class VantageShellService {
 		return win.VantageShellExtension;
 	}
 
-	public getLoginUrl(): any {
+	public getLenovoId(): any {
 		if (this.phoenix && this.phoenix.lid) {
-			return this.phoenix.lid.getLoginUrl();
-		}
-		return undefined;
-	}
-
-	public enableSSO(useruad, username, userid, userguid): any {
-		if (this.phoenix && this.phoenix.lid) {
-			return this.phoenix.lid.enableSSO(useruad, username, userid, userguid);
-		}
-		return undefined;
-	}
-
-	public logout(): any {
-		if (this.phoenix && this.phoenix.lid) {
-			return this.phoenix.lid.logout();
-		}
-		return undefined;
-	}
-
-	public getLoginStatus(): any {
-		if (this.phoenix && this.phoenix.lid) {
-			return this.phoenix.lid.getLoginStatus();
-		}
-		return undefined;
-	}
-
-	public loginSilently(): any {
-		if (this.phoenix && this.phoenix.lid) {
-			return this.phoenix.lid.loginSilently();
-		}
-		return undefined;
-	}
-
-	public getUserProfile(): any {
-		if (this.phoenix && this.phoenix.lid) {
-			return this.phoenix.lid.getUserProfile();
+			return this.phoenix.lid;
 		}
 		return undefined;
 	}

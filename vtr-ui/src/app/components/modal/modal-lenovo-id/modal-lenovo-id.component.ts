@@ -1,7 +1,6 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, Self } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from '../../../services/user/user.service';
-import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service'
 import { Subscription, timer } from "rxjs";
 
 //TODO: Create facebook new account within UWP WebView control will increase memory rapidly and crash app fianlly,
@@ -20,8 +19,7 @@ export class ModalLenovoIdComponent implements OnInit {
   private detectConnectionStatusTimer = timer(5000, 5000);
   constructor(
     public activeModal: NgbActiveModal,
-    private userService: UserService,
-    private vantageShellService: VantageShellService
+    private userService: UserService
   ) {
     this.isOnline = false;
     this.cacheCleared = false;
@@ -76,7 +74,7 @@ export class ModalLenovoIdComponent implements OnInit {
     var self = this;
     var webView = document.querySelector("#lid-webview") as MsWebView;
     // Get logon url and navigate to it
-    self.vantageShellService.getLoginUrl().then(function (result) {
+    self.userService.getLoginUrl().then(function (result) {
       if (result.success && result.status === 0) {
         var loginUrl = result.logonURL;
         if (loginUrl.indexOf("sso.lenovo.com") === -1) {
@@ -111,7 +109,7 @@ export class ModalLenovoIdComponent implements OnInit {
               var firstname = (el.querySelector('#firstname') as HTMLInputElement).value;
               var lastname = (el.querySelector('#lastname') as HTMLInputElement).value;
               // Default to enable SSO after login success
-              self.vantageShellService.enableSSO(useruad, username, userid, userguid).then(function (result) {
+              self.userService.enableSSO(useruad, username, userid, userguid).then(function (result) {
                 if (result.success && result.status === 0) {
                   self.userService.setName(firstname, lastname);
                   self.userService.setToken(useruad);
@@ -129,7 +127,7 @@ export class ModalLenovoIdComponent implements OnInit {
         }
       } else {
         // Handle error
-        this.activeModal.dismiss();
+        self.activeModal.dismiss();
         console.log("login not success");
       }
     });
