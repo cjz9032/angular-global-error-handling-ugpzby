@@ -210,7 +210,7 @@ export class MockService {
 
 	securityPasswordHealth = [
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'password-manager',
 			'title': 'Password Manager',
 			'detail': 'Installed',
@@ -220,7 +220,7 @@ export class MockService {
 
 	securityVPN = [
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'virtual-private-network',
 			'title': 'Virtual Private Network',
 			'detail': 'Installed',
