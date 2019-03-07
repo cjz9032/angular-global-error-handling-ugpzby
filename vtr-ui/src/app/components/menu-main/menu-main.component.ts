@@ -62,7 +62,7 @@ export class MenuMainComponent implements OnInit {
 				subitems: []
 			}, {
 				id: 'wifi-security',
-				label: 'Wifi Security',
+				label: 'WiFi Security',
 				path: 'wifi-security',
 				icon: '',
 				subitems: []

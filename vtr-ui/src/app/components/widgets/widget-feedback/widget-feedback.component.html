@@ -8,9 +8,9 @@
 				 *ngIf="description">
 					{{ description }}
 				</div>
-				<div class="button-box">
+				<div *ngIf="actionName" class="button-box">
 					<vtr-ui-button (onClick)="feedback($event)"
-					 [label]="'Give feedback'"></vtr-ui-button>
+					 [label]= "actionName"></vtr-ui-button>
 				</div>
 			</div>
 		</div>

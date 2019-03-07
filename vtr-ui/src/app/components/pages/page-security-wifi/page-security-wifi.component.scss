@@ -61,21 +61,22 @@
 
 				.view-security-check {
 					padding: 0rem;
-					margin-top: 1rem;
+					margin-top: 1.2rem;
 					text-align: center;
-					font-size: 2rem;
+					font-size: 1.3rem;
 					font-weight: $weight_regular;
 					cursor: pointer;
 					a {
 						color: $main;
+						text-decoration: none;
 						&:hover {
-							text-decoration: none;
+							text-decoration: underline;
 						}
 					}
 				}
 				.coronet_logo_teal {
 					padding: 0rem 0.5rem 0rem 0rem;
-					margin-top: 0.5rem;
+					margin-top: 0rem;
 				}
 			}
 
