@@ -68,7 +68,10 @@
 					cursor: pointer;
 					a {
 						color: $main;
-						text-decoration: underline;
+						text-decoration: none;
+						&:hover {
+							text-decoration: underline;
+						}
 					}
 				}
 				.coronet_logo_teal {
