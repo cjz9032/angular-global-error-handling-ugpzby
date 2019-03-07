@@ -1,13 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute,NavigationEnd } from '@angular/router';
-import { UserService } from './services/user/user.service';
-import { ContainerService } from './services/container/container.service';
+import { Router, NavigationEnd } from '@angular/router';
 import { DevService } from './services/dev/dev.service';
 import { DisplayService } from './services/display/display.service';
-import { environment } from '../environments/environment';
-
-import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { ModalWelcomeComponent } from "./components/modal/modal-welcome/modal-welcome.component";
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -16,19 +11,17 @@ import { ModalWelcomeComponent } from "./components/modal/modal-welcome/modal-we
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
-	env = environment;
 	title = 'vtr-ui';
 
 	constructor(
-		private route: ActivatedRoute,
-		private userService: UserService,
-		private containerService: ContainerService,
 		private devService: DevService,
 		private displayService: DisplayService,
-		private modalService: NgbModal,
-		private router:Router
+		// private modalService: NgbModal,
+		private router: Router,
+		translate: TranslateService
 	) {
+		translate.addLangs(['en', 'zh-Hans']);
+		translate.setDefaultLang('zh-Hans');
 
 		/*this.modalService.open(ModalWelcomeComponent, {
 		  backdrop: 'static',
@@ -51,21 +44,18 @@ export class AppComponent implements OnInit {
 		this.devService.writeLog('GOT PARAMS', urlParams.toString());
 
 
-          /********* add this for navigation within a page **************/
+		/********* add this for navigation within a page **************/
 		this.router.events.subscribe(s => {
 			if (s instanceof NavigationEnd) {
 
 				const tree = this.router.parseUrl(this.router.url);
 				if (tree.fragment) {
-					const element = document.querySelector("#" + tree.fragment);
+					const element = document.querySelector('#' + tree.fragment);
 					if (element) {
 						element.scrollIntoView(true);
 					}
 				}
 			}
 		});
-
 	}
-
-
 }

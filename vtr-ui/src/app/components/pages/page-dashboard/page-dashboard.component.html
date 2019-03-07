@@ -93,9 +93,9 @@
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col col-12 pb-40">
-										<vtr-widget-feedback [title]="'Give feedback'"
-											[description]="'Tell us what you think about vantage'"
-											[actionName]="'Give feedback'"
+										<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
+											[description]="'dashboard.feedback.subtitle' | translate"
+											[actionName]="'dashboard.feedback.button' | translate"
 											[action]="'feedback'"
 											(feedBackClick)="onFeedbackModal(feedBackModal)">
 										</vtr-widget-feedback>

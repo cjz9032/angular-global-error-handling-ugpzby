@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs/internal/Subscription';
+
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
 import { UserService } from '../../services/user/user.service';
+import { TranslationService } from 'src/app/services/translation/translation.service';
+import Translation from 'src/app/data-models/translation/translation';
+import { TranslationSection } from 'src/app/enums/translation-section.enum';
 
 @Component({
 	selector: 'vtr-menu-main',
 	templateUrl: './menu-main.component.html',
 	styleUrls: ['./menu-main.component.scss']
 })
-export class MenuMainComponent implements OnInit {
+export class MenuMainComponent implements OnInit, OnDestroy {
+
+	commonMenuSubscription: Subscription;
 
 	items = [
 		{
@@ -103,14 +110,31 @@ export class MenuMainComponent implements OnInit {
 		private router: Router,
 		public configService: ConfigService,
 		public deviceService: DeviceService,
-		public userService: UserService
-	) { }
+		public userService: UserService,
+		public translationService: TranslationService
+	) {
+		this.commonMenuSubscription = this.translationService.subscription
+			.subscribe((translation: Translation) => {
+				this.onLanguageChange(translation);
+			});
+	}
 
 	ngOnInit() {
+	}
+
+	ngOnDestroy() {
+		if (this.commonMenuSubscription) {
+			this.commonMenuSubscription.unsubscribe();
+		}
 	}
 
 	menuItemClick(event, path) {
 		this.router.navigateByUrl(path);
 	}
 
+	onLanguageChange(translation: Translation) {
+		if (translation && translation.type === TranslationSection.CommonMenu) {
+			this.items[0].label = translation.payload.dashboard;
+		}
+	}
 }

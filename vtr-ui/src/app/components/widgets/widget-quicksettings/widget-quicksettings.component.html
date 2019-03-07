@@ -2,24 +2,26 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-12">
-				<div class="heading mb-40">Your Quick Settings</div>
+				<div class="heading mb-40">{{'dashboard.quick-settings.title' | translate}}</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col col-4 text-left">
 				<vtr-widget-switch-icon [iconDefinition]="['fas', 'microphone']"
 					[value]="microphoneStatus.status"
-					title="Microphone"
+					[title]="'dashboard.quick-settings.microphone' | translate"
 					(toggle)="onMicrophoneStatusToggle($event)"></vtr-widget-switch-icon>
 			</div>
 			<div class="col col-4 text-center">
 				<vtr-widget-switch-icon [iconDefinition]="['fas', 'camera']"
 					[value]="cameraStatus.status"
+					[title]="'dashboard.quick-settings.camera-privacy' | translate"
 					title="Camera Privacy"
 					(toggle)="onCameraStatusToggle($event)"></vtr-widget-switch-icon>
 			</div>
 			<div class="col col-4 text-right">
 				<vtr-widget-switch-icon [iconDefinition]="['fas', 'eye']"
+					[title]="'dashboard.quick-settings.eye-care-mode' | translate"
 					title="Eye Care Mode"
 					(toggle)="onEyeCareModeToggle($event)"></vtr-widget-switch-icon>
 			</div>
