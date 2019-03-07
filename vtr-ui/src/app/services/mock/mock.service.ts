@@ -196,14 +196,14 @@ export class MockService {
 			'id': 'anti-virus',
 			'title': 'Anti-Virus',
 			'detail': 'Enabled',
-			'path': ''
+			'path': 'anti-virus'
 		},
 		{
 			'status': 1,
 			'id': 'firewall',
 			'title': 'Firewall',
 			'detail': 'Disabled',
-			'path': ''
+			'path': 'fire-wall'
 
 		}
 	];
@@ -214,7 +214,7 @@ export class MockService {
 			'id': 'password-manager',
 			'title': 'Password Manager',
 			'detail': 'Installed',
-			'path': ''
+			'path': 'password-protection'
 		}
 	];
 
@@ -224,7 +224,7 @@ export class MockService {
 			'id': 'virtual-private-network',
 			'title': 'Virtual Private Network',
 			'detail': 'Installed',
-			'path': ''
+			'path': 'internet-protection'
 		}
 	];
 
@@ -234,7 +234,7 @@ export class MockService {
 			'id': 'wifi-security',
 			'title': 'WiFi Security',
 			'detail': 'Enabled',
-			'path': ''
+			'path': 'wifi-security'
 		}
 	];
 
@@ -244,7 +244,7 @@ export class MockService {
 			'id': 'connected-home-security',
 			'title': 'Connected Home Security',
 			'detail': 'Enabled',
-			'path': ''
+			'path': 'connected-home-security'
 		}
 	];
 
@@ -254,7 +254,7 @@ export class MockService {
 			'id': 'fingerprint-reader',
 			'title': 'Fingerprint reader',
 			'detail': 'Enabled',
-			'path': ''
+			'path': 'windows-hello'
 		}
 	];
 
