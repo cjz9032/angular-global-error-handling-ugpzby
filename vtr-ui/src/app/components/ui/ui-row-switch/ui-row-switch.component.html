@@ -48,9 +48,16 @@
 					{{linkText}}
 				</a>
 			</div>
+			<ng-template #tipContent>
+				<div class="tool-tip">
+					{{ tooltipText }}
+				</div>
+			</ng-template>
 			<div class="p-0 pl-2"
 				*ngIf="rightIcon.length > 0">
 				<fa-icon class="right-icon"
+					placement="right"
+					[ngbTooltip]="(tooltipText?.length) ? tipContent : ''"
 					[icon]="rightIcon"
 					(click)="onRightIconClick($event)"></fa-icon>
 			</div>
