@@ -2,16 +2,10 @@
 
 .vtr-battery-detail {
 	.battery-detail-max-height {
-		max-height: 85vh;
+		max-height: 75vh;
 		overflow-x: hidden;
 		overflow-y: auto;
 
-		.battery-title {
-			color: $main_dark;
-			font-weight: 400;
-			font-size: 3.3rem;
-			padding: 2.5rem 0 1.5rem 0;
-		}
 		.battery-indicator {
 			width: 35rem;
 		}
