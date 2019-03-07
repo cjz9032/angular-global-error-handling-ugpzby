@@ -11,56 +11,82 @@ import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 export class WidgetQuicksettingsComponent implements OnInit {
 	public cameraStatus = new FeatureStatus(false, false);
 	public microphoneStatus = new FeatureStatus(false, false);
+	public eyeCareModeStatus = new FeatureStatus(false, false);
 
 	@Output() toggle = new EventEmitter<{ sender: string; value: boolean }>();
 
 	constructor(public dashboardService: DashboardService) { }
 
 	ngOnInit() {
-		// this.getQuickSettingStatus();
+		this.getQuickSettingStatus();
 	}
 
-	// private getQuickSettingStatus() {
-	// 	this.dashboardService
-	// 		.getCameraStatus()
-	// 		.then((featureStatus: FeatureStatus) => {
-	// 			this.cameraStatus = featureStatus;
-	// 		})
-	// 		.catch(error => {
-	// 			console.log('getCameraStatus', error);
-	// 		});
+	private getQuickSettingStatus() {
+		if (this.dashboardService.isShellAvailable) {
+			this.dashboardService
+				.getCameraStatus()
+				.then((featureStatus: FeatureStatus) => {
+					console.log('getCameraStatus.then', featureStatus);
+					this.cameraStatus = featureStatus;
+				})
+				.catch(error => {
+					console.error('getCameraStatus', error);
+				});
 
-	// 	this.dashboardService
-	// 		.getMicrophoneStatus()
-	// 		.then((featureStatus: FeatureStatus) => {
-	// 			this.microphoneStatus = featureStatus;
-	// 		})
-	// 		.catch(error => {
-	// 			console.log('getCameraStatus', error);
-	// 		});
-	// }
+			this.dashboardService
+				.getMicrophoneStatus()
+				.then((featureStatus: FeatureStatus) => {
+					console.log('getMicrophoneStatus.then', featureStatus);
+
+					this.microphoneStatus = featureStatus;
+				})
+				.catch(error => {
+					console.error('getCameraStatus', error);
+				});
+
+			this.dashboardService
+				.getEyeCareMode()
+				.then((featureStatus: FeatureStatus) => {
+					console.log('getEyeCareMode.then', featureStatus);
+
+					this.eyeCareModeStatus = featureStatus;
+				})
+				.catch(error => {
+					console.error('getEyeCareMode', error);
+				});
+		}
+	}
 
 	public onCameraStatusToggle($event: boolean) {
-		// this.dashboardService.setCameraStatus($event)
-		// 	.then((value: boolean) => {
-		// 		// TODO : check for value is if action is completed or not
-		// 		// and accordingly show/hide spinner
-		// 	}).catch(error => {
-		// 		console.log('getCameraStatus', error);
-		// 	});
+		if (this.dashboardService.isShellAvailable) {
+			this.dashboardService.setCameraStatus($event)
+				.then((value: boolean) => {
+					console.log('getCameraStatus.then', value);
+				}).catch(error => {
+					console.error('getCameraStatus', error);
+				});
+		}
 	}
 
 	public onMicrophoneStatusToggle($event: boolean) {
-		// this.dashboardService.setMicrophoneStatus($event)
-		// 	.then((value: boolean) => {
-		// 		// TODO : check for value is if action is completed or not
-		// 		// and accordingly show/hide spinner
-		// 	}).catch(error => {
-		// 		console.log('getCameraStatus', error);
-		// 	});
+		if (this.dashboardService.isShellAvailable) {
+			this.dashboardService.setMicrophoneStatus($event)
+				.then((value: boolean) => {
+					console.log('setMicrophoneStatus.then', value);
+				}).catch(error => {
+					console.error('setMicrophoneStatus', error);
+				});
+		}
 	}
 
 	public onEyeCareModeToggle($event: boolean) {
-		console.log('WidgetQuicksettingsComponent', $event);
+		if (this.dashboardService.isShellAvailable) {
+			this.dashboardService.setEyeCareMode($event)
+				.then((value: boolean) => {
+					console.log('setEyeCareMode.then', value);
+				}).catch(error => {
+					console.error('setEyeCareMode', error);
+				});
+		}
 	}
 }

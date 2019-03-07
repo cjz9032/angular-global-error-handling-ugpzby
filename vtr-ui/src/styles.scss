@@ -110,6 +110,7 @@ button {
 
 
 
+
 .bullet-icon-check {
 	.icon-bkg {
 		display: inline-block;
@@ -158,4 +159,9 @@ strong{
 	font-weight:bold;
 }
 .vtr-subpage {
+
+	.modal-content {
+		width: 54rem !important;
+		margin: 0rem auto;
+	}
 }

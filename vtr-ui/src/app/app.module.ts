@@ -1,6 +1,6 @@
 // ANGULAR MODULES
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -73,6 +73,7 @@ import { WidgetDeviceUpdateSettingsComponent } from './components/widgets/widget
 
 // APPLICATION MODALS
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
+import { ModalLenovoIdComponent } from './components/modal/modal-lenovo-id/modal-lenovo-id.component';
 
 // APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
@@ -86,6 +87,7 @@ import { SecurityService } from './services/security/security.service';
 import { UserService } from './services/user/user.service';
 import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
 import { CameraDetailMockService } from './services/camera/camera-detail/camera-detail.mock.service';
+
 
 // FONT AWESOME
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -179,6 +181,7 @@ library.add(far);
 		WidgetSupportComponent,
 		UiListSupportComponent,
 		WidgetWarrantyComponent,
+		ModalLenovoIdComponent,
 		SanitizeHtmlPipe,
 		WidgetRebootComponent,
 		FeedbackFormComponent,
@@ -210,6 +213,9 @@ library.add(far);
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
 	bootstrap: [AppComponent],
-	entryComponents: [ModalWelcomeComponent]
+	entryComponents: [ModalLenovoIdComponent],
+	schemas: [
+		CUSTOM_ELEMENTS_SCHEMA
+	]
 })
 export class AppModule { }
