@@ -11,9 +11,9 @@
 
 					<div class="row mn-6 card mx-5 mb-5">
 						<div class="col p-5">
-							<div class="row py-5">
-								<div class="col"
-								 [innerHTML]="qa.description|sanitizeHtml">
+							<div class="row py-5" style="font-family: Arial;font-size:2rem;letter-spacing: 0.1rem;">
+								<div class="col" [innerHTML]="qa.description|sanitizeHtml">
+								<!--<div class="col">-->
 
 								</div>
 							</div>
@@ -21,13 +21,13 @@
 
 								<div class="col-auto ml-auto px-0">
 									<div class="icon-bkg text-center cursor-pointer"
-									 (click)="qa.like=!qa.like">
+										 (click)="qa.like=!qa.like">
 										<fa-icon [icon]="['far','thumbs-up']"></fa-icon>
 									</div>
 								</div>
 								<div class="col-auto px-2 ">
 									<div class="icon-bkg text-center cursor-pointer"
-									 (click)="qa.dislike=!qa.dislike">
+										 (click)="qa.dislike=!qa.dislike">
 										<fa-icon [icon]="['far','thumbs-down']"></fa-icon>
 									</div>
 								</div>
@@ -90,8 +90,8 @@
 					<div class="row mn-6">
 						<div class="col">
 							<vtr-widget-questions [title]="'Q&A\'s for your Machine'"
-							 [description]="'Find answers for your Ideapad'"
-							 [items]="qaService.qas"></vtr-widget-questions>
+												  [description]="'Find answers for your Ideapad'"
+												  [items]="qaService.qas"></vtr-widget-questions>
 						</div>
 					</div>
 				</div>
