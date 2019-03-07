@@ -1,43 +1,44 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServerCommunicationService } from '../../common-services/server-communication.service';
 import { ConfirmationPopupService } from '../../common-services/popups/confirmation-popup.service';
+import { FormBuilder, Validators } from '@angular/forms';
+import { filter, takeUntil } from 'rxjs/operators';
+import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
 
 @Component({
 	selector: 'vtr-check-breaches-form',
 	templateUrl: './check-breaches-form.component.html',
 	styleUrls: ['./check-breaches-form.component.scss'],
 })
-export class CheckBreachesFormComponent implements OnInit {
-	public isLoading: boolean;
-	public lenovoId: string;
-	public islenovoIdOpen: boolean;
-	public isFormFocused: boolean;
-	public inputValue: string;
-	public isValidationError = false; // change to 'true' to see all error styles
-	public isServerError = false; // change to 'true' to see all error styles
+export class CheckBreachesFormComponent implements OnInit, OnDestroy {
+	emailForm = this.formBuilder.group({
+		email: ['', [Validators.required, Validators.email]],
+	});
+	isLoading = false;
+	lenovoId: string;
+	islenovoIdOpen = false;
+	isFormFocused = false;
+	isServerError = false; // change to 'true' to see all error styles
 
-	constructor(public router: Router, private serverCommunication: ServerCommunicationService, private confirmationPopupService: ConfirmationPopupService) {
-		this.isLoading = false;
-		this.islenovoIdOpen = false;
-		this.isFormFocused = false;
-		this.inputValue = '';
-	}
+	constructor(
+		private router: Router,
+		private serverCommunication: ServerCommunicationService,
+		private confirmationPopupService: ConfirmationPopupService,
+		private formBuilder: FormBuilder,
+	) { }
 
 	ngOnInit() {
 		this.serverCommunication.getLenovoId();
-		this.serverCommunication.onGetLenovoId.subscribe((lenovoIdResponse: {emails: Array<string>}) => {
-			this.lenovoId = lenovoIdResponse.emails[0];
-		});
+		this.serverCommunication.onGetLenovoId.subscribe(
+			(lenovoIdResponse: { emails: Array<string> }) => {
+				this.lenovoId = lenovoIdResponse.emails[0];
+			});
+
+		this.handleStartTyping();
 	}
 
-	changeInputValue(event) {
-		this.inputValue = event.target.value;
-		if (this.lenovoId && this.lenovoId.includes(this.inputValue)) {
-			this.openLenovoId();
-		} else {
-			this.closeLenovoId();
-		}
+	ngOnDestroy() {
 	}
 
 	handleFocus() {
@@ -47,9 +48,11 @@ export class CheckBreachesFormComponent implements OnInit {
 
 	handleBlur() {
 		this.isFormFocused = false;
-		setTimeout(() => {
-			this.closeLenovoId();
-		}, 200); // added because blur event should be after 'id' selection by click
+		this.closeLenovoId();
+	}
+
+	preventFireBlur(event) {
+		event.preventDefault();
 	}
 
 	openLenovoId() {
@@ -61,15 +64,17 @@ export class CheckBreachesFormComponent implements OnInit {
 	}
 
 	setLenovoId() {
-		this.inputValue = this.lenovoId;
+		this.emailForm.get('email').setValue(this.lenovoId);
 		this.closeLenovoId();
 	}
 
-	scanEmail(event) {
-		event.preventDefault();
-		// TODO validate this.inputValue here
+	scanEmail() {
+		if (this.emailForm.invalid) {
+			return;
+		}
+
 		this.isLoading = true;
-		this.serverCommunication.getBreachedAccounts(this.inputValue);
+		this.serverCommunication.getBreachedAccounts(this.emailForm.value.email);
 		this.serverCommunication.onGetBreachedAccountsResponse.subscribe((response) => {
 			this.isLoading = false;
 			if (response.status === 0) {
@@ -85,9 +90,24 @@ export class CheckBreachesFormComponent implements OnInit {
 		this.serverCommunication.validationStatusChanged.subscribe((validationResponse) => {
 			if (validationResponse.status === 0) {
 				this.isLoading = true;
-				this.serverCommunication.getBreachedAccounts(this.inputValue)
+				this.serverCommunication.getBreachedAccounts(this.emailForm.value.email);
 			}
-		})
+		});
+	}
 
+	private handleStartTyping() {
+		this.emailForm.get('email').valueChanges.pipe(
+			filter((val) => val.length > 0),
+			takeUntil(instanceDestroyed(this))
+		).subscribe(() => {
+			this.closeLenovoId();
+		});
+
+		this.emailForm.get('email').valueChanges.pipe(
+			filter((val) => val.length === 0),
+			takeUntil(instanceDestroyed(this))
+		).subscribe(() => {
+			this.openLenovoId();
+		});
 	}
 }

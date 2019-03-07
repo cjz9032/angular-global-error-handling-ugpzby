@@ -1,6 +1,6 @@
 <div *ngIf="isPopupOpen" class="confirm-popup">
   <div class="confirm-popup__overlay" (click)="closePopup()"></div>
-  <form (submit)="confirm($event)" action="" class="confirm-popup__body">
+  <form (submit)="confirm($event)" class="confirm-popup__body">
     <button class="confirm-popup__close-btn" (click)="closePopup()"></button>
 
     <h2 class="confirm-popup__title">Let’s confirm your email</h2>

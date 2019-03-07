@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 // Pages
 import { BreachedAccountsComponent } from './pages/breached-accounts/breached-accounts.component';
@@ -24,7 +25,7 @@ import { TrackersPopupService } from './common-services/popups/trackers-popup.se
 // Modules
 import { PrivacyRoutingModule } from './privacy-routing.module';
 
-//Directives
+// Directives
 import { NumpersOnlyDirective } from './common-directives/numpers-only.directive';
 
 // Common UI components
@@ -52,6 +53,8 @@ import { SupportBannerComponent } from './common-ui/support-banner/support-banne
 	imports: [
 		PrivacyRoutingModule,
 		CommonModule,
+		ReactiveFormsModule,
+		FormsModule,
 		// ResultModule,
 	],
 	declarations: [

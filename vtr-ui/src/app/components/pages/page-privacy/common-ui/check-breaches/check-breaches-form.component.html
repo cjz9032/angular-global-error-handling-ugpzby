@@ -1,17 +1,23 @@
 <div class="check-breaches">
-    <form class="check-breaches__form" (submit)="scanEmail($event)">
+    <form class="check-breaches__form" [formGroup]="emailForm" (submit)="scanEmail()">
         <div class="check-breaches__input-wrapper"
-             [class.check-breaches__input-wrapper--focused]="isFormFocused"
-             [class.check-breaches__input-wrapper--validation-error]="isValidationError"
-             [class.check-breaches__input-wrapper--server-error]="isServerError">
-            <div class="check-breaches__input-with-id">
+			 [ngClass]="{
+			 	'check-breaches__input-wrapper--focused': isFormFocused,
+			 	'check-breaches__input-wrapper--validation-error': emailForm.dirty && emailForm.touched && emailForm.invalid,
+			 	'check-breaches__input-wrapper--server-error': isServerError
+			 }">
+            <div class="check-breaches__input-with-id" >
                 <input class="check-breaches__input" type="text"
-                       [class.check-breaches__input--validation-error]="isValidationError"
-                       (focus)="handleFocus()" (blur)="handleBlur()"
-                       (input)="changeInputValue($event)" value="{{inputValue}}"
+                       [class.check-breaches__input--validation-error]="emailForm.get('email').dirty && emailForm.get('email').touched && emailForm.get('email').invalid"
+                       (focus)="handleFocus()"
+					   (blur)="handleBlur()"
                        placeholder="Enter your email"
+					   formControlName="email"
                 >
-                <div *ngIf="lenovoId && islenovoIdOpen" class="check-breaches__lenovo-id lenovo-id" (click)="setLenovoId()">
+                <div *ngIf="lenovoId && islenovoIdOpen"
+					 class="check-breaches__lenovo-id lenovo-id"
+					 (mousedown)="preventFireBlur($event)"
+					 (click)="setLenovoId()">
                     <p class="lenovo-id__text">Use my lenovo id:
                         <span class="lenovo-id__id">{{lenovoId}}</span>
                     </p>
@@ -20,10 +26,14 @@
             <div class="check-breaches__loader" [style.display]="isLoading ? 'block' : 'none'">
                 <img src="/assets/images/privacy-tab/loading.gif" alt="loader">
             </div>
-            <button class="check-breaches__button" [class.check-breaches__button--error]="isValidationError || isServerError" type='submit'>Scan My Email</button>
+            <button class="check-breaches__button"
+					[class.check-breaches__button--error]="(emailForm.dirty && emailForm.touched && emailForm.invalid) || isServerError"
+					type='submit'>
+				Scan My Email
+			</button>
         </div>
 
-        <div *ngIf="isValidationError" class="check-error check-error--validation">
+        <div *ngIf="emailForm.get('email').dirty && emailForm.get('email').touched && emailForm.get('email').invalid" class="check-error check-error--validation">
             <img class="check-error__img" src="/assets/icons/privacy-tab/error-white.svg" alt="warning-icon">
             <p class="check-error__text">Sorry, the email you entered is not correct. Please try again.</p>
         </div>
