@@ -99,14 +99,14 @@ export class MockService {
 			'path': 'uac-notification'
 		},
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'anti-virus-availability',
 			'title': 'Anti-Virus availability',
 			'detail': 'PASSED',
 			'path': 'anti-virus-availability'
 		},
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'drive-encryption',
 			'title': 'Drive encryption',
 			'detail': 'PASSED',
@@ -114,7 +114,7 @@ export class MockService {
 
 		},
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'firewall-availability',
 			'title': 'Firewall availability',
 			'detail': 'PASSED',
@@ -122,21 +122,21 @@ export class MockService {
 
 		},
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'os-integrity',
 			'title': 'OS integrity',
 			'detail': 'PASSED',
 			'path': 'OS integrity'
 		},
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'os-version',
 			'title': 'OS version',
 			'detail': 'PASSED',
 			'path': 'os-version'
 		},
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'pin-pwd',
 			'title': 'Pin or Password',
 			'detail': 'PASSED',
@@ -196,14 +196,14 @@ export class MockService {
 			'id': 'anti-virus',
 			'title': 'Anti-Virus',
 			'detail': 'Enabled',
-			'path': ''
+			'path': 'anti-virus'
 		},
 		{
 			'status': 1,
 			'id': 'firewall',
 			'title': 'Firewall',
 			'detail': 'Disabled',
-			'path': ''
+			'path': 'fire-wall'
 
 		}
 	];
@@ -214,7 +214,7 @@ export class MockService {
 			'id': 'password-manager',
 			'title': 'Password Manager',
 			'detail': 'Installed',
-			'path': ''
+			'path': 'password-protection'
 		}
 	];
 
@@ -224,7 +224,7 @@ export class MockService {
 			'id': 'virtual-private-network',
 			'title': 'Virtual Private Network',
 			'detail': 'Installed',
-			'path': ''
+			'path': 'internet-protection'
 		}
 	];
 
@@ -234,7 +234,7 @@ export class MockService {
 			'id': 'wifi-security',
 			'title': 'WiFi Security',
 			'detail': 'Enabled',
-			'path': ''
+			'path': 'wifi-security'
 		}
 	];
 
@@ -244,7 +244,7 @@ export class MockService {
 			'id': 'connected-home-security',
 			'title': 'Connected Home Security',
 			'detail': 'Enabled',
-			'path': ''
+			'path': 'connected-home-security'
 		}
 	];
 
@@ -254,7 +254,7 @@ export class MockService {
 			'id': 'fingerprint-reader',
 			'title': 'Fingerprint reader',
 			'detail': 'Enabled',
-			'path': ''
+			'path': 'windows-hello'
 		}
 	];
 
