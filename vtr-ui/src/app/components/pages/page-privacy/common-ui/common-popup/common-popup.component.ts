@@ -38,4 +38,9 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 	close() {
 		this.isOpen = false;
 	}
+
+	preventClick(ev) {
+		ev.preventDefault();
+		ev.stopPropagation();
+	}
 }
