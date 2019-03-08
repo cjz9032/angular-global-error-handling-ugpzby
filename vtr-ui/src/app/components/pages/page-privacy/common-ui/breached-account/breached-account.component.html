@@ -1,11 +1,16 @@
-
 <div class="breached-account">
-  <img class="breached-account__img" [src]="breached_account.image" alt="">
-  <h4 class="breached-account__title">{{breached_account.domain}}</h4>
-  <span class="breached-account__date">Breached on {{breached_account.breachDate}}</span>
-  <div class="breached-account__credentials">
-    <p class="breached-account__email" title="{{breached_account.breachedEmail}}">{{breached_account.breachedEmail}}</p>
-    <p class="breached-account__pass" title="{{breached_account.breachedPassword}}">{{breached_account.breachedPassword}}</p>
-  </div>
-  <a class="breached-account__details" href="">See details</a>
+	<div class="breached-account__social">
+		<img class="breached-account__img" [src]="breached_account.image" alt="">
+		<div class="breached-account__social-description">
+			<h4 class="breached-account__title">{{breached_account.domain}}</h4>
+			<p class="breached-account__email"
+			   title="{{breached_account.breachedEmail}}">{{breached_account.breachedEmail}}</p>
+		</div>
+	</div>
+
+	<span class="breached-account__date">Breached on {{breached_account.breachDate}}</span>
+
+	<div class="breached-account__details">
+		<a class="breached-account__details-link" href=""><span>Details</span></a>
+	</div>
 </div>

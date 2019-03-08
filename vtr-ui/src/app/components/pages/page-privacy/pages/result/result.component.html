@@ -37,18 +37,19 @@
         <p class="breaches-block__text">Looks like some of your personal info is floating around online, making it easy for others to access your accounts without your knowledge. You should change your passwords right now.</p>
         <div class="breaches-block__accounts-row">
             <div class="breaches-block__accounts-container">
-                <vtr-breached-account *ngFor="let account of breached_accounts_show" [breached_account]="account" class="breaches-block__account"></vtr-breached-account>
+                <vtr-breached-account
+					*ngFor="let account of breached_accounts_show"
+					[breached_account]="account">
+				</vtr-breached-account>
             </div>
-            <div *ngIf="breached_accounts.length > 3" class="breaches-block__see-more more-breaches">
-                <div class="more-breaches__number-wrapper">
-                    <div class="more-breaches__number">
-                        <span class="more-breaches__plus">+</span>
-                        {{breached_accounts.length - 3}}
-                    </div>
-                    <span class="more-breaches__description">breached accounts</span>
-                </div>
-                <a routerLink="../breaches" class="more-breaches__btn">Show details</a>
-            </div>
+			<div *ngIf="breached_accounts.length > 3" class="breaches-block__see-more more-breaches">
+				<div class="more-breaches__number">
+					<span class="more-breaches__plus">+</span>
+					{{breached_accounts.length - 3}}
+				</div>
+				<span class="more-breaches__description">breached accounts</span>
+				<a routerLink="../breaches" class="more-breaches__btn">Show All</a>
+			</div>
         </div>
         <p class="breaches-block__get-figleaf-text">Ready to take control of your privacy?
             <a class="breaches-block__get-figleaf-link" href="">Get Lenovo Privacy by FigLeaf</a>
