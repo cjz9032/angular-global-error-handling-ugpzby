@@ -161,16 +161,16 @@ button {
 }
 
 .card-with-border {
-	border: 1px solid #ECF0F1;
-	border-radius:$border_radius;
-	background-color: #FFFFFF;
+	border: 1px solid $shade_lighter;
+	border-radius: $border_radius;
+	background-color: $light;
 }
 
-strong{
-	font-weight:bold;
+strong {
+	font-weight: $weight_medium;
 }
+
 .vtr-subpage {
-
 	.modal-content {
 		width: 54rem !important;
 		margin: 0rem auto;
