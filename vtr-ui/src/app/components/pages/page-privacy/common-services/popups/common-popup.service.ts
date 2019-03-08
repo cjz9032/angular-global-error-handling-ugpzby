@@ -18,7 +18,11 @@ export class CommonPopupService {
 	private popups: { [key: string]: PopUpInterface } = {};
 
 	add(popup: PopUpInterface) {
-		this.popups[popup.popUpId] = popup;
+		if (!this.popups[popup.popUpId]) {
+			this.popups[popup.popUpId] = popup;
+		} else {
+			console.error("");
+		}
 	}
 
 	remove(id: string) {

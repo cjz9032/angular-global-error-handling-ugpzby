@@ -1,19 +1,18 @@
-import { Component, ElementRef, Input, OnInit, Output, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import {CommonPopupService} from '../../common-services/popups/common-popup.service';
 
 @Component({
 	selector: 'vtr-common-popup',
 	templateUrl: './common-popup.component.html',
 	styleUrls: ['./common-popup.component.scss'],
-	// providers: [CommonPopupService]
 })
 export class CommonPopupComponent implements OnInit, OnDestroy {
 
 	@Input() popUpId: string;
 
-	private isOpen: boolean = false;
+	private isOpen = false;
 
-	constructor(private commonPopupService: CommonPopupService, private el: ElementRef) {
+	constructor(private commonPopupService: CommonPopupService) {
 	}
 
 	ngOnInit() {
