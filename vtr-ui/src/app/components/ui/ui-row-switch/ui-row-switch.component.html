@@ -56,10 +56,12 @@
 			<div class="p-0 pl-2"
 			 *ngIf="rightIcon.length > 0">
 				<fa-icon class="right-icon"
-					placement="right"
-					[ngbTooltip]="(tooltipText?.length) ? tipContent : ''"
-					[icon]="rightIcon"
-					(click)="onRightIconClick($event)"></fa-icon>
+				 placement="top"
+				 [ngbTooltip]="(tooltipText?.length) ? tipContent : ''"
+				 [icon]="rightIcon"
+				 container="body"
+				 tooltipClass="vtr-tooltip"
+				 (click)="onRightIconClick($event)"></fa-icon>
 			</div>
 		</div>
 		<div class="row m-0"
