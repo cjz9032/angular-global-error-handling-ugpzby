@@ -1,6 +1,7 @@
-<div class="popup" *ngIf="isOpen">
-  <div class="popup__inner">
-    <button class="popup__close" aria-label="close"></button>
+<div class="popup" *ngIf="isOpen" (click)="close(popUpId)">
+  <div class="popup__inner" (click)="preventClick($event)">
+    <button class="popup__close" (click)="close(popUpId)" aria-label="close"></button>
     <ng-content></ng-content>
   </div>
 </div>
+

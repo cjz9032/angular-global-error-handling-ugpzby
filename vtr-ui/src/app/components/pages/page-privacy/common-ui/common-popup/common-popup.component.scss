@@ -1,0 +1,43 @@
+.popup {
+  $topNavZIndex: 10000;
+  z-index: ($topNavZIndex + 100);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(#0d0d0d, .2);
+
+  &__inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: #fff;
+    max-width: 63rem;
+    width: 100%;
+    padding: 3.5rem 4rem 3rem 4rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.15);
+
+  }
+  &__close {
+    opacity: 0.8;
+    position: absolute;
+    top: 2.3rem;
+    right: 2.3rem;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 2rem;
+    height: 2rem;
+    background: url("/assets/icons/privacy-tab/close-icon.svg") center center no-repeat;
+    background-size: cover;
+    outline: none;
+
+    &:focus,
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
