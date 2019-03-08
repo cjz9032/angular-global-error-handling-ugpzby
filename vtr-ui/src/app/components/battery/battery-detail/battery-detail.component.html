@@ -56,10 +56,10 @@
 						{{ model.temperature }} &#176;C
 					</div>
 					<div class="col-2 p-0 battery-label-text">
-						Device chemistry
+						FRU part number
 					</div>
 					<div class="col-2 p-0 battery-value-text">
-						{{ model.deviceChemistry }}
+						{{ model.fruPartNumber }}
 					</div>
 				</div>
 				<!-- row-3 -->
@@ -77,10 +77,10 @@
 						{{ model.cycleCount }}
 					</div>
 					<div class="col-2 p-0 battery-label-text">
-						Design capacity
+						Device chemistry
 					</div>
 					<div class="col-2 p-0 battery-value-text">
-						{{ model.designCapacity }}
+						{{ model.deviceChemistry }}
 					</div>
 				</div>
 				<!-- row-4 -->
@@ -98,10 +98,10 @@
 						{{ model.manufacturer }}
 					</div>
 					<div class="col-2 p-0 battery-label-text">
-						Design voltage
+						Design capacity
 					</div>
 					<div class="col-2 p-0 battery-value-text">
-						{{ model.designVoltage }} V
+						{{ model.designCapacity }}
 					</div>
 				</div>
 				<!-- row-5 -->
@@ -119,10 +119,10 @@
 						{{ model.manufactureDate }}
 					</div>
 					<div class="col-2 p-0 battery-label-text">
-						Firmware version
+						Design voltage
 					</div>
 					<div class="col-2 p-0 battery-value-text">
-						{{ model.firmwareVersion }}
+						{{ model.designVoltage }} V
 					</div>
 				</div>
 				<!-- row-5 -->
@@ -137,8 +137,12 @@
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.firstUseDate }}
 					</div>
-					<div class="col-2 p-0 battery-label-text"></div>
-					<div class="col-2 p-0 battery-value-text"></div>
+					<div class="col-2 p-0 battery-label-text">
+						Firmware version
+					</div>
+					<div class="col-2 p-0 battery-value-text">
+						{{ model.firmwareVersion }}
+					</div>
 				</div>
 
 				<!-- battery gauge section -->
