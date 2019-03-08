@@ -17,9 +17,7 @@
 				<div class="row">
 					<div class="col-auto text-wrap subtitle">
 						<h3>Intelligent Cooling</h3>
-						<p>This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings
-							to keep the device cooler while being held, and optimizes performance while the device is on
-							a stable surface. When off, you can manually set thermal priority.</p>
+						<p>This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.</p>
 					</div>
 				</div>
 				<ul class="list-group list-group-flush">
@@ -28,7 +26,6 @@
 							[caption]="'Charge USB devices through the Always on USB connector on the computer'"
 							[isSwitchVisible]=true
 							[leftIcon]="['fas', 'search']"
-							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="'Read More'"
 							[showChildContent]="true"
 							[theme]="'blue'"
@@ -62,7 +59,6 @@
 							[caption]="batterySettings[0].subHeader"
 							[isSwitchVisible]=true
 							[leftIcon]="batterySettings[0].leftImageSource"
-							[rightIcon]="batterySettings[0].rightImageSource"
 							[readMoreText]="batterySettings[0].readMoreText"
 							[tooltipText]="batterySettings[0].tooltipText">
 						</vtr-ui-row-switch>
@@ -96,8 +92,6 @@
 							[caption]="batterySettings[2].subHeader"
 							[isSwitchVisible]=true
 							[leftIcon]="batterySettings[2].leftImageSource"
-							[rightIcon]="batterySettings[2].rightImageSource"
-							[readMoreText]="batterySettings[2].readMoreText"
 							[tooltipText]="batterySettings[2].tooltipText">
 						</vtr-ui-row-switch>
 					</li>
@@ -106,7 +100,6 @@
 							[caption]="batterySettings[3].subHeader"
 							[isSwitchVisible]=true
 							[leftIcon]="batterySettings[3].leftImageSource"
-							[rightIcon]="batterySettings[3].rightImageSource"
 							[readMoreText]="batterySettings[3].readMoreText"
 							[tooltipText]="batterySettings[3].tooltipText">
 						</vtr-ui-row-switch>
@@ -151,7 +144,6 @@
 							[caption]="item.subHeader"
 							[isSwitchVisible]=true
 							[leftIcon]="item.leftImageSource"
-							[rightIcon]="item.rightImageSource"
 							[readMoreText]="item.readMoreText">
 						</vtr-ui-row-switch>
 					</li>
