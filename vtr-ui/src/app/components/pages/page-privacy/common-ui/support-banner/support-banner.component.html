@@ -7,6 +7,10 @@
     <p class="support-banner__support-time">
       <strong>24/7</strong> Live Chat
     </p>
-    <button class="support-banner__button">Chat now</button>
+    <button class="support-banner__button" (click)="openPopup('support-popup')">Chat now</button>
+    <button class="support-banner__button" (click)="closePopup('support-popup')">close</button>
   </div>
 </div>
+<vtr-common-popup popUpId="support-popup">
+  <button (click)="closePopup('support-popup')">close</button>
+</vtr-common-popup>
