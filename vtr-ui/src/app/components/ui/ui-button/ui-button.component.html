@@ -3,6 +3,7 @@
 		<button *ngIf="label"
 			type="button"
 			class="button"
+			[ngClass]="{'fullWidth': isFullWidth === true}"
 			(click)="onClickButton($event)">{{label}} </button>
 	</div>
 </div>

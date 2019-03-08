@@ -80,7 +80,7 @@
 	padding: 4rem !important;
 }
 
-@media #{$mediaquery_1} {
+@media #{$mediaquery_4} {
 	.nmx-40 {
 		margin-left: -3.5rem !important;
 		margin-right: -3.5rem !important;
@@ -100,7 +100,7 @@
 	}
 }
 
-@media #{$mediaquery_2} {
+@media #{$mediaquery_5} {
 	.nmx-40 {
 		margin-left: -3rem !important;
 		margin-right: -3rem !important;
@@ -120,7 +120,7 @@
 	}
 }
 
-@media #{$mediaquery_3} {
+@media #{$mediaquery_6} {
 	.nmx-40 {
 		margin-left: -2.5rem !important;
 		margin-right: -2.5rem !important;
@@ -140,7 +140,7 @@
 	}
 }
 
-@media #{$mediaquery_4} {
+@media #{$mediaquery_7} {
 	.nmx-40 {
 		margin-left: -2rem !important;
 		margin-right: -2rem !important;
@@ -160,7 +160,7 @@
 	}
 }
 //Added new media query for max-width:800 where vtr-page-right-column margin-left , margin-top css are added to fix VAN-1049 issue.
-@media #{$mediaquery_5} {
+@media #{$mediaquery_8} {
 	.vtr-page-right-column {
 		margin-left: 4.2rem;
 		margin-top: 4rem;
@@ -170,6 +170,7 @@
 // override for bootstrap modal size
 .battery-modal-size .modal-dialog {
 	max-width: 150rem;
+	top: 8rem;
 }
 
 // feedback modal start:

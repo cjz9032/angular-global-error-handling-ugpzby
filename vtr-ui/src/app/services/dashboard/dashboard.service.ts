@@ -3,39 +3,61 @@
 
 import { Injectable } from '@angular/core';
 
-import * as DashboardBridge from '@lenovo/tan-client-bridge/src/features/dashboard-feature';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class DashboardService {
-	private dashboardBridge: DashboardBridge.default;
-
-	constructor() {
-		this.dashboardBridge = new DashboardBridge.default();
+	private dashboard: any;
+	public isShellAvailable = false;
+	constructor(shellService: VantageShellService) {
+		this.dashboard = shellService.getDashboard();
+		if (this.dashboard) {
+			this.isShellAvailable = true;
+		}
 	}
 
-	public getFeedbackUrl(): string {
-		return this.dashboardBridge.feedbackLink;
+	public getMicrophoneStatus(): Promise<FeatureStatus> {
+		if (this.dashboard) {
+			return this.dashboard.getMicphoneStatus();
+		}
+		return undefined;
 	}
 
-	// public getMicrophoneStatus(): Promise<FeatureStatus> {
-	// 	// return Promise.resolve(null);
-	// 	return this.dashboardBridge.getMicphoneStaus();
-	// }
+	public setMicrophoneStatus(value: boolean): Promise<boolean> {
+		if (this.dashboard) {
+			return this.dashboard.setMicphoneStatus(value);
+		}
+		return undefined;
+	}
 
-	// public setMicrophoneStatus(value: boolean): Promise<boolean> {
-	// 	return this.dashboardBridge.setMicphoneStatus(value);
-	// }
+	public getCameraStatus(): Promise<FeatureStatus> {
+		if (this.dashboard) {
+			return this.dashboard.getCameraStatus();
+		}
+		return undefined;
+	}
 
-	// public getCameraStatus(): Promise<FeatureStatus> {
-	// 	// return Promise.resolve(null);
-	// 	return this.dashboardBridge.getCamaraStatus();
-	// }
+	public setCameraStatus(value: boolean): Promise<boolean> {
+		if (this.dashboard) {
+			return this.dashboard.setCameraStatus(value);
+		}
+		return undefined;
+	}
 
-	// public setCameraStatus(value: boolean): Promise<boolean> {
-	// 	// return Promise.resolve(null);
-	// 	return this.dashboardBridge.setCamaraStatus(value);
-	// }
+	public getEyeCareMode(): Promise<FeatureStatus> {
+		if (this.dashboard) {
+			return this.dashboard.getEyecareMode();
+		}
+		return undefined;
+	}
+
+	public setEyeCareMode(value: boolean): Promise<boolean> {
+		if (this.dashboard) {
+			return this.dashboard.setEyecareMode(value);
+		}
+		return undefined;
+	}
 }

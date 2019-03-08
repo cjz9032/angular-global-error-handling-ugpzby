@@ -7,6 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class UiButtonComponent implements OnInit {
 	@Input() label: string;
+	@Input() isFullWidth: boolean;
 	@Output() onClick = new EventEmitter<any>();
 
 	constructor() { }
