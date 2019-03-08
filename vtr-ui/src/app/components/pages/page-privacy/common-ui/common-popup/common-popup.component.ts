@@ -31,6 +31,14 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 		this.commonPopupService.remove(this.popUpId);
 	}
 
+	openPopup() { // not work now
+		this.commonPopupService.open(this.popUpId);
+	}
+
+	closePopup() {
+		this.commonPopupService.close(this.popUpId);
+	}
+
 	open() {
 		this.isOpen = true;
 	}
