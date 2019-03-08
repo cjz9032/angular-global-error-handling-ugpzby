@@ -49,6 +49,18 @@
 				font-size: 1.4rem;
 				line-height: 2.1rem;
 			}
+
+			.text {
+				font-size: 1.5rem;
+				line-height: 2.1rem;
+			}
+
+			.date {
+				color: $go_dark;
+				font-size: 1.6rem;
+				font-weight: bold;
+				line-height: 3rem;
+			}
 		}
 	}
 
@@ -90,8 +102,10 @@
 			}
 		}
 	}
+
 	.description {
 		margin-top: 5rem;
+
 		.title {
 			color: $dark;
 			font-size: 3.5rem;

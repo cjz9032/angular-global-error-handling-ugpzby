@@ -15,8 +15,42 @@ export class QaService {
 			title: 'Backup and Restore your files',
 			like: false,
 			dislike: false,
-			description: `<p style="text-align: left;"><b><span style="font-size: 25.5pt;color: black;">Back up and restore your files</span></b></p><p style="text-align: left;"><!--[if mso & !supportInlineShapes & supportFields]><span style='mso-element:field-begin;mso-field-lock:yes'></span><span style='mso-spacerun:yes'> </span>SHAPE <span style='mso-spacerun:yes'> </span>\\* MERGEFORMAT <span style='mso-element:field-separator'></span><![endif]--><!--[if gte vml 1]><v:rect  id="矩形_x0020_2" o:spid="_x0000_s1026" alt="Content provided by Microsoft"  style='width:24pt;height:24pt;visibility:visible;mso-wrap-style:square;  mso-left-percent:-10001;mso-top-percent:-10001;mso-position-horizontal:absolute;  mso-position-horizontal-relative:char;mso-position-vertical:absolute;  mso-position-vertical-relative:line;mso-left-percent:-10001;mso-top-percent:-10001;  v-text-anchor:top' o:gfxdata="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 iTTTbkhUpLNbYPiMK5xPtfrVwUqTzSDdwyg48cZ0xh8gKLFmu6oCGBABB0DVLJoBgQPNksgW9bfU mHLaNU8UdQ1lckTTCOUdxSTzDK6pvHRH35UxMO7yOUNAjZDkjXAcqgZrBtXqpmXXyHxY23XPV1KR M0hz0TMtVlFd081i1ghFG1iK5dWavOFVEWLgNLPDZ9S9TLlbBdctrRPKLgEBL+Pn6LoXaAiGa4vB LNeUx6s0rDg7l9q9o5jgOa5dpEkYrN8qzC7FrewRzuFAeKXOD3rLVQuiabGu1JF2fZw4RKk3Dqsd Hz4QwNHEU7iCTww+yGpKVlMyuILvBtAussP+jp9fFBJ4nklKTL2Q1AtMo5A0CkmzkDQLSauQtHxP n4rDlxh1IO57xaE39LD8kDxfW9hfcHb+AQAA//8DAFBLAwQUAAYACAAAACEAnGZGQbsAAAAkAQAA KgAAAGNsaXBib2FyZC9kcmF3aW5ncy9fcmVscy9kcmF3aW5nMS54bWwucmVsc4SPzQrCMBCE74Lv EPZu0noQkSa9iNCr1AcIyTYtNj8kUezbG+hFQfCyMLPsN7NN+7IzeWJMk3ccaloBQae8npzhcOsv uyOQlKXTcvYOOSyYoBXbTXPFWeZylMYpJFIoLnEYcw4nxpIa0cpEfUBXNoOPVuYio2FBqrs0yPZV dWDxkwHii0k6zSF2ugbSL6Ek/2f7YZgUnr16WHT5RwTLpRcWoIwGMwdKV2edNS1dgYmGff0m3gAA AP//AwBQSwECLQAUAAYACAAAACEAu+VIlAUBAAAeAgAAEwAAAAAAAAAAAAAAAAAAAAAAW0NvbnRl bnRfVHlwZXNdLnhtbFBLAQItABQABgAIAAAAIQCtMD/xwQAAADIBAAALAAAAAAAAAAAAAAAAADYB AABfcmVscy8ucmVsc1BLAQItABQABgAIAAAAIQDgNk4NAgMAAJsGAAAfAAAAAAAAAAAAAAAAACAC AABjbGlwYm9hcmQvZHJhd2luZ3MvZHJhd2luZzEueG1sUEsBAi0AFAAGAAgAAAAhAAdUbr9VBgAA DRoAABoAAAAAAAAAAAAAAAAAXwUAAGNsaXBib2FyZC90aGVtZS90aGVtZTEueG1sUEsBAi0AFAAG AAgAAAAhAJxmRkG7AAAAJAEAACoAAAAAAAAAAAAAAAAA7AsAAGNsaXBib2FyZC9kcmF3aW5ncy9f cmVscy9kcmF3aW5nMS54bWwucmVsc1BLBQYAAAAABQAFAGcBAADvDAAAAAA= " filled="f" stroked="f">  <o:lock v:ext="edit" aspectratio="t"></o:lock>  <w:wrap type="none"></w:wrap>  <w:anchorlock></w:anchorlock> </v:rect><![endif]--><!--[if gte vml 1]><v:shapetype id="_x0000_t75"  coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"  filled="f" stroked="f">  <v:stroke joi style="miter"></v:stroke>  <v:formulas>   <v:f eqn="if lineDrawn pixelLineWidth 0"></v:f>   <v:f eqn="sum @0 1 0"></v:f>   <v:f eqn="sum 0 0 @1"></v:f>   <v:f eqn="prod @2 1 2"></v:f>   <v:f eqn="prod @3 21600 pixelWidth"></v:f>   <v:f eqn="prod @3 21600 pixelHeight"></v:f>   <v:f eqn="sum @0 0 1"></v:f>   <v:f eqn="prod @6 1 2"></v:f>   <v:f eqn="prod @7 21600 pixelWidth"></v:f>   <v:f eqn="sum @8 21600 0"></v:f>   <v:f eqn="prod @7 21600 pixelHeight"></v:f>   <v:f eqn="sum @10 21600 0"></v:f>  </v:formulas>  <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"></v:path>  <o:lock v:ext="edit" aspectratio="t"></o:lock> </v:shapetype><![endif]--><!--[if mso & !supportInlineShapes & supportFields]><v:shape  id="_x0000_i1028" type="#_x0000_t75" style='width:24pt;height:24pt'>  <v:imagedata croptop="-65520f" cropbottom="65520f"></v:imagedata> </v:shape><span style='mso-element:field-end'></span><![endif]--><span style="font-size: 11.5pt;color: black;"></span></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">It's always good to have a backup. Keep copies of your files on another drive in case something happens to the originals.</span></p><p style="text-align: left;"><b><span style="font-size: 18.0pt;color: black;">Set up your backup</span></b></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">Select the <b>Start</b>​  button, select <b>Settings</b>  &gt; <b>Update &amp; security</b>  &gt; <b>Backup</b>  &gt; <b>Add a drive</b>, and then choose an external drive or network location for your backups.</span></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;"><!--[if gte vml 1]><v:shape id="图片_x0020_1" o:spid="_x0000_i1027"  type="#_x0000_t75" alt="Backup settings page" style='width:390pt;height:197.25pt;  visibility:visible;mso-wrap-style:square'>  <v:imagedata src="file:///C:/Users/Vikas.Bansal/AppData/Local/Packages/oice_16_974fa576_32c1d314_391e/AC/Temp/msohtmlclip1/01/clip_image001.png"   o:title="Backup settings page"></v:imagedata> </v:shape><![endif]--><!--[if !vml]--><img width="520" height="263" src="${this.imagePath}/1.1.png" alt="Backup settings page"/><!--[endif]--></span><span style="font-size: 11.5pt;color: black;"></span></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files get backed up or how often backups happen, go to <b>More options</b>.</span></p><h2><span style="color: black;">Restore your files</span></h2><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">If you're missing an important file or folder, here's how to get it back:</span></p><p style="text-align: left;"><!--[if !supportLists]--><span style="font-size: 11.5pt;color: black;">1.<span>    </span></span><!--[endif]--><span style="font-size: 11.5pt;color: black;">Type <b>Restore files</b> in the search box on the taskbar, and then select <b>Restore your files with File History</b>.</span></p><p style="text-align: left;"><!--[if !supportLists]--><span style="font-size: 11.5pt;color: black;">2.<span>    </span></span><!--[endif]--><span style="font-size: 11.5pt;color: black;">Look for the file you need, then use the arrows to see all its versions.</span></p><p style="text-align: left;"><!--[if !supportLists]--><span style="font-size: 11.5pt;color: black;">3.<span>    </span></span><!--[endif]--><span style="font-size: 11.5pt;color: black;">When you find the version you want, select <b>Restore</b> to save it in its original location. To save it in a different place, press and hold (or right-click) <b>Restore</b>, select <b>Restore to</b>, and then choose a new location.</span></p>`
+			description:`<div>
+									<div style="font-size:4rem;font-weight:bold;">
+										Back up and restore your files
+									</div>
+									<hr/>
+									<div style="margin-bottom:7rem;">
+										It's always good to have a backup. Keep copies of your files on another drive in case something happens to the originals.
+									</div>
+									<div style="font-size:3rem;font-weight:bold;">
+										Set up your backup
+									</div>
+									<hr/>
+									<div class="mb-5">
+										Select the <span style="font-weight:bold">Start</span>  button, select <span style="font-weight:bold">Settings</span>    > <span style="font-weight:bold">Update & security</span>    > <span style="font-weight:bold">Backup</span>    > <span style="font-weight:bold">Add a drive</span>  , and then choose an external drive or network location for your backups.
+									</div>
+									<div class="mb-5">
+										<img src="./../../../../assets/images/qa/1.1.png"/>
+									</div>
+									<div class="mb-5">
+										All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files get backed up or how often backups happen, go to <span style="font-weight:bold;">More options</span>.
+									</div>
+									<div  style="font-size:3rem;font-weight:bold;">
+										Restore your files
+									</div>
+									<div class="mb-5">
+										If you're missing an important file or folder, here's how to get it back:
+									</div>
+									<div>
 
+											 <div class="mb-3">1. Type <span style="font-weight:bold;">Restore files</span> in the search box on the taskbar, and then select <span clas="font-weight:bold"> Restore your files with File History</span>.</div>
+										     <div class="mb-3">2. Look for the file you need, then use the arrows to see all its versions</div>
+											 <div class="mb-3">3. When you find the version you want, select <span style="font-weight:bold">Restore</span> to save it in its original location. To save it in a different place, press and hold (or right-click) <span style="font-weight:bold">Restore</span>, select <span style="font-weight:bold">Restore to</span>, and then choose a new location.</div>
+
+									</div>
+
+								</div>`
 		},
 		{
 			id: 2,
@@ -25,8 +59,125 @@ export class QaService {
 			title: 'How to refresh your PC',
 			like: false,
 			dislike: false,
-			description: `<p><span style="font-size: 25.5pt;color: black;"></span></p><p style="text-align: left;"><b><span style="font-size: 25.5pt;color: black;"></span></b></p><p><span style="font-size: 25.5pt;color: black;"></span></p><p><span style="font-size: 25.5pt;color: black;"></span></p><p style="text-align: left;"><a><span style="font-size: 22.5pt;color: #009dd9;">Back</span></a><span style="font-size: 22.5pt;color: #333333;"> </span></p><p style="text-align: left;"><span style="font-size: 18.0pt;color: #333333;">Symptom</span></p><p style="text-align: left;"><span style="color: #333333;">If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings. Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files.</span></p><p style="text-align: left;"><span style="color: #333333;">Refresh your PC, Here is what will happen: your files and personalized settings won’t change</span></p><p style="text-align: left;"><!--[if !supportLists]--><span style="font-size: 10.0pt;color: #333333;">·<span>         </span></span><!--[endif]--><span style="color: #333333;">Your PC settings will be changed back to its defaults</span></p><p style="text-align: left;"><!--[if !supportLists]--><span style="font-size: 10.0pt;color: #333333;">·<span>         </span></span><!--[endif]--><span style="color: #333333;">Apps from windows store will be kept</span></p><p style="text-align: left;"><!--[if !supportLists]--><span style="font-size: 10.0pt;color: #333333;">·<span>         </span></span><!--[endif]--><span style="color: #333333;">Apps you installed from disc or website will be removed</span></p><p style="text-align: left;"><!--[if !supportLists]--><span style="font-size: 10.0pt;color: #333333;">·<span>         </span></span><!--[endif]--><span style="color: #333333;">A list of removed files will be saved on your desktop</span></p><p style="text-align: left;"><span style="font-size: 18.0pt;color: #333333;">Affected Brands</span></p><p style="text-align: left;"><!--[if !supportLists]--><span style="font-size: 10.0pt;color: #333333;">·<span>         </span></span><!--[endif]--><span style="color: #333333;">All Desktop and Laptops</span></p><p style="text-align: left;"><span style="font-size: 18.0pt;color: #333333;">Operating System</span></p><p style="text-align: left;"><!--[if !supportLists]--><span style="font-size: 10.0pt;color: #333333;">·<span>         </span></span><!--[endif]--><span style="color: #333333;">Windows 8, 8.1 &amp; 10</span></p><p style="text-align: left;"><span style="font-size: 18.0pt;color: #333333;">Solution</span></p><p style="text-align: left;"><b><u><span style="color: #333333;">Windows 8/8.1</span></u></b><span style="color: #333333;"></span></p><p style="text-align: left;"><span style="color: #333333;">1. Tap or click </span><b><span style="color: #333333;">Settings</span></b><span style="color: #333333;"></span></p><p style="text-align: left;"><span style="color: #333333;">2. Tap or click </span><b><span style="color: #333333;">Update and recovery</span></b><span style="color: #333333;"></span></p><p style="text-align: left;"><span style="color: #333333;">3. Tap or click </span><b><span style="color: #333333;">Recovery</span></b><span style="color: #333333;"></span></p><p style="text-align: left;"><span style="color: #333333;">Under Refresh your PC without affecting your files, tap or click </span><b><span style="color: #333333;">Get started.</span></b></p><p style="text-align: left;"><b></b></p><p><b><img src="${this.imagePath}/2.1.png"/><br/></b></p><p><b><br/></b></p><p></p><p style="text-align: left;">                                                  <span style="color: #333333;"></span></p><p style="text-align: left;"><span style="color: #333333;">4. Click &#34;</span><b><span style="color: #333333;">Next&#34;.</span></b><span style="color: #333333;"></span></p><p style="text-align: left;"><span style="color: #333333;">5. Click</span><b><span style="color: #333333;"> &#34;Refresh&#34;</span></b><span style="color: #333333;"> to start the refresh process.</span></p><p style="text-align: left;"><span style="color: #333333;">6. Once the refresh process is done, you can find a Removed Apps list on the desktop.</span></p><p style="text-align: left;"><span style="color: #333333;">7. You can find the removed apps while refreshing your system</span></p><p style="text-align: left;"><b><u><span style="color: #333333;">Windows 10</span></u></b><span style="color: #333333;"></span></p><p style="text-align: left;"><span style="color: #333333;">1. Search for</span><b><span style="color: #333333;"> refresh</span></b><span style="color: #333333;"> in the search tool available in the </span><b><span style="color: #333333;">Start menu</span></b><span style="color: #333333;">,</span></p><p style="text-align: left;"><span style="color: #333333;">2. Click on </span><b><span style="color: #333333;">&#34;Refresh your PC without affecting your files</span></b><span style="color: #333333;">&#34; in the search results as shown below.</span></p><p style="text-align: left;"></p><p><img src="${this.imagePath}/2.2.jpg"/>​</p><p></p><p style="text-align: left;">   <span style="color: #333333;"></span></p><p style="text-align: left;"><span style="color: #333333;">3. Click on the</span><strong><span style="color: #333333;"> Get started </span></strong><span style="color: #333333;">button just below the heading</span><strong><span style="color: #333333;"> &#34;Refresh your PC without affecting your files&#34; </span></strong><span style="color: #333333;">to start refreshing your Windows 10 PC.</span></p><p style="text-align: left;"></p><p><img src="${this.imagePath}/2.3.jpg"/>​</p><p></p><p style="text-align: left;">   <span style="color: #333333;"></span></p><h3><span style="color: #333333;">Additional Information</span></h3><p><span style="font-size: 10.5pt;color: #333333;">In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.</span></p><p><span style="font-size: 10.5pt;color: #333333;">If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support.</span></p><p style="text-align: left;"><span style="color: #333333;"></span></p><p></p><p style="text-align: left;"><span style="color: #333333;">   </span><span style="color: #333333;"></span></p><ul type="disc"> </ul><ul type="disc"> </ul><p style="text-align: left;"><span style="font-size: 10.0pt;color: black;"></span></p><ul type="disc"> </ul><p style="text-align: left;"><span style="color: #333333;">   </span><span style="color: #333333;"></span></p><p style="text-align: left;"><span style="color: #333333;"></span></p>`
+		    description:`<div>
+										<div style="font-size:2.5rem;font-weight:bold;padding:5px 0;">
+											Symptom
+										</div>
+										<div style="padding:5px 0;">
+											If your PC isn't performing as well as it once did, and you don't know why,
+											you can refresh your PC without deleting any of your personal files or
+											changing your settings. Windows can “refresh” your PC so it’s more like a
+											fresh install without deleting your personal files.
+										</div>
+										<div style="padding:5px 0;">
+											Refresh your PC, Here is what will happen: your files and personalized
+											settings won’t change
+										</div>
+										<div style="padding:5px 0;">
+											<ul>
+												<li>Your PC settings will be changed back to its defaults</li>
+												<li>Apps from windows store will be kept</li>
+												<li>Apps you installed from disc or website will be removed</li>
+												<li>A list of removed files will be saved on your desktop</li>
+											</ul>
+										</div>
 
+
+										<div style="font-size:2.5rem;font-weight:bold;padding:10px 0;">
+											Affected Brands
+										</div>
+
+										<div>
+											<ul>
+												<li>All Desktop and Laptops</li>
+
+											</ul>
+										</div>
+
+										<div style="font-size:2.5rem;font-weight:bold;padding:10px 0;">
+											Operation System
+										</div>
+
+										<div>
+											<ul>
+												<li>Windows 8, 8.1 & 10</li>
+
+											</ul>
+										</div>
+
+										<div style="font-size:2.5rem;font-weight:bold;padding:10px 0;">
+											Solution
+										</div>
+
+										<div>
+											<ul class="list-unstyled">
+												<li>
+													<span style="text-decoration: underline;padding:10px 0;font-weight: bold">Windows 8/8.1</span>
+													<ol>
+														<li style="padding:5px 0;">
+															Tap or click <span style="font-weight:bold;"> Settings </span>
+														</li>
+
+														<li style="padding:5px 0;">
+															Tap or click <span style="font-weight:bold;"> Update and recovery</span>
+														</li>
+
+														<li style="padding:5px 0;">
+															<div>Tap or click <span style="font-weight:bold;">  Recovery</span></div>
+															<div style="padding:5px 0">Under Refresh your PC without affecting your files, tap or click <span style="font-weight:bold;"> Get started.</span></div>
+															<div><img src="./../../../../assets/images/qa/2.1.png"/></div>
+
+														</li>
+
+														<li style="padding:5px 0;">
+															Click <span style="font-weight:bold;">  "Next"</span>.
+														</li>
+
+														<li style="padding:5px 0;">
+															Click <span style="font-weight:bold;"> "Refresh" </span>to start the refresh process.
+														</li>
+														<li style="padding:5px 0;">
+															Once the refresh process is done, you can find a Removed Apps list on the desktop
+														</li>
+
+														<li style="padding:5px 0;">
+															You can find the removed apps while refreshing your system
+														</li>
+													</ol>
+												</li>
+												<li style="padding:10px 0;">
+													<span style="text-decoration: underline;font-weight: bold">Windows 10</span>
+													<ol>
+														<li style="padding:5px 0;"> Search for <span style="font-weight:bold;"> refresh </span>in the search tool available in the Start menu,</li>
+														<li style="padding:5px 0;"><div>Click on <span style="font-weight:bold;"> "Refresh your PC without affecting your files"</span> in the search results as shown below.</div>
+														 <div><img src="./../../../../assets/images/qa/2.2.jpg"/></div>
+														</li>
+														<li style="padding:5px 0;">
+															<div>Click on the <span style="font-weight:bold;"> Get started </span>button just below the heading<span style="font-weight:bold;">  "Refresh your PC without affecting your files"</span> to start refreshing your Windows 10 PC.</div>
+														 <div><img src="./../../../../assets/images/qa/2.3.jpg"/></div>
+														</li>
+													</ol>
+												</li>
+											</ul>
+										</div>
+
+										<div style="font-size:2.5rem;font-weight:bold;">
+											Additional Information
+										</div>
+
+										<div>
+											In most cases, once you start to refresh your PC, it’ll finish on its own.
+											However, if Windows needs missing files, you’ll be asked to insert recovery
+											media, which is typically a DVD disc or thumb drive. If that happens, what
+											you’ll need depends on your PC.
+										</div>
+										<div style="padding:10px 0">
+											If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use
+											that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact
+											Microsoft Support.
+										</div>
+
+									</div>`
 		},
 		{
 			id: 3,
@@ -35,8 +186,39 @@ export class QaService {
 			title: 'How to know your machine"s CPU',
 			like: false,
 			dislike: false,
-			description: `<h2><span style="color: #333333;"><a><span style="color: #009dd9;">Back</span></a> </span></h2><h3><span style="color: #333333;">Symptom</span></h3><p><span style="font-size: 10.5pt;color: #333333;">The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.</span></p><h3><span style="color: #333333;">Affected Brands</span><span style="font-size: 18.0pt;color: #333333;"></span></h3><p><span style="font-size: 10.5pt;color: #333333;">The above symptom is associated with, but not limited to, the following systems:</span></p><ul type="disc">  <li style="color: #333333;text-align: left;">All Desktop and      Laptops</li> </ul><h3><span style="color: #333333;">Operating System</span><span style="font-size: 18.0pt;color: #333333;"></span></h3><ul type="disc">  <li style="color: #333333;text-align: left;">Windows 7 , 8 , 10</li> </ul><h3><span style="color: #333333;">Solution</span><span style="font-size: 18.0pt;color: #333333;"></span></h3><p><strong><u><span style="font-size: 10.5pt;color: #333333;">Windows 7 or Vista</span></u></strong><span style="font-size: 10.5pt;color: #333333;"></span></p><p><strong><u><span style="font-size: 10.5pt;color: #333333;">Windows 8 and Windows 10</span></u></strong><span style="font-size: 10.5pt;color: #333333;"></span></p><p><strong><span style="font-size: 10.5pt;color: #333333;">Method 1:</span></strong><span style="font-size: 10.5pt;color: #333333;"> View the System window in Control Panel</span></p><p><strong><span style="font-size: 10.5pt;color: #333333;">Method 2</span></strong><span style="font-size: 10.5pt;color: #333333;">: View the System Information window</span></p><p style="text-align: left;"><span style="color: #333333;"></span></p>`
-
+			description:`<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Symptom</h3>
+<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.</p>
+<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Affected Brands</h3>
+<p>The above symptom is associated with, but not limited to, the following systems:</p>
+<ul>
+<li>All Desktop and Laptops</li>
+</ul>
+<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Operating System</h3>
+<ul>
+<li>Windows 7 , 8 , 10</li>
+</ul>
+<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Solution</h3>
+<p><strong><u>Windows 7 or Vista</u></strong></p>
+<ol>
+<li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button,</strong> right-clicking Computer, and then clicking Properties&nbsp;&nbsp;</li>
+<li>Under System, you can view the system type.</li>
+</ol>
+<p><strong><u>Windows 8 and Windows 10</u></strong></p>
+<p><strong>Method 1:</strong> View the System window in Control Panel</p>
+<ol>
+<li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>. Or, if you are using a mouse, point to the lower-right corner of the screen, and then click <strong>Search.</strong></li>
+<li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>
+<li>Tap or click <strong>System</strong></li>
+<li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong> is displayed in the System type field under the System heading. If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong> <strong>32-bit Operating </strong>System is displayed in the System type field under the System heading.<br /> &nbsp;</li>
+</ol>
+<p><strong>Method 2</strong>: View the System Information window</p>
+<ol>
+<li>Swipe in from the right edge of the screen, and then tap&nbsp;<strong>Search</strong>. Or, if you are using a mouse, point to the lower-right corner of the screen, and then click&nbsp;<strong>Search.</strong></li>
+<li>In the search box, type&nbsp;<strong>system information</strong></li>
+<li>Tap or click<strong>&nbsp;System</strong>, tap or click&nbsp;<strong>System Information,</strong> and then click&nbsp;<strong>System Summary.</strong></li>
+<li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>,&nbsp;</strong>x64-based PC&nbsp;is displayed in the&nbsp;<strong>System type</strong>&nbsp;field under the&nbsp;Item&nbsp;heading.&nbsp;<br /> <br /> If you are running a<strong> 32-bit</strong> version of Windows 8,&nbsp;x86-based PC&nbsp;is displayed in the&nbsp;<strong>System type</strong>&nbsp;field under the&nbsp;Item&nbsp;heading. &nbsp;</li>
+</ol>
+<p>&nbsp;</p>`
 		},
 		{
 			id: 4,
@@ -45,8 +227,38 @@ export class QaService {
 			title: 'Check your machine"s battery use',
 			like: false,
 			dislike: false,
-			description: `<p><span style="font-size: 25.5pt;color: black;"></span></p><p style="text-align: left;"><b><span style="font-size: 25.5pt;color: black;"></span></b></p><p><span style="font-size: 25.5pt;color: black;"></span></p><p><span style="font-size: 25.5pt;color: black;"></span></p><p style="text-align: left;"><span style="font-size: 18.0pt;color: #ff6a00;">Symptom</span></p><p style="text-align: left;"><span style="color: #333333;">Windows 10 includes a new “</span><b><span style="color: #333333;">Battery Use”</span></b><span style="color: #333333;"> screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power.</span></p><p style="text-align: left;"><span style="font-size: 18.0pt;color: #ff6a00;">Affected Brands</span></p><p style="text-align: left;"><!--[if !supportLists]--><span style="font-size: 10.0pt;color: #333333;">·<span>         </span></span><!--[endif]--><span style="color: #333333;">Lenovo laptops, desktops</span></p><p style="text-align: left;"><span style="font-size: 18.0pt;color: #ff6a00;">Affected Systems</span></p><p style="text-align: left;"><!--[if !supportLists]--><span style="font-size: 10.0pt;color: #333333;">·<span>         </span></span><!--[endif]--><span style="color: #333333;">All</span></p><p style="text-align: left;"><span style="font-size: 18.0pt;color: #ff6a00;">Operating System</span></p><p style="text-align: left;"><!--[if !supportLists]--><span style="font-size: 10.0pt;color: #333333;">·<span>         </span></span><!--[endif]--><span style="color: #333333;">Window 10</span></p><p style="text-align: left;"><span style="font-size: 18.0pt;color: #ff6a00;">Solution</span></p><p style="text-align: left;"><span style="color: #333333;">This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional </span><b><span style="color: #333333;">control panel </span></b><span style="color: #333333;">view, this feature is located in the new </span><b><span style="color: #333333;">“Settings”</span></b><span style="color: #333333;"> app</span></p><p style="text-align: left;"><span style="color: #333333;"><br/> <!--[if !supportLineBreakNewLine]--><br/> <!--[endif]--></span></p><p style="text-align: left;"><span style="font-size: 18.0pt;color: #ff6a00;">A. Find the Battery Use Screen</span></p><p style="text-align: left;"><span style="color: #333333;">1. Click or Tap the </span><b><span style="color: #333333;">“Settings</span></b><span style="color: #333333;">” option from the start menu</span></p><p style="text-align: left;"><span style="color: #333333;">2. In </span><b><span style="color: #333333;">Settings </span></b><span style="color: #333333;">select </span><b><span style="color: #333333;">“System”</span></b><span style="color: #333333;"> and then select </span><b><span style="color: #333333;">“Battery saver.”<br/> <br/> </span></b><b><span style="color: #333333;">                                                  </span></b><b><span style="color: #333333;"></span></b></p><div><b>​ <!--[if !supportLineBreakNewLine]--><br/> <!--[endif]--><img src="${this.imagePath}/4.1.jpg"/></b></div><p><span style="color: #333333;"></span></p><p></p><p style="text-align: left;"><span style="color: #333333;">3. Click or tap the </span><b><span style="color: #333333;">“Battery use”</span></b><span style="color: #333333;"> link under this heading to see more details.</span></p><p style="text-align: left;"><span style="color: #333333;"></span></p><p style="text-align: left;"><span style="font-size: 18.0pt;color: #ff6a00;">B. Analyze Your Power Usage</span></p><p style="text-align: left;"><span style="color: #333333;">4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week</span></p><p style="text-align: left;"><span style="color: #333333;">5 </span><b><span style="color: #333333;">“System,”</span></b><span style="color: #333333;"> “</span><b><span style="color: #333333;">Display,</span></b><span style="color: #333333;">” and “</span><b><span style="color: #333333;">Wi-Fi”</span></b><span style="color: #333333;"> percentages. This shows how much battery power has been used by system processes, the display,</span></p><p style="text-align: left;"><span style="color: #333333;">6 The </span><b><span style="color: #333333;">“In use”</span></b><span style="color: #333333;"> and </span><b><span style="color: #333333;">“Background”</span></b><span style="color: #333333;"> options show how much power is used by applications while you’re using them, compared to applications running in the background.</span></p><p style="text-align: left;"><span style="color: #333333;">7 If apps are using power in the background, you can click or tap the </span><b><span style="color: #333333;">“Change background app settings” </span></b><span style="color: #333333;">link and configure apps to not run in the background. This only works for universal Windows 10 apps.</span></p><p style="text-align: left;"><span style="color: #333333;">8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used</span></p><p style="text-align: left;"></p><p><br/></p><p><img src="${this.imagePath}/4.2.jpg"/>​</p><p></p><p style="text-align: left;"><span style="color: #333333;">   </span><span style="color: #333333;"></span></p><ul type="disc"> </ul><ul type="disc"> </ul><p style="text-align: left;"><span style="font-size: 10.0pt;color: black;"></span></p><ul type="disc"> </ul><p style="text-align: left;"><span style="color: #333333;">   </span><span style="color: #333333;"></span></p><p style="text-align: left;"><span style="color: #333333;"></span></p>`
+		  description:`<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Symptom</h3>
+<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong>&nbsp;screen that shows you what&rsquo;s draining your laptop&rsquo;s juice. That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo; apps&ndash;are using too much power.</p>
+<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Affected Brands</h3>
 
+<ul>
+<li>Lenovo laptops, desktops</li>
+</ul>
+<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Affected Systems</h3>
+<ul>
+<li>All</li>
+</ul>
+<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Operationg System</h3>
+<ul>
+<li>Window 10</li>
+</ul>
+<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Solution</h3>
+<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional&nbsp;<strong>control panel&nbsp;</strong>view, this feature is located in the new&nbsp;<strong>&ldquo;Settings&rdquo;</strong>&nbsp;app</p>
+<p><br /> </p>
+<p> <h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">A. Find the Battery Use Screen</h3></p>
+<p>1. Click or Tap the&nbsp;<strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>
+<p>2. In&nbsp;<strong>Settings&nbsp;</strong>select&nbsp;<strong>&ldquo;System&rdquo;</strong>and then select&nbsp;<strong>&ldquo;Battery saver.&rdquo;<br /> <br /> </strong> <strong><br /> <br /> </strong></p>
+<p><img src="./../../../assets/images/qa/4.1.jpg"/></p>
+<p>3. Click or tap the&nbsp;<strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>
+<p>&nbsp;</p>
+<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">B. Analyze Your Power Usage</h3>
+<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week</p>
+<p>5 <strong>&ldquo;System,&rdquo;</strong>&nbsp;&ldquo;<strong>Display,</strong>&rdquo; and &ldquo;<strong>Wi-Fi&rdquo;</strong>&nbsp;percentages. This shows how much battery power has been used by system processes, the display,</p>
+<p>6 The&nbsp;<strong>&ldquo;In use&rdquo;</strong>&nbsp;and&nbsp;<strong>&ldquo;Background&rdquo;</strong>&nbsp;options show how much power is used by applications while you&rsquo;re using them, compared to applications running in the background.</p>
+<p>7 If apps are using power in the background, you can click or tap the&nbsp;<strong>&ldquo;Change background app settings&rdquo;&nbsp;</strong>link and configure apps to not run in the background. This only works for universal Windows 10 apps.</p>
+<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used</p>
+<p><img src="./../../../assets/images/qa/4.2.jpg"/></p>
+<p>&nbsp;</p>`
 		},
 		{
 			id: 5,
@@ -55,8 +267,30 @@ export class QaService {
 			title: 'Use your PC like a tablet',
 			like: false,
 			dislike: false,
-			description: `<p><span style="font-size: 25.5pt;color: black;"></span></p><p style="text-align: left;"><b><span style="font-size: 25.5pt;color: black;"></span></b></p><p><span style="font-size: 25.5pt;color: black;"></span></p><p><span style="font-size: 25.5pt;color: black;"></span></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</span></p><p style="text-align: left;"><b><span style="font-size: 13.5pt;color: black;">Use tablet mode</span></b></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">To turn on tablet mode, select <b>action center</b> on the taskbar, then select <b>Tablet mode</b> .</span></p><p style="text-align: left;"></p><p><br/></p><p><img src="${this.imagePath}/5.1.jpg"/>​</p><p></p><p>                                                  </p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">Note</span></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer. </span></p><p><span style="font-size: 11.5pt;color: black;">In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.</span></p><p><span style="font-size: 11.5pt;color: black;"></span></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">Tip</span></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen. Select the <b>Start </b>button, select <b>Settings </b>&gt; <b>System </b>&gt; <b>Tablet mode </b>, then turn on <b>Automatically hide the taskbar in tablet mode</b>. To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</span></p><p style="text-align: left;"><b><span style="font-size: 13.5pt;color: black;">Use two apps simultaneously</span></b></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.</span></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">In this view, you can also:</span></p><ul type="disc">  <li style="color: black;text-align: left;"><span style="font-size: 11.5pt;">Use the shared edge between two snapped apps to      resize both apps at the same time.</span></li>  <li style="color: black;text-align: left;"><span style="font-size: 11.5pt;">Open a new app from task view—select <b>Task      view</b> on the taskbar, select an app, then drag it to one side to snap      it into your divided screen.</span></li>  <li style="color: black;text-align: left;"><span style="font-size: 11.5pt;">Use the back button on the taskbar to go back in an      app, or to open an app that you were using before.</span></li> </ul><ul type="disc"> </ul><p style="text-align: left;"><span style="font-size: 10.0pt;color: black;"></span></p><ul type="disc"> </ul><p style="text-align: left;"><span style="color: #333333;">   </span><span style="color: #333333;"></span></p><p style="text-align: left;"><span style="color: #333333;"></span></p>`
+		   description:`<p>&nbsp;</p>
+<p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>
 
+<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Use tablet mode</h3>
+<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar,&nbsp;then select <strong>Tablet mode</strong> .</p>
+<p>&nbsp;</p>
+<p><img src="./../../../assets/images/qa/5.1.jpg"/></p>
+<p>Note</p>
+<p>To find out if your device&nbsp;can automatically turn on tablet mode, search for your device&nbsp;on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.&nbsp;</p>
+<p>&nbsp;</p>
+<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.</p>
+<p>&nbsp;</p>
+<p>Tip</p>
+<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen. Select the <strong>Start </strong>button, select <strong>Settings </strong>&gt; <strong>System </strong>&gt; <strong>Tablet mode </strong>,&nbsp;then turn on <strong>Automatically hide the taskbar in tablet mode</strong>. To see the hidden taskbar, swipe up from the bottom of the screen, or use your&nbsp;mouse to hover there.</p>
+
+<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Use two apps simultaneously</h3>
+<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps&nbsp;next to it.</p>
+<p>In this view, you can also:</p>
+<ul>
+<li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>
+<li>Open a&nbsp;new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then drag it to one side to snap it into your divided screen.</li>
+<li>Use the back button on the taskbar to go back in an app, or to open an&nbsp;app that you were using before.</li>
+</ul>
+<p>&nbsp;</p>`
 		},
 		{
 			id: 6,
@@ -65,8 +299,40 @@ export class QaService {
 			title: 'Get to know Cortona,your personal assistant',
 			like: false,
 			dislike: false,
-			description: `<p><span style="font-size: 25.5pt;color: black;"></span></p><p style="text-align: left;"><b><span style="font-size: 25.5pt;color: black;">What is Cortana?</span></b></p><p style="text-align: left;"><!--[if mso & !supportInlineShapes & supportFields]><span style='mso-element:field-begin;mso-field-lock:yes'></span><span style='mso-spacerun:yes'> </span>SHAPE <span style='mso-spacerun:yes'> </span>\\* MERGEFORMAT <span style='mso-element:field-separator'></span><![endif]--><!--[if gte vml 1]><v:rect  id="矩形_x0020_4" o:spid="_x0000_s1026" alt="Content provided by Microsoft"  style='width:24pt;height:24pt;visibility:visible;mso-wrap-style:square;  mso-left-percent:-10001;mso-top-percent:-10001;mso-position-horizontal:absolute;  mso-position-horizontal-relative:char;mso-position-vertical:absolute;  mso-position-vertical-relative:line;mso-left-percent:-10001;mso-top-percent:-10001;  v-text-anchor:top' o:gfxdata="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 iTTTbkhUpLNbYPiMK5xPtfrVwUqTzSDdwyg48cZ0xh8gKLFmu6oCGBABB0DVLJoBgQPNksgW9bfU mHLaNU8UdQ1lckTTCOUdxSTzDK6pvHRH35UxMO7yOUNAjZDkjXAcqgZrBtXqpmXXyHxY23XPV1KR M0hz0TMtVlFd081i1ghFG1iK5dWavOFVEWLgNLPDZ9S9TLlbBdctrRPKLgEBL+Pn6LoXaAiGa4vB LNeUx6s0rDg7l9q9o5jgOa5dpEkYrN8qzC7FrewRzuFAeKXOD3rLVQuiabGu1JF2fZw4RKk3Dqsd Hz4QwNHEU7iCTww+yGpKVlMyuILvBtAussP+jp9fFBJ4nklKTL2Q1AtMo5A0CkmzkDQLSauQtHxP n4rDlxh1IO57xaE39LD8kDxfW9hfcHb+AQAA//8DAFBLAwQUAAYACAAAACEAnGZGQbsAAAAkAQAA KgAAAGNsaXBib2FyZC9kcmF3aW5ncy9fcmVscy9kcmF3aW5nMS54bWwucmVsc4SPzQrCMBCE74Lv EPZu0noQkSa9iNCr1AcIyTYtNj8kUezbG+hFQfCyMLPsN7NN+7IzeWJMk3ccaloBQae8npzhcOsv uyOQlKXTcvYOOSyYoBXbTXPFWeZylMYpJFIoLnEYcw4nxpIa0cpEfUBXNoOPVuYio2FBqrs0yPZV dWDxkwHii0k6zSF2ugbSL6Ek/2f7YZgUnr16WHT5RwTLpRcWoIwGMwdKV2edNS1dgYmGff0m3gAA AP//AwBQSwECLQAUAAYACAAAACEAu+VIlAUBAAAeAgAAEwAAAAAAAAAAAAAAAAAAAAAAW0NvbnRl bnRfVHlwZXNdLnhtbFBLAQItABQABgAIAAAAIQCtMD/xwQAAADIBAAALAAAAAAAAAAAAAAAAADYB AABfcmVscy8ucmVsc1BLAQItABQABgAIAAAAIQCAP71PAgMAAJsGAAAfAAAAAAAAAAAAAAAAACAC AABjbGlwYm9hcmQvZHJhd2luZ3MvZHJhd2luZzEueG1sUEsBAi0AFAAGAAgAAAAhAAdUbr9VBgAA DRoAABoAAAAAAAAAAAAAAAAAXwUAAGNsaXBib2FyZC90aGVtZS90aGVtZTEueG1sUEsBAi0AFAAG AAgAAAAhAJxmRkG7AAAAJAEAACoAAAAAAAAAAAAAAAAA7AsAAGNsaXBib2FyZC9kcmF3aW5ncy9f cmVscy9kcmF3aW5nMS54bWwucmVsc1BLBQYAAAAABQAFAGcBAADvDAAAAAA= " filled="f" stroked="f">  <o:lock v:ext="edit" aspectratio="t"></o:lock>  <w:wrap type="none"></w:wrap>  <w:anchorlock></w:anchorlock> </v:rect><![endif]--><!--[if gte vml 1]><v:shapetype id="_x0000_t75"  coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"  filled="f" stroked="f">  <v:stroke joi style="miter"></v:stroke>  <v:formulas>   <v:f eqn="if lineDrawn pixelLineWidth 0"></v:f>   <v:f eqn="sum @0 1 0"></v:f>   <v:f eqn="sum 0 0 @1"></v:f>   <v:f eqn="prod @2 1 2"></v:f>   <v:f eqn="prod @3 21600 pixelWidth"></v:f>   <v:f eqn="prod @3 21600 pixelHeight"></v:f>   <v:f eqn="sum @0 0 1"></v:f>   <v:f eqn="prod @6 1 2"></v:f>   <v:f eqn="prod @7 21600 pixelWidth"></v:f>   <v:f eqn="sum @8 21600 0"></v:f>   <v:f eqn="prod @7 21600 pixelHeight"></v:f>   <v:f eqn="sum @10 21600 0"></v:f>  </v:formulas>  <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"></v:path>  <o:lock v:ext="edit" aspectratio="t"></o:lock> </v:shapetype><![endif]--><!--[if mso & !supportInlineShapes & supportFields]><v:shape  id="_x0000_i1031" type="#_x0000_t75" style='width:24pt;height:24pt'>  <v:imagedata croptop="-65520f" cropbottom="65520f"></v:imagedata> </v:shape><span style='mso-element:field-end'></span><![endif]--><span style="font-size: 11.5pt;color: black;"></span></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">Cortana is your digital agent. She'll help you get things done.</span></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">The more you use Cortana, the more personalized your experience will be.</span></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)</span></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.</span></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;"><!--[if gte vml 1]><v:shape id="图片_x0020_3" o:spid="_x0000_i1030"  type="#_x0000_t75" alt="Image of Cortana Home" style='width:5in;height:5in;  visibility:visible;mso-wrap-style:square'>  <v:imagedata src="file:///C:/Users/Vikas.Bansal/AppData/Local/Packages/oice_16_974fa576_32c1d314_391e/AC/Temp/msohtmlclip1/01/clip_image001.png"   o:title="Image of Cortana Home"></v:imagedata> </v:shape><![endif]--><!--[if !vml]--><img width="480" height="480" src="${this.imagePath}/6.1.png" alt="Image of Cortana Home"/><!--[endif]--></span><span style="font-size: 11.5pt;color: black;"></span></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;"><br/> 1. Home 2. Notebook 3. Settings 4. Feedback</span></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">Here are some things Cortana can do for you:</span></p><p style="text-align: left;"><!--[if !supportLists]--><span style="font-size: 10.0pt;color: black;">·<span>         </span></span><!--[endif]--><span style="font-size: 11.5pt;color: black;">Give you reminders based on time, places, or people.</span></p><p style="text-align: left;"><!--[if !supportLists]--><span style="font-size: 10.0pt;color: black;">·<span>         </span></span><!--[endif]--><span style="font-size: 11.5pt;color: black;">Track packages, teams, interests, and flights.</span></p><p style="text-align: left;"><!--[if !supportLists]--><span style="font-size: 10.0pt;color: black;">·<span>         </span></span><!--[endif]--><span style="font-size: 11.5pt;color: black;">Send emails and texts.</span></p><p style="text-align: left;"><!--[if !supportLists]--><span style="font-size: 10.0pt;color: black;">·<span>         </span></span><!--[endif]--><span style="font-size: 11.5pt;color: black;">Manage your calendar and keep you up to date.</span></p><p style="text-align: left;"><!--[if !supportLists]--><span style="font-size: 10.0pt;color: black;">·<span>         </span></span><!--[endif]--><span style="font-size: 11.5pt;color: black;">Create and manage lists.</span></p><p style="text-align: left;"><!--[if !supportLists]--><span style="font-size: 10.0pt;color: black;">·<span>         </span></span><!--[endif]--><span style="font-size: 11.5pt;color: black;">Chit chat and play games.</span></p><p style="text-align: left;"><!--[if !supportLists]--><span style="font-size: 10.0pt;color: black;">·<span>         </span></span><!--[endif]--><span style="font-size: 11.5pt;color: black;">Find facts, files, places, and info.</span></p><p style="text-align: left;"><!--[if !supportLists]--><span style="font-size: 10.0pt;color: black;">·<span>         </span></span><!--[endif]--><span style="font-size: 11.5pt;color: black;">Open any app on your system.</span></p><p style="text-align: left;"><b><span style="font-size: 18.0pt;color: black;">Try this: Set a reminder</span></b></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.</span></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">For example, type or say, &#34;Remind me to congratulate Tanya the next time she calls.&#34;</span></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">The reminder will appear when you get a call from Tanya.</span></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.</span></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;"><!--[if gte vml 1]><v:shape id="图片_x0020_2" o:spid="_x0000_i1029"  type="#_x0000_t75" alt="Image of Cortana reminder confirmation" style='width:294.75pt;  height:454.5pt;visibility:visible;mso-wrap-style:square'>  <v:imagedata src="file:///C:/Users/Vikas.Bansal/AppData/Local/Packages/oice_16_974fa576_32c1d314_391e/AC/Temp/msohtmlclip1/01/clip_image002.png"   o:title="Image of Cortana reminder confirmation"></v:imagedata> </v:shape><![endif]--><!--[if !vml]--><img width="393" height="606" src="${this.imagePath}/6.2.png" alt="Image of Cortana reminder confirmation"/><!--[endif]--></span><span style="font-size: 11.5pt;color: black;"></span></p><p style="text-align: left;"><b><span style="font-size: 18.0pt;color: black;">Hey Cortana!</span></b></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;">Set Cortana to hear you anytime you say &#34;Hey Cortana.&#34; Select the search box on the taskbar to open Cortana home. Then select <b>Settings</b>  and turn on <b>Let Cortana respond to &#34;Hey Cortana.&#34;</b></span></p><p style="text-align: left;"><span style="font-size: 11.5pt;color: black;"><!--[if gte vml 1]><v:shape id="图片_x0020_1" o:spid="_x0000_i1028"  type="#_x0000_t75" alt="Hey Cortana settings" style='width:270pt;height:430.5pt;  visibility:visible;mso-wrap-style:square'>  <v:imagedata src="file:///C:/Users/Vikas.Bansal/AppData/Local/Packages/oice_16_974fa576_32c1d314_391e/AC/Temp/msohtmlclip1/01/clip_image003.png"   o:title="Hey Cortana settings"></v:imagedata> </v:shape><![endif]--><!--[if !vml]--><img width="360" height="574" src="${this.imagePath}/6.3.png" alt="Hey Cortana settings"/><!--[endif]--></span><span style="font-size: 11.5pt;color: black;"></span></p><p style="text-align: left;"><span style="font-size: 13.5pt;color: black;">Note</span></p><p style="text-align: left;"><span style="font-size: 10.0pt;color: black;">Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.</span></p><ul type="disc"> </ul><p style="text-align: left;"><span style="color: #333333;">   </span><span style="color: #333333;"></span></p><p style="text-align: left;"><span style="color: #333333;"></span></p>`
+		  description:`<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">What is Cortana?</h3>
+<hr/>
+<p>Cortana is your digital agent. She'll help you get things done.</p>
+<p>The more you use Cortana, the more personalized your experience will be.</p>
+<p>To get started, type a question in the search box, or select the microphone&nbsp;&nbsp;and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)</p>
+<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.</p>
+<p><img src="./../../../assets/images/qa/6.1.png"/></p>
+<ol>
+<li>Home 2. Notebook 3. Settings 4. Feedback</li>
+</ol>
+<p>Here are some things Cortana can do for you:</p>
+<ul>
+<li>Give you reminders based on time, places, or people.</li>
+<li>Track packages, teams, interests, and flights.</li>
+<li>Send emails and texts.</li>
+<li>Manage your calendar and keep you up to date.</li>
+<li>Create and manage lists.</li>
+<li>Chit chat and play games.</li>
+<li>Find facts, files, places, and info.</li>
+<li>Open any app on your system.</li>
+</ul>
+<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Try this: Set a reminder</h3><hr/>
 
+<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.</p>
+<p>For example, type or say, "Remind me to congratulate Tanya the next time she calls."</p>
+<p>The reminder will appear when you get a call from Tanya.</p>
+<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.</p>
+<p><img src="./../../../assets/images/qa/6.2.png"/></p>
+<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Hey Cortana?</h3><hr/>
+<p>Set Cortana to hear you anytime you say "Hey Cortana." Select the search box on the taskbar to open Cortana home. Then select&nbsp;<strong>Settings</strong>&nbsp;&nbsp;and turn on&nbsp;<strong>Let Cortana respond to "Hey Cortana."</strong></p>
+<p><img src="./../../../assets/images/qa/6.3.png"/></p>
+<p>Note</p>
+<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.</p>
+<p>&nbsp;</p>`
 		}
 	];
 
