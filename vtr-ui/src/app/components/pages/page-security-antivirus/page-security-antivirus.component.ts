@@ -12,6 +12,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 	avType = 2;
 	back = 'BACK';
 	backarrow = '< ';
+	value=1;
 
 	constructor(public mockService: MockService) { }
 

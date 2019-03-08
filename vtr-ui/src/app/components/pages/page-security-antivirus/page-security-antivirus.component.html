@@ -4,6 +4,20 @@
 			<vtr-header-main [backarrow]="backarrow"
 				[back]="back"
 				[title]="title"></vtr-header-main>
+
+
+			   <div class="btn-group btn-group-toggle" ngbRadioGroup style="margin-left:300px;margin-top:-150px;" [(ngModel)]="value">
+				  <label class="btn-primary" ngbButtonLabel> 1
+					  <input type="radio" ngbButton [value]="1"/>
+				  </label>
+				  <label class="btn-primary" ngbButtonLabel> 2
+					  <input type="radio" ngbButton [value]="2"/>
+				  </label>
+
+				  <label class="btn-primary" ngbButtonLabel> 3
+					  <input type="radio" ngbButton [value]="3"/>
+				  </label>
+			   </div>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -11,8 +25,9 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col col-8 vtr-page-left-column">
-						<div class="header">
-							<div class="rounded-card-with-shadow mt-minus p-5">
+						    <div *ngIf="value===1">
+						    <div class="header mt-minus">
+							<div class="rounded-card-with-shadow p-5">
 								<div class="row">
 									<div class="col-auto align-self-center">
 										<img class="img-fluid"
@@ -30,6 +45,7 @@
 									</div>
 								</div>
 							</div>
+						</div>
 							<div class="subheader mt-60">
 								<div class="rounded-card-with-shadow p-5 bg-white">
 									<div class="">
@@ -202,6 +218,115 @@
 									</div>
 								</div>
 							</div>
+							<div class="divider"></div>
+							<div class="footer">
+								<div class="row">
+									<div class="col-auto mr-auto px-0">
+										<div class="title">
+											Powered By McAfee
+										</div>
+										<div>
+											<ul class="list-inline">
+												<li class="list-inline-item subtitle"><a href="#">Privacy Policy</a>
+												</li>
+												<li class="list-inline-item">and</li>
+												<li class="list-inline-item subtitle"><a href="#">Terms Of Service</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-auto align-self-center px-0">
+										<img src="./../../../../assets/images/antivirus/mcafee.png" />
+									</div>
+								</div>
+							</div>
+							</div>
+
+						<div *ngIf="value===2">
+							<div class="subheader mt-minus">
+								<div class="rounded-card-with-shadow p-5 bg-white">
+
+									<div class="">
+										<div class="row">
+											<div class="col-auto px-0 mr-auto">
+												<div class="title pb-3">McAfee LiveSafe</div>
+											</div>
+											<div class="col-auto px-0">
+												<img src="./../../../../assets/images/antivirus/mcafee-top.png" />
+											</div>
+										</div>
+										<div class="subtitle pb-5">You are currently protected by McAfee LiveSafe</div>
+
+										<ul class="list-group">
+											<li class="list-group-item">
+												<div class="row align-items-center">
+													<div class="col-auto px-3">
+														<div class="bullet-icon-check">
+															<div class="icon-bkg">
+																<fa-icon [icon]="['fas', 'check']"></fa-icon>
+															</div>
+														</div>
+													</div>
+													<div class="col-auto px-0 text">
+														VIRUS SCAN
+													</div>
+													<div class="col-auto mr-auto">
+														<h3> <span class="badge badge-pill badge-success">DISABLED</span>
+														</h3>
+													</div>
+													<div class="col-auto d-none">
+														<vtr-ui-button [label]="'ENABLE FIREWALL'"></vtr-ui-button>
+													</div>
+												</div>
+
+											</li>
+
+											<li class="list-group-item">
+												<div class="row align-items-center">
+													<div class="col-auto px-3">
+														<div class="bullet-icon-check">
+															<div class="icon-bkg">
+																<fa-icon [icon]="['fas', 'check']"></fa-icon>
+															</div>
+														</div>
+													</div>
+													<div class="col-auto px-0 text">
+														FIREWALL
+													</div>
+													<div class="col-auto mr-auto">
+														<h3> <span class="badge badge-pill badge-success">DISABLED</span>
+														</h3>
+													</div>
+													<div class="col-auto d-none">
+														<vtr-ui-button [label]="'ENABLE FIREWALL'"></vtr-ui-button>
+													</div>
+												</div>
+
+											</li>
+
+										</ul>
+
+										<div class="row align-items-center">
+											<div class="col-auto mr-auto px-0">
+												<div class="card-with-border p-3">
+													 <span class="text">
+														 Trial Valid Until
+													 </span>
+													<span class="date">
+														 10/10/2020
+													 </span>
+													<span>
+														 <a href="#" class="text">Upgrade Now</a>
+													 </span>
+												</div>
+											</div>
+											<div class="col-auto px-0 py-5">
+												<vtr-ui-button [label]="'LAUNCH MCAFEE'"></vtr-ui-button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 							<div class="description">
 								<div class="title py-4">
 									Top Benefits of McAfee LiveSafe
@@ -221,7 +346,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon1.png" />
+														 src="./../../../../assets/images/antivirus/icon1.png" />
 												</div>
 												<div class="col">
 													<div class="title">
@@ -237,7 +362,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon2.png" />
+														 src="./../../../../assets/images/antivirus/icon2.png" />
 												</div>
 												<div class="col">
 													<div class="title">
@@ -253,7 +378,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon3.png" />
+														 src="./../../../../assets/images/antivirus/icon3.png" />
 												</div>
 												<div class="col">
 													<div class="title">
@@ -267,7 +392,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon4.png" />
+														 src="./../../../../assets/images/antivirus/icon4.png" />
 												</div>
 												<div class="col">
 													<div class="title">
@@ -285,7 +410,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon5.png" />
+														 src="./../../../../assets/images/antivirus/icon5.png" />
 												</div>
 												<div class="col">
 													<div class="title">
@@ -301,7 +426,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon6.png" />
+														 src="./../../../../assets/images/antivirus/icon6.png" />
 												</div>
 												<div class="col">
 													<div class="title">
@@ -319,7 +444,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon7.png" />
+														 src="./../../../../assets/images/antivirus/icon7.png" />
 												</div>
 												<div class="col">
 													<div class="title">
@@ -331,6 +456,203 @@
 														Also lets you set limits for how much time they spend online.
 													</div>
 												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="divider"></div>
+							<div class="footer">
+								<div class="row">
+									<div class="col-auto mr-auto px-0">
+										<div class="title">
+											Powered By McAfee
+										</div>
+										<div>
+											<ul class="list-inline">
+												<li class="list-inline-item subtitle"><a href="#">Privacy Policy</a>
+												</li>
+												<li class="list-inline-item">and</li>
+												<li class="list-inline-item subtitle"><a href="#">Terms Of Service</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-auto align-self-center px-0">
+										<img src="./../../../../assets/images/antivirus/mcafee.png" />
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div *ngIf="value===3">
+
+							<div class="subheader mt-minus">
+								<div class="rounded-card-with-shadow p-5 bg-white">
+									<div class="">
+										<div class="row">
+											<div class="col-auto px-0 mr-auto">
+												<div class="title pb-3">Symantec</div>
+											</div>
+											<div class="col-auto px-0">
+												<!--<img src="../../../../assets/images/antivirus/window.png" />-->
+											</div>
+										</div>
+
+										<div class="subtitle pb-5">Symnatec offers you basic protection for your device</div>
+
+										<ul class="list-group">
+											<li class="list-group-item">
+												<div class="row align-items-center">
+													<div class="col-auto px-3">
+														<div class="bullet-icon-check">
+															<div class="icon-bkg">
+																<fa-icon [icon]="['fas', 'check']"></fa-icon>
+															</div>
+														</div>
+													</div>
+													<div class="col-auto text px-0">
+														VIRUS SCAN
+													</div>
+													<div class="col-auto mr-auto">
+														<h3><span class="badge badge-pill badge-success">ENABLED</span>
+														</h3>
+													</div>
+													<div class="col-auto d-none">
+														<vtr-ui-button [label]="'ENABLE FIREWALL'"></vtr-ui-button>
+													</div>
+												</div>
+
+											</li>
+
+											<li class="list-group-item">
+												<div class="row align-items-center">
+													<div class="col-auto px-3 ">
+														<div class="bullet-icon-check">
+															<div class="icon-bkg">
+																<fa-icon [icon]="['fas', 'check']"></fa-icon>
+															</div>
+														</div>
+													</div>
+													<div class="col-auto text px-0">
+														VIRUS SCAN
+													</div>
+													<div class="col-auto mr-auto">
+														<h3><span class="badge badge-pill badge-success">ENABLED</span>
+														</h3>
+													</div>
+													<div class="col-auto">
+														<vtr-ui-button [label]="'ENABLE FIREWALL'"></vtr-ui-button>
+													</div>
+												</div>
+
+											</li>
+
+										</ul>
+
+									</div>
+									<div class="mt-60">
+										<div class="row">
+											<div class="col-auto px-0 mr-auto">
+												<div class="title pb-3">McAfee premium protection</div>
+											</div>
+											<div class="col-auto px-0">
+												<img src="./../../../../assets/images/antivirus/mcafee-top.png" />
+											</div>
+										</div>
+										<div class="subtitle pb-5">You are currently protected by Symantec.
+											However, you could be better protected with McAfee LifeSafe</div>
+
+										<ul class="list-group">
+											<li class="list-group-item">
+												<div class="row align-items-center">
+													<div class="col-auto px-3">
+														<div class="bullet-icon-times">
+															<div class="icon-bkg">
+																<fa-icon [icon]="['fas', 'times']"></fa-icon>
+															</div>
+														</div>
+													</div>
+													<div class="col-auto px-0 text">
+														VIRUS SCAN
+													</div>
+													<div class="col-auto mr-auto">
+														<h3> <span class="badge badge-pill badge-danger">DISABLED</span>
+														</h3>
+													</div>
+													<div class="col-auto d-none">
+														<vtr-ui-button [label]="'ENABLE FIREWALL'"></vtr-ui-button>
+													</div>
+												</div>
+
+											</li>
+
+											<li class="list-group-item">
+												<div class="row align-items-center">
+													<div class="col-auto px-3">
+														<div class="bullet-icon-times">
+															<div class="icon-bkg">
+																<fa-icon [icon]="['fas', 'times']"></fa-icon>
+															</div>
+														</div>
+													</div>
+													<div class="col-auto px-0 text">
+														FIREWALL
+													</div>
+													<div class="col-auto mr-auto">
+														<h3> <span class="badge badge-pill badge-danger">DISABLED</span>
+														</h3>
+													</div>
+													<div class="col-auto d-none">
+														<vtr-ui-button [label]="'ENABLE FIREWALL'"></vtr-ui-button>
+													</div>
+												</div>
+
+											</li>
+
+										</ul>
+
+										<div class="row align-items-center">
+											<div class="col-auto mr-auto">
+												<!--<div class="card-with-border p-3">
+													 <span class="text">
+														 License Valid Until
+													 </span>
+													<span class="date">
+														 10/10/2020
+													 </span>
+													<span>
+														 <a href="#" class="text">Update Now</a>
+													 </span>
+												</div>-->
+											</div>
+											<div class="col-auto px-0 py-5">
+												<vtr-ui-button [label]="'GET MCAFEE'"></vtr-ui-button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="body mt-60">
+								<div>
+									<div class="title py-5"> Why McAfee ?</div>
+									<div class="row">
+										<div class="col-auto px-0">
+											<img src="./../../../../assets/images/antivirus/side.png" />
+										</div>
+										<div class="col px-5">
+											<div class="subtitle pb-5">
+												Lenovo recommends McAfee to protect all your devices with:
+											</div>
+											<div>
+												<ul class="list-unstyled">
+													<li class="text pb-4">Award winning protection from the latest
+														online threats including ransomware and malware</li>
+													<li class="text pb-4">Dedicated security that consistently
+														outperforms Defender and other leading AV providers</li>
+													<li class="text">Device to cloud technology that won't slow down
+														your PC</li>
+												</ul>
 											</div>
 										</div>
 									</div>
