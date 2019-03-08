@@ -10,7 +10,7 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 
 	@Input() popUpId: string;
 
-	private isOpen = false;
+	isOpen = false;
 
 	constructor(private commonPopupService: CommonPopupService) {
 	}

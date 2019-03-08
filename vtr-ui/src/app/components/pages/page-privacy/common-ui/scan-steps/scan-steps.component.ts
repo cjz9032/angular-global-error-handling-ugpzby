@@ -23,7 +23,7 @@ export class ScanStepsComponent implements OnInit {
     {text: 'text2', subtext: 'text2'},
     {text: 'text 3', subtext: 'text3'}
   ];
-  private _steps = [];
+  _steps = [];
 
   ngOnInit() {
     if (this[this.steps]) {

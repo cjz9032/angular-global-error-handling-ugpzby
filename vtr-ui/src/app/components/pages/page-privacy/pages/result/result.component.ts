@@ -1,21 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ServerCommunicationService } from '../../common-services/server-communication.service';
+import { BreachedAccountMode } from '../../common-ui/breached-account/breached-account.component';
 
 @Component({
 	// selector: 'app-admin',
 	templateUrl: './result.component.html',
 	styleUrls: ['./result.component.scss']
 })
-export class ResultComponent implements OnInit{
-	public isPopupOpen: boolean;
-	public userEmail: string;
-	public breached_accounts: any[];
-	public breached_accounts_show: any[];
+export class ResultComponent implements OnInit {
+	readonly breachedAccountMode = BreachedAccountMode;
+	isPopupOpen: boolean;
+	userEmail: string;
+	breached_accounts: any[];
+	breached_accounts_show: any[];
 	// static Data for html
-	public browserStoredAccountsData = { showDetailAction: 'link'};
+	browserStoredAccountsData = { showDetailAction: 'link'};
 
-	public scoreParameters = { // TODO just mock, add logic
+	scoreParameters = { // TODO just mock, add logic
 		fixedBreaches: 12,
 		unfixedBreaches: 3,
 		fixedStorages: 3,

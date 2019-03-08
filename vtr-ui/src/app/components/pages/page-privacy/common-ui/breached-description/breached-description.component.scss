@@ -1,0 +1,34 @@
+.breached-description {
+	font-size: 1.65rem;
+	font-weight: 500;
+	&__text {
+		color: #667481;
+		font-weight: 300;
+		line-height: 2.75rem;
+		padding-bottom: 2.4rem;
+	}
+
+	&__details-wrapper {
+		padding: 2.4rem;
+		border: 1px solid #ECF0F1;
+		border-radius: 6px;
+		background-color: #FFFFFF;
+	}
+
+	&__description {
+		display: flex;
+		flex-flow: row;
+		padding-top: 2.7rem;
+		color: #E74C3C;
+	}
+
+	&__col {
+		display: flex;
+		flex-flow: column;
+		max-width: 50%;
+
+		&:last-child {
+			padding-left: 10rem;
+		}
+	}
+}
