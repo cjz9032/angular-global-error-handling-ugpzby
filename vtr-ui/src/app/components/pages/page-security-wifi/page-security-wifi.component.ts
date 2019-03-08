@@ -8,8 +8,10 @@ import { MockService } from 'src/app/services/mock/mock.service';
 })
 export class PageSecurityWifiComponent implements OnInit {
 
-	title = 'Wifi Security';
-	isLWSEnabled = true;
+	title = 'WiFi and Connected Home Security';
+	back = 'BACK';
+	backarrow = '< ';
+	isLWSEnabled = false;
 	viewSecChkRoute = 'viewSecChkRoute';
 
 	constructor(public mockService: MockService) { }
@@ -18,6 +20,8 @@ export class PageSecurityWifiComponent implements OnInit {
 	}
 	enableWiFiSecurity(event) {
 		console.log('enableWiFiSecurity button clicked');
+		this.isLWSEnabled = !this.isLWSEnabled;
+
 	}
 
 }

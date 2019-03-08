@@ -9,12 +9,14 @@ import { MockService } from 'src/app/services/mock/mock.service';
 export class PageSecurityPasswordComponent implements OnInit {
 
 	title = 'Password Health';
-	IsDashlaneInstalled: string="not-installed";
+	back = 'BACK';
+	backarrow = '< ';
+	IsDashlaneInstalled = 'not-installed';
 	constructor(public mockService: MockService) { }
 
 	ngOnInit() {
 	}
 	dashlane() {
-		window.open("https://www.dashlane.com/lenovo/")
-   	}
+		window.open('https://www.dashlane.com/lenovo/');
+	}
 }

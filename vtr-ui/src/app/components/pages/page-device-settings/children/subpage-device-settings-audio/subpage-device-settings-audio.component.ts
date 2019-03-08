@@ -8,20 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class SubpageDeviceSettingsAudioComponent implements OnInit {
 
 	title = 'Audio Settings';
-	headerCaption = 'This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.';
-	headerMenuTitle = 'Jump to Settings';
+	headerCaption = `This section enables you to automatically optimize or fully configure your audio settings manually
+	, such as Dolby settings, microphone, etc.`;
+	automaticDolbyAudioSettings = false;
 
-	automaticDolbyAudioSettings: boolean = false;
-	headerMenuItems = [
-		{
-			title: 'Audio',
-			path: 'audio',
-		},
-		{
-			title: 'Microphone',
-			path: 'microphone',
-		}
-	];
+	radioGroupAutoDolbySettings = 'radio-grp-auto-dolby-settings';
+	radioOptimiseMicSettings = 'radio-grp-optimise-mic-settings';
 
 	constructor() { }
 

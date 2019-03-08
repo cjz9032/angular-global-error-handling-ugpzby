@@ -7,9 +7,10 @@
 				[menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
 		</div>
 	</div>
-	<div class="row py-5 smartsettings-card" id="cooling">
+	<div class="row py-5 smartsettings-card"
+		id="cooling">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible title="Power Smartsettings"
+			<vtr-container-collapsible cardTitle="Power Smartsettings"
 				[isCollapsed]="false"
 				[allowCollapse]="false"
 				[theme]="'blue'">
@@ -50,29 +51,76 @@
 		</div>
 	</div>
 
-	<div class="row py-5" id="battery">
+	<div class="row py-5"
+		id="battery">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible title="Battery Settings"
+			<vtr-container-collapsible cardTitle="Battery Settings"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
-						<li class=""
-						*ngFor="let item of batterySettings">
-						<vtr-ui-row-switch [title]="item.header"
-							[caption]="item.subHeader"
+					<li class="">
+						<vtr-ui-row-switch [title]="batterySettings[0].header"
+							[caption]="batterySettings[0].subHeader"
 							[isSwitchVisible]=true
-							[leftIcon]="item.leftImageSource"
-							[rightIcon]="item.rightImageSource"
-							[readMoreText]="item.readMoreText">
+							[leftIcon]="batterySettings[0].leftImageSource"
+							[rightIcon]="batterySettings[0].rightImageSource"
+							[readMoreText]="batterySettings[0].readMoreText"
+							[tooltipText]="batterySettings[0].tooltipText">
 						</vtr-ui-row-switch>
 					</li>
+					<li class="">
+						<vtr-ui-row-switch [title]="batterySettings[1].header"
+							[caption]="batterySettings[1].subHeader"
+							[isSwitchVisible]=true
+							[leftIcon]="batterySettings[1].leftImageSource"
+							[rightIcon]="batterySettings[1].rightImageSource"
+							[readMoreText]="batterySettings[1].readMoreText"
+							[showChildContent]="true"
+							(toggleOnOff)="showBatteryThreshold=$event.switchValue;"
+							[tooltipText]="batterySettings[1].tooltipText">
+							<div *ngIf="showBatteryThreshold">
+								<vtr-battery-charge-threshold-settings [title]="'Threshold for Built in battery'"
+									[type]="'primary'">
+								</vtr-battery-charge-threshold-settings>
+
+								<vtr-battery-charge-threshold-settings [title]="'Threshold for Removable battery'"
+									[type]="'secondary'">
+								</vtr-battery-charge-threshold-settings>
+
+								<vtr-battery-charge-threshold-settings [displayNoteOnly]="true">
+								</vtr-battery-charge-threshold-settings>
+							</div>
+						</vtr-ui-row-switch>
+					</li>
+					<li class="">
+						<vtr-ui-row-switch [title]="batterySettings[2].header"
+							[caption]="batterySettings[2].subHeader"
+							[isSwitchVisible]=true
+							[leftIcon]="batterySettings[2].leftImageSource"
+							[rightIcon]="batterySettings[2].rightImageSource"
+							[readMoreText]="batterySettings[2].readMoreText"
+							[tooltipText]="batterySettings[2].tooltipText">
+						</vtr-ui-row-switch>
+					</li>
+					<li class="">
+						<vtr-ui-row-switch [title]="batterySettings[3].header"
+							[caption]="batterySettings[3].subHeader"
+							[isSwitchVisible]=true
+							[leftIcon]="batterySettings[3].leftImageSource"
+							[rightIcon]="batterySettings[3].rightImageSource"
+							[readMoreText]="batterySettings[3].readMoreText"
+							[tooltipText]="batterySettings[3].tooltipText">
+						</vtr-ui-row-switch>
+					</li>
+
 				</ul>
 			</vtr-container-collapsible>
 		</div>
 	</div>
 
-	<div class="row py-5" id="power">
+	<div class="row py-5"
+		id="power">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible title="Power Settings"
+			<vtr-container-collapsible cardTitle="Power Settings"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""
@@ -82,7 +130,8 @@
 							[isSwitchVisible]=true
 							[leftIcon]="item.leftImageSource"
 							[rightIcon]="item.rightImageSource"
-							[readMoreText]="item.readMoreText">
+							[readMoreText]="item.readMoreText"
+							[tooltipText]="item.tooltipText">
 						</vtr-ui-row-switch>
 					</li>
 				</ul>
@@ -90,9 +139,10 @@
 		</div>
 	</div>
 
-	<div class="row py-5" id="other">
+	<div class="row py-5"
+		id="other">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible title="Other Settings"
+			<vtr-container-collapsible cardTitle="Other Settings"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""

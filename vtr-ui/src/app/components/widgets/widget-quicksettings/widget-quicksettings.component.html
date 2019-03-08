@@ -8,20 +8,21 @@
 		<div class="row">
 			<div class="col col-4 text-left">
 				<vtr-widget-switch-icon [iconDefinition]="['fas', 'microphone']"
-				 [value]="microphoneStatus.status"
-				 title="Microphone"
-				 (toggle)="onMicrophoneStatusToggle($event)"></vtr-widget-switch-icon>
+					[value]="microphoneStatus.status"
+					title="Microphone"
+					(toggle)="onMicrophoneStatusToggle($event)"></vtr-widget-switch-icon>
 			</div>
 			<div class="col col-4 text-center">
 				<vtr-widget-switch-icon [iconDefinition]="['fas', 'camera']"
-				 [value]="cameraStatus.status"
-				 title="Camera"
-				 (toggle)="onCameraStatusToggle($event)"></vtr-widget-switch-icon>
+					[value]="cameraStatus.status"
+					title="Camera Privacy"
+					(toggle)="onCameraStatusToggle($event)"></vtr-widget-switch-icon>
 			</div>
 			<div class="col col-4 text-right">
 				<vtr-widget-switch-icon [iconDefinition]="['fas', 'eye']"
-				 title="Eye Care Mode"
-				 (toggle)="onEyeCareModeToggle($event)"></vtr-widget-switch-icon>
+					[value]="eyeCareModeStatus.status"
+					title="Eye Care Mode"
+					(toggle)="onEyeCareModeToggle($event)"></vtr-widget-switch-icon>
 			</div>
 		</div>
 	</div>

@@ -17,15 +17,21 @@ import {
 export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	private cssStyleDeclaration: CSSStyleDeclaration;
 
+	public fillWidth = 0;
+	public fillStartColor = '#ff0000';
+	public fillEndColor = '#00ff00';
+
 	@ViewChild('battery') battery: ElementRef;
 	@ViewChild('batteryIndicator') batteryIndicator: ElementRef;
 
+	@Input() isVoltageError = false; // boolean indicator if its changing or not
 	@Input() isCharging = true; // boolean indicator if its changing or not
-	@Input() percentage = 0; // number without % symbol
+	@Input() isExpressCharging = true; // boolean indicator if its express changing or not
+	@Input() percentage = 50; // number without % symbol
 	@Input() remainingHour = 0; // number of hours remaining
 	@Input() remainingMinutes = 0; // number of minutes remaining
 
-	constructor() {}
+	constructor() { }
 
 	ngOnInit() {
 		this.getCssDeclaration();
@@ -51,17 +57,22 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	 */
 	refreshLevel() {
 		let level = 1,
-			fillWidth = 100;
-		if (this.percentage > 0 && this.percentage <= 100) {
-			level = this.percentage / 100;
-			fillWidth = this.percentage;
+			fillWidth = 0;
+		let percentage = this.percentage;
+
+		if (this.isVoltageError) {
+			percentage = 0;
 		}
 
+		if (percentage > 0 && percentage <= 100) {
+			level = percentage / 100;
+			fillWidth = percentage;
+		}
 		const {
 			borderColor,
 			backgroundColor,
 			fillColor
-		} = this.getLevelCssValues(this.percentage);
+		} = this.getLevelCssValues(percentage);
 
 		this.batteryIndicator.nativeElement.style.setProperty(
 			'--background-color',
@@ -83,7 +94,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 		);
 	}
 
-	getLevelCssValues(level: number): any {
+	private getLevelCssValues(level: number): any {
 		// Green:	RemainTimePercent >= 25%
 		// Yellow:	RemainTimePercent  in [15%, 24%]
 		// Red:		RemainTimePercent < 15%
@@ -136,7 +147,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 		return { borderColor, backgroundColor, fillColor };
 	}
 
-	getTimeRemaining(): string {
+	public getTimeRemaining(): string {
 		const hours =
 			this.remainingHour > 0 && this.remainingHour < 2 ? 'hour' : 'hours';
 		const minutes =
@@ -145,18 +156,18 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 				: 'minutes';
 		return `${this.remainingHour} ${hours} ${
 			this.remainingMinutes
-		} ${minutes}`;
+			} ${minutes}`;
 	}
 
 	// returns windows object
-	getCssPropertyValue(propertyName: string): string {
+	private getCssPropertyValue(propertyName: string): string {
 		if (this.cssStyleDeclaration) {
 			return this.cssStyleDeclaration.getPropertyValue(propertyName);
 		}
 		return '';
 	}
 
-	getCssDeclaration() {
+	private getCssDeclaration() {
 		this.cssStyleDeclaration = window.getComputedStyle(
 			this.batteryIndicator.nativeElement
 		);

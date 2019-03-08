@@ -12,8 +12,8 @@ export class ConnectedHomeComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	startTrial(event) {
-		console.log('startTrial', event);
+	tryNow(event) {
+		console.log('tryNow', event);
 	}
 
 	enterActivationCode(event) {

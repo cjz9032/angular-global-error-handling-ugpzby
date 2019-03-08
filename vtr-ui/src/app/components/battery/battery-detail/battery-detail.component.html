@@ -4,17 +4,20 @@
 			<div class="row">
 				<div class="col">
 					<div class="battery-indicator pb-5">
-						<vtr-battery-indicator
-							[remainingHour]="2"
+						<vtr-battery-indicator [remainingHour]="2"
 							[remainingMinutes]="30"
-							[percentage]="10"
-						></vtr-battery-indicator>
+							[percentage]="50"
+							[isCharging]="true"
+							[isExpressCharging]="false"
+							[isVoltageError]="false">
+						</vtr-battery-indicator>
 					</div>
 				</div>
 			</div>
 			<hr />
 			<!-- repeat battery-detail information -->
-			<div *ngFor="let model of dataSource" class="line-height-2-5 mb-3">
+			<div *ngFor="let model of dataSource"
+				class="line-height-2-5 mb-3">
 				<div class="row mb-3">
 					<div class="col">
 						<!-- Section Title like Primary Battery -->
@@ -144,9 +147,7 @@
 						<div class="row mb-3">
 							<div class="col">
 								<h4 class="align-middle">
-									<span
-										class="text-uppercase pr-3 battery-gauge-heading"
-									>
+									<span class="text-uppercase pr-3 battery-gauge-heading">
 										{{ model.batteryGaugeDetail.heading }}
 									</span>
 								</h4>
@@ -166,7 +167,7 @@
 									</div>
 									<div class="p-0 col-3 battery-value-text">
 										{{
-											model.batteryGaugeDetail.logDateTime
+										model.batteryGaugeDetail.logDateTime
 										}}
 									</div>
 								</div>
@@ -180,8 +181,8 @@
 									<div class="p-0 col-3"></div>
 									<div class="p-0 col-3 battery-value-text">
 										{{
-											model.batteryGaugeDetail
-												.lastRunStatus
+										model.batteryGaugeDetail
+										.lastRunStatus
 										}}
 									</div>
 								</div>
@@ -191,7 +192,7 @@
 									</div>
 									<div class="p-0 col-3 battery-value-text">
 										{{
-											model.batteryGaugeDetail.remaining
+										model.batteryGaugeDetail.remaining
 										}}%
 									</div>
 									<div class="p-0 col-3"></div>
@@ -199,10 +200,8 @@
 								</div>
 							</div>
 							<div class="col-4 align-self-center text-center">
-								<button
-									type="button"
-									class="btn btn-primary btn-lg battery-button text-uppercase"
-								>
+								<button type="button"
+									class="btn btn-primary btn-lg battery-button text-uppercase">
 									Perform Gauge Reset
 								</button>
 							</div>

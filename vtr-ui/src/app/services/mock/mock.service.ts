@@ -43,16 +43,18 @@ export class MockService {
 			'id': 'memory',
 			'title': 'Memory',
 			'detail': '4.00 GB of 6 GB',
-			'path': '/support',
-			'asLink': false
+			'path': 'ms-settings:about',
+			'asLink': false,
+			'isSystemLink': true
 		},
 		{
 			'status': 0,
 			'id': 'disk',
 			'title': 'Disk Space',
 			'detail': '12.7 GB of 256 GB',
-			'path': '/support',
-			'asLink': false
+			'path': 'ms-settings:storagesense',
+			'asLink': false,
+			'isSystemLink': true
 		},
 		{
 			'status': 0,
@@ -148,36 +150,42 @@ export class MockService {
 			'id': 'anti-virus',
 			'title': 'Anti-Virus',
 			'detail': 'Enabled',
-			'path': 'anti-virus'
+			'path': 'anti-virus',
+			'type': 'security'
+
 		},
 		{
 			'status': 0,
 			'id': 'wifi-security',
 			'title': 'WiFi Security',
 			'detail': 'Enabled',
-			'path': 'wifi-security'
+			'path': 'wifi-security',
+			'type': 'security'
 
 		},
 		{
-			'status': 1,
+			'status': 2,
 			'id': 'pwdmgr',
 			'title': 'Password Manager',
-			'detail': 'Uninstalled',
-			'path': 'password-protection'
-		},
-		{
-			'status': 1,
-			'id': 'vpn',
-			'title': 'VPN',
-			'detail': 'Uninstalled',
-			'path': 'internet-protection'
+			'detail': 'Installed',
+			'path': 'password-protection',
+			'type': 'security'
 		},
 		{
 			'status': 2,
+			'id': 'vpn',
+			'title': 'VPN',
+			'detail': 'Installed',
+			'path': 'internet-protection',
+			'type': 'security'
+		},
+		{
+			'status': 1,
 			'id': 'windows-hello',
 			'title': 'Windows Hello',
 			'detail': 'disabled',
-			'path': 'windows-hello'
+			'path': 'windows-hello',
+			'type': 'security'
 
 		}
 	];
@@ -188,35 +196,35 @@ export class MockService {
 			'id': 'anti-virus',
 			'title': 'Anti-Virus',
 			'detail': 'Enabled',
-			'path': ''
+			'path': 'anti-virus'
 		},
 		{
 			'status': 1,
 			'id': 'firewall',
 			'title': 'Firewall',
 			'detail': 'Disabled',
-			'path': ''
+			'path': 'fire-wall'
 
 		}
 	];
 
 	securityPasswordHealth = [
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'password-manager',
 			'title': 'Password Manager',
 			'detail': 'Installed',
-			'path': ''
+			'path': 'password-protection'
 		}
 	];
 
 	securityVPN = [
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'virtual-private-network',
 			'title': 'Virtual Private Network',
 			'detail': 'Installed',
-			'path': ''
+			'path': 'internet-protection'
 		}
 	];
 
@@ -226,7 +234,7 @@ export class MockService {
 			'id': 'wifi-security',
 			'title': 'WiFi Security',
 			'detail': 'Enabled',
-			'path': ''
+			'path': 'wifi-security'
 		}
 	];
 
@@ -236,7 +244,7 @@ export class MockService {
 			'id': 'connected-home-security',
 			'title': 'Connected Home Security',
 			'detail': 'Enabled',
-			'path': ''
+			'path': 'connected-home-security'
 		}
 	];
 
@@ -246,7 +254,7 @@ export class MockService {
 			'id': 'fingerprint-reader',
 			'title': 'Fingerprint reader',
 			'detail': 'Enabled',
-			'path': ''
+			'path': 'windows-hello'
 		}
 	];
 
