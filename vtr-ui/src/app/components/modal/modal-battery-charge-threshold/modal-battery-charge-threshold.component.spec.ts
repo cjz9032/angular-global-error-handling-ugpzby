@@ -3,23 +3,23 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ModalBatteryChargeThresholdComponent } from './modal-battery-charge-threshold.component';
 
 describe('ModalBatteryChargeThresholdComponent', () => {
-  let component: ModalBatteryChargeThresholdComponent;
-  let fixture: ComponentFixture<ModalBatteryChargeThresholdComponent>;
+	let component: ModalBatteryChargeThresholdComponent;
+	let fixture: ComponentFixture<ModalBatteryChargeThresholdComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ModalBatteryChargeThresholdComponent ]
-    })
-    .compileComponents();
-  }));
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [ModalBatteryChargeThresholdComponent]
+		})
+			.compileComponents();
+	}));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ModalBatteryChargeThresholdComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(ModalBatteryChargeThresholdComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });
