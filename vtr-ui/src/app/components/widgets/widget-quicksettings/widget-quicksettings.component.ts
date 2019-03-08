@@ -41,6 +41,7 @@ export class WidgetQuicksettingsComponent implements OnInit {
 	// }
 
 	public onCameraStatusToggle($event: boolean) {
+		console.log('onCameraStatusToggle');
 		// this.dashboardService.setCameraStatus($event)
 		// 	.then((value: boolean) => {
 		// 		// TODO : check for value is if action is completed or not
