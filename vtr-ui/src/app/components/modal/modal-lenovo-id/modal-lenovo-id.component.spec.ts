@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageSupportDetailComponent } from './page-support-detail.component';
+import { ModalLenovoIdComponent } from './modal-lenovo-id.component';
 
-describe('PageSupportDetailComponent', () => {
-	let component: PageSupportDetailComponent;
-	let fixture: ComponentFixture<PageSupportDetailComponent>;
+describe('ModalLenovoIdComponent', () => {
+	let component: ModalLenovoIdComponent;
+	let fixture: ComponentFixture<ModalLenovoIdComponent>;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [PageSupportDetailComponent]
+			declarations: [ModalLenovoIdComponent]
 		})
 			.compileComponents();
 	}));
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(PageSupportDetailComponent);
+		fixture = TestBed.createComponent(ModalLenovoIdComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

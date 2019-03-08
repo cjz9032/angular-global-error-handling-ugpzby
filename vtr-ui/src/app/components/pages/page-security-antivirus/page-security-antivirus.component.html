@@ -2,8 +2,8 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
-				[back]="back"
-				[title]="title"></vtr-header-main>
+			 [back]="back"
+			 [title]="title"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -16,7 +16,7 @@
 								<div class="row">
 									<div class="col-auto align-self-center">
 										<img class="img-fluid"
-											src="./../../../../assets/images/antivirus/protection.png" />
+										 src="./../../../../assets/images/antivirus/protection.png" />
 									</div>
 									<div class="col">
 										<div class="title p-3"> Not Optimally Protected</div>
@@ -27,10 +27,6 @@
 										<div class="p-3">
 											<vtr-ui-button [label]="'LEARN MORE ABOUT MCAFEE'"></vtr-ui-button>
 										</div>
-									</div>
-									<div class="col-auto px-0">
-										<img class="img-fluid"
-											src="./../../../../assets/images/antivirus/mcafee-top.png" />
 									</div>
 								</div>
 							</div>
@@ -52,8 +48,12 @@
 										<ul class="list-group">
 											<li class="list-group-item">
 												<div class="row align-items-center">
-													<div class="col-auto">
-
+													<div class="col-auto px-3">
+														<div class="bullet-icon-check">
+															<div class="icon-bkg">
+																<fa-icon [icon]="['fas', 'check']"></fa-icon>
+															</div>
+														</div>
 													</div>
 													<div class="col-auto text px-0">
 														VIRUS SCAN
@@ -71,17 +71,21 @@
 
 											<li class="list-group-item">
 												<div class="row align-items-center">
-													<div class="col-auto">
-
+													<div class="col-auto px-3 ">
+														<div class="bullet-icon-check">
+															<div class="icon-bkg">
+																<fa-icon [icon]="['fas', 'check']"></fa-icon>
+															</div>
+														</div>
 													</div>
 													<div class="col-auto text px-0">
-														VIRUS SCAN
+														FIREWALL
 													</div>
 													<div class="col-auto mr-auto">
 														<h3><span class="badge badge-pill badge-success">ENABLED</span>
 														</h3>
 													</div>
-													<div class="col-auto">
+													<div class="col-auto d-none">
 														<vtr-ui-button [label]="'ENABLE FIREWALL'"></vtr-ui-button>
 													</div>
 												</div>
@@ -106,8 +110,12 @@
 										<ul class="list-group">
 											<li class="list-group-item">
 												<div class="row align-items-center">
-													<div class="col-auto">
-
+													<div class="col-auto px-3">
+														<div class="bullet-icon-times">
+															<div class="icon-bkg">
+																<fa-icon [icon]="['fas', 'times']"></fa-icon>
+															</div>
+														</div>
 													</div>
 													<div class="col-auto px-0 text">
 														VIRUS SCAN
@@ -125,8 +133,12 @@
 
 											<li class="list-group-item">
 												<div class="row align-items-center">
-													<div class="col-auto">
-
+													<div class="col-auto px-3">
+														<div class="bullet-icon-times">
+															<div class="icon-bkg">
+																<fa-icon [icon]="['fas', 'times']"></fa-icon>
+															</div>
+														</div>
 													</div>
 													<div class="col-auto px-0 text">
 														FIREWALL
@@ -144,7 +156,21 @@
 
 										</ul>
 
-										<div class="row justify-content-end">
+										<div class="row align-items-center">
+											<div class="col-auto mr-auto">
+												<div class="card-with-border p-3">
+													<span class="text">
+														License Valid Until
+													</span>
+													<span class="date">
+														10/10/2020
+													</span>
+													<span>
+														<a href="#"
+														 class="text">Update Now</a>
+													</span>
+												</div>
+											</div>
 											<div class="col-auto px-0 py-5">
 												<vtr-ui-button [label]="'GET MCAFEE'"></vtr-ui-button>
 											</div>
@@ -196,7 +222,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon1.png" />
+													 src="./../../../../assets/images/antivirus/icon1.png" />
 												</div>
 												<div class="col">
 													<div class="title">
@@ -212,7 +238,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon2.png" />
+													 src="./../../../../assets/images/antivirus/icon2.png" />
 												</div>
 												<div class="col">
 													<div class="title">
@@ -228,7 +254,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon3.png" />
+													 src="./../../../../assets/images/antivirus/icon3.png" />
 												</div>
 												<div class="col">
 													<div class="title">
@@ -242,7 +268,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon4.png" />
+													 src="./../../../../assets/images/antivirus/icon4.png" />
 												</div>
 												<div class="col">
 													<div class="title">
@@ -260,7 +286,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon5.png" />
+													 src="./../../../../assets/images/antivirus/icon5.png" />
 												</div>
 												<div class="col">
 													<div class="title">
@@ -276,7 +302,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon6.png" />
+													 src="./../../../../assets/images/antivirus/icon6.png" />
 												</div>
 												<div class="col">
 													<div class="title">
@@ -294,7 +320,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon7.png" />
+													 src="./../../../../assets/images/antivirus/icon7.png" />
 												</div>
 												<div class="col">
 													<div class="title">
@@ -342,8 +368,8 @@
 								<div class="row mb-40">
 									<div class="col col-12">
 										<vtr-widget-status [title]="'Security Advisor'"
-											[description]="'Security Status Component'"
-											[items]="mockService.securityStatus">
+										 [description]="'Security Status Component'"
+										 [items]="mockService.securityStatus">
 										</vtr-widget-status>
 									</div>
 								</div>
@@ -352,11 +378,11 @@
 								<div class="row mb-40">
 									<div class="col col-12">
 										<vtr-container-card [img]="'./../../../../assets/images/antivirus/poaster.png'"
-											[caption]="'PARTNER ARTICLE'"
-											[title]="'Try our McAfee anti-virus software for 6 months'"
-											[type]="'article'"
-											[ratioX]="4"
-											[ratioY]="4">
+										 [caption]="'PARTNER ARTICLE'"
+										 [title]="'Try our McAfee anti-virus software for 6 months'"
+										 [type]="'article'"
+										 [ratioX]="4"
+										 [ratioY]="4">
 										</vtr-container-card>
 									</div>
 								</div>

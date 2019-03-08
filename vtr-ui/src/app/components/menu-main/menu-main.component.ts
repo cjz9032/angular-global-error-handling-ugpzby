@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
 import { UserService } from '../../services/user/user.service';
-
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { ModalLenovoIdComponent } from '../modal/modal-lenovo-id/modal-lenovo-id.component';
 @Component({
 	selector: 'vtr-menu-main',
 	templateUrl: './menu-main.component.html',
@@ -103,7 +104,8 @@ export class MenuMainComponent implements OnInit {
 		private router: Router,
 		public configService: ConfigService,
 		public deviceService: DeviceService,
-		public userService: UserService
+		public userService: UserService,
+		private modalService: NgbModal
 	) { }
 
 	ngOnInit() {
@@ -111,6 +113,19 @@ export class MenuMainComponent implements OnInit {
 
 	menuItemClick(event, path) {
 		this.router.navigateByUrl(path);
+	}
+	
+	//  to popup Lenovo ID modal dialog
+	OpenLenovoId(){
+		this.modalService.open(ModalLenovoIdComponent, {
+			backdrop: 'static',
+			size: 'lg',
+			centered: true
+		  });
+	}
+
+	onLogout(){
+		this.userService.removeAuth();
 	}
 
 }
