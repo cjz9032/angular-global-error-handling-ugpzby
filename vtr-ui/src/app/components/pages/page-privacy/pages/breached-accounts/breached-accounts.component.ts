@@ -1,27 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { ServerCommunicationService } from "../../common-services/server-communication.service";
+import { ServerCommunicationService } from '../../common-services/server-communication.service';
+import { BreachedAccount } from '../../common-ui/breached-account/breached-account.component';
 
 @Component({
-    // selector: 'app-admin',
-    templateUrl: './breached-accounts.component.html',
-    styleUrls: ['./breached-accounts.component.scss']
+	// selector: 'app-admin',
+	templateUrl: './breached-accounts.component.html',
+	styleUrls: ['./breached-accounts.component.scss']
 })
-export class BreachedAccountsComponent {
-	public breached_accounts: Array<object>;
+export class BreachedAccountsComponent implements OnInit {
+	breached_accounts: BreachedAccount[];
 	// static Data transferred to html
-	public LightPrivacyBannerData = {
+	LightPrivacyBannerData = {
 		title: 'Fix breaches and watch for future ones',
-        text: 'Get the app that puts you back in control of your privacy',
+		text: 'Get the app that puts you back in control of your privacy',
 		image_url: '/assets/images/privacy-tab/privacy-search.png'
 	};
-	public pageBannerData = {
+	pageBannerData = {
 		title: 'Lenovo Privacy by FigLeaf — free for 14 days',
 		text: 'Lenovo Privacy by FigLeaf lets you share what you want or keep things private for each site you visit or transact with. Your email. Payment and billing info. Your location. Even your personal interests. No matter what you do er where you go, you decide your level of privacy.',
 		image_url: '/assets/images/privacy-tab/banner.png',
 		read_more_link: 'https://figleafapp.com/',
 	};
-	public promoFeaturesData = [
+	promoFeaturesData = [
 		{
 			title: 'Scan foor breaches',
 			text: 'Start by finding out if any of your accounts have been part of data breach',
@@ -36,16 +37,16 @@ export class BreachedAccountsComponent {
 			text: 'Sign up at new sites without giving out your real email address',
 		},
 	];
-	public promoArticleData = {
+	promoArticleData = {
 		title: 'What is the risk?',
 		text: 'Major web browsers let you store your usernames and passwords for your favorite sites, so you can log in quickly. But these passwords are usually not well encrypted, making your accounts vulnerable to hacking.',
 		link_href: 'https://figleafapp.com/',
 		image_url: '/assets/images/privacy-tab/default.png'
 	};
-	public promoVideoData = {
+	promoVideoData = {
 		image_url: '/assets/images/privacy-tab/Video.png'
 	};
-	public promoVideoPopupData = {
+	promoVideoPopupData = {
 		title: 'Promo for breached accaunts page',
 		video_url: 'https://www.youtube.com/embed/tgbNymZ7vqY'
 	};
@@ -57,7 +58,7 @@ export class BreachedAccountsComponent {
 		this.breached_accounts = this.serverCommunicationService.breachedAccounts;
 	}
 
-    backClicked() {
-        this._location.back();
-    }
+	backClicked() {
+		this._location.back();
+	}
 }

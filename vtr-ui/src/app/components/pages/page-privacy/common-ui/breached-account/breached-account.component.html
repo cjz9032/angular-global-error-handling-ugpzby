@@ -1,16 +1,33 @@
-<div class="breached-account">
-	<div class="breached-account__social">
-		<img class="breached-account__img" [src]="breached_account.image" alt="">
-		<div class="breached-account__social-description">
-			<h4 class="breached-account__title">{{breached_account.domain}}</h4>
-			<p class="breached-account__email"
-			   title="{{breached_account.breachedEmail}}">{{breached_account.breachedEmail}}</p>
+<div class="breached-account" *ngFor="let account of breachedAccounts; let i = index">
+	<div class="breached-account__preview">
+		<div class="breached-account__social">
+			<img class="breached-account__img" [src]="account.image" alt="">
+			<div class="breached-account__social-description">
+				<h4 class="breached-account__title">{{account.domain}}</h4>
+				<p class="breached-account__email"
+				   title="{{account.email}}" *ngIf="openId !== i">{{account.email}}</p>
+			</div>
+		</div>
+
+		<span class="breached-account__date" *ngIf="openId !== i">Breached on {{account.date}}</span>
+
+		<div class="breached-account__details">
+			<a class="breached-account__preview-link"
+			   href=""
+			   *ngIf="mode === breachedAccountMode.PREVIEW">
+				<span>Details</span>
+			</a>
+
+			<button class="breached-account__accordion-button"
+				 *ngIf="mode === breachedAccountMode.FULL"
+				 [ngClass]="{'breached-account__accordion-button--open': openId === i}"
+				 (click)="open(i)">
+				<span>Details</span>
+			</button>
 		</div>
 	</div>
 
-	<span class="breached-account__date">Breached on {{breached_account.breachDate}}</span>
-
-	<div class="breached-account__details">
-		<a class="breached-account__details-link" href=""><span>Details</span></a>
+	<div *ngIf="openId === i" class="breached-account__description">
+		<vtr-breached-description [breachedAccount]="account"></vtr-breached-description>
 	</div>
 </div>

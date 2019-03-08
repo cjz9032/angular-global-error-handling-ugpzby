@@ -49,6 +49,7 @@ import { PrivacyDashboardListComponent } from './pages/installed/privacy-dashboa
 import { VideoPopupComponent } from './common-ui/video-popup/video-popup.component';
 import { SupportBannerComponent } from './common-ui/support-banner/support-banner.component';
 import { CommonPopupComponent } from './common-ui/common-popup/common-popup.component';
+import { BreachedDescriptionComponent } from './common-ui/breached-description/breached-description.component';
 
 @NgModule({
 	imports: [
@@ -93,6 +94,7 @@ import { CommonPopupComponent } from './common-ui/common-popup/common-popup.comp
 		VideoPopupComponent,
 		SupportBannerComponent,
 		CommonPopupComponent,
+		BreachedDescriptionComponent,
 	],
 	providers: [
 		ServerCommunicationService,
