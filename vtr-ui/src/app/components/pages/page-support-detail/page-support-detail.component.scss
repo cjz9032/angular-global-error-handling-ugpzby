@@ -10,6 +10,11 @@
 				border-radius: $border_radius;
 				box-shadow: $drop_shadow;
 
+				.description-container {
+					font-size: 2rem;
+					letter-spacing: 0.1rem;
+				}
+
 				.text {
 					color: $shade_darker;
 					font-size: 1.8rem;
