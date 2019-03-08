@@ -15,27 +15,51 @@ html {
 	letter-spacing: 0.1em;
 }
 
+@media #{$mediaquery_0} {
+	html {
+		font-size: 100%;
+	}
+}
+
 @media #{$mediaquery_1} {
 	html {
-		font-size: 55%;
+		font-size: 85%;
 	}
 }
 
 @media #{$mediaquery_2} {
 	html {
-		font-size: 50%;
+		font-size: 72%;
 	}
 }
 
 @media #{$mediaquery_3} {
 	html {
-		font-size: 40%;
+		font-size: 62.5%;
 	}
 }
 
 @media #{$mediaquery_4} {
 	html {
-		font-size: 30%;
+		font-size: 58%;
+	}
+}
+
+@media #{$mediaquery_5} {
+	html {
+		font-size: 53%;
+	}
+}
+
+@media #{$mediaquery_6} {
+	html {
+		font-size: 42%;
+	}
+}
+
+@media #{$mediaquery_7} {
+	html {
+		font-size: 36%;
 	}
 }
 
