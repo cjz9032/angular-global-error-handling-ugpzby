@@ -109,7 +109,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			leftImageSource: ['far', 'gem'],
 			header: 'Easy Resume',
 			subHeader:
-				'orem ipsum dolor sit amet del Lorem ipsum dolor sit amet del',
+				`Enable this feature to improve your resume time if you frequently open and close your computer's lid.`,
 			isCheckBoxVisible: false,
 			isSwitchVisible: false,
 			tooltipText:
