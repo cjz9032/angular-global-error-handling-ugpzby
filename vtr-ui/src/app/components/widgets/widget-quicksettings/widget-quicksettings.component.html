@@ -20,6 +20,7 @@
 			</div>
 			<div class="col col-4 text-right">
 				<vtr-widget-switch-icon [iconDefinition]="['fas', 'eye']"
+					[value]="eyeCareModeStatus.status"
 					title="Eye Care Mode"
 					(toggle)="onEyeCareModeToggle($event)"></vtr-widget-switch-icon>
 			</div>

@@ -1,7 +1,9 @@
 <div class="vtr-page-security-windows-hello vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main [title]="title"></vtr-header-main>
+			<vtr-header-main [backarrow]="backarrow"
+			 [back]="back"
+			 [title]="title"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -13,18 +15,18 @@
 							<div class="vtr-page-shift-up">
 								<div class="vtr-page-security-windows-hello">
 									<div class="container-fluid p-40 security-card"
-										*ngIf="IsWindowsHelloInstalled==='not-installed'">
+									 *ngIf="IsWindowsHelloInstalled==='not-installed'">
 										<div class="row">
 											<div class="col">
 												<div class="heading">Windows Hello</div>
 											</div>
 											<div class="pull right"><img class="dashlane_logo_teal"
-													src="../../../../assets/images/windows-logo.png" /></div>
+												 src="../../../../assets/images/windows-logo.png" /></div>
 										</div>
 										<div class="row mt-20">
 											<div class="col">
 												<div class="text-regular">
-													Protect your ideapad with these Lenovo recommended security options.
+													Traditional passwords can be stolen and used to access your account from anywhere in the world. More secure and convenient, Windows Hello is the next generation of a password. Use your fingerprint reader (or IR camera) instead of insecure passwords to log in.
 												</div>
 											</div>
 										</div>
@@ -55,7 +57,7 @@
 														<div>
 															<div class="button-box">
 																<button type="button"
-																	class="btn btn-danger btn-round-xs text-uppercase">
+																 class="btn btn-danger btn-round-xs text-uppercase">
 																	Disabled
 																</button>
 															</div>
@@ -72,7 +74,7 @@
 											<div class=" pull right">
 												<div class="col-12">
 													<button type="button"
-														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
+													 class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
 														Setup Windows Hello
 													</button>
 												</div>
@@ -80,13 +82,13 @@
 										</div>
 									</div>
 									<div class="container-fluid p-40 security-card"
-										*ngIf="IsWindowsHelloInstalled==='active'">
+									 *ngIf="IsWindowsHelloInstalled==='active'">
 										<div class="row">
 											<div class="col">
 												<div class="heading">Windows Hello</div>
 											</div>
 											<div class="pull right"><img class="dashlane_logo_teal"
-													src="../../../../assets/images/windows-logo.png" /></div>
+												 src="../../../../assets/images/windows-logo.png" /></div>
 										</div>
 										<div class="row">
 											<div class="col">
@@ -121,7 +123,7 @@
 														<div>
 															<div class="button-box">
 																<button type="button"
-																	class="btn btn-success btn-round-xs text-uppercase">
+																 class="btn btn-success btn-round-xs text-uppercase">
 																	Enabled
 																</button>
 															</div>
@@ -135,14 +137,14 @@
 							</div>
 						</div>
 						<div class="row vtr-page-security-windows-hello"
-							*ngIf="IsWindowsHelloInstalled==='not-installed'">
+						 *ngIf="IsWindowsHelloInstalled==='not-installed'">
 							<div class="row">
 								<div class="col col-12 col-sm-12 mt-40">
 									<div>
 										<p class="title"> Why Windows Hello?</p>
 										<p class="text-regular">Windows Hello makes logging into your PC easier and more
 											secure, and can also be used for your online Microsoft apps. Follow the
-											instructions below to begin using Windows Hello</p>
+											instructions below to begin using Windows Hello.</p>
 									</div>
 								</div>
 							</div>
@@ -150,7 +152,7 @@
 								<div class="col col-6 mt-40">
 									<div class="col">
 										<img src="../../../../assets/images/windows-hello-left-img.png"
-											class="dashlane-side-left-img" />
+										 class="dashlane-side-left-img" />
 									</div>
 								</div>
 								<div class="col col-6 mt-40">
@@ -232,7 +234,7 @@
 															<div class="text-regular">
 																Start using Windows Hello to log into Microsoft Apps
 																such as Outlook, OneDrive, Office 365 and Xbox Live.
-																Visit microsoft
+																Visit Microsoft
 															</div>
 														</div>
 													</div>
@@ -247,16 +249,16 @@
 									<div class="col">
 										<div class="list-heading">Powered By Windows Hello</div>
 										<p class="text-regular">Read more on the <a href=""
-												class="learnmore">Privacy policy</a> and <a href=""
-												class="learnmore">lorem ipsum</a></p>
+											 class="learnmore">Privacy policy</a> and <a href=""
+											 class="learnmore">lorem ipsum</a></p>
 									</div>
 									<div class="pull right"><img class="dashlane_logo_teal"
-											src="../../../../assets/images/windows-logo.png" /></div>
+										 src="../../../../assets/images/windows-logo.png" /></div>
 								</div>
 							</div>
 						</div>
 						<div class="row vtr-connected-security-password"
-							*ngIf="IsWindowsHelloInstalled==='active'">
+						 *ngIf="IsWindowsHelloInstalled==='active'">
 							<div class="row">
 								<div class="col col-12 col-sm-12 mt-40">
 									<div>
@@ -297,7 +299,7 @@
 														<div class="text-regular">
 															Start using Windows Hello to log into Microsoft Apps such as
 															Outlook, OneDrive, Office 365 and Xbox Live. <a href="#">
-																Visit microsoft</a>
+																Visit Microsoft</a>
 														</div>
 													</div>
 												</li>
@@ -308,7 +310,7 @@
 								<div class="col col-6 mt-40">
 									<div class="col">
 										<img src="../../../../assets/images/dashlane-right-img.png"
-											class="dashlane-side-right-img pull-right" />
+										 class="dashlane-side-right-img pull-right" />
 									</div>
 								</div>
 							</div>
@@ -321,12 +323,24 @@
 								<div class="row mb-40">
 									<div class="col col-12">
 										<vtr-widget-status [title]="'Security Advisor'"
-											[description]="'Security Status Component'"
-											[items]="mockService.securityStatus">
+										 [description]="'Security Status Component'"
+										 [items]="mockService.securityStatus">
 										</vtr-widget-status>
 									</div>
 								</div>
 								<!--End of Security Card Advisor-->
+								<div class="row mb-40">
+									<div class="col col-12">
+										<vtr-container-card [img]="'./../../../../assets/images/antivirus/poaster.png'"
+											[title]="'Lenovo announced new powerful Legion compact series.'"
+											[logoText]="'LENEVO SPECIAL'"
+											[readMore]="'http://www.google.com'"
+											[type]="'article'"
+											[ratioX]="4"
+											[ratioY]="4">
+										</vtr-container-card>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

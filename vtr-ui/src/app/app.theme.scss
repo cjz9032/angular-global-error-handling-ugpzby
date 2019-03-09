@@ -66,10 +66,15 @@ $border_radius_sm: 0.6rem;
 
 $gradient_main: linear-gradient(90deg, $main_gstart 0%, $main 100%);
 
-$mediaquery_1: "only screen and (max-width : 1800px)";
-$mediaquery_2: "only screen and (max-width : 1600px)";
-$mediaquery_3: "only screen and (max-width : 1400px)";
-$mediaquery_4: "only screen and (max-width : 1200px)";
+$mediaquery_0: "only screen and (max-width : 3600px)";
+$mediaquery_1: "only screen and (max-width : 3000px)";
+$mediaquery_2: "only screen and (max-width : 2600px)";
+$mediaquery_3: "only screen and (max-width : 2200px)";
+$mediaquery_4: "only screen and (max-width : 1800px)";
+$mediaquery_5: "only screen and (max-width : 1600px)";
+$mediaquery_6: "only screen and (max-width : 1400px)";
+$mediaquery_7: "only screen and (max-width : 1200px)";
+$mediaquery_8: "only screen and (max-width: 800px)";
 
 $drop_shadow: 0 0 1.5rem 0 $screen_dark_15;
 $text_shadow: 0 0 0.3rem $screen_dark_70;

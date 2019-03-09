@@ -9,12 +9,14 @@ import { MockService } from 'src/app/services/mock/mock.service';
 export class PageSecurityInternetComponent implements OnInit {
 
 	title = 'VPN Security';
-	IsDashlaneInstalled: string="not-installed";
+	back = 'BACK';
+	backarrow = '< ';
+	IsDashlaneInstalled = 'not-installed';
 	constructor(public mockService: MockService) { }
 
 	ngOnInit() {
 	}
 	surfeasy() {
-		 window.open("https://www.surfeasy.com/lenovo/")
+		window.open('https://www.surfeasy.com/lenovo/');
 	}
 }

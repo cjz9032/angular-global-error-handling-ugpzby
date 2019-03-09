@@ -1,6 +1,10 @@
 @import "../../../app.theme.scss";
 
 .vtr-page-security-wifi {
+	.connected-home-container {
+		margin-top: 5rem;
+	}
+
 	.vtr-security-health {
 		border-radius: $border_radius;
 		background-color: $light;
@@ -11,11 +15,11 @@
 			color: $main_darker;
 			font-size: 2.5rem;
 		}
+
 		.description {
 			color: $shade;
-			font-size: 1.1rem;
-			text-transform: uppercase;
-			font-weight: $weight_medium;
+			font-size: 1.2rem;
+			font-weight: $weight_light;
 		}
 
 		.home-security {
@@ -24,6 +28,7 @@
 			margin-top: 1rem;
 			font-weight: $weight_bold;
 		}
+
 		.security-health-disabled {
 			.security-health-disabled-list {
 				background-color: $shade;
@@ -34,6 +39,7 @@
 				margin: 1.5rem 0rem 0rem 0rem;
 				background: url("../../../../assets/images/security-health-disabled.png");
 				height: 100%;
+
 				.peace-of-mind {
 					margin: 12rem 1rem 1rem 1rem;
 					color: $main_dark;
@@ -46,32 +52,38 @@
 					padding: 1rem 1rem 7rem 0.25rem;
 					margin: 1rem 1rem 7rem 0.25rem;
 					width: 100%;
+					text-align: center;
 				}
 			}
 
 			.coronet-section {
 				margin-top: 1.5rem;
+
 				.p-0 {
 					padding: 0rem;
 				}
 
 				.view-security-check {
 					padding: 0rem;
-					margin-top: 1rem;
+					margin-top: 1.2rem;
 					text-align: center;
-					font-size: 2rem;
+					font-size: 1.3rem;
 					font-weight: $weight_regular;
 					cursor: pointer;
+
 					a {
 						color: $main;
+						text-decoration: none;
+
 						&:hover {
-							text-decoration: none;
+							text-decoration: underline;
 						}
 					}
 				}
+
 				.coronet_logo_teal {
 					padding: 0rem 0.5rem 0rem 0rem;
-					margin-top: 0.5rem;
+					margin-top: 0rem;
 				}
 			}
 

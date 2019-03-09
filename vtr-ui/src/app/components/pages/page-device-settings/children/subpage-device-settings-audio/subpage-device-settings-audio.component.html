@@ -10,7 +10,7 @@
 	<div class="row py-5 smartsettings-card"
 		id="audio">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible title="Audio Smartsettings"
+			<vtr-container-collapsible cardTitle="Audio Smartsettings"
 				[isCollapsed]="false"
 				[allowCollapse]="false"
 				[theme]="'blue'">
@@ -30,31 +30,32 @@
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'blue'"
+							[tooltipText]="'Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.'"
 							(toggleOnOff)="onAutomaticDolbyAudioToggleOnOff($event)">
 
 							<div class="my-3"
 								*ngIf="!automaticDolbyAudioSettings">
-								<vtr-ui-rectangle-radio [radioId]="'radio1'"
-									[group]="'radio'"
+								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
+									[group]="radioGroupAutoDolbySettings"
 									[label]="'DYNAMIC'"
 									[value]="'DYNAMIC'"
 									[tooltip]="'Sample tooltip'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio2'"
-									[group]="'radio'"
+								<vtr-ui-rectangle-radio [radioId]="'radio' | uniqueId"
+									[group]="radioGroupAutoDolbySettings"
 									[label]="'MOVIE'"
 									[value]="'MOVIE'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio3'"
-									[group]="'radio'"
+								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
+									[group]="radioGroupAutoDolbySettings"
 									[label]="'MUSIC'"
 									[value]="'MUSIC'"
 									[tooltip]="'Sample tooltip'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio4'"
-									[group]="'radio'"
+								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
+									[group]="radioGroupAutoDolbySettings"
 									[label]="'GAME'"
 									[value]="'GAME'"
 									[tooltip]="'Sample tooltip'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio5'"
-									[group]="'radio'"
+								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
+									[group]="radioGroupAutoDolbySettings"
 									[label]="'VOICE'"
 									[value]="'VOICE'"
 									[tooltip]="'Sample tooltip'"></vtr-ui-rectangle-radio>
@@ -69,7 +70,7 @@
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="false"
-							[theme]="'blue'">
+							[theme]="'blue'" 	[tooltipText]="'Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality.'" >
 						</vtr-ui-row-switch>
 					</li>
 				</ul>
@@ -79,7 +80,7 @@
 	<div class="row py-5 smartsettings-card"
 		id="microphone">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible title="Microphone"
+			<vtr-container-collapsible cardTitle="Microphone"
 				[isCollapsed]="false"
 				[allowCollapse]="true"
 				[theme]="'white'">
@@ -92,7 +93,7 @@
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="true"
-							[theme]="'white'">
+							[theme]="'white'" [tooltipText]="'You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode.'">
 						</vtr-ui-row-switch>
 					</li>
 					<li class="">
@@ -118,7 +119,7 @@
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="true"
-							[theme]="'white'">
+							[theme]="'white'" 	[tooltipText]="'Toggle this on to optimize the MIC audio by suppressing keyboard noise.'">
 						</vtr-ui-row-switch>
 					</li>
 
@@ -130,7 +131,7 @@
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="true"
-							[theme]="'white'">
+							[theme]="'white'" [tooltipText]="'Toggle on this feature to optimize your MIC audio by reducing acoustic echo.'">
 						</vtr-ui-row-switch>
 					</li>
 
@@ -143,20 +144,20 @@
 							[showChildContent]="true"
 							[theme]="'white'">
 							<div class="my-3">
-								<vtr-ui-rectangle-radio [radioId]="'radio1'"
-									[group]="'radio'"
+								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
+									[group]="radioOptimiseMicSettings"
 									[label]="'VOICE RECOGINITION'"
 									[value]="'DYNAMIC'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio2'"
-									[group]="'radio'"
+								<vtr-ui-rectangle-radio [radioId]="'radio' | uniqueId"
+									[group]="radioOptimiseMicSettings"
 									[label]="'ONLY MY VOICE'"
 									[value]="'MOVIE'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio3'"
-									[group]="'radio'"
+								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
+									[group]="radioOptimiseMicSettings"
 									[label]="'NORMAL'"
 									[value]="'MUSIC'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio4'"
-									[group]="'radio'"
+								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
+									[group]="radioOptimiseMicSettings"
 									[label]="'MULTIPLE VOICES'"
 									[value]="'GAME'"></vtr-ui-rectangle-radio>
 							</div>
