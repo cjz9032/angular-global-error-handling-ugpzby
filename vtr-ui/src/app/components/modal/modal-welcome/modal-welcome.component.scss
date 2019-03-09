@@ -20,8 +20,8 @@
 
 	.divider {
 		height: 0.1rem;
-		border: 0.1rem solid $shade_lighter;
-		background-color: $light;
+		border: 0.1rem solid #F5F7F8;
+		background-color: #D8D8D8;
 		margin: 2rem 0;
 	}
 
@@ -68,6 +68,7 @@
 		opacity: 0;
 	}
 
+
 	input[type="radio"] + label {
 		padding: 0.1rem 3rem;
 		border: 0.1rem solid #ECF0F1;
@@ -83,8 +84,10 @@
 		vertical-align: middle;
 	}
 
+
 	input[type="radio"]:checked + label {
 		border: 0.2rem solid $go_light;
+
 	}
 
 
@@ -92,9 +95,11 @@
 		opacity: 0;
 	}
 
+
 	input[type="checkbox"] + label {
 		padding: 0.1rem 3rem;
 		border: 0.1rem solid $shade_light;
+
 		border-radius: 2.5rem;
 		background: linear-gradient(270deg, $shade_extralight 0%, $shade_extralight 100%);
 		color: $shade_dark;
@@ -112,6 +117,7 @@
 
 	input[type="checkbox"]:checked + label {
 		border: 0.2rem solid $go_light;
+
 	}
 
 	label {

@@ -52,6 +52,8 @@ export class ModalWelcomeComponent implements OnInit {
 	}
 
 	toggle($event, value) {
+
+
 		if ($event.target.checked) {
 			this.checkedArray.push(value);
 		} else {

@@ -4,8 +4,8 @@ import { UserService } from './services/user/user.service';
 import { DevService } from './services/dev/dev.service';
 import { DisplayService } from './services/display/display.service';
 import { environment } from '../environments/environment';
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {ModalWelcomeComponent} from "./components/modal/modal-welcome/modal-welcome.component";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { ModalWelcomeComponent } from "./components/modal/modal-welcome/modal-welcome.component";
 
 @Component({
 	selector: 'vtr-root',
@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
 		private devService: DevService,
 		private displayService: DisplayService,
 		private router: Router,
-		private modalService:NgbModal
+		private modalService: NgbModal
 	) {
 		this.modalService.open(ModalWelcomeComponent,{backdrop:'static'});
 	}
