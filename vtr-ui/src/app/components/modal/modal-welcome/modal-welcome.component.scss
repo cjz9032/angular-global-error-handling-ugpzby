@@ -24,7 +24,7 @@
 		height: 0.1rem;
 		border: 0.1rem solid #F5F7F8;
 		background-color: #D8D8D8;
-		margin:2rem 0;
+		margin: 2rem 0;
 	}
 
 	.list-inline-item {
@@ -48,28 +48,30 @@
 			font-weight: bold;
 		}
 	}
-	.previous{
-		background:$go_light;
-		position:relative;
+
+	.previous {
+		background: $go_light;
+		position: relative;
 	}
-	.previous::after{
-		content:"";
-		height:0.5rem;
-		width:1rem;
-		border-left:1px solid white;
-		border-bottom:1px solid white;
+
+	.previous::after {
+		content: "";
+		height: 0.5rem;
+		width: 1rem;
+		border-left: 1px solid white;
+		border-bottom: 1px solid white;
 		transform: rotate(-45deg);
-		position:absolute;
-		left:0.4rem;
-		top:0.5rem;
+		position: absolute;
+		left: 0.4rem;
+		top: 0.5rem;
 	}
 
 	input[type="radio"] {
 		opacity: 0;
 	}
 
-	input[type="radio"] + label {
-		padding:0.1rem 3rem;
+	input[type="radio"]+label {
+		padding: 0.1rem 3rem;
 		border: 0.1rem solid #ECF0F1;
 		border-radius: 2.5rem;
 		background: linear-gradient(270deg, #FBFCFC 0%, #F5F7F8 100%);
@@ -80,15 +82,14 @@
 		letter-spacing: 0.1rem;
 		line-height: 5rem;
 		text-align: center;
-		vertical-align:middle;
-	}
-	.radio-label {
-
+		vertical-align: middle;
 	}
 
+	.radio-label {}
 
 
-	input[type="radio"]:checked + label {
+
+	input[type="radio"]:checked+label {
 		border: 0.2rem solid #35E6B9;
 	}
 
@@ -97,8 +98,8 @@
 		opacity: 0;
 	}
 
-	input[type="checkbox"] + label {
-		padding:0.1rem 3rem;
+	input[type="checkbox"]+label {
+		padding: 0.1rem 3rem;
 		border: 0.1rem solid #ECF0F1;
 		border-radius: 2.5rem;
 		background: linear-gradient(270deg, #FBFCFC 0%, #F5F7F8 100%);
@@ -108,14 +109,14 @@
 		letter-spacing: 0.1rem;
 		line-height: 5rem;
 		text-align: center;
-		vertical-align:middle;
+		vertical-align: middle;
 	}
 
-	input[type="checkbox"]:checked + label::before {
+	input[type="checkbox"]:checked+label::before {
 		content: "";
 	}
 
-	input[type="checkbox"]:checked + label {
+	input[type="checkbox"]:checked+label {
 		border: 0.2rem solid #35E6B9;
 	}
 
@@ -133,16 +134,18 @@
 		transform: rotate(-45deg);
 		position: absolute;
 		left: 1rem;
-		top:1.9rem;
+		top: 1.9rem;
 	}
-	.btn-close{
-		right:1rem;
-		top:1rem;
+
+	.btn-close {
+		right: 1rem;
+		top: 1rem;
 	}
-	.button{
-		top:50%;
-		transform:translateY(-50%);
-		right:0;
+
+	.button {
+		top: 50%;
+		transform: translateY(-50%);
+		right: 0;
 
 	}
 

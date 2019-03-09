@@ -215,7 +215,7 @@ library.add(far);
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
 	bootstrap: [AppComponent],
-	entryComponents: [ModalLenovoIdComponent,ModalWelcomeComponent],
+	entryComponents: [ModalLenovoIdComponent, ModalWelcomeComponent],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
 	]

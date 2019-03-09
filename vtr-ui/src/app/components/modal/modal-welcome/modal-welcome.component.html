@@ -1,8 +1,11 @@
-
-<div class="modal-body vtr-modal-welcome" [ngSwitch]="page">
-	<div *ngSwitchCase="1" class="screen-1 p-5">
+<div class="modal-body vtr-modal-welcome"
+ [ngSwitch]="page">
+	<div *ngSwitchCase="1"
+	 class="screen-1 p-5">
 		<div class="d-flex justify-content-center">
-			<img  height="300px" width="300px" src="./../../../../assets/images/bitmap1.png"/>
+			<img height="300px"
+			 width="300px"
+			 src="./../../../../assets/images/bitmap1.png" />
 		</div>
 		<div class="d-flex justify-content-center title py-4">
 			Almost there!
@@ -11,7 +14,8 @@
 			Just a few more buttons to press before we can have liftoff. Before we can give you the most optimal experience there are still a few things to setup.
 		</div>
 		<div class="d-flex justify-content-center">
-			<vtr-ui-button [label]="'START PERSONALIZING'" (onClick)="next(1)" ></vtr-ui-button>
+			<vtr-ui-button [label]="'START PERSONALIZING'"
+			 (onClick)="next(1)"></vtr-ui-button>
 		</div>
 		<div class="divider"></div>
 		<div class="d-flex justify-content-center align-items-center">
@@ -23,10 +27,13 @@
 		</div>
 
 	</div>
-	<div *ngSwitchCase="2" class="screen-2 p-5">
-     <div class="d-flex justify-content-center">
-		 <img src="./../../../../assets/images/bitmap2.png" height="300px" width="300px"/>
-	 </div>
+	<div *ngSwitchCase="2"
+	 class="screen-2 p-5">
+		<div class="d-flex justify-content-center">
+			<img src="./../../../../assets/images/bitmap2.png"
+			 height="300px"
+			 width="300px" />
+		</div>
 		<div class="d-flex justify-content-center title py-4">
 			How will you use it?
 		</div>
@@ -34,14 +41,29 @@
 			Click on one of these uses to tell is how you will use this machine?
 		</div>
 		<div class="d-flex justify-content-center">
-             <div>
-				 <input type="radio" name="radio" id="radio1" value="business" [(ngModel)]="data.page2.radioValue"/>
-				 <label for="radio1" class="radio-label">BUSINESS</label>
-				 <input type="radio" name="radio" id="radio2" value="personal" [(ngModel)]="data.page2.radioValue"/>
-				 <label for="radio2" class="radio-label">PERSONAL</label>
-				 <input type="radio" name="radio" id="radio3" value="custom" [(ngModel)]="data.page2.radioValue"/>
-				 <label for="radio3" class="radio-label">CUSTOM</label>
-			 </div>
+			<div>
+				<input type="radio"
+				 name="radio"
+				 id="radio1"
+				 value="business"
+				 [(ngModel)]="data.page2.radioValue" />
+				<label for="radio1"
+				 class="radio-label">BUSINESS</label>
+				<input type="radio"
+				 name="radio"
+				 id="radio2"
+				 value="personal"
+				 [(ngModel)]="data.page2.radioValue" />
+				<label for="radio2"
+				 class="radio-label">PERSONAL</label>
+				<input type="radio"
+				 name="radio"
+				 id="radio3"
+				 value="custom"
+				 [(ngModel)]="data.page2.radioValue" />
+				<label for="radio3"
+				 class="radio-label">CUSTOM</label>
+			</div>
 		</div>
 		<div class="divider"></div>
 		<div class="row justify-content-center align-items-center position-relative">
@@ -53,15 +75,19 @@
 				</ul>
 			</div>
 			<div class="position-absolute button">
-				<vtr-ui-button label="SKIP" (onClick)="next(2)"></vtr-ui-button>
+				<vtr-ui-button label="SKIP"
+				 (onClick)="next(2)"></vtr-ui-button>
 			</div>
 
 		</div>
-  </div>
-    <div *ngSwitchCase="3" class="p-5">
-        <div class="d-flex justify-content-center">
-		 <img src="./../../../../assets/images/bitmap3.png" height="300px" width="300px"/>
-	    </div>
+	</div>
+	<div *ngSwitchCase="3"
+	 class="p-5">
+		<div class="d-flex justify-content-center">
+			<img src="./../../../../assets/images/bitmap3.png"
+			 height="300px"
+			 width="300px" />
+		</div>
 		<div class="d-flex justify-content-center title py-4">
 			What are your interests?
 		</div>
@@ -71,19 +97,23 @@
 		<div class="d-flex justify-content-center py-3">
 			<div class="d-flex justify-content-center">
 				<div class="inline-block">
-					<input type="checkbox" id="checkbox1"/>
+					<input type="checkbox"
+					 id="checkbox1" />
 					<label for="checkbox1">GAMES</label>
 				</div>
 				<div class="inline-block">
-					<input type="checkbox" id="checkbox2"/>
+					<input type="checkbox"
+					 id="checkbox2" />
 					<label for="checkbox2">NEWS</label>
 				</div>
 				<div class="inline-block">
-					<input type="checkbox" id="checkbox3"/>
-					<label for="checkbox3" >ENTERTAINMENT</label>
+					<input type="checkbox"
+					 id="checkbox3" />
+					<label for="checkbox3">ENTERTAINMENT</label>
 				</div>
 				<div class="inline-block">
-					<input type="checkbox" id="checkbox4"/>
+					<input type="checkbox"
+					 id="checkbox4" />
 					<label for="checkbox4">ARTS</label>
 				</div>
 			</div>
@@ -92,16 +122,19 @@
 		<div class="d-flex justify-content-center py-3">
 			<div class="d-flex justify-content-center">
 				<div class="inline-block">
-					<input type="checkbox" id="checkbox5"/>
+					<input type="checkbox"
+					 id="checkbox5" />
 					<label for="checkbox5">TECHNOLOGY</label>
 				</div>
 				<div class="inline-block">
-					<input type="checkbox" id="checkbox6"/>
+					<input type="checkbox"
+					 id="checkbox6" />
 					<label for="checkbox6">POLITICS</label>
 				</div>
 				<div class="inline-block">
-					<input type="checkbox" id="checkbox7"/>
-					<label for="checkbox7" >SPORTS</label>
+					<input type="checkbox"
+					 id="checkbox7" />
+					<label for="checkbox7">SPORTS</label>
 				</div>
 
 			</div>
@@ -110,11 +143,13 @@
 		<div class="d-flex justify-content-center py-3">
 			<div class="d-flex justify-content-center">
 				<div class="inline-block">
-					<input type="checkbox" id="checkbox8"/>
+					<input type="checkbox"
+					 id="checkbox8" />
 					<label for="checkbox8">REGIONAL NEWS</label>
 				</div>
 				<div class="inline-block">
-					<input type="checkbox" id="checkbox9"/>
+					<input type="checkbox"
+					 id="checkbox9" />
 					<label for="checkbox9">TECHNOLOG</label>
 				</div>
 
@@ -131,19 +166,23 @@
 				</ul>
 			</div>
 			<div class="position-absolute button">
-				<vtr-ui-button label="SKIP" (onClick)="next(3)"></vtr-ui-button>
+				<vtr-ui-button label="SKIP"
+				 (onClick)="next(3)"></vtr-ui-button>
 			</div>
 		</div>
-  </div>
+	</div>
 
 
 
 
-  <div class="btn-close position-absolute">
-    <button type="button" class="close" aria-hidden="true" (click)="activeModal.dismiss()">
-		<h1>&times;</h1>
-    </button>
-  </div>
+	<div class="btn-close position-absolute">
+		<button type="button"
+		 class="close"
+		 aria-hidden="true"
+		 (click)="activeModal.dismiss()">
+			<h1>&times;</h1>
+		</button>
+	</div>
 
 
 
