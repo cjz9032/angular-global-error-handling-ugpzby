@@ -5,46 +5,57 @@
 		.col-auto {
 			height: 100%;
 		}
+
 		padding: 0.7rem;
-		padding-left: 0px;
+		padding-left: 0rem;
 		margin: 0rem 1.7rem 0rem;
 		background-color: none;
-		border-bottom: 1px solid $border;
+		border-bottom: 0.1rem solid $border;
+
 		.left-icon-column {
-			padding-left: 0px;
+			padding-left: 0rem;
+
 			.left-icon {
 				font-size: 2rem;
 				color: $icon_color;
 			}
 		}
+
 		.right-icon {
 			font-size: 1.8rem;
 			color: $icon_color;
 			cursor: pointer;
+
 			&:hover {
 				color: $highlight;
 			}
 		}
+
 		.title {
 			font-size: 1.8rem;
 			color: $color;
 			letter-spacing: 0.05rem;
 		}
+
 		.caption {
 			font-size: 1.2rem;
 			color: $color;
 			max-width: 50rem;
 		}
+
 		.read-more {
 			color: $icon_color;
 			margin-top: 0.3rem;
 			cursor: pointer;
+
 			&:hover {
 				text-decoration: underline;
 			}
 		}
+
 		.text {
 			font-size: 1.4rem;
+
 			.link-text {
 				font-size: 1.2rem;
 				text-decoration: underline;
@@ -52,6 +63,7 @@
 				padding-top: 0.3rem;
 			}
 		}
+
 		.link-text {
 			font-size: 1.2rem;
 			text-decoration: underline;

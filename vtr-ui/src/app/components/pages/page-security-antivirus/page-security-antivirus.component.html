@@ -2,22 +2,34 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
-							 [back]="back"
-				[title]="title"></vtr-header-main>
+			 [back]="back"
+			 [title]="title"></vtr-header-main>
 
 
-			   <div class="btn-group btn-group-toggle" ngbRadioGroup style="margin-left:300px;margin-top:-150px;" [(ngModel)]="value">
-				  <label class="btn-primary" ngbButtonLabel> 1
-					  <input type="radio" ngbButton [value]="1"/>
-				  </label>
-				  <label class="btn-primary" ngbButtonLabel> 2
-					  <input type="radio" ngbButton [value]="2"/>
-				  </label>
+			<div class="btn-group btn-group-toggle"
+			 ngbRadioGroup
+			 style="margin-left:300px;margin-top:-150px;"
+			 [(ngModel)]="value">
+				<label class="btn-primary"
+				 ngbButtonLabel> 1
+					<input type="radio"
+					 ngbButton
+					 [value]="1" />
+				</label>
+				<label class="btn-primary"
+				 ngbButtonLabel> 2
+					<input type="radio"
+					 ngbButton
+					 [value]="2" />
+				</label>
 
-				  <label class="btn-primary" ngbButtonLabel> 3
-					  <input type="radio" ngbButton [value]="3"/>
-				  </label>
-			   </div>
+				<label class="btn-primary"
+				 ngbButtonLabel> 3
+					<input type="radio"
+					 ngbButton
+					 [value]="3" />
+				</label>
+			</div>
 
 		</div>
 	</div>
@@ -26,27 +38,27 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col col-8 vtr-page-left-column">
-						    <div *ngIf="value===1">
-						    <div class="header mt-minus">
-							<div class="rounded-card-with-shadow p-5">
-								<div class="row">
-									<div class="col-auto align-self-center">
-										<img class="img-fluid"
-										 src="./../../../../assets/images/antivirus/protection.png" />
-									</div>
-									<div class="col">
-										<div class="title p-3"> Not Optimally Protected</div>
-										<div class="subtitle p-3">
-											You are currently have no firewall protection,please turn on a firewall in
-											order safely lorem ipsum el dolor
+						<div *ngIf="value===1">
+							<div class="header mt-minus">
+								<div class="rounded-card-with-shadow p-5">
+									<div class="row">
+										<div class="col-auto align-self-center">
+											<img class="img-fluid"
+											 src="./../../../../assets/images/antivirus/protection.png" />
 										</div>
-										<div class="p-3">
-											<vtr-ui-button [label]="'LEARN MORE ABOUT MCAFEE'"></vtr-ui-button>
+										<div class="col">
+											<div class="title p-3"> Not Optimally Protected</div>
+											<div class="subtitle p-3">
+												You are currently have no firewall protection,please turn on a firewall in
+												order safely lorem ipsum el dolor
+											</div>
+											<div class="p-3">
+												<vtr-ui-button [label]="'LEARN MORE ABOUT MCAFEE'"></vtr-ui-button>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 							<div class="subheader mt-60">
 								<div class="rounded-card-with-shadow p-5 bg-white">
 									<div class="">
@@ -242,7 +254,7 @@
 									</div>
 								</div>
 							</div>
-							</div>
+						</div>
 
 						<div *ngIf="value===2">
 							<div class="subheader mt-minus">
@@ -311,15 +323,16 @@
 										<div class="row align-items-center">
 											<div class="col-auto mr-auto px-0">
 												<div class="card-with-border p-3">
-													 <span class="text">
-														 Trial Valid Until
-													 </span>
+													<span class="text">
+														Trial Valid Until
+													</span>
 													<span class="date">
-														 10/10/2020
-													 </span>
+														10/10/2020
+													</span>
 													<span>
-														 <a href="#" class="text">Upgrade Now</a>
-													 </span>
+														<a href="#"
+														 class="text">Upgrade Now</a>
+													</span>
 												</div>
 											</div>
 											<div class="col-auto px-0 py-5">
@@ -339,8 +352,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-
-														 src="./../../../../assets/images/antivirus/icon1.png" />
+													 src="./../../../../assets/images/antivirus/icon1.png" />
 
 												</div>
 												<div class="col">
@@ -357,7 +369,6 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-
 													 src="./../../../../assets/images/antivirus/icon2.png" />
 
 												</div>
@@ -375,7 +386,6 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-
 													 src="./../../../../assets/images/antivirus/icon3.png" />
 
 												</div>
@@ -391,7 +401,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-											 src="./../../../../assets/images/antivirus/icon4.png" />
+													 src="./../../../../assets/images/antivirus/icon4.png" />
 
 												</div>
 												<div class="col">
@@ -410,7 +420,6 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-
 													 src="./../../../../assets/images/antivirus/icon5.png" />
 
 												</div>
@@ -428,7 +437,6 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-
 													 src="./../../../../assets/images/antivirus/icon6.png" />
 
 												</div>
@@ -448,7 +456,6 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-
 													 src="./../../../../assets/images/antivirus/icon7.png" />
 
 
