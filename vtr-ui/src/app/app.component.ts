@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
 		private router: Router,
 		private modalService:NgbModal
 	) {
-		this.modalService.open(ModalWelcomeComponent);
+		this.modalService.open(ModalWelcomeComponent,{backdrop:'static'});
 	}
 
 	ngOnInit() {

@@ -2,10 +2,8 @@
 
 .vtr-modal-welcome {
 	/************** common *************/
-
-
 	.title {
-		color: #34495E;
+		color: $shade_darker;
 		font-size: 3.5rem;
 		font-weight: 300;
 		line-height: 4.2rem;
@@ -13,7 +11,7 @@
 	}
 
 	.subtitle {
-		color: #667481;
+		color: $shade_dark;
 		font-size: 1.6rem;
 		font-weight: 300;
 		line-height: 2.8rem;
@@ -22,16 +20,16 @@
 
 	.divider {
 		height: 0.1rem;
-		border: 0.1rem solid #F5F7F8;
-		background-color: #D8D8D8;
-		margin:2rem 0;
+		border: 0.1rem solid $shade_lighter;
+		background-color: $light;
+		margin: 2rem 0;
 	}
 
 	.list-inline-item {
 		border-radius: 50%;
 		height: 2rem;
 		width: 2rem;
-		background-color: #E6EAEB;
+		background-color: $shade_lighter;
 
 	}
 
@@ -39,29 +37,31 @@
 		border-radius: 50%;
 		height: 3rem;
 		width: 3rem;
-		background: linear-gradient(270deg, #4980FC 0%, #2E62D9 100%);
+		background: linear-gradient(270deg, $main_light 0%, $main 100%);
 
 		.text {
 			visibility: visible;
-			color: #FFFFFF;
+			color: $light;
 			font-size: 1.7rem;
 			font-weight: bold;
 		}
 	}
-	.previous{
-		background:$go_light;
-		position:relative;
+
+	.previous {
+		background: $go_light;
+		position: relative;
 	}
-	.previous::after{
-		content:"";
-		height:0.5rem;
-		width:1rem;
-		border-left:1px solid white;
-		border-bottom:1px solid white;
+
+	.previous::after {
+		content: "";
+		height: 0.5rem;
+		width: 1rem;
+		border-left: 0.1rem solid $light;
+		border-bottom: 0.1rem solid $light;
 		transform: rotate(-45deg);
-		position:absolute;
-		left:0.4rem;
-		top:0.5rem;
+		position: absolute;
+		left: 0.4rem;
+		top: 0.5rem;
 	}
 
 	input[type="radio"] {
@@ -69,27 +69,22 @@
 	}
 
 	input[type="radio"] + label {
-		padding:0.1rem 3rem;
+		padding: 0.1rem 3rem;
 		border: 0.1rem solid #ECF0F1;
 		border-radius: 2.5rem;
-		background: linear-gradient(270deg, #FBFCFC 0%, #F5F7F8 100%);
+		background: linear-gradient(270deg, $shade_extralight 0%, $shade_extralight 100%);
 		box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.2);
-		color: #34495E;
+		color: $shade_dark;
 		font-size: 1.5rem;
 		font-weight: 500;
 		letter-spacing: 0.1rem;
 		line-height: 5rem;
 		text-align: center;
-		vertical-align:middle;
+		vertical-align: middle;
 	}
-	.radio-label {
-
-	}
-
-
 
 	input[type="radio"]:checked + label {
-		border: 0.2rem solid #35E6B9;
+		border: 0.2rem solid $go_light;
 	}
 
 
@@ -98,17 +93,17 @@
 	}
 
 	input[type="checkbox"] + label {
-		padding:0.1rem 3rem;
-		border: 0.1rem solid #ECF0F1;
+		padding: 0.1rem 3rem;
+		border: 0.1rem solid $shade_light;
 		border-radius: 2.5rem;
-		background: linear-gradient(270deg, #FBFCFC 0%, #F5F7F8 100%);
-		color: #34495E;
+		background: linear-gradient(270deg, $shade_extralight 0%, $shade_extralight 100%);
+		color: $shade_dark;
 		font-size: 1.5rem;
 		font-weight: 500;
 		letter-spacing: 0.1rem;
 		line-height: 5rem;
 		text-align: center;
-		vertical-align:middle;
+		vertical-align: middle;
 	}
 
 	input[type="checkbox"]:checked + label::before {
@@ -116,7 +111,7 @@
 	}
 
 	input[type="checkbox"]:checked + label {
-		border: 0.2rem solid #35E6B9;
+		border: 0.2rem solid $go_light;
 	}
 
 	label {
@@ -128,22 +123,23 @@
 		height: 1rem;
 		width: 1.5rem;
 		display: inline-block;
-		border-left: 0.3rem solid #35E6B9;
-		border-bottom: 0.3rem solid #35E6B9;
+		border-left: 0.3rem solid $go_light;
+		border-bottom: 0.3rem solid $go_light;
 		transform: rotate(-45deg);
 		position: absolute;
 		left: 1rem;
-		top:1.9rem;
+		top: 1.9rem;
 	}
-	.btn-close{
-		right:1rem;
-		top:1rem;
-	}
-	.button{
-		top:50%;
-		transform:translateY(-50%);
-		right:0;
 
+	.btn-close {
+		right: 1rem;
+		top: 1rem;
+	}
+
+	.button {
+		top: 50%;
+		transform: translateY(-50%);
+		right: 0;
 	}
 
 }
