@@ -41,6 +41,14 @@ export class ModalWelcomeComponent implements OnInit {
 
   constructor(public activeModal: NgbActiveModal) {
   }
+  next(page){
+  	 if(++page <  4){
+  	 	this.page=page;
+	 }else{
+  	 	this.activeModal.close();
+	 }
+
+  }
 
   ngOnInit() {
   }
