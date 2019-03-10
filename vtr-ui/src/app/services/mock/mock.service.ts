@@ -99,14 +99,14 @@ export class MockService {
 			'path': 'uac-notification'
 		},
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'anti-virus-availability',
 			'title': 'Anti-Virus availability',
 			'detail': 'PASSED',
 			'path': 'anti-virus-availability'
 		},
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'drive-encryption',
 			'title': 'Drive encryption',
 			'detail': 'PASSED',
@@ -114,7 +114,7 @@ export class MockService {
 
 		},
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'firewall-availability',
 			'title': 'Firewall availability',
 			'detail': 'PASSED',
@@ -122,21 +122,21 @@ export class MockService {
 
 		},
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'os-integrity',
 			'title': 'OS integrity',
 			'detail': 'PASSED',
 			'path': 'OS integrity'
 		},
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'os-version',
 			'title': 'OS version',
 			'detail': 'PASSED',
 			'path': 'os-version'
 		},
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'pin-pwd',
 			'title': 'Pin or Password',
 			'detail': 'PASSED',
