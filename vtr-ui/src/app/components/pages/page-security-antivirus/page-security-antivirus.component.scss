@@ -9,14 +9,14 @@
 		.title {
 			color: $dark;
 			font-size: 2.5rem;
-			font-weight: bold;
+			font-weight: $weight_medium;
 			line-height: 2.9rem;
 		}
 
 		.subtitle {
 			color: $highlight;
 			font-size: 1.4rem;
-			font-weight: 300;
+			font-weight: $weight_light;
 			line-height: 2.3rem;
 		}
 	}
@@ -40,7 +40,7 @@
 			.title {
 				color: $light;
 				font-size: 2.5rem;
-				font-weight: bold;
+				font-weight: $weight_medium;
 				line-height: 2.9rem;
 			}
 
@@ -58,7 +58,7 @@
 			.date {
 				color: $go_dark;
 				font-size: 1.6rem;
-				font-weight: bold;
+				font-weight: $weight_medium;
 				line-height: 3rem;
 			}
 		}
@@ -81,7 +81,7 @@
 					color: $screen_dark_70;
 					padding: 2rem 0;
 					font-size: 1.4rem;
-					font-weight: bold;
+					font-weight: $weight_medium;
 					letter-spacing: 0.89px;
 					line-height: 2.3rem;
 				}
@@ -90,15 +90,27 @@
 			.title {
 				color: $screen_dark_70;
 				font-size: 2.5rem;
-				font-weight: 300;
+				font-weight: $weight_light;
 				line-height: 2.9rem;
 			}
 
 			.subtitle {
 				color: $shade_dark;
 				font-size: 1.4rem;
-				font-weight: 300;
+				font-weight: $weight_light;
 				line-height: 2.3rem;
+			}
+
+			.text {
+				font-size: 1.5rem;
+				line-height: 2.1rem;
+			}
+
+			.date {
+				color: $go_dark;
+				font-size: 1.6rem;
+				font-weight: $weight_medium;
+				line-height: 3rem;
 			}
 		}
 	}
@@ -109,14 +121,14 @@
 		.title {
 			color: $dark;
 			font-size: 3.5rem;
-			font-weight: 300;
+			font-weight: $weight_light;
 			line-height: 4.2rem;
 		}
 
 		.subtitle {
 			color: $dark;
 			font-size: 1.4rem;
-			font-weight: 300;
+			font-weight: $weight_light;
 			line-height: 2.3rem;
 		}
 
@@ -124,7 +136,7 @@
 			.title {
 				color: $dark;
 				font-size: 1.4rem;
-				font-weight: bold;
+				font-weight: $weight_medium;
 				letter-spacing: 0.89px;
 				line-height: 2.3rem;
 				text-transform: uppercase;
@@ -133,7 +145,7 @@
 			.subtitle {
 				color: $dark;
 				font-size: 1.4rem;
-				font-weight: 300;
+				font-weight: $weight_light;
 				line-height: 2.3rem;
 			}
 		}
@@ -143,21 +155,21 @@
 		.title {
 			color: $screen_dark_70;
 			font-size: 3.5rem;
-			font-weight: 300;
+			font-weight: $weight_light;
 			line-height: 4.2rem;
 		}
 
 		.subtitle {
 			color: $screen_dark_70;
 			font-size: 2.5rem;
-			font-weight: bold;
+			font-weight: $weight_medium;
 			line-height: 2.9rem;
 		}
 
 		.text {
 			color: $screen_dark_70;
 			font-size: 1.4rem;
-			font-weight: 300;
+			font-weight: $weight_light;
 			line-height: 2.3rem;
 		}
 	}

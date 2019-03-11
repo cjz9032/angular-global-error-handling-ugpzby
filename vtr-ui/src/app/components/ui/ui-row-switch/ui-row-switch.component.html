@@ -16,8 +16,8 @@
 						<div class="col">
 							<div class="title">{{ title }}</div>
 							<div class="caption"
-							 *ngIf="caption.length > 0">
-								{{ caption }}
+							 *ngIf="caption.length > 0" [innerHTML]="caption">
+								<!-- {{ caption }} -->
 							</div>
 							<div class="read-more"
 							 *ngIf="readMoreText.length > 0"
@@ -49,9 +49,7 @@
 				</a>
 			</div>
 			<ng-template #tipContent>
-				<div class="tool-tip">
-					{{ tooltipText }}
-				</div>
+				<div [innerHTML]='tooltipText'></div>
 			</ng-template>
 			<div class="p-0 pl-2"
 			 *ngIf="rightIcon.length > 0">

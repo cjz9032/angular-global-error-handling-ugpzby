@@ -41,7 +41,8 @@ export class PageDeviceUpdatesComponent implements OnInit {
 			header: 'Critical Updates',
 			subHeader: '',
 			isCheckBoxVisible: true,
-			isSwitchVisible: true
+			isSwitchVisible: true,
+			tooltipText: "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
 		},
 		{
 			readMoreText: '',
@@ -50,7 +51,8 @@ export class PageDeviceUpdatesComponent implements OnInit {
 			header: 'Recommended Updates',
 			subHeader: '',
 			isCheckBoxVisible: false,
-			isSwitchVisible: true
+			isSwitchVisible: true,
+			tooltipText: "Recommended driver updates keep your computer running at optimal performance."
 		},
 		{
 			readMoreText: '',

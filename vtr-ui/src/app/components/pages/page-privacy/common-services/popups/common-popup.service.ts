@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Subject } from "rxjs";
+import { filter, tap } from "rxjs/operators";
 
 interface PopUpInterface {
 	popUpId: string;
@@ -16,6 +18,14 @@ export class CommonPopupService {
 	}
 
 	private popups: { [key: string]: PopUpInterface } = {};
+
+	private subject = new Subject();
+
+	close$(id: string) {
+		return this.subject.pipe(
+			filter(value => value === id)
+		);
+	}
 
 	add(popup: PopUpInterface) {
 		if (!this.popups[popup.popUpId]) {
@@ -38,6 +48,7 @@ export class CommonPopupService {
 	close(id: string) {
 		if (this.popups[id]) {
 			this.popups[id].close();
+			this.subject.next(id)
 		}
 	}
 }

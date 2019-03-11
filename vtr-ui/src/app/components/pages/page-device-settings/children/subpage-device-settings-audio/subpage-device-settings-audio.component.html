@@ -30,6 +30,7 @@
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'blue'"
+							[tooltipText]="'Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.'"
 							(toggleOnOff)="onAutomaticDolbyAudioToggleOnOff($event)">
 
 							<div class="my-3"
@@ -69,7 +70,7 @@
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="false"
-							[theme]="'blue'">
+							[theme]="'blue'" 	[tooltipText]="'Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality.'" >
 						</vtr-ui-row-switch>
 					</li>
 				</ul>
@@ -92,7 +93,7 @@
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="true"
-							[theme]="'white'">
+							[theme]="'white'" [tooltipText]="'You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode.'">
 						</vtr-ui-row-switch>
 					</li>
 					<li class="">
@@ -118,7 +119,7 @@
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="true"
-							[theme]="'white'">
+							[theme]="'white'" 	[tooltipText]="'Toggle this on to optimize the MIC audio by suppressing keyboard noise.'">
 						</vtr-ui-row-switch>
 					</li>
 
@@ -130,7 +131,7 @@
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="true"
-							[theme]="'white'">
+							[theme]="'white'" [tooltipText]="'Toggle on this feature to optimize your MIC audio by reducing acoustic echo.'">
 						</vtr-ui-row-switch>
 					</li>
 
