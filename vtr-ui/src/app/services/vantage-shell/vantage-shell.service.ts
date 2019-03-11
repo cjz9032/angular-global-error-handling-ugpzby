@@ -40,4 +40,23 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	/**
+	 * returns sysinfo object from VantageShellService of JS Bridge
+	 */
+	public getSysinfo(): any {
+		if (this.phoenix) {
+			return this.phoenix.sysinfo;
+		}
+		return undefined;
+	}
+	/**
+	 * returns sysinfo object from VantageShellService of JS Bridge
+	 */
+	public getWarranty(): any {
+		if (this.phoenix) {
+			return this.phoenix.warranty;
+		}
+		return undefined;
+	}
 }
