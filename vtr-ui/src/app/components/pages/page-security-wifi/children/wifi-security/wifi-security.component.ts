@@ -13,4 +13,8 @@ export class WifiSecurityComponent implements OnInit {
 
 	ngOnInit() {
 	}
+
+	enableWifiSecurity() {
+		this.IsWifiSecurityInstalled = "active";
+	}
 }
