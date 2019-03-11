@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ServerCommunicationService } from '../../common-services/server-communication.service';
 import { BreachedAccountMode } from '../../common-ui/breached-account/breached-account.component';
+import { Router } from '@angular/router';
 
 @Component({
 	// selector: 'app-admin',
@@ -26,7 +27,11 @@ export class ResultComponent implements OnInit {
 		trackingEnabled: false
 	};
 
-	constructor(private _location: Location, private serverCommunicationService: ServerCommunicationService) {
+	constructor(
+		private _location: Location,
+		private serverCommunicationService: ServerCommunicationService,
+		private router: Router,
+	) {
 		this.isPopupOpen = false;
 	}
 
@@ -51,5 +56,9 @@ export class ResultComponent implements OnInit {
 
 	openPopUp() {
 		this.isPopupOpen = true;
+	}
+
+	redirectToDetailPage(index: number) {
+		this.router.navigate(['privacy', 'breaches'], { queryParams: { openId: index } });
 	}
 }

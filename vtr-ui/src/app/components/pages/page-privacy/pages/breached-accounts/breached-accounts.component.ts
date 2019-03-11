@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ServerCommunicationService } from '../../common-services/server-communication.service';
 import { BreachedAccount } from '../../common-ui/breached-account/breached-account.component';
+import { ActivatedRoute } from '@angular/router';
+import { filter, map, tap } from 'rxjs/operators';
 
 @Component({
 	// selector: 'app-admin',
@@ -10,6 +12,7 @@ import { BreachedAccount } from '../../common-ui/breached-account/breached-accou
 })
 export class BreachedAccountsComponent implements OnInit {
 	breached_accounts: BreachedAccount[];
+	openBreachedId$ = this.getParamFromUrl('openId').pipe(map((val) => Number(val)));
 	// static Data transferred to html
 	LightPrivacyBannerData = {
 		title: 'Fix breaches and watch for future ones',
@@ -51,7 +54,11 @@ export class BreachedAccountsComponent implements OnInit {
 		video_url: 'https://www.youtube.com/embed/tgbNymZ7vqY'
 	};
 
-	constructor(private _location: Location, private serverCommunicationService: ServerCommunicationService) {
+	constructor(
+		private _location: Location,
+		private serverCommunicationService: ServerCommunicationService,
+		private route: ActivatedRoute
+		) {
 	}
 
 	ngOnInit() {
@@ -60,5 +67,12 @@ export class BreachedAccountsComponent implements OnInit {
 
 	backClicked() {
 		this._location.back();
+	}
+
+	private getParamFromUrl(paramName) {
+		return this.route.queryParams.pipe(
+			filter((params) => params[paramName]),
+			map((param) => param[paramName]),
+		);
 	}
 }

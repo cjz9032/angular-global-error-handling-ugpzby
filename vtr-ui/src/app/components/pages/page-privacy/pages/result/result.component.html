@@ -39,7 +39,8 @@
             <div class="breaches-block__accounts-container">
                 <vtr-breached-account
 					[mode]="breachedAccountMode.PREVIEW"
-					[breachedAccounts]="breached_accounts_show">
+					[breachedAccounts]="breached_accounts_show"
+					(detailClick)="redirectToDetailPage($event)">
 				</vtr-breached-account>
             </div>
 			<div *ngIf="breached_accounts.length > 3" class="breaches-block__see-more more-breaches">

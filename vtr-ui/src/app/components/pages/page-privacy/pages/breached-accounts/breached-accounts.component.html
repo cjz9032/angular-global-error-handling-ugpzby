@@ -4,7 +4,9 @@
     <div class="breached-accounts">
         <p class="breached-accounts__text">Looks like some of your personal info is floating around online, making it easy for others to access your accounts without your knowledge. You should change your passwords right now.</p>
 
-		<vtr-breached-account [breachedAccounts]="breached_accounts">
+		<vtr-breached-account
+			[breachedAccounts]="breached_accounts"
+			[openId]="openBreachedId$ | async">
 		</vtr-breached-account>
 
         <div class="breaches-promo">

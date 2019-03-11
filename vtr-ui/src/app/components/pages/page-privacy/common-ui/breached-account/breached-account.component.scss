@@ -1,103 +1,129 @@
 @import "../../styles/common-blocks";
+
 $leftIndent: 7.5rem;
 
 .breached-account {
-  background-color: #F5F7F8;
-  border: 1px solid #ECF0F1;
-  border-radius: 5px;
-  margin: 0 0 1.25rem 0;
-  padding: 2rem;
+	background-color: #F5F7F8;
+	border: 1px solid #ECF0F1;
+	border-radius: 5px;
+	margin: 0 0 1.25rem 0;
+	padding: 2rem;
 
-  &__preview {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	width: 100%;
-	height: 100%;
-  }
-  &__img {
-	flex-grow: 1;
-    max-width: 4rem;
-    max-height: 4rem;
-	position: absolute;
-  }
-  &__social {
-	display: flex;
-	position: relative;
-	align-items: center;
-	min-height: 4.7rem;
-	width: 33%;
-  }
-  &__social-description {
-	padding-left: $leftIndent;
-  }
-  &__title {
-    text-transform: uppercase;
-	margin: 0;
-    color: #34495E;
-    font-size: 1.7rem;
-    font-weight: bold;
-    line-height: 2.3rem;
-  }
-  &__date {
-	width: 33%;
-    color: #E74C3C;
-	text-align: center;
-    font-size: 1.5rem;
-    font-weight: 300;
-    line-height: 1.4rem;
-  }
-  &__credentials {
-    padding: 0 0 0 0.5rem;
-    margin: 1rem 0 0.6rem 0;
-    border-left: 1px solid #E74C3C;
-  }
-  &__email {
-    color: #34495E;
-    font-size: 1.7rem;
-    font-weight: 300;
-    line-height: 2.5rem;
-    margin: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  &__details {
-	width: 33%;
-	text-align: right;
-  }
-  &__preview-link {
-	@extend %button-link;
-	@extend %button-link--to-right;
-
-	color: #4A81FD;
-	font-size: 1.6rem;
-	font-weight: 500;
-	line-height: 2.3rem;
-	letter-spacing: 0.5px;
-
-	span {
-	  @extend %button-link__text;
-	  border-bottom: .25rem solid #4A81FD;
+	&__preview {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		height: 100%;
 	}
-  }
 
-  &__accordion-button {
-	@extend %button-link;
-	cursor: pointer;
-	color: #4A81FD;
-	font-size: 1.6rem;
-	font-weight: 500;
-	line-height: 2.3rem;
-	letter-spacing: 0.5px;
-
-	&--open {
-	  @extend %button-link--open;
+	&__img {
+		flex-grow: 1;
+		max-width: 4rem;
+		max-height: 4rem;
+		position: absolute;
 	}
-  }
 
-  &__description {
-	  padding: 2rem 2rem 2px $leftIndent;
-  }
+	&__social {
+		display: flex;
+		position: relative;
+		align-items: center;
+		min-height: 4.7rem;
+		width: 33%;
+	}
+
+	&__social-description {
+		padding-left: $leftIndent;
+	}
+
+	&__title {
+		text-transform: uppercase;
+		margin: 0;
+		color: #34495E;
+		font-size: 1.7rem;
+		font-weight: bold;
+		line-height: 2.3rem;
+	}
+
+	&__date {
+		width: 33%;
+		color: #E74C3C;
+		text-align: center;
+		font-size: 1.5rem;
+		font-weight: 300;
+		line-height: 1.4rem;
+	}
+
+	&__credentials {
+		padding: 0 0 0 0.5rem;
+		margin: 1rem 0 0.6rem 0;
+		border-left: 1px solid #E74C3C;
+	}
+
+	&__email {
+		color: #34495E;
+		font-size: 1.7rem;
+		font-weight: 300;
+		line-height: 2.5rem;
+		margin: 0;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	&__details {
+		width: 33%;
+		text-align: right;
+	}
+
+	&__preview-link {
+		@extend %button-link;
+		@extend %button-link--to-right;
+
+		color: #4A81FD;
+		font-size: 1.6rem;
+		font-weight: 500;
+		line-height: 2.3rem;
+		letter-spacing: 0.5px;
+
+		span {
+			@extend %button-link__text;
+			border-bottom: .25rem solid #4A81FD;
+		}
+	}
+
+	&__accordion-button {
+		@extend %button-link;
+		cursor: pointer;
+		color: #4A81FD;
+		font-size: 1.6rem;
+		font-weight: 500;
+		line-height: 2.3rem;
+		letter-spacing: 0.5px;
+
+		&--open {
+			@extend %button-link--open;
+		}
+	}
+
+	&__description {
+		padding: 2rem 2rem 2px $leftIndent;
+	}
+
+	&__action {
+		padding-top: 3.5rem;
+	}
+
+	&__action-button {
+		@extend %theme-btn;
+
+		&:not(:first-child) {
+			margin-left: 2.4rem;
+		}
+
+		&--transparent {
+			@extend %theme-btn--transparent;
+		}
+	}
 }

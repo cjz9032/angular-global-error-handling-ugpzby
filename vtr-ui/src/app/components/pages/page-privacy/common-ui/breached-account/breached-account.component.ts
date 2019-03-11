@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 export interface BreachedAccount {
 	domain: string;
@@ -21,20 +21,21 @@ export enum BreachedAccountMode {
 	templateUrl: './breached-account.component.html',
 	styleUrls: ['./breached-account.component.scss']
 })
-export class BreachedAccountComponent implements OnInit {
+export class BreachedAccountComponent {
 	@Input() mode: BreachedAccountMode = BreachedAccountMode.FULL;
 	@Input() breachedAccounts: BreachedAccount[];
+	@Input() openId = null;
+	@Output() detailClick = new EventEmitter<number>();
+
 	readonly breachedAccountMode = BreachedAccountMode;
-	openId = null;
 
-	constructor() {
-	}
-
-	ngOnInit() {
-	}
-
-	open(index) {
+	openAccordion(index) {
 		this.openId = this.openId === index ? null : index;
+	}
+
+	detailClickEmit(i) {
+		// TODO replace with real ID
+		this.detailClick.emit(i);
 	}
 
 }

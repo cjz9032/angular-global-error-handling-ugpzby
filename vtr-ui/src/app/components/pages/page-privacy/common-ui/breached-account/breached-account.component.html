@@ -12,16 +12,16 @@
 		<span class="breached-account__date" *ngIf="openId !== i">Breached on {{account.date}}</span>
 
 		<div class="breached-account__details">
-			<a class="breached-account__preview-link"
-			   href=""
-			   *ngIf="mode === breachedAccountMode.PREVIEW">
+			<button class="breached-account__preview-link"
+					(click)="detailClickEmit(i)"
+					*ngIf="mode === breachedAccountMode.PREVIEW">
 				<span>Details</span>
-			</a>
+			</button>
 
 			<button class="breached-account__accordion-button"
 				 *ngIf="mode === breachedAccountMode.FULL"
 				 [ngClass]="{'breached-account__accordion-button--open': openId === i}"
-				 (click)="open(i)">
+				 (click)="openAccordion(i)">
 				<span>Details</span>
 			</button>
 		</div>
@@ -29,5 +29,11 @@
 
 	<div *ngIf="openId === i" class="breached-account__description">
 		<vtr-breached-description [breachedAccount]="account"></vtr-breached-description>
+		<div class="breached-account__action">
+			<button class="breached-account__action-button">What should i do?</button>
+			<button class="breached-account__action-button breached-account__action-button--transparent">
+				This is old info
+			</button>
+		</div>
 	</div>
 </div>
