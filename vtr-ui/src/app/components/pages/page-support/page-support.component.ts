@@ -29,6 +29,7 @@ export class PageSupportComponent implements OnInit {
 	getMachineInfo() {
 		this.supportService.getMachineInfo().then((machineInfo) => {
 			this.supportService
+				// .getWarranty('PC0G9X77')
 				.getWarranty(machineInfo.serialnumber)
 				.then((warranty) => {
 					this.warranty = warranty;
