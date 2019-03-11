@@ -21,7 +21,15 @@ export class WidgetQuicksettingsComponent implements OnInit {
 		this.getQuickSettingStatus();
 	}
 
+	//#region private functions
+
 	private getQuickSettingStatus() {
+		this.getCameraStatus();
+		this.getMicrophoneStatus();
+		this.getEyeCareModeStatus();
+	}
+
+	private getCameraStatus() {
 		if (this.dashboardService.isShellAvailable) {
 			this.dashboardService
 				.getCameraStatus()
@@ -32,7 +40,11 @@ export class WidgetQuicksettingsComponent implements OnInit {
 				.catch(error => {
 					console.error('getCameraStatus', error);
 				});
+		}
+	}
 
+	private getMicrophoneStatus() {
+		if (this.dashboardService.isShellAvailable) {
 			this.dashboardService
 				.getMicrophoneStatus()
 				.then((featureStatus: FeatureStatus) => {
@@ -43,7 +55,11 @@ export class WidgetQuicksettingsComponent implements OnInit {
 				.catch(error => {
 					console.error('getCameraStatus', error);
 				});
+		}
+	}
 
+	private getEyeCareModeStatus() {
+		if (this.dashboardService.isShellAvailable) {
 			this.dashboardService
 				.getEyeCareMode()
 				.then((featureStatus: FeatureStatus) => {
@@ -57,11 +73,14 @@ export class WidgetQuicksettingsComponent implements OnInit {
 		}
 	}
 
+	//#endregion
+
 	public onCameraStatusToggle($event: boolean) {
 		if (this.dashboardService.isShellAvailable) {
 			this.dashboardService.setCameraStatus($event)
 				.then((value: boolean) => {
 					console.log('getCameraStatus.then', value);
+					this.getCameraStatus();
 				}).catch(error => {
 					console.error('getCameraStatus', error);
 				});
@@ -73,6 +92,7 @@ export class WidgetQuicksettingsComponent implements OnInit {
 			this.dashboardService.setMicrophoneStatus($event)
 				.then((value: boolean) => {
 					console.log('setMicrophoneStatus.then', value);
+					this.getMicrophoneStatus();
 				}).catch(error => {
 					console.error('setMicrophoneStatus', error);
 				});
@@ -84,9 +104,12 @@ export class WidgetQuicksettingsComponent implements OnInit {
 			this.dashboardService.setEyeCareMode($event)
 				.then((value: boolean) => {
 					console.log('setEyeCareMode.then', value);
+					this.getEyeCareModeStatus();
 				}).catch(error => {
 					console.error('setEyeCareMode', error);
 				});
 		}
 	}
+
+
 }

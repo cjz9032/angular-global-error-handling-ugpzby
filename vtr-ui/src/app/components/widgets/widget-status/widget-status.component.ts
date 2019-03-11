@@ -18,6 +18,4 @@ export class WidgetStatusComponent implements OnInit {
 	ngOnInit() {
 		console.log('items' + this.items);
 	}
-
-
 }
