@@ -12,4 +12,5 @@ export class Status {
 	public asLink: boolean;
 	public isSystemLink: boolean;
 	public type: string;
+	public description: string;
 }
