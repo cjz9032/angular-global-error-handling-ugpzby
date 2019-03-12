@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { MyDevice } from 'src/app/data-models/device/my-device.model';
-=======
-import {FeatureStatus} from "../../data-models/common/feature-status.model";
-import {VantageShellService} from "../vantage-shell/vantage-shell.service";
->>>>>>> origin
 
 @Injectable({
 	providedIn: 'root'
