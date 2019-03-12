@@ -19,6 +19,10 @@ export class WidgetWarrantyComponent implements OnInit {
 	ngOnInit() {
 	}
 
+	getRoundYear(dayDiff: number) {
+		return dayDiff > 0 ? Math.round(dayDiff / 365) : 0;
+	}
+
 	dateFormat(date: any) {
 		const sdate = date;
 		const op = '-';

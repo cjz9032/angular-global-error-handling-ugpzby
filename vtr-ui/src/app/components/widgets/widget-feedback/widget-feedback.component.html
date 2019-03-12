@@ -3,14 +3,16 @@
 		<div class="row">
 			<div class="col">
 				<div class="title"
-				 *ngIf="title">{{ title }}</div>
+					*ngIf="title">{{ title }}</div>
 				<div class="description"
-				 *ngIf="description">
+					*ngIf="description">
 					{{ description }}
 				</div>
-				<div *ngIf="actionName" class="button-box">
+				<div *ngIf="actionName"
+					class="button-box">
 					<vtr-ui-button (onClick)="feedback($event)"
-					 [label]= "actionName"></vtr-ui-button>
+						[isFullWidth]="true"
+						[label]="actionName"></vtr-ui-button>
 				</div>
 			</div>
 		</div>

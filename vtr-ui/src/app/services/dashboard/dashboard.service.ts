@@ -60,4 +60,18 @@ export class DashboardService {
 		}
 		return undefined;
 	}
+
+	public getSystemInfo(): Promise<any> {
+		if (this.dashboard) {
+			return this.dashboard.getSystemInfo();
+		}
+		return undefined;
+	}
+
+	public getSecurityStatus(): Promise<any> {
+		if (this.dashboard) {
+			return this.dashboard.getSecurityStatus();
+		}
+		return undefined;
+	}
 }

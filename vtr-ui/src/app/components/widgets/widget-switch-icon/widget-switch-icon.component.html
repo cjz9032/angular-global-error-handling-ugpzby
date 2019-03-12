@@ -2,9 +2,10 @@
 	<div class="switch-container"
 		[ngClass]="[value ? 'checked' : 'unchecked']">
 		<div class="title">{{ title }}</div>
-		<div class="icon-container" (click)="value=!value;">
+		<div class="icon-container"
+			(click)="value=!value;">
 			<div class="feature-off"
-				*ngIf="!value">\</div>
+				*ngIf="isBlocked">\</div>
 			<fa-icon [icon]="iconDefinition"></fa-icon>
 		</div>
 		<div class="switch">
