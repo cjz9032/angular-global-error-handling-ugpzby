@@ -42,6 +42,15 @@ export class VantageShellService {
 	}
 
 	/**
+	 * returns dashboard object from VantageShellService of JS Bridge
+	 */
+	public getDevice(): any {
+		if (this.phoenix) {
+			return this.phoenix.device;
+		}
+	}
+
+	/**
 	 * returns sysinfo object from VantageShellService of JS Bridge
 	 */
 	public getSysinfo(): any {
@@ -50,8 +59,9 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
 	/**
-	 * returns sysinfo object from VantageShellService of JS Bridge
+	 * returns warranty object from VantageShellService of JS Bridge
 	 */
 	public getWarranty(): any {
 		if (this.phoenix) {

@@ -3,19 +3,19 @@
 		<div class="circleimage"><img src="../../../../assets/images/circle.png" /> </div>
 		<div class="row mt-20">
 			<div class="col">
-				<div class="family">{{family}}</div>
+				<div class="family">{{myDevice.family}}</div>
 			</div>
 		</div>
 		<div class="row">
-			<div class="device-sub-header">Serial: {{serial}}</div>
+			<div class="device-sub-header">Serial: {{myDevice.sn}}</div>
 			<div class="sub-header-separator">
 				<fa-icon [icon]="['fas', 'minus']"></fa-icon>
 			</div>
-			<div class="device-sub-header">Product number: {{productNumber}}</div>
+			<div class="device-sub-header">Product number: {{myDevice.productNo}}</div>
 			<div class="sub-header-separator">
 				<fa-icon [icon]="['fas', 'minus']"></fa-icon>
 			</div>
-			<div class="device-sub-header">Bios version: {{bios}}</div>
+			<div class="device-sub-header">Bios version: {{myDevice.bios}}</div>
 		</div>
 		<div class="row">
 			<div class="col">
@@ -25,7 +25,7 @@
 		<div class="row">
 			<div class="col">
 				<ul class="status-list">
-					<li *ngFor="let item of dummyDeviceInformation"
+					<li *ngFor="let item of deviceStatus"
 						[ngClass]="[!item.status?'good':'bad']">
 						<div class="container-fluid">
 							<div class="row align-items-center">
@@ -41,7 +41,6 @@
 										[ngClass]="[!item.status?'good':'bad']">
 										{{item.title}}
 									</div>
-									<div class="description row">{{item.description}}</div>
 								</div>
 								<div class="col-auto text-right ml-auto">
 									<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->

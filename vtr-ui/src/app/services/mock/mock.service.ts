@@ -160,7 +160,8 @@ export class MockService {
 			'title': 'Anti-Virus',
 			'detail': 'Enabled',
 			'path': 'anti-virus',
-			'type': 'security'
+			'type': 'security',
+			'isSystemLink': false
 
 		},
 		{
