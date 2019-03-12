@@ -114,14 +114,15 @@ export class MenuMainComponent implements OnInit {
 	menuItemClick(event, path) {
 		this.router.navigateByUrl(path);
 	}
-	
+
 	//  to popup Lenovo ID modal dialog
 	OpenLenovoId(){
 		this.modalService.open(ModalLenovoIdComponent, {
 			backdrop: 'static',
 			size: 'lg',
-			centered: true
-		  });
+			centered: true,
+			windowClass: 'lenovo-modal-content'
+		});
 	}
 
 	onLogout(){
