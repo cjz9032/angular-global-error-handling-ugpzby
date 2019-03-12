@@ -57,13 +57,7 @@
 						</div>
 						<div class="col col-1 text-center">
 							<div class="arrow"
-								*ngIf="item.hideChevron !==undefined && !item.hideChevron ">
-								{{item}}
-								<fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
-							</div>
-
-							<div class="arrow"
-								*ngIf="item.hideChevron === undefined">
+							 *ngIf="item.hideChevron === undefined || item.hideChevron === false">
 								<fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
 							</div>
 						</div>
@@ -125,13 +119,7 @@
 						</div>
 						<div class="col col-1 text-center">
 							<div class="arrow"
-								*ngIf="item.hideChevron !==undefined && !item.hideChevron ">
-								{{item}}
-								<fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
-							</div>
-
-							<div class="arrow"
-								*ngIf="item.hideChevron === undefined">
+							 *ngIf="item.hideChevron === undefined || item.hideChevron === false">
 								<fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
 							</div>
 						</div>
