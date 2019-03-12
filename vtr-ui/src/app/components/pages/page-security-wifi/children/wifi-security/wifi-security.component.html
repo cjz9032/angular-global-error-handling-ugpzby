@@ -1,12 +1,12 @@
 <div class="wifi-security">
 	<div class="container-fluid p-40 security-card"
-		*ngIf="IsWifiSecurityInstalled==='not-installed'">
+	 *ngIf="IsWifiSecurityInstalled==='not-installed'">
 		<div class="row">
 			<div class="col">
 				<div class="heading">Lenovo Wifi Security</div>
 			</div>
 			<div class="pull right"><img class="coronet-logo"
-					src="../../../../assets/images/coronet-logo.svg" /></div>
+				 src="../../../../assets/images/coronet-logo.svg" /></div>
 		</div>
 		<div class="row mt-20">
 			<div class="col">
@@ -35,7 +35,7 @@
 						<div>
 							<div class="button-box">
 								<button type="button"
-									class="btn btn-danger btn-round-xs text-uppercase">
+								 class="btn btn-danger btn-round-xs text-uppercase">
 									Disabled
 								</button>
 							</div>
@@ -53,9 +53,9 @@
 				</div>
 				<div class="text-regular">
 					<input type="text"
-						placeholder="Your location">
+					 placeholder="Your location">
 					<button type="button"
-						class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
+					 class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
 						Check threat
 					</button>
 				</div>
@@ -63,13 +63,12 @@
 		</div>
 		<div class="row mt-40">
 			<div class="col">
-				<div class="text-regular">Stop worrying about your computers privacy <a routerLink="/">See
-						comparison</a></div>
 			</div>
 			<div class=" pull right">
 				<div class="col-12">
 					<button type="button"
-						class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
+					 (click)="enableWifiSecurity()"
+					 class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
 						Enable Wifi Security
 					</button>
 				</div>
@@ -77,13 +76,13 @@
 		</div>
 	</div>
 	<div class="container-fluid p-40 security-card"
-		*ngIf="IsWifiSecurityInstalled==='active'">
+	 *ngIf="IsWifiSecurityInstalled==='active'">
 		<div class="row">
 			<div class="col">
 				<div class="heading">Lenovo Wifi Security</div>
 			</div>
 			<div class="pull right"><img class="coronet-logo"
-					src="../../../../assets/images/coronet-logo.svg" /></div>
+				 src="../../../../assets/images/coronet-logo.svg" /></div>
 		</div>
 		<div class="row mt-20">
 			<div class="col">
@@ -111,7 +110,7 @@
 						<div>
 							<div class="button-box">
 								<button type="button"
-									class="btn btn-success btn-round-xs text-uppercase">
+								 class="btn btn-success btn-round-xs text-uppercase">
 									Enabled
 								</button>
 							</div>

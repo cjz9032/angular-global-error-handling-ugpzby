@@ -15,7 +15,7 @@
 							<div class="vtr-page-shift-up">
 								<div class="vtr-page-security-internet">
 									<div class="container-fluid p-40 security-card"
-										*ngIf="IsDashlaneInstalled==='not-installed'">
+										*ngIf="IsDashlaneInstalled">
 										<div class="row">
 											<div class="col">
 												<div class="heading">SurfEasy Virtual Private Network</div>
@@ -85,7 +85,7 @@
 										</div>
 									</div>
 									<div class="container-fluid p-40 security-card"
-										*ngIf="IsDashlaneInstalled==='active'">
+										*ngIf="!IsDashlaneInstalled">
 										<div class="row">
 											<div class="col">
 												<div class="heading">SurfEasy</div>
@@ -145,7 +145,7 @@
 											</div>
 											<div class=" pull right">
 												<div class="col-12">
-													<button type="button"
+													<button type="button" 	(click)="surfeasy()"
 														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
 														Open SurfEasy
 													</button>
@@ -157,7 +157,7 @@
 							</div>
 						</div>
 						<div class="row vtr-page-security-internet"
-							*ngIf="IsDashlaneInstalled==='not-installed'">
+							*ngIf="IsDashlaneInstalled">
 							<div class="row">
 								<div class="col col-12 col-sm-12 mt-40">
 									<div>
@@ -280,7 +280,7 @@
 							</div>
 						</div>
 						<div class="row vtr-connected-security-internet"
-							*ngIf="IsDashlaneInstalled==='active'">
+							*ngIf="!IsDashlaneInstalled">
 							<div class="row">
 								<div class="col col-12 col-sm-12 mt-40">
 									<div>
@@ -462,6 +462,18 @@
 									</div>
 								</div>
 								<!--End of Security Card Advisor-->
+								<div class="row mb-40">
+									<div class="col col-12">
+										<vtr-container-card [img]="'./../../../../assets/images/antivirus/poaster.png'"
+											[title]="'Lenovo announced new powerful Legion compact series.'"
+											[logoText]="'LENEVO SPECIAL'"
+											[readMore]="'http://www.google.com'"
+											[type]="'article'"
+											[ratioX]="4"
+											[ratioY]="4">
+										</vtr-container-card>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
