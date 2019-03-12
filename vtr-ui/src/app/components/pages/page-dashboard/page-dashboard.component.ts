@@ -143,8 +143,7 @@ export class PageDashboardComponent implements OnInit {
 
 			if (response.warranty) {
 				// const status = response.warranty.status;
-				const dateTill = new Date(response.warranty.expiredDate);
-				warranty.detail = `Until ${this.commonService.formatDate(dateTill)}`;
+				warranty.detail = `Until ${this.commonService.formatDate(response.warranty.expired)}`;
 				warranty.status = 0;
 			}
 			systemStatus.push(warranty);
