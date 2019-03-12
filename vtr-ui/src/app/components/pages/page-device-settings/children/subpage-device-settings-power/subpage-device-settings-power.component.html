@@ -23,10 +23,10 @@
 				<ul class="list-group list-group-flush">
 					<li class="">
 						<vtr-ui-row-switch [title]="'Intelligent cooling'"
-							[caption]="'Charge USB devices through the Always on USB connector on the computer'"
+							[caption]="''"
 							[isSwitchVisible]=true
 							[leftIcon]="['fas', 'search']"
-							[readMoreText]="'Read More'"
+							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'blue'"
 							(toggleOnOff)="onIntelligentCoolingToggle($event)">
@@ -54,7 +54,10 @@
 			<vtr-container-collapsible cardTitle="Battery Settings"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
-					<li class="">
+
+						<li class="">
+
+
 						<vtr-ui-row-switch [title]="batterySettings[0].header"
 							[caption]="batterySettings[0].subHeader"
 							[isSwitchVisible]=true
@@ -102,6 +105,7 @@
 							[leftIcon]="batterySettings[3].leftImageSource"
 							[readMoreText]="batterySettings[3].readMoreText"
 							[tooltipText]="batterySettings[3].tooltipText">
+
 						</vtr-ui-row-switch>
 					</li>
 

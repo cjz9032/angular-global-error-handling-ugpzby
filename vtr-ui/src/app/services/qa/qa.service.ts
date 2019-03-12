@@ -224,7 +224,7 @@ export class QaService {
 			id: 4,
 			path: 'support-detail/4',
 			iconPath: `${this.imagePath}/svg_icon_qa_battery.svg`,
-			title: 'Check your machine"s battery use',
+			title: "Check your machine's battery use",
 			like: false,
 			dislike: false,
 		  description:`<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Symptom</h3>

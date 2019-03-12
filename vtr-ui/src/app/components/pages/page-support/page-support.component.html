@@ -51,25 +51,25 @@
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 
-								<div class="row">
+								<div class="row" *ngIf="warranty">
 									<div class="col col-12 pb-40">
-										<vtr-widget-warranty [item]="mockService.warranty"></vtr-widget-warranty>
+										<vtr-widget-warranty [item]="warranty"></vtr-widget-warranty>
 									</div>
 								</div>
 
-								<div class="row">
+								<div class="row" *ngIf="mockService.documentation">
 									<div class="col col-12 pb-60">
 										<vtr-widget-support [title]="'Documentation'" [description]="''" [items]="mockService.documentation"></vtr-widget-support>
 									</div>
 								</div>
 
-								<div class="row">
+								<div class="row" *ngIf="mockService.needHelp">
 									<div class="col col-12 pb-60">
 										<vtr-widget-support [title]="'Need Help?'" [description]="'CONTACT US TO HELP YOU OUT.'" [items]="mockService.needHelp"></vtr-widget-support>
 									</div>
 								</div>
 
-								<div class="row">
+								<div class="row" *ngIf="mockService.quicklink">
 									<div class="col col-12 pb-60">
 										<vtr-widget-support [title]="'Quicklinks'" [description]="'CONTACT US TO HELP YOU OUT.'" [items]="mockService.quicklink"></vtr-widget-support>
 									</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MockService } from 'src/app/services/mock/mock.service';
+import { $ } from 'protractor';
 
 @Component({
 	selector: 'vtr-page-security-password',
@@ -11,12 +12,16 @@ export class PageSecurityPasswordComponent implements OnInit {
 	title = 'Password Health';
 	back = 'BACK';
 	backarrow = '< ';
-	IsDashlaneInstalled = 'not-installed';
+
+	IsDashlaneInstalled: Boolean = true;
+
 	constructor(public mockService: MockService) { }
 
 	ngOnInit() {
 	}
 	dashlane() {
-		window.open('https://www.dashlane.com/lenovo/');
+		//window.open('https://www.dashlane.com/lenovo/');
+		this.IsDashlaneInstalled = this.IsDashlaneInstalled ? false : true;
+
 	}
 }
