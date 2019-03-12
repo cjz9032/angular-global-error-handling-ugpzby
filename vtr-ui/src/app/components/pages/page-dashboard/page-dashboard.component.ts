@@ -39,6 +39,7 @@ export class PageDashboardComponent implements OnInit {
 		if (this.dashboardService.isShellAvailable) {
 			console.log('PageDashboardComponent.getSystemInfo');
 			this.getSystemInfo();
+			// this.getSecurityStatus();
 		}
 	}
 
@@ -75,18 +76,27 @@ export class PageDashboardComponent implements OnInit {
 			});
 	}
 
+	private getSecurityStatus() {
+		this.dashboardService.getSecurityStatus()
+			.then((value: any) => {
+				console.log('getSecurityStatus.then', value);
+			}).catch(error => {
+				console.error('getSecurityStatus', error);
+			});
+	}
+
 	private mapSystemInfoResponse(response: any): Status[] {
 		const systemStatus: Status[] = [];
 		if (response) {
-			const memory = new Status(
-				1,
-				'memory',
-				'Memory',
-				'Memory not found',
-				'ms-settings:about',
-				false,
-				true
-			);
+			const memory = new Status();
+			memory.status = 1;
+			memory.id = 'memory';
+			memory.title = 'Memory';
+			memory.detail = 'Memory not found';
+			memory.path = 'ms-settings:about';
+			memory.asLink = false;
+			memory.isSystemLink = true;
+
 			if (response.memory) {
 				const { total, used } = response.memory;
 				memory.detail = `${this.commonService.formatBytes(used)} of ${this.commonService.formatBytes(total)}`;
@@ -99,15 +109,15 @@ export class PageDashboardComponent implements OnInit {
 			}
 			systemStatus.push(memory);
 
-			const disk = new Status(
-				1,
-				'disk',
-				'Disk Space',
-				'Disk not found',
-				'ms-settings:storagesense',
-				false,
-				true
-			);
+			const disk = new Status();
+			disk.status = 1;
+			disk.id = 'disk';
+			disk.title = 'Disk Space';
+			disk.detail = 'Disk not found';
+			disk.path = 'ms-settings:storagesense';
+			disk.asLink = false;
+			disk.isSystemLink = true;
+
 			if (response.disk) {
 				const { total, used } = response.disk;
 				disk.detail = `${this.commonService.formatBytes(used)} of ${this.commonService.formatBytes(total)}`;
@@ -120,32 +130,32 @@ export class PageDashboardComponent implements OnInit {
 			}
 			systemStatus.push(disk);
 
-			const warranty = new Status(
-				1,
-				'warranty',
-				'Warranty',
-				'Warranty not found',
-				'ms-settings:storagesense',
-				false,
-				true
-			);
+			const warranty = new Status();
+			warranty.status = 1;
+			warranty.id = 'warranty';
+			warranty.title = 'Warranty';
+			warranty.detail = 'Warranty not found';
+			warranty.path = 'ms-settings:storagesense';
+			warranty.asLink = false;
+			warranty.isSystemLink = true;
+
 			if (response.warranty) {
-				const status = response.warranty.status;
+				// const status = response.warranty.status;
 				const dateTill = new Date(response.warranty.expiredDate);
 				warranty.detail = `Until ${this.commonService.formatDate(dateTill)}`;
 				warranty.status = 0;
 			}
 			systemStatus.push(warranty);
 
-			const systemUpdate = new Status(
-				1,
-				'systemupdate',
-				'System Update',
-				'Update',
-				'/system-updates',
-				true,
-				false
-			);
+			const systemUpdate = new Status();
+			systemUpdate.status = 1;
+			systemUpdate.id = 'systemupdate';
+			systemUpdate.title = 'System Update';
+			systemUpdate.detail = 'Update';
+			systemUpdate.path = '/system-updates';
+			systemUpdate.asLink = true;
+			systemUpdate.isSystemLink = false;
+
 			if (response.systemupdate) {
 				const { status } = response.systemupdate;
 				if (status === 1) {

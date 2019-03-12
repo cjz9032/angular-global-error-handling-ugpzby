@@ -10,13 +10,13 @@
 				<vtr-widget-switch-icon [iconDefinition]="['fas', 'microphone']"
 					[value]="microphoneStatus.status"
 					[isBlocked]="!microphoneStatus.status"
-					title="Microphone"
+					[title]="'Microphone'"
 					(toggle)="onMicrophoneStatusToggle($event)"></vtr-widget-switch-icon>
 			</div>
 			<div class="col col-4 text-center">
 				<vtr-widget-switch-icon [iconDefinition]="['fas', 'camera']"
 					[value]="cameraStatus.status"
-					title="Camera Privacy"
+					[title]="'Camera Privacy'"
 					[isBlocked]="cameraStatus.status"
 					(toggle)="onCameraStatusToggle($event)"></vtr-widget-switch-icon>
 			</div>
@@ -24,7 +24,7 @@
 				<vtr-widget-switch-icon [iconDefinition]="['fas', 'eye']"
 					[value]="eyeCareModeStatus.status"
 					[isBlocked]="!eyeCareModeStatus.status"
-					title="Eye Care Mode"
+					[title]="'Eye Care Mode'"
 					(toggle)="onEyeCareModeToggle($event)"></vtr-widget-switch-icon>
 			</div>
 		</div>
