@@ -19,8 +19,8 @@ export class WidgetWarrantyComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	dateFormat(date: Date) {
-		const sdate = new Date(date);
+	dateFormat(date: any) {
+		const sdate = date;
 		const op = '-';
 		const year = sdate.getFullYear();
 		let month: any = sdate.getMonth() + 1;

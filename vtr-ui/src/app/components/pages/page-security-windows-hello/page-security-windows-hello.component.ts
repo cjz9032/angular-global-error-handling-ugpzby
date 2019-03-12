@@ -11,10 +11,15 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 	title = 'Windows Hello';
 	back = 'BACK';
 	backarrow = '< ';
-	IsWindowsHelloInstalled = 'not-installed';
+
+	IsWindowsHelloInstalled: Boolean = true;
 	constructor(public mockService: MockService) { }
 
 	ngOnInit() {
 	}
+	windowsHello() {
+		//window.open('https://www.dashlane.com/lenovo/');
+		this.IsWindowsHelloInstalled = this.IsWindowsHelloInstalled ? false : true;
 
+	}
 }

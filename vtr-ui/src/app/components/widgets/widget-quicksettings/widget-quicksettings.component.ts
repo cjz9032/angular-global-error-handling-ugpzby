@@ -9,9 +9,9 @@ import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 	styleUrls: ['./widget-quicksettings.component.scss']
 })
 export class WidgetQuicksettingsComponent implements OnInit {
-	public cameraStatus = new FeatureStatus(false, false);
-	public microphoneStatus = new FeatureStatus(false, false);
-	public eyeCareModeStatus = new FeatureStatus(false, false);
+	public cameraStatus = new FeatureStatus(false, true);
+	public microphoneStatus = new FeatureStatus(false, true);
+	public eyeCareModeStatus = new FeatureStatus(false, true);
 
 	@Output() toggle = new EventEmitter<{ sender: string; value: boolean }>();
 

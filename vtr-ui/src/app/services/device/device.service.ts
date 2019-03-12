@@ -1,17 +1,28 @@
 import { Injectable } from '@angular/core';
+<<<<<<< HEAD
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { MyDevice } from 'src/app/data-models/device/my-device.model';
+=======
+import {FeatureStatus} from "../../data-models/common/feature-status.model";
+import {VantageShellService} from "../vantage-shell/vantage-shell.service";
+>>>>>>> origin
 
 @Injectable({
 	providedIn: 'root'
 })
 export class DeviceService {
+
 	deviceModel = 'Ideapad 720s';
 	private device: any;
+	private sysInfo: any;
 	public isShellAvailable = false;
+
+
 	constructor(shellService: VantageShellService) {
 		this.device = shellService.getDevice();
-		if (this.device) {
+		this.sysInfo = shellService.getSysinfo();
+
+		if (this.device && this.sysInfo) {
 			this.isShellAvailable = true;
 		}
 	}
@@ -23,4 +34,26 @@ export class DeviceService {
 		return undefined;
 	}
 
+
+
+
+	getMachineInfo(): Promise<any> {
+		if (this.sysInfo) {
+			return this.sysInfo.getMachineInfo();
+		}
+		return undefined;
+	}
+	getHardwareInfo(): Promise<any> {
+		if (this.sysInfo) {
+			return this.sysInfo.getHardwareInfo();
+		}
+		return undefined;
+	}
+
+	getMemAndDiskUsage(): Promise<any> {
+		if (this.sysInfo) {
+			return this.sysInfo.getMemAndDiskUsage();
+		}
+		return undefined;
+	}
 }
