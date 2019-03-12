@@ -40,4 +40,14 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	/**
+	 * returns dashboard object from VantageShellService of JS Bridge
+	 */
+	public getDevice(): any {
+		if (this.phoenix) {
+			return this.phoenix.device;
+		}
+		return undefined;
+	}
 }
