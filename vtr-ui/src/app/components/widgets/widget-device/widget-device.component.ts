@@ -49,7 +49,6 @@ export class WidgetDeviceComponent implements OnInit {
 			processor.status = 1;
 			processor.id = 'processor';
 			processor.title = 'Processor not found';
-			processor.description = 'Lorem ipsum dolor sit amet del Lorem ipsum dolor sit amet del';
 			processor.detail = 'Learn more';
 			processor.path = 'ms-settings:about';
 			processor.asLink = false;
@@ -65,8 +64,7 @@ export class WidgetDeviceComponent implements OnInit {
 			memory.status = 1;
 			memory.id = 'memory';
 			memory.title = 'Memory not found';
-			memory.description = 'Lorem ipsum dolor sit amet del Lorem ipsum dolor sit amet del';
-			memory.detail = 'Free memory';
+			memory.detail = 'Learn more';
 			memory.path = 'ms-settings:about';
 			memory.asLink = false;
 			memory.isSystemLink = true;
@@ -84,29 +82,32 @@ export class WidgetDeviceComponent implements OnInit {
 			}
 			systemStatus.push(memory);
 
-			// const disk = new Status();
-			// disk.status = 1;
-			// disk.id = 'disk';
-			// disk.title = 'Disk not found';
-			// disk.description = 'Lorem ipsum dolor sit amet del Lorem ipsum dolor sit amet del';
-			// disk.detail = 'Learn more';
-			// disk.path = 'ms-settings:storagesense';
-			// disk.asLink = false;
-			// disk.isSystemLink = true;
+			const disk = new Status();
+			disk.status = 1;
+			disk.id = 'disk';
+			disk.title = 'Disk not found';
+			disk.detail = 'Learn more';
+			disk.path = 'ms-settings:storagesense';
+			disk.asLink = false;
+			disk.isSystemLink = true;
 
-			// if (response.disk) {
-			// 	const { size, type } = response.disk;
-			// 	disk.title = `Memory (${this.commonService.formatBytes(size)} of ${type} RAM)`;
-			// 	disk.status = 0;
-			// }
-			// systemStatus.push(disk);
+			if (response.disk) {
+				const { total, used } = response.disk;
+				disk.title = `${this.commonService.formatBytes(used)} of ${this.commonService.formatBytes(total)}`;
+				const percent = (used / total) * 100;
+				if (percent > 70) {
+					disk.status = 1;
+				} else {
+					disk.status = 0;
+				}
+			}
+			systemStatus.push(disk);
 
 
 			const sysupdate = new Status();
 			sysupdate.status = 1;
 			sysupdate.id = 'systemupdate';
 			sysupdate.title = 'System update not found';
-			sysupdate.description = 'Lorem ipsum dolor sit amet del Lorem ipsum dolor sit amet del';
 			sysupdate.detail = 'System update';
 			sysupdate.path = '/system-updates';
 			sysupdate.asLink = true;
@@ -115,13 +116,8 @@ export class WidgetDeviceComponent implements OnInit {
 			if (response.sysupdate) {
 				const updateStatus = response.sysupdate.status;
 				const lastUpdate = response.sysupdate.lastupdate;
-				if (updateStatus === 1) {
-					sysupdate.title = `Software up to date (updated ${this.commonService.formatDate(lastUpdate)})`;
-					sysupdate.status = 0;
-				} else {
-					sysupdate.title = `Software up to date (updated ${this.commonService.formatDate(lastUpdate)})`;
-					sysupdate.status = 1;
-				}
+				sysupdate.title = `Software up to date (updated on ${this.commonService.formatDate(lastUpdate)})`;
+				sysupdate.status = (updateStatus === 1) ? 0 : 1;
 			}
 			systemStatus.push(sysupdate);
 
@@ -129,7 +125,6 @@ export class WidgetDeviceComponent implements OnInit {
 			warranty.status = 1;
 			warranty.id = 'warranty';
 			warranty.title = 'Warranty not found';
-			warranty.description = 'Lorem ipsum dolor sit amet del Lorem ipsum dolor sit amet del';
 			warranty.detail = 'Extend warranty';
 			warranty.path = '/support';
 			warranty.asLink = true;
