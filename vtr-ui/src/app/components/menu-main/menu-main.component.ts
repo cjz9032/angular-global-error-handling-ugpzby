@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
@@ -8,6 +9,7 @@ import { UserService } from '../../services/user/user.service';
 import { TranslationService } from 'src/app/services/translation/translation.service';
 import Translation from 'src/app/data-models/translation/translation';
 import { TranslationSection } from 'src/app/enums/translation-section.enum';
+import { ModalLenovoIdComponent } from '../modal/modal-lenovo-id/modal-lenovo-id.component';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -111,7 +113,8 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		public configService: ConfigService,
 		public deviceService: DeviceService,
 		public userService: UserService,
-		public translationService: TranslationService
+		public translationService: TranslationService,
+		private modalService: NgbModal
 	) {
 		this.commonMenuSubscription = this.translationService.subscription
 			.subscribe((translation: Translation) => {
@@ -130,6 +133,19 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 
 	menuItemClick(event, path) {
 		this.router.navigateByUrl(path);
+	}
+
+	//  to popup Lenovo ID modal dialog
+	OpenLenovoId() {
+		this.modalService.open(ModalLenovoIdComponent, {
+			backdrop: 'static',
+			size: 'lg',
+			centered: true
+		});
+	}
+
+	onLogout() {
+		this.userService.removeAuth();
 	}
 
 	onLanguageChange(translation: Translation) {

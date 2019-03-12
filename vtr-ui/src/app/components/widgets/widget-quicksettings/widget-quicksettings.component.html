@@ -10,19 +10,21 @@
 				<vtr-widget-switch-icon [iconDefinition]="['fas', 'microphone']"
 					[value]="microphoneStatus.status"
 					[title]="'dashboard.quick-settings.microphone' | translate"
+					[isBlocked]="!microphoneStatus.status"
 					(toggle)="onMicrophoneStatusToggle($event)"></vtr-widget-switch-icon>
 			</div>
 			<div class="col col-4 text-center">
 				<vtr-widget-switch-icon [iconDefinition]="['fas', 'camera']"
 					[value]="cameraStatus.status"
 					[title]="'dashboard.quick-settings.camera-privacy' | translate"
-					title="Camera Privacy"
+					[isBlocked]="cameraStatus.status"
 					(toggle)="onCameraStatusToggle($event)"></vtr-widget-switch-icon>
 			</div>
 			<div class="col col-4 text-right">
 				<vtr-widget-switch-icon [iconDefinition]="['fas', 'eye']"
 					[title]="'dashboard.quick-settings.eye-care-mode' | translate"
-					title="Eye Care Mode"
+					[value]="eyeCareModeStatus.status"
+					[isBlocked]="!eyeCareModeStatus.status"
 					(toggle)="onEyeCareModeToggle($event)"></vtr-widget-switch-icon>
 			</div>
 		</div>

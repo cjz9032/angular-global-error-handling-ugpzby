@@ -3,7 +3,9 @@ import { Router, NavigationEnd } from '@angular/router';
 import { DevService } from './services/dev/dev.service';
 import { DisplayService } from './services/display/display.service';
 import { TranslateService } from '@ngx-translate/core';
-
+import { UserService } from './services/user/user.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 
 @Component({
 	selector: 'vtr-root',
@@ -16,19 +18,14 @@ export class AppComponent implements OnInit {
 	constructor(
 		private devService: DevService,
 		private displayService: DisplayService,
-		// private modalService: NgbModal,
+		private modalService: NgbModal,
 		private router: Router,
-		translate: TranslateService
+		translate: TranslateService,
+		private userService: UserService
 	) {
 		translate.addLangs(['en', 'zh-Hans']);
 		translate.setDefaultLang('zh-Hans');
-
-		/*this.modalService.open(ModalWelcomeComponent, {
-		  backdrop: 'static',
-		  size: 'lg',
-		  centered: true,
-		  windowClass: 'modal-body'
-		});*/
+		this.modalService.open(ModalWelcomeComponent, { backdrop: 'static' });
 	}
 
 	ngOnInit() {
@@ -43,6 +40,9 @@ export class AppComponent implements OnInit {
 		const urlParams = new URLSearchParams(window.location.search);
 		this.devService.writeLog('GOT PARAMS', urlParams.toString());
 
+		// When startup try to login Lenovo ID silently (in background),
+		//  if user has already logged in before, this call will login automatically and update UI
+		this.userService.loginSilently();
 
 		/********* add this for navigation within a page **************/
 		this.router.events.subscribe(s => {

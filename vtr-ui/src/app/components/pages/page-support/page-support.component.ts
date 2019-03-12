@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticlesService } from '../../../services/articles/articles.service';
 import { MockService } from '../../../services/mock/mock.service';
+import { SupportService } from '../../../services/support/support.service';
 
 
 @Component({
@@ -14,12 +15,26 @@ export class PageSupportComponent implements OnInit {
 	searchWords = '';
 	searchCount = 1;
 	articles: any;
+	warranty: Object;
 
 	constructor(
 		public articlesService: ArticlesService,
 		public mockService: MockService,
+		public supportService: SupportService,
 	) {
 		// this.getArticles();
+		this.getMachineInfo();
+	}
+
+	getMachineInfo() {
+		this.supportService.getMachineInfo().then((machineInfo) => {
+			this.supportService
+				// .getWarranty('PC0G9X77')
+				.getWarranty(machineInfo.serialnumber)
+				.then((warranty) => {
+					this.warranty = warranty;
+				});
+		});
 	}
 
 	ngOnInit() {

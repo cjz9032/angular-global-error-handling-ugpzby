@@ -8,8 +8,10 @@
 					*ngIf="description">
 					{{ description }}
 				</div>
-				<div class="button-box">
+				<div *ngIf="actionName"
+					class="button-box">
 					<vtr-ui-button (onClick)="feedback($event)"
+						[isFullWidth]="true"
 						[label]="actionName"></vtr-ui-button>
 				</div>
 			</div>
