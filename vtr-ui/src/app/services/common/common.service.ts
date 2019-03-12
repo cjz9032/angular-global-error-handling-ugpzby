@@ -16,7 +16,7 @@ export class CommonService {
 	 * @param bytes bytes in form of number.
 	 * @param decimals number of decimal places. default is 2.
 	 */
-	formatBytes(bytes: number, decimals: number = 2) {
+	public formatBytes(bytes: number, decimals: number = 2) {
 		if (bytes === 0) {
 			return '0 Bytes';
 		}
@@ -32,7 +32,8 @@ export class CommonService {
 	 * Returns date formatted in YYYY/MM/DD format
 	 * @param date date object to format
 	 */
-	formatDate(date: Date): string {
+	public formatDate(dateString: string): string {
+		const date = new Date(dateString);
 		const mm = date.getMonth() + 1; // getMonth() is zero-based
 		const dd = date.getDate();
 
@@ -44,4 +45,11 @@ export class CommonService {
 		].join('');
 	}
 
+	public getDaysBetweenDates(firstDate: Date, secondDate: Date): number {
+		const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+		// const firstDate = new Date(2008, 1, 12);
+		// const secondDate = new Date(2008, 1, 22);
+		const diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneDay)));
+		return diffDays;
+	}
 }
