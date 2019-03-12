@@ -81,14 +81,16 @@ export class MockService {
 			'id': 'apps-src-unknown',
 			'title': 'Apps from unknown sources',
 			'detail': 'Failed',
-			'path': 'apps-src-unknown'
+			'path': '',
+			'hideChevron': true
 		},
 		{
 			'status': 1,
 			'id': 'dev-mode',
 			'title': 'Developer mode',
 			'detail': 'FAILED',
-			'path': 'dev-mode'
+			'path': '',
+			'hideChevron': true
 
 		},
 		{
@@ -96,21 +98,24 @@ export class MockService {
 			'id': 'uac-notification',
 			'title': 'UAC Notification',
 			'detail': 'FAILED',
-			'path': 'uac-notification'
+			'path': '',
+			'hideChevron': true
 		},
 		{
 			'status': 2,
 			'id': 'anti-virus-availability',
 			'title': 'Anti-Virus availability',
 			'detail': 'PASSED',
-			'path': 'anti-virus-availability'
+			'path': '',
+			'hideChevron': true
 		},
 		{
 			'status': 2,
 			'id': 'drive-encryption',
 			'title': 'Drive encryption',
 			'detail': 'PASSED',
-			'path': 'drive-encryption'
+			'path': '',
+			'hideChevron': true
 
 		},
 		{
@@ -118,7 +123,8 @@ export class MockService {
 			'id': 'firewall-availability',
 			'title': 'Firewall availability',
 			'detail': 'PASSED',
-			'path': 'firewall-availability'
+			'path': '',
+			'hideChevron': true
 
 		},
 		{
@@ -126,21 +132,24 @@ export class MockService {
 			'id': 'os-integrity',
 			'title': 'OS integrity',
 			'detail': 'PASSED',
-			'path': 'OS integrity'
+			'path': '',
+			'hideChevron': true
 		},
 		{
 			'status': 2,
 			'id': 'os-version',
 			'title': 'OS version',
 			'detail': 'PASSED',
-			'path': 'os-version'
+			'path': '',
+			'hideChevron': true
 		},
 		{
 			'status': 2,
 			'id': 'pin-pwd',
 			'title': 'Pin or Password',
 			'detail': 'PASSED',
-			'path': 'pin-pwd'
+			'path': '',
+			'hideChevron': true
 		}
 	];
 
@@ -151,7 +160,8 @@ export class MockService {
 			'title': 'Anti-Virus',
 			'detail': 'Enabled',
 			'path': 'anti-virus',
-			'type': 'security'
+			'type': 'security',
+			'isSystemLink': false
 
 		},
 		{
@@ -240,10 +250,10 @@ export class MockService {
 
 	securityConnectedHome = [
 		{
-			'status': 0,
+			'status': '',
 			'id': 'connected-home-security',
 			'title': 'Connected Home Security',
-			'detail': 'Enabled',
+			'detail': 'Learn more',
 			'path': 'connected-home-security'
 		}
 	];
@@ -285,13 +295,13 @@ export class MockService {
 		}
 	];
 
-	warranty = {
-		'status': 1, // 0 IN WARRANTY | 1 WARRANTY EXPIRED | 2 Not Found Warranty
-		'dayDiff': 1,
-		'startDate': '2017-12-13T09:12:43.083Z',
-		'endDate': '2018-12-12T09:12:43.083Z',
-		'url': 'https://pcsupport.lenovo.com/us/en/warrantylookup',
-	};
+	// warranty = {
+	// 	'status': 1, // 0 IN WARRANTY | 1 WARRANTY EXPIRED | 2 Not Found Warranty
+	// 	'dayDiff': 1,
+	// 	'startDate': '2017-12-13T09:12:43.083Z',
+	// 	'endDate': '2018-12-12T09:12:43.083Z',
+	// 	'url': 'https://pcsupport.lenovo.com/us/en/warrantylookup',
+	// };
 
 	documentation = [
 		{
@@ -313,7 +323,7 @@ export class MockService {
 		},
 		{
 			'icon': ['fas', 'share-alt'],
-			'title': 'Contact Customer service',
+			'title': 'Contact customer service',
 			'path': '',
 			'url': 'https://support.lenovo.com/',
 			'target': '_blank',
