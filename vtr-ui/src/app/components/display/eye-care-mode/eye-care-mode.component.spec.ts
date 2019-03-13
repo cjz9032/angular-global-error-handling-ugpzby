@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EyeCareModeComponent } from './eye-care-mode.component';
+import { UiRangeSliderComponent } from '../../ui/ui-range-slider/ui-range-slider.component';
+import { Ng5SliderModule } from 'ng5-slider';
 
 describe('EyeCareModeComponent', () => {
 	let component: EyeCareModeComponent;
@@ -8,7 +10,13 @@ describe('EyeCareModeComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [EyeCareModeComponent]
+			imports: [
+				Ng5SliderModule
+			],
+			declarations: [
+				EyeCareModeComponent,
+				UiRangeSliderComponent
+			]
 		}).compileComponents();
 	}));
 

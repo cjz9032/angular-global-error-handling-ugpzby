@@ -1,4 +1,21 @@
 <div class="subpage-device-settings-power vtr-subpage">
+		<div class="btn-group btn-group-toggle"
+		ngbRadioGroup
+		style="margin-left:300px;margin-top:-150px;"
+		[(ngModel)]="value">
+		   <label class="btn-primary"
+			ngbButtonLabel> 1
+			   <input type="radio"
+				ngbButton
+				[value]="1" />
+		   </label>
+		   <label class="btn-primary"
+			ngbButtonLabel> 2
+			   <input type="radio"
+				ngbButton
+				[value]="2" />
+		   </label>
+	   </div>
 	<div class="row">
 		<div class="col">
 			<vtr-ui-header-subpage [items]="headerMenuItems"
@@ -7,6 +24,52 @@
 				[menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
 		</div>
 	</div>
+
+	<div *ngIf="value===1">
+		<div class="row py-5 smartsettings-card"
+			id="cooling">
+			<div class="col-10 mx-auto ">
+				<vtr-container-collapsible cardTitle="Power Smartsettings"
+					[isCollapsed]="false"
+					[allowCollapse]="false"
+					[theme]="'blue'">
+					<div class="row">
+						<div class="col-auto text-wrap subtitle">
+							<h3>Intelligent Cooling</h3>
+							<p>This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.</p>
+						</div>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="">
+							<vtr-ui-row-switch [title]="'Intelligent cooling'"
+								[caption]="''"
+								[isSwitchVisible]=true
+								[leftIcon]="['fas', 'search']"
+								[readMoreText]="''"
+								[showChildContent]="true"
+								[theme]="'blue'"
+								(toggleOnOff)="onIntelligentCoolingToggle($event)">
+								<div class="my-3"
+									*ngIf="!intelligentCooling">
+									<!-- <vtr-ui-rectangle-radio [radioId]="'radio2'"
+										[group]="'radio'"
+										[label]="'PERFORMANCE'"
+										[value]="'PERFORMANCE'"></vtr-ui-rectangle-radio>
+									<vtr-ui-rectangle-radio [radioId]="'radio1'"
+										[group]="'radio'"
+										[label]="'QUIET & COOL'"
+										[value]="'QUIET & COOL'"></vtr-ui-rectangle-radio> -->
+
+								</div>
+							</vtr-ui-row-switch>
+						</li>
+					</ul>
+				</vtr-container-collapsible>
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="value===2">
 	<div class="row py-5 smartsettings-card"
 		id="cooling">
 		<div class="col-10 mx-auto ">
@@ -34,12 +97,13 @@
 								*ngIf="!intelligentCooling">
 								<vtr-ui-rectangle-radio [radioId]="'radio1'"
 									[group]="'radio'"
-									[label]="'QUIET'"
-									[value]="'QUIET'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio2'"
-									[group]="'radio'"
 									[label]="'PERFORMANCE'"
 									[value]="'PERFORMANCE'"></vtr-ui-rectangle-radio>
+								<vtr-ui-rectangle-radio [radioId]="'radio2'"
+									[group]="'radio'"
+									[label]="'QUIET & COOL'"
+									[value]="'QUIET & COOL'"></vtr-ui-rectangle-radio>
+
 							</div>
 						</vtr-ui-row-switch>
 					</li>
@@ -47,6 +111,8 @@
 			</vtr-container-collapsible>
 		</div>
 	</div>
+</div>
+
 
 	<div class="row py-5"
 		id="battery">
@@ -120,14 +186,35 @@
 			<vtr-container-collapsible cardTitle="Power Settings"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
-					<li class=""
-						*ngFor="let item of powerSettings">
-						<vtr-ui-row-switch [title]="item.header"
-							[caption]="item.subHeader"
+					<li class="">
+						<vtr-ui-row-switch [title]="powerSettings[0].header"
+							[caption]="powerSettings[0].subHeader"
 							[isSwitchVisible]=true
-							[leftIcon]="item.leftImageSource"
-							[rightIcon]="item.rightImageSource"
-							[tooltipText]="item.tooltipText">
+							[isSwitchChecked]=powerSettings[0].isSwitchChecked
+							[leftIcon]="powerSettings[0].leftImageSource"
+							[rightIcon]="powerSettings[0].rightImageSource"
+							[showChildContent]="true"
+							[tooltipText]="powerSettings[0].tooltipText"
+							(toggleOnOff)="onToggleOfAlwaysOnUsb($event)">
+							<div class="auto-set-checkbox left-margin"
+								[ngClass]="{'disable': toggleAlwaysOnUsbFlag === false}">
+								<input type="checkbox"
+									name="alwasy-on-usb-checkbox-id"
+									[disabled]="!toggleAlwaysOnUsbFlag"
+									[(ngModel)]="usbChargingCheckboxFlag"
+									(ngModelChange)='onUsbChargingStatusChange($event)'>
+								<label> {{ powerSettings[0].checkboxDesc }} </label>
+							</div>
+						</vtr-ui-row-switch>
+					</li>
+					<li class="">
+						<vtr-ui-row-switch [title]="powerSettings[1].header"
+							[caption]="powerSettings[1].subHeader"
+							[isSwitchVisible]=true
+							[isSwitchChecked]=powerSettings[1].isSwitchChecked
+							[leftIcon]="powerSettings[1].leftImageSource"
+							[rightIcon]="powerSettings[1].rightImageSource"
+							[tooltipText]="powerSettings[1].tooltipText">
 						</vtr-ui-row-switch>
 					</li>
 				</ul>
