@@ -40,4 +40,17 @@ export class DeviceService {
 		}
 		return undefined;
 	}
+
+	isARM():Promise<boolean>{
+		if (this.sysInfo) {
+			return this.sysInfo.getMachineInfo().then((object)=>{
+				if(object && object.properties && object.properties.osBitness && object.properties.osBitness.description && object.properties.osBitness.description.toLowerCase()==='arm'){
+					return true;
+				}else{
+					return false;
+				}
+			});
+		}
+		return Promise.resolve(false);
+	}
 }
