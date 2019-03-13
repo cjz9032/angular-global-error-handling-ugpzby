@@ -2,6 +2,7 @@
 
 .vtr-widget-switch-icon {
 	display: inline-block;
+	cursor: pointer;
 
 	.switch-container {
 		height: 12.5rem;
@@ -53,7 +54,7 @@
 			margin: 0.7rem auto;
 			text-align: center;
 			position: relative;
-			cursor:pointer;
+			cursor: pointer;
 
 			fa-icon {
 				font-size: 4rem;
@@ -63,11 +64,8 @@
 			.feature-off {
 				position: absolute;
 				color: $alt;
-				font-weight: 300;
-				font-size: 5.5rem;
-				left: 28%;
-				top: -16%;
-				transform: rotate(-25deg);
+				left: 7%;
+				top: 3%;
 			}
 		}
 
