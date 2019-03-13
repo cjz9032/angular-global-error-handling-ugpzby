@@ -3,6 +3,7 @@
 .vtr-page-device-updates {
 	.vtr-page-right-column {
 		background-color: $light;
+
 		.align-center {
 			padding: 0 6rem 0rem 6rem;
 		}
@@ -16,6 +17,7 @@
 		padding-left: 0rem !important;
 		padding-right: 0rem !important;
 	}
+
 	.installation-history-container {
 		border-radius: 0.5rem;
 		border-top-left-radius: 0rem;
@@ -24,6 +26,7 @@
 		height: 100%;
 		width: 100%;
 		background: $light;
+
 		.installation-history {
 			padding-left: 5rem;
 			padding-top: 0rem;
@@ -34,9 +37,11 @@
 			font-weight: $weight_light;
 			line-height: 2.9rem;
 		}
+
 		.installation-history-div {
 			padding-left: 5rem;
 			padding-right: 5rem;
+
 			.installation-history-ellipses {
 				border-radius: 2.5rem;
 				background-color: $shade_extralight;
@@ -45,6 +50,7 @@
 				text-align: center;
 				font-size: 1.1rem;
 			}
+
 			.installation-history-dash {
 				border-radius: 2.5rem;
 				background-color: $shade_extralight;
@@ -53,6 +59,7 @@
 				text-align: center;
 				font-size: 1.1rem;
 			}
+
 			.installation-history-text {
 				border-radius: 2.5rem;
 				background-color: $shade_extralight;
@@ -60,25 +67,31 @@
 				padding-bottom: 0rem;
 				text-align: center;
 			}
+
 			.status-list {
 				list-style: none;
 				padding: 0;
 				border-radius: $border_radius;
+
 				li {
 					display: in-line;
 					width: 33%;
+
 					.installation-date {
 						color: $main_shade;
 						font-size: 1.1rem;
 						line-height: 1.3rem;
 						text-align: right;
 					}
+
 					&:last-child {
 						border: none;
 					}
+
 					&:hover {
 						background-color: $shade_extralight;
 					}
+
 					&.success {
 						.status-icon {
 							.icon-bkg {
@@ -86,10 +99,12 @@
 								border-color: $go_dark;
 							}
 						}
+
 						.title {
 							color: $main_shade;
 						}
 					}
+
 					&.fail {
 						.status-icon {
 							.icon-bkg {
@@ -97,10 +112,12 @@
 								border-color: $stop_dark;
 							}
 						}
+
 						.title {
 							color: $main_shade;
 						}
 					}
+
 					&.pause {
 						.status-icon {
 							.icon-bkg {
@@ -108,10 +125,12 @@
 								border-color: $stop_dark;
 							}
 						}
+
 						.title {
 							color: $main_shade;
 						}
 					}
+
 					.status-icon {
 						.icon-bkg {
 							display: inline-block;
@@ -121,6 +140,7 @@
 							border-width: 0.2rem;
 							border-style: solid;
 							text-align: center;
+
 							fa-icon {
 								font-size: 1.2rem;
 								line-height: 2.8rem;
@@ -128,8 +148,10 @@
 							}
 						}
 					}
+
 					.status-text {
 						overflow: hidden;
+
 						.title {
 							line-height: 2.8rem;
 							font-size: 1.4rem;
@@ -141,6 +163,7 @@
 			}
 		}
 	}
+
 	.full-history {
 		color: $main;
 		font-size: 1.3rem;
@@ -148,9 +171,19 @@
 		letter-spacing: 0rem;
 		line-height: 1.5rem;
 		padding-top: 5rem;
-		padding-bottom: 5rem;
+		padding-bottom: 0rem;
 		padding-left: 5rem;
 		padding-right: 5rem;
 		text-transform: uppercase;
+
+		a {
+			text-decoration: underline;
+			cursor: pointer;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
 	}
 }

@@ -220,9 +220,12 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
     text-align: left;
   }
 }
-.modal-content{
-	width: 62.8rem !important;
-	margin: 0 auto;
-	overflow: hidden;
-	min-height: 60rem;
+
+.lenovo-modal-content {
+	.modal-content{
+		width: 62.8rem !important;
+		margin: 0 auto;
+		overflow: hidden;
+		min-height: 60rem;
+	}
 }

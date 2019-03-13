@@ -212,7 +212,7 @@ export class MockService {
 			'id': 'firewall',
 			'title': 'Firewall',
 			'detail': 'Disabled',
-			'path': 'fire-wall'
+			'path': 'anti-virus'
 
 		}
 	];
@@ -253,7 +253,7 @@ export class MockService {
 			'id': 'connected-home-security',
 			'title': 'Connected Home Security',
 			'detail': 'Learn more',
-			'path': 'connected-home-security'
+			'path': 'wifi-security'
 		}
 	];
 
@@ -498,6 +498,50 @@ export class MockService {
 			'path': '',
 			'lightTitle': false,
 			'rebootRequired': false
+		}
+	];
+
+	fullInstallationHistory = [
+		{
+			'id': '1',
+			icon: 'times',
+			'title': 'Lenovo intelligent Thermal Solutions Driver',
+			'detail': ' - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'success': true,
+			installationDetails: [
+				'Instllation text 1',
+				'Instllation text 2',
+				'Instllation text 3'
+			]
+		},
+		{
+			'id': '2',
+			icon: 'times',
+			'title': 'Intel Wireless LAN driver',
+			'detail': ' - (Windows 10 Build 1709 And Later) - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'success': false,
+			installationDetails: [
+				'Instllation text 1',
+				'Instllation text 2'
+			]
+		},
+		{
+			'id': '3',
+			icon: 'check',
+			'title': 'Lenovo Intelligent Thermal Solution Driver',
+			'detail': ' - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'success': false,
+			installationDetails: [
+				'Instllation text 11',
+				'Instllation text 22',
+				'Instllation text 33'
+			]
 		}
 	];
 
