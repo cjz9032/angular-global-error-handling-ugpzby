@@ -11,10 +11,11 @@ export class WidgetSwitchIconComponent implements OnInit {
 	@Input() title: string;
 	@Input() iconDefinition: string[];
 	@Input() value = false;
+	@Input() isBlocked = false;
 
 	@Output() toggle = new EventEmitter<boolean>();
 
-	constructor(public deviceService: DeviceService) {}
+	constructor(public deviceService: DeviceService) { }
 
 	ngOnInit() {
 		console.log(this.title, this.iconDefinition);
