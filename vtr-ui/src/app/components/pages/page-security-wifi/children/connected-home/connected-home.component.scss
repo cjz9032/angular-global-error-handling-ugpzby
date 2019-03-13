@@ -78,26 +78,29 @@
   }
 
   .gem-box {
-    margin: 2rem 1rem 1rem 2rem;
-    padding: 4rem;
+    //margin: 3rem 2rem 1rem 1rem;
+    padding: 3rem 1rem 3rem 1rem;
     //border: 1px solid red;
     height: auto;
-    background-color: $shade_extralight;
-    border-radius: $border_radius_sm;
+    width: 100%;
+    max-width: 100%;
 
     .gem {
-      padding: 4rem;
+      padding: 2.5rem;
       //border: 1px solid blue;
       width: 100%;
       height: 100%;
+      background-color: $shade_extralight;
+      border-radius: $border_radius_sm;
 
       img {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 75%;
-        max-width: 100%;
+        width: 90%;
+        max-width: 110%;
         height: auto;
+        //border: 1px solid green;
       }
       fa-icon.icon {
         font-size: 15rem;
