@@ -160,8 +160,7 @@ export class MockService {
 			'title': 'Anti-Virus',
 			'detail': 'Enabled',
 			'path': 'anti-virus',
-			'type': 'security',
-			'isSystemLink': false
+			'type': 'security'
 
 		},
 		{
@@ -213,7 +212,7 @@ export class MockService {
 			'id': 'firewall',
 			'title': 'Firewall',
 			'detail': 'Disabled',
-			'path': 'fire-wall'
+			'path': 'anti-virus'
 
 		}
 	];
@@ -254,7 +253,7 @@ export class MockService {
 			'id': 'connected-home-security',
 			'title': 'Connected Home Security',
 			'detail': 'Learn more',
-			'path': 'connected-home-security'
+			'path': 'wifi-security'
 		}
 	];
 
