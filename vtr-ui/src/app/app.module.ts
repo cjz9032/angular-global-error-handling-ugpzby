@@ -48,6 +48,7 @@ import { PageQuestionsComponent } from './components/pages/page-questions/page-q
 import { PageDeviceSettingsComponent } from './components/pages/page-device-settings/page-device-settings.component';
 import { PageDeviceUpdatesComponent } from './components/pages/page-device-updates/page-device-updates.component';
 import { AvailableUpdatesComponent } from './components/pages/page-device-updates/children/available-updates/available-updates.component';
+import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
 import { PageSecurityWifiComponent } from './components/pages/page-security-wifi/page-security-wifi.component';
 import { PageSecurityPasswordComponent } from './components/pages/page-security-password/page-security-password.component';
@@ -145,6 +146,7 @@ library.add(far);
 		PageDeviceSettingsComponent,
 		PageDeviceUpdatesComponent,
 		AvailableUpdatesComponent,
+		InstallationHistoryComponent,
 		PageSecurityAntivirusComponent,
 		PageSecurityWifiComponent,
 		PageSecurityPasswordComponent,
