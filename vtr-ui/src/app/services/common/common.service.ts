@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { Observable } from 'rxjs/internal/Observable';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 @Injectable({
 	providedIn: 'root'
@@ -7,8 +11,15 @@ import { Injectable } from '@angular/core';
  * Common service class. add functions which is common across application.
  */
 export class CommonService {
+	public readonly notification: Observable<AppNotification>;
+	private notificationSubject: BehaviorSubject<AppNotification>;
 
-	constructor() { }
+	constructor() {
+		this.notificationSubject = new BehaviorSubject<AppNotification>(
+			new AppNotification('init')
+		);
+		this.notification = this.notificationSubject;
+	}
 
 	/**
 	 * converts bytes to MB, GB etc.
@@ -47,9 +58,34 @@ export class CommonService {
 
 	public getDaysBetweenDates(firstDate: Date, secondDate: Date): number {
 		const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
-		// const firstDate = new Date(2008, 1, 12);
-		// const secondDate = new Date(2008, 1, 22);
 		const diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneDay)));
 		return diffDays;
+	}
+
+	/**
+	 * Stores given value in local storage in json string format
+	 * @param key key for local storage. Must define it in LocalStorageKey enum
+	 * @param value value to store in local storage
+	 */
+	public setLocalStorageValue(key: LocalStorageKey, value: any) {
+		window.localStorage.setItem(key, JSON.stringify(value));
+		// notify component that local storage value updated.
+		this.sendNotification(key, value);
+	}
+
+	/**
+	 * Returns parsed json object if key is found else returns undefined
+	 * @param key key use to store value in local storage
+	 */
+	public getLocalStorageValue(key: LocalStorageKey): any {
+		const value = window.localStorage.getItem(key);
+		if (value) {
+			return JSON.parse(value);
+		}
+		return undefined;
+	}
+
+	public sendNotification(type: string, payload?: any) {
+		this.notificationSubject.next(new AppNotification(type, payload));
 	}
 }

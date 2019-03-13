@@ -4,8 +4,11 @@ import { UserService } from './services/user/user.service';
 import { DevService } from './services/dev/dev.service';
 import { DisplayService } from './services/display/display.service';
 import { environment } from '../environments/environment';
-import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { ModalWelcomeComponent } from "./components/modal/modal-welcome/modal-welcome.component";
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
+import { DeviceService } from './services/device/device.service';
+import { CommonService } from './services/common/common.service';
+import { LocalStorageKey } from './enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-root',
@@ -22,9 +25,11 @@ export class AppComponent implements OnInit {
 		private devService: DevService,
 		private displayService: DisplayService,
 		private router: Router,
-		private modalService: NgbModal
+		private modalService: NgbModal,
+		private deviceService: DeviceService,
+		private commonService: CommonService
 	) {
-		this.modalService.open(ModalWelcomeComponent,{backdrop:'static'});
+		this.modalService.open(ModalWelcomeComponent, { backdrop: 'static' });
 	}
 
 	ngOnInit() {
@@ -56,5 +61,16 @@ export class AppComponent implements OnInit {
 				}
 			}
 		});
+		this.getMachineInfo();
+	}
+
+	private getMachineInfo() {
+		this.deviceService.getMachineInfo()
+			.then((value: any) => {
+				console.log('getMachineInfo.then', value);
+				this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
+			}).catch(error => {
+				console.error('getMachineInfo', error);
+			});
 	}
 }

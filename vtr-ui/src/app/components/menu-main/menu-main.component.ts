@@ -3,14 +3,18 @@ import { Router } from '@angular/router';
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
 import { UserService } from '../../services/user/user.service';
-import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalLenovoIdComponent } from '../modal/modal-lenovo-id/modal-lenovo-id.component';
+import { CommonService } from 'src/app/services/common/common.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 @Component({
 	selector: 'vtr-menu-main',
 	templateUrl: './menu-main.component.html',
 	styleUrls: ['./menu-main.component.scss']
 })
 export class MenuMainComponent implements OnInit {
+	public deviceModel: string;
 
 	items = [
 		{
@@ -103,29 +107,46 @@ export class MenuMainComponent implements OnInit {
 	constructor(
 		private router: Router,
 		public configService: ConfigService,
-		public deviceService: DeviceService,
+		private commonService: CommonService,
 		public userService: UserService,
 		private modalService: NgbModal
 	) { }
 
 	ngOnInit() {
+
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
 	}
 
 	menuItemClick(event, path) {
 		this.router.navigateByUrl(path);
 	}
-	
+
 	//  to popup Lenovo ID modal dialog
-	OpenLenovoId(){
+	OpenLenovoId() {
 		this.modalService.open(ModalLenovoIdComponent, {
 			backdrop: 'static',
 			size: 'lg',
 			centered: true
-		  });
+		});
 	}
 
-	onLogout(){
+	onLogout() {
 		this.userService.removeAuth();
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case LocalStorageKey.MachineInfo:
+					this.deviceModel = notification.payload.family;
+					break;
+
+				default:
+					break;
+			}
+		}
 	}
 
 }

@@ -6,8 +6,6 @@ import { MyDevice } from 'src/app/data-models/device/my-device.model';
 	providedIn: 'root'
 })
 export class DeviceService {
-
-	deviceModel = 'Ideapad 720s';
 	private device: any;
 	private sysInfo: any;
 	public isShellAvailable = false;
