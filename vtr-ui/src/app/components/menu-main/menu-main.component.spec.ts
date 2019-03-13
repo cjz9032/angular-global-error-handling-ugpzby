@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MenuMainComponent } from './menu-main.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('MenuMainComponent', () => {
 	let component: MenuMainComponent;
@@ -8,6 +9,9 @@ describe('MenuMainComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
+			imports: [
+				FontAwesomeModule
+			],
 			declarations: [MenuMainComponent]
 		})
 			.compileComponents();
