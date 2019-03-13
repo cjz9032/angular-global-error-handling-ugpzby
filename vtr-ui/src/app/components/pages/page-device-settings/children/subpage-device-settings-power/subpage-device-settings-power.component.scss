@@ -56,8 +56,16 @@
 		}
 	}
 
+	.left-margin {
+		margin-left: -3rem;
+	}
+
 	ul.list-group {
 		list-style-type: none;
 		padding-bottom: 3rem;
+	}
+	
+	.disable {
+		opacity: 0.65;
 	}
 }
