@@ -71,23 +71,6 @@
 		.dropdown dropdown-menu.show {
 			display: block;
 		}
-
-		.auto-set-checkbox {
-			margin-top: 2rem;
-			input {
-				width: 1.5rem;
-				height: 1.5rem;
-				position: relative;
-				top: -0.1rem;
-				margin-right: 0.5rem;
-			}
-			label {
-				color: $shade_darker;
-				font-size: 1.5rem;
-				font-weight: $weight_light;
-				text-align: center;
-			}
-		}
 	}
 
 	.row-seperator {

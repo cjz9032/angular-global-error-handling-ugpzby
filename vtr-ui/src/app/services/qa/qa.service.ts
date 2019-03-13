@@ -15,8 +15,10 @@ export class QaService {
 			title: 'Backup and Restore your files',
 			like: false,
 			dislike: false,
-			description: `<div>
-									<div style="font-size:4rem;font-weight:bold;">
+
+			description:`<div>
+									<div style="font-size:3rem;font-weight:bold;">
+
 										Back up and restore your files
 									</div>
 									<hr/>
@@ -183,7 +185,7 @@ export class QaService {
 			id: 3,
 			path: 'support-detail/3',
 			iconPath: `${this.imagePath}/svg_icon_qa_pcbit.svg`,
-			title: 'How to know your machine\'s CPU',
+			title: "How to know your machine's CPU",
 			like: false,
 			dislike: false,
 			description: `<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Symptom</h3>
