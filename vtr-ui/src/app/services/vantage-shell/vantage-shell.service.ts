@@ -8,14 +8,15 @@ import bootstrap from '@lenovo/tan-client-bridge/src/index';
 	providedIn: 'root'
 })
 export class VantageShellService {
-
 	private phoenix: any;
 	constructor() {
 		const shell = this.getVantageShell();
 		if (shell) {
+			const rpcClient = shell.VantageRpcClient ? new shell.VantageRpcClient() : null;
+			const metricClient = shell.MetricsClient ? new shell.MetricsClient() : null;
 			this.phoenix = bootstrap(
 				new inversify.Container(),
-				new shell.VantageRpcClient()
+				{hsaBroker: rpcClient , metricsBroker: metricClient}
 			);
 		}
 	}
@@ -56,6 +57,15 @@ export class VantageShellService {
 	public getWarranty(): any {
 		if (this.phoenix) {
 			return this.phoenix.warranty;
+		}
+		return undefined;
+	}
+	/**
+	 * returns sysinfo object from VantageShellService of JS Bridge
+	 */
+	public getMetrics(): any {
+		if (this.phoenix) {
+			return this.phoenix.metrics;
 		}
 		return undefined;
 	}
