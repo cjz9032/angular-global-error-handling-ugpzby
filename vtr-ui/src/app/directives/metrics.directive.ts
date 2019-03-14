@@ -35,6 +35,7 @@ export class MetricsDirective {
             this.metrics.sendAsync(data);
         }
         
+        // just for debuging, would be removed in the future
         {
             const data: any = {
                 ItemName: this.metricsItem,
@@ -48,7 +49,7 @@ export class MetricsDirective {
                 data.metricsValue = this.metricsValue;
             }
 
-            console.log('sending the metrics with metrics service' + JSON.stringify(data));
+            console.log('Sending the metrics [ItemType : ' + this.metricsEvent + "]\n" + JSON.stringify(data));
         }
     }
 }
