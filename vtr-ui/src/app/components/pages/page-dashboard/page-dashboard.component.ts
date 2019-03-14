@@ -5,6 +5,7 @@ import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Status } from 'src/app/data-models/widgets/status.model';
 import { CommonService } from 'src/app/services/common/common.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
@@ -29,7 +30,8 @@ export class PageDashboardComponent implements OnInit {
 		public qaService: QaService,
 		private modalService: NgbModal,
 		config: NgbModalConfig,
-		private commonService: CommonService
+		private commonService: CommonService,
+		public deviceService: DeviceService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;

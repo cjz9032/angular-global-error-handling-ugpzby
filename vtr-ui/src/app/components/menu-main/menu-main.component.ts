@@ -18,12 +18,14 @@ export class MenuMainComponent implements OnInit {
 			label: 'Dashboard',
 			path: 'dashboard',
 			icon: 'columns',
+			forArm: true,
 			subitems: []
 		}, {
 			id: 'device',
 			label: 'Device',
 			path: 'device',
 			icon: 'laptop',
+			forArm: false,
 			subitems: [{
 				id: 'device',
 				label: 'My device',
@@ -48,6 +50,7 @@ export class MenuMainComponent implements OnInit {
 			label: 'Security',
 			path: 'security',
 			icon: 'lock',
+			forArm: false,
 			subitems: [{
 				id: 'security',
 				label: 'My Security',
@@ -90,12 +93,14 @@ export class MenuMainComponent implements OnInit {
 			label: 'Support',
 			path: 'support',
 			icon: 'wrench',
+			forArm: false,
 			subitems: []
 		}, {
 			id: 'user',
 			label: 'User',
 			path: 'user',
 			icon: 'user',
+			forArm: true,
 			subitems: []
 		}
 	];
@@ -109,6 +114,16 @@ export class MenuMainComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
+	}
+
+	showItem(item){
+		let showItem = true;
+		if(this.deviceService.isARM) {
+			if(!item.forArm){
+				showItem = false;
+			}
+		}
+		return showItem;
 	}
 
 	menuItemClick(event, path) {
