@@ -67,7 +67,7 @@ export class PageDeviceUpdatesComponent implements OnInit {
 		}
 	];
 
-	showFullHistory = true;
+	showFullHistory = false;
 
 	toggleFullHistory() {
 		this.showFullHistory = !this.showFullHistory;

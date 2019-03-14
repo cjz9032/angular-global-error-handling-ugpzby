@@ -9,7 +9,11 @@
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col col-12 col-sm-12 col-md-8 col-lg-8 vtr-page-left-column">
+					<div [ngClass]="{
+						'col-sm-12 col-md-8 col-lg-8 vtr-page-left-column':!deviceService.isArm,
+						'vtr-arm-page': deviceService.isArm
+					}"
+					 class="col col-12">
 						<div class="vtr-page-shift-up nmx-40">
 							<div class="container-fluid">
 								<div class="row">
@@ -84,7 +88,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="col col-12 col-sm-12 col-md-4 col-lg-4 vtr-page-right-column">
+					<div *ngIf="!deviceService.isArm"
+					 class="col col-12 col-sm-12 col-md-4 col-lg-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 								<div class="row">

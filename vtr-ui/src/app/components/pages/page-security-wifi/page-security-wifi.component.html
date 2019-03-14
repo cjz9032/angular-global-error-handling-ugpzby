@@ -44,7 +44,8 @@
 												<div class="row">
 													<div class="col">
 														<div class="title">{{'Security Health'}}</div>
-														<div class="description">
+														<div class="description"
+														 *ngIf="isLWSEnabled===true">
 															Learn more about each of these components <a routerLink="/">here</a>.
 														</div>
 													</div>

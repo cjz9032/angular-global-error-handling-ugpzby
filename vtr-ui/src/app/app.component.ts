@@ -3,6 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { UserService } from './services/user/user.service';
 import { DevService } from './services/dev/dev.service';
 import { DisplayService } from './services/display/display.service';
+import { DeviceService } from './services/device/device.service';
 import { environment } from '../environments/environment';
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ModalWelcomeComponent } from "./components/modal/modal-welcome/modal-welcome.component";
@@ -21,6 +22,7 @@ export class AppComponent implements OnInit {
 		private userService: UserService,
 		private devService: DevService,
 		private displayService: DisplayService,
+		public deviceService: DeviceService,
 		private router: Router,
 		private modalService: NgbModal
 	) {
@@ -29,6 +31,9 @@ export class AppComponent implements OnInit {
 
 	ngOnInit() {
 		this.devService.writeLog('APP INIT', window.location.href);
+
+		// use when deviceService.isArm is set to true
+		// document.getElementById("html-root").classList.add('is-arm');
 
 		const self = this;
 		window.onresize = function () {
