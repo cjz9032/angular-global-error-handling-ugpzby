@@ -4,6 +4,7 @@ import { CommsService } from '../comms/comms.service';
 import { DevService } from '../dev/dev.service';
 import { ContainerService } from '../container/container.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { JsonPipe } from '@angular/common';
 
 @Injectable()
 export class UserService {
@@ -17,6 +18,7 @@ export class UserService {
 	initials = '';
 
 	private lid: any;
+	private metrics: any;
 
 	constructor(
 		private cookieService: CookieService,
@@ -27,6 +29,14 @@ export class UserService {
 		// DUMMY
 		this.setName(this.firstName, this.lastName);
 		this.lid = vantageShellService.getLenovoId();
+		this.metrics = vantageShellService.getMetrics();
+		if (!this.metrics) {
+			this.devService.writeLog('UserService constructor: metrics object is undefined');
+			this.metrics = {
+				sendAsync() {}
+			};
+		}
+
 		if (this.lid === undefined) {
 			this.devService.writeLog('UserService constructor: lid object is undefined');
 		}
@@ -44,6 +54,7 @@ export class UserService {
 		const self = this;
 		if (this.lid !== undefined) {
 			this.lid.loginSilently().then((result) => {
+				let metricsData: any;
 				if (result.success && result.status === 0) {
 					this.lid.getUserProfile().then((profile) => {
 						if (profile.success && profile.status === 0) {
@@ -51,7 +62,30 @@ export class UserService {
 							self.auth = true;
 						}
 					});
+					metricsData = {
+						ItemType: 'TaskAction',
+						TaskName: 'LID.SignIn',
+						TaskResult: 'success',
+						TaskParam: JSON.stringify({
+								StarterStatus: 'NA',
+								AccountState: 'NA', //{Signin | AlreadySignedIn | NeverSignedIn},
+								FeatureRequested: 'NA' // {AppOpen | SignIn | Vantage feature}
+						})
+					};
+				} else {
+					metricsData = {
+						ItemType: 'TaskAction',
+						TaskName: 'LID.SignIn',
+						TaskResult: 'failure',
+						TaskParam: JSON.stringify({
+							StarterStatus: 'NA',
+							AccountState: 'NA', //{Signin | AlreadySignedIn | NeverSignedIn},
+							FeatureRequested: 'NA' // {AppOpen | SignIn | Vantage feature}
+						})
+					};
 				}
+
+				this.metrics.sendAsync(metricsData);
 			});
 		}
 		this.devService.writeLog('LOGIN(SILENTLY): ', self.auth);
@@ -68,12 +102,33 @@ export class UserService {
 		if (this.lid !== undefined) {
 			return this.lid.enableSSO(useruad, username, userid, userguid);
 		}
+
+		this.metrics.sendAsync({
+			ItemType: 'TaskAction',
+			TaskName: 'LID.SignIn',
+			TaskResult: 'success',
+			TaskParam: JSON.stringify({
+				StarterStatus: 'NA',
+				AccountState: 'NA', //{Signin | AlreadySignedIn | NeverSignedIn},
+				FeatureRequested: 'NA' // {AppOpen | SignIn | Vantage feature}
+			})
+		});
+
 		return undefined;
 	}
 
 	public logout(): any {
 		if (this.lid !== undefined) {
-			return this.lid.logout();
+			const that = this;
+			return this.lid.logout().then((result) => {
+				that.metrics.sendAsync({
+					ItemType: 'TaskAction',
+					TaskName: 'LID.SignOut',
+					TaskResult: result && result.success ? 'success' : 'failure'
+				});
+
+				return result;
+			});
 		}
 		return undefined;
 	}
