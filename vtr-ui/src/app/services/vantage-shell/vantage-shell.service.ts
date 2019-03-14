@@ -15,7 +15,7 @@ export class VantageShellService {
 		if (shell) {
 			this.phoenix = bootstrap(
 				new inversify.Container(),
-				new shell.VantageRpcClient()
+				{ hsaBroker: new shell.VantageRpcClient() }
 			);
 		}
 	}
