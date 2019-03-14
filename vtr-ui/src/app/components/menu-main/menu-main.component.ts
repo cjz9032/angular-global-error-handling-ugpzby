@@ -5,12 +5,15 @@ import { DeviceService } from '../../services/device/device.service';
 import { UserService } from '../../services/user/user.service';
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ModalLenovoIdComponent } from '../modal/modal-lenovo-id/modal-lenovo-id.component';
+import { environment } from '../../../environments/environment';
+
 @Component({
 	selector: 'vtr-menu-main',
 	templateUrl: './menu-main.component.html',
 	styleUrls: ['./menu-main.component.scss']
 })
 export class MenuMainComponent implements OnInit {
+	public appVersion: string = environment.appVersion;
 
 	items = [
 		{
@@ -116,7 +119,7 @@ export class MenuMainComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	showItem(item){
+	showItem(item) {
 		let showItem = true;
 		if (this.deviceService.isARM) {
 			if (!item.forArm) {
@@ -131,7 +134,7 @@ export class MenuMainComponent implements OnInit {
 	}
 
 	//  to popup Lenovo ID modal dialog
-	OpenLenovoId(){
+	OpenLenovoId() {
 		this.modalService.open(ModalLenovoIdComponent, {
 			backdrop: 'static',
 			size: 'lg',
@@ -140,7 +143,7 @@ export class MenuMainComponent implements OnInit {
 		});
 	}
 
-	onLogout(){
+	onLogout() {
 		this.userService.removeAuth();
 	}
 
