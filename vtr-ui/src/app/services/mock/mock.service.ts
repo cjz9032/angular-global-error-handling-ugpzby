@@ -45,7 +45,8 @@ export class MockService {
 			'detail': '4.00 GB of 6 GB',
 			'path': 'ms-settings:about',
 			'asLink': false,
-			'isSystemLink': true
+			'isSystemLink': true,
+			'type': 'system'
 		},
 		{
 			'status': 0,
@@ -54,7 +55,8 @@ export class MockService {
 			'detail': '12.7 GB of 256 GB',
 			'path': 'ms-settings:storagesense',
 			'asLink': false,
-			'isSystemLink': true
+			'isSystemLink': true,
+			'type': 'system'
 		},
 		{
 			'status': 0,
@@ -62,7 +64,8 @@ export class MockService {
 			'title': 'Warranty',
 			'detail': 'Unitil 01/01/2020',
 			'path': '/support',
-			'asLink': false
+			'asLink': false,
+			'type': 'system'
 		},
 		{
 			'status': 1,
@@ -70,7 +73,8 @@ export class MockService {
 			'title': 'System Update',
 			'detail': 'Update',
 			'path': '/system-updates',
-			'asLink': true
+			'asLink': true,
+			'type': 'system'
 		}
 	];
 
