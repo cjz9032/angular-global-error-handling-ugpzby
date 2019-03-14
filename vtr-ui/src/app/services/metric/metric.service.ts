@@ -79,8 +79,8 @@ export class MetricService {
 							logModel.ItemName=document.activeElement.getAttribute('value');
 						}else if (document.activeElement.getAttribute('type')=='checkbox'){
 							logModel.ItemType="Checkbox";
-							logModel.ItemName=document.activeElement.nextSibling.innerHTML;
 						}else{
+							logModel.ItemName = (<HTMLElement>document.activeElement.nextSibling).innerHTML;
 							console.log('input tpye is not known')
 						}
 
