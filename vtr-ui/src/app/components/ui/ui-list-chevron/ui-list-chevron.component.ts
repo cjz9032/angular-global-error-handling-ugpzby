@@ -73,7 +73,7 @@ export class UiListChevronComponent implements OnInit {
 				itemDetailClass['text - lowercase'] = true;
 			}
 			else if (item.type === 'security') {
-				itemDetailClass['security text - uppercase' + this.getItemStatusClass(item)] = true;
+				itemDetailClass['security text - uppercase ' + this.getItemStatusClass(item)] = true;
 			}
 
 		}
