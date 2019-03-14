@@ -6,8 +6,8 @@
 	display: inline-block;
 	margin-right: 2rem;
 	position: relative;
-	width: 15rem;
-	height: 15rem;
+	width: 16rem;
+	height: 16rem;
 	border-radius: $border_radius_sm;
 	label {
 		box-sizing: border-box;
@@ -22,7 +22,7 @@
 		&:before {
 			box-sizing: border-box;
 			position: absolute;
-			left: 1.5rem;
+			left: 1.2rem;
 			top: 2rem;
 			width: 2.2rem;
 			height: 2.2rem;
@@ -38,7 +38,7 @@
 		&:after {
 			box-sizing: border-box;
 			position: absolute;
-			left: 1.8rem;
+			left: 1.5rem;
 			top: 2.3rem;
 			width: 1.6rem;
 			height: 1.6rem;
@@ -52,14 +52,13 @@
 
 		span {
 			position: absolute;
-			left: 4.8rem;
+			left: 4.0rem;
 			top: 2.2rem;
 			color: $main_darkest;
 			font-size: 1.3rem;
 			font-weight: bold;
 			word-wrap: break-word;
 			word-break: break-all;
-			padding-right: 1rem;
 			text-transform: uppercase;
 		}
 
