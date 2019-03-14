@@ -126,6 +126,14 @@
 							}
 						}
 					}
+					&:last-child{
+						.dropdown-menu{
+							right: 0;
+							left: auto;
+							min-width: 20rem;
+							max-width: 50rem;
+						}
+					}
 				}
 			}
 		}
