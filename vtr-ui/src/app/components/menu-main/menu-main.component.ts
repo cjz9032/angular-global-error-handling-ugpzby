@@ -118,9 +118,9 @@ export class MenuMainComponent implements OnInit {
 
 	showItem(item){
 		let showItem = true;
-		if(this.deviceService.isARM) {
-			if(!item.forArm){
-				showItem = false;
+		if (this.deviceService.isARM) {
+			if (!item.forArm) {
+				// showItem = false;
 			}
 		}
 		return showItem;
