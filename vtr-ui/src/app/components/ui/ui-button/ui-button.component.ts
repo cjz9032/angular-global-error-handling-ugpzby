@@ -13,7 +13,6 @@ export class UiButtonComponent implements OnInit {
 	constructor() { }
 
 	onClickButton(event) {
-		console.log('clicked button' + this.label);
 		this.onClick.emit(event);
 	}
 
