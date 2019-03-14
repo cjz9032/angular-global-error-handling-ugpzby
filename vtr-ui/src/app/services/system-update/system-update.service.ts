@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { CommonService } from '../common/common.service';
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
+import { InstallUpdate } from 'src/app/data-models/system-update/install-update.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -85,9 +86,16 @@ export class SystemUpdateService {
 
 	public cancelUpdateCheck() {
 		if (this.systemUpdateBridge) {
-			this.systemUpdateBridge.checkForUpdates();
+			this.systemUpdateBridge.cancelSearch().then((status: boolean) => {
+				// todo: ui changes to show on update cancel
+			}).catch((error) => {
+				console.log('cancelUpdateCheck', error);
+
+			});
 		}
 	}
+
+
 
 
 
@@ -100,22 +108,30 @@ export class SystemUpdateService {
 
 	public installUpdates() {
 
-		// [{
+		if (this.systemUpdateBridge && this.isUpdatesAvailable) {
+			const packages = this.mapUpdateListToInstallList(this.updateInfo.updateList);
+			this.systemUpdateBridge.installUpdates(packages, (progress: number) => {
+				console.log('installUpdates callback', progress);
+				this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);
+			}).then((response) => {
+				console.log('installUpdates response', response);
+				this.commonService.sendNotification(UpdateProgress.InstallationComplete, response);
+			});
+		}
+	}
 
-		// packageID: "criticalpackage1",
-		// action: "DownloadAndInstall",
+	private mapUpdateListToInstallList(updateList: Array<any>): InstallUpdate[] {
+		const packageToInstall: InstallUpdate[] = [];
 
-		// //"DownloadOnly|InstallOnly|
-
-		// //DownloadAndInstall"
-
-		// "severity": "Recommended"
-
-		// //"Critical|Recommended|Optional",
-
-		// }, ...] // to-install updates array
-
-		// 2. function callback
+		if (updateList && updateList.length > 0) {
+			updateList.forEach((update) => {
+				const pkg = new InstallUpdate();
+				pkg.packageID = update.packageID;
+				pkg.severity = update.packageSeverity;
+				packageToInstall.push(pkg);
+			});
+		}
+		return packageToInstall;
 	}
 
 	public restartWindows() {

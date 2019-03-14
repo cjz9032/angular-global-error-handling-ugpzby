@@ -8,7 +8,9 @@
 							<input id="{{ 'updateCheckbox' + randomNumber + i }}"
 								type="checkbox"
 								class="custom-control-input"
-								checked="" />
+								checked=""
+								[name]="item.packageName"
+								(change)="onCheckChange($event)" />
 							<label class="custom-control-label "
 								for="{{ 'updateCheckbox' + randomNumber + i }}">
 								<span class="title"

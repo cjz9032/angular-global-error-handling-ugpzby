@@ -6,5 +6,6 @@ export enum UpdateProgress {
 	UpdateCheckCompleted = '[SystemUpdate] UpdateCheckCompleted',
 	UpdatesAvailable = '[SystemUpdate] UpdatesAvailable',
 	UpdatesNotAvailable = '[SystemUpdate] UpdatesNotAvailable',
-
+	InstallingUpdate = '[SystemUpdate] InstallingUpdate',
+	InstallationComplete = '[SystemUpdate] InstallationComplete',
 }

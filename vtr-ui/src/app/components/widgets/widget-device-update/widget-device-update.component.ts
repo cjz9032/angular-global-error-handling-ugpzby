@@ -13,6 +13,11 @@ export class WidgetDeviceUpdateComponent implements OnInit {
 	@Input() installationHistory: any[];
 	@Input() percent = 0;
 	@Input() showProgress = false;
+	@Input() isUpdateDownloading = false;
+	@Input() downloadingUpdateText = 'Downloading updates';
+	@Input() downloadingPercent = 0;
+	@Input() installingUpdateText = 'Installing updates';
+	@Input() installingPercent = 0;
 
 	@Output() checkForUpdate = new EventEmitter();
 	@Output() cancelUpdateCheck = new EventEmitter();
@@ -21,6 +26,9 @@ export class WidgetDeviceUpdateComponent implements OnInit {
 	checkingForUpdates = 'Checking for updates';
 	complete = 'complete';
 	public progressValue = 0;
+	public downloadingIcon = 'spinner';
+	public installingIcon = 'spinner';
+
 	constructor() { }
 
 	ngOnInit() {

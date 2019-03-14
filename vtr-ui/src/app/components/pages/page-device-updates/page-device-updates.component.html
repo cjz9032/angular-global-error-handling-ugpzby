@@ -23,18 +23,25 @@
 											[buttonText]="'Check For Updates'"
 											[percent]="percentCompleted"
 											[showProgress]="canShowProgress"
+											[isUpdateDownloading]="isUpdateDownloading"
+											[installingPercent]="installationPercent"
+											[downloadingPercent]="downloadingPercent"
 											(checkForUpdate)="onCheckForUpdates()"
-											(cancelUpdateCheck)="onCancelUpdateCheck()"></vtr-widget-device-update>
+											(cancelUpdateCheck)="onCancelUpdateCheck()">
+										</vtr-widget-device-update>
 									</div>
 								</div>
 
 								<vtr-available-updates *ngIf="isUpdatesAvailable"
 									[criticalUpdates]="criticalUpdates"
 									[optionalUpdates]="optionalUpdates"
-									[recommendedUpdates]="recommendedUpdates">
+									[recommendedUpdates]="recommendedUpdates"
+									(checkChange)="onUpdateSelectionChange($event)"
+									(installAllUpdate)="onInstallAllUpdate($event)"
+									(installSelectedUpdate)="onInstallSelectedUpdate($event)">
 								</vtr-available-updates>
 
-								<!-- Installation history is scope of MVP-2 -->
+								<!-- Installation timeline is scope of MVP-2 -->
 								<!-- <div class="row">
 									<div class="col col-12 installation-history-container">
 										<div class="row">

@@ -26,6 +26,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public optionalUpdates: any;
 	public isUpdatesAvailable = false;
 	public canShowProgress = false;
+	public isUpdateDownloading = false;
+	public installationPercent = 0;
+	public downloadingPercent = 0;
 
 	private notificationSubscription: Subscription;
 
@@ -115,7 +118,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		if (this.systemUpdateService.isShellAvailable) {
 			this.systemUpdateService.getMostRecentUpdateInfo()
 				.then((value: any) => {
-					console.log('getLastUpdateScanDetail.then', value);
+					// console.log('getLastUpdateScanDetail.then', value);
 					this.lastInstallTime = new Date(value.lastInstallTime);
 					// this.lastScanTime = new Date(value.lastScanTime);
 					this.nextScheduleScanTime = new Date(value.nextScheduleScanTime);
@@ -145,28 +148,10 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	onCheckForUpdates() {
-
 		if (this.systemUpdateService.isShellAvailable) {
 			this.canShowProgress = true;
 			this.isUpdatesAvailable = false;
 			this.systemUpdateService.checkForUpdates();
-			// const that = this;
-
-			// this.systemUpdateService.checkForUpdates((percent: number) => {
-			// 	console.log('update percent', percent);
-			// 	this.ngZone.run(() =>
-			// 		that.percentCompleted = percent
-			// 	);
-			// })
-			// 	.then((value: any) => {
-			// 		console.log('onCheckForUpdates.then', value);
-			// 		this.updateInfo = value;
-			// 		this.setUpdateByCategory(value.updateList);
-			// 		this.isUpdatesAvailable = (value && value.updateList.length > 0);
-			// 		this.canShowProgress = false;
-			// 	}).catch(error => {
-			// 		console.error('onCheckForUpdates', error);
-			// 	});
 		}
 	}
 
@@ -181,8 +166,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.optionalUpdates = this.filterUpdate(updateList, 'optional');
 			this.recommendedUpdates = this.filterUpdate(updateList, 'recommended');
 			this.criticalUpdates = this.filterUpdate(updateList, 'critical');
-
-			console.log('update categories', this.optionalUpdates, this.criticalUpdates, this.recommendedUpdates);
+			// console.log('update categories', this.optionalUpdates, this.criticalUpdates, this.recommendedUpdates);
 		}
 	}
 
@@ -213,9 +197,34 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				case UpdateProgress.UpdatesNotAvailable:
 					// todo : no updates available msg
 					break;
+				case UpdateProgress.InstallingUpdate:
+					this.ngZone.run(() => {
+						this.isUpdateDownloading = true;
+						this.installationPercent = notification.payload.installPercentage;
+						this.downloadingPercent = notification.payload.downloadPercentage;
+					});
+					break;
+				case UpdateProgress.InstallationComplete:
+					this.isUpdateDownloading = false;
+					break;
 				default:
 					break;
 			}
 		}
+	}
+
+	public onUpdateSelectionChange($event: any) {
+		console.log($event);
+	}
+
+	public onInstallAllUpdate($event: any) {
+		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
+			this.isUpdateDownloading = false;
+			this.systemUpdateService.installUpdates();
+		}
+	}
+
+	public onInstallSelectedUpdate($event: any) {
+
 	}
 }
