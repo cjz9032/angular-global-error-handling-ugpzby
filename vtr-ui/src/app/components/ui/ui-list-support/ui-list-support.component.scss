@@ -13,10 +13,11 @@
 			min-height: 6rem;
 			padding: 1.5rem 1rem 1.5rem 0;
 			border-bottom: .1rem solid $shade_lighter;
-			color: $main_darker;
+			color: #34495e;
 
 			&.pointer {
 				cursor: pointer;
+
 				&:hover {
 					background-color: $shade_extralight;
 				}
@@ -46,7 +47,7 @@
 			}
 
 			a {
-				color: $main_darker;
+				color: #34495e;
 
 				&:hover {
 					text-decoration: none;
@@ -88,6 +89,7 @@
 					line-height: 1.8rem;
 					font-size: 1.4rem;
 					font-weight: $weight_medium;
+					letter-spacing: 0;
 					float: left;
 
 					&.light-title {
@@ -121,9 +123,10 @@
 				font-size: 2rem;
 			}
 
-			.image{
+			.image {
 				display: inline-block;
-				img{
+
+				img {
 					width: 74%;
 				}
 			}
