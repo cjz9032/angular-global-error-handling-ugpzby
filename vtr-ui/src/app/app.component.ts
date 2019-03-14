@@ -7,6 +7,7 @@ import { DeviceService } from './services/device/device.service';
 import { environment } from '../environments/environment';
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ModalWelcomeComponent } from "./components/modal/modal-welcome/modal-welcome.component";
+import {MetricService} from "./services/metric/metric.service";
 
 @Component({
 	selector: 'vtr-root',
@@ -24,7 +25,8 @@ export class AppComponent implements OnInit {
 		private displayService: DisplayService,
 		public deviceService: DeviceService,
 		private router: Router,
-		private modalService: NgbModal
+		private modalService: NgbModal,
+		private metricService: MetricService
 	) {
 		this.modalService.open(ModalWelcomeComponent,{backdrop:'static'});
 	}

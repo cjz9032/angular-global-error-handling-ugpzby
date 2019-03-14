@@ -115,6 +115,7 @@ import { ContainerArticleComponent } from './components/container-article/contai
 import { SanitizeUrlPipe } from './pipe/sanitise-url.pipe';
 import { UniqueIdPipe } from './pipe/unique-id.pipe';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
+import {MetricService} from "./services/metric/metric.service";
 
 library.add(fas);
 library.add(fab);
@@ -214,6 +215,7 @@ library.add(far);
 		DeviceService,
 		SecurityService,
 		UserService,
+		MetricService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
 	bootstrap: [AppComponent],
