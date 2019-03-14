@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BatteryIndicatorComponent } from './battery-indicator.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('BatteryIndicatorComponent', () => {
   let component: BatteryIndicatorComponent;
@@ -8,6 +9,9 @@ describe('BatteryIndicatorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+		imports: [
+			FontAwesomeModule
+		],
       declarations: [ BatteryIndicatorComponent ]
     })
     .compileComponents();

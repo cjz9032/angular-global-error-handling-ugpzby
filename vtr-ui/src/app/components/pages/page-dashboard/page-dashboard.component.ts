@@ -5,6 +5,7 @@ import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Status } from 'src/app/data-models/widgets/status.model';
 import { CommonService } from 'src/app/services/common/common.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
@@ -29,7 +30,8 @@ export class PageDashboardComponent implements OnInit {
 		public qaService: QaService,
 		private modalService: NgbModal,
 		config: NgbModalConfig,
-		private commonService: CommonService
+		private commonService: CommonService,
+		public deviceService: DeviceService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -96,6 +98,7 @@ export class PageDashboardComponent implements OnInit {
 			memory.path = 'ms-settings:about';
 			memory.asLink = false;
 			memory.isSystemLink = true;
+			memory.type = 'system';
 
 			if (response.memory) {
 				const { total, used } = response.memory;
@@ -117,6 +120,7 @@ export class PageDashboardComponent implements OnInit {
 			disk.path = 'ms-settings:storagesense';
 			disk.asLink = false;
 			disk.isSystemLink = true;
+			disk.type = 'system';
 
 			if (response.disk) {
 				const { total, used } = response.disk;
@@ -135,14 +139,16 @@ export class PageDashboardComponent implements OnInit {
 			warranty.id = 'warranty';
 			warranty.title = 'Warranty';
 			warranty.detail = 'Warranty not found';
-			warranty.path = 'ms-settings:storagesense';
+			/* warranty.path = 'ms-settings:storagesense'; */
+			warranty.path = '/support';
 			warranty.asLink = false;
-			warranty.isSystemLink = true;
+			/* warranty.isSystemLink = true; */
+			warranty.isSystemLink = false;
+			warranty.type = 'system';
 
 			if (response.warranty) {
 				// const status = response.warranty.status;
-				const dateTill = new Date(response.warranty.expiredDate);
-				warranty.detail = `Until ${this.commonService.formatDate(dateTill)}`;
+				warranty.detail = `Until ${this.commonService.formatDate(response.warranty.expired)}`;
 				warranty.status = 0;
 			}
 			systemStatus.push(warranty);
@@ -155,6 +161,7 @@ export class PageDashboardComponent implements OnInit {
 			systemUpdate.path = '/system-updates';
 			systemUpdate.asLink = true;
 			systemUpdate.isSystemLink = false;
+			systemUpdate.type = 'system';
 
 			if (response.systemupdate) {
 				const { status } = response.systemupdate;
@@ -166,6 +173,8 @@ export class PageDashboardComponent implements OnInit {
 			}
 			systemStatus.push(systemUpdate);
 		}
+
+		console.log('systemStatus ' + JSON.stringify(systemStatus));
 		return systemStatus;
 	}
 }

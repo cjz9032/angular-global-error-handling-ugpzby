@@ -6,6 +6,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { UserService } from './services/user/user.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
+import { DeviceService } from './services/device/device.service';
+import { environment } from '../environments/environment';
+import { MetricService } from "./services/metric/metric.service";
 
 @Component({
 	selector: 'vtr-root',
@@ -21,7 +24,9 @@ export class AppComponent implements OnInit {
 		private modalService: NgbModal,
 		private router: Router,
 		translate: TranslateService,
-		private userService: UserService
+		private userService: UserService,
+		public deviceService: DeviceService,
+		private metricService: MetricService
 	) {
 		translate.addLangs(['en', 'zh-Hans']);
 		translate.setDefaultLang('zh-Hans');
@@ -30,6 +35,9 @@ export class AppComponent implements OnInit {
 
 	ngOnInit() {
 		this.devService.writeLog('APP INIT', window.location.href);
+
+		// use when deviceService.isArm is set to true
+		document.getElementById("html-root").classList.add('is-arm');
 
 		const self = this;
 		window.onresize = function () {

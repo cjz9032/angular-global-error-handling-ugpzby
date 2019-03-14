@@ -10,6 +10,7 @@ import { TranslationService } from 'src/app/services/translation/translation.ser
 import Translation from 'src/app/data-models/translation/translation';
 import { TranslationSection } from 'src/app/enums/translation-section.enum';
 import { ModalLenovoIdComponent } from '../modal/modal-lenovo-id/modal-lenovo-id.component';
+import { environment } from '../../../environments/environment';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -19,6 +20,7 @@ import { ModalLenovoIdComponent } from '../modal/modal-lenovo-id/modal-lenovo-id
 export class MenuMainComponent implements OnInit, OnDestroy {
 
 	commonMenuSubscription: Subscription;
+	public appVersion: string = environment.appVersion;
 
 	items = [
 		{
@@ -26,12 +28,14 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			label: 'Dashboard',
 			path: 'dashboard',
 			icon: 'columns',
+			forArm: true,
 			subitems: []
 		}, {
 			id: 'device',
 			label: 'Device',
 			path: 'device',
 			icon: 'laptop',
+			forArm: false,
 			subitems: [{
 				id: 'device',
 				label: 'My device',
@@ -56,6 +60,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			label: 'Security',
 			path: 'security',
 			icon: 'lock',
+			forArm: false,
 			subitems: [{
 				id: 'security',
 				label: 'My Security',
@@ -98,12 +103,14 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			label: 'Support',
 			path: 'support',
 			icon: 'wrench',
+			forArm: true,
 			subitems: []
 		}, {
 			id: 'user',
 			label: 'User',
 			path: 'user',
 			icon: 'user',
+			forArm: true,
 			subitems: []
 		}
 	];
@@ -130,6 +137,16 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			this.commonMenuSubscription.unsubscribe();
 		}
 	}
+	
+	showItem(item) {
+		let showItem = true;
+		if (this.deviceService.isARM) {
+			if (!item.forArm) {
+				showItem = false;
+			}
+		}
+		return showItem;
+	}
 
 	menuItemClick(event, path) {
 		this.router.navigateByUrl(path);
@@ -140,7 +157,8 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		this.modalService.open(ModalLenovoIdComponent, {
 			backdrop: 'static',
 			size: 'lg',
-			centered: true
+			centered: true,
+			windowClass: 'lenovo-modal-content'
 		});
 	}
 

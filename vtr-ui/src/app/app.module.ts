@@ -50,6 +50,7 @@ import { PageQuestionsComponent } from './components/pages/page-questions/page-q
 import { PageDeviceSettingsComponent } from './components/pages/page-device-settings/page-device-settings.component';
 import { PageDeviceUpdatesComponent } from './components/pages/page-device-updates/page-device-updates.component';
 import { AvailableUpdatesComponent } from './components/pages/page-device-updates/children/available-updates/available-updates.component';
+import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
 import { PageSecurityWifiComponent } from './components/pages/page-security-wifi/page-security-wifi.component';
 import { PageSecurityPasswordComponent } from './components/pages/page-security-password/page-security-password.component';
@@ -116,6 +117,7 @@ import { ContainerArticleComponent } from './components/container-article/contai
 import { SanitizeUrlPipe } from './pipe/sanitise-url.pipe';
 import { UniqueIdPipe } from './pipe/unique-id.pipe';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
+import {MetricService} from "./services/metric/metric.service";
 
 library.add(fas);
 library.add(fab);
@@ -147,6 +149,7 @@ library.add(far);
 		PageDeviceSettingsComponent,
 		PageDeviceUpdatesComponent,
 		AvailableUpdatesComponent,
+		InstallationHistoryComponent,
 		PageSecurityAntivirusComponent,
 		PageSecurityWifiComponent,
 		PageSecurityPasswordComponent,
@@ -215,6 +218,7 @@ library.add(far);
 		DeviceService,
 		SecurityService,
 		UserService,
+		MetricService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
 	bootstrap: [AppComponent],

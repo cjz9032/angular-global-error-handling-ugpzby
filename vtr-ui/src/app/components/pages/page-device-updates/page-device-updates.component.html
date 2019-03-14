@@ -2,8 +2,8 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
-				[back]="back"
-				[title]="title"></vtr-header-main>
+			 [back]="back"
+			 [title]="title"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -18,9 +18,9 @@
 										<vtr-widget-device-update [title]="
 												'An up-to-date system is a healthy system.'
 											"
-											[subTitle1]="'Last update was on'"
-											[subTitle2]="'Next updated scan is scheduled on '"
-											[checkForUpdates]="'Check For Updates'"></vtr-widget-device-update>
+										 [subTitle1]="'Last update was on'"
+										 [subTitle2]="'Next updated scan is scheduled on '"
+										 [checkForUpdates]="'Check For Updates'"></vtr-widget-device-update>
 									</div>
 								</div>
 
@@ -46,15 +46,14 @@
 														<ul class="status-list">
 															<div class="row">
 																<li *ngFor="let item of installationHistoryList"
-																	[ngClass]="[item.status]">
+																 [ngClass]="[item.status]">
 																	<a routerLink="/{{item.path}}">
 																		<div class="container-fluid">
 																			<div class="row">
 																				<div class="col col-2 text-center">
 																					<div class="status-icon">
 																						<div class="icon-bkg">
-																							<fa-icon
-																								[icon]="['fas', item.icon]">
+																							<fa-icon [icon]="['fas', item.icon]">
 																							</fa-icon>
 																						</div>
 																					</div>
@@ -79,7 +78,14 @@
 										</div>
 										<div class="row">
 											<div class="col row1 full-history">
-												Full History
+												<a (click)="toggleFullHistory()">Full History</a>
+											</div>
+										</div>
+
+										<vtr-installation-history *ngIf="showFullHistory"></vtr-installation-history>
+
+										<div class="row p-20">
+											<div class="col">
 											</div>
 										</div>
 									</div>
@@ -94,20 +100,19 @@
 							<div class="row mb-40">
 								<div class="col col-12 cont">
 									<vtr-widget-device-update-settings [title]="'Auto update settings'"
-										[description]="'Automatically Install Updates'"
-										[items]="dummyUpdates"></vtr-widget-device-update-settings>
+									 [description]="'Automatically Install Updates'"
+									 [items]="dummyUpdates"></vtr-widget-device-update-settings>
 								</div>
 							</div>
 							<div class="row mb-40">
 								<div class="col col-12">
-									<vtr-container-card
-										[img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
-										[title]="'Lenovo Support website'"
-										[logoText]="'LENEVO SPECIAL'"
-										[readMore]="'http://www.google.com'"
-										[type]="'partnerarticle'"
-										[ratioX]="4"
-										[ratioY]="2">
+									<vtr-container-card [img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
+									 [title]="'Lenovo Support website'"
+									 [logoText]="'LENOVO SPECIAL'"
+									 [readMore]="'http://www.google.com'"
+									 [type]="'partnerarticle'"
+									 [ratioX]="4"
+									 [ratioY]="2">
 									</vtr-container-card>
 								</div>
 							</div>

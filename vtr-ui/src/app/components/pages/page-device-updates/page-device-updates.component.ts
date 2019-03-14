@@ -67,6 +67,12 @@ export class PageDeviceUpdatesComponent implements OnInit {
 		}
 	];
 
+	showFullHistory = false;
+
+	toggleFullHistory() {
+		this.showFullHistory = !this.showFullHistory;
+	}
+
 	constructor() { }
 
 	ngOnInit() { }

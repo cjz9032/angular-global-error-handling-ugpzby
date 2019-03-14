@@ -3,7 +3,7 @@
 .vtr-modal-welcome {
 	/************** common *************/
 	.title {
-		color: $shade_darker;
+		color: $shade_blue;
 		font-size: 3.5rem;
 		font-weight: 300;
 		line-height: 4.2rem;
@@ -12,15 +12,15 @@
 
 	.subtitle {
 		color: $shade_dark;
-		font-size: 1.6rem;
-		font-weight: 300;
+		font-size: 1.7rem;
+		font-weight: 400;
 		line-height: 2.8rem;
 
 	}
 
 	.divider {
 		height: 0.1rem;
-		border: 0.1rem solid $shade_extralight;
+		border: 0.1rem solid $shade_light;
 		background-color: $shade_light;
 		margin: 2rem 0;
 	}
@@ -75,7 +75,7 @@
 		border-radius: 2.5rem;
 		background: linear-gradient(270deg, $shade_extralight 0%, $shade_extralight 100%);
 		box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.2);
-		color: $shade_dark;
+		color: $shade_darkest;
 		font-size: 1.5rem;
 		font-weight: 500;
 		letter-spacing: 0.1rem;
@@ -102,7 +102,7 @@
 
 		border-radius: 2.5rem;
 		background: linear-gradient(270deg, $shade_extralight 0%, $shade_extralight 100%);
-		color: $shade_dark;
+		color: $shade_darkest;
 		font-size: 1.5rem;
 		font-weight: 500;
 		letter-spacing: 0.1rem;

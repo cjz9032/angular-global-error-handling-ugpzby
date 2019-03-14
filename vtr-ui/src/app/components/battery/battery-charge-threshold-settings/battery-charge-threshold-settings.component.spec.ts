@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BatteryChargeThresholdSettingsComponent } from './battery-charge-threshold-settings.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('BatteryChargeThresholdSettingsComponent', () => {
 	let component: BatteryChargeThresholdSettingsComponent;
@@ -8,6 +9,7 @@ describe('BatteryChargeThresholdSettingsComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
+			imports: [FontAwesomeModule],
 			declarations: [BatteryChargeThresholdSettingsComponent]
 		})
 			.compileComponents();

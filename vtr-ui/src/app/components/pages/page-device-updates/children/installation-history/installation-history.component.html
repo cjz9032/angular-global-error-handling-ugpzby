@@ -1,0 +1,77 @@
+<div class="vtr-installation-history">
+	<div class="row">
+		<div class="col">
+			<div class="updates-lists-container">
+				<div class="row">
+					<div class="col">
+						<div class="heading">Full History</div>
+
+						<ul class="installation-list">
+							<li class="list-heading">
+								<div class="container-fluid">
+									<div class="row align-items-center">
+										<div class="col col-9">
+											<div class="item-text">Name</div>
+										</div>
+										<div class="col col-3 sort-order">
+											<a (click)="toggleSortOrder()">
+												<div class="sort-heading-text">Sort by Date</div>
+												<div class="sort-icon">
+													<fa-icon *ngIf="sortAsc"
+													 [icon]="['fas', 'caret-up']"></fa-icon>
+													<fa-icon *ngIf="!sortAsc"
+													 [icon]="['fas', 'caret-down']"></fa-icon>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li *ngFor="let item of mockService.fullInstallationHistory">
+								<div class="container-fluid">
+									<div class="row align-items-center">
+										<div class="col col-11 item-text">
+											<div class="row">
+												<div class="col">
+													<span class="title"
+													 [ngClass]="{'light-title':item.lightTitle}">
+														<fa-icon [icon]="['fas', item.icon]">
+														</fa-icon>
+														{{item.title}}
+													</span>
+													<span class="detail"
+													 [ngClass]="{'highlight':item.asLink}">
+														{{item.detail}}</span>
+												</div>
+											</div>
+											<div *ngIf="expandedRecordId===item.id">
+												<div class="row"
+												 *ngFor="let installationDetail of item.installationDetails">
+													<div class="col">
+														<span class="installation-details">
+															{{installationDetail}}
+														</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col col-1 text-right">
+											<div class="expand">
+												<a (click)="toggleExpand(item.id)">
+													<fa-icon *ngIf="expandedRecordId!==item.id"
+													 [icon]="['fas', 'plus-circle']"></fa-icon>
+													<fa-icon *ngIf="expandedRecordId===item.id"
+													 [icon]="['fas', 'minus-circle']"></fa-icon>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
