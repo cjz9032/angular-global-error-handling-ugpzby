@@ -3,20 +3,13 @@
 
 import { Injectable } from '@angular/core';
 
-<<<<<<< HEAD
-=======
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
->>>>>>> origin
 @Injectable({
 	providedIn: 'root'
 })
 export class DashboardService {
-<<<<<<< HEAD
-
-	constructor() {
-=======
 	private dashboard: any;
 	public isShellAvailable = false;
 	constructor(shellService: VantageShellService) {
@@ -38,7 +31,6 @@ export class DashboardService {
 			return this.dashboard.setMicphoneStatus(value);
 		}
 		return undefined;
->>>>>>> origin
 	}
 
 	public getCameraStatus(): Promise<FeatureStatus> {
