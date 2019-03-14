@@ -96,7 +96,7 @@ export class MenuMainComponent implements OnInit {
 			label: 'Support',
 			path: 'support',
 			icon: 'wrench',
-			forArm: false,
+			forArm: true,
 			subitems: []
 		}, {
 			id: 'user',
@@ -123,7 +123,7 @@ export class MenuMainComponent implements OnInit {
 		let showItem = true;
 		if (this.deviceService.isARM) {
 			if (!item.forArm) {
-				// showItem = false;
+				showItem = false;
 			}
 		}
 		return showItem;

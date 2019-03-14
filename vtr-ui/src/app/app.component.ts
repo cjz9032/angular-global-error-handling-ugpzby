@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
 		this.devService.writeLog('APP INIT', window.location.href);
 
 		// use when deviceService.isArm is set to true
-		// document.getElementById("html-root").classList.add('is-arm');
+		document.getElementById("html-root").classList.add('is-arm');
 
 		const self = this;
 		window.onresize = function () {

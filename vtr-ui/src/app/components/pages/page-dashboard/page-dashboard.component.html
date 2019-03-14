@@ -9,11 +9,7 @@
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="row">
-					<div [ngClass]="{
-						'col-sm-12 col-md-8 col-lg-8 vtr-page-left-column':!deviceService.isArm,
-						'vtr-arm-page': deviceService.isArm
-					}"
-					 class="col col-12">
+					<div class="col col-12 col-sm-12 col-md-8 col-lg-8 vtr-page-left-column">
 						<div class="vtr-page-shift-up nmx-40">
 							<div class="container-fluid">
 								<div class="row">
@@ -88,8 +84,7 @@
 							</div>
 						</div>
 					</div>
-					<div *ngIf="!deviceService.isArm"
-					 class="col col-12 col-sm-12 col-md-4 col-lg-4 vtr-page-right-column">
+					<div class="col col-12 col-sm-12 col-md-4 col-lg-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 								<div class="row">
@@ -103,13 +98,13 @@
 									</div>
 								</div>
 
-								<div class="row">
+								<div class="row" *ngIf="!deviceService.isArm">
 									<div class="col col-12 pb-40">
 										<vtr-widget-quicksettings></vtr-widget-quicksettings>
 									</div>
 								</div>
 
-								<div class="row">
+								<div class="row" *ngIf="!deviceService.isArm">
 									<div class="col col-12 py-40">
 										<vtr-widget-status [title]="'System Status'"
 										 [description]="'Quick catch up your device status.'"
@@ -118,7 +113,7 @@
 										</vtr-widget-status>
 									</div>
 								</div>
-								<div class="row">
+								<div class="row" *ngIf="!deviceService.isArm">
 									<div class="col col-12 py-40">
 										<vtr-widget-status [title]="'Security Advisor'"
 										 [description]="'Check if your device is secured.'"

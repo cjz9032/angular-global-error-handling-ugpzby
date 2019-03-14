@@ -51,7 +51,7 @@
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 
-								<div class="row" *ngIf="warranty">
+								<div class="row" *ngIf="warranty&&!deviceService.isArm" >
 									<div class="col col-12 pb-40">
 										<vtr-widget-warranty [item]="warranty"></vtr-widget-warranty>
 									</div>
