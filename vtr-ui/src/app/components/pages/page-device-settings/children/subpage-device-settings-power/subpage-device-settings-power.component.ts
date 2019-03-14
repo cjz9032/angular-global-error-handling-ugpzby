@@ -10,9 +10,9 @@ enum PowerMode {
 	styleUrls: ['./subpage-device-settings-power.component.scss']
 })
 export class SubpageDeviceSettingsPowerComponent implements OnInit {
-	
+
 	title = 'Power Settings';
-	
+
 	headerCaption =
 		'This section enables you to dynamically adjust thermal performance and maximize the battery life.' +
 		' It also has other popular power-related features.' +
@@ -26,6 +26,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	toggleAlwaysOnUsbFlag = true;
 	usbChargingCheckboxFlag = false;
 	powerMode = PowerMode.Sleep;
+	value = 1;
 
 	headerMenuItems = [
 		{
@@ -152,12 +153,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	}
 
 	ngOnInit() { }
-	
-	
+
+
 	onUsbChargingStatusChange() {
 		this.updatePowerMode();
 	}
-	
+
 	onToggleOfAlwaysOnUsb(event) {
 		this.toggleAlwaysOnUsbFlag = event.switchValue;
 		this.updatePowerMode();
