@@ -69,4 +69,11 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	public getSystemUpdate(): any {
+		if (this.phoenix) {
+			return this.phoenix.systemUpdate;
+		}
+		return undefined;
+	}
 }

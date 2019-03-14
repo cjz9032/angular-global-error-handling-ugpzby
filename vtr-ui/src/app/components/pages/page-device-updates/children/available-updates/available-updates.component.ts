@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MockService } from "../../../../../services/mock/mock.service"
+import { Component, OnInit, Input } from '@angular/core';
+import { MockService } from '../../../../../services/mock/mock.service';
 
 @Component({
 	selector: 'vtr-available-updates',
@@ -7,6 +7,10 @@ import { MockService } from "../../../../../services/mock/mock.service"
 	styleUrls: ['./available-updates.component.scss']
 })
 export class AvailableUpdatesComponent implements OnInit {
+
+	@Input() criticalUpdates: any;
+	@Input() recommendedUpdates: any;
+	@Input() optionalUpdates: any;
 
 	constructor(
 		public mockService: MockService

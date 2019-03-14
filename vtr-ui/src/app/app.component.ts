@@ -65,12 +65,14 @@ export class AppComponent implements OnInit {
 	}
 
 	private getMachineInfo() {
-		this.deviceService.getMachineInfo()
-			.then((value: any) => {
-				console.log('getMachineInfo.then', value);
-				this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
-			}).catch(error => {
-				console.error('getMachineInfo', error);
-			});
+		if (this.deviceService.isShellAvailable) {
+			this.deviceService.getMachineInfo()
+				.then((value: any) => {
+					console.log('getMachineInfo.then', value);
+					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
+				}).catch(error => {
+					console.error('getMachineInfo', error);
+				});
+		}
 	}
 }

@@ -44,6 +44,7 @@
 				line-height: 5rem;
 				text-align: center;
 				border: 0rem;
+				cursor: pointer;
 			}
 		}
 		.progress-div {
@@ -98,10 +99,7 @@
 			padding-right: 5rem;
 
 			.progress-bar-div {
-				padding-left: 5rem;
-				padding-bottom: 1rem;
-				padding-top: 1rem;
-				padding-right: 5rem;
+				padding: 1rem;
 				border-radius: 1.5rem;
 				background: linear-gradient($gradient_angle_reverse, $main_darkest 0%, $main_darker 100%);
 				::ng-deep .mat-progress-bar-fill::after {

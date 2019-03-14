@@ -15,7 +15,7 @@
 					class="row">
 					<div class="col button-row">
 						<button class="action-button"
-							(click)="showUpdates()">{{checkForUpdates}}</button>
+							(click)="onCheckForUpdates()">{{buttonText}}</button>
 					</div>
 				</div>
 				<div *ngIf="showProgress"
@@ -24,7 +24,7 @@
 						<div class="col col-10 progress-title">{{checkingForUpdates}}</div>
 						<div class="col col-2 progress-percent-text">
 							<div class="row progress-right">
-								<span class="col-4 progress-value-text">{{progressValue}}</span>
+								<span class="col-4 progress-value-text">{{percent}}% </span>
 								<span class="col-8 progress-complete-text">{{complete}}</span>
 							</div>
 						</div>
@@ -34,14 +34,15 @@
 							<!-- <mat-progress-bar mode="determinate"
 								value="40"></mat-progress-bar> -->
 							<ngb-progressbar type="info"
-								[value]="80"
+								[value]="percent"
 								height="5px"></ngb-progressbar>
 						</div>
 					</div>
+					<!-- raj: cancel is not available in api as api owner is not sure about its behavior -->
 					<div class="col col-12 row">
 						<div class="col col-12 cancel-check">
-							<a class="cancel-check-text"
-								(click)="cancelUpdates()">{{cancelCheck}}</a>
+							<!-- <a class="cancel-check-text"
+								(click)="cancelUpdates()">{{cancelCheck}}</a> -->
 						</div>
 					</div>
 				</div>

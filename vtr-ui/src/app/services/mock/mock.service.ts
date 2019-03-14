@@ -37,44 +37,6 @@ export class MockService {
 		'thumbnailUrl': 'https://via.placeholder.com/150/d32776'
 	}];
 
-	systemStatus = [
-		{
-			'status': 0,
-			'id': 'memory',
-			'title': 'Memory',
-			'detail': '4.00 GB of 6 GB',
-			'path': 'ms-settings:about',
-			'asLink': false,
-			'isSystemLink': true
-		},
-		{
-			'status': 0,
-			'id': 'disk',
-			'title': 'Disk Space',
-			'detail': '12.7 GB of 256 GB',
-			'path': 'ms-settings:storagesense',
-			'asLink': false,
-			'isSystemLink': true
-		},
-		{
-			'status': 0,
-			'id': 'warranty',
-			'title': 'Warranty',
-			'detail': 'Unitil 01/01/2020',
-			'path': '/support',
-			'asLink': false
-		},
-		{
-			'status': 1,
-			'id': 'systemupdate',
-			'title': 'System Update',
-			'detail': 'Update',
-			'path': '/system-updates',
-			'asLink': true
-		}
-	];
-
-
 	securityHealth = [
 		{
 			'status': 1,

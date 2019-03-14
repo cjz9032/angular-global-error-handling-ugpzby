@@ -56,6 +56,18 @@ export class CommonService {
 		].join('');
 	}
 
+	/**
+	 * Returns date formatted in HH:MM AM/PM format
+	 * @param date date object to format
+	 */
+	public formatTime(dateString: string): string {
+		const dt = new Date(dateString);
+		const hour = (dt.getHours() > 12) ? dt.getHours() - 12 : dt.getHours();
+		const h = (hour < 10) ? '0' + hour : hour;
+		const m = (dt.getMinutes() < 10) ? '0' + dt.getMinutes() : dt.getMinutes();
+
+		return (dt.getHours() > 12) ? (h + ':' + m + ' PM') : (h + ':' + m + ' AM');
+	}
 	public getDaysBetweenDates(firstDate: Date, secondDate: Date): number {
 		const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
 		const diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneDay)));
