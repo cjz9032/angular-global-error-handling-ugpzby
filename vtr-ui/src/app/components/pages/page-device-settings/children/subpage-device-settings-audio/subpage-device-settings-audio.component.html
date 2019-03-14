@@ -105,8 +105,8 @@
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'white'">
-							<vtr-ui-range-slider [minValueLegend]="'Silent'"
-								[maxValueLegend]="'Loud'">
+							<vtr-ui-range-slider [minValueLegend]="'Silent'" [minValue]="1"
+								[maxValueLegend]="'Loud'" [maxValue] = "100" (change)="setVolume($event)">
 							</vtr-ui-range-slider>
 						</vtr-ui-row-switch>
 					</li>
