@@ -76,7 +76,7 @@ html {
 
 @media #{$mediaquery_6} {
 	html {
-		font-size: 42%;
+		font-size: 50%;
 		&.is-arm {
 			font-size: 60%;
 		}
@@ -85,9 +85,9 @@ html {
 
 @media #{$mediaquery_7} {
 	html {
-		font-size: 36%;
+		font-size: 47%;
 		&.is-arm {
-			font-size: 45%;
+			font-size: 47%;
 		}
 	}
 }

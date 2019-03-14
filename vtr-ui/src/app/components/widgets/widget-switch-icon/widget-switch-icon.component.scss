@@ -50,7 +50,7 @@
 			margin: 0.5em 0;
 			font-weight: $weight_medium;
 			letter-spacing: 0;
-			height: 1.2rem;
+			height: 1.3rem;
 			overflow: hidden;
 		}
 
@@ -86,10 +86,10 @@
 				font-weight: 300;
 				font-size: 5.8rem;
 				left: 28%;
-				top: -16%;
+				top: -24%;
 				transform: rotate(-25deg);
 				@media #{$mediaquery_6} {
-					top: -17%;
+					top: -50%;
 				}
 			}
 		}
