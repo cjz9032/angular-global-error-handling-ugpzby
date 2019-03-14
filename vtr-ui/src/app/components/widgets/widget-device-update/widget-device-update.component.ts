@@ -15,6 +15,7 @@ export class WidgetDeviceUpdateComponent implements OnInit {
 	@Input() showProgress = false;
 
 	@Output() checkForUpdate = new EventEmitter();
+	@Output() cancelUpdateCheck = new EventEmitter();
 
 	cancelCheck = 'Cancel Check';
 	checkingForUpdates = 'Checking for updates';
@@ -23,14 +24,15 @@ export class WidgetDeviceUpdateComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
-		this.showProgress = false;
+		// this.showProgress = false;
 	}
 	onCheckForUpdates() {
-		this.showProgress = true;
+		// this.showProgress = true;
 		this.checkForUpdate.emit();
 	}
 
 	cancelUpdates() {
-		this.showProgress = false;
+		// this.showProgress = false;
+		this.cancelUpdateCheck.emit();
 	}
 }

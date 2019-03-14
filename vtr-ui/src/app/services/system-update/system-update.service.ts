@@ -1,16 +1,24 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { CommonService } from '../common/common.service';
+import { UpdateProgress } from 'src/app/enums/update-progress.enum';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class SystemUpdateService {
 
-	private systemUpdate: any;
+	private systemUpdateBridge: any;
 	public isShellAvailable = false;
-	constructor(shellService: VantageShellService) {
-		this.systemUpdate = shellService.getSystemUpdate();
-		if (this.systemUpdate) {
+	public isCheckForUpdateComplete = true;
+	public isUpdatesAvailable = false;
+	public updateInfo: any;
+
+	constructor(
+		shellService: VantageShellService
+		, private commonService: CommonService) {
+		this.systemUpdateBridge = shellService.getSystemUpdate();
+		if (this.systemUpdateBridge) {
 			this.isShellAvailable = true;
 		}
 	}
@@ -19,8 +27,8 @@ export class SystemUpdateService {
 	 * gets data about last scan, install & schedule scan date-time for Check for Update section
 	 */
 	public getMostRecentUpdateInfo() {
-		if (this.systemUpdate) {
-			return this.systemUpdate.getMostRecentUpdateInfo();
+		if (this.systemUpdateBridge) {
+			return this.systemUpdateBridge.getMostRecentUpdateInfo();
 		}
 		return undefined;
 	}
@@ -29,8 +37,8 @@ export class SystemUpdateService {
 	 * return data about Auto update settings section
 	 */
 	public getUpdateSchedule() {
-		if (this.systemUpdate) {
-			return this.systemUpdate.getUpdateSchedule();
+		if (this.systemUpdateBridge) {
+			return this.systemUpdateBridge.getUpdateSchedule();
 		}
 		return undefined;
 	}
@@ -51,24 +59,37 @@ export class SystemUpdateService {
 
 	}
 
-	public checkForUpdates(percentCallback: Function) {
+	public checkForUpdates() {
 		// checkForUpdates requires callback
-		if (this.systemUpdate) {
-			return this.systemUpdate.checkForUpdates(percentCallback);
-			// try {
-			// 	this.systemUpdate.checkForUpdates((progressPercent: any) => {
-			// 		console.log('checkForUpdates callback', progressPercent);
-			// 		Promise.resolve(progressPercent);
-			// 	}).then((response) => {
-			// 		console.log('checkForUpdates response', response);
-			// 	});
-			// } catch (error) {
-			// 	console.log('checkForUpdates error', error);
-			// 	return Promise.reject(error);
-			// }
+		if (this.systemUpdateBridge) {
+			this.isCheckForUpdateComplete = false;
+			this.systemUpdateBridge.checkForUpdates((progressPercentage: number) => {
+				console.log('checkForUpdates callback', progressPercentage);
+				this.commonService.sendNotification(UpdateProgress.UpdateCheckInProgress, progressPercentage);
+			}).then((response) => {
+				console.log('checkForUpdates response', response);
+				this.updateInfo = response;
+				this.isCheckForUpdateComplete = true;
+				this.isUpdatesAvailable = (response && response.updateList.length > 0);
+				this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, response);
+				if (this.isUpdatesAvailable) {
+					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, response);
+				} else {
+					this.commonService.sendNotification(UpdateProgress.UpdatesNotAvailable);
+
+				}
+			});
 		}
 		return undefined;
 	}
+
+	public cancelUpdateCheck() {
+		if (this.systemUpdateBridge) {
+			this.systemUpdateBridge.checkForUpdates();
+		}
+	}
+
+
 
 	public getStatus() {
 

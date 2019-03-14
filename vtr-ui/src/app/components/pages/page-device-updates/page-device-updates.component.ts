@@ -1,13 +1,16 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, NgZone, OnDestroy } from '@angular/core';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { CommonService } from 'src/app/services/common/common.service';
+import { Subscription } from 'rxjs';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { UpdateProgress } from 'src/app/enums/update-progress.enum';
 
 @Component({
 	selector: 'vtr-page-device-updates',
 	templateUrl: './page-device-updates.component.html',
 	styleUrls: ['./page-device-updates.component.scss']
 })
-export class PageDeviceUpdatesComponent implements OnInit {
+export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	title = 'System Updates';
 	back = 'BACK';
 	backarrow = '< ';
@@ -23,6 +26,8 @@ export class PageDeviceUpdatesComponent implements OnInit {
 	public optionalUpdates: any;
 	public isUpdatesAvailable = false;
 	public canShowProgress = false;
+
+	private notificationSubscription: Subscription;
 
 	nextUpdatedDate = '11/12/2018 at 10:00 AM';
 	installationHistory = 'Installation History';
@@ -90,6 +95,20 @@ export class PageDeviceUpdatesComponent implements OnInit {
 
 	ngOnInit() {
 		this.getLastUpdateScanDetail();
+		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
+			this.onNotification(response);
+		});
+
+		if (this.systemUpdateService.isUpdatesAvailable) {
+			this.isUpdatesAvailable = true;
+			this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
+		}
+	}
+
+	ngOnDestroy() {
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
 	}
 
 	private getLastUpdateScanDetail() {
@@ -130,26 +149,30 @@ export class PageDeviceUpdatesComponent implements OnInit {
 		if (this.systemUpdateService.isShellAvailable) {
 			this.canShowProgress = true;
 			this.isUpdatesAvailable = false;
-			const that = this;
+			this.systemUpdateService.checkForUpdates();
+			// const that = this;
 
-			this.systemUpdateService.checkForUpdates((percent: number) => {
-				console.log('update percent', percent);
-				this.ngZone.run(() =>
-					that.percentCompleted = percent
-				);
-			})
-				.then((value: any) => {
-					console.log('onCheckForUpdates.then', value);
-					this.updateInfo = value;
-					this.setUpdateByCategory(value.updateList);
-					this.isUpdatesAvailable = (value && value.updateList.length > 0);
-					this.canShowProgress = false;
-				}).catch(error => {
-					console.error('onCheckForUpdates', error);
-				});
+			// this.systemUpdateService.checkForUpdates((percent: number) => {
+			// 	console.log('update percent', percent);
+			// 	this.ngZone.run(() =>
+			// 		that.percentCompleted = percent
+			// 	);
+			// })
+			// 	.then((value: any) => {
+			// 		console.log('onCheckForUpdates.then', value);
+			// 		this.updateInfo = value;
+			// 		this.setUpdateByCategory(value.updateList);
+			// 		this.isUpdatesAvailable = (value && value.updateList.length > 0);
+			// 		this.canShowProgress = false;
+			// 	}).catch(error => {
+			// 		console.error('onCheckForUpdates', error);
+			// 	});
+		}
+	}
 
-			console.log('isUpdatesAvailable ', this.isUpdatesAvailable);
-
+	onCancelUpdateCheck() {
+		if (this.systemUpdateService.isShellAvailable) {
+			this.systemUpdateService.cancelUpdateCheck();
 		}
 	}
 
@@ -168,5 +191,31 @@ export class PageDeviceUpdatesComponent implements OnInit {
 			return value.packageSeverity.toLowerCase() === packageSeverity.toLowerCase();
 		});
 		return updates;
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case UpdateProgress.UpdateCheckInProgress:
+					this.ngZone.run(() => {
+						this.canShowProgress = true;
+						this.percentCompleted = notification.payload;
+					});
+					break;
+				case UpdateProgress.UpdateCheckCompleted:
+					this.canShowProgress = false;
+					this.percentCompleted = 0;
+					break;
+				case UpdateProgress.UpdatesAvailable:
+					this.isUpdatesAvailable = true;
+					this.setUpdateByCategory(notification.payload.updateList);
+					break;
+				case UpdateProgress.UpdatesNotAvailable:
+					// todo : no updates available msg
+					break;
+				default:
+					break;
+			}
+		}
 	}
 }
