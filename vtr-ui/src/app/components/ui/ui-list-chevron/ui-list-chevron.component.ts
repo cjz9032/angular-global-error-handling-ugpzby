@@ -77,7 +77,7 @@ export class UiListChevronComponent implements OnInit {
 			}
 
 		}
-		console.log(" itemDetailClass " + JSON.stringify(itemDetailClass));
+		//console.log(" itemDetailClass " + JSON.stringify(itemDetailClass));
 		return itemDetailClass;
 
 	}
