@@ -121,7 +121,7 @@ export class MenuMainComponent implements OnInit {
 			backdrop: 'static',
 			size: 'lg',
 			centered: true,
-			windowClass: 'lenovo-modal-content'
+			windowClass: 'lenovo-modal-size'
 		});
 	}
 

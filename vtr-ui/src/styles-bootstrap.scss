@@ -173,6 +173,12 @@
 	top: 8rem;
 }
 
+// override for bootstrap modal size
+.lenovo-modal-size .modal-dialog {
+	width: 78rem;
+	height: 82rem;
+}
+
 // feedback modal start:
 // overriding style inside feedback modal. doesn't work from component SCSS file
 
