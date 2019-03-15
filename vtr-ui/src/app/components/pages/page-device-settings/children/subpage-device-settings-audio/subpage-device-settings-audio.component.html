@@ -73,7 +73,8 @@
 							[showChildContent]="false"
 							[theme]="'blue'"
 							[tooltipText]="'Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality.'" 
-							(toggleOnOff)="onToggleOfMicrophoneAutoOptimization($event)">
+							(toggleOnOff)="onToggleOfMicrophoneAutoOptimization($event)"
+							[isSwitchChecked]="microphoneProperties.autoOptimization">
 						</vtr-ui-row-switch>
 					</li>
 				</ul>
