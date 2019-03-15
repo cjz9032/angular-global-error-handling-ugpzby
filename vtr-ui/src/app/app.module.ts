@@ -88,7 +88,7 @@ import { SecurityService } from './services/security/security.service';
 import { UserService } from './services/user/user.service';
 import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
 import { CameraDetailMockService } from './services/camera/camera-detail/camera-detail.mock.service';
-
+import { AudioService } from './services/audio/audio.service';
 
 // FONT AWESOME
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -215,6 +215,7 @@ library.add(far);
 		SecurityService,
 		UserService,
 		MetricService,
+		AudioService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
 	bootstrap: [AppComponent],

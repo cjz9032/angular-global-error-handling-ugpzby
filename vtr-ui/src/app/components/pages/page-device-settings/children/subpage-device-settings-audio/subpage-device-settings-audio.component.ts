@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HwsettingsService } from 'src/app/services/hwsettings/hwsettings.service';
+import { AudioService } from 'src/app/services/audio/audio.service';
+import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
+import { MicrophoneOptiomizeStatus } from 'src/app/enums/microphone-optimize.enum';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -17,16 +19,24 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit {
 	radioOptimiseMicSettings = 'radio-grp-optimise-mic-settings';
 	public supportedModes;
 	public microphoneProperties;
-
-	constructor(
-		public hwsettings: HwsettingsService
-	) { }
+	public microphoneOptiomizeStatus: MicrophoneOptiomizeStatus.MULTIPLE_VOICES
+	constructor(private audioService: AudioService, private dashboardService: DashboardService) { 
+	}
 
 	onAutomaticDolbyAudioToggleOnOff(event) {
 		this.automaticDolbyAudioSettings = event.switchValue;
+		if (this.audioService.isShellAvailable) {
+			this.audioService.setDolbyOnOff(this.automaticDolbyAudioSettings)
+			.then((value) => {
+				console.log('Dolby Setting Set:', value);
+			}).catch(error => {
+				console.error('setDolbyOnOff', error);
+			});
+		}
 	}
 
 	ngOnInit() {
+		
 		// this.hwsettings.getMicrophoneSettings()
 		// .then(() => {
 		// 	this.microphoneProperties = this.hwsettings.getMicrophoneProperties();
@@ -36,20 +46,20 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit {
 		// 	console.error('getMicrophoneSettings', error);
 		// });
 
-		if (this.hwsettings.isShellAvailable) {
-			this.hwsettings.getSupportedModes()
-			.then((value) => {
-				console.log('getSupportedModes.then', value);
-				this.supportedModes = value;
-			}).catch(error => {
-				console.error('getSupportedModes', error);
-			});
-		}
+		// if (this.hwsettings.isShellAvailable) {
+		// 	this.hwsettings.getSupportedModes()
+		// 	.then((value) => {
+		// 		console.log('getSupportedModes.then', value);
+		// 		this.supportedModes = value;
+		// 	}).catch(error => {
+		// 		console.error('getSupportedModes', error);
+		// 	});
+		// }
 	}
 
-	public setVolume(volume: number) {
-		if (this.hwsettings.isShellAvailable) {
-			this.hwsettings.setMicrophoneVolume(volume)
+	public setVolume(volumn: number) {
+		if (this.audioService.isShellAvailable) {
+			this.audioService.setMicrophoneVolume(volumn)
 			.then((value) => {
 				console.log('Microphone Volume Set:', value);
 			}).catch(error => {
@@ -58,4 +68,36 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit {
 		}
 	}
 
+	public onToggleOfMicrophone(event) {
+		if (this.dashboardService.isShellAvailable) {
+			this.dashboardService.setMicrophoneStatus(event.switchValue)
+				.then((value: boolean) => {
+					console.log('onToggleOfMicrophone.then', value);
+				}).catch(error => {
+					console.error('onToggleOfMicrophone', error);
+				});
+		}
+	}
+
+	public onToggleOfSuppressKbdNoise(event) {
+		if (this.audioService.isShellAvailable) {
+			this.audioService.setSuppressKeyboardNoise(event.switchValue)
+				.then((value: boolean) => {
+					console.log('onToggleOfSuppressKbdNoise.then', value);
+				}).catch(error => {
+					console.error('onToggleOfSuppressKbdNoise', error);
+				});
+		}
+	}
+
+	public setMicrophoneAEC(event) {
+		if (this.audioService.isShellAvailable) {
+			this.audioService.setMicrophoneAEC(event.switchValue)
+				.then((value: boolean) => {
+					console.log('setMicrophoneAEC.then', value);
+				}).catch(error => {
+					console.error('setMicrophoneAEC', error);
+				});
+		}
+	}
 }

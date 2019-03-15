@@ -93,7 +93,9 @@
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="true"
-							[theme]="'white'" [tooltipText]="'You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode.'">
+							[theme]="'white'" 
+							[tooltipText]="'You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode.'"
+							(toggleOnOff)="onToggleOfMicrophone($event)">
 						</vtr-ui-row-switch>
 					</li>
 					<li class="">
@@ -119,7 +121,9 @@
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="true"
-							[theme]="'white'" 	[tooltipText]="'Toggle this on to optimize the MIC audio by suppressing keyboard noise.'">
+							[theme]="'white'" 	
+							[tooltipText]="'Toggle this on to optimize the MIC audio by suppressing keyboard noise.'"
+							(toggleOnOff)="onToggleOfSuppressKbdNoise($event)">
 						</vtr-ui-row-switch>
 					</li>
 
@@ -131,7 +135,9 @@
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="true"
-							[theme]="'white'" [tooltipText]="'Toggle on this feature to optimize your MIC audio by reducing acoustic echo.'">
+							[theme]="'white'" 
+							[tooltipText]="'Toggle on this feature to optimize your MIC audio by reducing acoustic echo.'"
+							(toggleOnOff)="setMicrophoneAEC($event)">
 						</vtr-ui-row-switch>
 					</li>
 
