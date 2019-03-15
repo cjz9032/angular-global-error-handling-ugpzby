@@ -98,6 +98,7 @@ export class PageDashboardComponent implements OnInit {
 			memory.path = 'ms-settings:about';
 			memory.asLink = false;
 			memory.isSystemLink = true;
+			memory.type = 'system';
 
 			if (response.memory) {
 				const { total, used } = response.memory;
@@ -119,6 +120,7 @@ export class PageDashboardComponent implements OnInit {
 			disk.path = 'ms-settings:storagesense';
 			disk.asLink = false;
 			disk.isSystemLink = true;
+			disk.type = 'system';
 
 			if (response.disk) {
 				const { total, used } = response.disk;
@@ -142,6 +144,7 @@ export class PageDashboardComponent implements OnInit {
 			warranty.asLink = false;
 			/* warranty.isSystemLink = true; */
 			warranty.isSystemLink = false;
+			warranty.type = 'system';
 
 			if (response.warranty) {
 				// const status = response.warranty.status;
@@ -158,6 +161,7 @@ export class PageDashboardComponent implements OnInit {
 			systemUpdate.path = '/system-updates';
 			systemUpdate.asLink = true;
 			systemUpdate.isSystemLink = false;
+			systemUpdate.type = 'system';
 
 			if (response.systemupdate) {
 				const { status } = response.systemupdate;
