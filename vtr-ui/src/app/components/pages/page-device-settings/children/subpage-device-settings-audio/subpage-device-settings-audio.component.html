@@ -31,10 +31,11 @@
 							[showChildContent]="true"
 							[theme]="'blue'"
 							[tooltipText]="'Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.'"
-							(toggleOnOff)="onAutomaticDolbyAudioToggleOnOff($event)">
+							(toggleOnOff)="onAutomaticDolbyAudioToggleOnOff($event)"
+							[isSwitchChecked]="autoDolbyFeatureStatus.status">
 
 							<div class="my-3"
-								*ngIf="!automaticDolbyAudioSettings">
+								*ngIf="!autoDolbyFeatureStatus.status">
 								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
 									[group]="radioGroupAutoDolbySettings"
 									[label]="'DYNAMIC'"
@@ -70,7 +71,9 @@
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="false"
-							[theme]="'blue'" 	[tooltipText]="'Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality.'" >
+							[theme]="'blue'"
+							[tooltipText]="'Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality.'" 
+							(toggleOnOff)="onToggleOfMicrophoneAutoOptimization($event)">
 						</vtr-ui-row-switch>
 					</li>
 				</ul>
@@ -93,9 +96,10 @@
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="true"
-							[theme]="'white'" 
+							[theme]="'white'"
 							[tooltipText]="'You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode.'"
-							(toggleOnOff)="onToggleOfMicrophone($event)">
+							(toggleOnOff)="onToggleOfMicrophone($event)"
+							[isSwitchChecked]="microphoneProperties.muteDisabled">
 						</vtr-ui-row-switch>
 					</li>
 					<li class="">
@@ -108,7 +112,8 @@
 							[showChildContent]="true"
 							[theme]="'white'">
 							<vtr-ui-range-slider [minValueLegend]="'Silent'" [minValue]="1"
-								[maxValueLegend]="'Loud'" [maxValue] = "100" (change)="setVolume($event)">
+								[maxValueLegend]="'Loud'" [maxValue] = "100" (change)="setVolume($event)"
+								[value]="microphoneProperties.volume">
 							</vtr-ui-range-slider>
 						</vtr-ui-row-switch>
 					</li>
@@ -121,9 +126,10 @@
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="true"
-							[theme]="'white'" 	
+							[theme]="'white'"
 							[tooltipText]="'Toggle this on to optimize the MIC audio by suppressing keyboard noise.'"
-							(toggleOnOff)="onToggleOfSuppressKbdNoise($event)">
+							(toggleOnOff)="onToggleOfSuppressKbdNoise($event)"
+							[isSwitchChecked]="microphoneProperties.keyboardNoiseSuppression">
 						</vtr-ui-row-switch>
 					</li>
 
@@ -137,7 +143,8 @@
 							[showChildContent]="true"
 							[theme]="'white'" 
 							[tooltipText]="'Toggle on this feature to optimize your MIC audio by reducing acoustic echo.'"
-							(toggleOnOff)="setMicrophoneAEC($event)">
+							(toggleOnOff)="setMicrophoneAEC($event)"
+							[isSwitchChecked]="microphoneProperties.AEC">
 						</vtr-ui-row-switch>
 					</li>
 

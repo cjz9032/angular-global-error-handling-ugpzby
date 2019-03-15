@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { Microphone } from 'src/app/data-models/common/microphone.model';
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +38,21 @@ export class AudioService {
 
   setDolbyOnOff(onOff: boolean): Promise<boolean> {
     if (this.isShellAvailable) {
-      return this.microphone.setDolbyFeatureStatus(onOff);
+      return this.smartSettings.setDolbyFeatureStatus(onOff);
+    }
+    return undefined;
+  }
+
+  getDolbyFeatureStatus(): Promise<FeatureStatus> {
+    if (this.isShellAvailable) {
+      return this.smartSettings.getDolbyFeatureStatus();
+    }
+    return undefined;
+  }
+
+  setMicrophoneAutoOptimization(onOff: boolean): Promise<boolean> {
+    if (this.isShellAvailable) {
+      return this.microphone.setMicrophoneAutoOptimization(onOff);
     }
     return undefined;
   }
@@ -52,6 +67,13 @@ export class AudioService {
   setMicrophoneAEC(onOff: boolean): Promise<boolean> {
     if (this.isShellAvailable) {
       return this.microphone.setMicrophoneAEC(onOff);
+    }
+    return undefined;
+  }
+
+  getMicrophoneSettings(): Promise<Microphone> {
+    if (this.isShellAvailable) {
+      return this.microphone.getMicrophoneSettings();
     }
     return undefined;
   }

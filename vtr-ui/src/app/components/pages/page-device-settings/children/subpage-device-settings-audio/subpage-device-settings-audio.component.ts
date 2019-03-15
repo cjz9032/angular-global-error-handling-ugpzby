@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AudioService } from 'src/app/services/audio/audio.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { MicrophoneOptiomizeStatus } from 'src/app/enums/microphone-optimize.enum';
+import { Microphone } from 'src/app/data-models/common/microphone.model';
+import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -17,16 +19,30 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit {
 
 	radioGroupAutoDolbySettings = 'radio-grp-auto-dolby-settings';
 	radioOptimiseMicSettings = 'radio-grp-optimise-mic-settings';
-	public supportedModes;
-	public microphoneProperties;
-	public microphoneOptiomizeStatus: MicrophoneOptiomizeStatus.MULTIPLE_VOICES
+	public microphoneProperties = new Microphone(false, 1, "", false, false, false, false);
+	public autoDolbyFeatureStatus = new FeatureStatus(true, false);
 	constructor(private audioService: AudioService, private dashboardService: DashboardService) { 
 	}
 
-	onAutomaticDolbyAudioToggleOnOff(event) {
-		this.automaticDolbyAudioSettings = event.switchValue;
+	getMicrophoneSettings() {
 		if (this.audioService.isShellAvailable) {
-			this.audioService.setDolbyOnOff(this.automaticDolbyAudioSettings)
+			this.audioService.getMicrophoneSettings()
+			.then((microphone: Microphone) => {
+				this.microphoneProperties = microphone
+				console.log('getMicrophoneSettings', microphone);
+			}).catch(error => {
+				console.error('getMicrophoneSettings', error);
+			});
+		}
+	}
+
+	onAutomaticDolbyAudioToggleOnOff(event) {
+		this.autoDolbyFeatureStatus.status = event.switchValue;
+		if(this.autoDolbyFeatureStatus.status && !this.autoDolbyFeatureStatus.available) {
+			//TODO: Make switch off as Automatic Dolby Audio feature is unavailable 
+		}
+		if (this.audioService.isShellAvailable) {
+			this.audioService.setDolbyOnOff(event.switchValue)
 			.then((value) => {
 				console.log('Dolby Setting Set:', value);
 			}).catch(error => {
@@ -35,29 +51,37 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit {
 		}
 	}
 
-	ngOnInit() {
-		
-		// this.hwsettings.getMicrophoneSettings()
-		// .then(() => {
-		// 	this.microphoneProperties = this.hwsettings.getMicrophoneProperties();
-		// 	console.log('getMicrophoneSettings.then', this.microphoneProperties);
-		// 	console.log(this.microphoneProperties.dataMute);
-		// }).catch(error => {
-		// 	console.error('getMicrophoneSettings', error);
-		// });
+	getDolbyFeatureStatus() {
+		if (this.audioService.isShellAvailable) {
+			this.audioService.getDolbyFeatureStatus()
+			.then((dolbyFeature: FeatureStatus) => {
+				this.autoDolbyFeatureStatus = dolbyFeature
+				console.log('getDolbyFeatureStatus:', dolbyFeature);
+			}).catch(error => {
+				console.error('getDolbyFeatureStatus', error);
+			});
+		}
+	}
 
-		// if (this.hwsettings.isShellAvailable) {
-		// 	this.hwsettings.getSupportedModes()
-		// 	.then((value) => {
-		// 		console.log('getSupportedModes.then', value);
-		// 		this.supportedModes = value;
-		// 	}).catch(error => {
-		// 		console.error('getSupportedModes', error);
-		// 	});
-		// }
+	onToggleOfMicrophoneAutoOptimization(event) {
+		if (this.audioService.isShellAvailable) {
+			this.audioService.setMicrophoneAutoOptimization(event.switchValue)
+			.then((value) => {
+				console.log('onToggleOfMicrophoneAutoOptimization:', value);
+			}).catch(error => {
+				console.error('onToggleOfMicrophoneAutoOptimization', error);
+			});
+		}
+	}
+
+
+	ngOnInit() {
+		this.getMicrophoneSettings();
+		this.getDolbyFeatureStatus();
 	}
 
 	public setVolume(volumn: number) {
+		this.microphoneProperties.volume = volumn
 		if (this.audioService.isShellAvailable) {
 			this.audioService.setMicrophoneVolume(volumn)
 			.then((value) => {
@@ -69,7 +93,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit {
 	}
 
 	public onToggleOfMicrophone(event) {
-		if (this.dashboardService.isShellAvailable) {
+		if (this.dashboardService.isShellAvailable) { 
 			this.dashboardService.setMicrophoneStatus(event.switchValue)
 				.then((value: boolean) => {
 					console.log('onToggleOfMicrophone.then', value);
