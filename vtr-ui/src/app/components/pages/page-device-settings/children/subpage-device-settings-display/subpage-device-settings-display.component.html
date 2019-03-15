@@ -23,6 +23,8 @@
 						 [rightIcon]="['far', 'question-circle']"
 						 [readMoreText]="''"
 						 [showChildContent]="true"
+						 [isSwitchChecked]="eyeCareModeStatus"
+						 (click)="onEyeCareModeStatusToggle($event)"
 						 [theme]="'white'" [tooltipText]="'Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.'">
 							<vtr-eye-care-mode></vtr-eye-care-mode>
 							<br />
@@ -73,15 +75,14 @@
 					</button>
 				</div>
 
-				<ul class="list-group list-group-flush"
-				 *ngIf="dataSource.hasAccessToCamera">
+				<ul class="list-group list-group-flush">
 					<li class="pt-3">
 						<vtr-ui-row-switch [title]="'Camera privacy mode'"
 						 [isSwitchVisible]="true"
 						 [leftIcon]="['far', 'gem']"
 						 [rightIcon]="['far', 'question-circle']"
-						 (toggleOnOff)="onPrivacyModeChange($event)"
-						 [isSwitchChecked]="dataSource.isPrivacyModeEnabled"  [tooltipText]="'The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling.'">
+						 (toggleOnOff)="onCameraPrivacyModeToggle($event)"
+						 [isSwitchChecked]="cameraPrivacyModeStatus.status"  [tooltipText]="'The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling.'">
 						</vtr-ui-row-switch>
 					</li>
 					<li class="pt-3">
@@ -91,7 +92,7 @@
 						 [showChildContent]="true"
 						 [resetText]="'Reset factory settings'"
 						 [rightIcon]="['far', 'question-circle']" [tooltipText]="'Click here to reset Camera properties to default settings.'">
-							<vtr-camera-control>
+							<vtr-camera-control [cameraSettings]="dataSource">
 							</vtr-camera-control>
 						</vtr-ui-row-switch>
 					</li>
