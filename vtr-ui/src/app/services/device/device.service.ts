@@ -9,7 +9,7 @@ export class DeviceService {
 	private device: any;
 	private sysInfo: any;
 	public isShellAvailable = false;
-
+	public isArm = false;
 
 	constructor(shellService: VantageShellService) {
 		this.device = shellService.getDevice();

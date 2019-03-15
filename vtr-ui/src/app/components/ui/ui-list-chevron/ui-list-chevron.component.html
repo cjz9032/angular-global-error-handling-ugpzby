@@ -4,7 +4,7 @@
 			[ngClass]="getItemStatusClass(item)">
 			<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->
 			<a routerLink="/{{item.path}}"
-				*ngIf="item.isSystemLink===undefined">
+				*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false)">
 				<div class="container-fluid">
 					<div class="row align-items-center">
 						<div class="col col-1 text-center"
@@ -31,8 +31,8 @@
 								[ngClass]="{'light-title':item.lightTitle}">
 								{{item.title}}
 							</div>
-							<div class="detail text-uppercase"
-								[ngClass]="{'good': item.status == 0, 'bad': item.status ==1,'blue': item.status ==2 }">
+							<div class="detail"
+								[ngClass]="getItemDetailClasses(item)">
 								{{item.detail}}
 							</div>
 						</div>
@@ -56,17 +56,16 @@
 							</div>
 						</div>
 						<div class="col col-1 text-center">
-							<div class="arrow"
-								*ngIf="!item.hideChevron">
+							<div class="arrow">
 								<fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
 							</div>
 						</div>
 					</div>
 				</div>
 			</a>
-			<!--Open Windows Settings /subapges if isSystemLink is not undefined or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
+			<!--Open Windows Settings /subapges if isSystemLink is not undefined and  true or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
 			<a [href]="(item.path | sanitizeUrl)"
-				*ngIf="item.isSystemLink!==undefined">
+				*ngIf="item.isSystemLink!==undefined &&  item.isSystemLink===true">
 				<div class="container-fluid">
 					<div class="row align-items-center">
 						<div class="col col-10 item-text">
@@ -74,7 +73,7 @@
 								[ngClass]="{'light-title':item.lightTitle}">
 								{{item.title}}
 							</div>
-							<div class="detail text-uppercase"
+							<div class="detail"
 								[ngClass]="getItemDetailClasses(item)">
 								{{item.detail}}
 							</div>
@@ -98,8 +97,7 @@
 							</div>
 						</div>
 						<div class="col col-1 text-center">
-							<div class="arrow"
-								*ngIf="!item.hideChevron">
+							<div class="arrow">
 								<fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
 							</div>
 						</div>

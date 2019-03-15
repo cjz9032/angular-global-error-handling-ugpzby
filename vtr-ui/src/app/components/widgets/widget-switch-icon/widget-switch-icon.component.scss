@@ -44,6 +44,8 @@
 			margin: 0.5em 0;
 			font-weight: $weight_medium;
 			letter-spacing: 0;
+			height: 1.3rem;
+			overflow: hidden;
 		}
 
 		.icon-container {
@@ -64,8 +66,14 @@
 			.feature-off {
 				position: absolute;
 				color: $alt;
-				left: 7%;
-				top: 3%;
+				left: 8%;
+				top: -29%;
+				font-weight: 300;
+				font-size: 5.8rem;
+
+				@media #{$mediaquery_6} {
+					top: -50%;
+				}
 			}
 		}
 

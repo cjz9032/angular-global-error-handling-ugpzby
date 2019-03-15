@@ -1,5 +1,5 @@
 // below line is needed for js intellisense
-/// <reference path='../../../../node_modules/@lenovo/tan-client-bridge/src/features/dashboard-feature.js' />
+//// <reference path='../../../../node_modules/@lenovo/tan-client-bridge/src/features/dashboard-feature.js' />
 
 import { Injectable } from '@angular/core';
 

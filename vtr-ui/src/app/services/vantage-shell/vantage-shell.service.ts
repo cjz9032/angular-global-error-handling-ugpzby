@@ -51,6 +51,16 @@ export class VantageShellService {
 	}
 
 	/**
+	 * returns hwsettings object from VantageShellService of JS Bridge
+	*/
+	public getHwSettings(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings;
+		}
+		return undefined;
+	}
+
+	/**
 	 * returns sysinfo object from VantageShellService of JS Bridge
 	 */
 	public getSysinfo(): any {

@@ -93,21 +93,24 @@
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col col-12 pb-40">
-										<vtr-widget-feedback [title]="'Give feedback'"
-											[description]="'Tell us what you think about vantage'"
-											[actionName]="'Give feedback'"
+										<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
+											[description]="'dashboard.feedback.subtitle' | translate"
+											[actionName]="'dashboard.feedback.button' | translate"
 											[action]="'feedback'"
 											(feedBackClick)="onFeedbackModal(feedBackModal)">
 										</vtr-widget-feedback>
 									</div>
 								</div>
 
-								<div class="row">
+								<div class="row"
+									*ngIf="!deviceService.isArm">
 									<div class="col col-12 pb-40">
 										<vtr-widget-quicksettings></vtr-widget-quicksettings>
 									</div>
 								</div>
-								<div class="row">
+
+								<div class="row"
+									*ngIf="!deviceService.isArm">
 									<div class="col col-12 py-40">
 										<vtr-widget-status [title]="'System Status'"
 											[description]="'Quick catch up your device status.'"
@@ -115,7 +118,8 @@
 										</vtr-widget-status>
 									</div>
 								</div>
-								<div class="row">
+								<div class="row"
+									*ngIf="!deviceService.isArm">
 									<div class="col col-12 py-40">
 										<vtr-widget-status [title]="'Security Advisor'"
 											[description]="'Check if your device is secured.'"
