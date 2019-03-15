@@ -19,16 +19,16 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 
 	headerMenuItems = [
 		{
+			title: 'Intelligent Cooling',
+			path: 'cooling'
+		},
+		{
 			title: 'Battery',
 			path: 'battery',
 		},
 		{
 			title: 'Power',
 			path: 'power'
-		},
-		{
-			title: 'Cooling',
-			path: 'cooling'
 		},
 		{
 			title: 'Other',
