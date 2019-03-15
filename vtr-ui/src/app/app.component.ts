@@ -33,7 +33,11 @@ export class AppComponent implements OnInit {
 	) {
 		translate.addLangs(['en', 'zh-Hans']);
 		translate.setDefaultLang('en');
-		this.modalService.open(ModalWelcomeComponent, { backdrop: 'static' });
+		this.modalService.open(ModalWelcomeComponent,
+			{
+				backdrop: 'static'
+				, windowClass: 'welcome-modal-size'
+			});
 	}
 
 	ngOnInit() {
