@@ -29,7 +29,7 @@ export class UiRowSwitchComponent implements OnInit {
 	@Input() theme = 'white';
 	@Input() resetText = '';
 	@Input() isSwitchChecked = false;
-	@Input() tooltipText = '';
+	@Input() tooltipText = ''
 
 	@Output() toggleOnOff = new EventEmitter<boolean>();
 	@Output() readMoreClick = new EventEmitter<boolean>();
