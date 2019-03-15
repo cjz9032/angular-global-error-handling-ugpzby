@@ -118,6 +118,17 @@
 				::ng-deep .mat-progress-bar {
 					border-radius: 0.4rem;
 				}
+				.progress{
+					height: 2px;
+					.progress-bar{
+						height: 8px;
+						border-radius: 8px;
+						margin-top: -3px;
+						&.bg-info{
+							background: linear-gradient(90deg, $go_light 0%, $go_dark 100%);
+						}
+					}
+				}
 			}
 		}
 		.cancel-check {
