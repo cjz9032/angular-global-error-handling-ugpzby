@@ -1,10 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
 import { UserService } from '../../services/user/user.service';
-import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ModalLenovoIdComponent } from '../modal/modal-lenovo-id/modal-lenovo-id.component';
+import { CommonService } from 'src/app/services/common/common.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { TranslationService } from 'src/app/services/translation/translation.service';
+import Translation from 'src/app/data-models/translation/translation';
+import { TranslationSection } from 'src/app/enums/translation-section.enum';
 import { environment } from '../../../environments/environment';
 
 @Component({
@@ -12,7 +20,10 @@ import { environment } from '../../../environments/environment';
 	templateUrl: './menu-main.component.html',
 	styleUrls: ['./menu-main.component.scss']
 })
-export class MenuMainComponent implements OnInit {
+export class MenuMainComponent implements OnInit, OnDestroy {
+
+	public deviceModel: string;
+	commonMenuSubscription: Subscription;
 	public appVersion: string = environment.appVersion;
 
 	items = [
@@ -21,14 +32,12 @@ export class MenuMainComponent implements OnInit {
 			label: 'Dashboard',
 			path: 'dashboard',
 			icon: 'columns',
-			forArm: true,
 			subitems: []
 		}, {
 			id: 'device',
 			label: 'Device',
 			path: 'device',
 			icon: 'laptop',
-			forArm: false,
 			subitems: [{
 				id: 'device',
 				label: 'My device',
@@ -53,7 +62,6 @@ export class MenuMainComponent implements OnInit {
 			label: 'Security',
 			path: 'security',
 			icon: 'lock',
-			forArm: false,
 			subitems: [{
 				id: 'security',
 				label: 'My Security',
@@ -96,14 +104,13 @@ export class MenuMainComponent implements OnInit {
 			label: 'Support',
 			path: 'support',
 			icon: 'wrench',
-			forArm: false,
+			forArm: true,
 			subitems: []
 		}, {
 			id: 'user',
 			label: 'User',
 			path: 'user',
 			icon: 'user',
-			forArm: true,
 			subitems: []
 		}
 	];
@@ -111,19 +118,35 @@ export class MenuMainComponent implements OnInit {
 	constructor(
 		private router: Router,
 		public configService: ConfigService,
-		public deviceService: DeviceService,
+		private commonService: CommonService,
 		public userService: UserService,
-		private modalService: NgbModal
-	) { }
+		public translationService: TranslationService,
+		private modalService: NgbModal,
+		private deviceService: DeviceService
+	) {
+		this.commonMenuSubscription = this.translationService.subscription
+			.subscribe((translation: Translation) => {
+				this.onLanguageChange(translation);
+			});
+	}
 
 	ngOnInit() {
+
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+	}
+	ngOnDestroy() {
+		if (this.commonMenuSubscription) {
+			this.commonMenuSubscription.unsubscribe();
+		}
 	}
 
 	showItem(item) {
 		let showItem = true;
-		if (this.deviceService.isARM) {
+		if (this.deviceService.isArm) {
 			if (!item.forArm) {
-				// showItem = false;
+				showItem = false;
 			}
 		}
 		return showItem;
@@ -138,8 +161,7 @@ export class MenuMainComponent implements OnInit {
 		this.modalService.open(ModalLenovoIdComponent, {
 			backdrop: 'static',
 			size: 'lg',
-			centered: true,
-			windowClass: 'lenovo-modal-content'
+			centered: true
 		});
 	}
 
@@ -147,4 +169,22 @@ export class MenuMainComponent implements OnInit {
 		this.userService.removeAuth();
 	}
 
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case LocalStorageKey.MachineInfo:
+					this.deviceModel = notification.payload.family;
+					break;
+
+				default:
+					break;
+			}
+		}
+	}
+
+	onLanguageChange(translation: Translation) {
+		if (translation && translation.type === TranslationSection.CommonMenu) {
+			this.items[0].label = translation.payload.dashboard;
+		}
+	}
 }

@@ -2,19 +2,13 @@
 
 .vtr-widget-switch-icon {
 	display: inline-block;
+	cursor: pointer;
 
 	.switch-container {
 		height: 12.5rem;
 		width: 12.5rem;
 		border-radius: $border_radius;
-		@media #{$mediaquery_6} {
-			height: 10rem;
-			width: 10rem;
-		}
-		@media #{$mediaquery_7} {
-			height: 8rem;
-			width: 8rem;
-		}
+
 		&.checked {
 			border: 1px solid $go;
 			background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
@@ -24,7 +18,7 @@
 			}
 
 			.icon-container {
-				background: linear-gradient($gradient_angle_reverse, $go 0%, $go_lighter 100%);
+				background: linear-gradient($gradient_angle_reverse, $go 0%, $go_light 100%);
 				color: $light;
 			}
 		}
@@ -50,7 +44,7 @@
 			margin: 0.5em 0;
 			font-weight: $weight_medium;
 			letter-spacing: 0;
-			height: 1.2rem;
+			height: 1.3rem;
 			overflow: hidden;
 		}
 
@@ -63,33 +57,22 @@
 			text-align: center;
 			position: relative;
 			cursor: pointer;
-			@media #{$mediaquery_6} {
-				height: 4rem;
-				width: 4rem;
-				margin: .7rem auto .4rem auto;
-			}
-			@media #{$mediaquery_7} {
-				display: none;
-			}
+
 			fa-icon {
 				font-size: 4rem;
 				line-height: 6rem;
-				@media #{$mediaquery_6} {
-					font-size: 3rem;
-					line-height: 4rem;
-				}
 			}
 
 			.feature-off {
 				position: absolute;
 				color: $alt;
+				left: 8%;
+				top: -29%;
 				font-weight: 300;
 				font-size: 5.8rem;
-				left: 28%;
-				top: -16%;
-				transform: rotate(-25deg);
+
 				@media #{$mediaquery_6} {
-					top: -17%;
+					top: -50%;
 				}
 			}
 		}
@@ -97,12 +80,6 @@
 		.switch {
 			width: 5.3rem;
 			margin: 0.5rem auto;
-			@media #{$mediaquery_6} {
-				margin: 0 auto;
-			}
-			@media #{$mediaquery_7} {
-				margin: 1.7rem auto;
-			}
 		}
 	}
 }

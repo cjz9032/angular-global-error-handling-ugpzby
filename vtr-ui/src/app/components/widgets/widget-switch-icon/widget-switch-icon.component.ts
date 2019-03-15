@@ -22,7 +22,7 @@ export class WidgetSwitchIconComponent implements OnInit {
 	}
 
 	onChange(event) {
-		this.value = event.switchValue;
+		this.value = !this.value;
 		console.log('WIDGET SWITCH ICON VALUE', this.value);
 		this.toggle.emit(this.value);
 	}

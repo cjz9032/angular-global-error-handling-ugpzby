@@ -18,6 +18,7 @@ export class PageDashboardComponent implements OnInit {
 	title = `Looking energized today ${this.firstName}!`;
 	feedbackButtonText = this.submit;
 	public systemStatus: Status[] = [];
+	public securityStatus: Status[] = [];
 
 	forwardLink = {
 		path: 'dashboard-customize',
@@ -41,7 +42,7 @@ export class PageDashboardComponent implements OnInit {
 		if (this.dashboardService.isShellAvailable) {
 			console.log('PageDashboardComponent.getSystemInfo');
 			this.getSystemInfo();
-			// this.getSecurityStatus();
+			this.getSecurityStatus();
 		}
 	}
 
@@ -81,6 +82,7 @@ export class PageDashboardComponent implements OnInit {
 	private getSecurityStatus() {
 		this.dashboardService.getSecurityStatus()
 			.then((value: any) => {
+				this.securityStatus = this.mapSecurityStatusResponse(value);
 				console.log('getSecurityStatus.then', value);
 			}).catch(error => {
 				console.error('getSecurityStatus', error);
@@ -139,8 +141,7 @@ export class PageDashboardComponent implements OnInit {
 			warranty.id = 'warranty';
 			warranty.title = 'Warranty';
 			warranty.detail = 'Warranty not found';
-			/* warranty.path = 'ms-settings:storagesense'; */
-			warranty.path = '/support';
+			warranty.path = 'ms-settings:storagesense';
 			warranty.asLink = false;
 			/* warranty.isSystemLink = true; */
 			warranty.isSystemLink = false;
@@ -173,8 +174,102 @@ export class PageDashboardComponent implements OnInit {
 			}
 			systemStatus.push(systemUpdate);
 		}
-
-		console.log('systemStatus ' + JSON.stringify(systemStatus));
 		return systemStatus;
+	}
+
+	private mapSecurityStatusResponse(response: any): Status[] {
+		const securityStatus: Status[] = [];
+		if (response) {
+			const antiVirus = new Status();
+			antiVirus.status = 1;
+			antiVirus.id = 'anti-virus';
+			antiVirus.title = 'Anti-Virus';
+			antiVirus.detail = 'Disabled';
+			antiVirus.path = 'anti-virus';
+			antiVirus.type = 'security';
+
+			if (response.antiVirus) {
+				if (response.antiVirus.status) {
+					antiVirus.status = 0;
+					antiVirus.detail = 'Enabled';
+				} else {
+					antiVirus.status = 1;
+				}
+			}
+			securityStatus.push(antiVirus);
+
+			const wiFi = new Status();
+			wiFi.status = 1;
+			wiFi.id = 'wifi-security';
+			wiFi.title = 'WiFi Security';
+			wiFi.detail = 'Disabled';
+			wiFi.path = 'wifi-security';
+			wiFi.type = 'security';
+
+			if (response.antiVirus) {
+				if (response.antiVirus.status) {
+					wiFi.status = 0;
+					wiFi.detail = 'Enabled';
+				} else {
+					wiFi.status = 1;
+				}
+			}
+			securityStatus.push(wiFi);
+
+			const passwordManager = new Status();
+			passwordManager.status = 1;
+			passwordManager.id = 'pwdmgr';
+			passwordManager.title = 'Password Manager';
+			passwordManager.detail = 'Not Installed';
+			passwordManager.path = 'password-protection';
+			passwordManager.type = 'security';
+
+			if (response.passwordManager) {
+				if (response.passwordManager.installed) {
+					passwordManager.status = 0;
+					passwordManager.detail = 'Installed';
+				} else {
+					passwordManager.status = 1;
+				}
+			}
+			securityStatus.push(passwordManager);
+
+			const vpn = new Status();
+			vpn.status = 1;
+			vpn.id = 'vpn';
+			vpn.title = 'VPN';
+			vpn.detail = 'Not Installed';
+			vpn.path = 'internet-protection';
+			vpn.type = 'security';
+
+			if (response.VPN) {
+				if (response.VPN.installed) {
+					vpn.status = 0;
+					vpn.detail = 'Installed';
+				} else {
+					vpn.status = 1;
+				}
+			}
+			securityStatus.push(vpn);
+
+			const windowsHello = new Status();
+			windowsHello.status = 1;
+			windowsHello.id = 'windows-hello';
+			windowsHello.title = 'Windows Hello';
+			windowsHello.detail = 'Disabled';
+			windowsHello.path = 'windows-hello';
+			windowsHello.type = 'security';
+
+			if (response.windowsHello) {
+				if (response.windowsHello) {
+					windowsHello.status = 0;
+					windowsHello.detail = 'Enabled';
+				} else {
+					windowsHello.status = 1;
+				}
+			}
+			securityStatus.push(windowsHello);
+		}
+		return securityStatus;
 	}
 }

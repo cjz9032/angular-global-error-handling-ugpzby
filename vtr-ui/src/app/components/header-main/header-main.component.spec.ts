@@ -1,8 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeaderMainComponent } from './header-main.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { MenuHeaderComponent } from '../menu-header/menu-header.component';
 
 describe('HeaderMainComponent', () => {
   let component: HeaderMainComponent;
@@ -10,13 +8,7 @@ describe('HeaderMainComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-		imports: [
-			FontAwesomeModule
-		],
-      declarations: [
-		  HeaderMainComponent,
-		  MenuHeaderComponent
-		 ]
+      declarations: [ HeaderMainComponent ]
     })
     .compileComponents();
   }));

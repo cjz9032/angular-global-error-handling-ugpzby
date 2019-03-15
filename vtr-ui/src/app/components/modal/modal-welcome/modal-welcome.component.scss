@@ -1,9 +1,9 @@
-@import '../../../app.theme';
+@import "../../../app.theme";
 
 .vtr-modal-welcome {
 	/************** common *************/
 	.title {
-		color: $shade_darkest;
+		color: $shade_blue;
 		font-size: 3.5rem;
 		font-weight: 300;
 		line-height: 4.2rem;
@@ -11,16 +11,15 @@
 	}
 
 	.subtitle {
-		color: $shade_darkest;
+		color: $shade_dark;
 		font-size: 1.7rem;
 		font-weight: 400;
 		line-height: 2.8rem;
-
 	}
 
 	.divider {
 		height: 0.1rem;
-		border: 0.1rem solid $shade_light;
+		border: 0.1rem solid $shade_extralight;
 		background-color: $shade_light;
 		margin: 2rem 0;
 	}
@@ -30,7 +29,6 @@
 		height: 2rem;
 		width: 2rem;
 		background-color: $shade_lighter;
-
 	}
 
 	.current {
@@ -68,14 +66,13 @@
 		opacity: 0;
 	}
 
-
 	input[type="radio"] + label {
 		padding: 0.1rem 3rem;
 		border: 0.1rem solid $shade_extralight;
 		border-radius: 2.5rem;
 		background: linear-gradient(270deg, $shade_extralight 0%, $shade_extralight 100%);
 		box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.2);
-		color: $shade_darkest;
+		color: $shade_dark;
 		font-size: 1.5rem;
 		font-weight: 500;
 		letter-spacing: 0.1rem;
@@ -84,17 +81,13 @@
 		vertical-align: middle;
 	}
 
-
 	input[type="radio"]:checked + label {
 		border: 0.2rem solid $go_light;
-
 	}
-
 
 	input[type="checkbox"] {
 		opacity: 0;
 	}
-
 
 	input[type="checkbox"] + label {
 		padding: 0.1rem 3rem;
@@ -102,7 +95,7 @@
 
 		border-radius: 2.5rem;
 		background: linear-gradient(270deg, $shade_extralight 0%, $shade_extralight 100%);
-		color: $shade_darkest;
+		color: $shade_dark;
 		font-size: 1.5rem;
 		font-weight: 500;
 		letter-spacing: 0.1rem;
@@ -117,7 +110,6 @@
 
 	input[type="checkbox"]:checked + label {
 		border: 0.2rem solid $go_light;
-
 	}
 
 	label {
@@ -147,5 +139,4 @@
 		transform: translateY(-50%);
 		right: 0;
 	}
-
 }
