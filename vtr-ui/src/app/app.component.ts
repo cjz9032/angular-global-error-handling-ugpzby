@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { UserService } from './services/user/user.service';
 import { DevService } from './services/dev/dev.service';
 import { DisplayService } from './services/display/display.service';
+import { TranslateService } from '@ngx-translate/core';
+import { UserService } from './services/user/user.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 import { DeviceService } from './services/device/device.service';
 import { environment } from '../environments/environment';
-import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { ModalWelcomeComponent } from "./components/modal/modal-welcome/modal-welcome.component";
-import {MetricService} from "./services/metric/metric.service";
+import { MetricService } from "./services/metric/metric.service";
 
 @Component({
 	selector: 'vtr-root',
@@ -15,27 +16,28 @@ import {MetricService} from "./services/metric/metric.service";
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
-	env = environment;
 	title = 'vtr-ui';
 
 	constructor(
-		private userService: UserService,
 		private devService: DevService,
 		private displayService: DisplayService,
-		public deviceService: DeviceService,
-		private router: Router,
 		private modalService: NgbModal,
+		private router: Router,
+		translate: TranslateService,
+		private userService: UserService,
+		public deviceService: DeviceService,
 		private metricService: MetricService
 	) {
-		this.modalService.open(ModalWelcomeComponent,{backdrop:'static'});
+		translate.addLangs(['en', 'zh-Hans']);
+		translate.setDefaultLang('zh-Hans');
+		this.modalService.open(ModalWelcomeComponent, { backdrop: 'static' });
 	}
 
 	ngOnInit() {
 		this.devService.writeLog('APP INIT', window.location.href);
 
 		// use when deviceService.isArm is set to true
-		// document.getElementById("html-root").classList.add('is-arm');
+		document.getElementById("html-root").classList.add('is-arm');
 
 		const self = this;
 		window.onresize = function () {
