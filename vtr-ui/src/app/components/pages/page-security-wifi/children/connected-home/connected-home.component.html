@@ -103,9 +103,11 @@
 			<div class="col">
 				<div class="gem-box">
 					<div class="gem">
-						<fa-icon class="icon"
+						<!-- <fa-icon class="icon"
 						 [icon]="['far', 'gem']"
-						 center></fa-icon>
+						 center></fa-icon> -->
+						<img src="assets/images/connected-home-gem-icon.png"
+							center />
 					</div>
 				</div>
 
@@ -123,7 +125,7 @@
 					<div class="col-sm-3">
 						<div class="button-box shift-left">
 							<vtr-ui-button (onClick)="tryNow($event)"
-							 [label]="'Try Now'"></vtr-ui-button>
+								[label]="'Try Now'"></vtr-ui-button>
 						</div>
 
 					</div>
@@ -151,7 +153,7 @@
 						<div class="col-5">
 							<div class="button-box shift-right">
 								<vtr-ui-button (onClick)="enterActivationCode($event)"
-								 [label]="'Enter invitation code'"></vtr-ui-button>
+									[label]="'Enter invitation code'"></vtr-ui-button>
 							</div>
 						</div>
 					</div>
