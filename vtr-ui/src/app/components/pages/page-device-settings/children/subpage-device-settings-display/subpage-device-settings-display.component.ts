@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { DisplayService } from 'src/app/services/display/display.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
+import { ChangeContext } from 'ng5-slider';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-display',
@@ -147,6 +148,55 @@ export class SubpageDeviceSettingsDisplayComponent
 				.catch(error => {
 					console.error('getCameraStatus', error);
 				});
+		}
+	}
+	public onBrightnessChange($event: ChangeContext)
+	{
+		console.log('Brightness changed in display', $event);
+		if (this.displayService.isShellAvailable) {
+			this.displayService
+				.setCameraBrightness($event.value);
+		}
+	}
+	public onContrastChange($event: ChangeContext)
+	{
+		console.log('contrast changed in display', $event);
+		if (this.displayService.isShellAvailable) {
+			this.displayService
+				.setCameraContrst($event.value);
+		}
+	}
+	public onCameraAutoExposureToggle($event: ChangeContext)
+	{
+		console.log('setCameraAutoExposure.then', $event);
+		if (this.displayService.isShellAvailable) {
+			this.displayService
+				.setCameraAutoExposure($event.value);
+		}
+	}
+	public onCameraExposureValueChange($event: ChangeContext)
+	{
+		console.log('setCameraExposureValue.then', $event);
+		if (this.displayService.isShellAvailable) {
+			this.displayService
+				.setCameraExposureValue($event.value);
+		}
+	}
+	public onCameraAutoFocusToggle($event: any)
+	{
+		console.log('setCameraAutoFocus.then', $event);
+		if (this.displayService.isShellAvailable) {
+			this.displayService
+				.setCameraAutoFocus($event.value);
+		}
+	}
+
+	public resetCameraSettings()
+	{
+		console.log('Reset Camera settings');
+		if (this.displayService.isShellAvailable) {
+			this.displayService
+				.resetCameraSettings();
 		}
 	}
 }

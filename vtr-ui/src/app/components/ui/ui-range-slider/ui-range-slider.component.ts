@@ -28,8 +28,8 @@ export class UiRangeSliderComponent implements OnInit {
 	@Input() legendPositionFunction: ValueToPositionFunction; // function to handle legend position for Eye Care
 	@Input() stepsArray: Array<any>; // array with legend value for Eye care
 
-	@Output() change: EventEmitter<number> = new EventEmitter();
-	@Output() valueChange: EventEmitter<number> = new EventEmitter();
+	@Output() change: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() valueChange: EventEmitter<ChangeContext> = new EventEmitter();
 
 	constructor() {}
 
@@ -53,7 +53,7 @@ export class UiRangeSliderComponent implements OnInit {
 	 * @param $event event data from ng5-slider component
 	 */
 	public onValueChange($event: ChangeContext) {
-		this.valueChange.emit($event.value);
+		this.valueChange.emit($event);
 	}
 
 	/**
@@ -61,6 +61,11 @@ export class UiRangeSliderComponent implements OnInit {
 	 * @param $event event data from ng5-slider component
 	 */
 	public onChange($event: ChangeContext) {
-		this.change.emit($event.value);
+		console.log('onChange Ui slider');
+		this.change.emit($event);
+	}
+
+	public onSliderChanged(event: any) {
+		console.log('slider changed');
 	}
 }

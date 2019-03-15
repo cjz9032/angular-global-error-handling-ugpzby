@@ -103,6 +103,12 @@ export class DisplayService {
 		}
 		return undefined;
 	}
+	public setCameraContrst(value: number): Promise<boolean> {
+		if (this.cameraSettings) {
+			return this.cameraSettings.setCameraContrst(value);
+		}
+		return undefined;
+	}
 	public setCameraAutoExposure(value: number): Promise<boolean> {
 		if (this.cameraSettings) {
 			return this.cameraSettings.setCameraAutoExposure(value);

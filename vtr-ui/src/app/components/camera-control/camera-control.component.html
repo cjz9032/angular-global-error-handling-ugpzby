@@ -21,7 +21,7 @@
 					 [minValue]="cameraSettings.brightness.min"
 					 [maxValue]="cameraSettings.brightness.max"
 					 [value]="cameraSettings.brightness.value"
-					 >
+					 (change)="onBrightnessSliderChange($event)">
 					</vtr-ui-range-slider>
 				</li>
 				<li class="list-group-item">
@@ -31,7 +31,7 @@
 					<vtr-ui-range-slider [step]="cameraSettings.contrast.step"
 					 [minValue]="cameraSettings.contrast.min"
 					 [maxValue]="cameraSettings.contrast.max"
-					 [value]="cameraSettings.contrast.value">
+					 [value]="cameraSettings.contrast.value"  (change)="onContrastSliderChange($event)">
 					</vtr-ui-range-slider>
 				</li>
 				<li class="list-group-item" *ngIf="cameraSettings.exposure.autoModeSupported">
@@ -49,7 +49,8 @@
 					 [minValue]="cameraSettings.exposure.min"
 					 [maxValue]="cameraSettings.exposure.max"
 					 [value]="cameraSettings.exposure.value"
-					 *ngIf="cameraSettings.exposure.supported">
+					 *ngIf="cameraSettings.exposure.supported"
+					 (change)="onExposureSliderChange($event)">
 					</vtr-ui-range-slider>
 				</li>
 				<li class="list-group-item">
