@@ -28,6 +28,7 @@ class BatteryDetail {
 	public designCapacity: number;
 	public designVoltage: number;
 	public firmwareVersion: string;
+	public fruPartNumber: string;
 
 	//#endregion
 

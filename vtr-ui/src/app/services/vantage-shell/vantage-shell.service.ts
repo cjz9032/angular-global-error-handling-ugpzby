@@ -15,7 +15,7 @@ export class VantageShellService {
 		if (shell) {
 			this.phoenix = bootstrap(
 				new inversify.Container(),
-				new shell.VantageRpcClient()
+				{ hsaBroker: new shell.VantageRpcClient() }
 			);
 		}
 	}
@@ -76,6 +76,13 @@ export class VantageShellService {
 	public getWarranty(): any {
 		if (this.phoenix) {
 			return this.phoenix.warranty;
+		}
+		return undefined;
+	}
+
+	public getSystemUpdate(): any {
+		if (this.phoenix) {
+			return this.phoenix.systemUpdate;
 		}
 		return undefined;
 	}

@@ -7,20 +7,19 @@ describe('WidgetQuicksettingsComponent', () => {
   let fixture: ComponentFixture<WidgetQuicksettingsComponent>;
 
   beforeEach(async(() => {
-	TestBed.configureTestingModule({
-	  declarations: [WidgetQuicksettingsComponent]
-	}).compileComponents();
-
+    TestBed.configureTestingModule({
+      declarations: [WidgetQuicksettingsComponent]
+    })
+      .compileComponents();
   }));
 
   beforeEach(() => {
-	fixture = TestBed.createComponent(WidgetQuicksettingsComponent);
-	component = fixture.componentInstance;
-	fixture.detectChanges();
+    fixture = TestBed.createComponent(WidgetQuicksettingsComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('should create', () => {
-	expect(component).toBeTruthy();
+    expect(component).toBeTruthy();
   });
-
 });
