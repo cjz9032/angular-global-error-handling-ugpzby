@@ -206,8 +206,8 @@ export class PageDashboardComponent implements OnInit {
 			wiFi.path = 'wifi-security';
 			wiFi.type = 'security';
 
-			if (response.antiVirus) {
-				if (response.antiVirus.status) {
+			if (response.wiFi) {
+				if (response.wiFi.status) {
 					wiFi.status = 0;
 					wiFi.detail = 'Enabled';
 				} else {

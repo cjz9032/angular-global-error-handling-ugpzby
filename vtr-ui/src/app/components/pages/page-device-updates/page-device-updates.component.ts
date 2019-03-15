@@ -166,7 +166,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.optionalUpdates = this.filterUpdate(updateList, 'optional');
 			this.recommendedUpdates = this.filterUpdate(updateList, 'recommended');
 			this.criticalUpdates = this.filterUpdate(updateList, 'critical');
-			// console.log('update categories', this.optionalUpdates, this.criticalUpdates, this.recommendedUpdates);
 		}
 	}
 
@@ -215,6 +214,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	public onUpdateSelectionChange($event: any) {
 		console.log($event);
+		const item = $event.target;
+		this.systemUpdateService.toggleUpdateSelection(item.name, item.checked);
 	}
 
 	public onInstallAllUpdate($event: any) {
@@ -225,6 +226,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	public onInstallSelectedUpdate($event: any) {
-
+		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
+			this.isUpdateDownloading = false;
+			this.systemUpdateService.installSelectedUpdates();
+		}
 	}
 }
