@@ -47,32 +47,33 @@ export class MetricService {
 			WheelEvent: 'wheel'
 		};*/
 
-		const DOMEvents={
+		const DOMEvents = {
 			MouseEvent: 'click dblclick'
 
 		}
 
 		const RecentlyLoggedDOMEventTypes = {};
 
-		for ( const DOMEvent in DOMEvents) {
+		for (const DOMEvent in DOMEvents) {
 
 			const DOMEventTypes = DOMEvents[DOMEvent].split(' ');
 
-			DOMEventTypes.filter(function(DOMEventType) {
+			DOMEventTypes.filter(function (DOMEventType) {
 				const DOMEventCategory = DOMEvent + ' ' + DOMEventType;
-				document.addEventListener(DOMEventType, function(e) {
-					var index=window.location.href.indexOf('#')+2;
-					var path= window.location.href.substring(index).split('/').join('.');
-					var logModel=new LogModel();
-					logModel.ItemParent="page."+path;
-					logModel.ItemType=DOMEventType;
-					if(document.activeElement.tagName==='A'){
-						logModel.ItemType="Anchor";
-						logModel.ItemName=document.activeElement.getAttribute('href').split('/').slice(1).join(".");
-					}else if(document.activeElement.tagName==='BUTTON'){
-						logModel.ItemType="Button";
-						logModel.ItemName=document.activeElement.innerHTML;
-					}else if(document.activeElement.tagName==='INPUT') {
+				document.addEventListener(DOMEventType, function (e) {
+					var index = window.location.href.indexOf('#') + 2;
+					var path = window.location.href.substring(index).split('/').join('.');
+					var logModel = new LogModel();
+					logModel.ItemParent = "page." + path;
+					logModel.ItemType = DOMEventType;
+					if (document.activeElement.tagName === 'A') {
+						logModel.ItemType = "Anchor";
+						logModel.ItemName = document.activeElement.getAttribute('href').split('/').slice(1).join(".");
+					} else if (document.activeElement.tagName === 'BUTTON') {
+						logModel.ItemType = "Button";
+						logModel.ItemName = document.activeElement.innerHTML;
+					} else if (document.activeElement.tagName === 'INPUT') {
+
 
 						if(document.activeElement.getAttribute('type')=='radio'){
 							logModel.ItemType="Radio";
@@ -81,10 +82,11 @@ export class MetricService {
 							logModel.ItemType="Checkbox";
 							logModel.ItemName=document.activeElement.nextSibling.textContent;
 						}else{
+
 							console.log('input tpye is not known')
 						}
 
-					}else{
+					} else {
 						console.log(document.activeElement);
 					}
 					console.log(logModel);
@@ -107,10 +109,10 @@ export class MetricService {
 	}
 }
 
-export class LogModel{
-	ItemName:string;
-	ItemType:string;
-	ItemParent:string;
-	ItemParam:string;
-	ItemValue:string;
+export class LogModel {
+	ItemName: string;
+	ItemType: string;
+	ItemParent: string;
+	ItemParam: string;
+	ItemValue: string;
 }

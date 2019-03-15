@@ -45,7 +45,8 @@ export class MockService {
 			'detail': '4.00 GB of 6 GB',
 			'path': 'ms-settings:about',
 			'asLink': false,
-			'isSystemLink': true
+			'isSystemLink': true,
+			'type': 'system'
 		},
 		{
 			'status': 0,
@@ -54,7 +55,8 @@ export class MockService {
 			'detail': '12.7 GB of 256 GB',
 			'path': 'ms-settings:storagesense',
 			'asLink': false,
-			'isSystemLink': true
+			'isSystemLink': true,
+			'type': 'system'
 		},
 		{
 			'status': 0,
@@ -62,7 +64,8 @@ export class MockService {
 			'title': 'Warranty',
 			'detail': 'Unitil 01/01/2020',
 			'path': '/support',
-			'asLink': false
+			'asLink': false,
+			'type': 'system'
 		},
 		{
 			'status': 1,
@@ -70,7 +73,8 @@ export class MockService {
 			'title': 'System Update',
 			'detail': 'Update',
 			'path': '/system-updates',
-			'asLink': true
+			'asLink': true,
+			'type': 'system'
 		}
 	];
 
@@ -357,56 +361,56 @@ export class MockService {
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': '',
 			'logo': 'assets/images/test-logo.svg',
-			'logoText': 'LENEVO SPECIAL',
+			'logoText': 'LENOVO SPECIAL',
 			'readMore': '/#/support-detail',
 		},
 		{
 			'title': '',
 			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
 			'logo': 'assets/images/test-logo.svg',
-			'logoText': 'LENEVO SPECIAL',
+			'logoText': 'LENOVO SPECIAL',
 			'readMore': '/#/support-detail',
 		},
 		{
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
 			'logo': '',
-			'logoText': 'LENEVO SPECIAL',
+			'logoText': 'LENOVO SPECIAL',
 			'readMore': '/#/support-detail',
 		},
 		{
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
 			'logo': 'assets/images/test-logo.svg',
-			'logoText': 'LENEVO SPECIAL',
+			'logoText': 'LENOVO SPECIAL',
 			'readMore': '/#/support-detail',
 		},
 		{
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
 			'logo': 'assets/images/test-logo.svg',
-			'logoText': 'LENEVO SPECIAL',
+			'logoText': 'LENOVO SPECIAL',
 			'readMore': '/#/support-detail',
 		},
 		{
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': '',
 			'logo': '',
-			'logoText': 'LENEVO SPECIAL',
+			'logoText': 'LENOVO SPECIAL',
 			'readMore': '/#/support-detail',
 		},
 		{
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
 			'logo': 'assets/images/test-logo.svg',
-			'logoText': 'LENEVO SPECIAL',
+			'logoText': 'LENOVO SPECIAL',
 			'readMore': '/#/support-detail',
 		},
 		{
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
 			'logo': '',
-			'logoText': 'LENEVO SPECIAL',
+			'logoText': 'LENOVO SPECIAL',
 			'readMore': '/#/support-detail',
 		},
 	];

@@ -9,8 +9,10 @@ import { CookieService } from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
 
-// ROUTING MODULES
+// CUSTOM MODULES
 import { AppRoutingModule } from './app-routing.module';
+import { TranslationModule } from './modules/translation.module';
+
 
 // APPLICATION BASE COMPONENTS
 import { AppComponent } from './app.component';
@@ -202,7 +204,8 @@ library.add(far);
 		FontAwesomeModule,
 		NgbModule,
 		Ng5SliderModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		TranslationModule
 	],
 	providers: [
 		CookieService,

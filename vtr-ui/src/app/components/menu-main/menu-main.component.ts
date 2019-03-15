@@ -1,9 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
 import { UserService } from '../../services/user/user.service';
-import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { TranslationService } from 'src/app/services/translation/translation.service';
+import Translation from 'src/app/data-models/translation/translation';
+import { TranslationSection } from 'src/app/enums/translation-section.enum';
 import { ModalLenovoIdComponent } from '../modal/modal-lenovo-id/modal-lenovo-id.component';
 import { environment } from '../../../environments/environment';
 
@@ -12,7 +17,9 @@ import { environment } from '../../../environments/environment';
 	templateUrl: './menu-main.component.html',
 	styleUrls: ['./menu-main.component.scss']
 })
-export class MenuMainComponent implements OnInit {
+export class MenuMainComponent implements OnInit, OnDestroy {
+
+	commonMenuSubscription: Subscription;
 	public appVersion: string = environment.appVersion;
 
 	items = [
@@ -96,7 +103,7 @@ export class MenuMainComponent implements OnInit {
 			label: 'Support',
 			path: 'support',
 			icon: 'wrench',
-			forArm: false,
+			forArm: true,
 			subitems: []
 		}, {
 			id: 'user',
@@ -113,17 +120,29 @@ export class MenuMainComponent implements OnInit {
 		public configService: ConfigService,
 		public deviceService: DeviceService,
 		public userService: UserService,
+		public translationService: TranslationService,
 		private modalService: NgbModal
-	) { }
+	) {
+		this.commonMenuSubscription = this.translationService.subscription
+			.subscribe((translation: Translation) => {
+				this.onLanguageChange(translation);
+			});
+	}
 
 	ngOnInit() {
 	}
 
+	ngOnDestroy() {
+		if (this.commonMenuSubscription) {
+			this.commonMenuSubscription.unsubscribe();
+		}
+	}
+	
 	showItem(item) {
 		let showItem = true;
 		if (this.deviceService.isARM) {
 			if (!item.forArm) {
-				// showItem = false;
+				showItem = false;
 			}
 		}
 		return showItem;
@@ -147,4 +166,9 @@ export class MenuMainComponent implements OnInit {
 		this.userService.removeAuth();
 	}
 
+	onLanguageChange(translation: Translation) {
+		if (translation && translation.type === TranslationSection.CommonMenu) {
+			this.items[0].label = translation.payload.dashboard;
+		}
+	}
 }
