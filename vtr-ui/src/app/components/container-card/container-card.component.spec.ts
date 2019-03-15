@@ -1,9 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContainerCardComponent } from './container-card.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { DisplayService } from 'src/app/services/display/display.service';
-import { DevService } from 'src/app/services/dev/dev.service';
 
 describe('ContainerCardComponent', () => {
   let component: ContainerCardComponent;
@@ -11,14 +8,7 @@ describe('ContainerCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-		imports: [
-			FontAwesomeModule
-		],
-	  declarations: [ ContainerCardComponent ],
-	  providers: [
-		DisplayService,
-		DevService
-	  ]
+      declarations: [ ContainerCardComponent ]
     })
     .compileComponents();
   }));

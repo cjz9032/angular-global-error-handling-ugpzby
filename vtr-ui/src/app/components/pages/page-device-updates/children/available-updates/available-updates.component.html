@@ -21,7 +21,7 @@
 		</div>
 		<div class="col-3">
 			<div class="button-box shift-right">
-				<vtr-ui-button (onClick)="installUpdates($event)"
+				<vtr-ui-button (onClick)="onInstallAllUpdates($event)"
 					[label]="'Install all updates'"></vtr-ui-button>
 			</div>
 		</div>
@@ -36,39 +36,45 @@
 	<div class="row">
 		<div class="col">
 			<div class="updates-lists-container">
-				<div class="row">
+				<div class="row"
+					*ngIf="criticalUpdates && criticalUpdates.length > 0">
 					<div class="col">
 						<div class="header">
-							<div class="heading">{{mockService.criticalUpdates.length}} Critical updates</div>
-							<vtr-ui-list-checkbox [items]="mockService.criticalUpdates"></vtr-ui-list-checkbox>
+							<div class="heading">{{criticalUpdates.length}} Critical updates</div>
+							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
+								[items]="criticalUpdates">
+							</vtr-ui-list-checkbox>
 						</div>
 					</div>
 				</div>
 
-				<div class="row">
+				<div class="row"
+					*ngIf="recommendedUpdates && recommendedUpdates.length > 0">
 					<div class="col">
 						<div class="header">
-							<div class="heading">{{mockService.recommendedUpdates.length}} Recommended updates</div>
-							<vtr-ui-list-checkbox [items]="mockService.recommendedUpdates"></vtr-ui-list-checkbox>
+							<div class="heading">{{recommendedUpdates.length}} Recommended updates</div>
+							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
+								[items]="recommendedUpdates"></vtr-ui-list-checkbox>
 						</div>
 					</div>
 				</div>
 
-				<div class="row">
-					<div class="col">
-						<div class="header">
-							<div class="heading">{{mockService.optionalUpdates.length}} optional updates</div>
-							<vtr-ui-list-checkbox [items]="mockService.optionalUpdates"></vtr-ui-list-checkbox>
-						</div>
+				<div class="row"
+					*ngIf="optionalUpdates && optionalUpdates.length > 0"></div>
+				<div class="col">
+					<div class="header">
+						<div class="heading">{{optionalUpdates.length}} Optional updates</div>
+						<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
+							[items]="optionalUpdates"></vtr-ui-list-checkbox>
 					</div>
 				</div>
+			</div>
 
-				<div class="row mt-10">
-					<div class="col-5">
-						<div class="button-box shift-left">
-							<vtr-ui-button (onClick)="installSelectedUpdates($event)"
-								[label]="'Install Selected updates'"></vtr-ui-button>
-						</div>
+			<div class="row mt-10">
+				<div class="col-5">
+					<div class="button-box shift-left">
+						<vtr-ui-button (onClick)="onInstallSelectedUpdates($event)"
+							[label]="'Install Selected updates'"></vtr-ui-button>
 					</div>
 				</div>
 			</div>

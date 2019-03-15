@@ -1,10 +1,9 @@
-<div [ngClass]="{'is-arm':deviceService.isArm}">
-	<vtr-menu-main></vtr-menu-main>
-	<div class="vtr-app container-fluid">
-		<div class="row">
-			<div class="col p-0">
-				<router-outlet></router-outlet>
-			</div>
+
+<vtr-menu-main></vtr-menu-main>
+<div class="vtr-app container-fluid">
+	<div class="row">
+		<div class="col p-0">
+			<router-outlet></router-outlet>
 		</div>
 	</div>
 </div>
