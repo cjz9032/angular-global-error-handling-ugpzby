@@ -18,10 +18,10 @@ export class PageDashboardComponent implements OnInit {
 	feedbackButtonText = this.submit;
 	public systemStatus: Status[] = [];
 
-	forwardLink = {
+	/*forwardLink = {
 		path: 'dashboard-customize',
 		label: 'Customize Dashboard'
-	};
+	};*/
 
 	constructor(
 		public dashboardService: DashboardService,
