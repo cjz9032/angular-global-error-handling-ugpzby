@@ -10,7 +10,6 @@ import { CommonService } from './services/common/common.service';
 import { LocalStorageKey } from './enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { UserService } from './services/user/user.service';
-import { MetricService } from './services/metric/metric.service';
 
 @Component({
 	selector: 'vtr-root',
