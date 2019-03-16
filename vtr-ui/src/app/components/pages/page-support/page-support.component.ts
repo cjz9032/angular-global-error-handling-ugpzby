@@ -29,8 +29,7 @@ export class PageSupportComponent implements OnInit {
 	}
 
 	getMachineInfo() {
-		try {
-			this.supportService.getMachineInfo().then((machineInfo) => {
+		this.supportService.getMachineInfo().then((machineInfo) => {
 			this.supportService
 				// .getWarranty('PC0G9X77')
 				.getWarranty(machineInfo.serialnumber)
@@ -38,9 +37,6 @@ export class PageSupportComponent implements OnInit {
 					this.warranty = warranty;
 				});
 		});
-		} catch (error) {
-			console.log(error);
-		}
 	}
 
 	ngOnInit() {

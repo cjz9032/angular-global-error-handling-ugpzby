@@ -40,7 +40,7 @@ input + .switch {
 }
 
 input:checked + .switch {
-	background: linear-gradient($gradient_angle_reverse, $go 0%, $go_lighter 100%);
+	background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
 	transition: background 1.2s;
 }
 

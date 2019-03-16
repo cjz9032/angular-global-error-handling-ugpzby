@@ -1,26 +1,60 @@
 <div class="vtr-ui-list-checkbox">
 	<ul class="checkbox-list">
-		<li *ngFor="let item of items">
+		<li *ngFor="let item of items; let i = index">
 			<div class="container-fluid">
 				<div class="row align-items-center">
 					<div class="col col-11 item-text">
 						<div class="custom-control custom-checkbox update-checkbox">
-							<input id="{{ 'updateCheckbox' + randomNumber + item.id }}"
+							<input id="{{ 'updateCheckbox' + randomNumber + i }}"
 								type="checkbox"
 								class="custom-control-input"
-								checked="" />
+								checked=""
+								[name]="item.packageName"
+								(change)="onCheckChange($event)" />
 							<label class="custom-control-label "
-								for="{{ 'updateCheckbox' + randomNumber + item.id }}">
+								for="{{ 'updateCheckbox' + randomNumber + i }}">
 								<span class="title"
 									[ngClass]="{'light-title':item.lightTitle}">
-									{{item.title}}</span>
-								<span class="detail"
+									{{item.packageDesc}}</span>
+								<!-- <span class="detail"
 									[ngClass]="{'highlight':item.asLink}">
-									{{item.detail}}</span>
+									{{item.detail}}</span> -->
 							</label>
 						</div>
-						<div class="button-box"
-							*ngIf="item.rebootRequired">
+						<div class="button-box pl-1"
+							*ngIf="item.packageRebootType === 'RebootForced'">
+							<div class="btn-round-sm">
+								<fa-icon [icon]="['fas', 'undo']"></fa-icon> Reboot required
+							</div>
+						</div>
+					</div>
+					<div class="col col-1 text-right">
+						<div class="question">
+							<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+	<ul class="checkbox-list">
+		<li *ngFor="let item of items; let i = index">
+			<div class="container-fluid">
+				<div class="row align-items-center">
+					<div class="col col-11 item-text">
+						<div class="custom-control custom-checkbox update-checkbox">
+							<fa-icon class="success"
+								[icon]="['fas', 'check-circle']"></fa-icon>
+							<fa-icon class="failure"
+								[icon]="['fas', 'times-circle']"></fa-icon>
+							<label class=" ">
+								<span class="title"
+									[ngClass]="{'light-title':item.lightTitle}">
+									{{item.packageDesc}}</span>
+							</label>
+						</div>
+						<div class="button-box pl-1"
+							*ngIf="item.packageRebootType === 'RebootForced'">
 							<div class="btn-round-sm">
 								<fa-icon [icon]="['fas', 'undo']"></fa-icon> Reboot required
 							</div>

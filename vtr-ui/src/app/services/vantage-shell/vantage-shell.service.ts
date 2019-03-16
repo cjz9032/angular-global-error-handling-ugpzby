@@ -15,7 +15,7 @@ export class VantageShellService {
 		if (shell) {
 			this.phoenix = bootstrap(
 				new inversify.Container(),
-				new shell.VantageRpcClient()
+				{ hsaBroker: new shell.VantageRpcClient() }
 			);
 		}
 	}
@@ -76,6 +76,40 @@ export class VantageShellService {
 	public getWarranty(): any {
 		if (this.phoenix) {
 			return this.phoenix.warranty;
+		}
+		return undefined;
+	}
+
+	public getSystemUpdate(): any {
+		if (this.phoenix) {
+			return this.phoenix.systemUpdate;
+		}
+		return undefined;
+	}
+	/**
+	 * returns EyecareMode object from VantageShellService of JS Bridge
+	 */
+	public getEyeCareMode(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.display.eyeCareMode;
+		}
+		return undefined;
+	}
+	/**
+	 * returns CameraPrivacy object from VantageShellService of JS Bridge
+	 */
+	public getCameraPrivacy(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.camera.cameraPrivacy;
+		}
+		return undefined;
+	}
+	/**
+	 * returns cameraSettings object from VantageShellService of JS Bridge
+	 */
+	public getCameraSettings(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.camera.cameraSettings;
 		}
 		return undefined;
 	}

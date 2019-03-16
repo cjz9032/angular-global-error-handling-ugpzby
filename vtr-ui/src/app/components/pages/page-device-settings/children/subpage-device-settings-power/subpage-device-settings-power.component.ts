@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-enum PowerMode {
-	Sleep = "Charge from sleep",
-	Shutdown = "Charge from shutdown"
-}
 
 @Component({
 	selector: 'vtr-subpage-device-settings-power',
@@ -10,9 +6,7 @@ enum PowerMode {
 	styleUrls: ['./subpage-device-settings-power.component.scss']
 })
 export class SubpageDeviceSettingsPowerComponent implements OnInit {
-
 	title = 'Power Settings';
-
 	headerCaption =
 		'This section enables you to dynamically adjust thermal performance and maximize the battery life.' +
 		' It also has other popular power-related features.' +
@@ -22,11 +16,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	intelligentCooling = false;
 
 	showBatteryThreshold = false;
-
-	toggleAlwaysOnUsbFlag = true;
-	usbChargingCheckboxFlag = false;
-	powerMode = PowerMode.Sleep;
-	value = 1;
 
 	headerMenuItems = [
 		{
@@ -92,7 +81,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			header: 'Conservation Mode',
 			subHeader:
 				`This function is useful to  extend the lifespan of your battery when plugged. <br>
-				When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.`,
+				When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.<br>Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off.	`,
 			isCheckBoxVisible: false,
 			isSwitchVisible: false,
 			tooltipText:
@@ -110,11 +99,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				'Charge USB devices through the Always on USB connector on the computer when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged from the USB connector that is yellow-coded or silk-printed the specified icon.',
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
-			isSwitchChecked: this.toggleAlwaysOnUsbFlag,
 			tooltipText:
 				`Charge USB devices through the Always on USB connector on the computer when the computer is in sleep, hibernation, or off mode.
-				A smartphone or tablet can be charged from the USB connector that is yellow-coded or silk-printed the specified icon.`,
-			checkboxDesc: "Enable USB charging from laptop battery when computer is off."
+				A smartphone or tablet can be charged from the USB connector that is yellow-coded or silk-printed the specified icon.`
 		},
 		{
 			readMoreText: 'Read More',
@@ -125,7 +112,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				`Enable this feature to improve your resume time if you frequently open and close your computer's lid.`,
 			isCheckBoxVisible: false,
 			isSwitchVisible: false,
-			isSwitchChecked: false,
 			tooltipText:
 				`This feature will improve your resume time if you frequently open and close your computer’s lid.
 				When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook
@@ -153,24 +139,4 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	}
 
 	ngOnInit() { }
-
-
-	onUsbChargingStatusChange() {
-		this.updatePowerMode();
-	}
-
-	onToggleOfAlwaysOnUsb(event) {
-		this.toggleAlwaysOnUsbFlag = event.switchValue;
-		this.updatePowerMode();
-	}
-
-	updatePowerMode() {
-		if (this.toggleAlwaysOnUsbFlag && this.usbChargingCheckboxFlag) {
-			this.powerMode = PowerMode.Shutdown;
-		} else if (this.toggleAlwaysOnUsbFlag && !this.usbChargingCheckboxFlag) {
-			this.powerMode = PowerMode.Sleep;
-		} else {
-			this.powerMode = null;
-		}
-	}
 }

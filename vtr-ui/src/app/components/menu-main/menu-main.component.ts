@@ -6,10 +6,13 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
 import { UserService } from '../../services/user/user.service';
+import { ModalLenovoIdComponent } from '../modal/modal-lenovo-id/modal-lenovo-id.component';
+import { CommonService } from 'src/app/services/common/common.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslationService } from 'src/app/services/translation/translation.service';
 import Translation from 'src/app/data-models/translation/translation';
 import { TranslationSection } from 'src/app/enums/translation-section.enum';
-import { ModalLenovoIdComponent } from '../modal/modal-lenovo-id/modal-lenovo-id.component';
 import { environment } from '../../../environments/environment';
 
 @Component({
@@ -19,6 +22,7 @@ import { environment } from '../../../environments/environment';
 })
 export class MenuMainComponent implements OnInit, OnDestroy {
 
+	public deviceModel: string;
 	commonMenuSubscription: Subscription;
 	public appVersion: string = environment.appVersion;
 
@@ -28,14 +32,12 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			label: 'Dashboard',
 			path: 'dashboard',
 			icon: 'columns',
-			forArm: true,
 			subitems: []
 		}, {
 			id: 'device',
 			label: 'Device',
 			path: 'device',
 			icon: 'laptop',
-			forArm: false,
 			subitems: [{
 				id: 'device',
 				label: 'My device',
@@ -60,7 +62,6 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			label: 'Security',
 			path: 'security',
 			icon: 'lock',
-			forArm: false,
 			subitems: [{
 				id: 'security',
 				label: 'My Security',
@@ -110,7 +111,6 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			label: 'User',
 			path: 'user',
 			icon: 'user',
-			forArm: true,
 			subitems: []
 		}
 	];
@@ -118,10 +118,11 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	constructor(
 		private router: Router,
 		public configService: ConfigService,
-		public deviceService: DeviceService,
+		private commonService: CommonService,
 		public userService: UserService,
 		public translationService: TranslationService,
-		private modalService: NgbModal
+		private modalService: NgbModal,
+		private deviceService: DeviceService
 	) {
 		this.commonMenuSubscription = this.translationService.subscription
 			.subscribe((translation: Translation) => {
@@ -130,17 +131,20 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-	}
 
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+	}
 	ngOnDestroy() {
 		if (this.commonMenuSubscription) {
 			this.commonMenuSubscription.unsubscribe();
 		}
 	}
-	
+
 	showItem(item) {
 		let showItem = true;
-		if (this.deviceService.isARM) {
+		if (this.deviceService.isArm) {
 			if (!item.forArm) {
 				showItem = false;
 			}
@@ -158,12 +162,25 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			backdrop: 'static',
 			size: 'lg',
 			centered: true,
-			windowClass: 'lenovo-modal-content'
+			windowClass: 'lenovo-id-modal-size'
 		});
 	}
 
 	onLogout() {
 		this.userService.removeAuth();
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case LocalStorageKey.MachineInfo:
+					this.deviceModel = notification.payload.family;
+					break;
+
+				default:
+					break;
+			}
+		}
 	}
 
 	onLanguageChange(translation: Translation) {

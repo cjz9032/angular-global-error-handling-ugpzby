@@ -50,7 +50,6 @@ import { PageQuestionsComponent } from './components/pages/page-questions/page-q
 import { PageDeviceSettingsComponent } from './components/pages/page-device-settings/page-device-settings.component';
 import { PageDeviceUpdatesComponent } from './components/pages/page-device-updates/page-device-updates.component';
 import { AvailableUpdatesComponent } from './components/pages/page-device-updates/children/available-updates/available-updates.component';
-import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
 import { PageSecurityWifiComponent } from './components/pages/page-security-wifi/page-security-wifi.component';
 import { PageSecurityPasswordComponent } from './components/pages/page-security-password/page-security-password.component';
@@ -85,7 +84,6 @@ import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
 import { CommsService } from './services/comms/comms.service';
 import { DashboardService } from './services/dashboard/dashboard.service';
-import { DeviceService } from './services/device/device.service';
 import { SecurityService } from './services/security/security.service';
 import { UserService } from './services/user/user.service';
 import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
@@ -149,7 +147,6 @@ library.add(far);
 		PageDeviceSettingsComponent,
 		PageDeviceUpdatesComponent,
 		AvailableUpdatesComponent,
-		InstallationHistoryComponent,
 		PageSecurityAntivirusComponent,
 		PageSecurityWifiComponent,
 		PageSecurityPasswordComponent,
@@ -215,7 +212,6 @@ library.add(far);
 		ContainerService,
 		CommsService,
 		DashboardService,
-		DeviceService,
 		SecurityService,
 		UserService,
 		MetricService,
