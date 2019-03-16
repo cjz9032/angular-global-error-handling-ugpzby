@@ -117,6 +117,7 @@ import { UniqueIdPipe } from './pipe/unique-id.pipe';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
 import { MetricsDirective } from './directives/metrics.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
+import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
 
 library.add(fas);
 library.add(fab);
@@ -194,7 +195,8 @@ library.add(far);
 		UniqueIdPipe,
 		ModalBatteryChargeThresholdComponent,
 		MetricsDirective,
-		InstallationHistoryComponent
+		InstallationHistoryComponent,
+		SeparatePascalCasePipe
 	],
 	imports: [
 		BrowserModule,

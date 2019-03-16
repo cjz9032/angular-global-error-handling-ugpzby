@@ -35,31 +35,16 @@
 							[isSwitchChecked]="autoDolbyFeatureStatus.status">
 
 							<div class="my-3"
-								*ngIf="!autoDolbyFeatureStatus.status">
-								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
+								*ngIf="!autoDolbyFeatureStatus.status && dolbyModeResponse.available" >
+								<vtr-ui-rectangle-radio 
+									*ngFor="let dolbyMode of dolbyModeResponse.supporedModes" 
+									[radioId]="'radio'| uniqueId"
 									[group]="radioGroupAutoDolbySettings"
-									[label]="'DYNAMIC'"
-									[value]="'DYNAMIC'"
-									[tooltip]="'Sample tooltip'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio' | uniqueId"
-									[group]="radioGroupAutoDolbySettings"
-									[label]="'MOVIE'"
-									[value]="'MOVIE'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
-									[group]="radioGroupAutoDolbySettings"
-									[label]="'MUSIC'"
-									[value]="'MUSIC'"
-									[tooltip]="'Sample tooltip'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
-									[group]="radioGroupAutoDolbySettings"
-									[label]="'GAME'"
-									[value]="'GAME'"
-									[tooltip]="'Sample tooltip'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
-									[group]="radioGroupAutoDolbySettings"
-									[label]="'VOICE'"
-									[value]="'VOICE'"
-									[tooltip]="'Sample tooltip'"></vtr-ui-rectangle-radio>
+									[label]="dolbyMode | uppercase"
+									[value]='dolbyMode'
+									[checked]="dolbyMode == dolbyModeResponse.currentMode"
+									(change)="onDolbySeetingRadioChange($event)">
+								</vtr-ui-rectangle-radio>
 							</div>
 						</vtr-ui-row-switch>
 					</li>
@@ -158,22 +143,15 @@
 							[showChildContent]="true"
 							[theme]="'white'">
 							<div class="my-3">
-								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
+								<vtr-ui-rectangle-radio 
+									*ngFor="let optimizeMode of microOptimizeModeResponse.modes" 
+									[radioId]="'radio'| uniqueId"
 									[group]="radioOptimiseMicSettings"
-									[label]="'VOICE RECOGINITION'"
-									[value]="'DYNAMIC'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio' | uniqueId"
-									[group]="radioOptimiseMicSettings"
-									[label]="'ONLY MY VOICE'"
-									[value]="'MOVIE'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
-									[group]="radioOptimiseMicSettings"
-									[label]="'NORMAL'"
-									[value]="'MUSIC'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
-									[group]="radioOptimiseMicSettings"
-									[label]="'MULTIPLE VOICES'"
-									[value]="'GAME'"></vtr-ui-rectangle-radio>
+									[label]= "optimizeMode | separatePascalCase"
+									[value]='optimizeMode'
+									[checked]="optimizeMode == microOptimizeModeResponse.current"
+									(change)="onOptimizeModesRadioChange($event)">
+								</vtr-ui-rectangle-radio>
 							</div>
 						</vtr-ui-row-switch>
 					</li>

@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { Microphone } from 'src/app/data-models/common/microphone.model';
+import { Microphone } from 'src/app/data-models/audio/microphone.model';
+import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
+import { MicrophoneOptimizeModes } from 'src/app/data-models/audio/microphone-optimize-modes';
 
 @Injectable({
   providedIn: 'root'
@@ -15,67 +17,152 @@ export class AudioService {
     this.microphone = shellService.getMicrophoneSettings();
     this.dolby = shellService.getDolbySettings();
     this.smartSettings = shellService.getSmartSettings();
-    //&& this.dolby && this.smartSettings
-		if (this.microphone ) {
+		if (this.microphone && this.dolby && this.smartSettings) {
 			this.isShellAvailable = true;
 		}
   }
 
   setMicrophoneVolume(volumn: number): Promise<boolean> {
-    if (this.isShellAvailable) {
-      return this.microphone.setMicrophoneVolume(volumn);
+    try {
+      if (this.isShellAvailable) {
+        return this.microphone.setMicrophoneVolume(volumn);
+      }
+      return undefined;
     }
-    return undefined;
+    catch(error) {
+      throw new Error(error.message);
+    }
   }
 
   //TODO: We need to remove this as we have to use dashboard.setMicphoneStatus
   setMicophoneOnMute(isAvailable: boolean): Promise<boolean> {
-    if (this.isShellAvailable) {
-      return this.microphone.setMicophoneMute(isAvailable);
+    try {
+      if (this.isShellAvailable) {
+        return this.microphone.setMicophoneMute(isAvailable);
+      }
+      return undefined;
     }
-    return undefined;
+    catch(error) {
+      throw new Error(error.message);
+    }
   }
 
   setDolbyOnOff(onOff: boolean): Promise<boolean> {
-    if (this.isShellAvailable) {
-      return this.smartSettings.setDolbyFeatureStatus(onOff);
+    try {
+      if (this.isShellAvailable) {
+        return this.smartSettings.setDolbyFeatureStatus(onOff);
+      }
+      return undefined;
     }
-    return undefined;
+    catch(error) {
+      throw new Error(error.message);
+    }
   }
 
   getDolbyFeatureStatus(): Promise<FeatureStatus> {
-    if (this.isShellAvailable) {
-      return this.smartSettings.getDolbyFeatureStatus();
+    try {
+      if (this.isShellAvailable) {
+        return this.smartSettings.getDolbyFeatureStatus();
+      }
     }
-    return undefined;
+    catch(error) {
+      throw new Error(error.message);
+    }
   }
 
   setMicrophoneAutoOptimization(onOff: boolean): Promise<boolean> {
-    if (this.isShellAvailable) {
-      return this.microphone.setMicrophoneAutoOptimization(onOff);
+    try {
+      if (this.isShellAvailable) {
+        return this.microphone.setMicrophoneAutoOptimization(onOff);
+      }
+      return undefined;
     }
-    return undefined;
+    catch(error) {
+      throw new Error(error.message);
+    }
   }
 
   setSuppressKeyboardNoise(onOff: boolean): Promise<boolean> {
-    if (this.isShellAvailable) {
-      return this.microphone.setMicrophoneKeyboardNoiseSuppression(onOff);
+    try {
+      if (this.isShellAvailable) {
+        return this.microphone.setMicrophoneKeyboardNoiseSuppression(onOff);
+      }
+      return undefined;
     }
-    return undefined;
+    catch(error) {
+      throw new Error(error.message);
+    }
   }
 
   setMicrophoneAEC(onOff: boolean): Promise<boolean> {
-    if (this.isShellAvailable) {
-      return this.microphone.setMicrophoneAEC(onOff);
+    try {
+      if (this.isShellAvailable) {
+        return this.microphone.setMicrophoneAEC(onOff);
+      }
+      return undefined;
     }
-    return undefined;
+    catch(error) {
+      throw new Error(error.message);
+    }
   }
 
   getMicrophoneSettings(): Promise<Microphone> {
-    if (this.isShellAvailable) {
-      return this.microphone.getMicrophoneSettings();
+    try {
+      if (this.isShellAvailable) {
+        return this.microphone.getMicrophoneSettings();
+      }
+      return undefined;
     }
-    return undefined;
+    catch(error) {
+      throw new Error(error.message);
+    }
   }
 
+  getDolbyMode(): Promise<DolbyModeResponse> {
+    try {
+      if (this.isShellAvailable) {
+        return this.dolby.getDolbyMode();
+      }
+      return undefined;
+    }
+    catch(error) {
+      throw new Error(error.message);
+    }
+  }
+  
+  setDolbyMode(mode: string): Promise<boolean> {
+    try {
+      if (this.isShellAvailable) {
+        return this.dolby.setDolbyMode(mode);
+      }
+      return undefined;
+    }
+    catch(error) {
+      throw new Error(error.message);
+    }
+  }
+
+  getSupportedModes(): Promise<MicrophoneOptimizeModes> {
+    try {
+      if (this.isShellAvailable) {
+        return this.microphone.getSupportedModes();
+      }
+      return undefined;
+    }
+    catch(error) {
+      throw new Error(error.message);
+    }
+  }
+
+  setMicrophoneOpitimaztion(mode: string): Promise<boolean> {
+    try {
+      if (this.isShellAvailable) {
+        return this.microphone.setMicrophoneOpitimaztion(mode);
+      }
+      return undefined;
+    }
+    catch(error) {
+      throw new Error(error.message);
+    }
+  }
 }

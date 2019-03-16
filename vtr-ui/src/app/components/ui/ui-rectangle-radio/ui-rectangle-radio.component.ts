@@ -13,8 +13,14 @@ export class UiRectangleRadioComponent implements OnInit {
 	@Input() value: string;
 	@Input() checked: boolean;
 
+	@Output() change: EventEmitter<any> = new EventEmitter();
+
 	constructor() { }
 
 	ngOnInit() {
+	}
+
+	onChange(event) {
+		this.change.emit(event);
 	}
 }

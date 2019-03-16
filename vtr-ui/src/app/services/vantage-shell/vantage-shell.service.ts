@@ -143,7 +143,7 @@ export class VantageShellService {
 	 */
 	public getSmartSettings(): any {
 		if (this.getHwSettings() && this.getHwSettings().smartsettings) {
-			return this.getAudioSettings().smartsettings;
+			return this.getHwSettings().smartsettings;
 		}
 		return undefined;
 	}
