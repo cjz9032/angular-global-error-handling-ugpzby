@@ -187,7 +187,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		console.log('setCameraAutoFocus.then', $event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService
-				.setCameraAutoFocus($event.value);
+				.setCameraAutoExposure($event.value);
 		}
 	}
 

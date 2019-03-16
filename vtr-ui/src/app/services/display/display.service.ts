@@ -105,7 +105,7 @@ export class DisplayService {
 	}
 	public setCameraContrst(value: number): Promise<boolean> {
 		if (this.cameraSettings) {
-			return this.cameraSettings.setCameraContrst(value);
+			return this.cameraSettings.setCameraContrast(value);
 		}
 		return undefined;
 	}
