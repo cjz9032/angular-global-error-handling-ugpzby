@@ -2,7 +2,7 @@ export class CameraDetail {
 	public isPrivacyModeEnabled: boolean;
 	public isAutoExposureEnabled: boolean;
 	public isAutoFocusEnabled: boolean;
-	public hasAccessToCamera: boolean;
+	public hasAccessToCamera = true;
 
 	/**
 	 * Minimum value allowed for brightness
@@ -54,4 +54,46 @@ export class CameraDetail {
 	 * determines how many steps or values to increase on each slide for autoExposure
 	 */
 	public autoExposureStepValue: number;
+}
+export interface ICameraSettingsResponse {
+	brightness: {
+		autoModeSupported: boolean,
+		autoValue: boolean,
+		supported: boolean,
+		min: number, // slider bar min value
+		max: number, // slider bar max value
+		step: number,
+		default: number, //
+		value: number // current value
+	},
+	contrast: {
+		autoModeSupported: boolean,
+		autoValue: boolean,
+		supported: boolean,
+		min: number,
+		max: number,
+		step: number,
+		default: number,
+		value: number
+	},
+	exposure: {
+		autoModeSupported: boolean, // true means auto exposure mode toggle button can be shown
+		autoValue: boolean, // true means auto exposure mode enabled
+		supported: boolean, // true means exposure slider bar can be shown
+		min: number,
+		max: number,
+		step: number,
+		default: number,
+		value: number
+	},
+	focus: {
+		autoModeSupported: boolean,
+		autoValue: boolean,
+		supported: boolean,
+		min: number, // slider bar min value
+		max: number, // slider bar max value
+		step: number,
+		default: number, //
+		value: number // current value
+	};
 }
