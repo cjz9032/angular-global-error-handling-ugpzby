@@ -32,24 +32,26 @@
 									</div>
 								</div>
 
-								<vtr-available-updates *ngIf="isUpdatesAvailable"
+								<vtr-available-updates *ngIf="isUpdatesAvailable && !isUpdateDownloading"
 									[criticalUpdates]="criticalUpdates"
 									[optionalUpdates]="optionalUpdates"
 									[recommendedUpdates]="recommendedUpdates"
+									[isInstallationCompleted]="isInstallationCompleted"
+									[isInstallationSuccess]="isInstallationSuccess"
 									(checkChange)="onUpdateSelectionChange($event)"
 									(installAllUpdate)="onInstallAllUpdate($event)"
 									(installSelectedUpdate)="onInstallSelectedUpdate($event)">
 								</vtr-available-updates>
 
 								<!-- Installation timeline is scope of MVP-2 -->
-								<!-- <div class="row">
+								<div class="row">
 									<div class="col col-12 installation-history-container">
-										<div class="row">
+										<!--<div class="row">
 											<div class="col installation-history">
 												{{ installationHistory }}
 											</div>
 										</div>
-										<div class="row installation-history-div">
+										 <div class="row installation-history-div">
 											<div class="col col-1 installation-history-ellipses">
 												...
 											</div>
@@ -92,14 +94,17 @@
 											<div class="col col-1 installation-history-dash">
 												Now
 											</div>
-										</div>
+										</div> -->
 										<div class="row">
 											<div class="col row1 full-history">
-												Full History
+												<a (click)="onToggleFullHistory()">Full History</a>
 											</div>
 										</div>
+
+										<vtr-installation-history *ngIf="showFullHistory"
+											(reinstallUpdate)="onReinstallUpdate($event)"></vtr-installation-history>
 									</div>
-								</div> -->
+								</div>
 
 							</div>
 						</div>
@@ -112,7 +117,9 @@
 								<div class="col col-12 cont">
 									<vtr-widget-device-update-settings [title]="'Auto update settings'"
 										[description]="'Automatically Install Updates'"
-										[items]="dummyUpdates"></vtr-widget-device-update-settings>
+										[items]="autoUpdateOptions"
+										(toggleOnOff)="onUpdateToggleOnOff($event)">
+									</vtr-widget-device-update-settings>
 								</div>
 							</div>
 							<div class="row mb-40">
