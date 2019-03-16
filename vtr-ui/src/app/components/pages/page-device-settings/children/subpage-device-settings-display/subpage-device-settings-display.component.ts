@@ -95,7 +95,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		});
 	}
 	public onEyeCareModeStatusToggle(event: boolean) {
-		console.log('onEyeCareModeStatusToggle');
+		console.log('onEyeCareModeStatusToggle',event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService.setEyeCareModeState(event)
 				.then((value: boolean) => {

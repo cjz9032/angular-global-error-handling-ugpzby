@@ -57,6 +57,8 @@ export class CameraDetail {
 }
 export interface ICameraSettingsResponse {
 	brightness: {
+		autoModeSupported: boolean,
+		autoValue: boolean,
 		supported: boolean,
 		min: number, // slider bar min value
 		max: number, // slider bar max value
@@ -65,6 +67,8 @@ export interface ICameraSettingsResponse {
 		value: number // current value
 	},
 	contrast: {
+		autoModeSupported: boolean,
+		autoValue: boolean,
 		supported: boolean,
 		min: number,
 		max: number,
@@ -78,11 +82,18 @@ export interface ICameraSettingsResponse {
 		supported: boolean, // true means exposure slider bar can be shown
 		min: number,
 		max: number,
+		step: number,
 		default: number,
 		value: number
 	},
 	focus: {
 		autoModeSupported: boolean,
-		autoValue: boolean
+		autoValue: boolean,
+		supported: boolean,
+		min: number, // slider bar min value
+		max: number, // slider bar max value
+		step: number,
+		default: number, //
+		value: number // current value
 	};
 }
