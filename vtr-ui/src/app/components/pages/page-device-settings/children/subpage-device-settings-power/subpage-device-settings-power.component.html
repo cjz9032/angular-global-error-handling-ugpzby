@@ -17,7 +17,10 @@
 				<div class="row">
 					<div class="col-auto text-wrap subtitle">
 						<h3>Intelligent Cooling</h3>
-						<p>This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.</p>
+						<p>This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings
+							to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes
+							performance while the device is on a stable surface. When off, you can manually set thermal
+							priority.</p>
 					</div>
 				</div>
 				<ul class="list-group list-group-flush">
@@ -54,28 +57,25 @@
 			<vtr-container-collapsible cardTitle="Battery Settings"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
-
-						<li class="">
-
-
-						<vtr-ui-row-switch [title]="batterySettings[0].header"
-							[caption]="batterySettings[0].subHeader"
+					<li class="">
+						<vtr-ui-row-switch [title]="batterySettings.items[0].header"
+							[caption]="batterySettings.items[0].subHeader"
 							[isSwitchVisible]=true
-							[leftIcon]="batterySettings[0].leftImageSource"
-							[readMoreText]="batterySettings[0].readMoreText"
-							[tooltipText]="batterySettings[0].tooltipText">
+							[leftIcon]="batterySettings.items[0].leftImageSource"
+							[readMoreText]="batterySettings.items[0].readMoreText"
+							[tooltipText]="batterySettings.items[0].tooltipText">
 						</vtr-ui-row-switch>
 					</li>
 					<li class="">
-						<vtr-ui-row-switch [title]="batterySettings[1].header"
-							[caption]="batterySettings[1].subHeader"
+						<vtr-ui-row-switch [title]="batterySettings.items[1].header"
+							[caption]="batterySettings.items[1].subHeader"
 							[isSwitchVisible]=true
-							[leftIcon]="batterySettings[1].leftImageSource"
-							[rightIcon]="batterySettings[1].rightImageSource"
-							[readMoreText]="batterySettings[1].readMoreText"
+							[leftIcon]="batterySettings.items[1].leftImageSource"
+							[rightIcon]="batterySettings.items[1].rightImageSource"
+							[readMoreText]="batterySettings.items[1].readMoreText"
 							[showChildContent]="true"
 							(toggleOnOff)="showBatteryThreshold=$event.switchValue;"
-							[tooltipText]="batterySettings[1].tooltipText">
+							[tooltipText]="batterySettings.items[1].tooltipText">
 							<div *ngIf="showBatteryThreshold">
 								<vtr-battery-charge-threshold-settings [title]="'Threshold for Built in battery'"
 									[type]="'primary'">
@@ -90,22 +90,27 @@
 							</div>
 						</vtr-ui-row-switch>
 					</li>
-					<li class="">
-						<vtr-ui-row-switch [title]="batterySettings[2].header"
-							[caption]="batterySettings[2].subHeader"
+					<li class=""
+						*ngIf="batterySettings.status.expressCharging">
+						<vtr-ui-row-switch [title]="batterySettings.items[2].header"
+							[caption]="batterySettings.items[2].subHeader"
 							[isSwitchVisible]=true
-							[leftIcon]="batterySettings[2].leftImageSource"
-							[tooltipText]="batterySettings[2].tooltipText">
+							[leftIcon]="batterySettings.items[2].leftImageSource"
+							[tooltipText]="batterySettings.items[2].tooltipText"
+							[isSwitchChecked]="batterySettings.status.expressCharging"
+							(toggleOnOff)="changeBatteryMode($event,'expressCharging')">
 						</vtr-ui-row-switch>
 					</li>
-					<li class="">
-						<vtr-ui-row-switch [title]="batterySettings[3].header"
-							[caption]="batterySettings[3].subHeader"
+					<li class=""
+						*ngIf="batterySettings.status.conservationMode">
+						<vtr-ui-row-switch [title]="batterySettings.items[3].header"
+							[caption]="batterySettings.items[3].subHeader"
 							[isSwitchVisible]=true
-							[leftIcon]="batterySettings[3].leftImageSource"
-							[readMoreText]="batterySettings[3].readMoreText"
-							[tooltipText]="batterySettings[3].tooltipText">
-
+							[leftIcon]="batterySettings.items[3].leftImageSource"
+							[readMoreText]="batterySettings.items[3].readMoreText"
+							[tooltipText]="batterySettings.items[3].tooltipText"
+							[isSwitchChecked]="batterySettings.status.conservationMode"
+							(toggleOnOff)="changeBatteryMode($event,'conservationMode')">
 						</vtr-ui-row-switch>
 					</li>
 
