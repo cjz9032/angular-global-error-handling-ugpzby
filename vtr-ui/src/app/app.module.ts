@@ -9,8 +9,10 @@ import { CookieService } from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
 
-// ROUTING MODULES
+// CUSTOM MODULES
 import { AppRoutingModule } from './app-routing.module';
+import { TranslationModule } from './modules/translation.module';
+
 
 // APPLICATION BASE COMPONENTS
 import { AppComponent } from './app.component';
@@ -82,7 +84,6 @@ import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
 import { CommsService } from './services/comms/comms.service';
 import { DashboardService } from './services/dashboard/dashboard.service';
-import { DeviceService } from './services/device/device.service';
 import { SecurityService } from './services/security/security.service';
 import { UserService } from './services/user/user.service';
 import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
@@ -115,6 +116,7 @@ import { SanitizeUrlPipe } from './pipe/sanitise-url.pipe';
 import { UniqueIdPipe } from './pipe/unique-id.pipe';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
 import { MetricsDirective } from './directives/metrics.directive';
+import { MetricService } from './services/metric/metric.service';
 
 library.add(fas);
 library.add(fab);
@@ -201,7 +203,8 @@ library.add(far);
 		FontAwesomeModule,
 		NgbModule,
 		Ng5SliderModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		TranslationModule
 	],
 	providers: [
 		CookieService,
@@ -211,9 +214,9 @@ library.add(far);
 		ContainerService,
 		CommsService,
 		DashboardService,
-		DeviceService,
 		SecurityService,
 		UserService,
+		MetricService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
 	bootstrap: [AppComponent],

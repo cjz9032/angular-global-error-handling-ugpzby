@@ -1,0 +1,25 @@
+{
+	"common": {
+		"menu": {
+			"dashboard": "Dashboard",
+			"device": "Device"
+		},
+		"ui": {
+			"on": "on",
+			"off": "off"
+		}
+	},
+	"dashboard": {
+		"feedback": {
+			"title": "Give feedback",
+			"subtitle": "Tell us what you think about vantage",
+			"button": "Give feedback"
+		},
+		"quick-settings": {
+			"title": "Your Quick Settings",
+			"microphone": "Microphone",
+			"camera-privacy": "Camera Privacy",
+			"eye-care-mode": "Eye Care Mode"
+		}
+	}
+}

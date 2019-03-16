@@ -16,7 +16,7 @@ export class VantageShellService {
 			const metricClient = shell.MetricsClient ? new shell.MetricsClient() : null;
 			this.phoenix = bootstrap(
 				new inversify.Container(),
-				{hsaBroker: rpcClient , metricsBroker: metricClient}
+				{ hsaBroker: rpcClient, metricsBroker: metricClient }
 			);
 		}
 	}
@@ -43,6 +43,25 @@ export class VantageShellService {
 	}
 
 	/**
+	 * returns dashboard object from VantageShellService of JS Bridge
+	 */
+	public getDevice(): any {
+		if (this.phoenix) {
+			return this.phoenix.device;
+		}
+	}
+
+	/**
+	 * returns hwsettings object from VantageShellService of JS Bridge
+	*/
+	public getHwSettings(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings;
+		}
+		return undefined;
+	}
+
+	/**
 	 * returns sysinfo object from VantageShellService of JS Bridge
 	 */
 	public getSysinfo(): any {
@@ -51,8 +70,9 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
 	/**
-	 * returns sysinfo object from VantageShellService of JS Bridge
+	 * returns warranty object from VantageShellService of JS Bridge
 	 */
 	public getWarranty(): any {
 		if (this.phoenix) {
@@ -60,12 +80,47 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
-	/**
-	 * returns sysinfo object from VantageShellService of JS Bridge
-	 */
+
 	public getMetrics(): any {
 		if (this.phoenix) {
 			return this.phoenix.metrics;
+		}
+		return undefined;
+	}
+
+	/**
+	 * returns sysinfo object from VantageShellService of JS Bridge
+	 */
+	public getSystemUpdate(): any {
+		if (this.phoenix) {
+			return this.phoenix.systemUpdate;
+		}
+		return undefined;
+	}
+	/**
+	 * returns EyecareMode object from VantageShellService of JS Bridge
+	 */
+	public getEyeCareMode(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.display.eyeCareMode;
+		}
+		return undefined;
+	}
+	/**
+	 * returns CameraPrivacy object from VantageShellService of JS Bridge
+	 */
+	public getCameraPrivacy(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.camera.cameraPrivacy;
+		}
+		return undefined;
+	}
+	/**
+	 * returns cameraSettings object from VantageShellService of JS Bridge
+	 */
+	public getCameraSettings(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.camera.cameraSettings;
 		}
 		return undefined;
 	}

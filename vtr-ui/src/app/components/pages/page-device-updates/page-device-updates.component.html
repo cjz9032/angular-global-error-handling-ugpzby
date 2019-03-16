@@ -18,15 +18,31 @@
 										<vtr-widget-device-update [title]="
 												'An up-to-date system is a healthy system.'
 											"
-											[subTitle1]="'Last update was on'"
-											[subTitle2]="'Next updated scan is scheduled on '"
-											[checkForUpdates]="'Check For Updates'"></vtr-widget-device-update>
+											[subTitle1]="getLastUpdatedText()"
+											[subTitle2]="getNextUpdatedScanText()"
+											[buttonText]="'Check For Updates'"
+											[percent]="percentCompleted"
+											[showProgress]="canShowProgress"
+											[isUpdateDownloading]="isUpdateDownloading"
+											[installingPercent]="installationPercent"
+											[downloadingPercent]="downloadingPercent"
+											(checkForUpdate)="onCheckForUpdates()"
+											(cancelUpdateCheck)="onCancelUpdateCheck()">
+										</vtr-widget-device-update>
 									</div>
 								</div>
 
-								<vtr-available-updates></vtr-available-updates>
+								<vtr-available-updates *ngIf="isUpdatesAvailable"
+									[criticalUpdates]="criticalUpdates"
+									[optionalUpdates]="optionalUpdates"
+									[recommendedUpdates]="recommendedUpdates"
+									(checkChange)="onUpdateSelectionChange($event)"
+									(installAllUpdate)="onInstallAllUpdate($event)"
+									(installSelectedUpdate)="onInstallSelectedUpdate($event)">
+								</vtr-available-updates>
 
-								<div class="row">
+								<!-- Installation timeline is scope of MVP-2 -->
+								<!-- <div class="row">
 									<div class="col col-12 installation-history-container">
 										<div class="row">
 											<div class="col installation-history">
@@ -83,7 +99,8 @@
 											</div>
 										</div>
 									</div>
-								</div>
+								</div> -->
+
 							</div>
 						</div>
 					</div>
@@ -103,7 +120,7 @@
 									<vtr-container-card
 										[img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
 										[title]="'Lenovo Support website'"
-										[logoText]="'LENEVO SPECIAL'"
+										[logoText]="'LENOVO SPECIAL'"
 										[readMore]="'http://www.google.com'"
 										[type]="'partnerarticle'"
 										[ratioX]="4"
@@ -117,7 +134,6 @@
 									<vtr-widget-reboot></vtr-widget-reboot>
 								</div>
 							</div>
-
 						</div>
 					</div>
 				</div>
