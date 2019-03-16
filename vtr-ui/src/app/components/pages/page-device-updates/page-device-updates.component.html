@@ -32,10 +32,12 @@
 									</div>
 								</div>
 
-								<vtr-available-updates *ngIf="isUpdatesAvailable"
+								<vtr-available-updates *ngIf="isUpdatesAvailable && !isUpdateDownloading"
 									[criticalUpdates]="criticalUpdates"
 									[optionalUpdates]="optionalUpdates"
 									[recommendedUpdates]="recommendedUpdates"
+									[isInstallationCompleted]="isInstallationCompleted"
+									[isInstallationSuccess]="isInstallationSuccess"
 									(checkChange)="onUpdateSelectionChange($event)"
 									(installAllUpdate)="onInstallAllUpdate($event)"
 									(installSelectedUpdate)="onInstallSelectedUpdate($event)">
@@ -112,7 +114,9 @@
 								<div class="col col-12 cont">
 									<vtr-widget-device-update-settings [title]="'Auto update settings'"
 										[description]="'Automatically Install Updates'"
-										[items]="dummyUpdates"></vtr-widget-device-update-settings>
+										[items]="autoUpdateOptions"
+										(toggleOnOff)="onUpdateToggleOnOff($event)">
+									</vtr-widget-device-update-settings>
 								</div>
 							</div>
 							<div class="row mb-40">

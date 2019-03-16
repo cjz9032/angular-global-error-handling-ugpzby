@@ -14,6 +14,7 @@ import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
 export class SystemUpdateService {
 
 	private systemUpdateBridge: any;
+	public autoUpdateStatus: any;
 	public isShellAvailable = false;
 	public isCheckForUpdateComplete = true;
 	public isUpdatesAvailable = false;
@@ -43,7 +44,15 @@ export class SystemUpdateService {
 	 */
 	public getUpdateSchedule() {
 		if (this.systemUpdateBridge) {
-			return this.systemUpdateBridge.getUpdateSchedule();
+			return this.systemUpdateBridge.getUpdateSchedule()
+				.then((response) => {
+					console.log('getUpdateSchedule', response);
+					this.autoUpdateStatus = {
+						criticalAutoUpdates: (response.criticalAutoUpdates === 'ON') ? true : false,
+						recommendedAutoUpdates: (response.recommendedAutoUpdates === 'ON') ? true : false
+					};
+					this.commonService.sendNotification(UpdateProgress.AutoUpdateStatus, this.autoUpdateStatus);
+				});
 		}
 		return undefined;
 	}
@@ -54,10 +63,17 @@ export class SystemUpdateService {
 	 * @param recommendedUpdate  boolean value, true = on, false = off
 	 */
 	public setUpdateSchedule(criticalUpdate: boolean, recommendedUpdate: boolean) {
-		// {
-		// criticalAutoUpdates: "ON", // "ON"|"OFF"
-		// recommendedAutoUpdates: "ON" // "ON"|"OFF"
-		// }
+		const request = {
+			criticalAutoUpdates: (criticalUpdate) ? 'ON' : 'OFF',
+			recommendedAutoUpdates: (recommendedUpdate) ? 'ON' : 'OFF'
+		};
+		this.systemUpdateBridge.setUpdateSchedule(request)
+			.then((response) => {
+				console.log('setUpdateSchedule', response);
+			}).catch((error) => {
+				// get current status
+				this.getUpdateSchedule();
+			});
 	}
 
 	public getUpdateHistory() {
@@ -82,6 +98,8 @@ export class SystemUpdateService {
 				} else {
 					this.commonService.sendNotification(UpdateProgress.UpdatesNotAvailable);
 				}
+			}).catch((error) => {
+				console.log('checkForUpdates', error);
 			});
 		}
 		return undefined;
@@ -89,11 +107,13 @@ export class SystemUpdateService {
 
 	public cancelUpdateCheck() {
 		if (this.systemUpdateBridge) {
-			this.systemUpdateBridge.cancelSearch().then((status: boolean) => {
-				// todo: ui changes to show on update cancel
-			}).catch((error) => {
-				console.log('cancelUpdateCheck', error);
-			});
+			this.systemUpdateBridge.cancelSearch()
+				.then((status: boolean) => {
+					// todo: ui changes to show on update cancel
+				})
+				.catch((error) => {
+					console.log('cancelUpdateCheck', error);
+				});
 		}
 	}
 
@@ -123,6 +143,7 @@ export class SystemUpdateService {
 			const packages = this.mapToInstallRequest(updatesToInstall);
 			console.log('installSelectedUpdates', updatesToInstall, packages);
 
+			this.commonService.sendNotification(UpdateProgress.InstallationStarted);
 			this.systemUpdateBridge.installUpdates(packages, (progress: number) => {
 				console.log('installSelectedUpdates callback', progress);
 				this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);

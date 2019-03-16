@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
 	selector: 'vtr-widget-device-update-settings',
@@ -11,10 +11,16 @@ export class WidgetDeviceUpdateSettingsComponent implements OnInit {
 	@Input() description: string;
 	@Input() items: any[];
 
+	@Output() toggleOnOff = new EventEmitter<any>();
+
 	constructor() {
 	}
 
 	ngOnInit() {
+	}
+
+	public onToggleOnOff($event: any) {
+		this.toggleOnOff.emit($event);
 	}
 }
 

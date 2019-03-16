@@ -4,6 +4,8 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
+import { SystemUpdateStatusCode } from 'src/app/enums/system-update-status-code.enum';
+import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -21,14 +23,17 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	private nextScheduleScanTime = new Date('1970-01-01T01:00:00');
 	public percentCompleted = 0;
 	public updateInfo;
-	public criticalUpdates: any;
-	public recommendedUpdates: any;
-	public optionalUpdates: any;
+	public criticalUpdates: AvailableUpdateDetail[];
+	public recommendedUpdates: AvailableUpdateDetail[];
+	public optionalUpdates: AvailableUpdateDetail[];
 	public isUpdatesAvailable = false;
 	public canShowProgress = false;
 	public isUpdateDownloading = false;
 	public installationPercent = 0;
 	public downloadingPercent = 0;
+
+	public isInstallationSuccess = false;
+	public isInstallationCompleted = false;
 
 	private notificationSubscription: Subscription;
 
@@ -56,15 +61,17 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		}
 	];
 
-	dummyUpdates = [
+	public autoUpdateOptions = [
 		{
 			readMoreText: '',
 			rightImageSource: ['far', 'question-circle'],
 			leftImageSource: ['fas', 'battery-three-quarters'],
 			header: 'Critical Updates',
+			name: 'critical-updates',
 			subHeader: '',
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
+			isChecked: true,
 			tooltipText: 'Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption.'
 		},
 		{
@@ -72,9 +79,11 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			rightImageSource: ['far', 'question-circle'],
 			leftImageSource: ['fas', 'battery-three-quarters'],
 			header: 'Recommended Updates',
+			name: 'recommended-updates',
 			subHeader: '',
 			isCheckBoxVisible: false,
 			isSwitchVisible: true,
+			isChecked: true,
 			tooltipText: 'Recommended driver updates keep your computer running at optimal performance.'
 		},
 		{
@@ -82,9 +91,11 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			rightImageSource: '',
 			leftImageSource: ['fas', 'battery-three-quarters'],
 			header: 'Windows Updates',
+			name: 'windows-updates',
 			subHeader: '',
 			isCheckBoxVisible: false,
 			isSwitchVisible: false,
+			isChecked: true,
 			linkText: 'Windows Settings',
 			linkPath: ''
 		}
@@ -106,6 +117,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.isUpdatesAvailable = true;
 			this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 		}
+
+		this.systemUpdateService.getUpdateSchedule();
 	}
 
 	ngOnDestroy() {
@@ -147,68 +160,18 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		return `${this.nextScanText} ${scanDate} at ${scanTime}`;
 	}
 
-	onCheckForUpdates() {
+	public onCheckForUpdates() {
 		if (this.systemUpdateService.isShellAvailable) {
 			this.canShowProgress = true;
 			this.isUpdatesAvailable = false;
+			this.resetState();
 			this.systemUpdateService.checkForUpdates();
 		}
 	}
 
-	onCancelUpdateCheck() {
+	public onCancelUpdateCheck() {
 		if (this.systemUpdateService.isShellAvailable) {
 			this.systemUpdateService.cancelUpdateCheck();
-		}
-	}
-
-	private setUpdateByCategory(updateList: Array<any>) {
-		if (updateList) {
-			this.optionalUpdates = this.filterUpdate(updateList, 'optional');
-			this.recommendedUpdates = this.filterUpdate(updateList, 'recommended');
-			this.criticalUpdates = this.filterUpdate(updateList, 'critical');
-		}
-	}
-
-	private filterUpdate(updateList: Array<any>, packageSeverity: string) {
-		const updates = updateList.filter((value: any) => {
-			return value.packageSeverity.toLowerCase() === packageSeverity.toLowerCase();
-		});
-		return updates;
-	}
-
-	private onNotification(notification: AppNotification) {
-		if (notification) {
-			switch (notification.type) {
-				case UpdateProgress.UpdateCheckInProgress:
-					this.ngZone.run(() => {
-						this.canShowProgress = true;
-						this.percentCompleted = notification.payload;
-					});
-					break;
-				case UpdateProgress.UpdateCheckCompleted:
-					this.canShowProgress = false;
-					this.percentCompleted = 0;
-					break;
-				case UpdateProgress.UpdatesAvailable:
-					this.isUpdatesAvailable = true;
-					this.setUpdateByCategory(notification.payload.updateList);
-					break;
-				case UpdateProgress.UpdatesNotAvailable:
-					// todo : no updates available msg
-					break;
-				case UpdateProgress.InstallingUpdate:
-					this.ngZone.run(() => {
-						this.isUpdateDownloading = true;
-						this.installationPercent = notification.payload.installPercentage;
-						this.downloadingPercent = notification.payload.downloadPercentage;
-					});
-					break;
-				case UpdateProgress.InstallationComplete:
-					this.isUpdateDownloading = false;
-					break;
-				default:
-					break;
-			}
 		}
 	}
 
@@ -220,15 +183,100 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	public onInstallAllUpdate($event: any) {
 		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
-			this.isUpdateDownloading = false;
+			this.resetState();
 			this.systemUpdateService.installUpdates();
 		}
 	}
 
 	public onInstallSelectedUpdate($event: any) {
 		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
-			this.isUpdateDownloading = false;
+			this.resetState();
 			this.systemUpdateService.installSelectedUpdates();
 		}
+	}
+
+	public onUpdateToggleOnOff($event) {
+		console.log('onUpdateToggleOnOff', $event);
+		if (this.systemUpdateService.isShellAvailable) {
+			const { name, checked } = $event.target;
+			let { criticalAutoUpdates, recommendedAutoUpdates } = this.systemUpdateService.autoUpdateStatus;
+			if (name === 'critical-updates') {
+				criticalAutoUpdates = checked;
+			} else if (name === 'recommended-updates') {
+				recommendedAutoUpdates = checked;
+			}
+			this.systemUpdateService.setUpdateSchedule(criticalAutoUpdates, recommendedAutoUpdates);
+		}
+	}
+
+	private setUpdateByCategory(updateList: Array<AvailableUpdateDetail>) {
+		if (updateList) {
+			this.optionalUpdates = this.filterUpdate(updateList, 'optional');
+			this.recommendedUpdates = this.filterUpdate(updateList, 'recommended');
+			this.criticalUpdates = this.filterUpdate(updateList, 'critical');
+		}
+	}
+
+	private filterUpdate(updateList: Array<AvailableUpdateDetail>, packageSeverity: string) {
+		const updates = updateList.filter((value: AvailableUpdateDetail) => {
+			return (value.packageSeverity.toLowerCase() === packageSeverity.toLowerCase()
+				&& value.isSelected);
+		});
+		return updates;
+	}
+
+	private onNotification(notification: AppNotification) {
+		console.log('onNotification', notification);
+
+		if (notification) {
+			const { type, payload } = notification;
+
+			switch (type) {
+				case UpdateProgress.UpdateCheckInProgress:
+					this.ngZone.run(() => {
+						this.canShowProgress = true;
+						this.percentCompleted = payload;
+					});
+					break;
+				case UpdateProgress.UpdateCheckCompleted:
+					this.canShowProgress = false;
+					this.percentCompleted = 0;
+					break;
+				case UpdateProgress.UpdatesAvailable:
+					this.isUpdatesAvailable = true;
+					this.setUpdateByCategory(payload.updateList);
+					break;
+				case UpdateProgress.UpdatesNotAvailable:
+					// todo : no updates available msg
+					break;
+				case UpdateProgress.InstallationStarted:
+					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
+					break;
+				case UpdateProgress.InstallingUpdate:
+					this.ngZone.run(() => {
+						this.isUpdateDownloading = true;
+						this.installationPercent = payload.installPercentage;
+						this.downloadingPercent = payload.downloadPercentage;
+					});
+					break;
+				case UpdateProgress.InstallationComplete:
+					this.isUpdateDownloading = false;
+					this.isInstallationCompleted = true;
+					this.isInstallationSuccess = (payload.status === SystemUpdateStatusCode.SUCCESS);
+					break;
+				case UpdateProgress.AutoUpdateStatus:
+					this.autoUpdateOptions[0].isChecked = payload.criticalAutoUpdates;
+					this.autoUpdateOptions[1].isChecked = payload.recommendedAutoUpdates;
+					break;
+				default:
+					break;
+			}
+		}
+	}
+
+	private resetState() {
+		this.isUpdateDownloading = false;
+		this.isInstallationSuccess = false;
+		this.isInstallationCompleted = false;
 	}
 }
