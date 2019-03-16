@@ -28,8 +28,7 @@ export class AppComponent implements OnInit {
 		private deviceService: DeviceService,
 		private commonService: CommonService,
 		translate: TranslateService,
-		private userService: UserService,
-		private metricService: MetricService
+		private userService: UserService
 	) {
 		translate.addLangs(['en', 'zh-Hans']);
 		translate.setDefaultLang('en');
