@@ -1,4 +1,5 @@
 @import "../../../app.theme";
+
 .vtr-widget-device-update {
 	.systemupdate-background {
 		border-radius: 0.5rem;
@@ -8,6 +9,7 @@
 		width: 100%;
 		background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
 		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+
 		.title {
 			color: $light;
 			font-size: 3.5rem;
@@ -18,6 +20,7 @@
 			padding-bottom: 2rem;
 			padding-right: 5rem;
 		}
+
 		.row1 {
 			opacity: 0.5;
 			color: $light;
@@ -27,11 +30,13 @@
 			padding-top: 0rem;
 			padding-right: 5rem;
 		}
+
 		.button-row {
 			padding-left: 5rem;
 			padding-bottom: 5rem;
 			padding-top: 3rem;
 			padding-right: 5rem;
+
 			.action-button {
 				border-radius: 2.5rem;
 				background: $gradient_main;
@@ -47,6 +52,7 @@
 				cursor: pointer;
 			}
 		}
+
 		.progress-div {
 			padding-left: 5rem;
 			padding-right: 5rem;
@@ -58,6 +64,7 @@
 				border-top: 0;
 				margin-top: 0;
 			}
+
 			.progress-title {
 				color: $light;
 				font-size: 2.5rem;
@@ -67,6 +74,7 @@
 				padding-bottom: 2rem;
 				padding-right: 5rem;
 			}
+
 			.progress-percent-text {
 				color: $light;
 				font-size: 2.5rem;
@@ -75,8 +83,10 @@
 				padding-top: 5rem;
 				padding-bottom: 2rem;
 				float: right;
+
 				.progress-right {
 					float: right;
+
 					.progress-value-text {
 						color: $light;
 						font-size: 1.4rem;
@@ -87,6 +97,7 @@
 						text-align: left;
 						font-size: 3rem !important;
 					}
+
 					.progress-complete-text {
 						color: $light;
 						font-size: 1.4rem;
@@ -99,6 +110,7 @@
 				}
 			}
 		}
+
 		.progress-bar-div-container {
 			padding-left: 5rem;
 			padding-right: 5rem;
@@ -107,6 +119,7 @@
 				padding: 1rem;
 				border-radius: 1.5rem;
 				background: linear-gradient($gradient_angle_reverse, $main_darkest 0%, $main_darker 100%);
+
 				::ng-deep .mat-progress-bar-fill::after {
 					background: linear-gradient(90deg, $go 0%, $go 100%);
 				}
@@ -118,8 +131,23 @@
 				::ng-deep .mat-progress-bar {
 					border-radius: 0.4rem;
 				}
+
+				.progress {
+					height: 0.2rem;
+
+					.progress-bar {
+						height: 0.8rem;
+						border-radius: 0.8rem;
+						margin-top: -0.3rem;
+
+						&.bg-info {
+							background: linear-gradient(90deg, $go_light 0%, $go_dark 100%) !important;
+						}
+					}
+				}
 			}
 		}
+
 		.cancel-check {
 			color: $light;
 			font-size: 1.3rem;
