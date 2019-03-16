@@ -16,6 +16,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	implements OnInit, OnDestroy {
 	title = 'Display & Camera Settings';
 	public dataSource: any;
+	public eyecareDatasource: any ;
 	public cameraDetails1: ICameraSettingsResponse;
 	private cameraDetailSubscription: Subscription;
 	public eyeCareModeStatus = new FeatureStatus(false, true);
@@ -48,7 +49,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.getEyeCareModeStatus();
 		this.getCameraPrivacyModeStatus();
 		this.getCameraDetails();
-
+		this.getDisplayColorTemperature();
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			cameraDetail => {
 				this.dataSource = cameraDetail;
@@ -67,7 +68,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	/**
 	 * When Go to windows privacy settings link button is clicked
 	 */
-	public onPrivacySettingClick() {}
+	public onPrivacySettingClick() { }
 
 	/**
 	 * When Camera Privacy Mode radio is toggled
@@ -88,14 +89,22 @@ export class SubpageDeviceSettingsDisplayComponent
 		// 	.catch(error => {
 		// 		console.log(error);
 		// 	});
-			console.log('Inside');
+		console.log('Inside');
 		this.displayService.getCameraSettingsInfo().then((response) => {
 			console.log('getCameraDetails.then', response);
 			this.dataSource = response;
 		});
 	}
+	private getDisplayColorTemperature()
+	{
+		console.log('Inside Eycaremode details');
+		this.displayService.getDisplayColortemperature().then((response) => {
+			console.log('getDisplayColortemperature.then', response);
+			this.eyecareDatasource = response;
+		});
+	}
 	public onEyeCareModeStatusToggle(event: boolean) {
-		console.log('onEyeCareModeStatusToggle',event);
+		console.log('onEyeCareModeStatusToggle', event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService.setEyeCareModeState(event)
 				.then((value: boolean) => {
@@ -111,12 +120,12 @@ export class SubpageDeviceSettingsDisplayComponent
 			this.displayService
 				.getEyeCareModeState()
 				.then((featureStatus: FeatureStatus) => {
-					console.log('getEyeCareMode.then', featureStatus);
+					console.log('getEyeCareModeState.then', featureStatus);
 					this.eyeCareModeStatus = featureStatus;
 					// alert(this.eyeCareModeStatus.status);
 				})
 				.catch(error => {
-					console.error('getEyeCareMode', error);
+					console.error('getEyeCareModeState', error);
 				});
 		}
 	}
@@ -143,47 +152,41 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.log('getCameraStatus.then', featureStatus);
 						this.cameraPrivacyModeStatus = featureStatus;
 					}
-
 				})
 				.catch(error => {
 					console.error('getCameraStatus', error);
 				});
 		}
 	}
-	public onBrightnessChange($event: ChangeContext)
-	{
+	public onBrightnessChange($event: ChangeContext) {
 		console.log('Brightness changed in display', $event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService
 				.setCameraBrightness($event.value);
 		}
 	}
-	public onContrastChange($event: ChangeContext)
-	{
+	public onContrastChange($event: ChangeContext) {
 		console.log('contrast changed in display', $event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService
 				.setCameraContrst($event.value);
 		}
 	}
-	public onCameraAutoExposureToggle($event: ChangeContext)
-	{
+	public onCameraAutoExposureToggle($event: ChangeContext) {
 		console.log('setCameraAutoExposure.then', $event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService
 				.setCameraAutoExposure($event.value);
 		}
 	}
-	public onCameraExposureValueChange($event: ChangeContext)
-	{
+	public onCameraExposureValueChange($event: ChangeContext) {
 		console.log('setCameraExposureValue.then', $event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService
 				.setCameraExposureValue($event.value);
 		}
 	}
-	public onCameraAutoFocusToggle($event: any)
-	{
+	public onCameraAutoFocusToggle($event: any) {
 		console.log('setCameraAutoFocus.then', $event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService
@@ -191,12 +194,18 @@ export class SubpageDeviceSettingsDisplayComponent
 		}
 	}
 
-	public resetCameraSettings()
-	{
+	public resetCameraSettings() {
 		console.log('Reset Camera settings');
 		if (this.displayService.isShellAvailable) {
 			this.displayService
 				.resetCameraSettings();
+		}
+	}
+	public onEyecareTemparaturechange($event: ChangeContext) {
+		console.log('temparature changed in display', $event);
+		if (this.displayService.isShellAvailable) {
+			this.displayService
+				.setDisplayColortemperature($event.value);
 		}
 	}
 }
