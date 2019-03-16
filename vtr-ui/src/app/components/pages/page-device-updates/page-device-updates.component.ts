@@ -6,6 +6,9 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
 import { SystemUpdateStatusCode } from 'src/app/enums/system-update-status-code.enum';
 import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
+import { InstallUpdate } from 'src/app/data-models/system-update/install-update.model';
+import { UpdateInstallAction } from 'src/app/enums/update-install-action.enum';
+import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enum';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -34,7 +37,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	public isInstallationSuccess = false;
 	public isInstallationCompleted = false;
-
+	public showFullHistory = false;
 	private notificationSubscription: Subscription;
 
 	nextUpdatedDate = '11/12/2018 at 10:00 AM';
@@ -108,7 +111,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	) { }
 
 	ngOnInit() {
-		this.getLastUpdateScanDetail();
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
@@ -118,7 +120,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 		}
 
+		this.getLastUpdateScanDetail();
 		this.systemUpdateService.getUpdateSchedule();
+		this.systemUpdateService.getUpdateHistory();
 	}
 
 	ngOnDestroy() {
@@ -184,7 +188,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public onInstallAllUpdate($event: any) {
 		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
 			this.resetState();
-			this.systemUpdateService.installUpdates();
+			this.systemUpdateService.installAllUpdates();
 		}
 	}
 
@@ -209,6 +213,20 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	public onToggleFullHistory() {
+		this.showFullHistory = !this.showFullHistory;
+	}
+
+	public onReinstallUpdate(packageID: string) {
+		if (packageID) {
+			const update = new InstallUpdate();
+			update.packageID = packageID;
+			update.action = UpdateInstallAction.DownloadAndInstall;
+			update.severity = UpdateInstallSeverity.Recommended;
+			this.systemUpdateService.installFailedUpdate(update);
+		}
+	}
+
 	private setUpdateByCategory(updateList: Array<AvailableUpdateDetail>) {
 		if (updateList) {
 			this.optionalUpdates = this.filterUpdate(updateList, 'optional');
@@ -226,8 +244,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	private onNotification(notification: AppNotification) {
-		console.log('onNotification', notification);
-
 		if (notification) {
 			const { type, payload } = notification;
 
