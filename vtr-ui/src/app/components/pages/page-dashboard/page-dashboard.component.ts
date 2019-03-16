@@ -141,7 +141,7 @@ export class PageDashboardComponent implements OnInit {
 			warranty.id = 'warranty';
 			warranty.title = 'Warranty';
 			warranty.detail = 'Warranty not found';
-			warranty.path = 'ms-settings:storagesense';
+			warranty.path = '/support';
 			warranty.asLink = false;
 			/* warranty.isSystemLink = true; */
 			warranty.isSystemLink = false;
