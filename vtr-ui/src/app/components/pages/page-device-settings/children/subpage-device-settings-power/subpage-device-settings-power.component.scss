@@ -64,23 +64,27 @@
 	.disable {
 		opacity: 0.65;
 	}
-	.search-icon{
-		>fa-icon{
+
+	.search-icon {
+		>fa-icon {
 			font-size: 2rem;
 			color: $light;
 		}
 	}
-	.int-cool-text{
+
+	.int-cool-text {
 		font-size: 1.8rem;
 		color: $light;
 		letter-spacing: 0.05rem;
 	}
-	.settings-link{
+
+	.settings-link {
 		color: $light;
 		font-size: 1.8rem;
 		text-decoration: underline;
 	}
-	.read-more-link{
+
+	.read-more-link {
 		color: $light;
 		text-decoration: underline;
 	}
