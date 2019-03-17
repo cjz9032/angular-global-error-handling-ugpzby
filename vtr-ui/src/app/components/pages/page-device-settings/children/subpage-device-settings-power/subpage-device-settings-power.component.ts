@@ -17,6 +17,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 
 	showBatteryThreshold = false;
 
+	value = 1;
+
 	headerMenuItems = [
 		{
 			title: 'Intelligent Cooling',
