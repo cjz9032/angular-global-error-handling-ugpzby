@@ -54,7 +54,7 @@
 				<div class="text-regular">
 					<input type="text"
 					 placeholder="Your location">
-					<button type="button"
+					<button type="button" vtrMetrics metricsParent="lenovo-wifi-security" metricsEvent="itemClick" metricsItem="check threat"
 					 class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
 						Check threat
 					</button>
@@ -67,7 +67,7 @@
 			<div class=" pull right">
 				<div class="col-12">
 					<button type="button"
-					 (click)="enableWifiSecurity()"
+					 (click)="enableWifiSecurity()" vtrMetrics  metricsParent="lenovo-wifi-security" metricsItem="enable wifi security" metricsEvent="itemClick"
 					 class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
 						Enable Wifi Security
 					</button>

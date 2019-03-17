@@ -11,11 +11,11 @@
 				<div class="row">
 					<div class="col row1">{{subTitle2}}</div>
 				</div>
-				<div *ngIf="!showProgress"
+				<div *ngIf="!showProgress && !isUpdateDownloading"
 					class="row">
 					<div class="col button-row">
-						<button class="action-button"
-							(click)="showUpdates()">{{checkForUpdates}}</button>
+						<button class="action-button" vtrMetrics metricsEvent="itemClick" metricsParent="update-to-date" metricsItem="check-for-updates"
+							(click)="onCheckForUpdates()">{{buttonText}}</button>
 					</div>
 				</div>
 				<div *ngIf="showProgress"
@@ -24,7 +24,7 @@
 						<div class="col col-10 progress-title">{{checkingForUpdates}}</div>
 						<div class="col col-2 progress-percent-text">
 							<div class="row progress-right">
-								<span class="col-4 progress-value-text">{{progressValue}}</span>
+								<span class="col-4 progress-value-text">{{percent}}% </span>
 								<span class="col-8 progress-complete-text">{{complete}}</span>
 							</div>
 						</div>
@@ -34,7 +34,7 @@
 							<!-- <mat-progress-bar mode="determinate"
 								value="40"></mat-progress-bar> -->
 							<ngb-progressbar type="info"
-								[value]="80"
+								[value]="percent"
 								height="5px"></ngb-progressbar>
 						</div>
 					</div>
@@ -42,6 +42,60 @@
 						<div class="col col-12 cancel-check">
 							<a class="cancel-check-text"
 								(click)="cancelUpdates()">{{cancelCheck}}</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col row"
+					*ngIf="isUpdateDownloading">
+					<div class="col col-12 row progress-div">
+						<div class="col col-10 progress-title">
+							<fa-icon [icon]="['fas', downloadingIcon]">
+							</fa-icon>
+							{{downloadingUpdateText}}
+						</div>
+						<div class="col col-2 progress-percent-text">
+							<div class="row progress-right">
+								<span class="col-4 progress-value-text">{{downloadingPercent}}% </span>
+								<span class="col-8 progress-complete-text">{{complete}}</span>
+							</div>
+						</div>
+					</div>
+					<div class="col col-12 row progress-bar-div-container">
+						<div class="col col-12 progress-bar-div">
+							<ngb-progressbar type="info"
+								[value]="downloadingPercent"
+								height="5px"></ngb-progressbar>
+						</div>
+					</div>
+
+					<div class="col col-12 row progress-div install-progress">
+						<div class="col col-10 progress-title">
+							<fa-icon [icon]="['fas', installingIcon]">
+							</fa-icon>
+							{{installingUpdateText}}
+						</div>
+						<div class="col col-2 progress-percent-text">
+							<div class="row progress-right">
+								<span class="col-4 progress-value-text">{{installingPercent}}% </span>
+								<span class="col-8 progress-complete-text">{{complete}}</span>
+							</div>
+						</div>
+					</div>
+					<div class="col col-12 row progress-bar-div-container">
+						<div class="col col-12 progress-bar-div">
+							<!-- <mat-progress-bar mode="determinate"
+								value="40"></mat-progress-bar> -->
+							<ngb-progressbar type="info"
+								[value]="installingPercent"
+								height="5px"></ngb-progressbar>
+						</div>
+					</div>
+					<div class="col col-12 row">
+						<div class="col col-12 cancel-check">
+							<!-- raj: cancel is not available in api as api owner is not sure about its behavior -->
+							<!-- <a class="cancel-check-text"
+								(click)="cancelUpdates()">Cancel Updates</a> -->
 						</div>
 					</div>
 				</div>

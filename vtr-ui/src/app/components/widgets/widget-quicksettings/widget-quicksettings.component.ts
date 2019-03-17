@@ -12,6 +12,17 @@ export class WidgetQuicksettingsComponent implements OnInit {
 	public cameraStatus = new FeatureStatus(false, true);
 	public microphoneStatus = new FeatureStatus(false, true);
 	public eyeCareModeStatus = new FeatureStatus(false, true);
+	public quickSettingsWidget = [
+		{
+			tooltipText: 'MICROPHONE'
+		},
+		{
+			tooltipText: 'CAMERA PRIVACY'
+		},
+		{
+			tooltipText: 'EYE CARE MODE'
+		}
+	] ;
 
 	@Output() toggle = new EventEmitter<{ sender: string; value: boolean }>();
 

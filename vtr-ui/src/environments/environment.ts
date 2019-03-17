@@ -13,5 +13,6 @@ export const environment = {
 	ssoRoot: 'https://passport.lenovo.com/wauthen5/',
 	ssoLogin: 'preLogin?lenovoid.action=uilogin&lenovoid.realm=lcp.local&lenovoid.ctx=U08&lenovoid.lang=en_US&lenovoid.cb=',
 	ssoLogout: 'gateway?lenovoid.action=uilogout&lenovoid.cb=',
-	bkgImg: 'apac/v1/image?deviceid=09067ba3-6886-44f3-ab43-d3e0bda2197f'
+	bkgImg: 'apac/v1/image?deviceid=09067ba3-6886-44f3-ab43-d3e0bda2197f',
+	appVersion: require('../../package.json').version
 };
