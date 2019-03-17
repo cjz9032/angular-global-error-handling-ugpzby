@@ -106,7 +106,7 @@ export class PageDashboardComponent implements OnInit {
 				const { total, used } = response.memory;
 				memory.detail = `${this.commonService.formatBytes(used)} of ${this.commonService.formatBytes(total)}`;
 				const percent = (used / total) * 100;
-				if (percent < 10) {
+				if (percent > 70) {
 					memory.status = 1;
 				} else {
 					memory.status = 0;
@@ -128,7 +128,7 @@ export class PageDashboardComponent implements OnInit {
 				const { total, used } = response.disk;
 				disk.detail = `${this.commonService.formatBytes(used)} of ${this.commonService.formatBytes(total)}`;
 				const percent = (used / total) * 100;
-				if (percent > 70) {
+				if (percent > 90) {
 					disk.status = 1;
 				} else {
 					disk.status = 0;
@@ -148,9 +148,18 @@ export class PageDashboardComponent implements OnInit {
 			warranty.type = 'system';
 
 			if (response.warranty) {
-				// const status = response.warranty.status;
-				warranty.detail = `Until ${this.commonService.formatDate(response.warranty.expired)}`;
-				warranty.status = 0;
+				const warrantyTill = new Date(response.warranty.expired);
+				const today = new Date();
+				const warrantyDate = this.commonService.formatDate(response.warranty.expired);
+				// in warranty
+				if (today.getTime() < warrantyTill.getTime()) {
+					warranty.detail = `Until ${warrantyDate}`;
+					warranty.status = 0;
+				} else {
+					warranty.detail = `Warranty expired on ${warrantyDate}`;
+					warranty.status = 1;
+				}
+
 			}
 			systemStatus.push(warranty);
 
@@ -206,8 +215,8 @@ export class PageDashboardComponent implements OnInit {
 			wiFi.path = 'wifi-security';
 			wiFi.type = 'security';
 
-			if (response.antiVirus) {
-				if (response.antiVirus.status) {
+			if (response.wiFi) {
+				if (response.wiFi.status) {
 					wiFi.status = 0;
 					wiFi.detail = 'Enabled';
 				} else {
