@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
 
 @Component({
 	selector: 'vtr-available-updates',
@@ -7,9 +8,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class AvailableUpdatesComponent implements OnInit {
 
-	@Input() criticalUpdates: any;
-	@Input() recommendedUpdates: any;
-	@Input() optionalUpdates: any;
+	@Input() criticalUpdates: AvailableUpdateDetail[];
+	@Input() recommendedUpdates: AvailableUpdateDetail[];
+	@Input() optionalUpdates: AvailableUpdateDetail[];
+	@Input() isInstallationSuccess = false;
+	@Input() isInstallationCompleted = false;
 
 	@Output() checkChange = new EventEmitter<any>();
 	@Output() installAllUpdate = new EventEmitter<any>();

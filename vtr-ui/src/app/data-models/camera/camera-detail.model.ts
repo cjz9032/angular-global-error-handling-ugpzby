@@ -55,6 +55,14 @@ export class CameraDetail {
 	 */
 	public autoExposureStepValue: number;
 }
+export interface IEyecareModeResponse{
+		available: boolean,
+		minimum: number, // slider bar min value
+		maximum: number, // slider bar max value
+		current: number,
+		eyecaremode: number, //
+		default: number // current value
+}
 export interface ICameraSettingsResponse {
 	brightness: {
 		autoModeSupported: boolean,
