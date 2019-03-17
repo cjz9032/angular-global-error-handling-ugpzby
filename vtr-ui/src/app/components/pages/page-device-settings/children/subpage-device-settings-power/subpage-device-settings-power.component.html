@@ -1,4 +1,33 @@
 <div class="subpage-device-settings-power vtr-subpage">
+		<div class="btn-group btn-group-toggle"
+		ngbRadioGroup
+		style="margin-left:300px;margin-top:-150px;"
+		[(ngModel)]="value">
+		   <label class="btn-primary"
+			ngbButtonLabel> 1
+			   <input type="radio"
+				ngbButton
+				[value]="1" />
+		   </label>
+		   <label class="btn-primary"
+			ngbButtonLabel> 2
+			   <input type="radio"
+				ngbButton
+				[value]="2" />
+		   </label>
+		   <label class="btn-primary"
+			ngbButtonLabel> 3
+			   <input type="radio"
+				ngbButton
+				[value]="3" />
+		   </label>
+		   <label class="btn-primary"
+			ngbButtonLabel> 4
+			   <input type="radio"
+				ngbButton
+				[value]="4" />
+		   </label>
+	   </div>
 	<div class="row">
 		<div class="col">
 			<vtr-ui-header-subpage [items]="headerMenuItems"
@@ -7,7 +36,172 @@
 				[menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
 		</div>
 	</div>
-	<div class="row py-5 smartsettings-card"
+	<div *ngIf="value===1">
+			<div class="row py-5 smartsettings-card"
+				id="cooling">
+				<div class="col-10 mx-auto ">
+					<vtr-container-collapsible cardTitle="Power Smartsettings"
+						[isCollapsed]="false"
+						[allowCollapse]="false"
+						[theme]="'blue'">
+						<div class="row">
+							<div class="col-auto text-wrap subtitle">
+								<h3>Intelligent Cooling</h3>
+								<p>This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.</p>
+							</div>
+						</div>
+						<ul class="list-group list-group-flush">
+							<li class="">
+								<vtr-ui-row-switch [title]="'Intelligent cooling'"
+									[caption]="''"
+									[isSwitchVisible]=true
+									[leftIcon]="['fas', 'search']"
+									[readMoreText]="''"
+									[showChildContent]="true"
+									[theme]="'blue'"
+									(toggleOnOff)="onIntelligentCoolingToggle($event)">
+									<div class="my-3"
+										*ngIf="!intelligentCooling">
+										<!-- <vtr-ui-rectangle-radio [radioId]="'radio2'"
+											[group]="'radio'"
+											[label]="'PERFORMANCE'"
+											[value]="'PERFORMANCE'"></vtr-ui-rectangle-radio>
+										<vtr-ui-rectangle-radio [radioId]="'radio1'"
+											[group]="'radio'"
+											[label]="'QUIET & COOL'"
+											[value]="'QUIET & COOL'"></vtr-ui-rectangle-radio> -->
+
+									</div>
+								</vtr-ui-row-switch>
+							</li>
+						</ul>
+					</vtr-container-collapsible>
+				</div>
+			</div>
+		</div>
+
+		<div *ngIf="value===2">
+		<div class="row py-5 smartsettings-card"
+			id="cooling">
+			<div class="col-10 mx-auto ">
+				<vtr-container-collapsible cardTitle="Power Smartsettings"
+					[isCollapsed]="false"
+					[allowCollapse]="false"
+					[theme]="'blue'">
+					<div class="row">
+						<div class="col-auto text-wrap subtitle">
+							<h3>Intelligent Cooling</h3>
+							<p>This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.</p>
+						</div>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="">
+							<vtr-ui-row-switch [title]="'Intelligent cooling'"
+								[caption]="''"
+								[isSwitchVisible]=true
+								[leftIcon]="['fas', 'search']"
+								[readMoreText]="''"
+								[showChildContent]="true"
+								[theme]="'blue'"
+								(toggleOnOff)="onIntelligentCoolingToggle($event)">
+								<div class="my-3"
+									*ngIf="!intelligentCooling">
+									<vtr-ui-rectangle-radio [radioId]="'radio1'"
+										[group]="'radio'"
+										[label]="'PERFORMANCE'"
+										[value]="'PERFORMANCE'"></vtr-ui-rectangle-radio>
+									<vtr-ui-rectangle-radio [radioId]="'radio2'"
+										[group]="'radio'"
+										[label]="'QUIET & COOL'"
+										[value]="'QUIET & COOL'"></vtr-ui-rectangle-radio>
+
+								</div>
+							</vtr-ui-row-switch>
+						</li>
+					</ul>
+				</vtr-container-collapsible>
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="value===3">
+			<div class="row py-5 smartsettings-card"
+				id="cooling">
+				<div class="col-10 mx-auto ">
+					<vtr-container-collapsible cardTitle="Power Smartsettings"
+						[isCollapsed]="false"
+						[allowCollapse]="false"
+						[theme]="'blue'">
+						<div class="row">
+							<div class="col-auto text-wrap subtitle">
+								<h3>Intelligent Cooling</h3>
+								<p>Intelligent Cooling, adjusts fan speed, maximum surface temperature, and performance. This feature has below modes and are now accessible by Windows performance power slider. <a class="read-more-link" href="#">Read more.</a></p>
+							</div>
+						</div>
+						<div class="row">
+								<div class="col-auto">
+										<div class="search-icon">
+												<fa-icon [icon]="['fas', 'search']"></fa-icon>
+										</div>
+								</div>
+								<div class="col">
+										<div class="int-cool-text">
+												Intelligent cooling
+										</div>
+								</div>
+								<div class="col-auto text-right"><a class="settings-link" href="#">Go to windows settings</a></div>
+
+							</div>
+
+					</vtr-container-collapsible>
+				</div>
+			</div>
+		</div>
+
+		<div *ngIf="value===4">
+				<div class="row py-5 smartsettings-card"
+					id="cooling">
+					<div class="col-10 mx-auto ">
+						<vtr-container-collapsible cardTitle="Power Smartsettings"
+							[isCollapsed]="false"
+							[allowCollapse]="false"
+							[theme]="'blue'">
+							<div class="row">
+								<div class="col-auto text-wrap subtitle">
+									<h3>Battery & Quiet</h3>
+									<p>Battery & Quiet lorem ipsum is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. <a class="read-more-link" href="#">Read more.</a></p>
+								</div>
+							</div>
+							<ul class="list-group list-group-flush">
+								<li class="">
+									<vtr-ui-row-switch
+										[showChildContent]="true"
+										[theme]="'blue'"
+										>
+										<div class="my-3"
+											*ngIf="!intelligentCooling">
+											<vtr-ui-rectangle-radio [radioId]="'radio1'"
+												[group]="'radio'"
+												[label]="'INTELLIGENT COOLING'"
+												[value]="'INTELLIGENT COOLING'"></vtr-ui-rectangle-radio>
+											<vtr-ui-rectangle-radio [radioId]="'radio2'"
+												[group]="'radio'"
+												[label]="'EXTREME PERFORMANCE'"
+												[value]="'EXTREME PERFORMANCE'"></vtr-ui-rectangle-radio>
+												<vtr-ui-rectangle-radio [radioId]="'radio3'"
+												[group]="'radio'"
+												[label]="'BATTERY & QUIET'"
+												[value]="'BATTERY & QUIET'"></vtr-ui-rectangle-radio>
+
+										</div>
+									</vtr-ui-row-switch>
+								</li>
+							</ul>
+						</vtr-container-collapsible>
+					</div>
+				</div>
+			</div>
+	<!-- <div class="row py-5 smartsettings-card"
 		id="cooling">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible cardTitle="Power Smartsettings"
@@ -49,7 +243,7 @@
 				</ul>
 			</vtr-container-collapsible>
 		</div>
-	</div>
+	</div> -->
 
 	<div class="row py-5"
 		id="battery">
