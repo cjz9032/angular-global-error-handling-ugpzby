@@ -38,7 +38,7 @@
 		}
 
 		.caption {
-			font-size: 1.2rem;
+			font-size: 1.5rem;
 			color: $color;
 			max-width: 60rem;
 		}
@@ -47,6 +47,7 @@
 			color: $icon_color;
 			margin-top: 0.3rem;
 			cursor: pointer;
+			font-size: 1.5rem;
 
 			&:hover {
 				text-decoration: underline;
@@ -73,6 +74,9 @@
 		.right-align{
 			padding-left: 3.5rem;
 		}
+		.row {
+			flex-wrap: nowrap;
+		}	
 	}
 }
 

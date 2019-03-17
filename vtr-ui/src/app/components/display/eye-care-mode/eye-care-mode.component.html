@@ -1,14 +1,20 @@
 <div class="vtr-eye-care-mode">
 	<div class="row">
 		<div class="col">
-			<vtr-ui-range-slider
+			<!-- <vtr-ui-range-slider
 				[minValueLegend]="'Warm (Better for eyes)'"
 				[maxValueLegend]="'Cold'"
 				[stepsArray]="stepsArray"
 				[legendPositionFunction]="legendPosition"
 				(change)="sliderChange($event)"
 			>
-			</vtr-ui-range-slider>
+			</vtr-ui-range-slider> -->
+			<vtr-ui-range-slider [step]="100"
+			[minValue]="eyecareModeSettings.minimum"
+			[maxValue]="eyecareModeSettings.maximum"
+			[value]="eyecareModeSettings.current"
+			(change)="onEyecareTemparatureChange($event)">
+		   </vtr-ui-range-slider>
 		</div>
 		<div class="reset-temperature align-self-center text-center">
 			<button

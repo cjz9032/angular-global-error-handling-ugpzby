@@ -20,10 +20,10 @@ export class PageDashboardComponent implements OnInit {
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
 
-	forwardLink = {
+	/*forwardLink = {
 		path: 'dashboard-customize',
 		label: 'Customize Dashboard'
-	};
+	};*/
 
 	constructor(
 		public dashboardService: DashboardService,
@@ -106,7 +106,7 @@ export class PageDashboardComponent implements OnInit {
 				const { total, used } = response.memory;
 				memory.detail = `${this.commonService.formatBytes(used)} of ${this.commonService.formatBytes(total)}`;
 				const percent = (used / total) * 100;
-				if (percent < 10) {
+				if (percent > 70) {
 					memory.status = 1;
 				} else {
 					memory.status = 0;
@@ -128,7 +128,7 @@ export class PageDashboardComponent implements OnInit {
 				const { total, used } = response.disk;
 				disk.detail = `${this.commonService.formatBytes(used)} of ${this.commonService.formatBytes(total)}`;
 				const percent = (used / total) * 100;
-				if (percent > 70) {
+				if (percent > 90) {
 					disk.status = 1;
 				} else {
 					disk.status = 0;
@@ -141,16 +141,25 @@ export class PageDashboardComponent implements OnInit {
 			warranty.id = 'warranty';
 			warranty.title = 'Warranty';
 			warranty.detail = 'Warranty not found';
-			warranty.path = 'ms-settings:storagesense';
+			warranty.path = '/support';
 			warranty.asLink = false;
 			/* warranty.isSystemLink = true; */
 			warranty.isSystemLink = false;
 			warranty.type = 'system';
 
 			if (response.warranty) {
-				// const status = response.warranty.status;
-				warranty.detail = `Until ${this.commonService.formatDate(response.warranty.expired)}`;
-				warranty.status = 0;
+				const warrantyTill = new Date(response.warranty.expired);
+				const today = new Date();
+				const warrantyDate = this.commonService.formatDate(response.warranty.expired);
+				// in warranty
+				if (today.getTime() < warrantyTill.getTime()) {
+					warranty.detail = `Until ${warrantyDate}`;
+					warranty.status = 0;
+				} else {
+					warranty.detail = `Warranty expired on ${warrantyDate}`;
+					warranty.status = 1;
+				}
+
 			}
 			systemStatus.push(warranty);
 

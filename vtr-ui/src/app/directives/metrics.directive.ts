@@ -2,7 +2,7 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 import { VantageShellService } from '../services/vantage-shell/vantage-shell.service';
 
 
-
+declare var window;
 @Directive({
     selector: '[vtrMetrics]'
 })
@@ -20,11 +20,14 @@ export class MetricsDirective {
     @Input() metricsParam: string;
 
     @HostListener('click') onclick() {
+    	var location= window.location.href.substring(window.location.href.indexOf('#')+2).split('/').join('.');
+    	console.log('++++++++++++',location);
+
         if (this.metrics) {
             const data: any = {
                 ItemName: this.metricsItem,
                 ItemType: this.metricsEvent,
-                ItemParent: this.metricsParent,
+                ItemParent: location?location+"."+this.metricsParent:this.metricsParent,
             };
             if (this.metricsParam) {
                 data.ItemParam = this.metricsParam;
@@ -40,7 +43,7 @@ export class MetricsDirective {
             const data: any = {
                 ItemName: this.metricsItem,
                 ItemType: this.metricsEvent,
-                ItemParent: this.metricsParent,
+                ItemParent: location?location+"."+this.metricsParent:this.metricsParent,
             };
             if (this.metricsParam) {
                 data.ItemParam = this.metricsParam;
