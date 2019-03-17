@@ -226,3 +226,10 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		text-align: left;
 	}
 }
+
+.failure {
+	color: $alt;
+}
+.success {
+	color: $go_dark;
+}

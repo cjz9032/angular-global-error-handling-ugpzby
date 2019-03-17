@@ -1,8 +1,9 @@
-import { Component, OnInit, Input, ViewChild, OnDestroy, ElementRef } from '@angular/core';
-import { CameraDetail } from 'src/app/data-models/camera/camera-detail.model';
+import { Component, OnInit, Input, ViewChild, OnDestroy, ElementRef, Output, EventEmitter } from '@angular/core';
+import { CameraDetail, ICameraSettingsResponse } from 'src/app/data-models/camera/camera-detail.model';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { ChangeContext } from 'ng5-slider';
 
 @Component({
 	selector: 'vtr-camera-control',
@@ -11,6 +12,10 @@ import { Subscription } from 'rxjs/internal/Subscription';
 })
 
 export class CameraControlComponent implements OnInit, OnDestroy {
+	@Input() cameraSettings: ICameraSettingsResponse;
+	@Output() brightnessChange: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() contrastChange: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() exposureChange: EventEmitter<ChangeContext> = new EventEmitter();
 	public cameraDetail: CameraDetail;
 
 	private cameraPreview: ElementRef;
@@ -19,12 +24,15 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	private systemMediaControls: any;
 	private media: any;
 
+
 	@ViewChild('cameraPreview') set content(content: ElementRef) {
 		// when camera preview video element is visible then start camera feed
 		this.cameraPreview = content;
 		if (content && !this.cameraDetail.isPrivacyModeEnabled) {
+			console.log('Activating Camera');
 			this.activateCamera();
 		} else {
+			console.log('De-Activating Camera');
 			this.deactivateCamera();
 		}
 	}
@@ -33,7 +41,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		public cameraFeedService: CameraFeedService,
 		public baseCameraDetail: BaseCameraDetail
 	) {
-		this.cameraDetail = new CameraDetail();
+		// this.cameraDetail = new CameraDetail();
 
 		//#region below logic required to re-enable camera feed when window is maximized from minimized state
 
@@ -52,8 +60,10 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		console.log('camera control onInit');
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			(cameraDetail: CameraDetail) => {
+				console.log('camera detail observable', cameraDetail);
 				this.cameraDetail = cameraDetail;
 			},
 			error => {
@@ -120,6 +130,20 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 				this.activateCamera();
 			}
 		}
-
+	}
+	public onBrightnessSliderChange($event: ChangeContext)
+	{
+		console.log('Brightness changed', event);
+		this.brightnessChange.emit($event);
+	}
+	public onContrastSliderChange($event: ChangeContext)
+	{
+		console.log('Brightness changed', event);
+		this.contrastChange.emit($event);
+	}
+	public onExposureSliderChange($event: ChangeContext)
+	{
+		console.log('Brightness changed', event);
+		this.exposureChange.emit($event);
 	}
 }

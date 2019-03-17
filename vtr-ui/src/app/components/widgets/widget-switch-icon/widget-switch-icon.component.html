@@ -1,5 +1,5 @@
 <div class="vtr-widget-switch-icon"
-	(click)="onChange($event)">
+	(click)="onChange($event)" [title]="tooltipText">
 	<div class="switch-container"
 		[ngClass]="[value ? 'checked' : 'unchecked']">
 		<div class="title">{{ title }}</div>
