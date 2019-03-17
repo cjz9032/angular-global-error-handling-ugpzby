@@ -32,6 +32,17 @@
 						vertical-align: middle;
 					}
 				}
+				.card-body{
+					.list-group{
+						li {
+							.vtr-ui-switch-row {
+								.row {
+									flex-wrap: nowrap;
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}

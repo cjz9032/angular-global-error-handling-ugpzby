@@ -21,7 +21,7 @@ const routes: Routes = [
 	{
 		path: '',
 		redirectTo: 'dashboard',
-		pathMatch:'full'
+		pathMatch: 'full'
 	}, {
 		path: 'dashboard',
 		component: PageDashboardComponent
@@ -65,7 +65,7 @@ const routes: Routes = [
 	}, {
 		path: 'internet-protection',
 		component: PageSecurityInternetComponent
-	}, 
+	},
 	{
 		path: 'windows-hello',
 		component: PageSecurityWindowsHelloComponent
@@ -83,7 +83,7 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [
-		RouterModule.forRoot(routes, { useHash: true })
+		RouterModule.forRoot(routes, { useHash: true, scrollPositionRestoration: 'enabled' })
 	],
 	exports: [
 		RouterModule

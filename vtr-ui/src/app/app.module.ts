@@ -88,7 +88,7 @@ import { SecurityService } from './services/security/security.service';
 import { UserService } from './services/user/user.service';
 import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
 import { CameraDetailMockService } from './services/camera/camera-detail/camera-detail.mock.service';
-
+import { AudioService } from './services/audio/audio.service';
 
 // FONT AWESOME
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -117,6 +117,7 @@ import { UniqueIdPipe } from './pipe/unique-id.pipe';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
 import { MetricsDirective } from './directives/metrics.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
+import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
 
 library.add(fas);
 library.add(fab);
@@ -194,7 +195,8 @@ library.add(far);
 		UniqueIdPipe,
 		ModalBatteryChargeThresholdComponent,
 		MetricsDirective,
-		InstallationHistoryComponent
+		InstallationHistoryComponent,
+		SeparatePascalCasePipe
 	],
 	imports: [
 		BrowserModule,
@@ -217,6 +219,7 @@ library.add(far);
 		DashboardService,
 		SecurityService,
 		UserService,
+		AudioService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
 	bootstrap: [AppComponent],
