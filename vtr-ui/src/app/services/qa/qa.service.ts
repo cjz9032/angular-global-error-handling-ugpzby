@@ -61,7 +61,7 @@ export class QaService {
 			dislike: false,
 			description: `<div>
 										<div style="font-size:4rem;font-weight:bold;">
-											Back up and restore your files
+											How to refresh your PC
 										</div>
 										<hr>
 										<div style="font-size:2.5rem;font-weight:bold;padding:5px 0;">
@@ -191,7 +191,7 @@ export class QaService {
 			like: false,
 			dislike: false,
 			description: `<div style="font-size:4rem;font-weight:bold;">
-				Back up and restore your files
+				How to know your machine\'s CPU
 			</div>
 			<hr>
 			<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Symptom</h3>
@@ -232,11 +232,11 @@ export class QaService {
 			id: 4,
 			path: 'support-detail/4',
 			iconPath: `${this.imagePath}/svg_icon_qa_battery.svg`,
-			title: "Check your machine's battery use",
+			title: 'Check your machine\'s battery use',
 			like: false,
 			dislike: false,
 			description: `<div style="font-size:4rem;font-weight:bold;">
-				Back up and restore your files
+				Check your machine's battery use
 			</div>
 			<hr>
 			<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Symptom</h3>
@@ -280,7 +280,7 @@ export class QaService {
 			like: false,
 			dislike: false,
 			description: `<div style="font-size:4rem;font-weight:bold;">
-				 Back up and restore your files
+				 Use your PC like a tablet
 			 </div>
 			 <hr>
 <p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>
@@ -311,11 +311,11 @@ export class QaService {
 			id: 6,
 			path: 'support-detail/6',
 			iconPath: `${this.imagePath}/svg_icon_qa_cortana.svg`,
-			title: 'Get to know Cortona,your personal assistant',
+			title: 'Get to know Cortona, your personal assistant',
 			like: false,
 			dislike: false,
 			description: `<div style="font-size:4rem;font-weight:bold;">
-				Back up and restore your files
+				Get to know Cortona, your personal assistant
 			</div>
 			<hr>
 			<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">What is Cortana?</h3>
