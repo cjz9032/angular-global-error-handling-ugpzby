@@ -15,7 +15,7 @@ export class QaService {
 			title: 'Backup and Restore your files',
 			like: false,
 			dislike: false,
-			description:`<div>
+			description: `<div>
 									<div style="font-size:4rem;font-weight:bold;">
 										Back up and restore your files
 									</div>
@@ -59,7 +59,7 @@ export class QaService {
 			title: 'How to refresh your PC',
 			like: false,
 			dislike: false,
-		    description:`<div>
+			description: `<div>
 										<div style="font-size:4rem;font-weight:bold;">
 											Back up and restore your files
 										</div>
@@ -187,10 +187,10 @@ export class QaService {
 			id: 3,
 			path: 'support-detail/3',
 			iconPath: `${this.imagePath}/svg_icon_qa_pcbit.svg`,
-			title: 'How to know your machine"s CPU',
+			title: 'How to know your machine\'s CPU',
 			like: false,
 			dislike: false,
-			description:`<div style="font-size:4rem;font-weight:bold;">
+			description: `<div style="font-size:4rem;font-weight:bold;">
 				Back up and restore your files
 			</div>
 			<hr>
@@ -235,7 +235,7 @@ export class QaService {
 			title: "Check your machine's battery use",
 			like: false,
 			dislike: false,
-		  description:`<div style="font-size:4rem;font-weight:bold;">
+			description: `<div style="font-size:4rem;font-weight:bold;">
 				Back up and restore your files
 			</div>
 			<hr>
@@ -279,7 +279,7 @@ export class QaService {
 			title: 'Use your PC like a tablet',
 			like: false,
 			dislike: false,
-		   description:`<div style="font-size:4rem;font-weight:bold;">
+			description: `<div style="font-size:4rem;font-weight:bold;">
 				 Back up and restore your files
 			 </div>
 			 <hr>
@@ -314,7 +314,7 @@ export class QaService {
 			title: 'Get to know Cortona,your personal assistant',
 			like: false,
 			dislike: false,
-		  description:`<div style="font-size:4rem;font-weight:bold;">
+			description: `<div style="font-size:4rem;font-weight:bold;">
 				Back up and restore your files
 			</div>
 			<hr>

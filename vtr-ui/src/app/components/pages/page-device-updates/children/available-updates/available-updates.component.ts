@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MockService } from "../../../../../services/mock/mock.service"
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
 
 @Component({
 	selector: 'vtr-available-updates',
@@ -8,18 +8,32 @@ import { MockService } from "../../../../../services/mock/mock.service"
 })
 export class AvailableUpdatesComponent implements OnInit {
 
-	constructor(
-		public mockService: MockService
-	) { }
+	@Input() criticalUpdates: AvailableUpdateDetail[];
+	@Input() recommendedUpdates: AvailableUpdateDetail[];
+	@Input() optionalUpdates: AvailableUpdateDetail[];
+	@Input() isInstallationSuccess = false;
+	@Input() isInstallationCompleted = false;
+
+	@Output() checkChange = new EventEmitter<any>();
+	@Output() installAllUpdate = new EventEmitter<any>();
+	@Output() installSelectedUpdate = new EventEmitter<any>();
+
+	constructor() { }
 
 	ngOnInit() {
 	}
 
-	installUpdates(event) {
+	onInstallAllUpdates(event) {
 		console.log('installUpdates', event);
+		this.installAllUpdate.emit(event);
 	}
 
-	installSelectedUpdates(event) {
+	onInstallSelectedUpdates(event) {
 		console.log('installSelectedUpdates', event);
+		this.installSelectedUpdate.emit(event);
+	}
+
+	public onCheckChange($event: any) {
+		this.checkChange.emit($event);
 	}
 }

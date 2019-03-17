@@ -31,6 +31,12 @@
 				.app-name {
 					font-weight: $weight_medium;
 				}
+
+				.app-version {
+					font-size: 1rem;
+					padding-left: 1rem;
+					font-weight: $weight_light;
+				}
 			}
 
 			.device-type {
@@ -118,6 +124,14 @@
 									color: $main;
 								}
 							}
+						}
+					}
+					&:last-child{
+						.dropdown-menu{
+							right: 0;
+							left: auto;
+							min-width: 20rem;
+							max-width: 50rem;
 						}
 					}
 				}
