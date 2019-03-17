@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ArticlesService } from '../../../services/articles/articles.service';
 import { MockService } from '../../../services/mock/mock.service';
 import { SupportService } from '../../../services/support/support.service';
+import { DeviceService } from '../../../services/device/device.service';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class PageSupportComponent implements OnInit {
 		public articlesService: ArticlesService,
 		public mockService: MockService,
 		public supportService: SupportService,
+		public deviceService: DeviceService
 	) {
 		// this.getArticles();
 		this.getMachineInfo();

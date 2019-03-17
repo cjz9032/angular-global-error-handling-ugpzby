@@ -10,10 +10,15 @@ export class UiButtonComponent implements OnInit {
 	@Input() isFullWidth: boolean;
 	@Output() onClick = new EventEmitter<any>();
 
+	@Input() metricsItem:string;
+	@Input() metricsParent:string;
+	@Input() metricsValue:string;
+	@Input() metricsEvent:string;
+	@Input() metricsParam:string;
+
 	constructor() { }
 
 	onClickButton(event) {
-		console.log('clicked button' + this.label);
 		this.onClick.emit(event);
 	}
 

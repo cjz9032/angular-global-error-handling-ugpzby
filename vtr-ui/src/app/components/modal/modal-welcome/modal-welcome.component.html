@@ -11,7 +11,7 @@
 			experience there are still a few things to setup.
 		</div>
 		<div class="d-flex justify-content-center">
-			<vtr-ui-button [label]="'START PERSONALIZING'" (onClick)="next(1)"></vtr-ui-button>
+			<vtr-ui-button   metricsEvent="itemClick" metricsParent="modal-welcome" [metricsItem]="'start personalizing'"[label]="'START PERSONALIZING'" (onClick)="next(1)"></vtr-ui-button>
 		</div>
 		<div class="divider"></div>
 		<div class="d-flex justify-content-center align-items-center">
@@ -59,7 +59,7 @@
 				</ul>
 			</div>
 			<div class="position-absolute button">
-				<vtr-ui-button [label]="data.page2.radioValue?'NEXT':'SKIP'" (onClick)="next(2)"></vtr-ui-button>
+				<vtr-ui-button metricsParent="modal-welcome" metricsEvent="itemClick" [metricsItem]="data.page2.radioValue?'NEXT':'SKIP'" [label]="data.page2.radioValue?'NEXT':'SKIP'" (onClick)="next(2)"></vtr-ui-button>
 			</div>
 
 		</div>
@@ -140,7 +140,7 @@
 				</ul>
 			</div>
 			<div class="position-absolute button">
-				<vtr-ui-button [label]="checkedArray.length>0?'NEXT':'SKIP'" (onClick)="next(3)"></vtr-ui-button>
+				<vtr-ui-button  metricsEvent="itemClick" metricsParent="modal-welcome" [metricsItem]="checkedArray.length>0?'NEXT':'SKIP'" [label]="checkedArray.length>0?'NEXT':'SKIP'" (onClick)="next(3)"></vtr-ui-button>
 			</div>
 		</div>
 	</div>

@@ -1,0 +1,25 @@
+{
+	"common": {
+		"menu": {
+			"dashboard": "仪表板",
+			"device": "Device"
+		},
+		"ui": {
+			"on": "上",
+			"off": "离"
+		}
+	},
+	"dashboard": {
+		"feedback": {
+			"title": "给予反馈",
+			"subtitle": "告诉我们您对vantage的看法",
+			"button": "给予反馈"
+		},
+		"quick-settings": {
+			"title": "你的快速设置",
+			"microphone": "麦克风",
+			"camera-privacy": "相机隐私",
+			"eye-care-mode": "眼部护理模式"
+		}
+	}
+}

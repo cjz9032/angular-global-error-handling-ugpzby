@@ -1,5 +1,5 @@
 // below line is needed for js intellisense
-/// <reference path='../../../../node_modules/@lenovo/tan-client-bridge/src/features/dashboard-feature.js' />
+//// <reference path='../../../../node_modules/@lenovo/tan-client-bridge/src/features/dashboard-feature.js' />
 
 import { Injectable } from '@angular/core';
 
@@ -20,17 +20,25 @@ export class DashboardService {
 	}
 
 	public getMicrophoneStatus(): Promise<FeatureStatus> {
-		if (this.dashboard) {
-			return this.dashboard.getMicphoneStatus();
+		try {
+			if (this.dashboard) {
+				return this.dashboard.getMicphoneStatus();
+			}
+			return undefined;
+		} catch (error) {
+			throw Error(error.message);
 		}
-		return undefined;
 	}
 
 	public setMicrophoneStatus(value: boolean): Promise<boolean> {
-		if (this.dashboard) {
-			return this.dashboard.setMicphoneStatus(value);
+		try {
+			if (this.dashboard) {
+				return this.dashboard.setMicphoneStatus(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw Error(error.message);
 		}
-		return undefined;
 	}
 
 	public getCameraStatus(): Promise<FeatureStatus> {
