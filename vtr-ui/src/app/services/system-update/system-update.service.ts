@@ -7,6 +7,7 @@ import { UpdateInstallationResult } from 'src/app/data-models/system-update/upda
 import { AvailableUpdate } from 'src/app/data-models/system-update/available-update.model';
 import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
 import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
+import { UpdateHistory } from 'src/app/data-models/system-update/update-history.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -14,10 +15,12 @@ import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
 export class SystemUpdateService {
 
 	private systemUpdateBridge: any;
+	public autoUpdateStatus: any;
 	public isShellAvailable = false;
 	public isCheckForUpdateComplete = true;
 	public isUpdatesAvailable = false;
 	public updateInfo: AvailableUpdate;
+	public installationHistory: Array<UpdateHistory>;
 
 	constructor(
 		shellService: VantageShellService
@@ -43,7 +46,15 @@ export class SystemUpdateService {
 	 */
 	public getUpdateSchedule() {
 		if (this.systemUpdateBridge) {
-			return this.systemUpdateBridge.getUpdateSchedule();
+			return this.systemUpdateBridge.getUpdateSchedule()
+				.then((response) => {
+					console.log('getUpdateSchedule', response);
+					this.autoUpdateStatus = {
+						criticalAutoUpdates: (response.criticalAutoUpdates === 'ON') ? true : false,
+						recommendedAutoUpdates: (response.recommendedAutoUpdates === 'ON') ? true : false
+					};
+					this.commonService.sendNotification(UpdateProgress.AutoUpdateStatus, this.autoUpdateStatus);
+				});
 		}
 		return undefined;
 	}
@@ -54,14 +65,29 @@ export class SystemUpdateService {
 	 * @param recommendedUpdate  boolean value, true = on, false = off
 	 */
 	public setUpdateSchedule(criticalUpdate: boolean, recommendedUpdate: boolean) {
-		// {
-		// criticalAutoUpdates: "ON", // "ON"|"OFF"
-		// recommendedAutoUpdates: "ON" // "ON"|"OFF"
-		// }
+		const request = {
+			criticalAutoUpdates: (criticalUpdate) ? 'ON' : 'OFF',
+			recommendedAutoUpdates: (recommendedUpdate) ? 'ON' : 'OFF'
+		};
+		this.systemUpdateBridge.setUpdateSchedule(request)
+			.then((response) => {
+				console.log('setUpdateSchedule', response);
+			}).catch((error) => {
+				// get current status
+				this.getUpdateSchedule();
+			});
 	}
 
 	public getUpdateHistory() {
-
+		this.systemUpdateBridge.getUpdateHistory()
+			.then((response: Array<UpdateHistory>) => {
+				console.log('getUpdateHistory', response);
+				this.installationHistory = response;
+				this.commonService.sendNotification(UpdateProgress.FullHistory, this.installationHistory);
+			}).catch((error) => {
+				// get current status
+				console.log('getUpdateHistory.error', error);
+			});
 	}
 
 	public checkForUpdates() {
@@ -82,6 +108,8 @@ export class SystemUpdateService {
 				} else {
 					this.commonService.sendNotification(UpdateProgress.UpdatesNotAvailable);
 				}
+			}).catch((error) => {
+				console.log('checkForUpdates.error', error);
 			});
 		}
 		return undefined;
@@ -89,11 +117,13 @@ export class SystemUpdateService {
 
 	public cancelUpdateCheck() {
 		if (this.systemUpdateBridge) {
-			this.systemUpdateBridge.cancelSearch().then((status: boolean) => {
-				// todo: ui changes to show on update cancel
-			}).catch((error) => {
-				console.log('cancelUpdateCheck', error);
-			});
+			this.systemUpdateBridge.cancelSearch()
+				.then((status: boolean) => {
+					// todo: ui changes to show on update cancel
+				})
+				.catch((error) => {
+					console.log('cancelUpdateCheck.error', error);
+				});
 		}
 	}
 
@@ -104,37 +134,41 @@ export class SystemUpdateService {
 		// 2. function callback
 	}
 
-	public installUpdates() {
+	public installAllUpdates() {
 		if (this.systemUpdateBridge && this.isUpdatesAvailable) {
-			const packages = this.mapToInstallRequest(this.updateInfo.updateList);
-			this.systemUpdateBridge.installUpdates(packages, (progress: number) => {
-				console.log('installUpdates callback', progress);
-				this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);
-			}).then((response: UpdateInstallationResult) => {
-				console.log('installUpdates response', response);
-				this.commonService.sendNotification(UpdateProgress.InstallationComplete, response);
-			});
+			const updates = this.mapToInstallRequest(this.updateInfo.updateList);
+			this.installUpdates(updates);
 		}
 	}
 
 	public installSelectedUpdates() {
 		if (this.systemUpdateBridge && this.isUpdatesAvailable) {
 			const updatesToInstall = this.getSelectedUpdates(this.updateInfo.updateList);
-			const packages = this.mapToInstallRequest(updatesToInstall);
-			console.log('installSelectedUpdates', updatesToInstall, packages);
+			const updates = this.mapToInstallRequest(updatesToInstall);
+			console.log('installSelectedUpdates', updatesToInstall, updates);
+			this.installUpdates(updates);
+		}
+	}
 
-			this.systemUpdateBridge.installUpdates(packages, (progress: number) => {
-				console.log('installSelectedUpdates callback', progress);
-				this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);
-			}).then((response: UpdateInstallationResult) => {
-				console.log('installSelectedUpdates response', response);
-				this.commonService.sendNotification(UpdateProgress.InstallationComplete, response);
-			});
+	public installFailedUpdate(update: InstallUpdate) {
+		if (this.systemUpdateBridge) {
+			console.log('installFailedUpdate', update);
+			const updates = new Array<InstallUpdate>();
+			updates.push(update);
+			this.installUpdates(updates);
 		}
 	}
 
 	public restartWindows() {
-
+		if (this.systemUpdateBridge) {
+			this.systemUpdateBridge.restartWindows()
+				.then((status: boolean) => {
+					// todo: ui changes to show on windows is restarting
+				})
+				.catch((error) => {
+					console.log('cancelUpdateCheck.error', error);
+				});
+		}
 	}
 
 	public getIgnoredUpdates() {
@@ -159,6 +193,34 @@ export class SystemUpdateService {
 				update.isSelected = isSelected;
 			}
 		}
+	}
+
+	public sortInstallationHistory(history: Array<UpdateHistory>, isAscending = true) {
+		if (history) {
+			history.sort((a: UpdateHistory, b: UpdateHistory) => {
+				const d1 = new Date(b.utcInstallDate);
+				const d2 = new Date(a.utcInstallDate);
+				if (!isAscending) {
+					return d2.getTime() - d1.getTime();
+				}
+				return d1.getTime() - d2.getTime();
+			});
+		}
+	}
+
+	private installUpdates(updates: Array<InstallUpdate>) {
+		let isInvoked = false;
+		this.systemUpdateBridge.installUpdates(updates, (progress: number) => {
+			if (!isInvoked) {
+				isInvoked = true;
+				this.commonService.sendNotification(UpdateProgress.InstallationStarted);
+			}
+			console.log('installUpdates callback', progress);
+			this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);
+		}).then((response: UpdateInstallationResult) => {
+			console.log('installUpdates response', response);
+			this.commonService.sendNotification(UpdateProgress.InstallationComplete, response);
+		});
 	}
 
 	private mapToInstallRequest(updateList: Array<AvailableUpdateDetail>): InstallUpdate[] {
@@ -215,4 +277,6 @@ export class SystemUpdateService {
 		}
 		return undefined;
 	}
+
+
 }

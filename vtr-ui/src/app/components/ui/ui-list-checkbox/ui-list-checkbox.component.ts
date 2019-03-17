@@ -9,6 +9,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class UiListCheckboxComponent implements OnInit {
 
 	@Input() items: any;
+	@Input() isInstallationSuccess = false;
+	@Input() isInstallationCompleted = false;
 	@Output() checkChange = new EventEmitter<any>();
 	// Random number is used to have unique id of each input field
 	randomNumber: number = Math.floor(new Date().valueOf() * Math.random());
