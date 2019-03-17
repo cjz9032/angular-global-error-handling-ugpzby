@@ -116,7 +116,7 @@ import { SanitizeUrlPipe } from './pipe/sanitise-url.pipe';
 import { UniqueIdPipe } from './pipe/unique-id.pipe';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
 import { MetricsDirective } from './directives/metrics.directive';
-import { MetricService } from './services/metric/metric.service';
+import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 
 library.add(fas);
 library.add(fab);
@@ -193,7 +193,8 @@ library.add(far);
 		SanitizeUrlPipe,
 		UniqueIdPipe,
 		ModalBatteryChargeThresholdComponent,
-		MetricsDirective
+		MetricsDirective,
+		InstallationHistoryComponent
 	],
 	imports: [
 		BrowserModule,
@@ -216,7 +217,6 @@ library.add(far);
 		DashboardService,
 		SecurityService,
 		UserService,
-		MetricService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
 	bootstrap: [AppComponent],

@@ -14,7 +14,7 @@
 				<div *ngIf="!showProgress && !isUpdateDownloading"
 					class="row">
 					<div class="col button-row">
-						<button class="action-button"
+						<button class="action-button" vtrMetrics metricsEvent="itemClick" metricsParent="update-to-date" metricsItem="check-for-updates"
 							(click)="onCheckForUpdates()">{{buttonText}}</button>
 					</div>
 				</div>
