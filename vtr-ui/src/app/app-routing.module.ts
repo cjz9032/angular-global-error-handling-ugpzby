@@ -20,7 +20,8 @@ import { PageSecurityWindowsHelloComponent } from './components/pages/page-secur
 const routes: Routes = [
 	{
 		path: '',
-		component: PageDashboardComponent
+		redirectTo: 'dashboard',
+		pathMatch:'full'
 	}, {
 		path: 'dashboard',
 		component: PageDashboardComponent
