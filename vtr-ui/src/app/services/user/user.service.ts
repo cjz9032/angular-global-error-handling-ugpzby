@@ -85,7 +85,9 @@ export class UserService {
 					};
 				}
 
-				this.metrics.sendAsync(metricsData);
+				this.metrics.sendAsync(metricsData).catch((res) => {
+					this.devService.writeLog('loginSilently() Exception happen when send metric ', res.message);
+				});
 			});
 		}
 		this.devService.writeLog('LOGIN(SILENTLY): ', self.auth);
@@ -114,6 +116,8 @@ export class UserService {
 					ItemType: 'TaskAction',
 					TaskName: 'LID.SignOut',
 					TaskResult: result && result.success ? 'success' : 'failure'
+				}).catch((res) => {
+					this.devService.writeLog('logout() Exception happen when send metric ', res.message);
 				});
 
 				return result;
@@ -148,6 +152,8 @@ export class UserService {
 					AccountState: 'NA', //{Signin | AlreadySignedIn | NeverSignedIn},
 					FeatureRequested: 'NA' // {AppOpen | SignIn | Vantage feature}
 				})
+			}).catch((res) => {
+				this.devService.writeLog('setAuth() Exception happen when send metric ', res.message);
 			});
 		}
 		this.devService.writeLog('LOGIN RES', auth);
