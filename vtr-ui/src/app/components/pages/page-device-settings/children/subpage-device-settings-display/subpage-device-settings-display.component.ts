@@ -83,7 +83,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		// 	.getCameraDetail()
 		// 	.then((response: any) => {
 		// 		// this.dataSource = response;
-		// 		this.cameraDetails1 = response;
+
 		// 		console.log('getCameraDetails.then', response);
 		// 	})
 		// 	.catch(error => {
@@ -103,16 +103,20 @@ export class SubpageDeviceSettingsDisplayComponent
 			this.eyecareDatasource = response;
 		});
 	}
-	public onEyeCareModeStatusToggle(event: boolean) {
-		console.log('onEyeCareModeStatusToggle', event);
-		if (this.displayService.isShellAvailable) {
-			this.displayService.setEyeCareModeState(event)
-				.then((value: boolean) => {
-					console.log('setEyeCareModeState.then', value);
-					this.getEyeCareModeStatus();
-				}).catch(error => {
-					console.error('setEyeCareModeState', error);
-				});
+	public onEyeCareModeStatusToggle(event: any) {
+		console.log('onEyeCareModeStatusToggle', event.switchValue);
+		try{
+			if (this.displayService.isShellAvailable) {
+				this.displayService.setEyeCareModeState(event.switchValue)
+					.then((value: boolean) => {
+						console.log('setEyeCareModeState.then', value);
+						this.getEyeCareModeStatus();
+					}).catch(error => {
+						console.error('setEyeCareModeState', error);
+					});
+			}
+		} catch(error) {
+			console.error(error.message);
 		}
 	}
 	private getEyeCareModeStatus() {
@@ -149,7 +153,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				.getCameraPrivacyModeState()
 				.then((featureStatus: FeatureStatus) => {
 					if (featureStatus.available) {
-						console.log('getCameraStatus.then', featureStatus);
+						console.log('cameraPrivacyModeStatus.then', featureStatus);
 						this.cameraPrivacyModeStatus = featureStatus;
 					}
 				})
@@ -159,14 +163,14 @@ export class SubpageDeviceSettingsDisplayComponent
 		}
 	}
 	public onBrightnessChange($event: ChangeContext) {
-		console.log('Brightness changed in display', $event);
+		console.log('setCameraBrightness in display', $event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService
 				.setCameraBrightness($event.value);
 		}
 	}
 	public onContrastChange($event: ChangeContext) {
-		console.log('contrast changed in display', $event);
+		console.log('setCameraContrst', $event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService
 				.setCameraContrst($event.value);
@@ -187,7 +191,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		}
 	}
 	public onCameraAutoFocusToggle($event: any) {
-		console.log('setCameraAutoFocus.then', $event);
+		console.log('setCameraAutoExposure.then', $event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService
 				.setCameraAutoExposure($event.value);
@@ -199,13 +203,31 @@ export class SubpageDeviceSettingsDisplayComponent
 		if (this.displayService.isShellAvailable) {
 			this.displayService
 				.resetCameraSettings();
+				this.getCameraDetails();
 		}
 	}
 	public onEyecareTemparaturechange($event: ChangeContext) {
-		console.log('temparature changed in display', $event);
-		if (this.displayService.isShellAvailable) {
-			this.displayService
-				.setDisplayColortemperature($event.value);
+		try{
+			console.log('temparature changed in display', $event);
+			if (this.displayService.isShellAvailable) {
+				this.displayService
+					.setDisplayColortemperature($event.value);
+			}
+		} catch(error) {
+			console.error(error.message);
+		}
+	}
+	public onResetTemparature($event: any) {
+		try
+		{
+			console.log('temparature reset in display', $event);
+			if (this.displayService.isShellAvailable) {
+				this.displayService
+					.resetEyeCareMode();
+					this.getDisplayColorTemperature();
+			}
+		} catch(error) {
+			console.error(error.message);
 		}
 	}
 }

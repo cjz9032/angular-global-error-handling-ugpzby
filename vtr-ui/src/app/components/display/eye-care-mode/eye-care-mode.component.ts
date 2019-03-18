@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, AfterContentChecked } from '@angular/core';
 import { IEyecareModeResponse } from 'src/app/data-models/camera/camera-detail.model';
 import { ChangeContext } from 'ng5-slider';
 
@@ -9,7 +9,9 @@ import { ChangeContext } from 'ng5-slider';
 })
 export class EyeCareModeComponent implements OnInit {
 	@Input() eyecareModeSettings: IEyecareModeResponse;
+	@Input() enableSlider: boolean;
 	@Output() eyecareTemparatureChange: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() resetTemparature: EventEmitter<any> = new EventEmitter();
 	constructor() {}
 
 	public stepsArray = [
@@ -19,7 +21,9 @@ export class EyeCareModeComponent implements OnInit {
 		{ value: 4 }
 	];
 
-	ngOnInit() {}
+	ngOnInit() {
+	}
+
 
 	public legendPosition(index: number): number {
 		if (index === 1) {
@@ -47,8 +51,9 @@ export class EyeCareModeComponent implements OnInit {
 		}
 	}
 
-	public onResetTemperature() {
+	public onResetTemperature($event: any) {
 		console.log('todo: on temp reset');
+		this.resetTemparature.emit($event);
 	}
 	public onEyecareTemparatureChange($event: ChangeContext)
 	{
