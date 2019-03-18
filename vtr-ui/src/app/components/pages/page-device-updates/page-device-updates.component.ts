@@ -123,7 +123,10 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.getLastUpdateScanDetail();
 		this.systemUpdateService.getUpdateSchedule();
 		this.systemUpdateService.getUpdateHistory();
+		this.getScheduleUpdateStatus(false);
 	}
+
+
 
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
@@ -294,5 +297,10 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.isUpdateDownloading = false;
 		this.isInstallationSuccess = false;
 		this.isInstallationCompleted = false;
+	}
+
+	private getScheduleUpdateStatus(reportProgress: boolean) {
+		debugger;
+		this.systemUpdateService.getScheduleUpdateStatus(reportProgress);
 	}
 }

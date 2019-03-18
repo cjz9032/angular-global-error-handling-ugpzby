@@ -65,29 +65,33 @@ export class SystemUpdateService {
 	 * @param recommendedUpdate  boolean value, true = on, false = off
 	 */
 	public setUpdateSchedule(criticalUpdate: boolean, recommendedUpdate: boolean) {
-		const request = {
-			criticalAutoUpdates: (criticalUpdate) ? 'ON' : 'OFF',
-			recommendedAutoUpdates: (recommendedUpdate) ? 'ON' : 'OFF'
-		};
-		this.systemUpdateBridge.setUpdateSchedule(request)
-			.then((response) => {
-				console.log('setUpdateSchedule', response);
-			}).catch((error) => {
-				// get current status
-				this.getUpdateSchedule();
-			});
+		if (this.systemUpdateBridge) {
+			const request = {
+				criticalAutoUpdates: (criticalUpdate) ? 'ON' : 'OFF',
+				recommendedAutoUpdates: (recommendedUpdate) ? 'ON' : 'OFF'
+			};
+			this.systemUpdateBridge.setUpdateSchedule(request)
+				.then((response) => {
+					console.log('setUpdateSchedule', response);
+				}).catch((error) => {
+					// get current status
+					this.getUpdateSchedule();
+				});
+		}
 	}
 
 	public getUpdateHistory() {
-		this.systemUpdateBridge.getUpdateHistory()
-			.then((response: Array<UpdateHistory>) => {
-				console.log('getUpdateHistory', response);
-				this.installationHistory = response;
-				this.commonService.sendNotification(UpdateProgress.FullHistory, this.installationHistory);
-			}).catch((error) => {
-				// get current status
-				console.log('getUpdateHistory.error', error);
-			});
+		if (this.systemUpdateBridge) {
+			this.systemUpdateBridge.getUpdateHistory()
+				.then((response: Array<UpdateHistory>) => {
+					console.log('getUpdateHistory', response);
+					this.installationHistory = response;
+					this.commonService.sendNotification(UpdateProgress.FullHistory, this.installationHistory);
+				}).catch((error) => {
+					// get current status
+					console.log('getUpdateHistory.error', error);
+				});
+		}
 	}
 
 	public checkForUpdates() {
@@ -127,11 +131,19 @@ export class SystemUpdateService {
 		}
 	}
 
-	public getStatus() {
+	public getScheduleUpdateStatus(canReportProgress: boolean) {
 
 		// 1. reportProgress //true or false
-
 		// 2. function callback
+		if (this.systemUpdateBridge) {
+			this.systemUpdateBridge.installUpdates(canReportProgress, (progress: any) => {
+				console.log('getScheduleUpdateStatus callback', progress);
+				// this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);
+			}).then((response: UpdateInstallationResult) => {
+				console.log('getScheduleUpdateStatus response', response);
+				this.commonService.sendNotification(UpdateProgress.UpdateScheduleComplete, response);
+			});
+		}
 	}
 
 	public installAllUpdates() {

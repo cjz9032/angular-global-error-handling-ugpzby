@@ -11,4 +11,5 @@ export enum UpdateProgress {
 	InstallationStarted = '[SystemUpdate] InstallationStarted',
 	AutoUpdateStatus = '[SystemUpdate] AutoUpdateStatus',
 	FullHistory = '[SystemUpdate] FullHistory',
+	UpdateScheduleComplete = '[SystemUpdate] UpdateScheduleComplete',
 }
