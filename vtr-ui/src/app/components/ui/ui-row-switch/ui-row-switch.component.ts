@@ -30,6 +30,8 @@ export class UiRowSwitchComponent implements OnInit {
 	@Input() isSwitchChecked = false;
 	@Input() tooltipText = '';
 	@Input() name = '';
+	@Input() disabled = false;
+
 
 	@Output() toggleOnOff = new EventEmitter<any>();
 	@Output() readMoreClick = new EventEmitter<boolean>();
