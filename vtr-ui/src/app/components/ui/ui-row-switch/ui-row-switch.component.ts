@@ -18,7 +18,6 @@ export class UiRowSwitchComponent implements OnInit {
 	// Use Fort Awesome Font Awesome Icon Reference Array (library, icon class) ['fas', 'arrow-right']
 	@Input() rightIcon = [];
 	@Input() leftIcon = [];
-
 	@Input() showChildContent = false;
 	@Input() readMoreText = '';
 	@Input() title = '';
@@ -30,20 +29,21 @@ export class UiRowSwitchComponent implements OnInit {
 	@Input() resetText = '';
 	@Input() isSwitchChecked = false;
 	@Input() tooltipText = '';
+	@Input() name = '';
 
-	@Output() toggleOnOff = new EventEmitter<boolean>();
+	@Output() toggleOnOff = new EventEmitter<any>();
 	@Output() readMoreClick = new EventEmitter<boolean>();
 	@Output() tooltipClick = new EventEmitter<boolean>();
 	@Output() resetClick = new EventEmitter<Event>();
 
-	constructor() {}
+	constructor() { }
 
 	ngOnInit() {
 		this.childContent = {};
 		this.childContent.innerHTML = '';
 	}
 
-	public onOnOffChange($event) {
+	public onOnOffChange($event: any) {
 		this.toggleOnOff.emit($event);
 	}
 

@@ -32,45 +32,30 @@ html {
 @media #{$mediaquery_1} {
 	html {
 		font-size: 85%;
-		&.is-arm {
-			font-size: 95%;
-		}
 	}
 }
 
 @media #{$mediaquery_2} {
 	html {
 		font-size: 72%;
-		&.is-arm {
-			font-size: 85%;
-		}
 	}
 }
 
 @media #{$mediaquery_3} {
 	html {
 		font-size: 62.5%;
-		&.is-arm {
-			font-size: 75%;
-		}
 	}
 }
 
 @media #{$mediaquery_4} {
 	html {
 		font-size: 58%;
-		&.is-arm {
-			font-size: 70%;
-		}
 	}
 }
 
 @media #{$mediaquery_5} {
 	html {
 		font-size: 53%;
-		&.is-arm {
-			font-size: 65%;
-		}
 	}
 }
 
@@ -87,7 +72,7 @@ html {
 	html {
 		font-size: 36%;
 		&.is-arm {
-			font-size: 45%;
+			font-size: 47%;
 		}
 	}
 }
@@ -110,11 +95,6 @@ body {
 button {
 	letter-spacing: 0.1em;
 }
-
-.vtr-arm-page {
-	padding: 0 4rem 4rem 4rem;
-}
-
 
 .vtr-page {
 	height: 100%;
@@ -247,28 +227,9 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
-.lenovo-modal-content {
-	.modal-content {
-		width: 62.8rem !important;
-		margin: 0 auto;
-		overflow: hidden;
-		min-height: 60rem;
-	}
+.failure {
+	color: $alt;
 }
-
-.auto-set-checkbox {
-	margin-top: 2rem;
-	input {
-		width: 1.5rem;
-		height: 1.5rem;
-		position: relative;
-		top: -0.1rem;
-		margin-right: 0.5rem;
-	}
-	label {
-		color: $shade_darker;
-		font-size: 1.5rem;
-		font-weight: $weight_light;
-		text-align: center;
-	}
+.success {
+	color: $go_dark;
 }

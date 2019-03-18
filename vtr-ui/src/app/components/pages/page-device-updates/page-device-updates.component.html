@@ -2,8 +2,8 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
-			 [back]="back"
-			 [title]="title"></vtr-header-main>
+				[back]="back"
+				[title]="title"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -18,22 +18,40 @@
 										<vtr-widget-device-update [title]="
 												'An up-to-date system is a healthy system.'
 											"
-										 [subTitle1]="'Last update was on'"
-										 [subTitle2]="'Next updated scan is scheduled on '"
-										 [checkForUpdates]="'Check For Updates'"></vtr-widget-device-update>
+											[subTitle1]="getLastUpdatedText()"
+											[subTitle2]="getNextUpdatedScanText()"
+											[buttonText]="'Check For Updates'"
+											[percent]="percentCompleted"
+											[showProgress]="canShowProgress"
+											[isUpdateDownloading]="isUpdateDownloading"
+											[installingPercent]="installationPercent"
+											[downloadingPercent]="downloadingPercent"
+											(checkForUpdate)="onCheckForUpdates()"
+											(cancelUpdateCheck)="onCancelUpdateCheck()">
+										</vtr-widget-device-update>
 									</div>
 								</div>
 
-								<vtr-available-updates></vtr-available-updates>
+								<vtr-available-updates *ngIf="isUpdatesAvailable && !isUpdateDownloading"
+									[criticalUpdates]="criticalUpdates"
+									[optionalUpdates]="optionalUpdates"
+									[recommendedUpdates]="recommendedUpdates"
+									[isInstallationCompleted]="isInstallationCompleted"
+									[isInstallationSuccess]="isInstallationSuccess"
+									(checkChange)="onUpdateSelectionChange($event)"
+									(installAllUpdate)="onInstallAllUpdate($event)"
+									(installSelectedUpdate)="onInstallSelectedUpdate($event)">
+								</vtr-available-updates>
 
+								<!-- Installation timeline is scope of MVP-2 -->
 								<div class="row">
 									<div class="col col-12 installation-history-container">
-										<div class="row">
+										<!--<div class="row">
 											<div class="col installation-history">
 												{{ installationHistory }}
 											</div>
 										</div>
-										<div class="row installation-history-div">
+										 <div class="row installation-history-div">
 											<div class="col col-1 installation-history-ellipses">
 												...
 											</div>
@@ -46,14 +64,15 @@
 														<ul class="status-list">
 															<div class="row">
 																<li *ngFor="let item of installationHistoryList"
-																 [ngClass]="[item.status]">
+																	[ngClass]="[item.status]">
 																	<a routerLink="/{{item.path}}">
 																		<div class="container-fluid">
 																			<div class="row">
 																				<div class="col col-2 text-center">
 																					<div class="status-icon">
 																						<div class="icon-bkg">
-																							<fa-icon [icon]="['fas', item.icon]">
+																							<fa-icon
+																								[icon]="['fas', item.icon]">
 																							</fa-icon>
 																						</div>
 																					</div>
@@ -75,21 +94,18 @@
 											<div class="col col-1 installation-history-dash">
 												Now
 											</div>
-										</div>
+										</div> -->
 										<div class="row">
 											<div class="col row1 full-history">
-												<a (click)="toggleFullHistory()">Full History</a>
+												<a (click)="onToggleFullHistory()">Full History</a>
 											</div>
 										</div>
 
-										<vtr-installation-history *ngIf="showFullHistory"></vtr-installation-history>
-
-										<div class="row p-20">
-											<div class="col">
-											</div>
-										</div>
+										<vtr-installation-history *ngIf="showFullHistory"
+											(reinstallUpdate)="onReinstallUpdate($event)"></vtr-installation-history>
 									</div>
 								</div>
+
 							</div>
 						</div>
 					</div>
@@ -100,19 +116,22 @@
 							<div class="row mb-40">
 								<div class="col col-12 cont">
 									<vtr-widget-device-update-settings [title]="'Auto update settings'"
-									 [description]="'Automatically Install Updates'"
-									 [items]="dummyUpdates"></vtr-widget-device-update-settings>
+										[description]="'Automatically Install Updates'"
+										[items]="autoUpdateOptions"
+										(toggleOnOff)="onUpdateToggleOnOff($event)">
+									</vtr-widget-device-update-settings>
 								</div>
 							</div>
 							<div class="row mb-40">
 								<div class="col col-12">
-									<vtr-container-card [img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
-									 [title]="'Lenovo Support website'"
-									 [logoText]="'LENOVO SPECIAL'"
-									 [readMore]="'http://www.google.com'"
-									 [type]="'partnerarticle'"
-									 [ratioX]="4"
-									 [ratioY]="2">
+									<vtr-container-card
+										[img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
+										[title]="'Lenovo Support website'"
+										[logoText]="'LENOVO SPECIAL'"
+										[readMore]="'http://www.google.com'"
+										[type]="'partnerarticle'"
+										[ratioX]="4"
+										[ratioY]="2">
 									</vtr-container-card>
 								</div>
 							</div>
@@ -122,7 +141,6 @@
 									<vtr-widget-reboot></vtr-widget-reboot>
 								</div>
 							</div>
-
 						</div>
 					</div>
 				</div>

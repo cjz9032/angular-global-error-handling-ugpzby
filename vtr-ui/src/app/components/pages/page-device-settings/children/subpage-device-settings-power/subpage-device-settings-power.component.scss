@@ -45,39 +45,47 @@
 				text-transform: uppercase;
 			}
 
-			p,  {
+			p {
 				opacity: 0.8;
 				color: $light;
 				font-size: 1.6rem;
 				line-height: 2.8rem;
 				padding-bottom: 2.5rem;
 				border-bottom: 1px solid $screen_light_15;
-					a{
-						list-style: none;
-						text-decoration: underline;
-						color: $light;
-						&:hover{
-							list-style: none;
-							color: $light;
-							text-decoration: underline;
-						}
-					}
-
 			}
-
 		}
-	}
-
-	.left-margin {
-		margin-left: -3rem;
 	}
 
 	ul.list-group {
 		list-style-type: none;
 		padding-bottom: 3rem;
 	}
-	
+
 	.disable {
 		opacity: 0.65;
+	}
+
+	.search-icon {
+		>fa-icon {
+			font-size: 2rem;
+			color: $light;
+		}
+	}
+
+	.int-cool-text {
+		font-size: 1.8rem;
+		color: $light;
+		letter-spacing: 0.05rem;
+	}
+
+	.settings-link {
+		color: $light;
+		font-size: 1.8rem;
+		text-decoration: underline;
+	}
+
+	.read-more-link {
+		color: $light;
+		text-decoration: underline;
 	}
 }

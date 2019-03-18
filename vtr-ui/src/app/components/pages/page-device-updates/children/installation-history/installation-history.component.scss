@@ -68,7 +68,7 @@
 					}
 
 					.installation-details {
-						padding-left: 2.4rem;
+						padding-left: 3rem;
 					}
 				}
 
@@ -96,8 +96,6 @@
 					}
 
 					.sort-order {
-						text-align: right;
-
 						a {
 							text-decoration: underline;
 							cursor: pointer;
@@ -106,15 +104,14 @@
 								text-decoration: none;
 							}
 
-							.sort-heading-text {
-								display: inline;
+							.item-text {
 								padding-right: 0.4rem;
 								font-size: 1.8rem;
 								font-weight: $weight_medium;
+								float: left;
 							}
 
 							.sort-icon {
-								display: inline;
 								color: $main;
 								line-height: 2.8rem;
 								font-size: 2rem;
