@@ -7,6 +7,12 @@
   justify-content: space-between;
   align-items: center;
   padding: 4rem;
+  &__description-col {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-between;
+  }
   &__btn-container {
     flex-shrink: 0;
   }

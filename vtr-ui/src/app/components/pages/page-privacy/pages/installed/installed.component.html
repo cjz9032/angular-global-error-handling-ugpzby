@@ -1,21 +1,48 @@
-<div class="privacy-dashboard">
-    <h2 class="privacy-dashboard__title">Privacy control at a glance</h2>
-    <vtr-privacy-dashboard-list></vtr-privacy-dashboard-list>
-</div>
 
 <div class="installed-page">
-    <div class="installed-page__title-line">
-        <h3 class="installed-page__title">Who’s tracking you online</h3>
-        <button class="installed-page__read-more-link">
-            <span class="">Read more</span>
-        </button>
+
+    <div class="installed-page__score">
+        <vtr-privacy-score
+                [scoreParameters]="scoreParameters"
+        ></vtr-privacy-score>
     </div>
-    <p class="installed-page__text">
-        Lenovo Privacy by FigLeaf has blocked trackers on sites within the green bubble above, keeping you private while you do the things you love online.
-    </p>
-    <div class="installed-page__browser">
+
+    <div class="privacy-dashboard">
+        <h2 class="privacy-dashboard__title">Privacy control at a glance</h2>
+        <vtr-privacy-dashboard-list></vtr-privacy-dashboard-list>
+    </div>
+
+    <div class="installed-page__tracking-map">
+        <div class="installed-page__title-line">
+            <h3 class="installed-page__title">Who’s tracking you online</h3>
+            <button class="installed-page__read-more-link">
+                <span class="">Read more</span>
+            </button>
+        </div>
+        <p class="installed-page__text">
+            Lenovo Privacy by FigLeaf has blocked trackers on sites within the green bubble above, keeping you private while you do the things you love online.
+        </p>
+        <div class="installed-page__browser">
+
+        </div>
+    </div>
+
+    <div class="browser-accounts-block browser-accounts-block__wrapper">
+        <h3 class="browser-accounts-block__title">Safely stored passwords</h3>
+        <p class="browser-accounts-block__text">You’re using Lenovo Privacy by FigLeaf to safely store your passwords and log in to your favorite sites, automatically. Everything is encrypted to keep you safe. </p>
+        <div class="figleaf-stored-accounts">
+            <img class="figleaf-stored-accounts__img" src="/assets/images/privacy-tab/logo-leaf.png" alt="">
+            <div class="figleaf-stored-accounts__details-col">
+                <p class="figleaf-stored-accounts__title"><strong>{{accountsStoredByFigleaf?.length}}</strong> accounts stored
+                    in Lenovo Privacy by FigLeaf</p>
+                <button class="figleaf-stored-accounts__btn">Show details</button>
+            </div>
+        </div>
+        <vtr-browser-stored-accounts [inputData]="browserStoredAccountsData"></vtr-browser-stored-accounts>
 
     </div>
+
+    <vtr-support-banner></vtr-support-banner>
 </div>
 
 <button class="btn btn-primary btn-lg" (click)="backClicked()"><= back</button>

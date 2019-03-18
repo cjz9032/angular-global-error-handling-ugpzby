@@ -1,4 +1,9 @@
-<div class="popup" *ngIf="isOpen" (click)="closePopup(popUpId)">
+<div class="popup"
+     [ngClass]="{
+      'popup_big': size === 'big',
+      'popup_large': size === 'large'
+     }"
+     *ngIf="isOpen" (click)="closePopup(popUpId)">
   <div class="popup__inner" (click)="preventClick($event)">
     <button class="popup__close" (click)="closePopup(popUpId)" aria-label="close"></button>
     <ng-content></ng-content>

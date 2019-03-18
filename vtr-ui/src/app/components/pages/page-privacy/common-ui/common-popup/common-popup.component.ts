@@ -1,5 +1,7 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import {CommonPopupService} from '../../common-services/popups/common-popup.service';
+import { CommonPopupService, CommonPopupEventType } from '../../common-services/popups/common-popup.service';
+import { takeUntil } from 'rxjs/operators';
+import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
 
 @Component({
 	selector: 'vtr-common-popup',
@@ -11,6 +13,8 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 	@Input() popUpId: string;
 
 	isOpen = false;
+
+	@Input() size: 'big' | 'large' | 'default' = 'default';
 
 	constructor(private commonPopupService: CommonPopupService) {
 	}
@@ -24,11 +28,18 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 			return;
 		}
 
-		this.commonPopupService.add(popup);
+		this.commonPopupService
+			.openState$(this.popUpId)
+			.pipe(
+				takeUntil(instanceDestroyed(this))
+			)
+			.subscribe(({id, isOpenState}: CommonPopupEventType) => {
+				this.isOpen = isOpenState;
+			});
+
 	}
 
 	ngOnDestroy() {
-		this.commonPopupService.remove(this.popUpId);
 	}
 
 	openPopup() { // not work now
@@ -37,14 +48,6 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 
 	closePopup() {
 		this.commonPopupService.close(this.popUpId);
-	}
-
-	open() {
-		this.isOpen = true;
-	}
-
-	close() {
-		this.isOpen = false;
 	}
 
 	preventClick(ev) {

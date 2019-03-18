@@ -6,8 +6,6 @@ import { Component, Input, OnInit } from '@angular/core';
 	styleUrls: ['./privacy-score.component.scss']
 })
 export class PrivacyScoreComponent implements OnInit {
-	@Input() title: string;
-	@Input() text: string;
 	@Input() scoreParameters: {
 		fixedBreaches: number,
 		unfixedBreaches: number,
@@ -16,27 +14,21 @@ export class PrivacyScoreComponent implements OnInit {
 		monitoringEnabled: boolean,
 		trackingEnabled: boolean,
 	};
-	@Input() btn_text: string;
-	public privacyLevel = 'low';
-	public score = 0;
 
-	/**
-	 * Weight of each score item
-	 */
+	title = 'Your privacy score';
+	text = 'Take control of your privacy by choosing when to be private and what to share on every site you interact with.';
+	btn_text = 'Understand my score';
+	privacyLevel = 'low';
+	score = 0;
+
 	private scoreWeights = {
 		leaksScore: 1.25,
 		monitoringEnabled: 1.25,
 		trackingEnabled: 1.25,
 		passwordStorageScore: 1.25,
-
 		constant: 0
 	};
 
-	/**
-	 * Calculates score based on parameters
-	 *
-	 * @param {scoreParameters} params
-	 */
 	private calculate(params) {
 		const leaksScore = this.calculateLeaksScore(params.fixedBreaches, params.unfixedBreaches);
 		const passwordStorageScore = this.calculatePasswordStorageScore(params.fixedStorages, params.unfixedStorages);
@@ -46,59 +38,31 @@ export class PrivacyScoreComponent implements OnInit {
 			passwordStorageScore,
 			monitoringEnabled: params.monitoringEnabled,
 			trackingEnabled: params.trackingEnabled,
-
 			constant: 0
-		})
+		});
 	}
 
-	/**
-	 * Calculates proportion of 'a' over 'b'
-	 *
-	 * @param {Number} a
-	 * @param {Number} b
-	 */
 	private calculateProportion(a, b) {
 		const total = a + b;
-		if (total === 0) return 1;
-
-		return a / total
+		if (total === 0) {
+			return 1;
+		}
+		return a / total;
 	}
 
-	/**
-	 * Formula to calculate leaks score
-	 *
-	 * @param {Number} fixedLeaks number of fixed data breaches
-	 * @param {Number} unfixedLeaks number of unfixed data breaches
-	 */
 	private calculateLeaksScore(fixedLeaks, unfixedLeaks) {
-		return this.calculateProportion(fixedLeaks, unfixedLeaks)
+		return this.calculateProportion(fixedLeaks, unfixedLeaks);
 	}
 
-	/**
-	 * Formula to calculate password storage score
-	 * @param {Number} safeStorages number of safe password storages
-	 * @param {Number} unsafeStorages number of unsafe password storages
-	 */
 	private calculatePasswordStorageScore(safeStorages, unsafeStorages) {
-		return this.calculateProportion(safeStorages, unsafeStorages)
+		return this.calculateProportion(safeStorages, unsafeStorages);
 	}
 
-	/**
-	 *
-	 * Formula to calculate privacy score
-	 *
-	 * @param {int} leaksScore range from 0-1
-	 * @param {int} monitoringEnabled range from 0-1
-	 * @param {int} trackingEnabled  range from 0-1
-	 * @param {int} passwordStorageScore range from 0-1
-	 */
 	private calculateScore(scoreItems) {
 		const scoreTotalReducer = (total, key) => total + scoreItems[key] * this.scoreWeights[key];
 		const scoreItemsKeys = Object.keys(scoreItems);
-
-		let totalScore = scoreItemsKeys.reduce(scoreTotalReducer, 0);
-
-		return Math.round(totalScore / scoreItemsKeys.length * 100)
+		const totalScore = scoreItemsKeys.reduce(scoreTotalReducer, 0);
+		return Math.round(totalScore / scoreItemsKeys.length * 100);
 	}
 
 	ngOnInit() {
@@ -106,12 +70,23 @@ export class PrivacyScoreComponent implements OnInit {
 		this.score = score;
 		if (score < 40) {
 			this.privacyLevel = 'low';
+			this.title = 'Low privacy score';
+			this.text = 'A lot of your personal info is out there. ' +
+				'Take control of your privacy by choosing when to be private and what to share on every site you interact with.';
 		} else if (score < 60) {
 			this.privacyLevel = 'medium-low';
+			this.title = 'Medium privacy score';
+			this.text = 'A lot of your personal info is out there. ' +
+				'Take control of your privacy by choosing when to be private and what to share on every site you interact with.';
 		} else if (score < 80) {
 			this.privacyLevel = 'medium';
+			this.title = 'Medium privacy score';
+			this.text = 'A lot of your personal info is out there. ' +
+				'Take control of your privacy by choosing when to be private and what to share on every site you interact with.';
 		} else {
 			this.privacyLevel = 'high';
+			this.title = 'High privacy score';
+			this.text = 'You’re doing a great job controlling your privacy. Keep it up!';
 		}
 	}
 

@@ -1,26 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import {CommonPopupService} from '../../common-services/popups/common-popup.service';
+import { CommonPopupService } from '../../common-services/popups/common-popup.service';
 
 @Component({
-  selector: 'vtr-support-banner',
-  templateUrl: './support-banner.component.html',
-  styleUrls: ['./support-banner.component.scss']
+	selector: 'vtr-support-banner',
+	templateUrl: './support-banner.component.html',
+	styleUrls: ['./support-banner.component.scss', './support-popup.scss']
 })
 export class SupportBannerComponent implements OnInit {
 
-  constructor(private commonPopupService: CommonPopupService) { }
+	constructor(private commonPopupService: CommonPopupService) {
+	}
 
-  ngOnInit() {
-    // FIXME no need use string
-    this.commonPopupService.close$('support-popup')
-        .subscribe(id => console.log('close', id))
-  }
+	ngOnInit() {
+		// TODO delete me after review
+		this.commonPopupService.openState$('support-popup')
+			.subscribe(({id, isOpenState: state}) => console.log('isOpen', state, id));
+	}
 
-  openPopup(id) {
-    this.commonPopupService.open(id);
-  }
+	openPopup(id) {
+		this.commonPopupService.open(id);
+	}
 
-  closePopup(id) {
-    this.commonPopupService.close(id);
-  }
+	closePopup(id) {
+		this.commonPopupService.close(id);
+	}
 }
