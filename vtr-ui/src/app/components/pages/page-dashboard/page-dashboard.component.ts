@@ -6,6 +6,8 @@ import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Status } from 'src/app/data-models/widgets/status.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { CMSService } from 'src/app/services/cms/cms.service';
+
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
@@ -20,6 +22,9 @@ export class PageDashboardComponent implements OnInit {
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
 
+	cardContentPositionB: any = {};
+	cardContentPositionC: any = {};
+
 	/*forwardLink = {
 		path: 'dashboard-customize',
 		label: 'Customize Dashboard'
@@ -32,7 +37,8 @@ export class PageDashboardComponent implements OnInit {
 		private modalService: NgbModal,
 		config: NgbModalConfig,
 		private commonService: CommonService,
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
+		public cmsService: CMSService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -44,6 +50,34 @@ export class PageDashboardComponent implements OnInit {
 			this.getSystemInfo();
 			this.getSecurityStatus();
 		}
+
+		let queryOptions = {
+			'Page': 'dashboard',
+			'Lang': 'EN',
+			'GEO': 'US',
+			'OEM': 'Lenovo',
+			'OS': 'Windows',
+			'Segment': 'SMB',
+			'Brand': 'Lenovo'
+		};
+
+		this.cmsService.fetchCMSContent(queryOptions).subscribe(
+			(response: any) => {
+				console.log('fetchCMSContent response', response);
+
+				this.cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+				this.cardContentPositionC = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
+
+				console.log('this.cardContentPositionB', this.cardContentPositionB);
+				console.log('this.cardContentPositionC', this.cardContentPositionC);
+
+				this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+				this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
+			},
+			error => {
+				console.log('fetchCMSContent error', error);
+			}
+		);
 	}
 
 	onFeedbackModal(content: any) {
