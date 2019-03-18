@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { MyDevice } from 'src/app/data-models/device/my-device.model';
+import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 
 @Injectable({
 	providedIn: 'root'
@@ -45,5 +46,11 @@ export class DeviceService {
 			return this.sysInfo.getMemAndDiskUsage();
 		}
 		return undefined;
+	}
+
+	public launchUri(path: string) {
+		if (WinRT.launchUri && path) {
+			WinRT.launchUri(path);
+		}
 	}
 }

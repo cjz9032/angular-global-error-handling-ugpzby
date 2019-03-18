@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-ui-list-chevron',
@@ -25,7 +26,7 @@ export class UiListChevronComponent implements OnInit {
 		2: 'circle'
 	};
 
-	constructor() { }
+	constructor(private deviceService: DeviceService) { }
 
 	ngOnInit() {
 	}
@@ -75,7 +76,14 @@ export class UiListChevronComponent implements OnInit {
 		}
 		// console.log(" itemDetailClass " + JSON.stringify(itemDetailClass));
 		return itemDetailClass;
-
 	}
 
+	/**
+	 * launchSystemUri
+	path: string */
+	public launchSystemUri(path: string) {
+		if (path) {
+			this.deviceService.launchUri(path);
+		}
+	}
 }
