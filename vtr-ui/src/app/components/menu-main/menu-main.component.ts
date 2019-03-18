@@ -1,19 +1,19 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
-import { Subscription } from 'rxjs/internal/Subscription';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Router} from '@angular/router';
+import {Subscription} from 'rxjs/internal/Subscription';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
-import { ConfigService } from '../../services/config/config.service';
-import { DeviceService } from '../../services/device/device.service';
-import { UserService } from '../../services/user/user.service';
-import { ModalLenovoIdComponent } from '../modal/modal-lenovo-id/modal-lenovo-id.component';
-import { CommonService } from 'src/app/services/common/common.service';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { TranslationService } from 'src/app/services/translation/translation.service';
+import {ConfigService} from '../../services/config/config.service';
+import {DeviceService} from '../../services/device/device.service';
+import {UserService} from '../../services/user/user.service';
+import {ModalLenovoIdComponent} from '../modal/modal-lenovo-id/modal-lenovo-id.component';
+import {CommonService} from 'src/app/services/common/common.service';
+import {AppNotification} from 'src/app/data-models/common/app-notification.model';
+import {LocalStorageKey} from 'src/app/enums/local-storage-key.enum';
+import {TranslationService} from 'src/app/services/translation/translation.service';
 import Translation from 'src/app/data-models/translation/translation';
-import { TranslationSection } from 'src/app/enums/translation-section.enum';
-import { environment } from '../../../environments/environment';
+import {TranslationSection} from 'src/app/enums/translation-section.enum';
+import {environment} from '../../../environments/environment';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -32,44 +32,44 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			label: 'Dashboard',
 			path: 'dashboard',
 			icon: 'columns',
-			metricsEvent:'itemClick',
-			metricsParent:'navbar',
-			metricsItem:'link.dashboard',
+			metricsEvent: 'itemClick',
+			metricsParent: 'navbar',
+			metricsItem: 'link.dashboard',
 			subitems: []
 		}, {
 			id: 'device',
 			label: 'Device',
 			path: 'device',
 			icon: 'laptop',
-			metricsEvent:'itemClick',
-			metricsParent:'navbar',
-			metricsItem:'link.device',
+			metricsEvent: 'itemClick',
+			metricsParent: 'navbar',
+			metricsItem: 'link.device',
 			subitems: [{
 				id: 'device',
 				label: 'My device',
 				path: 'device',
 				icon: '',
-				metricsEvent:'itemClick',
-				metricsParent:'navbar',
-				metricsItem:'link.mydevice',
+				metricsEvent: 'itemClick',
+				metricsParent: 'navbar',
+				metricsItem: 'link.mydevice',
 				subitems: []
 			}, {
 				id: 'device-settings',
 				label: 'My device settings',
 				path: 'device-settings',
 				icon: '',
-				metricsEvent:'itemClick',
-				metricsParent:'navbar',
-				metricsItem:'link.mydevicesettings',
+				metricsEvent: 'itemClick',
+				metricsParent: 'navbar',
+				metricsItem: 'link.mydevicesettings',
 				subitems: []
 			}, {
 				id: 'system-updates',
 				label: 'System updates',
 				path: 'system-updates',
 				icon: '',
-				metricsEvent:'itemClick',
-				metricsParent:'navbar',
-				metricsItem:'link.systemupdates',
+				metricsEvent: 'itemClick',
+				metricsParent: 'navbar',
+				metricsItem: 'link.systemupdates',
 				subitems: []
 			}]
 		}, {
@@ -77,35 +77,35 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			label: 'Security',
 			path: 'security',
 			icon: 'lock',
-			metricsEvent:'itemClick',
-			metricsParent:'navbar',
-			metricsItem:'link.security',
+			metricsEvent: 'itemClick',
+			metricsParent: 'navbar',
+			metricsItem: 'link.security',
 			subitems: [{
 				id: 'security',
 				label: 'My Security',
 				path: 'security',
 				icon: '',
-				metricsEvent:'itemClick',
-				metricsParent:'navbar',
-				metricsItem:'link.mysecurity',
+				metricsEvent: 'itemClick',
+				metricsParent: 'navbar',
+				metricsItem: 'link.mysecurity',
 				subitems: []
 			}, {
 				id: 'anti-virus',
 				label: 'Anti-Virus',
 				path: 'anti-virus',
 				icon: '',
-				metricsEvent:'itemClick',
-				metricsParent:'navbar',
-				metricsItem:'link.antivirus',
+				metricsEvent: 'itemClick',
+				metricsParent: 'navbar',
+				metricsItem: 'link.antivirus',
 				subitems: []
 			}, {
 				id: 'wifi-security',
 				label: 'WiFi Security',
 				path: 'wifi-security',
 				icon: '',
-				metricsEvent:'itemClick',
-				metricsParent:'navbar',
-				metricsItem:'link.wifisecurity',
+				metricsEvent: 'itemClick',
+				metricsParent: 'navbar',
+				metricsItem: 'link.wifisecurity',
 				subitems: []
 			}, {
 				id: 'password-protection',
@@ -117,9 +117,9 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				id: 'internet-protection',
 				label: 'Internet Protection',
 				path: 'internet-protection',
-				metricsEvent:'itemClick',
-				metricsParent:'navbar',
-				metricsItem:'link.internetprotection',
+				metricsEvent: 'itemClick',
+				metricsParent: 'navbar',
+				metricsItem: 'link.internetprotection',
 				icon: '',
 				subitems: []
 			}, {
@@ -127,9 +127,9 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				label: 'Windows Hello',
 				path: 'windows-hello',
 				icon: '',
-				metricsEvent:'itemClick',
-				metricsParent:'navbar',
-				metricsItem:'link.windowshello',
+				metricsEvent: 'itemClick',
+				metricsParent: 'navbar',
+				metricsItem: 'link.windowshello',
 				subitems: []
 			}]
 		}, {
@@ -137,9 +137,9 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			label: 'Support',
 			path: 'support',
 			icon: 'wrench',
-			metricsEvent:'itemClick',
-			metricsParent:'navbar',
-			metricsItem:'link.support',
+			metricsEvent: 'itemClick',
+			metricsParent: 'navbar',
+			metricsItem: 'link.support',
 			forArm: true,
 			subitems: []
 		}, {
@@ -147,9 +147,9 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			label: 'User',
 			path: 'user',
 			icon: 'user',
-			metricsEvent:'itemClick',
-			metricsParent:'navbar',
-			metricsItem:'link.user',
+			metricsEvent: 'itemClick',
+			metricsParent: 'navbar',
+			metricsItem: 'link.user',
 			subitems: []
 		}
 	];
@@ -175,6 +175,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			this.onNotification(notification);
 		});
 	}
+
 	ngOnDestroy() {
 		if (this.commonMenuSubscription) {
 			this.commonMenuSubscription.unsubscribe();
