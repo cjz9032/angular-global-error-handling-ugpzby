@@ -17,6 +17,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	@Output() contrastChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureChange: EventEmitter<ChangeContext> = new EventEmitter();
 	public cameraDetail: CameraDetail;
+	public showAutoExposureSlider: boolean;
 
 	private cameraPreview: ElementRef;
 	private _video: HTMLVideoElement;
@@ -84,7 +85,13 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	public onAutoExposureChange($event: any) {
-		this.baseCameraDetail.toggleAutoExposure($event.switchValue);
+		try
+		{
+			this.showAutoExposureSlider = !$event.switchValue;
+			this.baseCameraDetail.toggleAutoExposure($event.switchValue);
+		} catch(error) {
+			console.error(error.message);
+		}
 	}
 
 	private activateCamera() {
