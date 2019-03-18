@@ -32,29 +32,44 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			label: 'Dashboard',
 			path: 'dashboard',
 			icon: 'columns',
+			metricsEvent:'itemClick',
+			metricsParent:'navbar',
+			metricsItem:'link.dashboard',
 			subitems: []
 		}, {
 			id: 'device',
 			label: 'Device',
 			path: 'device',
 			icon: 'laptop',
+			metricsEvent:'itemClick',
+			metricsParent:'navbar',
+			metricsItem:'link.device',
 			subitems: [{
 				id: 'device',
 				label: 'My device',
 				path: 'device',
 				icon: '',
+				metricsEvent:'itemClick',
+				metricsParent:'navbar',
+				metricsItem:'link.mydevice',
 				subitems: []
 			}, {
 				id: 'device-settings',
 				label: 'My device settings',
 				path: 'device-settings',
 				icon: '',
+				metricsEvent:'itemClick',
+				metricsParent:'navbar',
+				metricsItem:'link.mydevicesettings',
 				subitems: []
 			}, {
 				id: 'system-updates',
 				label: 'System updates',
 				path: 'system-updates',
 				icon: '',
+				metricsEvent:'itemClick',
+				metricsParent:'navbar',
+				metricsItem:'link.systemupdates',
 				subitems: []
 			}]
 		}, {
@@ -62,23 +77,35 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			label: 'Security',
 			path: 'security',
 			icon: 'lock',
+			metricsEvent:'itemClick',
+			metricsParent:'navbar',
+			metricsItem:'link.security',
 			subitems: [{
 				id: 'security',
 				label: 'My Security',
 				path: 'security',
 				icon: '',
+				metricsEvent:'itemClick',
+				metricsParent:'navbar',
+				metricsItem:'link.mysecurity',
 				subitems: []
 			}, {
 				id: 'anti-virus',
 				label: 'Anti-Virus',
 				path: 'anti-virus',
 				icon: '',
+				metricsEvent:'itemClick',
+				metricsParent:'navbar',
+				metricsItem:'link.antivirus',
 				subitems: []
 			}, {
 				id: 'wifi-security',
 				label: 'WiFi Security',
 				path: 'wifi-security',
 				icon: '',
+				metricsEvent:'itemClick',
+				metricsParent:'navbar',
+				metricsItem:'link.wifisecurity',
 				subitems: []
 			}, {
 				id: 'password-protection',
@@ -90,6 +117,9 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				id: 'internet-protection',
 				label: 'Internet Protection',
 				path: 'internet-protection',
+				metricsEvent:'itemClick',
+				metricsParent:'navbar',
+				metricsItem:'link.internetprotection',
 				icon: '',
 				subitems: []
 			}, {
@@ -97,6 +127,9 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				label: 'Windows Hello',
 				path: 'windows-hello',
 				icon: '',
+				metricsEvent:'itemClick',
+				metricsParent:'navbar',
+				metricsItem:'link.windowshello',
 				subitems: []
 			}]
 		}, {
@@ -104,6 +137,9 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			label: 'Support',
 			path: 'support',
 			icon: 'wrench',
+			metricsEvent:'itemClick',
+			metricsParent:'navbar',
+			metricsItem:'link.support',
 			forArm: true,
 			subitems: []
 		}, {
@@ -111,6 +147,9 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			label: 'User',
 			path: 'user',
 			icon: 'user',
+			metricsEvent:'itemClick',
+			metricsParent:'navbar',
+			metricsItem:'link.user',
 			subitems: []
 		}
 	];

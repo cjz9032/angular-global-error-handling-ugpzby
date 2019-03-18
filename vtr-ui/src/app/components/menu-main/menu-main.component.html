@@ -25,7 +25,7 @@
 				<ng-container *ngFor="let item of items; let i=index">
 					<li *ngIf="item.subitems.length===0&&item.id!=='user'"
 						class="nav-item">
-						<a class="nav-link {{item.id}}"
+						<a class="nav-link {{item.id}}" vtrMetrics  [metricsEvent]="item.metricsEvent" [metricsParent]="item.metricsParent" [metricsItem]="item.metricsItem"
 							routerLink="/{{item.path}}"
 							routerLinkActive="active">
 							<fa-icon [icon]="['fas', item.icon]"
@@ -35,7 +35,7 @@
 					</li>
 					<li *ngIf="item.subitems.length>0&&item.id!=='user'"
 						class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle {{item.id}}"
+						<a class="nav-link dropdown-toggle {{item.id}}" vtrMetrics  [metricsEvent]="item.metricsEvent" [metricsParent]="item.metricsParent" [metricsItem]="item.metricsItem"
 							routerLink="/{{item.path}}"
 							routerLinkActive="active"
 							id="navbarDropdown"
@@ -51,14 +51,14 @@
 							aria-labelledby="navbarDropdown">
 							<fa-icon [icon]="['fas', 'square']"
 								class="menu-pointer"></fa-icon>
-							<a *ngFor="let subitem of item.subitems; let ii=index"
+							<a *ngFor="let subitem of item.subitems; let ii=index" vtrMetrics  [metricsEvent]="subitem.metricsEvent" [metricsParent]="subitem.metricsParent" [metricsItem]="subitem.metricsItem"
 								class="dropdown-item link"
 								routerLink="/{{subitem.path}}">{{subitem.label}}</a>
 						</div>
 					</li>
 					<li *ngIf="item.id==='user'"
 						class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle {{item.id}}"
+						<a class="nav-link dropdown-toggle {{item.id}}" vtrMetrics  [metricsEvent]="item.metricsEvent" [metricsParent]="item.metricsParent" [metricsItem]="item.metricsItem"
 							routerLink="/{{item.path}}"
 							routerLinkActive="active"
 							id="navbarDropdown"
@@ -73,11 +73,11 @@
 						<div class="dropdown-menu {{item.id}}"
 							aria-labelledby="navbarDropdown">
 							<div class="dropdown-item">Welcome, {{userService.firstName}}</div>
-							<a *ngIf="!userService.auth"
+							<a *ngIf="!userService.auth" vtrMetrics  [metricsEvent]="item.metricsEvent" [metricsParent]="item.metricsParent" [metricsItem]="item.metricsItem"
 								class="dropdown-item link"
 								href="#"
 								(click)="OpenLenovoId()">Login</a>
-							<a *ngIf="userService.auth"
+							<a *ngIf="userService.auth" vtrMetrics  [metricsEvent]="item.metricsEvent" [metricsParent]="item.metricsParent" [metricsItem]="item.metricsItem"
 								class="dropdown-item link"
 								href="#"
 								(click)="onLogout()">Logout</a>
