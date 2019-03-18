@@ -103,17 +103,6 @@ export class UserService {
 			return this.lid.enableSSO(useruad, username, userid, userguid);
 		}
 
-		this.metrics.sendAsync({
-			ItemType: 'TaskAction',
-			TaskName: 'LID.SignIn',
-			TaskResult: 'success',
-			TaskParam: JSON.stringify({
-				StarterStatus: 'NA',
-				AccountState: 'NA', //{Signin | AlreadySignedIn | NeverSignedIn},
-				FeatureRequested: 'NA' // {AppOpen | SignIn | Vantage feature}
-			})
-		});
-
 		return undefined;
 	}
 
@@ -149,8 +138,19 @@ export class UserService {
 
 	setAuth(auth = false) {
 		this.devService.writeLog('SET AUTH');
-		const self = this;
-		self.devService.writeLog('LOGIN RES', auth);
+		if (auth) {
+			this.metrics.sendAsync({
+				ItemType: 'TaskAction',
+				TaskName: 'LID.SignIn',
+				TaskResult: 'success',
+				TaskParam: JSON.stringify({
+					StarterStatus: 'NA',
+					AccountState: 'NA', //{Signin | AlreadySignedIn | NeverSignedIn},
+					FeatureRequested: 'NA' // {AppOpen | SignIn | Vantage feature}
+				})
+			});
+		}
+		this.devService.writeLog('LOGIN RES', auth);
 		this.auth = auth;
 	}
 
@@ -165,14 +165,13 @@ export class UserService {
 					self.setName('User', '');
 					self.auth = false;
 				}
-				this.devService.writeLog('LOGOUT: ', result.success);
+				self.devService.writeLog('LOGOUT: ', result.success);
 			});
 		}
 	}
 
 	setToken(token: any) {
 		this.devService.writeLog('SET TOKEN', token);
-		this.setAuth(true);
 		this.token = token;
 		this.commsService.token = token;
 		this.cookieService.set('token', token, 99999999999999999, '/');

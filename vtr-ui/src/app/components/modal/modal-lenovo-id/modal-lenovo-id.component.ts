@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, HostListener, AfterViewInit, OnDestroy, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from '../../../services/user/user.service';
 import { Subscription, timer } from 'rxjs';
@@ -15,6 +15,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	private cacheCleared: boolean;
 	private detectConnectionStatusSub: Subscription;
 	private detectConnectionStatusTimer = timer(5000, 5000);
+	public isBroswerVisible = false; // show or hide web browser, hide or show progress spinner
 	constructor(
 		public activeModal: NgbActiveModal,
 		private userService: UserService,
@@ -23,6 +24,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	) {
 		this.isOnline = false;
 		this.cacheCleared = false;
+		this.isBroswerVisible = false;
 	}
 
 	// Capture the html content in webView
@@ -38,9 +40,10 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 
 		promise.then(function (result) {
 			// For result
-			console.log(result);
+			//console.log(result);
 		}).catch(function (error) {
 			// Error
+			console.log(error);
 		});
 		return promise;
 	}
@@ -58,8 +61,8 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	}
 
 	//
-	// TODO: The input parameter 'locale' come from field 'locale' in macine info xml, 
-	// it is system locale setting, this fucntion is to convert the locale to LID supported 13 languages.
+	// TODO: The input parameter 'locale' come from field 'locale' in machine info xml, 
+	// it is system locale setting, this fucntion is to convert the locale to LID supported 17 languages.
 	// here is map for each language:
 	//	zh_CN: 中文(简体)
 	// 	zh_HANT: 中文(繁体)
@@ -119,11 +122,12 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 				} else {
 					// Get current system local and set to url
 					self.supportService.getMachineInfo().then((machineInfo) => {
-						webView.src = loginUrl + "&lang=" + self.getLidSupportedLanguageFromLocale(machineInfo.locale);
-						self.devService.writeLog('Loading login page, logon url is ', webView.src);
-					}, error => {
-						self.devService.writeLog('getMachineInfo() failed, error: ' + error + ', loading logon url with default language en_US');
+						loginUrl += "&lang=" + self.getLidSupportedLanguageFromLocale(machineInfo.locale);
 						webView.src = loginUrl;
+						self.devService.writeLog('Loading login page ', loginUrl);
+					}, error => {
+						webView.src = loginUrl;
+						self.devService.writeLog('getMachineInfo() failed ' + error + ', loading default login page ' + loginUrl);
 					});
 				}
 			}
@@ -135,6 +139,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 				if (EventArgs.uri.startsWith('https://passport.lenovo.com/wauthen5/userLogout?')) {
 					return;
 				}
+				self.isBroswerVisible = true;
 				if (EventArgs.srcElement.documentTitle.startsWith('Login success')) {
 					self.captureWebViewContent(webView).then((htmlContent: any) => {
 						try {
@@ -166,7 +171,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 				}
 			} else {
 				// Handle error
-				self.activeModal.dismiss();
+				//self.activeModal.dismiss();
 				self.devService.writeLog('MSWebViewNavigationCompleted: Login failed!');
 			}
 		});
@@ -177,7 +182,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		//  this is workaround borrow from Vantage 2.x to launch external browser and avoid the crash. 
 		//  The side effect are:
 		//  1, user have to back to the app and log in again after he/she created account in the brwoser; 
-		//  2, if url was changed by facebook the workarround will not work anymore.
+		//  2, if url was changed by facebook the workaround will not work anymore.
 		//
 		webView.addEventListener('MSWebViewNavigationStarting', (EventArgs) => {
 			if (EventArgs.uri.indexOf("facebook.com/r.php") != -1 ||
@@ -189,6 +194,8 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 				// Prevent navigations to create facebook account
 				EventArgs.preventDefault();
 				return;
+			} else {
+				this.isBroswerVisible = false;
 			}
 		});
 	}
