@@ -20,7 +20,8 @@ import { PageSecurityWindowsHelloComponent } from './components/pages/page-secur
 const routes: Routes = [
 	{
 		path: '',
-		component: PageDashboardComponent
+		redirectTo: 'dashboard',
+		pathMatch: 'full'
 	}, {
 		path: 'dashboard',
 		component: PageDashboardComponent
@@ -64,7 +65,7 @@ const routes: Routes = [
 	}, {
 		path: 'internet-protection',
 		component: PageSecurityInternetComponent
-	}, 
+	},
 	{
 		path: 'windows-hello',
 		component: PageSecurityWindowsHelloComponent
@@ -82,7 +83,7 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [
-		RouterModule.forRoot(routes, { useHash: true, scrollPositionRestoration: 'enabled'})
+		RouterModule.forRoot(routes, { useHash: true, scrollPositionRestoration: 'enabled' })
 	],
 	exports: [
 		RouterModule

@@ -3,6 +3,12 @@
 		<button *ngIf="label"
 			type="button"
 			class="button"
+				vtrMetrics
+			    [metricsItem]="metricsItem"
+				[metricsEvent]="'itemClick'"
+				[metricsParam]="metricsParam"
+				[metricsValue]="metricsValue"
+				[metricsParent]="metricsParent"
 			[ngClass]="{'fullWidth': isFullWidth === true}"
 			(click)="onClickButton($event)">{{label}} </button>
 	</div>

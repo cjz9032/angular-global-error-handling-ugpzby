@@ -21,7 +21,7 @@
 			Battery Gauge
 		</div>
 		<div class="battery-health">
-			Battery healthy
+			Battery Health
 		</div>
 		<div class="pt-4 battery-frame pr-3">
 			<vtr-battery-indicator [remainingHour]="2"
@@ -33,7 +33,7 @@
 			</vtr-battery-indicator>
 		</div>
 		<div class="pt-4 text-center">
-			<button type="button"
+			<button type="button" vtrMetrics metricsItem="see battery details" metricsParent="battery-gauge" metricsEvent="itemClick"
 				class="btn btn-primary btn-lg battery-detail-button text-uppercase"
 				(click)="showDetailModal(batteryDetail)">
 				See Battery Details
