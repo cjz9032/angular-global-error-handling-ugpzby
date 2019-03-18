@@ -45,7 +45,8 @@ export class MockService {
 			'detail': '4.00 GB of 6 GB',
 			'path': 'ms-settings:about',
 			'asLink': false,
-			'isSystemLink': true
+			'isSystemLink': true,
+			'type': 'system'
 		},
 		{
 			'status': 0,
@@ -54,7 +55,8 @@ export class MockService {
 			'detail': '12.7 GB of 256 GB',
 			'path': 'ms-settings:storagesense',
 			'asLink': false,
-			'isSystemLink': true
+			'isSystemLink': true,
+			'type': 'system'
 		},
 		{
 			'status': 0,
@@ -62,7 +64,8 @@ export class MockService {
 			'title': 'Warranty',
 			'detail': 'Unitil 01/01/2020',
 			'path': '/support',
-			'asLink': false
+			'asLink': false,
+			'type': 'system'
 		},
 		{
 			'status': 1,
@@ -70,7 +73,8 @@ export class MockService {
 			'title': 'System Update',
 			'detail': 'Update',
 			'path': '/system-updates',
-			'asLink': true
+			'asLink': true,
+			'type': 'system'
 		}
 	];
 
@@ -81,14 +85,16 @@ export class MockService {
 			'id': 'apps-src-unknown',
 			'title': 'Apps from unknown sources',
 			'detail': 'Failed',
-			'path': 'apps-src-unknown'
+			'path': '',
+			'hideChevron': true
 		},
 		{
 			'status': 1,
 			'id': 'dev-mode',
 			'title': 'Developer mode',
 			'detail': 'FAILED',
-			'path': 'dev-mode'
+			'path': '',
+			'hideChevron': true
 
 		},
 		{
@@ -96,51 +102,58 @@ export class MockService {
 			'id': 'uac-notification',
 			'title': 'UAC Notification',
 			'detail': 'FAILED',
-			'path': 'uac-notification'
+			'path': '',
+			'hideChevron': true
 		},
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'anti-virus-availability',
 			'title': 'Anti-Virus availability',
 			'detail': 'PASSED',
-			'path': 'anti-virus-availability'
+			'path': '',
+			'hideChevron': true
 		},
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'drive-encryption',
 			'title': 'Drive encryption',
 			'detail': 'PASSED',
-			'path': 'drive-encryption'
+			'path': '',
+			'hideChevron': true
 
 		},
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'firewall-availability',
 			'title': 'Firewall availability',
 			'detail': 'PASSED',
-			'path': 'firewall-availability'
+			'path': '',
+			'hideChevron': true
 
 		},
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'os-integrity',
 			'title': 'OS integrity',
 			'detail': 'PASSED',
-			'path': 'OS integrity'
+			'path': '',
+			'hideChevron': true
 		},
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'os-version',
 			'title': 'OS version',
 			'detail': 'PASSED',
-			'path': 'os-version'
+			'path': '',
+			'hideChevron': true
 		},
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'pin-pwd',
 			'title': 'Pin or Password',
 			'detail': 'PASSED',
-			'path': 'pin-pwd'
+			'path': '',
+			'hideChevron': true
 		}
 	];
 
@@ -196,35 +209,35 @@ export class MockService {
 			'id': 'anti-virus',
 			'title': 'Anti-Virus',
 			'detail': 'Enabled',
-			'path': ''
+			'path': 'anti-virus'
 		},
 		{
 			'status': 1,
 			'id': 'firewall',
 			'title': 'Firewall',
 			'detail': 'Disabled',
-			'path': ''
+			'path': 'anti-virus'
 
 		}
 	];
 
 	securityPasswordHealth = [
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'password-manager',
 			'title': 'Password Manager',
 			'detail': 'Installed',
-			'path': ''
+			'path': 'password-protection'
 		}
 	];
 
 	securityVPN = [
 		{
-			'status': 0,
+			'status': 2,
 			'id': 'virtual-private-network',
 			'title': 'Virtual Private Network',
 			'detail': 'Installed',
-			'path': ''
+			'path': 'internet-protection'
 		}
 	];
 
@@ -234,17 +247,17 @@ export class MockService {
 			'id': 'wifi-security',
 			'title': 'WiFi Security',
 			'detail': 'Enabled',
-			'path': ''
+			'path': 'wifi-security'
 		}
 	];
 
 	securityConnectedHome = [
 		{
-			'status': 0,
+			'status': '',
 			'id': 'connected-home-security',
 			'title': 'Connected Home Security',
-			'detail': 'Enabled',
-			'path': ''
+			'detail': 'Learn more',
+			'path': 'wifi-security'
 		}
 	];
 
@@ -254,7 +267,7 @@ export class MockService {
 			'id': 'fingerprint-reader',
 			'title': 'Fingerprint reader',
 			'detail': 'Enabled',
-			'path': ''
+			'path': 'windows-hello'
 		}
 	];
 
@@ -285,13 +298,13 @@ export class MockService {
 		}
 	];
 
-	warranty = {
-		'status': 1, // 0 IN WARRANTY | 1 WARRANTY EXPIRED | 2 Not Found Warranty
-		'dayDiff': 1,
-		'startDate': '2017-12-13T09:12:43.083Z',
-		'endDate': '2018-12-12T09:12:43.083Z',
-		'url': 'https://pcsupport.lenovo.com/us/en/warrantylookup',
-	};
+	// warranty = {
+	// 	'status': 1, // 0 IN WARRANTY | 1 WARRANTY EXPIRED | 2 Not Found Warranty
+	// 	'dayDiff': 1,
+	// 	'startDate': '2017-12-13T09:12:43.083Z',
+	// 	'endDate': '2018-12-12T09:12:43.083Z',
+	// 	'url': 'https://pcsupport.lenovo.com/us/en/warrantylookup',
+	// };
 
 	documentation = [
 		{
@@ -313,7 +326,7 @@ export class MockService {
 		},
 		{
 			'icon': ['fas', 'share-alt'],
-			'title': 'Contact Customer service',
+			'title': 'Contact customer service',
 			'path': '',
 			'url': 'https://support.lenovo.com/',
 			'target': '_blank',
@@ -348,56 +361,56 @@ export class MockService {
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': '',
 			'logo': 'assets/images/test-logo.svg',
-			'logoText': 'LENEVO SPECIAL',
+			'logoText': 'LENOVO SPECIAL',
 			'readMore': '/#/support-detail',
 		},
 		{
 			'title': '',
 			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
 			'logo': 'assets/images/test-logo.svg',
-			'logoText': 'LENEVO SPECIAL',
+			'logoText': 'LENOVO SPECIAL',
 			'readMore': '/#/support-detail',
 		},
 		{
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
 			'logo': '',
-			'logoText': 'LENEVO SPECIAL',
+			'logoText': 'LENOVO SPECIAL',
 			'readMore': '/#/support-detail',
 		},
 		{
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
 			'logo': 'assets/images/test-logo.svg',
-			'logoText': 'LENEVO SPECIAL',
+			'logoText': 'LENOVO SPECIAL',
 			'readMore': '/#/support-detail',
 		},
 		{
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
 			'logo': 'assets/images/test-logo.svg',
-			'logoText': 'LENEVO SPECIAL',
+			'logoText': 'LENOVO SPECIAL',
 			'readMore': '/#/support-detail',
 		},
 		{
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': '',
 			'logo': '',
-			'logoText': 'LENEVO SPECIAL',
+			'logoText': 'LENOVO SPECIAL',
 			'readMore': '/#/support-detail',
 		},
 		{
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
 			'logo': 'assets/images/test-logo.svg',
-			'logoText': 'LENEVO SPECIAL',
+			'logoText': 'LENOVO SPECIAL',
 			'readMore': '/#/support-detail',
 		},
 		{
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
 			'logo': '',
-			'logoText': 'LENEVO SPECIAL',
+			'logoText': 'LENOVO SPECIAL',
 			'readMore': '/#/support-detail',
 		},
 	];
@@ -489,6 +502,50 @@ export class MockService {
 			'path': '',
 			'lightTitle': false,
 			'rebootRequired': false
+		}
+	];
+
+	fullInstallationHistory = [
+		{
+			'id': '1',
+			icon: 'times',
+			'title': 'Lenovo intelligent Thermal Solutions Driver',
+			'detail': ' - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'success': true,
+			installationDetails: [
+				'Instllation text 1',
+				'Instllation text 2',
+				'Instllation text 3'
+			]
+		},
+		{
+			'id': '2',
+			icon: 'times',
+			'title': 'Intel Wireless LAN driver',
+			'detail': ' - (Windows 10 Build 1709 And Later) - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'success': false,
+			installationDetails: [
+				'Instllation text 1',
+				'Instllation text 2'
+			]
+		},
+		{
+			'id': '3',
+			icon: 'check',
+			'title': 'Lenovo Intelligent Thermal Solution Driver',
+			'detail': ' - 10[64]',
+			'path': '',
+			'lightTitle': false,
+			'success': false,
+			installationDetails: [
+				'Instllation text 11',
+				'Instllation text 22',
+				'Instllation text 33'
+			]
 		}
 	];
 

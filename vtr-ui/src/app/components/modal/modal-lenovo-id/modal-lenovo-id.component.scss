@@ -1,0 +1,25 @@
+@import "../../../app.theme.scss";
+
+.vtr-modal-lenovo-id {
+	padding-left: 3.5rem;
+   .id-container {
+		min-width : 55rem;
+		height : 68rem;
+		margin :0 auto;
+		overflow: hidden;
+   }
+   .btn-close {
+		position: absolute;
+		right:2%;
+		top:2%;
+   }
+   .close{
+		font-size: 3.5rem;
+   }
+}
+.modal-content{
+	width: 63rem !important;
+	margin: 0 auto;
+	overflow: hidden;
+	min-height: 60rem;
+}

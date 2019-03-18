@@ -1,16 +1,19 @@
 // ANGULAR MODULES
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 // THIRD PARTY MODULES
 import { CookieService } from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
 
-// ROUTING MODULES
+// CUSTOM MODULES
 import { AppRoutingModule } from './app-routing.module';
+import { TranslationModule } from './modules/translation.module';
+
 
 // APPLICATION BASE COMPONENTS
 import { AppComponent } from './app.component';
@@ -73,6 +76,7 @@ import { WidgetDeviceUpdateSettingsComponent } from './components/widgets/widget
 
 // APPLICATION MODALS
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
+import { ModalLenovoIdComponent } from './components/modal/modal-lenovo-id/modal-lenovo-id.component';
 
 // APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
@@ -81,11 +85,11 @@ import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
 import { CommsService } from './services/comms/comms.service';
 import { DashboardService } from './services/dashboard/dashboard.service';
-import { DeviceService } from './services/device/device.service';
 import { SecurityService } from './services/security/security.service';
 import { UserService } from './services/user/user.service';
 import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
 import { CameraDetailMockService } from './services/camera/camera-detail/camera-detail.mock.service';
+import { AudioService } from './services/audio/audio.service';
 
 // FONT AWESOME
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -111,8 +115,11 @@ import { WidgetRebootComponent } from './components/widgets/widget-reboot/widget
 import { ContainerArticleComponent } from './components/container-article/container-article.component';
 import { SanitizeUrlPipe } from './pipe/sanitise-url.pipe';
 import { UniqueIdPipe } from './pipe/unique-id.pipe';
-import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
+import { MetricsDirective } from './directives/metrics.directive';
+import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
+import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
 
 library.add(fas);
 library.add(fab);
@@ -181,12 +188,17 @@ library.add(far);
 		WidgetSupportComponent,
 		UiListSupportComponent,
 		WidgetWarrantyComponent,
+		ModalLenovoIdComponent,
 		SanitizeHtmlPipe,
 		WidgetRebootComponent,
 		FeedbackFormComponent,
 		ContainerArticleComponent,
 		SanitizeUrlPipe,
-		UniqueIdPipe
+		UniqueIdPipe,
+		ModalBatteryChargeThresholdComponent,
+		MetricsDirective,
+		InstallationHistoryComponent,
+		SeparatePascalCasePipe
 	],
 	imports: [
 		BrowserModule,
@@ -197,7 +209,8 @@ library.add(far);
 		NgbModule,
 		Ng5SliderModule,
 		ReactiveFormsModule,
-		ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+		ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+		TranslationModule
 	],
 	providers: [
 		CookieService,
@@ -207,12 +220,15 @@ library.add(far);
 		ContainerService,
 		CommsService,
 		DashboardService,
-		DeviceService,
 		SecurityService,
 		UserService,
+		AudioService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
 	bootstrap: [AppComponent],
-	entryComponents: [ModalWelcomeComponent]
+	entryComponents: [ModalLenovoIdComponent, ModalWelcomeComponent],
+	schemas: [
+		CUSTOM_ELEMENTS_SCHEMA
+	]
 })
 export class AppModule { }

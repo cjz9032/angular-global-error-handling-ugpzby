@@ -3,7 +3,7 @@
 .vtr-menu-main {
 	position: fixed;
 	top: 0;
-	z-index: 10000;
+	z-index: 100;
 	width: 100%;
 
 	.navbar {
@@ -30,6 +30,12 @@
 
 				.app-name {
 					font-weight: $weight_medium;
+				}
+
+				.app-version {
+					font-size: 1rem;
+					padding-left: 1rem;
+					font-weight: $weight_light;
 				}
 			}
 
@@ -116,9 +122,16 @@
 
 								&:hover {
 									color: $main;
-									text-decoration: none;
 								}
 							}
+						}
+					}
+					&:last-child{
+						.dropdown-menu{
+							right: 0;
+							left: auto;
+							min-width: 20rem;
+							max-width: 50rem;
 						}
 					}
 				}

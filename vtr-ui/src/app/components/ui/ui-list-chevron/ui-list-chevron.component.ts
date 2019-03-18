@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-ui-list-chevron',
@@ -9,7 +10,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class UiListChevronComponent implements OnInit {
 
 	@Input() items: any[];
-	@Input() iconPlacement: string = 'right';
+	@Input() iconPlacement = 'right';
 
 	/** object having item class list*/
 	itemStatusClass = {
@@ -25,7 +26,7 @@ export class UiListChevronComponent implements OnInit {
 		2: 'circle'
 	};
 
-	constructor() { }
+	constructor(private deviceService: DeviceService) { }
 
 	ngOnInit() {
 	}
@@ -37,7 +38,6 @@ export class UiListChevronComponent implements OnInit {
 			// console.log('status not undefined or empty');
 			if (this.itemStatusClass.hasOwnProperty(item.status)) {
 				itemStatClass = this.itemStatusClass[item.status];
-				// console.log('itemStatClass ' + itemStatClass);
 			}
 		}
 		return itemStatClass;
@@ -63,12 +63,27 @@ export class UiListChevronComponent implements OnInit {
 		if (item.asLink !== undefined && item.asLink) {
 			itemDetailClass['highlight'] = true;
 		}
-		if (item.type !== undefined) {
-			itemDetailClass['security ' + this.getItemStatusClass(item)] = true;
+		// By Default Details are uppercase , lower case when it system status
+		if (item.type === undefined) {
+			itemDetailClass['text - uppercase'] = true;
+		} else if (item.type !== undefined) {
+			if (item.type === 'system') {
+				itemDetailClass['text - lowercase'] = true;
+			} else if (item.type === 'security') {
+				itemDetailClass['security text - uppercase ' + this.getItemStatusClass(item)] = true;
+			}
+
 		}
-
+		// console.log(" itemDetailClass " + JSON.stringify(itemDetailClass));
 		return itemDetailClass;
-
 	}
 
+	/**
+	 * launchSystemUri
+	path: string */
+	public launchSystemUri(path: string) {
+		if (path) {
+			this.deviceService.launchUri(path);
+		}
+	}
 }

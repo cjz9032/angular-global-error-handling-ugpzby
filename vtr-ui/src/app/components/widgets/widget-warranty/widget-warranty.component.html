@@ -4,7 +4,7 @@
 			<div class="col">
 				<div class="title pb-40">{{status.title[item.status]}}</div>
 				<div class="content" *ngIf="item.status < 2">
-					<div class="sub-title">{{item.dayDiff}}Y Depot Warranty</div>
+					<div class="sub-title">{{getRoundYear(item.dayDiff)}}Y Depot Warranty</div>
 					<div class="sub-description pb-40">
 						This product has years limited warranty and it entitled to depot repair service. Customers may call their local
 						service center for more information. Dealers may provide carry-in repair for this product.
@@ -22,7 +22,8 @@
 					</div>
 				</div>
 				<div class="button-box">
-					<a role="button" href="{{item.url}}" class="button" target="_blank">VIEW WARRANTY OPTIONS</a>
+					<!-- <a role="button" href="https://pcsupport.lenovo.com/us/en/warrantylookup" class="button">VIEW WARRANTY OPTIONS</a> -->
+					<a role="button" href="{{item.url}}" target="_blank" class="button">VIEW WARRANTY OPTIONS</a>
 				</div>
 			</div>
 		</div>

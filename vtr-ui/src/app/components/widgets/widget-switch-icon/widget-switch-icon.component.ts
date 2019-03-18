@@ -11,17 +11,19 @@ export class WidgetSwitchIconComponent implements OnInit {
 	@Input() title: string;
 	@Input() iconDefinition: string[];
 	@Input() value = false;
+	@Input() isBlocked = false;
+	@Input() tooltipText = '';
 
 	@Output() toggle = new EventEmitter<boolean>();
 
-	constructor(public deviceService: DeviceService) {}
+	constructor(public deviceService: DeviceService) { }
 
 	ngOnInit() {
 		console.log(this.title, this.iconDefinition);
 	}
 
 	onChange(event) {
-		this.value = event.switchValue;
+		this.value = !this.value;
 		console.log('WIDGET SWITCH ICON VALUE', this.value);
 		this.toggle.emit(this.value);
 	}

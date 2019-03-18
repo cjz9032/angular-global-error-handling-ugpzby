@@ -17,7 +17,11 @@
 						[rightIcon]="item.rightImageSource"
 						[linkText]="item.linkText"
 						[linkPath]="item.linkPath"
-						[readMoreText]="item.readMoreText">
+						[readMoreText]="item.readMoreText"
+						[tooltipText]="item.tooltipText"
+						[isSwitchChecked]="item.isChecked"
+						[name]="item.name"
+						(toggleOnOff)="onToggleOnOff($event)">
 					</vtr-ui-row-switch>
 				</div>
 			</div>
