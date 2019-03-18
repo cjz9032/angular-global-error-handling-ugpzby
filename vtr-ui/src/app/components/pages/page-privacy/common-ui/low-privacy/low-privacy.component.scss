@@ -1,0 +1,85 @@
+@import "../../styles/common-blocks";
+
+.low-privacy {
+	&__title {
+		font-size: 2.5rem;
+		line-height: 2.9rem;
+		color: #194A65;
+	}
+
+	&__text {
+		font-size: 1.4rem;
+		font-weight: 300;
+		color: #667481;
+		line-height: 2.3rem;
+		padding: 2rem 0;
+	}
+
+	&__desribe-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		flex-flow: row;
+	}
+
+	&__desribe-step {
+		display: flex;
+		flex-flow: column;
+		flex-wrap: wrap;
+		align-items: center;
+		width: 33%;
+		border: 1px solid #ECF0F1;
+		border-radius: 10px;
+		background-color: #F5F7F8;
+		padding: 2.5rem 1.7rem 2rem 1.7rem;
+
+		&:not(:first-child) {
+			margin-left: 1.5rem;
+		}
+	}
+
+	&__desribe-img {
+
+	}
+
+	&__desribe-title {
+		color: #34495E;
+		font-size: 1.4rem;
+		font-weight: bold;
+		line-height: 2.3rem;
+		text-align: center;
+		padding-top: 3rem;
+		text-transform: uppercase;
+	}
+
+	&__desribe-button {
+		@extend %theme-btn;
+		@extend %theme-btn--white;
+
+		border-radius: 20px;
+		margin-top: 2rem;
+		font-size: 1.3rem;
+		font-weight: 500;
+	}
+
+	&__figleaf-description {
+		padding: 3rem 0;
+	}
+
+	&__figleaf-slogan {
+		display: flex;
+		flex-flow: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__figleaf-text {
+		font-size: 2.5rem;
+		line-height: 2.9rem;
+		font-weight: 300;
+		color: #34495E;
+	}
+
+	&__button {
+		@extend %theme-btn;
+	}
+}

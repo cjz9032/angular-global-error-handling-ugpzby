@@ -1,13 +1,19 @@
 <div class="privacy-wrapper">
-  <main-header></main-header>
-  <div class="privacy-wrapper__content">
-    <div class="privacy-wrapper__main-col">
-      <router-outlet></router-outlet>
-    </div>
-    <div class="privacy-wrapper__side-col">
-      <vtr-side-bar></vtr-side-bar>
-    </div>
-  </div>
-  <vtr-confirmation-popup></vtr-confirmation-popup>
-  <vtr-video-popup></vtr-video-popup>
+	<main-header></main-header>
+	<div class="privacy-wrapper__content">
+		<div class="privacy-wrapper__main-col">
+			<router-outlet></router-outlet>
+		</div>
+		<div class="privacy-wrapper__side-col">
+			<vtr-side-bar></vtr-side-bar>
+		</div>
+	</div>
+	<vtr-confirmation-popup></vtr-confirmation-popup>
+	<vtr-video-popup></vtr-video-popup>
+	<vtr-common-popup [popUpId]="choseBrowserPopupId">
+		<vtr-chose-browser
+			(rejection)="closePopUp(choseBrowserPopupId)"
+			(browser)="choseBrowser($event)">
+		</vtr-chose-browser>
+	</vtr-common-popup>
 </div>

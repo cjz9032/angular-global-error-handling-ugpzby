@@ -1,93 +1,91 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { CommonPopupService } from '../../common-services/popups/common-popup.service';
+import { DescribeStep } from '../low-privacy/low-privacy.component';
+import { FigleafOverviewService } from '../../common-services/figleaf-overview.service';
+import { ServerCommunicationService } from '../../common-services/server-communication.service';
+import { PrivacyScoreService } from './privacy-score.service';
+
+export interface ScoreParametrs {
+	fixedBreaches: number;
+	unfixedBreaches: number;
+	fixedStorages: number;
+	unfixedStorages: number;
+	monitoringEnabled: boolean;
+	trackingEnabled: boolean;
+}
 
 @Component({
 	selector: 'vtr-privacy-score',
 	templateUrl: './privacy-score.component.html',
 	styleUrls: ['./privacy-score.component.scss']
 })
-export class PrivacyScoreComponent implements OnInit {
-	@Input() scoreParameters: {
-		fixedBreaches: number,
-		unfixedBreaches: number,
-		fixedStorages: number,
-		unfixedStorages: number,
-		monitoringEnabled: boolean,
-		trackingEnabled: boolean,
-	};
+export class PrivacyScoreComponent implements OnInit, OnDestroy {
+	describeSteps: DescribeStep[] = [
+		{
+			img: '/assets/images/privacy-tab/default.png',
+			title: '8 breached accounts',
+			button: {
+				name: 'Review Breached Accounts',
+				link: '/privacy/breaches'
+			}
+		},
+		{
+			img: '/assets/images/privacy-tab/default.png',
+			title: 'Visible to online trackers',
+			button: {
+				name: 'Review Who’s Tracks Me',
+				link: '/privacy/trackers'
+			},
+		},
+		{
+			img: '/assets/images/privacy-tab/default.png',
+			title: 'Easily accessible Accounts',
+			button: {
+				name: 'Review Unprotected Passwords',
+				link: '/privacy/browser-accounts'
+			},
+		}
+	];
 
+	scoreParametrs: ScoreParametrs;
+	// default data
 	title = 'Your privacy score';
 	text = 'Take control of your privacy by choosing when to be private and what to share on every site you interact with.';
 	btn_text = 'Understand my score';
 	privacyLevel = 'low';
 	score = 0;
 
-	private scoreWeights = {
-		leaksScore: 1.25,
-		monitoringEnabled: 1.25,
-		trackingEnabled: 1.25,
-		passwordStorageScore: 1.25,
-		constant: 0
-	};
-
-	private calculate(params) {
-		const leaksScore = this.calculateLeaksScore(params.fixedBreaches, params.unfixedBreaches);
-		const passwordStorageScore = this.calculatePasswordStorageScore(params.fixedStorages, params.unfixedStorages);
-
-		return this.calculateScore({
-			leaksScore,
-			passwordStorageScore,
-			monitoringEnabled: params.monitoringEnabled,
-			trackingEnabled: params.trackingEnabled,
-			constant: 0
-		});
-	}
-
-	private calculateProportion(a, b) {
-		const total = a + b;
-		if (total === 0) {
-			return 1;
-		}
-		return a / total;
-	}
-
-	private calculateLeaksScore(fixedLeaks, unfixedLeaks) {
-		return this.calculateProportion(fixedLeaks, unfixedLeaks);
-	}
-
-	private calculatePasswordStorageScore(safeStorages, unsafeStorages) {
-		return this.calculateProportion(safeStorages, unsafeStorages);
-	}
-
-	private calculateScore(scoreItems) {
-		const scoreTotalReducer = (total, key) => total + scoreItems[key] * this.scoreWeights[key];
-		const scoreItemsKeys = Object.keys(scoreItems);
-		const totalScore = scoreItemsKeys.reduce(scoreTotalReducer, 0);
-		return Math.round(totalScore / scoreItemsKeys.length * 100);
+	constructor(
+		private privacyScoreService: PrivacyScoreService,
+		private commonPopupService: CommonPopupService,
+		private figleafOverviewService: FigleafOverviewService,
+		private serverCommunicationService: ServerCommunicationService) {
 	}
 
 	ngOnInit() {
-		const score = this.calculate(this.scoreParameters);
-		this.score = score;
-		if (score < 40) {
-			this.privacyLevel = 'low';
-			this.title = 'Low privacy score';
-			this.text = 'A lot of your personal info is out there. ' +
-				'Take control of your privacy by choosing when to be private and what to share on every site you interact with.';
-		} else if (score < 60) {
-			this.privacyLevel = 'medium-low';
-			this.title = 'Medium privacy score';
-			this.text = 'A lot of your personal info is out there. ' +
-				'Take control of your privacy by choosing when to be private and what to share on every site you interact with.';
-		} else if (score < 80) {
-			this.privacyLevel = 'medium';
-			this.title = 'Medium privacy score';
-			this.text = 'A lot of your personal info is out there. ' +
-				'Take control of your privacy by choosing when to be private and what to share on every site you interact with.';
-		} else {
-			this.privacyLevel = 'high';
-			this.title = 'High privacy score';
-			this.text = 'You’re doing a great job controlling your privacy. Keep it up!';
-		}
+		this.privacyScoreService.getScoreParametrs().subscribe((scoreParametrs: ScoreParametrs) => {
+			this.scoreParametrs = scoreParametrs;
+			this.setDataAccordingToScore(scoreParametrs);
+		});
+
+		this.serverCommunicationService.onGetBreachedAccounts.subscribe(breachedAccounts => {
+			this.scoreParametrs.unfixedBreaches = breachedAccounts.payload.breaches.length;
+			this.setDataAccordingToScore(this.scoreParametrs);
+		});
 	}
 
+	setDataAccordingToScore(scoreParam) {
+		const score = this.privacyScoreService.calculate(scoreParam);
+		const staticDataAccordingToScore = this.privacyScoreService.getStaticDataAccordingToScore(score);
+		this.score = score;
+		this.privacyLevel = staticDataAccordingToScore.privacyLevel;
+		this.title = staticDataAccordingToScore.title;
+		this.text = staticDataAccordingToScore.text;
+	}
+
+	ngOnDestroy() {}
+
+	openPopUp(popUpID) {
+		this.commonPopupService.open(popUpID);
+	}
 }

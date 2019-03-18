@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ServerCommunicationService } from "../../common-services/server-communication.service";
+import { ServerCommunicationService } from '../../common-services/server-communication.service';
+import { BrowserAccountsService } from '../../common-services/browser-accounts.service';
 
 @Component({
 	selector: 'vtr-installed-browser',
@@ -8,26 +9,15 @@ import { ServerCommunicationService } from "../../common-services/server-communi
 })
 export class InstalledBrowserComponent implements OnInit {
 	@Input() showDetailAction: 'link' | 'expand';
-	@Input() installedBrowser: {name: string, image_url: string, has_stored_accounts: boolean};
+	@Input() installedBrowser: { name: string, image_url: string, has_stored_accounts: boolean };
 
 	public isDetailsExpanded: boolean;
-	public browserAccounts: {email?: string, password?: string, image?: string};
+	public browserAccounts: { email?: string, password?: string, image?: string };
 
-	constructor(private serverCommunicationService: ServerCommunicationService) {
+	constructor(private serverCommunicationService: ServerCommunicationService, private browserAccountsService: BrowserAccountsService) {
 	}
 
 	ngOnInit() {
-		switch (this.installedBrowser.name) {
-			case 'Chrome':
-				this.browserAccounts = this.serverCommunicationService.chromeAccounts;
-				break;
-			case 'Firefox':
-				this.browserAccounts = this.serverCommunicationService.firefoxAccounts;
-				break;
-			case 'Edge':
-				this.browserAccounts = this.serverCommunicationService.edgeAccounts;
-				break;
-		}
 	}
 
 	toggleDetails() {
@@ -36,15 +26,15 @@ export class InstalledBrowserComponent implements OnInit {
 
 	showBrowserAccounts() {
 		let getAccountsPromise;
-		switch (this.installedBrowser.name) {
+		switch (this.installedBrowser.name) { // TODO refactor after Api structure is ready
 			case 'Chrome':
-				getAccountsPromise = this.serverCommunicationService.getAccountsChrome();
+				getAccountsPromise = this.browserAccountsService.getAccountsChrome();
 				break;
 			case 'Firefox':
-				getAccountsPromise = this.serverCommunicationService.getAccountsFirefox();
+				getAccountsPromise = this.browserAccountsService.getAccountsFirefox();
 				break;
 			case 'Edge':
-				getAccountsPromise = this.serverCommunicationService.getAccountsEdge();
+				getAccountsPromise = this.browserAccountsService.getAccountsEdge();
 				break;
 		}
 		getAccountsPromise.then((browserAccounts) => {

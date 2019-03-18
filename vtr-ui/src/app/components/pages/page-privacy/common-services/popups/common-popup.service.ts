@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { ReplaySubject } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
 interface PopUpInterface {
@@ -18,7 +18,7 @@ export class CommonPopupService {
 	constructor() {
 	}
 
-	private subjectState = new Subject<CommonPopupEventType>();
+	private subjectState = new ReplaySubject<CommonPopupEventType>(5);
 
 	openState$(id: string) {
 		return this.subjectState
@@ -33,6 +33,6 @@ export class CommonPopupService {
 	}
 
 	close(id: string) {
-		this.subjectState.next({id, isOpenState: false})
+		this.subjectState.next({id, isOpenState: false});
 	}
 }

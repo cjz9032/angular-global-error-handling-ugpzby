@@ -44,6 +44,10 @@
     text-align: center;
     background-color: #fff;
     border-radius: 1rem;
+
+    &--green {
+       // this need for set from outsize modifier
+    }
   }
 
   &__image-description {

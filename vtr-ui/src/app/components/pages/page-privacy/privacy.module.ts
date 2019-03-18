@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // Pages
 import { BreachedAccountsComponent } from './pages/breached-accounts/breached-accounts.component';
@@ -50,6 +51,12 @@ import { VideoPopupComponent } from './common-ui/video-popup/video-popup.compone
 import { SupportBannerComponent } from './common-ui/support-banner/support-banner.component';
 import { CommonPopupComponent } from './common-ui/common-popup/common-popup.component';
 import { BreachedDescriptionComponent } from './common-ui/breached-description/breached-description.component';
+import { LowPrivacyComponent } from './common-ui/low-privacy/low-privacy.component';
+import { InlineSvgComponent } from './common-ui/inline-svg/inline-svg.component';
+import { SafeHtmlPipe } from './common-pipe/safe-html.pipe';
+import { ChoseBrowserComponent } from './common-ui/chose-browser/chose-browser.component';
+import { PRIVACY_BASE_URL } from './shared/injection-tokens';
+import { ChoseBrowserGuard } from './common-guards/chose-browser.guard';
 
 @NgModule({
 	imports: [
@@ -57,7 +64,7 @@ import { BreachedDescriptionComponent } from './common-ui/breached-description/b
 		CommonModule,
 		ReactiveFormsModule,
 		FormsModule,
-		// ResultModule,
+		HttpClientModule
 	],
 	declarations: [
 		// Mail Layout Components
@@ -95,12 +102,21 @@ import { BreachedDescriptionComponent } from './common-ui/breached-description/b
 		SupportBannerComponent,
 		CommonPopupComponent,
 		BreachedDescriptionComponent,
+		LowPrivacyComponent,
+		InlineSvgComponent,
+		SafeHtmlPipe,
+		ChoseBrowserComponent,
 	],
 	providers: [
 		ServerCommunicationService,
 		ConfirmationPopupService,
 		TrackersPopupService,
-		VideoPopupService
+		VideoPopupService,
+		{
+			provide: PRIVACY_BASE_URL,
+			useValue: 'privacy'
+		},
+		ChoseBrowserGuard,
 	],
 })
 export class PrivacyModule {

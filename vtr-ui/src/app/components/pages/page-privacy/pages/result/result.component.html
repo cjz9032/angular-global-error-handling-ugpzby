@@ -1,9 +1,7 @@
 <section class="result-page">
 
     <div class="result-page__score">
-        <vtr-privacy-score
-                [scoreParameters]="scoreParameters"
-        ></vtr-privacy-score>
+        <vtr-privacy-score></vtr-privacy-score>
     </div>
 
     <div *ngIf="!breached_accounts.length" class="check-breaches">

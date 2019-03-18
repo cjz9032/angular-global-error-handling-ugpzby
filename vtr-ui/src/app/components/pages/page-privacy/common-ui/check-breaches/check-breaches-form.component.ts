@@ -74,18 +74,19 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 		}
 
 		this.isLoading = true;
-		this.serverCommunication.getBreachedAccounts(this.emailForm.value.email);
-		this.serverCommunication.onGetBreachedAccountsResponse.subscribe((response) => {
-			this.isLoading = false;
-			if (response.status === 0) {
-				this.router.navigate(['privacy/result']);
-			} else if (response.status === 300) {
-				this.serverCommunication.sendConfirmationCode();
-				this.confirmationPopupService.openPopup();
-			} else if (response.status === 400) {
-				this.isServerError = true;
+		this.serverCommunication.getBreachedAccounts(this.emailForm.value.email).subscribe((
+			(response) => {
+				this.isLoading = false;
+				if (response.status === 0) {
+					this.router.navigate(['privacy/result']);
+				} else if (response.status === 300) {
+					this.serverCommunication.sendConfirmationCode();
+					this.confirmationPopupService.openPopup();
+				} else if (response.status === 400) {
+					this.isServerError = true;
+				}
 			}
-		});
+		));
 
 		this.serverCommunication.validationStatusChanged.subscribe((validationResponse) => {
 			if (validationResponse.status === 0) {

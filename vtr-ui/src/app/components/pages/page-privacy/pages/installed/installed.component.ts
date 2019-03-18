@@ -9,14 +9,6 @@ import { AccountsStoredByFigleaf, FigleafAccountsService } from '../../common-se
 })
 export class InstalledComponent implements OnInit {
 	accountsStoredByFigleaf: AccountsStoredByFigleaf[];
-	scoreParameters = { // TODO just mock, add logic
-		fixedBreaches: 12,
-		unfixedBreaches: 0,
-		fixedStorages: 3,
-		unfixedStorages: 1,
-		monitoringEnabled: true,
-		trackingEnabled: true
-	};
 	// static Data for html
 	browserStoredAccountsData = {showDetailAction: 'link'};
 	error: string;

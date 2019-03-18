@@ -18,15 +18,6 @@ export class ResultComponent implements OnInit {
 	// static Data for html
 	browserStoredAccountsData = { showDetailAction: 'link'};
 
-	scoreParameters = { // TODO just mock, add logic
-		fixedBreaches: 12,
-		unfixedBreaches: 3,
-		fixedStorages: 3,
-		unfixedStorages: 3,
-		monitoringEnabled: false,
-		trackingEnabled: false
-	};
-
 	constructor(
 		private _location: Location,
 		private serverCommunicationService: ServerCommunicationService,
@@ -39,7 +30,7 @@ export class ResultComponent implements OnInit {
 		this.breached_accounts = this.serverCommunicationService.breachedAccounts;
 		this.breached_accounts_show = this.breached_accounts.slice(0, 3);
 		this.userEmail = this.serverCommunicationService.userEmail;
-		this.serverCommunicationService.onGetBreachedAccountsResponse.subscribe(() => {
+		this.serverCommunicationService.onGetBreachedAccounts.subscribe(() => {
 			this.breached_accounts = this.serverCommunicationService.breachedAccounts;
 			this.breached_accounts_show = this.breached_accounts.slice(0, 3);
 			this.userEmail = this.serverCommunicationService.userEmail;
