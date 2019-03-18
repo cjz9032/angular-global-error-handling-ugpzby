@@ -2,6 +2,7 @@
 
 .vtr-widget-switch-icon {
 	display: inline-block;
+	cursor: pointer;
 
 	.switch-container {
 		height: 12.5rem;
@@ -50,7 +51,7 @@
 			margin: 0.5em 0;
 			font-weight: $weight_medium;
 			letter-spacing: 0;
-			height: 1.2rem;
+			height: 1.3rem;
 			overflow: hidden;
 		}
 
@@ -83,13 +84,12 @@
 			.feature-off {
 				position: absolute;
 				color: $alt;
+				left: 8%;
+				top: -29%;
 				font-weight: 300;
 				font-size: 5.8rem;
-				left: 28%;
-				top: -16%;
-				transform: rotate(-25deg);
 				@media #{$mediaquery_6} {
-					top: -17%;
+					top: -72%;
 				}
 			}
 		}

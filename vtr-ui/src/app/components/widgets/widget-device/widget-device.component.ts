@@ -56,7 +56,8 @@ export class WidgetDeviceComponent implements OnInit {
 
 			if (response.processor) {
 				processor.status = 0;
-				processor.title = `Processor (${response.processor.name})`;
+				processor.title = `Processor`;
+				processor.systemDetails = `${response.processor.name}`;
 			}
 			systemStatus.push(processor);
 
@@ -71,7 +72,8 @@ export class WidgetDeviceComponent implements OnInit {
 
 			if (response.memory) {
 				const { size, type } = response.memory;
-				memory.title = `Memory (${this.commonService.formatBytes(size)} of ${type} RAM)`;
+				memory.title = `Memory `;
+				memory.systemDetails = `${this.commonService.formatBytes(size)} of ${type} RAM`;
 				memory.status = 0;
 				// const percent = (used / total) * 100;
 				// if (percent < 10) {
@@ -93,7 +95,8 @@ export class WidgetDeviceComponent implements OnInit {
 
 			if (response.disk) {
 				const { total, used } = response.disk;
-				disk.title = `${this.commonService.formatBytes(used)} of ${this.commonService.formatBytes(total)}`;
+				disk.title = `Disk Space`;
+				disk.systemDetails = `${this.commonService.formatBytes(used)} of ${this.commonService.formatBytes(total)}`;
 				const percent = (used / total) * 100;
 				if (percent > 70) {
 					disk.status = 1;
@@ -116,7 +119,8 @@ export class WidgetDeviceComponent implements OnInit {
 			if (response.sysupdate) {
 				const updateStatus = response.sysupdate.status;
 				const lastUpdate = response.sysupdate.lastupdate;
-				sysupdate.title = `Software up to date (updated on ${this.commonService.formatDate(lastUpdate)})`;
+				sysupdate.title = `Software up to date `;
+				sysupdate.systemDetails = `updated on ${this.commonService.formatDate(lastUpdate)}`;
 				sysupdate.status = (updateStatus === 1) ? 0 : 1;
 			}
 			systemStatus.push(sysupdate);
@@ -134,11 +138,14 @@ export class WidgetDeviceComponent implements OnInit {
 				const today = new Date();
 				const expired = new Date(response.warranty.expired);
 				if (today.getTime() > expired.getTime()) {
-					warranty.title = `Out of warranty (Expired on ${this.commonService.formatDate(expired.toString())})`;
+					warranty.title = `Out of warranty `;
+					warranty.systemDetails = `Expired on ${this.commonService.formatDate(expired.toString())}`;
 					warranty.status = 1;
 				} else {
 					warranty.status = 0;
-					warranty.title = `In warranty (${this.commonService.getDaysBetweenDates(today, expired)} days remaining)`;
+					warranty.title = `In warranty `;
+					warranty.systemDetails = `${this.commonService.getDaysBetweenDates(today, expired)} days
+					 remaining`;
 				}
 			}
 			systemStatus.push(warranty);

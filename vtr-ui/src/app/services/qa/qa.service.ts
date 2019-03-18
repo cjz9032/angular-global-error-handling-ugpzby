@@ -15,10 +15,8 @@ export class QaService {
 			title: 'Backup and Restore your files',
 			like: false,
 			dislike: false,
-
-			description:`<div>
-									<div style="font-size:3rem;font-weight:bold;">
-
+			description: `<div>
+									<div style="font-size:4rem;font-weight:bold;">
 										Back up and restore your files
 									</div>
 									<hr/>
@@ -62,6 +60,10 @@ export class QaService {
 			like: false,
 			dislike: false,
 			description: `<div>
+										<div style="font-size:4rem;font-weight:bold;">
+											How to refresh your PC
+										</div>
+										<hr>
 										<div style="font-size:2.5rem;font-weight:bold;padding:5px 0;">
 											Symptom
 										</div>
@@ -185,10 +187,14 @@ export class QaService {
 			id: 3,
 			path: 'support-detail/3',
 			iconPath: `${this.imagePath}/svg_icon_qa_pcbit.svg`,
-			title: "How to know your machine's CPU",
+			title: 'How to know your machine\'s CPU',
 			like: false,
 			dislike: false,
-			description: `<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Symptom</h3>
+			description: `<div style="font-size:4rem;font-weight:bold;">
+				How to know your machine\'s CPU
+			</div>
+			<hr>
+			<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Symptom</h3>
 <p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.</p>
 <h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Affected Brands</h3>
 <p>The above symptom is associated with, but not limited to, the following systems:</p>
@@ -229,7 +235,11 @@ export class QaService {
 			title: 'Check your machine\'s battery use',
 			like: false,
 			dislike: false,
-			description: `<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Symptom</h3>
+			description: `<div style="font-size:4rem;font-weight:bold;">
+				Check your machine's battery use
+			</div>
+			<hr>
+			<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Symptom</h3>
 <p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong>&nbsp;screen that shows you what&rsquo;s draining your laptop&rsquo;s juice. That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo; apps&ndash;are using too much power.</p>
 <h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Affected Brands</h3>
 
@@ -269,7 +279,10 @@ export class QaService {
 			title: 'Use your PC like a tablet',
 			like: false,
 			dislike: false,
-			description: `<p>&nbsp;</p>
+			description: `<div style="font-size:4rem;font-weight:bold;">
+				 Use your PC like a tablet
+			 </div>
+			 <hr>
 <p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>
 
 <h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Use tablet mode</h3>
@@ -298,10 +311,14 @@ export class QaService {
 			id: 6,
 			path: 'support-detail/6',
 			iconPath: `${this.imagePath}/svg_icon_qa_cortana.svg`,
-			title: 'Get to know Cortona,your personal assistant',
+			title: 'Get to know Cortona, your personal assistant',
 			like: false,
 			dislike: false,
-			description: `<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">What is Cortana?</h3>
+			description: `<div style="font-size:4rem;font-weight:bold;">
+				Get to know Cortona, your personal assistant
+			</div>
+			<hr>
+			<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">What is Cortana?</h3>
 <hr/>
 <p>Cortana is your digital agent. She'll help you get things done.</p>
 <p>The more you use Cortana, the more personalized your experience will be.</p>
