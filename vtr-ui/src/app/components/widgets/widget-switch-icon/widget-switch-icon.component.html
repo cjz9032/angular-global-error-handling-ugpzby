@@ -1,5 +1,5 @@
 <div class="vtr-widget-switch-icon"
-	(click)="onChange($event)" [title]="tooltipText">
+	(click)="onChange($event)" [title]="tooltipText" vtrMetrics metricsEvent="itemClick" metricsParent="quicksettings" [metricsValue]="!value" [metricsItem]="'chk.'+title">
 	<div class="switch-container"
 		[ngClass]="[value ? 'checked' : 'unchecked']">
 		<div class="title">{{ title }}</div>

@@ -47,7 +47,7 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 	calcHeight(containerCard){
 		if(containerCard){
 			this.containerHeight = containerCard.nativeElement.firstElementChild.clientWidth * this.ratio;
-			console.log('RESIZE CONTAINER CARD', this.title, this.ratio, containerCard, this.containerHeight);
+			//console.log('RESIZE CONTAINER CARD', this.title, this.ratio, containerCard, this.containerHeight);
 		}
 	}
 
