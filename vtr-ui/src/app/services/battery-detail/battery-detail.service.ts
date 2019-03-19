@@ -11,7 +11,7 @@ export class BatteryDetailService{
 	private battery: any;
 	public isShellAvailable = false;
 	constructor(shellService: VantageShellService) {
-		this.battery = shellService.getPowerCommonSettings();
+		this.battery = shellService.getBatteryInfo();
 		if (this.battery) {
 			this.isShellAvailable = true;
 		}

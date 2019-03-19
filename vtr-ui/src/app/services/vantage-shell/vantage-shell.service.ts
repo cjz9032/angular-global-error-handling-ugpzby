@@ -8,7 +8,7 @@ import bootstrap from '@lenovo/tan-client-bridge/src/index';
 	providedIn: 'root'
 })
 export class VantageShellService {
-	private phoenix: any;
+	public phoenix: any;
 	constructor() {
 		const shell = this.getVantageShell();
 		if (shell) {
@@ -159,9 +159,19 @@ export class VantageShellService {
 	/**
 	 * returns power's common object from VantageShellService of JS Bridge
 	 */
-	public getPowerCommonSettings(): any {
+	private getPowerCommonSettings(): any {
 		if (this.getPowerSettings() && this.getPowerSettings().common) {
-			return this.getPowerSettings().common.batteryInfo;
+			return this.getPowerSettings().common;
+		}
+		return undefined;
+	}
+
+	/**
+	 * returns battery info object from VantageShellService of JS Bridge
+	 */
+	public getBatteryInfo(): any {
+		if (this.getPowerCommonSettings() && this.getPowerCommonSettings().batteryInfo) {
+			return this.getPowerCommonSettings().batteryInfo;
 		}
 		return undefined;
 	}
