@@ -1,27 +1,28 @@
 <div class="vtr-ui-switch-row"
- [ngClass]="{
+	[ngClass]="{
 		'white-theme': theme === 'white',
 		'blue-theme': theme === 'blue'
 	}">
-	<div class="container-fluid p-0">
+	<div class="container-fluid p-0" [ngClass]="{'vtr-disabled': disabled}">
 		<div class="row m-0">
 			<div class="col col-xs-8 col-md-10">
 				<div class="container-fluid p-0">
 					<div class="row m-0">
 						<div class="col-auto left-icon-column"
-						 *ngIf="leftIcon.length > 0">
+							*ngIf="leftIcon.length > 0">
 							<fa-icon class="left-icon"
-							 [icon]="leftIcon"></fa-icon>
+								[icon]="leftIcon"></fa-icon>
 						</div>
 						<div class="col">
 							<div class="title">{{ title }}</div>
 							<div class="caption"
-							 *ngIf="caption.length > 0" [innerHTML]="caption">
+								*ngIf="caption.length > 0"
+								[innerHTML]="caption">
 								<!-- {{ caption }} -->
 							</div>
 							<div class="read-more"
-							 *ngIf="readMoreText.length > 0"
-							 (click)="onReadMoreClick($event)">
+								*ngIf="readMoreText.length > 0"
+								(click)="onReadMoreClick($event)">
 								{{ readMoreText }}
 							</div>
 						</div>
@@ -29,22 +30,24 @@
 				</div>
 			</div>
 			<div class="ml-auto p-0"
-			 *ngIf="resetText.length > 0">
+				*ngIf="resetText.length > 0">
 				<button type="button"
-				 class="btn btn-link text"
-				 (click)="onResetClick($event)">
+					class="btn btn-link text"
+					(click)="onResetClick($event)">
 					{{ resetText }}
 				</button>
 			</div>
 			<div class="col right-align"
-			 *ngIf="isSwitchVisible">
-				<vtr-ui-switch-onoff [value]="isSwitchChecked"
-				 (toggle)="onOnOffChange($event)"></vtr-ui-switch-onoff>
+				*ngIf="isSwitchVisible">
+				<vtr-ui-switch-onoff [name]="name"
+					[value]="isSwitchChecked"
+					[disabled]="disabled"
+					(toggle)="onOnOffChange($event)"></vtr-ui-switch-onoff>
 			</div>
 			<div *ngIf="!isSwitchVisible && linkText"
-			 class="p-0 link-text">
+				class="p-0 link-text">
 				<a routerLink="/{{linkPath}}"
-				 class="link-text">
+					class="link-text">
 					{{linkText}}
 				</a>
 			</div>
@@ -52,18 +55,18 @@
 				<div [innerHTML]='tooltipText'></div>
 			</ng-template>
 			<div class="p-0 pl-2"
-			 *ngIf="rightIcon.length > 0">
+				*ngIf="rightIcon.length > 0">
 				<fa-icon class="right-icon"
-				 placement="top"
-				 [ngbTooltip]="(tooltipText?.length) ? tipContent : ''"
-				 [icon]="rightIcon"
-				 container="body"
-				 tooltipClass="vtr-tooltip"
-				 (click)="onRightIconClick($event)"></fa-icon>
+					placement="top"
+					[ngbTooltip]="(tooltipText?.length) ? tipContent : ''"
+					[icon]="rightIcon"
+					container="body"
+					tooltipClass="vtr-tooltip"
+					(click)="onRightIconClick($event)"></fa-icon>
 			</div>
 		</div>
 		<div class="row m-0"
-		 *ngIf="showChildContent">
+			*ngIf="showChildContent">
 			<div class="col-1"></div>
 			<div class="col">
 				<ng-content #childContent></ng-content>

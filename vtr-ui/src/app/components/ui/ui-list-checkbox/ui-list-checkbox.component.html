@@ -1,5 +1,6 @@
 <div class="vtr-ui-list-checkbox">
-	<ul class="checkbox-list">
+	<ul class="checkbox-list"
+		*ngIf="!isInstallationCompleted">
 		<li *ngFor="let item of items; let i = index">
 			<div class="container-fluid">
 				<div class="row align-items-center">
@@ -37,26 +38,29 @@
 			</div>
 		</li>
 	</ul>
-	<ul class="checkbox-list">
+	<ul class="checkbox-list"
+		*ngIf="isInstallationCompleted">
 		<li *ngFor="let item of items; let i = index">
 			<div class="container-fluid">
 				<div class="row align-items-center">
 					<div class="col col-11 item-text">
-						<div class="custom-control custom-checkbox update-checkbox">
-							<fa-icon class="success"
-								[icon]="['fas', 'check-circle']"></fa-icon>
-							<fa-icon class="failure"
-								[icon]="['fas', 'times-circle']"></fa-icon>
-							<label class=" ">
-								<span class="title"
+						<div class="row update-checkbox">
+							<div class="col align-self-center">
+								<fa-icon class="success"
+									*ngIf="item.installationStatus.toLocaleLowerCase() === 'success'"
+									[icon]="['fas', 'check-circle']"></fa-icon>
+								<fa-icon class="failure"
+									*ngIf="item.installationStatus.toLocaleLowerCase() === 'installfailed' || item.installationStatus.toLocaleLowerCase() === ''"
+									[icon]="['fas', 'times-circle']"></fa-icon>
+								<div class="title completed"
 									[ngClass]="{'light-title':item.lightTitle}">
-									{{item.packageDesc}}</span>
-							</label>
-						</div>
-						<div class="button-box pl-1"
-							*ngIf="item.packageRebootType === 'RebootForced'">
-							<div class="btn-round-sm">
-								<fa-icon [icon]="['fas', 'undo']"></fa-icon> Reboot required
+									{{item.packageDesc}}</div>
+								<div class="button-box pl-1"
+									*ngIf="item.packageRebootType === 'RebootForced'">
+									<div class="btn-round-sm">
+										<fa-icon [icon]="['fas', 'undo']"></fa-icon> Reboot required
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

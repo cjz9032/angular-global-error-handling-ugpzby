@@ -79,10 +79,15 @@ export class DisplayService {
 		return undefined;
 	}
 	public setEyeCareModeState(value: boolean): Promise<boolean> {
-		if (this.displayEyeCareMode) {
-			return this.displayEyeCareMode.setEyecareMode(value);
+		 try{
+			if (this.displayEyeCareMode) {
+				return this.displayEyeCareMode.setEyeCareMode(value);
+			}
+			return undefined;
 		}
-		return undefined;
+		catch(error) {
+			throw new Error(error.message);
+		}
 	}
 	public setCameraPrivacyModeState(value: boolean): Promise<boolean> {
 		if (this.cameraPrivacyStatus) {
@@ -130,6 +135,32 @@ export class DisplayService {
 	public resetCameraSettings(): Promise<boolean> {
 		if (this.cameraSettings) {
 			return this.cameraSettings.resetCameraSettings();
+		}
+		return undefined;
+	}
+	public getDisplayColortemperature(): Promise<any> {
+		console.log('inside eycaremode service');
+		if (this.displayEyeCareMode) {
+			console.log('this.getDisplayColortemperature', this.displayEyeCareMode);
+			return this.displayEyeCareMode.getDisplayColortemperature();
+		}
+		return undefined;
+	}
+	public setDisplayColortemperature(value: number): Promise<boolean> {
+		if (this.displayEyeCareMode) {
+			return this.displayEyeCareMode.setDisplayColortemperature(value);
+		}
+		return undefined;
+	}
+	public resetEyeCareMode(): Promise<any> {
+		if (this.displayEyeCareMode) {
+			return this.displayEyeCareMode.resetEyeCareMode();
+		}
+		return undefined;
+	}
+	public setEyeCareAutoMode(value: boolean): Promise<boolean> {
+		if (this.displayEyeCareMode) {
+			return this.displayEyeCareMode.setEyeCareAutoMode(value);
 		}
 		return undefined;
 	}

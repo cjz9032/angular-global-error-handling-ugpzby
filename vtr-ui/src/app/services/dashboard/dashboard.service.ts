@@ -20,17 +20,25 @@ export class DashboardService {
 	}
 
 	public getMicrophoneStatus(): Promise<FeatureStatus> {
-		if (this.dashboard) {
-			return this.dashboard.getMicphoneStatus();
+		try {
+			if (this.dashboard) {
+				return this.dashboard.getMicphoneStatus();
+			}
+			return undefined;
+		} catch (error) {
+			throw Error(error.message);
 		}
-		return undefined;
 	}
 
 	public setMicrophoneStatus(value: boolean): Promise<boolean> {
-		if (this.dashboard) {
-			return this.dashboard.setMicphoneStatus(value);
+		try {
+			if (this.dashboard) {
+				return this.dashboard.setMicphoneStatus(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw Error(error.message);
 		}
-		return undefined;
 	}
 
 	public getCameraStatus(): Promise<FeatureStatus> {

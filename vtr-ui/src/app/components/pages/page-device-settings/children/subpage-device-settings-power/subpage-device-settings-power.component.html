@@ -1,13 +1,264 @@
 <div class="subpage-device-settings-power vtr-subpage">
+	<div class="btn-group btn-group-toggle"
+		ngbRadioGroup
+		style="margin-left:300px;margin-top:-150px;"
+		[(ngModel)]="value">
+		<label class="btn-primary"
+			ngbButtonLabel> 1
+			<input type="radio"
+				ngbButton
+				[value]="1" />
+		</label>
+		<label class="btn-primary"
+			ngbButtonLabel> 2
+			<input type="radio"
+				ngbButton
+				[value]="2" />
+		</label>
+		<label class="btn-primary"
+			ngbButtonLabel> 3
+			<input type="radio"
+				ngbButton
+				[value]="3" />
+		</label>
+		<label class="btn-primary"
+			ngbButtonLabel> 4
+			<input type="radio"
+				ngbButton
+				[value]="4" />
+		</label>
+	</div>
 	<div class="row">
 		<div class="col">
 			<vtr-ui-header-subpage [items]="headerMenuItems"
-				[title]="title"
-				[caption]="headerCaption"
-				[menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
+			 [title]="title"
+			 [caption]="headerCaption"
+			 [menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
 		</div>
 	</div>
-	<div class="row py-5 smartsettings-card"
+	<div *ngIf="value===1">
+		<div class="row py-5 smartsettings-card"
+		 id="cooling">
+			<div class="col-10 mx-auto ">
+				<vtr-container-collapsible cardTitle="Power Smartsettings"
+				 [isCollapsed]="false"
+				 [allowCollapse]="false"
+				 [theme]="'blue'">
+					<div class="row">
+						<div class="col-auto text-wrap subtitle">
+							<h3>Intelligent Cooling</h3>
+							<p>This feature dynamically adjusts thermal settings to your needs. When on, it adjusts
+								settings to keep the device cooler or quiet, while being held or idle. Otherwise, it
+								optimizes performance while the device is on a stable surface. When off, you can
+								manually set thermal priority.</p>
+						</div>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="">
+							<vtr-ui-row-switch [title]="'Intelligent cooling'"
+							 [caption]="''"
+							 [isSwitchVisible]=true
+							 [leftIcon]="['fas', 'search']"
+							 [readMoreText]="''"
+							 [showChildContent]="true"
+							 [theme]="'blue'"
+							 (toggleOnOff)="onIntelligentCoolingToggle($event)">
+								<div class="my-3"
+								 *ngIf="!intelligentCooling">
+									<!-- <vtr-ui-rectangle-radio [radioId]="'radio2'"
+											[group]="'radio'"
+											[label]="'PERFORMANCE'"
+											[value]="'PERFORMANCE'"></vtr-ui-rectangle-radio>
+										<vtr-ui-rectangle-radio [radioId]="'radio1'"
+											[group]="'radio'"
+											[label]="'QUIET & COOL'"
+											[value]="'QUIET & COOL'"></vtr-ui-rectangle-radio> -->
+
+								</div>
+							</vtr-ui-row-switch>
+						</li>
+					</ul>
+				</vtr-container-collapsible>
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="value===2">
+		<div class="row py-5 smartsettings-card"
+			id="cooling">
+			<div class="col-10 mx-auto ">
+				<vtr-container-collapsible cardTitle="Power Smartsettings"
+					[isCollapsed]="false"
+					[allowCollapse]="false"
+					[theme]="'blue'">
+					<div class="row">
+						<div class="col-auto text-wrap subtitle">
+							<h3>Intelligent Cooling</h3>
+							<p>This feature dynamically adjusts thermal settings to your needs. When on, it adjusts
+								settings to keep the device cooler or quiet, while being held or idle. Otherwise, it
+								optimizes performance while the device is on a stable surface. When off, you can
+								manually set thermal priority.</p>
+						</div>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="">
+							<vtr-ui-row-switch [title]="'Intelligent cooling'"
+								[caption]="''"
+								[isSwitchVisible]=true
+								[leftIcon]="['fas', 'search']"
+								[readMoreText]="''"
+								[showChildContent]="true"
+								[theme]="'blue'"
+								(toggleOnOff)="onIntelligentCoolingToggle($event)">
+								<div class="my-3"
+									*ngIf="!intelligentCooling">
+									<!-- <vtr-ui-rectangle-radio [radioId]="'radio2'"
+											[group]="'radio'"
+											[label]="'PERFORMANCE'"
+											[value]="'PERFORMANCE'"></vtr-ui-rectangle-radio>
+										<vtr-ui-rectangle-radio [radioId]="'radio1'"
+											[group]="'radio'"
+											[label]="'QUIET & COOL'"
+											[value]="'QUIET & COOL'"></vtr-ui-rectangle-radio> -->
+
+								</div>
+							</vtr-ui-row-switch>
+						</li>
+					</ul>
+				</vtr-container-collapsible>
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="value===2">
+		<div class="row py-5 smartsettings-card"
+			id="cooling">
+			<div class="col-10 mx-auto ">
+				<vtr-container-collapsible cardTitle="Power Smartsettings"
+					[isCollapsed]="false"
+					[allowCollapse]="false"
+					[theme]="'blue'">
+					<div class="row">
+						<div class="col-auto text-wrap subtitle">
+							<h3>Intelligent Cooling</h3>
+							<p>This feature dynamically adjusts thermal settings to your needs. When on, it adjusts
+								settings to keep the device cooler or quiet, while being held or idle. Otherwise, it
+								optimizes performance while the device is on a stable surface. When off, you can
+								manually set thermal priority.</p>
+						</div>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="">
+							<vtr-ui-row-switch [title]="'Intelligent cooling'"
+								[caption]="''"
+								[isSwitchVisible]=true
+								[leftIcon]="['fas', 'search']"
+								[readMoreText]="''"
+								[showChildContent]="true"
+								[theme]="'blue'"
+								(toggleOnOff)="onIntelligentCoolingToggle($event)">
+								<div class="my-3"
+									*ngIf="!intelligentCooling">
+									<vtr-ui-rectangle-radio [radioId]="'radio1'"
+										[group]="'radio'"
+										[label]="'PERFORMANCE'"
+										[value]="'PERFORMANCE'"></vtr-ui-rectangle-radio>
+									<vtr-ui-rectangle-radio [radioId]="'radio2'"
+										[group]="'radio'"
+										[label]="'QUIET & COOL'"
+										[value]="'QUIET & COOL'"></vtr-ui-rectangle-radio>
+
+								</div>
+							</vtr-ui-row-switch>
+						</li>
+					</ul>
+				</vtr-container-collapsible>
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="value===3">
+		<div class="row py-5 smartsettings-card"
+			id="cooling">
+			<div class="col-10 mx-auto ">
+				<vtr-container-collapsible cardTitle="Power Smartsettings"
+					[isCollapsed]="false"
+					[allowCollapse]="false"
+					[theme]="'blue'">
+					<div class="row">
+						<div class="col-auto text-wrap subtitle">
+							<h3>Intelligent Cooling</h3>
+							<p>Intelligent Cooling, adjusts fan speed, maximum surface temperature, and performance.
+								This feature has below modes and are now accessible by Windows performance power slider.
+								<a class="read-more-link"
+									href="#">Read more.</a></p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-auto">
+							<div class="search-icon">
+								<fa-icon [icon]="['fas', 'search']"></fa-icon>
+							</div>
+						</div>
+						<div class="col">
+							<div class="int-cool-text">
+								Intelligent cooling
+							</div>
+						</div>
+						<div class="col-auto text-right"><a class="settings-link"
+								href="#">Go to windows settings</a></div>
+
+					</div>
+
+				</vtr-container-collapsible>
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="value===4">
+		<div class="row py-5 smartsettings-card"
+			id="cooling">
+			<div class="col-10 mx-auto ">
+				<vtr-container-collapsible cardTitle="Power Smartsettings"
+					[isCollapsed]="false"
+					[allowCollapse]="false"
+					[theme]="'blue'">
+					<div class="row">
+						<div class="col-auto text-wrap subtitle">
+							<h3>Battery & Quiet</h3>
+							<p>Battery & Quiet lorem ipsum is a long established fact that a reader will be distracted
+								by the readable content of a page when looking at its layout. <a class="read-more-link"
+									href="#">Read more.</a></p>
+						</div>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="">
+							<vtr-ui-row-switch [showChildContent]="true"
+								[theme]="'blue'">
+								<div class="my-3"
+									*ngIf="!intelligentCooling">
+									<vtr-ui-rectangle-radio [radioId]="'radio1'"
+										[group]="'radio'"
+										[label]="'INTELLIGENT COOLING'"
+										[value]="'INTELLIGENT COOLING'"></vtr-ui-rectangle-radio>
+									<vtr-ui-rectangle-radio [radioId]="'radio2'"
+										[group]="'radio'"
+										[label]="'EXTREME PERFORMANCE'"
+										[value]="'EXTREME PERFORMANCE'"></vtr-ui-rectangle-radio>
+									<vtr-ui-rectangle-radio [radioId]="'radio3'"
+										[group]="'radio'"
+										[label]="'BATTERY & QUIET'"
+										[value]="'BATTERY & QUIET'"></vtr-ui-rectangle-radio>
+
+								</div>
+							</vtr-ui-row-switch>
+						</li>
+					</ul>
+				</vtr-container-collapsible>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="row py-5 smartsettings-card"
 		id="cooling">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible cardTitle="Power Smartsettings"
@@ -17,7 +268,10 @@
 				<div class="row">
 					<div class="col-auto text-wrap subtitle">
 						<h3>Intelligent Cooling</h3>
-						<p>This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.</p>
+						<p>This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings
+							to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes
+							performance while the device is on a stable surface. When off, you can manually set thermal
+							priority.</p>
 					</div>
 				</div>
 				<ul class="list-group list-group-flush">
@@ -46,43 +300,40 @@
 				</ul>
 			</vtr-container-collapsible>
 		</div>
-	</div>
+	</div> -->
 
 	<div class="row py-5"
-		id="battery">
+	 id="battery">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible cardTitle="Battery Settings"
-				[isCollapsed]="false">
+			 [isCollapsed]="false">
 				<ul class="list-group list-group-flush">
-
-						<li class="">
-
-
-						<vtr-ui-row-switch [title]="batterySettings[0].header"
-							[caption]="batterySettings[0].subHeader"
+					<li class="">
+						<vtr-ui-row-switch [title]="batterySettings.items[0].header"
+							[caption]="batterySettings.items[0].subHeader"
 							[isSwitchVisible]=true
-							[leftIcon]="batterySettings[0].leftImageSource"
-							[readMoreText]="batterySettings[0].readMoreText"
-							[tooltipText]="batterySettings[0].tooltipText">
+							[leftIcon]="batterySettings.items[0].leftImageSource"
+							[readMoreText]="batterySettings.items[0].readMoreText"
+							[tooltipText]="batterySettings.items[0].tooltipText">
 						</vtr-ui-row-switch>
 					</li>
 					<li class="">
-						<vtr-ui-row-switch [title]="batterySettings[1].header"
-							[caption]="batterySettings[1].subHeader"
+						<vtr-ui-row-switch [title]="batterySettings.items[1].header"
+							[caption]="batterySettings.items[1].subHeader"
 							[isSwitchVisible]=true
-							[leftIcon]="batterySettings[1].leftImageSource"
-							[rightIcon]="batterySettings[1].rightImageSource"
-							[readMoreText]="batterySettings[1].readMoreText"
+							[leftIcon]="batterySettings.items[1].leftImageSource"
+							[rightIcon]="batterySettings.items[1].rightImageSource"
+							[readMoreText]="batterySettings.items[1].readMoreText"
 							[showChildContent]="true"
 							(toggleOnOff)="showBatteryThreshold=$event.switchValue;"
-							[tooltipText]="batterySettings[1].tooltipText">
+							[tooltipText]="batterySettings.items[1].tooltipText">
 							<div *ngIf="showBatteryThreshold">
 								<vtr-battery-charge-threshold-settings [title]="'Threshold for Built in battery'"
-									[type]="'primary'">
+								 [type]="'primary'">
 								</vtr-battery-charge-threshold-settings>
 
 								<vtr-battery-charge-threshold-settings [title]="'Threshold for Removable battery'"
-									[type]="'secondary'">
+								 [type]="'secondary'">
 								</vtr-battery-charge-threshold-settings>
 
 								<vtr-battery-charge-threshold-settings [displayNoteOnly]="true">
@@ -91,21 +342,28 @@
 						</vtr-ui-row-switch>
 					</li>
 					<li class="">
-						<vtr-ui-row-switch [title]="batterySettings[2].header"
-							[caption]="batterySettings[2].subHeader"
+						<!--
+						*ngIf="batterySettings.status.expressCharging"
+						-->
+						<vtr-ui-row-switch [title]="batterySettings.items[2].header"
+							[caption]="batterySettings.items[2].subHeader"
 							[isSwitchVisible]=true
-							[leftIcon]="batterySettings[2].leftImageSource"
-							[tooltipText]="batterySettings[2].tooltipText">
+							[leftIcon]="batterySettings.items[2].leftImageSource"
+							[tooltipText]="batterySettings.items[2].tooltipText"
+							[isSwitchChecked]="batterySettings.status.expressCharging"
+							(toggleOnOff)="changeBatteryMode($event,'expressCharging')">
 						</vtr-ui-row-switch>
 					</li>
 					<li class="">
-						<vtr-ui-row-switch [title]="batterySettings[3].header"
-							[caption]="batterySettings[3].subHeader"
+						<!-- *ngIf="batterySettings.status.conservationMode"* -->
+						<vtr-ui-row-switch [title]="batterySettings.items[3].header"
+							[caption]="batterySettings.items[3].subHeader"
 							[isSwitchVisible]=true
-							[leftIcon]="batterySettings[3].leftImageSource"
-							[readMoreText]="batterySettings[3].readMoreText"
-							[tooltipText]="batterySettings[3].tooltipText">
-
+							[leftIcon]="batterySettings.items[3].leftImageSource"
+							[readMoreText]="batterySettings.items[3].readMoreText"
+							[tooltipText]="batterySettings.items[3].tooltipText"
+							[isSwitchChecked]="batterySettings.status.conservationMode"
+							(toggleOnOff)="changeBatteryMode($event,'conservationMode')">
 						</vtr-ui-row-switch>
 					</li>
 
@@ -115,10 +373,10 @@
 	</div>
 
 	<div class="row py-5"
-		id="power">
+	 id="power">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible cardTitle="Power Settings"
-				[isCollapsed]="false">
+			 [isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngFor="let item of powerSettings">
@@ -136,17 +394,17 @@
 	</div>
 
 	<div class="row py-5"
-		id="other">
+	 id="other">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible cardTitle="Other Settings"
-				[isCollapsed]="false">
+			 [isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""
-						*ngFor="let item of otherSettings">
+					 *ngFor="let item of otherSettings">
 						<vtr-ui-row-switch [title]="item.header"
-							[caption]="item.subHeader"
-							[isSwitchVisible]=true
-							[leftIcon]="item.leftImageSource">
+						 [caption]="item.subHeader"
+						 [isSwitchVisible]=true
+						 [leftIcon]="item.leftImageSource">
 						</vtr-ui-row-switch>
 					</li>
 				</ul>

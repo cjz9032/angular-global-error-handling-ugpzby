@@ -21,13 +21,6 @@
 			.update-checkbox {
 				font-size: 1.4rem;
 				padding-left: 3rem;
-
-				.failure {
-					color: $alt;
-				}
-				.success {
-					color: $go_dark;
-				}
 			}
 
 			.custom-control {
@@ -76,6 +69,9 @@
 					float: left;
 					&.light-title {
 						font-weight: $weight_light;
+					}
+					&.completed {
+						float: none;
 					}
 				}
 				.detail {

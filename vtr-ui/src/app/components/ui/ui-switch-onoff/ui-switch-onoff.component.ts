@@ -12,6 +12,8 @@ import { TranslationSection } from 'src/app/enums/translation-section.enum';
 export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	@Output() toggle: EventEmitter<any> = new EventEmitter();
 	@Input() value: boolean;
+	@Input() name: string;
+	@Input() disabled: boolean = false;
 
 	uiSubscription: Subscription;
 
