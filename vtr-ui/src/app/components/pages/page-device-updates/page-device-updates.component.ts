@@ -116,7 +116,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.onNotification(response);
 		});
 
-		if (this.systemUpdateService.isUpdatesAvailable) {
+		if (this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isInstallationComplete) {
 			this.isUpdatesAvailable = true;
 			this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 		}
@@ -127,8 +127,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.getScheduleUpdateStatus(false);
 		this.isComponentInitialized = true;
 	}
-
-
 
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
@@ -298,39 +296,40 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private onScheduleUpdateNotification(type: string, payload: any) {
 		console.log('onScheduleUpdateNotification', type, payload);
-
-		switch (type) {
-			case UpdateProgress.ScheduleUpdateChecking:
-				if (this.isComponentInitialized) {
+		if (this.isComponentInitialized) {
+			switch (type) {
+				case UpdateProgress.ScheduleUpdateChecking:
 					this.isUpdateCheckInProgress = true;
 					this.getScheduleUpdateStatus(true);
-				}
-				break;
-			case UpdateProgress.ScheduleUpdateDownloading:
-				if (this.isComponentInitialized) {
+					break;
+				case UpdateProgress.ScheduleUpdateDownloading:
 					this.isUpdateCheckInProgress = false;
 					this.isUpdateDownloading = true;
-					// this.installationPercent = payload.installPercentage;
-					// this.downloadingPercent = payload.downloadPercentage;
+					this.installationPercent = 0;
+					this.downloadingPercent = payload.downloadProgress.progressinPercentage;
 					this.getScheduleUpdateStatus(true);
-				}
-				break;
-			case UpdateProgress.ScheduleUpdateInstalling:
-				if (this.isComponentInitialized) {
+					break;
+				case UpdateProgress.ScheduleUpdateInstalling:
 					this.isUpdateCheckInProgress = false;
 					this.isUpdateDownloading = true;
+					this.installationPercent = payload.installProgress.progressinPercentage;
+					this.downloadingPercent = 100;
 					this.getScheduleUpdateStatus(true);
-				}
-				break;
-			case UpdateProgress.ScheduleUpdateIdle:
-				if (this.isComponentInitialized) {
+					break;
+				case UpdateProgress.ScheduleUpdateIdle:
 					this.isUpdateCheckInProgress = false;
 					this.isUpdateDownloading = false;
 					this.resetState();
-				}
-				break;
-			default:
-				break;
+					break;
+				case UpdateProgress.ScheduleUpdateCheckComplete:
+					this.isUpdateDownloading = false;
+					this.isInstallationCompleted = true;
+					this.isInstallationSuccess = (payload.status === SystemUpdateStatusCode.SUCCESS);
+					this.setUpdateByCategory(payload.updateList);
+					break;
+				default:
+					break;
+			}
 		}
 	}
 

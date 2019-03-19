@@ -9,6 +9,7 @@ import { AvailableUpdateDetail } from 'src/app/data-models/system-update/availab
 import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
 import { UpdateHistory } from 'src/app/data-models/system-update/update-history.model';
 import { ScheduleUpdateStatus } from 'src/app/data-models/system-update/ScheduleUpdateStatus';
+import { SystemUpdateStatusCode } from 'src/app/enums/system-update-status-code.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -20,6 +21,7 @@ export class SystemUpdateService {
 	public isShellAvailable = false;
 	public isCheckForUpdateComplete = true;
 	public isUpdatesAvailable = false;
+	public isInstallationComplete = false;
 	public updateInfo: AvailableUpdate;
 	public installationHistory: Array<UpdateHistory>;
 
@@ -99,6 +101,7 @@ export class SystemUpdateService {
 		// checkForUpdates requires callback
 		if (this.systemUpdateBridge) {
 			this.isCheckForUpdateComplete = false;
+			this.isInstallationComplete = false;
 			this.systemUpdateBridge.checkForUpdates((progressPercentage: number) => {
 				console.log('checkForUpdates callback', progressPercentage);
 				this.commonService.sendNotification(UpdateProgress.UpdateCheckInProgress, progressPercentage);
@@ -136,7 +139,7 @@ export class SystemUpdateService {
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.getStatus(canReportProgress, (response: any) => {
 				console.log('getScheduleUpdateStatus callback', response);
-				this.processScheduleUpdate(response);
+				this.processScheduleUpdate(response.payload);
 			}).then((response: ScheduleUpdateStatus) => {
 				console.log('getScheduleUpdateStatus response', response);
 				this.processScheduleUpdate(response);
@@ -153,7 +156,12 @@ export class SystemUpdateService {
 		} else if (status.toLowerCase() === 'downloading') {
 			this.commonService.sendNotification(UpdateProgress.ScheduleUpdateDownloading, response);
 		} else if (status === 'idle') {
-			this.commonService.sendNotification(UpdateProgress.ScheduleUpdateIdle, response);
+			if (response.updateTaskList && response.updateTaskList.length > 0) {
+				this.updateInfo = this.mapScheduleInstallResponse(response.updateTaskList);
+				this.commonService.sendNotification(UpdateProgress.ScheduleUpdateCheckComplete, this.updateInfo);
+			} else {
+				this.commonService.sendNotification(UpdateProgress.ScheduleUpdateIdle, response);
+			}
 		}
 	}
 
@@ -242,8 +250,11 @@ export class SystemUpdateService {
 			this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);
 		}).then((response: UpdateInstallationResult) => {
 			console.log('installUpdates response', response);
-			this.mapInstallationStatus(this.updateInfo.updateList, response.updateResultList);
-			this.commonService.sendNotification(UpdateProgress.InstallationComplete, response);
+			if (response) {
+				this.isInstallationComplete = true;
+				this.mapInstallationStatus(this.updateInfo.updateList, response.updateResultList);
+				this.commonService.sendNotification(UpdateProgress.InstallationComplete, response);
+			}
 		});
 	}
 
@@ -299,6 +310,33 @@ export class SystemUpdateService {
 			});
 			update.installationStatus = pkg.actionResult;
 		});
+	}
+
+	private mapScheduleInstallResponse(updateTaskList: Array<any>): AvailableUpdate {
+		const updates: Array<AvailableUpdateDetail> = [];
+		const availableUpdate = new AvailableUpdate();
+		let installedCount = 0;
+		updateTaskList.forEach((updateTask: any) => {
+			const update = new AvailableUpdateDetail();
+			update.packageID = updateTask.packageID;
+			update.packageDesc = updateTask.packageDisplayName;
+			update.packageRebootType = updateTask.packageRebootType;
+			update.packageVersion = updateTask.packageVersion;
+			update.packageSeverity = updateTask.packageType;
+
+			if (updateTask.packageState === 'install-failed') {
+				update.installationStatus = UpdateActionResult.InstallFailed;
+			} else if (updateTask.packageState === 'download-failed') {
+				update.installationStatus = UpdateActionResult.DownloadFailed;
+			} else if (updateTask.packageState === 'installed') {
+				update.installationStatus = UpdateActionResult.Success;
+				installedCount++;
+			}
+			updates.push(update);
+		});
+		availableUpdate.status = (updateTaskList.length === installedCount) ? SystemUpdateStatusCode.SUCCESS : SystemUpdateStatusCode.FAILURE;
+		availableUpdate.updateList = updates;
+		return availableUpdate;
 	}
 
 	private getSelectedUpdates(updateList: Array<AvailableUpdateDetail>): Array<AvailableUpdateDetail> {

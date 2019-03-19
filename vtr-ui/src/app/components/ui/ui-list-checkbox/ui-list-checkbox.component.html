@@ -38,7 +38,7 @@
 			</div>
 		</li>
 	</ul>
-	<ul class="checkbox-list"
+	<!-- <ul class="checkbox-list"
 		*ngIf="isInstallationCompleted">
 		<li *ngFor="let item of items; let i = index">
 			<div class="container-fluid">
@@ -70,6 +70,33 @@
 						</div>
 					</div>
 				</div>
+			</div>
+		</li>
+	</ul> -->
+	<ul class="list-group"
+		*ngIf="isInstallationCompleted">
+		<li class="list-group-item"
+			*ngFor="let item of items">
+			<div class="row align-items-center">
+				<div class="col-auto px-3">
+					<div class="bullet-icon-check">
+						<div class="icon-bkg">
+							<!-- <fa-icon [icon]="['fas', 'check']"></fa-icon> -->
+							<fa-icon class="success"
+								*ngIf="item.installationStatus.toLocaleLowerCase() === 'success'"
+								[icon]="['fas', 'check-circle']"></fa-icon>
+							<fa-icon class="failure"
+								*ngIf="item.installationStatus.toLocaleLowerCase() === 'installfailed' || item.installationStatus.toLocaleLowerCase() === ''"
+								[icon]="['fas', 'times-circle']"></fa-icon>
+
+						</div>
+					</div>
+				</div>
+				<div class="col col-11 text px-0 button-box">
+					<div class="update-title">{{item.packageDesc}}</div>
+				</div>
+				<fa-icon class="question"
+					[icon]="['far', 'question-circle']"></fa-icon>
 			</div>
 		</li>
 	</ul>
