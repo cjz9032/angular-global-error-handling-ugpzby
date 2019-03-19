@@ -25,6 +25,7 @@ export class PageDashboardComponent implements OnInit {
 	heroBannerItems = [];
 	cardContentPositionB: any = {};
 	cardContentPositionC: any = {};
+	cardContentPositionD: any = {};
 
 	/*forwardLink = {
 		path: 'dashboard-customize',
@@ -66,15 +67,6 @@ export class PageDashboardComponent implements OnInit {
 			(response: any) => {
 				console.log('fetchCMSContent response', response);
 
-				this.cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
-				this.cardContentPositionC = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
-
-				console.log('this.cardContentPositionB', this.cardContentPositionB);
-				console.log('this.cardContentPositionC', this.cardContentPositionC);
-
-				this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
-				this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
-
 				this.heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
 					return {
 						'albumId': 1,
@@ -85,6 +77,17 @@ export class PageDashboardComponent implements OnInit {
 						'ActionLink': record.ActionLink
 					}
 				});
+
+				this.cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+				this.cardContentPositionC = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
+
+				console.log('this.cardContentPositionB', this.cardContentPositionB);
+				console.log('this.cardContentPositionC', this.cardContentPositionC);
+
+				this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+				this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
+
+				this.cardContentPositionD = this.cmsService.getOneCMSContent(response, 'full-width-title-image-background', 'position-D')[0];
 			},
 			error => {
 				console.log('fetchCMSContent error', error);
