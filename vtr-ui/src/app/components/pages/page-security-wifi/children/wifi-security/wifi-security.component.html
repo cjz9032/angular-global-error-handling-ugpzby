@@ -10,6 +10,33 @@
 		</div>
 		<div class="row mt-20">
 			<div class="col">
+
+				<vtr-container-collapsible cardTitle="WIFI SECURITY"
+					[isCollapsed]="false">
+					<div class="content">
+						<div class="cardTitle">
+							<h3>Network History</h3>
+							<div class="status">
+								<p>Show: <a href="#" class="active">Malicious</a> / <a href="#">All</a></p>
+							</div>
+						</div>
+						<div class="cardBody">
+							<ul class="openNetworks">
+								<li>
+									<div class="status-icon">
+										
+										<span class="fa-stack fa-3x">
+											<fa-icon [icon]="['fas', 'wifi']" class="menu-pointer"></fa-icon>
+											<span class="circle green"><fa-icon [icon]="['fas', 'check']"></fa-icon></span>
+										</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</vtr-container-collapsible>
+
+
 				<div class="wifi-security-box">
 					<div class="row">
 						<div class="col col-1">
