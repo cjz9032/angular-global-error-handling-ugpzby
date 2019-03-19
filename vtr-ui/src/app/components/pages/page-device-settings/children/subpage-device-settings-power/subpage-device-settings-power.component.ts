@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-power',
@@ -162,11 +163,21 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 		// console.log('after expressCharging :' + this.batterySettings.status.expressCharging);
 
 	}
-	constructor() { }
+	constructor(
+		public modalService: NgbModal) { }
 
 	onIntelligentCoolingToggle(event) {
 		this.intelligentCooling = event.switchValue;
 	}
 
 	ngOnInit() { }
+	openContextModal(template: TemplateRef<any>) {
+		this.modalService.open(template, {
+			windowClass: 'read-more'
+		});
+	}
+
+	closeContextModal() {
+		this.modalService.dismissAll();
+	}
 }

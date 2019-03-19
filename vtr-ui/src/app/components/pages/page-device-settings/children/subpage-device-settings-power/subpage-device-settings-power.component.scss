@@ -87,5 +87,10 @@
 	.read-more-link {
 		color: $light;
 		text-decoration: underline;
+		cursor: pointer;
+	}
+	.question{
+		color: $light;
+		font-size: 2rem;
 	}
 }
