@@ -26,6 +26,8 @@ export class PageDashboardComponent implements OnInit {
 	cardContentPositionB: any = {};
 	cardContentPositionC: any = {};
 	cardContentPositionD: any = {};
+	cardContentPositionE: any = {};
+	cardContentPositionF: any = {};
 
 	/*forwardLink = {
 		path: 'dashboard-customize',
@@ -88,6 +90,9 @@ export class PageDashboardComponent implements OnInit {
 				this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
 
 				this.cardContentPositionD = this.cmsService.getOneCMSContent(response, 'full-width-title-image-background', 'position-D')[0];
+
+				this.cardContentPositionE = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-E')[0];
+				this.cardContentPositionF = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-F')[0];
 			},
 			error => {
 				console.log('fetchCMSContent error', error);
