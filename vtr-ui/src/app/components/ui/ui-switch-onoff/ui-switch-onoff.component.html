@@ -5,7 +5,7 @@
 			class="switch"
 			[value]="value"
 			(change)="onChange($event)"
-			[checked]="value" />
+			[checked]="value" vtrMetrics metricsEvent="itemClick" metricsParent="quicksettings" [metricsItem]="'chk.'+name"  [metricsValue]="value" />
 		<span class="switch {{ size }}"> <small></small> </span>
 		<div *ngIf="!value"
 			class="switch-label off-label">{{ offLabel }}</div>

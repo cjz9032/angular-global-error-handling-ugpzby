@@ -61,7 +61,7 @@
 						class="title">{{title}}</div>
 					<div *ngIf="readMore"
 						class="read-more">
-						<a href="{{readMore}}">
+						<a href="{{readMore}}" vtrMetrics metricsEvent="itemClick" metricsItem="'link.readmore'" [metricsParent]="title">
 							<span class="link-label">Read More</span>
 							<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 						</a>
@@ -92,7 +92,7 @@
 							class="title">{{title}}</div>
 						<div *ngIf="readMore"
 							class="read-more">
-							<a href="{{readMore}}">
+							<a href="{{readMore}}" vtrMetrics metricsEvent="itemClick" metricsItem="'link.readmore'" [metricsParent]="title">
 								<span class="link-label">Partner Article</span>
 							</a>
 						</div>

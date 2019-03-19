@@ -19,9 +19,13 @@ export class MetricsDirective {
 	@Input() metricsParent: string;
 	@Input() metricsParam: string;
 
-	@HostListener('click') onclick() {
-		const location = window.location.href.substring(window.location.href.indexOf('#') + 2).split('/').join('.');
-		console.log('++++++++++++', location);
+	@HostListener('click',['$event.target']) onclick(target) {
+		const location = window.location.href.substring(window.location.href.indexOf('#') + 2).replace(/[`~!@#$%^&*()_|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '');
+		this.metricsItem=typeof this.metricsItem==='string'?this.metricsItem.split(" ").join("").toLowerCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '').substr(0,25):this.metricsItem;
+		this.metricsEvent=typeof this.metricsEvent==='string'?this.metricsEvent.split(" ").join("").toLowerCase():this.metricsEvent;
+		this.metricsValue=typeof this.metricsValue==='string'?this.metricsValue.split(" ").join("").toLowerCase():this.metricsValue;
+		this.metricsParent=typeof this.metricsParent==='string'?this.metricsParent.split(" ").join("").toLowerCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '').substr(0,25):this.metricsParent;
+		this.metricsParam= typeof this.metricsParam==='string'?this.metricsParam.split(" ").join("").toLowerCase():this.metricsParam;
 
 		if (this.metrics && this.metrics.sendAsync) {
 			const data: any = {
@@ -32,7 +36,8 @@ export class MetricsDirective {
 			if (this.metricsParam) {
 				data.ItemParam = this.metricsParam;
 			}
-			if (this.metricsValue) {
+
+			if (typeof this.metricsValue!=='undefined') {
 				data.metricsValue = this.metricsValue;
 			}
 			this.metrics.sendAsync(data);
@@ -48,7 +53,7 @@ export class MetricsDirective {
 			if (this.metricsParam) {
 				data.ItemParam = this.metricsParam;
 			}
-			if (this.metricsValue) {
+			if (typeof this.metricsValue!=='undefined') {
 				data.metricsValue = this.metricsValue;
 			}
 
