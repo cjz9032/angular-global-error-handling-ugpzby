@@ -239,4 +239,5 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit {
 		let optimizeMode = ["Only My Voice", "Normal", "Multiple Voice", "Voice Recogntion"]
 		this.microOptimizeModeResponse = new MicrophoneOptimizeModes(optimizeMode, "")
 	}
+
 }

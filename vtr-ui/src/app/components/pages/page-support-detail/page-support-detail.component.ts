@@ -14,7 +14,7 @@ export class PageSupportDetailComponent implements OnInit {
 
 	qa: QA;
 	qAndA = {
-		title: 'Q&A for your machine',
+		title: 'Q&A\'s for your machine',
 		description: 'Description of component',
 		data: [
 			{ icon: 'fa-plane', question: 'Reduced batterylife working outside.' },
