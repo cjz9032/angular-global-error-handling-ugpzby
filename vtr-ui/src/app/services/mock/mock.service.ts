@@ -84,7 +84,7 @@ export class MockService {
 			'status': 1,
 			'id': 'apps-src-unknown',
 			'title': 'Apps from unknown sources',
-			'detail': 'Failed',
+			'detail': 'FAILED',
 			'path': '',
 			'hideChevron': true
 		},
