@@ -2,7 +2,7 @@
 
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
-import bootstrap from '@lenovo/tan-client-bridge/src/index';
+import bootstrap from '@lenovo/tan-client-bridge';
 
 @Injectable({
 	providedIn: 'root'
