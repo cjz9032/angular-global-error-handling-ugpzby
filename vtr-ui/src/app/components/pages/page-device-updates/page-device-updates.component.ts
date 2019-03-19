@@ -306,15 +306,19 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isUpdateCheckInProgress = false;
 					this.isUpdateDownloading = true;
 					this.installationPercent = 0;
-					this.downloadingPercent = payload.downloadProgress.progressinPercentage;
 					this.getScheduleUpdateStatus(true);
+					if (payload.downloadProgress) {
+						this.downloadingPercent = payload.downloadProgress.progressinPercentage;
+					}
 					break;
 				case UpdateProgress.ScheduleUpdateInstalling:
 					this.isUpdateCheckInProgress = false;
 					this.isUpdateDownloading = true;
-					this.installationPercent = payload.installProgress.progressinPercentage;
 					this.downloadingPercent = 100;
 					this.getScheduleUpdateStatus(true);
+					if (payload.installProgress) {
+						this.installationPercent = payload.installProgress.progressinPercentage;
+					}
 					break;
 				case UpdateProgress.ScheduleUpdateIdle:
 					this.isUpdateCheckInProgress = false;
