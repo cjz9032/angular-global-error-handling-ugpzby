@@ -235,24 +235,17 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	color: $go_dark;
 }
 
-.read-more{
-	.modal-content {
-		border-radius: 10px;
-		background: $light;
-		padding: 10px;
-		.modal-header{
-			border: none;
-		}
-				.modal-body{
-					p{
-						font-size: 1.2rem;
-						span{
-							font-size: 1.2rem;
-							font-weight: bold;
-							color: brown;
-						}
-					}
-			}
+/*common-confirmation-modal-styles*/
 
+.common-confirmation-modal{
+	.modal-dialog{
+		margin-top: 8rem;
+	.modal-content{
+		background-color: transparent;
+		border: none;
 	}
 }
+
+}
+
+
