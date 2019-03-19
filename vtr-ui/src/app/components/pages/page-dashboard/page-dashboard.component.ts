@@ -148,18 +148,19 @@ export class PageDashboardComponent implements OnInit {
 			warranty.type = 'system';
 
 			if (response.warranty) {
-				const warrantyTill = new Date(response.warranty.expired);
-				const today = new Date();
 				const warrantyDate = this.commonService.formatDate(response.warranty.expired);
 				// in warranty
-				if (today.getTime() < warrantyTill.getTime()) {
+				if (response.warranty.status === 0) {
 					warranty.detail = `Until ${warrantyDate}`;
 					warranty.status = 0;
-				} else {
+				}
+				if (response.warranty.status === 1) {
 					warranty.detail = `Warranty expired on ${warrantyDate}`;
 					warranty.status = 1;
+				} else {
+					warranty.detail = `Not available`;
+					warranty.status = 1;
 				}
-
 			}
 			systemStatus.push(warranty);
 
@@ -215,8 +216,8 @@ export class PageDashboardComponent implements OnInit {
 			wiFi.path = 'wifi-security';
 			wiFi.type = 'security';
 
-			if (response.wiFi) {
-				if (response.wiFi.status) {
+			if (response.wifiSecurity) {
+				if (response.wifiSecurity.status) {
 					wiFi.status = 0;
 					wiFi.detail = 'Enabled';
 				} else {

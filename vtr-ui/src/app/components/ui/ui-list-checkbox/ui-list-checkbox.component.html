@@ -47,10 +47,10 @@
 						<div class="row update-checkbox">
 							<div class="col align-self-center">
 								<fa-icon class="success"
-									*ngIf="isInstallationSuccess"
+									*ngIf="item.installationStatus.toLocaleLowerCase() === 'success'"
 									[icon]="['fas', 'check-circle']"></fa-icon>
 								<fa-icon class="failure"
-									*ngIf="!isInstallationSuccess"
+									*ngIf="item.installationStatus.toLocaleLowerCase() === 'installfailed' || item.installationStatus.toLocaleLowerCase() === ''"
 									[icon]="['fas', 'times-circle']"></fa-icon>
 								<div class="title completed"
 									[ngClass]="{'light-title':item.lightTitle}">

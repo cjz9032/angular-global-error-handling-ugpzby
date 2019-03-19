@@ -8,6 +8,7 @@ import { AvailableUpdate } from 'src/app/data-models/system-update/available-upd
 import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
 import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
 import { UpdateHistory } from 'src/app/data-models/system-update/update-history.model';
+import { ScheduleUpdateStatus } from 'src/app/data-models/system-update/ScheduleUpdateStatus';
 
 @Injectable({
 	providedIn: 'root'
@@ -132,17 +133,27 @@ export class SystemUpdateService {
 	}
 
 	public getScheduleUpdateStatus(canReportProgress: boolean) {
-
-		// 1. reportProgress //true or false
-		// 2. function callback
 		if (this.systemUpdateBridge) {
-			this.systemUpdateBridge.installUpdates(canReportProgress, (progress: any) => {
-				console.log('getScheduleUpdateStatus callback', progress);
-				// this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);
-			}).then((response: UpdateInstallationResult) => {
+			this.systemUpdateBridge.getStatus(canReportProgress, (response: any) => {
+				console.log('getScheduleUpdateStatus callback', response);
+				this.processScheduleUpdate(response);
+			}).then((response: ScheduleUpdateStatus) => {
 				console.log('getScheduleUpdateStatus response', response);
-				this.commonService.sendNotification(UpdateProgress.UpdateScheduleComplete, response);
+				this.processScheduleUpdate(response);
 			});
+		}
+	}
+
+	private processScheduleUpdate(response: any) {
+		const { status } = response;
+		if (status.toLowerCase() === 'installing') {
+			this.commonService.sendNotification(UpdateProgress.ScheduleUpdateInstalling, response);
+		} else if (status.toLowerCase() === 'checking') {
+			this.commonService.sendNotification(UpdateProgress.ScheduleUpdateChecking, response);
+		} else if (status.toLowerCase() === 'downloading') {
+			this.commonService.sendNotification(UpdateProgress.ScheduleUpdateDownloading, response);
+		} else if (status === 'idle') {
+			this.commonService.sendNotification(UpdateProgress.ScheduleUpdateIdle, response);
 		}
 	}
 
@@ -222,7 +233,7 @@ export class SystemUpdateService {
 
 	private installUpdates(updates: Array<InstallUpdate>) {
 		let isInvoked = false;
-		this.systemUpdateBridge.installUpdates(updates, (progress: number) => {
+		this.systemUpdateBridge.installUpdates(updates, (progress: any) => {
 			if (!isInvoked) {
 				isInvoked = true;
 				this.commonService.sendNotification(UpdateProgress.InstallationStarted);
@@ -231,6 +242,7 @@ export class SystemUpdateService {
 			this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);
 		}).then((response: UpdateInstallationResult) => {
 			console.log('installUpdates response', response);
+			this.mapInstallationStatus(this.updateInfo.updateList, response.updateResultList);
 			this.commonService.sendNotification(UpdateProgress.InstallationComplete, response);
 		});
 	}
@@ -250,34 +262,43 @@ export class SystemUpdateService {
 	}
 
 	private mapAvailableUpdateResponse(updateList: Array<any>): AvailableUpdateDetail[] {
-		const packageToInstall: AvailableUpdateDetail[] = [];
+		const updates: AvailableUpdateDetail[] = [];
 
 		if (updateList && updateList.length > 0) {
 			updateList.forEach((update) => {
-				const pkg = new AvailableUpdateDetail();
-				pkg.licenseUrl = update.licenseUrl;
-				pkg.packageDesc = update.packageDesc;
-				pkg.packageID = update.packageID;
-				pkg.packageName = update.packageName;
-				pkg.packageRebootType = update.packageRebootType;
-				pkg.packageReleaseDate = update.packageReleaseDate;
-				pkg.packageSeverity = update.packageSeverity;
-				pkg.packageSize = update.packageSize;
-				pkg.packageTips = update.packageTips;
-				pkg.packageType = update.packageType;
-				pkg.packageVendor = update.packageVendor;
-				pkg.packageVersion = update.packageVersion;
-				pkg.readmeUrl = update.readmeUrl;
-				pkg.coreqPackageID = update.coreqPackageID;
-				pkg.currentInstalledVersion = update.currentInstalledVersion;
-				pkg.diskSpaceRequired = update.diskSpaceRequired;
-				pkg.isInstalled = false;
-				pkg.isSelected = true;
-				pkg.installationStatus = UpdateActionResult.Unknown;
-				packageToInstall.push(pkg);
+				const updateDetail = new AvailableUpdateDetail();
+				updateDetail.licenseUrl = update.licenseUrl;
+				updateDetail.packageDesc = update.packageDesc;
+				updateDetail.packageID = update.packageID;
+				updateDetail.packageName = update.packageName;
+				updateDetail.packageRebootType = update.packageRebootType;
+				updateDetail.packageReleaseDate = update.packageReleaseDate;
+				updateDetail.packageSeverity = update.packageSeverity;
+				updateDetail.packageSize = update.packageSize;
+				updateDetail.packageTips = update.packageTips;
+				updateDetail.packageType = update.packageType;
+				updateDetail.packageVendor = update.packageVendor;
+				updateDetail.packageVersion = update.packageVersion;
+				updateDetail.readmeUrl = update.readmeUrl;
+				updateDetail.coreqPackageID = update.coreqPackageID;
+				updateDetail.currentInstalledVersion = update.currentInstalledVersion;
+				updateDetail.diskSpaceRequired = update.diskSpaceRequired;
+				updateDetail.isInstalled = false;
+				updateDetail.isSelected = true;
+				updateDetail.installationStatus = UpdateActionResult.Unknown;
+				updates.push(updateDetail);
 			});
 		}
-		return packageToInstall;
+		return updates;
+	}
+
+	private mapInstallationStatus(updates: AvailableUpdateDetail[], updateInstallationList: Array<any>) {
+		updates.forEach((update: AvailableUpdateDetail) => {
+			const pkg = updateInstallationList.find((uil) => {
+				return update.packageID === uil.packageID;
+			});
+			update.installationStatus = pkg.actionResult;
+		});
 	}
 
 	private getSelectedUpdates(updateList: Array<AvailableUpdateDetail>): Array<AvailableUpdateDetail> {
