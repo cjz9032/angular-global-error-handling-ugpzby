@@ -32,6 +32,12 @@
 									</div>
 								</div>
 
+								<div class="row">
+									<div class="col col-12">
+										<vtr-installed-system-updates-list></vtr-installed-system-updates-list>
+									</div>
+								</div>
+
 								<vtr-available-updates *ngIf="isUpdatesAvailable && !isUpdateDownloading"
 									[criticalUpdates]="criticalUpdates"
 									[optionalUpdates]="optionalUpdates"
@@ -46,17 +52,17 @@
 								<!-- Installation timeline is scope of MVP-2 -->
 								<div class="row">
 									<div class="col col-12 installation-history-container">
-										<!--<div class="row">
+										<div class="row">
 											<div class="col installation-history">
 												{{ installationHistory }}
 											</div>
 										</div>
 										 <div class="row installation-history-div">
 											<div class="col col-1 installation-history-ellipses">
-												...
+												---
 											</div>
 											<div class="col col-1 installation-history-dash">
-												-
+												<hr>
 											</div>
 											<div class="col col-9 installation-history-text">
 												<div class="row">
@@ -68,7 +74,7 @@
 																	<a routerLink="/{{item.path}}">
 																		<div class="container-fluid">
 																			<div class="row">
-																				<div class="col col-2 text-center">
+																				<div class="col col-2 text-right">
 																					<div class="status-icon">
 																						<div class="icon-bkg">
 																							<fa-icon
@@ -87,14 +93,17 @@
 																	</a>
 																</li>
 															</div>
+															<hr>
 														</ul>
 													</div>
+													<div class="col col-1 installation-history-dash status-now">
+														Now
+													</div>
 												</div>
+
 											</div>
-											<div class="col col-1 installation-history-dash">
-												Now
-											</div>
-										</div> -->
+
+										</div>
 										<div class="row">
 											<div class="col row1 full-history">
 												<a (click)="onToggleFullHistory()">Full History</a>
