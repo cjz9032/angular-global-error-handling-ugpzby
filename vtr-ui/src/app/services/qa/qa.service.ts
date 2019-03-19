@@ -232,7 +232,7 @@ export class QaService {
 			id: 4,
 			path: 'support-detail/4',
 			iconPath: `${this.imagePath}/svg_icon_qa_battery.svg`,
-			title: 'Check your machine\'s battery use',
+			title: "Check your machine's battery use",
 			like: false,
 			dislike: false,
 			description: `<div style="font-size:4rem;font-weight:bold;">
@@ -311,11 +311,11 @@ export class QaService {
 			id: 6,
 			path: 'support-detail/6',
 			iconPath: `${this.imagePath}/svg_icon_qa_cortana.svg`,
-			title: 'Get to know Cortona, your personal assistant',
+			title: 'Get to know Cortana, your personal assistant',
 			like: false,
 			dislike: false,
 			description: `<div style="font-size:4rem;font-weight:bold;">
-				Get to know Cortona, your personal assistant
+				Get to know Cortana, your personal assistant
 			</div>
 			<hr>
 			<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">What is Cortana?</h3>

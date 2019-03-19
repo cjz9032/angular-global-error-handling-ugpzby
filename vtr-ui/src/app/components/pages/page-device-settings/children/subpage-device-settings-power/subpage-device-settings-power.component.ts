@@ -105,7 +105,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			readMoreText: 'Read More',
 			rightImageSource: ['far', 'question-circle'],
 			leftImageSource: ['far', 'gem'],
-			header: 'Always on USB',
+			header: 'Always on USB*',
 			subHeader:
 				'Charge USB devices through the Always on USB connector on the computer when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged from the USB connector that is yellow-coded or silk-printed the specified icon.',
 			isCheckBoxVisible: true,

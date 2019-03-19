@@ -167,7 +167,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit {
 		this.getSupportedModes();
 	}
 
-	public setVolume(volumn: number) {
+	public setVolume(event) {
+		let volumn = event.value
 		try {
 			this.microphoneProperties.volume = volumn
 			if (this.audioService.isShellAvailable) {
@@ -238,4 +239,5 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit {
 		let optimizeMode = ["Only My Voice", "Normal", "Multiple Voice", "Voice Recogntion"]
 		this.microOptimizeModeResponse = new MicrophoneOptimizeModes(optimizeMode, "")
 	}
+
 }

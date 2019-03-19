@@ -175,7 +175,6 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			this.onNotification(notification);
 		});
 	}
-
 	ngOnDestroy() {
 		if (this.commonMenuSubscription) {
 			this.commonMenuSubscription.unsubscribe();
@@ -202,7 +201,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			backdrop: 'static',
 			size: 'lg',
 			centered: true,
-			windowClass: 'lenovo-id-modal-size'
+			windowClass: 'lenovo-modal-size'
 		});
 	}
 
