@@ -118,6 +118,7 @@ import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-b
 import { MetricsDirective } from './directives/metrics.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
+import { InstalledSystemUpdatesListComponent } from './components/pages/page-device-updates/children/installed-system-updates-list/installed-system-updates-list.component';
 
 library.add(fas);
 library.add(fab);
@@ -196,7 +197,8 @@ library.add(far);
 		ModalBatteryChargeThresholdComponent,
 		MetricsDirective,
 		InstallationHistoryComponent,
-		SeparatePascalCasePipe
+		SeparatePascalCasePipe,
+		InstalledSystemUpdatesListComponent
 	],
 	imports: [
 		BrowserModule,

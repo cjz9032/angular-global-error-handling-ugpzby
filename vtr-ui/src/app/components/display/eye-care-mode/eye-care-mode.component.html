@@ -10,6 +10,7 @@
 			>
 			</vtr-ui-range-slider> -->
 			<vtr-ui-range-slider [step]="100"
+			[enableSlider]="enableSlider"
 			[minValue]="eyecareModeSettings.minimum"
 			[maxValue]="eyecareModeSettings.maximum"
 			[value]="eyecareModeSettings.current"
@@ -20,7 +21,7 @@
 			<button
 				type="button"
 				class="btn btn-link text"
-				(click)="onResetTemperature()"
+				(click)="onResetTemperature($event)"
 			>
 				Reset temperature
 			</button>
@@ -30,6 +31,7 @@
 		<input
 			id="cb-eye-care-schedule"
 			type="checkbox"
+			[disabled]="enableSlider"
 			class="custom-control-input"
 			checked=""
 		/>

@@ -5,6 +5,7 @@
 			class="switch"
 			[value]="value"
 			(change)="onChange($event)"
+			[disabled]="disabled"
 			[checked]="value" />
 		<span class="switch {{ size }}"> <small></small> </span>
 		<div *ngIf="!value"

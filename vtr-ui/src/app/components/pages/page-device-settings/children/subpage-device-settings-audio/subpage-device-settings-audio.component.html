@@ -115,6 +115,7 @@
 							[theme]="'white'"
 							[tooltipText]="'Toggle this on to optimize the MIC audio by suppressing keyboard noise.'"
 							(toggleOnOff)="onToggleOfSuppressKbdNoise($event)"
+							[disabled]="microphoneProperties.disableEffect"
 							[isSwitchChecked]="microphoneProperties.keyboardNoiseSuppression">
 						</vtr-ui-row-switch>
 					</li>
@@ -130,6 +131,7 @@
 							[theme]="'white'" 
 							[tooltipText]="'Toggle on this feature to optimize your MIC audio by reducing acoustic echo.'"
 							(toggleOnOff)="setMicrophoneAEC($event)"
+							[disabled]="microphoneProperties.disableEffect"
 							[isSwitchChecked]="microphoneProperties.AEC">
 						</vtr-ui-row-switch>
 					</li>
@@ -141,6 +143,7 @@
 							[leftIcon]="['far', 'gem']"
 							[readMoreText]="''"
 							[showChildContent]="true"
+							[disabled]="microphoneProperties.disableEffect"
 							[theme]="'white'">
 							<div class="my-3">
 								<vtr-ui-rectangle-radio 
@@ -150,6 +153,7 @@
 									[label]= "optimizeMode | separatePascalCase"
 									[value]='optimizeMode'
 									[checked]="optimizeMode == microOptimizeModeResponse.current"
+									[disabled]="microphoneProperties.disableEffect"
 									(change)="onOptimizeModesRadioChange($event)">
 								</vtr-ui-rectangle-radio>
 							</div>

@@ -1,5 +1,5 @@
 import { Injectable, Injector } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { DevService } from '../dev/dev.service';
 
@@ -19,11 +19,16 @@ export class CommsService {
 		this.devService.writeLog('API ERROR', method, err);
 	}
 
-	endpointGetCall(endpoint, addString = '') {
-		const self = this;
-		const url = this.env.apiRoot + endpoint.path + addString;
+	endpointGetCall(endpoint, queryParams: any = {}, httpOptions: any = {}) {
+		const url = this.env.cmsApiRoot + endpoint;
+		const httpQueryParams = new HttpParams({
+			fromObject: queryParams
+		});
+
+		httpOptions.params = httpQueryParams;
+
 		this.devService.writeLog('API GET ENDPOINT: ', url);
-		return this.http.get(url);
+		return this.http.get(url, httpOptions);
 	}
 
 	flatGetCall(url) {

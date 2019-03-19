@@ -50,7 +50,7 @@ export class AudioService {
   setDolbyOnOff(onOff: boolean): Promise<boolean> {
     try {
       if (this.isShellAvailable) {
-        return this.smartSettings.setDolbyFeatureStatus(onOff);
+        return this.smartSettings.absFeature.setDolbyFeatureStatus(onOff);
       }
       return undefined;
     }
@@ -62,7 +62,7 @@ export class AudioService {
   getDolbyFeatureStatus(): Promise<FeatureStatus> {
     try {
       if (this.isShellAvailable) {
-        return this.smartSettings.getDolbyFeatureStatus();
+        return this.smartSettings.absFeature.getDolbyFeatureStatus();
       }
     }
     catch(error) {

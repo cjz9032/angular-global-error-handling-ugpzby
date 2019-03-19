@@ -30,7 +30,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public recommendedUpdates: AvailableUpdateDetail[];
 	public optionalUpdates: AvailableUpdateDetail[];
 	public isUpdatesAvailable = false;
-	public canShowProgress = false;
+	public isUpdateCheckInProgress = false;
 	public isUpdateDownloading = false;
 	public installationPercent = 0;
 	public downloadingPercent = 0;
@@ -39,6 +39,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public isInstallationCompleted = false;
 	public showFullHistory = false;
 	private notificationSubscription: Subscription;
+	private isComponentInitialized = false;
 
 	nextUpdatedDate = '11/12/2018 at 10:00 AM';
 	installationHistory = 'Installation History';
@@ -123,7 +124,11 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.getLastUpdateScanDetail();
 		this.systemUpdateService.getUpdateSchedule();
 		this.systemUpdateService.getUpdateHistory();
+		this.getScheduleUpdateStatus(false);
+		this.isComponentInitialized = true;
 	}
+
+
 
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
@@ -166,7 +171,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	public onCheckForUpdates() {
 		if (this.systemUpdateService.isShellAvailable) {
-			this.canShowProgress = true;
+			this.isUpdateCheckInProgress = true;
 			this.isUpdatesAvailable = false;
 			this.resetState();
 			this.systemUpdateService.checkForUpdates();
@@ -250,12 +255,12 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			switch (type) {
 				case UpdateProgress.UpdateCheckInProgress:
 					this.ngZone.run(() => {
-						this.canShowProgress = true;
+						this.isUpdateCheckInProgress = true;
 						this.percentCompleted = payload;
 					});
 					break;
 				case UpdateProgress.UpdateCheckCompleted:
-					this.canShowProgress = false;
+					this.isUpdateCheckInProgress = false;
 					this.percentCompleted = 0;
 					break;
 				case UpdateProgress.UpdatesAvailable:
@@ -287,6 +292,45 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				default:
 					break;
 			}
+			this.onScheduleUpdateNotification(type, payload);
+		}
+	}
+
+	private onScheduleUpdateNotification(type: string, payload: any) {
+		console.log('onScheduleUpdateNotification', type, payload);
+
+		switch (type) {
+			case UpdateProgress.ScheduleUpdateChecking:
+				if (this.isComponentInitialized) {
+					this.isUpdateCheckInProgress = true;
+					this.getScheduleUpdateStatus(true);
+				}
+				break;
+			case UpdateProgress.ScheduleUpdateDownloading:
+				if (this.isComponentInitialized) {
+					this.isUpdateCheckInProgress = false;
+					this.isUpdateDownloading = true;
+					// this.installationPercent = payload.installPercentage;
+					// this.downloadingPercent = payload.downloadPercentage;
+					this.getScheduleUpdateStatus(true);
+				}
+				break;
+			case UpdateProgress.ScheduleUpdateInstalling:
+				if (this.isComponentInitialized) {
+					this.isUpdateCheckInProgress = false;
+					this.isUpdateDownloading = true;
+					this.getScheduleUpdateStatus(true);
+				}
+				break;
+			case UpdateProgress.ScheduleUpdateIdle:
+				if (this.isComponentInitialized) {
+					this.isUpdateCheckInProgress = false;
+					this.isUpdateDownloading = false;
+					this.resetState();
+				}
+				break;
+			default:
+				break;
 		}
 	}
 
@@ -294,5 +338,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.isUpdateDownloading = false;
 		this.isInstallationSuccess = false;
 		this.isInstallationCompleted = false;
+	}
+
+	private getScheduleUpdateStatus(reportProgress: boolean) {
+		this.systemUpdateService.getScheduleUpdateStatus(reportProgress);
 	}
 }

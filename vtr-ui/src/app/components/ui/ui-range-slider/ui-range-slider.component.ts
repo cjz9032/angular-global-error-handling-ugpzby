@@ -5,7 +5,8 @@ import {
 	Output,
 	EventEmitter,
 	SimpleChanges,
-	OnChanges
+	OnChanges,
+	AfterContentChecked
 } from '@angular/core';
 import { Options, ChangeContext, ValueToPositionFunction } from 'ng5-slider';
 
@@ -14,10 +15,12 @@ import { Options, ChangeContext, ValueToPositionFunction } from 'ng5-slider';
 	templateUrl: './ui-range-slider.component.html',
 	styleUrls: ['./ui-range-slider.component.scss']
 })
-export class UiRangeSliderComponent implements OnInit {
+export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 	// package url https://angular-slider.github.io/ng5-slider/demos
 
 	public options: Options;
+
+	@Input() enableSlider;
 
 	@Input() value = 0; // initial slider value
 	@Input() minValue = 0; // slider minimum end value
@@ -33,9 +36,14 @@ export class UiRangeSliderComponent implements OnInit {
 
 	constructor() {}
 
+	ngAfterContentChecked() {
+		this.options = Object.assign({}, this.options, {disabled: this.enableSlider});
+	}
+
 	ngOnInit() {
 		this.options = {
 			showSelectionBar: true,
+			disabled: this.enableSlider,
 			hideLimitLabels: true,
 			hidePointerLabels: true,
 			showTicks: this.stepsArray && this.stepsArray.length > 0,
