@@ -230,6 +230,11 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	public isUpdateListVisible() {
+		const isVisible = (this.isUpdatesAvailable && !this.isUpdateDownloading) || this.isInstallationCompleted;
+		return isVisible;
+	}
+
 	private setUpdateByCategory(updateList: Array<AvailableUpdateDetail>) {
 		if (updateList) {
 			this.optionalUpdates = this.filterUpdate(updateList, 'optional');

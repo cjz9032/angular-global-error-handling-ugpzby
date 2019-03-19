@@ -38,7 +38,7 @@
 									</div>
 								</div> -->
 
-								<vtr-available-updates *ngIf="isUpdatesAvailable && !isUpdateDownloading"
+								<vtr-available-updates *ngIf="isUpdateListVisible()"
 									[criticalUpdates]="criticalUpdates"
 									[optionalUpdates]="optionalUpdates"
 									[recommendedUpdates]="recommendedUpdates"
