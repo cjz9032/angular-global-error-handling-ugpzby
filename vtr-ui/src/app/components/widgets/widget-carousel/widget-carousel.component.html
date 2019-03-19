@@ -2,14 +2,18 @@
 	<ngb-carousel *ngIf="carouselModel">
 		<ng-template *ngFor="let model of carouselModel"
 		 ngbSlide>
-			<a [href]="model.link" vtrMetrics [metricsItem]="'link.'+model.title" metricsEvent="itemClick" metricsParent="carousel"
-			  target="_blank"
-			   class="carousel-link">
+			<a [href]="model.link"
+			 vtrMetrics
+			 [metricsItem]="'link.'+model.cardTitle"
+			 metricsEvent="itemClick"
+			 metricsParent="carousel"
+			 target="_blank"
+			 class="carousel-link">
 				<img [src]="model.image"
 				 class="image img-fluid">
 				<div class="carousel-caption">
 					<h3 class="source">{{model.source}}</h3>
-					<h2 class="title">{{model.title}}</h2>
+					<h2 class="title">{{model.cardTitle}}</h2>
 				</div>
 			</a>
 		</ng-template>
