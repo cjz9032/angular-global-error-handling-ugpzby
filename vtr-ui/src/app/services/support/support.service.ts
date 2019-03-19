@@ -12,13 +12,17 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 export class SupportService {
 	private sysinfo: any;
 	private warranty: any;
+	metrics: any;
+	metricsDatas = {
+		viewOrder: 1,
+		pageNumber: 1,
+	};
+
 	// public isShellAvailable = false;
 	constructor(shellService: VantageShellService) {
 		this.sysinfo = shellService.getSysinfo();
 		this.warranty = shellService.getWarranty();
-		// if (this.sysinfo && this.warranty) {
-		// 	this.isShellAvailable = true;
-		// }
+		this.metrics = shellService.getMetrics();
 	}
 
 	public getMachineInfo(): Promise<any> {
@@ -31,6 +35,15 @@ export class SupportService {
 	public getWarranty(serialnumber: string): Promise<any> {
 		if (this.warranty) {
 			return this.warranty.getWarrantyInformation(serialnumber);
+		}
+	}
+
+	sendMetricsAsync(data: any) {
+		if (this.metrics) {
+			console.log('metrics ready!');
+			this.metrics.sendAsync(data);
+		} else {
+			console.log('can not find metrics');
 		}
 	}
 }

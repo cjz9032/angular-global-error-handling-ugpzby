@@ -75,7 +75,6 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
-
 	public getMetrics(): any {
 		if (this.phoenix) {
 			return this.phoenix.metrics;

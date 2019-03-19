@@ -19,6 +19,13 @@ export class MetricsDirective {
 	@Input() metricsParent: string;
 	@Input() metricsParam: string;
 
+	// DocClick used
+	@Input() metricsItemID: string;
+	@Input() metricsItemCategory: string;
+	@Input() metricsItemPosition: string;
+	@Input() metricsViewOrder: string;
+	@Input() metricsPageNumber: string;
+
 	@HostListener('click') onclick() {
 		const location = window.location.href.substring(window.location.href.indexOf('#') + 2).split('/').join('.');
 		console.log('++++++++++++', location);
@@ -35,6 +42,21 @@ export class MetricsDirective {
 			if (this.metricsValue) {
 				data.metricsValue = this.metricsValue;
 			}
+			if (this.metricsItemID) {
+				data.ItemID = this.metricsItemID;
+			}
+			if (this.metricsItemCategory) {
+				data.ItemCategory = this.metricsItemCategory;
+			}
+			if (this.metricsItemPosition) {
+				data.ItemPosition = this.metricsItemPosition;
+			}
+			if (this.metricsViewOrder) {
+				data.ViewOrder = this.metricsViewOrder;
+			}
+			if (this.metricsPageNumber) {
+				data.PageNumber = this.metricsPageNumber;
+			}
 			this.metrics.sendAsync(data);
 		}
 
@@ -50,6 +72,21 @@ export class MetricsDirective {
 			}
 			if (this.metricsValue) {
 				data.metricsValue = this.metricsValue;
+			}
+			if (this.metricsItemID) {
+				data.ItemID = this.metricsItemID;
+			}
+			if (this.metricsItemCategory) {
+				data.ItemCategory = this.metricsItemCategory;
+			}
+			if (this.metricsItemPosition) {
+				data.ItemPosition = this.metricsItemPosition;
+			}
+			if (this.metricsViewOrder) {
+				data.ViewOrder = this.metricsViewOrder;
+			}
+			if (this.metricsPageNumber) {
+				data.PageNumber = this.metricsPageNumber;
 			}
 
 			console.log('Sending the metrics [ItemType : ' + this.metricsEvent + ']\n' + JSON.stringify(data));

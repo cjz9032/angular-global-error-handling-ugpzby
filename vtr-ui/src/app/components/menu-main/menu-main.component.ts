@@ -175,7 +175,6 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			this.onNotification(notification);
 		});
 	}
-
 	ngOnDestroy() {
 		if (this.commonMenuSubscription) {
 			this.commonMenuSubscription.unsubscribe();
