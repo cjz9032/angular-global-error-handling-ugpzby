@@ -191,18 +191,21 @@
 							<p>Intelligent Cooling adjusts fan speed, maximum surface temperature, and performance.
 								This feature has below modes and are now accessible by Windows performance power slider.
 								<a class="read-more-link" (click)="openContextModal(template)">Read more.</a>
+
 								<ng-template #template>
-									<div class="modal-header">
+									<div class="justify-content-end">
 										<button type="button" class="close pull-right" aria-label="Close" (click)="closeContextModal()">
-										<span aria-hidden="true">&times;</span>
-										</button>
-									</div>
-									<div class="modal-body">
-										<p><span>Quiet mode:</span>Slider is far left. The fan speed and performance are lowered and best battery life.</p>
-										<p><span>Quiet mode:</span>Slider is far left. The fan speed and performance are lowered and best battery life.</p>
-										<p><span>Quiet mode:</span>Slider is far left. The fan speed and performance are lowered and best battery life.</p>
-									</div>
+												<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+								<div class="modal-body">
+										<p><span>Quiet mode: </span>Slider is far left. The fan speed and performance are lowered and best battery life.</p>
+										<p><span>Balanced mode: </span>Slider is center. Fan speed and performance experience.</p>
+										<p><span>Performance mode: </span>Slider is far right. Fan speed and performance.</p>
+
+								</div>
 								</ng-template>
+
 
 							</p>
 						</div>

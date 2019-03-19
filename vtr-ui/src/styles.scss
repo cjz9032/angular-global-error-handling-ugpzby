@@ -235,24 +235,27 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	color: $go_dark;
 }
 
-.read-more{
-	.modal-content {
-		border-radius: 10px;
-		background: $light;
-		padding: 10px;
-		.modal-header{
-			border: none;
-		}
-				.modal-body{
-					p{
-						font-size: 1.2rem;
-						span{
-							font-size: 1.2rem;
-							font-weight: bold;
-							color: brown;
-						}
-					}
-			}
+/*intelligent-cooling-read-more-pop-up-style*/
 
+.read-more{
+	.modal-dialog{
+		margin-top: 8rem;
+	}
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		padding: 2rem;
+		.modal-body{
+			p{
+				font-size: 1.6rem;
+				font-weight: normal;
+				color: $light-grey;
+				span{
+					font-size: 2rem;
+					font-weight: bold;
+					color: $blue-dark;
+				}
+			}
+		}
 	}
 }
