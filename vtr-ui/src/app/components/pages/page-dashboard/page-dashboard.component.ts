@@ -22,6 +22,7 @@ export class PageDashboardComponent implements OnInit {
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
 
+	heroBannerItems = [];
 	cardContentPositionB: any = {};
 	cardContentPositionC: any = {};
 
@@ -73,6 +74,17 @@ export class PageDashboardComponent implements OnInit {
 
 				this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
 				this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
+
+				this.heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
+					return {
+						'albumId': 1,
+						'id': index + 1,
+						'source': record.Title,
+						'title': record.Description,
+						'url': record.FeatureImage,
+						'ActionLink': record.ActionLink
+					}
+				});
 			},
 			error => {
 				console.log('fetchCMSContent error', error);

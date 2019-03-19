@@ -65,10 +65,10 @@ export class WidgetCarouselComponent implements OnInit {
 	parseToCarouselModel() {
 		for (var i = 0; i < this.data.length; i++) {
 			this.carouselModel.push({
-				source: this.byString(this.data[i], this.source),
-				cardTitle: this.byString(this.data[i], this.cardTitle),
-				image: this.byString(this.data[i], this.image),
-				link: this.byString(this.data[i], this.link)
+				source: this.data[i].source,
+				cardTitle: this.data[i].title,
+				image: this.data[i].url,
+				link: this.data[i].ActionLink
 			})
 		}
 		console.log('###################', this.carouselModel);
@@ -80,7 +80,6 @@ interface CarouselModel {
 	source: string;
 	image: string;
 	link: string;
-
 }
 
 
