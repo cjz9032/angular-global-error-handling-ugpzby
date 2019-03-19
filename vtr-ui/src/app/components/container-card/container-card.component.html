@@ -4,7 +4,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-12 content">
-				<a href="{{readMore}}"
+				<a href="{{actionLink}}"
 				 target="_blank"
 				 class="card-image"
 				 [style.background-image]="'url(' + img + ')'">
@@ -33,7 +33,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-12 content">
-				<a href="{{readMore}}"
+				<a href="{{actionLink}}"
 				 target="_blank"
 				 class="card-image"
 				 [style.background-image]="'url(' + img + ')'">
@@ -66,15 +66,15 @@
 				<div class="col col-12 content">
 					<div *ngIf="title"
 					 class="title">{{title}}</div>
-					<div *ngIf="readMore"
+					<div *ngIf="actionLink"
 					 class="read-more">
-						<a href="{{readMore}}"
+						<a href="{{actionLink}}"
 						 target="_blank"
 						 vtrMetrics
 						 metricsEvent="itemClick"
 						 metricsItem="'link.readmore'"
 						 [metricsParent]="title">
-							<span class="link-label">Read More</span>
+							<span class="link-label">{{action}}</span>
 							<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 						</a>
 					</div>
@@ -102,9 +102,9 @@
 					<div class="col col-12 content">
 						<div *ngIf="title"
 						 class="title">{{title}}</div>
-						<div *ngIf="readMore"
+						<div *ngIf="actionLink"
 						 class="read-more">
-							<a href="{{readMore}}"
+							<a href="{{actionLink}}"
 							 target="_blank"
 							 vtrMetrics
 							 metricsEvent="itemClick"

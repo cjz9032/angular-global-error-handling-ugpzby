@@ -13,7 +13,8 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 	@Input() title: string = '';
 	@Input() logo: string = '';
 	@Input() logoText: string = '';
-	@Input() readMore: string = '';
+	@Input() action: string = '';
+	@Input() actionLink: string = '';
 	@Input() type: string = '';
 	@Input() ratioX: number = 1;
 	@Input() ratioY: number = 1;
@@ -39,13 +40,13 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 
 	ngAfterViewInit() {
 		const self = this;
-		const delay = setTimeout(function(){
+		const delay = setTimeout(function () {
 			self.calcHeight(self.element);
-		},500)
+		}, 500)
 	}
 
-	calcHeight(containerCard){
-		if(containerCard){
+	calcHeight(containerCard) {
+		if (containerCard) {
 			this.containerHeight = containerCard.nativeElement.firstElementChild.clientWidth * this.ratio;
 			//console.log('RESIZE CONTAINER CARD', this.title, this.ratio, containerCard, this.containerHeight);
 		}
