@@ -8,6 +8,7 @@ export const environment = {
 	production: false,
 	endpoints: ENDPOINTS,
 	apiRoot: 'http://13.250.142.178:8082/',
+	cmsApiRoot: 'https://qa.csw.lenovo.com',
 	imgRoot: 'http://13.250.142.178:8082/',
 	ssoCallback: 'http://13.250.142.178',
 	ssoRoot: 'https://passport.lenovo.com/wauthen5/',

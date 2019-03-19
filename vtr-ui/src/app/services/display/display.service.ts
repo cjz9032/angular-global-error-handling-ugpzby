@@ -79,10 +79,15 @@ export class DisplayService {
 		return undefined;
 	}
 	public setEyeCareModeState(value: boolean): Promise<boolean> {
-		if (this.displayEyeCareMode) {
-			return this.displayEyeCareMode.setEyeCareMode(value);
+		 try{
+			if (this.displayEyeCareMode) {
+				return this.displayEyeCareMode.setEyeCareMode(value);
+			}
+			return undefined;
 		}
-		return undefined;
+		catch(error) {
+			throw new Error(error.message);
+		}
 	}
 	public setCameraPrivacyModeState(value: boolean): Promise<boolean> {
 		if (this.cameraPrivacyStatus) {
@@ -147,7 +152,7 @@ export class DisplayService {
 		}
 		return undefined;
 	}
-	public resetEyeCareMode(): Promise<boolean> {
+	public resetEyeCareMode(): Promise<any> {
 		if (this.displayEyeCareMode) {
 			return this.displayEyeCareMode.resetEyeCareMode();
 		}
