@@ -22,8 +22,12 @@ export class PageDashboardComponent implements OnInit {
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
 
+	heroBannerItems = [];
 	cardContentPositionB: any = {};
 	cardContentPositionC: any = {};
+	cardContentPositionD: any = {};
+	cardContentPositionE: any = {};
+	cardContentPositionF: any = {};
 
 	/*forwardLink = {
 		path: 'dashboard-customize',
@@ -51,7 +55,7 @@ export class PageDashboardComponent implements OnInit {
 			this.getSecurityStatus();
 		}
 
-		let queryOptions = {
+		const queryOptions = {
 			'Page': 'dashboard',
 			'Lang': 'EN',
 			'GEO': 'US',
@@ -65,6 +69,17 @@ export class PageDashboardComponent implements OnInit {
 			(response: any) => {
 				console.log('fetchCMSContent response', response);
 
+				this.heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
+					return {
+						'albumId': 1,
+						'id': index + 1,
+						'source': record.Title,
+						'title': record.Description,
+						'url': record.FeatureImage,
+						'ActionLink': record.ActionLink
+					}
+				});
+
 				this.cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
 				this.cardContentPositionC = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
 
@@ -73,6 +88,11 @@ export class PageDashboardComponent implements OnInit {
 
 				this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
 				this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
+
+				this.cardContentPositionD = this.cmsService.getOneCMSContent(response, 'full-width-title-image-background', 'position-D')[0];
+
+				this.cardContentPositionE = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-E')[0];
+				this.cardContentPositionF = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-F')[0];
 			},
 			error => {
 				console.log('fetchCMSContent error', error);
@@ -187,8 +207,7 @@ export class PageDashboardComponent implements OnInit {
 				if (response.warranty.status === 0) {
 					warranty.detail = `Until ${warrantyDate}`;
 					warranty.status = 0;
-				}
-				if (response.warranty.status === 1) {
+				} else if (response.warranty.status === 1) {
 					warranty.detail = `Warranty expired on ${warrantyDate}`;
 					warranty.status = 1;
 				} else {

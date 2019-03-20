@@ -57,7 +57,8 @@
 									</a>
 									<!--Open Windows Settings /subapges if isSystemLink is not undefined or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
 									<a *ngIf="item.isSystemLink!==undefined &&  item.isSystemLink===true"
-										[href]="(item.path | sanitizeUrl)">
+										href="javascript:void(0);"
+										(click)="deviceService.launchUri(item.path)">
 										<div class="detail"
 											[ngClass]="{'highlight':item.asLink}">
 											{{item.detail}}
