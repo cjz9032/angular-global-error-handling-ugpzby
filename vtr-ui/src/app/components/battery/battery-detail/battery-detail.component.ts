@@ -20,13 +20,10 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 	remainingPercent = 0;
 	isCharging = false;
 	constructor(private batteryService: BatteryDetailService, public shellServices: VantageShellService) {
-		//TODO: Change this if event is fired
-		shellServices.phoenix.on('pwrPowerSupplyStatusEvent', (val) => {
-			console.log("Event fired===================");
-		});
+		this.getBatteryDetail();
 	}
 
-	public getBatteryDetail() {
+	private getBatteryDetail() {
 		console.log('In getBatteryDetail');
 		try {
 			if (this.batteryService.isShellAvailable) {
@@ -75,8 +72,10 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		console.log('In ngOnInit');
-		
-		this.getBatteryDetail();
+		//TODO: Change this if event is fired
+		this.shellServices.phoenix.on('pwrPowerSupplyStatusEvent', (val) => {
+			console.log("Event fired===================");
+		});
 	}
 
 	ngOnDestroy() {
