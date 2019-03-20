@@ -64,6 +64,13 @@
             border-color: $go_dark;
           }
         }
+
+        .detail {
+          color: $shade_darkest;
+          /*  &.highlight {
+            color: $shade_darkest;
+          } */
+        }
       }
       &.bad {
         .status-icon {
@@ -72,9 +79,9 @@
             border-color: $stop_dark;
           }
         }
-        /*  .detail {
+        .detail {
           color: $stop;
-        } */
+        }
         .arrow {
           color: $stop;
         }
@@ -120,9 +127,7 @@
         font-size: 1.4rem;
         text-decoration: underline;
         margin-right: -3rem;
-        color: $shade_darkest;
         &.highlight {
-          color: $shade_darkest;
           text-decoration: underline;
           &:hover {
             text-decoration: underline;
