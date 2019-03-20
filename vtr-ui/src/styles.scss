@@ -235,7 +235,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	color: $go_dark;
 }
 
-<<<<<<< HEAD
 /*intelligent-cooling-read-more-pop-up-style*/
 
 .read-more{
@@ -258,7 +257,9 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 				}
 			}
 		}
-=======
+	}
+}
+
 /*common-confirmation-modal-styles*/
 
 .common-confirmation-modal{
@@ -267,10 +268,19 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	.modal-content{
 		background-color: transparent;
 		border: none;
->>>>>>> 445cafe8d5c7fe31d360c5fabfb36fdc107a8188
 	}
 }
 
 }
 
-
+/*Battery-charge-threshold-modal-styles*/
+.Battery-Charge-Threshold-Modal{
+	.modal-dialog{
+		max-width: 32%;
+	}
+	.modal-content{
+		border-radius: 1rem;
+		background: $light;
+		padding: 4rem;
+	}
+}
