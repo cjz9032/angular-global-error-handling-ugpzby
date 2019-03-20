@@ -189,7 +189,7 @@
 		.cardBody {
 			border: 1px solid $shade_lighter;
 			border-radius: 0.8rem;
-			background: white;
+			background: $light;
 			ul.openNetworks {
 				padding-left: 0px;
 				display: flex;
@@ -217,7 +217,7 @@
 						position: relative;
 						width: 5.5rem;
 						fa-icon {
-							color: #3498db;
+							color: $main;
 						}
 						.circle {
 							background-color: $go;
@@ -244,7 +244,6 @@
 						}
 					}
 					.connection-name{
-						font-family: "Rubik";
 						font-size: 1.7rem;
 						font-weight: 500;
 						small{
@@ -312,7 +311,7 @@
 				margin-right: 2.5rem;
 				fa-icon{
 					font-size: 1.5rem;
-					color: white;
+					color: $light;
 				}
 				&.red{
 					background-color: $stop;
