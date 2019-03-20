@@ -96,7 +96,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				isCheckBoxVisible: false,
 				isSwitchVisible: false,
 				tooltipText:
-					"When enabled, your battery will only charge to 55-60%. This will shorten the amount of time you can use your computer when disconnected from an AC power source, but it will maximize the amount of time before you will need to replace your computer's battery."
+					'When enabled, your battery will only charge to 55-60%. This will shorten the amount of time you can use your computer when disconnected from an AC power source, but it will maximize the amount of time before you will need to replace your computer\'s battery.'
 			}
 		]
 	};
@@ -106,7 +106,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			readMoreText: 'Read More',
 			rightImageSource: ['far', 'question-circle'],
 			leftImageSource: ['far', 'gem'],
-			header: 'Always on USB*',
+			header: 'Always on USB',
 			subHeader:
 				'Charge USB devices through the Always on USB connector on the computer when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged from the USB connector that is yellow-coded or silk-printed the specified icon.',
 			isCheckBoxVisible: true,
