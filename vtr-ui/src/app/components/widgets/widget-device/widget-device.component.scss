@@ -21,12 +21,12 @@
     font-size: 3.8rem;
   }
   .device-sub-header {
-    color: $shade;
+    color: $shade_darkest;
     font-size: 1.5rem;
   }
 
   .sub-header-separator {
-    color: $shade;
+    color: $shade_darkest;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
     font-size: 1.5rem;
@@ -105,10 +105,9 @@
         color: $main_darker;
 
         .systemDetails {
-          font-size: 1.5rem;
-          font-weight: $weight_regular;
-          //border-style: solid;
-          //border-color: coral;
+          font-size: 1.4rem;
+          font-weight: $weight_light;
+          color: $shade_darkest;
         }
       }
       .description {
@@ -119,9 +118,9 @@
         font-size: 1.4rem;
         text-decoration: underline;
         margin-right: -3rem;
-        color: $shade_dark;
+        color: $shade_darkest;
         &.highlight {
-          color: $shade_darker;
+          color: $shade_darkest;
           text-decoration: underline;
           &:hover {
             text-decoration: underline;
