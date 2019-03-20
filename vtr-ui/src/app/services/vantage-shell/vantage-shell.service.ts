@@ -14,9 +14,14 @@ export class VantageShellService {
 		if (shell) {
 			const rpcClient = shell.VantageRpcClient ? new shell.VantageRpcClient() : null;
 			const metricClient = shell.MetricsClient ? new shell.MetricsClient() : null;
+			const powerClient = shell.PowerClient ? shell.PowerClient() : null;
 			this.phoenix = bootstrap(
 				new inversify.Container(),
-				{ hsaBroker: rpcClient, metricsBroker: metricClient }
+				{
+					hsaBroker: rpcClient,
+					metricsBroker: metricClient,
+					hsaPowerBroker: powerClient
+				}
 			);
 		}
 	}
@@ -176,5 +181,44 @@ export class VantageShellService {
 			return this.phoenix.hwsettings.camera.cameraSettings;
 		}
 		return undefined;
+	}
+	public getVantageToolBar(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.power.common.vantageToolBar;
+		}
+		return undefined;
+	}
+	public getPowerIdeaNoteBook(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.power.ideaNotebook ;
+		}
+		return undefined;
+	}
+	// public getPowerThinkPad(): any {
+	// 	if (this.phoenix) {
+	// 		return this.phoenix.hwsettings.power.thinkpad ;
+	// 	}
+	// 	return undefined;
+	// }
+
+	/**
+	 * returns power object from VantageShellService of JS Bridge
+	 */
+	private getPowerSettings(): any {
+		if (this.getHwSettings() && this.getHwSettings().power) {
+			return this.getHwSettings().power;
+		}
+		return undefined;
+	}
+	public getPowerThinkPad(): any {
+		if (this.getPowerSettings() && this.getPowerSettings().thinkpad) {
+			return this.getPowerSettings().thinkpad;
+		}
+		return undefined;
+	}
+	public getPowerItsIntelligentCooling(): any {
+		if(this.phoenix){
+			return this.phoenix.hwsettings.power.its.IntelligentCooling ;
+		}
 	}
 }
