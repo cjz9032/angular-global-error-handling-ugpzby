@@ -83,7 +83,6 @@ export class SubpageDeviceSettingsDisplayComponent
 		// 	.getCameraDetail()
 		// 	.then((response: any) => {
 		// 		// this.dataSource = response;
-
 		// 		console.log('getCameraDetails.then', response);
 		// 	})
 		// 	.catch(error => {

@@ -96,6 +96,7 @@ button {
 	letter-spacing: 0.1em;
 }
 
+
 .vtr-page {
 	height: 100%;
 
@@ -233,3 +234,18 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .success {
 	color: $go_dark;
 }
+
+/*common-confirmation-modal-styles*/
+
+.common-confirmation-modal{
+	.modal-dialog{
+		margin-top: 8rem;
+	.modal-content{
+		background-color: transparent;
+		border: none;
+	}
+}
+
+}
+
+

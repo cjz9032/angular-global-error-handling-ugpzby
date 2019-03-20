@@ -14,7 +14,6 @@ export class UiRectangleRadioComponent implements OnInit {
 	@Input() checked: boolean;
 	@Input() disabled = false;
 
-
 	@Output() change: EventEmitter<any> = new EventEmitter();
 
 	constructor() { }

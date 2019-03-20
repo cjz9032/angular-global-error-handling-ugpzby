@@ -5,11 +5,14 @@
 			device. However, not having a full charge will allow less runtime battery life.</p>
 		<p>In order to fully enable this feature, please unplug your machine and allow your battery to drain to or
 			below the stop-charging threshold.</p>
+		<button (click)="enableBatteryChargeThreshold()">Enable</button>
+		<button (click)="closeModal()">Cancel</button>
 	</div>
 	<div class="btn-close">
 		<button type="button"
 		 class="close"
-		 aria-hidden="true">
+		 aria-hidden="true"
+		 (click)="closeModal()">
 			&times;
 		</button>
 	</div>
