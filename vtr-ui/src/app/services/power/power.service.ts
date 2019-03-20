@@ -46,7 +46,7 @@ export class PowerService {
 		}
 		return undefined;
 	}
-	public setAlwaysOnUSBStatusThinkPad(value: boolean): Promise<boolean> {
+	public setAlwaysOnUSBStatusThinkPad(value: string): Promise<boolean> {
 		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionAlwaysOnUsb.setAlwaysOnUsb(value);
@@ -90,7 +90,43 @@ export class PowerService {
 			throw new Error(error.message);
 		}
 	}
-	// end AlwaysOn USB IdeaNoteBook
+	// End AlwaysOn USB IdeaNoteBook
+	// Conservation mode for IdeaNotebook
+	public getConservationModeStatusIdeaNoteBook(): Promise<FeatureStatus> {
+		if (this.devicePowerIdeaNoteBook) {
+			return this.devicePowerIdeaNoteBook.conservationMode.getConservationModeStatus();
+		}
+		return undefined;
+	}
+	public setConservationModeStatusIdeaNoteBook(value: boolean): Promise<boolean> {
+		try {
+			if (this.devicePowerIdeaNoteBook) {
+				return this.devicePowerIdeaNoteBook.conservationMode.setConservationModeStatus(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	// End Conservation mode fro IdeaNoteBook
+	// Express/Rapid Charging mode for IdeaNotebook
+	public getRapidChargeModeStatusIdeaNoteBook(): Promise<FeatureStatus> {
+		if (this.devicePowerIdeaNoteBook) {
+			return this.devicePowerIdeaNoteBook.rapidChargeMode.getRapidChargeModeStatus();
+		}
+		return undefined;
+	}
+	public setRapidChargeModeStatusIdeaNoteBook(value: boolean): Promise<boolean> {
+		try {
+			if (this.devicePowerIdeaNoteBook) {
+				return this.devicePowerIdeaNoteBook.rapidChargeMode.setRapidChargeModeStatus(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	// End Express/Rapid Charging mode fro IdeaNoteBook
 	// Start Easy Resume for ThinkPad
 	public getEasyResumeCapabilityThinkPad(): Promise<boolean> {
 		if (this.devicePowerThinkPad) {
@@ -115,6 +151,30 @@ export class PowerService {
 		}
 	}
 	// End Easy Resume for ThinkPad
+	// Airplane Power mode Ideapad
+	public getAirplaneModeCapabilityThinkPad(): Promise<boolean> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionAirplaneMode.getAirplaneModeCapability();
+		}
+		return undefined;
+	}
+	public getAirplaneModeThinkPad(): Promise<boolean> {
+		if (this.devicePowerThinkPad) {
+			return this.devicePowerThinkPad.sectionAirplaneMode.getAirplaneMode();
+		}
+		return undefined;
+	}
+	public setAirplaneModeThinkPad(value: boolean): Promise<boolean> {
+		try {
+			if (this.devicePowerThinkPad) {
+				return this.devicePowerThinkPad.sectionAirplaneMode.setAirplaneMode(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	// End Airplane Power mode thinkpad
 	// Start Vantage ToolBar
 	public getVantageToolBarStatus(): Promise<FeatureStatus> {
 		if (this.devicePower) {
