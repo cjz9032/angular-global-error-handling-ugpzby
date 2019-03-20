@@ -55,7 +55,7 @@
 													<div class="col">
 
 														<!--Start of Security Health Advisor When LWS is enabled-->
-														<vtr-ui-list-chevron [items]="mockService.securityHealth"
+														<vtr-ui-list-chevron [items]="mockService.securityHealth" [iconVisibility]='false'
 														 *ngIf="isLWSEnabled===true">
 														</vtr-ui-list-chevron>
 														<!--end of Security Health Advisor When LWS is enabled-->

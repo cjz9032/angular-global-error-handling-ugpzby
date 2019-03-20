@@ -11,6 +11,7 @@ export class UiListChevronComponent implements OnInit {
 
 	@Input() items: any[];
 	@Input() iconPlacement = 'right';
+	@Input() iconVisibility = true;
 	/**** passing to ItemParent from metrics ****/
 	@Input() metricsParent:string;
 
