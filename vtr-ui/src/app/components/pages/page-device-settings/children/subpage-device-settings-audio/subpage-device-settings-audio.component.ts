@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AudioService } from 'src/app/services/audio/audio.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { MicrophoneOptiomizeStatus } from 'src/app/enums/microphone-optimize.enum';
@@ -12,7 +12,7 @@ import { MicrophoneOptimizeModes } from 'src/app/data-models/audio/microphone-op
 	templateUrl: './subpage-device-settings-audio.component.html',
 	styleUrls: ['./subpage-device-settings-audio.component.scss']
 })
-export class SubpageDeviceSettingsAudioComponent implements OnInit {
+export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	title = 'Audio Settings';
 	headerCaption = `This section enables you to automatically optimize or fully configure your audio settings manually
@@ -165,6 +165,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit {
 		this.getDolbyFeatureStatus();
 		this.getDolbyModesStatus();
 		this.getSupportedModes();
+		this.startMonitor();
 	}
 
 	public setVolume(event) {
@@ -229,8 +230,43 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit {
 		}
 	}
 
+	startMonitor() {
+		try {
+			if (this.audioService.isShellAvailable) {
+				this.audioService.startMonitor(this.startMonitorHandler.bind(this))
+					.then((value: boolean) => {
+						console.log('startMonitor', value);
+					}).catch(error => {
+						console.error('startMonitor', error);
+					});
+			}
+		} catch(error) {
+			console.error("startMonitor" + error.message)
+		}
+	}
+
+	stopMonitor() {
+		try {
+			if (this.audioService.isShellAvailable) {
+				this.audioService.stopMonitor()
+					.then((value: boolean) => {
+						console.log('stopMonitor', value);
+					}).catch(error => {
+						console.error('stopMonitor', error);
+					});
+			}
+		} catch(error) {
+			console.error("stopMonitor" + error.message)
+		}
+	}
+
+	startMonitorHandler(microphone: Microphone) {
+		this.microphoneProperties = microphone
+		console.log('startMonitorHandler', microphone);
+	}
+
 	initMockData() {
-		this.microphoneProperties = new Microphone(false, 1, "", false, false, false, false);
+		this.microphoneProperties = new Microphone(false, 1, "", false, false, false, false, false);
 		this.autoDolbyFeatureStatus = new FeatureStatus(true, false);
 		
 		let dolbySupportedMode =  ["dynamic","movie","music","game","voice"]
@@ -240,4 +276,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit {
 		this.microOptimizeModeResponse = new MicrophoneOptimizeModes(optimizeMode, "")
 	}
 
+	ngOnDestroy() {
+		this.stopMonitor();
+	}
 }
