@@ -233,7 +233,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	startMonitor() {
 		try {
 			if (this.audioService.isShellAvailable) {
-				this.audioService.startMonitor(this.startMonitorHandler)
+				this.audioService.startMonitor(this.startMonitorHandler.bind(this))
 					.then((value: boolean) => {
 						console.log('startMonitor', value);
 					}).catch(error => {
@@ -266,7 +266,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	initMockData() {
-		this.microphoneProperties = new Microphone(false, 1, "", false, false, false, false);
+		this.microphoneProperties = new Microphone(false, 1, "", false, false, false, false, false);
 		this.autoDolbyFeatureStatus = new FeatureStatus(true, false);
 		
 		let dolbySupportedMode =  ["dynamic","movie","music","game","voice"]
