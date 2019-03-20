@@ -111,6 +111,9 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				id: 'password-protection',
 				label: 'Password Protection',
 				path: 'password-protection',
+				metricsEvent: 'itemClick',
+				metricsParent: 'navbar',
+				metricsItem: 'link.passwordprotection',
 				icon: '',
 				subitems: []
 			}, {

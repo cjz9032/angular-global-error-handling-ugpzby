@@ -235,6 +235,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	color: $go_dark;
 }
 
+<<<<<<< HEAD
 /*intelligent-cooling-read-more-pop-up-style*/
 
 .read-more{
@@ -257,5 +258,19 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 				}
 			}
 		}
+=======
+/*common-confirmation-modal-styles*/
+
+.common-confirmation-modal{
+	.modal-dialog{
+		margin-top: 8rem;
+	.modal-content{
+		background-color: transparent;
+		border: none;
+>>>>>>> 445cafe8d5c7fe31d360c5fabfb36fdc107a8188
 	}
 }
+
+}
+
+

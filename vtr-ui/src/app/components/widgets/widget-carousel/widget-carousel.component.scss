@@ -2,6 +2,7 @@
 
 .vtr-widget-carousel {
 	box-shadow: $drop_shadow;
+
 	.carousel-caption {
 		position: absolute;
 		top: 5%;
@@ -10,20 +11,24 @@
 		right: 0 !important;
 		text-align: left;
 		z-index: 1;
+
 		.title {
 			padding: 0;
 			font-size: 3rem;
 			color: $light;
-			text-shadow: $text_shadow;
+			text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 		}
+
 		.source {
 			padding: 0;
-			color: $shade_light;
+			color: $light;
+			text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 			font-size: 1.4rem;
 			font-weight: $weight_medium;
 			text-transform: uppercase;
 		}
 	}
+
 	.image {
 		border-radius: $border_radius;
 		width: 100%;
@@ -37,6 +42,7 @@
 			&:focus {
 				outline: none;
 			}
+
 			.carousel-control-prev,
 			.carousel-control-next {
 				width: 5%;

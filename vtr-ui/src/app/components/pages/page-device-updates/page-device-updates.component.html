@@ -2,8 +2,8 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
-				[back]="back"
-				[title]="title"></vtr-header-main>
+			 [back]="back"
+			 [title]="title"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -18,16 +18,16 @@
 										<vtr-widget-device-update [title]="
 												'An up-to-date system is a healthy system.'
 											"
-											[subTitle1]="getLastUpdatedText()"
-											[subTitle2]="getNextUpdatedScanText()"
-											[buttonText]="'Check For Updates'"
-											[percent]="percentCompleted"
-											[showProgress]="isUpdateCheckInProgress"
-											[isUpdateDownloading]="isUpdateDownloading"
-											[installingPercent]="installationPercent"
-											[downloadingPercent]="downloadingPercent"
-											(checkForUpdate)="onCheckForUpdates()"
-											(cancelUpdateCheck)="onCancelUpdateCheck()">
+										 [subTitle1]="getLastUpdatedText()"
+										 [subTitle2]="getNextUpdatedScanText()"
+										 [buttonText]="'Check For Updates'"
+										 [percent]="percentCompleted"
+										 [showProgress]="isUpdateCheckInProgress"
+										 [isUpdateDownloading]="isUpdateDownloading"
+										 [installingPercent]="installationPercent"
+										 [downloadingPercent]="downloadingPercent"
+										 (checkForUpdate)="onCheckForUpdates()"
+										 (cancelUpdateCheck)="onCancelUpdateCheck()">
 										</vtr-widget-device-update>
 									</div>
 								</div>
@@ -39,14 +39,14 @@
 								</div>
 
 								<vtr-available-updates *ngIf="isUpdatesAvailable && !isUpdateDownloading"
-									[criticalUpdates]="criticalUpdates"
-									[optionalUpdates]="optionalUpdates"
-									[recommendedUpdates]="recommendedUpdates"
-									[isInstallationCompleted]="isInstallationCompleted"
-									[isInstallationSuccess]="isInstallationSuccess"
-									(checkChange)="onUpdateSelectionChange($event)"
-									(installAllUpdate)="onInstallAllUpdate($event)"
-									(installSelectedUpdate)="onInstallSelectedUpdate($event)">
+								 [criticalUpdates]="criticalUpdates"
+								 [optionalUpdates]="optionalUpdates"
+								 [recommendedUpdates]="recommendedUpdates"
+								 [isInstallationCompleted]="isInstallationCompleted"
+								 [isInstallationSuccess]="isInstallationSuccess"
+								 (checkChange)="onUpdateSelectionChange($event)"
+								 (installAllUpdate)="onInstallAllUpdate($event)"
+								 (installSelectedUpdate)="onInstallSelectedUpdate($event)">
 								</vtr-available-updates>
 
 								<!-- Installation timeline is scope of MVP-2 -->
@@ -113,7 +113,7 @@
 										</div>
 
 										<vtr-installation-history *ngIf="showFullHistory"
-											(reinstallUpdate)="onReinstallUpdate($event)"></vtr-installation-history>
+										 (reinstallUpdate)="onReinstallUpdate($event)"></vtr-installation-history>
 									</div>
 								</div>
 
@@ -127,22 +127,22 @@
 							<div class="row mb-40">
 								<div class="col col-12 cont">
 									<vtr-widget-device-update-settings [title]="'Auto update settings'"
-										[description]="'Automatically Install Updates'"
-										[items]="autoUpdateOptions"
-										(toggleOnOff)="onUpdateToggleOnOff($event)">
+									 [description]="'Automatically Install Updates'"
+									 [items]="autoUpdateOptions"
+									 (toggleOnOff)="onUpdateToggleOnOff($event)">
 									</vtr-widget-device-update-settings>
 								</div>
 							</div>
 							<div class="row mb-40">
 								<div class="col col-12">
-									<vtr-container-card
-										[img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
-										[title]="'Lenovo Support website'"
-										[logoText]="'LENOVO SPECIAL'"
-										[readMore]="'http://www.google.com'"
-										[type]="'partnerarticle'"
-										[ratioX]="4"
-										[ratioY]="2">
+									<vtr-container-card [img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
+									 [title]="'Lenovo Support website'"
+									 [logoText]="'LENOVO SPECIAL'"
+									 [action]="'Read More'"
+									 [actionLink]="'http://www.google.com'"
+									 [type]="'partnerarticle'"
+									 [ratioX]="4"
+									 [ratioY]="2">
 									</vtr-container-card>
 								</div>
 							</div>
