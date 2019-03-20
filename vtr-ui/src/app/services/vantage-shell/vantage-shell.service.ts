@@ -8,7 +8,7 @@ import bootstrap from '@lenovo/tan-client-bridge/src/index';
 	providedIn: 'root'
 })
 export class VantageShellService {
-	private phoenix: any;
+	public phoenix: any;
 	constructor() {
 		const shell = this.getVantageShell();
 		if (shell) {
@@ -55,16 +55,6 @@ export class VantageShellService {
 			return this.phoenix.device;
 		}
 	}
-
-	// /**
-	//  * returns hwsettings object from VantageShellService of JS Bridge
-	// */
-	// public getHwSettings(): any {
-	// 	if (this.phoenix) {
-	// 		return this.phoenix.hwsettings;
-	// 	}
-	// 	return undefined;
-	// }
 
 	/**
 	 * returns sysinfo object from VantageShellService of JS Bridge
@@ -155,6 +145,36 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	/**
+	 * returns power object from VantageShellService of JS Bridge
+	 */
+	private getPowerSettings(): any {
+		if (this.getHwSettings() && this.getHwSettings().power) {
+			return this.getHwSettings().power;
+		}
+		return undefined;
+	}
+
+	/**
+	 * returns power's common object from VantageShellService of JS Bridge
+	 */
+	private getPowerCommonSettings(): any {
+		if (this.getPowerSettings() && this.getPowerSettings().common) {
+			return this.getPowerSettings().common;
+		}
+		return undefined;
+	}
+
+	/**
+	 * returns battery info object from VantageShellService of JS Bridge
+	 */
+	public getBatteryInfo(): any {
+		if (this.getPowerCommonSettings() && this.getPowerCommonSettings().batteryInfo) {
+			return this.getPowerCommonSettings().batteryInfo;
+		}
+		return undefined;
+	}
 	/**
 	 * returns EyecareMode object from VantageShellService of JS Bridge
 	 */
@@ -190,7 +210,7 @@ export class VantageShellService {
 	}
 	public getPowerIdeaNoteBook(): any {
 		if (this.phoenix) {
-			return this.phoenix.hwsettings.power.ideaNotebook ;
+			return this.phoenix.hwsettings.power.ideaNotebook;
 		}
 		return undefined;
 	}
@@ -201,15 +221,6 @@ export class VantageShellService {
 	// 	return undefined;
 	// }
 
-	/**
-	 * returns power object from VantageShellService of JS Bridge
-	 */
-	private getPowerSettings(): any {
-		if (this.getHwSettings() && this.getHwSettings().power) {
-			return this.getHwSettings().power;
-		}
-		return undefined;
-	}
 	public getPowerThinkPad(): any {
 		if (this.getPowerSettings() && this.getPowerSettings().thinkpad) {
 			return this.getPowerSettings().thinkpad;
@@ -221,10 +232,10 @@ export class VantageShellService {
 	// 		return this.phoenix.hwsettings.power.its.IntelligentCooling ;
 	// 	}
 	// }
-	public getPowerItsIntelligentCooling(): any {
-        if (this.getPowerSettings() && this.getPowerSettings().its) {
-            return this.getPowerSettings().its;
-        }
-        return undefined;
-    }
+	public getPowerItsIntelligentCooling(): any {
+		if (this.getPowerSettings() && this.getPowerSettings().its) {
+			return this.getPowerSettings().its;
+		}
+		return undefined;
+	}
 }

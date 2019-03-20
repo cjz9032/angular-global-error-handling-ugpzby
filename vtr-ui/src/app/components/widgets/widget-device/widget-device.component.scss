@@ -11,8 +11,10 @@
       position: absolute;
       top: -13rem;
       right: -10rem;
-      width: 45rem;
+      width: 42rem;
       height: 45rem;
+      min-width: 20rem;
+      max-width: 42rem;
     }
   }
 
@@ -21,15 +23,15 @@
     font-size: 3.8rem;
   }
   .device-sub-header {
-    color: $shade;
-    font-size: 1.5rem;
+    color: $shade_darkest;
+    font-size: 1.4rem;
   }
 
   .sub-header-separator {
-    color: $shade;
+    color: $shade_darkest;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .subheader {
@@ -61,6 +63,13 @@
             background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
             border-color: $go_dark;
           }
+        }
+
+        .detail {
+          color: $shade_darkest;
+          /*  &.highlight {
+            color: $shade_darkest;
+          } */
         }
       }
       &.bad {
@@ -105,10 +114,9 @@
         color: $main_darker;
 
         .systemDetails {
-          font-size: 1.5rem;
-          font-weight: $weight_regular;
-          //border-style: solid;
-          //border-color: coral;
+          font-size: 1.4rem;
+          font-weight: $weight_light;
+          color: $shade_darkest;
         }
       }
       .description {
@@ -119,9 +127,7 @@
         font-size: 1.4rem;
         text-decoration: underline;
         margin-right: -3rem;
-        color: $shade_dark;
         &.highlight {
-          color: $shade_darker;
           text-decoration: underline;
           &:hover {
             text-decoration: underline;

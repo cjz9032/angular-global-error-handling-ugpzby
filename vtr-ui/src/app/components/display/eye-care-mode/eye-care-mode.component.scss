@@ -1,33 +1,48 @@
+@import "../../../app.theme.scss";
+
 .vtr-eye-care-mode {
-	.mode-slider {
-		width: 100%;
-	}
-	.reset-temperature {
-		width: 17rem;
-		.text {
-			font-size: 1.4rem;
-		}
-	}
-	.eye-care-checkbox {
-		font-size: 1.4rem;
-	}
+  .mode-slider {
+    width: 100%;
+  }
+  .reset-temperature {
+    width: 17rem;
+    margin-top: 3.3rem;
+    position: relative;
 
-	.custom-control-label {
-		padding-left: 0.5rem;
+    @media #{$mediaquery_7} {
+      margin-top: 3.4rem;
+      position: relative;
+    }
 
-		// rounded square-box background
-		&::before {
-			top: 0.2rem;
-			width: 1.5rem;
-			height: 1.5rem;
-		}
+    @media #{$mediaquery_8} {
+      margin-top: 3.5rem;
+      position: relative;
+    }
+    .text {
+      font-size: 1.4rem;
+    }
+  }
+  .eye-care-checkbox {
+    margin: 1rem 0rem 1rem 0rem;
+    font-size: 1.4rem;
+  }
 
-		// tick mark
-		&::after {
-			top: 0rem;
-			width: 2rem;
-			height: 2rem;
-			left: -1.7rem;
-		}
-	}
+  .custom-control-label {
+    padding-left: 0.5rem;
+
+    // rounded square-box background
+    &::before {
+      top: 0.2rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    // tick mark
+    &::after {
+      top: 0rem;
+      width: 2rem;
+      height: 2rem;
+      left: -1.7rem;
+    }
+  }
 }
