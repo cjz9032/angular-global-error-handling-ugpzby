@@ -34,7 +34,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public isUpdateDownloading = false;
 	public installationPercent = 0;
 	public downloadingPercent = 0;
-
+	public isRebootRequired = false;
 	public isInstallationSuccess = false;
 	public isInstallationCompleted = false;
 	public showFullHistory = false;
@@ -116,7 +116,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.onNotification(response);
 		});
 
-		if (this.systemUpdateService.isUpdatesAvailable) {
+		if (this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isInstallationComplete) {
 			this.isUpdatesAvailable = true;
 			this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 		}
@@ -127,8 +127,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.getScheduleUpdateStatus(false);
 		this.isComponentInitialized = true;
 	}
-
-
 
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
@@ -232,6 +230,19 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	public isUpdateListVisible() {
+		const isVisible = (this.isUpdatesAvailable && !this.isUpdateDownloading) || this.isInstallationCompleted;
+		return isVisible;
+	}
+
+	onRebootClick($event) {
+		this.systemUpdateService.restartWindows();
+	}
+
+	onDismissClick($event) {
+		this.isRebootRequired = false;
+	}
+
 	private setUpdateByCategory(updateList: Array<AvailableUpdateDetail>) {
 		if (updateList) {
 			this.optionalUpdates = this.filterUpdate(updateList, 'optional');
@@ -284,6 +295,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isUpdateDownloading = false;
 					this.isInstallationCompleted = true;
 					this.isInstallationSuccess = (payload.status === SystemUpdateStatusCode.SUCCESS);
+					this.checkRebootRequired();
 					break;
 				case UpdateProgress.AutoUpdateStatus:
 					this.autoUpdateOptions[0].isChecked = payload.criticalAutoUpdates;
@@ -298,39 +310,42 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private onScheduleUpdateNotification(type: string, payload: any) {
 		console.log('onScheduleUpdateNotification', type, payload);
-
-		switch (type) {
-			case UpdateProgress.ScheduleUpdateChecking:
-				if (this.isComponentInitialized) {
+		if (this.isComponentInitialized) {
+			switch (type) {
+				case UpdateProgress.ScheduleUpdateChecking:
 					this.isUpdateCheckInProgress = true;
-					this.getScheduleUpdateStatus(true);
-				}
-				break;
-			case UpdateProgress.ScheduleUpdateDownloading:
-				if (this.isComponentInitialized) {
+					break;
+				case UpdateProgress.ScheduleUpdateDownloading:
 					this.isUpdateCheckInProgress = false;
 					this.isUpdateDownloading = true;
-					// this.installationPercent = payload.installPercentage;
-					// this.downloadingPercent = payload.downloadPercentage;
-					this.getScheduleUpdateStatus(true);
-				}
-				break;
-			case UpdateProgress.ScheduleUpdateInstalling:
-				if (this.isComponentInitialized) {
+					this.installationPercent = 0;
+					if (payload.downloadProgress) {
+						this.downloadingPercent = payload.downloadProgress.progressinPercentage;
+					}
+					break;
+				case UpdateProgress.ScheduleUpdateInstalling:
 					this.isUpdateCheckInProgress = false;
 					this.isUpdateDownloading = true;
-					this.getScheduleUpdateStatus(true);
-				}
-				break;
-			case UpdateProgress.ScheduleUpdateIdle:
-				if (this.isComponentInitialized) {
+					this.downloadingPercent = 100;
+					if (payload.installProgress) {
+						this.installationPercent = payload.installProgress.progressinPercentage;
+					}
+					break;
+				case UpdateProgress.ScheduleUpdateIdle:
 					this.isUpdateCheckInProgress = false;
 					this.isUpdateDownloading = false;
 					this.resetState();
-				}
-				break;
-			default:
-				break;
+					break;
+				case UpdateProgress.ScheduleUpdateCheckComplete:
+					this.isUpdateDownloading = false;
+					this.isInstallationCompleted = true;
+					this.isInstallationSuccess = (payload.status === SystemUpdateStatusCode.SUCCESS);
+					this.setUpdateByCategory(payload.updateList);
+					this.checkRebootRequired();
+					break;
+				default:
+					break;
+			}
 		}
 	}
 
@@ -342,5 +357,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private getScheduleUpdateStatus(reportProgress: boolean) {
 		this.systemUpdateService.getScheduleUpdateStatus(reportProgress);
+	}
+
+	private checkRebootRequired() {
+		this.isRebootRequired = this.systemUpdateService.isRebootRequired();
 	}
 }

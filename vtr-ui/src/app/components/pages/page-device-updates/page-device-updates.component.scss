@@ -26,9 +26,9 @@
 		background: $light;
 		.installation-history {
 			padding-left: 5rem;
-			padding-top: 0rem;
+			padding-top: 4rem;
 			padding-right: 5rem;
-			padding-bottom: 4rem;
+			padding-bottom: 0;
 			color: $main_shade;
 			font-size: 2.5rem;
 			font-weight: $weight_light;
@@ -53,11 +53,11 @@
 				padding-bottom: 1rem;
 				text-align: center;
 				font-size: 1.4rem;
-				hr{
+				hr {
 					margin: 0.9rem 3rem;
 					color: $shade;
 				}
-				&.status-now{
+				&.status-now {
 					background: $light;
 					padding-top: 0.4rem;
 					padding-bottom: 0.4rem;
@@ -103,7 +103,7 @@
 							background: $light;
 							border-radius: 1rem;
 							color: #697293;
-   							background: #fff;
+							background: #fff;
 							width: 70%;
 							position: absolute;
 							left: -10%;
@@ -123,7 +123,7 @@
 							background: $light;
 							border-radius: 1rem;
 							color: #697293;
-   							background: #fff;
+							background: #fff;
 							width: 70%;
 							position: absolute;
 							left: -10%;
@@ -143,7 +143,7 @@
 							background: $light;
 							border-radius: 1rem;
 							color: #697293;
-   							background: #fff;
+							background: #fff;
 							width: 70%;
 							position: absolute;
 							left: -10%;
@@ -177,7 +177,7 @@
 						}
 					}
 				}
-				hr{
+				hr {
 					margin: -10px 0px -10px 20px;
 				}
 			}
@@ -191,6 +191,9 @@
 		line-height: 1.5rem;
 		padding: 2rem 5rem;
 		text-transform: uppercase;
-		cursor: pointer;
+
+		.pointer {
+			cursor: pointer;
+		}
 	}
 }
