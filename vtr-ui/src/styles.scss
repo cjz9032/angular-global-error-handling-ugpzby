@@ -62,6 +62,7 @@ html {
 @media #{$mediaquery_6} {
 	html {
 		font-size: 50%;
+
 		&.is-arm {
 			font-size: 60%;
 		}
@@ -71,6 +72,7 @@ html {
 @media #{$mediaquery_7} {
 	html {
 		font-size: 45%;
+
 		&.is-arm {
 			font-size: 47%;
 		}
@@ -231,21 +233,62 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .failure {
 	color: $alt;
 }
+
 .success {
 	color: $go_dark;
 }
 
-/*common-confirmation-modal-styles*/
+/*intelligent-cooling-read-more-pop-up-style*/
 
-.common-confirmation-modal{
-	.modal-dialog{
+.read-more {
+	.modal-dialog {
 		margin-top: 8rem;
-	.modal-content{
-		background-color: transparent;
-		border: none;
+	}
+
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		padding: 2rem;
+
+		.modal-body {
+			p {
+				font-size: 1.6rem;
+				font-weight: normal;
+				color: $light-grey;
+
+				span {
+					font-size: 2rem;
+					font-weight: bold;
+					color: $blue-dark;
+				}
+			}
+		}
 	}
 }
 
+/*common-confirmation-modal-styles*/
+
+.common-confirmation-modal {
+	.modal-dialog {
+		margin-top: 8rem;
+
+		.modal-content {
+			background-color: transparent;
+			border: none;
+		}
+	}
+
 }
 
+/*Battery-charge-threshold-modal-styles*/
+.Battery-Charge-Threshold-Modal {
+	.modal-dialog {
+		max-width: 32%;
+	}
 
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		padding: 4rem;
+	}
+}
