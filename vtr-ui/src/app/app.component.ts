@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
 		private displayService: DisplayService,
 		private router: Router,
 		private modalService: NgbModal,
-		private deviceService: DeviceService,
+		public deviceService: DeviceService,
 		private commonService: CommonService,
 		translate: TranslateService,
 		private userService: UserService

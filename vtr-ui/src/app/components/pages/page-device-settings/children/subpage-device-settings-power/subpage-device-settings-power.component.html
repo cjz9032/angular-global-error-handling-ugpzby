@@ -188,10 +188,23 @@
 					<div class="row">
 						<div class="col-auto text-wrap subtitle">
 							<h3>Intelligent Cooling</h3>
-							<p>Intelligent Cooling, adjusts fan speed, maximum surface temperature, and performance.
+							<p>Intelligent Cooling adjusts fan speed, maximum surface temperature, and performance.
 								This feature has below modes and are now accessible by Windows performance power slider.
-								<a class="read-more-link"
-									href="#">Read more.</a></p>
+								<a class="read-more-link" (click)="openContextModal(template)">Read more.</a>
+								<ng-template #template>
+									<div class="modal-header">
+										<button type="button" class="close pull-right" aria-label="Close" (click)="closeContextModal()">
+										<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<p><span>Quiet mode:</span>Slider is far left. The fan speed and performance are lowered and best battery life.</p>
+										<p><span>Quiet mode:</span>Slider is far left. The fan speed and performance are lowered and best battery life.</p>
+										<p><span>Quiet mode:</span>Slider is far left. The fan speed and performance are lowered and best battery life.</p>
+									</div>
+								</ng-template>
+
+							</p>
 						</div>
 					</div>
 					<div class="row">
@@ -200,13 +213,16 @@
 								<fa-icon [icon]="['fas', 'search']"></fa-icon>
 							</div>
 						</div>
-						<div class="col">
+						<div class="col col-7">
 							<div class="int-cool-text">
 								Intelligent cooling
 							</div>
 						</div>
-						<div class="col-auto text-right"><a class="settings-link"
+						<div class="col-auto"><a class="settings-link"
 								href="#">Go to windows settings</a></div>
+						<div class="col">
+						<fa-icon class="question" [icon]="['far', 'question-circle']"></fa-icon>
+					</div>
 
 					</div>
 
@@ -317,7 +333,8 @@
 							[tooltipText]="batterySettings.items[0].tooltipText">
 						</vtr-ui-row-switch>
 					</li>
-					<li class="">
+					<!-- MVP 2 feature -->
+					<!-- <li class="">
 						<vtr-ui-row-switch [title]="batterySettings.items[1].header"
 							[caption]="batterySettings.items[1].subHeader"
 							[isSwitchVisible]=true
@@ -340,7 +357,7 @@
 								</vtr-battery-charge-threshold-settings>
 							</div>
 						</vtr-ui-row-switch>
-					</li>
+					</li> -->
 					<li class="">
 						<!--
 						*ngIf="batterySettings.status.expressCharging"

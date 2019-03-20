@@ -80,6 +80,10 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	/**
+	 * returns metric object from VantageShellService of JS Bridge
+	 */
 	public getMetrics(): any {
 		if (this.phoenix) {
 			return this.phoenix.metrics;
