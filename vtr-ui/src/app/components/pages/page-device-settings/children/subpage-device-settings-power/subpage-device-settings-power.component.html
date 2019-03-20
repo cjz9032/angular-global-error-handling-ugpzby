@@ -420,7 +420,7 @@
 									name="alwasy-on-usb-checkbox-id"
 									[disabled]="!toggleAlwaysOnUsbFlag"
 									[(ngModel)]="usbChargingCheckboxFlag"
-									(ngModelChange)='onUsbChargingStatusChange($event)'>
+									(ngModelChange)='onUsbChargingStatusChange()'>
 								<label> {{ powerSettings[0].checkboxDesc }} </label>
 							</div>
 						</vtr-ui-row-switch>
