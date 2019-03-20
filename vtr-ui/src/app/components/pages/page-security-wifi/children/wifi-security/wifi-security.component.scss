@@ -8,7 +8,7 @@
 		padding: 1.5rem;
 	}
 	.vtr-container-collapsible.white-theme {
-		background: #f5f7f8;
+		background: $shade_lighter;
 	}
 
 	.heading {
@@ -187,7 +187,7 @@
 			}
 		}
 		.cardBody {
-			border: 1px solid #e6eaeb;
+			border: 1px solid $shade_lighter;
 			border-radius: 0.8rem;
 			background: white;
 			ul.openNetworks {
@@ -199,8 +199,8 @@
 					list-style: none;
 					width: 50%;
 					padding: 2.4rem 3rem;
-					border-right: 1px solid #e6eaeb;
-					border-bottom: 1px solid #e6eaeb;
+					border-right: 1px solid $shade_lighter;
+					border-bottom: 1px solid $shade_lighter;
 					display: flex;
 					flex-wrap: wrap;
 					height: 8.8rem;
@@ -220,12 +220,12 @@
 							color: #3498db;
 						}
 						.circle {
-							background-color: #33e0a9;
-							background-image: linear-gradient(313deg, #33e0a9 25%, #30d283 100%);
+							background-color: $go;
+							background-image: linear-gradient(313deg, $go_light 25%, $go 100%);
 							height: 15px;
 							width: 15px;
 							border-radius: 15px;
-							border: 1px solid #1cbc67;
+							border: 1px solid $go_dark;
 							text-align: center;
 							line-height: 9px;
 							display: inline-block;
@@ -234,12 +234,12 @@
 							left: 15px;
 							fa-icon{
 								font-size: 1.5rem;
-								color: white;
+								color: $shade_extralight;
 							}
 							&.red{
-								background-color: #f97163;
-								background-image: linear-gradient(315deg, #f97163 25%, #eb5646 100%);
-								border: 1px solid #d84738;
+								background-color: $stop;
+								background-image: linear-gradient(315deg, $stop_light 25%, $stop 100%);
+								border: 1px solid $stop_dark;
 							}
 						}
 					}
@@ -272,14 +272,14 @@
 		.card-header{
 			padding: 2.5rem;
 			height: 7.8rem;
-			background: #f5f7f8;
+			background: $shade_lightest;
 		}
 		.collapse {
-			background: #f5f7f8;
+			background: $shade_lightest;
 			border-radius: 0.8rem;
 			border-top-left-radius: 0rem;
 			border-top-right-radius: 0rem;
-			border: 1px solid rgba(0, 0, 0, 0.125);
+			border: 1px solid $screen_dark_15;
 		}
 		.half{
 			width: 50%;
@@ -300,12 +300,12 @@
 		.subHeading{
 			display: flex;
 			.circle {
-				background-color: #33e0a9;
-				background-image: linear-gradient(313deg, #33e0a9 25%, #30d283 100%);
+				background-color: $go;
+				background-image: linear-gradient(313deg, $go_light 25%, $go 100%);
 				height: 15px;
 				width: 15px;
 				border-radius: 15px;
-				border: 1px solid #1cbc67;
+				border: 1px solid $go_dark;
 				text-align: center;
 				line-height: 2.6rem;
 				display: inline-block;
@@ -315,9 +315,9 @@
 					color: white;
 				}
 				&.red{
-					background-color: #f97163;
-					background-image: linear-gradient(315deg, #f97163 25%, #eb5646 100%);
-					border: 1px solid #d84738;
+					background-color: $stop;
+					background-image: linear-gradient(315deg, $stop_light 25%, $stop 100%);
+					border: 1px solid $stop_dark;
 				}
 			}
 			h3{
