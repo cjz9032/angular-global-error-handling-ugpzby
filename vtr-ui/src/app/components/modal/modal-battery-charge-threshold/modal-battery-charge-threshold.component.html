@@ -1,19 +1,25 @@
 <div class="modal-body vtr-modal-battery-charge-threshold">
-	<div>
-		<h1>Enable Battery Charge Threshold</h1>>
-		<p>Enabling a custom battery charge will allow for the overall battery health to last longer as you use this
-			device. However, not having a full charge will allow less runtime battery life.</p>
-		<p>In order to fully enable this feature, please unplug your machine and allow your battery to drain to or
-			below the stop-charging threshold.</p>
-		<button (click)="enableBatteryChargeThreshold()">Enable</button>
-		<button (click)="closeModal()">Cancel</button>
+	<div class="row justify-content-end">
+		<div class="btn-close">
+			<button type="button"
+				class="close"
+				aria-hidden="true"
+				(click)="closeModal()">
+				<fa-icon [icon]="['fas', 'times']"></fa-icon>
+			</button>
+		</div>
 	</div>
-	<div class="btn-close">
-		<button type="button"
-		 class="close"
-		 aria-hidden="true"
-		 (click)="closeModal()">
-			&times;
-		</button>
+	<h1>Enable Battery Charge Threshold</h1>
+	<p>Enabling a custom battery charge will allow for the overall battery health to last longer as you use this
+		device. However, not having a full charge will allow less runtime battery life.</p>
+	<p>In order to fully enable this feature, please unplug your machine and allow your battery to drain to or
+		below the stop-charging threshold.</p>
+	<hr>
+	<div class="row">
+		<button class="btn enable-button"
+			(click)="enableBatteryChargeThreshold()">ENABLE</button>
+		<a (click)="closeModal()"
+			class="cancel-link">CANCEL</a>
 	</div>
+
 </div>
