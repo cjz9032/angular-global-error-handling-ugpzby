@@ -6,7 +6,7 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 @Injectable({
 	providedIn: 'root'
 })
-export class BatteryDetailService{
+export class BatteryDetailService {
 
 	private battery: any;
 	public isShellAvailable = false;
@@ -19,13 +19,13 @@ export class BatteryDetailService{
 
 	getBatteryDetail(): Promise<BatteryDetail[]> {
 		try {
-		  if (this.isShellAvailable) {
-			return this.battery.getBatteryInformation();
-		  }
-		  return undefined;
+			if (this.isShellAvailable) {
+				return this.battery.getBatteryInformation();
+			}
+			return undefined;
 		}
-		catch(error) {
-		  throw new Error(error.message);
+		catch (error) {
+			throw new Error(error.message);
 		}
-	  }
+	}
 }
