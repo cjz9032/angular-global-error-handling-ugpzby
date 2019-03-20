@@ -15,7 +15,6 @@ import { SystemUpdateStatusCode } from 'src/app/enums/system-update-status-code.
 	providedIn: 'root'
 })
 export class SystemUpdateService {
-
 	private systemUpdateBridge: any;
 	public autoUpdateStatus: any;
 	public isShellAvailable = false;
@@ -137,6 +136,8 @@ export class SystemUpdateService {
 
 	public getScheduleUpdateStatus(canReportProgress: boolean) {
 		if (this.systemUpdateBridge) {
+			console.log('getScheduleUpdateStatus main', canReportProgress);
+
 			this.systemUpdateBridge.getStatus(canReportProgress, (response: any) => {
 				console.log('getScheduleUpdateStatus callback', response);
 				this.processScheduleUpdate(response.payload);
@@ -148,12 +149,14 @@ export class SystemUpdateService {
 	}
 
 	private processScheduleUpdate(response: any) {
-		const { status } = response;
-		if (status.toLowerCase() === 'installing') {
+		const status = response.status.toLowerCase();
+		if ((status === 'installing' || status === 'checking' || status === 'downloading') && response.updateTaskList === null) {
+			this.getScheduleUpdateStatus(true);
+		} else if (status === 'installing') {
 			this.commonService.sendNotification(UpdateProgress.ScheduleUpdateInstalling, response);
-		} else if (status.toLowerCase() === 'checking') {
+		} else if (status === 'checking') {
 			this.commonService.sendNotification(UpdateProgress.ScheduleUpdateChecking, response);
-		} else if (status.toLowerCase() === 'downloading') {
+		} else if (status === 'downloading') {
 			this.commonService.sendNotification(UpdateProgress.ScheduleUpdateDownloading, response);
 		} else if (status === 'idle') {
 			if (response.updateTaskList && response.updateTaskList.length > 0) {
@@ -192,9 +195,12 @@ export class SystemUpdateService {
 
 	public restartWindows() {
 		if (this.systemUpdateBridge) {
+			this.commonService.sendNotification(UpdateProgress.WindowsRebootRequested);
 			this.systemUpdateBridge.restartWindows()
 				.then((status: boolean) => {
-					// todo: ui changes to show on windows is restarting
+					if (status) {
+						this.commonService.sendNotification(UpdateProgress.WindowsRebooting);
+					}
 				})
 				.catch((error) => {
 					console.log('cancelUpdateCheck.error', error);
@@ -237,6 +243,18 @@ export class SystemUpdateService {
 				return d1.getTime() - d2.getTime();
 			});
 		}
+	}
+
+	public isRebootRequired(): boolean {
+		if (this.updateInfo) {
+			for (let index = 0; index < this.updateInfo.updateList.length; index++) {
+				const update = this.updateInfo.updateList[index];
+				if (update.packageRebootType === 'RebootRequested' || update.packageRebootType === 'RebootDelayed') {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	private installUpdates(updates: Array<InstallUpdate>) {
@@ -348,6 +366,4 @@ export class SystemUpdateService {
 		}
 		return undefined;
 	}
-
-
 }
