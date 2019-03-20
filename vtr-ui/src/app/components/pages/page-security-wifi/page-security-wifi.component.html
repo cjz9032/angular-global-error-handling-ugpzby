@@ -2,8 +2,8 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
-			 [back]="back"
-			 [title]="title"></vtr-header-main>
+				[back]="back"
+				[title]="title"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -29,8 +29,8 @@
 								<div class="row mb-40">
 									<div class="col col-12">
 										<vtr-widget-status [title]="'Security Advisor'"
-										 [description]="'CHECK IF YOUR DEVICE IS SECURED.'"
-										 [items]="mockService.securityStatus">
+											[description]="'CHECK IF YOUR DEVICE IS SECURED.'"
+											[items]="mockService.securityStatus">
 										</vtr-widget-status>
 									</div>
 								</div>
@@ -45,7 +45,7 @@
 													<div class="col">
 														<div class="title">{{'Security Health'}}</div>
 														<div class="description"
-														 *ngIf="isLWSEnabled===true">
+															*ngIf="isLWSEnabled===true">
 															Learn more about each of these components <a routerLink="/">here</a>.
 														</div>
 													</div>
@@ -63,7 +63,7 @@
 
 														<!--Start of Security Health Advisor When LWS is disabled-->
 														<div class="security-health-disabled"
-														 *ngIf="isLWSEnabled===false">
+															*ngIf="isLWSEnabled===false">
 															<div class="security-health-disabled-list">
 
 																<div class="peace-of-mind">
@@ -72,10 +72,10 @@
 																</div>
 																<div class="button-box">
 																	<vtr-ui-button metricsParent="security-health"
-																	 metricsItem="enable wifi security"
-																	 metricsEvent="itemClick"
-																	 (onClick)="enableWiFiSecurity($event)"
-																	 [label]="'Enable Wifi security'">
+																		metricsItem="enable wifi security"
+																		metricsEvent="itemClick"
+																		(onClick)="enableWiFiSecurity($event)"
+																		[label]="'Enable Wifi security'">
 																	</vtr-ui-button>
 																</div>
 															</div>
@@ -96,7 +96,7 @@
 																		<div class="pull right">
 																			<a routerLink="/{{viewSecChkRoute}}">
 																				<img class="coronet_logo_teal"
-																				 src="../../../../assets/images/coronet-icon.png" /></a>
+																					src="../../../../assets/images/coronet-icon.png" /></a>
 																		</div>
 																	</div>
 																</div>
@@ -118,13 +118,13 @@
 								<div class="row mb-40">
 									<div class="col col-12">
 										<vtr-container-card [img]="'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg'"
-										 [title]="'Try out McAfee anti-virus software for 6 months'"
-										 [logoText]="'LENOVO SPECIAL'"
-										 [action]="'Read More'"
-										 [actionLink]="'http://www.google.com'"
-										 [type]="'article'"
-										 [ratioX]="4"
-										 [ratioY]="4">
+											[title]="'Try out McAfee anti-virus software for 6 months'"
+											[logoText]="'LENOVO SPECIAL'"
+											[action]="'Read More'"
+											[actionLink]="'http://www.google.com'"
+											[type]="'article'"
+											[ratioX]="4"
+											[ratioY]="4">
 										</vtr-container-card>
 									</div>
 								</div>
