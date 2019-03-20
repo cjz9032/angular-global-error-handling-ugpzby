@@ -108,7 +108,7 @@ export class SystemUpdateService {
 				console.log('checkForUpdates response', response);
 				this.updateInfo = { status: response.status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
 				this.isCheckForUpdateComplete = true;
-				this.isUpdatesAvailable = (response && response.updateList.length > 0);
+				this.isUpdatesAvailable = (response.updateList && response.updateList.length > 0);
 				this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, this.updateInfo);
 				if (this.isUpdatesAvailable) {
 					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
