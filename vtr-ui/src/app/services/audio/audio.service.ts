@@ -143,14 +143,39 @@ export class AudioService {
 		}
 	}
 
-	setMicrophoneOpitimaztion(mode: string): Promise<boolean> {
-		try {
-			if (this.isShellAvailable) {
-				return this.microphone.setMicrophoneOpitimaztion(mode);
-			}
-			return undefined;
-		} catch (error) {
-			throw new Error(error.message);
-		}
-	}
+  setMicrophoneOpitimaztion(mode: string): Promise<boolean> {
+    try {
+      if (this.isShellAvailable) {
+        return this.microphone.setMicrophoneOpitimaztion(mode);
+      }
+      return undefined;
+    }
+    catch(error) {
+      throw new Error(error.message);
+    }
+  }
+
+  startMonitor(handler: any): Promise<boolean> {
+    try {
+      if (this.isShellAvailable) {
+        return this.microphone.startMonitor(handler);
+      }
+      return undefined;
+    }
+    catch(error) {
+      throw new Error(error.message);
+    }
+  }
+
+  stopMonitor(): Promise<boolean> {
+    try {
+      if (this.isShellAvailable) {
+        return this.microphone.stopMonitor();
+      }
+      return undefined;
+    }
+    catch(error) {
+      throw new Error(error.message);
+    }
+  }
 }

@@ -1,5 +1,14 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { PowerService } from 'src/app/services/power/power.service';
+import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import { DeviceService } from 'src/app/services/device/device.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+enum PowerMode {
+	Sleep = "Charge from sleep",
+	Shutdown = "Charge from shutdown"
+}
 
 @Component({
 	selector: 'vtr-subpage-device-settings-power',
@@ -8,6 +17,14 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	title = 'Power Settings';
+	machineBrand: string;
+	public vantageToolbarStatus = new FeatureStatus(false, true);
+	public alwaysOnUSBStatus = new FeatureStatus(false, true);
+	public usbChargingStatus = new FeatureStatus(false, true);
+	public easyResumeStatus = new FeatureStatus(false, true);
+	toggleAlwaysOnUsbFlag = true;
+	usbChargingCheckboxFlag = false;
+	powerMode = PowerMode.Sleep;
 	headerCaption =
 		'This section enables you to dynamically adjust thermal performance and maximize the battery life.' +
 		' It also has other popular power-related features.' +
@@ -111,9 +128,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				'Charge USB devices through the Always on USB connector on the computer when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged from the USB connector that is yellow-coded or silk-printed the specified icon.',
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
+			isSwitchChecked: this.toggleAlwaysOnUsbFlag,
 			tooltipText:
 				`Charge USB devices through the Always on USB connector on the computer when the computer is in sleep, hibernation, or off mode.
-				A smartphone or tablet can be charged from the USB connector that is yellow-coded or silk-printed the specified icon.`
+				A smartphone or tablet can be charged from the USB connector that is yellow-coded or silk-printed the specified icon.`,
+			checkboxDesc: "Enable USB charging from laptop battery when computer is off."
 		},
 		{
 			readMoreText: 'Read More',
@@ -124,6 +143,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				`Enable this feature to improve your resume time if you frequently open and close your computer's lid.`,
 			isCheckBoxVisible: false,
 			isSwitchVisible: false,
+			isSwitchChecked: false,
 			tooltipText:
 				`This feature will improve your resume time if you frequently open and close your computer’s lid.
 				When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook
@@ -163,14 +183,22 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 		// console.log('after expressCharging :' + this.batterySettings.status.expressCharging);
 
 	}
-	constructor(
+	constructor(public powerService: PowerService,
+		private deviceService: DeviceService,
+		private commonService: CommonService,
 		public modalService: NgbModal) { }
 
 	onIntelligentCoolingToggle(event) {
 		this.intelligentCooling = event.switchValue;
 	}
 
-	ngOnInit() { }
+	ngOnInit() {
+		this.getMachineInfo();
+		this.getVantageToolBarStatus();
+		this.getDYTCRevision();
+		this.getCQLCapability();
+		this.getTIOCapability();
+	}
 	openContextModal(template: TemplateRef<any>) {
 		this.modalService.open(template, {
 			windowClass: 'read-more'
@@ -180,4 +208,361 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	closeContextModal() {
 		this.modalService.dismissAll();
 	}
+	getAndSetAlwaysOnUSBForBrands(machinename: any) {
+		console.log('inside getAndSetAlwaysOnUSBForBrands');
+		switch (machinename) {
+
+			case 'thinkpad':
+				console.log('machine', machinename);
+				this.getAlwaysOnUSBCapabilityThinkPad();
+				this.getAlwaysOnUSBStatusThinkPad();
+				this.getEasyResumeCapabilityThinkPad();
+				break;
+			case 'ideapad':
+				this.getAlwaysOnUSBStatusIdeaPad();
+				this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
+				console.log('always on usb: ideapad');
+				break;
+		}
+	}
+	onUsbChargingStatusChange() {
+		console.log('usb charge state entered');
+		this.updatePowerMode();
+	}
+
+	onToggleOfAlwaysOnUsb(event) {
+		switch (this.machineBrand) {
+			case 'thinkpad':
+				this.setAlwaysOnUSBStatusThinkPad(event);
+				console.log('always on usb: thinkpad');
+				break;
+			case 'ideapad':
+				this.setAlwaysOnUSBStatusIdeaPad(event);
+				console.log('always on usb: ideapad');
+				break;
+		}
+		this.toggleAlwaysOnUsbFlag = event.switchValue;
+		this.updatePowerMode();
+	}
+
+	updatePowerMode() {
+		if (this.toggleAlwaysOnUsbFlag && this.usbChargingCheckboxFlag) {
+			this.powerMode = PowerMode.Shutdown;
+		} else if (this.toggleAlwaysOnUsbFlag && !this.usbChargingCheckboxFlag) {
+			this.powerMode = PowerMode.Sleep;
+		} else {
+			this.powerMode = null;
+		}
+		switch (this.machineBrand) {
+			case 'thinkpad':
+				console.log('always on usb: thinkpad');
+				break;
+			case 'ideapad':
+				this.setUSBChargingInBatteryModeStatusIdeaNoteBook(this.usbChargingCheckboxFlag);
+				console.log('always on usb: ideapad');
+				break;
+		}
+
+	}
+	private getMachineInfo() {
+		try {
+			if (this.deviceService.isShellAvailable) {
+				this.deviceService.getMachineInfo()
+					.then((value: any) => {
+						console.log('getMachineInfo.then', value);
+						this.machineBrand = value.subBrand.toLowerCase();
+						console.log('getMachineInfo.then', this.machineBrand.toLowerCase());
+						this.getAndSetAlwaysOnUSBForBrands(this.machineBrand);
+					}).catch(error => {
+						console.error('getMachineInfo', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	// Power Smart Settings
+	private getDYTCRevision() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.getDYTCRevision()
+					.then((value: number) => {
+						console.log('getDYTCRevision.then', value);
+
+					})
+					.catch(error => {
+						console.error('getDYTCRevision', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	private getCQLCapability() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.getCQLCapability()
+					.then((value: boolean) => {
+						console.log('getCQLCapability.then', value);
+
+					})
+					.catch(error => {
+						console.error('getCQLCapability', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	private getTIOCapability() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.getTIOCapability()
+					.then((value: boolean) => {
+						console.log('getTIOCapability.then', value);
+					})
+					.catch(error => {
+						console.error('getTIOCapability', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	private setAutoModeSetting(event: any) {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.setAutoModeSetting(event.switchValue)
+					.then((value: boolean) => {
+						console.log('setAutoModeSetting.then', value);
+						this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
+					})
+					.catch(error => {
+						console.error('setAutoModeSetting', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	private setManualModeSetting(event: any) {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.setManualModeSetting(event.switchValue)
+					.then((value: boolean) => {
+						console.log('setManualModeSetting.then', value);
+						this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
+					})
+					.catch(error => {
+						console.error('setManualModeSetting', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+
+	// End Power Smart Settings
+	// Start ThinkPad
+	private getAlwaysOnUSBCapabilityThinkPad() {
+		console.log('getAlwaysOnUSBCapabilityThinkPad ');
+		if (this.powerService.isShellAvailable) {
+			this.powerService
+				.getAlwaysOnUSBCapabilityThinkPad()
+				.then((value: boolean) => {
+					console.log('getAlwaysOnUSBCapabilityThinkPad.then', value);
+					this.alwaysOnUSBStatus.available = value;
+				})
+				.catch(error => {
+					console.error('getAlwaysOnUSBCapabilityThinkPad', error);
+				});
+		}
+
+	}
+	private getAlwaysOnUSBStatusThinkPad() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.getAlwaysOnUSBStatusThinkPad()
+					.then((alwaysOnUsbThinkPad: any) => {
+						console.log('getAlwaysOnUSBStatusThinkPad.then', alwaysOnUsbThinkPad);
+						this.alwaysOnUSBStatus.status = alwaysOnUsbThinkPad.isEnabled;
+						this.usbChargingCheckboxFlag = alwaysOnUsbThinkPad.isChargeFromShutdown;
+					})
+					.catch(error => {
+						console.error('getAlwaysOnUSBStatusThinkPad', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	private getEasyResumeCapabilityThinkPad() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.getEasyResumeCapabilityThinkPad()
+					.then((value: any) => {
+						console.log('getEasyResumeCapabilityThinkPad.then', value);
+						if (value == true) {
+							this.getEasyResumeStatusThinkPad();
+						}
+					})
+					.catch(error => {
+						console.error('getEasyResumeCapabilityThinkPad', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	private getEasyResumeStatusThinkPad() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.getEasyResumeStatusThinkPad()
+					.then((value: any) => {
+						console.log('getEasyResumeStatusThinkPad.then', value);
+
+					})
+					.catch(error => {
+						console.error('getEasyResumeStatusThinkPad', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+
+	private setAlwaysOnUSBStatusThinkPad(event: any) {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.setAlwaysOnUSBStatusThinkPad(event.switchValue)
+					.then((value: boolean) => {
+						console.log('setAlwaysOnUSBStatusIdeaNoteBook.then', value);
+						this.getAlwaysOnUSBStatusThinkPad();
+					})
+					.catch(error => {
+						console.error('getAlwaysOnUSBStatusIdeaNoteBook', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	// End ThinkPad
+
+	// Start IdeaNoteBook
+	private getAlwaysOnUSBStatusIdeaPad() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.getAlwaysOnUSBStatusIdeaNoteBook()
+					.then((featureStatus: FeatureStatus) => {
+						console.log('getAlwaysOnUSBStatusIdeaNoteBook.then', featureStatus);
+						this.alwaysOnUSBStatus = featureStatus;
+					})
+					.catch(error => {
+						console.error('getAlwaysOnUSBStatusIdeaNoteBook', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	private getUSBChargingInBatteryModeStatusIdeaNoteBook() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.getUSBChargingInBatteryModeStatusIdeaNoteBook()
+					.then((featureStatus: FeatureStatus) => {
+						console.log('getUSBChargingInBatteryModeStatusIdeaNoteBook.then', featureStatus);
+						this.usbChargingStatus = featureStatus;
+						this.usbChargingCheckboxFlag = featureStatus.status;
+
+					})
+					.catch(error => {
+						console.error('getUSBChargingInBatteryModeStatusIdeaNoteBook', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	private setUSBChargingInBatteryModeStatusIdeaNoteBook(event: any) {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.setUSBChargingInBatteryModeStatusIdeaNoteBook(event)
+					.then((value: boolean) => {
+						console.log('setUSBChargingInBatteryModeStatusIdeaNoteBook.then', value);
+						this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
+					})
+					.catch(error => {
+						console.error('setUSBChargingInBatteryModeStatusIdeaNoteBook', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	private setAlwaysOnUSBStatusIdeaPad(event: any) {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.setAlwaysOnUSBStatusIdeaNoteBook(event.switchValue)
+					.then((value: boolean) => {
+						console.log('setAlwaysOnUSBStatusIdeaNoteBook.then', value);
+						this.getAlwaysOnUSBStatusIdeaPad();
+					})
+					.catch(error => {
+						console.error('getAlwaysOnUSBStatusIdeaNoteBook', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	// End IdeaNoteBook
+	// Start Lenovo Vantage ToolBar
+	private getVantageToolBarStatus() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.getVantageToolBarStatus()
+					.then((featureStatus: FeatureStatus) => {
+						console.log('getVantageToolBarStatus.then', featureStatus);
+						this.vantageToolbarStatus = featureStatus;
+					})
+					.catch(error => {
+						console.error('getEyeCareModeState', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	public onVantageToolBarStatusToggle(event: any) {
+		console.log('onVantageToolBarStatusToggle', event.switchValue);
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService.setVantageToolBarStatus(event.switchValue)
+					.then((value: boolean) => {
+						console.log('setVantageToolBarStatus.then', event.switchValue);
+						this.getVantageToolBarStatus();
+					}).catch(error => {
+						console.error('onEyeCareModeStatusToggle', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	// End Lenovo Vantage ToolBar
 }

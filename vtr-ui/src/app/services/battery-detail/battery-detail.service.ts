@@ -2,18 +2,30 @@ import { Injectable } from '@angular/core';
 import { BaseBatteryDetail } from './base-battery-detail';
 import { Observable } from 'rxjs';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
-
+import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 @Injectable({
 	providedIn: 'root'
 })
-export class BatteryDetailService implements BaseBatteryDetail {
+export class BatteryDetailService {
 
-	constructor() { }
+	private battery: any;
+	public isShellAvailable = false;
+	constructor(shellService: VantageShellService) {
+		this.battery = shellService.getBatteryInfo();
+		if (this.battery) {
+			this.isShellAvailable = true;
+		}
+	}
 
-	/**
-	 * return data from mock json file
-	 */
-	getBatteryDetail(): Observable<BatteryDetail[]> {
-		return null;
+	getBatteryDetail(): Promise<BatteryDetail[]> {
+		try {
+			if (this.isShellAvailable) {
+				return this.battery.getBatteryInformation();
+			}
+			return undefined;
+		}
+		catch (error) {
+			throw new Error(error.message);
+		}
 	}
 }
