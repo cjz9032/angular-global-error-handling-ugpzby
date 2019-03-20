@@ -60,14 +60,14 @@ export class PowerService {
 	// Start AlwaysOn USB IdeaNoteBook
 	public getAlwaysOnUSBStatusIdeaNoteBook(): Promise<FeatureStatus> {
 		if (this.devicePowerIdeaNoteBook) {
-			return this.devicePowerIdeaNoteBook.getAlwaysOnUSBStatus()();
+			return this.devicePowerIdeaNoteBook.alwaysOnUSB.getAlwaysOnUSBStatus();
 		}
 		return undefined;
 	}
 	public setAlwaysOnUSBStatusIdeaNoteBook(value: boolean): Promise<boolean> {
 		try {
 			if (this.devicePowerIdeaNoteBook) {
-				return this.devicePowerIdeaNoteBook.setAlwaysOnUSBStatus(value);
+				return this.devicePowerIdeaNoteBook.alwaysOnUSB.setAlwaysOnUSBStatus(value);
 			}
 			return undefined;
 		} catch (error) {
@@ -76,14 +76,14 @@ export class PowerService {
 	}
 	public getUSBChargingInBatteryModeStatusIdeaNoteBook(): Promise<FeatureStatus> {
 		if (this.devicePowerIdeaNoteBook) {
-			return this.devicePowerIdeaNoteBook.getUSBChargingInBatteryModeStatus()();
+			return this.devicePowerIdeaNoteBook.alwaysOnUSB.getUSBChargingInBatteryModeStatus();
 		}
 		return undefined;
 	}
 	public setUSBChargingInBatteryModeStatusIdeaNoteBook(value: boolean): Promise<boolean> {
 		try {
 			if (this.devicePowerIdeaNoteBook) {
-				return this.devicePowerIdeaNoteBook.setUSBChargingInBatteryModeStatus(value);
+				return this.devicePowerIdeaNoteBook.alwaysOnUSB.setUSBChargingInBatteryModeStatus(value);
 			}
 			return undefined;
 		} catch (error) {
@@ -94,20 +94,20 @@ export class PowerService {
 	// Start Easy Resume for ThinkPad
 	public getEasyResumeCapabilityThinkPad(): Promise<boolean> {
 		if (this.devicePowerThinkPad) {
-			return this.devicePowerThinkPad.getEasyResumeCapability();
+			return this.devicePowerThinkPad.sectionEasyResume.getEasyResumeCapability();
 		}
 		return undefined;
 	}
 	public getEasyResumeStatusThinkPad(): Promise<any> {
 		if (this.devicePowerThinkPad) {
-			return this.devicePowerThinkPad.getEasyResume();
+			return this.devicePowerThinkPad.sectionEasyResume.getEasyResume();
 		}
 		return undefined;
 	}
 	public setEasyResumeThinkPad(value: boolean): Promise<boolean> {
 		try {
 			if (this.devicePowerThinkPad) {
-				return this.devicePowerThinkPad.setEasyResume(value);
+				return this.devicePowerThinkPad.sectionEasyResume.setEasyResume(value);
 			}
 			return undefined;
 		} catch (error) {
@@ -137,7 +137,7 @@ export class PowerService {
 	public getDYTCRevision(): Promise<number> {
 		try {
 			if (this.devicePowerItsIntelligentCooling) {
-				return this.devicePowerItsIntelligentCooling.getDYTCRevision();
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getDYTCRevision();
 			}
 			return undefined;
 		} catch (error) {
@@ -147,7 +147,7 @@ export class PowerService {
 	public getCQLCapability(): Promise<boolean> {
 		try {
 			if (this.devicePowerItsIntelligentCooling) {
-				return this.devicePowerItsIntelligentCooling.getCQLCapability();
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getCQLCapability();
 			}
 			return undefined;
 		} catch (error) {
@@ -157,7 +157,7 @@ export class PowerService {
 	public getTIOCapability(): Promise<boolean> {
 		try {
 			if (this.devicePowerItsIntelligentCooling) {
-				return this.devicePowerItsIntelligentCooling.getTIOCapability();
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getTIOCapability();
 			}
 			return undefined;
 		} catch (error) {
@@ -167,7 +167,7 @@ export class PowerService {
 	public setAutoModeSetting(value: boolean): Promise<boolean> {
 		try {
 			if (this.devicePowerItsIntelligentCooling) {
-				return this.devicePowerItsIntelligentCooling.setAutoModeSetting(value);
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.setAutoModeSetting(value);
 			}
 			return undefined;
 		} catch (error) {
@@ -177,7 +177,7 @@ export class PowerService {
 	public setManualModeSetting(value: string): Promise<boolean> {
 		try {
 			if (this.devicePowerItsIntelligentCooling) {
-				return this.devicePowerItsIntelligentCooling.setManualModeSetting(value);
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.setManualModeSetting(value);
 			}
 			return undefined;
 		} catch (error) {

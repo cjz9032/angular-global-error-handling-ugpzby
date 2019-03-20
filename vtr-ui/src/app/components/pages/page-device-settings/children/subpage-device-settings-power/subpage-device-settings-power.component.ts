@@ -195,6 +195,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	ngOnInit() {
 		this.getMachineInfo();
 		this.getVantageToolBarStatus();
+		this.getDYTCRevision();
+		this.getCQLCapability();
+		this.getTIOCapability();
 	}
 	openContextModal(template: TemplateRef<any>) {
 		this.modalService.open(template, {
@@ -220,12 +223,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
 				console.log('always on usb: ideapad');
 				break;
-			case 'thinkcenter':
-				console.log('always on usb: thinkcenter');
-				break;
-			case 'ideacenter':
-				console.log('always on usb: ideacenter');
-				break;
 		}
 	}
 	onUsbChargingStatusChange() {
@@ -236,17 +233,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	onToggleOfAlwaysOnUsb(event) {
 		switch (this.machineBrand) {
 			case 'thinkpad':
+				this.setAlwaysOnUSBStatusThinkPad(event);
 				console.log('always on usb: thinkpad');
 				break;
 			case 'ideapad':
 				this.setAlwaysOnUSBStatusIdeaPad(event);
 				console.log('always on usb: ideapad');
-				break;
-			case 'thinkcenter':
-				console.log('always on usb: thinkcenter');
-				break;
-			case 'ideacenter':
-				console.log('always on usb: ideacenter');
 				break;
 		}
 		this.toggleAlwaysOnUsbFlag = event.switchValue;
@@ -269,12 +261,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				this.setUSBChargingInBatteryModeStatusIdeaNoteBook(this.usbChargingCheckboxFlag);
 				console.log('always on usb: ideapad');
 				break;
-			case 'thinkcenter':
-				console.log('always on usb: thinkcenter');
-				break;
-			case 'ideacenter':
-				console.log('always on usb: ideacenter');
-				break;
 		}
 
 	}
@@ -295,6 +281,93 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			console.error(error.message);
 		}
 	}
+	// Power Smart Settings
+	private getDYTCRevision() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.getDYTCRevision()
+					.then((value: number) => {
+						console.log('getDYTCRevision.then', value);
+
+					})
+					.catch(error => {
+						console.error('getDYTCRevision', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	private getCQLCapability() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.getCQLCapability()
+					.then((value: boolean) => {
+						console.log('getCQLCapability.then', value);
+
+					})
+					.catch(error => {
+						console.error('getCQLCapability', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	private getTIOCapability() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.getTIOCapability()
+					.then((value: boolean) => {
+						console.log('getTIOCapability.then', value);
+					})
+					.catch(error => {
+						console.error('getTIOCapability', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	private setAutoModeSetting(event: any) {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.setAutoModeSetting(event.switchValue)
+					.then((value: boolean) => {
+						console.log('setAutoModeSetting.then', value);
+						this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
+					})
+					.catch(error => {
+						console.error('setAutoModeSetting', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	private setManualModeSetting(event: any) {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.setManualModeSetting(event.switchValue)
+					.then((value: boolean) => {
+						console.log('setManualModeSetting.then', value);
+						this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
+					})
+					.catch(error => {
+						console.error('setManualModeSetting', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+
+	// End Power Smart Settings
 	// Start ThinkPad
 	private getAlwaysOnUSBCapabilityThinkPad() {
 		console.log('getAlwaysOnUSBCapabilityThinkPad ');
@@ -336,7 +409,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 					.getEasyResumeCapabilityThinkPad()
 					.then((value: any) => {
 						console.log('getEasyResumeCapabilityThinkPad.then', value);
-
+						if (value == true) {
+							this.getEasyResumeStatusThinkPad();
+						}
 					})
 					.catch(error => {
 						console.error('getEasyResumeCapabilityThinkPad', error);
@@ -346,7 +421,43 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			console.error(error.message);
 		}
 	}
+	private getEasyResumeStatusThinkPad() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.getEasyResumeStatusThinkPad()
+					.then((value: any) => {
+						console.log('getEasyResumeStatusThinkPad.then', value);
+
+					})
+					.catch(error => {
+						console.error('getEasyResumeStatusThinkPad', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+
+	private setAlwaysOnUSBStatusThinkPad(event: any) {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.setAlwaysOnUSBStatusThinkPad(event.switchValue)
+					.then((value: boolean) => {
+						console.log('setAlwaysOnUSBStatusIdeaNoteBook.then', value);
+						this.getAlwaysOnUSBStatusThinkPad();
+					})
+					.catch(error => {
+						console.error('getAlwaysOnUSBStatusIdeaNoteBook', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
 	// End ThinkPad
+
 	// Start IdeaNoteBook
 	private getAlwaysOnUSBStatusIdeaPad() {
 		try {
@@ -388,7 +499,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 		try {
 			if (this.powerService.isShellAvailable) {
 				this.powerService
-					.setUSBChargingInBatteryModeStatusIdeaNoteBook(event.switchValue)
+					.setUSBChargingInBatteryModeStatusIdeaNoteBook(event)
 					.then((value: boolean) => {
 						console.log('setUSBChargingInBatteryModeStatusIdeaNoteBook.then', value);
 						this.getUSBChargingInBatteryModeStatusIdeaNoteBook();

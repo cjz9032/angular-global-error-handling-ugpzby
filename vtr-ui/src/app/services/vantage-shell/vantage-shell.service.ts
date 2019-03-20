@@ -216,9 +216,15 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
-	public getPowerItsIntelligentCooling(): any {
-		if(this.phoenix){
-			return this.phoenix.hwsettings.power.its.IntelligentCooling ;
-		}
-	}
+	// public getPowerItsIntelligentCooling(): any {
+	// 	if(this.phoenix){
+	// 		return this.phoenix.hwsettings.power.its.IntelligentCooling ;
+	// 	}
+	// }
+	public getPowerItsIntelligentCooling(): any {
+        if (this.getPowerSettings() && this.getPowerSettings().its) {
+            return this.getPowerSettings().its;
+        }
+        return undefined;
+    }
 }
