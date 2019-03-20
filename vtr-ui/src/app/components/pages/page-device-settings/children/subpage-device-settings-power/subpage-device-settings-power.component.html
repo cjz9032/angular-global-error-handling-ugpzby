@@ -31,19 +31,19 @@
 	<div class="row">
 		<div class="col">
 			<vtr-ui-header-subpage [items]="headerMenuItems"
-			 [title]="title"
-			 [caption]="headerCaption"
-			 [menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
+				[title]="title"
+				[caption]="headerCaption"
+				[menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
 		</div>
 	</div>
 	<div *ngIf="value===1">
 		<div class="row py-5 smartsettings-card"
-		 id="cooling">
+			id="cooling">
 			<div class="col-10 mx-auto ">
 				<vtr-container-collapsible cardTitle="Power Smartsettings"
-				 [isCollapsed]="false"
-				 [allowCollapse]="false"
-				 [theme]="'blue'">
+					[isCollapsed]="false"
+					[allowCollapse]="false"
+					[theme]="'blue'">
 					<div class="row">
 						<div class="col-auto text-wrap subtitle">
 							<h3>Intelligent Cooling</h3>
@@ -56,15 +56,15 @@
 					<ul class="list-group list-group-flush">
 						<li class="">
 							<vtr-ui-row-switch [title]="'Intelligent cooling'"
-							 [caption]="''"
-							 [isSwitchVisible]=true
-							 [leftIcon]="['fas', 'search']"
-							 [readMoreText]="''"
-							 [showChildContent]="true"
-							 [theme]="'blue'"
-							 (toggleOnOff)="onIntelligentCoolingToggle($event)">
+								[caption]="''"
+								[isSwitchVisible]=true
+								[leftIcon]="['fas', 'search']"
+								[readMoreText]="''"
+								[showChildContent]="true"
+								[theme]="'blue'"
+								(toggleOnOff)="onIntelligentCoolingToggle($event)">
 								<div class="my-3"
-								 *ngIf="!intelligentCooling">
+									*ngIf="!intelligentCooling">
 									<!-- <vtr-ui-rectangle-radio [radioId]="'radio2'"
 											[group]="'radio'"
 											[label]="'PERFORMANCE'"
@@ -190,19 +190,27 @@
 							<h3>Intelligent Cooling</h3>
 							<p>Intelligent Cooling adjusts fan speed, maximum surface temperature, and performance.
 								This feature has below modes and are now accessible by Windows performance power slider.
-								<a class="read-more-link" (click)="openContextModal(template)">Read more.</a>
+								<a class="read-more-link"
+									(click)="openContextModal(template)">Read more.</a>
+
 								<ng-template #template>
-									<div class="modal-header">
-										<button type="button" class="close pull-right" aria-label="Close" (click)="closeContextModal()">
-										<span aria-hidden="true">&times;</span>
+									<div class="justify-content-end">
+										<button type="button"
+											class="close pull-right"
+											aria-label="Close"
+											(click)="closeContextModal()">
+											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>
 									<div class="modal-body">
-										<p><span>Quiet mode:</span>Slider is far left. The fan speed and performance are lowered and best battery life.</p>
-										<p><span>Quiet mode:</span>Slider is far left. The fan speed and performance are lowered and best battery life.</p>
-										<p><span>Quiet mode:</span>Slider is far left. The fan speed and performance are lowered and best battery life.</p>
+										<p><span>Quiet mode: </span>Slider is far left. The fan speed and performance are lowered and best battery
+											life.</p>
+										<p><span>Balanced mode: </span>Slider is center. Fan speed and performance experience.</p>
+										<p><span>Performance mode: </span>Slider is far right. Fan speed and performance.</p>
+
 									</div>
 								</ng-template>
+
 
 							</p>
 						</div>
@@ -213,7 +221,7 @@
 								<fa-icon [icon]="['fas', 'search']"></fa-icon>
 							</div>
 						</div>
-						<div class="col col-7">
+						<div class="col col-6">
 							<div class="int-cool-text">
 								Intelligent cooling
 							</div>
@@ -221,8 +229,9 @@
 						<div class="col-auto"><a class="settings-link"
 								href="#">Go to windows settings</a></div>
 						<div class="col">
-						<fa-icon class="question" [icon]="['far', 'question-circle']"></fa-icon>
-					</div>
+							<fa-icon class="question"
+								[icon]="['far', 'question-circle']"></fa-icon>
+						</div>
 
 					</div>
 
@@ -319,10 +328,10 @@
 	</div> -->
 
 	<div class="row py-5"
-	 id="battery">
+		id="battery">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible cardTitle="Battery Settings"
-			 [isCollapsed]="false">
+				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class="" *ngIf="toggleAirplanePowerModeFlag">
 						<vtr-ui-row-switch [title]="batterySettings.items[0].header"
@@ -391,7 +400,7 @@
 	</div>
 
 	<div class="row py-5"
-	 id="power">
+		id="power">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible cardTitle="Power Settings"
 			[isCollapsed]="false">
@@ -434,13 +443,13 @@
 	</div>
 
 	<div class="row py-5"
-	 id="other">
+		id="other">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible cardTitle="Other Settings"
-			 [isCollapsed]="false">
+				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""
-					 *ngFor="let item of otherSettings">
+						*ngFor="let item of otherSettings">
 						<vtr-ui-row-switch [title]="item.header"
 							[caption]="item.subHeader"
 							[isSwitchVisible]=true

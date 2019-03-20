@@ -83,6 +83,7 @@
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'white'"
+							[disabled] = "microphoneProperties.permission"
 							[tooltipText]="'You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode.'"
 							(toggleOnOff)="onToggleOfMicrophone($event)"
 							[isSwitchChecked]="microphoneProperties.muteDisabled">

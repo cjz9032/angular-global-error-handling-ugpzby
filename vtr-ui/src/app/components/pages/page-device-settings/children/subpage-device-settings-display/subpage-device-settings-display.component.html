@@ -28,8 +28,10 @@
 							(toggleOnOff)="onEyeCareModeStatusToggle($event)"
 							[theme]="'white'"
 							[tooltipText]="'Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.'">
-							<vtr-eye-care-mode [eyecareModeSettings]="eyecareDatasource" [enableSlider]="eyeCareModeStatus.status"
-								(eyecareTemparatureChange)="onEyecareTemparaturechange($event)" (resetTemparature)="onResetTemparature($event)"></vtr-eye-care-mode>
+							<vtr-eye-care-mode [eyecareModeSettings]="eyecareDatasource"
+								[enableSlider]="eyeCareModeStatus.status"
+								(eyecareTemparatureChange)="onEyecareTemparaturechange($event)"
+								(resetTemparature)="onResetTemparature($event)"></vtr-eye-care-mode>
 
 							<br />
 						</vtr-ui-row-switch>
