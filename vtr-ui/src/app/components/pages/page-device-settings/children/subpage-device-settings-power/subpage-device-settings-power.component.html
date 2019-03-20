@@ -1,49 +1,27 @@
 <div class="subpage-device-settings-power vtr-subpage">
-	<div class="btn-group btn-group-toggle"
-		ngbRadioGroup
-		style="margin-left:300px;margin-top:-150px;"
-		[(ngModel)]="value">
-		<label class="btn-primary"
-			ngbButtonLabel> 1
-			<input type="radio"
-				ngbButton
-				[value]="1" />
+	<div class="btn-group btn-group-toggle" ngbRadioGroup style="margin-left:300px;margin-top:-150px;" [(ngModel)]="value">
+		<label class="btn-primary" ngbButtonLabel> 1
+			<input type="radio" ngbButton [value]="1" />
 		</label>
-		<label class="btn-primary"
-			ngbButtonLabel> 2
-			<input type="radio"
-				ngbButton
-				[value]="2" />
+		<label class="btn-primary" ngbButtonLabel> 2
+			<input type="radio" ngbButton [value]="2" />
 		</label>
-		<label class="btn-primary"
-			ngbButtonLabel> 3
-			<input type="radio"
-				ngbButton
-				[value]="3" />
+		<label class="btn-primary" ngbButtonLabel> 3
+			<input type="radio" ngbButton [value]="3" />
 		</label>
-		<label class="btn-primary"
-			ngbButtonLabel> 4
-			<input type="radio"
-				ngbButton
-				[value]="4" />
+		<label class="btn-primary" ngbButtonLabel> 4
+			<input type="radio" ngbButton [value]="4" />
 		</label>
 	</div>
 	<div class="row">
 		<div class="col">
-			<vtr-ui-header-subpage [items]="headerMenuItems"
-			 [title]="title"
-			 [caption]="headerCaption"
-			 [menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
+			<vtr-ui-header-subpage [items]="headerMenuItems" [title]="title" [caption]="headerCaption" [menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
 		</div>
 	</div>
 	<div *ngIf="value===1">
-		<div class="row py-5 smartsettings-card"
-		 id="cooling">
+		<div class="row py-5 smartsettings-card" id="cooling">
 			<div class="col-10 mx-auto ">
-				<vtr-container-collapsible cardTitle="Power Smartsettings"
-				 [isCollapsed]="false"
-				 [allowCollapse]="false"
-				 [theme]="'blue'">
+				<vtr-container-collapsible cardTitle="Power Smartsettings" [isCollapsed]="false" [allowCollapse]="false" [theme]="'blue'">
 					<div class="row">
 						<div class="col-auto text-wrap subtitle">
 							<h3>Intelligent Cooling</h3>
@@ -55,16 +33,9 @@
 					</div>
 					<ul class="list-group list-group-flush">
 						<li class="">
-							<vtr-ui-row-switch [title]="'Intelligent cooling'"
-							 [caption]="''"
-							 [isSwitchVisible]=true
-							 [leftIcon]="['fas', 'search']"
-							 [readMoreText]="''"
-							 [showChildContent]="true"
-							 [theme]="'blue'"
-							 (toggleOnOff)="onIntelligentCoolingToggle($event)">
-								<div class="my-3"
-								 *ngIf="!intelligentCooling">
+							<vtr-ui-row-switch [title]="'Intelligent cooling'" [caption]="''" [isSwitchVisible]=true [leftIcon]="['fas', 'search']"
+							 [readMoreText]="''" [showChildContent]="true" [theme]="'blue'" (toggleOnOff)="onIntelligentCoolingToggle($event)">
+								<div class="my-3" *ngIf="!intelligentCooling">
 									<!-- <vtr-ui-rectangle-radio [radioId]="'radio2'"
 											[group]="'radio'"
 											[label]="'PERFORMANCE'"
@@ -84,13 +55,9 @@
 	</div>
 
 	<div *ngIf="value===2">
-		<div class="row py-5 smartsettings-card"
-			id="cooling">
+		<div class="row py-5 smartsettings-card" id="cooling">
 			<div class="col-10 mx-auto ">
-				<vtr-container-collapsible cardTitle="Power Smartsettings"
-					[isCollapsed]="false"
-					[allowCollapse]="false"
-					[theme]="'blue'">
+				<vtr-container-collapsible cardTitle="Power Smartsettings" [isCollapsed]="false" [allowCollapse]="false" [theme]="'blue'">
 					<div class="row">
 						<div class="col-auto text-wrap subtitle">
 							<h3>Intelligent Cooling</h3>
@@ -102,16 +69,9 @@
 					</div>
 					<ul class="list-group list-group-flush">
 						<li class="">
-							<vtr-ui-row-switch [title]="'Intelligent cooling'"
-								[caption]="''"
-								[isSwitchVisible]=true
-								[leftIcon]="['fas', 'search']"
-								[readMoreText]="''"
-								[showChildContent]="true"
-								[theme]="'blue'"
-								(toggleOnOff)="onIntelligentCoolingToggle($event)">
-								<div class="my-3"
-									*ngIf="!intelligentCooling">
+							<vtr-ui-row-switch [title]="'Intelligent cooling'" [caption]="''" [isSwitchVisible]=true [leftIcon]="['fas', 'search']"
+							 [readMoreText]="''" [showChildContent]="true" [theme]="'blue'" (toggleOnOff)="onIntelligentCoolingToggle($event)">
+								<div class="my-3" *ngIf="!intelligentCooling">
 									<!-- <vtr-ui-rectangle-radio [radioId]="'radio2'"
 											[group]="'radio'"
 											[label]="'PERFORMANCE'"
@@ -131,13 +91,9 @@
 	</div>
 
 	<div *ngIf="value===2">
-		<div class="row py-5 smartsettings-card"
-			id="cooling">
+		<div class="row py-5 smartsettings-card" id="cooling">
 			<div class="col-10 mx-auto ">
-				<vtr-container-collapsible cardTitle="Power Smartsettings"
-					[isCollapsed]="false"
-					[allowCollapse]="false"
-					[theme]="'blue'">
+				<vtr-container-collapsible cardTitle="Power Smartsettings" [isCollapsed]="false" [allowCollapse]="false" [theme]="'blue'">
 					<div class="row">
 						<div class="col-auto text-wrap subtitle">
 							<h3>Intelligent Cooling</h3>
@@ -149,24 +105,11 @@
 					</div>
 					<ul class="list-group list-group-flush">
 						<li class="">
-							<vtr-ui-row-switch [title]="'Intelligent cooling'"
-								[caption]="''"
-								[isSwitchVisible]=true
-								[leftIcon]="['fas', 'search']"
-								[readMoreText]="''"
-								[showChildContent]="true"
-								[theme]="'blue'"
-								(toggleOnOff)="onIntelligentCoolingToggle($event)">
-								<div class="my-3"
-									*ngIf="!intelligentCooling">
-									<vtr-ui-rectangle-radio [radioId]="'radio1'"
-										[group]="'radio'"
-										[label]="'PERFORMANCE'"
-										[value]="'PERFORMANCE'"></vtr-ui-rectangle-radio>
-									<vtr-ui-rectangle-radio [radioId]="'radio2'"
-										[group]="'radio'"
-										[label]="'QUIET & COOL'"
-										[value]="'QUIET & COOL'"></vtr-ui-rectangle-radio>
+							<vtr-ui-row-switch [title]="'Intelligent cooling'" [caption]="''" [isSwitchVisible]=true [leftIcon]="['fas', 'search']"
+							 [readMoreText]="''" [showChildContent]="true" [theme]="'blue'" (toggleOnOff)="onIntelligentCoolingToggle($event)">
+								<div class="my-3" *ngIf="!intelligentCooling">
+									<vtr-ui-rectangle-radio [radioId]="'radio1'" [group]="'radio'" [label]="'PERFORMANCE'" [value]="'PERFORMANCE'"></vtr-ui-rectangle-radio>
+									<vtr-ui-rectangle-radio [radioId]="'radio2'" [group]="'radio'" [label]="'QUIET & COOL'" [value]="'QUIET & COOL'"></vtr-ui-rectangle-radio>
 
 								</div>
 							</vtr-ui-row-switch>
@@ -178,13 +121,9 @@
 	</div>
 
 	<div *ngIf="value===3">
-		<div class="row py-5 smartsettings-card"
-			id="cooling">
+		<div class="row py-5 smartsettings-card" id="cooling">
 			<div class="col-10 mx-auto ">
-				<vtr-container-collapsible cardTitle="Power Smartsettings"
-					[isCollapsed]="false"
-					[allowCollapse]="false"
-					[theme]="'blue'">
+				<vtr-container-collapsible cardTitle="Power Smartsettings" [isCollapsed]="false" [allowCollapse]="false" [theme]="'blue'">
 					<div class="row">
 						<div class="col-auto text-wrap subtitle">
 							<h3>Intelligent Cooling</h3>
@@ -195,15 +134,16 @@
 								<ng-template #template>
 									<div class="justify-content-end">
 										<button type="button" class="close pull-right" aria-label="Close" (click)="closeContextModal()">
-												<span aria-hidden="true">&times;</span>
-												</button>
-											</div>
-								<div class="modal-body">
-										<p><span>Quiet mode: </span>Slider is far left. The fan speed and performance are lowered and best battery life.</p>
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<p><span>Quiet mode: </span>Slider is far left. The fan speed and performance are lowered and best battery
+											life.</p>
 										<p><span>Balanced mode: </span>Slider is center. Fan speed and performance experience.</p>
 										<p><span>Performance mode: </span>Slider is far right. Fan speed and performance.</p>
 
-								</div>
+									</div>
 								</ng-template>
 
 
@@ -216,16 +156,15 @@
 								<fa-icon [icon]="['fas', 'search']"></fa-icon>
 							</div>
 						</div>
-						<div class="col col-7">
+						<div class="col col-6">
 							<div class="int-cool-text">
 								Intelligent cooling
 							</div>
 						</div>
-						<div class="col-auto"><a class="settings-link"
-								href="#">Go to windows settings</a></div>
+						<div class="col-auto"><a class="settings-link" href="#">Go to windows settings</a></div>
 						<div class="col">
-						<fa-icon class="question" [icon]="['far', 'question-circle']"></fa-icon>
-					</div>
+							<fa-icon class="question" [icon]="['far', 'question-circle']"></fa-icon>
+						</div>
 
 					</div>
 
@@ -235,39 +174,23 @@
 	</div>
 
 	<div *ngIf="value===4">
-		<div class="row py-5 smartsettings-card"
-			id="cooling">
+		<div class="row py-5 smartsettings-card" id="cooling">
 			<div class="col-10 mx-auto ">
-				<vtr-container-collapsible cardTitle="Power Smartsettings"
-					[isCollapsed]="false"
-					[allowCollapse]="false"
-					[theme]="'blue'">
+				<vtr-container-collapsible cardTitle="Power Smartsettings" [isCollapsed]="false" [allowCollapse]="false" [theme]="'blue'">
 					<div class="row">
 						<div class="col-auto text-wrap subtitle">
 							<h3>Battery & Quiet</h3>
 							<p>Battery & Quiet lorem ipsum is a long established fact that a reader will be distracted
-								by the readable content of a page when looking at its layout. <a class="read-more-link"
-									href="#">Read more.</a></p>
+								by the readable content of a page when looking at its layout. <a class="read-more-link" href="#">Read more.</a></p>
 						</div>
 					</div>
 					<ul class="list-group list-group-flush">
 						<li class="">
-							<vtr-ui-row-switch [showChildContent]="true"
-								[theme]="'blue'">
-								<div class="my-3"
-									*ngIf="!intelligentCooling">
-									<vtr-ui-rectangle-radio [radioId]="'radio1'"
-										[group]="'radio'"
-										[label]="'INTELLIGENT COOLING'"
-										[value]="'INTELLIGENT COOLING'"></vtr-ui-rectangle-radio>
-									<vtr-ui-rectangle-radio [radioId]="'radio2'"
-										[group]="'radio'"
-										[label]="'EXTREME PERFORMANCE'"
-										[value]="'EXTREME PERFORMANCE'"></vtr-ui-rectangle-radio>
-									<vtr-ui-rectangle-radio [radioId]="'radio3'"
-										[group]="'radio'"
-										[label]="'BATTERY & QUIET'"
-										[value]="'BATTERY & QUIET'"></vtr-ui-rectangle-radio>
+							<vtr-ui-row-switch [showChildContent]="true" [theme]="'blue'">
+								<div class="my-3" *ngIf="!intelligentCooling">
+									<vtr-ui-rectangle-radio [radioId]="'radio1'" [group]="'radio'" [label]="'INTELLIGENT COOLING'" [value]="'INTELLIGENT COOLING'"></vtr-ui-rectangle-radio>
+									<vtr-ui-rectangle-radio [radioId]="'radio2'" [group]="'radio'" [label]="'EXTREME PERFORMANCE'" [value]="'EXTREME PERFORMANCE'"></vtr-ui-rectangle-radio>
+									<vtr-ui-rectangle-radio [radioId]="'radio3'" [group]="'radio'" [label]="'BATTERY & QUIET'" [value]="'BATTERY & QUIET'"></vtr-ui-rectangle-radio>
 
 								</div>
 							</vtr-ui-row-switch>
@@ -321,19 +244,14 @@
 		</div>
 	</div> -->
 
-	<div class="row py-5"
-	 id="battery">
+	<div class="row py-5" id="battery">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible cardTitle="Battery Settings"
-			 [isCollapsed]="false">
+			<vtr-container-collapsible cardTitle="Battery Settings" [isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class="">
-						<vtr-ui-row-switch [title]="batterySettings.items[0].header"
-							[caption]="batterySettings.items[0].subHeader"
-							[isSwitchVisible]=true
-							[leftIcon]="batterySettings.items[0].leftImageSource"
-							[readMoreText]="batterySettings.items[0].readMoreText"
-							[tooltipText]="batterySettings.items[0].tooltipText">
+						<vtr-ui-row-switch [title]="batterySettings.items[0].header" [caption]="batterySettings.items[0].subHeader"
+						 [isSwitchVisible]=true [leftIcon]="batterySettings.items[0].leftImageSource" [readMoreText]="batterySettings.items[0].readMoreText"
+						 [tooltipText]="batterySettings.items[0].tooltipText">
 						</vtr-ui-row-switch>
 					</li>
 					<!-- MVP 2 feature -->
@@ -365,25 +283,17 @@
 						<!--
 						*ngIf="batterySettings.status.expressCharging"
 						-->
-						<vtr-ui-row-switch [title]="batterySettings.items[2].header"
-							[caption]="batterySettings.items[2].subHeader"
-							[isSwitchVisible]=true
-							[leftIcon]="batterySettings.items[2].leftImageSource"
-							[tooltipText]="batterySettings.items[2].tooltipText"
-							[isSwitchChecked]="batterySettings.status.expressCharging"
-							(toggleOnOff)="changeBatteryMode($event,'expressCharging')">
+						<vtr-ui-row-switch [title]="batterySettings.items[2].header" [caption]="batterySettings.items[2].subHeader"
+						 [isSwitchVisible]=true [leftIcon]="batterySettings.items[2].leftImageSource" [tooltipText]="batterySettings.items[2].tooltipText"
+						 [isSwitchChecked]="batterySettings.status.expressCharging" (toggleOnOff)="changeBatteryMode($event,'expressCharging')">
 						</vtr-ui-row-switch>
 					</li>
 					<li class="">
 						<!-- *ngIf="batterySettings.status.conservationMode"* -->
-						<vtr-ui-row-switch [title]="batterySettings.items[3].header"
-							[caption]="batterySettings.items[3].subHeader"
-							[isSwitchVisible]=true
-							[leftIcon]="batterySettings.items[3].leftImageSource"
-							[readMoreText]="batterySettings.items[3].readMoreText"
-							[tooltipText]="batterySettings.items[3].tooltipText"
-							[isSwitchChecked]="batterySettings.status.conservationMode"
-							(toggleOnOff)="changeBatteryMode($event,'conservationMode')">
+						<vtr-ui-row-switch [title]="batterySettings.items[3].header" [caption]="batterySettings.items[3].subHeader"
+						 [isSwitchVisible]=true [leftIcon]="batterySettings.items[3].leftImageSource" [readMoreText]="batterySettings.items[3].readMoreText"
+						 [tooltipText]="batterySettings.items[3].tooltipText" [isSwitchChecked]="batterySettings.status.conservationMode"
+						 (toggleOnOff)="changeBatteryMode($event,'conservationMode')">
 						</vtr-ui-row-switch>
 					</li>
 
@@ -392,20 +302,13 @@
 		</div>
 	</div>
 
-	<div class="row py-5"
-	 id="power">
+	<div class="row py-5" id="power">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible cardTitle="Power Settings"
-			 [isCollapsed]="false">
+			<vtr-container-collapsible cardTitle="Power Settings" [isCollapsed]="false">
 				<ul class="list-group list-group-flush">
-					<li class=""
-						*ngFor="let item of powerSettings">
-						<vtr-ui-row-switch [title]="item.header"
-							[caption]="item.subHeader"
-							[isSwitchVisible]=true
-							[leftIcon]="item.leftImageSource"
-							[rightIcon]="item.rightImageSource"
-							[tooltipText]="item.tooltipText">
+					<li class="" *ngFor="let item of powerSettings">
+						<vtr-ui-row-switch [title]="item.header" [caption]="item.subHeader" [isSwitchVisible]=true [leftIcon]="item.leftImageSource"
+						 [rightIcon]="item.rightImageSource" [tooltipText]="item.tooltipText">
 						</vtr-ui-row-switch>
 					</li>
 				</ul>
@@ -413,18 +316,12 @@
 		</div>
 	</div>
 
-	<div class="row py-5"
-	 id="other">
+	<div class="row py-5" id="other">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible cardTitle="Other Settings"
-			 [isCollapsed]="false">
+			<vtr-container-collapsible cardTitle="Other Settings" [isCollapsed]="false">
 				<ul class="list-group list-group-flush">
-					<li class=""
-					 *ngFor="let item of otherSettings">
-						<vtr-ui-row-switch [title]="item.header"
-						 [caption]="item.subHeader"
-						 [isSwitchVisible]=true
-						 [leftIcon]="item.leftImageSource">
+					<li class="" *ngFor="let item of otherSettings">
+						<vtr-ui-row-switch [title]="item.header" [caption]="item.subHeader" [isSwitchVisible]=true [leftIcon]="item.leftImageSource">
 						</vtr-ui-row-switch>
 					</li>
 				</ul>
