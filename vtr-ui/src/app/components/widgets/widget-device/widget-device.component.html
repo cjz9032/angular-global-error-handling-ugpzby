@@ -7,15 +7,18 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="device-sub-header">Serial: {{myDevice.sn}}</div>
-			<div class="sub-header-separator">
-				<fa-icon [icon]="['fas', 'minus']"></fa-icon>
+			<div class="col">
+				<span class="device-sub-header text-wrap">Serial: {{myDevice.sn}}</span>
+				<span class="sub-header-separator text-wrap">
+					<fa-icon [icon]="['fas', 'minus']"></fa-icon>
+				</span>
+				<span class="device-sub-header text-wrap">Product number: {{myDevice.productNo}}</span>
+				<span class="sub-header-separator text-wrap">
+					<fa-icon [icon]="['fas', 'minus']"></fa-icon>
+				</span>
+				<span class="device-sub-header text-wrap">Bios version: {{myDevice.bios}}</span>
 			</div>
-			<div class="device-sub-header">Product number: {{myDevice.productNo}}</div>
-			<div class="sub-header-separator">
-				<fa-icon [icon]="['fas', 'minus']"></fa-icon>
-			</div>
-			<div class="device-sub-header">Bios version: {{myDevice.bios}}</div>
+
 		</div>
 		<div class="row">
 			<div class="col">
