@@ -1,0 +1,41 @@
+@import "../../../../../app.theme.scss";
+
+.title {
+	font-size: 4rem;
+
+}
+
+.subtitle {
+	font-size: 1.4rem;
+}
+.updates-heading{
+	font-size: 3rem;
+	margin-left: 3.5rem;
+	margin-top: 3.5rem;
+
+}
+
+.list-group {
+	margin: 3.5rem;
+
+	.list-group-item {
+		background: $shade_extralight;
+		padding: 2rem;
+
+		.update-title {
+			font-size: 1.6rem;
+			font-weight: bold;
+			padding-top: 1.2rem;
+
+			.update-number {
+				font-weight: normal;
+			}
+		}
+
+		.question {
+			color: $main;
+			font-size: 1.8rem;
+			cursor: pointer;
+		}
+	}
+}

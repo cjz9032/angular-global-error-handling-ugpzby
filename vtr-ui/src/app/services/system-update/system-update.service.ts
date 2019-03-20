@@ -7,6 +7,8 @@ import { UpdateInstallationResult } from 'src/app/data-models/system-update/upda
 import { AvailableUpdate } from 'src/app/data-models/system-update/available-update.model';
 import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
 import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
+import { UpdateHistory } from 'src/app/data-models/system-update/update-history.model';
+import { ScheduleUpdateStatus } from 'src/app/data-models/system-update/ScheduleUpdateStatus';
 
 @Injectable({
 	providedIn: 'root'
@@ -14,10 +16,12 @@ import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
 export class SystemUpdateService {
 
 	private systemUpdateBridge: any;
+	public autoUpdateStatus: any;
 	public isShellAvailable = false;
 	public isCheckForUpdateComplete = true;
 	public isUpdatesAvailable = false;
 	public updateInfo: AvailableUpdate;
+	public installationHistory: Array<UpdateHistory>;
 
 	constructor(
 		shellService: VantageShellService
@@ -43,7 +47,15 @@ export class SystemUpdateService {
 	 */
 	public getUpdateSchedule() {
 		if (this.systemUpdateBridge) {
-			return this.systemUpdateBridge.getUpdateSchedule();
+			return this.systemUpdateBridge.getUpdateSchedule()
+				.then((response) => {
+					console.log('getUpdateSchedule', response);
+					this.autoUpdateStatus = {
+						criticalAutoUpdates: (response.criticalAutoUpdates === 'ON') ? true : false,
+						recommendedAutoUpdates: (response.recommendedAutoUpdates === 'ON') ? true : false
+					};
+					this.commonService.sendNotification(UpdateProgress.AutoUpdateStatus, this.autoUpdateStatus);
+				});
 		}
 		return undefined;
 	}
@@ -54,14 +66,33 @@ export class SystemUpdateService {
 	 * @param recommendedUpdate  boolean value, true = on, false = off
 	 */
 	public setUpdateSchedule(criticalUpdate: boolean, recommendedUpdate: boolean) {
-		// {
-		// criticalAutoUpdates: "ON", // "ON"|"OFF"
-		// recommendedAutoUpdates: "ON" // "ON"|"OFF"
-		// }
+		if (this.systemUpdateBridge) {
+			const request = {
+				criticalAutoUpdates: (criticalUpdate) ? 'ON' : 'OFF',
+				recommendedAutoUpdates: (recommendedUpdate) ? 'ON' : 'OFF'
+			};
+			this.systemUpdateBridge.setUpdateSchedule(request)
+				.then((response) => {
+					console.log('setUpdateSchedule', response);
+				}).catch((error) => {
+					// get current status
+					this.getUpdateSchedule();
+				});
+		}
 	}
 
 	public getUpdateHistory() {
-
+		if (this.systemUpdateBridge) {
+			this.systemUpdateBridge.getUpdateHistory()
+				.then((response: Array<UpdateHistory>) => {
+					console.log('getUpdateHistory', response);
+					this.installationHistory = response;
+					this.commonService.sendNotification(UpdateProgress.FullHistory, this.installationHistory);
+				}).catch((error) => {
+					// get current status
+					console.log('getUpdateHistory.error', error);
+				});
+		}
 	}
 
 	public checkForUpdates() {
@@ -82,6 +113,8 @@ export class SystemUpdateService {
 				} else {
 					this.commonService.sendNotification(UpdateProgress.UpdatesNotAvailable);
 				}
+			}).catch((error) => {
+				console.log('checkForUpdates.error', error);
 			});
 		}
 		return undefined;
@@ -89,52 +122,76 @@ export class SystemUpdateService {
 
 	public cancelUpdateCheck() {
 		if (this.systemUpdateBridge) {
-			this.systemUpdateBridge.cancelSearch().then((status: boolean) => {
-				// todo: ui changes to show on update cancel
-			}).catch((error) => {
-				console.log('cancelUpdateCheck', error);
+			this.systemUpdateBridge.cancelSearch()
+				.then((status: boolean) => {
+					// todo: ui changes to show on update cancel
+				})
+				.catch((error) => {
+					console.log('cancelUpdateCheck.error', error);
+				});
+		}
+	}
+
+	public getScheduleUpdateStatus(canReportProgress: boolean) {
+		if (this.systemUpdateBridge) {
+			this.systemUpdateBridge.getStatus(canReportProgress, (response: any) => {
+				console.log('getScheduleUpdateStatus callback', response);
+				this.processScheduleUpdate(response);
+			}).then((response: ScheduleUpdateStatus) => {
+				console.log('getScheduleUpdateStatus response', response);
+				this.processScheduleUpdate(response);
 			});
 		}
 	}
 
-	public getStatus() {
-
-		// 1. reportProgress //true or false
-
-		// 2. function callback
+	private processScheduleUpdate(response: any) {
+		const { status } = response;
+		if (status.toLowerCase() === 'installing') {
+			this.commonService.sendNotification(UpdateProgress.ScheduleUpdateInstalling, response);
+		} else if (status.toLowerCase() === 'checking') {
+			this.commonService.sendNotification(UpdateProgress.ScheduleUpdateChecking, response);
+		} else if (status.toLowerCase() === 'downloading') {
+			this.commonService.sendNotification(UpdateProgress.ScheduleUpdateDownloading, response);
+		} else if (status === 'idle') {
+			this.commonService.sendNotification(UpdateProgress.ScheduleUpdateIdle, response);
+		}
 	}
 
-	public installUpdates() {
+	public installAllUpdates() {
 		if (this.systemUpdateBridge && this.isUpdatesAvailable) {
-			const packages = this.mapToInstallRequest(this.updateInfo.updateList);
-			this.systemUpdateBridge.installUpdates(packages, (progress: number) => {
-				console.log('installUpdates callback', progress);
-				this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);
-			}).then((response: UpdateInstallationResult) => {
-				console.log('installUpdates response', response);
-				this.commonService.sendNotification(UpdateProgress.InstallationComplete, response);
-			});
+			const updates = this.mapToInstallRequest(this.updateInfo.updateList);
+			this.installUpdates(updates);
 		}
 	}
 
 	public installSelectedUpdates() {
 		if (this.systemUpdateBridge && this.isUpdatesAvailable) {
 			const updatesToInstall = this.getSelectedUpdates(this.updateInfo.updateList);
-			const packages = this.mapToInstallRequest(updatesToInstall);
-			console.log('installSelectedUpdates', updatesToInstall, packages);
+			const updates = this.mapToInstallRequest(updatesToInstall);
+			console.log('installSelectedUpdates', updatesToInstall, updates);
+			this.installUpdates(updates);
+		}
+	}
 
-			this.systemUpdateBridge.installUpdates(packages, (progress: number) => {
-				console.log('installSelectedUpdates callback', progress);
-				this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);
-			}).then((response: UpdateInstallationResult) => {
-				console.log('installSelectedUpdates response', response);
-				this.commonService.sendNotification(UpdateProgress.InstallationComplete, response);
-			});
+	public installFailedUpdate(update: InstallUpdate) {
+		if (this.systemUpdateBridge) {
+			console.log('installFailedUpdate', update);
+			const updates = new Array<InstallUpdate>();
+			updates.push(update);
+			this.installUpdates(updates);
 		}
 	}
 
 	public restartWindows() {
-
+		if (this.systemUpdateBridge) {
+			this.systemUpdateBridge.restartWindows()
+				.then((status: boolean) => {
+					// todo: ui changes to show on windows is restarting
+				})
+				.catch((error) => {
+					console.log('cancelUpdateCheck.error', error);
+				});
+		}
 	}
 
 	public getIgnoredUpdates() {
@@ -161,6 +218,35 @@ export class SystemUpdateService {
 		}
 	}
 
+	public sortInstallationHistory(history: Array<UpdateHistory>, isAscending = true) {
+		if (history) {
+			history.sort((a: UpdateHistory, b: UpdateHistory) => {
+				const d1 = new Date(b.utcInstallDate);
+				const d2 = new Date(a.utcInstallDate);
+				if (!isAscending) {
+					return d2.getTime() - d1.getTime();
+				}
+				return d1.getTime() - d2.getTime();
+			});
+		}
+	}
+
+	private installUpdates(updates: Array<InstallUpdate>) {
+		let isInvoked = false;
+		this.systemUpdateBridge.installUpdates(updates, (progress: any) => {
+			if (!isInvoked) {
+				isInvoked = true;
+				this.commonService.sendNotification(UpdateProgress.InstallationStarted);
+			}
+			console.log('installUpdates callback', progress);
+			this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);
+		}).then((response: UpdateInstallationResult) => {
+			console.log('installUpdates response', response);
+			this.mapInstallationStatus(this.updateInfo.updateList, response.updateResultList);
+			this.commonService.sendNotification(UpdateProgress.InstallationComplete, response);
+		});
+	}
+
 	private mapToInstallRequest(updateList: Array<AvailableUpdateDetail>): InstallUpdate[] {
 		const packageToInstall: InstallUpdate[] = [];
 
@@ -176,34 +262,43 @@ export class SystemUpdateService {
 	}
 
 	private mapAvailableUpdateResponse(updateList: Array<any>): AvailableUpdateDetail[] {
-		const packageToInstall: AvailableUpdateDetail[] = [];
+		const updates: AvailableUpdateDetail[] = [];
 
 		if (updateList && updateList.length > 0) {
 			updateList.forEach((update) => {
-				const pkg = new AvailableUpdateDetail();
-				pkg.licenseUrl = update.licenseUrl;
-				pkg.packageDesc = update.packageDesc;
-				pkg.packageID = update.packageID;
-				pkg.packageName = update.packageName;
-				pkg.packageRebootType = update.packageRebootType;
-				pkg.packageReleaseDate = update.packageReleaseDate;
-				pkg.packageSeverity = update.packageSeverity;
-				pkg.packageSize = update.packageSize;
-				pkg.packageTips = update.packageTips;
-				pkg.packageType = update.packageType;
-				pkg.packageVendor = update.packageVendor;
-				pkg.packageVersion = update.packageVersion;
-				pkg.readmeUrl = update.readmeUrl;
-				pkg.coreqPackageID = update.coreqPackageID;
-				pkg.currentInstalledVersion = update.currentInstalledVersion;
-				pkg.diskSpaceRequired = update.diskSpaceRequired;
-				pkg.isInstalled = false;
-				pkg.isSelected = true;
-				pkg.installationStatus = UpdateActionResult.Unknown;
-				packageToInstall.push(pkg);
+				const updateDetail = new AvailableUpdateDetail();
+				updateDetail.licenseUrl = update.licenseUrl;
+				updateDetail.packageDesc = update.packageDesc;
+				updateDetail.packageID = update.packageID;
+				updateDetail.packageName = update.packageName;
+				updateDetail.packageRebootType = update.packageRebootType;
+				updateDetail.packageReleaseDate = update.packageReleaseDate;
+				updateDetail.packageSeverity = update.packageSeverity;
+				updateDetail.packageSize = update.packageSize;
+				updateDetail.packageTips = update.packageTips;
+				updateDetail.packageType = update.packageType;
+				updateDetail.packageVendor = update.packageVendor;
+				updateDetail.packageVersion = update.packageVersion;
+				updateDetail.readmeUrl = update.readmeUrl;
+				updateDetail.coreqPackageID = update.coreqPackageID;
+				updateDetail.currentInstalledVersion = update.currentInstalledVersion;
+				updateDetail.diskSpaceRequired = update.diskSpaceRequired;
+				updateDetail.isInstalled = false;
+				updateDetail.isSelected = true;
+				updateDetail.installationStatus = UpdateActionResult.Unknown;
+				updates.push(updateDetail);
 			});
 		}
-		return packageToInstall;
+		return updates;
+	}
+
+	private mapInstallationStatus(updates: AvailableUpdateDetail[], updateInstallationList: Array<any>) {
+		updates.forEach((update: AvailableUpdateDetail) => {
+			const pkg = updateInstallationList.find((uil) => {
+				return update.packageID === uil.packageID;
+			});
+			update.installationStatus = pkg.actionResult;
+		});
 	}
 
 	private getSelectedUpdates(updateList: Array<AvailableUpdateDetail>): Array<AvailableUpdateDetail> {
@@ -215,4 +310,6 @@ export class SystemUpdateService {
 		}
 		return undefined;
 	}
+
+
 }

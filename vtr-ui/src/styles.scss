@@ -61,7 +61,7 @@ html {
 
 @media #{$mediaquery_6} {
 	html {
-		font-size: 50%;
+		font-size: 42%;
 		&.is-arm {
 			font-size: 60%;
 		}
@@ -70,7 +70,7 @@ html {
 
 @media #{$mediaquery_7} {
 	html {
-		font-size: 47%;
+		font-size: 36%;
 		&.is-arm {
 			font-size: 47%;
 		}
@@ -95,6 +95,7 @@ body {
 button {
 	letter-spacing: 0.1em;
 }
+
 
 .vtr-page {
 	height: 100%;
@@ -226,3 +227,25 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		text-align: left;
 	}
 }
+
+.failure {
+	color: $alt;
+}
+.success {
+	color: $go_dark;
+}
+
+/*common-confirmation-modal-styles*/
+
+.common-confirmation-modal{
+	.modal-dialog{
+		margin-top: 8rem;
+	.modal-content{
+		background-color: transparent;
+		border: none;
+	}
+}
+
+}
+
+

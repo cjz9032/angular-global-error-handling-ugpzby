@@ -3,7 +3,9 @@
 		name="{{group}}"
 		type="radio"
 		[value]="value"
-		[checked]="checked" />
+		[checked]="checked"
+		[disabled]="disabled"
+		(change)="onChange($event)"/>
 	<label for="{{radioId}}">
 		<span>{{label}}</span>
 		<fa-icon class="icon"

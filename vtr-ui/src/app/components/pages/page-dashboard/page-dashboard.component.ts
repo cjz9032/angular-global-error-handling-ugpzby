@@ -6,6 +6,8 @@ import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Status } from 'src/app/data-models/widgets/status.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { CMSService } from 'src/app/services/cms/cms.service';
+
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
@@ -20,10 +22,17 @@ export class PageDashboardComponent implements OnInit {
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
 
-	forwardLink = {
+	heroBannerItems = [];
+	cardContentPositionB: any = {};
+	cardContentPositionC: any = {};
+	cardContentPositionD: any = {};
+	cardContentPositionE: any = {};
+	cardContentPositionF: any = {};
+
+	/*forwardLink = {
 		path: 'dashboard-customize',
 		label: 'Customize Dashboard'
-	};
+	};*/
 
 	constructor(
 		public dashboardService: DashboardService,
@@ -32,7 +41,8 @@ export class PageDashboardComponent implements OnInit {
 		private modalService: NgbModal,
 		config: NgbModalConfig,
 		private commonService: CommonService,
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
+		public cmsService: CMSService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -44,6 +54,50 @@ export class PageDashboardComponent implements OnInit {
 			this.getSystemInfo();
 			this.getSecurityStatus();
 		}
+
+		let queryOptions = {
+			'Page': 'dashboard',
+			'Lang': 'EN',
+			'GEO': 'US',
+			'OEM': 'Lenovo',
+			'OS': 'Windows',
+			'Segment': 'SMB',
+			'Brand': 'Lenovo'
+		};
+
+		this.cmsService.fetchCMSContent(queryOptions).subscribe(
+			(response: any) => {
+				console.log('fetchCMSContent response', response);
+
+				this.heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
+					return {
+						'albumId': 1,
+						'id': index + 1,
+						'source': record.Title,
+						'title': record.Description,
+						'url': record.FeatureImage,
+						'ActionLink': record.ActionLink
+					}
+				});
+
+				this.cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+				this.cardContentPositionC = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
+
+				console.log('this.cardContentPositionB', this.cardContentPositionB);
+				console.log('this.cardContentPositionC', this.cardContentPositionC);
+
+				this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+				this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
+
+				this.cardContentPositionD = this.cmsService.getOneCMSContent(response, 'full-width-title-image-background', 'position-D')[0];
+
+				this.cardContentPositionE = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-E')[0];
+				this.cardContentPositionF = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-F')[0];
+			},
+			error => {
+				console.log('fetchCMSContent error', error);
+			}
+		);
 	}
 
 	onFeedbackModal(content: any) {
@@ -106,7 +160,7 @@ export class PageDashboardComponent implements OnInit {
 				const { total, used } = response.memory;
 				memory.detail = `${this.commonService.formatBytes(used)} of ${this.commonService.formatBytes(total)}`;
 				const percent = (used / total) * 100;
-				if (percent < 10) {
+				if (percent > 70) {
 					memory.status = 1;
 				} else {
 					memory.status = 0;
@@ -128,7 +182,7 @@ export class PageDashboardComponent implements OnInit {
 				const { total, used } = response.disk;
 				disk.detail = `${this.commonService.formatBytes(used)} of ${this.commonService.formatBytes(total)}`;
 				const percent = (used / total) * 100;
-				if (percent > 70) {
+				if (percent > 90) {
 					disk.status = 1;
 				} else {
 					disk.status = 0;
@@ -141,16 +195,26 @@ export class PageDashboardComponent implements OnInit {
 			warranty.id = 'warranty';
 			warranty.title = 'Warranty';
 			warranty.detail = 'Warranty not found';
-			warranty.path = 'ms-settings:storagesense';
+			warranty.path = '/support';
 			warranty.asLink = false;
 			/* warranty.isSystemLink = true; */
 			warranty.isSystemLink = false;
 			warranty.type = 'system';
 
 			if (response.warranty) {
-				// const status = response.warranty.status;
-				warranty.detail = `Until ${this.commonService.formatDate(response.warranty.expired)}`;
-				warranty.status = 0;
+				const warrantyDate = this.commonService.formatDate(response.warranty.expired);
+				// in warranty
+				if (response.warranty.status === 0) {
+					warranty.detail = `Until ${warrantyDate}`;
+					warranty.status = 0;
+				}
+				if (response.warranty.status === 1) {
+					warranty.detail = `Warranty expired on ${warrantyDate}`;
+					warranty.status = 1;
+				} else {
+					warranty.detail = `Not available`;
+					warranty.status = 1;
+				}
 			}
 			systemStatus.push(warranty);
 
@@ -206,8 +270,8 @@ export class PageDashboardComponent implements OnInit {
 			wiFi.path = 'wifi-security';
 			wiFi.type = 'security';
 
-			if (response.wiFi) {
-				if (response.wiFi.status) {
+			if (response.wifiSecurity) {
+				if (response.wifiSecurity.status) {
 					wiFi.status = 0;
 					wiFi.detail = 'Enabled';
 				} else {

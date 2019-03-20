@@ -10,7 +10,6 @@ import { CommonService } from './services/common/common.service';
 import { LocalStorageKey } from './enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { UserService } from './services/user/user.service';
-import { MetricService } from './services/metric/metric.service';
 
 @Component({
 	selector: 'vtr-root',
@@ -25,11 +24,10 @@ export class AppComponent implements OnInit {
 		private displayService: DisplayService,
 		private router: Router,
 		private modalService: NgbModal,
-		private deviceService: DeviceService,
+		public deviceService: DeviceService,
 		private commonService: CommonService,
 		translate: TranslateService,
-		private userService: UserService,
-		private metricService: MetricService
+		private userService: UserService
 	) {
 		translate.addLangs(['en', 'zh-Hans']);
 		translate.setDefaultLang('en');

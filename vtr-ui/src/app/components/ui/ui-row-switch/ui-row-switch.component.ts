@@ -6,6 +6,8 @@ import {
 	Output,
 	EventEmitter
 } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalBatteryChargeThresholdComponent } from '../../modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
 
 @Component({
 	selector: 'vtr-ui-row-switch',
@@ -18,7 +20,6 @@ export class UiRowSwitchComponent implements OnInit {
 	// Use Fort Awesome Font Awesome Icon Reference Array (library, icon class) ['fas', 'arrow-right']
 	@Input() rightIcon = [];
 	@Input() leftIcon = [];
-
 	@Input() showChildContent = false;
 	@Input() readMoreText = '';
 	@Input() title = '';
@@ -29,14 +30,17 @@ export class UiRowSwitchComponent implements OnInit {
 	@Input() theme = 'white';
 	@Input() resetText = '';
 	@Input() isSwitchChecked = false;
-	@Input() tooltipText = ''
+	@Input() tooltipText = '';
+	@Input() name = '';
+	@Input() disabled = false;
+
 
 	@Output() toggleOnOff = new EventEmitter<boolean>();
 	@Output() readMoreClick = new EventEmitter<boolean>();
 	@Output() tooltipClick = new EventEmitter<boolean>();
 	@Output() resetClick = new EventEmitter<Event>();
 
-	constructor() {}
+	constructor(public modalService: NgbModal) { }
 
 	ngOnInit() {
 		this.childContent = {};
@@ -44,7 +48,31 @@ export class UiRowSwitchComponent implements OnInit {
 	}
 
 	public onOnOffChange($event) {
-		this.toggleOnOff.emit($event);
+		if (this.title === 'Battery Charge Threshold') {
+			this.isSwitchChecked = !this.isSwitchChecked;
+			if (this.isSwitchChecked) {
+				this.modalService.open(ModalBatteryChargeThresholdComponent, {
+					backdrop: 'static',
+					size: 'sm',
+					centered: true,
+					windowClass: 'Battery-Charge-Threshold-Modal'
+				}).result.then(
+					result => {
+						if (result === 'enable') {
+							this.toggleOnOff.emit($event);
+						} else if (result === 'close') {
+							this.isSwitchChecked = !this.isSwitchChecked;
+						}
+					},
+					reason => {
+					}
+				);
+			} else {
+				this.toggleOnOff.emit($event);
+			}
+		} else {
+			this.toggleOnOff.emit($event);
+		}
 	}
 
 	public onReadMoreClick($event) {

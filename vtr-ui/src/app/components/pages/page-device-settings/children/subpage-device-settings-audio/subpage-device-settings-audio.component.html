@@ -31,34 +31,20 @@
 							[showChildContent]="true"
 							[theme]="'blue'"
 							[tooltipText]="'Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.'"
-							(toggleOnOff)="onAutomaticDolbyAudioToggleOnOff($event)">
+							(toggleOnOff)="onAutomaticDolbyAudioToggleOnOff($event)"
+							[isSwitchChecked]="autoDolbyFeatureStatus.status">
 
 							<div class="my-3"
-								*ngIf="!automaticDolbyAudioSettings">
-								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
+								*ngIf="!autoDolbyFeatureStatus.status && dolbyModeResponse.available" >
+								<vtr-ui-rectangle-radio 
+									*ngFor="let dolbyMode of dolbyModeResponse.supporedModes" 
+									[radioId]="'radio'| uniqueId"
 									[group]="radioGroupAutoDolbySettings"
-									[label]="'DYNAMIC'"
-									[value]="'DYNAMIC'"
-									[tooltip]="'Sample tooltip'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio' | uniqueId"
-									[group]="radioGroupAutoDolbySettings"
-									[label]="'MOVIE'"
-									[value]="'MOVIE'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
-									[group]="radioGroupAutoDolbySettings"
-									[label]="'MUSIC'"
-									[value]="'MUSIC'"
-									[tooltip]="'Sample tooltip'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
-									[group]="radioGroupAutoDolbySettings"
-									[label]="'GAME'"
-									[value]="'GAME'"
-									[tooltip]="'Sample tooltip'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
-									[group]="radioGroupAutoDolbySettings"
-									[label]="'VOICE'"
-									[value]="'VOICE'"
-									[tooltip]="'Sample tooltip'"></vtr-ui-rectangle-radio>
+									[label]="dolbyMode | uppercase"
+									[value]='dolbyMode'
+									[checked]="dolbyMode == dolbyModeResponse.currentMode"
+									(change)="onDolbySeetingRadioChange($event)">
+								</vtr-ui-rectangle-radio>
 							</div>
 						</vtr-ui-row-switch>
 					</li>
@@ -70,7 +56,10 @@
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="false"
-							[theme]="'blue'" 	[tooltipText]="'Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality.'" >
+							[theme]="'blue'"
+							[tooltipText]="'Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality.'" 
+							(toggleOnOff)="onToggleOfMicrophoneAutoOptimization($event)"
+							[isSwitchChecked]="microphoneProperties.autoOptimization">
 						</vtr-ui-row-switch>
 					</li>
 				</ul>
@@ -93,7 +82,10 @@
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="true"
-							[theme]="'white'" [tooltipText]="'You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode.'">
+							[theme]="'white'"
+							[tooltipText]="'You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode.'"
+							(toggleOnOff)="onToggleOfMicrophone($event)"
+							[isSwitchChecked]="microphoneProperties.muteDisabled">
 						</vtr-ui-row-switch>
 					</li>
 					<li class="">
@@ -106,7 +98,8 @@
 							[showChildContent]="true"
 							[theme]="'white'">
 							<vtr-ui-range-slider [minValueLegend]="'Silent'" [minValue]="1"
-								[maxValueLegend]="'Loud'" [maxValue] = "100" (change)="setVolume($event)">
+								[maxValueLegend]="'Loud'" [maxValue] = "100" (change)="setVolume($event)"
+								[value]="microphoneProperties.volume">
 							</vtr-ui-range-slider>
 						</vtr-ui-row-switch>
 					</li>
@@ -119,7 +112,11 @@
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="true"
-							[theme]="'white'" 	[tooltipText]="'Toggle this on to optimize the MIC audio by suppressing keyboard noise.'">
+							[theme]="'white'"
+							[tooltipText]="'Toggle this on to optimize the MIC audio by suppressing keyboard noise.'"
+							(toggleOnOff)="onToggleOfSuppressKbdNoise($event)"
+							[disabled]="microphoneProperties.disableEffect"
+							[isSwitchChecked]="microphoneProperties.keyboardNoiseSuppression">
 						</vtr-ui-row-switch>
 					</li>
 
@@ -131,7 +128,11 @@
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="true"
-							[theme]="'white'" [tooltipText]="'Toggle on this feature to optimize your MIC audio by reducing acoustic echo.'">
+							[theme]="'white'" 
+							[tooltipText]="'Toggle on this feature to optimize your MIC audio by reducing acoustic echo.'"
+							(toggleOnOff)="setMicrophoneAEC($event)"
+							[disabled]="microphoneProperties.disableEffect"
+							[isSwitchChecked]="microphoneProperties.AEC">
 						</vtr-ui-row-switch>
 					</li>
 
@@ -142,24 +143,19 @@
 							[leftIcon]="['far', 'gem']"
 							[readMoreText]="''"
 							[showChildContent]="true"
+							[disabled]="microphoneProperties.disableEffect"
 							[theme]="'white'">
 							<div class="my-3">
-								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
+								<vtr-ui-rectangle-radio 
+									*ngFor="let optimizeMode of microOptimizeModeResponse.modes" 
+									[radioId]="'radio'| uniqueId"
 									[group]="radioOptimiseMicSettings"
-									[label]="'VOICE RECOGINITION'"
-									[value]="'DYNAMIC'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio' | uniqueId"
-									[group]="radioOptimiseMicSettings"
-									[label]="'ONLY MY VOICE'"
-									[value]="'MOVIE'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
-									[group]="radioOptimiseMicSettings"
-									[label]="'NORMAL'"
-									[value]="'MUSIC'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio'| uniqueId"
-									[group]="radioOptimiseMicSettings"
-									[label]="'MULTIPLE VOICES'"
-									[value]="'GAME'"></vtr-ui-rectangle-radio>
+									[label]= "optimizeMode | separatePascalCase"
+									[value]='optimizeMode'
+									[checked]="optimizeMode == microOptimizeModeResponse.current"
+									[disabled]="microphoneProperties.disableEffect"
+									(change)="onOptimizeModesRadioChange($event)">
+								</vtr-ui-rectangle-radio>
 							</div>
 						</vtr-ui-row-switch>
 					</li>

@@ -1,28 +1,58 @@
 <div class="vtr-available-updates p-40">
-	<div class="row">
-		<div class="col">
-			<div class="header">
-				<div class="heading">Available updates</div>
+	<div *ngIf="!isInstallationCompleted">
+		<div class="row">
+			<div class="col">
+				<div class="header">
+					<div class="heading">Available updates</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<div class="text-regular">
+					These packages include updates to hardware drivers and other system utilities that are critical
+					for the correct
+					operation of your computer. Critical updates are also important for protecting data on your
+					computer and should be
+					installed as they become available. Failure to install these packages could result in data loss,
+					system malfunction, or
+					hardware failure
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="button-box shift-right">
+					<vtr-ui-button (onClick)="onInstallAllUpdates($event)"
+						[label]="'Install all updates'"></vtr-ui-button>
+				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col">
-			<div class="text-regular">
-				These packages include updates to hardware drivers and other system utilities that are critical
-				for the correct
-				operation of your computer. Critical updates are also important for protecting data on your
-				computer and should be
-				installed as they become available. Failure to install these packages could result in data loss,
-				system malfunction, or
-				hardware failure
+	<div *ngIf="isInstallationCompleted && isInstallationSuccess">
+		<div class="row">
+			<div class="col">
+				<div class="header">
+					<div class="heading">All updates were installed correctly</div>
+				</div>
 			</div>
 		</div>
-		<div class="col-3">
-			<div class="button-box shift-right">
-				<vtr-ui-button (onClick)="onInstallAllUpdates($event)"
-					[label]="'Install all updates'"></vtr-ui-button>
+	</div>
+
+	<div *ngIf="isInstallationCompleted && !isInstallationSuccess">
+		<div class="row">
+			<div class="col">
+				<div class="header">
+					<div class="heading">Some updates were not installed correctly</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="text-regular">
+					Something went wrong during the downloading and installation of these updates.
+					Please make sure you are online and keep don't turn of your computer when installing updates.
+				</div>
 			</div>
 		</div>
 	</div>
@@ -42,6 +72,8 @@
 						<div class="header">
 							<div class="heading">{{criticalUpdates.length}} Critical updates</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
+								[isInstallationCompleted]="isInstallationCompleted"
+								[isInstallationSuccess]="isInstallationSuccess"
 								[items]="criticalUpdates">
 							</vtr-ui-list-checkbox>
 						</div>
@@ -54,23 +86,29 @@
 						<div class="header">
 							<div class="heading">{{recommendedUpdates.length}} Recommended updates</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
+								[isInstallationCompleted]="isInstallationCompleted"
+								[isInstallationSuccess]="isInstallationSuccess"
 								[items]="recommendedUpdates"></vtr-ui-list-checkbox>
 						</div>
 					</div>
 				</div>
 
 				<div class="row"
-					*ngIf="optionalUpdates && optionalUpdates.length > 0"></div>
-				<div class="col">
-					<div class="header">
-						<div class="heading">{{optionalUpdates.length}} Optional updates</div>
-						<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
-							[items]="optionalUpdates"></vtr-ui-list-checkbox>
+					*ngIf="optionalUpdates && optionalUpdates.length > 0">
+					<div class="col">
+						<div class="header">
+							<div class="heading">{{optionalUpdates.length}} Optional updates</div>
+							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
+								[isInstallationCompleted]="isInstallationCompleted"
+								[isInstallationSuccess]="isInstallationSuccess"
+								[items]="optionalUpdates"></vtr-ui-list-checkbox>
+						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="row mt-10">
+			<div class="row mt-10"
+				*ngIf="!isInstallationCompleted">
 				<div class="col-5">
 					<div class="button-box shift-left">
 						<vtr-ui-button (onClick)="onInstallSelectedUpdates($event)"

@@ -88,7 +88,7 @@ import { SecurityService } from './services/security/security.service';
 import { UserService } from './services/user/user.service';
 import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
 import { CameraDetailMockService } from './services/camera/camera-detail/camera-detail.mock.service';
-
+import { AudioService } from './services/audio/audio.service';
 
 // FONT AWESOME
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -115,7 +115,11 @@ import { ContainerArticleComponent } from './components/container-article/contai
 import { SanitizeUrlPipe } from './pipe/sanitise-url.pipe';
 import { UniqueIdPipe } from './pipe/unique-id.pipe';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
-import {MetricService} from "./services/metric/metric.service";
+import { MetricsDirective } from './directives/metrics.directive';
+import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
+import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
+import { InstalledSystemUpdatesListComponent } from './components/pages/page-device-updates/children/installed-system-updates-list/installed-system-updates-list.component';
+import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
 
 library.add(fas);
 library.add(fab);
@@ -191,7 +195,12 @@ library.add(far);
 		ContainerArticleComponent,
 		SanitizeUrlPipe,
 		UniqueIdPipe,
-		ModalBatteryChargeThresholdComponent
+		ModalBatteryChargeThresholdComponent,
+		MetricsDirective,
+		InstallationHistoryComponent,
+		SeparatePascalCasePipe,
+		InstalledSystemUpdatesListComponent,
+		ModalCommonConfirmationComponent
 	],
 	imports: [
 		BrowserModule,
@@ -214,11 +223,16 @@ library.add(far);
 		DashboardService,
 		SecurityService,
 		UserService,
-		MetricService,
+		AudioService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
 	bootstrap: [AppComponent],
-	entryComponents: [ModalLenovoIdComponent, ModalWelcomeComponent],
+	entryComponents: [
+		ModalLenovoIdComponent,
+		ModalWelcomeComponent,
+		ModalBatteryChargeThresholdComponent,
+		ModalCommonConfirmationComponent
+	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
 	]
