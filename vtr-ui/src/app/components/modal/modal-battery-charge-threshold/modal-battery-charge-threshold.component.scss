@@ -2,24 +2,27 @@
 
 .vtr-modal-battery-charge-threshold {
 
-	&.modal-body{
+	&.modal-body {
 		padding: 0;
 	}
 
-	fa-icon{
+	fa-icon {
 		font-size: 3rem;
 		color: $main;
 	}
-	h1{
+
+	h1 {
 		font-size: 3.1rem;
 		font-weight: normal;
 		color: $blue-dark;
 	}
-	p{
+
+	p {
 		font-size: 1.6rem;
 		color: $light-grey;
 	}
-	.enable-button{
+
+	.enable-button {
 		background: $gradient_main;
 		border-radius: 3rem;
 		color: $light;
@@ -29,7 +32,7 @@
 		margin-top: 1rem;
 	}
 
-	.cancel-link{
+	.cancel-link {
 		color: $main;
 		font-size: 2rem;
 		text-decoration: underline;
@@ -38,7 +41,8 @@
 		font-weight: 500;
 		margin-top: 1rem;
 		cursor: pointer;
-		&:hover{
+
+		&:hover {
 			text-decoration: underline;
 		}
 	}
