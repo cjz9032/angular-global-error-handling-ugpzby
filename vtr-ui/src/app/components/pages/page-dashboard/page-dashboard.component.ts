@@ -55,7 +55,7 @@ export class PageDashboardComponent implements OnInit {
 			this.getSecurityStatus();
 		}
 
-		let queryOptions = {
+		const queryOptions = {
 			'Page': 'dashboard',
 			'Lang': 'EN',
 			'GEO': 'US',
@@ -207,8 +207,7 @@ export class PageDashboardComponent implements OnInit {
 				if (response.warranty.status === 0) {
 					warranty.detail = `Until ${warrantyDate}`;
 					warranty.status = 0;
-				}
-				if (response.warranty.status === 1) {
+				} else if (response.warranty.status === 1) {
 					warranty.detail = `Warranty expired on ${warrantyDate}`;
 					warranty.status = 1;
 				} else {
