@@ -6,27 +6,105 @@
 	background-color: $light;
 	position: relative;
 	overflow: hidden;
+
 	.container-fluid {
 		height: 100%;
+
 		.row {
 			height: 100%;
 		}
 	}
-	&.card-highlight {
-		background-size: cover;
-		background-position: 0 50%;
-		background-repeat: no-repeat;
+
+	&.card-corner {
 		.content {
-			.title {
-				font-weight: $weight_light;
-				font-size: 4rem;
-				position: absolute;
-				top: 30%;
-				right: 5%;
-				padding: 0 15%;
+			position: relative;
+			z-index: 1;
+			padding: 0rem;
+
+			.card-image {
+				display: block;
+				background-size: cover;
+				background-position: 0 0%;
+				background-repeat: no-repeat;
+				text-decoration: none;
+				cursor: pointer;
+				width: 100%;
+				height: 100%;
+
+				.inner-content {
+					position: relative;
+					z-index: 1;
+					padding: 3rem;
+					height: 100%;
+
+					.title {
+						color: $light;
+						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+					}
+
+					.description {
+						color: $light;
+						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+					}
+
+					.caption {
+						color: $light;
+						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+					}
+
+					.logo {
+						.logo-img {
+							color: $alt;
+							text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+						}
+
+						.logo-text {
+							color: $alt;
+							text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+						}
+					}
+				}
 			}
 		}
 	}
+
+	&.card-highlight {
+		.content {
+			position: relative;
+			z-index: 1;
+			padding: 0rem;
+
+			.card-image {
+				display: block;
+				background-size: cover;
+				background-position: 0 0%;
+				background-repeat: no-repeat;
+				text-decoration: none;
+				cursor: pointer;
+				width: 100%;
+				height: 100%;
+
+				.inner-content {
+					position: relative;
+					z-index: 1;
+					padding: 3rem;
+					height: 100%;
+
+					.title {
+						font-weight: $weight_light;
+						font-size: 4rem;
+						position: absolute;
+						top: 30%;
+						right: 5%;
+						padding: 0 15%;
+						color: $light;
+						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+					}
+				}
+			}
+		}
+	}
+
 	&.card-article {
 		.image {
 			height: 60%;
@@ -34,12 +112,15 @@
 			background-position: 50% 50%;
 			background-repeat: no-repeat;
 		}
+
 		.content {
 			padding: 3rem 4rem;
 			height: 40%;
+
 			.title {
 				font-weight: $weight_light;
 			}
+
 			.read-more {
 				position: absolute;
 				margin-top: 2.0rem;
@@ -47,15 +128,19 @@
 				font-size: 1.3rem;
 				cursor: pointer;
 				text-transform: uppercase;
+
 				a {
 					color: $main;
+
 					&:hover {
 						text-decoration: none;
 					}
+
 					.link-label {
 						padding-bottom: 0.2rem;
 						border-bottom: 0.2rem solid $main;
 					}
+
 					fa-icon {
 						color: $main;
 						margin-left: 1rem;
@@ -64,15 +149,18 @@
 			}
 		}
 	}
+
 	&.card-partnerarticle {
 		.content {
 			padding: 3rem 4rem;
+
 			.title {
 				font-weight: $weight_light;
 				color: $light;
 				font-size: 3.4rem;
 				line-height: 4.6rem;
 			}
+
 			.read-more {
 				position: absolute;
 				bottom: 4rem;
@@ -80,14 +168,18 @@
 				font-size: 1.3rem;
 				cursor: pointer;
 				text-transform: uppercase;
+
 				a {
 					color: $main;
+
 					&:hover {
 						text-decoration: none;
+
 						.link-label {
 							border-bottom: 0.2rem solid transparent;
 						}
 					}
+
 					.link-label {
 						padding-bottom: 0.2rem;
 						color: $shade_light;
@@ -96,6 +188,7 @@
 						text-transform: uppercase;
 						padding-top: 1rem;
 					}
+
 					fa-icon {
 						color: $main;
 						margin-left: 1rem;
@@ -104,56 +197,51 @@
 			}
 		}
 	}
+
 	.content {
 		position: relative;
 		z-index: 1;
 		padding: 3rem;
+
 		.title {
 			color: $main_dark;
 			font-size: 2.5rem;
 			font-weight: $weight_bold;
 		}
+
 		.description {
 			color: $main_dark;
 			font-size: 1.1rem;
 		}
+
 		.caption {
 			color: $main_shade;
 			font-size: 2.2rem;
 		}
+
 		.logo {
 			position: absolute;
 			bottom: 3em;
 			padding-top: 3rem;
+
 			.logo-img {
 				color: $alt;
 				font-size: 2.4rem;
 				padding-right: 0.7rem;
 			}
+
 			.logo-text {
 				color: $alt;
 				font-size: 1.4em;
-				font-weight: $weight_bold;
+				font-weight: $weight_medium;
 				position: relative;
 				top: -0.4rem;
 			}
 		}
 	}
+
 	.image {
 		position: relative;
 		z-index: 0;
-		.bottomright {
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			&.large {
-				bottom: -8rem;
-				right: -8rem;
-			}
-			img {
-				width: 200%;
-				margin-left: -70%;
-			}
-		}
 	}
 }

@@ -1,5 +1,6 @@
 import { Component, Self, ElementRef, OnInit, AfterViewInit, Input } from '@angular/core';
 import { DisplayService } from '../../services/display/display.service';
+import { SupportService } from '../../services/support/support.service';
 
 @Component({
 	selector: 'vtr-container-article',
@@ -8,13 +9,6 @@ import { DisplayService } from '../../services/display/display.service';
 })
 export class ContainerArticleComponent implements OnInit, AfterViewInit {
 
-	@Input() img: string = '';
-	@Input() caption: string = '';
-	@Input() title: string = '';
-	@Input() logo: string = '';
-	@Input() logoText: string = '';
-	@Input() readMore: string = '';
-	@Input() cornerShift: String = '';
 	@Input() items: any;
 
 	ratioX = 1;
@@ -25,10 +19,18 @@ export class ContainerArticleComponent implements OnInit, AfterViewInit {
 
 	resizeListener;
 
+	metricsDatas: {
+		viewOrder: number
+		pageNumber: number
+	};
+
 	constructor(
 		@Self() private element: ElementRef,
-		private displayService: DisplayService
-	) { }
+		private displayService: DisplayService,
+		private supportService: SupportService,
+	) {
+		this.metricsDatas = this.supportService.metricsDatas;
+	}
 
 	ngOnInit() {
 		this.resizeListener = this.displayService.windowResizeListener().subscribe((event) => {
@@ -62,6 +64,10 @@ export class ContainerArticleComponent implements OnInit, AfterViewInit {
 				thisElement.style.height = thisElement.clientWidth * 420 / 430 + 'px';
 			}
 		}
+	}
+
+	addViewOrder() {
+		this.metricsDatas.viewOrder++;
 	}
 
 }

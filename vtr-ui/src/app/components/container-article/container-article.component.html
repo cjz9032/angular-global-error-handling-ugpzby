@@ -5,7 +5,7 @@
 			<div class="container-fluid">
 				<div class="row">
 					<a *ngIf="item.thumbnailUrl" class="col col-12 image" [style.background-image]="'url('+item.thumbnailUrl+')'" href="{{item.readMore}}">
-						<div *ngIf="item.logo" class="logo">
+						<div *ngIf="item.logo" class="logo" vtrMetrics metricsEvent="DocClick" metricsParent="Page.Support" metricsItemID="" metricsItemCategory="" metricsItemPosition="" metricsViewOrder="{{metricsDatas.viewOrder}}" metricsPageNumber="{{metricsDatas.pageNumber}}" (click)="addViewOrder()">
 							<span class="img" *ngIf="item.logo && item.thumbnailUrl">
 								<img src="{{item.logo}}" alt="{{item.logoText}}">
 							</span>
@@ -13,12 +13,12 @@
 						</div>
 					</a>
 					<div *ngIf="item.title" class="col col-12 content">
-						<a class="title" href="{{item.readMore}}">{{item.title}}</a>
+						<a class="title" href="{{item.readMore}}" vtrMetrics metricsEvent="DocClick" metricsParent="Page.Support" metricsItemID="" metricsItemCategory="" metricsItemPosition="" metricsViewOrder="{{metricsDatas.viewOrder}}" metricsPageNumber="{{metricsDatas.pageNumber}}" (click)="addViewOrder()">{{item.title}}</a>
 						<div class="logo-text">
 							<span *ngIf="item.logoText && !item.thumbnailUrl">{{item.logoText}}</span>
 						</div>
 						<div *ngIf="item.readMore && item.thumbnailUrl" class="read-more">
-							<a href="{{item.readMore}}">
+							<a href="{{item.readMore}}" vtrMetrics metricsEvent="DocClick" metricsParent="Page.Support" metricsItemID="" metricsItemCategory="" metricsItemPosition="" metricsViewOrder="{{metricsDatas.viewOrder}}" metricsPageNumber="{{metricsDatas.pageNumber}}" (click)="addViewOrder()">
 								<span class="link-label">Read More</span>
 								<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 							</a>

@@ -298,120 +298,62 @@ export class MockService {
 		}
 	];
 
-	// warranty = {
-	// 	'status': 1, // 0 IN WARRANTY | 1 WARRANTY EXPIRED | 2 Not Found Warranty
-	// 	'dayDiff': 1,
-	// 	'startDate': '2017-12-13T09:12:43.083Z',
-	// 	'endDate': '2018-12-12T09:12:43.083Z',
-	// 	'url': 'https://pcsupport.lenovo.com/us/en/warrantylookup',
-	// };
-
-	documentation = [
-		{
-			'icon': ['fas', 'book'],
-			'title': 'User Guide',
-			'path': '',
-			'url': 'https://support.lenovo.com',
-			'target': '_blank',
-		}
-	];
-
-	needHelp = [
-		{
-			'icon': ['fas', 'comment-alt'],
-			'title': 'Lenovo Community',
-			'path': '',
-			'url': 'https://community.lenovo.com',
-			'target': '_blank',
-		},
-		{
-			'icon': ['fas', 'share-alt'],
-			'title': 'Contact customer service',
-			'path': '',
-			'url': 'https://support.lenovo.com/',
-			'target': '_blank',
-		},
-		{
-			'icon': ['fab', 'weixin'],
-			'title': 'Contact us on WeChat',
-			'path': '',
-			'url': '',
-			'hideArrow': true,
-			'image': 'assets/images/wechat-qrcode.png'
-		}
-	];
-	quicklink = [
-		{
-			'icon': ['fas', 'ticket-alt'],
-			'title': 'Get support with E-ticket',
-			'path': '',
-			'url': 'https://pcsupport.lenovo.com/us/en/eticketwithservice',
-			'target': '_blank',
-		},
-		{
-			'icon': ['fas', 'briefcase'],
-			'title': 'Find a service provider',
-			'path': '',
-			'url': 'https://www.lenovo.com/us/en/ordersupport/',
-			'target': '_blank',
-		}
-	];
 	articles = [
 		{
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': '',
 			'logo': 'assets/images/test-logo.svg',
 			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail',
+			'readMore': '/#/support-detail/1',
 		},
 		{
 			'title': '',
 			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
 			'logo': 'assets/images/test-logo.svg',
 			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail',
+			'readMore': '/#/support-detail/1',
 		},
 		{
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
 			'logo': '',
 			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail',
+			'readMore': '/#/support-detail/1',
 		},
 		{
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
 			'logo': 'assets/images/test-logo.svg',
 			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail',
+			'readMore': '/#/support-detail/1',
 		},
 		{
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
 			'logo': 'assets/images/test-logo.svg',
 			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail',
+			'readMore': '/#/support-detail/1',
 		},
 		{
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': '',
 			'logo': '',
 			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail',
+			'readMore': '/#/support-detail/1',
 		},
 		{
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
 			'logo': 'assets/images/test-logo.svg',
 			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail',
+			'readMore': '/#/support-detail/1',
 		},
 		{
 			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
 			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
 			'logo': '',
 			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail',
+			'readMore': '/#/support-detail/1',
 		},
 	];
 

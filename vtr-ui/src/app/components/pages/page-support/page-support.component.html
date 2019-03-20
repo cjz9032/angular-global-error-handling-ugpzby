@@ -13,32 +13,54 @@
 
 							<div class="row">
 								<div class="col col-12 px-40 pb-40">
-									<form action="" class="card p-20">
+									<form action=""
+										class="card p-20">
 										<div class="input-group p-1">
 											<div class="input-group-prepend">
-												<div class="input-group-text">
+												<div class="input-group-text pr-0">
 													<fa-icon [icon]="['fas', 'search']"></fa-icon>
+													<span class="search-pre pl-4">
+														Search:</span>
 												</div>
 											</div>
-											<input type="text" class="form-control px-3" placeholder="Input help here" aria-label="Input help here"
-											 aria-describedby="basic-addon1" #searchInput (keyup.enter)="search(searchInput.value)">
+											<input type="text"
+												class="form-control pr-3"
+												#searchInput
+												(keyup.enter)="search(searchInput.value)">
 											<div class="input-group-append">
-												<button class="btn button" type="button" (click)="search(searchInput.value)">SEARCH FOR HELP</button>
+												<button class="btn button"
+													type="button"
+													(click)="search(searchInput.value)"
+													vtrMetrics
+													metricsItem="Support.SearchButton"
+													metricsEvent="ItemClick"
+													metricsParent="Page.Support">SEARCH FOR HELP</button>
 											</div>
 										</div>
 									</form>
 								</div>
 							</div>
-							<div class="row" *ngIf="searchWords" class="search-result-text">
+							<div class="row"
+								*ngIf="searchWords"
+								class="search-result-text">
 								<div class="col px-40 pt-4">
-									<div class="title m-0" *ngIf="searchCount > 0">
+									<div class="title m-0"
+										*ngIf="searchCount > 0">
 										35 Results that match "<span class="special">{{searchWords}}</span>"
 									</div>
-									<div class="title m-0" *ngIf="searchCount === 0">
+									<div class="title m-0"
+										*ngIf="searchCount > 0">
 										<div>0 result found.</div>
 										<div>
 											<span class="mr-5">Would you like to go for more help?</span>
-											<a href="https://community.lenovo.com" target="_blank" class="btn button" type="button">GO TO FURUM</a>
+											<a href="https://community.lenovo.com"
+												target="_blank"
+												class="btn button"
+												role="button"
+												vtrMetrics
+												metricsItem="Support.GoToForumButton"
+												metricsEvent="ItemClick"
+												metricsParent="Page.Support">GO TO FORUM</a>
 										</div>
 									</div>
 								</div>
@@ -51,27 +73,34 @@
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 
-								<div class="row" *ngIf="warranty&&!deviceService.isArm" >
+								<div class="row"
+									*ngIf="warranty&&!deviceService.isArm">
 									<div class="col col-12 pb-40">
 										<vtr-widget-warranty [item]="warranty"></vtr-widget-warranty>
 									</div>
 								</div>
 
-								<div class="row" *ngIf="mockService.documentation">
+								<div class="row">
 									<div class="col col-12 pb-60">
-										<vtr-widget-support [title]="'Documentation'" [description]="''" [items]="mockService.documentation"></vtr-widget-support>
+										<vtr-widget-support [title]="'Documentation'"
+											[description]="''"
+											[items]="supportDatas.documentation"></vtr-widget-support>
 									</div>
 								</div>
 
-								<div class="row" *ngIf="mockService.needHelp">
+								<div class="row">
 									<div class="col col-12 pb-60">
-										<vtr-widget-support [title]="'Need Help?'" [description]="'CONTACT US TO HELP YOU OUT.'" [items]="mockService.needHelp"></vtr-widget-support>
+										<vtr-widget-support [title]="'Need Help?'"
+											[description]="'CONTACT US TO HELP YOU OUT.'"
+											[items]="supportDatas.needHelp"></vtr-widget-support>
 									</div>
 								</div>
 
-								<div class="row" *ngIf="mockService.quicklink">
+								<div class="row">
 									<div class="col col-12 pb-60">
-										<vtr-widget-support [title]="'Quicklinks'" [description]="'CONTACT US TO HELP YOU OUT.'" [items]="mockService.quicklink"></vtr-widget-support>
+										<vtr-widget-support [title]="'Quicklinks'"
+											[description]="'CONTACT US TO HELP YOU OUT.'"
+											[items]="supportDatas.quicklinks"></vtr-widget-support>
 									</div>
 								</div>
 							</div>

@@ -111,6 +111,9 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				id: 'password-protection',
 				label: 'Password Protection',
 				path: 'password-protection',
+				metricsEvent: 'itemClick',
+				metricsParent: 'navbar',
+				metricsItem: 'link.passwordprotection',
 				icon: '',
 				subitems: []
 			}, {
@@ -175,7 +178,6 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			this.onNotification(notification);
 		});
 	}
-
 	ngOnDestroy() {
 		if (this.commonMenuSubscription) {
 			this.commonMenuSubscription.unsubscribe();
@@ -202,7 +204,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			backdrop: 'static',
 			size: 'lg',
 			centered: true,
-			windowClass: 'lenovo-id-modal-size'
+			windowClass: 'lenovo-modal-size'
 		});
 	}
 

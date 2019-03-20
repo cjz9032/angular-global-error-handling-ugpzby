@@ -16,7 +16,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	implements OnInit, OnDestroy {
 	title = 'Display & Camera Settings';
 	public dataSource: any;
-	public eyecareDatasource: any ;
+	public eyecareDatasource: any;
 	public cameraDetails1: ICameraSettingsResponse;
 	private cameraDetailSubscription: Subscription;
 	public eyeCareModeStatus = new FeatureStatus(false, true);
@@ -83,7 +83,6 @@ export class SubpageDeviceSettingsDisplayComponent
 		// 	.getCameraDetail()
 		// 	.then((response: any) => {
 		// 		// this.dataSource = response;
-
 		// 		console.log('getCameraDetails.then', response);
 		// 	})
 		// 	.catch(error => {
@@ -95,8 +94,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			this.dataSource = response;
 		});
 	}
-	private getDisplayColorTemperature()
-	{
+	private getDisplayColorTemperature() {
 		console.log('Inside Eycaremode details');
 		this.displayService.getDisplayColortemperature().then((response) => {
 			console.log('getDisplayColortemperature.then', response);
@@ -105,7 +103,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 	public onEyeCareModeStatusToggle(event: any) {
 		console.log('onEyeCareModeStatusToggle', event.switchValue);
-		try{
+		try {
 			if (this.displayService.isShellAvailable) {
 				this.displayService.setEyeCareModeState(event.switchValue)
 					.then((value: boolean) => {
@@ -115,7 +113,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.error('setEyeCareModeState', error);
 					});
 			}
-		} catch(error) {
+		} catch (error) {
 			console.error(error.message);
 		}
 	}
@@ -203,30 +201,29 @@ export class SubpageDeviceSettingsDisplayComponent
 		if (this.displayService.isShellAvailable) {
 			this.displayService
 				.resetCameraSettings();
-				this.getCameraDetails();
+			this.getCameraDetails();
 		}
 	}
 	public onEyecareTemparaturechange($event: ChangeContext) {
-		try{
+		try {
 			console.log('temparature changed in display', $event);
 			if (this.displayService.isShellAvailable) {
 				this.displayService
 					.setDisplayColortemperature($event.value);
 			}
-		} catch(error) {
+		} catch (error) {
 			console.error(error.message);
 		}
 	}
 	public onResetTemparature($event: any) {
-		try
-		{
+		try {
 			console.log('temparature reset in display', $event);
 			if (this.displayService.isShellAvailable) {
 				this.displayService
 					.resetEyeCareMode();
-					this.getDisplayColorTemperature();
+				this.getDisplayColorTemperature();
 			}
-		} catch(error) {
+		} catch (error) {
 			console.error(error.message);
 		}
 	}
