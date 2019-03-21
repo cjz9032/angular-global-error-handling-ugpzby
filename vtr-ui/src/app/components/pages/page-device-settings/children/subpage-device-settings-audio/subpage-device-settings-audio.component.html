@@ -83,6 +83,7 @@
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'white'"
+							[disabled] = "microphoneProperties.permission"
 							[tooltipText]="'You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode.'"
 							(toggleOnOff)="onToggleOfMicrophone($event)"
 							[isSwitchChecked]="microphoneProperties.muteDisabled">
@@ -138,7 +139,7 @@
 
 					<li class="">
 						<vtr-ui-row-switch [title]="'Optimize my microphone for:'"
-							[caption]="'Configures microphone effect to enhance your audio experience by different scenarios and environment.'"
+							[caption]="'Configure microphone effect to enhance your audio experience by different scenarios and environment.'"
 							[isSwitchVisible]=false
 							[leftIcon]="['far', 'gem']"
 							[readMoreText]="''"

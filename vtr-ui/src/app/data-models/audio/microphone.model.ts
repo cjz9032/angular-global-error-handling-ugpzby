@@ -6,6 +6,7 @@ export class Microphone {
 		public keyboardNoiseSuppression: boolean,
 		public autoOptimization: boolean,
 		public AEC: boolean,
-		public disableEffect: boolean
+		public disableEffect: boolean,
+		public permission: boolean
 	) { }
 }
