@@ -39,6 +39,7 @@ import { UiRowSwitchComponent } from './components/ui/ui-row-switch/ui-row-switc
 import { UiListChevronComponent } from './components/ui/ui-list-chevron/ui-list-chevron.component';
 import { UiListCheckboxComponent } from './components/ui/ui-list-checkbox/ui-list-checkbox.component';
 import { UiHeaderSubpageComponent } from './components/ui/ui-header-subpage/ui-header-subpage.component';
+import { UiSecurityStatusbarComponent } from './components/ui/ui-security-statusbar/ui-security-statusbar.component';
 
 // APPLICATION PAGE COMPONENTS
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
@@ -200,7 +201,8 @@ library.add(far);
 		InstallationHistoryComponent,
 		SeparatePascalCasePipe,
 		InstalledSystemUpdatesListComponent,
-		ModalCommonConfirmationComponent
+		ModalCommonConfirmationComponent,
+		UiSecurityStatusbarComponent
 	],
 	imports: [
 		BrowserModule,
