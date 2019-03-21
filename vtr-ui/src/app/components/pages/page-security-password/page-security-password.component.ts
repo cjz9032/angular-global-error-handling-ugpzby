@@ -13,14 +13,14 @@ export class PageSecurityPasswordComponent implements OnInit {
 	back = 'BACK';
 	backarrow = '< ';
 
-	IsDashlaneInstalled: Boolean = true;
+	IsDashlaneInstalled: Boolean = false;
 
 	constructor(public mockService: MockService) { }
 
 	ngOnInit() {
 	}
 	dashlane() {
-		//window.open('https://www.dashlane.com/lenovo/');
+		// window.open('https://www.dashlane.com/lenovo/');
 		this.IsDashlaneInstalled = this.IsDashlaneInstalled ? false : true;
 
 	}

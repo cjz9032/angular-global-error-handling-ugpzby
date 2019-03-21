@@ -2,6 +2,8 @@ import { Component, OnInit, NgZone, OnDestroy } from '@angular/core';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
 import { SystemUpdateStatusCode } from 'src/app/enums/system-update-status-code.enum';
@@ -9,6 +11,9 @@ import { AvailableUpdateDetail } from 'src/app/data-models/system-update/availab
 import { InstallUpdate } from 'src/app/data-models/system-update/install-update.model';
 import { UpdateInstallAction } from 'src/app/enums/update-install-action.enum';
 import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enum';
+import { ModalCommonConfirmationComponent } from '../../modal/modal-common-confirmation/modal-common-confirmation.component';
+import { ignoreElements } from 'rxjs/operators';
+import { UpdateRebootType } from 'src/app/enums/update-reboot-type.enum';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -34,7 +39,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public isUpdateDownloading = false;
 	public installationPercent = 0;
 	public downloadingPercent = 0;
-
+	public isRebootRequired = false;
 	public isInstallationSuccess = false;
 	public isInstallationCompleted = false;
 	public showFullHistory = false;
@@ -109,6 +114,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		private systemUpdateService: SystemUpdateService
 		, private commonService: CommonService
 		, private ngZone: NgZone
+		, private modalService: NgbModal
 	) { }
 
 	ngOnInit() {
@@ -116,7 +122,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.onNotification(response);
 		});
 
-		if (this.systemUpdateService.isUpdatesAvailable) {
+		if (this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isInstallationComplete) {
 			this.isUpdatesAvailable = true;
 			this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 		}
@@ -127,8 +133,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.getScheduleUpdateStatus(false);
 		this.isComponentInitialized = true;
 	}
-
-
 
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
@@ -190,14 +194,14 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.systemUpdateService.toggleUpdateSelection(item.name, item.checked);
 	}
 
-	public onInstallAllUpdate($event: any) {
+	private installAllUpdate() {
 		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
 			this.resetState();
 			this.systemUpdateService.installAllUpdates();
 		}
 	}
 
-	public onInstallSelectedUpdate($event: any) {
+	private installSelectedUpdate() {
 		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
 			this.resetState();
 			this.systemUpdateService.installSelectedUpdates();
@@ -230,6 +234,86 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			update.severity = UpdateInstallSeverity.Recommended;
 			this.systemUpdateService.installFailedUpdate(update);
 		}
+	}
+
+	public isUpdateListVisible() {
+		const isVisible = (this.isUpdatesAvailable && !this.isUpdateDownloading) || this.isInstallationCompleted;
+		return isVisible;
+	}
+
+	public onRebootClick($event) {
+		this.systemUpdateService.restartWindows();
+	}
+
+	public onDismissClick($event) {
+		this.isRebootRequired = false;
+	}
+
+	public showInstallConfirmation(source: string) {
+		const modalRef = this.modalService
+			.open(ModalCommonConfirmationComponent, {
+				size: 'lg',
+				centered: true,
+				windowClass: 'common-confirmation-modal'
+			});
+		const { rebootType, packages } = this.systemUpdateService.getRebootType(this.systemUpdateService.updateInfo.updateList, source);
+
+		if (rebootType === UpdateRebootType.RebootDelayed) {
+			this.showRebootDelayedModal(modalRef);
+		} else if (rebootType === UpdateRebootType.RebootForced) {
+			this.showRebootForceModal(modalRef);
+		} else if (rebootType === UpdateRebootType.PowerOffForced) {
+			this.showPowerOffForceModal(modalRef);
+		} else {
+			modalRef.dismiss();
+			// its normal update type installation which doesn't require rebooting/power-off
+			this.installUpdateBySource(source);
+			return;
+		}
+		modalRef.componentInstance.packages = packages;
+		modalRef.result.then(
+			result => {
+				// on open
+				console.log('common-confirmation-modal', result, source);
+				if (result) {
+					this.installUpdateBySource(source);
+				}
+			},
+			reason => {
+				// on close
+				console.log('common-confirmation-modal', reason, source);
+			}
+		);
+	}
+
+	private installUpdateBySource(source: string) {
+		if (source === 'selected') {
+			this.installSelectedUpdate();
+		} else {
+			this.installAllUpdate();
+		}
+	}
+
+	private showRebootForceModal(modalRef: NgbModalRef) {
+		const header = 'Reboot Pending';
+		const description = 'The update(s) you selected will cause the system to reboot automatically after installation.';
+		modalRef.componentInstance.header = header;
+		modalRef.componentInstance.description = description;
+	}
+
+	private showPowerOffForceModal(modalRef: NgbModalRef) {
+		const header = 'Shut Down';
+		const description = 'The update(s) you selected will cause the system to shut down automatically after installation.';
+		modalRef.componentInstance.header = header;
+		modalRef.componentInstance.description = description;
+	}
+
+	private showRebootDelayedModal(modalRef: NgbModalRef) {
+		const header = 'Reboot Pending';
+		const description = 'The update(s) you selected will cause the system to reboot after installation, during the installation of updates' +
+			', please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.';
+		modalRef.componentInstance.header = header;
+		modalRef.componentInstance.description = description;
 	}
 
 	private setUpdateByCategory(updateList: Array<AvailableUpdateDetail>) {
@@ -284,6 +368,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isUpdateDownloading = false;
 					this.isInstallationCompleted = true;
 					this.isInstallationSuccess = (payload.status === SystemUpdateStatusCode.SUCCESS);
+					this.checkRebootRequired();
 					break;
 				case UpdateProgress.AutoUpdateStatus:
 					this.autoUpdateOptions[0].isChecked = payload.criticalAutoUpdates;
@@ -297,40 +382,43 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	private onScheduleUpdateNotification(type: string, payload: any) {
-		console.log('onScheduleUpdateNotification', type, payload);
-
-		switch (type) {
-			case UpdateProgress.ScheduleUpdateChecking:
-				if (this.isComponentInitialized) {
+		if (this.isComponentInitialized) {
+			console.log('onScheduleUpdateNotification', type, payload);
+			switch (type) {
+				case UpdateProgress.ScheduleUpdateChecking:
 					this.isUpdateCheckInProgress = true;
-					this.getScheduleUpdateStatus(true);
-				}
-				break;
-			case UpdateProgress.ScheduleUpdateDownloading:
-				if (this.isComponentInitialized) {
+					break;
+				case UpdateProgress.ScheduleUpdateDownloading:
 					this.isUpdateCheckInProgress = false;
 					this.isUpdateDownloading = true;
-					// this.installationPercent = payload.installPercentage;
-					// this.downloadingPercent = payload.downloadPercentage;
-					this.getScheduleUpdateStatus(true);
-				}
-				break;
-			case UpdateProgress.ScheduleUpdateInstalling:
-				if (this.isComponentInitialized) {
+					this.installationPercent = 0;
+					if (payload.downloadProgress) {
+						this.downloadingPercent = payload.downloadProgress.progressinPercentage;
+					}
+					break;
+				case UpdateProgress.ScheduleUpdateInstalling:
 					this.isUpdateCheckInProgress = false;
 					this.isUpdateDownloading = true;
-					this.getScheduleUpdateStatus(true);
-				}
-				break;
-			case UpdateProgress.ScheduleUpdateIdle:
-				if (this.isComponentInitialized) {
+					this.downloadingPercent = 100;
+					if (payload.installProgress) {
+						this.installationPercent = payload.installProgress.progressinPercentage;
+					}
+					break;
+				case UpdateProgress.ScheduleUpdateIdle:
 					this.isUpdateCheckInProgress = false;
 					this.isUpdateDownloading = false;
 					this.resetState();
-				}
-				break;
-			default:
-				break;
+					break;
+				case UpdateProgress.ScheduleUpdateCheckComplete:
+					this.isUpdateDownloading = false;
+					this.isInstallationCompleted = true;
+					this.isInstallationSuccess = (payload.status === SystemUpdateStatusCode.SUCCESS);
+					this.setUpdateByCategory(payload.updateList);
+					this.checkRebootRequired();
+					break;
+				default:
+					break;
+			}
 		}
 	}
 
@@ -342,5 +430,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private getScheduleUpdateStatus(reportProgress: boolean) {
 		this.systemUpdateService.getScheduleUpdateStatus(reportProgress);
+	}
+
+	private checkRebootRequired() {
+		this.isRebootRequired = this.systemUpdateService.isRebootRequired();
 	}
 }

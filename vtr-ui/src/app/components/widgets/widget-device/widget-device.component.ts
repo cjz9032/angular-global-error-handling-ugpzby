@@ -71,16 +71,15 @@ export class WidgetDeviceComponent implements OnInit {
 			memory.isSystemLink = true;
 
 			if (response.memory) {
-				const { size, type } = response.memory;
+				const { size, type, total, used } = response.memory;
 				memory.title = `Memory `;
 				memory.systemDetails = `${this.commonService.formatBytes(size)} of ${type} RAM`;
-				memory.status = 0;
-				// const percent = (used / total) * 100;
-				// if (percent < 10) {
-				// 	memory.status = 1;
-				// } else {
-				// 	memory.status = 0;
-				// }
+				const percent = (used / total) * 100;
+				if (percent > 70) {
+					memory.status = 1;
+				} else {
+					memory.status = 0;
+				}
 			}
 			systemStatus.push(memory);
 
@@ -119,9 +118,15 @@ export class WidgetDeviceComponent implements OnInit {
 			if (response.sysupdate) {
 				const updateStatus = response.sysupdate.status;
 				const lastUpdate = response.sysupdate.lastupdate;
-				sysupdate.title = `Software up to date `;
-				sysupdate.systemDetails = `updated on ${this.commonService.formatDate(lastUpdate)}`;
-				sysupdate.status = (updateStatus === 1) ? 0 : 1;
+				if (updateStatus === 1) {
+					sysupdate.title = `Software up to date `;
+					sysupdate.systemDetails = `updated on ${this.commonService.formatDate(lastUpdate)}`;
+					sysupdate.status = 0;
+				} else {
+					sysupdate.title = `Software outdated `;
+					sysupdate.systemDetails = `never ran update`;
+					sysupdate.status = 1;
+				}
 			}
 			systemStatus.push(sysupdate);
 
@@ -134,18 +139,38 @@ export class WidgetDeviceComponent implements OnInit {
 			warranty.asLink = true;
 			warranty.isSystemLink = false;
 
+			// if (response.warranty) {
+			// 	const today = new Date();
+			// 	const expired = new Date(response.warranty.expired);
+			// 	if (today.getTime() > expired.getTime()) {
+			// 		warranty.title = `Out of warranty `;
+			// 		warranty.systemDetails = `Expired on ${this.commonService.formatDate(expired.toString())}`;
+			// 		warranty.status = 1;
+			// 	} else {
+			// 		warranty.status = 0;
+			// 		warranty.title = `In warranty `;
+			// 		warranty.systemDetails = `${this.commonService.getDaysBetweenDates(today, expired)} days
+			// 		 remaining`;
+			// 	}
+			// }
 			if (response.warranty) {
-				const today = new Date();
-				const expired = new Date(response.warranty.expired);
-				if (today.getTime() > expired.getTime()) {
+				const warrantyDate = this.commonService.formatDate(response.warranty.expired);
+				// in warranty
+				if (response.warranty.status === 0) {
+					const today = new Date();
+					const expired = new Date(response.warranty.expired);
+					const warrantyInDays = this.commonService.getDaysBetweenDates(today, expired);
+					warranty.title = `In warranty `;
+					warranty.systemDetails = `${warrantyInDays} days remaining`;
+					warranty.status = 0;
+				} else if (response.warranty.status === 1) {
 					warranty.title = `Out of warranty `;
-					warranty.systemDetails = `Expired on ${this.commonService.formatDate(expired.toString())}`;
+					warranty.detail = `Expired on ${warrantyDate}`;
 					warranty.status = 1;
 				} else {
-					warranty.status = 0;
-					warranty.title = `In warranty `;
-					warranty.systemDetails = `${this.commonService.getDaysBetweenDates(today, expired)} days
-					 remaining`;
+					warranty.detail = `Not available`;
+					warranty.detail = '';
+					warranty.status = 1;
 				}
 			}
 			systemStatus.push(warranty);

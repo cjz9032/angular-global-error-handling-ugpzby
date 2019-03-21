@@ -39,7 +39,7 @@ export class SupportService {
 	}
 
 	sendMetricsAsync(data: any) {
-		if (this.metrics) {
+		if (this.metrics && this.metrics.sendAsync) {
 			console.log('metrics ready!');
 			this.metrics.sendAsync(data);
 		} else {
