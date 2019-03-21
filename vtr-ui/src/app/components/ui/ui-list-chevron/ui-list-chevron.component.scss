@@ -1,134 +1,139 @@
 @import "../../../app.theme.scss";
 
 .vtr-ui-list-chevron {
-	.chevron-list {
-		margin-top: 2.7rem;
-		list-style: none;
-		padding: 0;
-		background-color: $shade_extralight;
-		border: 0.1rem solid $shade_lighter;
-		border-radius: $border_radius;
-		li {
-			height: 6rem;
-			padding: 1.5rem 1rem;
-			border-bottom: 0.1rem solid $shade_lighter;
-			color: $main_darker;
-			.item-icon {
-				&.status {
-					.icon-bkg {
-						display: inline-block;
-						border-radius: 50%;
-						height: 2.4rem;
-						width: 2.4rem;
-						border-width: 0.2rem;
-						border-style: solid;
-						text-align: center;
-						fa-icon {
-							font-size: 1.2rem;
-							line-height: 2rem;
-							color: $light;
-						}
-					}
-				}
-				fa-icon {
-					color: $main;
-					font-size: 1.9rem;
-					line-height: 3rem;
-				}
-			}
-			&:last-child {
-				border: none;
-			}
-			// &:hover {
-			// 	background-color: $shade_extralight;
-			// }
-			&.good {
-				.item-icon {
-					.icon-bkg {
-						background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
-						border-color: $go_dark;
-					}
-				}
-			}
-			&.bad {
-				.item-icon {
-					.icon-bkg {
-						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
-						border-color: $stop_dark;
-					}
-				}
-			}
-			&.blue {
-				.item-icon {
-					.icon-bkg {
-						background: linear-gradient($gradient_angle, $main 0%, $main_light 100%);
-						border-color: $main_gstart;
-						fa-icon {
-							font-size: 0.8rem;
-							line-height: 2.2rem;
-						}
-					}
-				}
-			}
-			a {
-				color: $main_darker;
-				&:hover {
-					text-decoration: none;
-				}
-			}
+  .chevron-list {
+    margin-top: 2.7rem;
+    list-style: none;
+    padding: 0;
+    background-color: $shade_extralight;
+    border: 0.1rem solid $shade_lighter;
+    border-radius: $border_radius;
+    li {
+      height: auto;
+      //height: 6rem;
+      padding: 1.5rem 1rem;
+      border-bottom: 0.1rem solid $shade_lighter;
+      color: $main_darker;
+      .item-icon {
+        &.status {
+          .icon-bkg {
+            display: inline-block;
+            border-radius: 50%;
+            height: 2.4rem;
+            width: 2.4rem;
+            border-width: 0.2rem;
+            border-style: solid;
+            text-align: center;
+            fa-icon {
+              font-size: 1.2rem;
+              line-height: 2rem;
+              color: $light;
+            }
+          }
+        }
+        fa-icon {
+          color: $main;
+          font-size: 1.9rem;
+          line-height: 3rem;
+        }
+      }
+      &:last-child {
+        border: none;
+      }
+      // &:hover {
+      // 	background-color: $shade_extralight;
+      // }
+      &.good {
+        .item-icon {
+          .icon-bkg {
+            background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+            border-color: $go_dark;
+          }
+        }
+      }
+      &.bad {
+        .item-icon {
+          .icon-bkg {
+            background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+            border-color: $stop_dark;
+          }
+        }
+      }
+      &.blue {
+        .item-icon {
+          .icon-bkg {
+            background: linear-gradient($gradient_angle, $main 0%, $main_light 100%);
+            border-color: $main_gstart;
+            fa-icon {
+              font-size: 0.8rem;
+              line-height: 2.2rem;
+            }
+          }
+        }
+      }
+      a {
+        color: $main_darker;
+        &:hover {
+          text-decoration: none;
+        }
+      }
 
-			.item-icon-image {
-				display: inline-block;
-				height: 3rem;
-				width: 3rem;
-			}
-			.item-text {
-				overflow: hidden;
-				padding-left: 1rem;
-				.title {
-					font-size: 1.4rem;
-					font-weight: $weight_medium;
-					float: left;
-					&.light-title {
-						font-weight: $weight_light;
-					}
-				}
-				.detail {
-					padding-right: 0.5rem;
-					padding-top: 0.1rem;
-					float: right;
-					text-align: right;
-					font-size: 1.2rem;
-					color: $shade_dark;
-					font-weight: $weight_medium;
+      .item-icon-image {
+        display: inline-block;
+        height: 3rem;
+        width: 3rem;
+      }
+      .item-text {
+        overflow: hidden;
+        padding-left: 1rem;
+        .title {
+          font-size: 1.4rem;
+          font-weight: $weight_medium;
+          float: left;
+          &.light-title {
+            font-weight: $weight_light;
+          }
+        }
+        .detail {
+          padding-right: 0.5rem;
+          padding-top: 0.1rem;
+          float: right;
+          text-align: right;
+          font-size: 1.2rem;
+          color: $shade_dark;
+          font-weight: $weight_medium;
+          max-width: 55%;
+          word-break: break-all;
+          display: block;
 
-					&.good {
-						color: $go_dark;
-					}
-					&.bad {
-						color: $stop_dark;
-					}
-					&.blue {
-						color: $main_gstart;
-					}
-					&.security {
-						text-transform: uppercase;
-						font-weight: 500;
-					}
-					&.highlight {
-						color: $main_shade;
-						text-decoration: underline;
-						&:hover {
-							text-decoration: none;
-						}
-					}
-				}
-			}
-			.arrow {
-				color: $main_darker;
-				line-height: 2.8rem;
-				font-size: 2rem;
-			}
-		}
-	}
+          &.good {
+            color: $go_dark;
+          }
+          &.bad {
+            color: $stop_dark;
+          }
+          &.blue {
+            color: $main_gstart;
+          }
+          &.security {
+            text-transform: uppercase;
+            font-weight: 500;
+          }
+          &.highlight {
+            color: $main_shade;
+            //text-decoration: underline;
+            text-decoration: none !important;
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      .arrow {
+        color: $main_darker;
+        line-height: 2.8rem;
+        font-size: 2rem;
+      }
+    }
+  }
 }
