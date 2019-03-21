@@ -196,14 +196,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				}
 				this.expressChargingStatus.status = event.switchValue;
 				this.setRapidChargeModeStatusIdeaNoteBook(event);
-				//this.conservationModeStatus.status = !this.expressChargingStatus.status;
 			} else {
 				if (event.switchValue) {
 					this.expressChargingStatus.status = !event.switchValue;
 				}
 				this.conservationModeStatus.status = event.switchValue;
 				this.setConservationModeStatusIdeaNoteBook(event);
-				//this.expressChargingStatus.status = !this.conservationModeStatus.status;
 			}
 		}
 	}
@@ -236,8 +234,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	ngOnInit() {
 		this.getMachineInfo();
 		this.getVantageToolBarStatus();
-
-
 	}
 	openContextModal(template: TemplateRef<any>) {
 		this.modalService.open(template, {
@@ -361,7 +357,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 					.getDYTCRevision()
 					.then((value: number) => {
 						console.log('getDYTCRevision.then', value);
-
 						if (value === 4) {
 							this.showIntelligentCooling = 2;
 							this.getCQLCapability();
@@ -369,7 +364,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 							console.log(this.cQLCapability);
 							console.log(this.tIOCapability);
 							if (this.cQLCapability === false && this.tIOCapability === false) {
-								console.log('inside false');
+								console.log('inside false of CQLCCapability and TIOCCapability');
 								this.toggleIntelligentCooling = false;
 								this.intelligentCooling = false;
 								this.toggleIntelligentCoolingStatus = false;
@@ -461,8 +456,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			console.error(error.message);
 		}
 	}
-
 	// End Power Smart Settings
+
 	// Start ThinkPad
 	private getAlwaysOnUSBCapabilityThinkPad() {
 		console.log('getAlwaysOnUSBCapabilityThinkPad ');
