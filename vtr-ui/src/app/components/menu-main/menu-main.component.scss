@@ -55,7 +55,7 @@
 						padding: 0 1rem;
 
 						&.user {
-							padding: 2rem 3rem 2rem 2rem;
+							padding: 2rem 2rem 2rem 2rem;
 							margin-left: 2rem;
 							height: $menu_height;
 							line-height: 4.6rem;
@@ -132,6 +132,19 @@
 							left: auto;
 							min-width: 20rem;
 							max-width: 50rem;
+						}
+					}
+					&.dropdown{
+						.dropdown-toggle{
+							position: relative;
+							padding-right: 2.4rem;
+							&::after{
+								border: none;
+								content: "\f107";
+								font-family: FontAwesome;
+								position: absolute;
+								font-size: 2rem;
+							}
 						}
 					}
 				}
