@@ -224,7 +224,7 @@ export class PageDashboardComponent implements OnInit {
 					warranty.detail = `Warranty expired on ${warrantyDate}`;
 					warranty.status = 1;
 				} else {
-					warranty.detail = `Not available`;
+					warranty.detail = 'Warranty not available';
 					warranty.status = 1;
 				}
 			}
