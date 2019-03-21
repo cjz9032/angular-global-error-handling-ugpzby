@@ -187,8 +187,8 @@ export class UserService {
 	setName(firstName: string, lastName: string) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.initials = this.firstName ? this.firstName[0] : '' +
-			this.lastName ? this.lastName[0] : '';
+		this.initials = (this.firstName && this.firstName.length > 0) ? this.firstName[0] : '' +
+			(this.lastName && this.lastName.length > 0) ? this.lastName[0] : '';
 		this.commonService.sendNotification(LenovoIdKey.FirstName, firstName);
 	}
 }
