@@ -6,14 +6,13 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
-import { SystemUpdateStatusCode } from 'src/app/enums/system-update-status-code.enum';
 import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
 import { InstallUpdate } from 'src/app/data-models/system-update/install-update.model';
 import { UpdateInstallAction } from 'src/app/enums/update-install-action.enum';
 import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enum';
 import { ModalCommonConfirmationComponent } from '../../modal/modal-common-confirmation/modal-common-confirmation.component';
-import { ignoreElements } from 'rxjs/operators';
 import { UpdateRebootType } from 'src/app/enums/update-reboot-type.enum';
+import { SystemUpdateStatusMessage } from 'src/app/data-models/system-update/system-update-status-message.model';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -29,6 +28,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	private lastInstallTime = new Date('1970-01-01T01:00:00');
 	// private lastScanTime = new Date('1970-01-01T01:00:00');
 	private nextScheduleScanTime = new Date('1970-01-01T01:00:00');
+	private isScheduleScanEnabled = false;
 	public percentCompleted = 0;
 	public updateInfo;
 	public criticalUpdates: AvailableUpdateDetail[];
@@ -45,6 +45,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public showFullHistory = false;
 	private notificationSubscription: Subscription;
 	private isComponentInitialized = false;
+	public updateTitle = '';
 
 	nextUpdatedDate = '11/12/2018 at 10:00 AM';
 	installationHistory = 'Installation History';
@@ -132,11 +133,20 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.systemUpdateService.getUpdateHistory();
 		this.getScheduleUpdateStatus(false);
 		this.isComponentInitialized = true;
+		this.setUpdateTitle();
 	}
 
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
+		}
+	}
+
+	private setUpdateTitle(title?: string) {
+		if (title) {
+			this.updateTitle = title;
+		} else {
+			this.updateTitle = 'An up-to-date system is a healthy system.';
 		}
 	}
 
@@ -148,7 +158,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.lastInstallTime = new Date(value.lastInstallTime);
 					// this.lastScanTime = new Date(value.lastScanTime);
 					this.nextScheduleScanTime = new Date(value.nextScheduleScanTime);
-
+					this.isScheduleScanEnabled = value.scheduleScanEnabled;
 					// lastInstallTime: "2019-03-01T10:09:53"
 					// lastScanTime: "2019-03-12T18:24:03"
 					// nextScheduleScanTime: "2019-03-15T10:07:42"
@@ -160,17 +170,23 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	public getLastUpdatedText() {
-		const installDate = this.commonService.formatDate(this.lastInstallTime.toISOString());
-		const installTime = this.commonService.formatTime(this.lastInstallTime.toISOString());
-
-		return `${this.lastUpdatedText} ${installDate} at ${installTime}`;
+		if (this.lastInstallTime) {
+			const installDate = this.commonService.formatDate(this.lastInstallTime.toISOString());
+			const installTime = this.commonService.formatTime(this.lastInstallTime.toISOString());
+			return `${this.lastUpdatedText} ${installDate} at ${installTime}`;
+		}
+		return `${this.lastUpdatedText} not available`;
 	}
 
 	public getNextUpdatedScanText() {
-		const scanDate = this.commonService.formatDate(this.nextScheduleScanTime.toISOString());
-		const scanTime = this.commonService.formatTime(this.nextScheduleScanTime.toISOString());
-
-		return `${this.nextScanText} ${scanDate} at ${scanTime}`;
+		if (!this.isScheduleScanEnabled) {
+			return '';
+		} else if (this.nextScheduleScanTime) {
+			const scanDate = this.commonService.formatDate(this.nextScheduleScanTime.toISOString());
+			const scanTime = this.commonService.formatTime(this.nextScheduleScanTime.toISOString());
+			return `${this.nextScanText} ${scanDate} at ${scanTime}`;
+		}
+		return `${this.nextScanText} not available`;
 	}
 
 	public onCheckForUpdates() {
@@ -346,14 +362,25 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				case UpdateProgress.UpdateCheckCompleted:
 					this.isUpdateCheckInProgress = false;
 					this.percentCompleted = 0;
+
+					for (const key in SystemUpdateStatusMessage) {
+						if (SystemUpdateStatusMessage.hasOwnProperty(key)) {
+							if (SystemUpdateStatusMessage[key].code === payload.status) {
+								this.setUpdateTitle(SystemUpdateStatusMessage[key].message);
+							}
+						}
+					}
+
 					break;
 				case UpdateProgress.UpdatesAvailable:
+					this.isUpdateCheckInProgress = false;
+					this.percentCompleted = 0;
 					this.isUpdatesAvailable = true;
 					this.setUpdateByCategory(payload.updateList);
 					break;
-				case UpdateProgress.UpdatesNotAvailable:
-					// todo : no updates available msg
-					break;
+				// case UpdateProgress.UpdatesNotAvailable:
+				// 	// todo : no updates available msg
+				// 	break;
 				case UpdateProgress.InstallationStarted:
 					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 					break;
@@ -367,7 +394,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				case UpdateProgress.InstallationComplete:
 					this.isUpdateDownloading = false;
 					this.isInstallationCompleted = true;
-					this.isInstallationSuccess = (payload.status === SystemUpdateStatusCode.SUCCESS);
+					this.isInstallationSuccess = (payload.status === SystemUpdateStatusMessage.SUCCESS.code);
 					this.checkRebootRequired();
 					break;
 				case UpdateProgress.AutoUpdateStatus:
@@ -412,7 +439,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				case UpdateProgress.ScheduleUpdateCheckComplete:
 					this.isUpdateDownloading = false;
 					this.isInstallationCompleted = true;
-					this.isInstallationSuccess = (payload.status === SystemUpdateStatusCode.SUCCESS);
+					this.isInstallationSuccess = (payload.status === SystemUpdateStatusMessage.SUCCESS.code);
 					this.setUpdateByCategory(payload.updateList);
 					this.checkRebootRequired();
 					break;
