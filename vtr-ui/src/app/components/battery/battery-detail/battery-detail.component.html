@@ -6,8 +6,8 @@
 					<div class="battery-indicator pb-5">
 						<vtr-battery-indicator [remainingHour]="2"
 							[remainingMinutes]="30"
-							[percentage]="50"
-							[isCharging]="true"
+							[percentage]="remainingPercent"
+							[isCharging]="isCharging"
 							[isExpressCharging]="false"
 							[isVoltageError]="false">
 						</vtr-battery-indicator>
@@ -65,7 +65,7 @@
 				<!-- row-3 -->
 				<div class="row">
 					<div class="col-2 p-0 battery-label-text">
-						Remaining time
+						{{ remainingTimeText }}
 					</div>
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.remainingTime }}

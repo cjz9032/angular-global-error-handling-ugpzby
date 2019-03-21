@@ -32,32 +32,32 @@
 									</div>
 								</div>
 
-								<div class="row">
+								<!-- <div class="row">
 									<div class="col col-12">
 										<vtr-installed-system-updates-list></vtr-installed-system-updates-list>
 									</div>
-								</div>
+								</div> -->
 
-								<vtr-available-updates *ngIf="isUpdatesAvailable && !isUpdateDownloading"
+								<vtr-available-updates *ngIf="isUpdateListVisible()"
 									[criticalUpdates]="criticalUpdates"
 									[optionalUpdates]="optionalUpdates"
 									[recommendedUpdates]="recommendedUpdates"
 									[isInstallationCompleted]="isInstallationCompleted"
 									[isInstallationSuccess]="isInstallationSuccess"
 									(checkChange)="onUpdateSelectionChange($event)"
-									(installAllUpdate)="onInstallAllUpdate($event)"
-									(installSelectedUpdate)="onInstallSelectedUpdate($event)">
+									(installAllUpdate)="showInstallConfirmation('all')"
+									(installSelectedUpdate)="showInstallConfirmation('selected')">
 								</vtr-available-updates>
 
 								<!-- Installation timeline is scope of MVP-2 -->
 								<div class="row">
 									<div class="col col-12 installation-history-container">
-										<!--<div class="row">
+										<!-- <div class="row">
 											<div class="col installation-history">
 												{{ installationHistory }}
 											</div>
 										</div>
-										 <div class="row installation-history-div">
+										<div class="row installation-history-div">
 											<div class="col col-1 installation-history-ellipses">
 												---
 											</div>
@@ -100,15 +100,13 @@
 														Now
 													</div>
 												</div>
-
-											</div>
-											<div class="col col-1 installation-history-dash">
-												Now
 											</div>
 										</div> -->
+
 										<div class="row">
 											<div class="col row1 full-history">
-												<a (click)="onToggleFullHistory()">Full History</a>
+												<a (click)="onToggleFullHistory()"
+													class="pointer">Full History</a>
 											</div>
 										</div>
 
@@ -139,7 +137,8 @@
 										[img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
 										[title]="'Lenovo Support website'"
 										[logoText]="'LENOVO SPECIAL'"
-										[readMore]="'http://www.google.com'"
+										[action]="'Read More'"
+										[actionLink]="'http://www.google.com'"
 										[type]="'partnerarticle'"
 										[ratioX]="4"
 										[ratioY]="2">
@@ -147,9 +146,13 @@
 								</div>
 							</div>
 
-							<div class="row">
+							<div class="row"
+								*ngIf="isRebootRequired">
 								<div class="col col-12 pb-40">
-									<vtr-widget-reboot></vtr-widget-reboot>
+									<vtr-widget-reboot (dismissClick)="onDismissClick($event)"
+										(rebootClick)="onRebootClick($event)">
+
+									</vtr-widget-reboot>
 								</div>
 							</div>
 						</div>
