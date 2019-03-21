@@ -30,7 +30,7 @@
 				<div class="row">
 					<div class="col-2 p-0 battery-label-text">Status</div>
 					<div class="col-2 p-0 battery-value-text">
-						{{ model.chargeStatus }}
+						{{ model.chargeStatusString }}
 					</div>
 					<div class="col-2 p-0 battery-label-text">Wattage</div>
 					<div class="col-2 p-0 battery-value-text">
@@ -116,7 +116,7 @@
 						Manufacture date
 					</div>
 					<div class="col-2 p-0 battery-value-text">
-						{{ model.manufactureDate }}
+						{{ model.manufactureDate | date: 'MM/dd/yyyy' }} 
 					</div>
 					<div class="col-2 p-0 battery-label-text">
 						Design voltage
@@ -135,7 +135,7 @@
 						First use date
 					</div>
 					<div class="col-2 p-0 battery-value-text">
-						{{ model.firstUseDate }}
+						{{ model.firstUseDate | date: 'MM/dd/yyyy' }}
 					</div>
 					<div class="col-2 p-0 battery-label-text">
 						Firmware version

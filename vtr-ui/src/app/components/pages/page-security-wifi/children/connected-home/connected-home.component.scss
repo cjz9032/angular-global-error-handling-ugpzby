@@ -135,11 +135,14 @@
       font-weight: $weight_medium;
       text-transform: uppercase;
       padding-left: 0rem;
+      text-align: left;
+      padding-left: 3rem;
       .text-regular {
         color: $main_dark;
         font-size: 2rem;
         font-weight: $weight_light;
         text-transform: none;
+        padding-top: 0;
       }
       .button-box {
         padding: 0rem;
