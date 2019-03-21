@@ -121,7 +121,8 @@
           }
           &.highlight {
             color: $main_shade;
-            text-decoration: underline;
+            //text-decoration: underline;
+            text-decoration: none !important;
             &:hover {
               text-decoration: none;
             }
