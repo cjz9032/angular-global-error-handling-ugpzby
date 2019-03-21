@@ -10,34 +10,94 @@
 		</div>
 		<div class="row mt-20">
 			<div class="col">
-				<div class="wifi-security-box">
-					<div class="row">
-						<div class="col col-1">
-							<div>
-								<ul class="bullet-list">
-									<li class="bad">
-										<div class="bullet-icon">
-											<div class="icon-bkg">
-												<fa-icon [icon]="['fas', 'times']">
-												</fa-icon>
+				<div class="wifiSecurity accordion">
+					<div class="card">
+						<div class="card-header" id="wifiSecurity">
+							<div class="half subHeading">
+								<span class="circle green"><fa-icon [icon]="['fas', 'check']"></fa-icon></span>
+								<h3>WIFI SECURITY</h3>
+								<button class="btn btn-success btn-round-xs text-uppercase">Enabled</button>
+							</div>
+							<div class="half">
+								<button class="btn btn-link collapse-text" type="button" data-toggle="collapse" data-target="#wifi-collapse" aria-expanded="false" aria-controls="wifi-collapse">Less info <fa-icon [icon]="['fas', 'chevron-up']"></fa-icon></button>
+								<div class="switch">
+										<vtr-ui-switch-onoff [value]="value"></vtr-ui-switch-onoff>
+									</div>
+							</div>
+						</div>
+					</div>
+					<div id="wifi-collapse" class="collapse show">
+						<div class="card-body">
+							<div class="content">
+								<div class="cardTitle">
+									<h3>Network History</h3>
+									<small class="status">
+										Show: <a href="#" class="active">Malicious</a> / <a href="#">All</a>
+									</small>
+								</div>
+								<div class="cardBody">
+									<ul class="openNetworks">
+										<li>
+											<div class="status-icon">
+												<span class="fa-stack fa-3x">
+													<fa-icon [icon]="['fas', 'wifi']" class="menu-pointer"></fa-icon>
+													<span class="circle green"><fa-icon [icon]="['fas', 'check']"></fa-icon></span>
+												</span>
 											</div>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col col-2">
-							<div class="sub-heading">
-								<p> Wifi Security</p>
-							</div>
-						</div>
-
-						<div>
-							<div class="button-box">
-								<button type="button"
-								 class="btn btn-danger btn-round-xs text-uppercase">
-									Disabled
-								</button>
+											<div class="connection-name">
+												Dunkin Donutz
+												<small class="connection-status">
+													Connected last 12/12/2018 3:00PM
+												</small>
+											</div>
+										</li>
+										<li>
+											<div class="status-icon">
+												<span class="fa-stack fa-3x">
+													<fa-icon [icon]="['fas', 'wifi']" class="menu-pointer"></fa-icon>
+													<span class="circle green"><fa-icon [icon]="['fas', 'check']"></fa-icon></span>
+												</span>
+											</div>
+											<div class="connection-name">
+												My Wifi
+												<small class="connection-status">
+													Connected last 12/12/2018 3:00PM
+												</small>
+											</div>
+										</li>
+										<li>
+											<div class="status-icon">
+												<span class="fa-stack fa-3x">
+													<fa-icon [icon]="['fas', 'wifi']" class="menu-pointer"></fa-icon>
+													<span class="circle red"><fa-icon [icon]="['fas', 'times']"></fa-icon></span>
+												</span>
+											</div>
+											<div class="connection-name">
+												Lenovo
+												<small class="connection-status">
+													Connected last 12/12/2018 3:00PM
+												</small>
+											</div>
+										</li>
+										<li>
+											<div class="status-icon">
+												<span class="fa-stack fa-3x">
+													<fa-icon [icon]="['fas', 'wifi']" class="menu-pointer"></fa-icon>
+													<span class="circle green"><fa-icon [icon]="['fas', 'check']"></fa-icon></span>
+												</span>
+											</div>
+											<div class="connection-name">
+												MyWiFi
+												<small class="connection-status">
+													Connected last 12/12/2018 3:00PM
+												</small>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="card-foot">
+									<a href="#" class="show-more">Show more</a>
+								</div>
 							</div>
 						</div>
 					</div>

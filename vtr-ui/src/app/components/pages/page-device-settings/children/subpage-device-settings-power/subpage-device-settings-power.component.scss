@@ -52,10 +52,22 @@
 				line-height: 2.8rem;
 				padding-bottom: 2.5rem;
 				border-bottom: 1px solid $screen_light_15;
+				a{
+					list-style: none;
+					text-decoration: underline;
+					color: $light;
+					&:hover{
+						list-style: none;
+						color: $light;
+						text-decoration: underline;
+					}
+				}
 			}
 		}
 	}
-
+	.left-margin {
+		margin-left: -3rem;
+	}
 	ul.list-group {
 		list-style-type: none;
 		padding-bottom: 3rem;
@@ -89,8 +101,10 @@
 		text-decoration: underline;
 		cursor: pointer;
 	}
-	.question{
+
+	.question {
 		color: $light;
 		font-size: 2rem;
+		cursor: pointer;
 	}
 }

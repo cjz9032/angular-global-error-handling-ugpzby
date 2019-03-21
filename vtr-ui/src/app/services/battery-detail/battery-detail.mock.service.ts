@@ -8,7 +8,7 @@ import { BaseBatteryDetail } from './base-battery-detail';
 @Injectable({
 	providedIn: 'root'
 })
-export class BatteryDetailMockService implements BaseBatteryDetail {
+export class BatteryDetailMockService  {
 
 	constructor(
 		private http: HttpClient
@@ -18,9 +18,10 @@ export class BatteryDetailMockService implements BaseBatteryDetail {
 	/**
 	 * return data from mock json file
 	 */
-	getBatteryDetail(): Observable<BatteryDetail[]> {
-		return this.http.get<BatteryDetail[]>(
-			`mock-api/battery-data.mock.json`
-		);
-	}
+// 	getBatteryDetail(): Promise<BatteryDetail[]> {
+// 		return this.http.get<BatteryDetail[]>(
+// 			`mock-api/battery-data.mock.json`
+// 		);
+// 	}
+// 
 }
