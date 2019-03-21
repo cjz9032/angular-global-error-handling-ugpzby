@@ -13,7 +13,7 @@ class BatteryDetail {
 
 	public chargeStatus: string;
 	public remainingPercent: number;
-	public remainingTime: string;
+	public remainingTime: number;
 	public remainingCapacity: number;
 	public fullChargeCapacity: number;
 	public voltage: number;
