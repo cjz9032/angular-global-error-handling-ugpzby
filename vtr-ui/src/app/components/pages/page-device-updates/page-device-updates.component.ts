@@ -373,6 +373,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 					break;
 				case UpdateProgress.UpdatesAvailable:
+					this.isUpdateCheckInProgress = false;
+					this.percentCompleted = 0;
 					this.isUpdatesAvailable = true;
 					this.setUpdateByCategory(payload.updateList);
 					break;

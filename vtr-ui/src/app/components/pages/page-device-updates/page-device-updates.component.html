@@ -49,7 +49,7 @@
 
 								<!-- Installation timeline is scope of MVP-2 -->
 								<div class="row">
-									<div class="col col-12 installation-history-container">
+									<div class="col col-12 installation-history-container p-5">
 										<!-- <div class="row">
 											<div class="col installation-history">
 												{{ installationHistory }}
@@ -101,7 +101,7 @@
 											</div>
 										</div> -->
 
-										<div class="row">
+										<!-- <div class="row">
 											<div class="col row1 full-history">
 												<a (click)="onToggleFullHistory()"
 													class="pointer">Full History</a>
@@ -109,7 +109,12 @@
 										</div>
 
 										<vtr-installation-history *ngIf="showFullHistory"
-											(reinstallUpdate)="onReinstallUpdate($event)"></vtr-installation-history>
+											(reinstallUpdate)="onReinstallUpdate($event)"></vtr-installation-history> -->
+										<vtr-container-collapsible [cardTitle]="'Full History'"
+											[isCollapsed]="true">
+											<vtr-installation-history (reinstallUpdate)="onReinstallUpdate($event)">
+											</vtr-installation-history>
+										</vtr-container-collapsible>
 									</div>
 								</div>
 
