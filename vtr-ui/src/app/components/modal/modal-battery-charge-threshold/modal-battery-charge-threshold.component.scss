@@ -1,18 +1,51 @@
 @import '../../../app.theme.scss';
 
 .vtr-modal-battery-charge-threshold {
-	padding-left: 3rem;
 
-	.id-container {
-		width: 46rem;
-		height: 62rem;
-		margin: 0 auto;
+	&.modal-body {
+		padding: 0;
 	}
 
-	.btn-close {
-		position: absolute;
-		right: 2%;
-		top: 2%;
+	fa-icon {
+		font-size: 3rem;
+		color: $main;
 	}
+
+	h1 {
+		font-size: 3.1rem;
+		font-weight: normal;
+		color: $blue-dark;
+	}
+
+	p {
+		font-size: 1.6rem;
+		color: $light-grey;
+	}
+
+	.enable-button {
+		background: $gradient_main;
+		border-radius: 3rem;
+		color: $light;
+		font-size: 2rem;
+		padding: 1rem 3rem;
+		font-weight: 500;
+		margin-top: 1rem;
+	}
+
+	.cancel-link {
+		color: $main;
+		font-size: 2rem;
+		text-decoration: underline;
+		vertical-align: middle;
+		padding: 1rem 3rem;
+		font-weight: 500;
+		margin-top: 1rem;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
 
 }
