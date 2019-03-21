@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
 
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
 
@@ -11,6 +10,6 @@ import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
 	providedIn: 'root'
 })
 export abstract class BaseBatteryDetail {
-	abstract getBatteryDetail(): Observable<BatteryDetail[]>;
+	abstract getBatteryDetail(): Promise<BatteryDetail[]>;
 }
 

@@ -1,7 +1,7 @@
 @import "./../../../app.theme.scss";
 
 /*
-component styles to cascade to all child elements of this component, 
+component styles to cascade to all child elements of this component,
 but not to any other element on the page. using ::ng-deep
 */
 // ng-deep required, without this style cannot be overridden.
@@ -33,11 +33,11 @@ but not to any other element on the page. using ::ng-deep
 					background: transparent;
 					font-family: FontAwesome;
 					font-size: 1.6rem;
-					top: calc(100% - 2.5rem);
-					left: calc(100% - 2.2rem);
+					top: calc(100% - 2.3rem);
+					left: calc(100% - 2.5rem);
 					font-weight: normal;
 					color: $light;
-					content: "\f07e"; // unicode for font awesome two sided arrow
+					content: url('../../../../assets/images/arrow-icon.PNG'); // unicode for font awesome two sided arrow
 				}
 				&:focus {
 					outline: none;
