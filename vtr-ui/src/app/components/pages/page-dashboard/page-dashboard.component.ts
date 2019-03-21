@@ -8,8 +8,8 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { UserService } from 'src/app/services/user/user.service';
-import {AppNotification} from 'src/app/data-models/common/app-notification.model';
-import {LenovoIdKey} from 'src/app/enums/lenovo-id-key.enum';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -69,8 +69,6 @@ export class PageDashboardComponent implements OnInit {
 
 		this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
-				console.log('fetchCMSContent response', response);
-
 				this.heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
 					return {
 						'albumId': 1,
@@ -84,9 +82,6 @@ export class PageDashboardComponent implements OnInit {
 
 				this.cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
 				this.cardContentPositionC = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
-
-				console.log('this.cardContentPositionB', this.cardContentPositionB);
-				console.log('this.cardContentPositionC', this.cardContentPositionC);
 
 				this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
 				this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
