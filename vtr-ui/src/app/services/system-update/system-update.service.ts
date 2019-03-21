@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, SystemJsNgModuleLoader } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { CommonService } from '../common/common.service';
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
@@ -10,19 +10,12 @@ import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
 import { UpdateHistory } from 'src/app/data-models/system-update/update-history.model';
 import { ScheduleUpdateStatus } from 'src/app/data-models/system-update/ScheduleUpdateStatus';
 import { SystemUpdateStatusCode } from 'src/app/enums/system-update-status-code.enum';
+import { UpdateRebootType } from 'src/app/enums/update-reboot-type.enum';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class SystemUpdateService {
-	private systemUpdateBridge: any;
-	public autoUpdateStatus: any;
-	public isShellAvailable = false;
-	public isCheckForUpdateComplete = true;
-	public isUpdatesAvailable = false;
-	public isInstallationComplete = false;
-	public updateInfo: AvailableUpdate;
-	public installationHistory: Array<UpdateHistory>;
 
 	constructor(
 		shellService: VantageShellService
@@ -32,6 +25,14 @@ export class SystemUpdateService {
 			this.isShellAvailable = true;
 		}
 	}
+	private systemUpdateBridge: any;
+	public autoUpdateStatus: any;
+	public isShellAvailable = false;
+	public isCheckForUpdateComplete = true;
+	public isUpdatesAvailable = false;
+	public isInstallationComplete = false;
+	public updateInfo: AvailableUpdate;
+	public installationHistory: Array<UpdateHistory>;
 
 	/**
 	 * gets data about last scan, install & schedule scan date-time for Check for Update section
@@ -95,7 +96,6 @@ export class SystemUpdateService {
 				});
 		}
 	}
-
 	public checkForUpdates() {
 		// checkForUpdates requires callback
 		if (this.systemUpdateBridge) {
@@ -105,15 +105,18 @@ export class SystemUpdateService {
 				console.log('checkForUpdates callback', progressPercentage);
 				this.commonService.sendNotification(UpdateProgress.UpdateCheckInProgress, progressPercentage);
 			}).then((response) => {
-				console.log('checkForUpdates response', response);
-				this.updateInfo = { status: response.status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
-				this.isCheckForUpdateComplete = true;
+				console.log('checkForUpdates response', response, typeof response.status);
 				this.isUpdatesAvailable = (response.updateList && response.updateList.length > 0);
-				this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, this.updateInfo);
-				if (this.isUpdatesAvailable) {
-					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
-				} else {
-					this.commonService.sendNotification(UpdateProgress.UpdatesNotAvailable);
+				this.isCheckForUpdateComplete = true;
+				const status = parseInt(response.status, 10);
+				if (status === SystemUpdateStatusCode.SUCCESS) { // success
+					this.updateInfo = { status: response.status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
+					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, this.updateInfo);
+					if (this.isUpdatesAvailable) {
+						this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
+					} else {
+						this.commonService.sendNotification(UpdateProgress.UpdatesNotAvailable);
+					}
 				}
 			}).catch((error) => {
 				console.log('checkForUpdates.error', error);
@@ -249,12 +252,69 @@ export class SystemUpdateService {
 		if (this.updateInfo) {
 			for (let index = 0; index < this.updateInfo.updateList.length; index++) {
 				const update = this.updateInfo.updateList[index];
-				if (update.packageRebootType === 'RebootRequested' || update.packageRebootType === 'RebootDelayed') {
+				if ((update.packageRebootType === 'RebootRequested' || update.packageRebootType === 'RebootDelayed') && update.isInstalled) {
 					return true;
 				}
 			}
 		}
 		return false;
+	}
+
+	public getRebootType(updateList: Array<AvailableUpdateDetail>, source: string): { rebootType: UpdateRebootType, packages: Array<string> } {
+		let rebootType = UpdateRebootType.Unknown;
+		let packages = new Array<string>();
+
+		const rebootDelayedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.RebootDelayed, source);
+		// Priority #1 RebootDelayed : return details of it, no need to check other.
+		if (rebootDelayedUpdates && rebootDelayedUpdates.length > 0) {
+			rebootType = UpdateRebootType.RebootDelayed;
+			packages = rebootDelayedUpdates.map((value) => {
+				return value.packageDesc;
+			});
+		} else {
+			const rebootForcedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.RebootForced, source);
+			// Priority #2 RebootForced : return details of it, no need to check other.
+			if (rebootForcedUpdates && rebootForcedUpdates.length > 0) {
+				rebootType = UpdateRebootType.RebootForced;
+				packages = rebootForcedUpdates.map((value) => {
+					return value.packageDesc;
+				});
+			} else {
+				const powerOffForcedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.PowerOffForced, source);
+				// Priority #3 PowerOffForced : return details of it, no need to check other.
+				if (powerOffForcedUpdates && powerOffForcedUpdates.length > 0) {
+					rebootType = UpdateRebootType.PowerOffForced;
+					packages = powerOffForcedUpdates.map((value) => {
+						return value.packageDesc;
+					});
+				}
+			}
+		}
+		// for (let index = 0; index < updateList.length; index++) {
+		// 	const value = updateList[index];
+		// 	if (value.packageRebootType.toLowerCase() === UpdateRebootType.RebootDelayed.toLocaleLowerCase() && (value.isSelected || source === 'all')) {
+		// 		rebootType = UpdateRebootType.RebootDelayed;
+		// 		break;
+		// 	} else if (value.packageRebootType.toLowerCase() === UpdateRebootType.RebootForced.toLocaleLowerCase() && (value.isSelected || source === 'all')) {
+		// 		rebootType = UpdateRebootType.RebootForced;
+		// 		break;
+		// 	} else if (value.packageRebootType.toLowerCase() === UpdateRebootType.PowerOffForced.toLocaleLowerCase() && (value.isSelected || source === 'all')) {
+		// 		rebootType = UpdateRebootType.PowerOffForced;
+		// 		break;
+		// 	} else if (value.packageRebootType.toLowerCase() === UpdateRebootType.RebootRequested.toLocaleLowerCase() && (value.isSelected || source === 'all')) {
+		// 		rebootType = UpdateRebootType.RebootRequested;
+		// 		break;
+		// 	}
+		// }
+		return { rebootType, packages };
+	}
+
+	private getUpdateByRebootType(updateList: Array<AvailableUpdateDetail>, rebootType: UpdateRebootType, source: string): Array<AvailableUpdateDetail> {
+
+		const updates = updateList.filter((value: AvailableUpdateDetail) => {
+			return ((value.packageRebootType.toLowerCase() === rebootType.toLocaleLowerCase()) && (value.isSelected || source === 'all'));
+		});
+		return updates;
 	}
 
 	private installUpdates(updates: Array<InstallUpdate>) {
@@ -323,10 +383,13 @@ export class SystemUpdateService {
 
 	private mapInstallationStatus(updates: AvailableUpdateDetail[], updateInstallationList: Array<any>) {
 		updates.forEach((update: AvailableUpdateDetail) => {
-			const pkg = updateInstallationList.find((uil) => {
-				return update.packageID === uil.packageID;
-			});
-			update.installationStatus = pkg.actionResult;
+			if (update.isSelected) {
+				const pkg = updateInstallationList.find((uil) => {
+					return update.packageID === uil.packageID;
+				});
+				update.installationStatus = pkg.actionResult;
+				update.isInstalled = (update.installationStatus === UpdateActionResult.Success);
+			}
 		});
 	}
 

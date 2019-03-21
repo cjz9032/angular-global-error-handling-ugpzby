@@ -139,14 +139,14 @@ export class MockService {
 			'path': '',
 			'hideChevron': true
 		},
-		{
-			'status': 2,
-			'id': 'os-version',
-			'title': 'OS version',
-			'detail': 'PASSED',
-			'path': '',
-			'hideChevron': true
-		},
+		// {
+		// 	'status': 2,
+		// 	'id': 'os-version',
+		// 	'title': 'OS version',
+		// 	'detail': 'PASSED',
+		// 	'path': '',
+		// 	'hideChevron': true
+		// },
 		{
 			'status': 2,
 			'id': 'pin-pwd',

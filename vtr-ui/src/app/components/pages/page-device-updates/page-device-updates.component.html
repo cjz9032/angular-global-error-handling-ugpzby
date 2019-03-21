@@ -45,19 +45,19 @@
 									[isInstallationCompleted]="isInstallationCompleted"
 									[isInstallationSuccess]="isInstallationSuccess"
 									(checkChange)="onUpdateSelectionChange($event)"
-									(installAllUpdate)="onInstallAllUpdate($event)"
-									(installSelectedUpdate)="onInstallSelectedUpdate($event)">
+									(installAllUpdate)="showInstallConfirmation('all')"
+									(installSelectedUpdate)="showInstallConfirmation('selected')">
 								</vtr-available-updates>
 
 								<!-- Installation timeline is scope of MVP-2 -->
 								<div class="row">
 									<div class="col col-12 installation-history-container">
-										<div class="row">
+										<!-- <div class="row">
 											<div class="col installation-history">
 												{{ installationHistory }}
 											</div>
 										</div>
-										<!-- <div class="row installation-history-div">
+										<div class="row installation-history-div">
 											<div class="col col-1 installation-history-ellipses">
 												---
 											</div>

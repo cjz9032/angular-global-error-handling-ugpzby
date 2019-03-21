@@ -1,0 +1,26 @@
+export enum SystemUpdateStatusMessage {
+	SUCCESS = '',
+	FAILURE = 'There is a problem in retrieving new Updates. Please try again later.',
+	UP_TO_DATE = 'No updates are available. Your system is up to date.',
+	EGATER_EXCEPTION = 'An error occurred while gathering user information.',
+	GATHERING_USERINFO_EXCEPTION = 'An error occurred while gathering user information.',
+	CERTIFICATE_VALIDATION_EXCEPTION = 'The Update Content Server is invalid. Please try again later.',
+	DOWNLOAD_EXCEPTION = 'An error occurred while downloading updates.',
+	CONNECT_EXCEPTION = 'Unable to connect to the Update Content Server.',
+	NOT_ENOUGHDISKSPACE = 'There is not enough disk space to perform the current task.',
+	PROXY_AUTHENTICATION_EXCEPTION = 'Incorrect Proxy user name or password.',
+	PROXY_CONNECTION_EXCEPTION = 'Unable to connect to the proxy server.',
+	AUTOSCRIPT_EVALUATION_EXCEPTION = 'There was an error evaluating the auto configuration script.',
+	LOCALREPOSITORY_CONNECTION_FAILURE_EXCEPTION = 'Unable to connect to the Local Repository.',
+	LOCALREPOSITORY_DATABASE_EXCEPTION = 'The local repository database could not be found or is corrupted.',
+	NETWORK_INTERRUPTED_EXCEPTION = 'The System Update Server is currently unavailable. Please try again later.',
+	HELPCENTER_INVALID_SERVER_EXCEPTION = 'The System Update Server is invalid. Please try again later.',
+	CATALOG_NOT_FOUND_EXCEPTION = 'There are no applicable updates found for your system.',
+	CATALOG_CRC_ERROR_EXCEPTION = 'The update catalog for your system is currently being updated on the System Update Server. Please try again later.',
+	CATALOG_ERROR_EXCEPTION = 'An error was detected with the update catalog for your system on the System Update Server. Please try again later.',
+	FILE_NOT_FOUND_EXCEPTION = 'File not found.',
+	UNKNOWN_EXCEPTION = 'There is a problem in retrieving new Updates. Please try again later.',
+	INSTANCE_ISRUNNING = 'There is a problem in retrieving new Updates. Please try again later.',
+	CATALOG_DESC_NOT_FOUND_EXCEPTION = 'An error was detected with the update catalog for your system on the System Update Server. Please try again later.', // dummy msg, 2.0 doesn't have error code
+	CATALOG_DESC_EMPTY_EXCEPTION = 'An error was detected with the update catalog for your system on the System Update Server. Please try again later.', // dummy msg, 2.0 doesn't have error code
+}

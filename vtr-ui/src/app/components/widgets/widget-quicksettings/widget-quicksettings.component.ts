@@ -60,6 +60,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			switch (type) {
 				case DeviceMonitorStatus.MicrophoneStatus:
 					console.log('DeviceMonitorStatus', payload);
+					this.microphoneStatus.status = payload.muteDisabled;
 					break;
 				default:
 					break;
@@ -121,7 +122,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.dashboardService.isShellAvailable) {
 			this.dashboardService.setCameraStatus($event)
 				.then((value: boolean) => {
-					console.log('getCameraStatus.then', value);
+					console.log('getCameraStatus.then', value, $event);
+					this.cameraStatus.status = $event;
 				}).catch(error => {
 					console.error('getCameraStatus', error);
 				});
@@ -132,7 +134,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.dashboardService.isShellAvailable) {
 			this.dashboardService.setMicrophoneStatus($event)
 				.then((value: boolean) => {
-					console.log('setMicrophoneStatus.then', value);
+					console.log('setMicrophoneStatus.then', value, $event);
+					this.microphoneStatus.status = $event;
 				}).catch(error => {
 					console.error('setMicrophoneStatus', error);
 				});
@@ -143,7 +146,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		if (this.dashboardService.isShellAvailable) {
 			this.dashboardService.setEyeCareMode($event)
 				.then((value: boolean) => {
-					console.log('setEyeCareMode.then', value);
+					console.log('setEyeCareMode.then', value, $event);
+					this.eyeCareModeStatus.status = $event;
 				}).catch(error => {
 					console.error('setEyeCareMode', error);
 				});

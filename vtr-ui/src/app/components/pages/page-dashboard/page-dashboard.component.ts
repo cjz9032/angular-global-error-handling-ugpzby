@@ -77,7 +77,7 @@ export class PageDashboardComponent implements OnInit {
 						'title': record.Description,
 						'url': record.FeatureImage,
 						'ActionLink': record.ActionLink
-					}
+					};
 				});
 
 				this.cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
@@ -158,8 +158,9 @@ export class PageDashboardComponent implements OnInit {
 
 			if (response.memory) {
 				const { total, used } = response.memory;
-				memory.detail = `${this.commonService.formatBytes(used)} of ${this.commonService.formatBytes(total)}`;
-				const percent = (used / total) * 100;
+				memory.detail = `${this.commonService.formatBytes(used, 1)} of ${this.commonService.formatBytes(total, 1)}`;
+				const percent = parseInt(((used / total) * 100).toFixed(0), 10);
+				// const percent = (used / total) * 100;
 				if (percent > 70) {
 					memory.status = 1;
 				} else {
@@ -180,8 +181,9 @@ export class PageDashboardComponent implements OnInit {
 
 			if (response.disk) {
 				const { total, used } = response.disk;
-				disk.detail = `${this.commonService.formatBytes(used)} of ${this.commonService.formatBytes(total)}`;
-				const percent = (used / total) * 100;
+				disk.detail = `${this.commonService.formatBytes(used, 1)} of ${this.commonService.formatBytes(total, 1)}`;
+				const percent = parseInt(((used / total) * 100).toFixed(0), 10);
+				// const percent = (used / total) * 100;
 				if (percent > 90) {
 					disk.status = 1;
 				} else {
