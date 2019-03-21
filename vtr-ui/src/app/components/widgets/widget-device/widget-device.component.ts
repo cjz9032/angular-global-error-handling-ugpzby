@@ -78,7 +78,8 @@ export class WidgetDeviceComponent implements OnInit {
 					type = '';
 				}
 				memory.systemDetails = `${this.commonService.formatBytes(size)} of ${type} RAM`;
-				const percent = (used / total) * 100;
+				// const percent = (used / total) * 100;
+				const percent = parseInt(((used / total) * 100).toFixed(0), 10);
 				if (percent > 70) {
 					memory.status = 1;
 				} else {
@@ -100,8 +101,9 @@ export class WidgetDeviceComponent implements OnInit {
 				const { total, used } = response.disk;
 				disk.title = `Disk Space`;
 				disk.systemDetails = `${this.commonService.formatBytes(used)} of ${this.commonService.formatBytes(total)}`;
-				const percent = (used / total) * 100;
-				if (percent > 70) {
+				// const percent = (used / total) * 100;
+				const percent = parseInt(((used / total) * 100).toFixed(0), 10);
+				if (percent > 90) {
 					disk.status = 1;
 				} else {
 					disk.status = 0;

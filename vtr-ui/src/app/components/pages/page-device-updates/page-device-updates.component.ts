@@ -6,14 +6,13 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
-import { SystemUpdateStatusCode } from 'src/app/enums/system-update-status-code.enum';
 import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
 import { InstallUpdate } from 'src/app/data-models/system-update/install-update.model';
 import { UpdateInstallAction } from 'src/app/enums/update-install-action.enum';
 import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enum';
 import { ModalCommonConfirmationComponent } from '../../modal/modal-common-confirmation/modal-common-confirmation.component';
-import { ignoreElements } from 'rxjs/operators';
 import { UpdateRebootType } from 'src/app/enums/update-reboot-type.enum';
+import { SystemUpdateStatusMessage } from 'src/app/data-models/system-update/system-update-status-message.model';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -46,6 +45,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public showFullHistory = false;
 	private notificationSubscription: Subscription;
 	private isComponentInitialized = false;
+	public updateTitle = '';
 
 	nextUpdatedDate = '11/12/2018 at 10:00 AM';
 	installationHistory = 'Installation History';
@@ -133,11 +133,20 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.systemUpdateService.getUpdateHistory();
 		this.getScheduleUpdateStatus(false);
 		this.isComponentInitialized = true;
+		this.setUpdateTitle();
 	}
 
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
+		}
+	}
+
+	private setUpdateTitle(title?: string) {
+		if (title) {
+			this.updateTitle = title;
+		} else {
+			this.updateTitle = 'An up-to-date system is a healthy system.';
 		}
 	}
 
@@ -353,14 +362,23 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				case UpdateProgress.UpdateCheckCompleted:
 					this.isUpdateCheckInProgress = false;
 					this.percentCompleted = 0;
+
+					for (const key in SystemUpdateStatusMessage) {
+						if (SystemUpdateStatusMessage.hasOwnProperty(key)) {
+							if (SystemUpdateStatusMessage[key].code === payload.status) {
+								this.setUpdateTitle(SystemUpdateStatusMessage[key].message);
+							}
+						}
+					}
+
 					break;
 				case UpdateProgress.UpdatesAvailable:
 					this.isUpdatesAvailable = true;
 					this.setUpdateByCategory(payload.updateList);
 					break;
-				case UpdateProgress.UpdatesNotAvailable:
-					// todo : no updates available msg
-					break;
+				// case UpdateProgress.UpdatesNotAvailable:
+				// 	// todo : no updates available msg
+				// 	break;
 				case UpdateProgress.InstallationStarted:
 					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 					break;
@@ -374,7 +392,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				case UpdateProgress.InstallationComplete:
 					this.isUpdateDownloading = false;
 					this.isInstallationCompleted = true;
-					this.isInstallationSuccess = (payload.status === SystemUpdateStatusCode.SUCCESS);
+					this.isInstallationSuccess = (payload.status === SystemUpdateStatusMessage.SUCCESS.code);
 					this.checkRebootRequired();
 					break;
 				case UpdateProgress.AutoUpdateStatus:
@@ -419,7 +437,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				case UpdateProgress.ScheduleUpdateCheckComplete:
 					this.isUpdateDownloading = false;
 					this.isInstallationCompleted = true;
-					this.isInstallationSuccess = (payload.status === SystemUpdateStatusCode.SUCCESS);
+					this.isInstallationSuccess = (payload.status === SystemUpdateStatusMessage.SUCCESS.code);
 					this.setUpdateByCategory(payload.updateList);
 					this.checkRebootRequired();
 					break;
