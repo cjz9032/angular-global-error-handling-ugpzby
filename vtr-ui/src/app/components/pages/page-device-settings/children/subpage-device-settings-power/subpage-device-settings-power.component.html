@@ -333,7 +333,8 @@
 			<vtr-container-collapsible cardTitle="Battery Settings"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
-					<li class="" *ngIf="toggleAirplanePowerModeFlag">
+					<li class=""
+						*ngIf="toggleAirplanePowerModeFlag">
 						<vtr-ui-row-switch [title]="batterySettings.items[0].header"
 							[caption]="batterySettings.items[0].subHeader"
 							[isSwitchVisible]=true
@@ -368,7 +369,8 @@
 							</div>
 						</vtr-ui-row-switch>
 					</li> -->
-					<li class="" *ngIf="conservationModeStatus.available">
+					<li class=""
+						*ngIf="conservationModeStatus.available">
 						<!--
 						*ngIf="batterySettings.status.expressCharging"
 						-->
@@ -381,7 +383,8 @@
 							(toggleOnOff)="changeBatteryMode($event,'expressCharging')">
 						</vtr-ui-row-switch>
 					</li>
-					<li class="" *ngIf="expressChargingStatus.available">
+					<li class=""
+						*ngIf="expressChargingStatus.available">
 						<!-- *ngIf="batterySettings.status.conservationMode"* -->
 						<vtr-ui-row-switch [title]="batterySettings.items[3].header"
 							[caption]="batterySettings.items[3].subHeader"
@@ -403,42 +406,43 @@
 		id="power">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible cardTitle="Power Settings"
-			[isCollapsed]="false">
-			<ul class="list-group list-group-flush">
-				<li class="">
-					<vtr-ui-row-switch [title]="powerSettings[0].header"
-						[caption]="powerSettings[0].subHeader"
-						[isSwitchVisible]="alwaysOnUSBStatus.available"
-						[isSwitchChecked]="alwaysOnUSBStatus.status"
-						[leftIcon]="powerSettings[0].leftImageSource"
-						[rightIcon]="powerSettings[0].rightImageSource"
-						[showChildContent]="true"
-						[tooltipText]="powerSettings[0].tooltipText"
-						(toggleOnOff)="onToggleOfAlwaysOnUsb($event)">
-						<div class="auto-set-checkbox left-margin"
-							[ngClass]="{'disable': toggleAlwaysOnUsbFlag === false}">
-							<input type="checkbox"
-								name="alwasy-on-usb-checkbox-id"
-								[disabled]="!toggleAlwaysOnUsbFlag"
-								[(ngModel)]="usbChargingCheckboxFlag"
-								(ngModelChange)='onUsbChargingStatusChange($event)'>
-							<label> {{ powerSettings[0].checkboxDesc }} </label>
-						</div>
-					</vtr-ui-row-switch>
-				</li>
-				<li class="" *ngIf="showEasyResumeSection">
-					<vtr-ui-row-switch [title]="powerSettings[1].header"
-						[caption]="powerSettings[1].subHeader"
-						[isSwitchVisible]=true
-						[isSwitchChecked]=powerSettings[1].isSwitchChecked
-						[leftIcon]="powerSettings[1].leftImageSource"
-						[rightIcon]="powerSettings[1].rightImageSource"
-						[tooltipText]="powerSettings[1].tooltipText"
-						(toggleOnOff)="onToggleOfEasyResume($event)">
-					</vtr-ui-row-switch>
-				</li>
-			</ul>
-		</vtr-container-collapsible>
+				[isCollapsed]="false">
+				<ul class="list-group list-group-flush">
+					<li class="">
+						<vtr-ui-row-switch [title]="powerSettings[0].header"
+							[caption]="powerSettings[0].subHeader"
+							[isSwitchVisible]="alwaysOnUSBStatus.available"
+							[isSwitchChecked]="alwaysOnUSBStatus.status"
+							[leftIcon]="powerSettings[0].leftImageSource"
+							[rightIcon]="powerSettings[0].rightImageSource"
+							[showChildContent]="true"
+							[tooltipText]="powerSettings[0].tooltipText"
+							(toggleOnOff)="onToggleOfAlwaysOnUsb($event)">
+							<div class="auto-set-checkbox left-margin"
+								[ngClass]="{'disable': toggleAlwaysOnUsbFlag === false}">
+								<input type="checkbox"
+									name="alwasy-on-usb-checkbox-id"
+									[disabled]="!toggleAlwaysOnUsbFlag"
+									[(ngModel)]="usbChargingCheckboxFlag"
+									(ngModelChange)='onUsbChargingStatusChange()'>
+								<label> {{ powerSettings[0].checkboxDesc }} </label>
+							</div>
+						</vtr-ui-row-switch>
+					</li>
+					<li class=""
+						*ngIf="showEasyResumeSection">
+						<vtr-ui-row-switch [title]="powerSettings[1].header"
+							[caption]="powerSettings[1].subHeader"
+							[isSwitchVisible]=true
+							[isSwitchChecked]=powerSettings[1].isSwitchChecked
+							[leftIcon]="powerSettings[1].leftImageSource"
+							[rightIcon]="powerSettings[1].rightImageSource"
+							[tooltipText]="powerSettings[1].tooltipText"
+							(toggleOnOff)="onToggleOfEasyResume($event)">
+						</vtr-ui-row-switch>
+					</li>
+				</ul>
+			</vtr-container-collapsible>
 		</div>
 	</div>
 
