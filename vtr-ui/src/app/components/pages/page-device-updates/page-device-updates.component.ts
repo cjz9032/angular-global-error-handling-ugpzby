@@ -29,6 +29,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	private lastInstallTime = new Date('1970-01-01T01:00:00');
 	// private lastScanTime = new Date('1970-01-01T01:00:00');
 	private nextScheduleScanTime = new Date('1970-01-01T01:00:00');
+	private isScheduleScanEnabled = false;
 	public percentCompleted = 0;
 	public updateInfo;
 	public criticalUpdates: AvailableUpdateDetail[];
@@ -148,7 +149,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.lastInstallTime = new Date(value.lastInstallTime);
 					// this.lastScanTime = new Date(value.lastScanTime);
 					this.nextScheduleScanTime = new Date(value.nextScheduleScanTime);
-
+					this.isScheduleScanEnabled = value.scheduleScanEnabled;
 					// lastInstallTime: "2019-03-01T10:09:53"
 					// lastScanTime: "2019-03-12T18:24:03"
 					// nextScheduleScanTime: "2019-03-15T10:07:42"
@@ -160,17 +161,23 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	public getLastUpdatedText() {
-		const installDate = this.commonService.formatDate(this.lastInstallTime.toISOString());
-		const installTime = this.commonService.formatTime(this.lastInstallTime.toISOString());
-
-		return `${this.lastUpdatedText} ${installDate} at ${installTime}`;
+		if (this.lastInstallTime) {
+			const installDate = this.commonService.formatDate(this.lastInstallTime.toISOString());
+			const installTime = this.commonService.formatTime(this.lastInstallTime.toISOString());
+			return `${this.lastUpdatedText} ${installDate} at ${installTime}`;
+		}
+		return `${this.lastUpdatedText} not available`;
 	}
 
 	public getNextUpdatedScanText() {
-		const scanDate = this.commonService.formatDate(this.nextScheduleScanTime.toISOString());
-		const scanTime = this.commonService.formatTime(this.nextScheduleScanTime.toISOString());
-
-		return `${this.nextScanText} ${scanDate} at ${scanTime}`;
+		if (!this.isScheduleScanEnabled) {
+			return '';
+		} else if (this.nextScheduleScanTime) {
+			const scanDate = this.commonService.formatDate(this.nextScheduleScanTime.toISOString());
+			const scanTime = this.commonService.formatTime(this.nextScheduleScanTime.toISOString());
+			return `${this.nextScanText} ${scanDate} at ${scanTime}`;
+		}
+		return `${this.nextScanText} not available`;
 	}
 
 	public onCheckForUpdates() {

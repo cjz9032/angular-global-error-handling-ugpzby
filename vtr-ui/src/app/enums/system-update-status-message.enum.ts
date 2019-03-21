@@ -21,6 +21,4 @@ export enum SystemUpdateStatusMessage {
 	FILE_NOT_FOUND_EXCEPTION = 'File not found.',
 	UNKNOWN_EXCEPTION = 'There is a problem in retrieving new Updates. Please try again later.',
 	INSTANCE_ISRUNNING = 'There is a problem in retrieving new Updates. Please try again later.',
-	CATALOG_DESC_NOT_FOUND_EXCEPTION = 'An error was detected with the update catalog for your system on the System Update Server. Please try again later.', // dummy msg, 2.0 doesn't have error code
-	CATALOG_DESC_EMPTY_EXCEPTION = 'An error was detected with the update catalog for your system on the System Update Server. Please try again later.', // dummy msg, 2.0 doesn't have error code
 }

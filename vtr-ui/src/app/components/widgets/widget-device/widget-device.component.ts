@@ -71,8 +71,12 @@ export class WidgetDeviceComponent implements OnInit {
 			memory.isSystemLink = true;
 
 			if (response.memory) {
-				const { size, type, total, used } = response.memory;
+				const { size, total, used } = response.memory;
+				let type = response.memory.type;
 				memory.title = `Memory `;
+				if (type.toLowerCase() === 'unknown') {
+					type = '';
+				}
 				memory.systemDetails = `${this.commonService.formatBytes(size)} of ${type} RAM`;
 				const percent = (used / total) * 100;
 				if (percent > 70) {
@@ -105,30 +109,29 @@ export class WidgetDeviceComponent implements OnInit {
 			}
 			systemStatus.push(disk);
 
-
-			const sysupdate = new Status();
-			sysupdate.status = 1;
-			sysupdate.id = 'systemupdate';
-			sysupdate.title = 'System update not found';
-			sysupdate.detail = 'System update';
-			sysupdate.path = '/system-updates';
-			sysupdate.asLink = true;
-			sysupdate.isSystemLink = false;
+			const systemUpdate = new Status();
+			systemUpdate.status = 1;
+			systemUpdate.id = 'systemupdate';
+			systemUpdate.title = 'System update not found';
+			systemUpdate.detail = 'System update';
+			systemUpdate.path = '/system-updates';
+			systemUpdate.asLink = true;
+			systemUpdate.isSystemLink = false;
 
 			if (response.sysupdate) {
 				const updateStatus = response.sysupdate.status;
 				const lastUpdate = response.sysupdate.lastupdate;
 				if (updateStatus === 1) {
-					sysupdate.title = `Software up to date `;
-					sysupdate.systemDetails = `updated on ${this.commonService.formatDate(lastUpdate)}`;
-					sysupdate.status = 0;
+					systemUpdate.title = `Software up to date `;
+					systemUpdate.systemDetails = `updated on ${this.commonService.formatDate(lastUpdate)}`;
+					systemUpdate.status = 0;
 				} else {
-					sysupdate.title = `Software outdated `;
-					sysupdate.systemDetails = `never ran update`;
-					sysupdate.status = 1;
+					systemUpdate.title = `Software outdated `;
+					systemUpdate.systemDetails = `never ran update`;
+					systemUpdate.status = 1;
 				}
 			}
-			systemStatus.push(sysupdate);
+			systemStatus.push(systemUpdate);
 
 			const warranty = new Status();
 			warranty.status = 1;
@@ -139,20 +142,6 @@ export class WidgetDeviceComponent implements OnInit {
 			warranty.asLink = true;
 			warranty.isSystemLink = false;
 
-			// if (response.warranty) {
-			// 	const today = new Date();
-			// 	const expired = new Date(response.warranty.expired);
-			// 	if (today.getTime() > expired.getTime()) {
-			// 		warranty.title = `Out of warranty `;
-			// 		warranty.systemDetails = `Expired on ${this.commonService.formatDate(expired.toString())}`;
-			// 		warranty.status = 1;
-			// 	} else {
-			// 		warranty.status = 0;
-			// 		warranty.title = `In warranty `;
-			// 		warranty.systemDetails = `${this.commonService.getDaysBetweenDates(today, expired)} days
-			// 		 remaining`;
-			// 	}
-			// }
 			if (response.warranty) {
 				const warrantyDate = this.commonService.formatDate(response.warranty.expired);
 				// in warranty
@@ -168,8 +157,8 @@ export class WidgetDeviceComponent implements OnInit {
 					warranty.detail = `Expired on ${warrantyDate}`;
 					warranty.status = 1;
 				} else {
-					warranty.detail = `Not available`;
-					warranty.detail = '';
+					warranty.title = `Warranty not available`;
+					warranty.detail = 'Support';
 					warranty.status = 1;
 				}
 			}
