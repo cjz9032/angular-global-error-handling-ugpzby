@@ -7,6 +7,9 @@ import { Status } from 'src/app/data-models/widgets/status.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
+import { UserService } from 'src/app/services/user/user.service';
+import {AppNotification} from 'src/app/data-models/common/app-notification.model';
+import {LenovoIdKey} from 'src/app/enums/lenovo-id-key.enum';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -15,9 +18,8 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 	providers: [NgbModalConfig, NgbModal]
 })
 export class PageDashboardComponent implements OnInit {
-	private firstName = 'James'; // todo: read it from local storage once lenovo id is integrated
+	firstName = 'User';
 	submit = 'Submit';
-	title = `Looking energized today ${this.firstName}!`;
 	feedbackButtonText = this.submit;
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
@@ -78,6 +80,10 @@ export class PageDashboardComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
+
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
 	}
 
 	onFeedbackModal(content: any) {
@@ -101,6 +107,11 @@ export class PageDashboardComponent implements OnInit {
 			this.modalService.dismissAll();
 			this.feedbackButtonText = this.submit;
 		}, 3000);
+	}
+
+	private getFormatedTitle(title) {
+		var formatedTitle = 'Looking energized today ' + title + '!';
+		return formatedTitle;
 	}
 
 	private getSystemInfo() {
@@ -315,5 +326,18 @@ export class PageDashboardComponent implements OnInit {
 			securityStatus.push(windowsHello);
 		}
 		return securityStatus;
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case LenovoIdKey.FirstName:
+					this.firstName = notification.payload;
+					break;
+
+				default:
+					break;
+			}
+		}
 	}
 }
