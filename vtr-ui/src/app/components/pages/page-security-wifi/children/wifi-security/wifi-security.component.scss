@@ -189,6 +189,10 @@
 				font-size: 2rem;
 				margin-left: 3rem;
 				margin-top: 0.8rem;
+
+				.active {
+					text-decoration: underline;
+				}
 			}
 		}
 
