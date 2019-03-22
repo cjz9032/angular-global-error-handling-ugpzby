@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
 
 @Component({
 	selector: 'vtr-ui-list-checkbox',
@@ -8,7 +9,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 export class UiListCheckboxComponent implements OnInit {
 
-	@Input() items: any;
+	@Input() items: Array<AvailableUpdateDetail>;
 	@Input() isInstallationSuccess = false;
 	@Input() isInstallationCompleted = false;
 	@Output() checkChange = new EventEmitter<any>();

@@ -3,9 +3,9 @@
 		'white-theme': theme === 'white',
 		'blue-theme': theme === 'blue'
 	}">
-	<div class="container-fluid p-0">
+	<div class="container-fluid p-0" [ngClass]="{'vtr-disabled': disabled}">
 		<div class="row m-0">
-			<div class="col col-xs-8 col-md-10">
+			<div class="col col-xs-8 col-md-8">
 				<div class="container-fluid p-0">
 					<div class="row m-0">
 						<div class="col-auto left-icon-column"
@@ -41,6 +41,7 @@
 				*ngIf="isSwitchVisible">
 				<vtr-ui-switch-onoff [name]="name"
 					[value]="isSwitchChecked"
+					[disabled]="disabled"
 					(toggle)="onOnOffChange($event)"></vtr-ui-switch-onoff>
 			</div>
 			<div *ngIf="!isSwitchVisible && linkText"

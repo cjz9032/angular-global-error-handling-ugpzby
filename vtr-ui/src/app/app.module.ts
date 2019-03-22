@@ -120,6 +120,8 @@ import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-b
 import { MetricsDirective } from './directives/metrics.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
+import { InstalledSystemUpdatesListComponent } from './components/pages/page-device-updates/children/installed-system-updates-list/installed-system-updates-list.component';
+import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
 
 library.add(fas);
 library.add(fab);
@@ -198,7 +200,9 @@ library.add(far);
 		ModalBatteryChargeThresholdComponent,
 		MetricsDirective,
 		InstallationHistoryComponent,
-		SeparatePascalCasePipe
+		SeparatePascalCasePipe,
+		InstalledSystemUpdatesListComponent,
+		ModalCommonConfirmationComponent
 	],
 	imports: [
 		BrowserModule,
@@ -226,7 +230,12 @@ library.add(far);
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
 	bootstrap: [AppComponent],
-	entryComponents: [ModalLenovoIdComponent, ModalWelcomeComponent],
+	entryComponents: [
+		ModalLenovoIdComponent,
+		ModalWelcomeComponent,
+		ModalBatteryChargeThresholdComponent,
+		ModalCommonConfirmationComponent
+	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
 	]

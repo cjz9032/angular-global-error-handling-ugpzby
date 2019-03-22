@@ -2,30 +2,30 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
-			 [back]="back"
-			 [title]="title"></vtr-header-main>
+				[back]="back"
+				[title]="title"></vtr-header-main>
 			<div class="btn-group btn-group-toggle"
-			 ngbRadioGroup
-			 style="margin-left:300px;margin-top:-150px;"
-			 [(ngModel)]="value">
+				ngbRadioGroup
+				style="margin-left:300px;margin-top:-150px;"
+				[(ngModel)]="value">
 				<label class="btn-primary"
-				 ngbButtonLabel> 1
+					ngbButtonLabel> 1
 					<input type="radio"
-					 ngbButton
-					 [value]="1" />
+						ngbButton
+						[value]="1" />
 				</label>
 				<label class="btn-primary"
-				 ngbButtonLabel> 2
+					ngbButtonLabel> 2
 					<input type="radio"
-					 ngbButton
-					 [value]="2" />
+						ngbButton
+						[value]="2" />
 				</label>
 
 				<label class="btn-primary"
-				 ngbButtonLabel> 3
+					ngbButtonLabel> 3
 					<input type="radio"
-					 ngbButton
-					 [value]="3" />
+						ngbButton
+						[value]="3" />
 				</label>
 			</div>
 		</div>
@@ -41,18 +41,12 @@
 									<div class="row">
 										<div class="col-auto align-self-center">
 											<img class="img-fluid"
-											 src="./../../../../assets/images/antivirus/protection.png" />
+												src="./../../../../assets/images/antivirus/protection.png" />
 
 										</div>
 										<div class="col">
 											<div class="title p-3"> Not Optimally Protected</div>
-											<div class="subtitle p-3">
-
-												You are currently have no firewall protection,please turn on a firewall
-												in
-
-												order safely lorem ipsum el dolor
-											</div>
+											<div class="subtitle p-3" [innerHTML]="subTitle"></div>
 											<div class="p-3">
 												<vtr-ui-button metricsParent="not-optimally-protected" metricsEvent="itemClick" metricsItem="learn more about mcafee" [label]="'LEARN MORE ABOUT MCAFEE'"></vtr-ui-button>
 											</div>
@@ -200,7 +194,7 @@
 													</span>
 													<span>
 														<a href="#"
-														 class="text">Update Now</a>
+															class="text">Update Now</a>
 													</span>
 												</div>
 											</div>
@@ -382,7 +376,7 @@
 													</span>
 													<span>
 														<a href="#"
-														 class="text">Upgrade Now</a>
+															class="text">Upgrade Now</a>
 													</span>
 												</div>
 											</div>
@@ -403,7 +397,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-													 src="./../../../../assets/images/antivirus/icon1.png" />
+														src="./../../../../assets/images/antivirus/icon1.png" />
 
 
 												</div>
@@ -421,7 +415,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-													 src="./../../../../assets/images/antivirus/icon2.png" />
+														src="./../../../../assets/images/antivirus/icon2.png" />
 
 
 												</div>
@@ -439,7 +433,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-													 src="./../../../../assets/images/antivirus/icon3.png" />
+														src="./../../../../assets/images/antivirus/icon3.png" />
 
 
 												</div>
@@ -455,7 +449,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-													 src="./../../../../assets/images/antivirus/icon4.png" />
+														src="./../../../../assets/images/antivirus/icon4.png" />
 
 
 												</div>
@@ -475,7 +469,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-													 src="./../../../../assets/images/antivirus/icon5.png" />
+														src="./../../../../assets/images/antivirus/icon5.png" />
 
 
 												</div>
@@ -493,7 +487,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-													 src="./../../../../assets/images/antivirus/icon6.png" />
+														src="./../../../../assets/images/antivirus/icon6.png" />
 
 
 												</div>
@@ -513,7 +507,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-													 src="./../../../../assets/images/antivirus/icon7.png" />
+														src="./../../../../assets/images/antivirus/icon7.png" />
 
 
 												</div>
@@ -572,7 +566,7 @@
 											</div>
 										</div>
 
-										<div class="subtitle pb-5">Symnatec offers you basic protection for your
+										<div class="subtitle pb-5">Symantec offers you basic protection for your
 											device
 										</div>
 
@@ -818,11 +812,11 @@
 								<div class="row mb-40">
 									<div class="col col-12">
 										<vtr-container-card [img]="'./../../../../assets/images/antivirus/poaster.png'"
-										 [caption]="'PARTNER ARTICLE'"
-										 [title]="'Try our McAfee anti-virus software for 6 months'"
-										 [type]="'article'"
-										 [ratioX]="4"
-										 [ratioY]="4">
+											[caption]="'PARTNER ARTICLE'"
+											[title]="'Try our McAfee anti-virus software for 6 months'"
+											[type]="'article'"
+											[ratioX]="4"
+											[ratioY]="4">
 										</vtr-container-card>
 									</div>
 								</div>

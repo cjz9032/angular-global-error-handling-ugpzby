@@ -11,6 +11,9 @@ export class UiListChevronComponent implements OnInit {
 
 	@Input() items: any[];
 	@Input() iconPlacement = 'right';
+	@Input() chevronVisibility = true;
+	/**** passing to ItemParent from metrics ****/
+	@Input() metricsParent: string;
 
 	/** object having item class list*/
 	itemStatusClass = {
@@ -28,8 +31,6 @@ export class UiListChevronComponent implements OnInit {
 
 	constructor(private deviceService: DeviceService) { }
 
-	ngOnInit() {
-	}
 
 	getItemStatusClass(item) {
 		// console.log('getItemStatusClass method invoked');
@@ -76,6 +77,9 @@ export class UiListChevronComponent implements OnInit {
 		}
 		// console.log(" itemDetailClass " + JSON.stringify(itemDetailClass));
 		return itemDetailClass;
+	}
+
+	ngOnInit() {
 	}
 
 	/**

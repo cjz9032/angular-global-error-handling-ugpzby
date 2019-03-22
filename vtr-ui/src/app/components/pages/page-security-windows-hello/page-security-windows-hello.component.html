@@ -76,7 +76,11 @@
 											</div>
 											<div class=" pull right">
 												<div class="col-12">
-													<button type="button" vtrMetrics  metricsItem="setup windows hello" metricsParent="windows-hello" metricsEvent="itemClick"
+													<button type="button"
+														vtrMetrics
+														metricsItem="setup windows hello"
+														metricsParent="windows-hello"
+														metricsEvent="itemClick"
 														(click)="windowsHello()"
 														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
 														Setup Windows Hello
@@ -205,7 +209,7 @@
 													</div>
 												</div>
 											</li>
-											<li class="good">
+											<!-- <li class="good">
 												<div class="container-fluid">
 													<div class="row align-items-center">
 														<div class="col-auto">
@@ -224,7 +228,7 @@
 														</div>
 													</div>
 												</div>
-											</li>
+											</li> -->
 											<li class="good">
 												<div class="container-fluid">
 													<div class="row align-items-center">
@@ -255,7 +259,7 @@
 										<div class="list-heading">Powered By Windows Hello</div>
 										<p class="text-regular">Read more on the <a href=""
 												class="learnmore">Privacy Policy</a> and <a href=""
-												class="learnmore">lorem ipsum</a></p>
+												class="learnmore">Terms of Services</a></p>
 									</div>
 									<div class="pull right"><img class="dashlane_logo_teal"
 											src="../../../../assets/images/windows-logo.png" /></div>
@@ -339,7 +343,8 @@
 										<vtr-container-card [img]="'./../../../../assets/images/antivirus/poaster.png'"
 											[title]="'Lenovo announced new powerful Legion compact series.'"
 											[logoText]="'LENOVO SPECIAL'"
-											[readMore]="'http://www.google.com'"
+											[action]="'Read More'"
+											[actionLink]="'http://www.google.com'"
 											[type]="'article'"
 											[ratioX]="4"
 											[ratioY]="4">

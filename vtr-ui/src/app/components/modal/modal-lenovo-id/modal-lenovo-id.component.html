@@ -1,13 +1,11 @@
 <div class="modal-body vtr-modal-lenovo-id">
-	<div>
-		<x-ms-webview class="id-container"
-			id="lid-webview"></x-ms-webview>
+	<div class="modal-content">
+		<div class="spinner-border text-primary progress-spinner" *ngIf="!isBroswerVisible" role="status">
+		</div>
+		<x-ms-webview class="id-container" id="lid-webview" [style.visibility]="isBroswerVisible? 'visible': 'hidden'"></x-ms-webview>
 	</div>
 	<div class="btn-close">
-		<button type="button"
-			class="close"
-			aria-hidden="true"
-			(click)="activeModal.dismiss()">
+		<button type="button" class="close" aria-hidden="true" (click)="activeModal.dismiss()">
 			&times;
 		</button>
 	</div>
