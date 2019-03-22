@@ -115,6 +115,14 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		}
 	];
 
+	public updateDetails = {
+		manufacturer: 'Lenovo',
+		version: '11.85.45.123',
+		installedVersion: 'Not avaialable',
+		downloadSize: '7.3 MB',
+		diskSpaceNeeded: '30.5 MB'
+	};
+
 	constructor(
 		private systemUpdateService: SystemUpdateService
 		, private commonService: CommonService
