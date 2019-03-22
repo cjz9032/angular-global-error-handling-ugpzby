@@ -5,7 +5,8 @@
 	}">
 	<div class="container-fluid p-0" [ngClass]="{'vtr-disabled': disabled}">
 		<div class="row m-0">
-			<div class="col col-xs-8 col-md-8">
+			<div class="col col-xs-8"
+			[ngClass]="{'col-md-8': type!=undefined && type==='auto-updates', 'col-md-10':type===undefined}">
 				<div class="container-fluid p-0">
 					<div class="row m-0">
 						<div class="col-auto left-icon-column"
