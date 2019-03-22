@@ -124,10 +124,10 @@ export class PageDashboardComponent implements OnInit {
 		}, 3000);
 	}
 
-	private getFormatedTitle(title) {
-		var formatedTitle = 'Looking energized today ' + title + '!';
-		return formatedTitle;
-	}
+	// private getFormatedTitle(title) {
+	// 	var formatedTitle = 'Looking energized today ' + title + '!';
+	// 	return formatedTitle;
+	// }
 
 	private getSystemInfo() {
 		this.dashboardService.getSystemInfo()
