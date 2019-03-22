@@ -126,27 +126,27 @@
 							}
 						}
 					}
-					&:last-child{
-						.dropdown-menu{
+					&:last-child {
+						.dropdown-menu {
 							right: 0;
 							left: auto;
 							min-width: 20rem;
 							max-width: 50rem;
 						}
 					}
-					&.dropdown{
-						.dropdown-toggle{
-							position: relative;
-							padding-right: 2.4rem;
-							&::after{
-								border: none;
-								content: "\f107";
-								font-family: FontAwesome;
-								position: absolute;
-								font-size: 2rem;
-							}
-						}
-					}
+					// &.dropdown{
+					// 	.dropdown-toggle{
+					// 		position: relative;
+					// 		padding-right: 2.4rem;
+					// 		&::after{
+					// 			border: none;
+					// 			content: "\f107";
+					// 			font-family: FontAwesome;
+					// 			position: absolute;
+					// 			font-size: 2rem;
+					// 		}
+					// 	}
+					// }
 				}
 			}
 		}
