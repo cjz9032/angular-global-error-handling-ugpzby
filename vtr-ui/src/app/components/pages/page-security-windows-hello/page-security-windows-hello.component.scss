@@ -197,11 +197,12 @@
   }
 
   .invitation-code-box {
-    padding: 0.5rem;
+    padding: 0rem;
     background-color: $shade_lightest;
     border: 0.1rem solid $shade_lighter;
     border-radius: $border_radius;
     text-align: center;
+    height: 7rem;
 
     .sub-heading {
       margin-top: 2rem;
