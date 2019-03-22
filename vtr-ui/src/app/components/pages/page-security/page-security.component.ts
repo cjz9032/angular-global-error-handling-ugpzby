@@ -21,13 +21,13 @@ export class PasswordManagerLandingViewModel {
 		this.passwordManager = pmModel;
 		if (pmModel.status) {
 			this.detail = pmModel.status;
-			this.status = (pmModel.status === 'install') ? 2 : 1;
-			this.subjectStatus = (pmModel.status === 'install') ? 2 : 1;
+			this.status = (pmModel.status === 'installed') ? 2 : 1;
+			this.subjectStatus = (pmModel.status === 'installed') ? 2 : 1;
 		}
 		pmModel.on(EventTypes.pmStatusEvent, (data) => {
 			this.detail = data;
-			this.status = (data === 'install') ? 2 : 1;
-			this.subjectStatus = (data === 'install') ? 2 : 1;
+			this.status = (data === 'installed') ? 2 : 1;
+			this.subjectStatus = (data === 'installed') ? 2 : 1;
 		});
 	}
 }
@@ -216,6 +216,7 @@ export class PageSecurityComponent implements OnInit {
 		public vantageShellService: VantageShellService,
 		public mockSecurityAdvisorService: MockSecurityAdvisorService,
 	) {
+		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.passwordManager = this.vantageShellService.getSecurityAdvisor().passwordManager;
 		this.antivirus = this.mockSecurityAdvisorService.getSecurityAdvisor().antivirus;
 		this.vpn = this.vantageShellService.getSecurityAdvisor().vpn;

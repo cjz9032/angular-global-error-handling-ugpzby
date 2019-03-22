@@ -2,7 +2,7 @@
 
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
-import bootstrap from '@lenovo/tan-client-bridge';
+import bootstrap from '@lenovo/tan-client-bridge/src/index';
 import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 
 @Injectable({
@@ -96,7 +96,6 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
-
 	/**
 	 * returns hardware settings object from VantageShellService of JS Bridge
 	 */
