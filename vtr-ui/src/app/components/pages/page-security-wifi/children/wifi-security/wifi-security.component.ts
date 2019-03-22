@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class WifiSecurityComponent implements OnInit {
 	IsWifiSecurityInstalled: string = "not-installed";
 	// IsWifiSecurityInstalled: string = "active";
+	showAllNetworks: boolean = true;
 
 	constructor() { }
 
