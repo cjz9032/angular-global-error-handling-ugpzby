@@ -39,6 +39,7 @@ import { UiRowSwitchComponent } from './components/ui/ui-row-switch/ui-row-switc
 import { UiListChevronComponent } from './components/ui/ui-list-chevron/ui-list-chevron.component';
 import { UiListCheckboxComponent } from './components/ui/ui-list-checkbox/ui-list-checkbox.component';
 import { UiHeaderSubpageComponent } from './components/ui/ui-header-subpage/ui-header-subpage.component';
+import { UiSecurityStatusbarComponent } from './components/ui/ui-security-statusbar/ui-security-statusbar.component';
 
 // APPLICATION PAGE COMPONENTS
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
@@ -120,6 +121,10 @@ import { InstallationHistoryComponent } from './components/pages/page-device-upd
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
 import { InstalledSystemUpdatesListComponent } from './components/pages/page-device-updates/children/installed-system-updates-list/installed-system-updates-list.component';
 import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
+import { IconClassPipe } from './pipe/ui-security-statusbar/icon-class.pipe';
+import { IconNamePipe } from './pipe/ui-security-statusbar/icon-name.pipe';
+import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
+import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
 
 library.add(fas);
 library.add(fab);
@@ -195,12 +200,17 @@ library.add(far);
 		ContainerArticleComponent,
 		SanitizeUrlPipe,
 		UniqueIdPipe,
+		IconClassPipe,
+		IconNamePipe,
+		TextClassPipe,
+		StatusTextPipe,
 		ModalBatteryChargeThresholdComponent,
 		MetricsDirective,
 		InstallationHistoryComponent,
 		SeparatePascalCasePipe,
 		InstalledSystemUpdatesListComponent,
-		ModalCommonConfirmationComponent
+		ModalCommonConfirmationComponent,
+		UiSecurityStatusbarComponent
 	],
 	imports: [
 		BrowserModule,
