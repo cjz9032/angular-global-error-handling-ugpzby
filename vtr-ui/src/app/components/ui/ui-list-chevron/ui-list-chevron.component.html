@@ -1,115 +1,229 @@
 <div class="vtr-ui-list-chevron">
-	<ul class="chevron-list">
-		<li *ngFor="let item of items"
-			[ngClass]="getItemStatusClass(item)">
-			<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->
-			<a routerLink="/{{item.path}}"
-				vtrMetrics
-				[metricsParent]="metricsParent"
-				[metricsItem]="'link.'+item.title"
-				metricsEvent="itemClick"
-				*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false)">
-				<div class="container-fluid">
-					<div class="row align-items-center">
-						<div class="col col-1 text-center"
-							*ngIf="iconPlacement==='left'">
-							<div class="item-icon status"
-								*ngIf="item.status!==undefined&&item.status!==''">
-								<div class="icon-bkg">
-									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+	<ul class="chevron-list">		
+
+		<!-- <ng-container> -->
+				<!-- <ng-container *ngIf="!item.antivirus"> -->
+			<li [ngClass]="getItemStatusClass(item)">
+				<a routerLink="/{{item.path}}"
+					vtrMetrics
+					[metricsParent]="metricsParent"
+					[metricsItem]="'link.'+item.title"
+					metricsEvent="itemClick"
+					*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false)">
+					<div class="container-fluid">
+						<div class="row align-items-center">
+							<div class="col col-1 text-center"
+								*ngIf="iconPlacement==='left'">
+								<div class="item-icon status"
+									*ngIf="item.status!==undefined&&item.status!==''">
+									<div class="icon-bkg">
+										<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									</div>
+								</div>
+								<div class="item-icon"
+									*ngIf="item.icon">
+									<div class="icon-bkg">
+										<fa-icon [icon]="item.icon"></fa-icon>
+									</div>
+								</div>
+								<div class="item-icon-image"
+									*ngIf="item.iconPath">
+									<img [src]="item.iconPath" />
 								</div>
 							</div>
-							<div class="item-icon"
-								*ngIf="item.icon">
-								<div class="icon-bkg">
-									<fa-icon [icon]="item.icon"></fa-icon>
+							<div class="col col-10 item-text">
+								<div class="title"
+									[ngClass]="{'light-title':item.lightTitle}">
+									{{item.title}}
+								</div>
+								<div class="detail"
+									[ngClass]="getItemDetailClasses(item)">
+									{{item.detail}}
 								</div>
 							</div>
-							<div class="item-icon-image"
-								*ngIf="item.iconPath">
-								<img [src]="item.iconPath" />
-							</div>
-						</div>
-						<div class="col col-10 item-text">
-							<div class="title"
-								[ngClass]="{'light-title':item.lightTitle}">
-								{{item.title}}
-							</div>
-							<div class="detail"
-								[ngClass]="getItemDetailClasses(item)">
-								{{item.detail}}
-							</div>
-						</div>
-						<div class="col col-1 text-center"
-							*ngIf="iconPlacement==='right'">
-							<div class="item-icon status"
-								*ngIf="item.status!==undefined&&item.status!==''">
-								<div class="icon-bkg">
-									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+							<div class="col col-1 text-center"
+								*ngIf="iconPlacement==='right'">
+								<div class="item-icon status"
+									*ngIf="item.status!==undefined&&item.status!==''">
+									<div class="icon-bkg">
+										<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									</div>
+								</div>
+								<div class="item-icon"
+									*ngIf="item.icon">
+									<div class="icon-bkg">
+										<fa-icon [icon]="item.icon"></fa-icon>
+									</div>
+								</div>
+								<div class="item-icon-image"
+									*ngIf="item.iconPath">
+									<img [src]="item.iconPath" />
 								</div>
 							</div>
-							<div class="item-icon"
-								*ngIf="item.icon">
-								<div class="icon-bkg">
-									<fa-icon [icon]="item.icon"></fa-icon>
+							<div *ngIf="chevronVisibility"
+								class="col col-1 text-center">
+								<div class="arrow">
+									<fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
 								</div>
-							</div>
-							<div class="item-icon-image"
-								*ngIf="item.iconPath">
-								<img [src]="item.iconPath" />
-							</div>
-						</div>
-						<div *ngIf="chevronVisibility"
-							class="col col-1 text-center">
-							<div class="arrow">
-								<fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
 							</div>
 						</div>
 					</div>
-				</div>
-			</a>
-			<!--Open Windows Settings /subapges if isSystemLink is not undefined and  true or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
-			<a href="#"
-				(click)="launchSystemUri(item.path)"
-				*ngIf="item.isSystemLink!==undefined &&  item.isSystemLink===true">
-				<div class="container-fluid">
-					<div class="row align-items-center">
-						<div class="col col-10 item-text">
-							<div class="title"
-								[ngClass]="{'light-title':item.lightTitle}">
-								{{item.title}}
-							</div>
-							<div class="detail"
-								[ngClass]="getItemDetailClasses(item)">
-								{{item.detail}}
-							</div>
-						</div>
-						<div class="col col-1 text-center">
-							<div class="item-icon status"
-								*ngIf="item.status!==undefined&&item.status!==''">
-								<div class="icon-bkg">
-									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+				</a>
+				<a href="#"
+					(click)="launchSystemUri(item.path)"
+					*ngIf="item.isSystemLink!==undefined &&  item.isSystemLink===true">
+					<div class="container-fluid">
+						<div class="row align-items-center">
+							<div class="col col-10 item-text">
+								<div class="title"
+									[ngClass]="{'light-title':item.lightTitle}">
+									{{item.title}}
+								</div>
+								<div class="detail"
+									[ngClass]="getItemDetailClasses(item)">
+									{{item.detail}}
 								</div>
 							</div>
-							<div class="item-icon"
-								*ngIf="item.icon">
-								<div class="icon-bkg">
-									<fa-icon [icon]="item.icon"></fa-icon>
+							<div class="col col-1 text-center">
+								<div class="item-icon status"
+									*ngIf="item.status!==undefined&&item.status!==''">
+									<div class="icon-bkg">
+										<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									</div>
+								</div>
+								<div class="item-icon"
+									*ngIf="item.icon">
+									<div class="icon-bkg">
+										<fa-icon [icon]="item.icon"></fa-icon>
+									</div>
+								</div>
+								<div class="item-icon-image"
+									*ngIf="item.iconPath">
+									<img [src]="item.iconPath" />
 								</div>
 							</div>
-							<div class="item-icon-image"
-								*ngIf="item.iconPath">
-								<img [src]="item.iconPath" />
-							</div>
-						</div>
-						<div class="col col-1 text-center">
-							<div class="arrow">
-								<fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
+							<div class="col col-1 text-center">
+								<div class="arrow">
+									<fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</a>
-		</li>
+				</a>
+			</li>
+		<!-- </ng-container> -->
+
+
+		<!-- <ng-container *ngIf="item.antivirus">
+			<li *ngFor="let item of items" [ngClass]="getItemStatusClass(item)">
+				<a routerLink="/{{item.path}}"
+					vtrMetrics
+					[metricsParent]="metricsParent"
+					[metricsItem]="'link.'+item.title"
+					metricsEvent="itemClick"
+					*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false)">
+					<div class="container-fluid">
+						<div class="row align-items-center">
+							<div class="col col-1 text-center"
+								*ngIf="iconPlacement==='left'">
+								<div class="item-icon status"
+									*ngIf="item.status!==undefined&&item.status!==''">
+									<div class="icon-bkg">
+										<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									</div>
+								</div>
+								<div class="item-icon"
+									*ngIf="item.icon">
+									<div class="icon-bkg">
+										<fa-icon [icon]="item.icon"></fa-icon>
+									</div>
+								</div>
+								<div class="item-icon-image"
+									*ngIf="item.iconPath">
+									<img [src]="item.iconPath" />
+								</div>
+							</div>
+							<div class="col col-10 item-text">
+								<div class="title"
+									[ngClass]="{'light-title':item.lightTitle}">
+									{{item.title}}
+								</div>
+								<div class="detail"
+									[ngClass]="getItemDetailClasses(item)">
+									{{item.detail}}
+								</div>
+							</div>
+							<div class="col col-1 text-center"
+								*ngIf="iconPlacement==='right'">
+								<div class="item-icon status"
+									*ngIf="item.status!==undefined&&item.status!==''">
+									<div class="icon-bkg">
+										<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									</div>
+								</div>
+								<div class="item-icon"
+									*ngIf="item.icon">
+									<div class="icon-bkg">
+										<fa-icon [icon]="item.icon"></fa-icon>
+									</div>
+								</div>
+								<div class="item-icon-image"
+									*ngIf="item.iconPath">
+									<img [src]="item.iconPath" />
+								</div>
+							</div>
+							<div *ngIf="chevronVisibility"
+								class="col col-1 text-center">
+								<div class="arrow">
+									<fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="#"
+					(click)="launchSystemUri(item.path)"
+					*ngIf="item.isSystemLink!==undefined &&  item.isSystemLink===true">
+					<div class="container-fluid">
+						<div class="row align-items-center">
+							<div class="col col-10 item-text">
+								<div class="title"
+									[ngClass]="{'light-title':item.lightTitle}">
+									{{item.title}}
+								</div>
+								<div class="detail"
+									[ngClass]="getItemDetailClasses(item)">
+									{{item.detail}}
+								</div>
+							</div>
+							<div class="col col-1 text-center">
+								<div class="item-icon status"
+									*ngIf="item.status!==undefined&&item.status!==''">
+									<div class="icon-bkg">
+										<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									</div>
+								</div>
+								<div class="item-icon"
+									*ngIf="item.icon">
+									<div class="icon-bkg">
+										<fa-icon [icon]="item.icon"></fa-icon>
+									</div>
+								</div>
+								<div class="item-icon-image"
+									*ngIf="item.iconPath">
+									<img [src]="item.iconPath" />
+								</div>
+							</div>
+							<div class="col col-1 text-center">
+								<div class="arrow">
+									<fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+		</ng-container> -->
+		
 	</ul>
 </div>

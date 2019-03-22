@@ -1,5 +1,11 @@
 @import "../../../app.theme.scss";
-
+.security-widget-wifi {
+	.vtr-ui-list-chevron {
+		.chevron-list {
+			margin-top: 0;
+		}
+	}
+}
 .vtr-ui-list-chevron {
 	.chevron-list {
 		margin-top: 2.7rem;

@@ -86,6 +86,7 @@ import { ContainerService } from './services/container/container.service';
 import { CommsService } from './services/comms/comms.service';
 import { DashboardService } from './services/dashboard/dashboard.service';
 import { SecurityService } from './services/security/security.service';
+import { MockSecurityAdvisorService } from './services/mock/mockSecurityAdvisor.service';
 import { UserService } from './services/user/user.service';
 import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
 import { CameraDetailMockService } from './services/camera/camera-detail/camera-detail.mock.service';
@@ -121,13 +122,15 @@ import { InstallationHistoryComponent } from './components/pages/page-device-upd
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
 import { InstalledSystemUpdatesListComponent } from './components/pages/page-device-updates/children/installed-system-updates-list/installed-system-updates-list.component';
 import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
+import { UiLandingFeatureComponent } from './components/ui/ui-landing-feature/ui-landing-feature.component';
+import { UiObjectTitleComponent } from './components/ui/ui-object-title/ui-object-title.component';
+import { from } from 'rxjs';
 import { IconClassPipe } from './pipe/ui-security-statusbar/icon-class.pipe';
-import { IconNamePipe } from './pipe/ui-security-statusbar/icon-name.pipe';
 import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
+import { IconNamePipe } from './pipe/ui-security-statusbar/icon-name.pipe';
 
 library.add(fas);
-library.add(fab);
 library.add(far);
 
 @NgModule({
@@ -210,6 +213,8 @@ library.add(far);
 		SeparatePascalCasePipe,
 		InstalledSystemUpdatesListComponent,
 		ModalCommonConfirmationComponent,
+		UiObjectTitleComponent,
+		UiLandingFeatureComponent,
 		UiSecurityStatusbarComponent
 	],
 	imports: [
@@ -232,6 +237,7 @@ library.add(far);
 		CommsService,
 		DashboardService,
 		SecurityService,
+		MockSecurityAdvisorService,
 		UserService,
 		AudioService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
