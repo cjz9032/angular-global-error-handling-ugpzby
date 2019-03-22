@@ -1,22 +1,26 @@
 <ul class="list-group">
-  <li class="list-group-item">
-    <div class="row align-items-center">
-      <div class="col-auto px-3">
-        <div class="bullet-icon">
-          <div class="icon-bkg {{statusClass()}}">
-            <fa-icon [icon]="statusIcon()"></fa-icon>
-          </div>
-        </div>
-      </div>
-      <div class="col-auto text px-0">
-        {{title}}
-      </div>
-      <div class="col-auto mr-auto">
-        <h3><span class="badge badge-pill {{textClass()}}">{{ status | uppercase }}</span></h3>
-      </div>
-      <div *ngIf="buttonTitle" class="col-auto">
-        <vtr-ui-button metricsEvent="itemClick" metricsParent="Windows" [metricsItem]="metricsItem" [label]="buttonTitle"></vtr-ui-button>
-      </div>
-    </div>
-  </li>
+	<li class="list-group-item">
+		<div class="row align-items-center">
+			<div class="col-auto px-3">
+				<div class="bullet-icon">
+					<div class="icon-bkg" [ngClass]="status | iconClass">
+            <fa-icon [icon]="status | iconName"></fa-icon>
+					</div>
+				</div>
+			</div>
+			<div class="col-auto text px-0">
+				{{title}}
+			</div>
+			<div class="col-auto mr-auto">
+        <h3><span class="badge badge-pill" 
+          [ngClass]="status | textClass">
+          {{ status | statusText }}
+        </span></h3>
+			</div>
+			<div *ngIf="buttonTitle" class="col-auto">
+				<vtr-ui-button metricsEvent="itemClick" metricsParent="Windows" [metricsItem]="metricsItem"
+					[label]="buttonTitle"></vtr-ui-button>
+			</div>
+		</div>
+	</li>
 </ul>
