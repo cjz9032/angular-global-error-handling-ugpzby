@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { CommsService } from '../comms/comms.service';
 import { DevService } from '../dev/dev.service';
-import { ContainerService } from '../container/container.service';
+import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { JsonPipe } from '@angular/common';
+import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 
 @Injectable()
 export class UserService {
@@ -24,7 +24,8 @@ export class UserService {
 		private cookieService: CookieService,
 		private commsService: CommsService,
 		private devService: DevService,
-		private vantageShellService: VantageShellService
+		private vantageShellService: VantageShellService,
+		private commonService: CommonService
 	) {
 		// DUMMY
 		this.setName(this.firstName, this.lastName);
@@ -37,7 +38,7 @@ export class UserService {
 			};
 		}
 
-		if (this.lid === undefined) {
+		if (!this.lid) {
 			this.devService.writeLog('UserService constructor: lid object is undefined');
 		}
 	}
@@ -186,8 +187,8 @@ export class UserService {
 	setName(firstName: string, lastName: string) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.initials = this.firstName ? this.firstName[0] : '' +
-			this.lastName ? this.lastName[0] : '';
+		this.initials = (this.firstName && this.firstName.length > 0) ? this.firstName[0] : '' +
+			(this.lastName && this.lastName.length > 0) ? this.lastName[0] : '';
+		this.commonService.sendNotification(LenovoIdKey.FirstName, firstName);
 	}
-
 }

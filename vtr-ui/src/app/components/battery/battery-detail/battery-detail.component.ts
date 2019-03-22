@@ -17,7 +17,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 	public dataSource: BatteryDetail[];
 	batteryTimer: any;
 	remainingTimeText = "Remaining time";
-	remainingPercent = 0;
+	remainingPercent: number;
 	isCharging = false;
 	constructor(private batteryService: BatteryDetailService, public shellServices: VantageShellService) {
 		this.getBatteryDetail();
@@ -45,28 +45,28 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 	}
 
 	preProcessBatteryDetailResponse(response: BatteryDetail[]) {
-		let heading = ["Primary Battery", "Secondary Battery", "Tertiary Battery"];
-		for(let i=0; i<response.length ;i++) {
+		for(let i=0; i<response.length ;i++) {	
 			if (response[i].remainingTime == 0 
 				&& this.dataSource != undefined 
 				&& this.dataSource[0].remainingTime == 0) {
 				// Don't update UI if remainingTime is 0.
 				return;
 			}
-			response[i].heading = heading[i];
-			if(response[i].chargeStatus == BatteryChargeStatus.NO_ACTIVITY.toString() 
-			|| response[i].chargeStatus == BatteryChargeStatus.ERROR.toString()
-			|| response[i].chargeStatus == BatteryChargeStatus.NOT_INSTALLED.toString()) {
-				response[i].chargeStatus = "";
+			let id = response[i].chargeStatus
+			response[i].chargeStatusString = BatteryChargeStatus.getBatteryChargeStatus(id);
+			if(response[i].chargeStatus == BatteryChargeStatus.NO_ACTIVITY.id
+			|| response[i].chargeStatus == BatteryChargeStatus.ERROR.id
+			|| response[i].chargeStatus == BatteryChargeStatus.NOT_INSTALLED.id) {
+				response[i].chargeStatusString = "";
 			} 
-			if(response[i].chargeStatus == BatteryChargeStatus.CHARGING.toString()) {
+			if(response[i].chargeStatus == BatteryChargeStatus.CHARGING.id) {
 				this.remainingTimeText = "Charge completion time"
 			} else {
 				this.remainingTimeText = "Remaining time";
 			}
 		}
 		this.remainingPercent = response[0].remainingPercent;
-		this.isCharging = response[0].chargeStatus == BatteryChargeStatus.CHARGING.toString();
+		this.isCharging = response[0].chargeStatus == BatteryChargeStatus.CHARGING.id;
 		this.dataSource = response;
 	}
 
