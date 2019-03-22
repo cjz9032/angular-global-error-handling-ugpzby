@@ -10,8 +10,8 @@ export class WidgetWarrantyComponent implements OnInit {
 	@Input() item: any;
 
 	status = {
-		title: ['IN WARRANTY', 'WARRANTY EXPIRED', 'Not Found Warranty'],
-		detail: ['In warranty', 'Expired', 'Not found warranty']
+		title: ['IN WARRANTY', 'WARRANTY EXPIRED', 'Warranty Not Found'],
+		detail: ['In warranty', 'Expired', 'Warranty not found']
 	};
 
 	constructor() { }
