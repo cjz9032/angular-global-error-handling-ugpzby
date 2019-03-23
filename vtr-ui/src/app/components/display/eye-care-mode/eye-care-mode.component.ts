@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output, AfterContentChecked } from '@angular/core';
-import { IEyecareModeResponse } from 'src/app/data-models/camera/camera-detail.model';
+import { IEyeCareModeResponse } from 'src/app/data-models/camera/camera-detail.model';
 import { ChangeContext } from 'ng5-slider';
 
 @Component({
@@ -8,11 +8,11 @@ import { ChangeContext } from 'ng5-slider';
 	styleUrls: ['./eye-care-mode.component.scss']
 })
 export class EyeCareModeComponent implements OnInit {
-	@Input() eyecareModeSettings: IEyecareModeResponse;
+	@Input() eyeCareModeSettings: IEyeCareModeResponse;
 	@Input() enableSlider: boolean;
-	@Output() eyecareTemparatureChange: EventEmitter<ChangeContext> = new EventEmitter();
-	@Output() resetTemparature: EventEmitter<any> = new EventEmitter();
-	constructor() {}
+	@Output() eyeCareTemperatureChange: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() resetTemperature: EventEmitter<any> = new EventEmitter();
+	constructor() { }
 
 	public stepsArray = [
 		{ value: 1 },
@@ -53,11 +53,10 @@ export class EyeCareModeComponent implements OnInit {
 
 	public onResetTemperature($event: any) {
 		console.log('todo: on temp reset');
-		this.resetTemparature.emit($event);
+		this.resetTemperature.emit($event);
 	}
-	public onEyecareTemparatureChange($event: ChangeContext)
-	{
+	public onEyeCareTemperatureChange($event: ChangeContext) {
 		console.log('Brightness changed', event);
-		this.eyecareTemparatureChange.emit($event);
+		this.eyeCareTemperatureChange.emit($event);
 	}
 }

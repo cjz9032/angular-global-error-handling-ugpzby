@@ -162,7 +162,8 @@
 									<vtr-ui-rectangle-radio [radioId]="'radio1'"
 										[group]="'radio'"
 										[label]="'PERFORMANCE'"
-										[value]="'PERFORMANCE'" [checked]="radioPerformance"
+										[value]="'PERFORMANCE'"
+										[checked]="radioPerformance"
 										(change)="changePerformance($event)"></vtr-ui-rectangle-radio>
 									<vtr-ui-rectangle-radio [radioId]="'radio2'"
 										[group]="'radio'"
@@ -418,7 +419,7 @@
 							[showChildContent]="true"
 							[tooltipText]="powerSettings[0].tooltipText"
 							(toggleOnOff)="onToggleOfAlwaysOnUsb($event)">
-							<div class="auto-set-checkbox left-margin"
+							<!-- <div class="auto-set-checkbox left-margin"
 								[ngClass]="{'disable': toggleAlwaysOnUsbFlag === false}">
 								<input type="checkbox"
 									name="alwasy-on-usb-checkbox-id"
@@ -426,6 +427,24 @@
 									[(ngModel)]="usbChargingCheckboxFlag"
 									(ngModelChange)='onUsbChargingStatusChange()'>
 								<label> {{ powerSettings[0].checkboxDesc }} </label>
+							</div> -->
+							<div class="row">
+								<div class="col-12">
+									<div class="custom-control custom-checkbox always-on-usb-checkbox">
+										<input id="cb-always-on-usb"
+											type="checkbox"
+											name="always-on-usb-checkbox-id"
+											[disabled]="!toggleAlwaysOnUsbFlag"
+											[(ngModel)]="usbChargingCheckboxFlag"
+											(ngModelChange)='onUsbChargingStatusChange()'
+											class="custom-control-input"
+											checked="" />
+										<label class="custom-control-label "
+											for="cb-always-on-usb">
+											{{ powerSettings[0].checkboxDesc }}
+										</label>
+									</div>
+								</div>
 							</div>
 						</vtr-ui-row-switch>
 					</li>

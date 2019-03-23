@@ -55,13 +55,13 @@ export class CameraDetail {
 	 */
 	public autoExposureStepValue: number;
 }
-export interface IEyecareModeResponse{
-		available: boolean,
-		minimum: number, // slider bar min value
-		maximum: number, // slider bar max value
-		current: number,
-		eyecaremode: number, //
-		default: number // current value
+export interface IEyeCareModeResponse {
+	available: boolean;
+	minimum: number; // slider bar min value
+	maximum: number; // slider bar max value
+	current: number;
+	eyeCareMode: number; //
+	default: number; // current value
 }
 export interface ICameraSettingsResponse {
 	brightness: {
@@ -73,7 +73,7 @@ export interface ICameraSettingsResponse {
 		step: number,
 		default: number, //
 		value: number // current value
-	},
+	};
 	contrast: {
 		autoModeSupported: boolean,
 		autoValue: boolean,
@@ -83,7 +83,7 @@ export interface ICameraSettingsResponse {
 		step: number,
 		default: number,
 		value: number
-	},
+	};
 	exposure: {
 		autoModeSupported: boolean, // true means auto exposure mode toggle button can be shown
 		autoValue: boolean, // true means auto exposure mode enabled
@@ -93,7 +93,7 @@ export interface ICameraSettingsResponse {
 		step: number,
 		default: number,
 		value: number
-	},
+	};
 	focus: {
 		autoModeSupported: boolean,
 		autoValue: boolean,
