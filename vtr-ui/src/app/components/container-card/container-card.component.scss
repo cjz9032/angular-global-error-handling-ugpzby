@@ -151,12 +151,20 @@
 	}
 
 	&.card-partnerarticle {
+		.image {
+			// height: 60%;
+			background-size: cover;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+		}
+
 		.content {
 			padding: 3rem 4rem;
 
 			.title {
 				font-weight: $weight_light;
 				color: $light;
+				text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 				font-size: 3.4rem;
 				line-height: 4.6rem;
 			}
@@ -170,7 +178,8 @@
 				text-transform: uppercase;
 
 				a {
-					color: $main;
+					color: $light;
+					text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 
 					&:hover {
 						text-decoration: none;
@@ -182,7 +191,8 @@
 
 					.link-label {
 						padding-bottom: 0.2rem;
-						color: $shade_light;
+						color: $light;
+						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 						font-size: 1.1rem;
 						font-weight: $weight_bold;
 						text-transform: uppercase;
