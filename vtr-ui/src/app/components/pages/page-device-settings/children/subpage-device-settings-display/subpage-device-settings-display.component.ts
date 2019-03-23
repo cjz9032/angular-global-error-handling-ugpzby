@@ -62,7 +62,9 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	ngOnDestroy() {
-		this.cameraDetailSubscription.unsubscribe();
+		if (this.cameraDetailSubscription) {
+			this.cameraDetailSubscription.unsubscribe();
+		}
 	}
 
 	/**
