@@ -82,7 +82,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isChecked: true,
-			tooltipText: 'Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption.'
+			tooltipText: 'Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption.',
+			type: 'auto-updates'
 		},
 		{
 			readMoreText: '',
@@ -94,7 +95,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			isCheckBoxVisible: false,
 			isSwitchVisible: true,
 			isChecked: true,
-			tooltipText: 'Recommended driver updates keep your computer running at optimal performance.'
+			tooltipText: 'Recommended driver updates keep your computer running at optimal performance.',
+			type: 'auto-updates'
 		},
 		{
 			readMoreText: '',
@@ -107,7 +109,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			isSwitchVisible: false,
 			isChecked: true,
 			linkText: 'Windows Settings',
-			linkPath: ''
+			linkPath: '',
+			type: 'auto-updates'
+
 		}
 	];
 
