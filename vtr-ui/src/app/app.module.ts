@@ -123,6 +123,7 @@ import { InstallationHistoryComponent } from './components/pages/page-device-upd
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
 import { InstalledSystemUpdatesListComponent } from './components/pages/page-device-updates/children/installed-system-updates-list/installed-system-updates-list.component';
 import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
+import { DolbyModesTranslationPipe } from './pipe/dolby-modes-translation.pipe';
 
 library.add(fas);
 library.add(fab);
@@ -204,7 +205,8 @@ library.add(far);
 		InstallationHistoryComponent,
 		SeparatePascalCasePipe,
 		InstalledSystemUpdatesListComponent,
-		ModalCommonConfirmationComponent
+		ModalCommonConfirmationComponent,
+		DolbyModesTranslationPipe
 	],
 	imports: [
 		BrowserModule,

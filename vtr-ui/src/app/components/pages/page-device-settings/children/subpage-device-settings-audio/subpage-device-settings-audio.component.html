@@ -40,7 +40,7 @@
 									*ngFor="let dolbyMode of dolbyModeResponse.supporedModes" 
 									[radioId]="'radio'| uniqueId"
 									[group]="radioGroupAutoDolbySettings"
-									[label]="dolbyMode | uppercase"
+									[label]="dolbyMode | dolbyModesTranslation"
 									[value]='dolbyMode'
 									[checked]="dolbyMode == dolbyModeResponse.currentMode"
 									(change)="onDolbySeetingRadioChange($event)">
