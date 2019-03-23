@@ -97,9 +97,15 @@
 							[rightIcon]=""
 							[readMoreText]="''"
 							[showChildContent]="true"
+							[disabled] = "microphoneProperties.permission"
 							[theme]="'white'">
-							<vtr-ui-range-slider [minValueLegend]="'Silent'" [minValue]="1"
-								[maxValueLegend]="'Loud'" [maxValue] = "100" (change)="setVolume($event)"
+							<vtr-ui-range-slider 
+								[minValueLegend]="'Silent'" 
+								[minValue]="1"
+								[maxValueLegend]="'Loud'" 
+								[maxValue] = "100" 
+								(change)="setVolume($event)"
+								[enableSlider]="microphoneProperties.permission"
 								[value]="microphoneProperties.volume">
 							</vtr-ui-range-slider>
 						</vtr-ui-row-switch>
