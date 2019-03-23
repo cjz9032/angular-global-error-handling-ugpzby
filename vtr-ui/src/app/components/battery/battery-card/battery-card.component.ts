@@ -3,6 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
 import { BatteryChargeStatus } from 'src/app/enums/battery-charge-status.enum';
+import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.model';
 
 @Component({
 	selector: 'vtr-battery-card',
@@ -13,8 +14,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	constructor(private modalService: NgbModal, private batteryService: BatteryDetailService) {}
 	batteryInfo: BatteryDetail[];
 	batteryCardTimer: any;
-	remainingCardPercent = 0;
-	isChargingOnCard = false;
+	batteryIndicator = new BatteryIndicator();
+
 	ngOnInit() {
 		this.getBatteryDetailOnCard();
 	}
@@ -26,8 +27,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryService.getBatteryDetail()
 					.then((response: BatteryDetail[]) => {
 						console.log('getBatteryDetailOnCard', response);
-						this.remainingCardPercent = response[0].remainingPercent;
-						this.isChargingOnCard = response[0].chargeStatus == BatteryChargeStatus.CHARGING.id;
+						this.batteryIndicator.percent = response[0].remainingPercent;
+						this.batteryIndicator.charging = response[0].chargeStatus == BatteryChargeStatus.CHARGING.id;
+						this.batteryIndicator.expressCharging = response[0].isExpressCharging;
+						this.batteryIndicator.voltageError = response[0].isVoltageError;
+						this.batteryIndicator.convertMin(response[0].remainingTime);
 						this.batteryCardTimer = setTimeout(() => {
 							console.log('Trying after 30 seconds');
 							this.getBatteryDetailOnCard();
