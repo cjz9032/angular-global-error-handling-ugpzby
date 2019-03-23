@@ -24,6 +24,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	title = 'System Updates';
 	back = 'BACK';
 	backarrow = '< ';
+
+	cardContentPositionA: any = {};
+
 	private lastUpdatedText = 'Last update was on';
 	private nextScanText = 'Next update scan is scheduled on';
 	private lastInstallTime: string;

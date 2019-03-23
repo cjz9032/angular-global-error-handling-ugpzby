@@ -15,6 +15,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 	backarrow = '< ';
 
 	IsDashlaneInstalled: Boolean = false;
+	cardContentPositionA: any = {};
 
 	constructor(
 		public mockService: MockService,
