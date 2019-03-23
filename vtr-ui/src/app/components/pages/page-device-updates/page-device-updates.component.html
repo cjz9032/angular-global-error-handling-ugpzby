@@ -1,7 +1,9 @@
 <div class="vtr-page-device-updates vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main [backarrow]="backarrow" [back]="back" [title]="title">
+			<vtr-header-main [backarrow]="backarrow"
+				[back]="back"
+				[title]="title">
 			</vtr-header-main>
 		</div>
 	</div>
@@ -17,8 +19,10 @@
 								<div class="row">
 									<div class="col col-12">
 										<vtr-widget-device-update [title]="updateTitle"
-											[subTitle1]="getLastUpdatedText()" [subTitle2]="getNextUpdatedScanText()"
-											[buttonText]="'Check For Updates'" [percent]="percentCompleted"
+											[subTitle1]="getLastUpdatedText()"
+											[subTitle2]="getNextUpdatedScanText()"
+											[buttonText]="'Check For Updates'"
+											[percent]="percentCompleted"
 											[showProgress]="isUpdateCheckInProgress"
 											[isUpdateDownloading]="isUpdateDownloading"
 											[installingPercent]="installationPercent"
@@ -35,8 +39,10 @@
 									</div>
 								</div> -->
 
-								<vtr-available-updates *ngIf="isUpdateListVisible()" [criticalUpdates]="criticalUpdates"
-									[optionalUpdates]="optionalUpdates" [recommendedUpdates]="recommendedUpdates"
+								<vtr-available-updates *ngIf="isUpdateListVisible()"
+									[criticalUpdates]="criticalUpdates"
+									[optionalUpdates]="optionalUpdates"
+									[recommendedUpdates]="recommendedUpdates"
 									[isInstallationCompleted]="isInstallationCompleted"
 									[isInstallationSuccess]="isInstallationSuccess"
 									(checkChange)="onUpdateSelectionChange($event)"
@@ -109,9 +115,10 @@
 											(reinstallUpdate)="onReinstallUpdate($event)"></vtr-installation-history> -->
 
 
-										<ng-template #tipContent>
+										<!-- <ng-template #tipContent>
 											<div>
-												<a href="#" class="reboot-text">
+												<a href="#"
+													class="reboot-text">
 													<div class="row">
 														<div class="col-auto pl-0 pr-0">
 															<fa-icon [icon]="['fas', 'undo']"></fa-icon>
@@ -121,35 +128,39 @@
 												</a>
 												<ul>
 													<li>Manufacturer: <span>{{ updateDetails.manufacturer }}</span></li>
-
 													<li>Version: <span>{{ updateDetails.version }}</span></li>
-													<li>Installed version: <span>{{ updateDetails.installedVersion }}</span></li>
-													<li>Download size: <span>{{ updateDetails.downloadSize }}</span></li>
-													<li>Disc space needed: <span>{{ updateDetails.diskSpaceNeeded }}</span></li>
+													<li>Installed version:
+														<span>{{ updateDetails.installedVersion }}</span></li>
+													<li>Download size: <span>{{ updateDetails.downloadSize }}</span>
+													</li>
+													<li>Disc space needed:
+														<span>{{ updateDetails.diskSpaceNeeded }}</span></li>
 												</ul>
 												<div class="row">
 													<div class="col-auto pl-0">
-														<a href="#" class="read">Read more</a>
+														<a href="#"
+															class="read">Read more</a>
 													</div>
 													<div class="col-auto pl-0">
-														<a href="#" class="ignore">Ignore update</a>
-														</div>
+														<a href="#"
+															class="ignore">Ignore update</a>
+													</div>
 												</div>
-
 											</div>
 										</ng-template>
 										<div class="row justify-content-center">
 											<fa-icon class="question-icon"
-											placement="top" [ngbTooltip]="tipContent"
-											[icon]="['far', 'question-circle']"
-											container="body"
-											tooltipClass="tooltip-click"
-											triggers="click:blur">
+												placement="top"
+												[ngbTooltip]="tipContent"
+												[icon]="['far', 'question-circle']"
+												container="body"
+												tooltipClass="tooltip-click"
+												triggers="click:blur">
 											</fa-icon>
-										</div>
+										</div> -->
 
-
-										<vtr-container-collapsible [cardTitle]="'Full History'" [isCollapsed]="true">
+										<vtr-container-collapsible [cardTitle]="'Full History'"
+											[isCollapsed]="true">
 											<vtr-installation-history (reinstallUpdate)="onReinstallUpdate($event)">
 											</vtr-installation-history>
 										</vtr-container-collapsible>
@@ -165,7 +176,8 @@
 							<div class="row mb-40">
 								<div class="col col-12 cont">
 									<vtr-widget-device-update-settings [title]="'Auto update settings'"
-										[description]="'Automatically Install Updates'" [items]="autoUpdateOptions"
+										[description]="'Automatically Install Updates'"
+										[items]="autoUpdateOptions"
 										(toggleOnOff)="onUpdateToggleOnOff($event)">
 									</vtr-widget-device-update-settings>
 								</div>
@@ -174,14 +186,19 @@
 								<div class="col col-12">
 									<vtr-container-card
 										[img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
-										[title]="'Lenovo Support website'" [logoText]="'LENOVO SPECIAL'"
-										[action]="'Read More'" [actionLink]="'http://www.google.com'"
-										[type]="'partnerarticle'" [ratioX]="4" [ratioY]="2">
+										[title]="'Lenovo Support website'"
+										[logoText]="'LENOVO SPECIAL'"
+										[action]="'Read More'"
+										[actionLink]="'http://www.google.com'"
+										[type]="'partnerarticle'"
+										[ratioX]="4"
+										[ratioY]="2">
 									</vtr-container-card>
 								</div>
 							</div>
 
-							<div class="row" *ngIf="isRebootRequired">
+							<div class="row"
+								*ngIf="isRebootRequired">
 								<div class="col col-12 pb-40">
 									<vtr-widget-reboot (dismissClick)="onDismissClick($event)"
 										(rebootClick)="onRebootClick($event)">

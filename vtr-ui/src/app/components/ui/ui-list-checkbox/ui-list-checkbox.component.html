@@ -30,8 +30,15 @@
 						</div>
 					</div>
 					<div class="col col-1 text-right">
-						<div class="question">
-							<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
+						<div>
+							<fa-icon [icon]="['far', 'question-circle']"
+								class="question"
+								[autoClose]="false"
+								triggers="manual"
+								#toolTip="ngbTooltip"
+								tooltipClass="tooltip-click"
+								[ngbTooltip]="systemUpdateTooltip"
+								(click)="onTooltipClick(item, toolTip)"></fa-icon>
 						</div>
 					</div>
 				</div>
@@ -60,9 +67,49 @@
 				<div class="col col-11 text px-0 button-box">
 					<div class="update-title">{{item.packageDesc}}</div>
 				</div>
-				<fa-icon class="question"
-					[icon]="['far', 'question-circle']"></fa-icon>
+				<fa-icon [icon]="['far', 'question-circle']"
+					class="question"
+					[autoClose]="false"
+					triggers="manual"
+					#toolTip="ngbTooltip"
+					tooltipClass="tooltip-click"
+					[ngbTooltip]="systemUpdateTooltip"
+					(click)="onTooltipClick(item, toolTip)"></fa-icon>
 			</div>
 		</li>
 	</ul>
 </div>
+<ng-template #systemUpdateTooltip>
+	<div class="tooltip-container">
+		<a href="#"
+			class="reboot-text">
+			<div class="row">
+				<div class="col-auto pl-0 pr-0">
+					<fa-icon [icon]="['fas', 'undo']"></fa-icon>
+				</div>
+				<div class="col">Reboot required</div>
+			</div>
+		</a>
+		<ul>
+			<li>Manufacturer: <span>{{ manufacturer }}</span></li>
+			<li>Version: <span>{{ version }}</span></li>
+			<li>Installed version: <span>{{ installedVersion }}</span></li>
+			<li>Download size: <span>{{ downloadSize }}</span> </li>
+			<li>Disc space needed: <span>{{ diskSpaceNeeded }}</span></li>
+		</ul>
+		<div class="row">
+			<div class="col-6 pl-0 pr-0 text-center">
+				<a href="javascript:void(0)"
+					class="read"
+					(click)="onReadMoreClick($event)">Read more</a>
+			</div>
+			<!-- required in MVP 2 -->
+			<!-- <div class="col-6 pl-0 pr-0 text-center">
+				<a href="javascript:void(0)"
+					class="ignore"
+					(click)="onIgnoreUpdateClick($event)"
+					>Ignore update</a>
+			</div> -->
+		</div>
+	</div>
+</ng-template>
