@@ -52,11 +52,13 @@
 				line-height: 2.8rem;
 				padding-bottom: 2.5rem;
 				border-bottom: 1px solid $screen_light_15;
-				a{
+
+				a {
 					list-style: none;
 					text-decoration: underline;
 					color: $light;
-					&:hover{
+
+					&:hover {
 						list-style: none;
 						color: $light;
 						text-decoration: underline;
@@ -65,9 +67,11 @@
 			}
 		}
 	}
+
 	.left-margin {
 		margin-left: -3rem;
 	}
+
 	ul.list-group {
 		list-style-type: none;
 		padding-bottom: 3rem;
@@ -108,20 +112,27 @@
 		cursor: pointer;
 	}
 
-	.auto-set-checkbox {
-		margin-top: 2rem;
-		input {
+	.always-on-usb-checkbox {
+		margin: 1rem 0rem 1rem 0rem;
+		font-size: 1.5rem;
+	}
+
+	.custom-control-label {
+		padding-left: 0.5rem;
+
+		// rounded square-box background
+		&::before {
+			top: 0.2rem;
 			width: 1.5rem;
 			height: 1.5rem;
-			position: relative;
-			top: -0.1rem;
-			margin-right: 0.5rem;
 		}
-		label {
-			color: $shade_darker;
-			font-size: 1.5rem;
-			font-weight: $weight_light;
-			text-align: center;
+
+		// tick mark
+		&::after {
+			top: 0rem;
+			width: 2rem;
+			height: 2rem;
+			left: -1.7rem;
 		}
 	}
 }
