@@ -62,7 +62,9 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	ngOnDestroy() {
-		this.cameraDetailSubscription.unsubscribe();
+		if (this.cameraDetailSubscription) {
+			this.cameraDetailSubscription.unsubscribe();
+		}
 	}
 
 	/**
@@ -204,7 +206,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			this.getCameraDetails();
 		}
 	}
-	public onEyecareTemparaturechange($event: ChangeContext) {
+	public onEyeCareTemperatureChange($event: ChangeContext) {
 		try {
 			console.log('temparature changed in display', $event);
 			if (this.displayService.isShellAvailable) {
@@ -215,7 +217,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			console.error(error.message);
 		}
 	}
-	public onResetTemparature($event: any) {
+	public onResetTemperature($event: any) {
 		try {
 			console.log('temparature reset in display', $event);
 			if (this.displayService.isShellAvailable) {
