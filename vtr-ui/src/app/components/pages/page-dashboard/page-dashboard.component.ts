@@ -44,7 +44,7 @@ export class PageDashboardComponent implements OnInit {
 		config: NgbModalConfig,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
-		public cmsService: CMSService
+		private cmsService: CMSService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;

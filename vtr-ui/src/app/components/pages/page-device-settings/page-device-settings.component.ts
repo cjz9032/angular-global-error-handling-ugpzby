@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QaService } from '../../../services/qa/qa.service';
 import { DevService } from '../../../services/dev/dev.service';
+import { CMSService } from 'src/app/services/cms/cms.service';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -36,14 +37,38 @@ export class PageDeviceSettingsComponent implements OnInit {
 			active: false
 		}
 	];
+	cardContentPositionA: any = {};
+	cardContentPositionB: any = {};
 
 	constructor(
 		private devService: DevService,
-		public qaService: QaService
+		public qaService: QaService,
+		private cmsService: CMSService
 	) { }
 
 	ngOnInit() {
 		this.devService.writeLog('DEVICE SETTINGS INIT', this.menuItems);
+
+		const queryOptions = {
+			'Page': 'dashboard',
+			'Lang': 'EN',
+			'GEO': 'US',
+			'OEM': 'Lenovo',
+			'OS': 'Windows',
+			'Segment': 'SMB',
+			'Brand': 'Lenovo'
+		};
+
+		this.cmsService.fetchCMSContent(queryOptions).subscribe(
+			(response: any) => {
+				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+
+				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+			},
+			error => {
+				console.log('fetchCMSContent error', error);
+			}
+		);
 	}
 
 }

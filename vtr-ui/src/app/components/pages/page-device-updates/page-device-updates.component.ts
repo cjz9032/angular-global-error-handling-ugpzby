@@ -13,6 +13,7 @@ import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enu
 import { ModalCommonConfirmationComponent } from '../../modal/modal-common-confirmation/modal-common-confirmation.component';
 import { UpdateRebootType } from 'src/app/enums/update-reboot-type.enum';
 import { SystemUpdateStatusMessage } from 'src/app/data-models/system-update/system-update-status-message.model';
+import { CMSService } from 'src/app/services/cms/cms.service';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -124,10 +125,11 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	};
 
 	constructor(
-		private systemUpdateService: SystemUpdateService
-		, private commonService: CommonService
-		, private ngZone: NgZone
-		, private modalService: NgbModal
+		private systemUpdateService: SystemUpdateService,
+		private commonService: CommonService,
+		private ngZone: NgZone,
+		private modalService: NgbModal,
+		private cmsService: CMSService
 	) { }
 
 	ngOnInit() {
@@ -146,6 +148,27 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.getScheduleUpdateStatus(false);
 		this.isComponentInitialized = true;
 		this.setUpdateTitle();
+
+		const queryOptions = {
+			'Page': 'dashboard',
+			'Lang': 'EN',
+			'GEO': 'US',
+			'OEM': 'Lenovo',
+			'OS': 'Windows',
+			'Segment': 'SMB',
+			'Brand': 'Lenovo'
+		};
+
+		this.cmsService.fetchCMSContent(queryOptions).subscribe(
+			(response: any) => {
+				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+
+				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+			},
+			error => {
+				console.log('fetchCMSContent error', error);
+			}
+		);
 	}
 
 	ngOnDestroy() {

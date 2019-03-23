@@ -187,15 +187,15 @@
 							</div>
 							<div class="row mb-40">
 								<div class="col col-12">
-									<vtr-container-card
-										[img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
-										[title]="'Lenovo Support website'"
-										[logoText]="'LENOVO SPECIAL'"
-										[action]="'Read More'"
-										[actionLink]="'http://www.google.com'"
+									<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+										[caption]="cardContentPositionA.Description"
+										[title]="cardContentPositionA.Title"
+										[logoText]="cardContentPositionA.BrandName"
+										[action]="cardContentPositionA.Action"
+										[actionLink]="cardContentPositionA.ActionLink"
 										[type]="'partnerarticle'"
 										[ratioX]="4"
-										[ratioY]="2">
+										[ratioY]="2.5">
 									</vtr-container-card>
 								</div>
 							</div>
@@ -205,7 +205,6 @@
 								<div class="col col-12 pb-40">
 									<vtr-widget-reboot (dismissClick)="onDismissClick($event)"
 										(rebootClick)="onRebootClick($event)">
-
 									</vtr-widget-reboot>
 								</div>
 							</div>
