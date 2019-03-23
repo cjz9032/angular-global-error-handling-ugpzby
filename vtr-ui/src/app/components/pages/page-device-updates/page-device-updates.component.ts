@@ -25,9 +25,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	backarrow = '< ';
 	private lastUpdatedText = 'Last update was on';
 	private nextScanText = 'Next update scan is scheduled on';
-	private lastInstallTime = new Date('1970-01-01T01:00:00');
+	private lastInstallTime: string;
 	// private lastScanTime = new Date('1970-01-01T01:00:00');
-	private nextScheduleScanTime = new Date('1970-01-01T01:00:00');
+	private nextScheduleScanTime: string;
 	private isScheduleScanEnabled = false;
 	public percentCompleted = 0;
 	public updateInfo;
@@ -82,7 +82,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isChecked: true,
-			tooltipText: 'Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption.'
+			tooltipText: 'Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption.',
+			type: 'auto-updates'
 		},
 		{
 			readMoreText: '',
@@ -94,7 +95,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			isCheckBoxVisible: false,
 			isSwitchVisible: true,
 			isChecked: true,
-			tooltipText: 'Recommended driver updates keep your computer running at optimal performance.'
+			tooltipText: 'Recommended driver updates keep your computer running at optimal performance.',
+			type: 'auto-updates'
 		},
 		{
 			readMoreText: '',
@@ -107,7 +109,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			isSwitchVisible: false,
 			isChecked: true,
 			linkText: 'Windows Settings',
-			linkPath: ''
+			linkPath: '',
+			type: 'auto-updates'
+
 		}
 	];
 
@@ -155,9 +159,11 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.systemUpdateService.getMostRecentUpdateInfo()
 				.then((value: any) => {
 					// console.log('getLastUpdateScanDetail.then', value);
-					this.lastInstallTime = new Date(value.lastInstallTime);
+					if (value.lastInstallTime && value.lastInstallTime.length > 0) {
+						this.lastInstallTime = value.lastInstallTime;
+					}
 					// this.lastScanTime = new Date(value.lastScanTime);
-					this.nextScheduleScanTime = new Date(value.nextScheduleScanTime);
+					this.nextScheduleScanTime = value.nextScheduleScanTime;
 					this.isScheduleScanEnabled = value.scheduleScanEnabled;
 					// lastInstallTime: "2019-03-01T10:09:53"
 					// lastScanTime: "2019-03-12T18:24:03"
@@ -170,9 +176,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	public getLastUpdatedText() {
-		if (this.lastInstallTime) {
-			const installDate = this.commonService.formatDate(this.lastInstallTime.toISOString());
-			const installTime = this.commonService.formatTime(this.lastInstallTime.toISOString());
+		if (this.lastInstallTime && this.lastInstallTime.length > 0) {
+			const installDate = this.commonService.formatDate(this.lastInstallTime);
+			const installTime = this.commonService.formatTime(this.lastInstallTime);
 			return `${this.lastUpdatedText} ${installDate} at ${installTime}`;
 		}
 		return `${this.lastUpdatedText} not available`;
@@ -181,9 +187,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public getNextUpdatedScanText() {
 		if (!this.isScheduleScanEnabled) {
 			return '';
-		} else if (this.nextScheduleScanTime) {
-			const scanDate = this.commonService.formatDate(this.nextScheduleScanTime.toISOString());
-			const scanTime = this.commonService.formatTime(this.nextScheduleScanTime.toISOString());
+		} else if (this.nextScheduleScanTime && this.nextScheduleScanTime.length > 0) {
+			const scanDate = this.commonService.formatDate(this.nextScheduleScanTime);
+			const scanTime = this.commonService.formatTime(this.nextScheduleScanTime);
 			return `${this.nextScanText} ${scanDate} at ${scanTime}`;
 		}
 		return `${this.nextScanText} not available`;

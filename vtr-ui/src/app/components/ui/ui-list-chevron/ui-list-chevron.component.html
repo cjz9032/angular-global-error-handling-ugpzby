@@ -43,11 +43,17 @@
 						<div class="col col-1 text-center"
 							*ngIf="iconPlacement==='right'">
 							<div class="item-icon status"
-								*ngIf="item.status!==undefined&&item.status!==''">
+								*ngIf="item.status!==undefined&&item.status!==''; else questionCircle">
 								<div class="icon-bkg">
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
+							<ng-template #questionCircle>
+										<fa-icon class="question-icon"
+										placement="top"
+										[icon]="['far', 'question-circle']"
+										container="body"></fa-icon>
+								</ng-template>
 							<div class="item-icon"
 								*ngIf="item.icon">
 								<div class="icon-bkg">

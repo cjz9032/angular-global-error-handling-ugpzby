@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 // THIRD PARTY MODULES
 import { CookieService } from 'ngx-cookie-service';
@@ -102,6 +103,7 @@ import { UiButtonComponent } from './components/ui/ui-button/ui-button.component
 import { ConnectedHomeComponent } from './components/pages/page-security-wifi/children/connected-home/connected-home.component';
 import { ConnectedHomeMyHomeComponent } from './components/pages/page-security-wifi/children/connected-home-my-home/connected-home-my-home.component';
 import { WifiSecurityComponent } from './components/pages/page-security-wifi/children/wifi-security/wifi-security.component';
+import { AdvisorWifiSecurityComponent } from './components/pages/page-security/children/advisor-wifi-security/advisor-wifi-security.component';
 
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
 import { CameraControlComponent } from './components/camera-control/camera-control.component';
@@ -114,6 +116,7 @@ import { WidgetRebootComponent } from './components/widgets/widget-reboot/widget
 import { ContainerArticleComponent } from './components/container-article/container-article.component';
 import { SanitizeUrlPipe } from './pipe/sanitise-url.pipe';
 import { UniqueIdPipe } from './pipe/unique-id.pipe';
+import { environment } from '../environments/environment';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
 import { MetricsDirective } from './directives/metrics.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
@@ -182,6 +185,7 @@ library.add(far);
 		ConnectedHomeComponent,
 		ConnectedHomeMyHomeComponent,
 		WifiSecurityComponent,
+		AdvisorWifiSecurityComponent,
 		PageSecurityWindowsHelloComponent,
 		CameraControlComponent,
 		PageSupportDetailComponent,
@@ -211,6 +215,7 @@ library.add(far);
 		NgbModule,
 		Ng5SliderModule,
 		ReactiveFormsModule,
+		// ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 		TranslationModule
 	],
 	providers: [

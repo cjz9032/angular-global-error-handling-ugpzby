@@ -188,6 +188,9 @@
 	.button-box {
 		padding: 1rem;
 		margin: 1.2rem;
+		button{
+			font-weight: bold;
+		}
 	}
 
 	.get-app-code-box {
@@ -195,7 +198,8 @@
 		border: 0.1rem solid $shade_lighter;
 		border-radius: $border_radius;
 		text-align: center;
-
+		height: 7rem;
+		padding: 0rem;
 		.sub-heading {
 			margin-top: 2rem;
 			color: $main_dark;
