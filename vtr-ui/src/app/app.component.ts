@@ -35,7 +35,25 @@ export class AppComponent implements OnInit {
 
 		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
 
-		if (tutorial === undefined && navigator.onLine) {
+		const modalRef = this.modalService.open(ModalWelcomeComponent,
+			{
+				backdrop: 'static'
+				, windowClass: 'welcome-modal-size'
+			});
+		modalRef.result.then(
+			(result: WelcomeTutorial) => {
+				// on open
+				console.log('welcome-modal-size', result);
+				commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, result);
+			},
+			(reason: WelcomeTutorial) => {
+				// on close
+				console.log('welcome-modal-size', reason);
+				commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
+			}
+		);
+
+		/*if (tutorial === undefined && navigator.onLine) {
 			const modalRef = this.modalService.open(ModalWelcomeComponent,
 				{
 					backdrop: 'static'
@@ -53,7 +71,7 @@ export class AppComponent implements OnInit {
 					commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
 				}
 			);
-		}
+		}*/
 	}
 
 	ngOnInit() {
