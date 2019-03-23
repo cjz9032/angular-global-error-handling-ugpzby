@@ -30,7 +30,8 @@ class BatteryDetail {
 	public designVoltage: number;
 	public firmwareVersion: string;
 	public fruPartNumber: string;
-
+	public isVoltageError: boolean; 
+	public isExpressCharging: boolean;
 	//#endregion
 
 	public batteryGaugeDetail: BatteryGaugeDetail;

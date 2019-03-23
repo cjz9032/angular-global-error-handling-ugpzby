@@ -33,6 +33,7 @@ export class UiRowSwitchComponent implements OnInit {
 	@Input() tooltipText = '';
 	@Input() name = '';
 	@Input() disabled = false;
+	@Input() type = undefined;
 
 
 	@Output() toggleOnOff = new EventEmitter<boolean>();
