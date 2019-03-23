@@ -52,11 +52,11 @@
 				line-height: 2.8rem;
 				padding-bottom: 2.5rem;
 				border-bottom: 1px solid $screen_light_15;
-				a{
+				a {
 					list-style: none;
 					text-decoration: underline;
 					color: $light;
-					&:hover{
+					&:hover {
 						list-style: none;
 						color: $light;
 						text-decoration: underline;
@@ -78,7 +78,7 @@
 	}
 
 	.search-icon {
-		>fa-icon {
+		> fa-icon {
 			font-size: 2rem;
 			color: $light;
 		}
@@ -106,5 +106,29 @@
 		color: $light;
 		font-size: 2rem;
 		cursor: pointer;
+	}
+
+	.always-on-usb-checkbox {
+		margin: 1rem 0rem 1rem 0rem;
+		font-size: 1.5rem;
+	}
+
+	.custom-control-label {
+		padding-left: 0.5rem;
+
+		// rounded square-box background
+		&::before {
+			top: 0.2rem;
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+
+		// tick mark
+		&::after {
+			top: 0rem;
+			width: 2rem;
+			height: 2rem;
+			left: -1.7rem;
+		}
 	}
 }
