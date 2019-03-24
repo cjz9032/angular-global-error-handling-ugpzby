@@ -14,7 +14,6 @@ export class PageSecurityWifiComponent implements OnInit {
 	backarrow = '< ';
 	isLWSEnabled = false;
 	viewSecChkRoute = 'viewSecChkRoute';
-	cardContentPositionA: any = {};
 	articles: [];
 
 	constructor(
@@ -33,12 +32,11 @@ export class PageSecurityWifiComponent implements OnInit {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then(
+		this.cmsService.fetchCMSArticles(queryOptions).then(
 			(response: any) => {
 				console.log('response', response);
 
 				this.articles = response;
-				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-E')[0];
 			},
 			error => {
 				console.log('fetchCMSContent error', error);
