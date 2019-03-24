@@ -15,6 +15,7 @@ export class PageSecurityWifiComponent implements OnInit {
 	isLWSEnabled = false;
 	viewSecChkRoute = 'viewSecChkRoute';
 	cardContentPositionA: any = {};
+	articles: [];
 
 	constructor(
 		public mockService: MockService,
@@ -23,7 +24,7 @@ export class PageSecurityWifiComponent implements OnInit {
 
 	ngOnInit() {
 		const queryOptions = {
-			'Page': 'dashboard',
+			'Page': 'wifi-security',
 			'Lang': 'EN',
 			'GEO': 'US',
 			'OEM': 'Lenovo',
@@ -32,8 +33,11 @@ export class PageSecurityWifiComponent implements OnInit {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).subscribe(
+		this.cmsService.fetchCMSArticles(queryOptions).subscribe(
 			(response: any) => {
+				console.log('response', response);
+
+				this.articles = response;
 				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-E')[0];
 			},
 			error => {
