@@ -238,4 +238,15 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	/**
+	 * returns CameraPrivacy object from VantageShellService of JS Bridge
+	 */
+	public async deviceFilter(filter) {
+		if (this.phoenix) {
+			return await this.phoenix.deviceFilter(filter);
+		}
+		console.log('In VantageShellService.deviceFilter. returning mock true');
+		return true;
+	}
 }

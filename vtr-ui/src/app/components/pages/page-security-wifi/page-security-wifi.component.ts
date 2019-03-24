@@ -33,7 +33,7 @@ export class PageSecurityWifiComponent implements OnInit {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSArticles(queryOptions).subscribe(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
 				console.log('response', response);
 

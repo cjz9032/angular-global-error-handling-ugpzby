@@ -33,7 +33,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).subscribe(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
 				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
 
