@@ -162,7 +162,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).subscribe(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
 				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
 
