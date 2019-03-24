@@ -17,18 +17,21 @@ export class PageSecurityAntivirusComponent implements OnInit {
 	back = 'BACK';
 	backarrow = '< ';
 	value = 1;
-	cardContentPositionA: any = {};
+	articles: [];
 
 	constructor(
 		public mockService: MockService,
 		private cmsService: CMSService
 	) {
-
+		this.fetchCMSArticles();
 	}
 
 	ngOnInit() {
+	}
+
+	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'dashboard',
+			'Page': 'anti-virus',
 			'Lang': 'EN',
 			'GEO': 'US',
 			'OEM': 'Lenovo',
@@ -37,9 +40,9 @@ export class PageSecurityAntivirusComponent implements OnInit {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).subscribe(
+		this.cmsService.fetchCMSArticles(queryOptions).then(
 			(response: any) => {
-				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-E')[0];
+				this.articles = response;
 			},
 			error => {
 				console.log('fetchCMSContent error', error);

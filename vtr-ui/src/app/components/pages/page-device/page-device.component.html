@@ -19,32 +19,10 @@
 				<div class="col-12 col-lg-4 vtr-page-right-column">
 					<div class="vtr-page-shift-up">
 						<div class="container-fluid">
-							<div class="row mb-40">
-								<div class="col col-12">
-									<vtr-container-card [img]="cardContentPositionA.FeatureImage"
-										[title]="cardContentPositionA.Title"
-										[logoText]="cardContentPositionA.BrandName"
-										[action]="cardContentPositionA.Action"
-										[actionLink]="cardContentPositionA.ActionLink"
-										[type]="'article'"
-										[ratioX]="4"
-										[ratioY]="4">
-									</vtr-container-card>
-								</div>
-							</div>
-
 							<div class="row">
-								<div class="col col-12 aritcle-card">
-									<vtr-container-card [img]="cardContentPositionB.FeatureImage"
-										[caption]="cardContentPositionB.Description"
-										[title]="cardContentPositionB.Title"
-										[logoText]="cardContentPositionB.BrandName"
-										[action]="cardContentPositionB.Action"
-										[actionLink]="cardContentPositionB.ActionLink"
-										[type]="'partnerarticle'"
-										[ratioX]="4"
-										[ratioY]="2.5">
-									</vtr-container-card>
+								<div class="col col-12">
+									<vtr-article-item *ngFor="let item of articles, let i = index"
+										[item]="item"></vtr-article-item>
 								</div>
 							</div>
 

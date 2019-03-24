@@ -182,9 +182,8 @@
 														</div>
 														<div class="col">
 															<div class="text-regular">
-																Visit the Windows Hello page and register your
-																fingerprint
-																Visit Windows Hello system settings
+																Visit the Windows Hello page and register your fingerprint.
+																<a href="#">Visit Windows Hello</a> in system settings
 															</div>
 														</div>
 													</div>
@@ -241,9 +240,9 @@
 														</div>
 														<div class="col">
 															<div class="text-regular">
-																Start using Windows Hello to log into Microsoft Apps
-																such as Outlook, OneDrive, Office 365 and Xbox Live.
-																Visit Microsoft
+																Start using Windows Hello to log into Microsoft Apps such as
+																Outlook, OneDrive, Office 365 and Xbox Live. <a href="#">
+																	Visit Microsoft</a>
 															</div>
 														</div>
 													</div>
@@ -293,8 +292,8 @@
 											<ol>
 												<li>
 													<div class="text-regular">
-														Visit the Windows Hello page and register your fingerprint
-														<a href="#">Visit Windows Hello </a> in system settings
+														Visit the Windows Hello page and register your fingerprint.
+														<a href="#">Visit Windows Hello</a> in system settings
 													</div>
 												</li>
 												<li>
@@ -338,17 +337,10 @@
 									</div>
 								</div>
 								<!--End of Security Card Advisor-->
-								<div class="row mb-40">
+								<div class="row">
 									<div class="col col-12">
-										<vtr-container-card [img]="cardContentPositionA.FeatureImage"
-											[title]="cardContentPositionA.Title"
-											[logoText]="cardContentPositionA.BrandName"
-											[action]="cardContentPositionA.Action"
-											[actionLink]="cardContentPositionA.ActionLink"
-											[type]="'article'"
-											[ratioX]="4"
-											[ratioY]="4">
-										</vtr-container-card>
+										<vtr-article-item *ngFor="let item of articles, let i = index"
+											[item]="item"></vtr-article-item>
 									</div>
 								</div>
 							</div>
