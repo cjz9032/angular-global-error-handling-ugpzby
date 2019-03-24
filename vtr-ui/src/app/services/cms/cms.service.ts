@@ -94,6 +94,20 @@ export class CMSService {
 		});
 	}
 
+	fetchCMSArticle(articleId, queryParams) {
+		return new Promise((resolve, reject) => {
+			this.commsService.endpointGetCall('/api/v1/articles/' + articleId, queryParams, {}).subscribe(
+				(response: any) => {
+					resolve(response);
+				},
+				error => {
+					console.log('fetchCMSArticle error', error);
+					reject('fetchCMSArticle error');
+				}
+			);
+		});
+	}
+
 	getOneCMSContent(results, template, position) {
 		return results.filter((record) => {
 			return record.Template === template;
