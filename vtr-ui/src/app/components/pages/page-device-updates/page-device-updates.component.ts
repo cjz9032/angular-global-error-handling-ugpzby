@@ -25,7 +25,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	back = 'BACK';
 	backarrow = '< ';
 
-	cardContentPositionA: any = {};
+	articles: [];
 
 	private lastUpdatedText = 'Last update was on';
 	private nextScanText = 'Next update scan is scheduled on';
@@ -133,7 +133,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		private ngZone: NgZone,
 		private modalService: NgbModal,
 		private cmsService: CMSService
-	) { }
+	) {
+		this.fetchCMSArticles();
+	}
 
 	ngOnInit() {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
@@ -151,9 +153,11 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.getScheduleUpdateStatus(false);
 		this.isComponentInitialized = true;
 		this.setUpdateTitle();
+	}
 
+	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'dashboard',
+			'Page': 'system-updates',
 			'Lang': 'EN',
 			'GEO': 'US',
 			'OEM': 'Lenovo',
@@ -162,11 +166,10 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then(
+		this.cmsService.fetchCMSArticles(queryOptions).then(
 			(response: any) => {
-				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
 
-				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+				this.articles = response;
 			},
 			error => {
 				console.log('fetchCMSContent error', error);

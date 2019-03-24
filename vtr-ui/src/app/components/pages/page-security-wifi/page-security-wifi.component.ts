@@ -19,9 +19,14 @@ export class PageSecurityWifiComponent implements OnInit {
 	constructor(
 		public mockService: MockService,
 		private cmsService: CMSService
-	) { }
+	) {
+		this.fetchCMSArticles();
+	}
 
 	ngOnInit() {
+	}
+
+	fetchCMSArticles() {
 		const queryOptions = {
 			'Page': 'wifi-security',
 			'Lang': 'EN',

@@ -13,18 +13,23 @@ export class PageDeviceComponent implements OnInit {
 	title = 'My Device';
 	back = 'BACK';
 	backarrow = '< ';
-	cardContentPositionA: any = {};
-	cardContentPositionB: any = {};
+	articles: [];
 
 	constructor(
 		public deviceService: DeviceService,
 		public qaService: QaService,
 		private cmsService: CMSService
-	) { }
+	) {
+		this.fetchCMSArticles();
+	}
 
 	ngOnInit() {
+
+	}
+
+	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'dashboard',
+			'Page': 'device',
 			'Lang': 'EN',
 			'GEO': 'US',
 			'OEM': 'Lenovo',
@@ -33,12 +38,9 @@ export class PageDeviceComponent implements OnInit {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then(
+		this.cmsService.fetchCMSArticles(queryOptions).then(
 			(response: any) => {
-				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-E')[0];
-				this.cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
-
-				this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+				this.articles = response;
 			},
 			error => {
 				console.log('fetchCMSContent error', error);

@@ -12,16 +12,21 @@ export class PageSecurityInternetComponent implements OnInit {
 	back = 'BACK';
 	backarrow = '< ';
 	IsDashlaneInstalled: Boolean = true;
-	cardContentPositionA: any = {};
+	articles: [];
 
 	constructor(
 		public mockService: MockService,
 		private cmsService: CMSService
-	) { }
+	) {
+		this.fetchCMSArticles();
+	}
 
 	ngOnInit() {
+	}
+
+	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'dashboard',
+			'Page': 'internet-protection',
 			'Lang': 'EN',
 			'GEO': 'US',
 			'OEM': 'Lenovo',
@@ -30,9 +35,9 @@ export class PageSecurityInternetComponent implements OnInit {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then(
+		this.cmsService.fetchCMSArticles(queryOptions).then(
 			(response: any) => {
-				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-E')[0];
+				this.articles = response;
 			},
 			error => {
 				console.log('fetchCMSContent error', error);

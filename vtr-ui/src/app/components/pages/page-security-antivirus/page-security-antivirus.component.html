@@ -821,17 +821,10 @@
 								</div>
 								<!--End of Security Card Advisor-->
 
-								<div class="row mb-40">
+								<div class="row">
 									<div class="col col-12">
-										<vtr-container-card [img]="cardContentPositionA.FeatureImage"
-											[title]="cardContentPositionA.Title"
-											[logoText]="cardContentPositionA.BrandName"
-											[action]="cardContentPositionA.Action"
-											[actionLink]="cardContentPositionA.ActionLink"
-											[type]="'article'"
-											[ratioX]="4"
-											[ratioY]="4">
-										</vtr-container-card>
+										<vtr-article-item *ngFor="let item of articles, let i = index"
+											[item]="item"></vtr-article-item>
 									</div>
 								</div>
 							</div>

@@ -15,16 +15,21 @@ export class PageSecurityPasswordComponent implements OnInit {
 	backarrow = '< ';
 
 	IsDashlaneInstalled: Boolean = false;
-	cardContentPositionA: any = {};
+	articles: [];
 
 	constructor(
 		public mockService: MockService,
 		private cmsService: CMSService
-	) { }
+	) {
+		this.fetchCMSArticles();
+	}
 
 	ngOnInit() {
+	}
+
+	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'dashboard',
+			'Page': 'password-protection',
 			'Lang': 'EN',
 			'GEO': 'US',
 			'OEM': 'Lenovo',
@@ -33,11 +38,9 @@ export class PageSecurityPasswordComponent implements OnInit {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).then(
+		this.cmsService.fetchCMSArticles(queryOptions).then(
 			(response: any) => {
-				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
-
-				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+				this.articles = response;
 			},
 			error => {
 				console.log('fetchCMSContent error', error);
