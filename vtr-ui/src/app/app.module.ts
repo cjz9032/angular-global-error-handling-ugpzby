@@ -124,6 +124,7 @@ import { InstallationHistoryComponent } from './components/pages/page-device-upd
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
 import { InstalledSystemUpdatesListComponent } from './components/pages/page-device-updates/children/installed-system-updates-list/installed-system-updates-list.component';
 import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
+import { ModalArticleDetailComponent } from './components/modal/modal-article-detail/modal-article-detail.component';
 import { DolbyModesTranslationPipe } from './pipe/dolby-modes-translation.pipe';
 
 library.add(fas);
@@ -208,6 +209,7 @@ library.add(far);
 		SeparatePascalCasePipe,
 		InstalledSystemUpdatesListComponent,
 		ModalCommonConfirmationComponent,
+		ModalArticleDetailComponent,
 		DolbyModesTranslationPipe
 	],
 	imports: [
@@ -240,7 +242,8 @@ library.add(far);
 		ModalLenovoIdComponent,
 		ModalWelcomeComponent,
 		ModalBatteryChargeThresholdComponent,
-		ModalCommonConfirmationComponent
+		ModalCommonConfirmationComponent,
+		ModalArticleDetailComponent
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA

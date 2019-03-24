@@ -24,6 +24,10 @@
 		padding: 32 / 420 * 100% 40 / 430 * 100% 0;
 		height: 40%;
 
+		a {
+			cursor: pointer;
+		}
+
 		.title {
 			color: $main_dark;
 			font-size: 2.3rem;

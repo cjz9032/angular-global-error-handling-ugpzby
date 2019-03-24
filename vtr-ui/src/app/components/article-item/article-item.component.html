@@ -7,18 +7,17 @@
 			<a *ngIf="item.Thumbnail"
 				class="col col-12 image"
 				[style.background-image]="'url('+item.Thumbnail+')'"
-				href="{{item.ReadMore}}">
+				vtrMetrics
+				metricsEvent="DocClick"
+				metricsParent="Page.Support"
+				metricsItemID=""
+				metricsItemCategory=""
+				metricsItemPosition=""
+				metricsViewOrder="{{metricsDatas.viewOrder}}"
+				metricsPageNumber="{{metricsDatas.pageNumber}}"
+				(click)="showArticleDetails()">
 				<div *ngIf="item.Logo"
-					class="logo"
-					vtrMetrics
-					metricsEvent="DocClick"
-					metricsParent="Page.Support"
-					metricsItemID=""
-					metricsItemCategory=""
-					metricsItemPosition=""
-					metricsViewOrder="{{metricsDatas.viewOrder}}"
-					metricsPageNumber="{{metricsDatas.pageNumber}}"
-					(click)="addViewOrder()">
+					class="logo">
 					<span class="img"
 						*ngIf="item.Logo && item.Thumbnail">
 						<img src="{{item.Logo}}"
@@ -31,7 +30,6 @@
 			<div *ngIf="item.Title"
 				class="col col-12 content">
 				<a class="title"
-					href="{{item.ReadMore}}"
 					vtrMetrics
 					metricsEvent="DocClick"
 					metricsParent="Page.Support"
@@ -40,14 +38,13 @@
 					metricsItemPosition=""
 					metricsViewOrder="{{metricsDatas.viewOrder}}"
 					metricsPageNumber="{{metricsDatas.pageNumber}}"
-					(click)="addViewOrder()">{{item.Title}}</a>
+					(click)="showArticleDetails()">{{item.Title}}</a>
 				<div class="logo-text">
 					<span *ngIf="item.LogoText && !item.Thumbnail">{{item.LogoText}}</span>
 				</div>
 				<div *ngIf="item.ReadMore && item.Thumbnail"
 					class="read-more">
-					<a href="{{item.ReadMore}}"
-						vtrMetrics
+					<a vtrMetrics
 						metricsEvent="DocClick"
 						metricsParent="Page.Support"
 						metricsItemID=""
@@ -55,7 +52,7 @@
 						metricsItemPosition=""
 						metricsViewOrder="{{metricsDatas.viewOrder}}"
 						metricsPageNumber="{{metricsDatas.pageNumber}}"
-						(click)="addViewOrder()">
+						(click)="showArticleDetails()">
 						<span class="link-label">Read More</span>
 						<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 					</a>

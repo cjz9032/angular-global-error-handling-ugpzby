@@ -1,6 +1,8 @@
 import { Component, Self, ElementRef, OnInit, AfterViewInit, Input, ViewChild } from '@angular/core';
 import { DisplayService } from '../../services/display/display.service';
 import { SupportService } from '../../services/support/support.service';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { ModalArticleDetailComponent } from '../modal/modal-article-detail/modal-article-detail.component';
 
 @Component({
 	selector: 'vtr-article-item',
@@ -30,6 +32,7 @@ export class ArticleItemComponent implements OnInit, AfterViewInit {
 		@Self() private element: ElementRef,
 		private displayService: DisplayService,
 		private supportService: SupportService,
+		public modalService: NgbModal
 	) {
 		this.metricsDatas = this.supportService.metricsDatas;
 	}
@@ -61,8 +64,15 @@ export class ArticleItemComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	addViewOrder() {
+	showArticleDetails() {
 		this.metricsDatas.viewOrder++;
-	}
 
+		let articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
+			size: 'lg',
+			centered: true,
+			windowClass: 'Article-Detail-Modal'
+		});
+
+		articleDetailModal.componentInstance.articleId = this.item.Id;
+	}
 }
