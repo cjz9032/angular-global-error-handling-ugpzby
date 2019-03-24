@@ -293,60 +293,133 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
+.Article-Detail-Modal {
+	.modal-dialog {
+		max-width: 70%;
+		overflow-y: initial !important
+	}
+
+	.modal-content {
+		// height: 250px;
+		// height: 80%;
+		// overflow-y: auto;
+
+		border-radius: 1rem;
+		background: $light;
+		padding: 4rem;
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-weight: normal;
+			color: $blue-dark;
+			margin-top: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		h1 {
+			font-size: 3.1rem;
+			margin-top: 0rem;
+			margin-bottom: 3rem;
+		}
+
+		h2 {
+			font-size: 2.6rem;
+		}
+
+		h3 {
+			font-size: 2.2rem;
+		}
+
+		h4 {
+			font-size: 1.8rem;
+		}
+
+		h5 {
+			font-size: 1.4rem;
+		}
+
+		h6 {
+			font-size: 1rem;
+		}
+
+		p,
+		li,
+		ul {
+			font-size: 1.8rem;
+			color: $light-grey;
+			margin-bottom: 1rem;
+		}
+	}
+}
+
 
 /*----- onclick-tooltip-style------*/
-.tooltip-click{
+.tooltip-click {
 	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
-	&.show{
+
+	&.show {
 		opacity: 1;
 	}
-	&.tooltip{
+
+	&.tooltip {
 		font-size: 1.6rem;
 		border-radius: 1rem;
 		font-family: 'rubik';
-		ul{
+
+		ul {
 			padding: 0;
 			margin-bottom: 0;
-			li{
+
+			li {
 				list-style: none;
 			}
 		}
 	}
-	&.bs-tooltip-top{
+
+	&.bs-tooltip-top {
 		padding: 0;
 	}
 
-	.tooltip-inner{
-		background: $light ;
+	.tooltip-inner {
+		background: $light;
 		border-radius: 1rem;
 		padding: 3rem;
 		color: $main_darker;
 		text-align: left;
 		max-width: 100%;
-		span{
+
+		span {
 			font-weight: bold;
 		}
-		.reboot-text{
+
+		.reboot-text {
 			text-decoration: none;
 			color: $orange-light;
 			font-weight: bold;
-			fa-icon{
+
+			fa-icon {
 				padding-right: 1rem;
 				font-size: 1.6rem;
 			}
 		}
-		.read{
+
+		.read {
 			color: $main;
 			text-decoration: underline;
 		}
-		.ignore{
+
+		.ignore {
 			color: $main;
 			text-decoration: underline;
 		}
 
 	}
-	.arrow::before{
+
+	.arrow::before {
 		border-top-color: $dark;
 	}
 }
-
