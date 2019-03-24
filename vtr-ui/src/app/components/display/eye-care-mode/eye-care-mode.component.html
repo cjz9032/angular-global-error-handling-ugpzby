@@ -16,13 +16,14 @@
 				[minValueLegend]="'Warm (Better for eyes)'"
 				[maxValueLegend]="'Cold'"
 				[value]="eyeCareModeSettings.current"
-				(change)="onEyeCareTemperatureChange($event)">
+				(change)="onEyeCareTemparatureChange($event)"
+				(valueChange)="onEyeCareTemparatureValueChange($event)">
 			</vtr-ui-range-slider>
 		</div>
 		<div class="reset-temperature">
 			<button type="button"
 				class="btn btn-link text"
-				(click)="onResetTemperature($event)">
+				(click)="onResetTemparature($event)">
 				Reset temperature
 			</button>
 		</div>
@@ -32,7 +33,8 @@
 			type="checkbox"
 			[disabled]="enableSlider"
 			class="custom-control-input"
-			checked="" />
+			checked=""
+			(change)="onSunsetToSunrise($event)" />
 		<label class="custom-control-label "
 			for="cb-eye-care-schedule">
 			Schedule eye care mode from sunset to sunrise

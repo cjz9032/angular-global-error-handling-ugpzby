@@ -6,7 +6,10 @@ import { DisplayService } from 'src/app/services/display/display.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { ChangeContext } from 'ng5-slider';
-
+import { EyeCareMode } from 'src/app/data-models/camera/eyeCareMode.model';
+enum defaultTemparature {
+	defaultValue = 4500
+}
 @Component({
 	selector: 'vtr-subpage-device-settings-display',
 	templateUrl: './subpage-device-settings-display.component.html',
@@ -16,7 +19,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	implements OnInit, OnDestroy {
 	title = 'Display & Camera Settings';
 	public dataSource: any;
-	public eyecareDatasource: any;
+	public eyeCareDataSource: EyeCareMode;
 	public cameraDetails1: ICameraSettingsResponse;
 	private cameraDetailSubscription: Subscription;
 	public eyeCareModeStatus = new FeatureStatus(false, true);
@@ -42,14 +45,17 @@ export class SubpageDeviceSettingsDisplayComponent
 	constructor(public baseCameraDetail: BaseCameraDetail,
 		public displayService: DisplayService) {
 		this.dataSource = new CameraDetail();
+		this.eyeCareDataSource = new EyeCareMode();
 	}
 
 	ngOnInit() {
 		console.log('subpage-device-setting-display onInit');
+
 		this.getEyeCareModeStatus();
+		this.getDisplayColorTemperature();
 		this.getCameraPrivacyModeStatus();
 		this.getCameraDetails();
-		this.getDisplayColorTemperature();
+
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			cameraDetail => {
 				this.dataSource = cameraDetail;
@@ -59,6 +65,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				console.log(error);
 			}
 		);
+		//	this.statusChangedLocationPermission() ;
 	}
 
 	ngOnDestroy() {
@@ -96,11 +103,14 @@ export class SubpageDeviceSettingsDisplayComponent
 			this.dataSource = response;
 		});
 	}
+	// Start EyeCare Mode
 	private getDisplayColorTemperature() {
 		console.log('Inside Eycaremode details');
 		this.displayService.getDisplayColortemperature().then((response) => {
 			console.log('getDisplayColortemperature.then', response);
-			this.eyecareDatasource = response;
+			this.eyeCareDataSource = response;
+			//	this.eyecareDatasource.current = response.current;
+			console.log('getDisplayColortemperature.then', this.eyeCareDataSource);
 		});
 	}
 	public onEyeCareModeStatusToggle(event: any) {
@@ -109,8 +119,26 @@ export class SubpageDeviceSettingsDisplayComponent
 			if (this.displayService.isShellAvailable) {
 				this.displayService.setEyeCareModeState(event.switchValue)
 					.then((value: boolean) => {
-						console.log('setEyeCareModeState.then', value);
+						console.log('onEyeCareModeStatusToggle.then', value);
+						//this.setEyeCareModeTemparature(defaultTemparature.defaultValue)
+
+						///	this.eyecareDatasource.current = defaultTemparature.defaultValue;
 						this.getEyeCareModeStatus();
+					}).catch(error => {
+						console.error('onEyeCareModeStatusToggle', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	private setEyeCareModeStatus(value: boolean) {
+		try {
+			if (this.displayService.isShellAvailable) {
+				this.displayService.setEyeCareModeState(value)
+					.then((value: boolean) => {
+						console.log('setEyeCareModeState.then', value);
+
 					}).catch(error => {
 						console.error('setEyeCareModeState', error);
 					});
@@ -133,6 +161,53 @@ export class SubpageDeviceSettingsDisplayComponent
 				});
 		}
 	}
+	public onEyeCareTemparatureChange($event: ChangeContext) {
+		try {
+			console.log('temparature changed in display', $event);
+			if (this.displayService.isShellAvailable) {
+				this.displayService
+					.setDisplayColortemperature($event.value);
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	public onEyeCareTemparatureValueChange($event: ChangeContext) {
+		try {
+			console.log('temparature changed in display', $event);
+			if (this.displayService.isShellAvailable) {
+				this.displayService
+					.setDisplayColortemperature($event.value);
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	private setEyeCareModeTemparature(value: number) {
+		try {
+			console.log('temparature changed in display', value);
+			if (this.displayService.isShellAvailable) {
+				this.displayService
+					.setDisplayColortemperature(value);
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	public onResetTemparature($event: any) {
+		try {
+			console.log('temparature reset in display', $event);
+			if (this.displayService.isShellAvailable) {
+				this.displayService
+					.resetEyeCareMode();
+				this.getDisplayColorTemperature();
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	// End EyeCare Mode
+	// Start Camera Privacy
 	public onCameraPrivacyModeToggle($event: any) {
 
 		if (this.displayService.isShellAvailable) {
@@ -206,27 +281,17 @@ export class SubpageDeviceSettingsDisplayComponent
 			this.getCameraDetails();
 		}
 	}
-	public onEyeCareTemperatureChange($event: ChangeContext) {
-		try {
-			console.log('temparature changed in display', $event);
-			if (this.displayService.isShellAvailable) {
-				this.displayService
-					.setDisplayColortemperature($event.value);
-			}
-		} catch (error) {
-			console.error(error.message);
-		}
+	// End Camera Privacy
+	public getLocationPermissionStatus(value: boolean) {
+		console.log('called from loaction service ui', value);
 	}
-	public onResetTemperature($event: any) {
-		try {
-			console.log('temparature reset in display', $event);
-			if (this.displayService.isShellAvailable) {
-				this.displayService
-					.resetEyeCareMode();
-				this.getDisplayColorTemperature();
-			}
-		} catch (error) {
-			console.error(error.message);
+
+	public statusChangedLocationPermission() {
+		console.log('status changed location permission');
+		if (this.displayService.isShellAvailable) {
+			this.displayService
+				.statusChangedLocationPermission(this.getLocationPermissionStatus.bind(this));
+
 		}
 	}
 }

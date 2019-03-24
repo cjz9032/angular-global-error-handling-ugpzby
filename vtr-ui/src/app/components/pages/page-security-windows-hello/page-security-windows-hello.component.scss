@@ -45,7 +45,7 @@
     font-weight: $weight_bold;
 
     .adjust-left {
-      padding-left: 2.5rem;
+      padding-left: 1.8rem;
     }
   }
 
@@ -84,7 +84,8 @@
   }
 
   .dashlane-side-right-img {
-    width: 90%;
+	width: 90%;
+	float: right;
   }
 
   .learnmore {
@@ -162,7 +163,7 @@
     list-style: none;
     padding: 0;
     color: $main_dark;
-    font-size: 1.6rem;
+    font-size: 3.6rem;
 
     .ol {
       margin: 0 0 1.5rem;
@@ -190,7 +191,7 @@
 
   .button-box {
     padding: 1rem;
-    margin: 1.2rem;
+    margin: 1.4rem;
     button {
       font-weight: bold;
     }
@@ -205,10 +206,10 @@
     height: 7rem;
 
     .sub-heading {
-      margin-top: 2rem;
+      margin-top: 2.5rem;
       color: $main_dark;
-      font-size: 1.8rem;
-      font-weight: $weight_medium;
+      font-size: 1.6rem;
+      font-weight: $weight_bold;
       text-transform: uppercase;
       margin-left: -4rem;
       word-break: break-all;
