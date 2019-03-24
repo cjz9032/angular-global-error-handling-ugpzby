@@ -265,7 +265,7 @@ export class MockService {
 		{
 			'status': 0,
 			'id': 'fingerprint-reader',
-			'title': 'Fingerprint reader',
+			'title': 'Fingerprint Reader',
 			'detail': 'Enabled',
 			'path': 'windows-hello'
 		}
