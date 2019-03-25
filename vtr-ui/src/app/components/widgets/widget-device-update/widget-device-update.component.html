@@ -54,7 +54,12 @@
 					*ngIf="isUpdateDownloading">
 					<div class="col col-12 row progress-div">
 						<div class="col col-10 progress-title">
-							<fa-icon [icon]="['fas', downloadingIcon]">
+							<fa-icon [icon]="['fas', 'spinner']"
+								*ngIf="downloadingPercent < 100">
+							</fa-icon>
+							<fa-icon [icon]="['fas', 'check-circle']"
+								class="success"
+								*ngIf="downloadingPercent === 100">
 							</fa-icon>
 							{{downloadingUpdateText}}
 						</div>

@@ -75,7 +75,8 @@
 					[icon]="['far', 'question-circle']"
 					container="body"
 					tooltipClass="tooltip-click"
-					(click)="onTooltipClick(item, undefined)"></fa-icon>
+					#tooltip="ngbTooltip"
+					(click)="onTooltipClick(item, tooltip)"></fa-icon>
 			</div>
 		</li>
 	</ul>
