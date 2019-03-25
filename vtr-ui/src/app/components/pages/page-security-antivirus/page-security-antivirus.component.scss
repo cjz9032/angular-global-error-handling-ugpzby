@@ -109,9 +109,9 @@
 			}
 
 			.subtitle {
-				color: $shade_dark;
-				font-size: 1.4rem;
-				font-weight: $weight_light;
+				color: $shade_darkest;
+				font-size: 1.5rem;
+				font-weight: $weight_regular;
 				line-height: 2.3rem;
 			}
 
@@ -181,10 +181,27 @@
 		}
 
 		.text {
-			color: $screen_dark_70;
-			font-size: 1.4rem;
-			font-weight: $weight_light;
+			color: $shade_darkest;
+			font-size: 1.5rem;
+			font-weight: $weight_regular;
 			line-height: 2.3rem;
 		}
+	}
+
+	.antivirus-block {
+		margin-top: 4rem;
+
+		ul.list-unstyled {
+			li {
+				.col-auto {
+					padding-left: .8rem;
+				}
+			}
+		}
+	}
+
+	.badge {
+		font-weight: normal;
+		font-size: 69%;
 	}
 }

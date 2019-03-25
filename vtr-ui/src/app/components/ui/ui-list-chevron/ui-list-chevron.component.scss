@@ -133,7 +133,12 @@
         color: $main_darker;
         line-height: 2.8rem;
         font-size: 2rem;
-      }
+	  }
+	  .question-icon{
+		  color: $main;
+		  font-size: 1.8rem;
+		  cursor: pointer;
+	  }
     }
   }
 }

@@ -44,7 +44,7 @@ export class PageDashboardComponent implements OnInit {
 		config: NgbModalConfig,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
-		public cmsService: CMSService
+		private cmsService: CMSService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -67,7 +67,7 @@ export class PageDashboardComponent implements OnInit {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).subscribe(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
 				this.heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
 					return {
@@ -124,10 +124,10 @@ export class PageDashboardComponent implements OnInit {
 		}, 3000);
 	}
 
-	private getFormatedTitle(title) {
-		var formatedTitle = 'Looking energized today ' + title + '!';
-		return formatedTitle;
-	}
+	// private getFormatedTitle(title) {
+	// 	var formatedTitle = 'Looking energized today ' + title + '!';
+	// 	return formatedTitle;
+	// }
 
 	private getSystemInfo() {
 		this.dashboardService.getSystemInfo()

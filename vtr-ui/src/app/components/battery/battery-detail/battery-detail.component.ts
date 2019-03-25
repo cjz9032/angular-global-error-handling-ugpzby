@@ -5,20 +5,17 @@ import { BaseBatteryDetail } from 'src/app/services/battery-detail/base-battery-
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { BatteryChargeStatus } from 'src/app/enums/battery-charge-status.enum';
+import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.model';
 @Component({
 	selector: 'vtr-battery-detail',
 	templateUrl: './battery-detail.component.html',
 	styleUrls: ['./battery-detail.component.scss'],
-	// providers: [
-	// 	{ provide: BaseBatteryDetail, useClass: BatteryDetailService }
-	// ]
 })
 export class BatteryDetailComponent implements OnInit, OnDestroy {
 	public dataSource: BatteryDetail[];
 	batteryTimer: any;
 	remainingTimeText = "Remaining time";
-	remainingPercent: number;
-	isCharging = false;
+	batteryIndicators = new BatteryIndicator();
 	constructor(private batteryService: BatteryDetailService, public shellServices: VantageShellService) {
 		this.getBatteryDetail();
 	}
@@ -65,8 +62,11 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 				this.remainingTimeText = "Remaining time";
 			}
 		}
-		this.remainingPercent = response[0].remainingPercent;
-		this.isCharging = response[0].chargeStatus == BatteryChargeStatus.CHARGING.id;
+		this.batteryIndicators.percent = response[0].remainingPercent;
+		this.batteryIndicators.charging = response[0].chargeStatus == BatteryChargeStatus.CHARGING.id;
+		this.batteryIndicators.expressCharging = response[0].isExpressCharging;
+		this.batteryIndicators.voltageError = response[0].isVoltageError;
+		this.batteryIndicators.convertMin(response[0].remainingTime);
 		this.dataSource = response;
 	}
 
