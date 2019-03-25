@@ -122,6 +122,9 @@ import { MetricsDirective } from './directives/metrics.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
 import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
+import { AppEventDirective } from './directives/app-event.directive';
+import { SafeDomPipe } from './pipe/safe-dom/safe-dom.pipe';
+import { ModalUpdateChangeLogComponent } from './components/modal/modal-update-change-log.component/modal-update-change-log.component';
 
 library.add(fas);
 library.add(fab);
@@ -202,7 +205,10 @@ library.add(far);
 		MetricsDirective,
 		InstallationHistoryComponent,
 		SeparatePascalCasePipe,
-		ModalCommonConfirmationComponent
+		ModalCommonConfirmationComponent,
+		AppEventDirective,
+		ModalUpdateChangeLogComponent,
+		SafeDomPipe
 	],
 	imports: [
 		BrowserModule,
@@ -234,7 +240,8 @@ library.add(far);
 		ModalLenovoIdComponent,
 		ModalWelcomeComponent,
 		ModalBatteryChargeThresholdComponent,
-		ModalCommonConfirmationComponent
+		ModalCommonConfirmationComponent,
+		ModalUpdateChangeLogComponent
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA

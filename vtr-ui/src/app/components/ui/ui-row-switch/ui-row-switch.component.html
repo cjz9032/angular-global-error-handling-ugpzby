@@ -55,14 +55,13 @@
 							{{linkText}}
 						</a>
 					</div>
-					<ng-template #tipContent>
-						<div [innerHTML]='tooltipText'></div>
-					</ng-template>
+
 					<div class="p-0 pl-2"
 						*ngIf="rightIcon.length > 0">
 						<fa-icon class="right-icon"
+							triggers="click:blur"
 							placement="top"
-							[ngbTooltip]="(tooltipText?.length) ? tipContent : ''"
+							[ngbTooltip]="tooltipRef"
 							[icon]="rightIcon"
 							container="body"
 							tooltipClass="vtr-tooltip"
@@ -116,3 +115,6 @@
 		</div>
 	</div>
 </div>
+<ng-template #tooltipRef>
+	<div [innerHTML]='tooltipText'></div>
+</ng-template>

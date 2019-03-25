@@ -31,14 +31,15 @@
 					</div>
 					<div class="col col-1 text-right">
 						<div>
-							<fa-icon [icon]="['far', 'question-circle']"
-								class="question"
-								[autoClose]="false"
-								triggers="manual"
-								#toolTip="ngbTooltip"
-								tooltipClass="tooltip-click"
+							<fa-icon class="question"
+								triggers="click:blur"
+								placement="top"
 								[ngbTooltip]="systemUpdateTooltip"
-								(click)="onTooltipClick(item, toolTip)"></fa-icon>
+								[icon]="['far', 'question-circle']"
+								container="body"
+								tooltipClass="tooltip-click"
+								#tooltip="ngbTooltip"
+								(click)="onTooltipClick(item, tooltip)"></fa-icon>
 						</div>
 					</div>
 				</div>
@@ -67,14 +68,14 @@
 				<div class="col col-11 text px-0 button-box">
 					<div class="update-title">{{item.packageDesc}}</div>
 				</div>
-				<fa-icon [icon]="['far', 'question-circle']"
-					class="question"
-					[autoClose]="false"
-					triggers="manual"
-					#toolTip="ngbTooltip"
-					tooltipClass="tooltip-click"
+				<fa-icon class="question"
+					triggers="click:blur"
+					placement="top"
 					[ngbTooltip]="systemUpdateTooltip"
-					(click)="onTooltipClick(item, toolTip)"></fa-icon>
+					[icon]="['far', 'question-circle']"
+					container="body"
+					tooltipClass="tooltip-click"
+					(click)="onTooltipClick(item, undefined)"></fa-icon>
 			</div>
 		</li>
 	</ul>
@@ -98,13 +99,13 @@
 			<li>Disc space needed: <span>{{ diskSpaceNeeded }}</span></li>
 		</ul>
 		<div class="row">
-			<div class="col-6 pl-0 pr-0 text-center">
+			<div class="col-6 pl-0 pr-0 text-left">
 				<a href="javascript:void(0)"
 					class="read"
 					(click)="onReadMoreClick($event)">Read more</a>
 			</div>
 			<!-- required in MVP 2 -->
-			<!-- <div class="col-6 pl-0 pr-0 text-center">
+			<!-- <div class="col-6 pl-0 pr-0 text-right">
 				<a href="javascript:void(0)"
 					class="ignore"
 					(click)="onIgnoreUpdateClick($event)"
