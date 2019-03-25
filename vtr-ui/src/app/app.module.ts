@@ -127,6 +127,7 @@ import { AppEventDirective } from './directives/app-event.directive';
 import { SafeDomPipe } from './pipe/safe-dom/safe-dom.pipe';
 import { ModalUpdateChangeLogComponent } from './components/modal/modal-update-change-log.component/modal-update-change-log.component';
 import { ModalArticleDetailComponent } from './components/modal/modal-article-detail/modal-article-detail.component';
+import { ModalThreatLocatorComponent } from './components/modal/modal-threat-locator/modal-threat-locator.component';
 import { DolbyModesTranslationPipe } from './pipe/dolby-modes-translation.pipe';
 
 library.add(fas);
@@ -215,6 +216,7 @@ library.add(far);
 		SafeDomPipe,
 		ModalCommonConfirmationComponent,
 		ModalArticleDetailComponent,
+		ModalThreatLocatorComponent,
 		DolbyModesTranslationPipe
 	],
 	imports: [
@@ -249,7 +251,8 @@ library.add(far);
 		ModalBatteryChargeThresholdComponent,
 		ModalCommonConfirmationComponent,
 		ModalUpdateChangeLogComponent,
-		ModalArticleDetailComponent
+		ModalArticleDetailComponent,
+		ModalThreatLocatorComponent
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
