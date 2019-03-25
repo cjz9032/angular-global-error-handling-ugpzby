@@ -5,20 +5,13 @@
 		.base-preview {
 			border: 0.1rem solid #ecf0f1;
 			height: 25.8rem;
-			object-fit: cover;
+			object-fit: contain;
 			width: 100%;
 			border-radius: 0.4rem;
 		}
 		.feed {
 			@extend .base-preview;
 			background-color: $dark;
-		}
-		.privacy {
-			@extend .base-preview;
-			background-color: $shade_lightest;
-			font-size: 9rem;
-			color: $main;
-			padding-top: 20%;
 		}
 	}
 }

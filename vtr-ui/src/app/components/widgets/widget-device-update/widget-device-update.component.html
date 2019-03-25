@@ -14,7 +14,11 @@
 				<div *ngIf="!showProgress && !isUpdateDownloading"
 					class="row">
 					<div class="col button-row">
-						<button class="action-button" vtrMetrics metricsEvent="itemClick" metricsParent="update-to-date" metricsItem="check-for-updates"
+						<button class="action-button"
+							vtrMetrics
+							metricsEvent="itemClick"
+							metricsParent="update-to-date"
+							metricsItem="check-for-updates"
 							(click)="onCheckForUpdates()">{{buttonText}}</button>
 					</div>
 				</div>
@@ -24,8 +28,8 @@
 						<div class="col col-10 progress-title">{{checkingForUpdates}}</div>
 						<div class="col col-2 progress-percent-text">
 							<div class="row progress-right">
-								<span class="col-4 progress-value-text">{{percent}}% </span>
-								<span class="col-8 progress-complete-text">{{complete}}</span>
+								<span class="progress-value-text">{{percent}}</span>
+								<span class="progress-complete-text">% {{complete}}</span>
 							</div>
 						</div>
 					</div>
@@ -50,7 +54,12 @@
 					*ngIf="isUpdateDownloading">
 					<div class="col col-12 row progress-div">
 						<div class="col col-10 progress-title">
-							<fa-icon [icon]="['fas', downloadingIcon]">
+							<fa-icon [icon]="['fas', 'spinner']"
+								*ngIf="downloadingPercent < 100">
+							</fa-icon>
+							<fa-icon [icon]="['fas', 'check-circle']"
+								class="success"
+								*ngIf="downloadingPercent === 100">
 							</fa-icon>
 							{{downloadingUpdateText}}
 						</div>

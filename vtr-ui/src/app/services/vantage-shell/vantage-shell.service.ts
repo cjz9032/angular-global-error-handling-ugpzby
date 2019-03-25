@@ -238,4 +238,23 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	/**
+	 * returns CameraPrivacy object from VantageShellService of JS Bridge
+	 */
+	public async deviceFilter(filter) {
+		if (this.phoenix) {
+			try {
+				let deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
+				console.log('In VantageShellService.deviceFilter. Filter: ', filter, deviceFilterResult);
+			} catch (error) {
+				console.log('In VantageShellService.deviceFilter. Error:', error);
+				console.log('In VantageShellService.deviceFilter. returning mock true due to error.');
+			}
+			return true;
+			// return await this.phoenix.deviceFilter(filter);
+		}
+		console.log('In VantageShellService.deviceFilter. returning mock true');
+		return true;
+	}
 }

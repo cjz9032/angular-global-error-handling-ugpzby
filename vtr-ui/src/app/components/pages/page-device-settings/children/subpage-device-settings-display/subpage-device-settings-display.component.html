@@ -28,12 +28,14 @@
 							(toggleOnOff)="onEyeCareModeStatusToggle($event)"
 							[theme]="'white'"
 							[tooltipText]="'Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.'">
-							<vtr-eye-care-mode [eyecareModeSettings]="eyecareDatasource"
-								[enableSlider]="eyeCareModeStatus.status"
-								(eyecareTemparatureChange)="onEyecareTemparaturechange($event)"
+							<div class="row">
+								<div class="col-12">
+									<vtr-eye-care-mode [eyeCareModeSettings]="eyeCareDataSource"
+								[enableSlider]="!eyeCareModeStatus.status"
+								(eyeCareTemparatureChange)="onEyeCareTemparatureChange($event)"
 								(resetTemparature)="onResetTemparature($event)"></vtr-eye-care-mode>
-
-							<br />
+								</div>
+							</div>
 						</vtr-ui-row-switch>
 					</li>
 					<!-- MVP 2 feature -->
@@ -101,11 +103,15 @@
 							[rightIcon]="['far', 'question-circle']"
 							[tooltipText]="'Click here to reset Camera properties to default settings.'"
 							(resetClick)="resetCameraSettings()">
-							<vtr-camera-control [cameraSettings]="dataSource"
-								(brightnessChange)="onBrightnessChange($event)"
-								(contrastChange)="onContrastChange($event)"
-								(exposureChange)="onCameraExposureValueChange($event)">
-							</vtr-camera-control>
+							<div class="row">
+								<div class="col-12">
+									<vtr-camera-control [cameraSettings]="dataSource"
+										(brightnessChange)="onBrightnessChange($event)"
+										(contrastChange)="onContrastChange($event)"
+										(exposureChange)="onCameraExposureValueChange($event)">
+									</vtr-camera-control>
+								</div>
+							</div>
 						</vtr-ui-row-switch>
 					</li>
 				</ul>
