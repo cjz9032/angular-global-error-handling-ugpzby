@@ -1,6 +1,6 @@
 <div class="vtr-advisor-wifi-security">
 	<ul class="chevron-list outside">
-		<li class="good">
+		<li [ngClass]="{'good':wifiSecurityEnabled,'bad':!wifiSecurityEnabled}">
 			<a routerLink="/wifi-security"
 				vtrMetrics
 				[metricsParent]="metricsParent"
@@ -13,7 +13,7 @@
 								[ngClass]="{'light-title':false}">
 								WiFi Security
 							</div>
-							<div class="detail">
+							<div class="detail security good">
 								Enabled
 							</div>
 						</div>
