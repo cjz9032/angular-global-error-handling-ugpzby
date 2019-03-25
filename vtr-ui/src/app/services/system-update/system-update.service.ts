@@ -264,33 +264,39 @@ export class SystemUpdateService {
 	// returns reboot type and array of update name which requires pop up to show before installation
 	public getRebootType(updateList: Array<AvailableUpdateDetail>, source: string): { rebootType: UpdateRebootType, packages: Array<string> } {
 		let rebootType = UpdateRebootType.Unknown;
-		let packages = new Array<string>();
+		const packages = new Array<string>();
 
 		const rebootDelayedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.RebootDelayed, source);
+		const rebootForcedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.RebootForced, source);
+		const powerOffForcedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.PowerOffForced, source);
+
 		// Priority #1 RebootDelayed : return details of it, no need to check other.
 		if (rebootDelayedUpdates && rebootDelayedUpdates.length > 0) {
 			rebootType = UpdateRebootType.RebootDelayed;
-			packages = rebootDelayedUpdates.map((value) => {
+			const updates = rebootDelayedUpdates.map<string>((value) => {
 				return value.packageDesc;
 			});
-		} else {
-			const rebootForcedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.RebootForced, source);
-			// Priority #2 RebootForced : return details of it, no need to check other.
-			if (rebootForcedUpdates && rebootForcedUpdates.length > 0) {
+			packages.push(...updates);
+		}
+		// Priority #2 RebootForced : return details of it, no need to check other.
+		if (rebootForcedUpdates && rebootForcedUpdates.length > 0) {
+			if (rebootType === UpdateRebootType.Unknown) {
 				rebootType = UpdateRebootType.RebootForced;
-				packages = rebootForcedUpdates.map((value) => {
-					return value.packageDesc;
-				});
-			} else {
-				const powerOffForcedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.PowerOffForced, source);
-				// Priority #3 PowerOffForced : return details of it, no need to check other.
-				if (powerOffForcedUpdates && powerOffForcedUpdates.length > 0) {
-					rebootType = UpdateRebootType.PowerOffForced;
-					packages = powerOffForcedUpdates.map((value) => {
-						return value.packageDesc;
-					});
-				}
 			}
+			const updates = rebootForcedUpdates.map((value) => {
+				return value.packageDesc;
+			});
+			packages.push(...updates);
+		}
+		// Priority #3 PowerOffForced : return details of it, no need to check other.
+		if (powerOffForcedUpdates && powerOffForcedUpdates.length > 0) {
+			if (rebootType === UpdateRebootType.Unknown) {
+				rebootType = UpdateRebootType.PowerOffForced;
+			}
+			const updates = powerOffForcedUpdates.map((value) => {
+				return value.packageDesc;
+			});
+			packages.push(...updates);
 		}
 		return { rebootType, packages };
 	}

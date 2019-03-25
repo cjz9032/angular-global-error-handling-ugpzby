@@ -103,4 +103,9 @@ export class AppComponent implements OnInit {
 				});
 		}
 	}
+
+	// public appEvent($event: { name: AppEvent, event: any }) {
+	// 	const { name, event } = $event;
+	// 	this.commonService.sendNotification(name, event);
+	// }
 }

@@ -226,3 +226,10 @@
 	overflow: hidden;
 	min-height: 60rem;
 }
+
+.update-read-more-modal-size .modal-dialog {
+	margin: 0 auto;
+	overflow: auto;
+	font-size: 1.4rem;
+	font-weight: 500;
+}
