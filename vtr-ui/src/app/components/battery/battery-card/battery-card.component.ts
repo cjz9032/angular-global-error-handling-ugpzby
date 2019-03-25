@@ -4,6 +4,8 @@ import { BatteryDetailService } from 'src/app/services/battery-detail/battery-de
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
 import { BatteryChargeStatus } from 'src/app/enums/battery-charge-status.enum';
 import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.model';
+import { CommonService } from 'src/app/services/common/common.service';
+import { BatteryInformation } from 'src/app/enums/battery-information.enum';
 
 @Component({
 	selector: 'vtr-battery-card',
@@ -11,7 +13,10 @@ import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.mode
 	styleUrls: ['./battery-card.component.scss']
 })
 export class BatteryCardComponent implements OnInit, OnDestroy {
-	constructor(private modalService: NgbModal, private batteryService: BatteryDetailService) {}
+	constructor(
+		private modalService: NgbModal, 
+		private batteryService: BatteryDetailService,
+		private commonService: CommonService) {}
 	batteryInfo: BatteryDetail[];
 	batteryCardTimer: any;
 	batteryIndicator = new BatteryIndicator();
@@ -32,6 +37,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 						this.batteryIndicator.expressCharging = response[0].isExpressCharging;
 						this.batteryIndicator.voltageError = response[0].isVoltageError;
 						this.batteryIndicator.convertMin(response[0].remainingTime);
+						this.commonService.sendNotification(BatteryInformation.BatteryInfo,response);
 						this.batteryCardTimer = setTimeout(() => {
 							console.log('Trying after 30 seconds');
 							this.getBatteryDetailOnCard();
