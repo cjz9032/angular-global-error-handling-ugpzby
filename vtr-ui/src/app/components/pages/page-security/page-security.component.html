@@ -14,10 +14,10 @@
 								<div class="row">
 									<div class="col col-12">
 										<vtr-widget-security [title]="'Not fully protected'"
-											[subTitle1]="'You are not fully protected. Learn how to better protect yourself now.'"
-											[subTitle2]="''"
-											[buttonText]="'Security Advisor 101'"
-											percentValue=80></vtr-widget-security>
+										 [subTitle1]="'You are not fully protected. Learn how to better protect yourself now.'"
+										 [subTitle2]="''"
+										 [buttonText]="'Security Advisor 101'"
+										 percentValue=80></vtr-widget-security>
 									</div>
 								</div>
 
@@ -26,85 +26,67 @@
 									<div class="col security-widgets-container left">
 										<div class="security-widget anti-virus">
 											<div class="security-widget-inner">
-												<div class="title">
-													<fa-icon [icon]="['fas', 'minus-circle']"></fa-icon>
-													<span>
-														Anti-Virus
-													</span>
-												</div>
-												<vtr-ui-list-chevron [items]="mockService.securityAntivirus">
+												<vtr-ui-object-title [objects]="antivirusLandingViewModel">													
+												</vtr-ui-object-title>
+												<vtr-ui-list-chevron [item]="antivirusLandingViewModel">
 												</vtr-ui-list-chevron>
 												<div class="pull"><img class="mcafee-logo"
-														src="../../../../assets/images/mcafee_logo.svg" />
+													 src="../../../../assets/images/mcafee_logo.svg" />
 												</div>
 											</div>
 										</div>
 
-										<div class="security-widget password-health">
-											<div class="security-widget-inner">
-												<div class="title">
-													<fa-icon [icon]="['fas', 'dot-circle']"></fa-icon>
-													<span>
-														Password Health
-													</span>
-												</div>
-												<vtr-ui-list-chevron [items]="mockService.securityPasswordHealth">
-												</vtr-ui-list-chevron>
-												<div class="pull right"><img class="dashlane-logo"
-														src="../../../../assets/images/Dashlane_Logo_Teal _Web.png" />
-												</div>
-											</div>
-										</div>
+										<!-- <vtr-ui-landing-feature [feature]='antivirusLandingViewModel'>
+										</vtr-ui-landing-feature> -->
 
-										<div class="security-widget vpn-security">
-											<div class="security-widget-inner">
-												<div class="title">
-													<fa-icon [icon]="['fas', 'dot-circle']"></fa-icon>
-													<span>
-														VPN Security
-													</span>
-												</div>
-												<vtr-ui-list-chevron [items]="mockService.securityVPN">
-												</vtr-ui-list-chevron>
-												<div class="pull"><img class="surfeasy-logo"
-														src="../../../../assets/images/surfeasy-logo.svg" />
-												</div>
-											</div>
-										</div>
+										<vtr-ui-landing-feature [feature]='passwordManagerLandingViewModel'>
+										</vtr-ui-landing-feature>
+
+										<vtr-ui-landing-feature [feature]='vpnLandingViewModel'>
+										</vtr-ui-landing-feature>
 									</div>
+									
 									<div class="col security-widgets-container">
 										<div class="security-widget wifi-connected-home">
 											<div class="security-widget-inner">
-												<div class="title">
-													<fa-icon [icon]="['fas', 'check-circle']"></fa-icon>
-													<span>
-														WiFi & Connected Home Security
-													</span>
-												</div>
-												<vtr-advisor-wifi-security>
-												</vtr-advisor-wifi-security>
-												<vtr-ui-list-chevron [items]="mockService.securityConnectedHome">
+												<div class="security-widget-wifi">
+														<vtr-ui-object-title [objects]="wifiSecurityLandingViewModel">													
+															</vtr-ui-object-title>
+                            <vtr-ui-list-chevron [item]="wifiSecurityLandingViewModel">
+                              </vtr-ui-list-chevron>
+                              <div class="wifi-history" *ngIf="wifiHistory">
+                                <div class="row align-items-center">
+                                  <div class="col-3">
+                                    <img src="../../../../assets//images//img-empty.svg" alt="">
+                                  </div>
+                                  <div class="col-9">Prevented your computer from joining <span>3</span> malicious networks this month.</div>
+                                </div>
+                                <ul class="chevron-list">	
+                                  <li *ngFor="let wifi of wifiHistory.slice(0, 2);" class="row">
+                                      <div class="col-2 item-icon">
+                                        <div class="icon-bkg">
+                                            <img [ngClass]="getWifiStatus(wifi.good)"  src="../../../../assets//images//img-empty.svg" alt="">
+                                        </div>
+                                      </div>
+                                      <div class="col-6">{{wifi.ssid}}</div>
+                                      <div class="col-4 wifi-bg">
+																				<div class="wifi-good" [ngClass]="getWifiStatus(wifi.good)">{{getWifiDetail(wifi.good)}}</div>
+																			</div>
+                                  </li>
+                                  <li class="wifi-link"><a routerLink="/wifi-security">See all joined networks</a></li>
+                                </ul>
+                              </div>
+                        </div>
+												<vtr-ui-list-chevron [item]="homeProtectionLandingViewModel">
 												</vtr-ui-list-chevron>
 												<div class="pull"><img class="coronet-logo"
-														src="../../../../assets/images/coronet-logo.svg" />
+													 src="../../../../assets/images/coronet-logo.svg" />
 												</div>
 											</div>
 										</div>
-										<div class="security-widget windows-hello">
-											<div class="security-widget-inner">
-												<div class="title">
-													<fa-icon [icon]="['fas', 'check-circle']"></fa-icon>
-													<span>
-														Windows Hello
-													</span>
-												</div>
-												<vtr-ui-list-chevron [items]="mockService.securityWindowsHello">
-												</vtr-ui-list-chevron>
-												<div class="pull"><img class="windows-logo"
-														src="../../../../assets/images/windows-logo.svg" />
-												</div>
-											</div>
-										</div>
+										<vtr-ui-landing-feature *ngIf="windowsHelloLandingViewModel.windowsHello" [feature]='windowsHelloLandingViewModel'>
+										</vtr-ui-landing-feature>
+										
 									</div>
 								</div>
 							</div>
@@ -114,18 +96,39 @@
 				<div class="col col-4 vtr-page-right-column">
 					<div class="vtr-page-shift-up">
 						<div class="container-fluid">
-							<div class="row">
+							<div class="row mb-40">
 								<div class="col col-12">
-									<vtr-article-item *ngFor="let item of articles, let i = index"
-										[item]="item"></vtr-article-item>
+									<vtr-container-card [img]="'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg'"
+									 [title]="'Try our McAfee anti-virus software for 6 months'"
+									 [logoText]="'LENOVO SPECIAL'"
+									 [action]="'Read More'"
+									 [actionLink]="'http://www.google.com'"
+									 [type]="'article'"
+									 [ratioX]="4"
+									 [ratioY]="4">
+									</vtr-container-card>
 								</div>
 							</div>
+
+							<div class="row mb-40">
+								<div class="col col-12 aritcle-card">
+									<vtr-container-card [img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
+									 [title]="'Ideas on how to handle all your passwords online'"
+									 [action]="'Read More'"
+									 [actionLink]="'http://www.google.com'"
+									 [type]="'partnerarticle'"
+									 [ratioX]="4"
+									 [ratioY]="2.5">
+									</vtr-container-card>
+								</div>
+							</div>
+
 							<div class="row mb-40">
 								<div class="col col-12 ">
 									<vtr-widget-feedback [title]="'Discover our top ideapad offers for the holidays '"
-										[description]="'Lenovo Exclusive'"
-										[actionName]="''"
-										[action]="''">
+									 [description]="'Lenovo Exclusive'"
+									 [actionName]="''"
+									 [action]="''">
 									</vtr-widget-feedback>
 								</div>
 							</div>

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { MockService } from 'src/app/services/mock/mock.service';
-import { CMSService } from 'src/app/services/cms/cms.service';
+import { WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
+import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-page-security-windows-hello',
@@ -10,45 +11,37 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 export class PageSecurityWindowsHelloComponent implements OnInit {
 
 	title = 'Windows Hello';
-	back = 'BACK';
-	backarrow = '< ';
 
-	IsWindowsHelloInstalled: Boolean = true;
-	articles: [];
+	windowsHello: WindowsHello;
+	status: string;
 
-	constructor(
-		public mockService: MockService,
-		private cmsService: CMSService
-	) {
-		this.fetchCMSArticles();
+	constructor(public mockService: MockService, vantageShellService: VantageShellService) {
+		this.windowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
+		this.updateStatus();
+		this.windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
+			this.updateStatus();
+		}).on(EventTypes.helloFacialIdStatusEvent, () => {
+			this.updateStatus();
+		});
 	}
 
-	ngOnInit() {
+	ngOnInit() { }
+
+	setUpWindowsHello(): void {
+		this.windowsHello.launch();
 	}
 
-	fetchCMSArticles() {
-		const queryOptions = {
-			'Page': 'windows-hello',
-			'Lang': 'EN',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
-		};
-
-		this.cmsService.fetchCMSArticles(queryOptions).then(
-			(response: any) => {
-				this.articles = response;
-			},
-			error => {
-				console.log('fetchCMSContent error', error);
-			}
-		);
+	@HostListener('window:focus')
+	onFocus(): void {
+		this.windowsHello.refresh();
 	}
 
-	windowsHello() {
-		//window.open('https://www.dashlane.com/lenovo/');
-		this.IsWindowsHelloInstalled = this.IsWindowsHelloInstalled ? false : true;
+	private updateStatus(): void {
+		if (this.windowsHello.fingerPrintStatus === 'active' ||
+			this.windowsHello.facialIdStatus === 'active') {
+			this.status = 'enabled';
+		} else {
+			this.status = 'disabled';
+		}
 	}
 }

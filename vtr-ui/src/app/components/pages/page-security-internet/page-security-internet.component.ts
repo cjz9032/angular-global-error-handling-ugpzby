@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { MockService } from 'src/app/services/mock/mock.service';
-import { CMSService } from 'src/app/services/cms/cms.service';
+import { Vpn, EventTypes } from '@lenovo/tan-client-bridge';
+import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-page-security-internet',
@@ -8,45 +9,32 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 	styleUrls: ['./page-security-internet.component.scss']
 })
 export class PageSecurityInternetComponent implements OnInit {
+
 	title = 'VPN Security';
-	back = 'BACK';
-	backarrow = '< ';
-	IsDashlaneInstalled: Boolean = true;
-	articles: [];
 
-	constructor(
-		public mockService: MockService,
-		private cmsService: CMSService
-	) {
-		this.fetchCMSArticles();
+	vpn: Vpn;
+	status: string;
+
+	constructor(public mockService: MockService, vantageShellService: VantageShellService) {
+		this.vpn = vantageShellService.getSecurityAdvisor().vpn;
+		this.status = this.vpn.status;
+		this.vpn.on(EventTypes.vpnStatusEvent, (status: string) => {
+			this.status = status;
+		});
 	}
 
-	ngOnInit() {
+	ngOnInit() {}
+
+	getSurfEasy(): void {
+		this.vpn.download();
 	}
 
-	fetchCMSArticles() {
-		const queryOptions = {
-			'Page': 'internet-protection',
-			'Lang': 'EN',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
-		};
-
-		this.cmsService.fetchCMSArticles(queryOptions).then(
-			(response: any) => {
-				this.articles = response;
-			},
-			error => {
-				console.log('fetchCMSContent error', error);
-			}
-		);
+	openSurfEasy(): void {
+		this.vpn.launch();
 	}
 
-	surfeasy() {
-		//window.open('https://www.surfeasy.com/lenovo/');
-		this.IsDashlaneInstalled = this.IsDashlaneInstalled ? false : true;
+	@HostListener('window:focus')
+	onFocus(): void {
+		this.vpn.refresh();
 	}
 }
