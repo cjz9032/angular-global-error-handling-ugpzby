@@ -37,7 +37,6 @@ export class WidgetDeviceUpdateComponent implements OnInit, OnChanges {
 	}
 
 	ngOnChanges(changes: SimpleChanges) {
-		console.log('WidgetDeviceUpdateComponent', changes);
 		if (changes && changes.downloadingPercent) {
 			if (changes.downloadingPercent.currentValue === 100) {
 				this.downloadingUpdateText = `${this.downloadingText} done`;
