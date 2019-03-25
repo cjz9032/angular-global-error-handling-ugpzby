@@ -75,16 +75,20 @@ export class CMSService {
 		});
 	}
 
-	fetchCMSArticles(queryParams) {
+	fetchCMSArticles(queryParams, returnAll = false) {
 		return new Promise((resolve, reject) => {
 			this.commsService.endpointGetCall('/api/v1/articles', queryParams, {}).subscribe(
 				(response: any) => {
-					//Temporarily filter 3 records to show on UI
-					resolve(response.Results.filter((result) => {
-						return (result.Id === '58f4df46f647422e933037dc36891e55' ||
-							result.Id === 'd80509600aef4c55b9d77f603447a960' ||
-							result.Id === 'd6ab7ed5239a411c87c0ed726a53e25d')
-					}));
+					if (returnAll) {
+						resolve(response.Results);
+					} else {
+						//Temporarily filter 3 records to show on UI
+						resolve(response.Results.filter((result) => {
+							return (result.Id === '58f4df46f647422e933037dc36891e55' ||
+								result.Id === 'd80509600aef4c55b9d77f603447a960' ||
+								result.Id === 'd6ab7ed5239a411c87c0ed726a53e25d')
+						}));
+					}
 				},
 				error => {
 					console.log('fetchCMSArticles error', error);
