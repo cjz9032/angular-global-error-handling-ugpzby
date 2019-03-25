@@ -20,7 +20,7 @@ export class VantageShellService {
 				new inversify.Container(),
 				{
 					hsaBroker: rpcClient,
-					MetricsBroker: metricClient,
+					metricsBroker: metricClient,
 					hsaPowerBroker: powerClient
 				}
 			);
