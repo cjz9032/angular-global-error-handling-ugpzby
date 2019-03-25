@@ -3,7 +3,6 @@
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
 import bootstrap from '@lenovo/tan-client-bridge/src/index';
-import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 
 @Injectable({
 	providedIn: 'root'
@@ -20,7 +19,7 @@ export class VantageShellService {
 				new inversify.Container(),
 				{
 					hsaBroker: rpcClient,
-					MetricsBroker: metricClient,
+					metricsBroker: metricClient,
 					hsaPowerBroker: powerClient
 				}
 			);
@@ -96,6 +95,7 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
 	/**
 	 * returns hardware settings object from VantageShellService of JS Bridge
 	 */
@@ -239,10 +239,14 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public getSecurityAdvisor(): SecurityAdvisor {
+	/**
+	 * returns CameraPrivacy object from VantageShellService of JS Bridge
+	 */
+	public async deviceFilter(filter) {
 		if (this.phoenix) {
-			return this.phoenix.securityAdvisor;
+			return await this.phoenix.deviceFilter(filter);
 		}
-		return undefined;
+		console.log('In VantageShellService.deviceFilter. returning mock true');
+		return true;
 	}
 }

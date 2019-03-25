@@ -3,9 +3,11 @@
 		'white-theme': theme === 'white',
 		'blue-theme': theme === 'blue'
 	}">
-	<div class="container-fluid p-0" [ngClass]="{'vtr-disabled': disabled}">
+	<div class="container-fluid p-0"
+		[ngClass]="{'vtr-disabled': disabled}">
 		<div class="row m-0">
-			<div class="col col-xs-8 col-md-10">
+			<div class="col col-xs-8"
+				[ngClass]="{'col-md-8': type!=undefined && type==='auto-updates', 'col-md-10':type===undefined}">
 				<div class="container-fluid p-0">
 					<div class="row m-0">
 						<div class="col-auto left-icon-column"
@@ -29,7 +31,46 @@
 					</div>
 				</div>
 			</div>
-			<div class="ml-auto p-0"
+			<div class="col col-xs-4">
+				<div class="row">
+					<div class="ml-auto p-0"
+						*ngIf="resetText.length > 0">
+						<button type="button"
+							class="btn btn-link text"
+							(click)="onResetClick($event)">
+							{{ resetText }}
+						</button>
+					</div>
+					<div class="right-align"
+						*ngIf="isSwitchVisible">
+						<vtr-ui-switch-onoff [name]="name"
+							[value]="isSwitchChecked"
+							[disabled]="disabled"
+							(toggle)="onOnOffChange($event)"></vtr-ui-switch-onoff>
+					</div>
+					<div *ngIf="!isSwitchVisible && linkText"
+						class="p-0 link-text">
+						<a routerLink="/{{linkPath}}"
+							class="link-text">
+							{{linkText}}
+						</a>
+					</div>
+					<ng-template #tipContent>
+						<div [innerHTML]='tooltipText'></div>
+					</ng-template>
+					<div class="p-0 pl-2"
+						*ngIf="rightIcon.length > 0">
+						<fa-icon class="right-icon"
+							placement="top"
+							[ngbTooltip]="(tooltipText?.length) ? tipContent : ''"
+							[icon]="rightIcon"
+							container="body"
+							tooltipClass="vtr-tooltip"
+							(click)="onRightIconClick($event)"></fa-icon>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="ml-auto p-0"
 				*ngIf="resetText.length > 0">
 				<button type="button"
 					class="btn btn-link text"
@@ -57,20 +98,20 @@
 			<div class="p-0 pl-2"
 				*ngIf="rightIcon.length > 0">
 				<fa-icon class="right-icon"
-					placement="top"
+					placement="auto"
 					[ngbTooltip]="(tooltipText?.length) ? tipContent : ''"
 					[icon]="rightIcon"
 					container="body"
 					tooltipClass="vtr-tooltip"
 					(click)="onRightIconClick($event)"></fa-icon>
-			</div>
+			</div> -->
 		</div>
 		<div class="row m-0"
 			*ngIf="showChildContent">
-			<div class="col-1"></div>
-			<div class="col">
+			<!-- <div class="col-1 pr-0"></div> -->
+			<div class="col-12 pr-0">
 				<ng-content #childContent></ng-content>
-				<div class="col-1"></div>
+				<!-- <div class="col-1"></div> -->
 			</div>
 		</div>
 	</div>

@@ -35,12 +35,11 @@
 							[isSwitchChecked]="autoDolbyFeatureStatus.status">
 
 							<div class="my-3"
-								*ngIf="!autoDolbyFeatureStatus.status && dolbyModeResponse.available" >
-								<vtr-ui-rectangle-radio 
-									*ngFor="let dolbyMode of dolbyModeResponse.supporedModes" 
+								*ngIf="!autoDolbyFeatureStatus.status && dolbyModeResponse.available">
+								<vtr-ui-rectangle-radio *ngFor="let dolbyMode of dolbyModeResponse.supporedModes"
 									[radioId]="'radio'| uniqueId"
 									[group]="radioGroupAutoDolbySettings"
-									[label]="dolbyMode | uppercase"
+									[label]="dolbyMode | dolbyModesTranslation"
 									[value]='dolbyMode'
 									[checked]="dolbyMode == dolbyModeResponse.currentMode"
 									(change)="onDolbySeetingRadioChange($event)">
@@ -57,7 +56,7 @@
 							[readMoreText]="''"
 							[showChildContent]="false"
 							[theme]="'blue'"
-							[tooltipText]="'Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality.'" 
+							[tooltipText]="'Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality.'"
 							(toggleOnOff)="onToggleOfMicrophoneAutoOptimization($event)"
 							[isSwitchChecked]="microphoneProperties.autoOptimization">
 						</vtr-ui-row-switch>
@@ -83,7 +82,7 @@
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'white'"
-							[disabled] = "microphoneProperties.permission"
+							[disabled]="!microphoneProperties.permission"
 							[tooltipText]="'You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode.'"
 							(toggleOnOff)="onToggleOfMicrophone($event)"
 							[isSwitchChecked]="microphoneProperties.muteDisabled">
@@ -97,11 +96,21 @@
 							[rightIcon]=""
 							[readMoreText]="''"
 							[showChildContent]="true"
+							[disabled]="!microphoneProperties.permission"
 							[theme]="'white'">
-							<vtr-ui-range-slider [minValueLegend]="'Silent'" [minValue]="1"
-								[maxValueLegend]="'Loud'" [maxValue] = "100" (change)="setVolume($event)"
-								[value]="microphoneProperties.volume">
-							</vtr-ui-range-slider>
+							<div class="row">
+								<div class="col-10">
+									<vtr-ui-range-slider [minValueLegend]="'Silent'"
+										[minValue]="0"
+										[maxValueLegend]="'Loud'"
+										[maxValue]="100"
+										(change)="setVolume($event)"
+										[enableSlider]="!microphoneProperties.permission"
+										[value]="microphoneProperties.volume">
+									</vtr-ui-range-slider>
+								</div>
+								<div class="col-2"></div>
+							</div>
 						</vtr-ui-row-switch>
 					</li>
 
@@ -129,7 +138,7 @@
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="true"
-							[theme]="'white'" 
+							[theme]="'white'"
 							[tooltipText]="'Toggle on this feature to optimize your MIC audio by reducing acoustic echo.'"
 							(toggleOnOff)="setMicrophoneAEC($event)"
 							[disabled]="microphoneProperties.disableEffect"
@@ -139,24 +148,25 @@
 
 					<li class="">
 						<vtr-ui-row-switch [title]="'Optimize my microphone for:'"
-							[caption]="'Configures microphone effect to enhance your audio experience by different scenarios and environment.'"
+							[caption]="'Configure microphone effect to enhance your audio experience by different scenarios and environment.'"
 							[isSwitchVisible]=false
 							[leftIcon]="['far', 'gem']"
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[disabled]="microphoneProperties.disableEffect"
 							[theme]="'white'">
-							<div class="my-3">
-								<vtr-ui-rectangle-radio 
-									*ngFor="let optimizeMode of microOptimizeModeResponse.modes" 
-									[radioId]="'radio'| uniqueId"
-									[group]="radioOptimiseMicSettings"
-									[label]= "optimizeMode | separatePascalCase"
-									[value]='optimizeMode'
-									[checked]="optimizeMode == microOptimizeModeResponse.current"
-									[disabled]="microphoneProperties.disableEffect"
-									(change)="onOptimizeModesRadioChange($event)">
-								</vtr-ui-rectangle-radio>
+							<div class="row">
+								<div class="col-12 pt-4">
+									<vtr-ui-rectangle-radio *ngFor="let optimizeMode of microOptimizeModeResponse.modes"
+										[radioId]="'radio'| uniqueId"
+										[group]="radioOptimiseMicSettings"
+										[label]="optimizeMode | separatePascalCase"
+										[value]='optimizeMode'
+										[checked]="optimizeMode === microOptimizeModeResponse.current"
+										[disabled]="microphoneProperties.disableEffect"
+										(change)="onOptimizeModesRadioChange($event)">
+									</vtr-ui-rectangle-radio>
+								</div>
 							</div>
 						</vtr-ui-row-switch>
 					</li>

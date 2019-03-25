@@ -29,25 +29,10 @@
 										[items]="qaService.qas"></vtr-widget-questions>
 								</div>
 							</div>
-							<div class="row mb-40">
-								<div class="col col-12 aritcle-card">
-									<vtr-container-card
-										[img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
-										[title]="'Ideas on how to handle all your passwords online'"
-										[readMore]="'http://www.google.com'"
-										[type]="'partnerarticle'"
-										[ratioX]="4.0"
-										[ratioY]="2.5">
-									</vtr-container-card>
-								</div>
-							</div>
-							<div class="row mb-40">
-								<div class="col col-12 ">
-									<vtr-widget-feedback [title]="'Discover our top ideapad offers for the holidays '"
-										[description]="'Lenovo Exclusive'"
-										[actionName]="''"
-										[action]="''">
-									</vtr-widget-feedback>
+							<div class="row">
+								<div class="col col-12">
+									<vtr-article-item *ngFor="let item of articles, let i = index"
+										[item]="item"></vtr-article-item>
 								</div>
 							</div>
 						</div>

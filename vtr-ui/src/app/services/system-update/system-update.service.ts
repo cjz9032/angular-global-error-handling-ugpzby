@@ -8,9 +8,9 @@ import { AvailableUpdate } from 'src/app/data-models/system-update/available-upd
 import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
 import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
 import { UpdateHistory } from 'src/app/data-models/system-update/update-history.model';
-import { ScheduleUpdateStatus } from 'src/app/data-models/system-update/ScheduleUpdateStatus';
-import { SystemUpdateStatusCode } from 'src/app/enums/system-update-status-code.enum';
+import { ScheduleUpdateStatus } from 'src/app/data-models/system-update/schedule-update-status.model';
 import { UpdateRebootType } from 'src/app/enums/update-reboot-type.enum';
+import { SystemUpdateStatusMessage } from 'src/app/data-models/system-update/system-update-status-message.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -106,17 +106,18 @@ export class SystemUpdateService {
 				this.commonService.sendNotification(UpdateProgress.UpdateCheckInProgress, progressPercentage);
 			}).then((response) => {
 				console.log('checkForUpdates response', response, typeof response.status);
-				this.isUpdatesAvailable = (response.updateList && response.updateList.length > 0);
 				this.isCheckForUpdateComplete = true;
 				const status = parseInt(response.status, 10);
-				if (status === SystemUpdateStatusCode.SUCCESS) { // success
+				if (status === SystemUpdateStatusMessage.SUCCESS.code) { // success
+					this.isUpdatesAvailable = (response.updateList && response.updateList.length > 0);
 					this.updateInfo = { status: response.status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
-					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, this.updateInfo);
-					if (this.isUpdatesAvailable) {
-						this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
-					} else {
-						this.commonService.sendNotification(UpdateProgress.UpdatesNotAvailable);
-					}
+					// if (this.isUpdatesAvailable) {
+					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
+					// } else {
+					// 	this.commonService.sendNotification(UpdateProgress.UpdatesNotAvailable);
+					// }
+				} else {
+					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, { ...response, status });
 				}
 			}).catch((error) => {
 				console.log('checkForUpdates.error', error);
@@ -260,6 +261,7 @@ export class SystemUpdateService {
 		return false;
 	}
 
+	// returns reboot type and array of update name which requires pop up to show before installation
 	public getRebootType(updateList: Array<AvailableUpdateDetail>, source: string): { rebootType: UpdateRebootType, packages: Array<string> } {
 		let rebootType = UpdateRebootType.Unknown;
 		let packages = new Array<string>();
@@ -290,22 +292,6 @@ export class SystemUpdateService {
 				}
 			}
 		}
-		// for (let index = 0; index < updateList.length; index++) {
-		// 	const value = updateList[index];
-		// 	if (value.packageRebootType.toLowerCase() === UpdateRebootType.RebootDelayed.toLocaleLowerCase() && (value.isSelected || source === 'all')) {
-		// 		rebootType = UpdateRebootType.RebootDelayed;
-		// 		break;
-		// 	} else if (value.packageRebootType.toLowerCase() === UpdateRebootType.RebootForced.toLocaleLowerCase() && (value.isSelected || source === 'all')) {
-		// 		rebootType = UpdateRebootType.RebootForced;
-		// 		break;
-		// 	} else if (value.packageRebootType.toLowerCase() === UpdateRebootType.PowerOffForced.toLocaleLowerCase() && (value.isSelected || source === 'all')) {
-		// 		rebootType = UpdateRebootType.PowerOffForced;
-		// 		break;
-		// 	} else if (value.packageRebootType.toLowerCase() === UpdateRebootType.RebootRequested.toLocaleLowerCase() && (value.isSelected || source === 'all')) {
-		// 		rebootType = UpdateRebootType.RebootRequested;
-		// 		break;
-		// 	}
-		// }
 		return { rebootType, packages };
 	}
 
@@ -415,7 +401,7 @@ export class SystemUpdateService {
 			}
 			updates.push(update);
 		});
-		availableUpdate.status = (updateTaskList.length === installedCount) ? SystemUpdateStatusCode.SUCCESS : SystemUpdateStatusCode.FAILURE;
+		availableUpdate.status = (updateTaskList.length === installedCount) ? SystemUpdateStatusMessage.SUCCESS.code : SystemUpdateStatusMessage.FAILURE.code;
 		availableUpdate.updateList = updates;
 		return availableUpdate;
 	}

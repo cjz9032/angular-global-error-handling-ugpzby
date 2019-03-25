@@ -1,7 +1,6 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MockService } from 'src/app/services/mock/mock.service';
-import { WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
-import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
+import { CMSService } from 'src/app/services/cms/cms.service';
 
 @Component({
 	selector: 'vtr-page-security-windows-hello',
@@ -11,37 +10,45 @@ import { VantageShellService } from '../../../services/vantage-shell/vantage-she
 export class PageSecurityWindowsHelloComponent implements OnInit {
 
 	title = 'Windows Hello';
+	back = 'BACK';
+	backarrow = '< ';
 
-	windowsHello: WindowsHello;
-	status: string;
+	IsWindowsHelloInstalled: Boolean = true;
+	articles: [];
 
-	constructor(public mockService: MockService, vantageShellService: VantageShellService) {
-		this.windowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
-		this.updateStatus();
-		this.windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
-			this.updateStatus();
-		}).on(EventTypes.helloFacialIdStatusEvent, () => {
-			this.updateStatus();
-		});
+	constructor(
+		public mockService: MockService,
+		private cmsService: CMSService
+	) {
+		this.fetchCMSArticles();
 	}
 
-	ngOnInit() { }
-
-	setUpWindowsHello(): void {
-		this.windowsHello.launch();
+	ngOnInit() {
 	}
 
-	@HostListener('window:focus')
-	onFocus(): void {
-		this.windowsHello.refresh();
+	fetchCMSArticles() {
+		const queryOptions = {
+			'Page': 'windows-hello',
+			'Lang': 'EN',
+			'GEO': 'US',
+			'OEM': 'Lenovo',
+			'OS': 'Windows',
+			'Segment': 'SMB',
+			'Brand': 'Lenovo'
+		};
+
+		this.cmsService.fetchCMSArticles(queryOptions).then(
+			(response: any) => {
+				this.articles = response;
+			},
+			error => {
+				console.log('fetchCMSContent error', error);
+			}
+		);
 	}
 
-	private updateStatus(): void {
-		if (this.windowsHello.fingerPrintStatus === 'active' ||
-			this.windowsHello.facialIdStatus === 'active') {
-			this.status = 'enabled';
-		} else {
-			this.status = 'disabled';
-		}
+	windowsHello() {
+		//window.open('https://www.dashlane.com/lenovo/');
+		this.IsWindowsHelloInstalled = this.IsWindowsHelloInstalled ? false : true;
 	}
 }

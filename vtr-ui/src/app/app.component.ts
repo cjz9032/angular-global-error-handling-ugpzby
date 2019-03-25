@@ -10,6 +10,7 @@ import { CommonService } from './services/common/common.service';
 import { LocalStorageKey } from './enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { UserService } from './services/user/user.service';
+import { WelcomeTutorial } from './data-models/common/welcome-tutorial.model';
 
 @Component({
 	selector: 'vtr-root',
@@ -31,11 +32,28 @@ export class AppComponent implements OnInit {
 	) {
 		translate.addLangs(['en', 'zh-Hans']);
 		translate.setDefaultLang('en');
-		this.modalService.open(ModalWelcomeComponent,
-			{
-				backdrop: 'static'
-				, windowClass: 'welcome-modal-size'
-			});
+
+		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+
+		if (tutorial === undefined && navigator.onLine) {
+			const modalRef = this.modalService.open(ModalWelcomeComponent,
+				{
+					backdrop: 'static'
+					, windowClass: 'welcome-modal-size'
+				});
+			modalRef.result.then(
+				(result: WelcomeTutorial) => {
+					// on open
+					console.log('welcome-modal-size', result);
+					commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, result);
+				},
+				(reason: WelcomeTutorial) => {
+					// on close
+					console.log('welcome-modal-size', reason);
+					commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
+				}
+			);
+		}
 	}
 
 	ngOnInit() {
