@@ -9,8 +9,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 
 export class UiListChevronComponent implements OnInit {
 
-	// @Input() items: any[];
-	@Input() item: any;
+	@Input() items: any[];
 	@Input() iconPlacement = 'right';
 	@Input() chevronVisibility = true;
 	/**** passing to ItemParent from metrics ****/
@@ -81,7 +80,6 @@ export class UiListChevronComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		console.log(this.item);
 	}
 
 	/**

@@ -28,7 +28,7 @@
 											<div class="security-widget-inner">
 												<vtr-ui-object-title [objects]="antivirusLandingViewModel">													
 												</vtr-ui-object-title>
-												<vtr-ui-list-chevron [item]="antivirusLandingViewModel">
+												<vtr-ui-list-chevron [items]="antivirusLandingViewModel.statusList">
 												</vtr-ui-list-chevron>
 												<div class="pull"><img class="mcafee-logo"
 													 src="../../../../assets/images/mcafee_logo.svg" />
@@ -52,7 +52,7 @@
 												<div class="security-widget-wifi">
 														<vtr-ui-object-title [objects]="wifiSecurityLandingViewModel">													
 															</vtr-ui-object-title>
-                            <vtr-ui-list-chevron [item]="wifiSecurityLandingViewModel">
+                            <vtr-ui-list-chevron [items]="wifiSecurityLandingViewModel.statusList">
                               </vtr-ui-list-chevron>
                               <div class="wifi-history" *ngIf="wifiHistory">
                                 <div class="row align-items-center">
@@ -77,7 +77,7 @@
                                 </ul>
                               </div>
                         </div>
-												<vtr-ui-list-chevron [item]="homeProtectionLandingViewModel">
+												<vtr-ui-list-chevron [items]="homeProtectionLandingViewModel.statusList">
 												</vtr-ui-list-chevron>
 												<div class="pull"><img class="coronet-logo"
 													 src="../../../../assets/images/coronet-logo.svg" />

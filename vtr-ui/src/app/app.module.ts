@@ -137,7 +137,6 @@ import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
 import { IconNamePipe } from './pipe/ui-security-statusbar/icon-name.pipe';
 
 library.add(fas);
-library.add(fab);
 library.add(far);
 
 @NgModule({

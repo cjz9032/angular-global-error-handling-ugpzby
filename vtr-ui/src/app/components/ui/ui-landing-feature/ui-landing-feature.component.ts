@@ -10,7 +10,7 @@ export class UiLandingFeatureComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.feature);
+    // console.log(this.feature);
   }
 
 }

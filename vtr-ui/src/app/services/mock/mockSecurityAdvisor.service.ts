@@ -189,7 +189,7 @@ export class MockSecurityAdvisorService {
 		windowsHello: {
 			mitt: this.mitt,
 			fingerPrintStatus: 'inactive',
-			facialIdStatus: 'inactive',
+			facialIdStatus: 'active',
 			systemPasswordStatus: 'inactive',
 			supportUrl: 'https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello',
 			windowsHelloProtocol: 'ms-settings:signinoptions',
@@ -213,7 +213,7 @@ export class MockSecurityAdvisorService {
 			downloadUrl: 'https://www.dashlane.com/lenovo/',
 			loginUrl: '',
 			appUrl: 'https://app.dashlane.com',
-			status: 'install',
+			status: 'installed',
 			isDashLaneEdgeVersion: false,
 			download(): void {},
 			launch(): boolean {
@@ -235,7 +235,7 @@ export class MockSecurityAdvisorService {
 		vpn: {
 			mitt: this.mitt,
 			downloadUrl: 'https://www.surfeasy.com/lenovo/',
-			status: 'install',
+			status: 'installed',
 			download(): void {},
 			launch(): Promise < any > {
 				const p1 = new Promise((resolve) => {});

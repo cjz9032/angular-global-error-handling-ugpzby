@@ -7,11 +7,7 @@ import { EventTypes, WifiSecurity, WindowsHello, Antivirus,	Vpn, PasswordManager
 
 export class PasswordManagerLandingViewModel {
 	passwordManager: PasswordManager;
-	status: number;
-	detail: string; // install or not-installed
-	path = 'password-protection';
-	title = 'Password Manager';
-
+	statusList: Array<any>;
 	subject =  'Password Health';
 	subjectStatus: number;
 	type = 'security';
@@ -19,71 +15,59 @@ export class PasswordManagerLandingViewModel {
 
 	constructor(pmModel: phoenix.PasswordManager) {
 		this.passwordManager = pmModel;
+		const pmStatus = {
+			status: 2,
+			detail: 'not-installed', // install or not-installed
+			path: 'password-protection',
+			title: 'Password Manager',
+		};
 		if (pmModel.status) {
-			this.detail = pmModel.status;
-			this.status = (pmModel.status === 'installed') ? 2 : 1;
+			pmStatus.detail = pmModel.status;
+			pmStatus.status = (pmModel.status === 'installed') ? 2 : 1;
 			this.subjectStatus = (pmModel.status === 'installed') ? 2 : 1;
 		}
 		pmModel.on(EventTypes.pmStatusEvent, (data) => {
-			this.detail = data;
-			this.status = (data === 'installed') ? 2 : 1;
+			pmStatus.detail = data;
+			pmStatus.status = (data === 'installed') ? 2 : 1;
 			this.subjectStatus = (data === 'installed') ? 2 : 1;
 		});
+		this.statusList = new Array(pmStatus);
 	}
 }
 
 export class VpnLandingViewModel {
 	vpn: Vpn;
-	status: number;
-	detail: string; // installed or not-installed
-	path = 'internet-protection';
-	title = 'Virtual Private Network';
-
+	statusList: Array<any>;
 	subject = 'VPN Security';
 	subjectStatus: number;
 	type = 'security';
 	imgUrl = '../../../../assets/images/surfeasy-logo.svg';
 	constructor(vpnModel: phoenix.Vpn) {
 		this.vpn = vpnModel;
+		const vpnStatus = {
+			status: 2,
+			detail: 'not-installed', // installed or not-installed
+			path: 'internet-protection',
+			title: 'Virtual Private Network'
+		};
 		if (vpnModel.status) {
-			this.status = (vpnModel.status === 'installed') ? 2 : 1;
-			this.detail = vpnModel.status;
+			vpnStatus.status = (vpnModel.status === 'installed') ? 2 : 1;
+			vpnStatus.detail = vpnModel.status;
 			this.subjectStatus = (vpnModel.status === 'installed') ? 2 : 1;
 		}
 
 		vpnModel.on(EventTypes.vpnStatusEvent, (data) => {
-			this.status = (data === 'installed') ? 2 : 1;
-			this.detail = data;
+			vpnStatus.status = (data === 'installed') ? 2 : 1;
+			vpnStatus.detail = data;
 			this.subjectStatus = (data === 'installed') ? 2 : 1;
 		});
+		this.statusList = new Array(vpnStatus);
 	}
 }
 
 export class AntiVirusLandingViewModel {
 	antivirus: Antivirus;
-	av: {
-		status: number,
-		detail: string,
-		path: 'anti-virus',
-		title: 'Anti-Virus',
-	};
-	fw: {
-		status: number,
-		detail: string,
-		path: 'anti-virus',
-		title: 'Firewall',
-	};
-	avStatus: boolean;
-	fwStatus: boolean;
-
-	status: number;
-	detail: string;
-	path = 'anti-virus';
-	title = 'Anti-Virus';
-
-	antivirusArray: Array<object>;
-	// av: object;
-	// fw: object;
+	statusList: Array<any>;
 
 	subject = 'Anti-Virus';
 	subjectStatus: number;
@@ -91,14 +75,25 @@ export class AntiVirusLandingViewModel {
 	imgUrl = '../../../../assets/images/mcafee_logo.svg';
 	constructor(avModel: phoenix.Antivirus) {
 		this.antivirus = avModel;
-
+		const avStatus = {
+			status: 2,
+			detail: 'disabled',
+			path: 'anti-virus',
+			title: 'Anti-Virus',
+		};
+		const fwStatus = {
+			status: 2,
+			detail: 'disabled',
+			path: 'anti-virus',
+			title: 'Firewall',
+		};
 		if (avModel.windowsDefender.status) {
-			this.avStatus = (avModel.windowsDefender.status === true);
-			this.status = (avModel.windowsDefender.status === true) ? 0 : 1;
-			this.detail = (avModel.windowsDefender.status === true) ? 'enabled' : 'disabled';
+			avStatus.status = (avModel.windowsDefender.status === true) ? 0 : 1;
+			avStatus.detail = (avModel.windowsDefender.status === true) ? 'enabled' : 'disabled';
 		}
-		if (avModel.windowsDefender.firewallStatus) {
-			this.fwStatus = (avModel.windowsDefender.firewallStatus === true);
+		if (avModel.windowsDefender.firewallStatus !== undefined || avModel.windowsDefender.firewallStatus !== null) {
+			fwStatus.status = (avModel.windowsDefender.firewallStatus === true) ? 0 : 1;
+			fwStatus.detail = (avModel.windowsDefender.firewallStatus === true) ? 'enabled' : 'disabled';
 		}
 
 		if (avModel.windowsDefender.firewallStatus === true && avModel.windowsDefender.status === true) {
@@ -110,19 +105,17 @@ export class AntiVirusLandingViewModel {
 		}
 
 		avModel.on(EventTypes.avWindowsDefenderAntivirusStatusEvent, (data) => {
-			this.avStatus = (data === true);
+			avStatus.status = (data === true) ? 0 : 1;
 		});
 		avModel.on(EventTypes.avWindowsDefenderFirewallStatusEvent, (data) => {
-			this.fwStatus = (data === true);
+			fwStatus.status = (data === true) ? 0 : 1;
 		});
+		this.statusList = new Array(avStatus, fwStatus);
 	}
 }
 export class WindowsHelloLandingViewModel {
 	windowsHello: WindowsHello;
-	status: number;
-	detail: string; // active or inactive
-	path = 'windows-hello';
-	title = 'Fingerprint reader';
+	statusList: Array<any>;
 
 	subject = 'Windows Hello';
 	subjectStatus: number;
@@ -131,75 +124,96 @@ export class WindowsHelloLandingViewModel {
 	constructor(whModel: phoenix.WindowsHello) {
 		if (whModel) {
 			this.windowsHello = whModel;
-			if (whModel.fingerPrintStatus) {
-				this.status = (whModel.fingerPrintStatus === 'active') ? 0 : 1;
-				this.detail = whModel.fingerPrintStatus;
-				this.subjectStatus = (whModel.fingerPrintStatus === 'active') ? 0 : 1;
+			const whStatus = {
+				status: 2,
+				detail: 'inactive', // active or inactive
+				path: 'windows-hello',
+				title: 'Fingerprint reader',
+			}
+			let fingerStatus = 'inactive';
+			let faciaStatus = 'inactive';
+			if (whModel.fingerPrintStatus || whModel.facialIdStatus) {
+				whStatus.status = (whModel.fingerPrintStatus === 'active') ? 0 : 1;
+				whStatus.detail = whModel.fingerPrintStatus;
+				this.subjectStatus = (whModel.fingerPrintStatus === 'active' || whModel.facialIdStatus === 'active') ? 0 : 1;
 			}
 			whModel.on(EventTypes.helloFingerPrintStatusEvent, (data) => {
-				this.status = (data === 'active') ? 0 : 1;
-				this.detail = data;
-				this.subjectStatus = (data === 'active') ? 0 : 1;
+				whStatus.status = (data === 'active') ? 0 : 1;
+				whStatus.detail = data;
+				fingerStatus = data;
+				this.subjectStatus = (faciaStatus === 'active' || fingerStatus === 'active') ? 0 : 1;
 			});
+			whModel.on(EventTypes.helloFacialIdStatusEvent, (data) => {
+				faciaStatus = data;
+				this.subjectStatus = (faciaStatus === 'active' || fingerStatus === 'active') ? 0 : 1;
+			});
+			this.statusList = new Array(whStatus);
+
 		}
 	}
 }
 
 export class WifiSecurityLandingViewModel {
 	wifiSecurity: WifiSecurity;
-	status: number;
-	detail: string; // enabled / disabled
-	path = 'wifi-security';
-	title = 'WiFi Security';
+	statusList: Array<any>;
 
 	subject = 'WiFi & Connected Home Security';
 	subjectStatus: number;
 	type = 'security';
 	wifiHistory: Array < phoenix.WifiDetail > ;
 	constructor(wfModel: phoenix.WifiSecurity, hpModel: phoenix.HomeProtection) {
-
-		try {
-			this.wifiSecurity = wfModel;
-			if (wfModel.state) {
-				this.status = (wfModel.state === 'enabled') ? 0 : 1;
-				this.detail = wfModel.state;
-				this.subjectStatus = (wfModel.state === 'enabled') ? 0 : 1;
-			}
-			if (wfModel.wifiHistory) {
-				this.wifiHistory = wfModel.wifiHistory;
-			}
-		} catch (err) {}
+		this.wifiSecurity = wfModel;
+		const wfStatus = {
+			status: 2,
+			detail: 'disabled', // enabled / disabled
+			path: 'wifi-security',
+			title: 'WiFi Security',
+		}
+		if (wfModel.state) {
+			wfStatus.status = (wfModel.state === 'enabled') ? 0 : 1;
+			wfStatus.detail = wfModel.state;
+			this.subjectStatus = (wfModel.state === 'enabled') ? 0 : 1;
+		}
+		if (wfModel.wifiHistory) {
+			this.wifiHistory = wfModel.wifiHistory;
+		}
 
 		wfModel.on(EventTypes.wsWifiHistoryEvent, (data) => {
 			this.wifiHistory = wfModel.wifiHistory;
 		});
 
 		wfModel.on(EventTypes.wsStateEvent, (data) => {
-			this.status = (data === 'enabled') ? 0 : 1;
-			this.detail = data;
+			wfStatus.status = (data === 'enabled') ? 0 : 1;
+			wfStatus.detail = data;
 			this.subjectStatus = (data === 'enabled') ? 0 : 1;
 		});
+		this.statusList = new Array(wfStatus);
 	}
 }
 
 export class HomeProtectionLandingViewModel {
 	homeProtection: HomeProtection;
-	status: number;
-	detail: string; // enabled / disabled
-	path = 'wifi-security';
-	title = 'Connected Home Security';
+	statusList: Array<any>;
+
 	type = 'security';
 	constructor(hpModel: phoenix.HomeProtection, wfModel: phoenix.WifiSecurity) {
 		this.homeProtection = hpModel;
+		const hpStatus = {
+			status: 2,
+			detail: 'disabled', // enabled / disabled
+			path: 'wifi-security',
+			title: 'Connected Home Security',
+		};
 		if (wfModel.state) {
-			this.status = (wfModel.state === 'enabled') ? 0 : 1;
-			this.detail = wfModel.state;
+			hpStatus.status = (wfModel.state === 'enabled') ? 0 : 1;
+			hpStatus.detail = wfModel.state;
 		}
 
 		wfModel.on(EventTypes.wsStateEvent, (data) => {
-			this.status = (data === 'enabled') ? 0 : 1;
-			this.detail = data;
+			hpStatus.status = (data === 'enabled') ? 0 : 1;
+			hpStatus.detail = data;
 		});
+		this.statusList = new Array(hpStatus);
 	}
 }
 
@@ -218,7 +232,7 @@ export class PageSecurityComponent implements OnInit {
 	) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.passwordManager = this.vantageShellService.getSecurityAdvisor().passwordManager;
-		this.antivirus = this.mockSecurityAdvisorService.getSecurityAdvisor().antivirus;
+		this.antivirus = this.vantageShellService.getSecurityAdvisor().antivirus;
 		this.vpn = this.vantageShellService.getSecurityAdvisor().vpn;
 		this.wifiSecurity = this.vantageShellService.getSecurityAdvisor().wifiSecurity;
 		if (this.vantageShellService.getSecurityAdvisor().windowsHello) {
@@ -234,7 +248,6 @@ export class PageSecurityComponent implements OnInit {
 		this.homeProtectionLandingViewModel = new HomeProtectionLandingViewModel(this.homeProtection, this.wifiSecurity);
 		this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.windowsHello);
 		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
-		console.log(this.windowsHelloLandingViewModel);
 	}
 	title = 'Security';
 
