@@ -209,14 +209,16 @@ export class MockService {
 			'id': 'anti-virus',
 			'title': 'Anti-Virus',
 			'detail': 'Enabled',
-			'path': 'anti-virus'
+			'path': 'anti-virus',
+			'type': 'security'
 		},
 		{
 			'status': 1,
 			'id': 'firewall',
 			'title': 'Firewall',
 			'detail': 'Disabled',
-			'path': 'anti-virus'
+			'path': 'anti-virus',
+			'type': 'security'
 
 		}
 	];
@@ -227,7 +229,8 @@ export class MockService {
 			'id': 'password-manager',
 			'title': 'Password Manager',
 			'detail': 'Installed',
-			'path': 'password-protection'
+			'path': 'password-protection',
+			'type': 'security'
 		}
 	];
 
@@ -237,7 +240,8 @@ export class MockService {
 			'id': 'virtual-private-network',
 			'title': 'Virtual Private Network',
 			'detail': 'Installed',
-			'path': 'internet-protection'
+			'path': 'internet-protection',
+			'type': 'security'
 		}
 	];
 
@@ -247,7 +251,8 @@ export class MockService {
 			'id': 'wifi-security',
 			'title': 'WiFi Security',
 			'detail': 'Enabled',
-			'path': 'wifi-security'
+			'path': 'wifi-security',
+			'type': 'security'
 		}
 	];
 
@@ -257,7 +262,8 @@ export class MockService {
 			'id': 'connected-home-security',
 			'title': 'Connected Home Security',
 			'detail': 'Learn more',
-			'path': 'wifi-security'
+			'path': 'wifi-security',
+			'type': 'security'
 		}
 	];
 
@@ -265,9 +271,10 @@ export class MockService {
 		{
 			'status': 0,
 			'id': 'fingerprint-reader',
-			'title': 'Fingerprint reader',
+			'title': 'Fingerprint Reader',
 			'detail': 'Enabled',
-			'path': 'windows-hello'
+			'path': 'windows-hello',
+			'type': 'security'
 		}
 	];
 
@@ -300,60 +307,60 @@ export class MockService {
 
 	articles = [
 		{
-			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			'thumbnailUrl': '',
-			'logo': 'assets/images/test-logo.svg',
-			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail/1',
+			'Title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'Thumbnail': '',
+			'Logo': 'assets/images/test-logo.svg',
+			'LogoText': 'LENOVO SPECIAL',
+			'ReadMore': '/#/support-detail/1',
 		},
 		{
-			'title': '',
-			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
-			'logo': 'assets/images/test-logo.svg',
-			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail/1',
+			'Title': '',
+			'Thumbnail': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
+			'Logo': 'assets/images/test-logo.svg',
+			'LogoText': 'LENOVO SPECIAL',
+			'ReadMore': '/#/support-detail/1',
 		},
 		{
-			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
-			'logo': '',
-			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail/1',
+			'Title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'Thumbnail': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
+			'Logo': '',
+			'LogoText': 'LENOVO SPECIAL',
+			'ReadMore': '/#/support-detail/1',
 		},
 		{
-			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
-			'logo': 'assets/images/test-logo.svg',
-			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail/1',
+			'Title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'Thumbnail': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
+			'Logo': 'assets/images/test-logo.svg',
+			'LogoText': 'LENOVO SPECIAL',
+			'ReadMore': '/#/support-detail/1',
 		},
 		{
-			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
-			'logo': 'assets/images/test-logo.svg',
-			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail/1',
+			'Title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'Thumbnail': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
+			'Logo': 'assets/images/test-logo.svg',
+			'LogoText': 'LENOVO SPECIAL',
+			'ReadMore': '/#/support-detail/1',
 		},
 		{
-			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			'thumbnailUrl': '',
-			'logo': '',
-			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail/1',
+			'Title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'Thumbnail': '',
+			'Logo': '',
+			'LogoText': 'LENOVO SPECIAL',
+			'ReadMore': '/#/support-detail/1',
 		},
 		{
-			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
-			'logo': 'assets/images/test-logo.svg',
-			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail/1',
+			'Title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'Thumbnail': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
+			'Logo': 'assets/images/test-logo.svg',
+			'LogoText': 'LENOVO SPECIAL',
+			'ReadMore': '/#/support-detail/1',
 		},
 		{
-			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
-			'logo': '',
-			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail/1',
+			'Title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'Thumbnail': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
+			'Logo': '',
+			'LogoText': 'LENOVO SPECIAL',
+			'ReadMore': '/#/support-detail/1',
 		},
 	];
 

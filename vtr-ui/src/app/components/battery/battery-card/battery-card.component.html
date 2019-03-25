@@ -24,12 +24,12 @@
 			Battery Health
 		</div>
 		<div class="pt-4 battery-frame pr-3">
-			<vtr-battery-indicator [remainingHour]="2"
-				[remainingMinutes]="30"
-				[percentage]="remainingCardPercent"
-				[isCharging]="isChargingOnCard"
-				[isExpressCharging]="false"
-				[isVoltageError]="false">
+			<vtr-battery-indicator [remainingHour]="batteryIndicator.hours"
+				[remainingMinutes]="batteryIndicator.minutes"
+				[percentage]="batteryIndicator.percent"
+				[isCharging]="batteryIndicator.charging"
+				[isExpressCharging]="batteryIndicator.expressCharging"
+				[isVoltageError]="batteryIndicator.voltageError">
 			</vtr-battery-indicator>
 		</div>
 		<div class="pt-4 text-center">

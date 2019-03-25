@@ -1,47 +1,70 @@
 <div class="wifi-security">
 	<div class="container-fluid p-40 security-card"
-	 *ngIf="IsWifiSecurityInstalled==='not-installed'">
+		*ngIf="IsWifiSecurityInstalled==='not-installed'">
 		<div class="row">
 			<div class="col">
 				<div class="heading">Lenovo Wifi Security</div>
 			</div>
 			<div class="pull right"><img class="coronet-logo"
-				 src="../../../../assets/images/coronet-logo.svg" /></div>
+					src="../../../../assets/images/coronet-logo.svg" /></div>
 		</div>
 		<div class="row mt-20">
 			<div class="col">
 				<div class="wifiSecurity accordion">
-					<div class="card">
-						<div class="card-header" id="wifiSecurity">
+					<div class="card"
+						[ngClass]="{'collapsed': isCollapsed}">
+						<div class="card-header"
+							id="wifiSecurity">
 							<div class="half subHeading">
-								<span class="circle green"><fa-icon [icon]="['fas', 'check']"></fa-icon></span>
+								<span class="circle green">
+									<fa-icon [icon]="['fas', 'check']"></fa-icon>
+								</span>
 								<h3>WIFI SECURITY</h3>
 								<button class="btn btn-success btn-round-xs text-uppercase">Enabled</button>
 							</div>
 							<div class="half">
-								<button class="btn btn-link collapse-text" type="button" data-toggle="collapse" data-target="#wifi-collapse" aria-expanded="false" aria-controls="wifi-collapse">Less info <fa-icon [icon]="['fas', 'chevron-up']"></fa-icon></button>
+								<div class="collapse-control"
+									(click)="$event.preventDefault();isCollapsed=!isCollapsed;">
+									<div *ngIf="isCollapsed"
+										class="collapse-text">More info</div>
+									<div *ngIf="!isCollapsed"
+										class="collapse-text">Less info</div>
+									<fa-icon *ngIf="isCollapsed"
+										[icon]="['fas', 'chevron-down']"></fa-icon>
+									<fa-icon *ngIf="!isCollapsed"
+										[icon]="['fas', 'chevron-up']"></fa-icon>
+								</div>
 								<div class="switch">
-										<vtr-ui-switch-onoff [value]="value"></vtr-ui-switch-onoff>
-									</div>
+									<vtr-ui-switch-onoff [value]="value"></vtr-ui-switch-onoff>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div id="wifi-collapse" class="collapse show">
-						<div class="card-body">
+					<div id="wifi-collapse"
+						class="">
+						<div class="card-body"
+							[ngbCollapse]="isCollapsed">
 							<div class="content">
 								<div class="cardTitle">
 									<h3>Network History</h3>
 									<small class="status">
-										Show: <a href="#" class="active">Malicious</a> / <a href="#">All</a>
+										Show: <a href=""
+											(click)="$event.preventDefault();showAllNetworks=false;"
+											[ngClass]="{'active': !showAllNetworks}">Malicious</a> / <a href=""
+											(click)="$event.preventDefault();showAllNetworks=true;"
+											[ngClass]="{'active': showAllNetworks}">All</a>
 									</small>
 								</div>
 								<div class="cardBody">
 									<ul class="openNetworks">
-										<li>
+										<li *ngIf="showAllNetworks">
 											<div class="status-icon">
 												<span class="fa-stack fa-3x">
-													<fa-icon [icon]="['fas', 'wifi']" class="menu-pointer"></fa-icon>
-													<span class="circle green"><fa-icon [icon]="['fas', 'check']"></fa-icon></span>
+													<fa-icon [icon]="['fas', 'wifi']"
+														class="menu-pointer"></fa-icon>
+													<span class="circle green">
+														<fa-icon [icon]="['fas', 'check']"></fa-icon>
+													</span>
 												</span>
 											</div>
 											<div class="connection-name">
@@ -51,11 +74,14 @@
 												</small>
 											</div>
 										</li>
-										<li>
+										<li *ngIf="showAllNetworks">
 											<div class="status-icon">
 												<span class="fa-stack fa-3x">
-													<fa-icon [icon]="['fas', 'wifi']" class="menu-pointer"></fa-icon>
-													<span class="circle green"><fa-icon [icon]="['fas', 'check']"></fa-icon></span>
+													<fa-icon [icon]="['fas', 'wifi']"
+														class="menu-pointer"></fa-icon>
+													<span class="circle green">
+														<fa-icon [icon]="['fas', 'check']"></fa-icon>
+													</span>
 												</span>
 											</div>
 											<div class="connection-name">
@@ -68,12 +94,15 @@
 										<li>
 											<div class="status-icon">
 												<span class="fa-stack fa-3x">
-													<fa-icon [icon]="['fas', 'wifi']" class="menu-pointer"></fa-icon>
-													<span class="circle red"><fa-icon [icon]="['fas', 'times']"></fa-icon></span>
+													<fa-icon [icon]="['fas', 'wifi']"
+														class="menu-pointer"></fa-icon>
+													<span class="circle red">
+														<fa-icon [icon]="['fas', 'times']"></fa-icon>
+													</span>
 												</span>
 											</div>
 											<div class="connection-name">
-												Lenovo
+												PublicWifi1
 												<small class="connection-status">
 													Connected last 12/12/2018 3:00PM
 												</small>
@@ -82,12 +111,49 @@
 										<li>
 											<div class="status-icon">
 												<span class="fa-stack fa-3x">
-													<fa-icon [icon]="['fas', 'wifi']" class="menu-pointer"></fa-icon>
-													<span class="circle green"><fa-icon [icon]="['fas', 'check']"></fa-icon></span>
+													<fa-icon [icon]="['fas', 'wifi']"
+														class="menu-pointer"></fa-icon>
+													<span class="circle red">
+														<fa-icon [icon]="['fas', 'times']"></fa-icon>
+													</span>
 												</span>
 											</div>
 											<div class="connection-name">
-												MyWiFi
+												PublicWifi2
+												<small class="connection-status">
+													Connected last 12/12/2018 3:00PM
+												</small>
+											</div>
+										</li>
+										<li *ngIf="showMore">
+											<div class="status-icon">
+												<span class="fa-stack fa-3x">
+													<fa-icon [icon]="['fas', 'wifi']"
+														class="menu-pointer"></fa-icon>
+													<span class="circle green">
+														<fa-icon [icon]="['fas', 'check']"></fa-icon>
+													</span>
+												</span>
+											</div>
+											<div class="connection-name">
+												MyWiFi 2
+												<small class="connection-status">
+													Connected last 12/12/2018 3:00PM
+												</small>
+											</div>
+										</li>
+										<li *ngIf="showMore">
+											<div class="status-icon">
+												<span class="fa-stack fa-3x">
+													<fa-icon [icon]="['fas', 'wifi']"
+														class="menu-pointer"></fa-icon>
+													<span class="circle green">
+														<fa-icon [icon]="['fas', 'check']"></fa-icon>
+													</span>
+												</span>
+											</div>
+											<div class="connection-name">
+												MyWiFi 3
 												<small class="connection-status">
 													Connected last 12/12/2018 3:00PM
 												</small>
@@ -96,7 +162,9 @@
 									</ul>
 								</div>
 								<div class="card-foot">
-									<a href="#" class="show-more">Show more</a>
+									<a href=""
+										class="show-more"
+										(click)="$event.preventDefault();showMore=!showMore;">{{!showMore?'Show more':'Show less'}}</a>
 								</div>
 							</div>
 						</div>
@@ -113,9 +181,13 @@
 				</div>
 				<div class="text-regular">
 					<input type="text"
-					 placeholder="Your location">
-					<button type="button" vtrMetrics metricsParent="lenovo-wifi-security" metricsEvent="itemClick" metricsItem="check threat"
-					 class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
+						placeholder="Your location">
+					<button type="button"
+						vtrMetrics
+						metricsParent="lenovo-wifi-security"
+						metricsEvent="itemClick"
+						metricsItem="check threat"
+						class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
 						Check threat
 					</button>
 				</div>
@@ -124,25 +196,16 @@
 		<div class="row mt-40">
 			<div class="col">
 			</div>
-			<div class=" pull right">
-				<div class="col-12">
-					<button type="button"
-					 (click)="enableWifiSecurity()" vtrMetrics  metricsParent="lenovo-wifi-security" metricsItem="enable wifi security" metricsEvent="itemClick"
-					 class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
-						Enable Wifi Security
-					</button>
-				</div>
-			</div>
 		</div>
 	</div>
 	<div class="container-fluid p-40 security-card"
-	 *ngIf="IsWifiSecurityInstalled==='active'">
+		*ngIf="IsWifiSecurityInstalled==='active'">
 		<div class="row">
 			<div class="col">
 				<div class="heading">Lenovo Wifi Security</div>
 			</div>
 			<div class="pull right"><img class="coronet-logo"
-				 src="../../../../assets/images/coronet-logo.svg" /></div>
+					src="../../../../assets/images/coronet-logo.svg" /></div>
 		</div>
 		<div class="row mt-20">
 			<div class="col">
@@ -170,7 +233,7 @@
 						<div>
 							<div class="button-box">
 								<button type="button"
-								 class="btn btn-success btn-round-xs text-uppercase">
+									class="btn btn-success btn-round-xs text-uppercase">
 									Enabled
 								</button>
 							</div>

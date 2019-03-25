@@ -30,7 +30,8 @@
 								<img [src]="item.iconPath" />
 							</div>
 						</div>
-						<div class="col col-10 item-text">
+						<div class="col item-text"
+							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">
 							<div class="title"
 								[ngClass]="{'light-title':item.lightTitle}">
 								{{item.title}}
@@ -43,11 +44,17 @@
 						<div class="col col-1 text-center"
 							*ngIf="iconPlacement==='right'">
 							<div class="item-icon status"
-								*ngIf="item.status!==undefined&&item.status!==''">
+								*ngIf="item.status!==undefined&&item.status!==''; else questionCircle">
 								<div class="icon-bkg">
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
+							<ng-template #questionCircle>
+								<fa-icon class="question-icon"
+									placement="top"
+									[icon]="['far', 'question-circle']"
+									container="body"></fa-icon>
+							</ng-template>
 							<div class="item-icon"
 								*ngIf="item.icon">
 								<div class="icon-bkg">
@@ -69,7 +76,8 @@
 				</div>
 			</a>
 			<!--Open Windows Settings /subapges if isSystemLink is not undefined and  true or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
-			<a href="#"
+			<a href="#!"
+				id="{{item.title+item.id}}"
 				(click)="launchSystemUri(item.path)"
 				*ngIf="item.isSystemLink!==undefined &&  item.isSystemLink===true">
 				<div class="container-fluid">
@@ -93,7 +101,8 @@
 								<img [src]="item.iconPath" />
 							</div>
 						</div>
-						<div class="col col-10 item-text">
+						<div class="col item-text"
+							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">
 							<div class="title"
 								[ngClass]="{'light-title':item.lightTitle}">
 								{{item.title}}

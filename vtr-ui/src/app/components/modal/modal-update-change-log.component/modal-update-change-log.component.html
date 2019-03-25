@@ -1,0 +1,21 @@
+<div class="vtr-modal-update-change-log">
+	<div class="card bg-light">
+		<div class="card-header">Read Me
+			<button type="button"
+				class="close"
+				aria-label="Close"
+				(click)="activeModal.dismiss('Cross click')">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="card-body">
+			<!-- <h4 class="card-title"></h4>
+			<p class="card-text"></p> -->
+			<!-- 4:3 aspect ratio -->
+			<div class="embed-responsive embed-responsive-4by3">
+				<iframe class="embed-responsive-item"
+					[src]="url | safeDom : 'resourceUrl'"></iframe>
+			</div>
+		</div>
+	</div>
+</div>
