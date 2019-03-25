@@ -50,6 +50,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	private notificationSubscription: Subscription;
 	private isComponentInitialized = false;
 	public updateTitle = '';
+	private isUserCancelledUpdateCheck = false;
 
 	nextUpdatedDate = '11/12/2018 at 10:00 AM';
 	installationHistory = 'Installation History';
@@ -234,6 +235,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	public onCheckForUpdates() {
 		if (this.systemUpdateService.isShellAvailable) {
+			this.setUpdateTitle();
+			this.isUserCancelledUpdateCheck = false;
 			this.isUpdateCheckInProgress = true;
 			this.isUpdatesAvailable = false;
 			this.resetState();
@@ -243,6 +246,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	public onCancelUpdateCheck() {
 		if (this.systemUpdateService.isShellAvailable) {
+			this.isUserCancelledUpdateCheck = true;
 			this.systemUpdateService.cancelUpdateCheck();
 		}
 	}
@@ -409,11 +413,14 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					for (const key in SystemUpdateStatusMessage) {
 						if (SystemUpdateStatusMessage.hasOwnProperty(key)) {
 							if (SystemUpdateStatusMessage[key].code === payload.status) {
-								this.setUpdateTitle(SystemUpdateStatusMessage[key].message);
+								if (this.isUserCancelledUpdateCheck) {
+									// when user cancels update check its throwing unknown exception
+								} else {
+									this.setUpdateTitle(SystemUpdateStatusMessage[key].message);
+								}
 							}
 						}
 					}
-
 					break;
 				case UpdateProgress.UpdatesAvailable:
 					this.isUpdateCheckInProgress = false;

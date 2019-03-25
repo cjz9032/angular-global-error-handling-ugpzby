@@ -122,8 +122,10 @@ import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-b
 import { MetricsDirective } from './directives/metrics.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
-import { InstalledSystemUpdatesListComponent } from './components/pages/page-device-updates/children/installed-system-updates-list/installed-system-updates-list.component';
 import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
+import { AppEventDirective } from './directives/app-event.directive';
+import { SafeDomPipe } from './pipe/safe-dom/safe-dom.pipe';
+import { ModalUpdateChangeLogComponent } from './components/modal/modal-update-change-log.component/modal-update-change-log.component';
 import { ModalArticleDetailComponent } from './components/modal/modal-article-detail/modal-article-detail.component';
 import { DolbyModesTranslationPipe } from './pipe/dolby-modes-translation.pipe';
 
@@ -207,7 +209,10 @@ library.add(far);
 		MetricsDirective,
 		InstallationHistoryComponent,
 		SeparatePascalCasePipe,
-		InstalledSystemUpdatesListComponent,
+		ModalCommonConfirmationComponent,
+		AppEventDirective,
+		ModalUpdateChangeLogComponent,
+		SafeDomPipe,
 		ModalCommonConfirmationComponent,
 		ModalArticleDetailComponent,
 		DolbyModesTranslationPipe
@@ -243,6 +248,7 @@ library.add(far);
 		ModalWelcomeComponent,
 		ModalBatteryChargeThresholdComponent,
 		ModalCommonConfirmationComponent,
+		ModalUpdateChangeLogComponent,
 		ModalArticleDetailComponent
 	],
 	schemas: [

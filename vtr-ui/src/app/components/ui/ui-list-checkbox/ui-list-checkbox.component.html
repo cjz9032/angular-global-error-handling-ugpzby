@@ -30,8 +30,16 @@
 						</div>
 					</div>
 					<div class="col col-1 text-right">
-						<div class="question">
-							<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
+						<div>
+							<fa-icon class="question"
+								triggers="click:blur"
+								placement="top"
+								[ngbTooltip]="systemUpdateTooltip"
+								[icon]="['far', 'question-circle']"
+								container="body"
+								tooltipClass="tooltip-click"
+								#tooltip="ngbTooltip"
+								(click)="onTooltipClick(item, tooltip)"></fa-icon>
 						</div>
 					</div>
 				</div>
@@ -61,8 +69,49 @@
 					<div class="update-title">{{item.packageDesc}}</div>
 				</div>
 				<fa-icon class="question"
-					[icon]="['far', 'question-circle']"></fa-icon>
+					triggers="click:blur"
+					placement="top"
+					[ngbTooltip]="systemUpdateTooltip"
+					[icon]="['far', 'question-circle']"
+					container="body"
+					tooltipClass="tooltip-click"
+					#tooltip="ngbTooltip"
+					(click)="onTooltipClick(item, tooltip)"></fa-icon>
 			</div>
 		</li>
 	</ul>
 </div>
+<ng-template #systemUpdateTooltip>
+	<div class="tooltip-container">
+		<a href="#"
+			class="reboot-text">
+			<div class="row">
+				<div class="col-auto pl-0 pr-0">
+					<fa-icon [icon]="['fas', 'undo']"></fa-icon>
+				</div>
+				<div class="col">Reboot required</div>
+			</div>
+		</a>
+		<ul>
+			<li>Manufacturer: <span>{{ manufacturer }}</span></li>
+			<li>Version: <span>{{ version }}</span></li>
+			<li>Installed version: <span>{{ installedVersion }}</span></li>
+			<li>Download size: <span>{{ downloadSize }}</span> </li>
+			<li>Disc space needed: <span>{{ diskSpaceNeeded }}</span></li>
+		</ul>
+		<div class="row">
+			<div class="col-6 pl-0 pr-0 text-left">
+				<a href="javascript:void(0)"
+					class="read"
+					(click)="onReadMoreClick($event)">Read more</a>
+			</div>
+			<!-- required in MVP 2 -->
+			<!-- <div class="col-6 pl-0 pr-0 text-right">
+				<a href="javascript:void(0)"
+					class="ignore"
+					(click)="onIgnoreUpdateClick($event)"
+					>Ignore update</a>
+			</div> -->
+		</div>
+	</div>
+</ng-template>
