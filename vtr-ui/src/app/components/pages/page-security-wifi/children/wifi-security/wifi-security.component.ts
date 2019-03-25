@@ -17,5 +17,12 @@ export class WifiSecurityComponent implements OnInit {
 
 	enableWifiSecurity() {
 		this.IsWifiSecurityInstalled = "active";
+
+	openThreatLocator() {
+		let articleDetailModal: NgbModalRef = this.modalService.open(ModalThreatLocatorComponent, {
+			size: 'lg',
+			centered: true,
+			windowClass: 'Threat-Locator-Modal'
+		});
 	}
 }
