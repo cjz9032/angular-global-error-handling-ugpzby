@@ -415,3 +415,12 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		border-top-color: $dark;
 	}
 }
+
+/*green and red button style*/
+
+.button-red{
+	background: linear-gradient(135deg, $stop 0%, $stop_light 100%);
+}
+.button-green{
+	background: linear-gradient(135deg, $go 0%, $go_light 100%);
+}

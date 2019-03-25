@@ -10,7 +10,7 @@
 
 	.title {
 		color: $main_dark;
-		font-size: 4.5rem;
+		font-size: 3.7rem;
 		font-weight: $weight_light;
 	}
 
@@ -45,7 +45,7 @@
 		font-weight: $weight_bold;
 
 		.adjust-left {
-			padding-left: 1.8rem;
+			padding-left: 0rem;
 		}
 	}
 
@@ -64,6 +64,7 @@
 	.text-regular {
 		color: $main_dark;
 		font-size: 1.6rem;
+
 	}
 
 	.btn-round-xs {
@@ -172,29 +173,34 @@
 		list-style: none;
 		padding: 0;
 		color: $main_dark;
-		font-size: 3.6rem;
+		font-size: 1.6rem;
 
-		.ol {
+		ol {
 			margin: 0 0 1.5rem;
 			padding: 0;
-			counter-reset: item;
+			counter-reset: listNumbering;
 			box-sizing: border-box;
-		}
-
-		.ol>li {
-			margin: 0;
-			padding: 0 0 0 2rem;
-			text-indent: -2rem;
-			list-style-type: none;
-			counter-increment: item;
-		}
-
-		.ol>li:before {
-			display: inline-block;
-			width: 1.5rem;
-			padding-right: 0.5rem;
-			text-align: right;
-			content: counter(item) ".";
+			padding-left: 0.5rem;
+			li {
+				margin: 0;
+				padding: 0 0 0 2rem;
+				list-style-type: none;
+				counter-increment: listNumbering;
+				position: relative;
+				&:before {
+					display: inline-block;
+					width: 1.5rem;
+					padding-right: 0.5rem;
+					text-align: left;
+					font-size: 3.6rem;
+					position: absolute;
+					content: counter(listNumbering,decimal) '.';
+					left: 0rem;
+				}
+				.text-regular{
+					padding: 0.8rem 0.8rem 0.8rem 2rem;
+				}
+			}
 		}
 	}
 
@@ -226,10 +232,10 @@
 			word-wrap: break-word;
 		}
 
-		.text-regular {
-			color: $main_dark;
-			font-size: 2rem;
-			font-weight: $weight_light;
-		}
+		// .text-regular {
+		// 	color: $main_dark;
+
+		// 	font-weight: $weight_light;
+		// }
 	}
 }
