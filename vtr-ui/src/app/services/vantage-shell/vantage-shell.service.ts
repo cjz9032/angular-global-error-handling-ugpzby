@@ -244,8 +244,13 @@ export class VantageShellService {
 	 */
 	public async deviceFilter(filter) {
 		if (this.phoenix) {
-			let deviceFilterResult = await this.phoenix.deviceFilter(filter);
-			console.log('deviceFilter for ', filter, deviceFilterResult);
+			try {
+				let deviceFilterResult = await this.phoenix.deviceFilter(filter);
+				console.log('In VantageShellService.deviceFilter. Filter: ', filter, deviceFilterResult);
+			} catch (error) {
+				console.log('In VantageShellService.deviceFilter. Error:', error);
+				console.log('In VantageShellService.deviceFilter. returning mock true due to error.');
+			}
 			return true;
 			// return await this.phoenix.deviceFilter(filter);
 		}
