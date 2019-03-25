@@ -10,6 +10,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 export class AdvisorWifiSecurityComponent implements OnInit {
 	/**** passing to ItemParent from metrics ****/
 	@Input() metricsParent: string;
+	wifiSecurityEnabled: boolean = true;
 
 	constructor(private deviceService: DeviceService) { }
 

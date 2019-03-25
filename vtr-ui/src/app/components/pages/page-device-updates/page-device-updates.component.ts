@@ -13,6 +13,7 @@ import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enu
 import { ModalCommonConfirmationComponent } from '../../modal/modal-common-confirmation/modal-common-confirmation.component';
 import { UpdateRebootType } from 'src/app/enums/update-reboot-type.enum';
 import { SystemUpdateStatusMessage } from 'src/app/data-models/system-update/system-update-status-message.model';
+import { CMSService } from 'src/app/services/cms/cms.service';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -23,6 +24,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	title = 'System Updates';
 	back = 'BACK';
 	backarrow = '< ';
+
+	articles: [];
+
 	private lastUpdatedText = 'Last update was on';
 	private nextScanText = 'Next update scan is scheduled on';
 	private lastInstallTime: string;
@@ -124,11 +128,14 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	};
 
 	constructor(
-		private systemUpdateService: SystemUpdateService
-		, private commonService: CommonService
-		, private ngZone: NgZone
-		, private modalService: NgbModal
-	) { }
+		private systemUpdateService: SystemUpdateService,
+		private commonService: CommonService,
+		private ngZone: NgZone,
+		private modalService: NgbModal,
+		private cmsService: CMSService
+	) {
+		this.fetchCMSArticles();
+	}
 
 	ngOnInit() {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
@@ -146,6 +153,28 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.getScheduleUpdateStatus(false);
 		this.isComponentInitialized = true;
 		this.setUpdateTitle();
+	}
+
+	fetchCMSArticles() {
+		const queryOptions = {
+			'Page': 'system-updates',
+			'Lang': 'EN',
+			'GEO': 'US',
+			'OEM': 'Lenovo',
+			'OS': 'Windows',
+			'Segment': 'SMB',
+			'Brand': 'Lenovo'
+		};
+
+		this.cmsService.fetchCMSArticles(queryOptions).then(
+			(response: any) => {
+
+				this.articles = response;
+			},
+			error => {
+				console.log('fetchCMSContent error', error);
+			}
+		);
 	}
 
 	ngOnDestroy() {

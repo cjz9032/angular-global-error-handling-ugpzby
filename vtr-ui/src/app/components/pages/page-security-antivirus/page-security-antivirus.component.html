@@ -58,7 +58,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="subheader mt-60">
+							<div class="subheader antivirus-block">
 								<div class="rounded-card-with-shadow p-5 bg-white">
 									<div class="">
 										<div class="row">
@@ -127,7 +127,7 @@
 										</ul>
 
 									</div>
-									<div class="mt-60">
+									<div class="antivirus-block">
 										<div class="row">
 											<div class="col-auto px-0 mr-auto">
 												<div class="title pb-3">McAfee premium protection</div>
@@ -215,7 +215,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="body mt-60">
+							<div class="body antivirus-block">
 								<div>
 									<div class="title py-5"> Why McAfee ?</div>
 									<div class="row">
@@ -716,7 +716,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="body mt-60">
+							<div class="body antivirus-block">
 								<div>
 									<div class="title py-5"> Why McAfee ?</div>
 									<div class="row">
@@ -821,15 +821,10 @@
 								</div>
 								<!--End of Security Card Advisor-->
 
-								<div class="row mb-40">
+								<div class="row">
 									<div class="col col-12">
-										<vtr-container-card [img]="'./../../../../assets/images/antivirus/poaster.png'"
-											[caption]="'PARTNER ARTICLE'"
-											[title]="'Try our McAfee anti-virus software for 6 months'"
-											[type]="'article'"
-											[ratioX]="4"
-											[ratioY]="4">
-										</vtr-container-card>
+										<vtr-article-item *ngFor="let item of articles, let i = index"
+											[item]="item"></vtr-article-item>
 									</div>
 								</div>
 							</div>

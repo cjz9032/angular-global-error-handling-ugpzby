@@ -148,6 +148,7 @@ export class DisplayService {
 	}
 	public setDisplayColortemperature(value: number): Promise<boolean> {
 		if (this.displayEyeCareMode) {
+			console.log('this.setDisplayColortemperature', this.displayEyeCareMode);
 			return this.displayEyeCareMode.setDisplayColortemperature(value);
 		}
 		return undefined;
@@ -163,5 +164,16 @@ export class DisplayService {
 			return this.displayEyeCareMode.setEyeCareAutoMode(value);
 		}
 		return undefined;
+	}
+	public statusChangedLocationPermission(handler: any): Promise<boolean> {
+		try {
+			if (this.isShellAvailable) {
+				return this.displayEyeCareMode.statusChangedLocationPermission(handler);
+			}
+			return undefined;
+		}
+		catch (error) {
+			throw new Error(error.message);
+		}
 	}
 }

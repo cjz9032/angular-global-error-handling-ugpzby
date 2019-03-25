@@ -114,6 +114,7 @@ import { WidgetWarrantyComponent } from './components/widgets/widget-warranty/wi
 import { SanitizeHtmlPipe } from './pipe/sanitizehtml.pipe';
 import { WidgetRebootComponent } from './components/widgets/widget-reboot/widget-reboot.component';
 import { ContainerArticleComponent } from './components/container-article/container-article.component';
+import { ArticleItemComponent } from './components/article-item/article-item.component';
 import { SanitizeUrlPipe } from './pipe/sanitise-url.pipe';
 import { UniqueIdPipe } from './pipe/unique-id.pipe';
 import { environment } from '../environments/environment';
@@ -125,6 +126,8 @@ import { ModalCommonConfirmationComponent } from './components/modal/modal-commo
 import { AppEventDirective } from './directives/app-event.directive';
 import { SafeDomPipe } from './pipe/safe-dom/safe-dom.pipe';
 import { ModalUpdateChangeLogComponent } from './components/modal/modal-update-change-log.component/modal-update-change-log.component';
+import { ModalArticleDetailComponent } from './components/modal/modal-article-detail/modal-article-detail.component';
+import { DolbyModesTranslationPipe } from './pipe/dolby-modes-translation.pipe';
 
 library.add(fas);
 library.add(fab);
@@ -199,6 +202,7 @@ library.add(far);
 		WidgetRebootComponent,
 		FeedbackFormComponent,
 		ContainerArticleComponent,
+		ArticleItemComponent,
 		SanitizeUrlPipe,
 		UniqueIdPipe,
 		ModalBatteryChargeThresholdComponent,
@@ -208,7 +212,10 @@ library.add(far);
 		ModalCommonConfirmationComponent,
 		AppEventDirective,
 		ModalUpdateChangeLogComponent,
-		SafeDomPipe
+		SafeDomPipe,
+		ModalCommonConfirmationComponent,
+		ModalArticleDetailComponent,
+		DolbyModesTranslationPipe
 	],
 	imports: [
 		BrowserModule,
@@ -241,7 +248,8 @@ library.add(far);
 		ModalWelcomeComponent,
 		ModalBatteryChargeThresholdComponent,
 		ModalCommonConfirmationComponent,
-		ModalUpdateChangeLogComponent
+		ModalUpdateChangeLogComponent,
+		ModalArticleDetailComponent
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
