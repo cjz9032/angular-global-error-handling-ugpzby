@@ -10,7 +10,7 @@ export class ModalCommonConfirmationComponent implements OnInit {
 	@Input() header: string;
 	@Input() description: string;
 	@Input() packages: string[];
-	@Input() OkText = 'Ok';
+	@Input() OkText = 'Okay';
 	@Input() CancelText = 'Cancel';
 
 	@Output() OkClick = new EventEmitter<any>();
