@@ -250,7 +250,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				console.log('machine', machinename);
 				this.getAirplaneModeCapabilityThinkPad();
 				this.getAlwaysOnUSBCapabilityThinkPad();
-				this.getAlwaysOnUSBStatusThinkPad();
+
 				this.getEasyResumeCapabilityThinkPad();
 				break;
 			case 'ideapad':
@@ -467,6 +467,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				.then((value: boolean) => {
 					console.log('getAlwaysOnUSBCapabilityThinkPad.then', value);
 					this.alwaysOnUSBStatus.available = value;
+					this.getAlwaysOnUSBStatusThinkPad();
 				})
 				.catch(error => {
 					console.error('getAlwaysOnUSBCapabilityThinkPad', error);
