@@ -20,6 +20,7 @@ export class PasswordManagerLandingViewModel {
 			detail: 'not-installed', // install or not-installed
 			path: 'password-protection',
 			title: 'Password Manager',
+			type: 'security',
 		};
 		if (pmModel.status) {
 			pmStatus.detail = pmModel.status;
@@ -48,7 +49,8 @@ export class VpnLandingViewModel {
 			status: 2,
 			detail: 'not-installed', // installed or not-installed
 			path: 'internet-protection',
-			title: 'Virtual Private Network'
+			title: 'Virtual Private Network',
+			type: 'security',
 		};
 		if (vpnModel.status) {
 			vpnStatus.status = (vpnModel.status === 'installed') ? 2 : 1;
@@ -80,12 +82,14 @@ export class AntiVirusLandingViewModel {
 			detail: 'disabled',
 			path: 'anti-virus',
 			title: 'Anti-Virus',
+			type: 'security',
 		};
 		const fwStatus = {
 			status: 2,
 			detail: 'disabled',
 			path: 'anti-virus',
 			title: 'Firewall',
+			type: 'security',
 		};
 		if (avModel.windowsDefender.status) {
 			avStatus.status = (avModel.windowsDefender.status === true) ? 0 : 1;
@@ -129,12 +133,13 @@ export class WindowsHelloLandingViewModel {
 				detail: 'inactive', // active or inactive
 				path: 'windows-hello',
 				title: 'Fingerprint reader',
-			}
+				type: 'security',
+			};
 			let fingerStatus = 'inactive';
 			let faciaStatus = 'inactive';
 			if (whModel.fingerPrintStatus || whModel.facialIdStatus) {
 				whStatus.status = (whModel.fingerPrintStatus === 'active') ? 0 : 1;
-				whStatus.detail = whModel.fingerPrintStatus;
+				whStatus.detail = whModel.fingerPrintStatus === 'active' ? 'enabled' : 'disabled';
 				this.subjectStatus = (whModel.fingerPrintStatus === 'active' || whModel.facialIdStatus === 'active') ? 0 : 1;
 			}
 			whModel.on(EventTypes.helloFingerPrintStatusEvent, (data) => {
@@ -168,7 +173,8 @@ export class WifiSecurityLandingViewModel {
 			detail: 'disabled', // enabled / disabled
 			path: 'wifi-security',
 			title: 'WiFi Security',
-		}
+			type: 'security',
+		};
 		if (wfModel.state) {
 			wfStatus.status = (wfModel.state === 'enabled') ? 0 : 1;
 			wfStatus.detail = wfModel.state;
@@ -203,6 +209,7 @@ export class HomeProtectionLandingViewModel {
 			detail: 'disabled', // enabled / disabled
 			path: 'wifi-security',
 			title: 'Connected Home Security',
+			type: 'security',
 		};
 		if (wfModel.state) {
 			hpStatus.status = (wfModel.state === 'enabled') ? 0 : 1;
