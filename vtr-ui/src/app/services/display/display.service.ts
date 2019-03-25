@@ -165,9 +165,17 @@ export class DisplayService {
 		}
 		return undefined;
 	}
-	public statusChangedLocationPermission(handler: any): Promise<boolean> {
+	public getEyeCareAutoMode(): Promise<any> {
+		if (this.displayEyeCareMode) {
+			console.log('this.getEyeCareAutoModeState');
+			return this.displayEyeCareMode.getEyeCareAutoModeState();
+		}
+		return undefined;
+	}
+	public statusChangedLocationPermission(handler: any): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
+				console.log(JSON.stringify(this.displayEyeCareMode));
 				return this.displayEyeCareMode.statusChangedLocationPermission(handler);
 			}
 			return undefined;
