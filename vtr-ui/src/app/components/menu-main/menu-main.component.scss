@@ -126,6 +126,7 @@
 							}
 						}
 					}
+
 					&:last-child {
 						.dropdown-menu {
 							right: 0;
@@ -134,16 +135,19 @@
 							max-width: 50rem;
 						}
 					}
-					// &.dropdown{
-					// 	.dropdown-toggle{
+
+					// &.dropdown {
+					// 	.dropdown-toggle {
 					// 		position: relative;
 					// 		padding-right: 2.4rem;
-					// 		&::after{
+
+					// 		&::after {
 					// 			border: none;
 					// 			content: "\f107";
 					// 			font-family: FontAwesome;
 					// 			position: absolute;
-					// 			font-size: 2rem;
+					// 			font-size: 3rem;
+					// 			margin-left: 1px;
 					// 		}
 					// 	}
 					// }
