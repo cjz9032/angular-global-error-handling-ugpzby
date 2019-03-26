@@ -11,6 +11,7 @@ import {BaseComponent} from "../../../../base/base.component";
 export class AdvisorWifiSecurityComponent  extends  BaseComponent implements OnInit {
 	/**** passing to ItemParent from metrics ****/
 	@Input() metricsParent: string;
+	wifiSecurityEnabled: boolean = true;
 
 	constructor(private deviceService: DeviceService) {super(); }
 

@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ArticlesService } from '../../../services/articles/articles.service';
 import { MockService } from '../../../services/mock/mock.service';
 import { SupportService } from '../../../services/support/support.service';
 import { DeviceService } from '../../../services/device/device.service';
+import { CMSService } from 'src/app/services/cms/cms.service';
 
 
 @Component({
@@ -75,13 +75,13 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	};
 
 	constructor(
-		public articlesService: ArticlesService,
 		public mockService: MockService,
 		public supportService: SupportService,
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
+		private cmsService: CMSService
 	) {
-		// this.getArticles();
 		this.getMachineInfo();
+		this.fetchCMSArticles();
 	}
 
 	getMachineInfo() {
@@ -123,16 +123,28 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		console.log(pageViewMetrics);
 	}
 
+	fetchCMSArticles() {
+		const queryOptions = {
+			'Page': 'support',
+			'Lang': 'EN',
+			'GEO': 'US',
+			'OEM': 'Lenovo',
+			'OS': 'Windows',
+			'Segment': 'SMB',
+			'Brand': 'Lenovo'
+		};
+
+		this.cmsService.fetchCMSArticles(queryOptions, true).then(
+			(response: any) => {
+				this.articles = response;
+			},
+			error => {
+				console.log('fetchCMSContent error', error);
+			}
+		);
+	}
+
 	search(value: string) {
 		this.searchWords = value;
 	}
-
-	getArticles() {
-		this.articlesService.getArticles()
-			.subscribe((data) => {
-				console.log(data);
-				this.articles = data;
-			});
-	}
-
 }

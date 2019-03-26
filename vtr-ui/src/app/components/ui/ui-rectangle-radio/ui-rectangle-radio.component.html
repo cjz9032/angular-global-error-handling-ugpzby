@@ -5,6 +5,7 @@
 		[value]="value"
 		[checked]="checked"
 		[disabled]="disabled"
+
 		   #radio
 		(change)="onChange($event)" vtrMetrics metricsEvent="itemClick"  [metricsItem]="'radio.'+label" [metricsValue]="!radio.checked"/>
 	<label for="{{radioId}}">
@@ -13,7 +14,7 @@
 			[icon]="['far', 'gem']"></fa-icon>
 		<span *ngIf="tooltip"
 			class="question"
-			placement="top"
+			placement="auto"
 			ngbTooltip="{{tooltip}}"
 			container="body">
 			<fa-icon [icon]="['far', 'question-circle']"></fa-icon>

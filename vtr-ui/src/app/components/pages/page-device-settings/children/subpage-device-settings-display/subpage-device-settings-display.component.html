@@ -2,40 +2,42 @@
 	<div class="row">
 		<div class="col">
 			<vtr-ui-header-subpage [items]="headerMenuItems"
-				[title]="title"
-				[caption]="headerCaption"
-				[menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
+								   [title]="title"
+								   [caption]="headerCaption"
+								   [menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
 		</div>
 	</div>
 	<div class="row py-5 smartsettings-card"
-		id="display">
+		 id="display">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible cardTitle="Display" componentName="display"
-				[isCollapsed]="false"
-				[allowCollapse]="true"
-				[theme]="'white'">
+									   [isCollapsed]="false"
+									   [allowCollapse]="true"
+									   [theme]="'white'">
 				<ul class="list-group list-group-flush">
 					<li class="pt-3"
 						*ngIf="eyeCareModeStatus.available">
 						<vtr-ui-row-switch [title]="'Eye Care Mode'"
 										   componentName="Eye Care Mode"
 										   name="Eye Care Mode"
-							[caption]=""
-							[isSwitchVisible]="true"
-							[leftIcon]="['far', 'gem']"
-							[rightIcon]="['far', 'question-circle']"
-							[readMoreText]="''"
-							[showChildContent]="true"
-							[isSwitchChecked]="eyeCareModeStatus.status"
-							(toggleOnOff)="onEyeCareModeStatusToggle($event)"
-							[theme]="'white'"
-							[tooltipText]="'Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.'">
+										   [caption]=""
+										   [isSwitchVisible]="true"
+										   [leftIcon]="['far', 'gem']"
+										   [rightIcon]="['far', 'question-circle']"
+										   [readMoreText]="''"
+										   [showChildContent]="true"
+										   [isSwitchChecked]="eyeCareModeStatus.status"
+										   (toggleOnOff)="onEyeCareModeStatusToggle($event)"
+										   [theme]="'white'"
+										   [tooltipText]="'Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.'">
 							<div class="row">
 								<div class="col-12">
-									<vtr-eye-care-mode [eyecareModeSettings]="eyecareDatasource"
-										[enableSlider]="eyeCareModeStatus.status"
-										(eyecareTemparatureChange)="onEyeCareTemperatureChange($event)"
-										(resetTemperature)="onResetTemperature($event)"></vtr-eye-care-mode>
+									<vtr-eye-care-mode [eyeCareModeSettings]="eyeCareDataSource"
+													   [enableSlider]="!eyeCareModeStatus.status"
+													   [sunsetToSunriseStatus]="sunsetToSunriseModeStatus"
+													   (eyeCareTemparatureChange)="onEyeCareTemparatureChange($event)"
+													   (resetTemparature)="onResetTemparature($event)"
+													   (sunsetToSunrise)="onSunsetToSunrise($event)"></vtr-eye-care-mode>
 								</div>
 							</div>
 						</vtr-ui-row-switch>
@@ -66,12 +68,12 @@
 		</div>
 	</div>
 	<div class="row py-5 smartsettings-card"
-		id="camera">
+		 id="camera">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible cardTitle="Camera" componentName="Camera"
-				[isCollapsed]="false"
-				[allowCollapse]="true"
-				[theme]="'white'">
+									   [isCollapsed]="false"
+									   [allowCollapse]="true"
+									   [theme]="'white'">
 				<!-- <div class="alert alert-secondary no-camera-access"
 					*ngIf="!dataSource.hasAccessToCamera">
 					<div>
@@ -88,33 +90,34 @@
 				<ul class="list-group list-group-flush">
 					<li class="pt-3">
 						<vtr-ui-row-switch [title]="'Camera privacy mode'"
-										     componentName="Camera Privacy Mode"
-										     name="Camera Privacy Mode"
-							[isSwitchVisible]="true"
-							[leftIcon]="['far', 'gem']"
-							[rightIcon]="['far', 'question-circle']"
-							(toggleOnOff)="onCameraPrivacyModeToggle($event)"
-							[isSwitchChecked]="cameraPrivacyModeStatus.status"
-							[tooltipText]="'The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling.'">
+										   componentName="Camera Privacy Mode"
+										   name="Camera Privacy Mode"
+										   [isSwitchVisible]="true"
+										   [leftIcon]="['far', 'gem']"
+										   [rightIcon]="['far', 'question-circle']"
+										   (toggleOnOff)="onCameraPrivacyModeToggle($event)"
+										   [isSwitchChecked]="cameraPrivacyModeStatus.status"
+										   [tooltipText]="'The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling.'">
 						</vtr-ui-row-switch>
 					</li>
 					<li class="pt-3">
 						<vtr-ui-row-switch [title]="'Camera'"
 										   componentName="Camera"
 										   name="Camera"
-							[isSwitchVisible]="false"
-							[leftIcon]="['far', 'gem']"
-							[showChildContent]="true"
-							[resetText]="'Reset factory settings'"
-							[rightIcon]="['far', 'question-circle']"
-							[tooltipText]="'Click here to reset Camera properties to default settings.'"
-							(resetClick)="resetCameraSettings()">
+
+										   [isSwitchVisible]="false"
+										   [leftIcon]="['far', 'gem']"
+										   [showChildContent]="true"
+										   [resetText]="'Reset factory settings'"
+										   [rightIcon]="['far', 'question-circle']"
+										   [tooltipText]="'Click here to reset Camera properties to default settings.'"
+										   (resetClick)="resetCameraSettings()">
 							<div class="row">
 								<div class="col-12">
 									<vtr-camera-control [cameraSettings]="dataSource"
-										(brightnessChange)="onBrightnessChange($event)"
-										(contrastChange)="onContrastChange($event)"
-										(exposureChange)="onCameraExposureValueChange($event)">
+														(brightnessChange)="onBrightnessChange($event)"
+														(contrastChange)="onContrastChange($event)"
+														(exposureChange)="onCameraExposureValueChange($event)">
 									</vtr-camera-control>
 								</div>
 							</div>

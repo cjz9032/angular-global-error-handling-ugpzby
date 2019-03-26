@@ -188,6 +188,18 @@
 		}
 	}
 
+	.antivirus-block {
+		margin-top: 4rem;
+
+		ul.list-unstyled {
+			li {
+				.col-auto {
+					padding-left: .8rem;
+				}
+			}
+		}
+	}
+
 	.badge {
 		font-weight: normal;
 		font-size: 69%;

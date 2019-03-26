@@ -1,9 +1,8 @@
-import { Injectable, SystemJsNgModuleLoader } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { CommonService } from '../common/common.service';
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
 import { InstallUpdate } from 'src/app/data-models/system-update/install-update.model';
-import { UpdateInstallationResult } from 'src/app/data-models/system-update/update-installation-result.model';
 import { AvailableUpdate } from 'src/app/data-models/system-update/available-update.model';
 import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
 import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
@@ -11,6 +10,7 @@ import { UpdateHistory } from 'src/app/data-models/system-update/update-history.
 import { ScheduleUpdateStatus } from 'src/app/data-models/system-update/schedule-update-status.model';
 import { UpdateRebootType } from 'src/app/enums/update-reboot-type.enum';
 import { SystemUpdateStatusMessage } from 'src/app/data-models/system-update/system-update-status-message.model';
+import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -110,7 +110,7 @@ export class SystemUpdateService {
 				const status = parseInt(response.status, 10);
 				if (status === SystemUpdateStatusMessage.SUCCESS.code) { // success
 					this.isUpdatesAvailable = (response.updateList && response.updateList.length > 0);
-					this.updateInfo = { status: response.status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
+					this.updateInfo = { status: status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
 					// if (this.isUpdatesAvailable) {
 					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
 					// } else {
@@ -175,7 +175,7 @@ export class SystemUpdateService {
 	public installAllUpdates() {
 		if (this.systemUpdateBridge && this.isUpdatesAvailable) {
 			const updates = this.mapToInstallRequest(this.updateInfo.updateList);
-			this.installUpdates(updates);
+			this.installUpdates(updates, true);
 		}
 	}
 
@@ -184,7 +184,7 @@ export class SystemUpdateService {
 			const updatesToInstall = this.getSelectedUpdates(this.updateInfo.updateList);
 			const updates = this.mapToInstallRequest(updatesToInstall);
 			console.log('installSelectedUpdates', updatesToInstall, updates);
-			this.installUpdates(updates);
+			this.installUpdates(updates, false);
 		}
 	}
 
@@ -193,7 +193,7 @@ export class SystemUpdateService {
 			console.log('installFailedUpdate', update);
 			const updates = new Array<InstallUpdate>();
 			updates.push(update);
-			this.installUpdates(updates);
+			this.installUpdates(updates, false);
 		}
 	}
 
@@ -264,33 +264,39 @@ export class SystemUpdateService {
 	// returns reboot type and array of update name which requires pop up to show before installation
 	public getRebootType(updateList: Array<AvailableUpdateDetail>, source: string): { rebootType: UpdateRebootType, packages: Array<string> } {
 		let rebootType = UpdateRebootType.Unknown;
-		let packages = new Array<string>();
+		const packages = new Array<string>();
 
 		const rebootDelayedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.RebootDelayed, source);
+		const rebootForcedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.RebootForced, source);
+		const powerOffForcedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.PowerOffForced, source);
+
 		// Priority #1 RebootDelayed : return details of it, no need to check other.
 		if (rebootDelayedUpdates && rebootDelayedUpdates.length > 0) {
 			rebootType = UpdateRebootType.RebootDelayed;
-			packages = rebootDelayedUpdates.map((value) => {
+			const updates = rebootDelayedUpdates.map<string>((value) => {
 				return value.packageDesc;
 			});
-		} else {
-			const rebootForcedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.RebootForced, source);
-			// Priority #2 RebootForced : return details of it, no need to check other.
-			if (rebootForcedUpdates && rebootForcedUpdates.length > 0) {
+			packages.push(...updates);
+		}
+		// Priority #2 RebootForced : return details of it, no need to check other.
+		if (rebootForcedUpdates && rebootForcedUpdates.length > 0) {
+			if (rebootType === UpdateRebootType.Unknown) {
 				rebootType = UpdateRebootType.RebootForced;
-				packages = rebootForcedUpdates.map((value) => {
-					return value.packageDesc;
-				});
-			} else {
-				const powerOffForcedUpdates = this.getUpdateByRebootType(updateList, UpdateRebootType.PowerOffForced, source);
-				// Priority #3 PowerOffForced : return details of it, no need to check other.
-				if (powerOffForcedUpdates && powerOffForcedUpdates.length > 0) {
-					rebootType = UpdateRebootType.PowerOffForced;
-					packages = powerOffForcedUpdates.map((value) => {
-						return value.packageDesc;
-					});
-				}
 			}
+			const updates = rebootForcedUpdates.map((value) => {
+				return value.packageDesc;
+			});
+			packages.push(...updates);
+		}
+		// Priority #3 PowerOffForced : return details of it, no need to check other.
+		if (powerOffForcedUpdates && powerOffForcedUpdates.length > 0) {
+			if (rebootType === UpdateRebootType.Unknown) {
+				rebootType = UpdateRebootType.PowerOffForced;
+			}
+			const updates = powerOffForcedUpdates.map((value) => {
+				return value.packageDesc;
+			});
+			packages.push(...updates);
 		}
 		return { rebootType, packages };
 	}
@@ -303,7 +309,7 @@ export class SystemUpdateService {
 		return updates;
 	}
 
-	private installUpdates(updates: Array<InstallUpdate>) {
+	private installUpdates(updates: Array<InstallUpdate>, isInstallingAllUpdates: boolean) {
 		let isInvoked = false;
 		this.systemUpdateBridge.installUpdates(updates, (progress: any) => {
 			if (!isInvoked) {
@@ -312,12 +318,15 @@ export class SystemUpdateService {
 			}
 			console.log('installUpdates callback', progress);
 			this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);
-		}).then((response: UpdateInstallationResult) => {
+		}).then((response: any) => {
 			console.log('installUpdates response', response);
 			if (response) {
 				this.isInstallationComplete = true;
-				this.mapInstallationStatus(this.updateInfo.updateList, response.updateResultList);
-				this.commonService.sendNotification(UpdateProgress.InstallationComplete, response);
+				this.mapInstallationStatus(this.updateInfo.updateList, response.updateResultList, isInstallingAllUpdates);
+				const payload = new AvailableUpdate();
+				payload.status = parseInt(response.status, 10);
+				payload.updateList = this.updateInfo.updateList;
+				this.commonService.sendNotification(UpdateProgress.InstallationComplete, payload);
 			}
 		});
 	}
@@ -359,7 +368,7 @@ export class SystemUpdateService {
 				updateDetail.currentInstalledVersion = update.currentInstalledVersion;
 				updateDetail.diskSpaceRequired = update.diskSpaceRequired;
 				updateDetail.isInstalled = false;
-				updateDetail.isSelected = true;
+				updateDetail.isSelected = (updateDetail.packageSeverity === UpdateInstallSeverity.Critical);
 				updateDetail.installationStatus = UpdateActionResult.Unknown;
 				updates.push(updateDetail);
 			});
@@ -367,9 +376,9 @@ export class SystemUpdateService {
 		return updates;
 	}
 
-	private mapInstallationStatus(updates: AvailableUpdateDetail[], updateInstallationList: Array<any>) {
+	private mapInstallationStatus(updates: AvailableUpdateDetail[], updateInstallationList: Array<any>, isInstallingAllUpdates: boolean) {
 		updates.forEach((update: AvailableUpdateDetail) => {
-			if (update.isSelected) {
+			if (isInstallingAllUpdates || update.isSelected) {
 				const pkg = updateInstallationList.find((uil) => {
 					return update.packageID === uil.packageID;
 				});

@@ -9,6 +9,8 @@ import {
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalBatteryChargeThresholdComponent } from '../../modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
 import {BaseComponent} from "../../base/base.component";
+import { CommonService } from 'src/app/services/common/common.service';
+
 
 @Component({
 	selector: 'vtr-ui-row-switch',
@@ -37,19 +39,27 @@ export class UiRowSwitchComponent extends BaseComponent {
 	@Input() disabled = false;
 	@Input() type = undefined;
 
-
 	@Output() toggleOnOff = new EventEmitter<boolean>();
 	@Output() readMoreClick = new EventEmitter<boolean>();
 	@Output() tooltipClick = new EventEmitter<boolean>();
 	@Output() resetClick = new EventEmitter<Event>();
 
-	constructor(public modalService: NgbModal) {
-		super();
-	}
+
+	// private tooltip: NgbTooltip;
+
+	constructor(
+		public modalService: NgbModal
+		// , private commonService: CommonService
+	) {super(); }
+
 
 	ngOnInit() {
 		this.childContent = {};
 		this.childContent.innerHTML = '';
+
+		// this.commonService.notification.subscribe((notification: AppNotification) => {
+		// 	this.onNotification(notification);
+		// });
 	}
 
 	public onOnOffChange($event) {
@@ -91,5 +101,23 @@ export class UiRowSwitchComponent extends BaseComponent {
 	public onResetClick($event: Event) {
 		this.resetClick.emit($event);
 	}
+
+
+	// private closeTooltip($event: Event) {
+	// 	if (!$event.srcElement.classList.contains('fa-question-circle') && this.tooltip && this.tooltip.isOpen()) {
+	// 		this.tooltip.close();
+	// 	}
+	// }
+
+	// private onNotification(notification: AppNotification) {
+	// 	const { type, payload } = notification;
+	// 	switch (type) {
+	// 		case AppEvent.Click:
+	// 			this.closeTooltip(payload);
+	// 			break;
+	// 		default:
+	// 			break;
+	// 	}
+	// }
 
 }

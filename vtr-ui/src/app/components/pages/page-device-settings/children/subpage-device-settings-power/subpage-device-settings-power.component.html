@@ -342,6 +342,7 @@
 							[leftIcon]="batterySettings.items[0].leftImageSource"
 							[readMoreText]="batterySettings.items[0].readMoreText"
 							[tooltipText]="batterySettings.items[0].tooltipText"
+							[isSwitchChecked]="toggleAirplanePowerModeFlag"
 							(toggleOnOff)="onToggleOfAirplanePowerMode($event)">
 						</vtr-ui-row-switch>
 					</li>
@@ -409,10 +410,10 @@
 			<vtr-container-collapsible cardTitle="Power Settings"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
-					<li class="">
+					<li class="" *ngIf="alwaysOnUSBStatus.available">
 						<vtr-ui-row-switch [title]="powerSettings[0].header"
 							[caption]="powerSettings[0].subHeader"
-							[isSwitchVisible]="alwaysOnUSBStatus.available"
+							[isSwitchVisible]=true
 							[isSwitchChecked]="alwaysOnUSBStatus.status"
 							[leftIcon]="powerSettings[0].leftImageSource"
 							[rightIcon]="powerSettings[0].rightImageSource"

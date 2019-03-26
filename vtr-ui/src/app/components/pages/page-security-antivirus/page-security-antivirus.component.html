@@ -2,30 +2,30 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
-				[back]="back"
-				[title]="title"></vtr-header-main>
+							 [back]="back"
+							 [title]="title"></vtr-header-main>
 			<div class="btn-group btn-group-toggle"
-				ngbRadioGroup
-				style="margin-left:300px;margin-top:-150px;"
-				[(ngModel)]="value">
+				 ngbRadioGroup
+				 style="margin-left:300px;margin-top:-150px;"
+				 [(ngModel)]="value">
 				<label class="btn-primary"
-					ngbButtonLabel> 1
+					   ngbButtonLabel> 1
 					<input type="radio"
-						ngbButton
-						[value]="1" />
+						   ngbButton
+						   [value]="1"/>
 				</label>
 				<label class="btn-primary"
-					ngbButtonLabel> 2
+					   ngbButtonLabel> 2
 					<input type="radio"
-						ngbButton
-						[value]="2" />
+						   ngbButton
+						   [value]="2"/>
 				</label>
 
 				<label class="btn-primary"
-					ngbButtonLabel> 3
+					   ngbButtonLabel> 3
 					<input type="radio"
-						ngbButton
-						[value]="3" />
+						   ngbButton
+						   [value]="3"/>
 				</label>
 			</div>
 		</div>
@@ -41,24 +41,26 @@
 									<div class="row">
 										<div class="col-auto align-self-center">
 											<img class="img-fluid"
-												src="./../../../../assets/images/antivirus/protection.png" />
+												 src="./../../../../assets/images/antivirus/protection.png"/>
 
 										</div>
 										<div class="col">
 											<div class="title p-3"> Not Optimally Protected</div>
 											<div class="subtitle p-3"
-												[innerHTML]="subTitle"></div>
+												 [innerHTML]="subTitle"></div>
 											<div class="p-3">
 												<vtr-ui-button metricsParent="not-optimally-protected"
-													metricsEvent="itemClick"
-													metricsItem="btn.learn more about mcafee"
-													[label]="'LEARN MORE ABOUT MCAFEE'"></vtr-ui-button>
+															   metricsEvent="itemClick"
+															   metricsItem="btn.learn more about mcafee"
+															   [label]="'LEARN MORE ABOUT MCAFEE'"
+															   [textTansform]=false></vtr-ui-button>
+
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="subheader mt-60">
+							<div class="subheader antivirus-block">
 								<div class="rounded-card-with-shadow p-5 bg-white">
 									<div class="">
 										<div class="row">
@@ -66,7 +68,7 @@
 												<div class="title pb-3">Windows Defender basic protection</div>
 											</div>
 											<div class="col-auto px-0">
-												<img src="../../../../assets/images/antivirus/window.png" />
+												<img src="../../../../assets/images/antivirus/window.png"/>
 											</div>
 										</div>
 
@@ -88,14 +90,14 @@
 														VIRUS SCAN
 													</div>
 													<div class="col-auto mr-auto">
-														<h3><span class="badge badge-pill badge-success">ENABLED</span>
+														<h3><span class="badge badge-pill badge-success button-green">ENABLED</span>
 														</h3>
 													</div>
 													<div class="col-auto d-none">
 														<vtr-ui-button metricsEvent="itemClick"
-															metricsParent="Windows"
-															metricsItem="btn.enable firewall"
-															[label]="'ENABLE FIREWALL'"></vtr-ui-button>
+																	   metricsParent="Windows"
+																	   metricsItem="btn.enable firewall"
+																	   [label]="'ENABLE FIREWALL'"></vtr-ui-button>
 													</div>
 												</div>
 
@@ -114,7 +116,7 @@
 														FIREWALL
 													</div>
 													<div class="col-auto mr-auto">
-														<h3><span class="badge badge-pill badge-success">ENABLED</span>
+														<h3><span class="badge badge-pill badge-success button-green">ENABLED</span>
 														</h3>
 													</div>
 													<div class="col-auto d-none">
@@ -127,14 +129,14 @@
 										</ul>
 
 									</div>
-									<div class="mt-60">
+									<div class="antivirus-block">
 										<div class="row">
 											<div class="col-auto px-0 mr-auto">
 												<div class="title pb-3">McAfee premium protection</div>
 											</div>
 											<div class="col-auto px-0">
 												<img class="mcafee-logo"
-													src="../../../../assets/images/mcafee_logo.svg" />
+													 src="../../../../assets/images/mcafee_logo.svg"/>
 											</div>
 										</div>
 										<div class="subtitle pb-5">You are currently protected by Windows Defender.
@@ -155,7 +157,7 @@
 														VIRUS SCAN
 													</div>
 													<div class="col-auto mr-auto">
-														<h3><span class="badge badge-pill badge-danger">DISABLED</span>
+														<h3><span class="badge badge-pill badge-danger button-red">DISABLED</span>
 														</h3>
 													</div>
 													<div class="col-auto d-none">
@@ -178,7 +180,7 @@
 														FIREWALL
 													</div>
 													<div class="col-auto mr-auto">
-														<h3><span class="badge badge-pill badge-danger">DISABLED</span>
+														<h3><span class="badge badge-pill badge-danger button-red">DISABLED</span>
 														</h3>
 													</div>
 													<div class="col-auto d-none">
@@ -201,26 +203,27 @@
 													</span>
 													<span>
 														<a href="#"
-															class="text">Update Now</a>
+														   class="text">Update Now</a>
 													</span>
 												</div>
 											</div>
 											<div class="col-auto px-0 py-5">
 												<vtr-ui-button metricsEvent="itemClick"
-													metricsItem="btn.getmcafee"
-													metricsParent="mcafee-protection"
-													[label]="'GET MCAFEE'"></vtr-ui-button>
+															   metricsItem="btn.getmcafee"
+															   metricsParent="mcafee-protection"
+															   [label]="'GET McAfee'"
+															   [textTansform]=false></vtr-ui-button>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="body mt-60">
+							<div class="body antivirus-block">
 								<div>
 									<div class="title py-5"> Why McAfee ?</div>
 									<div class="row">
 										<div class="col-auto px-0">
-											<img src="./../../../../assets/images/antivirus/side.png" />
+											<img src="./../../../../assets/images/antivirus/side.png"/>
 										</div>
 										<div class="col px-5">
 											<div class="subtitle pb-5">
@@ -296,7 +299,7 @@
 												<li class="list-inline-item read-more-text">Read more on the</li>
 												<li class="list-inline-item subtitle"><a href="#">Privacy Policy</a>
 												</li>
-												<li class="list-inline-item">and</li>
+												<li class="list-inline-item read-more-text">and</li>
 												<li class="list-inline-item subtitle"><a href="#">Terms of Service</a>
 												</li>
 											</ul>
@@ -304,7 +307,7 @@
 									</div>
 									<div class="col-auto align-self-center px-0">
 										<img class="mcafee-logo"
-											src="../../../../assets/images/mcafee_logo.svg" />
+											 src="../../../../assets/images/mcafee_logo.svg"/>
 									</div>
 								</div>
 							</div>
@@ -321,7 +324,7 @@
 											</div>
 											<div class="col-auto px-0">
 												<img class="mcafee-logo"
-													src="../../../../assets/images/mcafee_logo.svg" />
+													 src="../../../../assets/images/mcafee_logo.svg"/>
 											</div>
 										</div>
 										<div class="subtitle pb-5">You are currently protected by McAfee LiveSafe</div>
@@ -340,7 +343,7 @@
 														VIRUS SCAN
 													</div>
 													<div class="col-auto mr-auto">
-														<h3><span class="badge badge-pill badge-success">ENABLED</span>
+														<h3><span class="badge badge-pill badge-success button-green">ENABLED</span>
 														</h3>
 													</div>
 													<div class="col-auto d-none">
@@ -363,7 +366,7 @@
 														FIREWALL
 													</div>
 													<div class="col-auto mr-auto">
-														<h3><span class="badge badge-pill badge-success">ENABLED</span>
+														<h3><span class="badge badge-pill badge-success button-green">ENABLED</span>
 														</h3>
 													</div>
 													<div class="col-auto d-none">
@@ -386,15 +389,16 @@
 													</span>
 													<span>
 														<a href="#"
-															class="text">Upgrade Now</a>
+														   class="text">Upgrade Now</a>
 													</span>
 												</div>
 											</div>
 											<div class="col-auto px-0 py-5">
 												<vtr-ui-button metricsParent="mcafee-livesafe"
-													metricsItem="bnt.launch mcafee"
-													metricsEvent="itemClick"
-													[label]="'LAUNCH MCAFEE'"></vtr-ui-button>
+															   metricsItem="bnt.launch mcafee"
+															   metricsEvent="itemClick"
+															   [label]="'LAUNCH McAfee'"
+															   [textTansform]=false></vtr-ui-button>
 											</div>
 										</div>
 									</div>
@@ -410,7 +414,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon1.png" />
+														 src="./../../../../assets/images/antivirus/icon1.png"/>
 
 
 												</div>
@@ -428,7 +432,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon2.png" />
+														 src="./../../../../assets/images/antivirus/icon2.png"/>
 
 
 												</div>
@@ -446,7 +450,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon3.png" />
+														 src="./../../../../assets/images/antivirus/icon3.png"/>
 
 
 												</div>
@@ -462,7 +466,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon4.png" />
+														 src="./../../../../assets/images/antivirus/icon4.png"/>
 
 
 												</div>
@@ -482,7 +486,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon5.png" />
+														 src="./../../../../assets/images/antivirus/icon5.png"/>
 
 
 												</div>
@@ -500,7 +504,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon6.png" />
+														 src="./../../../../assets/images/antivirus/icon6.png"/>
 
 
 												</div>
@@ -520,7 +524,7 @@
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon7.png" />
+														 src="./../../../../assets/images/antivirus/icon7.png"/>
 
 
 												</div>
@@ -551,7 +555,7 @@
 												<li class="list-inline-item read-more-text">Read more on the</li>
 												<li class="list-inline-item subtitle"><a href="#">Privacy Policy</a>
 												</li>
-												<li class="list-inline-item">and</li>
+												<li class="list-inline-item read-more-text">and</li>
 												<li class="list-inline-item subtitle"><a href="#">Terms of Service</a>
 												</li>
 											</ul>
@@ -559,7 +563,7 @@
 									</div>
 									<div class="col-auto align-self-center px-0">
 										<img class="mcafee-logo"
-											src="../../../../assets/images/mcafee_logo.svg" />
+											 src="../../../../assets/images/mcafee_logo.svg"/>
 									</div>
 								</div>
 							</div>
@@ -596,7 +600,7 @@
 														VIRUS SCAN
 													</div>
 													<div class="col-auto mr-auto">
-														<h3><span class="badge badge-pill badge-success">ENABLED</span>
+														<h3><span class="badge badge-pill badge-success button-green">ENABLED</span>
 														</h3>
 													</div>
 													<div class="col-auto d-none">
@@ -618,7 +622,7 @@
 														FIREWALL
 													</div>
 													<div class="col-auto mr-auto">
-														<h3><span class="badge badge-pill badge-success">ENABLED</span>
+														<h3><span class="badge badge-pill badge-success button-green">ENABLED</span>
 														</h3>
 													</div>
 													<!-- <div class="col-auto">
@@ -636,7 +640,7 @@
 											</div>
 											<div class="col-auto px-0">
 												<img class="mcafee-logo"
-													src="../../../../assets/images/mcafee_logo.svg" />
+													 src="../../../../assets/images/mcafee_logo.svg"/>
 											</div>
 										</div>
 										<div class="subtitle pb-5">You are currently protected by Symantec.
@@ -657,7 +661,7 @@
 														VIRUS SCAN
 													</div>
 													<div class="col-auto mr-auto">
-														<h3><span class="badge badge-pill badge-danger">DISABLED</span>
+														<h3><span class="badge badge-pill badge-danger button-red">DISABLED</span>
 														</h3>
 													</div>
 													<div class="col-auto d-none">
@@ -680,7 +684,7 @@
 														FIREWALL
 													</div>
 													<div class="col-auto mr-auto">
-														<h3><span class="badge badge-pill badge-danger">DISABLED</span>
+														<h3><span class="badge badge-pill badge-danger button-red">DISABLED</span>
 														</h3>
 													</div>
 													<div class="col-auto d-none">
@@ -708,20 +712,21 @@
 											</div>
 											<div class="col-auto px-0 py-5">
 												<vtr-ui-button metricsEvent="itemClick"
-													metricsItem="btn.get mcafee"
-													metricsParent="mcafee-premium-protection"
-													[label]="'GET MCAFEE'"></vtr-ui-button>
+															   metricsItem="btn.get mcafee"
+															   metricsParent="mcafee-premium-protection"
+															   [label]="'GET McAfee'"
+															   [textTansform]=false></vtr-ui-button>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="body mt-60">
+							<div class="body antivirus-block">
 								<div>
 									<div class="title py-5"> Why McAfee ?</div>
 									<div class="row">
 										<div class="col-auto px-0">
-											<img src="./../../../../assets/images/antivirus/side.png" />
+											<img src="./../../../../assets/images/antivirus/side.png"/>
 										</div>
 										<div class="col px-5">
 											<div class="subtitle pb-5">
@@ -793,7 +798,7 @@
 												<li class="list-inline-item read-more-text">Read more on the</li>
 												<li class="list-inline-item subtitle"><a href="#">Privacy Policy</a>
 												</li>
-												<li class="list-inline-item">and</li>
+												<li class="list-inline-item read-more-text">and</li>
 												<li class="list-inline-item subtitle"><a href="#">Terms of Service</a>
 												</li>
 											</ul>
@@ -801,7 +806,7 @@
 									</div>
 									<div class="col-auto align-self-center px-0">
 										<img class="mcafee-logo"
-											src="../../../../assets/images/mcafee_logo.svg" />
+											 src="../../../../assets/images/mcafee_logo.svg"/>
 									</div>
 								</div>
 							</div>
@@ -814,22 +819,17 @@
 								<div class="row mb-40">
 									<div class="col col-12">
 										<vtr-widget-status [title]="'Security Advisor'"
-											[description]="'CHECK IF YOUR DEVICE IS SECURED.'"
-											[items]="mockService.securityStatus">
+														   [description]="'CHECK IF YOUR DEVICE IS SECURED.'"
+														   [items]="mockService.securityStatus">
 										</vtr-widget-status>
 									</div>
 								</div>
 								<!--End of Security Card Advisor-->
 
-								<div class="row mb-40">
+								<div class="row">
 									<div class="col col-12">
-										<vtr-container-card [img]="'./../../../../assets/images/antivirus/poaster.png'"
-											[caption]="'PARTNER ARTICLE'"
-											[title]="'Try our McAfee anti-virus software for 6 months'"
-											[type]="'article'"
-											[ratioX]="4"
-											[ratioY]="4">
-										</vtr-container-card>
+										<vtr-article-item *ngFor="let item of articles, let i = index"
+														  [item]="item"></vtr-article-item>
 									</div>
 								</div>
 							</div>

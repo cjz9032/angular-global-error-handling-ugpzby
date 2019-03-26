@@ -45,7 +45,7 @@
 												<div class="title">
 													<fa-icon [icon]="['fas', 'dot-circle']"></fa-icon>
 													<span>
-														Password health
+														Password Health
 													</span>
 												</div>
 												<vtr-ui-list-chevron  componentName="password health" [items]="mockService.securityPasswordHealth">
@@ -95,7 +95,7 @@
 												<div class="title">
 													<fa-icon [icon]="['fas', 'check-circle']"></fa-icon>
 													<span>
-														Windows hello
+														Windows Hello
 													</span>
 												</div>
 												<vtr-ui-list-chevron componentName="windows hello"[items]="mockService.securityWindowsHello">
@@ -114,33 +114,12 @@
 				<div class="col col-4 vtr-page-right-column">
 					<div class="vtr-page-shift-up">
 						<div class="container-fluid">
-							<div class="row mb-40">
+							<div class="row">
 								<div class="col col-12">
-									<vtr-container-card [img]="'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg'"
-										[title]="'Try our McAfee anti-virus software for 6 months'"
-										[logoText]="'LENOVO SPECIAL'"
-										[action]="'Read More'"
-										[actionLink]="'http://www.google.com'"
-										[type]="'article'"
-										[ratioX]="4"
-										[ratioY]="4">
-									</vtr-container-card>
+									<vtr-article-item *ngFor="let item of articles, let i = index"
+										[item]="item"></vtr-article-item>
 								</div>
 							</div>
-
-							<div class="row mb-40">
-								<div class="col col-12 aritcle-card">
-									<vtr-container-card [img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
-										[title]="'Ideas on how to handle all your passwords online'"
-										[action]="'Read More'"
-										[actionLink]="'http://www.google.com'"
-										[type]="'partnerarticle'"
-										[ratioX]="4"
-										[ratioY]="2.5">
-									</vtr-container-card>
-								</div>
-							</div>
-
 							<div class="row mb-40">
 								<div class="col col-12 ">
 									<vtr-widget-feedback [title]="'Discover our top ideapad offers for the holidays '"

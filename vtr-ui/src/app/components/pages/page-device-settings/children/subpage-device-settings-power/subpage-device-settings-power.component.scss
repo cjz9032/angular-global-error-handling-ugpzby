@@ -52,10 +52,12 @@
 				line-height: 2.8rem;
 				padding-bottom: 2.5rem;
 				border-bottom: 1px solid $screen_light_15;
+
 				a {
 					list-style: none;
 					text-decoration: underline;
 					color: $light;
+
 					&:hover {
 						list-style: none;
 						color: $light;
@@ -65,9 +67,11 @@
 			}
 		}
 	}
+
 	.left-margin {
 		margin-left: -3rem;
 	}
+
 	ul.list-group {
 		list-style-type: none;
 		padding-bottom: 3rem;
@@ -78,7 +82,7 @@
 	}
 
 	.search-icon {
-		> fa-icon {
+		>fa-icon {
 			font-size: 2rem;
 			color: $light;
 		}
