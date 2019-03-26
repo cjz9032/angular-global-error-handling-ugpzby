@@ -56,7 +56,7 @@ export class UiListCheckboxComponent implements OnInit {
 	public onReadMoreClick($event) {
 		console.log('onReadMoreClick');
 		this.readMore.emit($event);
-		const readMeUrl = 'https://download.lenovo.com/consumer/desktop/lnvusbss.txt';
+		// const readMeUrl = 'https://download.lenovo.com/consumer/desktop/lnvusbss.txt';
 		const modalRef = this.modalService.open(ModalUpdateChangeLogComponent,
 			{
 				backdrop: 'static',
@@ -64,7 +64,7 @@ export class UiListCheckboxComponent implements OnInit {
 				windowClass: 'update-read-more-modal-size',
 				centered: true
 			});
-		modalRef.componentInstance.url = readMeUrl; // this.readMeUrl;
+		modalRef.componentInstance.url = this.readMeUrl;
 	}
 
 	public onIgnoreUpdateClick($event) {
