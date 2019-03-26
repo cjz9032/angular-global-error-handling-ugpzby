@@ -1,16 +1,16 @@
-import { Component, OnInit , Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'vtr-ui-landing-feature',
-  templateUrl: './ui-landing-feature.component.html',
-  styleUrls: ['./ui-landing-feature.component.scss']
+	selector: 'vtr-ui-landing-feature',
+	templateUrl: './ui-landing-feature.component.html',
+	styleUrls: ['./ui-landing-feature.component.scss']
 })
 export class UiLandingFeatureComponent implements OnInit {
-  @Input() feature: any[];
-  constructor() { }
+	@Input() feature: any[];
+	constructor() { }
 
-  ngOnInit() {
-    // console.log(this.feature);
-  }
+	ngOnInit() {
+		// console.log(this.feature);
+	}
 
 }
