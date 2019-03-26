@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QaService } from '../../../services/qa/qa.service';
 import { DevService } from '../../../services/dev/dev.service';
+import { CMSService } from 'src/app/services/cms/cms.service';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -36,14 +37,39 @@ export class PageDeviceSettingsComponent implements OnInit {
 			active: false
 		}
 	];
+	articles: [];
 
 	constructor(
 		private devService: DevService,
-		public qaService: QaService
-	) { }
+		public qaService: QaService,
+		private cmsService: CMSService
+	) {
+		this.fetchCMSArticles();
+	}
 
 	ngOnInit() {
 		this.devService.writeLog('DEVICE SETTINGS INIT', this.menuItems);
+	}
+
+	fetchCMSArticles() {
+		const queryOptions = {
+			'Page': 'device-settings',
+			'Lang': 'EN',
+			'GEO': 'US',
+			'OEM': 'Lenovo',
+			'OS': 'Windows',
+			'Segment': 'SMB',
+			'Brand': 'Lenovo'
+		};
+
+		this.cmsService.fetchCMSArticles(queryOptions).then(
+			(response: any) => {
+				this.articles = response;
+			},
+			error => {
+				console.log('fetchCMSContent error', error);
+			}
+		);
 	}
 
 }

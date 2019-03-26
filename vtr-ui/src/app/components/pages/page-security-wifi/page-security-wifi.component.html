@@ -22,9 +22,7 @@
 					</div>
 					<div class="col col-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
-
 							<div class="container-fluid">
-
 								<!--Start of Security Card Advisor-->
 								<div class="row mb-40">
 									<div class="col col-12">
@@ -83,12 +81,12 @@
 															<div class="coronet-section">
 																<div class="row">
 																	<div class="col">
-																		<div class="pull left view-security-check">
+																		<!-- <div class="pull left view-security-check">
 																			<a routerLink="/{{viewSecChkRoute}}">View
 																				more
 																				security
 																				checks</a>
-																		</div>
+																		</div> -->
 
 																	</div>
 
@@ -104,7 +102,6 @@
 														</div>
 
 														<!--end of Security Health Advisor When LWS is disabled-->
-
 													</div>
 												</div>
 											</div>
@@ -113,22 +110,12 @@
 								</div>
 								<!--end of Security Health Advisor-->
 
-
-								<!--start of Antivirus ad-->
-								<div class="row mb-40">
+								<div class="row">
 									<div class="col col-12">
-										<vtr-container-card [img]="'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg'"
-											[title]="'Try out McAfee anti-virus software for 6 months'"
-											[logoText]="'LENOVO SPECIAL'"
-											[action]="'Read More'"
-											[actionLink]="'http://www.google.com'"
-											[type]="'article'"
-											[ratioX]="4"
-											[ratioY]="4">
-										</vtr-container-card>
+										<vtr-article-item *ngFor="let item of articles, let i = index"
+											[item]="item"></vtr-article-item>
 									</div>
 								</div>
-								<!--end of Antivirus ad-->
 							</div>
 						</div>
 					</div>

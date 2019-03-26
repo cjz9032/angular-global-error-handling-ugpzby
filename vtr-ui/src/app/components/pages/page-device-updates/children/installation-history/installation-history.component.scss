@@ -7,11 +7,6 @@
 		// margin-left: 3rem;
 		padding: 0 2rem;
 
-		.heading {
-			color: $main_dark;
-			font-size: 2.5rem;
-		}
-
 		.installation-list {
 			margin-top: 2rem;
 			margin-bottom: 3rem;
@@ -69,6 +64,7 @@
 
 					.installation-details {
 						padding-left: 3rem;
+						font-size: 1.3rem;
 					}
 				}
 
@@ -131,5 +127,10 @@
 		height: 0.2rem;
 		background-color: $shade_lightest;
 		margin: 0.5rem 1.5rem 1.5rem 0rem;
+	}
+
+	.heading {
+		color: $main_dark;
+		font-size: 2rem;
 	}
 }

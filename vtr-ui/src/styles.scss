@@ -6,7 +6,7 @@ Now these fonts are part of application. Should fix this issue
 @import url("https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i");
 reference : https://fonts.google.com/specimen/Rubik
 */
-@import url("./assets/font/Rubik/font.css");
+// @import url("./assets/font/Rubik/font.css");
 
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "./styles-bootstrap.scss";
@@ -90,14 +90,13 @@ body {
 	padding: 0;
 	width: 100%;
 	height: 100%;
-	font-family: "Rubik";
+	font-family: "Segoe UI";
 	font-weight: 300;
 }
 
 button {
 	letter-spacing: 0.1em;
 }
-
 
 .vtr-page {
 	height: 100%;
@@ -277,7 +276,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			border: none;
 		}
 	}
-
 }
 
 /*Battery-charge-threshold-modal-styles*/
@@ -291,4 +289,138 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		background: $light;
 		padding: 4rem;
 	}
+}
+
+.Article-Detail-Modal {
+	.modal-dialog {
+		max-width: 70%;
+		overflow-y: initial !important;
+	}
+
+	.modal-content {
+		// height: 250px;
+		// height: 80%;
+		// overflow-y: auto;
+
+		border-radius: 1rem;
+		background: $light;
+		padding: 4rem;
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-weight: normal;
+			color: $blue-dark;
+			margin-top: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		h1 {
+			font-size: 3.1rem;
+			margin-top: 0rem;
+			margin-bottom: 3rem;
+		}
+
+		h2 {
+			font-size: 2.6rem;
+		}
+
+		h3 {
+			font-size: 2.2rem;
+		}
+
+		h4 {
+			font-size: 1.8rem;
+		}
+
+		h5 {
+			font-size: 1.4rem;
+		}
+
+		h6 {
+			font-size: 1rem;
+		}
+
+		p,
+		li,
+		ul {
+			font-size: 1.8rem;
+			color: $light-grey;
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+/*----- onclick-tooltip-style------*/
+.tooltip-click {
+	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+
+	&.show {
+		opacity: 1;
+	}
+
+	&.tooltip {
+		font-size: 1.6rem;
+		border-radius: 1rem;
+		font-family: "rubik";
+
+		ul {
+			padding: 0;
+			margin-bottom: 0;
+
+			li {
+				list-style: none;
+			}
+		}
+	}
+	&.bs-tooltip-top {
+		padding: 0;
+	}
+
+	.tooltip-inner {
+		background: $light;
+		border-radius: 1rem;
+		padding: 3rem;
+		color: $main_darker;
+		text-align: left;
+		max-width: 100%;
+
+		span {
+			font-weight: bold;
+		}
+
+		.reboot-text {
+			text-decoration: none;
+			color: $orange-light;
+			font-weight: bold;
+
+			fa-icon {
+				padding-right: 1rem;
+				font-size: 1.6rem;
+			}
+		}
+		.read {
+			color: $main;
+			text-decoration: underline;
+		}
+		.ignore {
+			color: $main;
+			text-decoration: underline;
+		}
+	}
+	.arrow::before {
+		border-top-color: $dark;
+	}
+}
+
+/*green and red button style*/
+
+.button-red{
+	background: linear-gradient(135deg, $stop 0%, $stop_light 100%);
+}
+.button-green{
+	background: linear-gradient(135deg, $go 0%, $go_light 100%);
 }
