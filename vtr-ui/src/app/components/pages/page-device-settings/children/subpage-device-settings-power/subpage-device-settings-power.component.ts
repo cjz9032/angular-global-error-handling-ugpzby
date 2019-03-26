@@ -26,12 +26,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	public conservationModeStatus = new FeatureStatus(false, true);
 	public expressChargingStatus = new FeatureStatus(false, true);
 
-	toggleAlwaysOnUsbFlag = true;
+	toggleAlwaysOnUsbFlag = false;
 	usbChargingCheckboxFlag = false;
 	powerMode = PowerMode.Sleep;
 	showEasyResumeSection = false;
 	showAirplanePowerModeSection = false;
-	toggleAirplanePowerModeFlag = true;
+	toggleAirplanePowerModeFlag = false;
 	dYTCRevision = 0;
 	cQLCapability = false;
 	tIOCapability = false;
@@ -250,7 +250,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				console.log('machine', machinename);
 				this.getAirplaneModeCapabilityThinkPad();
 				this.getAlwaysOnUSBCapabilityThinkPad();
-				this.getAlwaysOnUSBStatusThinkPad();
+
 				this.getEasyResumeCapabilityThinkPad();
 				break;
 			case 'ideapad':
@@ -304,7 +304,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 		switch (this.machineBrand) {
 			case 'thinkpad':
 				this.setAirplaneModeThinkPad(event);
-				console.log('Airplane Power mOde Set: ThinkPad');
+				console.log('Airplane Power mOde Set: ThinkPad',event);
 				break;
 			case 'ideapad':
 				console.log('Airplane Power mOde Set: ideapad');
@@ -467,6 +467,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				.then((value: boolean) => {
 					console.log('getAlwaysOnUSBCapabilityThinkPad.then', value);
 					this.alwaysOnUSBStatus.available = value;
+					this.getAlwaysOnUSBStatusThinkPad();
 				})
 				.catch(error => {
 					console.error('getAlwaysOnUSBCapabilityThinkPad', error);
@@ -605,7 +606,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			console.log('setAirplaneModeThinkPad entered', event);
 			if (this.powerService.isShellAvailable) {
 				this.powerService
-					.setAirplaneModeThinkPad(event)
+					.setAirplaneModeThinkPad(event.switchValue)
 					.then((value: boolean) => {
 						console.log('setAirplaneModeThinkPad.then', value);
 						this.getAirplaneModeThinkPad();

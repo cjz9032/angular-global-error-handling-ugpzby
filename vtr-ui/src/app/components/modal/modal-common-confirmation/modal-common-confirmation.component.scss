@@ -7,20 +7,18 @@
 	box-shadow: $drop_shadow;
 	padding: 3rem 4rem;
 	h1 {
-		font-size: 6rem;
+		font-size: 3.5rem;
 		font-weight: 300;
 		color: $light;
 	}
 	p {
-		font-size: 2rem;
+		font-size: 1.4rem;
 		color: $light;
 	}
 	ul {
-		list-style: none;
-		padding: 0;
 		li {
 			text-decoration: none;
-			font-size: 2rem;
+			font-size: 1.4rem;
 			color: $light;
 		}
 	}

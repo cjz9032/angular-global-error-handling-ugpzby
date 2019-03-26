@@ -134,7 +134,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSArticles(queryOptions).then(
+		this.cmsService.fetchCMSArticles(queryOptions, true).then(
 			(response: any) => {
 				this.articles = response;
 			},

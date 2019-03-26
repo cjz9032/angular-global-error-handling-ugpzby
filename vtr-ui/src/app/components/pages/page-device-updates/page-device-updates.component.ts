@@ -50,6 +50,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	private notificationSubscription: Subscription;
 	private isComponentInitialized = false;
 	public updateTitle = '';
+	private isUserCancelledUpdateCheck = false;
+	public isInstallingAllUpdates = true;
 
 	nextUpdatedDate = '11/12/2018 at 10:00 AM';
 	installationHistory = 'Installation History';
@@ -234,8 +236,11 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	public onCheckForUpdates() {
 		if (this.systemUpdateService.isShellAvailable) {
+			this.setUpdateTitle();
+			this.isUserCancelledUpdateCheck = false;
 			this.isUpdateCheckInProgress = true;
 			this.isUpdatesAvailable = false;
+			this.isInstallingAllUpdates = true;
 			this.resetState();
 			this.systemUpdateService.checkForUpdates();
 		}
@@ -243,6 +248,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	public onCancelUpdateCheck() {
 		if (this.systemUpdateService.isShellAvailable) {
+			this.isUserCancelledUpdateCheck = true;
 			this.systemUpdateService.cancelUpdateCheck();
 		}
 	}
@@ -255,6 +261,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private installAllUpdate() {
 		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
+			this.isInstallingAllUpdates = true;
 			this.resetState();
 			this.systemUpdateService.installAllUpdates();
 		}
@@ -262,6 +269,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private installSelectedUpdate() {
 		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
+			this.isInstallingAllUpdates = false;
 			this.resetState();
 			this.systemUpdateService.installSelectedUpdates();
 		}
@@ -311,6 +319,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public showInstallConfirmation(source: string) {
 		const modalRef = this.modalService
 			.open(ModalCommonConfirmationComponent, {
+				backdrop: 'static',
 				size: 'lg',
 				centered: true,
 				windowClass: 'common-confirmation-modal'
@@ -385,8 +394,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private filterUpdate(updateList: Array<AvailableUpdateDetail>, packageSeverity: string) {
 		const updates = updateList.filter((value: AvailableUpdateDetail) => {
-			return (value.packageSeverity.toLowerCase() === packageSeverity.toLowerCase()
-				&& value.isSelected);
+			return (value.packageSeverity.toLowerCase() === packageSeverity.toLowerCase());
 		});
 		return updates;
 	}
@@ -409,11 +417,14 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					for (const key in SystemUpdateStatusMessage) {
 						if (SystemUpdateStatusMessage.hasOwnProperty(key)) {
 							if (SystemUpdateStatusMessage[key].code === payload.status) {
-								this.setUpdateTitle(SystemUpdateStatusMessage[key].message);
+								if (this.isUserCancelledUpdateCheck) {
+									// when user cancels update check its throwing unknown exception
+								} else {
+									this.setUpdateTitle(SystemUpdateStatusMessage[key].message);
+								}
 							}
 						}
 					}
-
 					break;
 				case UpdateProgress.UpdatesAvailable:
 					this.isUpdateCheckInProgress = false;
@@ -421,9 +432,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isUpdatesAvailable = true;
 					this.setUpdateByCategory(payload.updateList);
 					break;
-				// case UpdateProgress.UpdatesNotAvailable:
-				// 	// todo : no updates available msg
-				// 	break;
 				case UpdateProgress.InstallationStarted:
 					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 					break;
@@ -437,7 +445,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				case UpdateProgress.InstallationComplete:
 					this.isUpdateDownloading = false;
 					this.isInstallationCompleted = true;
-					this.isInstallationSuccess = (payload.status === SystemUpdateStatusMessage.SUCCESS.code);
+					this.isInstallationSuccess = (parseInt(payload.status, 10) === SystemUpdateStatusMessage.SUCCESS.code);
 					this.checkRebootRequired();
 					break;
 				case UpdateProgress.AutoUpdateStatus:
@@ -482,7 +490,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				case UpdateProgress.ScheduleUpdateCheckComplete:
 					this.isUpdateDownloading = false;
 					this.isInstallationCompleted = true;
-					this.isInstallationSuccess = (payload.status === SystemUpdateStatusMessage.SUCCESS.code);
+					this.isInstallationSuccess = (parseInt(payload.status, 10) === SystemUpdateStatusMessage.SUCCESS.code);
 					this.setUpdateByCategory(payload.updateList);
 					this.checkRebootRequired();
 					break;
