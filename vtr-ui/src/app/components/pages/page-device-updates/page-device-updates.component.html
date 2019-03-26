@@ -45,6 +45,7 @@
 									[recommendedUpdates]="recommendedUpdates"
 									[isInstallationCompleted]="isInstallationCompleted"
 									[isInstallationSuccess]="isInstallationSuccess"
+									[isInstallingAllUpdates]="isInstallingAllUpdates"
 									(checkChange)="onUpdateSelectionChange($event)"
 									(installAllUpdate)="showInstallConfirmation('all')"
 									(installSelectedUpdate)="showInstallConfirmation('selected')">
@@ -184,17 +185,21 @@
 							</div>
 
 							<div class="row">
-								<div class="col col-12">
+								<div class="col col-12 mb-40">
 									<vtr-container-card
 										[img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
 										[title]="'Lenovo Support website'"
 										[logoText]="'LENOVO SPECIAL'"
 										[action]="'Read More'"
-										[actionLink]="'http://www.google.com'"
+										[actionLink]="'https://pcsupport.lenovo.com/'"
 										[type]="'partnerarticle'"
 										[ratioX]="4"
 										[ratioY]="2">
 									</vtr-container-card>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col col-12 mb-40">
 									<vtr-article-item *ngFor="let item of articles, let i = index"
 										[item]="item"></vtr-article-item>
 								</div>

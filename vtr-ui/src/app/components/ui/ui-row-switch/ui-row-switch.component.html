@@ -7,7 +7,7 @@
 		[ngClass]="{'vtr-disabled': disabled}">
 		<div class="row m-0">
 			<div class="col col-xs-8"
-				[ngClass]="{'col-md-8': type!=undefined && type==='auto-updates', 'col-md-8': type!=undefined && type==='camera', 'col-md-10':type===undefined}">
+				[ngClass]="{'col-md-8': (type==='auto-updates' || type==='camera'), 'col-md-10':type===undefined}">
 				<div class="container-fluid p-0">
 					<div class="row m-0">
 						<div class="col-auto left-icon-column"
@@ -34,7 +34,7 @@
 			<div class="col col-xs-4">
 				<div class="row">
 					<div class="p-0"
-					[ngClass]="{'ml-auto': type!=='camera'}"
+						[ngClass]="{'ml-auto': type!=='camera'}"
 						*ngIf="resetText.length > 0">
 						<button type="button"
 							class="btn btn-link text"
@@ -58,11 +58,11 @@
 					</div>
 
 					<div class="p-0"
-					[ngClass]="{'pl-1': type==='camera', 'pl-2': type===undefined}"
+						[ngClass]="{'pl-4': type==='camera', 'pl-2': type===undefined}"
 						*ngIf="rightIcon.length > 0">
 						<fa-icon class="right-icon"
 							triggers="click:blur"
-							placement="top"
+							placement="auto"
 							[ngbTooltip]="tooltipRef"
 							[icon]="rightIcon"
 							container="body"

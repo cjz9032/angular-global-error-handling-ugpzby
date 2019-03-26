@@ -4,7 +4,6 @@ import { NgbTooltip, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { ModalUpdateChangeLogComponent } from '../../modal/modal-update-change-log.component/modal-update-change-log.component';
-import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 
 @Component({
 	selector: 'vtr-ui-list-checkbox',
@@ -27,13 +26,13 @@ export class UiListCheckboxComponent implements OnInit {
 	public downloadSize: string;
 	public diskSpaceNeeded: string;
 	public readMeUrl: string;
+	public packageRebootType: string;
 	// Random number is used to have unique id of each input field
 	randomNumber: number = Math.floor(new Date().valueOf() * Math.random());
 
 	constructor(
 		private commonService: CommonService
 		, private modalService: NgbModal
-		, private systemUpdateService: SystemUpdateService
 	) { }
 
 	ngOnInit() { }
@@ -50,13 +49,14 @@ export class UiListCheckboxComponent implements OnInit {
 			this.downloadSize = this.commonService.formatBytes(parseInt(update.packageSize, 10));
 			this.diskSpaceNeeded = this.commonService.formatBytes(parseInt(update.diskSpaceRequired, 10));
 			this.readMeUrl = update.readmeUrl;
+			this.packageRebootType = update.packageRebootType;
 		}
 	}
 
 	public onReadMoreClick($event) {
 		console.log('onReadMoreClick');
 		this.readMore.emit($event);
-		const readMeUrl = 'https://download.lenovo.com/consumer/desktop/lnvusbss.txt';
+		// const readMeUrl = 'https://download.lenovo.com/consumer/desktop/lnvusbss.txt';
 		const modalRef = this.modalService.open(ModalUpdateChangeLogComponent,
 			{
 				backdrop: 'static',
@@ -64,7 +64,7 @@ export class UiListCheckboxComponent implements OnInit {
 				windowClass: 'update-read-more-modal-size',
 				centered: true
 			});
-		modalRef.componentInstance.url = readMeUrl; // this.readMeUrl;
+		modalRef.componentInstance.url = this.readMeUrl;
 	}
 
 	public onIgnoreUpdateClick($event) {
