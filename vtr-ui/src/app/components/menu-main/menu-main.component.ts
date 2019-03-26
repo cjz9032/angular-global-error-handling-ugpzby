@@ -202,9 +202,8 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	OpenLenovoId() {
 		this.modalService.open(ModalLenovoIdComponent, {
 			backdrop: 'static',
-			size: 'lg',
 			centered: true,
-			windowClass: 'lenovo-modal-size'
+			windowClass: 'lenovo-id-modal-size'
 		});
 	}
 
