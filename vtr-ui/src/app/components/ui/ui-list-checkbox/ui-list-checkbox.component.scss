@@ -103,12 +103,12 @@
 
 		.list-group-item {
 			background: $shade_extralight;
-			padding: 1.5rem;
+			padding: 1.5rem 1rem 1.5rem 0.2rem;
 
 			.update-title {
 				font-size: 1.6rem;
 				font-weight: bold;
-				padding-top: 1.2rem;
+				padding-top: 0rem;
 
 				.update-number {
 					font-weight: normal;
