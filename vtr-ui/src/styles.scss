@@ -94,6 +94,16 @@ body {
 	font-weight: 300;
 }
 
+svg-icon {
+	svg {
+		width: 100%;
+		height: 100%;
+		path {
+			fill: currentColor;
+		}
+	}
+}
+
 button {
 	letter-spacing: 0.1em;
 }

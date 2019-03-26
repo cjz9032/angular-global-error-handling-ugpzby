@@ -9,6 +9,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { CookieService } from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 // CUSTOM MODULES
 import { AppRoutingModule } from './app-routing.module';
@@ -97,6 +98,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
+import { fal } from '@fortawesome/pro-light-svg-icons';
+
 
 import { EyeCareModeComponent } from './components/display/eye-care-mode/eye-care-mode.component';
 import { UiButtonComponent } from './components/ui/ui-button/ui-button.component';
@@ -132,6 +135,7 @@ import { DolbyModesTranslationPipe } from './pipe/dolby-modes-translation.pipe';
 library.add(fas);
 library.add(fab);
 library.add(far);
+library.add(fal);
 
 @NgModule({
 	declarations: [
@@ -222,6 +226,7 @@ library.add(far);
 		AppRoutingModule,
 		FormsModule,
 		HttpClientModule,
+		AngularSvgIconModule,
 		FontAwesomeModule,
 		NgbModule,
 		Ng5SliderModule,
