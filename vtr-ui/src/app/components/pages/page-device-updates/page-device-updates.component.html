@@ -2,8 +2,8 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
-							 [back]="back"
-							 [title]="title">
+				[back]="back"
+				[title]="title">
 			</vtr-header-main>
 		</div>
 	</div>
@@ -19,16 +19,16 @@
 								<div class="row">
 									<div class="col col-12">
 										<vtr-widget-device-update [title]="updateTitle"
-																  [subTitle1]="getLastUpdatedText()"
-																  [subTitle2]="getNextUpdatedScanText()"
-																  [buttonText]="'Check For Updates'"
-																  [percent]="percentCompleted"
-																  [showProgress]="isUpdateCheckInProgress"
-																  [isUpdateDownloading]="isUpdateDownloading"
-																  [installingPercent]="installationPercent"
-																  [downloadingPercent]="downloadingPercent"
-																  (checkForUpdate)="onCheckForUpdates()"
-																  (cancelUpdateCheck)="onCancelUpdateCheck()">
+											[subTitle1]="getLastUpdatedText()"
+											[subTitle2]="getNextUpdatedScanText()"
+											[buttonText]="'Check For Updates'"
+											[percent]="percentCompleted"
+											[showProgress]="isUpdateCheckInProgress"
+											[isUpdateDownloading]="isUpdateDownloading"
+											[installingPercent]="installationPercent"
+											[downloadingPercent]="downloadingPercent"
+											(checkForUpdate)="onCheckForUpdates()"
+											(cancelUpdateCheck)="onCancelUpdateCheck()">
 										</vtr-widget-device-update>
 									</div>
 								</div>
@@ -40,15 +40,15 @@
 								</div> -->
 
 								<vtr-available-updates *ngIf="isUpdateListVisible()"
-													   [criticalUpdates]="criticalUpdates"
-													   [optionalUpdates]="optionalUpdates"
-													   [recommendedUpdates]="recommendedUpdates"
-													   [isInstallationCompleted]="isInstallationCompleted"
-													   [isInstallationSuccess]="isInstallationSuccess"
-													   [isInstallingAllUpdates]="isInstallingAllUpdates"
-													   (checkChange)="onUpdateSelectionChange($event)"
-													   (installAllUpdate)="showInstallConfirmation('all')"
-													   (installSelectedUpdate)="showInstallConfirmation('selected')">
+									[criticalUpdates]="criticalUpdates"
+									[optionalUpdates]="optionalUpdates"
+									[recommendedUpdates]="recommendedUpdates"
+									[isInstallationCompleted]="isInstallationCompleted"
+									[isInstallationSuccess]="isInstallationSuccess"
+									[isInstallingAllUpdates]="isInstallingAllUpdates"
+									(checkChange)="onUpdateSelectionChange($event)"
+									(installAllUpdate)="showInstallConfirmation('all')"
+									(installSelectedUpdate)="showInstallConfirmation('selected')">
 								</vtr-available-updates>
 
 								<!-- Installation timeline is scope of MVP-2 -->
@@ -161,7 +161,7 @@
 										</div> -->
 
 										<vtr-container-collapsible [cardTitle]="'Full History'"
-																   [isCollapsed]="true">
+											[isCollapsed]="true">
 											<vtr-installation-history (reinstallUpdate)="onReinstallUpdate($event)">
 											</vtr-installation-history>
 										</vtr-container-collapsible>
@@ -178,18 +178,17 @@
 								<div class="col col-12 cont">
 
 									<vtr-widget-devcice-update-settings [title]="'Auto update settings'"
-																		componentName="Auto Update Settings"
-																		[description]="'Automatically Install Updates'"
-																		[items]="autoUpdateOptions"
-																		(toggleOnOff)="onUpdateToggleOnOff($event)">
+										componentName="Auto Update Settings"
+										[description]="'Automatically Install Updates'"
+										[items]="autoUpdateOptions"
+										(toggleOnOff)="onUpdateToggleOnOff($event)">
 									</vtr-widget-devcice-update-settings>
 								</div>
 							</div>
 
 							<div class="row">
 								<div class="col col-12 mb-40">
-									<vtr-container-card
-										[img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
+									<vtr-container-card [img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
 										[title]="'Lenovo Support website'"
 										[logoText]="'LENOVO SPECIAL'"
 										[action]="'Read More'"
@@ -203,15 +202,15 @@
 							<div class="row">
 								<div class="col col-12 mb-40">
 									<vtr-article-item *ngFor="let item of articles, let i = index"
-													  [item]="item"></vtr-article-item>
+										[item]="item"></vtr-article-item>
 								</div>
 							</div>
 
 							<div class="row"
-								 *ngIf="isRebootRequired">
+								*ngIf="isRebootRequired">
 								<div class="col col-12 pb-40">
 									<vtr-widget-reboot (dismissClick)="onDismissClick($event)"
-													   (rebootClick)="onRebootClick($event)">
+										(rebootClick)="onRebootClick($event)">
 									</vtr-widget-reboot>
 								</div>
 							</div>

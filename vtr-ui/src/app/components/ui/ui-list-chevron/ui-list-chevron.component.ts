@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
-import {BaseComponent} from "../../base/base.component";
+import { BaseComponent } from "../../base/base.component";
 
 @Component({
 	selector: 'vtr-ui-list-chevron',
@@ -8,7 +8,7 @@ import {BaseComponent} from "../../base/base.component";
 	styleUrls: ['./ui-list-chevron.component.scss']
 })
 
-export class UiListChevronComponent  extends BaseComponent implements OnInit {
+export class UiListChevronComponent extends BaseComponent implements OnInit {
 
 	@Input() items: any[];
 	@Input() iconPlacement = 'right';
@@ -30,7 +30,7 @@ export class UiListChevronComponent  extends BaseComponent implements OnInit {
 		2: 'circle'
 	};
 
-	constructor(private deviceService: DeviceService) {super(); }
+	constructor(private deviceService: DeviceService) { super(); }
 
 
 	getItemStatusClass(item) {

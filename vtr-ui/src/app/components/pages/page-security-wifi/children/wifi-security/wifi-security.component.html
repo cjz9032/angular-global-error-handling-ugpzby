@@ -35,7 +35,8 @@
 										[icon]="['fas', 'chevron-up']"></fa-icon>
 								</div>
 								<div class="switch">
-									<vtr-ui-switch-onoff name="wifisecurity" [value]="value"></vtr-ui-switch-onoff>
+									<vtr-ui-switch-onoff name="wifisecurity"
+										[value]="value"></vtr-ui-switch-onoff>
 								</div>
 							</div>
 						</div>
@@ -48,10 +49,18 @@
 								<div class="cardTitle">
 									<h3>Network History</h3>
 									<small class="status">
-										Show: <a href="" vtrMetrics metricsItem="link.Malicious" metricsEvent="itemclick" metricsParent="wifisecurity"
+										Show: <a href=""
+											vtrMetrics
+											metricsItem="link.Malicious"
+											metricsEvent="itemclick"
+											metricsParent="wifisecurity"
 											(click)="$event.preventDefault();showAllNetworks=false;"
 											[ngClass]="{'active': !showAllNetworks}">Malicious</a> / <a href=""
-											(click)="$event.preventDefault();showAllNetworks=true;"  vtrMetrics metricsItem="link.all" metricsEvent="itemclick" metricsParent="wifisecurity"
+											(click)="$event.preventDefault();showAllNetworks=true;"
+											vtrMetrics
+											metricsItem="link.all"
+											metricsEvent="itemclick"
+											metricsParent="wifisecurity"
 											[ngClass]="{'active': showAllNetworks}">All</a>
 									</small>
 								</div>

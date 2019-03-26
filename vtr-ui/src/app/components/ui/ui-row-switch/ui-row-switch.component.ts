@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalBatteryChargeThresholdComponent } from '../../modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
-import {BaseComponent} from "../../base/base.component";
+import { BaseComponent } from "../../base/base.component";
 import { CommonService } from 'src/app/services/common/common.service';
 
 
@@ -16,7 +16,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 	selector: 'vtr-ui-row-switch',
 	templateUrl: './ui-row-switch.component.html',
 	styleUrls: ['./ui-row-switch.component.scss'],
-	exportAs:'uiRowSwitch'
+	exportAs: 'uiRowSwitch'
 })
 export class UiRowSwitchComponent extends BaseComponent {
 	@ViewChild('childContent') childContent: any;
@@ -50,7 +50,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 	constructor(
 		public modalService: NgbModal
 		// , private commonService: CommonService
-	) {super(); }
+	) { super(); }
 
 
 	ngOnInit() {

@@ -1,5 +1,5 @@
-import {Directive, ElementRef, HostListener, Input} from '@angular/core';
-import {VantageShellService} from '../services/vantage-shell/vantage-shell.service';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { VantageShellService } from '../services/vantage-shell/vantage-shell.service';
 
 
 declare var window;
@@ -31,9 +31,9 @@ export class MetricsDirective {
 	@HostListener('click', ['$event.target'])
 	onclick(target) {
 
-		var parents=this.getParents(target,"[data-component]");
-		if(!this.metricsParent && parents){
-			this.metricsParent=parents.join('.');
+		var parents = this.getParents(target, "[data-component]");
+		if (!this.metricsParent && parents) {
+			this.metricsParent = parents.join('.');
 		}
 		const location = window.location.href.substring(window.location.href.indexOf('#') + 2).replace(/[`~!@#$%^&*()_|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '');
 		this.metricsItem = typeof this.metricsItem === 'string' ? this.metricsItem.split(" ").join("").toLowerCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '').substr(0, 25) : this.metricsItem;
@@ -105,53 +105,53 @@ export class MetricsDirective {
 		}
 	}
 
-	getParents (elem, selector?) {
+	getParents(elem, selector?) {
 
 		var parents = [];
 		var firstChar;
-		if ( selector ) {
+		if (selector) {
 			firstChar = selector.charAt(0);
 		}
 
 		// Get matches
-		for ( ; elem && elem !== document; elem = elem.parentNode ) {
-			if ( selector ) {
+		for (; elem && elem !== document; elem = elem.parentNode) {
+			if (selector) {
 
 				// If selector is a class
-				if ( firstChar === '.' ) {
-					if ( elem.classList.contains( selector.substr(1) ) ) {
-						parents.push( elem );
+				if (firstChar === '.') {
+					if (elem.classList.contains(selector.substr(1))) {
+						parents.push(elem);
 					}
 				}
 
 				// If selector is an ID
-				if ( firstChar === '#' ) {
-					if ( elem.id === selector.substr(1) ) {
-						parents.push( elem );
+				if (firstChar === '#') {
+					if (elem.id === selector.substr(1)) {
+						parents.push(elem);
 					}
 				}
 
 				// If selector is a data attribute
-				if ( firstChar === '[' ) {
+				if (firstChar === '[') {
 
-					if ( elem.hasAttribute( selector.substr(1, selector.length - 2) ) ) {
-						parents.push( elem.getAttribute(selector.substr(1, selector.length - 2)) );
+					if (elem.hasAttribute(selector.substr(1, selector.length - 2))) {
+						parents.push(elem.getAttribute(selector.substr(1, selector.length - 2)));
 					}
 				}
 
 				// If selector is a tag
-				if ( elem.tagName.toLowerCase() === selector ) {
-					parents.push( elem );
+				if (elem.tagName.toLowerCase() === selector) {
+					parents.push(elem);
 				}
 
 			} else {
-				parents.push( elem );
+				parents.push(elem);
 			}
 
 		}
 
 		// Return parents if any exist
-		if ( parents.length === 0 ) {
+		if (parents.length === 0) {
 			return null;
 		} else {
 			return parents.reverse();

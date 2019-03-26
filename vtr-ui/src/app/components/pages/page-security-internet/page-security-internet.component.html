@@ -2,8 +2,8 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
-							 [back]="back"
-							 [title]="title"></vtr-header-main>
+				[back]="back"
+				[title]="title"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -15,13 +15,13 @@
 							<div class="vtr-page-shift-up">
 								<div class="vtr-page-security-internet">
 									<div class="container-fluid p-40 security-card"
-										 *ngIf="IsDashlaneInstalled">
+										*ngIf="IsDashlaneInstalled">
 										<div class="row">
 											<div class="col">
 												<div class="heading">SurfEasy Virtual Private Network</div>
 											</div>
 											<div class="pull right"><img class="surfeasy_logo_teal"
-																		 src="../../../../assets/images/SurfEasy-logo.png"/>
+													src="../../../../assets/images/SurfEasy-logo.png" />
 											</div>
 										</div>
 										<div class="row mt-20">
@@ -61,7 +61,7 @@
 														<div>
 															<div class="button-box">
 																<button type="button"
-																		class="btn btn-danger btn-round-xs text-uppercase button-red">
+																	class="btn btn-danger btn-round-xs text-uppercase button-red">
 																	Not Installed
 																</button>
 															</div>
@@ -77,13 +77,12 @@
 											<div class=" pull right">
 												<div class="col-12">
 													<button type="button"
-
-															vtrMetrics
-															metricsEvent="itemClick"
-															metricsParent="surfeasy-virtual-private-network"
-															metricsItem="btn.get surfeasy"
-															(click)="surfeasy()"
-															class="btn btn-primary text-uppercase btn-round-sm btn-lg">
+														vtrMetrics
+														metricsEvent="itemClick"
+														metricsParent="surfeasy-virtual-private-network"
+														metricsItem="btn.get surfeasy"
+														(click)="surfeasy()"
+														class="btn btn-primary text-uppercase btn-round-sm btn-lg">
 
 														Get SurfEasy
 													</button>
@@ -92,13 +91,13 @@
 										</div>
 									</div>
 									<div class="container-fluid p-40 security-card"
-										 *ngIf="!IsDashlaneInstalled">
+										*ngIf="!IsDashlaneInstalled">
 										<div class="row">
 											<div class="col">
 												<div class="heading">SurfEasy Virtual Private Network</div>
 											</div>
 											<div class="pull right"><img class="surfeasy_logo_teal"
-																		 src="../../../../assets/images/SurfEasy-logo.png"/>
+													src="../../../../assets/images/SurfEasy-logo.png" />
 											</div>
 										</div>
 										<div class="row mt-20">
@@ -137,7 +136,7 @@
 														<div>
 															<div class="button-box">
 																<button type="button"
-																		class="btn btn-primary btn-round-xs text-uppercase">
+																	class="btn btn-primary btn-round-xs text-uppercase">
 																	Installed
 																</button>
 															</div>
@@ -154,12 +153,12 @@
 											<div class=" pull right">
 												<div class="col-12">
 													<button type="button"
-															(click)="surfeasy()"
-															vtrMetrics
-															metricsEvent="itemClick"
-															metricsParent="surfeasy-virtual-private-network"
-															metricsItem="btn.opensureasy"
-															class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
+														(click)="surfeasy()"
+														vtrMetrics
+														metricsEvent="itemClick"
+														metricsParent="surfeasy-virtual-private-network"
+														metricsItem="btn.opensureasy"
+														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
 
 														Open SurfEasy
 													</button>
@@ -171,7 +170,7 @@
 							</div>
 						</div>
 						<div class="row vtr-page-security-internet"
-							 *ngIf="IsDashlaneInstalled">
+							*ngIf="IsDashlaneInstalled">
 							<div class="row">
 								<div class="col col-12 col-sm-12 mt-40">
 									<div>
@@ -186,7 +185,7 @@
 								<div class="col col-6 mt-40">
 									<div class="col">
 										<img src="../../../../assets/images/surfeasy-left-img.png"
-											 class="surfeasy-side-left-img"/>
+											class="surfeasy-side-left-img" />
 									</div>
 								</div>
 								<div class="col col-6 mt-40">
@@ -281,22 +280,20 @@
 								<div class="row top-line">
 									<div class="col">
 										<div class="list-heading">Powered By SurfEasy</div>
-										<p class="text-regular">Read more on the <a
-											href="https://www.surfeasy.com/privacy_policy/"
-											target="_blank"
-											class="learnmore">Privacy Policy</a> and <a
-											href="https://www.surfeasy.com/terms_of_service/"
-											target="_blank"
-											class="learnmore">Terms of Services</a></p>
+										<p class="text-regular">Read more on the <a href="https://www.surfeasy.com/privacy_policy/"
+												target="_blank"
+												class="learnmore">Privacy Policy</a> and <a href="https://www.surfeasy.com/terms_of_service/"
+												target="_blank"
+												class="learnmore">Terms of Services</a></p>
 									</div>
 									<div class="pull right"><img class="surfeasy_logo_bottom"
-																 src="../../../../assets/images/SurfEasy-logo.png"/>
+											src="../../../../assets/images/SurfEasy-logo.png" />
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="row vtr-connected-security-internet"
-							 *ngIf="!IsDashlaneInstalled">
+							*ngIf="!IsDashlaneInstalled">
 							<div class="row">
 								<div class="col col-12 col-sm-12 mt-40">
 									<div>
@@ -312,7 +309,7 @@
 								<div class="col col-6 mt-40">
 									<div class="col">
 										<img src="../../../../assets/images/SurfEasy-Left-img-2.png"
-											 class="surfeasy-side-right-img pull-right"/>
+											class="surfeasy-side-right-img pull-right" />
 									</div>
 								</div>
 								<div class="col col-6 mt-40">
@@ -452,16 +449,14 @@
 								<div class="row top-line">
 									<div class="col">
 										<div class="list-heading">Powered By SurfEasy</div>
-										<p class="text-regular">Read more on the <a
-											href="https://www.surfeasy.com/privacy_policy/"
-											target="_blank"
-											class="learnmore">Privacy Policy</a> and <a
-											href="https://www.surfeasy.com/terms_of_service/"
-											target="_blank"
-											class="learnmore">Terms of Services</a></p>
+										<p class="text-regular">Read more on the <a href="https://www.surfeasy.com/privacy_policy/"
+												target="_blank"
+												class="learnmore">Privacy Policy</a> and <a href="https://www.surfeasy.com/terms_of_service/"
+												target="_blank"
+												class="learnmore">Terms of Services</a></p>
 									</div>
 									<div class="pull right"><img class="surfeasy_logo_teal"
-																 src="../../../../assets/images/SurfEasy-logo.png"/>
+											src="../../../../assets/images/SurfEasy-logo.png" />
 									</div>
 								</div>
 							</div>
@@ -474,10 +469,9 @@
 								<div class="row mb-40">
 									<div class="col col-12">
 										<vtr-widget-status [title]="'Security Advisor'"
-
-														   componentName="security advisor"
-														   [description]="'CHECK IF YOUR DEVICE IS SECURED.'"
-														   [items]="mockService.securityStatus">
+											componentName="security advisor"
+											[description]="'CHECK IF YOUR DEVICE IS SECURED.'"
+											[items]="mockService.securityStatus">
 
 										</vtr-widget-status>
 									</div>
@@ -486,7 +480,7 @@
 								<div class="row">
 									<div class="col col-12">
 										<vtr-article-item *ngFor="let item of articles, let i = index"
-														  [item]="item"></vtr-article-item>
+											[item]="item"></vtr-article-item>
 									</div>
 								</div>
 							</div>

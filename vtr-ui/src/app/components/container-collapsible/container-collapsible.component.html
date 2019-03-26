@@ -11,7 +11,12 @@
 							</div>
 							<div class="col-auto px-3"
 								*ngIf="allowCollapse">
-								<div class="collapse-control" vtrMetrics metricsEvent="itemClick" [metricsValue]="isCollapsed" [metricsItem]="'btn.collapse'" [metricsParent]="cardTitle"
+								<div class="collapse-control"
+									vtrMetrics
+									metricsEvent="itemClick"
+									[metricsValue]="isCollapsed"
+									[metricsItem]="'btn.collapse'"
+									[metricsParent]="cardTitle"
 									(click)="$event.preventDefault();isCollapsed=!isCollapsed;">
 									<div *ngIf="isCollapsed"
 										class="collapse-text">Expand</div>
