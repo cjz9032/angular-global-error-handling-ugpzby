@@ -33,7 +33,7 @@
 						<div>
 							<fa-icon class="question"
 								triggers="click:blur"
-								placement="top"
+								placement="auto"
 								[ngbTooltip]="systemUpdateTooltip"
 								[icon]="['far', 'question-circle']"
 								container="body"
@@ -72,7 +72,7 @@
 				</div>
 				<fa-icon class="question"
 					triggers="click:blur"
-					placement="top"
+					placement="auto"
 					[ngbTooltip]="systemUpdateTooltip"
 					[icon]="['far', 'question-circle']"
 					container="body"
@@ -86,6 +86,7 @@
 <ng-template #systemUpdateTooltip>
 	<div class="tooltip-container">
 		<a href="#"
+			*ngIf="packageRebootType === 'RebootForced'"
 			class="reboot-text">
 			<div class="row">
 				<div class="col-auto pl-0 pr-0">
