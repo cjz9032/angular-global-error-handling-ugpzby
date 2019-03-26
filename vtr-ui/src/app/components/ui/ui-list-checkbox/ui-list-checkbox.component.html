@@ -9,7 +9,7 @@
 							<input id="{{ 'updateCheckbox' + randomNumber + i }}"
 								type="checkbox"
 								class="custom-control-input"
-								checked=""
+								[checked]="item.isSelected"
 								[name]="item.packageName"
 								(change)="onCheckChange($event)" />
 							<label class="custom-control-label "
@@ -52,18 +52,20 @@
 			*ngFor="let item of items">
 			<div class="row align-items-center">
 				<div class="col-auto px-3">
-					<div class="bullet-icon-times"
-						*ngIf="item.installationStatus.toLocaleLowerCase() === 'installfailed' || item.installationStatus.toLocaleLowerCase() === ''">
-						<div class="icon-bkg">
-							<fa-icon [icon]="['fas', 'times']"></fa-icon>
+					<div *ngIf="item.installationStatus.toLocaleLowerCase() === 'success'; else elseBlock">
+						<div class="bullet-icon-check">
+							<div class="icon-bkg">
+								<fa-icon [icon]="['fas', 'check']"></fa-icon>
+							</div>
 						</div>
 					</div>
-					<div class="bullet-icon-check"
-						*ngIf="item.installationStatus.toLocaleLowerCase() === 'success'">
-						<div class="icon-bkg">
-							<fa-icon [icon]="['fas', 'check']"></fa-icon>
+					<ng-template #elseBlock>
+						<div class="bullet-icon-times">
+							<div class="icon-bkg">
+								<fa-icon [icon]="['fas', 'times']"></fa-icon>
+							</div>
 						</div>
-					</div>
+					</ng-template>
 				</div>
 				<div class="col col-11 text px-0 button-box">
 					<div class="update-title">{{item.packageDesc}}</div>

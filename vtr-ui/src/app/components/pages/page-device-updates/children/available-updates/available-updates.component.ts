@@ -13,6 +13,7 @@ export class AvailableUpdatesComponent implements OnInit {
 	@Input() optionalUpdates: AvailableUpdateDetail[];
 	@Input() isInstallationSuccess = false;
 	@Input() isInstallationCompleted = false;
+	@Input() isInstallingAllUpdates = true;
 
 	@Output() checkChange = new EventEmitter<any>();
 	@Output() installAllUpdate = new EventEmitter<any>();
@@ -21,6 +22,19 @@ export class AvailableUpdatesComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
+		if (!this.isInstallingAllUpdates) {
+			this.criticalUpdates = this.criticalUpdates.filter((item: AvailableUpdateDetail) => {
+				return item.isSelected;
+			});
+
+			this.recommendedUpdates = this.recommendedUpdates.filter((item: AvailableUpdateDetail) => {
+				return item.isSelected;
+			});
+
+			this.optionalUpdates = this.optionalUpdates.filter((item: AvailableUpdateDetail) => {
+				return item.isSelected;
+			});
+		}
 	}
 
 	onInstallAllUpdates(event) {

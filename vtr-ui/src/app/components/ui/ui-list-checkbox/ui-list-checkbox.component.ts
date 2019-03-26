@@ -4,7 +4,6 @@ import { NgbTooltip, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { ModalUpdateChangeLogComponent } from '../../modal/modal-update-change-log.component/modal-update-change-log.component';
-import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 
 @Component({
 	selector: 'vtr-ui-list-checkbox',
@@ -33,7 +32,6 @@ export class UiListCheckboxComponent implements OnInit {
 	constructor(
 		private commonService: CommonService
 		, private modalService: NgbModal
-		, private systemUpdateService: SystemUpdateService
 	) { }
 
 	ngOnInit() { }
