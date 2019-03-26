@@ -95,9 +95,8 @@
 														</div>
 														<div class="col">
 															<div class="text-regular">
-																Visit the Windows Hello page and register your
-																fingerprint
-																Visit Windows Hello system settings
+																Visit the Windows Hello page and register your fingerprint.
+																<a [href]="windowsHello.windowsHelloProtocol | sanitizeUrl">Visit Windows Hello</a> in system settings
 															</div>
 														</div>
 													</div>
@@ -122,7 +121,7 @@
 													</div>
 												</div>
 											</li>
-											<li class="good">
+											<!-- <li class="good">
 												<div class="container-fluid">
 													<div class="row align-items-center">
 														<div class="col-auto">
@@ -141,7 +140,7 @@
 														</div>
 													</div>
 												</div>
-											</li>
+											</li> -->
 											<li class="good">
 												<div class="container-fluid">
 													<div class="row align-items-center">
@@ -154,9 +153,9 @@
 														</div>
 														<div class="col">
 															<div class="text-regular">
-																Start using Windows Hello to log into Microsoft Apps
-																such as Outlook, OneDrive, Office 365 and Xbox Live.
-																Visit Microsoft
+																Start using Windows Hello to log into Microsoft Apps such as
+																Outlook, OneDrive, Office 365 and Xbox Live. <a href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
+																	Visit Microsoft</a>
 															</div>
 														</div>
 													</div>
@@ -186,7 +185,7 @@
 										<p class="text-regular">Windows Hello makes logging into your PC easier and more
 											secure. And you can also be used for your online Microsoft apps. Follow the
 											instructions below to begin using Windows Hello</p>
-										<p class="sub-heading-2"> Windows Hello Authentication</p>
+										<p class="sub-heading-2 mt-40"> Windows Hello Authentication</p>
 										<p class="text-regular">Traditional passwords can be stolen and used to access
 											your account from anywhere in the world. More secure and convinient. Windows
 											Hello is the next generation of a password. Use your fingerprint reader [or
@@ -246,12 +245,10 @@
 									</div>
 								</div>
 								<!--End of Security Card Advisor-->
-								<div class="row mb-40">
+								<div class="row">
 									<div class="col col-12">
-										<vtr-container-card [img]="'./../../../../assets/images/antivirus/poaster.png'" [title]="'Lenovo announced new powerful Legion compact series.'"
-										 [logoText]="'LENOVO SPECIAL'" [action]="'Read More'" [actionLink]="'http://www.google.com'" [type]="'article'"
-										 [ratioX]="4" [ratioY]="4">
-										</vtr-container-card>
+										<vtr-article-item *ngFor="let item of articles, let i = index"
+											[item]="item"></vtr-article-item>
 									</div>
 								</div>
 							</div>

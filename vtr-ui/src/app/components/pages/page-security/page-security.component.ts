@@ -4,6 +4,7 @@ import { VantageShellService } from '../../../services/vantage-shell/vantage-she
 import { MockSecurityAdvisorService } from '../../../services/mock/mockSecurityAdvisor.service';
 import * as phoenix from '@lenovo/tan-client-bridge';
 import { EventTypes, WifiSecurity, WindowsHello, Antivirus,	Vpn, PasswordManager, HomeProtection, WifiDetail } from '@lenovo/tan-client-bridge';
+import { CMSService } from '../../../services/cms/cms.service';
 
 export class PasswordManagerLandingViewModel {
 	passwordManager: PasswordManager;
@@ -236,6 +237,7 @@ export class PageSecurityComponent implements OnInit {
 		// public mockService: MockService,
 		public vantageShellService: VantageShellService,
 		public mockSecurityAdvisorService: MockSecurityAdvisorService,
+		private cmsService: CMSService
 	) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.passwordManager = this.vantageShellService.getSecurityAdvisor().passwordManager;
@@ -255,6 +257,7 @@ export class PageSecurityComponent implements OnInit {
 		this.homeProtectionLandingViewModel = new HomeProtectionLandingViewModel(this.homeProtection, this.wifiSecurity);
 		this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.windowsHello);
 		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
+		this.fetchCMSArticles();
 	}
 	title = 'Security';
 
@@ -272,6 +275,7 @@ export class PageSecurityComponent implements OnInit {
 	passwordManager: phoenix.PasswordManager;
 	vpn: phoenix.Vpn;
 	windowsHello: phoenix.WindowsHello;
+	articles: [];
 
 	itemStatusClass = {
 		0: 'good',
@@ -311,6 +315,27 @@ export class PageSecurityComponent implements OnInit {
 			}
 		}
 		return itemDetail;
+	}
+
+	fetchCMSArticles() {
+		const queryOptions = {
+			'Page': 'security',
+			'Lang': 'EN',
+			'GEO': 'US',
+			'OEM': 'Lenovo',
+			'OS': 'Windows',
+			'Segment': 'SMB',
+			'Brand': 'Lenovo'
+		};
+
+		this.cmsService.fetchCMSArticles(queryOptions).then(
+			(response: any) => {
+				this.articles = response;
+			},
+			error => {
+				console.log('fetchCMSContent error', error);
+			}
+		);
 	}
 
 }

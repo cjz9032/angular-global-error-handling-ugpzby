@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { MockService } from 'src/app/services/mock/mock.service';
 import { WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
+import { CMSService } from '../../../services/cms/cms.service';
 
 @Component({
 	selector: 'vtr-page-security-windows-hello',
@@ -14,8 +15,9 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 
 	windowsHello: WindowsHello;
 	status: string;
+	articles: [];
 
-	constructor(public mockService: MockService, vantageShellService: VantageShellService) {
+	constructor(public mockService: MockService, private cmsService: CMSService, vantageShellService: VantageShellService) {
 		this.windowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
 		this.updateStatus();
 		this.windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
@@ -23,6 +25,7 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 		}).on(EventTypes.helloFacialIdStatusEvent, () => {
 			this.updateStatus();
 		});
+		this.fetchCMSArticles();
 	}
 
 	ngOnInit() { }
@@ -43,5 +46,26 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 		} else {
 			this.status = 'disabled';
 		}
+	}
+
+	fetchCMSArticles() {
+		const queryOptions = {
+			'Page': 'windows-hello',
+			'Lang': 'EN',
+			'GEO': 'US',
+			'OEM': 'Lenovo',
+			'OS': 'Windows',
+			'Segment': 'SMB',
+			'Brand': 'Lenovo'
+		};
+
+		this.cmsService.fetchCMSArticles(queryOptions).then(
+			(response: any) => {
+				this.articles = response;
+			},
+			error => {
+				console.log('fetchCMSContent error', error);
+			}
+		);
 	}
 }

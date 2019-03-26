@@ -85,6 +85,7 @@
 
   .dashlane-side-right-img {
     width: 90%;
+    float: right;
   }
 
   .learnmore {
@@ -104,6 +105,16 @@
       .text-regular {
         color: $main_dark;
         font-size: 1.6rem;
+
+				a {
+					color: $main;
+					text-decoration: underline;
+
+					&:hover {
+						text-decoration: none;
+					}
+				}
+
       }
 
       &.good {
@@ -162,30 +173,35 @@
     list-style: none;
     padding: 0;
     color: $main_dark;
-    font-size: 3rem;
+		font-size: 1.6rem;
 
-    .ol {
-      margin: 0 0 1.5rem;
-      padding: 0;
-      counter-reset: item;
-      box-sizing: border-box;
-    }
-
-    .ol > li {
-      margin: 0;
-      padding: 0 0 0 2rem;
-      text-indent: -2rem;
-      list-style-type: none;
-      counter-increment: item;
-    }
-
-    .ol > li:before {
-      display: inline-block;
-      width: 1.5rem;
-      padding-right: 0.5rem;
-      text-align: right;
-      content: counter(item) ".";
-    }
+		ol {
+			margin: 0 0 1.5rem;
+			padding: 0;
+			counter-reset: listNumbering;
+			box-sizing: border-box;
+			padding-left: 0.5rem;
+			li {
+				margin: 0;
+				padding: 0 0 0 2rem;
+				list-style-type: none;
+				counter-increment: listNumbering;
+				position: relative;
+				&:before {
+					display: inline-block;
+					width: 1.5rem;
+					padding-right: 0.5rem;
+					text-align: left;
+					font-size: 3.6rem;
+					position: absolute;
+					content: counter(listNumbering,decimal) '.';
+					left: 0rem;
+				}
+				.text-regular{
+					padding: 0.8rem 0.8rem 0.8rem 2rem;
+				}
+			}
+		}
   }
 
   .button-box {
@@ -202,6 +218,7 @@
     border: 0.1rem solid $shade_lighter;
     border-radius: $border_radius;
     text-align: center;
+    height: 7rem;
 
     .sub-heading {
       margin-top: 2rem;
@@ -214,10 +231,10 @@
       word-wrap: break-word;
     }
 
-    .text-regular {
-      color: $main_dark;
-      font-size: 2rem;
-      font-weight: $weight_light;
-    }
+    // .text-regular {
+    //   color: $main_dark;
+    //   font-size: 2rem;
+    //   font-weight: $weight_light;
+    // }
   }
 }
