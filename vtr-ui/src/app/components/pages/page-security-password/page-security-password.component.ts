@@ -26,7 +26,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 		this.fetchCMSArticles();
 	}
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	getDashLane(): void {
 		this.passwordManager.download();

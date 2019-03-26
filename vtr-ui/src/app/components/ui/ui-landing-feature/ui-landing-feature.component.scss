@@ -12,7 +12,7 @@
 }
 .security-widget .security-widget-wifi {
 	margin-top: 2.7rem;
-	border: 0.1rem solid #e6e6e6;
+	border: 0.1rem solid $shade_lighter;
 	.vtr-ui-list-chevron {
 		.chevron-list {
 			margin-top: 0;
@@ -23,16 +23,16 @@
 		.chevron-list {
 			list-style: none;
 			padding: 0;
-			background-color: #f6f8f8;
-			border: 0.1rem solid #e6e6e6;
+			background-color: $shade_extralight;
+			border: 0.1rem solid $shade_lighter;
 			border-bottom-left-radius: 0.9rem;
 			border-bottom-right-radius: 0.9rem;
 
 			li {
 				height: 4rem;
 				padding: 0.5rm 1rem;
-				border-bottom: 0.1rem solid #e6e6e6;
-				color: #2f3447;
+				border-bottom: 0.1rem solid $shade_lighter;
+				color: $main_darker;
 				line-height: 4rem;
 			}
 		}

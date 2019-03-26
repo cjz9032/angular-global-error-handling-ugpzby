@@ -1,7 +1,9 @@
 <div class="vtr-page-security-windows-hello vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main [backarrow]="'&lt; '" [back]="'BACK'" [title]="title"></vtr-header-main>
+			<vtr-header-main [backarrow]="'&lt; '"
+				[back]="'BACK'"
+				[title]="title"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -17,12 +19,14 @@
 											<div class="col">
 												<div class="heading">Windows Hello</div>
 											</div>
-											<div class="pull right"><img class="dashlane_logo_teal" src="../../../../assets/images/windows-logo.png" /></div>
+											<div class="pull right"><img class="dashlane_logo_teal"
+													src="../../../../assets/images/windows-logo.png" /></div>
 										</div>
-										<div *ngIf="status === 'disabled'" class="row mt-20">
+										<div *ngIf="status === 'disabled'"
+											class="row mt-20">
 											<div class="col">
 												<div class="text-regular">
-														Protect your ideapad with these Lenovo recommended security options.
+													Protect your ideapad with these Lenovo recommended security options.
 													<!-- Traditional passwords can be stolen and used to access your account
 													from anywhere in the world. More secure and convenient, Windows
 													Hello is the next generation of a password. Use your fingerprint
@@ -30,7 +34,8 @@
 												</div>
 											</div>
 										</div>
-										<div *ngIf="status === 'enabled'" class="row">
+										<div *ngIf="status === 'enabled'"
+											class="row">
 											<div class="col">
 												<div class="text-regular">
 													Protect your ideapad with these Lenovo recommended security options.
@@ -39,18 +44,25 @@
 										</div>
 										<div class="row mt-40">
 											<div class="col">
-												<vtr-ui-security-statusbar [title]="'WINDOWS HELLO'" [status]="status"></vtr-ui-security-statusbar>
+												<vtr-ui-security-statusbar [title]="'WINDOWS HELLO'"
+													[status]="status"></vtr-ui-security-statusbar>
 											</div>
 										</div>
-										<div *ngIf="status === 'disabled'" class="row mt-40">
+										<div *ngIf="status === 'disabled'"
+											class="row mt-40">
 											<div class="col">
 												<div class="text-regular">Sign in quickly and securely with Windows
 													Hello</div>
 											</div>
 											<div class=" pull right">
 												<div class="col-12">
-													<button type="button" vtrMetrics metricsItem="setup windows hello" metricsParent="windows-hello"
-													 metricsEvent="itemClick" (click)="setUpWindowsHello()" class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
+													<button type="button"
+														vtrMetrics
+														metricsItem="setup windows hello"
+														metricsParent="windows-hello"
+														metricsEvent="itemClick"
+														(click)="setUpWindowsHello()"
+														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
 														Setup Windows Hello
 													</button>
 												</div>
@@ -60,7 +72,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="row vtr-page-security-windows-hello" *ngIf="status === 'disabled'">
+						<div class="row vtr-page-security-windows-hello"
+							*ngIf="status === 'disabled'">
 							<div class="row">
 								<div class="col col-12 col-sm-12 mt-40">
 									<div>
@@ -74,7 +87,8 @@
 							<div class="row">
 								<div class="col col-6 mt-40">
 									<div class="col">
-										<img src="../../../../assets/images/windows-hello-left-img.png" class="dashlane-side-left-img" />
+										<img src="../../../../assets/images/windows-hello-left-img.png"
+											class="dashlane-side-left-img" />
 									</div>
 								</div>
 								<div class="col col-6 mt-40">
@@ -95,8 +109,11 @@
 														</div>
 														<div class="col">
 															<div class="text-regular">
-																Visit the Windows Hello page and register your fingerprint.
-																<a [href]="windowsHello.windowsHelloProtocol | sanitizeUrl">Visit Windows Hello</a> in system settings
+																Visit the Windows Hello page and register your
+																fingerprint.
+																<a
+																	[href]="windowsHello.windowsHelloProtocol | sanitizeUrl">Visit
+																	Windows Hello</a> in system settings
 															</div>
 														</div>
 													</div>
@@ -153,8 +170,10 @@
 														</div>
 														<div class="col">
 															<div class="text-regular">
-																Start using Windows Hello to log into Microsoft Apps such as
-																Outlook, OneDrive, Office 365 and Xbox Live. <a href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
+																Start using Windows Hello to log into Microsoft Apps
+																such as
+																Outlook, OneDrive, Office 365 and Xbox Live. <a
+																	href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
 																	Visit Microsoft</a>
 															</div>
 														</div>
@@ -170,14 +189,17 @@
 									<div class="col">
 										<div class="list-heading">Powered By Windows Hello</div>
 										<p class="text-regular">Read more on the
-											<a href="https://support.microsoft.com/en-us/help/4468253/windows-hello-and-privacy-microsoft-privacy" class="learnmore">Privacy
+											<a href="https://support.microsoft.com/en-us/help/4468253/windows-hello-and-privacy-microsoft-privacy"
+												class="learnmore">Privacy
 												Policy</a>
 									</div>
-									<div class="pull right"><img class="dashlane_logo_teal" src="../../../../assets/images/windows-logo.png" /></div>
+									<div class="pull right"><img class="dashlane_logo_teal"
+											src="../../../../assets/images/windows-logo.png" /></div>
 								</div>
 							</div>
 						</div>
-						<div class="row vtr-connected-security-password" *ngIf="status === 'enabled'">
+						<div class="row vtr-connected-security-password"
+							*ngIf="status === 'enabled'">
 							<div class="row">
 								<div class="col col-12 col-sm-12 mt-40">
 									<div>
@@ -204,7 +226,8 @@
 												<li>
 													<div class="text-regular">
 														Visit the Windows Hello page and register your fingerprint
-														<a [href]="windowsHello.windowsHelloProtocol | sanitizeUrl">Visit Windows Hello </a> in system settings
+														<a [href]="windowsHello.windowsHelloProtocol | sanitizeUrl">Visit
+															Windows Hello </a> in system settings
 													</div>
 												</li>
 												<li>
@@ -217,7 +240,8 @@
 													<div class="col">
 														<div class="text-regular">
 															Start using Windows Hello to log into Microsoft Apps such as
-															Outlook, OneDrive, Office 365 and Xbox Live. <a href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
+															Outlook, OneDrive, Office 365 and Xbox Live. <a
+																href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
 																Visit Microsoft</a>
 														</div>
 													</div>
@@ -228,7 +252,8 @@
 								</div>
 								<div class="col col-6 mt-40">
 									<div class="col">
-										<img src="../../../../assets/images/windows-hello-finger-print.png" class="dashlane-side-right-img pull-right" />
+										<img src="../../../../assets/images/windows-hello-finger-print.png"
+											class="dashlane-side-right-img pull-right" />
 									</div>
 								</div>
 							</div>
@@ -240,7 +265,9 @@
 								<!--Start of Security Card Advisor-->
 								<div class="row mb-40">
 									<div class="col col-12">
-										<vtr-widget-status [title]="'Security Advisor'" [description]="'CHECK IF YOUR DEVICE IS SECURED.'" [items]="mockService.securityStatus">
+										<vtr-widget-status [title]="'Security Advisor'"
+											[description]="'CHECK IF YOUR DEVICE IS SECURED.'"
+											[items]="mockService.securityStatus">
 										</vtr-widget-status>
 									</div>
 								</div>

@@ -16,45 +16,45 @@ import {
 export class MockSecurityAdvisorService {
 	mitt = new mitt();
 	securityStatus = [{
-			'status': 0,
-			'id': 'anti-virus',
-			'title': 'Anti-Virus',
-			'detail': 'Enabled',
-			'path': 'anti-virus',
-			'type': 'security'
-		},
-		{
-			'status': 0,
-			'id': 'wifi-security',
-			'title': 'WiFi Security',
-			'detail': 'Enabled',
-			'path': 'wifi-security',
-			'type': 'security'
-		},
-		{
-			'status': 2,
-			'id': 'pwdmgr',
-			'title': 'Password Manager',
-			'detail': 'Installed',
-			'path': 'password-protection',
-			'type': 'security'
-		},
-		{
-			'status': 2,
-			'id': 'vpn',
-			'title': 'VPN',
-			'detail': 'Installed',
-			'path': 'internet-protection',
-			'type': 'security'
-		},
-		{
-			'status': 1,
-			'id': 'windows-hello',
-			'title': 'Windows Hello',
-			'detail': 'disabled',
-			'path': 'windows-hello',
-			'type': 'security'
-		}
+		'status': 0,
+		'id': 'anti-virus',
+		'title': 'Anti-Virus',
+		'detail': 'Enabled',
+		'path': 'anti-virus',
+		'type': 'security'
+	},
+	{
+		'status': 0,
+		'id': 'wifi-security',
+		'title': 'WiFi Security',
+		'detail': 'Enabled',
+		'path': 'wifi-security',
+		'type': 'security'
+	},
+	{
+		'status': 2,
+		'id': 'pwdmgr',
+		'title': 'Password Manager',
+		'detail': 'Installed',
+		'path': 'password-protection',
+		'type': 'security'
+	},
+	{
+		'status': 2,
+		'id': 'vpn',
+		'title': 'VPN',
+		'detail': 'Installed',
+		'path': 'internet-protection',
+		'type': 'security'
+	},
+	{
+		'status': 1,
+		'id': 'windows-hello',
+		'title': 'Windows Hello',
+		'detail': 'disabled',
+		'path': 'windows-hello',
+		'type': 'security'
+	}
 	];
 	securityAdvisor: SecurityAdvisor = {
 		wifiSecurity: {
@@ -89,11 +89,11 @@ export class MockSecurityAdvisorService {
 			launchLocationPrivacy(): Promise<boolean> {
 				return Promise.resolve(true);
 			},
-			updateWifiSecurityState(): void {},
-			getWifiSecurityState(): void {},
-			refresh(): Promise < Array < any >> {
-				let p1 = new Promise((resolve) => {})
-				let p2 = new Promise(() => {})
+			updateWifiSecurityState(): void { },
+			getWifiSecurityState(): void { },
+			refresh(): Promise<Array<any>> {
+				const p1 = new Promise((resolve) => { });
+				const p2 = new Promise(() => { });
 				return Promise.all([p1, p2]);
 			},
 			on(type, handler): Emitable {
@@ -112,13 +112,13 @@ export class MockSecurityAdvisorService {
 			nickName: 'nick',
 			imageUrl: 'https://www.baidu.com',
 			devicePosture: [{
-					config: 'HardDriveEncryption',
-					vulnerable: 'true'
-				},
-				{
-					config: 'AppsFromUnknownSources',
-					vulnerable: 'false'
-				}
+				config: 'HardDriveEncryption',
+				vulnerable: 'true'
+			},
+			{
+				config: 'AppsFromUnknownSources',
+				vulnerable: 'false'
+			}
 			],
 			chsConsoleUrl: 'https://www.baidu.com',
 			launchConsole(): Promise<boolean> {
@@ -130,12 +130,12 @@ export class MockSecurityAdvisorService {
 			quitFromGroup(): Promise<boolean> {
 				return Promise.resolve(true);
 			},
-			updateActivateDeviceState(): void {},
-			getActivateDeviceState(): void {},
-			getDevicePosture(): void {},
-			refresh(): Promise < Array < any >> {
-				const p1 = new Promise((resolve) => {});
-				const p2 = new Promise(() => {});
+			updateActivateDeviceState(): void { },
+			getActivateDeviceState(): void { },
+			getDevicePosture(): void { },
+			refresh(): Promise<Array<any>> {
+				const p1 = new Promise((resolve) => { });
+				const p2 = new Promise(() => { });
 				return Promise.all([p1, p2]);
 			},
 			on(type, handler): Emitable {
@@ -179,8 +179,8 @@ export class MockSecurityAdvisorService {
 					name: 'other-firewall'
 				}]
 			},
-			refresh(): Promise < any > {
-				const p1 = new Promise((resolve) => {});
+			refresh(): Promise<any> {
+				const p1 = new Promise((resolve) => { });
 				return p1;
 			},
 			on(type, handler): Emitable {
@@ -229,8 +229,8 @@ export class MockSecurityAdvisorService {
 			launch(): Promise<boolean> {
 				return Promise.resolve(true);
 			},
-			refresh(): Promise < any > {
-				const p1 = new Promise((resolve) => {});
+			refresh(): Promise<any> {
+				const p1 = new Promise((resolve) => { });
 				return p1;
 			},
 			on(type, handler): Emitable {
@@ -249,10 +249,10 @@ export class MockSecurityAdvisorService {
 			download(): Promise<boolean> {
 				return Promise.resolve(true);
 			},
-			launch(): Promise <boolean> {
+			launch(): Promise<boolean> {
 				return Promise.resolve(true);
 			},
-			refresh(): Promise < any > {
+			refresh(): Promise<any> {
 				return Promise.resolve();
 			},
 			on(type, handler): Emitable {
@@ -265,13 +265,13 @@ export class MockSecurityAdvisorService {
 			},
 		},
 		on(): Emitable {
-			return
+			return;
 		},
 		off(): Emitable {
-			return
+			return;
 		},
-		refresh(): Promise < any > {
-			const p1 = new Promise((resolve) => {});
+		refresh(): Promise<any> {
+			const p1 = new Promise((resolve) => { });
 			return p1;
 		}
 	};

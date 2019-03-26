@@ -1,15 +1,15 @@
-import { Component,	OnInit,	HostListener } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 // import {	MockService} from '../../../services/mock/mock.service';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { MockSecurityAdvisorService } from '../../../services/mock/mockSecurityAdvisor.service';
 import * as phoenix from '@lenovo/tan-client-bridge';
-import { EventTypes, WifiSecurity, WindowsHello, Antivirus,	Vpn, PasswordManager, HomeProtection, WifiDetail } from '@lenovo/tan-client-bridge';
+import { EventTypes, WifiSecurity, WindowsHello, Antivirus, Vpn, PasswordManager, HomeProtection, WifiDetail } from '@lenovo/tan-client-bridge';
 import { CMSService } from '../../../services/cms/cms.service';
 
 export class PasswordManagerLandingViewModel {
 	passwordManager: PasswordManager;
 	statusList: Array<any>;
-	subject =  'Password Health';
+	subject = 'Password Health';
 	subjectStatus: number;
 	type = 'security';
 	imgUrl = '../../../../assets/images/Dashlane_Logo_Teal _Web.png';
@@ -166,7 +166,7 @@ export class WifiSecurityLandingViewModel {
 	subject = 'WiFi & Connected Home Security';
 	subjectStatus: number;
 	type = 'security';
-	wifiHistory: Array < phoenix.WifiDetail > ;
+	wifiHistory: Array<phoenix.WifiDetail>;
 	constructor(wfModel: phoenix.WifiSecurity, hpModel: phoenix.HomeProtection) {
 		this.wifiSecurity = wfModel;
 		const wfStatus = {
@@ -337,5 +337,4 @@ export class PageSecurityComponent implements OnInit {
 			}
 		);
 	}
-
 }

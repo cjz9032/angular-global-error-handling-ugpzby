@@ -3,8 +3,9 @@
 		<div class="row align-items-center">
 			<div class="col-auto px-3">
 				<div class="bullet-icon">
-					<div class="icon-bkg" [ngClass]="status | iconClass">
-            <fa-icon [icon]="status | iconName"></fa-icon>
+					<div class="icon-bkg"
+						[ngClass]="status | iconClass">
+						<fa-icon [icon]="status | iconName"></fa-icon>
 					</div>
 				</div>
 			</div>
@@ -12,13 +13,16 @@
 				{{title}}
 			</div>
 			<div class="col-auto mr-auto">
-        <h3><span class="badge badge-pill" 
-          [ngClass]="status | textClass">
-          {{ status | statusText }}
-        </span></h3>
+				<h3><span class="badge badge-pill"
+						[ngClass]="status | textClass">
+						{{ status | statusText }}
+					</span></h3>
 			</div>
-			<div *ngIf="buttonTitle" class="col-auto">
-				<vtr-ui-button metricsEvent="itemClick" metricsParent="Windows" [metricsItem]="metricsItem"
+			<div *ngIf="buttonTitle"
+				class="col-auto">
+				<vtr-ui-button metricsEvent="itemClick"
+					metricsParent="Windows"
+					[metricsItem]="metricsItem"
 					[label]="buttonTitle"></vtr-ui-button>
 			</div>
 		</div>
