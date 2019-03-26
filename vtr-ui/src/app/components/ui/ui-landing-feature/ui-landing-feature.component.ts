@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
 	styleUrls: ['./ui-landing-feature.component.scss']
 })
 export class UiLandingFeatureComponent implements OnInit {
-	@Input() feature: any[];
+	@Input() feature: any;
 	constructor() { }
 
 	ngOnInit() {

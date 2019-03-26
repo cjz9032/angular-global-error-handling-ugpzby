@@ -6,7 +6,7 @@ import {	Component,	OnInit,	Input } from '@angular/core';
 	styleUrls: ['./ui-object-title.component.scss']
 })
 export class UiObjectTitleComponent implements OnInit {
-	@Input() objects: any[];
+	@Input() objects: any;
 
 	itemStatusClass = {
 		0: 'good',
