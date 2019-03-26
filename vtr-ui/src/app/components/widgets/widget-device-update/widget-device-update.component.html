@@ -18,7 +18,7 @@
 							vtrMetrics
 							metricsEvent="itemClick"
 							metricsParent="update-to-date"
-							metricsItem="check-for-updates"
+							[metricsItem]="'btn.'+buttonText"
 							(click)="onCheckForUpdates()">{{buttonText}}</button>
 					</div>
 				</div>

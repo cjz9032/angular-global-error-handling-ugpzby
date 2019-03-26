@@ -32,7 +32,7 @@
 														Anti-Virus
 													</span>
 												</div>
-												<vtr-ui-list-chevron [items]="mockService.securityAntivirus">
+												<vtr-ui-list-chevron componentName="antivirus" [items]="mockService.securityAntivirus">
 												</vtr-ui-list-chevron>
 												<div class="pull"><img class="mcafee-logo"
 														src="../../../../assets/images/mcafee_logo.svg" />
@@ -48,7 +48,7 @@
 														Password health
 													</span>
 												</div>
-												<vtr-ui-list-chevron [items]="mockService.securityPasswordHealth">
+												<vtr-ui-list-chevron  componentName="password health" [items]="mockService.securityPasswordHealth">
 												</vtr-ui-list-chevron>
 												<div class="pull right"><img class="dashlane-logo"
 														src="../../../../assets/images/Dashlane_Logo_Teal _Web.png" />
@@ -64,7 +64,7 @@
 														VPN Security
 													</span>
 												</div>
-												<vtr-ui-list-chevron [items]="mockService.securityVPN">
+												<vtr-ui-list-chevron componentName="vpn security" [items]="mockService.securityVPN">
 												</vtr-ui-list-chevron>
 												<div class="pull"><img class="surfeasy-logo"
 														src="../../../../assets/images/surfeasy-logo.svg" />
@@ -81,9 +81,9 @@
 														WiFi & Connected Home Security
 													</span>
 												</div>
-												<vtr-advisor-wifi-security>
+												<vtr-advisor-wifi-security componentName="connectedhomesecurity">
 												</vtr-advisor-wifi-security>
-												<vtr-ui-list-chevron [items]="mockService.securityConnectedHome">
+												<vtr-ui-list-chevron componentName="homesecurity" [items]="mockService.securityConnectedHome">
 												</vtr-ui-list-chevron>
 												<div class="pull"><img class="coronet-logo"
 														src="../../../../assets/images/coronet-logo.svg" />
@@ -98,7 +98,7 @@
 														Windows hello
 													</span>
 												</div>
-												<vtr-ui-list-chevron [items]="mockService.securityWindowsHello">
+												<vtr-ui-list-chevron componentName="windows hello"[items]="mockService.securityWindowsHello">
 												</vtr-ui-list-chevron>
 												<div class="pull"><img class="windows-logo"
 														src="../../../../assets/images/windows-logo.svg" />

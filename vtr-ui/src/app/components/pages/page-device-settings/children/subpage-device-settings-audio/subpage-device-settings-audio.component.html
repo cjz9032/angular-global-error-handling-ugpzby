@@ -10,7 +10,7 @@
 	<div class="row py-5 smartsettings-card"
 		id="audio">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible cardTitle="Audio Smartsettings"
+			<vtr-container-collapsible componentName="Audio SmartSettings" cardTitle="Audio Smartsettings"
 				[isCollapsed]="false"
 				[allowCollapse]="false"
 				[theme]="'blue'">
@@ -22,8 +22,10 @@
 				</div>
 				<ul class="list-group list-group-flush">
 					<li class="">
-						<vtr-ui-row-switch [title]="'Automatic Dolby Audio settings'"
-							[caption]="''"
+						<vtr-ui-row-switch componentName="Automatic Dolby Audio Settings" [title]="'Automatic Dolby Audio settings'"
+							[name]="'Automatic Dolby Audio settings'"
+										   componentName="Automatic Dolby Audio Settings"
+										   [caption]="''"
 							[isSwitchVisible]=true
 							[leftIcon]="['fas', 'search']"
 							[rightIcon]="['far', 'question-circle']"
@@ -49,6 +51,8 @@
 					</li>
 					<li class="">
 						<vtr-ui-row-switch [title]="'Automatic Audio Optimization for VoIP'"
+										   name="Automatic Audio Optimization for VoIP"
+										   componentName="Automatic Audio Optimization for VoIP"
 							[caption]="''"
 							[isSwitchVisible]=true
 							[leftIcon]="['fas', 'search']"
@@ -68,13 +72,15 @@
 	<div class="row py-5 smartsettings-card"
 		id="microphone">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible cardTitle="Microphone"
+			<vtr-container-collapsible   componentName="Microphone" cardTitle="Microphone"
 				[isCollapsed]="false"
 				[allowCollapse]="true"
 				[theme]="'white'">
 				<ul class="list-group list-group-flush">
 					<li class="">
 						<vtr-ui-row-switch [title]="'Microphone'"
+										   name="Microphone"
+										   componentName="Microphone"
 							[caption]=""
 							[isSwitchVisible]=true
 							[leftIcon]="['far', 'gem']"
@@ -90,6 +96,8 @@
 					</li>
 					<li class="">
 						<vtr-ui-row-switch [title]="'Microphone Volume'"
+										   name="Microphone Volume"
+										   componentName="MicrophoneVolume"
 							[caption]="'Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.'"
 							[isSwitchVisible]=false
 							[leftIcon]="['far', 'gem']"
@@ -116,6 +124,8 @@
 
 					<li class="">
 						<vtr-ui-row-switch [title]="'Suppress keyboard noise'"
+										   name="Supress Keyborad noise"
+										   componentName="Supress Keyboard noise"
 							[caption]=""
 							[isSwitchVisible]=true
 							[leftIcon]="['far', 'gem']"
@@ -132,6 +142,9 @@
 
 					<li class="">
 						<vtr-ui-row-switch [title]="'Acoustic Echo Cancellation'"
+										   name="Acoustic Echo Cancellation"
+
+										   componentName="Acoustic Echo Cancellation"
 							[caption]=""
 							[isSwitchVisible]=true
 							[leftIcon]="['far', 'gem']"
@@ -148,6 +161,8 @@
 
 					<li class="">
 						<vtr-ui-row-switch [title]="'Optimize my microphone for:'"
+										    componentName="Optimize my microphone for"
+										   name="Optimize microphone"
 							[caption]="'Configure microphone effect to enhance your audio experience by different scenarios and environment.'"
 							[isSwitchVisible]=false
 							[leftIcon]="['far', 'gem']"

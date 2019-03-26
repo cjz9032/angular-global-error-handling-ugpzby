@@ -10,7 +10,7 @@
 	<div class="row py-5 smartsettings-card"
 		id="display">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible cardTitle="Display"
+			<vtr-container-collapsible cardTitle="Display" componentName="display"
 				[isCollapsed]="false"
 				[allowCollapse]="true"
 				[theme]="'white'">
@@ -18,6 +18,8 @@
 					<li class="pt-3"
 						*ngIf="eyeCareModeStatus.available">
 						<vtr-ui-row-switch [title]="'Eye Care Mode'"
+										   componentName="Eye Care Mode"
+										   name="Eye Care Mode"
 							[caption]=""
 							[isSwitchVisible]="true"
 							[leftIcon]="['far', 'gem']"
@@ -66,7 +68,7 @@
 	<div class="row py-5 smartsettings-card"
 		id="camera">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible cardTitle="Camera"
+			<vtr-container-collapsible cardTitle="Camera" componentName="Camera"
 				[isCollapsed]="false"
 				[allowCollapse]="true"
 				[theme]="'white'">
@@ -86,6 +88,8 @@
 				<ul class="list-group list-group-flush">
 					<li class="pt-3">
 						<vtr-ui-row-switch [title]="'Camera privacy mode'"
+										     componentName="Camera Privacy Mode"
+										     name="Camera Privacy Mode"
 							[isSwitchVisible]="true"
 							[leftIcon]="['far', 'gem']"
 							[rightIcon]="['far', 'question-circle']"
@@ -96,6 +100,8 @@
 					</li>
 					<li class="pt-3">
 						<vtr-ui-row-switch [title]="'Camera'"
+										   componentName="Camera"
+										   name="Camera"
 							[isSwitchVisible]="false"
 							[leftIcon]="['far', 'gem']"
 							[showChildContent]="true"

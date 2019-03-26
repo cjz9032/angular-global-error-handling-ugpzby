@@ -5,7 +5,8 @@
 		[value]="value"
 		[checked]="checked"
 		[disabled]="disabled"
-		(change)="onChange($event)"/>
+		   #radio
+		(change)="onChange($event)" vtrMetrics metricsEvent="itemClick"  [metricsItem]="'radio.'+label" [metricsValue]="!radio.checked"/>
 	<label for="{{radioId}}">
 		<span>{{label}}</span>
 		<fa-icon class="icon"

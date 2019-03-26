@@ -8,13 +8,15 @@ import {
 } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalBatteryChargeThresholdComponent } from '../../modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
+import {BaseComponent} from "../../base/base.component";
 
 @Component({
 	selector: 'vtr-ui-row-switch',
 	templateUrl: './ui-row-switch.component.html',
-	styleUrls: ['./ui-row-switch.component.scss']
+	styleUrls: ['./ui-row-switch.component.scss'],
+	exportAs:'uiRowSwitch'
 })
-export class UiRowSwitchComponent implements OnInit {
+export class UiRowSwitchComponent extends BaseComponent {
 	@ViewChild('childContent') childContent: any;
 
 	// Use Fort Awesome Font Awesome Icon Reference Array (library, icon class) ['fas', 'arrow-right']
@@ -41,7 +43,9 @@ export class UiRowSwitchComponent implements OnInit {
 	@Output() tooltipClick = new EventEmitter<boolean>();
 	@Output() resetClick = new EventEmitter<Event>();
 
-	constructor(public modalService: NgbModal) { }
+	constructor(public modalService: NgbModal) {
+		super();
+	}
 
 	ngOnInit() {
 		this.childContent = {};
@@ -87,4 +91,5 @@ export class UiRowSwitchComponent implements OnInit {
 	public onResetClick($event: Event) {
 		this.resetClick.emit($event);
 	}
+
 }

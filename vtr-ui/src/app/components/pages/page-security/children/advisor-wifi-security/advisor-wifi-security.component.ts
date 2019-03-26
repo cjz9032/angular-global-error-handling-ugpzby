@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
+import {BaseComponent} from "../../../../base/base.component";
 
 @Component({
 	selector: 'vtr-advisor-wifi-security',
@@ -7,11 +8,11 @@ import { DeviceService } from 'src/app/services/device/device.service';
 	styleUrls: ['./advisor-wifi-security.component.scss']
 })
 
-export class AdvisorWifiSecurityComponent implements OnInit {
+export class AdvisorWifiSecurityComponent  extends  BaseComponent implements OnInit {
 	/**** passing to ItemParent from metrics ****/
 	@Input() metricsParent: string;
 
-	constructor(private deviceService: DeviceService) { }
+	constructor(private deviceService: DeviceService) {super(); }
 
 	ngOnInit() {
 	}
