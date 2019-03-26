@@ -14,6 +14,7 @@ import { ModalCommonConfirmationComponent } from '../../modal/modal-common-confi
 import { UpdateRebootType } from 'src/app/enums/update-reboot-type.enum';
 import { SystemUpdateStatusMessage } from 'src/app/data-models/system-update/system-update-status-message.model';
 import { CMSService } from 'src/app/services/cms/cms.service';
+import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -445,7 +446,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				case UpdateProgress.InstallationComplete:
 					this.isUpdateDownloading = false;
 					this.isInstallationCompleted = true;
-					this.isInstallationSuccess = (parseInt(payload.status, 10) === SystemUpdateStatusMessage.SUCCESS.code);
+					this.isInstallationSuccess = this.getInstallationSuccess(payload);
 					this.checkRebootRequired();
 					break;
 				case UpdateProgress.AutoUpdateStatus:
@@ -459,6 +460,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	// handle background update notification
 	private onScheduleUpdateNotification(type: string, payload: any) {
 		if (this.isComponentInitialized) {
 			console.log('onScheduleUpdateNotification', type, payload);
@@ -490,7 +492,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				case UpdateProgress.ScheduleUpdateCheckComplete:
 					this.isUpdateDownloading = false;
 					this.isInstallationCompleted = true;
-					this.isInstallationSuccess = (parseInt(payload.status, 10) === SystemUpdateStatusMessage.SUCCESS.code);
+					this.isInstallationSuccess = this.getInstallationSuccess(payload);
 					this.setUpdateByCategory(payload.updateList);
 					this.checkRebootRequired();
 					break;
@@ -512,5 +514,24 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private checkRebootRequired() {
 		this.isRebootRequired = this.systemUpdateService.isRebootRequired();
+	}
+
+	// check for installed updates, if all installed correctly return true else return false
+	private getInstallationSuccess(payload: any): boolean {
+		let isSuccess = false;
+		if (payload.status !== SystemUpdateStatusMessage.SUCCESS.code) {
+			isSuccess = false;
+		} else {
+			for (let index = 0; index < payload.updateList.length; index++) {
+				const update = payload.updateList[index];
+				if (update.installationStatus === UpdateActionResult.Success || update.installationStatus === UpdateActionResult.Unknown) {
+					isSuccess = true;
+				} else {
+					isSuccess = false;
+					break;
+				}
+			}
+		}
+		return isSuccess;
 	}
 }

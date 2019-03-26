@@ -3,7 +3,6 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { CommonService } from '../common/common.service';
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
 import { InstallUpdate } from 'src/app/data-models/system-update/install-update.model';
-import { UpdateInstallationResult } from 'src/app/data-models/system-update/update-installation-result.model';
 import { AvailableUpdate } from 'src/app/data-models/system-update/available-update.model';
 import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
 import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
@@ -111,7 +110,7 @@ export class SystemUpdateService {
 				const status = parseInt(response.status, 10);
 				if (status === SystemUpdateStatusMessage.SUCCESS.code) { // success
 					this.isUpdatesAvailable = (response.updateList && response.updateList.length > 0);
-					this.updateInfo = { status: response.status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
+					this.updateInfo = { status: status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
 					// if (this.isUpdatesAvailable) {
 					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
 					// } else {
@@ -319,12 +318,15 @@ export class SystemUpdateService {
 			}
 			console.log('installUpdates callback', progress);
 			this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);
-		}).then((response: UpdateInstallationResult) => {
+		}).then((response: any) => {
 			console.log('installUpdates response', response);
 			if (response) {
 				this.isInstallationComplete = true;
 				this.mapInstallationStatus(this.updateInfo.updateList, response.updateResultList, isInstallingAllUpdates);
-				this.commonService.sendNotification(UpdateProgress.InstallationComplete, response);
+				const payload = new AvailableUpdate();
+				payload.status = parseInt(response.status, 10);
+				payload.updateList = this.updateInfo.updateList;
+				this.commonService.sendNotification(UpdateProgress.InstallationComplete, payload);
 			}
 		});
 	}

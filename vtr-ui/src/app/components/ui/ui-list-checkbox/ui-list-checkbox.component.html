@@ -86,6 +86,7 @@
 <ng-template #systemUpdateTooltip>
 	<div class="tooltip-container">
 		<a href="#"
+			*ngIf="packageRebootType === 'RebootForced'"
 			class="reboot-text">
 			<div class="row">
 				<div class="col-auto pl-0 pr-0">
