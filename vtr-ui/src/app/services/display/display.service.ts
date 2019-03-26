@@ -79,10 +79,15 @@ export class DisplayService {
 		return undefined;
 	}
 	public setEyeCareModeState(value: boolean): Promise<boolean> {
-		if (this.displayEyeCareMode) {
-			return this.displayEyeCareMode.setEyeCareMode(value);
+		 try{
+			if (this.displayEyeCareMode) {
+				return this.displayEyeCareMode.setEyeCareMode(value);
+			}
+			return undefined;
 		}
-		return undefined;
+		catch(error) {
+			throw new Error(error.message);
+		}
 	}
 	public setCameraPrivacyModeState(value: boolean): Promise<boolean> {
 		if (this.cameraPrivacyStatus) {
@@ -143,11 +148,12 @@ export class DisplayService {
 	}
 	public setDisplayColortemperature(value: number): Promise<boolean> {
 		if (this.displayEyeCareMode) {
+			console.log('this.setDisplayColortemperature', this.displayEyeCareMode);
 			return this.displayEyeCareMode.setDisplayColortemperature(value);
 		}
 		return undefined;
 	}
-	public resetEyeCareMode(): Promise<boolean> {
+	public resetEyeCareMode(): Promise<any> {
 		if (this.displayEyeCareMode) {
 			return this.displayEyeCareMode.resetEyeCareMode();
 		}
@@ -158,5 +164,24 @@ export class DisplayService {
 			return this.displayEyeCareMode.setEyeCareAutoMode(value);
 		}
 		return undefined;
+	}
+	public getEyeCareAutoMode(): Promise<any> {
+		if (this.displayEyeCareMode) {
+			console.log('this.getEyeCareAutoModeState');
+			return this.displayEyeCareMode.getEyeCareAutoModeState();
+		}
+		return undefined;
+	}
+	public statusChangedLocationPermission(handler: any): Promise<any> {
+		try {
+			if (this.isShellAvailable) {
+				console.log(JSON.stringify(this.displayEyeCareMode));
+				return this.displayEyeCareMode.statusChangedLocationPermission(handler);
+			}
+			return undefined;
+		}
+		catch (error) {
+			throw new Error(error.message);
+		}
 	}
 }

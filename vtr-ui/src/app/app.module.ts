@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 // THIRD PARTY MODULES
 import { CookieService } from 'ngx-cookie-service';
@@ -102,6 +103,7 @@ import { UiButtonComponent } from './components/ui/ui-button/ui-button.component
 import { ConnectedHomeComponent } from './components/pages/page-security-wifi/children/connected-home/connected-home.component';
 import { ConnectedHomeMyHomeComponent } from './components/pages/page-security-wifi/children/connected-home-my-home/connected-home-my-home.component';
 import { WifiSecurityComponent } from './components/pages/page-security-wifi/children/wifi-security/wifi-security.component';
+import { AdvisorWifiSecurityComponent } from './components/pages/page-security/children/advisor-wifi-security/advisor-wifi-security.component';
 
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
 import { CameraControlComponent } from './components/camera-control/camera-control.component';
@@ -112,12 +114,20 @@ import { WidgetWarrantyComponent } from './components/widgets/widget-warranty/wi
 import { SanitizeHtmlPipe } from './pipe/sanitizehtml.pipe';
 import { WidgetRebootComponent } from './components/widgets/widget-reboot/widget-reboot.component';
 import { ContainerArticleComponent } from './components/container-article/container-article.component';
+import { ArticleItemComponent } from './components/article-item/article-item.component';
 import { SanitizeUrlPipe } from './pipe/sanitise-url.pipe';
 import { UniqueIdPipe } from './pipe/unique-id.pipe';
+import { environment } from '../environments/environment';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
 import { MetricsDirective } from './directives/metrics.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
+import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
+import { AppEventDirective } from './directives/app-event.directive';
+import { SafeDomPipe } from './pipe/safe-dom/safe-dom.pipe';
+import { ModalUpdateChangeLogComponent } from './components/modal/modal-update-change-log.component/modal-update-change-log.component';
+import { ModalArticleDetailComponent } from './components/modal/modal-article-detail/modal-article-detail.component';
+import { DolbyModesTranslationPipe } from './pipe/dolby-modes-translation.pipe';
 
 library.add(fas);
 library.add(fab);
@@ -180,6 +190,7 @@ library.add(far);
 		ConnectedHomeComponent,
 		ConnectedHomeMyHomeComponent,
 		WifiSecurityComponent,
+		AdvisorWifiSecurityComponent,
 		PageSecurityWindowsHelloComponent,
 		CameraControlComponent,
 		PageSupportDetailComponent,
@@ -191,12 +202,20 @@ library.add(far);
 		WidgetRebootComponent,
 		FeedbackFormComponent,
 		ContainerArticleComponent,
+		ArticleItemComponent,
 		SanitizeUrlPipe,
 		UniqueIdPipe,
 		ModalBatteryChargeThresholdComponent,
 		MetricsDirective,
 		InstallationHistoryComponent,
-		SeparatePascalCasePipe
+		SeparatePascalCasePipe,
+		ModalCommonConfirmationComponent,
+		AppEventDirective,
+		ModalUpdateChangeLogComponent,
+		SafeDomPipe,
+		ModalCommonConfirmationComponent,
+		ModalArticleDetailComponent,
+		DolbyModesTranslationPipe
 	],
 	imports: [
 		BrowserModule,
@@ -207,6 +226,7 @@ library.add(far);
 		NgbModule,
 		Ng5SliderModule,
 		ReactiveFormsModule,
+		// ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 		TranslationModule
 	],
 	providers: [
@@ -223,7 +243,14 @@ library.add(far);
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
 	bootstrap: [AppComponent],
-	entryComponents: [ModalLenovoIdComponent, ModalWelcomeComponent],
+	entryComponents: [
+		ModalLenovoIdComponent,
+		ModalWelcomeComponent,
+		ModalBatteryChargeThresholdComponent,
+		ModalCommonConfirmationComponent,
+		ModalUpdateChangeLogComponent,
+		ModalArticleDetailComponent
+	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
 	]

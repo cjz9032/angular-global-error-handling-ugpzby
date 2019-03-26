@@ -94,7 +94,39 @@
 				color: $main;
 				line-height: 2.8rem;
 				font-size: 2rem;
+				cursor: pointer;
 			}
+		}
+	}
+	.list-group {
+		margin: 3.5rem 0;
+
+		.list-group-item {
+			background: $shade_extralight;
+			padding: 1.5rem 1rem 1.5rem 0.2rem;
+
+			.update-title {
+				font-size: 1.6rem;
+				font-weight: bold;
+				padding-top: 0rem;
+
+				.update-number {
+					font-weight: normal;
+				}
+			}
+
+			.question {
+				cursor: pointer;
+				color: $main;
+				font-size: 1.8rem;
+			}
+		}
+	}
+
+	.tooltip-container {
+		li {
+			padding: 1rem;
+			height: 4rem;
 		}
 	}
 }

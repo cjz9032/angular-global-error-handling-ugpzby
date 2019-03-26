@@ -17,6 +17,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	@Output() contrastChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureChange: EventEmitter<ChangeContext> = new EventEmitter();
 	public cameraDetail: CameraDetail;
+	public showAutoExposureSlider: boolean;
 
 	private cameraPreview: ElementRef;
 	private _video: HTMLVideoElement;
@@ -74,7 +75,9 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 	ngOnDestroy() {
 		this.deactivateCamera();
-		this.cameraDetailSubscription.unsubscribe();
+		if (this.baseCameraDetail) {
+			this.cameraDetailSubscription.unsubscribe();
+		}
 		if (this.systemMediaControls) {
 			this.systemMediaControls.removeEventListener(
 				'propertychanged',
@@ -84,7 +87,12 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	public onAutoExposureChange($event: any) {
-		this.baseCameraDetail.toggleAutoExposure($event.switchValue);
+		try {
+			this.showAutoExposureSlider = !$event.switchValue;
+			this.baseCameraDetail.toggleAutoExposure($event.switchValue);
+		} catch (error) {
+			console.error(error.message);
+		}
 	}
 
 	private activateCamera() {
@@ -131,18 +139,15 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			}
 		}
 	}
-	public onBrightnessSliderChange($event: ChangeContext)
-	{
+	public onBrightnessSliderChange($event: ChangeContext) {
 		console.log('Brightness changed', event);
 		this.brightnessChange.emit($event);
 	}
-	public onContrastSliderChange($event: ChangeContext)
-	{
+	public onContrastSliderChange($event: ChangeContext) {
 		console.log('Brightness changed', event);
 		this.contrastChange.emit($event);
 	}
-	public onExposureSliderChange($event: ChangeContext)
-	{
+	public onExposureSliderChange($event: ChangeContext) {
 		console.log('Brightness changed', event);
 		this.exposureChange.emit($event);
 	}

@@ -154,6 +154,9 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 			this.remainingHour > 0 && this.remainingHour < 2
 				? 'minute'
 				: 'minutes';
+		if(this.remainingHour == 0) {
+			return `${this.remainingMinutes} ${minutes}`;
+		}
 		return `${this.remainingHour} ${hours} ${
 			this.remainingMinutes
 			} ${minutes}`;

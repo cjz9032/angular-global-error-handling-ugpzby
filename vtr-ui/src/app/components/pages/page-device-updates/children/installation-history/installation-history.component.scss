@@ -4,13 +4,8 @@
 	background-color: $light;
 
 	.updates-lists-container {
-		margin-left: 3rem;
-		padding: 2rem 2rem 0rem 2rem;
-
-		.heading {
-			color: $main_dark;
-			font-size: 2.5rem;
-		}
+		// margin-left: 3rem;
+		padding: 0 2rem;
 
 		.installation-list {
 			margin-top: 2rem;
@@ -69,6 +64,7 @@
 
 					.installation-details {
 						padding-left: 3rem;
+						font-size: 1.3rem;
 					}
 				}
 
@@ -96,6 +92,8 @@
 					}
 
 					.sort-order {
+						text-align: right;
+
 						a {
 							text-decoration: underline;
 							cursor: pointer;
@@ -104,14 +102,15 @@
 								text-decoration: none;
 							}
 
-							.item-text {
+							.sort-heading-text {
+								display: inline;
 								padding-right: 0.4rem;
 								font-size: 1.8rem;
 								font-weight: $weight_medium;
-								float: left;
 							}
 
 							.sort-icon {
+								display: inline;
 								color: $main;
 								line-height: 2.8rem;
 								font-size: 2rem;
@@ -128,5 +127,10 @@
 		height: 0.2rem;
 		background-color: $shade_lightest;
 		margin: 0.5rem 1.5rem 1.5rem 0rem;
+	}
+
+	.heading {
+		color: $main_dark;
+		font-size: 2rem;
 	}
 }

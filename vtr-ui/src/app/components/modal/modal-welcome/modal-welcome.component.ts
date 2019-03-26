@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 
 @Component({
 	selector: 'vtr-modal-welcome',
@@ -8,7 +9,7 @@ import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 })
 export class ModalWelcomeComponent implements OnInit {
 
-	page: number = 1;
+	page = 1;
 
 	checkedArray: string[] = [];
 
@@ -22,47 +23,75 @@ export class ModalWelcomeComponent implements OnInit {
 			subtitle: 'Click on one of these uses to tell is how you will use this machine?',
 			radioValue: null
 		},
-		page3: {
-			title: 'What are your interests?',
-			subtitle: 'Click on one of these uses to tell is how you will use this machine?',
-			buttons: [[{label: 'GAMES', value: 'games'}, {label: 'NEWS', value: 'news'}, {
-				label: 'ENTERTAINMENT',
-				value: 'entertainment'
-			}, {label: 'ARTS', value: 'arts'}], [{label: 'TECHNOLOGY', value: 'technology'}, {
-				label: 'POLITICS',
-				value: 'politics'
-			}, {label: 'SPORTS', value: 'sports'}], [{label: 'REGIONAL NEWS', value: 'regional news'}, {
-				label: 'TECHNOLOG',
-				value: 'technolog'
-			}]
-			]
-		}
-	}
+		// page3: {
+		// 	title: 'What are your interests?',
+		// 	subtitle: 'Click on one of these uses to tell is how you will use this machine?',
+		// 	buttons: [
+		// 		[
+		// 			{
+		// 				label: 'GAMES',
+		// 				value: 'games'
+		// 			},
+		// 			{
+		// 				label: 'NEWS',
+		// 				value: 'news'
+		// 			},
+		// 			{
+		// 				label: 'ENTERTAINMENT',
+		// 				value: 'entertainment'
+		// 			},
+		// 			{
+		// 				label: 'ARTS',
+		// 				value: 'arts'
+		// 			}
+		// 		],
+		// 		[
+		// 			{
+		// 				label: 'TECHNOLOGY',
+		// 				value: 'technology'
+		// 			},
+		// 			{
+		// 				label: 'POLITICS',
+		// 				value: 'politics'
+		// 			}, {
+		// 				label: 'SPORTS',
+		// 				value: 'sports'
+		// 			}
+		// 		],
+		// 		[
+		// 			{
+		// 				label: 'REGIONAL NEWS',
+		// 				value: 'regional news'
+		// 			}
+		// 		]
+		// 	]
+		// }
+	};
 
 	constructor(public activeModal: NgbActiveModal) {
+	}
+
+	ngOnInit() {
 	}
 
 	next(page) {
 		if (++page < 4) {
 			this.page = page;
 		} else {
-			this.activeModal.close();
+			const response = new WelcomeTutorial(true, this.data.page2.radioValue, this.checkedArray);
+			this.activeModal.close(response);
 		}
-
 	}
 
 	toggle($event, value) {
-
-
 		if ($event.target.checked) {
 			this.checkedArray.push(value);
 		} else {
 			this.checkedArray.splice(this.checkedArray.indexOf(value), 1);
 		}
-
 	}
 
-	ngOnInit() {
+	public onTutorialClose() {
+		this.activeModal.dismiss(new WelcomeTutorial(true));
 	}
-
 }

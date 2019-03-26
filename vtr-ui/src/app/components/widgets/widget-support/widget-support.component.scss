@@ -6,13 +6,16 @@
 	box-shadow: $drop_shadow;
 	padding: 4rem;
 	.title {
-		color: $main_darker;
-		font-size: 2.5rem;
+		color: #194a65;
+		font-size: 2.6rem;
+		font-weight: $weight_regular;
+		letter-spacing: 0;
 	}
 	.description {
-		color: $shade;
+		color: rgba(66, 78, 120, .4);
 		font-size: 1.1rem;
 		text-transform: uppercase;
 		font-weight: $weight_medium;
+		letter-spacing: 0;
 	}
 }

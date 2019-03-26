@@ -6,6 +6,9 @@ import {
 	Output,
 	EventEmitter
 } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalBatteryChargeThresholdComponent } from '../../modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
+import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
 	selector: 'vtr-ui-row-switch',
@@ -30,21 +33,56 @@ export class UiRowSwitchComponent implements OnInit {
 	@Input() isSwitchChecked = false;
 	@Input() tooltipText = '';
 	@Input() name = '';
+	@Input() disabled = false;
+	@Input() type = undefined;
 
-	@Output() toggleOnOff = new EventEmitter<any>();
+	@Output() toggleOnOff = new EventEmitter<boolean>();
 	@Output() readMoreClick = new EventEmitter<boolean>();
 	@Output() tooltipClick = new EventEmitter<boolean>();
 	@Output() resetClick = new EventEmitter<Event>();
 
-	constructor() { }
+	// private tooltip: NgbTooltip;
+
+	constructor(
+		public modalService: NgbModal
+		// , private commonService: CommonService
+	) { }
 
 	ngOnInit() {
 		this.childContent = {};
 		this.childContent.innerHTML = '';
+
+		// this.commonService.notification.subscribe((notification: AppNotification) => {
+		// 	this.onNotification(notification);
+		// });
 	}
 
-	public onOnOffChange($event: any) {
-		this.toggleOnOff.emit($event);
+	public onOnOffChange($event) {
+		if (this.title === 'Battery Charge Threshold') {
+			this.isSwitchChecked = !this.isSwitchChecked;
+			if (this.isSwitchChecked) {
+				this.modalService.open(ModalBatteryChargeThresholdComponent, {
+					backdrop: 'static',
+					size: 'sm',
+					centered: true,
+					windowClass: 'Battery-Charge-Threshold-Modal'
+				}).result.then(
+					result => {
+						if (result === 'enable') {
+							this.toggleOnOff.emit($event);
+						} else if (result === 'close') {
+							this.isSwitchChecked = !this.isSwitchChecked;
+						}
+					},
+					reason => {
+					}
+				);
+			} else {
+				this.toggleOnOff.emit($event);
+			}
+		} else {
+			this.toggleOnOff.emit($event);
+		}
 	}
 
 	public onReadMoreClick($event) {
@@ -58,4 +96,21 @@ export class UiRowSwitchComponent implements OnInit {
 	public onResetClick($event: Event) {
 		this.resetClick.emit($event);
 	}
+
+	// private closeTooltip($event: Event) {
+	// 	if (!$event.srcElement.classList.contains('fa-question-circle') && this.tooltip && this.tooltip.isOpen()) {
+	// 		this.tooltip.close();
+	// 	}
+	// }
+
+	// private onNotification(notification: AppNotification) {
+	// 	const { type, payload } = notification;
+	// 	switch (type) {
+	// 		case AppEvent.Click:
+	// 			this.closeTooltip(payload);
+	// 			break;
+	// 		default:
+	// 			break;
+	// 	}
+	// }
 }

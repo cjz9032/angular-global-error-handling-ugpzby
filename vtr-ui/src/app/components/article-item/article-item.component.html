@@ -1,0 +1,63 @@
+<div class="article-item"
+	#articleItemDiv
+	id="{{'article-item-' + this.index}}"
+	[ngClass]="{'item-no-img': !item.Thumbnail, 'item-no-title': !item.Title}">
+	<div class="container-fluid">
+		<div class="row">
+			<a *ngIf="item.Thumbnail"
+				class="col col-12 image"
+				[style.background-image]="'url('+item.Thumbnail+')'"
+				vtrMetrics
+				metricsEvent="DocClick"
+				metricsParent="Page.Support"
+				metricsItemID=""
+				metricsItemCategory=""
+				metricsItemPosition=""
+				metricsViewOrder="{{metricsDatas.viewOrder}}"
+				metricsPageNumber="{{metricsDatas.pageNumber}}"
+				(click)="showArticleDetails()">
+				<div *ngIf="item.Logo"
+					class="logo">
+					<span class="img"
+						*ngIf="item.Logo && item.Thumbnail">
+						<img src="{{item.Logo}}"
+							alt="{{item.LogoText}}">
+					</span>
+					<span *ngIf="item.LogoText"
+						class="text">{{item.LogoText}}</span>
+				</div>
+			</a>
+			<div *ngIf="item.Title"
+				class="col col-12 content">
+				<a class="title"
+					vtrMetrics
+					metricsEvent="DocClick"
+					metricsParent="Page.Support"
+					metricsItemID=""
+					metricsItemCategory=""
+					metricsItemPosition=""
+					metricsViewOrder="{{metricsDatas.viewOrder}}"
+					metricsPageNumber="{{metricsDatas.pageNumber}}"
+					(click)="showArticleDetails()">{{item.Title}}</a>
+				<div class="logo-text">
+					<span *ngIf="item.LogoText && !item.Thumbnail">{{item.LogoText}}</span>
+				</div>
+				<div *ngIf="item.ReadMore && item.Thumbnail"
+					class="read-more">
+					<a vtrMetrics
+						metricsEvent="DocClick"
+						metricsParent="Page.Support"
+						metricsItemID=""
+						metricsItemCategory=""
+						metricsItemPosition=""
+						metricsViewOrder="{{metricsDatas.viewOrder}}"
+						metricsPageNumber="{{metricsDatas.pageNumber}}"
+						(click)="showArticleDetails()">
+						<span class="link-label">Read More</span>
+						<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

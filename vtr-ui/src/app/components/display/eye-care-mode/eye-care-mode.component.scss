@@ -1,14 +1,29 @@
+@import "../../../app.theme.scss";
+
 .vtr-eye-care-mode {
 	.mode-slider {
 		width: 100%;
 	}
 	.reset-temperature {
 		width: 17rem;
+		margin-top: 3.3rem;
+		position: relative;
+
+		@media #{$mediaquery_7} {
+			margin-top: 3.4rem;
+			position: relative;
+		}
+
+		@media #{$mediaquery_8} {
+			margin-top: 3.5rem;
+			position: relative;
+		}
 		.text {
 			font-size: 1.4rem;
 		}
 	}
 	.eye-care-checkbox {
+		margin: 1rem 0rem 1rem 0rem;
 		font-size: 1.4rem;
 	}
 

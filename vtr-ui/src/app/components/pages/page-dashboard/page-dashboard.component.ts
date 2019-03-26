@@ -6,6 +6,11 @@ import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Status } from 'src/app/data-models/widgets/status.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { CMSService } from 'src/app/services/cms/cms.service';
+import { UserService } from 'src/app/services/user/user.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
+
 @Component({
 	selector: 'vtr-page-dashboard',
 	templateUrl: './page-dashboard.component.html',
@@ -13,12 +18,18 @@ import { DeviceService } from 'src/app/services/device/device.service';
 	providers: [NgbModalConfig, NgbModal]
 })
 export class PageDashboardComponent implements OnInit {
-	private firstName = 'James'; // todo: read it from local storage once lenovo id is integrated
+	firstName = 'User';
 	submit = 'Submit';
-	title = `Looking energized today ${this.firstName}!`;
 	feedbackButtonText = this.submit;
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
+
+	heroBannerItems = [];
+	cardContentPositionB: any = {};
+	cardContentPositionC: any = {};
+	cardContentPositionD: any = {};
+	cardContentPositionE: any = {};
+	cardContentPositionF: any = {};
 
 	/*forwardLink = {
 		path: 'dashboard-customize',
@@ -32,7 +43,8 @@ export class PageDashboardComponent implements OnInit {
 		private modalService: NgbModal,
 		config: NgbModalConfig,
 		private commonService: CommonService,
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
+		private cmsService: CMSService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -44,6 +56,49 @@ export class PageDashboardComponent implements OnInit {
 			this.getSystemInfo();
 			this.getSecurityStatus();
 		}
+
+		const queryOptions = {
+			'Page': 'dashboard',
+			'Lang': 'EN',
+			'GEO': 'US',
+			'OEM': 'Lenovo',
+			'OS': 'Windows',
+			'Segment': 'SMB',
+			'Brand': 'Lenovo'
+		};
+
+		this.cmsService.fetchCMSContent(queryOptions).then(
+			(response: any) => {
+				this.heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
+					return {
+						'albumId': 1,
+						'id': index + 1,
+						'source': record.Title,
+						'title': record.Description,
+						'url': record.FeatureImage,
+						'ActionLink': record.ActionLink
+					};
+				});
+
+				this.cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+				this.cardContentPositionC = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
+
+				this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+				this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
+
+				this.cardContentPositionD = this.cmsService.getOneCMSContent(response, 'full-width-title-image-background', 'position-D')[0];
+
+				this.cardContentPositionE = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-E')[0];
+				this.cardContentPositionF = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-F')[0];
+			},
+			error => {
+				console.log('fetchCMSContent error', error);
+			}
+		);
+
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
 	}
 
 	onFeedbackModal(content: any) {
@@ -68,6 +123,11 @@ export class PageDashboardComponent implements OnInit {
 			this.feedbackButtonText = this.submit;
 		}, 3000);
 	}
+
+	// private getFormatedTitle(title) {
+	// 	var formatedTitle = 'Looking energized today ' + title + '!';
+	// 	return formatedTitle;
+	// }
 
 	private getSystemInfo() {
 		this.dashboardService.getSystemInfo()
@@ -104,8 +164,9 @@ export class PageDashboardComponent implements OnInit {
 
 			if (response.memory) {
 				const { total, used } = response.memory;
-				memory.detail = `${this.commonService.formatBytes(used)} of ${this.commonService.formatBytes(total)}`;
-				const percent = (used / total) * 100;
+				memory.detail = `${this.commonService.formatBytes(used, 1)} of ${this.commonService.formatBytes(total, 1)}`;
+				const percent = parseInt(((used / total) * 100).toFixed(0), 10);
+				// const percent = (used / total) * 100;
 				if (percent > 70) {
 					memory.status = 1;
 				} else {
@@ -126,8 +187,9 @@ export class PageDashboardComponent implements OnInit {
 
 			if (response.disk) {
 				const { total, used } = response.disk;
-				disk.detail = `${this.commonService.formatBytes(used)} of ${this.commonService.formatBytes(total)}`;
-				const percent = (used / total) * 100;
+				disk.detail = `${this.commonService.formatBytes(used, 1)} of ${this.commonService.formatBytes(total, 1)}`;
+				const percent = parseInt(((used / total) * 100).toFixed(0), 10);
+				// const percent = (used / total) * 100;
 				if (percent > 90) {
 					disk.status = 1;
 				} else {
@@ -148,18 +210,18 @@ export class PageDashboardComponent implements OnInit {
 			warranty.type = 'system';
 
 			if (response.warranty) {
-				const warrantyTill = new Date(response.warranty.expired);
-				const today = new Date();
 				const warrantyDate = this.commonService.formatDate(response.warranty.expired);
 				// in warranty
-				if (today.getTime() < warrantyTill.getTime()) {
+				if (response.warranty.status === 0) {
 					warranty.detail = `Until ${warrantyDate}`;
 					warranty.status = 0;
-				} else {
+				} else if (response.warranty.status === 1) {
 					warranty.detail = `Warranty expired on ${warrantyDate}`;
 					warranty.status = 1;
+				} else {
+					warranty.detail = 'Warranty not available';
+					warranty.status = 1;
 				}
-
 			}
 			systemStatus.push(warranty);
 
@@ -215,8 +277,8 @@ export class PageDashboardComponent implements OnInit {
 			wiFi.path = 'wifi-security';
 			wiFi.type = 'security';
 
-			if (response.wiFi) {
-				if (response.wiFi.status) {
+			if (response.wifiSecurity) {
+				if (response.wifiSecurity.status) {
 					wiFi.status = 0;
 					wiFi.detail = 'Enabled';
 				} else {
@@ -280,5 +342,18 @@ export class PageDashboardComponent implements OnInit {
 			securityStatus.push(windowsHello);
 		}
 		return securityStatus;
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case LenovoIdKey.FirstName:
+					this.firstName = notification.payload;
+					break;
+
+				default:
+					break;
+			}
+		}
 	}
 }

@@ -5,13 +5,13 @@
 		margin-top: 2.7rem;
 		list-style: none;
 		padding: 0;
-		background-color: $shade_lightest;
+		background-color: #f5f7f8;
 		border: .1rem solid $shade_lighter;
 		border-radius: $border_radius;
 
 		li {
 			min-height: 6rem;
-			padding: 1.5rem 1rem 1.5rem 0;
+			// padding: 1.5rem 1rem 1.5rem 0;
 			border-bottom: .1rem solid $shade_lighter;
 			color: $main_darker;
 
@@ -46,11 +46,19 @@
 			}
 
 			a {
-				color: $main_darker;
+				width: 100%;
+				height: 100%;
+				color: #34495e;
+				display: block;
+				padding: 1.5rem 1rem 1.5rem 0;
 
 				&:hover {
 					text-decoration: none;
+					background-color: $shade_extralight;
 				}
+			}
+			.no-pointer{
+				padding: 1.5rem 1rem 1.5rem 0;
 			}
 
 			.item-icon {

@@ -1,31 +1,7 @@
 <div class="container-article">
-
-	<div class="item-column p-40" *ngFor="let item of items, let i = index">
-		<div class="item-article" [ngClass]="{'item-no-img': !item.thumbnailUrl, 'item-no-title': !item.title}">
-			<div class="container-fluid">
-				<div class="row">
-					<a *ngIf="item.thumbnailUrl" class="col col-12 image" [style.background-image]="'url('+item.thumbnailUrl+')'" href="{{item.readMore}}">
-						<div *ngIf="item.logo" class="logo">
-							<span class="img" *ngIf="item.logo && item.thumbnailUrl">
-								<img src="{{item.logo}}" alt="{{item.logoText}}">
-							</span>
-							<span *ngIf="item.logoText" class="text">{{item.logoText}}</span>
-						</div>
-					</a>
-					<div *ngIf="item.title" class="col col-12 content">
-						<a class="title" href="{{item.readMore}}">{{item.title}}</a>
-						<div class="logo-text">
-							<span *ngIf="item.logoText && !item.thumbnailUrl">{{item.logoText}}</span>
-						</div>
-						<div *ngIf="item.readMore && item.thumbnailUrl" class="read-more">
-							<a href="{{item.readMore}}">
-								<span class="link-label">Read More</span>
-								<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+	<div class="item-column p-40"
+		*ngFor="let item of items, let i = index">
+		<vtr-article-item [item]="item"
+			[index]="i"></vtr-article-item>
 	</div>
 </div>

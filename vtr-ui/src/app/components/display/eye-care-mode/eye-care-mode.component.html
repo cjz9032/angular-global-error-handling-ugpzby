@@ -10,30 +10,33 @@
 			>
 			</vtr-ui-range-slider> -->
 			<vtr-ui-range-slider [step]="100"
-			[minValue]="eyecareModeSettings.minimum"
-			[maxValue]="eyecareModeSettings.maximum"
-			[value]="eyecareModeSettings.current"
-			(change)="onEyecareTemparatureChange($event)">
-		   </vtr-ui-range-slider>
+				[enableSlider]="enableSlider"
+				[minValue]="eyeCareModeSettings.minimum"
+				[maxValue]="eyeCareModeSettings.maximum"
+				[minValueLegend]="'Warm (Better for eyes)'"
+				[maxValueLegend]="'Cold'"
+				[value]="eyeCareModeSettings.current"
+				(change)="onEyeCareTemparatureChange($event)"
+				(valueChange)="onEyeCareTemparatureValueChange($event)">
+			</vtr-ui-range-slider>
 		</div>
-		<div class="reset-temperature align-self-center text-center">
-			<button
-				type="button"
+		<div class="reset-temperature">
+			<button type="button"
 				class="btn btn-link text"
-				(click)="onResetTemperature()"
-			>
+				(click)="onResetTemparature($event)">
 				Reset temperature
 			</button>
 		</div>
 	</div>
 	<div class="custom-control custom-checkbox eye-care-checkbox">
-		<input
-			id="cb-eye-care-schedule"
+		<input id="cb-eye-care-schedule"
 			type="checkbox"
+			[disabled]="enableSlider"
 			class="custom-control-input"
-			checked=""
-		/>
-		<label class="custom-control-label " for="cb-eye-care-schedule">
+			[checked]="sunsetToSunriseStatus.status"
+			(change)="onSunsetToSunrise(sunsetToSunriseStatus)" />
+		<label class="custom-control-label "
+			for="cb-eye-care-schedule">
 			Schedule eye care mode from sunset to sunrise
 		</label>
 	</div>

@@ -232,7 +232,7 @@ export class QaService {
 			id: 4,
 			path: 'support-detail/4',
 			iconPath: `${this.imagePath}/svg_icon_qa_battery.svg`,
-			title: 'Check your machine\'s battery use',
+			title: "Check your machine's battery use",
 			like: false,
 			dislike: false,
 			description: `<div style="font-size:4rem;font-weight:bold;">
@@ -289,12 +289,12 @@ export class QaService {
 <p>To turn on tablet mode, select <strong>action center</strong> on the taskbar,&nbsp;then select <strong>Tablet mode</strong> .</p>
 <p>&nbsp;</p>
 <p><img src="./../../../assets/images/qa/5.1.jpg"/></p>
-<p>Note</p>
+<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Note</h3>
 <p>To find out if your device&nbsp;can automatically turn on tablet mode, search for your device&nbsp;on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.&nbsp;</p>
 <p>&nbsp;</p>
 <p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.</p>
 <p>&nbsp;</p>
-<p>Tip</p>
+<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Tip</h3>
 <p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen. Select the <strong>Start </strong>button, select <strong>Settings </strong>&gt; <strong>System </strong>&gt; <strong>Tablet mode </strong>,&nbsp;then turn on <strong>Automatically hide the taskbar in tablet mode</strong>. To see the hidden taskbar, swipe up from the bottom of the screen, or use your&nbsp;mouse to hover there.</p>
 
 <h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">Use two apps simultaneously</h3>
@@ -311,11 +311,11 @@ export class QaService {
 			id: 6,
 			path: 'support-detail/6',
 			iconPath: `${this.imagePath}/svg_icon_qa_cortana.svg`,
-			title: 'Get to know Cortona, your personal assistant',
+			title: 'Get to know Cortana, your personal assistant',
 			like: false,
 			dislike: false,
 			description: `<div style="font-size:4rem;font-weight:bold;">
-				Get to know Cortona, your personal assistant
+				Get to know Cortana, your personal assistant
 			</div>
 			<hr>
 			<h3 style="font-weight:bold;font-size:2.5rem;padding:10px 0">What is Cortana?</h3>

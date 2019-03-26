@@ -1,20 +1,21 @@
 <div class="vtr-installation-history">
-	<div class="row">
+	<div class="row"
+		*ngIf="installationHistory.length > 0">
 		<div class="col">
 			<div class="updates-lists-container">
 				<div class="row">
 					<div class="col">
-						<div class="heading">Full History</div>
+						<!-- <div class="heading">Full History</div> -->
 						<ul class="installation-list">
 							<li class="list-heading">
 								<div class="container-fluid">
 									<div class="row align-items-center">
-										<div class="col col-10">
+										<div class="col col-9">
 											<div class="item-text">Name</div>
 										</div>
-										<div class="col col-2 sort-order">
+										<div class="col col-3 sort-order">
 											<a (click)="toggleSortOrder()">
-												<div class="item-text">Sort by Date</div>
+												<div class="sort-heading-text">Sort by Date</div>
 												<div class="sort-icon">
 													<fa-icon *ngIf="!sortAsc"
 														[icon]="['fas', 'caret-up']"></fa-icon>
@@ -97,6 +98,12 @@
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+	<div class="row"
+		*ngIf="installationHistory.length === 0">
+		<div class="col-12 heading text-center">
+			No installation history available
 		</div>
 	</div>
 </div>

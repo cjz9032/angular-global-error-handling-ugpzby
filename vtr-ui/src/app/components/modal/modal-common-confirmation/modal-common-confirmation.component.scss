@@ -1,0 +1,33 @@
+@import "../../../app.theme.scss";
+.common-confirmation-modal {
+	border-radius: $border_radius;
+	background: $gradient_main;
+	background-size: cover;
+	color: $light;
+	box-shadow: $drop_shadow;
+	padding: 3rem 4rem;
+	h1 {
+		font-size: 3.5rem;
+		font-weight: 300;
+		color: $light;
+	}
+	p {
+		font-size: 1.4rem;
+		color: $light;
+	}
+	ul {
+		li {
+			text-decoration: none;
+			font-size: 1.4rem;
+			color: $light;
+		}
+	}
+	.modal-button {
+		background: $light;
+		border-radius: 5rem;
+		padding: 1rem 4rem;
+		font-size: 1.5rem;
+		color: $main;
+		font-weight: 500;
+	}
+}

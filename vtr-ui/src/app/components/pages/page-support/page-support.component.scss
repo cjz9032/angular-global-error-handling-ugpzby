@@ -6,6 +6,11 @@
 		.vtr-page-left-column {
 			background: $shade_lightest;
 
+			// use for hide search bar
+			.vtr-page-shift-up{
+				margin-top: -8.5rem;
+			}
+
 			.card {
 				border-radius: $border_radius;
 				box-shadow: $drop_shadow;
@@ -25,6 +30,14 @@
 							background: none;
 							border: none;
 						}
+					}
+
+					.search-pre{
+						font-size: 2.4rem;
+						font-family: "Rubik";
+						font-style: italic;
+						color: $main_darker;
+						cursor: default;
 					}
 
 					.form-control {

@@ -8,6 +8,10 @@
 		padding: 1.5rem;
 	}
 
+	.vtr-container-collapsible.white-theme {
+		background: $shade_lighter;
+	}
+
 	.heading {
 		color: $main_dark;
 		font-size: 2.5rem;
@@ -102,7 +106,7 @@
 					border-radius: 50%;
 					height: 3rem;
 					width: 3rem;
-					border-width: 3px;
+					border-width: 0.3rem;
 					border-style: solid;
 					text-align: center;
 
@@ -114,7 +118,7 @@
 				}
 
 				.icon-installed {
-					border-width: 9px;
+					border-width: 0.9rem;
 					border-color: $main !important;
 				}
 			}
@@ -161,11 +165,228 @@
 
 		input {
 			height: 4.8rem;
-			border: solid 1px $shade_dark;
+			border: solid 0.1rem $shade_dark;
 			border-radius: 0.5rem;
 			margin-right: 2rem;
 			margin-top: 1rem;
 			width: 50%;
+		}
+	}
+
+	.content {
+		padding: 1.5rem;
+
+		.cardTitle {
+			display: flex;
+			margin-bottom: 3rem;
+
+			h3 {
+				font-size: 3rem;
+				font-weight: 100;
+			}
+
+			.status {
+				font-size: 2rem;
+				margin-left: 3rem;
+				margin-top: 0.8rem;
+
+				.active {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		.cardBody {
+			border: 0.1rem solid $shade_lighter;
+			border-radius: 0.8rem;
+			background: $light;
+
+			ul.openNetworks {
+				padding-left: 0rem;
+				display: flex;
+				flex-wrap: wrap;
+				margin-bottom: 0rem;
+
+				li {
+					list-style: none;
+					width: 50%;
+					padding: 2.4rem 3rem;
+					border-right: 0.1rem solid $shade_lighter;
+					border-bottom: 0.1rem solid $shade_lighter;
+					display: flex;
+					flex-wrap: wrap;
+					height: 8.8rem;
+
+					&:nth-child(even) {
+						border-right: none;
+					}
+
+					&:last-child {
+						border-bottom: none;
+					}
+
+					&:nth-last-child(2) {
+						border-bottom: none;
+					}
+
+					.status-icon {
+						position: relative;
+						width: 5.5rem;
+
+						fa-icon {
+							color: $main;
+						}
+
+						.circle {
+							background-color: $go;
+							background-image: linear-gradient(313deg, $go_light 25%, $go 100%);
+							height: 1.5rem;
+							width: 1.5rem;
+							border-radius: 1.5rem;
+							border: 0.1rem solid $go_dark;
+							text-align: center;
+							line-height: 0.9rem;
+							display: inline-block;
+							position: absolute;
+							top: 1.9rem;
+							left: 2.1rem;
+
+							fa-icon {
+								font-size: 1.5rem;
+								color: $shade_extralight;
+							}
+
+							&.red {
+								background-color: $stop;
+								background-image: linear-gradient(315deg, $stop_light 25%, $stop 100%);
+								border: 0.1rem solid $stop_dark;
+							}
+						}
+					}
+
+					.connection-name {
+						font-size: 1.7rem;
+						font-weight: 500;
+
+						small {
+							font-weight: 300;
+							display: block;
+						}
+					}
+				}
+			}
+		}
+
+		.card-foot {
+			margin-top: 2.2rem;
+
+			.show-more {
+				font-size: 1.6rem;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.wifiSecurity {
+		.card {
+			border-radius: 0.8rem;
+			border-bottom-left-radius: 0rem;
+			border-bottom-right-radius: 0rem;
+
+			&.collapsed {
+				border-bottom-left-radius: 0.8rem;
+				border-bottom-right-radius: 0.8rem;
+				border: 0.1rem solid rgba(0, 0, 0, 0.125);
+			}
+		}
+
+
+		.card-header {
+			padding: 2.5rem;
+			height: 7.8rem;
+			background: $shade_lightest;
+
+			.collapse-control {
+				cursor: pointer;
+				margin-top: -0.4rem;
+
+				.collapse-text {
+					display: inline-block;
+					color: $main;
+					font-size: 1.2rem;
+					margin-right: 1rem;
+					vertical-align: middle;
+					text-decoration: underline;
+				}
+
+				fa-icon {
+					font-size: 2.4rem;
+					color: $main;
+					vertical-align: middle;
+				}
+			}
+		}
+
+		.collapse {
+			background: $shade_lightest;
+			border-radius: 0.8rem;
+			border-top-left-radius: 0rem;
+			border-top-right-radius: 0rem;
+			// border: 0.1rem solid rgba(0, 0, 0, 0.125);
+			border: 0.1rem solid $shade_lighter;
+		}
+
+		.half {
+			width: 50%;
+			float: left;
+
+			&:last-child {
+				display: flex;
+				flex-wrap: wrap-reverse;
+				flex-direction: row-reverse;
+
+				.btn-link {
+					font-size: 1.5rem;
+					letter-spacing: 0rem;
+				}
+
+				.switch vtr-ui-switch-onoff .checkbox {
+					margin-bottom: 0rem;
+				}
+			}
+		}
+
+		.subHeading {
+			display: flex;
+
+			.circle {
+				background-color: $go;
+				background-image: linear-gradient(313deg, $go_light 25%, $go 100%);
+				height: 2rem;
+				width: 2rem;
+				border-radius: 1.5rem;
+				border: 0.1rem solid $go_dark;
+				text-align: center;
+				display: inline-block;
+				margin-right: 2.5rem;
+
+				fa-icon {
+					font-size: 1.5rem;
+					color: $light;
+				}
+
+				&.red {
+					background-color: $stop;
+					background-image: linear-gradient(315deg, $stop_light 25%, $stop 100%);
+					border: 0.1rem solid $stop_dark;
+				}
+			}
+
+			h3 {
+				font-weight: 500;
+				text-transform: uppercase;
+				margin-right: 2.5rem;
+			}
 		}
 	}
 }

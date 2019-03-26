@@ -67,7 +67,7 @@
 			@media #{$mediaquery_6} {
 				height: 4rem;
 				width: 4rem;
-				margin: .7rem auto .4rem auto;
+				margin: .7rem auto 0 auto;
 			}
 			@media #{$mediaquery_7} {
 				display: none;
@@ -99,9 +99,12 @@
 			margin: 0.5rem auto;
 			@media #{$mediaquery_6} {
 				margin: 0 auto;
+				position: relative;
+				left: -.2rem;
 			}
 			@media #{$mediaquery_7} {
 				margin: 1.7rem auto;
+				left: -.6rem;
 			}
 		}
 	}

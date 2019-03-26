@@ -4,14 +4,15 @@
 		type="radio"
 		[value]="value"
 		[checked]="checked"
-		(change)="onChange($event)"/>
+		[disabled]="disabled"
+		(change)="onChange($event)" />
 	<label for="{{radioId}}">
 		<span>{{label}}</span>
 		<fa-icon class="icon"
 			[icon]="['far', 'gem']"></fa-icon>
 		<span *ngIf="tooltip"
 			class="question"
-			placement="top"
+			placement="auto"
 			ngbTooltip="{{tooltip}}"
 			container="body">
 			<fa-icon [icon]="['far', 'question-circle']"></fa-icon>

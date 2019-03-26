@@ -1,64 +1,65 @@
 <div class="vtr-camera-control">
 	<div class="row">
-		<div class="col-6">
+		<div class="col-6 pl-0 pr-0">
 			<div class="camera-preview">
 				<video *ngIf="!cameraDetail.isPrivacyModeEnabled"
-				 #cameraPreview
-				 class="feed"></video>
-				<div *ngIf="cameraDetail.isPrivacyModeEnabled"
-				 class="privacy text-center">
-					<fa-icon [icon]="['far', 'gem']"></fa-icon>
-				</div>
+					#cameraPreview
+					class="feed"></video>
 			</div>
 		</div>
 		<div class="col-6">
 			<ul class="list-group list-group-flush">
-				<li class="list-group-item border-top" *ngIf="cameraSettings.brightness.supported">
+				<li class="list-group-item border-top"
+					*ngIf="cameraSettings.brightness.supported">
 					<div class="slider-item-text text-uppercase">
 						Brightness
 					</div>
 					<vtr-ui-range-slider [step]="cameraSettings.brightness.step"
-					 [minValue]="cameraSettings.brightness.min"
-					 [maxValue]="cameraSettings.brightness.max"
-					 [value]="cameraSettings.brightness.value"
-					 (change)="onBrightnessSliderChange($event)">
+						[minValue]="cameraSettings.brightness.min"
+						[maxValue]="cameraSettings.brightness.max"
+						[value]="cameraSettings.brightness.value"
+						(change)="onBrightnessSliderChange($event)">
 					</vtr-ui-range-slider>
 				</li>
-				<li class="list-group-item" *ngIf="cameraSettings.contrast.supported">
+				<li class="list-group-item"
+					*ngIf="cameraSettings.contrast.supported">
 					<div class="slider-item-text text-uppercase">
 						Contrast
 					</div>
 					<vtr-ui-range-slider [step]="cameraSettings.contrast.step"
-					 [minValue]="cameraSettings.contrast.min"
-					 [maxValue]="cameraSettings.contrast.max"
-					 [value]="cameraSettings.contrast.value"  (change)="onContrastSliderChange($event)">
+						[minValue]="cameraSettings.contrast.min"
+						[maxValue]="cameraSettings.contrast.max"
+						[value]="cameraSettings.contrast.value"
+						(change)="onContrastSliderChange($event)">
 					</vtr-ui-range-slider>
 				</li>
-				<li class="list-group-item" *ngIf="cameraSettings.exposure.supported">
+				<li class="list-group-item"
+					*ngIf="cameraSettings.exposure.supported">
 					<div class="d-flex justify-content-between">
 						<div class="slider-item-text text-uppercase">
 							Auto Exposure
 						</div>
 						<div class="float-right">
-							<vtr-ui-switch-onoff
-							 [value]="cameraSettings.exposure.autoModeSupported"
-							 (toggle)="onAutoExposureChange($event)"></vtr-ui-switch-onoff>
+							<vtr-ui-switch-onoff [value]="cameraSettings.exposure.autoModeSupported"
+								(toggle)="onAutoExposureChange($event)"></vtr-ui-switch-onoff>
 						</div>
 					</div>
-					<vtr-ui-range-slider [step]="cameraSettings.exposure.step"
-					 [minValue]="cameraSettings.exposure.min"
-					 [maxValue]="cameraSettings.exposure.max"
-					 [value]="cameraSettings.exposure.value"
-					 (change)="onExposureSliderChange($event)">
+					<vtr-ui-range-slider *ngIf="showAutoExposureSlider"
+						[step]="cameraSettings.exposure.step"
+						[minValue]="cameraSettings.exposure.min"
+						[maxValue]="cameraSettings.exposure.max"
+						[value]="cameraSettings.exposure.value"
+						(change)="onExposureSliderChange($event)">
 					</vtr-ui-range-slider>
 				</li>
-				<li class="list-group-item" *ngIf="cameraSettings.focus.supported">
+				<li class="list-group-item"
+					*ngIf="cameraSettings.focus.supported">
 					<div class="d-flex justify-content-between">
 						<div class="slider-item-text text-uppercase ">
 							Auto Focus
 						</div>
 
-						<div class="float-right"  >
+						<div class="float-right">
 							<vtr-ui-switch-onoff [value]="cameraSettings.focus.autoModeSupported"></vtr-ui-switch-onoff>
 						</div>
 					</div>
