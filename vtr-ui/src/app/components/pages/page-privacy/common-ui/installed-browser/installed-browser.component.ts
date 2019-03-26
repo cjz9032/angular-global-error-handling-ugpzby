@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ServerCommunicationService } from '../../common-services/server-communication.service';
-import { BrowserAccountsService } from '../../common-services/browser-accounts.service';
+import { BrowserAccounts, BrowserAccountsService } from '../../common-services/browser-accounts.service';
 
 @Component({
 	selector: 'vtr-installed-browser',
@@ -9,15 +9,16 @@ import { BrowserAccountsService } from '../../common-services/browser-accounts.s
 })
 export class InstalledBrowserComponent implements OnInit {
 	@Input() showDetailAction: 'link' | 'expand';
-	@Input() installedBrowser: { name: string, image_url: string, has_stored_accounts: boolean };
+	@Input() installedBrowser: { name: string, image_url: string, accounts?: BrowserAccounts[]};
 
 	public isDetailsExpanded: boolean;
-	public browserAccounts: { email?: string, password?: string, image?: string };
+	public decryptedBrowserAccounts: { email?: string, password?: string, image?: string, website?: string }[];
 
 	constructor(private serverCommunicationService: ServerCommunicationService, private browserAccountsService: BrowserAccountsService) {
 	}
 
 	ngOnInit() {
+		this.decryptedBrowserAccounts = this.browserAccountsService.decryptedBrowserAccounts[this.installedBrowser.name.toLowerCase()];
 	}
 
 	toggleDetails() {
@@ -25,20 +26,9 @@ export class InstalledBrowserComponent implements OnInit {
 	}
 
 	showBrowserAccounts() {
-		let getAccountsPromise;
-		switch (this.installedBrowser.name) { // TODO refactor after Api structure is ready
-			case 'Chrome':
-				getAccountsPromise = this.browserAccountsService.getAccountsChrome();
-				break;
-			case 'Firefox':
-				getAccountsPromise = this.browserAccountsService.getAccountsFirefox();
-				break;
-			case 'Edge':
-				getAccountsPromise = this.browserAccountsService.getAccountsEdge();
-				break;
-		}
+		const getAccountsPromise = this.browserAccountsService.getDecryptedBrowserAccounts(this.installedBrowser.name.toLowerCase());
 		getAccountsPromise.then((browserAccounts) => {
-			this.browserAccounts = browserAccounts;
+			this.decryptedBrowserAccounts = browserAccounts;
 		});
 	}
 

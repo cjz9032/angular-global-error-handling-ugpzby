@@ -79,6 +79,15 @@
         <h3 class="browser-accounts-block__title">Easily accessible passwords</h3>
         <p class="browser-accounts-block__text">You're storing some of your passwords in your web browser, but these passwords are usually not well encrypted, making your accounts vulnerable to hacking.</p>
 
+        <div *ngIf="!(isConsentToGetBrowsersAccountsGiven$ | async)" class="browser-accounts-concent">
+            <div class="browser-accounts-concent__text-wrapper">
+                <p class="browser-accounts-concent__text">You agree to give access to view passwords that are stored in browsers?</p>
+            </div>
+            <div class="browser-accounts-concent__btn-wrapper">
+                <button class="browser-accounts-concent__btn" (click)="giveConcentToGetBrowserAccounts()">I agree</button>
+            </div>
+        </div>
+
         <vtr-browser-stored-accounts [inputData]="browserStoredAccountsData"></vtr-browser-stored-accounts>
     </div>
 

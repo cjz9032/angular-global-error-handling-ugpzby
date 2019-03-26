@@ -1,4 +1,4 @@
-<div *ngIf="!(!installedBrowser.has_stored_accounts && showDetailAction === 'expand')" class="installed-browser__wrapper">
+<div *ngIf="!(!installedBrowser.accounts?.length && showDetailAction === 'expand')" class="installed-browser__wrapper">
   <div class="installed-browser__collapsed">
     <div class="installed-browser__detail-col">
       <img class="installed-browser__icon" src="{{installedBrowser.image_url}}" alt="">
@@ -7,21 +7,55 @@
         <p class="installed-browser__text">{{installedBrowser.name}}’s user data can be easily read by any program on your computer</p>
       </div>
     </div>
-    <div *ngIf="!installedBrowser.has_stored_accounts" class="accounts-safe"></div>
-    <a *ngIf="installedBrowser.has_stored_accounts && showDetailAction === 'link'" class="installed-browser__btn" routerLink="./browser-accounts">Show details</a>
-    <button *ngIf="installedBrowser.has_stored_accounts && showDetailAction === 'expand'" class="installed-browser__btn" (click)="toggleDetails()" [class.installed-browser__btn--expanded]="isDetailsExpanded">{{isDetailsExpanded ? 'Hide' : 'Show'}} details</button>
+    <!--before concent-->
+    <button disabled *ngIf="!installedBrowser.accounts" class="installed-browser__btn installed-browser__btn--disabled">See details</button>
+    <!--browser does NOT have stored passwords-->
+    <div *ngIf="installedBrowser.accounts && !installedBrowser.accounts.length" class="accounts-safe"></div>
+    <!--browser has stored passwords-->
+    <a *ngIf="showDetailAction === 'link' && installedBrowser.accounts && installedBrowser.accounts.length" class="installed-browser__btn" routerLink="./browser-accounts">Show details</a>
+    <button *ngIf="showDetailAction === 'expand'" class="installed-browser__btn" (click)="toggleDetails()" [class.installed-browser__btn--expanded]="isDetailsExpanded">{{isDetailsExpanded ? 'Hide' : 'Show'}} details</button>
   </div>
   <div *ngIf="isDetailsExpanded" class="installed-browser__content">
-    <div *ngIf="!browserAccounts || !browserAccounts.length" class="browser-preview">
+    <div *ngIf="!decryptedBrowserAccounts || !decryptedBrowserAccounts.length" class="browser-preview">
       <p class="browser-preview__text">Find out what password are being stored unsafely in {{installedBrowser.name}}</p>
       <button class="browser-preview__btn" (click)="showBrowserAccounts()">Show me</button>
     </div>
-    <div *ngIf="browserAccounts && browserAccounts.length" class="browser-accounts">
-      <div *ngFor="let account of browserAccounts; let i = index;">
-        <div class="browser-accounts__item browser-account" [class.browser-account--first]="i === 0">
-          <img src="{{account.image}}" alt="account stored in browser image" class="browser-account__img">
-          <p class="browser-account__email">{{account.email}}</p>
-          <p class="browser-account__pass">{{account.password}}</p>
+
+    <div *ngIf="decryptedBrowserAccounts && decryptedBrowserAccounts.length" class="browser-accounts__wrapper">
+
+      <div class="accounts-title">
+        <div class="accounts-title__img-col"></div>
+        <div class="accounts-title__text-wrapper">
+          <div class="accounts-title__website-col">
+            <p class="accounts-title__text">Website name</p>
+          </div>
+          <div class="accounts-title__email-col">
+            <p class="accounts-title__text">Username</p>
+          </div>
+          <div class="accounts-title__password-col">
+            <p class="accounts-title__text">Password</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="browser-accounts">
+        <div *ngFor="let account of decryptedBrowserAccounts; let i = index;">
+          <div class="browser-accounts__item browser-account" [class.browser-account--first]="i === 0">
+            <div class="browser-account__img-col">
+              <img src="{{account.image}}" alt="account stored in browser image" class="browser-account__img">
+            </div>
+            <div class="browser-account__text-wrapper">
+              <div class="browser-account__website-col">
+                <p class="browser-account__website" title="{{account.website}}">{{account.website}}</p>
+              </div>
+              <div class="browser-account__email-col">
+                <p class="browser-account__email" title="{{account.email}}">{{account.email}}</p>
+              </div>
+              <div class="browser-account__pass-col">
+                <p class="browser-account__pass" title="{{account.password}}">{{account.password}}</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

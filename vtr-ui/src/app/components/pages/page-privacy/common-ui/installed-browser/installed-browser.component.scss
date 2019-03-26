@@ -6,8 +6,7 @@
     border: 1px solid #ECF0F1;
     border-radius: 5px;
     background-color: #F5F7F8;
-    box-shadow: 0 0 2rem 0 rgba(0,0,0,0.2);
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
   &__collapsed {
     display: flex;
@@ -45,6 +44,9 @@
     text-transform: uppercase;
     font-weight: 500;
     transition: all 0.2s ease-in-out;
+    &--disabled {
+      background: linear-gradient(270deg, #E2E2E2 0%, #C2C6CF 100%);
+    }
     &--expanded {
       background: #fff;
       color: #4A81FD;
@@ -53,8 +55,9 @@
   }
   &__content {
     height: 30rem;
-    overflow: auto;
     margin-top: 2rem;
+    border-radius: 5px;
+    overflow: hidden;
   }
 }
 
@@ -86,8 +89,45 @@
 
 .browser-accounts {
   background: #fff;
-  border-radius: 5px;
   box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+  height: calc(100% - 2.5rem);
+  overflow: auto;
+  &__wrapper {
+    height: 100%;
+  }
+}
+
+.accounts-title {
+  width: 100%;
+  height: 2.5rem;
+  padding: 0 2rem;
+  background: #C2C8CE;
+  display: flex;
+  align-items: center;
+  position: relative;
+  &__text-wrapper {
+    display: flex;
+    width: 100%;
+  }
+  &__img-col {
+    width: 4.2rem;
+  }
+  &__website-col {
+    width: 30%;
+  }
+  &__email-col {
+    width: 35%;
+  }
+  &__password-col {
+    width: 35%;
+  }
+  &__text {
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    padding: 0 2rem 0 1.4rem;
+    margin: 0;
+  }
 }
 
 .browser-account {
@@ -99,9 +139,33 @@
   &--first {
     border-top: 1px solid #ECF0F1;
   }
+  &__text-wrapper {
+    display: flex;
+    width: 100%;
+  }
+  &__img-col {
+    width: 4.2rem;
+  }
   &__img {
     max-width: 25px;
     max-height: 25px;
+  }
+  &__website-col {
+    width: 30%;
+  }
+  &__website {
+    padding: 0 2rem 0 1.4rem;
+    color: #667481;
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 23px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &__email-col {
+    width: 35%;
   }
   &__email {
     padding: 0 2rem 0 1.4rem;
@@ -110,14 +174,23 @@
     font-weight: 300;
     line-height: 23px;
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &__pass-col {
+    width: 35%;
   }
   &__pass {
-    padding: 0 2rem 0 0;
+    padding: 0 2rem 0 1.4rem;
     color: #667481;
     font-size: 1.4rem;
     font-weight: 300;
     line-height: 23px;
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 

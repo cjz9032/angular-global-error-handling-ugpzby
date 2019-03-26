@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { filter, map, mergeMap, reduce, switchMap } from 'rxjs/operators';
+import { filter, map, switchMap } from 'rxjs/operators';
 import { combineLatest, iif, of } from 'rxjs';
 import { FigleafOverviewService } from '../../common-services/figleaf-overview.service';
 import { BrowserAccountsService } from '../../common-services/browser-accounts.service';
@@ -109,7 +109,7 @@ export class PrivacyScoreService {
 				});
 			})
 		);
-	};
+	}
 
 	private getInstalledScore() {
 		return this.figleafOverviewService.getBreaches().pipe(
@@ -132,32 +132,25 @@ export class PrivacyScoreService {
 	}
 
 	private getStoragesScore() {
-		const isBrowserHasAccount = (browserName) => {
-			switch (browserName) {
-				case 'chrome':
-					return this.browserAccountsService.isChromeHasAccounts();
-				case 'edge':
-					return this.browserAccountsService.isEdgeHasAccounts();
-				case 'firefox':
-					return this.browserAccountsService.isFirefoxHasAccounts();
-			}
-		};
-		return this.serverCommunicationService.getInstalledBrowser().pipe(
+
+		this.serverCommunicationService.getInstalledBrowser();
+
+		return this.browserAccountsService.browserAccounts$.pipe(
 			filter((response) => !!response),
-			switchMap((response) => of(...response.payload.installed_browsers)), /// chrome, edge, firefox
-			mergeMap((browserName) => isBrowserHasAccount(browserName).pipe(
-				map((response) => {
-					const has_accounts = response.payload.has_accounts;
-					return {
-						fixedStorages: !has_accounts && 1,
-						unfixedStorages: has_accounts && 1,
-					};
-				})
-			)),
-			reduce((prevVal, currVal) => ({
-				fixedStorages: prevVal.fixedStorages + currVal.fixedStorages,
-				unfixedStorages: prevVal.unfixedStorages + currVal.unfixedStorages,
-			})),
+			switchMap((browsersAccounts) => {
+				const storagesScoreData = Object.keys(browsersAccounts)
+					.map((browser) => {
+						return {
+							fixedStorages: !browsersAccounts[browser].length && 1,
+							unfixedStorages: browsersAccounts[browser].length && 1,
+						};
+					}).reduce((prevVal, currVal) => ({
+							fixedStorages: prevVal.fixedStorages + currVal.fixedStorages,
+							unfixedStorages: prevVal.unfixedStorages + currVal.unfixedStorages,
+						})
+					);
+				return of(storagesScoreData);
+			}),
 		);
 	}
 

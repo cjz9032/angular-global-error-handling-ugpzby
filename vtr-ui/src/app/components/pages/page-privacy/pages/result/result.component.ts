@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { EmailScannerService } from '../../common-services/email-scanner.service';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
+import { BrowserAccountsService } from '../../common-services/browser-accounts.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -14,6 +15,8 @@ export class ResultComponent implements OnInit, OnDestroy {
 	readonly breachedAccountMode = BreachedAccountMode;
 
 	isEmailWasScanned = false;
+
+	isConsentToGetBrowsersAccountsGiven$ = this.browserAccountsService.isConsentGiven$;
 
 	userEmail: string;
 	breached_accounts: any[];
@@ -32,6 +35,7 @@ export class ResultComponent implements OnInit, OnDestroy {
 	constructor(
 		private router: Router,
 		private emailScannerService: EmailScannerService,
+		private browserAccountsService: BrowserAccountsService,
 	) {
 	}
 
@@ -48,6 +52,10 @@ export class ResultComponent implements OnInit, OnDestroy {
 			this.userEmail = this.emailScannerService.userEmail;
 			this.isEmailWasScanned = true;
 		});
+
+		if (this.isConsentToGetBrowsersAccountsGiven$.getValue()) {
+			this.getBrowserAccountsDetail();
+		}
 	}
 
 	ngOnDestroy() {
@@ -55,5 +63,16 @@ export class ResultComponent implements OnInit, OnDestroy {
 
 	redirectToDetailPage(index: number) {
 		this.router.navigate(['privacy', 'breaches'], {queryParams: {openId: index}});
+	}
+
+	giveConcentToGetBrowserAccounts() {
+		this.browserAccountsService.giveConcent();
+		this.getBrowserAccountsDetail();
+	}
+
+	getBrowserAccountsDetail() {
+		const browsersNamesArray = Object.keys(this.browserAccountsService.installedBrowsersData$.getValue());
+		this.browserAccountsService.getBrowserAccounts(browsersNamesArray);
+		this.browserAccountsService.getBrowserAccountsDetail();
 	}
 }
