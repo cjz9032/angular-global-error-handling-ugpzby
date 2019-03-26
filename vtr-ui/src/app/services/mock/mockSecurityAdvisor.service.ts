@@ -74,17 +74,20 @@ export class MockSecurityAdvisorService {
 				info: '2019/1/4 15:22:49',
 				good: 2
 			}],
-			isLocationSeviceOn: true,
+			isLocationServiceOn: true,
 			isLWSPluginInstalled: true,
-			enableWifiSecurity(): boolean {
+			enableWifiSecurity(): Promise<boolean> {
 				this.state = 'enabled';
 				this.mitt.emit(EventTypes.wsStateEvent, this.state);
-				return true;
+				return Promise.resolve(true);
 			},
-			disableWifiSecurity(): boolean {
+			disableWifiSecurity(): Promise<boolean> {
 				this.state = 'disabled';
 				this.mitt.emit(EventTypes.wsStateEvent, this.state);
-				return true;
+				return Promise.resolve(true);
+			},
+			launchLocationPrivacy(): Promise<boolean> {
+				return Promise.resolve(true);
 			},
 			updateWifiSecurityState(): void {},
 			getWifiSecurityState(): void {},
@@ -118,12 +121,14 @@ export class MockSecurityAdvisorService {
 				}
 			],
 			chsConsoleUrl: 'https://www.baidu.com',
-			launchConsole(): void {},
-			joinGroupBy(): boolean {
-				return true;
+			launchConsole(): Promise<boolean> {
+				return Promise.resolve(true);
 			},
-			quitFromGroup(): boolean {
-				return true;
+			joinGroupBy(): Promise<boolean> {
+				return Promise.resolve(true);
+			},
+			quitFromGroup(): Promise<boolean> {
+				return Promise.resolve(true);
 			},
 			updateActivateDeviceState(): void {},
 			getActivateDeviceState(): void {},
@@ -156,7 +161,9 @@ export class MockSecurityAdvisorService {
 					value: true,
 					id: ''
 				}],
-				launch(): void {},
+				launch(): Promise<boolean> {
+					return Promise.resolve(true);
+				},
 			},
 			windowsDefender: {
 				status: true,
@@ -193,10 +200,11 @@ export class MockSecurityAdvisorService {
 			systemPasswordStatus: 'inactive',
 			supportUrl: 'https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello',
 			windowsHelloProtocol: 'ms-settings:signinoptions',
-			launch(): void {},
-			refresh(): Promise < any > {
-				let p1 = new Promise((resolve) => {});
-				return p1;
+			launch(): Promise<boolean> {
+				return Promise.resolve(true);
+			},
+			refresh(): Promise<boolean> {
+				return Promise.resolve(true);
 			},
 			on(type, handler): Emitable {
 				this.mitt.on(type, handler);
@@ -215,9 +223,11 @@ export class MockSecurityAdvisorService {
 			appUrl: 'https://app.dashlane.com',
 			status: 'installed',
 			isDashLaneEdgeVersion: false,
-			download(): void {},
-			launch(): boolean {
-				return true;
+			download(): Promise<boolean> {
+				return Promise.resolve(true);
+			},
+			launch(): Promise<boolean> {
+				return Promise.resolve(true);
 			},
 			refresh(): Promise < any > {
 				const p1 = new Promise((resolve) => {});
@@ -236,10 +246,11 @@ export class MockSecurityAdvisorService {
 			mitt: this.mitt,
 			downloadUrl: 'https://www.surfeasy.com/lenovo/',
 			status: 'installed',
-			download(): void {},
-			launch(): Promise < any > {
-				const p1 = new Promise((resolve) => {});
-				return p1;
+			download(): Promise<boolean> {
+				return Promise.resolve(true);
+			},
+			launch(): Promise <boolean> {
+				return Promise.resolve(true);
 			},
 			refresh(): Promise < any > {
 				return Promise.resolve();
