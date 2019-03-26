@@ -31,7 +31,7 @@
 		"@fortawesome/free-brands-svg-icons": "^5.7.0",
 		"@fortawesome/free-regular-svg-icons": "^5.7.0",
 		"@fortawesome/free-solid-svg-icons": "^5.7.0",
-		"@lenovo/tan-client-bridge": "10.1903.0-alpha.29",
+		"@lenovo/tan-client-bridge": "10.1903.0-alpha.30",
 		"@ng-bootstrap/ng-bootstrap": "^4.1.0",
 		"@ngx-translate/core": "^11.0.1",
 		"@ngx-translate/http-loader": "^4.0.0",
