@@ -1,114 +1,117 @@
-@import '../../../app.theme';
+@import "../../../app.theme";
 
 .vtr-page-support {
-	.vtr-page-content {
+  .vtr-page-content {
+    .vtr-page-left-column {
+      background: $shade_lightest;
 
-		.vtr-page-left-column {
-			background: $shade_lightest;
+      .card {
+        border-radius: $border_radius;
+        box-shadow: $drop_shadow;
 
-			.card {
-				border-radius: $border_radius;
-				box-shadow: $drop_shadow;
+        .description-container {
+          font-size: 2rem;
+          letter-spacing: 0.1rem;
+        }
 
-				.description-container {
-					font-size: 2rem;
-					letter-spacing: 0.1rem;
-				}
+        .text {
+          color: $shade_darker;
+          font-size: 1.8rem;
+          font-weight: $weight_light;
+          line-height: 1.8em;
 
-				.text {
-					color: $shade_darker;
-					font-size: 1.8rem;
-					font-weight: $weight_light;
-					line-height: 1.8em;
+          &.smaller {
+            font-size: 1.4rem;
+          }
+        }
 
-					&.smaller {
-						font-size: 1.4rem;
-					}
-				}
+        .title {
+          color: $main_shade;
+          font-size: 3.9rem;
+          font-weight: $weight_light;
+          margin-bottom: 2rem;
 
-				.title {
-					color: $main_shade;
-					font-size: 3.9rem;
-					font-weight: $weight_light;
-					margin-bottom: 2rem;
+          &.smaller {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+          }
 
-					&.smaller {
-						font-size: 3rem;
-						margin-bottom: 1.5rem;
-					}
+          &.bolder {
+            font-weight: $weight_medium;
+            color: $main_darker;
+          }
+        }
 
-					&.bolder {
-						font-weight: $weight_medium;
-						color: $main_darker;
-					}
-				}
+        .subtitle {
+          color: $shade;
+          font-size: 1.3rem;
+          font-weight: $weight_medium;
+          letter-spacing: 0.1rem;
+          line-height: 2rem;
+          margin-top: -2rem;
+          text-transform: uppercase;
+        }
 
-				.subtitle {
-					color: $shade;
-					font-size: 1.3rem;
-					font-weight: $weight_medium;
-					letter-spacing: 0.1rem;
-					line-height: 2rem;
-					margin-top: -2rem;
-					text-transform: uppercase;
-				}
+        .inset-content {
+          border: 1px solid $shade_lighter;
+          border-radius: $border_radius;
+          background: $shade_lightest;
 
-				.inset-content {
-					border: 1px solid $shade_lighter;
-					border-radius: $border_radius;
-					background: $shade_lightest;
+          .icon-bkg {
+            background: $light;
+            border: 1px solid $shade_lighter;
+            width: 5rem;
+            height: 5rem;
+            border-radius: 2.5rem;
+          }
 
-					.icon-bkg {
-						background: $light;
-						border: 1px solid $shade_lighter;
-						width: 5rem;
-						height: 5rem;
-						border-radius: 2.5rem;
-					}
+          fa-icon {
+            font-size: 2.3rem;
+            line-height: 5rem;
+            color: $main;
+          }
 
-					fa-icon {
-						font-size: 2.3rem;
-						line-height: 5rem;
-						color: $main;
-					}
+          .cursor-pointer {
+            cursor: pointer;
+          }
 
-					.cursor-pointer {
-						cursor: pointer;
-					}
-				}
+          button {
+            a {
+              color: $light;
+              &:hover {
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
 
+      .sub-title {
+        color: $main_darker;
+        font-size: 1.5rem;
+        font-weight: $weight-medium;
+      }
 
-			}
+      .icon {
+        color: $main;
+      }
 
-			.sub-title {
-				color: $main_darker;
-				font-size: 1.5rem;
-				font-weight: $weight-medium;
-			}
+      .btn-label {
+        height: 4.5rem;
+        margin: 1rem 0;
+        padding: 0 2rem;
+        border-radius: 2.25rem;
+        background: $gradient_main;
+        color: $light;
+        font-size: 1.5rem;
+        font-weight: $weight_medium;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
 
-			.icon {
-				color: $main;
-			}
-
-			.btn-label {
-				height: 4.5rem;
-				margin: 1rem 0;
-				padding: 0 2rem;
-				border-radius: 2.25rem;
-				background: $gradient_main;
-				color: $light;
-				font-size: 1.5rem;
-				font-weight: $weight_medium;
-				text-align: center;
-				text-transform: uppercase;
-			}
-		}
-
-		.mn-6 {
-			margin-top: $shift_up_small;
-		}
-
-
-	}
-
+    .mn-6 {
+      margin-top: $shift_up_small;
+    }
+  }
 }
