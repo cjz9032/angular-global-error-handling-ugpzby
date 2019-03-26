@@ -1,7 +1,14 @@
 <div class="row container-article">
-	<div class="col-6 pt-40 px-40 article-item"
-		*ngFor="let item of items, let i = index">
-		<vtr-article-item [item]="item"
-			[index]="i"></vtr-article-item>
+	<div class="col-6 pt-40 px-40 article-item">
+		<div *ngFor="let item of items, let i = index">
+			<vtr-article-item [item]="item"
+				[index]="i" *ngIf="i%2 == 0"></vtr-article-item>
+		</div>
+	</div>
+	<div class="col-6 pt-40 px-40 article-item">
+		<div *ngFor="let item of items, let i = index">
+			<vtr-article-item [item]="item"
+				[index]="i" *ngIf="i%2 == 1"></vtr-article-item>
+		</div>
 	</div>
 </div>
