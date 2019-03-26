@@ -390,7 +390,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 										console.log('manualModeSettingStatus: performance');
 										break;
 									case 'error':
-									this.toggleIntelligentCooling = false;
+										this.toggleIntelligentCooling = false;
 										console.log('manualModeSettingStatus: error');
 										break;
 								}
