@@ -64,16 +64,16 @@
 					</div>
 
 					<div class="p-0"
-					 [ngClass]="{'pl-1': type==='camera', 'pl-2': type===undefined}"
-					 *ngIf="rightIcon.length > 0">
+						[ngClass]="{'pl-4': type==='camera', 'pl-2': type===undefined}"
+						*ngIf="rightIcon.length > 0">
 						<fa-icon class="right-icon"
-						 triggers="click:blur"
-						 placement="top"
-						 [ngbTooltip]="tooltipRef"
-						 [icon]="rightIcon"
-						 container="body"
-						 tooltipClass="vtr-tooltip"
-						 (click)="onRightIconClick($event)"></fa-icon>
+							triggers="click:blur"
+							placement="auto"
+							[ngbTooltip]="tooltipRef"
+							[icon]="rightIcon"
+							container="body"
+							tooltipClass="vtr-tooltip"
+							(click)="onRightIconClick($event)"></fa-icon>
 					</div>
 				</div>
 			</div>

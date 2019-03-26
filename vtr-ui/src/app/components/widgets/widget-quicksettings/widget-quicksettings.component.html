@@ -6,7 +6,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col col-4 text-left">
+			<div class="col col-4">
 				<vtr-widget-switch-icon [iconDefinition]="['fal', 'microphone']"
 					[value]="microphoneStatus.status"
 					[title]="'dashboard.quick-settings.microphone' | translate"
@@ -14,7 +14,7 @@
 					(toggle)="onMicrophoneStatusToggle($event)"
 					[tooltipText]="quickSettingsWidget[0].tooltipText" ></vtr-widget-switch-icon>
 			</div>
-			<div class="col col-4 text-center">
+			<div class="col col-4">
 				<vtr-widget-switch-icon [iconDefinition]="['fal', 'camera']"
 					[value]="cameraStatus.status"
 					[title]="'dashboard.quick-settings.camera-privacy' | translate"
@@ -22,7 +22,7 @@
 					(toggle)="onCameraStatusToggle($event)"
 					[tooltipText]="quickSettingsWidget[1].tooltipText" ></vtr-widget-switch-icon>
 			</div>
-			<div class="col col-4 text-right">
+			<div class="col col-4">
 				<vtr-widget-switch-icon [iconDefinition]="['fal', 'eye']"
 					[title]="'dashboard.quick-settings.eye-care-mode' | translate"
 					[value]="eyeCareModeStatus.status"

@@ -21,7 +21,8 @@
 												<div class="heading">SurfEasy Virtual Private Network</div>
 											</div>
 											<div class="pull right"><img class="surfeasy_logo_teal"
-													src="../../../../assets/images/SurfEasy-logo.png" /></div>
+													src="../../../../assets/images/SurfEasy-logo.png" />
+											</div>
 										</div>
 										<div class="row mt-20">
 											<div class="col">
@@ -79,9 +80,10 @@
 														vtrMetrics
 														metricsEvent="itemClick"
 														metricsParent="surfeasy-virtual-private-network"
-														metricsItem="get surfeasy"
+														metricsItem="btn.get surfeasy"
 														(click)="surfeasy()"
-														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
+														class="btn btn-primary text-uppercase btn-round-sm btn-lg">
+
 														Get SurfEasy
 													</button>
 												</div>
@@ -95,7 +97,8 @@
 												<div class="heading">SurfEasy Virtual Private Network</div>
 											</div>
 											<div class="pull right"><img class="surfeasy_logo_teal"
-													src="../../../../assets/images/SurfEasy-logo.png" /></div>
+													src="../../../../assets/images/SurfEasy-logo.png" />
+											</div>
 										</div>
 										<div class="row mt-20">
 											<div class="col">
@@ -151,7 +154,12 @@
 												<div class="col-12">
 													<button type="button"
 														(click)="surfeasy()"
+														vtrMetrics
+														metricsEvent="itemClick"
+														metricsParent="surfeasy-virtual-private-network"
+														metricsItem="btn.opensureasy"
 														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
+
 														Open SurfEasy
 													</button>
 												</div>
@@ -279,7 +287,8 @@
 												class="learnmore">Terms of Services</a></p>
 									</div>
 									<div class="pull right"><img class="surfeasy_logo_bottom"
-											src="../../../../assets/images/SurfEasy-logo.png" /></div>
+											src="../../../../assets/images/SurfEasy-logo.png" />
+									</div>
 								</div>
 							</div>
 						</div>
@@ -447,7 +456,8 @@
 												class="learnmore">Terms of Services</a></p>
 									</div>
 									<div class="pull right"><img class="surfeasy_logo_teal"
-											src="../../../../assets/images/SurfEasy-logo.png" /></div>
+											src="../../../../assets/images/SurfEasy-logo.png" />
+									</div>
 								</div>
 							</div>
 						</div>
@@ -459,8 +469,10 @@
 								<div class="row mb-40">
 									<div class="col col-12">
 										<vtr-widget-status [title]="'Security Advisor'"
+											componentName="security advisor"
 											[description]="'CHECK IF YOUR DEVICE IS SECURED.'"
 											[items]="mockService.securityStatus">
+
 										</vtr-widget-status>
 									</div>
 								</div>
