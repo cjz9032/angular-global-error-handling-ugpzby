@@ -16,7 +16,7 @@ export class PrivacyScoreService {
 		private serverCommunicationService: ServerCommunicationService) {
 	}
 
-	private scoreWeights = {
+	readonly scoreWeights = {
 		leaksScore: 1.25,
 		monitoringEnabled: 1.25,
 		trackingEnabled: 1.25,

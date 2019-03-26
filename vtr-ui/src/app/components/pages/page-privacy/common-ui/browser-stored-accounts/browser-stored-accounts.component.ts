@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { ServerCommunicationService } from '../../common-services/server-communication.service';
 import { BrowserAccountsService } from '../../common-services/browser-accounts.service';
-import { map, mergeMap, switchMap } from 'rxjs/operators';
+import { map, mergeMap, switchMap, takeUntil } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
 
 interface InstalledBrowser {
 	name: string;
@@ -15,7 +16,7 @@ interface InstalledBrowser {
 	templateUrl: './browser-stored-accounts.component.html',
 	styleUrls: ['./browser-stored-accounts.component.scss']
 })
-export class BrowserStoredAccountsComponent implements OnInit {
+export class BrowserStoredAccountsComponent implements OnInit, OnDestroy {
 	@Input() inputData: { showDetailAction: 'expand' | 'link' };
 
 	installedBrowsers: InstalledBrowser[] = [];
@@ -75,10 +76,13 @@ export class BrowserStoredAccountsComponent implements OnInit {
 			}
 		};
 		this.serverCommunicationService.getInstalledBrowser().pipe(
+			takeUntil(instanceDestroyed(this)),
 			switchMap(installedBrowsersResponse => of(...installedBrowsersResponse.payload.installed_browsers)),
 			mergeMap((browserName) => getBrowserData(browserName)),
 		).subscribe(browserData => {
 			this.installedBrowsers.push(browserData);
 		});
+	}
+	ngOnDestroy() {
 	}
 }

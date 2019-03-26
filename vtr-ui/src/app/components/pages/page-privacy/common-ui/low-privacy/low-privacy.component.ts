@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { CommonPopupService } from '../../common-services/popups/common-popup.service';
 
 export interface DescribeStep {
 	img: string;
@@ -16,6 +17,7 @@ export interface DescribeStep {
 })
 export class LowPrivacyComponent {
 	@Input() steps: DescribeStep[] = [];
+	@Input() popupId: string;
 
 	promoVideoData = {
 		image_url: '/assets/images/privacy-tab/Video.png'
@@ -24,4 +26,11 @@ export class LowPrivacyComponent {
 		title: 'Promo for breached accaunts page',
 		video_url: 'https://www.youtube.com/embed/tgbNymZ7vqY'
 	};
+
+	constructor(private commonPopupService: CommonPopupService) {
+	}
+
+	handleLinkClick() {
+		this.commonPopupService.close(this.popupId);
+	}
 }

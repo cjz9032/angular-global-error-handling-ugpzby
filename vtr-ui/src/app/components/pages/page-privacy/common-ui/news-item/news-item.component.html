@@ -1,0 +1,11 @@
+<a href="{{newsItem.articleLink}}" class="privacy-news">
+  <div class="privacy-news__image-wrapper">
+    <img class="privacy-news__image" src="{{newsItem.imagePath}}" alt="{{newsItem.title}}"/>
+  </div>
+  <div class="privacy-news__text">
+    <span class="privacy-news__name" >{{newsItem.title.trim()}}</span>
+    <!--TODO clarify design, probably I don't need 'mode'-->
+    <span *ngIf="mode === 'preview'" class="privacy-news__type">Privacy Tips</span>
+    <span *ngIf="mode === 'list'" class="privacy-news__link">Read more</span>
+  </div>
+</a>

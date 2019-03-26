@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
-import { ServerCommunicationService } from '../../common-services/server-communication.service';
 import { BreachedAccount } from '../../common-ui/breached-account/breached-account.component';
 import { ActivatedRoute } from '@angular/router';
-import { filter, map, tap } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
+import { EmailScannerService } from '../../common-services/email-scanner.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -14,14 +13,11 @@ export class BreachedAccountsComponent implements OnInit {
 	breached_accounts: BreachedAccount[];
 	openBreachedId$ = this.getParamFromUrl('openId').pipe(map((val) => Number(val)));
 	// static Data transferred to html
-	LightPrivacyBannerData = {
-		title: 'Fix breaches and watch for future ones',
-		text: 'Get the app that puts you back in control of your privacy',
-		image_url: '/assets/images/privacy-tab/privacy-search.png'
-	};
 	pageBannerData = {
 		title: 'Lenovo Privacy by FigLeaf — free for 14 days',
-		text: 'Lenovo Privacy by FigLeaf lets you share what you want or keep things private for each site you visit or transact with. Your email. Payment and billing info. Your location. Even your personal interests. No matter what you do er where you go, you decide your level of privacy.',
+		text: 'Lenovo Privacy by FigLeaf lets you share what you want or keep things private for each site you visit or transact with. ' +
+			'Your email. Payment and billing info. Your location. Even your personal interests. ' +
+			'No matter what you do er where you go, you decide your level of privacy.',
 		image_url: '/assets/images/privacy-tab/banner.png',
 		read_more_link: 'https://figleafapp.com/',
 	};
@@ -42,7 +38,8 @@ export class BreachedAccountsComponent implements OnInit {
 	];
 	promoArticleData = {
 		title: 'What is the risk?',
-		text: 'Major web browsers let you store your usernames and passwords for your favorite sites, so you can log in quickly. But these passwords are usually not well encrypted, making your accounts vulnerable to hacking.',
+		text: 'Major web browsers let you store your usernames and passwords for your favorite sites, so you can log in quickly. ' +
+			'But these passwords are usually not well encrypted, making your accounts vulnerable to hacking.',
 		link_href: 'https://figleafapp.com/',
 		image_url: '/assets/images/privacy-tab/default.png'
 	};
@@ -55,18 +52,13 @@ export class BreachedAccountsComponent implements OnInit {
 	};
 
 	constructor(
-		private _location: Location,
-		private serverCommunicationService: ServerCommunicationService,
+		private emailScannerService: EmailScannerService,
 		private route: ActivatedRoute
-		) {
+	) {
 	}
 
 	ngOnInit() {
-		this.breached_accounts = this.serverCommunicationService.breachedAccounts;
-	}
-
-	backClicked() {
-		this._location.back();
+		this.breached_accounts = this.emailScannerService.breachedAccounts;
 	}
 
 	private getParamFromUrl(paramName) {

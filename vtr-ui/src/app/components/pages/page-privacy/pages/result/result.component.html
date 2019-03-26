@@ -5,24 +5,38 @@
     </div>
 
     <div *ngIf="!breached_accounts.length" class="check-breaches">
-        <p class="check-breaches__title">We didn’t find any breached accounts</p>
-        <p class="check-breaches__text">Good news — <strong>{{userEmail || 'your email'}}</strong> didn’t come up in our privacy checkup.
+        <p class="check-breaches__title">{{isEmailWasScanned ? nextEmailScanData.title : firstEmailScanData.title}}</p>
+
+        <p *ngIf="!isEmailWasScanned" class="check-breaches__text">Security software protects the data on your device and keeps your Lenovo safe from viruses.</p>
+        <p *ngIf="isEmailWasScanned" class="check-breaches__text">Good news — <strong>{{userEmail || 'your email'}}</strong> didn’t come up in our privacy checkup.
             If you us another email, make sure it’s safe too.</p>
+
         <vtr-check-breaches-form></vtr-check-breaches-form>
-        <div class="check-breaches-description">
-            <div class="check-breaches-description__text">Want to know right away if your info comes up in a futere breach?</div>
-            <a class="check-breaches-description__link" href="https://figleafapp.com/">Get Lenovo Privacy by Figleaf</a>
+
+        <div *ngIf="!isEmailWasScanned" class="check-breaches__description check-breaches__description--first-scan">
+            <vtr-scan-steps [innerIndent]="true" steps="scanSteps"></vtr-scan-steps>
         </div>
-        <div class="check-breaches-risks">
-            <div class="check-breaches-risks__text-col">
-                <div class="check-breaches-risks__description">
-                    <p class="check-breaches-risks__title">What is the risk?</p>
-                    <p class="check-breaches-risks__text">Some of your personal information may be open to all. This happens after hacking the site where you have an account.</p>
-                </div>
-                <a class="check-breaches-risks__link" href="https://figleafapp.com/">Tell me more</a>
+
+        <div *ngIf="isEmailWasScanned" class="check-breaches__description check-breaches__description--next-scan">
+            <div class="check-breaches-description">
+                <div class="check-breaches-description__text">Want to know right away if your info comes up in a futere breach?</div>
+                <a class="check-breaches-description__link" href="https://figleafapp.com/">Get Lenovo Privacy by Figleaf</a>
             </div>
-            <div class="check-breaches-risks__img-col">
-                <img class="check-breaches-risks__img" src="/assets/images/privacy-tab/Bitmap.png" alt="">
+            <div class="check-breaches-risks">
+                <div class="check-breaches-risks__text-col">
+                    <div class="check-breaches-risks__description">
+                        <p class="check-breaches-risks__title">What is the risk?</p>
+                        <p class="check-breaches-risks__text">Some of your personal information may be open to all. This happens after hacking the site where you have an account.</p>
+                    </div>
+                    <a class="check-breaches-risks__link" href="https://figleafapp.com/">Tell me more</a>
+                </div>
+                <div class="check-breaches-risks__img-col">
+                    <picture class="check-breaches-risks__img">
+                        <source srcset="/assets/images/privacy-tab/gray-safe.webp 1x, /assets/images/privacy-tab/gray-safe@2x.webp 2x">
+                        <source srcset="/assets/images/privacy-tab/gray-safe.png 1x, /assets/images/privacy-tab/gray-safe@2x.png 2x">
+                        <img class="check-breaches-risks__img" src="/assets/images/privacy-tab/gray-safe.png" alt="">
+                    </picture>
+                </div>
             </div>
         </div>
     </div>
@@ -44,7 +58,7 @@
 					{{breached_accounts.length - 3}}
 				</div>
 				<span class="more-breaches__description">breached accounts</span>
-				<a routerLink="../breaches" class="more-breaches__btn">Show All</a>
+				<a routerLink="./breaches" class="more-breaches__btn">Show All</a>
 			</div>
         </div>
         <p class="breaches-block__get-figleaf-text">Ready to take control of your privacy?
@@ -55,24 +69,18 @@
     <div class="trackers">
         <div class="trackers__header-row">
             <h3 class="trackers__title">What are website trackers?</h3>
-            <button class="trackers__popup-btn" (click)="openPopUp()">Who tracks me?</button>
+            <a class="trackers__popup-btn" routerLink="./trackers">Who tracks me?</a>
         </div>
         <p class="trackers__text">Tracking companies make money by following you online, collecting info about you, and selling these details to advertisers. What kind of info? Things like what device you use, where you shop, and what you buy.</p>
-    </div>
-
-    <tracking-browser-popup
-            [style.visibility]="isPopupOpen ? 'visible' : 'hidden'"
-            (popupClosed)="closePopUp()"
-    ></tracking-browser-popup>
+		<vtr-tracking-map></vtr-tracking-map>
+	</div>
 
     <div class="browser-accounts-block browser-accounts-block__wrapper">
         <h3 class="browser-accounts-block__title">Easily accessible passwords</h3>
         <p class="browser-accounts-block__text">You're storing some of your passwords in your web browser, but these passwords are usually not well encrypted, making your accounts vulnerable to hacking.</p>
 
         <vtr-browser-stored-accounts [inputData]="browserStoredAccountsData"></vtr-browser-stored-accounts>
-
     </div>
 
-    <button (click)="backClicked()"><= back</button>
-
+    <vtr-support-banner></vtr-support-banner>
 </section>

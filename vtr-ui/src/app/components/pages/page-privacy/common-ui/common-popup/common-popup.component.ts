@@ -29,7 +29,7 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 		}
 
 		this.commonPopupService
-			.openState$(this.popUpId)
+			.getOpenState(this.popUpId)
 			.pipe(
 				takeUntil(instanceDestroyed(this))
 			)
@@ -51,7 +51,6 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 	}
 
 	preventClick(ev) {
-		ev.preventDefault();
 		ev.stopPropagation();
 	}
 }

@@ -8,7 +8,7 @@
       </div>
     </div>
     <div *ngIf="!installedBrowser.has_stored_accounts" class="accounts-safe"></div>
-    <button *ngIf="installedBrowser.has_stored_accounts && showDetailAction === 'link'" class="installed-browser__btn" routerLink="../browser-accounts">Show details</button>
+    <a *ngIf="installedBrowser.has_stored_accounts && showDetailAction === 'link'" class="installed-browser__btn" routerLink="./browser-accounts">Show details</a>
     <button *ngIf="installedBrowser.has_stored_accounts && showDetailAction === 'expand'" class="installed-browser__btn" (click)="toggleDetails()" [class.installed-browser__btn--expanded]="isDetailsExpanded">{{isDetailsExpanded ? 'Hide' : 'Show'}} details</button>
   </div>
   <div *ngIf="isDetailsExpanded" class="installed-browser__content">

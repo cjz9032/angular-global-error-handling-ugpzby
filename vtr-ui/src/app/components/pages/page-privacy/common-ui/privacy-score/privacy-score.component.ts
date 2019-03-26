@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonPopupService } from '../../common-services/popups/common-popup.service';
 import { DescribeStep } from '../low-privacy/low-privacy.component';
-import { FigleafOverviewService } from '../../common-services/figleaf-overview.service';
-import { ServerCommunicationService } from '../../common-services/server-communication.service';
 import { PrivacyScoreService } from './privacy-score.service';
+import { EmailScannerService } from '../../common-services/email-scanner.service';
+import { takeUntil } from 'rxjs/operators';
+import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
 
 export interface ScoreParametrs {
 	fixedBreaches: number;
@@ -58,21 +59,25 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 	constructor(
 		private privacyScoreService: PrivacyScoreService,
 		private commonPopupService: CommonPopupService,
-		private figleafOverviewService: FigleafOverviewService,
-		private serverCommunicationService: ServerCommunicationService) {
+		private emailScannerService: EmailScannerService) {
 	}
 
 	ngOnInit() {
 		this.privacyScoreService.getScoreParametrs().subscribe((scoreParametrs: ScoreParametrs) => {
 			this.scoreParametrs = scoreParametrs;
+			this.scoreParametrs.unfixedBreaches = this.emailScannerService.breachedAccounts.length;
 			this.setDataAccordingToScore(scoreParametrs);
 		});
 
-		this.serverCommunicationService.onGetBreachedAccounts.subscribe(breachedAccounts => {
-			this.scoreParametrs.unfixedBreaches = breachedAccounts.payload.breaches.length;
+		this.emailScannerService.onGetBreachedAccounts$.pipe(
+			takeUntil(instanceDestroyed(this)),
+		).subscribe(breachedAccounts => {
+			this.scoreParametrs.unfixedBreaches = breachedAccounts.length;
 			this.setDataAccordingToScore(this.scoreParametrs);
 		});
 	}
+
+	ngOnDestroy() {}
 
 	setDataAccordingToScore(scoreParam) {
 		const score = this.privacyScoreService.calculate(scoreParam);
@@ -82,8 +87,6 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 		this.title = staticDataAccordingToScore.title;
 		this.text = staticDataAccordingToScore.text;
 	}
-
-	ngOnDestroy() {}
 
 	openPopUp(popUpID) {
 		this.commonPopupService.open(popUpID);

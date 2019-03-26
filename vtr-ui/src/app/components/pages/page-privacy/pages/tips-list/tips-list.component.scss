@@ -1,0 +1,18 @@
+@import '../../styles/common-blocks';
+
+.tips-page {
+  margin-top: -5.6rem;
+}
+
+.tips-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  top: -2.5rem;
+  &__tip {
+    width: calc(50% - 2.5rem);
+    margin: 2.5rem 0;
+  }
+}

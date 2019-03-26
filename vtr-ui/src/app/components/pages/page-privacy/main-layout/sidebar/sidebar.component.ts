@@ -1,37 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NewsService } from '../../common-services/news/news.service';
+import { TipsService } from '../../common-services/tips/tips.service';
 
 @Component({
 	selector: 'vtr-side-bar',
 	templateUrl: './sidebar.component.html',
 	styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
 	news = {
 		mainTitle: 'Privacy news',
 		allArticlesText: 'All news',
-		allArticlesLink: 'https://figleafapp.com?all-news=1',
-		items: [
-			{
-				articleLink: 'https://figleafapp.com?all-news=1',
-				title: 'Google knows what you are doing online. Should you be worried?',
-				imagePath: '/assets/images/privacy-tab/_cube-feature-1.jpg.jpg',
-				articleType: 'Privacy News',
-				modifyMode: undefined
-			},
-		]
+		allArticlesLink: './news',
+		dataType: 'news',
+		items: []
 	};
 	tips = {
 		mainTitle: 'Privacy tips',
 		allArticlesText: 'All tips',
-		allArticlesLink: 'https://figleafapp.com?all-tips=1',
-		items: [
-			{
-				articleLink: 'https://figleafapp.com?all-tips=1',
-				title: 'Google knows you better than your best friends',
-				imagePath: '/assets/images/privacy-tab/_cube-feature-1.jpg.jpg',
-				articleType: 'Privacy Tips',
-				modifyMode: 'up'
-			},
-		]
+		allArticlesLink: './tips',
+		dataType: 'tips',
+		items: []
 	};
+
+	constructor(private newsService: NewsService, private tipsService: TipsService) {}
+
+	ngOnInit() {
+		this.news.items = this.newsService.news;
+		this.tips.items = this.tipsService.tips;
+	}
 }

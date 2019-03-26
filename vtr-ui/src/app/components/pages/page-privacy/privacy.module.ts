@@ -10,7 +10,7 @@ import { InstalledComponent } from './pages/installed/installed.component';
 import { BrowserAccountsComponent } from './pages/browser-accounts/browser-accounts.component';
 import { ScanComponent } from './pages/scan/scan.component';
 import { ResultComponent } from './pages/result/result.component';
-import { TrackingBrowserPopupComponent } from './pages/result/tracking-browser-popup/tracking-browser-popup.component';
+import { FaqPageComponent } from './pages/faq-page/faq-page.component';
 
 // Main Layout Components
 import { MainLayoutComponent } from './main-layout/main-layout.component';
@@ -18,8 +18,6 @@ import { MainHeaderComponent } from './main-layout/main-header/main-header.compo
 import { SidebarComponent } from './main-layout/sidebar/sidebar.component';
 
 // Services
-import { ServerCommunicationService } from './common-services/server-communication.service';
-import { ConfirmationPopupService } from './common-services/popups/confirmation-popup.service';
 import { VideoPopupService } from './common-services/popups/video-popup.service';
 import { TrackersPopupService } from './common-services/popups/trackers-popup.service';
 
@@ -57,6 +55,14 @@ import { SafeHtmlPipe } from './common-pipe/safe-html.pipe';
 import { ChoseBrowserComponent } from './common-ui/chose-browser/chose-browser.component';
 import { PRIVACY_BASE_URL } from './shared/injection-tokens';
 import { ChoseBrowserGuard } from './common-guards/chose-browser.guard';
+import { ObjectValuesPipe } from './common-pipe/object-values.pipe';
+import { TipsListComponent } from './pages/tips-list/tips-list.component';
+import { FlTrackingMapModule } from 'fl-tracking-map';
+import { PrivacyTipComponent } from './common-ui/privacy-tip/privacy-tip.component';
+import { NewsItemComponent } from './common-ui/news-item/news-item.component';
+import { NewsListComponent } from './pages/news-list/news-list.component';
+import { TrackingMapComponent } from './common-ui/tracking-map/tracking-map.component';
+import { SingleTrackerDetailComponent } from './common-ui/single-tracker-detail/single-tracker-detail.component';
 
 @NgModule({
 	imports: [
@@ -64,7 +70,8 @@ import { ChoseBrowserGuard } from './common-guards/chose-browser.guard';
 		CommonModule,
 		ReactiveFormsModule,
 		FormsModule,
-		HttpClientModule
+		HttpClientModule,
+		FlTrackingMapModule,
 	],
 	declarations: [
 		// Mail Layout Components
@@ -76,8 +83,11 @@ import { ChoseBrowserGuard } from './common-guards/chose-browser.guard';
 		InstalledComponent,
 		BrowserAccountsComponent,
 		ScanComponent,
+		FaqPageComponent,
 		ResultComponent,
-		TrackingBrowserPopupComponent, // result page
+		// Pipes
+		SafeHtmlPipe,
+		ObjectValuesPipe,
 		// Directives
 		NumpersOnlyDirective,
 		// Common UI components
@@ -106,10 +116,14 @@ import { ChoseBrowserGuard } from './common-guards/chose-browser.guard';
 		InlineSvgComponent,
 		SafeHtmlPipe,
 		ChoseBrowserComponent,
+		TipsListComponent,
+		PrivacyTipComponent,
+		NewsItemComponent,
+		NewsListComponent,
+		TrackingMapComponent,
+		SingleTrackerDetailComponent,
 	],
 	providers: [
-		ServerCommunicationService,
-		ConfirmationPopupService,
 		TrackersPopupService,
 		VideoPopupService,
 		{

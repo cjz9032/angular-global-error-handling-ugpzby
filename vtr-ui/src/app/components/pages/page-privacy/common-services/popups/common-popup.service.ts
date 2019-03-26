@@ -6,9 +6,9 @@ interface PopUpInterface {
 	popUpId: string;
 }
 
-export type CommonPopupEventType = {
-	id: string,
-	isOpenState: boolean
+export interface CommonPopupEventType {
+	id: string;
+	isOpenState: boolean;
 }
 
 @Injectable({
@@ -20,7 +20,7 @@ export class CommonPopupService {
 
 	private subjectState = new ReplaySubject<CommonPopupEventType>(5);
 
-	openState$(id: string) {
+	getOpenState(id: string) {
 		return this.subjectState
 			.asObservable()
 			.pipe(

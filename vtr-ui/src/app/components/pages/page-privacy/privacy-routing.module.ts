@@ -8,7 +8,10 @@ import { BrowserAccountsComponent } from './pages/browser-accounts/browser-accou
 import { BreachedAccountsComponent } from './pages/breached-accounts/breached-accounts.component';
 import { TrackersComponent } from './pages/trackers/trackers.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
+import { FaqPageComponent } from './pages/faq-page/faq-page.component';
 import { ChoseBrowserGuard } from './common-guards/chose-browser.guard';
+import { TipsListComponent } from './pages/tips-list/tips-list.component';
+import { NewsListComponent } from './pages/news-list/news-list.component';
 
 const adminRoutes: Routes = [
 	{
@@ -16,8 +19,8 @@ const adminRoutes: Routes = [
 		component: MainLayoutComponent,
 		children: [
 			{
-				path: '',
-				component: ScanComponent,
+				path: '', // /privacy
+				component: ResultComponent,
 				pathMatch: 'full'
 			}, {
 				path: 'scan',
@@ -39,6 +42,15 @@ const adminRoutes: Routes = [
 			}, {
 				path: 'browser-accounts',
 				component: BrowserAccountsComponent
+			}, {
+				path: 'faq',
+				component: FaqPageComponent
+			}, {
+				path: 'tips',
+				component: TipsListComponent
+			}, {
+				path: 'news',
+				component: NewsListComponent
 			}
 		]
 	},

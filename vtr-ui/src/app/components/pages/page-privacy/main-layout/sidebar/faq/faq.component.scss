@@ -21,6 +21,7 @@
   }
 
   &__see-more-link {
+    text-transform: uppercase;
     text-decoration: underline;
     color: #4A81FD;
     font-size: 1.6rem;
@@ -42,21 +43,10 @@
     padding: 1.8rem 4.2rem 1.8rem 5.2rem;
     border-top: 1px solid #ECF0F1;
     position: relative;
+    cursor: pointer;
 
     &:first-child {
       border-top: none;
-    }
-
-    &:before {
-      position: absolute;
-      left: 1.5rem;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 2.2rem;
-      height: 2.2rem;
-      content: "";
-      background: url("/assets/icons/privacy-tab/icon-question.svg") 0 0 no-repeat;
-      background-size: contain;
     }
 
     &:after {
@@ -70,6 +60,17 @@
       background: url("/assets/icons/privacy-tab/blue-arrow-right.svg") 0 0 no-repeat;
       background-size: contain;
     }
+  }
+
+  &__item-img {
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    //width: 2.2rem;
+    //height: 2.2rem;
+    max-width: 2.2rem;
+    line-height: 1px;
   }
 
   &__list-text {

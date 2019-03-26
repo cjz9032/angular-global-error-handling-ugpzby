@@ -1,0 +1,10 @@
+
+<a href="{{tip.articleLink}}" class="privacy-tip">
+  <img src="{{tip.imagePath}}" alt="" class="privacy-tip__img">
+  <div class="privacy-tip__content">
+    <p class="privacy-tip__title">{{tip.title}}</p>
+    <!--TODO clarify design, probably I don't need 'mode'-->
+    <span *ngIf="mode === 'preview'" class="privacy-tip__tip-type">Privacy Tips</span>
+  </div>
+  <a *ngIf="mode === 'list'" href="{{tip.articleLink}}" class="privacy-tip__link">Read more</a>
+</a>

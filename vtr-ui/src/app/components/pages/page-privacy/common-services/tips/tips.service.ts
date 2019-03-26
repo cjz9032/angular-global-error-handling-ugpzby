@@ -1,0 +1,40 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+	providedIn: 'root'
+})
+export class TipsService {
+	tips = [
+		{
+			title: 'Google knows you better than your best friends',
+			articleLink: 'https://figleafapp.com',
+			imagePath: '/assets/images/privacy-tab/tips-bg.png',
+		}, {
+			title: 'Google knows you better than your best friends',
+			articleLink: 'https://figleafapp.com/',
+			imagePath: '/assets/images/privacy-tab/tips-bg.png',
+		}, {
+			title: 'Google knows you better than your best friends',
+			articleLink: 'https://figleafapp.com/',
+			imagePath: '/assets/images/privacy-tab/tips-bg.png',
+		}, {
+			title: 'Google knows you better than your best friends',
+			articleLink: 'https://figleafapp.com/',
+			imagePath: '/assets/images/privacy-tab/tips-bg.png',
+		}, {
+			title: 'Google knows you better than your best friends',
+			articleLink: 'https://figleafapp.com/',
+			imagePath: '/assets/images/privacy-tab/tips-bg.png',
+		}, {
+			title: 'Google knows you better than your best friends',
+			articleLink: 'https://figleafapp.com/',
+			imagePath: '/assets/images/privacy-tab/tips-bg.png',
+		}, {
+			title: 'Google knows you better than your best friends',
+			articleLink: 'https://figleafapp.com/',
+			imagePath: '/assets/images/privacy-tab/tips-bg.png',
+		}
+	];
+	constructor() {
+	}
+}

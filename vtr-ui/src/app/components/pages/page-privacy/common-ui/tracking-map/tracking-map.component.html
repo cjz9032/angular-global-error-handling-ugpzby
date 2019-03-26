@@ -1,0 +1,11 @@
+<div class="trackers__wrapper" *ngIf="(trackingData$ | async) as trackingData">
+	<fl-tracking-map [trackers]="trackingData"
+					 [positive]="isTrackersBlocked$ | async"
+					 [animate]="animate"
+					 (showDetails)="showDetails($event, trackingData)">
+	</fl-tracking-map>
+</div>
+
+<vtr-common-popup [popUpId]="trackingMapSinglePopupId" size="large">
+	<vtr-single-tracker-detail [percentOfTrack]="percentOfTrack"></vtr-single-tracker-detail>
+</vtr-common-popup>

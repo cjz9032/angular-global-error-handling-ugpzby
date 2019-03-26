@@ -4,12 +4,11 @@ interface Props {
 	mainTitle: string;
 	allArticlesText: string;
 	allArticlesLink: string;
+	dataType: string;
 	items: Array<{
 		articleLink: string,
 		title: string,
 		imagePath: string,
-		articleType: string,
-		modifyMode?: string
 	}>;
 }
 

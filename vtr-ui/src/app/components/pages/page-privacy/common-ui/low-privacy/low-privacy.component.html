@@ -17,7 +17,7 @@
 				{{step.title}}
 			</div>
 
-			<a [routerLink]="step.button.link" class="low-privacy__desribe-button">
+			<a [routerLink]="step.button.link" (click)="handleLinkClick()" class="low-privacy__describe-button">
 				{{step.button.name}}
 			</a>
 		</div>

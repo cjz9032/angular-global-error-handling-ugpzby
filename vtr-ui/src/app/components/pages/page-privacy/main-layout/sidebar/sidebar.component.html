@@ -4,12 +4,36 @@
     <vtr-sidebar-preview [data]="tips"></vtr-sidebar-preview>
     <vtr-faq></vtr-faq>
 
-    <nav style="font-size: 12px"> <!-- Links to all pages (just for test)-->
-        <a routerLink="./" routerLinkActive="active">Scan </a>
-        <a routerLink="./result" routerLinkActive="active">Result </a>
-        <a routerLink="./trackers" routerLinkActive="active">Trackers </a>
-        <a routerLink="./breaches" routerLinkActive="active">Breaches </a>
-        <a routerLink="./installed" routerLinkActive="active">Installed </a>
-        <a routerLink="./browser-accounts" routerLinkActive="active">BrowserAccounts </a>
+    <nav style="font-size: 2rem;">
+        <strong>DEBUG:</strong>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="./result" routerLinkActive="active">Result</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="./scan" routerLinkActive="active">Scan</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="./trackers" routerLinkActive="active">Trackers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="./breaches" routerLinkActive="active">Breaches</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="./installed" routerLinkActive="active">Installed</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="./browser-accounts" routerLinkActive="active">Browser Accounts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="./faq" routerLinkActive="active">FAQ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="./tips" routerLinkActive="active">TipsList</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="./news" routerLinkActive="active">NewsList</a>
+            </li>
+        </ul>
     </nav>
 </aside>

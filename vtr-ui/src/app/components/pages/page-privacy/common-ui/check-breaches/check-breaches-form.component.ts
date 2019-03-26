@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ServerCommunicationService } from '../../common-services/server-communication.service';
-import { ConfirmationPopupService } from '../../common-services/popups/confirmation-popup.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { filter, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
+import { EmailScannerService } from '../../common-services/email-scanner.service';
+import { CommonPopupService } from '../../common-services/popups/common-popup.service';
 
 @Component({
 	selector: 'vtr-check-breaches-form',
@@ -15,22 +15,25 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	emailForm = this.formBuilder.group({
 		email: ['', [Validators.required, Validators.email]],
 	});
-	isLoading = false;
+	isLoading = this.emailScannerService.loadingStatusChanged$;
 	lenovoId: string;
 	islenovoIdOpen = false;
 	isFormFocused = false;
 	isServerError = false; // change to 'true' to see all error styles
+	confirmationPopupId = 'confirmation-popup'; // change to 'true' to see all error styles
 
 	constructor(
-		private router: Router,
 		private serverCommunication: ServerCommunicationService,
-		private confirmationPopupService: ConfirmationPopupService,
 		private formBuilder: FormBuilder,
+		private emailScannerService: EmailScannerService,
+		private commonPopupService: CommonPopupService,
 	) { }
 
 	ngOnInit() {
 		this.serverCommunication.getLenovoId();
-		this.serverCommunication.onGetLenovoId.subscribe(
+		this.serverCommunication.onGetLenovoId.pipe(
+			takeUntil(instanceDestroyed(this)),
+		).subscribe(
 			(lenovoIdResponse: { emails: Array<string> }) => {
 				this.lenovoId = lenovoIdResponse.emails[0];
 			});
@@ -68,31 +71,42 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 		this.closeLenovoId();
 	}
 
-	scanEmail() {
+	getBreachedAccounts(accessToken) {
+
+		this.emailScannerService.scanEmail(accessToken)
+			.pipe(
+				takeUntil(instanceDestroyed(this)),
+			)
+			.subscribe(() => {
+			}, (error) => {
+				if (error === 'confirmationError') {
+					this.emailScannerService.sendConfirmationCode();
+					this.commonPopupService.open(this.confirmationPopupId);
+				}
+			});
+	}
+
+	handleEmailScan() {
 		if (this.emailForm.invalid) {
 			return;
 		}
 
-		this.isLoading = true;
-		this.serverCommunication.getBreachedAccounts(this.emailForm.value.email).subscribe((
-			(response) => {
-				this.isLoading = false;
-				if (response.status === 0) {
-					this.router.navigate(['privacy/result']);
-				} else if (response.status === 300) {
-					this.serverCommunication.sendConfirmationCode();
-					this.confirmationPopupService.openPopup();
-				} else if (response.status === 400) {
-					this.isServerError = true;
-				}
-			}
-		));
+		this.emailScannerService.setUserEmail(this.emailForm.value.email);
 
-		this.serverCommunication.validationStatusChanged.subscribe((validationResponse) => {
-			if (validationResponse.status === 0) {
-				this.isLoading = true;
-				this.serverCommunication.getBreachedAccounts(this.emailForm.value.email);
-			}
+		this.emailScannerService.sendConfirmationCode().pipe(
+			takeUntil(instanceDestroyed(this)),
+		).subscribe((response) => {
+			this.commonPopupService.open(this.confirmationPopupId);
+		}, (error) => {
+			console.log('confirmation error', error);
+		});
+
+		this.emailScannerService.validationStatusChanged$.pipe(
+			takeUntil(instanceDestroyed(this)),
+		).subscribe((validationResponse) => {
+			this.getBreachedAccounts(validationResponse.payload.accessToken);
+		}, (error) => {
+			console.log('confirmation error', error);
 		});
 	}
 

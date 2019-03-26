@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Location } from '@angular/common';
 
 @Component({
 	// selector: 'app-admin',
@@ -11,7 +10,8 @@ export class BrowserAccountsComponent {
 	public browserStoredAccountsData = {showDetailAction: 'expand'};
 	public pageBannerData = {
 		title: 'Lenovo Privacy by FigLeaf — free for 14 days',
-		text: 'Lenovo Privacy by FigLeaf lets you share what you want or keep things private for each site you visit or transact with. Your email. Payment and billing info. Your location. Even your personal interests. No matter what you do er where you go, you decide your level of privacy.',
+		text: 'Lenovo Privacy by FigLeaf lets you share what you want or keep things private for each site you visit or transact with. Your email. ' +
+			'Payment and billing info. Your location. Even your personal interests. No matter what you do er where you go, you decide your level of privacy.',
 		image_url: '/assets/images/privacy-tab/banner.png',
 		read_more_link: 'https://figleafapp.com/',
 	};
@@ -32,7 +32,8 @@ export class BrowserAccountsComponent {
 	];
 	public promoArticleData = {
 		title: 'What is the risk?',
-		text: 'Major web browsers let you store your usernames and passwords for your favorite sites, so you can log in quickly. But these passwords are usually not well encrypted, making your accounts vulnerable to hacking.',
+		text: 'Major web browsers let you store your usernames and passwords for your favorite sites, so you can log in quickly. ' +
+			'But these passwords are usually not well encrypted, making your accounts vulnerable to hacking.',
 		link_href: 'https://figleafapp.com/',
 		image_url: '/assets/images/privacy-tab/default.png'
 	};
@@ -50,10 +51,6 @@ export class BrowserAccountsComponent {
 	};
 
 
-	constructor(private _location: Location) {
-	}
-
-	backClicked() {
-		this._location.back();
+	constructor() {
 	}
 }

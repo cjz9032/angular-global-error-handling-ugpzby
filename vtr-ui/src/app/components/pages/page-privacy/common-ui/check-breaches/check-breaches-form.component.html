@@ -1,5 +1,5 @@
 <div class="check-breaches">
-    <form class="check-breaches__form" [formGroup]="emailForm" (submit)="scanEmail()">
+    <form class="check-breaches__form" [formGroup]="emailForm" (submit)="handleEmailScan()">
         <div class="check-breaches__input-wrapper"
 			 [ngClass]="{
 			 	'check-breaches__input-wrapper--focused': isFormFocused,
@@ -23,7 +23,7 @@
                     </p>
                 </div>
             </div>
-            <div class="check-breaches__loader" [style.display]="isLoading ? 'block' : 'none'">
+            <div class="check-breaches__loader" [style.display]="(isLoading | async) ? 'block' : 'none'">
                 <img src="/assets/images/privacy-tab/loading.gif" alt="loader">
             </div>
             <button class="check-breaches__button"
@@ -43,4 +43,8 @@
         </div>
     </form>
 </div>
+
+<vtr-common-popup popUpId="{{confirmationPopupId}}" size="default">
+    <vtr-confirmation-popup popupId="{{confirmationPopupId}}"></vtr-confirmation-popup>
+</vtr-common-popup>
 

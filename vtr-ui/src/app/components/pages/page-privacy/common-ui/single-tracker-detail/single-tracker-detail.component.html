@@ -1,0 +1,77 @@
+<div class="tracker" *ngIf="(trackingMapSingleData$ | async) as trackingMapSingleData">
+	<div class="tracker__wrapper">
+		<div class="tracker__details-wrapper">
+			<div class="tracker__details">
+				<div class="tracker__progress-wrapper">
+					<div class="tracker__progress">
+						<div class="tracker__progress-brand">
+							<div class="tracker__progress-brand-img"
+								 [style.background-image]="'url('+ trackingMapSingleData.tracker.logo_url +')'">
+							</div>
+							<span class="tracker__progress-brand-title">{{trackingMapSingleData.tracker.company_name}}</span>
+						</div>
+						<div class="tracker__progress-bar">
+							<div class="tracker__progress-bar-wrapper">
+								<div class="tracker__progress-bar-line"></div>
+								<div class="tracker__progress-bar-fill" [style.width.%]="percentOfTrack"></div>
+							</div>
+						</div>
+						<div class="tracker__text tracker__text--white">Tracking you on {{percentOfTrack}}% of site
+							visited
+						</div>
+					</div>
+				</div>
+				<div class="tracker__text">
+					Google operates the Google Display Network a collection of millions of websites and mobile
+					applications that are powered by....
+				</div>
+
+				<div class="tracker__types">
+					<span class="tracker__text tracker__text--bold">Tracking types</span>
+					<div class="tracker__types-block">
+						<div class="tracker__types-item tracker__types-item--orange">Advertising</div>
+						<div class="tracker__types-item tracker__types-item--blue">Social</div>
+						<div class="tracker__types-item tracker__types-item--pink">Analytics</div>
+					</div>
+				</div>
+
+				<div class="tracker__types">
+					<span class="tracker__text tracker__text--bold">Possible information gathered</span>
+					<div class="tracker__types-block">
+						<div class="tracker__types-item">IP Address</div>
+						<div class="tracker__types-item">Websites visited</div>
+						<div class="tracker__types-item">Interests</div>
+						<div class="tracker__types-item">Account information</div>
+					</div>
+				</div>
+
+				<div class="tracker__stop-wrapper">
+					<div class="tracker__stop">
+						<h3 class="tracker__stop-title">
+							Want to stop trackers
+						</h3>
+						<div class="tracker__text">
+							Lenovo privacy by Figleaf lets you share what you. want or keep things private for each site of you visit or transact with.
+						</div>
+						<div class="tracker__btn-group">
+							<button class="tracker__btn">Try Lenovo Privacy</button>
+							<a class="tracker__link" href="#">Read more</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tracker__map">
+			<h3 class="tracker__map-title">
+				Where I’m being tracked?
+			</h3>
+			<div class="tracker__map-wrapper">
+				<fl-tracking-map-single [trackers]="trackingMapSingleData"
+										height="600"
+										width="255"
+										[positive]="isTrackersBlocked$ | async">
+				</fl-tracking-map-single>
+			</div>
+		</div>
+	</div>
+</div>

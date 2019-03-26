@@ -1,16 +1,10 @@
 <div class="sidebar-preview">
     <div class="sidebar-preview__head">
         <h4 class="sidebar-preview__title">{{data.mainTitle}}</h4>
-        <a href="{{data.allArticlesLink}}" class="sidebar-preview__see-more-link">{{data.allArticlesText}}</a>
+        <a routerLink="{{data.allArticlesLink}}" class="sidebar-preview__see-more-link">{{data.allArticlesText}}</a>
     </div>
 
-    <a class="sidebar-preview__content" *ngFor="let item of data.items" href="{{item.articleLink}}">
-        <div class="sidebar-preview__image">
-            <img class="sidebar-preview__img" src="{{item.imagePath}}" alt="{{item.title}}"/>
-        </div>
-        <div class="sidebar-preview__text" [class.sidebar-preview__text_up]="item.modifyMode === 'up'">
-            <span class="sidebar-preview__name">{{item.title}}</span>
-            <span class="sidebar-preview__type">{{item.articleType}}</span>
-        </div>
-    </a>
+    <vtr-privacy-tip *ngIf="data.dataType === 'tips'" [tip]="data.items[0]" [mode]="'preview'"></vtr-privacy-tip>
+    <vtr-news-item *ngIf="data.dataType === 'news'" [newsItem]="data.items[0]" [mode]="'preview'"></vtr-news-item>
+
 </div>

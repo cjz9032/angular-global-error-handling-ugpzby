@@ -1,32 +1,38 @@
-import { Component, OnInit } from '@angular/core';
-import { ConfirmationPopupService } from "../../common-services/popups/confirmation-popup.service";
-import { ServerCommunicationService } from "../../common-services/server-communication.service";
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { EmailScannerService } from '../../common-services/email-scanner.service';
+import { CommonPopupService } from '../../common-services/popups/common-popup.service';
+import { filter, takeUntil } from 'rxjs/operators';
+import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
 	selector: 'vtr-confirmation-popup',
 	templateUrl: './confirmation-popup.component.html',
 	styleUrls: ['./confirmation-popup.component.scss']
 })
-export class ConfirmationPopupComponent implements OnInit {
-	public isPopupOpen: boolean;
-	public verificationCode: string = '';
-	public isError = false; // change on 'true' to see all styles for errors
+export class ConfirmationPopupComponent implements OnInit, OnDestroy {
+	@Input() popupId: string;
 
-	constructor(private confirmationPopupService: ConfirmationPopupService, private serverCommunicationService: ServerCommunicationService) {}
+	confirmationForm = this.formBuilder.group({
+		confirmationCode: ['', [Validators.required, Validators.minLength(6)]],
+	});
+	verificationCode = '';
+	isError = false; // change on 'true' to see all styles for errors
 
-	ngOnInit() {
-		this.isPopupOpen = this.confirmationPopupService.isPopupOpen;
-		this.confirmationPopupService.popupOpenStateUpdated.subscribe((isOpen) => {
-			this.isPopupOpen = isOpen;
-			if (!isOpen) {
-				this.resetVerificationCode();
-			}
-		});
+	constructor(
+		private formBuilder: FormBuilder,
+		private commonPopupService: CommonPopupService,
+		private emailScannerService: EmailScannerService) {
 	}
 
-	closePopup() {
-		this.confirmationPopupService.closePopup();
-		this.resetVerificationCode();
+	ngOnInit() {
+		this.commonPopupService.getOpenState(this.popupId).pipe(
+			takeUntil(instanceDestroyed(this)),
+			filter(state => !state.isOpenState)
+		).subscribe(() => this.resetVerificationCode());
+	}
+
+	ngOnDestroy() {
 	}
 
 	onInput(ev) {
@@ -34,22 +40,25 @@ export class ConfirmationPopupComponent implements OnInit {
 	}
 
 	resendConfirmationCode() {
-		this.serverCommunicationService.sendConfirmationCode();
+		this.emailScannerService.sendConfirmationCode();
 	}
 
 	resetVerificationCode() {
 		this.verificationCode = '';
 	}
 
-	confirm(ev) {
-		ev.preventDefault();
-		this.serverCommunicationService.validateVerificationCode(this.verificationCode);
-		this.serverCommunicationService.validationStatusChanged.subscribe((validationResponse) => {
-			if (validationResponse.status === 0) {
-				this.confirmationPopupService.closePopup();
-			} else {
-				// handle errors
-			}
-		})
+	confirm() {
+		if (this.confirmationForm.valid) {
+			this.emailScannerService.validationStatusChanged$.pipe(
+				takeUntil(instanceDestroyed(this)),
+			).subscribe((validationResponse) => {
+				if (validationResponse.status === 0) {
+					return this.commonPopupService.close(this.popupId);
+				} else {
+					// handle errors
+				}
+			});
+			this.emailScannerService.validateVerificationCode(this.verificationCode);
+		}
 	}
 }
