@@ -14,6 +14,7 @@ import { ModalCommonConfirmationComponent } from '../../modal/modal-common-confi
 import { UpdateRebootType } from 'src/app/enums/update-reboot-type.enum';
 import { SystemUpdateStatusMessage } from 'src/app/data-models/system-update/system-update-status-message.model';
 import { CMSService } from 'src/app/services/cms/cms.service';
+import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -51,6 +52,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	private isComponentInitialized = false;
 	public updateTitle = '';
 	private isUserCancelledUpdateCheck = false;
+	public isInstallingAllUpdates = true;
 
 	nextUpdatedDate = '11/12/2018 at 10:00 AM';
 	installationHistory = 'Installation History';
@@ -239,6 +241,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.isUserCancelledUpdateCheck = false;
 			this.isUpdateCheckInProgress = true;
 			this.isUpdatesAvailable = false;
+			this.isInstallingAllUpdates = true;
 			this.resetState();
 			this.systemUpdateService.checkForUpdates();
 		}
@@ -259,6 +262,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private installAllUpdate() {
 		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
+			this.isInstallingAllUpdates = true;
 			this.resetState();
 			this.systemUpdateService.installAllUpdates();
 		}
@@ -266,6 +270,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private installSelectedUpdate() {
 		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
+			this.isInstallingAllUpdates = false;
 			this.resetState();
 			this.systemUpdateService.installSelectedUpdates();
 		}
@@ -315,6 +320,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public showInstallConfirmation(source: string) {
 		const modalRef = this.modalService
 			.open(ModalCommonConfirmationComponent, {
+				backdrop: 'static',
 				size: 'lg',
 				centered: true,
 				windowClass: 'common-confirmation-modal'
@@ -389,8 +395,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private filterUpdate(updateList: Array<AvailableUpdateDetail>, packageSeverity: string) {
 		const updates = updateList.filter((value: AvailableUpdateDetail) => {
-			return (value.packageSeverity.toLowerCase() === packageSeverity.toLowerCase()
-				&& value.isSelected);
+			return (value.packageSeverity.toLowerCase() === packageSeverity.toLowerCase());
 		});
 		return updates;
 	}
@@ -428,9 +433,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isUpdatesAvailable = true;
 					this.setUpdateByCategory(payload.updateList);
 					break;
-				// case UpdateProgress.UpdatesNotAvailable:
-				// 	// todo : no updates available msg
-				// 	break;
 				case UpdateProgress.InstallationStarted:
 					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 					break;
@@ -444,7 +446,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				case UpdateProgress.InstallationComplete:
 					this.isUpdateDownloading = false;
 					this.isInstallationCompleted = true;
-					this.isInstallationSuccess = (payload.status === SystemUpdateStatusMessage.SUCCESS.code);
+					this.isInstallationSuccess = this.getInstallationSuccess(payload);
 					this.checkRebootRequired();
 					break;
 				case UpdateProgress.AutoUpdateStatus:
@@ -458,6 +460,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	// handle background update notification
 	private onScheduleUpdateNotification(type: string, payload: any) {
 		if (this.isComponentInitialized) {
 			console.log('onScheduleUpdateNotification', type, payload);
@@ -489,7 +492,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				case UpdateProgress.ScheduleUpdateCheckComplete:
 					this.isUpdateDownloading = false;
 					this.isInstallationCompleted = true;
-					this.isInstallationSuccess = (payload.status === SystemUpdateStatusMessage.SUCCESS.code);
+					this.isInstallationSuccess = this.getInstallationSuccess(payload);
 					this.setUpdateByCategory(payload.updateList);
 					this.checkRebootRequired();
 					break;
@@ -511,5 +514,24 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private checkRebootRequired() {
 		this.isRebootRequired = this.systemUpdateService.isRebootRequired();
+	}
+
+	// check for installed updates, if all installed correctly return true else return false
+	private getInstallationSuccess(payload: any): boolean {
+		let isSuccess = false;
+		if (payload.status !== SystemUpdateStatusMessage.SUCCESS.code) {
+			isSuccess = false;
+		} else {
+			for (let index = 0; index < payload.updateList.length; index++) {
+				const update = payload.updateList[index];
+				if (update.installationStatus === UpdateActionResult.Success || update.installationStatus === UpdateActionResult.Unknown) {
+					isSuccess = true;
+				} else {
+					isSuccess = false;
+					break;
+				}
+			}
+		}
+		return isSuccess;
 	}
 }

@@ -42,7 +42,7 @@
 		margin-top: 4rem;
 		padding-top: 4rem;
 		padding-bottom: 4rem;
-		border-top: .2rem solid $shade_lighter;
+		border-top: 0.2rem solid $shade_lighter;
 	}
 
 	.surfeasy_logo_teal {
@@ -99,7 +99,6 @@
 			.text-regular {
 				color: $main_dark;
 				font-size: 1.6rem;
-
 			}
 
 			&.good {
@@ -165,20 +164,22 @@
 			counter-reset: listNumbering;
 			box-sizing: border-box;
 			padding-left: 2.7rem;
-			li{
+
+			li {
 				margin: 0;
 				padding: 0 0 0 2rem;
 				list-style-type: none;
 				counter-increment: listNumbering;
 				position: relative;
-				&:before{
+
+				&:before {
 					display: inline-block;
 					width: 1.5rem;
 					padding-right: 0.5rem;
 					text-align: left;
 					font-size: 1.6rem;
 					position: absolute;
-					content: counter(listNumbering,decimal) '.';
+					content: counter(listNumbering, decimal) ".";
 					left: 0rem;
 				}
 			}
@@ -188,9 +189,6 @@
 	.button-box {
 		padding: 1rem;
 		margin: 1.2rem;
-		button{
-			font-weight: bold;
-		}
 	}
 
 	.get-app-code-box {
@@ -198,8 +196,7 @@
 		border: 0.1rem solid $shade_lighter;
 		border-radius: $border_radius;
 		text-align: center;
-		height: 7rem;
-		padding: 0rem;
+
 		.sub-heading {
 			margin-top: 2rem;
 			color: $main_dark;
