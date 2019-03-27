@@ -251,7 +251,8 @@ library.add(far);
 		ModalBatteryChargeThresholdComponent,
 		ModalCommonConfirmationComponent,
 		ModalUpdateChangeLogComponent,
-		ModalArticleDetailComponent
+		ModalArticleDetailComponent,
+		FeedbackFormComponent
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
