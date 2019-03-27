@@ -24,7 +24,10 @@
 									<fa-icon [icon]="['fas', 'times']"></fa-icon>
 								</span>
 								<h3>WIFI SECURITY</h3>
-								<button class="btn btn-success btn-round-xs text-uppercase button-green">{{isWifiSecurityEnabled ? 'Enabled':'Disabled'}}</button>
+								<button *ngIf="isWifiSecurityEnabled"
+									class="badge badge-pill badge-danger button-green">ENABLED</button>
+								<button *ngIf="!isWifiSecurityEnabled"
+									class="badge badge-pill badge-danger button-red">DISABLED</button>
 							</div>
 							<div class="half">
 								<div class="collapse-control"
@@ -223,7 +226,7 @@
 			</div>
 		</div>
 		<div class="row threat-locator"
-			[ngbCollapse]="isCollapsed">
+			[ngbCollapse]="isCollapsed && isWifiSecurityEnabled">
 			<div class="col">
 				<div class="threat-locator-container">
 					<div class="row">
