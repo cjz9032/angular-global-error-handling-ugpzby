@@ -21,9 +21,14 @@ export class CMSService {
 		private vantageShellService: VantageShellService
 	) { }
 
-	deviceFilter(result) {
+	deviceFilter(filters) {
 		return new Promise((resolve, reject) => {
-			return this.vantageShellService.deviceFilter(result).then(
+			if (!filters) {
+				console.log('vantageShellService.deviceFilter skipped filter call due to empty filter.');
+				return resolve(true);
+			}
+
+			return this.vantageShellService.deviceFilter(filters).then(
 				(result) => {
 					resolve(result);
 				},
@@ -40,7 +45,7 @@ export class CMSService {
 			let promises = [];
 
 			results.forEach((result) => {
-				promises.push(this.deviceFilter(result));
+				promises.push(this.deviceFilter(result.Filters));
 			});
 
 			Promise.all(promises).then((deviceFilterValues) => {
