@@ -22,8 +22,7 @@
 											<div class="pull right"><img class="dashlane_logo_teal"
 													src="../../../../assets/images/windows-logo.png" /></div>
 										</div>
-										<div *ngIf="status === 'disabled'"
-											class="row mt-20">
+										<div *ngIf="statusItem.status === 'disabled'" class="row mt-20">
 											<div class="col">
 												<div class="text-regular">
 													Protect your ideapad with these Lenovo recommended security options.
@@ -34,8 +33,7 @@
 												</div>
 											</div>
 										</div>
-										<div *ngIf="status === 'enabled'"
-											class="row">
+										<div *ngIf="statusItem.status === 'enabled'" class="row">
 											<div class="col">
 												<div class="text-regular">
 													Protect your ideapad with these Lenovo recommended security options.
@@ -44,12 +42,10 @@
 										</div>
 										<div class="row mt-40">
 											<div class="col">
-												<vtr-ui-security-statusbar [title]="'WINDOWS HELLO'"
-													[status]="status"></vtr-ui-security-statusbar>
+												<vtr-ui-security-statusbar [statusList]="[statusItem]"></vtr-ui-security-statusbar>
 											</div>
 										</div>
-										<div *ngIf="status === 'disabled'"
-											class="row mt-40">
+										<div *ngIf="statusItem.status === 'disabled'" class="row mt-40">
 											<div class="col">
 												<div class="text-regular">Sign in quickly and securely with Windows
 													Hello</div>
@@ -72,8 +68,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="row vtr-page-security-windows-hello"
-							*ngIf="status === 'disabled'">
+						<div class="row vtr-page-security-windows-hello" *ngIf="statusItem.status === 'disabled'">
 							<div class="row">
 								<div class="col col-12 col-sm-12 mt-40">
 									<div>
@@ -198,8 +193,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="row vtr-connected-security-password"
-							*ngIf="status === 'enabled'">
+						<div class="row vtr-connected-security-password" *ngIf="statusItem.status === 'enabled'">
 							<div class="row">
 								<div class="col col-12 col-sm-12 mt-40">
 									<div>

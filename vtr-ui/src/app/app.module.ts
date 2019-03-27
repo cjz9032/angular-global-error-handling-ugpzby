@@ -151,6 +151,7 @@ import {StatusTransformPipe} from './pipe/ui-security-statusbar/status-transform
 
 
 library.add(fas);
+library.add(fab);
 library.add(far);
 
 @NgModule({
