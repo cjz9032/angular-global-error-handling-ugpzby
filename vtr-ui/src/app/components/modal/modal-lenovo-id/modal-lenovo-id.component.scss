@@ -10,8 +10,8 @@
     .progress-spinner {
         width: 8rem;
         height: 8rem;
-        top: 46%;
-        right: 48%;
+        top: calc(50% - 4rem);
+        right: calc(50% - 4rem);
         display: block;
         position: fixed;
     }
