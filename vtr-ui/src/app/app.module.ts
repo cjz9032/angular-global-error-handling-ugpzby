@@ -40,7 +40,6 @@ import { UiRowSwitchComponent } from './components/ui/ui-row-switch/ui-row-switc
 import { UiListChevronComponent } from './components/ui/ui-list-chevron/ui-list-chevron.component';
 import { UiListCheckboxComponent } from './components/ui/ui-list-checkbox/ui-list-checkbox.component';
 import { UiHeaderSubpageComponent } from './components/ui/ui-header-subpage/ui-header-subpage.component';
-import { UiSecurityStatusbarComponent } from './components/ui/ui-security-statusbar/ui-security-statusbar.component';
 
 // APPLICATION PAGE COMPONENTS
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
@@ -87,7 +86,6 @@ import { ContainerService } from './services/container/container.service';
 import { CommsService } from './services/comms/comms.service';
 import { DashboardService } from './services/dashboard/dashboard.service';
 import { SecurityService } from './services/security/security.service';
-import { MockSecurityAdvisorService } from './services/mock/mockSecurityAdvisor.service';
 import { UserService } from './services/user/user.service';
 import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
 import { CameraDetailMockService } from './services/camera/camera-detail/camera-detail.mock.service';
@@ -125,20 +123,17 @@ import { MetricsDirective } from './directives/metrics.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
 import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
+
+import { BaseComponent } from './components/base/base.component';
 import { AppEventDirective } from './directives/app-event.directive';
 import { SafeDomPipe } from './pipe/safe-dom/safe-dom.pipe';
 import { ModalUpdateChangeLogComponent } from './components/modal/modal-update-change-log.component/modal-update-change-log.component';
 import { ModalArticleDetailComponent } from './components/modal/modal-article-detail/modal-article-detail.component';
 import { DolbyModesTranslationPipe } from './pipe/dolby-modes-translation.pipe';
-import { UiLandingFeatureComponent } from './components/ui/ui-landing-feature/ui-landing-feature.component';
-import { UiObjectTitleComponent } from './components/ui/ui-object-title/ui-object-title.component';
-import { from } from 'rxjs';
-import { IconClassPipe } from './pipe/ui-security-statusbar/icon-class.pipe';
-import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
-import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
-import { IconNamePipe } from './pipe/ui-security-statusbar/icon-name.pipe';
+
 
 library.add(fas);
+library.add(fab);
 library.add(far);
 
 @NgModule({
@@ -213,24 +208,20 @@ library.add(far);
 		ArticleItemComponent,
 		SanitizeUrlPipe,
 		UniqueIdPipe,
-		IconClassPipe,
-		IconNamePipe,
-		TextClassPipe,
-		StatusTextPipe,
 		ModalBatteryChargeThresholdComponent,
 		MetricsDirective,
 		InstallationHistoryComponent,
 		SeparatePascalCasePipe,
+		ModalCommonConfirmationComponent,
+		BaseComponent,
 		ModalCommonConfirmationComponent,
 		AppEventDirective,
 		ModalUpdateChangeLogComponent,
 		SafeDomPipe,
 		ModalCommonConfirmationComponent,
 		ModalArticleDetailComponent,
-		DolbyModesTranslationPipe,
-		UiObjectTitleComponent,
-		UiLandingFeatureComponent,
-		UiSecurityStatusbarComponent
+		DolbyModesTranslationPipe
+
 	],
 	imports: [
 		BrowserModule,
@@ -253,7 +244,6 @@ library.add(far);
 		CommsService,
 		DashboardService,
 		SecurityService,
-		MockSecurityAdvisorService,
 		UserService,
 		AudioService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
@@ -271,4 +261,5 @@ library.add(far);
 		CUSTOM_ELEMENTS_SCHEMA
 	]
 })
-export class AppModule { }
+export class AppModule {
+}

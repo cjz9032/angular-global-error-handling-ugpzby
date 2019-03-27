@@ -102,7 +102,7 @@
           color: $shade_dark;
           font-weight: $weight_medium;
           max-width: 55%;
-          word-break: break-all;
+          word-wrap: break-word;
           display: block;
 
           &.good {
@@ -132,12 +132,12 @@
         color: $main_darker;
         line-height: 2.8rem;
         font-size: 2rem;
-	  }
-	  .question-icon{
-		  color: $main;
-		  font-size: 1.8rem;
-		  cursor: pointer;
-	  }
+      }
+      .question-icon {
+        color: $main;
+        font-size: 1.8rem;
+        cursor: pointer;
+      }
     }
   }
 }

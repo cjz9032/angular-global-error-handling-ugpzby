@@ -58,7 +58,7 @@
 												<div class="col-12">
 													<button type="button"
 														vtrMetrics
-														metricsItem="setup windows hello"
+														metricsItem="btn.setup windows hello"
 														metricsParent="windows-hello"
 														metricsEvent="itemClick"
 														(click)="setUpWindowsHello()"
@@ -266,6 +266,7 @@
 								<div class="row mb-40">
 									<div class="col col-12">
 										<vtr-widget-status [title]="'Security Advisor'"
+											componentName="security advisor"
 											[description]="'CHECK IF YOUR DEVICE IS SECURED.'"
 											[items]="mockService.securityStatus">
 										</vtr-widget-status>

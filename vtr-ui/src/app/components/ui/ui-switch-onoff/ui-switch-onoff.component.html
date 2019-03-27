@@ -5,9 +5,12 @@
 			class="switch"
 			[value]="value"
 			(change)="onChange($event)"
-
-			[checked]="value" vtrMetrics metricsEvent="itemClick" metricsParent="quicksettings" [metricsItem]="'chk.'+name"  [metricsValue]="!value"
-			   [disabled]="disabled"
+			[checked]="value"
+			vtrMetrics
+			metricsEvent="itemClick"
+			[metricsItem]="'chk.'+name"
+			[metricsValue]="!value"
+			[disabled]="disabled"
 			[checked]="value" />
 
 		<span class="switch {{ size }}"> <small></small> </span>
