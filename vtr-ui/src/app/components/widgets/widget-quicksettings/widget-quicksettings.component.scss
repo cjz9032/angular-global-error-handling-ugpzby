@@ -5,3 +5,8 @@
 	color: $main_darker;
 	font-size: 3.5rem;
 }
+
+.disable-state {
+	pointer-events: none;
+    opacity: 0.65;
+}
