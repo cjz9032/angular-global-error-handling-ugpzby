@@ -81,6 +81,7 @@ import { ModalLenovoIdComponent } from './components/modal/modal-lenovo-id/modal
 // APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
 import { MockService } from './services/mock/mock.service';
+import { MockSecurityAdvisorService } from './services/mock/mockSecurityAdvisor.service';
 import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
 import { CommsService } from './services/comms/comms.service';
@@ -254,6 +255,7 @@ library.add(far);
 		CookieService,
 		DevService,
 		MockService,
+		MockSecurityAdvisorService,
 		DisplayService,
 		ContainerService,
 		CommsService,
