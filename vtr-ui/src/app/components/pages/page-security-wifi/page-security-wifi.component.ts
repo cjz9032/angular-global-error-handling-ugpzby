@@ -29,7 +29,7 @@ export class PageSecurityWifiComponent implements OnInit {
 	securityAdvisor: phoenix.SecurityAdvisor;
 	wifiSecurity: phoenix.WifiSecurity;
 	homeProtection: phoenix.HomeProtection;
-	isShowInvitationCode = false;
+	isShowInvitationCode: boolean;
 	wifiHomeViewModel: WifiHomeViewModel;
 	securityHealthViewModel: SecurityHealthViewModel;
 	// chsConsoleUrl : string;
@@ -142,9 +142,9 @@ export class WifiHomeViewModel {
 			}
 			if (wifiSecurity.wifiHistory) {
 				this.allHistorys = wifiSecurity.wifiHistory;
-				// this.mappingHistory(this.allHistorys);
+				this.allHistorys = this.mappingHistory(this.allHistorys);
 				this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
-				// this.mappingHistory(this.allHistorys);
+				this.historys = this.mappingHistory(this.historys);
 			}
 			if (homeProtection.chsConsoleUrl) {
 				this.tryNowUrl = homeProtection.chsConsoleUrl;
@@ -157,9 +157,9 @@ export class WifiHomeViewModel {
 		});
 		wifiSecurity.on(EventTypes.wsWifiHistoryEvent, (value) => {
 			this.allHistorys = wifiSecurity.wifiHistory;
-			// this.mappingHistory(this.allHistorys);
+			this.allHistorys = this.mappingHistory(this.allHistorys);
 			this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
-			// this.mappingHistory(this.allHistorys);
+			this.historys = this.mappingHistory(this.historys);
 		});
 		homeProtection.on(EventTypes.homeChsConsoleUrlEvent, (value) => {
 			this.tryNowUrl = value;
@@ -169,20 +169,16 @@ export class WifiHomeViewModel {
 	mappingHistory(historys: Array<phoenix.WifiDetail>): Array<phoenix.WifiDetail> {
 		const Historys = [];
 		historys.forEach( (item) => {
-			item.info.replace(/T/g, ',');
-			item.info.replace(/-/g, ',');
-			item.info.replace(/:/g, ',');
-			const date = new Date(Date.parse(item.info));
-			let information = 'Connected last' + date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear();
-			let hour = date.getHours();
-			let time = 'AM';
-			if (hour > 12) {
-				hour = date.getHours() - 12;
-				time = 'PM';
+			let i = {ssid: '',
+				info: '',
+				good: null};
+			i = item;
+			if (i.info.indexOf('Connected') === -1) {
+				const info = i.info.replace(/T/g, ' ');
+				const information = 'Connected last' + info;
+				i.info = information;
 			}
-			information = information + ' ' + hour + ':' + date.getMinutes() + time;
-			item.info = information;
-			Historys.push(item);
+			Historys.push(i);
 		});
 		return Historys;
 	}
@@ -228,7 +224,9 @@ export class SecurityHealthViewModel {
 				it.status = item.vulnerable === 'true' ? 2 : 1;
 				it.title = this.mappingDevicePosture(item.config);
 				it.detail = item.vulnerable === 'true' ? 'PASSED' : 'FAILED';
-				this.homeDevicePosture.push(it);
+				if (it.title !== 'other') {
+					this.homeDevicePosture.push(it);
+				}
 			});
 		});
 	}
@@ -237,7 +235,7 @@ export class SecurityHealthViewModel {
 		let titles: Array<string>;
 		let title: string;
 		titles = ['Apps from unknown sources', 'Developer mode', 'UAC Notification', 'Anti-Virus availability', 'Drive encryption',
-		'Firewall availability', 'OS integrity', 'OS version', 'Pin or Password'];
+		'Firewall availability', 'Not Activated Windows', 'Security Updates Availability', 'Pin or Password', 'AutomaticUpdatesServiceAvailability'];
 		config = config.toLowerCase();
 		if (config.indexOf('apps') !== -1) {
 			title = titles[0];
@@ -251,12 +249,14 @@ export class SecurityHealthViewModel {
 			title = titles[4];
 		} else if (config.indexOf('firewall') !== -1) {
 			title = titles[5];
-		} else if (config.indexOf('integrity') !== -1) {
+		} else if (config.indexOf('windows') !== -1) {
 			title = titles[6];
-		} else if (config.indexOf('version') !== -1) {
+		} else if (config.indexOf('security') !== -1) {
 			title = titles[7];
 		} else if ((config.indexOf('pin') !== -1) || (config.indexOf('password') !== -1)) {
 			title = titles[8];
+		} else if ((config.indexOf('automatic') !== -1)) {
+			title = titles[9];
 		} else {
 			title = 'other';
 		}
