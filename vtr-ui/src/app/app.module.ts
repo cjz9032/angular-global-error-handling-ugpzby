@@ -81,6 +81,7 @@ import { ModalLenovoIdComponent } from './components/modal/modal-lenovo-id/modal
 // APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
 import { MockService } from './services/mock/mock.service';
+import { MockSecurityAdvisorService } from './services/mock/mockSecurityAdvisor.service';
 import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
 import { CommsService } from './services/comms/comms.service';
@@ -123,12 +124,23 @@ import { MetricsDirective } from './directives/metrics.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
 import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
+
+import { BaseComponent } from './components/base/base.component';
 import { AppEventDirective } from './directives/app-event.directive';
 import { SafeDomPipe } from './pipe/safe-dom/safe-dom.pipe';
 import { ModalUpdateChangeLogComponent } from './components/modal/modal-update-change-log.component/modal-update-change-log.component';
 import { ModalArticleDetailComponent } from './components/modal/modal-article-detail/modal-article-detail.component';
+import { ModalThreatLocatorComponent } from './components/modal/modal-threat-locator/modal-threat-locator.component';
 import { DolbyModesTranslationPipe } from './pipe/dolby-modes-translation.pipe';
 import { WidgetOfflineInfoComponent } from './components/widgets/widget-offline-info/widget-offline-info.component';
+import { UiLandingFeatureComponent } from './components/ui/ui-landing-feature/ui-landing-feature.component';
+import { UiObjectTitleComponent } from './components/ui/ui-object-title/ui-object-title.component';
+import { UiSecurityStatusbarComponent } from './components/ui/ui-security-statusbar/ui-security-statusbar.component';
+import { IconClassPipe } from './pipe/ui-security-statusbar/icon-class.pipe';
+import { IconNamePipe } from './pipe/ui-security-statusbar/icon-name.pipe';
+import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
+import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
+
 
 library.add(fas);
 library.add(fab);
@@ -211,13 +223,24 @@ library.add(far);
 		InstallationHistoryComponent,
 		SeparatePascalCasePipe,
 		ModalCommonConfirmationComponent,
+		BaseComponent,
+		ModalCommonConfirmationComponent,
 		AppEventDirective,
 		ModalUpdateChangeLogComponent,
 		SafeDomPipe,
 		ModalCommonConfirmationComponent,
 		ModalArticleDetailComponent,
 		DolbyModesTranslationPipe,
-		WidgetOfflineInfoComponent
+		WidgetOfflineInfoComponent,
+		ModalThreatLocatorComponent,
+		DolbyModesTranslationPipe,
+		UiLandingFeatureComponent,
+		UiObjectTitleComponent,
+		UiSecurityStatusbarComponent,
+		IconClassPipe,
+		IconNamePipe,
+		StatusTextPipe,
+		TextClassPipe
 	],
 	imports: [
 		BrowserModule,
@@ -235,6 +258,7 @@ library.add(far);
 		CookieService,
 		DevService,
 		MockService,
+		MockSecurityAdvisorService,
 		DisplayService,
 		ContainerService,
 		CommsService,
@@ -252,10 +276,12 @@ library.add(far);
 		ModalCommonConfirmationComponent,
 		ModalUpdateChangeLogComponent,
 		ModalArticleDetailComponent,
-		FeedbackFormComponent
+		FeedbackFormComponent,
+		ModalThreatLocatorComponent,
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
 	]
 })
-export class AppModule { }
+export class AppModule {
+}

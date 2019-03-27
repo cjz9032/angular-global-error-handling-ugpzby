@@ -5,7 +5,6 @@
 			<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->
 			<a routerLink="/{{item.path}}"
 				vtrMetrics
-				[metricsParent]="metricsParent"
 				[metricsItem]="'link.'+item.title"
 				metricsEvent="itemClick"
 				*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false)">
@@ -51,7 +50,7 @@
 							</div>
 							<ng-template #questionCircle>
 								<fa-icon class="question-icon"
-									placement="top"
+									placement="auto"
 									[icon]="['far', 'question-circle']"
 									container="body"></fa-icon>
 							</ng-template>

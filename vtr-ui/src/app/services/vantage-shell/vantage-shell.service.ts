@@ -2,7 +2,8 @@
 
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
-import bootstrap from '@lenovo/tan-client-bridge/src/index';
+import bootstrap from '@lenovo/tan-client-bridge';
+import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 
 @Injectable({
 	providedIn: 'root'
@@ -95,7 +96,6 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
-
 	/**
 	 * returns hardware settings object from VantageShellService of JS Bridge
 	 */
@@ -246,7 +246,7 @@ export class VantageShellService {
 		if (this.phoenix) {
 			try {
 				let deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
-				console.log('In VantageShellService.deviceFilter. Filter: ', filter, deviceFilterResult);
+				console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 			} catch (error) {
 				console.log('In VantageShellService.deviceFilter. Error:', error);
 				console.log('In VantageShellService.deviceFilter. returning mock true due to error.');
@@ -256,5 +256,12 @@ export class VantageShellService {
 		}
 		console.log('In VantageShellService.deviceFilter. returning mock true');
 		return true;
+	}
+
+	public getSecurityAdvisor(): SecurityAdvisor {
+		if (this.phoenix) {
+			return this.phoenix.securityAdvisor;
+		}
+		return undefined;
 	}
 }

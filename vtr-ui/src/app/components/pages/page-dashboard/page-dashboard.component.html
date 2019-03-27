@@ -131,7 +131,8 @@
 								<div class="row"
 									*ngIf="!deviceService.isArm">
 									<div class="col col-12 py-40">
-										<vtr-widget-status [title]="'System Status'"
+										<vtr-widget-status componentName="system status"
+											[title]="'System Status'"
 											[description]="'Quick catch up your device status.'"
 											[items]="systemStatus">
 										</vtr-widget-status>
@@ -140,7 +141,8 @@
 								<div class="row"
 									*ngIf="!deviceService.isArm">
 									<div class="col col-12 py-40">
-										<vtr-widget-status [title]="'Security Advisor'"
+										<vtr-widget-status componentName="security advisor"
+											[title]="'Security Advisor'"
 											[description]="'Check if your device is secured.'"
 											[items]="securityStatus">
 										</vtr-widget-status>
@@ -148,7 +150,8 @@
 								</div>
 								<div class="row">
 									<div class="col col-12 py-40">
-										<vtr-widget-questions [title]="'Q&A for your machine'"
+										<vtr-widget-questions componentName="QA"
+											[title]="'Q&A for your machine'"
 											[description]="'Find some helpful tips for your device.'"
 											[items]="qaService.qas"></vtr-widget-questions>
 									</div>
