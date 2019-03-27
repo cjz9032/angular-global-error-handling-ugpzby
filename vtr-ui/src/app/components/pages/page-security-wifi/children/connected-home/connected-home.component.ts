@@ -12,7 +12,7 @@ import { ModalWifiSecurityInvitationComponent } from '../../../../modal/modal-wi
 export class ConnectedHomeComponent implements OnInit {
 
 	@Input() data: WifiHomeViewModel;
-	@Input() isShowInvitationCode = false;
+	@Input() isShowInvitationCode: boolean;
 	emitter = new EventEmitter();
 
 

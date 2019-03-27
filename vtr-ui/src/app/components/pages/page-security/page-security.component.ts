@@ -22,7 +22,6 @@ export class PageSecurityComponent implements OnInit {
 
 	constructor(
 		public vantageShellService: VantageShellService,
-		public mockSecurityAdvisorService: MockSecurityAdvisorService,
 		private cmsService: CMSService
 	) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();

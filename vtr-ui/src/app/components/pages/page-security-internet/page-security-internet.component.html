@@ -24,16 +24,14 @@
 										</div>
 										<div class="row mt-20">
 											<div class="col">
-												<div *ngIf="status === 'not-installed'"
-													class="text-regular">
+												<div *ngIf="statusItem.status === 'not-installed'" class="text-regular">
 													SurfEasy is a VPN, or Virtual Private Network provider that helps
 													protect you while you are surfing the internet. Without a VPN, your
 													PC may be more vulnerable to attackers and identity thieves. A VPN
 													runs silently in the background and provides additional safety and
 													privacy measures while you use the internet.
 												</div>
-												<div *ngIf="status === 'installed'"
-													class="text-regular">
+												<div *ngIf="statusItem.status === 'installed'" class="text-regular">
 													A Virtual Private Network provider helps you protect while you are
 													surfing the internet. Without a VPN, your pc may be more vulnerable
 													to attackers and identity thieves. A VPN runs silently in the
@@ -43,8 +41,7 @@
 										</div>
 										<div class="row mt-40">
 											<div class="col get-app-code-box">
-												<vtr-ui-security-statusbar [title]="'SURFEASY VPN'"
-													[status]="status"></vtr-ui-security-statusbar>
+												<vtr-ui-security-statusbar [statusList]="[statusItem]"></vtr-ui-security-statusbar>
 											</div>
 										</div>
 										<div class="row mt-40">
@@ -53,7 +50,7 @@
 											</div>
 											<div class=" pull right">
 												<div class="col-12">
-													<button *ngIf="status === 'not-installed'"
+													<button *ngIf="statusItem.status === 'not-installed'"
 														type="button"
 														(click)="getSurfEasy()"
 														vtrMetrics
@@ -63,7 +60,7 @@
 														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
 														Get SurfEasy
 													</button>
-													<button *ngIf="status === 'installed'"
+													<button *ngIf="statusItem.status === 'installed'"
 														type="button"
 														(click)="openSurfEasy()"
 														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
@@ -75,8 +72,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="row vtr-page-security-internet"
-								*ngIf="status === 'not-installed'">
+							<div class="row vtr-page-security-internet" *ngIf="statusItem.status === 'not-installed'">
 								<div class="row">
 									<div class="col col-12 col-sm-12 mt-40">
 										<div>
@@ -207,8 +203,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="row vtr-connected-security-internet"
-								*ngIf="status === 'installed'">
+							<div class="row vtr-connected-security-internet" *ngIf="statusItem.status === 'installed'">
 								<div class="row">
 									<div class="col col-12 col-sm-12 mt-40">
 										<div>
