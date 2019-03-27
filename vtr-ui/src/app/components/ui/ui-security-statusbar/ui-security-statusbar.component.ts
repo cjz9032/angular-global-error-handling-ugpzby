@@ -7,13 +7,11 @@ import { Component, OnInit, Input, Pipe, PipeTransform, NgModule } from '@angula
 })
 export class UiSecurityStatusbarComponent implements OnInit {
 
-	@Input() status: string;
-	@Input() title: string;
-	@Input() buttonTitle: string;
-	@Input() metricsItem: string;
+  @Input() statusList: Array<any>;
 
 	constructor() { }
 
-	ngOnInit() { }
+  ngOnInit() {
+  }
 
 }

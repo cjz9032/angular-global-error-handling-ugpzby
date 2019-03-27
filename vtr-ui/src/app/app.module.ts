@@ -256,6 +256,7 @@ library.add(far);
 		IconNamePipe,
 		StatusTextPipe,
 		TextClassPipe,
+		UiSecurityStatusbarComponent,
 		StatusTransformPipe,
 	],
 	imports: [

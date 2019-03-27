@@ -6,23 +6,17 @@ import { Antivirus } from '@lenovo/tan-client-bridge';
 })
 export class ChoosePagePipe implements PipeTransform {
 
-	transform(antiVirus: Antivirus): any {
+	transform(antiVirus: any): any {
+		console.log(antiVirus);
 		if (antiVirus.mcafee) {
-			if (antiVirus.mcafee.status === true
-				|| antiVirus.mcafee.firewallStatus === true) {
+			if (antiVirus.mcafee.enabled || !antiVirus.others.enabled) {
 				return 'mcafee';
-			} else if (antiVirus.others) {
-				if (antiVirus.others.firewall.length < 1) {
-					if (antiVirus.others.antiVirus[0].status === true) {
-						return 'others';
-					} else { return 'mcafee'; }
-				} else if (antiVirus.others.firewall[0].status === true) {
-					return 'others';
-				} else { return 'mcafee'; }
 			}
-		} else if (antiVirus.others) {
+		}
+		if (antiVirus.others && antiVirus.others.enabled) {
 			return 'others';
-		} else { return 'windows'; }
+		}
+		return 'windows';
 	}
 
 }

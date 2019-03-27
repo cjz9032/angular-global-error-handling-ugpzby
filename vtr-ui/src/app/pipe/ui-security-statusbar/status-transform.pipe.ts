@@ -6,17 +6,20 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class StatusTransformPipe implements PipeTransform {
 
 	transform(value: Array<any>): any {
-		value.forEach(e => {
-			switch (e.status) {
-				case true :
-					e.status = 'enabled';
-					break;
-				case false:
-					e.status = 'disabled';
-					break;
-			}
-		});
-		return value;
+		if (value.length > 0) {
+			value.forEach(e => {
+				switch (e.status) {
+					case true:
+						e.status = 'enabled';
+						break;
+					case false:
+						e.status = 'disabled';
+						break;
+				}
+			});
+			return value;
+		}
+		return [];
 	}
 
 }

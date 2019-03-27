@@ -4,7 +4,7 @@
 			<div class="col-auto px-3">
 				<div class="bullet-icon">
 					<div class="icon-bkg" [ngClass]="list.status | iconClass">
-						<fa-icon [icon]="list.status | iconName"></fa-icon>
+            <fa-icon [icon]="list.status | iconName"></fa-icon>
 					</div>
 				</div>
 			</div>
@@ -12,17 +12,14 @@
 				{{list.title}}
 			</div>
 			<div class="col-auto mr-auto">
-				<h3><span class="badge badge-pill"
-						[ngClass]="status | textClass">
-						{{ status | statusText }}
-					</span></h3>
+        <h3><span class="badge badge-pill"
+            [ngClass]="list.status | textClass">
+          {{ list.status | statusText }}
+        </span></h3>
 			</div>
-			<div *ngIf="buttonTitle"
-				class="col-auto">
-				<vtr-ui-button metricsEvent="itemClick"
-					metricsParent="Windows"
-					[metricsItem]="metricsItem"
-					[label]="buttonTitle"></vtr-ui-button>
+			<div *ngIf="list.buttonTitle && list.status === 'disabled'" class="col-auto">
+				<vtr-ui-button (onClick)="list.buttonClick()" metricsEvent="itemClick" metricsParent="Windows" [metricsItem]="metricsItem"
+					[label]="list.buttonTitle"></vtr-ui-button>
 			</div>
 		</div>
 	</li>
