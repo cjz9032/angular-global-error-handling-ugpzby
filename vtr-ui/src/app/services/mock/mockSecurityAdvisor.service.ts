@@ -177,8 +177,8 @@ export class MockSecurityAdvisorService {
 				}],
 				enabled: false,
 			},
-			refresh(): Promise < any > {
-				const p1 = new Promise((resolve) => {});
+			refresh(): Promise<any> {
+				const p1 = new Promise((resolve) => { });
 				return p1;
 			},
 			on(type, handler): Emitable {

@@ -92,7 +92,9 @@
 								.orange {
 									background-color: $stop_light;
 								}
-								
+							}
+							&:last-child {
+								border-bottom: none;
 							}
 							&:last-child {
 								border-bottom: none;

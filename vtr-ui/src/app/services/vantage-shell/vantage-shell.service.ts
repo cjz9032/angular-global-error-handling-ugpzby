@@ -2,8 +2,7 @@
 
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
-import bootstrap from '@lenovo/tan-client-bridge';
-import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
+import * as Phoenix from '@lenovo/tan-client-bridge';
 
 @Injectable({
 	providedIn: 'root'
@@ -16,11 +15,11 @@ export class VantageShellService {
 			const rpcClient = shell.VantageRpcClient ? new shell.VantageRpcClient() : null;
 			const metricClient = shell.MetricsClient ? new shell.MetricsClient() : null;
 			const powerClient = shell.PowerClient ? shell.PowerClient() : null;
-			this.phoenix = bootstrap(
+			this.phoenix = Phoenix.default(
 				new inversify.Container(),
 				{
 					hsaBroker: rpcClient,
-					metricsBroker: metricClient,
+					// metricsBroker: metricClient,
 					hsaPowerBroker: powerClient
 				}
 			);
@@ -93,6 +92,13 @@ export class VantageShellService {
 	public getSystemUpdate(): any {
 		if (this.phoenix) {
 			return this.phoenix.systemUpdate;
+		}
+		return undefined;
+	}
+
+	public getSecurityAdvisor(): Phoenix.SecurityAdvisor {
+		if (this.phoenix) {
+			return this.phoenix.securityAdvisor;
 		}
 		return undefined;
 	}
@@ -256,12 +262,5 @@ export class VantageShellService {
 		}
 		console.log('In VantageShellService.deviceFilter. returning mock true');
 		return true;
-	}
-
-	public getSecurityAdvisor(): SecurityAdvisor {
-		if (this.phoenix) {
-			return this.phoenix.securityAdvisor;
-		}
-		return undefined;
 	}
 }

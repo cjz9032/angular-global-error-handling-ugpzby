@@ -278,6 +278,28 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
+.wifi-security-invitation-modal {
+	.modal-dialog {
+		margin-top: 8rem;
+
+		.modal-content {
+			background-color: transparent;
+			border: none;
+		}
+	}
+}
+
+.wifi-security-location-modal {
+	.modal-dialog {
+		margin-top: 8rem;
+
+		.modal-content {
+			background-color: transparent;
+			border: none;
+		}
+	}
+}
+
 /*Battery-charge-threshold-modal-styles*/
 .Battery-Charge-Threshold-Modal {
 	.modal-dialog {

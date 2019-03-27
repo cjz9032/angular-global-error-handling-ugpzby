@@ -1,8 +1,10 @@
-<div class="title row no-gutters" [ngClass]="getItemDetailClasses(objects)">
+<div class="title row no-gutters"
+	[ngClass]="getItemDetailClasses(objects)">
 
-  <fa-icon [icon]="['fas', getItemStatusIconClass(objects)]" class="col-1"></fa-icon>
- 
-  <span class="col-11">
-    {{objects.subject}}
-  </span>
+	<fa-icon [icon]="['fas', getItemStatusIconClass(objects)]"
+		class="col-1"></fa-icon>
+
+	<span class="col-11">
+		{{objects.subject}}
+	</span>
 </div>

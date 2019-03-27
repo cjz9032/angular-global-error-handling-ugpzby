@@ -143,24 +143,22 @@
 				<div class="row-seperator">&nbsp;</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" *ngIf="isShowInvitationCode">
 			<div class="col">
 				<div class="invitation-code-box">
 					<div class="row">
 						<div class="col">
 							<div class="sub-heading">
 								Already have Connected Home Security?
-								<div class="text-regular">Add another device to your Connected Home</div>
+								<div class="text-regular">Add this device to your Connected Home</div>
 							</div>
 
 						</div>
 						<div class="col-5">
 							<div class="button-box shift-right">
-								<vtr-ui-button metricsParent="connected-home-security"
-									metricsEvent="itemClick"
-									metricsItem="enter invitation code"
-									(onClick)="enterActivationCode($event)"
-									[label]="'Enter invitation code'"></vtr-ui-button>
+								<vtr-ui-button metricsParent="connected-home-security" metricsEvent="itemClick" metricsItem="enter invitation code" (onClick)="enterActivationCode($event)"
+									[label]="'Enter invitation code'" [isLWSEnabled]="data.isLWSEnabled"></vtr-ui-button>
+								<div *ngIf="!data.isLWSEnabled">enter invitation code require enable wifi security.</div>
 							</div>
 						</div>
 					</div>

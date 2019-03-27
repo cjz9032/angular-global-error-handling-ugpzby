@@ -3,18 +3,19 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WinRT } from '@lenovo/tan-client-bridge';
 
 @Component({
-	selector: 'vtr-modal-common-confirmation',
-	templateUrl: './modal-common-confirmation.component.html',
-	styleUrls: ['./modal-common-confirmation.component.scss']
+	selector: 'vtr-modal-wifi-securiry-location-notice',
+	templateUrl: './modal-wifi-securiry-location-notice.component.html',
+	styleUrls: ['./modal-wifi-securiry-location-notice.component.scss']
 })
-export class ModalCommonConfirmationComponent implements OnInit {
+export class ModalWifiSecuriryLocationNoticeComponent implements OnInit {
+
 	@Input() header: string;
 	@Input() description: string;
 	@Input() url: string;
 	// @Input() okHandler: Function;
 	@Input() packages: string[];
-	@Input() OkText = 'Okay';
-	@Input() CancelText = 'Cancel';
+	@Input() OkText = 'YES';
+	@Input() CancelText = 'NO';
 
 	@Output() OkClick = new EventEmitter<any>();
 	@Output() CancelClick = new EventEmitter<any>();
@@ -38,3 +39,4 @@ export class ModalCommonConfirmationComponent implements OnInit {
 		this.activeModal.close(false);
 	}
 }
+

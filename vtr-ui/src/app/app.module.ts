@@ -7,7 +7,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 
 // THIRD PARTY MODULES
 import { CookieService } from 'ngx-cookie-service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
 
 // CUSTOM MODULES
@@ -77,10 +77,13 @@ import { WidgetDeviceUpdateSettingsComponent } from './components/widgets/widget
 // APPLICATION MODALS
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 import { ModalLenovoIdComponent } from './components/modal/modal-lenovo-id/modal-lenovo-id.component';
+import { ModalWifiSecurityInvitationComponent } from './components/modal/modal-wifi-security-invitation/modal-wifi-security-invitation.component';
+import { ModalWifiSecuriryLocationNoticeComponent } from './components/modal/modal-wifi-securiry-location-notice/modal-wifi-securiry-location-notice.component';
 
 // APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
 import { MockService } from './services/mock/mock.service';
+import { MockWifiSecurity } from './services/mock/mockWifiSecurity.service';
 import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
 import { CommsService } from './services/comms/comms.service';
@@ -146,6 +149,10 @@ import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
 import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import {StatusTransformPipe} from './pipe/ui-security-statusbar/status-transform.pipe';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> security-advisor-wifiSecurity
 
 library.add(fas);
 library.add(far);
@@ -244,6 +251,8 @@ library.add(far);
 		ModalCommonConfirmationComponent,
 		ModalArticleDetailComponent,
 		DolbyModesTranslationPipe,
+		ModalWifiSecurityInvitationComponent,
+		ModalWifiSecuriryLocationNoticeComponent,
 		UiLandingFeatureComponent,
 		UiObjectTitleComponent,
 		UiSecurityStatusbarComponent,
@@ -260,6 +269,7 @@ library.add(far);
 		HttpClientModule,
 		FontAwesomeModule,
 		NgbModule,
+		// NgbActiveModal,
 		Ng5SliderModule,
 		ReactiveFormsModule,
 		// ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
@@ -269,6 +279,7 @@ library.add(far);
 		CookieService,
 		DevService,
 		MockService,
+		MockWifiSecurity,
 		DisplayService,
 		ContainerService,
 		CommsService,
@@ -285,8 +296,10 @@ library.add(far);
 		ModalWelcomeComponent,
 		ModalBatteryChargeThresholdComponent,
 		ModalCommonConfirmationComponent,
-		ModalUpdateChangeLogComponent,
-		ModalArticleDetailComponent
+		ModalArticleDetailComponent,
+		ModalWifiSecurityInvitationComponent,
+		ModalWifiSecuriryLocationNoticeComponent,
+		ModalUpdateChangeLogComponent
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
