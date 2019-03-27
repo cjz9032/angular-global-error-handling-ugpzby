@@ -9,6 +9,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { CookieService } from 'ngx-cookie-service';
 import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 // CUSTOM MODULES
 import { AppRoutingModule } from './app-routing.module';
@@ -84,12 +85,12 @@ import { ModalWifiSecuriryLocationNoticeComponent } from './components/modal/mod
 import { DevService } from './services/dev/dev.service';
 import { MockService } from './services/mock/mock.service';
 import { MockWifiSecurity } from './services/mock/mockWifiSecurity.service';
+import { MockSecurityAdvisorService } from './services/mock/mockSecurityAdvisor.service';
 import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
 import { CommsService } from './services/comms/comms.service';
 import { DashboardService } from './services/dashboard/dashboard.service';
 import { SecurityService } from './services/security/security.service';
-import { MockSecurityAdvisorService } from './services/mock/mockSecurityAdvisor.service';
 import { UserService } from './services/user/user.service';
 import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
 import { CameraDetailMockService } from './services/camera/camera-detail/camera-detail.mock.service';
@@ -101,6 +102,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
+import { fal } from '@fortawesome/pro-light-svg-icons';
+
 
 import { EyeCareModeComponent } from './components/display/eye-care-mode/eye-care-mode.component';
 import { UiButtonComponent } from './components/ui/ui-button/ui-button.component';
@@ -139,6 +142,7 @@ import { AppEventDirective } from './directives/app-event.directive';
 import { SafeDomPipe } from './pipe/safe-dom/safe-dom.pipe';
 import { ModalUpdateChangeLogComponent } from './components/modal/modal-update-change-log.component/modal-update-change-log.component';
 import { ModalArticleDetailComponent } from './components/modal/modal-article-detail/modal-article-detail.component';
+import { ModalThreatLocatorComponent } from './components/modal/modal-threat-locator/modal-threat-locator.component';
 import { DolbyModesTranslationPipe } from './pipe/dolby-modes-translation.pipe';
 import { UiLandingFeatureComponent } from './components/ui/ui-landing-feature/ui-landing-feature.component';
 import { UiObjectTitleComponent } from './components/ui/ui-object-title/ui-object-title.component';
@@ -153,6 +157,7 @@ import {StatusTransformPipe} from './pipe/ui-security-statusbar/status-transform
 library.add(fas);
 library.add(fab);
 library.add(far);
+library.add(fal);
 
 @NgModule({
 	declarations: [
@@ -247,6 +252,7 @@ library.add(far);
 		SafeDomPipe,
 		ModalCommonConfirmationComponent,
 		ModalArticleDetailComponent,
+		ModalThreatLocatorComponent,
 		DolbyModesTranslationPipe,
 		ModalWifiSecurityInvitationComponent,
 		ModalWifiSecuriryLocationNoticeComponent,
@@ -265,6 +271,7 @@ library.add(far);
 		AppRoutingModule,
 		FormsModule,
 		HttpClientModule,
+		AngularSvgIconModule,
 		FontAwesomeModule,
 		NgbModule,
 		// NgbActiveModal,
@@ -297,7 +304,8 @@ library.add(far);
 		ModalArticleDetailComponent,
 		ModalWifiSecurityInvitationComponent,
 		ModalWifiSecuriryLocationNoticeComponent,
-		ModalUpdateChangeLogComponent
+		ModalUpdateChangeLogComponent,
+		ModalThreatLocatorComponent
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA

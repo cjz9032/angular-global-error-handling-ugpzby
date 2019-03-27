@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { WifiSecurity } from '@lenovo/tan-client-bridge';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalWifiSecuriryLocationNoticeComponent } from '../../../../modal/modal-wifi-securiry-location-notice/modal-wifi-securiry-location-notice.component';
+import { ModalThreatLocatorComponent } from 'src/app/components/modal/modal-threat-locator/modal-threat-locator.component';
 import { WifiHomeViewModel } from '../../page-security-wifi.component';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { BaseComponent } from '../../../../base/base.component';
@@ -15,7 +16,8 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	@Input() data: WifiHomeViewModel;
 	isShowMore = true; // less info, more info
 	isShowMoreLink = true; // show more link
-	// showAllNetworks: boolean = true;
+  // showAllNetworks: boolean = true;
+  isCollapsed: boolean = true;
 
 	constructor(public modalService: NgbModal) {
 		super();
@@ -88,5 +90,13 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 			this.data.historys = this.data.allHistorys.slice(0, length + 2);
 		}
 		return false;
+  }
+
+	openThreatLocator() {
+		let articleDetailModal: NgbModalRef = this.modalService.open(ModalThreatLocatorComponent, {
+			size: 'lg',
+			centered: true,
+			windowClass: 'Threat-Locator-Modal'
+		});
 	}
 }

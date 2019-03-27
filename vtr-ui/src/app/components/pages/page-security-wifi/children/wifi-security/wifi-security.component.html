@@ -97,37 +97,41 @@
 				</div>
 			</div>
 		</div>
-		<!-- <div class="row mt-10 threat-locator" *ngIf="isShowMore===false"> -->
-		<div class="row mt-10 threat-locator">
+		<div class="row threat-locator"
+			[ngbCollapse]="isCollapsed">
 			<div class="col">
-				<div class="sub-heading-2">Threat locator</div>
-				<div class="text-regular">
-					Use the threat detector to determine the safety of the networks
-					around you.
-				</div>
-				<div class="text-regular">
-					<input type="text"
-						placeholder="Your location">
-					<button type="button"
-						vtrMetrics
-						metricsParent="lenovo-wifi-security"
-						metricsEvent="itemClick"
-						metricsItem="btn.check threat"
-						class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
-						Check threat
-					</button>
+				<div class="threat-locator-container">
+					<div class="row">
+						<div class="col">
+							<div class="sub-heading-2">Threat locator</div>
+							<div class="text-regular">
+								Use the threat detector to determine the safety of the networks
+								around you.
+							</div>
+						</div>
+						<div class="col-5 col-check-location">
+							<div class="button-box">
+								<vtr-ui-button vtrMetrics
+									metricsParent="lenovo-wifi-security"
+									metricsEvent="itemClick"
+									metricsItem="Check your location"
+									(click)="openThreatLocator()"
+									[label]="'Check your location'"></vtr-ui-button>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class="row mt-40" *ngIf="!data.isLWSEnabled">
 			<div class="col">
+				<div class="text-regular">Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones.</div>
 			</div>
-
 			<div class=" pull right">
 				<div class="col-12">
-					<button type="button"
-						(click)="enableWifiSecurity()"
-						vtrMetrics
+          <button type="button"
+            (click)="enableWifiSecurity()" 
+            vtrMetrics
 						metricsParent="lenovo-wifi-security"
 						metricsItem="btn.enable wifi security"
 						metricsEvent="itemClick"

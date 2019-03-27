@@ -146,6 +146,7 @@ export class AntiVirusViewMode {
 		} else if (antiVirus.others) {
 			this.currentPage = 'others';
 		} else { this.currentPage = 'windows'; }
-		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityCurrentPage, this.currentPage);
+    this.commonService.setLocalStorageValue(LocalStorageKey.SecurityCurrentPage, this.currentPage);
+    console.log(antiVirus);
 	}
 }
