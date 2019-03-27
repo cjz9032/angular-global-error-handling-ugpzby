@@ -51,7 +51,7 @@
 										
 
 									</div>
-									<vtr-widget-mcafee [install] = " viewMode.mcafee" [name] = "'Windows Defender'" ></vtr-widget-mcafee>
+									<vtr-widget-mcafee [install] = "viewMode.mcafee" [name] = "'Windows Defender'" ></vtr-widget-mcafee>
 								</div>
 							</div>
 							<div class="body antivirus-block">
@@ -380,7 +380,7 @@
 											device
 										</div>
 
-										<vtr-ui-security-statusbar [statusList]="viewMode.othersFirestatusList | statusTransform">
+										<vtr-ui-security-statusbar [statusList]="viewMode.othersFirewallstatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>
@@ -491,9 +491,8 @@
 
 								<div class="row">
 									<div class="col col-12">
-										<vtr-container-card [img]="'./../../../../assets/images/antivirus/poaster.png'" [caption]="'PARTNER ARTICLE'"
-										 [title]="'Try our McAfee anti-virus software for 6 months'" [type]="'article'" [ratioX]="4" [ratioY]="4">
-										</vtr-container-card>
+										<vtr-article-item *ngFor="let item of articles, let i = index"
+										[item]="item"></vtr-article-item>
 									</div>
 								</div>
 							</div>
