@@ -156,7 +156,9 @@ export class MockSecurityAdvisorService {
 				firewallStatus: false,
 				status: false,
 				enabled: false,
-				launch(): void {},
+				launch(): Promise<boolean> {
+					return Promise.resolve(true);
+				},
 			},
 			// mcafee: null,
 			windowsDefender: {
