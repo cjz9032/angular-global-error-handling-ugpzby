@@ -255,15 +255,12 @@
 			</div>
 			<div class=" pull right">
 				<div class="col-12">
-					<button type="button"
-						(click)="enableWifiSecurity()"
-						vtrMetrics
+					<vtr-ui-button vtrMetrics
 						metricsParent="lenovo-wifi-security"
 						metricsItem="btn.enable wifi security"
 						metricsEvent="itemClick"
-						class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
-						Enable Wifi Security
-					</button>
+						(click)="enableWifiSecurity()"
+						[label]="'Enable Wifi Security'"></vtr-ui-button>
 				</div>
 			</div>
 		</div>
