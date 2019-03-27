@@ -176,26 +176,31 @@
 						<div class="container-fluid">
 							<div class="row mb-40">
 								<div class="col col-12 cont">
-									<vtr-widget-device-update-settings [title]="'Auto update settings'"
+
+									<vtr-widget-devcice-update-settings [title]="'Auto update settings'"
+										componentName="Auto Update Settings"
 										[description]="'Automatically Install Updates'"
 										[items]="autoUpdateOptions"
 										(toggleOnOff)="onUpdateToggleOnOff($event)">
-									</vtr-widget-device-update-settings>
+									</vtr-widget-devcice-update-settings>
 								</div>
 							</div>
 
 							<div class="row">
-								<div class="col col-12">
-									<vtr-container-card
-										[img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
+								<div class="col col-12 mb-40">
+									<vtr-container-card [img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
 										[title]="'Lenovo Support website'"
 										[logoText]="'LENOVO SPECIAL'"
 										[action]="'Read More'"
-										[actionLink]="'http://www.google.com'"
+										[actionLink]="'https://pcsupport.lenovo.com/'"
 										[type]="'partnerarticle'"
 										[ratioX]="4"
 										[ratioY]="2">
 									</vtr-container-card>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col col-12 mb-40">
 									<vtr-article-item *ngFor="let item of articles, let i = index"
 										[item]="item"></vtr-article-item>
 								</div>

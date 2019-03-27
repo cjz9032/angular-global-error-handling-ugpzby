@@ -161,15 +161,28 @@
 	}
 
 	.threat-locator {
-		padding-left: 3rem;
+		// padding-left: 3rem;
+		background: url("../../../../../../assets/images/threat-locator-background.png");
+		border-radius: 0.8rem;
+		border-top-left-radius: 0rem;
+		border-top-right-radius: 0rem;
 
-		input {
-			height: 4.8rem;
-			border: solid 0.1rem $shade_dark;
-			border-radius: 0.5rem;
-			margin-right: 2rem;
-			margin-top: 1rem;
-			width: 50%;
+		.threat-locator-container {
+			margin: 3rem;
+			padding: 3rem;
+			background: $light;
+			border-radius: 0.8rem;
+
+			.col-check-location {
+				padding-right: 0rem;
+			}
+
+			.button-box {
+				padding: 0rem;
+				margin: 0rem;
+				padding-top: 1rem;
+				text-align: right;
+			}
 		}
 	}
 
@@ -329,10 +342,7 @@
 
 		.collapse {
 			background: $shade_lightest;
-			border-radius: 0.8rem;
-			border-top-left-radius: 0rem;
-			border-top-right-radius: 0rem;
-			// border: 0.1rem solid rgba(0, 0, 0, 0.125);
+			border-radius: 0rem;
 			border: 0.1rem solid $shade_lighter;
 		}
 
