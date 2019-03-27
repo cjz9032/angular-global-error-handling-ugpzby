@@ -51,6 +51,7 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 					this.startJoin = false;
 					if (result) {
 						this.joinSuccess = true;
+						this.emitter.emit('invitationsuccess');
 						// console.log('Join success!');
 					} else {
 						this.joinFailed = true;
@@ -65,7 +66,6 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 
 	onCancelClick($event: any) {
 		this.activeModal.close(false);
-		this.emitter.emit('invitationsuccess');
 	}
 
 }

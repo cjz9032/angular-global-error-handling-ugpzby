@@ -73,7 +73,10 @@
 											<div class="status-icon">
 												<span class="fa-stack fa-3x">
 													<fa-icon [icon]="['fas', 'wifi']" class="menu-pointer"></fa-icon>
-													<span class="circle" [ngClass]="{'green':history.good === 0,'red':history.good !== 0}"><fa-icon [icon]="['fas', 'check']"></fa-icon></span>
+													<span class="circle" [ngClass]="{'green':history.good == 0,'red':history.good != 0}">
+														<fa-icon [icon]="['fas', 'check']" *ngIf="history.good == 0"></fa-icon>
+														<fa-icon [icon]="['fas', 'times']" *ngIf="history.good != 0"></fa-icon>
+													</span>
 												</span>
 											</div>
 											<div class="connection-name">
