@@ -33,7 +33,7 @@
 						 [metricsItem]="item.metricsItem"
 						 routerLink="/{{item.path}}"
 						 routerLinkActive="active">
-							<fa-icon [icon]="['fas', item.icon]"
+							<fa-icon [icon]="item.icon"
 							 class="fa-icon"></fa-icon>
 							{{item.label}}
 						</a>
@@ -52,7 +52,7 @@
 						 data-toggle="dropdown"
 						 aria-haspopup="true"
 						 aria-expanded="false">
-							<fa-icon [icon]="['fas', item.icon]"
+							<fa-icon [icon]="item.icon"
 							 class="fa-icon"></fa-icon>
 							{{item.label}}
 						</a>
