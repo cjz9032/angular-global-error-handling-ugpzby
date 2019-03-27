@@ -98,6 +98,10 @@
 	.p-40 {
 		padding: 3.5rem !important;
 	}
+
+	.mb-40 {
+		margin-bottom: 7rem !important;
+	}
 }
 
 @media #{$mediaquery_5} {
@@ -117,6 +121,10 @@
 
 	.p-40 {
 		padding: 3rem !important;
+	}
+
+	.mb-40 {
+		margin-bottom: 6rem !important;
 	}
 }
 
@@ -138,6 +146,10 @@
 	.p-40 {
 		padding: 2.5rem !important;
 	}
+
+	.mb-40 {
+		margin-bottom: 5rem !important;
+	}
 }
 
 @media #{$mediaquery_7} {
@@ -157,6 +169,10 @@
 
 	.p-40 {
 		padding: 2rem !important;
+	}
+
+	.mb-40 {
+		margin-bottom: 4rem !important;
 	}
 }
 //Added new media query for max-width:800 where vtr-page-right-column margin-left , margin-top css are added to fix VAN-1049 issue.
