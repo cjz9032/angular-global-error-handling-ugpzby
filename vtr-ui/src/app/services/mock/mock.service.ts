@@ -256,6 +256,18 @@ export class MockService {
 		}
 	];
 
+	wifiHistoryList = [
+		{
+			ssid: 'Lenovo',
+			info: '2019-01-25',
+			good: 0
+		}, {
+			ssid: 'CDL',
+			info: '2019-01-25',
+			good: 1
+		}
+	]
+
 	securityConnectedHome = [
 		{
 			'status': '',
