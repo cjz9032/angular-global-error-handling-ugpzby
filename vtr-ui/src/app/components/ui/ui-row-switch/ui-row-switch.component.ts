@@ -44,7 +44,6 @@ export class UiRowSwitchComponent extends BaseComponent {
 	@Output() tooltipClick = new EventEmitter<boolean>();
 	@Output() resetClick = new EventEmitter<Event>();
 
-
 	// private tooltip: NgbTooltip;
 
 	constructor(
@@ -102,7 +101,6 @@ export class UiRowSwitchComponent extends BaseComponent {
 		this.resetClick.emit($event);
 	}
 
-
 	// private closeTooltip($event: Event) {
 	// 	if (!$event.srcElement.classList.contains('fa-question-circle') && this.tooltip && this.tooltip.isOpen()) {
 	// 		this.tooltip.close();
@@ -119,5 +117,4 @@ export class UiRowSwitchComponent extends BaseComponent {
 	// 			break;
 	// 	}
 	// }
-
 }

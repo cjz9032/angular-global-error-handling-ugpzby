@@ -13,92 +13,67 @@
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col col-12">
-										<vtr-widget-security [title]="'Not fully protected'"
-											[subTitle1]="'You are not fully protected. Learn how to better protect yourself now.'"
-											[subTitle2]="''"
-											[buttonText]="'Security Advisor 101'"
-											percentValue=80></vtr-widget-security>
+										<vtr-widget-security
+										 [percentValue]="getScore(antivirusScore)"></vtr-widget-security>
 									</div>
 								</div>
 
-
 								<div class="row">
-									<div class="col security-widgets-container left">
-										<div class="security-widget anti-virus">
-											<div class="security-widget-inner">
-												<vtr-ui-object-title [objects]="antivirusLandingViewModel">
-												</vtr-ui-object-title>
-												<vtr-ui-list-chevron [items]="antivirusLandingViewModel.statusList">
-												</vtr-ui-list-chevron>
-												<div class="pull"><img class="mcafee-logo"
-														src="../../../../assets/images/mcafee_logo.svg" />
-												</div>
-											</div>
-										</div>
+									<div class="col col-md-6 security-widgets-container left">
 
-										<!-- <vtr-ui-landing-feature [feature]='antivirusLandingViewModel'>
-										</vtr-ui-landing-feature> -->
-
-										<vtr-ui-landing-feature [feature]='passwordManagerLandingViewModel'>
+										<vtr-ui-landing-feature *ngIf="antivirusLandingViewModel.subjectStatus !== undefined && antivirusLandingViewModel.subjectStatus !== null" [feature]='antivirusLandingViewModel'>
 										</vtr-ui-landing-feature>
 
-										<vtr-ui-landing-feature [feature]='vpnLandingViewModel'>
+										<vtr-ui-landing-feature *ngIf="passwordManagerLandingViewModel.subjectStatus !== undefined && passwordManagerLandingViewModel.subjectStatus !== null" [feature]='passwordManagerLandingViewModel'>
+										</vtr-ui-landing-feature>
+
+										<vtr-ui-landing-feature *ngIf="vpnLandingViewModel.subjectStatus !== undefined && vpnLandingViewModel.subjectStatus !== null" [feature]='vpnLandingViewModel'>
 										</vtr-ui-landing-feature>
 									</div>
-
-									<div class="col security-widgets-container">
-										<div class="security-widget wifi-connected-home">
+									
+									<div class="col col-md-6 security-widgets-container">
+										<div class="security-widget wifi-connected-home" *ngIf="wifiSecurityLandingViewModel.subjectStatus !== undefined && wifiSecurityLandingViewModel.subjectStatus !== null">
 											<div class="security-widget-inner">
 												<div class="security-widget-wifi">
-													<vtr-ui-object-title [objects]="wifiSecurityLandingViewModel">
-													</vtr-ui-object-title>
-													<vtr-ui-list-chevron
-														[items]="wifiSecurityLandingViewModel.statusList">
-													</vtr-ui-list-chevron>
-													<div class="wifi-history"
-														*ngIf="wifiHistory">
-														<div class="row align-items-center">
-															<div class="col-3">
-																<img src="../../../../assets//images//img-empty.svg"
-																	alt="">
-															</div>
-															<div class="col-9">Prevented your computer from joining
-																<span>3</span> malicious networks this month.</div>
-														</div>
-														<ul class="chevron-list">
-															<li *ngFor="let wifi of wifiHistory.slice(0, 2);"
-																class="row">
-																<div class="col-2 item-icon">
-																	<div class="icon-bkg">
-																		<img [ngClass]="getWifiStatus(wifi.good)"
-																			src="../../../../assets//images//img-empty.svg"
-																			alt="">
-																	</div>
-																</div>
-																<div class="col-6">{{wifi.ssid}}</div>
-																<div class="col-4 wifi-bg">
-																	<div class="wifi-good"
-																		[ngClass]="getWifiStatus(wifi.good)">
-																		{{getWifiDetail(wifi.good)}}</div>
-																</div>
-															</li>
-															<li class="wifi-link"><a routerLink="/wifi-security">See all
-																	joined networks</a></li>
-														</ul>
-													</div>
-												</div>
-												<vtr-ui-list-chevron
-													[items]="homeProtectionLandingViewModel.statusList">
+														<vtr-ui-object-title [objects]="wifiSecurityLandingViewModel">													
+															</vtr-ui-object-title>
+                            <vtr-ui-list-chevron [items]="wifiSecurityLandingViewModel.statusList">
+                              </vtr-ui-list-chevron>
+                              <div class="wifi-history" *ngIf="wifiHistory && wifiSecurityLandingViewModel.subjectStatus === 0">
+                                <div class="row align-items-center pt-wifiLength">
+                                  <div class="col-3">
+																		<fa-icon class="wifi-font-icon" [icon]="['fas', 'wifi']"></fa-icon>
+                                    <!-- <img src="../../../../assets//images//img-empty.svg" alt=""> -->
+                                  </div>
+                                  <div class="col-9">Prevented your computer from joining <span>{{getMaliciousWifi(wifiHistory)}}</span> malicious networks this month.</div>
+                                </div>
+                                <ul class="chevron-list">	
+                                  <li *ngFor="let wifi of wifiHistory.slice(0, 2);" class="row">
+                                      <div class="col-2 item-icon">
+                                        <div class="icon-bkg">
+																						<fa-icon [ngClass]="getWifiStatus(wifi.good)" [icon]="['fas', 'wifi']"></fa-icon>
+                                            <!-- <img [ngClass]="getWifiStatus(wifi.good)"  src="../../../../assets//images//img-empty.svg" alt=""> -->
+                                        </div>
+                                      </div>
+                                      <div class="col-6">{{wifi.ssid}}</div>
+                                      <div class="wifi-bg">
+																				<div class="wifi-good" [ngClass]="getWifiStatus(wifi.good)">{{getWifiDetail(wifi.good)}}</div>
+																			</div>
+                                  </li>
+                                  <li class="wifi-link"><a routerLink="/wifi-security">See all joined networks</a></li>
+                                </ul>
+                              </div>
+                        </div>
+												<vtr-ui-list-chevron [items]="homeProtectionLandingViewModel.statusList">
 												</vtr-ui-list-chevron>
 												<div class="pull"><img class="coronet-logo"
-														src="../../../../assets/images/coronet-logo.svg" />
+													 src="../../../../assets/images/coronet-logo.svg" />
 												</div>
 											</div>
 										</div>
-										<vtr-ui-landing-feature *ngIf="windowsHelloLandingViewModel.windowsHello"
-											[feature]='windowsHelloLandingViewModel'>
+										<vtr-ui-landing-feature *ngIf="windowsHelloLandingViewModel.subjectStatus !== undefined && windowsHelloLandingViewModel.subjectStatus !== null" [feature]='windowsHelloLandingViewModel'>
 										</vtr-ui-landing-feature>
-
+										
 									</div>
 								</div>
 							</div>
@@ -112,6 +87,15 @@
 								<div class="col col-12">
 									<vtr-article-item *ngFor="let item of articles, let i = index"
 										[item]="item"></vtr-article-item>
+								</div>
+							</div>
+							<div class="row mb-40">
+								<div class="col col-12 ">
+									<vtr-widget-feedback [title]="'Discover our top ideapad offers for the holidays '"
+										[description]="'Lenovo Exclusive'"
+										[actionName]="''"
+										[action]="''">
+									</vtr-widget-feedback>
 								</div>
 							</div>
 						</div>

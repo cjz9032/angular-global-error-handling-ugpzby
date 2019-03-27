@@ -1,0 +1,71 @@
+<div class="vtr-widget-mcafee mt-60">
+  <div class="row">
+    <div class="col-auto px-0 mr-auto">
+      <div class="title pb-3">McAfee premium protection</div>
+    </div>
+    <div class="col-auto px-0">
+      <img class="mcafee-logo" src="../../../../assets/images/mcafee_logo.svg" />
+    </div>
+  </div>
+  <div class="subtitle pb-5">You are currently protected by {{name}}.
+    However, you could be better protected with McAfee LifeSafe
+  </div>
+
+  <ul class="list-group">
+    <li class="list-group-item">
+      <div class="row align-items-center">
+        <div class="col-auto px-3">
+          <div class="bullet-icon-times">
+            <div class="icon-bkg">
+              <fa-icon [icon]="['fas', 'times']"></fa-icon>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto px-0 text">
+          VIRUS SCAN
+        </div>
+        <div class="col-auto mr-auto">
+          <h3><span class="badge badge-pill badge-danger">DISABLED</span>
+          </h3>
+        </div>
+        <div class="col-auto d-none">
+          <vtr-ui-button [label]="'ENABLE FIREWALL'"></vtr-ui-button>
+        </div>
+      </div>
+
+    </li>
+
+    <li class="list-group-item">
+      <div class="row align-items-center">
+        <div class="col-auto px-3">
+          <div class="bullet-icon-times">
+            <div class="icon-bkg">
+              <fa-icon [icon]="['fas', 'times']"></fa-icon>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto px-0 text">
+          FIREWALL
+        </div>
+        <div class="col-auto mr-auto">
+          <h3><span class="badge badge-pill badge-danger">DISABLED</span>
+          </h3>
+        </div>
+        <div class="col-auto d-none">
+          <vtr-ui-button [label]="'ENABLE FIREWALL'"></vtr-ui-button>
+        </div>
+      </div>
+
+    </li>
+
+  </ul>
+
+  <div class="row justify-content-end">
+    <div class="col-auto px-0 py-5">
+      <vtr-ui-button (onClick)="install.launch()" [label]="'LAUNCH MCAFEE'" *ngIf=" install | pipeInstall"></vtr-ui-button>
+      <a class="d-block" href="{{urlGetMcAfee}}" target="_blank">
+        <vtr-ui-button [label]="'GET MCAFEE'" *ngIf="! install | pipeInstall"></vtr-ui-button>
+      </a>
+    </div>
+  </div>
+</div>

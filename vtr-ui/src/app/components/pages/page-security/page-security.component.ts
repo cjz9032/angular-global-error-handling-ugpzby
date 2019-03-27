@@ -1,13 +1,12 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-// import {	MockService} from '../../../services/mock/mock.service';
+import { Component,	OnInit,	HostListener } from '@angular/core';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { MockSecurityAdvisorService } from '../../../services/mock/mockSecurityAdvisor.service';
 import * as phoenix from '@lenovo/tan-client-bridge';
-import { EventTypes, WifiSecurity, WindowsHello, Antivirus, Vpn, PasswordManager, HomeProtection, WifiDetail } from '@lenovo/tan-client-bridge';
+import { EventTypes } from '@lenovo/tan-client-bridge';
 import { CMSService } from '../../../services/cms/cms.service';
 
 export class PasswordManagerLandingViewModel {
-	passwordManager: PasswordManager;
+	// passwordManager: PasswordManager;
 	statusList: Array<any>;
 	subject = 'Password Health';
 	subjectStatus: number;
@@ -15,7 +14,7 @@ export class PasswordManagerLandingViewModel {
 	imgUrl = '../../../../assets/images/Dashlane_Logo_Teal _Web.png';
 
 	constructor(pmModel: phoenix.PasswordManager) {
-		this.passwordManager = pmModel;
+		// this.passwordManager = pmModel;
 		const pmStatus = {
 			status: 2,
 			detail: 'not-installed', // install or not-installed
@@ -38,14 +37,14 @@ export class PasswordManagerLandingViewModel {
 }
 
 export class VpnLandingViewModel {
-	vpn: Vpn;
+	// vpn: Vpn;
 	statusList: Array<any>;
 	subject = 'VPN Security';
 	subjectStatus: number;
 	type = 'security';
 	imgUrl = '../../../../assets/images/surfeasy-logo.svg';
 	constructor(vpnModel: phoenix.Vpn) {
-		this.vpn = vpnModel;
+		// this.vpn = vpnModel;
 		const vpnStatus = {
 			status: 2,
 			detail: 'not-installed', // installed or not-installed
@@ -69,15 +68,15 @@ export class VpnLandingViewModel {
 }
 
 export class AntiVirusLandingViewModel {
-	antivirus: Antivirus;
+	// antivirus: Antivirus;
 	statusList: Array<any>;
 
 	subject = 'Anti-Virus';
 	subjectStatus: number;
 	type = 'security';
-	imgUrl = '../../../../assets/images/mcafee_logo.svg';
+	imgUrl = '';
 	constructor(avModel: phoenix.Antivirus) {
-		this.antivirus = avModel;
+		// this.antivirus = avModel;
 		const avStatus = {
 			status: 2,
 			detail: 'disabled',
@@ -92,18 +91,34 @@ export class AntiVirusLandingViewModel {
 			title: 'Firewall',
 			type: 'security',
 		};
-		if (avModel.windowsDefender.status) {
+		if (avModel.mcafee) { // mcafee
+			if (avModel.mcafee.enabled || (!avModel.others.enabled && !avModel.mcafee.enabled)) {
+				avStatus.status = (avModel.mcafee.status === true) ? 0 : 1;
+				avStatus.detail = (avModel.mcafee.status === true) ? 'enabled' : 'disabled';
+				fwStatus.status = (avModel.mcafee.firewallStatus === true) ? 0 : 1;
+				fwStatus.detail = (avModel.mcafee.firewallStatus === true) ? 'enabled' : 'disabled';
+				this.imgUrl = '../../../../assets/images/mcafee_logo.svg';
+				// console.log('mcafee');
+			}
+		} else if ((avModel.others && avModel.others.enabled) || (avModel.others && !avModel.others.enabled)) { // others
+			avStatus.status = (avModel.others.antiVirus[0].status === true) ? 0 : 1;
+			avStatus.detail = (avModel.others.antiVirus[0].status === true) ? 'enabled' : 'disabled';
+			fwStatus.status = (avModel.others.firewall[0].status === true) ? 0 : 1;
+			fwStatus.detail = (avModel.others.firewall[0].status === true) ? 'enabled' : 'disabled';
+			// console.log('others');
+		} else if (avModel.windowsDefender) { // windows defender
 			avStatus.status = (avModel.windowsDefender.status === true) ? 0 : 1;
 			avStatus.detail = (avModel.windowsDefender.status === true) ? 'enabled' : 'disabled';
-		}
-		if (avModel.windowsDefender.firewallStatus !== undefined || avModel.windowsDefender.firewallStatus !== null) {
 			fwStatus.status = (avModel.windowsDefender.firewallStatus === true) ? 0 : 1;
 			fwStatus.detail = (avModel.windowsDefender.firewallStatus === true) ? 'enabled' : 'disabled';
+			this.imgUrl = '../../../../assets/images/windows-logo.png';
+			// console.log('defender');
 		}
 
-		if (avModel.windowsDefender.firewallStatus === true && avModel.windowsDefender.status === true) {
+
+		if (avStatus.status === 0 && fwStatus.status === 0) {
 			this.subjectStatus = 0;
-		} else if (avModel.windowsDefender.firewallStatus === true || avModel.windowsDefender.status === true) {
+		} else if (avStatus.status === 0 || fwStatus.status === 0) {
 			this.subjectStatus = 3;
 		} else {
 			this.subjectStatus = 1;
@@ -115,11 +130,22 @@ export class AntiVirusLandingViewModel {
 		avModel.on(EventTypes.avWindowsDefenderFirewallStatusEvent, (data) => {
 			fwStatus.status = (data === true) ? 0 : 1;
 		});
+		avModel.on(EventTypes.avOthersEvent, (data) => {
+			avStatus.status = (data.antiVirus[0].status === true) ? 0 : 1;
+			fwStatus.status = (data.firewall[0].status === true) ? 0 : 1;
+		});
+		avModel.on(EventTypes.avMcafeeStatusEvent, (data) => {
+			avStatus.status = (data === true) ? 0 : 1;
+		});
+		avModel.on(EventTypes.avMcafeeFirewallStatusEvent, (data) => {
+			fwStatus.status = (data === true) ? 0 : 1;
+		});
 		this.statusList = new Array(avStatus, fwStatus);
 	}
 }
+
 export class WindowsHelloLandingViewModel {
-	windowsHello: WindowsHello;
+	// windowsHello: WindowsHello;
 	statusList: Array<any>;
 
 	subject = 'Windows Hello';
@@ -128,7 +154,7 @@ export class WindowsHelloLandingViewModel {
 	type = 'security';
 	constructor(whModel: phoenix.WindowsHello) {
 		if (whModel) {
-			this.windowsHello = whModel;
+			// this.windowsHello = whModel;
 			const whStatus = {
 				status: 2,
 				detail: 'inactive', // active or inactive
@@ -160,7 +186,7 @@ export class WindowsHelloLandingViewModel {
 }
 
 export class WifiSecurityLandingViewModel {
-	wifiSecurity: WifiSecurity;
+	// wifiSecurity: WifiSecurity;
 	statusList: Array<any>;
 
 	subject = 'WiFi & Connected Home Security';
@@ -168,7 +194,7 @@ export class WifiSecurityLandingViewModel {
 	type = 'security';
 	wifiHistory: Array<phoenix.WifiDetail>;
 	constructor(wfModel: phoenix.WifiSecurity, hpModel: phoenix.HomeProtection) {
-		this.wifiSecurity = wfModel;
+		// this.wifiSecurity = wfModel;
 		const wfStatus = {
 			status: 2,
 			detail: 'disabled', // enabled / disabled
@@ -199,12 +225,12 @@ export class WifiSecurityLandingViewModel {
 }
 
 export class HomeProtectionLandingViewModel {
-	homeProtection: HomeProtection;
+	// homeProtection: HomeProtection;
 	statusList: Array<any>;
 
 	type = 'security';
 	constructor(hpModel: phoenix.HomeProtection, wfModel: phoenix.WifiSecurity) {
-		this.homeProtection = hpModel;
+		// this.homeProtection = hpModel;
 		const hpStatus = {
 			status: 2,
 			detail: 'disabled', // enabled / disabled
@@ -234,7 +260,6 @@ export class HomeProtectionLandingViewModel {
 export class PageSecurityComponent implements OnInit {
 
 	constructor(
-		// public mockService: MockService,
 		public vantageShellService: VantageShellService,
 		public mockSecurityAdvisorService: MockSecurityAdvisorService,
 		private cmsService: CMSService
@@ -244,19 +269,73 @@ export class PageSecurityComponent implements OnInit {
 		this.antivirus = this.vantageShellService.getSecurityAdvisor().antivirus;
 		this.vpn = this.vantageShellService.getSecurityAdvisor().vpn;
 		this.wifiSecurity = this.vantageShellService.getSecurityAdvisor().wifiSecurity;
-		if (this.vantageShellService.getSecurityAdvisor().windowsHello) {
+		if (this.vantageShellService.getSecurityAdvisor().windowsHello.fingerPrintStatus) {
 			this.windowsHello = this.vantageShellService.getSecurityAdvisor().windowsHello;
 		} else {
 			this.windowsHello = null;
 		}
 		this.homeProtection = this.vantageShellService.getSecurityAdvisor().homeProtection;
-		this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.passwordManager);
-		this.antivirusLandingViewModel = new AntiVirusLandingViewModel(this.antivirus);
-		this.vpnLandingViewModel = new VpnLandingViewModel(this.vpn);
-		this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.wifiSecurity, this.homeProtection);
-		this.homeProtectionLandingViewModel = new HomeProtectionLandingViewModel(this.homeProtection, this.wifiSecurity);
-		this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.windowsHello);
+
+		if (localStorage.getItem('pmViewModel')) {
+			this.passwordManagerLandingViewModel = JSON.parse(localStorage.getItem('pmViewModel'));
+		}
+		if (this.passwordManager.status) {
+			this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.passwordManager);
+			localStorage.setItem('pmViewModel', JSON.stringify(this.passwordManagerLandingViewModel));
+		}
+
+		if (localStorage.getItem('avViewModel')) {
+			this.antivirusLandingViewModel = JSON.parse(localStorage.getItem('avViewModel'));
+		}
+		if (this.antivirus.mcafee || this.antivirus.windowsDefender || this.antivirus.others) {
+			this.antivirusLandingViewModel = new AntiVirusLandingViewModel(this.antivirus);
+			localStorage.setItem('avViewModel', JSON.stringify(this.antivirusLandingViewModel));
+		}
+
+		if (localStorage.getItem('vpnViewModel')) {
+			this.vpnLandingViewModel = JSON.parse(localStorage.getItem('vpnViewModel'));
+		}
+		if (this.vpn.status) {
+			this.vpnLandingViewModel = new VpnLandingViewModel(this.vpn);
+			localStorage.setItem('vpnViewModel', JSON.stringify(this.vpnLandingViewModel));
+		}
+
+		if (localStorage.getItem('wifiViewModel')) {
+			this.wifiSecurityLandingViewModel = JSON.parse(localStorage.getItem('wifiViewModel'));
+		}
+		if (this.homeProtection.status || this.wifiSecurity.state) {
+			this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.wifiSecurity, this.homeProtection);
+			localStorage.setItem('wifiViewModel', JSON.stringify(this.wifiSecurityLandingViewModel));
+		}
+
+		if (localStorage.getItem('hpViewModel')) {
+			this.homeProtectionLandingViewModel = JSON.parse(localStorage.getItem('hpViewModel'));
+		}
+		if (this.homeProtection.status || this.wifiSecurity.state) {
+			this.homeProtectionLandingViewModel = new HomeProtectionLandingViewModel(this.homeProtection, this.wifiSecurity);
+			localStorage.setItem('hpViewModel', JSON.stringify(this.homeProtectionLandingViewModel));
+		}
+
+		if (localStorage.getItem('whViewModel')) {
+			this.windowsHelloLandingViewModel = JSON.parse(localStorage.getItem('whViewModel'));
+		}
+		if (this.windowsHello.fingerPrintStatus !== undefined || this.windowsHello.facialIdStatus !== undefined) {
+			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.windowsHello);
+			localStorage.setItem('whViewModel', JSON.stringify(this.windowsHelloLandingViewModel));
+		}
+
+		if (localStorage.getItem('wifiHistoryModel')) {
+			this.wifiHistory = JSON.parse(localStorage.getItem('wifiHistoryModel'));
+		}
 		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
+		localStorage.setItem('wifiHistoryModel', JSON.stringify(this.wifiHistory));
+
+		if (localStorage.getItem('scoreModel')) {
+			this.antivirusScore = JSON.parse(localStorage.getItem('scoreModel'));
+		}
+		this.antivirusScore = [this.antivirusLandingViewModel.subjectStatus, this.passwordManagerLandingViewModel.subjectStatus, this.vpnLandingViewModel.subjectStatus, this.wifiSecurityLandingViewModel.subjectStatus, this.windowsHelloLandingViewModel.subjectStatus];
+		localStorage.setItem('scoreModel', JSON.stringify(this.antivirusScore));
+
 		this.fetchCMSArticles();
 	}
 	title = 'Security';
@@ -267,7 +346,7 @@ export class PageSecurityComponent implements OnInit {
 	windowsHelloLandingViewModel: WindowsHelloLandingViewModel;
 	wifiSecurityLandingViewModel: WifiSecurityLandingViewModel;
 	homeProtectionLandingViewModel: HomeProtectionLandingViewModel;
-	wifiHistory: Array<any>;
+	wifiHistory: Array<phoenix.WifiDetail>;
 	securityAdvisor: phoenix.SecurityAdvisor;
 	antivirus: phoenix.Antivirus;
 	wifiSecurity: phoenix.WifiSecurity;
@@ -275,6 +354,7 @@ export class PageSecurityComponent implements OnInit {
 	passwordManager: phoenix.PasswordManager;
 	vpn: phoenix.Vpn;
 	windowsHello: phoenix.WindowsHello;
+	antivirusScore: Array<any>;
 	articles: [];
 
 	itemStatusClass = {
@@ -315,6 +395,32 @@ export class PageSecurityComponent implements OnInit {
 			}
 		}
 		return itemDetail;
+	}
+
+	getMaliciousWifi(wifiHistory) {
+		const num = 1;
+		let total = 0;
+		wifiHistory.forEach(wifi => {
+			if (wifi.good === 1) {
+				total += num;
+			}
+		});
+		return total;
+	}
+
+	getScore(items) {
+		let flag;
+		let score = 0;
+		items = items.filter(current => {
+			return current !== null && current !== undefined && current !== '';
+		});
+		flag = 100 / items.length;
+		items.forEach(item => {
+			if (item === 0 || item === 2) {
+				score += flag;
+			}
+		});
+		return score;
 	}
 
 	fetchCMSArticles() {

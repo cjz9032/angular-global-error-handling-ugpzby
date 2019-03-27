@@ -80,7 +80,20 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 		return itemDetailClass;
 	}
 
+	getWifiClass(items) {
+		let className;
+		items.forEach(item => {
+			if (item.title === 'WiFi Security') {
+				className = 'wifiStatus-no-border-bottom';
+			} else {
+				className = '';
+			}
+		});
+		return className;
+	}
+
 	ngOnInit() {
+		// console.log(this.items);
 	}
 
 	/**

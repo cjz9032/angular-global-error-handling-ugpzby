@@ -86,6 +86,7 @@ import { ContainerService } from './services/container/container.service';
 import { CommsService } from './services/comms/comms.service';
 import { DashboardService } from './services/dashboard/dashboard.service';
 import { SecurityService } from './services/security/security.service';
+import { MockSecurityAdvisorService } from './services/mock/mockSecurityAdvisor.service';
 import { UserService } from './services/user/user.service';
 import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
 import { CameraDetailMockService } from './services/camera/camera-detail/camera-detail.mock.service';
@@ -119,6 +120,12 @@ import { SanitizeUrlPipe } from './pipe/sanitise-url.pipe';
 import { UniqueIdPipe } from './pipe/unique-id.pipe';
 import { environment } from '../environments/environment';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
+import {MetricService} from "./services/metric/metric.service";
+import { WidgetMcafeeComponent } from './components/widgets/widget-mcafee/widget-mcafee.component';
+import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
+import { ChoosePagePipe } from './pipe/security-antivirus/choose-page.pipe';
+import { DayFormatPipe } from './pipe/security-antivirus/day-format.pipe';
+
 import { MetricsDirective } from './directives/metrics.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
@@ -137,10 +144,10 @@ import { IconClassPipe } from './pipe/ui-security-statusbar/icon-class.pipe';
 import { IconNamePipe } from './pipe/ui-security-statusbar/icon-name.pipe';
 import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
 import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
+import {StatusTransformPipe} from './pipe/ui-security-statusbar/status-transform.pipe';
 
 
 library.add(fas);
-library.add(fab);
 library.add(far);
 
 @NgModule({
@@ -216,6 +223,15 @@ library.add(far);
 		SanitizeUrlPipe,
 		UniqueIdPipe,
 		ModalBatteryChargeThresholdComponent,
+		WidgetMcafeeComponent,
+		PipeInstallPipe,
+		ChoosePagePipe,
+		DayFormatPipe,
+		IconClassPipe,
+		IconNamePipe,
+		TextClassPipe,
+		StatusTextPipe,
+		ModalBatteryChargeThresholdComponent,
 		MetricsDirective,
 		InstallationHistoryComponent,
 		SeparatePascalCasePipe,
@@ -234,7 +250,8 @@ library.add(far);
 		IconClassPipe,
 		IconNamePipe,
 		StatusTextPipe,
-		TextClassPipe
+		TextClassPipe,
+		StatusTransformPipe,
 	],
 	imports: [
 		BrowserModule,
@@ -257,6 +274,7 @@ library.add(far);
 		CommsService,
 		DashboardService,
 		SecurityService,
+		MockSecurityAdvisorService,
 		UserService,
 		AudioService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }

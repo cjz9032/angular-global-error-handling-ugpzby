@@ -35,8 +35,7 @@
 										[icon]="['fas', 'chevron-up']"></fa-icon>
 								</div>
 								<div class="switch">
-									<vtr-ui-switch-onoff name="wifisecurity"
-										[value]="value"></vtr-ui-switch-onoff>
+									<vtr-ui-switch-onoff [value]="value"></vtr-ui-switch-onoff>
 								</div>
 							</div>
 						</div>
@@ -50,17 +49,9 @@
 									<h3>Network History</h3>
 									<small class="status">
 										Show: <a href=""
-											vtrMetrics
-											metricsItem="link.Malicious"
-											metricsEvent="itemclick"
-											metricsParent="wifisecurity"
 											(click)="$event.preventDefault();showAllNetworks=false;"
 											[ngClass]="{'active': !showAllNetworks}">Malicious</a> / <a href=""
 											(click)="$event.preventDefault();showAllNetworks=true;"
-											vtrMetrics
-											metricsItem="link.all"
-											metricsEvent="itemclick"
-											metricsParent="wifisecurity"
 											[ngClass]="{'active': showAllNetworks}">All</a>
 									</small>
 								</div>
@@ -195,7 +186,7 @@
 						vtrMetrics
 						metricsParent="lenovo-wifi-security"
 						metricsEvent="itemClick"
-						metricsItem="btn.check threat"
+						metricsItem="check threat"
 						class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
 						Check threat
 					</button>
@@ -205,21 +196,6 @@
 		<div class="row mt-40">
 			<div class="col">
 			</div>
-
-			<div class=" pull right">
-				<div class="col-12">
-					<button type="button"
-						(click)="enableWifiSecurity()"
-						vtrMetrics
-						metricsParent="lenovo-wifi-security"
-						metricsItem="btn.enable wifi security"
-						metricsEvent="itemClick"
-						class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
-						Enable Wifi Security
-					</button>
-				</div>
-			</div>
-
 		</div>
 	</div>
 	<div class="container-fluid p-40 security-card"
