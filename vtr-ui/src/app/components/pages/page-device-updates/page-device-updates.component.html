@@ -197,6 +197,16 @@
 										[ratioX]="4"
 										[ratioY]="2">
 									</vtr-container-card>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col col-12 mb-40">
+									<vtr-article-item *ngFor="let item of articles, let i = index"
+										[item]="item"></vtr-article-item>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col col-12 mb-40">
 									<vtr-article-item *ngFor="let item of articles, let i = index"
 										[item]="item"></vtr-article-item>
 								</div>

@@ -134,12 +134,12 @@ export class AntiVirusLandingViewModel {
 			avStatus.status = (data.antiVirus[0].status === true) ? 0 : 1;
 			fwStatus.status = (data.firewall[0].status === true) ? 0 : 1;
 		});
-		avModel.on(EventTypes.avMcafeeStatusEvent, (data) => {
-			avStatus.status = (data === true) ? 0 : 1;
-		});
-		avModel.on(EventTypes.avMcafeeFirewallStatusEvent, (data) => {
-			fwStatus.status = (data === true) ? 0 : 1;
-		});
+		// avModel.on(EventTypes.avMcafeeStatusEvent, (data) => {
+		// 	avStatus.status = (data === true) ? 0 : 1;
+		// });
+		// avModel.on(EventTypes.avMcafeeFirewallStatusEvent, (data) => {
+		// 	fwStatus.status = (data === true) ? 0 : 1;
+		// });
 		this.statusList = new Array(avStatus, fwStatus);
 	}
 }
@@ -261,7 +261,6 @@ export class PageSecurityComponent implements OnInit {
 
 	constructor(
 		public vantageShellService: VantageShellService,
-		public mockSecurityAdvisorService: MockSecurityAdvisorService,
 		private cmsService: CMSService
 	) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();

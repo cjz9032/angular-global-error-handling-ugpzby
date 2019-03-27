@@ -9,7 +9,7 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col col-8 vtr-page-left-column">
-						<div *ngIf=" (antiVirus | choosePage) === 'windows'">
+						<div *ngIf="viewMode?.currentPage ==='windows'">
 							<div class="header mt-minus">
 								<div class="rounded-card-with-shadow p-5">
 									<div class="row">
@@ -46,12 +46,12 @@
 											device
 										</div>
 										
-										<vtr-ui-security-statusbar [statusList]="windowsDefenderstatusList | statusTransform" >
+										<vtr-ui-security-statusbar [statusList]=" viewMode.windowsDefenderstatusList | statusTransform" >
 										</vtr-ui-security-statusbar>
 										
 
 									</div>
-									<vtr-widget-mcafee [install] = "mcafee" [name] = "'Windows Defender'" ></vtr-widget-mcafee>
+									<vtr-widget-mcafee [install] = " viewMode.mcafee" [name] = "'Windows Defender'" ></vtr-widget-mcafee>
 								</div>
 							</div>
 							<div class="body antivirus-block">
@@ -148,7 +148,7 @@
 							</div>
 						</div>
 
-						<div *ngIf=" (antiVirus | choosePage) ==='mcafee'">
+						<div *ngIf="viewMode?.currentPage ==='mcafee'">
 							<div class="subheader mt-minus">
 								<div class="rounded-card-with-shadow p-5 bg-white">
 
@@ -163,25 +163,25 @@
 										</div>
 										<div class="subtitle pb-5">You are currently protected by McAfee LiveSafe</div>
 
-										<vtr-ui-security-statusbar [statusList]="mcafeestatusList | statusTransform">
+										<vtr-ui-security-statusbar [statusList]="viewMode.mcafeestatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 										<div class="row align-items-center">
 											<div class="col-auto mr-auto px-0">
 												<div class="card-with-border p-3">
 													<span class="text">
-														{{mcafee.subscription}} Valid Until
+														{{ viewMode.mcafee.subscription}} Valid Until
 													</span>
 													<span class="date">
-														{{mcafee.expireAt | dayFormat }}
+														{{ viewMode.mcafee.expireAt | dayFormat }}
 													</span>
 													<span>
-														<a *ngIf ="mcafee.subscription !== 'licenseActive'" href="#" class="text">Upgrade Now</a>
+														<a *ngIf =" viewMode.mcafee.subscription !== 'licenseActive'" href="javacript:0" (click)=" viewMode.mcafee.launch()" class="text">Upgrade Now</a>
 													</span>
 												</div>
 											</div>
 											<div class="col-auto px-0 py-5">
-												<vtr-ui-button (onClick)="mcafee.launch()" [label]="'LAUNCH MCAFEE'"></vtr-ui-button>
+												<vtr-ui-button (onClick)=" viewMode.mcafee.launch()" [label]="'LAUNCH MCAFEE'"></vtr-ui-button>
 											</div>
 										</div>
 									
@@ -344,47 +344,47 @@
 							</div>
 						</div>
 
-						<div *ngIf=" (antiVirus | choosePage) ==='others'">
+						<div *ngIf="viewMode?.currentPage ==='others'">
 
 							<div class="subheader mt-minus">
 								<div class="rounded-card-with-shadow p-5 bg-white">
-									<div *ngIf="otherAntiVirus && otherAntiVirus.name">
+									<div *ngIf="viewMode.otherAntiVirus && viewMode.otherAntiVirus.name">
 										<div class="row">
 											<div class="col-auto px-0 mr-auto">
-												<div class="title pb-3">{{otherAntiVirus.name}}</div>
+												<div class="title pb-3">{{viewMode.otherAntiVirus.name}}</div>
 											</div>
 											<div class="col-auto px-0">
 												<!--<img src="../../../../assets/images/antivirus/window.png" />-->
 											</div>
 										</div>
 
-										<div class="subtitle pb-5">{{otherAntiVirus.name}} offers you basic protection for your
+										<div class="subtitle pb-5">{{viewMode.otherAntiVirus.name}} offers you basic protection for your
 											device
 										</div>
 
-										<vtr-ui-security-statusbar [statusList]="othersAntistatusList | statusTransform">
+										<vtr-ui-security-statusbar [statusList]="viewMode.othersAntistatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>
-									<div *ngIf="otherFirewall && otherFirewall.name" class="pt-5">
+									<div *ngIf="viewMode.otherFirewall && viewMode.otherFirewall.name" class="pt-5">
 										<div class="row">
 											<div class="col-auto px-0 mr-auto">
-												<div class="title pb-3">{{otherFirewall.name}}</div>
+												<div class="title pb-3">{{viewMode.otherFirewall.name}}</div>
 											</div>
 											<div class="col-auto px-0">
 												<!--<img src="../../../../assets/images/antivirus/window.png" />-->
 											</div>
 										</div>
 
-										<div class="subtitle pb-5">{{otherFirewall.name}} offers you basic protection for your
+										<div class="subtitle pb-5">{{viewMode.otherFirewall.name}} offers you basic protection for your
 											device
 										</div>
 
-										<vtr-ui-security-statusbar [statusList]="othersFirestatusList | statusTransform">
+										<vtr-ui-security-statusbar [statusList]="viewMode.othersFirestatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>
-                  					<vtr-widget-mcafee [install] = "mcafee" [name]="otherAntiVirus.name"></vtr-widget-mcafee>
+                  					<vtr-widget-mcafee [install] = "viewMode.mcafee" [name]="viewMode.otherAntiVirus.name"></vtr-widget-mcafee>
 								</div>
 							</div>
 							<div class="body antivirus-block">
