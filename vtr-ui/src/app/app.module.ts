@@ -128,6 +128,7 @@ import { SafeDomPipe } from './pipe/safe-dom/safe-dom.pipe';
 import { ModalUpdateChangeLogComponent } from './components/modal/modal-update-change-log.component/modal-update-change-log.component';
 import { ModalArticleDetailComponent } from './components/modal/modal-article-detail/modal-article-detail.component';
 import { DolbyModesTranslationPipe } from './pipe/dolby-modes-translation.pipe';
+import { WidgetOfflineInfoComponent } from './components/widgets/widget-offline-info/widget-offline-info.component';
 
 library.add(fas);
 library.add(fab);
@@ -215,7 +216,8 @@ library.add(far);
 		SafeDomPipe,
 		ModalCommonConfirmationComponent,
 		ModalArticleDetailComponent,
-		DolbyModesTranslationPipe
+		DolbyModesTranslationPipe,
+		WidgetOfflineInfoComponent
 	],
 	imports: [
 		BrowserModule,
@@ -226,7 +228,7 @@ library.add(far);
 		NgbModule,
 		Ng5SliderModule,
 		ReactiveFormsModule,
-		// ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+		ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 		TranslationModule
 	],
 	providers: [
