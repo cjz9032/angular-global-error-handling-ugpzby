@@ -149,10 +149,6 @@ import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
 import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import {StatusTransformPipe} from './pipe/ui-security-statusbar/status-transform.pipe';
 
-<<<<<<< HEAD
-=======
-
->>>>>>> security-advisor-wifiSecurity
 
 library.add(fas);
 library.add(far);
