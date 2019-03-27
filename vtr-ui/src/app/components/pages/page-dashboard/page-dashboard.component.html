@@ -113,14 +113,14 @@
 
 								<div class="row"
 									*ngIf="!deviceService.isArm">
-									<div class="col col-12 pb-40">
+									<div class="col col-12">
 										<vtr-widget-quicksettings></vtr-widget-quicksettings>
 									</div>
 								</div>
 
 								<div class="row"
 									*ngIf="!deviceService.isArm">
-									<div class="col col-12 py-40">
+									<div class="col col-12 pb-40 system-status-block">
 										<vtr-widget-status componentName="system status"
 											[title]="'System Status'"
 											[description]="'Quick catch up your device status.'"
