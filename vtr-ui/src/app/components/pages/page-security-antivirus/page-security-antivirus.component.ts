@@ -5,8 +5,8 @@ import { AntiVirusViewMode } from 'src/app/data-models/security-advisor/antiviru
 import { Antivirus } from '@lenovo/tan-client-bridge';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from 'src/app/services/common/common.service';
-import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
@@ -27,15 +27,18 @@ export class PageSecurityAntivirusComponent implements OnInit {
 	urlPrivacyPolicy = 'https://www.mcafee.com/consumer/en-us/policy/global/legal.html';
 	urlTermsOfService = 'https://www.mcafee.com/consumer/en-us/policy/global/legal.html';
 	urlGetMcAfee = '25CAD7D97D59483381EA39A87685A3C7';
-	articles = [] ;
+	articles = [];
 
 	@HostListener('window:focus')
 	onFocus(): void {
 		this.antiVirus.refresh();
 	}
 
-	constructor(public mockService: MockService, public VantageShell: VantageShellService,
-		public cmsService: CMSService, commonService: CommonService, public modalService: NgbModal) {
+	constructor(public mockService: MockService,
+		public VantageShell: VantageShellService,
+		public cmsService: CMSService,
+		commonService: CommonService,
+		public modalService: NgbModal) {
 		this.antiVirus = this.VantageShell.getSecurityAdvisor().antivirus;
 		this.viewMode = new AntiVirusViewMode(this.antiVirus, commonService);
 		this.fetchCMSArticles();
