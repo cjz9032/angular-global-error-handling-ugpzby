@@ -12,6 +12,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	isWifiSecurityEnabled: boolean = true;
 	showAllNetworks: boolean = true;
 	isCollapsed: boolean = true;
+	showMore: boolean = false;
 
 	constructor(
 		public modalService: NgbModal
