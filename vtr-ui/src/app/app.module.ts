@@ -9,6 +9,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { CookieService } from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 // CUSTOM MODULES
 import { AppRoutingModule } from './app-routing.module';
@@ -81,6 +82,7 @@ import { ModalLenovoIdComponent } from './components/modal/modal-lenovo-id/modal
 // APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
 import { MockService } from './services/mock/mock.service';
+import { MockSecurityAdvisorService } from './services/mock/mockSecurityAdvisor.service';
 import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
 import { CommsService } from './services/comms/comms.service';
@@ -97,6 +99,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
+import { fal } from '@fortawesome/pro-light-svg-icons';
+
 
 import { EyeCareModeComponent } from './components/display/eye-care-mode/eye-care-mode.component';
 import { UiButtonComponent } from './components/ui/ui-button/ui-button.component';
@@ -123,15 +127,27 @@ import { MetricsDirective } from './directives/metrics.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
 import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
+
+import { BaseComponent } from './components/base/base.component';
 import { AppEventDirective } from './directives/app-event.directive';
 import { SafeDomPipe } from './pipe/safe-dom/safe-dom.pipe';
 import { ModalUpdateChangeLogComponent } from './components/modal/modal-update-change-log.component/modal-update-change-log.component';
 import { ModalArticleDetailComponent } from './components/modal/modal-article-detail/modal-article-detail.component';
+import { ModalThreatLocatorComponent } from './components/modal/modal-threat-locator/modal-threat-locator.component';
 import { DolbyModesTranslationPipe } from './pipe/dolby-modes-translation.pipe';
+import { UiLandingFeatureComponent } from './components/ui/ui-landing-feature/ui-landing-feature.component';
+import { UiObjectTitleComponent } from './components/ui/ui-object-title/ui-object-title.component';
+import { UiSecurityStatusbarComponent } from './components/ui/ui-security-statusbar/ui-security-statusbar.component';
+import { IconClassPipe } from './pipe/ui-security-statusbar/icon-class.pipe';
+import { IconNamePipe } from './pipe/ui-security-statusbar/icon-name.pipe';
+import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
+import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
+
 
 library.add(fas);
 library.add(fab);
 library.add(far);
+library.add(fal);
 
 @NgModule({
 	declarations: [
@@ -210,18 +226,29 @@ library.add(far);
 		InstallationHistoryComponent,
 		SeparatePascalCasePipe,
 		ModalCommonConfirmationComponent,
+		BaseComponent,
+		ModalCommonConfirmationComponent,
 		AppEventDirective,
 		ModalUpdateChangeLogComponent,
 		SafeDomPipe,
 		ModalCommonConfirmationComponent,
 		ModalArticleDetailComponent,
-		DolbyModesTranslationPipe
+		ModalThreatLocatorComponent,
+		DolbyModesTranslationPipe,
+		UiLandingFeatureComponent,
+		UiObjectTitleComponent,
+		UiSecurityStatusbarComponent,
+		IconClassPipe,
+		IconNamePipe,
+		StatusTextPipe,
+		TextClassPipe
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		FormsModule,
 		HttpClientModule,
+		AngularSvgIconModule,
 		FontAwesomeModule,
 		NgbModule,
 		Ng5SliderModule,
@@ -233,6 +260,7 @@ library.add(far);
 		CookieService,
 		DevService,
 		MockService,
+		MockSecurityAdvisorService,
 		DisplayService,
 		ContainerService,
 		CommsService,
@@ -249,10 +277,12 @@ library.add(far);
 		ModalBatteryChargeThresholdComponent,
 		ModalCommonConfirmationComponent,
 		ModalUpdateChangeLogComponent,
-		ModalArticleDetailComponent
+		ModalArticleDetailComponent,
+		ModalThreatLocatorComponent
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
 	]
 })
-export class AppModule { }
+export class AppModule {
+}

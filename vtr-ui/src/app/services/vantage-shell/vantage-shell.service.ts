@@ -2,7 +2,8 @@
 
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
-import bootstrap from '@lenovo/tan-client-bridge/src/index';
+import bootstrap from '@lenovo/tan-client-bridge';
+import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 
 @Injectable({
 	providedIn: 'root'
@@ -80,7 +81,19 @@ export class VantageShellService {
 	 * returns metric object from VantageShellService of JS Bridge
 	 */
 	public getMetrics(): any {
-		if (this.phoenix) {
+		if (this.phoenix && this.phoenix.metrics) {
+			if (!this.phoenix.metrics.isInit) {
+				this.phoenix.metrics.init({
+					appVersion: '1.0.0.0',
+					appId: 'ZN8F02EQU628',
+					appName: 'vantage3',
+					channel: 'NonPreload',
+					ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
+				});
+				this.phoenix.metrics.isInit = true;
+				this.phoenix.metrics.metricsEnabled = true;
+			}
+
 			return this.phoenix.metrics;
 		}
 		return undefined;
@@ -95,7 +108,6 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
-
 	/**
 	 * returns hardware settings object from VantageShellService of JS Bridge
 	 */
@@ -246,7 +258,7 @@ export class VantageShellService {
 		if (this.phoenix) {
 			try {
 				let deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
-				console.log('In VantageShellService.deviceFilter. Filter: ', filter, deviceFilterResult);
+				console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 			} catch (error) {
 				console.log('In VantageShellService.deviceFilter. Error:', error);
 				console.log('In VantageShellService.deviceFilter. returning mock true due to error.');
@@ -256,5 +268,12 @@ export class VantageShellService {
 		}
 		console.log('In VantageShellService.deviceFilter. returning mock true');
 		return true;
+	}
+
+	public getSecurityAdvisor(): SecurityAdvisor {
+		if (this.phoenix) {
+			return this.phoenix.securityAdvisor;
+		}
+		return undefined;
 	}
 }

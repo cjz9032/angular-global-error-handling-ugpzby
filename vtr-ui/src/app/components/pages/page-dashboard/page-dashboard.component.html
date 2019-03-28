@@ -13,46 +13,46 @@
 							'col-sm-12 col-md-8 col-lg-8 vtr-page-left-column':!deviceService.isArm,
 							'vtr-arm-page': deviceService.isArm
 						}"
-					 class="col col-12">
+						class="col col-12">
 						<div class="vtr-page-shift-up nmx-40">
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col col-12 px-40 pb-40">
 										<vtr-widget-carousel [data]="heroBannerItems"
-										 source="title"
-										 [interval]="2000"
-										 cardTitle="title"
-										 pauseOnHover="true"
-										 image="url"
-										 [showNavigationArrows]="true"
-										 [showNavigationIndicators]="true"
-										 link="thumbnailUrl"></vtr-widget-carousel>
+											source="title"
+											[interval]="2000"
+											cardTitle="title"
+											pauseOnHover="true"
+											image="url"
+											[showNavigationArrows]="true"
+											[showNavigationIndicators]="true"
+											link="thumbnailUrl"></vtr-widget-carousel>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col col-6 p-40">
 										<vtr-container-card [img]="cardContentPositionB.FeatureImage"
-										 [caption]="cardContentPositionB.Description"
-										 [title]="cardContentPositionB.Title"
-										 [logoText]="cardContentPositionB.BrandName"
-										 [action]="cardContentPositionB.Action"
-										 [actionLink]="cardContentPositionB.ActionLink"
-										 [type]="'corner'"
-										 [ratioX]="4"
-										 [ratioY]="2"
-										 [cornerShift]="'large'">
+											[caption]="cardContentPositionB.Description"
+											[title]="cardContentPositionB.Title"
+											[logoText]="cardContentPositionB.BrandName"
+											[action]="cardContentPositionB.Action"
+											[actionLink]="cardContentPositionB.ActionLink"
+											[type]="'corner'"
+											[ratioX]="4"
+											[ratioY]="2"
+											[cornerShift]="'large'">
 										</vtr-container-card>
 									</div>
 									<div class="col col-6 p-40">
 										<vtr-container-card [img]="cardContentPositionC.FeatureImage"
-										 [caption]="cardContentPositionC.Description"
-										 [title]="cardContentPositionC.Title"
-										 [logoText]="cardContentPositionC.BrandName"
-										 [action]="cardContentPositionC.Action"
-										 [actionLink]="cardContentPositionC.ActionLink"
-										 [type]="'corner'"
-										 [ratioX]="4"
-										 [ratioY]="2">
+											[caption]="cardContentPositionC.Description"
+											[title]="cardContentPositionC.Title"
+											[logoText]="cardContentPositionC.BrandName"
+											[action]="cardContentPositionC.Action"
+											[actionLink]="cardContentPositionC.ActionLink"
+											[type]="'corner'"
+											[ratioX]="4"
+											[ratioY]="2">
 										</vtr-container-card>
 									</div>
 								</div>
@@ -60,87 +60,90 @@
 							<div class="row">
 								<div class="col col-12 p-40">
 									<vtr-container-card [img]="cardContentPositionD.FeatureImage"
-									 [title]="cardContentPositionD.Title"
-									 [logoText]="cardContentPositionD.BrandName"
-									 [action]="cardContentPositionD.Action"
-									 [actionLink]="cardContentPositionD.ActionLink"
-									 [type]="'highlight'"
-									 [ratioX]="8"
-									 [ratioY]="2">
+										[title]="cardContentPositionD.Title"
+										[logoText]="cardContentPositionD.BrandName"
+										[action]="cardContentPositionD.Action"
+										[actionLink]="cardContentPositionD.ActionLink"
+										[type]="'highlight'"
+										[ratioX]="8"
+										[ratioY]="2">
 									</vtr-container-card>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col col-6 p-40">
 									<vtr-container-card [img]="cardContentPositionE.FeatureImage"
-									 [title]="cardContentPositionE.Title"
-									 [logoText]="cardContentPositionE.BrandName"
-									 [action]="cardContentPositionE.Action"
-									 [actionLink]="cardContentPositionE.ActionLink"
-									 [type]="'article'"
-									 [ratioX]="4"
-									 [ratioY]="4">
+										[title]="cardContentPositionE.Title"
+										[logoText]="cardContentPositionE.BrandName"
+										[action]="cardContentPositionE.Action"
+										[actionLink]="cardContentPositionE.ActionLink"
+										[type]="'article'"
+										[ratioX]="4"
+										[ratioY]="4">
 									</vtr-container-card>
 								</div>
 								<div class="col col-6 p-40">
 									<vtr-container-card [img]="cardContentPositionF.FeatureImage"
-									 [title]="cardContentPositionF.Title"
-									 [logoText]="cardContentPositionF.BrandName"
-									 [action]="cardContentPositionF.Action"
-									 [actionLink]="cardContentPositionF.ActionLink"
-									 [type]="'article'"
-									 [ratioX]="4"
-									 [ratioY]="4">
+										[title]="cardContentPositionF.Title"
+										[logoText]="cardContentPositionF.BrandName"
+										[action]="cardContentPositionF.Action"
+										[actionLink]="cardContentPositionF.ActionLink"
+										[type]="'article'"
+										[ratioX]="4"
+										[ratioY]="4">
 									</vtr-container-card>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div *ngIf="!deviceService.isArm"
-					 class="col col-12 col-sm-12 col-md-4 col-lg-4 vtr-page-right-column">
+						class="col col-12 col-sm-12 col-md-4 col-lg-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col col-12 pb-60">
 										<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
-										 [description]="'dashboard.feedback.subtitle' | translate"
-										 [actionName]="'dashboard.feedback.button' | translate"
-										 [action]="'feedback'"
-										 (feedBackClick)="onFeedbackModal(feedBackModal)">
+											[description]="'dashboard.feedback.subtitle' | translate"
+											[actionName]="'dashboard.feedback.button' | translate"
+											[action]="'feedback'"
+											(feedBackClick)="onFeedbackModal(feedBackModal)">
 										</vtr-widget-feedback>
 									</div>
 								</div>
 
 								<div class="row"
-								 *ngIf="!deviceService.isArm">
-									<div class="col col-12 pb-40">
+									*ngIf="!deviceService.isArm">
+									<div class="col col-12">
 										<vtr-widget-quicksettings></vtr-widget-quicksettings>
 									</div>
 								</div>
 
 								<div class="row"
-								 *ngIf="!deviceService.isArm">
-									<div class="col col-12 py-40">
-										<vtr-widget-status [title]="'System Status'"
-										 [description]="'Quick catch up your device status.'"
-										 [items]="systemStatus">
+									*ngIf="!deviceService.isArm">
+									<div class="col col-12 pb-40 system-status-block">
+										<vtr-widget-status componentName="system status"
+											[title]="'System Status'"
+											[description]="'Quick catch up your device status.'"
+											[items]="systemStatus">
 										</vtr-widget-status>
 									</div>
 								</div>
 								<div class="row"
-								 *ngIf="!deviceService.isArm">
+									*ngIf="!deviceService.isArm">
 									<div class="col col-12 py-40">
-										<vtr-widget-status [title]="'Security Advisor'"
-										 [description]="'Check if your device is secured.'"
-										 [items]="securityStatus">
+										<vtr-widget-status componentName="secuirty advisor"
+											[title]="'Security Advisor'"
+											[description]="'Check if your device is secured.'"
+											[items]="securityStatus">
 										</vtr-widget-status>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col col-12 py-40">
-										<vtr-widget-questions [title]="'Q&A for your machine'"
-										 [description]="'Find some helpful tips for your device.'"
-										 [items]="qaService.qas"></vtr-widget-questions>
+										<vtr-widget-questions componentName="QA"
+											[title]="'Q&A for your machine'"
+											[description]="'Find some helpful tips for your device.'"
+											[items]="qaService.qas"></vtr-widget-questions>
 									</div>
 								</div>
 							</div>
@@ -152,23 +155,23 @@
 	</div>
 
 	<ng-template #feedBackModal
-	 let-modal>
+		let-modal>
 		<div class="modal-header">
 			<h4 class="modal-title battery-detail-modal-title pl-5"></h4>
 			<button type="button"
-			 class="close"
-			 aria-label="Close"
-			 vtrMetrics
-			 metricsItem="btn.close"
-			 metricsEvent="itemClick"
-			 metricsParent="modalwelcome"
-			 (click)="modal.dismiss('Cross click')">
+				class="close"
+				aria-label="Close"
+				vtrMetrics
+				metricsItem="btn.close"
+				metricsEvent="itemClick"
+				metricsParent="modalwelcome"
+				(click)="modal.dismiss('Cross click')">
 				<img src="assets/icons/Close.svg" />
 			</button>
 		</div>
 		<div class="modal-body">
 			<vtr-feedback-form (feedbackClick)="onFeedbackClick()"
-			 [buttonText]="feedbackButtonText">
+				[buttonText]="feedbackButtonText">
 			</vtr-feedback-form>
 		</div>
 	</ng-template>

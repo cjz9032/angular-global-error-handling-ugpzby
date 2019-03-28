@@ -224,17 +224,17 @@
 								<fa-icon [icon]="['fas', 'search']"></fa-icon>
 							</div>
 						</div>
-						<div class="col col-6">
+						<div class="col col-7">
 							<div class="int-cool-text">
 								Intelligent cooling
 							</div>
 						</div>
 						<div class="col-auto"><a class="settings-link"
-								href="#">Go to windows settings</a></div>
-						<div class="col">
+								(click)="launchSystemUri('ms-settings:')">Go to windows settings</a></div>
+						<!-- <div class="col">
 							<fa-icon class="question"
 								[icon]="['far', 'question-circle']"></fa-icon>
-						</div>
+						</div> -->
 					</div>
 				</vtr-container-collapsible>
 			</div>
@@ -332,6 +332,7 @@
 		id="battery">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible cardTitle="Battery Settings"
+				*ngIf="showAirplanePowerModeSection || conservationModeStatus.available || expressChargingStatus.available "
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""
@@ -408,9 +409,11 @@
 		id="power">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible cardTitle="Power Settings"
+				*ngIf="alwaysOnUSBStatus.available || showEasyResumeSection"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
-					<li class="" *ngIf="alwaysOnUSBStatus.available">
+					<li class=""
+						*ngIf="alwaysOnUSBStatus.available">
 						<vtr-ui-row-switch [title]="powerSettings[0].header"
 							[caption]="powerSettings[0].subHeader"
 							[isSwitchVisible]=true
@@ -429,6 +432,11 @@
 									(ngModelChange)='onUsbChargingStatusChange()'>
 								<label> {{ powerSettings[0].checkboxDesc }} </label>
 							</div> -->
+							<div class="row">
+								<div class="col-12">
+									<img src="../../../../../../assets/images/AlwaysOnUSBcontext.JPG" alt=""/>
+								</div>
+							</div>
 							<div class="row">
 								<div class="col-12">
 									<div class="custom-control custom-checkbox always-on-usb-checkbox">
@@ -469,12 +477,15 @@
 	<div class="row py-5"
 		id="other">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible cardTitle="Other Settings"
+			<vtr-container-collapsible componentName="Other Settings"
+				cardTitle="Other Settings"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngFor="let item of otherSettings">
-						<vtr-ui-row-switch [title]="item.header"
+						<vtr-ui-row-switch [componentName]="item.header"
+							[name]="item.header"
+							[title]="item.header"
 							[caption]="item.subHeader"
 							[isSwitchVisible]=true
 							[leftIcon]="item.leftImageSource"
