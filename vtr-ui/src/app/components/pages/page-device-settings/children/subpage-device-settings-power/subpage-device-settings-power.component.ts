@@ -98,8 +98,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				isSwitchVisible: false,
 				tooltipText:
 					`If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold.
-			Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.
-			`
+					Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.`
 			},
 			{
 				readMoreText: 'Read More',
@@ -191,15 +190,17 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			if (mode === 'expressCharging') {
 				if (event.switchValue) {
 					this.conservationModeStatus.status = !event.switchValue;
+					this.setConservationModeStatusIdeaNoteBook(!event.switchValue);
 				}
 				this.expressChargingStatus.status = event.switchValue;
-				this.setRapidChargeModeStatusIdeaNoteBook(event);
+				this.setRapidChargeModeStatusIdeaNoteBook(event.switchValue);
 			} else {
 				if (event.switchValue) {
 					this.expressChargingStatus.status = !event.switchValue;
+					this.setRapidChargeModeStatusIdeaNoteBook(!event.switchValue);
 				}
 				this.conservationModeStatus.status = event.switchValue;
-				this.setConservationModeStatusIdeaNoteBook(event);
+				this.setConservationModeStatusIdeaNoteBook(event.switchValue);
 			}
 		}
 	}
@@ -245,7 +246,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				console.log('machine', machinename);
 				this.getAirplaneModeCapabilityThinkPad();
 				this.getAlwaysOnUSBCapabilityThinkPad();
-
 				this.getEasyResumeCapabilityThinkPad();
 				break;
 			case 'ideapad':
@@ -748,23 +748,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			console.error(error.message);
 		}
 	}
-	private setConservationModeStatusIdeaNoteBook(event: any) {
-		try {
-			if (this.powerService.isShellAvailable) {
-				this.powerService
-					.setConservationModeStatusIdeaNoteBook(event.switchValue)
-					.then((value: boolean) => {
-						console.log('setConservationModeStatusIdeaNoteBook.then', value);
-						this.getConservationModeStatusIdeaPad();
-					})
-					.catch(error => {
-						console.error('setConservationModeStatusIdeaNoteBook', error);
-					});
-			}
-		} catch (error) {
-			console.error(error.message);
-		}
-	}
 	private getRapidChargeModeStatusIdeaPad() {
 		try {
 			if (this.powerService.isShellAvailable) {
@@ -782,14 +765,33 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			console.error(error.message);
 		}
 	}
-	private setRapidChargeModeStatusIdeaNoteBook(event: any) {
+	private setConservationModeStatusIdeaNoteBook(status: any) {
 		try {
+			console.log('setConservationModeStatusIdeaNoteBook.then', status);
 			if (this.powerService.isShellAvailable) {
 				this.powerService
-					.setRapidChargeModeStatusIdeaNoteBook(event.switchValue)
+					.setConservationModeStatusIdeaNoteBook(status)
+					.then((value: boolean) => {
+						console.log('setConservationModeStatusIdeaNoteBook.then', value);
+						//this.getConservationModeStatusIdeaPad();
+					})
+					.catch(error => {
+						console.error('setConservationModeStatusIdeaNoteBook', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	private setRapidChargeModeStatusIdeaNoteBook(status) {
+		try {
+			console.log('setRapidChargeModeStatusIdeaNoteBook.then', status);
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.setRapidChargeModeStatusIdeaNoteBook(status)
 					.then((value: boolean) => {
 						console.log('setRapidChargeModeStatusIdeaNoteBook.then', value);
-						this.getRapidChargeModeStatusIdeaPad();
+						//this.getRapidChargeModeStatusIdeaPad();
 					})
 					.catch(error => {
 						console.error('setRapidChargeModeStatusIdeaNoteBook', error);
@@ -799,6 +801,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			console.error(error.message);
 		}
 	}
+
+
 	// End IdeaNoteBook
 	// Start Lenovo Vantage ToolBar
 	private getVantageToolBarStatus() {
