@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
-import { BaseComponent } from "../../base/base.component";
+import { BaseComponent } from '../../base/base.component';
 
 @Component({
 	selector: 'vtr-ui-list-chevron',
@@ -10,7 +10,8 @@ import { BaseComponent } from "../../base/base.component";
 
 export class UiListChevronComponent extends BaseComponent implements OnInit {
 
-	@Input() items: any[];
+	// @Input() items: any[];
+	@Input() items: any;
 	@Input() iconPlacement = 'right';
 	@Input() chevronVisibility = true;
 	/**** passing to ItemParent from metrics ****/
@@ -78,6 +79,18 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 		}
 		// console.log(" itemDetailClass " + JSON.stringify(itemDetailClass));
 		return itemDetailClass;
+	}
+
+	getWifiClass(items) {
+		let className;
+		items.forEach(item => {
+			if (item.title === 'WiFi Security') {
+				className = 'wifiStatus-no-border-bottom';
+			} else {
+				className = '';
+			}
+		});
+		return className;
 	}
 
 	ngOnInit() {
