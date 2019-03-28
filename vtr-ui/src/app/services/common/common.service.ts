@@ -13,6 +13,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 export class CommonService {
 	public readonly notification: Observable<AppNotification>;
 	private notificationSubject: BehaviorSubject<AppNotification>;
+	public isOnline = true;
 
 	constructor() {
 		this.notificationSubject = new BehaviorSubject<AppNotification>(
@@ -97,7 +98,7 @@ export class CommonService {
 		return undefined;
 	}
 
-	public sendNotification(type: string, payload?: any) {
-		this.notificationSubject.next(new AppNotification(type, payload));
+	public sendNotification(action: string, payload?: any) {
+		this.notificationSubject.next(new AppNotification(action, payload));
 	}
 }

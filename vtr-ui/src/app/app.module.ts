@@ -126,7 +126,7 @@ import { SanitizeUrlPipe } from './pipe/sanitise-url.pipe';
 import { UniqueIdPipe } from './pipe/unique-id.pipe';
 import { environment } from '../environments/environment';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
-import {MetricService} from './services/metric/metric.service';
+import { MetricService } from './services/metric/metric.service';
 import { WidgetMcafeeComponent } from './components/widgets/widget-mcafee/widget-mcafee.component';
 import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
 import { ChoosePagePipe } from './pipe/security-antivirus/choose-page.pipe';
@@ -144,6 +144,7 @@ import { ModalUpdateChangeLogComponent } from './components/modal/modal-update-c
 import { ModalArticleDetailComponent } from './components/modal/modal-article-detail/modal-article-detail.component';
 import { ModalThreatLocatorComponent } from './components/modal/modal-threat-locator/modal-threat-locator.component';
 import { DolbyModesTranslationPipe } from './pipe/dolby-modes-translation.pipe';
+import { WidgetOfflineInfoComponent } from './components/widgets/widget-offline-info/widget-offline-info.component';
 import { UiLandingFeatureComponent } from './components/ui/ui-landing-feature/ui-landing-feature.component';
 import { UiObjectTitleComponent } from './components/ui/ui-object-title/ui-object-title.component';
 import { UiSecurityStatusbarComponent } from './components/ui/ui-security-statusbar/ui-security-statusbar.component';
@@ -151,7 +152,7 @@ import { IconClassPipe } from './pipe/ui-security-statusbar/icon-class.pipe';
 import { IconNamePipe } from './pipe/ui-security-statusbar/icon-name.pipe';
 import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
 import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
-import {StatusTransformPipe} from './pipe/ui-security-statusbar/status-transform.pipe';
+import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
 
 
 library.add(fas);
@@ -252,6 +253,8 @@ library.add(fal);
 		SafeDomPipe,
 		ModalCommonConfirmationComponent,
 		ModalArticleDetailComponent,
+		DolbyModesTranslationPipe,
+		WidgetOfflineInfoComponent,
 		ModalThreatLocatorComponent,
 		DolbyModesTranslationPipe,
 		ModalWifiSecurityInvitationComponent,
@@ -302,10 +305,11 @@ library.add(fal);
 		ModalBatteryChargeThresholdComponent,
 		ModalCommonConfirmationComponent,
 		ModalArticleDetailComponent,
+		FeedbackFormComponent,
+		ModalThreatLocatorComponent,
 		ModalWifiSecurityInvitationComponent,
 		ModalWifiSecuriryLocationNoticeComponent,
 		ModalUpdateChangeLogComponent,
-		ModalThreatLocatorComponent
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
