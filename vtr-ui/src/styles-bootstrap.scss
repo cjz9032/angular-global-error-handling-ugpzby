@@ -193,7 +193,6 @@
 	top: $modal_top_margin;
 }
 
-
 // feedback modal start:
 // overriding style inside feedback modal. doesn't work from component SCSS file
 
@@ -259,6 +258,7 @@
 	font-weight: 500;
 	max-width: 70rem !important;
 	.close-button {
-		font-size: 2.5rem;
+		font-size: 3rem;
+		opacity: 0.8;
 	}
 }
