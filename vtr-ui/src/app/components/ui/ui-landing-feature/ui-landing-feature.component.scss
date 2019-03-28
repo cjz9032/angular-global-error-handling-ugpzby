@@ -1,102 +1,29 @@
 @import "../../../app.theme";
 .security-widget {
-	border-bottom: solid 1px $main_lightest;
-	padding: 3rem;
-	.security-widget-inner {
-		.title {
-			font-size: 2.5rem;
-			font-weight: $weight_regular;
-			margin-bottom: -1.5rem;
-		}
-	}
+    border-bottom: solid 1px $main_lightest;
+    padding: 3rem;
+    .security-widget-inner {
+        .title {
+            font-size: 2.5rem;
+            font-weight: $weight_regular;
+            margin-bottom: -1.5rem;
+        }
+    }
+    // &:last-child {
+    //     border-bottom: none;
+    // }
 }
-.security-widget .security-widget-wifi {
-	margin-top: 2.7rem;
-	border: 0.1rem solid $shade_lighter;
-	.vtr-ui-list-chevron {
-		.chevron-list {
-			margin-top: 0;
-		}
-	}
-	.wifi-history {
-		font-size: 1.3rem;
-		.chevron-list {
-			list-style: none;
-			padding: 0;
-			background-color: $shade_extralight;
-			border: 0.1rem solid $shade_lighter;
-			border-bottom-left-radius: 0.9rem;
-			border-bottom-right-radius: 0.9rem;
-
-			li {
-				height: 4rem;
-				padding: 0.5rm 1rem;
-				border-bottom: 0.1rem solid $shade_lighter;
-				color: $main_darker;
-				line-height: 4rem;
-			}
-		}
-	}
-}
-.security-widget.anti-virus {
-	.security-widget-inner {
-		.title {
-			color: $stop_light;
-		}
-
-		.mcafee-logo {
-			width: 10rem;
-			padding-top: 1rem;
-		}
-	}
-}
-.security-widget.password-health {
-	.security-widget-inner {
-		.title {
-			fa-icon {
-				color: $main;
-			}
-		}
-		.dashlane-logo {
-			width: 10rem;
-			padding-top: 1rem;
-		}
-	}
-}
-.security-widget.vpn-security {
-	border-bottom: none;
-	.security-widget-inner {
-		.title {
-			fa-icon {
-				color: $main;
-			}
-		}
-		.surfeasy-logo {
-			width: 9rem;
-			padding-top: 1.1rem;
-		}
-	}
-}
-.security-widget.wifi-connected-home {
-	.security-widget-inner {
-		.title {
-			color: $go_dark;
-		}
-		.coronet-logo {
-			width: 9rem;
-			padding-top: 1rem;
-		}
-	}
+.security-widget.security-widget-no-bottom-border {
+    border-bottom: none;
 }
 .security-widget.windows-hello {
-	border-bottom: none;
-	.security-widget-inner {
-		.title {
-			color: $go_dark;
-		}
-		.windows-logo {
-			width: 9rem;
-			padding-top: 1rem;
-		}
-	}
+    .security-widget-inner {
+        .title {
+            color: $go_dark;
+        }
+        .windows-logo {
+            width: 10rem;
+            padding-top: 1rem;
+        }
+    }
 }
