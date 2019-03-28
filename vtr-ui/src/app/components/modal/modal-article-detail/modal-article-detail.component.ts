@@ -10,9 +10,9 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 })
 export class ModalArticleDetailComponent implements OnInit {
 	articleId: string;
-	articleTitle: string;
-	articleImage: string;
-	articleBody: SafeHtml;
+	articleTitle: string = '';
+	articleImage: string = '';
+	articleBody: SafeHtml = '';
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -24,6 +24,10 @@ export class ModalArticleDetailComponent implements OnInit {
 		const queryOptions = {
 			'Lang': 'EN'
 		};
+
+		this.articleTitle = '';
+		this.articleImage = '';
+		this.articleBody = '';
 
 		this.cmsService.fetchCMSArticle(this.articleId, queryOptions).then(
 			(response: any) => {

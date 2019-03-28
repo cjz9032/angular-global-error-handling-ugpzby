@@ -341,7 +341,7 @@
 							[caption]="batterySettings.items[0].subHeader"
 							[isSwitchVisible]=true
 							[leftIcon]="batterySettings.items[0].leftImageSource"
-							[readMoreText]="batterySettings.items[0].readMoreText"
+
 							[tooltipText]="batterySettings.items[0].tooltipText"
 							[isSwitchChecked]="toggleAirplanePowerModeFlag"
 							(toggleOnOff)="onToggleOfAirplanePowerMode($event)">
@@ -373,7 +373,7 @@
 						</vtr-ui-row-switch>
 					</li> -->
 					<li class=""
-						*ngIf="conservationModeStatus.available">
+						*ngIf="expressChargingStatus.available">
 						<!--
 						*ngIf="batterySettings.status.expressCharging"
 						-->
@@ -382,20 +382,20 @@
 							[isSwitchVisible]=true
 							[leftIcon]="batterySettings.items[2].leftImageSource"
 							[tooltipText]="batterySettings.items[2].tooltipText"
-							[isSwitchChecked]="conservationModeStatus.status"
+							[isSwitchChecked]="expressChargingStatus.status"
 							(toggleOnOff)="changeBatteryMode($event,'expressCharging')">
 						</vtr-ui-row-switch>
 					</li>
 					<li class=""
-						*ngIf="expressChargingStatus.available">
+						*ngIf="conservationModeStatus.available">
 						<!-- *ngIf="batterySettings.status.conservationMode"* -->
 						<vtr-ui-row-switch [title]="batterySettings.items[3].header"
 							[caption]="batterySettings.items[3].subHeader"
 							[isSwitchVisible]=true
 							[leftIcon]="batterySettings.items[3].leftImageSource"
-							[readMoreText]="batterySettings.items[3].readMoreText"
+
 							[tooltipText]="batterySettings.items[3].tooltipText"
-							[isSwitchChecked]="expressChargingStatus.status"
+							[isSwitchChecked]="conservationModeStatus.status"
 							(toggleOnOff)="changeBatteryMode($event,'conservationMode')">
 						</vtr-ui-row-switch>
 					</li>
