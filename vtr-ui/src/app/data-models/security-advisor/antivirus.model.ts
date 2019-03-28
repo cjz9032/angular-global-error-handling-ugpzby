@@ -16,7 +16,6 @@ export class AntiVirusViewMode {
 	constructor(antiVirus: Antivirus, private commonService: CommonService) {
 		this.mcafee = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityMcAfee);
 		this.windowsDefender = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsDefender);
-		console.log(this.windowsDefender);
 		this.otherAntiVirus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList);
 		this.otherFirewall = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityOthersFirewallStatusList);
 		this.mcafeestatusList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityMcAfeeStatusList);
@@ -56,7 +55,6 @@ export class AntiVirusViewMode {
 				title: 'FIREWALL',
 			}];
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsDefenderStatusList, this.windowsDefenderstatusList);
-			console.log(this.windowsDefenderstatusList);
 		}
 		if (antiVirus.others) {
 			if (antiVirus.others.firewall && antiVirus.others.firewall.length > 0) {
@@ -146,7 +144,6 @@ export class AntiVirusViewMode {
 		} else if (antiVirus.others) {
 			this.currentPage = 'others';
 		} else { this.currentPage = 'windows'; }
-    this.commonService.setLocalStorageValue(LocalStorageKey.SecurityCurrentPage, this.currentPage);
-    console.log(antiVirus);
+		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityCurrentPage, this.currentPage);
 	}
 }
