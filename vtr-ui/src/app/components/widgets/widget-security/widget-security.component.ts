@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-// import { LandingTitle } from '@lenovo/tan-client-bridge';
+import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 
 @Component({
 	selector: 'vtr-widget-security',
@@ -27,7 +28,9 @@ export class WidgetSecurityComponent implements OnInit {
 		buttonText: '',
 	};
 	// titleObj: LandingTitle;
-	constructor() {	}
+  constructor(
+		public modalService: NgbModal
+	) { }
 
 	ngOnInit() {
 		if (this.percentValue === 100) {
@@ -42,6 +45,12 @@ export class WidgetSecurityComponent implements OnInit {
 	}
 
 	buttonClick() {
+		let articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
+			size: 'lg',
+			centered: true,
+			windowClass: 'Article-Detail-Modal'
+		});
 
+		articleDetailModal.componentInstance.articleId = '1C95D1D5D20D4888AC043821E7355D35';
 	}
 }

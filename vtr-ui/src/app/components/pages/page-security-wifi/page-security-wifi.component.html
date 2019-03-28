@@ -75,8 +75,7 @@
 																</div>
 																<div class="button-box">
 																	<vtr-ui-button metricsParent="security-health"
-																		metricsItem="btn.enable wifi security"
-																		metricsEvent="itemClick"
+																		[metricsItem]="enableWiFiSecurity"
 																		(onClick)="enableWiFiSecurity($event)"
 																		[label]="'Enable Wifi security'">
 																	</vtr-ui-button>

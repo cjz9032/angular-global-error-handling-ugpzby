@@ -158,7 +158,7 @@ export class MockSecurityAdvisorService {
 				enabled: false,
 				launch(): Promise<boolean> {
 					return Promise.resolve(true);
-				},
+				}
 			},
 			// mcafee: null,
 			windowsDefender: {

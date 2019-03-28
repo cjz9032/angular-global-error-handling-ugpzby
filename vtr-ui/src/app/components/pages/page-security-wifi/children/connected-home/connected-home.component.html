@@ -16,7 +16,7 @@
 					<li class="good">
 						<div class="container-fluid">
 							<div class="row align-items-center">
-								<div class="col-auto">
+								<div class="col-auto pl-0">
 									<div class="bullet-icon">
 										<div class="icon-bkg">
 											<fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -36,7 +36,7 @@
 					<li class="good">
 						<div class="container-fluid">
 							<div class="row align-items-center">
-								<div class="col-auto">
+								<div class="col-auto pl-0">
 									<div class="bullet-icon">
 										<div class="icon-bkg">
 											<fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -55,7 +55,7 @@
 					<li class="good">
 						<div class="container-fluid">
 							<div class="row align-items-center">
-								<div class="col-auto">
+								<div class="col-auto pl-0">
 									<div class="bullet-icon">
 										<div class="icon-bkg">
 											<fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -77,7 +77,7 @@
 					<li>
 						<div class="container-fluid">
 							<div class="row align-items-center">
-								<div class="col-auto invisible">
+								<div class="col-auto pl-0 invisible">
 									<div class="bullet-icon">
 										<div class="icon-bkg ">
 
@@ -119,9 +119,7 @@
 
 					<div class="col-sm-3">
 						<div class="button-box shift-left">
-							<vtr-ui-button metricsItem="try now"
-								metricsParent="connected-home-security"
-								metricsEvent="itemClick"
+							<vtr-ui-button [metricsItem]="'tryNow'"
 								(onClick)="tryNow($event)"
 								[label]="'Try Now'"></vtr-ui-button>
 						</div>
@@ -130,6 +128,13 @@
 				</div>
 
 			</div>
+		</div>
+		<div class="button-box shift-left">
+			<vtr-ui-button metricsItem="try now"
+				metricsParent="connected-home-security"
+				metricsEvent="itemClick"
+				(onClick)="tryNow($event)"
+				[label]="'Try Now'"></vtr-ui-button>
 		</div>
 
 		<div class="row">
@@ -150,7 +155,7 @@
 						</div>
 						<div class="col-5">
 							<div class="button-box shift-right">
-								<vtr-ui-button metricsParent="connected-home-security" metricsEvent="itemClick" metricsItem="enter invitation code" (onClick)="enterActivationCode($event)"
+								<vtr-ui-button [metricsItem]="'enterInvitationCode'" (onClick)="enterActivationCode($event)"
 									[label]="'Enter invitation code'" [isLWSEnabled]="data.isLWSEnabled"></vtr-ui-button>
 								<div *ngIf="!data.isLWSEnabled">enter invitation code require enable wifi security.</div>
 							</div>

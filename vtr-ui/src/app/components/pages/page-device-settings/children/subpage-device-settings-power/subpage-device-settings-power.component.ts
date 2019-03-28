@@ -132,18 +132,15 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	powerSettings = [
 		{
 			readMoreText: 'Read More',
-			rightImageSource: ['far', 'question-circle'],
+			rightImageSource: [],
 			leftImageSource: ['far', 'gem'],
 			header: 'Always on USB',
 			subHeader:
-				'Charge USB devices through the Always on USB connector on the computer when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged from the USB connector that is yellow-coded or silk-printed the specified icon.',
+				'Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:',
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isSwitchChecked: this.toggleAlwaysOnUsbFlag,
-			tooltipText:
-				`Charge USB devices through the Always on USB connector on the computer when the computer is in sleep, hibernation, or off mode.
-				A smartphone or tablet can be charged from the USB connector that is yellow-coded or silk-printed the specified icon.`,
-			checkboxDesc: "Enable USB charging from laptop battery when computer is off."
+			checkboxDesc: "Enable USB charging from battery power when the computer is off."
 		},
 		{
 			readMoreText: 'Read More',

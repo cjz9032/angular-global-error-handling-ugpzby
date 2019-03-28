@@ -19,9 +19,10 @@
 							<div class="half subHeading" *ngIf="data.isLWSEnabled">
 								<span class="circle green">
 									<fa-icon [icon]="['fas', 'check']"></fa-icon>
-								</span>
+                </span>
 								<h3>WIFI SECURITY</h3>
-								<button class="btn btn-success btn-round-xs text-uppercase button-green">Enabled</button>
+								<button *ngIf="isWifiSecurityEnabled"
+									class="badge badge-pill badge-danger button-green">ENABLED</button>
 							</div>
 							<div class="half subHeading" *ngIf="!data.isLWSEnabled">
 								<span class="circle red">
@@ -33,10 +34,24 @@
 							<div class="half">
 								<div class="collapse-control"
 									(click)="$event.preventDefault();isCollapsed=!isCollapsed;" [hidden]="!data.isLWSEnabled">
-									<button class="btn btn-link collapse-text" type="button" data-toggle="collapse" data-target="#wifi-collapse" aria-expanded="false" aria-controls="wifi-collapse"
+									<button vtrMetrics
+										metricsItem="collapseWiFiHistory"
+										metricsEvent="itemClick"
+										class="btn btn-link collapse-text"
+										type="button" data-toggle="collapse"
+										data-target="#wifi-collapse"
+										aria-expanded="false"
+										aria-controls="wifi-collapse"
 										*ngIf="isShowMore===false" (click)="isShowMore=true">
 										Less info <fa-icon [icon]="['fas', 'chevron-up']"></fa-icon></button>
-									<button class="btn btn-link collapse-text" type="button" data-toggle="collapse" data-target="#wifi-collapse" aria-expanded="false" aria-controls="wifi-collapse"
+									<button vtrMetrics
+										metricsItem="expandWiFiHistory"
+										metricsEvent="itemClick"
+										class="btn btn-link collapse-text"
+										type="button" data-toggle="collapse" 
+										data-target="#wifi-collapse" 
+										aria-expanded="false" 
+										aria-controls="wifi-collapse"
 										*ngIf="isShowMore===true" (click)="isShowMore=false">
 										More info <fa-icon [icon]="['fas', 'chevron-down']"></fa-icon></button>
 								</div>
@@ -89,7 +104,11 @@
 									</ul>
 								</div>
 								<div class="card-foot">
-									<a class="show-more" href="#" (click)="clickShowMore()">{{isShowMoreLink?'Show more':'Show less'}}</a>
+									<a vtrMetrics
+										metricsItem="showMoreWiFiHistory"
+										metricsEvent="itemClick"
+										class="show-more" href="#"
+										(click)="clickShowMore()">{{isShowMoreLink?'Show more':'Show less'}}</a>
 								</div>
 							</div>
 						</div>
@@ -97,8 +116,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="row threat-locator"
-			[ngbCollapse]="isCollapsed">
+		<div class="row threat-locator">
+			<!-- [ngbCollapse]="isCollapsed> -->
 			<div class="col">
 				<div class="threat-locator-container">
 					<div class="row">
@@ -111,10 +130,8 @@
 						</div>
 						<div class="col-5 col-check-location">
 							<div class="button-box">
-								<vtr-ui-button vtrMetrics
-									metricsParent="lenovo-wifi-security"
-									metricsEvent="itemClick"
-									metricsItem="Check your location"
+								<vtr-ui-button
+									[metricsItem]="'checkYourLocation'"
 									(click)="openThreatLocator()"
 									[label]="'Check your location'"></vtr-ui-button>
 							</div>
@@ -132,8 +149,7 @@
           <button type="button"
             (click)="enableWifiSecurity()" 
             vtrMetrics
-						metricsParent="lenovo-wifi-security"
-						metricsItem="btn.enable wifi security"
+						metricsItem="enableWifiSecurity"
 						metricsEvent="itemClick"
 						class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
 						Enable Wifi Security
@@ -142,79 +158,4 @@
 			</div>
 		</div>
 	</div>
-	<!-- <div class="container-fluid p-40 security-card"
-	 *ngIf="data.isLWSEnabled===false">
-		<div class="row">
-			<div class="col">
-				<div class="heading">Lenovo Wifi Security</div>
-			</div>
-			<div class="pull right"><img class="coronet-logo"
-					src="../../../../assets/images/coronet-logo.svg" /></div>
-		</div>
-		<div class="row mt-20">
-			<div class="col">
-				<div class="wifi-security-box">
-					<div class="row">
-						<div class="col col-1">
-							<div>
-								<ul class="bullet-list">
-									<li class="bad">
-										<div class="bullet-icon">
-											<div class="icon-bkg">
-												<fa-icon [icon]="['fas', 'times']">
-												</fa-icon>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col col-2">
-							<div class="sub-heading">
-								<p> Wifi Security</p>
-							</div>
-						</div>
-						<div>
-							<div class="button-box">
-								<button type="button"
-								 class="btn btn-danger btn-round-xs text-uppercase">
-									Disabled
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row mt-10 threat-locator">
-			<div class="col">
-				<div class="sub-heading-2">Threat locator</div>
-				<div class="text-regular">
-					Use the threat detector to determine the safety of the networks
-					around you.
-				</div>
-				<div class="text-regular">
-					<input type="text"
-					 placeholder="Your location">
-					<button type="button"
-					 class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
-						Check threat
-					</button>
-				</div>
-			</div>
-		</div> -->
-		<!-- <div class="row mt-40">
-			<div class="col">
-			</div>
-			<div class=" pull right">
-				<div class="col-12">
-					<button type="button"
-					 (click)="enableWifiSecurity()"
-					 class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
-						Enable Wifi Security
-					</button>
-				</div>
-			</div>
-		</div> -->
-	<!-- </div> -->
 </div>
