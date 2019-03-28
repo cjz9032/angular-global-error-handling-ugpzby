@@ -25,9 +25,9 @@ export class UiObjectTitleComponent implements OnInit {
 
 	getItemStatusClass(item) {
 		let itemStatClass = 'good';
-		if (item.subjectStatus !== undefined && item.subjectStatus !== '') {
-			if (this.itemStatusClass.hasOwnProperty(item.subjectStatus)) {
-				itemStatClass = this.itemStatusClass[item.subjectStatus];
+		if (item.status !== undefined && item.status !== '') {
+			if (this.itemStatusClass.hasOwnProperty(item.status)) {
+				itemStatClass = this.itemStatusClass[item.status];
 			}
 		}
 		return itemStatClass;
@@ -35,9 +35,9 @@ export class UiObjectTitleComponent implements OnInit {
 
 	getItemStatusIconClass(item) {
 		let itemStatIconClass = 'good';
-		if (item.subjectStatus !== undefined && item.subjectStatus !== '') {
-			if (this.itemStatusIconClass.hasOwnProperty(item.subjectStatus)) {
-				itemStatIconClass = this.itemStatusIconClass[item.subjectStatus];
+		if (item.status !== undefined && item.status !== '') {
+			if (this.itemStatusIconClass.hasOwnProperty(item.status)) {
+				itemStatIconClass = this.itemStatusIconClass[item.status];
 				// console.log('itemStatusIconClass ' + itemStatIconClass);
 			}
 		}
@@ -46,6 +46,7 @@ export class UiObjectTitleComponent implements OnInit {
 
 	getItemDetailClasses(item) {
 		const itemDetailClass = {};
+		// console.log(item);
 		if (item.type === undefined) {
 			itemDetailClass['text - uppercase'] = true;
 		} else if (item.type !== undefined) {

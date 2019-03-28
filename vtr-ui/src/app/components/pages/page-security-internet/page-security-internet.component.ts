@@ -1,8 +1,10 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, Inject } from '@angular/core';
 import { MockService } from 'src/app/services/mock/mock.service';
 import { Vpn, EventTypes } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { CMSService } from '../../../services/cms/cms.service';
+import { CommonService } from '../../../services/common/common.service';
+import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-page-security-internet',
@@ -14,14 +16,29 @@ export class PageSecurityInternetComponent implements OnInit {
 	title = 'VPN Security';
 
 	vpn: Vpn;
-	status: string;
+	statusItem: any;
 	articles: [];
 
-	constructor(public mockService: MockService, private cmsService: CMSService, vantageShellService: VantageShellService) {
+	constructor(
+		public mockService: MockService,
+		private cmsService: CMSService,
+		private commonService: CommonService,
+		vantageShellService: VantageShellService) {
+		this.statusItem = {
+			title: 'SURFEASY VPN'
+		};
 		this.vpn = vantageShellService.getSecurityAdvisor().vpn;
-		this.status = this.vpn.status;
+		const cacheStatus: string = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityVPNStatus);
+		if (cacheStatus) {
+			this.statusItem.status = cacheStatus;
+		}
+		if (this.vpn && this.vpn.status) {
+			this.statusItem.status = this.vpn.status;
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, this.statusItem.status);
+		}
 		this.vpn.on(EventTypes.vpnStatusEvent, (status: string) => {
-			this.status = status;
+			this.statusItem.status = status;
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, this.statusItem.status);
 		});
 		this.fetchCMSArticles();
 	}
@@ -57,7 +74,7 @@ export class PageSecurityInternetComponent implements OnInit {
 				this.articles = response;
 			},
 			error => {
-				console.log('fetchCMSContent error', error);
+				console.log('Error occurs when fetch CMS content of VPN page', error);
 			}
 		);
 	}
