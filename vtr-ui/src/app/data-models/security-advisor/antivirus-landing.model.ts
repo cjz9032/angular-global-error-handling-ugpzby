@@ -98,14 +98,14 @@ export class AntiVirusLandingViewModel {
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fwStatus.detail);
 			}
 		});
-		// avModel.on(EventTypes.avMcafeeStatusEvent, (data) => {
-		// 	avStatus.status = (data === true) ? 0 : 1;
-		// 	commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, avStatus.detail);
-		// });
-		// avModel.on(EventTypes.avMcafeeFirewallStatusEvent, (data) => {
-		// 	fwStatus.status = (data === true) ? 0 : 1;
-		// 	commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fwStatus.detail);
-		// });
+		avModel.on(EventTypes.avMcafeeStatusEvent, (data) => {
+			avStatus.status = (data === true) ? 0 : 1;
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, avStatus.detail);
+		});
+		avModel.on(EventTypes.avMcafeeFirewallStatusEvent, (data) => {
+			fwStatus.status = (data === true) ? 0 : 1;
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fwStatus.detail);
+		});
 		this.statusList = new Array(avStatus, fwStatus);
 		this.subject = subjectStatus;
 	}
