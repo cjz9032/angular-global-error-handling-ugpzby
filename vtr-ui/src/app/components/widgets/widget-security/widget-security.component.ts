@@ -28,7 +28,7 @@ export class WidgetSecurityComponent implements OnInit {
 		buttonText: '',
 	};
 	// titleObj: LandingTitle;
-  constructor(
+	constructor(
 		public modalService: NgbModal
 	) { }
 
@@ -45,7 +45,7 @@ export class WidgetSecurityComponent implements OnInit {
 	}
 
 	buttonClick() {
-		let articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
+		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal'

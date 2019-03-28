@@ -142,7 +142,8 @@
 				<div class="row-seperator">&nbsp;</div>
 			</div>
 		</div>
-		<div class="row" *ngIf="isShowInvitationCode">
+		<div class="row"
+			*ngIf="isShowInvitationCode">
 			<div class="col">
 				<div class="invitation-code-box">
 					<div class="row">
@@ -155,9 +156,12 @@
 						</div>
 						<div class="col-5">
 							<div class="button-box shift-right">
-								<vtr-ui-button [metricsItem]="'enterInvitationCode'" (onClick)="enterActivationCode($event)"
-									[label]="'Enter invitation code'" [isLWSEnabled]="data.isLWSEnabled"></vtr-ui-button>
-								<div *ngIf="!data.isLWSEnabled">enter invitation code require enable wifi security.</div>
+								<vtr-ui-button [metricsItem]="'enterInvitationCode'"
+									(onClick)="enterActivationCode($event)"
+									[label]="'Enter invitation code'"
+									[isLWSEnabled]="data.isLWSEnabled"></vtr-ui-button>
+								<div *ngIf="!data.isLWSEnabled">enter invitation code require enable wifi security.
+								</div>
 							</div>
 						</div>
 					</div>

@@ -126,7 +126,7 @@ import { SanitizeUrlPipe } from './pipe/sanitise-url.pipe';
 import { UniqueIdPipe } from './pipe/unique-id.pipe';
 import { environment } from '../environments/environment';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
-import {MetricService} from "./services/metric/metric.service";
+import {MetricService} from './services/metric/metric.service';
 import { WidgetMcafeeComponent } from './components/widgets/widget-mcafee/widget-mcafee.component';
 import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
 import { ChoosePagePipe } from './pipe/security-antivirus/choose-page.pipe';
