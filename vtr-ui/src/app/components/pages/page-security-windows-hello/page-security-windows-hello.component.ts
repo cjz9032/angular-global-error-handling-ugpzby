@@ -3,6 +3,8 @@ import { MockService } from 'src/app/services/mock/mock.service';
 import { WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { CMSService } from '../../../services/cms/cms.service';
+import { CommonService } from '../../../services/common/common.service';
+import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-page-security-windows-hello',
@@ -14,10 +16,18 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 	title = 'Windows Hello';
 
 	windowsHello: WindowsHello;
-	status: string;
+	statusItem: any;
 	articles: [];
 
-	constructor(public mockService: MockService, private cmsService: CMSService, vantageShellService: VantageShellService) {
+	constructor(
+		public mockService: MockService,
+		private cmsService: CMSService,
+		private commonService: CommonService,
+		vantageShellService: VantageShellService
+	) {
+		this.statusItem = {
+			title: 'WINDOWS HELLO'
+		};
 		this.windowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
 		this.updateStatus();
 		this.windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
@@ -40,11 +50,18 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 	}
 
 	private updateStatus(): void {
-		if (this.windowsHello.fingerPrintStatus === 'active' ||
-			this.windowsHello.facialIdStatus === 'active') {
-			this.status = 'enabled';
-		} else {
-			this.status = 'disabled';
+		const cacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus);
+		if (cacheStatus) {
+			this.statusItem.status = cacheStatus;
+		}
+		if (this.windowsHello && (this.windowsHello.fingerPrintStatus || this.windowsHello.facialIdStatus)) {
+			if (this.windowsHello.fingerPrintStatus === 'active' ||
+				this.windowsHello.facialIdStatus === 'active') {
+				this.statusItem.status = 'enabled';
+			} else {
+				this.statusItem.status = 'disabled';
+			}
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, this.statusItem.status);
 		}
 	}
 
@@ -64,7 +81,7 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 				this.articles = response;
 			},
 			error => {
-				console.log('fetchCMSContent error', error);
+				console.log('Error occurs when fetch CMS content of Windows Hello page', error);
 			}
 		);
 	}

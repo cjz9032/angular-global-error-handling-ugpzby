@@ -2,8 +2,7 @@
 
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
-import bootstrap from '@lenovo/tan-client-bridge';
-import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
+import * as Phoenix from '@lenovo/tan-client-bridge';
 
 @Injectable({
 	providedIn: 'root'
@@ -16,7 +15,7 @@ export class VantageShellService {
 			const rpcClient = shell.VantageRpcClient ? new shell.VantageRpcClient() : null;
 			const metricClient = shell.MetricsClient ? new shell.MetricsClient() : null;
 			const powerClient = shell.PowerClient ? shell.PowerClient() : null;
-			this.phoenix = bootstrap(
+			this.phoenix = Phoenix.default(
 				new inversify.Container(),
 				{
 					hsaBroker: rpcClient,
@@ -81,7 +80,19 @@ export class VantageShellService {
 	 * returns metric object from VantageShellService of JS Bridge
 	 */
 	public getMetrics(): any {
-		if (this.phoenix) {
+		if (this.phoenix && this.phoenix.metrics) {
+			if (!this.phoenix.metrics.isInit) {
+				this.phoenix.metrics.init({
+					appVersion: '1.0.0.0',
+					appId: 'ZN8F02EQU628',
+					appName: 'vantage3',
+					channel: 'NonPreload',
+					ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
+				});
+				this.phoenix.metrics.isInit = true;
+				this.phoenix.metrics.metricsEnabled = true;
+			}
+
 			return this.phoenix.metrics;
 		}
 		return undefined;
@@ -93,6 +104,13 @@ export class VantageShellService {
 	public getSystemUpdate(): any {
 		if (this.phoenix) {
 			return this.phoenix.systemUpdate;
+		}
+		return undefined;
+	}
+
+	public getSecurityAdvisor(): Phoenix.SecurityAdvisor {
+		if (this.phoenix) {
+			return this.phoenix.securityAdvisor;
 		}
 		return undefined;
 	}
@@ -245,7 +263,7 @@ export class VantageShellService {
 	public async deviceFilter(filter) {
 		if (this.phoenix) {
 			try {
-				let deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
+				const deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
 				console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 			} catch (error) {
 				console.log('In VantageShellService.deviceFilter. Error:', error);
@@ -256,12 +274,5 @@ export class VantageShellService {
 		}
 		console.log('In VantageShellService.deviceFilter. returning mock true');
 		return true;
-	}
-
-	public getSecurityAdvisor(): SecurityAdvisor {
-		if (this.phoenix) {
-			return this.phoenix.securityAdvisor;
-		}
-		return undefined;
 	}
 }

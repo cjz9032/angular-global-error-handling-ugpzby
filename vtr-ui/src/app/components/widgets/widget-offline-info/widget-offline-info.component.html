@@ -1,0 +1,33 @@
+<div class="vtr-widget-offline-info">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col col-12 offline-info-background">
+				<div class="row">
+					<div class="col-2 align-self-center text-right pr-0">
+						<fa-icon [icon]="['fal', 'wifi-slash']"
+							class="icon"></fa-icon>
+					</div>
+					<div class="col-10 pl-0">
+						<div class="row">
+							<div class="col title">{{title}}</div>
+						</div>
+						<div class="row">
+							<div class="col subtitle"
+								[innerHTML]="subtitle"></div>
+						</div>
+						<div class="row">
+							<div class="col button-row">
+								<button class="action-button"
+									vtrMetrics
+									metricsEvent="itemClick"
+									metricsParent="update-to-date"
+									metricsItem="check-for-updates"
+									(click)="onConnectivityClick($event)">{{buttonText}}</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
