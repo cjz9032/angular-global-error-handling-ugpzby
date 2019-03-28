@@ -122,7 +122,7 @@ export class DisplayService {
 	}
 	public setCameraExposureValue(value: number): Promise<boolean> {
 		if (this.cameraSettings) {
-			return this.cameraSettings.setCameraExposureValue(value);
+			return this.cameraSettings.setCameraExposure(value);
 		}
 		return undefined;
 	}
@@ -176,7 +176,7 @@ export class DisplayService {
 		try {
 			if (this.isShellAvailable) {
 				console.log(JSON.stringify(this.displayEyeCareMode));
-				return this.displayEyeCareMode.statusChangedLocationPermission(handler);
+				return this.displayEyeCareMode.statusChangedLocationPermission((handler));
 			}
 			return undefined;
 		}

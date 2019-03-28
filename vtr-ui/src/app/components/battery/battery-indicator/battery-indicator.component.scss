@@ -19,9 +19,9 @@
 	--acid-fill-gradient-0-14: linear-gradient(#{$gradient_angle_reverse}, #{$stop_dark} 0%, #{$alt} 100%);
 
 	// when % is between 15-24
-	--background-color-15-24: #{$yellow_light};
-	--border-color-15-24: #{rgba($yellow_light, 0.4)};
-	--acid-fill-gradient-15-24: linear-gradient(#{$gradient_angle_reverse}, #{$yellow_light} 0%, #{$yellow} 100%);
+	--background-color-15-24: #{$orange};
+	--border-color-15-24: #{rgba($orange, 0.4)};
+	--acid-fill-gradient-15-24: linear-gradient(#{$gradient_angle_reverse}, #{$yellow} 0%, #{$orange} 100%);
 
 	// when % is between 25-100
 	--background-color-25-100: #{$go_light};
