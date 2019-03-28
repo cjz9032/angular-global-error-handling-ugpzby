@@ -153,6 +153,7 @@ import { IconNamePipe } from './pipe/ui-security-statusbar/icon-name.pipe';
 import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
 import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
+import { MinutesToHourminPipe } from './pipe/minutes-to-hourmin.pipe';
 
 
 library.add(fas);
@@ -268,6 +269,7 @@ library.add(fal);
 		TextClassPipe,
 		UiSecurityStatusbarComponent,
 		StatusTransformPipe,
+		MinutesToHourminPipe
 	],
 	imports: [
 		BrowserModule,
