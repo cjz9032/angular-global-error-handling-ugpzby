@@ -1,5 +1,7 @@
 import * as phoenix from '@lenovo/tan-client-bridge';
-import { EventTypes, WifiSecurity, HomeProtection } from '@lenovo/tan-client-bridge';
+import { EventTypes, WifiSecurity, HomeProtection, DeviceInfo } from '@lenovo/tan-client-bridge';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from '../../enums/local-storage-key.enum';
 
 
 interface DevicePostureDetail {
@@ -16,34 +18,52 @@ export class WifiHomeViewModel {
 	historys: Array<phoenix.WifiDetail>;
 	tryNowUrl: string;
 
-	constructor(wifiSecurity: phoenix.WifiSecurity, homeProtection: phoenix.HomeProtection) {
+	constructor(wifiSecurity: phoenix.WifiSecurity, homeProtection: phoenix.HomeProtection, private commonService: CommonService) {
+		const cacheWifiSecurityState = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
+		const cacheWifiSecurityHistory = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys);
+		const cacheWifiSecurityChsConsoleUrl = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionChsConsoleUrl);
 		try {
 			this.wifiSecurity = wifiSecurity;
 			if (wifiSecurity.state) {
 				this.isLWSEnabled = (wifiSecurity.state === 'enabled');
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
+			} else if (cacheWifiSecurityState) {
+				this.isLWSEnabled = (cacheWifiSecurityState === 'enabled');
 			}
 			if (wifiSecurity.wifiHistory) {
 				this.allHistorys = wifiSecurity.wifiHistory;
 				this.allHistorys = this.mappingHistory(this.allHistorys);
 				this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
 				this.historys = this.mappingHistory(this.historys);
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, wifiSecurity.wifiHistory);
+			} else if (cacheWifiSecurityHistory) {
+				this.allHistorys = cacheWifiSecurityHistory;
+				this.allHistorys = this.mappingHistory(this.allHistorys);
+				this.historys = cacheWifiSecurityHistory.slice(0, 4); // 显示4个history
+				this.historys = this.mappingHistory(this.historys);
 			}
 			if (homeProtection.chsConsoleUrl) {
 				this.tryNowUrl = homeProtection.chsConsoleUrl;
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionChsConsoleUrl, homeProtection.chsConsoleUrl);
+			} else if (cacheWifiSecurityChsConsoleUrl) {
+				this.tryNowUrl = cacheWifiSecurityChsConsoleUrl;
 			}
 		} catch (err) {
 			console.log(`${err}`);
 		}
 		wifiSecurity.on(EventTypes.wsStateEvent, (value) => {
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
 			this.isLWSEnabled = (value === 'enabled');
 		});
 		wifiSecurity.on(EventTypes.wsWifiHistoryEvent, (value) => {
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, value);
 			this.allHistorys = wifiSecurity.wifiHistory;
 			this.allHistorys = this.mappingHistory(this.allHistorys);
 			this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
 			this.historys = this.mappingHistory(this.historys);
 		});
 		homeProtection.on(EventTypes.homeChsConsoleUrlEvent, (value) => {
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionChsConsoleUrl, value);
 			this.tryNowUrl = value;
 		});
 	}
@@ -70,46 +90,47 @@ export class SecurityHealthViewModel {
 	isLWSEnabled: boolean;
 	homeDevicePosture: Array<DevicePostureDetail> = [];
 
-	constructor(wifiSecurity: phoenix.WifiSecurity, homeProtection: phoenix.HomeProtection) {
+	constructor(wifiSecurity: phoenix.WifiSecurity, homeProtection: phoenix.HomeProtection, private commonService: CommonService) {
+		const cacheWifiSecurityState = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
+		const cacheHomeDevicePosture = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture);
 		try {
 			if (wifiSecurity.state) {
 				this.isLWSEnabled = (wifiSecurity.state === 'enabled');
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
+			} else if (cacheWifiSecurityState) {
+				this.isLWSEnabled = (cacheWifiSecurityState === 'enabled');
 			}
 			if (homeProtection.devicePosture) {
-				this.homeDevicePosture = [];
-				homeProtection.devicePosture.forEach((item) => {
-					const it: DevicePostureDetail = {
-						status: 0,
-						title: '',
-						detail: ''
-					};
-					it.status = item.vulnerable === 'true' ? 2 : 1;
-					it.title = this.mappingDevicePosture(item.config);
-					it.detail = item.vulnerable === 'true' ? 'PASSED' : 'FAILED';
-					this.homeDevicePosture.push(it);
-				});
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, homeProtection);
+				this.creatHomeDevicePosture(homeProtection.devicePosture);
+			} else if (cacheHomeDevicePosture) {
+				this.creatHomeDevicePosture(cacheHomeDevicePosture);
 			}
 		} catch (err) {
 			console.log(`${err}`);
 		}
 		wifiSecurity.on(EventTypes.wsStateEvent, (value) => {
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
 			this.isLWSEnabled = (value === 'enabled');
 		});
 		homeProtection.on(EventTypes.homeDevicePostureEvent, (value) => {
-			this.homeDevicePosture = [];
-			value.forEach((item) => {
-				const it: DevicePostureDetail = {
-					status: 0,
-					title: '',
-					detail: ''
-				};
-				it.status = item.vulnerable === 'true' ? 2 : 1;
-				it.title = this.mappingDevicePosture(item.config);
-				it.detail = item.vulnerable === 'true' ? 'PASSED' : 'FAILED';
-				if (it.title !== 'other') {
-					this.homeDevicePosture.push(it);
-				}
-			});
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, value);
+			this.creatHomeDevicePosture(value);
+		});
+	}
+
+	creatHomeDevicePosture(devicePosture: Array<DeviceInfo>) {
+		this.homeDevicePosture = [];
+		devicePosture.forEach((item) => {
+			const it: DevicePostureDetail = {
+				status: 0,
+				title: '',
+				detail: ''
+			};
+			it.status = item.vulnerable === 'true' ? 2 : 1;
+			it.title = this.mappingDevicePosture(item.config);
+			it.detail = item.vulnerable === 'true' ? 'PASSED' : 'FAILED';
+			this.homeDevicePosture.push(it);
 		});
 	}
 
