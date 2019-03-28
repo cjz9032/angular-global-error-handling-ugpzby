@@ -16,6 +16,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 })
 export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	@Input() data: WifiHomeViewModel;
+	@Input() wifiIsShowMore: string;
 	isShowMore = true; // less info, more info
 	isShowMoreLink = true; // show more link
 	// showAllNetworks: boolean = true;
@@ -33,7 +34,9 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 
 	ngOnInit() {
 		this.isWifiSecurityEnabled = false;
-
+		if (this.wifiIsShowMore === 'false') {
+			this.isShowMore = false;
+		}
 		this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn, value);
 			if (!value) {
@@ -45,6 +48,12 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 				modal.componentInstance.header = 'Enable location services';
 				modal.componentInstance.description = 'To use Lenovo WiFi Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?';
 				modal.componentInstance.url = 'ms-settings:privacy-location';
+				this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (para) => {
+					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn, value);
+					if (para) {
+						modal.close();
+					}
+				});
 			}
 		});
 	}
@@ -73,7 +82,9 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 							}
 						});
 					}
-				}
+				} //else if (this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn) {
+
+				//}
 			}
 		} catch {
 			throw new Error('wifiSecurity is null');

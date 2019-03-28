@@ -9,6 +9,7 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { WifiHomeViewModel, SecurityHealthViewModel, } from 'src/app/data-models/security-advisor/wifisecurity.model';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
 	selector: 'vtr-page-security-wifi',
@@ -22,6 +23,7 @@ export class PageSecurityWifiComponent implements OnInit {
 	backarrow = '< ';
 	viewSecChkRoute = 'viewSecChkRoute';
 	articles: [];
+	wifiIsShowMore: boolean;
 	securityAdvisor: phoenix.SecurityAdvisor;
 	wifiSecurity: phoenix.WifiSecurity;
 	homeProtection: phoenix.HomeProtection;
@@ -36,6 +38,7 @@ export class PageSecurityWifiComponent implements OnInit {
 		this.homeProtection.refresh();
 	}
 	constructor(
+		public _activeRouter: ActivatedRoute,
 		public modalService: NgbModal,
 		public shellService: VantageShellService,
 		public mockWifiSecurity: MockWifiSecurity,
@@ -45,8 +48,9 @@ export class PageSecurityWifiComponent implements OnInit {
 		this.securityAdvisor = shellService.getSecurityAdvisor();
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 		this.homeProtection = this.securityAdvisor.homeProtection;
-		this.wifiSecurity.refresh();
-		this.homeProtection.refresh();
+		// this.wifiSecurity.refresh();
+		// this.homeProtection.refresh();
+		this.wifiSecurity.getWifiSecurityState(this.getActivateDeviceStateHandler);
 		this.homeProtection.getActivateDeviceState(this.ShowInvitationhandler.bind(this));
 		this.homeProtection.getDevicePosture(this.startGetDevicePosture);
 		const cacheHomeStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus);
@@ -62,7 +66,10 @@ export class PageSecurityWifiComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		this.wifiIsShowMore = this._activeRouter.snapshot.queryParams['isShowMore'];
 	}
+
+	getActivateDeviceStateHandler() {}
 
 	ShowInvitationhandler(res: HomeProtectionDeviceInfo) {
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionFamilyId, res.familyId);

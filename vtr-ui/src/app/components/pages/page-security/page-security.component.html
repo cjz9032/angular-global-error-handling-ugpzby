@@ -60,7 +60,7 @@
 																				<div class="wifi-good" [ngClass]="getWifiStatus(wifi.good)">{{getWifiDetail(wifi.good)}}</div>
 																			</div>
                                   </li>
-                                  <li class="wifi-link"><a routerLink="/wifi-security">See all joined networks</a></li>
+                                  <li class="wifi-link"><a routerLink="/wifi-security" [queryParams]="{isShowMore:false}" >See all joined networks</a></li>
                                 </ul>
                               </div>
                         </div>
