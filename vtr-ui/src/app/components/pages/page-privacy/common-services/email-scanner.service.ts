@@ -85,7 +85,7 @@ export class EmailScannerService {
 
 	getBreachedAccounts(accessToken): Observable<GetBreachedAccountsResponse> {
 
-		return this.http.get('http://localhost:4200/assets/privacy-json/breachedAccounts.json').pipe(
+		return this.http.get('/assets/privacy-json/breachedAccounts.json').pipe(
 			share(),
 			delay(100),
 			tap((response: GetBreachedAccountsResponse) => {

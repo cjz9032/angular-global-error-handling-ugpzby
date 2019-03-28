@@ -63,7 +63,7 @@ export class BrowserAccountsService {
 	}
 
 	getBrowserAccounts(browsersArray) {
-		return this.http.get('http://localhost:4200/assets/privacy-json/browserAccounts.json').pipe(
+		return this.http.get('/assets/privacy-json/browserAccounts.json').pipe(
 			share(),
 			delay(100),
 		).subscribe((response: BrowsersAccountsResponse) => {
