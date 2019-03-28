@@ -177,18 +177,19 @@
 							<div class="row mb-40">
 								<div class="col col-12 cont">
 
-									<vtr-widget-devcice-update-settings [title]="'Auto update settings'"
+									<vtr-widget-device-update-settings [title]="'Auto update settings'"
 										componentName="Auto Update Settings"
 										[description]="'Automatically Install Updates'"
 										[items]="autoUpdateOptions"
 										(toggleOnOff)="onUpdateToggleOnOff($event)">
-									</vtr-widget-devcice-update-settings>
+									</vtr-widget-device-update-settings>
 								</div>
 							</div>
 
 							<div class="row">
 								<div class="col col-12 mb-40">
-									<vtr-container-card [img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
+									<vtr-container-card
+										[img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
 										[title]="'Lenovo Support website'"
 										[logoText]="'LENOVO SPECIAL'"
 										[action]="'Read More'"

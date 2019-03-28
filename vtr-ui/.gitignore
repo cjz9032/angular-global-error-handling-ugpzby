@@ -6,7 +6,6 @@
 /out-tsc
 
 # dependencies
-package-lock.json
 /node_modules
 
 # profiling files
