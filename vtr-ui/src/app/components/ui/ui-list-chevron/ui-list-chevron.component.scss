@@ -154,6 +154,9 @@
 				color: $main_darker;
 				line-height: 2.8rem;
 				font-size: 2rem;
+				&.blue-arrow{
+					color: $main;
+				}
 			}
 
 			.question-icon {
