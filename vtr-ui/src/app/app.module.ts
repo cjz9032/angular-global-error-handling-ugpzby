@@ -129,8 +129,7 @@ import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-b
 import {MetricService} from './services/metric/metric.service';
 import { WidgetMcafeeComponent } from './components/widgets/widget-mcafee/widget-mcafee.component';
 import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
-import { ChoosePagePipe } from './pipe/security-antivirus/choose-page.pipe';
-import { DayFormatPipe } from './pipe/security-antivirus/day-format.pipe';
+
 
 import { MetricsDirective } from './directives/metrics.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
@@ -234,8 +233,6 @@ library.add(fal);
 		ModalBatteryChargeThresholdComponent,
 		WidgetMcafeeComponent,
 		PipeInstallPipe,
-		ChoosePagePipe,
-		DayFormatPipe,
 		IconClassPipe,
 		IconNamePipe,
 		TextClassPipe,

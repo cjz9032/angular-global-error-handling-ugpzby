@@ -5,6 +5,8 @@ import { AntiVirusViewMode } from 'src/app/data-models/security-advisor/antiviru
 import { Antivirus, EventTypes } from '@lenovo/tan-client-bridge';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from 'src/app/services/common/common.service';
+import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
@@ -24,7 +26,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 	viewMode: any;
 	urlPrivacyPolicy = 'https://www.mcafee.com/consumer/en-us/policy/global/legal.html';
 	urlTermsOfService = 'https://www.mcafee.com/consumer/en-us/policy/global/legal.html';
-	urlGetMcAfee = 'https://qa.csw.lenovo.com/api/v1/articles/25CAD7D97D59483381EA39A87685A3C7';
+	urlGetMcAfee = '25CAD7D97D59483381EA39A87685A3C7';
 	articles = [] ;
 
 	@HostListener('window:focus')
@@ -32,8 +34,11 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		this.antiVirus.refresh();
 	}
 
-	constructor(public mockService: MockService, public VantageShell: VantageShellService,
-		public cmsService: CMSService, commonService: CommonService) {
+	constructor(public mockService: MockService,
+		public VantageShell: VantageShellService,
+		public cmsService: CMSService,
+		commonService: CommonService,
+		public modalService: NgbModal ) {
 		this.antiVirus = this.VantageShell.getSecurityAdvisor().antivirus;
 		this.viewMode = new AntiVirusViewMode(this.antiVirus, commonService);
 		this.fetchCMSArticles();
@@ -62,6 +67,16 @@ export class PageSecurityAntivirusComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
+	}
+
+	openArticle() {
+		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
+			size: 'lg',
+			centered: true,
+			windowClass: 'Article-Detail-Modal'
+		});
+
+		articleDetailModal.componentInstance.articleId = this.urlGetMcAfee;
 	}
 }
 

@@ -22,9 +22,7 @@
 											<div class="subtitle p-3"
 												[innerHTML]="subTitle"></div>
 											<div class="p-3">
-												<a class="d-block" href="{{urlGetMcAfee}}" target="_blank">
-													<vtr-ui-button [metricsItem]="'learnMoreAboutMcafee'" [label]="'LEARN MORE ABOUT MCAFEE'"></vtr-ui-button>
-												</a>
+												<vtr-ui-button [metricsItem]="'learnMoreAboutMcafee'" [label]="'LEARN MORE ABOUT MCAFEE'" (onClick)="openArticle()"></vtr-ui-button>
 											</div>
 										</div>
 									</div>
@@ -180,18 +178,18 @@
 											<div class="col-auto mr-auto px-0">
 												<div class="card-with-border p-3">
 													<span class="text">
-														{{ viewMode.mcafee.subscription}} Valid Until
+														{{ viewMode.mcafee?.subscription}} Valid Until
 													</span>
 													<span class="date">
-														{{ viewMode.mcafee.expireAt | dayFormat }}
+														{{ viewMode.mcafee?.expireAt | date:'MM/dd/yyyy' }}
 													</span>
 													<span>
-														<a *ngIf =" viewMode.mcafee.subscription !== 'licenseActive'"
+														<a *ngIf =" viewMode.mcafee?.subscription !== 'licenseActive'"
 															vtrMetrics
 															metricsItem="upgradeMcafee"
 															metricsEvent="itemClick"
 															href="javacript:0" 
-															(click)=" viewMode.mcafee.launch()" 
+															(click)=" viewMode.mcafee?.launch()" 
 															class="text">Upgrade Now</a>
 													</span>
 												</div>
@@ -199,7 +197,7 @@
 											<div class="col-auto px-0 py-5">
 												<vtr-ui-button 
 												[metricsItem]="'launchMcafee'"
-												(onClick)=" viewMode.mcafee.launch()" 
+												(onClick)=" viewMode.mcafee?.launch()" 
 												[label]="'LAUNCH MCAFEE'"></vtr-ui-button>
 											</div>
 										</div>
@@ -377,17 +375,16 @@
 
 							<div class="subheader mt-minus">
 								<div class="rounded-card-with-shadow p-5 bg-white">
-									<div *ngIf="viewMode.otherAntiVirus && viewMode.otherAntiVirus.name">
+									<div *ngIf="viewMode.otherAntiVirus && viewMode.otherAntiVirus?.name">
 										<div class="row">
 											<div class="col-auto px-0 mr-auto">
-												<div class="title pb-3">{{viewMode.otherAntiVirus.name}}</div>
+												<div class="title pb-3">{{viewMode.otherAntiVirus?.name}}</div>
 											</div>
 											<div class="col-auto px-0">
-												<!--<img src="../../../../assets/images/antivirus/window.png" />-->
 											</div>
 										</div>
 
-										<div class="subtitle pb-5">{{viewMode.otherAntiVirus.name}} offers you basic protection for your
+										<div class="subtitle pb-5">{{viewMode.otherAntiVirus?.name}} offers you basic protection for your
 											device
 										</div>
 
@@ -395,13 +392,12 @@
 										</vtr-ui-security-statusbar>
 
 									</div>
-									<div *ngIf="viewMode.otherFirewall && viewMode.otherFirewall.name" class="pt-5">
+									<div *ngIf="viewMode.otherFirewall && viewMode.otherFirewall?.name" class="pt-5">
 										<div class="row">
 											<div class="col-auto px-0 mr-auto">
-												<div class="title pb-3">{{viewMode.otherFirewall.name}}</div>
+												<div class="title pb-3">{{viewMode.otherFirewall?.name}}</div>
 											</div>
 											<div class="col-auto px-0">
-												<!--<img src="../../../../assets/images/antivirus/window.png" />-->
 											</div>
 										</div>
 
