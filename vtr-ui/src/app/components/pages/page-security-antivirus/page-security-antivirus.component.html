@@ -22,9 +22,7 @@
 											<div class="subtitle p-3"
 												[innerHTML]="subTitle"></div>
 											<div class="p-3">
-												<a class="d-block" href="{{urlGetMcAfee}}" target="_blank">
-													<vtr-ui-button [metricsItem]="'learnMoreAboutMcafee'" [label]="'LEARN MORE ABOUT MCAFEE'"></vtr-ui-button>
-												</a>
+												<vtr-ui-button [metricsItem]="'learnMoreAboutMcafee'" [label]="'LEARN MORE ABOUT MCAFEE'" (onClick)="openArticle()"></vtr-ui-button>
 											</div>
 										</div>
 									</div>
@@ -180,10 +178,10 @@
 											<div class="col-auto mr-auto px-0">
 												<div class="card-with-border p-3">
 													<span class="text">
-														{{ viewMode.mcafee.subscription}} Valid Until
+														{{ viewMode.mcafee?.subscription}} Valid Until
 													</span>
 													<span class="date">
-														{{ viewMode.mcafee.expireAt | dayFormat }}
+														{{ viewMode.mcafee?.expireAt | dayFormat }}
 													</span>
 													<span>
 														<a *ngIf =" viewMode.mcafee.subscription !== 'licenseActive'"
