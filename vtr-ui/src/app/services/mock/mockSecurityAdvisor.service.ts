@@ -163,11 +163,15 @@ export class MockSecurityAdvisorService {
 				}],
 				launch(): Promise<boolean> {
 					return Promise.resolve(true);
-				}
+				},
+				firewallStatus: true,
+				enabled: true,
+				status: true
 			},
 			windowsDefender: {
 				status: true,
-				firewallStatus: false
+				firewallStatus: false,
+				enabled: true
 			},
 			others: {
 				antiVirus: [{
@@ -177,7 +181,8 @@ export class MockSecurityAdvisorService {
 				firewall: [{
 					status: true,
 					name: 'other-firewall'
-				}]
+				}],
+				enabled: true
 			},
 			refresh(): Promise<any> {
 				const p1 = new Promise((resolve) => { });
