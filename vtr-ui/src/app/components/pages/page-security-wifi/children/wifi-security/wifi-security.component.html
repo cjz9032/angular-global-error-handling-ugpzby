@@ -33,10 +33,24 @@
 							<div class="half">
 								<div class="collapse-control"
 									(click)="$event.preventDefault();isCollapsed=!isCollapsed;" [hidden]="!data.isLWSEnabled">
-									<button class="btn btn-link collapse-text" type="button" data-toggle="collapse" data-target="#wifi-collapse" aria-expanded="false" aria-controls="wifi-collapse"
+									<button vtrMetrics
+										metricsItem="collapseWiFiHistory"
+										metricsEvent="itemClick"
+										class="btn btn-link collapse-text"
+										type="button" data-toggle="collapse"
+										data-target="#wifi-collapse"
+										aria-expanded="false"
+										aria-controls="wifi-collapse"
 										*ngIf="isShowMore===false" (click)="isShowMore=true">
 										Less info <fa-icon [icon]="['fas', 'chevron-up']"></fa-icon></button>
-									<button class="btn btn-link collapse-text" type="button" data-toggle="collapse" data-target="#wifi-collapse" aria-expanded="false" aria-controls="wifi-collapse"
+									<button vtrMetrics
+										metricsItem="expandWiFiHistory"
+										metricsEvent="itemClick"
+										class="btn btn-link collapse-text"
+										type="button" data-toggle="collapse" 
+										data-target="#wifi-collapse" 
+										aria-expanded="false" 
+										aria-controls="wifi-collapse"
 										*ngIf="isShowMore===true" (click)="isShowMore=false">
 										More info <fa-icon [icon]="['fas', 'chevron-down']"></fa-icon></button>
 								</div>
@@ -89,7 +103,11 @@
 									</ul>
 								</div>
 								<div class="card-foot">
-									<a class="show-more" href="#" (click)="clickShowMore()">{{isShowMoreLink?'Show more':'Show less'}}</a>
+									<a vtrMetrics
+										metricsItem="showMoreWiFiHistory"
+										metricsEvent="itemClick"
+										class="show-more" href="#"
+										(click)="clickShowMore()">{{isShowMoreLink?'Show more':'Show less'}}</a>
 								</div>
 							</div>
 						</div>
@@ -111,10 +129,8 @@
 						</div>
 						<div class="col-5 col-check-location">
 							<div class="button-box">
-								<vtr-ui-button vtrMetrics
-									metricsParent="lenovo-wifi-security"
-									metricsEvent="itemClick"
-									metricsItem="Check your location"
+								<vtr-ui-button
+									[metricsItem]="'checkYourLocation'"
 									(click)="openThreatLocator()"
 									[label]="'Check your location'"></vtr-ui-button>
 							</div>
@@ -132,8 +148,7 @@
           <button type="button"
             (click)="enableWifiSecurity()" 
             vtrMetrics
-						metricsParent="lenovo-wifi-security"
-						metricsItem="btn.enable wifi security"
+						metricsItem="enableWifiSecurity"
 						metricsEvent="itemClick"
 						class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
 						Enable Wifi Security

@@ -55,14 +55,16 @@
 														(click)="getSurfEasy()"
 														vtrMetrics
 														metricsEvent="itemClick"
-														metricsParent="surfeasy-virtual-private-network"
-														metricsItem="get surfeasy"
+														metricsItem="getSurfEasy"
 														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
 														Get SurfEasy
 													</button>
 													<button *ngIf="statusItem.status === 'installed'"
 														type="button"
 														(click)="openSurfEasy()"
+														vtrMetrics
+														metricsEvent="itemClick"
+														metricsItem="openSurfEasy"
 														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
 														Open SurfEasy
 													</button>
@@ -184,22 +186,6 @@
 												</li>
 											</ul>
 										</div>
-									</div>
-								</div>
-								<div class="col col-12 ">
-									<div class="row top-line">
-										<div class="col">
-											<div class="list-heading">Powered By SurfEasy</div>
-											<p class="text-regular"> Read more on the <a
-													href="https://www.surfeasy.com/privacy_policy/"
-													target="_blank"
-													class="learnmore">Privacy Policy</a> and <a
-													href="https://www.surfeasy.com/terms_of_service/"
-													target="_blank"
-													class="learnmore">Terms of Services</a></p>
-										</div>
-										<div class="pull right"><img class="surfeasy_logo_bottom"
-												src="../../../../assets/images/SurfEasy-logo.png" /></div>
 									</div>
 								</div>
 							</div>
@@ -356,21 +342,27 @@
 									</div>
 
 								</div>
-								<div class="col col-12 ">
-									<div class="row top-line">
-										<div class="col">
-											<div class="list-heading">Powered By SurfEasy</div>
-											<p class="text-regular"><a href="https://www.surfeasy.com/privacy_policy/"
-													target="_blank"
-													class="learnmore">Privacy
-													Policy</a> and <a href="https://www.surfeasy.com/terms_of_service/"
-													target="_blank"
-													class="learnmore">Terms
-													of Services</a></p>
-										</div>
-										<div class="pull right align-self-center"><img class="surfeasy_logo_teal"
-												src="../../../../assets/images/SurfEasy-logo.png" /></div>
+							</div>
+							<div class="col col-12 ">
+								<div class="row top-line">
+									<div class="col">
+										<div class="list-heading">Powered By SurfEasy</div>
+										<p class="text-regular"> Read more on the <a
+												vtrMetrics
+												metricsEvent="itemClick"
+												metricsItem="privacyPolicy"
+												href="https://www.surfeasy.com/privacy_policy/"
+												target="_blank"
+												class="learnmore">Privacy Policy</a> and <a
+												vtrMetrics
+												metricsEvent="itemClick"
+												metricsItem="termsOfServices"
+												href="https://www.surfeasy.com/terms_of_service/"
+												target="_blank"
+												class="learnmore">Terms of Services</a></p>
 									</div>
+									<div class="pull right"><img class="surfeasy_logo_bottom"
+											src="../../../../assets/images/SurfEasy-logo.png" /></div>
 								</div>
 							</div>
 						</div>

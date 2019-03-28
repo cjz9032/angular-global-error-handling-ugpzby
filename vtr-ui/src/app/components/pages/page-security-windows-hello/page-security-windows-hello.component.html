@@ -54,8 +54,7 @@
 												<div class="col-12">
 													<button type="button"
 														vtrMetrics
-														metricsItem="btn.setup windows hello"
-														metricsParent="windows-hello"
+														metricsItem="setUpWindowsHello"
 														metricsEvent="itemClick"
 														(click)="setUpWindowsHello()"
 														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
@@ -106,7 +105,9 @@
 															<div class="text-regular">
 																Visit the Windows Hello page and register your
 																fingerprint.
-																<a
+																<a vtrMetrics
+																	metricsItem="setUpWindowsHello"
+																	metricsEvent="itemClick"
 																	[href]="windowsHello.windowsHelloProtocol | sanitizeUrl">Visit
 																	Windows Hello</a> in system settings
 															</div>
@@ -168,6 +169,9 @@
 																Start using Windows Hello to log into Microsoft Apps
 																such as
 																Outlook, OneDrive, Office 365 and Xbox Live. <a
+																	vtrMetrics
+																	metricsItem="visitMicrosoft"
+																	metricsEvent="itemClick"
 																	href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
 																	Visit Microsoft</a>
 															</div>
@@ -184,7 +188,11 @@
 									<div class="col">
 										<div class="list-heading">Powered By Windows Hello</div>
 										<p class="text-regular">Read more on the
-											<a href="https://support.microsoft.com/en-us/help/4468253/windows-hello-and-privacy-microsoft-privacy"
+											<a 
+												vtrMetrics
+												metricsItem="privacyPolicy"
+												metricsEvent="itemClick"
+												href="https://support.microsoft.com/en-us/help/4468253/windows-hello-and-privacy-microsoft-privacy"
 												class="learnmore">Privacy
 												Policy</a>
 									</div>
@@ -220,8 +228,12 @@
 												<li>
 													<div class="text-regular">
 														Visit the Windows Hello page and register your fingerprint
-														<a [href]="windowsHello.windowsHelloProtocol | sanitizeUrl">Visit
-															Windows Hello </a> in system settings
+														<a 
+															vtrMetrics
+															metricsItem="setUpWindowsHello"
+															metricsEvent="itemClick"
+															[href]="windowsHello.windowsHelloProtocol | sanitizeUrl">
+															Visit Windows Hello </a> in system settings
 													</div>
 												</li>
 												<li>
@@ -235,6 +247,9 @@
 														<div class="text-regular">
 															Start using Windows Hello to log into Microsoft Apps such as
 															Outlook, OneDrive, Office 365 and Xbox Live. <a
+																vtrMetrics
+																metricsItem="visitMicrosoft"
+																metricsEvent="itemClick"
 																href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
 																Visit Microsoft</a>
 														</div>

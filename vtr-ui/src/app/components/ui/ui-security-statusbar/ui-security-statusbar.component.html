@@ -18,7 +18,7 @@
         </span></h3>
 			</div>
 			<div *ngIf="list.buttonTitle && list.status === 'disabled'" class="col-auto">
-				<vtr-ui-button (onClick)="list.buttonClick()" metricsEvent="itemClick" metricsParent="Windows" [metricsItem]="metricsItem"
+				<vtr-ui-button (onClick)="list.buttonClick()" metricsEvent="itemClick" [metricsItem]="list.metricsItem"
 					[label]="list.buttonTitle"></vtr-ui-button>
 			</div>
 		</div>

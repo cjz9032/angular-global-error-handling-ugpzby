@@ -23,7 +23,7 @@
 												[innerHTML]="subTitle"></div>
 											<div class="p-3">
 												<a class="d-block" href="{{urlGetMcAfee}}" target="_blank">
-													<vtr-ui-button [label]="'LEARN MORE ABOUT MCAFEE'"></vtr-ui-button>
+													<vtr-ui-button [metricsItem]="'learnMoreAboutMcafee'" [label]="'LEARN MORE ABOUT MCAFEE'"></vtr-ui-button>
 												</a>
 											</div>
 										</div>
@@ -133,10 +133,20 @@
 										<div>
 											<ul class="list-inline">
 												<li class="list-inline-item read-more-text">Read more on the</li>
-												<li class="list-inline-item subtitle"><a href="{{urlPrivacyPolicy}}" target="_blank">Privacy Policy</a>
+												<li class="list-inline-item subtitle">
+													<a vtrMetrics
+														metricsItem="privacyPolicy"
+														metricsEvent="itemClick"
+														href="{{urlPrivacyPolicy}}" 
+														target="_blank">Privacy Policy</a>
 												</li>
 												<li class="list-inline-item">and</li>
-												<li class="list-inline-item subtitle"><a href="{{urlTermsOfService}}" target="_blank">Terms Of Service</a>
+												<li class="list-inline-item subtitle">
+													<a vtrMetrics
+														metricsItem="termsOfServices"
+														metricsEvent="itemClick"
+														href="{{urlTermsOfService}}" 
+														target="_blank">Terms Of Service</a>
 												</li>
 											</ul>
 										</div>
@@ -176,12 +186,21 @@
 														{{ viewMode.mcafee.expireAt | dayFormat }}
 													</span>
 													<span>
-														<a *ngIf =" viewMode.mcafee.subscription !== 'licenseActive'" href="javacript:0" (click)=" viewMode.mcafee.launch()" class="text">Upgrade Now</a>
+														<a *ngIf =" viewMode.mcafee.subscription !== 'licenseActive'"
+															vtrMetrics
+															metricsItem="upgradeMcafee"
+															metricsEvent="itemClick"
+															href="javacript:0" 
+															(click)=" viewMode.mcafee.launch()" 
+															class="text">Upgrade Now</a>
 													</span>
 												</div>
 											</div>
 											<div class="col-auto px-0 py-5">
-												<vtr-ui-button (onClick)=" viewMode.mcafee.launch()" [label]="'LAUNCH MCAFEE'"></vtr-ui-button>
+												<vtr-ui-button 
+												[metricsItem]="'launchMcafee'"
+												(onClick)=" viewMode.mcafee.launch()" 
+												[label]="'LAUNCH MCAFEE'"></vtr-ui-button>
 											</div>
 										</div>
 									
@@ -329,10 +348,20 @@
 										<div>
 											<ul class="list-inline">
 												<li class="list-inline-item read-more-text">Read more on the</li>
-												<li class="list-inline-item subtitle"><a href="{{urlPrivacyPolicy}}" target="_blank">Privacy Policy</a>
+												<li class="list-inline-item subtitle">
+													<a vtrMetrics
+													metricsItem="privacyPolicy"
+													metricsEvent="itemClick"
+													href="{{urlPrivacyPolicy}}" 
+													target="_blank">Privacy Policy</a>
 												</li>
 												<li class="list-inline-item">and</li>
-												<li class="list-inline-item subtitle"><a href="{{urlTermsOfService}}" target="_blank">Terms Of Service</a>
+												<li class="list-inline-item subtitle">
+													<a vtrMetrics
+													metricsItem="termsOfServices"
+													metricsEvent="itemClick"
+													href="{{urlTermsOfService}}" 
+													target="_blank">Terms Of Service</a>
 												</li>
 											</ul>
 										</div>
@@ -462,10 +491,20 @@
 										<div>
 											<ul class="list-inline">
 												<li class="list-inline-item read-more-text">Read more on the</li>
-												<li class="list-inline-item subtitle"><a href="{{urlPrivacyPolicy}}" target="_blank">Privacy Policy</a>
+												<li class="list-inline-item subtitle">
+													<a vtrMetrics
+													metricsItem="privacyPolicy"
+													metricsEvent="itemClick"
+													href="{{urlPrivacyPolicy}}" 
+													target="_blank">Privacy Policy</a>
 												</li>
 												<li class="list-inline-item">and</li>
-												<li class="list-inline-item subtitle"><a href="{{urlTermsOfService}}" target="_blank">Terms Of Service</a>
+												<li class="list-inline-item subtitle">
+													<a vtrMetrics
+													metricsItem="termsOfServices"
+													metricsEvent="itemClick"
+													href="{{urlTermsOfService}}" 
+													target="_blank">Terms Of Service</a>
 												</li>
 											</ul>
 										</div>

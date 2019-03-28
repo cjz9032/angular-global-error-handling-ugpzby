@@ -119,9 +119,7 @@
 
 					<div class="col-sm-3">
 						<div class="button-box shift-left">
-							<vtr-ui-button metricsItem="try now"
-								metricsParent="connected-home-security"
-								metricsEvent="itemClick"
+							<vtr-ui-button [metricsItem]="'tryNow'"
 								(onClick)="tryNow($event)"
 								[label]="'Try Now'"></vtr-ui-button>
 						</div>
@@ -150,7 +148,7 @@
 						</div>
 						<div class="col-5">
 							<div class="button-box shift-right">
-								<vtr-ui-button metricsParent="connected-home-security" metricsEvent="itemClick" metricsItem="enter invitation code" (onClick)="enterActivationCode($event)"
+								<vtr-ui-button [metricsItem]="'enterInvitationCode'" (onClick)="enterActivationCode($event)"
 									[label]="'Enter invitation code'" [isLWSEnabled]="data.isLWSEnabled"></vtr-ui-button>
 								<div *ngIf="!data.isLWSEnabled">enter invitation code require enable wifi security.</div>
 							</div>
