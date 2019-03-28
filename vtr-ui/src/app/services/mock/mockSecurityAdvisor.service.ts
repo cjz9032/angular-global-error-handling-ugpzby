@@ -1,17 +1,9 @@
 /// <reference path='../../../../node_modules/@lenovo/tan-client-bridge/src/index.js' />
-import {
-	Injectable
-} from '@angular/core';
+import { Injectable } from '@angular/core';
 import mitt from 'mitt';
-import {
-	SecurityAdvisor,
-} from '@lenovo/tan-client-bridge';
-import {
-	EventTypes
-} from '@lenovo/tan-client-bridge';
-import {
-	Emitable
-} from '@lenovo/tan-client-bridge/type/base';
+import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
+import { EventTypes } from '@lenovo/tan-client-bridge';
+import { Emitable } from '@lenovo/tan-client-bridge/type/base';
 @Injectable()
 export class MockSecurityAdvisorService {
 	mitt = new mitt();
@@ -161,17 +153,18 @@ export class MockSecurityAdvisorService {
 					value: true,
 					id: ''
 				}],
+				firewallStatus: false,
+				status: false,
+				enabled: false,
 				launch(): Promise<boolean> {
 					return Promise.resolve(true);
-				},
-				firewallStatus: true,
-				enabled: true,
-				status: true
+				}
 			},
+			// mcafee: null,
 			windowsDefender: {
 				status: true,
 				firewallStatus: false,
-				enabled: true
+				enabled: false,
 			},
 			others: {
 				antiVirus: [{
@@ -182,7 +175,7 @@ export class MockSecurityAdvisorService {
 					status: true,
 					name: 'other-firewall'
 				}],
-				enabled: true
+				enabled: false,
 			},
 			refresh(): Promise<any> {
 				const p1 = new Promise((resolve) => { });

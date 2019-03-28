@@ -3,6 +3,8 @@ import { MockService } from 'src/app/services/mock/mock.service';
 import { PasswordManager, EventTypes } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { CMSService } from '../../../services/cms/cms.service';
+import { CommonService } from '../../../services/common/common.service';
+import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-page-security-password',
@@ -14,14 +16,30 @@ export class PageSecurityPasswordComponent implements OnInit {
 	title = 'Password Health';
 
 	passwordManager: PasswordManager;
-	status: string;
+	statusItem: any;
 	articles: [];
 
-	constructor(public mockService: MockService, private cmsService: CMSService, vantageShellService: VantageShellService) {
+	constructor(
+		public mockService: MockService,
+		private commonService: CommonService,
+		private cmsService: CMSService,
+		vantageShellService: VantageShellService
+	) {
 		this.passwordManager = vantageShellService.getSecurityAdvisor().passwordManager;
-		this.status = this.passwordManager.status;
+		this.statusItem = {
+			title: 'DASHLANE PASSWORD MANAGER'
+		};
+		const cacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus);
+		if (cacheStatus) {
+			this.statusItem.status = cacheStatus;
+		}
+		if (this.passwordManager && this.passwordManager.status) {
+			this.statusItem.status = this.passwordManager.status;
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, this.statusItem.status);
+		}
 		this.passwordManager.on(EventTypes.pmStatusEvent, (status: string) => {
-			this.status = status;
+			this.statusItem.status = status;
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, this.statusItem.status);
 		});
 		this.fetchCMSArticles();
 	}
@@ -57,7 +75,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 				this.articles = response;
 			},
 			error => {
-				console.log('fetchCMSContent error', error);
+				console.log('Error occurs when fetch CMS content of Password Manager page', error);
 			}
 		);
 	}
