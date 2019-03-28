@@ -7,8 +7,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 
 // THIRD PARTY MODULES
 import { CookieService } from 'ngx-cookie-service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 // CUSTOM MODULES
 import { AppRoutingModule } from './app-routing.module';
@@ -77,10 +78,14 @@ import { WidgetDeviceUpdateSettingsComponent } from './components/widgets/widget
 // APPLICATION MODALS
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 import { ModalLenovoIdComponent } from './components/modal/modal-lenovo-id/modal-lenovo-id.component';
+import { ModalWifiSecurityInvitationComponent } from './components/modal/modal-wifi-security-invitation/modal-wifi-security-invitation.component';
+import { ModalWifiSecuriryLocationNoticeComponent } from './components/modal/modal-wifi-securiry-location-notice/modal-wifi-securiry-location-notice.component';
 
 // APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
 import { MockService } from './services/mock/mock.service';
+import { MockWifiSecurity } from './services/mock/mockWifiSecurity.service';
+import { MockSecurityAdvisorService } from './services/mock/mockSecurityAdvisor.service';
 import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
 import { CommsService } from './services/comms/comms.service';
@@ -97,6 +102,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
+import { fal } from '@fortawesome/pro-light-svg-icons';
+
 
 import { EyeCareModeComponent } from './components/display/eye-care-mode/eye-care-mode.component';
 import { UiButtonComponent } from './components/ui/ui-button/ui-button.component';
@@ -120,19 +127,39 @@ import { UniqueIdPipe } from './pipe/unique-id.pipe';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
+import { MetricService } from './services/metric/metric.service';
+import { WidgetMcafeeComponent } from './components/widgets/widget-mcafee/widget-mcafee.component';
+import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
+import { ChoosePagePipe } from './pipe/security-antivirus/choose-page.pipe';
+import { DayFormatPipe } from './pipe/security-antivirus/day-format.pipe';
+
 import { MetricsDirective } from './directives/metrics.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
 import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
+
+import { BaseComponent } from './components/base/base.component';
 import { AppEventDirective } from './directives/app-event.directive';
 import { SafeDomPipe } from './pipe/safe-dom/safe-dom.pipe';
 import { ModalUpdateChangeLogComponent } from './components/modal/modal-update-change-log.component/modal-update-change-log.component';
 import { ModalArticleDetailComponent } from './components/modal/modal-article-detail/modal-article-detail.component';
+import { ModalThreatLocatorComponent } from './components/modal/modal-threat-locator/modal-threat-locator.component';
 import { DolbyModesTranslationPipe } from './pipe/dolby-modes-translation.pipe';
+import { WidgetOfflineInfoComponent } from './components/widgets/widget-offline-info/widget-offline-info.component';
+import { UiLandingFeatureComponent } from './components/ui/ui-landing-feature/ui-landing-feature.component';
+import { UiObjectTitleComponent } from './components/ui/ui-object-title/ui-object-title.component';
+import { UiSecurityStatusbarComponent } from './components/ui/ui-security-statusbar/ui-security-statusbar.component';
+import { IconClassPipe } from './pipe/ui-security-statusbar/icon-class.pipe';
+import { IconNamePipe } from './pipe/ui-security-statusbar/icon-name.pipe';
+import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
+import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
+import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
+
 
 library.add(fas);
 library.add(fab);
 library.add(far);
+library.add(fal);
 
 @NgModule({
 	declarations: [
@@ -207,24 +234,51 @@ library.add(far);
 		SanitizeUrlPipe,
 		UniqueIdPipe,
 		ModalBatteryChargeThresholdComponent,
+		WidgetMcafeeComponent,
+		PipeInstallPipe,
+		ChoosePagePipe,
+		DayFormatPipe,
+		IconClassPipe,
+		IconNamePipe,
+		TextClassPipe,
+		StatusTextPipe,
+		ModalBatteryChargeThresholdComponent,
 		MetricsDirective,
 		InstallationHistoryComponent,
 		SeparatePascalCasePipe,
+		ModalCommonConfirmationComponent,
+		BaseComponent,
 		ModalCommonConfirmationComponent,
 		AppEventDirective,
 		ModalUpdateChangeLogComponent,
 		SafeDomPipe,
 		ModalCommonConfirmationComponent,
 		ModalArticleDetailComponent,
-		DolbyModesTranslationPipe
+		DolbyModesTranslationPipe,
+		WidgetOfflineInfoComponent,
+		ModalThreatLocatorComponent,
+		DolbyModesTranslationPipe,
+		ModalWifiSecurityInvitationComponent,
+		ModalWifiSecuriryLocationNoticeComponent,
+		UiLandingFeatureComponent,
+		UiObjectTitleComponent,
+		UiSecurityStatusbarComponent,
+		IconClassPipe,
+		IconNamePipe,
+		StatusTextPipe,
+		TextClassPipe,
+		UiSecurityStatusbarComponent,
+		StatusTransformPipe,
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		FormsModule,
 		HttpClientModule,
+		AngularSvgIconModule,
 		FontAwesomeModule,
 		NgbModule,
+		// NgbActiveModal,
 		Ng5SliderModule,
 		ReactiveFormsModule,
 		// ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
@@ -235,11 +289,13 @@ library.add(far);
 		CookieService,
 		DevService,
 		MockService,
+		MockWifiSecurity,
 		DisplayService,
 		ContainerService,
 		CommsService,
 		DashboardService,
 		SecurityService,
+		MockSecurityAdvisorService,
 		UserService,
 		AudioService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
@@ -250,11 +306,16 @@ library.add(far);
 		ModalWelcomeComponent,
 		ModalBatteryChargeThresholdComponent,
 		ModalCommonConfirmationComponent,
+		ModalArticleDetailComponent,
+		FeedbackFormComponent,
+		ModalThreatLocatorComponent,
+		ModalWifiSecurityInvitationComponent,
+		ModalWifiSecuriryLocationNoticeComponent,
 		ModalUpdateChangeLogComponent,
-		ModalArticleDetailComponent
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
 	]
 })
-export class AppModule { }
+export class AppModule {
+}

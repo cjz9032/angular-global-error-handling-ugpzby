@@ -1,15 +1,6 @@
 @import "../../app.theme";
 
-.container-article {
-	column-count: 2;
-	column-gap: 0;
-}
-
-.item-column {
-	break-inside: avoid;
-	box-sizing: border-box;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	padding-top: 0rem;
-	padding-bottom: 0rem;
+vtr-article-item {
+	display: block;
+	padding-bottom: 1rem;
 }

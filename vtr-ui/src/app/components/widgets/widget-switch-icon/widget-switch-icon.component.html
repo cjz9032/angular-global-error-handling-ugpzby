@@ -3,15 +3,15 @@
 	<div class="switch-container"
 		[ngClass]="[value ? 'checked' : 'unchecked']">
 		<div class="title">{{ title }}</div>
-		<div class="icon-container">
+		<div class="icon-container d-block">
 			<div class="feature-off"
 				*ngIf="isBlocked">
 				<fa-icon [icon]="['fas', 'slash']"></fa-icon>
 			</div>
 			<fa-icon [icon]="iconDefinition"></fa-icon>
 		</div>
-		<div class="switch">
+		<!-- <div class="switch">
 			<vtr-ui-switch-onoff [name]="title" [value]="value"></vtr-ui-switch-onoff>
-		</div>
+		</div> -->
 	</div>
 </div>

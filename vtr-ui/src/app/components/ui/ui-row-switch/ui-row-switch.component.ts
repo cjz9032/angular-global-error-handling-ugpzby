@@ -8,14 +8,17 @@ import {
 } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalBatteryChargeThresholdComponent } from '../../modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
-import { CommonService } from 'src/app/services/common/common.service';
+import { BaseComponent } from '../../base/base.component';
+import { DeviceService } from 'src/app/services/device/device.service';
+
 
 @Component({
 	selector: 'vtr-ui-row-switch',
 	templateUrl: './ui-row-switch.component.html',
-	styleUrls: ['./ui-row-switch.component.scss']
+	styleUrls: ['./ui-row-switch.component.scss'],
+	exportAs: 'uiRowSwitch'
 })
-export class UiRowSwitchComponent implements OnInit {
+export class UiRowSwitchComponent extends BaseComponent {
 	@ViewChild('childContent') childContent: any;
 
 	// Use Fort Awesome Font Awesome Icon Reference Array (library, icon class) ['fas', 'arrow-right']
@@ -41,12 +44,14 @@ export class UiRowSwitchComponent implements OnInit {
 	@Output() tooltipClick = new EventEmitter<boolean>();
 	@Output() resetClick = new EventEmitter<Event>();
 
+
 	// private tooltip: NgbTooltip;
 
 	constructor(
 		public modalService: NgbModal
-		// , private commonService: CommonService
-	) { }
+		, private deviceService: DeviceService
+	) { super(); }
+
 
 	ngOnInit() {
 		this.childContent = {};
@@ -97,6 +102,13 @@ export class UiRowSwitchComponent implements OnInit {
 		this.resetClick.emit($event);
 	}
 
+	public onLinkClick(linkPath) {
+		if (linkPath && linkPath.length > 0) {
+			this.deviceService.launchUri(linkPath);
+		}
+	}
+
+
 	// private closeTooltip($event: Event) {
 	// 	if (!$event.srcElement.classList.contains('fa-question-circle') && this.tooltip && this.tooltip.isOpen()) {
 	// 		this.tooltip.close();
@@ -113,4 +125,5 @@ export class UiRowSwitchComponent implements OnInit {
 	// 			break;
 	// 	}
 	// }
+
 }

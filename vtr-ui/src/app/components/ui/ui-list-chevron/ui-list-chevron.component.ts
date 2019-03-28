@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { BaseComponent } from '../../base/base.component';
 
 @Component({
 	selector: 'vtr-ui-list-chevron',
@@ -7,9 +8,10 @@ import { DeviceService } from 'src/app/services/device/device.service';
 	styleUrls: ['./ui-list-chevron.component.scss']
 })
 
-export class UiListChevronComponent implements OnInit {
+export class UiListChevronComponent extends BaseComponent implements OnInit {
 
-	@Input() items: any[];
+	// @Input() items: any[];
+	@Input() items: any;
 	@Input() iconPlacement = 'right';
 	@Input() chevronVisibility = true;
 	/**** passing to ItemParent from metrics ****/
@@ -29,7 +31,7 @@ export class UiListChevronComponent implements OnInit {
 		2: 'circle'
 	};
 
-	constructor(private deviceService: DeviceService) { }
+	constructor(private deviceService: DeviceService) { super(); }
 
 
 	getItemStatusClass(item) {
@@ -77,6 +79,18 @@ export class UiListChevronComponent implements OnInit {
 		}
 		// console.log(" itemDetailClass " + JSON.stringify(itemDetailClass));
 		return itemDetailClass;
+	}
+
+	getWifiClass(items) {
+		let className;
+		items.forEach(item => {
+			if (item.title === 'WiFi Security') {
+				className = 'wifiStatus-no-border-bottom';
+			} else {
+				className = '';
+			}
+		});
+		return className;
 	}
 
 	ngOnInit() {

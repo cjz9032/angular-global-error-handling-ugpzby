@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 import { ENDPOINTS } from './endpoints';
+import packageFile from '../../package.json';
 
 export const environment = {
 	production: false,
@@ -15,5 +16,5 @@ export const environment = {
 	ssoLogin: 'preLogin?lenovoid.action=uilogin&lenovoid.realm=lcp.local&lenovoid.ctx=U08&lenovoid.lang=en_US&lenovoid.cb=',
 	ssoLogout: 'gateway?lenovoid.action=uilogout&lenovoid.cb=',
 	bkgImg: 'apac/v1/image?deviceid=09067ba3-6886-44f3-ab43-d3e0bda2197f',
-	appVersion: require('../../package.json').version
+	appVersion: packageFile.version
 };

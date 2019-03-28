@@ -144,11 +144,11 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		this.brightnessChange.emit($event);
 	}
 	public onContrastSliderChange($event: ChangeContext) {
-		console.log('Brightness changed', event);
+		console.log('Contrast changed', event);
 		this.contrastChange.emit($event);
 	}
 	public onExposureSliderChange($event: ChangeContext) {
-		console.log('Brightness changed', event);
+		console.log('exposure changed', event);
 		this.exposureChange.emit($event);
 	}
 }

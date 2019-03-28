@@ -40,6 +40,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	radioPerformance = false;
 	radioQuietCool = false;
 	toggleIntelligentCoolingStatus = false;
+	manualModeSettingStatus: string;
 	headerCaption =
 		'This section enables you to dynamically adjust thermal performance and maximize the battery life.' +
 		' It also has other popular power-related features.' +
@@ -119,7 +120,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				header: 'Conservation Mode',
 				subHeader:
 					`This function is useful to  extend the lifespan of your battery when plugged. <br>
-			When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.<br>Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off.	`,
+			When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.`,
 				isCheckBoxVisible: false,
 				isSwitchVisible: false,
 				tooltipText:
@@ -127,22 +128,19 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			}
 		]
 	};
-
+	// removed from conservation mode <br>Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off.
 	powerSettings = [
 		{
 			readMoreText: 'Read More',
-			rightImageSource: ['far', 'question-circle'],
+			rightImageSource: [],
 			leftImageSource: ['far', 'gem'],
 			header: 'Always on USB',
 			subHeader:
-				'Charge USB devices through the Always on USB connector on the computer when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged from the USB connector that is yellow-coded or silk-printed the specified icon.',
+				'Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:',
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isSwitchChecked: this.toggleAlwaysOnUsbFlag,
-			tooltipText:
-				`Charge USB devices through the Always on USB connector on the computer when the computer is in sleep, hibernation, or off mode.
-				A smartphone or tablet can be charged from the USB connector that is yellow-coded or silk-printed the specified icon.`,
-			checkboxDesc: "Enable USB charging from laptop battery when computer is off."
+			checkboxDesc: "Enable USB charging from battery power when the computer is off."
 		},
 		{
 			readMoreText: 'Read More',
@@ -211,8 +209,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 		public modalService: NgbModal) { }
 
 	onIntelligentCoolingToggle(event) {
-		if(event.switchValue)
-		{
+		if (event.switchValue) {
 			this.intelligentCooling = false;
 		} else {
 			this.intelligentCooling = true;
@@ -221,13 +218,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 		this.setAutoModeSetting(event);
 
 	}
-	changeQuietCool(event)
-	{
+	changeQuietCool(event) {
 		console.log('cool');
 		this.setManualModeSetting('Cool');
 	}
-	changePerformance(event)
-	{
+	changePerformance(event) {
 		console.log('perform');
 		this.setManualModeSetting('Performance');
 	}
@@ -304,7 +299,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 		switch (this.machineBrand) {
 			case 'thinkpad':
 				this.setAirplaneModeThinkPad(event);
-				console.log('Airplane Power mOde Set: ThinkPad',event);
+				console.log('Airplane Power mOde Set: ThinkPad', event);
 				break;
 			case 'ideapad':
 				console.log('Airplane Power mOde Set: ideapad');
@@ -357,21 +352,45 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 					.getDYTCRevision()
 					.then((value: number) => {
 						console.log('getDYTCRevision.then', value);
+
 						if (value === 4) {
 							this.showIntelligentCooling = 2;
 							this.getCQLCapability();
 							this.getTIOCapability();
 							console.log(this.cQLCapability);
 							console.log(this.tIOCapability);
-							if (this.cQLCapability === false && this.tIOCapability === false) {
+
+							if (this.cQLCapability === true && this.tIOCapability === true) {
 								console.log('inside false of CQLCCapability and TIOCCapability');
 								this.toggleIntelligentCooling = false;
 								this.intelligentCooling = false;
 								this.toggleIntelligentCoolingStatus = false;
 							} else {
 								this.toggleIntelligentCooling = true;
-								this.intelligentCooling = true;
 								this.toggleIntelligentCoolingStatus = true;
+								this.intelligentCooling = false;
+								this.getManualModeSetting();
+								// this.manualModeSettingStatus = 'error';
+								switch (this.manualModeSettingStatus) {
+									case 'cool':
+										console.log('manualModeSettingStatus: cool');
+										this.radioQuietCool = true;
+										this.toggleIntelligentCooling = true;
+										this.toggleIntelligentCoolingStatus = false;
+										this.intelligentCooling = true;
+										break;
+									case 'performance':
+										this.radioPerformance = true;
+										this.toggleIntelligentCooling = true;
+										this.toggleIntelligentCoolingStatus = false;
+										this.intelligentCooling = true;
+										console.log('manualModeSettingStatus: performance');
+										break;
+									case 'error':
+										this.toggleIntelligentCooling = false;
+										console.log('manualModeSettingStatus: error');
+										break;
+								}
 							}
 						} else if (value === 5) {
 							this.showIntelligentCooling = 3;
@@ -456,6 +475,23 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			console.error(error.message);
 		}
 	}
+	private getManualModeSetting() {
+		try {
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.getManualModeSetting()
+					.then((value: string) => {
+						console.log('getManualModeSetting.then', value);
+						this.manualModeSettingStatus = value;
+					})
+					.catch(error => {
+						console.error('getManualModeSetting', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
 	// End Power Smart Settings
 
 	// Start ThinkPad
@@ -483,6 +519,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 						console.log('getAlwaysOnUSBStatusThinkPad.then', alwaysOnUsbThinkPad);
 						this.alwaysOnUSBStatus.status = alwaysOnUsbThinkPad.isEnabled;
 						this.usbChargingCheckboxFlag = alwaysOnUsbThinkPad.isChargeFromShutdown;
+						if (alwaysOnUsbThinkPad.isEnabled) {
+							this.toggleAlwaysOnUsbFlag = true;
+						}
+
 					})
 					.catch(error => {
 						console.error('getAlwaysOnUSBStatusThinkPad', error);
@@ -795,4 +835,14 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 		}
 	}
 	// End Lenovo Vantage ToolBar
+
+	/**
+	 * launchSystemUri
+	path: string */
+	public launchSystemUri(path: string) {
+		console.log('system uri called ', path);
+		if (path) {
+			this.deviceService.launchUri(path);
+		}
+	}
 }

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Antivirus } from '@lenovo/tan-client-bridge';
 
 @Injectable()
 
@@ -256,6 +257,18 @@ export class MockService {
 		}
 	];
 
+	wifiHistoryList = [
+		{
+			ssid: 'Lenovo',
+			info: '2019-01-25',
+			good: 0
+		}, {
+			ssid: 'CDL',
+			info: '2019-01-25',
+			good: 1
+		}
+	]
+
 	securityConnectedHome = [
 		{
 			'status': '',
@@ -497,6 +510,54 @@ export class MockService {
 			]
 		}
 	];
+
+
+	// antiVirus: Antivirus = {
+	// 	on() {},
+	// 	off() {},
+	// 	mitt: null,
+	// 	mcafeeDownloadUrl: 'ss',
+	// 	refresh(): Promise<object> {
+	// 		return  Promise.resolve(Object);
+	// 	},
+	// 	mcafee: {
+	// 		localName: 'local',
+	// 		trailUrl: 'url',
+	// 		subscription: 'licenseActive',
+	// 		// McAfee expire date
+	// 		expireAt: '1/21/2020',
+	// 		// McAfee register status
+	// 		registered: true,
+	// 		// McAfee sub-feature information
+	// 		features: [{
+	// 			key: 'Virus Scan',
+	// 			value: true,
+	// 			id: 'Virus Scan'
+	// 		},
+	// 		{
+	// 			key: 'FireWall',
+	// 			value: false,
+	// 			id: 'FireWall',
+	// 		}],
+	// 		// launch McAfee application
+	// 		launch() {
+	// 		}
+	// 	},
+	// 	windowsDefender: {
+	// 		status: false,
+	// 		firewallStatus: false,
+	// 	},
+	// 	others: {
+	// 		antiVirus: [{
+	// 			status: true,
+	// 			name: '360',
+	// 		}],
+	// 		firewall: [{
+	// 			status: true,
+	// 			name: '360',
+	// 		}]
+	// 	}
+	// };
 
 	constructor() { }
 }

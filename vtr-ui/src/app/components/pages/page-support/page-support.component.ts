@@ -16,9 +16,10 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	searchWords = '';
 	searchCount = 1;
 	articles: any;
-	warranty: Object;
+	warranty: any;
 	pageDuration: number;
 	location: any;
+	warrantyNormalUrl = 'https://pcsupport.lenovo.com/us/en/warrantylookup';
 	supportDatas = {
 		documentation: [
 			{
@@ -92,12 +93,18 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 					.getWarranty(machineInfo.serialnumber)
 					.then((warranty) => {
 						this.warranty = warranty;
+						if (machineInfo.serialnumber) {
+							this.warranty.url = `https://www.lenovo.com/us/en/warrantyApos?serialNumber=${machineInfo.serialnumber}&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
+						} else {
+							this.warranty.url = this.warrantyNormalUrl;
+						}
 					});
 			});
 		} catch (error) {
 			console.log(error);
 			this.warranty = {
-				status: 2
+				status: 2,
+				url: this.warrantyNormalUrl
 			};
 		}
 	}

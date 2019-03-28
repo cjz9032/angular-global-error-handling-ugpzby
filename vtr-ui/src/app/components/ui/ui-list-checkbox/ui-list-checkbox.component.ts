@@ -26,6 +26,7 @@ export class UiListCheckboxComponent implements OnInit {
 	public downloadSize: string;
 	public diskSpaceNeeded: string;
 	public readMeUrl: string;
+	public packageRebootType: string;
 	// Random number is used to have unique id of each input field
 	randomNumber: number = Math.floor(new Date().valueOf() * Math.random());
 
@@ -48,6 +49,7 @@ export class UiListCheckboxComponent implements OnInit {
 			this.downloadSize = this.commonService.formatBytes(parseInt(update.packageSize, 10));
 			this.diskSpaceNeeded = this.commonService.formatBytes(parseInt(update.diskSpaceRequired, 10));
 			this.readMeUrl = update.readmeUrl;
+			this.packageRebootType = update.packageRebootType;
 		}
 	}
 

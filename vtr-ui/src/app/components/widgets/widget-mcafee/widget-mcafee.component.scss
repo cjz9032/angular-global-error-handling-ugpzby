@@ -1,0 +1,53 @@
+@import "../../../app.theme";
+
+.mcafee-logo {
+    width: 10rem;
+    padding-top: 1rem;
+}
+
+.subtitle {
+    color: $highlight;
+    font-size: 1.4rem;
+    font-weight: $weight_light;
+    line-height: 2.3rem;
+}
+
+.list-group {
+    border-radius: $border_radius;
+
+    .list-group-item {
+        background: $shade_extralight;
+    }
+
+    .text {
+        color: $screen_dark_70;
+        padding: 2rem 0;
+        font-size: 1.4rem;
+        font-weight: $weight_medium;
+        letter-spacing: 0.89px;
+        line-height: 2.3rem;
+    }
+}
+
+.title {
+    color: $screen_dark_70;
+    font-size: 2.5rem;
+    font-weight: $weight_light;
+    line-height: 2.9rem;
+}
+
+.subtitle {
+    color: $shade_dark;
+    font-size: 1.4rem;
+    font-weight: $weight_light;
+    line-height: 2.3rem;
+}
+
+.text {
+    font-size: 1.5rem;
+    line-height: 2.1rem;
+}
+
+.mt-60 {
+    margin-top: 60px;
+}

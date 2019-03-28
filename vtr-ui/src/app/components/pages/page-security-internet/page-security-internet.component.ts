@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, Inject } from '@angular/core';
 import { MockService } from 'src/app/services/mock/mock.service';
-import { CMSService } from 'src/app/services/cms/cms.service';
+import { Vpn, EventTypes } from '@lenovo/tan-client-bridge';
+import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
+import { CMSService } from '../../../services/cms/cms.service';
+import { CommonService } from '../../../services/common/common.service';
+import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-page-security-internet',
@@ -8,20 +12,50 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 	styleUrls: ['./page-security-internet.component.scss']
 })
 export class PageSecurityInternetComponent implements OnInit {
+
 	title = 'VPN Security';
-	back = 'BACK';
-	backarrow = '< ';
-	IsDashlaneInstalled: Boolean = true;
+
+	vpn: Vpn;
+	statusItem: any;
 	articles: [];
 
 	constructor(
 		public mockService: MockService,
-		private cmsService: CMSService
-	) {
+		private cmsService: CMSService,
+		private commonService: CommonService,
+		vantageShellService: VantageShellService) {
+		this.statusItem = {
+			title: 'SURFEASY VPN'
+		};
+		this.vpn = vantageShellService.getSecurityAdvisor().vpn;
+		const cacheStatus: string = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityVPNStatus);
+		if (cacheStatus) {
+			this.statusItem.status = cacheStatus;
+		}
+		if (this.vpn && this.vpn.status) {
+			this.statusItem.status = this.vpn.status;
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, this.statusItem.status);
+		}
+		this.vpn.on(EventTypes.vpnStatusEvent, (status: string) => {
+			this.statusItem.status = status;
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, this.statusItem.status);
+		});
 		this.fetchCMSArticles();
 	}
 
-	ngOnInit() {
+	ngOnInit() {}
+
+	getSurfEasy(): void {
+		this.vpn.download();
+	}
+
+	openSurfEasy(): void {
+		this.vpn.launch();
+	}
+
+	@HostListener('window:focus')
+	onFocus(): void {
+		this.vpn.refresh();
 	}
 
 	fetchCMSArticles() {
@@ -40,13 +74,8 @@ export class PageSecurityInternetComponent implements OnInit {
 				this.articles = response;
 			},
 			error => {
-				console.log('fetchCMSContent error', error);
+				console.log('Error occurs when fetch CMS content of VPN page', error);
 			}
 		);
-	}
-
-	surfeasy() {
-		//window.open('https://www.surfeasy.com/lenovo/');
-		this.IsDashlaneInstalled = this.IsDashlaneInstalled ? false : true;
 	}
 }
