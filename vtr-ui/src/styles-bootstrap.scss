@@ -193,7 +193,6 @@
 	top: $modal_top_margin;
 }
 
-
 // feedback modal start:
 // overriding style inside feedback modal. doesn't work from component SCSS file
 
@@ -250,4 +249,16 @@
 	overflow: auto;
 	font-size: 1.4rem;
 	font-weight: 500;
+}
+
+.feedback-form-modal-size .modal-dialog {
+	margin: 0 auto;
+	overflow: auto;
+	font-size: 1.4rem;
+	font-weight: 500;
+	max-width: 70rem !important;
+	.close-button {
+		font-size: 3rem;
+		opacity: 0.8;
+	}
 }
