@@ -193,12 +193,6 @@
 	top: $modal_top_margin;
 }
 
-// override for bootstrap modal size
-.lenovo-modal-size .modal-dialog {
-	width: 78rem;
-	height: 82rem;
-}
-
 // feedback modal start:
 // overriding style inside feedback modal. doesn't work from component SCSS file
 
@@ -239,12 +233,15 @@
 	min-height: 60rem;
 }
 
+// override for bootstrap modal size
 .lenovo-id-modal-size .modal-dialog {
-	top: $modal_top_margin;
-	max-width: 65rem !important;
+	top: 3.5rem;
+	max-width: 550px !important;
 	margin: 0 auto;
+	padding-left: 2rem;
+	padding-right: 2rem;
 	overflow: hidden;
-	min-height: 60rem;
+	min-height: 640px !important;
 }
 
 .update-read-more-modal-size .modal-dialog {
@@ -252,4 +249,16 @@
 	overflow: auto;
 	font-size: 1.4rem;
 	font-weight: 500;
+}
+
+.feedback-form-modal-size .modal-dialog {
+	margin: 0 auto;
+	overflow: auto;
+	font-size: 1.4rem;
+	font-weight: 500;
+	max-width: 70rem !important;
+	.close-button {
+		font-size: 3rem;
+		opacity: 0.8;
+	}
 }

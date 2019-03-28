@@ -1,19 +1,37 @@
 <!doctype html>
-<html lang="en" id="html-root">
+<html lang="en"
+	id="html-root">
 
 <head>
 	<meta charset="utf-8">
 	<title>Lenovo Vantage</title>
 	<base href="/">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="manifest" href="manifest.webmanifest">
-  <meta name="theme-color" content="#1976d2">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon"
+		type="image/x-icon"
+		href="favicon.ico">
+	<link rel="manifest"
+		href="manifest.webmanifest">
+	<meta name="theme-color"
+		content="#1976d2">
 </head>
 
 <body>
 	<vtr-root></vtr-root>
-  <noscript>Please enable JavaScript to continue using this application.</noscript>
+	<noscript>Please enable JavaScript to continue using this application.</noscript>
+	<!-- <script type="text/javascript">
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register("/ngsw-worker.js").then(registration => {
+				console.log("success!");
+				if (registration.installing) {
+					registration.installing.postMessage("Howdy from your installing page.");
+				}
+			}, err => {
+				console.error("Installing the worker failed!", err);
+			});
+		}
+	</script> -->
 </body>
 
 </html>
