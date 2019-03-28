@@ -19,7 +19,7 @@ export class VantageShellService {
 				new inversify.Container(),
 				{
 					hsaBroker: rpcClient,
-					// metricsBroker: metricClient,
+					metricsBroker: metricClient,
 					hsaPowerBroker: powerClient
 				}
 			);
@@ -80,21 +80,21 @@ export class VantageShellService {
 	 * returns metric object from VantageShellService of JS Bridge
 	 */
 	public getMetrics(): any {
-		// if (this.phoenix && this.phoenix.metrics) {
-		// 	if (!this.phoenix.metrics.isInit) {
-		// 		this.phoenix.metrics.init({
-		// 			appVersion: '1.0.0.0',
-		// 			appId: 'ZN8F02EQU628',
-		// 			appName: 'vantage3',
-		// 			channel: 'NonPreload',
-		// 			ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
-		// 		});
-		// 		this.phoenix.metrics.isInit = true;
-		// 		this.phoenix.metrics.metricsEnabled = true;
-		// 	}
+		if (this.phoenix && this.phoenix.metrics) {
+			if (!this.phoenix.metrics.isInit) {
+				this.phoenix.metrics.init({
+					appVersion: '1.0.0.0',
+					appId: 'ZN8F02EQU628',
+					appName: 'vantage3',
+					channel: 'NonPreload',
+					ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
+				});
+				this.phoenix.metrics.isInit = true;
+				this.phoenix.metrics.metricsEnabled = true;
+			}
 
-		// 	return this.phoenix.metrics;
-		// }
+			return this.phoenix.metrics;
+		}
 		return undefined;
 	}
 
@@ -263,7 +263,7 @@ export class VantageShellService {
 	public async deviceFilter(filter) {
 		if (this.phoenix) {
 			try {
-				let deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
+				const deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
 				console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 			} catch (error) {
 				console.log('In VantageShellService.deviceFilter. Error:', error);

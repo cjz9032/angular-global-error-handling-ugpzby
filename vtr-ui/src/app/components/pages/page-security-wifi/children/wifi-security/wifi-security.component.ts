@@ -16,14 +16,21 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	@Input() data: WifiHomeViewModel;
 	isShowMore = true; // less info, more info
 	isShowMoreLink = true; // show more link
-  // showAllNetworks: boolean = true;
-  isCollapsed: boolean = true;
+	// showAllNetworks: boolean = true;
+	isCollapsed = true;
+	isWifiSecurityEnabled = true;
+	showAllNetworks = true;
+	showMore = false;
 
-	constructor(public modalService: NgbModal) {
+	constructor(
+		public modalService: NgbModal
+	) {
 		super();
 	}
 
 	ngOnInit() {
+		this.isWifiSecurityEnabled = false;
+
 		this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
 			if (!value) {
 				const modal = this.modalService.open(ModalWifiSecuriryLocationNoticeComponent,
@@ -90,10 +97,10 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 			this.data.historys = this.data.allHistorys.slice(0, length + 2);
 		}
 		return false;
-  }
+	}
 
 	openThreatLocator() {
-		let articleDetailModal: NgbModalRef = this.modalService.open(ModalThreatLocatorComponent, {
+		const articleDetailModal: NgbModalRef = this.modalService.open(ModalThreatLocatorComponent, {
 			size: 'lg',
 			centered: true,
 			windowClass: 'Threat-Locator-Modal'

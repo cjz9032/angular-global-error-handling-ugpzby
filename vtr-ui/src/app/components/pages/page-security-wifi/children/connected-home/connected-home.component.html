@@ -129,20 +129,14 @@
 
 			</div>
 		</div>
-		<div class="button-box shift-left">
-			<vtr-ui-button metricsItem="try now"
-				metricsParent="connected-home-security"
-				metricsEvent="itemClick"
-				(onClick)="tryNow($event)"
-				[label]="'Try Now'"></vtr-ui-button>
-		</div>
 
 		<div class="row">
 			<div class="col">
 				<div class="row-seperator">&nbsp;</div>
 			</div>
 		</div>
-		<div class="row" *ngIf="isShowInvitationCode">
+		<div class="row"
+			*ngIf="isShowInvitationCode">
 			<div class="col">
 				<div class="invitation-code-box">
 					<div class="row">
@@ -155,9 +149,12 @@
 						</div>
 						<div class="col-5">
 							<div class="button-box shift-right">
-								<vtr-ui-button [metricsItem]="'enterInvitationCode'" (onClick)="enterActivationCode($event)"
-									[label]="'Enter invitation code'" [isLWSEnabled]="data.isLWSEnabled"></vtr-ui-button>
-								<div *ngIf="!data.isLWSEnabled">enter invitation code require enable wifi security.</div>
+								<vtr-ui-button [metricsItem]="'enterInvitationCode'"
+									(onClick)="enterActivationCode($event)"
+									[label]="'Enter invitation code'"
+									[isLWSEnabled]="data.isLWSEnabled"></vtr-ui-button>
+								<div *ngIf="!data.isLWSEnabled">enter invitation code require enable wifi security.
+								</div>
 							</div>
 						</div>
 					</div>

@@ -1,7 +1,8 @@
 <div class="wifi-security">
 	<!-- <div class="container-fluid p-40 security-card"
 	 *ngIf="data.isLWSEnabled===true"> -->
-	<div class="container-fluid p-40 security-card" *ngIf="data.isLWSEnabled===true || data.isLWSEnabled===false">
+	<div class="container-fluid p-40 security-card"
+		*ngIf="data.isLWSEnabled===true || data.isLWSEnabled===false">
 		<div class="row">
 			<div class="col">
 				<div class="heading">Lenovo Wifi Security</div>
@@ -16,15 +17,17 @@
 						[ngClass]="{'collapsed': !isCollapsed}">
 						<div class="card-header"
 							id="wifiSecurity">
-							<div class="half subHeading" *ngIf="data.isLWSEnabled">
+							<div class="half subHeading"
+								*ngIf="data.isLWSEnabled">
 								<span class="circle green">
 									<fa-icon [icon]="['fas', 'check']"></fa-icon>
-                </span>
+								</span>
 								<h3>WIFI SECURITY</h3>
 								<button *ngIf="isWifiSecurityEnabled"
 									class="badge badge-pill badge-danger button-green">ENABLED</button>
 							</div>
-							<div class="half subHeading" *ngIf="!data.isLWSEnabled">
+							<div class="half subHeading"
+								*ngIf="!data.isLWSEnabled">
 								<span class="circle red">
 									<fa-icon [icon]="['fas', 'times']"></fa-icon>
 								</span>
@@ -33,35 +36,44 @@
 							</div>
 							<div class="half">
 								<div class="collapse-control"
-									(click)="$event.preventDefault();isCollapsed=!isCollapsed;" [hidden]="!data.isLWSEnabled">
+									(click)="$event.preventDefault();isCollapsed=!isCollapsed;"
+									[hidden]="!data.isLWSEnabled">
 									<button vtrMetrics
 										metricsItem="collapseWiFiHistory"
 										metricsEvent="itemClick"
 										class="btn btn-link collapse-text"
-										type="button" data-toggle="collapse"
+										type="button"
+										data-toggle="collapse"
 										data-target="#wifi-collapse"
 										aria-expanded="false"
 										aria-controls="wifi-collapse"
-										*ngIf="isShowMore===false" (click)="isShowMore=true">
+										*ngIf="isShowMore===false"
+										(click)="isShowMore=true">
 										Less info <fa-icon [icon]="['fas', 'chevron-up']"></fa-icon></button>
 									<button vtrMetrics
 										metricsItem="expandWiFiHistory"
 										metricsEvent="itemClick"
 										class="btn btn-link collapse-text"
-										type="button" data-toggle="collapse" 
-										data-target="#wifi-collapse" 
-										aria-expanded="false" 
+										type="button"
+										data-toggle="collapse"
+										data-target="#wifi-collapse"
+										aria-expanded="false"
 										aria-controls="wifi-collapse"
-										*ngIf="isShowMore===true" (click)="isShowMore=false">
+										*ngIf="isShowMore===true"
+										(click)="isShowMore=false">
 										More info <fa-icon [icon]="['fas', 'chevron-down']"></fa-icon></button>
 								</div>
 								<div class="switch">
-										<vtr-ui-switch-onoff name="wifisecurity" [value]="data.isLWSEnabled" [data]="data"></vtr-ui-switch-onoff>
+									<vtr-ui-switch-onoff name="wifisecurity"
+										[value]="data.isLWSEnabled"
+										[data]="data"></vtr-ui-switch-onoff>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div id="wifi-collapse" class="collapse show" *ngIf="data.isLWSEnabled && isShowMore===false">
+					<div id="wifi-collapse"
+						class="collapse show"
+						*ngIf="data.isLWSEnabled && isShowMore===false">
 						<div class="card-body">
 							<div class="content">
 								<div class="cardTitle">
@@ -87,10 +99,14 @@
 										<li *ngFor="let history of data.historys">
 											<div class="status-icon">
 												<span class="fa-stack fa-3x">
-													<fa-icon [icon]="['fas', 'wifi']" class="menu-pointer"></fa-icon>
-													<span class="circle" [ngClass]="{'green':history.good == 0,'red':history.good != 0}">
-														<fa-icon [icon]="['fas', 'check']" *ngIf="history.good == 0"></fa-icon>
-														<fa-icon [icon]="['fas', 'times']" *ngIf="history.good != 0"></fa-icon>
+													<fa-icon [icon]="['fas', 'wifi']"
+														class="menu-pointer"></fa-icon>
+													<span class="circle"
+														[ngClass]="{'green':history.good == 0,'red':history.good != 0}">
+														<fa-icon [icon]="['fas', 'check']"
+															*ngIf="history.good == 0"></fa-icon>
+														<fa-icon [icon]="['fas', 'times']"
+															*ngIf="history.good != 0"></fa-icon>
 													</span>
 												</span>
 											</div>
@@ -107,7 +123,8 @@
 									<a vtrMetrics
 										metricsItem="showMoreWiFiHistory"
 										metricsEvent="itemClick"
-										class="show-more" href="#"
+										class="show-more"
+										href="#"
 										(click)="clickShowMore()">{{isShowMoreLink?'Show more':'Show less'}}</a>
 								</div>
 							</div>
@@ -130,8 +147,7 @@
 						</div>
 						<div class="col-5 col-check-location">
 							<div class="button-box">
-								<vtr-ui-button
-									[metricsItem]="'checkYourLocation'"
+								<vtr-ui-button [metricsItem]="'checkYourLocation'"
 									(click)="openThreatLocator()"
 									[label]="'Check your location'"></vtr-ui-button>
 							</div>
@@ -140,20 +156,20 @@
 				</div>
 			</div>
 		</div>
-		<div class="row mt-40" *ngIf="!data.isLWSEnabled">
+		<div class="row mt-40"
+			*ngIf="!data.isLWSEnabled">
 			<div class="col">
-				<div class="text-regular">Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones.</div>
+				<div class="text-regular">Lenovo WiFi Security is an advanced cloud-based software service that helps
+					your device differentiate safe wireless networks from potentially malicious ones.</div>
 			</div>
 			<div class=" pull right">
 				<div class="col-12">
-          <button type="button"
-            (click)="enableWifiSecurity()" 
-            vtrMetrics
+					<vtr-ui-button vtrMetrics
+						metricsParent="lenovo-wifi-security"
 						metricsItem="enableWifiSecurity"
 						metricsEvent="itemClick"
-						class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
-						Enable Wifi Security
-					</button>
+						(click)="enableWifiSecurity()"
+						[label]="'Enable Wifi Security'"></vtr-ui-button>
 				</div>
 			</div>
 		</div>
