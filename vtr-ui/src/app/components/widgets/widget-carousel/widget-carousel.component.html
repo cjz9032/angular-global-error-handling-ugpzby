@@ -10,7 +10,9 @@
 				metricsEvent="itemClick"
 				metricsParent="carousel"
 				target="_blank"
-				class="carousel-link">
+				class="carousel-link"
+				[ngClass]="{'no-link': !model.link}"
+				(click)="linkClicked($event, model.link)">
 				<img [src]="model.image"
 					class="image img-fluid">
 				<div class="carousel-caption">

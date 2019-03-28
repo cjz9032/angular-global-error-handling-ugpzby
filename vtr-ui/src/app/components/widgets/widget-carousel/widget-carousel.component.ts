@@ -68,10 +68,16 @@ export class WidgetCarouselComponent implements OnInit {
 				source: this.data[i].source,
 				cardTitle: this.data[i].title,
 				image: this.data[i].url,
-				link: this.data[i].ActionLink
+				link: this.data[i].ActionLink ? this.data[i].ActionLink : ''
 			})
 		}
 		console.log('###################', this.carouselModel);
+	}
+
+	linkClicked($event, link) {
+		if (!link) {
+			$event.preventDefault();
+		}
 	}
 }
 

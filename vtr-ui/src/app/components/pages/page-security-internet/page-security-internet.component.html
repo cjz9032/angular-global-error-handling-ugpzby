@@ -24,16 +24,14 @@
 										</div>
 										<div class="row mt-20">
 											<div class="col">
-												<div *ngIf="status === 'not-installed'"
-													class="text-regular">
+												<div *ngIf="statusItem.status === 'not-installed'" class="text-regular">
 													SurfEasy is a VPN, or Virtual Private Network provider that helps
 													protect you while you are surfing the internet. Without a VPN, your
 													PC may be more vulnerable to attackers and identity thieves. A VPN
 													runs silently in the background and provides additional safety and
 													privacy measures while you use the internet.
 												</div>
-												<div *ngIf="status === 'installed'"
-													class="text-regular">
+												<div *ngIf="statusItem.status === 'installed'" class="text-regular">
 													A Virtual Private Network provider helps you protect while you are
 													surfing the internet. Without a VPN, your pc may be more vulnerable
 													to attackers and identity thieves. A VPN runs silently in the
@@ -43,8 +41,7 @@
 										</div>
 										<div class="row mt-40">
 											<div class="col get-app-code-box">
-												<vtr-ui-security-statusbar [title]="'SURFEASY VPN'"
-													[status]="status"></vtr-ui-security-statusbar>
+												<vtr-ui-security-statusbar [statusList]="[statusItem]"></vtr-ui-security-statusbar>
 											</div>
 										</div>
 										<div class="row mt-40">
@@ -53,19 +50,21 @@
 											</div>
 											<div class=" pull right">
 												<div class="col-12">
-													<button *ngIf="status === 'not-installed'"
+													<button *ngIf="statusItem.status === 'not-installed'"
 														type="button"
 														(click)="getSurfEasy()"
 														vtrMetrics
 														metricsEvent="itemClick"
-														metricsParent="surfeasy-virtual-private-network"
-														metricsItem="get surfeasy"
+														metricsItem="getSurfEasy"
 														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
 														Get SurfEasy
 													</button>
-													<button *ngIf="status === 'installed'"
+													<button *ngIf="statusItem.status === 'installed'"
 														type="button"
 														(click)="openSurfEasy()"
+														vtrMetrics
+														metricsEvent="itemClick"
+														metricsItem="openSurfEasy"
 														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
 														Open SurfEasy
 													</button>
@@ -75,8 +74,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="row vtr-page-security-internet"
-								*ngIf="status === 'not-installed'">
+							<div class="row vtr-page-security-internet" *ngIf="statusItem.status === 'not-installed'">
 								<div class="row">
 									<div class="col col-12 col-sm-12 mt-40">
 										<div>
@@ -190,25 +188,8 @@
 										</div>
 									</div>
 								</div>
-								<div class="col col-12 ">
-									<div class="row top-line">
-										<div class="col">
-											<div class="list-heading">Powered By SurfEasy</div>
-											<p class="text-regular"> Read more on the <a
-													href="https://www.surfeasy.com/privacy_policy/"
-													target="_blank"
-													class="learnmore">Privacy Policy</a> and <a
-													href="https://www.surfeasy.com/terms_of_service/"
-													target="_blank"
-													class="learnmore">Terms of Services</a></p>
-										</div>
-										<div class="pull right"><img class="surfeasy_logo_bottom"
-												src="../../../../assets/images/SurfEasy-logo.png" /></div>
-									</div>
-								</div>
 							</div>
-							<div class="row vtr-connected-security-internet"
-								*ngIf="status === 'installed'">
+							<div class="row vtr-connected-security-internet" *ngIf="statusItem.status === 'installed'">
 								<div class="row">
 									<div class="col col-12 col-sm-12 mt-40">
 										<div>
@@ -361,21 +342,27 @@
 									</div>
 
 								</div>
-								<div class="col col-12 ">
-									<div class="row top-line">
-										<div class="col">
-											<div class="list-heading">Powered By SurfEasy</div>
-											<p class="text-regular"><a href="https://www.surfeasy.com/privacy_policy/"
-													target="_blank"
-													class="learnmore">Privacy
-													Policy</a> and <a href="https://www.surfeasy.com/terms_of_service/"
-													target="_blank"
-													class="learnmore">Terms
-													of Services</a></p>
-										</div>
-										<div class="pull right align-self-center"><img class="surfeasy_logo_teal"
-												src="../../../../assets/images/SurfEasy-logo.png" /></div>
+							</div>
+							<div class="col col-12 ">
+								<div class="row top-line">
+									<div class="col">
+										<div class="list-heading">Powered By SurfEasy</div>
+										<p class="text-regular"> Read more on the <a
+												vtrMetrics
+												metricsEvent="itemClick"
+												metricsItem="privacyPolicy"
+												href="https://www.surfeasy.com/privacy_policy/"
+												target="_blank"
+												class="learnmore">Privacy Policy</a> and <a
+												vtrMetrics
+												metricsEvent="itemClick"
+												metricsItem="termsOfServices"
+												href="https://www.surfeasy.com/terms_of_service/"
+												target="_blank"
+												class="learnmore">Terms of Services</a></p>
 									</div>
+									<div class="pull right"><img class="surfeasy_logo_bottom"
+											src="../../../../assets/images/SurfEasy-logo.png" /></div>
 								</div>
 							</div>
 						</div>

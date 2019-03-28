@@ -1,37 +1,57 @@
-<form name="feedBack"
- class="feedback-form"
- (submit)="onFeedBackSubmit($event)"
- [formGroup]="feedbackForm"
- novalidate>
-	<div class="row">
-		<div class="col">
-			<input autocomplete="off"
-			 placeholder="Email (optional)"
-			 type="email"
-			 class="form-control user-email text-center"
-			 formControlName="userEmail"
-			 email />
+<div class="modal-header">
+	<!-- <h5 class="modal-title">Feedback</h5> -->
+	<button type="button"
+		vtrMetrics
+		metricsItem="btn.close"
+		metricsEvent="itemClick"
+		metricsParent="modalwelcome"
+		class="close close-button"
+		data-dismiss="modal"
+		(click)="activeModal.dismiss('Cross click')"
+		aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
+<div class="modal-body">
+	<form name="feedBack"
+		class="feedback-form"
+		(submit)="onFeedBackSubmit($event)"
+		[formGroup]="feedbackForm"
+		novalidate>
+		<div class="row">
+			<div class="col">
+				<input autocomplete="off"
+					placeholder="Email (optional)"
+					type="email"
+					class="form-control user-email text-center"
+					formControlName="userEmail"
+					email />
+			</div>
 		</div>
-	</div>
-	<br />
-	<div class="row">
-		<div class="col">
-			<textarea placeholder="Comments..."
-			 class="form-control user-comment text-center"
-			 cols="30"
-			 rows="10"
-			 formControlName="userComment"
-			 required></textarea>
+		<br />
+		<div class="row">
+			<div class="col">
+				<textarea placeholder="Comments..."
+					class="form-control user-comment text-center"
+					cols="30"
+					rows="10"
+					formControlName="userComment"
+					required></textarea>
+			</div>
 		</div>
-	</div>
-	<br />
-	<div class="row">
-		<div class="col text-center">
-			<button type="submit" vtrMetrics metricsEvent="itemClick" metricsParent="feedback-form" metricsItem="btn.submit"
-			 class="btn btn-primary btn-lg user-submit"
-			 [disabled]="feedbackForm.invalid">
-				{{ buttonText }}
-			</button>
+		<br />
+		<div class="row">
+			<div class="col text-center">
+				<button type="submit"
+					vtrMetrics
+					metricsEvent="itemClick"
+					metricsParent="feedback-form"
+					metricsItem="btn.submit"
+					class="btn btn-primary btn-lg user-submit"
+					[disabled]="feedbackForm.invalid">
+					{{ feedbackButtonText }}
+				</button>
+			</div>
 		</div>
-	</div>
-</form>
+	</form>
+</div>
