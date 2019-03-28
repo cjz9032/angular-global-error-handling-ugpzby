@@ -15,6 +15,7 @@ import { UpdateRebootType } from 'src/app/enums/update-reboot-type.enum';
 import { SystemUpdateStatusMessage } from 'src/app/data-models/system-update/system-update-status-message.model';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -53,6 +54,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public updateTitle = '';
 	private isUserCancelledUpdateCheck = false;
 	public isInstallingAllUpdates = true;
+	public isOnline = true;
+	public offlineSubtitle: string;
 
 	nextUpdatedDate = '11/12/2018 at 10:00 AM';
 	installationHistory = 'Installation History';
@@ -116,7 +119,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			isSwitchVisible: false,
 			isChecked: true,
 			linkText: 'Windows Settings',
-			linkPath: '',
+			linkPath: 'ms-settings:windowsupdate',
 			type: 'auto-updates'
 
 		}
@@ -137,6 +140,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		private modalService: NgbModal,
 		private cmsService: CMSService
 	) {
+		this.isOnline = this.commonService.isOnline;
 		this.fetchCMSArticles();
 	}
 
@@ -355,6 +359,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		);
 	}
 
+	public onGetSupportClick($event: any) {
+	}
+
 	private installUpdateBySource(source: string) {
 		if (source === 'selected') {
 			this.installSelectedUpdate();
@@ -452,6 +459,11 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				case UpdateProgress.AutoUpdateStatus:
 					this.autoUpdateOptions[0].isChecked = payload.criticalAutoUpdates;
 					this.autoUpdateOptions[1].isChecked = payload.recommendedAutoUpdates;
+					break;
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					this.offlineSubtitle = `${this.getLastUpdatedText()}<br>${this.getNextUpdatedScanText()}`;
 					break;
 				default:
 					break;

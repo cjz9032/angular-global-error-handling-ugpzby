@@ -20,13 +20,16 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 	public quickSettingsWidget = [
 		{
-			tooltipText: 'MICROPHONE'
+			tooltipText: 'MICROPHONE',
+			state: true
 		},
 		{
-			tooltipText: 'CAMERA PRIVACY'
+			tooltipText: 'CAMERA PRIVACY',
+			state: true
 		},
 		{
-			tooltipText: 'EYE CARE MODE'
+			tooltipText: 'EYE CARE MODE',
+			state: true
 		}
 	];
 
@@ -61,6 +64,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				case DeviceMonitorStatus.MicrophoneStatus:
 					console.log('DeviceMonitorStatus', payload);
 					this.microphoneStatus.status = payload.muteDisabled;
+					this.microphoneStatus.permission = payload.permission;
 					break;
 				default:
 					break;
@@ -119,38 +123,65 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	//#endregion
 
 	public onCameraStatusToggle($event: boolean) {
-		if (this.dashboardService.isShellAvailable) {
-			this.dashboardService.setCameraStatus($event)
-				.then((value: boolean) => {
-					console.log('getCameraStatus.then', value, $event);
-					this.cameraStatus.status = $event;
-				}).catch(error => {
-					console.error('getCameraStatus', error);
-				});
+		this.quickSettingsWidget[1].state = false
+		try {
+			if (this.dashboardService.isShellAvailable) {
+				this.dashboardService.setCameraStatus($event)
+					.then((value: boolean) => {
+						console.log('getCameraStatus.then', value, $event);
+						this.cameraStatus.status = $event;
+						this.quickSettingsWidget[1].state = true
+					}).catch(error => {
+						this.quickSettingsWidget[1].state = true
+						console.error('getCameraStatus', error);
+					});
+			}
+		} 
+		catch(error) {
+			this.quickSettingsWidget[1].state = true
+			console.log('onCameraStatusToggle', error);
 		}
 	}
 
 	public onMicrophoneStatusToggle($event: boolean) {
-		if (this.dashboardService.isShellAvailable) {
-			this.dashboardService.setMicrophoneStatus($event)
-				.then((value: boolean) => {
-					console.log('setMicrophoneStatus.then', value, $event);
-					this.microphoneStatus.status = $event;
-				}).catch(error => {
-					console.error('setMicrophoneStatus', error);
-				});
+		this.quickSettingsWidget[0].state = false
+		try {
+			if (this.dashboardService.isShellAvailable) {
+				this.dashboardService.setMicrophoneStatus($event)
+					.then((value: boolean) => {
+						console.log('setMicrophoneStatus.then', value, $event);
+						this.microphoneStatus.status = $event;
+						this.quickSettingsWidget[0].state = true
+					}).catch(error => {
+						this.quickSettingsWidget[0].state = true
+						console.error('setMicrophoneStatus', error);
+					});
+			}
+		} 
+		catch(error) {
+			this.quickSettingsWidget[0].state = true
+			console.log('onMicrophoneStatusToggle', error);
 		}
 	}
 
 	public onEyeCareModeToggle($event: boolean) {
-		if (this.dashboardService.isShellAvailable) {
-			this.dashboardService.setEyeCareMode($event)
-				.then((value: boolean) => {
-					console.log('setEyeCareMode.then', value, $event);
-					this.eyeCareModeStatus.status = $event;
-				}).catch(error => {
-					console.error('setEyeCareMode', error);
-				});
+		this.quickSettingsWidget[2].state = false
+		try {
+			if (this.dashboardService.isShellAvailable) {
+				this.dashboardService.setEyeCareMode($event)
+					.then((value: boolean) => {
+						console.log('setEyeCareMode.then', value, $event);
+						this.eyeCareModeStatus.status = $event;
+						this.quickSettingsWidget[2].state = true
+					}).catch(error => {
+						this.quickSettingsWidget[2].state = true
+						console.error('setEyeCareMode', error);
+					});
+			}
+		} 
+		catch(error) {
+			this.quickSettingsWidget[2].state = true
+			console.log('onEyeCareModeToggle', error);
 		}
 	}
 }

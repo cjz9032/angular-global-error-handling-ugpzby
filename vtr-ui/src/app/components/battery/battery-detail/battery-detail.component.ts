@@ -59,7 +59,9 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 			if(response[i].chargeStatus == BatteryChargeStatus.NO_ACTIVITY.id
 			|| response[i].chargeStatus == BatteryChargeStatus.ERROR.id
 			|| response[i].chargeStatus == BatteryChargeStatus.NOT_INSTALLED.id) {
-				response[i].chargeStatusString = "";
+				///if chargeStatus is 'No activity' | 'Error' | 'Not installed' 
+				// remaining time will not be displayed
+				response[i].remainingTime = undefined;
 			} 
 			if(response[i].chargeStatus == BatteryChargeStatus.CHARGING.id) {
 				this.remainingTimeText = "Charge completion time"

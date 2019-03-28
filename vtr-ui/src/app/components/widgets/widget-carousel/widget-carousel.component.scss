@@ -3,6 +3,10 @@
 .vtr-widget-carousel {
 	box-shadow: $drop_shadow;
 
+	a.no-link {
+		cursor: default;
+	}
+
 	.carousel-caption {
 		position: absolute;
 		top: 5%;
