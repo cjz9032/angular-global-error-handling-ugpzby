@@ -6,7 +6,7 @@ import { DisplayService } from 'src/app/services/display/display.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { ChangeContext } from 'ng5-slider';
-import { EyeCareMode } from 'src/app/data-models/camera/eyeCareMode.model';
+import { EyeCareMode, SunsetToSunriseStatus } from 'src/app/data-models/camera/eyeCareMode.model';
 enum defaultTemparature {
 	defaultValue = 4500
 }
@@ -25,7 +25,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	private cameraDetailSubscription: Subscription;
 	public eyeCareModeStatus = new FeatureStatus(false, true);
 	public cameraPrivacyModeStatus = new FeatureStatus(false, true);
-	public sunsetToSunriseModeStatus = new FeatureStatus(false, false);
+	public sunsetToSunriseModeStatus = new SunsetToSunriseStatus(true, false, false);
 	headerCaption =
 		'This section enables you to improve your visual experience and configure your camera properties.' +
 		' Explore more features and customize your display experience here.';
@@ -233,9 +233,9 @@ export class SubpageDeviceSettingsDisplayComponent
 			if (this.displayService.isShellAvailable) {
 				this.displayService
 					.getEyeCareAutoMode()
-					.then((featureStatus: FeatureStatus) => {
-						console.log('getSunsetToSunrise.then', featureStatus);
-						this.sunsetToSunriseModeStatus = featureStatus;
+					.then((status: SunsetToSunriseStatus) => {
+						console.log('getSunsetToSunrise.then', status);
+						this.sunsetToSunriseModeStatus = status;
 					}).catch(error => {
 						console.error('getSunsetToSunrise', error);
 					});

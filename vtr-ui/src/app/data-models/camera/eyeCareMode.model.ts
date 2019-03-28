@@ -5,3 +5,9 @@ export class EyeCareMode {
 	public minimum: number;
 	public status: boolean;
 }
+export class SunsetToSunriseStatus {
+	constructor(
+		public available: boolean,
+		public status: boolean,
+		public permission: boolean) { }
+}

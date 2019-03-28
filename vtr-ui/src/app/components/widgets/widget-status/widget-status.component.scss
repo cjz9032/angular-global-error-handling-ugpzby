@@ -2,15 +2,17 @@
 
 .vtr-widget-status {
 	border-radius: $border_radius;
-	background-color:$light;
+	background-color: $light;
 	box-shadow: $drop_shadow;
 	padding: 4rem;
+
 	.title {
 		color: $main_darker;
 		font-size: 2.5rem;
 	}
+
 	.description {
-		color: $shade_darkest;
+		color: $main_shade;
 		font-size: 1.5rem;
 		text-transform: uppercase;
 		font-weight: $weight_medium;
