@@ -81,7 +81,19 @@ export class VantageShellService {
 	 * returns metric object from VantageShellService of JS Bridge
 	 */
 	public getMetrics(): any {
-		if (this.phoenix) {
+		if (this.phoenix && this.phoenix.metrics) {
+			if (!this.phoenix.metrics.isInit) {
+				this.phoenix.metrics.init({
+					appVersion: '1.0.0.0',
+					appId: 'ZN8F02EQU628',
+					appName: 'vantage3',
+					channel: 'NonPreload',
+					ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
+				});
+				this.phoenix.metrics.isInit = true;
+				this.phoenix.metrics.metricsEnabled = true;
+			}
+
 			return this.phoenix.metrics;
 		}
 		return undefined;

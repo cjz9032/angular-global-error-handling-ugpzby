@@ -230,7 +230,7 @@
 							</div>
 						</div>
 						<div class="col-auto"><a class="settings-link"
-							(click)="launchSystemUri('ms-settings:')" >Go to windows settings</a></div>
+								(click)="launchSystemUri('ms-settings:')">Go to windows settings</a></div>
 						<!-- <div class="col">
 							<fa-icon class="question"
 								[icon]="['far', 'question-circle']"></fa-icon>
@@ -432,6 +432,11 @@
 									(ngModelChange)='onUsbChargingStatusChange()'>
 								<label> {{ powerSettings[0].checkboxDesc }} </label>
 							</div> -->
+							<div class="row">
+								<div class="col-12">
+									<img src="../../../../../../assets/images/AlwaysOnUSBcontext.JPG" alt=""/>
+								</div>
+							</div>
 							<div class="row">
 								<div class="col-12">
 									<div class="custom-control custom-checkbox always-on-usb-checkbox">

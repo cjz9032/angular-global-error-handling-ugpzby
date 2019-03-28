@@ -6,8 +6,9 @@
   background-color: $light;
   .header {
     .heading {
-      color: $main_darker;
-      font-size: 3.5rem;
+      color: $main_dark;
+	  font-size: 3.6rem;
+	  font-weight: $weight_light;
     }
   }
   .text-regular {
@@ -18,11 +19,11 @@
   }
   .peace-of-mind {
     margin-left: 4rem;
-    padding: 2rem 2rem 0rem 2rem;
+    padding: 2rem 2rem 0rem 1.2rem;
     .sub-heading {
       color: $main_dark;
       font-size: 2rem;
-      font-weight: $weight_medium;
+      font-weight: $weight_bold;
       text-transform: uppercase;
     }
     .text-regular {
@@ -132,7 +133,7 @@
       margin-top: 1rem;
       color: $main_dark;
       font-size: 2rem;
-      font-weight: $weight_medium;
+      font-weight: $weight_bold;
       text-transform: uppercase;
       text-align: left;
       padding-left: 3rem;
@@ -142,7 +143,7 @@
         font-size: 1.4rem;
         font-weight: $weight_light;
         text-transform: none;
-        padding-top: 1rem;
+        padding-top: 0rem;
       }
       .button-box {
         padding: 0rem;
