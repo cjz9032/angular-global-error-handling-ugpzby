@@ -15,5 +15,9 @@ export enum LocalStorageKey {
 	SecurityWindowsDefenderStatusList = '[LocalStorageKey] SecurityWindowsDefenderStatusList',
 	SecurityOthersAntiStatusList = '[LocalStorageKey] SecurityOthersAntiStatusList',
 	SecurityOthersFirewallStatusList = '[LocalStorageKey] SecurityOthersFirewallStatusList',
-	SecurityCurrentPage = '[LocalStorageKey] SecurityCurrentPage'
+	SecurityCurrentPage = '[LocalStorageKey] SecurityCurrentPage',
+	SecurityLandingAntivirusStatus = '[LocalStorageKey] SecurityLandingAntivirusStatus',
+	SecurityLandingAntivirusFirewallStatus = '[LocalStorageKey] SecurityLandingAntivirusFirewallStatus',
+	SecurityLandingWifiSecurityStatus = '[LocalStorageKey] SecurityLandingWifiSecurity',
+	SecurityLandingWifiHistory = '[LocalStorageKey] SecurityLandingWifiSecurity',
 }
