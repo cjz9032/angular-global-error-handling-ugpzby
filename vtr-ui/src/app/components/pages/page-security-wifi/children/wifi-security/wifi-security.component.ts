@@ -82,9 +82,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 							}
 						});
 					}
-				} //else if (this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn) {
-
-				//}
+				}
 			}
 		} catch {
 			throw new Error('wifiSecurity is null');

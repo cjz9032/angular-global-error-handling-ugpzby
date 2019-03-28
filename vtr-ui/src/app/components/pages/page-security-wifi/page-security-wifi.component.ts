@@ -9,8 +9,13 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { WifiHomeViewModel, SecurityHealthViewModel, } from 'src/app/data-models/security-advisor/wifisecurity.model';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute} from '@angular/router';
 
+interface DevicePostureDetail {
+	status: number; // 1,2
+	title: string; // name
+	detail: string; // faied,passed
+}
 @Component({
 	selector: 'vtr-page-security-wifi',
 	templateUrl: './page-security-wifi.component.html',
@@ -38,7 +43,7 @@ export class PageSecurityWifiComponent implements OnInit {
 		this.homeProtection.refresh();
 	}
 	constructor(
-		public _activeRouter: ActivatedRoute,
+		public activeRouter: ActivatedRoute,
 		public modalService: NgbModal,
 		public shellService: VantageShellService,
 		public mockWifiSecurity: MockWifiSecurity,
@@ -66,7 +71,7 @@ export class PageSecurityWifiComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.wifiIsShowMore = this._activeRouter.snapshot.queryParams['isShowMore'];
+		this.wifiIsShowMore = this.activeRouter.snapshot.queryParams['isShowMore'];
 	}
 
 	getActivateDeviceStateHandler() {}
