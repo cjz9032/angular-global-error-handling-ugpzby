@@ -9,7 +9,9 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { WifiHomeViewModel, SecurityHealthViewModel, } from 'src/app/data-models/security-advisor/wifisecurity.model';
-import {ActivatedRoute} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+import { forEach } from '@angular/router/src/utils/collection';
 
 interface DevicePostureDetail {
 	status: number; // 1,2
@@ -44,12 +46,12 @@ export class PageSecurityWifiComponent implements OnInit {
 	}
 	constructor(
 		public activeRouter: ActivatedRoute,
+		private commonService: CommonService,
 		public modalService: NgbModal,
 		public shellService: VantageShellService,
-		public mockWifiSecurity: MockWifiSecurity,
 		private cmsService: CMSService,
-		private commonService: CommonService,
-		) {
+		public mockWifiSecurity: MockWifiSecurity
+	) {
 		this.securityAdvisor = shellService.getSecurityAdvisor();
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 		this.homeProtection = this.securityAdvisor.homeProtection;
@@ -74,7 +76,7 @@ export class PageSecurityWifiComponent implements OnInit {
 		this.wifiIsShowMore = this.activeRouter.snapshot.queryParams['isShowMore'];
 	}
 
-	getActivateDeviceStateHandler() {}
+	getActivateDeviceStateHandler() { }
 
 	ShowInvitationhandler(res: HomeProtectionDeviceInfo) {
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionFamilyId, res.familyId);
@@ -85,7 +87,7 @@ export class PageSecurityWifiComponent implements OnInit {
 		}
 	}
 
-	startGetDevicePosture(res: Array<DeviceInfo>) {}
+	startGetDevicePosture(res: Array<DeviceInfo>) { }
 
 	fetchCMSArticles() {
 		const queryOptions = {

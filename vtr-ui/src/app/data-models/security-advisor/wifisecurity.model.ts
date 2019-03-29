@@ -70,10 +70,12 @@ export class WifiHomeViewModel {
 
 	mappingHistory(historys: Array<phoenix.WifiDetail>): Array<phoenix.WifiDetail> {
 		const Historys = [];
-		historys.forEach( (item) => {
-			let i = {ssid: '',
+		historys.forEach((item) => {
+			let i = {
+				ssid: '',
 				info: '',
-				good: null};
+				good: null
+			};
 			i = item;
 			if (i.info.indexOf('Connected') === -1) {
 				const info = i.info.replace(/T/g, ' ');
@@ -138,7 +140,7 @@ export class SecurityHealthViewModel {
 		let titles: Array<string>;
 		let title: string;
 		titles = ['Apps from unknown sources', 'Developer mode', 'UAC Notification', 'Anti-Virus availability', 'Drive encryption',
-		'Firewall availability', 'Not Activated Windows', 'Security Updates Availability', 'Pin or Password', 'AutomaticUpdatesServiceAvailability'];
+			'Firewall availability', 'Not Activated Windows', 'Security Updates Availability', 'Pin or Password', 'AutomaticUpdatesServiceAvailability'];
 		config = config.toLowerCase();
 		if (config.indexOf('apps') !== -1) {
 			title = titles[0];

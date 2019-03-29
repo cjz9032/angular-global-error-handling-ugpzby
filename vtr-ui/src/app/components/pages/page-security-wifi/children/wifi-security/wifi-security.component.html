@@ -13,7 +13,8 @@
 		<div class="row mt-20">
 			<div class="col">
 				<div class="wifiSecurity accordion">
-					<div class="card">
+					<div class="card"
+						[ngClass]="{'collapsed': !isCollapsed}">
 						<div class="card-header"
 							id="wifiSecurity">
 							<div class="half subHeading"
