@@ -8,7 +8,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class UiButtonComponent implements OnInit {
 	@Input() label: string;
 	@Input() isFullWidth: boolean;
-	@Input() textTansform: boolean = true;
+	@Input() isLWSEnabled = true;
+	@Input() textTansform = true;
 	@Output() onClick = new EventEmitter<any>();
 
 	@Input() metricsItem: string;

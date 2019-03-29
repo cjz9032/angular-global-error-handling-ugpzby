@@ -28,4 +28,10 @@ export class BatteryDetailService {
 			throw new Error(error.message);
 		}
 	}
+
+	getMainBatteryPercentage(): number {
+		if (this.isShellAvailable) {
+			return this.battery.mainBatteryPercentage;
+		}
+	}
 }

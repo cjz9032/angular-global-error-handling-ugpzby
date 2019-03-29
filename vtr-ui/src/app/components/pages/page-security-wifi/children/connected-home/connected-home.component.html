@@ -116,16 +116,18 @@
 					<div class="text-regular">Connected Home Security will send you an alert if it detects a
 						vulnerability in your device or home network, or if you are connected to a potentially malicious
 						network. Learn even more in about Connected Home Security in Tips and Tricks. </div>
+
+					<div class="col-sm-3">
+						<div class="button-box shift-left">
+							<vtr-ui-button [metricsItem]="'tryNow'"
+								(onClick)="tryNow($event)"
+								[label]="'Try Now'"></vtr-ui-button>
+						</div>
+
+					</div>
 				</div>
 
 			</div>
-		</div>
-		<div class="button-box shift-left">
-			<vtr-ui-button metricsItem="try now"
-				metricsParent="connected-home-security"
-				metricsEvent="itemClick"
-				(onClick)="tryNow($event)"
-				[label]="'Try Now'"></vtr-ui-button>
 		</div>
 
 		<div class="row">
@@ -133,24 +135,26 @@
 				<div class="row-seperator">&nbsp;</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row"
+			*ngIf="isShowInvitationCode">
 			<div class="col">
 				<div class="invitation-code-box">
 					<div class="row">
 						<div class="col">
 							<div class="sub-heading">
 								Already have Connected Home Security?
-								<div class="text-regular">Add another device to your Connected Home</div>
+								<div class="text-regular">Add this device to your Connected Home</div>
 							</div>
 
 						</div>
 						<div class="col-5">
 							<div class="button-box shift-right">
-								<vtr-ui-button metricsParent="connected-home-security"
-									metricsEvent="itemClick"
-									metricsItem="enter invitation code"
+								<vtr-ui-button [metricsItem]="'enterInvitationCode'"
 									(onClick)="enterActivationCode($event)"
-									[label]="'Enter invitation code'"></vtr-ui-button>
+									[label]="'Enter invitation code'"
+									[isLWSEnabled]="data.isLWSEnabled"></vtr-ui-button>
+								<div *ngIf="!data.isLWSEnabled">enter invitation code require enable wifi security.
+								</div>
 							</div>
 						</div>
 					</div>

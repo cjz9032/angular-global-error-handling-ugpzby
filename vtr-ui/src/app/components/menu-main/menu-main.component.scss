@@ -33,7 +33,7 @@
 				}
 
 				.app-version {
-					font-size: 1rem;
+					font-size: 1.4rem;
 					padding-left: 1rem;
 					font-weight: $weight_light;
 				}
@@ -50,18 +50,18 @@
 					.nav-link {
 						display: inline-table;
 						font-size: 1.6rem;
-						line-height: calc(#{$menu_height} - .65rem);
+						line-height: calc(#{$menu_height} - 0.65rem);
 						color: $light;
 						padding: 0 1.5rem;
 						border-bottom: transparent solid 0.5rem;
 						@media #{$mediaquery_4} {
-							line-height: calc(#{$menu_height} - .5rem);
+							line-height: calc(#{$menu_height} - 0.5rem);
 						}
 						@media #{$mediaquery_5} {
-							line-height: calc(#{$menu_height} - .65rem);
+							line-height: calc(#{$menu_height} - 0.65rem);
 						}
 						@media #{$mediaquery_6} {
-							line-height: calc(#{$menu_height} - .5rem);
+							line-height: calc(#{$menu_height} - 0.5rem);
 						}
 						&.active {
 							border-bottom: $main solid 0.5rem;
@@ -144,18 +144,18 @@
 
 					&.dropdown {
 						.dropdown-toggle {
-					 		position: relative;
-					 		padding-right: 2.4rem;
+							position: relative;
+							padding-right: 2.4rem;
 
-					 		&::after {
-					 			border: none;
-					 			content: "\f107";
-					 			font-family: FontAwesome;
-					 			position: absolute;
-					 			font-size: 3rem;
-					 			margin-left: 1px;
-					 		}
-					 	}
+							// &::after {
+							// 	border: none;
+							// 	content: "\f107";
+							// 	font-family: FontAwesome;
+							// 	position: absolute;
+							// 	font-size: 3rem;
+							// 	margin-left: 1px;
+							// }
+						}
 					}
 				}
 			}
@@ -172,7 +172,7 @@
 
 		.fa-icon {
 			position: relative;
-			top: .3rem;
+			top: 0.3rem;
 			padding-right: 0.3rem;
 			font-size: 2.1rem;
 		}

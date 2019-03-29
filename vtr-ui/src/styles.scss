@@ -23,6 +23,30 @@ html {
 	letter-spacing: 0.1em;
 }
 
+@media #{$dpiquery_0} {
+
+}
+
+@media #{$dpiquery_1} {
+
+}
+
+@media #{$dpiquery_2} {
+
+}
+
+@media #{$dpiquery_3} {
+
+}
+
+@media #{$dpiquery_4} {
+
+}
+
+@media #{$dpiquery_5} {
+
+}
+
 @media #{$mediaquery_0} {
 	html {
 		font-size: 100%;
@@ -91,7 +115,7 @@ body {
 	width: 100%;
 	height: 100%;
 	font-family: "Segoe UI";
-	font-weight: 300;
+	// font-weight: 300;
 }
 
 svg-icon {
@@ -278,6 +302,28 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 /*common-confirmation-modal-styles*/
 
 .common-confirmation-modal {
+	.modal-dialog {
+		margin-top: 8rem;
+
+		.modal-content {
+			background-color: transparent;
+			border: none;
+		}
+	}
+}
+
+.wifi-security-invitation-modal {
+	.modal-dialog {
+		margin-top: 8rem;
+
+		.modal-content {
+			background-color: transparent;
+			border: none;
+		}
+	}
+}
+
+.wifi-security-location-modal {
 	.modal-dialog {
 		margin-top: 8rem;
 
