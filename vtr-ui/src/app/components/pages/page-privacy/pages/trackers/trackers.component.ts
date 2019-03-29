@@ -34,4 +34,10 @@ export class TrackersComponent {
 		image_url: '/assets/images/privacy-tab/trackers-banner.png',
 		read_more_link: 'https://figleafapp.com/',
 	};
+
+	constructor() {}
+
+	ngOnInit() {
+
+	}
 }

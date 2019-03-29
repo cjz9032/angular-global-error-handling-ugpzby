@@ -12,7 +12,7 @@ export class StorageService {
 		localStorage.setItem(key, value);
 	}
 
-	getItem(key: string): string | number {
+	getItem(key: string): string {
 		return localStorage.getItem(key);
 	}
 }

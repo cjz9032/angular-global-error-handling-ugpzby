@@ -34,9 +34,6 @@ const adminRoutes: Routes = [
 				component: TrackersComponent,
 				canActivate: [ChoseBrowserGuard]
 			}, {
-				path: 'result',
-				component: ResultComponent
-			}, {
 				path: 'installed',
 				component: InstalledComponent
 			}, {

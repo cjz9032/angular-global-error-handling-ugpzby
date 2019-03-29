@@ -3,6 +3,7 @@
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
 import * as Phoenix from '@lenovo/tan-client-bridge';
+import { EMPTY, from, Observable } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
@@ -274,5 +275,13 @@ export class VantageShellService {
 		}
 		console.log('In VantageShellService.deviceFilter. returning mock true');
 		return true;
+	}
+
+	public sendContractToPrivacyCore<T>
+	(contract: {contract: string, command: string, payload: string | Object}): Observable<T> {
+		if (this.phoenix && this.phoenix.privacy) {
+			return from(this.phoenix.privacy.sendContractToPlugin(contract));
+		}
+		return EMPTY;
 	}
 }

@@ -63,6 +63,7 @@ import { NewsItemComponent } from './common-ui/news-item/news-item.component';
 import { NewsListComponent } from './pages/news-list/news-list.component';
 import { TrackingMapComponent } from './common-ui/tracking-map/tracking-map.component';
 import { SingleTrackerDetailComponent } from './common-ui/single-tracker-detail/single-tracker-detail.component';
+import { ToggleButtonComponent } from './common-ui/toggle-button/toggle-button.component';
 
 @NgModule({
 	imports: [
@@ -122,6 +123,7 @@ import { SingleTrackerDetailComponent } from './common-ui/single-tracker-detail/
 		NewsListComponent,
 		TrackingMapComponent,
 		SingleTrackerDetailComponent,
+		ToggleButtonComponent,
 	],
 	providers: [
 		TrackersPopupService,

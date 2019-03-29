@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class MainLayoutComponent implements OnInit {
 	choseBrowserPopupId = 'choseBrowserPopup';
+	browserList$ = this.choseBrowserService.getBrowserList();
 
 	constructor(
 		private locationHistoryService: LocationHistoryService,

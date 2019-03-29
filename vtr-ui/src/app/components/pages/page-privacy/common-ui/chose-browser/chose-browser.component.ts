@@ -1,33 +1,23 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 
 @Component({
 	selector: 'vtr-chose-browser',
 	templateUrl: './chose-browser.component.html',
 	styleUrls: ['./chose-browser.component.scss']
 })
-export class ChoseBrowserComponent {
+export class ChoseBrowserComponent implements OnChanges {
+	@Input() browserList: any[] = [];
 	@Output() rejection = new EventEmitter<void>();
 	@Output() browser = new EventEmitter<string>();
 
-	browserList = [
-		{
-			name: 'Chrome',
-			img: '/assets/images/privacy-tab/chrome.svg',
-			value: 'chrome'
-		},
-		{
-			name: 'Edge',
-			img: '/assets/images/privacy-tab/edge.svg',
-			value: 'edge'
-		},
-		{
-			name: 'Firefox',
-			img: '/assets/images/privacy-tab/firefox.svg',
-			value: 'firefox'
-		},
-	];
+	chosenBroswer;
 
-	chosenBroswer = this.browserList[0].value;
+	ngOnChanges(changes: SimpleChanges) {
+		const {browserList} = changes;
+		if (browserList) {
+			this.choseBrowser(browserList[0].value);
+		}
+	}
 
 	choseBrowser(browserValue) {
 		this.chosenBroswer = browserValue;

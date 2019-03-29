@@ -11,6 +11,7 @@
 	<vtr-video-popup></vtr-video-popup>
 	<vtr-common-popup [popUpId]="choseBrowserPopupId">
 		<vtr-chose-browser
+			[browserList]="browserList$ | async"
 			(rejection)="closePopUp(choseBrowserPopupId)"
 			(browser)="choseBrowser($event)">
 		</vtr-chose-browser>
