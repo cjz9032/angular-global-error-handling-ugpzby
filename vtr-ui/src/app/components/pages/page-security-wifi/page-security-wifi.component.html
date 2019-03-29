@@ -13,15 +13,13 @@
 					<div class="col col-8 vtr-page-left-column">
 						<div class="vtr-subpage">
 							<div class="vtr-page-shift-up">
-								<wifi-security
-									[data]="wifiHomeViewModel"
-								></wifi-security>
+								<wifi-security [data]="wifiHomeViewModel"
+									[wifiIsShowMore]="wifiIsShowMore"></wifi-security>
 							</div>
 						</div>
 						<div class="connected-home-container">
-							<vtr-connected-home
-								[data]="wifiHomeViewModel" [isShowInvitationCode]="isShowInvitationCode"
-							></vtr-connected-home>
+							<vtr-connected-home [data]="wifiHomeViewModel"
+								[isShowInvitationCode]="isShowInvitationCode"></vtr-connected-home>
 						</div>
 					</div>
 					<div class="col col-4 vtr-page-right-column">

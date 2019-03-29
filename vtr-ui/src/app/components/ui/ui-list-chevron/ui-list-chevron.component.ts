@@ -14,6 +14,7 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 	@Input() items: any;
 	@Input() iconPlacement = 'right';
 	@Input() chevronVisibility = true;
+	@Input() arrowColor: string;
 	/**** passing to ItemParent from metrics ****/
 	@Input() metricsParent: string;
 
