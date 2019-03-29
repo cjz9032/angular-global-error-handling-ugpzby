@@ -21,47 +21,57 @@
 								<div class="row">
 									<div class="col col-md-6 security-widgets-container left">
 
-										<vtr-ui-landing-feature *ngIf="antivirusLandingViewModel.subject.status !== undefined && antivirusLandingViewModel.subject.status !== null" [feature]='antivirusLandingViewModel'>
+										<vtr-ui-landing-feature *ngIf="antivirusLandingViewModel.subject.status !== undefined && antivirusLandingViewModel.subject.status !== null"
+											[feature]='antivirusLandingViewModel'>
 										</vtr-ui-landing-feature>
 
-										<vtr-ui-landing-feature *ngIf="passwordManagerLandingViewModel.subject.status !== undefined && passwordManagerLandingViewModel.subject.status !== null" [feature]='passwordManagerLandingViewModel'>
+										<vtr-ui-landing-feature *ngIf="passwordManagerLandingViewModel.subject.status !== undefined && passwordManagerLandingViewModel.subject.status !== null"
+											[feature]='passwordManagerLandingViewModel'>
 										</vtr-ui-landing-feature>
 
-										<vtr-ui-landing-feature *ngIf="vpnLandingViewModel.subject.status !== undefined && vpnLandingViewModel.subject.status !== null" [feature]='vpnLandingViewModel'>
+										<vtr-ui-landing-feature *ngIf="vpnLandingViewModel.subject.status !== undefined && vpnLandingViewModel.subject.status !== null"
+											[feature]='vpnLandingViewModel'>
 										</vtr-ui-landing-feature>
 									</div>
-									
+
 									<div class="col col-md-6 security-widgets-container">
-										<div class="security-widget wifi-connected-home" *ngIf="wifiSecurityLandingViewModel.subject.status !== undefined && wifiSecurityLandingViewModel.subject.status !== null">
+										<div class="security-widget wifi-connected-home"
+											*ngIf="wifiSecurityLandingViewModel.subject.status !== undefined && wifiSecurityLandingViewModel.subject.status !== null">
 											<div class="security-widget-inner">
 												<div class="security-widget-wifi">
-														<vtr-ui-object-title [objects]="wifiSecurityLandingViewModel.subject">													
-															</vtr-ui-object-title>
-                            <vtr-ui-list-chevron [items]="wifiSecurityLandingViewModel.statusList">
-                              </vtr-ui-list-chevron>
-                              <div class="wifi-history" *ngIf="wifiHistory && wifiSecurityLandingViewModel.subject.status === 0">
-                                <div class="row align-items-center pt-wifiLength">
-                                  <div class="col-3">
-																		<fa-icon class="wifi-font-icon" [icon]="['fas', 'wifi']"></fa-icon>
-                                  </div>
-                                  <div class="col-9">Prevented your computer from joining <span>{{getMaliciousWifi(wifiHistory)}}</span> malicious networks this month.</div>
-                                </div>
-                                <ul class="chevron-list">	
-                                  <li *ngFor="let wifi of wifiHistory.slice(0, 2);" class="row">
-                                      <div class="col-2 item-icon">
-                                        <div class="icon-bkg">
-																					<fa-icon [ngClass]="getWifiStatus(wifi.good)" [icon]="['fas', 'wifi']"></fa-icon>
-																				</div>
-                                      </div>
-                                      <div class="col-6">{{wifi.ssid}}</div>
-                                      <div class="wifi-bg">
-																				<div class="wifi-good" [ngClass]="getWifiStatus(wifi.good)">{{getWifiDetail(wifi.good)}}</div>
-																			</div>
-                                  </li>
-                                  <li class="wifi-link"><a routerLink="/wifi-security">See all joined networks</a></li>
-                                </ul>
-                              </div>
-                        </div>
+													<vtr-ui-object-title [objects]="wifiSecurityLandingViewModel.subject">
+													</vtr-ui-object-title>
+													<vtr-ui-list-chevron [items]="wifiSecurityLandingViewModel.statusList">
+													</vtr-ui-list-chevron>
+													<div class="wifi-history"
+														*ngIf="wifiHistory && wifiSecurityLandingViewModel.subject.status === 0">
+														<div class="row align-items-center pt-wifiLength">
+															<div class="col-3">
+																<fa-icon class="wifi-font-icon"
+																	[icon]="['fas', 'wifi']"></fa-icon>
+															</div>
+															<div class="col-9">Prevented your computer from joining <span>{{getMaliciousWifi(wifiHistory)}}</span> malicious networks this month.</div>
+														</div>
+														<ul class="chevron-list">
+															<li *ngFor="let wifi of wifiHistory.slice(0, 2);"
+																class="row">
+																<div class="col-2 item-icon">
+																	<div class="icon-bkg">
+																		<fa-icon [ngClass]="getWifiStatus(wifi.good)"
+																			[icon]="['fas', 'wifi']"></fa-icon>
+																	</div>
+																</div>
+																<div class="col-6">{{wifi.ssid}}</div>
+																<div class="wifi-bg">
+																	<div class="wifi-good"
+																		[ngClass]="getWifiStatus(wifi.good)">{{getWifiDetail(wifi.good)}}</div>
+																</div>
+															</li>
+															<li class="wifi-link"><a routerLink="/wifi-security"
+																	[queryParams]="{isShowMore:false}">See all joined networks</a></li>
+														</ul>
+													</div>
+												</div>
 												<vtr-ui-list-chevron [items]="homeProtectionLandingViewModel.statusList">
 												</vtr-ui-list-chevron>
 												<div class="pull"><img class="coronet-logo"
@@ -69,7 +79,8 @@
 												</div>
 											</div>
 										</div>
-										<vtr-ui-landing-feature *ngIf="windowsHelloLandingViewModel.subject.status !== undefined && windowsHelloLandingViewModel.subject.status !== null" [feature]='windowsHelloLandingViewModel'>
+										<vtr-ui-landing-feature *ngIf="windowsHelloLandingViewModel.subject.status !== undefined && windowsHelloLandingViewModel.subject.status !== null"
+											[feature]='windowsHelloLandingViewModel'>
 										</vtr-ui-landing-feature>
 
 									</div>
