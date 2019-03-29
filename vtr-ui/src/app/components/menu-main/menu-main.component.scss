@@ -149,11 +149,25 @@
 
 							&::after {
 							 	border: none;
-							 	content: "\f107";
-							 	font-family: FontAwesome;
+							 	content: "";
 							 	position: absolute;
-							 	font-size: 3rem;
-							 	margin-left: 1px;
+								height: 1.4rem;
+								width: 0.2rem;
+								background-color: white;
+								transform: rotate(45deg);
+								right: 1.2rem;
+								top: 4rem;
+							}
+							&::before {
+							 	border: none;
+							 	content: "";
+							 	position: absolute;
+								height: 1.4rem;
+								width: 0.2rem;
+								background-color: white;
+								transform: rotate(135deg);
+								right: 2rem;
+								top: 4rem;
 							}
 						}
 					}
