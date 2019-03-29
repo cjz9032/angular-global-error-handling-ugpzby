@@ -31,6 +31,10 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 
 		if (this.systemUpdateService.installationHistory) {
 			this.sortInstallationHistory(this.systemUpdateService.installationHistory);
+
+			if (this.systemUpdateService.installationHistory.length > 5) {
+				this.systemUpdateService.installationHistory = this.systemUpdateService.installationHistory.slice(0, 5);
+			}
 		}
 	}
 
