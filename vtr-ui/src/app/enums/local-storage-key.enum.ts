@@ -3,5 +3,21 @@
  */
 export enum LocalStorageKey {
 	MachineInfo = '[LocalStorageKey] MachineInfo',
-	WelcomeTutorial = '[LocalStorageKey] WelcomeTutorial'
+	WelcomeTutorial = '[LocalStorageKey] WelcomeTutorial',
+	SecurityVPNStatus = '[LocalStorageKey] SecurityVPNStatus',
+	SecurityPasswordManagerStatus = '[LocalStorageKey] SecurityPasswordManagerStatus',
+	SecurityWindowsHelloStatus = '[LocalStorageKey] SecurityWindowsHelloStatus',
+	SecurityMcAfee = '[LocalStorageKey] SecurityMcAfee',
+	SecurityWindowsDefender = '[LocalStorageKey] SecurityWindowsDefender',
+	SecurityOtherAntiVirus = '[LocalStorageKey] SecurityOtherAntiVirus',
+	SecurityOtherFirewall = '[LocalStorageKey] SecurityOtherFirewall',
+	SecurityMcAfeeStatusList = '[LocalStorageKey] SecurityMcAfeeStatusList',
+	SecurityWindowsDefenderStatusList = '[LocalStorageKey] SecurityWindowsDefenderStatusList',
+	SecurityOthersAntiStatusList = '[LocalStorageKey] SecurityOthersAntiStatusList',
+	SecurityOthersFirewallStatusList = '[LocalStorageKey] SecurityOthersFirewallStatusList',
+	SecurityCurrentPage = '[LocalStorageKey] SecurityCurrentPage',
+	SecurityLandingAntivirusStatus = '[LocalStorageKey] SecurityLandingAntivirusStatus',
+	SecurityLandingAntivirusFirewallStatus = '[LocalStorageKey] SecurityLandingAntivirusFirewallStatus',
+	SecurityLandingWifiSecurityStatus = '[LocalStorageKey] SecurityLandingWifiSecurity',
+	SecurityLandingWifiHistory = '[LocalStorageKey] SecurityLandingWifiSecurity',
 }

@@ -15,7 +15,7 @@
 				[maxValue]="eyeCareModeSettings.maximum"
 				[minValueLegend]="'Warm (Better for eyes)'"
 				[maxValueLegend]="'Cold'"
-				[value]="eyeCareModeSettings.current"
+				[(value)]="eyeCareModeSettings.current"
 				(change)="onEyeCareTemparatureChange($event)"
 				(valueChange)="onEyeCareTemparatureValueChange($event)">
 			</vtr-ui-range-slider>

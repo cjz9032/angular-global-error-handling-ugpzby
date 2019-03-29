@@ -7,7 +7,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 
 // THIRD PARTY MODULES
 import { CookieService } from 'ngx-cookie-service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
@@ -78,10 +78,13 @@ import { WidgetDeviceUpdateSettingsComponent } from './components/widgets/widget
 // APPLICATION MODALS
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 import { ModalLenovoIdComponent } from './components/modal/modal-lenovo-id/modal-lenovo-id.component';
+import { ModalWifiSecurityInvitationComponent } from './components/modal/modal-wifi-security-invitation/modal-wifi-security-invitation.component';
+import { ModalWifiSecuriryLocationNoticeComponent } from './components/modal/modal-wifi-securiry-location-notice/modal-wifi-securiry-location-notice.component';
 
 // APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
 import { MockService } from './services/mock/mock.service';
+import { MockWifiSecurity } from './services/mock/mockWifiSecurity.service';
 import { MockSecurityAdvisorService } from './services/mock/mockSecurityAdvisor.service';
 import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
@@ -123,6 +126,11 @@ import { SanitizeUrlPipe } from './pipe/sanitise-url.pipe';
 import { UniqueIdPipe } from './pipe/unique-id.pipe';
 import { environment } from '../environments/environment';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
+import { MetricService } from './services/metric/metric.service';
+import { WidgetMcafeeComponent } from './components/widgets/widget-mcafee/widget-mcafee.component';
+import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
+
+
 import { MetricsDirective } from './directives/metrics.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
@@ -135,6 +143,7 @@ import { ModalUpdateChangeLogComponent } from './components/modal/modal-update-c
 import { ModalArticleDetailComponent } from './components/modal/modal-article-detail/modal-article-detail.component';
 import { ModalThreatLocatorComponent } from './components/modal/modal-threat-locator/modal-threat-locator.component';
 import { DolbyModesTranslationPipe } from './pipe/dolby-modes-translation.pipe';
+import { WidgetOfflineInfoComponent } from './components/widgets/widget-offline-info/widget-offline-info.component';
 import { UiLandingFeatureComponent } from './components/ui/ui-landing-feature/ui-landing-feature.component';
 import { UiObjectTitleComponent } from './components/ui/ui-object-title/ui-object-title.component';
 import { UiSecurityStatusbarComponent } from './components/ui/ui-security-statusbar/ui-security-statusbar.component';
@@ -143,6 +152,8 @@ import { IconNamePipe } from './pipe/ui-security-statusbar/icon-name.pipe';
 import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
 import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import { UiFeatureItemComponent } from './components/ui/ui-feature-item/ui-feature-item.component';
+import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
+import { MinutesToHourminPipe } from './pipe/minutes-to-hourmin.pipe';
 
 
 library.add(fas);
@@ -223,6 +234,13 @@ library.add(fal);
 		SanitizeUrlPipe,
 		UniqueIdPipe,
 		ModalBatteryChargeThresholdComponent,
+		WidgetMcafeeComponent,
+		PipeInstallPipe,
+		IconClassPipe,
+		IconNamePipe,
+		TextClassPipe,
+		StatusTextPipe,
+		ModalBatteryChargeThresholdComponent,
 		MetricsDirective,
 		InstallationHistoryComponent,
 		SeparatePascalCasePipe,
@@ -234,8 +252,12 @@ library.add(fal);
 		SafeDomPipe,
 		ModalCommonConfirmationComponent,
 		ModalArticleDetailComponent,
+		DolbyModesTranslationPipe,
+		WidgetOfflineInfoComponent,
 		ModalThreatLocatorComponent,
 		DolbyModesTranslationPipe,
+		ModalWifiSecurityInvitationComponent,
+		ModalWifiSecuriryLocationNoticeComponent,
 		UiLandingFeatureComponent,
 		UiObjectTitleComponent,
 		UiSecurityStatusbarComponent,
@@ -243,7 +265,10 @@ library.add(fal);
 		IconNamePipe,
 		StatusTextPipe,
 		TextClassPipe,
-		UiFeatureItemComponent
+		UiFeatureItemComponent,
+		UiSecurityStatusbarComponent,
+		StatusTransformPipe,
+		MinutesToHourminPipe
 	],
 	imports: [
 		BrowserModule,
@@ -253,6 +278,7 @@ library.add(fal);
 		AngularSvgIconModule,
 		FontAwesomeModule,
 		NgbModule,
+		// NgbActiveModal,
 		Ng5SliderModule,
 		ReactiveFormsModule,
 		// ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
@@ -262,12 +288,13 @@ library.add(fal);
 		CookieService,
 		DevService,
 		MockService,
-		MockSecurityAdvisorService,
+		MockWifiSecurity,
 		DisplayService,
 		ContainerService,
 		CommsService,
 		DashboardService,
 		SecurityService,
+		MockSecurityAdvisorService,
 		UserService,
 		AudioService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
@@ -278,9 +305,12 @@ library.add(fal);
 		ModalWelcomeComponent,
 		ModalBatteryChargeThresholdComponent,
 		ModalCommonConfirmationComponent,
-		ModalUpdateChangeLogComponent,
 		ModalArticleDetailComponent,
-		ModalThreatLocatorComponent
+		FeedbackFormComponent,
+		ModalThreatLocatorComponent,
+		ModalWifiSecurityInvitationComponent,
+		ModalWifiSecuriryLocationNoticeComponent,
+		ModalUpdateChangeLogComponent,
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA

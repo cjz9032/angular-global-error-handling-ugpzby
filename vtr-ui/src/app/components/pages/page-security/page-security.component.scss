@@ -29,15 +29,19 @@
 				}
 			}
 			.security-widget .security-widget-wifi {
-				// margin-top: 2.7rem;
-				// border: 0.1rem solid $shade_lighter;
-				.vtr-ui-list-chevron {
-					.chevron-list {
-						margin-top: 0;
-					}
-				}
 				.wifi-history {
 					font-size: 1.3rem;
+					border: 0.1rem solid $shade_lighter;
+					border-top: none;
+					border-bottom-left-radius: 0.9rem;
+					border-bottom-right-radius: 0.9rem;
+					.pt-wifiLength {
+						padding-top: 0.8rem;
+						.wifi-font-icon {
+							font-size: 4rem;
+							color: $main;
+						}
+					}
 					.chevron-list {
 						list-style: none;
 						padding: 0;
@@ -45,6 +49,7 @@
 						border: 0.1rem solid $shade_lighter;
 						border-bottom-left-radius: 0.9rem;
 						border-bottom-right-radius: 0.9rem;
+						margin: 0.8rem;
 						.wifi-link {
 							padding-left: 15px;
 						}
@@ -53,19 +58,16 @@
 							padding: 0.5rm 1rem;
 							border-bottom: 0.1rem solid $shade_lighter;
 							color: $main_darker;
-							line-height: 4rem;
-							.good {
-								background-color: $go_dark;
-							}
-							.bad {
-								background-color: $stop_dark;
-							}
-							.orange {
-								background-color: $stop_light;
-							}
+							line-height: 4rem;							
 							.icon-bkg {
-								img {
-									width: 2rem;
+								.good {
+									color: $go_dark;
+								}
+								.bad {
+									color: $stop_dark;
+								}
+								.orange {
+									color: $stop_light;
 								}
 							}
 							.wifi-bg {
@@ -78,48 +80,28 @@
 									border-radius: 5rem;
 									line-height: 2.4rem;
 									text-align: center;
+									padding-left: 0.5rem;
+    								padding-right: 0.5rem;
+								}
+								.good {
+									background-color: $go_dark;
+								}
+								.bad {
+									background-color: $stop_dark;
+								}
+								.orange {
+									background-color: $stop_light;
 								}
 							}
+							&:last-child {
+								border-bottom: none;
+							}
+							&:last-child {
+								border-bottom: none;
+							}
+							
 						}
-					}
-				}
-			}
-			.security-widget.anti-virus {
-				.security-widget-inner {
-					.title {
-						color: $stop_light;
-					}
-
-					.mcafee-logo {
-						width: 10rem;
-						padding-top: 1rem;
-					}
-				}
-			}
-			.security-widget.password-health {
-				.security-widget-inner {
-					.title {
-						fa-icon {
-							color: $main;
-						}
-					}
-					.dashlane-logo {
-						width: 10rem;
-						padding-top: 1rem;
-					}
-				}
-			}
-			.security-widget.vpn-security {
-				border-bottom: none;
-				.security-widget-inner {
-					.title {
-						fa-icon {
-							color: $main;
-						}
-					}
-					.surfeasy-logo {
-						width: 9rem;
-						padding-top: 1.1rem;
+										
 					}
 				}
 			}

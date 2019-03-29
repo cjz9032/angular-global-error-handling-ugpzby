@@ -5,6 +5,10 @@
 		margin-top: $shift_up_small;
 	}
 
+	.windows-logo {
+		width: 10rem;
+		padding-top: 1rem;
+	}
 	.mcafee-logo {
 		width: 10rem;
 		padding-top: 1rem;
@@ -23,6 +27,7 @@
 			font-size: 1.4rem;
 			font-weight: $weight_light;
 			line-height: 2.3rem;
+			text-decoration: underline;
 		}
 
 		.read-more-text {

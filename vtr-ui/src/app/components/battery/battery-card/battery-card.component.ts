@@ -32,11 +32,14 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryService.getBatteryDetail()
 					.then((response: BatteryDetail[]) => {
 						console.log('getBatteryDetailOnCard', response);
-						this.batteryIndicator.percent = response[0].remainingPercent;
+						console.log("this.batteryService.getMainBatteryPercentage", this.batteryService.getMainBatteryPercentage());
+						
+						this.batteryIndicator.percent = this.batteryService.getMainBatteryPercentage();
 						this.batteryIndicator.charging = response[0].chargeStatus == BatteryChargeStatus.CHARGING.id;
 						this.batteryIndicator.expressCharging = response[0].isExpressCharging;
 						this.batteryIndicator.voltageError = response[0].isVoltageError;
 						this.batteryIndicator.convertMin(response[0].remainingTime);
+						response[0].mainBatteryPercent = this.batteryService.getMainBatteryPercentage();
 						this.commonService.sendNotification(BatteryInformation.BatteryInfo,response);
 						this.batteryCardTimer = setTimeout(() => {
 							console.log('Trying after 30 seconds');
