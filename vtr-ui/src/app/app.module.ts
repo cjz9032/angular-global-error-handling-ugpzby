@@ -153,6 +153,8 @@ import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
 import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
 import { MinutesToHourminPipe } from './pipe/minutes-to-hourmin.pipe';
+import { ChoosePagePipe } from './pipe/security-antivirus/choose-page.pipe';
+import { DayFormatPipe } from './pipe/security-antivirus/day-format.pipe';
 
 
 library.add(fas);
@@ -266,7 +268,9 @@ library.add(fal);
 		TextClassPipe,
 		UiSecurityStatusbarComponent,
 		StatusTransformPipe,
-		MinutesToHourminPipe
+		MinutesToHourminPipe,
+		ChoosePagePipe,
+		DayFormatPipe
 	],
 	imports: [
 		BrowserModule,
