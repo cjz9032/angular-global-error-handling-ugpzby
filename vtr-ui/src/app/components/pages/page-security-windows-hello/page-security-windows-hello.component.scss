@@ -11,13 +11,13 @@
 	.title {
 		color: $main_dark;
 		font-size: 4.5rem;
-		font-weight: $weight_light;
+		font-weight: $weight_regular;
 	}
 
 	.heading {
 		color: $main_dark;
 		font-size: 2.5rem;
-		font-weight: $weight_light;
+		font-weight: $weight_regular;
 	}
 
 	.sub-heading {
@@ -45,7 +45,7 @@
 		font-weight: $weight_bold;
 
 		.adjust-left {
-			padding-left: 2.5rem;
+			padding-left: 0rem;
 		}
 	}
 
@@ -77,6 +77,7 @@
 		border-radius: 4.5rem;
 		padding: 1rem 4rem 1rem 4rem;
 		font-size: 1.8rem;
+		font-weight: $weight_bold;
 	}
 
 	.dashlane-side-left-img {
