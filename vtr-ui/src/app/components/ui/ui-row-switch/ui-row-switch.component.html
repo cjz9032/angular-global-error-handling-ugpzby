@@ -43,10 +43,12 @@
 						[ngClass]="{'ml-auto': type!=='camera'}"
 						*ngIf="resetText.length > 0">
 						<button type="button"
-							class="btn btn-link text"
+							class="btn"
+							[ngClass]="{'btn-link text':!resetTextAsButton ,'btn-label':resetTextAsButton}"
 							(click)="onResetClick($event)">
 							{{ resetText }}
 						</button>
+
 					</div>
 					<div class="right-align"
 						*ngIf="isSwitchVisible">
