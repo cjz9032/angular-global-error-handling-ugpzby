@@ -60,8 +60,7 @@ export class PageSecurityInternetComponent implements OnInit {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			// 'Page': 'internet-protection',
-			'Page': 'dashboard',
+			'Page': 'internet-protection',
 			'Lang': 'EN',
 			'GEO': 'US',
 			'OEM': 'Lenovo',
@@ -72,7 +71,7 @@ export class PageSecurityInternetComponent implements OnInit {
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
 
 				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
 			},

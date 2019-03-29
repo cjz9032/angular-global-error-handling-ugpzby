@@ -91,8 +91,7 @@ export class PageSecurityWifiComponent implements OnInit {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			// 'Page': 'wifi-security',
-			'Page': 'dashboard',
+			'Page': 'wifi-security',
 			'Lang': 'EN',
 			'GEO': 'US',
 			'OEM': 'Lenovo',
@@ -103,7 +102,7 @@ export class PageSecurityWifiComponent implements OnInit {
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
 
 				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
 			},
