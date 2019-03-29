@@ -16,8 +16,7 @@
 								<div class="rounded-card-with-shadow p-5">
 									<div class="row">
 										<div class="col-auto align-self-center">
-											<img class="img-fluid"
-												src="./../../../../assets/images/antivirus/protection.png" />
+											<img class="img-fluid" src="./../../../../assets/images/antivirus/protection.png" />
 
 										</div>
 										<div class="col">
@@ -49,6 +48,10 @@
 										<div class="subtitle pb-5">Windows defender offers basic protection for your
 											device
 										</div>
+										
+										<vtr-ui-security-statusbar [statusList]=" viewMode.windowsDefenderstatusList | statusTransform" >
+										</vtr-ui-security-statusbar>
+										
 
 										<vtr-ui-security-statusbar [statusList]=" viewMode.windowsDefenderstatusList | statusTransform">
 										</vtr-ui-security-statusbar>
@@ -157,8 +160,7 @@
 										</div>
 									</div>
 									<div class="col-auto align-self-center px-0">
-										<img class="mcafee-logo"
-											src="../../../../assets/images/mcafee_logo.svg" />
+										<img class="mcafee-logo" src="../../../../assets/images/mcafee_logo.svg" />
 									</div>
 								</div>
 							</div>
@@ -221,8 +223,7 @@
 										<div class="col-6">
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon1.png" />
+													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon1.png" />
 
 
 												</div>
@@ -239,8 +240,7 @@
 											</div>
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon2.png" />
+													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon2.png" />
 
 
 												</div>
@@ -257,8 +257,7 @@
 											</div>
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon3.png" />
+													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon3.png" />
 
 
 												</div>
@@ -273,8 +272,7 @@
 											</div>
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon4.png" />
+													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon4.png" />
 
 
 												</div>
@@ -293,8 +291,7 @@
 										<div class="col-6">
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon5.png" />
+													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon5.png" />
 
 
 												</div>
@@ -311,8 +308,7 @@
 											</div>
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon6.png" />
+													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon6.png" />
 
 
 												</div>
@@ -331,8 +327,7 @@
 											</div>
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid"
-														src="./../../../../assets/images/antivirus/icon7.png" />
+													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon7.png" />
 
 
 												</div>
@@ -380,8 +375,7 @@
 										</div>
 									</div>
 									<div class="col-auto align-self-center px-0">
-										<img class="mcafee-logo"
-											src="../../../../assets/images/mcafee_logo.svg" />
+										<img class="mcafee-logo" src="../../../../assets/images/mcafee_logo.svg" />
 									</div>
 								</div>
 							</div>
@@ -524,8 +518,7 @@
 										</div>
 									</div>
 									<div class="col-auto align-self-center px-0">
-										<img class="mcafee-logo"
-											src="../../../../assets/images/mcafee_logo.svg" />
+										<img class="mcafee-logo" src="../../../../assets/images/mcafee_logo.svg" />
 									</div>
 								</div>
 							</div>
@@ -537,9 +530,7 @@
 								<!--Start of Security Card Advisor-->
 								<div class="row mb-40">
 									<div class="col col-12">
-										<vtr-widget-status [title]="'Security Advisor'"
-											[description]="'CHECK IF YOUR DEVICE IS SECURED.'"
-											[items]="mockService.securityStatus">
+										<vtr-widget-status [title]="'Security Advisor'" [description]="'CHECK IF YOUR DEVICE IS SECURED.'" [items]="mockService.securityStatus">
 										</vtr-widget-status>
 									</div>
 								</div>
@@ -548,7 +539,7 @@
 								<div class="row">
 									<div class="col col-12">
 										<vtr-article-item *ngFor="let item of articles, let i = index"
-											[item]="item"></vtr-article-item>
+										[item]="item"></vtr-article-item>
 									</div>
 								</div>
 							</div>
