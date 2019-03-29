@@ -108,8 +108,9 @@
 																<a vtrMetrics
 																	metricsItem="setUpWindowsHello"
 																	metricsEvent="itemClick"
-																	[href]="windowsHello.windowsHelloProtocol | sanitizeUrl">Visit
-																	Windows Hello</a> in system settings
+																	href="javascript:void(0)"
+																	(click)="setUpWindowsHello()">
+																	Visit Windows Hello</a> in system settings
 															</div>
 														</div>
 													</div>
@@ -169,6 +170,7 @@
 																Start using Windows Hello to log into Microsoft Apps
 																such as
 																Outlook, OneDrive, Office 365 and Xbox Live. <a
+																	target="_blank"
 																	vtrMetrics
 																	metricsItem="visitMicrosoft"
 																	metricsEvent="itemClick"
@@ -228,11 +230,11 @@
 												<li>
 													<div class="text-regular">
 														Visit the Windows Hello page and register your fingerprint
-														<a 
-															vtrMetrics
+														<a vtrMetrics
 															metricsItem="setUpWindowsHello"
 															metricsEvent="itemClick"
-															[href]="windowsHello.windowsHelloProtocol | sanitizeUrl">
+															href="javascript:void(0)"
+															(click)="setUpWindowsHello()">
 															Visit Windows Hello </a> in system settings
 													</div>
 												</li>
@@ -247,6 +249,7 @@
 														<div class="text-regular">
 															Start using Windows Hello to log into Microsoft Apps such as
 															Outlook, OneDrive, Office 365 and Xbox Live. <a
+																target="_blank"
 																vtrMetrics
 																metricsItem="visitMicrosoft"
 																metricsEvent="itemClick"
