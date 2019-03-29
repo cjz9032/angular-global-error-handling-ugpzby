@@ -22,11 +22,11 @@
 											<div class="pull right"><img class="dashlane_logo_teal"
 													src="../../../../assets/images/windows-logo.png" /></div>
 										</div>
-										<div *ngIf="status === 'disabled'"
+										<div *ngIf="statusItem.status === 'disabled'"
 											class="row mt-20">
 											<div class="col">
 												<div class="text-regular">
-													Protect your ideapad with these Lenovo recommended security options.
+													Protect your device with these Lenovo recommended security options.
 													<!-- Traditional passwords can be stolen and used to access your account
 													from anywhere in the world. More secure and convenient, Windows
 													Hello is the next generation of a password. Use your fingerprint
@@ -34,21 +34,21 @@
 												</div>
 											</div>
 										</div>
-										<div *ngIf="status === 'enabled'"
+										<div *ngIf="statusItem.status === 'enabled'"
 											class="row">
 											<div class="col">
 												<div class="text-regular">
-													Protect your ideapad with these Lenovo recommended security options.
+													Protect your device with these Lenovo recommended security options.
 												</div>
 											</div>
 										</div>
 										<div class="row mt-40">
 											<div class="col">
-												<vtr-ui-security-statusbar [title]="'WINDOWS HELLO'"
-													[status]="status"></vtr-ui-security-statusbar>
+												<vtr-ui-security-statusbar [statusList]="[statusItem]">
+												</vtr-ui-security-statusbar>
 											</div>
 										</div>
-										<div *ngIf="status === 'disabled'"
+										<div *ngIf="statusItem.status === 'disabled'"
 											class="row mt-40">
 											<div class="col">
 												<div class="text-regular">Sign in quickly and securely with Windows
@@ -58,8 +58,7 @@
 												<div class="col-12">
 													<button type="button"
 														vtrMetrics
-														metricsItem="btn.setup windows hello"
-														metricsParent="windows-hello"
+														metricsItem="setUpWindowsHello"
 														metricsEvent="itemClick"
 														(click)="setUpWindowsHello()"
 														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
@@ -73,7 +72,7 @@
 							</div>
 						</div>
 						<div class="row vtr-page-security-windows-hello"
-							*ngIf="status === 'disabled'">
+							*ngIf="statusItem.status === 'disabled'">
 							<div class="row">
 								<div class="col col-12 col-sm-12 mt-40">
 									<div>
@@ -111,7 +110,9 @@
 															<div class="text-regular">
 																Visit the Windows Hello page and register your
 																fingerprint.
-																<a
+																<a vtrMetrics
+																	metricsItem="setUpWindowsHello"
+																	metricsEvent="itemClick"
 																	[href]="windowsHello.windowsHelloProtocol | sanitizeUrl">Visit
 																	Windows Hello</a> in system settings
 															</div>
@@ -173,6 +174,9 @@
 																Start using Windows Hello to log into Microsoft Apps
 																such as
 																Outlook, OneDrive, Office 365 and Xbox Live. <a
+																	vtrMetrics
+																	metricsItem="visitMicrosoft"
+																	metricsEvent="itemClick"
 																	href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
 																	Visit Microsoft</a>
 															</div>
@@ -189,7 +193,10 @@
 									<div class="col">
 										<div class="list-heading">Powered By Windows Hello</div>
 										<p class="text-regular">Read more on the
-											<a href="https://support.microsoft.com/en-us/help/4468253/windows-hello-and-privacy-microsoft-privacy"
+											<a vtrMetrics
+												metricsItem="privacyPolicy"
+												metricsEvent="itemClick"
+												href="https://support.microsoft.com/en-us/help/4468253/windows-hello-and-privacy-microsoft-privacy"
 												class="learnmore">Privacy
 												Policy</a>
 									</div>
@@ -199,7 +206,7 @@
 							</div>
 						</div>
 						<div class="row vtr-connected-security-password"
-							*ngIf="status === 'enabled'">
+							*ngIf="statusItem.status === 'enabled'">
 							<div class="row">
 								<div class="col col-12 col-sm-12 mt-40">
 									<div>
@@ -226,8 +233,11 @@
 												<li>
 													<div class="text-regular">
 														Visit the Windows Hello page and register your fingerprint
-														<a [href]="windowsHello.windowsHelloProtocol | sanitizeUrl">Visit
-															Windows Hello </a> in system settings
+														<a vtrMetrics
+															metricsItem="setUpWindowsHello"
+															metricsEvent="itemClick"
+															[href]="windowsHello.windowsHelloProtocol | sanitizeUrl">
+															Visit Windows Hello </a> in system settings
 													</div>
 												</li>
 												<li>
@@ -240,7 +250,9 @@
 													<div class="col">
 														<div class="text-regular">
 															Start using Windows Hello to log into Microsoft Apps such as
-															Outlook, OneDrive, Office 365 and Xbox Live. <a
+															Outlook, OneDrive, Office 365 and Xbox Live. <a vtrMetrics
+																metricsItem="visitMicrosoft"
+																metricsEvent="itemClick"
 																href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
 																Visit Microsoft</a>
 														</div>

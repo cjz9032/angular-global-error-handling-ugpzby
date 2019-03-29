@@ -1,36 +1,36 @@
 <div class="vtr-ui-switch-row"
- [ngClass]="{
+	[ngClass]="{
 		'white-theme': theme === 'white',
 		'blue-theme': theme === 'blue'
 	}">
 	<div class="container-fluid p-0"
-	 [ngClass]="{'vtr-disabled': disabled}">
+		[ngClass]="{'vtr-disabled': disabled}">
 		<div class="row m-0">
 			<div class="col col-xs-8"
-			 [ngClass]="{'col-md-8': (type==='auto-updates' || type==='camera'), 'col-md-10':type===undefined}">
+				[ngClass]="{'col-md-8': (type==='auto-updates' || type==='camera'), 'col-md-10':type===undefined}">
 				<div class="container-fluid p-0">
 					<div class="row m-0">
 						<div class="col-auto left-icon-column"
-						 *ngIf="leftIcon.length > 0">
+							*ngIf="leftIcon.length > 0">
 							<fa-icon *ngIf="leftIcon[0]!=='svg'"
-							 class="left-icon"
-							 [icon]="leftIcon"></fa-icon>
+								class="left-icon"
+								[icon]="leftIcon"></fa-icon>
 							<svg-icon *ngIf="leftIcon[0]==='svg'"
-							 [applyCss]="true"
-							 [stretch]="true"
-							 class="left-icon"
-							 [src]="'assets/icons/'+leftIcon[1]+'.svg'"></svg-icon>
+								[applyCss]="true"
+								[stretch]="true"
+								class="left-icon"
+								[src]="'assets/icons/'+leftIcon[1]+'.svg'"></svg-icon>
 						</div>
 						<div class="col">
 							<div class="title">{{ title }}</div>
 							<div class="caption"
-							 *ngIf="caption.length > 0"
-							 [innerHTML]="caption">
+								*ngIf="caption.length > 0"
+								[innerHTML]="caption">
 								<!-- {{ caption }} -->
 							</div>
 							<div class="read-more"
-							 *ngIf="readMoreText.length > 0"
-							 (click)="onReadMoreClick($event)">
+								*ngIf="readMoreText.length > 0"
+								(click)="onReadMoreClick($event)">
 								{{ readMoreText }}
 							</div>
 						</div>
@@ -40,27 +40,38 @@
 			<div class="col col-xs-4">
 				<div class="row">
 					<div class="p-0"
-					 [ngClass]="{'ml-auto': type!=='camera'}"
-					 *ngIf="resetText.length > 0">
+						[ngClass]="{'ml-auto': type!=='camera'}"
+						*ngIf="resetText.length > 0">
 						<button type="button"
-						 class="btn btn-link text"
-						 (click)="onResetClick($event)">
+							class="btn"
+							[ngClass]="{'btn-link text':!resetTextAsButton ,'btn-label':resetTextAsButton}"
+							(click)="onResetClick($event)">
 							{{ resetText }}
 						</button>
+
 					</div>
 					<div class="right-align"
-					 *ngIf="isSwitchVisible">
+						*ngIf="isSwitchVisible">
 						<vtr-ui-switch-onoff [name]="name"
-						 [value]="isSwitchChecked"
-						 [disabled]="disabled"
-						 (toggle)="onOnOffChange($event)"></vtr-ui-switch-onoff>
+							[value]="isSwitchChecked"
+							[disabled]="disabled"
+							(toggle)="onOnOffChange($event)"></vtr-ui-switch-onoff>
 					</div>
 					<div *ngIf="!isSwitchVisible && linkText"
-					 class="p-0 link-text">
-						<a routerLink="/{{linkPath}}"
-						 class="link-text">
+						class="p-0 link-text">
+						<a *ngIf="linkPath.startsWith('ms-settings:'); else elseBlock"
+							href="javascript:void(0)"
+							(click)="onLinkClick(linkPath)"
+							class="link-text">
 							{{linkText}}
 						</a>
+						<ng-template #elseBlock>
+							<a routerLink="/{{linkPath}}"
+								class="link-text">
+								{{linkText}}
+							</a>
+						</ng-template>
+
 					</div>
 
 					<div class="p-0"
@@ -114,7 +125,7 @@
 			</div> -->
 		</div>
 		<div class="row m-0"
-		 *ngIf="showChildContent">
+			*ngIf="showChildContent">
 			<!-- <div class="col-1 pr-0"></div> -->
 			<div class="col-12 pr-0">
 				<ng-content #childContent></ng-content>

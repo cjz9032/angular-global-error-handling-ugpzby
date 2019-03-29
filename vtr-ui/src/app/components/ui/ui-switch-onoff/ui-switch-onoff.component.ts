@@ -3,6 +3,7 @@ import { TranslationService } from 'src/app/services/translation/translation.ser
 import Translation from 'src/app/data-models/translation/translation';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { TranslationSection } from 'src/app/enums/translation-section.enum';
+import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
 
 @Component({
 	selector: 'vtr-ui-switch-onoff',
@@ -12,8 +13,9 @@ import { TranslationSection } from 'src/app/enums/translation-section.enum';
 export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	@Output() toggle: EventEmitter<any> = new EventEmitter();
 	@Input() value: boolean;
+	@Input() data: WifiHomeViewModel;
 	@Input() name: string;
-	@Input() disabled: boolean = false;
+	@Input() disabled = false;
 
 	uiSubscription: Subscription;
 
@@ -38,7 +40,20 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 
 
 	onChange(event) {
-		this.value = !this.value;
+		try {
+			if (this.data) {
+				if (this.value) {
+					this.data.wifiSecurity.disableWifiSecurity();
+				} else {
+					this.data.wifiSecurity.enableWifiSecurity();
+				}
+			} else {
+				this.value = !this.value;
+			}
+		} catch (err) {
+			console.log(err);
+		}
+
 		event.switchValue = this.value;
 		this.toggle.emit(event);
 	}
