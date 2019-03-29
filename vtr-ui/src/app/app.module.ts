@@ -142,6 +142,7 @@ import { IconClassPipe } from './pipe/ui-security-statusbar/icon-class.pipe';
 import { IconNamePipe } from './pipe/ui-security-statusbar/icon-name.pipe';
 import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
 import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
+import { UiFeatureItemComponent } from './components/ui/ui-feature-item/ui-feature-item.component';
 
 
 library.add(fas);
@@ -241,7 +242,8 @@ library.add(fal);
 		IconClassPipe,
 		IconNamePipe,
 		StatusTextPipe,
-		TextClassPipe
+		TextClassPipe,
+		UiFeatureItemComponent
 	],
 	imports: [
 		BrowserModule,
