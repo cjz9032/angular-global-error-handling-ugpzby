@@ -32,18 +32,6 @@
 									</div>
 									
 									<div class="col col-md-6 security-widgets-container">
-										<div class="security-widget wifi-connected-home" *ngIf="wifiSecurityLandingViewModel.subjectStatus !== undefined && wifiSecurityLandingViewModel.subjectStatus !== null">
-											<div class="security-widget-inner">
-												<div class="security-widget-wifi">
-														<vtr-ui-object-title [objects]="wifiSecurityLandingViewModel">													
-															</vtr-ui-object-title>
-                            <vtr-ui-list-chevron [items]="wifiSecurityLandingViewModel.statusList">
-                              </vtr-ui-list-chevron>
-                              <div class="wifi-history" *ngIf="wifiHistory && wifiSecurityLandingViewModel.subjectStatus === 0">
-                                <div class="row align-items-center pt-wifiLength">
-                                  <div class="col-3">
-																		<fa-icon class="wifi-font-icon" [icon]="['fas', 'wifi']"></fa-icon>
-                                    <!-- <img src="../../../../assets//images//img-empty.svg" alt=""> -->
 										<div class="security-widget wifi-connected-home" *ngIf="wifiSecurityLandingViewModel.subject.status !== undefined && wifiSecurityLandingViewModel.subject.status !== null">
 											<div class="security-widget-inner">
 												<div class="security-widget-wifi">
