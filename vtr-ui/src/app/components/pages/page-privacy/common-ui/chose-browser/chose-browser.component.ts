@@ -14,8 +14,8 @@ export class ChoseBrowserComponent implements OnChanges {
 
 	ngOnChanges(changes: SimpleChanges) {
 		const {browserList} = changes;
-		if (browserList) {
-			this.choseBrowser(browserList[0].value);
+		if (browserList.currentValue) {
+			this.choseBrowser(browserList.currentValue[0].value);
 		}
 	}
 
