@@ -93,8 +93,17 @@
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col col-12">
-									<vtr-article-item *ngFor="let item of articles, let i = index"
-										[item]="item"></vtr-article-item>
+									<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+										[caption]="cardContentPositionA.Description"
+										[title]="cardContentPositionA.Title"
+										[logoText]="cardContentPositionA.BrandName"
+										[action]="cardContentPositionA.Action"
+										[actionLink]="cardContentPositionA.ActionLink"
+										[type]="'corner'"
+										[ratioX]="4"
+										[ratioY]="2"
+										[cornerShift]="'large'">
+									</vtr-container-card>
 								</div>
 							</div>
 						</div>

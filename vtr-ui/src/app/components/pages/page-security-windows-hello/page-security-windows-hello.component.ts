@@ -17,7 +17,7 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 
 	windowsHello: WindowsHello;
 	statusItem: any;
-	articles: [];
+	cardContentPositionA: any;
 
 	constructor(
 		public mockService: MockService,
@@ -67,7 +67,8 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'windows-hello',
+			// 'Page': 'windows-hello',
+			'Page': 'dashboard',
 			'Lang': 'EN',
 			'GEO': 'US',
 			'OEM': 'Lenovo',
@@ -76,12 +77,14 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSArticles(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				this.articles = response;
+				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+
+				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
 			},
 			error => {
-				console.log('Error occurs when fetch CMS content of Windows Hello page', error);
+				console.log('fetchCMSContent error', error);
 			}
 		);
 	}

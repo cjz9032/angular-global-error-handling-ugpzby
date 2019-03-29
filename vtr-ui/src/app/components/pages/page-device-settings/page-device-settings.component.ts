@@ -37,7 +37,7 @@ export class PageDeviceSettingsComponent implements OnInit {
 			active: false
 		}
 	];
-	articles: [];
+	cardContentPositionA: any;
 
 	constructor(
 		private devService: DevService,
@@ -53,7 +53,8 @@ export class PageDeviceSettingsComponent implements OnInit {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'device-settings',
+			// 'Page': 'device-settings',
+			'Page': 'dashboard',
 			'Lang': 'EN',
 			'GEO': 'US',
 			'OEM': 'Lenovo',
@@ -62,9 +63,11 @@ export class PageDeviceSettingsComponent implements OnInit {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSArticles(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				this.articles = response;
+				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+
+				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
 			},
 			error => {
 				console.log('fetchCMSContent error', error);

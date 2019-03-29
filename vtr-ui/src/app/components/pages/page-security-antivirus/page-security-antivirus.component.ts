@@ -27,7 +27,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 	urlPrivacyPolicy = 'https://www.mcafee.com/consumer/en-us/policy/global/legal.html';
 	urlTermsOfService = 'https://www.mcafee.com/consumer/en-us/policy/global/legal.html';
 	urlGetMcAfee = '25CAD7D97D59483381EA39A87685A3C7';
-	articles = [];
+	cardContentPositionA: any;
 
 	@HostListener('window:focus')
 	onFocus(): void {
@@ -50,7 +50,8 @@ export class PageSecurityAntivirusComponent implements OnInit {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'anti-virus',
+			// 'Page': 'anti-virus',
+			'Page': 'dashboard',
 			'Lang': 'EN',
 			'GEO': 'US',
 			'OEM': 'Lenovo',
@@ -59,9 +60,11 @@ export class PageSecurityAntivirusComponent implements OnInit {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSArticles(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				this.articles = response;
+				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+
+				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
 			},
 			error => {
 				console.log('fetchCMSContent error', error);
@@ -79,8 +82,3 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		articleDetailModal.componentInstance.articleId = this.urlGetMcAfee;
 	}
 }
-
-
-
-
-

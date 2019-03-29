@@ -173,8 +173,7 @@
 															<div class="text-regular">
 																Start using Windows Hello to log into Microsoft Apps
 																such as
-																Outlook, OneDrive, Office 365 and Xbox Live. <a
-																	vtrMetrics
+																Outlook, OneDrive, Office 365 and Xbox Live. <a vtrMetrics
 																	metricsItem="visitMicrosoft"
 																	metricsEvent="itemClick"
 																	href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
@@ -287,8 +286,17 @@
 								<!--End of Security Card Advisor-->
 								<div class="row">
 									<div class="col col-12">
-										<vtr-article-item *ngFor="let item of articles, let i = index"
-											[item]="item"></vtr-article-item>
+										<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+											[caption]="cardContentPositionA.Description"
+											[title]="cardContentPositionA.Title"
+											[logoText]="cardContentPositionA.BrandName"
+											[action]="cardContentPositionA.Action"
+											[actionLink]="cardContentPositionA.ActionLink"
+											[type]="'corner'"
+											[ratioX]="4"
+											[ratioY]="2"
+											[cornerShift]="'large'">
+										</vtr-container-card>
 									</div>
 								</div>
 							</div>

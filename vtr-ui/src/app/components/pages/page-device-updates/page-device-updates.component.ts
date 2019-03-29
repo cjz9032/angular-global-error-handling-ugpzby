@@ -27,7 +27,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	back = 'BACK';
 	backarrow = '< ';
 
-	articles: [];
+	cardContentPositionA: any;
 
 	private lastUpdatedText = 'Last update was on';
 	private nextScanText = 'Next update scan is scheduled on';
@@ -164,7 +164,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			'Page': 'system-updates',
+			// 'Page': 'system-updates',
+			'Page': 'dashboard',
 			'Lang': 'EN',
 			'GEO': 'US',
 			'OEM': 'Lenovo',
@@ -173,10 +174,11 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSArticles(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
+				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
 
-				this.articles = response;
+				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
 			},
 			error => {
 				console.log('fetchCMSContent error', error);
