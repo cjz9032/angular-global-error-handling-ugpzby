@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
 import { BatteryDetailMockService } from 'src/app/services/battery-detail/battery-detail.mock.service';
 import { BaseBatteryDetail } from 'src/app/services/battery-detail/base-battery-detail';
@@ -16,7 +16,7 @@ import { Subscription } from 'rxjs';
 	styleUrls: ['./battery-detail.component.scss'],
 })
 export class BatteryDetailComponent implements OnInit, OnDestroy {
-	public dataSource: BatteryDetail[];
+	@Input() public dataSource: BatteryDetail[];
 	remainingTimeText = "Remaining time";
 	batteryIndicators = new BatteryIndicator();
 	private notificationSubscription: Subscription;
@@ -78,6 +78,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		console.log('In ngOnInit');
+		this.preProcessBatteryDetailResponse(this.dataSource);
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
