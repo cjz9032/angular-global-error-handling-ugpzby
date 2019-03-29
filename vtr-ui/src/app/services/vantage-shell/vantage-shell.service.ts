@@ -280,7 +280,7 @@ export class VantageShellService {
 	public sendContractToPrivacyCore<T>
 	(contract: {contract: string, command: string, payload: string | Object}): Observable<T> {
 		if (this.phoenix && this.phoenix.privacy) {
-			return from(this.phoenix.privacy.sendContractToPlugin(contract));
+			return from(this.phoenix.privacy.sendContractToPlugin(contract)) as Observable<T>;
 		}
 		return EMPTY;
 	}
