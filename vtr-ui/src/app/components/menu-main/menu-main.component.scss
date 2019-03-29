@@ -147,14 +147,14 @@
 							position: relative;
 							padding-right: 2.4rem;
 
-							// &::after {
-							// 	border: none;
-							// 	content: "\f107";
-							// 	font-family: FontAwesome;
-							// 	position: absolute;
-							// 	font-size: 3rem;
-							// 	margin-left: 1px;
-							// }
+							&::after {
+							 	border: none;
+							 	content: "\f107";
+							 	font-family: FontAwesome;
+							 	position: absolute;
+							 	font-size: 3rem;
+							 	margin-left: 1px;
+							}
 						}
 					}
 				}
