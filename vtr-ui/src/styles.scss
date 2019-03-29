@@ -23,6 +23,30 @@ html {
 	letter-spacing: 0.1em;
 }
 
+@media #{$dpiquery_0} {
+
+}
+
+@media #{$dpiquery_1} {
+
+}
+
+@media #{$dpiquery_2} {
+
+}
+
+@media #{$dpiquery_3} {
+
+}
+
+@media #{$dpiquery_4} {
+
+}
+
+@media #{$dpiquery_5} {
+
+}
+
 @media #{$mediaquery_0} {
 	html {
 		font-size: 100%;
@@ -91,7 +115,7 @@ body {
 	width: 100%;
 	height: 100%;
 	font-family: "Segoe UI";
-	font-weight: 300;
+	// font-weight: 300;
 }
 
 svg-icon {

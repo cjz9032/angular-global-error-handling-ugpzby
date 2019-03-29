@@ -68,7 +68,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				console.log(error);
 			}
 		);
-		//this.statusChangedLocationPermission();
+		this.statusChangedLocationPermission();
 	}
 
 	ngOnDestroy() {
@@ -205,9 +205,9 @@ export class SubpageDeviceSettingsDisplayComponent
 				this.displayService
 					.resetEyeCareMode().then((resetData: any) => {
 						console.log('temparature reset data', resetData);
-						//this.eyeCareDataSource.current = resetData.colorTemperature;
-						//this.eyeCareModeStatus.status = resetData.eyecaremodeState;
-						//this.sunsetToSunriseModeStatus.status = resetData.autoEyecaremodeState;
+						this.eyeCareDataSource.current = resetData.colorTemperature;
+						this.eyeCareModeStatus.status = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
+						this.sunsetToSunriseModeStatus.status =  (resetData.autoEyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
 						console.log('sunsetToSunriseModeStatus.status from temparature reset data', this.sunsetToSunriseModeStatus.status);
 						//	this.getDisplayColorTemperature();
 					});
@@ -321,7 +321,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 	// End Camera Privacy
 	public getLocationPermissionStatus(value: any) {
-		console.log('called from loaction service ui', value);
+		console.log('called from loaction service ui', JSON.stringify(value));
 	}
 
 	public statusChangedLocationPermission() {
