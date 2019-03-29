@@ -31,6 +31,7 @@ Write-Host 'done';
 
 Get-Command 'cov-commit-defects' -ErrorAction Stop | Out-Null;
 Write-Host -NoNewline 'Now, committing the result to the server...';
-$command = 'cov-commit-defects --dir coverity-idirs --host lnvussa.lenovonet.lenovo.local --port 80 --stream tan-client-experience --auth-key-file coverity\ak-lnvussa.lenovonet.lenovo.local-80';
+$keyfile = Join-Path (Get-Item $PSScriptRoot) 'ak-lnvussa.lenovonet.lenovo.local-80';
+$command = 'cov-commit-defects --dir ' + $idirs + ' --host lnvussa.lenovonet.lenovo.local --port 80 --stream tan-client-experience --auth-key-file ' + $keyfile;
 Invoke-Expression -Command $command | Out-Null;
 Write-Host 'done';
