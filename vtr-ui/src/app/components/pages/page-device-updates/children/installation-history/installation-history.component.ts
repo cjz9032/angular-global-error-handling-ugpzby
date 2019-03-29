@@ -31,10 +31,6 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 
 		if (this.systemUpdateService.installationHistory) {
 			this.sortInstallationHistory(this.systemUpdateService.installationHistory);
-
-			if (this.systemUpdateService.installationHistory.length > 5) {
-				this.systemUpdateService.installationHistory = this.systemUpdateService.installationHistory.slice(0, 5);
-			}
 		}
 	}
 
@@ -103,5 +99,8 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 	private sortInstallationHistory(history: Array<UpdateHistory>) {
 		this.installationHistory = this.mapMessage(history);
 		this.systemUpdateService.sortInstallationHistory(this.installationHistory, this.sortAsc);
+		if (this.installationHistory.length > 5) {
+			this.installationHistory = this.installationHistory.slice(0, 5);
+		}
 	}
 }
