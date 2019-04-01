@@ -124,9 +124,8 @@ export class WidgetDeviceComponent implements OnInit {
 
 			if (response.sysupdate) {
 				const updateStatus = response.sysupdate.status;
-				const lastUpdate = '2018-04-01T21:50:16'; // response.sysupdate.lastupdate;
+				const lastUpdate = response.sysupdate.lastupdate;
 				const diffInDays = this.systemUpdateService.dateDiffInDays(lastUpdate);
-				console.log('dateDiffInDays', diffInDays);
 
 				if (updateStatus === 1) {
 					systemUpdate.title = `Software up to date `;
