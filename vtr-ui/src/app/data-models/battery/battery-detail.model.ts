@@ -13,6 +13,7 @@ class BatteryDetail {
 
 	public chargeStatus: number;
 	public chargeStatusString: string;
+	public mainBatteryPercent: number;
 	public remainingPercent: number;
 	public remainingTime: number;
 	public remainingCapacity: number;
@@ -29,7 +30,7 @@ class BatteryDetail {
 	public designCapacity: number;
 	public designVoltage: number;
 	public firmwareVersion: string;
-	public fruPartNumber: string;
+	public fruPart: string;
 	public isVoltageError: boolean; 
 	public isExpressCharging: boolean;
 	//#endregion

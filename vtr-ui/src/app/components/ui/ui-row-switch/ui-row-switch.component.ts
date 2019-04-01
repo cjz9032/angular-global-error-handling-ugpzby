@@ -38,6 +38,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 	@Input() name = '';
 	@Input() disabled = false;
 	@Input() type = undefined;
+	@Input() resetTextAsButton = false;
 
 	@Output() toggleOnOff = new EventEmitter<boolean>();
 	@Output() readMoreClick = new EventEmitter<boolean>();

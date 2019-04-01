@@ -5,7 +5,7 @@ import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 @Injectable()
 export class DisplayService {
 	private displayEyeCareMode: any;
-	private cameraPrivacyStatus: any ;
+	private cameraPrivacyStatus: any;
 	private cameraSettings: any;
 
 	public isShellAvailable = false;
@@ -79,13 +79,12 @@ export class DisplayService {
 		return undefined;
 	}
 	public setEyeCareModeState(value: boolean): Promise<boolean> {
-		 try{
+		try {
 			if (this.displayEyeCareMode) {
 				return this.displayEyeCareMode.setEyeCareMode(value);
 			}
 			return undefined;
-		}
-		catch(error) {
+		}	catch (error) {
 			throw new Error(error.message);
 		}
 	}
@@ -114,7 +113,7 @@ export class DisplayService {
 		}
 		return undefined;
 	}
-	public setCameraAutoExposure(value: number): Promise<boolean> {
+	public setCameraAutoExposure(value: boolean): Promise<boolean> {
 		if (this.cameraSettings) {
 			return this.cameraSettings.setCameraAutoExposure(value);
 		}
@@ -179,8 +178,7 @@ export class DisplayService {
 				return this.displayEyeCareMode.statusChangedLocationPermission((handler));
 			}
 			return undefined;
-		}
-		catch (error) {
+		} catch (error) {
 			throw new Error(error.message);
 		}
 	}

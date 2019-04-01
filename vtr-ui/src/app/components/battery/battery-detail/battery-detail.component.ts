@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
 import { BatteryDetailMockService } from 'src/app/services/battery-detail/battery-detail.mock.service';
 import { BaseBatteryDetail } from 'src/app/services/battery-detail/base-battery-detail';
@@ -16,7 +16,7 @@ import { Subscription } from 'rxjs';
 	styleUrls: ['./battery-detail.component.scss'],
 })
 export class BatteryDetailComponent implements OnInit, OnDestroy {
-	public dataSource: BatteryDetail[];
+	@Input() public dataSource: BatteryDetail[];
 	remainingTimeText = "Remaining time";
 	batteryIndicators = new BatteryIndicator();
 	private notificationSubscription: Subscription;
@@ -41,7 +41,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 
 	preProcessBatteryDetailResponse(response: BatteryDetail[]) {
 		let headings = ["Primary Battery", "Secondary Battery", "Tertiary Battery"];
-		this.batteryIndicators.percent = response[0].remainingPercent;
+		this.batteryIndicators.percent = response[0].mainBatteryPercent;
 		this.batteryIndicators.charging = response[0].chargeStatus == BatteryChargeStatus.CHARGING.id;
 		this.batteryIndicators.expressCharging = response[0].isExpressCharging;
 		this.batteryIndicators.voltageError = response[0].isVoltageError;
@@ -53,6 +53,10 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 				// Don't update UI if remainingTime is 0.
 				return;
 			}
+			response[i].remainingCapacity = Math.round(response[i].remainingCapacity * 100) / 100;
+			response[i].fullChargeCapacity = Math.round(response[i].fullChargeCapacity * 100) / 100;
+			response[i].voltage = Math.round(response[i].voltage * 100) / 100;
+			response[i].wattage = Math.round(response[i].wattage * 100) / 100;
 			response[i].heading = headings[i];
 			let id = response[i].chargeStatus
 			response[i].chargeStatusString = BatteryChargeStatus.getBatteryChargeStatus(id);
@@ -74,6 +78,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		console.log('In ngOnInit');
+		this.preProcessBatteryDetailResponse(this.dataSource);
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});

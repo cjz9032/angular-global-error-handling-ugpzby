@@ -17,7 +17,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 
 	passwordManager: PasswordManager;
 	statusItem: any;
-	articles: [];
+	cardContentPositionA: any;
 
 	constructor(
 		public mockService: MockService,
@@ -70,12 +70,14 @@ export class PageSecurityPasswordComponent implements OnInit {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSArticles(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				this.articles = response;
+				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+
+				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
 			},
 			error => {
-				console.log('Error occurs when fetch CMS content of Password Manager page', error);
+				console.log('fetchCMSContent error', error);
 			}
 		);
 	}
