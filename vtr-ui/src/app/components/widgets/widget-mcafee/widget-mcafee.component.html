@@ -1,14 +1,14 @@
 <div class="vtr-widget-mcafee mt-60">
   <div class="row">
     <div class="col-auto px-0 mr-auto">
-      <div class="title pb-3">McAfee premium protection</div>
+      <div class="title pb-3">{{'security.antivirus.common.mcafee-premium'}}</div>
     </div>
     <div class="col-auto px-0">
       <img class="mcafee-logo" src="../../../../assets/images/mcafee_logo.svg" />
     </div>
   </div>
-  <div class="subtitle pb-5">You are currently protected by {{name}}.
-    However, you could be better protected with McAfee LifeSafe
+  <div class="subtitle pb-5">
+    {{'security.antivirus.common.mcafee-premium'}} {{name}}{{'security.antivirus.common.mcafee-premium'}}
   </div>
 
   <ul class="list-group">
@@ -22,14 +22,11 @@
           </div>
         </div>
         <div class="col-auto px-0 text">
-          VIRUS SCAN
+          {{'security.antivirus.common.virus-scan'}}
         </div>
         <div class="col-auto mr-auto">
-          <h3><span class="badge badge-pill badge-danger">DISABLED</span>
+          <h3><span class="badge badge-pill badge-danger">{{'security.antivirus.common.disabled'}}</span>
           </h3>
-        </div>
-        <div class="col-auto d-none">
-          <vtr-ui-button [metricsItem]="'enableFirewall'" [label]="'ENABLE FIREWALL'"></vtr-ui-button>
         </div>
       </div>
 
@@ -45,14 +42,11 @@
           </div>
         </div>
         <div class="col-auto px-0 text">
-          FIREWALL
+          {{'security.antivirus.common.firewall'}}
         </div>
         <div class="col-auto mr-auto">
-          <h3><span class="badge badge-pill badge-danger">DISABLED</span>
+          <h3><span class="badge badge-pill badge-danger">{{'security.antivirus.common.disabled'}}</span>
           </h3>
-        </div>
-        <div class="col-auto d-none">
-          <vtr-ui-button [metricsItem]="'enableFirewall'" [label]="'ENABLE FIREWALL'"></vtr-ui-button>
         </div>
       </div>
 
@@ -62,9 +56,9 @@
 
   <div class="row justify-content-end">
     <div class="col-auto px-0 py-5">
-      <vtr-ui-button [metricsItem]="'launchMcafee'" (onClick)="install.launch()" [label]="'LAUNCH MCAFEE'" *ngIf=" install | pipeInstall"></vtr-ui-button>
+      <vtr-ui-button [metricsItem]="'launchMcafee'" (onClick)="install.launch()" [label]="'security.antivirus.mcafee.launch' | translate" *ngIf=" install | pipeInstall"></vtr-ui-button>
       <a class="d-block" href="{{urlGetMcAfee}}" target="_blank">
-        <vtr-ui-button [metricsItem]="'getMcafee'" [label]="'GET MCAFEE'" *ngIf="! install | pipeInstall"></vtr-ui-button>
+        <vtr-ui-button [metricsItem]="'getMcafee'" [label]="'security.antivirus.mcafee.get-macfee' | translate" *ngIf="! install | pipeInstall"></vtr-ui-button>
       </a>
     </div>
   </div>

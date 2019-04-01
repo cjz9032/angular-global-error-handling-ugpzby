@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, Input } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { MockService } from 'src/app/services/mock/mock.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { AntiVirusViewMode } from 'src/app/data-models/security-advisor/antivirus.model';
@@ -14,13 +14,9 @@ import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/mo
 	styleUrls: ['./page-security-antivirus.component.scss']
 })
 export class PageSecurityAntivirusComponent implements OnInit {
-	@Input() public productName = 'Windows Defender';
 
-	title = 'Anti-Virus';
-	subTitle = `You are currently being protected by ${this.productName}.
-	However, you could be better protected with McAfee LiveSafe. Learn more below.`;
-	avType = 2;
-	back = 'BACK';
+	title = 'security.antivirus.common.title' ;
+	back = 'security.antivirus.common.back';
 	backarrow = '< ';
 	antiVirus: Antivirus;
 	viewMode: any;
@@ -42,6 +38,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		this.antiVirus = this.VantageShell.getSecurityAdvisor().antivirus;
 		this.viewMode = new AntiVirusViewMode(this.antiVirus, commonService);
 		this.fetchCMSArticles();
+		console.log(this.antiVirus);
 	}
 
 	ngOnInit() {
