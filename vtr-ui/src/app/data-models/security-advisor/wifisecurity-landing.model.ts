@@ -8,6 +8,7 @@ export class WifiSecurityLandingViewModel {
 	subject: any;
 	type = 'security';
 	wifiHistory: Array<phoenix.WifiDetail>;
+	imgUrl = '../../../../assets/images/coronet-logo.svg';
 	constructor(wfModel: phoenix.WifiSecurity, hpModel: phoenix.HomeProtection, commonService: CommonService) {
 		const wfStatus = {
 			status: 2,
