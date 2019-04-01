@@ -16,7 +16,8 @@
 								<div class="rounded-card-with-shadow p-5">
 									<div class="row">
 										<div class="col-auto align-self-center">
-											<img class="img-fluid" src="./../../../../assets/images/antivirus/protection.png" />
+											<img class="img-fluid"
+												src="./../../../../assets/images/antivirus/protection.png" />
 
 										</div>
 										<div class="col">
@@ -48,20 +49,9 @@
 										<div class="subtitle pb-5">Windows defender offers basic protection for your
 											device
 										</div>
-										
-										<vtr-ui-security-statusbar [statusList]=" viewMode.windowsDefenderstatusList | statusTransform" >
-										</vtr-ui-security-statusbar>
-										
 
-										<vtr-ui-security-statusbar [statusList]=" viewMode.windowsDefenderstatusList | statusTransform">
-										</vtr-ui-security-statusbar>
-
-
-										<vtr-ui-security-statusbar [statusList]=" viewMode.windowsDefenderstatusList | statusTransform">
-										</vtr-ui-security-statusbar>
-
-
-										<vtr-ui-security-statusbar [statusList]=" viewMode.windowsDefenderstatusList | statusTransform">
+										<vtr-ui-security-statusbar
+											[statusList]=" viewMode.windowsDefenderstatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 
@@ -93,8 +83,11 @@
 																</div>
 															</div>
 															<div class="col">
-																Award winning protection from the latest
-																online threats including ransomware and malware
+																<div class="text-regular">
+																	Award winning protection from the latest
+																	online threats including ransomware and malware
+																</div>
+
 															</div>
 														</div>
 
@@ -110,9 +103,14 @@
 																	</div>
 																</div>
 															</div>
-															<div class="col">Dedicated security that
-																consistently outperforms Defender and other leading AV
-																providers
+															<div class="col">
+																<div class="text-regular">
+																	Dedicated security that
+																	consistently outperforms Defender and other leading
+																	AV
+																	providers
+																</div>
+
 															</div>
 														</div>
 													</li>
@@ -126,8 +124,11 @@
 																</div>
 															</div>
 															<div class="col">
-																Device to cloud technology that won't slow down
-																your PC
+																<div class="text-regular">
+																	Device to cloud technology that won't slow down
+																	your PC
+																</div>
+
 															</div>
 														</div>
 
@@ -148,27 +149,31 @@
 										</div>
 										<div>
 											<ul class="list-inline">
-												<li class="list-inline-item read-more-text">Read more on the</li>
+												<li class="list-inline-item read-more-text pull-left">Read more on the
+												</li>
 												<li class="list-inline-item subtitle">
 													<a vtrMetrics
 														metricsItem="privacyPolicy"
 														metricsEvent="itemClick"
 														href="{{urlPrivacyPolicy}}"
+														class="learnmore"
 														target="_blank">Privacy Policy</a>
 												</li>
-												<li class="list-inline-item">and</li>
+												<li class="list-inline-item read-more-text">and</li>
 												<li class="list-inline-item subtitle">
 													<a vtrMetrics
 														metricsItem="termsOfServices"
 														metricsEvent="itemClick"
 														href="{{urlTermsOfService}}"
+														class="learnmore"
 														target="_blank">Terms Of Service</a>
 												</li>
 											</ul>
 										</div>
 									</div>
 									<div class="col-auto align-self-center px-0">
-										<img class="mcafee-logo" src="../../../../assets/images/mcafee_logo.svg" />
+										<img class="mcafee-logo"
+											src="../../../../assets/images/mcafee_logo.svg" />
 									</div>
 								</div>
 							</div>
@@ -190,7 +195,8 @@
 									</div>
 									<div class="subtitle pb-5">You are currently protected by McAfee LiveSafe</div>
 
-									<vtr-ui-security-statusbar [statusList]="viewMode.mcafeestatusList | statusTransform">
+									<vtr-ui-security-statusbar
+										[statusList]="viewMode.mcafeestatusList | statusTransform">
 									</vtr-ui-security-statusbar>
 
 									<div class="row align-items-center">
@@ -216,7 +222,8 @@
 										<div class="col-auto px-0 py-5">
 											<vtr-ui-button [metricsItem]="'launchMcafee'"
 												(onClick)=" viewMode.mcafee?.launch()"
-												[label]="'LAUNCH MCAFEE'"></vtr-ui-button>
+												[label]="'LAUNCH McAfee'"
+												[textTansformDefault]=false></vtr-ui-button>
 										</div>
 									</div>
 
@@ -226,12 +233,16 @@
 								<div class="title py-4">
 									Top Benefits of McAfee LiveSafe
 								</div>
+								<div class="top-benefits-desc">
+									Customers wishing to initiate McAfee antivirus service today can register for McAfee's free 30 day trial here. The six month free subscription from Lenovo will be IN ADDITION to the 30 day trial. By March 16, customers will be able to activate their 6 month free subscription here.
+								</div>
 								<div class="inner-body">
 									<div class="row">
 										<div class="col-6">
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon1.png" />
+													<img class="img-fluid"
+														src="./../../../../assets/images/antivirus/icon1.png" />
 
 
 												</div>
@@ -248,7 +259,8 @@
 											</div>
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon2.png" />
+													<img class="img-fluid"
+														src="./../../../../assets/images/antivirus/icon2.png" />
 
 
 												</div>
@@ -265,7 +277,8 @@
 											</div>
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon3.png" />
+													<img class="img-fluid"
+														src="./../../../../assets/images/antivirus/icon3.png" />
 
 
 												</div>
@@ -280,7 +293,8 @@
 											</div>
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon4.png" />
+													<img class="img-fluid"
+														src="./../../../../assets/images/antivirus/icon4.png" />
 
 
 												</div>
@@ -299,7 +313,8 @@
 										<div class="col-6">
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon5.png" />
+													<img class="img-fluid"
+														src="./../../../../assets/images/antivirus/icon5.png" />
 
 
 												</div>
@@ -316,7 +331,8 @@
 											</div>
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon6.png" />
+													<img class="img-fluid"
+														src="./../../../../assets/images/antivirus/icon6.png" />
 
 
 												</div>
@@ -335,7 +351,8 @@
 											</div>
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon7.png" />
+													<img class="img-fluid"
+														src="./../../../../assets/images/antivirus/icon7.png" />
 
 
 												</div>
@@ -363,27 +380,31 @@
 										</div>
 										<div>
 											<ul class="list-inline">
-												<li class="list-inline-item read-more-text">Read more on the</li>
+												<li class="list-inline-item read-more-text pull-left">Read more on the
+												</li>
 												<li class="list-inline-item subtitle">
 													<a vtrMetrics
 														metricsItem="privacyPolicy"
 														metricsEvent="itemClick"
 														href="{{urlPrivacyPolicy}}"
+														class="learnmore"
 														target="_blank">Privacy Policy</a>
 												</li>
-												<li class="list-inline-item">and</li>
+												<li class="list-inline-item read-more-text">and</li>
 												<li class="list-inline-item subtitle">
 													<a vtrMetrics
 														metricsItem="termsOfServices"
 														metricsEvent="itemClick"
 														href="{{urlTermsOfService}}"
+														class="learnmore"
 														target="_blank">Terms Of Service</a>
 												</li>
 											</ul>
 										</div>
 									</div>
 									<div class="col-auto align-self-center px-0">
-										<img class="mcafee-logo" src="../../../../assets/images/mcafee_logo.svg" />
+										<img class="mcafee-logo"
+											src="../../../../assets/images/mcafee_logo.svg" />
 									</div>
 								</div>
 							</div>
@@ -402,11 +423,13 @@
 											</div>
 										</div>
 
-										<div class="subtitle pb-5">{{viewMode.otherAntiVirus?.name}} offers you basic protection for your
+										<div class="subtitle pb-5">{{viewMode.otherAntiVirus?.name}} offers you basic
+											protection for your
 											device
 										</div>
 
-										<vtr-ui-security-statusbar [statusList]="viewMode.othersAntistatusList | statusTransform">
+										<vtr-ui-security-statusbar
+											[statusList]="viewMode.othersAntistatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>
@@ -420,11 +443,13 @@
 											</div>
 										</div>
 
-										<div class="subtitle pb-5">{{viewMode.otherFirewall.name}} offers you basic protection for your
+										<div class="subtitle pb-5">{{viewMode.otherFirewall.name}} offers you basic
+											protection for your
 											device
 										</div>
 
-										<vtr-ui-security-statusbar [statusList]="viewMode.othersFirewallstatusList | statusTransform">
+										<vtr-ui-security-statusbar
+											[statusList]="viewMode.othersFirewallstatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>
@@ -506,27 +531,31 @@
 										</div>
 										<div>
 											<ul class="list-inline">
-												<li class="list-inline-item read-more-text">Read more on the</li>
+												<li class="list-inline-item read-more-text pull-left">Read more on the
+												</li>
 												<li class="list-inline-item subtitle">
 													<a vtrMetrics
 														metricsItem="privacyPolicy"
 														metricsEvent="itemClick"
 														href="{{urlPrivacyPolicy}}"
+														class="learnmore"
 														target="_blank">Privacy Policy</a>
 												</li>
-												<li class="list-inline-item">and</li>
+												<li class="list-inline-item read-more-text">and</li>
 												<li class="list-inline-item subtitle">
 													<a vtrMetrics
 														metricsItem="termsOfServices"
 														metricsEvent="itemClick"
 														href="{{urlTermsOfService}}"
+														class="learnmore"
 														target="_blank">Terms Of Service</a>
 												</li>
 											</ul>
 										</div>
 									</div>
 									<div class="col-auto align-self-center px-0">
-										<img class="mcafee-logo" src="../../../../assets/images/mcafee_logo.svg" />
+										<img class="mcafee-logo"
+											src="../../../../assets/images/mcafee_logo.svg" />
 									</div>
 								</div>
 							</div>
@@ -538,7 +567,9 @@
 								<!--Start of Security Card Advisor-->
 								<div class="row mb-40">
 									<div class="col col-12">
-										<vtr-widget-status [title]="'Security Advisor'" [description]="'CHECK IF YOUR DEVICE IS SECURED.'" [items]="mockService.securityStatus">
+										<vtr-widget-status [title]="'Security Advisor'"
+											[description]="'CHECK IF YOUR DEVICE IS SECURED.'"
+											[items]="mockService.securityStatus">
 										</vtr-widget-status>
 									</div>
 								</div>

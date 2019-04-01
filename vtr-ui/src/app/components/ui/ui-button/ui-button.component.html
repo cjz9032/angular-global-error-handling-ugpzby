@@ -1,5 +1,6 @@
 <div class="vtr-ui-button">
-	<div class="button-box" *ngIf="label">
+	<div class="button-box"
+		*ngIf="label">
 		<button *ngIf="isLWSEnabled"
 			type="button"
 			class="button"
@@ -13,14 +14,15 @@
 			(click)="onClickButton($event)">{{label}} </button>
 		<button *ngIf="!isLWSEnabled"
 			type="button"
-			class="button disable" [disabled]="true"
-				vtrMetrics
-			    [metricsItem]="metricsItem"
-				[metricsEvent]="'itemClick'"
-				[metricsParam]="metricsParam"
-				[metricsValue]="metricsValue"
-				[metricsParent]="metricsParent"
-			[ngClass]="{'fullWidth': isFullWidth === true}"
+			class="button disable"
+			[disabled]="true"
+			vtrMetrics
+			[metricsItem]="metricsItem"
+			[metricsEvent]="'itemClick'"
+			[metricsParam]="metricsParam"
+			[metricsValue]="metricsValue"
+			[metricsParent]="metricsParent"
+			[ngClass]="{'fullWidth': isFullWidth === true ,'text-upper-case': textTansform === true}"
 			(click)="onClickButton($event)">{{label}} </button>
 	</div>
 </div>
