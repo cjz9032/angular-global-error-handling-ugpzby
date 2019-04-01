@@ -3,7 +3,7 @@
 		let-modal>
 		<div class="modal-header">
 			<h4 class="modal-title battery-detail-modal-title pl-5">
-				{{'device.device-settings.battery-guage.details.title' | translate }}
+				{{'device.deviceSettings.batteryGuage.details.title' | translate }}
 			</h4>
 			<button type="button"
 				class="close"
@@ -18,10 +18,10 @@
 	</ng-template>
 	<div class="container p-5">
 		<div class="battery-gauge-label text-uppercase">
-			{{'device.device-settings.battery-guage.title' | translate}}
+			{{'device.deviceSettings.batteryGuage.title' | translate}}
 		</div>
 		<div class="battery-health">
-			{{'device.device-settings.battery-guage.subtitle' | translate}}
+			{{'device.deviceSettings.batteryGuage.subtitle' | translate}}
 		</div>
 		{{batteryIndicator.percent == 0 && flag ? reInitValue(): ""}}
 		<div class="pt-4 battery-frame pr-3">
@@ -37,7 +37,7 @@
 			<button type="button" vtrMetrics metricsItem="see battery details" metricsParent="battery-gauge" metricsEvent="itemClick"
 				class="btn btn-primary btn-lg battery-detail-button text-uppercase"
 				(click)="showDetailModal(batteryDetail)">
-				{{'device.device-settings.battery-guage.button' | translate }}
+				{{'device.deviceSettings.batteryGuage.button' | translate }}
 			</button>
 		</div>
 	</div>
