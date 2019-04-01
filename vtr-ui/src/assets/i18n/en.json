@@ -2,24 +2,349 @@
 	"common": {
 		"menu": {
 			"dashboard": "Dashboard",
-			"device": "Device"
+			"device": {
+				"title": "Device",
+				"sub1": "My Device",
+				"sub2": "My device settings",
+				"sub3": "System Updates"
+			},
+			"security": {
+				"title": "Security",
+				"sub1": "My Security",
+				"sub2": "Anti-Virus",
+				"sub3": "WiFi Security",
+				"sub4": "Password Protection",
+				"sub5": "Internet Protection",
+				"sub6": "Windows Hello"
+			},
+			"support": "Support"
+		},
+		"security-advisor": {
+			"title": "Security Advisor",
+			"subtitle": "CHECK IF YOUR DEVICE IS SECURED.",
+			"anti-virus": "Anti-Virus",
+			"wifi": "WiFi Security",
+			"pswd-mgr": "Password Manager",
+			"vpn": "VPN",
+			"windows-hello": "Windows Hello",
+			"enabled": "Enabled",
+			"disabled": "Disabled",
+			"installed": "Installed",
+			"not-installed": "Not Installed"
+		},
+		"q-and-a": {
+			"title": "Q&A for your machine",
+			"subtitle": "FIND SOME HELPFUL TIPS FOR YOUR DEVICE.",
+			"question-1": "Backup and Restore your files",
+			"question-2": "How to refresh your PC",
+			"question-3": "How to know your machine's CPU",
+			"question-4": "Check your machine's battery use",
+			"question-5": "Use your PC like a tablet",
+			"question-6": "Get to know Cortana, your personal assistant"
 		},
 		"ui": {
-			"on": "on",
-			"off": "off"
+			"back": "BACK",
+			"on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse"
 		}
 	},
 	"dashboard": {
 		"feedback": {
 			"title": "Give Feedback",
 			"subtitle": "Tell us what you think about vantage",
-			"button": "Give feedback"
+			"button": "Give feedback",
+			"form": {
+				"email": "Email (optional)",
+				"comments": "Comments",
+				"button": "Submit"
+			}
 		},
 		"quick-settings": {
 			"title": "Your Quick Settings",
 			"microphone": "Microphone",
 			"camera-privacy": "Camera Privacy",
 			"eye-care-mode": "Eye Care Mode"
+		},
+		"system-status": {
+			"title": "System Status",
+			"subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+			"memory": "Memory",
+			"diskspace": "Diskspace",
+			"warranty": "Warranty",
+			"system-update": "System Update"
+		}
+	},
+	"device": {
+		"my-device": {
+			"title": "My Device",
+			"subtitle": "My device status",
+			"serial": "Serial",
+			"product-number": "Product number",
+			"bios-version": "Bios version",
+			"learn-more": "Learn more",
+			"free-memory": "Free memory",
+			"system-update": "System update",
+			"extended-warranty": "Extend warranty",
+			"processor": "Processor",
+			"memory": "Memory",
+			"diskspace": "Disk space",
+			"software": "Software up to date",
+			"updated": "Updated",
+			"out-of-warranty": "Out of warranty",
+			"expired": "Expired on"
+		},
+		"device-settings": {
+			"helpful": "Helpful content",
+			"battery-gauge": {
+				"title": "BATTERY GAUGE",
+				"subtitle": "Battery healthy",
+				"hours": "hours",
+				"minutes": "minutes",
+				"charge": "TIME TO FULLY CHARGE",
+				"button": "SEE BATTERY DETAILS",
+				"details": {
+					"title": "Battery Details",
+					"primary": "Primary Battery",
+					"secondary": "Secondary Battery",
+					"status": "Status",
+					"wattage": "Wattage",
+					"barcode": "Bar-Code",
+					"remaining-percent": "Remaining percentage",
+					"temp": "Temperature",
+					"frupn": "FRU part number",
+					"remaining-time": "Remaining time",
+					"cycle-count": "Cycle count",
+					"chemistry": "Device chemistry",
+					"remaining-cap": "Remaining capacity",
+					"manufacturer": "Manufacturer",
+					"design-cap": "Design capacity",
+					"full-charge-cap": "Full charge capacity",
+					"manuf-dt": "Manufacture date",
+					"design-volt": "Design voltage",
+					"volts": "Voltage",
+					"first-use-dt": "First use date",
+					"firmware-ver": "Firmware version"
+				}
+			},
+			"power": {
+				"title": "Power",
+				"subtitle": "Power Settings",
+				"description": "This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.",
+				"jumpto": {
+					"title": "JUMP TO SETTINGS:",
+					"battery": "Battery",
+					"power": "Power",
+					"cooling": "Cooling",
+					"other": "Other"
+				},
+				"power-smartsettings": {
+					"title": "Power Smartsettings",
+					"subtitle": "INTELLIGENT COOLING",
+					"description-1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
+					"description-2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
+					"goto-windows": "Go to windows settings",
+					"intelligent-cooling": {
+						"title": "Intelligent cooling",
+						"description": "",
+						"tooltip": "",
+						"options": {
+							"quite-cool": "Quiet & Cool",
+							"performance": "Performance"
+						},
+						"read-more": {
+							"line-1": "Quiet mode: Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+							"line-2": "Balanced mode: Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
+							"line-3": "Performance mode: Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+						}
+					}
+				},
+				"battery-settings": {
+					"title": "Battery Settings",
+					"airplane-power": {
+						"title": "Airplane Power Mode",
+						"tooltip": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
+					},
+					"battery-threshold": {
+						"title": "Battery Charge Threshold",
+						"description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
+						"tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
+						"popup": {
+							"title": "Enable Battery Charge Threshold",
+							"description": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life. In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+							"enable": "ENABLE",
+							"cancel": "CANCEL"
+						}
+					},
+					"express-charging": {
+						"title": "Express Charging",
+						"tooltip": "Express Charge allows your battery to a full charge much faster than normal mode."
+					},
+					"conservation-mode": {
+						"title": "Conservation Mode",
+						"tooltip": {
+							"line-1": "This function is useful to extend the lifespan of your battery when plugged.",
+							"line-2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
+							"line-3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
+						}
+					}
+				},
+				"power-settings": {
+					"title": "Power Settings",
+					"always-USB": {
+						"title": "Always on USB",
+						"tooltip": "Charge USB devices through the Always on USB connector on the computer when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged from the USB connector that is yellow-coded or silk-printed the specified icon.",
+						"checkbox": "Enable USB charging from laptop battery when computer is off."
+					},
+					"easy-resume": {
+						"title": "Easy Resume",
+						"description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
+						"tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+					}
+				},
+				"other-settings": {
+					"title": "Other Settings",
+					"vantage-toolbar": {
+						"title": "Lenovo Vantage Toolbar",
+						"tooltip": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
+					}
+				}
+			},
+			"audio": {
+				"title": "Audio",
+				"subtitle": "Audio Settings",
+				"description": "This section enables you to automatically optimize or fully configure your audio settings manually , such as Dolby settings, microphone, etc.",
+				"audio-smartsettings": {
+					"title": "Audio Smartsettings",
+					"subtitle": "APPLICATION-BASED SETTINGS",
+					"description": "Automatically adjust audio settings according to different apps you are using.",
+					"dolby": {
+						"title": "Automatic Dolby Audio settings",
+						"options": {
+							"dynamic": "DYNAMIC",
+							"movie": "MOVIE",
+							"music": "MUSIC",
+							"game": "GAME",
+							"voice": "VOICE"
+						}
+					},
+					"voip": "Automatic Audio Optimization for VoIP"
+				},
+				"microphone": {
+					"title": "Microphone",
+					"microphone": {
+						"title": "Microphone",
+						"tooltip": "You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode."
+					},
+					"volume": {
+						"title": "Microphone Volume",
+						"description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+						"options": {
+							"silent": "Silent",
+							"loud": "Loud"
+						}
+					},
+					"suppress": {
+						"title": "Suppress keyboard noise",
+						"tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+					},
+					"acoustic": {
+						"title": "Acoustic Echo Cancellation",
+						"tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+					},
+					"optimize": {
+						"title": "Optimize my microphone for:",
+						"tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+						"options": {
+							"voice-recoginition": "VOICE RECOGNITION",
+							"only-my-voice": "ONLY MY VOICE",
+							"normal": "NORMAL",
+							"multiple-voices": "MULTIPLE VOICES"
+						}
+					}
+				}
+			},
+			"display-camera": {
+				"title": "Display & Camera",
+				"subtitle": "Display & Camera Settings",
+				"description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
+				"jumpto": {
+					"title": "JUMP TO SETTINGS:",
+					"display": "Display",
+					"camera": "Camera"
+				},
+				"display": {
+					"title": "Display",
+					"eye-care-mode": {
+						"title": "Eye Care Mode",
+						"checkbox": "Schedule eye care mode from sunset to sunrise",
+						"options": {
+							"warm": "Warm (Better for eyes)",
+							"cold": "Cold"
+						},
+						"reset": "Reset temperature",
+						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain."
+					}
+				},
+				"camera": {
+					"title": "Camera",
+					"note": "Note: Lenovo Vantage does not have permissions to access your camera. Please turn on access to your camera for the Lenovo Vantage app.",
+					"url": "Go to windows privacy settings",
+					"camera-privacy": {
+						"title": "Camera privacy mode",
+						"tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling."
+					},
+					"camera": {
+						"title": "Camera",
+						"tooltip": "Click here to reset Camera properties to default settings.",
+						"reset": "Reset factory settings"
+					},
+					"auto-exposure": "Auto Exposure",
+					"auto-focus": "Auto focus"
+				}
+			}
+		},
+		"system-updates": {
+			"title": "System Updates",
+			"history": "FULL HISTORY",
+			"auto-update-settings": {
+				"title": "Auto update settings",
+				"subtitle": "AUTOMATICALLY INSTALL UPDATES",
+				"critical": {
+					"title": "Critical Updates",
+					"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+				},
+				"recommended": {
+					"title": "Recommended Updates",
+					"tooltip": "Recommended driver updates keep your computer running at optimal performance."
+				},
+				"windows": {
+					"title": "Windows Updates",
+					"url": "Windows settings"
+				}
+			},
+			"banner": {
+				"title": "An up-to-date system is a healthy system.",
+				"last": "Last update was on",
+				"next": "Next updated scan is scheduled on",
+				"check-button": "CHECK FOR UPDATES",
+				"checking": "Checking for updates",
+				"downloading": "Downloading updates done",
+				"installing": "Installing updates",
+				"percent": "% complete",
+				"cancel-check": "Cancel check",
+				"cancel-updates": "CANCEL UPDATES",
+				"available": "Available updates",
+				"description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
+				"install-button": "INSTALL ALL UPDATES",
+				"result": {
+					"success": "All Updates were installed correctly",
+					"fail": {
+						"title": "Some updates were not installed correctly.",
+						"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off computer when installing these updates."
+					}
+				}
+			}
 		}
 	},
 	"support": {
@@ -59,5 +384,7 @@
 			"list-e-ticket": "Get support with E-ticket",
 			"list-service-provider": "Find a service provider"
 		}
-	}
+	},
+	"security": {},
+	"faq": {}
 }

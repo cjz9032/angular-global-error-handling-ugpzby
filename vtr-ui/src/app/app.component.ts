@@ -69,7 +69,7 @@ export class AppComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.devService.writeLog('APP INIT', window.location.href);
+		this.devService.writeLog('APP INIT', window.location.href, window.devicePixelRatio);
 
 		// use when deviceService.isArm is set to true
 		// todo: enable below line when integrating ARM feature

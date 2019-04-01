@@ -82,6 +82,13 @@ $mediaquery_6: "only screen and (max-width : 1400px)";
 $mediaquery_7: "only screen and (max-width : 1200px)";
 $mediaquery_8: "only screen and (max-width: 800px)";
 
+$dpiquery_0: "max-resolution: 350dpi";
+$dpiquery_1: "max-resolution: 275dpi";
+$dpiquery_2: "max-resolution: 200dpi";
+$dpiquery_3: "max-resolution: 150dpi";
+$dpiquery_4: "max-resolution: 125dpi";
+$dpiquery_5: "max-resolution: 100dpi";
+
 $drop_shadow: 0 0 1.5rem 0 $screen_dark_15;
 $text_shadow: 0 0 0.3rem $screen_dark_70;
 

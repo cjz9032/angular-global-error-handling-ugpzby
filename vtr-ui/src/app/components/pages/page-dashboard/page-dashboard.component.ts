@@ -306,7 +306,7 @@ export class PageDashboardComponent implements OnInit {
 
 			if (response.passwordManager) {
 				if (response.passwordManager.installed) {
-					passwordManager.status = 0;
+					passwordManager.status = 2;
 					passwordManager.detail = 'Installed';
 				} else {
 					passwordManager.status = 1;
@@ -324,7 +324,7 @@ export class PageDashboardComponent implements OnInit {
 
 			if (response.VPN) {
 				if (response.VPN.installed) {
-					vpn.status = 0;
+					vpn.status = 2;
 					vpn.detail = 'Installed';
 				} else {
 					vpn.status = 1;

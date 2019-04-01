@@ -29,6 +29,22 @@ export class DeviceService {
 		if (this.microphone) {
 			this.startDeviceMonitor();
 		}
+		this.initIsArm();
+	}
+	
+	private initIsArm() {
+		try {
+			if (this.isShellAvailable) {
+				this.getMachineInfo()
+					.then((machineInfo: any) => {
+						this.isArm = machineInfo.osBitness.toUpperCase().trim() == "ARM64"
+					}).catch(error => {
+						console.error('initArm', error);
+					});
+			}
+		} catch (error) {
+			console.error('initArm' + error.message);
+		}
 	}
 
 	public getDeviceInfo(): Promise<MyDevice> {
