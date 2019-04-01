@@ -13,7 +13,7 @@
 			</button>
 		</div>
 		<div class="modal-body">
-			<vtr-battery-detail> </vtr-battery-detail>
+			<vtr-battery-detail [dataSource]="batteryInfo"> </vtr-battery-detail>
 		</div>
 	</ng-template>
 	<div class="container p-5">
@@ -23,6 +23,7 @@
 		<div class="battery-health">
 			Battery Health
 		</div>
+		{{batteryIndicator.percent == 0 && flag ? reInitValue(): ""}}
 		<div class="pt-4 battery-frame pr-3">
 			<vtr-battery-indicator [remainingHour]="batteryIndicator.hours"
 				[remainingMinutes]="batteryIndicator.minutes"
