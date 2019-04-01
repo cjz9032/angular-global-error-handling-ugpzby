@@ -30,10 +30,10 @@
 	</div> -->
 	<div class="row">
 		<div class="col">
-			<vtr-ui-header-subpage [items]="headerMenuItems"
-				[title]="title"
-				[caption]="headerCaption"
-				[menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
+			<vtr-ui-header-subpage [items]="'device.deviceSettings.power.jumpTo.shortcuts' | translate"
+				[title]="'device.deviceSettings.power.title' | translate"
+				[caption]="'device.deviceSettings.power.description' | translate"
+				[menuTitle]="'device.deviceSettings.power.jumpTo.title' | translate"></vtr-ui-header-subpage>
 		</div>
 	</div>
 	<!-- <div *ngIf="value===1">
@@ -134,7 +134,7 @@
 			id="cooling">
 			<div class="col-10 mx-auto ">
 				<vtr-container-collapsible
-					cardTitle="'device.deviceSettings.power.powerSmartSettings.title' | translate"
+					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
 					[isCollapsed]="false"
 					[allowCollapse]="false"
 					[theme]="'blue'">
@@ -332,14 +332,14 @@
 	<div class="row py-5"
 		id="battery">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible cardTitle="'device.deviceSettings.power.batterySettings.title' | translate"
+			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.batterySettings.title' | translate"
 				*ngIf="showAirplanePowerModeSection || conservationModeStatus.available || expressChargingStatus.available "
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngIf="showAirplanePowerModeSection">
-						<vtr-ui-row-switch [title]="batterySettings.items[0].header"
-							[caption]="batterySettings.items[0].subHeader"
+						<vtr-ui-row-switch [title]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
+							[caption]="'device.deviceSettings.power.batterySettings.airPlanePower.description' | translate"
 							[isSwitchVisible]=true
 							[leftIcon]="batterySettings.items[0].leftImageSource"
 							[tooltipText]="batterySettings.items[0].tooltipText"
@@ -377,11 +377,11 @@
 						<!--
 						*ngIf="batterySettings.status.expressCharging"
 						-->
-						<vtr-ui-row-switch [title]="batterySettings.items[2].header"
-							[caption]="batterySettings.items[2].subHeader"
+						<vtr-ui-row-switch [title]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
+							[caption]="'device.deviceSettings.power.batterySettings.expressCharging.description' | translate"
 							[isSwitchVisible]=true
 							[leftIcon]="batterySettings.items[2].leftImageSource"
-							[tooltipText]="batterySettings.items[2].tooltipText"
+							[tooltipText]="'device.deviceSettings.power.batterySettings.expressCharging.tooltip' | translate"
 							[isSwitchChecked]="expressChargingStatus.status"
 							(toggleOnOff)="changeBatteryMode($event,'expressCharging')">
 						</vtr-ui-row-switch>
@@ -389,11 +389,11 @@
 					<li class=""
 						*ngIf="conservationModeStatus.available">
 						<!-- *ngIf="batterySettings.status.conservationMode"* -->
-						<vtr-ui-row-switch [title]="batterySettings.items[3].header"
-							[caption]="batterySettings.items[3].subHeader"
+						<vtr-ui-row-switch [title]="'device.deviceSettings.power.batterySettings.conservationMode.title' | translate"
+							[caption]="'device.deviceSettings.power.batterySettings.conservationMode.description' | translate"
 							[isSwitchVisible]=true
 							[leftIcon]="batterySettings.items[3].leftImageSource"
-							[tooltipText]="batterySettings.items[3].tooltipText"
+							[tooltipText]="'device.deviceSettings.power.batterySettings.conservationMode.tooltip.line1' | translate"
 							[isSwitchChecked]="conservationModeStatus.status"
 							(toggleOnOff)="changeBatteryMode($event,'conservationMode')">
 						</vtr-ui-row-switch>
@@ -407,14 +407,14 @@
 	<div class="row py-5"
 		id="power">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible cardTitle="Power Settings"
+			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
 				*ngIf="alwaysOnUSBStatus.available || showEasyResumeSection"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngIf="alwaysOnUSBStatus.available">
-						<vtr-ui-row-switch [title]="powerSettings[0].header"
-							[caption]="powerSettings[0].subHeader"
+						<vtr-ui-row-switch [title]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
+							[caption]="'device.deviceSettings.power.powerSettings.alwaysUSB.description' | translate"
 							[isSwitchVisible]=true
 							[isSwitchChecked]="alwaysOnUSBStatus.status"
 							[leftIcon]="powerSettings[0].leftImageSource"
@@ -450,7 +450,7 @@
 											checked="" />
 										<label class="custom-control-label "
 											for="cb-always-on-usb">
-											{{ powerSettings[0].checkboxDesc }}
+											{{ 'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}
 										</label>
 									</div>
 								</div>
@@ -459,13 +459,13 @@
 					</li>
 					<li class=""
 						*ngIf="showEasyResumeSection">
-						<vtr-ui-row-switch [title]="powerSettings[1].header"
-							[caption]="powerSettings[1].subHeader"
+						<vtr-ui-row-switch [title]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
+							[caption]="'device.deviceSettings.power.powerSettings.easyResume.description' | translate"
 							[isSwitchVisible]=true
 							[isSwitchChecked]=powerSettings[1].isSwitchChecked
 							[leftIcon]="powerSettings[1].leftImageSource"
 							[rightIcon]="powerSettings[1].rightImageSource"
-							[tooltipText]="powerSettings[1].tooltipText"
+							[tooltipText]="'device.deviceSettings.power.powerSettings.easyResume.tooltip' | translate"
 							(toggleOnOff)="onToggleOfEasyResume($event)">
 						</vtr-ui-row-switch>
 					</li>
@@ -477,16 +477,16 @@
 	<div class="row py-5"
 		id="other">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible componentName="Other Settings"
+			<vtr-container-collapsible componentName="'device.deviceSettings.power.otherSettings.title' | translate"
 				cardTitle="Other Settings"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngFor="let item of otherSettings">
-						<vtr-ui-row-switch [componentName]="item.header"
-							[name]="item.header"
-							[title]="item.header"
-							[caption]="item.subHeader"
+						<vtr-ui-row-switch [componentName]="'device.deviceSettings.power.otherSettings.title' | translate"
+							[name]="'device.deviceSettings.power.otherSettings.title' | translate"
+							[title]="'device.deviceSettings.power.otherSettings.vantageToolbar.title' | translate"
+							[caption]="'device.deviceSettings.power.otherSettings.vantageToolbar.description' | translate"
 							[isSwitchVisible]=true
 							[leftIcon]="item.leftImageSource"
 							[isSwitchChecked]="vantageToolbarStatus.status"

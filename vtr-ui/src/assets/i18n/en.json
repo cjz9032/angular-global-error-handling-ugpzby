@@ -131,12 +131,27 @@
 				"title": "Power",
 				"subtitle": "Power Settings",
 				"description": "This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.",
-				"jumpto": {
-					"title": "JUMP TO SETTINGS:",
-					"battery": "Battery",
-					"power": "Power",
-					"cooling": "Cooling",
-					"other": "Other"
+				"jumpTo": {
+					"title": "JUMP TO SETTINGS",
+					"shortcuts":[
+						{
+							"title": "Intelligent Cooling",
+							"path": "cooling"
+						},
+						{
+							"title": "Battery",
+							"path": "battery"
+						},
+						{
+							"title": "Power",
+							"path": "power"
+						},
+						{
+							"title": "Other",
+							"path": "other"
+						}
+					]
+
 				},
 				"powerSmartSettings": {
 					"title": "Power Smart Settings",
@@ -161,9 +176,9 @@
 				},
 				"batterySettings": {
 					"title": "Battery Settings",
-					"airplanePower": {
+					"airPlanePower": {
 						"title": "Airplane Power Mode",
-						"tooltip": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
+						"description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
 					},
 					"batteryThreshold": {
 						"title": "Battery Charge Threshold",
@@ -178,10 +193,12 @@
 					},
 					"expressCharging": {
 						"title": "Express Charging",
-						"tooltip": "Express Charge allows your battery to a full charge much faster than normal mode."
+						"description":"Express Charge allows your battery to a full charge much faster than normal mode.",
+						"tooltip": "Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
 					},
 					"conservationMode": {
 						"title": "Conservation Mode",
+						"description":"This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
 						"tooltip": {
 							"line1": "This function is useful to extend the lifespan of your battery when plugged.",
 							"line2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
@@ -193,7 +210,7 @@
 					"title": "Power Settings",
 					"alwaysUSB": {
 						"title": "Always on USB",
-						"tooltip": "Charge USB devices through the Always on USB connector on the computer when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged from the USB connector that is yellow-coded or silk-printed the specified icon.",
+						"description": "Charge USB devices through the Always on USB connector on the computer when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged from the USB connector that is yellow-coded or silk-printed the specified icon.",
 						"checkbox": "Enable USB charging from laptop battery when computer is off."
 					},
 					"easyResume": {
@@ -206,7 +223,7 @@
 					"title": "Other Settings",
 					"vantageToolbar": {
 						"title": "Lenovo Vantage Toolbar",
-						"tooltip": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
+						"description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
 					}
 				}
 			},
@@ -268,7 +285,7 @@
 				"title": "Display & Camera",
 				"subtitle": "Display & Camera Settings",
 				"description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
-								"jumpto": {
+				"jumpto": {
 					"title": "JUMP TO SETTINGS:",
 					"display": "Display",
 					"camera": "Camera"
