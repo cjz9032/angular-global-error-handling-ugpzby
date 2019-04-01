@@ -1,5 +1,5 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
-import {Router} from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {Subscription} from 'rxjs/internal/Subscription';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
@@ -159,6 +159,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private router: Router,
+		public route: ActivatedRoute,
 		public configService: ConfigService,
 		private commonService: CommonService,
 		public userService: UserService,
@@ -182,6 +183,10 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		if (this.commonMenuSubscription) {
 			this.commonMenuSubscription.unsubscribe();
 		}
+	}
+
+	isParentActive(item) {
+		// console.log('IS PARENT ACTIVE', item, this.router, this.route);
 	}
 
 	showItem(item) {

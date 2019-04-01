@@ -29,7 +29,7 @@ const routes: Routes = [
 		path: 'device',
 		component: PageDeviceComponent
 	}, {
-		path: 'device-settings',
+		path: 'device/device-settings',
 		component: PageDeviceSettingsComponent,
 		children: [
 			{
@@ -48,26 +48,25 @@ const routes: Routes = [
 			}
 		]
 	}, {
-		path: 'system-updates',
+		path: 'device/system-updates',
 		component: PageDeviceUpdatesComponent
 	}, {
 		path: 'security',
 		component: PageSecurityComponent
 	}, {
-		path: 'anti-virus',
+		path: 'security/anti-virus',
 		component: PageSecurityAntivirusComponent
 	}, {
-		path: 'wifi-security',
+		path: 'security/wifi-security',
 		component: PageSecurityWifiComponent
 	}, {
-		path: 'password-protection',
+		path: 'security/password-protection',
 		component: PageSecurityPasswordComponent
 	}, {
-		path: 'internet-protection',
+		path: 'security/internet-protection',
 		component: PageSecurityInternetComponent
-	},
-	{
-		path: 'windows-hello',
+	}, {
+		path: 'security/windows-hello',
 		component: PageSecurityWindowsHelloComponent
 	}, {
 		path: 'support',
