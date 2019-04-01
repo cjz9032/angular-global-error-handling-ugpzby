@@ -108,14 +108,11 @@ export class SystemUpdateService {
 				console.log('checkForUpdates response', response, typeof response.status);
 				this.isCheckForUpdateComplete = true;
 				const status = parseInt(response.status, 10);
+				this.isUpdatesAvailable = (response.updateList && response.updateList.length > 0);
+
 				if (status === SystemUpdateStatusMessage.SUCCESS.code) { // success
-					this.isUpdatesAvailable = (response.updateList && response.updateList.length > 0);
 					this.updateInfo = { status: status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
-					// if (this.isUpdatesAvailable) {
 					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
-					// } else {
-					// 	this.commonService.sendNotification(UpdateProgress.UpdatesNotAvailable);
-					// }
 				} else {
 					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, { ...response, status });
 				}
