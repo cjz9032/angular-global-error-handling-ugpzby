@@ -40,7 +40,7 @@
 			"question-3": "How to know your machine's CPU",
 			"question-4": "Check your machine's battery use",
 			"question-5": "Use your PC like a tablet",
-			"question-6": "Get to know Cortona, your personal assistant",
+			"question-6": "Get to know Cortana, your personal assistant"
 		},
 		"ui": {
 			"back": "BACK",
@@ -136,7 +136,7 @@
 					"battery": "Battery",
 					"power": "Power",
 					"cooling": "Cooling",
-					"other": "Other"		
+					"other": "Other"
 				},
 				"power-smartsettings": {
 					"title": "Power Smartsettings",
@@ -157,7 +157,7 @@
 							"line-2": "Balanced mode: Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
 							"line-3": "Performance mode: Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
 						}
-					}					
+					}
 				},
 				"battery-settings": {
 					"title": "Battery Settings",
@@ -186,8 +186,8 @@
 							"line-1": "This function is useful to extend the lifespan of your battery when plugged.",
 							"line-2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
 							"line-3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
-						}						 
-					}					
+						}
+					}
 				},
 				"power-settings": {
 					"title": "Power Settings",
@@ -261,17 +261,17 @@
 							"normal": "NORMAL",
 							"multiple-voices": "MULTIPLE VOICES"
 						}
-					}					
+					}
 				}
 			},
 			"display-camera": {
 				"title": "Display & Camera",
 				"subtitle": "Display & Camera Settings",
 				"description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
-								"jumpto": {
+				"jumpto": {
 					"title": "JUMP TO SETTINGS:",
 					"display": "Display",
-					"camera": "Camera"		
+					"camera": "Camera"
 				},
 				"display": {
 					"title": "Display",
@@ -347,10 +347,7 @@
 			}
 		}
 	},
-	"security": {
-	},
-	"support": {
-	},
-	"faq": {
-	}
+	"security": {},
+	"support": {},
+	"faq": {}
 }
