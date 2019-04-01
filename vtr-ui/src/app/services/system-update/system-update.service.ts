@@ -424,4 +424,12 @@ export class SystemUpdateService {
 		}
 		return undefined;
 	}
+
+	public dateDiffInDays(date: string) {
+		const lastUpdateDate = new Date(date);
+		const today = new Date();
+		const diffTime = Math.abs(today.getTime() - lastUpdateDate.getTime());
+		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+		return diffDays;
+	}
 }
