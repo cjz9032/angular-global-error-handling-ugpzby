@@ -68,6 +68,59 @@
 		}
 	}
 
+	&.card-corner-article {
+		.content {
+			position: relative;
+			z-index: 1;
+			padding: 0rem;
+
+			.card-image {
+				display: block;
+				background-size: cover;
+				background-position: 0 0%;
+				background-repeat: no-repeat;
+				text-decoration: none;
+				cursor: pointer;
+				width: 100%;
+				height: 100%;
+
+				.inner-content {
+					position: relative;
+					z-index: 1;
+					padding: 3rem;
+					height: 100%;
+
+					.title {
+						color: $light;
+						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+					}
+
+					.description {
+						color: $light;
+						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+					}
+
+					.caption {
+						color: $light;
+						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+					}
+
+					.logo {
+						.logo-img {
+							color: $alt;
+							text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+						}
+
+						.logo-text {
+							color: $alt;
+							text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+						}
+					}
+				}
+			}
+		}
+	}
+
 	&.card-highlight {
 		.content {
 			position: relative;
@@ -139,6 +192,7 @@
 					.link-label {
 						padding-bottom: 0.2rem;
 						border-bottom: 0.2rem solid $main;
+						font-weight: $weight_bold;
 					}
 
 					fa-icon {

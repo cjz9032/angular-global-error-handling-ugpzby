@@ -11,6 +11,7 @@ import { LocalStorageKey } from './enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { UserService } from './services/user/user.service';
 import { WelcomeTutorial } from './data-models/common/welcome-tutorial.model';
+import { NetworkStatus } from './enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-root',
@@ -54,10 +55,21 @@ export class AppComponent implements OnInit {
 				}
 			);
 		}
+
+		window.addEventListener('online', (e) => {
+			console.log('online', e, navigator.onLine);
+			this.notifyNetworkState();
+		}, false);
+
+		window.addEventListener('offline', (e) => {
+			console.log('offline', e, navigator.onLine);
+			this.notifyNetworkState();
+		}, false);
+		this.notifyNetworkState();
 	}
 
 	ngOnInit() {
-		this.devService.writeLog('APP INIT', window.location.href);
+		this.devService.writeLog('APP INIT', window.location.href, window.devicePixelRatio);
 
 		// use when deviceService.isArm is set to true
 		// todo: enable below line when integrating ARM feature
@@ -101,6 +113,15 @@ export class AppComponent implements OnInit {
 				}).catch(error => {
 					console.error('getMachineInfo', error);
 				});
+		}
+	}
+
+	private notifyNetworkState() {
+		this.commonService.isOnline = navigator.onLine;
+		if (navigator.onLine) {
+			this.commonService.sendNotification(NetworkStatus.Online, { isOnline: navigator.onLine });
+		} else {
+			this.commonService.sendNotification(NetworkStatus.Offline, { isOnline: navigator.onLine });
 		}
 	}
 
