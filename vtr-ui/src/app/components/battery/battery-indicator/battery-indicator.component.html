@@ -26,11 +26,11 @@
 				</div>
 				<div class="remaining-text text-uppercase"
 				 *ngIf="!isCharging">
-					Remaining Time
+					{{'device.device-settings.battery-guage.details.remaining-time' | translate }}
 				</div>
 				<div class="remaining-text text-uppercase"
 				 *ngIf="isCharging">
-					Time To Fully Charge
+					{{'device.device-settings.battery-guage.charge' | translate }}
 				</div>
 			</div>
 			<div class="battery-charging"
