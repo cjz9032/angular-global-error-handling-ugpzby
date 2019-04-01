@@ -64,7 +64,7 @@ export class PageSecurityComponent implements OnInit {
 	passwordManager: phoenix.PasswordManager;
 	vpn: phoenix.Vpn;
 	windowsHello: phoenix.WindowsHello;
-	antivirusScore: Array < any > ;
+	antivirusScore: Array<any>;
 	score: number;
 	cardContentPositionA: any;
 

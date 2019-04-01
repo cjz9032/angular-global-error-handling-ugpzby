@@ -61,6 +61,10 @@
 										</vtr-ui-security-statusbar>
 
 
+										<vtr-ui-security-statusbar [statusList]=" viewMode.windowsDefenderstatusList | statusTransform">
+										</vtr-ui-security-statusbar>
+
+
 									</div>
 									<vtr-widget-mcafee [install]="viewMode.mcafee"
 										[name]="'Windows Defender'"></vtr-widget-mcafee>
