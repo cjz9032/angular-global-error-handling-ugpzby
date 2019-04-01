@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
@@ -16,13 +16,14 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	constructor(
 		private modalService: NgbModal, 
 		private batteryService: BatteryDetailService,
-		private commonService: CommonService) {}
+		private commonService: CommonService) {
+			this.getBatteryDetailOnCard();
+		}
 	batteryInfo: BatteryDetail[];
 	batteryCardTimer: any;
 	batteryIndicator = new BatteryIndicator();
-
+	flag = true;
 	ngOnInit() {
-		this.getBatteryDetailOnCard();
 	}
 
 	public getBatteryDetailOnCard() {
@@ -32,6 +33,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryService.getBatteryDetail()
 					.then((response: BatteryDetail[]) => {
 						console.log('getBatteryDetailOnCard', response);
+						response[0].mainBatteryPercent = this.batteryService.getMainBatteryPercentage();
+						this.batteryInfo = response;
 						console.log("this.batteryService.getMainBatteryPercentage", this.batteryService.getMainBatteryPercentage());
 						
 						this.batteryIndicator.percent = this.batteryService.getMainBatteryPercentage();
@@ -39,7 +42,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 						this.batteryIndicator.expressCharging = response[0].isExpressCharging;
 						this.batteryIndicator.voltageError = response[0].isVoltageError;
 						this.batteryIndicator.convertMin(response[0].remainingTime);
-						response[0].mainBatteryPercent = this.batteryService.getMainBatteryPercentage();
 						this.commonService.sendNotification(BatteryInformation.BatteryInfo,response);
 						this.batteryCardTimer = setTimeout(() => {
 							console.log('Trying after 30 seconds');
@@ -70,6 +72,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			);
 	}
 
+	reInitValue() {
+		this.flag = false;
+		this.getBatteryDetailOnCard();
+	}
 	ngOnDestroy() {
 		clearTimeout(this.batteryCardTimer);
 	}

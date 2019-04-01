@@ -1,4 +1,4 @@
-import { Component,	OnInit,	HostListener } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { MockSecurityAdvisorService } from '../../../services/mock/mockSecurityAdvisor.service';
 import * as phoenix from '@lenovo/tan-client-bridge';
@@ -63,7 +63,7 @@ export class PageSecurityComponent implements OnInit {
 	windowsHelloLandingViewModel: WindowsHelloLandingViewModel;
 	wifiSecurityLandingViewModel: WifiSecurityLandingViewModel;
 	homeProtectionLandingViewModel: HomeProtectionLandingViewModel;
-	wifiHistory: Array < phoenix.WifiDetail > ;
+	wifiHistory: Array<phoenix.WifiDetail>;
 	securityAdvisor: phoenix.SecurityAdvisor;
 	antivirus: phoenix.Antivirus;
 	wifiSecurity: phoenix.WifiSecurity;
@@ -71,8 +71,8 @@ export class PageSecurityComponent implements OnInit {
 	passwordManager: phoenix.PasswordManager;
 	vpn: phoenix.Vpn;
 	windowsHello: phoenix.WindowsHello;
-	antivirusScore: Array < any > ;
-	articles: [];
+	antivirusScore: Array<any>;
+	cardContentPositionA: any;
 
 	itemStatusClass = {
 		0: 'good',
@@ -151,9 +151,11 @@ export class PageSecurityComponent implements OnInit {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSArticles(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				this.articles = response;
+				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+
+				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
 			},
 			error => {
 				console.log('fetchCMSContent error', error);
