@@ -36,13 +36,16 @@ const routes: Routes = [
 				path: '',
 				redirectTo: 'power',
 				pathMatch: 'full'
-			}, {
+			},
+			{
 				path: 'power',
 				component: SubpageDeviceSettingsPowerComponent
-			}, {
+			},
+			{
 				path: 'audio',
 				component: SubpageDeviceSettingsAudioComponent
-			}, {
+			},
+			{
 				path: 'display-camera',
 				component: SubpageDeviceSettingsDisplayComponent
 			}
