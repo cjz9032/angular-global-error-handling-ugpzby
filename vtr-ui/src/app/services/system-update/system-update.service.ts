@@ -415,7 +415,7 @@ export class SystemUpdateService {
 		return availableUpdate;
 	}
 
-	private getSelectedUpdates(updateList: Array<AvailableUpdateDetail>): Array<AvailableUpdateDetail> {
+	public getSelectedUpdates(updateList: Array<AvailableUpdateDetail>): Array<AvailableUpdateDetail> {
 		if (updateList && updateList.length > 0) {
 			const updates = updateList.filter((value) => {
 				return value.isSelected;

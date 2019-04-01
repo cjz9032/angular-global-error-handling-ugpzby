@@ -17,6 +17,7 @@ export class UiButtonComponent implements OnInit {
 	@Input() metricsValue: string;
 	@Input() metricsEvent: string;
 	@Input() metricsParam: string;
+	@Input() isDisabled = false;
 
 	constructor() { }
 
