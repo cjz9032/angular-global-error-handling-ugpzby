@@ -45,15 +45,8 @@ export class PageSecurityComponent implements OnInit {
 		this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.windowsHello, this.commonService);
 		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
 
-		this.antivirusScore = [
-			this.antivirusLandingViewModel.subject.status,
-			this.passwordManagerLandingViewModel.subject.status,
-			this.vpnLandingViewModel.subject.status,
-			this.wifiSecurityLandingViewModel.subject.status,
-			this.windowsHelloLandingViewModel.subject.status
-		];
-
 		this.fetchCMSArticles();
+		this.getScore();
 	}
 	title = 'Security';
 
@@ -72,6 +65,7 @@ export class PageSecurityComponent implements OnInit {
 	vpn: phoenix.Vpn;
 	windowsHello: phoenix.WindowsHello;
 	antivirusScore: Array<any>;
+	score: number;
 	cardContentPositionA: any;
 
 	itemStatusClass = {
@@ -87,7 +81,9 @@ export class PageSecurityComponent implements OnInit {
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		this.securityAdvisor.refresh();
+		this.securityAdvisor.refresh().then(() => {
+			this.getScore();
+		});
 	}
 
 	ngOnInit() {
@@ -125,19 +121,26 @@ export class PageSecurityComponent implements OnInit {
 		return total;
 	}
 
-	getScore(items) {
+	getScore() {
+		this.antivirusScore = [
+			this.antivirusLandingViewModel.subject.status,
+			this.passwordManagerLandingViewModel.subject.status,
+			this.vpnLandingViewModel.subject.status,
+			this.wifiSecurityLandingViewModel.subject.status,
+			this.windowsHelloLandingViewModel.subject.status
+		];
 		let flag;
-		let score = 0;
-		items = items.filter(current => {
+		let scoreTotal = 0;
+		this.antivirusScore = this.antivirusScore.filter(current => {
 			return current !== undefined && current !== null && current !== '';
 		});
-		flag = 100 / items.length;
-		items.forEach(item => {
+		flag = 100 / this.antivirusScore.length;
+		this.antivirusScore.forEach(item => {
 			if (item === 0 || item === 2) {
-				score += flag;
+				scoreTotal += flag;
 			}
 		});
-		return score;
+		this.score = scoreTotal;
 	}
 
 	fetchCMSArticles() {

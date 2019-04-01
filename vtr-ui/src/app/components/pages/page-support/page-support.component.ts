@@ -4,7 +4,6 @@ import { SupportService } from '../../../services/support/support.service';
 import { DeviceService } from '../../../services/device/device.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 
-
 @Component({
 	selector: 'vtr-page-support',
 	templateUrl: './page-support.component.html',
@@ -12,7 +11,7 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 })
 export class PageSupportComponent implements OnInit, OnDestroy {
 
-	title = 'Get Support';
+	title = 'support.common.get-support';
 	searchWords = '';
 	searchCount = 1;
 	articles: any;
@@ -24,7 +23,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		documentation: [
 			{
 				'icon': ['fas', 'book'],
-				'title': 'User Guide',
+				'title': 'support.documentation.list-user-guide',
 				'url': 'https://support.lenovo.com',
 				'metricsItem': 'Documentation.UserGuideButton',
 				'metricsEvent': 'ItemClick',
@@ -34,7 +33,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		needHelp: [
 			{
 				'icon': ['fas', 'comment-alt'],
-				'title': 'Lenovo Community',
+				'title': 'support.need-help.list-lenovo-community',
 				'url': 'https://community.lenovo.com',
 				'metricsItem': 'NeedHelp.LenovoCommunityButton',
 				'metricsEvent': 'ItemClick',
@@ -42,7 +41,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			},
 			{
 				'icon': ['fas', 'share-alt'],
-				'title': 'Contact customer service',
+				'title': 'support.need-help.list-contact-customer-service',
 				'url': 'https://support.lenovo.com/',
 				'metricsItem': 'NeedHelp.ContactCustomerServiceButton',
 				'metricsEvent': 'ItemClick',
@@ -50,7 +49,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			},
 			{
 				'icon': ['fab', 'weixin'],
-				'title': 'Contact us on WeChat',
+				'title': 'support.need-help.list-contact-us-on-wechat',
 				'hideArrow': true,
 				'image': 'assets/images/wechat-qrcode.png',
 			}
@@ -58,7 +57,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		quicklinks: [
 			{
 				'icon': ['fas', 'ticket-alt'],
-				'title': 'Get support with E-ticket',
+				'title': 'support.quicklinks.list-e-ticket',
 				'url': 'https://pcsupport.lenovo.com/us/en/eticketwithservice',
 				'metricsItem': 'Quicklinks.E-ticketButton',
 				'metricsEvent': 'ItemClick',
@@ -66,7 +65,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			},
 			{
 				'icon': ['fas', 'briefcase'],
-				'title': 'Find a service provider',
+				'title': 'support.quicklinks.list-service-provider',
 				'url': 'https://www.lenovo.com/us/en/ordersupport/',
 				'metricsItem': 'Quicklinks.ServiceProviderButton',
 				'metricsEvent': 'ItemClick',
@@ -90,6 +89,8 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			this.supportService.getMachineInfo().then((machineInfo) => {
 				this.supportService
 					// .getWarranty('PC0G9X77')
+					// .getWarranty('R9T6M3E')
+					// .getWarranty('R90HTPEU')
 					.getWarranty(machineInfo.serialnumber)
 					.then((warranty) => {
 						this.warranty = warranty;
@@ -141,8 +142,9 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSArticles(queryOptions, true).then(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
+				console.log(response);
 				this.articles = response;
 			},
 			error => {
