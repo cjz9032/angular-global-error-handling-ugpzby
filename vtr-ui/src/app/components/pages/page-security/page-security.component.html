@@ -13,22 +13,25 @@
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col col-12">
-										<vtr-widget-security [percentValue]="getScore(antivirusScore)"></vtr-widget-security>
+										<vtr-widget-security [percentValue]="score"></vtr-widget-security>
 									</div>
 								</div>
 
 								<div class="row">
 									<div class="col col-md-6 security-widgets-container left">
 
-										<vtr-ui-landing-feature *ngIf="antivirusLandingViewModel.subject.status !== undefined && antivirusLandingViewModel.subject.status !== null"
+										<vtr-ui-landing-feature
+											*ngIf="antivirusLandingViewModel.subject.status !== undefined && antivirusLandingViewModel.subject.status !== null"
 											[feature]='antivirusLandingViewModel'>
 										</vtr-ui-landing-feature>
 
-										<vtr-ui-landing-feature *ngIf="passwordManagerLandingViewModel.subject.status !== undefined && passwordManagerLandingViewModel.subject.status !== null"
+										<vtr-ui-landing-feature
+											*ngIf="passwordManagerLandingViewModel.subject.status !== undefined && passwordManagerLandingViewModel.subject.status !== null"
 											[feature]='passwordManagerLandingViewModel'>
 										</vtr-ui-landing-feature>
 
-										<vtr-ui-landing-feature *ngIf="vpnLandingViewModel.subject.status !== undefined && vpnLandingViewModel.subject.status !== null"
+										<vtr-ui-landing-feature
+											*ngIf="vpnLandingViewModel.subject.status !== undefined && vpnLandingViewModel.subject.status !== null"
 											[feature]='vpnLandingViewModel'>
 										</vtr-ui-landing-feature>
 									</div>
@@ -38,9 +41,11 @@
 											*ngIf="wifiSecurityLandingViewModel.subject.status !== undefined && wifiSecurityLandingViewModel.subject.status !== null">
 											<div class="security-widget-inner">
 												<div class="security-widget-wifi">
-													<vtr-ui-object-title [objects]="wifiSecurityLandingViewModel.subject">
+													<vtr-ui-object-title
+														[objects]="wifiSecurityLandingViewModel.subject">
 													</vtr-ui-object-title>
-													<vtr-ui-list-chevron [items]="wifiSecurityLandingViewModel.statusList">
+													<vtr-ui-list-chevron
+														[items]="wifiSecurityLandingViewModel.statusList">
 													</vtr-ui-list-chevron>
 													<div class="wifi-history"
 														*ngIf="wifiHistory && wifiSecurityLandingViewModel.subject.status === 0">
@@ -49,7 +54,9 @@
 																<fa-icon class="wifi-font-icon"
 																	[icon]="['fas', 'wifi']"></fa-icon>
 															</div>
-															<div class="col-9">Prevented your computer from joining <span>{{getMaliciousWifi(wifiHistory)}}</span> malicious networks this month.</div>
+															<div class="col-9">Prevented your computer from joining
+																<span>{{getMaliciousWifi(wifiHistory)}}</span> malicious
+																networks this month.</div>
 														</div>
 														<ul class="chevron-list">
 															<li *ngFor="let wifi of wifiHistory.slice(0, 2);"
@@ -63,22 +70,26 @@
 																<div class="col-6">{{wifi.ssid}}</div>
 																<div class="wifi-bg">
 																	<div class="wifi-good"
-																		[ngClass]="getWifiStatus(wifi.good)">{{getWifiDetail(wifi.good)}}</div>
+																		[ngClass]="getWifiStatus(wifi.good)">
+																		{{getWifiDetail(wifi.good)}}</div>
 																</div>
 															</li>
 															<li class="wifi-link"><a routerLink="/wifi-security"
-																	[queryParams]="{isShowMore:false}">See all joined networks</a></li>
+																	[queryParams]="{isShowMore:false}">See all joined
+																	networks</a></li>
 														</ul>
 													</div>
 												</div>
-												<vtr-ui-list-chevron [items]="homeProtectionLandingViewModel.statusList">
+												<vtr-ui-list-chevron
+													[items]="homeProtectionLandingViewModel.statusList">
 												</vtr-ui-list-chevron>
 												<div class="pull"><img class="coronet-logo"
-														src="../../../../assets/images/coronet-logo.svg" />
+														src="{{wifiSecurityLandingViewModel.imgUrl}}" />
 												</div>
 											</div>
 										</div>
-										<vtr-ui-landing-feature *ngIf="windowsHelloLandingViewModel.subject.status !== undefined && windowsHelloLandingViewModel.subject.status !== null"
+										<vtr-ui-landing-feature
+											*ngIf="windowsHelloLandingViewModel.subject.status !== undefined && windowsHelloLandingViewModel.subject.status !== null"
 											[feature]='windowsHelloLandingViewModel'>
 										</vtr-ui-landing-feature>
 
@@ -93,8 +104,17 @@
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col col-12">
-									<vtr-article-item *ngFor="let item of articles, let i = index"
-										[item]="item"></vtr-article-item>
+									<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+										[caption]="cardContentPositionA.Description"
+										[title]="cardContentPositionA.Title"
+										[logoText]="cardContentPositionA.BrandName"
+										[action]="cardContentPositionA.Action"
+										[actionLink]="cardContentPositionA.ActionLink"
+										[type]="'corner-article'"
+										[ratioX]="4"
+										[ratioY]="2"
+										[cornerShift]="'large'">
+									</vtr-container-card>
 								</div>
 							</div>
 						</div>

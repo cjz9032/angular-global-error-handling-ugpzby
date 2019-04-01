@@ -1,5 +1,7 @@
 import { Component, Self, ElementRef, OnInit, AfterViewInit, Input } from '@angular/core';
 import { DisplayService } from '../../services/display/display.service';
+import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalArticleDetailComponent } from '../modal/modal-article-detail/modal-article-detail.component';
 
 @Component({
 	selector: 'vtr-container-card',
@@ -27,7 +29,8 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 
 	constructor(
 		@Self() private element: ElementRef,
-		private displayService: DisplayService
+		private displayService: DisplayService,
+		public modalService: NgbModal
 	) { }
 
 	ngOnInit() {
@@ -52,4 +55,13 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 		}
 	}
 
+	articleClicked(articleId) {
+		let articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
+			size: 'lg',
+			centered: true,
+			windowClass: 'Article-Detail-Modal'
+		});
+
+		articleDetailModal.componentInstance.articleId = articleId;
+	}
 }
