@@ -21,5 +21,43 @@
 			"camera-privacy": "相机隐私",
 			"eye-care-mode": "眼部护理模式"
 		}
+	},
+	"support": {
+		"common": {
+			"get-support": "获取支持"
+		},
+		"warranty": {
+			"title-in-warranty": "在保修期内",
+			"title-warranty-expired": "保修到期",
+			"title-warranty-not-found": "未找到保修",
+			"status-in-warranty": "在保修期内",
+			"status-warranty-expired": "已到期",
+			"status-warranty-not-found": "未找到保修",
+			"year-depot-warranty": "年维修站保修",
+			"warranty-details": "保修详细信息：",
+			"start-date": "开始日期：",
+			"end-date": "结束日期：",
+			"status": "状态：",
+			"sub-description-1": "本产品具有若干年的有限保修，并有权送往维修站获得维修服务。客户可以致电其当地服务中心来获取更多信息。经销商可对本产品提供送修服务。",
+			"sub-description-2": "我们无法找到适用于您设备的保修详细信息，要获取更多保修选项，请访问我们的支持网站。",
+			"view-warranty-options": "查看保修选项"
+		},
+		"documentation": {
+			"title": "文档",
+			"list-user-guide": "用户指南"
+		},
+		"need-help": {
+			"title": "需要帮助？",
+			"description": "联系我们以获取帮助。",
+			"list-lenovo-community": "联想社区",
+			"list-contact-customer-service": "联系客户服务部门",
+			"list-contact-us-on-wechat": "通过微信联系我们"
+		},
+		"quicklinks": {
+			"title": "快速链接",
+			"description": "联系我们以获取帮助。",
+			"list-e-ticket": "通过电子凭单获取支持",
+			"list-service-provider": "查找服务供应商"
+		}
 	}
 }

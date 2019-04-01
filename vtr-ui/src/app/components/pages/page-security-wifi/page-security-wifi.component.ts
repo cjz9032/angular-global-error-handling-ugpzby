@@ -29,7 +29,7 @@ export class PageSecurityWifiComponent implements OnInit {
 	back = 'BACK';
 	backarrow = '< ';
 	viewSecChkRoute = 'viewSecChkRoute';
-	articles: [];
+	cardContentPositionA: any;
 	wifiIsShowMore: boolean;
 	securityAdvisor: phoenix.SecurityAdvisor;
 	wifiSecurity: phoenix.WifiSecurity;
@@ -100,11 +100,11 @@ export class PageSecurityWifiComponent implements OnInit {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSArticles(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				console.log('response', response);
+				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
 
-				this.articles = response;
+				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
 			},
 			error => {
 				console.log('fetchCMSContent error', error);
