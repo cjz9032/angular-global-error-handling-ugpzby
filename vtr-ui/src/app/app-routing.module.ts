@@ -36,46 +36,58 @@ const routes: Routes = [
 				path: '',
 				redirectTo: 'power',
 				pathMatch: 'full'
-			}, {
+			},
+			{
 				path: 'power',
 				component: SubpageDeviceSettingsPowerComponent
-			}, {
+			},
+			{
 				path: 'audio',
 				component: SubpageDeviceSettingsAudioComponent
-			}, {
+			},
+			{
 				path: 'display-camera',
 				component: SubpageDeviceSettingsDisplayComponent
 			}
 		]
-	}, {
+	},
+	{
 		path: 'system-updates',
 		component: PageDeviceUpdatesComponent
-	}, {
+	},
+	{
 		path: 'security',
 		component: PageSecurityComponent
-	}, {
+	},
+	{
 		path: 'anti-virus',
 		component: PageSecurityAntivirusComponent
-	}, {
+	},
+	{
 		path: 'wifi-security',
 		component: PageSecurityWifiComponent
-	}, {
+	},
+	{
 		path: 'password-protection',
 		component: PageSecurityPasswordComponent
-	}, {
+	},
+	{
 		path: 'internet-protection',
 		component: PageSecurityInternetComponent
 	},
 	{
 		path: 'windows-hello',
 		component: PageSecurityWindowsHelloComponent
-	}, {
+	},
+	{
 		path: 'support',
 		component: PageSupportComponent
-	}, {
+	},
+	{
 		path: 'support-detail/:id',
 		component: PageSupportDetailComponent
-	}, {
+	},
+	{
 		path: 'user',
 		component: PageUserComponent
 	}
