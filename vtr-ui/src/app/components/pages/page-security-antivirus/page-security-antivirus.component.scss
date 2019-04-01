@@ -16,9 +16,9 @@
 
 	.footer {
 		.title {
-			color: $dark;
+			color: $main_dark;
 			font-size: 2.5rem;
-			font-weight: $weight_medium;
+			font-weight: $weight_bold;
 			line-height: 2.9rem;
 		}
 
@@ -142,6 +142,12 @@
 			font-size: 3.5rem;
 			font-weight: $weight_light;
 			line-height: 4.2rem;
+		}
+		.top-benefits-desc{
+			font-size: 1.5rem;
+			font-weight: $weight_light;
+			color: $main_shade;
+			padding: 1rem 1rem 1rem 0;
 		}
 
 		.subtitle {
