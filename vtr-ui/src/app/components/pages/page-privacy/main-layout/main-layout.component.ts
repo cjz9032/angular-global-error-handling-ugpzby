@@ -3,6 +3,7 @@ import { LocationHistoryService } from '../shared/services/location-history.serv
 import { CommonPopupService } from '../common-services/popups/common-popup.service';
 import { ChoseBrowserService } from '../common-services/chose-browser.service';
 import { Router } from '@angular/router';
+import { CommunicationWithFigleafService } from "../communication-with-figleaf/communication-with-figleaf.service";
 
 @Component({
 	// selector: 'vtr-layer',
@@ -18,6 +19,7 @@ export class MainLayoutComponent implements OnInit {
 		private commonPopupService: CommonPopupService,
 		private choseBrowserService: ChoseBrowserService,
 		private router: Router,
+		private communicationWithFigleafService: CommunicationWithFigleafService,
 	) {
 	}
 
