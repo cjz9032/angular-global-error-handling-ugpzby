@@ -113,8 +113,9 @@
 																<a vtrMetrics
 																	metricsItem="setUpWindowsHello"
 																	metricsEvent="itemClick"
-																	[href]="windowsHello.windowsHelloProtocol | sanitizeUrl">Visit
-																	Windows Hello</a> in system settings
+																	href="javascript:void(0)"
+																	(click)="setUpWindowsHello()">
+																	Visit Windows Hello</a> in system settings
 															</div>
 														</div>
 													</div>
@@ -173,7 +174,9 @@
 															<div class="text-regular">
 																Start using Windows Hello to log into Microsoft Apps
 																such as
-																Outlook, OneDrive, Office 365 and Xbox Live. <a vtrMetrics
+																Outlook, OneDrive, Office 365 and Xbox Live. <a
+																	target="_blank"
+																	vtrMetrics
 																	metricsItem="visitMicrosoft"
 																	metricsEvent="itemClick"
 																	href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
@@ -195,6 +198,7 @@
 											<a vtrMetrics
 												metricsItem="privacyPolicy"
 												metricsEvent="itemClick"
+												target="_blank"
 												href="https://support.microsoft.com/en-us/help/4468253/windows-hello-and-privacy-microsoft-privacy"
 												class="learnmore">Privacy
 												Policy</a>
@@ -235,7 +239,8 @@
 														<a vtrMetrics
 															metricsItem="setUpWindowsHello"
 															metricsEvent="itemClick"
-															[href]="windowsHello.windowsHelloProtocol | sanitizeUrl">
+															href="javascript:void(0)"
+															(click)="setUpWindowsHello()">
 															Visit Windows Hello </a> in system settings
 													</div>
 												</li>
@@ -249,7 +254,9 @@
 													<div class="col">
 														<div class="text-regular">
 															Start using Windows Hello to log into Microsoft Apps such as
-															Outlook, OneDrive, Office 365 and Xbox Live. <a vtrMetrics
+															Outlook, OneDrive, Office 365 and Xbox Live. <a
+																target="_blank"
+																vtrMetrics
 																metricsItem="visitMicrosoft"
 																metricsEvent="itemClick"
 																href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">

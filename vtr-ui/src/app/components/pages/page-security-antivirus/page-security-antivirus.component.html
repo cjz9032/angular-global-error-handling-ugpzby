@@ -50,11 +50,8 @@
 											device
 										</div>
 
-										<vtr-ui-security-statusbar [statusList]=" viewMode.windowsDefenderstatusList | statusTransform">
-										</vtr-ui-security-statusbar>
-
-
-										<vtr-ui-security-statusbar [statusList]=" viewMode.windowsDefenderstatusList | statusTransform">
+										<vtr-ui-security-statusbar
+											[statusList]=" viewMode.windowsDefenderstatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 
@@ -86,8 +83,11 @@
 																</div>
 															</div>
 															<div class="col">
-																Award winning protection from the latest
-																online threats including ransomware and malware
+																<div class="text-regular">
+																	Award winning protection from the latest
+																	online threats including ransomware and malware
+																</div>
+
 															</div>
 														</div>
 
@@ -103,9 +103,14 @@
 																	</div>
 																</div>
 															</div>
-															<div class="col">Dedicated security that
-																consistently outperforms Defender and other leading AV
-																providers
+															<div class="col">
+																<div class="text-regular">
+																	Dedicated security that
+																	consistently outperforms Defender and other leading
+																	AV
+																	providers
+																</div>
+
 															</div>
 														</div>
 													</li>
@@ -119,8 +124,11 @@
 																</div>
 															</div>
 															<div class="col">
-																Device to cloud technology that won't slow down
-																your PC
+																<div class="text-regular">
+																	Device to cloud technology that won't slow down
+																	your PC
+																</div>
+
 															</div>
 														</div>
 
@@ -141,20 +149,23 @@
 										</div>
 										<div>
 											<ul class="list-inline">
-												<li class="list-inline-item read-more-text">Read more on the</li>
+												<li class="list-inline-item read-more-text pull-left">Read more on the
+												</li>
 												<li class="list-inline-item subtitle">
 													<a vtrMetrics
 														metricsItem="privacyPolicy"
 														metricsEvent="itemClick"
 														href="{{urlPrivacyPolicy}}"
+														class="learnmore"
 														target="_blank">Privacy Policy</a>
 												</li>
-												<li class="list-inline-item">and</li>
+												<li class="list-inline-item read-more-text">and</li>
 												<li class="list-inline-item subtitle">
 													<a vtrMetrics
 														metricsItem="termsOfServices"
 														metricsEvent="itemClick"
 														href="{{urlTermsOfService}}"
+														class="learnmore"
 														target="_blank">Terms Of Service</a>
 												</li>
 											</ul>
@@ -184,7 +195,8 @@
 									</div>
 									<div class="subtitle pb-5">You are currently protected by McAfee LiveSafe</div>
 
-									<vtr-ui-security-statusbar [statusList]="viewMode.mcafeestatusList | statusTransform">
+									<vtr-ui-security-statusbar
+										[statusList]="viewMode.mcafeestatusList | statusTransform">
 									</vtr-ui-security-statusbar>
 
 									<div class="row align-items-center">
@@ -210,7 +222,8 @@
 										<div class="col-auto px-0 py-5">
 											<vtr-ui-button [metricsItem]="'launchMcafee'"
 												(onClick)=" viewMode.mcafee?.launch()"
-												[label]="'LAUNCH MCAFEE'"></vtr-ui-button>
+												[label]="'LAUNCH McAfee'"
+												[textTansformDefault]=false></vtr-ui-button>
 										</div>
 									</div>
 
@@ -367,20 +380,23 @@
 										</div>
 										<div>
 											<ul class="list-inline">
-												<li class="list-inline-item read-more-text">Read more on the</li>
+												<li class="list-inline-item read-more-text pull-left">Read more on the
+												</li>
 												<li class="list-inline-item subtitle">
 													<a vtrMetrics
 														metricsItem="privacyPolicy"
 														metricsEvent="itemClick"
 														href="{{urlPrivacyPolicy}}"
+														class="learnmore"
 														target="_blank">Privacy Policy</a>
 												</li>
-												<li class="list-inline-item">and</li>
+												<li class="list-inline-item read-more-text">and</li>
 												<li class="list-inline-item subtitle">
 													<a vtrMetrics
 														metricsItem="termsOfServices"
 														metricsEvent="itemClick"
 														href="{{urlTermsOfService}}"
+														class="learnmore"
 														target="_blank">Terms Of Service</a>
 												</li>
 											</ul>
@@ -407,11 +423,13 @@
 											</div>
 										</div>
 
-										<div class="subtitle pb-5">{{viewMode.otherAntiVirus?.name}} offers you basic protection for your
+										<div class="subtitle pb-5">{{viewMode.otherAntiVirus?.name}} offers you basic
+											protection for your
 											device
 										</div>
 
-										<vtr-ui-security-statusbar [statusList]="viewMode.othersAntistatusList | statusTransform">
+										<vtr-ui-security-statusbar
+											[statusList]="viewMode.othersAntistatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>
@@ -425,11 +443,13 @@
 											</div>
 										</div>
 
-										<div class="subtitle pb-5">{{viewMode.otherFirewall.name}} offers you basic protection for your
+										<div class="subtitle pb-5">{{viewMode.otherFirewall.name}} offers you basic
+											protection for your
 											device
 										</div>
 
-										<vtr-ui-security-statusbar [statusList]="viewMode.othersFirewallstatusList | statusTransform">
+										<vtr-ui-security-statusbar
+											[statusList]="viewMode.othersFirewallstatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>
@@ -511,20 +531,23 @@
 										</div>
 										<div>
 											<ul class="list-inline">
-												<li class="list-inline-item read-more-text">Read more on the</li>
+												<li class="list-inline-item read-more-text pull-left">Read more on the
+												</li>
 												<li class="list-inline-item subtitle">
 													<a vtrMetrics
 														metricsItem="privacyPolicy"
 														metricsEvent="itemClick"
 														href="{{urlPrivacyPolicy}}"
+														class="learnmore"
 														target="_blank">Privacy Policy</a>
 												</li>
-												<li class="list-inline-item">and</li>
+												<li class="list-inline-item read-more-text">and</li>
 												<li class="list-inline-item subtitle">
 													<a vtrMetrics
 														metricsItem="termsOfServices"
 														metricsEvent="itemClick"
 														href="{{urlTermsOfService}}"
+														class="learnmore"
 														target="_blank">Terms Of Service</a>
 												</li>
 											</ul>
