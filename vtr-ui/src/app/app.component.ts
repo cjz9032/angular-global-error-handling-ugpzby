@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
 		private userService: UserService
 	) {
 		translate.addLangs(['en', 'zh-Hans']);
-
+		this.translate.setDefaultLang('en');
 		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
 
 		if (tutorial === undefined && navigator.onLine) {
@@ -108,10 +108,8 @@ export class AppComponent implements OnInit {
 			this.deviceService.getMachineInfo()
 				.then((value: any) => {
 					console.log('getMachineInfo.then', value);
-					if (value.locale.toLowerCase() === 'zh-chs') {
+					if (value.locale.toLowerCase() === 'zh-hans') {
 						this.translate.setDefaultLang('zh-Hans');
-					} else {
-						this.translate.setDefaultLang('en');
 					}
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
 				}).catch(error => {
