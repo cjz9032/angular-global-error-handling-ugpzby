@@ -44,11 +44,11 @@
 												<div class="row">
 													<div class="col">
 														<div class="title">{{'Security Health'}}</div>
-														<!-- <div class="description"
-															*ngIf="isLWSEnabled===true">
+														<div class="description"
+															*ngIf="securityHealthViewModel.isLWSEnabled===true">
 															Learn more about each of these components <a
 																routerLink="/">here</a>.
-														</div> -->
+														</div>
 													</div>
 												</div>
 
@@ -56,7 +56,8 @@
 													<div class="col">
 
 														<!--Start of Security Health Advisor When LWS is enabled-->
-														<vtr-ui-list-chevron [items]="securityHealthViewModel.homeDevicePosture"
+														<vtr-ui-list-chevron
+															[items]="securityHealthViewModel.homeDevicePosture"
 															[chevronVisibility]='false'
 															*ngIf="securityHealthViewModel.isLWSEnabled===true">
 														</vtr-ui-list-chevron>

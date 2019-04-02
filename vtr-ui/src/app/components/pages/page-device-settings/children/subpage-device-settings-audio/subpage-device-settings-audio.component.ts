@@ -15,8 +15,7 @@ import { MicrophoneOptimizeModes } from 'src/app/data-models/audio/microphone-op
 export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	title = 'Audio Settings';
-	headerCaption = `This section enables you to automatically optimize or fully configure your audio settings manually
-	, such as Dolby settings, microphone, etc.`;
+	headerCaption = `This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.`;
 
 	radioGroupAutoDolbySettings = 'radio-grp-auto-dolby-settings';
 	radioOptimiseMicSettings = 'radio-grp-optimise-mic-settings';

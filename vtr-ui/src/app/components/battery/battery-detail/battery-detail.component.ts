@@ -21,7 +21,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 	batteryIndicators = new BatteryIndicator();
 	private notificationSubscription: Subscription;
 	constructor(
-		private batteryService: BatteryDetailService, 
+		private batteryService: BatteryDetailService,
 		public shellServices: VantageShellService,
 		public commonService: CommonService) {
 	}
@@ -46,9 +46,9 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		this.batteryIndicators.expressCharging = response[0].isExpressCharging;
 		this.batteryIndicators.voltageError = response[0].isVoltageError;
 		this.batteryIndicators.convertMin(response[0].remainingTime);
-		for(let i=0; i<response.length ;i++) {	
-			if (response[i].remainingTime == 0 
-				&& this.dataSource != undefined 
+		for(let i=0; i<response.length ;i++) {
+			if (response[i].remainingTime == 0
+				&& this.dataSource != undefined
 				&& this.dataSource[0].remainingTime == 0) {
 				// Don't update UI if remainingTime is 0.
 				return;
@@ -63,10 +63,10 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 			if(response[i].chargeStatus == BatteryChargeStatus.NO_ACTIVITY.id
 			|| response[i].chargeStatus == BatteryChargeStatus.ERROR.id
 			|| response[i].chargeStatus == BatteryChargeStatus.NOT_INSTALLED.id) {
-				///if chargeStatus is 'No activity' | 'Error' | 'Not installed' 
+				///if chargeStatus is 'No activity' | 'Error' | 'Not installed'
 				// remaining time will not be displayed
 				response[i].remainingTime = undefined;
-			} 
+			}
 			if(response[i].chargeStatus == BatteryChargeStatus.CHARGING.id) {
 				this.remainingTimeText = "Charge completion time"
 			} else {
