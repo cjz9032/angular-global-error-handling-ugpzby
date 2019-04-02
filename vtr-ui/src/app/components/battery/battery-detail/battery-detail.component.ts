@@ -51,7 +51,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 				&& this.dataSource != undefined
 				&& this.dataSource[0].remainingTime == 0) {
 				// Don't update UI if remainingTime is 0.
-				return;
+				//return;
 			}
 			response[i].remainingCapacity = Math.round(response[i].remainingCapacity * 100) / 100;
 			response[i].fullChargeCapacity = Math.round(response[i].fullChargeCapacity * 100) / 100;
@@ -82,10 +82,6 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-		//TODO: Change this if event is fired
-		this.shellServices.phoenix.on('pwrPowerSupplyStatusEvent', (val) => {
-			console.log("Event fired===================");
-		});
 	}
 
 	ngOnDestroy() {
@@ -93,6 +89,5 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
-		this.shellServices.phoenix.off('pwrRemainingPercentageEvent', ()=>{ });
 	}
 }
