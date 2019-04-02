@@ -73,7 +73,7 @@ export class MockService {
 			'id': 'systemupdate',
 			'title': 'System Update',
 			'detail': 'Update',
-			'path': '/system-updates',
+			'path': 'device/system-updates',
 			'asLink': true,
 			'type': 'system'
 		}
@@ -164,7 +164,7 @@ export class MockService {
 			'id': 'anti-virus',
 			'title': 'Anti-Virus',
 			'detail': 'Enabled',
-			'path': 'anti-virus',
+			'path': 'security/anti-virus',
 			'type': 'security'
 
 		},
@@ -173,7 +173,7 @@ export class MockService {
 			'id': 'wifi-security',
 			'title': 'WiFi Security',
 			'detail': 'Enabled',
-			'path': 'wifi-security',
+			'path': 'security/wifi-security',
 			'type': 'security'
 
 		},
@@ -182,7 +182,7 @@ export class MockService {
 			'id': 'pwdmgr',
 			'title': 'Password Manager',
 			'detail': 'Installed',
-			'path': 'password-protection',
+			'path': 'security/password-protection',
 			'type': 'security'
 		},
 		{
@@ -190,7 +190,7 @@ export class MockService {
 			'id': 'vpn',
 			'title': 'VPN',
 			'detail': 'Installed',
-			'path': 'internet-protection',
+			'path': 'security/internet-protection',
 			'type': 'security'
 		},
 		{
@@ -198,7 +198,7 @@ export class MockService {
 			'id': 'windows-hello',
 			'title': 'Windows Hello',
 			'detail': 'disabled',
-			'path': 'windows-hello',
+			'path': 'security/windows-hello',
 			'type': 'security'
 
 		}
@@ -210,7 +210,7 @@ export class MockService {
 			'id': 'anti-virus',
 			'title': 'Anti-Virus',
 			'detail': 'Enabled',
-			'path': 'anti-virus',
+			'path': 'security/anti-virus',
 			'type': 'security'
 		},
 		{
@@ -218,7 +218,7 @@ export class MockService {
 			'id': 'firewall',
 			'title': 'Firewall',
 			'detail': 'Disabled',
-			'path': 'anti-virus',
+			'path': 'security/anti-virus',
 			'type': 'security'
 
 		}
@@ -230,7 +230,7 @@ export class MockService {
 			'id': 'password-manager',
 			'title': 'Password Manager',
 			'detail': 'Installed',
-			'path': 'password-protection',
+			'path': 'security/password-protection',
 			'type': 'security'
 		}
 	];
@@ -241,7 +241,7 @@ export class MockService {
 			'id': 'virtual-private-network',
 			'title': 'Virtual Private Network',
 			'detail': 'Installed',
-			'path': 'internet-protection',
+			'path': 'security/internet-protection',
 			'type': 'security'
 		}
 	];
@@ -275,7 +275,7 @@ export class MockService {
 			'id': 'connected-home-security',
 			'title': 'Connected Home Security',
 			'detail': 'Learn more',
-			'path': 'wifi-security',
+			'path': 'security/wifi-security',
 			'type': 'security'
 		}
 	];
@@ -286,7 +286,7 @@ export class MockService {
 			'id': 'fingerprint-reader',
 			'title': 'Fingerprint Reader',
 			'detail': 'Enabled',
-			'path': 'windows-hello',
+			'path': 'security/windows-hello',
 			'type': 'security'
 		}
 	];
