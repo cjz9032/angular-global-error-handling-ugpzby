@@ -32,8 +32,8 @@ export class AppComponent implements OnInit {
 		private userService: UserService
 	) {
 		translate.addLangs(['en', 'zh-Hans']);
-
-		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+		this.translate.setDefaultLang('en');
+		const tutorial: WelcomeTutorial = undefined; // = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
 
 		if (tutorial === undefined && navigator.onLine) {
 			const modalRef = this.modalService.open(ModalWelcomeComponent,
