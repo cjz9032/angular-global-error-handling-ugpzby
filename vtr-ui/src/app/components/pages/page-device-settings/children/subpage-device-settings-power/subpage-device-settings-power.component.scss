@@ -1,140 +1,140 @@
 @import "../../../../../app.theme";
 
 .subpage-device-settings-power {
-	.title {
-		opacity: 0.8;
-		color: $main_darker;
-		font-size: 7rem;
-		line-height: 8.2rem;
-	}
+  .title {
+    opacity: 0.8;
+    color: $main_darker;
+    font-size: 7rem;
+    line-height: 8.2rem;
+  }
 
-	.left-border {
-		border-left: 1rem solid $main;
+  .left-border {
+    border-left: 1rem solid $main;
 
-		.subtitle {
-			opacity: 0.8;
-			color: $main_dark;
-			font-size: 2.5rem;
-			line-height: 4.3rem;
-		}
+    .subtitle {
+      opacity: 0.8;
+      color: $main_dark;
+      font-size: 2.5rem;
+      line-height: 4.3rem;
+    }
 
-		.jump-to-settings {
-			color: $main_dark;
-			font-size: 2.5rem;
-			font-weight: bold;
-			line-height: 3rem;
-		}
+    .jump-to-settings {
+      color: $main_dark;
+      font-size: 2.5rem;
+      font-weight: bold;
+      line-height: 3rem;
+    }
 
-		.btn-label {
-			font-size: 2rem;
-			line-height: 2.5rem;
-			color: $main;
-		}
-	}
+    .btn-label {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      color: $main;
+    }
+  }
 
-	.smartsettings-card {
-		.subtitle {
-			width: 100%;
+  .smartsettings-card {
+    .subtitle {
+      width: 100%;
 
-			h3 {
-				opacity: 0.8;
-				color: $light;
-				font-size: 1.6rem;
-				line-height: 2.8rem;
-				margin-top: 1.5rem;
-				text-transform: uppercase;
-			}
+      h3 {
+        opacity: 0.8;
+        color: $light;
+        font-size: 1.6rem;
+        line-height: 2.8rem;
+        margin-top: 1.5rem;
+        text-transform: capitalize;
+      }
 
-			p {
-				opacity: 0.8;
-				color: $light;
-				font-size: 1.6rem;
-				line-height: 2.8rem;
-				padding-bottom: 2.5rem;
-				border-bottom: 1px solid $screen_light_15;
+      p {
+        opacity: 0.8;
+        color: $light;
+        font-size: 1.6rem;
+        line-height: 2.8rem;
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid $screen_light_15;
 
-				a {
-					list-style: none;
-					text-decoration: underline;
-					color: $light;
+        a {
+          list-style: none;
+          text-decoration: underline;
+          color: $light;
 
-					&:hover {
-						list-style: none;
-						color: $light;
-						text-decoration: underline;
-					}
-				}
-			}
-		}
-	}
+          &:hover {
+            list-style: none;
+            color: $light;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
 
-	.left-margin {
-		margin-left: -3rem;
-	}
+  .left-margin {
+    margin-left: -3rem;
+  }
 
-	ul.list-group {
-		list-style-type: none;
-		padding-bottom: 3rem;
-	}
+  ul.list-group {
+    list-style-type: none;
+    padding-bottom: 3rem;
+  }
 
-	.disable {
-		opacity: 0.65;
-	}
+  .disable {
+    opacity: 0.65;
+  }
 
-	.search-icon {
-		>fa-icon {
-			font-size: 2rem;
-			color: $light;
-		}
-	}
+  .search-icon {
+    > fa-icon {
+      font-size: 2rem;
+      color: $light;
+    }
+  }
 
-	.int-cool-text {
-		font-size: 1.8rem;
-		color: $light;
-		letter-spacing: 0.05rem;
-	}
+  .int-cool-text {
+    font-size: 1.8rem;
+    color: $light;
+    letter-spacing: 0.05rem;
+  }
 
-	.settings-link {
-		color: $light;
-		font-size: 1.8rem;
-		text-decoration: underline;
-		cursor: pointer;
-		float: right;
-	}
+  .settings-link {
+    color: $light;
+    font-size: 1.8rem;
+    text-decoration: underline;
+    cursor: pointer;
+    float: right;
+  }
 
-	.read-more-link {
-		color: $light;
-		text-decoration: underline;
-		cursor: pointer;
-	}
+  .read-more-link {
+    color: $light;
+    text-decoration: underline;
+    cursor: pointer;
+  }
 
-	.question {
-		color: $light;
-		font-size: 2rem;
-		cursor: pointer;
-	}
+  .question {
+    color: $light;
+    font-size: 2rem;
+    cursor: pointer;
+  }
 
-	.always-on-usb-checkbox {
-		margin: 1rem 0rem 1rem 0rem;
-		font-size: 1.5rem;
-	}
+  .always-on-usb-checkbox {
+    margin: 1rem 0rem 1rem 0rem;
+    font-size: 1.5rem;
+  }
 
-	.custom-control-label {
-		padding-left: 0.5rem;
+  .custom-control-label {
+    padding-left: 0.5rem;
 
-		// rounded square-box background
-		&::before {
-			top: 0.2rem;
-			width: 1.5rem;
-			height: 1.5rem;
-		}
+    // rounded square-box background
+    &::before {
+      top: 0.2rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
 
-		// tick mark
-		&::after {
-			top: 0rem;
-			width: 2rem;
-			height: 2rem;
-			left: -1.7rem;
-		}
-	}
+    // tick mark
+    &::after {
+      top: 0rem;
+      width: 2rem;
+      height: 2rem;
+      left: -1.7rem;
+    }
+  }
 }
