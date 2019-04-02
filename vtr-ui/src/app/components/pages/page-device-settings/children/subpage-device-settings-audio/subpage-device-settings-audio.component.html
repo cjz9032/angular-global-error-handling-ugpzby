@@ -125,7 +125,7 @@
 						</vtr-ui-row-switch>
 					</li>
 
-					<li class="">
+					<li class="" *ngIf="microphoneProperties.keyboardNoiseSuppression != undefined">
 						<vtr-ui-row-switch [title]="'Suppress keyboard noise'"
 							name="Supress Keyborad noise"
 							componentName="Supress Keyboard noise"
