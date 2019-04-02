@@ -33,6 +33,7 @@ export class AntiVirusViewMode {
 		}
 		if (antiVirus.mcafee && antiVirus.mcafee.features && antiVirus.mcafee.features.length > 0) {
 			this.mcafee = antiVirus.mcafee;
+			console.log(this.mcafee);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfee, this.mcafee);
 			this.mcafeestatusList = [{
 				buttonClick: this.mcafee.launch.bind(this.mcafee),

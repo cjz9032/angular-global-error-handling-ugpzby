@@ -451,7 +451,9 @@
 				"virus-title": "Virus protection pledge",
 				"virus-subtitle": "Provides you with the confidence that in the event your PC gets a virus, a McAfee expert will remotely access your computer to remove it.",
 				"parental-title": "Parental controls",
-				"parental-subtitle": "Block web sites and search results you don’t want your kids to see. Also lets you set limits for how much time they spend online."
+				"parental-subtitle": "Block web sites and search results you don’t want your kids to see. Also lets you set limits for how much time they spend online.",
+				"license": "License Valid until",
+				"trial": "Trial Valid until"
 			},
 			"others": {
 				"others-protection": "offers you basic protection for your device"

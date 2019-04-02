@@ -154,6 +154,8 @@ import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import { UiFeatureItemComponent } from './components/ui/ui-feature-item/ui-feature-item.component';
 import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
 import { MinutesToHourminPipe } from './pipe/minutes-to-hourmin.pipe';
+import { SubTransformPipe } from './pipe/security-antivirus/sub-transform.pipe';
+import { DateClassPipe } from './pipe/security-antivirus/date-class.pipe';
 
 
 
@@ -270,6 +272,8 @@ library.add(fal);
 		UiSecurityStatusbarComponent,
 		StatusTransformPipe,
 		MinutesToHourminPipe,
+		SubTransformPipe,
+		DateClassPipe,
 	],
 	imports: [
 		BrowserModule,

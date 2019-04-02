@@ -38,7 +38,6 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		this.antiVirus = this.VantageShell.getSecurityAdvisor().antivirus;
 		this.viewMode = new AntiVirusViewMode(this.antiVirus, commonService);
 		this.fetchCMSArticles();
-		console.log(this.antiVirus);
 	}
 
 	ngOnInit() {

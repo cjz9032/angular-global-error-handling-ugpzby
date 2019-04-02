@@ -5,13 +5,13 @@ export class StatusTextPipe implements PipeTransform {
 	transform(value: any): string {
 		switch (value) {
 			case 'enabled':
-				return 'common.security-advisor.enabled';
+				return 'common.securityAdvisor.enabled';
 			case 'disabled':
-				return 'common.security-advisor.disabled';
+				return 'common.securityAdvisor.disabled';
 			case 'installed':
-				return 'common.security-advisor.installed';
+				return 'common.securityAdvisor.installed';
 			case 'not-installed':
-				return 'common.security-advisor.not-installed';
+				return 'common.securityAdvisor.not-installed';
 		}
 	}
 }
