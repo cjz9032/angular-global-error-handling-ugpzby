@@ -8,6 +8,7 @@ interface DevicePostureDetail {
 	status: number; // 1,2
 	title: string; // name
 	detail: string; // faied,passed
+	path: string;
 }
 
 export class WifiHomeViewModel {
@@ -127,7 +128,8 @@ export class SecurityHealthViewModel {
 			const it: DevicePostureDetail = {
 				status: 0,
 				title: '',
-				detail: ''
+				detail: '',
+				path: 'security/wifi-security'
 			};
 			it.status = item.vulnerable === 'true' ? 2 : 1;
 			it.title = this.mappingDevicePosture(item.config);
