@@ -366,40 +366,40 @@
 	},
 	"support": {
 		"common": {
-			"get-support": "Get Support"
+			"getSupport": "Get Support"
 		},
 		"warranty": {
-			"title-in-warranty": "IN WARRANTY",
-			"title-warranty-expired": "WARRANTY EXPIRED",
-			"title-warranty-not-found": "WARRANTY NOT FOUND",
-			"status-in-warranty": "In warranty",
-			"status-warranty-expired": "Expired",
-			"status-warranty-not-found": "Warranty not found",
-			"year-depot-warranty": "Y Depot Warranty",
-			"warranty-details": "Warranty Details:",
-			"start-date": "Start date: ",
-			"end-date": "End date: ",
+			"titleInWarranty": "IN WARRANTY",
+			"titleWarrantyExpired": "WARRANTY EXPIRED",
+			"titleWarrantyNotFound": "WARRANTY NOT FOUND",
+			"statusInWarranty": "In warranty",
+			"statusWarrantyExpired": "Expired",
+			"statusWarrantyNotFound": "Warranty not found",
+			"yearDepotWarranty": "Y Depot Warranty",
+			"warrantyDetails": "Warranty Details:",
+			"startDate": "Start date: ",
+			"endDate": "End date: ",
 			"status": "Status: ",
-			"sub-description-1": "This product has years limited warranty and it entitled to depot repair service. Customers may call their local service center for more information. Dealers may provide carry-in repair for this product.",
-			"sub-description-2": "We were unable to locate warranty details for your device, to have more warranty options, please visit our support website.",
-			"view-warranty-options": "VIEW WARRANTY OPTIONS"
+			"subDescription1": "This product has years limited warranty and it entitled to depot repair service. Customers may call their local service center for more information. Dealers may provide carry-in repair for this product.",
+			"subDescription2": "We were unable to locate warranty details for your device, to have more warranty options, please visit our support website.",
+			"viewWarrantyOptions": "VIEW WARRANTY OPTIONS"
 		},
 		"documentation": {
 			"title": "Documentation",
-			"list-user-guide": "User Guide"
+			"listUserGuide": "User Guide"
 		},
 		"need-help": {
 			"title": "Need Help?",
 			"description": "CONTACT US TO HELP YOU OUT.",
-			"list-lenovo-community": "Lenovo Community",
-			"list-contact-customer-service": "Contact customer service",
-			"list-contact-us-on-wechat": "Contact us on WeChat"
+			"listLenovoCommunity": "Lenovo Community",
+			"listContactCustomerService": "Contact customer service",
+			"listContactUsOnWechat": "Contact us on WeChat"
 		},
 		"quicklinks": {
 			"title": "Quicklinks",
 			"description": "CONTACT US TO HELP YOU OUT.",
-			"list-e-ticket": "Get support with E-ticket",
-			"list-service-provider": "Find a service provider"
+			"listETicket": "Get support with E-ticket",
+			"listServiceProvider": "Find a service provider"
 		}
 	},
 	"security": {},
