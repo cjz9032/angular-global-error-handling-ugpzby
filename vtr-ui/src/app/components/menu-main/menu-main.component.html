@@ -69,7 +69,7 @@
 							 routerLink="/{{subitem.path}}">{{subitem.label}}</a>
 						</div>
 					</li>
-					<li *ngIf="item.id==='user'"
+					<li *ngIf="item.id==='user' && country != 'cn'"
 					 class="nav-item dropdown">
 						<!-- <a class="nav-link dropdown-toggle {{item.id}}"
 							routerLink="/{{item.path}}"

@@ -23,6 +23,7 @@ import {environment} from '../../../environments/environment';
 export class MenuMainComponent implements OnInit, OnDestroy {
 
 	public deviceModel: string;
+	public country: string;
 	commonMenuSubscription: Subscription;
 	public appVersion: string = environment.appVersion;
 
@@ -216,8 +217,8 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			switch (notification.type) {
 				case LocalStorageKey.MachineInfo:
 					this.deviceModel = notification.payload.family;
+					this.country = notification.payload.country;
 					break;
-
 				default:
 					break;
 			}
