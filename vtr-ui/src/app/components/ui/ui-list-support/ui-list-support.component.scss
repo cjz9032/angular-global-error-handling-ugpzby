@@ -17,6 +17,7 @@
 
 			&.pointer {
 				cursor: pointer;
+
 				&:hover {
 					background-color: $shade_extralight;
 				}
@@ -57,7 +58,8 @@
 					background-color: $shade_extralight;
 				}
 			}
-			.no-pointer{
+
+			.no-pointer {
 				padding: 1.5rem 1rem 1.5rem 0;
 			}
 
@@ -85,6 +87,13 @@
 					font-size: 1.9rem;
 					line-height: 3rem;
 				}
+			}
+
+			.item-icon-image {
+				display: inline-block;
+				height: 2.4rem;
+				width: 2.4rem;
+				line-height: 3rem;
 			}
 
 			.item-text {
@@ -129,9 +138,10 @@
 				font-size: 2rem;
 			}
 
-			.image{
+			.image {
 				display: inline-block;
-				img{
+
+				img {
 					width: 74%;
 				}
 			}

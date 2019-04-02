@@ -7,10 +7,15 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col col-2 text-center">
-							<div class="item-icon">
+							<div class="item-icon"
+								*ngIf="item.icon">
 								<div class="icon-bkg">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
+							</div>
+							<div class="item-icon-image"
+								*ngIf="item.iconPath">
+								<img [src]="item.iconPath" />
 							</div>
 						</div>
 						<div class="col col-9 item-text">
@@ -33,10 +38,15 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col col-2 text-center">
-							<div class="item-icon">
+							<div class="item-icon"
+								*ngIf="item.icon">
 								<div class="icon-bkg">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
+							</div>
+							<div class="item-icon-image"
+								*ngIf="item.iconPath">
+								<img [src]="item.iconPath" />
 							</div>
 						</div>
 						<div class="col col-9 item-text">
