@@ -47,10 +47,10 @@
 										</div>
 
 										<div class="subtitle pb-5">{{'security.antivirus.windows-defender.windows-subtitle' | translate}}</div>
-										
-										<vtr-ui-security-statusbar [statusList]=" viewMode.windowsDefenderstatusList | statusTransform" >
+
+										<vtr-ui-security-statusbar [statusList]=" viewMode.windowsDefenderstatusList | statusTransform">
 										</vtr-ui-security-statusbar>
-										
+
 									</div>
 									<vtr-widget-mcafee [install]="viewMode.mcafee"
 										[name]="'Windows Defender'"></vtr-widget-mcafee>
@@ -118,7 +118,8 @@
 								<div class="row">
 									<div class="col-auto mr-auto px-0">
 										<div class="title">{{'security.antivirus.common.powered-by' | translate}}</div>
-										<span class="text-regular" [innerHTML]="'security.antivirus.common.privacy-terms' | translate | safeDom:'html'"></span>
+										<span class="text-regular"
+											[innerHTML]="'security.antivirus.common.privacy-terms' | translate | safeDom:'html'"></span>
 									</div>
 									<div class="col-auto align-self-center px-0">
 										<img class="mcafee-logo"
@@ -144,8 +145,7 @@
 									</div>
 									<div class="subtitle pb-5">{{'security.antivirus.mcafee.subtitle' | translate}}</div>
 
-									<vtr-ui-security-statusbar
-										[statusList]="viewMode.mcafeestatusList | statusTransform">
+									<vtr-ui-security-statusbar [statusList]="viewMode.mcafeestatusList | statusTransform">
 									</vtr-ui-security-statusbar>
 
 									<div class="row align-items-center">
@@ -171,7 +171,8 @@
 										<div class="col-auto px-0 py-5">
 											<vtr-ui-button [metricsItem]="'launchMcafee'"
 												(onClick)=" viewMode.mcafee?.launch()"
-												[label]="'security.antivirus.mcafee.launch' | translate"></vtr-ui-button>
+												[label]="'security.antivirus.mcafee.launch' | translate"
+												[upperCaseLabel]=false></vtr-ui-button>
 										</div>
 									</div>
 
@@ -184,7 +185,8 @@
 										<div class="col-6">
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon1.png" />
+													<img class="img-fluid"
+														src="./../../../../assets/images/antivirus/icon1.png" />
 												</div>
 												<div class="col">
 													<div class="title">{{'security.antivirus.mcafee.award-title' | translate}}</div>
@@ -205,7 +207,8 @@
 											</div>
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon3.png" />
+													<img class="img-fluid"
+														src="./../../../../assets/images/antivirus/icon3.png" />
 												</div>
 												<div class="col">
 													<div class="title">{{'security.antivirus.mcafee.identity-title' | translate}}</div>
@@ -214,7 +217,8 @@
 											</div>
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon4.png" />
+													<img class="img-fluid"
+														src="./../../../../assets/images/antivirus/icon4.png" />
 												</div>
 												<div class="col">
 													<div class="title">{{'security.antivirus.mcafee.support-title' | translate}}</div>
@@ -268,7 +272,8 @@
 								<div class="row">
 									<div class="col-auto mr-auto px-0">
 										<div class="title">{{'security.antivirus.common.powered-by' | translate}}</div>
-										<span class="text-regular" [innerHTML]="'security.antivirus.common.privacy-terms' | translate | safeDom:'html'"></span>
+										<span class="text-regular"
+											[innerHTML]="'security.antivirus.common.privacy-terms' | translate | safeDom:'html'"></span>
 									</div>
 									<div class="col-auto align-self-center px-0">
 										<img class="mcafee-logo"
@@ -295,8 +300,7 @@
 											{{viewMode.otherAntiVirus?.name}}{{'security.antivirus.others.others-protection' | translate}}
 										</div>
 
-										<vtr-ui-security-statusbar
-											[statusList]="viewMode.othersAntistatusList | statusTransform">
+										<vtr-ui-security-statusbar [statusList]="viewMode.othersAntistatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>
@@ -314,8 +318,7 @@
 											{{viewMode.otherFirewall?.name}}{{'security.antivirus.others.others-protection' | translate}}
 										</div>
 
-										<vtr-ui-security-statusbar
-											[statusList]="viewMode.othersFirewallstatusList | statusTransform">
+										<vtr-ui-security-statusbar [statusList]="viewMode.othersFirewallstatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>
@@ -382,7 +385,8 @@
 								<div class="row">
 									<div class="col-auto mr-auto px-0">
 										<div class="title">{{'security.antivirus.common.powered-by' | translate}}</div>
-										<span class="text-regular" [innerHTML]="'security.antivirus.common.privacy-terms' | translate | safeDom:'html'"></span>
+										<span class="text-regular"
+											[innerHTML]="'security.antivirus.common.privacy-terms' | translate | safeDom:'html'"></span>
 									</div>
 									<div class="col-auto align-self-center px-0">
 										<img class="mcafee-logo"

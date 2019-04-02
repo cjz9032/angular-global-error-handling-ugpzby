@@ -1,65 +1,75 @@
 <div class="vtr-widget-mcafee mt-60">
-  <div class="row">
-    <div class="col-auto px-0 mr-auto">
-      <div class="title pb-3">{{'security.antivirus.common.mcafee-premium'}}</div>
-    </div>
-    <div class="col-auto px-0">
-      <img class="mcafee-logo" src="../../../../assets/images/mcafee_logo.svg" />
-    </div>
-  </div>
-  <div class="subtitle pb-5">
-    {{'security.antivirus.common.mcafee-premium'}} {{name}}{{'security.antivirus.common.mcafee-premium'}}
-  </div>
+	<div class="row">
+		<div class="col-auto px-0 mr-auto">
+			<div class="title pb-3">{{'security.antivirus.common.mcafee-premium'}}</div>
+		</div>
+		<div class="col-auto px-0">
+			<img class="mcafee-logo"
+				src="../../../../assets/images/mcafee_logo.svg" />
+		</div>
+	</div>
+	<div class="subtitle pb-5">
+		{{'security.antivirus.common.mcafee-premium'}} {{name}}{{'security.antivirus.common.mcafee-premium'}}
+	</div>
 
-  <ul class="list-group">
-    <li class="list-group-item">
-      <div class="row align-items-center">
-        <div class="col-auto px-3">
-          <div class="bullet-icon-times">
-            <div class="icon-bkg">
-              <fa-icon [icon]="['fas', 'times']"></fa-icon>
-            </div>
-          </div>
-        </div>
-        <div class="col-auto px-0 text">
-          {{'security.antivirus.common.virus-scan'}}
-        </div>
-        <div class="col-auto mr-auto">
-          <h3><span class="badge badge-pill badge-danger">{{'security.antivirus.common.disabled'}}</span>
-          </h3>
-        </div>
-      </div>
+	<ul class="list-group">
+		<li class="list-group-item">
+			<div class="row align-items-center">
+				<div class="col-auto px-3">
+					<div class="bullet-icon-times">
+						<div class="icon-bkg">
+							<fa-icon [icon]="['fas', 'times']"></fa-icon>
+						</div>
+					</div>
+				</div>
+				<div class="col-auto px-0 text">
+					{{'security.antivirus.common.virus-scan'}}
+				</div>
+				<div class="col-auto mr-auto">
+					<h3><span class="badge badge-pill badge-danger">{{'security.antivirus.common.disabled'}}</span>
+					</h3>
+				</div>
+			</div>
 
 		</li>
 
-    <li class="list-group-item">
-      <div class="row align-items-center">
-        <div class="col-auto px-3">
-          <div class="bullet-icon-times">
-            <div class="icon-bkg">
-              <fa-icon [icon]="['fas', 'times']"></fa-icon>
-            </div>
-          </div>
-        </div>
-        <div class="col-auto px-0 text">
-          {{'security.antivirus.common.firewall'}}
-        </div>
-        <div class="col-auto mr-auto">
-          <h3><span class="badge badge-pill badge-danger">{{'security.antivirus.common.disabled'}}</span>
-          </h3>
-        </div>
-      </div>
+		<li class="list-group-item">
+			<div class="row align-items-center">
+				<div class="col-auto px-3">
+					<div class="bullet-icon-times">
+						<div class="icon-bkg">
+							<fa-icon [icon]="['fas', 'times']"></fa-icon>
+						</div>
+					</div>
+				</div>
+				<div class="col-auto px-0 text">
+					{{'security.antivirus.common.firewall'}}
+				</div>
+				<div class="col-auto mr-auto">
+					<h3><span class="badge badge-pill badge-danger">{{'security.antivirus.common.disabled'}}</span>
+					</h3>
+				</div>
+			</div>
 
 		</li>
 
 	</ul>
 
-  <div class="row justify-content-end">
-    <div class="col-auto px-0 py-5">
-      <vtr-ui-button [metricsItem]="'launchMcafee'" (onClick)="install.launch()" [label]="'security.antivirus.mcafee.launch' | translate" *ngIf=" install | pipeInstall"></vtr-ui-button>
-      <a class="d-block" href="{{urlGetMcAfee}}" target="_blank">
-        <vtr-ui-button [metricsItem]="'getMcafee'" [label]="'security.antivirus.mcafee.get-macfee' | translate" *ngIf="! install | pipeInstall"></vtr-ui-button>
-      </a>
-    </div>
-  </div>
+	<div class="row justify-content-end">
+		<div class="col-auto px-0 py-5">
+			<vtr-ui-button [metricsItem]="'launchMcafee'"
+				(onClick)="install.launch()"
+				[label]="'security.antivirus.mcafee.launch' | translate"
+				[upperCaseLabel]="false"
+				*ngIf=" install | pipeInstall"></vtr-ui-button>
+			<a class="d-block"
+				href="{{urlGetMcAfee}}"
+				target="_blank">
+				<vtr-ui-button [metricsItem]="'getMcafee'"
+					[label]="'security.antivirus.mcafee.get-macfee' | translate"
+					[upperCaseLabel]="false"
+					*ngIf="! install | pipeInstall"></vtr-ui-button>
+			</a>
+		</div>
+	</div>
 </div>
