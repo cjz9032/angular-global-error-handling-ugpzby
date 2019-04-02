@@ -67,14 +67,14 @@
 			<vtr-ui-button [metricsItem]="'launchMcafee'"
 				(onClick)="install.launch()"
 				[label]="'LAUNCH McAfee'"
-				[textTansformDefault]="false"
+				[upperCaseLabel]="false"
 				*ngIf=" install | pipeInstall"></vtr-ui-button>
 			<a class="d-block"
 				href="{{urlGetMcAfee}}"
 				target="_blank">
 				<vtr-ui-button [metricsItem]="'getMcafee'"
 					[label]="'GET McAfee'"
-					[textTansformDefault]="false"
+					[upperCaseLabel]="false"
 					*ngIf="! install | pipeInstall"></vtr-ui-button>
 			</a>
 		</div>
