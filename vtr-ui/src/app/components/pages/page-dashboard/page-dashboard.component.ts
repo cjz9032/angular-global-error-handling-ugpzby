@@ -11,6 +11,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
+import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -46,7 +47,8 @@ export class PageDashboardComponent implements OnInit {
 		config: NgbModalConfig,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
-		private cmsService: CMSService
+		private cmsService: CMSService,
+		private systemUpdateService: SystemUpdateService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -245,9 +247,15 @@ export class PageDashboardComponent implements OnInit {
 			systemUpdate.type = 'system';
 
 			if (response.systemupdate) {
+				const lastUpdate = response.sysupdate.lastupdate;
+				const diffInDays = this.systemUpdateService.dateDiffInDays(lastUpdate);
 				const { status } = response.systemupdate;
 				if (status === 1) {
-					systemUpdate.status = 0;
+					if (diffInDays > 30) {
+						systemUpdate.status = 1;
+					} else {
+						systemUpdate.status = 0;
+					}
 				} else {
 					systemUpdate.status = 1;
 				}
