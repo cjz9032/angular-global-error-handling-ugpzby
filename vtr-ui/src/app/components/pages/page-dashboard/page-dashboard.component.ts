@@ -247,7 +247,7 @@ export class PageDashboardComponent implements OnInit {
 			systemUpdate.type = 'system';
 
 			if (response.systemupdate) {
-				const lastUpdate = response.sysupdate.lastupdate;
+				const lastUpdate = response.systemupdate.lastupdate;
 				const diffInDays = this.systemUpdateService.dateDiffInDays(lastUpdate);
 				const { status } = response.systemupdate;
 				if (status === 1) {
