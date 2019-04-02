@@ -1,0 +1,28 @@
+<div class="wifi-security-location-modal">
+	<h1>{{ header }} </h1>
+	<div role="button" class="close-btn" (click)="onCancelClick($event)">
+		<img src="assets/icons/Close.svg" alt="" srcset="">
+	</div>
+	<p class="description">
+		{{ description }}
+	</p>
+	<ul>
+		<li *ngFor="let package of packages">{{ package }}</li>
+	</ul>
+	<div class="d-flex">
+		<div class="ml-0 mr-4 pl-0">
+			<button type="button"
+				class="btn btn-default modal-button"
+				(click)="onOkClick($event)">
+				{{OkText}}
+			</button>
+		</div>
+		<div class="ml-0 mr-4 pl-0">
+			<div role="button"
+				class="btn btn-default modal-button-cancel"
+				(click)="onCancelClick($event)">
+				{{CancelText}}
+			</div>
+		</div>
+	</div>
+</div>
