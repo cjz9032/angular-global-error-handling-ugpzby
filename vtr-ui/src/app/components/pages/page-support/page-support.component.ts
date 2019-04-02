@@ -22,7 +22,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	supportDatas = {
 		documentation: [
 			{
-				'icon': ['fas', 'book'],
+				'icon': ['fal', 'book'],
 				'title': 'support.documentation.listUserGuide',
 				'url': 'https://support.lenovo.com',
 				'metricsItem': 'Documentation.UserGuideButton',
@@ -32,7 +32,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		],
 		needHelp: [
 			{
-				'icon': ['fas', 'comment-alt'],
+				'icon': ['fal', 'comment-alt'],
 				'title': 'support.need-help.listLenovoCommunity',
 				'url': 'https://community.lenovo.com',
 				'metricsItem': 'NeedHelp.LenovoCommunityButton',
@@ -40,7 +40,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				'metricsParent': 'Page.Support',
 			},
 			{
-				'icon': ['fas', 'share-alt'],
+				'icon': ['fal', 'share-alt'],
 				'title': 'support.need-help.listContactCustomerService',
 				'url': 'https://support.lenovo.com/',
 				'metricsItem': 'NeedHelp.ContactCustomerServiceButton',
@@ -48,7 +48,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				'metricsParent': 'Page.Support',
 			},
 			{
-				'icon': ['fab', 'weixin'],
+				'iconPath': 'assets/images/support/svg_icon_wechat.svg',
 				'title': 'support.need-help.listContactUsOnWechat',
 				'hideArrow': true,
 				'image': 'assets/images/wechat-qrcode.png',
@@ -56,7 +56,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		],
 		quicklinks: [
 			{
-				'icon': ['fas', 'ticket-alt'],
+				'icon': ['fal', 'ticket-alt'],
 				'title': 'support.quicklinks.listETicket',
 				'url': 'https://pcsupport.lenovo.com/us/en/eticketwithservice',
 				'metricsItem': 'Quicklinks.E-ticketButton',
@@ -64,7 +64,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				'metricsParent': 'Page.Support',
 			},
 			{
-				'icon': ['fas', 'briefcase'],
+				'icon': ['fal', 'briefcase'],
 				'title': 'support.quicklinks.listServiceProvider',
 				'url': 'https://www.lenovo.com/us/en/ordersupport/',
 				'metricsItem': 'Quicklinks.ServiceProviderButton',
