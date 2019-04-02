@@ -29,15 +29,15 @@
 				</div>
 				<!-- row-1 -->
 				<div class="row">
-					<div class="col-2 p-0 battery-label-text">Status</div>
+					<div class="col-2 p-0 battery-label-text">{{'device.deviceSettings.batteryGauge.details.status' | translate }}</div>
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.chargeStatusString }}
 					</div>
-					<div class="col-2 p-0 battery-label-text">Wattage</div>
+					<div class="col-2 p-0 battery-label-text">{{'device.deviceSettings.batteryGauge.details.wattage' | translate }}</div>
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.wattage }} W
 					</div>
-					<div class="col-2 p-0 battery-label-text">Bar-Code</div>
+					<div class="col-2 p-0 battery-label-text">{{'device.deviceSettings.batteryGauge.details.barcode' | translate }}</div>
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.barCode }}
 					</div>
@@ -45,19 +45,19 @@
 				<!-- row-2 -->
 				<div class="row">
 					<div class="col-2 p-0 battery-label-text">
-						Remaining percentage
+						{{'device.deviceSettings.batteryGauge.details.remainingPercent' | translate }}
 					</div>
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.remainingPercent }}%
 					</div>
 					<div class="col-2 p-0 battery-label-text">
-						Temperature
+						{{'device.deviceSettings.batteryGauge.details.temp' | translate }}
 					</div>
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.temperature }} &#176;C
 					</div>
 					<div class="col-2 p-0 battery-label-text">
-						FRU part number
+						{{'device.deviceSettings.batteryGauge.details.frupn' | translate }}
 					</div>
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.fruPart }}
@@ -72,13 +72,13 @@
 						{{ model.remainingTime | minutesToHourmin }}
 					</div>
 					<div class="col-2 p-0 battery-label-text">
-						Cycle count
+						{{'device.deviceSettings.batteryGauge.details.cycleCount' | translate }}
 					</div>
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.cycleCount }}
 					</div>
 					<div class="col-2 p-0 battery-label-text">
-						Device chemistry
+						{{'device.deviceSettings.batteryGauge.details.chemistry' | translate }}
 					</div>
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.deviceChemistry }}
@@ -87,19 +87,19 @@
 				<!-- row-4 -->
 				<div class="row">
 					<div class="col-2 p-0 battery-label-text">
-						Remaining capacity
+						{{'device.deviceSettings.batteryGauge.details.remainingCap' | translate }}
 					</div>
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.remainingCapacity }} Wh
 					</div>
 					<div class="col-2 p-0 battery-label-text">
-						Manufacturer
+						{{'device.deviceSettings.batteryGauge.details.manufacturer' | translate }}
 					</div>
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.manufacturer }}
 					</div>
 					<div class="col-2 p-0 battery-label-text">
-						Design capacity
+						{{'device.deviceSettings.batteryGauge.details.designCap' | translate }}
 					</div>
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.designCapacity }} Wh
@@ -108,19 +108,19 @@
 				<!-- row-5 -->
 				<div class="row">
 					<div class="col-2 p-0 battery-label-text">
-						Full charge capacity
+						{{'device.deviceSettings.batteryGauge.details.fullChargeCap' | translate }}
 					</div>
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.fullChargeCapacity }} Wh
 					</div>
 					<div class="col-2 p-0 battery-label-text">
-						Manufacture date
+						{{'device.deviceSettings.batteryGauge.details.manufDt' | translate }}
 					</div>
 					<div class="col-2 p-0 battery-value-text">
-						{{ model.manufactureDate | date: 'MM/dd/yyyy' }} 
+						{{ model.manufactureDate | date: 'MM/dd/yyyy' }}
 					</div>
 					<div class="col-2 p-0 battery-label-text">
-						Design voltage
+						{{'device.deviceSettings.batteryGauge.details.designVolt' | translate }}
 					</div>
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.designVoltage }} V
@@ -128,18 +128,18 @@
 				</div>
 				<!-- row-5 -->
 				<div class="row">
-					<div class="col-2 p-0 battery-label-text">Voltage</div>
+					<div class="col-2 p-0 battery-label-text">	{{'device.deviceSettings.batteryGauge.details.volts' | translate }}</div>
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.voltage }} V
 					</div>
 					<div class="col-2 p-0 battery-label-text">
-						First use date
+						{{'device.deviceSettings.batteryGauge.details.firstUseDt' | translate }}
 					</div>
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.firstUseDate | date: 'MM/dd/yyyy' }}
 					</div>
 					<div class="col-2 p-0 battery-label-text">
-						Firmware version
+						{{'device.deviceSettings.batteryGauge.details.firmwareVer' | translate }}
 					</div>
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.firmwareVersion }}

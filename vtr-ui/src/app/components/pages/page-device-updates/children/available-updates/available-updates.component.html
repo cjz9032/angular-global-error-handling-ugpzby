@@ -22,6 +22,7 @@
 			<div class="col-3">
 				<div class="button-box shift-right">
 					<vtr-ui-button (onClick)="onInstallAllUpdates($event)"
+						[upperCaseLabel]="true"
 						[label]="'Install all updates'"></vtr-ui-button>
 				</div>
 			</div>
@@ -104,14 +105,16 @@
 						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="row mt-10"
-				*ngIf="!isInstallationCompleted">
-				<div class="col-5">
-					<div class="button-box shift-left">
-						<vtr-ui-button (onClick)="onInstallSelectedUpdates($event)"
-							[label]="'Install Selected updates'"></vtr-ui-button>
+				<div class="row mt-10"
+					*ngIf="!isInstallationCompleted">
+					<div class="col-5">
+						<div class="button-box shift-left">
+							<vtr-ui-button (onClick)="onInstallSelectedUpdates($event)"
+								[isDisabled]="!isUpdateSelected"
+								[upperCaseLabel]="true"
+								[label]="'Install Selected updates'"></vtr-ui-button>
+						</div>
 					</div>
 				</div>
 			</div>

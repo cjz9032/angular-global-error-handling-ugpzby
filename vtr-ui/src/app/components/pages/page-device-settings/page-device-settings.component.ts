@@ -13,6 +13,7 @@ export class PageDeviceSettingsComponent implements OnInit {
 	title = 'Device Settings';
 	back = 'BACK';
 	backarrow = '< ';
+	parentPath = 'device';
 	menuItems = [
 		{
 			id: 'power',

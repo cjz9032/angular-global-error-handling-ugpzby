@@ -36,7 +36,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	private nextScheduleScanTime: string;
 	private isScheduleScanEnabled = false;
 	public percentCompleted = 0;
-	public updateInfo;
 	public criticalUpdates: AvailableUpdateDetail[];
 	public recommendedUpdates: AvailableUpdateDetail[];
 	public optionalUpdates: AvailableUpdateDetail[];

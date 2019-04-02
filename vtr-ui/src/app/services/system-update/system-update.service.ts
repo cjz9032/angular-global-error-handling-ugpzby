@@ -108,14 +108,11 @@ export class SystemUpdateService {
 				console.log('checkForUpdates response', response, typeof response.status);
 				this.isCheckForUpdateComplete = true;
 				const status = parseInt(response.status, 10);
+				this.isUpdatesAvailable = (response.updateList && response.updateList.length > 0);
+
 				if (status === SystemUpdateStatusMessage.SUCCESS.code) { // success
-					this.isUpdatesAvailable = (response.updateList && response.updateList.length > 0);
 					this.updateInfo = { status: status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
-					// if (this.isUpdatesAvailable) {
 					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
-					// } else {
-					// 	this.commonService.sendNotification(UpdateProgress.UpdatesNotAvailable);
-					// }
 				} else {
 					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, { ...response, status });
 				}
@@ -415,7 +412,7 @@ export class SystemUpdateService {
 		return availableUpdate;
 	}
 
-	private getSelectedUpdates(updateList: Array<AvailableUpdateDetail>): Array<AvailableUpdateDetail> {
+	public getSelectedUpdates(updateList: Array<AvailableUpdateDetail>): Array<AvailableUpdateDetail> {
 		if (updateList && updateList.length > 0) {
 			const updates = updateList.filter((value) => {
 				return value.isSelected;
@@ -423,5 +420,13 @@ export class SystemUpdateService {
 			return updates;
 		}
 		return undefined;
+	}
+
+	public dateDiffInDays(date: string) {
+		const lastUpdateDate = new Date(date);
+		const today = new Date();
+		const diffTime = Math.abs(today.getTime() - lastUpdateDate.getTime());
+		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+		return diffDays;
 	}
 }
