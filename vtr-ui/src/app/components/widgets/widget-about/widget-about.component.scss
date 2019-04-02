@@ -35,10 +35,11 @@
 	}
 
 	.about-links {
-		a {
-			display: block;
-      text-decoration: underline;
+		.link {
 		  @include aboutNormalFontStyle;
+      a {
+        text-decoration: underline;
+      }
 		}
 	}
 
