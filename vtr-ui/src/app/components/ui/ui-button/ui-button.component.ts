@@ -9,7 +9,7 @@ export class UiButtonComponent implements OnInit {
 	@Input() label: string;
 	@Input() isFullWidth: boolean;
 	@Input() isLWSEnabled = true;
-	@Input() textTansformDefault = true;
+	@Input() upperCaseLabel = true;
 	@Output() onClick = new EventEmitter<any>();
 
 	@Input() metricsItem: string;

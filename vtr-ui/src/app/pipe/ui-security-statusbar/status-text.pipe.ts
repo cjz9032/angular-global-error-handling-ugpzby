@@ -3,9 +3,15 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({ name: 'statusText' })
 export class StatusTextPipe implements PipeTransform {
 	transform(value: any): string {
-		if (value) {
-			return value.replace(/-/g, ' ').toUpperCase();
+		switch (value) {
+			case 'enabled':
+				return 'common.securityAdvisor.enabled';
+			case 'disabled':
+				return 'common.securityAdvisor.disabled';
+			case 'installed':
+				return 'common.securityAdvisor.installed';
+			case 'not-installed':
+				return 'common.securityAdvisor.not-installed';
 		}
-		return '';
 	}
 }

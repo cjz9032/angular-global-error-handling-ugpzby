@@ -11,7 +11,7 @@
 			[metricsParam]="metricsParam"
 			[metricsValue]="metricsValue"
 			[metricsParent]="metricsParent"
-			[ngClass]="{'fullWidth': isFullWidth === true,'text-upper-case': textTansform === true}"
+			[ngClass]="{'fullWidth': isFullWidth === true,'text-upper-case': upperCaseLabel}"
 			(click)="onClickButton($event)">{{label}} </button>
 		<button *ngIf="!isLWSEnabled"
 			type="button"
@@ -23,7 +23,7 @@
 			[metricsParam]="metricsParam"
 			[metricsValue]="metricsValue"
 			[metricsParent]="metricsParent"
-			[ngClass]="{'fullWidth': isFullWidth === true ,'text-upper-case': textTansform === true}"
+			[ngClass]="{'fullWidth': isFullWidth === true ,'text-upper-case': upperCaseLabel}"
 			(click)="onClickButton($event)">{{label}} </button>
 	</div>
 </div>
