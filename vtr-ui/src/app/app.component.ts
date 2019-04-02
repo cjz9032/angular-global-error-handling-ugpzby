@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
 	) {
 		translate.addLangs(['en', 'zh-Hans']);
 		this.translate.setDefaultLang('en');
-		const tutorial: WelcomeTutorial = undefined; // = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
 
 		if (tutorial === undefined && navigator.onLine) {
 			const modalRef = this.modalService.open(ModalWelcomeComponent,
@@ -110,8 +110,6 @@ export class AppComponent implements OnInit {
 					console.log('getMachineInfo.then', value);
 					if (value.locale.toLowerCase() === 'zh-hans') {
 						this.translate.setDefaultLang('zh-Hans');
-					} else {
-						this.translate.setDefaultLang('en');
 					}
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
 				}).catch(error => {
