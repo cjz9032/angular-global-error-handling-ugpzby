@@ -25,8 +25,9 @@ export class UiListCheckboxComponent implements OnInit {
 	public installedVersion: string;
 	public downloadSize: string;
 	public diskSpaceNeeded: string;
-	public readMeUrl: string;
+	public readMeUrl = '';
 	public packageRebootType: string;
+	public isReadMeAvailable = false;
 	// Random number is used to have unique id of each input field
 	randomNumber: number = Math.floor(new Date().valueOf() * Math.random());
 
@@ -43,6 +44,7 @@ export class UiListCheckboxComponent implements OnInit {
 
 	onTooltipClick(update: AvailableUpdateDetail, tooltip: NgbTooltip) {
 		if (tooltip && !tooltip.isOpen()) {
+			this.isReadMeAvailable = false;
 			this.manufacturer = update.packageVendor;
 			this.version = update.packageVersion;
 			this.installedVersion = update.currentInstalledVersion;
@@ -50,6 +52,9 @@ export class UiListCheckboxComponent implements OnInit {
 			this.diskSpaceNeeded = this.commonService.formatBytes(parseInt(update.diskSpaceRequired, 10));
 			this.readMeUrl = update.readmeUrl;
 			this.packageRebootType = update.packageRebootType;
+			if (this.readMeUrl && this.readMeUrl.length > 0 && this.readMeUrl.startsWith('http', 0)) {
+				this.isReadMeAvailable = true;
+			}
 		}
 	}
 

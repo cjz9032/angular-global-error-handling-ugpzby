@@ -1,10 +1,12 @@
 <ul class="list-group">
-	<li class="list-group-item" *ngFor="let list of statusList">
+	<li class="list-group-item"
+		*ngFor="let list of statusList">
 		<div class="row align-items-center">
 			<div class="col-auto px-3">
 				<div class="bullet-icon">
-					<div class="icon-bkg" [ngClass]="list.status | iconClass">
-            <fa-icon [icon]="list.status | iconName"></fa-icon>
+					<div class="icon-bkg"
+						[ngClass]="list.status | iconClass">
+						<fa-icon [icon]="list.status | iconName"></fa-icon>
 					</div>
 				</div>
 			</div>
@@ -12,13 +14,16 @@
 				{{list.title}}
 			</div>
 			<div class="col-auto mr-auto">
-        <h3><span class="badge badge-pill"
-            [ngClass]="list.status | textClass">
-          {{ list.status | statusText }}
-        </span></h3>
+				<h3><span class="badge badge-pill"
+						[ngClass]="list.status | textClass">
+						{{ list.status | statusText }}
+					</span></h3>
 			</div>
-			<div *ngIf="list.buttonTitle && list.status === 'disabled'" class="col-auto">
-				<vtr-ui-button (onClick)="list.buttonClick()" metricsEvent="itemClick" [metricsItem]="list.metricsItem"
+			<div *ngIf="list.buttonTitle && list.status === 'disabled'"
+				class="col-auto">
+				<vtr-ui-button (onClick)="list.buttonClick()"
+					metricsEvent="itemClick"
+					[metricsItem]="list.metricsItem"
 					[label]="list.buttonTitle"></vtr-ui-button>
 			</div>
 		</div>

@@ -102,7 +102,8 @@
 			<li>Download size: <span>{{ downloadSize }}</span> </li>
 			<li>Disc space needed: <span>{{ diskSpaceNeeded }}</span></li>
 		</ul>
-		<div class="row">
+		<div class="row"
+			*ngIf="isReadMeAvailable">
 			<div class="col-6 pl-0 pr-0 text-left">
 				<a href="javascript:void(0)"
 					class="read"

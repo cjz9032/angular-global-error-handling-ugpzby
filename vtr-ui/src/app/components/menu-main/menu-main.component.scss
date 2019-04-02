@@ -33,6 +33,7 @@
 				}
 
 				.app-version {
+					text-transform: lowercase;
 					font-size: 1.4rem;
 					padding-left: 1rem;
 					font-weight: $weight_light;
@@ -94,6 +95,7 @@
 						box-shadow: $drop_shadow;
 						margin-top: -1rem;
 						padding: 2.5rem 1.5rem;
+						min-width: 20rem;
 
 						&.user {
 							margin-left: -1.5rem;
@@ -129,6 +131,10 @@
 								&:hover {
 									color: $main;
 								}
+							}
+							&.link-active {
+								color: $main;
+								font-weight: bold;
 							}
 						}
 					}
