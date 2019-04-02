@@ -2,24 +2,391 @@
 	"common": {
 		"menu": {
 			"dashboard": "仪表板",
-			"device": "Device"
+			"device": {
+				"title": "设备",
+				"sub1": "我的设备",
+				"sub2": "我的设备设置",
+				"sub3": "系统更新"
+			},
+			"security": {
+				"title": "安全性",
+				"sub1": "我的安全性",
+				"sub2": "反病毒",
+				"sub3": "WiFi 安全",
+				"sub4": "密码保护",
+				"sub5": "因特网保护",
+				"sub6": "Windows Hello"
+			},
+			"support": "支持服务"
+		},
+		"securityAdvisor": {
+			"title": "安全顾问",
+			"subtitle": "检查设备是否受安全保护。",
+			"antiVirus": "反病毒",
+			"wifi": "WiFi 安全",
+			"pswdMgr": "密码保护",
+			"vpn": "VPN",
+			"windowsHello": "Windows Hello",
+			"enabled": "已启用",
+			"disabled": "已禁用",
+			"installed": "已安装",
+			"notInstalled": "未安装"
+		},
+		"qAndA": {
+			"title": "关于计算机的常见问题解答​",
+			"subtitle": "查找关于设备的实用小提示。",
+			"question1": "备份和恢复文件",
+			"question2": "如何刷新您的电脑",
+			"question3": "如何了解计算机的 CPU 情况",
+			"question4": "检查计算机的电池使用情况",
+			"question5": "​像使用平板电脑一样使用您的计算机",
+			"question6": "了解您的个人助理 Cortona"
 		},
 		"ui": {
-			"on": "上",
-			"off": "离"
+			"back": "返回",
+			"on": "开",
+			"off": "关",
+			"collapse": "折叠"
 		}
 	},
 	"dashboard": {
 		"feedback": {
-			"title": "给予反馈",
-			"subtitle": "告诉我们您对vantage的看法",
-			"button": "给予反馈"
+			"title": "提供反馈",
+			"subtitle": "告诉我们您对 VANTAGE 的想法",
+			"button": "提供反馈",
+			"form": {
+				"email": "电子邮件（可选）",
+				"comments": "注释",
+				"button": "提交"
+			}
 		},
-		"quick-settings": {
-			"title": "你的快速设置",
+		"quickSettings": {
+			"title": "您的快速设置",
 			"microphone": "麦克风",
-			"camera-privacy": "相机隐私",
-			"eye-care-mode": "眼部护理模式"
+			"cameraPrivacy": "摄像头隐私",
+			"eyeCareMode": "护眼模式"
+		},
+		"systemStatus": {
+			"title": "系统状态",
+			"subtitle": "快速了解设备状态。",
+			"memory": "内存",
+			"diskspace": "磁盘空间",
+			"warranty": "保修",
+			"systemUpdate": "系统更新"
 		}
-	}
+	},
+	"device": {
+		"myDevice": {
+			"title": "我的设备",
+			"subtitle": "我的设备状态",
+			"serial": "序列号",
+			"productNumber": "产品编号",
+			"biosVersion": "BIOS 版本",
+			"learnMore": "了解更多信息",
+			"freeMemory": "可用内存",
+			"systemUpdate": "系统更新",
+			"extendedWarranty": "延长保修",
+			"processor": "处理器",
+			"memory": "内存",
+			"diskspace": "磁盘空间",
+			"software": "软件为最新",
+			"updated": "已更新",
+			"outOfWarranty": "保修期已过",
+			"expired": "到期时间："
+		},
+		"deviceSettings": {
+			"helpful": "帮助内容",
+			"batteryGauge": {
+				"title": "电池量表",
+				"subtitle": "电池运行状况",
+				"hours": "小时",
+				"minutes": "分钟",
+				"charge": "充满电所需的时间",
+				"button": "查看电池详细信息",
+				"details": {
+					"title": "电池详细信息",
+					"primary": "主电池",
+					"secondary": "备用电池",
+					"status": "状态",
+					"wattage": "功率",
+					"barcode": "条码",
+					"remainingPercent": "剩余百分比",
+					"temp": "温度",
+					"frupn": "FRU 部件号",
+					"remainingTime": "剩余时间",
+					"cycleCount": "充放周期数",
+					"chemistry": "设备化学组成",
+					"remainingCap": "剩余电量",
+					"manufacturer": "制造商",
+					"designCap": "设计电量",
+					"fullChargeCap": "完全充电电量",
+					"manufDt": "制造日期",
+					"designVolt": "设计电压",
+					"volts": "电压",
+					"firstUseDt": "首次使用日期",
+					"firmwareVer": "固件版本"
+				}
+			},
+			"power": {
+				"title": "电源管理",
+				"subtitle": "电源设置",
+				"description": "在此部分中可动态调节散热性能并最大化电池使用时间。它还具有其他常用的电源相关功能。您可以检查此部分中的缺省设置，并根据需要自定义您的系统。",
+				"jumpto": {
+					"title": "跳到设置：",
+					"battery": "电池",
+					"power": "电源管理",
+					"cooling": "散热",
+					"other": "其他"
+				},
+				"powerSmartsettings": {
+					"title": "电源智能设置",
+					"subtitle": "智能散热",
+					"description1": "此功能动态调节散热设置以满足您的需求。此功能开启时，在手持或空闲状态下可调节设置使设备保持较低温度或较低噪声。而设备放置在稳定平面上时，此功能可优化性能。此功能关闭时，您可以手动设置散热优先级。",
+					"description2": "智能散热可调节风扇速度、最高表面温度和性能。此功能具有以下模式，且现在支持通过 Windows 性能电源滑块访问。",
+					"gotoWindows": "转到 Windows 设置",
+					"intelligentCooling": {
+						"title": "智能散热",
+						"description": "",
+						"tooltip": "",
+						"options": {
+							"quiteCool": "安静和低温模式",
+							"performance": "性能"
+						},
+						"readMore": {
+							"line1": "安静模式：滑块位于最左边。降低风扇速度和性能以使计算机温度更低、更安静，并且可获得最佳的电池使用时间。",
+							"line2": "平衡模式：滑块位于中央。以动态方式平衡风扇速度和性能以获得最佳体验。",
+							"line3": "性能模式：滑块位于最右边。提高风扇速度和允许的表面温度以获得最大性能。"
+						}
+					}
+				},
+				"batterySettings": {
+					"title": "电池设置",
+					"airplanePower": {
+						"title": "飞行电源模式",
+						"tooltip": "通过控制系统耗电量保护飞机交流电源插座。启用飞行电源模式后，计算机将通过限制电池充电速度和系统性能来降低耗电量。"
+					},
+					"batteryThreshold": {
+						"title": "电池充电阈值",
+						"description": "如果主要在连接交流电源适配器时使用计算机，仅偶尔使用电池供电，则可通过将最大电量值设置为低于 100%，延长电池使用期限。这一点很有用，因为偶尔使用的电池保持不充满的电量可延长使用期限。",
+						"tooltip": "如果电池当前的充电电量高于停止充电阈值，则需要拔下电源，直至电池放电至停止充电阈值或低于停止充电阈值。 根据电池状态（新旧程度），开始或停止充电的精确点最大可有 2% 的相差幅度。如果启用此功能，建议偶尔执行一次“电池量表重置”，以确保电池运行状况报告准确。",
+						"popup": {
+							"title": "启用电池充电阈值",
+							"description": "在您使用此设备时，启用自定义电池充电可延长电池的整体使用寿命。然而，未能完全充满电将减少电池使用寿命。 为完全发挥此功能的作用，请拔下计算机的电源插头并消耗电池电量，使电池电量达到或低于停止充电阈值。",
+							"enable": "启用",
+							"cancel": "取消"
+						}
+					},
+					"expressCharging": {
+						"title": "快速充电",
+						"tooltip": "快速充电可用比常规模式更快的速度将电池充满电。"
+					},
+					"conservationMode": {
+						"title": "节电模式",
+						"tooltip": {
+							"line1": "此功能可有助于延长插电使用时的电池寿命。",
+							"line2": "启用此模式时，电池只充至容量的 55-60%，从而最大化电池使用寿命。但是，这将缩短断开交流电源后的计算机使用时间。",
+							"line3": "注：快速充电和节电模式无法同时进行。如果启用其中一个模式，则将自动关闭另一个模式。"
+						}
+					}
+				},
+				"powerSettings": {
+					"title": "电源设置",
+					"alwaysUSB": {
+						"title": "持续 USB 供电",
+						"tooltip": "计算机处于睡眠、休眠或关机模式时，通过计算机上的 Always on USB 接口为 USB 设备充电。可从黄色或有特定丝网印刷图标的 USB 接口为智能手机或平板电脑充电。",
+						"checkbox": "计算机处于关闭状态时支持从笔记本电脑电池进行 USB 充电。"
+					},
+					"easyResume": {
+						"title": "轻松恢复",
+						"description": "如果频繁开合计算机外盖，则启用此功能可缩短恢复时间。",
+						"tooltip": "如果频繁开合计算机外盖，则此功能将改善恢复时间。启用后，在合上计算机外盖时，它将进入低功耗模式，但如果在合上外盖后 15 分钟内重新打开外盖，则它将立即恢复。此功能还使笔记本电脑可在系统挂起之前尝试完成暂挂活动（如发送电子邮件或下载文件）。"
+					}
+				},
+				"otherSettings": {
+					"title": "其他设置",
+					"vantageToolbar": {
+						"title": "Lenovo Vantage 工具栏",
+						"tooltip": "将 Vantage 工具栏固定到 Windows 任务栏以轻松地获取更多电池详细信息及访问快速设置。"
+					}
+				}
+			},
+			"audio": {
+				"title": "音频",
+				"subtitle": "音频设置",
+				"description": "在此部分中可自动优化或手动对音频设置进行全面配置，例如 Dolby 设置、麦克风等。",
+				"audioSmartsettings": {
+					"title": "音频智能设置",
+					"subtitle": "基于应用程序的设置",
+					"description": "根据您使用的不同应用程序自动调节音频设置。",
+					"dolby": {
+						"title": "自动 Dolby 音频设置",
+						"options": {
+							"dynamic": "动态",
+							"movie": "影片",
+							"music": "音乐",
+							"game": "游戏",
+							"voice": "语音"
+						}
+					},
+					"voip": "自动 VoIP 音频优化"
+				},
+				"microphone": {
+					"title": "麦克风",
+					"microphone": {
+						"title": "麦克风",
+						"tooltip": "You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode."
+					},
+					"volume": {
+						"title": "麦克风音量",
+						"description": "Dolby 音频可为您喜爱的所有内容提供丰富、清晰、震撼的音效，请为您的内容和设备选择合适的模式。",
+						"options": {
+							"silent": "静音",
+							"loud": "大音量​"
+						}
+					},
+					"suppress": {
+						"title": "抑制键盘噪音",
+						"tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+					},
+					"acoustic": {
+						"title": "声学回音消除技术",
+						"tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+					},
+					"optimize": {
+						"title": "优化麦克风：",
+						"tooltip": "配置麦克风效果以增强不同场景和环境下的音频体验。",
+						"options": {
+							"voiceRecoginition": "语音识别",
+							"onlyMyVoice": "仅我的语言",
+							"normal": "正常",
+							"multipleVoices": "多个语音"
+						}
+					}
+				}
+			},
+			"displayCamera": {
+				"title": "显示屏和摄像头",
+				"subtitle": "显示和摄像头设置",
+				"description": "在此部分中可提升视觉体验及配置摄像头属性。在这里探索更多功能，并自定义个性化的显示体验。",
+				"jumpto": {
+					"title": "跳到设置：",
+					"display": "显示",
+					"camera": "摄像头"
+				},
+				"display": {
+					"title": "显示",
+					"eyeCareMode": {
+						"title": "护眼模式",
+						"checkbox": "设定从日出到日落的护眼模式",
+						"options": {
+							"warm": "暖（更护眼）​",
+							"cold": "冷"
+						},
+						"reset": "Reset temperature",
+						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain."
+					}
+				},
+				"camera": {
+					"title": "摄像头",
+					"note": "注：Lenovo Vantage 无权访问您的摄像头。请允许 Lenovo Vantage 应用访问您的摄像头。",
+					"url": "转到 Windows 隐私设置",
+					"cameraPrivacy": {
+						"title": "摄像头隐私模式",
+						"tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling."
+					},
+					"camera": {
+						"title": "摄像头",
+						"tooltip": "Click here to reset Camera properties to default settings.",
+						"reset": "重置出厂设置"
+					},
+					"brightness": "亮度",
+					"contrast": "对比度",
+					"autoExposure": "自动曝光",
+					"autoFocus": "自动对焦"
+				}
+			}
+		},
+		"systemUpdates": {
+			"title": "系统更新",
+			"history": "完整历史记录",
+			"autoUpdateSettings": {
+				"title": "自动更新设置",
+				"subtitle": "自动安装更新",
+				"critical": {
+					"title": "关键更新",
+					"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+				},
+				"recommended": {
+					"title": "推荐更新",
+					"tooltip": "Recommended driver updates keep your computer running at optimal performance."
+				},
+				"windows": {
+					"title": "Windows 更新",
+					"url": "Windows 设置"
+				}
+			},
+			"banner": {
+				"title": "​保持最新状态的系统才是健康的系统。",
+				"last": "上次更新时间为",
+				"next": "下次更新扫描计划时间：",
+				"checkButton": "检查更新",
+				"checking": "正在检查更新",
+				"downloading": "下载更新完成",
+				"installing": "正在安装更新",
+				"percent": "% 已完成",
+				"cancelCheck": "取消检查",
+				"cancelUpdates": "取消更新",
+				"available": "可用更新",
+				"description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。关键更新对保护计算机上的数据来说也很重要，一旦可用就应该尽快安装。未能安装这些软件包可能会导致数据丢失、系统故障或硬件故障",
+				"installButton": "安装所有更新",
+				"result": {
+					"success": "All Updates were installed correctly",
+					"fail": {
+						"title": "Some updates were not installed correctly.",
+						"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off computer when installing these updates."
+					}
+				}
+			}
+		}
+	},
+	"support": {
+		"common": {
+			"get-support": "获取支持"
+		},
+		"warranty": {
+			"title-in-warranty": "在保修期内",
+			"title-warranty-expired": "保修到期",
+			"title-warranty-not-found": "未找到保修",
+			"status-in-warranty": "在保修期内",
+			"status-warranty-expired": "已到期",
+			"status-warranty-not-found": "未找到保修",
+			"year-depot-warranty": "年维修站保修",
+			"warranty-details": "保修详细信息：",
+			"start-date": "开始日期：",
+			"end-date": "结束日期：",
+			"status": "状态：",
+			"sub-description-1": "本产品具有若干年的有限保修，并有权送往维修站获得维修服务。客户可以致电其当地服务中心来获取更多信息。经销商可对本产品提供送修服务。",
+			"sub-description-2": "我们无法找到适用于您设备的保修详细信息，要获取更多保修选项，请访问我们的支持网站。",
+			"view-warranty-options": "查看保修选项"
+		},
+		"documentation": {
+			"title": "文档",
+			"list-user-guide": "用户指南"
+		},
+		"need-help": {
+			"title": "需要帮助？",
+			"description": "联系我们以获取帮助。",
+			"list-lenovo-community": "联想社区",
+			"list-contact-customer-service": "联系客户服务部门",
+			"list-contact-us-on-wechat": "通过微信联系我们"
+		},
+		"quicklinks": {
+			"title": "快速链接",
+			"description": "联系我们以获取帮助。",
+			"list-e-ticket": "通过电子凭单获取支持",
+			"list-service-provider": "查找服务供应商"
+		}
+	},
+	"security": {},
+	"faq": {}
 }

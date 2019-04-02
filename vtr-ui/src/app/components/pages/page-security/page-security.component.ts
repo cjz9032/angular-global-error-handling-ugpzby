@@ -1,4 +1,4 @@
-import { Component,	OnInit,	HostListener } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { MockSecurityAdvisorService } from '../../../services/mock/mockSecurityAdvisor.service';
 import * as phoenix from '@lenovo/tan-client-bridge';
@@ -45,15 +45,8 @@ export class PageSecurityComponent implements OnInit {
 		this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.windowsHello, this.commonService);
 		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
 
-		this.antivirusScore = [
-			this.antivirusLandingViewModel.subject.status,
-			this.passwordManagerLandingViewModel.subject.status,
-			this.vpnLandingViewModel.subject.status,
-			this.wifiSecurityLandingViewModel.subject.status,
-			this.windowsHelloLandingViewModel.subject.status
-		];
-
 		this.fetchCMSArticles();
+		this.getScore();
 	}
 	title = 'Security';
 
@@ -63,7 +56,7 @@ export class PageSecurityComponent implements OnInit {
 	windowsHelloLandingViewModel: WindowsHelloLandingViewModel;
 	wifiSecurityLandingViewModel: WifiSecurityLandingViewModel;
 	homeProtectionLandingViewModel: HomeProtectionLandingViewModel;
-	wifiHistory: Array < phoenix.WifiDetail > ;
+	wifiHistory: Array<phoenix.WifiDetail>;
 	securityAdvisor: phoenix.SecurityAdvisor;
 	antivirus: phoenix.Antivirus;
 	wifiSecurity: phoenix.WifiSecurity;
@@ -71,8 +64,9 @@ export class PageSecurityComponent implements OnInit {
 	passwordManager: phoenix.PasswordManager;
 	vpn: phoenix.Vpn;
 	windowsHello: phoenix.WindowsHello;
-	antivirusScore: Array < any > ;
-	articles: [];
+	antivirusScore: Array<any>;
+	score: number;
+	cardContentPositionA: any;
 
 	itemStatusClass = {
 		0: 'good',
@@ -87,7 +81,9 @@ export class PageSecurityComponent implements OnInit {
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		this.securityAdvisor.refresh();
+		this.securityAdvisor.refresh().then(() => {
+			this.getScore();
+		});
 	}
 
 	ngOnInit() {
@@ -125,19 +121,26 @@ export class PageSecurityComponent implements OnInit {
 		return total;
 	}
 
-	getScore(items) {
+	getScore() {
+		this.antivirusScore = [
+			this.antivirusLandingViewModel.subject.status,
+			this.passwordManagerLandingViewModel.subject.status,
+			this.vpnLandingViewModel.subject.status,
+			this.wifiSecurityLandingViewModel.subject.status,
+			this.windowsHelloLandingViewModel.subject.status
+		];
 		let flag;
-		let score = 0;
-		items = items.filter(current => {
+		let scoreTotal = 0;
+		this.antivirusScore = this.antivirusScore.filter(current => {
 			return current !== undefined && current !== null && current !== '';
 		});
-		flag = 100 / items.length;
-		items.forEach(item => {
+		flag = 100 / this.antivirusScore.length;
+		this.antivirusScore.forEach(item => {
 			if (item === 0 || item === 2) {
-				score += flag;
+				scoreTotal += flag;
 			}
 		});
-		return score;
+		this.score = scoreTotal;
 	}
 
 	fetchCMSArticles() {
@@ -151,9 +154,11 @@ export class PageSecurityComponent implements OnInit {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSArticles(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				this.articles = response;
+				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+
+				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
 			},
 			error => {
 				console.log('fetchCMSContent error', error);

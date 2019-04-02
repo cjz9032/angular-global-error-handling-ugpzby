@@ -132,8 +132,8 @@
 									*ngIf="!deviceService.isArm">
 									<div class="col col-12 pb-40 system-status-block">
 										<vtr-widget-status componentName="system status"
-											[title]="'System Status'"
-											[description]="'Quick catch up your device status.'"
+											[title]="'dashboard.systemStatus.title' | translate"
+											[description]="'dashboard.systemStatus.subtitle' | translate"
 											[items]="systemStatus">
 										</vtr-widget-status>
 									</div>
@@ -146,14 +146,6 @@
 											[description]="'Check if your device is secured.'"
 											[items]="securityStatus">
 										</vtr-widget-status>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col col-12 py-40">
-										<vtr-widget-questions componentName="QA"
-											[title]="'Q&A for your machine'"
-											[description]="'Find some helpful tips for your device.'"
-											[items]="qaService.qas"></vtr-widget-questions>
 									</div>
 								</div>
 							</div>

@@ -3,7 +3,7 @@ import { TranslationService } from 'src/app/services/translation/translation.ser
 import Translation from 'src/app/data-models/translation/translation';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { TranslationSection } from 'src/app/enums/translation-section.enum';
-import { WifiHomeViewModel } from '../../pages/page-security-wifi/page-security-wifi.component';
+import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
 
 @Component({
 	selector: 'vtr-ui-switch-onoff',

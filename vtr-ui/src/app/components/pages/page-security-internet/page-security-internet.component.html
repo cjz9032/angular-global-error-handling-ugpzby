@@ -361,7 +361,7 @@
 												metricsItem="termsOfServices"
 												href="https://www.surfeasy.com/terms_of_service/"
 												target="_blank"
-												class="learnmore">Terms of Services</a></p>
+												class="learnmore">Terms of Service</a></p>
 									</div>
 									<div class="pull right align-self-center"><img class="surfeasy_logo_teal"
 											src="../../../../assets/images/SurfEasy-logo.png" /></div>
@@ -384,8 +384,17 @@
 								<!--End of Security Card Advisor-->
 								<div class="row">
 									<div class="col col-12">
-										<vtr-article-item *ngFor="let item of articles, let i = index"
-											[item]="item"></vtr-article-item>
+										<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+											[caption]="cardContentPositionA.Description"
+											[title]="cardContentPositionA.Title"
+											[logoText]="cardContentPositionA.BrandName"
+											[action]="cardContentPositionA.Action"
+											[actionLink]="cardContentPositionA.ActionLink"
+											[type]="'corner-article'"
+											[ratioX]="4"
+											[ratioY]="2"
+											[cornerShift]="'large'">
+										</vtr-container-card>
 									</div>
 								</div>
 							</div>

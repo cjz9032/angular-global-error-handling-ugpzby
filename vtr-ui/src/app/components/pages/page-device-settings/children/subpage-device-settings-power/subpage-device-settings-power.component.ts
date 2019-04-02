@@ -5,6 +5,7 @@ import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+
 enum PowerMode {
 	Sleep = 'ChargeFromSleep',
 	Shutdown = 'ChargeFromShutdown',
@@ -352,7 +353,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 					.getDYTCRevision()
 					.then((value: number) => {
 						console.log('getDYTCRevision.then', value);
-
 						if (value === 4) {
 							this.showIntelligentCooling = 2;
 							this.getCQLCapability();
@@ -371,26 +371,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 								this.intelligentCooling = false;
 								this.getManualModeSetting();
 								// this.manualModeSettingStatus = 'error';
-								switch (this.manualModeSettingStatus) {
-									case 'cool':
-										console.log('manualModeSettingStatus: cool');
-										this.radioQuietCool = true;
-										this.toggleIntelligentCooling = true;
-										this.toggleIntelligentCoolingStatus = false;
-										this.intelligentCooling = true;
-										break;
-									case 'performance':
-										this.radioPerformance = true;
-										this.toggleIntelligentCooling = true;
-										this.toggleIntelligentCoolingStatus = false;
-										this.intelligentCooling = true;
-										console.log('manualModeSettingStatus: performance');
-										break;
-									case 'error':
-										this.toggleIntelligentCooling = false;
-										console.log('manualModeSettingStatus: error');
-										break;
-								}
+
 							}
 						} else if (value === 5) {
 							this.showIntelligentCooling = 3;
@@ -405,6 +386,28 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			}
 		} catch (error) {
 			console.error(error.message);
+		}
+	}
+	private SetPerformanceAndCool(status: string) {
+		switch (status) {
+			case 'cool':
+				console.log('manualModeSettingStatus: cool');
+				this.radioQuietCool = true;
+				this.toggleIntelligentCooling = true;
+				this.toggleIntelligentCoolingStatus = false;
+				this.intelligentCooling = true;
+				break;
+			case 'performance':
+				this.radioPerformance = true;
+				this.toggleIntelligentCooling = true;
+				this.toggleIntelligentCoolingStatus = false;
+				this.intelligentCooling = true;
+				console.log('manualModeSettingStatus: performance');
+				break;
+			case 'error':
+				this.toggleIntelligentCooling = false;
+				console.log('manualModeSettingStatus: error');
+				break;
 		}
 	}
 	private getCQLCapability() {
@@ -448,7 +451,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 					.setAutoModeSetting(event.switchValue)
 					.then((value: boolean) => {
 						console.log('setAutoModeSetting.then', value);
-						this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
+
 					})
 					.catch(error => {
 						console.error('setAutoModeSetting', error);
@@ -465,7 +468,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 					.setManualModeSetting(arg)
 					.then((value: boolean) => {
 						console.log('setManualModeSetting.then', value);
-						this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
+						this.getManualModeSetting();
 					})
 					.catch(error => {
 						console.error('setManualModeSetting', error);
@@ -483,6 +486,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 					.then((value: string) => {
 						console.log('getManualModeSetting.then', value);
 						this.manualModeSettingStatus = value;
+						this.SetPerformanceAndCool(this.manualModeSettingStatus);
 					})
 					.catch(error => {
 						console.error('getManualModeSetting', error);

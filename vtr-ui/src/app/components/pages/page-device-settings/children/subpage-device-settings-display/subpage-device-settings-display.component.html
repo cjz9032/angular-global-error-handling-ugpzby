@@ -103,29 +103,29 @@
 						</vtr-ui-row-switch>
 					</li>
 					<li class="pt-3">
-							<div class="row">
-									<vtr-ui-row-switch [title]="'Camera'"
-									componentName="Camera"
-									name="Camera"
-									[isSwitchVisible]="false"
-									[leftIcon]="['far', 'gem']"
-									[showChildContent]="true"
-									[resetText]="'Reset factory settings'"
-									[rightIcon]="['far', 'question-circle']"
-									[tooltipText]="'Click here to reset Camera properties to default settings.'"
-									(resetClick)="resetCameraSettings()">
-									<div class="row">
-										<div class="col-12">
-											<vtr-camera-control [cameraSettings]="dataSource"
-												(brightnessChange)="onBrightnessChange($event)"
-												(contrastChange)="onContrastChange($event)"
-												(exposureChange)="onCameraExposureValueChange($event)">
-											</vtr-camera-control>
-										</div>
+							<vtr-ui-row-switch [title]="'Camera'"
+								componentName="Camera"
+								name="Camera"
+								[type]="'Camera'"
+								[isSwitchVisible]="false"
+								[leftIcon]="['far', 'gem']"
+								[showChildContent]="true"
+								[resetText]="'Reset factory settings'"
+								[rightIcon]="['far', 'question-circle']"
+								[tooltipText]="'Click here to reset Camera properties to default settings.'"
+								(resetClick)="resetCameraSettings()"
+								[resetTextAsButton]="true">
+								<div class="row">
+									<div class="col-12">
+										<vtr-camera-control [cameraSettings]="dataSource"
+											(brightnessChange)="onBrightnessChange($event)"
+											(contrastChange)="onContrastChange($event)"
+											(exposureChange)="onCameraExposureValueChange($event)"
+											(exposureToggle)="onCameraAutoExposureToggle($event)">
+										</vtr-camera-control>
 									</div>
-								</vtr-ui-row-switch>
-							</div>
-
+								</div>
+							</vtr-ui-row-switch>
 					</li>
 				</ul>
 			</vtr-container-collapsible>
