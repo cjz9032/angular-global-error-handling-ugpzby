@@ -22,7 +22,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	supportDatas = {
 		documentation: [
 			{
-				'icon': ['fas', 'book'],
+				'icon': ['fal', 'book'],
 				'title': 'support.documentation.list-user-guide',
 				'url': 'https://support.lenovo.com',
 				'metricsItem': 'Documentation.UserGuideButton',
@@ -32,7 +32,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		],
 		needHelp: [
 			{
-				'icon': ['fas', 'comment-alt'],
+				'icon': ['fal', 'comment-alt'],
 				'title': 'support.need-help.list-lenovo-community',
 				'url': 'https://community.lenovo.com',
 				'metricsItem': 'NeedHelp.LenovoCommunityButton',
@@ -40,7 +40,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				'metricsParent': 'Page.Support',
 			},
 			{
-				'icon': ['fas', 'share-alt'],
+				'icon': ['fal', 'share-alt'],
 				'title': 'support.need-help.list-contact-customer-service',
 				'url': 'https://support.lenovo.com/',
 				'metricsItem': 'NeedHelp.ContactCustomerServiceButton',
@@ -48,7 +48,8 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				'metricsParent': 'Page.Support',
 			},
 			{
-				'icon': ['fab', 'weixin'],
+				'iconPath': 'assets/images/support/svg_icon_wechat.svg',
+				// 'icon': ['fab', 'weixin'],
 				'title': 'support.need-help.list-contact-us-on-wechat',
 				'hideArrow': true,
 				'image': 'assets/images/wechat-qrcode.png',
@@ -56,7 +57,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		],
 		quicklinks: [
 			{
-				'icon': ['fas', 'ticket-alt'],
+				'icon': ['fal', 'ticket-alt'],
 				'title': 'support.quicklinks.list-e-ticket',
 				'url': 'https://pcsupport.lenovo.com/us/en/eticketwithservice',
 				'metricsItem': 'Quicklinks.E-ticketButton',
@@ -64,7 +65,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				'metricsParent': 'Page.Support',
 			},
 			{
-				'icon': ['fas', 'briefcase'],
+				'icon': ['fal', 'briefcase'],
 				'title': 'support.quicklinks.list-service-provider',
 				'url': 'https://www.lenovo.com/us/en/ordersupport/',
 				'metricsItem': 'Quicklinks.ServiceProviderButton',
