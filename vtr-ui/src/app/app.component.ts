@@ -28,11 +28,10 @@ export class AppComponent implements OnInit {
 		private modalService: NgbModal,
 		public deviceService: DeviceService,
 		private commonService: CommonService,
-		translate: TranslateService,
+		private translate: TranslateService,
 		private userService: UserService
 	) {
 		translate.addLangs(['en', 'zh-Hans']);
-		translate.setDefaultLang('en');
 
 		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
 
@@ -109,6 +108,11 @@ export class AppComponent implements OnInit {
 			this.deviceService.getMachineInfo()
 				.then((value: any) => {
 					console.log('getMachineInfo.then', value);
+					if (value.locale.toLowerCase() === 'zh-chs') {
+						this.translate.setDefaultLang('zh-Hans');
+					} else {
+						this.translate.setDefaultLang('en');
+					}
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
 				}).catch(error => {
 					console.error('getMachineInfo', error);
