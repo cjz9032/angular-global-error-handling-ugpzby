@@ -81,15 +81,19 @@
 	[style.height.px]="containerHeight">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col col-12 image"
-				[style.background-image]="'url('+img+')'">
-				<div *ngIf="logo || logoText"
-					class="logo">
-					<span class="logo-img">
-						<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
-					</span>
-					<span class="logo-text">{{logoText}}</span>
-				</div>
+			<div class="col col-12 image-container">
+				<a href="{{actionLink}}"
+					target="_blank"
+					class="card-image"
+					[style.background-image]="'url(' + img + ')'">
+					<div *ngIf="logo || logoText"
+						class="logo">
+						<span class="logo-img">
+							<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
+						</span>
+						<span class="logo-text">{{logoText}}</span>
+					</div>
+				</a>
 			</div>
 			<div class="row">
 				<div class="col col-12 content">
