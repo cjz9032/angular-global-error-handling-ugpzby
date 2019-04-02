@@ -108,7 +108,7 @@ export class AppComponent implements OnInit {
 			this.deviceService.getMachineInfo()
 				.then((value: any) => {
 					console.log('getMachineInfo.then', value);
-					if (value.locale.toLowerCase() === 'zh-chs') {
+					if (value.locale.toLowerCase() === 'zh-hans') {
 						this.translate.setDefaultLang('zh-Hans');
 					} else {
 						this.translate.setDefaultLang('en');
