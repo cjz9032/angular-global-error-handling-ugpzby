@@ -156,6 +156,7 @@ import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transfo
 import { MinutesToHourminPipe } from './pipe/minutes-to-hourmin.pipe';
 import { ChoosePagePipe } from './pipe/security-antivirus/choose-page.pipe';
 import { DayFormatPipe } from './pipe/security-antivirus/day-format.pipe';
+import { WidgetAboutComponent } from './components/widgets/widget-about/widget-about.component';
 
 
 library.add(fas);
@@ -272,7 +273,8 @@ library.add(fal);
 		StatusTransformPipe,
 		MinutesToHourminPipe,
 		ChoosePagePipe,
-		DayFormatPipe
+		DayFormatPipe,
+		WidgetAboutComponent
 	],
 	imports: [
 		BrowserModule,
