@@ -11,6 +11,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
+import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -46,7 +47,8 @@ export class PageDashboardComponent implements OnInit {
 		config: NgbModalConfig,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
-		private cmsService: CMSService
+		private cmsService: CMSService,
+		private systemUpdateService: SystemUpdateService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -239,15 +241,21 @@ export class PageDashboardComponent implements OnInit {
 			systemUpdate.id = 'systemupdate';
 			systemUpdate.title = 'System Update';
 			systemUpdate.detail = 'Update';
-			systemUpdate.path = '/system-updates';
+			systemUpdate.path = 'device/system-updates';
 			systemUpdate.asLink = true;
 			systemUpdate.isSystemLink = false;
 			systemUpdate.type = 'system';
 
 			if (response.systemupdate) {
+				const lastUpdate = response.systemupdate.lastupdate;
+				const diffInDays = this.systemUpdateService.dateDiffInDays(lastUpdate);
 				const { status } = response.systemupdate;
 				if (status === 1) {
-					systemUpdate.status = 0;
+					if (diffInDays > 30) {
+						systemUpdate.status = 1;
+					} else {
+						systemUpdate.status = 0;
+					}
 				} else {
 					systemUpdate.status = 1;
 				}
@@ -265,7 +273,7 @@ export class PageDashboardComponent implements OnInit {
 			antiVirus.id = 'anti-virus';
 			antiVirus.title = 'Anti-Virus';
 			antiVirus.detail = 'Disabled';
-			antiVirus.path = 'anti-virus';
+			antiVirus.path = 'security/anti-virus';
 			antiVirus.type = 'security';
 
 			if (response.antiVirus) {
@@ -283,7 +291,7 @@ export class PageDashboardComponent implements OnInit {
 			wiFi.id = 'wifi-security';
 			wiFi.title = 'WiFi Security';
 			wiFi.detail = 'Disabled';
-			wiFi.path = 'wifi-security';
+			wiFi.path = 'security/wifi-security';
 			wiFi.type = 'security';
 
 			if (response.wifiSecurity) {
@@ -301,7 +309,7 @@ export class PageDashboardComponent implements OnInit {
 			passwordManager.id = 'pwdmgr';
 			passwordManager.title = 'Password Manager';
 			passwordManager.detail = 'Not Installed';
-			passwordManager.path = 'password-protection';
+			passwordManager.path = 'security/password-protection';
 			passwordManager.type = 'security';
 
 			if (response.passwordManager) {
@@ -319,7 +327,7 @@ export class PageDashboardComponent implements OnInit {
 			vpn.id = 'vpn';
 			vpn.title = 'VPN';
 			vpn.detail = 'Not Installed';
-			vpn.path = 'internet-protection';
+			vpn.path = 'security/internet-protection';
 			vpn.type = 'security';
 
 			if (response.VPN) {
@@ -337,7 +345,7 @@ export class PageDashboardComponent implements OnInit {
 			windowsHello.id = 'windows-hello';
 			windowsHello.title = 'Windows Hello';
 			windowsHello.detail = 'Disabled';
-			windowsHello.path = 'windows-hello';
+			windowsHello.path = 'security/windows-hello';
 			windowsHello.type = 'security';
 
 			if (response.windowsHello) {

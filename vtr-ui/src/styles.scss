@@ -403,6 +403,11 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			color: $light-grey;
 			margin-bottom: 1rem;
 		}
+
+		iframe {
+			max-width: 100%;
+			margin-bottom: 3rem;
+		}
 	}
 }
 

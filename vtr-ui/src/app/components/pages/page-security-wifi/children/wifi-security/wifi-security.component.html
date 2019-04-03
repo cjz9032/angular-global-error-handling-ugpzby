@@ -132,8 +132,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="row threat-locator">
-			<!-- [ngbCollapse]="isCollapsed> -->
+		<div class="row threat-locator"
+			[ngbCollapse]="isCollapsed && data.isLWSEnabled">
 			<div class="col">
 				<div class="threat-locator-container">
 					<div class="row">

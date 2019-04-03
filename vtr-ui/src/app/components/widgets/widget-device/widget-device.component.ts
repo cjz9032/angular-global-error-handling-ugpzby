@@ -118,7 +118,7 @@ export class WidgetDeviceComponent implements OnInit {
 			systemUpdate.id = 'systemupdate';
 			systemUpdate.title = 'System update not found';
 			systemUpdate.detail = 'System update';
-			systemUpdate.path = '/system-updates';
+			systemUpdate.path = 'device/system-updates';
 			systemUpdate.asLink = true;
 			systemUpdate.isSystemLink = false;
 
