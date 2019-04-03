@@ -144,7 +144,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				console.log(response);
+				// console.log(response);
 				this.articles = response;
 			},
 			error => {

@@ -157,6 +157,7 @@ import { MinutesToHourminPipe } from './pipe/minutes-to-hourmin.pipe';
 import { WidgetAboutComponent } from './components/widgets/widget-about/widget-about.component';
 import { SubTransformPipe } from './pipe/security-antivirus/sub-transform.pipe';
 import { DateClassPipe } from './pipe/security-antivirus/date-class.pipe';
+import { ModalAboutComponent } from './components/modal/modal-about/modal-about.component';
 
 
 
@@ -276,6 +277,7 @@ library.add(fal);
 		WidgetAboutComponent,
 		SubTransformPipe,
 		DateClassPipe,
+		ModalAboutComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -318,6 +320,7 @@ library.add(fal);
 		ModalWifiSecurityInvitationComponent,
 		ModalWifiSecuriryLocationNoticeComponent,
 		ModalUpdateChangeLogComponent,
+		ModalAboutComponent,
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA

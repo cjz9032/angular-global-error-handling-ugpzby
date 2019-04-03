@@ -6,14 +6,17 @@
 			</div>
 			<div>
 				<div class="title">Lenovo Vantage</div>
-				<div class="version">Version: 10.1903.105 Build 0.0.20</div>
+				<div class="version">{{ 'support.about.version' | translate}}: {{ shellVersion }} {{ 'support.about.build' | translate}} {{ buildVersion }}</div>
 			</div>
 		</div>
 		<div class="about-links mb-4">
-			<div class="link"><a href="javascript:;">Licence agreement</a></div>
-			<div class="link"><a href="javascript:;">Other software licences</a></div>
-			<div class="link"><a href="https://www.lenovo.com" target="_blank">Our website</a></div>
+			<div class="link"><a href="javascript:;" (click)="agreementClicked()" vtrMetrics
+					metricsItem="About.LicenseAgreementClicked" metricsEvent="ItemClick" metricsParent="Page.Support">{{ 'support.about.licenseAgreement' | translate}}</a></div>
+			<div class="link"><a href="javascript:;" (click)="openSourceClicked()" vtrMetrics
+					metricsItem="About.OpenSourceClicked" metricsEvent="ItemClick" metricsParent="Page.Support">{{ 'support.about.otherSoftwareLicenses' | translate}}</a></div>
+			<div class="link"><a href="https://www.lenovo.com" target="_blank" vtrMetrics
+					metricsItem="About.OurWebsiteLinkClicked" metricsEvent="ItemClick" metricsParent="Page.Support">{{ 'support.about.ourWebsite' | translate}}</a></div>
 		</div>
-		<div class="copyright">© 2002-2019 Lenovo all rights reserve</div>
+		<div class="copyright">{{ 'support.about.copyright' | translate}}</div>
 	</div>
 </div>
