@@ -51,12 +51,12 @@ input:checked + .switch {
 }
 
 .switch > small {
-	background-color: #fff;
+	background-color: $shade_darkest;
 	border-radius: 100px;
 	width: 22px;
 	height: 22px;
 	position: absolute;
-	left: 0;
+	left: 3px;
 	top: 2px;
 	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
@@ -145,12 +145,12 @@ input:checked + .switch.switch-xs > small {
 	font-size: 1.1rem;
 	text-transform: uppercase;
 	color: $light;
-	font-weight: $weight_medium;
+	font-weight: $weight_bold;
 	position: absolute;
 	top: 4px;
 	left: 10px;
 	&.off-label {
-		left: 17px;
-		color: $main_shade;
+		left: 20px;
+		color: $shade_darkest;
 	}
 }
