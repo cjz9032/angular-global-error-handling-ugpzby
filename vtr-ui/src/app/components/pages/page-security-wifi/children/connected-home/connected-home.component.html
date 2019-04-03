@@ -110,9 +110,12 @@
 					<div class="text-regular">{{'security.homeprotection.home-security.subtitle-describe' | translate}} </div>
 					<div class="col-sm-3">
 						<div class="button-box shift-left">
-							<vtr-ui-button [metricsItem]="'tryNow'"
+							<vtr-ui-button
+								[metricsItem]="'tryNow'"
 								(onClick)="tryNow($event)"
-								[label]="'security.homeprotection.home-security.try-now' | translate"></vtr-ui-button>
+								[label]="'security.homeprotection.home-security.try-now' | translate"
+								[disabled]="!data.tryNowEnable">
+							</vtr-ui-button>
 						</div>
 
 					</div>

@@ -1,6 +1,5 @@
 <div class="wifi-security">
-	<div class="container-fluid p-40 security-card"
-		*ngIf="data.isLWSEnabled===true || data.isLWSEnabled===false">
+	<div class="container-fluid p-40 security-card">
 		<div class="row">
 			<div class="col">
 				<div class="heading">{{'security.wifisecurity.container.title' | translate}}</div>
@@ -8,7 +7,8 @@
 			<div class="pull right"><img class="coronet-logo"
 					src="../../../../assets/images/coronet-logo.svg" /></div>
 		</div>
-		<div class="row mt-20">
+		<div class="row mt-20"
+		*ngIf="data.isLWSEnabled!==undefined">
 			<div class="col">
 				<div class="wifiSecurity accordion">
 					<div class="card"
@@ -116,7 +116,7 @@
 										</li>
 									</ul>
 								</div>
-								<div class="card-foot">
+								<div class="card-foot" *ngIf="data.hasMore">
 									<a vtrMetrics
 										metricsItem="showMoreWiFiHistory"
 										metricsEvent="itemClick"
