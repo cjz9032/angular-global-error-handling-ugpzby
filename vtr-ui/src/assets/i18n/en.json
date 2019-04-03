@@ -30,7 +30,7 @@
 			"enabled": "ENABLED",
 			"disabled": "DISABLED",
 			"installed": "INSTALLED",
-			"not-installed": "NOT INSTALLED"
+			"notInstalled": "NOT INSTALLED"
 		},
 		"qAndA": {
 			"title": "Q&A for your machine",
@@ -403,6 +403,22 @@
 		}
 	},
 	"security": {
+		"landing": {
+			"fully": "Fully protected",
+			"fullyDesc": "Congratulations! You are well protected.",
+			"notFully": "Not fully protected",
+			"notFullyDesc": "You are not fully protected, Learn how to better protect yourself now.",
+			"security101": "SECURITY ADVISOR 101",
+			"firewall": "Firewall",
+			"pwdHealth": "Password Health",
+			"vpnSecurity": "VPN Security",
+			"vpnVirtual": "Virtual Private Network",
+			"wifiConnected": "WiFi & Connected Home Security",
+			"connectedHomeSecurity": "Connected Home Security",
+			"fingerprint": "Fingerprint reader",
+			"seeAllNetwork": "See all joined networks",
+			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month."
+		},
 		"antivirus": {
 			"common": {
 				"title": "Anti-Virus",
@@ -457,79 +473,6 @@
 			},
 			"others": {
 				"othersProtection": "offers you basic protection for your device"
-			}
-		},
-		"wifisecurity": {
-			"header": {
-				"title": "WiFi and Connected Home Security",
-				"back": "BACK"
-			},
-			"container": {
-				"title": "Lenovo Wifi Security",
-				"name": "WIFI SECURITY",
-				"enable": "ENABLED",
-				"disable": "DISABLED",
-				"less": "Less info",
-				"more": "More info",
-				"network-history": "Network History",
-				"connect": "Connected last",
-				"show-more": "Show more",
-				"show-less": "Show less",
-				"button": "Enable Wifi security",
-				"disable-decribe": "Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones."
-			},
-			"threat-locator": {
-				"describe": "Use the threat detector to determine the safety of the networks around you.",
-				"button": "Check your location"
-			},
-			"location-modal": {
-				"title": "Enable location services",
-				"describe": "To use Lenovo WiFi Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?",
-				"yes": "YES",
-				"no": "NO"
-			}
-		},
-		"homeprotection": {
-			"home-security": {
-				"title": "Connected Home Security",
-				"title-describe": "Connected Home Security keeps you safe in three ways:",
-				"home-security-affect1": "Connected Home Security ensures your device is safe, and has not been compromised",
-				"home-security-affect2": "Connected Home Security ensures that the networks you are connected to are safe",
-				"home-security-affect3": "Connected Home Security ensures that other devices connected to your home network are safe.",
-				"describe": "Unsafe devices and networks can introduce malware, lead to identity theft, and leak private and financial information. Enable this feature to reduce the risk of having your device, and your home network exposed to attackers",
-				"subtitle": "Peace of Mind",
-				"subtitle-describe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more in about Connected Home Security in Tips and Tricks.",
-				"try-now": "Try Now"
-			},
-			"invitation-code": {
-				"button": "Enter invitation code",
-				"button-describe": "enter invitation code require enable wifi security",
-				"title": "Already have Connected Home Security?",
-				"title-describe": "Add this device to your Connected Home",
-				"enter-code": "Enter your connection code",
-				"add-home": "Add Home",
-				"ok": "Ok",
-				"cancel": "Cancel",
-				"validate-code": "VALIDATE CODE",
-				"success": "Success",
-				"try-again": "Please try again!"
-			},
-			"security-health": {
-				"title": "Security Health",
-				"device-name1": "Apps From Unknown Sources",
-				"device-name2": "Developer Mode",
-				"device-name3": "UAC Notification",
-				"device-name4": "Antivirus Availability",
-				"device-name5": "Hard Drive Encryption",
-				"device-name6": "Firewall Availability",
-				"device-name7": "Not Activated Windows",
-				"device-name8": "Security Updates Availability",
-				"device-name9": "Password Protection",
-				"device-name10": "Automatic Updates Service Availability",
-				"fail": "FAILED",
-				"pass": "PASSED",
-				"peace-of-mind": "Do you want more peace of mind?",
-				"button": "Enable Wifi security"
 			}
 		},
 		"wifisecurity": {

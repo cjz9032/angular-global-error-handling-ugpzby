@@ -145,7 +145,8 @@
 									</div>
 									<div class="subtitle pb-5">{{'security.antivirus.mcafee.subtitle' | translate}}</div>
 
-									<vtr-ui-security-statusbar [statusList]="viewMode.mcafeestatusList | statusTransform">
+									<vtr-ui-security-statusbar
+										[statusList]="viewMode.mcafeestatusList | statusTransform">
 									</vtr-ui-security-statusbar>
 
 									<div class="row align-items-center">
@@ -300,7 +301,8 @@
 											{{viewMode.otherAntiVirus?.name}} {{'security.antivirus.others.othersProtection' | translate}}
 										</div>
 
-										<vtr-ui-security-statusbar [statusList]="viewMode.othersAntistatusList | statusTransform">
+										<vtr-ui-security-statusbar
+											[statusList]="viewMode.othersAntistatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>
@@ -318,7 +320,8 @@
 											{{viewMode.otherFirewall?.name}}{{'security.antivirus.others.othersProtection' | translate}}
 										</div>
 
-										<vtr-ui-security-statusbar [statusList]="viewMode.othersFirewallstatusList | statusTransform">
+										<vtr-ui-security-statusbar
+											[statusList]="viewMode.othersFirewallstatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>

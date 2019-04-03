@@ -156,6 +156,7 @@ import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transfo
 import { MinutesToHourminPipe } from './pipe/minutes-to-hourmin.pipe';
 import { SubTransformPipe } from './pipe/security-antivirus/sub-transform.pipe';
 import { DateClassPipe } from './pipe/security-antivirus/date-class.pipe';
+import { WifiClassPipe } from './pipe/security-landing/wifi-class.pipe';
 
 
 
@@ -274,6 +275,7 @@ library.add(fal);
 		MinutesToHourminPipe,
 		SubTransformPipe,
 		DateClassPipe,
+		WifiClassPipe
 	],
 	imports: [
 		BrowserModule,
