@@ -1,6 +1,5 @@
 <div class="vtr-ui-list-chevron">
-	<ul class="chevron-list"
-		[ngClass]="getWifiClass(items)">
+	<ul class="chevron-list" [ngClass]="items | wifiClass">
 		<li *ngFor="let item of items"
 			[ngClass]="getItemStatusClass(item)">
 			<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->
@@ -14,16 +13,18 @@
 						<div class="col col-1 text-center"
 							*ngIf="iconPlacement==='left'">
 							<div class="item-icon status"
-								*ngIf="item.status!==undefined&&item.status!==''">
-								<div class="icon-bkg"
-									*ngIf="item.status===0||item.status===1">
-									<fa-icon [icon]="['fal', getItemStatusIconClass(item)]"></fa-icon>
-								</div>
-								<div class="icon-no-bkg"
-									*ngIf="item.status===2">
-									<fa-icon [icon]="['fas', 'dot-circle']"></fa-icon>
+								*ngIf="item.status!==undefined&&item.status!==''; else questionCircle">
+								<div class="icon-bkg">
+									<fa-icon *ngIf="item.status !== 3" [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									<img *ngIf="item.status === 3" src="../../../../assets/images/security/svg_icon_stick.svg">
 								</div>
 							</div>
+							<ng-template #questionCircle>
+								<fa-icon class="question-icon"
+									placement="top"
+									[icon]="['far', 'question-circle']"
+									container="body"></fa-icon>
+							</ng-template>
 							<div class="item-icon"
 								*ngIf="item.icon">
 								<div class="icon-bkg">
@@ -37,26 +38,24 @@
 						</div>
 						<div class="col item-text"
 							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">
-							<div class="title"
-								[ngClass]="{'light-title':item.lightTitle}">
-								{{item.title}}
-							</div>
-							<div class="detail"
-								[ngClass]="getItemDetailClasses(item)">
-								{{item.detail}}
+							<div class="row no-gutters">
+								<div class="col-8 title text-break"
+									[ngClass]="{'light-title':item.lightTitle}">
+									{{item.title | translate}}
+								</div>
+								<div class="col-4 detail text-break"
+									[ngClass]="getItemDetailClasses(item)">
+									{{item.detail | translate}}
+								</div>
 							</div>
 						</div>
 						<div class="col col-1 text-center"
 							*ngIf="iconPlacement==='right'">
 							<div class="item-icon status"
 								*ngIf="item.status!==undefined&&item.status!==''; else questionCircle">
-								<div class="icon-bkg"
-									*ngIf="item.status===0||item.status===1">
-									<fa-icon [icon]="['fal', getItemStatusIconClass(item)]"></fa-icon>
-								</div>
-								<div class="icon-no-bkg"
-									*ngIf="item.status===2">
-									<fa-icon [icon]="['fas', 'dot-circle']"></fa-icon>
+								<div class="icon-bkg">
+									<fa-icon *ngIf="item.status !== 3" [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									<img *ngIf="item.status === 3" src="../../../../assets/images/security/svg_icon_stick.svg">
 								</div>
 							</div>
 							<ng-template #questionCircle>
@@ -96,14 +95,10 @@
 						<div class="col col-1 text-center"
 							*ngIf="iconPlacement==='left'">
 							<div class="item-icon status"
-								*ngIf="item.status!==undefined&&item.status!==''">
-								<div class="icon-bkg"
-									*ngIf="item.status===0||item.status===1">
-									<fa-icon [icon]="['fal', getItemStatusIconClass(item)]"></fa-icon>
-								</div>
-								<div class="icon-no-bkg"
-									*ngIf="item.status===2">
-									<fa-icon [icon]="['fas', 'dot-circle']"></fa-icon>
+								*ngIf="item.status!==undefined&&item.status!==''; else questionCircle">
+								<div class="icon-bkg">
+									<fa-icon *ngIf="item.status !== 3" [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									<img *ngIf="item.status === 3" src="../../../../assets/images/security/svg_icon_stick.svg">
 								</div>
 							</div>
 							<div class="item-icon"
@@ -119,13 +114,15 @@
 						</div>
 						<div class="col item-text"
 							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">
-							<div class="title"
-								[ngClass]="{'light-title':item.lightTitle}">
-								{{item.title}}
-							</div>
-							<div class="detail"
-								[ngClass]="getItemDetailClasses(item)">
-								{{item.detail}}
+							<div class="row no-gutters">
+								<div class="col-8 title text-break"
+									[ngClass]="{'light-title':item.lightTitle}">
+									{{item.title | translate}}
+								</div>
+								<div class="col-4 detail text-break"
+									[ngClass]="getItemDetailClasses(item)">
+									{{item.detail | translate}}
+								</div>
 							</div>
 						</div>
 						<div class="col col-1 text-center"
@@ -136,9 +133,9 @@
 									*ngIf="item.status===0||item.status===1">
 									<fa-icon [icon]="['fal', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
-								<div class="icon-no-bkg"
-									*ngIf="item.status===2">
-									<fa-icon [icon]="['fas', 'dot-circle']"></fa-icon>
+								<div class="icon-no-bkg">
+									<fa-icon *ngIf="item.status===2" [icon]="['fas', 'dot-circle']"></fa-icon>
+									<img *ngIf="item.status===3" src="../../../../assets/images/security/svg_icon_stick.svg">
 								</div>
 							</div>
 							<div class="item-icon"

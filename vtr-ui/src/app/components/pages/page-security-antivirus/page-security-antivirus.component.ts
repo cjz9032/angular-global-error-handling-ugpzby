@@ -2,7 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { MockService } from 'src/app/services/mock/mock.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { AntiVirusViewMode } from 'src/app/data-models/security-advisor/antivirus.model';
-import { Antivirus } from '@lenovo/tan-client-bridge';
+import { Antivirus, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -24,6 +24,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 	urlTermsOfService = 'https://www.mcafee.com/consumer/en-us/policy/global/legal.html';
 	urlGetMcAfee = '25CAD7D97D59483381EA39A87685A3C7';
 	cardContentPositionA: any;
+	securityAdvisor: SecurityAdvisor;
 
 	@HostListener('window:focus')
 	onFocus(): void {
@@ -35,6 +36,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		public cmsService: CMSService,
 		commonService: CommonService,
 		public modalService: NgbModal) {
+		this.securityAdvisor = this.VantageShell.getSecurityAdvisor();
 		this.antiVirus = this.VantageShell.getSecurityAdvisor().antivirus;
 		this.viewMode = new AntiVirusViewMode(this.antiVirus, commonService);
 		this.fetchCMSArticles();

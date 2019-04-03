@@ -21,7 +21,7 @@
 									<fa-icon [icon]="['fas', 'check']"></fa-icon>
 								</span>
 								<h3>{{'security.wifisecurity.container.name' | translate}}</h3>
-								<button class="badge badge-pill badge-danger button-green">{{'security.wifisecurity.container.enable' | translate}}</button>
+								<button class="badge badge-pill badge-danger button-green border-0">{{'security.wifisecurity.container.enable' | translate}}</button>
 							</div>
 							<div class="half subHeading"
 								*ngIf="!data.isLWSEnabled">
@@ -29,7 +29,7 @@
 									<fa-icon [icon]="['fas', 'times']"></fa-icon>
 								</span>
 								<h3>{{'security.wifisecurity.container.name' | translate}}</h3>
-								<button class="badge badge-pill badge-danger button-red">{{'security.wifisecurity.container.disable' | translate}}</button>
+								<button class="badge badge-pill badge-danger button-red border-0">{{'security.wifisecurity.container.disable' | translate}}</button>
 							</div>
 							<div class="half">
 								<div class="collapse-control"
@@ -93,8 +93,8 @@
 								</div>
 								<div class="cardBody">
 									<ul class="openNetworks">
-										<li *ngFor="let history of data.historys">
-											<div class="status-icon">
+										<li *ngFor="let history of data.historys" class="row">
+											<div class="status-icon col-3">
 												<span class="fa-stack fa-3x">
 													<fa-icon [icon]="['fas', 'wifi']"
 														class="menu-pointer"></fa-icon>
@@ -107,7 +107,7 @@
 													</span>
 												</span>
 											</div>
-											<div class="connection-name">
+											<div class="connection-name col-8 p-1 pl-0">
 												{{history.ssid}}
 												<small class="connection-status">
 													{{'security.wifisecurity.container.connect' | translate}}{{history.info}}

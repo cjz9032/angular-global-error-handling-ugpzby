@@ -13,10 +13,10 @@ export class AntiVirusViewMode {
 	windowsDefenderstatusList: Array<any>;
 	othersAntistatusList: Array<any>;
 	othersFirewallstatusList: Array<any>;
-	virusScan = 'security.antivirus.common.virus-scan';
+	virusScan = 'security.antivirus.common.virusScan';
 	fireWall = 'security.antivirus.common.firewall';
-	enablevirus = 'security.antivirus.common.enable-virus-scan';
-	enableFirewall = 'security.antivirus.common.enable-firewall';
+	enablevirus = 'security.antivirus.common.enableVirusScan';
+	enableFirewall = 'security.antivirus.common.enableFirewall';
 
 	constructor(antiVirus: Antivirus, private commonService: CommonService) {
 		this.currentPage = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
