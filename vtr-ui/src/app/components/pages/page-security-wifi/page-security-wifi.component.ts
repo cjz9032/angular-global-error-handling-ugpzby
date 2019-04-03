@@ -12,6 +12,7 @@ import { WifiHomeViewModel, SecurityHealthViewModel, } from 'src/app/data-models
 import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { forEach } from '@angular/router/src/utils/collection';
+import { TranslateService } from '@ngx-translate/core';
 
 interface DevicePostureDetail {
 	status: number; // 1,2
@@ -25,8 +26,8 @@ interface DevicePostureDetail {
 })
 export class PageSecurityWifiComponent implements OnInit {
 
-	title = 'WiFi and Connected Home Security';
-	back = 'BACK';
+	title = 'security.wifisecurity.header.title';
+	back = 'security.wifisecurity.header.back';
 	backarrow = '< ';
 	viewSecChkRoute = 'viewSecChkRoute';
 	cardContentPositionA: any;
@@ -50,7 +51,8 @@ export class PageSecurityWifiComponent implements OnInit {
 		public modalService: NgbModal,
 		public shellService: VantageShellService,
 		private cmsService: CMSService,
-		public mockWifiSecurity: MockWifiSecurity
+		public mockWifiSecurity: MockWifiSecurity,
+		public translate: TranslateService
 	) {
 		this.securityAdvisor = shellService.getSecurityAdvisor();
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
@@ -68,7 +70,7 @@ export class PageSecurityWifiComponent implements OnInit {
 			this.isShowInvitationCode = !(cacheHomeStatus === 'joined');
 		}
 		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.homeProtection, this.commonService);
-		this.securityHealthViewModel = new SecurityHealthViewModel(this.wifiSecurity, this.homeProtection, this.commonService);
+		this.securityHealthViewModel = new SecurityHealthViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.translate);
 		this.fetchCMSArticles();
 	}
 
@@ -126,8 +128,8 @@ export class PageSecurityWifiComponent implements OnInit {
 								backdrop: 'static'
 								, windowClass: 'wifi-security-location-modal'
 							});
-						modal.componentInstance.header = 'Enable location services';
-						modal.componentInstance.description = 'To use Lenovo WiFi Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?';
+						modal.componentInstance.header = 'security.wifisecurity.location-modal.title';
+						modal.componentInstance.description = 'security.wifisecurity.location-modal.describe';
 						modal.componentInstance.url = 'ms-settings:privacy-location';
 						this.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
 							if (value) {

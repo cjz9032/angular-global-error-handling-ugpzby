@@ -12,11 +12,11 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	@Input() emitter: EventEmitter<any>;
 	securityAdvisor: any;
 
-	header = 'Enter your connection code';
-	description = 'Add Home';
+	header = 'security.homeprotection.invitation-code.enter-code';
+	description = 'security.homeprotection.invitation-code.add-home';
 
-	OkText = 'Ok';
-	CancelText = 'Cancel';
+	OkText = 'security.homeprotection.invitation-code.ok';
+	CancelText = 'security.homeprotection.invitation-code.cancel';
 
 	startJoin = false;
 	joinSuccess = false;

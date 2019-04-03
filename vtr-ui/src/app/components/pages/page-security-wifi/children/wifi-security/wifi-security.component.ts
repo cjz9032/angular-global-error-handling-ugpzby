@@ -45,8 +45,10 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 						backdrop: 'static'
 						, windowClass: 'wifi-security-location-modal'
 					});
-				modal.componentInstance.header = 'Enable location services';
-				modal.componentInstance.description = 'To use Lenovo WiFi Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?';
+				modal.componentInstance.header = 'security.wifisecurity.location-modal.title';
+				modal.componentInstance.description = 'security.wifisecurity.location-modal.describe';
+				// modal.componentInstance.header = 'Enable location services';
+				// modal.componentInstance.description = 'To use Lenovo WiFi Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?';
 				modal.componentInstance.url = 'ms-settings:privacy-location';
 				this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (para) => {
 					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn, value);
@@ -73,8 +75,8 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 								backdrop: 'static'
 								, windowClass: 'wifi-security-location-modal'
 							});
-						modal.componentInstance.header = 'Enable location services';
-						modal.componentInstance.description = 'To use Lenovo WiFi Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?';
+						modal.componentInstance.header = 'security.wifisecurity.location-modal.title';
+						modal.componentInstance.description = 'security.wifisecurity.location-modal.describe';
 						modal.componentInstance.url = 'ms-settings:privacy-location';
 						this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
 							if (value) {
