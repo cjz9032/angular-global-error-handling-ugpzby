@@ -148,6 +148,9 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	}
 
 	public getTimeRemaining(): string {
+		if (Number.isNaN(this.remainingMinutes)) {
+			return "0 minutes";
+		}
 		const hours =
 			this.remainingHour > 0 && this.remainingHour < 2 ? 'hour' : 'hours';
 		const minutes =
