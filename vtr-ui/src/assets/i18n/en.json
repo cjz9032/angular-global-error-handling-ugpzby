@@ -210,7 +210,7 @@
 					"title": "Power Settings",
 					"alwaysUSB": {
 						"title": "Always on USB",
-						"description": "Charge USB devices through the Always on USB connector on the computer when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged from the USB connector that is yellow-coded or silk-printed the specified icon.",
+						"description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
 						"checkbox": "Enable USB charging from laptop battery when computer is off."
 					},
 					"easyResume": {
