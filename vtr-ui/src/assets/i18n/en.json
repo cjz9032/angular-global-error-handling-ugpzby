@@ -285,10 +285,19 @@
 				"title": "Display & Camera",
 				"subtitle": "Display & Camera Settings",
 				"description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
-				"jumpto": {
-					"title": "JUMP TO SETTINGS:",
-					"display": "Display",
-					"camera": "Camera"
+				"jumpTo": {
+					"title": "JUMP TO SETTINGS",
+					"shortcuts":[
+						{
+							"title": "Display",
+							"path": "display"
+						},
+						{
+							"title": "Camera",
+							"path": "camera"
+						}
+					]
+
 				},
 				"display": {
 					"title": "Display",

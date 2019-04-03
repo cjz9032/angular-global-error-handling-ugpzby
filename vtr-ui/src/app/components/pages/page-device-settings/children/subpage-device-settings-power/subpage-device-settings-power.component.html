@@ -472,7 +472,7 @@
 							[title]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
 							[caption]="'device.deviceSettings.power.powerSettings.easyResume.description' | translate"
 							[isSwitchVisible]=true
-							[isSwitchChecked]=powerSettings[1].isSwitchChecked
+							[isSwitchChecked]='toggleEasyResumeStatus'
 							[leftIcon]="powerSettings[1].leftImageSource"
 							[rightIcon]="powerSettings[1].rightImageSource"
 							[tooltipText]="'device.deviceSettings.power.powerSettings.easyResume.tooltip' | translate"
