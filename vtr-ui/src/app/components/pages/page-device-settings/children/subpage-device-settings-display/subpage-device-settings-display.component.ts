@@ -27,16 +27,16 @@ export class SubpageDeviceSettingsDisplayComponent
 	public cameraPrivacyModeStatus = new FeatureStatus(false, true);
 	public sunsetToSunriseModeStatus = new SunsetToSunriseStatus(true, false, false);
 	headerCaption ='device.deviceSettings.displayCamera.description';
-	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpto.title';
+	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 
 	headerMenuItems = [
 		{
-			title: 'device.deviceSettings.displayCamera.jumpto.display',
+			title: 'device.deviceSettings.displayCamera.jumpTo.display',
 			path: 'display'
 
 		},
 		{
-			title: 'device.deviceSettings.displayCamera.jumpto.camera',
+			title: 'device.deviceSettings.displayCamera.jumpTo.camera',
 			path: 'camera'
 		}
 	];

@@ -31,6 +31,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	usbChargingCheckboxFlag = false;
 	powerMode = PowerMode.Sleep;
 	showEasyResumeSection = false;
+	toggleEasyResumeStatus = false;
 	showAirplanePowerModeSection = false;
 	toggleAirplanePowerModeFlag = false;
 	dYTCRevision = 0;
@@ -358,6 +359,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 					.getDYTCRevision()
 					.then((value: number) => {
 						console.log('getDYTCRevision.then', value);
+						//value=5;
 						if (value === 4) {
 							this.showIntelligentCooling = 2;
 							this.getCQLCapability();
@@ -367,13 +369,13 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 
 							if (this.cQLCapability === true && this.tIOCapability === true) {
 								console.log('inside false of CQLCCapability and TIOCCapability');
-								this.toggleIntelligentCooling = false;
-								this.intelligentCooling = false;
-								this.toggleIntelligentCoolingStatus = false;
-							} else {
 								this.toggleIntelligentCooling = true;
+								this.intelligentCooling = true;
 								this.toggleIntelligentCoolingStatus = true;
-								this.intelligentCooling = false;
+							} else {
+								this.toggleIntelligentCooling = false;
+								this.toggleIntelligentCoolingStatus = false;
+								this.intelligentCooling = true;
 								this.getManualModeSetting();
 								// this.manualModeSettingStatus = 'error';
 
@@ -398,15 +400,15 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			case 'cool':
 				console.log('manualModeSettingStatus: cool');
 				this.radioQuietCool = true;
-				this.toggleIntelligentCooling = true;
-				this.toggleIntelligentCoolingStatus = false;
-				this.intelligentCooling = true;
+				//this.toggleIntelligentCooling = true;
+				//this.toggleIntelligentCoolingStatus = false;
+				//this.intelligentCooling = true;
 				break;
 			case 'performance':
 				this.radioPerformance = true;
-				this.toggleIntelligentCooling = true;
-				this.toggleIntelligentCoolingStatus = false;
-				this.intelligentCooling = true;
+				//this.toggleIntelligentCooling = true;
+				//this.toggleIntelligentCoolingStatus = false;
+			//	this.intelligentCooling = true;
 				console.log('manualModeSettingStatus: performance');
 				break;
 			case 'error':
@@ -570,7 +572,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 					.getEasyResumeStatusThinkPad()
 					.then((value: any) => {
 						console.log('getEasyResumeStatusThinkPad.then', value);
-
+						this.toggleEasyResumeStatus = value;
 					})
 					.catch(error => {
 						console.error('getEasyResumeStatusThinkPad', error);
@@ -587,7 +589,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				this.powerService
 					.setEasyResumeThinkPad(event.switchValue)
 					.then((value: boolean) => {
-						console.log('setEasyResumeThinkPad.then', value);
+						console.log('setEasyResumeThinkPad.then', event.switchValue);
 						this.getEasyResumeStatusThinkPad();
 					})
 					.catch(error => {
