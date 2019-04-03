@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, OnChanges } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges, ChangeDetectorRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
@@ -18,7 +18,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		private modalService: NgbModal, 
 		private batteryService: BatteryDetailService,
 		public shellServices: VantageShellService,
-		private commonService: CommonService) {
+		private commonService: CommonService,
+		private cd: ChangeDetectorRef) {
 			this.getBatteryDetailOnCard();
 		}
 	batteryInfo: BatteryDetail[];
@@ -86,6 +87,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryIndicator.voltageError = this.batteryInfo[0].isVoltageError;
 		this.batteryIndicator.convertMin(this.batteryInfo[0].remainingTime);
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo,this.batteryInfo);
+		this.cd.detectChanges();
 	}
 	
 	public showDetailModal(content: any): void {

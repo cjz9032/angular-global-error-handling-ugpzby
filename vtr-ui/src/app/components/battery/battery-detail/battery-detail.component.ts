@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, ChangeDetectorRef } from '@angular/core';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
 import { BatteryDetailMockService } from 'src/app/services/battery-detail/battery-detail.mock.service';
 import { BaseBatteryDetail } from 'src/app/services/battery-detail/base-battery-detail';
@@ -24,7 +24,8 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 	constructor(
 		private batteryService: BatteryDetailService,
 		public shellServices: VantageShellService,
-		public commonService: CommonService) {
+		public commonService: CommonService,
+		public cd: ChangeDetectorRef) {
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -75,6 +76,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 			}
 		}
 		this.dataSource = response;
+		this.cd.detectChanges();
 	}
 
 	ngOnInit() {
