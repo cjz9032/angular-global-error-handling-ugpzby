@@ -25,6 +25,8 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	public deviceModel: string;
 	commonMenuSubscription: Subscription;
 	public appVersion: string = environment.appVersion;
+	constantDevice = 'device';
+	constantDeviceSettings = 'device-settings';
 
 	items = [
 		{
@@ -35,6 +37,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.dashboard',
+			routerLinkActiveOptions: { exact: true },
 			subitems: []
 		}, {
 			id: 'device',
@@ -52,6 +55,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
 				metricsItem: 'link.mydevice',
+				routerLinkActiveOptions: { exact: true },
 				subitems: []
 			}, {
 				id: 'device-settings',
@@ -61,6 +65,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
 				metricsItem: 'link.mydevicesettings',
+				routerLinkActiveOptions: { exact: false },
 				subitems: []
 			}, {
 				id: 'system-updates',
@@ -70,6 +75,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
 				metricsItem: 'link.systemupdates',
+				routerLinkActiveOptions: { exact: true },
 				subitems: []
 			}]
 		}, {
@@ -88,6 +94,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
 				metricsItem: 'link.mysecurity',
+				routerLinkActiveOptions: { exact: true },
 				subitems: []
 			}, {
 				id: 'anti-virus',
@@ -97,6 +104,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
 				metricsItem: 'link.antivirus',
+				routerLinkActiveOptions: { exact: true },
 				subitems: []
 			}, {
 				id: 'wifi-security',
@@ -106,6 +114,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
 				metricsItem: 'link.wifisecurity',
+				routerLinkActiveOptions: { exact: true },
 				subitems: []
 			}, {
 				id: 'password-protection',
@@ -114,6 +123,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
 				metricsItem: 'link.passwordprotection',
+				routerLinkActiveOptions: { exact: true },
 				icon: '',
 				subitems: []
 			}, {
@@ -123,6 +133,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
 				metricsItem: 'link.internetprotection',
+				routerLinkActiveOptions: { exact: true },
 				icon: '',
 				subitems: []
 			}, {
@@ -133,6 +144,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
 				metricsItem: 'link.windowshello',
+				routerLinkActiveOptions: { exact: true },
 				subitems: []
 			}]
 		}, {
@@ -143,6 +155,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.support',
+			routerLinkActiveOptions: { exact: true },
 			forArm: true,
 			subitems: []
 		}, {
@@ -153,6 +166,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.user',
+			routerLinkActiveOptions: { exact: true },
 			subitems: []
 		}
 	];
