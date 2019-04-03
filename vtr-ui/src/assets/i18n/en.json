@@ -458,64 +458,6 @@
 			"others": {
 				"others-protection": "offers you basic protection for your device"
 			}
-		}
-	},
-	"security": {
-		"antivirus": {
-			"common": {
-				"title": "Anti-Virus",
-				"back": "BACK",
-				"why": "Why McAfee ?",
-				"recommends": "Lenovo recommends McAfee to protect all your devices with:",
-				"award": "Award winning protection from the latest online threats including ransomware and malware",
-				"dedicated": "Dedicated security that consistently outperforms Defender and other leading AV providers",
-				"device-to-cloud": "Device to cloud technology that won't slow down your PC",
-				"powered-by": "Powered By McAfee",
-				"privacy-terms": "<p>Read more on the <a vtrMetrics metricsItem=\"privacyPolicy\" metricsEvent=\"itemClick\" href=\"https://www.mcafee.com/consumer/en-us/policy/global/legal.html \"target=\"_blank\">Privacy Policy</a> and <a vtrMetrics metricsItem=\"termsOfServices\" metricsEvent=\"itemClick\" href=\"https://www.mcafee.com/consumer/en-us/policy/global/legal.html\" target=\"_blank\">Terms of Services</a></p>",
-				"mcafee-premium": "McAfee premium protection",
-				"protected-by": "You are currently protected by",
-				"better-protected": ".However, you could be better protected with McAfee LifeSafe",
-				"virus-scan": "VIRUS SCAN",
-				"firewall": "FIREWALL",
-				"disabled": "DISABLED",
-				"enable-virus-scan": "ENABLE VIRUS SCAN",
-				"enable-firewall": "ENABLE FIREWALL"
-			},
-			"windows-defender": {
-				"optimally-protected": "Not Optimally Protected",
-				"subtitle": "You are currently being protected by Windows Defender.However, you could be better protected with McAfee LiveSafe. Learn more below.",
-				"learn-more": "LEARN MORE ABOUT MCAFEE",
-				"windows-protected": "Windows Defender basic protection",
-				"windows-subtitle": "Windows defender offers basic protection for your device"
-			},
-			"mcafee": {
-				"title": "McAfee LiveSafe",
-				"subtitle": "You are currently protected by McAfee LiveSafe",
-				"valid": "Valid Until",
-				"upgrade": "Upgrade Now",
-				"launch": "LAUNCH MCAFEE",
-				"get-macfee": "GET MCAFEE",
-				"top-benefits": "Top Benefits of McAfee LiveSafe",
-				"award-title": "Award-Winning Antivirus",
-				"award-subtitle": "Blocks viruses, malware, ransomware, spyware, unwanted program and more on your PC.",
-				"encrypted-title": "Encrypted Storage",
-				"encrypted-subtitle": "Keep sensitive files private by storing them on your PC with 128-bit encryption.",
-				"identity-title": "Identity theft protection",
-				"identity-subtitle": "Take charge of protecting your identity from theft and fraud.",
-				"support-title": "FREE Customer Support",
-				"support-subtitle": "Has you covered by phone, by chat, or online for the life of your subscription.",
-				"anti-title": "Anti-Spam",
-				"anti-subtitle": "Blocks dangerous messages before they reach your inbox by removing emails that may include risky links and viruses.",
-				"virus-title": "Virus protection pledge",
-				"virus-subtitle": "Provides you with the confidence that in the event your PC gets a virus, a McAfee expert will remotely access your computer to remove it.",
-				"parental-title": "Parental controls",
-				"parental-subtitle": "Block web sites and search results you don’t want your kids to see. Also lets you set limits for how much time they spend online.",
-				"license": "License Valid until",
-				"trial": "Trial Valid until"
-			},
-			"others": {
-				"others-protection": "offers you basic protection for your device"
-			}
 		},
 		"wifisecurity": {
 			"header": {
