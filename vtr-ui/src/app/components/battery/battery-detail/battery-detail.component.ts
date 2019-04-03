@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, ChangeDetectorRef } from '@angular/core';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
 import { BatteryDetailMockService } from 'src/app/services/battery-detail/battery-detail.mock.service';
 import { BaseBatteryDetail } from 'src/app/services/battery-detail/base-battery-detail';
@@ -16,14 +16,16 @@ import { Subscription } from 'rxjs';
 	styleUrls: ['./battery-detail.component.scss'],
 })
 export class BatteryDetailComponent implements OnInit, OnDestroy {
-	@Input() public dataSource: BatteryDetail[];
+	public dataSource: BatteryDetail[];
+	@Input() data: BatteryDetail[];
 	remainingTimeText = "Remaining time";
 	batteryIndicators = new BatteryIndicator();
 	private notificationSubscription: Subscription;
 	constructor(
 		private batteryService: BatteryDetailService,
 		public shellServices: VantageShellService,
-		public commonService: CommonService) {
+		public commonService: CommonService,
+		public cd: ChangeDetectorRef) {
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -51,7 +53,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 				&& this.dataSource != undefined
 				&& this.dataSource[0].remainingTime == 0) {
 				// Don't update UI if remainingTime is 0.
-				return;
+				//return; commented, because it's restricting UI to update. Need to check with API owner
 			}
 			response[i].remainingCapacity = Math.round(response[i].remainingCapacity * 100) / 100;
 			response[i].fullChargeCapacity = Math.round(response[i].fullChargeCapacity * 100) / 100;
@@ -74,17 +76,15 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 			}
 		}
 		this.dataSource = response;
+		this.cd.detectChanges();
 	}
 
 	ngOnInit() {
 		console.log('In ngOnInit');
+		this.dataSource = this.data;
 		this.preProcessBatteryDetailResponse(this.dataSource);
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
-		});
-		//TODO: Change this if event is fired
-		this.shellServices.phoenix.on('pwrPowerSupplyStatusEvent', (val) => {
-			console.log("Event fired===================");
 		});
 	}
 
@@ -93,6 +93,5 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
-		this.shellServices.phoenix.off('pwrRemainingPercentageEvent', ()=>{ });
 	}
 }

@@ -141,11 +141,8 @@
 								<div class="row"
 									*ngIf="!deviceService.isArm">
 									<div class="col col-12 py-40">
-										<vtr-widget-status componentName="security advisor"
-											[title]="'Security Advisor'"
-											[description]="'Check if your device is secured.'"
-											[items]="securityStatus">
-										</vtr-widget-status>
+										<vtr-widget-security-status [securityAdvisor]="securityAdvisor">
+										</vtr-widget-security-status>
 									</div>
 								</div>
 							</div>
