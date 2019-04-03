@@ -48,7 +48,7 @@ export class MetricsDirective {
 				ItemParent: location ? location + '.' + this.metricsParent : this.metricsParent,
 			};
 			if (this.metricsParam) {
-				data.ItemParam = this.metricsParam;
+				data.ItemParm = this.metricsParam;
 			}
 
 			if (typeof this.metricsValue !== 'undefined') {
@@ -80,7 +80,7 @@ export class MetricsDirective {
 				ItemParent: location ? location + '.' + this.metricsParent : this.metricsParent,
 			};
 			if (this.metricsParam) {
-				data.ItemParam = this.metricsParam;
+				data.ItemParm = this.metricsParam;
 			}
 			if (typeof this.metricsValue !== 'undefined') {
 				data.ItemValue = this.metricsValue;
