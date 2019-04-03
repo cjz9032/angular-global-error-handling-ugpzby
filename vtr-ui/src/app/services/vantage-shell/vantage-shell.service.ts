@@ -86,7 +86,7 @@ export class VantageShellService {
 					appVersion: '1.0.0.0',
 					appId: 'ZN8F02EQU628',
 					appName: 'vantage3',
-					channel: 'NonPreload',
+					channel: '',
 					ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
 				});
 				this.phoenix.metrics.isInit = true;
