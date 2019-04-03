@@ -52,7 +52,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 				&& this.dataSource != undefined
 				&& this.dataSource[0].remainingTime == 0) {
 				// Don't update UI if remainingTime is 0.
-				return;
+				//return; commented, because it's restricting UI to update. Need to check with API owner
 			}
 			response[i].remainingCapacity = Math.round(response[i].remainingCapacity * 100) / 100;
 			response[i].fullChargeCapacity = Math.round(response[i].fullChargeCapacity * 100) / 100;
