@@ -85,8 +85,56 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	getLidSupportedLanguageFromLocale(locale) {
 		var lang = "en_US";
 		switch(locale) {
+			case "zh-hans":
+				lang = "zh_CN";
+				break;
+			case "zh-hant":
+				lang = "zh_HANT";
+				break;
+			case "da":
+				lang = "da_DK";
+				break;
+			case "de":
+				lang = "de_DE";
+				break;
 			case "en":
-				lang = "en_US";	// change this for testing
+				lang = "en_US";
+				break;
+			case "fr":
+				lang = "fr_FR";
+				break;
+			case "it":
+				lang = "it_IT";
+				break;
+			case "ja":
+				lang = "ja_JP";
+				break;
+			case "ko":
+				lang = "ko_kR";
+				break;
+			case "no":
+				lang = "no_NO";
+				break;
+			case "nl":
+				lang = "nl_NL";
+				break;
+			case "pt_BR":
+				lang = "pt_BR";
+				break;
+			case "pt":
+				lang = "pt_PT";
+				break;
+			case "fi":
+				lang = "fi_FI";
+				break;
+			case "es":
+				lang = "es_ES";
+				break;
+			case "sv":
+				lang = "sv_SE";
+				break;
+			case "ru":
+				lang = "ru_RU";
 				break;
 			default:
 				lang = "en_US";
