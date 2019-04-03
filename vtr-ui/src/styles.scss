@@ -517,3 +517,431 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .button-green {
 	background: linear-gradient(135deg, $go 0%, $go_light 100%);
 }
+
+
+.icon {
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-image: url(./assets/sprite/sprite.svg);
+}
+.icon-FA-Battery-bolt2x {
+	width: 32px;
+	height: 32px;
+	background-position: 0 0;
+}
+.icon-FA-Battery-three-quarters2x {
+	width: 32px;
+	height: 32px;
+	background-position: -48px 0;
+}
+.icon-FA-Bolt2x {
+	width: 32px;
+	height: 32px;
+	background-position: -96px 0;
+}
+.icon-FA-Briefcase2x {
+	width: 32px;
+	height: 32px;
+	background-position: -144px 0;
+}
+.icon-FA-Camera2x {
+	width: 32px;
+	height: 32px;
+	background-position: -192px 0;
+}
+.icon-FA-Child2x {
+	width: 32px;
+	height: 32px;
+	background-position: -240px 0;
+}
+.icon-FA-Connection2x {
+	width: 32px;
+	height: 32px;
+	background-position: -288px 0;
+}
+.icon-FA-Download2x {
+	width: 32px;
+	height: 32px;
+	background-position: -336px 0;
+}
+.icon-FA-Eye2x {
+	width: 32px;
+	height: 32px;
+	background-position: -384px 0;
+}
+.icon-FA-Eye-Slash2x {
+	width: 32px;
+	height: 32px;
+	background-position: -432px 0;
+}
+.icon-FA-Gamepad2x {
+	width: 32px;
+	height: 32px;
+	background-position: -480px 0;
+}
+.icon-FA-Headset2x {
+	width: 32px;
+	height: 32px;
+	background-position: -528px 0;
+}
+.icon-FA-Info-circle2x {
+	width: 32px;
+	height: 32px;
+	background-position: -576px 0;
+}
+.icon-FA-keyboard2x {
+	width: 32px;
+	height: 32px;
+	background-position: -624px 0;
+}
+.icon-FA-Lock2x {
+	width: 32px;
+	height: 32px;
+	background-position: -672px 0;
+}
+.icon-FA-Mail2x {
+	width: 32px;
+	height: 32px;
+	background-position: -720px 0;
+}
+.icon-FA-mask2x {
+	width: 32px;
+	height: 32px;
+	background-position: 0 -48px;
+}
+.icon-FA-Microphone---slash2x {
+	width: 32px;
+	height: 32px;
+	background-position: -48px -48px;
+}
+.icon-FA-Microphone2x {
+	width: 32px;
+	height: 32px;
+	background-position: -96px -48px;
+}
+.icon-FA-Microphone-alt2x {
+	width: 32px;
+	height: 32px;
+	background-position: -144px -48px;
+}
+.icon-FA-Music2x {
+	width: 32px;
+	height: 32px;
+	background-position: -192px -48px;
+}
+.icon-FA-Plane2x {
+	width: 32px;
+	height: 32px;
+	background-position: -240px -48px;
+}
+.icon-FA-Plug2x {
+	width: 32px;
+	height: 32px;
+	background-position: -288px -48px;
+}
+.icon-FA-Question-circle2x {
+	width: 32px;
+	height: 32px;
+	background-position: -336px -48px;
+}
+.icon-FA-Settings2x {
+	width: 32px;
+	height: 32px;
+	background-position: -384px -48px;
+}
+.icon-FA-Tachometer-alt-fast2x {
+	width: 32px;
+	height: 32px;
+	background-position: -432px -48px;
+}
+.icon-FA-Tasks2x {
+	width: 32px;
+	height: 32px;
+	background-position: -480px -48px;
+}
+.icon-FA-Tools2x {
+	width: 32px;
+	height: 32px;
+	background-position: -528px -48px;
+}
+.icon-FA-trophy2x {
+	width: 32px;
+	height: 32px;
+	background-position: -576px -48px;
+}
+.icon-FA-Umbrella2x {
+	width: 32px;
+	height: 32px;
+	background-position: -624px -48px;
+}
+.icon-FA-Unplugged2x {
+	width: 32px;
+	height: 32px;
+	background-position: -672px -48px;
+}
+.icon-FA-User-headset2x {
+	width: 32px;
+	height: 32px;
+	background-position: -720px -48px;
+}
+.icon-FA-Video2x {
+	width: 32px;
+	height: 32px;
+	background-position: 0 -96px;
+}
+.icon-FA-Wheel2x {
+	width: 32px;
+	height: 32px;
+	background-position: -48px -96px;
+}
+.icon-LE-Acoustic-echo-cancellation2x {
+	width: 32px;
+	height: 32px;
+	background-position: -96px -96px;
+}
+.icon-LE-Active-pen-battery2x {
+	width: 32px;
+	height: 32px;
+	background-position: -144px -96px;
+}
+.icon-LE-Always-on-usb2x {
+	width: 32px;
+	height: 32px;
+	background-position: -192px -96px;
+}
+.icon-LE-Battery-charge-treshold2x {
+	width: 32px;
+	height: 32px;
+	background-position: -240px -96px;
+}
+.icon-LE-Battery-gauge-reset2x {
+	width: 32px;
+	height: 32px;
+	background-position: -288px -96px;
+}
+.icon-LE-Battery-Life-mode2x {
+	width: 32px;
+	height: 32px;
+	background-position: -336px -96px;
+}
+.icon-LE-Breached-accounts2x {
+	width: 32px;
+	height: 32px;
+	background-position: -384px -96px;
+}
+.icon-LE-Camera-privacy-mode2x {
+	width: 32px;
+	height: 32px;
+	background-position: -432px -96px;
+}
+.icon-LE-ChargeFromShutdown2x {
+	width: 32px;
+	height: 32px;
+	background-position: -480px -96px;
+}
+.icon-LE-Charging-USB---SS2x {
+	width: 32px;
+	height: 32px;
+	background-position: -528px -96px;
+}
+.icon-LE-Charging-USB2x {
+	width: 32px;
+	height: 32px;
+	background-position: -576px -96px;
+}
+.icon-LE-Conservation-mode2x {
+	width: 32px;
+	height: 32px;
+	background-position: -624px -96px;
+}
+.icon-LE-CoolingDown2x {
+	width: 32px;
+	height: 32px;
+	background-position: -672px -96px;
+}
+.icon-LE-Data-protection2x {
+	width: 32px;
+	height: 32px;
+	background-position: -720px -96px;
+}
+.icon-LE-Display-priority-control2x {
+	width: 32px;
+	height: 32px;
+	background-position: 0 -144px;
+}
+.icon-LE-Dolby2x {
+	width: 32px;
+	height: 32px;
+	background-position: -48px -144px;
+}
+.icon-LE-Dynamic2x {
+	width: 32px;
+	height: 32px;
+	background-position: -96px -144px;
+}
+.icon-LE-Easily-accessible-accounts2x {
+	width: 32px;
+	height: 32px;
+	background-position: -144px -144px;
+}
+.icon-LE-Easy-resume2x {
+	width: 32px;
+	height: 32px;
+	background-position: -192px -144px;
+}
+.icon-LE-Energy-star-logo2x {
+	width: 32px;
+	height: 32px;
+	background-position: -240px -144px;
+}
+.icon-LE-expressCharging----Gray2x {
+	width: 32px;
+	height: 32px;
+	background-position: -288px -144px;
+}
+.icon-LE-expressCharging2x {
+	width: 32px;
+	height: 32px;
+	background-position: -336px -144px;
+}
+.icon-LE-face-detection2x {
+	width: 32px;
+	height: 32px;
+	background-position: -384px -144px;
+}
+.icon-LE-face-recognition2x {
+	width: 32px;
+	height: 32px;
+	background-position: -432px -144px;
+}
+.icon-LE-Finger-Identification2x {
+	width: 32px;
+	height: 32px;
+	background-position: -480px -144px;
+}
+.icon-LE-Finger-recognition2x {
+	width: 32px;
+	height: 32px;
+	background-position: -528px -144px;
+}
+.icon-LE-Finger-Scanning2x {
+	width: 32px;
+	height: 32px;
+	background-position: -576px -144px;
+}
+.icon-LE-Handwritting-identification2x {
+	width: 32px;
+	height: 32px;
+	background-position: -624px -144px;
+}
+.icon-LE-Handwritting-recognition2x {
+	width: 32px;
+	height: 32px;
+	background-position: -672px -144px;
+}
+.icon-LE-HDMI2x {
+	width: 32px;
+	height: 32px;
+	background-position: -720px -144px;
+}
+.icon-LE-IntelligentCooling2x {
+	width: 32px;
+	height: 32px;
+	background-position: 0 -192px;
+}
+.icon-LE-Intelligent-dual-fan-2x {
+	width: 32px;
+	height: 32px;
+	background-position: -48px -192px;
+}
+.icon-LE-IR2x {
+	width: 32px;
+	height: 32px;
+	background-position: -96px -192px;
+}
+.icon-LE-Microphone-Optimize2x {
+	width: 32px;
+	height: 32px;
+	background-position: -144px -192px;
+}
+.icon-LE-Microphone-volume2x {
+	width: 32px;
+	height: 32px;
+	background-position: -192px -192px;
+}
+.icon-LE-Multiple-voices2x {
+	width: 32px;
+	height: 32px;
+	background-position: -240px -192px;
+}
+.icon-LE-OnlyMyVoice2x {
+	width: 32px;
+	height: 32px;
+	background-position: -288px -192px;
+}
+.icon-LE-Palm-recognition2x {
+	width: 32px;
+	height: 32px;
+	background-position: -336px -192px;
+}
+.icon-LE-Palm-Scanning2x {
+	width: 32px;
+	height: 32px;
+	background-position: -384px -192px;
+}
+.icon-LE-Power-agenda2x {
+	width: 32px;
+	height: 32px;
+	background-position: -432px -192px;
+}
+.icon-LE-Power-plan2x {
+	width: 32px;
+	height: 32px;
+	background-position: -480px -192px;
+}
+.icon-LE-Smart-Assist2x {
+	width: 32px;
+	height: 32px;
+	background-position: -528px -192px;
+}
+.icon-LE-USB-Type-C2x {
+	width: 32px;
+	height: 32px;
+	background-position: -576px -192px;
+}
+.icon-LE-USB2x {
+	width: 32px;
+	height: 32px;
+	background-position: -624px -192px;
+}
+.icon-LE-User-Detection2x {
+	width: 32px;
+	height: 32px;
+	background-position: -672px -192px;
+}
+.icon-LE-Visible-to-online-trackers2x {
+	width: 32px;
+	height: 32px;
+	background-position: -720px -192px;
+}
+.icon-LE-Voice2x {
+	width: 32px;
+	height: 32px;
+	background-position: 0 -240px;
+}
+.icon-LE-Voice-Autentification2x {
+	width: 32px;
+	height: 32px;
+	background-position: -48px -240px;
+}
+.icon-LE-VoiceRecognition2x {
+	width: 32px;
+	height: 32px;
+	background-position: -96px -240px;
+}
+.icon-LE-Voice-recognition2x {
+	width: 32px;
+	height: 32px;
+	background-position: -144px -240px;
+}
+

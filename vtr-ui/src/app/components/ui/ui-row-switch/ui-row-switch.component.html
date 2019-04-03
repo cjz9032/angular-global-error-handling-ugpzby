@@ -12,7 +12,7 @@
 					<div class="row m-0">
 						<div class="col-auto left-icon-column"
 							*ngIf="leftIcon.length > 0">
-							<fa-icon *ngIf="leftIcon[0]!=='svg'"
+							<fa-icon *ngIf="leftIcon[0]!=='svg' || leftIcon[0]!=='icon'"
 								class="left-icon"
 								[icon]="leftIcon"></fa-icon>
 							<svg-icon *ngIf="leftIcon[0]==='svg'"
@@ -20,6 +20,7 @@
 								[stretch]="true"
 								class="left-icon"
 								[src]="'assets/icons/'+leftIcon[1]+'.svg'"></svg-icon>
+							<span [ngClass]="'icon '+leftIcon[1]"></span>
 						</div>
 						<div class="col">
 							<div class="title">{{ title }}</div>
