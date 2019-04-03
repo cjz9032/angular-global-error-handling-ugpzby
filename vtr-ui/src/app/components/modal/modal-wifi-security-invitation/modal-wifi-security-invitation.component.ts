@@ -40,8 +40,10 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	}
 
 	joinGroupBy(code: any) {
+		if (!(code.length === 6)) {
+			return;
+		}
 		code = code.toUpperCase();
-		// console.log(`Code: ${code}`);
 		this.startJoin = true;
 		this.joinSuccess = false;
 		this.joinFailed = false;
@@ -52,10 +54,8 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 					if (result) {
 						this.joinSuccess = true;
 						this.emitter.emit('invitationsuccess');
-						// console.log('Join success!');
 					} else {
 						this.joinFailed = true;
-						// console.log('Join failed!');
 					}
 				});
 		} else {
