@@ -2,13 +2,13 @@
 
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
+import { EventTypes } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
-
 @Injectable({
 	providedIn: 'root'
 })
 export class VantageShellService {
-	public phoenix: any;
+	private phoenix: any;
 	constructor() {
 		const shell = this.getVantageShell();
 		if (shell) {
@@ -26,6 +26,19 @@ export class VantageShellService {
 		}
 	}
 
+	public registerEvent(eventType: any, handler: any) {
+		this.phoenix.on(eventType, (val) => {
+			console.log("Event fired: ", eventType);
+			console.log("Event value: ", val);
+			handler(val);
+		});
+	}
+
+	public unRegisterEvent(eventType: any) {
+		this.phoenix.off(eventType, (val) => {
+			console.log("unRegister Event: ", eventType);
+		});
+	}
 	private getVantageShell(): any {
 		const win: any = window;
 		return win.VantageShellExtension;

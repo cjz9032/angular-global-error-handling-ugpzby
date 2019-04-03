@@ -54,27 +54,26 @@
 																<fa-icon class="wifi-font-icon"
 																	[icon]="['fas', 'wifi']"></fa-icon>
 															</div>
-															<div class="col-9">Prevented your computer from joining
-																<span>{{getMaliciousWifi(wifiHistory)}}</span> malicious
-																networks this month.</div>
+															<div class="col-9">{{'security.landing.maliciousNetwork' | translate:{maliciousWifi:maliciousWifi} }}</div>
 														</div>
 														<ul class="chevron-list">
 															<li *ngFor="let wifi of wifiHistory.slice(0, 2);"
-																class="row">
+																class="row no-gutters">
 																<div class="col-2 item-icon">
 																	<div class="icon-bkg">
 																		<fa-icon [ngClass]="getWifiStatus(wifi.good)"
 																			[icon]="['fas', 'wifi']"></fa-icon>
 																	</div>
 																</div>
-																<div class="col-6">{{wifi.ssid}}</div>
-																<div class="wifi-bg">
-																	<div class="wifi-good"
+																<div class="col-6 pl-0 ellipsis">{{wifi.ssid}}</div>
+																<div class="wifi-bg col-4 pl-0 pr-3">
+																	<span class="wifi-good pt-1 pb-1 pr-2 pl-2"
 																		[ngClass]="getWifiStatus(wifi.good)">
-																		{{getWifiDetail(wifi.good)}}</div>
+																		{{getWifiDetail(wifi.good)}}
+																	</span>
 																</div>
 															</li>
-															<li class="wifi-link"><a routerLink="/wifi-security"
+															<li class="wifi-link"><a routerLink="wifi-security"
 																	[queryParams]="{isShowMore:false}">See all joined
 																	networks</a></li>
 														</ul>
@@ -89,7 +88,7 @@
 											</div>
 										</div>
 										<vtr-ui-landing-feature
-											*ngIf="windowsHelloLandingViewModel.subject.status !== undefined && windowsHelloLandingViewModel.subject.status !== null"
+											*ngIf="windowsHelloLandingViewModel && windowsHelloLandingViewModel.subject.status !== undefined && windowsHelloLandingViewModel.subject.status !== null"
 											[feature]='windowsHelloLandingViewModel'>
 										</vtr-ui-landing-feature>
 

@@ -150,7 +150,7 @@
 								list-group-flush">
 						<li class="">
 							<vtr-ui-row-switch
-								[title]="'device.deviceSettings.power.powerSmartSettings.title' | translate | lowercase"
+								[title]="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate | lowercase"
 								[caption]="''"
 								[isSwitchVisible]="toggleIntelligentCooling"
 								[isSwitchChecked]="toggleIntelligentCoolingStatus"
@@ -472,7 +472,7 @@
 							[title]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
 							[caption]="'device.deviceSettings.power.powerSettings.easyResume.description' | translate"
 							[isSwitchVisible]=true
-							[isSwitchChecked]=powerSettings[1].isSwitchChecked
+							[isSwitchChecked]='toggleEasyResumeStatus'
 							[leftIcon]="powerSettings[1].leftImageSource"
 							[rightIcon]="powerSettings[1].rightImageSource"
 							[tooltipText]="'device.deviceSettings.power.powerSettings.easyResume.tooltip' | translate"

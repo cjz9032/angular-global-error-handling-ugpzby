@@ -8,8 +8,8 @@
 }
 
 .checkbox input {
-	position:absolute;
-	left:-99999px;
+	position: absolute;
+	left: -9999.9rem;
 }
 
 .checkbox label {
@@ -17,10 +17,10 @@
 }
 
 .switch {
-	border-radius: 100px;
+	border-radius: 10rem;
 	cursor: pointer;
 	display: inline-block;
-	width: 44px;
+	width: 4.4rem;
 	position: relative;
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
@@ -29,95 +29,95 @@
 }
 
 .switch,
-.switch > small {
+.switch>small {
 	background-color: $light;
-	height: 22px;
+	height: 2.2rem;
 }
 
-input + .switch {
+input+.switch {
 	background: linear-gradient($gradient_angle, $shade_light 0%, $shade_lightest 100%);
-	margin-right: 7px;
+	margin-right: 0.7rem;
 }
 
-input:checked + .switch {
+input:checked+.switch {
 	background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
 	transition: background 1.2s;
 }
 
 .checkbox-double .switch {
 	position: relative;
-	margin-left: 7px;
-	margin-right: 7px;
+	margin-left: 0.7rem;
+	margin-right: 0.7rem;
 }
 
-.switch > small {
-	background-color: #fff;
-	border-radius: 100px;
-	width: 22px;
-	height: 22px;
+.switch>small {
+	background-color: $shade_darkest;
+	border-radius: 10rem;
+	width: 2.2rem;
+	height: 2.2rem;
 	position: absolute;
-	left: 0;
-	top: 2px;
-	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+	left: 0.3rem;
+	top: 0.2rem;
+	-webkit-box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
+	box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
 	transition: background-color 0.4s, left 0.2s;
 }
 
-input:checked + .switch > small {
-	left: 22px;
+input:checked+.switch>small {
+	left: 2.2rem;
 	transition: background-color 0.4s, left 0.2s;
 	background-color: rgb(255, 255, 255);
 }
 
 /* LARGE - LG */
 
-input:checked + .switch.switch-lg > small {
-	left: 26px;
+input:checked+.switch.switch-lg>small {
+	left: 2.6rem;
 }
 
 .switch.switch-lg {
-	margin-top: -4px;
-	height: 26px;
-	width: 52px;
+	margin-top: -0.4rem;
+	height: 2.6rem;
+	width: 5.2rem;
 }
 
 .switch-lg small {
-	height: 26px;
-	width: 26px;
+	height: 2.6rem;
+	width: 2.6rem;
 }
 
 /* SMALL - SM */
 
-input:checked + .switch.switch-sm > small {
-	left: 18px;
+input:checked+.switch.switch-sm>small {
+	left: 1.8rem;
 }
 
 .switch.switch-sm {
 	margin-top: 0;
-	height: 18px;
-	width: 36px;
+	height: 1.8rem;
+	width: 3.6rem;
 }
 
 .switch-sm small {
-	height: 18px;
-	width: 18px;
+	height: 1.8rem;
+	width: 1.8rem;
 }
 
 /* EXTRA SMALL - XS */
 
-input:checked + .switch.switch-xs > small {
-	left: 31px;
+input:checked+.switch.switch-xs>small {
+	left: 3.1rem;
 }
 
 .switch.switch-xs {
-	margin-top: 2px;
-	height: 18px;
-	width: 48px;
+	margin-top: 0.2rem;
+	height: 1.8rem;
+	width: 4.8rem;
 }
 
 .switch-xs small {
-	height: 14px;
-	width: 14px;
+	height: 1.4rem;
+	width: 1.4rem;
 }
 
 /* DISABLED */
@@ -145,12 +145,13 @@ input:checked + .switch.switch-xs > small {
 	font-size: 1.1rem;
 	text-transform: uppercase;
 	color: $light;
-	font-weight: $weight_medium;
+	font-weight: $weight_bold;
 	position: absolute;
-	top: 4px;
-	left: 10px;
+	top: 0.4rem;
+	left: 1rem;
+
 	&.off-label {
-		left: 17px;
-		color: $main_shade;
+		left: 2remx;
+		color: $shade_darkest;
 	}
 }

@@ -14,6 +14,7 @@ export class CommonService {
 	public readonly notification: Observable<AppNotification>;
 	private notificationSubject: BehaviorSubject<AppNotification>;
 	public isOnline = true;
+	private RS5Version: Number = 17600;
 
 	constructor() {
 		this.notificationSubject = new BehaviorSubject<AppNotification>(
@@ -100,5 +101,20 @@ export class CommonService {
 
 	public sendNotification(action: string, payload?: any) {
 		this.notificationSubject.next(new AppNotification(action, payload));
+	}
+
+	public isRS5OrLater(): boolean {
+		return this.getWindowsVersion() >= this.RS5Version;
+	}
+
+	public getWindowsVersion(): Number {
+		let version = '0';
+		navigator.userAgent.split(' ').forEach((value) => {
+			if (value.indexOf('Edge') !== -1) {
+				const dotIndex = value.indexOf('.');
+				version = value.substring(dotIndex + 1, value.length);
+			}
+		});
+		return Number(version);
 	}
 }
