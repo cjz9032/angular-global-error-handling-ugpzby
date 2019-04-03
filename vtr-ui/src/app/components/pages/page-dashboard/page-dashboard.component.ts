@@ -7,9 +7,11 @@ import { Status } from 'src/app/data-models/widgets/status.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
-import { UserService } from 'src/app/services/user/user.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
+import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -23,6 +25,7 @@ export class PageDashboardComponent implements OnInit {
 	feedbackButtonText = this.submit;
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
+	public isOnline = true;
 
 	heroBannerItems = [];
 	cardContentPositionB: any = {};
@@ -44,13 +47,15 @@ export class PageDashboardComponent implements OnInit {
 		config: NgbModalConfig,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
-		private cmsService: CMSService
+		private cmsService: CMSService,
+		private systemUpdateService: SystemUpdateService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
 	}
 
 	ngOnInit() {
+		this.isOnline = this.commonService.isOnline;
 		if (this.dashboardService.isShellAvailable) {
 			console.log('PageDashboardComponent.getSystemInfo');
 			this.getSystemInfo();
@@ -101,10 +106,13 @@ export class PageDashboardComponent implements OnInit {
 		});
 	}
 
-	onFeedbackModal(content: any) {
+	onFeedbackModal() {
 		this.modalService
-			.open(content, {
-				centered: true
+			.open(FeedbackFormComponent, {
+				backdrop: 'static',
+				size: 'lg',
+				centered: true,
+				windowClass: 'feedback-form-modal-size'
 			})
 			.result.then(
 				result => {
@@ -116,12 +124,15 @@ export class PageDashboardComponent implements OnInit {
 			);
 	}
 
-	public onFeedbackClick() {
-		this.feedbackButtonText = 'Thank you for your feedback !';
-		setTimeout(() => {
-			this.modalService.dismissAll();
-			this.feedbackButtonText = this.submit;
-		}, 3000);
+	// public onFeedbackClick() {
+	// 	this.feedbackButtonText = 'Thank you for your feedback !';
+	// 	setTimeout(() => {
+	// 		this.modalService.dismissAll();
+	// 		this.feedbackButtonText = this.submit;
+	// 	}, 3000);
+	// }
+
+	public onConnectivityClick($event: any) {
 	}
 
 	// private getFormatedTitle(title) {
@@ -230,15 +241,21 @@ export class PageDashboardComponent implements OnInit {
 			systemUpdate.id = 'systemupdate';
 			systemUpdate.title = 'System Update';
 			systemUpdate.detail = 'Update';
-			systemUpdate.path = '/system-updates';
+			systemUpdate.path = 'device/system-updates';
 			systemUpdate.asLink = true;
 			systemUpdate.isSystemLink = false;
 			systemUpdate.type = 'system';
 
 			if (response.systemupdate) {
+				const lastUpdate = response.systemupdate.lastupdate;
+				const diffInDays = this.systemUpdateService.dateDiffInDays(lastUpdate);
 				const { status } = response.systemupdate;
 				if (status === 1) {
-					systemUpdate.status = 0;
+					if (diffInDays > 30) {
+						systemUpdate.status = 1;
+					} else {
+						systemUpdate.status = 0;
+					}
 				} else {
 					systemUpdate.status = 1;
 				}
@@ -256,7 +273,7 @@ export class PageDashboardComponent implements OnInit {
 			antiVirus.id = 'anti-virus';
 			antiVirus.title = 'Anti-Virus';
 			antiVirus.detail = 'Disabled';
-			antiVirus.path = 'anti-virus';
+			antiVirus.path = 'security/anti-virus';
 			antiVirus.type = 'security';
 
 			if (response.antiVirus) {
@@ -274,7 +291,7 @@ export class PageDashboardComponent implements OnInit {
 			wiFi.id = 'wifi-security';
 			wiFi.title = 'WiFi Security';
 			wiFi.detail = 'Disabled';
-			wiFi.path = 'wifi-security';
+			wiFi.path = 'security/wifi-security';
 			wiFi.type = 'security';
 
 			if (response.wifiSecurity) {
@@ -292,12 +309,12 @@ export class PageDashboardComponent implements OnInit {
 			passwordManager.id = 'pwdmgr';
 			passwordManager.title = 'Password Manager';
 			passwordManager.detail = 'Not Installed';
-			passwordManager.path = 'password-protection';
+			passwordManager.path = 'security/password-protection';
 			passwordManager.type = 'security';
 
 			if (response.passwordManager) {
 				if (response.passwordManager.installed) {
-					passwordManager.status = 0;
+					passwordManager.status = 2;
 					passwordManager.detail = 'Installed';
 				} else {
 					passwordManager.status = 1;
@@ -310,12 +327,12 @@ export class PageDashboardComponent implements OnInit {
 			vpn.id = 'vpn';
 			vpn.title = 'VPN';
 			vpn.detail = 'Not Installed';
-			vpn.path = 'internet-protection';
+			vpn.path = 'security/internet-protection';
 			vpn.type = 'security';
 
 			if (response.VPN) {
 				if (response.VPN.installed) {
-					vpn.status = 0;
+					vpn.status = 2;
 					vpn.detail = 'Installed';
 				} else {
 					vpn.status = 1;
@@ -328,7 +345,7 @@ export class PageDashboardComponent implements OnInit {
 			windowsHello.id = 'windows-hello';
 			windowsHello.title = 'Windows Hello';
 			windowsHello.detail = 'Disabled';
-			windowsHello.path = 'windows-hello';
+			windowsHello.path = 'security/windows-hello';
 			windowsHello.type = 'security';
 
 			if (response.windowsHello) {
@@ -350,7 +367,10 @@ export class PageDashboardComponent implements OnInit {
 				case LenovoIdKey.FirstName:
 					this.firstName = notification.payload;
 					break;
-
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
 				default:
 					break;
 			}

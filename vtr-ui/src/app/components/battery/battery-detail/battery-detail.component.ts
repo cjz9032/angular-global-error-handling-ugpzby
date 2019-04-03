@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
 import { BatteryDetailMockService } from 'src/app/services/battery-detail/battery-detail.mock.service';
 import { BaseBatteryDetail } from 'src/app/services/battery-detail/base-battery-detail';
@@ -16,12 +16,12 @@ import { Subscription } from 'rxjs';
 	styleUrls: ['./battery-detail.component.scss'],
 })
 export class BatteryDetailComponent implements OnInit, OnDestroy {
-	public dataSource: BatteryDetail[];
+	@Input() public dataSource: BatteryDetail[];
 	remainingTimeText = "Remaining time";
 	batteryIndicators = new BatteryIndicator();
 	private notificationSubscription: Subscription;
 	constructor(
-		private batteryService: BatteryDetailService, 
+		private batteryService: BatteryDetailService,
 		public shellServices: VantageShellService,
 		public commonService: CommonService) {
 	}
@@ -41,28 +41,32 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 
 	preProcessBatteryDetailResponse(response: BatteryDetail[]) {
 		let headings = ["Primary Battery", "Secondary Battery", "Tertiary Battery"];
-		this.batteryIndicators.percent = response[0].remainingPercent;
+		this.batteryIndicators.percent = response[0].mainBatteryPercent;
 		this.batteryIndicators.charging = response[0].chargeStatus == BatteryChargeStatus.CHARGING.id;
 		this.batteryIndicators.expressCharging = response[0].isExpressCharging;
 		this.batteryIndicators.voltageError = response[0].isVoltageError;
 		this.batteryIndicators.convertMin(response[0].remainingTime);
-		for(let i=0; i<response.length ;i++) {	
-			if (response[i].remainingTime == 0 
-				&& this.dataSource != undefined 
+		for(let i=0; i<response.length ;i++) {
+			if (response[i].remainingTime == 0
+				&& this.dataSource != undefined
 				&& this.dataSource[0].remainingTime == 0) {
 				// Don't update UI if remainingTime is 0.
 				return;
 			}
+			response[i].remainingCapacity = Math.round(response[i].remainingCapacity * 100) / 100;
+			response[i].fullChargeCapacity = Math.round(response[i].fullChargeCapacity * 100) / 100;
+			response[i].voltage = Math.round(response[i].voltage * 100) / 100;
+			response[i].wattage = Math.round(response[i].wattage * 100) / 100;
 			response[i].heading = headings[i];
 			let id = response[i].chargeStatus
 			response[i].chargeStatusString = BatteryChargeStatus.getBatteryChargeStatus(id);
 			if(response[i].chargeStatus == BatteryChargeStatus.NO_ACTIVITY.id
 			|| response[i].chargeStatus == BatteryChargeStatus.ERROR.id
 			|| response[i].chargeStatus == BatteryChargeStatus.NOT_INSTALLED.id) {
-				///if chargeStatus is 'No activity' | 'Error' | 'Not installed' 
+				///if chargeStatus is 'No activity' | 'Error' | 'Not installed'
 				// remaining time will not be displayed
 				response[i].remainingTime = undefined;
-			} 
+			}
 			if(response[i].chargeStatus == BatteryChargeStatus.CHARGING.id) {
 				this.remainingTimeText = "Charge completion time"
 			} else {
@@ -74,6 +78,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		console.log('In ngOnInit');
+		this.preProcessBatteryDetailResponse(this.dataSource);
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});

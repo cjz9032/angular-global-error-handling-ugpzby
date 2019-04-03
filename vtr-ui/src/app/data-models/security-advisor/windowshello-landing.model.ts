@@ -1,17 +1,15 @@
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import * as phoenix from '@lenovo/tan-client-bridge';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 export class WindowsHelloLandingViewModel {
-	// windowsHello: WindowsHello;
 	statusList: Array<any>;
-
-	subject = 'Windows Hello';
-	subjectStatus: number;
-	imgUrl = '../../../../assets/images/windows-logo.svg';
+	subject: any;
 	type = 'security';
-	constructor(whModel: phoenix.WindowsHello) {
+	imgUrl = '../../../../assets/images/windows-logo.svg';
+	constructor(whModel: phoenix.WindowsHello, commonService: CommonService) {
 		if (whModel) {
-			// this.windowsHello = whModel;
 			const whStatus = {
 				status: 2,
 				detail: 'inactive', // active or inactive
@@ -19,24 +17,38 @@ export class WindowsHelloLandingViewModel {
 				title: 'Fingerprint reader',
 				type: 'security',
 			};
+			const subjectStatus = {
+				status: 2,
+				title: 'Windows Hello',
+				type: 'security',
+			};
 			let fingerStatus = 'inactive';
 			let faciaStatus = 'inactive';
+			const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus);
+			if (cacheStatus) {
+				whStatus.status = cacheStatus === 'enabled' ? 0 : 1;
+				whStatus.detail = cacheStatus;
+				subjectStatus.status = cacheStatus === 'enabled' ? 0 : 1;
+			}
 			if (whModel.fingerPrintStatus || whModel.facialIdStatus) {
-				whStatus.status = (whModel.fingerPrintStatus === 'active') ? 0 : 1;
-				whStatus.detail = whModel.fingerPrintStatus === 'active' ? 'enabled' : 'disabled';
-				this.subjectStatus = (whModel.fingerPrintStatus === 'active' || whModel.facialIdStatus === 'active') ? 0 : 1;
+				whStatus.status = (whModel.fingerPrintStatus === 'active' || whModel.facialIdStatus === 'active') ? 0 : 1;
+				whStatus.detail = (whModel.fingerPrintStatus === 'active' || whModel.facialIdStatus === 'active') ? 'enabled' : 'disabled';
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, whStatus.detail);
+				subjectStatus.status = (whModel.fingerPrintStatus === 'active' || whModel.facialIdStatus === 'active') ? 0 : 1;
 			}
 			whModel.on(EventTypes.helloFingerPrintStatusEvent, (data) => {
 				whStatus.status = (data === 'active') ? 0 : 1;
-				whStatus.detail = data;
+				whStatus.detail = data === 'active' ? 'enabled' : 'disabled';
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, whStatus.detail);
 				fingerStatus = data;
-				this.subjectStatus = (faciaStatus === 'active' || fingerStatus === 'active') ? 0 : 1;
+				subjectStatus.status = (faciaStatus === 'active' || fingerStatus === 'active') ? 0 : 1;
 			});
 			whModel.on(EventTypes.helloFacialIdStatusEvent, (data) => {
 				faciaStatus = data;
-				this.subjectStatus = (faciaStatus === 'active' || fingerStatus === 'active') ? 0 : 1;
+				subjectStatus.status = (faciaStatus === 'active' || fingerStatus === 'active') ? 0 : 1;
 			});
 			this.statusList = new Array(whStatus);
+			this.subject = subjectStatus;
 
 		}
 	}

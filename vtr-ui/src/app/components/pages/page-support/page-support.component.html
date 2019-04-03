@@ -1,7 +1,7 @@
 <div class="vtr-page-support vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main [title]="title"></vtr-header-main>
+			<vtr-header-main [title]="title | translate"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -82,7 +82,7 @@
 
 								<div class="row">
 									<div class="col col-12 pb-60">
-										<vtr-widget-support [title]="'Documentation'"
+										<vtr-widget-support [title]="'support.documentation.title' | translate"
 											[description]="''"
 											[items]="supportDatas.documentation"></vtr-widget-support>
 									</div>
@@ -90,16 +90,16 @@
 
 								<div class="row">
 									<div class="col col-12 pb-60">
-										<vtr-widget-support [title]="'Need Help?'"
-											[description]="'CONTACT US TO HELP YOU OUT.'"
+										<vtr-widget-support [title]="'support.need-help.title' | translate"
+											[description]="'support.need-help.description' | translate"
 											[items]="supportDatas.needHelp"></vtr-widget-support>
 									</div>
 								</div>
 
 								<div class="row">
 									<div class="col col-12 pb-60">
-										<vtr-widget-support [title]="'Quicklinks'"
-											[description]="'CONTACT US TO HELP YOU OUT.'"
+										<vtr-widget-support [title]="'support.quicklinks.title' | translate"
+											[description]="'support.quicklinks.description' | translate"
 											[items]="supportDatas.quicklinks"></vtr-widget-support>
 									</div>
 								</div>

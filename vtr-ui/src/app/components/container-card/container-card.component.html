@@ -1,20 +1,20 @@
 <div class="container-card card-{{type}}"
- *ngIf="type === 'corner'"
- [style.height.px]="containerHeight">
+	*ngIf="type === 'corner'"
+	[style.height.px]="containerHeight">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-12 content">
 				<a href="{{actionLink}}"
-				 target="_blank"
-				 class="card-image"
-				 [style.background-image]="'url(' + img + ')'">
+					target="_blank"
+					class="card-image"
+					[style.background-image]="'url(' + img + ')'">
 					<div class="inner-content">
 						<div *ngIf="title"
-						 class="title">{{title}}</div>
+							class="title">{{title}}</div>
 						<div *ngIf="caption"
-						 class="caption">{{caption}}</div>
+							class="caption">{{caption}}</div>
 						<div *ngIf="logo || logoText"
-						 class="logo">
+							class="logo">
 							<span class="logo-img">
 								<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 							</span>
@@ -28,18 +28,26 @@
 </div>
 
 <div class="container-card card-{{type}}"
- *ngIf="type === 'highlight'"
- [style.height.px]="containerHeight">
+	*ngIf="type === 'corner-article'"
+	[style.height.px]="containerHeight">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-12 content">
-				<a href="{{actionLink}}"
-				 target="_blank"
-				 class="card-image"
-				 [style.background-image]="'url(' + img + ')'">
+				<a (click)="articleClicked(actionLink)"
+					class="card-image"
+					[style.background-image]="'url(' + img + ')'">
 					<div class="inner-content">
 						<div *ngIf="title"
-						 class="title">{{title}}</div>
+							class="title">{{title}}</div>
+						<div *ngIf="caption"
+							class="caption">{{caption}}</div>
+						<div *ngIf="logo || logoText"
+							class="logo">
+							<span class="logo-img">
+								<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
+							</span>
+							<span class="logo-text">{{logoText}}</span>
+						</div>
 					</div>
 				</a>
 			</div>
@@ -48,32 +56,57 @@
 </div>
 
 <div class="container-card card-{{type}}"
- *ngIf="type === 'article'"
- [style.height.px]="containerHeight">
+	*ngIf="type === 'highlight'"
+	[style.height.px]="containerHeight">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col col-12 image"
-			 [style.background-image]="'url('+img+')'">
-				<div *ngIf="logo || logoText"
-				 class="logo">
-					<span class="logo-img">
-						<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
-					</span>
-					<span class="logo-text">{{logoText}}</span>
-				</div>
+			<div class="col col-12 content">
+				<a href="{{actionLink}}"
+					target="_blank"
+					class="card-image"
+					[style.background-image]="'url(' + img + ')'">
+					<div class="inner-content">
+						<div *ngIf="title"
+							class="title"
+							[innerHTML]="title"></div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-card card-{{type}}"
+	*ngIf="type === 'article'"
+	[style.height.px]="containerHeight">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col col-12 image-container">
+				<a href="{{actionLink}}"
+					target="_blank"
+					class="card-image"
+					[style.background-image]="'url(' + img + ')'">
+					<div *ngIf="logo || logoText"
+						class="logo">
+						<span class="logo-img">
+							<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
+						</span>
+						<span class="logo-text">{{logoText}}</span>
+					</div>
+				</a>
 			</div>
 			<div class="row">
 				<div class="col col-12 content">
 					<div *ngIf="title"
-					 class="title">{{title}}</div>
+						class="title">{{title}}</div>
 					<div *ngIf="actionLink"
-					 class="read-more">
+						class="read-more">
 						<a href="{{actionLink}}"
-						 target="_blank"
-						 vtrMetrics
-						 metricsEvent="itemClick"
-						 metricsItem="'link.readmore'"
-						 [metricsParent]="title">
+							target="_blank"
+							vtrMetrics
+							metricsEvent="itemClick"
+							metricsItem="'link.readmore'"
+							[metricsParent]="title">
 							<span class="link-label">{{action}}</span>
 							<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 						</a>
@@ -85,14 +118,14 @@
 </div>
 
 <div class="container-card card-{{type}}"
- *ngIf="type === 'partnerarticle'"
- [style.height.px]="containerHeight">
+	*ngIf="type === 'partnerarticle'"
+	[style.height.px]="containerHeight">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-12 image"
-			 [style.background-image]="'url('+img+')'">
+				[style.background-image]="'url('+img+')'">
 				<div *ngIf="logo || logoText"
-				 class="logo">
+					class="logo">
 					<span class="logo-img">
 						<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 					</span>
@@ -101,15 +134,15 @@
 				<div class="row">
 					<div class="col col-12 content">
 						<div *ngIf="title"
-						 class="title">{{title}}</div>
+							class="title">{{title}}</div>
 						<div *ngIf="actionLink"
-						 class="read-more">
+							class="read-more">
 							<a href="{{actionLink}}"
-							 target="_blank"
-							 vtrMetrics
-							 metricsEvent="itemClick"
-							 metricsItem="'link.readmore'"
-							 [metricsParent]="title">
+								target="_blank"
+								vtrMetrics
+								metricsEvent="itemClick"
+								metricsItem="'link.readmore'"
+								[metricsParent]="title">
 								<span class="link-label">Partner Article</span>
 							</a>
 						</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
+import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 
 @Component({
 	selector: 'vtr-available-updates',
@@ -19,7 +20,9 @@ export class AvailableUpdatesComponent implements OnInit {
 	@Output() installAllUpdate = new EventEmitter<any>();
 	@Output() installSelectedUpdate = new EventEmitter<any>();
 
-	constructor() { }
+	public isUpdateSelected = false;
+
+	constructor(private systemUpdateService: SystemUpdateService) { }
 
 	ngOnInit() {
 		if (!this.isInstallingAllUpdates) {
@@ -35,6 +38,7 @@ export class AvailableUpdatesComponent implements OnInit {
 				return item.isSelected;
 			});
 		}
+		this.checkSelectedUpdateStatus();
 	}
 
 	onInstallAllUpdates(event) {
@@ -49,5 +53,11 @@ export class AvailableUpdatesComponent implements OnInit {
 
 	public onCheckChange($event: any) {
 		this.checkChange.emit($event);
+		this.checkSelectedUpdateStatus();
+	}
+
+	private checkSelectedUpdateStatus() {
+		const selectedUpdates = this.systemUpdateService.getSelectedUpdates(this.systemUpdateService.updateInfo.updateList);
+		this.isUpdateSelected = selectedUpdates.length > 0;
 	}
 }

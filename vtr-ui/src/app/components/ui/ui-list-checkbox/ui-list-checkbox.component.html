@@ -85,7 +85,7 @@
 </div>
 <ng-template #systemUpdateTooltip>
 	<div class="tooltip-container">
-		<a href="#"
+		<div href="#"
 			*ngIf="packageRebootType === 'RebootForced'"
 			class="reboot-text">
 			<div class="row">
@@ -94,7 +94,7 @@
 				</div>
 				<div class="col">Reboot required</div>
 			</div>
-		</a>
+		</div>
 		<ul>
 			<li>Manufacturer: <span>{{ manufacturer }}</span></li>
 			<li>Version: <span>{{ version }}</span></li>
@@ -102,7 +102,8 @@
 			<li>Download size: <span>{{ downloadSize }}</span> </li>
 			<li>Disc space needed: <span>{{ diskSpaceNeeded }}</span></li>
 		</ul>
-		<div class="row">
+		<div class="row"
+			*ngIf="isReadMeAvailable">
 			<div class="col-6 pl-0 pr-0 text-left">
 				<a href="javascript:void(0)"
 					class="read"

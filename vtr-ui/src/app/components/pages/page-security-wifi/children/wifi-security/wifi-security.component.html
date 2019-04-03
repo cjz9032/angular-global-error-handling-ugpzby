@@ -23,8 +23,7 @@
 									<fa-icon [icon]="['fas', 'check']"></fa-icon>
 								</span>
 								<h3>WIFI SECURITY</h3>
-								<button *ngIf="isWifiSecurityEnabled"
-									class="badge badge-pill badge-danger button-green">ENABLED</button>
+								<button class="badge badge-pill badge-danger button-green">ENABLED</button>
 							</div>
 							<div class="half subHeading"
 								*ngIf="!data.isLWSEnabled">
@@ -32,7 +31,7 @@
 									<fa-icon [icon]="['fas', 'times']"></fa-icon>
 								</span>
 								<h3>WIFI SECURITY</h3>
-								<button class="btn btn-danger btn-round-xs text-uppercase">Disabled</button>
+								<button class="badge badge-pill badge-danger button-red">DISABLED</button>
 							</div>
 							<div class="half">
 								<div class="collapse-control"
@@ -133,8 +132,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="row threat-locator">
-			<!-- [ngbCollapse]="isCollapsed> -->
+		<div class="row threat-locator"
+			[ngbCollapse]="isCollapsed && data.isLWSEnabled">
 			<div class="col">
 				<div class="threat-locator-container">
 					<div class="row">

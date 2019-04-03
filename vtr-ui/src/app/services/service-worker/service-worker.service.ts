@@ -14,6 +14,8 @@ export class ServiceWorkerService {
 		appRef: ApplicationRef
 		, updates: SwUpdate
 		, commonService: CommonService) {
+		console.log('ServiceWorkerService started');
+
 		// Allow the app to stabilize first, before starting polling for updates with `interval()`.
 		const appIsStable$ = appRef.isStable.pipe(first(isStable => isStable === true));
 		const updateCheckInterval$ = interval(60 * 1000);
@@ -28,15 +30,7 @@ export class ServiceWorkerService {
 			// }
 		});
 
-		window.addEventListener('online', (e) => {
-			console.log('online', e);
-			commonService.sendNotification(NetworkStatus.Online, { isOnline: navigator.onLine });
-		}, false);
 
-		window.addEventListener('offline', (e) => {
-			console.log('offline', e);
-			commonService.sendNotification(NetworkStatus.Offline, { isOnline: navigator.onLine });
-		}, false);
 	}
 }
 

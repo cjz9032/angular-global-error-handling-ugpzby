@@ -15,7 +15,17 @@
 						}"
 						class="col col-12">
 						<div class="vtr-page-shift-up nmx-40">
+
 							<div class="container-fluid">
+								<div class="row"
+									*ngIf="!isOnline">
+									<div class="col col-12 px-40 pb-40">
+										<vtr-widget-offline-info [title]="'No internet connection detected'"
+											[subtitle]="'Learn more on how to solve connection issues in our'"
+											[buttonText]="'Connectivity 101'"
+											(buttonClick)="onConnectivityClick($event)"></vtr-widget-offline-info>
+									</div>
+								</div>
 								<div class="row">
 									<div class="col col-12 px-40 pb-40">
 										<vtr-widget-carousel [data]="heroBannerItems"
@@ -106,7 +116,7 @@
 											[description]="'dashboard.feedback.subtitle' | translate"
 											[actionName]="'dashboard.feedback.button' | translate"
 											[action]="'feedback'"
-											(feedBackClick)="onFeedbackModal(feedBackModal)">
+											(feedBackClick)="onFeedbackModal()">
 										</vtr-widget-feedback>
 									</div>
 								</div>
@@ -122,8 +132,8 @@
 									*ngIf="!deviceService.isArm">
 									<div class="col col-12 pb-40 system-status-block">
 										<vtr-widget-status componentName="system status"
-											[title]="'System Status'"
-											[description]="'Quick catch up your device status.'"
+											[title]="'dashboard.systemStatus.title' | translate"
+											[description]="'dashboard.systemStatus.subtitle' | translate"
 											[items]="systemStatus">
 										</vtr-widget-status>
 									</div>
@@ -131,19 +141,11 @@
 								<div class="row"
 									*ngIf="!deviceService.isArm">
 									<div class="col col-12 py-40">
-										<vtr-widget-status componentName="secuirty advisor"
+										<vtr-widget-status componentName="security advisor"
 											[title]="'Security Advisor'"
 											[description]="'Check if your device is secured.'"
 											[items]="securityStatus">
 										</vtr-widget-status>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col col-12 py-40">
-										<vtr-widget-questions componentName="QA"
-											[title]="'Q&A for your machine'"
-											[description]="'Find some helpful tips for your device.'"
-											[items]="qaService.qas"></vtr-widget-questions>
 									</div>
 								</div>
 							</div>
@@ -153,26 +155,4 @@
 			</div>
 		</div>
 	</div>
-
-	<ng-template #feedBackModal
-		let-modal>
-		<div class="modal-header">
-			<h4 class="modal-title battery-detail-modal-title pl-5"></h4>
-			<button type="button"
-				class="close"
-				aria-label="Close"
-				vtrMetrics
-				metricsItem="btn.close"
-				metricsEvent="itemClick"
-				metricsParent="modalwelcome"
-				(click)="modal.dismiss('Cross click')">
-				<img src="assets/icons/Close.svg" />
-			</button>
-		</div>
-		<div class="modal-body">
-			<vtr-feedback-form (feedbackClick)="onFeedbackClick()"
-				[buttonText]="feedbackButtonText">
-			</vtr-feedback-form>
-		</div>
-	</ng-template>
 </div>

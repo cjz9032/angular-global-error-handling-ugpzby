@@ -1,19 +1,19 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
-import {Router} from '@angular/router';
-import {Subscription} from 'rxjs/internal/Subscription';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {ConfigService} from '../../services/config/config.service';
-import {DeviceService} from '../../services/device/device.service';
-import {UserService} from '../../services/user/user.service';
-import {ModalLenovoIdComponent} from '../modal/modal-lenovo-id/modal-lenovo-id.component';
-import {CommonService} from 'src/app/services/common/common.service';
-import {AppNotification} from 'src/app/data-models/common/app-notification.model';
-import {LocalStorageKey} from 'src/app/enums/local-storage-key.enum';
-import {TranslationService} from 'src/app/services/translation/translation.service';
+import { ConfigService } from '../../services/config/config.service';
+import { DeviceService } from '../../services/device/device.service';
+import { UserService } from '../../services/user/user.service';
+import { ModalLenovoIdComponent } from '../modal/modal-lenovo-id/modal-lenovo-id.component';
+import { CommonService } from 'src/app/services/common/common.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { TranslationService } from 'src/app/services/translation/translation.service';
 import Translation from 'src/app/data-models/translation/translation';
-import {TranslationSection} from 'src/app/enums/translation-section.enum';
-import {environment} from '../../../environments/environment';
+import { TranslationSection } from 'src/app/enums/translation-section.enum';
+import { environment } from '../../../environments/environment';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -48,7 +48,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			subitems: [{
 				id: 'device',
 				label: 'My device',
-				path: 'device',
+				path: '',
 				icon: '',
 				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
@@ -84,7 +84,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			subitems: [{
 				id: 'security',
 				label: 'My Security',
-				path: 'security',
+				path: '',
 				icon: '',
 				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
@@ -160,6 +160,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private router: Router,
+		public route: ActivatedRoute,
 		public configService: ConfigService,
 		private commonService: CommonService,
 		public userService: UserService,
@@ -183,6 +184,10 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		if (this.commonMenuSubscription) {
 			this.commonMenuSubscription.unsubscribe();
 		}
+	}
+
+	isParentActive(item) {
+		// console.log('IS PARENT ACTIVE', item, this.router, this.route);
 	}
 
 	showItem(item) {

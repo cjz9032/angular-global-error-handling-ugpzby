@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class WidgetMcafeeComponent implements OnInit {
 
-	@Input() install: object;
+	@Input() install: any;
 	@Input() name: string;
 	urlGetMcAfee = 'https://home.mcafee.com/root/campaign.aspx?cid=233426'; // todo
 	constructor() { }
