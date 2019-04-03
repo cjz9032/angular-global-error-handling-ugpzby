@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { SafeHtml } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -18,14 +18,16 @@ export class ModalAboutComponent implements OnInit {
 	constructor(
 		public activeModal: NgbActiveModal,
 		private http: HttpClient,
+		private sanitizer: DomSanitizer
 	) { }
 
 	ngOnInit() {
-		this.http.get(this.url, { responseType: 'text' }).subscribe(results => {
+		this.http.get(this.url, { responseType: 'text' }).subscribe((results: any) => {
+			// console.log(this.sanitizer.bypassSecurityTrustHtml(results));
 			if (this.type === 'txt') {
 				this.articleBody = `<pre>${results}</pre>`;
 			} else {
-				this.articleBody = results;
+				this.articleBody = this.sanitizer.bypassSecurityTrustHtml(results);
 			}
 		});
 	}
