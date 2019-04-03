@@ -42,7 +42,10 @@ export class PageSecurityComponent implements OnInit {
 		this.vpnLandingViewModel = new VpnLandingViewModel(this.vpn, this.commonService);
 		this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.wifiSecurity, this.homeProtection, this.commonService);
 		this.homeProtectionLandingViewModel = new HomeProtectionLandingViewModel();
-		this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.windowsHello, this.commonService);
+		if (commonService.isRS5OrLater()
+			&& (typeof this.windowsHello.facialIdStatus === 'string' || typeof this.windowsHello.fingerPrintStatus === 'string')) {
+			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.windowsHello, this.commonService);
+		}
 		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
 
 		this.fetchCMSArticles();

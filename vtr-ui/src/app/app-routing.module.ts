@@ -16,6 +16,7 @@ import { PageSupportComponent } from './components/pages/page-support/page-suppo
 import { PageSupportDetailComponent } from './components/pages/page-support-detail/page-support-detail.component';
 import { PageUserComponent } from './components/pages/page-user/page-user.component';
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
+import { WindowsHelloGuardService } from './services/guard/windows-hello-guardService.service';
 
 const routes: Routes = [
 	{
@@ -70,7 +71,8 @@ const routes: Routes = [
 		component: PageSecurityInternetComponent
 	}, {
 		path: 'security/windows-hello',
-		component: PageSecurityWindowsHelloComponent
+		component: PageSecurityWindowsHelloComponent,
+		canActivate: [WindowsHelloGuardService]
 	}, {
 		path: 'support',
 		component: PageSupportComponent

@@ -68,6 +68,7 @@ export class MockSecurityAdvisorService {
 			}],
 			isLocationServiceOn: true,
 			isLWSPluginInstalled: true,
+			hasEverUsed: false,
 			enableWifiSecurity(): Promise<boolean> {
 				this.state = 'enabled';
 				this.mitt.emit(EventTypes.wsStateEvent, this.state);

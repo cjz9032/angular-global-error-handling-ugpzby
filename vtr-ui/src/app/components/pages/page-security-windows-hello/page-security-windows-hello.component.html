@@ -56,14 +56,11 @@
 											</div>
 											<div class=" pull right">
 												<div class="col-12">
-													<button type="button"
-														vtrMetrics
-														metricsItem="setUpWindowsHello"
-														metricsEvent="itemClick"
+													<vtr-ui-button type="button"
+														[metricsItem]="'setUpWindowsHello'"
 														(click)="setUpWindowsHello()"
-														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
-														Setup Windows Hello
-													</button>
+														[label]="'Setup Windows Hello'">
+													</vtr-ui-button>
 												</div>
 											</div>
 										</div>

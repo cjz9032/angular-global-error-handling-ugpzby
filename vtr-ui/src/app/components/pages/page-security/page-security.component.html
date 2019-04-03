@@ -88,7 +88,7 @@
 											</div>
 										</div>
 										<vtr-ui-landing-feature
-											*ngIf="windowsHelloLandingViewModel.subject.status !== undefined && windowsHelloLandingViewModel.subject.status !== null"
+											*ngIf="windowsHelloLandingViewModel && windowsHelloLandingViewModel.subject.status !== undefined && windowsHelloLandingViewModel.subject.status !== null"
 											[feature]='windowsHelloLandingViewModel'>
 										</vtr-ui-landing-feature>
 
