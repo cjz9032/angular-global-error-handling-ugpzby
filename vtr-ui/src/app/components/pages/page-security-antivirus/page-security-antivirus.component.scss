@@ -30,6 +30,10 @@
 			text-decoration: underline;
 		}
 
+		.text-regular {
+			font-size: 1.4rem;
+		}
+
 		.read-more-text {
 			font-size: 1.4rem;
 		}
@@ -79,7 +83,7 @@
 				font-size: 1.6rem;
 				font-weight: $weight_medium;
 				line-height: 3rem;
-			}
+      }
 		}
 	}
 
@@ -130,7 +134,14 @@
 				font-size: 1.6rem;
 				font-weight: $weight_medium;
 				line-height: 3rem;
-			}
+      }
+      
+      .stopdate{
+        color: $stop_dark;
+				font-size: 1.6rem;
+				font-weight: $weight_medium;
+				line-height: 3rem;
+      }
 		}
 	}
 

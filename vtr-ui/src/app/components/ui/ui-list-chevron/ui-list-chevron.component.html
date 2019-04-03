@@ -1,5 +1,6 @@
 <div class="vtr-ui-list-chevron">
-	<ul class="chevron-list" [ngClass]="getWifiClass(items)">
+	<ul class="chevron-list"
+		[ngClass]="getWifiClass(items)">
 		<li *ngFor="let item of items"
 			[ngClass]="getItemStatusClass(item)">
 			<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->
@@ -14,8 +15,13 @@
 							*ngIf="iconPlacement==='left'">
 							<div class="item-icon status"
 								*ngIf="item.status!==undefined&&item.status!==''">
-								<div class="icon-bkg">
+								<div class="icon-bkg"
+									*ngIf="item.status===0||item.status===1">
 									<fa-icon [icon]="['fal', getItemStatusIconClass(item)]"></fa-icon>
+								</div>
+								<div class="icon-no-bkg"
+									*ngIf="item.status===2">
+									<fa-icon [icon]="['fas', 'dot-circle']"></fa-icon>
 								</div>
 							</div>
 							<div class="item-icon"
@@ -44,8 +50,13 @@
 							*ngIf="iconPlacement==='right'">
 							<div class="item-icon status"
 								*ngIf="item.status!==undefined&&item.status!==''; else questionCircle">
-								<div class="icon-bkg">
+								<div class="icon-bkg"
+									*ngIf="item.status===0||item.status===1">
 									<fa-icon [icon]="['fal', getItemStatusIconClass(item)]"></fa-icon>
+								</div>
+								<div class="icon-no-bkg"
+									*ngIf="item.status===2">
+									<fa-icon [icon]="['fas', 'dot-circle']"></fa-icon>
 								</div>
 							</div>
 							<ng-template #questionCircle>
@@ -67,7 +78,8 @@
 						</div>
 						<div *ngIf="chevronVisibility"
 							class="col col-1 text-center">
-							<div class="arrow" [ngClass]="{'blue-arrow': arrowColor==='blue-arrow'}">
+							<div class="arrow"
+								[ngClass]="{'blue-arrow': arrowColor==='blue-arrow'}">
 								<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
 							</div>
 						</div>
@@ -85,8 +97,13 @@
 							*ngIf="iconPlacement==='left'">
 							<div class="item-icon status"
 								*ngIf="item.status!==undefined&&item.status!==''">
-								<div class="icon-bkg">
+								<div class="icon-bkg"
+									*ngIf="item.status===0||item.status===1">
 									<fa-icon [icon]="['fal', getItemStatusIconClass(item)]"></fa-icon>
+								</div>
+								<div class="icon-no-bkg"
+									*ngIf="item.status===2">
+									<fa-icon [icon]="['fas', 'dot-circle']"></fa-icon>
 								</div>
 							</div>
 							<div class="item-icon"
@@ -115,8 +132,13 @@
 							*ngIf="iconPlacement==='right'">
 							<div class="item-icon status"
 								*ngIf="item.status!==undefined&&item.status!==''">
-								<div class="icon-bkg">
+								<div class="icon-bkg"
+									*ngIf="item.status===0||item.status===1">
 									<fa-icon [icon]="['fal', getItemStatusIconClass(item)]"></fa-icon>
+								</div>
+								<div class="icon-no-bkg"
+									*ngIf="item.status===2">
+									<fa-icon [icon]="['fas', 'dot-circle']"></fa-icon>
 								</div>
 							</div>
 							<div class="item-icon"
