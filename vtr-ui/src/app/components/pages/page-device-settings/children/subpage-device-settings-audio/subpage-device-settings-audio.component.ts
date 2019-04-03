@@ -126,6 +126,42 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	startMonitorForDolby() {
+		try {
+			if (this.audioService.isShellAvailable) {
+				this.audioService.startMonitorForDolby(this.startMonitorHandlerForDolby.bind(this))
+					.then((value: boolean) => {
+						console.log('startMonitorForDolby', value);
+					}).catch(error => {
+						console.error('startMonitorForDolby', error);
+					});
+			}
+		} catch (error) {
+			console.error('startMonitorForDolby' + error.message);
+		}
+	}
+
+	stopMonitorForDolby() {
+		try {
+			if (this.audioService.isShellAvailable) {
+				this.audioService.stopMonitorForDolby()
+					.then((value: boolean) => {
+						console.log('stopMonitorForDolby', value);
+					}).catch(error => {
+						console.error('stopMonitorForDolby', error);
+					});
+			}
+		} catch (error) {
+			console.error('stopMonitorForDolby' + error.message);
+		}
+	}
+
+	startMonitorHandlerForDolby(response: DolbyModeResponse) {
+		// Need to remove comment once response is coming correctly
+		//this.dolbyModeResponse = response;
+		console.log('startMonitorHandlerForDolby', response);
+	}
+
 	onDolbySeetingRadioChange(event) {
 		try {
 			this.dolbyModeResponse.currentMode = event.target.value;
@@ -165,6 +201,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		this.getDolbyModesStatus();
 		this.getSupportedModes();
 		this.startMonitor();
+		this.startMonitorForDolby();
 	}
 
 	public setVolume(event) {
@@ -287,5 +324,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	ngOnDestroy() {
 		this.stopMonitor();
+		this.stopMonitorForDolby();
 	}
 }

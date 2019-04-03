@@ -1,10 +1,10 @@
 <div class="wifi-security-invitation-modal">
-	<h1>{{ header }}</h1>
+	<h1>{{ header | translate }}</h1>
 	<div role="button" class="close-btn" (click)="onCancelClick($event)">
 		<img src="assets/icons/Close.svg" alt="" srcset="">
 	</div>
 	<p class="description">
-		{{ description }}
+		{{ description | translate }}
 	</p>
 	<div class="form-group code-input-group">
 		<input type="text" class="form-control" placeholder="___-___" #code [disabled]="startJoin" (keyup)="KeyPress($event)" maxlength="6">
@@ -12,17 +12,34 @@
 	<div class="mb-4 d-flex">
 		<div class="ml-0 mr-4 pl-0">
 			<button type="button" class="btn btn-default modal-button" (click)="joinGroupBy(code.value)" [disabled]="startJoin" *ngIf="!joinSuccess">
-				VALIDATE CODE
+				{{'security.homeprotection.invitation-code.validate-code' | translate}}
 			</button>
 			<button type="button" class="btn btn-default modal-button" (click)="onCancelClick($event)" [disabled]="startJoin" *ngIf="joinSuccess">
-				OK
+				{{'security.homeprotection.invitation-code.ok' | translate}}
 			</button>
 		</div>
-		<div class="join-info">
-			<div *ngIf="startJoin" class="spinner-border text-primary progress-spinner" role="status">
+		<p class="description">
+			{{ description }}
+		</p>
+		<div class="form-group code-input-group">
+			<input type="text" class="form-control" placeholder="___-___" #code [disabled]="startJoin" (keyup)="KeyPress($event)" (keyup.enter)="joinGroupBy(code.value)" maxlength="6">
+		</div>
+		<div class="mb-4 d-flex">
+			<div class="ml-0 mr-4 pl-0">
+				<button type="button" class="btn btn-default modal-button" (click)="joinGroupBy(code.value)" [disabled]="startJoin || !(code.value.length === 6)" *ngIf="!joinSuccess">
+					VALIDATE CODE
+				</button>
+				<button type="button" class="btn btn-default modal-button" (click)="onCancelClick($event)" [disabled]="startJoin" *ngIf="joinSuccess">
+					OK
+				</button>
 			</div>
-			<div class="success" *ngIf="joinSuccess">Success!</div>
-			<div class="failed" *ngIf="joinFailed">Please try again!</div>
+			<div class="join-info">
+				<div *ngIf="startJoin" class="spinner-border text-primary progress-spinner" role="status">
+				</div>
+				<div class="success" *ngIf="joinSuccess">Success!</div>
+				<div class="failed" *ngIf="joinFailed">Please try again!</div>
+			</div>
+			<div class="success" *ngIf="joinSuccess">{{'security.homeprotection.invitation-code.success' | translate}}</div>
+			<div class="failed" *ngIf="joinFailed">{{'security.homeprotection.invitation-code.try-again' | translate}}</div>
 		</div>
 	</div>
-</div>

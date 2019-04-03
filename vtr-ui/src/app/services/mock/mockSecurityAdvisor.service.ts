@@ -51,10 +51,10 @@ export class MockSecurityAdvisorService {
 	securityAdvisor: SecurityAdvisor = {
 		wifiSecurity: {
 			mitt: this.mitt,
-			// state: 'enabled',
-			state: 'disabled',
+			state: 'enabled',
+			// state: 'disabled',
 			wifiHistory: [{
-				ssid: 'lenovo',
+				ssid: 'lenovolenovolenovolenovolenovolenovolenovolenovolenovolenovo',
 				info: '2019/2/13 9:04:49',
 				good: 1
 			}, {
@@ -68,6 +68,7 @@ export class MockSecurityAdvisorService {
 			}],
 			isLocationServiceOn: true,
 			isLWSPluginInstalled: true,
+			hasEverUsed: false,
 			enableWifiSecurity(): Promise<boolean> {
 				this.state = 'enabled';
 				this.mitt.emit(EventTypes.wsStateEvent, this.state);
