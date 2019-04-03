@@ -16,7 +16,8 @@ import { Subscription } from 'rxjs';
 	styleUrls: ['./battery-detail.component.scss'],
 })
 export class BatteryDetailComponent implements OnInit, OnDestroy {
-	@Input() public dataSource: BatteryDetail[];
+	public dataSource: BatteryDetail[];
+	@Input() data: BatteryDetail[];
 	remainingTimeText = "Remaining time";
 	batteryIndicators = new BatteryIndicator();
 	private notificationSubscription: Subscription;
@@ -51,7 +52,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 				&& this.dataSource != undefined
 				&& this.dataSource[0].remainingTime == 0) {
 				// Don't update UI if remainingTime is 0.
-				//return;
+				return;
 			}
 			response[i].remainingCapacity = Math.round(response[i].remainingCapacity * 100) / 100;
 			response[i].fullChargeCapacity = Math.round(response[i].fullChargeCapacity * 100) / 100;
@@ -78,6 +79,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		console.log('In ngOnInit');
+		this.dataSource = this.data;
 		this.preProcessBatteryDetailResponse(this.dataSource);
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
