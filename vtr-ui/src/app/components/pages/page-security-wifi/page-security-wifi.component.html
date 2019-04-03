@@ -41,7 +41,7 @@
 											<div class="container-fluid">
 												<div class="row">
 													<div class="col">
-														<div class="title">{{'security.homeprotection.security-health.title' | translate}}</div>
+														<div class="title">{{'security.homeprotection.securityhealth.title' | translate}}</div>
 														<!-- <div class="description"
 															*ngIf="isLWSEnabled===true">
 															Learn more about each of these components <a
@@ -67,13 +67,13 @@
 															<div class="security-health-disabled-list">
 
 																<div class="peace-of-mind">
-																	{{'security.homeprotection.security-health.peace-of-mind' | translate}}
+																	{{'security.homeprotection.securityhealth.peaceOfMind' | translate}}
 																</div>
 																<div class="button-box">
 																	<vtr-ui-button metricsParent="security-health"
 																		[metricsItem]="enableWiFiSecurity"
 																		(onClick)="enableWiFiSecurity($event)"
-																		[label]="'security.homeprotection.security-health.button' | translate">
+																		[label]="'security.homeprotection.securityhealth.button' | translate">
 																	</vtr-ui-button>
 																</div>
 															</div>
@@ -106,7 +106,7 @@
 												</div>
 											</div>
 										</div>
-										<div *ngIf="securityHealthViewModel.isLWSEnabled===true" class="security-health"></div>
+										<div *ngIf="securityHealthViewModel.isLWSEnabled" class="security-health"></div>
 									</div>
 								</div>
 								<!--end of Security Health Advisor-->

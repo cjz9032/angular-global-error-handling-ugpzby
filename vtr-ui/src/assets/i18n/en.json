@@ -496,64 +496,64 @@
 				"disable": "DISABLED",
 				"less": "Less info",
 				"more": "More info",
-				"network-history": "Network History",
+				"networkHistory": "Network History",
 				"connect": "Connected last",
-				"show-more": "Show more",
-				"show-less": "Show less",
+				"showmore": "Show more",
+				"showless": "Show less",
 				"button": "Enable Wifi security",
-				"disable-decribe": "Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones."
+				"disableDecribe": "Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones."
 			},
-			"threat-locator": {
+			"threatlocator": {
 				"describe": "Use the threat detector to determine the safety of the networks around you.",
 				"button": "Check your location"
 			},
-			"location-modal": {
+			"locationmodal": {
 				"title": "Enable location services",
 				"describe": "To use Lenovo WiFi Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?",
-				"yes": "YES",
-				"no": "NO"
+				"agree": "AGREE",
+				"cancel": "CANCEL"
 			}
 		},
 		"homeprotection": {
-			"home-security": {
+			"homesecurity": {
 				"title": "Connected Home Security",
-				"title-describe": "Connected Home Security keeps you safe in three ways:",
-				"home-security-affect1": "Connected Home Security ensures your device is safe, and has not been compromised",
-				"home-security-affect2": "Connected Home Security ensures that the networks you are connected to are safe",
-				"home-security-affect3": "Connected Home Security ensures that other devices connected to your home network are safe.",
+				"titleDescription": "Connected Home Security keeps you safe in three ways:",
+				"homeSecurityAffect1": "Connected Home Security ensures your device is safe, and has not been compromised",
+				"homeSecurityAffect2": "Connected Home Security ensures that the networks you are connected to are safe",
+				"homeSecurityAffect3": "Connected Home Security ensures that other devices connected to your home network are safe.",
 				"describe": "Unsafe devices and networks can introduce malware, lead to identity theft, and leak private and financial information. Enable this feature to reduce the risk of having your device, and your home network exposed to attackers",
 				"subtitle": "Peace of Mind",
-				"subtitle-describe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more in about Connected Home Security in Tips and Tricks.",
-				"try-now": "Try Now"
+				"subtitleDescribe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more in about Connected Home Security in Tips and Tricks.",
+				"tryNow": "Try Now"
 			},
-			"invitation-code": {
+			"invitationcode": {
 				"button": "Enter invitation code",
-				"button-describe": "enter invitation code require enable wifi security",
+				"buttonDescribe": "enter invitation code require enable wifi security",
 				"title": "Already have Connected Home Security?",
-				"title-describe": "Add this device to your Connected Home",
-				"enter-code": "Enter your connection code",
-				"add-home": "Add Home",
-				"ok": "Ok",
+				"titleDescribe": "Add this device to your Connected Home",
+				"enterCode": "Enter your connection code",
+				"addHome": "Add Home",
+				"ok": "OK",
 				"cancel": "Cancel",
-				"validate-code": "VALIDATE CODE",
+				"validateCode": "VALIDATE CODE",
 				"success": "Success",
-				"try-again": "Please try again!"
+				"tryAgain": "Incorrect code,please try again!"
 			},
-			"security-health": {
+			"securityhealth": {
 				"title": "Security Health",
-				"device-name1": "Apps From Unknown Sources",
-				"device-name2": "Developer Mode",
-				"device-name3": "UAC Notification",
-				"device-name4": "Antivirus Availability",
-				"device-name5": "Hard Drive Encryption",
-				"device-name6": "Firewall Availability",
-				"device-name7": "Not Activated Windows",
-				"device-name8": "Security Updates Availability",
-				"device-name9": "Password Protection",
-				"device-name10": "Automatic Updates Service Availability",
+				"deviceName1": "Apps From Unknown Sources",
+				"deviceName2": "Developer Mode",
+				"deviceName3": "UAC Notification",
+				"deviceName4": "Antivirus Availability",
+				"deviceName5": "Hard Drive Encryption",
+				"deviceName6": "Firewall Availability",
+				"deviceName7": "Not Activated Windows",
+				"deviceName8": "Security Updates Availability",
+				"deviceName9": "Password Protection",
+				"deviceName10": "Automatic Updates Service Availability",
 				"fail": "FAILED",
 				"pass": "PASSED",
-				"peace-of-mind": "Do you want more peace of mind?",
+				"peaceOfMind": "Do you want more peace of mind?",
 				"button": "Enable Wifi security"
 			}
 		}

@@ -4,7 +4,7 @@ import { ModalWifiSecuriryLocationNoticeComponent } from '../../modal/modal-wifi
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import * as phoenix from '@lenovo/tan-client-bridge';
-import { EventTypes, WifiSecurity, HomeProtection, HomeProtectionDeviceInfo, DeviceInfo } from '@lenovo/tan-client-bridge';
+import { EventTypes, WifiSecurity, HomeProtection, DeviceInfo } from '@lenovo/tan-client-bridge';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
@@ -25,6 +25,14 @@ interface WifiSecurityState {
 	isLocationServiceOn: boolean; // true,false
 	isLWSPluginInstalled: boolean; // true,false
 }
+
+interface HomeProtectionDeviceInfo {
+	error: string;
+	familyId: string;
+	nickName: string;
+	imageUrl: string;
+}
+
 @Component({
 	selector: 'vtr-page-security-wifi',
 	templateUrl: './page-security-wifi.component.html',
@@ -123,11 +131,15 @@ export class PageSecurityWifiComponent implements OnInit {
 	}
 
 	ShowInvitationhandler(res: HomeProtectionDeviceInfo) {
-		if (res.familyId) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionFamilyId, res.familyId);
-			this.isShowInvitationCode = false;
-		} else {
-			this.isShowInvitationCode = true;
+		if (res.error.toLowerCase() === 'success') {
+			if (res.familyId) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus, 'joined');
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionFamilyId, res.familyId);
+				this.isShowInvitationCode = false;
+			} else {
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus, 'unjoined');
+				this.isShowInvitationCode = true;
+			}
 		}
 	}
 
@@ -174,8 +186,8 @@ export class PageSecurityWifiComponent implements OnInit {
 								backdrop: 'static'
 								, windowClass: 'wifi-security-location-modal'
 							});
-						modal.componentInstance.header = 'security.wifisecurity.location-modal.title';
-						modal.componentInstance.description = 'security.wifisecurity.location-modal.describe';
+						modal.componentInstance.header = 'security.wifisecurity.locationmodal.title';
+						modal.componentInstance.description = 'security.wifisecurity.locationmodal.describe';
 						modal.componentInstance.url = 'ms-settings:privacy-location';
 						this.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
 							if (value) {
