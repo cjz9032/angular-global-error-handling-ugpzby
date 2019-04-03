@@ -64,7 +64,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	}
 
 	//
-	// TODO: The input parameter 'locale' come from field 'locale' in machine info xml, 
+	// The input parameter 'locale' come from field 'locale' in machine info xml, 
 	// it is system locale setting, this fucntion is to convert the locale to LID supported 17 languages.
 	// here is map for each language:
 	//	zh_CN: 中文(简体)

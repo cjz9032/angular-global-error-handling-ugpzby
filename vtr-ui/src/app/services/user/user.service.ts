@@ -185,6 +185,10 @@ export class UserService {
 	}
 
 	setName(firstName: string, lastName: string) {
+		// TODO: NLS
+		if ((!firstName || firstName.length === 0) && (!lastName || lastName.length === 0)) {
+			firstName = 'User';
+		}
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.initials = (this.firstName && this.firstName.length > 0) ? this.firstName[0] : '' +
