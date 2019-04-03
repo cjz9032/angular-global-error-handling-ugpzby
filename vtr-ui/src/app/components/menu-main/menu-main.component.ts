@@ -151,8 +151,8 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			label: 'User',
 			path: 'user',
 			icon: 'user',
-			metricsEvent: 'itemClick',
-			metricsParent: 'navbar',
+			metricsEvent: 'ItemClick',
+			metricsParent: 'NavigationLenovoAccount.Submenu',
 			metricsItem: 'link.user',
 			subitems: []
 		}
