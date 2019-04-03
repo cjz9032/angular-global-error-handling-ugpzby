@@ -2,6 +2,7 @@ import * as phoenix from '@lenovo/tan-client-bridge';
 import { EventTypes, WifiSecurity, HomeProtection, DeviceInfo } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from '../../enums/local-storage-key.enum';
+import { TranslateService } from '@ngx-translate/core';
 
 
 interface DevicePostureDetail {
@@ -80,8 +81,9 @@ export class WifiHomeViewModel {
 			i = item;
 			if (i.info.indexOf('Connected') === -1) {
 				const info = i.info.replace(/T/g, ' ');
-				const information = 'Connected last' + info;
-				i.info = information;
+				// const connect = 'security.wifisecurity.container.connect';
+				// const information = connect + info;
+				i.info = info;
 			}
 			Historys.push(i);
 		});
@@ -93,7 +95,7 @@ export class SecurityHealthViewModel {
 	isLWSEnabled: boolean;
 	homeDevicePosture: Array<DevicePostureDetail> = [];
 
-	constructor(wifiSecurity: phoenix.WifiSecurity, homeProtection: phoenix.HomeProtection, private commonService: CommonService) {
+	constructor(wifiSecurity: phoenix.WifiSecurity, homeProtection: phoenix.HomeProtection, private commonService: CommonService, public translate: TranslateService) {
 		const cacheWifiSecurityState = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
 		const cacheHomeDevicePosture = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture);
 		try {
@@ -133,7 +135,10 @@ export class SecurityHealthViewModel {
 			};
 			it.status = item.vulnerable === 'true' ? 2 : 1;
 			it.title = this.mappingDevicePosture(item.config);
-			it.detail = item.vulnerable === 'true' ? 'PASSED' : 'FAILED';
+			it.detail = item.vulnerable === 'true' ? 'security.homeprotection.security-health.pass' : 'security.homeprotection.security-health.fail';
+			this.translate.get(it.detail).subscribe((res) => {
+				it.detail = res;
+			});
 			this.homeDevicePosture.push(it);
 		});
 	}
@@ -141,8 +146,10 @@ export class SecurityHealthViewModel {
 	mappingDevicePosture(config: string): string {
 		let titles: Array<string>;
 		let title: string;
-		titles = ['Apps from unknown sources', 'Developer mode', 'UAC Notification', 'Anti-Virus availability', 'Drive encryption',
-			'Firewall availability', 'Not Activated Windows', 'Security Updates Availability', 'Pin or Password', 'AutomaticUpdatesServiceAvailability'];
+		titles = ['security.homeprotection.security-health.device-name1', 'security.homeprotection.security-health.device-name2',
+		'security.homeprotection.security-health.device-name3', 'security.homeprotection.security-health.device-name4', 'security.homeprotection.security-health.device-name5',
+		'security.homeprotection.security-health.device-name6', 'security.homeprotection.security-health.device-name7',
+		'security.homeprotection.security-health.device-name8', 'security.homeprotection.security-health.device-name9', 'security.homeprotection.security-health.device-name10'];
 		config = config.toLowerCase();
 		if (config.indexOf('apps') !== -1) {
 			title = titles[0];
@@ -167,6 +174,9 @@ export class SecurityHealthViewModel {
 		} else {
 			title = 'other';
 		}
+		this.translate.get(title).subscribe((res) => {
+			title = res;
+		});
 		return title;
 	}
 }
