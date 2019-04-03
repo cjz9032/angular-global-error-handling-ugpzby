@@ -241,13 +241,13 @@ export class PageDashboardComponent implements OnInit {
 			systemUpdate.id = 'systemupdate';
 			systemUpdate.title = 'System Update';
 			systemUpdate.detail = 'Update';
-			systemUpdate.path = '/system-updates';
+			systemUpdate.path = 'device/system-updates';
 			systemUpdate.asLink = true;
 			systemUpdate.isSystemLink = false;
 			systemUpdate.type = 'system';
 
 			if (response.systemupdate) {
-				const lastUpdate = response.sysupdate.lastupdate;
+				const lastUpdate = response.systemupdate.lastupdate;
 				const diffInDays = this.systemUpdateService.dateDiffInDays(lastUpdate);
 				const { status } = response.systemupdate;
 				if (status === 1) {
@@ -273,7 +273,7 @@ export class PageDashboardComponent implements OnInit {
 			antiVirus.id = 'anti-virus';
 			antiVirus.title = 'Anti-Virus';
 			antiVirus.detail = 'Disabled';
-			antiVirus.path = 'anti-virus';
+			antiVirus.path = 'security/anti-virus';
 			antiVirus.type = 'security';
 
 			if (response.antiVirus) {
@@ -291,7 +291,7 @@ export class PageDashboardComponent implements OnInit {
 			wiFi.id = 'wifi-security';
 			wiFi.title = 'WiFi Security';
 			wiFi.detail = 'Disabled';
-			wiFi.path = 'wifi-security';
+			wiFi.path = 'security/wifi-security';
 			wiFi.type = 'security';
 
 			if (response.wifiSecurity) {
@@ -309,7 +309,7 @@ export class PageDashboardComponent implements OnInit {
 			passwordManager.id = 'pwdmgr';
 			passwordManager.title = 'Password Manager';
 			passwordManager.detail = 'Not Installed';
-			passwordManager.path = 'password-protection';
+			passwordManager.path = 'security/password-protection';
 			passwordManager.type = 'security';
 
 			if (response.passwordManager) {
@@ -327,7 +327,7 @@ export class PageDashboardComponent implements OnInit {
 			vpn.id = 'vpn';
 			vpn.title = 'VPN';
 			vpn.detail = 'Not Installed';
-			vpn.path = 'internet-protection';
+			vpn.path = 'security/internet-protection';
 			vpn.type = 'security';
 
 			if (response.VPN) {
@@ -345,7 +345,7 @@ export class PageDashboardComponent implements OnInit {
 			windowsHello.id = 'windows-hello';
 			windowsHello.title = 'Windows Hello';
 			windowsHello.detail = 'Disabled';
-			windowsHello.path = 'windows-hello';
+			windowsHello.path = 'security/windows-hello';
 			windowsHello.type = 'security';
 
 			if (response.windowsHello) {

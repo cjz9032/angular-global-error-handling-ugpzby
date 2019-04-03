@@ -11,20 +11,17 @@
 				</div>
 			</div>
 			<div class="col-auto text px-0">
-				{{list.title}}
+				{{list.title | translate}}
 			</div>
 			<div class="col-auto mr-auto">
-				<h3><span class="badge badge-pill"
-						[ngClass]="list.status | textClass">
-						{{ list.status | statusText }}
-					</span></h3>
+        <h3><span class="badge badge-pill"
+            [ngClass]="list.status | textClass">
+          {{ list.status | statusText | translate }}
+        </span></h3>
 			</div>
-			<div *ngIf="list.buttonTitle && list.status === 'disabled'"
-				class="col-auto">
-				<vtr-ui-button (onClick)="list.buttonClick()"
-					metricsEvent="itemClick"
-					[metricsItem]="list.metricsItem"
-					[label]="list.buttonTitle"></vtr-ui-button>
+			<div *ngIf="list.buttonTitle && list.status === 'disabled'" class="col-auto">
+				<vtr-ui-button (onClick)="list.buttonClick()" metricsEvent="itemClick" [metricsItem]="list.metricsItem"
+					[label]="list.buttonTitle | translate"></vtr-ui-button>
 			</div>
 		</div>
 	</li>
