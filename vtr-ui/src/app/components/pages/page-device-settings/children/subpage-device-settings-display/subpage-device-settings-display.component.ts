@@ -18,7 +18,7 @@ enum defaultTemparature {
 })
 export class SubpageDeviceSettingsDisplayComponent
 	implements OnInit, OnDestroy {
-	title = 'Display & Camera Settings';
+	title = 'device.deviceSettings.displayCamera.title';
 	public dataSource: any;
 	public eyeCareDataSource: EyeCareMode;
 	public cameraDetails1: ICameraSettingsResponse;
@@ -26,19 +26,17 @@ export class SubpageDeviceSettingsDisplayComponent
 	public eyeCareModeStatus = new FeatureStatus(false, true);
 	public cameraPrivacyModeStatus = new FeatureStatus(false, true);
 	public sunsetToSunriseModeStatus = new SunsetToSunriseStatus(true, false, false);
-	headerCaption =
-		'This section enables you to improve your visual experience and configure your camera properties.' +
-		' Explore more features and customize your display experience here.';
-	headerMenuTitle = 'Jump to Settings';
+	headerCaption ='device.deviceSettings.displayCamera.description';
+	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpto.title';
 
 	headerMenuItems = [
 		{
-			title: 'Display',
+			title: 'device.deviceSettings.displayCamera.jumpto.display',
 			path: 'display'
 
 		},
 		{
-			title: 'Camera',
+			title: 'device.deviceSettings.displayCamera.jumpto.camera',
 			path: 'camera'
 		}
 	];

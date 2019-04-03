@@ -268,10 +268,19 @@
 				"title": "显示屏和摄像头",
 				"subtitle": "显示和摄像头设置",
 				"description": "在此部分中可提升视觉体验及配置摄像头属性。在这里探索更多功能，并自定义个性化的显示体验。",
-				"jumpto": {
+				"jumpTo": {
 					"title": "跳到设置：",
-					"display": "显示",
-					"camera": "摄像头"
+					"shortcuts":[
+						{
+							"title": "显示",
+							"path": "display"
+						},
+						{
+							"title": "摄像头",
+							"path": "camera"
+						}
+					]
+
 				},
 				"display": {
 					"title": "显示",
