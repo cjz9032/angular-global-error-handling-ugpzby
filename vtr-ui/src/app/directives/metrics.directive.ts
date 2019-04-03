@@ -52,7 +52,7 @@ export class MetricsDirective {
 			}
 
 			if (typeof this.metricsValue !== 'undefined') {
-				data.metricsValue = this.metricsValue;
+				data.ItemValue = this.metricsValue;
 			}
 			if (this.metricsItemID) {
 				data.ItemID = this.metricsItemID;
@@ -83,7 +83,7 @@ export class MetricsDirective {
 				data.ItemParam = this.metricsParam;
 			}
 			if (typeof this.metricsValue !== 'undefined') {
-				data.metricsValue = this.metricsValue;
+				data.ItemValue = this.metricsValue;
 			}
 			if (this.metricsItemID) {
 				data.ItemID = this.metricsItemID;
