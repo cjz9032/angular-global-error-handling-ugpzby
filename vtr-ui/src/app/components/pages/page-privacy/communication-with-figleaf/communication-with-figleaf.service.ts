@@ -1,11 +1,11 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { FigleafConnectorInstance as FigleafConnector, MessageToFigleaf } from './figleaf-connector'
 import { BehaviorSubject } from "rxjs";
 
 @Injectable({
 	providedIn: 'root'
 })
-export class CommunicationWithFigleafService implements OnInit{
+export class CommunicationWithFigleafService {
 	isFigleafInstalled$ = new BehaviorSubject(false);
 	messageToFigleafUnresolved = [];
 
@@ -20,10 +20,7 @@ export class CommunicationWithFigleafService implements OnInit{
 		type: "getFigleafBreachedAccounts",
 	};
 
-	constructor() {}
-
-	ngOnInit() {
-		// TODO move 'sendMessageToFigleaf' methods to components
+	constructor() {
 		this.sendMessageToFigleaf(this.getFigleafSettingsMessage);
 		this.sendMessageToFigleaf(this.getFigleafDashboardMessage);
 		this.sendMessageToFigleaf(this.getFigleafBreachedAccountsMessage);
@@ -40,6 +37,10 @@ export class CommunicationWithFigleafService implements OnInit{
 		});
 
 		FigleafConnector.connect();
+	}
+
+	disconnect() {
+		FigleafConnector.disconnect();
 	}
 
 	sendMessageToFigleaf(message) {

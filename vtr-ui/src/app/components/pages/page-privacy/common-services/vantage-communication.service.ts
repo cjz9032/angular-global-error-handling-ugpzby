@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../../../services/vantage-shell/vantage-shell.service';
-import { map } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
+import { EMPTY } from 'rxjs';
 
 enum BrowserList {
 	chrome, firefox
@@ -15,7 +16,7 @@ export type AccessiblePasswords = {
 	[browser in BrowserListKey]: number;
 };
 
-interface MaskedPasswordsInfo {
+export interface MaskedPasswordsInfo {
 	url: string;
 	login: string;
 	password: string;
@@ -41,9 +42,6 @@ export type VisitedWebsites = {
 export class VantageCommunicationService {
 
 	constructor(private vantageShellService: VantageShellService) {
-		this.getAccessiblePasswords(['chrome']);
-		this.getMaskedPasswords(['chrome']);
-		this.getVisitedWebsites(['chrome']);
 	}
 
 	getInstalledBrowsers() {
@@ -54,7 +52,10 @@ export class VantageCommunicationService {
 		);
 
 		return this.vantageShellService.sendContractToPrivacyCore<InstalledBrowsers>(contract).pipe(
-			map((response) => response.browsers.map((browser) => ({
+			map((response) =>
+				response.browsers.filter((browser) => browser !== 'edge')
+			),
+			map((browsers) => browsers.map((browser) => ({
 				name: browser,
 				img: `/assets/images/privacy-tab/${browser}.svg`,
 				value: browser
@@ -71,9 +72,12 @@ export class VantageCommunicationService {
 			})
 		);
 
-		return this.vantageShellService.sendContractToPrivacyCore<AccessiblePasswords>(contract).subscribe(
-			(val) => console.log('AccessiblePasswords', val),
-			(err) => console.log('AccessiblePasswords', err)
+		return this.vantageShellService.sendContractToPrivacyCore<AccessiblePasswords>(contract).pipe(
+			tap((val) => console.log('AccessiblePasswords', val)),
+			catchError((err) => {
+				console.log('AccessiblePasswords', err);
+				return EMPTY;
+			})
 		);
 	}
 
@@ -87,9 +91,12 @@ export class VantageCommunicationService {
 			})
 		);
 
-		return this.vantageShellService.sendContractToPrivacyCore<MaskedPasswords>(contract).subscribe(
-			(val) => console.log('MaskedPasswords', val),
-			(err) => console.log('MaskedPasswords', err)
+		return this.vantageShellService.sendContractToPrivacyCore<MaskedPasswords>(contract).pipe(
+			tap((val) => console.log('MaskedPasswords', val)),
+			catchError((err) => {
+				console.log('MaskedPasswords', err);
+				return EMPTY;
+			})
 		);
 	}
 

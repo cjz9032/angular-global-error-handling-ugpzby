@@ -9,12 +9,12 @@ export class ChoseBrowserService {
 
 	constructor(
 		private storageService: StorageService,
-		private figleafVantageService: VantageCommunicationService
+		private vantageCommunicationService: VantageCommunicationService,
 	) {
 	}
 
 	getBrowserList() {
-		return this.figleafVantageService.getInstalledBrowsers();
+		return this.vantageCommunicationService.getInstalledBrowsers();
 	}
 
 	setBrowser(browserId: string) {

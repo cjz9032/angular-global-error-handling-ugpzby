@@ -1,28 +1,16 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, of, ReplaySubject } from 'rxjs';
-import { delay, map, mergeMap, reduce, share, switchMap } from 'rxjs/operators';
+import { BehaviorSubject, of } from 'rxjs';
+import { map, switchMap, take } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { ServerCommunicationService } from './server-communication.service';
 import { StorageService } from '../shared/services/storage.service';
-
-export interface BrowserAccounts {
-	email: string;
-	password: string;
-	image: string;
-}
-
-interface BrowsersAccountsResponse {
-	type: string;
-	status: number;
-	payload: {
-		[k: string]: BrowserAccounts[];
-	};
-}
+import { MaskedPasswordsInfo, VantageCommunicationService } from './vantage-communication.service';
 
 export interface InstalledBrowser {
 	name: string;
-	image_url: string;
-	accounts?: BrowserAccounts[];
+	img: string;
+	accounts: MaskedPasswordsInfo[];
+	accountsCount: number;
 }
 
 @Injectable({
@@ -31,200 +19,53 @@ export interface InstalledBrowser {
 export class BrowserAccountsService {
 	isConsentGiven$ = new BehaviorSubject(!!this.storageService.getItem('isConsentGiven'));
 
-	decryptedBrowserAccounts: {
-		firefox?: BrowserAccounts[];
-		edge?: BrowserAccounts[];
-		chrome?: BrowserAccounts[];
-	} = {};
-
-	browserAccounts$ = new ReplaySubject(1);
-
 	installedBrowsersData$ = new BehaviorSubject<InstalledBrowser[]>([]);
-
-	// static Data transferred to html
-	private chromeDefaultDetail = {
-		name: 'Chrome',
-		image_url: '/assets/images/privacy-tab/Chrome.png',
-	};
-	private firefoxDefaultDetail = {
-		name: 'Firefox',
-		image_url: '/assets/images/privacy-tab/Chrome.png',
-	};
-	private edgeDefaultDetail = {
-		name: 'Edge',
-		image_url: '/assets/images/privacy-tab/Edge.png',
-	};
 
 	constructor(
 		private http: HttpClient,
 		private serverCommunicationService: ServerCommunicationService,
+		private vantageCommunicationService: VantageCommunicationService,
 		private storageService: StorageService
 	) {
 	}
 
-	getBrowserAccounts(browsersArray) {
-		return this.http.get('/assets/privacy-json/browserAccounts.json').pipe(
-			share(),
-			delay(100),
-		).subscribe((response: BrowsersAccountsResponse) => {
-			this.browserAccounts$.next(response.payload);
-		});
-	}
-
-	getDecryptedBrowserAccounts(browserName) {
-		/* tslint:disable */
-		const chromeAccounts = [
-			{
-				email: 'sometest@gmail.com',
-				password: 'some234pass5',
-				website: 'amazon.com',
-				image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAAAXNSR0IArs4c6QAABCtJREFUOBGdVVtPXFUU/s45M8PMULmFiyIpIIhUA0jSFwyJClRJaFqqTdOkvtSHxpjy4h8g+APa8Nak2F8gqSkFTZEWXxq5X6J2GBowaRmGMFxmZG5wLn7r0DNBhr64kjVrn7X2/tZlr71GwTGyLKucqrNk1zGTwm9hhywuhB3SuZhWFCXkKEQePQCCf01d73G9bNzf30cqlYJpmorP57NycnJEfZzEYR+d3HMMGQcEv0DlfbLqGEVGNjcxMTmJmalphNZDMHQdhUVFaGpqQmtrK05XVoKAR4+Y/LhE3QNR2pZXZQnw+w1ROhQMBnH3zh2MPBzG3l4cmqYxS8C0DHg8HrR1tONmTw8aGhudI478h4t6Ogk50fZR8R9wnZGOPnqEoQdDiEZjaDvXgVv9t9H7fS8aG5uQSiQxOz2D2bk5KZsD7EjBEky4GH0F5XX5OErU4+2KCnzyaRv8uT5c6O5GS0sL4vE4QmvrCASe2eudrS0YhgFVdWLNoFwnRp90ykWyllG/Wrjdbpzv6kJnZyfS6TR2dnawuLCItbU1rK6u2KWy2ESGyZrJ1WaTYF4UB13ZtkPNAcs08fsE7g8OYpIyHA5DPziA5nFDVSRi+wpfd1z0XeKg5qQdkvbI8DD6b/fj+XIQdXXv4duem6ivP4PHj8cwMvSQx04O/QhejTiQh5VF0WgUvwz/jKVAANXVVbjxzQ1cuXrVLtfSUoDQh6VRJIvXJ1Iuefqy0KlIJhLY3t5mrU3k5+ejuKQELpcLW5EIXr58wUeXZrl0JJNx+5JPwhBsyWCDnJWF9LybtRa5FgrZd1FSXILx8XH89uQJTJYwvZ/GFB9heD2MquoqwmTRhjiQ2ZHloKCgEB82N2N+bh6x3SjuDQzgh4G78OZ4UftuLQoKi7AcXOYIOYA0g2Uah5VSWDpFYG0KyeoprWctIwVFddPI7mKHeH1eXPvqGrx+H8ZGRxHdjaGstBSfdX5u88L8Amamp9DecQ411RWwYiswoyu8dxNqcQOU3LcE66nCx9AGPTmmb/0J7D6HWtoMNa/yMApV4yu1OCb27GHHIQe/32/PHnm9MoNkDFmJCMyNCZgiQ6PQ3vkCrtOdgDu3XRzIg/iLTuqM8DSMv4f47DzQ3vwIakkT4C0giGxhPzhDze5OjgeLpUnHYG4uwNj6ww7OiixCK/+Y64YgFPf7doPRyZdE+JEMK8mn/+JX8giQ2oSSUwbFzyvyFrG0ftuJpado22Hk6/Sxy4xroVae575SlmkVWlkzFG/xZWY4mOlgOpFR3S1OhKyDONOehRWZhxkLwkqx2YwELczElccaV0At/MDOUi06Q7WbZ5KUGkvv+Yngl2wg54cOTpEXySeQaZl62jL34+SEZZr6CXsyKsE45eBmMhAFDXkU35Hr5ft/kPyn3GL0Mefsv/0T+gxO8bmwAAAAAElFTkSuQmCC',
-			}, {
-				email: 'haha1981@yahoo.com',
-				password: 'secret_pass',
-				website: 'verylongwebsitename.com',
-				image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAAAXNSR0IArs4c6QAABCtJREFUOBGdVVtPXFUU/s45M8PMULmFiyIpIIhUA0jSFwyJClRJaFqqTdOkvtSHxpjy4h8g+APa8Nak2F8gqSkFTZEWXxq5X6J2GBowaRmGMFxmZG5wLn7r0DNBhr64kjVrn7X2/tZlr71GwTGyLKucqrNk1zGTwm9hhywuhB3SuZhWFCXkKEQePQCCf01d73G9bNzf30cqlYJpmorP57NycnJEfZzEYR+d3HMMGQcEv0DlfbLqGEVGNjcxMTmJmalphNZDMHQdhUVFaGpqQmtrK05XVoKAR4+Y/LhE3QNR2pZXZQnw+w1ROhQMBnH3zh2MPBzG3l4cmqYxS8C0DHg8HrR1tONmTw8aGhudI478h4t6Ogk50fZR8R9wnZGOPnqEoQdDiEZjaDvXgVv9t9H7fS8aG5uQSiQxOz2D2bk5KZsD7EjBEky4GH0F5XX5OErU4+2KCnzyaRv8uT5c6O5GS0sL4vE4QmvrCASe2eudrS0YhgFVdWLNoFwnRp90ykWyllG/Wrjdbpzv6kJnZyfS6TR2dnawuLCItbU1rK6u2KWy2ESGyZrJ1WaTYF4UB13ZtkPNAcs08fsE7g8OYpIyHA5DPziA5nFDVSRi+wpfd1z0XeKg5qQdkvbI8DD6b/fj+XIQdXXv4duem6ivP4PHj8cwMvSQx04O/QhejTiQh5VF0WgUvwz/jKVAANXVVbjxzQ1cuXrVLtfSUoDQh6VRJIvXJ1Iuefqy0KlIJhLY3t5mrU3k5+ejuKQELpcLW5EIXr58wUeXZrl0JJNx+5JPwhBsyWCDnJWF9LybtRa5FgrZd1FSXILx8XH89uQJTJYwvZ/GFB9heD2MquoqwmTRhjiQ2ZHloKCgEB82N2N+bh6x3SjuDQzgh4G78OZ4UftuLQoKi7AcXOYIOYA0g2Uah5VSWDpFYG0KyeoprWctIwVFddPI7mKHeH1eXPvqGrx+H8ZGRxHdjaGstBSfdX5u88L8Amamp9DecQ411RWwYiswoyu8dxNqcQOU3LcE66nCx9AGPTmmb/0J7D6HWtoMNa/yMApV4yu1OCb27GHHIQe/32/PHnm9MoNkDFmJCMyNCZgiQ6PQ3vkCrtOdgDu3XRzIg/iLTuqM8DSMv4f47DzQ3vwIakkT4C0giGxhPzhDze5OjgeLpUnHYG4uwNj6ww7OiixCK/+Y64YgFPf7doPRyZdE+JEMK8mn/+JX8giQ2oSSUwbFzyvyFrG0ftuJpado22Hk6/Sxy4xroVae575SlmkVWlkzFG/xZWY4mOlgOpFR3S1OhKyDONOehRWZhxkLwkqx2YwELczElccaV0At/MDOUi06Q7WbZ5KUGkvv+Yngl2wg54cOTpEXySeQaZl62jL34+SEZZr6CXsyKsE45eBmMhAFDXkU35Hr5ft/kPyn3GL0Mefsv/0T+gxO8bmwAAAAAElFTkSuQmCC',
-			}, {
-				email: 'john_doe@gmail.com',
-				password: 'some234pass5',
-				website: 'amazon.com',
-				image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAAAXNSR0IArs4c6QAABCtJREFUOBGdVVtPXFUU/s45M8PMULmFiyIpIIhUA0jSFwyJClRJaFqqTdOkvtSHxpjy4h8g+APa8Nak2F8gqSkFTZEWXxq5X6J2GBowaRmGMFxmZG5wLn7r0DNBhr64kjVrn7X2/tZlr71GwTGyLKucqrNk1zGTwm9hhywuhB3SuZhWFCXkKEQePQCCf01d73G9bNzf30cqlYJpmorP57NycnJEfZzEYR+d3HMMGQcEv0DlfbLqGEVGNjcxMTmJmalphNZDMHQdhUVFaGpqQmtrK05XVoKAR4+Y/LhE3QNR2pZXZQnw+w1ROhQMBnH3zh2MPBzG3l4cmqYxS8C0DHg8HrR1tONmTw8aGhudI478h4t6Ogk50fZR8R9wnZGOPnqEoQdDiEZjaDvXgVv9t9H7fS8aG5uQSiQxOz2D2bk5KZsD7EjBEky4GH0F5XX5OErU4+2KCnzyaRv8uT5c6O5GS0sL4vE4QmvrCASe2eudrS0YhgFVdWLNoFwnRp90ykWyllG/Wrjdbpzv6kJnZyfS6TR2dnawuLCItbU1rK6u2KWy2ESGyZrJ1WaTYF4UB13ZtkPNAcs08fsE7g8OYpIyHA5DPziA5nFDVSRi+wpfd1z0XeKg5qQdkvbI8DD6b/fj+XIQdXXv4duem6ivP4PHj8cwMvSQx04O/QhejTiQh5VF0WgUvwz/jKVAANXVVbjxzQ1cuXrVLtfSUoDQh6VRJIvXJ1Iuefqy0KlIJhLY3t5mrU3k5+ejuKQELpcLW5EIXr58wUeXZrl0JJNx+5JPwhBsyWCDnJWF9LybtRa5FgrZd1FSXILx8XH89uQJTJYwvZ/GFB9heD2MquoqwmTRhjiQ2ZHloKCgEB82N2N+bh6x3SjuDQzgh4G78OZ4UftuLQoKi7AcXOYIOYA0g2Uah5VSWDpFYG0KyeoprWctIwVFddPI7mKHeH1eXPvqGrx+H8ZGRxHdjaGstBSfdX5u88L8Amamp9DecQ411RWwYiswoyu8dxNqcQOU3LcE66nCx9AGPTmmb/0J7D6HWtoMNa/yMApV4yu1OCb27GHHIQe/32/PHnm9MoNkDFmJCMyNCZgiQ6PQ3vkCrtOdgDu3XRzIg/iLTuqM8DSMv4f47DzQ3vwIakkT4C0giGxhPzhDze5OjgeLpUnHYG4uwNj6ww7OiixCK/+Y64YgFPf7doPRyZdE+JEMK8mn/+JX8giQ2oSSUwbFzyvyFrG0ftuJpado22Hk6/Sxy4xroVae575SlmkVWlkzFG/xZWY4mOlgOpFR3S1OhKyDONOehRWZhxkLwkqx2YwELczElccaV0At/MDOUi06Q7WbZ5KUGkvv+Yngl2wg54cOTpEXySeQaZl62jL34+SEZZr6CXsyKsE45eBmMhAFDXkU35Hr5ft/kPyn3GL0Mefsv/0T+gxO8bmwAAAAAElFTkSuQmCC',
-			},
-		];
-		const edgeAccounts = [
-			{
-				email: 'sometest@gmail.com',
-				password: 'some234pass5',
-				website: 'amazon.com',
-				image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAAAXNSR0IArs4c6QAABCtJREFUOBGdVVtPXFUU/s45M8PMULmFiyIpIIhUA0jSFwyJClRJaFqqTdOkvtSHxpjy4h8g+APa8Nak2F8gqSkFTZEWXxq5X6J2GBowaRmGMFxmZG5wLn7r0DNBhr64kjVrn7X2/tZlr71GwTGyLKucqrNk1zGTwm9hhywuhB3SuZhWFCXkKEQePQCCf01d73G9bNzf30cqlYJpmorP57NycnJEfZzEYR+d3HMMGQcEv0DlfbLqGEVGNjcxMTmJmalphNZDMHQdhUVFaGpqQmtrK05XVoKAR4+Y/LhE3QNR2pZXZQnw+w1ROhQMBnH3zh2MPBzG3l4cmqYxS8C0DHg8HrR1tONmTw8aGhudI478h4t6Ogk50fZR8R9wnZGOPnqEoQdDiEZjaDvXgVv9t9H7fS8aG5uQSiQxOz2D2bk5KZsD7EjBEky4GH0F5XX5OErU4+2KCnzyaRv8uT5c6O5GS0sL4vE4QmvrCASe2eudrS0YhgFVdWLNoFwnRp90ykWyllG/Wrjdbpzv6kJnZyfS6TR2dnawuLCItbU1rK6u2KWy2ESGyZrJ1WaTYF4UB13ZtkPNAcs08fsE7g8OYpIyHA5DPziA5nFDVSRi+wpfd1z0XeKg5qQdkvbI8DD6b/fj+XIQdXXv4duem6ivP4PHj8cwMvSQx04O/QhejTiQh5VF0WgUvwz/jKVAANXVVbjxzQ1cuXrVLtfSUoDQh6VRJIvXJ1Iuefqy0KlIJhLY3t5mrU3k5+ejuKQELpcLW5EIXr58wUeXZrl0JJNx+5JPwhBsyWCDnJWF9LybtRa5FgrZd1FSXILx8XH89uQJTJYwvZ/GFB9heD2MquoqwmTRhjiQ2ZHloKCgEB82N2N+bh6x3SjuDQzgh4G78OZ4UftuLQoKi7AcXOYIOYA0g2Uah5VSWDpFYG0KyeoprWctIwVFddPI7mKHeH1eXPvqGrx+H8ZGRxHdjaGstBSfdX5u88L8Amamp9DecQ411RWwYiswoyu8dxNqcQOU3LcE66nCx9AGPTmmb/0J7D6HWtoMNa/yMApV4yu1OCb27GHHIQe/32/PHnm9MoNkDFmJCMyNCZgiQ6PQ3vkCrtOdgDu3XRzIg/iLTuqM8DSMv4f47DzQ3vwIakkT4C0giGxhPzhDze5OjgeLpUnHYG4uwNj6ww7OiixCK/+Y64YgFPf7doPRyZdE+JEMK8mn/+JX8giQ2oSSUwbFzyvyFrG0ftuJpado22Hk6/Sxy4xroVae575SlmkVWlkzFG/xZWY4mOlgOpFR3S1OhKyDONOehRWZhxkLwkqx2YwELczElccaV0At/MDOUi06Q7WbZ5KUGkvv+Yngl2wg54cOTpEXySeQaZl62jL34+SEZZr6CXsyKsE45eBmMhAFDXkU35Hr5ft/kPyn3GL0Mefsv/0T+gxO8bmwAAAAAElFTkSuQmCC',
-			}, {
-				email: 'haha1981@yahoo.com',
-				password: 'secret_pass',
-				website: 'verylongwebsitename.com',
-				image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAAAXNSR0IArs4c6QAABCtJREFUOBGdVVtPXFUU/s45M8PMULmFiyIpIIhUA0jSFwyJClRJaFqqTdOkvtSHxpjy4h8g+APa8Nak2F8gqSkFTZEWXxq5X6J2GBowaRmGMFxmZG5wLn7r0DNBhr64kjVrn7X2/tZlr71GwTGyLKucqrNk1zGTwm9hhywuhB3SuZhWFCXkKEQePQCCf01d73G9bNzf30cqlYJpmorP57NycnJEfZzEYR+d3HMMGQcEv0DlfbLqGEVGNjcxMTmJmalphNZDMHQdhUVFaGpqQmtrK05XVoKAR4+Y/LhE3QNR2pZXZQnw+w1ROhQMBnH3zh2MPBzG3l4cmqYxS8C0DHg8HrR1tONmTw8aGhudI478h4t6Ogk50fZR8R9wnZGOPnqEoQdDiEZjaDvXgVv9t9H7fS8aG5uQSiQxOz2D2bk5KZsD7EjBEky4GH0F5XX5OErU4+2KCnzyaRv8uT5c6O5GS0sL4vE4QmvrCASe2eudrS0YhgFVdWLNoFwnRp90ykWyllG/Wrjdbpzv6kJnZyfS6TR2dnawuLCItbU1rK6u2KWy2ESGyZrJ1WaTYF4UB13ZtkPNAcs08fsE7g8OYpIyHA5DPziA5nFDVSRi+wpfd1z0XeKg5qQdkvbI8DD6b/fj+XIQdXXv4duem6ivP4PHj8cwMvSQx04O/QhejTiQh5VF0WgUvwz/jKVAANXVVbjxzQ1cuXrVLtfSUoDQh6VRJIvXJ1Iuefqy0KlIJhLY3t5mrU3k5+ejuKQELpcLW5EIXr58wUeXZrl0JJNx+5JPwhBsyWCDnJWF9LybtRa5FgrZd1FSXILx8XH89uQJTJYwvZ/GFB9heD2MquoqwmTRhjiQ2ZHloKCgEB82N2N+bh6x3SjuDQzgh4G78OZ4UftuLQoKi7AcXOYIOYA0g2Uah5VSWDpFYG0KyeoprWctIwVFddPI7mKHeH1eXPvqGrx+H8ZGRxHdjaGstBSfdX5u88L8Amamp9DecQ411RWwYiswoyu8dxNqcQOU3LcE66nCx9AGPTmmb/0J7D6HWtoMNa/yMApV4yu1OCb27GHHIQe/32/PHnm9MoNkDFmJCMyNCZgiQ6PQ3vkCrtOdgDu3XRzIg/iLTuqM8DSMv4f47DzQ3vwIakkT4C0giGxhPzhDze5OjgeLpUnHYG4uwNj6ww7OiixCK/+Y64YgFPf7doPRyZdE+JEMK8mn/+JX8giQ2oSSUwbFzyvyFrG0ftuJpado22Hk6/Sxy4xroVae575SlmkVWlkzFG/xZWY4mOlgOpFR3S1OhKyDONOehRWZhxkLwkqx2YwELczElccaV0At/MDOUi06Q7WbZ5KUGkvv+Yngl2wg54cOTpEXySeQaZl62jL34+SEZZr6CXsyKsE45eBmMhAFDXkU35Hr5ft/kPyn3GL0Mefsv/0T+gxO8bmwAAAAAElFTkSuQmCC',
-			}, {
-				email: 'john_doe@gmail.com',
-				password: 'some234pass5',
-				website: 'amazon.com',
-				image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAAAXNSR0IArs4c6QAABCtJREFUOBGdVVtPXFUU/s45M8PMULmFiyIpIIhUA0jSFwyJClRJaFqqTdOkvtSHxpjy4h8g+APa8Nak2F8gqSkFTZEWXxq5X6J2GBowaRmGMFxmZG5wLn7r0DNBhr64kjVrn7X2/tZlr71GwTGyLKucqrNk1zGTwm9hhywuhB3SuZhWFCXkKEQePQCCf01d73G9bNzf30cqlYJpmorP57NycnJEfZzEYR+d3HMMGQcEv0DlfbLqGEVGNjcxMTmJmalphNZDMHQdhUVFaGpqQmtrK05XVoKAR4+Y/LhE3QNR2pZXZQnw+w1ROhQMBnH3zh2MPBzG3l4cmqYxS8C0DHg8HrR1tONmTw8aGhudI478h4t6Ogk50fZR8R9wnZGOPnqEoQdDiEZjaDvXgVv9t9H7fS8aG5uQSiQxOz2D2bk5KZsD7EjBEky4GH0F5XX5OErU4+2KCnzyaRv8uT5c6O5GS0sL4vE4QmvrCASe2eudrS0YhgFVdWLNoFwnRp90ykWyllG/Wrjdbpzv6kJnZyfS6TR2dnawuLCItbU1rK6u2KWy2ESGyZrJ1WaTYF4UB13ZtkPNAcs08fsE7g8OYpIyHA5DPziA5nFDVSRi+wpfd1z0XeKg5qQdkvbI8DD6b/fj+XIQdXXv4duem6ivP4PHj8cwMvSQx04O/QhejTiQh5VF0WgUvwz/jKVAANXVVbjxzQ1cuXrVLtfSUoDQh6VRJIvXJ1Iuefqy0KlIJhLY3t5mrU3k5+ejuKQELpcLW5EIXr58wUeXZrl0JJNx+5JPwhBsyWCDnJWF9LybtRa5FgrZd1FSXILx8XH89uQJTJYwvZ/GFB9heD2MquoqwmTRhjiQ2ZHloKCgEB82N2N+bh6x3SjuDQzgh4G78OZ4UftuLQoKi7AcXOYIOYA0g2Uah5VSWDpFYG0KyeoprWctIwVFddPI7mKHeH1eXPvqGrx+H8ZGRxHdjaGstBSfdX5u88L8Amamp9DecQ411RWwYiswoyu8dxNqcQOU3LcE66nCx9AGPTmmb/0J7D6HWtoMNa/yMApV4yu1OCb27GHHIQe/32/PHnm9MoNkDFmJCMyNCZgiQ6PQ3vkCrtOdgDu3XRzIg/iLTuqM8DSMv4f47DzQ3vwIakkT4C0giGxhPzhDze5OjgeLpUnHYG4uwNj6ww7OiixCK/+Y64YgFPf7doPRyZdE+JEMK8mn/+JX8giQ2oSSUwbFzyvyFrG0ftuJpado22Hk6/Sxy4xroVae575SlmkVWlkzFG/xZWY4mOlgOpFR3S1OhKyDONOehRWZhxkLwkqx2YwELczElccaV0At/MDOUi06Q7WbZ5KUGkvv+Yngl2wg54cOTpEXySeQaZl62jL34+SEZZr6CXsyKsE45eBmMhAFDXkU35Hr5ft/kPyn3GL0Mefsv/0T+gxO8bmwAAAAAElFTkSuQmCC',
-			},
-		];
-		const firefoxAccounts = [
-			{
-				email: 'sometest@gmail.com',
-				password: 'some234pass5',
-				website: 'amazon.com',
-				image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAAAXNSR0IArs4c6QAABCtJREFUOBGdVVtPXFUU/s45M8PMULmFiyIpIIhUA0jSFwyJClRJaFqqTdOkvtSHxpjy4h8g+APa8Nak2F8gqSkFTZEWXxq5X6J2GBowaRmGMFxmZG5wLn7r0DNBhr64kjVrn7X2/tZlr71GwTGyLKucqrNk1zGTwm9hhywuhB3SuZhWFCXkKEQePQCCf01d73G9bNzf30cqlYJpmorP57NycnJEfZzEYR+d3HMMGQcEv0DlfbLqGEVGNjcxMTmJmalphNZDMHQdhUVFaGpqQmtrK05XVoKAR4+Y/LhE3QNR2pZXZQnw+w1ROhQMBnH3zh2MPBzG3l4cmqYxS8C0DHg8HrR1tONmTw8aGhudI478h4t6Ogk50fZR8R9wnZGOPnqEoQdDiEZjaDvXgVv9t9H7fS8aG5uQSiQxOz2D2bk5KZsD7EjBEky4GH0F5XX5OErU4+2KCnzyaRv8uT5c6O5GS0sL4vE4QmvrCASe2eudrS0YhgFVdWLNoFwnRp90ykWyllG/Wrjdbpzv6kJnZyfS6TR2dnawuLCItbU1rK6u2KWy2ESGyZrJ1WaTYF4UB13ZtkPNAcs08fsE7g8OYpIyHA5DPziA5nFDVSRi+wpfd1z0XeKg5qQdkvbI8DD6b/fj+XIQdXXv4duem6ivP4PHj8cwMvSQx04O/QhejTiQh5VF0WgUvwz/jKVAANXVVbjxzQ1cuXrVLtfSUoDQh6VRJIvXJ1Iuefqy0KlIJhLY3t5mrU3k5+ejuKQELpcLW5EIXr58wUeXZrl0JJNx+5JPwhBsyWCDnJWF9LybtRa5FgrZd1FSXILx8XH89uQJTJYwvZ/GFB9heD2MquoqwmTRhjiQ2ZHloKCgEB82N2N+bh6x3SjuDQzgh4G78OZ4UftuLQoKi7AcXOYIOYA0g2Uah5VSWDpFYG0KyeoprWctIwVFddPI7mKHeH1eXPvqGrx+H8ZGRxHdjaGstBSfdX5u88L8Amamp9DecQ411RWwYiswoyu8dxNqcQOU3LcE66nCx9AGPTmmb/0J7D6HWtoMNa/yMApV4yu1OCb27GHHIQe/32/PHnm9MoNkDFmJCMyNCZgiQ6PQ3vkCrtOdgDu3XRzIg/iLTuqM8DSMv4f47DzQ3vwIakkT4C0giGxhPzhDze5OjgeLpUnHYG4uwNj6ww7OiixCK/+Y64YgFPf7doPRyZdE+JEMK8mn/+JX8giQ2oSSUwbFzyvyFrG0ftuJpado22Hk6/Sxy4xroVae575SlmkVWlkzFG/xZWY4mOlgOpFR3S1OhKyDONOehRWZhxkLwkqx2YwELczElccaV0At/MDOUi06Q7WbZ5KUGkvv+Yngl2wg54cOTpEXySeQaZl62jL34+SEZZr6CXsyKsE45eBmMhAFDXkU35Hr5ft/kPyn3GL0Mefsv/0T+gxO8bmwAAAAAElFTkSuQmCC',
-			}, {
-				email: 'haha1981@yahoo.com',
-				password: 'secret_pass',
-				website: 'facebook.com',
-				image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAAAXNSR0IArs4c6QAABCtJREFUOBGdVVtPXFUU/s45M8PMULmFiyIpIIhUA0jSFwyJClRJaFqqTdOkvtSHxpjy4h8g+APa8Nak2F8gqSkFTZEWXxq5X6J2GBowaRmGMFxmZG5wLn7r0DNBhr64kjVrn7X2/tZlr71GwTGyLKucqrNk1zGTwm9hhywuhB3SuZhWFCXkKEQePQCCf01d73G9bNzf30cqlYJpmorP57NycnJEfZzEYR+d3HMMGQcEv0DlfbLqGEVGNjcxMTmJmalphNZDMHQdhUVFaGpqQmtrK05XVoKAR4+Y/LhE3QNR2pZXZQnw+w1ROhQMBnH3zh2MPBzG3l4cmqYxS8C0DHg8HrR1tONmTw8aGhudI478h4t6Ogk50fZR8R9wnZGOPnqEoQdDiEZjaDvXgVv9t9H7fS8aG5uQSiQxOz2D2bk5KZsD7EjBEky4GH0F5XX5OErU4+2KCnzyaRv8uT5c6O5GS0sL4vE4QmvrCASe2eudrS0YhgFVdWLNoFwnRp90ykWyllG/Wrjdbpzv6kJnZyfS6TR2dnawuLCItbU1rK6u2KWy2ESGyZrJ1WaTYF4UB13ZtkPNAcs08fsE7g8OYpIyHA5DPziA5nFDVSRi+wpfd1z0XeKg5qQdkvbI8DD6b/fj+XIQdXXv4duem6ivP4PHj8cwMvSQx04O/QhejTiQh5VF0WgUvwz/jKVAANXVVbjxzQ1cuXrVLtfSUoDQh6VRJIvXJ1Iuefqy0KlIJhLY3t5mrU3k5+ejuKQELpcLW5EIXr58wUeXZrl0JJNx+5JPwhBsyWCDnJWF9LybtRa5FgrZd1FSXILx8XH89uQJTJYwvZ/GFB9heD2MquoqwmTRhjiQ2ZHloKCgEB82N2N+bh6x3SjuDQzgh4G78OZ4UftuLQoKi7AcXOYIOYA0g2Uah5VSWDpFYG0KyeoprWctIwVFddPI7mKHeH1eXPvqGrx+H8ZGRxHdjaGstBSfdX5u88L8Amamp9DecQ411RWwYiswoyu8dxNqcQOU3LcE66nCx9AGPTmmb/0J7D6HWtoMNa/yMApV4yu1OCb27GHHIQe/32/PHnm9MoNkDFmJCMyNCZgiQ6PQ3vkCrtOdgDu3XRzIg/iLTuqM8DSMv4f47DzQ3vwIakkT4C0giGxhPzhDze5OjgeLpUnHYG4uwNj6ww7OiixCK/+Y64YgFPf7doPRyZdE+JEMK8mn/+JX8giQ2oSSUwbFzyvyFrG0ftuJpado22Hk6/Sxy4xroVae575SlmkVWlkzFG/xZWY4mOlgOpFR3S1OhKyDONOehRWZhxkLwkqx2YwELczElccaV0At/MDOUi06Q7WbZ5KUGkvv+Yngl2wg54cOTpEXySeQaZl62jL34+SEZZr6CXsyKsE45eBmMhAFDXkU35Hr5ft/kPyn3GL0Mefsv/0T+gxO8bmwAAAAAElFTkSuQmCC',
-			}, {
-				email: 'john_doe@gmail.com',
-				password: 'some234pass5',
-				website: 'twitter.com',
-				image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAAAXNSR0IArs4c6QAABCtJREFUOBGdVVtPXFUU/s45M8PMULmFiyIpIIhUA0jSFwyJClRJaFqqTdOkvtSHxpjy4h8g+APa8Nak2F8gqSkFTZEWXxq5X6J2GBowaRmGMFxmZG5wLn7r0DNBhr64kjVrn7X2/tZlr71GwTGyLKucqrNk1zGTwm9hhywuhB3SuZhWFCXkKEQePQCCf01d73G9bNzf30cqlYJpmorP57NycnJEfZzEYR+d3HMMGQcEv0DlfbLqGEVGNjcxMTmJmalphNZDMHQdhUVFaGpqQmtrK05XVoKAR4+Y/LhE3QNR2pZXZQnw+w1ROhQMBnH3zh2MPBzG3l4cmqYxS8C0DHg8HrR1tONmTw8aGhudI478h4t6Ogk50fZR8R9wnZGOPnqEoQdDiEZjaDvXgVv9t9H7fS8aG5uQSiQxOz2D2bk5KZsD7EjBEky4GH0F5XX5OErU4+2KCnzyaRv8uT5c6O5GS0sL4vE4QmvrCASe2eudrS0YhgFVdWLNoFwnRp90ykWyllG/Wrjdbpzv6kJnZyfS6TR2dnawuLCItbU1rK6u2KWy2ESGyZrJ1WaTYF4UB13ZtkPNAcs08fsE7g8OYpIyHA5DPziA5nFDVSRi+wpfd1z0XeKg5qQdkvbI8DD6b/fj+XIQdXXv4duem6ivP4PHj8cwMvSQx04O/QhejTiQh5VF0WgUvwz/jKVAANXVVbjxzQ1cuXrVLtfSUoDQh6VRJIvXJ1Iuefqy0KlIJhLY3t5mrU3k5+ejuKQELpcLW5EIXr58wUeXZrl0JJNx+5JPwhBsyWCDnJWF9LybtRa5FgrZd1FSXILx8XH89uQJTJYwvZ/GFB9heD2MquoqwmTRhjiQ2ZHloKCgEB82N2N+bh6x3SjuDQzgh4G78OZ4UftuLQoKi7AcXOYIOYA0g2Uah5VSWDpFYG0KyeoprWctIwVFddPI7mKHeH1eXPvqGrx+H8ZGRxHdjaGstBSfdX5u88L8Amamp9DecQ411RWwYiswoyu8dxNqcQOU3LcE66nCx9AGPTmmb/0J7D6HWtoMNa/yMApV4yu1OCb27GHHIQe/32/PHnm9MoNkDFmJCMyNCZgiQ6PQ3vkCrtOdgDu3XRzIg/iLTuqM8DSMv4f47DzQ3vwIakkT4C0giGxhPzhDze5OjgeLpUnHYG4uwNj6ww7OiixCK/+Y64YgFPf7doPRyZdE+JEMK8mn/+JX8giQ2oSSUwbFzyvyFrG0ftuJpado22Hk6/Sxy4xroVae575SlmkVWlkzFG/xZWY4mOlgOpFR3S1OhKyDONOehRWZhxkLwkqx2YwELczElccaV0At/MDOUi06Q7WbZ5KUGkvv+Yngl2wg54cOTpEXySeQaZl62jL34+SEZZr6CXsyKsE45eBmMhAFDXkU35Hr5ft/kPyn3GL0Mefsv/0T+gxO8bmwAAAAAElFTkSuQmCC',
-			}, {
-				email: 'sometest@gmail.com',
-				password: 'some234pass5',
-				website: 'amazon.com',
-				image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAAAXNSR0IArs4c6QAABCtJREFUOBGdVVtPXFUU/s45M8PMULmFiyIpIIhUA0jSFwyJClRJaFqqTdOkvtSHxpjy4h8g+APa8Nak2F8gqSkFTZEWXxq5X6J2GBowaRmGMFxmZG5wLn7r0DNBhr64kjVrn7X2/tZlr71GwTGyLKucqrNk1zGTwm9hhywuhB3SuZhWFCXkKEQePQCCf01d73G9bNzf30cqlYJpmorP57NycnJEfZzEYR+d3HMMGQcEv0DlfbLqGEVGNjcxMTmJmalphNZDMHQdhUVFaGpqQmtrK05XVoKAR4+Y/LhE3QNR2pZXZQnw+w1ROhQMBnH3zh2MPBzG3l4cmqYxS8C0DHg8HrR1tONmTw8aGhudI478h4t6Ogk50fZR8R9wnZGOPnqEoQdDiEZjaDvXgVv9t9H7fS8aG5uQSiQxOz2D2bk5KZsD7EjBEky4GH0F5XX5OErU4+2KCnzyaRv8uT5c6O5GS0sL4vE4QmvrCASe2eudrS0YhgFVdWLNoFwnRp90ykWyllG/Wrjdbpzv6kJnZyfS6TR2dnawuLCItbU1rK6u2KWy2ESGyZrJ1WaTYF4UB13ZtkPNAcs08fsE7g8OYpIyHA5DPziA5nFDVSRi+wpfd1z0XeKg5qQdkvbI8DD6b/fj+XIQdXXv4duem6ivP4PHj8cwMvSQx04O/QhejTiQh5VF0WgUvwz/jKVAANXVVbjxzQ1cuXrVLtfSUoDQh6VRJIvXJ1Iuefqy0KlIJhLY3t5mrU3k5+ejuKQELpcLW5EIXr58wUeXZrl0JJNx+5JPwhBsyWCDnJWF9LybtRa5FgrZd1FSXILx8XH89uQJTJYwvZ/GFB9heD2MquoqwmTRhjiQ2ZHloKCgEB82N2N+bh6x3SjuDQzgh4G78OZ4UftuLQoKi7AcXOYIOYA0g2Uah5VSWDpFYG0KyeoprWctIwVFddPI7mKHeH1eXPvqGrx+H8ZGRxHdjaGstBSfdX5u88L8Amamp9DecQ411RWwYiswoyu8dxNqcQOU3LcE66nCx9AGPTmmb/0J7D6HWtoMNa/yMApV4yu1OCb27GHHIQe/32/PHnm9MoNkDFmJCMyNCZgiQ6PQ3vkCrtOdgDu3XRzIg/iLTuqM8DSMv4f47DzQ3vwIakkT4C0giGxhPzhDze5OjgeLpUnHYG4uwNj6ww7OiixCK/+Y64YgFPf7doPRyZdE+JEMK8mn/+JX8giQ2oSSUwbFzyvyFrG0ftuJpado22Hk6/Sxy4xroVae575SlmkVWlkzFG/xZWY4mOlgOpFR3S1OhKyDONOehRWZhxkLwkqx2YwELczElccaV0At/MDOUi06Q7WbZ5KUGkvv+Yngl2wg54cOTpEXySeQaZl62jL34+SEZZr6CXsyKsE45eBmMhAFDXkU35Hr5ft/kPyn3GL0Mefsv/0T+gxO8bmwAAAAAElFTkSuQmCC',
-			}, {
-				email: 'haha1981@yahoo.com',
-				password: 'secret_pass',
-				website: 'verylongwebsitename.com',
-				image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAAAXNSR0IArs4c6QAABCtJREFUOBGdVVtPXFUU/s45M8PMULmFiyIpIIhUA0jSFwyJClRJaFqqTdOkvtSHxpjy4h8g+APa8Nak2F8gqSkFTZEWXxq5X6J2GBowaRmGMFxmZG5wLn7r0DNBhr64kjVrn7X2/tZlr71GwTGyLKucqrNk1zGTwm9hhywuhB3SuZhWFCXkKEQePQCCf01d73G9bNzf30cqlYJpmorP57NycnJEfZzEYR+d3HMMGQcEv0DlfbLqGEVGNjcxMTmJmalphNZDMHQdhUVFaGpqQmtrK05XVoKAR4+Y/LhE3QNR2pZXZQnw+w1ROhQMBnH3zh2MPBzG3l4cmqYxS8C0DHg8HrR1tONmTw8aGhudI478h4t6Ogk50fZR8R9wnZGOPnqEoQdDiEZjaDvXgVv9t9H7fS8aG5uQSiQxOz2D2bk5KZsD7EjBEky4GH0F5XX5OErU4+2KCnzyaRv8uT5c6O5GS0sL4vE4QmvrCASe2eudrS0YhgFVdWLNoFwnRp90ykWyllG/Wrjdbpzv6kJnZyfS6TR2dnawuLCItbU1rK6u2KWy2ESGyZrJ1WaTYF4UB13ZtkPNAcs08fsE7g8OYpIyHA5DPziA5nFDVSRi+wpfd1z0XeKg5qQdkvbI8DD6b/fj+XIQdXXv4duem6ivP4PHj8cwMvSQx04O/QhejTiQh5VF0WgUvwz/jKVAANXVVbjxzQ1cuXrVLtfSUoDQh6VRJIvXJ1Iuefqy0KlIJhLY3t5mrU3k5+ejuKQELpcLW5EIXr58wUeXZrl0JJNx+5JPwhBsyWCDnJWF9LybtRa5FgrZd1FSXILx8XH89uQJTJYwvZ/GFB9heD2MquoqwmTRhjiQ2ZHloKCgEB82N2N+bh6x3SjuDQzgh4G78OZ4UftuLQoKi7AcXOYIOYA0g2Uah5VSWDpFYG0KyeoprWctIwVFddPI7mKHeH1eXPvqGrx+H8ZGRxHdjaGstBSfdX5u88L8Amamp9DecQ411RWwYiswoyu8dxNqcQOU3LcE66nCx9AGPTmmb/0J7D6HWtoMNa/yMApV4yu1OCb27GHHIQe/32/PHnm9MoNkDFmJCMyNCZgiQ6PQ3vkCrtOdgDu3XRzIg/iLTuqM8DSMv4f47DzQ3vwIakkT4C0giGxhPzhDze5OjgeLpUnHYG4uwNj6ww7OiixCK/+Y64YgFPf7doPRyZdE+JEMK8mn/+JX8giQ2oSSUwbFzyvyFrG0ftuJpado22Hk6/Sxy4xroVae575SlmkVWlkzFG/xZWY4mOlgOpFR3S1OhKyDONOehRWZhxkLwkqx2YwELczElccaV0At/MDOUi06Q7WbZ5KUGkvv+Yngl2wg54cOTpEXySeQaZl62jL34+SEZZr6CXsyKsE45eBmMhAFDXkU35Hr5ft/kPyn3GL0Mefsv/0T+gxO8bmwAAAAAElFTkSuQmCC',
-			}, {
-				email: 'john_doe@gmail.com',
-				password: 'some234pass5',
-				website: 'amazon.com',
-				image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAAAXNSR0IArs4c6QAABCtJREFUOBGdVVtPXFUU/s45M8PMULmFiyIpIIhUA0jSFwyJClRJaFqqTdOkvtSHxpjy4h8g+APa8Nak2F8gqSkFTZEWXxq5X6J2GBowaRmGMFxmZG5wLn7r0DNBhr64kjVrn7X2/tZlr71GwTGyLKucqrNk1zGTwm9hhywuhB3SuZhWFCXkKEQePQCCf01d73G9bNzf30cqlYJpmorP57NycnJEfZzEYR+d3HMMGQcEv0DlfbLqGEVGNjcxMTmJmalphNZDMHQdhUVFaGpqQmtrK05XVoKAR4+Y/LhE3QNR2pZXZQnw+w1ROhQMBnH3zh2MPBzG3l4cmqYxS8C0DHg8HrR1tONmTw8aGhudI478h4t6Ogk50fZR8R9wnZGOPnqEoQdDiEZjaDvXgVv9t9H7fS8aG5uQSiQxOz2D2bk5KZsD7EjBEky4GH0F5XX5OErU4+2KCnzyaRv8uT5c6O5GS0sL4vE4QmvrCASe2eudrS0YhgFVdWLNoFwnRp90ykWyllG/Wrjdbpzv6kJnZyfS6TR2dnawuLCItbU1rK6u2KWy2ESGyZrJ1WaTYF4UB13ZtkPNAcs08fsE7g8OYpIyHA5DPziA5nFDVSRi+wpfd1z0XeKg5qQdkvbI8DD6b/fj+XIQdXXv4duem6ivP4PHj8cwMvSQx04O/QhejTiQh5VF0WgUvwz/jKVAANXVVbjxzQ1cuXrVLtfSUoDQh6VRJIvXJ1Iuefqy0KlIJhLY3t5mrU3k5+ejuKQELpcLW5EIXr58wUeXZrl0JJNx+5JPwhBsyWCDnJWF9LybtRa5FgrZd1FSXILx8XH89uQJTJYwvZ/GFB9heD2MquoqwmTRhjiQ2ZHloKCgEB82N2N+bh6x3SjuDQzgh4G78OZ4UftuLQoKi7AcXOYIOYA0g2Uah5VSWDpFYG0KyeoprWctIwVFddPI7mKHeH1eXPvqGrx+H8ZGRxHdjaGstBSfdX5u88L8Amamp9DecQ411RWwYiswoyu8dxNqcQOU3LcE66nCx9AGPTmmb/0J7D6HWtoMNa/yMApV4yu1OCb27GHHIQe/32/PHnm9MoNkDFmJCMyNCZgiQ6PQ3vkCrtOdgDu3XRzIg/iLTuqM8DSMv4f47DzQ3vwIakkT4C0giGxhPzhDze5OjgeLpUnHYG4uwNj6ww7OiixCK/+Y64YgFPf7doPRyZdE+JEMK8mn/+JX8giQ2oSSUwbFzyvyFrG0ftuJpado22Hk6/Sxy4xroVae575SlmkVWlkzFG/xZWY4mOlgOpFR3S1OhKyDONOehRWZhxkLwkqx2YwELczElccaV0At/MDOUi06Q7WbZ5KUGkvv+Yngl2wg54cOTpEXySeQaZl62jL34+SEZZr6CXsyKsE45eBmMhAFDXkU35Hr5ft/kPyn3GL0Mefsv/0T+gxO8bmwAAAAAElFTkSuQmCC',
-			}, {
-				email: 'sometest@gmail.com',
-				password: 'some234pass5',
-				website: 'amazon.com',
-				image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAAAXNSR0IArs4c6QAABCtJREFUOBGdVVtPXFUU/s45M8PMULmFiyIpIIhUA0jSFwyJClRJaFqqTdOkvtSHxpjy4h8g+APa8Nak2F8gqSkFTZEWXxq5X6J2GBowaRmGMFxmZG5wLn7r0DNBhr64kjVrn7X2/tZlr71GwTGyLKucqrNk1zGTwm9hhywuhB3SuZhWFCXkKEQePQCCf01d73G9bNzf30cqlYJpmorP57NycnJEfZzEYR+d3HMMGQcEv0DlfbLqGEVGNjcxMTmJmalphNZDMHQdhUVFaGpqQmtrK05XVoKAR4+Y/LhE3QNR2pZXZQnw+w1ROhQMBnH3zh2MPBzG3l4cmqYxS8C0DHg8HrR1tONmTw8aGhudI478h4t6Ogk50fZR8R9wnZGOPnqEoQdDiEZjaDvXgVv9t9H7fS8aG5uQSiQxOz2D2bk5KZsD7EjBEky4GH0F5XX5OErU4+2KCnzyaRv8uT5c6O5GS0sL4vE4QmvrCASe2eudrS0YhgFVdWLNoFwnRp90ykWyllG/Wrjdbpzv6kJnZyfS6TR2dnawuLCItbU1rK6u2KWy2ESGyZrJ1WaTYF4UB13ZtkPNAcs08fsE7g8OYpIyHA5DPziA5nFDVSRi+wpfd1z0XeKg5qQdkvbI8DD6b/fj+XIQdXXv4duem6ivP4PHj8cwMvSQx04O/QhejTiQh5VF0WgUvwz/jKVAANXVVbjxzQ1cuXrVLtfSUoDQh6VRJIvXJ1Iuefqy0KlIJhLY3t5mrU3k5+ejuKQELpcLW5EIXr58wUeXZrl0JJNx+5JPwhBsyWCDnJWF9LybtRa5FgrZd1FSXILx8XH89uQJTJYwvZ/GFB9heD2MquoqwmTRhjiQ2ZHloKCgEB82N2N+bh6x3SjuDQzgh4G78OZ4UftuLQoKi7AcXOYIOYA0g2Uah5VSWDpFYG0KyeoprWctIwVFddPI7mKHeH1eXPvqGrx+H8ZGRxHdjaGstBSfdX5u88L8Amamp9DecQ411RWwYiswoyu8dxNqcQOU3LcE66nCx9AGPTmmb/0J7D6HWtoMNa/yMApV4yu1OCb27GHHIQe/32/PHnm9MoNkDFmJCMyNCZgiQ6PQ3vkCrtOdgDu3XRzIg/iLTuqM8DSMv4f47DzQ3vwIakkT4C0giGxhPzhDze5OjgeLpUnHYG4uwNj6ww7OiixCK/+Y64YgFPf7doPRyZdE+JEMK8mn/+JX8giQ2oSSUwbFzyvyFrG0ftuJpado22Hk6/Sxy4xroVae575SlmkVWlkzFG/xZWY4mOlgOpFR3S1OhKyDONOehRWZhxkLwkqx2YwELczElccaV0At/MDOUi06Q7WbZ5KUGkvv+Yngl2wg54cOTpEXySeQaZl62jL34+SEZZr6CXsyKsE45eBmMhAFDXkU35Hr5ft/kPyn3GL0Mefsv/0T+gxO8bmwAAAAAElFTkSuQmCC',
-			}, {
-				email: 'haha1981@yahoo.com',
-				password: 'secret_pass',
-				website: 'amazon.com',
-				image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAAAXNSR0IArs4c6QAABCtJREFUOBGdVVtPXFUU/s45M8PMULmFiyIpIIhUA0jSFwyJClRJaFqqTdOkvtSHxpjy4h8g+APa8Nak2F8gqSkFTZEWXxq5X6J2GBowaRmGMFxmZG5wLn7r0DNBhr64kjVrn7X2/tZlr71GwTGyLKucqrNk1zGTwm9hhywuhB3SuZhWFCXkKEQePQCCf01d73G9bNzf30cqlYJpmorP57NycnJEfZzEYR+d3HMMGQcEv0DlfbLqGEVGNjcxMTmJmalphNZDMHQdhUVFaGpqQmtrK05XVoKAR4+Y/LhE3QNR2pZXZQnw+w1ROhQMBnH3zh2MPBzG3l4cmqYxS8C0DHg8HrR1tONmTw8aGhudI478h4t6Ogk50fZR8R9wnZGOPnqEoQdDiEZjaDvXgVv9t9H7fS8aG5uQSiQxOz2D2bk5KZsD7EjBEky4GH0F5XX5OErU4+2KCnzyaRv8uT5c6O5GS0sL4vE4QmvrCASe2eudrS0YhgFVdWLNoFwnRp90ykWyllG/Wrjdbpzv6kJnZyfS6TR2dnawuLCItbU1rK6u2KWy2ESGyZrJ1WaTYF4UB13ZtkPNAcs08fsE7g8OYpIyHA5DPziA5nFDVSRi+wpfd1z0XeKg5qQdkvbI8DD6b/fj+XIQdXXv4duem6ivP4PHj8cwMvSQx04O/QhejTiQh5VF0WgUvwz/jKVAANXVVbjxzQ1cuXrVLtfSUoDQh6VRJIvXJ1Iuefqy0KlIJhLY3t5mrU3k5+ejuKQELpcLW5EIXr58wUeXZrl0JJNx+5JPwhBsyWCDnJWF9LybtRa5FgrZd1FSXILx8XH89uQJTJYwvZ/GFB9heD2MquoqwmTRhjiQ2ZHloKCgEB82N2N+bh6x3SjuDQzgh4G78OZ4UftuLQoKi7AcXOYIOYA0g2Uah5VSWDpFYG0KyeoprWctIwVFddPI7mKHeH1eXPvqGrx+H8ZGRxHdjaGstBSfdX5u88L8Amamp9DecQ411RWwYiswoyu8dxNqcQOU3LcE66nCx9AGPTmmb/0J7D6HWtoMNa/yMApV4yu1OCb27GHHIQe/32/PHnm9MoNkDFmJCMyNCZgiQ6PQ3vkCrtOdgDu3XRzIg/iLTuqM8DSMv4f47DzQ3vwIakkT4C0giGxhPzhDze5OjgeLpUnHYG4uwNj6ww7OiixCK/+Y64YgFPf7doPRyZdE+JEMK8mn/+JX8giQ2oSSUwbFzyvyFrG0ftuJpado22Hk6/Sxy4xroVae575SlmkVWlkzFG/xZWY4mOlgOpFR3S1OhKyDONOehRWZhxkLwkqx2YwELczElccaV0At/MDOUi06Q7WbZ5KUGkvv+Yngl2wg54cOTpEXySeQaZl62jL34+SEZZr6CXsyKsE45eBmMhAFDXkU35Hr5ft/kPyn3GL0Mefsv/0T+gxO8bmwAAAAAElFTkSuQmCC',
-			}, {
-				email: 'john_doe@gmail.com',
-				password: 'some234pass5',
-				website: 'amazon.com',
-				image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAAAXNSR0IArs4c6QAABCtJREFUOBGdVVtPXFUU/s45M8PMULmFiyIpIIhUA0jSFwyJClRJaFqqTdOkvtSHxpjy4h8g+APa8Nak2F8gqSkFTZEWXxq5X6J2GBowaRmGMFxmZG5wLn7r0DNBhr64kjVrn7X2/tZlr71GwTGyLKucqrNk1zGTwm9hhywuhB3SuZhWFCXkKEQePQCCf01d73G9bNzf30cqlYJpmorP57NycnJEfZzEYR+d3HMMGQcEv0DlfbLqGEVGNjcxMTmJmalphNZDMHQdhUVFaGpqQmtrK05XVoKAR4+Y/LhE3QNR2pZXZQnw+w1ROhQMBnH3zh2MPBzG3l4cmqYxS8C0DHg8HrR1tONmTw8aGhudI478h4t6Ogk50fZR8R9wnZGOPnqEoQdDiEZjaDvXgVv9t9H7fS8aG5uQSiQxOz2D2bk5KZsD7EjBEky4GH0F5XX5OErU4+2KCnzyaRv8uT5c6O5GS0sL4vE4QmvrCASe2eudrS0YhgFVdWLNoFwnRp90ykWyllG/Wrjdbpzv6kJnZyfS6TR2dnawuLCItbU1rK6u2KWy2ESGyZrJ1WaTYF4UB13ZtkPNAcs08fsE7g8OYpIyHA5DPziA5nFDVSRi+wpfd1z0XeKg5qQdkvbI8DD6b/fj+XIQdXXv4duem6ivP4PHj8cwMvSQx04O/QhejTiQh5VF0WgUvwz/jKVAANXVVbjxzQ1cuXrVLtfSUoDQh6VRJIvXJ1Iuefqy0KlIJhLY3t5mrU3k5+ejuKQELpcLW5EIXr58wUeXZrl0JJNx+5JPwhBsyWCDnJWF9LybtRa5FgrZd1FSXILx8XH89uQJTJYwvZ/GFB9heD2MquoqwmTRhjiQ2ZHloKCgEB82N2N+bh6x3SjuDQzgh4G78OZ4UftuLQoKi7AcXOYIOYA0g2Uah5VSWDpFYG0KyeoprWctIwVFddPI7mKHeH1eXPvqGrx+H8ZGRxHdjaGstBSfdX5u88L8Amamp9DecQ411RWwYiswoyu8dxNqcQOU3LcE66nCx9AGPTmmb/0J7D6HWtoMNa/yMApV4yu1OCb27GHHIQe/32/PHnm9MoNkDFmJCMyNCZgiQ6PQ3vkCrtOdgDu3XRzIg/iLTuqM8DSMv4f47DzQ3vwIakkT4C0giGxhPzhDze5OjgeLpUnHYG4uwNj6ww7OiixCK/+Y64YgFPf7doPRyZdE+JEMK8mn/+JX8giQ2oSSUwbFzyvyFrG0ftuJpado22Hk6/Sxy4xroVae575SlmkVWlkzFG/xZWY4mOlgOpFR3S1OhKyDONOehRWZhxkLwkqx2YwELczElccaV0At/MDOUi06Q7WbZ5KUGkvv+Yngl2wg54cOTpEXySeQaZl62jL34+SEZZr6CXsyKsE45eBmMhAFDXkU35Hr5ft/kPyn3GL0Mefsv/0T+gxO8bmwAAAAAElFTkSuQmCC',
-			},
-		];
-		/* tslint:enable */
-		switch (browserName) {
-			case 'chrome': {
-				return new Promise<BrowserAccounts[]>((resolve) => {
-					setTimeout(() => {
-						resolve(chromeAccounts);
-						this.decryptedBrowserAccounts.chrome = chromeAccounts;
-						// this.chromeAccounts = chromeAccounts;
-					}, 100);
-				});
-			}
-			case 'firefox': {
-				return new Promise<BrowserAccounts[]>((resolve) => {
-					setTimeout(() => {
-						resolve(firefoxAccounts);
-						this.decryptedBrowserAccounts.firefox = firefoxAccounts;
-						// this.firefoxAccounts = firefoxAccounts;
-					}, 100);
-				});
-			}
-			case 'edge': {
-				return new Promise<BrowserAccounts[]>((resolve) => {
-					setTimeout(() => {
-						resolve(edgeAccounts);
-						this.decryptedBrowserAccounts.edge = edgeAccounts;
-						// this.edgeAccounts = edgeAccounts;
-					}, 100);
-				});
-			}
-		}
-	}
-
 	getInstalledBrowsersDefaultData() {
-		const getBrowserData = (browserName) => {
-			switch (browserName) {
-				case 'chrome':
-					return [this.chromeDefaultDetail];
-				case 'edge':
-					return [this.edgeDefaultDetail];
-				case 'firefox':
-					return [this.firefoxDefaultDetail];
-			}
-		};
-		this.serverCommunicationService.getInstalledBrowser().pipe(
-			switchMap((installedBrowsersResponse) => of(...installedBrowsersResponse.payload.installed_browsers)),
-			mergeMap((browserName) => of(getBrowserData(browserName))),
-			reduce((acc, browser) => [...acc, ...browser], []),
-		).subscribe((browserData) => {
-			this.installedBrowsersData$.next(browserData);
-		});
-	}
-
-	getBrowserAccountsDetail() {
-		const concatBrowserData = (browsersAccounts) => {
-			const installedBrowsersData = [...this.installedBrowsersData$.getValue()];
-			installedBrowsersData.forEach((browser) => {
-				browser.accounts = browsersAccounts[browser.name.toLowerCase()];
-			});
-			this.installedBrowsersData$.next(installedBrowsersData);
-		};
-
-		this.browserAccounts$.subscribe((browsersAccounts: Array<BrowserAccounts>) => {
-			concatBrowserData(browsersAccounts);
-		});
+		this.vantageCommunicationService.getInstalledBrowsers().pipe(
+			switchMap((browserData) => this.concatPasswordsCount(browserData)),
+			take(1),
+		).subscribe((browserData) => this.installedBrowsersData$.next(browserData));
 	}
 
 	giveConcent() {
 		this.storageService.setItem('isConsentGiven', 'true');
 		this.isConsentGiven$.next(true);
+	}
+
+	concatPasswords(browsers: string[]) {
+		const currentBrowsers = this.installedBrowsersData$.getValue();
+
+		this.vantageCommunicationService.getMaskedPasswords(browsers).pipe(
+			map((accountsPassword) => currentBrowsers.map((browser) => (
+					{...browser, accounts: browser.accounts ? browser.accounts : accountsPassword[browser.name]}
+				))
+			)
+		).subscribe((response) => {
+			this.installedBrowsersData$.next(response);
+		});
+	}
+
+	private concatPasswordsCount(browserData) {
+		const isConsentGiven = this.isConsentGiven$.getValue();
+
+		if (isConsentGiven) {
+			const browsersNamesArray = browserData.map((browser) => browser.name);
+			return this.vantageCommunicationService.getAccessiblePasswords(browsersNamesArray).pipe(
+				map((accessiblePasswords) =>
+					browserData.map((browser) => ({...browser, accountsCount: accessiblePasswords[browser.name]}))
+				)
+			);
+		} else {
+			return of(browserData.map((browser) => ({...browser, accountsCount: null})));
+		}
 	}
 }

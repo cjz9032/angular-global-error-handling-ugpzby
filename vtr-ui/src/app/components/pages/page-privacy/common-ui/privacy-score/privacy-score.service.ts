@@ -3,7 +3,6 @@ import { filter, map, switchMap } from 'rxjs/operators';
 import { combineLatest, iif, of } from 'rxjs';
 import { FigleafOverviewService } from '../../common-services/figleaf-overview.service';
 import { BrowserAccountsService } from '../../common-services/browser-accounts.service';
-import { ServerCommunicationService } from '../../common-services/server-communication.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -12,8 +11,7 @@ export class PrivacyScoreService {
 
 	constructor(
 		private figleafOverviewService: FigleafOverviewService,
-		private browserAccountsService: BrowserAccountsService,
-		private serverCommunicationService: ServerCommunicationService) {
+		private browserAccountsService: BrowserAccountsService) {
 	}
 
 	readonly scoreWeights = {
@@ -84,13 +82,13 @@ export class PrivacyScoreService {
 			this.getInstalledScore(),
 			this.getStoragesScore(),
 		).pipe(
-			switchMap(val => {
+			map(val => {
 				const receivedScoreParam = val.reduce((acc, curr) => ({...acc, ...curr}));
-				return of({
+				return {
 					...receivedScoreParam,
 					monitoringEnabled: true,
 					trackingEnabled: true,
-				});
+				};
 			})
 		);
 	}
@@ -100,13 +98,13 @@ export class PrivacyScoreService {
 			this.getUninstalledScore(),
 			this.getStoragesScore(),
 		).pipe(
-			switchMap(val => {
+			map(val => {
 				const receivedScoreParam = val.reduce((acc, curr) => ({...acc, ...curr}));
-				return of({
+				return {
 					...receivedScoreParam,
 					monitoringEnabled: false,
 					trackingEnabled: false,
-				});
+				};
 			})
 		);
 	}
@@ -132,24 +130,22 @@ export class PrivacyScoreService {
 	}
 
 	private getStoragesScore() {
-
-		this.serverCommunicationService.getInstalledBrowser();
-
-		return this.browserAccountsService.browserAccounts$.pipe(
-			filter((response) => !!response),
-			switchMap((browsersAccounts) => {
-				const storagesScoreData = Object.keys(browsersAccounts)
-					.map((browser) => {
-						return {
-							fixedStorages: !browsersAccounts[browser].length && 1,
-							unfixedStorages: browsersAccounts[browser].length && 1,
-						};
-					}).reduce((prevVal, currVal) => ({
+		return this.browserAccountsService.installedBrowsersData$.pipe(
+			filter((response) => response.length > 0),
+			map((response) => response.reduce((result, item) => {
+				result[item.name] = item.accountsCount;
+				return result;
+			}, {})),
+			map((browsersAccounts) => {
+				return Object.keys(browsersAccounts)
+					.map((browser) => ({
+						fixedStorages: !browsersAccounts[browser] && 1,
+						unfixedStorages: browsersAccounts[browser] && 1,
+					})).reduce((prevVal, currVal) => ({
 							fixedStorages: prevVal.fixedStorages + currVal.fixedStorages,
 							unfixedStorages: prevVal.unfixedStorages + currVal.unfixedStorages,
 						})
 					);
-				return of(storagesScoreData);
 			}),
 		);
 	}

@@ -52,10 +52,6 @@ export class ResultComponent implements OnInit, OnDestroy {
 			this.userEmail = this.emailScannerService.userEmail;
 			this.isEmailWasScanned = true;
 		});
-
-		if (this.isConsentToGetBrowsersAccountsGiven$.getValue()) {
-			this.getBrowserAccountsDetail();
-		}
 	}
 
 	ngOnDestroy() {
@@ -71,8 +67,6 @@ export class ResultComponent implements OnInit, OnDestroy {
 	}
 
 	getBrowserAccountsDetail() {
-		const browsersNamesArray = Object.keys(this.browserAccountsService.installedBrowsersData$.getValue());
-		this.browserAccountsService.getBrowserAccounts(browsersNamesArray);
-		this.browserAccountsService.getBrowserAccountsDetail();
+		this.browserAccountsService.getInstalledBrowsersDefaultData();
 	}
 }

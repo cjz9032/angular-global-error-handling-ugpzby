@@ -46,7 +46,6 @@ export class FigleafOverviewService {
 			status: 0,
 			payload: {is_figleaf_installed: false},
 		}).pipe(
-			share(),
 			delay(100),
 		);
 	}

@@ -37,7 +37,7 @@ class FigleafConnector {
 				}
 				this.handleResponseStatuses(responseMessage);
 			} else {
-				this.disconnect();
+				this.disconnectFromFigleaf();
 			}
 		});
 	}
@@ -59,12 +59,17 @@ class FigleafConnector {
 				onConnectListeners = [];
 			}
 			else {
-				this.disconnect();
+				this.disconnectFromFigleaf();
 			}
 		});
 	}
 
-	private disconnect() {
+	disconnect() {
+		console.log('connection', connection);
+		connection.close()
+	}
+
+	private disconnectFromFigleaf() {
 		onDisconnectListeners.forEach((cb) => {
 			cb()
 		});
@@ -94,18 +99,3 @@ class FigleafConnector {
 }
 
 export const FigleafConnectorInstance = new FigleafConnector();
-
-
-// Safe Storage
-
-var Vault = new Windows.Security.Credentials.PasswordVault();
-var Credentials = new Windows.Security.Credentials.PasswordCredential();
-var Credentials2 = new Windows.Security.Credentials.PasswordCredential('testResource', 'testResource2', 'testResource3');
-Credentials.resource = 'testResource';
-Credentials.userName = 'testUser';
-Credentials.password = 'testPass';
-
-var Add = Vault.add(Credentials);
-Vault.add(Credentials2);
-
-// Use Vault.retrieveAll() to see result

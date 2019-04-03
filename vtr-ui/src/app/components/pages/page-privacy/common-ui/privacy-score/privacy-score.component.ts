@@ -63,7 +63,10 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.privacyScoreService.getScoreParametrs().subscribe((scoreParametrs: ScoreParametrs) => {
+		this.privacyScoreService.getScoreParametrs()
+			.pipe(
+				takeUntil(instanceDestroyed(this)),
+			).subscribe((scoreParametrs: ScoreParametrs) => {
 			this.scoreParametrs = scoreParametrs;
 			this.scoreParametrs.unfixedBreaches = this.emailScannerService.breachedAccounts.length;
 			this.setDataAccordingToScore(scoreParametrs);
@@ -77,7 +80,8 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	ngOnDestroy() {}
+	ngOnDestroy() {
+	}
 
 	setDataAccordingToScore(scoreParam) {
 		const score = this.privacyScoreService.calculate(scoreParam);

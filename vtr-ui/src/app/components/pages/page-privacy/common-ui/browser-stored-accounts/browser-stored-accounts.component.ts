@@ -1,33 +1,28 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import {
-	BrowserAccountsService,
-	InstalledBrowser
-} from '../../common-services/browser-accounts.service';
-import { takeUntil } from 'rxjs/operators';
-import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
+import { Component, Input, OnInit } from '@angular/core';
+import { BrowserAccountsService } from '../../common-services/browser-accounts.service';
 
 @Component({
 	selector: 'vtr-browser-stored-accounts',
 	templateUrl: './browser-stored-accounts.component.html',
 	styleUrls: ['./browser-stored-accounts.component.scss']
 })
-export class BrowserStoredAccountsComponent implements OnInit, OnDestroy {
+export class BrowserStoredAccountsComponent implements OnInit {
 	@Input() inputData: { showDetailAction: 'expand' | 'link' };
 
-	installedBrowsers: InstalledBrowser[] = [];
+	installedBrowsers$ = this.browserAccountsService.installedBrowsersData$;
 
 	constructor(private browserAccountsService: BrowserAccountsService) {
 	}
 
 	ngOnInit() {
-		this.browserAccountsService.installedBrowsersData$.pipe(
-			takeUntil(instanceDestroyed(this)),
-		).subscribe((installedBrowsers) => {
-			this.installedBrowsers = installedBrowsers;
-		});
 		this.browserAccountsService.getInstalledBrowsersDefaultData();
 	}
 
-	ngOnDestroy() {
+	showPasswordForBrowser(browserName: string) {
+		this.browserAccountsService.concatPasswords([browserName]);
+	}
+
+	trackByBrowser(index) {
+		return index;
 	}
 }
