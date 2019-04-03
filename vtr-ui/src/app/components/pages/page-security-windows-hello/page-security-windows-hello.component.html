@@ -56,14 +56,11 @@
 											</div>
 											<div class=" pull right">
 												<div class="col-12">
-													<button type="button"
-														vtrMetrics
-														metricsItem="setUpWindowsHello"
-														metricsEvent="itemClick"
+													<vtr-ui-button type="button"
+														[metricsItem]="'setUpWindowsHello'"
 														(click)="setUpWindowsHello()"
-														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
-														Setup Windows Hello
-													</button>
+														[label]="'Setup Windows Hello'">
+													</vtr-ui-button>
 												</div>
 											</div>
 										</div>
@@ -283,11 +280,8 @@
 								<!--Start of Security Card Advisor-->
 								<div class="row mb-40">
 									<div class="col col-12">
-										<vtr-widget-status [title]="'Security Advisor'"
-											componentName="security advisor"
-											[description]="'CHECK IF YOUR DEVICE IS SECURED.'"
-											[items]="mockService.securityStatus">
-										</vtr-widget-status>
+										<vtr-widget-security-status [securityAdvisor]="securityAdvisor">
+										</vtr-widget-security-status>
 									</div>
 								</div>
 								<!--End of Security Card Advisor-->
