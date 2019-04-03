@@ -15,7 +15,8 @@
 							<div class="item-icon status"
 								*ngIf="item.status!==undefined&&item.status!==''; else questionCircle">
 								<div class="icon-bkg">
-									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									<fa-icon *ngIf="item.status !== 3" [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									<img *ngIf="item.status === 3" src="../../../../assets/images/security/svg_icon_stick.svg">
 								</div>
 							</div>
 							<ng-template #questionCircle>
@@ -53,7 +54,8 @@
 							<div class="item-icon status"
 								*ngIf="item.status!==undefined&&item.status!==''; else questionCircle">
 								<div class="icon-bkg">
-									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									<fa-icon *ngIf="item.status !== 3" [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									<img *ngIf="item.status === 3" src="../../../../assets/images/security/svg_icon_stick.svg">
 								</div>
 							</div>
 							<ng-template #questionCircle>
@@ -95,7 +97,8 @@
 							<div class="item-icon status"
 								*ngIf="item.status!==undefined&&item.status!==''; else questionCircle">
 								<div class="icon-bkg">
-									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									<fa-icon *ngIf="item.status !== 3" [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
+									<img *ngIf="item.status === 3" src="../../../../assets/images/security/svg_icon_stick.svg">
 								</div>
 							</div>
 							<div class="item-icon"
@@ -130,9 +133,9 @@
 									*ngIf="item.status===0||item.status===1">
 									<fa-icon [icon]="['fal', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
-								<div class="icon-no-bkg"
-									*ngIf="item.status===2">
-									<fa-icon [icon]="['fas', 'dot-circle']"></fa-icon>
+								<div class="icon-no-bkg">
+									<fa-icon *ngIf="item.status===2" [icon]="['fas', 'dot-circle']"></fa-icon>
+									<img *ngIf="item.status===3" src="../../../../assets/images/security/svg_icon_stick.svg">
 								</div>
 							</div>
 							<div class="item-icon"

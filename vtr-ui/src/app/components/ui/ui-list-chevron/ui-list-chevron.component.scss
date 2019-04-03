@@ -81,6 +81,15 @@
 				}
 			}
 
+			&.orange {
+				.item-icon {
+					.icon-bkg {
+						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+						border-color: $orange;
+					}
+				}
+			}
+
 			a {
 				color: $main_darker;
 
@@ -139,6 +148,10 @@
 
 					&.blue {
 						color: $main_gstart;
+					}
+
+					&.orange {
+						color: $orange;
 					}
 
 					&.security {
