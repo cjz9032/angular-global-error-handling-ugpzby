@@ -1,7 +1,7 @@
 <div class="vtr-widget-mcafee mt-60">
 	<div class="row">
 		<div class="col-auto px-0 mr-auto">
-			<div class="title pb-3">{{'security.antivirus.common.mcafee-premium' | translate}}</div>
+			<div class="title pb-3">{{'security.antivirus.common.mcafeePremium' | translate}}</div>
 		</div>
 		<div class="col-auto px-0">
 			<img class="mcafee-logo"
@@ -9,7 +9,7 @@
 		</div>
 	</div>
 	<div class="subtitle pb-5">
-		{{'security.antivirus.common.protected-by' | translate}} {{name}}{{'security.antivirus.common.better-protected' | translate}}
+		{{'security.antivirus.common.protectedBy' | translate}} {{name}}{{'security.antivirus.common.betterProtected' | translate}}
 	</div>
 
 	<ul class="list-group">
@@ -23,7 +23,7 @@
 					</div>
 				</div>
 				<div class="col-auto px-0 text">
-					{{'security.antivirus.common.virus-scan' | translate}}
+					{{'security.antivirus.common.virusScan' | translate}}
 				</div>
 				<div class="col-auto mr-auto">
 					<h3><span class="badge badge-pill badge-danger">{{'security.antivirus.common.disabled' | translate}}</span>
@@ -66,7 +66,7 @@
 				href="{{urlGetMcAfee}}"
 				target="_blank">
 				<vtr-ui-button [metricsItem]="'getMcafee'"
-					[label]="'security.antivirus.mcafee.get-macfee' | translate"
+					[label]="'security.antivirus.mcafee.getMacfee' | translate"
 					[upperCaseLabel]="false"
 					*ngIf="! install | pipeInstall"></vtr-ui-button>
 			</a>

@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { MockService } from 'src/app/services/mock/mock.service';
-import { PasswordManager, EventTypes } from '@lenovo/tan-client-bridge';
+import { PasswordManager, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { CMSService } from '../../../services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
@@ -18,6 +18,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 	passwordManager: PasswordManager;
 	statusItem: any;
 	cardContentPositionA: any;
+	securityAdvisor: SecurityAdvisor;
 
 	constructor(
 		public mockService: MockService,
@@ -25,6 +26,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 		private cmsService: CMSService,
 		vantageShellService: VantageShellService
 	) {
+		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		this.passwordManager = vantageShellService.getSecurityAdvisor().passwordManager;
 		this.statusItem = {
 			title: 'DASHLANE PASSWORD MANAGER'

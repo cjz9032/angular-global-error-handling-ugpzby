@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener, Inject } from '@angular/core';
 import { MockService } from 'src/app/services/mock/mock.service';
-import { Vpn, EventTypes } from '@lenovo/tan-client-bridge';
+import { Vpn, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { CMSService } from '../../../services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
@@ -18,12 +18,15 @@ export class PageSecurityInternetComponent implements OnInit {
 	vpn: Vpn;
 	statusItem: any;
 	cardContentPositionA: any;
+	securityAdvisor: SecurityAdvisor;
 
 	constructor(
 		public mockService: MockService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
-		vantageShellService: VantageShellService) {
+		vantageShellService: VantageShellService
+	) {
+		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		this.statusItem = {
 			title: 'SURFEASY VPN'
 		};
