@@ -366,40 +366,40 @@
 	},
 	"support": {
 		"common": {
-			"get-support": "Get Support"
+			"getSupport": "Get Support"
 		},
 		"warranty": {
-			"title-in-warranty": "IN WARRANTY",
-			"title-warranty-expired": "WARRANTY EXPIRED",
-			"title-warranty-not-found": "WARRANTY NOT FOUND",
-			"status-in-warranty": "In warranty",
-			"status-warranty-expired": "Expired",
-			"status-warranty-not-found": "Warranty not found",
-			"year-depot-warranty": "Y Depot Warranty",
-			"warranty-details": "Warranty Details:",
-			"start-date": "Start date: ",
-			"end-date": "End date: ",
+			"titleInWarranty": "IN WARRANTY",
+			"titleWarrantyExpired": "WARRANTY EXPIRED",
+			"titleWarrantyNotFound": "WARRANTY NOT FOUND",
+			"statusInWarranty": "In warranty",
+			"statusWarrantyExpired": "Expired",
+			"statusWarrantyNotFound": "Warranty not found",
+			"yearDepotWarranty": "Y Depot Warranty",
+			"warrantyDetails": "Warranty Details:",
+			"startDate": "Start date: ",
+			"endDate": "End date: ",
 			"status": "Status: ",
-			"sub-description-1": "This product has years limited warranty and it entitled to depot repair service. Customers may call their local service center for more information. Dealers may provide carry-in repair for this product.",
-			"sub-description-2": "We were unable to locate warranty details for your device, to have more warranty options, please visit our support website.",
-			"view-warranty-options": "VIEW WARRANTY OPTIONS"
+			"subDescription1": "This product has years limited warranty and it entitled to depot repair service. Customers may call their local service center for more information. Dealers may provide carry-in repair for this product.",
+			"subDescription2": "We were unable to locate warranty details for your device, to have more warranty options, please visit our support website.",
+			"viewWarrantyOptions": "VIEW WARRANTY OPTIONS"
 		},
 		"documentation": {
 			"title": "Documentation",
-			"list-user-guide": "User Guide"
+			"listUserGuide": "User Guide"
 		},
-		"need-help": {
+		"needHelp": {
 			"title": "Need Help?",
 			"description": "CONTACT US TO HELP YOU OUT.",
-			"list-lenovo-community": "Lenovo Community",
-			"list-contact-customer-service": "Contact customer service",
-			"list-contact-us-on-wechat": "Contact us on WeChat"
+			"listLenovoCommunity": "Lenovo Community",
+			"listContactCustomerService": "Contact customer service",
+			"listContactUsOnWechat": "Contact us on WeChat"
 		},
 		"quicklinks": {
 			"title": "Quicklinks",
 			"description": "CONTACT US TO HELP YOU OUT.",
-			"list-e-ticket": "Get support with E-ticket",
-			"list-service-provider": "Find a service provider"
+			"listETicket": "Get support with E-ticket",
+			"listServiceProvider": "Find a service provider"
 		}
 	},
 	"security": {
@@ -457,6 +457,79 @@
 			},
 			"others": {
 				"others-protection": "offers you basic protection for your device"
+			}
+		},
+		"wifisecurity": {
+			"header": {
+				"title": "WiFi and Connected Home Security",
+				"back": "BACK"
+			},
+			"container": {
+				"title": "Lenovo Wifi Security",
+				"name": "WIFI SECURITY",
+				"enable": "ENABLED",
+				"disable": "DISABLED",
+				"less": "Less info",
+				"more": "More info",
+				"network-history": "Network History",
+				"connect": "Connected last",
+				"show-more": "Show more",
+				"show-less": "Show less",
+				"button": "Enable Wifi security",
+				"disable-decribe": "Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones."
+			},
+			"threat-locator": {
+				"describe": "Use the threat detector to determine the safety of the networks around you.",
+				"button": "Check your location"
+			},
+			"location-modal": {
+				"title": "Enable location services",
+				"describe": "To use Lenovo WiFi Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?",
+				"yes": "YES",
+				"no": "NO"
+			}
+		},
+		"homeprotection": {
+			"home-security": {
+				"title": "Connected Home Security",
+				"title-describe": "Connected Home Security keeps you safe in three ways:",
+				"home-security-affect1": "Connected Home Security ensures your device is safe, and has not been compromised",
+				"home-security-affect2": "Connected Home Security ensures that the networks you are connected to are safe",
+				"home-security-affect3": "Connected Home Security ensures that other devices connected to your home network are safe.",
+				"describe": "Unsafe devices and networks can introduce malware, lead to identity theft, and leak private and financial information. Enable this feature to reduce the risk of having your device, and your home network exposed to attackers",
+				"subtitle": "Peace of Mind",
+				"subtitle-describe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more in about Connected Home Security in Tips and Tricks.",
+				"try-now": "Try Now"
+			},
+			"invitation-code": {
+				"button": "Enter invitation code",
+				"button-describe": "enter invitation code require enable wifi security",
+				"title": "Already have Connected Home Security?",
+				"title-describe": "Add this device to your Connected Home",
+				"enter-code": "Enter your connection code",
+				"add-home": "Add Home",
+				"ok": "Ok",
+				"cancel": "Cancel",
+				"validate-code": "VALIDATE CODE",
+				"success": "Success",
+				"try-again": "Please try again!"
+			},
+			"security-health": {
+				"title": "Security Health",
+				"device-name1": "Apps From Unknown Sources",
+				"device-name2": "Developer Mode",
+				"device-name3": "UAC Notification",
+				"device-name4": "Antivirus Availability",
+				"device-name5": "Hard Drive Encryption",
+				"device-name6": "Firewall Availability",
+				"device-name7": "Not Activated Windows",
+				"device-name8": "Security Updates Availability",
+				"device-name9": "Password Protection",
+				"device-name10": "Automatic Updates Service Availability",
+				"fail": "FAILED",
+				"pass": "PASSED",
+				"peace-of-mind": "Do you want more peace of mind?",
+				"button": "Enable Wifi security"
 			}
 		}
 	},
