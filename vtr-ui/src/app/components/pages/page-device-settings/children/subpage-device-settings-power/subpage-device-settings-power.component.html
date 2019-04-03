@@ -195,33 +195,18 @@
 						<div class="col-auto text-wrap subtitle">
 							<h3>Intelligent Cooling</h3>
 							<p>{{'device.deviceSettings.power.powerSmartSettings.description2' | translate}}
-								<a class="read-more-link"
-									(click)="openContextModal(template)">Read more.</a>
-
-								<ng-template #template>
-									<div class="justify-content-end">
-										<button type="button"
-											class="close pull-right"
-											aria-label="Close"
-											(click)="closeContextModal()">
-											<span aria-hidden="true">&times;</span>
-										</button>
-									</div>
-									<div class="modal-body">
-										<p> {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line1' | translate}}
-										</p>
-										<p>{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line2' | translate}}
-										</p>
-										<p>{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line3' | translate}}
-										</p>
-										<!-- <span>Performance mode: </span>Slider is far right. Fan speed and
-											performance. -->
-									</div>
-								</ng-template>
+								<!-- <a class="read-more-link"
+									(click)="">Read more.</a> -->
+							</p>
+							<p> {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line1' | translate}}
+							</p>
+							<p>{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line2' | translate}}
+							</p>
+							<p>{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line3' | translate}}
 							</p>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row subtitle-its">
 						<div class="col-auto">
 							<div class="search-icon">
 								<fa-icon [icon]="['fas', 'search']"></fa-icon>
@@ -233,7 +218,22 @@
 							</div>
 						</div>
 						<div class="col-auto"><a class="settings-link"
-								(click)="launchSystemUri('ms-settings:')">{{'device.deviceSettings.power.powerSmartSettings.gotoWindows' | translate}}</a>
+								(click)="openContextModal(template)">{{'device.deviceSettings.power.powerSmartSettings.gotoWindows' | translate}}</a>
+							<ng-template #template>
+								<div class="justify-content-end">
+									<button type="button"
+										class="close pull-right"
+										aria-label="Close"
+										(click)="closeContextModal()">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<p>Click on Windows battery icon on System tray to access Windows performance power slider</p>
+									<!-- <span>Performance mode: </span>Slider is far right. Fan speed and
+												performance. -->
+								</div>
+							</ng-template>
 						</div>
 						<!-- <div class="col">
 							<fa-icon class="question"
