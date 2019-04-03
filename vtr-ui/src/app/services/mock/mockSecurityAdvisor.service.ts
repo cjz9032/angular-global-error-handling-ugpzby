@@ -12,7 +12,7 @@ export class MockSecurityAdvisorService {
 		'id': 'anti-virus',
 		'title': 'Anti-Virus',
 		'detail': 'Enabled',
-		'path': 'anti-virus',
+		'path': 'security/anti-virus',
 		'type': 'security'
 	},
 	{
@@ -20,7 +20,7 @@ export class MockSecurityAdvisorService {
 		'id': 'wifi-security',
 		'title': 'WiFi Security',
 		'detail': 'Enabled',
-		'path': 'wifi-security',
+		'path': 'security/wifi-security',
 		'type': 'security'
 	},
 	{
@@ -28,7 +28,7 @@ export class MockSecurityAdvisorService {
 		'id': 'pwdmgr',
 		'title': 'Password Manager',
 		'detail': 'Installed',
-		'path': 'password-protection',
+		'path': 'security/password-protection',
 		'type': 'security'
 	},
 	{
@@ -36,7 +36,7 @@ export class MockSecurityAdvisorService {
 		'id': 'vpn',
 		'title': 'VPN',
 		'detail': 'Installed',
-		'path': 'internet-protection',
+		'path': 'security/internet-protection',
 		'type': 'security'
 	},
 	{
@@ -44,7 +44,7 @@ export class MockSecurityAdvisorService {
 		'id': 'windows-hello',
 		'title': 'Windows Hello',
 		'detail': 'disabled',
-		'path': 'windows-hello',
+		'path': 'security/windows-hello',
 		'type': 'security'
 	}
 	];

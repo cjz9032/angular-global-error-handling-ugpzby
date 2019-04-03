@@ -42,6 +42,7 @@
       font-size: 1.8rem;
       color: $color;
       letter-spacing: 0.05rem;
+      text-transform: capitalize;
     }
 
     .caption {
@@ -88,13 +89,12 @@
       flex-wrap: nowrap;
     }
     .btn-label {
-      height: 4.5rem;
-      margin: 0rem 0.1rem 1rem 0rem;
+      margin: 0rem 0rem 1rem 0rem;
       padding: 0.5rem 1rem;
       border-radius: 2.25rem;
       background: $gradient_main;
       color: $light;
-      font-size: 1.5rem;
+      font-size: 1.08rem;
       font-weight: $weight_bold;
       text-align: center;
       text-transform: uppercase;

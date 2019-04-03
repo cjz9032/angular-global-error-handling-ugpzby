@@ -10,16 +10,16 @@ import { ModalArticleDetailComponent } from '../modal/modal-article-detail/modal
 })
 export class ContainerCardComponent implements OnInit, AfterViewInit {
 
-	@Input() img: string = '';
-	@Input() caption: string = '';
-	@Input() title: string = '';
-	@Input() logo: string = '';
-	@Input() logoText: string = '';
-	@Input() action: string = '';
-	@Input() actionLink: string = '';
-	@Input() type: string = '';
-	@Input() ratioX: number = 1;
-	@Input() ratioY: number = 1;
+	@Input() img = '';
+	@Input() caption = '';
+	@Input() title = '';
+	@Input() logo = '';
+	@Input() logoText = '';
+	@Input() action = '';
+	@Input() actionLink = '';
+	@Input() type = '';
+	@Input() ratioX = 1;
+	@Input() ratioY = 1;
 	@Input() cornerShift: String = '';
 
 	ratio = 1;
@@ -45,18 +45,18 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 		const self = this;
 		const delay = setTimeout(function () {
 			self.calcHeight(self.element);
-		}, 500)
+		}, 500);
 	}
 
 	calcHeight(containerCard) {
 		if (containerCard) {
 			this.containerHeight = containerCard.nativeElement.firstElementChild.clientWidth * this.ratio;
-			//console.log('RESIZE CONTAINER CARD', this.title, this.ratio, containerCard, this.containerHeight);
+			// console.log('RESIZE CONTAINER CARD', this.title, this.ratio, containerCard, this.containerHeight);
 		}
 	}
 
 	articleClicked(articleId) {
-		let articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
+		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal'
