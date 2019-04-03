@@ -13,33 +13,36 @@ export class AntiVirusViewMode {
 	windowsDefenderstatusList: Array<any>;
 	othersAntistatusList: Array<any>;
 	othersFirewallstatusList: Array<any>;
+	virusScan = 'security.antivirus.common.virusScan';
+	fireWall = 'security.antivirus.common.firewall';
+	enablevirus = 'security.antivirus.common.enableVirusScan';
+	enableFirewall = 'security.antivirus.common.enableFirewall';
+
 	constructor(antiVirus: Antivirus, private commonService: CommonService) {
+		this.currentPage = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
 		this.mcafee = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityMcAfee);
 		this.windowsDefender = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsDefender);
-		this.otherAntiVirus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList);
-		this.otherFirewall = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityOthersFirewallStatusList);
+		this.otherAntiVirus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityOtherAntiVirus);
+		this.otherFirewall = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityOtherFirewall);
 		this.mcafeestatusList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityMcAfeeStatusList);
 		this.windowsDefenderstatusList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsDefenderStatusList);
 		this.othersAntistatusList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList);
 		this.othersFirewallstatusList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityOthersFirewallStatusList);
-		this.currentPage = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
-		if (antiVirus.mcafee || antiVirus.others || antiVirus.windowsDefender) {
-			this.antiVirusPage(antiVirus);
-		}
 		if (antiVirus.mcafee && antiVirus.mcafee.features && antiVirus.mcafee.features.length > 0) {
 			this.mcafee = antiVirus.mcafee;
+			console.log(this.mcafee);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfee, this.mcafee);
 			this.mcafeestatusList = [{
 				buttonClick: this.mcafee.launch.bind(this.mcafee),
 				status: this.mcafee.status,
-				title: 'VIRUS SCAN',
-				buttonTitle: 'ENABLE VIRUS SCAN',
+				title: this.virusScan,
+				buttonTitle: this.enablevirus,
 				metricsItem: 'launchMcafee',
 			}, {
 				buttonClick: this.mcafee.launch.bind(this.mcafee),
 				status: this.mcafee.firewallStatus,
-				title: 'FIREWALL',
-				buttonTitle: 'ENABLE FIREWALL',
+				title: this.fireWall,
+				buttonTitle: this.enableFirewall,
 				metricsItem: 'launchMcafee',
 			}];
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeStatusList, this.mcafeestatusList);
@@ -49,10 +52,10 @@ export class AntiVirusViewMode {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsDefender, this.windowsDefender);
 			this.windowsDefenderstatusList = [{
 				status: this.windowsDefender.status,
-				title: 'VIRUS SCAN',
+				title: this.virusScan,
 			}, {
 				status: this.windowsDefender.firewallStatus,
-				title: 'FIREWALL',
+				title: this.fireWall,
 			}];
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsDefenderStatusList, this.windowsDefenderstatusList);
 		}
@@ -62,18 +65,21 @@ export class AntiVirusViewMode {
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOtherFirewall, this.otherFirewall);
 				this.othersFirewallstatusList = [{
 					status: this.otherFirewall.status,
-					title: 'FIREWALL',
+					title: this.fireWall,
 				}];
-				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOtherFirewall, this.othersFirewallstatusList);
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersFirewallStatusList, this.othersFirewallstatusList);
 			}
 			if (antiVirus.others.antiVirus && antiVirus.others.antiVirus.length > 0) {
 				this.otherAntiVirus = antiVirus.others.antiVirus[0];
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOtherAntiVirus, this.otherAntiVirus);
 				this.othersAntistatusList = [{
 					status: this.otherAntiVirus.status,
-					title: 'VIRUS SCAN',
+					title: this.virusScan,
 				}];
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList, this.othersAntistatusList);
+			}
+			if (antiVirus.mcafee || antiVirus.others || antiVirus.windowsDefender) {
+				this.antiVirusPage(antiVirus);
 			}
 		}
 
@@ -81,13 +87,13 @@ export class AntiVirusViewMode {
 			this.mcafeestatusList = [{
 				buttonClick: this.mcafee.launch.bind(this.mcafee),
 				status: data.find(f => f.id === 'vso').value,
-				title: 'VIRUS SCAN',
-				buttonTitle: 'ENABLE VIRUS SCAN',
+				title: this.virusScan,
+				buttonTitle: this.enablevirus,
 			}, {
 				buttonClick: this.mcafee.launch.bind(this.mcafee),
 				status: data.find(f => f.id === 'mpf').value,
-				title: 'FIREWALL',
-				buttonTitle: 'ENABLE FIREWALL',
+				title: this.fireWall,
+				buttonTitle: this.enableFirewall,
 			}];
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeStatusList, this.mcafeestatusList);
 			this.antiVirusPage(antiVirus);
@@ -96,14 +102,14 @@ export class AntiVirusViewMode {
 				if (antiVirus.others.firewall && antiVirus.others.firewall.length > 0) {
 					this.othersFirewallstatusList = [{
 						status: antiVirus.others.firewall[0].status,
-						title: 'FIREWALL',
+						title: this.fireWall,
 					}];
 					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersFirewallStatusList, this.othersFirewallstatusList);
 				}
 				if (antiVirus.others.antiVirus && antiVirus.others.antiVirus.length > 0) {
 					this.othersAntistatusList = [{
 						status: antiVirus.others.antiVirus[0].status,
-						title: 'VIRUS SCAN',
+						title: this.virusScan,
 					}];
 					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList, this.othersAntistatusList);
 				}
@@ -112,20 +118,20 @@ export class AntiVirusViewMode {
 		}).on(EventTypes.avWindowsDefenderAntivirusStatusEvent, () => {
 			this.windowsDefenderstatusList = [{
 				status: antiVirus.windowsDefender.status,
-				title: 'VIRUS SCAN',
+				title: this.virusScan,
 			}, {
 				status: antiVirus.windowsDefender.firewallStatus,
-				title: 'FIREWALL',
+				title: this.fireWall,
 			}];
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsDefenderStatusList, this.windowsDefenderstatusList);
 			this.antiVirusPage(antiVirus);
 		}).on(EventTypes.avWindowsDefenderFirewallStatusEvent, () => {
 			this.windowsDefenderstatusList = [{
 				status: antiVirus.windowsDefender.status,
-				title: 'VIRUS SCAN',
+				title: this.virusScan,
 			}, {
 				status: antiVirus.windowsDefender.firewallStatus,
-				title: 'FIREWALL',
+				title: this.fireWall,
 			}];
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsDefenderStatusList, this.windowsDefenderstatusList);
 			this.antiVirusPage(antiVirus);

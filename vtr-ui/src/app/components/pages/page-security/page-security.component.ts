@@ -41,12 +41,13 @@ export class PageSecurityComponent implements OnInit {
 		this.antivirusLandingViewModel = new AntiVirusLandingViewModel(this.antivirus, this.commonService);
 		this.vpnLandingViewModel = new VpnLandingViewModel(this.vpn, this.commonService);
 		this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.wifiSecurity, this.homeProtection, this.commonService);
-		this.homeProtectionLandingViewModel = new HomeProtectionLandingViewModel(this.homeProtection, this.wifiSecurity, this.commonService);
+		this.homeProtectionLandingViewModel = new HomeProtectionLandingViewModel();
 		this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.windowsHello, this.commonService);
 		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
 
 		this.fetchCMSArticles();
 		this.getScore();
+		this.getMaliciousWifi();
 	}
 	title = 'Security';
 
@@ -66,6 +67,7 @@ export class PageSecurityComponent implements OnInit {
 	windowsHello: phoenix.WindowsHello;
 	antivirusScore: Array<any>;
 	score: number;
+	maliciousWifi: number;
 	cardContentPositionA: any;
 
 	itemStatusClass = {
@@ -83,6 +85,7 @@ export class PageSecurityComponent implements OnInit {
 	onFocus(): void {
 		this.securityAdvisor.refresh().then(() => {
 			this.getScore();
+			this.getMaliciousWifi();
 		});
 	}
 
@@ -110,15 +113,18 @@ export class PageSecurityComponent implements OnInit {
 		return itemDetail;
 	}
 
-	getMaliciousWifi(wifiHistory) {
+	getMaliciousWifi() {
 		const num = 1;
 		let total = 0;
-		wifiHistory.forEach(wifi => {
-			if (wifi.good === 1) {
-				total += num;
-			}
-		});
-		return total;
+		const wifiHistoryList = this.wifiHistory;
+		if (wifiHistoryList && wifiHistoryList.length !== 0) {
+			wifiHistoryList.forEach(wifi => {
+				if (wifi.good === 1) {
+					total += num;
+				}
+			});
+		}
+		this.maliciousWifi = total;
 	}
 
 	getScore() {

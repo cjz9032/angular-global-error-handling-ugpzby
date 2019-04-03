@@ -12,20 +12,20 @@ export class WifiSecurityLandingViewModel {
 	constructor(wfModel: phoenix.WifiSecurity, hpModel: phoenix.HomeProtection, commonService: CommonService) {
 		const wfStatus = {
 			status: 2,
-			detail: 'disabled', // enabled / disabled
-			path: 'wifi-security',
-			title: 'WiFi Security',
+			detail: 'common.securityAdvisor.disabled', // enabled / disabled
+			path: 'security/wifi-security',
+			title: 'common.securityAdvisor.wifi',
 			type: 'security',
 		};
 		const subjectStatus = {
-			title: 'WiFi & Connected Home Security',
+			title: 'security.landing.wifiConnected',
 			status: 2,
 			type: 'security',
 		};
 		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingWifiSecurityStatus);
 		if (cacheStatus) {
 			wfStatus.status = cacheStatus === 'enabled' ? 0 : 1;
-			wfStatus.detail = cacheStatus;
+			wfStatus.detail = cacheStatus === 'enabled' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
 			subjectStatus.status = cacheStatus === 'enabled' ? 0 : 1;
 		}
 		const cacheWifiHistory = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingWifiHistory);
@@ -33,24 +33,24 @@ export class WifiSecurityLandingViewModel {
 			this.wifiHistory = cacheWifiHistory;
 		}
 		if (wfModel.state) {
-			wfStatus.status = (wfModel.state === 'enabled') ? 0 : 1;
-			wfStatus.detail = wfModel.state;
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWifiSecurityStatus, wfStatus.detail);
+			wfStatus.status = wfModel.state === 'enabled' ? 0 : 1;
+			wfStatus.detail = wfModel.state === 'enabled' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWifiSecurityStatus, wfModel.state);
 			subjectStatus.status = (wfModel.state === 'enabled') ? 0 : 1;
 		}
 		if (wfModel.wifiHistory) {
 			this.wifiHistory = wfModel.wifiHistory;
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWifiHistory, wfStatus.detail);
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWifiHistory, wfModel.wifiHistory);
 		}
 
 		wfModel.on(EventTypes.wsWifiHistoryEvent, (data) => {
-			this.wifiHistory = wfModel.wifiHistory;
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWifiHistory, wfStatus.detail);
+			this.wifiHistory = data;
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWifiHistory, data);
 		});
 
 		wfModel.on(EventTypes.wsStateEvent, (data) => {
-			wfStatus.status = (data === 'enabled') ? 0 : 1;
-			wfStatus.detail = data;
+			wfStatus.status = data === 'enabled' ? 0 : 1;
+			wfStatus.detail = data === 'enabled' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWifiSecurityStatus, wfStatus.detail);
 			subjectStatus.status = (data === 'enabled') ? 0 : 1;
 		});

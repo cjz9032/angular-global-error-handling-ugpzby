@@ -134,20 +134,23 @@
 			id="cooling">
 			<div class="col-10 mx-auto ">
 				<vtr-container-collapsible
-					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
+					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate | lowercase"
 					[isCollapsed]="false"
 					[allowCollapse]="false"
 					[theme]="'blue'">
 					<div class="row">
 						<div class="col-auto text-wrap subtitle">
-							<h3>{{'device.deviceSettings.power.powerSmartSettings.subtitle' | translate}}</h3>
+							<h3>
+								{{'device.deviceSettings.power.powerSmartSettings.subtitle' | translate |  lowercase }}
+							</h3>
 							<p> {{'device.deviceSettings.power.powerSmartSettings.description1' | translate}}</p>
 						</div>
 					</div>
-					<ul class="list-group list-group-flush">
+					<ul class=" list-group
+								list-group-flush">
 						<li class="">
 							<vtr-ui-row-switch
-								[title]="'device.deviceSettings.power.powerSmartSettings.title' | translate"
+								[title]="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate | lowercase"
 								[caption]="''"
 								[isSwitchVisible]="toggleIntelligentCooling"
 								[isSwitchChecked]="toggleIntelligentCoolingStatus"
@@ -184,7 +187,7 @@
 			id="cooling">
 			<div class="col-10 mx-auto ">
 				<vtr-container-collapsible
-					cardTitle="'device.deviceSettings.power.powerSmartSettings.title' | translate"
+					cardTitle="'device.deviceSettings.power.powerSmartSettings.title' | translate | lowercase"
 					[isCollapsed]="false"
 					[allowCollapse]="false"
 					[theme]="'blue'">
@@ -332,13 +335,15 @@
 	<div class="row py-5"
 		id="battery">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.batterySettings.title' | translate"
+			<vtr-container-collapsible
+				[cardTitle]="'device.deviceSettings.power.batterySettings.title' | translate | lowercase"
 				*ngIf="showAirplanePowerModeSection || conservationModeStatus.available || expressChargingStatus.available "
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngIf="showAirplanePowerModeSection">
-						<vtr-ui-row-switch [title]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.airPlanePower.description' | translate"
 							[isSwitchVisible]=true
 							[leftIcon]="batterySettings.items[0].leftImageSource"
@@ -377,7 +382,8 @@
 						<!--
 						*ngIf="batterySettings.status.expressCharging"
 						-->
-						<vtr-ui-row-switch [title]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.expressCharging.description' | translate"
 							[isSwitchVisible]=true
 							[leftIcon]="batterySettings.items[2].leftImageSource"
@@ -389,7 +395,8 @@
 					<li class=""
 						*ngIf="conservationModeStatus.available">
 						<!-- *ngIf="batterySettings.status.conservationMode"* -->
-						<vtr-ui-row-switch [title]="'device.deviceSettings.power.batterySettings.conservationMode.title' | translate"
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.power.batterySettings.conservationMode.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.conservationMode.description' | translate"
 							[isSwitchVisible]=true
 							[leftIcon]="batterySettings.items[3].leftImageSource"
@@ -407,13 +414,15 @@
 	<div class="row py-5"
 		id="power">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate"
+			<vtr-container-collapsible
+				[cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate | lowercase"
 				*ngIf="alwaysOnUSBStatus.available || showEasyResumeSection"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngIf="alwaysOnUSBStatus.available">
-						<vtr-ui-row-switch [title]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
 							[caption]="'device.deviceSettings.power.powerSettings.alwaysUSB.description' | translate"
 							[isSwitchVisible]=true
 							[isSwitchChecked]="alwaysOnUSBStatus.status"
@@ -459,7 +468,8 @@
 					</li>
 					<li class=""
 						*ngIf="showEasyResumeSection">
-						<vtr-ui-row-switch [title]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
 							[caption]="'device.deviceSettings.power.powerSettings.easyResume.description' | translate"
 							[isSwitchVisible]=true
 							[isSwitchChecked]=powerSettings[1].isSwitchChecked
@@ -477,13 +487,15 @@
 	<div class="row py-5"
 		id="other">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible componentName="'device.deviceSettings.power.otherSettings.title' | translate"
+			<vtr-container-collapsible
+				componentName="'device.deviceSettings.power.otherSettings.title' | translate | lowercase"
 				cardTitle="Other Settings"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngFor="let item of otherSettings">
-						<vtr-ui-row-switch [componentName]="'device.deviceSettings.power.otherSettings.title' | translate"
+						<vtr-ui-row-switch
+							[componentName]="'device.deviceSettings.power.otherSettings.title' | translate"
 							[name]="'device.deviceSettings.power.otherSettings.title' | translate"
 							[title]="'device.deviceSettings.power.otherSettings.vantageToolbar.title' | translate"
 							[caption]="'device.deviceSettings.power.otherSettings.vantageToolbar.description' | translate"
