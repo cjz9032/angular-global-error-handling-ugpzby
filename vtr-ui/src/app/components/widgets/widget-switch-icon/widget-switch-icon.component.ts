@@ -13,6 +13,7 @@ export class WidgetSwitchIconComponent implements OnInit {
 	@Input() value = false;
 	@Input() isBlocked = false;
 	@Input() tooltipText = '';
+	@Input() disable = false;
 
 	@Output() toggle = new EventEmitter<boolean>();
 
@@ -22,7 +23,12 @@ export class WidgetSwitchIconComponent implements OnInit {
 		console.log(this.title, this.iconDefinition);
 	}
 
-	onChange(event) {
+	onChange(event: Event) {
+		if (this.disable) {
+			this.value = false;
+			event.stopPropagation();
+			return;
+		}
 		this.value = !this.value;
 		console.log('WIDGET SWITCH ICON VALUE', this.value);
 		this.toggle.emit(this.value);
