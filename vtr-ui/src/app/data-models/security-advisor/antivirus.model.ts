@@ -28,7 +28,7 @@ export class AntiVirusViewMode {
 		this.windowsDefenderstatusList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsDefenderStatusList);
 		this.othersAntistatusList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList);
 		this.othersFirewallstatusList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityOthersFirewallStatusList);
-		if (antiVirus.mcafee && antiVirus.mcafee.features && antiVirus.mcafee.features.length > 0) {
+		if (antiVirus.mcafee && antiVirus.mcafee.status && antiVirus.mcafee.firewallStatus) {
 			this.mcafee = antiVirus.mcafee;
 			console.log(this.mcafee);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfee, this.mcafee);
@@ -82,8 +82,8 @@ export class AntiVirusViewMode {
 				this.antiVirusPage(antiVirus);
 			}
 		}
-
 		antiVirus.on(EventTypes.avMcafeeFeaturesEvent, (data) => {
+			this.mcafee = antiVirus.mcafee;
 			this.mcafeestatusList = [{
 				buttonClick: this.mcafee.launch.bind(this.mcafee),
 				status: data.find(f => f.id === 'vso').value,
@@ -95,6 +95,7 @@ export class AntiVirusViewMode {
 				title: this.fireWall,
 				buttonTitle: this.enableFirewall,
 			}];
+			console.log(this.mcafeestatusList);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeStatusList, this.mcafeestatusList);
 			this.antiVirusPage(antiVirus);
 		}).on(EventTypes.avOthersEvent, () => {
