@@ -120,7 +120,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				subitems: []
 			}, {
 				id: 'password-protection',
-				label: 'Password Protection',
+				label: 'Password Health',
 				path: 'password-protection',
 				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
