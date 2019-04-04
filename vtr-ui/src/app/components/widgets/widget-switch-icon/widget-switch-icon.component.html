@@ -13,5 +13,11 @@
 		<!-- <div class="switch">
 			<vtr-ui-switch-onoff [name]="title" [value]="value"></vtr-ui-switch-onoff>
 		</div> -->
+		<div class="switch-on-off">
+			<div *ngIf="!value"
+			class="switch-label off-label">OFF</div>
+		<div *ngIf="value"
+			class="switch-label on-label">ON</div>
+		</div>
 	</div>
 </div>
