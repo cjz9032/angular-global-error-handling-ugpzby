@@ -13,24 +13,21 @@ export class AntiVirusViewMode {
 	windowsDefenderstatusList: Array<any>;
 	othersAntistatusList: Array<any>;
 	othersFirewallstatusList: Array<any>;
-	virusScan = 'security.antivirus.common.virus-scan';
+	virusScan = 'security.antivirus.common.virusScan';
 	fireWall = 'security.antivirus.common.firewall';
-	enablevirus = 'security.antivirus.common.enable-virus-scan';
-	enableFirewall = 'security.antivirus.common.enable-firewall';
+	enablevirus = 'security.antivirus.common.enableVirusScan';
+	enableFirewall = 'security.antivirus.common.enableFirewall';
 
 	constructor(antiVirus: Antivirus, private commonService: CommonService) {
+		this.currentPage = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
 		this.mcafee = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityMcAfee);
 		this.windowsDefender = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsDefender);
-		this.otherAntiVirus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList);
-		this.otherFirewall = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityOthersFirewallStatusList);
+		this.otherAntiVirus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityOtherAntiVirus);
+		this.otherFirewall = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityOtherFirewall);
 		this.mcafeestatusList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityMcAfeeStatusList);
 		this.windowsDefenderstatusList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsDefenderStatusList);
 		this.othersAntistatusList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList);
 		this.othersFirewallstatusList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityOthersFirewallStatusList);
-		this.currentPage = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityCurrentPage);
-		if (antiVirus.mcafee || antiVirus.others || antiVirus.windowsDefender) {
-			this.antiVirusPage(antiVirus);
-		}
 		if (antiVirus.mcafee && antiVirus.mcafee.features && antiVirus.mcafee.features.length > 0) {
 			this.mcafee = antiVirus.mcafee;
 			console.log(this.mcafee);
@@ -70,7 +67,7 @@ export class AntiVirusViewMode {
 					status: this.otherFirewall.status,
 					title: this.fireWall,
 				}];
-				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOtherFirewall, this.othersFirewallstatusList);
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersFirewallStatusList, this.othersFirewallstatusList);
 			}
 			if (antiVirus.others.antiVirus && antiVirus.others.antiVirus.length > 0) {
 				this.otherAntiVirus = antiVirus.others.antiVirus[0];
@@ -80,6 +77,9 @@ export class AntiVirusViewMode {
 					title: this.virusScan,
 				}];
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList, this.othersAntistatusList);
+			}
+			if (antiVirus.mcafee || antiVirus.others || antiVirus.windowsDefender) {
+				this.antiVirusPage(antiVirus);
 			}
 		}
 
