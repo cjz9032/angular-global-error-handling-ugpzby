@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QaService } from '../../../services/qa/qa.service';
 import { DevService } from '../../../services/dev/dev.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -39,17 +40,35 @@ export class PageDeviceSettingsComponent implements OnInit {
 		}
 	];
 	cardContentPositionA: any;
-
+	showHideBatteryCard = true;
 	constructor(
 		private devService: DevService,
 		public qaService: QaService,
-		private cmsService: CMSService
+		private cmsService: CMSService,
+		public deviceService: DeviceService
 	) {
 		this.fetchCMSArticles();
 	}
 
 	ngOnInit() {
 		this.devService.writeLog('DEVICE SETTINGS INIT', this.menuItems);
+		this.getMachineType();
+	}
+
+	private getMachineType() {
+		try {
+			if (this.deviceService.isShellAvailable) {
+				this.deviceService.getMachineType()
+					.then((value: any) => {
+						console.log('getMachineType.then', value);
+						this.showHideBatteryCard = value < 2;
+					}).catch(error => {
+						console.error('getMachineType', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
 	}
 
 	fetchCMSArticles() {
