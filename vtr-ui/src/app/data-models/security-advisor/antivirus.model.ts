@@ -28,7 +28,7 @@ export class AntiVirusViewMode {
 		this.windowsDefenderstatusList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsDefenderStatusList);
 		this.othersAntistatusList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList);
 		this.othersFirewallstatusList = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityOthersFirewallStatusList);
-		if (antiVirus.mcafee && antiVirus.mcafee.features && antiVirus.mcafee.features.length > 0) {
+		if (antiVirus.mcafee && antiVirus.mcafee.status && antiVirus.mcafee.firewallStatus) {
 			this.mcafee = antiVirus.mcafee;
 			console.log(this.mcafee);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfee, this.mcafee);
@@ -78,12 +78,12 @@ export class AntiVirusViewMode {
 				}];
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList, this.othersAntistatusList);
 			}
-			if (antiVirus.mcafee || antiVirus.others || antiVirus.windowsDefender) {
-				this.antiVirusPage(antiVirus);
-			}
 		}
-
+		if (antiVirus.mcafee || antiVirus.others || antiVirus.windowsDefender) {
+			this.antiVirusPage(antiVirus);
+		}
 		antiVirus.on(EventTypes.avMcafeeFeaturesEvent, (data) => {
+			this.mcafee = antiVirus.mcafee;
 			this.mcafeestatusList = [{
 				buttonClick: this.mcafee.launch.bind(this.mcafee),
 				status: data.find(f => f.id === 'vso').value,
@@ -99,6 +99,8 @@ export class AntiVirusViewMode {
 			this.antiVirusPage(antiVirus);
 		}).on(EventTypes.avOthersEvent, () => {
 			if (antiVirus.others) {
+				this.otherFirewall = antiVirus.others.firewall[0];
+				this.otherAntiVirus = antiVirus.others.antiVirus[0];
 				if (antiVirus.others.firewall && antiVirus.others.firewall.length > 0) {
 					this.othersFirewallstatusList = [{
 						status: antiVirus.others.firewall[0].status,
@@ -116,6 +118,7 @@ export class AntiVirusViewMode {
 			}
 			this.antiVirusPage(antiVirus);
 		}).on(EventTypes.avWindowsDefenderAntivirusStatusEvent, () => {
+			this.windowsDefender = antiVirus.windowsDefender;
 			this.windowsDefenderstatusList = [{
 				status: antiVirus.windowsDefender.status,
 				title: this.virusScan,
@@ -126,6 +129,7 @@ export class AntiVirusViewMode {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsDefenderStatusList, this.windowsDefenderstatusList);
 			this.antiVirusPage(antiVirus);
 		}).on(EventTypes.avWindowsDefenderFirewallStatusEvent, () => {
+			this.windowsDefender = antiVirus.windowsDefender;
 			this.windowsDefenderstatusList = [{
 				status: antiVirus.windowsDefender.status,
 				title: this.virusScan,
