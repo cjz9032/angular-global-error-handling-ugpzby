@@ -418,7 +418,10 @@
 			"connectedHomeSecurity": "Connected Home Security",
 			"fingerprint": "Fingerprint reader",
 			"seeAllNetwork": "See all joined networks",
-			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month."
+			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
+			"good": "Good",
+			"malicious": "Malicious",
+			"suspicious": "Suspicious"
 		},
 		"antivirus": {
 			"common": {

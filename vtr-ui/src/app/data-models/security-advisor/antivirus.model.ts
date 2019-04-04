@@ -95,6 +95,7 @@ export class AntiVirusViewMode {
 				title: this.fireWall,
 				buttonTitle: this.enableFirewall,
 			}];
+			console.log(this.mcafeestatusList);
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeStatusList, this.mcafeestatusList);
 			this.antiVirusPage(antiVirus);
 		}).on(EventTypes.avOthersEvent, () => {

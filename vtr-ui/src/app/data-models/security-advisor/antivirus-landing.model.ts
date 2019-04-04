@@ -2,13 +2,14 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 import * as phoenix from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { TranslateService } from '@ngx-translate/core';
 
 export class AntiVirusLandingViewModel {
 	statusList: Array<any>;
 	subject: any;
 	type = 'security';
 	imgUrl = '';
-	constructor(avModel: phoenix.Antivirus, commonService: CommonService) {
+	constructor(avModel: phoenix.Antivirus, commonService: CommonService, translate: TranslateService) {
 		const avStatus = {
 			status: 2,
 			detail: 'common.securityAdvisor.disabled',
@@ -101,6 +102,21 @@ export class AntiVirusLandingViewModel {
 			fwStatus.detail = (avModel.mcafee.firewallStatus === true) ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
 			this.updateStatus();
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fwStatus.status);
+		});
+		translate.get(avStatus.detail).subscribe((res) => {
+			avStatus.detail = res;
+		});
+		translate.get(fwStatus.detail).subscribe((res) => {
+			fwStatus.detail = res;
+		});
+		translate.get(avStatus.title).subscribe((res) => {
+			avStatus.title = res;
+		});
+		translate.get(fwStatus.title).subscribe((res) => {
+			fwStatus.title = res;
+		});
+		translate.get(subjectStatus.title).subscribe((res) => {
+			subjectStatus.title = res;
 		});
 		this.statusList = new Array(avStatus, fwStatus);
 		this.subject = subjectStatus;
