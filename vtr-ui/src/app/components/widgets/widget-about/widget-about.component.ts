@@ -16,7 +16,7 @@ export class WidgetAboutComponent implements OnInit {
 		'zh-Hans': 'ILA_zh-CN',
 	};
 	buildVersion = environment.appVersion;
-	shellVersion = '10.1903.105';
+	shellVersion: string;
 
 
 	constructor(
@@ -26,6 +26,13 @@ export class WidgetAboutComponent implements OnInit {
 
 	ngOnInit() {
 		if (this.translate.defaultLang) { this.lang = this.translate.defaultLang; }
+
+		const win: any = window;
+		if (win.Windows) {
+			const packageVersion = win.Windows.ApplicationModel.Package.current.id.version;
+			// packageVersion.major, packageVersion.minor, packageVersion.build, packageVersion.revision
+			this.shellVersion = `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}`;
+		}
 	}
 
 	agreementClicked() {
@@ -37,6 +44,7 @@ export class WidgetAboutComponent implements OnInit {
 		});
 		aboutModal.componentInstance.url = agreementUrl;
 		aboutModal.componentInstance.type = 'html';
+
 	}
 
 	openSourceClicked() {

@@ -6,7 +6,7 @@
 			</div>
 			<div>
 				<div class="title">Lenovo Vantage</div>
-				<div class="version">{{ 'support.about.version' | translate}}: {{ shellVersion }} {{ 'support.about.build' | translate}} {{ buildVersion }}</div>
+				<div class="version">{{ 'support.about.version' | translate}}: <span *ngIf="shellVersion">{{ shellVersion }} Build </span>{{ buildVersion }}</div>
 			</div>
 		</div>
 		<div class="about-links mb-4">

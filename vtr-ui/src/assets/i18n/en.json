@@ -403,7 +403,6 @@
 		},
 		"about": {
 			"version": "Version",
-			"build": "Build",
 			"licenseAgreement": "Licenses agreement",
 			"otherSoftwareLicenses": "Other software licenses",
 			"ourWebsite": "Our website",
