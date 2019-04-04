@@ -26,7 +26,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public eyeCareModeStatus = new FeatureStatus(false, true);
 	public cameraPrivacyModeStatus = new FeatureStatus(false, true);
 	public sunsetToSunriseModeStatus = new SunsetToSunriseStatus(true, false, false);
-	headerCaption ='device.deviceSettings.displayCamera.description';
+	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 
 	headerMenuItems = [
@@ -109,8 +109,10 @@ export class SubpageDeviceSettingsDisplayComponent
 		// this.cd.markForCheck();
 		this.displayService.getDisplayColortemperature().then((response) => {
 			console.log('getDisplayColortemperature.then', response);
-
 			this.eyeCareDataSource = response;
+			if (response.current === 4500 && response.eyecaremode === 4500) {
+				this.eyeCareDataSource.current = response.eyecaremode;
+			}
 			// this.cd.detectChanges();
 			// this.eyecareDatasource.current = response.current;
 			console.log('getDisplayColortemperature.then', this.eyeCareDataSource);
@@ -205,7 +207,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.log('temparature reset data', resetData);
 						this.eyeCareDataSource.current = resetData.colorTemperature;
 						this.eyeCareModeStatus.status = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
-						this.sunsetToSunriseModeStatus.status =  (resetData.autoEyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
+						this.sunsetToSunriseModeStatus.status = (resetData.autoEyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
 						console.log('sunsetToSunriseModeStatus.status from temparature reset data', this.sunsetToSunriseModeStatus.status);
 						// this.getDisplayColorTemperature();
 					});

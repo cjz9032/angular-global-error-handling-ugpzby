@@ -360,40 +360,47 @@
 	},
 	"support": {
 		"common": {
-			"getSupport": "Get Support"
+			"getSupport": "获取支持"
 		},
 		"warranty": {
-			"titleInWarranty": "IN WARRANTY",
-			"titleWarrantyExpired": "WARRANTY EXPIRED",
-			"titleWarrantyNotFound": "WARRANTY NOT FOUND",
-			"statusInWarranty": "In warranty",
-			"statusWarrantyExpired": "Expired",
-			"statusWarrantyNotFound": "Warranty not found",
-			"yearDepotWarranty": "Y Depot Warranty",
-			"warrantyDetails": "Warranty Details:",
-			"startDate": "Start date: ",
-			"endDate": "End date: ",
-			"status": "Status: ",
-			"subDescription1": "This product has years limited warranty and it entitled to depot repair service. Customers may call their local service center for more information. Dealers may provide carry-in repair for this product.",
-			"subDescription2": "We were unable to locate warranty details for your device, to have more warranty options, please visit our support website.",
-			"viewWarrantyOptions": "VIEW WARRANTY OPTIONS"
+			"titleInWarranty": "在保修期内",
+			"titleWarrantyExpired": "保修到期",
+			"titleWarrantyNotFound": "未找到保修",
+			"statusInWarranty": "在保修期内",
+			"statusWarrantyExpired": "已到期",
+			"statusWarrantyNotFound": "未找到保修",
+			"yearDepotWarranty": "年维修站保修",
+			"warrantyDetails": "保修详细信息：",
+			"startDate": "开始日期：",
+			"endDate": "结束日期：",
+			"status": "状态：",
+			"subDescription1": "本产品具有若干年的有限保修，并有权送往维修站获得维修服务。客户可以致电其当地服务中心来获取更多信息。经销商可对本产品提供送修服务。",
+			"subDescription2": "我们无法找到适用于您设备的保修详细信息，要获取更多保修选项，请访问我们的支持网站。",
+			"viewWarrantyOptions": "查看保修选项"
 		},
 		"documentation": {
-			"title": "Documentation",
-			"listUserGuide": "User Guide"
+			"title": "文档",
+			"listUserGuide": "用户指南"
 		},
 		"needHelp": {
-			"title": "Need Help?",
-			"description": "CONTACT US TO HELP YOU OUT.",
-			"listLenovoCommunity": "Lenovo Community",
-			"listContactCustomerService": "Contact customer service",
-			"listContactUsOnWechat": "Contact us on WeChat"
+			"title": "需要帮助？",
+			"description": "联系我们以获取帮助。",
+			"listLenovoCommunity": "联想社区",
+			"listContactCustomerService": "联系客户服务部门",
+			"listContactUsOnWechat": "通过微信联系我们"
 		},
 		"quicklinks": {
-			"title": "Quicklinks",
-			"description": "CONTACT US TO HELP YOU OUT.",
-			"listETicket": "Get support with E-ticket",
-			"listServiceProvider": "Find a service provider"
+			"title": "快速链接",
+			"description": "联系我们以获取帮助。",
+			"listETicket": "通过电子凭单获取支持",
+			"listServiceProvider": "查找服务供应商"
+		},
+		"about": {
+			"version": "版本",
+			"licenseAgreement": "许可协议",
+			"otherSoftwareLicenses": "其他软件许可证",
+			"ourWebsite": "我们的网站",
+			"copyright": "© 2002-2019 联想版权所有。"
 		}
 	},
 	"security": {
@@ -411,7 +418,10 @@
 			"connectedHomeSecurity": "Connected Home Security",
 			"fingerprint": "Fingerprint reader",
 			"seeAllNetwork": "See all joined networks",
-			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month."
+			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
+			"good": "Good",
+			"malicious": "Malicious",
+			"suspicious": "Suspicious"
 		},
 		"antivirus": {
 			"common": {
