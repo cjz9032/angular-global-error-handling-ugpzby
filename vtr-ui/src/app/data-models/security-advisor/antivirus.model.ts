@@ -100,6 +100,8 @@ export class AntiVirusViewMode {
 			this.antiVirusPage(antiVirus);
 		}).on(EventTypes.avOthersEvent, () => {
 			if (antiVirus.others) {
+				this.otherFirewall = antiVirus.others.firewall[0];
+				this.otherAntiVirus = antiVirus.others.antiVirus[0];
 				if (antiVirus.others.firewall && antiVirus.others.firewall.length > 0) {
 					this.othersFirewallstatusList = [{
 						status: antiVirus.others.firewall[0].status,
@@ -117,6 +119,7 @@ export class AntiVirusViewMode {
 			}
 			this.antiVirusPage(antiVirus);
 		}).on(EventTypes.avWindowsDefenderAntivirusStatusEvent, () => {
+			this.windowsDefender = antiVirus.windowsDefender;
 			this.windowsDefenderstatusList = [{
 				status: antiVirus.windowsDefender.status,
 				title: this.virusScan,
@@ -127,6 +130,7 @@ export class AntiVirusViewMode {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsDefenderStatusList, this.windowsDefenderstatusList);
 			this.antiVirusPage(antiVirus);
 		}).on(EventTypes.avWindowsDefenderFirewallStatusEvent, () => {
+			this.windowsDefender = antiVirus.windowsDefender;
 			this.windowsDefenderstatusList = [{
 				status: antiVirus.windowsDefender.status,
 				title: this.virusScan,
