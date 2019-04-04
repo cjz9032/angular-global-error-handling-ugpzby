@@ -10,10 +10,9 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div [ngClass]="{
-							'col-sm-12 col-md-8 col-lg-8 vtr-page-left-column':!deviceService.isArm,
+							'col-sm-12 col-md-7 col-lg-7 col-xl-8 vtr-page-left-column':!deviceService.isArm,
 							'vtr-arm-page': deviceService.isArm
-						}"
-						class="col col-12">
+						}">
 						<div class="vtr-page-shift-up nmx-40">
 
 							<div class="container-fluid">
@@ -107,30 +106,32 @@
 						</div>
 					</div>
 					<div *ngIf="!deviceService.isArm"
-						class="col col-12 col-sm-12 col-md-4 col-lg-4 vtr-page-right-column">
+						class="col-sm-12 col-md-5 col-lg-5 col-xl-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
-								<div class="row">
-									<div class="col col-12 pb-60">
+								<div class="row no-gutters">
+									<div class="col-sm-12 col-md-12 pb-60">
 										<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
 											[description]="'dashboard.feedback.subtitle' | translate"
 											[actionName]="'dashboard.feedback.button' | translate"
 											[action]="'feedback'"
 											(feedBackClick)="onFeedbackModal()">
 										</vtr-widget-feedback>
-									</div>
-								</div>
+										<!-- </div> -->
+										<!-- </div> -->
 
-								<div class="row"
-									*ngIf="!deviceService.isArm">
-									<div class="col col-12">
-										<vtr-widget-quicksettings></vtr-widget-quicksettings>
+										<!-- <div class="row"
+										*ngIf="!deviceService.isArm"> -->
+										<!-- <div class="col-sm-12"> -->
+										<div class="pt-5">
+											<vtr-widget-quicksettings></vtr-widget-quicksettings>
+										</div>
 									</div>
-								</div>
+									<!-- </div> -->
 
-								<div class="row"
-									*ngIf="!deviceService.isArm">
-									<div class="col col-12 pb-40 system-status-block">
+									<!-- <div class="row"
+									*ngIf="!deviceService.isArm"> -->
+									<div class="col-sm-12 col-md-12 pb-40">
 										<vtr-widget-status componentName="system status"
 											[title]="'dashboard.systemStatus.title' | translate"
 											[description]="'dashboard.systemStatus.subtitle' | translate"
@@ -138,9 +139,9 @@
 										</vtr-widget-status>
 									</div>
 								</div>
-								<div class="row"
+								<div class="row no-gutters"
 									*ngIf="!deviceService.isArm">
-									<div class="col col-12 py-40">
+									<div class="col-sm-12 py-40">
 										<vtr-widget-security-status [securityAdvisor]="securityAdvisor">
 										</vtr-widget-security-status>
 									</div>
