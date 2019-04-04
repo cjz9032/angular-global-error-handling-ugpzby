@@ -53,7 +53,7 @@ export class PageDashboardComponent implements OnInit {
 		public deviceService: DeviceService,
 		private cmsService: CMSService,
 		private systemUpdateService: SystemUpdateService,
-		private userService: UserService,
+		public userService: UserService,
 		vantageShellService: VantageShellService
 	) {
 		config.backdrop = 'static';
