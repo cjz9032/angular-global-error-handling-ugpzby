@@ -189,13 +189,15 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			const securityItem = this.items.find(item => item.id === 'security');
 			securityItem.subitems = securityItem.subitems.filter(subitem => subitem.id !== 'windows-hello');
 		}
-		const windowsHello: WindowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
-		this.showWindowsHello(windowsHello);
-		windowsHello.on(EventTypes.helloFacialIdStatusEvent, () => {
+		if (vantageShellService.getSecurityAdvisor()) {
+			const windowsHello: WindowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
 			this.showWindowsHello(windowsHello);
-		}).on(EventTypes.helloFingerPrintStatusEvent, () => {
-			this.showWindowsHello(windowsHello);
-		});
+			windowsHello.on(EventTypes.helloFacialIdStatusEvent, () => {
+				this.showWindowsHello(windowsHello);
+			}).on(EventTypes.helloFingerPrintStatusEvent, () => {
+				this.showWindowsHello(windowsHello);
+			});
+		}
 
 		this.commonMenuSubscription = this.translationService.subscription
 			.subscribe((translation: Translation) => {
@@ -268,7 +270,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		const securityItem = this.items.find(item => item.id === 'security');
 		if (!this.commonService.isRS5OrLater()
 			|| (typeof windowsHello.facialIdStatus !== 'string'
-			&& typeof windowsHello.fingerPrintStatus !== 'string')) {
+				&& typeof windowsHello.fingerPrintStatus !== 'string')) {
 			securityItem.subitems = securityItem.subitems.filter(subitem => subitem.id !== 'windows-hello');
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
 		} else {
