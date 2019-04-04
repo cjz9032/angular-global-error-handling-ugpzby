@@ -3,9 +3,9 @@
 		<div class="row">
 			<div class="col">
 				<div class="header">
-					<div class="heading">Connected Home Security</div>
+					<div class="heading">{{'security.homeprotection.homesecurity.title' | translate}}</div>
 					<div class="text-regular">
-						Connected Home Security keeps you safe in three ways:
+						{{'security.homeprotection.homesecurity.titleDescription' | translate}}
 					</div>
 				</div>
 			</div>
@@ -25,8 +25,7 @@
 								</div>
 								<div class="col">
 									<div class="text-regular">
-										Connected Home Security ensures your device is safe, and has not been
-										compromised
+										{{'security.homeprotection.homesecurity.homeSecurityAffect1' | translate}}
 									</div>
 								</div>
 							</div>
@@ -45,7 +44,7 @@
 								</div>
 								<div class="col">
 									<div class="text-regular">
-										Connected Home Security ensures that the networks you are connected to are safe
+										{{'security.homeprotection.homesecurity.homeSecurityAffect2' | translate}}
 									</div>
 								</div>
 							</div>
@@ -64,8 +63,7 @@
 								</div>
 								<div class="col">
 									<div class="text-regular">
-										Connected Home Security ensures that other devices connected to your home
-										network are safe.
+										{{'security.homeprotection.homesecurity.homeSecurityAffect3' | translate}}
 									</div>
 
 								</div>
@@ -86,11 +84,7 @@
 								</div>
 								<div class="col">
 									<div class="text-regular">
-										Unsafe devices and networks can introduce malware, lead to identity theft, and
-										leak private
-										and financial information. Enable this feature to reduce the risk of having your
-										device, and
-										your home network exposed to attackers
+										{{'security.homeprotection.homesecurity.describe' | translate}}
 									</div>
 								</div>
 							</div>
@@ -112,16 +106,16 @@
 		<div class="row">
 			<div class="col">
 				<div class="peace-of-mind">
-					<div class="sub-heading">Peace of Mind</div>
-					<div class="text-regular">Connected Home Security will send you an alert if it detects a
-						vulnerability in your device or home network, or if you are connected to a potentially malicious
-						network. Learn even more in about Connected Home Security in Tips and Tricks. </div>
-
+					<div class="sub-heading">{{'security.homeprotection.homesecurity.subtitle' | translate}}</div>
+					<div class="text-regular">{{'security.homeprotection.homesecurity.subtitleDescribe' | translate}} </div>
 					<div class="col-sm-3">
 						<div class="button-box shift-left">
-							<vtr-ui-button [metricsItem]="'tryNow'"
+							<vtr-ui-button
+								[metricsItem]="'tryNow'"
 								(onClick)="tryNow($event)"
-								[label]="'Try Now'"></vtr-ui-button>
+								[label]="'security.homeprotection.homesecurity.tryNow' | translate"
+								[disabled]="!data.tryNowEnable">
+							</vtr-ui-button>
 						</div>
 
 					</div>
@@ -142,8 +136,8 @@
 					<div class="row">
 						<div class="col">
 							<div class="sub-heading">
-								Already have Connected Home Security?
-								<div class="text-regular">Add this device to your Connected Home</div>
+								{{'security.homeprotection.invitationcode.title' | translate}}
+								<div class="text-regular">{{'security.homeprotection.invitationcode.titledescribe' | translate}}</div>
 							</div>
 
 						</div>
@@ -151,9 +145,9 @@
 							<div class="button-box shift-right">
 								<vtr-ui-button [metricsItem]="'enterInvitationCode'"
 									(onClick)="enterActivationCode($event)"
-									[label]="'Enter invitation code'"
+									[label]="'security.homeprotection.invitationcode.button' | translate"
 									[isLWSEnabled]="data.isLWSEnabled"></vtr-ui-button>
-								<div *ngIf="!data.isLWSEnabled">enter invitation code require enable wifi security.
+								<div *ngIf="!data.isLWSEnabled">{{'security.homeprotection.invitationcode.buttonDescribe' | translate}}
 								</div>
 							</div>
 						</div>

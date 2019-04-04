@@ -98,6 +98,7 @@ export class MockWifiSecurity {
 			}],
 			isLocationServiceOn: true,
 			isLWSPluginInstalled: true,
+			hasEverUsed: false,
 			enableWifiSecurity(): Promise<any> {
 				this.state = 'enabled';
 				this.mitt.emit(EventTypes.wsStateEvent, this.state);

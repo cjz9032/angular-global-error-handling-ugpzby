@@ -177,5 +177,29 @@ export class AudioService {
     catch(error) {
       throw new Error(error.message);
     }
+	}
+
+	startMonitorForDolby(handler: any): Promise<boolean> {
+    try {
+      if (this.isShellAvailable) {
+        return this.dolby.startMonitor(handler);
+      }
+      return undefined;
+    }
+    catch(error) {
+      throw new Error(error.message);
+    }
   }
+
+  stopMonitorForDolby(): Promise<boolean> {
+    try {
+      if (this.isShellAvailable) {
+        return this.dolby.stopMonitor();
+      }
+      return undefined;
+    }
+    catch(error) {
+      throw new Error(error.message);
+    }
+	}
 }

@@ -30,7 +30,7 @@
 			"enabled": "ENABLED",
 			"disabled": "DISABLED",
 			"installed": "INSTALLED",
-			"not-installed": "NOT INSTALLED"
+			"notInstalled": "NOT INSTALLED"
 		},
 		"qAndA": {
 			"title": "Q&A for your machine",
@@ -210,7 +210,7 @@
 					"title": "Power Settings",
 					"alwaysUSB": {
 						"title": "Always on USB",
-						"description": "Charge USB devices through the Always on USB connector on the computer when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged from the USB connector that is yellow-coded or silk-printed the specified icon.",
+						"description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
 						"checkbox": "Enable USB charging from laptop battery when computer is off."
 					},
 					"easyResume": {
@@ -375,43 +375,59 @@
 	},
 	"support": {
 		"common": {
-			"get-support": "Get Support"
+			"getSupport": "Get Support"
 		},
 		"warranty": {
-			"title-in-warranty": "IN WARRANTY",
-			"title-warranty-expired": "WARRANTY EXPIRED",
-			"title-warranty-not-found": "WARRANTY NOT FOUND",
-			"status-in-warranty": "In warranty",
-			"status-warranty-expired": "Expired",
-			"status-warranty-not-found": "Warranty not found",
-			"year-depot-warranty": "Y Depot Warranty",
-			"warranty-details": "Warranty Details:",
-			"start-date": "Start date: ",
-			"end-date": "End date: ",
+			"titleInWarranty": "IN WARRANTY",
+			"titleWarrantyExpired": "WARRANTY EXPIRED",
+			"titleWarrantyNotFound": "WARRANTY NOT FOUND",
+			"statusInWarranty": "In warranty",
+			"statusWarrantyExpired": "Expired",
+			"statusWarrantyNotFound": "Warranty not found",
+			"yearDepotWarranty": "Y Depot Warranty",
+			"warrantyDetails": "Warranty Details:",
+			"startDate": "Start date: ",
+			"endDate": "End date: ",
 			"status": "Status: ",
-			"sub-description-1": "This product has years limited warranty and it entitled to depot repair service. Customers may call their local service center for more information. Dealers may provide carry-in repair for this product.",
-			"sub-description-2": "We were unable to locate warranty details for your device, to have more warranty options, please visit our support website.",
-			"view-warranty-options": "VIEW WARRANTY OPTIONS"
+			"subDescription1": "This product has years limited warranty and it entitled to depot repair service. Customers may call their local service center for more information. Dealers may provide carry-in repair for this product.",
+			"subDescription2": "We were unable to locate warranty details for your device, to have more warranty options, please visit our support website.",
+			"viewWarrantyOptions": "VIEW WARRANTY OPTIONS"
 		},
 		"documentation": {
 			"title": "Documentation",
-			"list-user-guide": "User Guide"
+			"listUserGuide": "User Guide"
 		},
-		"need-help": {
+		"needHelp": {
 			"title": "Need Help?",
 			"description": "CONTACT US TO HELP YOU OUT.",
-			"list-lenovo-community": "Lenovo Community",
-			"list-contact-customer-service": "Contact customer service",
-			"list-contact-us-on-wechat": "Contact us on WeChat"
+			"listLenovoCommunity": "Lenovo Community",
+			"listContactCustomerService": "Contact customer service",
+			"listContactUsOnWechat": "Contact us on WeChat"
 		},
 		"quicklinks": {
 			"title": "Quicklinks",
 			"description": "CONTACT US TO HELP YOU OUT.",
-			"list-e-ticket": "Get support with E-ticket",
-			"list-service-provider": "Find a service provider"
+			"listETicket": "Get support with E-ticket",
+			"listServiceProvider": "Find a service provider"
 		}
 	},
 	"security": {
+		"landing": {
+			"fully": "Fully protected",
+			"fullyDesc": "Congratulations! You are well protected.",
+			"notFully": "Not fully protected",
+			"notFullyDesc": "You are not fully protected, Learn how to better protect yourself now.",
+			"security101": "SECURITY ADVISOR 101",
+			"firewall": "Firewall",
+			"pwdHealth": "Password Health",
+			"vpnSecurity": "VPN Security",
+			"vpnVirtual": "Virtual Private Network",
+			"wifiConnected": "WiFi & Connected Home Security",
+			"connectedHomeSecurity": "Connected Home Security",
+			"fingerprint": "Fingerprint reader",
+			"seeAllNetwork": "See all joined networks",
+			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month."
+		},
 		"antivirus": {
 			"common": {
 				"title": "Anti-Virus",
@@ -420,52 +436,125 @@
 				"recommends": "Lenovo recommends McAfee to protect all your devices with:",
 				"award": "Award winning protection from the latest online threats including ransomware and malware",
 				"dedicated": "Dedicated security that consistently outperforms Defender and other leading AV providers",
-				"device-to-cloud": "Device to cloud technology that won't slow down your PC",
-				"powered-by": "Powered By McAfee",
-				"privacy-terms": "<p>Read more on the <a vtrMetrics metricsItem=\"privacyPolicy\" metricsEvent=\"itemClick\" href=\"https://www.mcafee.com/consumer/en-us/policy/global/legal.html \"target=\"_blank\">Privacy Policy</a> and <a vtrMetrics metricsItem=\"termsOfServices\" metricsEvent=\"itemClick\" href=\"https://www.mcafee.com/consumer/en-us/policy/global/legal.html\" target=\"_blank\">Terms of Services</a></p>",
-				"mcafee-premium": "McAfee premium protection",
-				"protected-by": "You are currently protected by",
-				"better-protected": ".However, you could be better protected with McAfee LifeSafe",
-				"virus-scan": "VIRUS SCAN",
+				"deviceToCloud": "Device to cloud technology that won't slow down your PC",
+				"poweredBy": "Powered By McAfee",
+				"privacyTerms": "<p>Read more on the <a vtrMetrics metricsItem=\"privacyPolicy\" metricsEvent=\"itemClick\" href=\"https://www.mcafee.com/consumer/en-us/policy/global/legal.html \"target=\"_blank\" class=\"learnmore\">Privacy Policy</a> and <a vtrMetrics metricsItem=\"termsOfServices\" metricsEvent=\"itemClick\" href=\"https://www.mcafee.com/consumer/en-us/policy/global/legal.html\" target=\"_blank\" class=\"learnmore\">Terms of Service</a></p>",
+				"mcafeePremium": "McAfee premium protection",
+				"protectedBy": "You are currently protected by",
+				"betterProtected": ".However, you could be better protected with McAfee LifeSafe",
+				"virusScan": "VIRUS SCAN",
 				"firewall": "FIREWALL",
 				"disabled": "DISABLED",
-				"enable-virus-scan": "ENABLE VIRUS SCAN",
-				"enable-firewall": "ENABLE FIREWALL"
+				"enableVirusScan": "ENABLE VIRUS SCAN",
+				"enableFirewall": "ENABLE FIREWALL"
 			},
-			"windows-defender": {
-				"optimally-protected": "Not Optimally Protected",
+			"windowsDefender": {
+				"optimallyProtected": "Not Optimally Protected",
 				"subtitle": "You are currently being protected by Windows Defender.However, you could be better protected with McAfee LiveSafe. Learn more below.",
-				"learn-more": "LEARN MORE ABOUT MCAFEE",
-				"windows-protected": "Windows Defender basic protection",
-				"windows-subtitle": "Windows defender offers basic protection for your device"
+				"learnMore": "LEARN MORE ABOUT MCAFEE",
+				"windowsProtected": "Windows Defender basic protection",
+				"windowsSubtitle": "Windows defender offers basic protection for your device"
 			},
 			"mcafee": {
 				"title": "McAfee LiveSafe",
 				"subtitle": "You are currently protected by McAfee LiveSafe",
 				"valid": "Valid Until",
 				"upgrade": "Upgrade Now",
-				"launch": "LAUNCH MCAFEE",
-				"get-macfee": "GET MCAFEE",
-				"top-benefits": "Top Benefits of McAfee LiveSafe",
-				"award-title": "Award-Winning Antivirus",
-				"award-subtitle": "Blocks viruses, malware, ransomware, spyware, unwanted program and more on your PC.",
-				"encrypted-title": "Encrypted Storage",
-				"encrypted-subtitle": "Keep sensitive files private by storing them on your PC with 128-bit encryption.",
-				"identity-title": "Identity theft protection",
-				"identity-subtitle": "Take charge of protecting your identity from theft and fraud.",
-				"support-title": "FREE Customer Support",
-				"support-subtitle": "Has you covered by phone, by chat, or online for the life of your subscription.",
-				"anti-title": "Anti-Spam",
-				"anti-subtitle": "Blocks dangerous messages before they reach your inbox by removing emails that may include risky links and viruses.",
-				"virus-title": "Virus protection pledge",
-				"virus-subtitle": "Provides you with the confidence that in the event your PC gets a virus, a McAfee expert will remotely access your computer to remove it.",
-				"parental-title": "Parental controls",
-				"parental-subtitle": "Block web sites and search results you don’t want your kids to see. Also lets you set limits for how much time they spend online.",
+				"launch": "LAUNCH McAfee",
+				"getMacfee": "GET McAfee",
+				"topBenefits": "Top Benefits of McAfee LiveSafe",
+				"awardTitle": "Award-Winning Antivirus",
+				"awardSubtitle": "Blocks viruses, malware, ransomware, spyware, unwanted program and more on your PC.",
+				"encryptedTitle": "Encrypted Storage",
+				"encryptedSubtitle": "Keep sensitive files private by storing them on your PC with 128-bit encryption.",
+				"identityTitle": "Identity theft protection",
+				"identitySubtitle": "Take charge of protecting your identity from theft and fraud.",
+				"supportTitle": "FREE Customer Support",
+				"supportSubtitle": "Has you covered by phone, by chat, or online for the life of your subscription.",
+				"antiTitle": "Anti-Spam",
+				"antiSubtitle": "Blocks dangerous messages before they reach your inbox by removing emails that may include risky links and viruses.",
+				"virusTitle": "Virus protection pledge",
+				"virusSubtitle": "Provides you with the confidence that in the event your PC gets a virus, a McAfee expert will remotely access your computer to remove it.",
+				"parentalTitle": "Parental controls",
+				"parentalSubtitle": "Block web sites and search results you don’t want your kids to see. Also lets you set limits for how much time they spend online.",
 				"license": "License Valid until",
 				"trial": "Trial Valid until"
 			},
 			"others": {
-				"others-protection": "offers you basic protection for your device"
+				"othersProtection": "offers you basic protection for your device"
+			}
+		},
+		"wifisecurity": {
+			"header": {
+				"title": "WiFi and Connected Home Security",
+				"back": "BACK"
+			},
+			"container": {
+				"title": "Lenovo Wifi Security",
+				"name": "WIFI SECURITY",
+				"enable": "ENABLED",
+				"disable": "DISABLED",
+				"less": "Less info",
+				"more": "More info",
+				"networkHistory": "Network History",
+				"connect": "Connected last",
+				"showmore": "Show more",
+				"showless": "Show less",
+				"button": "Enable Wifi security",
+				"disableDecribe": "Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones."
+			},
+			"threatlocator": {
+				"describe": "Use the threat detector to determine the safety of the networks around you.",
+				"button": "Check your location"
+			},
+			"locationmodal": {
+				"title": "Enable location services",
+				"describe": "To use Lenovo WiFi Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?",
+				"agree": "AGREE",
+				"cancel": "CANCEL"
+			}
+		},
+		"homeprotection": {
+			"homesecurity": {
+				"title": "Connected Home Security",
+				"titleDescription": "Connected Home Security keeps you safe in three ways:",
+				"homeSecurityAffect1": "Connected Home Security ensures your device is safe, and has not been compromised",
+				"homeSecurityAffect2": "Connected Home Security ensures that the networks you are connected to are safe",
+				"homeSecurityAffect3": "Connected Home Security ensures that other devices connected to your home network are safe.",
+				"describe": "Unsafe devices and networks can introduce malware, lead to identity theft, and leak private and financial information. Enable this feature to reduce the risk of having your device, and your home network exposed to attackers",
+				"subtitle": "Peace of Mind",
+				"subtitleDescribe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more in about Connected Home Security in Tips and Tricks.",
+				"tryNow": "Try Now"
+			},
+			"invitationcode": {
+				"button": "Enter invitation code",
+				"buttonDescribe": "enter invitation code require enable wifi security",
+				"title": "Already have Connected Home Security?",
+				"titleDescribe": "Add this device to your Connected Home",
+				"enterCode": "Enter your connection code",
+				"addHome": "Add Home",
+				"ok": "OK",
+				"cancel": "Cancel",
+				"validateCode": "VALIDATE CODE",
+				"success": "Success",
+				"tryAgain": "Incorrect code,please try again!"
+			},
+			"securityhealth": {
+				"title": "Security Health",
+				"deviceName1": "Apps From Unknown Sources",
+				"deviceName2": "Developer Mode",
+				"deviceName3": "UAC Notification",
+				"deviceName4": "Antivirus Availability",
+				"deviceName5": "Hard Drive Encryption",
+				"deviceName6": "Firewall Availability",
+				"deviceName7": "Not Activated Windows",
+				"deviceName8": "Security Updates Availability",
+				"deviceName9": "Password Protection",
+				"deviceName10": "Automatic Updates Service Availability",
+				"fail": "FAILED",
+				"pass": "PASSED",
+				"peaceOfMind": "Do you want more peace of mind?",
+				"button": "Enable Wifi security"
 			}
 		}
 	},
