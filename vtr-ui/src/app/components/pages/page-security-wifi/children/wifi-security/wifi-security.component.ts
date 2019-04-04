@@ -24,6 +24,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	isWifiSecurityEnabled = true;
 	showAllNetworks = true;
 	showMore = false;
+	hasMore: boolean;
 
 	constructor(
 		public modalService: NgbModal,
@@ -33,23 +34,28 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.isWifiSecurityEnabled = false;
 		if (this.wifiIsShowMore === 'false') {
 			this.isShowMore = false;
 		}
 		this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn, value);
+			if (value !== undefined) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn, value);
+			}
 			if (!value) {
 				const modal = this.modalService.open(ModalWifiSecuriryLocationNoticeComponent,
 					{
 						backdrop: 'static'
 						, windowClass: 'wifi-security-location-modal'
 					});
-				modal.componentInstance.header = 'Enable location services';
-				modal.componentInstance.description = 'To use Lenovo WiFi Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?';
+				modal.componentInstance.header = 'security.wifisecurity.locationmodal.title';
+				modal.componentInstance.description = 'security.wifisecurity.locationmodal.describe';
+				// modal.componentInstance.header = 'Enable location services';
+				// modal.componentInstance.description = 'To use Lenovo WiFi Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?';
 				modal.componentInstance.url = 'ms-settings:privacy-location';
 				this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (para) => {
-					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn, value);
+					if (para !== undefined) {
+						this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn, value);
+					}
 					if (para) {
 						modal.close();
 					}
@@ -61,7 +67,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	enableWifiSecurity(): void {
 		try {
 			if (this.data.wifiSecurity) {
-				if ('isLocationServiceOn' in this.data.wifiSecurity) {
+				if (this.data.wifiSecurity.isLocationServiceOn !== undefined) {
 					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn, this.data.wifiSecurity.isLocationServiceOn);
 					if (this.data.wifiSecurity.isLocationServiceOn) {
 						this.data.wifiSecurity.enableWifiSecurity().then(() => {
@@ -73,8 +79,8 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 								backdrop: 'static'
 								, windowClass: 'wifi-security-location-modal'
 							});
-						modal.componentInstance.header = 'Enable location services';
-						modal.componentInstance.description = 'To use Lenovo WiFi Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?';
+						modal.componentInstance.header = 'security.wifisecurity.locationmodal.title';
+						modal.componentInstance.description = 'security.wifisecurity.locationmodal.describe';
 						modal.componentInstance.url = 'ms-settings:privacy-location';
 						this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
 							if (value) {

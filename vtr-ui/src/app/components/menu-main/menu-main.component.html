@@ -39,7 +39,8 @@
 						</a>
 					</li>
 					<li *ngIf="item.subitems.length>0&&item.id!=='user'"
-						class="nav-item dropdown" [ngClass]="{'active': isParentActive(item)}">
+						class="nav-item dropdown"
+						[ngClass]="{'active': isParentActive(item)}">
 						<a class="nav-link dropdown-toggle {{item.id}}"
 							vtrMetrics
 							[metricsEvent]="item.metricsEvent"
@@ -63,6 +64,7 @@
 							<a *ngFor="let subitem of item.subitems; let ii=index"
 								vtrMetrics
 								routerLinkActive="link-active"
+								[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
 								[metricsEvent]="subitem.metricsEvent"
 								[metricsParent]="subitem.metricsParent"
 								[metricsItem]="subitem.metricsItem"

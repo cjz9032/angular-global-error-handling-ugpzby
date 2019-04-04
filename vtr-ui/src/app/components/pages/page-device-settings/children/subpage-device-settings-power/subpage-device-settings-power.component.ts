@@ -19,7 +19,7 @@ enum PowerMode {
 })
 export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	title = 'Power Settings';
-	machineBrand: string;
+	machineBrand: number;
 	public vantageToolbarStatus = new FeatureStatus(false, true);
 	public alwaysOnUSBStatus = new FeatureStatus(false, true);
 	public usbChargingStatus = new FeatureStatus(false, true);
@@ -31,6 +31,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	usbChargingCheckboxFlag = false;
 	powerMode = PowerMode.Sleep;
 	showEasyResumeSection = false;
+	toggleEasyResumeStatus = false;
 	showAirplanePowerModeSection = false;
 	toggleAirplanePowerModeFlag = false;
 	dYTCRevision = 0;
@@ -243,13 +244,13 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	getAndSetAlwaysOnUSBForBrands(machinename: any) {
 		console.log('inside getAndSetAlwaysOnUSBForBrands');
 		switch (machinename) {
-			case 'thinkpad':
+			case 1:
 				console.log('machine', machinename);
 				this.getAirplaneModeCapabilityThinkPad();
 				this.getAlwaysOnUSBCapabilityThinkPad();
 				this.getEasyResumeCapabilityThinkPad();
 				break;
-			case 'ideapad':
+			case 0:
 				this.getConservationModeStatusIdeaPad();
 				this.getRapidChargeModeStatusIdeaPad();
 				this.getAlwaysOnUSBStatusIdeaPad();
@@ -267,7 +268,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	onToggleOfAlwaysOnUsb(event) {
 		this.toggleAlwaysOnUsbFlag = event.switchValue;
 		switch (this.machineBrand) {
-			case 'thinkpad':
+			case 1:
 				if (this.toggleAlwaysOnUsbFlag && this.usbChargingCheckboxFlag) {
 					this.powerMode = PowerMode.Shutdown;
 				} else if (this.toggleAlwaysOnUsbFlag && !this.usbChargingCheckboxFlag) {
@@ -278,7 +279,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				this.setAlwaysOnUSBStatusThinkPad(this.powerMode);
 				console.log('always on usb: thinkpad');
 				break;
-			case 'ideapad':
+			case 0:
 				this.setAlwaysOnUSBStatusIdeaPad(event);
 				console.log('always on usb: ideapad');
 				break;
@@ -287,22 +288,22 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	}
 	onToggleOfEasyResume(event) {
 		switch (this.machineBrand) {
-			case 'thinkpad':
+			case 1:
 				this.setEasyResumeThinkPad(event);
 				console.log('Easy Resume: ThinkPad');
 				break;
-			case 'ideapad':
+			case 0:
 				console.log('easy resume: ideapad');
 				break;
 		}
 	}
 	onToggleOfAirplanePowerMode(event) {
 		switch (this.machineBrand) {
-			case 'thinkpad':
+			case 1:
 				this.setAirplaneModeThinkPad(event);
 				console.log('Airplane Power mOde Set: ThinkPad', event);
 				break;
-			case 'ideapad':
+			case 0:
 				console.log('Airplane Power mOde Set: ideapad');
 				break;
 		}
@@ -317,11 +318,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			this.powerMode = PowerMode.Disabled;
 		}
 		switch (this.machineBrand) {
-			case 'thinkpad':
+			case 1:
 				console.log('always on usb: thinkpad');
 				this.setAlwaysOnUSBStatusThinkPad(this.powerMode);
 				break;
-			case 'ideapad':
+			case 0:
 				this.setUSBChargingInBatteryModeStatusIdeaNoteBook(this.usbChargingCheckboxFlag);
 				console.log('always on usb: ideapad');
 				break;
@@ -330,11 +331,16 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	private getMachineInfo() {
 		try {
 			if (this.deviceService.isShellAvailable) {
-				this.deviceService.getMachineInfo()
+				this.deviceService.getMachineType()
 					.then((value: any) => {
 						console.log('getMachineInfo.then', value);
-						this.machineBrand = value.subBrand.toLowerCase();
-						console.log('getMachineInfo.then', this.machineBrand.toLowerCase());
+						this.machineBrand = value;
+						// .subBrand.toLowerCase();
+						// 0  means "ideaPad"
+						// 1  means "thinkPad"
+						// 2 means "ideaCenter"
+						// 3 means "thinkCenter"
+						console.log('getMachineInfo.then', this.machineBrand);
 						this.getDYTCRevision();
 						this.getAndSetAlwaysOnUSBForBrands(this.machineBrand);
 					}).catch(error => {
@@ -353,6 +359,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 					.getDYTCRevision()
 					.then((value: number) => {
 						console.log('getDYTCRevision.then', value);
+						//value=5;
 						if (value === 4) {
 							this.showIntelligentCooling = 2;
 							this.getCQLCapability();
@@ -362,13 +369,13 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 
 							if (this.cQLCapability === true && this.tIOCapability === true) {
 								console.log('inside false of CQLCCapability and TIOCCapability');
-								this.toggleIntelligentCooling = false;
-								this.intelligentCooling = false;
-								this.toggleIntelligentCoolingStatus = false;
-							} else {
 								this.toggleIntelligentCooling = true;
+								this.intelligentCooling = true;
 								this.toggleIntelligentCoolingStatus = true;
-								this.intelligentCooling = false;
+							} else {
+								this.toggleIntelligentCooling = false;
+								this.toggleIntelligentCoolingStatus = false;
+								this.intelligentCooling = true;
 								this.getManualModeSetting();
 								// this.manualModeSettingStatus = 'error';
 
@@ -393,15 +400,15 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			case 'cool':
 				console.log('manualModeSettingStatus: cool');
 				this.radioQuietCool = true;
-				this.toggleIntelligentCooling = true;
-				this.toggleIntelligentCoolingStatus = false;
-				this.intelligentCooling = true;
+				//this.toggleIntelligentCooling = true;
+				//this.toggleIntelligentCoolingStatus = false;
+				//this.intelligentCooling = true;
 				break;
 			case 'performance':
 				this.radioPerformance = true;
-				this.toggleIntelligentCooling = true;
-				this.toggleIntelligentCoolingStatus = false;
-				this.intelligentCooling = true;
+				//this.toggleIntelligentCooling = true;
+				//this.toggleIntelligentCoolingStatus = false;
+			//	this.intelligentCooling = true;
 				console.log('manualModeSettingStatus: performance');
 				break;
 			case 'error':
@@ -565,7 +572,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 					.getEasyResumeStatusThinkPad()
 					.then((value: any) => {
 						console.log('getEasyResumeStatusThinkPad.then', value);
-
+						this.toggleEasyResumeStatus = value;
 					})
 					.catch(error => {
 						console.error('getEasyResumeStatusThinkPad', error);
@@ -582,7 +589,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				this.powerService
 					.setEasyResumeThinkPad(event.switchValue)
 					.then((value: boolean) => {
-						console.log('setEasyResumeThinkPad.then', value);
+						console.log('setEasyResumeThinkPad.then', event.switchValue);
 						this.getEasyResumeStatusThinkPad();
 					})
 					.catch(error => {

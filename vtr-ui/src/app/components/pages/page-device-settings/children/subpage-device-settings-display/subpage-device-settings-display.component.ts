@@ -18,7 +18,7 @@ enum defaultTemparature {
 })
 export class SubpageDeviceSettingsDisplayComponent
 	implements OnInit, OnDestroy {
-	title = 'Display & Camera Settings';
+	title = 'device.deviceSettings.displayCamera.title';
 	public dataSource: any;
 	public eyeCareDataSource: EyeCareMode;
 	public cameraDetails1: ICameraSettingsResponse;
@@ -26,19 +26,17 @@ export class SubpageDeviceSettingsDisplayComponent
 	public eyeCareModeStatus = new FeatureStatus(false, true);
 	public cameraPrivacyModeStatus = new FeatureStatus(false, true);
 	public sunsetToSunriseModeStatus = new SunsetToSunriseStatus(true, false, false);
-	headerCaption =
-		'This section enables you to improve your visual experience and configure your camera properties.' +
-		' Explore more features and customize your display experience here.';
-	headerMenuTitle = 'Jump to Settings';
+	headerCaption = 'device.deviceSettings.displayCamera.description';
+	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 
 	headerMenuItems = [
 		{
-			title: 'Display',
+			title: 'device.deviceSettings.displayCamera.jumpTo.display',
 			path: 'display'
 
 		},
 		{
-			title: 'Camera',
+			title: 'device.deviceSettings.displayCamera.jumpTo.camera',
 			path: 'camera'
 		}
 	];
@@ -111,8 +109,10 @@ export class SubpageDeviceSettingsDisplayComponent
 		// this.cd.markForCheck();
 		this.displayService.getDisplayColortemperature().then((response) => {
 			console.log('getDisplayColortemperature.then', response);
-
 			this.eyeCareDataSource = response;
+			if (response.current === 4500 && response.eyecaremode === 4500) {
+				this.eyeCareDataSource.current = response.eyecaremode;
+			}
 			// this.cd.detectChanges();
 			// this.eyecareDatasource.current = response.current;
 			console.log('getDisplayColortemperature.then', this.eyeCareDataSource);
@@ -207,7 +207,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.log('temparature reset data', resetData);
 						this.eyeCareDataSource.current = resetData.colorTemperature;
 						this.eyeCareModeStatus.status = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
-						this.sunsetToSunriseModeStatus.status =  (resetData.autoEyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
+						this.sunsetToSunriseModeStatus.status = (resetData.autoEyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
 						console.log('sunsetToSunriseModeStatus.status from temparature reset data', this.sunsetToSunriseModeStatus.status);
 						// this.getDisplayColorTemperature();
 					});
