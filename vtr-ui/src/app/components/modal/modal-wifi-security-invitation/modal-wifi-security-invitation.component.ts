@@ -12,11 +12,11 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	@Input() emitter: EventEmitter<any>;
 	securityAdvisor: any;
 
-	header = 'Enter your connection code';
-	description = 'Add Home';
+	header = 'security.homeprotection.invitationcode.enterCode';
+	description = 'security.homeprotection.invitationcode.addHome';
 
-	OkText = 'Ok';
-	CancelText = 'Cancel';
+	OkText = 'security.homeprotection.invitationcode.ok';
+	CancelText = 'security.homeprotection.invitationcode.cancel';
 
 	startJoin = false;
 	joinSuccess = false;
@@ -34,14 +34,15 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	}
 
 	KeyPress(e) {
-		// console.log(e.target.value);
 		const value = e.target.value.replace(/[^0-9a-zA-Z]+/ig, '');
 		e.target.value = value;
 	}
 
 	joinGroupBy(code: any) {
+		if (!(code.length === 6)) {
+			return;
+		}
 		code = code.toUpperCase();
-		// console.log(`Code: ${code}`);
 		this.startJoin = true;
 		this.joinSuccess = false;
 		this.joinFailed = false;
@@ -52,10 +53,8 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 					if (result) {
 						this.joinSuccess = true;
 						this.emitter.emit('invitationsuccess');
-						// console.log('Join success!');
 					} else {
 						this.joinFailed = true;
-						// console.log('Join failed!');
 					}
 				});
 		} else {

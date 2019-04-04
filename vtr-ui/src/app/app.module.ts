@@ -129,6 +129,7 @@ import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-b
 import { MetricService } from './services/metric/metric.service';
 import { WidgetMcafeeComponent } from './components/widgets/widget-mcafee/widget-mcafee.component';
 import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
+import { WidgetSecurityStatusComponent } from './components/widgets/widget-security-status/widget-security-status.component';
 
 
 import { MetricsDirective } from './directives/metrics.directive';
@@ -159,6 +160,7 @@ import { SubTransformPipe } from './pipe/security-antivirus/sub-transform.pipe';
 import { DateClassPipe } from './pipe/security-antivirus/date-class.pipe';
 import { ModalAboutComponent } from './components/modal/modal-about/modal-about.component';
 
+import { WifiClassPipe } from './pipe/security-landing/wifi-class.pipe';
 
 
 library.add(fas);
@@ -272,12 +274,14 @@ library.add(fal);
 		TextClassPipe,
 		UiFeatureItemComponent,
 		UiSecurityStatusbarComponent,
+		WidgetSecurityStatusComponent,
 		StatusTransformPipe,
 		MinutesToHourminPipe,
 		WidgetAboutComponent,
 		SubTransformPipe,
 		DateClassPipe,
 		ModalAboutComponent,
+		WifiClassPipe
 	],
 	imports: [
 		BrowserModule,

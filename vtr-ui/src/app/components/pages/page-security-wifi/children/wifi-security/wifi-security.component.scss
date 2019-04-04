@@ -219,17 +219,14 @@
 				display: flex;
 				flex-wrap: wrap;
 				margin-bottom: 0rem;
-
+				
 				li {
 					list-style: none;
 					width: 50%;
-					padding: 2.4rem 3rem;
 					border-right: 0.1rem solid $shade_lighter;
 					border-bottom: 0.1rem solid $shade_lighter;
-					// border: 0.1rem solid $shade_lighter;
-					display: flex;
 					flex-wrap: wrap;
-					height: 8.8rem;
+					align-items: center;
 
 					&:nth-child(even) {
 						border-right: none;
@@ -307,11 +304,11 @@
 			border-bottom-left-radius: 0rem;
 			border-bottom-right-radius: 0rem;
 
-			// &.collapsed {
-			// 	border-bottom-left-radius: 0.8rem;
-			// 	border-bottom-right-radius: 0.8rem;
-			// 	border: 0.1rem solid rgba(0, 0, 0, 0.125);
-			// }
+			&.collapsed {
+				border-bottom-left-radius: 0.8rem;
+				border-bottom-right-radius: 0.8rem;
+				border: 0.1rem solid rgba(0, 0, 0, 0.125);
+			}
 		}
 
 

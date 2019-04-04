@@ -87,4 +87,10 @@ export class DeviceService {
 			});
 		}
 	}
+	getMachineType(): Promise<number> {
+		if (this.sysInfo) {
+			return this.sysInfo.getMachineType();
+		}
+		return undefined;
+	}
 }

@@ -33,7 +33,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		needHelp: [
 			{
 				'icon': ['fal', 'comment-alt'],
-				'title': 'support.need-help.listLenovoCommunity',
+				'title': 'support.needHelp.listLenovoCommunity',
 				'url': 'https://community.lenovo.com',
 				'metricsItem': 'NeedHelp.LenovoCommunityButton',
 				'metricsEvent': 'ItemClick',
@@ -41,7 +41,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			},
 			{
 				'icon': ['fal', 'share-alt'],
-				'title': 'support.need-help.listContactCustomerService',
+				'title': 'support.needHelp.listContactCustomerService',
 				'url': 'https://support.lenovo.com/',
 				'metricsItem': 'NeedHelp.ContactCustomerServiceButton',
 				'metricsEvent': 'ItemClick',
@@ -49,7 +49,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			},
 			{
 				'iconPath': 'assets/images/support/svg_icon_wechat.svg',
-				'title': 'support.need-help.listContactUsOnWechat',
+				'title': 'support.needHelp.listContactUsOnWechat',
 				'hideArrow': true,
 				'image': 'assets/images/wechat-qrcode.png',
 			}

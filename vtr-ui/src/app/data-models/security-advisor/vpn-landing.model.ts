@@ -11,33 +11,33 @@ export class VpnLandingViewModel {
 	constructor(vpnModel: phoenix.Vpn, commonService: CommonService) {
 		const vpnStatus = {
 			status: 2,
-			detail: 'not-installed', // installed or not-installed
-			path: 'internet-protection',
-			title: 'Virtual Private Network',
+			detail: 'common.securityAdvisor.notInstalled', // installed or not-installed
+			path: 'security/internet-protection',
+			title: 'security.landing.vpnVirtual',
 			type: 'security',
 		};
 		const subjectStatus = {
 			status: 2,
-			title: 'VPN Security',
+			title: 'security.landing.vpnSecurity',
 			type: 'security',
 		};
 		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityVPNStatus);
 		if (cacheStatus) {
 			vpnStatus.status = cacheStatus === 'installed' ? 2 : 1;
-			vpnStatus.detail = cacheStatus;
+			vpnStatus.detail = cacheStatus === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
 			subjectStatus.status = cacheStatus === 'installed' ? 2 : 1;
 		}
 		if (vpnModel.status) {
 			vpnStatus.status = (vpnModel.status === 'installed') ? 2 : 1;
-			vpnStatus.detail = vpnModel.status;
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, vpnStatus.detail);
+			vpnStatus.detail = vpnModel.status === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, vpnModel.status);
 			subjectStatus.status = (vpnModel.status === 'installed') ? 2 : 1;
 		}
 
 		vpnModel.on(EventTypes.vpnStatusEvent, (data) => {
 			vpnStatus.status = (data === 'installed') ? 2 : 1;
-			vpnStatus.detail = data;
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, vpnStatus.detail);
+			vpnStatus.detail = data === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, data);
 			subjectStatus.status = (data === 'installed') ? 2 : 1;
 		});
 		this.statusList = new Array(vpnStatus);

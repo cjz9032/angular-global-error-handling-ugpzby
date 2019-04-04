@@ -49,9 +49,9 @@
         opacity: 0.8;
         color: $light;
         font-size: 1.6rem;
-        line-height: 2.8rem;
-        padding-bottom: 2.5rem;
-        border-bottom: 1px solid $screen_light_15;
+
+
+
 
         a {
           list-style: none;
@@ -66,6 +66,10 @@
         }
       }
     }
+  }
+  .subtitle-its{
+	border-top: 1px solid $screen_light_15;
+	padding-top: 2.5rem;
   }
 
   .left-margin {
