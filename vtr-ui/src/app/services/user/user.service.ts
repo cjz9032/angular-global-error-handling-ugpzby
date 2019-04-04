@@ -13,7 +13,7 @@ export class UserService {
 	auth = false;
 	token = '';
 
-	firstName = 'User';
+	public firstName = 'User';
 	lastName = '';
 	initials = '';
 

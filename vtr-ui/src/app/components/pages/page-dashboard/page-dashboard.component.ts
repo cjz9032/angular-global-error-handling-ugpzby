@@ -14,6 +14,7 @@ import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedbac
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
+import { UserService } from '../../../services/user/user.service';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -52,6 +53,7 @@ export class PageDashboardComponent implements OnInit {
 		public deviceService: DeviceService,
 		private cmsService: CMSService,
 		private systemUpdateService: SystemUpdateService,
+		private userService: UserService,
 		vantageShellService: VantageShellService
 	) {
 		config.backdrop = 'static';
@@ -369,9 +371,6 @@ export class PageDashboardComponent implements OnInit {
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			switch (notification.type) {
-				case LenovoIdKey.FirstName:
-					this.firstName = notification.payload;
-					break;
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
