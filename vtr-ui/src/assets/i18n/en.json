@@ -409,6 +409,13 @@
 			"description": "CONTACT US TO HELP YOU OUT.",
 			"listETicket": "Get support with E-ticket",
 			"listServiceProvider": "Find a service provider"
+		},
+		"about": {
+			"version": "Version",
+			"licenseAgreement": "Licenses agreement",
+			"otherSoftwareLicenses": "Other software licenses",
+			"ourWebsite": "Our website",
+			"copyright": "© 2002-2019 Lenovo all rights reserved"
 		}
 	},
 	"security": {
