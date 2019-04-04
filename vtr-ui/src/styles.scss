@@ -10,7 +10,7 @@ reference : https://fonts.google.com/specimen/Rubik
 
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "./styles-bootstrap.scss";
-@import "~bootstrap/dist/css/bootstrap.css";
+// @import "~bootstrap/dist/css/bootstrap.css";
 
 @import "app/app.theme";
 
@@ -24,27 +24,21 @@ html {
 }
 
 @media #{$dpiquery_0} {
-
 }
 
 @media #{$dpiquery_1} {
-
 }
 
 @media #{$dpiquery_2} {
-
 }
 
 @media #{$dpiquery_3} {
-
 }
 
 @media #{$dpiquery_4} {
-
 }
 
 @media #{$dpiquery_5} {
-
 }
 
 @media #{$mediaquery_0} {
@@ -163,6 +157,21 @@ button {
 
 		.vtr-page-right-column {
 			padding: 0 $padding_side 4rem 4rem;
+		}
+
+		// @media #{$mediaquery_500} {
+		@media only screen and (min-width: 500px) and (max-width: 768px) {
+			.navbar {
+				justify-content: left !important;
+			}
+			.vtr-page-left-column {
+				padding: 0 4rem 4rem 4rem;
+			}
+
+			.vtr-page-right-column {
+				padding: 0 4rem 4rem 4rem;
+				margin-top: 4rem;
+			}
 		}
 	}
 
@@ -437,6 +446,71 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		h1 {
 			font-size: 3.1rem;
 			margin-top: 0rem;
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+.About-Modal {
+	.modal-dialog {
+		max-width: 70%;
+		overflow-y: initial !important;
+	}
+
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		padding: 4rem;
+		min-height: calc(100vh - 1rem);
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-weight: normal;
+			color: $main_darker;
+			margin-top: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		h1 {
+			font-size: 3.1rem;
+			margin-top: 0rem;
+			margin-bottom: 3rem;
+		}
+
+		h2 {
+			font-size: 2.6rem;
+		}
+
+		h3 {
+			font-size: 2.2rem;
+		}
+
+		h4 {
+			font-size: 1.8rem;
+		}
+
+		h5 {
+			font-size: 1.4rem;
+		}
+
+		h6 {
+			font-size: 1rem;
+		}
+
+		p,
+		li,
+		ul {
+			font-size: 1.8rem;
+			color: $main_dark;
+			margin-bottom: 1rem;
+		}
+
+		iframe {
+			max-width: 100%;
 			margin-bottom: 3rem;
 		}
 	}

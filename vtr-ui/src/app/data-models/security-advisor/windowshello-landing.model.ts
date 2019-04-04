@@ -2,13 +2,18 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 import * as phoenix from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { TranslateService } from '@ngx-translate/core';
 
 export class WindowsHelloLandingViewModel {
 	statusList: Array<any>;
 	subject: any;
 	type = 'security';
 	imgUrl = '../../../../assets/images/windows-logo.svg';
-	constructor(whModel: phoenix.WindowsHello, commonService: CommonService) {
+	constructor(
+		whModel: phoenix.WindowsHello,
+		commonService: CommonService,
+		translate: TranslateService
+		) {
 		if (whModel) {
 			const whStatus = {
 				status: 2,
@@ -46,6 +51,15 @@ export class WindowsHelloLandingViewModel {
 			whModel.on(EventTypes.helloFacialIdStatusEvent, (data) => {
 				faciaStatus = data === 'active' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
 				subjectStatus.status = (faciaStatus === 'active' || fingerStatus === 'active') ? 0 : 1;
+			});
+			translate.get(whStatus.detail).subscribe((res) => {
+				whStatus.detail = res;
+			});
+			translate.get(whStatus.title).subscribe((res) => {
+				whStatus.title = res;
+			});
+			translate.get(subjectStatus.title).subscribe((res) => {
+				subjectStatus.title = res;
 			});
 			this.statusList = new Array(whStatus);
 			this.subject = subjectStatus;

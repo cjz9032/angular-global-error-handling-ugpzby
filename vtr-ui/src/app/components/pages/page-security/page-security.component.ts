@@ -10,6 +10,7 @@ import { VpnLandingViewModel } from '../../../data-models/security-advisor/vpn-l
 import { WifiSecurityLandingViewModel } from '../../../data-models/security-advisor/wifisecurity-landing.model';
 import { WindowsHelloLandingViewModel } from '../../../data-models/security-advisor/windowshello-landing.model';
 import { CommonService } from 'src/app/services/common/common.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-page-security',
@@ -24,34 +25,8 @@ export class PageSecurityComponent implements OnInit {
 		private mockSecurityAdvisorService: MockSecurityAdvisorService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
-	) {
-		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
-		this.passwordManager = this.securityAdvisor.passwordManager;
-		this.antivirus = this.securityAdvisor.antivirus;
-		this.vpn = this.securityAdvisor.vpn;
-		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
-		if (this.securityAdvisor.windowsHello.fingerPrintStatus || this.securityAdvisor.windowsHello.facialIdStatus) {
-			this.windowsHello = this.securityAdvisor.windowsHello;
-		} else {
-			this.windowsHello = null;
-		}
-		this.homeProtection = this.securityAdvisor.homeProtection;
-
-		this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.passwordManager, this.commonService);
-		this.antivirusLandingViewModel = new AntiVirusLandingViewModel(this.antivirus, this.commonService);
-		this.vpnLandingViewModel = new VpnLandingViewModel(this.vpn, this.commonService);
-		this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.wifiSecurity, this.homeProtection, this.commonService);
-		this.homeProtectionLandingViewModel = new HomeProtectionLandingViewModel();
-		if (commonService.isRS5OrLater()
-			&& (typeof this.windowsHello.facialIdStatus === 'string' || typeof this.windowsHello.fingerPrintStatus === 'string')) {
-			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.windowsHello, this.commonService);
-		}
-		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
-
-		this.fetchCMSArticles();
-		this.getScore();
-		this.getMaliciousWifi();
-	}
+		private translate: TranslateService
+	) {	}
 	title = 'Security';
 
 	passwordManagerLandingViewModel: PasswordManagerLandingViewModel;
@@ -79,9 +54,9 @@ export class PageSecurityComponent implements OnInit {
 		2: 'orange'
 	};
 	itemDetail = {
-		0: 'Good',
-		1: 'Malicious',
-		2: 'Suspicious'
+		0: 'security.landing.good',
+		1: 'security.landing.malicious',
+		2: 'security.landing.suspicious'
 	};
 
 	@HostListener('window: focus')
@@ -93,7 +68,28 @@ export class PageSecurityComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
+		this.passwordManager = this.securityAdvisor.passwordManager;
+		this.antivirus = this.securityAdvisor.antivirus;
+		this.vpn = this.securityAdvisor.vpn;
+		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
+		if (this.securityAdvisor.windowsHello.fingerPrintStatus || this.securityAdvisor.windowsHello.facialIdStatus) {
+			this.windowsHello = this.securityAdvisor.windowsHello;
+		} else {
+			this.windowsHello = null;
+		}
+		this.homeProtection = this.securityAdvisor.homeProtection;
+		this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.passwordManager, this.commonService, this.translate);
+		this.antivirusLandingViewModel = new AntiVirusLandingViewModel(this.antivirus, this.commonService, this.translate);
+		this.vpnLandingViewModel = new VpnLandingViewModel(this.vpn, this.commonService, this.translate);
+		this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.wifiSecurity, this.commonService, this.translate);
+		this.homeProtectionLandingViewModel = new HomeProtectionLandingViewModel(this.translate);
+		this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.windowsHello, this.commonService, this.translate);
+		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
 
+		this.getScore();
+		this.getMaliciousWifi();
+		this.fetchCMSArticles();
 	}
 
 	getWifiStatus(good) {
@@ -116,7 +112,7 @@ export class PageSecurityComponent implements OnInit {
 		return itemDetail;
 	}
 
-	getMaliciousWifi() {
+	private getMaliciousWifi() {
 		const num = 1;
 		let total = 0;
 		const wifiHistoryList = this.wifiHistory;
@@ -130,7 +126,7 @@ export class PageSecurityComponent implements OnInit {
 		this.maliciousWifi = total;
 	}
 
-	getScore() {
+	private getScore() {
 		this.antivirusScore = [
 			this.antivirusLandingViewModel.subject.status,
 			this.passwordManagerLandingViewModel.subject.status,

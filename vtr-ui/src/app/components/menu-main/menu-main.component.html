@@ -3,7 +3,7 @@
 		<a class="navbar-brand pt-0"
 			href="#"><img src="../../../assets/icons/Vantage_L_logo.svg"
 				alt="L" /></a>
-		<div class="navbar-text">
+		<div class="navbar-text clearfix">
 			<div class="app-title">{{configService.appBrand}} <span class="app-name">{{configService.appName}}</span>
 				<span class="app-version">(v{{appVersion}})</span>
 			</div>
@@ -16,11 +16,11 @@
 			aria-controls="navbarSupportedContent"
 			aria-expanded="false"
 			aria-label="Toggle navigation">
-			<fa-icon [icon]="['fas', 'bars']">
-			</fa-icon>
+			<!-- <fa-icon [icon]="['fas', 'bars']">
+			</fa-icon> -->
 		</button>
 
-		<div class="collapse navbar-collapse"
+		<div class="collapse navbar-collapse hidden-xs"
 			id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<ng-container *ngFor="let item of items; let i=index">

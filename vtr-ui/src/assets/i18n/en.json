@@ -409,6 +409,13 @@
 			"description": "CONTACT US TO HELP YOU OUT.",
 			"listETicket": "Get support with E-ticket",
 			"listServiceProvider": "Find a service provider"
+		},
+		"about": {
+			"version": "Version",
+			"licenseAgreement": "Licenses agreement",
+			"otherSoftwareLicenses": "Other software licenses",
+			"ourWebsite": "Our website",
+			"copyright": "© 2002-2019 Lenovo all rights reserved"
 		}
 	},
 	"security": {
@@ -426,7 +433,10 @@
 			"connectedHomeSecurity": "Connected Home Security",
 			"fingerprint": "Fingerprint reader",
 			"seeAllNetwork": "See all joined networks",
-			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month."
+			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
+			"good": "Good",
+			"malicious": "Malicious",
+			"suspicious": "Suspicious"
 		},
 		"antivirus": {
 			"common": {
@@ -451,7 +461,7 @@
 			"windowsDefender": {
 				"optimallyProtected": "Not Optimally Protected",
 				"subtitle": "You are currently being protected by Windows Defender.However, you could be better protected with McAfee LiveSafe. Learn more below.",
-				"learnMore": "LEARN MORE ABOUT MCAFEE",
+				"learnMore": "LEARN MORE ABOUT McAfee",
 				"windowsProtected": "Windows Defender basic protection",
 				"windowsSubtitle": "Windows defender offers basic protection for your device"
 			},

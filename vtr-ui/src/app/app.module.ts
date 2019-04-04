@@ -155,8 +155,11 @@ import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import { UiFeatureItemComponent } from './components/ui/ui-feature-item/ui-feature-item.component';
 import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
 import { MinutesToHourminPipe } from './pipe/minutes-to-hourmin.pipe';
+import { WidgetAboutComponent } from './components/widgets/widget-about/widget-about.component';
 import { SubTransformPipe } from './pipe/security-antivirus/sub-transform.pipe';
 import { DateClassPipe } from './pipe/security-antivirus/date-class.pipe';
+import { ModalAboutComponent } from './components/modal/modal-about/modal-about.component';
+
 import { WifiClassPipe } from './pipe/security-landing/wifi-class.pipe';
 
 
@@ -274,8 +277,10 @@ library.add(fal);
 		WidgetSecurityStatusComponent,
 		StatusTransformPipe,
 		MinutesToHourminPipe,
+		WidgetAboutComponent,
 		SubTransformPipe,
 		DateClassPipe,
+		ModalAboutComponent,
 		WifiClassPipe
 	],
 	imports: [
@@ -319,6 +324,7 @@ library.add(fal);
 		ModalWifiSecurityInvitationComponent,
 		ModalWifiSecuriryLocationNoticeComponent,
 		ModalUpdateChangeLogComponent,
+		ModalAboutComponent,
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
