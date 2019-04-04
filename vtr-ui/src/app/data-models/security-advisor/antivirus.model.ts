@@ -78,9 +78,9 @@ export class AntiVirusViewMode {
 				}];
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList, this.othersAntistatusList);
 			}
-			if (antiVirus.mcafee || antiVirus.others || antiVirus.windowsDefender) {
-				this.antiVirusPage(antiVirus);
-			}
+		}
+		if (antiVirus.mcafee || antiVirus.others || antiVirus.windowsDefender) {
+			this.antiVirusPage(antiVirus);
 		}
 		antiVirus.on(EventTypes.avMcafeeFeaturesEvent, (data) => {
 			this.mcafee = antiVirus.mcafee;
