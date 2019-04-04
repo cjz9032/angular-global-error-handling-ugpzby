@@ -132,7 +132,7 @@ export class SecurityHealthViewModel {
 				this.isLWSEnabled = (cacheWifiSecurityState === 'enabled');
 			}
 			if (homeProtection.devicePosture) {
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, homeProtection);
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, homeProtection.devicePosture);
 				this.creatHomeDevicePosture(homeProtection.devicePosture);
 			} else if (cacheHomeDevicePosture) {
 				this.creatHomeDevicePosture(cacheHomeDevicePosture);
@@ -165,7 +165,7 @@ export class SecurityHealthViewModel {
 			};
 			it.status = item.vulnerable === 'true' ? 1 : 2;
 			it.title = this.mappingDevicePosture(item.config);
-			it.detail = item.vulnerable === 'true' ? 'security.homeprotection.security-health.pass' : 'security.homeprotection.security-health.fail';
+			it.detail = item.vulnerable === 'true' ? 'security.homeprotection.securityhealth.fail' : 'security.homeprotection.securityhealth.pass';
 			this.translate.get(it.detail).subscribe((res) => {
 				it.detail = res;
 			});
@@ -176,10 +176,18 @@ export class SecurityHealthViewModel {
 	mappingDevicePosture(config: string): string {
 		let titles: Array<string>;
 		let title: string;
-		titles = ['security.homeprotection.security-health.device-name1', 'security.homeprotection.security-health.device-name2',
-		'security.homeprotection.security-health.device-name3', 'security.homeprotection.security-health.device-name4', 'security.homeprotection.security-health.device-name5',
-		'security.homeprotection.security-health.device-name6', 'security.homeprotection.security-health.device-name7',
-		'security.homeprotection.security-health.device-name8', 'security.homeprotection.security-health.device-name9', 'security.homeprotection.security-health.device-name10'];
+		titles = [
+			'security.homeprotection.securityhealth.deviceName1',
+			'security.homeprotection.securityhealth.deviceName2',
+			'security.homeprotection.securityhealth.deviceName3',
+			'security.homeprotection.securityhealth.deviceName4',
+			'security.homeprotection.securityhealth.deviceName5',
+			'security.homeprotection.securityhealth.deviceName6',
+			'security.homeprotection.securityhealth.deviceName7',
+			'security.homeprotection.securityhealth.deviceName8',
+			'security.homeprotection.securityhealth.deviceName9',
+			'security.homeprotection.securityhealth.deviceName10'
+		];
 		config = config.toLowerCase();
 		if (config.indexOf('apps') !== -1) {
 			title = titles[0];

@@ -9,6 +9,9 @@ export class MinutesToHourminPipe implements PipeTransform {
     const totalMin = value;
     const hours = Math.trunc(totalMin/60);
     const minutes = Math.trunc(totalMin%60);
+    if(value == undefined) {
+      return undefined;
+    }
     if (Number.isNaN(minutes)) {
       return "0 minutes";
     }
