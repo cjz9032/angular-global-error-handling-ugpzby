@@ -360,7 +360,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 					.getDYTCRevision()
 					.then((value: number) => {
 						console.log('getDYTCRevision.then', value);
-						value=5;
+						//value=5;
 						if (value === 4) {
 							this.showIntelligentCooling = 2;
 							this.getCQLCapability();

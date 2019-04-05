@@ -134,7 +134,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						// this.setEyeCareModeTemparature(defaultTemparature.defaultValue)
 						// this.eyecareDatasource.current = defaultTemparature.defaultValue;
 						this.getEyeCareModeStatus();
-						this.eyeCareDataSource.current = value.colorTemperature;
+					//	this.eyeCareDataSource.current = value.colorTemperature;
 					}).catch(error => {
 						console.error('onEyeCareModeStatusToggle', error);
 					});
@@ -301,7 +301,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		console.log('setCameraAutoExposure.then', $event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService
-				.setCameraAutoExposure($event.value);
+				.setCameraAutoExposure($event.switchValue);
 		}
 	}
 	public onCameraExposureValueChange($event: ChangeContext) {
@@ -315,7 +315,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		console.log('setCameraAutoExposure.then', $event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService
-				.setCameraAutoFocus($event.value);
+				.setCameraAutoFocus($event.switchValue);
 		}
 	}
 
