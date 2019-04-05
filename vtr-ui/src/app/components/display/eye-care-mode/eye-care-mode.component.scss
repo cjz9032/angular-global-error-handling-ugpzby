@@ -31,7 +31,8 @@
   }
 
   .custom-control-label {
-    padding-left: 0.5rem;
+	padding-left: 0.5rem;
+	line-height: 1.1;
 
     // rounded square-box background
     &::before {
