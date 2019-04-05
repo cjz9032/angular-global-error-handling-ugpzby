@@ -54,19 +54,19 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	value = 1;
 	headerMenuItems = [
 		{
-			title: 'Intelligent Cooling',
+			title: 'device.deviceSettings.power.jumpTo.shortcuts.intelligentCooling.title',
 			path: 'cooling'
 		},
 		{
-			title: 'Battery',
+			title: 'device.deviceSettings.power.jumpTo.shortcuts.battery.title',
 			path: 'battery',
 		},
 		{
-			title: 'Power',
+			title: 'device.deviceSettings.power.jumpTo.shortcuts.power.title',
 			path: 'power'
 		},
 		{
-			title: 'Other',
+			title: 'device.deviceSettings.power.jumpTo.shortcuts.Other.title',
 			path: 'other'
 		}
 	];
