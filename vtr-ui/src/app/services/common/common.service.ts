@@ -3,6 +3,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { Observable } from 'rxjs/internal/Observable';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -116,5 +117,28 @@ export class CommonService {
 			}
 		});
 		return Number(version);
+	}
+
+	/**
+	 * Stores given value in session storage in json string format
+	 * @param key key for session storage. Must define it in SessionStorageKey enum
+	 * @param value value to store in session storage
+	 */
+	public setSessionStorageValue(key: SessionStorageKey, value: any) {
+		window.sessionStorage.setItem(key, JSON.stringify(value));
+		// notify component that session storage value updated.
+		this.sendNotification(key, value);
+	}
+
+	/**
+	 * Returns parsed json object if key is found else returns undefined
+	 * @param key key use to store value in session storage
+	 */
+	public getSessionStorageValue(key: SessionStorageKey): any {
+		const value = window.sessionStorage.getItem(key);
+		if (value) {
+			return JSON.parse(value);
+		}
+		return undefined;
 	}
 }
