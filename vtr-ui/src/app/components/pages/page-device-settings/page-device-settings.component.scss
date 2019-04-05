@@ -10,6 +10,9 @@
 
 .vtr-page-right-column {
 	background-color: $shade_extralight;
+	.battery-unavailable {
+		height: 8rem;
+	}
 }
 
 /*-----search-box------*/
