@@ -231,7 +231,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	}
 	ngOnInit() {
 		this.getMachineInfo();
-		this.startMonitor();
+	//	this.startMonitor();
 		this.getVantageToolBarStatus();
 	}
 	openContextModal(template: TemplateRef<any>) {
