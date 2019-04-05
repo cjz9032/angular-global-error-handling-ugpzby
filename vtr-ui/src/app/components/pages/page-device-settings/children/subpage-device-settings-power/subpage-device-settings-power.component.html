@@ -30,7 +30,7 @@
 	</div> -->
 	<div class="row">
 		<div class="col">
-			<vtr-ui-header-subpage [items]="'device.deviceSettings.power.jumpTo.shortcuts' | translate"
+			<vtr-ui-header-subpage [items]="headerMenuItems"
 				[title]="'device.deviceSettings.power.title' | translate"
 				[caption]="'device.deviceSettings.power.description' | translate"
 				[menuTitle]="'device.deviceSettings.power.jumpTo.title' | translate"></vtr-ui-header-subpage>
@@ -187,7 +187,7 @@
 			id="cooling">
 			<div class="col-10 mx-auto ">
 				<vtr-container-collapsible
-					cardTitle="'device.deviceSettings.power.powerSmartSettings.title' | translate | lowercase"
+					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate | lowercase"
 					[isCollapsed]="false"
 					[allowCollapse]="false"
 					[theme]="'blue'">
@@ -457,6 +457,7 @@
 											(ngModelChange)='onUsbChargingStatusChange()'
 											class="custom-control-input"
 											checked="" />
+											<!-- [disabled]="!toggleAlwaysOnUsbFlag" -->
 										<label class="custom-control-label "
 											for="cb-always-on-usb">
 											{{ 'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}
