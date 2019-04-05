@@ -49,17 +49,11 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		this.batteryIndicators.voltageError = response[0].isVoltageError;
 		this.batteryIndicators.convertMin(response[0].remainingTime);
 		for(let i=0; i<response.length ;i++) {
-			if (response[i].remainingTime == 0
-				&& this.dataSource != undefined
-				&& this.dataSource[0].remainingTime == 0) {
-				// Don't update UI if remainingTime is 0.
-				//return; commented, because it's restricting UI to update. Need to check with API owner
-			}
 			response[i].remainingCapacity = Math.round(response[i].remainingCapacity * 100) / 100;
 			response[i].fullChargeCapacity = Math.round(response[i].fullChargeCapacity * 100) / 100;
 			response[i].voltage = Math.round(response[i].voltage * 100) / 100;
 			response[i].wattage = Math.round(response[i].wattage * 100) / 100;
-			response[i].heading = headings[i];
+			response[i].heading = response.length > 1 ? headings[i] : "";
 			let id = response[i].chargeStatus
 			response[i].chargeStatusString = BatteryChargeStatus.getBatteryChargeStatus(id);
 			if(response[i].chargeStatus == BatteryChargeStatus.NO_ACTIVITY.id

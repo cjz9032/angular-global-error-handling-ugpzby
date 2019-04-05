@@ -41,6 +41,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			metricsParent: 'navbar',
 			metricsItem: 'link.dashboard',
 			routerLinkActiveOptions: { exact: true },
+			forArm: true,
 			subitems: []
 		}, {
 			id: 'device',
@@ -50,6 +51,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.device',
+			forArm: false,
 			subitems: [{
 				id: 'device',
 				label: 'My device',
@@ -89,6 +91,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.security',
+			forArm: false,
 			subitems: [{
 				id: 'security',
 				label: 'My Security',
@@ -159,7 +162,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			metricsParent: 'navbar',
 			metricsItem: 'link.support',
 			routerLinkActiveOptions: { exact: true },
-			forArm: true,
+			forArm: false,
 			subitems: []
 		}, {
 			id: 'user',
@@ -170,6 +173,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			metricsParent: 'NavigationLenovoAccount.Submenu',
 			metricsItem: 'link.user',
 			routerLinkActiveOptions: { exact: true },
+			forArm: true,
 			subitems: []
 		}
 	];
