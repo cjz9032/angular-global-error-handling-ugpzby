@@ -85,7 +85,17 @@ export class AppComponent implements OnInit {
 
 		// When startup try to login Lenovo ID silently (in background),
 		//  if user has already logged in before, this call will login automatically and update UI
-		this.userService.loginSilently();
+		this.deviceService.getMachineInfo().then((machineInfo) => {
+			if (machineInfo.country != 'cn') {
+				self.userService.loginSilently();
+			} else {
+				self.devService.writeLog('Do not login silently for China');
+			}
+		}, error => {
+			self.devService.writeLog('getMachineInfo() failed ' + error);
+			self.userService.loginSilently();
+		});
+		
 
 		/********* add this for navigation within a page **************/
 		this.router.events.subscribe(s => {

@@ -12,14 +12,14 @@ export class WidgetWarrantyComponent implements OnInit {
 
 	status = {
 		title: [
-			'support.warranty.title-in-warranty',
-			'support.warranty.title-warranty-expired',
-			'support.warranty.title-warranty-not-found'
+			'support.warranty.titleInWarranty',
+			'support.warranty.titleWarrantyExpired',
+			'support.warranty.titleWarrantyNotFound'
 		],
 		detail: [
-			'support.warranty.status-in-warranty',
-			'support.warranty.status-warranty-expired',
-			'support.warranty.status-warranty-not-found'
+			'support.warranty.statusInWarranty',
+			'support.warranty.statusWarrantyExpired',
+			'support.warranty.statusWarrantyNotFound'
 		]
 	};
 

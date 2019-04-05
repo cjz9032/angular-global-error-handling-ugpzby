@@ -111,5 +111,20 @@
 				left: -.6rem;
 			}
 		}
+		.switch-on-off{
+			text-align: center;
+			font-size: 1.6rem;
+			font-weight: $weight_medium;
+			padding-top: 0.5rem;
+			.off-label{
+				color: $shade_darker;
+			}
+			.on-label{
+				color: $light;
+			}
+		}
 	}
+}
+.disable-state {
+	opacity: 0.65;
 }

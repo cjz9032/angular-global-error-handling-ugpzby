@@ -7,9 +7,14 @@
 		// margin-left: 3rem;
 		padding: 0 2rem;
 
+		.btn-link {
+			font-size: 1.8rem;
+			font-weight: $weight_medium;
+		}
+
 		.installation-list {
 			margin-top: 2rem;
-			margin-bottom: 3rem;
+			// margin-bottom: 3rem;
 			list-style: none;
 			padding: 0;
 			background-color: $shade_extralight;
