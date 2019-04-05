@@ -133,25 +133,21 @@
 				"description": "This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.",
 				"jumpTo": {
 					"title": "JUMP TO SETTINGS",
-					"shortcuts":[
+					"shortcuts": {
+						"intelligentCooling":
 						{
-							"title": "Intelligent Cooling",
-							"path": "cooling"
+							"title": "Intelligent Cooling"
 						},
-						{
-							"title": "Battery",
-							"path": "battery"
+						"battery":{
+							"title": "Battery"
 						},
-						{
-							"title": "Power",
-							"path": "power"
+						"power":{
+							"title": "Power"
 						},
-						{
-							"title": "Other",
-							"path": "other"
+						"Other":{
+							"title": "Other"
 						}
-					]
-
+					}
 				},
 				"powerSmartSettings": {
 					"title": "Power Smart Settings",
@@ -287,17 +283,14 @@
 				"description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
 				"jumpTo": {
 					"title": "JUMP TO SETTINGS",
-					"shortcuts":[
-						{
-							"title": "Display",
-							"path": "display"
+					"shortcuts": {
+						"display":{
+							"title": "Display"
 						},
-						{
-							"title": "Camera",
-							"path": "camera"
+						"camera":{
+							"title": "Camera"
 						}
-					]
-
+					}
 				},
 				"display": {
 					"title": "Display",

@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col">
 			<vtr-ui-header-subpage [items]="headerMenuItems"
-				[title]="'device.deviceSettings.displayCamera.title' | translate"
+				[title]="title | translate"
 				[caption]="'device.deviceSettings.displayCamera.subtitle' | translate"
 				[menuTitle]="'device.deviceSettings.displayCamera.jumpTo.title' | translate"></vtr-ui-header-subpage>
 		</div>
@@ -76,8 +76,8 @@
 				[isCollapsed]="false"
 				[allowCollapse]="true"
 				[theme]="'white'">
-				<!-- <div class="alert alert-secondary no-camera-access"
-					*ngIf="!dataSource.hasAccessToCamera">
+				<div class="alert alert-secondary no-camera-access"
+					*ngIf="!cameraPrivacyModeStatus.available">
 					<div>
 						<strong>Note:</strong> Lenovo Vantage does not have
 						permissions to access your camera. Please turn on access
@@ -88,8 +88,8 @@
 						(click)="onPrivacySettingClick($event)">
 						Go to windows privacy settings
 					</button>
-				</div> -->
-				<ul class="list-group list-group-flush">
+				</div>
+				<ul class="list-group list-group-flush" *ngIf="cameraPrivacyModeStatus.available">
 					<li class="pt-3">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
 							componentName="Camera Privacy Mode"

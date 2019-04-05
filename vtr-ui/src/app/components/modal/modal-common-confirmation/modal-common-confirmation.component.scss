@@ -1,33 +1,87 @@
 @import "../../../app.theme.scss";
+
 .common-confirmation-modal {
 	border-radius: $border_radius;
-	background: $gradient_main;
+	background: $light;
 	background-size: cover;
-	color: $light;
+	color: $main_dark;
 	box-shadow: $drop_shadow;
-	padding: 3rem 4rem;
+	padding: 4rem;
+	position: relative;
+
 	h1 {
-		font-size: 3.5rem;
-		font-weight: 300;
-		color: $light;
+		font-size: 2.6rem;
+		font-weight: $weight_regular;
+		color: $main_dark;
+		letter-spacing: 0;
 	}
-	p {
-		font-size: 1.4rem;
-		color: $light;
+
+	.description {
+		font-size: 1.5rem;
+		font-weight: $weight_light;
+		color: $main_dark;
+		letter-spacing: 0;
+		padding-bottom: 1.5rem;
+		margin-bottom: 2rem;
+		border-bottom: 0.1rem solid $main_lightest;
 	}
-	ul {
-		li {
-			text-decoration: none;
-			font-size: 1.4rem;
-			color: $light;
+
+	.close-btn {
+		position: absolute;
+		right: 1.8rem;
+		top: 1.8rem;
+		width: 2.2rem;
+		height: 2.2rem;
+		cursor: pointer;
+
+		&:hover {
+			opacity: 0.7;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
 		}
 	}
+
+	.packages {
+		max-height: 10rem;
+		padding-bottom: 1.5rem;
+		margin-bottom: 2rem;
+		border-bottom: 0.1rem solid $main_lightest;
+
+		//overflow-y: scroll;
+		ul {
+			list-style: none;
+			padding: 0;
+
+			li {
+				text-decoration: none;
+				font-size: 1.4rem;
+				font-weight: $weight_medium;
+			}
+		}
+	}
+
 	.modal-button {
-		background: $light;
+		background: $gradient_main;
 		border-radius: 5rem;
-		padding: 1rem 4rem;
+		padding: 0 3rem;
+		height: 5rem;
 		font-size: 1.5rem;
+		color: $light;
+		font-weight: $weight_medium;
+	}
+
+	.modal-button-cancel {
+		cursor: pointer;
+		background: none;
 		color: $main;
-		font-weight: 500;
+		font-size: 1.3rem;
+		font-weight: $weight_medium;
+		padding: 1.5rem 0 0.5rem;
+		height: 3.8rem;
+		border-radius: 0;
+		border-bottom: 0.2rem solid $main;
 	}
 }
