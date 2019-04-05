@@ -24,7 +24,7 @@
 			id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<ng-container *ngFor="let item of items; let i=index">
-					<li *ngIf="item.subitems.length===0&&item.id!=='user'"
+					<li *ngIf="item.subitems.length===0&&item.id!=='user'&&showItem(item)"
 						class="nav-item">
 						<a class="nav-link {{item.id}}"
 							vtrMetrics
@@ -38,7 +38,7 @@
 							{{item.label}}
 						</a>
 					</li>
-					<li *ngIf="item.subitems.length>0&&item.id!=='user'"
+					<li *ngIf="item.subitems.length>0&&item.id!=='user'&&showItem(item)"
 						class="nav-item dropdown"
 						[ngClass]="{'active': isParentActive(item)}">
 						<a class="nav-link dropdown-toggle {{item.id}}"
@@ -72,7 +72,7 @@
 								routerLink="/{{item.path}}/{{subitem.path}}">{{subitem.label}}</a>
 						</div>
 					</li>
-					<li *ngIf="item.id==='user'"
+					<li *ngIf="item.id==='user' && country != 'cn' && showItem(item)"
 						class="nav-item dropdown">
 						<!-- <a class="nav-link dropdown-toggle {{item.id}}"
 							routerLink="/{{item.path}}"
@@ -104,17 +104,17 @@
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
-								[metricsItem]="item.metricsItem"
+								metricsItem="LenovoIdSignInButton"
 								class="dropdown-item link"
-								href="#"
+								href="javascript:void(0)"
 								(click)="OpenLenovoId()">Login</a>
 							<a *ngIf="userService.auth"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
-								[metricsItem]="item.metricsItem"
+								metricsItem="LenovoIdSignOutButton"
 								class="dropdown-item link"
-								href="#"
+								href="javascript:void(0)"
 								(click)="onLogout()">Logout</a>
 						</div>
 					</li>

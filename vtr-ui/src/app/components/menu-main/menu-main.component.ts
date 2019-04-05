@@ -25,6 +25,7 @@ import { WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
 export class MenuMainComponent implements OnInit, OnDestroy {
 
 	public deviceModel: string;
+	public country: string;
 	commonMenuSubscription: Subscription;
 	public appVersion: string = environment.appVersion;
 	constantDevice = 'device';
@@ -40,6 +41,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			metricsParent: 'navbar',
 			metricsItem: 'link.dashboard',
 			routerLinkActiveOptions: { exact: true },
+			forArm: true,
 			subitems: []
 		}, {
 			id: 'device',
@@ -49,6 +51,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.device',
+			forArm: false,
 			subitems: [{
 				id: 'device',
 				label: 'My device',
@@ -88,6 +91,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.security',
+			forArm: false,
 			subitems: [{
 				id: 'security',
 				label: 'My Security',
@@ -158,17 +162,18 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			metricsParent: 'navbar',
 			metricsItem: 'link.support',
 			routerLinkActiveOptions: { exact: true },
-			forArm: true,
+			forArm: false,
 			subitems: []
 		}, {
 			id: 'user',
 			label: 'User',
 			path: 'user',
 			icon: 'user',
-			metricsEvent: 'itemClick',
-			metricsParent: 'navbar',
+			metricsEvent: 'ItemClick',
+			metricsParent: 'NavigationLenovoAccount.Submenu',
 			metricsItem: 'link.user',
 			routerLinkActiveOptions: { exact: true },
+			forArm: true,
 			subitems: []
 		}
 	];
@@ -252,8 +257,8 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			switch (notification.type) {
 				case LocalStorageKey.MachineInfo:
 					this.deviceModel = notification.payload.family;
+					this.country = notification.payload.country;
 					break;
-
 				default:
 					break;
 			}
