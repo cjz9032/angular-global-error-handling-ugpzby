@@ -18,7 +18,7 @@ enum defaultTemparature {
 })
 export class SubpageDeviceSettingsDisplayComponent
 	implements OnInit, OnDestroy {
-	title = 'Display & Camera Settings';
+	title = 'device.deviceSettings.displayCamera.title';
 	public dataSource: any;
 	public eyeCareDataSource: EyeCareMode;
 	public cameraDetails1: ICameraSettingsResponse;
@@ -26,25 +26,23 @@ export class SubpageDeviceSettingsDisplayComponent
 	public eyeCareModeStatus = new FeatureStatus(false, true);
 	public cameraPrivacyModeStatus = new FeatureStatus(false, true);
 	public sunsetToSunriseModeStatus = new SunsetToSunriseStatus(true, false, false);
-	headerCaption =
-		'This section enables you to improve your visual experience and configure your camera properties.' +
-		' Explore more features and customize your display experience here.';
-	headerMenuTitle = 'Jump to Settings';
+	headerCaption = 'device.deviceSettings.displayCamera.description';
+	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 
 	headerMenuItems = [
 		{
-			title: 'Display',
+			title: 'device.deviceSettings.displayCamera.jumpTo.display',
 			path: 'display'
 
 		},
 		{
-			title: 'Camera',
+			title: 'device.deviceSettings.displayCamera.jumpTo.camera',
 			path: 'camera'
 		}
 	];
 
 	constructor(public baseCameraDetail: BaseCameraDetail,
-		//public cd: ChangeDetectorRef,
+		// public cd: ChangeDetectorRef,
 		public displayService: DisplayService) {
 		this.dataSource = new CameraDetail();
 		this.eyeCareDataSource = new EyeCareMode();
@@ -68,7 +66,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				console.log(error);
 			}
 		);
-		//this.statusChangedLocationPermission();
+		this.statusChangedLocationPermission();
 	}
 
 	ngOnDestroy() {
@@ -111,8 +109,10 @@ export class SubpageDeviceSettingsDisplayComponent
 		// this.cd.markForCheck();
 		this.displayService.getDisplayColortemperature().then((response) => {
 			console.log('getDisplayColortemperature.then', response);
-
 			this.eyeCareDataSource = response;
+			if (response.current === 4500 && response.eyecaremode === 4500) {
+				this.eyeCareDataSource.current = response.eyecaremode;
+			}
 			// this.cd.detectChanges();
 			// this.eyecareDatasource.current = response.current;
 			console.log('getDisplayColortemperature.then', this.eyeCareDataSource);
@@ -140,8 +140,8 @@ export class SubpageDeviceSettingsDisplayComponent
 		try {
 			if (this.displayService.isShellAvailable) {
 				this.displayService.setEyeCareModeState(value)
-					.then((value: boolean) => {
-						console.log('setEyeCareModeState.then', value);
+					.then((result: boolean) => {
+						console.log('setEyeCareModeState.then', result);
 
 					}).catch(error => {
 						console.error('setEyeCareModeState', error);
@@ -205,11 +205,11 @@ export class SubpageDeviceSettingsDisplayComponent
 				this.displayService
 					.resetEyeCareMode().then((resetData: any) => {
 						console.log('temparature reset data', resetData);
-						//this.eyeCareDataSource.current = resetData.colorTemperature;
-						//this.eyeCareModeStatus.status = resetData.eyecaremodeState;
-						//this.sunsetToSunriseModeStatus.status = resetData.autoEyecaremodeState;
+						this.eyeCareDataSource.current = resetData.colorTemperature;
+						this.eyeCareModeStatus.status = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
+						this.sunsetToSunriseModeStatus.status = (resetData.autoEyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
 						console.log('sunsetToSunriseModeStatus.status from temparature reset data', this.sunsetToSunriseModeStatus.status);
-						//	this.getDisplayColorTemperature();
+						// this.getDisplayColorTemperature();
 					});
 			}
 		} catch (error) {
@@ -289,7 +289,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				.setCameraContrst($event.value);
 		}
 	}
-	public onCameraAutoExposureToggle($event: ChangeContext) {
+	public onCameraAutoExposureToggle($event: any) {
 		console.log('setCameraAutoExposure.then', $event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService
@@ -307,7 +307,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		console.log('setCameraAutoExposure.then', $event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService
-				.setCameraAutoExposure($event.value);
+				.setCameraAutoFocus($event.value);
 		}
 	}
 
@@ -321,7 +321,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 	// End Camera Privacy
 	public getLocationPermissionStatus(value: any) {
-		console.log('called from loaction service ui', value);
+		console.log('called from loaction service ui', JSON.stringify(value));
 	}
 
 	public statusChangedLocationPermission() {

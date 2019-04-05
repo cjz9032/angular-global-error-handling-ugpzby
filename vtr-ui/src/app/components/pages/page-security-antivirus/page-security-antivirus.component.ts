@@ -1,8 +1,8 @@
-import { Component, OnInit, HostListener, Input } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { MockService } from 'src/app/services/mock/mock.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { AntiVirusViewMode } from 'src/app/data-models/security-advisor/antivirus.model';
-import { Antivirus } from '@lenovo/tan-client-bridge';
+import { Antivirus, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -14,20 +14,17 @@ import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/mo
 	styleUrls: ['./page-security-antivirus.component.scss']
 })
 export class PageSecurityAntivirusComponent implements OnInit {
-	@Input() public productName = 'Windows Defender';
 
-	title = 'Anti-Virus';
-	subTitle = `You are currently being protected by ${this.productName}.
-	However, you could be better protected with McAfee LiveSafe. Learn more below.`;
-	avType = 2;
-	back = 'BACK';
+	title = 'security.antivirus.common.title' ;
+	back = 'security.antivirus.common.back';
 	backarrow = '< ';
 	antiVirus: Antivirus;
 	viewMode: any;
 	urlPrivacyPolicy = 'https://www.mcafee.com/consumer/en-us/policy/global/legal.html';
 	urlTermsOfService = 'https://www.mcafee.com/consumer/en-us/policy/global/legal.html';
 	urlGetMcAfee = '25CAD7D97D59483381EA39A87685A3C7';
-	articles = [];
+	cardContentPositionA: any;
+	securityAdvisor: SecurityAdvisor;
 
 	@HostListener('window:focus')
 	onFocus(): void {
@@ -39,6 +36,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		public cmsService: CMSService,
 		commonService: CommonService,
 		public modalService: NgbModal) {
+		this.securityAdvisor = this.VantageShell.getSecurityAdvisor();
 		this.antiVirus = this.VantageShell.getSecurityAdvisor().antivirus;
 		this.viewMode = new AntiVirusViewMode(this.antiVirus, commonService);
 		this.fetchCMSArticles();
@@ -59,9 +57,11 @@ export class PageSecurityAntivirusComponent implements OnInit {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSArticles(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				this.articles = response;
+				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+
+				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
 			},
 			error => {
 				console.log('fetchCMSContent error', error);
@@ -79,8 +79,3 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		articleDetailModal.componentInstance.articleId = this.urlGetMcAfee;
 	}
 }
-
-
-
-
-

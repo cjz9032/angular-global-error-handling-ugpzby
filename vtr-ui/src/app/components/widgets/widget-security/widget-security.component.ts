@@ -9,38 +9,30 @@ import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/mo
 })
 export class WidgetSecurityComponent implements OnInit {
 	@Input() percentValue: number = this.percentValue || 100;
-	titleString = {
-		fully: {
-			title: 'Fully protected',
-			subTitle: 'Congratulations! You are well protected.',
-			buttonText: 'SECURITY ADVISOR 101'
-		},
-		notFully: {
-			title: 'Not fully protected',
-			subTitle: 'You are not fully protected, Learn how to better protect yourself now.',
-			buttonText: 'SECURITY ADVISOR 101'
-		}
+	security = {
+		title: [
+			'security.landing.fully',
+			'security.landing.notFully',
+		],
+		subTitle: [
+			'security.landing.fullyDesc',
+			'security.landing.notFullyDesc',
+		],
+		subTitle2: [
+			'',
+			''
+		]
 	};
-	titleObj = {
-		title: '',
-		subTitle1: '',
-		subTitle2: '',
-		buttonText: '',
-	};
-	// titleObj: LandingTitle;
+	titleStatus: number;
 	constructor(
 		public modalService: NgbModal
 	) { }
 
 	ngOnInit() {
 		if (this.percentValue === 100) {
-			this.titleObj.title = this.titleString.fully.title;
-			this.titleObj.subTitle1 = this.titleString.fully.subTitle;
-			this.titleObj.buttonText = this.titleString.fully.buttonText;
+			this.titleStatus = 0;
 		} else {
-			this.titleObj.title = this.titleString.notFully.title;
-			this.titleObj.subTitle1 = this.titleString.notFully.subTitle;
-			this.titleObj.buttonText = this.titleString.notFully.buttonText;
+			this.titleStatus = 1;
 		}
 	}
 

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, EventEmitter } from '@angular/core';
-import { WifiHomeViewModel } from '../../page-security-wifi.component';
+import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
 import { WinRT } from '@lenovo/tan-client-bridge';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalWifiSecurityInvitationComponent } from '../../../../modal/modal-wifi-security-invitation/modal-wifi-security-invitation.component';
@@ -17,7 +17,7 @@ export class ConnectedHomeComponent implements OnInit {
 
 
 	constructor(
-		private modalService: NgbModal,
+		private modalService: NgbModal
 	) { }
 
 	ngOnInit() {

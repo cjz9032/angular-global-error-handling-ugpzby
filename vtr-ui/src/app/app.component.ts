@@ -28,12 +28,11 @@ export class AppComponent implements OnInit {
 		private modalService: NgbModal,
 		public deviceService: DeviceService,
 		private commonService: CommonService,
-		translate: TranslateService,
+		private translate: TranslateService,
 		private userService: UserService
 	) {
 		translate.addLangs(['en', 'zh-Hans']);
-		translate.setDefaultLang('en');
-
+		this.translate.setDefaultLang('en');
 		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
 
 		if (tutorial === undefined && navigator.onLine) {
@@ -69,7 +68,7 @@ export class AppComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.devService.writeLog('APP INIT', window.location.href);
+		this.devService.writeLog('APP INIT', window.location.href, window.devicePixelRatio);
 
 		// use when deviceService.isArm is set to true
 		// todo: enable below line when integrating ARM feature
@@ -86,7 +85,17 @@ export class AppComponent implements OnInit {
 
 		// When startup try to login Lenovo ID silently (in background),
 		//  if user has already logged in before, this call will login automatically and update UI
-		this.userService.loginSilently();
+		this.deviceService.getMachineInfo().then((machineInfo) => {
+			if (machineInfo.country != 'cn') {
+				self.userService.loginSilently();
+			} else {
+				self.devService.writeLog('Do not login silently for China');
+			}
+		}, error => {
+			self.devService.writeLog('getMachineInfo() failed ' + error);
+			self.userService.loginSilently();
+		});
+		
 
 		/********* add this for navigation within a page **************/
 		this.router.events.subscribe(s => {
@@ -109,6 +118,9 @@ export class AppComponent implements OnInit {
 			this.deviceService.getMachineInfo()
 				.then((value: any) => {
 					console.log('getMachineInfo.then', value);
+					if (value.locale.toLowerCase() === 'zh-hans') {
+						this.translate.setDefaultLang('zh-Hans');
+					}
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
 				}).catch(error => {
 					console.error('getMachineInfo', error);

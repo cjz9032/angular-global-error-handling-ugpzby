@@ -84,6 +84,10 @@
 	padding: 4rem !important;
 }
 
+.text-break {
+	word-break: break-word !important;
+}
+
 @media #{$mediaquery_4} {
 	.nmx-40 {
 		margin-left: -3.5rem !important;
@@ -182,8 +186,8 @@
 //Added new media query for max-width:800 where vtr-page-right-column margin-left , margin-top css are added to fix VAN-1049 issue.
 @media #{$mediaquery_8} {
 	.vtr-page-right-column {
-		margin-left: 4.2rem;
-		margin-top: 4rem;
+		// margin-left: 4.2rem;
+		// margin-top: 4rem;
 	}
 }
 

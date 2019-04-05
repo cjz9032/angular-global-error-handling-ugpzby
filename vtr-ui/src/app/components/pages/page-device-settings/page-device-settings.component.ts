@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QaService } from '../../../services/qa/qa.service';
 import { DevService } from '../../../services/dev/dev.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -13,6 +14,7 @@ export class PageDeviceSettingsComponent implements OnInit {
 	title = 'Device Settings';
 	back = 'BACK';
 	backarrow = '< ';
+	parentPath = 'device';
 	menuItems = [
 		{
 			id: 'power',
@@ -37,18 +39,36 @@ export class PageDeviceSettingsComponent implements OnInit {
 			active: false
 		}
 	];
-	articles: [];
-
+	cardContentPositionA: any;
+	showHideBatteryCard = true;
 	constructor(
 		private devService: DevService,
 		public qaService: QaService,
-		private cmsService: CMSService
+		private cmsService: CMSService,
+		public deviceService: DeviceService
 	) {
 		this.fetchCMSArticles();
 	}
 
 	ngOnInit() {
 		this.devService.writeLog('DEVICE SETTINGS INIT', this.menuItems);
+		this.getMachineType();
+	}
+
+	private getMachineType() {
+		try {
+			if (this.deviceService.isShellAvailable) {
+				this.deviceService.getMachineType()
+					.then((value: any) => {
+						console.log('getMachineType.then', value);
+						this.showHideBatteryCard = value < 2;
+					}).catch(error => {
+						console.error('getMachineType', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
 	}
 
 	fetchCMSArticles() {
@@ -62,9 +82,11 @@ export class PageDeviceSettingsComponent implements OnInit {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSArticles(queryOptions).then(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				this.articles = response;
+				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+
+				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
 			},
 			error => {
 				console.log('fetchCMSContent error', error);

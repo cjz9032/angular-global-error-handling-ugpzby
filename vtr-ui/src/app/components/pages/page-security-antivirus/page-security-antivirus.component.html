@@ -2,8 +2,8 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
-				[back]="back"
-				[title]="title"></vtr-header-main>
+				[back]="back | translate"
+				[title]="title | translate"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -21,12 +21,12 @@
 
 										</div>
 										<div class="col">
-											<div class="title p-3"> Not Optimally Protected</div>
+											<div class="title p-3">{{'security.antivirus.windowsDefender.optimallyProtected' | translate}}</div>
 											<div class="subtitle p-3"
-												[innerHTML]="subTitle"></div>
+												[innerHTML]="'security.antivirus.windowsDefender.subtitle' | translate"></div>
 											<div class="p-3">
 												<vtr-ui-button [metricsItem]="'learnMoreAboutMcafee'"
-													[label]="'LEARN MORE ABOUT MCAFEE'"
+													[label]="'security.antivirus.windowsDefender.learnMore' | translate"
 													(onClick)="openArticle()"></vtr-ui-button>
 											</div>
 										</div>
@@ -38,7 +38,7 @@
 									<div>
 										<div class="row">
 											<div class="col-auto px-0 mr-auto">
-												<div class="title pb-3">Windows Defender basic protection</div>
+												<div class="title pb-3">{{'security.antivirus.windowsDefender.windowsProtected' | translate}}</div>
 											</div>
 											<div class="col-auto px-0">
 												<img class="windows-logo"
@@ -46,30 +46,25 @@
 											</div>
 										</div>
 
-										<div class="subtitle pb-5">Windows defender offers basic protection for your
-											device
-										</div>
+										<div class="subtitle pb-5">{{'security.antivirus.windowsDefender.windowsSubtitle' | translate}}</div>
 
 										<vtr-ui-security-statusbar [statusList]=" viewMode.windowsDefenderstatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
-
 									</div>
-									<vtr-widget-mcafee [install]="viewMode.mcafee"
+									<vtr-widget-mcafee [install]="antiVirus.mcafee"
 										[name]="'Windows Defender'"></vtr-widget-mcafee>
 								</div>
 							</div>
 							<div class="body antivirus-block">
 								<div>
-									<div class="title py-5"> Why McAfee ?</div>
+									<div class="title py-5">{{'security.antivirus.common.why' | translate}}</div>
 									<div class="row">
 										<div class="col-auto px-0">
 											<img src="./../../../../assets/images/antivirus/side.png" />
 										</div>
 										<div class="col px-5">
-											<div class="subtitle pb-5">
-												Lenovo recommends McAfee to protect all your devices with:
-											</div>
+											<div class="subtitle pb-5">{{'security.antivirus.common.recommends' | translate}}</div>
 											<div>
 												<ul class="list-unstyled">
 													<li class="text pb-4">
@@ -81,12 +76,8 @@
 																	</div>
 																</div>
 															</div>
-															<div class="col">
-																Award winning protection from the latest
-																online threats including ransomware and malware
-															</div>
+															<div class="col">{{'security.antivirus.common.award' | translate}}</div>
 														</div>
-
 													</li>
 
 													<li class="text pb-4">
@@ -99,10 +90,7 @@
 																	</div>
 																</div>
 															</div>
-															<div class="col">Dedicated security that
-																consistently outperforms Defender and other leading AV
-																providers
-															</div>
+															<div class="col">{{'security.antivirus.common.dedicated' | translate}}</div>
 														</div>
 													</li>
 													<li class="text">
@@ -114,10 +102,7 @@
 																	</div>
 																</div>
 															</div>
-															<div class="col">
-																Device to cloud technology that won't slow down
-																your PC
-															</div>
+															<div class="col">{{'security.antivirus.common.deviceToCloud' | translate}}</div>
 														</div>
 
 													</li>
@@ -132,29 +117,9 @@
 							<div class="footer">
 								<div class="row">
 									<div class="col-auto mr-auto px-0">
-										<div class="title">
-											Powered By McAfee
-										</div>
-										<div>
-											<ul class="list-inline">
-												<li class="list-inline-item read-more-text">Read more on the</li>
-												<li class="list-inline-item subtitle">
-													<a vtrMetrics
-														metricsItem="privacyPolicy"
-														metricsEvent="itemClick"
-														href="{{urlPrivacyPolicy}}"
-														target="_blank">Privacy Policy</a>
-												</li>
-												<li class="list-inline-item">and</li>
-												<li class="list-inline-item subtitle">
-													<a vtrMetrics
-														metricsItem="termsOfServices"
-														metricsEvent="itemClick"
-														href="{{urlTermsOfService}}"
-														target="_blank">Terms Of Service</a>
-												</li>
-											</ul>
-										</div>
+										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
+										<span class="text-regular"
+											[innerHTML]="'security.antivirus.common.privacyTerms' | translate | safeDom:'html'"></span>
 									</div>
 									<div class="col-auto align-self-center px-0">
 										<img class="mcafee-logo"
@@ -171,14 +136,14 @@
 
 									<div class="row">
 										<div class="col-auto px-0 mr-auto">
-											<div class="title pb-3">McAfee LiveSafe</div>
+											<div class="title pb-3">{{'security.antivirus.mcafee.title' | translate}}</div>
 										</div>
 										<div class="col-auto px-0">
 											<img class="mcafee-logo"
 												src="../../../../assets/images/mcafee_logo.svg" />
 										</div>
 									</div>
-									<div class="subtitle pb-5">You are currently protected by McAfee LiveSafe</div>
+									<div class="subtitle pb-5">{{'security.antivirus.mcafee.subtitle' | translate}}</div>
 
 									<vtr-ui-security-statusbar [statusList]="viewMode.mcafeestatusList | statusTransform">
 									</vtr-ui-security-statusbar>
@@ -187,35 +152,34 @@
 										<div class="col-auto mr-auto px-0">
 											<div class="card-with-border p-3">
 												<span class="text">
-													{{ viewMode.mcafee?.subscription}} Valid Until
+													{{viewMode.mcafee?.subscription | subTransform | translate}}
 												</span>
-												<span class="date">
-													{{ viewMode.mcafee?.expireAt | date:'MM/dd/yyyy' }}
+												<span [ngClass]="viewMode.mcafee?.expireAt | dateClass">
+													{{viewMode.mcafee?.expireAt | date:'MM/dd/yyyy' }}
 												</span>
 												<span>
-													<a *ngIf=" viewMode.mcafee?.subscription !== 'licenseActive'"
+													<a *ngIf="viewMode.mcafee?.subscription !== 'licenseActive'"
 														vtrMetrics
 														metricsItem="upgradeMcafee"
 														metricsEvent="itemClick"
-														href="javacript:0"
-														(click)=" viewMode.mcafee?.launch()"
-														class="text">Upgrade Now</a>
+														target="_blank"
+														href="{{viewMode.mcafee?.trialUrl}}"
+														class="text">{{'security.antivirus.mcafee.upgrade' | translate}}</a>
 												</span>
 											</div>
 										</div>
 										<div class="col-auto px-0 py-5">
 											<vtr-ui-button [metricsItem]="'launchMcafee'"
 												(onClick)=" viewMode.mcafee?.launch()"
-												[label]="'LAUNCH MCAFEE'"></vtr-ui-button>
+												[label]="'security.antivirus.mcafee.launch' | translate"
+												[upperCaseLabel]=false></vtr-ui-button>
 										</div>
 									</div>
 
 								</div>
 							</div>
 							<div class="description">
-								<div class="title py-4">
-									Top Benefits of McAfee LiveSafe
-								</div>
+								<div class="title py-4">{{'security.antivirus.mcafee.topBenefits' | translate}}</div>
 								<div class="inner-body">
 									<div class="row">
 										<div class="col-6">
@@ -223,18 +187,10 @@
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
 														src="./../../../../assets/images/antivirus/icon1.png" />
-
-
 												</div>
 												<div class="col">
-													<div class="title">
-														Award-Winning Antivirus
-													</div>
-													<div class="subtitle">
-														Blocks viruses, malware, ransomware, spyware, unwanted programs,
-														and
-														more on your PC.
-													</div>
+													<div class="title">{{'security.antivirus.mcafee.awardTitle' | translate}}</div>
+													<div class="subtitle">{{'security.antivirus.mcafee.awardSubtitle' | translate}}</div>
 												</div>
 											</div>
 											<div class="row pt-5">
@@ -245,48 +201,28 @@
 
 												</div>
 												<div class="col">
-													<div class="title">
-														Encrypted Storage
-													</div>
-													<div class="subtitle">
-														Keep sensitive files private by storing them on your PC with
-														128-bit
-														encryption.
-													</div>
+													<div class="title">{{'security.antivirus.mcafee.encryptedTitle' | translate}}</div>
+													<div class="subtitle">{{'security.antivirus.mcafee.encryptedSubtitle' | translate}}</div>
 												</div>
 											</div>
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
 														src="./../../../../assets/images/antivirus/icon3.png" />
-
-
 												</div>
 												<div class="col">
-													<div class="title">
-														Identity theft protection
-													</div>
-													<div class="subtitle">
-														Take charge of protecting your identity from theft and fraud.
-													</div>
+													<div class="title">{{'security.antivirus.mcafee.identityTitle' | translate}}</div>
+													<div class="subtitle">{{'security.antivirus.mcafee.identitySubtitle' | translate}}</div>
 												</div>
 											</div>
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
 														src="./../../../../assets/images/antivirus/icon4.png" />
-
-
 												</div>
 												<div class="col">
-													<div class="title">
-														FREE Customer Support
-													</div>
-													<div class="subtitle">
-														Has you covered by phone, by chat, or online for the life of
-														your
-														subscription.
-													</div>
+													<div class="title">{{'security.antivirus.mcafee.supportTitle' | translate}}</div>
+													<div class="subtitle">{{'security.antivirus.mcafee.supportSubtitle' | translate}}</div>
 												</div>
 											</div>
 										</div>
@@ -299,14 +235,8 @@
 
 												</div>
 												<div class="col">
-													<div class="title">
-														Anti-Spam
-													</div>
-													<div class="subtitle">
-														Blocks dangerous messages before they reach your inbox by
-														removing
-														emails that may include risky links and viruses.
-													</div>
+													<div class="title">{{'security.antivirus.mcafee.antiTitle' | translate}}</div>
+													<div class="subtitle">{{'security.antivirus.mcafee.antiSubtitle' | translate}}</div>
 												</div>
 											</div>
 											<div class="row pt-5">
@@ -317,16 +247,8 @@
 
 												</div>
 												<div class="col">
-													<div class="title">
-														Virus protection pledge
-													</div>
-													<div class="subtitle">
-														Provides you with the confidence that in the event your PC gets
-														a
-														virus, a McAfee expert will remotely access your computer to
-														remove
-														it.
-													</div>
+													<div class="title">{{'security.antivirus.mcafee.virusTitle' | translate}}</div>
+													<div class="subtitle">{{'security.antivirus.mcafee.virusSubtitle' | translate}}</div>
 												</div>
 											</div>
 											<div class="row pt-5">
@@ -337,14 +259,8 @@
 
 												</div>
 												<div class="col">
-													<div class="title">
-														Parental controls
-													</div>
-													<div class="subtitle">
-														Block web sites and search results you don’t want your kids to
-														see.
-														Also lets you set limits for how much time they spend online.
-													</div>
+													<div class="title">{{'security.antivirus.mcafee.parentalTitle' | translate}}</div>
+													<div class="subtitle">{{'security.antivirus.mcafee.parentalSubtitle' | translate}}</div>
 												</div>
 											</div>
 										</div>
@@ -355,29 +271,9 @@
 							<div class="footer">
 								<div class="row">
 									<div class="col-auto mr-auto px-0">
-										<div class="title">
-											Powered By McAfee
-										</div>
-										<div>
-											<ul class="list-inline">
-												<li class="list-inline-item read-more-text">Read more on the</li>
-												<li class="list-inline-item subtitle">
-													<a vtrMetrics
-														metricsItem="privacyPolicy"
-														metricsEvent="itemClick"
-														href="{{urlPrivacyPolicy}}"
-														target="_blank">Privacy Policy</a>
-												</li>
-												<li class="list-inline-item">and</li>
-												<li class="list-inline-item subtitle">
-													<a vtrMetrics
-														metricsItem="termsOfServices"
-														metricsEvent="itemClick"
-														href="{{urlTermsOfService}}"
-														target="_blank">Terms Of Service</a>
-												</li>
-											</ul>
-										</div>
+										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
+										<span class="text-regular"
+											[innerHTML]="'security.antivirus.common.privacyTerms' | translate | safeDom:'html'"></span>
 									</div>
 									<div class="col-auto align-self-center px-0">
 										<img class="mcafee-logo"
@@ -400,8 +296,8 @@
 											</div>
 										</div>
 
-										<div class="subtitle pb-5">{{viewMode.otherAntiVirus?.name}} offers you basic protection for your
-											device
+										<div class="subtitle pb-5">
+											{{viewMode.otherAntiVirus?.name}} {{'security.antivirus.others.othersProtection' | translate}}
 										</div>
 
 										<vtr-ui-security-statusbar [statusList]="viewMode.othersAntistatusList | statusTransform">
@@ -418,29 +314,27 @@
 											</div>
 										</div>
 
-										<div class="subtitle pb-5">{{viewMode.otherFirewall.name}} offers you basic protection for your
-											device
+										<div class="subtitle pb-5">
+											{{viewMode.otherFirewall?.name}} {{'security.antivirus.others.othersProtection' | translate}}
 										</div>
 
 										<vtr-ui-security-statusbar [statusList]="viewMode.othersFirewallstatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>
-									<vtr-widget-mcafee [install]="viewMode.mcafee"
+									<vtr-widget-mcafee [install]="antiVirus.mcafee"
 										[name]="viewMode.otherAntiVirus.name"></vtr-widget-mcafee>
 								</div>
 							</div>
 							<div class="body antivirus-block">
 								<div>
-									<div class="title py-5"> Why McAfee ?</div>
+									<div class="title py-5">{{'security.antivirus.common.why' | translate}}</div>
 									<div class="row">
 										<div class="col-auto px-0">
 											<img src="./../../../../assets/images/antivirus/side.png" />
 										</div>
 										<div class="col px-5">
-											<div class="subtitle pb-5">
-												Lenovo recommends McAfee to protect all your devices with:
-											</div>
+											<div class="subtitle pb-5">{{'security.antivirus.common.recommends' | translate}}</div>
 											<div>
 												<ul class="list-unstyled">
 													<li class="text pb-4">
@@ -452,10 +346,7 @@
 																	</div>
 																</div>
 															</div>
-															<div class="col">
-																Award winning protection from the latest online threats
-																including ransomware and malware
-															</div>
+															<div class="col">{{'security.antivirus.common.award' | translate}}</div>
 														</div>
 													</li>
 													<li class="text pb-4">
@@ -467,10 +358,7 @@
 																	</div>
 																</div>
 															</div>
-															<div class="col">
-																Dedicated security that consistently outperforms
-																Defender and other leading AV providers
-															</div>
+															<div class="col">{{'security.antivirus.common.dedicated' | translate}}</div>
 														</div>
 													</li>
 													<li class="text">
@@ -482,10 +370,7 @@
 																	</div>
 																</div>
 															</div>
-															<div class="col">
-																Device to cloud technology that won't slow down
-																your PC
-															</div>
+															<div class="col">{{'security.antivirus.common.deviceToCloud' | translate}}</div>
 														</div>
 
 													</li>
@@ -499,29 +384,9 @@
 							<div class="footer">
 								<div class="row">
 									<div class="col-auto mr-auto px-0">
-										<div class="title">
-											Powered By McAfee
-										</div>
-										<div>
-											<ul class="list-inline">
-												<li class="list-inline-item read-more-text">Read more on the</li>
-												<li class="list-inline-item subtitle">
-													<a vtrMetrics
-														metricsItem="privacyPolicy"
-														metricsEvent="itemClick"
-														href="{{urlPrivacyPolicy}}"
-														target="_blank">Privacy Policy</a>
-												</li>
-												<li class="list-inline-item">and</li>
-												<li class="list-inline-item subtitle">
-													<a vtrMetrics
-														metricsItem="termsOfServices"
-														metricsEvent="itemClick"
-														href="{{urlTermsOfService}}"
-														target="_blank">Terms Of Service</a>
-												</li>
-											</ul>
-										</div>
+										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
+										<span class="text-regular"
+											[innerHTML]="'security.antivirus.common.privacyTerms' | translate | safeDom:'html'"></span>
 									</div>
 									<div class="col-auto align-self-center px-0">
 										<img class="mcafee-logo"
@@ -537,18 +402,25 @@
 								<!--Start of Security Card Advisor-->
 								<div class="row mb-40">
 									<div class="col col-12">
-										<vtr-widget-status [title]="'Security Advisor'"
-											[description]="'CHECK IF YOUR DEVICE IS SECURED.'"
-											[items]="mockService.securityStatus">
-										</vtr-widget-status>
+										<vtr-widget-security-status [securityAdvisor]="securityAdvisor">
+										</vtr-widget-security-status>
 									</div>
 								</div>
 								<!--End of Security Card Advisor-->
 
 								<div class="row">
 									<div class="col col-12">
-										<vtr-article-item *ngFor="let item of articles, let i = index"
-											[item]="item"></vtr-article-item>
+										<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+											[caption]="cardContentPositionA.Description"
+											[title]="cardContentPositionA.Title"
+											[logoText]="cardContentPositionA.BrandName"
+											[action]="cardContentPositionA.Action"
+											[actionLink]="cardContentPositionA.ActionLink"
+											[type]="'corner-article'"
+											[ratioX]="4"
+											[ratioY]="2"
+											[cornerShift]="'large'">
+										</vtr-container-card>
 									</div>
 								</div>
 							</div>

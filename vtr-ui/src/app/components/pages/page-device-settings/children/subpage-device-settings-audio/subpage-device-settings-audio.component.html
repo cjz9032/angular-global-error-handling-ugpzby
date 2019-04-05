@@ -1,31 +1,32 @@
 <div class="subpage-device-settings-audio vtr-subpage">
 	<div class="row">
 		<div class="col">
-			<vtr-ui-header-subpage [title]="title"
-				[caption]="headerCaption">
+			<vtr-ui-header-subpage [title]="'device.deviceSettings.audio.title' | translate"
+				[caption]="'device.deviceSettings.audio.subtitle' | translate">
 			</vtr-ui-header-subpage>
 
 		</div>
 	</div>
 	<div class="row py-5 smartsettings-card"
+		*ngIf="dolbyModeResponse.available"
 		id="audio">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible componentName="Audio SmartSettings"
-				cardTitle="Audio Smartsettings"
+				[cardTitle]="'device.deviceSettings.audio.audioSmartsettings.title' | translate"
 				[isCollapsed]="false"
 				[allowCollapse]="false"
 				[theme]="'blue'">
 				<div class="row">
 					<div class="col-auto text-wrap subtitle">
-						<h3>Application-Based Settings</h3>
-						<p>Automatically adjust audio settings according to different apps you are using.</p>
+						<h3>{{'device.deviceSettings.audio.audioSmartsettings.subtitle' | translate }}</h3>
+						<p>{{'device.deviceSettings.audio.audioSmartsettings.description' | translate }}</p>
 					</div>
 				</div>
 				<ul class="list-group list-group-flush">
 					<li class="">
 						<vtr-ui-row-switch componentName="Automatic Dolby Audio Settings"
-							[title]="'Automatic Dolby Audio settings'"
-							[name]="'Automatic Dolby Audio settings'"
+							[title]="'device.deviceSettings.audio.audioSmartsettings.dolby.title' | translate"
+							[name]="'device.deviceSettings.audio.audioSmartsettings.dolby.title' | translate"
 							componentName="Automatic Dolby Audio Settings"
 							[caption]="''"
 							[isSwitchVisible]=true
@@ -52,8 +53,8 @@
 						</vtr-ui-row-switch>
 					</li>
 					<li class="">
-						<vtr-ui-row-switch [title]="'Automatic Audio Optimization for VoIP'"
-							name="Automatic Audio Optimization for VoIP"
+						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.audioSmartsettings.voip' | translate"
+							name="'device.deviceSettings.audio.audioSmartsettings.voip' | translate"
 							componentName="Automatic Audio Optimization for VoIP"
 							[caption]="''"
 							[isSwitchVisible]=true
@@ -75,14 +76,14 @@
 		id="microphone">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible componentName="Microphone"
-				cardTitle="Microphone"
+				[cardTitle]="'device.deviceSettings.audio.microphone.title' | translate"
 				[isCollapsed]="false"
 				[allowCollapse]="true"
 				[theme]="'white'">
 				<ul class="list-group list-group-flush">
 					<li class="">
-						<vtr-ui-row-switch [title]="'Microphone'"
-							name="Microphone"
+						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.title' | translate"
+							name="'device.deviceSettings.audio.microphone.title' | translate"
 							componentName="Microphone"
 							[caption]=""
 							[isSwitchVisible]=true
@@ -92,16 +93,16 @@
 							[showChildContent]="true"
 							[theme]="'white'"
 							[disabled]="!microphoneProperties.permission"
-							[tooltipText]="'You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode.'"
+							[tooltipText]="'device.deviceSettings.audio.microphone.microphone.tooltip' | translate"
 							(toggleOnOff)="onToggleOfMicrophone($event)"
 							[isSwitchChecked]="microphoneProperties.muteDisabled">
 						</vtr-ui-row-switch>
 					</li>
 					<li class="">
-						<vtr-ui-row-switch [title]="'Microphone Volume'"
-							name="Microphone Volume"
+						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.volume.title' | translate"
+							name="'device.deviceSettings.audio.microphone.volume.title' | translate"
 							componentName="MicrophoneVolume"
-							[caption]="'Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.'"
+							[caption]="'device.deviceSettings.audio.microphone.volume.description' | translate"
 							[isSwitchVisible]=false
 							[leftIcon]="['far', 'gem']"
 							[rightIcon]=""
@@ -125,9 +126,10 @@
 						</vtr-ui-row-switch>
 					</li>
 
-					<li class="">
-						<vtr-ui-row-switch [title]="'Suppress keyboard noise'"
-							name="Supress Keyborad noise"
+					<li class=""
+						*ngIf="microphoneProperties.keyboardNoiseSuppression != undefined">
+						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.suppress.title' | translate"
+							name="'device.deviceSettings.audio.microphone.suppress.title' | translate"
 							componentName="Supress Keyboard noise"
 							[caption]=""
 							[isSwitchVisible]=true
@@ -136,7 +138,7 @@
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'white'"
-							[tooltipText]="'Toggle this on to optimize the MIC audio by suppressing keyboard noise.'"
+							[tooltipText]="'device.deviceSettings.audio.microphone.suppress.tooltip' | translate"
 							(toggleOnOff)="onToggleOfSuppressKbdNoise($event)"
 							[disabled]="microphoneProperties.disableEffect"
 							[isSwitchChecked]="microphoneProperties.keyboardNoiseSuppression">
@@ -144,8 +146,8 @@
 					</li>
 
 					<li class="">
-						<vtr-ui-row-switch [title]="'Acoustic Echo Cancellation'"
-							name="Acoustic Echo Cancellation"
+						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.acoustic.title' | translate"
+							name="'device.deviceSettings.audio.microphone.acoustic.title' | translate"
 							componentName="Acoustic Echo Cancellation"
 							[caption]=""
 							[isSwitchVisible]=true
@@ -154,7 +156,7 @@
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'white'"
-							[tooltipText]="'Toggle on this feature to optimize your MIC audio by reducing acoustic echo.'"
+							[tooltipText]="'device.deviceSettings.audio.microphone.acoustic.tooltip' | translate"
 							(toggleOnOff)="setMicrophoneAEC($event)"
 							[disabled]="microphoneProperties.disableEffect"
 							[isSwitchChecked]="microphoneProperties.AEC">
@@ -162,10 +164,10 @@
 					</li>
 
 					<li class="">
-						<vtr-ui-row-switch [title]="'Optimize my microphone for:'"
+						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.optimize.title' | translate"
 							componentName="Optimize my microphone for"
 							name="Optimize microphone"
-							[caption]="'Configure microphone effect to enhance your audio experience by different scenarios and environment.'"
+							[caption]="'device.deviceSettings.audio.microphone.optimize.tooltip' | translate"
 							[isSwitchVisible]=false
 							[leftIcon]="['far', 'gem']"
 							[readMoreText]="''"

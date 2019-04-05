@@ -16,17 +16,22 @@
 
 	.footer {
 		.title {
-			color: $dark;
+			color: $main_dark;
 			font-size: 2.5rem;
-			font-weight: $weight_medium;
+			font-weight: $weight_bold;
 			line-height: 2.9rem;
 		}
 
 		.subtitle {
 			color: $highlight;
-			font-size: 1.4rem;
+			font-size: 1.6rem;
 			font-weight: $weight_light;
 			line-height: 2.3rem;
+			text-decoration: underline;
+		}
+
+		.text-regular {
+			font-size: 1.4rem;
 		}
 
 		.read-more-text {
@@ -78,7 +83,7 @@
 				font-size: 1.6rem;
 				font-weight: $weight_medium;
 				line-height: 3rem;
-			}
+      }
 		}
 	}
 
@@ -108,7 +113,7 @@
 			.title {
 				color: $screen_dark_70;
 				font-size: 2.5rem;
-				font-weight: $weight_light;
+				font-weight: $weight_regular;
 				line-height: 2.9rem;
 			}
 
@@ -127,9 +132,16 @@
 			.date {
 				color: $go_dark;
 				font-size: 1.6rem;
-				font-weight: $weight_medium;
+				font-weight: $weight_bold;
 				line-height: 3rem;
-			}
+      }
+      
+      .stopdate{
+        color: $stop_dark;
+				font-size: 1.6rem;
+				font-weight: $weight_bold;
+				line-height: 3rem;
+      }
 		}
 	}
 
@@ -137,10 +149,16 @@
 		margin-top: 5rem;
 
 		.title {
-			color: $dark;
+			color: $main_dark;
 			font-size: 3.5rem;
-			font-weight: $weight_light;
+			font-weight: $weight_medium;
 			line-height: 4.2rem;
+		}
+		.top-benefits-desc{
+			font-size: 1.5rem;
+			font-weight: $weight_light;
+			color: $main_shade;
+			padding: 1rem 1rem 1rem 0;
 		}
 
 		.subtitle {
@@ -152,9 +170,9 @@
 
 		.inner-body {
 			.title {
-				color: $dark;
+				color: $main_dark;
 				font-size: 1.4rem;
-				font-weight: $weight_medium;
+				font-weight: $weight_black;
 				letter-spacing: 0.89px;
 				line-height: 2.3rem;
 				text-transform: uppercase;
@@ -173,14 +191,14 @@
 		.title {
 			color: $screen_dark_70;
 			font-size: 3.5rem;
-			font-weight: $weight_light;
+			font-weight: $weight_regular;
 			line-height: 4.2rem;
 		}
 
 		.subtitle {
 			color: $screen_dark_70;
 			font-size: 2.5rem;
-			font-weight: $weight_medium;
+			font-weight: $weight_bold;
 			line-height: 2.9rem;
 		}
 

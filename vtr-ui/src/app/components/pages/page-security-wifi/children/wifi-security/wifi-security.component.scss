@@ -15,7 +15,7 @@
 	.heading {
 		color: $main_dark;
 		font-size: 2.5rem;
-		font-weight: $weight_light;
+		font-weight: $weight_regular;
 	}
 
 	.sub-heading {
@@ -219,17 +219,14 @@
 				display: flex;
 				flex-wrap: wrap;
 				margin-bottom: 0rem;
-
+				
 				li {
 					list-style: none;
 					width: 50%;
-					padding: 2.4rem 3rem;
 					border-right: 0.1rem solid $shade_lighter;
 					border-bottom: 0.1rem solid $shade_lighter;
-					// border: 0.1rem solid $shade_lighter;
-					display: flex;
 					flex-wrap: wrap;
-					height: 8.8rem;
+					align-items: center;
 
 					&:nth-child(even) {
 						border-right: none;
@@ -394,7 +391,7 @@
 			}
 
 			h3 {
-				font-weight: 500;
+				font-weight: $weight_bold;
 				text-transform: uppercase;
 				margin-right: 2.5rem;
 			}

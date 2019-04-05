@@ -162,7 +162,7 @@
 										</div> -->
 
 										<vtr-container-collapsible [cardTitle]="'Full History'"
-											[isCollapsed]="true">
+											[isCollapsed]="false">
 											<vtr-installation-history (reinstallUpdate)="onReinstallUpdate($event)">
 											</vtr-installation-history>
 										</vtr-container-collapsible>
@@ -189,10 +189,8 @@
 
 							<div class="row">
 								<div class="col col-12 mb-40">
-									<vtr-container-card
-										[img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
+									<vtr-container-card [img]="'assets/images/support.jpg'"
 										[title]="'Lenovo Support website'"
-										[logoText]="'LENOVO SPECIAL'"
 										[action]="'Read More'"
 										[actionLink]="'https://pcsupport.lenovo.com/'"
 										[type]="'partnerarticle'"
@@ -201,25 +199,22 @@
 									</vtr-container-card>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col col-12 mb-40">
-									<vtr-article-item *ngFor="let item of articles, let i = index"
-										[item]="item"></vtr-article-item>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col col-12 mb-40">
-									<vtr-article-item *ngFor="let item of articles, let i = index"
-										[item]="item"></vtr-article-item>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col col-12 mb-40">
-									<vtr-article-item *ngFor="let item of articles, let i = index"
-										[item]="item"></vtr-article-item>
-								</div>
-							</div>
 
+							<div class="row">
+								<div class="col col-12 mb-40">
+									<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+										[caption]="cardContentPositionA.Description"
+										[title]="cardContentPositionA.Title"
+										[logoText]="cardContentPositionA.BrandName"
+										[action]="cardContentPositionA.Action"
+										[actionLink]="cardContentPositionA.ActionLink"
+										[type]="'corner-article'"
+										[ratioX]="4"
+										[ratioY]="2"
+										[cornerShift]="'large'">
+									</vtr-container-card>
+								</div>
+							</div>
 							<div class="row"
 								*ngIf="isRebootRequired">
 								<div class="col col-12 pb-40">

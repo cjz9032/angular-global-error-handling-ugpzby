@@ -11,7 +11,6 @@
 
 		li {
 			height: auto;
-			//height: 6rem;
 			padding: 1.5rem 1rem;
 			border-bottom: 0.1rem solid $shade_lighter;
 			color: $main_darker;
@@ -21,15 +20,15 @@
 					.icon-bkg {
 						display: inline-block;
 						border-radius: 50%;
-						height: 2.4rem;
-						width: 2.4rem;
+						height: 2rem;
+						width: 2rem;
 						border-width: 0.2rem;
 						border-style: solid;
 						text-align: center;
 
 						fa-icon {
 							font-size: 1.2rem;
-							line-height: 2rem;
+							line-height: 1.6rem;
 							color: $light;
 						}
 					}
@@ -74,9 +73,19 @@
 						border-color: $main_gstart;
 
 						fa-icon {
-							font-size: 0.8rem;
-							line-height: 2.2rem;
+							font-size: 0.5rem;
+							line-height: 1rem;
+							vertical-align: 0.1rem;
 						}
+					}
+				}
+			}
+
+			&.orange {
+				.item-icon {
+					.icon-bkg {
+						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+						border-color: $orange;
 					}
 				}
 			}
@@ -101,8 +110,13 @@
 
 				.title {
 					font-size: 1.4rem;
-					font-weight: $weight_medium;
+					font-weight: $weight_bold;
 					float: left;
+					padding-top: 0.1rem;
+					padding-right: 0.1rem;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 
 					&.light-title {
 						font-weight: $weight_light;
@@ -110,16 +124,19 @@
 				}
 
 				.detail {
-					padding-right: 0.5rem;
+					padding-left: 0.1rem;
 					padding-top: 0.1rem;
 					float: right;
 					text-align: right;
 					font-size: 1.2rem;
 					color: $shade_dark;
 					font-weight: $weight_medium;
-					max-width: 55%;
+					max-width: 50%;
 					word-wrap: break-word;
 					display: block;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 
 					&.good {
 						color: $go_dark;
@@ -131,6 +148,10 @@
 
 					&.blue {
 						color: $main_gstart;
+					}
+
+					&.orange {
+						color: $orange;
 					}
 
 					&.security {
@@ -154,11 +175,15 @@
 				color: $main_darker;
 				line-height: 2.8rem;
 				font-size: 2rem;
+
+				&.blue-arrow {
+					color: $main;
+				}
 			}
 
 			.question-icon {
 				color: $main;
-				font-size: 1.8rem;
+				font-size: 2rem;
 				cursor: pointer;
 			}
 		}

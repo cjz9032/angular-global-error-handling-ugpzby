@@ -24,14 +24,16 @@
 										</div>
 										<div class="row mt-20">
 											<div class="col">
-												<div *ngIf="statusItem.status === 'not-installed'" class="text-regular">
+												<div *ngIf="statusItem.status === 'not-installed'"
+													class="text-regular">
 													SurfEasy is a VPN, or Virtual Private Network provider that helps
 													protect you while you are surfing the internet. Without a VPN, your
 													PC may be more vulnerable to attackers and identity thieves. A VPN
 													runs silently in the background and provides additional safety and
 													privacy measures while you use the internet.
 												</div>
-												<div *ngIf="statusItem.status === 'installed'" class="text-regular">
+												<div *ngIf="statusItem.status === 'installed'"
+													class="text-regular">
 													A Virtual Private Network provider helps you protect while you are
 													surfing the internet. Without a VPN, your pc may be more vulnerable
 													to attackers and identity thieves. A VPN runs silently in the
@@ -41,7 +43,8 @@
 										</div>
 										<div class="row mt-40">
 											<div class="col get-app-code-box">
-												<vtr-ui-security-statusbar [statusList]="[statusItem]"></vtr-ui-security-statusbar>
+												<vtr-ui-security-statusbar [statusList]="[statusItem]">
+												</vtr-ui-security-statusbar>
 											</div>
 										</div>
 										<div class="row mt-40">
@@ -50,31 +53,24 @@
 											</div>
 											<div class=" pull right">
 												<div class="col-12">
-													<button *ngIf="statusItem.status === 'not-installed'"
-														type="button"
+													<vtr-ui-button *ngIf="statusItem.status === 'not-installed'"
 														(click)="getSurfEasy()"
-														vtrMetrics
-														metricsEvent="itemClick"
-														metricsItem="getSurfEasy"
-														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
-														Get SurfEasy
-													</button>
-													<button *ngIf="statusItem.status === 'installed'"
-														type="button"
+														[metricsItem]="'getSurfEasy'"
+														[label]="'Get SurfEasy'">
+													</vtr-ui-button>
+													<vtr-ui-button *ngIf="statusItem.status === 'installed'"
 														(click)="openSurfEasy()"
-														vtrMetrics
-														metricsEvent="itemClick"
-														metricsItem="openSurfEasy"
-														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
-														Open SurfEasy
-													</button>
+														[metricsItem]="'openSurfEasy'"
+														[label]="'Open SurfEasy'">
+													</vtr-ui-button>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="row vtr-page-security-internet" *ngIf="statusItem.status === 'not-installed'">
+							<div class="row vtr-page-security-internet"
+								*ngIf="statusItem.status === 'not-installed'">
 								<div class="row">
 									<div class="col col-12 col-sm-12 mt-40">
 										<div>
@@ -103,7 +99,7 @@
 												<li class="good">
 													<div class="container-fluid">
 														<div class="row align-items-center">
-															<div class="col-auto">
+															<div class="col-auto pl-0">
 																<div class="bullet-icon">
 																	<div class="icon-bkg">
 																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -123,7 +119,7 @@
 												<li class="good">
 													<div class="container-fluid">
 														<div class="row align-items-center">
-															<div class="col-auto">
+															<div class="col-auto pl-0">
 																<div class="bullet-icon">
 																	<div class="icon-bkg">
 																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -143,7 +139,7 @@
 												<li class="good">
 													<div class="container-fluid">
 														<div class="row align-items-center">
-															<div class="col-auto">
+															<div class="col-auto pl-0">
 																<div class="bullet-icon">
 																	<div class="icon-bkg">
 																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -165,7 +161,7 @@
 												<li class="good">
 													<div class="container-fluid">
 														<div class="row align-items-center">
-															<div class="col-auto">
+															<div class="col-auto pl-0">
 																<div class="bullet-icon">
 																	<div class="icon-bkg">
 																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -189,7 +185,8 @@
 									</div>
 								</div>
 							</div>
-							<div class="row vtr-connected-security-internet" *ngIf="statusItem.status === 'installed'">
+							<div class="row vtr-connected-security-internet"
+								*ngIf="statusItem.status === 'installed'">
 								<div class="row">
 									<div class="col col-12 col-sm-12 mt-40">
 										<div>
@@ -243,7 +240,7 @@
 														<li class="good">
 															<div class="container-fluid">
 																<div class="row align-items-center">
-																	<div class="col-auto">
+																	<div class="col-auto pl-0">
 																		<div class="bullet-icon">
 																			<div class="icon-bkg">
 																				<fa-icon [icon]="['fas', 'check']">
@@ -262,7 +259,7 @@
 														<li class="good">
 															<div class="container-fluid">
 																<div class="row align-items-center">
-																	<div class="col-auto">
+																	<div class="col-auto pl-0">
 																		<div class="bullet-icon">
 																			<div class="icon-bkg">
 																				<fa-icon [icon]="['fas', 'check']">
@@ -281,7 +278,7 @@
 														<li class="good">
 															<div class="container-fluid">
 																<div class="row align-items-center">
-																	<div class="col-auto">
+																	<div class="col-auto pl-0">
 																		<div class="bullet-icon">
 																			<div class="icon-bkg">
 																				<fa-icon [icon]="['fas', 'check']">
@@ -300,7 +297,7 @@
 														<li class="good">
 															<div class="container-fluid">
 																<div class="row align-items-center">
-																	<div class="col-auto">
+																	<div class="col-auto pl-0">
 																		<div class="bullet-icon">
 																			<div class="icon-bkg">
 																				<fa-icon [icon]="['fas', 'check']">
@@ -319,7 +316,7 @@
 														<li class="good">
 															<div class="container-fluid">
 																<div class="row align-items-center">
-																	<div class="col-auto">
+																	<div class="col-auto pl-0">
 																		<div class="bullet-icon">
 																			<div class="icon-bkg">
 																				<fa-icon [icon]="['fas', 'check']">
@@ -347,21 +344,19 @@
 								<div class="row top-line">
 									<div class="col">
 										<div class="list-heading">Powered By SurfEasy</div>
-										<p class="text-regular"> Read more on the <a
-												vtrMetrics
+										<p class="text-regular">Read more on the <a vtrMetrics
 												metricsEvent="itemClick"
 												metricsItem="privacyPolicy"
 												href="https://www.surfeasy.com/privacy_policy/"
 												target="_blank"
-												class="learnmore">Privacy Policy</a> and <a
-												vtrMetrics
+												class="learnmore">Privacy Policy</a> and <a vtrMetrics
 												metricsEvent="itemClick"
 												metricsItem="termsOfServices"
 												href="https://www.surfeasy.com/terms_of_service/"
 												target="_blank"
-												class="learnmore">Terms of Services</a></p>
+												class="learnmore">Terms of Service</a></p>
 									</div>
-									<div class="pull right"><img class="surfeasy_logo_bottom"
+									<div class="pull right align-self-center"><img class="surfeasy_logo_teal"
 											src="../../../../assets/images/SurfEasy-logo.png" /></div>
 								</div>
 							</div>
@@ -373,17 +368,24 @@
 								<!--Start of Security Card Advisor-->
 								<div class="row mb-40">
 									<div class="col col-12">
-										<vtr-widget-status [title]="'Security Advisor'"
-											[description]="'CHECK IF YOUR DEVICE IS SECURED.'"
-											[items]="mockService.securityStatus">
-										</vtr-widget-status>
+										<vtr-widget-security-status [securityAdvisor]="securityAdvisor">
+										</vtr-widget-security-status>
 									</div>
 								</div>
 								<!--End of Security Card Advisor-->
 								<div class="row">
 									<div class="col col-12">
-										<vtr-article-item *ngFor="let item of articles, let i = index"
-											[item]="item"></vtr-article-item>
+										<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+											[caption]="cardContentPositionA.Description"
+											[title]="cardContentPositionA.Title"
+											[logoText]="cardContentPositionA.BrandName"
+											[action]="cardContentPositionA.Action"
+											[actionLink]="cardContentPositionA.ActionLink"
+											[type]="'corner-article'"
+											[ratioX]="4"
+											[ratioY]="2"
+											[cornerShift]="'large'">
+										</vtr-container-card>
 									</div>
 								</div>
 							</div>

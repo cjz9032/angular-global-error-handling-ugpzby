@@ -1,51 +1,52 @@
 @import "../../app.theme";
 
 @mixin theme($name, $background, $color, $border) {
-	.vtr-container-collapsible.#{$name} {
-		box-shadow: $drop_shadow;
-		border-radius: $border_radius;
-		background: $background;
-		.card {
-			border: none;
-			background: none;
-			.card-header {
-				background: none;
-				border-color: $border;
-				.header {
-					color: $color;
-					font-size: 2rem;
-					font-weight: 300;
-					line-height: 3rem;
-				}
-				.collapse-control {
-					cursor: pointer;
-					.collapse-text {
-						display: inline-block;
-						color: $main;
-						font-size: 1.2rem;
-						margin-right: 1rem;
-						vertical-align: middle;
-					}
-					fa-icon {
-						font-size: 2.4rem;
-						color: $main;
-						vertical-align: middle;
-					}
-				}
-				.card-body{
-					.list-group{
-						li {
-							.vtr-ui-switch-row {
-								.row {
-									flex-wrap: nowrap;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+  .vtr-container-collapsible.#{$name} {
+    box-shadow: $drop_shadow;
+    border-radius: $border_radius;
+    background: $background;
+    .card {
+      border: none;
+      background: none;
+      .card-header {
+        background: none;
+        border-color: $border;
+        .header {
+          color: $color;
+          font-size: 2rem;
+          font-weight: 300;
+          line-height: 3rem;
+          text-transform: capitalize;
+        }
+        .collapse-control {
+          cursor: pointer;
+          .collapse-text {
+            display: inline-block;
+            color: $main;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            vertical-align: middle;
+          }
+          fa-icon {
+            font-size: 2.4rem;
+            color: $main;
+            vertical-align: middle;
+          }
+        }
+        .card-body {
+          .list-group {
+            li {
+              .vtr-ui-switch-row {
+                .row {
+                  flex-wrap: nowrap;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @include theme(white-theme, $light, $main, $screen_dark_10);

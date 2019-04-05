@@ -129,6 +129,7 @@ import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-b
 import { MetricService } from './services/metric/metric.service';
 import { WidgetMcafeeComponent } from './components/widgets/widget-mcafee/widget-mcafee.component';
 import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
+import { WidgetSecurityStatusComponent } from './components/widgets/widget-security-status/widget-security-status.component';
 
 
 import { MetricsDirective } from './directives/metrics.directive';
@@ -151,7 +152,15 @@ import { IconClassPipe } from './pipe/ui-security-statusbar/icon-class.pipe';
 import { IconNamePipe } from './pipe/ui-security-statusbar/icon-name.pipe';
 import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
 import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
+import { UiFeatureItemComponent } from './components/ui/ui-feature-item/ui-feature-item.component';
 import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
+import { MinutesToHourminPipe } from './pipe/minutes-to-hourmin.pipe';
+import { WidgetAboutComponent } from './components/widgets/widget-about/widget-about.component';
+import { SubTransformPipe } from './pipe/security-antivirus/sub-transform.pipe';
+import { DateClassPipe } from './pipe/security-antivirus/date-class.pipe';
+import { ModalAboutComponent } from './components/modal/modal-about/modal-about.component';
+
+import { WifiClassPipe } from './pipe/security-landing/wifi-class.pipe';
 
 
 library.add(fas);
@@ -263,8 +272,16 @@ library.add(fal);
 		IconNamePipe,
 		StatusTextPipe,
 		TextClassPipe,
+		UiFeatureItemComponent,
 		UiSecurityStatusbarComponent,
+		WidgetSecurityStatusComponent,
 		StatusTransformPipe,
+		MinutesToHourminPipe,
+		WidgetAboutComponent,
+		SubTransformPipe,
+		DateClassPipe,
+		ModalAboutComponent,
+		WifiClassPipe
 	],
 	imports: [
 		BrowserModule,
@@ -307,6 +324,7 @@ library.add(fal);
 		ModalWifiSecurityInvitationComponent,
 		ModalWifiSecuriryLocationNoticeComponent,
 		ModalUpdateChangeLogComponent,
+		ModalAboutComponent,
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA

@@ -53,13 +53,19 @@
 						.wifi-link {
 							padding-left: 15px;
 						}
+						.ellipsis {
+							overflow: hidden;
+							text-overflow: ellipsis;
+							white-space: nowrap;
+						}
 						li {
 							height: 4rem;
 							padding: 0.5rm 1rem;
 							border-bottom: 0.1rem solid $shade_lighter;
 							color: $main_darker;
-							line-height: 4rem;							
+							line-height: 4rem;
 							.icon-bkg {
+								text-align: center;
 								.good {
 									color: $go_dark;
 								}
@@ -73,15 +79,14 @@
 							.wifi-bg {
 								border-radius: 1rem;
 								color: $light;
-								padding: 0.8rem;
 								height: 4rem;
+								text-align: right;
 								.wifi-good {
 									height: 100%;
 									border-radius: 5rem;
-									line-height: 2.4rem;
 									text-align: center;
-									padding-left: 0.5rem;
-    								padding-right: 0.5rem;
+									width: fit-content;
+									margin-left: auto;
 								}
 								.good {
 									background-color: $go_dark;
@@ -99,9 +104,9 @@
 							&:last-child {
 								border-bottom: none;
 							}
-							
+
 						}
-										
+
 					}
 				}
 			}
