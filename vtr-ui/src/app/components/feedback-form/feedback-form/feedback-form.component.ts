@@ -35,7 +35,7 @@ export class FeedbackFormComponent implements OnInit {
 	private createFeedbackForm(): void {
 		this.feedbackForm = new FormGroup({
 			userEmail: new FormControl('', [Validators.email]),
-			userComment: new FormControl('', [Validators.required, Validators.minLength(5)])
+			userComment: new FormControl('', [Validators.required, Validators.minLength(1)])
 		});
 	}
 }
