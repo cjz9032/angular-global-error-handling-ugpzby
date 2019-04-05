@@ -7,6 +7,8 @@ import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { ChangeContext } from 'ng5-slider';
 import { EyeCareMode, SunsetToSunriseStatus } from 'src/app/data-models/camera/eyeCareMode.model';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 enum defaultTemparature {
 	defaultValue = 4500
 }
@@ -28,7 +30,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public sunsetToSunriseModeStatus = new SunsetToSunriseStatus(true, false, false);
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
-
+	isDesktopMachine: boolean;
 	headerMenuItems = [
 		{
 			title: 'device.deviceSettings.displayCamera.jumpTo.display',
@@ -43,7 +45,8 @@ export class SubpageDeviceSettingsDisplayComponent
 
 	constructor(public baseCameraDetail: BaseCameraDetail,
 		// public cd: ChangeDetectorRef,
-		public displayService: DisplayService) {
+		public displayService: DisplayService,
+		private commonService: CommonService) {
 		this.dataSource = new CameraDetail();
 		this.eyeCareDataSource = new EyeCareMode();
 	}
@@ -56,7 +59,11 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.getSunsetToSunrise();
 		this.getCameraPrivacyModeStatus();
 		this.getCameraDetails();
-
+		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+		if (this.isDesktopMachine) {
+			// on desktop machine, camera section need to hide, so it's Jump to Setting link also need to remove
+			this.headerMenuItems.pop();
+		}
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			cameraDetail => {
 				this.dataSource = cameraDetail;
