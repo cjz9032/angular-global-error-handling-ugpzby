@@ -231,6 +231,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	}
 	ngOnInit() {
 		this.getMachineInfo();
+		this.startMonitor();
 		this.getVantageToolBarStatus();
 	}
 	openContextModal(template: TemplateRef<any>) {
@@ -276,7 +277,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				} else {
 					this.powerMode = PowerMode.Disabled;
 				}
-				this.setAlwaysOnUSBStatusThinkPad(this.powerMode);
+				this.setAlwaysOnUSBStatusThinkPad(this.powerMode, this.usbChargingCheckboxFlag);
 				console.log('always on usb: thinkpad');
 				break;
 			case 0:
@@ -320,7 +321,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 		switch (this.machineBrand) {
 			case 1:
 				console.log('always on usb: thinkpad');
-				this.setAlwaysOnUSBStatusThinkPad(this.powerMode);
+				this.setAlwaysOnUSBStatusThinkPad(this.powerMode, this.usbChargingCheckboxFlag);
 				break;
 			case 0:
 				this.setUSBChargingInBatteryModeStatusIdeaNoteBook(this.usbChargingCheckboxFlag);
@@ -359,7 +360,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 					.getDYTCRevision()
 					.then((value: number) => {
 						console.log('getDYTCRevision.then', value);
-						//value=5;
+						value=5;
 						if (value === 4) {
 							this.showIntelligentCooling = 2;
 							this.getCQLCapability();
@@ -600,18 +601,18 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			console.error(error.message);
 		}
 	}
-	private setAlwaysOnUSBStatusThinkPad(event: any) {
+	private setAlwaysOnUSBStatusThinkPad(event: any, checkboxVal: any) {
 		try {
-			console.log('setAlwaysOnUSBStatusIdeaNoteBook.then', event);
+			console.log('setAlwaysOnUSBStatusThinkPad.then', event);
 			if (this.powerService.isShellAvailable) {
 				this.powerService
-					.setAlwaysOnUSBStatusThinkPad(event)
+					.setAlwaysOnUSBStatusThinkPad(event, checkboxVal)
 					.then((value: boolean) => {
-						console.log('setAlwaysOnUSBStatusIdeaNoteBook.then', value);
+						console.log('setAlwaysOnUSBStatusThinkPad.then', value);
 						this.getAlwaysOnUSBStatusThinkPad();
 					})
 					.catch(error => {
-						console.error('getAlwaysOnUSBStatusIdeaNoteBook', error);
+						console.error('setAlwaysOnUSBStatusThinkPad', error);
 					});
 			}
 		} catch (error) {
@@ -847,6 +848,31 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			}
 		} catch (error) {
 			console.error(error.message);
+		}
+	}
+	public getStartMonitorCallBack(resetData: any) {
+		console.log('called from power start monitor', JSON.stringify(resetData));
+
+	}
+	public startMonitor() {
+		console.log('start eyecare monitor');
+		if (this.powerService.isShellAvailable) {
+			this.powerService
+				.startMonitor(this.getStartMonitorCallBack.bind(this))
+				.then((value: any) => {
+					console.log('startmonitor', value);
+				}).catch(error => {
+					console.error('startmonitor', error);
+				});
+
+		}
+	}
+	public stopMonitor() {
+		console.log('stop eyecare monitor');
+		if (this.powerService.isShellAvailable) {
+			this.powerService
+				.stopMonitor();
+
 		}
 	}
 	// End Lenovo Vantage ToolBar
