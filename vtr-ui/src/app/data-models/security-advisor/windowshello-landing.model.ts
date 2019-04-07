@@ -17,7 +17,7 @@ export class WindowsHelloLandingViewModel {
 		if (whModel) {
 			const whStatus = {
 				status: 2,
-				detail: 'common.securityAdvisor.disabled', // active or inactive
+				detail: 'common.securityAdvisor.loading', // active or inactive
 				path: 'security/windows-hello',
 				title: 'security.landing.fingerprint',
 				type: 'security',

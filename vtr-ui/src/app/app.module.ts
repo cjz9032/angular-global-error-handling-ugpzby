@@ -160,9 +160,7 @@ import { WidgetAboutComponent } from './components/widgets/widget-about/widget-a
 import { SubTransformPipe } from './pipe/security-antivirus/sub-transform.pipe';
 import { DateClassPipe } from './pipe/security-antivirus/date-class.pipe';
 import { ModalAboutComponent } from './components/modal/modal-about/modal-about.component';
-
 import { WifiClassPipe } from './pipe/security-landing/wifi-class.pipe';
-
 
 library.add(fas);
 library.add(fab);

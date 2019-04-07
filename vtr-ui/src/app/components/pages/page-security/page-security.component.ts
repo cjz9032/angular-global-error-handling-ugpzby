@@ -43,7 +43,6 @@ export class PageSecurityComponent implements OnInit {
 	passwordManager: phoenix.PasswordManager;
 	vpn: phoenix.Vpn;
 	windowsHello: phoenix.WindowsHello;
-	antivirusScore: Array<any>;
 	score: number;
 	maliciousWifi: number;
 	cardContentPositionA: any;
@@ -62,12 +61,20 @@ export class PageSecurityComponent implements OnInit {
 	@HostListener('window: focus')
 	onFocus(): void {
 		this.securityAdvisor.refresh().then(() => {
+			this.refreshViewModel();
 			this.getScore();
 			this.getMaliciousWifi();
 		});
 	}
 
 	ngOnInit() {
+		this.refreshViewModel();
+		this.getScore();
+		this.getMaliciousWifi();
+		this.fetchCMSArticles();
+	}
+
+	refreshViewModel() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.passwordManager = this.securityAdvisor.passwordManager;
 		this.antivirus = this.securityAdvisor.antivirus;
@@ -86,10 +93,6 @@ export class PageSecurityComponent implements OnInit {
 		this.homeProtectionLandingViewModel = new HomeProtectionLandingViewModel(this.translate);
 		this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.windowsHello, this.commonService, this.translate);
 		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
-
-		this.getScore();
-		this.getMaliciousWifi();
-		this.fetchCMSArticles();
 	}
 
 	getWifiStatus(good) {
@@ -127,7 +130,7 @@ export class PageSecurityComponent implements OnInit {
 	}
 
 	private getScore() {
-		this.antivirusScore = [
+		const antivirusScoreInit = [
 			this.antivirusLandingViewModel.subject.status,
 			this.passwordManagerLandingViewModel.subject.status,
 			this.vpnLandingViewModel.subject.status,
@@ -136,11 +139,11 @@ export class PageSecurityComponent implements OnInit {
 		];
 		let flag;
 		let scoreTotal = 0;
-		this.antivirusScore = this.antivirusScore.filter(current => {
+		const antivirusScore = antivirusScoreInit.filter(current => {
 			return current !== undefined && current !== null && current !== '';
 		});
-		flag = 100 / this.antivirusScore.length;
-		this.antivirusScore.forEach(item => {
+		flag = 100 / antivirusScore.length;
+		antivirusScore.forEach(item => {
 			if (item === 0 || item === 2) {
 				scoreTotal += flag;
 			}

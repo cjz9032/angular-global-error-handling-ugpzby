@@ -30,7 +30,8 @@
 			"enabled": "ENABLED",
 			"disabled": "DISABLED",
 			"installed": "INSTALLED",
-			"notInstalled": "NOT INSTALLED"
+			"notInstalled": "NOT INSTALLED",
+			"loading": "Loading"
 		},
 		"qAndA": {
 			"title": "Q&A for your machine",
@@ -412,11 +413,14 @@
 		}
 	},
 	"security": {
+		"common": {
+			"loading": "Loading"
+		},
 		"landing": {
 			"fully": "Fully protected",
 			"fullyDesc": "Congratulations! You are well protected.",
 			"notFully": "Not fully protected",
-			"notFullyDesc": "You are not fully protected, Learn how to better protect yourself now.",
+			"notFullyDesc": "You are not fully protected. Learn how to better protect yourself now.",
 			"security101": "SECURITY ADVISOR 101",
 			"firewall": "Firewall",
 			"pwdHealth": "Password Health",
@@ -427,9 +431,9 @@
 			"fingerprint": "Fingerprint reader",
 			"seeAllNetwork": "See all joined networks",
 			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
-			"good": "Good",
-			"malicious": "Malicious",
-			"suspicious": "Suspicious"
+			"good": "GOOD",
+			"malicious": "MALICIOUS",
+			"suspicious": "SUSPICIOUS"
 		},
 		"antivirus": {
 			"common": {
@@ -508,7 +512,7 @@
 			},
 			"threatlocator": {
 				"describe": "Use the threat detector to determine the safety of the networks around you.",
-				"button": "Check your location"
+				"button": "Check threat"
 			},
 			"locationmodal": {
 				"title": "Enable location services",
