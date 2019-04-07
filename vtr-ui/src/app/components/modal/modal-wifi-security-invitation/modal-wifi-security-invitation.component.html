@@ -6,8 +6,15 @@
 	<p class="description">
 		{{ description | translate }}
 	</p>
-	<div class="form-group code-input-group">
-		<input type="text" class="form-control" placeholder="___-___" #code [disabled]="startJoin" (keyup)="KeyPress($event)" (keyup.enter)="joinGroupBy(code.value)" maxlength="6">
+	<div class="form-group code-input-group m-0">
+		<label class="pl-5 pb-0 activation">ACTIVATION CODE</label>
+		<input type="text" class="form-control" placeholder="------" #code [disabled]="startJoin" (keyup)="KeyPress($event);show()" (keyup.enter)="joinGroupBy(code.value)" maxlength="6">
+	</div>
+	<div class="join-info pl-5 mb-3">
+		<div *ngIf="startJoin" class="spinner-border text-primary progress-spinner" role="status">
+		</div>
+	<div class="success" *ngIf="joinSuccess">{{'security.homeprotection.invitationcode.success' | translate}}</div>
+	<div class="failed" *ngIf="joinFailed">{{'security.homeprotection.invitationcode.tryAgain' | translate}}</div>
 	</div>
 	<div class="mb-4 d-flex">
 		<div class="ml-0 mr-4 pl-0">
@@ -17,11 +24,5 @@
 			<button type="button" class="btn btn-default modal-button" (click)="onCancelClick($event)" [disabled]="startJoin" *ngIf="joinSuccess">
 				{{OkText | translate}}
 			</button>
-		</div>
-		<div class="join-info">
-				<div *ngIf="startJoin" class="spinner-border text-primary progress-spinner" role="status">
-				</div>
-			<div class="success" *ngIf="joinSuccess">{{'security.homeprotection.invitationcode.success' | translate}}</div>
-			<div class="failed" *ngIf="joinFailed">{{'security.homeprotection.invitationcode.tryAgain' | translate}}</div>
 		</div>
 	</div>
