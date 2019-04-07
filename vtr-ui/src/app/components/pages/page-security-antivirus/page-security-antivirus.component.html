@@ -118,8 +118,11 @@
 								<div class="row">
 									<div class="col-auto mr-auto px-0">
 										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
-										<span class="text-regular"
-											[innerHTML]="'security.antivirus.common.privacyTerms' | translate | safeDom:'html'"></span>
+										<p class="text-regular"
+											vtrDynamic 
+											[compile]="'security.antivirus.common.privacyTerms' | translate" 
+											[compileContext]="this">
+										</p>
 									</div>
 									<div class="col-auto align-self-center px-0">
 										<img class="mcafee-logo"
@@ -272,8 +275,11 @@
 								<div class="row">
 									<div class="col-auto mr-auto px-0">
 										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
-										<span class="text-regular"
-											[innerHTML]="'security.antivirus.common.privacyTerms' | translate | safeDom:'html'"></span>
+										<p class="text-regular"
+											vtrDynamic 
+											[compile]="'security.antivirus.common.privacyTerms' | translate" 
+											[compileContext]="this">
+										</p>
 									</div>
 									<div class="col-auto align-self-center px-0">
 										<img class="mcafee-logo"
@@ -385,8 +391,11 @@
 								<div class="row">
 									<div class="col-auto mr-auto px-0">
 										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
-										<span class="text-regular"
-											[innerHTML]="'security.antivirus.common.privacyTerms' | translate | safeDom:'html'"></span>
+										<p class="text-regular"
+											vtrDynamic 
+											[compile]="'security.antivirus.common.privacyTerms' | translate" 
+											[compileContext]="this">
+										</p>
 									</div>
 									<div class="col-auto align-self-center px-0">
 										<img class="mcafee-logo"

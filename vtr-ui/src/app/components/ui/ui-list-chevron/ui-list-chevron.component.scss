@@ -117,6 +117,7 @@
 					overflow: hidden;
 					text-overflow: ellipsis;
 					white-space: nowrap;
+					color: $blue-dark;
 
 					&.light-title {
 						font-weight: $weight_light;
@@ -156,7 +157,7 @@
 
 					&.security {
 						text-transform: uppercase;
-						font-weight: 500;
+						font-weight: $weight_bold;
 					}
 
 					&.highlight {
