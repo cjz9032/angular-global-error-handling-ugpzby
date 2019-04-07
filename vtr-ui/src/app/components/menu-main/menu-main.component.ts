@@ -142,16 +142,6 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				routerLinkActiveOptions: { exact: true },
 				icon: '',
 				subitems: []
-			}, {
-				id: 'windows-hello',
-				label: 'common.menu.security.sub6',
-				path: 'windows-hello',
-				icon: '',
-				metricsEvent: 'itemClick',
-				metricsParent: 'navbar',
-				metricsItem: 'link.windowshello',
-				routerLinkActiveOptions: { exact: true },
-				subitems: []
 			}]
 		}, {
 			id: 'support',
@@ -190,13 +180,25 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		vantageShellService: VantageShellService
 	) {
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
-		if (!cacheShowWindowsHello) {
+		if (cacheShowWindowsHello) {
 			const securityItem = this.items.find(item => item.id === 'security');
-			securityItem.subitems = securityItem.subitems.filter(subitem => subitem.id !== 'windows-hello');
+			securityItem.subitems.push({
+				id: 'windows-hello',
+				label: 'common.menu.security.sub6',
+				path: 'windows-hello',
+				icon: '',
+				metricsEvent: 'itemClick',
+				metricsParent: 'navbar',
+				metricsItem: 'link.windowshello',
+				routerLinkActiveOptions: { exact: true },
+				subitems: []
+			});
 		}
 		if (vantageShellService.getSecurityAdvisor()) {
 			const windowsHello: WindowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
-			this.showWindowsHello(windowsHello);
+			if (windowsHello.facialIdStatus || windowsHello.fingerPrintStatus) {
+				this.showWindowsHello(windowsHello);
+			}
 			windowsHello.on(EventTypes.helloFacialIdStatusEvent, () => {
 				this.showWindowsHello(windowsHello);
 			}).on(EventTypes.helloFingerPrintStatusEvent, () => {
@@ -283,12 +285,13 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			if (!windowsHelloItem) {
 				securityItem.subitems.push({
 					id: 'windows-hello',
-					label: 'Windows Hello',
+					label: 'common.menu.security.sub6',
 					path: 'windows-hello',
 					icon: '',
 					metricsEvent: 'itemClick',
 					metricsParent: 'navbar',
 					metricsItem: 'link.windowshello',
+					routerLinkActiveOptions: { exact: true },
 					subitems: []
 				});
 			}
