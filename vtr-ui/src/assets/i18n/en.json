@@ -131,23 +131,12 @@
 				"title": "Power",
 				"subtitle": "Power Settings",
 				"description": "This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.",
-				"jumpTo": {
+				"jumpto": {
 					"title": "JUMP TO SETTINGS",
-					"shortcuts": {
-						"intelligentCooling":
-						{
-							"title": "Intelligent Cooling"
-						},
-						"battery":{
-							"title": "Battery"
-						},
-						"power":{
-							"title": "Power"
-						},
-						"Other":{
-							"title": "Other"
-						}
-					}
+					"battery": "Battery",
+					"power": "Power",
+					"cooling": "Intelligent Cooling",
+					"other": "Other"
 				},
 				"powerSmartSettings": {
 					"title": "Power Smart Settings",

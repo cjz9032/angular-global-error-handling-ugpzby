@@ -54,19 +54,19 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	value = 1;
 	headerMenuItems = [
 		{
-			title: 'device.deviceSettings.power.jumpTo.shortcuts.intelligentCooling.title',
+			title: 'device.deviceSettings.power.jumpto.cooling',
 			path: 'cooling'
 		},
 		{
-			title: 'device.deviceSettings.power.jumpTo.shortcuts.battery.title',
+			title: 'device.deviceSettings.power.jumpto.battery',
 			path: 'battery',
 		},
 		{
-			title: 'device.deviceSettings.power.jumpTo.shortcuts.power.title',
+			title: 'device.deviceSettings.power.jumpto.power',
 			path: 'power'
 		},
 		{
-			title: 'device.deviceSettings.power.jumpTo.shortcuts.Other.title',
+			title: 'device.deviceSettings.power.jumpto.other',
 			path: 'other'
 		}
 	];
@@ -231,7 +231,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	}
 	ngOnInit() {
 		this.getMachineInfo();
-	//	this.startMonitor();
+		//	this.startMonitor();
 		this.getVantageToolBarStatus();
 	}
 	openContextModal(template: TemplateRef<any>) {
@@ -242,11 +242,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	closeContextModal() {
 		this.modalService.dismissAll();
 	}
-	getAndSetAlwaysOnUSBForBrands(machinename: any) {
+	getAndSetAlwaysOnUSBForBrands(machineName: any) {
 		console.log('inside getAndSetAlwaysOnUSBForBrands');
-		switch (machinename) {
+		console.log('machine', machineName);
+		switch (machineName) {
 			case 1:
-				console.log('machine', machinename);
 				this.getAirplaneModeCapabilityThinkPad();
 				this.getAlwaysOnUSBCapabilityThinkPad();
 				this.getEasyResumeCapabilityThinkPad();
@@ -256,8 +256,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				this.getRapidChargeModeStatusIdeaPad();
 				this.getAlwaysOnUSBStatusIdeaPad();
 				this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
-
-				console.log('always on usb: ideapad');
 				break;
 		}
 	}
@@ -409,7 +407,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 				this.radioPerformance = true;
 				//this.toggleIntelligentCooling = true;
 				//this.toggleIntelligentCoolingStatus = false;
-			//	this.intelligentCooling = true;
+				//	this.intelligentCooling = true;
 				console.log('manualModeSettingStatus: performance');
 				break;
 			case 'error':
