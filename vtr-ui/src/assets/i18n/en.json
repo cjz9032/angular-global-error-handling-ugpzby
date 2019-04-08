@@ -541,10 +541,13 @@
 				"enterCode": "Enter your connection code",
 				"addHome": "Add Home",
 				"ok": "OK",
+				"continue": "CONTINUE",
 				"cancel": "Cancel",
 				"validateCode": "VALIDATE CODE",
-				"success": "Success",
-				"tryAgain": "Incorrect code,please try again!"
+				"success": "Successfully connected",
+				"canUse": "You can now start using Connected Home Security",
+				"tryAgain": "Incorrect code, please try again!",
+				"activationCode":"ACTIVATION CODE"
 			},
 			"securityhealth": {
 				"title": "Security Health",
