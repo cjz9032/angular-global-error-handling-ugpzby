@@ -386,6 +386,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 
 						} else {
 							this.showIntelligentCooling = 0;
+							this.headerMenuItems.splice(0, 1);
 						}
 					})
 					.catch(error => {
