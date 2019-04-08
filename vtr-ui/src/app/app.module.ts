@@ -161,6 +161,8 @@ import { SubTransformPipe } from './pipe/security-antivirus/sub-transform.pipe';
 import { DateClassPipe } from './pipe/security-antivirus/date-class.pipe';
 import { ModalAboutComponent } from './components/modal/modal-about/modal-about.component';
 import { WifiClassPipe } from './pipe/security-landing/wifi-class.pipe';
+import { JoinclassPipe } from './pipe/security-wifi/join-class.pipe';
+import { SuccessClassPipe } from './pipe/security-wifi/success-class.pipe';
 
 library.add(fas);
 library.add(fab);
@@ -281,7 +283,9 @@ library.add(fal);
 		SubTransformPipe,
 		DateClassPipe,
 		ModalAboutComponent,
-		WifiClassPipe
+		WifiClassPipe,
+		JoinclassPipe,
+		SuccessClassPipe
 	],
 	imports: [
 		BrowserModule,
