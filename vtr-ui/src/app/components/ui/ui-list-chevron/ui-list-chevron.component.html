@@ -94,7 +94,7 @@
 						</div>
 						<div class="col col-1 text-center" *ngIf="iconPlacement==='right'">
 							<div class="item-icon status" *ngIf="item.status!==undefined&&item.status!==''">
-								<div class="icon-bkg" *ngIf="item.status !== question">
+								<div class="icon-bkg">
 									<fa-icon *ngIf="item.status !== 3" [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 									<img *ngIf="item.status === 3" src="../../../../assets/images/security/svg_icon_stick.svg">
 								</div>

@@ -62,39 +62,39 @@ export class MockWifiSecurity {
 			wifiHistory: [{
 				ssid: 'lenovo',
 				info: '2019/2/13 9:04:49',
-				good: 1
+				good: '1'
 			}, {
 				ssid: 'cdl',
 				info: '2019/3/5 11:04:49',
-				good: 0
+				good: '0'
 			}, {
 				ssid: 'lalal',
 				info: '2019/1/4 15:22:49',
-				good: 2
+				good: '2'
 			}, {
 				ssid: 'lenovo',
 				info: '2019/2/13 9:04:49',
-				good: 1
+				good: '1'
 			}, {
 				ssid: 'cdl',
 				info: '2019/3/5 11:04:49',
-				good: 0
+				good: '0'
 			}, {
 				ssid: 'lalal',
 				info: '2019/1/4 15:22:49',
-				good: 2
+				good: '2'
 			}, {
 				ssid: 'lenovo',
 				info: '2019/2/13 9:04:49',
-				good: 1
+				good: '1'
 			}, {
 				ssid: 'cdl',
 				info: '2019/3/5 11:04:49',
-				good: 0
+				good: '0'
 			}, {
 				ssid: 'lalal',
 				info: '2019/1/4 15:22:49',
-				good: 2
+				good: '2'
 			}],
 			isLocationServiceOn: true,
 			isLWSPluginInstalled: true,

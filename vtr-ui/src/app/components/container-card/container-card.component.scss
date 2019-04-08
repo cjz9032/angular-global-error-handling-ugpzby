@@ -69,6 +69,7 @@
 	}
 
 	&.card-corner-article {
+
 		.content {
 			position: relative;
 			z-index: 1;
@@ -89,6 +90,12 @@
 					z-index: 1;
 					padding: 3rem;
 					height: 100%;
+					@media #{$mediaquery_9} {
+						padding: 2rem;
+					}
+					@media #{$mediaquery_8} {
+						padding: 1.5rem 2rem;
+					}
 
 					.title {
 						color: $light;
