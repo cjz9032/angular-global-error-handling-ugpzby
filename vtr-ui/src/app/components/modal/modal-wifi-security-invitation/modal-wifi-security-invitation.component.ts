@@ -15,7 +15,7 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	header = 'security.homeprotection.invitationcode.enterCode';
 	description = 'security.homeprotection.invitationcode.addHome';
 
-	OkText = 'security.homeprotection.invitationcode.ok';
+	OkText = 'security.homeprotection.invitationcode.continue';
 	CancelText = 'security.homeprotection.invitationcode.cancel';
 
 	startJoin = false;
