@@ -316,10 +316,13 @@
 								<div class="row top-line">
 									<div class="col">
 										<div class="list-heading">{{'security.vpn.poweredBySurfEasy' | translate}}</div>
-										<p class="text-regular" 
-											vtrDynamic 
-											[compile]="'security.vpn.privacyPolicyAndTermsOfService' | translate" 
-											[compileContext]="this">
+										<p class="text-regular">
+											<vtr-widget-translate-picker [translateString]="'security.vpn.privacyPolicyAndTermsOfService' | translate"
+												[firstMetricsItem]="'privacyPolicy'" [firstMetricsParent]="'security.internet'"
+												[firstHref]="'https://www.surfeasy.com/privacy_policy/'"
+												[secondMetricsItem]="'termsOfServices'" [secondMetricsParent]="'security.internet'"
+												[secondHref]="'https://www.surfeasy.com/terms_of_service/'">
+											</vtr-widget-translate-picker>
 										</p>
 									</div>
 									<div class="pull right align-self-center"><img class="surfeasy_logo_teal"

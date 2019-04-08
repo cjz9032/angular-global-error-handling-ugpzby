@@ -86,7 +86,7 @@ export class DisplayService {
 				return this.displayEyeCareMode.setEyeCareMode(value);
 			}
 			return undefined;
-		}	catch (error) {
+		} catch (error) {
 			throw new Error(error.message);
 		}
 	}
@@ -199,6 +199,12 @@ export class DisplayService {
 			this.displayEyeCareMode.stopMonitor((response: boolean) => {
 				//this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
 			});
+		}
+	}
+
+	public openPrivacyLocation() {
+		if (this.isShellAvailable) {
+			this.displayEyeCareMode.openPrivacyLocation();
 		}
 	}
 }

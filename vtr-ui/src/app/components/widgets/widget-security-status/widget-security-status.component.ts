@@ -48,7 +48,7 @@ export class WidgetSecurityStatusComponent implements OnInit {
 	showWindowsHello(windowsHello: WindowsHello) {
 		const windowsHelloItem = this.items.find(item => item.id === 'windows-hello');
 		if (this.commonService.isRS5OrLater()
-		&& (typeof windowsHello.facialIdStatus === 'string') || typeof windowsHello.fingerPrintStatus === 'string') {
+		&& (typeof windowsHello.facialIdStatus === 'string' || typeof windowsHello.fingerPrintStatus === 'string')) {
 			if (!windowsHelloItem) {
 				this.items.push(new WindowsHelloWidgetItem(this.securityAdvisor.windowsHello, this.commonService, this.translateService));
 			}

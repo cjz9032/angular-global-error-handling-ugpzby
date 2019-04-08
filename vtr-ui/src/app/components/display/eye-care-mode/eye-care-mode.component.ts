@@ -12,6 +12,7 @@ import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 export class EyeCareModeComponent implements OnInit {
 	@Input() eyeCareModeSettings: EyeCareMode;
 	@Input() enableSlider: boolean;
+	@Input() enableSunsetToSunrise: boolean;
 	@Input() sunsetToSunriseStatus: SunsetToSunriseStatus;
 	@Output() eyeCareTemparatureChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() eyeCareTemparatureValueChange: EventEmitter<ChangeContext> = new EventEmitter();

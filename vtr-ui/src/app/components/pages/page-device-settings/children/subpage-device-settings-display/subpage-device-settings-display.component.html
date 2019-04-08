@@ -35,6 +35,7 @@
 								<div class="col-12">
 									<vtr-eye-care-mode [eyeCareModeSettings]="eyeCareDataSource"
 										[enableSlider]="!eyeCareModeStatus.status"
+										[enableSunsetToSunrise]="enableSunsetToSunrise"
 										[sunsetToSunriseStatus]="sunsetToSunriseModeStatus"
 										(eyeCareTemparatureChange)="onEyeCareTemparatureChange($event)"
 										(resetTemparature)="onResetTemparature($event)"

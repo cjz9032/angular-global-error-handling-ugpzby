@@ -270,17 +270,14 @@
 				"description": "在此部分中可提升视觉体验及配置摄像头属性。在这里探索更多功能，并自定义个性化的显示体验。",
 				"jumpTo": {
 					"title": "跳到设置：",
-					"shortcuts":[
-						{
-							"title": "显示",
-							"path": "display"
+					"shortcuts": {
+						"display":{
+							"title": "显示"
 						},
-						{
-							"title": "摄像头",
-							"path": "camera"
+						"camera":{
+							"title": "摄像头"
 						}
-					]
-
+					}
 				},
 				"display": {
 					"title": "显示",

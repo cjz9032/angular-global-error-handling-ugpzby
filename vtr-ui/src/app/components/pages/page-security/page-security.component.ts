@@ -49,13 +49,13 @@ export class PageSecurityComponent implements OnInit {
 
 	itemStatusClass = {
 		0: 'good',
-		1: 'bad',
-		2: 'orange'
+		1: 'orange',
+		2: 'bad'
 	};
 	itemDetail = {
 		0: 'security.landing.good',
-		1: 'security.landing.malicious',
-		2: 'security.landing.suspicious'
+		1: 'security.landing.suspicious',
+		2: 'security.landing.malicious'
 	};
 
 	@HostListener('window: focus')
@@ -116,17 +116,16 @@ export class PageSecurityComponent implements OnInit {
 	}
 
 	private getMaliciousWifi() {
-		const num = 1;
-		let total = 0;
+		this.maliciousWifi = 0;
 		const wifiHistoryList = this.wifiHistory;
 		if (wifiHistoryList && wifiHistoryList.length !== 0) {
-			wifiHistoryList.forEach(wifi => {
-				if (wifi.good === 1) {
-					total += num;
-				}
-			});
+			this.maliciousWifi = wifiHistoryList.filter(wifi => {
+				const connected = new Date(wifi.info);
+				const monthFirst = new Date();
+				monthFirst.setDate(1);
+				return wifi.good !== '0' && connected > monthFirst;
+			}).length;
 		}
-		this.maliciousWifi = total;
 	}
 
 	private getScore() {
