@@ -13,8 +13,6 @@ import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 })
 export class PageSecurityPasswordComponent implements OnInit {
 
-	title = 'Password Health';
-
 	passwordManager: PasswordManager;
 	statusItem: any;
 	cardContentPositionA: any;
@@ -29,7 +27,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		this.passwordManager = vantageShellService.getSecurityAdvisor().passwordManager;
 		this.statusItem = {
-			title: 'DASHLANE PASSWORD MANAGER'
+			title: 'security.passwordManager.statusTitle'
 		};
 		const cacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus);
 		if (cacheStatus) {

@@ -7,6 +7,9 @@ import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { ChangeContext } from 'ng5-slider';
 import { EyeCareMode, SunsetToSunriseStatus } from 'src/app/data-models/camera/eyeCareMode.model';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { DeviceService } from 'src/app/services/device/device.service';
 enum defaultTemparature {
 	defaultValue = 4500
 }
@@ -28,22 +31,24 @@ export class SubpageDeviceSettingsDisplayComponent
 	public sunsetToSunriseModeStatus = new SunsetToSunriseStatus(true, false, false);
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
-
+	isDesktopMachine: boolean;
 	headerMenuItems = [
 		{
-			title: 'device.deviceSettings.displayCamera.jumpTo.display',
+			title: 'device.deviceSettings.displayCamera.jumpTo.shortcuts.display.title',
 			path: 'display'
 
 		},
 		{
-			title: 'device.deviceSettings.displayCamera.jumpTo.camera',
+			title: 'device.deviceSettings.displayCamera.jumpTo.shortcuts.camera.title',
 			path: 'camera'
 		}
 	];
 
 	constructor(public baseCameraDetail: BaseCameraDetail,
+		private deviceService: DeviceService,
 		// public cd: ChangeDetectorRef,
-		public displayService: DisplayService) {
+		public displayService: DisplayService,
+		private commonService: CommonService) {
 		this.dataSource = new CameraDetail();
 		this.eyeCareDataSource = new EyeCareMode();
 	}
@@ -56,7 +61,11 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.getSunsetToSunrise();
 		this.getCameraPrivacyModeStatus();
 		this.getCameraDetails();
-
+		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
+		if (this.isDesktopMachine) {
+			// on desktop machine, camera section need to hide, so it's Jump to Setting link also need to remove
+			this.headerMenuItems.pop();
+		}
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			cameraDetail => {
 				this.dataSource = cameraDetail;
@@ -66,7 +75,9 @@ export class SubpageDeviceSettingsDisplayComponent
 				console.log(error);
 			}
 		);
-		this.statusChangedLocationPermission();
+		// this.startEyeCareMonitor();
+		//this.statusChangedLocationPermission();
+
 	}
 
 	ngOnDestroy() {
@@ -78,7 +89,9 @@ export class SubpageDeviceSettingsDisplayComponent
 	/**
 	 * When Go to windows privacy settings link button is clicked
 	 */
-	public onPrivacySettingClick() { }
+	public onPrivacySettingClick() {
+		this.deviceService.launchUri('ms-settings:privacy-webcam');
+	}
 
 	/**
 	 * When Camera Privacy Mode radio is toggled
@@ -110,9 +123,9 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.displayService.getDisplayColortemperature().then((response) => {
 			console.log('getDisplayColortemperature.then', response);
 			this.eyeCareDataSource = response;
-			if (response.current === 4500 && response.eyecaremode === 4500) {
-				this.eyeCareDataSource.current = response.eyecaremode;
-			}
+			// if (response.current === 4500 && response.eyecaremode === 4500) {
+			// 	this.eyeCareDataSource.current = response.eyecaremode;
+			// }
 			// this.cd.detectChanges();
 			// this.eyecareDatasource.current = response.current;
 			console.log('getDisplayColortemperature.then', this.eyeCareDataSource);
@@ -123,11 +136,12 @@ export class SubpageDeviceSettingsDisplayComponent
 		try {
 			if (this.displayService.isShellAvailable) {
 				this.displayService.setEyeCareModeState(event.switchValue)
-					.then((value: boolean) => {
+					.then((value: any) => {
 						console.log('onEyeCareModeStatusToggle.then', value);
 						// this.setEyeCareModeTemparature(defaultTemparature.defaultValue)
 						// this.eyecareDatasource.current = defaultTemparature.defaultValue;
 						this.getEyeCareModeStatus();
+						//	this.eyeCareDataSource.current = value.colorTemperature;
 					}).catch(error => {
 						console.error('onEyeCareModeStatusToggle', error);
 					});
@@ -268,6 +282,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					if (featureStatus.available) {
 						console.log('cameraPrivacyModeStatus.then', featureStatus);
 						this.cameraPrivacyModeStatus = featureStatus;
+						//this.cameraPrivacyModeStatus.available=false;
 					}
 				})
 				.catch(error => {
@@ -293,7 +308,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		console.log('setCameraAutoExposure.then', $event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService
-				.setCameraAutoExposure($event.value);
+				.setCameraAutoExposure($event.switchValue);
 		}
 	}
 	public onCameraExposureValueChange($event: ChangeContext) {
@@ -307,7 +322,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		console.log('setCameraAutoExposure.then', $event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService
-				.setCameraAutoFocus($event.value);
+				.setCameraAutoFocus($event.switchValue);
 		}
 	}
 
@@ -334,6 +349,33 @@ export class SubpageDeviceSettingsDisplayComponent
 				}).catch(error => {
 					console.error('startLocation', error);
 				});
+
+		}
+	}
+	public getResetColorTemparatureCallBack(resetData: any) {
+		console.log('called from eyecare monitor', JSON.stringify(resetData));
+		this.eyeCareDataSource.current = resetData.colorTemperature;
+		this.eyeCareModeStatus.status = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
+		this.sunsetToSunriseModeStatus.status = (resetData.autoEyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
+	}
+	public startEyeCareMonitor() {
+		console.log('start eyecare monitor');
+		if (this.displayService.isShellAvailable) {
+			this.displayService
+				.startEyeCareMonitor(this.getResetColorTemparatureCallBack.bind(this))
+				.then((value: any) => {
+					console.log('startmonitor', value);
+				}).catch(error => {
+					console.error('startmonitor', error);
+				});
+
+		}
+	}
+	public stopEyeCareMonitor() {
+		console.log('stop eyecare monitor');
+		if (this.displayService.isShellAvailable) {
+			this.displayService
+				.stopEyeCareMonitor();
 
 		}
 	}
