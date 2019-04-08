@@ -7,6 +7,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-widget-quicksettings',
@@ -18,7 +19,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public microphoneStatus = new FeatureStatus(false, true);
 	public eyeCareModeStatus = new FeatureStatus(false, true);
 	private notificationSubscription: Subscription;
-
+	public isDesktopMachine: boolean
 	public quickSettingsWidget = [
 		{
 			tooltipText: 'MICROPHONE',
@@ -42,7 +43,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.getQuickSettingStatus();
-
+		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});

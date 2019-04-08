@@ -67,4 +67,9 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 		this.activeModal.close(false);
 	}
 
+	show() {
+		const show: HTMLElement = document.querySelector('.activation');
+		show.style.visibility = 'visible';
+	}
+
 }

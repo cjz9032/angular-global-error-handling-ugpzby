@@ -13,7 +13,7 @@ export class PasswordManagerLandingViewModel {
 	constructor(pmModel: phoenix.PasswordManager, commonService: CommonService, translate: TranslateService) {
 		const pmStatus = {
 			status: 2,
-			detail: 'common.securityAdvisor.notInstalled', // install or not-installed
+			detail: 'common.securityAdvisor.loading', // install or not-installed
 			path: 'security/password-protection',
 			title: 'common.securityAdvisor.pswdMgr',
 			type: 'security',

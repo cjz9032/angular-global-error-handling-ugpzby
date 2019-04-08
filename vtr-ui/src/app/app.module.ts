@@ -133,6 +133,7 @@ import { WidgetSecurityStatusComponent } from './components/widgets/widget-secur
 
 
 import { MetricsDirective } from './directives/metrics.directive';
+import { DynamicDirective } from './directives/dynamic.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
 import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
@@ -159,9 +160,7 @@ import { WidgetAboutComponent } from './components/widgets/widget-about/widget-a
 import { SubTransformPipe } from './pipe/security-antivirus/sub-transform.pipe';
 import { DateClassPipe } from './pipe/security-antivirus/date-class.pipe';
 import { ModalAboutComponent } from './components/modal/modal-about/modal-about.component';
-
 import { WifiClassPipe } from './pipe/security-landing/wifi-class.pipe';
-
 
 library.add(fas);
 library.add(fab);
@@ -249,6 +248,7 @@ library.add(fal);
 		StatusTextPipe,
 		ModalBatteryChargeThresholdComponent,
 		MetricsDirective,
+		DynamicDirective,
 		InstallationHistoryComponent,
 		SeparatePascalCasePipe,
 		ModalCommonConfirmationComponent,

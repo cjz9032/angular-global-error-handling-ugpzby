@@ -15,7 +15,7 @@
 					[disable]="!(microphoneStatus.permission && microphoneStatus.available && quickSettingsWidget[0].state)"
 					[tooltipText]="quickSettingsWidget[0].tooltipText"></vtr-widget-switch-icon>
 			</div>
-			<div class="col col-4">
+			<div class="col col-4" *ngIf="!isDesktopMachine">
 				<vtr-widget-switch-icon [iconDefinition]="['fal', 'camera']"
 					[value]="cameraStatus.status"
 					[title]="'dashboard.quickSettings.cameraPrivacy' | translate"
