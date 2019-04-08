@@ -26,7 +26,8 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 	) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		this.statusItem = {
-			title: 'security.windowsHello.statusTitle'
+			title: 'security.windowsHello.statusTitle',
+			status: 'common.securityAdvisor.loading'
 		};
 		this.windowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
 		this.updateStatus();

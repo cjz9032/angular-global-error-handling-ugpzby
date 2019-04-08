@@ -10,6 +10,7 @@ interface DevicePostureDetail {
 	title: string; // name
 	detail: string; // faied,passed
 	path: string;
+	type: string;
 }
 
 export class WifiHomeViewModel {
@@ -133,9 +134,9 @@ export class SecurityHealthViewModel {
 			}
 			if (homeProtection.devicePosture) {
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, homeProtection.devicePosture);
-				this.creatHomeDevicePosture(homeProtection.devicePosture);
+				this.createHomeDevicePosture(homeProtection.devicePosture);
 			} else if (cacheHomeDevicePosture) {
-				this.creatHomeDevicePosture(cacheHomeDevicePosture);
+				this.createHomeDevicePosture(cacheHomeDevicePosture);
 			}
 		} catch (err) {
 			console.log(`${err}`);
@@ -150,18 +151,19 @@ export class SecurityHealthViewModel {
 			if (value) {
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, value);
 			}
-			this.creatHomeDevicePosture(value);
+			this.createHomeDevicePosture(value);
 		});
 	}
 
-	creatHomeDevicePosture(devicePosture: Array<DeviceInfo>) {
+	createHomeDevicePosture(devicePosture: Array<DeviceInfo>) {
 		this.homeDevicePosture = [];
 		devicePosture.forEach((item) => {
 			const it: DevicePostureDetail = {
 				status: 0,
 				title: '',
 				detail: '',
-				path: 'security/wifi-security'
+				path: 'security/wifi-security',
+				type: 'security'
 			};
 			it.status = item.vulnerable === 'true' ? 1 : 2;
 			it.title = this.mappingDevicePosture(item.config);
