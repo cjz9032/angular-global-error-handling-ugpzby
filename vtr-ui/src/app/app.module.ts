@@ -161,6 +161,11 @@ import { SubTransformPipe } from './pipe/security-antivirus/sub-transform.pipe';
 import { DateClassPipe } from './pipe/security-antivirus/date-class.pipe';
 import { ModalAboutComponent } from './components/modal/modal-about/modal-about.component';
 import { WifiClassPipe } from './pipe/security-landing/wifi-class.pipe';
+import { TagPickerPipe } from './pipe/translation/tag-picker.pipe';
+import { TextPickerPipe } from './pipe/translation/text-picker.pipe';
+import { WidgetTranslatePickerComponent } from './components/widgets/widget-translate-picker/widget-translate-picker.component';
+import { TranslatePickerBaseComponent } from './components/widgets/widget-translate-picker/base/translate-picker-base/translate-picker-base.component';
+import { TranslatePickerTailComponent } from './components/widgets/widget-translate-picker/base//translate-picker-tail/translate-picker-tail.component';
 import { JoinclassPipe } from './pipe/security-wifi/join-class.pipe';
 import { SuccessClassPipe } from './pipe/security-wifi/success-class.pipe';
 
@@ -284,6 +289,11 @@ library.add(fal);
 		DateClassPipe,
 		ModalAboutComponent,
 		WifiClassPipe,
+		TagPickerPipe,
+		TextPickerPipe,
+		WidgetTranslatePickerComponent,
+		TranslatePickerBaseComponent,
+		TranslatePickerTailComponent,
 		JoinclassPipe,
 		SuccessClassPipe
 	],
