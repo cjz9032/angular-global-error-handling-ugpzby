@@ -2,6 +2,7 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 import * as phoenix from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { TranslateService } from '@ngx-translate/core';
 
 export class PasswordManagerLandingViewModel {
 	statusList: Array<any>;
@@ -9,10 +10,10 @@ export class PasswordManagerLandingViewModel {
 	type = 'security';
 	imgUrl = '../../../../assets/images/Dashlane_Logo_Teal _Web.png';
 
-	constructor(pmModel: phoenix.PasswordManager, commonService: CommonService) {
+	constructor(pmModel: phoenix.PasswordManager, commonService: CommonService, translate: TranslateService) {
 		const pmStatus = {
 			status: 2,
-			detail: 'common.securityAdvisor.notInstalled', // install or not-installed
+			detail: 'common.securityAdvisor.loading', // install or not-installed
 			path: 'security/password-protection',
 			title: 'common.securityAdvisor.pswdMgr',
 			type: 'security',
@@ -39,6 +40,15 @@ export class PasswordManagerLandingViewModel {
 			pmStatus.status = (data === 'installed') ? 2 : 1;
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, data);
 			subjectStatus.status = (data === 'installed') ? 2 : 1;
+		});
+		translate.get(pmStatus.detail).subscribe((res) => {
+			pmStatus.detail = res;
+		});
+		translate.get(pmStatus.title).subscribe((res) => {
+			pmStatus.title = res;
+		});
+		translate.get(subjectStatus.title).subscribe((res) => {
+			subjectStatus.title = res;
 		});
 		this.statusList = new Array(pmStatus);
 		this.subject = subjectStatus;

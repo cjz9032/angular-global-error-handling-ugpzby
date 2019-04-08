@@ -28,7 +28,7 @@
 
 	.sub-heading-2 {
 		color: $main_dark;
-		font-weight: $weight_medium;
+		font-weight: $weight_black;
 		font-size: 2.5rem;
 	}
 
@@ -195,7 +195,7 @@
 
 			h3 {
 				font-size: 3rem;
-				font-weight: 100;
+				font-weight: 350;
 			}
 
 			.status {
@@ -277,10 +277,10 @@
 
 					.connection-name {
 						font-size: 1.7rem;
-						font-weight: 500;
+						font-weight: $weight_bold;
 
 						small {
-							font-weight: 300;
+							font-weight: $weight_light;
 							display: block;
 						}
 					}
@@ -328,6 +328,7 @@
 					margin-right: 1rem;
 					vertical-align: middle;
 					text-decoration: underline;
+					font-weight: 500;
 				}
 
 				fa-icon {
@@ -388,6 +389,10 @@
 					background-image: linear-gradient(315deg, $stop_light 25%, $stop 100%);
 					border: 0.1rem solid $stop_dark;
 				}
+			}
+			.line-height-2-5 {
+				line-height: 2.5rem;
+				height: 2.5rem;
 			}
 
 			h3 {

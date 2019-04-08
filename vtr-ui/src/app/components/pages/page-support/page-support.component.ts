@@ -11,7 +11,7 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 })
 export class PageSupportComponent implements OnInit, OnDestroy {
 
-	title = 'support.common.get-support';
+	title = 'support.common.getSupport';
 	searchWords = '';
 	searchCount = 1;
 	articles: any;
@@ -23,7 +23,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		documentation: [
 			{
 				'icon': ['fal', 'book'],
-				'title': 'support.documentation.list-user-guide',
+				'title': 'support.documentation.listUserGuide',
 				'url': 'https://support.lenovo.com',
 				'metricsItem': 'Documentation.UserGuideButton',
 				'metricsEvent': 'ItemClick',
@@ -33,7 +33,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		needHelp: [
 			{
 				'icon': ['fal', 'comment-alt'],
-				'title': 'support.need-help.list-lenovo-community',
+				'title': 'support.needHelp.listLenovoCommunity',
 				'url': 'https://community.lenovo.com',
 				'metricsItem': 'NeedHelp.LenovoCommunityButton',
 				'metricsEvent': 'ItemClick',
@@ -41,7 +41,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			},
 			{
 				'icon': ['fal', 'share-alt'],
-				'title': 'support.need-help.list-contact-customer-service',
+				'title': 'support.needHelp.listContactCustomerService',
 				'url': 'https://support.lenovo.com/',
 				'metricsItem': 'NeedHelp.ContactCustomerServiceButton',
 				'metricsEvent': 'ItemClick',
@@ -49,8 +49,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			},
 			{
 				'iconPath': 'assets/images/support/svg_icon_wechat.svg',
-				// 'icon': ['fab', 'weixin'],
-				'title': 'support.need-help.list-contact-us-on-wechat',
+				'title': 'support.needHelp.listContactUsOnWechat',
 				'hideArrow': true,
 				'image': 'assets/images/wechat-qrcode.png',
 			}
@@ -58,7 +57,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		quicklinks: [
 			{
 				'icon': ['fal', 'ticket-alt'],
-				'title': 'support.quicklinks.list-e-ticket',
+				'title': 'support.quicklinks.listETicket',
 				'url': 'https://pcsupport.lenovo.com/us/en/eticketwithservice',
 				'metricsItem': 'Quicklinks.E-ticketButton',
 				'metricsEvent': 'ItemClick',
@@ -66,7 +65,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			},
 			{
 				'icon': ['fal', 'briefcase'],
-				'title': 'support.quicklinks.list-service-provider',
+				'title': 'support.quicklinks.listServiceProvider',
 				'url': 'https://www.lenovo.com/us/en/ordersupport/',
 				'metricsItem': 'Quicklinks.ServiceProviderButton',
 				'metricsEvent': 'ItemClick',
@@ -145,7 +144,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				console.log(response);
+				// console.log(response);
 				this.articles = response;
 			},
 			error => {

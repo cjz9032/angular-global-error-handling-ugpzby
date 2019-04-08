@@ -25,6 +25,7 @@ import { WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
 export class MenuMainComponent implements OnInit, OnDestroy {
 
 	public deviceModel: string;
+	public country: string;
 	commonMenuSubscription: Subscription;
 	public appVersion: string = environment.appVersion;
 	constantDevice = 'device';
@@ -33,25 +34,27 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	items: Array<any> = [
 		{
 			id: 'dashboard',
-			label: 'Dashboard',
+			label: 'common.menu.dashboard',
 			path: 'dashboard',
 			icon: ['fal', 'columns'],
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.dashboard',
 			routerLinkActiveOptions: { exact: true },
+			forArm: true,
 			subitems: []
 		}, {
 			id: 'device',
-			label: 'Device',
+			label: 'common.menu.device.title',
 			path: 'device',
 			icon: ['fal', 'laptop'],
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.device',
+			forArm: false,
 			subitems: [{
 				id: 'device',
-				label: 'My device',
+				label: 'common.menu.device.sub1',
 				path: '',
 				icon: '',
 				metricsEvent: 'itemClick',
@@ -61,7 +64,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				subitems: []
 			}, {
 				id: 'device-settings',
-				label: 'My device settings',
+				label: 'common.menu.device.sub2',
 				path: 'device-settings',
 				icon: '',
 				metricsEvent: 'itemClick',
@@ -71,7 +74,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				subitems: []
 			}, {
 				id: 'system-updates',
-				label: 'System updates',
+				label: 'common.menu.device.sub3',
 				path: 'system-updates',
 				icon: '',
 				metricsEvent: 'itemClick',
@@ -82,15 +85,16 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			}]
 		}, {
 			id: 'security',
-			label: 'Security',
+			label: 'common.menu.security.title',
 			path: 'security',
 			icon: ['fal', 'lock'],
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.security',
+			forArm: false,
 			subitems: [{
 				id: 'security',
-				label: 'My Security',
+				label: 'common.menu.security.sub1',
 				path: '',
 				icon: '',
 				metricsEvent: 'itemClick',
@@ -100,7 +104,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				subitems: []
 			}, {
 				id: 'anti-virus',
-				label: 'Anti-Virus',
+				label: 'common.menu.security.sub2',
 				path: 'anti-virus',
 				icon: '',
 				metricsEvent: 'itemClick',
@@ -110,7 +114,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				subitems: []
 			}, {
 				id: 'wifi-security',
-				label: 'WiFi Security',
+				label: 'common.menu.security.sub3',
 				path: 'wifi-security',
 				icon: '',
 				metricsEvent: 'itemClick',
@@ -120,7 +124,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				subitems: []
 			}, {
 				id: 'password-protection',
-				label: 'Password Protection',
+				label: 'common.menu.security.sub4',
 				path: 'password-protection',
 				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
@@ -130,7 +134,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				subitems: []
 			}, {
 				id: 'internet-protection',
-				label: 'Internet Protection',
+				label: 'common.menu.security.sub5',
 				path: 'internet-protection',
 				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
@@ -138,37 +142,28 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				routerLinkActiveOptions: { exact: true },
 				icon: '',
 				subitems: []
-			}, {
-				id: 'windows-hello',
-				label: 'Windows Hello',
-				path: 'windows-hello',
-				icon: '',
-				metricsEvent: 'itemClick',
-				metricsParent: 'navbar',
-				metricsItem: 'link.windowshello',
-				routerLinkActiveOptions: { exact: true },
-				subitems: []
 			}]
 		}, {
 			id: 'support',
-			label: 'Support',
+			label: 'common.menu.support',
 			path: 'support',
 			icon: ['fal', 'wrench'],
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.support',
 			routerLinkActiveOptions: { exact: true },
-			forArm: true,
+			forArm: false,
 			subitems: []
 		}, {
 			id: 'user',
 			label: 'User',
 			path: 'user',
 			icon: 'user',
-			metricsEvent: 'itemClick',
-			metricsParent: 'navbar',
+			metricsEvent: 'ItemClick',
+			metricsParent: 'NavigationLenovoAccount.Submenu',
 			metricsItem: 'link.user',
 			routerLinkActiveOptions: { exact: true },
+			forArm: true,
 			subitems: []
 		}
 	];
@@ -184,11 +179,40 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		private deviceService: DeviceService,
 		vantageShellService: VantageShellService
 	) {
+
+
+
 		/*const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		if (!cacheShowWindowsHello) {
+=======
+		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
+		if (cacheShowWindowsHello) {
+>>>>>>> 1e7c598fdbb92e2c4f6d7c421a554ca8d67c0f6b
 			const securityItem = this.items.find(item => item.id === 'security');
-			securityItem.subitems = securityItem.subitems.filter(subitem => subitem.id !== 'windows-hello');
+			securityItem.subitems.push({
+				id: 'windows-hello',
+				label: 'common.menu.security.sub6',
+				path: 'windows-hello',
+				icon: '',
+				metricsEvent: 'itemClick',
+				metricsParent: 'navbar',
+				metricsItem: 'link.windowshello',
+				routerLinkActiveOptions: { exact: true },
+				subitems: []
+			});
 		}
+		if (vantageShellService.getSecurityAdvisor()) {
+			const windowsHello: WindowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
+			if (windowsHello.facialIdStatus || windowsHello.fingerPrintStatus) {
+				this.showWindowsHello(windowsHello);
+			}
+			windowsHello.on(EventTypes.helloFacialIdStatusEvent, () => {
+				this.showWindowsHello(windowsHello);
+			}).on(EventTypes.helloFingerPrintStatusEvent, () => {
+				this.showWindowsHello(windowsHello);
+			});
+		}
+<<<<<<< HEAD
 		const windowsHello: WindowsHello =vantageShellService.getSecurityAdvisor().windowsHello;
 		this.showWindowsHello(windowsHello);
 		windowsHello.on(EventTypes.helloFacialIdStatusEvent, () => {
@@ -196,6 +220,8 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		}).on(EventTypes.helloFingerPrintStatusEvent, () => {
 			this.showWindowsHello(windowsHello);
 		});
+=======
+>>>>>>> 1e7c598fdbb92e2c4f6d7c421a554ca8d67c0f6b
 
 		this.commonMenuSubscription = this.translationService.subscription
 			.subscribe((translation: Translation) => {
@@ -250,8 +276,8 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			switch (notification.type) {
 				case LocalStorageKey.MachineInfo:
 					this.deviceModel = notification.payload.family;
+					this.country = notification.payload.country;
 					break;
-
 				default:
 					break;
 			}
@@ -268,7 +294,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		const securityItem = this.items.find(item => item.id === 'security');
 		if (!this.commonService.isRS5OrLater()
 			|| (typeof windowsHello.facialIdStatus !== 'string'
-			&& typeof windowsHello.fingerPrintStatus !== 'string')) {
+				&& typeof windowsHello.fingerPrintStatus !== 'string')) {
 			securityItem.subitems = securityItem.subitems.filter(subitem => subitem.id !== 'windows-hello');
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
 		} else {
@@ -276,12 +302,13 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			if (!windowsHelloItem) {
 				securityItem.subitems.push({
 					id: 'windows-hello',
-					label: 'Windows Hello',
+					label: 'common.menu.security.sub6',
 					path: 'windows-hello',
 					icon: '',
 					metricsEvent: 'itemClick',
 					metricsParent: 'navbar',
 					metricsItem: 'link.windowshello',
+					routerLinkActiveOptions: { exact: true },
 					subitems: []
 				});
 			}

@@ -2,6 +2,7 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 import * as phoenix from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { TranslateService } from '@ngx-translate/core';
 
 export class WifiSecurityLandingViewModel {
 	statusList: Array<any>;
@@ -9,10 +10,14 @@ export class WifiSecurityLandingViewModel {
 	type = 'security';
 	wifiHistory: Array<phoenix.WifiDetail>;
 	imgUrl = '../../../../assets/images/coronet-logo.svg';
-	constructor(wfModel: phoenix.WifiSecurity, hpModel: phoenix.HomeProtection, commonService: CommonService) {
+	constructor(
+		wfModel: phoenix.WifiSecurity,
+		commonService: CommonService,
+		translate: TranslateService
+		) {
 		const wfStatus = {
 			status: 2,
-			detail: 'common.securityAdvisor.disabled', // enabled / disabled
+			detail: 'common.securityAdvisor.loading', // enabled / disabled
 			path: 'security/wifi-security',
 			title: 'common.securityAdvisor.wifi',
 			type: 'security',
@@ -51,8 +56,17 @@ export class WifiSecurityLandingViewModel {
 		wfModel.on(EventTypes.wsStateEvent, (data) => {
 			wfStatus.status = data === 'enabled' ? 0 : 1;
 			wfStatus.detail = data === 'enabled' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWifiSecurityStatus, wfStatus.detail);
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWifiSecurityStatus, data);
 			subjectStatus.status = (data === 'enabled') ? 0 : 1;
+		});
+		translate.get(wfStatus.detail).subscribe((res) => {
+			wfStatus.detail = res;
+		});
+		translate.get(wfStatus.title).subscribe((res) => {
+			wfStatus.title = res;
+		});
+		translate.get(subjectStatus.title).subscribe((res) => {
+			subjectStatus.title = res;
 		});
 		this.statusList = new Array(wfStatus);
 		this.subject = subjectStatus;

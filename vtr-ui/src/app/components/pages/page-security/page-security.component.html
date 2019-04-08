@@ -65,17 +65,17 @@
 																			[icon]="['fas', 'wifi']"></fa-icon>
 																	</div>
 																</div>
-																<div class="col-6 pl-0 ellipsis">{{wifi.ssid}}</div>
+																<div class="col-6 pl-0 ellipsis wifi-good-font">{{wifi.ssid}}</div>
 																<div class="wifi-bg col-4 pl-0 pr-3">
 																	<span class="wifi-good pt-1 pb-1 pr-2 pl-2"
 																		[ngClass]="getWifiStatus(wifi.good)">
-																		{{getWifiDetail(wifi.good)}}
+																		{{getWifiDetail(wifi.good) | translate}}
 																	</span>
 																</div>
 															</li>
 															<li class="wifi-link"><a routerLink="wifi-security"
-																	[queryParams]="{isShowMore:false}">See all joined
-																	networks</a></li>
+																[queryParams]="{isShowMore:false}">See all joined networks</a>
+															</li>
 														</ul>
 													</div>
 												</div>

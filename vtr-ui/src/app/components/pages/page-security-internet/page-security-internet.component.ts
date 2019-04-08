@@ -13,8 +13,6 @@ import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 })
 export class PageSecurityInternetComponent implements OnInit {
 
-	title = 'VPN Security';
-
 	vpn: Vpn;
 	statusItem: any;
 	cardContentPositionA: any;
@@ -28,7 +26,7 @@ export class PageSecurityInternetComponent implements OnInit {
 	) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		this.statusItem = {
-			title: 'SURFEASY VPN'
+			title: 'security.vpn.statusTitle'
 		};
 		this.vpn = vantageShellService.getSecurityAdvisor().vpn;
 		const cacheStatus: string = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityVPNStatus);

@@ -106,13 +106,13 @@ input:checked+.switch.switch-sm>small {
 /* EXTRA SMALL - XS */
 
 input:checked+.switch.switch-xs>small {
-	left: 3.1rem;
+	left: 4.2rem;
 }
 
 .switch.switch-xs {
-	margin-top: 0.2rem;
-	height: 1.8rem;
-	width: 4.8rem;
+	margin-top: 0.5rem;
+	height: 2rem;
+	width: 6rem;
 }
 
 .switch-xs small {
@@ -147,11 +147,11 @@ input:checked+.switch.switch-xs>small {
 	color: $light;
 	font-weight: $weight_bold;
 	position: absolute;
-	top: 0.4rem;
-	left: 1rem;
+	top: 0.6rem;
+	left: 1.5rem;
 
 	&.off-label {
-		left: 2rem;
+		left: 2.2rem;
 		color: $shade_darkest;
 	}
 }

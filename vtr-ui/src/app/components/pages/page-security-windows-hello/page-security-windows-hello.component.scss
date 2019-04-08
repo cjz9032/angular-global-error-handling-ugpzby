@@ -105,7 +105,7 @@
 			color: $main_dark;
 
 			.text-regular {
-				color: $main_dark;
+				color: $main_shade;
 				font-size: 1.6rem;
 
 				a {
@@ -199,7 +199,11 @@
 					left: 0rem;
 				}
 				.text-regular {
+					color: $main_shade;
 					padding: 0.8rem 0.8rem 0.8rem 2rem;
+					a {
+						text-decoration: underline;
+					}
 				}
 			}
 		}

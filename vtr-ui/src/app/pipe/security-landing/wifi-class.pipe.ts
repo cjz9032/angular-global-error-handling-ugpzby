@@ -6,7 +6,7 @@ export class WifiClassPipe implements PipeTransform {
 		let className;
 		if (value && value.length !== 0) {
 			value.forEach(item => {
-				if (item.title === 'common.securityAdvisor.wifi' && item.status === 0) {
+				if (item.path === 'security/wifi-security' && item.status === 0 && !item.circle) {
 					className = 'wifiStatus-no-border-bottom';
 				} else {
 					className = '';

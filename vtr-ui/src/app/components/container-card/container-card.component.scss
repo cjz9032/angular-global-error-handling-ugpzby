@@ -218,6 +218,9 @@
 			background-size: cover;
 			background-position: 50% 50%;
 			background-repeat: no-repeat;
+			a{
+				text-decoration: none;
+			}
 		}
 
 		.content {
@@ -227,7 +230,7 @@
 				font-weight: $weight_light;
 				color: $light;
 				text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
-				font-size: 3.4rem;
+				font-size: 4rem;
 				line-height: 4.6rem;
 			}
 
