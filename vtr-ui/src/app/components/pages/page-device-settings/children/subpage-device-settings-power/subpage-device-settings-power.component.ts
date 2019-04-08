@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit, TemplateRef, OnDestroy } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PowerService } from 'src/app/services/power/power.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
@@ -17,7 +17,7 @@ enum PowerMode {
 	templateUrl: './subpage-device-settings-power.component.html',
 	styleUrls: ['./subpage-device-settings-power.component.scss']
 })
-export class SubpageDeviceSettingsPowerComponent implements OnInit {
+export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	title = 'Power Settings';
 	machineBrand: number;
 	public vantageToolbarStatus = new FeatureStatus(false, true);
@@ -231,9 +231,14 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	}
 	ngOnInit() {
 		this.getMachineInfo();
-	//	this.startMonitor();
+		this.startMonitor();
 		this.getVantageToolBarStatus();
 	}
+
+	ngOnDestroy() {
+		this.stopMonitor();
+	}
+
 	openContextModal(template: TemplateRef<any>) {
 		this.modalService.open(template, {
 			windowClass: 'read-more'
@@ -851,10 +856,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 			console.error(error.message);
 		}
 	}
-	public getStartMonitorCallBack(resetData: any) {
-		console.log('called from power start monitor', JSON.stringify(resetData));
-
+	public getStartMonitorCallBack(featureStatus: FeatureStatus) {
+		console.log('getStartMonitorCallBack', featureStatus);
+		this.vantageToolbarStatus = featureStatus;
 	}
+
 	public startMonitor() {
 		console.log('start eyecare monitor');
 		if (this.powerService.isShellAvailable) {
@@ -871,9 +877,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	public stopMonitor() {
 		console.log('stop eyecare monitor');
 		if (this.powerService.isShellAvailable) {
-			this.powerService
-				.stopMonitor();
-
+			this.powerService.stopMonitor();
 		}
 	}
 	// End Lenovo Vantage ToolBar
