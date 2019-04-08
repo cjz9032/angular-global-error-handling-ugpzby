@@ -132,23 +132,12 @@
 				"title": "Power",
 				"subtitle": "Power Settings",
 				"description": "This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.",
-				"jumpTo": {
+				"jumpto": {
 					"title": "JUMP TO SETTINGS",
-					"shortcuts": {
-						"intelligentCooling":
-						{
-							"title": "Intelligent Cooling"
-						},
-						"battery":{
-							"title": "Battery"
-						},
-						"power":{
-							"title": "Power"
-						},
-						"Other":{
-							"title": "Other"
-						}
-					}
+					"battery": "Battery",
+					"power": "Power",
+					"cooling": "Intelligent Cooling",
+					"other": "Other"
 				},
 				"powerSmartSettings": {
 					"title": "Power Smart Settings",
@@ -445,7 +434,7 @@
 				"dedicated": "Dedicated security that consistently outperforms Defender and other leading AV providers",
 				"deviceToCloud": "Device to cloud technology that won't slow down your PC",
 				"poweredBy": "Powered By McAfee",
-				"privacyTerms": "<p>Read more on the <a vtrMetrics metricsItem=\"privacyPolicy\" metricsEvent=\"itemClick\" href=\"https://www.mcafee.com/consumer/en-us/policy/global/legal.html \"target=\"_blank\" class=\"learnmore\">Privacy Policy</a> and <a vtrMetrics metricsItem=\"termsOfServices\" metricsEvent=\"itemClick\" href=\"https://www.mcafee.com/consumer/en-us/policy/global/legal.html\" target=\"_blank\" class=\"learnmore\">Terms of Service</a></p>",
+				"privacyTerms": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
 				"mcafeePremium": "McAfee premium protection",
 				"protectedBy": "You are currently protected by",
 				"betterProtected": ".However, you could be better protected with McAfee LifeSafe",
@@ -595,7 +584,7 @@
 			"howToGetData4": "Like SurfEasy on Facebook and earn +100 MB",
 			"howToGetData5": "Follow SurfEasy on Twitter and earn +100 MB",
 			"poweredBySurfEasy": "Powered By SurfEasy",
-			"privacyPolicyAndTermsOfService": "Read more on the <a vtrMetrics metricsEvent=\"itemClick\" metricsItem=\"privacyPolicy\" metricsParent=\"internetHealth\" href=\"https://www.surfeasy.com/privacy_policy/\" target=\"_blank\">Privacy Policy</a> and <a vtrMetrics metricsEvent=\"itemClick\" metricsItem=\"termsOfServices\" metricsParent=\"internetHealth\" href=\"https://www.surfeasy.com/terms_of_service/\" target=\"_blank\">Terms of Service</a>"
+			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
 		},
 		"passwordManager": {
 			"statusTitle": "DASHLANE PASSWORD MANAGER",
@@ -605,7 +594,7 @@
 			"whatIsPmInstalled": "A safer digital life is waiting: Add passwords, enable Dark Web Monitoring and autofill personal and payment info.",
 			"startProtect": "Start protecting your online accounts the simple way.",
 			"getDashLane": "Get DashLane",
-			"learnMoreAbout": "<a href=\"https://www.dashlane.com/lenovo\" metricsEvent=\"itemClick\" metricsItem=\"learnMoreAboutDashLane\" metricsParent=\"passwordManager\" target=\"_blank\">Learn more</a> about making the most of DashLane",
+			"learnMoreAbout": "<tag>Learn more</tag> about making the most of DashLane",
 			"openDashLane": "Open DashLane",
 			"neverForget": "DashLane: Never forget another password",
 			"whatIsDashLane": "DashLane is a password manager and digital protection app that works with your browser. It automatically saves passwords and personal data, remembers it all for you, and stores everything securely. Dashlane also analyzes your account security and provides easy ways to improve your password health.",
@@ -615,14 +604,14 @@
 			"helpYou3": "Sync across devices so you're never without access to important accounts",
 			"helpYou4": "Share passwords securely without revealing them",
 			"getStarted": "Getting started with DashLane?",
-			"checkOutThisGuide": "Use DashLane to stay safe online while saving time and frustration. For detailed instructions on how to get started, <a metricsEvent=\"itemClick\" metricsItem=\"checkOutThisGuide\" metricsParent=\"passwordManager\" href=\"https://www.dashlane.com/product/intro\" target=\"_blank\">check out this guide.</a>",
+			"checkOutThisGuide": "Use DashLane to stay safe online while saving time and frustration. For detailed instructions on how to get started, <tag>check out this guide.</tag>",
 			"allowsYou": "DashLane allows you to",
 			"allowsYou1": "Log in instantly every where for seamless Browsing-Sync across devices so you're never without access to important accounts",
 			"allowsYou2": "Monitor the dark web for your personal information",
 			"allowsYou3": "Stay safe on unsecured WiFi networks with built in VPN",
 			"allowsYou4": "Share passwords securely without revealing them",
 			"poweredByDashLane": "Powered By DashLane",
-			"privacyPolicyAndTermsOfService": "Read more on the <a vtrMetrics metricsEvent=\"itemClick\" metricsItem=\"privacyPolicy\" metricsParent=\"passwordManager\" href=\"https://www.dashlane.com/privacy\" target=\"_blank\">Privacy Policy</a> and <a vtrMetrics metricsEvent=\"itemClick\" metricsItem=\"termsOfServices\" metricsParent=\"passwordManager\" href=\"https://www.dashlane.com/terms\" target=\"_blank\">Terms of Service</a>"
+			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
 		},
 		"windowsHello": {
 			"statusTitle": "WINDOWS HELLO",
@@ -634,12 +623,12 @@
 			"whyWindowsHelloDescription1": "Windows Hello makes logging into your PC easier and more secure, and can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello.",
 			"startUsingToday": "Start using Windows Hello Today",
 			"visitAndRegister": "Visit the Windows Hello page and register your fingerprint.",
-			"visitInSettings": "<a vtrMetrics metricsItem=\"setUpWindowsHello\" metricsEvent=\"itemClick\" metricsParent=\"windowsHello\" href=\"javascript:void(0)\" (click)=\"windowsHello.launch()\"> Visit Windows Hello</a> in system settings",
+			"visitInSettings": "<tag> Visit Windows Hello</tag> in system settings",
 			"unlock": "Use Windows Hello to log into and unlock your PC with a touch of a finger on the sensor.",
 			"startUsingWindowsHello": "Start using Windows Hello to log into Microsoft Apps such as Outlook, OneDrive, Office 365 and Xbox Live.",
 			"visitMicrosoft": "Visit Microsoft",
 			"poweredByWindowsHello": "Powered By Windows Hello",
-			"privacyPolicy": "Read more on the <a vtrMetrics metricsItem=\"privacyPolicy\" metricsEvent=\"itemClick\" metricsParent=\"windowsHello\" href=\"https://support.microsoft.com/en-us/help/4468253/windows-hello-and-privacy-microsoft-privacy\" target=\"_blank\">Privacy Policy</a>",
+			"privacyPolicy": "Read more on the <tag>Privacy Policy</tag>",
 			"whyWindowsHelloDescription2": "Windows Hello makes logging into your PC easier and more secure. And you can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello",
 			"authentication": "Windows Hello Authentication",
 			"traditional": "Traditional passwords can be stolen and used to access your account from anywhere in the world. More secure and convinient. Windows Hello is the next generation of a password. Use your fingerprint reader [or IR camera] instead of insecure passwords to log in.",

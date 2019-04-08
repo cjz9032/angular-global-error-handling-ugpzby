@@ -104,11 +104,12 @@
 														<div class="col">
 															<div class="text-regular">
 																{{'security.windowsHello.visitAndRegister' | translate}}
-																<ng-container 
-																	vtrDynamic 
-																	[compile]="'security.windowsHello.visitInSettings' | translate" 
-																	[compileContext]="this">
-																</ng-container>
+																<vtr-translate-picker-base [translateString]="'security.windowsHello.visitInSettings' | translate"
+																	[metricsItem]="'setUpWindowsHello'"
+																	[href]="'javascript:void(0)'"
+																	[metricsParent]="'security.windowsHello'"
+																	[onClick]="setUpWindowsHello.bind(this)">
+																</vtr-translate-picker-base>
 															</div>
 														</div>
 													</div>
@@ -186,10 +187,13 @@
 								<div class="row top-line">
 									<div class="col">
 										<div class="list-heading">{{'security.windowsHello.poweredByWindowsHello' | translate}}</div>
-										<p class="text-regular"
-											vtrDynamic 
-											[compile]="'security.windowsHello.privacyPolicy' | translate" 
-											[compileContext]="this"></p>
+										<p class="text-regular">
+											<vtr-translate-picker-base [translateString]="'security.windowsHello.privacyPolicy' | translate"
+												[metricsItem]="'privacyPolicy'"
+												[href]="'https://support.microsoft.com/en-us/help/4468253/windows-hello-and-privacy-microsoft-privacy'"
+												[metricsParent]="'security.windowsHello'">
+											</vtr-translate-picker-base>
+										</p>
 									</div>
 									<div class="pull right"><img class="dashlane_logo_teal"
 											src="../../../../assets/images/windows-logo.png" /></div>
@@ -219,11 +223,12 @@
 												<li>
 													<div class="text-regular">
 														{{'security.windowsHello.visitAndRegister' | translate}}
-														<ng-container 
-																	vtrDynamic 
-																	[compile]="'security.windowsHello.visitInSettings' | translate" 
-																	[compileContext]="this">
-														</ng-container>
+														<vtr-translate-picker-base [translateString]="'security.windowsHello.visitInSettings' | translate"
+															[metricsItem]="'setUpWindowsHello'"
+															[href]="'javascript:void(0)'"
+															[metricsParent]="'security.windowsHello'"
+															[onClick]="setUpWindowsHello.bind(this)">
+														</vtr-translate-picker-base>
 													</div>
 												</li>
 												<li>
@@ -240,6 +245,7 @@
 																vtrMetrics
 																metricsItem="visitMicrosoft"
 																metricsEvent="itemClick"
+																metricsParent="security.windowsHello"
 																href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
 																{{'security.windowsHello.visitMicrosoft' | translate}}</a>
 														</div>
