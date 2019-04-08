@@ -28,7 +28,8 @@ export class SubpageDeviceSettingsDisplayComponent
 	private cameraDetailSubscription: Subscription;
 	public eyeCareModeStatus = new FeatureStatus(false, true);
 	public cameraPrivacyModeStatus = new FeatureStatus(false, true);
-	public sunsetToSunriseModeStatus = new SunsetToSunriseStatus(true, false, false);
+	public sunsetToSunriseModeStatus = new SunsetToSunriseStatus(true, false, false, '', '');
+	public enableSunsetToSunrise = false;
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	isDesktopMachine: boolean;
@@ -55,10 +56,10 @@ export class SubpageDeviceSettingsDisplayComponent
 
 	ngOnInit() {
 		console.log('subpage-device-setting-display onInit');
-
+		this.getSunsetToSunrise();
 		this.getEyeCareModeStatus();
 		this.getDisplayColorTemperature();
-		this.getSunsetToSunrise();
+
 		this.getCameraPrivacyModeStatus();
 		this.getCameraDetails();
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
@@ -76,7 +77,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			}
 		);
 		// this.startEyeCareMonitor();
-		//this.statusChangedLocationPermission();
+		this.statusChangedLocationPermission();
 
 	}
 
@@ -172,6 +173,10 @@ export class SubpageDeviceSettingsDisplayComponent
 				.then((featureStatus: FeatureStatus) => {
 					console.log('getEyeCareModeState.then', featureStatus);
 					this.eyeCareModeStatus = featureStatus;
+					if (this.eyeCareModeStatus.available === true) {
+						console.log('eyeCareModeStatus.available', featureStatus.available);
+					}
+
 					// alert(this.eyeCareModeStatus.status);
 				})
 				.catch(error => {
@@ -250,6 +255,10 @@ export class SubpageDeviceSettingsDisplayComponent
 					.then((status: SunsetToSunriseStatus) => {
 						console.log('getSunsetToSunrise.then', status);
 						this.sunsetToSunriseModeStatus = status;
+						if (status.permission === false) {
+							this.displayService.openPrivacyLocation();
+							this.enableSunsetToSunrise = true;
+						}
 					}).catch(error => {
 						console.error('getSunsetToSunrise', error);
 					});
@@ -336,7 +345,12 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 	// End Camera Privacy
 	public getLocationPermissionStatus(value: any) {
-		console.log('called from loaction service ui', JSON.stringify(value));
+		console.log('called from loaction service ui', JSON.stringify(value.status));
+		if (value.status === false) {
+			this.enableSunsetToSunrise = true;
+		} else{
+			this.enableSunsetToSunrise = false;
+		}
 	}
 
 	public statusChangedLocationPermission() {

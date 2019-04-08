@@ -43,6 +43,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 	radioQuietCool = false;
 	toggleIntelligentCoolingStatus = false;
 	manualModeSettingStatus: string;
+	usbChargingInBatteryModeStatus = true;
 	headerCaption =
 		'This section enables you to dynamically adjust thermal performance and maximize the battery life.' +
 		' It also has other popular power-related features.' +
@@ -375,7 +376,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 								this.toggleIntelligentCooling = false;
 								this.toggleIntelligentCoolingStatus = false;
 								this.intelligentCooling = true;
-								this.getManualModeSetting();
+								if (this.cQLCapability === false) {
+									this.SetPerformanceAndCool('performance');
+								} else {
+									this.getManualModeSetting();
+								}
+								//
 								// this.manualModeSettingStatus = 'error';
 
 							}
@@ -697,7 +703,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit {
 					.then((featureStatus: FeatureStatus) => {
 						console.log('getUSBChargingInBatteryModeStatusIdeaNoteBook.then', featureStatus);
 						this.usbChargingStatus = featureStatus;
-						this.usbChargingCheckboxFlag = featureStatus.status;
+						this.usbChargingInBatteryModeStatus = featureStatus.available;
+						if (this.usbChargingInBatteryModeStatus) {
+							this.usbChargingCheckboxFlag = featureStatus.status;
+						}
 					})
 					.catch(error => {
 						console.error('getUSBChargingInBatteryModeStatusIdeaNoteBook', error);
