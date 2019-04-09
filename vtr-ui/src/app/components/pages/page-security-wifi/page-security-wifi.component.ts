@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener, AfterViewInit } from '@angular/core';
 import { ModalWifiSecuriryLocationNoticeComponent } from '../../modal/modal-wifi-securiry-location-notice/modal-wifi-securiry-location-notice.component';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import * as phoenix from '@lenovo/tan-client-bridge';
 import { EventTypes, WifiSecurity, HomeProtection, DeviceInfo } from '@lenovo/tan-client-bridge';
 import { CMSService } from 'src/app/services/cms/cms.service';
@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { forEach } from '@angular/router/src/utils/collection';
 import { TranslateService } from '@ngx-translate/core';
+import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 
 interface DevicePostureDetail {
 	status: number; // 1,2
@@ -204,5 +205,15 @@ export class PageSecurityWifiComponent implements OnInit, AfterViewInit {
 		} catch (err) {
 			throw new Error('wifiSecurity is null');
 		}
+	}
+
+	openSecurityHealthArticle(): void {
+		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
+			size: 'lg',
+			centered: true,
+			windowClass: 'Article-Detail-Modal'
+		});
+
+		articleDetailModal.componentInstance.articleId = '9CEBB4794F534648A64C5B376FBC2E39';
 	}
 }
