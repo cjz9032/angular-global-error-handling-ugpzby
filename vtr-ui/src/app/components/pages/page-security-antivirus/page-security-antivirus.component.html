@@ -11,7 +11,7 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col col-8 vtr-page-left-column">
-						<div *ngIf="viewMode?.currentPage ==='windows'">
+						<div *ngIf="viewModel?.currentPage ==='windows'">
 							<div class="header mt-minus">
 								<div class="rounded-card-with-shadow p-5">
 									<div class="row">
@@ -47,7 +47,7 @@
 
 										<div class="subtitle pb-5">{{'security.antivirus.windowsDefender.windowsSubtitle' | translate}}</div>
 
-										<vtr-ui-security-statusbar [statusList]=" viewMode.windowsDefenderstatusList | statusTransform">
+										<vtr-ui-security-statusbar [statusList]=" viewModel.windowsDefenderstatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>
@@ -133,7 +133,7 @@
 							</div>
 						</div>
 
-						<div *ngIf="viewMode?.currentPage ==='mcafee'">
+						<div *ngIf="viewModel?.currentPage ==='mcafee'">
 							<div class="subheader mt-minus">
 								<div class="rounded-card-with-shadow p-5 bg-white">
 
@@ -149,32 +149,32 @@
 									</div>
 									<div class="subtitle pb-5">{{'security.antivirus.mcafee.subtitle' | translate}}</div>
 
-									<vtr-ui-security-statusbar [statusList]="viewMode.mcafeestatusList | statusTransform">
+									<vtr-ui-security-statusbar [statusList]="viewModel.mcafeestatusList | statusTransform">
 									</vtr-ui-security-statusbar>
 
 									<div class="row align-items-center">
 										<div class="col-auto mr-auto px-0">
 											<div class="card-with-border p-3">
 												<span class="text">
-													{{viewMode.mcafee?.subscription | subTransform | translate}}
+													{{viewModel.mcafee?.subscription | subTransform | translate}}
 												</span>
-												<span [ngClass]="viewMode.mcafee?.expireAt | dateClass">
-													{{viewMode.mcafee?.expireAt | date:'MM/dd/yyyy' }}
+												<span [ngClass]="viewModel.mcafee?.expireAt | dateClass">
+													{{viewModel.mcafee?.expireAt | date:'MM/dd/yyyy' }}
 												</span>
 												<span>
-													<a *ngIf="viewMode.mcafee?.subscription !== 'licenseActive'"
+													<a *ngIf="viewModel.mcafee?.subscription !== 'licenseActive'"
 														vtrMetrics
 														metricsItem="upgradeMcafee"
 														metricsEvent="itemClick"
 														target="_blank"
-														href="{{viewMode.mcafee?.trialUrl}}"
+														href="{{viewModel.mcafee?.trialUrl}}"
 														class="text">{{'security.antivirus.mcafee.upgrade' | translate}}</a>
 												</span>
 											</div>
 										</div>
 										<div class="col-auto px-0 py-5">
 											<vtr-ui-button [metricsItem]="'launchMcafee'"
-												(onClick)=" viewMode.mcafee?.launch()"
+												(onClick)=" viewModel.mcafee?.launch()"
 												[label]="'security.antivirus.mcafee.launch' | translate"
 												[upperCaseLabel]=false></vtr-ui-button>
 										</div>
@@ -288,47 +288,47 @@
 							</div>
 						</div>
 
-						<div *ngIf="viewMode?.currentPage ==='others'">
+						<div *ngIf="viewModel?.currentPage ==='others'">
 
 							<div class="subheader mt-minus">
 								<div class="rounded-card-with-shadow p-5 bg-white">
-									<div *ngIf="viewMode.otherAntiVirus && viewMode.otherAntiVirus?.name">
+									<div *ngIf="viewModel.otherAntiVirus && viewModel.otherAntiVirus?.name">
 										<div class="row">
 											<div class="col-auto px-0 mr-auto">
-												<div class="title pb-3">{{viewMode.otherAntiVirus?.name}}</div>
+												<div class="title pb-3">{{viewModel.otherAntiVirus?.name}}</div>
 											</div>
 											<div class="col-auto px-0">
 											</div>
 										</div>
 
 										<div class="subtitle pb-5">
-											{{viewMode.otherAntiVirus?.name}} {{'security.antivirus.others.othersProtection' | translate}}
+											{{viewModel.otherAntiVirus?.name}} {{'security.antivirus.others.othersProtection' | translate}}
 										</div>
 
-										<vtr-ui-security-statusbar [statusList]="viewMode.othersAntistatusList | statusTransform">
+										<vtr-ui-security-statusbar [statusList]="viewModel.othersAntistatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>
-									<div *ngIf="viewMode.otherFirewall && viewMode.otherFirewall?.name"
+									<div *ngIf="viewModel.otherFirewall && viewModel.otherFirewall?.name"
 										class="pt-5">
 										<div class="row">
 											<div class="col-auto px-0 mr-auto">
-												<div class="title pb-3">{{viewMode.otherFirewall?.name}}</div>
+												<div class="title pb-3">{{viewModel.otherFirewall?.name}}</div>
 											</div>
 											<div class="col-auto px-0">
 											</div>
 										</div>
 
 										<div class="subtitle pb-5">
-											{{viewMode.otherFirewall?.name}} {{'security.antivirus.others.othersProtection' | translate}}
+											{{viewModel.otherFirewall?.name}} {{'security.antivirus.others.othersProtection' | translate}}
 										</div>
 
-										<vtr-ui-security-statusbar [statusList]="viewMode.othersFirewallstatusList | statusTransform">
+										<vtr-ui-security-statusbar [statusList]="viewModel.othersFirewallstatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>
-									<vtr-widget-mcafee [install]="antiVirus.mcafee"
-										[name]="viewMode.otherAntiVirus.name"></vtr-widget-mcafee>
+									<vtr-widget-mcafee [install]="viewModel.mcafee"
+										[name]="viewModel.otherAntiVirus.name"></vtr-widget-mcafee>
 								</div>
 							</div>
 							<div class="body antivirus-block">
