@@ -56,9 +56,8 @@ export class SubpageDeviceSettingsDisplayComponent
 
 	ngOnInit() {
 		console.log('subpage-device-setting-display onInit');
-		this.getSunsetToSunrise();
-		this.getEyeCareModeStatus();
-		this.getDisplayColorTemperature();
+		this.initEyecaremodeSettings();
+
 
 		this.getCameraPrivacyModeStatus();
 		this.getCameraDetails();
@@ -145,6 +144,26 @@ export class SubpageDeviceSettingsDisplayComponent
 						//	this.eyeCareDataSource.current = value.colorTemperature;
 					}).catch(error => {
 						console.error('onEyeCareModeStatusToggle', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	private initEyecaremodeSettings() {
+		try {
+			if (this.displayService.isShellAvailable) {
+				this.displayService.initEyecaremodeSettings()
+					.then((result: boolean) => {
+						console.log('initEyecaremodeSettings.then', result);
+						if (result === true) {
+							this.getSunsetToSunrise();
+							this.getEyeCareModeStatus();
+							this.getDisplayColorTemperature();
+						}
+
+					}).catch(error => {
+						console.error('initEyecaremodeSettings', error);
 					});
 			}
 		} catch (error) {
@@ -348,7 +367,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		console.log('called from loaction service ui', JSON.stringify(value.status));
 		if (value.status === false) {
 			this.enableSunsetToSunrise = true;
-		} else{
+		} else {
 			this.enableSunsetToSunrise = false;
 		}
 	}
