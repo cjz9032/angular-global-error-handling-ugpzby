@@ -5,6 +5,8 @@ import { VantageShellService } from '../../../services/vantage-shell/vantage-she
 import { CMSService } from '../../../services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
+import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 
 @Component({
 	selector: 'vtr-page-security-password',
@@ -22,6 +24,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 		public mockService: MockService,
 		private commonService: CommonService,
 		private cmsService: CMSService,
+		private modalService: NgbModal,
 		vantageShellService: VantageShellService
 	) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
@@ -81,5 +84,14 @@ export class PageSecurityPasswordComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
+	}
+
+	openDashLaneArticle(): void {
+		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
+			size: 'lg',
+			centered: true,
+			windowClass: 'Article-Detail-Modal'
+		});
+		articleDetailModal.componentInstance.articleId = '0EEB43BE718446C6B49F2C83FC190758';
 	}
 }

@@ -56,6 +56,9 @@
 			padding-top: 5rem;
 			padding-bottom: 2rem;
 			padding-right: 5rem;
+			@media #{$mediaquery_12} {
+				padding-left: 7rem;
+			}
 		}
 		.row1 {
 			opacity: 1;
@@ -65,12 +68,18 @@
 			padding-left: 1rem;
 			padding-top: 0rem;
 			padding-right: 5rem;
+			@media #{$mediaquery_12} {
+				padding-left: 7rem;
+			}
 		}
 		.button-row {
 			padding-left: 1rem;
 			padding-bottom: 5rem;
 			padding-top: 3rem;
 			padding-right: 5rem;
+			@media #{$mediaquery_12} {
+				padding-left: 7rem;
+			}
 			.action-button {
 				border-radius: 2.5rem;
 				background: $gradient_main;

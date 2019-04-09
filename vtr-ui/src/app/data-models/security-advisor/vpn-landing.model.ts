@@ -38,6 +38,9 @@ export class VpnLandingViewModel {
 		vpnModel.on(EventTypes.vpnStatusEvent, (data) => {
 			vpnStatus.status = (data === 'installed') ? 2 : 1;
 			vpnStatus.detail = data === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
+			translate.get(vpnStatus.detail).subscribe((res) => {
+				vpnStatus.detail = res;
+			});
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, data);
 			subjectStatus.status = (data === 'installed') ? 2 : 1;
 		});

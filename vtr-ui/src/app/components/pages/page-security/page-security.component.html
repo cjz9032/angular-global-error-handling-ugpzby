@@ -7,7 +7,7 @@
 	<div class="row vtr-page-content">
 		<div class="col vtr-col">
 			<div class="row">
-				<div class="col col-8 vtr-page-left-column">
+				<div class="col-lg-8 col-sm-12 vtr-page-left-column">
 					<div class="vtr-page-shift-up">
 						<div class="vtr-page-left-column-inner">
 							<div class="container-fluid">
@@ -88,7 +88,7 @@
 											</div>
 										</div>
 										<vtr-ui-landing-feature
-											*ngIf="windowsHelloLandingViewModel && windowsHelloLandingViewModel.subject.status !== undefined && windowsHelloLandingViewModel.subject.status !== null"
+											*ngIf="windowsHelloLandingViewModel"
 											[feature]='windowsHelloLandingViewModel'>
 										</vtr-ui-landing-feature>
 
@@ -98,7 +98,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col col-4 vtr-page-right-column">
+				<div class="col-lg-4 col-sm-12 vtr-page-right-column">
 					<div class="vtr-page-shift-up">
 						<div class="container-fluid">
 							<div class="row">

@@ -29,6 +29,7 @@
 			"windowsHello": "Windows Hello",
 			"enabled": "ENABLED",
 			"disabled": "DISABLED",
+			"partiallyProtected": "PARTIALLY PROTECTED",
 			"installed": "INSTALLED",
 			"notInstalled": "NOT INSTALLED",
 			"loading": "Loading"
@@ -159,6 +160,13 @@
 							"line3": "Performance mode: Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
 						}
 					}
+				}
+			},
+			"battery-settings": {
+				"title": "Battery Settings",
+				"airplane-power": {
+					"title": "Airplane Power Mode",
+					"tooltip": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
 				},
 				"batterySettings": {
 					"title": "Battery Settings",
@@ -323,14 +331,25 @@
 					"title": "Critical Updates",
 					"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
 				},
-				"recommended": {
-					"title": "Recommended Updates",
-					"tooltip": "Recommended driver updates keep your computer running at optimal performance."
+				"camera": {
+					"title": "Camera",
+					"tooltip": "Click here to reset Camera properties to default settings.",
+					"reset": "Reset factory settings"
 				},
-				"windows": {
-					"title": "Windows Updates",
-					"url": "Windows settings"
-				}
+				"auto-exposure": "Auto Exposure",
+				"auto-focus": "Auto focus"
+			}
+		}
+	},
+	"system-updates": {
+		"title": "System Updates",
+		"history": "FULL HISTORY",
+		"auto-update-settings": {
+			"title": "Auto update settings",
+			"subtitle": "AUTOMATICALLY INSTALL UPDATES",
+			"critical": {
+				"title": "Critical Updates",
+				"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
 			},
 			"banner": {
 				"title": "An up-to-date system is a healthy system.",
@@ -540,18 +559,19 @@
 			},
 			"securityhealth": {
 				"title": "Security Health",
-				"deviceName1": "Apps From Unknown Sources",
+				"deviceName1": "Apps From Trusted Sources",
 				"deviceName2": "Developer Mode",
 				"deviceName3": "UAC Notification",
 				"deviceName4": "Antivirus Availability",
 				"deviceName5": "Hard Drive Encryption",
 				"deviceName6": "Firewall Availability",
-				"deviceName7": "Not Activated Windows",
+				"deviceName7": "Activated Windows",
 				"deviceName8": "Security Updates Availability",
 				"deviceName9": "Password Protection",
 				"deviceName10": "Automatic Updates Service Availability",
 				"fail": "FAILED",
 				"pass": "PASSED",
+				"learnMoreAboutSecurityHealth": "Learn more about each of these components <tag>here.</tag>",
 				"peaceOfMind": "Do you want more peace of mind?",
 				"button": "Enable Wifi security"
 			}

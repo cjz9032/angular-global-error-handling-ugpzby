@@ -17,7 +17,7 @@ export class UiObjectTitleComponent implements OnInit {
 
 	itemStatusIconClass = {
 		0: 'check-circle', // green
-		1: 'minus-circle', // red
+		1: 'times-circle', // red
 		2: 'dot-circle', // blue
 		3: 'minus-circle' // orange
 	};
