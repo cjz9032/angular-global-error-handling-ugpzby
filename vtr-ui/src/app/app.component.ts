@@ -11,6 +11,7 @@ import { LocalStorageKey } from './enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { UserService } from './services/user/user.service';
 import { WelcomeTutorial } from './data-models/common/welcome-tutorial.model';
+import { NetworkStatus } from './enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-root',
@@ -27,12 +28,11 @@ export class AppComponent implements OnInit {
 		private modalService: NgbModal,
 		public deviceService: DeviceService,
 		private commonService: CommonService,
-		translate: TranslateService,
+		private translate: TranslateService,
 		private userService: UserService
 	) {
 		translate.addLangs(['en', 'zh-Hans']);
-		translate.setDefaultLang('en');
-
+		this.translate.setDefaultLang('en');
 		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
 
 		const modalRef = this.modalService.open(ModalWelcomeComponent,
@@ -71,11 +71,22 @@ export class AppComponent implements OnInit {
 					commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
 				}
 			);
-		}*/
+		}
+
+		window.addEventListener('online', (e) => {
+			console.log('online', e, navigator.onLine);
+			this.notifyNetworkState();
+		}, false);
+
+		window.addEventListener('offline', (e) => {
+			console.log('offline', e, navigator.onLine);
+			this.notifyNetworkState();
+		}, false);
+		this.notifyNetworkState();
 	}
 
 	ngOnInit() {
-		this.devService.writeLog('APP INIT', window.location.href);
+		this.devService.writeLog('APP INIT', window.location.href, window.devicePixelRatio);
 
 		// use when deviceService.isArm is set to true
 		// todo: enable below line when integrating ARM feature
@@ -92,7 +103,17 @@ export class AppComponent implements OnInit {
 
 		// When startup try to login Lenovo ID silently (in background),
 		//  if user has already logged in before, this call will login automatically and update UI
-		this.userService.loginSilently();
+		this.deviceService.getMachineInfo().then((machineInfo) => {
+			if (machineInfo.country != 'cn') {
+				self.userService.loginSilently();
+			} else {
+				self.devService.writeLog('Do not login silently for China');
+			}
+		}, error => {
+			self.devService.writeLog('getMachineInfo() failed ' + error);
+			self.userService.loginSilently();
+		});
+		
 
 		/********* add this for navigation within a page **************/
 		this.router.events.subscribe(s => {
@@ -108,6 +129,7 @@ export class AppComponent implements OnInit {
 			}
 		});
 		this.getMachineInfo();
+		this.checkIsDesktopMachine();
 	}
 
 	private getMachineInfo() {
@@ -115,10 +137,43 @@ export class AppComponent implements OnInit {
 			this.deviceService.getMachineInfo()
 				.then((value: any) => {
 					console.log('getMachineInfo.then', value);
+					if (value.locale.toLowerCase() === 'zh-hans') {
+						this.translate.setDefaultLang('zh-Hans');
+					}
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
 				}).catch(error => {
 					console.error('getMachineInfo', error);
 				});
 		}
 	}
+
+	private checkIsDesktopMachine() {
+		try {
+			if (this.deviceService.isShellAvailable) {
+				this.deviceService.getMachineType()
+					.then((value: any) => {
+						console.log('checkIsDesktopMachine.then', value);
+						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, !(value < 2))
+					}).catch(error => {
+						console.error('checkIsDesktopMachine', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+
+	private notifyNetworkState() {
+		this.commonService.isOnline = navigator.onLine;
+		if (navigator.onLine) {
+			this.commonService.sendNotification(NetworkStatus.Online, { isOnline: navigator.onLine });
+		} else {
+			this.commonService.sendNotification(NetworkStatus.Offline, { isOnline: navigator.onLine });
+		}
+	}
+
+	// public appEvent($event: { name: AppEvent, event: any }) {
+	// 	const { name, event } = $event;
+	// 	this.commonService.sendNotification(name, event);
+	// }
 }

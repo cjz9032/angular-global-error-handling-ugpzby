@@ -1,5 +1,6 @@
 <div class="vtr-installation-history">
-	<div class="row">
+	<div class="row"
+		*ngIf="installationHistory.length > 0">
 		<div class="col">
 			<div class="updates-lists-container">
 				<div class="row">
@@ -68,7 +69,8 @@
 														</span>
 													</div>
 												</div>
-												<div class="row"
+												<!-- MVP 2 feature, retry install -->
+												<!-- <div class="row"
 													*ngIf="item.status.toLocaleLowerCase() === 'failed'">
 													<div class="col">
 														<span class="installation-details">
@@ -77,7 +79,7 @@
 																class="btn btn-outline-primary">Retry install</button>
 														</span>
 													</div>
-												</div>
+												</div> -->
 											</div>
 										</div>
 										<div class="col col-1 text-right">
@@ -96,7 +98,19 @@
 						</ul>
 					</div>
 				</div>
+				<div class="float-right"
+					*ngIf="!showAll">
+					<button type="button"
+						(click)="onShowAllClick()"
+						class="btn btn-link">Show All</button>
+				</div>
 			</div>
+		</div>
+	</div>
+	<div class="row"
+		*ngIf="installationHistory.length === 0">
+		<div class="col-12 heading text-center">
+			No installation history available
 		</div>
 	</div>
 </div>

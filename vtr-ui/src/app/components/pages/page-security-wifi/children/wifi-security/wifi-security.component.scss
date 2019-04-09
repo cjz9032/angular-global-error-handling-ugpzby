@@ -15,7 +15,7 @@
 	.heading {
 		color: $main_dark;
 		font-size: 2.5rem;
-		font-weight: $weight_light;
+		font-weight: $weight_regular;
 	}
 
 	.sub-heading {
@@ -28,7 +28,7 @@
 
 	.sub-heading-2 {
 		color: $main_dark;
-		font-weight: $weight_medium;
+		font-weight: $weight_bold;
 		font-size: 2.5rem;
 	}
 
@@ -161,15 +161,28 @@
 	}
 
 	.threat-locator {
-		padding-left: 3rem;
+		// padding-left: 3rem;
+		background: url("../../../../../../assets/images/threat-locator-background.png");
+		border-radius: 0.8rem;
+		border-top-left-radius: 0rem;
+		border-top-right-radius: 0rem;
 
-		input {
-			height: 4.8rem;
-			border: solid 0.1rem $shade_dark;
-			border-radius: 0.5rem;
-			margin-right: 2rem;
-			margin-top: 1rem;
-			width: 50%;
+		.threat-locator-container {
+			margin: 3rem;
+			padding: 3rem;
+			background: $light;
+			border-radius: 0.8rem;
+
+			.col-check-location {
+				padding-right: 0rem;
+			}
+
+			.button-box {
+				padding: 0rem;
+				margin: 0rem;
+				padding-top: 1rem;
+				text-align: right;
+			}
 		}
 	}
 
@@ -182,7 +195,7 @@
 
 			h3 {
 				font-size: 3rem;
-				font-weight: 100;
+				font-weight: 350;
 			}
 
 			.status {
@@ -210,24 +223,22 @@
 				li {
 					list-style: none;
 					width: 50%;
-					padding: 2.4rem 3rem;
 					border-right: 0.1rem solid $shade_lighter;
 					border-bottom: 0.1rem solid $shade_lighter;
-					display: flex;
 					flex-wrap: wrap;
-					height: 8.8rem;
+					align-items: center;
 
 					&:nth-child(even) {
 						border-right: none;
 					}
 
-					&:last-child {
-						border-bottom: none;
-					}
+					// &:last-child {
+					// 	border-bottom: none;
+					// }
 
-					&:nth-last-child(2) {
-						border-bottom: none;
-					}
+					// &:nth-last-child(2) {
+					// 	border-bottom: none;
+					// }
 
 					.status-icon {
 						position: relative;
@@ -240,9 +251,9 @@
 						.circle {
 							background-color: $go;
 							background-image: linear-gradient(313deg, $go_light 25%, $go 100%);
-							height: 1.5rem;
-							width: 1.5rem;
-							border-radius: 1.5rem;
+							height: 2rem;
+							width: 2rem;
+							border-radius: 2rem;
 							border: 0.1rem solid $go_dark;
 							text-align: center;
 							line-height: 0.9rem;
@@ -266,10 +277,10 @@
 
 					.connection-name {
 						font-size: 1.7rem;
-						font-weight: 500;
+						font-weight: $weight_bold;
 
 						small {
-							font-weight: 300;
+							font-weight: $weight_light;
 							display: block;
 						}
 					}
@@ -313,10 +324,11 @@
 				.collapse-text {
 					display: inline-block;
 					color: $main;
-					font-size: 1.2rem;
+					font-size: 1.6rem;
 					margin-right: 1rem;
 					vertical-align: middle;
 					text-decoration: underline;
+					font-weight: 500;
 				}
 
 				fa-icon {
@@ -329,10 +341,7 @@
 
 		.collapse {
 			background: $shade_lightest;
-			border-radius: 0.8rem;
-			border-top-left-radius: 0rem;
-			border-top-right-radius: 0rem;
-			// border: 0.1rem solid rgba(0, 0, 0, 0.125);
+			border-radius: 0rem;
 			border: 0.1rem solid $shade_lighter;
 		}
 
@@ -381,9 +390,13 @@
 					border: 0.1rem solid $stop_dark;
 				}
 			}
+			.line-height-2-5 {
+				line-height: 2.5rem;
+				height: 2.5rem;
+			}
 
 			h3 {
-				font-weight: 500;
+				font-weight: $weight_bold;
 				text-transform: uppercase;
 				margin-right: 2.5rem;
 			}

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { WinRT } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'vtr-modal-common-confirmation',
@@ -9,8 +10,10 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class ModalCommonConfirmationComponent implements OnInit {
 	@Input() header: string;
 	@Input() description: string;
+	@Input() url: string;
+	// @Input() okHandler: Function;
 	@Input() packages: string[];
-	@Input() OkText = 'Ok';
+	@Input() OkText = 'Okay';
 	@Input() CancelText = 'Cancel';
 
 	@Output() OkClick = new EventEmitter<any>();
@@ -27,6 +30,8 @@ export class ModalCommonConfirmationComponent implements OnInit {
 
 	public onOkClick($event: any) {
 		this.activeModal.close(true);
+		WinRT.launchUri(this.url);
+		// this.okHandler();
 	}
 
 	public onCancelClick($event: any) {

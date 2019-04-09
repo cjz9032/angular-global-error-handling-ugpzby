@@ -2,20 +2,20 @@
 
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
-import bootstrap from '@lenovo/tan-client-bridge/src/index';
-
+import { EventTypes } from '@lenovo/tan-client-bridge';
+import * as Phoenix from '@lenovo/tan-client-bridge';
 @Injectable({
 	providedIn: 'root'
 })
 export class VantageShellService {
-	public phoenix: any;
+	private phoenix: any;
 	constructor() {
 		const shell = this.getVantageShell();
 		if (shell) {
 			const rpcClient = shell.VantageRpcClient ? new shell.VantageRpcClient() : null;
 			const metricClient = shell.MetricsClient ? new shell.MetricsClient() : null;
 			const powerClient = shell.PowerClient ? shell.PowerClient() : null;
-			this.phoenix = bootstrap(
+			this.phoenix = Phoenix.default(
 				new inversify.Container(),
 				{
 					hsaBroker: rpcClient,
@@ -26,6 +26,19 @@ export class VantageShellService {
 		}
 	}
 
+	public registerEvent(eventType: any, handler: any) {
+		this.phoenix.on(eventType, (val) => {
+			console.log("Event fired: ", eventType);
+			console.log("Event value: ", val);
+			handler(val);
+		});
+	}
+
+	public unRegisterEvent(eventType: any) {
+		this.phoenix.off(eventType, (val) => {
+			console.log("unRegister Event: ", eventType);
+		});
+	}
 	private getVantageShell(): any {
 		const win: any = window;
 		return win.VantageShellExtension;
@@ -80,7 +93,19 @@ export class VantageShellService {
 	 * returns metric object from VantageShellService of JS Bridge
 	 */
 	public getMetrics(): any {
-		if (this.phoenix) {
+		if (this.phoenix && this.phoenix.metrics) {
+			if (!this.phoenix.metrics.isInit) {
+				this.phoenix.metrics.init({
+					appVersion: '1.0.0.0',
+					appId: 'ZN8F02EQU628',
+					appName: 'vantage3',
+					channel: '',
+					ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
+				});
+				this.phoenix.metrics.isInit = true;
+				this.phoenix.metrics.metricsEnabled = true;
+			}
+
 			return this.phoenix.metrics;
 		}
 		return undefined;
@@ -96,6 +121,12 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getSecurityAdvisor(): Phoenix.SecurityAdvisor {
+		if (this.phoenix) {
+			return this.phoenix.securityAdvisor;
+		}
+		return undefined;
+	}
 	/**
 	 * returns hardware settings object from VantageShellService of JS Bridge
 	 */
@@ -237,5 +268,24 @@ export class VantageShellService {
 			return this.getPowerSettings().its;
 		}
 		return undefined;
+	}
+
+	/**
+	 * returns CameraPrivacy object from VantageShellService of JS Bridge
+	 */
+	public async deviceFilter(filter) {
+		if (this.phoenix) {
+			try {
+				const deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
+				console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
+			} catch (error) {
+				console.log('In VantageShellService.deviceFilter. Error:', error);
+				console.log('In VantageShellService.deviceFilter. returning mock true due to error.');
+			}
+			return true;
+			// return await this.phoenix.deviceFilter(filter);
+		}
+		console.log('In VantageShellService.deviceFilter. returning mock true');
+		return true;
 	}
 }

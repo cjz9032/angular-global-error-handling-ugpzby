@@ -5,18 +5,28 @@
     width: 100%;
   }
   .reset-temperature {
-    width: 17rem;
-    margin-top: 3.3rem;
+    //width: 20rem;
+    margin-top: 2.5rem;
     position: relative;
 
     @media #{$mediaquery_7} {
-      margin-top: 3.4rem;
+      margin-top: 1.6rem;
       position: relative;
     }
 
     @media #{$mediaquery_8} {
-      margin-top: 3.5rem;
+      margin-top: 1.7rem;
       position: relative;
+    }
+    .button-box {
+	  margin: 0rem 0rem 0rem 0.5rem;
+	  ::ng-deep .button {
+		height: 3rem;
+		border-radius: 2.25rem;
+		font-size: 1.08rem;
+		font-weight: $weight_bold;
+		padding: 0.5rem 1rem;
+	}
     }
     .text {
       font-size: 1.4rem;
@@ -28,7 +38,8 @@
   }
 
   .custom-control-label {
-    padding-left: 0.5rem;
+	padding-left: 0.5rem;
+	line-height: 1.1;
 
     // rounded square-box background
     &::before {

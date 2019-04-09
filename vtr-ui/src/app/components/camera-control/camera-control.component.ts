@@ -16,6 +16,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	@Output() brightnessChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() contrastChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureChange: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() exposureToggle: EventEmitter<any> = new EventEmitter();
 	public cameraDetail: CameraDetail;
 	public showAutoExposureSlider: boolean;
 
@@ -75,7 +76,9 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 	ngOnDestroy() {
 		this.deactivateCamera();
-		this.cameraDetailSubscription.unsubscribe();
+		if (this.baseCameraDetail) {
+			this.cameraDetailSubscription.unsubscribe();
+		}
 		if (this.systemMediaControls) {
 			this.systemMediaControls.removeEventListener(
 				'propertychanged',
@@ -85,11 +88,11 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	public onAutoExposureChange($event: any) {
-		try
-		{
+		try {
 			this.showAutoExposureSlider = !$event.switchValue;
-			this.baseCameraDetail.toggleAutoExposure($event.switchValue);
-		} catch(error) {
+			// this.baseCameraDetail.toggleAutoExposure($event.switchValue);
+			this.exposureToggle.emit($event);
+		} catch (error) {
 			console.error(error.message);
 		}
 	}
@@ -138,19 +141,16 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			}
 		}
 	}
-	public onBrightnessSliderChange($event: ChangeContext)
-	{
+	public onBrightnessSliderChange($event: ChangeContext) {
 		console.log('Brightness changed', event);
 		this.brightnessChange.emit($event);
 	}
-	public onContrastSliderChange($event: ChangeContext)
-	{
-		console.log('Brightness changed', event);
+	public onContrastSliderChange($event: ChangeContext) {
+		console.log('Contrast changed', event);
 		this.contrastChange.emit($event);
 	}
-	public onExposureSliderChange($event: ChangeContext)
-	{
-		console.log('Brightness changed', event);
+	public onExposureSliderChange($event: ChangeContext) {
+		console.log('exposure changed', event);
 		this.exposureChange.emit($event);
 	}
 }

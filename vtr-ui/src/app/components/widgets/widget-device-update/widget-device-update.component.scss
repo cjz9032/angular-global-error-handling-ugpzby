@@ -45,7 +45,7 @@
 				color: $light;
 				font-size: 1.5rem;
 				height: 5rem;
-				font-weight: $weight_medium;
+				font-weight: $weight_bold;
 				line-height: 5rem;
 				text-align: center;
 				border: 0rem;
@@ -85,6 +85,7 @@
 
 				.progress-right {
 					float: right;
+					display: inline;
 
 					.progress-value-text {
 						color: $light;
@@ -103,7 +104,7 @@
 						font-weight: $weight_light;
 						line-height: 2.9rem;
 						padding-right: 0rem;
-						padding-left: 2rem;
+						padding-left: 0;
 						text-align: left;
 					}
 				}

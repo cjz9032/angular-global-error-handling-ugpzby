@@ -8,13 +8,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class UiButtonComponent implements OnInit {
 	@Input() label: string;
 	@Input() isFullWidth: boolean;
+	@Input() isLWSEnabled = true;
+	@Input() upperCaseLabel = true;
 	@Output() onClick = new EventEmitter<any>();
 
-	@Input() metricsItem:string;
-	@Input() metricsParent:string;
-	@Input() metricsValue:string;
-	@Input() metricsEvent:string;
-	@Input() metricsParam:string;
+	@Input() metricsItem: string;
+	@Input() metricsParent: string;
+	@Input() metricsValue: string;
+	@Input() metricsEvent: string;
+	@Input() metricsParam: string;
+	@Input() isDisabled = false;
 
 	constructor() { }
 

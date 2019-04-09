@@ -14,9 +14,8 @@ import { MicrophoneOptimizeModes } from 'src/app/data-models/audio/microphone-op
 })
 export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
-	title = 'Audio Settings';
-	headerCaption = `This section enables you to automatically optimize or fully configure your audio settings manually
-	, such as Dolby settings, microphone, etc.`;
+	title = 'device.deviceSettings.audio.subtitle';
+	headerCaption = 'device.deviceSettings.audio.description';
 
 	radioGroupAutoDolbySettings = 'radio-grp-auto-dolby-settings';
 	radioOptimiseMicSettings = 'radio-grp-optimise-mic-settings';
@@ -24,23 +23,23 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public autoDolbyFeatureStatus: FeatureStatus;
 	public dolbyModeResponse: DolbyModeResponse;
 	public microOptimizeModeResponse: MicrophoneOptimizeModes;
-	
-	constructor(private audioService: AudioService, private dashboardService: DashboardService) { 
+
+	constructor(private audioService: AudioService, private dashboardService: DashboardService) {
 	}
-	
+
 	getSupportedModes() {
 		try {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.getSupportedModes()
-				.then((response: MicrophoneOptimizeModes) => {
-					this.microOptimizeModeResponse = response
-					console.log('getSupportedModes', response);
-				}).catch(error => {
-					console.error('getSupportedModes', error);
-				});
+					.then((response: MicrophoneOptimizeModes) => {
+						this.microOptimizeModeResponse = response;
+						console.log('getSupportedModes', response);
+					}).catch(error => {
+						console.error('getSupportedModes', error);
+					});
 			}
-		} catch(error) {
-			console.error("getSupportedModes" + error.message)
+		} catch (error) {
+			console.error('getSupportedModes' + error.message);
 		}
 	}
 
@@ -49,14 +48,14 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.microOptimizeModeResponse.current = event.target.value;
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setMicrophoneOpitimaztion(this.microOptimizeModeResponse.current)
-				.then((value) => {
-					console.log('onOptimizeModesRadioChange:', value);
-				}).catch(error => {
-					console.error('onOptimizeModesRadioChange', error);
-				});
+					.then((value) => {
+						console.log('onOptimizeModesRadioChange:', value);
+					}).catch(error => {
+						console.error('onOptimizeModesRadioChange', error);
+					});
 			}
-		} catch(error) {
-			console.error("onOptimizeModesRadioChange" + error.message)
+		} catch (error) {
+			console.error('onOptimizeModesRadioChange' + error.message);
 		}
 	}
 
@@ -64,34 +63,34 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		try {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.getMicrophoneSettings()
-				.then((microphone: Microphone) => {
-					this.microphoneProperties = microphone
-					console.log('getMicrophoneSettings', microphone);
-				}).catch(error => {
-					console.error('getMicrophoneSettings', error);
-				});
+					.then((microphone: Microphone) => {
+						this.microphoneProperties = microphone;
+						console.log('getMicrophoneSettings', microphone);
+					}).catch(error => {
+						console.error('getMicrophoneSettings', error);
+					});
 			}
-		} catch(error) {
-			console.error("getMicrophoneSettings" + error.message)
+		} catch (error) {
+			console.error('getMicrophoneSettings' + error.message);
 		}
 	}
 
 	onAutomaticDolbyAudioToggleOnOff(event) {
 		try {
 			this.autoDolbyFeatureStatus.status = event.switchValue;
-			if(this.autoDolbyFeatureStatus.status && !this.autoDolbyFeatureStatus.available) {
-				//TODO: Make switch off as Automatic Dolby Audio feature is unavailable 
+			if (this.autoDolbyFeatureStatus.status && !this.autoDolbyFeatureStatus.available) {
+				// TODO: Make switch off as Automatic Dolby Audio feature is unavailable
 			}
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setDolbyOnOff(event.switchValue)
-				.then((value) => {
-					console.log('onAutomaticDolbyAudioToggleOnOff', value);
-				}).catch(error => {
-					console.error('onAutomaticDolbyAudioToggleOnOff', error);
-				});
+					.then((value) => {
+						console.log('onAutomaticDolbyAudioToggleOnOff', value);
+					}).catch(error => {
+						console.error('onAutomaticDolbyAudioToggleOnOff', error);
+					});
 			}
-		} catch(error) {
-			console.error("onAutomaticDolbyAudioToggleOnOff" + error.message)
+		} catch (error) {
+			console.error('onAutomaticDolbyAudioToggleOnOff' + error.message);
 		}
 	}
 
@@ -99,15 +98,15 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		try {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.getDolbyFeatureStatus()
-				.then((dolbyFeature: FeatureStatus) => {
-					this.autoDolbyFeatureStatus = dolbyFeature
-					console.log('getDolbyFeatureStatus:', dolbyFeature);
-				}).catch(error => {
-					console.error('getDolbyFeatureStatus', error);
-				});
+					.then((dolbyFeature: FeatureStatus) => {
+						this.autoDolbyFeatureStatus = dolbyFeature;
+						console.log('getDolbyFeatureStatus:', dolbyFeature);
+					}).catch(error => {
+						console.error('getDolbyFeatureStatus', error);
+					});
 			}
-		} catch(error) {
-			console.error("getDolbyFeatureStatus" + error.message)
+		} catch (error) {
+			console.error('getDolbyFeatureStatus' + error.message);
 		}
 	}
 
@@ -115,16 +114,52 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		try {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.getDolbyMode()
-				.then((response: DolbyModeResponse) => {
-					this.dolbyModeResponse = response
-					console.log('getDolbyModesStatus:', response);
-				}).catch(error => {
-					console.error('getDolbyModesStatus', error);
-				});
+					.then((response: DolbyModeResponse) => {
+						this.dolbyModeResponse = response;
+						console.log('getDolbyModesStatus:', response);
+					}).catch(error => {
+						console.error('getDolbyModesStatus', error);
+					});
 			}
-		} catch(error) {
-			console.error("getDolbyModesStatus" + error.message)
+		} catch (error) {
+			console.error('getDolbyModesStatus' + error.message);
 		}
+	}
+
+	startMonitorForDolby() {
+		try {
+			if (this.audioService.isShellAvailable) {
+				this.audioService.startMonitorForDolby(this.startMonitorHandlerForDolby.bind(this))
+					.then((value: boolean) => {
+						console.log('startMonitorForDolby', value);
+					}).catch(error => {
+						console.error('startMonitorForDolby', error);
+					});
+			}
+		} catch (error) {
+			console.error('startMonitorForDolby' + error.message);
+		}
+	}
+
+	stopMonitorForDolby() {
+		try {
+			if (this.audioService.isShellAvailable) {
+				this.audioService.stopMonitorForDolby()
+					.then((value: boolean) => {
+						console.log('stopMonitorForDolby', value);
+					}).catch(error => {
+						console.error('stopMonitorForDolby', error);
+					});
+			}
+		} catch (error) {
+			console.error('stopMonitorForDolby' + error.message);
+		}
+	}
+
+	startMonitorHandlerForDolby(response: DolbyModeResponse) {
+		// Need to remove comment once response is coming correctly
+		//this.dolbyModeResponse = response;
+		console.log('startMonitorHandlerForDolby', response);
 	}
 
 	onDolbySeetingRadioChange(event) {
@@ -132,14 +167,14 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.dolbyModeResponse.currentMode = event.target.value;
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setDolbyMode(this.dolbyModeResponse.currentMode)
-				.then((value) => {
-					console.log('onDolbySeetingRadioChange:', value);
-				}).catch(error => {
-					console.error('onDolbySeetingRadioChange', error);
-				});
+					.then((value) => {
+						console.log('onDolbySeetingRadioChange:', value);
+					}).catch(error => {
+						console.error('onDolbySeetingRadioChange', error);
+					});
 			}
-		} catch(error) {
-			console.error("onDolbySeetingRadioChange" + error.message)
+		} catch (error) {
+			console.error('onDolbySeetingRadioChange' + error.message);
 		}
 	}
 
@@ -147,14 +182,14 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		try {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.setMicrophoneAutoOptimization(event.switchValue)
-				.then((value) => {
-					console.log('onToggleOfMicrophoneAutoOptimization:', value);
-				}).catch(error => {
-					console.error('onToggleOfMicrophoneAutoOptimization', error);
-				});
+					.then((value) => {
+						console.log('onToggleOfMicrophoneAutoOptimization:', value);
+					}).catch(error => {
+						console.error('onToggleOfMicrophoneAutoOptimization', error);
+					});
 			}
-		} catch(error) {
-			console.error("onToggleOfMicrophoneAutoOptimization" + error.message)
+		} catch (error) {
+			console.error('onToggleOfMicrophoneAutoOptimization' + error.message);
 		}
 	}
 
@@ -166,28 +201,29 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		this.getDolbyModesStatus();
 		this.getSupportedModes();
 		this.startMonitor();
+		this.startMonitorForDolby();
 	}
 
 	public setVolume(event) {
-		let volumn = event.value
+		const volume = event.value;
 		try {
-			this.microphoneProperties.volume = volumn
+			this.microphoneProperties.volume = volume;
 			if (this.audioService.isShellAvailable) {
-				this.audioService.setMicrophoneVolume(volumn)
-				.then((value) => {
-					console.log('setVolume', value);
-				}).catch(error => {
-					console.error('setVolume', error);
-				});
+				this.audioService.setMicrophoneVolume(volume)
+					.then((value) => {
+						console.log('setVolume', value);
+					}).catch(error => {
+						console.error('setVolume', error);
+					});
 			}
-		} catch(error) {
-			console.error("setVolume" + error.message)
+		} catch (error) {
+			console.error('setVolume' + error.message);
 		}
 	}
 
 	public onToggleOfMicrophone(event) {
 		try {
-			if (this.dashboardService.isShellAvailable) { 
+			if (this.dashboardService.isShellAvailable) {
 				this.dashboardService.setMicrophoneStatus(event.switchValue)
 					.then((value: boolean) => {
 						console.log('onToggleOfMicrophone', value);
@@ -195,8 +231,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						console.error('onToggleOfMicrophone', error);
 					});
 			}
-		} catch(error) {
-			console.error("onToggleOfMicrophone" + error.message)
+		} catch (error) {
+			console.error('onToggleOfMicrophone' + error.message);
 		}
 	}
 
@@ -210,8 +246,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						console.error('onToggleOfSuppressKbdNoise', error);
 					});
 			}
-		} catch(error) {
-			console.error("onToggleOfSuppressKbdNoise" + error.message)
+		} catch (error) {
+			console.error('onToggleOfSuppressKbdNoise' + error.message);
 		}
 	}
 
@@ -225,8 +261,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						console.error('setMicrophoneAEC', error);
 					});
 			}
-		} catch(error) {
-			console.error("setMicrophoneAEC" + error.message)
+		} catch (error) {
+			console.error('setMicrophoneAEC' + error.message);
 		}
 	}
 
@@ -240,8 +276,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						console.error('startMonitor', error);
 					});
 			}
-		} catch(error) {
-			console.error("startMonitor" + error.message)
+		} catch (error) {
+			console.error('startMonitor' + error.message);
 		}
 	}
 
@@ -255,28 +291,39 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						console.error('stopMonitor', error);
 					});
 			}
-		} catch(error) {
-			console.error("stopMonitor" + error.message)
+		} catch (error) {
+			console.error('stopMonitor' + error.message);
 		}
 	}
 
 	startMonitorHandler(microphone: Microphone) {
-		this.microphoneProperties = microphone
+		this.microphoneProperties = microphone;
 		console.log('startMonitorHandler', microphone);
 	}
 
 	initMockData() {
-		this.microphoneProperties = new Microphone(false, 1, "", false, false, false, false, false);
+		this.microphoneProperties = new Microphone(false, 0, '', false, false, false, false, true);
 		this.autoDolbyFeatureStatus = new FeatureStatus(true, false);
-		
-		let dolbySupportedMode =  ["dynamic","movie","music","game","voice"]
-		this.dolbyModeResponse = new DolbyModeResponse(true, dolbySupportedMode, "");
 
-		let optimizeMode = ["Only My Voice", "Normal", "Multiple Voice", "Voice Recogntion"]
-		this.microOptimizeModeResponse = new MicrophoneOptimizeModes(optimizeMode, "")
+		// const dolbySupportedMode = ['dynamic', 'movie', 'music', 'game', 'voice'];
+		const dolbySupportedMode = ['device.deviceSettings.audio.audioSmartsettings.dolby.options.dynamic',
+		'device.deviceSettings.audio.audioSmartsettings.dolby.options.movie',
+		'device.deviceSettings.audio.audioSmartsettings.dolby.options.music',
+		'device.deviceSettings.audio.audioSmartsettings.dolby.options.game',
+		'device.deviceSettings.audio.audioSmartsettings.dolby.options.voice'];
+		
+		this.dolbyModeResponse = new DolbyModeResponse(true, dolbySupportedMode, '');
+
+		// const optimizeMode = ['Only My Voice', 'Normal', 'Multiple Voice', 'Voice Recogntion'];
+		const optimizeMode = ['device.deviceSettings.audio.microphone.optimize.options.onlyMyVoice',
+		 'device.deviceSettings.audio.microphone.optimize.options.normal',
+		 'device.deviceSettings.audio.microphone.optimize.options.multipleVoices',
+		 'device.deviceSettings.audio.microphone.optimize.options.voiceRecoginition'];
+		this.microOptimizeModeResponse = new MicrophoneOptimizeModes(optimizeMode, '');
 	}
 
 	ngOnDestroy() {
 		this.stopMonitor();
+		this.stopMonitorForDolby();
 	}
 }

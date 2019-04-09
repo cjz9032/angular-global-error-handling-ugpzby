@@ -10,20 +10,12 @@
 				</div>
 			</div>
 			<div class="col col-9 last-col">
-				<div class="row">
-					<div class="col title">{{title}}</div>
-				</div>
-				<div class="row">
-					<div class="col row1">{{subTitle1}}</div>
-				</div>
-				<div class="row">
-					<div class="col row1">{{subTitle2}}</div>
-				</div>
-				<div class="row">
-					<div class="col button-row">
-						<button class="action-button" vtrMetrics metricsEvent="itemClick" metricsParent="not-fully-protected" metricsItem="security advisor 101"
-							(click)="buttonClick()">{{buttonText}}</button>
-					</div>
+				<p class="title">{{security.title[titleStatus] | translate}}</p>
+				<p class="row1">{{security.subTitle[titleStatus] | translate}}</p>
+				<p class="row1">{{security.subTitle2[titleStatus] | translate}}</p>
+				<div class="button-row">
+					<button class="action-button" vtrMetrics metricsEvent="itemClick" metricsItem="securityAdvisor101"
+					(click)="buttonClick()">{{'security.landing.security101' | translate}}</button>
 				</div>
 			</div>
 		</div>

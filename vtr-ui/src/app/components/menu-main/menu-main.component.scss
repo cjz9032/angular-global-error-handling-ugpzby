@@ -10,6 +10,7 @@
 		height: $menu_height;
 		background-color: $main_darker;
 		color: $light;
+		justify-content: left;
 
 		.navbar-brand {
 			font-size: 5rem;
@@ -33,7 +34,8 @@
 				}
 
 				.app-version {
-					font-size: 1rem;
+					text-transform: lowercase;
+					font-size: 1.4rem;
 					padding-left: 1rem;
 					font-weight: $weight_light;
 				}
@@ -50,15 +52,37 @@
 					.nav-link {
 						display: inline-table;
 						font-size: 1.6rem;
-						line-height: $menu_height;
+						line-height: calc(#{$menu_height} - 0.65rem);
 						color: $light;
-						padding: 0 1rem;
+						padding: 0 1.5rem;
+						border-bottom: transparent solid 0.5rem;
+
+						@media #{$mediaquery_4} {
+							line-height: calc(#{$menu_height} - 0.5rem);
+						}
+
+						@media #{$mediaquery_5} {
+							line-height: calc(#{$menu_height} - 0.65rem);
+						}
+
+						@media #{$mediaquery_6} {
+							line-height: calc(#{$menu_height} - 0.5rem);
+						}
+
+						&.active {
+							border-bottom: $main solid 0.5rem;
+
+							.fa-icon {
+								color: $main;
+							}
+						}
 
 						&.user {
 							padding: 2rem 2rem 2rem 2rem;
 							margin-left: 2rem;
 							height: $menu_height;
 							line-height: 4.6rem;
+							border-bottom: none;
 							background-color: $main_darkest;
 
 							.user-initials {
@@ -73,21 +97,13 @@
 						}
 					}
 
-					.active {
-						line-height: 8.5rem;
-						border-bottom: $main solid 0.5rem;
-
-						.fa-icon {
-							color: $main;
-						}
-					}
-
 					.dropdown-menu {
 						border: none;
 						border-radius: $border_radius;
 						box-shadow: $drop_shadow;
 						margin-top: -1rem;
 						padding: 2.5rem 1.5rem;
+						min-width: 20rem;
 
 						&.user {
 							margin-left: -1.5rem;
@@ -112,20 +128,25 @@
 							position: relative;
 							z-index: 1;
 							color: $main_shade;
-							font-size: 1.2rem;
+							font-size: 1.4rem;
 							line-height: 2.2rem;
 							font-weight: $weight_medium;
 
 							&.link {
-								font-weight: $weight_light;
 								text-decoration: underline;
 
 								&:hover {
 									color: $main;
 								}
 							}
+
+							&.link-active {
+								color: $main;
+								font-weight: bold;
+							}
 						}
 					}
+
 					&:last-child {
 						.dropdown-menu {
 							right: 0;
@@ -134,19 +155,22 @@
 							max-width: 50rem;
 						}
 					}
-					// &.dropdown{
-					// 	.dropdown-toggle{
-					// 		position: relative;
-					// 		padding-right: 2.4rem;
-					// 		&::after{
-					// 			border: none;
-					// 			content: "\f107";
-					// 			font-family: FontAwesome;
-					// 			position: absolute;
-					// 			font-size: 2rem;
-					// 		}
-					// 	}
-					// }
+
+					&.dropdown {
+						.dropdown-toggle {
+							position: relative;
+							padding-right: 2.4rem;
+
+							// &::after {
+							// 	border: none;
+							// 	content: "\f107";
+							// 	font-family: FontAwesome;
+							// 	position: absolute;
+							// 	font-size: 3rem;
+							// 	margin-left: 1px;
+							// }
+						}
+					}
 				}
 			}
 		}
@@ -161,6 +185,8 @@
 		}
 
 		.fa-icon {
+			position: relative;
+			top: 0.3rem;
 			padding-right: 0.3rem;
 			font-size: 2.1rem;
 		}

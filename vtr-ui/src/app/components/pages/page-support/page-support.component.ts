@@ -1,9 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ArticlesService } from '../../../services/articles/articles.service';
 import { MockService } from '../../../services/mock/mock.service';
 import { SupportService } from '../../../services/support/support.service';
 import { DeviceService } from '../../../services/device/device.service';
-
+import { CMSService } from 'src/app/services/cms/cms.service';
 
 @Component({
 	selector: 'vtr-page-support',
@@ -12,18 +11,19 @@ import { DeviceService } from '../../../services/device/device.service';
 })
 export class PageSupportComponent implements OnInit, OnDestroy {
 
-	title = 'Get Support';
+	title = 'support.common.getSupport';
 	searchWords = '';
 	searchCount = 1;
 	articles: any;
-	warranty: Object;
+	warranty: any;
 	pageDuration: number;
 	location: any;
+	warrantyNormalUrl = 'https://pcsupport.lenovo.com/us/en/warrantylookup';
 	supportDatas = {
 		documentation: [
 			{
-				'icon': ['fas', 'book'],
-				'title': 'User Guide',
+				'icon': ['fal', 'book'],
+				'title': 'support.documentation.listUserGuide',
 				'url': 'https://support.lenovo.com',
 				'metricsItem': 'Documentation.UserGuideButton',
 				'metricsEvent': 'ItemClick',
@@ -32,40 +32,40 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		],
 		needHelp: [
 			{
-				'icon': ['fas', 'comment-alt'],
-				'title': 'Lenovo Community',
+				'icon': ['fal', 'comment-alt'],
+				'title': 'support.needHelp.listLenovoCommunity',
 				'url': 'https://community.lenovo.com',
 				'metricsItem': 'NeedHelp.LenovoCommunityButton',
 				'metricsEvent': 'ItemClick',
 				'metricsParent': 'Page.Support',
 			},
 			{
-				'icon': ['fas', 'share-alt'],
-				'title': 'Contact customer service',
+				'icon': ['fal', 'share-alt'],
+				'title': 'support.needHelp.listContactCustomerService',
 				'url': 'https://support.lenovo.com/',
 				'metricsItem': 'NeedHelp.ContactCustomerServiceButton',
 				'metricsEvent': 'ItemClick',
 				'metricsParent': 'Page.Support',
 			},
 			{
-				'icon': ['fab', 'weixin'],
-				'title': 'Contact us on WeChat',
+				'iconPath': 'assets/images/support/svg_icon_wechat.svg',
+				'title': 'support.needHelp.listContactUsOnWechat',
 				'hideArrow': true,
 				'image': 'assets/images/wechat-qrcode.png',
 			}
 		],
 		quicklinks: [
 			{
-				'icon': ['fas', 'ticket-alt'],
-				'title': 'Get support with E-ticket',
+				'icon': ['fal', 'ticket-alt'],
+				'title': 'support.quicklinks.listETicket',
 				'url': 'https://pcsupport.lenovo.com/us/en/eticketwithservice',
 				'metricsItem': 'Quicklinks.E-ticketButton',
 				'metricsEvent': 'ItemClick',
 				'metricsParent': 'Page.Support',
 			},
 			{
-				'icon': ['fas', 'briefcase'],
-				'title': 'Find a service provider',
+				'icon': ['fal', 'briefcase'],
+				'title': 'support.quicklinks.listServiceProvider',
 				'url': 'https://www.lenovo.com/us/en/ordersupport/',
 				'metricsItem': 'Quicklinks.ServiceProviderButton',
 				'metricsEvent': 'ItemClick',
@@ -75,13 +75,13 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	};
 
 	constructor(
-		public articlesService: ArticlesService,
 		public mockService: MockService,
 		public supportService: SupportService,
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
+		private cmsService: CMSService
 	) {
-		// this.getArticles();
 		this.getMachineInfo();
+		this.fetchCMSArticles();
 	}
 
 	getMachineInfo() {
@@ -89,15 +89,23 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			this.supportService.getMachineInfo().then((machineInfo) => {
 				this.supportService
 					// .getWarranty('PC0G9X77')
+					// .getWarranty('R9T6M3E')
+					// .getWarranty('R90HTPEU')
 					.getWarranty(machineInfo.serialnumber)
 					.then((warranty) => {
 						this.warranty = warranty;
+						if (machineInfo.serialnumber) {
+							this.warranty.url = `https://www.lenovo.com/us/en/warrantyApos?serialNumber=${machineInfo.serialnumber}&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
+						} else {
+							this.warranty.url = this.warrantyNormalUrl;
+						}
 					});
 			});
 		} catch (error) {
 			console.log(error);
 			this.warranty = {
-				status: 2
+				status: 2,
+				url: this.warrantyNormalUrl
 			};
 		}
 	}
@@ -123,16 +131,29 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		console.log(pageViewMetrics);
 	}
 
+	fetchCMSArticles() {
+		const queryOptions = {
+			'Page': 'support',
+			'Lang': 'EN',
+			'GEO': 'US',
+			'OEM': 'Lenovo',
+			'OS': 'Windows',
+			'Segment': 'SMB',
+			'Brand': 'Lenovo'
+		};
+
+		this.cmsService.fetchCMSContent(queryOptions).then(
+			(response: any) => {
+				// console.log(response);
+				this.articles = response;
+			},
+			error => {
+				console.log('fetchCMSContent error', error);
+			}
+		);
+	}
+
 	search(value: string) {
 		this.searchWords = value;
 	}
-
-	getArticles() {
-		this.articlesService.getArticles()
-			.subscribe((data) => {
-				console.log(data);
-				this.articles = data;
-			});
-	}
-
 }

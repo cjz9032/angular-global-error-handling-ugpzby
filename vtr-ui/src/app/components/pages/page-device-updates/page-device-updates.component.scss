@@ -3,6 +3,7 @@
 .vtr-page-device-updates {
 	.vtr-page-right-column {
 		background-color: $light;
+
 		.align-center {
 			padding: 0 6rem 0rem 6rem;
 		}
@@ -16,6 +17,7 @@
 		padding-left: 0rem !important;
 		padding-right: 0rem !important;
 	}
+
 	.installation-history-container {
 		border-radius: 0.5rem;
 		border-top-left-radius: 0rem;
@@ -24,6 +26,7 @@
 		height: 100%;
 		width: 100%;
 		background: $light;
+
 		.installation-history {
 			padding-left: 5rem;
 			padding-top: 4rem;
@@ -34,9 +37,11 @@
 			font-weight: $weight_light;
 			line-height: 2.9rem;
 		}
+
 		.installation-history-div {
 			padding-left: 5rem;
 			padding-right: 5rem;
+
 			.installation-history-ellipses {
 				border-radius: 2.5rem;
 				background-color: $shade_extralight;
@@ -46,6 +51,7 @@
 				font-size: 1.1rem;
 				color: $shade;
 			}
+
 			.installation-history-dash {
 				border-radius: 2.5rem;
 				background-color: $shade_extralight;
@@ -53,10 +59,12 @@
 				padding-bottom: 1rem;
 				text-align: center;
 				font-size: 1.4rem;
+
 				hr {
 					margin: 0.9rem 3rem;
 					color: $shade;
 				}
+
 				&.status-now {
 					background: $light;
 					padding-top: 0.4rem;
@@ -64,6 +72,7 @@
 					margin-right: 1rem;
 				}
 			}
+
 			.installation-history-text {
 				border-radius: 2.5rem;
 				background-color: $shade_extralight;
@@ -71,26 +80,32 @@
 				padding-bottom: 0rem;
 				text-align: center;
 			}
+
 			.status-list {
 				list-style: none;
 				padding: 0;
 				border-radius: $border_radius;
+
 				li {
 					display: in-line;
 					width: 33%;
 					background: none !important;
+
 					.installation-date {
 						color: $main_shade;
 						font-size: 1.1rem;
 						line-height: 1.3rem;
 						text-align: right;
 					}
+
 					&:last-child {
 						border: none;
 					}
+
 					&:hover {
 						background-color: $shade_extralight;
 					}
+
 					&.success {
 						.status-icon {
 							.icon-bkg {
@@ -98,12 +113,13 @@
 								border-color: $go_dark;
 							}
 						}
+
 						.title {
 							color: $main_shade;
 							background: $light;
 							border-radius: 1rem;
-							color: #697293;
-							background: #fff;
+							color: $main_shade;
+							background: $light;
 							width: 70%;
 							position: absolute;
 							left: -10%;
@@ -111,6 +127,7 @@
 							padding-left: 2rem;
 						}
 					}
+
 					&.fail {
 						.status-icon {
 							.icon-bkg {
@@ -118,12 +135,13 @@
 								border-color: $stop_dark;
 							}
 						}
+
 						.title {
 							color: $main_shade;
 							background: $light;
 							border-radius: 1rem;
-							color: #697293;
-							background: #fff;
+							color: $main_shade;
+							background: $light;
 							width: 70%;
 							position: absolute;
 							left: -10%;
@@ -131,6 +149,7 @@
 							padding-left: 2rem;
 						}
 					}
+
 					&.pause {
 						.status-icon {
 							.icon-bkg {
@@ -138,12 +157,13 @@
 								border-color: $stop_dark;
 							}
 						}
+
 						.title {
 							color: $main_shade;
 							background: $light;
 							border-radius: 1rem;
-							color: #697293;
-							background: #fff;
+							color: $main_shade;
+							background: $light;
 							width: 70%;
 							position: absolute;
 							left: -10%;
@@ -151,6 +171,7 @@
 							padding-left: 2rem;
 						}
 					}
+
 					.status-icon {
 						.icon-bkg {
 							display: inline-block;
@@ -160,6 +181,7 @@
 							border-width: 0.2rem;
 							border-style: solid;
 							text-align: center;
+
 							fa-icon {
 								font-size: 1.2rem;
 								line-height: 2.8rem;
@@ -167,8 +189,10 @@
 							}
 						}
 					}
+
 					.status-text {
 						overflow: hidden;
+
 						.title {
 							line-height: 2.8rem;
 							font-size: 1.4rem;
@@ -177,12 +201,14 @@
 						}
 					}
 				}
+
 				hr {
-					margin: -10px 0px -10px 20px;
+					margin: -1rem 0rem -1rem 2rem;
 				}
 			}
 		}
 	}
+
 	.full-history {
 		color: $main;
 		font-size: 1.3rem;
@@ -196,11 +222,4 @@
 			cursor: pointer;
 		}
 	}
-
-	.question-icon{
-		color: $main;
-		cursor: pointer;
-		font-size: 1.8rem;
-	}
-
 }

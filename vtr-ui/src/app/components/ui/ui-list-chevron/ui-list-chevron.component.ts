@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { BaseComponent } from '../../base/base.component';
 
 @Component({
 	selector: 'vtr-ui-list-chevron',
@@ -7,11 +8,12 @@ import { DeviceService } from 'src/app/services/device/device.service';
 	styleUrls: ['./ui-list-chevron.component.scss']
 })
 
-export class UiListChevronComponent implements OnInit {
+export class UiListChevronComponent extends BaseComponent implements OnInit {
 
-	@Input() items: any[];
+	@Input() items: any;
 	@Input() iconPlacement = 'right';
 	@Input() chevronVisibility = true;
+	@Input() arrowColor: string;
 	/**** passing to ItemParent from metrics ****/
 	@Input() metricsParent: string;
 
@@ -19,7 +21,8 @@ export class UiListChevronComponent implements OnInit {
 	itemStatusClass = {
 		0: 'good',
 		1: 'bad',
-		2: 'blue'
+		2: 'blue',
+		3: 'orange'
 	};
 
 	/** object having item status icon list*/
@@ -29,14 +32,12 @@ export class UiListChevronComponent implements OnInit {
 		2: 'circle'
 	};
 
-	constructor(private deviceService: DeviceService) { }
+	constructor(private deviceService: DeviceService) { super(); }
 
 
 	getItemStatusClass(item) {
-		// console.log('getItemStatusClass method invoked');
 		let itemStatClass = 'good';
 		if (item.status !== undefined && item.status !== '') {
-			// console.log('status not undefined or empty');
 			if (this.itemStatusClass.hasOwnProperty(item.status)) {
 				itemStatClass = this.itemStatusClass[item.status];
 			}
@@ -46,13 +47,10 @@ export class UiListChevronComponent implements OnInit {
 
 
 	getItemStatusIconClass(item) {
-		// console.log('getItemStatusIconClass method invoked');
 		let itemStatIconClass = 'good';
 		if (item.status !== undefined && item.status !== '') {
-			// console.log('status not undefined or empty');
 			if (this.itemStatusIconClass.hasOwnProperty(item.status)) {
 				itemStatIconClass = this.itemStatusIconClass[item.status];
-				// console.log('itemStatusIconClass ' + itemStatIconClass);
 			}
 		}
 		return itemStatIconClass;
@@ -75,7 +73,6 @@ export class UiListChevronComponent implements OnInit {
 			}
 
 		}
-		// console.log(" itemDetailClass " + JSON.stringify(itemDetailClass));
 		return itemDetailClass;
 	}
 

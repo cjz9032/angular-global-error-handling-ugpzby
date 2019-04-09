@@ -2,46 +2,35 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
-			 [back]="back"
-			 [title]="title"></vtr-header-main>
+				[back]="back"
+				[title]="'device.myDevice.title' | translate"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
 		<div class="col vtr-col">
 			<div class="row">
-				<div class="col-12 col-lg-8 vtr-page-left-column">
+				<div class="col-sm-12 col-md-7 col-lg-7 col-xl-8 vtr-page-left-column">
 					<div class="vtr-subpage">
 						<div class="vtr-page-shift-up">
 							<vtr-widget-device></vtr-widget-device>
 						</div>
 					</div>
 				</div>
-				<div class="col-12 col-lg-4 vtr-page-right-column">
+				<div class="col-sm-12 col-md-5 col-lg-5 col-xl-4 vtr-page-right-column">
 					<div class="vtr-page-shift-up">
 						<div class="container-fluid">
-							<div class="row mb-40">
-								<div class="col col-12">
-									<vtr-container-card [img]="'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg'"
-									 [title]="'Try out McAfee anti-virus software for 6 months'"
-									 [logoText]="'LENOVO SPECIAL'"
-									 [action]="'Read More'"
-									 [actionLink]="'http://www.google.com'"
-									 [type]="'article'"
-									 [ratioX]="4"
-									 [ratioY]="4">
-									</vtr-container-card>
-								</div>
-							</div>
-
 							<div class="row">
-								<div class="col col-12 aritcle-card">
-									<vtr-container-card [img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
-									 [title]="'Ideas on how to handle all your passwords online'"
-									 [action]="'Read More'"
-									 [actionLink]="'http://www.google.com'"
-									 [type]="'partnerarticle'"
-									 [ratioX]="4"
-									 [ratioY]="2.5">
+								<div class="col col-12">
+									<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+										[caption]="cardContentPositionA.Description"
+										[title]="cardContentPositionA.Title"
+										[logoText]="cardContentPositionA.BrandName"
+										[action]="cardContentPositionA.Action"
+										[actionLink]="cardContentPositionA.ActionLink"
+										[type]="'corner-article'"
+										[ratioX]="4"
+										[ratioY]="2"
+										[cornerShift]="'large'">
 									</vtr-container-card>
 								</div>
 							</div>
@@ -50,8 +39,8 @@
 								<div class="col col-12 cont">
 									<div class="widget-heading mb-40">Helpful content</div>
 									<vtr-widget-questions [title]="'Q&A for your machine'"
-									 [description]="'Find some helpful tips for your device.'"
-									 [items]="qaService.qas"></vtr-widget-questions>
+										[description]="'Find some helpful tips for your device.'"
+										[items]="qaService.qas"></vtr-widget-questions>
 								</div>
 							</div>
 						</div>

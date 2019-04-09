@@ -1,7 +1,8 @@
-@import '../../../app.theme.scss';
+@import "../../../app.theme.scss";
 
 .heading {
-	color: $main_dark;
 	color: $main_darker;
 	font-size: 3.5rem;
+	margin-bottom: 5rem;
+	font-weight: $weight-medium;
 }

@@ -6,11 +6,12 @@ Now these fonts are part of application. Should fix this issue
 @import url("https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i");
 reference : https://fonts.google.com/specimen/Rubik
 */
-@import url("./assets/font/Rubik/font.css");
+// @import url("./assets/font/Rubik/font.css");
 
-@import "~bootstrap/dist/css/bootstrap.css";
+// @import "~bootstrap/dist/css/bootstrap.css";
+@import "~bootstrap/scss/bootstrap.scss";
 @import "./styles-bootstrap.scss";
-@import "~bootstrap/dist/css/bootstrap.css";
+// @import "~bootstrap/dist/css/bootstrap.css";
 
 @import "app/app.theme";
 
@@ -21,6 +22,24 @@ html {
 	height: 100%;
 	font-size: 62.5%;
 	letter-spacing: 0.1em;
+}
+
+@media #{$dpiquery_0} {
+}
+
+@media #{$dpiquery_1} {
+}
+
+@media #{$dpiquery_2} {
+}
+
+@media #{$dpiquery_3} {
+}
+
+@media #{$dpiquery_4} {
+}
+
+@media #{$dpiquery_5} {
 }
 
 @media #{$mediaquery_0} {
@@ -90,14 +109,23 @@ body {
 	padding: 0;
 	width: 100%;
 	height: 100%;
-	font-family: "Rubik";
-	font-weight: 300;
+	font-family: "Segoe UI", Sans-serif;
+	// font-weight: 300;
+}
+
+svg-icon {
+	svg {
+		width: 100%;
+		height: 100%;
+		path {
+			fill: currentColor;
+		}
+	}
 }
 
 button {
 	letter-spacing: 0.1em;
 }
-
 
 .vtr-page {
 	height: 100%;
@@ -130,6 +158,24 @@ button {
 
 		.vtr-page-right-column {
 			padding: 0 $padding_side 4rem 4rem;
+			@media #{$mediaquery_13} {
+				padding: 4rem 4rem 4rem 8.5rem;
+			}
+		}
+
+		// @media #{$mediaquery_500} {
+		@media only screen and (min-width: 500px) and (max-width: 768px) {
+			.navbar {
+				justify-content: left !important;
+			}
+			.vtr-page-left-column {
+				padding: 0 4rem 4rem 4rem;
+			}
+
+			.vtr-page-right-column {
+				padding: 0 4rem 4rem 4rem;
+				margin-top: 4rem;
+			}
 		}
 	}
 
@@ -277,7 +323,28 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			border: none;
 		}
 	}
+}
 
+.wifi-security-invitation-modal {
+	.modal-dialog {
+		margin-top: 8rem;
+
+		.modal-content {
+			background-color: transparent;
+			border: none;
+		}
+	}
+}
+
+.wifi-security-location-modal {
+	.modal-dialog {
+		margin-top: 8rem;
+
+		.modal-content {
+			background-color: transparent;
+			border: none;
+		}
+	}
 }
 
 /*Battery-charge-threshold-modal-styles*/
@@ -293,60 +360,238 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
+.Article-Detail-Modal {
+	.modal-dialog {
+		max-width: 70%;
+		overflow-y: initial !important;
+	}
+
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		padding: 4rem;
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-weight: normal;
+			color: $blue-dark;
+			margin-top: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		h1 {
+			font-size: 3.1rem;
+			margin-top: 0rem;
+			margin-bottom: 3rem;
+		}
+
+		h2 {
+			font-size: 2.6rem;
+		}
+
+		h3 {
+			font-size: 2.2rem;
+		}
+
+		h4 {
+			font-size: 1.8rem;
+		}
+
+		h5 {
+			font-size: 1.4rem;
+		}
+
+		h6 {
+			font-size: 1rem;
+		}
+
+		p,
+		li,
+		ul {
+			font-size: 1.8rem;
+			color: $light-grey;
+			margin-bottom: 1rem;
+		}
+
+		iframe {
+			max-width: 100%;
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+.Threat-Locator-Modal {
+	.modal-dialog {
+		max-width: 70%;
+		overflow-y: initial !important;
+	}
+
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		padding: 4rem;
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-weight: normal;
+			color: $blue-dark;
+			margin-top: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		h1 {
+			font-size: 3.1rem;
+			margin-top: 0rem;
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+.About-Modal {
+	.modal-dialog {
+		max-width: 70%;
+		overflow-y: initial !important;
+	}
+
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		padding: 4rem;
+		min-height: calc(100vh - 1rem);
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-weight: normal;
+			color: $main_darker;
+			margin-top: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		h1 {
+			font-size: 3.1rem;
+			margin-top: 0rem;
+			margin-bottom: 3rem;
+		}
+
+		h2 {
+			font-size: 2.6rem;
+		}
+
+		h3 {
+			font-size: 2.2rem;
+		}
+
+		h4 {
+			font-size: 1.8rem;
+		}
+
+		h5 {
+			font-size: 1.4rem;
+		}
+
+		h6 {
+			font-size: 1rem;
+		}
+
+		p,
+		li,
+		ul {
+			font-size: 1.8rem;
+			color: $main_dark;
+			margin-bottom: 1rem;
+		}
+
+		iframe {
+			max-width: 100%;
+			margin-bottom: 3rem;
+		}
+	}
+}
 
 /*----- onclick-tooltip-style------*/
-.tooltip-click{
+.tooltip-click {
 	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
-	&.show{
+
+	&.show {
 		opacity: 1;
 	}
-	&.tooltip{
+
+	&.tooltip {
 		font-size: 1.6rem;
 		border-radius: 1rem;
-		font-family: 'rubik';
-		ul{
+		font-family: "rubik";
+
+		ul {
 			padding: 0;
 			margin-bottom: 0;
-			li{
+
+			li {
 				list-style: none;
 			}
 		}
 	}
-	&.bs-tooltip-top{
+
+	&.bs-tooltip-top {
 		padding: 0;
 	}
 
-	.tooltip-inner{
-		background: $light ;
+	.tooltip-inner {
+		background: $light;
 		border-radius: 1rem;
 		padding: 3rem;
 		color: $main_darker;
 		text-align: left;
 		max-width: 100%;
-		span{
+
+		span {
 			font-weight: bold;
 		}
-		.reboot-text{
+
+		.reboot-text {
 			text-decoration: none;
 			color: $orange-light;
 			font-weight: bold;
-			fa-icon{
+
+			fa-icon {
 				padding-right: 1rem;
 				font-size: 1.6rem;
 			}
 		}
-		.read{
-			color: $main;
-			text-decoration: underline;
-		}
-		.ignore{
+
+		.read {
 			color: $main;
 			text-decoration: underline;
 		}
 
+		.ignore {
+			color: $main;
+			text-decoration: underline;
+		}
 	}
-	.arrow::before{
+
+	.arrow::before {
 		border-top-color: $dark;
 	}
 }
 
+/*green and red button style*/
+
+.button-red {
+	background: linear-gradient(135deg, $stop 0%, $stop_light 100%);
+}
+
+.button-green {
+	background: linear-gradient(135deg, $go 0%, $go_light 100%);
+}

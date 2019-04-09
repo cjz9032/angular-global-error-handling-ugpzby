@@ -46,10 +46,10 @@ export class PowerService {
 		}
 		return undefined;
 	}
-	public setAlwaysOnUSBStatusThinkPad(value: string): Promise<boolean> {
+	public setAlwaysOnUSBStatusThinkPad(value: string, check: boolean): Promise<boolean> {
 		try {
 			if (this.devicePowerThinkPad) {
-				return this.devicePowerThinkPad.sectionAlwaysOnUsb.setAlwaysOnUsb(value);
+				return this.devicePowerThinkPad.sectionAlwaysOnUsb.setAlwaysOnUsb(value, check);
 			}
 			return undefined;
 		} catch (error) {
@@ -108,7 +108,7 @@ export class PowerService {
 			throw new Error(error.message);
 		}
 	}
-	// End Conservation mode fro IdeaNoteBook
+	// End Conservation mode for IdeaNoteBook
 	// Express/Rapid Charging mode for IdeaNotebook
 	public getRapidChargeModeStatusIdeaNoteBook(): Promise<FeatureStatus> {
 		if (this.devicePowerIdeaNoteBook) {
@@ -126,7 +126,7 @@ export class PowerService {
 			throw new Error(error.message);
 		}
 	}
-	// End Express/Rapid Charging mode fro IdeaNoteBook
+	// End Express/Rapid Charging mode for IdeaNoteBook
 	// Start Easy Resume for ThinkPad
 	public getEasyResumeCapabilityThinkPad(): Promise<boolean> {
 		if (this.devicePowerThinkPad) {
@@ -192,6 +192,23 @@ export class PowerService {
 			throw new Error(error.message);
 		}
 	}
+	public startMonitor(handler: any): Promise<any> {
+		try {
+			if (this.isShellAvailable) {
+				return this.devicePower.startMonitor((handler));
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	public stopMonitor() {
+		if (this.isShellAvailable) {
+			this.devicePower.stopMonitor((response: boolean) => {
+				//this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
+			});
+		}
+	}
 	// End Vantage ToolBar
 	// Power smart settings
 	public getDYTCRevision(): Promise<number> {
@@ -238,6 +255,16 @@ export class PowerService {
 		try {
 			if (this.devicePowerItsIntelligentCooling) {
 				return this.devicePowerItsIntelligentCooling.intelligentCooling.setManualModeSetting(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	public getManualModeSetting(): Promise<string> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getManualModeSetting();
 			}
 			return undefined;
 		} catch (error) {
