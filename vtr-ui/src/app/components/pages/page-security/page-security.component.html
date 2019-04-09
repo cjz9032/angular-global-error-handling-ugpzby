@@ -48,7 +48,7 @@
 														[items]="wifiSecurityLandingViewModel.statusList">
 													</vtr-ui-list-chevron>
 													<div class="wifi-history"
-														*ngIf="wifiHistory && wifiSecurityLandingViewModel.subject.status === 0">
+														*ngIf="wifiHistory && wifiSecurityLandingViewModel.subject.status === 0 && wifiHistory.length !== 0">
 														<div class="row align-items-center pt-wifiLength">
 															<div class="col-3">
 																<fa-icon class="wifi-font-icon"
@@ -65,7 +65,7 @@
 																			[icon]="['fas', 'wifi']"></fa-icon>
 																	</div>
 																</div>
-																<div class="col-6 pl-0 ellipsis wifi-good-font">{{wifi.ssid}}</div>
+																<div class="col-6 pl-0 ellipsis wifi-good-font" title="{{wifi.ssid}}">{{wifi.ssid}}</div>
 																<div class="wifi-bg col-4 pl-0 pr-3">
 																	<span class="wifi-good pt-1 pb-1 pr-2 pl-2"
 																		[ngClass]="getWifiStatus(wifi.good)">

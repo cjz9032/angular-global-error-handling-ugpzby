@@ -32,7 +32,8 @@
 			"partiallyProtected": "PARTIALLY PROTECTED",
 			"installed": "INSTALLED",
 			"notInstalled": "NOT INSTALLED",
-			"loading": "Loading"
+			"loading": "Loading",
+			"notFound": "NOT FOUND"
 		},
 		"qAndA": {
 			"title": "Q&A for your machine",
@@ -395,9 +396,6 @@
 		}
 	},
 	"security": {
-		"common": {
-			"loading": "Loading"
-		},
 		"landing": {
 			"fully": "Fully protected",
 			"fullyDesc": "Congratulations! You are well protected.",

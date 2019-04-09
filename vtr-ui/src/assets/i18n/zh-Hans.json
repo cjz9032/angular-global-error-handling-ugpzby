@@ -31,7 +31,8 @@
 			"disabled": "已禁用",
 			"partiallyProtected": "局部受保护",
 			"installed": "已安装",
-			"notInstalled": "未安装"
+			"notInstalled": "未安装",
+			"notFound": "未发现"
 		},
 		"qAndA": {
 			"title": "关于计算机的常见问题解答​",
