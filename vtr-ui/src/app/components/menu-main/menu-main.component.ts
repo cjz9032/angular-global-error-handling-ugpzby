@@ -184,10 +184,6 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 
 		/*const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		if (!cacheShowWindowsHello) {
-=======
-		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
-		if (cacheShowWindowsHello) {
->>>>>>> 1e7c598fdbb92e2c4f6d7c421a554ca8d67c0f6b
 			const securityItem = this.items.find(item => item.id === 'security');
 			securityItem.subitems.push({
 				id: 'windows-hello',
@@ -212,7 +208,6 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				this.showWindowsHello(windowsHello);
 			});
 		}
-<<<<<<< HEAD
 		const windowsHello: WindowsHello =vantageShellService.getSecurityAdvisor().windowsHello;
 		this.showWindowsHello(windowsHello);
 		windowsHello.on(EventTypes.helloFacialIdStatusEvent, () => {
@@ -220,8 +215,6 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		}).on(EventTypes.helloFingerPrintStatusEvent, () => {
 			this.showWindowsHello(windowsHello);
 		});
-=======
->>>>>>> 1e7c598fdbb92e2c4f6d7c421a554ca8d67c0f6b
 
 		this.commonMenuSubscription = this.translationService.subscription
 			.subscribe((translation: Translation) => {
