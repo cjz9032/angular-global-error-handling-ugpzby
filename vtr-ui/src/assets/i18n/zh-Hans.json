@@ -29,6 +29,7 @@
 			"windowsHello": "Windows Hello",
 			"enabled": "已启用",
 			"disabled": "已禁用",
+			"partiallyProtected": "局部受保护",
 			"installed": "已安装",
 			"notInstalled": "未安装"
 		},

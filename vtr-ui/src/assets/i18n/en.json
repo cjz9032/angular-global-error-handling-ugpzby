@@ -29,6 +29,7 @@
 			"windowsHello": "Windows Hello",
 			"enabled": "ENABLED",
 			"disabled": "DISABLED",
+			"partiallyProtected": "PARTIALLY PROTECTED",
 			"installed": "INSTALLED",
 			"notInstalled": "NOT INSTALLED",
 			"loading": "Loading"

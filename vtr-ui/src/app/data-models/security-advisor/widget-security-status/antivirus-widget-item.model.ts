@@ -74,7 +74,10 @@ export class AntivirusWidgetItem extends WidgetItem {
 			});
 		} else {
 			this.status = 3;
-			this.detail = 'TO DO';
+			this.detail = 'partially protected';
+			this.translateService.get('common.securityAdvisor.partiallyProtected').subscribe((value) => {
+				this.detail = value;
+			});
 		}
 	}
 }
