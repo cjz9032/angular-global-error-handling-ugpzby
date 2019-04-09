@@ -85,12 +85,18 @@ export class AntiVirusLandingViewModel {
 		avModel.on(EventTypes.avWindowsDefenderAntivirusStatusEvent, (data) => {
 			avStatus.status = (data === true) ? 0 : 1;
 			avStatus.detail = (data === true) ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
+			translate.get(avStatus.detail).subscribe((res) => {
+				avStatus.detail = res;
+			});
 			this.updateStatus();
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, data);
 		});
 		avModel.on(EventTypes.avWindowsDefenderFirewallStatusEvent, (data) => {
 			fwStatus.status = (data === true) ? 0 : 1;
 			fwStatus.detail = (data === true) ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
+			translate.get(fwStatus.detail).subscribe((res) => {
+				fwStatus.detail = res;
+			});
 			this.updateStatus();
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, data);
 		});
@@ -98,11 +104,17 @@ export class AntiVirusLandingViewModel {
 			if (data.antivirus.length > 0) {
 				avStatus.status = (data.antivirus[0].status === true) ? 0 : 1;
 				avStatus.detail = (data.antivirus[0].status === true) ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
+				translate.get(avStatus.detail).subscribe((res) => {
+					avStatus.detail = res;
+				});
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, data.antivirus[0].status);
 			}
 			if (data.firewall.length > 0) {
 				fwStatus.status = (data.firewall[0].status === true) ? 0 : 1;
 				fwStatus.detail = (data.firewall[0].status === true) ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
+				translate.get(fwStatus.detail).subscribe((res) => {
+					fwStatus.detail = res;
+				});
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, data.firewall[0].status);
 			} else {
 				fwStatus.status = undefined;
@@ -112,12 +124,18 @@ export class AntiVirusLandingViewModel {
 		avModel.on(EventTypes.avMcafeeStatusEvent, (data) => {
 			avStatus.status = (data === true) ? 0 : 1;
 			avStatus.detail = (data === true) ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
+			translate.get(avStatus.detail).subscribe((res) => {
+				avStatus.detail = res;
+			});
 			this.updateStatus();
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, data);
 		});
 		avModel.on(EventTypes.avMcafeeFirewallStatusEvent, (data) => {
 			fwStatus.status = (data === true) ? 0 : 1;
 			fwStatus.detail = (data === true) ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
+			translate.get(fwStatus.detail).subscribe((res) => {
+				fwStatus.detail = res;
+			});
 			this.updateStatus();
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, data);
 		});
@@ -131,10 +149,10 @@ export class AntiVirusLandingViewModel {
 			translate.get(fwStatus.detail).subscribe((res) => {
 				fwStatus.detail = res;
 			});
-			translate.get(fwStatus.title).subscribe((res) => {
-				fwStatus.title = res;
-			});
 		}
+		translate.get(fwStatus.title).subscribe((res) => {
+			fwStatus.title = res;
+		});
 		translate.get(subjectStatus.title).subscribe((res) => {
 			subjectStatus.title = res;
 		});

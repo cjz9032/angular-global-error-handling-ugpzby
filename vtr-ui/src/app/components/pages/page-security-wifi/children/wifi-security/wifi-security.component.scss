@@ -219,7 +219,7 @@
 				display: flex;
 				flex-wrap: wrap;
 				margin-bottom: 0rem;
-
+				
 				li {
 					list-style: none;
 					width: 50%;
@@ -278,7 +278,8 @@
 					.connection-name {
 						font-size: 1.7rem;
 						font-weight: $weight_bold;
-
+						overflow: hidden;
+						text-overflow: ellipsis;
 						small {
 							font-weight: $weight_light;
 							display: block;

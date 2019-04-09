@@ -13,7 +13,7 @@
 				"sub1": "我的安全性",
 				"sub2": "反病毒",
 				"sub3": "WiFi 安全",
-				"sub4": "密码保护",
+				"sub4": "密码健康",
 				"sub5": "因特网保护",
 				"sub6": "Windows Hello"
 			},
@@ -31,7 +31,8 @@
 			"disabled": "已禁用",
 			"partiallyProtected": "局部受保护",
 			"installed": "已安装",
-			"notInstalled": "未安装"
+			"notInstalled": "未安装",
+			"notFound": "未发现"
 		},
 		"qAndA": {
 			"title": "关于计算机的常见问题解答​",
@@ -139,7 +140,7 @@
 					"cooling": "散热",
 					"other": "其他"
 				},
-				"powerSmartsettings": {
+				"powerSmartSettings": {
 					"title": "电源智能设置",
 					"subtitle": "智能散热",
 					"description1": "此功能动态调节散热设置以满足您的需求。此功能开启时，在手持或空闲状态下可调节设置使设备保持较低温度或较低噪声。而设备放置在稳定平面上时，此功能可优化性能。此功能关闭时，您可以手动设置散热优先级。",
@@ -272,10 +273,10 @@
 				"jumpTo": {
 					"title": "跳到设置：",
 					"shortcuts": {
-						"display":{
+						"display": {
 							"title": "显示"
 						},
-						"camera":{
+						"camera": {
 							"title": "摄像头"
 						}
 					}
@@ -316,6 +317,18 @@
 		"systemUpdates": {
 			"title": "系统更新",
 			"history": "完整历史记录",
+			"notAvailable": "Not Available",
+			"notInstalled": "Not Installed",
+			"popup": {
+				"reboot": "Reboot",
+				"shutdown": "Shut Down",
+				"rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
+				"shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
+				"rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
+				"rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+				"okayButton": "OK",
+				"cancelButton": "Cancel"
+			},
 			"autoUpdateSettings": {
 				"title": "自动更新设置",
 				"subtitle": "自动安装更新",
@@ -406,7 +419,7 @@
 			"fully": "Fully protected",
 			"fullyDesc": "Congratulations! You are well protected.",
 			"notFully": "Not fully protected",
-			"notFullyDesc": "You are not fully protected, Learn how to better protect yourself now.",
+			"notFullyDesc": "You are not fully protected. Learn how to better protect yourself now.",
 			"security101": "SECURITY ADVISOR 101",
 			"firewall": "Firewall",
 			"pwdHealth": "Password Health",
@@ -417,9 +430,9 @@
 			"fingerprint": "Fingerprint reader",
 			"seeAllNetwork": "See all joined networks",
 			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
-			"good": "Good",
-			"malicious": "Malicious",
-			"suspicious": "Suspicious"
+			"good": "GOOD",
+			"malicious": "MALICIOUS",
+			"suspicious": "SUSPICIOUS"
 		},
 		"antivirus": {
 			"common": {
@@ -431,7 +444,7 @@
 				"dedicated": "Dedicated security that consistently outperforms Defender and other leading AV providers",
 				"deviceToCloud": "Device to cloud technology that won't slow down your PC",
 				"poweredBy": "Powered By McAfee",
-				"privacyTerms": "<p>Read more on the <a vtrMetrics metricsItem=\"privacyPolicy\" metricsEvent=\"itemClick\" href=\"https://www.mcafee.com/consumer/en-us/policy/global/legal.html \"target=\"_blank\" class=\"learnmore\">Privacy Policy</a> and <a vtrMetrics metricsItem=\"termsOfServices\" metricsEvent=\"itemClick\" href=\"https://www.mcafee.com/consumer/en-us/policy/global/legal.html\" target=\"_blank\" class=\"learnmore\">Terms of Service</a></p>",
+				"privacyTerms": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
 				"mcafeePremium": "McAfee premium protection",
 				"protectedBy": "You are currently protected by",
 				"betterProtected": ".However, you could be better protected with McAfee LifeSafe",
@@ -444,7 +457,7 @@
 			"windowsDefender": {
 				"optimallyProtected": "Not Optimally Protected",
 				"subtitle": "You are currently being protected by Windows Defender.However, you could be better protected with McAfee LiveSafe. Learn more below.",
-				"learnMore": "LEARN MORE ABOUT MCAFEE",
+				"learnMore": "LEARN MORE ABOUT McAfee",
 				"windowsProtected": "Windows Defender basic protection",
 				"windowsSubtitle": "Windows defender offers basic protection for your device"
 			},
@@ -489,50 +502,53 @@
 				"disable": "DISABLED",
 				"less": "Less info",
 				"more": "More info",
-				"network-history": "Network History",
+				"networkHistory": "Network History",
 				"connect": "Connected last",
-				"show-more": "Show more",
-				"show-less": "Show less",
+				"showmore": "Show more",
+				"showless": "Show less",
 				"button": "Enable Wifi security",
-				"disable-decribe": "Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones."
+				"disableDecribe": "Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones."
 			},
-			"threat-locator": {
+			"threatlocator": {
 				"describe": "Use the threat detector to determine the safety of the networks around you.",
-				"button": "Check your location"
+				"button": "Check threat"
 			},
-			"location-modal": {
+			"locationmodal": {
 				"title": "Enable location services",
 				"describe": "To use Lenovo WiFi Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?",
-				"yes": "YES",
-				"no": "NO"
+				"agree": "AGREE",
+				"cancel": "CANCEL"
 			}
 		},
 		"homeprotection": {
-			"home-security": {
+			"homesecurity": {
 				"title": "Connected Home Security",
-				"title-describe": "Connected Home Security keeps you safe in three ways:",
-				"home-security-affect1": "Connected Home Security ensures your device is safe, and has not been compromised",
-				"home-security-affect2": "Connected Home Security ensures that the networks you are connected to are safe",
-				"home-security-affect3": "Connected Home Security ensures that other devices connected to your home network are safe.",
+				"titleDescription": "Connected Home Security keeps you safe in three ways:",
+				"homeSecurityAffect1": "Connected Home Security ensures your device is safe, and has not been compromised",
+				"homeSecurityAffect2": "Connected Home Security ensures that the networks you are connected to are safe",
+				"homeSecurityAffect3": "Connected Home Security ensures that other devices connected to your home network are safe.",
 				"describe": "Unsafe devices and networks can introduce malware, lead to identity theft, and leak private and financial information. Enable this feature to reduce the risk of having your device, and your home network exposed to attackers",
 				"subtitle": "Peace of Mind",
-				"subtitle-describe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more in about Connected Home Security in Tips and Tricks.",
-				"try-now": "Try Now"
+				"subtitleDescribe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more in about Connected Home Security in Tips and Tricks.",
+				"tryNow": "Try Now"
 			},
-			"invitation-code": {
+			"invitationcode": {
 				"button": "Enter invitation code",
-				"button-describe": "enter invitation code require enable wifi security",
+				"buttonDescribe": "enter invitation code require enable wifi security",
 				"title": "Already have Connected Home Security?",
-				"title-describe": "Add this device to your Connected Home",
-				"enter-code": "Enter your connection code",
-				"add-home": "Add Home",
-				"ok": "Ok",
+				"titleDescribe": "Add this device to your Connected Home",
+				"enterCode": "Enter your connection code",
+				"addHome": "Add Home",
+				"ok": "OK",
+				"continue": "CONTINUE",
 				"cancel": "Cancel",
-				"validate-code": "VALIDATE CODE",
-				"success": "Success",
-				"try-again": "Please try again!"
+				"validateCode": "VALIDATE CODE",
+				"success": "Successfully connected",
+				"canUse": "You can now start using Connected Home Security",
+				"tryAgain": "Incorrect code, please try again!",
+				"activationCode": "ACTIVATION CODE"
 			},
-			"security-health": {
+			"securityhealth": {
 				"title": "Security Health",
 				"deviceName1": "Apps From Trusted Sources",
 				"deviceName2": "Developer Mode",
@@ -546,9 +562,88 @@
 				"deviceName10": "Automatic Updates Service Availability",
 				"fail": "FAILED",
 				"pass": "PASSED",
+				"learnMoreAboutSecurityHealth": "Learn more about each of these components <tag>here.</tag>",
 				"peaceOfMind": "Do you want more peace of mind?",
 				"button": "Enable Wifi security"
 			}
+		},
+		"vpn": {
+			"statusTitle": "SURFEASY VPN",
+			"title": "VPN Security",
+			"header": "SurfEasy Virtual Private Network",
+			"whatIsSufEasy": "SurfEasy is a VPN, or Virtual Private Network provider that helps protect you while you are surfing the internet. Without a VPN, your PC may be more vulnerable to attackers and identity thieves. A VPN runs silently in the background and provides additional safety and privacy measures while you use the internet.",
+			"whatCanSufEasy1": "A Virtual Private Network provider helps you protect while you are surfing the internet. Without a VPN, your pc may be more vulnerable to attackers and identity thieves. A VPN runs silently in the background and provides safety and privacy measures.",
+			"getSufEasy": "Get SurfEasy",
+			"openSufEasy": "Open SurfEasy",
+			"whySufEasy": "Why SurfEasy?",
+			"whySufEasyDescription": "SurfEasy makes it easy to stay safe while surfing the internet. It helps you remain anonymous, and adds an additional layer of security between you and anyone that wants your personal information.",
+			"startUseSufEasy": "Start using SurfEasy Today",
+			"startUseSufEasy1": "Using a VPN adds Security. SurfEasy encrypts your data, adding anonymity and security.",
+			"startUseSufEasy2": "Once registered SurfEasy runs silently in the background so everything runs the same but better.",
+			"startUseSufEasy3": "Start using SurfEasy to protect yourself while browsing the internet. Enjoy the no-log VPN that works on every device.",
+			"startUseSufEasy4": "As a surfEasy user enjoy 250 MB of free data every 30 days! Unlock additional data by following the steps on the \"Rewards\" tab of the SurfEasy app.",
+			"howToUseSufEasy": "How to use SurfEasy VPN",
+			"whatCanSufEasy2": "A VPN provider helps to protect you while you are surfing the internet. Without a VPN, our PC may be moe vulnerable to attackers and identity thieves. A VPN runs silently in the bacground and provides safety and privacy measures.",
+			"getStarted": "Get started:",
+			"getStarted1": "After installing SurfEasy, register and make an account.",
+			"getStarted2": "Log in with your secure credentials.",
+			"getStarted3": "Wait for confirmation to know you are connected, and then begin browsing securely.",
+			"howToGetData": "HOW TO GET FREE DATA:",
+			"howToGetData1": "Confirm email and earn +250 MB",
+			"howToGetData2": "Add second device and earn +250 Mb",
+			"howToGetData3": "Refer a friend and earn +500 MB",
+			"howToGetData4": "Like SurfEasy on Facebook and earn +100 MB",
+			"howToGetData5": "Follow SurfEasy on Twitter and earn +100 MB",
+			"poweredBySurfEasy": "Powered By SurfEasy",
+			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+		},
+		"passwordManager": {
+			"statusTitle": "DASHLANE PASSWORD MANAGER",
+			"title": "Password Health",
+			"header": "Dashlane",
+			"whatIsPmNotInstalled": "The safest, easiest way to save strong, complex passwords and log in instantly on every site.",
+			"whatIsPmInstalled": "A safer digital life is waiting: Add passwords, enable Dark Web Monitoring and autofill personal and payment info.",
+			"startProtect": "Start protecting your online accounts the simple way.",
+			"getDashLane": "Get DashLane",
+			"learnMoreAbout": "<tag>Learn more</tag> about making the most of DashLane",
+			"openDashLane": "Open DashLane",
+			"neverForget": "DashLane: Never forget another password",
+			"whatIsDashLane": "DashLane is a password manager and digital protection app that works with your browser. It automatically saves passwords and personal data, remembers it all for you, and stores everything securely. Dashlane also analyzes your account security and provides easy ways to improve your password health.",
+			"helpYou": "DashLane helps you",
+			"helpYou1": "Remember unlimited usernames and passwords.",
+			"helpYou2": "Log in instantly everywhere for seamless browsing",
+			"helpYou3": "Sync across devices so you're never without access to important accounts",
+			"helpYou4": "Improve your online protection with easy, actionable advice",
+			"getStarted": "Getting started with DashLane?",
+			"checkOutThisGuide": "Use DashLane to stay safe online while saving time and frustration. For detailed instructions on how to get started, <tag>check out this guide.</tag>",
+			"allowsYou": "DashLane allows you to",
+			"allowsYou1": "Log in instantly every where for seamless Browsing-Sync across devices so you're never without access to important accounts",
+			"allowsYou2": "Monitor the dark web for your personal information",
+			"allowsYou3": "Stay safe on unsecured WiFi networks with built in VPN",
+			"allowsYou4": "Share passwords securely without revealing them",
+			"poweredByDashLane": "Powered By DashLane",
+			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+		},
+		"windowsHello": {
+			"statusTitle": "WINDOWS HELLO",
+			"title": "Windows Hello",
+			"protectYourDevice": "Protect your device with these Lenovo recommended security options.",
+			"signIn": "Sign in quickly and securely with Windows Hello.",
+			"setUp": "Setup Windows Hello",
+			"whyWindowsHello": "Why Windows Hello?",
+			"whyWindowsHelloDescription1": "Windows Hello makes logging into your PC easier and more secure, and can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello.",
+			"startUsingToday": "Start using Windows Hello Today",
+			"visitAndRegister": "Visit the Windows Hello page and register your fingerprint.",
+			"visitInSettings": "<tag> Visit Windows Hello</tag> in system settings",
+			"unlock": "Use Windows Hello to log into and unlock your PC with a touch of a finger on the sensor.",
+			"startUsingWindowsHello": "Start using Windows Hello to log into Microsoft Apps such as Outlook, OneDrive, Office 365 and Xbox Live.",
+			"visitMicrosoft": "Visit Microsoft",
+			"poweredByWindowsHello": "Powered By Windows Hello",
+			"privacyPolicy": "Read more on the <tag>Privacy Policy</tag>",
+			"whyWindowsHelloDescription2": "Windows Hello makes logging into your PC easier and more secure. And you can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello",
+			"authentication": "Windows Hello Authentication",
+			"traditional": "Traditional passwords can be stolen and used to access your account from anywhere in the world. More secure and convinient. Windows Hello is the next generation of a password. Use your fingerprint reader [or IR camera] instead of insecure passwords to log in.",
+			"howToStart": "How do I start using Windows Hello?"
 		}
 	},
 	"faq": {}
