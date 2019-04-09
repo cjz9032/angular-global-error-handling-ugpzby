@@ -146,7 +146,7 @@ export class MockSecurityAdvisorService {
 			mcafee: {
 				localName: '',
 				subscription: '',
-				expireAt: '',
+				expireAt: new Date,
 				registered: true,
 				trailUrl: '',
 				features: [{
