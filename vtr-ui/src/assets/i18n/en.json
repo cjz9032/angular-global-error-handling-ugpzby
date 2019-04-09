@@ -318,6 +318,8 @@
 	"systemUpdates": {
 		"title": "System Updates",
 		"history": "FULL HISTORY",
+		"notAvailable": "Not Available",
+		"notInstalled": "Not Installed",
 		"auto-update-settings": {
 			"title": "Auto update settings",
 			"subtitle": "AUTOMATICALLY INSTALL UPDATES",

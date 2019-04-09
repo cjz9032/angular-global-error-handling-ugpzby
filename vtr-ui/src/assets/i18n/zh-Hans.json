@@ -316,6 +316,8 @@
 		"systemUpdates": {
 			"title": "系统更新",
 			"history": "完整历史记录",
+			"notAvailable": "Not Available",
+			"notInstalled": "Not Installed",
 			"autoUpdateSettings": {
 				"title": "自动更新设置",
 				"subtitle": "自动安装更新",
