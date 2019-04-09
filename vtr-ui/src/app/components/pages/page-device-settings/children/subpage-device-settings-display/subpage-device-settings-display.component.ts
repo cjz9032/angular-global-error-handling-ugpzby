@@ -128,7 +128,6 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 	// Start EyeCare Mode
 	private getDisplayColorTemperature() {
-		// this.cd.markForCheck();
 		this.displayService.getDisplayColortemperature().then((response) => {
 			console.log('getDisplayColortemperature.then', response);
 			this.eyeCareDataSource = response;

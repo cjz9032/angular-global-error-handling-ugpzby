@@ -58,9 +58,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	}
 
 	//#region private functions
-
 	// DeviceMonitorStatus
-
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			const { type, payload } = notification;
@@ -90,9 +88,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		} else {
 			this.getCameraStatus();
 		}
-
 		this.initEyecaremodeSettings();
-
 	}
 	public initEyecaremodeSettings() {
 		try {
