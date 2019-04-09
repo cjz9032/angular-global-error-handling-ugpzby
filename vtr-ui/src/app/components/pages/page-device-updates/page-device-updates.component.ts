@@ -225,7 +225,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			const installTime = this.commonService.formatTime(this.lastInstallTime);
 			return `${this.lastUpdatedText} ${installDate} at ${installTime}`;
 		}
-		return `${this.lastUpdatedText} not available`;
+		return `Your device has never checked for updates.`;
 	}
 
 	public getNextUpdatedScanText() {
