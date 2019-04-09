@@ -158,6 +158,9 @@ button {
 
 		.vtr-page-right-column {
 			padding: 0 $padding_side 4rem 4rem;
+			@media #{$mediaquery_13} {
+				padding: 4rem 4rem 4rem 8.5rem;
+			}
 		}
 
 		// @media #{$mediaquery_500} {

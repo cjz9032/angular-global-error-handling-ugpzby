@@ -10,12 +10,14 @@ interface DevicePostureDetail {
 	title: string; // name
 	detail: string; // faied,passed
 	path: string;
+	type: string;
 }
 
 export class WifiHomeViewModel {
 	wifiSecurity: WifiSecurity;
 	homeProtection: HomeProtection;
 	isLWSEnabled: boolean;
+	hasWSEverUsed: boolean;
 	allHistorys: Array<phoenix.WifiDetail>;
 	hasMore: boolean;
 	historys: Array<phoenix.WifiDetail>;
@@ -26,6 +28,7 @@ export class WifiHomeViewModel {
 		const cacheWifiSecurityState = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
 		const cacheWifiSecurityHistory = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys);
 		const cacheWifiSecurityChsConsoleUrl = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionChsConsoleUrl);
+		const cacheWifiSecurityHasEverUsed = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHasEverUsed);
 		try {
 			this.wifiSecurity = wifiSecurity;
 			if (wifiSecurity.state) {
@@ -33,6 +36,12 @@ export class WifiHomeViewModel {
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
 			} else if (cacheWifiSecurityState) {
 				this.isLWSEnabled = (cacheWifiSecurityState === 'enabled');
+			}
+			if (wifiSecurity.hasEverUsed !== undefined) {
+				this.hasWSEverUsed = wifiSecurity.hasEverUsed;
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHasEverUsed, wifiSecurity.hasEverUsed);
+			} else if (cacheWifiSecurityHasEverUsed !== undefined) {
+				this.hasWSEverUsed = cacheWifiSecurityHasEverUsed;
 			}
 			if (wifiSecurity.wifiHistory) {
 				this.allHistorys = wifiSecurity.wifiHistory;
@@ -72,6 +81,12 @@ export class WifiHomeViewModel {
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
 			}
 			this.isLWSEnabled = (value === 'enabled');
+		});
+		wifiSecurity.on(EventTypes.wsHasEverUsed, (value) => {
+			if (value !== undefined) {
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHasEverUsed, value);
+			}
+			this.hasWSEverUsed = value;
 		});
 		wifiSecurity.on(EventTypes.wsWifiHistoryEvent, (value) => {
 			if (value) {
@@ -133,9 +148,9 @@ export class SecurityHealthViewModel {
 			}
 			if (homeProtection.devicePosture) {
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, homeProtection.devicePosture);
-				this.creatHomeDevicePosture(homeProtection.devicePosture);
+				this.createHomeDevicePosture(homeProtection.devicePosture);
 			} else if (cacheHomeDevicePosture) {
-				this.creatHomeDevicePosture(cacheHomeDevicePosture);
+				this.createHomeDevicePosture(cacheHomeDevicePosture);
 			}
 		} catch (err) {
 			console.log(`${err}`);
@@ -150,18 +165,19 @@ export class SecurityHealthViewModel {
 			if (value) {
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, value);
 			}
-			this.creatHomeDevicePosture(value);
+			this.createHomeDevicePosture(value);
 		});
 	}
 
-	creatHomeDevicePosture(devicePosture: Array<DeviceInfo>) {
+	createHomeDevicePosture(devicePosture: Array<DeviceInfo>) {
 		this.homeDevicePosture = [];
 		devicePosture.forEach((item) => {
 			const it: DevicePostureDetail = {
 				status: 0,
 				title: '',
 				detail: '',
-				path: 'security/wifi-security'
+				path: 'security/wifi-security',
+				type: 'security'
 			};
 			it.status = item.vulnerable === 'true' ? 1 : 2;
 			it.title = this.mappingDevicePosture(item.config);
@@ -169,7 +185,9 @@ export class SecurityHealthViewModel {
 			this.translate.get(it.detail).subscribe((res) => {
 				it.detail = res;
 			});
-			this.homeDevicePosture.push(it);
+			if (it.title !== 'other') {
+				this.homeDevicePosture.push(it);
+			}
 		});
 	}
 
