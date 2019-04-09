@@ -9,6 +9,8 @@ import { BaseComponent } from '../../../../base/base.component';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { RegionService } from 'src/app/services/region/region.service';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { SecurityService } from 'src/app/services/security/security.service';
 
 @Component({
 	selector: 'wifi-security',
@@ -31,7 +33,8 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	constructor(
 		public modalService: NgbModal,
 		private commonService: CommonService,
-		public regionService: RegionService
+		public regionService: RegionService,
+		private securityService: SecurityService
 	) {
 		super();
 		// if (typeof Windows !== undefined) {
@@ -52,29 +55,23 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		if (this.wifiIsShowMore === 'false') {
 			this.isShowMore = false;
 		}
-		this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
-			if (value !== undefined) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn, value);
-			}
-			if (!value) {
-				const modal = this.modalService.open(ModalWifiSecuriryLocationNoticeComponent,
-					{
-						backdrop: 'static'
-						, windowClass: 'wifi-security-location-modal'
+		// this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
+		this.data.wifiSecurity.on(EventTypes.geolocatorPermissionEvent, (value) => {
+			if (!value && this.data.wifiSecurity.state === 'enabled') {
+				this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);
+			} else if (value) {
+				if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
+					this.data.wifiSecurity.enableWifiSecurity().then((res) => {
+						if ( res === true) {
+							this.data.isLWSEnabled = true;
+						} else {
+							this.data.isLWSEnabled = false;
+						}
+					}
+					, (error) => {
+						console.log('no permission');
 					});
-				modal.componentInstance.header = 'security.wifisecurity.locationmodal.title';
-				modal.componentInstance.description = 'security.wifisecurity.locationmodal.describe';
-				// modal.componentInstance.header = 'Enable location services';
-				// modal.componentInstance.description = 'To use Lenovo WiFi Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?';
-				modal.componentInstance.url = 'ms-settings:privacy-location';
-				this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (para) => {
-					if (para !== undefined) {
-						this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn, value);
-					}
-					if (para) {
-						modal.close();
-					}
-				});
+				}
 			}
 		});
 	}
@@ -82,28 +79,16 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	enableWifiSecurity(): void {
 		try {
 			if (this.data.wifiSecurity) {
-				if (this.data.wifiSecurity.isLocationServiceOn !== undefined) {
-					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn, this.data.wifiSecurity.isLocationServiceOn);
-					if (this.data.wifiSecurity.isLocationServiceOn) {
-						this.data.wifiSecurity.enableWifiSecurity().then(() => {
-							this.data.homeProtection.refresh();
-						});
+				this.data.wifiSecurity.enableWifiSecurity().then((res) => {
+					if ( res === true) {
+						this.data.isLWSEnabled = true;
 					} else {
-						const modal = this.modalService.open(ModalWifiSecuriryLocationNoticeComponent,
-							{
-								backdrop: 'static'
-								, windowClass: 'wifi-security-location-modal'
-							});
-						modal.componentInstance.header = 'security.wifisecurity.locationmodal.title';
-						modal.componentInstance.description = 'security.wifisecurity.locationmodal.describe';
-						modal.componentInstance.url = 'ms-settings:privacy-location';
-						this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
-							if (value) {
-								modal.close();
-							}
-						});
+						this.data.isLWSEnabled = false;
 					}
-				}
+					this.data.homeProtection.refresh();
+				}, (error) => {
+					this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);
+				});
 			}
 		} catch {
 			throw new Error('wifiSecurity is null');
@@ -113,7 +98,13 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	disableWifiSecurity(): void {
 		try {
 			if (this.data.wifiSecurity) {
-				this.data.wifiSecurity.disableWifiSecurity();
+				this.data.wifiSecurity.disableWifiSecurity().then((res) => {
+					if ( res === true) {
+						this.data.isLWSEnabled = false;
+					} else {
+						this.data.isLWSEnabled = true;
+					}
+				});
 				// this.wifiHomeViewModel.isLWSEnabled = (this.wifiHomeViewModel.wifiSecurity.state === 'enabled');
 			}
 		} catch {

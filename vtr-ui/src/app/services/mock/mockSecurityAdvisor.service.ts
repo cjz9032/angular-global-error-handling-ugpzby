@@ -66,6 +66,10 @@ export class MockSecurityAdvisorService {
 				info: '2019/1/4 15:22:49',
 				good: '2'
 			}],
+			getWifiState(): Promise<boolean> {
+				return Promise.resolve(true);
+			},
+			hasSystemPermissionShowed: false,
 			isLocationServiceOn: true,
 			isLWSPluginInstalled: true,
 			hasEverUsed: false,
