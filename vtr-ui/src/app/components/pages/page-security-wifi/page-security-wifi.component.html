@@ -44,7 +44,7 @@
 														<div class="title">{{'security.homeprotection.securityhealth.title' | translate}}</div>
 														<div class="description"
 															*ngIf="securityHealthViewModel.isLWSEnabled">
-															<vtr-translate-picker-base 
+															<vtr-translate-picker-base
 																[translateString]="'security.homeprotection.securityhealth.learnMoreAboutSecurityHealth' | translate"
 																[metricsItem]="'learnMoreAboutSecurityHealth'"
 																[href]="'javascript:void(0)'"
@@ -112,6 +112,7 @@
 												</div>
 											</div>
 										</div>
+										<div *ngIf="securityHealthViewModel.isLWSEnabled" class="security-health"></div>
 									</div>
 								</div>
 								<!--end of Security Health Advisor-->
