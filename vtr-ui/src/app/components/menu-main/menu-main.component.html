@@ -24,7 +24,7 @@
 			id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<ng-container *ngFor="let item of items; let i=index">
-					<li *ngIf="item.subitems.length===0&&item.id!=='user'"
+					<li *ngIf="item.subitems.length===0&&item.id!=='user'&&showItem(item)"
 						class="nav-item">
 						<a class="nav-link {{item.id}}"
 							vtrMetrics
@@ -35,10 +35,10 @@
 							routerLinkActive="active">
 							<fa-icon [icon]="item.icon"
 								class="fa-icon"></fa-icon>
-							{{item.label}}
+							{{item.label | translate}}
 						</a>
 					</li>
-					<li *ngIf="item.subitems.length>0&&item.id!=='user'"
+					<li *ngIf="item.subitems.length>0&&item.id!=='user'&&showItem(item)"
 						class="nav-item dropdown"
 						[ngClass]="{'active': isParentActive(item)}">
 						<a class="nav-link dropdown-toggle {{item.id}}"
@@ -55,7 +55,7 @@
 							aria-expanded="false">
 							<fa-icon [icon]="item.icon"
 								class="fa-icon"></fa-icon>
-							{{item.label}}
+							{{item.label | translate}}
 						</a>
 						<div class="dropdown-menu"
 							aria-labelledby="navbarDropdown">
@@ -69,11 +69,11 @@
 								[metricsParent]="subitem.metricsParent"
 								[metricsItem]="subitem.metricsItem"
 								class="dropdown-item link"
-								routerLink="/{{item.path}}/{{subitem.path}}">{{subitem.label}}</a>
+								routerLink="/{{item.path}}/{{subitem.path}}">{{subitem.label | translate}}</a>
 						</div>
 					</li>
-					<li *ngIf="item.id==='user' && country != 'cn'"
-					 class="nav-item dropdown">
+					<li *ngIf="item.id==='user' && country != 'cn' && showItem(item)"
+						class="nav-item dropdown">
 						<!-- <a class="nav-link dropdown-toggle {{item.id}}"
 							routerLink="/{{item.path}}"
 							routerLinkActive="active"

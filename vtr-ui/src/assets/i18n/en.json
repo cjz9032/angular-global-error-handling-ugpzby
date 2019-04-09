@@ -29,8 +29,10 @@
 			"windowsHello": "Windows Hello",
 			"enabled": "ENABLED",
 			"disabled": "DISABLED",
+			"partiallyProtected": "PARTIALLY PROTECTED",
 			"installed": "INSTALLED",
-			"notInstalled": "NOT INSTALLED"
+			"notInstalled": "NOT INSTALLED",
+			"loading": "Loading"
 		},
 		"qAndA": {
 			"title": "Q&A for your machine",
@@ -131,27 +133,12 @@
 				"title": "Power",
 				"subtitle": "Power Settings",
 				"description": "This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.",
-				"jumpTo": {
+				"jumpto": {
 					"title": "JUMP TO SETTINGS",
-					"shortcuts":[
-						{
-							"title": "Intelligent Cooling",
-							"path": "cooling"
-						},
-						{
-							"title": "Battery",
-							"path": "battery"
-						},
-						{
-							"title": "Power",
-							"path": "power"
-						},
-						{
-							"title": "Other",
-							"path": "other"
-						}
-					]
-
+					"battery": "Battery",
+					"power": "Power",
+					"cooling": "Intelligent Cooling",
+					"other": "Other"
 				},
 				"powerSmartSettings": {
 					"title": "Power Smart Settings",
@@ -287,17 +274,14 @@
 				"description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
 				"jumpTo": {
 					"title": "JUMP TO SETTINGS",
-					"shortcuts":[
-						{
-							"title": "Display",
-							"path": "display"
+					"shortcuts": {
+						"display":{
+							"title": "Display"
 						},
-						{
-							"title": "Camera",
-							"path": "camera"
+						"camera":{
+							"title": "Camera"
 						}
-					]
-
+					}
 				},
 				"display": {
 					"title": "Display",
@@ -419,11 +403,14 @@
 		}
 	},
 	"security": {
+		"common": {
+			"loading": "Loading"
+		},
 		"landing": {
 			"fully": "Fully protected",
 			"fullyDesc": "Congratulations! You are well protected.",
 			"notFully": "Not fully protected",
-			"notFullyDesc": "You are not fully protected, Learn how to better protect yourself now.",
+			"notFullyDesc": "You are not fully protected. Learn how to better protect yourself now.",
 			"security101": "SECURITY ADVISOR 101",
 			"firewall": "Firewall",
 			"pwdHealth": "Password Health",
@@ -434,9 +421,9 @@
 			"fingerprint": "Fingerprint reader",
 			"seeAllNetwork": "See all joined networks",
 			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
-			"good": "Good",
-			"malicious": "Malicious",
-			"suspicious": "Suspicious"
+			"good": "GOOD",
+			"malicious": "MALICIOUS",
+			"suspicious": "SUSPICIOUS"
 		},
 		"antivirus": {
 			"common": {
@@ -448,7 +435,7 @@
 				"dedicated": "Dedicated security that consistently outperforms Defender and other leading AV providers",
 				"deviceToCloud": "Device to cloud technology that won't slow down your PC",
 				"poweredBy": "Powered By McAfee",
-				"privacyTerms": "<p>Read more on the <a vtrMetrics metricsItem=\"privacyPolicy\" metricsEvent=\"itemClick\" href=\"https://www.mcafee.com/consumer/en-us/policy/global/legal.html \"target=\"_blank\" class=\"learnmore\">Privacy Policy</a> and <a vtrMetrics metricsItem=\"termsOfServices\" metricsEvent=\"itemClick\" href=\"https://www.mcafee.com/consumer/en-us/policy/global/legal.html\" target=\"_blank\" class=\"learnmore\">Terms of Service</a></p>",
+				"privacyTerms": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
 				"mcafeePremium": "McAfee premium protection",
 				"protectedBy": "You are currently protected by",
 				"betterProtected": ".However, you could be better protected with McAfee LifeSafe",
@@ -515,7 +502,7 @@
 			},
 			"threatlocator": {
 				"describe": "Use the threat detector to determine the safety of the networks around you.",
-				"button": "Check your location"
+				"button": "Check threat"
 			},
 			"locationmodal": {
 				"title": "Enable location services",
@@ -544,20 +531,23 @@
 				"enterCode": "Enter your connection code",
 				"addHome": "Add Home",
 				"ok": "OK",
+				"continue": "CONTINUE",
 				"cancel": "Cancel",
 				"validateCode": "VALIDATE CODE",
-				"success": "Success",
-				"tryAgain": "Incorrect code,please try again!"
+				"success": "Successfully connected",
+				"canUse": "You can now start using Connected Home Security",
+				"tryAgain": "Incorrect code, please try again!",
+				"activationCode":"ACTIVATION CODE"
 			},
 			"securityhealth": {
 				"title": "Security Health",
-				"deviceName1": "Apps From Unknown Sources",
+				"deviceName1": "Apps From Trusted Sources",
 				"deviceName2": "Developer Mode",
 				"deviceName3": "UAC Notification",
 				"deviceName4": "Antivirus Availability",
 				"deviceName5": "Hard Drive Encryption",
 				"deviceName6": "Firewall Availability",
-				"deviceName7": "Not Activated Windows",
+				"deviceName7": "Activated Windows",
 				"deviceName8": "Security Updates Availability",
 				"deviceName9": "Password Protection",
 				"deviceName10": "Automatic Updates Service Availability",
@@ -566,6 +556,84 @@
 				"peaceOfMind": "Do you want more peace of mind?",
 				"button": "Enable Wifi security"
 			}
+		},
+		"vpn": {
+			"statusTitle": "SURFEASY VPN",
+			"title": "VPN Security",
+			"header": "SurfEasy Virtual Private Network",
+			"whatIsSufEasy": "SurfEasy is a VPN, or Virtual Private Network provider that helps protect you while you are surfing the internet. Without a VPN, your PC may be more vulnerable to attackers and identity thieves. A VPN runs silently in the background and provides additional safety and privacy measures while you use the internet.",
+			"whatCanSufEasy1": "A Virtual Private Network provider helps you protect while you are surfing the internet. Without a VPN, your pc may be more vulnerable to attackers and identity thieves. A VPN runs silently in the background and provides safety and privacy measures.",
+			"getSufEasy": "Get SurfEasy",
+			"openSufEasy": "Open SurfEasy",
+			"whySufEasy": "Why SurfEasy?",
+			"whySufEasyDescription": "SurfEasy makes it easy to stay safe while surfing the internet. It helps you remain anonymous, and adds an additional layer of security between you and anyone that wants your personal information.",
+			"startUseSufEasy": "Start using SurfEasy Today",
+			"startUseSufEasy1":"Using a VPN adds Security. SurfEasy encrypts your data, adding anonymity and security.",
+			"startUseSufEasy2":"Once registered SurfEasy runs silently in the background so everything runs the same but better.",
+			"startUseSufEasy3":"Start using SurfEasy to protect yourself while browsing the internet. Enjoy the no-log VPN that works on every device.",
+			"startUseSufEasy4":"As a surfEasy user enjoy 250 MB of free data every 30 days! Unlock additional data by following the steps on the \"Rewards\" tab of the SurfEasy app.",
+			"howToUseSufEasy": "How to use SurfEasy VPN",
+			"whatCanSufEasy2": "A VPN provider helps to protect you while you are surfing the internet. Without a VPN, our PC may be moe vulnerable to attackers and identity thieves. A VPN runs silently in the bacground and provides safety and privacy measures.",
+			"getStarted": "Get started:",
+			"getStarted1": "After installing SurfEasy, register and make an account.",
+			"getStarted2": "Log in with your secure credentials.",
+			"getStarted3": "Wait for confirmation to know you are connected, and then begin browsing securely.",
+			"howToGetData": "HOW TO GET FREE DATA:",
+			"howToGetData1": "Confirm email and earn +250 MB",
+			"howToGetData2": "Add second device and earn +250 Mb",
+			"howToGetData3": "Refer a friend and earn +500 MB",
+			"howToGetData4": "Like SurfEasy on Facebook and earn +100 MB",
+			"howToGetData5": "Follow SurfEasy on Twitter and earn +100 MB",
+			"poweredBySurfEasy": "Powered By SurfEasy",
+			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+		},
+		"passwordManager": {
+			"statusTitle": "DASHLANE PASSWORD MANAGER",
+			"title": "Password Health",
+			"header": "Dashlane",
+			"whatIsPmNotInstalled": "The safest, easiest way to save strong, complex passwords and log in instantly on every site.",
+			"whatIsPmInstalled": "A safer digital life is waiting: Add passwords, enable Dark Web Monitoring and autofill personal and payment info.",
+			"startProtect": "Start protecting your online accounts the simple way.",
+			"getDashLane": "Get DashLane",
+			"learnMoreAbout": "<tag>Learn more</tag> about making the most of DashLane",
+			"openDashLane": "Open DashLane",
+			"neverForget": "DashLane: Never forget another password",
+			"whatIsDashLane": "DashLane is a password manager and digital protection app that works with your browser. It automatically saves passwords and personal data, remembers it all for you, and stores everything securely. Dashlane also analyzes your account security and provides easy ways to improve your password health.",
+			"helpYou": "DashLane helps you",
+			"helpYou1": "Remember unlimited usernames and passwords.",
+			"helpYou2": "Log in instantly everywhere for seamless browsing",
+			"helpYou3": "Sync across devices so you're never without access to important accounts",
+			"helpYou4": "Share passwords securely without revealing them",
+			"getStarted": "Getting started with DashLane?",
+			"checkOutThisGuide": "Use DashLane to stay safe online while saving time and frustration. For detailed instructions on how to get started, <tag>check out this guide.</tag>",
+			"allowsYou": "DashLane allows you to",
+			"allowsYou1": "Log in instantly every where for seamless Browsing-Sync across devices so you're never without access to important accounts",
+			"allowsYou2": "Monitor the dark web for your personal information",
+			"allowsYou3": "Stay safe on unsecured WiFi networks with built in VPN",
+			"allowsYou4": "Share passwords securely without revealing them",
+			"poweredByDashLane": "Powered By DashLane",
+			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+		},
+		"windowsHello": {
+			"statusTitle": "WINDOWS HELLO",
+			"title": "Windows Hello",
+			"protectYourDevice": "Protect your device with these Lenovo recommended security options.",
+			"signIn": "Sign in quickly and securely with Windows Hello.",
+			"setUp": "Setup Windows Hello",
+			"whyWindowsHello": "Why Windows Hello?",
+			"whyWindowsHelloDescription1": "Windows Hello makes logging into your PC easier and more secure, and can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello.",
+			"startUsingToday": "Start using Windows Hello Today",
+			"visitAndRegister": "Visit the Windows Hello page and register your fingerprint.",
+			"visitInSettings": "<tag> Visit Windows Hello</tag> in system settings",
+			"unlock": "Use Windows Hello to log into and unlock your PC with a touch of a finger on the sensor.",
+			"startUsingWindowsHello": "Start using Windows Hello to log into Microsoft Apps such as Outlook, OneDrive, Office 365 and Xbox Live.",
+			"visitMicrosoft": "Visit Microsoft",
+			"poweredByWindowsHello": "Powered By Windows Hello",
+			"privacyPolicy": "Read more on the <tag>Privacy Policy</tag>",
+			"whyWindowsHelloDescription2": "Windows Hello makes logging into your PC easier and more secure. And you can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello",
+			"authentication": "Windows Hello Authentication",
+			"traditional": "Traditional passwords can be stolen and used to access your account from anywhere in the world. More secure and convinient. Windows Hello is the next generation of a password. Use your fingerprint reader [or IR camera] instead of insecure passwords to log in.",
+			"howToStart": "How do I start using Windows Hello?"
 		}
 	},
 	"faq": {}

@@ -12,7 +12,7 @@ export class VpnLandingViewModel {
 	constructor(vpnModel: phoenix.Vpn, commonService: CommonService, translate: TranslateService) {
 		const vpnStatus = {
 			status: 2,
-			detail: 'common.securityAdvisor.notInstalled', // installed or not-installed
+			detail: 'common.securityAdvisor.loading', // installed or not-installed
 			path: 'security/internet-protection',
 			title: 'security.landing.vpnVirtual',
 			type: 'security',

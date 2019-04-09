@@ -15,7 +15,7 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	header = 'security.homeprotection.invitationcode.enterCode';
 	description = 'security.homeprotection.invitationcode.addHome';
 
-	OkText = 'security.homeprotection.invitationcode.ok';
+	OkText = 'security.homeprotection.invitationcode.continue';
 	CancelText = 'security.homeprotection.invitationcode.cancel';
 
 	startJoin = false;
@@ -65,6 +65,11 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 
 	onCancelClick($event: any) {
 		this.activeModal.close(false);
+	}
+
+	show() {
+		const show: HTMLElement = document.querySelector('.activation');
+		show.style.visibility = 'visible';
 	}
 
 }

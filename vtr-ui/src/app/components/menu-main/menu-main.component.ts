@@ -34,25 +34,27 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	items: Array<any> = [
 		{
 			id: 'dashboard',
-			label: 'Dashboard',
+			label: 'common.menu.dashboard',
 			path: 'dashboard',
 			icon: ['fal', 'columns'],
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.dashboard',
 			routerLinkActiveOptions: { exact: true },
+			forArm: true,
 			subitems: []
 		}, {
 			id: 'device',
-			label: 'Device',
+			label: 'common.menu.device.title',
 			path: 'device',
 			icon: ['fal', 'laptop'],
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.device',
+			forArm: false,
 			subitems: [{
 				id: 'device',
-				label: 'My device',
+				label: 'common.menu.device.sub1',
 				path: '',
 				icon: '',
 				metricsEvent: 'itemClick',
@@ -62,7 +64,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				subitems: []
 			}, {
 				id: 'device-settings',
-				label: 'My device settings',
+				label: 'common.menu.device.sub2',
 				path: 'device-settings',
 				icon: '',
 				metricsEvent: 'itemClick',
@@ -72,7 +74,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				subitems: []
 			}, {
 				id: 'system-updates',
-				label: 'System updates',
+				label: 'common.menu.device.sub3',
 				path: 'system-updates',
 				icon: '',
 				metricsEvent: 'itemClick',
@@ -83,15 +85,16 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			}]
 		}, {
 			id: 'security',
-			label: 'Security',
+			label: 'common.menu.security.title',
 			path: 'security',
 			icon: ['fal', 'lock'],
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.security',
+			forArm: false,
 			subitems: [{
 				id: 'security',
-				label: 'My Security',
+				label: 'common.menu.security.sub1',
 				path: '',
 				icon: '',
 				metricsEvent: 'itemClick',
@@ -101,7 +104,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				subitems: []
 			}, {
 				id: 'anti-virus',
-				label: 'Anti-Virus',
+				label: 'common.menu.security.sub2',
 				path: 'anti-virus',
 				icon: '',
 				metricsEvent: 'itemClick',
@@ -111,7 +114,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				subitems: []
 			}, {
 				id: 'wifi-security',
-				label: 'WiFi Security',
+				label: 'common.menu.security.sub3',
 				path: 'wifi-security',
 				icon: '',
 				metricsEvent: 'itemClick',
@@ -121,7 +124,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				subitems: []
 			}, {
 				id: 'password-protection',
-				label: 'Password Health',
+				label: 'common.menu.security.sub4',
 				path: 'password-protection',
 				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
@@ -131,7 +134,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				subitems: []
 			}, {
 				id: 'internet-protection',
-				label: 'Internet Protection',
+				label: 'common.menu.security.sub5',
 				path: 'internet-protection',
 				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
@@ -139,27 +142,17 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				routerLinkActiveOptions: { exact: true },
 				icon: '',
 				subitems: []
-			}, {
-				id: 'windows-hello',
-				label: 'Windows Hello',
-				path: 'windows-hello',
-				icon: '',
-				metricsEvent: 'itemClick',
-				metricsParent: 'navbar',
-				metricsItem: 'link.windowshello',
-				routerLinkActiveOptions: { exact: true },
-				subitems: []
 			}]
 		}, {
 			id: 'support',
-			label: 'Support',
+			label: 'common.menu.support',
 			path: 'support',
 			icon: ['fal', 'wrench'],
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.support',
 			routerLinkActiveOptions: { exact: true },
-			forArm: true,
+			forArm: false,
 			subitems: []
 		}, {
 			id: 'user',
@@ -170,6 +163,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			metricsParent: 'NavigationLenovoAccount.Submenu',
 			metricsItem: 'link.user',
 			routerLinkActiveOptions: { exact: true },
+			forArm: true,
 			subitems: []
 		}
 	];
@@ -186,13 +180,25 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		vantageShellService: VantageShellService
 	) {
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
-		if (!cacheShowWindowsHello) {
+		if (cacheShowWindowsHello) {
 			const securityItem = this.items.find(item => item.id === 'security');
-			securityItem.subitems = securityItem.subitems.filter(subitem => subitem.id !== 'windows-hello');
+			securityItem.subitems.push({
+				id: 'windows-hello',
+				label: 'common.menu.security.sub6',
+				path: 'windows-hello',
+				icon: '',
+				metricsEvent: 'itemClick',
+				metricsParent: 'navbar',
+				metricsItem: 'link.windowshello',
+				routerLinkActiveOptions: { exact: true },
+				subitems: []
+			});
 		}
 		if (vantageShellService.getSecurityAdvisor()) {
 			const windowsHello: WindowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
-			this.showWindowsHello(windowsHello);
+			if (windowsHello.facialIdStatus || windowsHello.fingerPrintStatus) {
+				this.showWindowsHello(windowsHello);
+			}
 			windowsHello.on(EventTypes.helloFacialIdStatusEvent, () => {
 				this.showWindowsHello(windowsHello);
 			}).on(EventTypes.helloFingerPrintStatusEvent, () => {
@@ -279,12 +285,13 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			if (!windowsHelloItem) {
 				securityItem.subitems.push({
 					id: 'windows-hello',
-					label: 'Windows Hello',
+					label: 'common.menu.security.sub6',
 					path: 'windows-hello',
 					icon: '',
 					metricsEvent: 'itemClick',
 					metricsParent: 'navbar',
 					metricsItem: 'link.windowshello',
+					routerLinkActiveOptions: { exact: true },
 					subitems: []
 				});
 			}

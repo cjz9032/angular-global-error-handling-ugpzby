@@ -13,25 +13,25 @@
 				<div class="wifiSecurity accordion">
 					<div class="card"
 						[ngClass]="{'collapsed': isCollapsed && data.isLWSEnabled}">
-						<div class="card-header"
+						<div class="card-header flex align-items-center"
 							id="wifiSecurity">
-							<div class="half subHeading"
+							<div class="half subHeading align-items-center"
 								*ngIf="data.isLWSEnabled">
 								<span class="circle green">
 									<fa-icon [icon]="['fas', 'check']"></fa-icon>
 								</span>
 								<h3>{{'security.wifisecurity.container.name' | translate}}</h3>
-								<button class="badge badge-pill badge-danger button-green border-0">{{'security.wifisecurity.container.enable' | translate}}</button>
+								<span class="badge badge-pill badge-danger button-green line-height-2-5 p-0 pl-3 pr-3">{{'security.wifisecurity.container.enable' | translate}}</span>
 							</div>
-							<div class="half subHeading"
+							<div class="half subHeading align-items-center"
 								*ngIf="!data.isLWSEnabled">
 								<span class="circle red">
 									<fa-icon [icon]="['fas', 'times']"></fa-icon>
 								</span>
 								<h3>{{'security.wifisecurity.container.name' | translate}}</h3>
-								<button class="badge badge-pill badge-danger button-red border-0">{{'security.wifisecurity.container.disable' | translate}}</button>
+								<span class="badge badge-pill badge-danger button-red line-height-2-5 p-0 pl-3 pr-3">{{'security.wifisecurity.container.disable' | translate}}</span>
 							</div>
-							<div class="half">
+							<div class="half align-items-center">
 								<div class="collapse-control"
 									(click)="$event.preventDefault();isCollapsed=!isCollapsed;"
 									[hidden]="!data.isLWSEnabled">
@@ -46,7 +46,7 @@
 										aria-controls="wifi-collapse"
 										*ngIf="isShowMore===false"
 										(click)="isShowMore=true">
-										{{'security.wifisecurity.container.less' | translate}} <fa-icon [icon]="['fas', 'chevron-up']"></fa-icon></button>
+										{{'security.wifisecurity.container.less' | translate}} <fa-icon [icon]="['fas', 'chevron-up']" class="pl-3"></fa-icon></button>
 									<button vtrMetrics
 										metricsItem="expandWiFiHistory"
 										metricsEvent="itemClick"
@@ -58,7 +58,7 @@
 										aria-controls="wifi-collapse"
 										*ngIf="isShowMore===true"
 										(click)="isShowMore=false">
-										{{'security.wifisecurity.container.more' | translate}} <fa-icon [icon]="['fas', 'chevron-down']"></fa-icon></button>
+										{{'security.wifisecurity.container.more' | translate}} <fa-icon [icon]="['fas', 'chevron-down']" class="pl-3"></fa-icon></button>
 								</div>
 								<div class="switch">
 									<vtr-ui-switch-onoff name="wifisecurity"
@@ -136,7 +136,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row threat-locator" *ngIf="!data.isLWSEnabled || isShowMore===false">
+		<div class="row threat-locator" *ngIf="(region !== 'CN') && (!data.isLWSEnabled || isShowMore===false)">
 			<div class="col">
 				<div class="threat-locator-container">
 					<div class="row">
