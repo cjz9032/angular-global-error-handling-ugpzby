@@ -8,7 +8,7 @@ export class AntiVirusviewModel {
 	mcafee: McAfeeInfo = {
 		localName: 'McAfee LiveSafe',
 		subscription: 'unknown',
-		expireAt: 'unknown',
+		expireAt: new Date,
 		registered: false,
 		trailUrl: 'unknown',
 		features: [],
