@@ -1,5 +1,4 @@
 import { Component, OnInit, HostListener, AfterViewInit } from '@angular/core';
-import { MockWifiSecurity } from '../../../services/mock/mockWifiSecurity.service';
 import { ModalWifiSecuriryLocationNoticeComponent } from '../../modal/modal-wifi-securiry-location-notice/modal-wifi-securiry-location-notice.component';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -65,7 +64,6 @@ export class PageSecurityWifiComponent implements OnInit, AfterViewInit {
 		public modalService: NgbModal,
 		public shellService: VantageShellService,
 		private cmsService: CMSService,
-		public mockWifiSecurity: MockWifiSecurity,
 		public translate: TranslateService
 	) {
 		this.securityAdvisor = shellService.getSecurityAdvisor();

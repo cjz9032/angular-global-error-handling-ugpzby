@@ -13,6 +13,5 @@ export class StatusTextPipe implements PipeTransform {
 			case 'not-installed':
 				return 'common.securityAdvisor.notInstalled';
 		}
-		return '';
 	}
 }
