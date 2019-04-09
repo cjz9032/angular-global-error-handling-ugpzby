@@ -236,7 +236,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			const scanTime = this.commonService.formatTime(this.nextScheduleScanTime);
 			return `${this.nextScanText} ${scanDate} at ${scanTime}`;
 		}
-		return `${this.nextScanText} not available`;
+		return '';
 	}
 
 	public onCheckForUpdates() {
