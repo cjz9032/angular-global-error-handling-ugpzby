@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, AfterViewInit } from '@angular/core';
+import { Component, OnInit, HostListener, AfterViewInit, OnDestroy } from '@angular/core';
 import { ModalWifiSecuriryLocationNoticeComponent } from '../../modal/modal-wifi-securiry-location-notice/modal-wifi-securiry-location-notice.component';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -13,6 +13,8 @@ import { Title } from '@angular/platform-browser';
 import { forEach } from '@angular/router/src/utils/collection';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { SecurityService } from 'src/app/services/security/security.service';
 
 interface DevicePostureDetail {
 	status: number; // 1,2
@@ -38,7 +40,7 @@ interface HomeProtectionDeviceInfo {
 	templateUrl: './page-security-wifi.component.html',
 	styleUrls: ['./page-security-wifi.component.scss']
 })
-export class PageSecurityWifiComponent implements OnInit, AfterViewInit {
+export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewInit {
 
 	title = 'security.wifisecurity.header.title';
 	back = 'security.wifisecurity.header.back';
@@ -62,6 +64,7 @@ export class PageSecurityWifiComponent implements OnInit, AfterViewInit {
 	constructor(
 		public activeRouter: ActivatedRoute,
 		private commonService: CommonService,
+		private securityService: SecurityService,
 		public modalService: NgbModal,
 		public shellService: VantageShellService,
 		private cmsService: CMSService,
@@ -70,68 +73,52 @@ export class PageSecurityWifiComponent implements OnInit, AfterViewInit {
 		this.securityAdvisor = shellService.getSecurityAdvisor();
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 		this.homeProtection = this.securityAdvisor.homeProtection;
-		// this.wifiSecurity.refresh();
-		// this.homeProtection.refresh();
+		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.homeProtection, this.commonService );
+		this.securityHealthViewModel = new SecurityHealthViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.translate);
+		this.wifiSecurity.refresh();
+		this.homeProtection.refresh();
 		this.wifiSecurity.getWifiSecurityState(this.getActivateDeviceStateHandler);
 		this.homeProtection.getActivateDeviceState(this.ShowInvitationhandler.bind(this));
 		this.homeProtection.getDevicePosture(this.startGetDevicePosture);
 		const cacheHomeStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus);
-		let inStorageIsLocationServiceOn: any;
-		try {
-			inStorageIsLocationServiceOn = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn);
-		} catch (er) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn, true);
-		}
-		inStorageIsLocationServiceOn = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn);
 		if (this.homeProtection.status) {
 			this.isShowInvitationCode = !(this.homeProtection.status === 'joined');
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus, this.homeProtection.status);
 		} else if (cacheHomeStatus) {
 			this.isShowInvitationCode = !(cacheHomeStatus === 'joined');
 		}
-		if (this.wifiSecurity.isLocationServiceOn !== undefined) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn, this.wifiSecurity.isLocationServiceOn);
-			if (this.wifiSecurity.isLocationServiceOn === false && inStorageIsLocationServiceOn !== false) {
-				const modal = this.modalService.open(ModalWifiSecuriryLocationNoticeComponent,
-					{
-						backdrop: 'static'
-						, windowClass: 'wifi-security-location-modal'
-					});
-				modal.componentInstance.header = 'Enable location services';
-				modal.componentInstance.description = 'To use Lenovo WiFi Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?';
-				modal.componentInstance.url = 'ms-settings:privacy-location';
-				// modal.componentInstance.isfirstOpen = true;
-				this.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value: any) => {
-					if (value !== undefined) {
-						this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn, value);
-					}
-					if (value) {
-						modal.close();
-					}
-				});
-			}
-		}
-		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.homeProtection, this.commonService);
-		this.securityHealthViewModel = new SecurityHealthViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.translate);
+		// this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.homeProtection, this.commonService );
+		// this.securityHealthViewModel = new SecurityHealthViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.translate);
 		this.fetchCMSArticles();
 	}
 
 	ngOnInit() {
+		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, 'true');
+		this.wifiSecurity.getWifiState().then((res) => {}, (error) => {
+			this.securityService.wifiSecurityLocationDialog(this.wifiSecurity);
+		});
 		this.wifiIsShowMore = this.activeRouter.snapshot.queryParams['isShowMore'];
 	}
 
 	ngAfterViewInit() {
 		const fragment = this.activeRouter.snapshot.queryParams['fragment'];
-		document.getElementById(fragment).scrollIntoView();
-		window.scrollBy(0, -100);
+		if (fragment) {
+			document.getElementById(fragment).scrollIntoView();
+			window.scrollBy(0, -100);
+		}
+	}
+
+	ngOnDestroy() {
+		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, 'false');
 	}
 
 	getActivateDeviceStateHandler(value: WifiSecurityState) {
 		if (value.state) {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value.state);
+			this.wifiSecurity.state = value.state;
 		}
 		if (value.isLocationServiceOn !== undefined) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn, value.isLocationServiceOn);
+			this.wifiSecurity.isLocationServiceOn = value.isLocationServiceOn;
 		}
 	}
 
@@ -140,9 +127,12 @@ export class PageSecurityWifiComponent implements OnInit, AfterViewInit {
 			if (res.familyId) {
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus, 'joined');
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionFamilyId, res.familyId);
+				this.homeProtection.familyId = res.familyId;
+				this.homeProtection.status = 'joined';
 				this.isShowInvitationCode = false;
 			} else {
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus, 'unjoined');
+				this.homeProtection.status = 'unjoined';
 				this.isShowInvitationCode = true;
 			}
 		}
@@ -151,6 +141,7 @@ export class PageSecurityWifiComponent implements OnInit, AfterViewInit {
 	startGetDevicePosture(res: Array<DeviceInfo>) {
 		if (res !== undefined) {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, res);
+			this.securityHealthViewModel.createHomeDevicePosture(res);
 		}
 	}
 
@@ -178,29 +169,18 @@ export class PageSecurityWifiComponent implements OnInit, AfterViewInit {
 	}
 
 	enableWiFiSecurity(event): void {
-		const cacheIsLocationServiceOn = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn);
 		try {
 			if (this.wifiSecurity) {
-				if (this.wifiSecurity.isLocationServiceOn !== undefined) {
-					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityIsLocationServiceOn, this.wifiSecurity.isLocationServiceOn);
-					if (this.wifiSecurity.isLocationServiceOn) {
-						this.wifiSecurity.enableWifiSecurity();
+				this.wifiSecurity.enableWifiSecurity().then((res) => {
+					if ( res === true) {
+						this.wifiHomeViewModel.isLWSEnabled = true;
 					} else {
-						const modal = this.modalService.open(ModalWifiSecuriryLocationNoticeComponent,
-							{
-								backdrop: 'static'
-								, windowClass: 'wifi-security-location-modal'
-							});
-						modal.componentInstance.header = 'security.wifisecurity.locationmodal.title';
-						modal.componentInstance.description = 'security.wifisecurity.locationmodal.describe';
-						modal.componentInstance.url = 'ms-settings:privacy-location';
-						this.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
-							if (value) {
-								modal.close();
-							}
-						});
+						this.wifiHomeViewModel.isLWSEnabled = false;
 					}
 				}
+				, (error) => {
+					this.securityService.wifiSecurityLocationDialog(this.wifiSecurity);
+				});
 			}
 		} catch (err) {
 			throw new Error('wifiSecurity is null');

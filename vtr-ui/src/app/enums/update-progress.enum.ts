@@ -18,4 +18,5 @@ export enum UpdateProgress {
 	ScheduleUpdateIdle = '[SystemUpdate] ScheduleUpdateIdle',
 	WindowsRebootRequested = '[SystemUpdate] WindowsRebootRequested',
 	WindowsRebooting = '[SystemUpdate] WindowsRebooting',
+	UpdateDownloadCancelled = '[SystemUpdate] UpdateDownloadCancelled',
 }

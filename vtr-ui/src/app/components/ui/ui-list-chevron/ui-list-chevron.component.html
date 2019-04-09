@@ -9,9 +9,8 @@
 					<div class="row align-items-center">
 						<div class="col col-1 text-center" *ngIf="iconPlacement==='left'">
 							<div class="item-icon status" *ngIf="item.status !== undefined && item.status !== ''">
-								<div class="icon-bkg">
-									<fa-icon *ngIf="item.status !== 3" [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
-									<img *ngIf="item.status === 3" src="../../../../assets/images/security/svg_icon_stick.svg">
+								<div [ngClass]="item.status !== 3 ? 'icon-bkg' : 'icon-warning'">
+									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
 							<fa-icon *ngIf="item.circle === 'questionCircle'" class="question-icon" placement="auto" [icon]="['far', 'question-circle']" container="body"></fa-icon>
@@ -27,19 +26,23 @@
 						<div class="col item-text"
 							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">
 							<div class="row no-gutters">
-								<div class="title text-break" [ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-8': item.detail}">
+								<div title="{{item.title}}"
+									class="title text-break"
+									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-8': item.detail}">
 									{{item.title}}
 								</div>
-								<div class="col-4 detail text-break" *ngIf="item.detail" [ngClass]="getItemDetailClasses(item)">
+								<div title="{{item.detail}}"
+									class="col-4 detail text-break"
+									*ngIf="item.detail"
+									[ngClass]="getItemDetailClasses(item)">
 									{{item.detail}}
 								</div>
 							</div>
 						</div>
 						<div class="col col-1 text-center" *ngIf="iconPlacement==='right'">
 							<div class="item-icon status" *ngIf="item.status !== undefined && item.status !== ''">
-								<div class="icon-bkg">
-									<fa-icon *ngIf="item.status !== 3" [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
-									<img *ngIf="item.status === 3" src="../../../../assets/images/security/svg_icon_stick.svg">
+								<div [ngClass]="item.status !== 3 ? 'icon-bkg' : 'icon-warning'">
+									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
 							<fa-icon *ngIf="item.circle === 'questionCircle'" class="question-icon" placement="auto" [icon]="['far', 'question-circle']" container="body"></fa-icon>
@@ -67,9 +70,8 @@
 					<div class="row align-items-center">
 						<div class="col col-1 text-center" *ngIf="iconPlacement==='left'">
 							<div class="item-icon status" *ngIf="item.status !== undefined && item.status !== ''">
-								<div class="icon-bkg">
-									<fa-icon *ngIf="item.status !== 3" [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
-									<img *ngIf="item.status === 3" src="../../../../assets/images/security/svg_icon_stick.svg">
+								<div [ngClass]="item.status !== 3 ? 'icon-bkg' : 'icon-warning'">
+									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
 							<fa-icon *ngIf="item.circle === 'questionCircle'" class="question-icon" placement="auto" [icon]="['far', 'question-circle']" container="body"></fa-icon>
@@ -85,19 +87,23 @@
 						<div class="col item-text"
 							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">
 							<div class="row no-gutters">
-								<div class="col-8 title text-break" [ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-8': item.detail}">
+								<div title="{{item.title}}"
+									class="col-8 title text-break"
+									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-8': item.detail}">
 									{{item.title}}
 								</div>
-								<div class="col-4 detail text-break" *ngIf="item.detail" [ngClass]="getItemDetailClasses(item)">
+								<div title="{{item.detail}}"
+									class="col-4 detail text-break"
+									*ngIf="item.detail"
+									[ngClass]="getItemDetailClasses(item)">
 									{{item.detail}}
 								</div>
 							</div>
 						</div>
 						<div class="col col-1 text-center" *ngIf="iconPlacement==='right'">
 							<div class="item-icon status" *ngIf="item.status!==undefined&&item.status!==''">
-								<div class="icon-bkg">
-									<fa-icon *ngIf="item.status !== 3" [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
-									<img *ngIf="item.status === 3" src="../../../../assets/images/security/svg_icon_stick.svg">
+								<div [ngClass]="item.status !== 3 ? 'icon-bkg' : 'icon-warning'">
+									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 
 							</div>

@@ -13,7 +13,7 @@
 				"sub1": "My Security",
 				"sub2": "Anti-Virus",
 				"sub3": "WiFi Security",
-				"sub4": "Password Protection",
+				"sub4": "Password Health",
 				"sub5": "Internet Protection",
 				"sub6": "Windows Hello"
 			},
@@ -32,7 +32,8 @@
 			"partiallyProtected": "PARTIALLY PROTECTED",
 			"installed": "INSTALLED",
 			"notInstalled": "NOT INSTALLED",
-			"loading": "Loading"
+			"loading": "Loading",
+			"notFound": "NOT FOUND"
 		},
 		"qAndA": {
 			"title": "Q&A for your machine",
@@ -313,37 +314,49 @@
 					"autoFocus": "Auto focus"
 				}
 			}
-		}
-	},
-	"systemUpdates": {
-		"title": "System Updates",
-		"history": "FULL HISTORY",
-		"auto-update-settings": {
-			"title": "Auto update settings",
-			"subtitle": "AUTOMATICALLY INSTALL UPDATES",
-			"critical": {
-				"title": "Critical Updates",
-				"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+		},
+		"systemUpdates": {
+			"title": "System Updates",
+			"history": "FULL HISTORY",
+			"notAvailable": "Not Available",
+			"notInstalled": "Not Installed",
+			"popup": {
+				"reboot": "Reboot",
+				"shutdown": "Shut Down",
+				"rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
+				"shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
+				"rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
+				"rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+				"okayButton": "OK",
+				"cancelButton": "Cancel"
 			},
-			"banner": {
-				"title": "An up-to-date system is a healthy system.",
-				"last": "Last update was on",
-				"next": "Next updated scan is scheduled on",
-				"checkButton": "CHECK FOR UPDATES",
-				"checking": "Checking for updates",
-				"downloading": "Downloading updates done",
-				"installing": "Installing updates",
-				"percent": "% complete",
-				"cancelCheck": "Cancel check",
-				"cancelUpdates": "CANCEL UPDATES",
-				"available": "Available updates",
-				"description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-				"installButton": "INSTALL ALL UPDATES",
-				"result": {
-					"success": "All Updates were installed correctly",
-					"fail": {
-						"title": "Some updates were not installed correctly.",
-						"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off computer when installing these updates."
+			"auto-update-settings": {
+				"title": "Auto update settings",
+				"subtitle": "AUTOMATICALLY INSTALL UPDATES",
+				"critical": {
+					"title": "Critical Updates",
+					"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+				},
+				"banner": {
+					"title": "An up-to-date system is a healthy system.",
+					"last": "Last update was on",
+					"next": "Next updated scan is scheduled on",
+					"checkButton": "CHECK FOR UPDATES",
+					"checking": "Checking for updates",
+					"downloading": "Downloading updates done",
+					"installing": "Installing updates",
+					"percent": "% complete",
+					"cancelCheck": "Cancel check",
+					"cancelUpdates": "CANCEL UPDATES",
+					"available": "Available updates",
+					"description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
+					"installButton": "INSTALL ALL UPDATES",
+					"result": {
+						"success": "All Updates were installed correctly",
+						"fail": {
+							"title": "Some updates were not installed correctly.",
+							"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off computer when installing these updates."
+						}
 					}
 				}
 			}
@@ -395,9 +408,6 @@
 		}
 	},
 	"security": {
-		"common": {
-			"loading": "Loading"
-		},
 		"landing": {
 			"fully": "Fully protected",
 			"fullyDesc": "Congratulations! You are well protected.",
@@ -596,7 +606,7 @@
 			"helpYou1": "Remember unlimited usernames and passwords.",
 			"helpYou2": "Log in instantly everywhere for seamless browsing",
 			"helpYou3": "Sync across devices so you're never without access to important accounts",
-			"helpYou4": "Share passwords securely without revealing them",
+			"helpYou4": "Improve your online protection with easy, actionable advice",
 			"getStarted": "Getting started with DashLane?",
 			"checkOutThisGuide": "Use DashLane to stay safe online while saving time and frustration. For detailed instructions on how to get started, <tag>check out this guide.</tag>",
 			"allowsYou": "DashLane allows you to",

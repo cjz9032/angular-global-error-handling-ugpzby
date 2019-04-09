@@ -35,7 +35,8 @@
 											[installingPercent]="installationPercent"
 											[downloadingPercent]="downloadingPercent"
 											(checkForUpdate)="onCheckForUpdates()"
-											(cancelUpdateCheck)="onCancelUpdateCheck()">
+											(cancelUpdateCheck)="onCancelUpdateCheck()"
+											(cancelUpdateDownload)="onCancelUpdateDownload()">
 										</vtr-widget-device-update>
 									</div>
 								</div>
@@ -213,14 +214,6 @@
 										[ratioY]="2"
 										[cornerShift]="'large'">
 									</vtr-container-card>
-								</div>
-							</div>
-							<div class="row"
-								*ngIf="isRebootRequired">
-								<div class="col col-12 pb-40">
-									<vtr-widget-reboot (dismissClick)="onDismissClick($event)"
-										(rebootClick)="onRebootClick($event)">
-									</vtr-widget-reboot>
 								</div>
 							</div>
 						</div>
