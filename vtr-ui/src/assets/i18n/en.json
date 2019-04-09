@@ -13,7 +13,7 @@
 				"sub1": "My Security",
 				"sub2": "Anti-Virus",
 				"sub3": "WiFi Security",
-				"sub4": "Password Protection",
+				"sub4": "Password Health",
 				"sub5": "Internet Protection",
 				"sub6": "Windows Hello"
 			},
@@ -32,7 +32,8 @@
 			"partiallyProtected": "PARTIALLY PROTECTED",
 			"installed": "INSTALLED",
 			"notInstalled": "NOT INSTALLED",
-			"loading": "Loading"
+			"loading": "Loading",
+			"notFound": "NOT FOUND"
 		},
 		"qAndA": {
 			"title": "Q&A for your machine",
@@ -407,9 +408,6 @@
 		}
 	},
 	"security": {
-		"common": {
-			"loading": "Loading"
-		},
 		"landing": {
 			"fully": "Fully protected",
 			"fullyDesc": "Congratulations! You are well protected.",
@@ -608,7 +606,7 @@
 			"helpYou1": "Remember unlimited usernames and passwords.",
 			"helpYou2": "Log in instantly everywhere for seamless browsing",
 			"helpYou3": "Sync across devices so you're never without access to important accounts",
-			"helpYou4": "Share passwords securely without revealing them",
+			"helpYou4": "Improve your online protection with easy, actionable advice",
 			"getStarted": "Getting started with DashLane?",
 			"checkOutThisGuide": "Use DashLane to stay safe online while saving time and frustration. For detailed instructions on how to get started, <tag>check out this guide.</tag>",
 			"allowsYou": "DashLane allows you to",

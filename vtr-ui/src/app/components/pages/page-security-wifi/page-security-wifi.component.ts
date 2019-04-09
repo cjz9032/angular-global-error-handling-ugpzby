@@ -122,8 +122,10 @@ export class PageSecurityWifiComponent implements OnInit, AfterViewInit {
 
 	ngAfterViewInit() {
 		const fragment = this.activeRouter.snapshot.queryParams['fragment'];
-		document.getElementById(fragment).scrollIntoView();
-		window.scrollBy(0, -100);
+		if (fragment) {
+			document.getElementById(fragment).scrollIntoView();
+			window.scrollBy(0, -100);
+		}
 	}
 
 	getActivateDeviceStateHandler(value: WifiSecurityState) {
