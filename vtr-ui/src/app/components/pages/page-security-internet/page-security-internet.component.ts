@@ -26,7 +26,8 @@ export class PageSecurityInternetComponent implements OnInit {
 	) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		this.statusItem = {
-			title: 'security.vpn.statusTitle'
+			title: 'security.vpn.statusTitle',
+			status: 'common.securityAdvisor.loading'
 		};
 		this.vpn = vantageShellService.getSecurityAdvisor().vpn;
 		const cacheStatus: string = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityVPNStatus);

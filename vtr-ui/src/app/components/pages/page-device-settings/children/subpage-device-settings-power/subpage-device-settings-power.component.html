@@ -33,7 +33,7 @@
 			<vtr-ui-header-subpage [items]="headerMenuItems"
 				[title]="'device.deviceSettings.power.title' | translate"
 				[caption]="'device.deviceSettings.power.description' | translate"
-				[menuTitle]="'device.deviceSettings.power.jumpTo.title' | translate"></vtr-ui-header-subpage>
+				[menuTitle]="'device.deviceSettings.power.jumpto.title' | translate"></vtr-ui-header-subpage>
 		</div>
 	</div>
 	<!-- <div *ngIf="value===1">
@@ -448,7 +448,7 @@
 							</div>
 							<div class="row">
 								<div class="col-12">
-									<div class="custom-control custom-checkbox always-on-usb-checkbox">
+									<div class="custom-control custom-checkbox always-on-usb-checkbox" *ngIf="usbChargingInBatteryModeStatus">
 										<input id="cb-always-on-usb"
 											type="checkbox"
 											name="always-on-usb-checkbox-id"

@@ -27,7 +27,8 @@ export class PageSecurityPasswordComponent implements OnInit {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		this.passwordManager = vantageShellService.getSecurityAdvisor().passwordManager;
 		this.statusItem = {
-			title: 'security.passwordManager.statusTitle'
+			title: 'security.passwordManager.statusTitle',
+			status: 'common.securityAdvisor.loading'
 		};
 		const cacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus);
 		if (cacheStatus) {

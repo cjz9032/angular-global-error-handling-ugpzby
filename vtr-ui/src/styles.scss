@@ -8,7 +8,8 @@ reference : https://fonts.google.com/specimen/Rubik
 */
 // @import url("./assets/font/Rubik/font.css");
 
-@import "~bootstrap/dist/css/bootstrap.css";
+// @import "~bootstrap/dist/css/bootstrap.css";
+@import "~bootstrap/scss/bootstrap.scss";
 @import "./styles-bootstrap.scss";
 // @import "~bootstrap/dist/css/bootstrap.css";
 
@@ -157,6 +158,9 @@ button {
 
 		.vtr-page-right-column {
 			padding: 0 $padding_side 4rem 4rem;
+			@media #{$mediaquery_13} {
+				padding: 4rem 4rem 4rem 8.5rem;
+			}
 		}
 
 		// @media #{$mediaquery_500} {
