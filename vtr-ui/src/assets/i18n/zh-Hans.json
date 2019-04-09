@@ -29,6 +29,7 @@
 			"windowsHello": "Windows Hello",
 			"enabled": "已启用",
 			"disabled": "已禁用",
+			"partiallyProtected": "局部受保护",
 			"installed": "已安装",
 			"notInstalled": "未安装"
 		},
@@ -533,19 +534,19 @@
 			},
 			"security-health": {
 				"title": "Security Health",
-				"device-name1": "Apps From Unknown Sources",
-				"device-name2": "Developer Mode",
-				"device-name3": "UAC Notification",
-				"device-name4": "Antivirus Availability",
-				"device-name5": "Hard Drive Encryption",
-				"device-name6": "Firewall Availability",
-				"device-name7": "Not Activated Windows",
-				"device-name8": "Security Updates Availability",
-				"device-name9": "Password Protection",
-				"device-name10": "Automatic Updates Service Availability",
+				"deviceName1": "Apps From Trusted Sources",
+				"deviceName2": "Developer Mode",
+				"deviceName3": "UAC Notification",
+				"deviceName4": "Antivirus Availability",
+				"deviceName5": "Hard Drive Encryption",
+				"deviceName6": "Firewall Availability",
+				"deviceName7": "Activated Windows",
+				"deviceName8": "Security Updates Availability",
+				"deviceName9": "Password Protection",
+				"deviceName10": "Automatic Updates Service Availability",
 				"fail": "FAILED",
 				"pass": "PASSED",
-				"peace-of-mind": "Do you want more peace of mind?",
+				"peaceOfMind": "Do you want more peace of mind?",
 				"button": "Enable Wifi security"
 			}
 		}
