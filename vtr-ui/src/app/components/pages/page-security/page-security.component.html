@@ -50,11 +50,11 @@
 													<div class="wifi-history"
 														*ngIf="wifiHistory && wifiSecurityLandingViewModel.subject.status === 0 && wifiHistory.length !== 0">
 														<div class="row align-items-center pt-wifiLength">
-															<div class="col-3">
+															<div class="col-2 row justify-content-center">
 																<fa-icon class="wifi-font-icon"
 																	[icon]="['fas', 'wifi']"></fa-icon>
 															</div>
-															<div class="col-9">{{'security.landing.maliciousNetwork' | translate:{maliciousWifi:maliciousWifi} }}</div>
+															<div class="col-10">{{'security.landing.maliciousNetwork' | translate:{maliciousWifi:maliciousWifi} }}</div>
 														</div>
 														<ul class="chevron-list">
 															<li *ngFor="let wifi of wifiHistory.slice(0, 2);"
