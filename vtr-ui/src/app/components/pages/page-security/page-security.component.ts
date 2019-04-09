@@ -80,18 +80,19 @@ export class PageSecurityComponent implements OnInit {
 		this.antivirus = this.securityAdvisor.antivirus;
 		this.vpn = this.securityAdvisor.vpn;
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
+		this.homeProtection = this.securityAdvisor.homeProtection;
 		if (this.securityAdvisor.windowsHello.fingerPrintStatus || this.securityAdvisor.windowsHello.facialIdStatus) {
 			this.windowsHello = this.securityAdvisor.windowsHello;
+			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.windowsHello, this.commonService, this.translate);
 		} else {
 			this.windowsHello = null;
+			this.windowsHelloLandingViewModel = null;
 		}
-		this.homeProtection = this.securityAdvisor.homeProtection;
 		this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.passwordManager, this.commonService, this.translate);
 		this.antivirusLandingViewModel = new AntiVirusLandingViewModel(this.antivirus, this.commonService, this.translate);
 		this.vpnLandingViewModel = new VpnLandingViewModel(this.vpn, this.commonService, this.translate);
 		this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.wifiSecurity, this.commonService, this.translate);
 		this.homeProtectionLandingViewModel = new HomeProtectionLandingViewModel(this.translate);
-		this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.windowsHello, this.commonService, this.translate);
 		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
 	}
 
@@ -134,7 +135,7 @@ export class PageSecurityComponent implements OnInit {
 			this.passwordManagerLandingViewModel.subject.status,
 			this.vpnLandingViewModel.subject.status,
 			this.wifiSecurityLandingViewModel.subject.status,
-			this.windowsHelloLandingViewModel.subject.status
+			this.windowsHelloLandingViewModel ? this.windowsHelloLandingViewModel.subject.status : null
 		];
 		let flag;
 		let scoreTotal = 0;

@@ -546,6 +546,7 @@
 				"deviceName10": "Automatic Updates Service Availability",
 				"fail": "FAILED",
 				"pass": "PASSED",
+				"learnMoreAboutSecurityHealth": "<tag>在此处</tag>详细了解每个组件。",
 				"peaceOfMind": "Do you want more peace of mind?",
 				"button": "Enable Wifi security"
 			}

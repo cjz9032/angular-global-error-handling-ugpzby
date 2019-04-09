@@ -84,7 +84,6 @@ import { ModalWifiSecuriryLocationNoticeComponent } from './components/modal/mod
 // APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
 import { MockService } from './services/mock/mock.service';
-import { MockWifiSecurity } from './services/mock/mockWifiSecurity.service';
 import { MockSecurityAdvisorService } from './services/mock/mockSecurityAdvisor.service';
 import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
@@ -95,6 +94,7 @@ import { UserService } from './services/user/user.service';
 import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
 import { CameraDetailMockService } from './services/camera/camera-detail/camera-detail.mock.service';
 import { AudioService } from './services/audio/audio.service';
+import { RegionService } from './services/region/region.service';
 
 // FONT AWESOME
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -315,7 +315,6 @@ library.add(fal);
 		CookieService,
 		DevService,
 		MockService,
-		MockWifiSecurity,
 		DisplayService,
 		ContainerService,
 		CommsService,
@@ -324,6 +323,7 @@ library.add(fal);
 		MockSecurityAdvisorService,
 		UserService,
 		AudioService,
+		RegionService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
 	bootstrap: [AppComponent],
