@@ -224,7 +224,7 @@
 			"audio": {
 				"title": "Audio",
 				"subtitle": "Audio Settings",
-				"description": "This section enables you to automatically optimize or fully configure your audio settings manually , such as Dolby settings, microphone, etc.",
+				"description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
 				"audioSmartsettings": {
 					"title": "Audio Smartsettings",
 					"subtitle": "APPLICATION-BASED SETTINGS",
