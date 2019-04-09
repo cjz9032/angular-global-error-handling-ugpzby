@@ -225,7 +225,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			const installTime = this.commonService.formatTime(this.lastInstallTime);
 			return `${this.lastUpdatedText} ${installDate} at ${installTime}`;
 		}
-		return `${this.lastUpdatedText} not available`;
+		return `Your device has never checked for updates.`;
 	}
 
 	public getNextUpdatedScanText() {
@@ -236,7 +236,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			const scanTime = this.commonService.formatTime(this.nextScheduleScanTime);
 			return `${this.nextScanText} ${scanDate} at ${scanTime}`;
 		}
-		return `${this.nextScanText} not available`;
+		return '';
 	}
 
 	public onCheckForUpdates() {
@@ -259,7 +259,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	public onUpdateSelectionChange($event: any) {
-		console.log($event);
 		const item = $event.target;
 		this.systemUpdateService.toggleUpdateSelection(item.name, item.checked);
 	}
@@ -466,6 +465,15 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isOnline = notification.payload.isOnline;
 					this.offlineSubtitle = `${this.getLastUpdatedText()}<br>${this.getNextUpdatedScanText()}`;
 					break;
+				case UpdateProgress.UpdateDownloadCancelled:
+					this.isUpdateDownloading = false;
+					this.isInstallingAllUpdates = true;
+					this.percentCompleted = 0;
+					this.isUpdatesAvailable = true;
+					this.installationPercent = 0;
+					this.downloadingPercent = 0;
+					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
+					break;
 				default:
 					break;
 			}
@@ -562,5 +570,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			}
 		}
 		return isSuccess;
+	}
+
+	public onCancelUpdateDownload() {
+		this.systemUpdateService.cancelUpdateDownload();
 	}
 }
