@@ -34,6 +34,13 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		public regionService: RegionService
 	) {
 		super();
+		// if (typeof Windows !== undefined) {
+		// 	if (Windows.System.UserProfile.GlobalizationPreferences.homeGeographicRegion === 'CN') {
+		// 		this.isThreatLocatorExist = false;
+		// 	} else {
+		// 		this.isThreatLocatorExist = true;
+		// 	}
+		// }
 	}
 
 	ngOnInit() {
