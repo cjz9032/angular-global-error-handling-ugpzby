@@ -344,6 +344,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			return;
 		}
 		modalRef.componentInstance.packages = packages;
+		modalRef.componentInstance.OkText = 'device.systemUpdates.popup.okayButton';
+		modalRef.componentInstance.CancelText = 'device.systemUpdates.popup.cancelButton';
 		modalRef.result.then(
 			result => {
 				// on open
@@ -371,23 +373,22 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	private showRebootForceModal(modalRef: NgbModalRef) {
-		const header = 'Reboot Pending';
-		const description = 'The update(s) you selected will cause the system to reboot automatically after installation.';
+		const header = 'device.systemUpdates.popup.reboot';
+		const description = 'device.systemUpdates.popup.rebootForceMsg';
 		modalRef.componentInstance.header = header;
 		modalRef.componentInstance.description = description;
 	}
 
 	private showPowerOffForceModal(modalRef: NgbModalRef) {
-		const header = 'Shut Down';
-		const description = 'The update(s) you selected will cause the system to shut down automatically after installation.';
+		const header = 'device.systemUpdates.popup.shutdown';
+		const description = 'device.systemUpdates.popup.shutdownForceMsg';
 		modalRef.componentInstance.header = header;
 		modalRef.componentInstance.description = description;
 	}
 
 	private showRebootDelayedModal(modalRef: NgbModalRef) {
-		const header = 'Reboot Pending';
-		const description = 'The update(s) you selected will cause the system to reboot after installation, during the installation of updates' +
-			', please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.';
+		const header = 'device.systemUpdates.popup.reboot';
+		const description = 'device.systemUpdates.popup.rebootDelayedMsg';
 		modalRef.componentInstance.header = header;
 		modalRef.componentInstance.description = description;
 	}
@@ -526,6 +527,22 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private checkRebootRequired() {
 		this.isRebootRequired = this.systemUpdateService.isRebootRequired();
+		if (this.isRebootRequired) {
+			const modalRef = this.modalService
+				.open(ModalCommonConfirmationComponent, {
+					backdrop: 'static',
+					size: 'lg',
+					centered: true,
+					windowClass: 'common-confirmation-modal'
+				});
+
+			const header = 'device.systemUpdates.popup.reboot';
+			const description = 'device.systemUpdates.popup.rebootRequiredMsg';
+			modalRef.componentInstance.header = header;
+			modalRef.componentInstance.description = description;
+			modalRef.componentInstance.OkText = 'device.systemUpdates.popup.okayButton';
+			modalRef.componentInstance.CancelText = 'device.systemUpdates.popup.cancelButton';
+		}
 	}
 
 	// check for installed updates, if all installed correctly return true else return false
