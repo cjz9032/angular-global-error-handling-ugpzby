@@ -13,8 +13,6 @@ import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 })
 export class PageSecurityWindowsHelloComponent implements OnInit {
 
-	title = 'Windows Hello';
-
 	windowsHello: WindowsHello;
 	statusItem: any;
 	cardContentPositionA: any;
@@ -28,7 +26,8 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 	) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		this.statusItem = {
-			title: 'WINDOWS HELLO'
+			title: 'security.windowsHello.statusTitle',
+			status: 'common.securityAdvisor.loading'
 		};
 		this.windowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
 		this.updateStatus();

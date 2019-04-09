@@ -7,6 +7,7 @@ export class HomeProtectionLandingViewModel {
 		const hpStatus = {
 			detail: 'device.myDevice.learnMore',
 			path: 'security/wifi-security',
+			pathParams: { fragment: 'home-security' },
 			title: 'security.landing.connectedHomeSecurity',
 			type: 'security',
 			circle: 'questionCircle'

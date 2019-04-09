@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, AfterViewInit } from '@angular/core';
 import { MockWifiSecurity } from '../../../services/mock/mockWifiSecurity.service';
 import { ModalWifiSecuriryLocationNoticeComponent } from '../../modal/modal-wifi-securiry-location-notice/modal-wifi-securiry-location-notice.component';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
@@ -38,7 +38,7 @@ interface HomeProtectionDeviceInfo {
 	templateUrl: './page-security-wifi.component.html',
 	styleUrls: ['./page-security-wifi.component.scss']
 })
-export class PageSecurityWifiComponent implements OnInit {
+export class PageSecurityWifiComponent implements OnInit, AfterViewInit {
 
 	title = 'security.wifisecurity.header.title';
 	back = 'security.wifisecurity.header.back';
@@ -119,6 +119,12 @@ export class PageSecurityWifiComponent implements OnInit {
 
 	ngOnInit() {
 		this.wifiIsShowMore = this.activeRouter.snapshot.queryParams['isShowMore'];
+	}
+
+	ngAfterViewInit() {
+		const fragment = this.activeRouter.snapshot.queryParams['fragment'];
+		document.getElementById(fragment).scrollIntoView();
+		window.scrollBy(0, -100);
 	}
 
 	getActivateDeviceStateHandler(value: WifiSecurityState) {

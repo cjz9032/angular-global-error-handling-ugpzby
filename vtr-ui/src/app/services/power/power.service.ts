@@ -46,10 +46,10 @@ export class PowerService {
 		}
 		return undefined;
 	}
-	public setAlwaysOnUSBStatusThinkPad(value: string): Promise<boolean> {
+	public setAlwaysOnUSBStatusThinkPad(value: string, check: boolean): Promise<boolean> {
 		try {
 			if (this.devicePowerThinkPad) {
-				return this.devicePowerThinkPad.sectionAlwaysOnUsb.setAlwaysOnUsb(value);
+				return this.devicePowerThinkPad.sectionAlwaysOnUsb.setAlwaysOnUsb(value, check);
 			}
 			return undefined;
 		} catch (error) {
@@ -190,6 +190,23 @@ export class PowerService {
 			return undefined;
 		} catch (error) {
 			throw new Error(error.message);
+		}
+	}
+	public startMonitor(handler: any): Promise<any> {
+		try {
+			if (this.isShellAvailable) {
+				return this.devicePower.startMonitor((handler));
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	public stopMonitor() {
+		if (this.isShellAvailable) {
+			this.devicePower.stopMonitor((response: boolean) => {
+				//this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
+			});
 		}
 	}
 	// End Vantage ToolBar
