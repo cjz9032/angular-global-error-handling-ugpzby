@@ -139,7 +139,7 @@
 					"cooling": "散热",
 					"other": "其他"
 				},
-				"powerSmartsettings": {
+				"powerSmartSettings": {
 					"title": "电源智能设置",
 					"subtitle": "智能散热",
 					"description1": "此功能动态调节散热设置以满足您的需求。此功能开启时，在手持或空闲状态下可调节设置使设备保持较低温度或较低噪声。而设备放置在稳定平面上时，此功能可优化性能。此功能关闭时，您可以手动设置散热优先级。",
@@ -272,10 +272,10 @@
 				"jumpTo": {
 					"title": "跳到设置：",
 					"shortcuts": {
-						"display":{
+						"display": {
 							"title": "显示"
 						},
-						"camera":{
+						"camera": {
 							"title": "摄像头"
 						}
 					}

@@ -160,13 +160,26 @@
 							"line3": "Performance mode: Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
 						}
 					}
-				}
-			},
-			"battery-settings": {
-				"title": "Battery Settings",
-				"airplane-power": {
-					"title": "Airplane Power Mode",
-					"tooltip": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
+				},
+				"powerSettings": {
+					"title": "Power Settings",
+					"alwaysUSB": {
+						"title": "Always on USB",
+						"description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
+						"checkbox": "Enable USB charging from laptop battery when computer is off."
+					},
+					"easyResume": {
+						"title": "Easy Resume",
+						"description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
+						"tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+					}
+				},
+				"otherSettings": {
+					"title": "Other Settings",
+					"vantageToolbar": {
+						"title": "Lenovo Vantage Toolbar",
+						"description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
+					}
 				},
 				"batterySettings": {
 					"title": "Battery Settings",
@@ -187,37 +200,17 @@
 					},
 					"expressCharging": {
 						"title": "Express Charging",
-						"description":"Express Charge allows your battery to a full charge much faster than normal mode.",
+						"description": "Express Charge allows your battery to a full charge much faster than normal mode.",
 						"tooltip": "Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
 					},
 					"conservationMode": {
 						"title": "Conservation Mode",
-						"description":"This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
+						"description": "This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
 						"tooltip": {
 							"line1": "This function is useful to extend the lifespan of your battery when plugged.",
 							"line2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
 							"line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
 						}
-					}
-				},
-				"powerSettings": {
-					"title": "Power Settings",
-					"alwaysUSB": {
-						"title": "Always on USB",
-						"description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
-						"checkbox": "Enable USB charging from laptop battery when computer is off."
-					},
-					"easyResume": {
-						"title": "Easy Resume",
-						"description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
-						"tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
-					}
-				},
-				"otherSettings": {
-					"title": "Other Settings",
-					"vantageToolbar": {
-						"title": "Lenovo Vantage Toolbar",
-						"description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
 					}
 				}
 			},
@@ -267,7 +260,7 @@
 						"title": "Optimize my microphone for:",
 						"tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
 						"options": {
-							"voiceRecoginition": "VOICE RECOGINITION",
+							"voiceRecoginition": "VOICE RECOGNITION",
 							"onlyMyVoice": "ONLY MY VOICE",
 							"normal": "NORMAL",
 							"multipleVoices": "MULTIPLE VOICES"
@@ -282,10 +275,10 @@
 				"jumpTo": {
 					"title": "JUMP TO SETTINGS",
 					"shortcuts": {
-						"display":{
+						"display": {
 							"title": "Display"
 						},
-						"camera":{
+						"camera": {
 							"title": "Camera"
 						}
 					}
@@ -320,28 +313,9 @@
 					"autoFocus": "Auto focus"
 				}
 			}
-		},
-		"systemUpdates": {
-			"title": "System Updates",
-			"history": "FULL HISTORY",
-			"autoUpdateSettings": {
-				"title": "Auto update settings",
-				"subtitle": "AUTOMATICALLY INSTALL UPDATES",
-				"critical": {
-					"title": "Critical Updates",
-					"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
-				},
-				"camera": {
-					"title": "Camera",
-					"tooltip": "Click here to reset Camera properties to default settings.",
-					"reset": "Reset factory settings"
-				},
-				"auto-exposure": "Auto Exposure",
-				"auto-focus": "Auto focus"
-			}
 		}
 	},
-	"system-updates": {
+	"systemUpdates": {
 		"title": "System Updates",
 		"history": "FULL HISTORY",
 		"auto-update-settings": {
@@ -555,7 +529,7 @@
 				"success": "Successfully connected",
 				"canUse": "You can now start using Connected Home Security",
 				"tryAgain": "Incorrect code, please try again!",
-				"activationCode":"ACTIVATION CODE"
+				"activationCode": "ACTIVATION CODE"
 			},
 			"securityhealth": {
 				"title": "Security Health",
@@ -587,10 +561,10 @@
 			"whySufEasy": "Why SurfEasy?",
 			"whySufEasyDescription": "SurfEasy makes it easy to stay safe while surfing the internet. It helps you remain anonymous, and adds an additional layer of security between you and anyone that wants your personal information.",
 			"startUseSufEasy": "Start using SurfEasy Today",
-			"startUseSufEasy1":"Using a VPN adds Security. SurfEasy encrypts your data, adding anonymity and security.",
-			"startUseSufEasy2":"Once registered SurfEasy runs silently in the background so everything runs the same but better.",
-			"startUseSufEasy3":"Start using SurfEasy to protect yourself while browsing the internet. Enjoy the no-log VPN that works on every device.",
-			"startUseSufEasy4":"As a surfEasy user enjoy 250 MB of free data every 30 days! Unlock additional data by following the steps on the \"Rewards\" tab of the SurfEasy app.",
+			"startUseSufEasy1": "Using a VPN adds Security. SurfEasy encrypts your data, adding anonymity and security.",
+			"startUseSufEasy2": "Once registered SurfEasy runs silently in the background so everything runs the same but better.",
+			"startUseSufEasy3": "Start using SurfEasy to protect yourself while browsing the internet. Enjoy the no-log VPN that works on every device.",
+			"startUseSufEasy4": "As a surfEasy user enjoy 250 MB of free data every 30 days! Unlock additional data by following the steps on the \"Rewards\" tab of the SurfEasy app.",
 			"howToUseSufEasy": "How to use SurfEasy VPN",
 			"whatCanSufEasy2": "A VPN provider helps to protect you while you are surfing the internet. Without a VPN, our PC may be moe vulnerable to attackers and identity thieves. A VPN runs silently in the bacground and provides safety and privacy measures.",
 			"getStarted": "Get started:",
@@ -657,4 +631,3 @@
 	},
 	"faq": {}
 }
-
