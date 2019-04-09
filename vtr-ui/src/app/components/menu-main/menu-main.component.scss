@@ -56,21 +56,27 @@
 						color: $light;
 						padding: 0 1.5rem;
 						border-bottom: transparent solid 0.5rem;
+
 						@media #{$mediaquery_4} {
 							line-height: calc(#{$menu_height} - 0.5rem);
 						}
+
 						@media #{$mediaquery_5} {
 							line-height: calc(#{$menu_height} - 0.65rem);
 						}
+
 						@media #{$mediaquery_6} {
 							line-height: calc(#{$menu_height} - 0.5rem);
 						}
+
 						&.active {
 							border-bottom: $main solid 0.5rem;
+
 							.fa-icon {
 								color: $main;
 							}
 						}
+
 						&.user {
 							padding: 2rem 2rem 2rem 2rem;
 							margin-left: 2rem;
@@ -78,6 +84,7 @@
 							line-height: 4.6rem;
 							border-bottom: none;
 							background-color: $main_darkest;
+
 							.user-initials {
 								display: inline-block;
 								text-align: center;
@@ -133,6 +140,7 @@
 									color: $main;
 								}
 							}
+
 							&.link-active {
 								color: $main;
 								font-weight: bold;
