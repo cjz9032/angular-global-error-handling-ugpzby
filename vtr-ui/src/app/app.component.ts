@@ -35,25 +35,25 @@ export class AppComponent implements OnInit {
 		this.translate.setDefaultLang('en');
 		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
 
-		const modalRef = this.modalService.open(ModalWelcomeComponent,
-			{
-				backdrop: 'static'
-				, windowClass: 'welcome-modal-size'
-			});
-		modalRef.result.then(
-			(result: WelcomeTutorial) => {
-				// on open
-				console.log('welcome-modal-size', result);
-				commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, result);
-			},
-			(reason: WelcomeTutorial) => {
-				// on close
-				console.log('welcome-modal-size', reason);
-				commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
-			}
-		);
+		// const modalRef = this.modalService.open(ModalWelcomeComponent,
+		// 	{
+		// 		backdrop: 'static'
+		// 		, windowClass: 'welcome-modal-size'
+		// 	});
+		// modalRef.result.then(
+		// 	(result: WelcomeTutorial) => {
+		// 		// on open
+		// 		console.log('welcome-modal-size', result);
+		// 		commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, result);
+		// 	},
+		// 	(reason: WelcomeTutorial) => {
+		// 		// on close
+		// 		console.log('welcome-modal-size', reason);
+		// 		commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
+		// 	}
+		// );
 
-		/*if (tutorial === undefined && navigator.onLine) {
+		if (tutorial === undefined && navigator.onLine) {
 			const modalRef = this.modalService.open(ModalWelcomeComponent,
 				{
 					backdrop: 'static'
