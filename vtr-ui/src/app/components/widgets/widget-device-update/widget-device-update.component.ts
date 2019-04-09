@@ -21,6 +21,7 @@ export class WidgetDeviceUpdateComponent implements OnInit, OnChanges {
 
 	@Output() checkForUpdate = new EventEmitter();
 	@Output() cancelUpdateCheck = new EventEmitter();
+	@Output() cancelUpdateDownload = new EventEmitter();
 
 	cancelCheck = 'Cancel Check';
 	checkingForUpdates = 'Checking for updates';
@@ -54,5 +55,10 @@ export class WidgetDeviceUpdateComponent implements OnInit, OnChanges {
 	cancelUpdates() {
 		// this.showProgress = false;
 		this.cancelUpdateCheck.emit();
+	}
+
+	onCancelUpdateDownload() {
+		// this.showProgress = false;
+		this.cancelUpdateDownload.emit();
 	}
 }
