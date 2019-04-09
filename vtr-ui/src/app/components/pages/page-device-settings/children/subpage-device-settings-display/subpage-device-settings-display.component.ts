@@ -10,6 +10,7 @@ import { EyeCareMode, SunsetToSunriseStatus } from 'src/app/data-models/camera/e
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { promise } from 'protractor';
 enum defaultTemparature {
 	defaultValue = 4500
 }
@@ -30,6 +31,8 @@ export class SubpageDeviceSettingsDisplayComponent
 	public cameraPrivacyModeStatus = new FeatureStatus(false, true);
 	public sunsetToSunriseModeStatus = new SunsetToSunriseStatus(true, false, false, '', '');
 	public enableSunsetToSunrise = false;
+	public enableSlider = false;
+	public initEyecare = 0;
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	isDesktopMachine: boolean;
@@ -56,9 +59,13 @@ export class SubpageDeviceSettingsDisplayComponent
 
 	ngOnInit() {
 		console.log('subpage-device-setting-display onInit');
-		this.getSunsetToSunrise();
-		this.getEyeCareModeStatus();
-		this.getDisplayColorTemperature();
+
+
+		this.initEyecaremodeSettings();
+
+
+
+
 
 		this.getCameraPrivacyModeStatus();
 		this.getCameraDetails();
@@ -139,16 +146,41 @@ export class SubpageDeviceSettingsDisplayComponent
 				this.displayService.setEyeCareModeState(event.switchValue)
 					.then((value: any) => {
 						console.log('onEyeCareModeStatusToggle.then', value);
-						// this.setEyeCareModeTemparature(defaultTemparature.defaultValue)
-						// this.eyecareDatasource.current = defaultTemparature.defaultValue;
-						this.getEyeCareModeStatus();
-						//	this.eyeCareDataSource.current = value.colorTemperature;
+						this.enableSlider = event.switchValue;
+						this.eyeCareDataSource.current = value.colorTemperature;
 					}).catch(error => {
 						console.error('onEyeCareModeStatusToggle', error);
 					});
 			}
 		} catch (error) {
 			console.error(error.message);
+		}
+	}
+	public initEyecaremodeSettings() {
+		try {
+			if (this.displayService.isShellAvailable) {
+				this.displayService.initEyecaremodeSettings()
+					.then((result: boolean) => {
+						console.log('initEyecaremodeSettings.then', result);
+						if (result === false) {
+							this.initEyecare++;
+							if (this.initEyecare <= 1) {
+								this.initEyecaremodeSettings();
+							}
+						} else {
+							this.getSunsetToSunrise();
+							this.getEyeCareModeStatus();
+							this.getDisplayColorTemperature();
+						}
+
+					}).catch(error => {
+						console.error('initEyecaremodeSettings', error);
+
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+
 		}
 	}
 	private setEyeCareModeStatus(value: boolean) {
@@ -173,6 +205,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				.then((featureStatus: FeatureStatus) => {
 					console.log('getEyeCareModeState.then', featureStatus);
 					this.eyeCareModeStatus = featureStatus;
+					this.enableSlider = featureStatus.status;
 					if (this.eyeCareModeStatus.available === true) {
 						console.log('eyeCareModeStatus.available', featureStatus.available);
 					}
@@ -348,7 +381,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		console.log('called from loaction service ui', JSON.stringify(value.status));
 		if (value.status === false) {
 			this.enableSunsetToSunrise = true;
-		} else{
+		} else {
 			this.enableSunsetToSunrise = false;
 		}
 	}

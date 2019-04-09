@@ -56,6 +56,9 @@ export class WifiSecurityLandingViewModel {
 		wfModel.on(EventTypes.wsStateEvent, (data) => {
 			wfStatus.status = data === 'enabled' ? 0 : 1;
 			wfStatus.detail = data === 'enabled' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
+			translate.get(wfStatus.detail).subscribe((res) => {
+				wfStatus.detail = res;
+			});
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, data);
 			subjectStatus.status = (data === 'enabled') ? 0 : 1;
 		});

@@ -5,7 +5,7 @@
 			"device": {
 				"title": "Device",
 				"sub1": "My Device",
-				"sub2": "My device settings",
+				"sub2": "My Device Settings",
 				"sub3": "System Updates"
 			},
 			"security": {
@@ -72,7 +72,7 @@
 			"title": "System Status",
 			"subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
 			"memory": "Memory",
-			"diskspace": "Diskspace",
+			"diskspace": "Disk space",
 			"warranty": "Warranty",
 			"systemUpdate": "System Update"
 		}
@@ -571,6 +571,7 @@
 				"deviceName10": "Automatic Updates Service Availability",
 				"fail": "FAILED",
 				"pass": "PASSED",
+				"learnMoreAboutSecurityHealth": "Learn more about each of these components <tag>here.</tag>",
 				"peaceOfMind": "Do you want more peace of mind?",
 				"button": "Enable Wifi security"
 			}

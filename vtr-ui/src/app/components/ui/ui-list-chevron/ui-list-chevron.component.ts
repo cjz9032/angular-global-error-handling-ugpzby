@@ -16,6 +16,7 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 	@Input() arrowColor: string;
 	/**** passing to ItemParent from metrics ****/
 	@Input() metricsParent: string;
+	@Input() clickable = true;
 
 	/** object having item class list*/
 	itemStatusClass = {
