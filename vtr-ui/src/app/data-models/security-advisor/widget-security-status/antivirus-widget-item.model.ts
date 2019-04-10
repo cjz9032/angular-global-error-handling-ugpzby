@@ -12,10 +12,12 @@ export class AntivirusWidgetItem extends WidgetItem {
 			path: 'security/anti-virus',
 			title: 'Anti-Virus',
 			type: 'security'
-		});
+		}, translateService);
 		const cacheAvStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus);
 		const cacheFwStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus);
-		this.updateStatus(cacheAvStatus === 'enabled', cacheFwStatus === 'enabled');
+		if (cacheAvStatus || cacheFwStatus) {
+			this.updateStatus(cacheAvStatus === 'enabled', cacheFwStatus === 'enabled');
+		}
 
 		if (antivirus.mcafee || antivirus.windowsDefender || antivirus.others) {
 			this.updateStatusByAv(antivirus, commonService);

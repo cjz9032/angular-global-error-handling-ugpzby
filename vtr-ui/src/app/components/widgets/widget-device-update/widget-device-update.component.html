@@ -35,15 +35,13 @@
 					</div>
 					<div class="col col-12 row progress-bar-div-container">
 						<div class="col col-12 progress-bar-div">
-							<!-- <mat-progress-bar mode="determinate"
-								value="40"></mat-progress-bar> -->
 							<ngb-progressbar type="success"
 								[value]="percent"
 								[height]="'0.6rem'"></ngb-progressbar>
 						</div>
 					</div>
 					<div class="col col-12 row">
-						<div class="col col-12 cancel-check">
+						<div class="col col-12 cancel-check p-5">
 							<a class="cancel-check-text"
 								(click)="cancelUpdates()">{{cancelCheck}}</a>
 						</div>
@@ -96,17 +94,17 @@
 					</div>
 					<div class="col col-12 row progress-bar-div-container">
 						<div class="col col-12 progress-bar-div">
-							<!-- <mat-progress-bar mode="determinate"
-								value="40"></mat-progress-bar> -->
 							<ngb-progressbar type="success"
 								[value]="installingPercent"
 								[height]="'0.6rem'"></ngb-progressbar>
 						</div>
 					</div>
 					<div class="col col-12 row">
-						<div class="col col-12 cancel-check">
-							<a class="cancel-check-text"
-								(click)="onCancelUpdateDownload()">Cancel Updates</a>
+						<div class="col col-12 cancel-check p-5">
+							<button type="button"
+								class="btn btn-link cancel-check"
+								[disabled]="downloadingPercent === 100"
+								(click)="onCancelUpdateDownload()">Cancel Updates</button>
 						</div>
 					</div>
 				</div>

@@ -100,10 +100,14 @@
 			font-weight: $weight_bold;
 			font-size: 2.5rem;
 		}
+		.successIcon{
+			color:$go_dark;
+			font-size: 2.5rem;
+		}
 		.successtitle{
 			font-weight: $weight_regular;
 			font-size: 1.5rem;
-			margin-bottom: 2rem;
+			margin: 0.5rem 0 2rem;
 		}
 		.failed{
 			color: $alt;

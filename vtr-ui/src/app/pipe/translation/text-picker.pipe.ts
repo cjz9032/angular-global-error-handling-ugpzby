@@ -5,7 +5,7 @@ export class TextPickerPipe implements PipeTransform {
 	transform(value: string, position: number): string {
 		const contentTextList: Array<string> = value.split(/<.*?>.*?<.*?>/);
 		if (position < contentTextList.length) {
-			return contentTextList[position];
+			return contentTextList[position].trim();
 		} else {
 			return '';
 		}

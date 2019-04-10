@@ -396,7 +396,10 @@
 				"rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
 				"rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
 				"okayButton": "OK",
-				"cancelButton": "Cancel"
+				"cancelButton": "Cancel",
+				"rebootButton": "REBOOT NOW",
+				"dismissButton": "DISMISS",
+				"rebootPending": "Reboot pending"
 			},
 			"autoUpdateSettings": {
 				"title": "自动更新设置",
@@ -497,7 +500,7 @@
 			"wifiConnected": "WiFi & Connected Home Security",
 			"connectedHomeSecurity": "Connected Home Security",
 			"fingerprint": "Fingerprint reader",
-			"seeAllNetwork": "See all joined networks",
+			"seeAllNetwork": "查看所有已连接的网络",
 			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
 			"good": "GOOD",
 			"malicious": "MALICIOUS",

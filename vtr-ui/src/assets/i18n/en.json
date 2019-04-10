@@ -284,7 +284,7 @@
 			"audio": {
 				"title": "Audio",
 				"subtitle": "Audio Settings",
-				"description": "This section enables you to automatically optimize or fully configure your audio settings manually , such as Dolby settings, microphone, etc.",
+				"description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
 				"audioSmartsettings": {
 					"title": "Audio Smart settings",
 					"subtitle": "APPLICATION-BASED SETTINGS",
@@ -396,7 +396,10 @@
 				"rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
 				"rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
 				"okayButton": "OK",
-				"cancelButton": "Cancel"
+				"cancelButton": "Cancel",
+				"rebootButton": "REBOOT NOW",
+				"dismissButton": "DISMISS",
+				"rebootPending": "Reboot pending"
 			},
 			"autoUpdateSettings": {
 				"title": "Auto update settings",
