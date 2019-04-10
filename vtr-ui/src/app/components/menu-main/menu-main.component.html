@@ -72,7 +72,7 @@
 								routerLink="/{{item.path}}/{{subitem.path}}">{{subitem.label | translate}}</a>
 						</div>
 					</li>
-					<li *ngIf="item.id==='user' && country != 'cn' && showItem(item)"
+					<li *ngIf="item.id==='user' && userService.isLenovoIdSupported && showItem(item)"
 						class="nav-item dropdown">
 						<!-- <a class="nav-link dropdown-toggle {{item.id}}"
 							routerLink="/{{item.path}}"

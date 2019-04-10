@@ -13,6 +13,8 @@ export class UserService {
 	auth = false;
 	token = '';
 
+	public isLenovoIdSupported = false;
+
 	public firstName = 'User';
 	lastName = '';
 	initials = '';
@@ -196,4 +198,5 @@ export class UserService {
 			(this.lastName && this.lastName.length > 0) ? this.lastName[0] : '';
 		this.commonService.sendNotification(LenovoIdKey.FirstName, firstName);
 	}
+
 }
