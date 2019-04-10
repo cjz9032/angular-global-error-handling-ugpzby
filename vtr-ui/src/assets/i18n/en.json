@@ -5,7 +5,7 @@
 			"device": {
 				"title": "Device",
 				"sub1": "My Device",
-				"sub2": "My device settings",
+				"sub2": "My Device Settings",
 				"sub3": "System Updates"
 			},
 			"security": {
@@ -13,7 +13,7 @@
 				"sub1": "My Security",
 				"sub2": "Anti-Virus",
 				"sub3": "WiFi Security",
-				"sub4": "Password Protection",
+				"sub4": "Password Health",
 				"sub5": "Internet Protection",
 				"sub6": "Windows Hello"
 			},
@@ -32,7 +32,8 @@
 			"partiallyProtected": "PARTIALLY PROTECTED",
 			"installed": "INSTALLED",
 			"notInstalled": "NOT INSTALLED",
-			"loading": "Loading"
+			"loading": "Loading",
+			"notFound": "NOT FOUND"
 		},
 		"qAndA": {
 			"title": "Q&A for your machine",
@@ -72,7 +73,7 @@
 			"title": "System Status",
 			"subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
 			"memory": "Memory",
-			"diskspace": "Diskspace",
+			"diskspace": "Disk space",
 			"warranty": "Warranty",
 			"systemUpdate": "System Update"
 		}
@@ -161,38 +162,6 @@
 						}
 					}
 				},
-				"batterySettings": {
-					"title": "Battery Settings",
-					"airPlanePower": {
-						"title": "Airplane Power Mode",
-						"description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
-					},
-					"batteryThreshold": {
-						"title": "Battery Charge Threshold",
-						"description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
-						"tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
-						"popup": {
-							"title": "Enable Battery Charge Threshold",
-							"description": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life. In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
-							"enable": "ENABLE",
-							"cancel": "CANCEL"
-						}
-					},
-					"expressCharging": {
-						"title": "Express Charging",
-						"description":"Express Charge allows your battery to a full charge much faster than normal mode.",
-						"tooltip": "Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
-					},
-					"conservationMode": {
-						"title": "Conservation Mode",
-						"description":"This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
-						"tooltip": {
-							"line1": "This function is useful to extend the lifespan of your battery when plugged.",
-							"line2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
-							"line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
-						}
-					}
-				},
 				"powerSettings": {
 					"title": "Power Settings",
 					"alwaysUSB": {
@@ -212,12 +181,44 @@
 						"title": "Lenovo Vantage Toolbar",
 						"description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
 					}
+				},
+				"batterySettings": {
+					"title": "Battery Settings",
+					"airPlanePower": {
+						"title": "Airplane Power Mode",
+						"description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
+					},
+					"batteryThreshold": {
+						"title": "Battery Charge Threshold",
+						"description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
+						"tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
+						"popup": {
+							"title": "Enable Battery Charge Threshold",
+							"description": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life. In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+							"enable": "ENABLE",
+							"cancel": "CANCEL"
+						}
+					},
+					"expressCharging": {
+						"title": "Express Charging",
+						"description": "Express Charge allows your battery to a full charge much faster than normal mode.",
+						"tooltip": "Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
+					},
+					"conservationMode": {
+						"title": "Conservation Mode",
+						"description": "This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
+						"tooltip": {
+							"line1": "This function is useful to extend the lifespan of your battery when plugged.",
+							"line2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
+							"line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
+						}
+					}
 				}
 			},
 			"audio": {
 				"title": "Audio",
 				"subtitle": "Audio Settings",
-				"description": "This section enables you to automatically optimize or fully configure your audio settings manually , such as Dolby settings, microphone, etc.",
+				"description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
 				"audioSmartsettings": {
 					"title": "Audio Smartsettings",
 					"subtitle": "APPLICATION-BASED SETTINGS",
@@ -260,7 +261,7 @@
 						"title": "Optimize my microphone for:",
 						"tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
 						"options": {
-							"voiceRecoginition": "VOICE RECOGINITION",
+							"voiceRecoginition": "VOICE RECOGNITION",
 							"onlyMyVoice": "ONLY MY VOICE",
 							"normal": "NORMAL",
 							"multipleVoices": "MULTIPLE VOICES"
@@ -275,10 +276,10 @@
 				"jumpTo": {
 					"title": "JUMP TO SETTINGS",
 					"shortcuts": {
-						"display":{
+						"display": {
 							"title": "Display"
 						},
-						"camera":{
+						"camera": {
 							"title": "Camera"
 						}
 					}
@@ -317,41 +318,45 @@
 		"systemUpdates": {
 			"title": "System Updates",
 			"history": "FULL HISTORY",
-			"autoUpdateSettings": {
+			"notAvailable": "Not Available",
+			"notInstalled": "Not Installed",
+			"popup": {
+				"reboot": "Reboot",
+				"shutdown": "Shut Down",
+				"rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
+				"shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
+				"rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
+				"rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+				"okayButton": "OK",
+				"cancelButton": "Cancel"
+			},
+			"auto-update-settings": {
 				"title": "Auto update settings",
 				"subtitle": "AUTOMATICALLY INSTALL UPDATES",
 				"critical": {
 					"title": "Critical Updates",
 					"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
 				},
-				"recommended": {
-					"title": "Recommended Updates",
-					"tooltip": "Recommended driver updates keep your computer running at optimal performance."
-				},
-				"windows": {
-					"title": "Windows Updates",
-					"url": "Windows settings"
-				}
-			},
-			"banner": {
-				"title": "An up-to-date system is a healthy system.",
-				"last": "Last update was on",
-				"next": "Next updated scan is scheduled on",
-				"checkButton": "CHECK FOR UPDATES",
-				"checking": "Checking for updates",
-				"downloading": "Downloading updates done",
-				"installing": "Installing updates",
-				"percent": "% complete",
-				"cancelCheck": "Cancel check",
-				"cancelUpdates": "CANCEL UPDATES",
-				"available": "Available updates",
-				"description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-				"installButton": "INSTALL ALL UPDATES",
-				"result": {
-					"success": "All Updates were installed correctly",
-					"fail": {
-						"title": "Some updates were not installed correctly.",
-						"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off computer when installing these updates."
+				"banner": {
+					"title": "An up-to-date system is a healthy system.",
+					"last": "Last update was on",
+					"next": "Next updated scan is scheduled on",
+					"checkButton": "CHECK FOR UPDATES",
+					"checking": "Checking for updates",
+					"downloading": "Downloading updates done",
+					"installing": "Installing updates",
+					"percent": "% complete",
+					"cancelCheck": "Cancel check",
+					"cancelUpdates": "CANCEL UPDATES",
+					"available": "Available updates",
+					"description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
+					"installButton": "INSTALL ALL UPDATES",
+					"result": {
+						"success": "All Updates were installed correctly",
+						"fail": {
+							"title": "Some updates were not installed correctly.",
+							"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off computer when installing these updates."
+						}
 					}
 				}
 			}
@@ -403,9 +408,6 @@
 		}
 	},
 	"security": {
-		"common": {
-			"loading": "Loading"
-		},
 		"landing": {
 			"fully": "Fully protected",
 			"fullyDesc": "Congratulations! You are well protected.",
@@ -537,7 +539,7 @@
 				"success": "Successfully connected",
 				"canUse": "You can now start using Connected Home Security",
 				"tryAgain": "Incorrect code, please try again!",
-				"activationCode":"ACTIVATION CODE"
+				"activationCode": "ACTIVATION CODE"
 			},
 			"securityhealth": {
 				"title": "Security Health",
@@ -553,6 +555,7 @@
 				"deviceName10": "Automatic Updates Service Availability",
 				"fail": "FAILED",
 				"pass": "PASSED",
+				"learnMoreAboutSecurityHealth": "Learn more about each of these components <tag>here.</tag>",
 				"peaceOfMind": "Do you want more peace of mind?",
 				"button": "Enable Wifi security"
 			}
@@ -568,10 +571,10 @@
 			"whySufEasy": "Why SurfEasy?",
 			"whySufEasyDescription": "SurfEasy makes it easy to stay safe while surfing the internet. It helps you remain anonymous, and adds an additional layer of security between you and anyone that wants your personal information.",
 			"startUseSufEasy": "Start using SurfEasy Today",
-			"startUseSufEasy1":"Using a VPN adds Security. SurfEasy encrypts your data, adding anonymity and security.",
-			"startUseSufEasy2":"Once registered SurfEasy runs silently in the background so everything runs the same but better.",
-			"startUseSufEasy3":"Start using SurfEasy to protect yourself while browsing the internet. Enjoy the no-log VPN that works on every device.",
-			"startUseSufEasy4":"As a surfEasy user enjoy 250 MB of free data every 30 days! Unlock additional data by following the steps on the \"Rewards\" tab of the SurfEasy app.",
+			"startUseSufEasy1": "Using a VPN adds Security. SurfEasy encrypts your data, adding anonymity and security.",
+			"startUseSufEasy2": "Once registered SurfEasy runs silently in the background so everything runs the same but better.",
+			"startUseSufEasy3": "Start using SurfEasy to protect yourself while browsing the internet. Enjoy the no-log VPN that works on every device.",
+			"startUseSufEasy4": "As a surfEasy user enjoy 250 MB of free data every 30 days! Unlock additional data by following the steps on the \"Rewards\" tab of the SurfEasy app.",
 			"howToUseSufEasy": "How to use SurfEasy VPN",
 			"whatCanSufEasy2": "A VPN provider helps to protect you while you are surfing the internet. Without a VPN, our PC may be moe vulnerable to attackers and identity thieves. A VPN runs silently in the bacground and provides safety and privacy measures.",
 			"getStarted": "Get started:",
@@ -603,7 +606,7 @@
 			"helpYou1": "Remember unlimited usernames and passwords.",
 			"helpYou2": "Log in instantly everywhere for seamless browsing",
 			"helpYou3": "Sync across devices so you're never without access to important accounts",
-			"helpYou4": "Share passwords securely without revealing them",
+			"helpYou4": "Improve your online protection with easy, actionable advice",
 			"getStarted": "Getting started with DashLane?",
 			"checkOutThisGuide": "Use DashLane to stay safe online while saving time and frustration. For detailed instructions on how to get started, <tag>check out this guide.</tag>",
 			"allowsYou": "DashLane allows you to",
@@ -638,4 +641,3 @@
 	},
 	"faq": {}
 }
-

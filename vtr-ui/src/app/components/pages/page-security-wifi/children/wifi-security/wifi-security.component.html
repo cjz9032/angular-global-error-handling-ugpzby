@@ -60,10 +60,11 @@
 										(click)="isShowMore=false">
 										{{'security.wifisecurity.container.more' | translate}} <fa-icon [icon]="['fas', 'chevron-down']" class="pl-3"></fa-icon></button>
 								</div>
-								<div class="switch">
+								<div class="switch" *ngIf="data.hasWSEverUsed">
 									<vtr-ui-switch-onoff name="wifisecurity"
 										[value]="data.isLWSEnabled"
-										[data]="data"></vtr-ui-switch-onoff>
+										[data]="data"
+										></vtr-ui-switch-onoff>
 								</div>
 							</div>
 						</div>
@@ -108,7 +109,7 @@
 												</span>
 											</div>
 											<div class="connection-name col-8 p-1 pl-0">
-												{{history.ssid}}
+												<span title="{{history.ssid}}">{{history.ssid}}</span>
 												<small class="connection-status">
 													{{'security.wifisecurity.container.connect' | translate}}{{history.info}}
 												</small>
@@ -136,7 +137,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row threat-locator" *ngIf="!data.isLWSEnabled || isShowMore===false">
+		<div class="row threat-locator" *ngIf="(region !== 'CN') && (!data.isLWSEnabled || isShowMore===false)">
 			<div class="col">
 				<div class="threat-locator-container">
 					<div class="row">
@@ -169,7 +170,8 @@
 						metricsItem="enableWifiSecurity"
 						metricsEvent="itemClick"
 						(click)="enableWifiSecurity()"
-						[label]="'security.wifisecurity.container.button' | translate"></vtr-ui-button>
+						[label]="'security.wifisecurity.container.button' | translate"
+						*ngIf="!data.hasWSEverUsed"></vtr-ui-button>
 				</div>
 			</div>
 		</div>

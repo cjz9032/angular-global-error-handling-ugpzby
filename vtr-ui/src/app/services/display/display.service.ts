@@ -207,4 +207,10 @@ export class DisplayService {
 			this.displayEyeCareMode.openPrivacyLocation();
 		}
 	}
+	public initEyecaremodeSettings(): Promise<boolean> {
+		if (this.displayEyeCareMode) {
+			return this.displayEyeCareMode.initEyecaremodeSettings();
+		}
+		return undefined;
+	}
 }
