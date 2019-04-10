@@ -650,6 +650,12 @@
 		}
 	},
 	"faq": {
+		"footer": {
+			"title": "Not finding what you are looking for?",
+			"description": "NEED ADDITIONAL SUPPORT? DON’T HESITATE TO CONTACT US VIA:",
+			"body": "Lenovo Community",
+			"button": "GO TO FORUM"
+		},
 		"question1": {
 			"title": "Back up and restore your files",
 			"para1": "It's always good to have a backup. Keep copies of your files on another drive in case something happens to the originals.",
@@ -700,6 +706,104 @@
 			"header5": "Additional Information",
 			"para7": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
 			"para8": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
+		},
+		"question3": {
+			"title": "How to know your machine's CPU",
+			"heading1": "Symptom",
+			"para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
+			"heading2": "Affected Brands",
+			"para2": "The above symptom is associated with, but not limited to, the following systems:",
+			"para3": "All Desktop and Laptops",
+			"heading3": "Operating System",
+			"para4": "Windows 7, 8, 10",
+			"heading4": "Solution",
+			"para5": "<span style=\"text-decoration: underline;padding:10px 0;font-weight: bold\">Windows 7 or Vista</span>",
+			"bulletset1": [
+				"Open System by clicking the Start button Picture of the Start button, right-clicking Computer, and then clicking Properties",
+				"Under System, you can view the system type."
+			],
+			"para6": "<span style=\"text-decoration: underline;font-weight: bold\">Windows 8 and Windows 10</span>",
+			"bulletset2": [
+				"Method 1: View the System window in Control Panel",
+				"Swipe in from the right edge of the screen, and then tap Search. Or, if you are using a mouse, point to the lower-right corner of the screen, and then click Search.",
+				"Type system in the search box, and then tap or click Settings.",
+				"Tap or click System",
+				"If you are running a 64-bit version of Windows 8, 64-bit Operating System is displayed in the System type field under the System heading. If you are running a 32-bit version of Windows 8, 32-bit Operating System is displayed in the System type field under the System heading.",
+				"Method 2: View the System Information window",
+				"Swipe in from the right edge of the screen, and then tap Search. Or, if you are using a mouse, point to the lower-right corner of the screen, and then click Search.",
+				"In the search box, type system information",
+				"Tap or click System, tap or click System Information, and then click System Summary.",
+				"If you are running a 64-bit version of Windows 8, x64-based PC is displayed in the System type field under the Item heading."
+			],
+			"para7": "If you are running a 32-bit version of Windows 8, x86-based PC is displayed in the System type field under the Item heading."
+		},
+		"question4": {
+			"title": "Check your machine's battery use",
+			"heading1": "Symptom",
+			"para1": "Windows 10 includes a new “Battery Use” screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power.",
+			"heading2": "Affected Brands",
+			"para2": "Lenovo laptops, desktops",
+			"heading3": "Affected Systems",
+			"para3": "All",
+			"heading4": "Operating System",
+			"para4": "Windows 10",
+			"heading5": "Solution",
+			"para5": "This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional control panel view, this feature is located in the new “Settings” app",
+			"bulletset1": [
+				"A. Find the Battery Use Screen",
+				"1. Click or Tap the “Settings” option from the start menu",
+				"2. In Settings select “System”and then select “Battery saver.”",
+				"3. Click or tap the “Battery use” link under this heading to see more details.",
+				"B. Analyze Your Power Usage",
+				"4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
+				"5. “System,” “Display,” and “Wi-Fi” percentages. This shows how much battery power has been used by system processes, the display,",
+				"6. The “In use” and “Background” options show how much power is used by applications while you’re using them, compared to applications running in the background.",
+				"7. If apps are using power in the background, you can click or tap the “Change background app settings” link and configure apps to not run in the background. This only works for universal Windows 10 apps.",
+				"8. Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used"
+			]
+		},
+		"question5": {
+			"title": "Use your PC like a tablet",
+			"para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
+			"heading1": "Use tablet mode",
+			"para2": "To turn on tablet mode, select action center on the taskbar, then select Tablet mode.",
+			"heading2": "Note",
+			"para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
+			"para4":"In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
+			"heading3": "Tip",
+			"para5": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen. Select the Start button, select Settings > System > Tablet mode , then turn on Automatically hide the taskbar in tablet mode. To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.",
+			"heading4": "Use two apps simultaneously",
+			"para6": "To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.",
+			"para7": "In this view, you can also:",
+			"bulletset1": [
+				"Use the shared edge between two snapped apps to resize both apps at the same time.",
+				"Open a new app from task view—select Task view on the taskbar, select an app, then drag it to one side to snap it into your divided screen.",
+				"Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
+			]
+		},
+		"question6": {
+			"title": "Get to know Cortona, your personal assistant",
+			"heading1": "What is Cortana?",
+			"para1": "Cortana is your digital agent. She'll help you get things done.",
+			"para2": "The more you use Cortana, the more personalized your experience will be.",
+			"para3": "To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
+			"para4": "If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
+			"para5": "1. Home 2. Notebook 3. Settings 4. Feedback",
+			"para6": "Here are some things Cortana can do for you:",
+			"bulletset1": [
+				"Use the shared edge between two snapped apps to resize both apps at the same time.",
+				"Open a new app from task view—select Task view on the taskbar, select an app, then drag it to one side to snap it into your divided screen.",
+				"Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
+			],
+			"heading2": "Try this: Set a reminder",
+			"para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",
+			"para8": "For example, type or say, “Remind me to congratulate Tanya the next time she calls.”",
+			"para9": "The reminder will appear when you get a call from Tanya.",
+			"para10": "Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.",
+			"heading3": "Hey Cortana?",
+			"para11": "Set Cortana to hear you anytime you say “Hey Cortana.” Select the search box on the taskbar to open Cortana home. Then select Settings  and turn on Let Cortana respond to “Hey Cortana.”",
+			"para12": "Note",
+			"para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
 		}
 	}
 }
