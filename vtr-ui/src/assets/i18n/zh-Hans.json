@@ -53,6 +53,14 @@
 		}
 	},
 	"dashboard": {
+		"headerMain": {
+			"title": "Looking energized today "
+		},
+		"offlineInfo": {
+			"title": "No internet connection detected",
+			"subtitle": "Learn more on how to solve connection issues in our",
+			"buttonText": "Connectivity 101"
+		},
 		"feedback": {
 			"title": "提供反馈",
 			"subtitle": "告诉我们您对 VANTAGE 的想法",
@@ -70,12 +78,37 @@
 			"eyeCareMode": "护眼模式"
 		},
 		"systemStatus": {
-			"title": "系统状态",
-			"subtitle": "快速了解设备状态。",
-			"memory": "内存",
-			"diskspace": "磁盘空间",
-			"warranty": "保修",
-			"systemUpdate": "系统更新"
+			"title": "System Status",
+			"subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+			"memory": {
+				"title": "Memory",
+				"detail": {
+					"notFound": "Memory not found",
+					"of": "of"
+				}
+			},
+			"diskSpace": {
+				"title": "Disk space",
+				"detail": {
+					"notFound": "Disk not found",
+					"of": "of"
+				}
+			},
+			"warranty": {
+				"title": "Warranty",
+				"detail": {
+					"notFound": "Warranty not found",
+					"until": "Until",
+					"expiredOn": "Warranty expired on",
+					"notAvailable": "Warranty not available"
+				}
+			},
+			"systemUpdate": {
+				"title": "System Update",
+				"detail": {
+					"update": "Update"
+				}
+			}
 		}
 	},
 	"device": {
@@ -87,15 +120,48 @@
 			"biosVersion": "BIOS 版本",
 			"learnMore": "了解更多信息",
 			"freeMemory": "可用内存",
-			"systemUpdate": "系统更新",
+			"systemUpdate": {
+				"title": "系统更新",
+				"notFound": "System update not found",
+				"detail": {
+					"uptoDate": "Software up to date ",
+					"updatedOn": "updated on ",
+					"outdated": "Software outdated ",
+					"neverRanUpdate": "never ran update"
+				}
+			},
 			"extendedWarranty": "延长保修",
-			"processor": "处理器",
-			"memory": "内存",
-			"diskspace": "磁盘空间",
+			"processor": {
+				"title": "处理器",
+				"notFound": "Processor not found"
+			},
+			"memory": {
+				"title": "内存",
+				"notFound": "Memory not found",
+				"ram": "RAM"
+			},
+			"diskspace": {
+				"title": "磁盘空间",
+				"notFound": "Disk not found"
+			},
 			"software": "软件为最新",
 			"updated": "已更新",
 			"outOfWarranty": "保修期已过",
-			"expired": "到期时间："
+			"expired": "到期时间：",
+			"of": "of",
+			"warranty": {
+				"notFound": "Warranty not found",
+				"detail": {
+					"title": "延长保修",
+					"inWarranty": "In warranty ",
+					"daysRemaining": "days remaining",
+					"outOfWarranty": "保修期已过 ",
+					"expiredOn": "Expired on",
+					"notAvailable": "Warranty not available",
+					"support": "Support"
+				}
+			},
+			"helpful": "帮助内容"
 		},
 		"deviceSettings": {
 			"helpful": "帮助内容",
@@ -769,7 +835,7 @@
 			"para2": "To turn on tablet mode, select action center on the taskbar, then select Tablet mode.",
 			"heading2": "Note",
 			"para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
-			"para4":"In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
+			"para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
 			"heading3": "Tip",
 			"para5": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen. Select the Start button, select Settings > System > Tablet mode , then turn on Automatically hide the taskbar in tablet mode. To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.",
 			"heading4": "Use two apps simultaneously",

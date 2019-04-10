@@ -53,6 +53,14 @@
 		}
 	},
 	"dashboard": {
+		"headerMain": {
+			"title": "Looking energized today "
+		},
+		"offlineInfo": {
+			"title": "No internet connection detected",
+			"subtitle": "Learn more on how to solve connection issues in our",
+			"buttonText": "Connectivity 101"
+		},
 		"feedback": {
 			"title": "Give Feedback",
 			"subtitle": "Tell us what you think about vantage",
@@ -72,10 +80,35 @@
 		"systemStatus": {
 			"title": "System Status",
 			"subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
-			"memory": "Memory",
-			"diskspace": "Disk space",
-			"warranty": "Warranty",
-			"systemUpdate": "System Update"
+			"memory": {
+				"title": "Memory",
+				"detail": {
+					"notFound": "Memory not found",
+					"of": "of"
+				}
+			},
+			"diskSpace": {
+				"title": "Disk space",
+				"detail": {
+					"notFound": "Disk not found",
+					"of": "of"
+				}
+			},
+			"warranty": {
+				"title": "Warranty",
+				"detail": {
+					"notFound": "Warranty not found",
+					"until": "Until",
+					"expiredOn": "Warranty expired on",
+					"notAvailable": "Warranty not available"
+				}
+			},
+			"systemUpdate": {
+				"title": "System Update",
+				"detail": {
+					"update": "Update"
+				}
+			}
 		}
 	},
 	"device": {
@@ -87,15 +120,48 @@
 			"biosVersion": "Bios version",
 			"learnMore": "Learn more",
 			"freeMemory": "Free memory",
-			"systemUpdate": "System update",
+			"systemUpdate": {
+				"title": "System update",
+				"notFound": "System update not found",
+				"detail": {
+					"uptoDate": "Software up to date ",
+					"updatedOn": "updated on ",
+					"outdated": "Software outdated ",
+					"neverRanUpdate": "never ran update"
+				}
+			},
 			"extendedWarranty": "Extend warranty",
-			"processor": "Processor",
-			"memory": "Memory",
-			"diskspace": "Disk space",
+			"processor": {
+				"title": "Processor",
+				"notFound": "Processor not found"
+			},
+			"memory": {
+				"title": "Memory",
+				"notFound": "Memory not found",
+				"ram": "RAM"
+			},
+			"diskspace": {
+				"title": "Disk space",
+				"notFound": "Disk not found"
+			},
 			"software": "Software up to date",
 			"updated": "Updated",
 			"outOfWarranty": "Out of warranty",
-			"expired": "Expired on"
+			"expired": "Expired on",
+			"of": "of",
+			"warranty": {
+				"notFound": "Warranty not found",
+				"detail": {
+					"title": "Extend warranty",
+					"inWarranty": "In warranty ",
+					"daysRemaining": "days remaining",
+					"outOfWarranty": "Out of warranty ",
+					"expiredOn": "Expired on",
+					"notAvailable": "Warranty not available",
+					"support": "Support"
+				}
+			},
+			"helpful": "Helpful content"
 		},
 		"deviceSettings": {
 			"helpful": "Helpful content",
@@ -220,7 +286,7 @@
 				"subtitle": "Audio Settings",
 				"description": "This section enables you to automatically optimize or fully configure your audio settings manually , such as Dolby settings, microphone, etc.",
 				"audioSmartsettings": {
-					"title": "Audio Smartsettings",
+					"title": "Audio Smart settings",
 					"subtitle": "APPLICATION-BASED SETTINGS",
 					"description": "Automatically adjust audio settings according to different apps you are using.",
 					"dolby": {
@@ -769,7 +835,7 @@
 			"para2": "To turn on tablet mode, select action center on the taskbar, then select Tablet mode.",
 			"heading2": "Note",
 			"para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
-			"para4":"In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
+			"para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
 			"heading3": "Tip",
 			"para5": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen. Select the Start button, select Settings > System > Tablet mode , then turn on Automatically hide the taskbar in tablet mode. To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.",
 			"heading4": "Use two apps simultaneously",
