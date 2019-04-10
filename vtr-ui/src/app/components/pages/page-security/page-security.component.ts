@@ -1,18 +1,48 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
-import { MockSecurityAdvisorService } from '../../../services/mock/mockSecurityAdvisor.service';
+import {
+	Component,
+	OnInit,
+	HostListener
+} from '@angular/core';
+import {
+	VantageShellService
+} from '../../../services/vantage-shell/vantage-shell.service';
+import {
+	MockSecurityAdvisorService
+} from '../../../services/mock/mockSecurityAdvisor.service';
 import * as phoenix from '@lenovo/tan-client-bridge';
-import { CMSService } from '../../../services/cms/cms.service';
-import { AntiVirusLandingViewModel } from '../../../data-models/security-advisor/antivirus-landing.model';
-import { HomeProtectionLandingViewModel } from '../../../data-models/security-advisor/homeprotection-landing.model';
-import { PasswordManagerLandingViewModel } from '../../../data-models/security-advisor/passwordmanager-landing.model';
-import { VpnLandingViewModel } from '../../../data-models/security-advisor/vpn-landing.model';
-import { WifiSecurityLandingViewModel } from '../../../data-models/security-advisor/wifisecurity-landing.model';
-import { WindowsHelloLandingViewModel } from '../../../data-models/security-advisor/windowshello-landing.model';
-import { CommonService } from 'src/app/services/common/common.service';
-import { TranslateService } from '@ngx-translate/core';
-import { EventTypes } from '@lenovo/tan-client-bridge';
-import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
+import {
+	CMSService
+} from '../../../services/cms/cms.service';
+import {
+	AntiVirusLandingViewModel
+} from '../../../data-models/security-advisor/antivirus-landing.model';
+import {
+	HomeProtectionLandingViewModel
+} from '../../../data-models/security-advisor/homeprotection-landing.model';
+import {
+	PasswordManagerLandingViewModel
+} from '../../../data-models/security-advisor/passwordmanager-landing.model';
+import {
+	VpnLandingViewModel
+} from '../../../data-models/security-advisor/vpn-landing.model';
+import {
+	WifiSecurityLandingViewModel
+} from '../../../data-models/security-advisor/wifisecurity-landing.model';
+import {
+	WindowsHelloLandingViewModel
+} from '../../../data-models/security-advisor/windowshello-landing.model';
+import {
+	CommonService
+} from 'src/app/services/common/common.service';
+import {
+	TranslateService
+} from '@ngx-translate/core';
+import {
+	EventTypes
+} from '@lenovo/tan-client-bridge';
+import {
+	LocalStorageKey
+} from '../../../enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-page-security',
@@ -28,7 +58,7 @@ export class PageSecurityComponent implements OnInit {
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		private translate: TranslateService
-	) {	}
+	) {}
 	title = 'Security';
 
 	passwordManagerLandingViewModel: PasswordManagerLandingViewModel;
@@ -37,7 +67,7 @@ export class PageSecurityComponent implements OnInit {
 	windowsHelloLandingViewModel: WindowsHelloLandingViewModel;
 	wifiSecurityLandingViewModel: WifiSecurityLandingViewModel;
 	homeProtectionLandingViewModel: HomeProtectionLandingViewModel;
-	wifiHistory: Array<phoenix.WifiDetail>;
+	wifiHistory: Array < phoenix.WifiDetail > ;
 	securityAdvisor: phoenix.SecurityAdvisor;
 	antivirus: phoenix.Antivirus;
 	wifiSecurity: phoenix.WifiSecurity;
@@ -62,11 +92,9 @@ export class PageSecurityComponent implements OnInit {
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		this.securityAdvisor.refresh().then(() => {
-			this.refreshViewModel();
-			this.getScore();
-			this.getMaliciousWifi();
-		});
+		this.refreshViewModel();
+		this.getScore();
+		this.getMaliciousWifi();
 	}
 
 	ngOnInit() {
@@ -103,6 +131,8 @@ export class PageSecurityComponent implements OnInit {
 		}).on(EventTypes.helloFingerPrintStatusEvent, () => {
 			this.showWindowsHello(windowsHello);
 		});
+
+		this.securityAdvisor.refresh();
 	}
 
 	getWifiStatus(good) {
