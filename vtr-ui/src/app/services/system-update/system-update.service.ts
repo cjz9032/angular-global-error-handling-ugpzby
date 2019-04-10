@@ -246,11 +246,11 @@ export class SystemUpdateService {
 		}
 	}
 
-	public isRebootRequired(): boolean {
+	public isRebootRequested(): boolean {
 		if (this.updateInfo) {
 			for (let index = 0; index < this.updateInfo.updateList.length; index++) {
 				const update = this.updateInfo.updateList[index];
-				if ((update.packageRebootType === 'RebootRequested' || update.packageRebootType === 'RebootDelayed') && update.isInstalled) {
+				if (update.packageRebootType === 'RebootRequested' && update.isInstalled) {
 					return true;
 				}
 			}
@@ -428,5 +428,17 @@ export class SystemUpdateService {
 		const diffTime = Math.abs(today.getTime() - lastUpdateDate.getTime());
 		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 		return diffDays;
+	}
+
+	public cancelUpdateDownload() {
+		if (this.systemUpdateBridge) {
+			this.systemUpdateBridge.cancelDownload()
+				.then((status: boolean) => {
+					this.commonService.sendNotification(UpdateProgress.UpdateDownloadCancelled, status);
+				})
+				.catch((error) => {
+					console.log('cancelDownload.error', error);
+				});
+		}
 	}
 }

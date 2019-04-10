@@ -11,7 +11,7 @@ export class PassWordManagerWidgetItem extends WidgetItem {
 			path: 'security/password-protection',
 			title: 'Password Manager',
 			type: 'security'
-		});
+		}, translateService);
 		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus);
 		if (cacheStatus) {
 			this.updateStatus(cacheStatus);

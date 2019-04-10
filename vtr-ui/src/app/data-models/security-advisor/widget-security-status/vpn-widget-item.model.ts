@@ -11,7 +11,7 @@ export class VPNWidgetItem extends WidgetItem {
 			path: 'security/internet-protection',
 			title: 'VPN',
 			type: 'security'
-		});
+		}, translateService);
 		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityVPNStatus);
 		if (cacheStatus) {
 			this.updateStatus(cacheStatus);
