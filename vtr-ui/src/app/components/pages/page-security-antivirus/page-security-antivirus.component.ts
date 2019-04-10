@@ -49,7 +49,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		if (this.antiVirus.mcafee && this.antiVirus.mcafee.status && this.antiVirus.mcafee.firewallStatus) {
+		if (this.antiVirus.mcafee) {
 			this.viewModel.mcafee = this.antiVirus.mcafee;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfee, this.viewModel.mcafee);
 			this.viewModel.mcafeestatusList = [{
@@ -102,16 +102,33 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		if (this.antiVirus.mcafee || this.antiVirus.others || this.antiVirus.windowsDefender) {
 			this.viewModel.antiVirusPage(this.antiVirus);
 		}
-		this.antiVirus.on(EventTypes.avMcafeeFeaturesEvent, (data) => {
+		this.antiVirus.on(EventTypes.avMcafeeStatusEvent, (data) => {
 			this.viewModel.mcafee.launch = this.antiVirus.mcafee.launch.bind(this.antiVirus.mcafee);
+			this.viewModel.mcafee.status = data;
 			this.viewModel.mcafeestatusList = [{
 				buttonClick: this.viewModel.mcafee.launch.bind(this.viewModel.mcafee),
-				status: data.find(f => f.id === 'vso').value,
+				status: this.viewModel.mcafee.status,
 				title: this.virusScan,
 				buttonTitle: this.enablevirus,
 			}, {
 				buttonClick: this.viewModel.mcafee.launch.bind(this.viewModel.mcafee),
-				status: data.find(f => f.id === 'mpf').value,
+				status: this.viewModel.mcafee.firewallStatus,
+				title: this.fireWall,
+				buttonTitle: this.enableFirewall,
+			}];
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfeeStatusList, this.viewModel.mcafeestatusList);
+			this.viewModel.antiVirusPage(this.antiVirus);
+		}).on(EventTypes.avMcafeeFirewallStatusEvent, (data) => {
+			this.viewModel.mcafee.launch = this.antiVirus.mcafee.launch.bind(this.antiVirus.mcafee);
+			this.viewModel.mcafee.firewallStatus = data;
+			this.viewModel.mcafeestatusList = [{
+				buttonClick: this.viewModel.mcafee.launch.bind(this.viewModel.mcafee),
+				status: this.viewModel.mcafee.status,
+				title: this.virusScan,
+				buttonTitle: this.enablevirus,
+			}, {
+				buttonClick: this.viewModel.mcafee.launch.bind(this.viewModel.mcafee),
+				status: this.viewModel.mcafee.firewallStatus,
 				title: this.fireWall,
 				buttonTitle: this.enableFirewall,
 			}];
