@@ -47,7 +47,7 @@ export class UserService {
 		}
 
 		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			this.translate.get('lenovoId.user').subscribe((value) => {
+			this.translate.stream('lenovoId.user').subscribe((value) => {
 				this.firstName = value;
 			});
 		})
