@@ -127,6 +127,13 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	public getPermission(): any {
+		if (this.phoenix) {
+			return this.phoenix.permissions;
+		}
+		return undefined;
+	}
 	/**
 	 * returns hardware settings object from VantageShellService of JS Bridge
 	 */

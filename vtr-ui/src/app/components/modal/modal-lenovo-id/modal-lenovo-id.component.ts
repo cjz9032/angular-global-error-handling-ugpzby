@@ -4,6 +4,7 @@ import { UserService } from '../../../services/user/user.service';
 import { Subscription, timer } from 'rxjs';
 import { SupportService } from '../../../services/support/support.service';
 import { DevService } from '../../../services/dev/dev.service';
+import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-modal-lenovo-id',
@@ -16,15 +17,25 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	private detectConnectionStatusSub: Subscription;
 	private detectConnectionStatusTimer = timer(5000, 5000);
 	public isBroswerVisible = false; // show or hide web browser, hide or show progress spinner
+	private metrics: any;
 	constructor(
 		public activeModal: NgbActiveModal,
 		private userService: UserService,
 		private supportService: SupportService,
-		private devService: DevService
+		private devService: DevService,
+		private vantageShellService: VantageShellService,
 	) {
 		this.isOnline = false;
 		this.cacheCleared = false;
 		this.isBroswerVisible = false;
+
+		this.metrics = vantageShellService.getMetrics();
+		if (!this.metrics) {
+			this.devService.writeLog('ModalLenovoIdComponent constructor: metrics object is undefined');
+			this.metrics = {
+				sendAsync() {}
+			};
+		}
 	}
 
 	// Capture the html content in webView
@@ -270,6 +281,25 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			this.detectConnectionStatusSub.unsubscribe();
 			window.location.reload();
 		});
+	}
+
+	onClose(): void {
+		let metricsData = {
+			ItemType: 'TaskAction',
+			TaskName: 'LID.SignIn',
+			TaskResult: 'failure(rc=UserCancelled)',
+			TaskParam: JSON.stringify({
+				StarterStatus: 'NA',
+				AccountState: 'NA', //{Signin | AlreadySignedIn | NeverSignedIn},
+				FeatureRequested: 'NA' // {AppOpen | SignIn | Vantage feature}
+			})
+		};
+		const self = this;
+		this.metrics.sendAsync(metricsData).catch((res) => {
+			self.devService.writeLog('loginSilently() Exception happen when send metric ', res.message);
+		});
+
+		this.activeModal.dismiss();
 	}
 
 	ngOnDestroy(): void {

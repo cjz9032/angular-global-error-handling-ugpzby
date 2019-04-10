@@ -364,7 +364,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					.getDYTCRevision()
 					.then((value: number) => {
 						console.log('getDYTCRevision.then', value);
-						//value=5;
+						//	value=5;
 						if (value === 4) {
 							this.showIntelligentCooling = 2;
 							this.getCQLCapability();
@@ -372,7 +372,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 							console.log(this.cQLCapability);
 							console.log(this.tIOCapability);
 
-							if (this.cQLCapability === true && this.tIOCapability === true) {
+							if (this.cQLCapability === true || this.tIOCapability === true) {
 								console.log('inside false of CQLCCapability and TIOCCapability');
 								this.toggleIntelligentCooling = true;
 								this.intelligentCooling = true;
@@ -428,35 +428,23 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				break;
 		}
 	}
-	private getCQLCapability() {
+	private async getCQLCapability() {
 		try {
 			if (this.powerService.isShellAvailable) {
-				this.powerService
-					.getCQLCapability()
-					.then((value: boolean) => {
-						console.log('getCQLCapability.then', value);
-						this.cQLCapability = value;
-					})
-					.catch(error => {
-						console.error('getCQLCapability', error);
-					});
+				let value = await this.powerService.getCQLCapability()
+				console.log('getCQLCapability.then', value);
+				this.cQLCapability = value;
 			}
 		} catch (error) {
 			console.error(error.message);
 		}
 	}
-	private getTIOCapability() {
+	private async getTIOCapability() {
 		try {
 			if (this.powerService.isShellAvailable) {
-				this.powerService
-					.getTIOCapability()
-					.then((value: boolean) => {
-						console.log('getTIOCapability.then', value);
-						this.tIOCapability = value;
-					})
-					.catch(error => {
-						console.error('getTIOCapability', error);
-					});
+				let value = await this.powerService.getTIOCapability()
+				console.log('getTIOCapability.then', value);
+				this.tIOCapability = value;
 			}
 		} catch (error) {
 			console.error(error.message);

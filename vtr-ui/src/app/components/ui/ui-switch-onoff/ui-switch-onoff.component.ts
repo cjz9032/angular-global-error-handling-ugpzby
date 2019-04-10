@@ -4,6 +4,13 @@ import Translation from 'src/app/data-models/translation/translation';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { TranslationSection } from 'src/app/enums/translation-section.enum';
 import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
+import { CommonService } from '../../../services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalWifiSecuriryLocationNoticeComponent } from '../../modal/modal-wifi-securiry-location-notice/modal-wifi-securiry-location-notice.component';
+import { EventTypes } from '@lenovo/tan-client-bridge';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { SecurityService } from 'src/app/services/security/security.service';
 
 @Component({
 	selector: 'vtr-ui-switch-onoff',
@@ -23,7 +30,7 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	offLabel = 'off';
 	size = 'switch-xs';
 
-	constructor(public translationService: TranslationService) {
+	constructor(public translationService: TranslationService, public commonService: CommonService, public modalService: NgbModal, private securityService: SecurityService,) {
 		this.uiSubscription = this.translationService.subscription
 			.subscribe((translation: Translation) => {
 				this.onLanguageChange(translation);
@@ -43,16 +50,51 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 		try {
 			if (this.data) {
 				if (this.value) {
-					this.data.wifiSecurity.disableWifiSecurity();
+					// this.data.isLWSEnabled = false;
+					// this.value = false; // 让switch尽快change
+					this.data.wifiSecurity.disableWifiSecurity().then((res) => {
+						if ( res === true) {
+							this.data.isLWSEnabled = false;
+							this.value = false;
+						} else {
+							this.data.isLWSEnabled = true;
+							this.value = true;
+						}
+					});
 				} else {
-					this.data.wifiSecurity.enableWifiSecurity();
+					// this.data.isLWSEnabled = true;
+					// this.value = true; // 让switch尽快change
+					this.data.wifiSecurity.enableWifiSecurity().then((res) => {
+						if ( res === true) {
+							this.data.isLWSEnabled = true;
+							this.value = true;
+						} else {
+							this.data.isLWSEnabled = false;
+							this.value = false;
+						}
+					}, (error) => {
+						this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);
+					});
 				}
 			} else {
 				this.value = !this.value;
 			}
 		} catch (err) {
-			console.log(err);
+			throw new Error('wifiSecurity is null');
 		}
+		// try {
+		// 	if (this.data) {
+		// 		if (this.value) {
+		// 			this.data.wifiSecurity.disableWifiSecurity();
+		// 		} else {
+		// 			this.data.wifiSecurity.enableWifiSecurity();
+		// 		}
+		// 	} else {
+		// 		this.value = !this.value;
+		// 	}
+		// } catch (err) {
+		// 	console.log(err);
+		// }
 
 		event.switchValue = this.value;
 		this.toggle.emit(event);

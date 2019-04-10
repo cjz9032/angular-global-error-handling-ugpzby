@@ -38,6 +38,9 @@ export class PasswordManagerLandingViewModel {
 		pmModel.on(EventTypes.pmStatusEvent, (data) => {
 			pmStatus.detail = data === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
 			pmStatus.status = (data === 'installed') ? 2 : 1;
+			translate.get(pmStatus.detail).subscribe((res) => {
+				pmStatus.detail = res;
+			});
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, data);
 			subjectStatus.status = (data === 'installed') ? 2 : 1;
 		});
