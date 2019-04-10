@@ -44,7 +44,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public isUpdateDownloading = false;
 	public installationPercent = 0;
 	public downloadingPercent = 0;
-	public isRebootRequired = false;
+	public isRebootRequested = false;
 	public isInstallationSuccess = false;
 	public isInstallationCompleted = false;
 	public showFullHistory = false;
@@ -317,7 +317,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	public onDismissClick($event) {
-		this.isRebootRequired = false;
+		this.isRebootRequested = false;
 	}
 
 	public showInstallConfirmation(source: string) {
@@ -454,7 +454,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isUpdateDownloading = false;
 					this.isInstallationCompleted = true;
 					this.isInstallationSuccess = this.getInstallationSuccess(payload);
-					this.checkRebootRequired();
+					this.checkRebootRequested();
 					break;
 				case UpdateProgress.AutoUpdateStatus:
 					this.autoUpdateOptions[0].isChecked = payload.criticalAutoUpdates;
@@ -515,7 +515,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isInstallationCompleted = true;
 					this.isInstallationSuccess = this.getInstallationSuccess(payload);
 					this.setUpdateByCategory(payload.updateList);
-					this.checkRebootRequired();
+					this.checkRebootRequested();
 					break;
 				default:
 					break;
@@ -533,9 +533,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.systemUpdateService.getScheduleUpdateStatus(reportProgress);
 	}
 
-	private checkRebootRequired() {
-		this.isRebootRequired = this.systemUpdateService.isRebootRequired();
-		if (this.isRebootRequired) {
+	private checkRebootRequested() {
+		this.isRebootRequested = this.systemUpdateService.isRebootRequested();
+		if (this.isRebootRequested) {
 			const modalRef = this.modalService
 				.open(ModalCommonConfirmationComponent, {
 					backdrop: 'static',

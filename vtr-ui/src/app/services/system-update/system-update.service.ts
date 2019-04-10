@@ -246,11 +246,11 @@ export class SystemUpdateService {
 		}
 	}
 
-	public isRebootRequired(): boolean {
+	public isRebootRequested(): boolean {
 		if (this.updateInfo) {
 			for (let index = 0; index < this.updateInfo.updateList.length; index++) {
 				const update = this.updateInfo.updateList[index];
-				if ((update.packageRebootType === 'RebootRequested' || update.packageRebootType === 'RebootDelayed') && update.isInstalled) {
+				if (update.packageRebootType === 'RebootRequested' && update.isInstalled) {
 					return true;
 				}
 			}
