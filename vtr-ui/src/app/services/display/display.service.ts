@@ -160,7 +160,7 @@ export class DisplayService {
 		}
 		return undefined;
 	}
-	public setEyeCareAutoMode(value: boolean): Promise<boolean> {
+	public setEyeCareAutoMode(value: boolean): Promise<any> {
 		if (this.displayEyeCareMode) {
 			return this.displayEyeCareMode.setEyeCareAutoMode(value);
 		}

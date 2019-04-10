@@ -61,13 +61,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	ngOnInit() {
 		console.log('subpage-device-setting-display onInit');
 
-
 		this.initEyecaremodeSettings();
-
-
-
-
-
 		this.getCameraPrivacyModeStatus();
 		this.getCameraDetails();
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
@@ -274,7 +268,16 @@ export class SubpageDeviceSettingsDisplayComponent
 			console.log('sunset to sunrise event', $featureStatus.status);
 			if (this.displayService.isShellAvailable) {
 				this.displayService
-					.setEyeCareAutoMode($featureStatus.status);
+					.setEyeCareAutoMode($featureStatus.status).
+					then((response: any) => {
+						console.log('setEyeCareAutoMode.then', response);
+						if (response.result === true) {
+							this.eyeCareDataSource.current = response.colorTemperature;
+						}
+
+					}).catch(error => {
+						console.error('setEyeCareAutoMode', error);
+					});
 			}
 		} catch (error) {
 			console.error(error.message);
