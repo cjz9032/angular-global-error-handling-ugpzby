@@ -11,8 +11,8 @@
 	</div>
 	<h1>Threat locator</h1>
 	<div class="iframe-container">
-		<iframe src="{{ threatLocatorUrl }}"
-			class="w-100 h-100"
+		<iframe [src]="threatLocatorUrl | safeDom : 'resourceUrl'"
+			class="w-100 h-100 border"
 			scrolling="no"
 			frameborder="0"></iframe>
 	</div>

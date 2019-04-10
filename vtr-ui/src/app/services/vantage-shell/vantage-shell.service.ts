@@ -2,6 +2,7 @@
 
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
+import { EventTypes } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
 import { EMPTY, from, Observable } from 'rxjs';
 
@@ -9,7 +10,7 @@ import { EMPTY, from, Observable } from 'rxjs';
 	providedIn: 'root'
 })
 export class VantageShellService {
-	public phoenix: any;
+	private phoenix: any;
 	constructor() {
 		const shell = this.getVantageShell();
 		if (shell) {
@@ -27,6 +28,19 @@ export class VantageShellService {
 		}
 	}
 
+	public registerEvent(eventType: any, handler: any) {
+		this.phoenix.on(eventType, (val) => {
+			console.log("Event fired: ", eventType);
+			console.log("Event value: ", val);
+			handler(val);
+		});
+	}
+
+	public unRegisterEvent(eventType: any) {
+		this.phoenix.off(eventType, (val) => {
+			console.log("unRegister Event: ", eventType);
+		});
+	}
 	private getVantageShell(): any {
 		const win: any = window;
 		return win.VantageShellExtension;
@@ -87,7 +101,7 @@ export class VantageShellService {
 					appVersion: '1.0.0.0',
 					appId: 'ZN8F02EQU628',
 					appName: 'vantage3',
-					channel: 'NonPreload',
+					channel: '',
 					ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
 				});
 				this.phoenix.metrics.isInit = true;
@@ -112,6 +126,13 @@ export class VantageShellService {
 	public getSecurityAdvisor(): Phoenix.SecurityAdvisor {
 		if (this.phoenix) {
 			return this.phoenix.securityAdvisor;
+		}
+		return undefined;
+	}
+
+	public getPermission(): any {
+		if (this.phoenix) {
+			return this.phoenix.permissions;
 		}
 		return undefined;
 	}

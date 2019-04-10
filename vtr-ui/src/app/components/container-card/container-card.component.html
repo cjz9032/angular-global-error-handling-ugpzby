@@ -132,21 +132,20 @@
 					<span class="logo-text">{{logoText}}</span>
 				</div>
 				<div class="row">
+						<a href="{{actionLink}}"
+						target="_blank"
+						vtrMetrics
+						metricsEvent="itemClick"
+						metricsItem="'link.readmore'"
+						[metricsParent]="title">
 					<div class="col col-12 content">
 						<div *ngIf="title"
 							class="title">{{title}}</div>
 						<div *ngIf="actionLink"
 							class="read-more">
-							<a href="{{actionLink}}"
-								target="_blank"
-								vtrMetrics
-								metricsEvent="itemClick"
-								metricsItem="'link.readmore'"
-								[metricsParent]="title">
-								<span class="link-label">Partner Article</span>
-							</a>
 						</div>
 					</div>
+				</a>
 				</div>
 			</div>
 		</div>

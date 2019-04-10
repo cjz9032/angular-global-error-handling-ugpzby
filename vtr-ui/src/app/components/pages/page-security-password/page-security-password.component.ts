@@ -1,10 +1,12 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { MockService } from 'src/app/services/mock/mock.service';
-import { PasswordManager, EventTypes } from '@lenovo/tan-client-bridge';
+import { PasswordManager, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { CMSService } from '../../../services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
+import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 
 @Component({
 	selector: 'vtr-page-security-password',
@@ -13,21 +15,23 @@ import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 })
 export class PageSecurityPasswordComponent implements OnInit {
 
-	title = 'Password Health';
-
 	passwordManager: PasswordManager;
 	statusItem: any;
 	cardContentPositionA: any;
+	securityAdvisor: SecurityAdvisor;
 
 	constructor(
 		public mockService: MockService,
 		private commonService: CommonService,
 		private cmsService: CMSService,
+		private modalService: NgbModal,
 		vantageShellService: VantageShellService
 	) {
+		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		this.passwordManager = vantageShellService.getSecurityAdvisor().passwordManager;
 		this.statusItem = {
-			title: 'DASHLANE PASSWORD MANAGER'
+			title: 'security.passwordManager.statusTitle',
+			status: 'common.securityAdvisor.loading'
 		};
 		const cacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus);
 		if (cacheStatus) {
@@ -80,5 +84,14 @@ export class PageSecurityPasswordComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
+	}
+
+	openDashLaneArticle(): void {
+		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
+			size: 'lg',
+			centered: true,
+			windowClass: 'Article-Detail-Modal'
+		});
+		articleDetailModal.componentInstance.articleId = '0EEB43BE718446C6B49F2C83FC190758';
 	}
 }

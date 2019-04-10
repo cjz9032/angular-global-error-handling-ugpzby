@@ -13,7 +13,7 @@ export class UserService {
 	auth = false;
 	token = '';
 
-	firstName = 'User';
+	public firstName = 'User';
 	lastName = '';
 	initials = '';
 
@@ -57,7 +57,7 @@ export class UserService {
 			this.lid.loginSilently().then((result) => {
 				let metricsData: any;
 				if (result.success && result.status === 0) {
-					this.lid.getUserProfile().then((profile) => {
+					self.lid.getUserProfile().then((profile) => {
 						if (profile.success && profile.status === 0) {
 							self.setName(profile.firstName, profile.lastName);
 							self.auth = true;
@@ -86,8 +86,8 @@ export class UserService {
 					};
 				}
 
-				this.metrics.sendAsync(metricsData).catch((res) => {
-					this.devService.writeLog('loginSilently() Exception happen when send metric ', res.message);
+				self.metrics.sendAsync(metricsData).catch((res) => {
+					self.devService.writeLog('loginSilently() Exception happen when send metric ', res.message);
 				});
 			});
 		}
@@ -106,24 +106,6 @@ export class UserService {
 			return this.lid.enableSSO(useruad, username, userid, userguid);
 		}
 
-		return undefined;
-	}
-
-	public logout(): any {
-		if (this.lid !== undefined) {
-			const that = this;
-			return this.lid.logout().then((result) => {
-				that.metrics.sendAsync({
-					ItemType: 'TaskAction',
-					TaskName: 'LID.SignOut',
-					TaskResult: result && result.success ? 'success' : 'failure'
-				}).catch((res) => {
-					this.devService.writeLog('logout() Exception happen when send metric ', res.message);
-				});
-
-				return result;
-			});
-		}
 		return undefined;
 	}
 
@@ -168,10 +150,29 @@ export class UserService {
 		this.cookies = this.cookieService.getAll();
 		if (this.lid !== undefined) {
 			this.lid.logout().then(function (result) {
+				let metricsData: any;
 				if (result.success && result.status === 0) {
 					self.setName('User', '');
 					self.auth = false;
+					metricsData = {
+						ItemType: 'TaskAction',
+						TaskName: 'LID.SignOut',
+						TaskCount: '1',
+						TaskResult: 'success',
+						TaskParam: ''
+					};
+				} else {
+					metricsData = {
+						ItemType: 'TaskAction',
+						TaskName: 'LID.SignOut',
+						TaskCount: '1',
+						TaskResult: 'failure',
+						TaskParam: ''
+					};
 				}
+				self.metrics.sendAsync(metricsData).catch((res) => {
+					self.devService.writeLog('removeAuth() Exception happen when send metric ', res.message);
+				});
 				self.devService.writeLog('LOGOUT: ', result.success);
 			});
 		}
@@ -185,6 +186,10 @@ export class UserService {
 	}
 
 	setName(firstName: string, lastName: string) {
+		// TODO: NLS
+		if ((!firstName || firstName.length === 0) && (!lastName || lastName.length === 0)) {
+			firstName = 'User';
+		}
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.initials = (this.firstName && this.firstName.length > 0) ? this.firstName[0] : '' +

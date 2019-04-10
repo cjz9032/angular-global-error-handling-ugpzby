@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { QaService } from '../../../services/qa/qa.service';
 import { DevService } from '../../../services/dev/dev.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
+import { DeviceService } from 'src/app/services/device/device.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -39,17 +42,20 @@ export class PageDeviceSettingsComponent implements OnInit {
 		}
 	];
 	cardContentPositionA: any;
-
+	isDesktopMachine = true;
 	constructor(
 		private devService: DevService,
 		public qaService: QaService,
-		private cmsService: CMSService
+		private cmsService: CMSService,
+		private commonService: CommonService,
+		public deviceService: DeviceService
 	) {
 		this.fetchCMSArticles();
 	}
 
 	ngOnInit() {
 		this.devService.writeLog('DEVICE SETTINGS INIT', this.menuItems);
+		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine)
 	}
 
 	fetchCMSArticles() {

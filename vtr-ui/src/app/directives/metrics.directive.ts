@@ -48,11 +48,11 @@ export class MetricsDirective {
 				ItemParent: location ? location + '.' + this.metricsParent : this.metricsParent,
 			};
 			if (this.metricsParam) {
-				data.ItemParam = this.metricsParam;
+				data.ItemParm = this.metricsParam;
 			}
 
 			if (typeof this.metricsValue !== 'undefined') {
-				data.metricsValue = this.metricsValue;
+				data.ItemValue = this.metricsValue;
 			}
 			if (this.metricsItemID) {
 				data.ItemID = this.metricsItemID;
@@ -80,10 +80,10 @@ export class MetricsDirective {
 				ItemParent: location ? location + '.' + this.metricsParent : this.metricsParent,
 			};
 			if (this.metricsParam) {
-				data.ItemParam = this.metricsParam;
+				data.ItemParm = this.metricsParam;
 			}
 			if (typeof this.metricsValue !== 'undefined') {
-				data.metricsValue = this.metricsValue;
+				data.ItemValue = this.metricsValue;
 			}
 			if (this.metricsItemID) {
 				data.ItemID = this.metricsItemID;

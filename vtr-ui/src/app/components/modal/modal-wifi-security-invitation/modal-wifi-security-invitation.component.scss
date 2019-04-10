@@ -13,9 +13,13 @@
 		color: $main_dark;
 		letter-spacing: 0;
 	}
+	.activation{
+		visibility: hidden;
+		margin-top: 1.5rem;
+	}
 	.description {
 		font-size: 1.3rem;
-		font-weight: $weight_medium;
+		font-weight: $weight_bold;
 		color: $main_dark;
 		text-transform: uppercase;
 		opacity: .4;
@@ -47,17 +51,34 @@
 		}
 	}
 	.code-input-group{
-		margin-bottom: 3.5rem;
-		input {
-			height: 6rem;
-			font-weight: $weight_light;
-			box-shadow: $drop_shadow;
-			border: 1px solid #e0e0e0;
+		box-shadow: $drop_shadow;
+		border: 1px solid #e0e0e0;
+		border-radius: 0.5rem;
+		input{
+			font-weight:$weight_bold;
+		}
+		label{
+			font-size: 1.3rem;
+			font-weight: $weight_bold;
+			color: $main_dark;
+			text-transform: uppercase;
+			opacity: .4;
+			letter-spacing: 0;
+		}
+		input:disabled{
+			background-color: white!important
+		}
+		.form-control{
+			border: 0px;
 			font-size: 1.6rem;
-			padding: 0 2.5rem;
+			padding: 0 3rem 1.5rem;
 			letter-spacing: 0.2rem;
 			text-transform: uppercase;
-			border-radius: 0.5rem;
+			margin-bottom: 0.1rem;
+			width: 99%;
+		}
+		.form-control:focus{
+			box-shadow:0px 0px;
 		}
 	}
 	.modal-button {
@@ -67,22 +88,42 @@
 		height: 5rem;
 		font-size: 1.5rem;
 		color: $light;
-		font-weight: $weight_medium;
+		font-weight: $weight_bold;
 	}
 	.join-info{
-		display: flex;
-		align-items: center;
-		height: 5rem;
 		line-height: 2.5rem;
 		font-size: 1.3rem;
-		font-weight: $weight_medium;
-
+		font-weight: $weight_bold;
+		padding-top: 1.5rem;
+		
 		.success{
-			color: $go;
+			font-weight: $weight_bold;
+			font-size: 2.5rem;
 		}
-
+		.successIcon{
+			color:$go_dark;
+			font-size: 2.5rem;
+		}
+		.successtitle{
+			font-weight: $weight_regular;
+			font-size: 1.5rem;
+			margin: 0.5rem 0 2rem;
+		}
 		.failed{
-			color: $stop;
+			color: $alt;
+			font-weight: $weight_bold;
+			font-size: 1.8rem;
+		}
+	}
+
+	.joinfailed{
+		border: 1px solid #F8D5D5;
+		background-color: #FEF8F8;
+		box-shadow: 0 0 15px 0 rgba(0,0,0,0.15);
+
+		input{
+			color: $alt;
+			background-color: #FEF8F8;
 		}
 	}
 }

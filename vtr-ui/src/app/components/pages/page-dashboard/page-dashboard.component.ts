@@ -12,6 +12,9 @@ import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
+import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
+import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
+import { UserService } from '../../../services/user/user.service';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -23,6 +26,7 @@ export class PageDashboardComponent implements OnInit {
 	firstName = 'User';
 	submit = 'Submit';
 	feedbackButtonText = this.submit;
+	securityAdvisor: SecurityAdvisor;
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
 	public isOnline = true;
@@ -48,10 +52,13 @@ export class PageDashboardComponent implements OnInit {
 		private commonService: CommonService,
 		public deviceService: DeviceService,
 		private cmsService: CMSService,
-		private systemUpdateService: SystemUpdateService
+		private systemUpdateService: SystemUpdateService,
+		public userService: UserService,
+		vantageShellService: VantageShellService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
+		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 	}
 
 	ngOnInit() {
@@ -59,7 +66,7 @@ export class PageDashboardComponent implements OnInit {
 		if (this.dashboardService.isShellAvailable) {
 			console.log('PageDashboardComponent.getSystemInfo');
 			this.getSystemInfo();
-			this.getSecurityStatus();
+			// this.getSecurityStatus();
 		}
 
 		const queryOptions = {
@@ -364,9 +371,6 @@ export class PageDashboardComponent implements OnInit {
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			switch (notification.type) {
-				case LenovoIdKey.FirstName:
-					this.firstName = notification.payload;
-					break;
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
