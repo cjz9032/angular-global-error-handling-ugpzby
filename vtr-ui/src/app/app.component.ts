@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
 		private devService: DevService,
 		private displayService: DisplayService,
 		private router: Router,
-		private modalService: NgbModal,
+		// private modalService: NgbModal,
 		public deviceService: DeviceService,
 		private commonService: CommonService,
 		private translate: TranslateService,
@@ -88,19 +88,20 @@ export class AppComponent implements OnInit {
 		const urlParams = new URLSearchParams(window.location.search);
 		this.devService.writeLog('GOT PARAMS', urlParams.toString());
 
-		// When startup try to login Lenovo ID silently (in background),
-		//  if user has already logged in before, this call will login automatically and update UI
-		this.deviceService.getMachineInfo().then((machineInfo) => {
-			if (machineInfo.country !== 'cn') {
+		if (this.deviceService.isShellAvailable) {
+			// When startup try to login Lenovo ID silently (in background),
+			//  if user has already logged in before, this call will login automatically and update UI
+			this.deviceService.getMachineInfo().then((machineInfo) => {
+				if (machineInfo.country !== 'cn') {
+					self.userService.loginSilently();
+				} else {
+					self.devService.writeLog('Do not login silently for China');
+				}
+			}, error => {
+				self.devService.writeLog('getMachineInfo() failed ' + error);
 				self.userService.loginSilently();
-			} else {
-				self.devService.writeLog('Do not login silently for China');
-			}
-		}, error => {
-			self.devService.writeLog('getMachineInfo() failed ' + error);
-			self.userService.loginSilently();
-		});
-
+			});
+		}
 		/********* add this for navigation within a page **************/
 		this.router.events.subscribe(s => {
 			if (s instanceof NavigationEnd) {
@@ -161,17 +162,27 @@ export class AppComponent implements OnInit {
 	@HostListener('window:keyup', ['$event'])
 	onKeyUp(event: KeyboardEvent) {
 		try {
-			const response = new KeyPress(
-				event.key,
-				event.keyCode,
-				event.location,
-				event.ctrlKey,
-				event.altKey,
-				event.shiftKey
-			);
-			window.parent.postMessage(response, 'ms-appx-web://e046963f.lenovocompanionbeta/index.html');
+			if (this.deviceService.isShellAvailable) {
+				const response = new KeyPress(
+					event.key,
+					event.keyCode,
+					event.location,
+					event.ctrlKey,
+					event.altKey,
+					event.shiftKey
+				);
+				window.parent.postMessage(response, 'ms-appx-web://e046963f.lenovocompanionbeta/index.html');
+			}
 		} catch (error) {
 			console.error('AppComponent.onKeyUp', error);
 		}
+	}
+
+	@HostListener('window:load', ['$event'])
+	onLoad(event) {
+		const scale = 1 / (window.devicePixelRatio || 1);
+		const content = `shrink-to-fit=no, width=device-width, initial-scale=${scale}, minimum-scale=${scale}`;
+		document.querySelector('meta[name="viewport"]').setAttribute('content', content);
+		console.log('DPI: ', content);
 	}
 }

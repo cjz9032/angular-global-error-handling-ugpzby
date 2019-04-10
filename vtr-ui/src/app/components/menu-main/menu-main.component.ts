@@ -204,15 +204,15 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			}).on(EventTypes.helloFingerPrintStatusEvent, () => {
 				this.showWindowsHello(windowsHello);
 			});
-		}
-		const windowsHello: WindowsHello =vantageShellService.getSecurityAdvisor().windowsHello;
-		this.showWindowsHello(windowsHello);
-		windowsHello.on(EventTypes.helloFacialIdStatusEvent, () => {
-			this.showWindowsHello(windowsHello);
-		}).on(EventTypes.helloFingerPrintStatusEvent, () => {
-			this.showWindowsHello(windowsHello);
-		});
 
+			// const windowsHello: WindowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
+			this.showWindowsHello(windowsHello);
+			windowsHello.on(EventTypes.helloFacialIdStatusEvent, () => {
+				this.showWindowsHello(windowsHello);
+			}).on(EventTypes.helloFingerPrintStatusEvent, () => {
+				this.showWindowsHello(windowsHello);
+			});
+		}
 		this.commonMenuSubscription = this.translationService.subscription
 			.subscribe((translation: Translation) => {
 				this.onLanguageChange(translation);
