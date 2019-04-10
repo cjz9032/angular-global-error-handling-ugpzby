@@ -218,7 +218,7 @@
 			"audio": {
 				"title": "Audio",
 				"subtitle": "Audio Settings",
-				"description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
+				"description": "This section enables you to automatically optimize or fully configure your audio settings manually , such as Dolby settings, microphone, etc.",
 				"audioSmartsettings": {
 					"title": "Audio Smartsettings",
 					"subtitle": "APPLICATION-BASED SETTINGS",
@@ -310,6 +310,8 @@
 						"tooltip": "Click here to reset Camera properties to default settings.",
 						"reset": "Reset factory settings"
 					},
+					"brightness": "Brightness",
+					"contrast": "Contrast",
 					"autoExposure": "Auto Exposure",
 					"autoFocus": "Auto focus"
 				}
@@ -330,33 +332,41 @@
 				"okayButton": "OK",
 				"cancelButton": "Cancel"
 			},
-			"auto-update-settings": {
+			"autoUpdateSettings": {
 				"title": "Auto update settings",
 				"subtitle": "AUTOMATICALLY INSTALL UPDATES",
 				"critical": {
 					"title": "Critical Updates",
 					"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
 				},
-				"banner": {
-					"title": "An up-to-date system is a healthy system.",
-					"last": "Last update was on",
-					"next": "Next updated scan is scheduled on",
-					"checkButton": "CHECK FOR UPDATES",
-					"checking": "Checking for updates",
-					"downloading": "Downloading updates done",
-					"installing": "Installing updates",
-					"percent": "% complete",
-					"cancelCheck": "Cancel check",
-					"cancelUpdates": "CANCEL UPDATES",
-					"available": "Available updates",
-					"description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-					"installButton": "INSTALL ALL UPDATES",
-					"result": {
-						"success": "All Updates were installed correctly",
-						"fail": {
-							"title": "Some updates were not installed correctly.",
-							"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off computer when installing these updates."
-						}
+				"recommended": {
+					"title": "Recommended Updates",
+					"tooltip": "Recommended driver updates keep your computer running at optimal performance."
+				},
+				"windows": {
+					"title": "Windows Updates",
+					"url": "Windows Settings"
+				}
+			},
+			"banner": {
+				"title": "An up-to-date system is a healthy system.",
+				"last": "Last update was on",
+				"next": "Next updated scan is scheduled on",
+				"checkButton": "CHECK FOR UPDATES",
+				"checking": "Checking for updates",
+				"downloading": "Downloading updates done",
+				"installing": "Installing updates",
+				"percent": "% complete",
+				"cancelCheck": "Cancel check",
+				"cancelUpdates": "CANCEL UPDATES",
+				"available": "Available updates",
+				"description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
+				"installButton": "INSTALL ALL UPDATES",
+				"result": {
+					"success": "All Updates were installed correctly",
+					"fail": {
+						"title": "Some updates were not installed correctly.",
+						"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off computer when installing these updates."
 					}
 				}
 			}
@@ -639,5 +649,57 @@
 			"howToStart": "How do I start using Windows Hello?"
 		}
 	},
-	"faq": {}
+	"faq": {
+		"question1": {
+			"title": "Back up and restore your files",
+			"para1": "It's always good to have a backup. Keep copies of your files on another drive in case something happens to the originals.",
+			"heading1": "Set up your backup",
+			"para2": "Select the Start button, select Settings > Update & security > Backup > Add a drive , and then choose an external drive or network location for your backups.",
+			"para3": "All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files get backed up or how often backups happen, go to More options.",
+			"heading2": "Restore your files",
+			"para4": "If you're missing an important file or folder, here's how to get it back:",
+			"bulletset1": [
+				"1. Type Restore files in the search box on the taskbar, and then select Restore your files with File History.",
+				"2. Look for the file you need, then use the arrows to see all its versions",
+				"3. When you find the version you want, select Restore to save it in its original location. To save it in a different place, press and hold (or right-click) Restore, select Restore to, and then choose a new location."
+			]
+		},
+		"question2": {
+			"title": "How to refresh your PC",
+			"heading1": "Symptom",
+			"para1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings. Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files.",
+			"para2": "Refresh your PC, Here is what will happen: your files and personalized settings won’t change",
+			"bulletset1": [
+				"Your PC settings will be changed back to its defaults",
+				"Apps from windows store will be kept",
+				"Apps you installed from disc or website will be removed",
+				"A list of removed files will be saved on your desktop"
+			],
+			"heading2": "Affected Brands",
+			"para3": "All Desktop and Laptops",
+			"heading3": "Operation System",
+			"para4": "Windows 8, 8.1 & 10",
+			"heading4": "Solution",
+			"para5": "<span style=\"text-decoration: underline;padding:10px 0;font-weight: bold\">Windows 8/8.1</span>",
+			"bulletset2": [
+				"Tap or click <span style=\"font-weight:bold;\"> Settings </span>",
+				"Tap or click <span style=\"font-weight:bold;\"> Update and recovery</span>",
+				"Tap or click <span style=\"font-weight:bold;\">  Recovery</span>",
+				"Under Refresh your PC without affecting your files, tap or click <span style=\"font-weight:bold;\"> Get started.</span>",
+				"Click <span style=\"font-weight:bold;\">  \"Next\"</span>.",
+				"Click <span style=\"font-weight:bold;\"> \"Refresh\" </span>to start the refresh process.",
+				"Once the refresh process is done, you can find a Removed Apps list on the desktop",
+				"You can find the removed apps while refreshing your system"
+			],
+			"para6": "<span style=\"text-decoration: underline;font-weight: bold\">Windows 10</span>",
+			"bulletset3": [
+				"Search for <span style=\"font-weight:bold;\"> refresh </span>in the search tool available in the Start menu",
+				"Click on <span style=\"font-weight:bold;\"> \"Refresh your PC without affecting your files\"</span> in the search results as shown below.",
+				"Click on the <span style=\"font-weight:bold;\"> Get started </span>button just below the heading<span style=\"font-weight:bold;\">  \"Refresh your PC without affecting your files\"</span> to start refreshing your Windows 10 PC."
+			],
+			"header5": "Additional Information",
+			"para7": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
+			"para8": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
+		}
+	}
 }

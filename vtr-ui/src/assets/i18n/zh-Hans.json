@@ -32,6 +32,7 @@
 			"partiallyProtected": "局部受保护",
 			"installed": "已安装",
 			"notInstalled": "未安装",
+			"loading": "Loading",
 			"notFound": "未发现"
 		},
 		"qAndA": {
@@ -161,11 +162,31 @@
 						}
 					}
 				},
+				"powerSettings": {
+					"title": "电源设置",
+					"alwaysUSB": {
+						"title": "持续 USB 供电",
+						"description": "计算机处于睡眠、休眠或关机模式时，通过计算机上的 Always on USB 接口为 USB 设备充电。可从黄色或有特定丝网印刷图标的 USB 接口为智能手机或平板电脑充电。",
+						"checkbox": "计算机处于关闭状态时支持从笔记本电脑电池进行 USB 充电。"
+					},
+					"easyResume": {
+						"title": "轻松恢复",
+						"description": "如果频繁开合计算机外盖，则启用此功能可缩短恢复时间。",
+						"tooltip": "如果频繁开合计算机外盖，则此功能将改善恢复时间。启用后，在合上计算机外盖时，它将进入低功耗模式，但如果在合上外盖后 15 分钟内重新打开外盖，则它将立即恢复。此功能还使笔记本电脑可在系统挂起之前尝试完成暂挂活动（如发送电子邮件或下载文件）。"
+					}
+				},
+				"otherSettings": {
+					"title": "其他设置",
+					"vantageToolbar": {
+						"title": "Lenovo Vantage 工具栏",
+						"tooltip": "将 Vantage 工具栏固定到 Windows 任务栏以轻松地获取更多电池详细信息及访问快速设置。"
+					}
+				},
 				"batterySettings": {
 					"title": "电池设置",
 					"airplanePower": {
 						"title": "飞行电源模式",
-						"tooltip": "通过控制系统耗电量保护飞机交流电源插座。启用飞行电源模式后，计算机将通过限制电池充电速度和系统性能来降低耗电量。"
+						"description": "通过控制系统耗电量保护飞机交流电源插座。启用飞行电源模式后，计算机将通过限制电池充电速度和系统性能来降低耗电量。"
 					},
 					"batteryThreshold": {
 						"title": "电池充电阈值",
@@ -180,35 +201,17 @@
 					},
 					"expressCharging": {
 						"title": "快速充电",
+						"description": "Express Charge allows your battery to a full charge much faster than normal mode.",
 						"tooltip": "快速充电可用比常规模式更快的速度将电池充满电。"
 					},
 					"conservationMode": {
 						"title": "节电模式",
+						"description": "This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
 						"tooltip": {
 							"line1": "此功能可有助于延长插电使用时的电池寿命。",
 							"line2": "启用此模式时，电池只充至容量的 55-60%，从而最大化电池使用寿命。但是，这将缩短断开交流电源后的计算机使用时间。",
 							"line3": "注：快速充电和节电模式无法同时进行。如果启用其中一个模式，则将自动关闭另一个模式。"
 						}
-					}
-				},
-				"powerSettings": {
-					"title": "电源设置",
-					"alwaysUSB": {
-						"title": "持续 USB 供电",
-						"tooltip": "计算机处于睡眠、休眠或关机模式时，通过计算机上的 Always on USB 接口为 USB 设备充电。可从黄色或有特定丝网印刷图标的 USB 接口为智能手机或平板电脑充电。",
-						"checkbox": "计算机处于关闭状态时支持从笔记本电脑电池进行 USB 充电。"
-					},
-					"easyResume": {
-						"title": "轻松恢复",
-						"description": "如果频繁开合计算机外盖，则启用此功能可缩短恢复时间。",
-						"tooltip": "如果频繁开合计算机外盖，则此功能将改善恢复时间。启用后，在合上计算机外盖时，它将进入低功耗模式，但如果在合上外盖后 15 分钟内重新打开外盖，则它将立即恢复。此功能还使笔记本电脑可在系统挂起之前尝试完成暂挂活动（如发送电子邮件或下载文件）。"
-					}
-				},
-				"otherSettings": {
-					"title": "其他设置",
-					"vantageToolbar": {
-						"title": "Lenovo Vantage 工具栏",
-						"tooltip": "将 Vantage 工具栏固定到 Windows 任务栏以轻松地获取更多电池详细信息及访问快速设置。"
 					}
 				}
 			},
