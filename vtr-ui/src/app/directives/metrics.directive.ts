@@ -27,86 +27,83 @@ export class MetricsDirective {
 	@Input() metricsViewOrder: string;
 	@Input() metricsPageNumber: string;
 
+	// SettingUpdate
+	@Input() metricsSettingName: string;
+	@Input() metricsSettingParm: string;
+	@Input() metricsSettingValue: string;
+
+	ComposeMetricsData() {
+		const data: any = {
+		};
+		const eventName = this.metricsEvent.toLowerCase();
+		switch (eventName) {
+			case 'itemclick': {
+				data.ItemType = 'ItemClick';
+				data.ItemName = this.metricsItem;
+				data.ItemParent = this.metricsParent;
+				if (this.metricsParam) {
+					data.ItemParm = this.metricsParam;
+				}
+				if (typeof this.metricsValue !== 'undefined') {
+					data.ItemValue = this.metricsValue;
+				}
+			}
+			break;
+			case 'docclick': {
+				data.ItemType = 'DocClick';
+				data.ItemParent = this.metricsParent;
+				if (this.metricsItemID) {
+					data.ItemID = this.metricsItemID;
+				}
+				if (this.metricsItemCategory) {
+					data.ItemCategory = this.metricsItemCategory;
+				}
+				if (this.metricsItemPosition) {
+					data.ItemPosition = this.metricsItemPosition;
+				}
+				if (this.metricsViewOrder) {
+					data.ViewOrder = this.metricsViewOrder;
+				}
+				if (this.metricsPageNumber) {
+					data.PageNumber = this.metricsPageNumber;
+				}
+			}
+			break;
+			case 'settingupdate': {
+				data.ItemType = 'SettingUpdate';
+				data.SettingParent = this.metricsParent;
+				data.SettingName = this.metricsSettingName;
+				data.SettingValue = this.metricsSettingValue;
+				if (this.metricsSettingParm) {
+					data.SettingParm = this.metricsSettingParm;
+				}
+			}
+		}
+		return data;
+	}
 
 	@HostListener('click', ['$event.target'])
 	onclick(target) {
-
-		var parents = this.getParents(target, "[data-component]");
-		if (!this.metricsParent && parents) {
-			this.metricsParent = parents.join('.');
+		if (!this.metricsParent) {
+			const location = window.location.href.substring(window.location.href.indexOf('#') + 2).replace(/[`~!@#$%^&*()_|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '');
+			if (location) {
+				this.metricsParent = location;
+			} else {
+				const parents = this.getParents(target, "[data-component]");
+				this.metricsParent = parents.join('.').split(' ').join('').toLowerCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '').substr(0, 25);
+			}
 		}
-		const location = window.location.href.substring(window.location.href.indexOf('#') + 2).replace(/[`~!@#$%^&*()_|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '');
-		this.metricsItem = typeof this.metricsItem === 'string' ? this.metricsItem.split(" ").join("").toLowerCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '').substr(0, 25) : this.metricsItem;
-		this.metricsEvent = typeof this.metricsEvent === 'string' ? this.metricsEvent.split(" ").join("").toLowerCase() : this.metricsEvent;
-		this.metricsValue = typeof this.metricsValue === 'string' ? this.metricsValue.split(" ").join("").toLowerCase() : this.metricsValue;
-		this.metricsParent = typeof this.metricsParent === 'string' ? this.metricsParent.split(" ").join("").toLowerCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '').substr(0, 25) : this.metricsParent;
-		this.metricsParam = typeof this.metricsParam === 'string' ? this.metricsParam.split(" ").join("").toLowerCase() : this.metricsParam;
-		if (this.metrics && this.metrics.sendAsync) {
-			const data: any = {
-				ItemName: this.metricsItem,
-				ItemType: this.metricsEvent,
-				ItemParent: location ? location + '.' + this.metricsParent : this.metricsParent,
-			};
-			if (this.metricsParam) {
-				data.ItemParm = this.metricsParam;
-			}
 
-			if (typeof this.metricsValue !== 'undefined') {
-				data.ItemValue = this.metricsValue;
-			}
-			if (this.metricsItemID) {
-				data.ItemID = this.metricsItemID;
-			}
-			if (this.metricsItemCategory) {
-				data.ItemCategory = this.metricsItemCategory;
-			}
-			if (this.metricsItemPosition) {
-				data.ItemPosition = this.metricsItemPosition;
-			}
-			if (this.metricsViewOrder) {
-				data.ViewOrder = this.metricsViewOrder;
-			}
-			if (this.metricsPageNumber) {
-				data.PageNumber = this.metricsPageNumber;
-			}
+		const data = this.ComposeMetricsData();
+		if (this.metrics && this.metrics.sendAsync) {
 			this.metrics.sendAsync(data);
 		}
 
-		// just for debugging, would be removed in the future
-		{
-			const data: any = {
-				ItemName: this.metricsItem,
-				ItemType: this.metricsEvent,
-				ItemParent: location ? location + '.' + this.metricsParent : this.metricsParent,
-			};
-			if (this.metricsParam) {
-				data.ItemParm = this.metricsParam;
-			}
-			if (typeof this.metricsValue !== 'undefined') {
-				data.ItemValue = this.metricsValue;
-			}
-			if (this.metricsItemID) {
-				data.ItemID = this.metricsItemID;
-			}
-			if (this.metricsItemCategory) {
-				data.ItemCategory = this.metricsItemCategory;
-			}
-			if (this.metricsItemPosition) {
-				data.ItemPosition = this.metricsItemPosition;
-			}
-			if (this.metricsViewOrder) {
-				data.ViewOrder = this.metricsViewOrder;
-			}
-			if (this.metricsPageNumber) {
-				data.PageNumber = this.metricsPageNumber;
-			}
-
-			console.log('Sending the metrics [ItemType : ' + this.metricsEvent + ']\n' + JSON.stringify(data));
-		}
+		// for debug
+		console.log('------reporting metrics------\n'.concat(JSON.stringify(data)));
 	}
 
 	getParents(elem, selector?) {
-
 		var parents = [];
 		var firstChar;
 		if (selector) {

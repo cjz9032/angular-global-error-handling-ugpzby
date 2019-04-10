@@ -34,7 +34,7 @@ export class WidgetSecurityStatusComponent implements OnInit {
 			this.items.push(new WindowsHelloWidgetItem(this.securityAdvisor.windowsHello, this.commonService, this.translateService));
 		}
 		const windowsHello = this.securityAdvisor.windowsHello;
-		windowsHello.refresh();
+		this.securityAdvisor.refresh();
 		if (windowsHello.facialIdStatus || windowsHello.fingerPrintStatus) {
 			this.showWindowsHello(windowsHello);
 		}

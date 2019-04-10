@@ -194,8 +194,9 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				subitems: []
 			});
 		}
-		if (vantageShellService.getSecurityAdvisor()) {
-			const windowsHello: WindowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
+		const securityAdvisor = vantageShellService.getSecurityAdvisor();
+		if (securityAdvisor) {
+			const windowsHello: WindowsHello = securityAdvisor.windowsHello;
 			if (windowsHello.facialIdStatus || windowsHello.fingerPrintStatus) {
 				this.showWindowsHello(windowsHello);
 			}
@@ -204,8 +205,15 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			}).on(EventTypes.helloFingerPrintStatusEvent, () => {
 				this.showWindowsHello(windowsHello);
 			});
-		}
 
+			// const windowsHello: WindowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
+			this.showWindowsHello(windowsHello);
+			windowsHello.on(EventTypes.helloFacialIdStatusEvent, () => {
+				this.showWindowsHello(windowsHello);
+			}).on(EventTypes.helloFingerPrintStatusEvent, () => {
+				this.showWindowsHello(windowsHello);
+			});
+		}
 		this.commonMenuSubscription = this.translationService.subscription
 			.subscribe((translation: Translation) => {
 				this.onLanguageChange(translation);

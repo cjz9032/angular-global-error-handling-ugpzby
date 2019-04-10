@@ -13,7 +13,7 @@
 				"sub1": "我的安全性",
 				"sub2": "反病毒",
 				"sub3": "WiFi 安全",
-				"sub4": "密码保护",
+				"sub4": "密码健康",
 				"sub5": "因特网保护",
 				"sub6": "Windows Hello"
 			},
@@ -31,7 +31,9 @@
 			"disabled": "已禁用",
 			"partiallyProtected": "局部受保护",
 			"installed": "已安装",
-			"notInstalled": "未安装"
+			"notInstalled": "未安装",
+			"loading": "Loading",
+			"notFound": "未发现"
 		},
 		"qAndA": {
 			"title": "关于计算机的常见问题解答​",
@@ -139,7 +141,7 @@
 					"cooling": "散热",
 					"other": "其他"
 				},
-				"powerSmartsettings": {
+				"powerSmartSettings": {
 					"title": "电源智能设置",
 					"subtitle": "智能散热",
 					"description1": "此功能动态调节散热设置以满足您的需求。此功能开启时，在手持或空闲状态下可调节设置使设备保持较低温度或较低噪声。而设备放置在稳定平面上时，此功能可优化性能。此功能关闭时，您可以手动设置散热优先级。",
@@ -160,11 +162,31 @@
 						}
 					}
 				},
+				"powerSettings": {
+					"title": "电源设置",
+					"alwaysUSB": {
+						"title": "持续 USB 供电",
+						"description": "计算机处于睡眠、休眠或关机模式时，通过计算机上的 Always on USB 接口为 USB 设备充电。可从黄色或有特定丝网印刷图标的 USB 接口为智能手机或平板电脑充电。",
+						"checkbox": "计算机处于关闭状态时支持从笔记本电脑电池进行 USB 充电。"
+					},
+					"easyResume": {
+						"title": "轻松恢复",
+						"description": "如果频繁开合计算机外盖，则启用此功能可缩短恢复时间。",
+						"tooltip": "如果频繁开合计算机外盖，则此功能将改善恢复时间。启用后，在合上计算机外盖时，它将进入低功耗模式，但如果在合上外盖后 15 分钟内重新打开外盖，则它将立即恢复。此功能还使笔记本电脑可在系统挂起之前尝试完成暂挂活动（如发送电子邮件或下载文件）。"
+					}
+				},
+				"otherSettings": {
+					"title": "其他设置",
+					"vantageToolbar": {
+						"title": "Lenovo Vantage 工具栏",
+						"tooltip": "将 Vantage 工具栏固定到 Windows 任务栏以轻松地获取更多电池详细信息及访问快速设置。"
+					}
+				},
 				"batterySettings": {
 					"title": "电池设置",
 					"airplanePower": {
 						"title": "飞行电源模式",
-						"tooltip": "通过控制系统耗电量保护飞机交流电源插座。启用飞行电源模式后，计算机将通过限制电池充电速度和系统性能来降低耗电量。"
+						"description": "通过控制系统耗电量保护飞机交流电源插座。启用飞行电源模式后，计算机将通过限制电池充电速度和系统性能来降低耗电量。"
 					},
 					"batteryThreshold": {
 						"title": "电池充电阈值",
@@ -179,35 +201,17 @@
 					},
 					"expressCharging": {
 						"title": "快速充电",
+						"description": "Express Charge allows your battery to a full charge much faster than normal mode.",
 						"tooltip": "快速充电可用比常规模式更快的速度将电池充满电。"
 					},
 					"conservationMode": {
 						"title": "节电模式",
+						"description": "This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
 						"tooltip": {
 							"line1": "此功能可有助于延长插电使用时的电池寿命。",
 							"line2": "启用此模式时，电池只充至容量的 55-60%，从而最大化电池使用寿命。但是，这将缩短断开交流电源后的计算机使用时间。",
 							"line3": "注：快速充电和节电模式无法同时进行。如果启用其中一个模式，则将自动关闭另一个模式。"
 						}
-					}
-				},
-				"powerSettings": {
-					"title": "电源设置",
-					"alwaysUSB": {
-						"title": "持续 USB 供电",
-						"tooltip": "计算机处于睡眠、休眠或关机模式时，通过计算机上的 Always on USB 接口为 USB 设备充电。可从黄色或有特定丝网印刷图标的 USB 接口为智能手机或平板电脑充电。",
-						"checkbox": "计算机处于关闭状态时支持从笔记本电脑电池进行 USB 充电。"
-					},
-					"easyResume": {
-						"title": "轻松恢复",
-						"description": "如果频繁开合计算机外盖，则启用此功能可缩短恢复时间。",
-						"tooltip": "如果频繁开合计算机外盖，则此功能将改善恢复时间。启用后，在合上计算机外盖时，它将进入低功耗模式，但如果在合上外盖后 15 分钟内重新打开外盖，则它将立即恢复。此功能还使笔记本电脑可在系统挂起之前尝试完成暂挂活动（如发送电子邮件或下载文件）。"
-					}
-				},
-				"otherSettings": {
-					"title": "其他设置",
-					"vantageToolbar": {
-						"title": "Lenovo Vantage 工具栏",
-						"tooltip": "将 Vantage 工具栏固定到 Windows 任务栏以轻松地获取更多电池详细信息及访问快速设置。"
 					}
 				}
 			},
@@ -272,10 +276,10 @@
 				"jumpTo": {
 					"title": "跳到设置：",
 					"shortcuts": {
-						"display":{
+						"display": {
 							"title": "显示"
 						},
-						"camera":{
+						"camera": {
 							"title": "摄像头"
 						}
 					}
@@ -316,6 +320,21 @@
 		"systemUpdates": {
 			"title": "系统更新",
 			"history": "完整历史记录",
+			"notAvailable": "Not Available",
+			"notInstalled": "Not Installed",
+			"popup": {
+				"reboot": "Reboot",
+				"shutdown": "Shut Down",
+				"rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
+				"shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
+				"rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
+				"rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+				"okayButton": "OK",
+				"cancelButton": "Cancel",
+				"rebootButton": "REBOOT NOW",
+				"dismissButton": "DISMISS",
+				"rebootPending": "Reboot pending"
+			},
 			"autoUpdateSettings": {
 				"title": "自动更新设置",
 				"subtitle": "自动安装更新",
@@ -406,7 +425,7 @@
 			"fully": "Fully protected",
 			"fullyDesc": "Congratulations! You are well protected.",
 			"notFully": "Not fully protected",
-			"notFullyDesc": "You are not fully protected, Learn how to better protect yourself now.",
+			"notFullyDesc": "You are not fully protected. Learn how to better protect yourself now.",
 			"security101": "SECURITY ADVISOR 101",
 			"firewall": "Firewall",
 			"pwdHealth": "Password Health",
@@ -415,11 +434,11 @@
 			"wifiConnected": "WiFi & Connected Home Security",
 			"connectedHomeSecurity": "Connected Home Security",
 			"fingerprint": "Fingerprint reader",
-			"seeAllNetwork": "See all joined networks",
+			"seeAllNetwork": "查看所有已连接的网络",
 			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
-			"good": "Good",
-			"malicious": "Malicious",
-			"suspicious": "Suspicious"
+			"good": "GOOD",
+			"malicious": "MALICIOUS",
+			"suspicious": "SUSPICIOUS"
 		},
 		"antivirus": {
 			"common": {
@@ -431,7 +450,7 @@
 				"dedicated": "Dedicated security that consistently outperforms Defender and other leading AV providers",
 				"deviceToCloud": "Device to cloud technology that won't slow down your PC",
 				"poweredBy": "Powered By McAfee",
-				"privacyTerms": "<p>Read more on the <a vtrMetrics metricsItem=\"privacyPolicy\" metricsEvent=\"itemClick\" href=\"https://www.mcafee.com/consumer/en-us/policy/global/legal.html \"target=\"_blank\" class=\"learnmore\">Privacy Policy</a> and <a vtrMetrics metricsItem=\"termsOfServices\" metricsEvent=\"itemClick\" href=\"https://www.mcafee.com/consumer/en-us/policy/global/legal.html\" target=\"_blank\" class=\"learnmore\">Terms of Service</a></p>",
+				"privacyTerms": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
 				"mcafeePremium": "McAfee premium protection",
 				"protectedBy": "You are currently protected by",
 				"betterProtected": ".However, you could be better protected with McAfee LifeSafe",
@@ -444,7 +463,7 @@
 			"windowsDefender": {
 				"optimallyProtected": "Not Optimally Protected",
 				"subtitle": "You are currently being protected by Windows Defender.However, you could be better protected with McAfee LiveSafe. Learn more below.",
-				"learnMore": "LEARN MORE ABOUT MCAFEE",
+				"learnMore": "LEARN MORE ABOUT McAfee",
 				"windowsProtected": "Windows Defender basic protection",
 				"windowsSubtitle": "Windows defender offers basic protection for your device"
 			},
@@ -489,50 +508,53 @@
 				"disable": "DISABLED",
 				"less": "Less info",
 				"more": "More info",
-				"network-history": "Network History",
+				"networkHistory": "Network History",
 				"connect": "Connected last",
-				"show-more": "Show more",
-				"show-less": "Show less",
+				"showmore": "Show more",
+				"showless": "Show less",
 				"button": "Enable Wifi security",
-				"disable-decribe": "Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones."
+				"disableDecribe": "Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones."
 			},
-			"threat-locator": {
+			"threatlocator": {
 				"describe": "Use the threat detector to determine the safety of the networks around you.",
-				"button": "Check your location"
+				"button": "Check threat"
 			},
-			"location-modal": {
+			"locationmodal": {
 				"title": "Enable location services",
 				"describe": "To use Lenovo WiFi Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?",
-				"yes": "YES",
-				"no": "NO"
+				"agree": "AGREE",
+				"cancel": "CANCEL"
 			}
 		},
 		"homeprotection": {
-			"home-security": {
+			"homesecurity": {
 				"title": "Connected Home Security",
-				"title-describe": "Connected Home Security keeps you safe in three ways:",
-				"home-security-affect1": "Connected Home Security ensures your device is safe, and has not been compromised",
-				"home-security-affect2": "Connected Home Security ensures that the networks you are connected to are safe",
-				"home-security-affect3": "Connected Home Security ensures that other devices connected to your home network are safe.",
+				"titleDescription": "Connected Home Security keeps you safe in three ways:",
+				"homeSecurityAffect1": "Connected Home Security ensures your device is safe, and has not been compromised",
+				"homeSecurityAffect2": "Connected Home Security ensures that the networks you are connected to are safe",
+				"homeSecurityAffect3": "Connected Home Security ensures that other devices connected to your home network are safe.",
 				"describe": "Unsafe devices and networks can introduce malware, lead to identity theft, and leak private and financial information. Enable this feature to reduce the risk of having your device, and your home network exposed to attackers",
 				"subtitle": "Peace of Mind",
-				"subtitle-describe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more in about Connected Home Security in Tips and Tricks.",
-				"try-now": "Try Now"
+				"subtitleDescribe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more in about Connected Home Security in Tips and Tricks.",
+				"tryNow": "Try Now"
 			},
-			"invitation-code": {
+			"invitationcode": {
 				"button": "Enter invitation code",
-				"button-describe": "enter invitation code require enable wifi security",
+				"buttonDescribe": "enter invitation code require enable wifi security",
 				"title": "Already have Connected Home Security?",
-				"title-describe": "Add this device to your Connected Home",
-				"enter-code": "Enter your connection code",
-				"add-home": "Add Home",
-				"ok": "Ok",
+				"titleDescribe": "Add this device to your Connected Home",
+				"enterCode": "Enter your connection code",
+				"addHome": "Add Home",
+				"ok": "OK",
+				"continue": "CONTINUE",
 				"cancel": "Cancel",
-				"validate-code": "VALIDATE CODE",
-				"success": "Success",
-				"try-again": "Please try again!"
+				"validateCode": "VALIDATE CODE",
+				"success": "Successfully connected",
+				"canUse": "You can now start using Connected Home Security",
+				"tryAgain": "Incorrect code, please try again!",
+				"activationCode": "ACTIVATION CODE"
 			},
-			"security-health": {
+			"securityhealth": {
 				"title": "Security Health",
 				"deviceName1": "Apps From Trusted Sources",
 				"deviceName2": "Developer Mode",
@@ -546,10 +568,245 @@
 				"deviceName10": "Automatic Updates Service Availability",
 				"fail": "FAILED",
 				"pass": "PASSED",
+				"learnMoreAboutSecurityHealth": "Learn more about each of these components <tag>here.</tag>",
 				"peaceOfMind": "Do you want more peace of mind?",
 				"button": "Enable Wifi security"
 			}
+		},
+		"vpn": {
+			"statusTitle": "SURFEASY VPN",
+			"title": "VPN Security",
+			"header": "SurfEasy Virtual Private Network",
+			"whatIsSufEasy": "SurfEasy is a VPN, or Virtual Private Network provider that helps protect you while you are surfing the internet. Without a VPN, your PC may be more vulnerable to attackers and identity thieves. A VPN runs silently in the background and provides additional safety and privacy measures while you use the internet.",
+			"whatCanSufEasy1": "A Virtual Private Network provider helps you protect while you are surfing the internet. Without a VPN, your pc may be more vulnerable to attackers and identity thieves. A VPN runs silently in the background and provides safety and privacy measures.",
+			"getSufEasy": "Get SurfEasy",
+			"openSufEasy": "Open SurfEasy",
+			"whySufEasy": "Why SurfEasy?",
+			"whySufEasyDescription": "SurfEasy makes it easy to stay safe while surfing the internet. It helps you remain anonymous, and adds an additional layer of security between you and anyone that wants your personal information.",
+			"startUseSufEasy": "Start using SurfEasy Today",
+			"startUseSufEasy1": "Using a VPN adds Security. SurfEasy encrypts your data, adding anonymity and security.",
+			"startUseSufEasy2": "Once registered SurfEasy runs silently in the background so everything runs the same but better.",
+			"startUseSufEasy3": "Start using SurfEasy to protect yourself while browsing the internet. Enjoy the no-log VPN that works on every device.",
+			"startUseSufEasy4": "As a surfEasy user enjoy 250 MB of free data every 30 days! Unlock additional data by following the steps on the \"Rewards\" tab of the SurfEasy app.",
+			"howToUseSufEasy": "How to use SurfEasy VPN",
+			"whatCanSufEasy2": "A VPN provider helps to protect you while you are surfing the internet. Without a VPN, our PC may be moe vulnerable to attackers and identity thieves. A VPN runs silently in the bacground and provides safety and privacy measures.",
+			"getStarted": "Get started:",
+			"getStarted1": "After installing SurfEasy, register and make an account.",
+			"getStarted2": "Log in with your secure credentials.",
+			"getStarted3": "Wait for confirmation to know you are connected, and then begin browsing securely.",
+			"howToGetData": "HOW TO GET FREE DATA:",
+			"howToGetData1": "Confirm email and earn +250 MB",
+			"howToGetData2": "Add second device and earn +250 Mb",
+			"howToGetData3": "Refer a friend and earn +500 MB",
+			"howToGetData4": "Like SurfEasy on Facebook and earn +100 MB",
+			"howToGetData5": "Follow SurfEasy on Twitter and earn +100 MB",
+			"poweredBySurfEasy": "Powered By SurfEasy",
+			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+		},
+		"passwordManager": {
+			"statusTitle": "DASHLANE PASSWORD MANAGER",
+			"title": "Password Health",
+			"header": "Dashlane",
+			"whatIsPmNotInstalled": "The safest, easiest way to save strong, complex passwords and log in instantly on every site.",
+			"whatIsPmInstalled": "A safer digital life is waiting: Add passwords, enable Dark Web Monitoring and autofill personal and payment info.",
+			"startProtect": "Start protecting your online accounts the simple way.",
+			"getDashLane": "Get DashLane",
+			"learnMoreAbout": "<tag>Learn more</tag> about making the most of DashLane",
+			"openDashLane": "Open DashLane",
+			"neverForget": "DashLane: Never forget another password",
+			"whatIsDashLane": "DashLane is a password manager and digital protection app that works with your browser. It automatically saves passwords and personal data, remembers it all for you, and stores everything securely. Dashlane also analyzes your account security and provides easy ways to improve your password health.",
+			"helpYou": "DashLane helps you",
+			"helpYou1": "Remember unlimited usernames and passwords.",
+			"helpYou2": "Log in instantly everywhere for seamless browsing",
+			"helpYou3": "Sync across devices so you're never without access to important accounts",
+			"helpYou4": "Improve your online protection with easy, actionable advice",
+			"getStarted": "Getting started with DashLane?",
+			"checkOutThisGuide": "Use DashLane to stay safe online while saving time and frustration. For detailed instructions on how to get started, <tag>check out this guide.</tag>",
+			"allowsYou": "DashLane allows you to",
+			"allowsYou1": "Log in instantly every where for seamless Browsing-Sync across devices so you're never without access to important accounts",
+			"allowsYou2": "Monitor the dark web for your personal information",
+			"allowsYou3": "Stay safe on unsecured WiFi networks with built in VPN",
+			"allowsYou4": "Share passwords securely without revealing them",
+			"poweredByDashLane": "Powered By DashLane",
+			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+		},
+		"windowsHello": {
+			"statusTitle": "WINDOWS HELLO",
+			"title": "Windows Hello",
+			"protectYourDevice": "Protect your device with these Lenovo recommended security options.",
+			"signIn": "Sign in quickly and securely with Windows Hello.",
+			"setUp": "Setup Windows Hello",
+			"whyWindowsHello": "Why Windows Hello?",
+			"whyWindowsHelloDescription1": "Windows Hello makes logging into your PC easier and more secure, and can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello.",
+			"startUsingToday": "Start using Windows Hello Today",
+			"visitAndRegister": "Visit the Windows Hello page and register your fingerprint.",
+			"visitInSettings": "<tag> Visit Windows Hello</tag> in system settings",
+			"unlock": "Use Windows Hello to log into and unlock your PC with a touch of a finger on the sensor.",
+			"startUsingWindowsHello": "Start using Windows Hello to log into Microsoft Apps such as Outlook, OneDrive, Office 365 and Xbox Live.",
+			"visitMicrosoft": "Visit Microsoft",
+			"poweredByWindowsHello": "Powered By Windows Hello",
+			"privacyPolicy": "Read more on the <tag>Privacy Policy</tag>",
+			"whyWindowsHelloDescription2": "Windows Hello makes logging into your PC easier and more secure. And you can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello",
+			"authentication": "Windows Hello Authentication",
+			"traditional": "Traditional passwords can be stolen and used to access your account from anywhere in the world. More secure and convinient. Windows Hello is the next generation of a password. Use your fingerprint reader [or IR camera] instead of insecure passwords to log in.",
+			"howToStart": "How do I start using Windows Hello?"
 		}
 	},
-	"faq": {}
+	"faq": {
+		"footer": {
+			"title": "Not finding what you are looking for?",
+			"description": "NEED ADDITIONAL SUPPORT? DON’T HESITATE TO CONTACT US VIA:",
+			"body": "Lenovo Community",
+			"button": "GO TO FORUM"
+		},
+		"question1": {
+			"title": "Back up and restore your files",
+			"para1": "It's always good to have a backup. Keep copies of your files on another drive in case something happens to the originals.",
+			"heading1": "Set up your backup",
+			"para2": "Select the Start button, select Settings > Update & security > Backup > Add a drive , and then choose an external drive or network location for your backups.",
+			"para3": "All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files get backed up or how often backups happen, go to More options.",
+			"heading2": "Restore your files",
+			"para4": "If you're missing an important file or folder, here's how to get it back:",
+			"bulletset1": [
+				"1. Type Restore files in the search box on the taskbar, and then select Restore your files with File History.",
+				"2. Look for the file you need, then use the arrows to see all its versions",
+				"3. When you find the version you want, select Restore to save it in its original location. To save it in a different place, press and hold (or right-click) Restore, select Restore to, and then choose a new location."
+			]
+		},
+		"question2": {
+			"title": "How to refresh your PC",
+			"heading1": "Symptom",
+			"para1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings. Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files.",
+			"para2": "Refresh your PC, Here is what will happen: your files and personalized settings won’t change",
+			"bulletset1": [
+				"Your PC settings will be changed back to its defaults",
+				"Apps from windows store will be kept",
+				"Apps you installed from disc or website will be removed",
+				"A list of removed files will be saved on your desktop"
+			],
+			"heading2": "Affected Brands",
+			"para3": "All Desktop and Laptops",
+			"heading3": "Operation System",
+			"para4": "Windows 8, 8.1 & 10",
+			"heading4": "Solution",
+			"para5": "<span style=\"text-decoration: underline;padding:10px 0;font-weight: bold\">Windows 8/8.1</span>",
+			"bulletset2": [
+				"Tap or click <span style=\"font-weight:bold;\"> Settings </span>",
+				"Tap or click <span style=\"font-weight:bold;\"> Update and recovery</span>",
+				"Tap or click <span style=\"font-weight:bold;\">  Recovery</span>",
+				"Under Refresh your PC without affecting your files, tap or click <span style=\"font-weight:bold;\"> Get started.</span>",
+				"Click <span style=\"font-weight:bold;\">  \"Next\"</span>.",
+				"Click <span style=\"font-weight:bold;\"> \"Refresh\" </span>to start the refresh process.",
+				"Once the refresh process is done, you can find a Removed Apps list on the desktop",
+				"You can find the removed apps while refreshing your system"
+			],
+			"para6": "<span style=\"text-decoration: underline;font-weight: bold\">Windows 10</span>",
+			"bulletset3": [
+				"Search for <span style=\"font-weight:bold;\"> refresh </span>in the search tool available in the Start menu",
+				"Click on <span style=\"font-weight:bold;\"> \"Refresh your PC without affecting your files\"</span> in the search results as shown below.",
+				"Click on the <span style=\"font-weight:bold;\"> Get started </span>button just below the heading<span style=\"font-weight:bold;\">  \"Refresh your PC without affecting your files\"</span> to start refreshing your Windows 10 PC."
+			],
+			"header5": "Additional Information",
+			"para7": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
+			"para8": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
+		},
+		"question3": {
+			"title": "How to know your machine's CPU",
+			"heading1": "Symptom",
+			"para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
+			"heading2": "Affected Brands",
+			"para2": "The above symptom is associated with, but not limited to, the following systems:",
+			"para3": "All Desktop and Laptops",
+			"heading3": "Operating System",
+			"para4": "Windows 7, 8, 10",
+			"heading4": "Solution",
+			"para5": "<span style=\"text-decoration: underline;padding:10px 0;font-weight: bold\">Windows 7 or Vista</span>",
+			"bulletset1": [
+				"Open System by clicking the Start button Picture of the Start button, right-clicking Computer, and then clicking Properties",
+				"Under System, you can view the system type."
+			],
+			"para6": "<span style=\"text-decoration: underline;font-weight: bold\">Windows 8 and Windows 10</span>",
+			"bulletset2": [
+				"Method 1: View the System window in Control Panel",
+				"Swipe in from the right edge of the screen, and then tap Search. Or, if you are using a mouse, point to the lower-right corner of the screen, and then click Search.",
+				"Type system in the search box, and then tap or click Settings.",
+				"Tap or click System",
+				"If you are running a 64-bit version of Windows 8, 64-bit Operating System is displayed in the System type field under the System heading. If you are running a 32-bit version of Windows 8, 32-bit Operating System is displayed in the System type field under the System heading.",
+				"Method 2: View the System Information window",
+				"Swipe in from the right edge of the screen, and then tap Search. Or, if you are using a mouse, point to the lower-right corner of the screen, and then click Search.",
+				"In the search box, type system information",
+				"Tap or click System, tap or click System Information, and then click System Summary.",
+				"If you are running a 64-bit version of Windows 8, x64-based PC is displayed in the System type field under the Item heading."
+			],
+			"para7": "If you are running a 32-bit version of Windows 8, x86-based PC is displayed in the System type field under the Item heading."
+		},
+		"question4": {
+			"title": "Check your machine's battery use",
+			"heading1": "Symptom",
+			"para1": "Windows 10 includes a new “Battery Use” screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power.",
+			"heading2": "Affected Brands",
+			"para2": "Lenovo laptops, desktops",
+			"heading3": "Affected Systems",
+			"para3": "All",
+			"heading4": "Operating System",
+			"para4": "Windows 10",
+			"heading5": "Solution",
+			"para5": "This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional control panel view, this feature is located in the new “Settings” app",
+			"bulletset1": [
+				"A. Find the Battery Use Screen",
+				"1. Click or Tap the “Settings” option from the start menu",
+				"2. In Settings select “System”and then select “Battery saver.”",
+				"3. Click or tap the “Battery use” link under this heading to see more details.",
+				"B. Analyze Your Power Usage",
+				"4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
+				"5. “System,” “Display,” and “Wi-Fi” percentages. This shows how much battery power has been used by system processes, the display,",
+				"6. The “In use” and “Background” options show how much power is used by applications while you’re using them, compared to applications running in the background.",
+				"7. If apps are using power in the background, you can click or tap the “Change background app settings” link and configure apps to not run in the background. This only works for universal Windows 10 apps.",
+				"8. Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used"
+			]
+		},
+		"question5": {
+			"title": "Use your PC like a tablet",
+			"para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
+			"heading1": "Use tablet mode",
+			"para2": "To turn on tablet mode, select action center on the taskbar, then select Tablet mode.",
+			"heading2": "Note",
+			"para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
+			"para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
+			"heading3": "Tip",
+			"para5": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen. Select the Start button, select Settings > System > Tablet mode , then turn on Automatically hide the taskbar in tablet mode. To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.",
+			"heading4": "Use two apps simultaneously",
+			"para6": "To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.",
+			"para7": "In this view, you can also:",
+			"bulletset1": [
+				"Use the shared edge between two snapped apps to resize both apps at the same time.",
+				"Open a new app from task view—select Task view on the taskbar, select an app, then drag it to one side to snap it into your divided screen.",
+				"Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
+			]
+		},
+		"question6": {
+			"title": "Get to know Cortona, your personal assistant",
+			"heading1": "What is Cortana?",
+			"para1": "Cortana is your digital agent. She'll help you get things done.",
+			"para2": "The more you use Cortana, the more personalized your experience will be.",
+			"para3": "To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
+			"para4": "If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
+			"para5": "1. Home 2. Notebook 3. Settings 4. Feedback",
+			"para6": "Here are some things Cortana can do for you:",
+			"bulletset1": [
+				"Use the shared edge between two snapped apps to resize both apps at the same time.",
+				"Open a new app from task view—select Task view on the taskbar, select an app, then drag it to one side to snap it into your divided screen.",
+				"Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
+			],
+			"heading2": "Try this: Set a reminder",
+			"para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",
+			"para8": "For example, type or say, “Remind me to congratulate Tanya the next time she calls.”",
+			"para9": "The reminder will appear when you get a call from Tanya.",
+			"para10": "Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.",
+			"heading3": "Hey Cortana?",
+			"para11": "Set Cortana to hear you anytime you say “Hey Cortana.” Select the search box on the taskbar to open Cortana home. Then select Settings  and turn on Let Cortana respond to “Hey Cortana.”",
+			"para12": "Note",
+			"para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
+		}
+	}
 }

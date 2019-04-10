@@ -3,6 +3,8 @@ import { EventTypes, WifiSecurity, HomeProtection, DeviceInfo } from '@lenovo/ta
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from '../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
+import { CommsService } from 'src/app/services/comms/comms.service';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 
 
 interface DevicePostureDetail {
@@ -25,17 +27,83 @@ export class WifiHomeViewModel {
 	tryNowEnable = false;
 
 	constructor(wifiSecurity: phoenix.WifiSecurity, homeProtection: phoenix.HomeProtection, private commonService: CommonService) {
+		// commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, 'enabled');
 		const cacheWifiSecurityState = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
 		const cacheWifiSecurityHistory = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys);
 		const cacheWifiSecurityChsConsoleUrl = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionChsConsoleUrl);
 		const cacheWifiSecurityHasEverUsed = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHasEverUsed);
+		wifiSecurity.on(EventTypes.wsStateEvent, (value) => {
+			if (value) {
+				if (this.wifiSecurity.isLocationServiceOn !== undefined) {
+					this.isLWSEnabled = (value === 'enabled' && this.wifiSecurity.isLocationServiceOn);
+					commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
+				}
+			}
+		});
+		wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
+			if (value !== undefined) {
+				if (this.wifiSecurity.state) {
+					this.isLWSEnabled = (value && this.wifiSecurity.state === 'enabled');
+				}
+			}
+		});
+		wifiSecurity.on(EventTypes.geolocatorPermissionEvent, (value) => {
+			if (value !== undefined) {
+				if (this.wifiSecurity.state) {
+					this.isLWSEnabled = (this.wifiSecurity.state === 'enabled' && value);
+				}
+			}
+		});
+		wifiSecurity.on(EventTypes.wsHasEverUsed, (value) => {
+			if (value !== undefined) {
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHasEverUsed, value);
+				this.hasWSEverUsed = value;
+			}
+		});
+		wifiSecurity.on(EventTypes.wsWifiHistoryEvent, (value) => {
+			if (value) {
+				let cacheWifiSecurityHistoryNum = commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum);
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, value);
+				this.allHistorys = wifiSecurity.wifiHistory;
+				this.allHistorys = this.mappingHistory(this.allHistorys);
+				if (cacheWifiSecurityHistoryNum) {
+					cacheWifiSecurityHistoryNum = JSON.parse(cacheWifiSecurityHistoryNum);
+					if (this.allHistorys.length > 4) {
+						this.hasMore = true;
+					} else {
+						this.hasMore = false;
+					}
+					this.historys = wifiSecurity.wifiHistory.slice(0, cacheWifiSecurityHistoryNum);
+				} else {
+					if (this.allHistorys.length > 4) {
+						this.hasMore = true;
+					} else {
+						this.hasMore = false;
+					}
+					this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
+					commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
+				}
+				this.historys = this.mappingHistory(this.historys);
+			}
+		});
+		homeProtection.on(EventTypes.homeChsConsoleUrlEvent, (value) => {
+			if (value && value !== '') {
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionChsConsoleUrl, value);
+				this.tryNowUrl = value;
+				this.tryNowEnable = true;
+			}
+		});
 		try {
 			this.wifiSecurity = wifiSecurity;
 			if (wifiSecurity.state) {
-				this.isLWSEnabled = (wifiSecurity.state === 'enabled');
+				if (wifiSecurity.isLocationServiceOn !== undefined) {
+					this.isLWSEnabled = (wifiSecurity.state === 'enabled' && wifiSecurity.isLocationServiceOn);
+				}
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
 			} else if (cacheWifiSecurityState) {
-				this.isLWSEnabled = (cacheWifiSecurityState === 'enabled');
+				if (wifiSecurity.isLocationServiceOn !== undefined) {
+					this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && wifiSecurity.isLocationServiceOn);
+				}
 			}
 			if (wifiSecurity.hasEverUsed !== undefined) {
 				this.hasWSEverUsed = wifiSecurity.hasEverUsed;
@@ -44,25 +112,27 @@ export class WifiHomeViewModel {
 				this.hasWSEverUsed = cacheWifiSecurityHasEverUsed;
 			}
 			if (wifiSecurity.wifiHistory) {
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, wifiSecurity.wifiHistory);
 				this.allHistorys = wifiSecurity.wifiHistory;
 				this.allHistorys = this.mappingHistory(this.allHistorys);
-				if (this.allHistorys.length > 4) {
-					this.hasMore = true;
-				} else {
-					this.hasMore = false;
-				}
-				this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
+					if (this.allHistorys.length > 4) {
+						this.hasMore = true;
+					} else {
+						this.hasMore = false;
+					}
+					this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
+					commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
 				this.historys = this.mappingHistory(this.historys);
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, wifiSecurity.wifiHistory);
 			} else if (cacheWifiSecurityHistory) {
 				this.allHistorys = cacheWifiSecurityHistory;
 				this.allHistorys = this.mappingHistory(this.allHistorys);
-				if (this.allHistorys.length > 4) {
-					this.hasMore = true;
-				} else {
-					this.hasMore = false;
-				}
-				this.historys = cacheWifiSecurityHistory.slice(0, 4); // 显示4个history
+					if (this.allHistorys.length > 4) {
+						this.hasMore = true;
+					} else {
+						this.hasMore = false;
+					}
+					this.historys = cacheWifiSecurityHistory.slice(0, 4); // 显示4个history
+					commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
 				this.historys = this.mappingHistory(this.historys);
 			}
 			if (homeProtection.chsConsoleUrl && homeProtection.chsConsoleUrl !== '') {
@@ -76,39 +146,6 @@ export class WifiHomeViewModel {
 		} catch (err) {
 			console.log(`${err}`);
 		}
-		wifiSecurity.on(EventTypes.wsStateEvent, (value) => {
-			if (value) {
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
-			}
-			this.isLWSEnabled = (value === 'enabled');
-		});
-		wifiSecurity.on(EventTypes.wsHasEverUsed, (value) => {
-			if (value !== undefined) {
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHasEverUsed, value);
-			}
-			this.hasWSEverUsed = value;
-		});
-		wifiSecurity.on(EventTypes.wsWifiHistoryEvent, (value) => {
-			if (value) {
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, value);
-			}
-			this.allHistorys = wifiSecurity.wifiHistory;
-			this.allHistorys = this.mappingHistory(this.allHistorys);
-			if (this.allHistorys.length > 4) {
-				this.hasMore = true;
-			} else {
-				this.hasMore = false;
-			}
-			this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
-			this.historys = this.mappingHistory(this.historys);
-		});
-		homeProtection.on(EventTypes.homeChsConsoleUrlEvent, (value) => {
-			if (value && value !== '') {
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionChsConsoleUrl, value);
-				this.tryNowUrl = value;
-				this.tryNowEnable = true;
-			}
-		});
 	}
 
 	mappingHistory(historys: Array<phoenix.WifiDetail>): Array<phoenix.WifiDetail> {
@@ -141,10 +178,15 @@ export class SecurityHealthViewModel {
 		const cacheHomeDevicePosture = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture);
 		try {
 			if (wifiSecurity.state) {
-				this.isLWSEnabled = (wifiSecurity.state === 'enabled');
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
+				if (wifiSecurity.isLocationServiceOn !== undefined) {
+					this.isLWSEnabled = (wifiSecurity.state === 'enabled' && wifiSecurity.isLocationServiceOn);
+					commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
+				}
 			} else if (cacheWifiSecurityState) {
-				this.isLWSEnabled = (cacheWifiSecurityState === 'enabled');
+				if (wifiSecurity.isLocationServiceOn !== undefined) {
+					this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && wifiSecurity.isLocationServiceOn);
+				}
+				// this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && wifiSecurity.isLocationServiceOn);
 			}
 			if (homeProtection.devicePosture) {
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, homeProtection.devicePosture);
@@ -157,15 +199,31 @@ export class SecurityHealthViewModel {
 		}
 		wifiSecurity.on(EventTypes.wsStateEvent, (value) => {
 			if (value) {
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
+				if (wifiSecurity.isLocationServiceOn !== undefined) {
+					this.isLWSEnabled = (value === 'enabled' && wifiSecurity.isLocationServiceOn);
+					commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
+				}
 			}
-			this.isLWSEnabled = (value === 'enabled');
+		});
+		wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
+			if (value !== undefined) {
+				if (wifiSecurity.state) {
+					this.isLWSEnabled = (value && wifiSecurity.state === 'enabled');
+				}
+			}
+		});
+		wifiSecurity.on(EventTypes.geolocatorPermissionEvent, (value) => {
+			if (value !== undefined) {
+				if (wifiSecurity.state) {
+					this.isLWSEnabled = (wifiSecurity.state === 'enabled' && value);
+				}
+			}
 		});
 		homeProtection.on(EventTypes.homeDevicePostureEvent, (value) => {
 			if (value) {
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, value);
+				this.createHomeDevicePosture(value);
 			}
-			this.createHomeDevicePosture(value);
 		});
 	}
 
