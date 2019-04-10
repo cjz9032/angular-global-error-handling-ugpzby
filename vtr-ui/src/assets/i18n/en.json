@@ -655,6 +655,13 @@
 			"howToStart": "How do I start using Windows Hello?"
 		}
 	},
-	"faq": {}
+	"faq": {},
+	"lenovoId": {
+		"login": "Login",
+		"logout": "Logout",
+		"user": "User",
+		"welcomeText": "Looking energized today {{firstName}}!",
+		"helloUser": "Hello, {{firstName}}!"
+	}
 }
 

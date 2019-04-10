@@ -5,6 +5,7 @@ import { DevService } from '../dev/dev.service';
 import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Injectable()
 export class UserService {
@@ -27,7 +28,8 @@ export class UserService {
 		private commsService: CommsService,
 		private devService: DevService,
 		private vantageShellService: VantageShellService,
-		private commonService: CommonService
+		private commonService: CommonService,
+		private translate: TranslateService
 	) {
 		// DUMMY
 		this.setName(this.firstName, this.lastName);
@@ -43,6 +45,12 @@ export class UserService {
 		if (!this.lid) {
 			this.devService.writeLog('UserService constructor: lid object is undefined');
 		}
+
+		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.translate.get('lenovoId.user').subscribe((value) => {
+				this.firstName = value;
+			});
+		})
 	}
 
 	checkCookies() {
@@ -154,7 +162,9 @@ export class UserService {
 			this.lid.logout().then(function (result) {
 				let metricsData: any;
 				if (result.success && result.status === 0) {
-					self.setName('User', '');
+					self.translate.get('lenovoId.user').subscribe((value) => {
+						self.setName(value, '');
+					});
 					self.auth = false;
 					metricsData = {
 						ItemType: 'TaskAction',
@@ -188,9 +198,11 @@ export class UserService {
 	}
 
 	setName(firstName: string, lastName: string) {
-		// TODO: NLS
+		const self = this;
 		if ((!firstName || firstName.length === 0) && (!lastName || lastName.length === 0)) {
-			firstName = 'User';
+			this.translate.get('lenovoId.user').subscribe((value) => {
+				self.firstName = value;
+			});
 		}
 		this.firstName = firstName;
 		this.lastName = lastName;

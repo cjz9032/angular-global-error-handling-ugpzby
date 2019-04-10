@@ -552,5 +552,12 @@
 			}
 		}
 	},
-	"faq": {}
+	"faq": {},
+	"lenovoId": {
+		"login": "登录",
+		"logout": "注销",
+		"user": "用户",
+		"welcomeText": "元气满满的一天 {{firstName}}！",
+		"helloUser": "{{firstName}}，你好！"
+	}
 }
