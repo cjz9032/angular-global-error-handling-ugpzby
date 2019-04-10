@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { DevService } from './services/dev/dev.service';
 import { DisplayService } from './services/display/display.service';
-import { environment } from '../environments/environment';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 import { DeviceService } from './services/device/device.service';
@@ -12,6 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { UserService } from './services/user/user.service';
 import { WelcomeTutorial } from './data-models/common/welcome-tutorial.model';
 import { NetworkStatus } from './enums/network-status.enum';
+import { KeyPress } from './data-models/common/key-press.model';
 
 @Component({
 	selector: 'vtr-root',
@@ -34,6 +34,24 @@ export class AppComponent implements OnInit {
 		translate.addLangs(['en', 'zh-Hans']);
 		this.translate.setDefaultLang('en');
 		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+
+		// const modalRef = this.modalService.open(ModalWelcomeComponent,
+		// 	{
+		// 		backdrop: 'static'
+		// 		, windowClass: 'welcome-modal-size'
+		// 	});
+		// modalRef.result.then(
+		// 	(result: WelcomeTutorial) => {
+		// 		// on open
+		// 		console.log('welcome-modal-size', result);
+		// 		commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, result);
+		// 	},
+		// 	(reason: WelcomeTutorial) => {
+		// 		// on close
+		// 		console.log('welcome-modal-size', reason);
+		// 		commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
+		// 	}
+		// );
 
 		if (tutorial === undefined && navigator.onLine) {
 			const modalRef = this.modalService.open(ModalWelcomeComponent,
@@ -97,7 +115,6 @@ export class AppComponent implements OnInit {
 			self.devService.writeLog('getMachineInfo() failed ' + error);
 			self.userService.loginSilently();
 		});
-		
 
 		/********* add this for navigation within a page **************/
 		this.router.events.subscribe(s => {
@@ -137,7 +154,7 @@ export class AppComponent implements OnInit {
 				this.deviceService.getMachineType()
 					.then((value: any) => {
 						console.log('checkIsDesktopMachine.then', value);
-						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, !(value < 2))
+						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, !(value < 2));
 					}).catch(error => {
 						console.error('checkIsDesktopMachine', error);
 					});
@@ -156,8 +173,20 @@ export class AppComponent implements OnInit {
 		}
 	}
 
-	// public appEvent($event: { name: AppEvent, event: any }) {
-	// 	const { name, event } = $event;
-	// 	this.commonService.sendNotification(name, event);
-	// }
+	@HostListener('window:keyup', ['$event'])
+	onKeyUp(event: KeyboardEvent) {
+		try {
+			const response = new KeyPress(
+				event.key,
+				event.keyCode,
+				event.location,
+				event.ctrlKey,
+				event.altKey,
+				event.shiftKey
+			);
+			window.parent.postMessage(response, 'ms-appx-web://e046963f.lenovocompanionbeta/index.html');
+		} catch (error) {
+			console.error('AppComponent.onKeyUp', error);
+		}
+	}
 }

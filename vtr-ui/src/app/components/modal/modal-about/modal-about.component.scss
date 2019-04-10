@@ -27,7 +27,8 @@
 
 :host ::ng-deep {
 	pre {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+		color: $main_dark;
 		word-wrap: break-word;
 		white-space: pre-wrap;
 		white-space: -moz-pre-wrap;

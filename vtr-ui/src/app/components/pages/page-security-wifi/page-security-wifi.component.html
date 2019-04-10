@@ -42,11 +42,16 @@
 												<div class="row">
 													<div class="col">
 														<div class="title">{{'security.homeprotection.securityhealth.title' | translate}}</div>
-														<!-- <div class="description"
-															*ngIf="isLWSEnabled===true">
-															Learn more about each of these components <a
-																routerLink="/">here</a>.
-														</div> -->
+														<div class="description"
+															*ngIf="securityHealthViewModel.isLWSEnabled">
+															<vtr-translate-picker-base 
+																[translateString]="'security.homeprotection.securityhealth.learnMoreAboutSecurityHealth' | translate"
+																[metricsItem]="'learnMoreAboutSecurityHealth'"
+																[href]="'javascript:void(0)'"
+																[metricsParent]="'security.wifiSecurity'"
+																[onClick]="openSecurityHealthArticle.bind(this)">
+															</vtr-translate-picker-base>
+														</div>
 													</div>
 												</div>
 
@@ -57,6 +62,7 @@
 														<vtr-ui-list-chevron
 															[items]="securityHealthViewModel.homeDevicePosture"
 															[chevronVisibility]='false'
+															[clickable]="false"
 															*ngIf="securityHealthViewModel.isLWSEnabled===true">
 														</vtr-ui-list-chevron>
 														<!--end of Security Health Advisor When LWS is enabled-->
@@ -106,7 +112,6 @@
 												</div>
 											</div>
 										</div>
-										<div *ngIf="securityHealthViewModel.isLWSEnabled" class="security-health"></div>
 									</div>
 								</div>
 								<!--end of Security Health Advisor-->
