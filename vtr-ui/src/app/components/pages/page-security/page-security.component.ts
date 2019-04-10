@@ -95,7 +95,9 @@ export class PageSecurityComponent implements OnInit {
 		if (cacheShowWindowsHello) {
 			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(windowsHello, this.commonService, this.translate);
 		}
-		this.showWindowsHello(windowsHello);
+		if (windowsHello.facialIdStatus || windowsHello.fingerPrintStatus) {
+			this.showWindowsHello(windowsHello);
+		}
 		windowsHello.on(EventTypes.helloFacialIdStatusEvent, () => {
 			this.showWindowsHello(windowsHello);
 		}).on(EventTypes.helloFingerPrintStatusEvent, () => {

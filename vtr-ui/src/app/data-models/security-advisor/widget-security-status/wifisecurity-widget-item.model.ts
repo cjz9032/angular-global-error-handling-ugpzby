@@ -11,12 +11,14 @@ export class WifiSecurityWidgetItem extends WidgetItem {
 			path: 'security/wifi-security',
 			title: 'WiFi Security',
 			type: 'security'
-		});
+		}, translateService);
 		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
-		this.updateStatus(cacheStatus);
+		if (cacheStatus) {
+			this.updateStatus(cacheStatus);
+		}
 
-		this.updateStatus(wifiSecurity.state);
 		if (wifiSecurity.state) {
+			this.updateStatus(wifiSecurity.state);
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
 		}
 
