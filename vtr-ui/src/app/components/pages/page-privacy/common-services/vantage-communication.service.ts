@@ -20,6 +20,7 @@ export interface MaskedPasswordsInfo {
 	url: string;
 	login: string;
 	password: string;
+	domain: string;
 }
 
 export type MaskedPasswords = {
@@ -59,7 +60,12 @@ export class VantageCommunicationService {
 				name: browser,
 				img: `/assets/images/privacy-tab/${browser}.svg`,
 				value: browser
-			})))
+			}))),
+			tap((val) => console.log('InstalledBrowsers', val)),
+			catchError((err) => {
+				console.log('InstalledBrowsers', err);
+				return EMPTY;
+			})
 		);
 	}
 

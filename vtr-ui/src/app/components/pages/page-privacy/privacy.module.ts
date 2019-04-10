@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 // Pages
 import { BreachedAccountsComponent } from './pages/breached-accounts/breached-accounts.component';
 import { TrackersComponent } from './pages/trackers/trackers.component';
@@ -11,22 +10,17 @@ import { BrowserAccountsComponent } from './pages/browser-accounts/browser-accou
 import { ScanComponent } from './pages/scan/scan.component';
 import { ResultComponent } from './pages/result/result.component';
 import { FaqPageComponent } from './pages/faq-page/faq-page.component';
-
 // Main Layout Components
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { MainHeaderComponent } from './main-layout/main-header/main-header.component';
 import { SidebarComponent } from './main-layout/sidebar/sidebar.component';
-
 // Services
 import { VideoPopupService } from './common-services/popups/video-popup.service';
 import { TrackersPopupService } from './common-services/popups/trackers-popup.service';
-
 // Modules
 import { PrivacyRoutingModule } from './privacy-routing.module';
-
 // Directives
 import { NumpersOnlyDirective } from './common-directives/numpers-only.directive';
-
 // Common UI components
 import { CheckBreachesFormComponent } from './common-ui/check-breaches/check-breaches-form.component';
 import { PageBannerComponent } from './common-ui/page-banner/page-banner.component';
@@ -53,7 +47,7 @@ import { LowPrivacyComponent } from './common-ui/low-privacy/low-privacy.compone
 import { InlineSvgComponent } from './common-ui/inline-svg/inline-svg.component';
 import { SafeHtmlPipe } from './common-pipe/safe-html.pipe';
 import { ChoseBrowserComponent } from './common-ui/chose-browser/chose-browser.component';
-import { PRIVACY_BASE_URL } from './shared/injection-tokens';
+import { PRIVACY_BASE_URL, PRIVACY_ENVIRONMENT } from './shared/injection-tokens';
 import { ChoseBrowserGuard } from './common-guards/chose-browser.guard';
 import { ObjectValuesPipe } from './common-pipe/object-values.pipe';
 import { TipsListComponent } from './pages/tips-list/tips-list.component';
@@ -64,6 +58,11 @@ import { NewsListComponent } from './pages/news-list/news-list.component';
 import { TrackingMapComponent } from './common-ui/tracking-map/tracking-map.component';
 import { SingleTrackerDetailComponent } from './common-ui/single-tracker-detail/single-tracker-detail.component';
 import { ToggleButtonComponent } from './common-ui/toggle-button/toggle-button.component';
+import { SitesFaviconPipe } from './common-pipe/sites-favicon.pipe';
+import { getPrivacyEnvironment } from './environment';
+import { DataKnowledgeService } from './shared/services/data-knowledge.service';
+import { EmailScannerService } from './common-services/email-scanner.service';
+import { BreachedAccountsService } from './common-services/breached-accounts.service';
 
 @NgModule({
 	imports: [
@@ -124,6 +123,7 @@ import { ToggleButtonComponent } from './common-ui/toggle-button/toggle-button.c
 		TrackingMapComponent,
 		SingleTrackerDetailComponent,
 		ToggleButtonComponent,
+		SitesFaviconPipe,
 	],
 	providers: [
 		TrackersPopupService,
@@ -132,7 +132,14 @@ import { ToggleButtonComponent } from './common-ui/toggle-button/toggle-button.c
 			provide: PRIVACY_BASE_URL,
 			useValue: 'privacy'
 		},
+		{
+			provide: PRIVACY_ENVIRONMENT,
+			useValue: getPrivacyEnvironment()
+		},
 		ChoseBrowserGuard,
+		DataKnowledgeService,
+		EmailScannerService,
+		BreachedAccountsService,
 	],
 })
 export class PrivacyModule {

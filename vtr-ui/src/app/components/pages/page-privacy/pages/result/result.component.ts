@@ -5,6 +5,8 @@ import { EmailScannerService } from '../../common-services/email-scanner.service
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
 import { BrowserAccountsService } from '../../common-services/browser-accounts.service';
+import { BreachedAccountsService } from '../../common-services/breached-accounts.service';
+import { CommunicationWithFigleafService } from '../../communication-with-figleaf/communication-with-figleaf.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -14,6 +16,7 @@ import { BrowserAccountsService } from '../../common-services/browser-accounts.s
 export class ResultComponent implements OnInit, OnDestroy {
 	readonly breachedAccountMode = BreachedAccountMode;
 
+	isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 	isEmailWasScanned = false;
 
 	isConsentToGetBrowsersAccountsGiven$ = this.browserAccountsService.isConsentGiven$;
@@ -36,22 +39,37 @@ export class ResultComponent implements OnInit, OnDestroy {
 		private router: Router,
 		private emailScannerService: EmailScannerService,
 		private browserAccountsService: BrowserAccountsService,
+		private breachedAccountsService: BreachedAccountsService,
+		private communicationWithFigleafService: CommunicationWithFigleafService,
 	) {
 	}
 
 	ngOnInit() {
-		this.breached_accounts = this.emailScannerService.breachedAccounts;
+		this.breached_accounts = this.breachedAccountsService.onGetBreachedAccounts$.getValue();
 		this.breached_accounts_show = this.breached_accounts.slice(0, 3);
-		this.userEmail = this.emailScannerService.userEmail;
+		this.emailScannerService.userEmail$
+			.pipe(
+				takeUntil(instanceDestroyed(this))
+			)
+			.subscribe((userEmail) => {
+				this.userEmail = userEmail;
+			});
 		this.isEmailWasScanned = !!this.emailScannerService.getAccessToken();
-		this.emailScannerService.onGetBreachedAccounts$.pipe(
-			takeUntil(instanceDestroyed(this)),
-		).subscribe((breachedAccounts) => {
-			this.breached_accounts = breachedAccounts;
-			this.breached_accounts_show = this.breached_accounts.slice(0, 3);
-			this.userEmail = this.emailScannerService.userEmail;
-			this.isEmailWasScanned = true;
-		});
+		this.breachedAccountsService.onGetBreachedAccounts$
+			.pipe(
+				takeUntil(instanceDestroyed(this)),
+			)
+			.subscribe((breachedAccounts) => {
+				this.breached_accounts = breachedAccounts;
+				this.breached_accounts_show = this.breached_accounts.slice(0, 3);
+				this.isEmailWasScanned = !!this.emailScannerService.getAccessToken();
+			});
+
+		if (this.isConsentToGetBrowsersAccountsGiven$.getValue()) {
+			this.getBrowserAccountsDetail();
+		}
+
+		this.breachedAccountsService.getBreachedAccounts();
 	}
 
 	ngOnDestroy() {

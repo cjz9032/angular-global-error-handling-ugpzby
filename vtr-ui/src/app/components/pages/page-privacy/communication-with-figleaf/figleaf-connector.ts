@@ -1,12 +1,14 @@
-const Windows = window["Windows"];
+import { MockWindows } from '../moked-api';
+
+const Windows = window['Windows'] || MockWindows; // this is mocked data for browser
 
 export interface MessageToFigleaf {
 	type: string;
 	payload?: string;
 }
 
-const APP_SERVICE_NAME = "figleaf.lenovoCompanion";
-const PACKAGE_FAMILY_NAME = "FigLeaf.626177A9E4282_0wysm1pfwxg2e";
+const APP_SERVICE_NAME = 'figleaf.lenovoCompanion';
+const PACKAGE_FAMILY_NAME = 'FigLeaf.626177A9E4282_0wysm1pfwxg2e';
 
 var onConnectListeners = [];
 var onDisconnectListeners = [];
@@ -15,12 +17,15 @@ const RECONNECT_TIMEOUT = 3000;
 var connection = null;
 
 class FigleafConnector {
+	private serviceClosedCallback = this.serviceClosed.bind(this);
+	private requestReceivedCallback = this.requestReceived.bind(this);
+
 	onConnect(cb) {
-		onConnectListeners.push(cb)
+		onConnectListeners.push(cb);
 	}
 
 	onDisconnect(cb) {
-		onDisconnectListeners.push(cb)
+		onDisconnectListeners.push(cb);
 	}
 
 	sendMessageToFigleaf(messageToFigleaf: MessageToFigleaf) {
@@ -28,37 +33,39 @@ class FigleafConnector {
 		for (const messageKey in messageToFigleaf) {
 			message.insert(messageKey.toString(), messageToFigleaf[messageKey]);
 		}
-		return connection.sendMessageAsync(message).then((response) => {
-			if (response.status === Windows.ApplicationModel.AppService.AppServiceResponseStatus.success) {
-				console.log('responseMessage from FigLeaf', response.message.result);
-				const responseMessage = JSON.parse(response.message.result);
-				if (responseMessage.status === 0) {
-					return response.message;
+		return new Promise((resolve, reject) => {
+			connection.sendMessageAsync(message).then((response) => {
+				if (response.status === Windows.ApplicationModel.AppService.AppServiceResponseStatus.success) {
+					console.log('responseMessage from FigLeaf', response.message.result);
+					const responseMessage = JSON.parse(response.message.result);
+					resolve(responseMessage);
+				} else {
+					this.disconnectFromFigleaf();
+					reject('request message to figleaf failed');
 				}
-				this.handleResponseStatuses(responseMessage);
-			} else {
-				this.disconnectFromFigleaf();
-			}
+			});
 		});
 	}
 
 	connect() {
 		console.log('CONNECT');
+		if (connection) {
+			connection.close();
+		}
 		connection = new Windows.ApplicationModel.AppService.AppServiceConnection();
 		connection.appServiceName = APP_SERVICE_NAME;
 		connection.packageFamilyName = PACKAGE_FAMILY_NAME;
 
 		connection.openAsync().then((connectionStatus) => {
-			if (connectionStatus == Windows.ApplicationModel.AppService.AppServiceConnectionStatus.success) {
-				connection.onserviceclosed = this.serviceClosed;
-				connection.onrequestreceived = this.requestReceived;
+			if (connectionStatus === Windows.ApplicationModel.AppService.AppServiceConnectionStatus.success) {
+				connection.onserviceclosed = this.serviceClosedCallback;
+				connection.onrequestreceived = this.requestReceivedCallback;
 				console.log('connection established');
 				onConnectListeners.forEach((cb) => {
-					cb()
+					cb();
 				});
 				onConnectListeners = [];
-			}
-			else {
+			} else {
 				this.disconnectFromFigleaf();
 			}
 		});
@@ -66,12 +73,12 @@ class FigleafConnector {
 
 	disconnect() {
 		console.log('connection', connection);
-		connection.close()
+		connection.close();
 	}
 
 	private disconnectFromFigleaf() {
 		onDisconnectListeners.forEach((cb) => {
-			cb()
+			cb();
 		});
 		onDisconnectListeners = [];
 		this.reconnect();
@@ -89,12 +96,6 @@ class FigleafConnector {
 	}
 
 	private requestReceived(service, args) {
-	}
-
-	private handleResponseStatuses(message) {
-		if (message.status !== 0) {
-			this.reconnect()
-		}
 	}
 }
 

@@ -1,9 +1,11 @@
-import { Injectable } from '@angular/core';
-import { Observable, of, Subject, throwError } from 'rxjs';
+import { Inject, Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, of, Subject, throwError } from 'rxjs';
 import { delay, share, tap } from 'rxjs/operators';
 import { BreachedAccount } from '../common-ui/breached-account/breached-account.component';
 import { StorageService } from '../shared/services/storage.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { AccessTokenService } from './access-token.service';
+import { PRIVACY_ENVIRONMENT } from '../shared/injection-tokens';
 
 interface GetBreachedAccountsResponse {
 	type: string;
@@ -12,88 +14,83 @@ interface GetBreachedAccountsResponse {
 }
 
 interface ConfirmationCodeValidationResponse {
-	type: string;
-	status: number;
-	payload: { accessToken?: string };
+	status: string;
+	token: string;
 }
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable()
 export class EmailScannerService {
-	userEmail = '';
+	private _userEmail$ = new BehaviorSubject<string>('');
+	userEmail$ = this._userEmail$.asObservable();
 
-	breachedAccounts: BreachedAccount[] = [];
-	onGetBreachedAccounts$ = new Subject<BreachedAccount[]>();
+	private validationStatusChanged = new Subject<ConfirmationCodeValidationResponse>();
+	validationStatusChanged$ = this.validationStatusChanged.asObservable();
 
-	validationStatusChanged$ = new Subject<ConfirmationCodeValidationResponse>();
-	loadingStatusChanged = new Subject();
+	private loadingStatusChanged = new Subject<boolean>();
 	loadingStatusChanged$ = this.loadingStatusChanged.asObservable();
 
 	constructor(
 		private storageService: StorageService,
-		private http: HttpClient
+		private accessTokenService: AccessTokenService,
+		private http: HttpClient,
+		@Inject(PRIVACY_ENVIRONMENT) private environment
 	) {
 	}
 
-	scanEmail(accessToken) {
-		this.loadingStatusChanged.next(true);
-		return this.getBreachedAccounts(accessToken);
-	}
-
 	setUserEmail(userEmail) {
-		this.userEmail = userEmail;
+		this._userEmail$.next(userEmail);
 	}
 
 	sendConfirmationCode() {
-		return of({
-			type: 'requestConfirmationCode',
-			status: 0,
-			payload: {}
-		}).pipe(
-			share(),
-			delay(100),
-			tap((response) => {
-				if (response.status === 300) {
-					return throwError('confirmationError');
-				}
-			}),
-		);
+		this.loadingStatusChanged.next(true);
+		const headers = new HttpHeaders({
+			'Content-Type': 'text/plain;charset=UTF-8',
+		});
+		return this.http.post(`${this.environment.backendUrl}/api/v1/vantage/auth/init`, {
+			'email': this._userEmail$.getValue(),
+		}, {headers: headers});
 	}
 
 	validateVerificationCode(code) {
 		this.loadingStatusChanged.next(true);
-		setTimeout(() => {
-			// send to server verification code and receive result if it's valid
-			this.loadingStatusChanged.next(false);
-			this.validationStatusChanged$.next({
-				type: 'validateConfirmationCode',
-				status: 0,
-				payload: {accessToken: '932989234329091'}
-			});
-			this.setAccessTokenToStorage('932989234329091');
-		}, 500);
-	}
-
-	setAccessTokenToStorage(accessToken) {
-		this.storageService.setItem('accessToken', accessToken);
+		const headers = new HttpHeaders({
+			'Content-Type': 'text/plain;charset=UTF-8',
+		});
+		return this.http.post<ConfirmationCodeValidationResponse>(
+			`${this.environment.backendUrl}/api/v1/vantage/auth/finish`,
+			{
+				'email': this._userEmail$.getValue(),
+				'code': code,
+			}, {headers: headers}
+		)
+			.pipe(
+				tap((response) => {
+					this.loadingStatusChanged.next(false);
+					this.accessTokenService.setAccessToken(response.token);
+					this.validationStatusChanged.next();
+				}, (error) => {
+					console.log('Confirmation Error', error);
+				}),
+			);
 	}
 
 	getAccessToken() {
-		return this.storageService.getItem('accessToken');
+		return this.accessTokenService.getAccessToken();
 	}
 
-	getBreachedAccounts(accessToken): Observable<GetBreachedAccountsResponse> {
-
-		return this.http.get('/assets/privacy-json/breachedAccounts.json').pipe(
-			share(),
-			delay(100),
-			tap((response: GetBreachedAccountsResponse) => {
-				// response.payload.breaches = []; // TODO Uncomment to see 'second scan' behaviour
-				this.breachedAccounts = response.payload.breaches;
-				this.onGetBreachedAccounts$.next(this.breachedAccounts);
-				this.loadingStatusChanged.next(false);
-			}),
-		);
+	getBreachedAccountsByEmail(): Observable<GetBreachedAccountsResponse> {
+		const accessToken = this.accessTokenService.getAccessToken();
+		if (accessToken) {
+			return this.http.get('/assets/privacy-json/breachedAccounts.json')
+				.pipe(
+					share(),
+					delay(100),
+					tap((response: GetBreachedAccountsResponse) => {
+						this.loadingStatusChanged.next(false);
+					}),
+				);
+		} else {
+			return throwError('no accessToken');
+		}
 	}
 }

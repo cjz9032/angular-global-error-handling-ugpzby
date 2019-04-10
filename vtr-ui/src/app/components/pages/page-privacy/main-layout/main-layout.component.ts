@@ -5,7 +5,7 @@ import { ChoseBrowserService } from '../common-services/chose-browser.service';
 import { Router } from '@angular/router';
 import { CommunicationWithFigleafService } from '../communication-with-figleaf/communication-with-figleaf.service';
 import { SafeStorageService } from '../shared/services/safe-storage.service';
-import { SettingsStorageService } from "../shared/services/settings-storage.service";
+import { SettingsStorageService } from '../shared/services/settings-storage.service';
 
 @Component({
 	// selector: 'vtr-layer',
@@ -31,7 +31,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.communicationWithFigleafService.disconnect()
+		this.communicationWithFigleafService.disconnect();
 	}
 
 	closePopUp(popupId) {

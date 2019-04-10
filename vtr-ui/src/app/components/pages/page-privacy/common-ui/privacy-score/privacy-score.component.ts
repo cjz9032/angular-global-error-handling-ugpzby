@@ -2,9 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonPopupService } from '../../common-services/popups/common-popup.service';
 import { DescribeStep } from '../low-privacy/low-privacy.component';
 import { PrivacyScoreService } from './privacy-score.service';
-import { EmailScannerService } from '../../common-services/email-scanner.service';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
+import { BreachedAccountsService } from "../../common-services/breached-accounts.service";
 
 export interface ScoreParametrs {
 	fixedBreaches: number;
@@ -48,7 +48,14 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 		}
 	];
 
-	scoreParametrs: ScoreParametrs;
+	scoreParametrs: ScoreParametrs = {
+		fixedBreaches: 0,
+		unfixedBreaches: 0,
+		fixedStorages: 0,
+		unfixedStorages: 0,
+		monitoringEnabled: false,
+		trackingEnabled: false,
+	};
 	// default data
 	title = 'Your privacy score';
 	text = 'Take control of your privacy by choosing when to be private and what to share on every site you interact with.';
@@ -59,20 +66,21 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 	constructor(
 		private privacyScoreService: PrivacyScoreService,
 		private commonPopupService: CommonPopupService,
-		private emailScannerService: EmailScannerService) {
+		private breachedAccountsService: BreachedAccountsService) {
 	}
 
 	ngOnInit() {
 		this.privacyScoreService.getScoreParametrs()
 			.pipe(
 				takeUntil(instanceDestroyed(this)),
-			).subscribe((scoreParametrs: ScoreParametrs) => {
-			this.scoreParametrs = scoreParametrs;
-			this.scoreParametrs.unfixedBreaches = this.emailScannerService.breachedAccounts.length;
-			this.setDataAccordingToScore(scoreParametrs);
-		});
+			)
+			.subscribe((scoreParametrs: ScoreParametrs) => {
+				this.scoreParametrs = scoreParametrs;
+				this.scoreParametrs.unfixedBreaches = this.breachedAccountsService.onGetBreachedAccounts$.getValue().length;
+				this.setDataAccordingToScore(scoreParametrs);
+			});
 
-		this.emailScannerService.onGetBreachedAccounts$.pipe(
+		this.breachedAccountsService.onGetBreachedAccounts$.pipe(
 			takeUntil(instanceDestroyed(this)),
 		).subscribe(breachedAccounts => {
 			this.scoreParametrs.unfixedBreaches = breachedAccounts.length;

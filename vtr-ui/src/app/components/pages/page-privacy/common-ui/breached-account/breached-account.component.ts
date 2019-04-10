@@ -28,6 +28,14 @@ export class BreachedAccountComponent {
 	@Output() detailClick = new EventEmitter<number>();
 
 	readonly breachedAccountMode = BreachedAccountMode;
+	defaultImage = '/assets/images/privacy-tab/default.png';
+
+	transformDomain(domain) {
+		if (domain === 'n/a') {
+			return 'unknown website';
+		}
+		return domain;
+	}
 
 	openAccordion(index) {
 		this.openId = this.openId === index ? null : index;

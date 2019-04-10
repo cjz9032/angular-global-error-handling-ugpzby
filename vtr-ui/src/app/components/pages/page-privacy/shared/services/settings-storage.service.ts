@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
+import { MockWindows } from '../../moked-api';
 
-const Windows = window["Windows"];
+const Windows = window['Windows'] || MockWindows;
 
 @Injectable({
 	providedIn: 'root'

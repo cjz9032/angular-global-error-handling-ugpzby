@@ -49,16 +49,16 @@
       </div>
 
       <div class="browser-accounts">
-        <div *ngFor="let account of installedBrowser.accounts; let i = index;">
+        <div *ngFor="let account of installedBrowser.accounts; trackBy: trackAccountsById; let i = index;">
           <div class="browser-accounts__item browser-account" [class.browser-account--first]="i === 0">
             <div class="browser-account__img-col">
-              <img src="/assets/images/privacy-tab/default.png"
+              <img [src]="(account.domain | sitesFavicon | async)"
 				   alt="account stored in browser image"
 				   class="browser-account__img">
             </div>
             <div class="browser-account__text-wrapper">
               <div class="browser-account__website-col">
-                <p class="browser-account__website" [title]="account.url">{{account.url}}</p>
+                <p class="browser-account__website" [title]="account.domain">{{account.domain}}</p>
               </div>
               <div class="browser-account__email-col">
                 <p class="browser-account__email" [title]="account.login">{{account.login}}</p>

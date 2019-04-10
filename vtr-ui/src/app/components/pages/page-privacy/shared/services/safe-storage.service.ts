@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { MockWindows } from '../../moked-api';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class SafeStorageService {
 
-	windows = window["Windows"];
+	windows = window['Windows'] || MockWindows;
 	vault = new this.windows.Security.Credentials.PasswordVault();
 
 	constructor() {
@@ -23,6 +24,21 @@ export class SafeStorageService {
 	}
 
 	getPassword(resource, username) {
-		return this.vault.retrieve(resource, username).password
+		var password: string;
+		try {
+			password = this.vault.retrieve(resource, username).password;
+		} catch (error) {
+			password = null;
+		}
+		return password;
+	}
+
+	removePassword(resource, username) {
+		try {
+			const credential = this.vault.retrieve(resource, username);
+			this.vault.remove(credential);
+		} catch (error) {
+			console.log('removePassword error', error);
+		}
 	}
 }

@@ -1,9 +1,9 @@
 <div class="breached-account" *ngFor="let account of breachedAccounts; let i = index">
 	<div class="breached-account__preview">
 		<div class="breached-account__social">
-			<img class="breached-account__img" [src]="account.image" alt="">
+			<img class="breached-account__img" [src]="account.image || defaultImage" alt="">
 			<div class="breached-account__social-description">
-				<h4 class="breached-account__title">{{account.domain}}</h4>
+				<h4 class="breached-account__title">{{transformDomain(account.domain)}}</h4>
 				<p class="breached-account__email"
 				   title="{{account.email}}" *ngIf="openId !== i">{{account.email}}</p>
 			</div>

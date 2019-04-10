@@ -1,8 +1,6 @@
-<div>
-	<vtr-installed-browser
-		*ngFor="let browser of (installedBrowsers$ | async); trackBy: trackByBrowser"
+<vtr-installed-browser
+		*ngFor="let browser of (installedBrowsers$ | async); trackBy: trackByBrowser;"
 		[installedBrowser]="browser"
 		[showDetailAction]="inputData.showDetailAction"
 		(showPasswordForBrowser$)="showPasswordForBrowser($event)">
-	</vtr-installed-browser>
-</div>
+</vtr-installed-browser>

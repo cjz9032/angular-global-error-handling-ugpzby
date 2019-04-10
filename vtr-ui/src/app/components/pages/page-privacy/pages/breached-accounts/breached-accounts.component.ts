@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BreachedAccount } from '../../common-ui/breached-account/breached-account.component';
 import { ActivatedRoute } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
-import { EmailScannerService } from '../../common-services/email-scanner.service';
+import { BreachedAccountsService } from '../../common-services/breached-accounts.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -52,13 +52,13 @@ export class BreachedAccountsComponent implements OnInit {
 	};
 
 	constructor(
-		private emailScannerService: EmailScannerService,
+		private breachedAccountsService: BreachedAccountsService,
 		private route: ActivatedRoute
 	) {
 	}
 
 	ngOnInit() {
-		this.breached_accounts = this.emailScannerService.breachedAccounts;
+		this.breached_accounts = this.breachedAccountsService.onGetBreachedAccounts$.getValue();
 	}
 
 	private getParamFromUrl(paramName) {
