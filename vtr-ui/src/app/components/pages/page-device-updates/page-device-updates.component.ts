@@ -544,12 +544,22 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					windowClass: 'common-confirmation-modal'
 				});
 
-			const header = 'device.systemUpdates.popup.reboot';
+			const header = 'device.systemUpdates.popup.rebootPending';
 			const description = 'device.systemUpdates.popup.rebootRequiredMsg';
 			modalRef.componentInstance.header = header;
 			modalRef.componentInstance.description = description;
-			modalRef.componentInstance.OkText = 'device.systemUpdates.popup.okayButton';
-			modalRef.componentInstance.CancelText = 'device.systemUpdates.popup.cancelButton';
+			modalRef.componentInstance.OkText = 'device.systemUpdates.popup.rebootButton';
+			modalRef.componentInstance.CancelText = 'device.systemUpdates.popup.dismissButton';
+			modalRef.result.then(
+				(result) => {
+					if (result) {
+						this.systemUpdateService.restartWindows();
+					} else {
+						this.isRebootRequested = false;
+						modalRef.close();
+					}
+				}
+			);
 		}
 	}
 
