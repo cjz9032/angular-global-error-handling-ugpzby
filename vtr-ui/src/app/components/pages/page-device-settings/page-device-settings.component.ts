@@ -5,6 +5,8 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { AudioService } from 'src/app/services/audio/audio.service';
+import { Microphone } from 'src/app/data-models/audio/microphone.model';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -48,14 +50,34 @@ export class PageDeviceSettingsComponent implements OnInit {
 		public qaService: QaService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
+		public audioService: AudioService
 	) {
 		this.fetchCMSArticles();
+		this.getMicrophoneSettings();
 	}
 
 	ngOnInit() {
 		this.devService.writeLog('DEVICE SETTINGS INIT', this.menuItems);
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine)
+	}
+
+	getMicrophoneSettings() {
+		try {
+			if (this.audioService.isShellAvailable) {
+				this.audioService.getMicrophoneSettings()
+					.then((microphone: Microphone) => {
+						console.log('getMicrophoneSettings', microphone);
+						 if (!microphone.available) {
+							this.menuItems.splice(1, 1);
+						 }
+					}).catch(error => {
+						console.error('getMicrophoneSettings', error);
+					});
+			}
+		} catch (error) {
+			console.error('getMicrophoneSettings' + error.message);
+		}
 	}
 
 	fetchCMSArticles() {
