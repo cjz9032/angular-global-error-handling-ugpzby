@@ -84,6 +84,10 @@
 	padding: 4rem !important;
 }
 
+.text-break {
+	word-break: break-word !important;
+}
+
 @media #{$mediaquery_4} {
 	.nmx-40 {
 		margin-left: -3.5rem !important;
@@ -182,8 +186,8 @@
 //Added new media query for max-width:800 where vtr-page-right-column margin-left , margin-top css are added to fix VAN-1049 issue.
 @media #{$mediaquery_8} {
 	.vtr-page-right-column {
-		margin-left: 4.2rem;
-		margin-top: 4rem;
+		// margin-left: 4.2rem;
+		// margin-top: 4rem;
 	}
 }
 
@@ -192,7 +196,6 @@
 	max-width: 150rem;
 	top: $modal_top_margin;
 }
-
 
 // feedback modal start:
 // overriding style inside feedback modal. doesn't work from component SCSS file
@@ -250,4 +253,16 @@
 	overflow: auto;
 	font-size: 1.4rem;
 	font-weight: 500;
+}
+
+.feedback-form-modal-size .modal-dialog {
+	margin: 0 auto;
+	overflow: auto;
+	font-size: 1.4rem;
+	font-weight: 500;
+	max-width: 70rem !important;
+	.close-button {
+		font-size: 3rem;
+		opacity: 0.8;
+	}
 }

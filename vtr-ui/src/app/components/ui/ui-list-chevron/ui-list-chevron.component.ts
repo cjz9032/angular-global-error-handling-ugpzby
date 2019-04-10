@@ -10,35 +10,36 @@ import { BaseComponent } from '../../base/base.component';
 
 export class UiListChevronComponent extends BaseComponent implements OnInit {
 
-	// @Input() items: any[];
 	@Input() items: any;
 	@Input() iconPlacement = 'right';
 	@Input() chevronVisibility = true;
+	@Input() arrowColor: string;
 	/**** passing to ItemParent from metrics ****/
 	@Input() metricsParent: string;
+	@Input() clickable = true;
 
 	/** object having item class list*/
 	itemStatusClass = {
 		0: 'good',
 		1: 'bad',
-		2: 'blue'
+		2: 'blue',
+		3: 'orange'
 	};
 
 	/** object having item status icon list*/
 	itemStatusIconClass = {
 		0: 'check',
 		1: 'times',
-		2: 'circle'
+		2: 'circle',
+		3: 'minus-circle'
 	};
 
 	constructor(private deviceService: DeviceService) { super(); }
 
 
 	getItemStatusClass(item) {
-		// console.log('getItemStatusClass method invoked');
 		let itemStatClass = 'good';
 		if (item.status !== undefined && item.status !== '') {
-			// console.log('status not undefined or empty');
 			if (this.itemStatusClass.hasOwnProperty(item.status)) {
 				itemStatClass = this.itemStatusClass[item.status];
 			}
@@ -48,13 +49,10 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 
 
 	getItemStatusIconClass(item) {
-		// console.log('getItemStatusIconClass method invoked');
 		let itemStatIconClass = 'good';
 		if (item.status !== undefined && item.status !== '') {
-			// console.log('status not undefined or empty');
 			if (this.itemStatusIconClass.hasOwnProperty(item.status)) {
 				itemStatIconClass = this.itemStatusIconClass[item.status];
-				// console.log('itemStatusIconClass ' + itemStatIconClass);
 			}
 		}
 		return itemStatIconClass;
@@ -77,20 +75,7 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 			}
 
 		}
-		// console.log(" itemDetailClass " + JSON.stringify(itemDetailClass));
 		return itemDetailClass;
-	}
-
-	getWifiClass(items) {
-		let className;
-		items.forEach(item => {
-			if (item.title === 'WiFi Security') {
-				className = 'wifiStatus-no-border-bottom';
-			} else {
-				className = '';
-			}
-		});
-		return className;
 	}
 
 	ngOnInit() {

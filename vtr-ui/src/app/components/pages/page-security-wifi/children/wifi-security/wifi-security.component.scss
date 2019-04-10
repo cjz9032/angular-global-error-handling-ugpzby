@@ -15,7 +15,7 @@
 	.heading {
 		color: $main_dark;
 		font-size: 2.5rem;
-		font-weight: $weight_light;
+		font-weight: $weight_regular;
 	}
 
 	.sub-heading {
@@ -28,7 +28,7 @@
 
 	.sub-heading-2 {
 		color: $main_dark;
-		font-weight: $weight_medium;
+		font-weight: $weight_bold;
 		font-size: 2.5rem;
 	}
 
@@ -195,7 +195,7 @@
 
 			h3 {
 				font-size: 3rem;
-				font-weight: 100;
+				font-weight: 350;
 			}
 
 			.status {
@@ -223,13 +223,10 @@
 				li {
 					list-style: none;
 					width: 50%;
-					padding: 2.4rem 3rem;
 					border-right: 0.1rem solid $shade_lighter;
 					border-bottom: 0.1rem solid $shade_lighter;
-					// border: 0.1rem solid $shade_lighter;
-					display: flex;
 					flex-wrap: wrap;
-					height: 8.8rem;
+					align-items: center;
 
 					&:nth-child(even) {
 						border-right: none;
@@ -280,10 +277,11 @@
 
 					.connection-name {
 						font-size: 1.7rem;
-						font-weight: 500;
-
+						font-weight: $weight_bold;
+						overflow: hidden;
+						text-overflow: ellipsis;
 						small {
-							font-weight: 300;
+							font-weight: $weight_light;
 							display: block;
 						}
 					}
@@ -327,10 +325,11 @@
 				.collapse-text {
 					display: inline-block;
 					color: $main;
-					font-size: 1.2rem;
+					font-size: 1.6rem;
 					margin-right: 1rem;
 					vertical-align: middle;
 					text-decoration: underline;
+					font-weight: 500;
 				}
 
 				fa-icon {
@@ -392,9 +391,13 @@
 					border: 0.1rem solid $stop_dark;
 				}
 			}
+			.line-height-2-5 {
+				line-height: 2.5rem;
+				height: 2.5rem;
+			}
 
 			h3 {
-				font-weight: 500;
+				font-weight: $weight_bold;
 				text-transform: uppercase;
 				margin-right: 2.5rem;
 			}

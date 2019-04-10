@@ -6,9 +6,9 @@
 }
 
 .subtitle {
-    color: $highlight;
+    color: $main_shade;
     font-size: 1.4rem;
-    font-weight: $weight_light;
+    font-weight: $weight_regular;
     line-height: 2.3rem;
 }
 
@@ -20,10 +20,10 @@
     }
 
     .text {
-        color: $screen_dark_70;
+        color: $shade_extradark;
         padding: 2rem 0;
         font-size: 1.4rem;
-        font-weight: $weight_medium;
+        font-weight: $weight_bold;
         letter-spacing: 0.89px;
         line-height: 2.3rem;
     }
@@ -32,15 +32,8 @@
 .title {
     color: $screen_dark_70;
     font-size: 2.5rem;
-    font-weight: $weight_light;
+    font-weight: $weight_regular;
     line-height: 2.9rem;
-}
-
-.subtitle {
-    color: $shade_dark;
-    font-size: 1.4rem;
-    font-weight: $weight_light;
-    line-height: 2.3rem;
 }
 
 .text {

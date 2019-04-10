@@ -8,10 +8,10 @@
 		background-color: $shade_extralight;
 		border: 0.1rem solid $shade_lighter;
 		border-radius: $border_radius;
+		line-height: 1.3;
 
 		li {
 			height: auto;
-			//height: 6rem;
 			padding: 1.5rem 1rem;
 			border-bottom: 0.1rem solid $shade_lighter;
 			color: $main_darker;
@@ -21,16 +21,25 @@
 					.icon-bkg {
 						display: inline-block;
 						border-radius: 50%;
-						height: 2.4rem;
-						width: 2.4rem;
+						height: 2rem;
+						width: 2rem;
 						border-width: 0.2rem;
 						border-style: solid;
 						text-align: center;
 
 						fa-icon {
 							font-size: 1.2rem;
-							line-height: 2rem;
+							line-height: 1.6rem;
 							color: $light;
+						}
+					}
+					.icon-warning {
+						display: inline-block;
+						border-radius: 50%;
+						
+						fa-icon {
+							font-size: 2rem;
+							color: $yellow_dark;
 						}
 					}
 				}
@@ -74,8 +83,9 @@
 						border-color: $main_gstart;
 
 						fa-icon {
-							font-size: 0.8rem;
-							line-height: 2.2rem;
+							font-size: 0.5rem;
+							line-height: 1rem;
+							vertical-align: 0.1rem;
 						}
 					}
 				}
@@ -101,8 +111,14 @@
 
 				.title {
 					font-size: 1.4rem;
-					font-weight: $weight_medium;
+					font-weight: $weight_bold;
 					float: left;
+					padding-top: 0.1rem;
+					padding-right: 0.1rem;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					color: $blue-dark;
 
 					&.light-title {
 						font-weight: $weight_light;
@@ -110,16 +126,19 @@
 				}
 
 				.detail {
-					padding-right: 0.5rem;
-					padding-top: 0.1rem;
+					padding-left: 0.1rem;
+					padding-top: 0.3rem;
 					float: right;
 					text-align: right;
 					font-size: 1.2rem;
 					color: $shade_dark;
 					font-weight: $weight_medium;
-					max-width: 55%;
+					max-width: 50%;
 					word-wrap: break-word;
 					display: block;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 
 					&.good {
 						color: $go_dark;
@@ -133,9 +152,13 @@
 						color: $main_gstart;
 					}
 
+					&.orange {
+						color: $yellow_dark;
+					}
+
 					&.security {
 						text-transform: uppercase;
-						font-weight: 500;
+						font-weight: $weight_bold;
 					}
 
 					&.highlight {
@@ -154,11 +177,15 @@
 				color: $main_darker;
 				line-height: 2.8rem;
 				font-size: 2rem;
+
+				&.blue-arrow {
+					color: $main;
+				}
 			}
 
 			.question-icon {
 				color: $main;
-				font-size: 1.8rem;
+				font-size: 2rem;
 				cursor: pointer;
 			}
 		}
@@ -168,5 +195,9 @@
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 0;
 		margin-bottom: 0;
+	}
+
+	.disabled {
+		pointer-events: none;
 	}
 }

@@ -45,7 +45,7 @@
 				color: $light;
 				font-size: 1.5rem;
 				height: 5rem;
-				font-weight: $weight_medium;
+				font-weight: $weight_bold;
 				line-height: 5rem;
 				text-align: center;
 				border: 0rem;
@@ -72,6 +72,13 @@
 				padding-top: 5rem;
 				padding-bottom: 2rem;
 				padding-right: 5rem;
+
+				.installing {
+					color: $light;
+				}
+				.downloading {
+					color: transparent;
+				}
 			}
 
 			.progress-percent-text {

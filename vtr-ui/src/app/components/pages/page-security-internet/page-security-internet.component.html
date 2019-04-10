@@ -2,8 +2,8 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="'&lt; '"
-				[back]="'BACK'"
-				[title]="title"></vtr-header-main>
+				[back]="'common.ui.back' | translate"
+				[title]="'security.vpn.title' | translate"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -17,31 +17,27 @@
 									<div class="container-fluid p-40 security-card">
 										<div class="row">
 											<div class="col">
-												<div class="heading">SurfEasy Virtual Private Network</div>
+												<div class="heading">{{'security.vpn.header' | translate}}</div>
 											</div>
 											<div class="pull right"><img class="surfeasy_logo_teal"
 													src="../../../../assets/images/SurfEasy-logo.png" /></div>
 										</div>
 										<div class="row mt-20">
 											<div class="col">
-												<div *ngIf="statusItem.status === 'not-installed'" class="text-regular">
-													SurfEasy is a VPN, or Virtual Private Network provider that helps
-													protect you while you are surfing the internet. Without a VPN, your
-													PC may be more vulnerable to attackers and identity thieves. A VPN
-													runs silently in the background and provides additional safety and
-													privacy measures while you use the internet.
+												<div *ngIf="statusItem.status === 'not-installed'"
+													class="text-regular">
+													{{'security.vpn.whatIsSufEasy' | translate}}
 												</div>
-												<div *ngIf="statusItem.status === 'installed'" class="text-regular">
-													A Virtual Private Network provider helps you protect while you are
-													surfing the internet. Without a VPN, your pc may be more vulnerable
-													to attackers and identity thieves. A VPN runs silently in the
-													background and provides safety and privacy measures.
+												<div *ngIf="statusItem.status === 'installed'"
+													class="text-regular">
+													{{'security.vpn.whatCanSufEasy1' | translate}}
 												</div>
 											</div>
 										</div>
 										<div class="row mt-40">
 											<div class="col get-app-code-box">
-												<vtr-ui-security-statusbar [statusList]="[statusItem]"></vtr-ui-security-statusbar>
+												<vtr-ui-security-statusbar [statusList]="[statusItem]">
+												</vtr-ui-security-statusbar>
 											</div>
 										</div>
 										<div class="row mt-40">
@@ -50,44 +46,33 @@
 											</div>
 											<div class=" pull right">
 												<div class="col-12">
-													<button *ngIf="statusItem.status === 'not-installed'"
-														type="button"
+													<vtr-ui-button *ngIf="statusItem.status === 'not-installed'"
 														(click)="getSurfEasy()"
-														vtrMetrics
-														metricsEvent="itemClick"
-														metricsItem="getSurfEasy"
-														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
-														Get SurfEasy
-													</button>
-													<button *ngIf="statusItem.status === 'installed'"
-														type="button"
+														[metricsItem]="'security.vpn.getSufEasy' | translate"
+														[label]="'Get SurfEasy'">
+													</vtr-ui-button>
+													<vtr-ui-button *ngIf="statusItem.status === 'installed'"
 														(click)="openSurfEasy()"
-														vtrMetrics
-														metricsEvent="itemClick"
-														metricsItem="openSurfEasy"
-														class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
-														Open SurfEasy
-													</button>
+														[metricsItem]="'security.vpn.openSufEasy' | translate"
+														[label]="'Open SurfEasy'">
+													</vtr-ui-button>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="row vtr-page-security-internet" *ngIf="statusItem.status === 'not-installed'">
+							<div class="row vtr-page-security-internet"
+								*ngIf="statusItem.status === 'not-installed'">
 								<div class="row">
 									<div class="col col-12 col-sm-12 mt-40">
 										<div>
-											<p class="title"> Why SurfEasy?</p>
-											<p class="text-regular">SurfEasy makes it easy to stay safe while surfing
-												the
-												internet. It helps you remain anonymous, and adds an additional layer of
-												security between you and anyone that wants your personal information.
-											</p>
+											<p class="title">{{'security.vpn.whySufEasy' | translate}}</p>
+											<p class="text-regular">{{'security.vpn.whySufEasyDescription' | translate}}</p>
 										</div>
 									</div>
 								</div>
-								<div class="row">
+								<div class="row w-100">
 									<div class="col col-6 mt-40">
 										<div class="col">
 											<img src="../../../../assets/images/surfeasy-left-img.png"
@@ -97,13 +82,13 @@
 									<div class="col col-6 mt-40">
 										<div class="col">
 											<div class="list-heading">
-												<p class="adjust-left">Start using SurfEasy Today</p>
+												<p class="adjust-left">{{'security.vpn.startUseSufEasy' | translate}}</p>
 											</div>
 											<ul class="bullet-list">
 												<li class="good">
 													<div class="container-fluid">
 														<div class="row align-items-center">
-															<div class="col-auto">
+															<div class="col-auto pl-0">
 																<div class="bullet-icon">
 																	<div class="icon-bkg">
 																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -112,9 +97,7 @@
 															</div>
 															<div class="col">
 																<div class="text-regular">
-																	Using a VPN adds Security. SurfEasy encrypts your
-																	data,
-																	adding anonymity and security.
+																	{{'security.vpn.startUseSufEasy1' | translate}}
 																</div>
 															</div>
 														</div>
@@ -123,7 +106,7 @@
 												<li class="good">
 													<div class="container-fluid">
 														<div class="row align-items-center">
-															<div class="col-auto">
+															<div class="col-auto pl-0">
 																<div class="bullet-icon">
 																	<div class="icon-bkg">
 																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -132,9 +115,7 @@
 															</div>
 															<div class="col">
 																<div class="text-regular">
-																	Once registered SurfEasy runs silently in the
-																	background
-																	so everything runs the same but better.
+																	{{'security.vpn.startUseSufEasy2' | translate}}
 																</div>
 															</div>
 														</div>
@@ -143,7 +124,7 @@
 												<li class="good">
 													<div class="container-fluid">
 														<div class="row align-items-center">
-															<div class="col-auto">
+															<div class="col-auto pl-0">
 																<div class="bullet-icon">
 																	<div class="icon-bkg">
 																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -152,11 +133,7 @@
 															</div>
 															<div class="col">
 																<div class="text-regular">
-																	Start using SurfEasy to protect yourself while
-																	browsing
-																	the internet. Enjoy the no-log VPN that works on
-																	every
-																	device.
+																	{{'security.vpn.startUseSufEasy3' | translate}}
 																</div>
 															</div>
 														</div>
@@ -165,7 +142,7 @@
 												<li class="good">
 													<div class="container-fluid">
 														<div class="row align-items-center">
-															<div class="col-auto">
+															<div class="col-auto pl-0">
 																<div class="bullet-icon">
 																	<div class="icon-bkg">
 																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -174,11 +151,7 @@
 															</div>
 															<div class="col">
 																<div class="text-regular">
-																	As a surfEasy user enjoy 250 MB of free data every
-																	30
-																	days! Unlock additional data by following the steps
-																	on
-																	the "Rewards" tab of the SurfEasy app.
+																	{{'security.vpn.startUseSufEasy4' | translate}}
 																</div>
 															</div>
 														</div>
@@ -189,15 +162,13 @@
 									</div>
 								</div>
 							</div>
-							<div class="row vtr-connected-security-internet" *ngIf="statusItem.status === 'installed'">
+							<div class="row vtr-connected-security-internet"
+								*ngIf="statusItem.status === 'installed'">
 								<div class="row">
 									<div class="col col-12 col-sm-12 mt-40">
 										<div>
-											<p class="title">How to use SurfEasy VPN</p>
-											<p class="text-regular">A VPN provider helps to protect you while you are
-												surfing the internet. Without a VPN, our PC may be moe vulnerable to
-												attackers and identity thieves. A VPN runs silently in the bacground and
-												provides safety and privacy measures.</p>
+											<p class="title">{{'security.vpn.howToUseSufEasy' | translate}}</p>
+											<p class="text-regular">{{'security.vpn.whatCanSufEasy2' | translate}}</p>
 										</div>
 									</div>
 								</div>
@@ -211,25 +182,23 @@
 									<div class="col col-6 mt-40">
 										<div class="col">
 											<div class="list-heading">
-												<p class="adjust-left">Get started:</p>
+												<p class="adjust-left">{{'security.vpn.getStarted' | translate}}</p>
 											</div>
 											<div class="number-list">
 												<ol>
 													<li>
 														<div class="text-regular">
-															After installing SurfEasy, register and make an account.
+															{{'security.vpn.getStarted1' | translate}}
 														</div>
 													</li>
 													<li>
 														<div class="text-regular">
-															Log in with your secure credentials.
+															{{'security.vpn.getStarted2' | translate}}
 														</div>
 													</li>
 													<li>
 														<div class="text-regular">
-															Wait for confirmation to know you are connected, and then
-															begin
-															browsing securely.
+															{{'security.vpn.getStarted3' | translate}}
 														</div>
 													</li>
 												</ol>
@@ -237,13 +206,13 @@
 											<div class="col col-12 mt-40">
 												<div class="col">
 													<div class="list-heading">
-														<p class="adjust-left sub-heading">HOW TO GET FREE DATA:</p>
+														<p class="adjust-left sub-heading">{{'security.vpn.howToGetData' | translate}}</p>
 													</div>
 													<ul class="bullet-list">
 														<li class="good">
 															<div class="container-fluid">
 																<div class="row align-items-center">
-																	<div class="col-auto">
+																	<div class="col-auto pl-0">
 																		<div class="bullet-icon">
 																			<div class="icon-bkg">
 																				<fa-icon [icon]="['fas', 'check']">
@@ -253,7 +222,7 @@
 																	</div>
 																	<div class="col">
 																		<div class="text-regular">
-																			Confirm email and earn +250 MB
+																			{{'security.vpn.howToGetData1' | translate}}
 																		</div>
 																	</div>
 																</div>
@@ -262,7 +231,7 @@
 														<li class="good">
 															<div class="container-fluid">
 																<div class="row align-items-center">
-																	<div class="col-auto">
+																	<div class="col-auto pl-0">
 																		<div class="bullet-icon">
 																			<div class="icon-bkg">
 																				<fa-icon [icon]="['fas', 'check']">
@@ -272,7 +241,7 @@
 																	</div>
 																	<div class="col">
 																		<div class="text-regular">
-																			Add second device and earn +250 Mb
+																			{{'security.vpn.howToGetData2' | translate}}
 																		</div>
 																	</div>
 																</div>
@@ -281,7 +250,7 @@
 														<li class="good">
 															<div class="container-fluid">
 																<div class="row align-items-center">
-																	<div class="col-auto">
+																	<div class="col-auto pl-0">
 																		<div class="bullet-icon">
 																			<div class="icon-bkg">
 																				<fa-icon [icon]="['fas', 'check']">
@@ -291,7 +260,7 @@
 																	</div>
 																	<div class="col">
 																		<div class="text-regular">
-																			Refer a friend and earn +500 MB
+																			{{'security.vpn.howToGetData3' | translate}}
 																		</div>
 																	</div>
 																</div>
@@ -300,7 +269,7 @@
 														<li class="good">
 															<div class="container-fluid">
 																<div class="row align-items-center">
-																	<div class="col-auto">
+																	<div class="col-auto pl-0">
 																		<div class="bullet-icon">
 																			<div class="icon-bkg">
 																				<fa-icon [icon]="['fas', 'check']">
@@ -310,7 +279,7 @@
 																	</div>
 																	<div class="col">
 																		<div class="text-regular">
-																			Like SurfEasy on Facebook and earn +100 MB
+																			{{'security.vpn.howToGetData4' | translate}}
 																		</div>
 																	</div>
 																</div>
@@ -319,7 +288,7 @@
 														<li class="good">
 															<div class="container-fluid">
 																<div class="row align-items-center">
-																	<div class="col-auto">
+																	<div class="col-auto pl-0">
 																		<div class="bullet-icon">
 																			<div class="icon-bkg">
 																				<fa-icon [icon]="['fas', 'check']">
@@ -329,7 +298,7 @@
 																	</div>
 																	<div class="col">
 																		<div class="text-regular">
-																			Follow SurfEasy on Twitter and earn +100 MB
+																			{{'security.vpn.howToGetData5' | translate}}
 																		</div>
 																	</div>
 																</div>
@@ -346,22 +315,17 @@
 							<div class="col col-12 ">
 								<div class="row top-line">
 									<div class="col">
-										<div class="list-heading">Powered By SurfEasy</div>
-										<p class="text-regular"> Read more on the <a
-												vtrMetrics
-												metricsEvent="itemClick"
-												metricsItem="privacyPolicy"
-												href="https://www.surfeasy.com/privacy_policy/"
-												target="_blank"
-												class="learnmore">Privacy Policy</a> and <a
-												vtrMetrics
-												metricsEvent="itemClick"
-												metricsItem="termsOfServices"
-												href="https://www.surfeasy.com/terms_of_service/"
-												target="_blank"
-												class="learnmore">Terms of Services</a></p>
+										<div class="list-heading">{{'security.vpn.poweredBySurfEasy' | translate}}</div>
+										<p class="text-regular">
+											<vtr-widget-translate-picker [translateString]="'security.vpn.privacyPolicyAndTermsOfService' | translate"
+												[firstMetricsItem]="'privacyPolicy'" [firstMetricsParent]="'security.internet'"
+												[firstHref]="'https://www.surfeasy.com/privacy_policy/'"
+												[secondMetricsItem]="'termsOfServices'" [secondMetricsParent]="'security.internet'"
+												[secondHref]="'https://www.surfeasy.com/terms_of_service/'">
+											</vtr-widget-translate-picker>
+										</p>
 									</div>
-									<div class="pull right"><img class="surfeasy_logo_bottom"
+									<div class="pull right align-self-center"><img class="surfeasy_logo_teal"
 											src="../../../../assets/images/SurfEasy-logo.png" /></div>
 								</div>
 							</div>
@@ -373,17 +337,24 @@
 								<!--Start of Security Card Advisor-->
 								<div class="row mb-40">
 									<div class="col col-12">
-										<vtr-widget-status [title]="'Security Advisor'"
-											[description]="'CHECK IF YOUR DEVICE IS SECURED.'"
-											[items]="mockService.securityStatus">
-										</vtr-widget-status>
+										<vtr-widget-security-status [securityAdvisor]="securityAdvisor">
+										</vtr-widget-security-status>
 									</div>
 								</div>
 								<!--End of Security Card Advisor-->
 								<div class="row">
 									<div class="col col-12">
-										<vtr-article-item *ngFor="let item of articles, let i = index"
-											[item]="item"></vtr-article-item>
+										<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+											[caption]="cardContentPositionA.Description"
+											[title]="cardContentPositionA.Title"
+											[logoText]="cardContentPositionA.BrandName"
+											[action]="cardContentPositionA.Action"
+											[actionLink]="cardContentPositionA.ActionLink"
+											[type]="'corner-article'"
+											[ratioX]="4"
+											[ratioY]="2"
+											[cornerShift]="'large'">
+										</vtr-container-card>
 									</div>
 								</div>
 							</div>

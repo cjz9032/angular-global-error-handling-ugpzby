@@ -8,20 +8,20 @@
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col">
+		<div class="row no-gutters">
+			<div class="col-sm-12 col-md-12 col-lg-8">
 				<div class="text-regular">
 					These packages include updates that are critical for the correct operation of your computer.
 					Critical updates help keep your computer more secure and reliable and should be installed as they
 					become available.
 					Recommended updates and optional updates help keep your software up to date and your computer
 					running at its best.
-
 				</div>
 			</div>
-			<div class="col-3">
+			<div class="col-sm-12 col-md-12 col-lg-4">
 				<div class="button-box shift-right">
 					<vtr-ui-button (onClick)="onInstallAllUpdates($event)"
+						[upperCaseLabel]="true"
 						[label]="'Install all updates'"></vtr-ui-button>
 				</div>
 			</div>
@@ -104,14 +104,16 @@
 						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="row mt-10"
-				*ngIf="!isInstallationCompleted">
-				<div class="col-5">
-					<div class="button-box shift-left">
-						<vtr-ui-button (onClick)="onInstallSelectedUpdates($event)"
-							[label]="'Install Selected updates'"></vtr-ui-button>
+				<div class="row mt-10 no-gutters"
+					*ngIf="!isInstallationCompleted">
+					<div class="col-12">
+						<div class="button-box shift-left">
+							<vtr-ui-button (onClick)="onInstallSelectedUpdates($event)"
+								[isDisabled]="!isUpdateSelected"
+								[upperCaseLabel]="true"
+								[label]="'Install Selected updates'"></vtr-ui-button>
+						</div>
 					</div>
 				</div>
 			</div>

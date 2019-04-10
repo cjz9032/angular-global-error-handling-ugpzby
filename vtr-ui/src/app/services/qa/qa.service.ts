@@ -6,7 +6,7 @@ import { QA } from '../../data-models/qa/qa.model';
 })
 export class QaService {
 
-	imagePath = '../../../assets/images/qa';
+	imagePath = 'assets/images/qa';
 	qas: QA[] = [
 		{
 			id: 1,

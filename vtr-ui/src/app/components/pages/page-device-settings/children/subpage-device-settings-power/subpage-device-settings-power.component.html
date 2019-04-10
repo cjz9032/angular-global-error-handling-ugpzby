@@ -31,9 +31,9 @@
 	<div class="row">
 		<div class="col">
 			<vtr-ui-header-subpage [items]="headerMenuItems"
-				[title]="title"
-				[caption]="headerCaption"
-				[menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
+				[title]="'device.deviceSettings.power.title' | translate"
+				[caption]="'device.deviceSettings.power.description' | translate"
+				[menuTitle]="'device.deviceSettings.power.jumpto.title' | translate"></vtr-ui-header-subpage>
 		</div>
 	</div>
 	<!-- <div *ngIf="value===1">
@@ -133,22 +133,24 @@
 		<div class="row py-5 smartsettings-card"
 			id="cooling">
 			<div class="col-10 mx-auto ">
-				<vtr-container-collapsible cardTitle="Power Smartsettings"
+				<vtr-container-collapsible
+					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate | lowercase"
 					[isCollapsed]="false"
 					[allowCollapse]="false"
 					[theme]="'blue'">
 					<div class="row">
 						<div class="col-auto text-wrap subtitle">
-							<h3>Intelligent Cooling</h3>
-							<p>This feature dynamically adjusts thermal settings to your needs. When on, it adjusts
-								settings to keep the device cooler or quiet, while being held or idle. Otherwise, it
-								optimizes performance while the device is on a stable surface. When off, you can
-								manually set thermal priority.</p>
+							<h3>
+								{{'device.deviceSettings.power.powerSmartSettings.subtitle' | translate |  lowercase }}
+							</h3>
+							<p> {{'device.deviceSettings.power.powerSmartSettings.description1' | translate}}</p>
 						</div>
 					</div>
-					<ul class="list-group list-group-flush">
+					<ul class=" list-group
+								list-group-flush">
 						<li class="">
-							<vtr-ui-row-switch [title]="'Intelligent cooling'"
+							<vtr-ui-row-switch
+								[title]="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate | lowercase"
 								[caption]="''"
 								[isSwitchVisible]="toggleIntelligentCooling"
 								[isSwitchChecked]="toggleIntelligentCoolingStatus"
@@ -161,13 +163,13 @@
 									*ngIf="intelligentCooling">
 									<vtr-ui-rectangle-radio [radioId]="'radio1'"
 										[group]="'radio'"
-										[label]="'PERFORMANCE'"
+										[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' | translate"
 										[value]="'PERFORMANCE'"
 										[checked]="radioPerformance"
 										(change)="changePerformance($event)"></vtr-ui-rectangle-radio>
 									<vtr-ui-rectangle-radio [radioId]="'radio2'"
 										[group]="'radio'"
-										[label]="'QUIET & COOL'"
+										[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool' | translate"
 										[value]="'QUIET & COOL'"
 										[checked]="radioQuietCool"
 										(change)="changeQuietCool($event)"></vtr-ui-rectangle-radio>
@@ -184,41 +186,27 @@
 		<div class="row py-5 smartsettings-card"
 			id="cooling">
 			<div class="col-10 mx-auto ">
-				<vtr-container-collapsible cardTitle="Power Smartsettings"
+				<vtr-container-collapsible
+					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate | lowercase"
 					[isCollapsed]="false"
 					[allowCollapse]="false"
 					[theme]="'blue'">
 					<div class="row">
 						<div class="col-auto text-wrap subtitle">
 							<h3>Intelligent Cooling</h3>
-							<p>Intelligent Cooling adjusts fan speed, maximum surface temperature, and performance.
-								This feature has below modes and are now accessible by Windows performance power slider.
-								<a class="read-more-link"
-									(click)="openContextModal(template)">Read more.</a>
-
-								<ng-template #template>
-									<div class="justify-content-end">
-										<button type="button"
-											class="close pull-right"
-											aria-label="Close"
-											(click)="closeContextModal()">
-											<span aria-hidden="true">&times;</span>
-										</button>
-									</div>
-									<div class="modal-body">
-										<p><span>Quiet mode: </span>Slider is far left. The fan speed and performance
-											are lowered and best battery
-											life.</p>
-										<p><span>Balanced mode: </span>Slider is center. Fan speed and performance
-											experience.</p>
-										<p><span>Performance mode: </span>Slider is far right. Fan speed and
-											performance.</p>
-									</div>
-								</ng-template>
+							<p>{{'device.deviceSettings.power.powerSmartSettings.description2' | translate}}
+								<!-- <a class="read-more-link"
+									(click)="">Read more.</a> -->
+							</p>
+							<p> {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line1' | translate}}
+							</p>
+							<p>{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line2' | translate}}
+							</p>
+							<p>{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line3' | translate}}
 							</p>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row subtitle-its">
 						<div class="col-auto">
 							<div class="search-icon">
 								<fa-icon [icon]="['fas', 'search']"></fa-icon>
@@ -226,11 +214,27 @@
 						</div>
 						<div class="col col-7">
 							<div class="int-cool-text">
-								Intelligent cooling
+								{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate}}
 							</div>
 						</div>
 						<div class="col-auto"><a class="settings-link"
-								(click)="launchSystemUri('ms-settings:')">Go to windows settings</a></div>
+								(click)="openContextModal(template)">{{'device.deviceSettings.power.powerSmartSettings.gotoWindows' | translate}}</a>
+							<ng-template #template>
+								<div class="justify-content-end">
+									<button type="button"
+										class="close pull-right"
+										aria-label="Close"
+										(click)="closeContextModal()">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<p>Click on Windows battery icon on System tray to access Windows performance power slider</p>
+									<!-- <span>Performance mode: </span>Slider is far right. Fan speed and
+												performance. -->
+								</div>
+							</ng-template>
+						</div>
 						<!-- <div class="col">
 							<fa-icon class="question"
 								[icon]="['far', 'question-circle']"></fa-icon>
@@ -331,17 +335,18 @@
 	<div class="row py-5"
 		id="battery">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible cardTitle="Battery Settings"
+			<vtr-container-collapsible
+				[cardTitle]="'device.deviceSettings.power.batterySettings.title' | translate | lowercase"
 				*ngIf="showAirplanePowerModeSection || conservationModeStatus.available || expressChargingStatus.available "
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngIf="showAirplanePowerModeSection">
-						<vtr-ui-row-switch [title]="batterySettings.items[0].header"
-							[caption]="batterySettings.items[0].subHeader"
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
+							[caption]="'device.deviceSettings.power.batterySettings.airPlanePower.description' | translate"
 							[isSwitchVisible]=true
 							[leftIcon]="batterySettings.items[0].leftImageSource"
-							[readMoreText]="batterySettings.items[0].readMoreText"
 							[tooltipText]="batterySettings.items[0].tooltipText"
 							[isSwitchChecked]="toggleAirplanePowerModeFlag"
 							(toggleOnOff)="onToggleOfAirplanePowerMode($event)">
@@ -373,29 +378,30 @@
 						</vtr-ui-row-switch>
 					</li> -->
 					<li class=""
-						*ngIf="conservationModeStatus.available">
+						*ngIf="expressChargingStatus.available">
 						<!--
 						*ngIf="batterySettings.status.expressCharging"
 						-->
-						<vtr-ui-row-switch [title]="batterySettings.items[2].header"
-							[caption]="batterySettings.items[2].subHeader"
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
+							[caption]="'device.deviceSettings.power.batterySettings.expressCharging.description' | translate"
 							[isSwitchVisible]=true
 							[leftIcon]="batterySettings.items[2].leftImageSource"
-							[tooltipText]="batterySettings.items[2].tooltipText"
-							[isSwitchChecked]="conservationModeStatus.status"
+							[tooltipText]="'device.deviceSettings.power.batterySettings.expressCharging.tooltip' | translate"
+							[isSwitchChecked]="expressChargingStatus.status"
 							(toggleOnOff)="changeBatteryMode($event,'expressCharging')">
 						</vtr-ui-row-switch>
 					</li>
 					<li class=""
-						*ngIf="expressChargingStatus.available">
+						*ngIf="conservationModeStatus.available">
 						<!-- *ngIf="batterySettings.status.conservationMode"* -->
-						<vtr-ui-row-switch [title]="batterySettings.items[3].header"
-							[caption]="batterySettings.items[3].subHeader"
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.power.batterySettings.conservationMode.title' | translate"
+							[caption]="'device.deviceSettings.power.batterySettings.conservationMode.description' | translate"
 							[isSwitchVisible]=true
 							[leftIcon]="batterySettings.items[3].leftImageSource"
-							[readMoreText]="batterySettings.items[3].readMoreText"
-							[tooltipText]="batterySettings.items[3].tooltipText"
-							[isSwitchChecked]="expressChargingStatus.status"
+							[tooltipText]="'device.deviceSettings.power.batterySettings.conservationMode.tooltip.line1' | translate"
+							[isSwitchChecked]="conservationModeStatus.status"
 							(toggleOnOff)="changeBatteryMode($event,'conservationMode')">
 						</vtr-ui-row-switch>
 					</li>
@@ -408,14 +414,16 @@
 	<div class="row py-5"
 		id="power">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible cardTitle="Power Settings"
+			<vtr-container-collapsible
+				[cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate | lowercase"
 				*ngIf="alwaysOnUSBStatus.available || showEasyResumeSection"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngIf="alwaysOnUSBStatus.available">
-						<vtr-ui-row-switch [title]="powerSettings[0].header"
-							[caption]="powerSettings[0].subHeader"
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
+							[caption]="'device.deviceSettings.power.powerSettings.alwaysUSB.description' | translate"
 							[isSwitchVisible]=true
 							[isSwitchChecked]="alwaysOnUSBStatus.status"
 							[leftIcon]="powerSettings[0].leftImageSource"
@@ -434,12 +442,13 @@
 							</div> -->
 							<div class="row">
 								<div class="col-12">
-									<img src="../../../../../../assets/images/AlwaysOnUSBcontext.JPG" alt=""/>
+									<img src="../../../../../../assets/images/AlwaysOnUSBcontext.JPG"
+										alt="" />
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-12">
-									<div class="custom-control custom-checkbox always-on-usb-checkbox">
+									<div class="custom-control custom-checkbox always-on-usb-checkbox" *ngIf="usbChargingInBatteryModeStatus">
 										<input id="cb-always-on-usb"
 											type="checkbox"
 											name="always-on-usb-checkbox-id"
@@ -448,9 +457,10 @@
 											(ngModelChange)='onUsbChargingStatusChange()'
 											class="custom-control-input"
 											checked="" />
+											<!-- [disabled]="!toggleAlwaysOnUsbFlag" -->
 										<label class="custom-control-label "
 											for="cb-always-on-usb">
-											{{ powerSettings[0].checkboxDesc }}
+											{{ 'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}
 										</label>
 									</div>
 								</div>
@@ -459,13 +469,14 @@
 					</li>
 					<li class=""
 						*ngIf="showEasyResumeSection">
-						<vtr-ui-row-switch [title]="powerSettings[1].header"
-							[caption]="powerSettings[1].subHeader"
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
+							[caption]="'device.deviceSettings.power.powerSettings.easyResume.description' | translate"
 							[isSwitchVisible]=true
-							[isSwitchChecked]=powerSettings[1].isSwitchChecked
+							[isSwitchChecked]='toggleEasyResumeStatus'
 							[leftIcon]="powerSettings[1].leftImageSource"
 							[rightIcon]="powerSettings[1].rightImageSource"
-							[tooltipText]="powerSettings[1].tooltipText"
+							[tooltipText]="'device.deviceSettings.power.powerSettings.easyResume.tooltip' | translate"
 							(toggleOnOff)="onToggleOfEasyResume($event)">
 						</vtr-ui-row-switch>
 					</li>
@@ -477,16 +488,18 @@
 	<div class="row py-5"
 		id="other">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible componentName="Other Settings"
+			<vtr-container-collapsible
+				componentName="'device.deviceSettings.power.otherSettings.title' | translate | lowercase"
 				cardTitle="Other Settings"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""
 						*ngFor="let item of otherSettings">
-						<vtr-ui-row-switch [componentName]="item.header"
-							[name]="item.header"
-							[title]="item.header"
-							[caption]="item.subHeader"
+						<vtr-ui-row-switch
+							[componentName]="'device.deviceSettings.power.otherSettings.title' | translate"
+							[name]="'device.deviceSettings.power.otherSettings.title' | translate"
+							[title]="'device.deviceSettings.power.otherSettings.vantageToolbar.title' | translate"
+							[caption]="'device.deviceSettings.power.otherSettings.vantageToolbar.description' | translate"
 							[isSwitchVisible]=true
 							[leftIcon]="item.leftImageSource"
 							[isSwitchChecked]="vantageToolbarStatus.status"

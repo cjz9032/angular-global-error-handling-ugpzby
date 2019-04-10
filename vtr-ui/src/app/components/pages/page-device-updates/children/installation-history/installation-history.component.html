@@ -98,6 +98,12 @@
 						</ul>
 					</div>
 				</div>
+				<div class="float-right"
+					*ngIf="!showAll">
+					<button type="button"
+						(click)="onShowAllClick()"
+						class="btn btn-link">Show All</button>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -1,6 +1,6 @@
-<div class="security-widget windows-hello" [ngClass]="{'security-widget-no-bottom-border': feature.subject === 'Windows Hello' || feature.subject === 'VPN Security'}">
+<div class="security-widget windows-hello">
   <div class="security-widget-inner">
-    <vtr-ui-object-title [objects]="feature">													
+    <vtr-ui-object-title [objects]="feature.subject">
       </vtr-ui-object-title>
     <vtr-ui-list-chevron [items]="feature.statusList">
     </vtr-ui-list-chevron>

@@ -1,28 +1,22 @@
-import { EventTypes } from '@lenovo/tan-client-bridge';
-import * as phoenix from '@lenovo/tan-client-bridge';
+import { TranslateService } from '@ngx-translate/core';
 
 export class HomeProtectionLandingViewModel {
-	// homeProtection: HomeProtection;
 	statusList: Array<any>;
-
 	type = 'security';
-	constructor(hpModel: phoenix.HomeProtection, wfModel: phoenix.WifiSecurity) {
-		// this.homeProtection = hpModel;
+	constructor(public translate: TranslateService) {
 		const hpStatus = {
-			status: 2,
-			detail: 'disabled', // enabled / disabled
-			path: 'wifi-security',
-			title: 'Connected Home Security',
+			detail: 'device.myDevice.learnMore',
+			path: 'security/wifi-security',
+			pathParams: { fragment: 'home-security' },
+			title: 'security.landing.connectedHomeSecurity',
 			type: 'security',
+			circle: 'questionCircle'
 		};
-		if (wfModel.state) {
-			hpStatus.status = (wfModel.state === 'enabled') ? 0 : 1;
-			hpStatus.detail = wfModel.state;
-		}
-
-		wfModel.on(EventTypes.wsStateEvent, (data) => {
-			hpStatus.status = (data === 'enabled') ? 0 : 1;
-			hpStatus.detail = data;
+		this.translate.get(hpStatus.title).subscribe((res) => {
+			hpStatus.title = res;
+		});
+		this.translate.get(hpStatus.detail).subscribe((res) => {
+			hpStatus.detail = res;
 		});
 		this.statusList = new Array(hpStatus);
 	}

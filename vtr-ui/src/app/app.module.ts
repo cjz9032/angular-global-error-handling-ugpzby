@@ -84,7 +84,6 @@ import { ModalWifiSecuriryLocationNoticeComponent } from './components/modal/mod
 // APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
 import { MockService } from './services/mock/mock.service';
-import { MockWifiSecurity } from './services/mock/mockWifiSecurity.service';
 import { MockSecurityAdvisorService } from './services/mock/mockSecurityAdvisor.service';
 import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
@@ -95,6 +94,7 @@ import { UserService } from './services/user/user.service';
 import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
 import { CameraDetailMockService } from './services/camera/camera-detail/camera-detail.mock.service';
 import { AudioService } from './services/audio/audio.service';
+import { RegionService } from './services/region/region.service';
 
 // FONT AWESOME
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -126,13 +126,14 @@ import { SanitizeUrlPipe } from './pipe/sanitise-url.pipe';
 import { UniqueIdPipe } from './pipe/unique-id.pipe';
 import { environment } from '../environments/environment';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
-import {MetricService} from './services/metric/metric.service';
+import { MetricService } from './services/metric/metric.service';
 import { WidgetMcafeeComponent } from './components/widgets/widget-mcafee/widget-mcafee.component';
 import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
-import { ChoosePagePipe } from './pipe/security-antivirus/choose-page.pipe';
-import { DayFormatPipe } from './pipe/security-antivirus/day-format.pipe';
+import { WidgetSecurityStatusComponent } from './components/widgets/widget-security-status/widget-security-status.component';
+
 
 import { MetricsDirective } from './directives/metrics.directive';
+import { DynamicDirective } from './directives/dynamic.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
 import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
@@ -144,6 +145,7 @@ import { ModalUpdateChangeLogComponent } from './components/modal/modal-update-c
 import { ModalArticleDetailComponent } from './components/modal/modal-article-detail/modal-article-detail.component';
 import { ModalThreatLocatorComponent } from './components/modal/modal-threat-locator/modal-threat-locator.component';
 import { DolbyModesTranslationPipe } from './pipe/dolby-modes-translation.pipe';
+import { WidgetOfflineInfoComponent } from './components/widgets/widget-offline-info/widget-offline-info.component';
 import { UiLandingFeatureComponent } from './components/ui/ui-landing-feature/ui-landing-feature.component';
 import { UiObjectTitleComponent } from './components/ui/ui-object-title/ui-object-title.component';
 import { UiSecurityStatusbarComponent } from './components/ui/ui-security-statusbar/ui-security-statusbar.component';
@@ -151,8 +153,21 @@ import { IconClassPipe } from './pipe/ui-security-statusbar/icon-class.pipe';
 import { IconNamePipe } from './pipe/ui-security-statusbar/icon-name.pipe';
 import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
 import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
-import {StatusTransformPipe} from './pipe/ui-security-statusbar/status-transform.pipe';
-
+import { UiFeatureItemComponent } from './components/ui/ui-feature-item/ui-feature-item.component';
+import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
+import { MinutesToHourminPipe } from './pipe/minutes-to-hourmin.pipe';
+import { WidgetAboutComponent } from './components/widgets/widget-about/widget-about.component';
+import { SubTransformPipe } from './pipe/security-antivirus/sub-transform.pipe';
+import { DateClassPipe } from './pipe/security-antivirus/date-class.pipe';
+import { ModalAboutComponent } from './components/modal/modal-about/modal-about.component';
+import { WifiClassPipe } from './pipe/security-landing/wifi-class.pipe';
+import { TagPickerPipe } from './pipe/translation/tag-picker.pipe';
+import { TextPickerPipe } from './pipe/translation/text-picker.pipe';
+import { WidgetTranslatePickerComponent } from './components/widgets/widget-translate-picker/widget-translate-picker.component';
+import { TranslatePickerBaseComponent } from './components/widgets/widget-translate-picker/base/translate-picker-base/translate-picker-base.component';
+import { TranslatePickerTailComponent } from './components/widgets/widget-translate-picker/base//translate-picker-tail/translate-picker-tail.component';
+import { JoinclassPipe } from './pipe/security-wifi/join-class.pipe';
+import { SuccessClassPipe } from './pipe/security-wifi/success-class.pipe';
 
 library.add(fas);
 library.add(fab);
@@ -234,14 +249,13 @@ library.add(fal);
 		ModalBatteryChargeThresholdComponent,
 		WidgetMcafeeComponent,
 		PipeInstallPipe,
-		ChoosePagePipe,
-		DayFormatPipe,
 		IconClassPipe,
 		IconNamePipe,
 		TextClassPipe,
 		StatusTextPipe,
 		ModalBatteryChargeThresholdComponent,
 		MetricsDirective,
+		DynamicDirective,
 		InstallationHistoryComponent,
 		SeparatePascalCasePipe,
 		ModalCommonConfirmationComponent,
@@ -252,6 +266,8 @@ library.add(fal);
 		SafeDomPipe,
 		ModalCommonConfirmationComponent,
 		ModalArticleDetailComponent,
+		DolbyModesTranslationPipe,
+		WidgetOfflineInfoComponent,
 		ModalThreatLocatorComponent,
 		DolbyModesTranslationPipe,
 		ModalWifiSecurityInvitationComponent,
@@ -263,8 +279,23 @@ library.add(fal);
 		IconNamePipe,
 		StatusTextPipe,
 		TextClassPipe,
+		UiFeatureItemComponent,
 		UiSecurityStatusbarComponent,
+		WidgetSecurityStatusComponent,
 		StatusTransformPipe,
+		MinutesToHourminPipe,
+		WidgetAboutComponent,
+		SubTransformPipe,
+		DateClassPipe,
+		ModalAboutComponent,
+		WifiClassPipe,
+		TagPickerPipe,
+		TextPickerPipe,
+		WidgetTranslatePickerComponent,
+		TranslatePickerBaseComponent,
+		TranslatePickerTailComponent,
+		JoinclassPipe,
+		SuccessClassPipe
 	],
 	imports: [
 		BrowserModule,
@@ -284,7 +315,6 @@ library.add(fal);
 		CookieService,
 		DevService,
 		MockService,
-		MockWifiSecurity,
 		DisplayService,
 		ContainerService,
 		CommsService,
@@ -293,6 +323,7 @@ library.add(fal);
 		MockSecurityAdvisorService,
 		UserService,
 		AudioService,
+		RegionService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
 	bootstrap: [AppComponent],
@@ -302,10 +333,12 @@ library.add(fal);
 		ModalBatteryChargeThresholdComponent,
 		ModalCommonConfirmationComponent,
 		ModalArticleDetailComponent,
+		FeedbackFormComponent,
+		ModalThreatLocatorComponent,
 		ModalWifiSecurityInvitationComponent,
 		ModalWifiSecuriryLocationNoticeComponent,
 		ModalUpdateChangeLogComponent,
-		ModalThreatLocatorComponent
+		ModalAboutComponent,
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA

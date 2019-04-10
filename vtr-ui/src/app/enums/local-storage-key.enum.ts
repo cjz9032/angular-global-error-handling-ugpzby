@@ -7,6 +7,7 @@ export enum LocalStorageKey {
 	SecurityVPNStatus = '[LocalStorageKey] SecurityVPNStatus',
 	SecurityPasswordManagerStatus = '[LocalStorageKey] SecurityPasswordManagerStatus',
 	SecurityWindowsHelloStatus = '[LocalStorageKey] SecurityWindowsHelloStatus',
+	SecurityShowWindowsHello = '[LocalStorageKey] SecurityShowWindowsHello',
 	SecurityMcAfee = '[LocalStorageKey] SecurityMcAfee',
 	SecurityWindowsDefender = '[LocalStorageKey] SecurityWindowsDefender',
 	SecurityOtherAntiVirus = '[LocalStorageKey] SecurityOtherAntiVirus',
@@ -15,5 +16,16 @@ export enum LocalStorageKey {
 	SecurityWindowsDefenderStatusList = '[LocalStorageKey] SecurityWindowsDefenderStatusList',
 	SecurityOthersAntiStatusList = '[LocalStorageKey] SecurityOthersAntiStatusList',
 	SecurityOthersFirewallStatusList = '[LocalStorageKey] SecurityOthersFirewallStatusList',
-	SecurityCurrentPage = '[LocalStorageKey] SecurityCurrentPage'
+	SecurityCurrentPage = '[LocalStorageKey] SecurityCurrentPage',
+	SecurityWifiSecurityState = '[LocalStorageKey] SecurityWifiSecurityState',
+	SecurityWifiSecurityHasEverUsed = '[LocalStorageKey] SecurityWifiSecurityHasEverUsed',
+	SecurityWifiSecurityHistorys = '[LocalStorageKey] SecurityWifiSecurityHistorys',
+	SecurityWifiSecurityIsLocationServiceOn = '[LocalStorageKey] SecurityWifiSecurityIsLocationServiceOn',
+	SecurityHomeProtectionChsConsoleUrl = '[LocalStorageKey] SecurityHomeProtectionChsConsoleUrl',
+	SecurityHomeProtectionDevicePosture = '[LocalStorageKey] SecurityHomeProtectionDevicePosture',
+	SecurityHomeProtectionStatus = '[LocalStorageKey] SecurityHomeProtectionStatus',
+	SecurityHomeProtectionFamilyId = '[LocalStorageKey] SecurityHomeProtectionFamilyId',
+	SecurityLandingAntivirusStatus = '[LocalStorageKey] SecurityLandingAntivirusStatus',
+	SecurityLandingAntivirusFirewallStatus = '[LocalStorageKey] SecurityLandingAntivirusFirewallStatus',
+	DesktopMachine = '[LocalStorageKey] DesktopMachine'
 }

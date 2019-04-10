@@ -3,6 +3,7 @@ import { DeviceService } from '../../../services/device/device.service';
 import { MyDevice } from 'src/app/data-models/device/my-device.model';
 import { Status } from 'src/app/data-models/widgets/status.model';
 import { CommonService } from 'src/app/services/common/common.service';
+import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 
 @Component({
 	selector: 'vtr-widget-device',
@@ -19,7 +20,8 @@ export class WidgetDeviceComponent implements OnInit {
 
 	constructor(
 		public deviceService: DeviceService,
-		private commonService: CommonService
+		private commonService: CommonService,
+		private systemUpdateService: SystemUpdateService
 	) {
 		this.myDevice = new MyDevice();
 	}
@@ -116,17 +118,24 @@ export class WidgetDeviceComponent implements OnInit {
 			systemUpdate.id = 'systemupdate';
 			systemUpdate.title = 'System update not found';
 			systemUpdate.detail = 'System update';
-			systemUpdate.path = '/system-updates';
+			systemUpdate.path = 'device/system-updates';
 			systemUpdate.asLink = true;
 			systemUpdate.isSystemLink = false;
 
 			if (response.sysupdate) {
 				const updateStatus = response.sysupdate.status;
 				const lastUpdate = response.sysupdate.lastupdate;
+				const diffInDays = this.systemUpdateService.dateDiffInDays(lastUpdate);
+
 				if (updateStatus === 1) {
 					systemUpdate.title = `Software up to date `;
 					systemUpdate.systemDetails = `updated on ${this.commonService.formatDate(lastUpdate)}`;
-					systemUpdate.status = 0;
+					if (diffInDays > 30) {
+						systemUpdate.title = `Software outdated `;
+						systemUpdate.status = 1;
+					} else {
+						systemUpdate.status = 0;
+					}
 				} else {
 					systemUpdate.title = `Software outdated `;
 					systemUpdate.systemDetails = `never ran update`;

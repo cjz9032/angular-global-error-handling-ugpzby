@@ -3,9 +3,14 @@ import { WifiSecurity } from '@lenovo/tan-client-bridge';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalWifiSecuriryLocationNoticeComponent } from '../../../../modal/modal-wifi-securiry-location-notice/modal-wifi-securiry-location-notice.component';
 import { ModalThreatLocatorComponent } from 'src/app/components/modal/modal-threat-locator/modal-threat-locator.component';
-import { WifiHomeViewModel } from '../../page-security-wifi.component';
+import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { BaseComponent } from '../../../../base/base.component';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { RegionService } from 'src/app/services/region/region.service';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { SecurityService } from 'src/app/services/security/security.service';
 
 @Component({
 	selector: 'wifi-security',
@@ -14,33 +19,59 @@ import { BaseComponent } from '../../../../base/base.component';
 })
 export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	@Input() data: WifiHomeViewModel;
+	@Input() wifiIsShowMore: string;
 	isShowMore = true; // less info, more info
 	isShowMoreLink = true; // show more link
+	region: string;
 	// showAllNetworks: boolean = true;
 	isCollapsed = true;
 	isWifiSecurityEnabled = true;
 	showAllNetworks = true;
 	showMore = false;
+	hasMore: boolean;
 
 	constructor(
-		public modalService: NgbModal
+		public modalService: NgbModal,
+		private commonService: CommonService,
+		public regionService: RegionService,
+		private securityService: SecurityService
 	) {
 		super();
+		// if (typeof Windows !== undefined) {
+		// 	if (Windows.System.UserProfile.GlobalizationPreferences.homeGeographicRegion === 'CN') {
+		// 		this.isThreatLocatorExist = false;
+		// 	} else {
+		// 		this.isThreatLocatorExist = true;
+		// 	}
+		// }
 	}
 
 	ngOnInit() {
-		this.isWifiSecurityEnabled = false;
-
-		this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
-			if (!value) {
-				const modal = this.modalService.open(ModalWifiSecuriryLocationNoticeComponent,
-					{
-						backdrop: 'static'
-						, windowClass: 'wifi-security-location-modal'
+		this.regionService.getRegion().subscribe({
+			next: x => { this.region = x; },
+			error: err => { console.error(err); },
+			complete: () => { console.log('Done'); }
+		});
+		if (this.wifiIsShowMore === 'false') {
+			this.isShowMore = false;
+		}
+		// this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
+		this.data.wifiSecurity.on(EventTypes.geolocatorPermissionEvent, (value) => {
+			if (!value && this.data.wifiSecurity.state === 'enabled') {
+				this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);
+			} else if (value) {
+				if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
+					this.data.wifiSecurity.enableWifiSecurity().then((res) => {
+						if ( res === true) {
+							this.data.isLWSEnabled = true;
+						} else {
+							this.data.isLWSEnabled = false;
+						}
+					}
+					, (error) => {
+						console.log('no permission');
 					});
-				modal.componentInstance.header = 'Enable location services';
-				modal.componentInstance.description = 'To use Lenovo WiFi Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?';
-				modal.componentInstance.url = 'ms-settings:privacy-location';
+				}
 			}
 		});
 	}
@@ -48,25 +79,16 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	enableWifiSecurity(): void {
 		try {
 			if (this.data.wifiSecurity) {
-				if (this.data.wifiSecurity.isLocationServiceOn) {
-					this.data.wifiSecurity.enableWifiSecurity().then(() => {
-						this.data.homeProtection.refresh();
-					});
-				} else {
-					const modal = this.modalService.open(ModalWifiSecuriryLocationNoticeComponent,
-						{
-							backdrop: 'static'
-							, windowClass: 'wifi-security-location-modal'
-						});
-					modal.componentInstance.header = 'Enable location services';
-					modal.componentInstance.description = 'To use Lenovo WiFi Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?';
-					modal.componentInstance.url = 'ms-settings:privacy-location';
-					this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
-						if (value) {
-							modal.close();
-						}
-					});
-				}
+				this.data.wifiSecurity.enableWifiSecurity().then((res) => {
+					if ( res === true) {
+						this.data.isLWSEnabled = true;
+					} else {
+						this.data.isLWSEnabled = false;
+					}
+					this.data.homeProtection.refresh();
+				}, (error) => {
+					this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);
+				});
 			}
 		} catch {
 			throw new Error('wifiSecurity is null');
@@ -76,7 +98,13 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	disableWifiSecurity(): void {
 		try {
 			if (this.data.wifiSecurity) {
-				this.data.wifiSecurity.disableWifiSecurity();
+				this.data.wifiSecurity.disableWifiSecurity().then((res) => {
+					if ( res === true) {
+						this.data.isLWSEnabled = false;
+					} else {
+						this.data.isLWSEnabled = true;
+					}
+				});
 				// this.wifiHomeViewModel.isLWSEnabled = (this.wifiHomeViewModel.wifiSecurity.state === 'enabled');
 			}
 		} catch {

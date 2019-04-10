@@ -24,14 +24,20 @@
   }
   .device-sub-header {
     color: $shade_darkest;
-    font-size: 1.4rem;
+	font-size: 1.4rem;
+	@media #{$mediaquery_9} {
+		font-size: 1.25rem;
+	}
   }
 
   .sub-header-separator {
     color: $shade_darkest;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
-    font-size: 1.4rem;
+	font-size: 1.4rem;
+	@media #{$mediaquery_9} {
+		font-size: 1.25rem;
+	}
   }
 
   .subheader {
@@ -137,8 +143,17 @@
       .arrow {
         color: $main_darker;
         line-height: 3.8rem;
-        font-size: 1.3rem;
+        font-size: 1.1rem;
+        font-weight: $weight_light;
       }
-    }
+	}
+	.status-block{
+		@media #{$mediaquery_10} {
+			width: 43%;
+		}
+		@media #{$mediaquery_11} {
+			width: 55%;
+		}
+	}
   }
 }

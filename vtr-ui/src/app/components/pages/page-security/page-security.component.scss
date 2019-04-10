@@ -2,6 +2,9 @@
 
 .vtr-page-security {
 	.vtr-page-right-column {
+		@media #{$mediaquery_13} {
+			padding: 4rem 4rem 4rem 8.5rem;
+		}
 		.align-center {
 			padding: 0 6rem 0rem 6rem;
 		}
@@ -52,14 +55,28 @@
 						margin: 0.8rem;
 						.wifi-link {
 							padding-left: 15px;
+							a {
+								font-weight: 500;
+								text-decoration: underline;
+							}
+						}
+						.ellipsis {
+							overflow: hidden;
+							text-overflow: ellipsis;
+							white-space: nowrap;
+						}
+						.wifi-good-font {
+							font-weight: 500;
+							font-size: 1.5rem;
 						}
 						li {
 							height: 4rem;
 							padding: 0.5rm 1rem;
 							border-bottom: 0.1rem solid $shade_lighter;
 							color: $main_darker;
-							line-height: 4rem;							
+							line-height: 4rem;
 							.icon-bkg {
+								text-align: center;
 								.good {
 									color: $go_dark;
 								}
@@ -67,21 +84,20 @@
 									color: $stop_dark;
 								}
 								.orange {
-									color: $stop_light;
+									color: $yellow-dark;
 								}
 							}
 							.wifi-bg {
 								border-radius: 1rem;
 								color: $light;
-								padding: 0.8rem;
 								height: 4rem;
+								text-align: right;
 								.wifi-good {
 									height: 100%;
 									border-radius: 5rem;
-									line-height: 2.4rem;
 									text-align: center;
-									padding-left: 0.5rem;
-    								padding-right: 0.5rem;
+									width: fit-content;
+									margin-left: auto;
 								}
 								.good {
 									background-color: $go_dark;
@@ -99,9 +115,9 @@
 							&:last-child {
 								border-bottom: none;
 							}
-							
+
 						}
-										
+
 					}
 				}
 			}

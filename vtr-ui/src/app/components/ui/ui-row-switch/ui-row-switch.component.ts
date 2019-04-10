@@ -8,8 +8,8 @@ import {
 } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalBatteryChargeThresholdComponent } from '../../modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
-import { BaseComponent } from "../../base/base.component";
-import { CommonService } from 'src/app/services/common/common.service';
+import { BaseComponent } from '../../base/base.component';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 
 @Component({
@@ -38,6 +38,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 	@Input() name = '';
 	@Input() disabled = false;
 	@Input() type = undefined;
+	@Input() resetTextAsButton = false;
 
 	@Output() toggleOnOff = new EventEmitter<boolean>();
 	@Output() readMoreClick = new EventEmitter<boolean>();
@@ -49,7 +50,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 
 	constructor(
 		public modalService: NgbModal
-		// , private commonService: CommonService
+		, private deviceService: DeviceService
 	) { super(); }
 
 
@@ -100,6 +101,12 @@ export class UiRowSwitchComponent extends BaseComponent {
 
 	public onResetClick($event: Event) {
 		this.resetClick.emit($event);
+	}
+
+	public onLinkClick(linkPath) {
+		if (linkPath && linkPath.length > 0) {
+			this.deviceService.launchUri(linkPath);
+		}
 	}
 
 
