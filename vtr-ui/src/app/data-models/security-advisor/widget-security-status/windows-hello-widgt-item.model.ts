@@ -11,7 +11,7 @@ export class WindowsHelloWidgetItem extends WidgetItem {
 			path: 'security/windows-hello',
 			title: 'Windows Hello',
 			type: 'security'
-		});
+		}, translateService);
 		const cacheStatus: string = commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus);
 		if (cacheStatus) {
 			this.status = cacheStatus === 'enabled' ? 0 : 1;

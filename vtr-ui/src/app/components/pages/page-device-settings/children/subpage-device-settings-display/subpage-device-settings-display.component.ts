@@ -11,6 +11,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { promise } from 'protractor';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 enum defaultTemparature {
 	defaultValue = 4500
 }
@@ -127,7 +128,6 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 	// Start EyeCare Mode
 	private getDisplayColorTemperature() {
-		// this.cd.markForCheck();
 		this.displayService.getDisplayColortemperature().then((response) => {
 			console.log('getDisplayColortemperature.then', response);
 			this.eyeCareDataSource = response;
@@ -148,6 +148,9 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.log('onEyeCareModeStatusToggle.then', value);
 						this.enableSlider = event.switchValue;
 						this.eyeCareDataSource.current = value.colorTemperature;
+						const eyeCare = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardEyeCareMode);
+						eyeCare.status = event.switchValue;
+						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, eyeCare);
 					}).catch(error => {
 						console.error('onEyeCareModeStatusToggle', error);
 					});
@@ -209,8 +212,6 @@ export class SubpageDeviceSettingsDisplayComponent
 					if (this.eyeCareModeStatus.available === true) {
 						console.log('eyeCareModeStatus.available', featureStatus.available);
 					}
-
-					// alert(this.eyeCareModeStatus.status);
 				})
 				.catch(error => {
 					console.error('getEyeCareModeState', error);
@@ -311,6 +312,9 @@ export class SubpageDeviceSettingsDisplayComponent
 					console.log('setCameraStatus.then', $event.switchValue);
 					this.getCameraPrivacyModeStatus();
 					this.onPrivacyModeChange($event.switchValue);
+					const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
+					privacy.status = $event.switchValue;
+					this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
 				}).catch(error => {
 					console.error('setCameraStatus', error);
 				});

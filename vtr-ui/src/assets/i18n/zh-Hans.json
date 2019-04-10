@@ -32,6 +32,7 @@
 			"partiallyProtected": "局部受保护",
 			"installed": "已安装",
 			"notInstalled": "未安装",
+			"loading": "Loading",
 			"notFound": "未发现"
 		},
 		"qAndA": {
@@ -161,11 +162,31 @@
 						}
 					}
 				},
+				"powerSettings": {
+					"title": "电源设置",
+					"alwaysUSB": {
+						"title": "持续 USB 供电",
+						"description": "计算机处于睡眠、休眠或关机模式时，通过计算机上的 Always on USB 接口为 USB 设备充电。可从黄色或有特定丝网印刷图标的 USB 接口为智能手机或平板电脑充电。",
+						"checkbox": "计算机处于关闭状态时支持从笔记本电脑电池进行 USB 充电。"
+					},
+					"easyResume": {
+						"title": "轻松恢复",
+						"description": "如果频繁开合计算机外盖，则启用此功能可缩短恢复时间。",
+						"tooltip": "如果频繁开合计算机外盖，则此功能将改善恢复时间。启用后，在合上计算机外盖时，它将进入低功耗模式，但如果在合上外盖后 15 分钟内重新打开外盖，则它将立即恢复。此功能还使笔记本电脑可在系统挂起之前尝试完成暂挂活动（如发送电子邮件或下载文件）。"
+					}
+				},
+				"otherSettings": {
+					"title": "其他设置",
+					"vantageToolbar": {
+						"title": "Lenovo Vantage 工具栏",
+						"tooltip": "将 Vantage 工具栏固定到 Windows 任务栏以轻松地获取更多电池详细信息及访问快速设置。"
+					}
+				},
 				"batterySettings": {
 					"title": "电池设置",
 					"airplanePower": {
 						"title": "飞行电源模式",
-						"tooltip": "通过控制系统耗电量保护飞机交流电源插座。启用飞行电源模式后，计算机将通过限制电池充电速度和系统性能来降低耗电量。"
+						"description": "通过控制系统耗电量保护飞机交流电源插座。启用飞行电源模式后，计算机将通过限制电池充电速度和系统性能来降低耗电量。"
 					},
 					"batteryThreshold": {
 						"title": "电池充电阈值",
@@ -180,35 +201,17 @@
 					},
 					"expressCharging": {
 						"title": "快速充电",
+						"description": "Express Charge allows your battery to a full charge much faster than normal mode.",
 						"tooltip": "快速充电可用比常规模式更快的速度将电池充满电。"
 					},
 					"conservationMode": {
 						"title": "节电模式",
+						"description": "This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
 						"tooltip": {
 							"line1": "此功能可有助于延长插电使用时的电池寿命。",
 							"line2": "启用此模式时，电池只充至容量的 55-60%，从而最大化电池使用寿命。但是，这将缩短断开交流电源后的计算机使用时间。",
 							"line3": "注：快速充电和节电模式无法同时进行。如果启用其中一个模式，则将自动关闭另一个模式。"
 						}
-					}
-				},
-				"powerSettings": {
-					"title": "电源设置",
-					"alwaysUSB": {
-						"title": "持续 USB 供电",
-						"tooltip": "计算机处于睡眠、休眠或关机模式时，通过计算机上的 Always on USB 接口为 USB 设备充电。可从黄色或有特定丝网印刷图标的 USB 接口为智能手机或平板电脑充电。",
-						"checkbox": "计算机处于关闭状态时支持从笔记本电脑电池进行 USB 充电。"
-					},
-					"easyResume": {
-						"title": "轻松恢复",
-						"description": "如果频繁开合计算机外盖，则启用此功能可缩短恢复时间。",
-						"tooltip": "如果频繁开合计算机外盖，则此功能将改善恢复时间。启用后，在合上计算机外盖时，它将进入低功耗模式，但如果在合上外盖后 15 分钟内重新打开外盖，则它将立即恢复。此功能还使笔记本电脑可在系统挂起之前尝试完成暂挂活动（如发送电子邮件或下载文件）。"
-					}
-				},
-				"otherSettings": {
-					"title": "其他设置",
-					"vantageToolbar": {
-						"title": "Lenovo Vantage 工具栏",
-						"tooltip": "将 Vantage 工具栏固定到 Windows 任务栏以轻松地获取更多电池详细信息及访问快速设置。"
 					}
 				}
 			},
@@ -649,5 +652,161 @@
 			"howToStart": "How do I start using Windows Hello?"
 		}
 	},
-	"faq": {}
+	"faq": {
+		"footer": {
+			"title": "Not finding what you are looking for?",
+			"description": "NEED ADDITIONAL SUPPORT? DON’T HESITATE TO CONTACT US VIA:",
+			"body": "Lenovo Community",
+			"button": "GO TO FORUM"
+		},
+		"question1": {
+			"title": "Back up and restore your files",
+			"para1": "It's always good to have a backup. Keep copies of your files on another drive in case something happens to the originals.",
+			"heading1": "Set up your backup",
+			"para2": "Select the Start button, select Settings > Update & security > Backup > Add a drive , and then choose an external drive or network location for your backups.",
+			"para3": "All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files get backed up or how often backups happen, go to More options.",
+			"heading2": "Restore your files",
+			"para4": "If you're missing an important file or folder, here's how to get it back:",
+			"bulletset1": [
+				"1. Type Restore files in the search box on the taskbar, and then select Restore your files with File History.",
+				"2. Look for the file you need, then use the arrows to see all its versions",
+				"3. When you find the version you want, select Restore to save it in its original location. To save it in a different place, press and hold (or right-click) Restore, select Restore to, and then choose a new location."
+			]
+		},
+		"question2": {
+			"title": "How to refresh your PC",
+			"heading1": "Symptom",
+			"para1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings. Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files.",
+			"para2": "Refresh your PC, Here is what will happen: your files and personalized settings won’t change",
+			"bulletset1": [
+				"Your PC settings will be changed back to its defaults",
+				"Apps from windows store will be kept",
+				"Apps you installed from disc or website will be removed",
+				"A list of removed files will be saved on your desktop"
+			],
+			"heading2": "Affected Brands",
+			"para3": "All Desktop and Laptops",
+			"heading3": "Operation System",
+			"para4": "Windows 8, 8.1 & 10",
+			"heading4": "Solution",
+			"para5": "<span style=\"text-decoration: underline;padding:10px 0;font-weight: bold\">Windows 8/8.1</span>",
+			"bulletset2": [
+				"Tap or click <span style=\"font-weight:bold;\"> Settings </span>",
+				"Tap or click <span style=\"font-weight:bold;\"> Update and recovery</span>",
+				"Tap or click <span style=\"font-weight:bold;\">  Recovery</span>",
+				"Under Refresh your PC without affecting your files, tap or click <span style=\"font-weight:bold;\"> Get started.</span>",
+				"Click <span style=\"font-weight:bold;\">  \"Next\"</span>.",
+				"Click <span style=\"font-weight:bold;\"> \"Refresh\" </span>to start the refresh process.",
+				"Once the refresh process is done, you can find a Removed Apps list on the desktop",
+				"You can find the removed apps while refreshing your system"
+			],
+			"para6": "<span style=\"text-decoration: underline;font-weight: bold\">Windows 10</span>",
+			"bulletset3": [
+				"Search for <span style=\"font-weight:bold;\"> refresh </span>in the search tool available in the Start menu",
+				"Click on <span style=\"font-weight:bold;\"> \"Refresh your PC without affecting your files\"</span> in the search results as shown below.",
+				"Click on the <span style=\"font-weight:bold;\"> Get started </span>button just below the heading<span style=\"font-weight:bold;\">  \"Refresh your PC without affecting your files\"</span> to start refreshing your Windows 10 PC."
+			],
+			"header5": "Additional Information",
+			"para7": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
+			"para8": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
+		},
+		"question3": {
+			"title": "How to know your machine's CPU",
+			"heading1": "Symptom",
+			"para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
+			"heading2": "Affected Brands",
+			"para2": "The above symptom is associated with, but not limited to, the following systems:",
+			"para3": "All Desktop and Laptops",
+			"heading3": "Operating System",
+			"para4": "Windows 7, 8, 10",
+			"heading4": "Solution",
+			"para5": "<span style=\"text-decoration: underline;padding:10px 0;font-weight: bold\">Windows 7 or Vista</span>",
+			"bulletset1": [
+				"Open System by clicking the Start button Picture of the Start button, right-clicking Computer, and then clicking Properties",
+				"Under System, you can view the system type."
+			],
+			"para6": "<span style=\"text-decoration: underline;font-weight: bold\">Windows 8 and Windows 10</span>",
+			"bulletset2": [
+				"Method 1: View the System window in Control Panel",
+				"Swipe in from the right edge of the screen, and then tap Search. Or, if you are using a mouse, point to the lower-right corner of the screen, and then click Search.",
+				"Type system in the search box, and then tap or click Settings.",
+				"Tap or click System",
+				"If you are running a 64-bit version of Windows 8, 64-bit Operating System is displayed in the System type field under the System heading. If you are running a 32-bit version of Windows 8, 32-bit Operating System is displayed in the System type field under the System heading.",
+				"Method 2: View the System Information window",
+				"Swipe in from the right edge of the screen, and then tap Search. Or, if you are using a mouse, point to the lower-right corner of the screen, and then click Search.",
+				"In the search box, type system information",
+				"Tap or click System, tap or click System Information, and then click System Summary.",
+				"If you are running a 64-bit version of Windows 8, x64-based PC is displayed in the System type field under the Item heading."
+			],
+			"para7": "If you are running a 32-bit version of Windows 8, x86-based PC is displayed in the System type field under the Item heading."
+		},
+		"question4": {
+			"title": "Check your machine's battery use",
+			"heading1": "Symptom",
+			"para1": "Windows 10 includes a new “Battery Use” screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power.",
+			"heading2": "Affected Brands",
+			"para2": "Lenovo laptops, desktops",
+			"heading3": "Affected Systems",
+			"para3": "All",
+			"heading4": "Operating System",
+			"para4": "Windows 10",
+			"heading5": "Solution",
+			"para5": "This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional control panel view, this feature is located in the new “Settings” app",
+			"bulletset1": [
+				"A. Find the Battery Use Screen",
+				"1. Click or Tap the “Settings” option from the start menu",
+				"2. In Settings select “System”and then select “Battery saver.”",
+				"3. Click or tap the “Battery use” link under this heading to see more details.",
+				"B. Analyze Your Power Usage",
+				"4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
+				"5. “System,” “Display,” and “Wi-Fi” percentages. This shows how much battery power has been used by system processes, the display,",
+				"6. The “In use” and “Background” options show how much power is used by applications while you’re using them, compared to applications running in the background.",
+				"7. If apps are using power in the background, you can click or tap the “Change background app settings” link and configure apps to not run in the background. This only works for universal Windows 10 apps.",
+				"8. Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used"
+			]
+		},
+		"question5": {
+			"title": "Use your PC like a tablet",
+			"para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
+			"heading1": "Use tablet mode",
+			"para2": "To turn on tablet mode, select action center on the taskbar, then select Tablet mode.",
+			"heading2": "Note",
+			"para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
+			"para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
+			"heading3": "Tip",
+			"para5": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen. Select the Start button, select Settings > System > Tablet mode , then turn on Automatically hide the taskbar in tablet mode. To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.",
+			"heading4": "Use two apps simultaneously",
+			"para6": "To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.",
+			"para7": "In this view, you can also:",
+			"bulletset1": [
+				"Use the shared edge between two snapped apps to resize both apps at the same time.",
+				"Open a new app from task view—select Task view on the taskbar, select an app, then drag it to one side to snap it into your divided screen.",
+				"Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
+			]
+		},
+		"question6": {
+			"title": "Get to know Cortona, your personal assistant",
+			"heading1": "What is Cortana?",
+			"para1": "Cortana is your digital agent. She'll help you get things done.",
+			"para2": "The more you use Cortana, the more personalized your experience will be.",
+			"para3": "To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
+			"para4": "If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
+			"para5": "1. Home 2. Notebook 3. Settings 4. Feedback",
+			"para6": "Here are some things Cortana can do for you:",
+			"bulletset1": [
+				"Use the shared edge between two snapped apps to resize both apps at the same time.",
+				"Open a new app from task view—select Task view on the taskbar, select an app, then drag it to one side to snap it into your divided screen.",
+				"Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
+			],
+			"heading2": "Try this: Set a reminder",
+			"para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",
+			"para8": "For example, type or say, “Remind me to congratulate Tanya the next time she calls.”",
+			"para9": "The reminder will appear when you get a call from Tanya.",
+			"para10": "Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.",
+			"heading3": "Hey Cortana?",
+			"para11": "Set Cortana to hear you anytime you say “Hey Cortana.” Select the search box on the taskbar to open Cortana home. Then select Settings  and turn on Let Cortana respond to “Hey Cortana.”",
+			"para12": "Note",
+			"para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
+		}
+	}
 }

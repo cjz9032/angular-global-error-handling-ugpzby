@@ -33,15 +33,6 @@
 							color: $light;
 						}
 					}
-					.icon-warning {
-						display: inline-block;
-						border-radius: 50%;
-						
-						fa-icon {
-							font-size: 2rem;
-							color: $yellow_dark;
-						}
-					}
 				}
 
 				fa-icon {
@@ -72,6 +63,15 @@
 					.icon-bkg {
 						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
 						border-color: $stop_dark;
+					}
+				}
+			}
+
+			&.orange {
+				.item-icon {
+					.icon-bkg {
+						background: linear-gradient($gradient_angle, $orange 0%, $orange-light 100%);
+						border-color: $yellow_dark;
 					}
 				}
 			}
