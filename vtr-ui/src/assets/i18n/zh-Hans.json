@@ -330,7 +330,10 @@
 				"rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
 				"rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
 				"okayButton": "OK",
-				"cancelButton": "Cancel"
+				"cancelButton": "Cancel",
+				"rebootButton": "REBOOT NOW",
+				"dismissButton": "DISMISS",
+				"rebootPending": "Reboot pending"
 			},
 			"autoUpdateSettings": {
 				"title": "自动更新设置",
@@ -431,7 +434,7 @@
 			"wifiConnected": "WiFi & Connected Home Security",
 			"connectedHomeSecurity": "Connected Home Security",
 			"fingerprint": "Fingerprint reader",
-			"seeAllNetwork": "See all joined networks",
+			"seeAllNetwork": "查看所有已连接的网络",
 			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
 			"good": "GOOD",
 			"malicious": "MALICIOUS",
@@ -769,7 +772,7 @@
 			"para2": "To turn on tablet mode, select action center on the taskbar, then select Tablet mode.",
 			"heading2": "Note",
 			"para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
-			"para4":"In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
+			"para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
 			"heading3": "Tip",
 			"para5": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen. Select the Start button, select Settings > System > Tablet mode , then turn on Automatically hide the taskbar in tablet mode. To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.",
 			"heading4": "Use two apps simultaneously",

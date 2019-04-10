@@ -10,19 +10,23 @@
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col col-8 vtr-page-left-column">
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 vtr-page-left-column">
 						<div *ngIf="viewModel?.currentPage ==='windows'">
 							<div class="header mt-minus">
 								<div class="rounded-card-with-shadow p-5">
 									<div class="row">
 										<div class="col-auto align-self-center">
-											<img class="img-fluid" src="./../../../../assets/images/antivirus/protection.png" />
+											<img class="img-fluid"
+												src="./../../../../assets/images/antivirus/protection.png" />
 
 										</div>
 										<div class="col">
-											<div class="title p-3">{{'security.antivirus.windowsDefender.optimallyProtected' | translate}}</div>
+											<div class="title p-3">
+												{{'security.antivirus.windowsDefender.optimallyProtected' | translate}}
+											</div>
 											<div class="subtitle p-3"
-												[innerHTML]="'security.antivirus.windowsDefender.subtitle' | translate"></div>
+												[innerHTML]="'security.antivirus.windowsDefender.subtitle' | translate">
+											</div>
 											<div class="p-3">
 												<vtr-ui-button [metricsItem]="'learnMoreAboutMcafee'"
 													[label]="'security.antivirus.windowsDefender.learnMore' | translate"
@@ -37,7 +41,9 @@
 									<div>
 										<div class="row">
 											<div class="col-auto px-0 mr-auto">
-												<div class="title pb-3">{{'security.antivirus.windowsDefender.windowsProtected' | translate}}</div>
+												<div class="title pb-3">
+													{{'security.antivirus.windowsDefender.windowsProtected' | translate}}
+												</div>
 											</div>
 											<div class="col-auto px-0">
 												<img class="windows-logo"
@@ -45,9 +51,11 @@
 											</div>
 										</div>
 
-										<div class="subtitle pb-5">{{'security.antivirus.windowsDefender.windowsSubtitle' | translate}}</div>
+										<div class="subtitle pb-5">
+											{{'security.antivirus.windowsDefender.windowsSubtitle' | translate}}</div>
 
-										<vtr-ui-security-statusbar [statusList]=" viewModel.windowsDefenderstatusList | statusTransform">
+										<vtr-ui-security-statusbar
+											[statusList]=" viewModel.windowsDefenderstatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>
@@ -58,77 +66,84 @@
 							<div class="body antivirus-block">
 								<div>
 									<div class="title py-5">{{'security.antivirus.common.why' | translate}}</div>
-									<div class="row w-100">
-										<div class="col col-6 mt-20">
-											<div class="col">
-												<img class="dashlane-side-left-img" src="./../../../../assets/images/antivirus/side.png" />
-											</div>
+									<div class="row">
+										<div class="col-auto px-0 col-xs-6">
+											<img src="./../../../../assets/images/antivirus/side.png" />
 										</div>
-										<div class="col col-6 mt-20">
-											<div class="col">
-												<div class="subtitle pb-5">{{'security.antivirus.common.recommends' | translate}}</div>
-												<div>
-													<ul class="list-unstyled">
-														<li class="text pb-4">
-															<div class="row">
-																<div class="col-auto">
-																	<div class="bullet-icon-check">
-																		<div class="icon-bkg">
-																			<fa-icon [icon]="['fas', 'check']"></fa-icon>
-																		</div>
+										<div class="col px-5 col-xs-6">
+											<div class="subtitle pb-5">
+												{{'security.antivirus.common.recommends' | translate}}</div>
+											<div>
+												<ul class="list-unstyled">
+													<li class="text pb-4">
+														<div class="row">
+															<div class="col-auto">
+																<div class="bullet-icon-check">
+																	<div class="icon-bkg">
+																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
 																	</div>
 																</div>
-																<div class="col">{{'security.antivirus.common.award' | translate}}</div>
 															</div>
-														</li>
-														<li class="text pb-4">
-															<div class="row">
-																<div class="col-auto">
-																	<div class="bullet-icon-check">
-																		<div class="icon-bkg">
-																			<fa-icon [icon]="['fas', 'check']"></fa-icon>
-																		</div>
+															<div class="col">
+																{{'security.antivirus.common.award' | translate}}</div>
+														</div>
+													</li>
+													<li class="text pb-4">
+														<div class="row">
+															<div class="col-auto">
+																<div class="bullet-icon-check">
+																	<div class="icon-bkg">
+																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
 																	</div>
 																</div>
-																<div class="col">{{'security.antivirus.common.dedicated' | translate}}</div>
 															</div>
-														</li>
-														<li class="text">
-															<div class="row">
-																<div class="col-auto">
-																	<div class="bullet-icon-check">
-																		<div class="icon-bkg">
-																			<fa-icon [icon]="['fas', 'check']"></fa-icon>
-																		</div>
+															<div class="col">
+																{{'security.antivirus.common.dedicated' | translate}}
+															</div>
+														</div>
+													</li>
+													<li class="text">
+														<div class="row">
+															<div class="col-auto">
+																<div class="bullet-icon-check">
+																	<div class="icon-bkg">
+																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
 																	</div>
 																</div>
-																<div class="col">{{'security.antivirus.common.deviceToCloud' | translate}}</div>
 															</div>
+															<div class="col">
+																{{'security.antivirus.common.deviceToCloud' | translate}}
+															</div>
+														</div>
 
-														</li>
-													</ul>
-												</div>
+													</li>
+												</ul>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+
 							<div class="divider"></div>
 							<div class="footer">
 								<div class="row">
 									<div class="col-auto mr-auto px-0">
 										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
 										<p class="text-regular mt-10">
-											<vtr-widget-translate-picker [translateString]="'security.antivirus.common.privacyTerms' | translate"
-												[firstMetricsItem]="'privacyPolicy'" [firstMetricsParent]="'security.antivirus'"
+											<vtr-widget-translate-picker
+												[translateString]="'security.antivirus.common.privacyTerms' | translate"
+												[firstMetricsItem]="'privacyPolicy'"
+												[firstMetricsParent]="'security.antivirus'"
 												[firstHref]="'https://www.mcafee.com/consumer/en-us/policy/global/legal.html'"
-												[secondMetricsItem]="'termsOfServices'" [secondMetricsParent]="'security.antivirus'"
+												[secondMetricsItem]="'termsOfServices'"
+												[secondMetricsParent]="'security.antivirus'"
 												[secondHref]="'https://www.mcafee.com/consumer/en-us/policy/global/legal.html'">
 											</vtr-widget-translate-picker>
 										</p>
 									</div>
 									<div class="col-auto align-self-center px-0">
-										<img class="mcafee-logo" src="../../../../assets/images/mcafee_logo.svg" />
+										<img class="mcafee-logo"
+											src="../../../../assets/images/mcafee_logo.svg" />
 									</div>
 								</div>
 							</div>
@@ -141,16 +156,19 @@
 
 									<div class="row">
 										<div class="col-auto px-0 mr-auto">
-											<div class="title pb-3">{{'security.antivirus.mcafee.title' | translate}}</div>
+											<div class="title pb-3">{{'security.antivirus.mcafee.title' | translate}}
+											</div>
 										</div>
 										<div class="col-auto px-0">
 											<img class="mcafee-logo"
 												src="../../../../assets/images/mcafee_logo.svg" />
 										</div>
 									</div>
-									<div class="subtitle pb-5">{{'security.antivirus.mcafee.subtitle' | translate}}</div>
+									<div class="subtitle pb-5">{{'security.antivirus.mcafee.subtitle' | translate}}
+									</div>
 
-									<vtr-ui-security-statusbar [statusList]="viewModel.mcafeestatusList | statusTransform">
+									<vtr-ui-security-statusbar
+										[statusList]="viewModel.mcafeestatusList | statusTransform">
 									</vtr-ui-security-statusbar>
 
 									<div class="row align-items-center">
@@ -194,19 +212,25 @@
 														src="./../../../../assets/images/antivirus/icon1.png" />
 												</div>
 												<div class="col">
-													<div class="title">{{'security.antivirus.mcafee.awardTitle' | translate}}</div>
-													<div class="subtitle">{{'security.antivirus.mcafee.awardSubtitle' | translate}}</div>
+													<div class="title">
+														{{'security.antivirus.mcafee.awardTitle' | translate}}</div>
+													<div class="subtitle">
+														{{'security.antivirus.mcafee.awardSubtitle' | translate}}</div>
 												</div>
 											</div>
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon2.png" />
+													<img class="img-fluid"
+														src="./../../../../assets/images/antivirus/icon2.png" />
 
 
 												</div>
 												<div class="col">
-													<div class="title">{{'security.antivirus.mcafee.encryptedTitle' | translate}}</div>
-													<div class="subtitle">{{'security.antivirus.mcafee.encryptedSubtitle' | translate}}</div>
+													<div class="title">
+														{{'security.antivirus.mcafee.encryptedTitle' | translate}}</div>
+													<div class="subtitle">
+														{{'security.antivirus.mcafee.encryptedSubtitle' | translate}}
+													</div>
 												</div>
 											</div>
 											<div class="row pt-5">
@@ -215,8 +239,11 @@
 														src="./../../../../assets/images/antivirus/icon3.png" />
 												</div>
 												<div class="col">
-													<div class="title">{{'security.antivirus.mcafee.identityTitle' | translate}}</div>
-													<div class="subtitle">{{'security.antivirus.mcafee.identitySubtitle' | translate}}</div>
+													<div class="title">
+														{{'security.antivirus.mcafee.identityTitle' | translate}}</div>
+													<div class="subtitle">
+														{{'security.antivirus.mcafee.identitySubtitle' | translate}}
+													</div>
 												</div>
 											</div>
 											<div class="row pt-5">
@@ -225,43 +252,57 @@
 														src="./../../../../assets/images/antivirus/icon4.png" />
 												</div>
 												<div class="col">
-													<div class="title">{{'security.antivirus.mcafee.supportTitle' | translate}}</div>
-													<div class="subtitle">{{'security.antivirus.mcafee.supportSubtitle' | translate}}</div>
+													<div class="title">
+														{{'security.antivirus.mcafee.supportTitle' | translate}}</div>
+													<div class="subtitle">
+														{{'security.antivirus.mcafee.supportSubtitle' | translate}}
+													</div>
 												</div>
 											</div>
 										</div>
 										<div class="col-6">
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon5.png" />
+													<img class="img-fluid"
+														src="./../../../../assets/images/antivirus/icon5.png" />
 
 
 												</div>
 												<div class="col">
-													<div class="title">{{'security.antivirus.mcafee.antiTitle' | translate}}</div>
-													<div class="subtitle">{{'security.antivirus.mcafee.antiSubtitle' | translate}}</div>
+													<div class="title">
+														{{'security.antivirus.mcafee.antiTitle' | translate}}
+													</div>
+													<div class="subtitle">
+														{{'security.antivirus.mcafee.antiSubtitle' | translate}}</div>
 												</div>
 											</div>
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon6.png" />
+													<img class="img-fluid"
+														src="./../../../../assets/images/antivirus/icon6.png" />
 
 
 												</div>
 												<div class="col">
-													<div class="title">{{'security.antivirus.mcafee.virusTitle' | translate}}</div>
-													<div class="subtitle">{{'security.antivirus.mcafee.virusSubtitle' | translate}}</div>
+													<div class="title">
+														{{'security.antivirus.mcafee.virusTitle' | translate}}</div>
+													<div class="subtitle">
+														{{'security.antivirus.mcafee.virusSubtitle' | translate}}</div>
 												</div>
 											</div>
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
-													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon7.png" />
+													<img class="img-fluid"
+														src="./../../../../assets/images/antivirus/icon7.png" />
 
 
 												</div>
 												<div class="col">
-													<div class="title">{{'security.antivirus.mcafee.parentalTitle' | translate}}</div>
-													<div class="subtitle">{{'security.antivirus.mcafee.parentalSubtitle' | translate}}</div>
+													<div class="title">
+														{{'security.antivirus.mcafee.parentalTitle' | translate}}</div>
+													<div class="subtitle">
+														{{'security.antivirus.mcafee.parentalSubtitle' | translate}}
+													</div>
 												</div>
 											</div>
 										</div>
@@ -274,16 +315,20 @@
 									<div class="col-auto mr-auto px-0">
 										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
 										<p class="text-regular mt-10">
-											<vtr-widget-translate-picker [translateString]="'security.antivirus.common.privacyTerms' | translate"
-												[firstMetricsItem]="'privacyPolicy'" [firstMetricsParent]="'security.antivirus'"
+											<vtr-widget-translate-picker
+												[translateString]="'security.antivirus.common.privacyTerms' | translate"
+												[firstMetricsItem]="'privacyPolicy'"
+												[firstMetricsParent]="'security.antivirus'"
 												[firstHref]="'https://www.mcafee.com/consumer/en-us/policy/global/legal.html'"
-												[secondMetricsItem]="'termsOfServices'" [secondMetricsParent]="'security.antivirus'"
+												[secondMetricsItem]="'termsOfServices'"
+												[secondMetricsParent]="'security.antivirus'"
 												[secondHref]="'https://www.mcafee.com/consumer/en-us/policy/global/legal.html'">
 											</vtr-widget-translate-picker>
 										</p>
 									</div>
 									<div class="col-auto align-self-center px-0">
-										<img class="mcafee-logo" src="../../../../assets/images/mcafee_logo.svg" />
+										<img class="mcafee-logo"
+											src="../../../../assets/images/mcafee_logo.svg" />
 									</div>
 								</div>
 							</div>
@@ -303,10 +348,12 @@
 										</div>
 
 										<div class="subtitle pb-5">
-											{{viewModel.otherAntiVirus?.name}} {{'security.antivirus.others.othersProtection' | translate}}
+											{{viewModel.otherAntiVirus?.name}}
+											{{'security.antivirus.others.othersProtection' | translate}}
 										</div>
 
-										<vtr-ui-security-statusbar [statusList]="viewModel.othersAntistatusList | statusTransform">
+										<vtr-ui-security-statusbar
+											[statusList]="viewModel.othersAntistatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>
@@ -321,10 +368,12 @@
 										</div>
 
 										<div class="subtitle pb-5">
-											{{viewModel.otherFirewall?.name}} {{'security.antivirus.others.othersProtection' | translate}}
+											{{viewModel.otherFirewall?.name}}
+											{{'security.antivirus.others.othersProtection' | translate}}
 										</div>
 
-										<vtr-ui-security-statusbar [statusList]="viewModel.othersFirewallstatusList | statusTransform">
+										<vtr-ui-security-statusbar
+											[statusList]="viewModel.othersFirewallstatusList | statusTransform">
 										</vtr-ui-security-statusbar>
 
 									</div>
@@ -338,12 +387,14 @@
 									<div class="row w-100">
 										<div class="col col-6 mt-20">
 											<div class="col">
-												<img class="dashlane-side-left-img" src="./../../../../assets/images/antivirus/side.png" />
+												<img class="dashlane-side-left-img"
+													src="./../../../../assets/images/antivirus/side.png" />
 											</div>
 										</div>
 										<div class="col col-6 mt-20">
 											<div class="col">
-												<div class="subtitle pb-5">{{'security.antivirus.common.recommends' | translate}}</div>
+												<div class="subtitle pb-5">
+													{{'security.antivirus.common.recommends' | translate}}</div>
 												<div>
 													<ul class="list-unstyled">
 														<li class="text pb-4">
@@ -351,11 +402,14 @@
 																<div class="col-auto">
 																	<div class="bullet-icon-check">
 																		<div class="icon-bkg">
-																			<fa-icon [icon]="['fas', 'check']"></fa-icon>
+																			<fa-icon [icon]="['fas', 'check']">
+																			</fa-icon>
 																		</div>
 																	</div>
 																</div>
-																<div class="col">{{'security.antivirus.common.award' | translate}}</div>
+																<div class="col">
+																	{{'security.antivirus.common.award' | translate}}
+																</div>
 															</div>
 														</li>
 														<li class="text pb-4">
@@ -363,11 +417,14 @@
 																<div class="col-auto">
 																	<div class="bullet-icon-check">
 																		<div class="icon-bkg">
-																			<fa-icon [icon]="['fas', 'check']"></fa-icon>
+																			<fa-icon [icon]="['fas', 'check']">
+																			</fa-icon>
 																		</div>
 																	</div>
 																</div>
-																<div class="col">{{'security.antivirus.common.dedicated' | translate}}</div>
+																<div class="col">
+																	{{'security.antivirus.common.dedicated' | translate}}
+																</div>
 															</div>
 														</li>
 														<li class="text">
@@ -375,11 +432,14 @@
 																<div class="col-auto">
 																	<div class="bullet-icon-check">
 																		<div class="icon-bkg">
-																			<fa-icon [icon]="['fas', 'check']"></fa-icon>
+																			<fa-icon [icon]="['fas', 'check']">
+																			</fa-icon>
 																		</div>
 																	</div>
 																</div>
-																<div class="col">{{'security.antivirus.common.deviceToCloud' | translate}}</div>
+																<div class="col">
+																	{{'security.antivirus.common.deviceToCloud' | translate}}
+																</div>
 															</div>
 
 														</li>
@@ -396,22 +456,26 @@
 									<div class="col-auto mr-auto px-0">
 										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
 										<p class="text-regular mt-10">
-											<vtr-widget-translate-picker [translateString]="'security.antivirus.common.privacyTerms' | translate"
-												[firstMetricsItem]="'privacyPolicy'" [firstMetricsParent]="'security.antivirus'"
+											<vtr-widget-translate-picker
+												[translateString]="'security.antivirus.common.privacyTerms' | translate"
+												[firstMetricsItem]="'privacyPolicy'"
+												[firstMetricsParent]="'security.antivirus'"
 												[firstHref]="'https://www.mcafee.com/consumer/en-us/policy/global/legal.html'"
-												[secondMetricsItem]="'termsOfServices'" [secondMetricsParent]="'security.antivirus'"
+												[secondMetricsItem]="'termsOfServices'"
+												[secondMetricsParent]="'security.antivirus'"
 												[secondHref]="'https://www.mcafee.com/consumer/en-us/policy/global/legal.html'">
 											</vtr-widget-translate-picker>
 										</p>
 									</div>
 									<div class="col-auto align-self-center px-0">
-										<img class="mcafee-logo" src="../../../../assets/images/mcafee_logo.svg" />
+										<img class="mcafee-logo"
+											src="../../../../assets/images/mcafee_logo.svg" />
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col col-4 vtr-page-right-column">
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 								<!--Start of Security Card Advisor-->
