@@ -4,6 +4,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from '../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { CommsService } from 'src/app/services/comms/comms.service';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 
 
 interface DevicePostureDetail {
@@ -61,17 +62,29 @@ export class WifiHomeViewModel {
 		});
 		wifiSecurity.on(EventTypes.wsWifiHistoryEvent, (value) => {
 			if (value) {
+				let cacheWifiSecurityHistoryNum = commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum);
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, value);
+				this.allHistorys = wifiSecurity.wifiHistory;
+				this.allHistorys = this.mappingHistory(this.allHistorys);
+				if (cacheWifiSecurityHistoryNum) {
+					cacheWifiSecurityHistoryNum = JSON.parse(cacheWifiSecurityHistoryNum);
+					if (this.allHistorys.length > 4) {
+						this.hasMore = true;
+					} else {
+						this.hasMore = false;
+					}
+					this.historys = wifiSecurity.wifiHistory.slice(0, cacheWifiSecurityHistoryNum);
+				} else {
+					if (this.allHistorys.length > 4) {
+						this.hasMore = true;
+					} else {
+						this.hasMore = false;
+					}
+					this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
+					commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
+				}
+				this.historys = this.mappingHistory(this.historys);
 			}
-			this.allHistorys = wifiSecurity.wifiHistory;
-			this.allHistorys = this.mappingHistory(this.allHistorys);
-			if (this.allHistorys.length > 4) {
-				this.hasMore = true;
-			} else {
-				this.hasMore = false;
-			}
-			this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
-			this.historys = this.mappingHistory(this.historys);
 		});
 		homeProtection.on(EventTypes.homeChsConsoleUrlEvent, (value) => {
 			if (value && value !== '') {
@@ -98,32 +111,28 @@ export class WifiHomeViewModel {
 			} else if (cacheWifiSecurityHasEverUsed !== undefined) {
 				this.hasWSEverUsed = cacheWifiSecurityHasEverUsed;
 			}
-			if (wifiSecurity.hasEverUsed !== undefined) {
-				this.hasWSEverUsed = wifiSecurity.hasEverUsed;
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHasEverUsed, wifiSecurity.hasEverUsed);
-			} else if (cacheWifiSecurityHasEverUsed !== undefined) {
-				this.hasWSEverUsed = cacheWifiSecurityHasEverUsed;
-			}
 			if (wifiSecurity.wifiHistory) {
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, wifiSecurity.wifiHistory);
 				this.allHistorys = wifiSecurity.wifiHistory;
 				this.allHistorys = this.mappingHistory(this.allHistorys);
-				if (this.allHistorys.length > 4) {
-					this.hasMore = true;
-				} else {
-					this.hasMore = false;
-				}
-				this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
+					if (this.allHistorys.length > 4) {
+						this.hasMore = true;
+					} else {
+						this.hasMore = false;
+					}
+					this.historys = wifiSecurity.wifiHistory.slice(0, 4); // 显示4个history
+					commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
 				this.historys = this.mappingHistory(this.historys);
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, wifiSecurity.wifiHistory);
 			} else if (cacheWifiSecurityHistory) {
 				this.allHistorys = cacheWifiSecurityHistory;
 				this.allHistorys = this.mappingHistory(this.allHistorys);
-				if (this.allHistorys.length > 4) {
-					this.hasMore = true;
-				} else {
-					this.hasMore = false;
-				}
-				this.historys = cacheWifiSecurityHistory.slice(0, 4); // 显示4个history
+					if (this.allHistorys.length > 4) {
+						this.hasMore = true;
+					} else {
+						this.hasMore = false;
+					}
+					this.historys = cacheWifiSecurityHistory.slice(0, 4); // 显示4个history
+					commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
 				this.historys = this.mappingHistory(this.historys);
 			}
 			if (homeProtection.chsConsoleUrl && homeProtection.chsConsoleUrl !== '') {
