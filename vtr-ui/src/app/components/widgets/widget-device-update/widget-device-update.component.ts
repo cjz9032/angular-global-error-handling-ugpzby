@@ -33,9 +33,7 @@ export class WidgetDeviceUpdateComponent implements OnInit, OnChanges {
 
 	constructor() { }
 
-	ngOnInit() {
-		// this.showProgress = false;
-	}
+	ngOnInit() { }
 
 	ngOnChanges(changes: SimpleChanges) {
 		if (changes && changes.downloadingPercent) {
@@ -48,17 +46,14 @@ export class WidgetDeviceUpdateComponent implements OnInit, OnChanges {
 	}
 
 	onCheckForUpdates() {
-		// this.showProgress = true;
 		this.checkForUpdate.emit();
 	}
 
 	cancelUpdates() {
-		// this.showProgress = false;
 		this.cancelUpdateCheck.emit();
 	}
 
 	onCancelUpdateDownload() {
-		// this.showProgress = false;
 		this.cancelUpdateDownload.emit();
 	}
 }

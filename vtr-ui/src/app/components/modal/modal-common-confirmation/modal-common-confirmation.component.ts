@@ -30,7 +30,9 @@ export class ModalCommonConfirmationComponent implements OnInit {
 
 	public onOkClick($event: any) {
 		this.activeModal.close(true);
-		WinRT.launchUri(this.url);
+		if (this.url && this.url.trim().length > 0) {
+			WinRT.launchUri(this.url);
+		}
 		// this.okHandler();
 	}
 

@@ -18,7 +18,7 @@ export class HeaderMainComponent implements OnInit {
 
 	ngOnInit() {
 		const self = this;
-		if(this.parentPath!==''&&this.parentPath!==undefined){
+		if (this.parentPath !== '' && this.parentPath !== undefined) {
 			this.menuItems.forEach(function (d, i) {
 				d.path = self.parentPath + '/' + d.path;
 				console.log('UPDATED PATH', d.path);
