@@ -60,7 +60,7 @@ export class SubpageDeviceSettingsDisplayComponent
 
 	ngOnInit() {
 		console.log('subpage-device-setting-display onInit');
-
+		this.startEyeCareMonitor();
 		this.initEyecaremodeSettings();
 		this.getCameraPrivacyModeStatus();
 		this.getCameraDetails();
@@ -78,7 +78,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				console.log(error);
 			}
 		);
-		// this.startEyeCareMonitor();
+
 		this.statusChangedLocationPermission();
 
 	}
@@ -87,6 +87,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		if (this.cameraDetailSubscription) {
 			this.cameraDetailSubscription.unsubscribe();
 		}
+		this.stopEyeCareMonitor();
 	}
 
 	/**
@@ -165,6 +166,7 @@ export class SubpageDeviceSettingsDisplayComponent
 								this.initEyecaremodeSettings();
 							}
 						} else {
+							//
 							this.getSunsetToSunrise();
 							this.getEyeCareModeStatus();
 							this.getDisplayColorTemperature();
@@ -273,6 +275,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.log('setEyeCareAutoMode.then', response);
 						if (response.result === true) {
 							this.eyeCareDataSource.current = response.colorTemperature;
+							this.eyeCareModeStatus.status = response.eyecaremodeState;
 						}
 
 					}).catch(error => {
