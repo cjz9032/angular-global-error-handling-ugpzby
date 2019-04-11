@@ -4,6 +4,10 @@
 			<button type="button"
 				class="close"
 				aria-hidden="true"
+				vtrMetrics
+				metricsItem="{{aboutModalMetrics.closeButton}}"
+				metricsEvent="ItemClick"
+				metricsParent="{{aboutModalMetrics.pageName}}"
 				(click)="closeModal()">
 				<fa-icon [icon]="['fas', 'times']"></fa-icon>
 			</button>

@@ -606,7 +606,7 @@
 			},
 			"invitationcode": {
 				"button": "Enter invitation code",
-				"buttonDescribe": "enter invitation code require enable wifi security",
+				"buttonDescribe": "You have already joined this device to an existing Connected Home Security account.",
 				"title": "Already have Connected Home Security?",
 				"titleDescribe": "Add this device to your Connected Home",
 				"enterCode": "Enter your connection code",

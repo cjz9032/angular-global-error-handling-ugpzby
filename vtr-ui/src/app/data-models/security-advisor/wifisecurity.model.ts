@@ -24,6 +24,7 @@ export class WifiHomeViewModel {
 	hasMore: boolean;
 	historys: Array<phoenix.WifiDetail>;
 	tryNowUrl: string;
+	homeStatus: string;
 	tryNowEnable = false;
 
 	constructor(wifiSecurity: phoenix.WifiSecurity, homeProtection: phoenix.HomeProtection, private commonService: CommonService) {
@@ -32,6 +33,7 @@ export class WifiHomeViewModel {
 		const cacheWifiSecurityHistory = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys);
 		const cacheWifiSecurityChsConsoleUrl = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionChsConsoleUrl);
 		const cacheWifiSecurityHasEverUsed = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHasEverUsed);
+		const cacheHomeStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus);
 		wifiSecurity.on(EventTypes.wsStateEvent, (value) => {
 			if (value) {
 				if (this.wifiSecurity.isLocationServiceOn !== undefined) {
@@ -93,6 +95,12 @@ export class WifiHomeViewModel {
 				this.tryNowEnable = true;
 			}
 		});
+		homeProtection.on(EventTypes.homeStatusEvent, (value) => {
+			if (value) {
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus, value);
+				this.homeStatus = value;
+			}
+		});
 		try {
 			this.wifiSecurity = wifiSecurity;
 			if (wifiSecurity.state) {
@@ -142,6 +150,12 @@ export class WifiHomeViewModel {
 			} else if (cacheWifiSecurityChsConsoleUrl && cacheWifiSecurityChsConsoleUrl !== '') {
 				this.tryNowEnable = true;
 				this.tryNowUrl = cacheWifiSecurityChsConsoleUrl;
+			}
+			if (homeProtection.status) {
+				this.homeStatus = homeProtection.status;
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus, homeProtection.status);
+			} else if (cacheHomeStatus) {
+				this.homeStatus = cacheHomeStatus;
 			}
 		} catch (err) {
 			console.log(`${err}`);
