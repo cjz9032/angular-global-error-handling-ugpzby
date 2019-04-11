@@ -5,6 +5,7 @@
 		<div class="row">
 			<div class="col col-12 content">
 				<a [attr.href]="!actionLink ? null : actionLink"
+					target="_blank"
 					class="card-image"
 					[style.background-image]="'url(' + img + ')'">
 					<div class="inner-content">
@@ -61,6 +62,7 @@
 		<div class="row">
 			<div class="col col-12 content">
 				<a [attr.href]="!actionLink ? null : actionLink"
+					target="_blank"
 					class="card-image"
 					[style.background-image]="'url(' + img + ')'">
 					<div class="inner-content">
@@ -81,6 +83,7 @@
 		<div class="row">
 			<div class="col col-12 image-container">
 				<a [attr.href]="!actionLink ? null : actionLink"
+					target="_blank"
 					class="card-image"
 					[style.background-image]="'url(' + img + ')'">
 					<div *ngIf="logo || logoText"
@@ -99,6 +102,7 @@
 					<div *ngIf="actionLink"
 						class="read-more">
 						<a [attr.href]="!actionLink ? null : actionLink"
+							target="_blank"
 							vtrMetrics
 							metricsEvent="itemClick"
 							metricsItem="'link.readmore'"
@@ -129,6 +133,7 @@
 				</div>
 				<div class="row">
 					<a [attr.href]="!actionLink ? null : actionLink"
+						target="_blank"
 						vtrMetrics
 						metricsEvent="itemClick"
 						metricsItem="'link.readmore'"
