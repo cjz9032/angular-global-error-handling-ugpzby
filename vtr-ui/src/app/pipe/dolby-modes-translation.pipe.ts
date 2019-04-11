@@ -6,19 +6,26 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class DolbyModesTranslationPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    let val = value.toString();
+
+    let val = value.toString().toLowerCase();
+
+    val=val.substr(val.lastIndexOf(".")+1)
+
+    console.log('+++++++++++++++++++++++',val);
+
+
+
     switch(val) {
-      case "Dynamic":
+      case "dynamic":
         return "DYNAMIC";
-      case "Movie":
+      case "movie":
         return "MOVIE";
-      case "Music":
-        return "Music";
-      case "Games":
-        return "Games";
-      case "Voip":
+      case "music":
+        return "MUSIC";
+      case "game":
+        return "GAME";
+      case "voice":
         return "VOICE";
     }
   }
-
 }
