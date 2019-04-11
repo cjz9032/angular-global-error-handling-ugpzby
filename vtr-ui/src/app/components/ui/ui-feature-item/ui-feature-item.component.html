@@ -15,9 +15,7 @@
 				metricsItemPosition="{{index + 1}}"
 				metricsViewOrder="{{metricsDatas.viewOrder}}"
 				metricsPageNumber="{{metricsDatas.pageNumber}}"
-				href="{{item.ActionLink}}"
-				target="_blank"
-				(click)="addViewOrder()">
+				(click)="showArticleDetails()">
 				<div *ngIf="item.BrandImage"
 					class="logo">
 					<span class="img"
@@ -33,32 +31,28 @@
 				class="col col-12 content">
 				<a class="title"
 					vtrMetrics
-          metricsEvent="DocClick"
-          metricsParent="Page.Support"
-          metricsItemID="{{item.ID}}"
-          metricsItemCategory=""
-          metricsItemPosition="{{index + 1}}"
-          metricsViewOrder="{{metricsDatas.viewOrder}}"
-          metricsPageNumber="{{metricsDatas.pageNumber}}"
-					href="{{item.ActionLink}}"
-					target="_blank"
-					(click)="addViewOrder()">{{item.Title}}</a>
+					metricsEvent="DocClick"
+					metricsParent="Page.Support"
+					metricsItemID="{{item.ID}}"
+					metricsItemCategory=""
+					metricsItemPosition="{{index + 1}}"
+					metricsViewOrder="{{metricsDatas.viewOrder}}"
+					metricsPageNumber="{{metricsDatas.pageNumber}}"
+					(click)="showArticleDetails()">{{item.Title}}</a>
 				<div class="logo-text">
 					<span *ngIf="item.BrandName && !item.FeatureImage">{{item.BrandName}}</span>
 				</div>
 				<div *ngIf="item.ActionLink && item.FeatureImage"
 					class="read-more">
 					<a vtrMetrics
-            metricsEvent="DocClick"
-            metricsParent="Page.Support"
-            metricsItemID="{{item.ID}}"
-            metricsItemCategory=""
-            metricsItemPosition="{{index + 1}}"
-            metricsViewOrder="{{metricsDatas.viewOrder}}"
-            metricsPageNumber="{{metricsDatas.pageNumber}}"
-						href="{{item.ActionLink}}"
-						target="_blank"
-						(click)="addViewOrder()">
+						metricsEvent="DocClick"
+						metricsParent="Page.Support"
+						metricsItemID="{{item.ID}}"
+						metricsItemCategory=""
+						metricsItemPosition="{{index + 1}}"
+						metricsViewOrder="{{metricsDatas.viewOrder}}"
+						metricsPageNumber="{{metricsDatas.pageNumber}}"
+						(click)="showArticleDetails()">
 						<span class="link-label">{{item.Action}}</span>
 						<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 					</a>

@@ -36,7 +36,7 @@
 
 	.spinner-content {
 		width: 100%;
-		height: 90vh;
+		height: calc(83vh - 1rem);
 		display: flex;
 		justify-content: center;
 		align-items: center;
