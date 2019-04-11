@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
+import { environment } from '../../../environments/environment';
+
 @Injectable({
 	providedIn: 'root'
 })
@@ -96,7 +98,7 @@ export class VantageShellService {
 		if (this.phoenix && this.phoenix.metrics) {
 			if (!this.phoenix.metrics.isInit) {
 				this.phoenix.metrics.init({
-					appVersion: '1.0.0.0',
+					appVersion: environment.appVersion,
 					appId: 'ZN8F02EQU628',
 					appName: 'vantage3',
 					channel: '',
