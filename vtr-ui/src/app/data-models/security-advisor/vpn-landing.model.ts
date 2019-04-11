@@ -22,36 +22,31 @@ export class VpnLandingViewModel {
 			title: 'security.landing.vpnSecurity',
 			type: 'security',
 		};
-		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityVPNStatus);
-		if (cacheStatus) {
-			vpnStatus.status = cacheStatus === 'installed' ? 2 : 1;
-			vpnStatus.detail = cacheStatus === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
-			subjectStatus.status = cacheStatus === 'installed' ? 2 : 1;
-		}
-		if (vpnModel.status) {
-			vpnStatus.status = (vpnModel.status === 'installed') ? 2 : 1;
-			vpnStatus.detail = vpnModel.status === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, vpnModel.status);
-			subjectStatus.status = (vpnModel.status === 'installed') ? 2 : 1;
-		}
-
-		vpnModel.on(EventTypes.vpnStatusEvent, (data) => {
-			vpnStatus.status = (data === 'installed') ? 2 : 1;
-			vpnStatus.detail = data === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
+		const setVpnStatus = (status: string) => {
+			vpnStatus.status = status === 'installed' ? 2 : 1;
+			vpnStatus.detail = status === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, status);
+			subjectStatus.status = status === 'installed' ? 2 : 1;
 			translate.get(vpnStatus.detail).subscribe((res) => {
 				vpnStatus.detail = res;
 			});
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, data);
-			subjectStatus.status = (data === 'installed') ? 2 : 1;
-		});
-		translate.get(vpnStatus.detail).subscribe((res) => {
-			vpnStatus.detail = res;
-		});
-		translate.get(vpnStatus.title).subscribe((res) => {
-			vpnStatus.title = res;
-		});
-		translate.get(subjectStatus.title).subscribe((res) => {
-			subjectStatus.title = res;
+			translate.get(vpnStatus.title).subscribe((res) => {
+				vpnStatus.title = res;
+			});
+			translate.get(subjectStatus.title).subscribe((res) => {
+				subjectStatus.title = res;
+			});
+		};
+		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityVPNStatus);
+		if (cacheStatus) {
+			setVpnStatus(cacheStatus);
+		}
+		if (vpnModel.status) {
+			setVpnStatus(vpnModel.status);
+		}
+
+		vpnModel.on(EventTypes.vpnStatusEvent, (data) => {
+			setVpnStatus(data);
 		});
 		this.statusList = new Array(vpnStatus);
 		this.subject = subjectStatus;
