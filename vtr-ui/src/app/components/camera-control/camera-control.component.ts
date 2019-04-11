@@ -77,24 +77,15 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 		this.media = this.getMedia();
 		if (this.media) {
-			// this.systemMediaControls = this.media.SystemMediaTransportControls.getForCurrentView();
-			// this.systemMediaControls.addEventListener(
-			// 	'propertychanged',
-			// 	(args: any) => {
-			// 		this.systemMediaControls_propertyChanged(args);
-			// 	}
-			// );
+			this.systemMediaControls = this.media.SystemMediaTransportControls.getForCurrentView();
+			this.systemMediaControls.addEventListener(
+				'propertychanged',
+				(args: any) => {
+					this.systemMediaControls_propertyChanged(args);
+				}
+			);
 			document.addEventListener('visibilitychange', this.onVisibilityChanged.bind(this));
-			// Windows.UI.WebUI.WebUIApplication.addEventListener("resuming", function () {
-			//    this.initializeCameraAsync();
-			// }, false);
-
-			// Windows.UI.WebUI.WebUIApplication.addEventListener("suspending", function (args) {
-			// 	let deffer=args.suspendingOperation.getDeferral();
-			// 	this.cleanupCameraAsync().done(()=>{
-			// 		deffer.complete();
-			// 	});
-			// }, false);
+			
 		}
 
 		//#endregion
@@ -131,28 +122,18 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 					console.log('No camera device found!');
 					return;
 				}
-				// Figure out where the camera is located
-				if (!camera.enclosureLocation || camera.enclosureLocation.panel === this.Windows.Devices.Enumeration.Panel.unknown) {
-					// No information on the location of the camera, assume it's an external camera, not integrated on the device
-					//  externalCamera = true;
-				} else {
-					// Camera is fixed on the device
-					// externalCamera = false;
-
-					// Only mirror the preview if the camera is on the front panel
-					//  mirroringPreview = (camera.enclosureLocation.panel === Windows.Devices.Enumeration.Panel.front);
-				}
-
-				self.oMediaCapture = new this.Windows.Media.Capture.MediaCapture();
+				self.oMediaCapture = new self.Windows.Media.Capture.MediaCapture();
 
 				// Register for a notification when something goes wrong
 				self.oMediaCapture.addEventListener('failed', () => { });
 
 				const settings = new self.Capture.MediaCaptureInitializationSettings();
 				settings.videoDeviceId = camera.id;
-
+				
+				self.oDisplayRequest.requestActive();
 				// Initialize media capture and start the preview
 				return self.oMediaCapture.initializeAsync(settings);
+
 			}, function (error) {
 				console.log(error.message);
 			}).then(function () {
@@ -172,7 +153,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		this._video.pause();
 		this._video.src = '';
 		// Allow the device screen to sleep now that the preview is stopped
-		//  this.oDisplayRequest.requestRelease();
+		this.oDisplayRequest.requestRelease();
 	}
 
 	cleanupCameraAsync() {
@@ -188,11 +169,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 	onVisibilityChanged() {
 		if (document.hidden) {
-			// this.ngOnDestroy();
 			this.cleanupCameraAsync();
 		} else {
-			// this.ngOnInit();
-			// this.activateCamera();
 			this.initializeCameraAsync();
 		}
 	}
@@ -218,12 +196,6 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		if (this._video.src !== '') {
 			this.cleanupCameraAsync();
 		}
-		// if (this.systemMediaControls) {
-		// 	this.systemMediaControls.removeEventListener(
-		// 		'propertychanged',
-		// 		this.systemMediaControls_propertyChanged
-		// 	);
-		// }
 	}
 
 	public onAutoExposureChange($event: any) {
@@ -279,9 +251,9 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		const win: any = window;
 		if (win.Windows) {
 			if (args.target.soundLevel === win.Windows.Media.SoundLevel.muted) {
-				this.deactivateCamera();
-			} else if (!this.cameraDetail.isPrivacyModeEnabled) {
-				this.activateCamera();
+				this.cleanupCameraAsync();
+			} else if (this._video.paused) {//only initialize when it's already paused
+				this.initializeCameraAsync();
 			}
 		}
 	}
