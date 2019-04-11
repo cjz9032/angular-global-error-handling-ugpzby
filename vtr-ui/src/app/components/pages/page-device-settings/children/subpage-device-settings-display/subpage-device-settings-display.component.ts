@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import { CameraDetail, ICameraSettingsResponse } from 'src/app/data-models/camera/camera-detail.model';
+import { CameraDetail, ICameraSettingsResponse, CameraFeatureAccess } from 'src/app/data-models/camera/camera-detail.model';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { DisplayService } from 'src/app/services/display/display.service';
@@ -27,6 +27,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public dataSource: any;
 	public eyeCareDataSource: EyeCareMode;
 	public cameraDetails1: ICameraSettingsResponse;
+	public cameraFeatureAccess: CameraFeatureAccess;
 	private cameraDetailSubscription: Subscription;
 	public eyeCareModeStatus = new FeatureStatus(false, true);
 	public cameraPrivacyModeStatus = new FeatureStatus(false, true);
@@ -34,6 +35,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public enableSunsetToSunrise = false;
 	public enableSlider = false;
 	public initEyecare = 0;
+	public showHideAutoExposureSlider = false;
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	isDesktopMachine: boolean;
@@ -55,6 +57,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		public displayService: DisplayService,
 		private commonService: CommonService) {
 		this.dataSource = new CameraDetail();
+		this.cameraFeatureAccess = new CameraFeatureAccess();
 		this.eyeCareDataSource = new EyeCareMode();
 	}
 
@@ -118,7 +121,14 @@ export class SubpageDeviceSettingsDisplayComponent
 		console.log('Inside');
 		this.displayService.getCameraSettingsInfo().then((response) => {
 			console.log('getCameraDetails.then', response);
+			console.log('response.exposure.supported.then', response.exposure.supported);
+			console.log('response.exposure.autoValue.then', response.exposure.autoValue);
+
 			this.dataSource = response;
+			if (this.dataSource.exposure.supported === true && this.dataSource.exposure.autoValue === false) {
+
+				this.cameraFeatureAccess.showAutoExposureSlider = true;
+			}
 		});
 	}
 	// Start EyeCare Mode
