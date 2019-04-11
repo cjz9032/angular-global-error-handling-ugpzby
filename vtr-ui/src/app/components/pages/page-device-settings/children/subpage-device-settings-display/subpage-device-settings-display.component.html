@@ -121,6 +121,7 @@
 							<div class="row">
 								<div class="col-12">
 									<vtr-camera-control [cameraSettings]="dataSource"
+										[cameraFeatureAccess]="cameraFeatureAccess"
 										(brightnessChange)="onBrightnessChange($event)"
 										(contrastChange)="onContrastChange($event)"
 										(exposureChange)="onCameraExposureValueChange($event)"
