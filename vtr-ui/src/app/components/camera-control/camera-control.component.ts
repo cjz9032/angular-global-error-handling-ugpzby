@@ -123,14 +123,18 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 					return;
 				}
 				self.oMediaCapture = new self.Windows.Media.Capture.MediaCapture();
+				self.oDisplayRequest.requestActive();
 
 				// Register for a notification when something goes wrong
-				self.oMediaCapture.addEventListener('failed', () => { });
+				// TODO: define the fail handle callback and show errormessage maybe... there's a chance another app is previewing camera, that's when failed happen.
+				self.oMediaCapture.addEventListener('failed', () => { 
+					console.log("failed to capture camera");
+					self.cleanupCameraAsync();
+				});
 
 				const settings = new self.Capture.MediaCaptureInitializationSettings();
 				settings.videoDeviceId = camera.id;
 				
-				self.oDisplayRequest.requestActive();
 				// Initialize media capture and start the preview
 				return self.oMediaCapture.initializeAsync(settings);
 
