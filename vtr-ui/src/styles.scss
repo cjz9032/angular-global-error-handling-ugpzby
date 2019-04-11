@@ -161,7 +161,7 @@ button {
 		}
 
 		// @media #{$mediaquery_500} {
-		@media only screen and (min-width: 500px) and (max-width: 768px) {
+		@media only screen and (min-width: 400px) and (max-width: 768px) {
 			.navbar {
 				justify-content: left !important;
 			}

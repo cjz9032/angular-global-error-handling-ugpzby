@@ -117,7 +117,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			isCheckBoxVisible: false,
 			isSwitchVisible: false,
 			isChecked: true,
-			linkText: 'Windows Settings',
+			linkText: 'Windows settings',
 			linkPath: 'ms-settings:windowsupdate',
 			type: 'auto-updates'
 
