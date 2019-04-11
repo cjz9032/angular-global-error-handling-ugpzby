@@ -24,4 +24,7 @@ export class UiRectangleRadioComponent implements OnInit {
 	onChange(event) {
 		this.change.emit(event);
 	}
+	getIconName(name:string){
+		return name.charAt(0).toUpperCase() + name.slice(1);
+	}
 }

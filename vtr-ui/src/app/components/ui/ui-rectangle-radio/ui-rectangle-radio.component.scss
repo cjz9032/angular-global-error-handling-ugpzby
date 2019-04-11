@@ -50,7 +50,7 @@
 			transition: all 200ms ease-in;
 		}
 
-		span {
+		.label {
 			position: absolute;
 			left: 4.8rem;
 			top: 2.2rem;
@@ -61,6 +61,11 @@
 			word-break: break-all;
 			padding-right: 1rem;
 			text-transform: uppercase;
+		}
+		.icomoon{
+			position:absolute;
+			bottom:0.5rem;
+			right:0.5rem;
 		}
 
 		fa-icon.icon {
