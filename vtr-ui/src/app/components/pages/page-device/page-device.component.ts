@@ -10,8 +10,8 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 })
 export class PageDeviceComponent implements OnInit {
 
-	title = 'My Device';
-	back = 'BACK';
+	// title = 'My Device';
+	// back = 'BACK';
 	backarrow = '< ';
 	cardContentPositionA: any;
 

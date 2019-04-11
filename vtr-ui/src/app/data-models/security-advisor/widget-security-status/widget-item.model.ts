@@ -14,7 +14,7 @@ export class WidgetItem {
 		this.detail = arg.detail;
 		this.path = arg.path;
 		this.type = arg.type;
-		translateService.get('common.securityAdvisor.loading').subscribe((value) => {
+		translateService.stream('common.securityAdvisor.loading').subscribe((value) => {
 			if (!this.detail) { this.detail = value; }
 		});
 	}

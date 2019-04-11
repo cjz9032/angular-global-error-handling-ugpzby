@@ -362,20 +362,20 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			if (this.powerService.isShellAvailable) {
 				this.powerService
 					.getDYTCRevision()
-					.then((value: number) => {
+					.then(async (value: number) => {
 						console.log('getDYTCRevision.then', value);
 						//	value=5;
 						if (value === 4) {
 							this.showIntelligentCooling = 2;
-							this.getCQLCapability();
-							this.getTIOCapability();
+							await this.getCQLCapability();
+							await this.getTIOCapability();
 							console.log(this.cQLCapability);
 							console.log(this.tIOCapability);
 
 							if (this.cQLCapability === true || this.tIOCapability === true) {
 								console.log('inside false of CQLCCapability and TIOCCapability');
 								this.toggleIntelligentCooling = true;
-								this.intelligentCooling = true;
+								this.intelligentCooling = false;
 								this.toggleIntelligentCoolingStatus = true;
 							} else {
 								this.toggleIntelligentCooling = false;

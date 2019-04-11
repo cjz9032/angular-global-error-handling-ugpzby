@@ -9,9 +9,11 @@ export class PassWordManagerWidgetItem extends WidgetItem {
 		super({
 			id: 'password-manager',
 			path: 'security/password-protection',
-			title: 'Password Manager',
 			type: 'security'
 		}, translateService);
+		this.translateService.stream('common.securityAdvisor.pswdMgr').subscribe((value) => {
+			this.title = value;
+		});
 		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus);
 		if (cacheStatus) {
 			this.updateStatus(cacheStatus);
@@ -32,7 +34,7 @@ export class PassWordManagerWidgetItem extends WidgetItem {
 		this.status = status === 'installed' ? 2 : 1;
 
 		const translateKey = status === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
-		this.translateService.get(translateKey).subscribe((value) => {
+		this.translateService.stream(translateKey).subscribe((value) => {
 			this.detail = value;
 		});
 	}
