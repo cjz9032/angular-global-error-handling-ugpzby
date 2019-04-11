@@ -56,16 +56,20 @@ export class MockSecurityAdvisorService {
 			wifiHistory: [{
 				ssid: 'lenovolenovolenovolenovolenovolenovolenovolenovolenovolenovo',
 				info: '2019/2/13 9:04:49',
-				good: 1
+				good: '1'
 			}, {
 				ssid: 'cdl',
 				info: '2019/3/5 11:04:49',
-				good: 0
+				good: '0'
 			}, {
 				ssid: 'lalal',
 				info: '2019/1/4 15:22:49',
-				good: 2
+				good: '2'
 			}],
+			getWifiState(): Promise<boolean> {
+				return Promise.resolve(true);
+			},
+			hasSystemPermissionShowed: false,
 			isLocationServiceOn: true,
 			isLWSPluginInstalled: true,
 			hasEverUsed: false,
@@ -146,7 +150,7 @@ export class MockSecurityAdvisorService {
 			mcafee: {
 				localName: '',
 				subscription: '',
-				expireAt: '',
+				expireAt: new Date,
 				registered: true,
 				trailUrl: '',
 				features: [{

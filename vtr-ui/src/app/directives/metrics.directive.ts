@@ -1,5 +1,5 @@
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
-import { VantageShellService } from '../services/vantage-shell/vantage-shell.service';
+import {Directive, ElementRef, HostListener, Input} from '@angular/core';
+import {VantageShellService} from '../services/vantage-shell/vantage-shell.service';
 import {ActivatedRoute} from "@angular/router";
 
 
@@ -32,7 +32,10 @@ export class MetricsDirective {
 	@HostListener('click', ['$event.target'])
 	onclick(target) {
 
-
+		var parents=this.getParents(target,"[data-component]");
+		if(!this.metricsParent && parents){
+			this.metricsParent=parents.join('.');
+		}
 		const location = window.location.href.substring(window.location.href.indexOf('#') + 2).replace(/[`~!@#$%^&*()_|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '');
 		this.metricsItem = typeof this.metricsItem === 'string' ? this.metricsItem.split(" ").join("").toLowerCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '').substr(0, 25) : this.metricsItem;
 		this.metricsEvent = typeof this.metricsEvent === 'string' ? this.metricsEvent.split(" ").join("").toLowerCase() : this.metricsEvent;
@@ -43,14 +46,14 @@ export class MetricsDirective {
 			const data: any = {
 				ItemName: this.metricsItem,
 				ItemType: this.metricsEvent,
-				ItemParent: this.metricsParent,
+				ItemParent:this.metricsParent,
 			};
 			if (this.metricsParam) {
-				data.ItemParm = this.metricsParam;
+				data.ItemParam = this.metricsParam;
 			}
 
 			if (typeof this.metricsValue !== 'undefined') {
-				data.ItemValue = this.metricsValue;
+				data.metricsValue = this.metricsValue;
 			}
 			if (this.metricsItemID) {
 				data.ItemID = this.metricsItemID;
@@ -78,10 +81,10 @@ export class MetricsDirective {
 				ItemParent:this.metricsParent,
 			};
 			if (this.metricsParam) {
-				data.ItemParm = this.metricsParam;
+				data.ItemParam = this.metricsParam;
 			}
 			if (typeof this.metricsValue !== 'undefined') {
-				data.ItemValue = this.metricsValue;
+				data.metricsValue = this.metricsValue;
 			}
 			if (this.metricsItemID) {
 				data.ItemID = this.metricsItemID;

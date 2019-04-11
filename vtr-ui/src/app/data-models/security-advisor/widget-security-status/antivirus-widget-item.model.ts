@@ -2,7 +2,7 @@ import { WidgetItem } from './widget-item.model';
 import { Antivirus, EventTypes } from '@lenovo/tan-client-bridge';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
 
 export class AntivirusWidgetItem extends WidgetItem {
 	antivirus: Antivirus;
@@ -10,12 +10,16 @@ export class AntivirusWidgetItem extends WidgetItem {
 		super({
 			id: 'anti-virus',
 			path: 'security/anti-virus',
-			title: 'Anti-Virus',
 			type: 'security'
+		}, translateService);
+		this.translateService.stream('common.securityAdvisor.antiVirus').subscribe((value) => {
+			this.title = value;
 		});
 		const cacheAvStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus);
 		const cacheFwStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus);
-		this.updateStatus(cacheAvStatus === 'enabled', cacheFwStatus === 'enabled');
+		if (cacheAvStatus || cacheFwStatus) {
+			this.updateStatus(cacheAvStatus === 'enabled', cacheFwStatus === 'enabled');
+		}
 
 		if (antivirus.mcafee || antivirus.windowsDefender || antivirus.others) {
 			this.updateStatusByAv(antivirus, commonService);
@@ -63,18 +67,21 @@ export class AntivirusWidgetItem extends WidgetItem {
 		if (avStatus && fwStatus) {
 			this.status = 0;
 			this.detail = 'enabled';
-			this.translateService.get('common.securityAdvisor.enabled').subscribe((value) => {
+			this.translateService.stream('common.securityAdvisor.enabled').subscribe((value) => {
 				this.detail = value;
 			});
 		} else if (!avStatus && !fwStatus) {
 			this.status = 1;
 			this.detail = 'disabled';
-			this.translateService.get('common.securityAdvisor.disabled').subscribe((value) => {
+			this.translateService.stream('common.securityAdvisor.disabled').subscribe((value) => {
 				this.detail = value;
 			});
 		} else {
 			this.status = 3;
-			this.detail = 'TO DO';
+			this.detail = 'partially protected';
+			this.translateService.stream('common.securityAdvisor.partiallyProtected').subscribe((value) => {
+				this.detail = value;
+			});
 		}
 	}
 }

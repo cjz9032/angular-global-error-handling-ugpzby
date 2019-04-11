@@ -16,6 +16,7 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 	@Input() arrowColor: string;
 	/**** passing to ItemParent from metrics ****/
 	@Input() metricsParent: string;
+	@Input() clickable = true;
 
 	/** object having item class list*/
 	itemStatusClass = {
@@ -29,7 +30,8 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 	itemStatusIconClass = {
 		0: 'check',
 		1: 'times',
-		2: 'circle'
+		2: 'circle',
+		3: 'minus'
 	};
 
 	constructor(private deviceService: DeviceService) { super(); }

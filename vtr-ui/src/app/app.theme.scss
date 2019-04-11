@@ -12,6 +12,7 @@ $highlight: #2ec5eb;
 
 $alt: #e02725;
 $orange-light: #FF7E3E;
+$yellow-dark: #E67E22;
 
 $go: #2cd283;
 $go_light: #31e4b6;
@@ -81,6 +82,14 @@ $mediaquery_5: "only screen and (max-width : 1600px)";
 $mediaquery_6: "only screen and (max-width : 1400px)";
 $mediaquery_7: "only screen and (max-width : 1200px)";
 $mediaquery_8: "only screen and (max-width: 800px)";
+$mediaquery_9: "only screen and (min-width: 800px) and (max-width : 1200px)";
+$mediaquery_10: "only screen and (min-width: 769px) and (max-width : 966px)";
+$mediaquery_11: "only screen and (max-width: 530px)";
+$mediaquery_12: "only screen and (max-width: 768px)";
+$mediaquery_13: "only screen and (min-width: 770px) and (max-width : 991px)";
+$mediaquery_14: "only screen and (min-width: 530px) and (max-width: 768px)";
+$mediaquery_15: "only screen and (min-width: 992px) and (max-width: 1195px)";
+
 
 $dpiquery_0: "max-resolution: 350dpi";
 $dpiquery_1: "max-resolution: 275dpi";

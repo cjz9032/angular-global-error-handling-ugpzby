@@ -7,7 +7,7 @@
 	<div class="row vtr-page-content">
 		<div class="col vtr-col">
 			<div class="row">
-				<div class="col col-8 vtr-page-left-column">
+				<div class="col-lg-8 col-sm-12 vtr-page-left-column">
 					<div class="vtr-page-shift-up">
 						<div class="vtr-page-left-column-inner">
 							<div class="container-fluid">
@@ -48,13 +48,13 @@
 														[items]="wifiSecurityLandingViewModel.statusList">
 													</vtr-ui-list-chevron>
 													<div class="wifi-history"
-														*ngIf="wifiHistory && wifiSecurityLandingViewModel.subject.status === 0">
+														*ngIf="wifiHistory && wifiSecurityLandingViewModel.subject.status === 0 && wifiHistory.length !== 0">
 														<div class="row align-items-center pt-wifiLength">
-															<div class="col-3">
+															<div class="col-2 row justify-content-center">
 																<fa-icon class="wifi-font-icon"
 																	[icon]="['fas', 'wifi']"></fa-icon>
 															</div>
-															<div class="col-9">{{'security.landing.maliciousNetwork' | translate:{maliciousWifi:maliciousWifi} }}</div>
+															<div class="col-10">{{'security.landing.maliciousNetwork' | translate:{maliciousWifi:maliciousWifi} }}</div>
 														</div>
 														<ul class="chevron-list">
 															<li *ngFor="let wifi of wifiHistory.slice(0, 2);"
@@ -65,7 +65,7 @@
 																			[icon]="['fas', 'wifi']"></fa-icon>
 																	</div>
 																</div>
-																<div class="col-6 pl-0 ellipsis wifi-good-font">{{wifi.ssid}}</div>
+																<div class="col-6 pl-0 ellipsis wifi-good-font" title="{{wifi.ssid}}">{{wifi.ssid}}</div>
 																<div class="wifi-bg col-4 pl-0 pr-3">
 																	<span class="wifi-good pt-1 pb-1 pr-2 pl-2"
 																		[ngClass]="getWifiStatus(wifi.good)">
@@ -74,7 +74,7 @@
 																</div>
 															</li>
 															<li class="wifi-link"><a routerLink="wifi-security"
-																[queryParams]="{isShowMore:false}">See all joined networks</a>
+																[queryParams]="{isShowMore:false}">{{'security.landing.seeAllNetwork' | translate}}</a>
 															</li>
 														</ul>
 													</div>
@@ -88,7 +88,7 @@
 											</div>
 										</div>
 										<vtr-ui-landing-feature
-											*ngIf="windowsHelloLandingViewModel && windowsHelloLandingViewModel.subject.status !== undefined && windowsHelloLandingViewModel.subject.status !== null"
+											*ngIf="windowsHelloLandingViewModel"
 											[feature]='windowsHelloLandingViewModel'>
 										</vtr-ui-landing-feature>
 
@@ -98,7 +98,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col col-4 vtr-page-right-column">
+				<div class="col-lg-4 col-sm-12 vtr-page-right-column">
 					<div class="vtr-page-shift-up">
 						<div class="container-fluid">
 							<div class="row">

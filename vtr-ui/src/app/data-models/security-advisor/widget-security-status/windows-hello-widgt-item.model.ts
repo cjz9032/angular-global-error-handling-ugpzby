@@ -9,39 +9,41 @@ export class WindowsHelloWidgetItem extends WidgetItem {
 		super({
 			id: 'windows-hello',
 			path: 'security/windows-hello',
-			title: 'Windows Hello',
 			type: 'security'
+		}, translateService);
+		this.translateService.stream('common.securityAdvisor.windowsHello').subscribe((value) => {
+			this.title = value;
 		});
 		const cacheStatus: string = commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus);
 		if (cacheStatus) {
 			this.status = cacheStatus === 'enabled' ? 0 : 1;
 			this.detail = cacheStatus;
-			this.translateString(this.detail);
+			this.translateStatus(this.detail);
 		}
 		if (windowsHello.facialIdStatus || windowsHello.fingerPrintStatus) {
 			const active = windowsHello.fingerPrintStatus === 'active' || windowsHello.facialIdStatus === 'active';
 			this.status = active ? 0 : 1;
 			this.detail = active ? 'enabled' : 'disabled';
-			this.translateString(this.detail);
+			this.translateStatus(this.detail);
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, this.detail);
 		}
 
 		windowsHello.on(EventTypes.helloFingerPrintStatusEvent, (fpStatus) => {
 			this.status = fpStatus === 'active' ? 0 : 1;
 			this.detail = fpStatus === 'active' ? 'enabled' : 'disabled';
-			this.translateString(this.detail);
+			this.translateStatus(this.detail);
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, this.detail);
 		}).on(EventTypes.helloFacialIdStatusEvent, (faceIdStatus) => {
 			this.status = faceIdStatus === 'active' ? 0 : 1;
 			this.detail = faceIdStatus === 'active' ? 'enabled' : 'disabled';
-			this.translateString(this.detail);
+			this.translateStatus(this.detail);
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, this.detail);
 		});
 	}
 
-	translateString(status: string) {
+	translateStatus(status: string) {
 		const translateKey = status === 'enabled' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-		this.translateService.get(translateKey).subscribe((value) => {
+		this.translateService.stream(translateKey).subscribe((value) => {
 			this.detail = value;
 		});
 	}

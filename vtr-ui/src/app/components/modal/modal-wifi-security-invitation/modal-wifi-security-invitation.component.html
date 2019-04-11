@@ -16,8 +16,11 @@
 	<div class="join-info pl-5 mb-3">
 		<div *ngIf="startJoin" class="spinner-border text-primary progress-spinner" role="status">
 		</div>
-		<div class="success" *ngIf="joinSuccess">{{'security.homeprotection.invitationcode.success' | translate}}</div>
-		<div class="successtitle w-100" *ngIf="joinSuccess">
+		<div class="d-flex">
+			<fa-icon *ngIf="joinSuccess" class="successIcon" [icon]="['fas', 'check']"></fa-icon>
+			<div class="success pl-3" *ngIf="joinSuccess">{{'security.homeprotection.invitationcode.success' | translate}}</div>
+		</div>
+		<div class="successtitle" *ngIf="joinSuccess">
 			{{'security.homeprotection.invitationcode.canUse' | translate}}</div>
 		<div class="failed" *ngIf="joinFailed">{{'security.homeprotection.invitationcode.tryAgain' | translate}}</div>
 	</div>

@@ -179,15 +179,8 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		private deviceService: DeviceService,
 		vantageShellService: VantageShellService
 	) {
-
-
-
-		/*const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
-		if (!cacheShowWindowsHello) {
-=======
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		if (cacheShowWindowsHello) {
->>>>>>> 1e7c598fdbb92e2c4f6d7c421a554ca8d67c0f6b
 			const securityItem = this.items.find(item => item.id === 'security');
 			securityItem.subitems.push({
 				id: 'windows-hello',
@@ -201,8 +194,9 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				subitems: []
 			});
 		}
-		if (vantageShellService.getSecurityAdvisor()) {
-			const windowsHello: WindowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
+		const securityAdvisor = vantageShellService.getSecurityAdvisor();
+		if (securityAdvisor) {
+			const windowsHello: WindowsHello = securityAdvisor.windowsHello;
 			if (windowsHello.facialIdStatus || windowsHello.fingerPrintStatus) {
 				this.showWindowsHello(windowsHello);
 			}
@@ -212,21 +206,10 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				this.showWindowsHello(windowsHello);
 			});
 		}
-<<<<<<< HEAD
-		const windowsHello: WindowsHello =vantageShellService.getSecurityAdvisor().windowsHello;
-		this.showWindowsHello(windowsHello);
-		windowsHello.on(EventTypes.helloFacialIdStatusEvent, () => {
-			this.showWindowsHello(windowsHello);
-		}).on(EventTypes.helloFingerPrintStatusEvent, () => {
-			this.showWindowsHello(windowsHello);
-		});
-=======
->>>>>>> 1e7c598fdbb92e2c4f6d7c421a554ca8d67c0f6b
-
 		this.commonMenuSubscription = this.translationService.subscription
 			.subscribe((translation: Translation) => {
 				this.onLanguageChange(translation);
-			});*/
+			});
 	}
 
 	ngOnInit() {

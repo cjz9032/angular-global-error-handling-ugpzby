@@ -31,6 +31,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.shellServices.registerEvent(EventTypes.pwrPowerSupplyStatusEvent, this.onPowerSupplyStatusEvent.bind(this));
 		this.shellServices.registerEvent(EventTypes.pwrRemainingPercentageEvent, this.onRemainingPercentageEvent.bind(this));
 		this.shellServices.registerEvent(EventTypes.pwrBatteryStatusEvent, this.onBatteryStatusEvent.bind(this));
+		this.shellServices.registerEvent(EventTypes.pwrRemainingTimeEvent, this.onRemainingTimeEvent.bind(this));
 	}
 
 	onPowerSupplyStatusEvent(status: any) {
@@ -53,6 +54,14 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		console.log("onBatteryStatusEvent: ", info);
 		if(info) {
 			this.batteryInfo = info
+			this.updateBatteryDetails();
+		}
+	}
+
+	onRemainingTimeEvent(mainBatteryTime: number) {
+		console.log("onRemainingTimeEvent: ", mainBatteryTime);
+		if(mainBatteryTime) {
+			this.batteryInfo[0].remainingTime = mainBatteryTime
 			this.updateBatteryDetails();
 		}
 	}
@@ -115,5 +124,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.shellServices.unRegisterEvent(EventTypes.pwrPowerSupplyStatusEvent);
 		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent);
 		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent);
+		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent);
 	}
 }

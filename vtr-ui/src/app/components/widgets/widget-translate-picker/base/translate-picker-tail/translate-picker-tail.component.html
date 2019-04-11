@@ -1,0 +1,12 @@
+<span>
+    <a vtrMetrics 
+      metricsEvent="itemClick" 
+      [metricsItem]="metricsItem"
+      [metricsParent]="metricsParent"
+      [metricsValue]="metricsValue"
+      [href]="href | sanitizeUrl"
+      target="_blank"
+      (click)="onClick()">
+      {{translateString | tagPicker:0}}</a>
+    {{translateString | textPicker:1}}
+</span>

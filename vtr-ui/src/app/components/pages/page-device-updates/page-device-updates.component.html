@@ -11,7 +11,7 @@
 	<div class="row vtr-page-content">
 		<div class="col vtr-col">
 			<div class="row">
-				<div class="col col-8 vtr-page-left-column">
+				<div class="col-sm-12 col-md-7 col-lg-7 col-xl-8 vtr-page-left-column">
 					<div class="vtr-page-shift-up">
 						<div class="vtr-device-information">
 							<div class="container-fluid">
@@ -35,7 +35,8 @@
 											[installingPercent]="installationPercent"
 											[downloadingPercent]="downloadingPercent"
 											(checkForUpdate)="onCheckForUpdates()"
-											(cancelUpdateCheck)="onCancelUpdateCheck()">
+											(cancelUpdateCheck)="onCancelUpdateCheck()"
+											(cancelUpdateDownload)="onCancelUpdateDownload()">
 										</vtr-widget-device-update>
 									</div>
 								</div>
@@ -172,7 +173,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col col-4 vtr-page-right-column">
+				<div class="col-sm-12 col-md-5 col-lg-5 col-xl-4 vtr-page-right-column">
 					<div class="vtr-page-shift-up">
 						<div class="container-fluid">
 							<div class="row mb-40">
@@ -213,14 +214,6 @@
 										[ratioY]="2"
 										[cornerShift]="'large'">
 									</vtr-container-card>
-								</div>
-							</div>
-							<div class="row"
-								*ngIf="isRebootRequired">
-								<div class="col col-12 pb-40">
-									<vtr-widget-reboot (dismissClick)="onDismissClick($event)"
-										(rebootClick)="onRebootClick($event)">
-									</vtr-widget-reboot>
 								</div>
 							</div>
 						</div>

@@ -44,7 +44,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public isUpdateDownloading = false;
 	public installationPercent = 0;
 	public downloadingPercent = 0;
-	public isRebootRequired = false;
+	public isRebootRequested = false;
 	public isInstallationSuccess = false;
 	public isInstallationCompleted = false;
 	public showFullHistory = false;
@@ -225,7 +225,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			const installTime = this.commonService.formatTime(this.lastInstallTime);
 			return `${this.lastUpdatedText} ${installDate} at ${installTime}`;
 		}
-		return `${this.lastUpdatedText} not available`;
+		return `Your device has never checked for updates.`;
 	}
 
 	public getNextUpdatedScanText() {
@@ -236,7 +236,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			const scanTime = this.commonService.formatTime(this.nextScheduleScanTime);
 			return `${this.nextScanText} ${scanDate} at ${scanTime}`;
 		}
-		return `${this.nextScanText} not available`;
+		return '';
 	}
 
 	public onCheckForUpdates() {
@@ -259,7 +259,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	public onUpdateSelectionChange($event: any) {
-		console.log($event);
 		const item = $event.target;
 		this.systemUpdateService.toggleUpdateSelection(item.name, item.checked);
 	}
@@ -318,7 +317,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	public onDismissClick($event) {
-		this.isRebootRequired = false;
+		this.isRebootRequested = false;
 	}
 
 	public showInstallConfirmation(source: string) {
@@ -344,6 +343,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			return;
 		}
 		modalRef.componentInstance.packages = packages;
+		modalRef.componentInstance.OkText = 'device.systemUpdates.popup.okayButton';
+		modalRef.componentInstance.CancelText = 'device.systemUpdates.popup.cancelButton';
 		modalRef.result.then(
 			result => {
 				// on open
@@ -371,23 +372,22 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	private showRebootForceModal(modalRef: NgbModalRef) {
-		const header = 'Reboot Pending';
-		const description = 'The update(s) you selected will cause the system to reboot automatically after installation.';
+		const header = 'device.systemUpdates.popup.reboot';
+		const description = 'device.systemUpdates.popup.rebootForceMsg';
 		modalRef.componentInstance.header = header;
 		modalRef.componentInstance.description = description;
 	}
 
 	private showPowerOffForceModal(modalRef: NgbModalRef) {
-		const header = 'Shut Down';
-		const description = 'The update(s) you selected will cause the system to shut down automatically after installation.';
+		const header = 'device.systemUpdates.popup.shutdown';
+		const description = 'device.systemUpdates.popup.shutdownForceMsg';
 		modalRef.componentInstance.header = header;
 		modalRef.componentInstance.description = description;
 	}
 
 	private showRebootDelayedModal(modalRef: NgbModalRef) {
-		const header = 'Reboot Pending';
-		const description = 'The update(s) you selected will cause the system to reboot after installation, during the installation of updates' +
-			', please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.';
+		const header = 'device.systemUpdates.popup.reboot';
+		const description = 'device.systemUpdates.popup.rebootDelayedMsg';
 		modalRef.componentInstance.header = header;
 		modalRef.componentInstance.description = description;
 	}
@@ -454,7 +454,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isUpdateDownloading = false;
 					this.isInstallationCompleted = true;
 					this.isInstallationSuccess = this.getInstallationSuccess(payload);
-					this.checkRebootRequired();
+					this.checkRebootRequested();
 					break;
 				case UpdateProgress.AutoUpdateStatus:
 					this.autoUpdateOptions[0].isChecked = payload.criticalAutoUpdates;
@@ -464,6 +464,15 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
 					this.offlineSubtitle = `${this.getLastUpdatedText()}<br>${this.getNextUpdatedScanText()}`;
+					break;
+				case UpdateProgress.UpdateDownloadCancelled:
+					this.isUpdateDownloading = false;
+					this.isInstallingAllUpdates = true;
+					this.percentCompleted = 0;
+					this.isUpdatesAvailable = true;
+					this.installationPercent = 0;
+					this.downloadingPercent = 0;
+					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 					break;
 				default:
 					break;
@@ -506,7 +515,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isInstallationCompleted = true;
 					this.isInstallationSuccess = this.getInstallationSuccess(payload);
 					this.setUpdateByCategory(payload.updateList);
-					this.checkRebootRequired();
+					this.checkRebootRequested();
 					break;
 				default:
 					break;
@@ -524,8 +533,34 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.systemUpdateService.getScheduleUpdateStatus(reportProgress);
 	}
 
-	private checkRebootRequired() {
-		this.isRebootRequired = this.systemUpdateService.isRebootRequired();
+	private checkRebootRequested() {
+		this.isRebootRequested = this.systemUpdateService.isRebootRequested();
+		if (this.isRebootRequested) {
+			const modalRef = this.modalService
+				.open(ModalCommonConfirmationComponent, {
+					backdrop: 'static',
+					size: 'lg',
+					centered: true,
+					windowClass: 'common-confirmation-modal'
+				});
+
+			const header = 'device.systemUpdates.popup.rebootPending';
+			const description = 'device.systemUpdates.popup.rebootRequiredMsg';
+			modalRef.componentInstance.header = header;
+			modalRef.componentInstance.description = description;
+			modalRef.componentInstance.OkText = 'device.systemUpdates.popup.rebootButton';
+			modalRef.componentInstance.CancelText = 'device.systemUpdates.popup.dismissButton';
+			modalRef.result.then(
+				(result) => {
+					if (result) {
+						this.systemUpdateService.restartWindows();
+					} else {
+						this.isRebootRequested = false;
+						modalRef.close();
+					}
+				}
+			);
+		}
 	}
 
 	// check for installed updates, if all installed correctly return true else return false
@@ -545,5 +580,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			}
 		}
 		return isSuccess;
+	}
+
+	public onCancelUpdateDownload() {
+		this.systemUpdateService.cancelUpdateDownload();
 	}
 }

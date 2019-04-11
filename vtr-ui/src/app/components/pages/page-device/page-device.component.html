@@ -2,21 +2,21 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
-				[back]="back"
+				[back]="'common.ui.back' | translate"
 				[title]="'device.myDevice.title' | translate"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
 		<div class="col vtr-col">
 			<div class="row">
-				<div class="col-sm-12 col-md-7 col-lg-7 col-xl-8 vtr-page-left-column">
+				<div class="col-sm-12 col-md-7 col-lg-8 col-xl-8 vtr-page-left-column">
 					<div class="vtr-subpage">
 						<div class="vtr-page-shift-up">
 							<vtr-widget-device></vtr-widget-device>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-12 col-md-5 col-lg-5 col-xl-4 vtr-page-right-column">
+				<div class="col-sm-12 col-md-5 col-lg-4 col-xl-4 vtr-page-right-column">
 					<div class="vtr-page-shift-up">
 						<div class="container-fluid">
 							<div class="row">
@@ -37,9 +37,9 @@
 
 							<div class="row mb-40">
 								<div class="col col-12 cont">
-									<div class="widget-heading mb-40">Helpful content</div>
-									<vtr-widget-questions [title]="'Q&A for your machine'"
-										[description]="'Find some helpful tips for your device.'"
+									<div class="widget-heading mb-40">{{'device.myDevice.helpful' |translate }}</div>
+									<vtr-widget-questions [title]="'common.qAndA.title' | translate"
+										[description]="'common.qAndA.subtitle' | translate"
 										[items]="qaService.qas"></vtr-widget-questions>
 								</div>
 							</div>
