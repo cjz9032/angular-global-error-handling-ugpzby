@@ -36,7 +36,6 @@ export class SubpageDeviceSettingsDisplayComponent
 	public initEyecare = 0;
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
-	isDesktopMachine: boolean;
 	headerMenuItems = [
 		{
 			title: 'device.deviceSettings.displayCamera.jumpTo.shortcuts.display.title',
@@ -70,11 +69,6 @@ export class SubpageDeviceSettingsDisplayComponent
 
 		this.getCameraPrivacyModeStatus();
 		this.getCameraDetails();
-		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
-		if (this.isDesktopMachine) {
-			// on desktop machine, camera section need to hide, so it's Jump to Setting link also need to remove
-			this.headerMenuItems.pop();
-		}
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			cameraDetail => {
 				this.dataSource = cameraDetail;
@@ -325,10 +319,11 @@ export class SubpageDeviceSettingsDisplayComponent
 			this.displayService
 				.getCameraPrivacyModeState()
 				.then((featureStatus: FeatureStatus) => {
-					if (featureStatus.available) {
-						console.log('cameraPrivacyModeStatus.then', featureStatus);
-						this.cameraPrivacyModeStatus = featureStatus;
-						//this.cameraPrivacyModeStatus.available=false;
+					console.log('cameraPrivacyModeStatus.then', featureStatus);
+					this.cameraPrivacyModeStatus = featureStatus;
+					if (!this.cameraPrivacyModeStatus.available) {
+						// on desktop machine, camera section need to hide, so it's Jump to Setting link also need to remove
+						this.headerMenuItems.pop();
 					}
 				})
 				.catch(error => {
