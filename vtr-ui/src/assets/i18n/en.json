@@ -635,7 +635,7 @@
 				"deviceName10": "Automatic Updates Service Availability",
 				"fail": "FAILED",
 				"pass": "PASSED",
-				"learnMoreAboutSecurityHealth": "Learn more about each of these components <tag>here.</tag>",
+				"learnMoreAboutSecurityHealth": "Learn more about each of these components <tag>here</tag>.",
 				"peaceOfMind": "Do you want more peace of mind?",
 				"button": "Enable Wifi security"
 			}
