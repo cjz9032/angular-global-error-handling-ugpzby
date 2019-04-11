@@ -15,38 +15,38 @@ export class MockSecurityAdvisorService {
 		'path': 'security/anti-virus',
 		'type': 'security'
 	},
-	{
-		'status': 0,
-		'id': 'wifi-security',
-		'title': 'WiFi Security',
-		'detail': 'Enabled',
-		'path': 'security/wifi-security',
-		'type': 'security'
-	},
-	{
-		'status': 2,
-		'id': 'pwdmgr',
-		'title': 'Password Manager',
-		'detail': 'Installed',
-		'path': 'security/password-protection',
-		'type': 'security'
-	},
-	{
-		'status': 2,
-		'id': 'vpn',
-		'title': 'VPN',
-		'detail': 'Installed',
-		'path': 'security/internet-protection',
-		'type': 'security'
-	},
-	{
-		'status': 1,
-		'id': 'windows-hello',
-		'title': 'Windows Hello',
-		'detail': 'disabled',
-		'path': 'security/windows-hello',
-		'type': 'security'
-	}
+		{
+			'status': 0,
+			'id': 'wifi-security',
+			'title': 'WiFi Security',
+			'detail': 'Enabled',
+			'path': 'security/wifi-security',
+			'type': 'security'
+		},
+		{
+			'status': 2,
+			'id': 'pwdmgr',
+			'title': 'Password Manager',
+			'detail': 'Installed',
+			'path': 'security/password-protection',
+			'type': 'security'
+		},
+		{
+			'status': 2,
+			'id': 'vpn',
+			'title': 'VPN',
+			'detail': 'Installed',
+			'path': 'security/internet-protection',
+			'type': 'security'
+		},
+		{
+			'status': 1,
+			'id': 'windows-hello',
+			'title': 'Windows Hello',
+			'detail': 'disabled',
+			'path': 'security/windows-hello',
+			'type': 'security'
+		}
 	];
 	securityAdvisor: SecurityAdvisor = {
 		wifiSecurity: {
@@ -56,15 +56,15 @@ export class MockSecurityAdvisorService {
 			wifiHistory: [{
 				ssid: 'lenovolenovolenovolenovolenovolenovolenovolenovolenovolenovo',
 				info: '2019/2/13 9:04:49',
-				good: 1
+				good: '1'
 			}, {
 				ssid: 'cdl',
 				info: '2019/3/5 11:04:49',
-				good: 0
+				good: '0'
 			}, {
 				ssid: 'lalal',
 				info: '2019/1/4 15:22:49',
-				good: 2
+				good: '2'
 			}],
 			getWifiState(): Promise<boolean> {
 				return Promise.resolve(true);
@@ -112,10 +112,10 @@ export class MockSecurityAdvisorService {
 				config: 'HardDriveEncryption',
 				vulnerable: 'true'
 			},
-			{
-				config: 'AppsFromUnknownSources',
-				vulnerable: 'false'
-			}
+				{
+					config: 'AppsFromUnknownSources',
+					vulnerable: 'false'
+				}
 			],
 			chsConsoleUrl: 'https://www.baidu.com',
 			launchConsole(): Promise<boolean> {
