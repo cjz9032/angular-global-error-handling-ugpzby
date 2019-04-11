@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
 		this.translate.setDefaultLang('en');
 		const hadRunApp: boolean = commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
 		const appFirstRun = !hadRunApp;
-		if (appFirstRun) {
+		if (appFirstRun && deviceService.isShellAvailable) {
 			commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
 			vantageShellService.getMetrics().sendAsync({
 				ItemType: 'FirstRun'
