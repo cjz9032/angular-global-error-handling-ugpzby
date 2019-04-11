@@ -4,17 +4,20 @@ import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
+import { environment } from '../../../environments/environment';
+
 @Injectable({
 	providedIn: 'root'
 })
 export class VantageShellService {
 	private phoenix: any;
+	private shell: any;
 	constructor() {
-		const shell = this.getVantageShell();
-		if (shell) {
-			const rpcClient = shell.VantageRpcClient ? new shell.VantageRpcClient() : null;
-			const metricClient = shell.MetricsClient ? new shell.MetricsClient() : null;
-			const powerClient = shell.PowerClient ? shell.PowerClient() : null;
+		this.shell = this.getVantageShell();
+		if (this.shell) {
+			const rpcClient = this.shell.VantageRpcClient ? new this.shell.VantageRpcClient() : null;
+			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
+			const powerClient = this.shell.PowerClient ? this.shell.PowerClient() : null;
 			this.phoenix = Phoenix.default(
 				new inversify.Container(),
 				{
@@ -28,15 +31,15 @@ export class VantageShellService {
 
 	public registerEvent(eventType: any, handler: any) {
 		this.phoenix.on(eventType, (val) => {
-			console.log("Event fired: ", eventType);
-			console.log("Event value: ", val);
+			console.log('Event fired: ', eventType);
+			console.log('Event value: ', val);
 			handler(val);
 		});
 	}
 
 	public unRegisterEvent(eventType: any) {
 		this.phoenix.off(eventType, (val) => {
-			console.log("unRegister Event: ", eventType);
+			console.log('unRegister Event: ', eventType);
 		});
 	}
 	private getVantageShell(): any {
@@ -96,7 +99,7 @@ export class VantageShellService {
 		if (this.phoenix && this.phoenix.metrics) {
 			if (!this.phoenix.metrics.isInit) {
 				this.phoenix.metrics.init({
-					appVersion: '1.0.0.0',
+					appVersion: environment.appVersion,
 					appId: 'ZN8F02EQU628',
 					appName: 'vantage3',
 					channel: '',
@@ -294,5 +297,20 @@ export class VantageShellService {
 		}
 		console.log('In VantageShellService.deviceFilter. returning mock true');
 		return true;
+	}
+
+	public getLogger(): any {
+		if (this.shell) {
+			return this.shell.Logger;
+		}
+		return undefined;
+	}
+
+	public getWindows(): any {
+		const win: any = window;
+		if (win.Windows) {
+			return win.Windows;
+		}
+		return undefined;
 	}
 }

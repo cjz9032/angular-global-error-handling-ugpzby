@@ -12,6 +12,7 @@ import { UserService } from './services/user/user.service';
 import { WelcomeTutorial } from './data-models/common/welcome-tutorial.model';
 import { NetworkStatus } from './enums/network-status.enum';
 import { KeyPress } from './data-models/common/key-press.model';
+import { VantageShellService } from './services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-root',
@@ -30,10 +31,19 @@ export class AppComponent implements OnInit {
 		public deviceService: DeviceService,
 		private commonService: CommonService,
 		private translate: TranslateService,
-		private userService: UserService
+		private userService: UserService,
+		private vantageShellService: VantageShellService
 	) {
 		translate.addLangs(['en', 'zh-Hans']);
 		this.translate.setDefaultLang('en');
+		const hadRunApp: boolean = commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
+		const appFirstRun = !hadRunApp;
+		if (appFirstRun && deviceService.isShellAvailable) {
+			commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
+			vantageShellService.getMetrics().sendAsync({
+				ItemType: 'FirstRun'
+			});
+		}
 
 		//#region VAN-2779 this is moved in MVP 2
 

@@ -139,7 +139,8 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			'OEM': 'Lenovo',
 			'OS': 'Windows',
 			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			'Brand': 'idea',
+			'limit': '8'
 		};
 
 		this.cmsService.fetchCMSContent(queryOptions).then(

@@ -23,35 +23,30 @@ export class PasswordManagerLandingViewModel {
 			title: 'security.landing.pwdHealth',
 			type: 'security',
 		};
-		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus);
-		if (cacheStatus) {
-			pmStatus.status = cacheStatus === 'installed' ? 2 : 1;
-			pmStatus.detail = cacheStatus === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
-			subjectStatus.status = cacheStatus === 'installed' ? 2 : 1;
-		}
-		if (pmModel.status) {
-			pmStatus.detail = pmModel.status === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
-			pmStatus.status = (pmModel.status === 'installed') ? 2 : 1;
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, pmModel.status);
-			subjectStatus.status = (pmModel.status === 'installed') ? 2 : 1;
-		}
-		pmModel.on(EventTypes.pmStatusEvent, (data) => {
-			pmStatus.detail = data === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
-			pmStatus.status = (data === 'installed') ? 2 : 1;
+		const setPmStatus = (status: string) => {
+			pmStatus.detail = status === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
+			pmStatus.status = status === 'installed' ? 2 : 1;
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, status);
+			subjectStatus.status = (status === 'installed') ? 2 : 1;
 			translate.get(pmStatus.detail).subscribe((res) => {
 				pmStatus.detail = res;
 			});
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, data);
-			subjectStatus.status = (data === 'installed') ? 2 : 1;
-		});
-		translate.get(pmStatus.detail).subscribe((res) => {
-			pmStatus.detail = res;
-		});
-		translate.get(pmStatus.title).subscribe((res) => {
-			pmStatus.title = res;
-		});
-		translate.get(subjectStatus.title).subscribe((res) => {
-			subjectStatus.title = res;
+			translate.get(pmStatus.title).subscribe((res) => {
+				pmStatus.title = res;
+			});
+			translate.get(subjectStatus.title).subscribe((res) => {
+				subjectStatus.title = res;
+			});
+		};
+		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus);
+		if (cacheStatus) {
+			setPmStatus(cacheStatus);
+		}
+		if (pmModel.status) {
+			setPmStatus(pmModel.status);
+		}
+		pmModel.on(EventTypes.pmStatusEvent, (data) => {
+			setPmStatus(pmModel.status);
 		});
 		this.statusList = new Array(pmStatus);
 		this.subject = subjectStatus;

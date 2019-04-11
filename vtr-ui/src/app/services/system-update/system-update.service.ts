@@ -307,12 +307,10 @@ export class SystemUpdateService {
 	}
 
 	private installUpdates(updates: Array<InstallUpdate>, isInstallingAllUpdates: boolean) {
-		let isInvoked = false;
+		// VAN-2798 immediately show progress bar
+		this.commonService.sendNotification(UpdateProgress.InstallingUpdate, { downloadPercentage: 0, installPercentage: 0 });
+
 		this.systemUpdateBridge.installUpdates(updates, (progress: any) => {
-			if (!isInvoked) {
-				isInvoked = true;
-				this.commonService.sendNotification(UpdateProgress.InstallationStarted);
-			}
 			console.log('installUpdates callback', progress);
 			this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);
 		}).then((response: any) => {

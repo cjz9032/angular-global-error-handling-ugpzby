@@ -24,20 +24,20 @@ export class WindowsHelloWidgetItem extends WidgetItem {
 			const active = windowsHello.fingerPrintStatus === 'active' || windowsHello.facialIdStatus === 'active';
 			this.status = active ? 0 : 1;
 			this.detail = active ? 'enabled' : 'disabled';
-			this.translateStatus(this.detail);
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, this.detail);
+			this.translateStatus(this.detail);
 		}
 
 		windowsHello.on(EventTypes.helloFingerPrintStatusEvent, (fpStatus) => {
 			this.status = fpStatus === 'active' ? 0 : 1;
 			this.detail = fpStatus === 'active' ? 'enabled' : 'disabled';
-			this.translateStatus(this.detail);
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, this.detail);
+			this.translateStatus(this.detail);
 		}).on(EventTypes.helloFacialIdStatusEvent, (faceIdStatus) => {
 			this.status = faceIdStatus === 'active' ? 0 : 1;
 			this.detail = faceIdStatus === 'active' ? 'enabled' : 'disabled';
-			this.translateStatus(this.detail);
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, this.detail);
+			this.translateStatus(this.detail);
 		});
 	}
 

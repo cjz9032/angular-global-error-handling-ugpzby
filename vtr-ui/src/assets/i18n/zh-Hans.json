@@ -32,7 +32,7 @@
 			"partiallyProtected": "局部受保护",
 			"installed": "已安装",
 			"notInstalled": "未安装",
-			"loading": "Loading",
+			"loading": "正在加载",
 			"notFound": "未发现"
 		},
 		"qAndA": {
@@ -232,7 +232,7 @@
 					"title": "电源设置",
 					"alwaysUSB": {
 						"title": "持续 USB 供电",
-						"description": "计算机处于睡眠、休眠或关机模式时，通过计算机上的 Always on USB 接口为 USB 设备充电。可从黄色或有特定丝网印刷图标的 USB 接口为智能手机或平板电脑充电。",
+						"description": "计算机处于睡眠、休眠或关机模式时，通过计算机上的持续 USB 供电接口为 USB 设备充电。可从黄色或有这些丝网印刷图标的 USB 接口为智能手机或平板电脑快速充电：",
 						"checkbox": "计算机处于关闭状态时支持从笔记本电脑电池进行 USB 充电。"
 					},
 					"easyResume": {
@@ -267,12 +267,12 @@
 					},
 					"expressCharging": {
 						"title": "快速充电",
-						"description": "Express Charge allows your battery to a full charge much faster than normal mode.",
+						"description": "快速充电可用比常规模式更快的速度将电池充满电。",
 						"tooltip": "快速充电可用比常规模式更快的速度将电池充满电。"
 					},
 					"conservationMode": {
 						"title": "节电模式",
-						"description": "This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
+						"description": "此功能可有助于延长插电使用时的电池寿命。<br>启用此模式时，电池只充至容量的 55-60%，从而最大化电池使用寿命。但是，这将缩短断开交流电源后的计算机使用时间。",
 						"tooltip": {
 							"line1": "此功能可有助于延长插电使用时的电池寿命。",
 							"line2": "启用此模式时，电池只充至容量的 55-60%，从而最大化电池使用寿命。但是，这将缩短断开交流电源后的计算机使用时间。",
@@ -305,7 +305,7 @@
 					"title": "麦克风",
 					"microphone": {
 						"title": "麦克风",
-						"tooltip": "You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode."
+						"tooltip": "可以通过调整麦克风音量并指定合适的模式来定制您的麦克风效果。"
 					},
 					"volume": {
 						"title": "麦克风音量",
@@ -317,11 +317,11 @@
 					},
 					"suppress": {
 						"title": "抑制键盘噪音",
-						"tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+						"tooltip": "将此切换到打开以通过抑制键盘噪音来优化麦克风音频效果。"
 					},
 					"acoustic": {
 						"title": "声学回音消除技术",
-						"tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+						"tooltip": "将此功能切换到打开以通过减少回声来优化麦克风音频效果。"
 					},
 					"optimize": {
 						"title": "优化麦克风：",
@@ -359,8 +359,8 @@
 							"warm": "暖（更护眼）​",
 							"cold": "冷"
 						},
-						"reset": "Reset temperature",
-						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain."
+						"reset": "重置温度",
+						"tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。"
 					}
 				},
 				"camera": {
@@ -369,11 +369,11 @@
 					"url": "转到 Windows 隐私设置",
 					"cameraPrivacy": {
 						"title": "摄像头隐私模式",
-						"tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling."
+						"tooltip": "启用“隐私”设置后，摄像头停止发送实时图像。请仅在不希望在视频通话时与其他人共享您的图像时开启此设置。"
 					},
 					"camera": {
 						"title": "摄像头",
-						"tooltip": "Click here to reset Camera properties to default settings.",
+						"tooltip": "单击此处将摄像头属性重置为缺省设置。",
 						"reset": "重置出厂设置"
 					},
 					"brightness": "亮度",
@@ -406,11 +406,11 @@
 				"subtitle": "自动安装更新",
 				"critical": {
 					"title": "关键更新",
-					"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+					"tooltip": "关键更新可防止发生重大问题、严重故障、硬件故障或数据损坏。"
 				},
 				"recommended": {
 					"title": "推荐更新",
-					"tooltip": "Recommended driver updates keep your computer running at optimal performance."
+					"tooltip": "推荐的驱动程序更新使计算机运行保持最佳性能。"
 				},
 				"windows": {
 					"title": "Windows 更新",
@@ -488,235 +488,235 @@
 	},
 	"security": {
 		"landing": {
-			"fully": "Fully protected",
-			"fullyDesc": "Congratulations! You are well protected.",
-			"notFully": "Not fully protected",
-			"notFullyDesc": "You are not fully protected. Learn how to better protect yourself now.",
-			"security101": "SECURITY ADVISOR 101",
-			"firewall": "Firewall",
-			"pwdHealth": "Password Health",
-			"vpnSecurity": "VPN Security",
-			"vpnVirtual": "Virtual Private Network",
-			"wifiConnected": "WiFi & Connected Home Security",
-			"connectedHomeSecurity": "Connected Home Security",
-			"fingerprint": "Fingerprint reader",
-			"seeAllNetwork": "查看所有已连接的网络",
-			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
-			"good": "GOOD",
-			"malicious": "MALICIOUS",
-			"suspicious": "SUSPICIOUS"
-		},
+			"fully": "受全面保护",
+			"fullyDesc": "恭喜您！您受到良好保护。",
+			"notFully": "未受全面保护",
+			"notFullyDesc": "您并未受到全面保护。立即了解如何更好地保护自己。",
+			"security101": "安全顾问 101",
+			"firewall": "防火墙",
+			"pwdHealth": "密码安全状况",
+			"vpnSecurity": "VPN 安全性",
+			"vpnVirtual": "虚拟专用网络",
+			"wifiConnected": "WiFi 和互联家庭网络安全性",
+			"connectedHomeSecurity": "互联家庭网络安全性",
+			"fingerprint": "指纹读取器",
+			"seeAllNetwork": "请查看所有加入的网络",
+			"maliciousNetwork": "本月阻止了您的计算机加入 {{maliciousWifi}} 个恶意网络。",
+			"good": "良好",
+			"malicious": "恶意",
+			"suspicious": "可疑"
+	},
 		"antivirus": {
-			"common": {
-				"title": "Anti-Virus",
-				"back": "BACK",
-				"why": "Why McAfee ?",
-				"recommends": "Lenovo recommends McAfee to protect all your devices with:",
-				"award": "Award winning protection from the latest online threats including ransomware and malware",
-				"dedicated": "Dedicated security that consistently outperforms Defender and other leading AV providers",
-				"deviceToCloud": "Device to cloud technology that won't slow down your PC",
-				"poweredBy": "Powered By McAfee",
-				"privacyTerms": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
-				"mcafeePremium": "McAfee premium protection",
-				"protectedBy": "You are currently protected by",
-				"betterProtected": ".However, you could be better protected with McAfee LifeSafe",
-				"virusScan": "VIRUS SCAN",
-				"firewall": "FIREWALL",
-				"disabled": "DISABLED",
-				"enableVirusScan": "ENABLE VIRUS SCAN",
-				"enableFirewall": "ENABLE FIREWALL"
-			},
-			"windowsDefender": {
-				"optimallyProtected": "Not Optimally Protected",
-				"subtitle": "You are currently being protected by Windows Defender.However, you could be better protected with McAfee LiveSafe. Learn more below.",
-				"learnMore": "LEARN MORE ABOUT McAfee",
-				"windowsProtected": "Windows Defender basic protection",
-				"windowsSubtitle": "Windows defender offers basic protection for your device"
-			},
-			"mcafee": {
-				"title": "McAfee LiveSafe",
-				"subtitle": "You are currently protected by McAfee LiveSafe",
-				"valid": "Valid Until",
-				"upgrade": "Upgrade Now",
-				"launch": "LAUNCH McAfee",
-				"getMacfee": "GET McAfee",
-				"topBenefits": "Top Benefits of McAfee LiveSafe",
-				"awardTitle": "Award-Winning Antivirus",
-				"awardSubtitle": "Blocks viruses, malware, ransomware, spyware, unwanted program and more on your PC.",
-				"encryptedTitle": "Encrypted Storage",
-				"encryptedSubtitle": "Keep sensitive files private by storing them on your PC with 128-bit encryption.",
-				"identityTitle": "Identity theft protection",
-				"identitySubtitle": "Take charge of protecting your identity from theft and fraud.",
-				"supportTitle": "FREE Customer Support",
-				"supportSubtitle": "Has you covered by phone, by chat, or online for the life of your subscription.",
-				"antiTitle": "Anti-Spam",
-				"antiSubtitle": "Blocks dangerous messages before they reach your inbox by removing emails that may include risky links and viruses.",
-				"virusTitle": "Virus protection pledge",
-				"virusSubtitle": "Provides you with the confidence that in the event your PC gets a virus, a McAfee expert will remotely access your computer to remove it.",
-				"parentalTitle": "Parental controls",
-				"parentalSubtitle": "Block web sites and search results you don’t want your kids to see. Also lets you set limits for how much time they spend online.",
-				"license": "License Valid until",
-				"trial": "Trial Valid until"
-			},
-			"others": {
-				"othersProtection": "offers you basic protection for your device"
-			}
+				"common": {
+						"title": "反病毒",
+						"back": "返回",
+						"why": "为什么选择 McAfee？",
+						"recommends": "Lenovo 建议您采用 McAfee 来保护您的所有设备，它具备如下优势：",
+						"award": "对包括勒索软件和恶意软件在内的最新网络威胁的防护能力屡获殊荣",
+						"dedicated": "一贯优于 Defender 和其他领先型 AV 供应商的专用安全性",
+						"deviceToCloud": "采用了不会减慢电脑运行速度的设备到云技术",
+						"poweredBy": "McAfee 出品",
+						"privacyTerms": "阅读<tag>隐私策略</tag>和<tag>服务条款</tag>的更多信息",
+						"mcafeePremium": "McAfee 高级保护",
+						"protectedBy": "您目前正受到以下软件的保护：",
+						"betterProtected": "。但是，您可以通过 McAfee LifeSafe 获得更好的保护",
+						"virusScan": "病毒扫描",
+						"firewall": "防火墙",
+						"disabled": "已禁用",
+						"enableVirusScan": "启用病毒扫描",
+						"enableFirewall": "启用防火墙"
+				},
+				"windowsDefender": {
+						"optimallyProtected": "未受最佳保护",
+						"subtitle": "您当前正受到 Windows Defender 的保护。但是，您可以通过 McAfee LiveSafe 获得更好的保护。通过以下内容了解更多信息。",
+						"learnMore": "了解 McAfee 的更多信息",
+						"windowsProtected": "Windows Defender 基本保护",
+						"windowsSubtitle": "Windows Defender 为您的设备提供基本保护"
+				},
+				"mcafee": {
+						"title": "McAfee LiveSafe",
+						"subtitle": "您当前受到 McAfee LiveSafe 的保护",
+						"valid": "有效期截止于：​",
+						"upgrade": "立即升级",
+						"launch": "启动 McAfee",
+						"getMacfee": "获取 McAfee",
+						"topBenefits": "McAfee LiveSafe 的主要优势",
+						"awardTitle": "屡获殊荣的反病毒软件",
+						"awardSubtitle": "在电脑上拦截病毒、恶意软件、勒索软件、间谍软件、有害程序等。",
+						"encryptedTitle": "加密存储",
+						"encryptedSubtitle": "通过使用 128 位加密技术将敏感文件存储至 PC 来对这些文件进行保密。",
+						"identityTitle": "身份盗窃防护",
+						"identitySubtitle": "负责保护您的身份免受盗窃和欺诈。",
+						"supportTitle": "免费的客户支持",
+						"supportSubtitle": "在软件的整个订阅期内通过电话、聊天或在线方式为您提供支持服务。",
+						"antiTitle": "反垃圾邮件",
+						"antiSubtitle": "通过删除可能包含危险链接和病毒的电子邮件，阻止危险邮件到达您的收件箱。",
+						"virusTitle": "病毒防护承诺",
+						"virusSubtitle": "当电脑感染病毒时，McAfee 专家将远程访问您的计算机以清除病毒，消除您的后顾之忧。",
+						"parentalTitle": "家长控制",
+						"parentalSubtitle": "阻止不希望孩子看到的网站和搜索结果。此外还可以设置孩子上网的时长限制。",
+						"license": "许可证有效期截止于：​",
+						"trial": "试用有效期截止于：​"
+				},
+				"others": {
+						"othersProtection": "为您的设备提供基本保护"
+				}
 		},
 		"wifisecurity": {
 			"header": {
-				"title": "WiFi and Connected Home Security",
-				"back": "BACK"
+					"title": "WiFi 和互联家庭网络安全性",
+					"back": "返回"
 			},
 			"container": {
-				"title": "Lenovo Wifi Security",
-				"name": "WIFI SECURITY",
-				"enable": "ENABLED",
-				"disable": "DISABLED",
-				"less": "Less info",
-				"more": "More info",
-				"networkHistory": "Network History",
-				"connect": "Connected last",
-				"showmore": "Show more",
-				"showless": "Show less",
-				"button": "Enable Wifi security",
-				"disableDecribe": "Lenovo WiFi Security is an advanced cloud-based software service that helps your device differentiate safe wireless networks from potentially malicious ones."
+					"title": "Lenovo WiFi 安全",
+					"name": "WIFI 安全",
+					"enable": "已启用",
+					"disable": "已禁用",
+					"less": "缩略信息",
+					"more": "更多信息",
+					"networkHistory": "网络历史记录",
+					"connect": "最后连接",
+					"showmore": "显示更多内容",
+					"showless": "显示更少内容",
+					"button": "启用 WiFi 安全",
+					"disableDecribe": "Lenovo WiFi 安全是一项基于云的先进软件服务，可帮助您的设备区分安全的无线网络与潜在的恶意网络。"
 			},
 			"threatlocator": {
-				"describe": "Use the threat detector to determine the safety of the networks around you.",
-				"button": "Check threat"
+					"describe": "使用威胁检测程序来确定您周围网络的安全性。",
+					"button": "检查威胁"
 			},
 			"locationmodal": {
-				"title": "Enable location services",
-				"describe": "To use Lenovo WiFi Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?",
-				"agree": "AGREE",
-				"cancel": "CANCEL"
+					"title": "启用位置服务",
+					"describe": "要使用 Lenovo WiFi 安全，您必须为 Lenovo Vantage 启用位置服务。是否立即启用位置？",
+					"agree": "同意",
+					"cancel": "取消"
 			}
 		},
 		"homeprotection": {
 			"homesecurity": {
-				"title": "Connected Home Security",
-				"titleDescription": "Connected Home Security keeps you safe in three ways:",
-				"homeSecurityAffect1": "Connected Home Security ensures your device is safe, and has not been compromised",
-				"homeSecurityAffect2": "Connected Home Security ensures that the networks you are connected to are safe",
-				"homeSecurityAffect3": "Connected Home Security ensures that other devices connected to your home network are safe.",
-				"describe": "Unsafe devices and networks can introduce malware, lead to identity theft, and leak private and financial information. Enable this feature to reduce the risk of having your device, and your home network exposed to attackers",
-				"subtitle": "Peace of Mind",
-				"subtitleDescribe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more in about Connected Home Security in Tips and Tricks.",
-				"tryNow": "Try Now"
+					"title": "互联家庭网络安全性",
+					"titleDescription": "“互联家庭网络安全性”功能通过以下三种方式确保安全性：",
+					"homeSecurityAffect1": "互联家庭网络安全性可确保您的设备安全、未被入侵",
+					"homeSecurityAffect2": "互联家庭网络安全性可确保所连接的网络的安全性",
+					"homeSecurityAffect3": "互联家庭网络安全性可确保连接到您家庭网络的其他设备的安全性。",
+					"describe": "不安全设备和网络可能引入恶意软件、导致身份信息被盗以及泄露个人和财务信息。启用此功能以降低将设备和家庭网络曝露给攻击者的风险",
+					"subtitle": "高枕无忧",
+					"subtitleDescribe": "检测到设备或家庭网络存在漏洞，或正在连接到一个潜在恶意网络时，“互联家庭网络安全性”功能会向您发送警报。请在“提示和技巧”中了解有关互联家庭网络安全性的更多信息。",
+					"tryNow": "立即试用"
 			},
 			"invitationcode": {
-				"button": "Enter invitation code",
-				"buttonDescribe": "enter invitation code require enable wifi security",
-				"title": "Already have Connected Home Security?",
-				"titleDescribe": "Add this device to your Connected Home",
-				"enterCode": "Enter your connection code",
-				"addHome": "Add Home",
-				"ok": "OK",
-				"continue": "CONTINUE",
-				"cancel": "Cancel",
-				"validateCode": "VALIDATE CODE",
-				"success": "Successfully connected",
-				"canUse": "You can now start using Connected Home Security",
-				"tryAgain": "Incorrect code, please try again!",
-				"activationCode": "ACTIVATION CODE"
+					"button": "输入邀请码",
+					"buttonDescribe": "输入邀请码需要启用 WiFi 安全",
+					"title": "已拥有互联家庭网络安全性？",
+					"titleDescribe": "将此设备添加到您的互联家庭网络",
+					"enterCode": "输入您的连接代码",
+					"addHome": "添加主页",
+					"ok": "确定",
+					"continue": "继续",
+					"cancel": "取消",
+					"validateCode": "验证码",
+					"success": "已成功连接",
+					"canUse": "现在即可开始使用互联家庭网络安全性",
+					"tryAgain": "代码有误，请重试！",
+					"activationCode":"激活码"
 			},
 			"securityhealth": {
-				"title": "Security Health",
-				"deviceName1": "Apps From Trusted Sources",
-				"deviceName2": "Developer Mode",
-				"deviceName3": "UAC Notification",
-				"deviceName4": "Antivirus Availability",
-				"deviceName5": "Hard Drive Encryption",
-				"deviceName6": "Firewall Availability",
-				"deviceName7": "Activated Windows",
-				"deviceName8": "Security Updates Availability",
-				"deviceName9": "Password Protection",
-				"deviceName10": "Automatic Updates Service Availability",
-				"fail": "FAILED",
-				"pass": "PASSED",
-				"learnMoreAboutSecurityHealth": "Learn more about each of these components <tag>here.</tag>",
-				"peaceOfMind": "Do you want more peace of mind?",
-				"button": "Enable Wifi security"
+					"title": "安全性状况",
+					"deviceName1": "未知来源的应用程序",
+					"deviceName2": "开发人员模式",
+					"deviceName3": "UAC 通知",
+					"deviceName4": "反病毒可用性",
+					"deviceName5": "硬盘加密",
+					"deviceName6": "防火墙可用性",
+					"deviceName7": "未激活的 Windows",
+					"deviceName8": "安全更新可用性",
+					"deviceName9": "密码保护",
+					"deviceName10": "自动更新服务可用性",
+					"fail": "失败",
+					"pass": "通过",
+					"learnMoreAboutSecurityHealth": "<tag>在此处</tag>详细了解各个组件。",
+					"peaceOfMind": "想更加放心吗？",
+					"button": "启用 WiFi 安全"
 			}
 		},
 		"vpn": {
-			"statusTitle": "SURFEASY VPN",
-			"title": "VPN Security",
-			"header": "SurfEasy Virtual Private Network",
-			"whatIsSufEasy": "SurfEasy is a VPN, or Virtual Private Network provider that helps protect you while you are surfing the internet. Without a VPN, your PC may be more vulnerable to attackers and identity thieves. A VPN runs silently in the background and provides additional safety and privacy measures while you use the internet.",
-			"whatCanSufEasy1": "A Virtual Private Network provider helps you protect while you are surfing the internet. Without a VPN, your pc may be more vulnerable to attackers and identity thieves. A VPN runs silently in the background and provides safety and privacy measures.",
-			"getSufEasy": "Get SurfEasy",
-			"openSufEasy": "Open SurfEasy",
-			"whySufEasy": "Why SurfEasy?",
-			"whySufEasyDescription": "SurfEasy makes it easy to stay safe while surfing the internet. It helps you remain anonymous, and adds an additional layer of security between you and anyone that wants your personal information.",
-			"startUseSufEasy": "Start using SurfEasy Today",
-			"startUseSufEasy1": "Using a VPN adds Security. SurfEasy encrypts your data, adding anonymity and security.",
-			"startUseSufEasy2": "Once registered SurfEasy runs silently in the background so everything runs the same but better.",
-			"startUseSufEasy3": "Start using SurfEasy to protect yourself while browsing the internet. Enjoy the no-log VPN that works on every device.",
-			"startUseSufEasy4": "As a surfEasy user enjoy 250 MB of free data every 30 days! Unlock additional data by following the steps on the \"Rewards\" tab of the SurfEasy app.",
-			"howToUseSufEasy": "How to use SurfEasy VPN",
-			"whatCanSufEasy2": "A VPN provider helps to protect you while you are surfing the internet. Without a VPN, our PC may be moe vulnerable to attackers and identity thieves. A VPN runs silently in the bacground and provides safety and privacy measures.",
-			"getStarted": "Get started:",
-			"getStarted1": "After installing SurfEasy, register and make an account.",
-			"getStarted2": "Log in with your secure credentials.",
-			"getStarted3": "Wait for confirmation to know you are connected, and then begin browsing securely.",
-			"howToGetData": "HOW TO GET FREE DATA:",
-			"howToGetData1": "Confirm email and earn +250 MB",
-			"howToGetData2": "Add second device and earn +250 Mb",
-			"howToGetData3": "Refer a friend and earn +500 MB",
-			"howToGetData4": "Like SurfEasy on Facebook and earn +100 MB",
-			"howToGetData5": "Follow SurfEasy on Twitter and earn +100 MB",
-			"poweredBySurfEasy": "Powered By SurfEasy",
-			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+				"statusTitle": "SURFEASY VPN",
+				"title": "VPN 安全性",
+				"header": "SurfEasy 虚拟专用网络",
+				"whatIsSufEasy": "SurfEasy 是一家 VPN（虚拟专用网络）提供商，它能在您上网时为您提供保护。不使用 VPN 的情况下，您的电脑可能更容易受到攻击者和身份盗窃者的攻击。VPN 以静默方式在后台运行，并在您使用因特网时提供额外的安全和隐私保护措施。",
+				"whatCanSufEasy1": "一家在上网时为您提供保护的虚拟专用网络提供商。不使用 VPN 的情况下，您的电脑可能更容易受到攻击者和身份盗窃者的攻击。VPN 以静默方式在后台运行，并提供安全和隐私保护措施。",
+				"getSufEasy": "获取 SurfEasy",
+				"openSufEasy": "打开 SurfEasy",
+				"whySufEasy": "为什么选择 SurfEasy？",
+				"whySufEasyDescription": "SurfEasy 让您在上网时轻松保障安全性。它可以帮助您保持匿名，并在您和您的个人信息获取方之间增加了额外的安全层。",
+				"startUseSufEasy": "立即开始使用 SurfEasy",
+				"startUseSufEasy1": "使用 VPN 可以提高安全性。SurfEasy 对数据进行加密，增加了匿名性和安全性。",
+				"startUseSufEasy2": "注册后，SurfEasy 以静默方式在后台运行，一切照旧运行但更安全。",
+				"startUseSufEasy3": "开始在上网时使用 SurfEasy 保护自己。享受在每台设备上都能运行的无日志 VPN。",
+				"startUseSufEasy4": "SurfEasy 用户可以享受每 30 天 250 MB 的免费流量！按照 SurfEasy 应用的“奖励”选项卡上的步骤操作即可获取更多流量。",
+				"howToUseSufEasy": "如何使用 SurfEasy VPN",
+				"whatCanSufEasy2": "VPN 提供商可在您上网时为您提供保护。不使用 VPN 的情况下，电脑可能更容易受到攻击者和身份盗窃者的攻击。VPN 以静默方式在后台运行，并提供安全和隐私保护措施。",
+				"getStarted": "如何开始使用：",
+				"getStarted1": "安装 SurfEasy 后，注册并创建一个帐户。",
+				"getStarted2": "使用您的安全凭证登录。",
+				"getStarted3": "等待已连接的确认，然后即可安全地开始浏览。",
+				"howToGetData": "如何获得免费流量：",
+				"howToGetData1": "确认电子邮件，赢取 +250 MB 流量",
+				"howToGetData2": "添加第二部设备，赢取 +250 MB 流量",
+				"howToGetData3": "推荐朋友，赢取 +500 MB 流量",
+				"howToGetData4": "在 Facebook 上为 SurfEasy 点赞，赢取 +100 MB 流量",
+				"howToGetData5": "在 Twitter 上关注 SurfEasy，赢取 +100 MB 流量",
+				"poweredBySurfEasy": "SurfEasy 出品",
+				"privacyPolicyAndTermsOfService": "阅读<tag>隐私策略</tag>和<tag>服务条款</tag>的更多信息"
 		},
 		"passwordManager": {
-			"statusTitle": "DASHLANE PASSWORD MANAGER",
-			"title": "Password Health",
-			"header": "Dashlane",
-			"whatIsPmNotInstalled": "The safest, easiest way to save strong, complex passwords and log in instantly on every site.",
-			"whatIsPmInstalled": "A safer digital life is waiting: Add passwords, enable Dark Web Monitoring and autofill personal and payment info.",
-			"startProtect": "Start protecting your online accounts the simple way.",
-			"getDashLane": "Get DashLane",
-			"learnMoreAbout": "<tag>Learn more</tag> about making the most of DashLane",
-			"openDashLane": "Open DashLane",
-			"neverForget": "DashLane: Never forget another password",
-			"whatIsDashLane": "DashLane is a password manager and digital protection app that works with your browser. It automatically saves passwords and personal data, remembers it all for you, and stores everything securely. Dashlane also analyzes your account security and provides easy ways to improve your password health.",
-			"helpYou": "DashLane helps you",
-			"helpYou1": "Remember unlimited usernames and passwords.",
-			"helpYou2": "Log in instantly everywhere for seamless browsing",
-			"helpYou3": "Sync across devices so you're never without access to important accounts",
-			"helpYou4": "Improve your online protection with easy, actionable advice",
-			"getStarted": "Getting started with DashLane?",
-			"checkOutThisGuide": "Use DashLane to stay safe online while saving time and frustration. For detailed instructions on how to get started, <tag>check out this guide.</tag>",
-			"allowsYou": "DashLane allows you to",
-			"allowsYou1": "Log in instantly every where for seamless Browsing-Sync across devices so you're never without access to important accounts",
-			"allowsYou2": "Monitor the dark web for your personal information",
-			"allowsYou3": "Stay safe on unsecured WiFi networks with built in VPN",
-			"allowsYou4": "Share passwords securely without revealing them",
-			"poweredByDashLane": "Powered By DashLane",
-			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+				"statusTitle": "DASHLANE PASSWORD MANAGER",
+				"title": "密码安全状况",
+				"header": "Dashlane",
+				"whatIsPmNotInstalled": "提供保存高强度复杂密码和即时登录到每个站点的最安全、简单的方式。",
+				"whatIsPmInstalled": "更安全的数字生活正在向您招手：添加密码、启用暗网监控、自动填充个人和支付信息。",
+				"startProtect": "开始以简单方式保护您的网上帐户。",
+				"getDashLane": "获取 DashLane",
+				"learnMoreAbout": "了解充分利用 DashLane 的<tag>更多信息</tag>",
+				"openDashLane": "打开 DashLane",
+				"neverForget": "DashLane：永远不再忘记任何密码",
+				"whatIsDashLane": "DashLane 是一个结合浏览器使用的密码管理器和数字保护应用程序。它可以自动保存密码和个人数据，替您记住这些信息，并安全地存储所有内容。Dashlane 还会分析帐户的安全性，并提供简单的方法改善您的密码安全状况。",
+				"helpYou": "DashLane 可帮助您：",
+				"helpYou1": "记住数量不限的用户名和密码。",
+				"helpYou2": "随时随地即时登录进行无缝浏览",
+				"helpYou3": "跨设备同步信息，让您始终可以访问重要的帐户",
+				"helpYou4": "在不显示密码的情况下安全地共享密码",
+				"getStarted": "开始使用 DashLane？",
+				"checkOutThisGuide": "使用 DashLane 保护上网安全，省却时间与烦恼。有关开始使用的详细说明，<tag>请查看此指南</tag>。",
+				"allowsYou": "DashLane 可让您：",
+				"allowsYou1": "随时随地即时登录进行无缝浏览 - 跨设备同步信息，让您始终可以访问重要的帐户",
+				"allowsYou2": "监控暗网保障个人信息安全",
+				"allowsYou3": "通过内置 VPN 在不安全的 WiFi 网络上提供安全性",
+				"allowsYou4": "在不显示密码的情况下安全地共享密码",
+				"poweredByDashLane": "DashLane 出品",
+				"privacyPolicyAndTermsOfService": "阅读<tag>隐私策略</tag>和<tag>服务条款</tag>的更多信息"
 		},
 		"windowsHello": {
-			"statusTitle": "WINDOWS HELLO",
-			"title": "Windows Hello",
-			"protectYourDevice": "Protect your device with these Lenovo recommended security options.",
-			"signIn": "Sign in quickly and securely with Windows Hello.",
-			"setUp": "Setup Windows Hello",
-			"whyWindowsHello": "Why Windows Hello?",
-			"whyWindowsHelloDescription1": "Windows Hello makes logging into your PC easier and more secure, and can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello.",
-			"startUsingToday": "Start using Windows Hello Today",
-			"visitAndRegister": "Visit the Windows Hello page and register your fingerprint.",
-			"visitInSettings": "<tag> Visit Windows Hello</tag> in system settings",
-			"unlock": "Use Windows Hello to log into and unlock your PC with a touch of a finger on the sensor.",
-			"startUsingWindowsHello": "Start using Windows Hello to log into Microsoft Apps such as Outlook, OneDrive, Office 365 and Xbox Live.",
-			"visitMicrosoft": "Visit Microsoft",
-			"poweredByWindowsHello": "Powered By Windows Hello",
-			"privacyPolicy": "Read more on the <tag>Privacy Policy</tag>",
-			"whyWindowsHelloDescription2": "Windows Hello makes logging into your PC easier and more secure. And you can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello",
-			"authentication": "Windows Hello Authentication",
-			"traditional": "Traditional passwords can be stolen and used to access your account from anywhere in the world. More secure and convinient. Windows Hello is the next generation of a password. Use your fingerprint reader [or IR camera] instead of insecure passwords to log in.",
-			"howToStart": "How do I start using Windows Hello?"
-		}
+				"statusTitle": "WINDOWS HELLO",
+				"title": "Windows Hello",
+				"protectYourDevice": "使用 Lenovo 推荐的这些安全产品保护您的设备。",
+				"signIn": "通过 Windows Hello 安全快速地进行登录。",
+				"setUp": "设置 Windows Hello",
+				"whyWindowsHello": "为什么选择 Windows Hello？",
+				"whyWindowsHelloDescription1": "Windows Hello 可帮助您更加轻松且安全地登录到电脑，它还可用于 Microsoft 在线应用。按照下方说明开始使用 Windows Hello。",
+				"startUsingToday": "立即开始使用 Windows Hello",
+				"visitAndRegister": "访问 Windows Hello 页面，并注册您的指纹。",
+				"visitInSettings": "在系统设置中<tag>访问 Windows Hello</tag>",
+				"unlock": "使用 Windows Hello 登录并通过用手指触摸传感器来解锁您的电脑。",
+				"startUsingWindowsHello": "开始使用 Windows Hello 登录 Outlook、OneDrive、Office 365 和 Xbox Live 等 Microsoft 应用。",
+				"visitMicrosoft": "访问 Microsoft",
+				"poweredByWindowsHello": "Windows Hello 出品",
+				"privacyPolicy": "阅读<tag>隐私政策</tag>的更多信息",
+				"whyWindowsHelloDescription2": "Windows Hello 让登录电脑更简单、更安全。此外，它还能用于您的 Microsoft 在线应用。按照下方说明开始使用 Windows Hello",
+				"authentication": "Windows Hello 认证",
+				"traditional": "传统密码可能会遭到盗窃，并从世界任何地方用于访问您的帐户。更安全、便捷​。Windows Hello 是密码的新一代演变成果。使用指纹读取器 [或红外摄像头] 来取代不安全的密码进行登录。",
+        "howToStart": "如何开始使用 Windows Hello？"
+    }
 	},
 	"faq": {
 		"footer": {
