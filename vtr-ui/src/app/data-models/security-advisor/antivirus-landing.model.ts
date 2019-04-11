@@ -29,149 +29,77 @@ export class AntiVirusLandingViewModel {
 			title: 'common.securityAdvisor.antiVirus',
 			type: 'security',
 		};
-		const cacheAvStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus);
-		const cacheFwStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus);
-		if (cacheAvStatus !== undefined && cacheAvStatus !== null) {
-			avStatus.status = cacheAvStatus === true ? 0 : 1;
-			avStatus.detail = cacheAvStatus === true ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-			if (cacheFwStatus !== undefined && cacheFwStatus !== null) {
-				fwStatus.status = cacheFwStatus === true ? 0 : 1;
-				fwStatus.detail = cacheFwStatus === true ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-			}
-			if (avStatus.status === 0 && fwStatus.status === 0) {
-				subjectStatus.status = 0;
-			} else if (avStatus.status === 0 || fwStatus.status === 0) {
-				subjectStatus.status = 3;
+		const setAntivirusStatus = (av: boolean, fw: boolean) => {
+			avStatus.status = av === true ? 0 : 1;
+			avStatus.detail = av === true ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
+			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, av);
+			if (fw !== null && fw !== undefined) {
+				fwStatus.status = fw === true ? 0 : 1;
+				fwStatus.detail = fw === true ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fw);
+				if (av && fw) {
+					subjectStatus.status = 0;
+				} else if (av || fw) {
+					subjectStatus.status = 3;
+				} else {
+					subjectStatus.status = 1;
+				}
 			} else {
-				subjectStatus.status = 1;
+				fwStatus.status = null;
+				subjectStatus.status = av === true ? 0 : 1;
 			}
-		}
-		if (avModel.mcafee && (avModel.mcafee.enabled || !avModel.others || !avModel.others.enabled)) {
-			if (avModel.mcafee.status !== undefined && avModel.mcafee.status !== null) {
-				avStatus.status = (avModel.mcafee.status === true) ? 0 : 1;
-				avStatus.detail = (avModel.mcafee.status === true) ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-			}
-			if (avModel.mcafee.firewallStatus !== undefined && avModel.mcafee.firewallStatus !== null) {
-				fwStatus.status = (avModel.mcafee.firewallStatus === true) ? 0 : 1;
-				fwStatus.detail = (avModel.mcafee.firewallStatus === true) ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-			}
-			this.imgUrl = '../../../../assets/images/mcafee_logo.svg';
-		} else if (avModel.others) {
-			if (avModel.others.antiVirus.length > 0 && avModel.others.antiVirus[0].status !== undefined && avModel.others.antiVirus[0].status !== null) {
-				avStatus.status = (avModel.others.antiVirus[0].status === true) ? 0 : 1;
-				avStatus.detail = (avModel.others.antiVirus[0].status === true) ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-			}
-			if (avModel.others.firewall.length > 0 && avModel.others.firewall[0].status !== undefined && avModel.others.firewall[0].status !== null) {
-				fwStatus.status = (avModel.others.firewall[0].status === true) ? 0 : 1;
-				fwStatus.detail = (avModel.others.firewall[0].status === true) ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-			}
-		} else {
-			if (avModel.windowsDefender && avModel.windowsDefender.status !== undefined && avModel.windowsDefender.status !== null) {
-				avStatus.status = (avModel.windowsDefender.status === true) ? 0 : 1;
-				avStatus.detail = (avModel.windowsDefender.status === true) ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-			}
-			if (avModel.windowsDefender && avModel.windowsDefender.firewallStatus !== undefined && avModel.windowsDefender.firewallStatus !== null) {
-				fwStatus.status = (avModel.windowsDefender.firewallStatus === true) ? 0 : 1;
-				fwStatus.detail = (avModel.windowsDefender.firewallStatus === true) ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-			} else {
-				fwStatus.status = undefined;
-			}
-			this.imgUrl = '../../../../assets/images/windows-logo.png';
-		}
-		commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, avStatus.status === 0 ? true : false);
-		if (fwStatus.status !== undefined && fwStatus.status !== null) {
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fwStatus.status === 0 ? true : false);
-		}
-		avModel.on(EventTypes.avWindowsDefenderAntivirusStatusEvent, (data) => {
-			avStatus.status = (data === true) ? 0 : 1;
-			avStatus.detail = (data === true) ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
+
 			translate.get(avStatus.detail).subscribe((res) => {
 				avStatus.detail = res;
 			});
-			this.updateStatus();
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, data);
-		});
-		avModel.on(EventTypes.avWindowsDefenderFirewallStatusEvent, (data) => {
-			fwStatus.status = (data === true) ? 0 : 1;
-			fwStatus.detail = (data === true) ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-			translate.get(fwStatus.detail).subscribe((res) => {
-				fwStatus.detail = res;
+			translate.get(avStatus.title).subscribe((res) => {
+				avStatus.title = res;
 			});
-			this.updateStatus();
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, data);
-		});
-		avModel.on(EventTypes.avOthersEvent, (data) => {
-			if (data.antivirus.length > 0) {
-				avStatus.status = (data.antivirus[0].status === true) ? 0 : 1;
-				avStatus.detail = (data.antivirus[0].status === true) ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-				translate.get(avStatus.detail).subscribe((res) => {
-					avStatus.detail = res;
-				});
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, data.antivirus[0].status);
-			}
-			if (data.firewall.length > 0) {
-				fwStatus.status = (data.firewall[0].status === true) ? 0 : 1;
-				fwStatus.detail = (data.firewall[0].status === true) ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
+			if (fw !== null && fw !== undefined) {
 				translate.get(fwStatus.detail).subscribe((res) => {
 					fwStatus.detail = res;
 				});
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, data.firewall[0].status);
-			} else {
-				fwStatus.status = undefined;
+				translate.get(fwStatus.title).subscribe((res) => {
+					fwStatus.title = res;
+				});
 			}
-			this.updateStatus();
+			translate.get(subjectStatus.title).subscribe((res) => {
+				subjectStatus.title = res;
+			});
+		};
+		const cacheAvStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus);
+		const cacheFwStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus);
+		if (cacheAvStatus !== undefined && cacheAvStatus !== null) {
+			setAntivirusStatus(cacheAvStatus, cacheFwStatus);
+		}
+		if (avModel.mcafee && (avModel.mcafee.enabled || !avModel.others || !avModel.others.enabled)) {
+			setAntivirusStatus(avModel.mcafee.status, avModel.mcafee.firewallStatus);
+			this.imgUrl = '../../../../assets/images/mcafee_logo.svg';
+		} else if (avModel.others) {
+			setAntivirusStatus(avModel.others.antiVirus[0].status, avModel.others.firewall ? avModel.others.firewall[0].status : null);
+		} else {
+			setAntivirusStatus(avModel.windowsDefender.status, avModel.windowsDefender.firewallStatus);
+			this.imgUrl = '../../../../assets/images/windows-logo.png';
+		}
+		avModel.on(EventTypes.avWindowsDefenderAntivirusStatusEvent, (data) => {
+			setAntivirusStatus(data, avModel.windowsDefender.firewallStatus);
+		});
+		avModel.on(EventTypes.avWindowsDefenderFirewallStatusEvent, (data) => {
+			setAntivirusStatus(avModel.windowsDefender.status, data);
+		});
+		avModel.on(EventTypes.avOthersEvent, (data) => {
+			setAntivirusStatus(data.antivirus[0].status, data.firewall ? data.firewall[0].status : null);
 		});
 		avModel.on(EventTypes.avMcafeeStatusEvent, (data) => {
-			avStatus.status = (data === true) ? 0 : 1;
-			avStatus.detail = (data === true) ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-			translate.get(avStatus.detail).subscribe((res) => {
-				avStatus.detail = res;
-			});
-			this.updateStatus();
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, data);
+			setAntivirusStatus(data, avModel.mcafee.status);
 		});
 		avModel.on(EventTypes.avMcafeeFirewallStatusEvent, (data) => {
-			fwStatus.status = (data === true) ? 0 : 1;
-			fwStatus.detail = (data === true) ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-			translate.get(fwStatus.detail).subscribe((res) => {
-				fwStatus.detail = res;
-			});
-			this.updateStatus();
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, data);
+			setAntivirusStatus(avModel.mcafee.status, data);
 		});
-		translate.get(avStatus.detail).subscribe((res) => {
-			avStatus.detail = res;
+		const statusList = new Array(avStatus, fwStatus.status !== null ? fwStatus : null);
+		this.statusList = statusList.filter(current => {
+			return current !== undefined && current !== null;
 		});
-		translate.get(avStatus.title).subscribe((res) => {
-			avStatus.title = res;
-		});
-		if (fwStatus.status !== undefined && fwStatus.status !== null) {
-			translate.get(fwStatus.detail).subscribe((res) => {
-				fwStatus.detail = res;
-			});
-		}
-		translate.get(fwStatus.title).subscribe((res) => {
-			fwStatus.title = res;
-		});
-		translate.get(subjectStatus.title).subscribe((res) => {
-			subjectStatus.title = res;
-		});
-		this.statusList = new Array(avStatus, fwStatus);
 		this.subject = subjectStatus;
-		this.updateStatus();
-	}
-
-	updateStatus() {
-		if (this.statusList[1].status === undefined) {
-			this.subject.status = this.statusList[0].status === 0 ? 0 : 1;
-		} else {
-			if (this.statusList[0].status === 0 && this.statusList[1].status === 0) {
-				this.subject.status = 0;
-			} else if (this.statusList[0].status === 0 || this.statusList[1].status === 0) {
-				this.subject.status = 3;
-			} else {
-				this.subject.status = 1;
-			}
-		}
 	}
 }
