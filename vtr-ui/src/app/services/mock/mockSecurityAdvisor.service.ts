@@ -15,38 +15,38 @@ export class MockSecurityAdvisorService {
 		'path': 'security/anti-virus',
 		'type': 'security'
 	},
-	{
-		'status': 0,
-		'id': 'wifi-security',
-		'title': 'WiFi Security',
-		'detail': 'Enabled',
-		'path': 'security/wifi-security',
-		'type': 'security'
-	},
-	{
-		'status': 2,
-		'id': 'pwdmgr',
-		'title': 'Password Manager',
-		'detail': 'Installed',
-		'path': 'security/password-protection',
-		'type': 'security'
-	},
-	{
-		'status': 2,
-		'id': 'vpn',
-		'title': 'VPN',
-		'detail': 'Installed',
-		'path': 'security/internet-protection',
-		'type': 'security'
-	},
-	{
-		'status': 1,
-		'id': 'windows-hello',
-		'title': 'Windows Hello',
-		'detail': 'disabled',
-		'path': 'security/windows-hello',
-		'type': 'security'
-	}
+		{
+			'status': 0,
+			'id': 'wifi-security',
+			'title': 'WiFi Security',
+			'detail': 'Enabled',
+			'path': 'security/wifi-security',
+			'type': 'security'
+		},
+		{
+			'status': 2,
+			'id': 'pwdmgr',
+			'title': 'Password Manager',
+			'detail': 'Installed',
+			'path': 'security/password-protection',
+			'type': 'security'
+		},
+		{
+			'status': 2,
+			'id': 'vpn',
+			'title': 'VPN',
+			'detail': 'Installed',
+			'path': 'security/internet-protection',
+			'type': 'security'
+		},
+		{
+			'status': 1,
+			'id': 'windows-hello',
+			'title': 'Windows Hello',
+			'detail': 'disabled',
+			'path': 'security/windows-hello',
+			'type': 'security'
+		}
 	];
 	securityAdvisor: SecurityAdvisor = {
 		wifiSecurity: {
@@ -112,10 +112,10 @@ export class MockSecurityAdvisorService {
 				config: 'HardDriveEncryption',
 				vulnerable: 'true'
 			},
-			{
-				config: 'AppsFromUnknownSources',
-				vulnerable: 'false'
-			}
+				{
+					config: 'AppsFromUnknownSources',
+					vulnerable: 'false'
+				}
 			],
 			chsConsoleUrl: 'https://www.baidu.com',
 			launchConsole(): Promise<boolean> {
