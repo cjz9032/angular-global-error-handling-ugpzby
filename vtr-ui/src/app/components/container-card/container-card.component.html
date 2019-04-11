@@ -4,8 +4,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-12 content">
-				<a href="{{actionLink}}"
-					target="_blank"
+				<a [attr.href]="!actionLink ? null : actionLink"
 					class="card-image"
 					[style.background-image]="'url(' + img + ')'">
 					<div class="inner-content">
@@ -61,8 +60,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-12 content">
-				<a href="{{actionLink}}"
-					target="_blank"
+				<a [attr.href]="!actionLink ? null : actionLink"
 					class="card-image"
 					[style.background-image]="'url(' + img + ')'">
 					<div class="inner-content">
@@ -82,8 +80,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-12 image-container">
-				<a href="{{actionLink}}"
-					target="_blank"
+				<a [attr.href]="!actionLink ? null : actionLink"
 					class="card-image"
 					[style.background-image]="'url(' + img + ')'">
 					<div *ngIf="logo || logoText"
@@ -101,8 +98,7 @@
 						class="title">{{title}}</div>
 					<div *ngIf="actionLink"
 						class="read-more">
-						<a href="{{actionLink}}"
-							target="_blank"
+						<a [attr.href]="!actionLink ? null : actionLink"
 							vtrMetrics
 							metricsEvent="itemClick"
 							metricsItem="'link.readmore'"
@@ -132,20 +128,19 @@
 					<span class="logo-text">{{logoText}}</span>
 				</div>
 				<div class="row">
-						<a href="{{actionLink}}"
-						target="_blank"
+					<a [attr.href]="!actionLink ? null : actionLink"
 						vtrMetrics
 						metricsEvent="itemClick"
 						metricsItem="'link.readmore'"
 						[metricsParent]="title">
-					<div class="col col-12 content">
-						<div *ngIf="title"
-							class="title">{{title}}</div>
-						<div *ngIf="actionLink"
-							class="read-more">
+						<div class="col col-12 content">
+							<div *ngIf="title"
+								class="title">{{title}}</div>
+							<div *ngIf="actionLink"
+								class="read-more">
+							</div>
 						</div>
-					</div>
-				</a>
+					</a>
 				</div>
 			</div>
 		</div>
