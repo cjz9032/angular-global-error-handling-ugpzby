@@ -157,37 +157,18 @@
 		margin-top: 1rem;
 		list-style: none;
 		padding: 0;
-		font-size: 1.6rem;
-
-		ol {
-			margin: 0 0 1.5rem;
-			padding: 0;
-			counter-reset: listNumbering;
-			box-sizing: border-box;
-			padding-left: 2.7rem;
-
-			li {
-				margin: 0;
-				padding: 0 0 3rem 4rem;
-				list-style-type: none;
-				counter-increment: listNumbering;
-				position: relative;
-
-				&:before {
-					display: inline-block;
-					width: 1.5rem;
-					text-align: left;
-					font-size: 3.6rem;
-					position: absolute;
-					content: counter(listNumbering, decimal) ".";
-					left: 0rem;
-				}
-				.text-regular {
-					color: $main_shade;
-					padding: 0.8rem;
-				}
-			}
+			
+		.text-regular {
+			color: $main_shade;
+			padding: 0.8rem;
+			font-size: 1.8rem;
 		}
+			
+		.serial{
+			font-size: 3.6rem;
+			color: $main_dark;
+		}
+		
 	}
 
 	.button-box {
@@ -218,4 +199,5 @@
 			font-weight: $weight_light;
 		}
 	}
+	
 }
