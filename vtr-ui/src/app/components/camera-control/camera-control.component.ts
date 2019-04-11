@@ -41,19 +41,17 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	// private StorageLibrary = Windows.Storage.StorageLibrary;
 	// private KnownLibraryId = Windows.Storage.KnownLibraryId;
 	// private ApplicationData = Windows.Storage.ApplicationData;
-	private oDisplayRequest: any;
+	
 	private oMediaCapture: any;
 
 	@ViewChild('cameraPreview') set content(content: ElementRef) {
 		// when camera preview video element is visible then start camera feed
 		this.cameraPreview = content;
 		if (content && !this.cameraDetail.isPrivacyModeEnabled) {
-			console.log('Activating Camera');
-			// this.activateCamera();
 			this.initializeCameraAsync();
 		} else {
-			console.log('De-Activating Camera');
-			this.deactivateCamera();
+			
+			this.cleanupCameraAsync();
 		}
 	}
 
@@ -62,7 +60,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		public baseCameraDetail: BaseCameraDetail,
 		private vantageShellService: VantageShellService
 	) {
-		debugger;
+		//debugger;
 		this.Windows = vantageShellService.getWindows();
 		this.Capture = this.Windows.Media.Capture;
 		this.DeviceInformation = this.Windows.Devices.Enumeration.DeviceInformation;
@@ -72,22 +70,11 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		//#region below logic required to re-enable camera feed when window is maximized from minimized state
 		this.logger = this.vantageShellService.getLogger();
 		this.logger.info('constructor camera');
-		this.oDisplayRequest = new this.Windows.System.Display.DisplayRequest();
+		
 		this.oMediaCapture = new this.Capture.MediaCapture();
 
-		this.media = this.getMedia();
-		if (this.media) {
-			this.systemMediaControls = this.media.SystemMediaTransportControls.getForCurrentView();
-			this.systemMediaControls.addEventListener(
-				'propertychanged',
-				(args: any) => {
-					this.systemMediaControls_propertyChanged(args);
-				}
-			);
-			document.addEventListener('visibilitychange', this.onVisibilityChanged.bind(this));
-			
-		}
-
+		document.addEventListener('visibilitychange', this.onVisibilityChanged.bind(this));
+	
 		//#endregion
 	}
 
@@ -123,7 +110,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 					return;
 				}
 				self.oMediaCapture = new self.Windows.Media.Capture.MediaCapture();
-				self.oDisplayRequest.requestActive();
+			
 
 				// Register for a notification when something goes wrong
 				// TODO: define the fail handle callback and show errormessage maybe... there's a chance another app is previewing camera, that's when failed happen.
@@ -156,8 +143,6 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		// Cleanup the UI
 		this._video.pause();
 		this._video.src = '';
-		// Allow the device screen to sleep now that the preview is stopped
-		this.oDisplayRequest.requestRelease();
 	}
 
 	cleanupCameraAsync() {
@@ -193,7 +178,6 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.deactivateCamera();
 		if (this.baseCameraDetail) {
 			this.cameraDetailSubscription.unsubscribe();
 		}
@@ -210,30 +194,6 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		} catch (error) {
 			console.error(error.message);
 		}
-	}
-
-	private activateCamera() {
-		this._video = this.cameraPreview.nativeElement;
-		this.cameraFeedService
-			.activateCamera()
-			.then((stream: MediaStream) => {
-				this.cameraFeedService.setStream(stream);
-				this._video.srcObject = stream;
-				this._video.play();
-			})
-			.catch(console.error);
-	}
-
-	private deactivateCamera() {
-
-		if (this._video) {
-			this._video.srcObject = null;
-			this._video.pause();
-		}
-		this.logger.info('video stoped');
-
-		this.cameraFeedService.deactivateCamera();
-		this.logger.info('deactived camera');
 	}
 
 	// return Media object from WinJS library
