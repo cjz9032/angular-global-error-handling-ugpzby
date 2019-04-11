@@ -2,7 +2,7 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
-				[back]="back"
+				[back]="'common.ui.back' | translate"
 				[title]="'device.myDevice.title' | translate"></vtr-header-main>
 		</div>
 	</div>
@@ -37,9 +37,9 @@
 
 							<div class="row mb-40">
 								<div class="col col-12 cont">
-									<div class="widget-heading mb-40">Helpful content</div>
-									<vtr-widget-questions [title]="'Q&A for your machine'"
-										[description]="'Find some helpful tips for your device.'"
+									<div class="widget-heading mb-40">{{'device.myDevice.helpful' |translate }}</div>
+									<vtr-widget-questions [title]="'common.qAndA.title' | translate"
+										[description]="'common.qAndA.subtitle' | translate"
 										[items]="qaService.qas"></vtr-widget-questions>
 								</div>
 							</div>

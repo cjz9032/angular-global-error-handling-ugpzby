@@ -9,37 +9,49 @@ export class WifiSecurityWidgetItem extends WidgetItem {
 		super({
 			id: 'wifi-security',
 			path: 'security/wifi-security',
-			title: 'WiFi Security',
 			type: 'security'
+		}, translateService);
+		this.translateService.stream('common.securityAdvisor.wifi').subscribe((value) => {
+			this.title = value;
 		});
 		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
-		this.updateStatus(cacheStatus);
+		if (cacheStatus) {
+			this.updateStatus(cacheStatus, wifiSecurity.isLocationServiceOn);
+		}
 
-		this.updateStatus(wifiSecurity.state);
 		if (wifiSecurity.state) {
+			this.updateStatus(wifiSecurity.state, wifiSecurity.isLocationServiceOn);
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
 		}
 
 		wifiSecurity.on(EventTypes.wsStateEvent, (status) => {
-			this.updateStatus(status);
+			this.updateStatus(status, wifiSecurity.isLocationServiceOn);
 			if (status) {
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, status);
 			}
+		}).on(EventTypes.geolocatorPermissionEvent, (status) => {
+			this.updateStatus(wifiSecurity.state, status);
+		}).on(EventTypes.wsIsLocationServiceOnEvent, (status) => {
+			this.updateStatus(wifiSecurity.state, status);
 		});
 	}
 
-	updateStatus(status: string) {
-		if (status) {
+	updateStatus(status: string, location: boolean) {
+		if (!status) { return; }
+		if (location) {
 			this.status = status === 'enabled' ? 0 : 1;
 			this.detail = status;
+		} else {
+			this.status = 1;
+			this.detail = 'disabled';
 		}
 
-		this.translateString(this.detail);
+		this.translateStatus(this.detail);
 	}
 
-	translateString(status: string) {
+	translateStatus(status: string) {
 		const translateKey = status === 'enabled' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-		this.translateService.get(translateKey).subscribe((value) => {
+		this.translateService.stream(translateKey).subscribe((value) => {
 			this.detail = value;
 		});
 	}

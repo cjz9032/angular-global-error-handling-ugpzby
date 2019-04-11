@@ -180,7 +180,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		vantageShellService: VantageShellService
 	) {
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
-		if (!cacheShowWindowsHello) {
+		if (cacheShowWindowsHello) {
 			const securityItem = this.items.find(item => item.id === 'security');
 			securityItem.subitems.push({
 				id: 'windows-hello',
@@ -194,8 +194,9 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				subitems: []
 			});
 		}
-		if (vantageShellService.getSecurityAdvisor()) {
-			const windowsHello: WindowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
+		const securityAdvisor = vantageShellService.getSecurityAdvisor();
+		if (securityAdvisor) {
+			const windowsHello: WindowsHello = securityAdvisor.windowsHello;
 			if (windowsHello.facialIdStatus || windowsHello.fingerPrintStatus) {
 				this.showWindowsHello(windowsHello);
 			}
@@ -205,14 +206,6 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				this.showWindowsHello(windowsHello);
 			});
 		}
-		const windowsHello: WindowsHello =vantageShellService.getSecurityAdvisor().windowsHello;
-		this.showWindowsHello(windowsHello);
-		windowsHello.on(EventTypes.helloFacialIdStatusEvent, () => {
-			this.showWindowsHello(windowsHello);
-		}).on(EventTypes.helloFingerPrintStatusEvent, () => {
-			this.showWindowsHello(windowsHello);
-		});
-
 		this.commonMenuSubscription = this.translationService.subscription
 			.subscribe((translation: Translation) => {
 				this.onLanguageChange(translation);

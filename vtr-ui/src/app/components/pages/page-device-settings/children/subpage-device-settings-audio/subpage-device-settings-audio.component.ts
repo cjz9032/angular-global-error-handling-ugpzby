@@ -303,7 +303,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	initMockData() {
-		this.microphoneProperties = new Microphone(false, 0, '', false, false, false, false, true);
+		this.microphoneProperties = new Microphone(true, false, 0, '', false, false, false, false, true);
 		this.autoDolbyFeatureStatus = new FeatureStatus(true, false);
 
 		// const dolbySupportedMode = ['dynamic', 'movie', 'music', 'game', 'voice'];

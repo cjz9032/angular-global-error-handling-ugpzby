@@ -3,6 +3,7 @@
 		<input type="checkbox"
 			[name]="name"
 			class="switch"
+			[ngClass]="{'wifi-checked': value===true}"
 			[value]="value"
 			(change)="onChange($event)"
 			[checked]="value"
