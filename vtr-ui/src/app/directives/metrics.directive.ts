@@ -32,11 +32,6 @@ export class MetricsDirective {
 	@HostListener('click', ['$event.target'])
 	onclick(target) {
 
-		var parents=this.getParents(target,"[data-component]");
-		if(!this.metricsParent && parents){
-			this.metricsParent=parents.join('.');
-		}
-		const location = window.location.href.substring(window.location.href.indexOf('#') + 2).replace(/[`~!@#$%^&*()_|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '');
 		this.metricsItem = typeof this.metricsItem === 'string' ? this.metricsItem.split(" ").join("").toLowerCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '').substr(0, 25) : this.metricsItem;
 		this.metricsEvent = typeof this.metricsEvent === 'string' ? this.metricsEvent.split(" ").join("").toLowerCase() : this.metricsEvent;
 		this.metricsValue = typeof this.metricsValue === 'string' ? this.metricsValue.split(" ").join("").toLowerCase() : this.metricsValue;
