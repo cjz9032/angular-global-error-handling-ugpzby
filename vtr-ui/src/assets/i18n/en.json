@@ -227,6 +227,73 @@
 							"line3": "Performance mode: Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
 						}
 					}
+				}
+			},
+			"battery-settings": {
+				"title": "Battery Settings",
+				"airplane-power": {
+					"title": "Airplane Power Mode",
+					"tooltip": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
+				},
+				"powerSettings": {
+					"title": "Power Settings",
+					"alwaysUSB": {
+						"title": "Always on USB",
+						"description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
+						"checkbox": "Enable USB charging from laptop battery when computer is off."
+					},
+					"easyResume": {
+						"title": "Easy Resume",
+						"description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
+						"tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+					}
+				},
+				"otherSettings": {
+					"title": "Other Settings",
+					"vantageToolbar": {
+						"title": "Lenovo Vantage Toolbar",
+						"description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
+					}
+				},
+				"powerSettings": {
+					"title": "Power Settings",
+					"alwaysUSB": {
+						"title": "Always on USB",
+						"description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
+						"checkbox": "Enable USB charging from laptop battery when computer is off."
+					},
+					"easyResume": {
+						"title": "Easy Resume",
+						"description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
+						"tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+					}
+				},
+				"otherSettings": {
+					"title": "Other Settings",
+					"vantageToolbar": {
+						"title": "Lenovo Vantage Toolbar",
+						"description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
+					}
+				},
+				"powerSettings": {
+					"title": "Power Settings",
+					"alwaysUSB": {
+						"title": "Always on USB",
+						"description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
+						"checkbox": "Enable USB charging from laptop battery when computer is off."
+					},
+					"easyResume": {
+						"title": "Easy Resume",
+						"description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
+						"tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+					}
+				},
+				"otherSettings": {
+					"title": "Other Settings",
+					"vantageToolbar": {
+						"title": "Lenovo Vantage Toolbar",
+						"description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
+					}
 				},
 				"powerSettings": {
 					"title": "Power Settings",
@@ -408,9 +475,10 @@
 					"title": "Critical Updates",
 					"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
 				},
-				"recommended": {
-					"title": "Recommended Updates",
-					"tooltip": "Recommended driver updates keep your computer running at optimal performance."
+				"camera": {
+					"title": "Camera",
+					"tooltip": "Click here to reset Camera properties to default settings.",
+					"reset": "Reset factory settings"
 				},
 				"windows": {
 					"title": "Windows Updates",
@@ -606,7 +674,7 @@
 			},
 			"invitationcode": {
 				"button": "Enter invitation code",
-				"buttonDescribe": "enter invitation code require enable wifi security",
+				"buttonDescribe": "You have already joined this device to an existing Connected Home Security account.",
 				"title": "Already have Connected Home Security?",
 				"titleDescribe": "Add this device to your Connected Home",
 				"enterCode": "Enter your connection code",
