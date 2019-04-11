@@ -35,7 +35,9 @@ export class MetricsDirective {
 		this.metricsItem = typeof this.metricsItem === 'string' ? this.metricsItem.split(" ").join("").toLowerCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '').substr(0, 25) : this.metricsItem;
 		this.metricsEvent = typeof this.metricsEvent === 'string' ? this.metricsEvent.split(" ").join("").toLowerCase() : this.metricsEvent;
 		this.metricsValue = typeof this.metricsValue === 'string' ? this.metricsValue.split(" ").join("").toLowerCase() : this.metricsValue;
-		this.metricsParent = this.activatedRoute.snapshot.data['pageName'];
+		if(!this.metricsParent){
+			this.metricsParent = this.activatedRoute.snapshot.data['pageName'];
+		}
 		this.metricsParam = typeof this.metricsParam === 'string' ? this.metricsParam.split(" ").join("").toLowerCase() : this.metricsParam;
 		if (this.metrics && this.metrics.sendAsync) {
 			const data: any = {

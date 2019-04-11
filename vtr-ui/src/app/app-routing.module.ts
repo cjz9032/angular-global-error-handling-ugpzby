@@ -25,17 +25,10 @@ const routes: Routes = [
 		pathMatch: 'full'
 	}, {
 		path: 'dashboard',
-		component: PageDashboardComponent,
-		data:{
-			pageName:'Dashboard'
-		}
+		component: PageDashboardComponent
 	}, {
 		path: 'device',
-		component: PageDeviceComponent,
-		data:{
-			pageName:'Device'
-		}
-
+		component: PageDeviceComponent
 	}, {
 		path: 'device/device-settings',
 		component: PageDeviceSettingsComponent,
@@ -47,86 +40,48 @@ const routes: Routes = [
 			},
 			{
 				path: 'power',
-				component: SubpageDeviceSettingsPowerComponent,
-				data:{
-					pageName:"Device.Power"
-				}
+				component: SubpageDeviceSettingsPowerComponent
 			},
 			{
 				path: 'audio',
-				component: SubpageDeviceSettingsAudioComponent,
-				data:{
-					pageName:"Device.Audio"
-				}
+				component: SubpageDeviceSettingsAudioComponent
 			},
 			{
 				path: 'display-camera',
-				component: SubpageDeviceSettingsDisplayComponent,
-				data:{
-					pageName:"Device.Camera"
-				}
+				component: SubpageDeviceSettingsDisplayComponent
 			}
 		]
 	}, {
 		path: 'device/system-updates',
-		component: PageDeviceUpdatesComponent,
-		data:{
-			pageName:"Device.SystemUpdates"
-		}
+		component: PageDeviceUpdatesComponent
 	}, {
 		path: 'security',
-		component: PageSecurityComponent,
-		data:{pageName:"Security"}
-
+		component: PageSecurityComponent
 	}, {
 		path: 'security/anti-virus',
-		component: PageSecurityAntivirusComponent,
-		data:{
-			pageName:"Security.AntiVirus"
-		}
+		component: PageSecurityAntivirusComponent
 	}, {
 		path: 'security/wifi-security',
-		component: PageSecurityWifiComponent,
-		data:{
-			pageName:"Security.Wifi"
-		}
+		component: PageSecurityWifiComponent
 	}, {
 		path: 'security/password-protection',
-		component: PageSecurityPasswordComponent,
-		data:{
-			pageName:"Security.Password"
-		}
+		component: PageSecurityPasswordComponent
 	}, {
 		path: 'security/internet-protection',
-		component: PageSecurityInternetComponent,
-		data:{
-			pageName:"Security.Internet"
-		}
+		component: PageSecurityInternetComponent
 	}, {
 		path: 'security/windows-hello',
 		component: PageSecurityWindowsHelloComponent,
-		canActivate: [WindowsHelloGuardService],
-		data:{
-			pageName:"Security.WindowsHello"
-		}
+		canActivate: [WindowsHelloGuardService]
 	}, {
 		path: 'support',
-		component: PageSupportComponent,
-		data:{
-			pageName:"Support"
-		}
+		component: PageSupportComponent
 	}, {
 		path: 'support-detail/:id',
-		component: PageSupportDetailComponent,
-		data:{
-			pageName:"Support.Detail"
-		}
+		component: PageSupportDetailComponent
 	}, {
 		path: 'user',
-		component: PageUserComponent,
-		data:{
-			pageName:"User"
-		}
+		component: PageUserComponent
 	}
 ];
 
