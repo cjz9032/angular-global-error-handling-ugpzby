@@ -9,8 +9,10 @@ export class VPNWidgetItem extends WidgetItem {
 		super({
 			id: 'vpn',
 			path: 'security/internet-protection',
-			title: 'VPN',
 			type: 'security'
+		}, translateService);
+		this.translateService.stream('common.securityAdvisor.vpn').subscribe((value) => {
+			this.title = value;
 		});
 		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityVPNStatus);
 		if (cacheStatus) {
@@ -32,7 +34,7 @@ export class VPNWidgetItem extends WidgetItem {
 		this.detail = status;
 
 		const translateKey = status === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
-		this.translateService.get(translateKey).subscribe((value) => {
+		this.translateService.stream(translateKey).subscribe((value) => {
 			this.detail = value;
 		});
 	}

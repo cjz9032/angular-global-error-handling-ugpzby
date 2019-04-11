@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { BaseComponent } from "../../base/base.component";
+import { BaseComponent } from '../../base/base.component';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-widget-device-update-settings',
@@ -14,15 +15,20 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 
 	@Output() toggleOnOff = new EventEmitter<any>();
 
-	constructor() {
+	constructor(private deviceService: DeviceService) {
 		super();
 	}
 
-	ngOnInit() {
-	}
+	ngOnInit() { }
 
 	public onToggleOnOff($event: any) {
 		this.toggleOnOff.emit($event);
+	}
+
+	public onLinkClick(path: string) {
+		if (path && path.length > 0) {
+			this.deviceService.launchUri(path);
+		}
 	}
 }
 

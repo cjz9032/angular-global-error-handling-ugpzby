@@ -1,5 +1,6 @@
 export class Microphone {
 	constructor(
+		public available: boolean,
 		public muteDisabled: boolean,
 		public volume: number,
 		public currentMode: string,

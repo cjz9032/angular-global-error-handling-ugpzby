@@ -1,7 +1,7 @@
 <div class="vtr-page-dashboard vtr-page container-fluid">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main title="Looking energized today {{userService.firstName}}!"
+			<vtr-header-main title="{{'dashboard.headerMain.title' | translate}}  {{userService.firstName}}!"
 				[forwardLink]=""></vtr-header-main>
 		</div>
 	</div>
@@ -19,9 +19,9 @@
 								<div class="row"
 									*ngIf="!isOnline">
 									<div class="col col-12 px-40 pb-40">
-										<vtr-widget-offline-info [title]="'No internet connection detected'"
-											[subtitle]="'Learn more on how to solve connection issues in our'"
-											[buttonText]="'Connectivity 101'"
+										<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
+											[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+											[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
 											(buttonClick)="onConnectivityClick($event)"></vtr-widget-offline-info>
 									</div>
 								</div>
@@ -122,7 +122,7 @@
 										<!-- <div class="row"
 										*ngIf="!deviceService.isArm"> -->
 										<!-- <div class="col-sm-12"> -->
-										<div class="pt-5"
+										<div class="pt-6"
 											*ngIf="!deviceService.isArm">
 											<vtr-widget-quicksettings></vtr-widget-quicksettings>
 										</div>

@@ -129,8 +129,7 @@
 				<div class="row-seperator">&nbsp;</div>
 			</div>
 		</div>
-		<div class="row"
-			*ngIf="isShowInvitationCode">
+		<div class="row">
 			<div class="col">
 				<div class="invitation-code-box">
 					<div class="row">
@@ -146,8 +145,8 @@
 								<vtr-ui-button [metricsItem]="'enterInvitationCode'"
 									(onClick)="enterActivationCode($event)"
 									[label]="'security.homeprotection.invitationcode.button' | translate"
-									[isLWSEnabled]="data.isLWSEnabled"></vtr-ui-button>
-								<div *ngIf="!data.isLWSEnabled">{{'security.homeprotection.invitationcode.buttonDescribe' | translate}}
+									[alreadyJoinGroup]="data.homeStatus"></vtr-ui-button>
+								<div *ngIf="data.homeStatus=='joined' && showDescribe">{{'security.homeprotection.invitationcode.buttonDescribe' | translate}}
 								</div>
 							</div>
 						</div>

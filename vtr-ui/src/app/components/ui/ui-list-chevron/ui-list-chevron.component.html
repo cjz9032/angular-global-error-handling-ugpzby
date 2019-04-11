@@ -9,7 +9,7 @@
 					<div class="row align-items-center">
 						<div class="col col-1 text-center" *ngIf="iconPlacement==='left'">
 							<div class="item-icon status" *ngIf="item.status !== undefined && item.status !== ''">
-								<div [ngClass]="item.status !== 3 ? 'icon-bkg' : 'icon-warning'">
+								<div class="icon-bkg">
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
@@ -41,7 +41,7 @@
 						</div>
 						<div class="col col-1 text-center" *ngIf="iconPlacement==='right'">
 							<div class="item-icon status" *ngIf="item.status !== undefined && item.status !== ''">
-								<div [ngClass]="item.status !== 3 ? 'icon-bkg' : 'icon-warning'">
+								<div class="icon-bkg">
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
@@ -70,7 +70,7 @@
 					<div class="row align-items-center">
 						<div class="col col-1 text-center" *ngIf="iconPlacement==='left'">
 							<div class="item-icon status" *ngIf="item.status !== undefined && item.status !== ''">
-								<div [ngClass]="item.status !== 3 ? 'icon-bkg' : 'icon-warning'">
+								<div class="icon-bkg">
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
@@ -102,7 +102,7 @@
 						</div>
 						<div class="col col-1 text-center" *ngIf="iconPlacement==='right'">
 							<div class="item-icon status" *ngIf="item.status!==undefined&&item.status!==''">
-								<div [ngClass]="item.status !== 3 ? 'icon-bkg' : 'icon-warning'">
+								<div class="icon-bkg">
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 

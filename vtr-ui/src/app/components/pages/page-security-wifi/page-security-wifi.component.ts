@@ -77,9 +77,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.securityHealthViewModel = new SecurityHealthViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.translate);
 		this.wifiSecurity.refresh();
 		this.homeProtection.refresh();
-		this.wifiSecurity.getWifiSecurityState(this.getActivateDeviceStateHandler);
+		this.wifiSecurity.getWifiSecurityState(this.getActivateDeviceStateHandler.bind(this));
 		this.homeProtection.getActivateDeviceState(this.ShowInvitationhandler.bind(this));
-		this.homeProtection.getDevicePosture(this.startGetDevicePosture);
+		this.homeProtection.getDevicePosture(this.startGetDevicePosture.bind(this));
 		const cacheHomeStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus);
 		if (this.homeProtection.status) {
 			this.isShowInvitationCode = !(this.homeProtection.status === 'joined');

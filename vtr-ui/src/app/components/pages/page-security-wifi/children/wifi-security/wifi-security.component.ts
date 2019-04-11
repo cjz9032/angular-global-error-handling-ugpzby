@@ -117,12 +117,15 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		const all_length = this.data.allHistorys.length;
 		if (length === all_length || length === 8) {
 			this.data.historys = this.data.allHistorys.slice(0, 4);
+			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
 			this.isShowMoreLink = true;
 		} else if (length + 2 >= all_length || length + 2 >= 8) {
 			this.data.historys = this.data.allHistorys.slice(0, 8);
+			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 8);
 			this.isShowMoreLink = false;
 		} else {
 			this.data.historys = this.data.allHistorys.slice(0, length + 2);
+			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, length + 2);
 		}
 		return false;
 	}

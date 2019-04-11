@@ -7,7 +7,7 @@ export class TagPickerPipe implements PipeTransform {
 		const textList: Array<string> = value.split(/<\/?tag>/);
 		const tagText = textList.filter(text => !contentTextList.includes(text));
 		if (position < tagText.length) {
-			return tagText[position];
+			return tagText[position].trim();
 		} else {
 			return '';
 		}
