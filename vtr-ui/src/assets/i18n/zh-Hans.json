@@ -24,7 +24,7 @@
 			"subtitle": "检查设备是否受安全保护。",
 			"antiVirus": "反病毒",
 			"wifi": "WiFi 安全",
-			"pswdMgr": "密码保护",
+			"pswdMgr": "密码管理器",
 			"vpn": "VPN",
 			"windowsHello": "Windows Hello",
 			"enabled": "已启用",
@@ -587,7 +587,8 @@
 			},
 			"locationmodal": {
 					"title": "启用位置服务",
-					"describe": "要使用 Lenovo WiFi 安全，您必须为 Lenovo Vantage 启用位置服务。是否立即启用位置？",
+					"describe1": "要使用 Lenovo WiFi 安全，您必须为 Lenovo Vantage 启用位置服务。是否立即启用位置？",
+					"describe2": "要使用 互联家庭网络 安全，您必须为 Lenovo Vantage 启用位置服务。是否立即启用位置？",
 					"agree": "同意",
 					"cancel": "取消"
 			}
@@ -670,7 +671,7 @@
 				"privacyPolicyAndTermsOfService": "阅读<tag>隐私策略</tag>和<tag>服务条款</tag>的更多信息"
 		},
 		"passwordManager": {
-				"statusTitle": "DASHLANE PASSWORD MANAGER",
+				"statusTitle": "DASHLANE 密码管理器",
 				"title": "密码安全状况",
 				"header": "Dashlane",
 				"whatIsPmNotInstalled": "提供保存高强度复杂密码和即时登录到每个站点的最安全、简单的方式。",

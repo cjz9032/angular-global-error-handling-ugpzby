@@ -54,7 +54,7 @@
 																<fa-icon class="wifi-font-icon"
 																	[icon]="['fas', 'wifi']"></fa-icon>
 															</div>
-															<div class="col-10">{{'security.landing.maliciousNetwork' | translate:{maliciousWifi:maliciousWifi} }}</div>
+															<div class="col-10">{{'security.landing.maliciousNetwork' | translate:{maliciousWifi:maliciousWifi ? maliciousWifi : 0} }}</div>
 														</div>
 														<ul class="chevron-list">
 															<li *ngFor="let wifi of wifiHistory.slice(0, 2);"
