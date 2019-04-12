@@ -8,6 +8,21 @@
 			background: $shade_extralight;
 			padding: 1.5rem 1rem 1.5rem 0.2rem;
 
+			.button-box {
+				padding: 0rem;
+				margin: 0rem;
+				display: inline-block;
+
+				.btn-round-sm {
+					border-radius: 0.5rem;
+					padding: 0.5rem 1rem 0.5rem 1rem;
+					font-size: 1.3rem;
+					background: $light;
+					border: 0rem;
+					color: $stop_light;
+					font-weight: $weight_light;
+				}
+			}
 			.custom-control {
 				display: inline-block;
 				.custom-control-label {
