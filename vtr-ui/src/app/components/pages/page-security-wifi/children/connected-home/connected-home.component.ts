@@ -53,7 +53,7 @@ export class ConnectedHomeComponent implements OnInit {
 				if (this.data.wifiSecurity.isLocationServiceOn) {
 					this.OpenInvitationModal();
 				} else {
-					this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);
+					this.securityService.homeProtectionOpenLocationDialog(this.data.wifiSecurity);
 				}
 			} else {
 				console.log('this.data.wifiSecurity.isLocationServiceOn is undefined!');

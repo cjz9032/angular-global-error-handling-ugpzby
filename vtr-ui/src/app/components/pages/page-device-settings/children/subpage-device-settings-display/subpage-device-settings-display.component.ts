@@ -60,10 +60,7 @@ export class SubpageDeviceSettingsDisplayComponent
 
 	ngOnInit() {
 		console.log('subpage-device-setting-display onInit');
-		this.startEyeCareMonitor();
-		this.initEyecaremodeSettings();
-		this.getCameraPrivacyModeStatus();
-		this.getCameraDetails();
+
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			cameraDetail => {
 				this.dataSource = cameraDetail;
@@ -73,6 +70,10 @@ export class SubpageDeviceSettingsDisplayComponent
 				console.log(error);
 			}
 		);
+		this.startEyeCareMonitor();
+		this.initEyecaremodeSettings();
+		this.getCameraDetails();
+		this.getCameraPrivacyModeStatus();
 
 		this.statusChangedLocationPermission();
 
@@ -100,28 +101,30 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	private getCameraDetails() {
+		try {
+			// this.baseCameraDetail
+			// 	.getCameraDetail()
+			// 	.then((response: any) => {
+			// 		// this.dataSource = response;
+			// 		console.log('getCameraDetails.then', response);
+			// 	})
+			// 	.catch(error => {
+			// 		console.log(error);
+			// 	});
+			console.log('Inside');
+			this.displayService.getCameraSettingsInfo().then((response) => {
+				console.log('getCameraDetails.then', response);
+				console.log('response.exposure.supported.then', response.exposure.supported);
+				console.log('response.exposure.autoValue.then', response.exposure.autoValue);
+				this.cameraDetails1 = response;
+				if (this.cameraDetails1.exposure.supported === true && this.cameraDetails1.exposure.autoValue === false) {
+					this.cameraFeatureAccess.showAutoExposureSlider = true;
+				}
+			});
+		} catch (error) {
+			console.error(error.message);
+		}
 
-		// this.baseCameraDetail
-		// 	.getCameraDetail()
-		// 	.then((response: any) => {
-		// 		// this.dataSource = response;
-		// 		console.log('getCameraDetails.then', response);
-		// 	})
-		// 	.catch(error => {
-		// 		console.log(error);
-		// 	});
-		console.log('Inside');
-		this.displayService.getCameraSettingsInfo().then((response) => {
-			console.log('getCameraDetails.then', response);
-			console.log('response.exposure.supported.then', response.exposure.supported);
-			console.log('response.exposure.autoValue.then', response.exposure.autoValue);
-
-			this.dataSource = response;
-			if (this.dataSource.exposure.supported === true && this.dataSource.exposure.autoValue === false) {
-
-				this.cameraFeatureAccess.showAutoExposureSlider = true;
-			}
-		});
 	}
 	// Start EyeCare Mode
 	private getDisplayColorTemperature() {

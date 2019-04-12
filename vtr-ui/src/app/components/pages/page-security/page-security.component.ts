@@ -97,7 +97,6 @@ export class PageSecurityComponent implements OnInit {
 
 		this.createViewModels();
 	}
-	
 
 	@HostListener('window: focus')
 	onFocus(): void {
