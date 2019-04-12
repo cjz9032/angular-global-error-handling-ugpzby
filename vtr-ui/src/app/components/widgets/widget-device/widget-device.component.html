@@ -62,7 +62,7 @@
 								</div>
 								<div class="col-auto text-right ml-auto">
 									<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->
-									<a routerLink="/{{item.path}}"
+									<a routerLink="/{{item.path}}" vtrMetrics [metricsItem]="item.title" metricsEvent="itemClick"
 										*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false)">
 										<div class="detail"
 											[ngClass]="{'highlight':item.asLink}">
@@ -70,7 +70,7 @@
 										</div>
 									</a>
 									<!--Open Windows Settings /subapges if isSystemLink is not undefined or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
-									<a *ngIf="item.isSystemLink!==undefined &&  item.isSystemLink===true"
+									<a *ngIf="item.isSystemLink!==undefined &&  item.isSystemLink===true" vtrMetrics [metricsItem]="item.title" metricsEvent="itemClick"
 										href="javascript:void(0);"
 										(click)="deviceService.launchUri(item.path)">
 										<div class="detail"
