@@ -36,6 +36,15 @@
 					z-index: 1;
 					padding: 3rem;
 					height: 100%;
+					@media #{$mediaquery_17} {
+						padding: 1.5rem;
+					}
+					@media #{$mediaquery_18} {
+						padding: 2rem;
+					}
+					@media #{$mediaquery_11} {
+						padding: 2rem;
+					}
 
 					.title {
 						color: $light;
@@ -159,6 +168,18 @@
 						padding: 0 15%;
 						color: $light;
 						text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+						@media #{$mediaquery_17} {
+							font-size: 3rem;
+							top: 15%;
+						}
+						@media #{$mediaquery_18} {
+							font-size: 3rem;
+							top: 15%;
+						}
+						@media #{$mediaquery_11} {
+							font-size: 3rem;
+							top: 15%;
+						}
 					}
 				}
 			}
@@ -289,6 +310,15 @@
 			color: $main_dark;
 			font-size: 2.5rem;
 			font-weight: $weight_bold;
+			@media #{$mediaquery_17} {
+				font-size: 1.4rem;
+			}
+			@media #{$mediaquery_18} {
+				font-size: 2rem;
+			}
+			@media #{$mediaquery_11} {
+				font-size: 2rem;
+			}
 		}
 
 		.description {
@@ -299,6 +329,15 @@
 		.caption {
 			color: $main_shade;
 			font-size: 2.2rem;
+			@media #{$mediaquery_17} {
+				font-size: 1.2rem;
+			}
+			@media #{$mediaquery_18} {
+				font-size: 1.8rem;
+			}
+			@media #{$mediaquery_11} {
+				font-size: 1.8rem;
+			}
 		}
 
 		.logo {
