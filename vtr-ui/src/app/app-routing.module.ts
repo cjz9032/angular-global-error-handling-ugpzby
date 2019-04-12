@@ -24,60 +24,107 @@ const routes: Routes = [
 		pathMatch: 'full'
 	}, {
 		path: 'dashboard',
-		component: PageDashboardComponent
+		component: PageDashboardComponent,
+		data:{
+			pageName:'Dashboard'
+		}
 	}, {
 		path: 'device',
-		component: PageDeviceComponent
+		component: PageDeviceComponent,
+		data:{
+			pageName:'Device.MyDevice'
+		}
+
 	}, {
-		path: 'device-settings',
+		path: 'device/device-settings',
 		component: PageDeviceSettingsComponent,
 		children: [
 			{
 				path: '',
 				redirectTo: 'power',
 				pathMatch: 'full'
-			}, {
+			},
+			{
 				path: 'power',
-				component: SubpageDeviceSettingsPowerComponent
-			}, {
+				component: SubpageDeviceSettingsPowerComponent,
+				data:{
+					pageName:"Device.MyDeviceSettings"
+				}
+			},
+			{
 				path: 'audio',
-				component: SubpageDeviceSettingsAudioComponent
-			}, {
+				component: SubpageDeviceSettingsAudioComponent,
+				data:{
+					pageName:"Device.MyDeviceSettings"
+				}
+			},
+			{
 				path: 'display-camera',
-				component: SubpageDeviceSettingsDisplayComponent
+				component: SubpageDeviceSettingsDisplayComponent,
+				data:{
+					pageName:"Device.MyDeviceSettings"
+				}
 			}
 		]
 	}, {
-		path: 'system-updates',
-		component: PageDeviceUpdatesComponent
+		path: 'device/system-updates',
+		component: PageDeviceUpdatesComponent,
+		data:{
+			pageName:"Device.SystemUpdate"
+		}
 	}, {
 		path: 'security',
-		component: PageSecurityComponent
+		component: PageSecurityComponent,
+		data:{pageName:"Security.MySecurity"}
+
 	}, {
-		path: 'anti-virus',
-		component: PageSecurityAntivirusComponent
+		path: 'security/anti-virus',
+		component: PageSecurityAntivirusComponent,
+		data:{
+			pageName:"Security.AntiVirus"
+		}
 	}, {
-		path: 'wifi-security',
-		component: PageSecurityWifiComponent
+		path: 'security/wifi-security',
+		component: PageSecurityWifiComponent,
+		data:{
+			pageName:"Security.WifiSecurity"
+		}
 	}, {
-		path: 'password-protection',
-		component: PageSecurityPasswordComponent
+		path: 'security/password-protection',
+		component: PageSecurityPasswordComponent,
+		data:{
+			pageName:"Security.PasswordProtection"
+		}
 	}, {
-		path: 'internet-protection',
-		component: PageSecurityInternetComponent
-	},
-	{
-		path: 'windows-hello',
-		component: PageSecurityWindowsHelloComponent
+		path: 'security/internet-protection',
+		component: PageSecurityInternetComponent,
+		data:{
+			pageName:"Security.InternetProtection"
+		}
+	}, {
+		path: 'security/windows-hello',
+		component: PageSecurityWindowsHelloComponent,
+		data:{
+			pageName:"Security.WindowsHello"
+		}
 	}, {
 		path: 'support',
-		component: PageSupportComponent
+		component: PageSupportComponent,
+		data:{
+			pageName:"Page.Support"
+		}
 	}, {
 		path: 'support-detail/:id',
-		component: PageSupportDetailComponent
+		component: PageSupportDetailComponent,
+		data:{
+			pageName:"Support.Detail"
+		}
 	}, {
 		path: 'user',
-		component: PageUserComponent
+		component: PageUserComponent,
+		data:{
+			pageName:"User"
+		}
 	}
 ];
 
