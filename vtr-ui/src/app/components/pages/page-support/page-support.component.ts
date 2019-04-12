@@ -140,13 +140,12 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			'OS': 'Windows',
 			'Segment': 'SMB',
 			'Brand': 'idea',
-			'limit': '8'
 		};
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
 				// console.log(response);
-				this.articles = response;
+				this.articles = response.slice(0, 8);
 			},
 			error => {
 				console.log('fetchCMSContent error', error);

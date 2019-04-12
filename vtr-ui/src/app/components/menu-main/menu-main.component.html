@@ -72,7 +72,7 @@
 								routerLink="/{{item.path}}/{{subitem.path}}">{{subitem.label | translate}}</a>
 						</div>
 					</li>
-					<li *ngIf="item.id==='user' && country != 'cn' && showItem(item)"
+					<li *ngIf="item.id==='user' && userService.isLenovoIdSupported && showItem(item)"
 						class="nav-item dropdown">
 						<!-- <a class="nav-link dropdown-toggle {{item.id}}"
 							routerLink="/{{item.path}}"
@@ -99,7 +99,7 @@
 						</a>
 						<div class="dropdown-menu {{item.id}}"
 							aria-labelledby="navbarDropdown">
-							<div class="dropdown-item">Welcome, {{userService.firstName}}</div>
+							<div class="dropdown-item">{{'lenovoId.helloUser' | translate:{firstName:userService.firstName} }}</div>
 							<a *ngIf="!userService.auth"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -107,7 +107,7 @@
 								metricsItem="LenovoIdSignInButton"
 								class="dropdown-item link"
 								href="javascript:void(0)"
-								(click)="OpenLenovoId()">Login</a>
+								(click)="OpenLenovoId()">{{'lenovoId.login' | translate}}</a>
 							<a *ngIf="userService.auth"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -115,7 +115,7 @@
 								metricsItem="LenovoIdSignOutButton"
 								class="dropdown-item link"
 								href="javascript:void(0)"
-								(click)="onLogout()">Logout</a>
+								(click)="onLogout()">{{'lenovoId.logout' | translate}}</a>
 						</div>
 					</li>
 				</ng-container>

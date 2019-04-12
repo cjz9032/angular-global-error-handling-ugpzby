@@ -606,7 +606,7 @@
 			},
 			"invitationcode": {
 					"button": "输入邀请码",
-					"buttonDescribe": "输入邀请码需要启用 WiFi 安全",
+					"buttonDescribe": "您已将此设备添加到一个现有的互联家庭网络账户",
 					"title": "已拥有互联家庭网络安全性？",
 					"titleDescribe": "将此设备添加到您的互联家庭网络",
 					"enterCode": "输入您的连接代码",
@@ -717,6 +717,13 @@
 				"traditional": "传统密码可能会遭到盗窃，并从世界任何地方用于访问您的帐户。更安全、便捷​。Windows Hello 是密码的新一代演变成果。使用指纹读取器 [或红外摄像头] 来取代不安全的密码进行登录。",
         "howToStart": "如何开始使用 Windows Hello？"
     }
+	},
+	"lenovoId": {
+		"login": "登录",
+		"logout": "注销",
+		"user": "用户",
+		"welcomeText": "元气满满的一天 {{firstName}}！",
+		"helloUser": "{{firstName}}，你好！"
 	},
 	"faq": {
 		"footer": {

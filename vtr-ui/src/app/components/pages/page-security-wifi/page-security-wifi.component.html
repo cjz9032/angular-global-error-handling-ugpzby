@@ -59,6 +59,9 @@
 													<div class="col">
 
 														<!--Start of Security Health Advisor When LWS is enabled-->
+														<div *ngIf="securityHealthViewModel.isLWSEnabled===undefined" class="loading">
+															<div class="spinner-border text-primary progress-spinner" role="status"></div>
+														</div>
 														<vtr-ui-list-chevron
 															[items]="securityHealthViewModel.homeDevicePosture"
 															[chevronVisibility]='false'
