@@ -107,11 +107,11 @@
 			<div class="col">
 				<div class="peace-of-mind">
 					<div class="sub-heading">{{'security.homeprotection.homesecurity.subtitle' | translate}}</div>
-					<div class="text-regular">{{'security.homeprotection.homesecurity.subtitleDescribe' | translate}} </div>
-					<div class="col-sm-3">
+					<div class="text-regular">{{'security.homeprotection.homesecurity.subtitleDescribe' | translate}}
+					</div>
+					<div class="col-sm-6">
 						<div class="button-box shift-left">
-							<vtr-ui-button
-								[metricsItem]="'tryNow'"
+							<vtr-ui-button [metricsItem]="'tryNow'"
 								(onClick)="tryNow($event)"
 								[label]="'security.homeprotection.homesecurity.tryNow' | translate"
 								[disabled]="!data.tryNowEnable">
@@ -133,20 +133,22 @@
 			<div class="col">
 				<div class="invitation-code-box">
 					<div class="row">
-						<div class="col">
+						<div class="col-md-12 col-lg-6">
 							<div class="sub-heading">
 								{{'security.homeprotection.invitationcode.title' | translate}}
-								<div class="text-regular">{{'security.homeprotection.invitationcode.titleDescribe' | translate}}</div>
+								<div class="text-regular">
+									{{'security.homeprotection.invitationcode.titleDescribe' | translate}}</div>
 							</div>
 
 						</div>
-						<div class="col-5">
-							<div class="button-box shift-right">
+						<div class="col-md-12 col-lg-6">
+							<div class="button-box text-right">
 								<vtr-ui-button [metricsItem]="'enterInvitationCode'"
 									(onClick)="enterActivationCode($event)"
 									[label]="'security.homeprotection.invitationcode.button' | translate"
 									[alreadyJoinGroup]="data.homeStatus"></vtr-ui-button>
-								<div *ngIf="data.homeStatus=='joined' && showDescribe">{{'security.homeprotection.invitationcode.buttonDescribe' | translate}}
+								<div *ngIf="data.homeStatus=='joined' && showDescribe">
+									{{'security.homeprotection.invitationcode.buttonDescribe' | translate}}
 								</div>
 							</div>
 						</div>
