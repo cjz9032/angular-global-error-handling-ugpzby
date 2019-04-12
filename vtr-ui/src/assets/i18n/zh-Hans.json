@@ -587,7 +587,8 @@
 			},
 			"locationmodal": {
 					"title": "启用位置服务",
-					"describe": "要使用 Lenovo WiFi 安全，您必须为 Lenovo Vantage 启用位置服务。是否立即启用位置？",
+					"describe1": "要使用 Lenovo WiFi 安全，您必须为 Lenovo Vantage 启用位置服务。是否立即启用位置？",
+					"describe2": "要使用 互联家庭网络 安全，您必须为 Lenovo Vantage 启用位置服务。是否立即启用位置？",
 					"agree": "同意",
 					"cancel": "取消"
 			}

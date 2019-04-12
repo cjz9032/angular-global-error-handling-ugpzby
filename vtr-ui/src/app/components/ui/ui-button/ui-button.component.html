@@ -1,7 +1,7 @@
 <div class="vtr-ui-button">
 	<div class="button-box"
 		*ngIf="label">
-		<button *ngIf="alreadyJoinGroup === 'unjoined'"
+		<button *ngIf="alreadyJoinGroup !== 'joined'"
 			[disabled]="isDisabled"
 			type="button"
 			class="btn button"

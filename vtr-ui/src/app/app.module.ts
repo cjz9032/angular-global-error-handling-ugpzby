@@ -80,6 +80,7 @@ import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-we
 import { ModalLenovoIdComponent } from './components/modal/modal-lenovo-id/modal-lenovo-id.component';
 import { ModalWifiSecurityInvitationComponent } from './components/modal/modal-wifi-security-invitation/modal-wifi-security-invitation.component';
 import { ModalWifiSecuriryLocationNoticeComponent } from './components/modal/modal-wifi-securiry-location-notice/modal-wifi-securiry-location-notice.component';
+import { ModalHomeProtectionLocationNoticeComponent } from './components/modal/modal-home-protection-location-notice/modal-home-protection-location-notice.component';
 
 // APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
@@ -267,6 +268,7 @@ library.add(fal);
 		DolbyModesTranslationPipe,
 		ModalWifiSecurityInvitationComponent,
 		ModalWifiSecuriryLocationNoticeComponent,
+		ModalHomeProtectionLocationNoticeComponent,
 		UiLandingFeatureComponent,
 		UiObjectTitleComponent,
 		UiSecurityStatusbarComponent,
@@ -327,6 +329,7 @@ library.add(fal);
 		ModalThreatLocatorComponent,
 		ModalWifiSecurityInvitationComponent,
 		ModalWifiSecuriryLocationNoticeComponent,
+		ModalHomeProtectionLocationNoticeComponent,
 		ModalUpdateChangeLogComponent,
 		ModalAboutComponent,
 	],
