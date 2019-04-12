@@ -164,6 +164,7 @@ import { ModalAboutComponent } from './components/modal/modal-about/modal-about.
 import { WifiClassPipe } from './pipe/security-landing/wifi-class.pipe';
 import { JoinclassPipe } from './pipe/security-wifi/join-class.pipe';
 import { SuccessClassPipe } from './pipe/security-wifi/success-class.pipe';
+import { UiCircleRadioComponent } from './components/ui/ui-circle-radio/ui-circle-radio.component';
 
 library.add(fas);
 library.add(fab);
@@ -287,7 +288,8 @@ library.add(fal);
 		ModalAboutComponent,
 		WifiClassPipe,
 		JoinclassPipe,
-		SuccessClassPipe
+		SuccessClassPipe,
+		UiCircleRadioComponent
 	],
 	imports: [
 		BrowserModule,
