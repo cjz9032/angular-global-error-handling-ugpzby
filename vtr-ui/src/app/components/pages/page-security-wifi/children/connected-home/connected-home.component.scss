@@ -32,6 +32,11 @@
     .button-box {
       padding: 0rem;
       margin: 1rem;
+      button {
+        @media #{$mediaquery_17} {
+          font-size: 1rem;
+        }
+      }
 
       &.shift-left {
         top: 20%;
