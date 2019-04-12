@@ -15,6 +15,8 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 export class CameraControlComponent implements OnInit, OnDestroy {
 	@Input() cameraSettings: ICameraSettingsResponse;
 	@Input() cameraFeatureAccess: CameraFeatureAccess;
+	@Input() manualRefresh: any;
+
 	@Output() brightnessChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() contrastChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureChange: EventEmitter<ChangeContext> = new EventEmitter();
@@ -168,7 +170,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 	public onAutoExposureChange($event: any) {
 		try {
-			console.log("onAutoExposureChange", this.cameraSettings.exposure.supported);
+			console.log('onAutoExposureChange', this.cameraSettings.exposure.supported);
 			if (this.cameraSettings.exposure.supported === true) {
 
 				this.cameraFeatureAccess.showAutoExposureSlider = !$event.switchValue;

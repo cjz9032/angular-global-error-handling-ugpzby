@@ -24,7 +24,7 @@ import { TranslateService } from '@ngx-translate/core';
 	providers: [NgbModalConfig, NgbModal]
 })
 export class PageDashboardComponent implements OnInit {
-	firstName = 'User';
+	firstName = { firstName: 'User' };
 	submit = 'Submit';
 	feedbackButtonText = this.submit;
 	securityAdvisor: SecurityAdvisor;
@@ -64,6 +64,7 @@ export class PageDashboardComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		this.firstName.firstName = this.userService.firstName;
 		this.isOnline = this.commonService.isOnline;
 		if (this.dashboardService.isShellAvailable) {
 			console.log('PageDashboardComponent.getSystemInfo');
@@ -85,7 +86,7 @@ export class PageDashboardComponent implements OnInit {
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				this.heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
+				const heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
 					return {
 						'albumId': 1,
 						'id': index + 1,
@@ -95,17 +96,40 @@ export class PageDashboardComponent implements OnInit {
 						'ActionLink': record.ActionLink
 					};
 				});
+				if (heroBannerItems && heroBannerItems.length) {
+					this.heroBannerItems = heroBannerItems;
+				}
 
-				this.cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
-				this.cardContentPositionC = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
+				const cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+				if (cardContentPositionB) {
+					this.cardContentPositionB = cardContentPositionB;
+					if (this.cardContentPositionB.BrandName) {
+						this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+					}
+				}
 
-				this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
-				this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
+				const cardContentPositionC = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
+				if (cardContentPositionC) {
+					this.cardContentPositionC = cardContentPositionC;
+					if (this.cardContentPositionC.BrandName) {
+						this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
+					}
+				}
 
-				this.cardContentPositionD = this.cmsService.getOneCMSContent(response, 'full-width-title-image-background', 'position-D')[0];
+				const cardContentPositionD = this.cmsService.getOneCMSContent(response, 'full-width-title-image-background', 'position-D')[0];
+				if (cardContentPositionD) {
+					this.cardContentPositionD = cardContentPositionD;
+				}
 
-				this.cardContentPositionE = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-E')[0];
-				this.cardContentPositionF = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-F')[0];
+				const cardContentPositionE = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-E')[0];
+				if (cardContentPositionE) {
+					this.cardContentPositionE = cardContentPositionE;
+				}
+
+				const cardContentPositionF = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-F')[0];
+				if (cardContentPositionF) {
+					this.cardContentPositionF = cardContentPositionF;
+				}
 			},
 			error => {
 				console.log('fetchCMSContent error', error);
@@ -150,98 +174,98 @@ export class PageDashboardComponent implements OnInit {
 		this.heroBannerItems = [{
 			albumId: 1,
 			id: 1,
-			source: "Vantage Beta",
-			title: "Welcome to the next generation of Lenovo Vantage!",
-			url: "./../../../../assets/cms-cache/Vantage3Hero-zone0.png",
+			source: 'Vantage Beta',
+			title: 'Welcome to the next generation of Lenovo Vantage!',
+			url: './../../../../assets/cms-cache/Vantage3Hero-zone0.png',
 			ActionLink: null
 		}];
 
 		this.cardContentPositionB = {
-			Title: "",
-			ShortTitle: "",
-			Description: "",
-			FeatureImage: "./../../../../assets/cms-cache/Alexa4x3-zone1.png",
-			Action: "",
-			ActionType: "External",
+			Title: '',
+			ShortTitle: '',
+			Description: '',
+			FeatureImage: './../../../../assets/cms-cache/Alexa4x3-zone1.png',
+			Action: '',
+			ActionType: 'External',
 			ActionLink: null,
-			BrandName: "",
-			BrandImage: "",
-			Priority: "P1",
-			Page: "dashboard",
-			Template: "half-width-title-description-link-image",
-			Position: "position-B",
+			BrandName: '',
+			BrandImage: '',
+			Priority: 'P1',
+			Page: 'dashboard',
+			Template: 'half-width-title-description-link-image',
+			Position: 'position-B',
 			ExpirationDate: null,
 			Filters: null
 		};
 
 		this.cardContentPositionC = {
-			Title: "",
-			ShortTitle: "",
-			Description: "",
-			FeatureImage: "./../../../../assets/cms-cache/Security4x3-zone2.png",
-			Action: "",
-			ActionType: "External",
+			Title: '',
+			ShortTitle: '',
+			Description: '',
+			FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.png',
+			Action: '',
+			ActionType: 'External',
 			ActionLink: null,
-			BrandName: "",
-			BrandImage: "",
-			Priority: "P1",
-			Page: "dashboard",
-			Template: "half-width-title-description-link-image",
-			Position: "position-C",
+			BrandName: '',
+			BrandImage: '',
+			Priority: 'P1',
+			Page: 'dashboard',
+			Template: 'half-width-title-description-link-image',
+			Position: 'position-C',
 			ExpirationDate: null,
 			Filters: null
 		};
 
 		this.cardContentPositionD = {
-			Title: "",
-			ShortTitle: "",
-			Description: "",
-			FeatureImage: "./../../../../assets/cms-cache/Gamestore8x3-zone3.png",
-			Action: "",
-			ActionType: "External",
+			Title: '',
+			ShortTitle: '',
+			Description: '',
+			FeatureImage: './../../../../assets/cms-cache/Gamestore8x3-zone3.png',
+			Action: '',
+			ActionType: 'External',
 			ActionLink: null,
-			BrandName: "",
-			BrandImage: "",
-			Priority: "P1",
-			Page: "dashboard",
-			Template: "full-width-title-image-background",
-			Position: "position-D",
+			BrandName: '',
+			BrandImage: '',
+			Priority: 'P1',
+			Page: 'dashboard',
+			Template: 'full-width-title-image-background',
+			Position: 'position-D',
 			ExpirationDate: null,
 			Filters: null
 		};
 
 		this.cardContentPositionE = {
-			Title: "",
-			ShortTitle: "",
-			Description: "",
-			FeatureImage: "./../../../../assets/cms-cache/content-card-4x4-support.jpg",
-			Action: "",
-			ActionType: "External",
+			Title: '',
+			ShortTitle: '',
+			Description: '',
+			FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg',
+			Action: '',
+			ActionType: 'External',
 			ActionLink: null,
-			BrandName: "",
-			BrandImage: "",
-			Priority: "P1",
-			Page: "dashboard",
-			Template: "half-width-top-image-title-link",
-			Position: "position-E",
+			BrandName: '',
+			BrandImage: '',
+			Priority: 'P1',
+			Page: 'dashboard',
+			Template: 'half-width-top-image-title-link',
+			Position: 'position-E',
 			ExpirationDate: null,
 			Filters: null
 		};
 
 		this.cardContentPositionF = {
-			Title: "",
-			ShortTitle: "",
-			Description: "",
-			FeatureImage: "./../../../../assets/cms-cache/content-card-4x4-award.jpg",
-			Action: "",
-			ActionType: "External",
+			Title: '',
+			ShortTitle: '',
+			Description: '',
+			FeatureImage: './../../../../assets/cms-cache/content-card-4x4-award.jpg',
+			Action: '',
+			ActionType: 'External',
 			ActionLink: null,
-			BrandName: "",
-			BrandImage: "",
-			Priority: "P1",
-			Page: "dashboard",
-			Template: "half-width-top-image-title-link",
-			Position: "position-F",
+			BrandName: '',
+			BrandImage: '',
+			Priority: 'P1',
+			Page: 'dashboard',
+			Template: 'half-width-top-image-title-link',
+			Position: 'position-F',
 			ExpirationDate: null,
 			Filters: null
 		};
@@ -278,8 +302,8 @@ export class PageDashboardComponent implements OnInit {
 			const memory = new Status();
 			memory.status = 1;
 			memory.id = 'memory';
-			memory.title = this.translate.instant('dashboard.systemStatus.memory.title');//'Memory';
-			memory.detail = this.translate.instant('dashboard.systemStatus.memory.detail.notFound');//'Memory not found';
+			memory.title = this.translate.instant('dashboard.systemStatus.memory.title'); // 'Memory';
+			memory.detail = this.translate.instant('dashboard.systemStatus.memory.detail.notFound'); // 'Memory not found';
 			memory.path = 'ms-settings:about';
 			memory.asLink = false;
 			memory.isSystemLink = true;
@@ -301,8 +325,8 @@ export class PageDashboardComponent implements OnInit {
 			const disk = new Status();
 			disk.status = 1;
 			disk.id = 'disk';
-			disk.title = this.translate.instant('dashboard.systemStatus.diskSpace.title');//'Disk Space';
-			disk.detail = this.translate.instant('dashboard.systemStatus.diskSpace.detail.notFound');//'Disk not found';
+			disk.title = this.translate.instant('dashboard.systemStatus.diskSpace.title'); // 'Disk Space';
+			disk.detail = this.translate.instant('dashboard.systemStatus.diskSpace.detail.notFound'); // 'Disk not found';
 			disk.path = 'ms-settings:storagesense';
 			disk.asLink = false;
 			disk.isSystemLink = true;
@@ -324,8 +348,8 @@ export class PageDashboardComponent implements OnInit {
 			const warranty = new Status();
 			warranty.status = 1;
 			warranty.id = 'warranty';
-			warranty.title = this.translate.instant('dashboard.systemStatus.warranty.title'); //'Warranty';
-			warranty.detail = this.translate.instant('dashboard.systemStatus.warranty.detail.notFound'); //'Warranty not found';
+			warranty.title = this.translate.instant('dashboard.systemStatus.warranty.title'); // 'Warranty';
+			warranty.detail = this.translate.instant('dashboard.systemStatus.warranty.detail.notFound'); // 'Warranty not found';
 			warranty.path = '/support';
 			warranty.asLink = false;
 			/* warranty.isSystemLink = true; */
@@ -336,13 +360,13 @@ export class PageDashboardComponent implements OnInit {
 				const warrantyDate = this.commonService.formatDate(response.warranty.expired);
 				// in warranty
 				if (response.warranty.status === 0) {
-					warranty.detail = `${this.translate.instant('dashboard.systemStatus.warranty.detail.until')} ${warrantyDate}`;//`Until ${warrantyDate}`;
+					warranty.detail = `${this.translate.instant('dashboard.systemStatus.warranty.detail.until')} ${warrantyDate}`; // `Until ${warrantyDate}`;
 					warranty.status = 0;
 				} else if (response.warranty.status === 1) {
-					warranty.detail = `${this.translate.instant('dashboard.systemStatus.warranty.detail.expiredOn')} ${warrantyDate}`; //`Warranty expired on ${warrantyDate}`;
+					warranty.detail = `${this.translate.instant('dashboard.systemStatus.warranty.detail.expiredOn')} ${warrantyDate}`; // `Warranty expired on ${warrantyDate}`;
 					warranty.status = 1;
 				} else {
-					warranty.detail = this.translate.instant('dashboard.systemStatus.warranty.detail.notAvailable'); //'Warranty not available';
+					warranty.detail = this.translate.instant('dashboard.systemStatus.warranty.detail.notAvailable'); // 'Warranty not available';
 					warranty.status = 1;
 				}
 			}
@@ -351,8 +375,8 @@ export class PageDashboardComponent implements OnInit {
 			const systemUpdate = new Status();
 			systemUpdate.status = 1;
 			systemUpdate.id = 'systemupdate';
-			systemUpdate.title = this.translate.instant('dashboard.systemStatus.systemUpdate.title');//'System Update';
-			systemUpdate.detail = this.translate.instant('dashboard.systemStatus.systemUpdate.detail.update');// 'Update';
+			systemUpdate.title = this.translate.instant('dashboard.systemStatus.systemUpdate.title'); // 'System Update';
+			systemUpdate.detail = this.translate.instant('dashboard.systemStatus.systemUpdate.detail.update'); // 'Update';
 			systemUpdate.path = 'device/system-updates';
 			systemUpdate.asLink = true;
 			systemUpdate.isSystemLink = false;
@@ -383,15 +407,15 @@ export class PageDashboardComponent implements OnInit {
 			const antiVirus = new Status();
 			antiVirus.status = 1;
 			antiVirus.id = 'anti-virus';
-			antiVirus.title = this.translate.instant('common.securityAdvisor.antiVirus'); //'Anti-Virus';
-			antiVirus.detail = this.translate.instant('common.securityAdvisor.disabled'); //'Disabled';
+			antiVirus.title = this.translate.instant('common.securityAdvisor.antiVirus'); // 'Anti-Virus';
+			antiVirus.detail = this.translate.instant('common.securityAdvisor.disabled'); // 'Disabled';
 			antiVirus.path = 'security/anti-virus';
 			antiVirus.type = 'security';
 
 			if (response.antiVirus) {
 				if (response.antiVirus.status) {
 					antiVirus.status = 0;
-					antiVirus.detail = this.translate.instant('common.securityAdvisor.enabled');//'Enabled';
+					antiVirus.detail = this.translate.instant('common.securityAdvisor.enabled'); // 'Enabled';
 				} else {
 					antiVirus.status = 1;
 				}
@@ -401,15 +425,15 @@ export class PageDashboardComponent implements OnInit {
 			const wiFi = new Status();
 			wiFi.status = 1;
 			wiFi.id = 'wifi-security';
-			wiFi.title = this.translate.instant('common.securityAdvisor.wifi');//'WiFi Security';
-			wiFi.detail = this.translate.instant('common.securityAdvisor.disabled'); //'Disabled';
+			wiFi.title = this.translate.instant('common.securityAdvisor.wifi'); // 'WiFi Security';
+			wiFi.detail = this.translate.instant('common.securityAdvisor.disabled'); // 'Disabled';
 			wiFi.path = 'security/wifi-security';
 			wiFi.type = 'security';
 
 			if (response.wifiSecurity) {
 				if (response.wifiSecurity.status) {
 					wiFi.status = 0;
-					wiFi.detail = this.translate.instant('common.securityAdvisor.enabled');//'Enabled';
+					wiFi.detail = this.translate.instant('common.securityAdvisor.enabled'); // 'Enabled';
 				} else {
 					wiFi.status = 1;
 				}
@@ -419,15 +443,15 @@ export class PageDashboardComponent implements OnInit {
 			const passwordManager = new Status();
 			passwordManager.status = 1;
 			passwordManager.id = 'pwdmgr';
-			passwordManager.title = this.translate.instant('common.securityAdvisor.pswdMgr'); //'Password Manager';
-			passwordManager.detail = this.translate.instant('common.securityAdvisor.notInstalled'); //'Not Installed';
+			passwordManager.title = this.translate.instant('common.securityAdvisor.pswdMgr'); // 'Password Manager';
+			passwordManager.detail = this.translate.instant('common.securityAdvisor.notInstalled'); // 'Not Installed';
 			passwordManager.path = 'security/password-protection';
 			passwordManager.type = 'security';
 
 			if (response.passwordManager) {
 				if (response.passwordManager.installed) {
 					passwordManager.status = 2;
-					passwordManager.detail = this.translate.instant('common.securityAdvisor.installed'); //'Installed';
+					passwordManager.detail = this.translate.instant('common.securityAdvisor.installed'); // 'Installed';
 				} else {
 					passwordManager.status = 1;
 				}
@@ -437,15 +461,15 @@ export class PageDashboardComponent implements OnInit {
 			const vpn = new Status();
 			vpn.status = 1;
 			vpn.id = 'vpn';
-			vpn.title = this.translate.instant('common.securityAdvisor.vpn'); //'VPN';
-			vpn.detail = this.translate.instant('common.securityAdvisor.notInstalled');//'Not Installed';
+			vpn.title = this.translate.instant('common.securityAdvisor.vpn'); // 'VPN';
+			vpn.detail = this.translate.instant('common.securityAdvisor.notInstalled'); // 'Not Installed';
 			vpn.path = 'security/internet-protection';
 			vpn.type = 'security';
 
 			if (response.VPN) {
 				if (response.VPN.installed) {
 					vpn.status = 2;
-					vpn.detail = this.translate.instant('common.securityAdvisor.installed');//'Installed';
+					vpn.detail = this.translate.instant('common.securityAdvisor.installed'); // 'Installed';
 				} else {
 					vpn.status = 1;
 				}
@@ -455,15 +479,15 @@ export class PageDashboardComponent implements OnInit {
 			const windowsHello = new Status();
 			windowsHello.status = 1;
 			windowsHello.id = 'windows-hello';
-			windowsHello.title = this.translate.instant('common.securityAdvisor.windowsHello');// 'Windows Hello';
-			windowsHello.detail = this.translate.instant('common.securityAdvisor.disabled');//'Disabled';
+			windowsHello.title = this.translate.instant('common.securityAdvisor.windowsHello'); // 'Windows Hello';
+			windowsHello.detail = this.translate.instant('common.securityAdvisor.disabled'); // 'Disabled';
 			windowsHello.path = 'security/windows-hello';
 			windowsHello.type = 'security';
 
 			if (response.windowsHello) {
 				if (response.windowsHello) {
 					windowsHello.status = 0;
-					windowsHello.detail = this.translate.instant('common.securityAdvisor.enabled');//'Enabled';
+					windowsHello.detail = this.translate.instant('common.securityAdvisor.enabled'); // 'Enabled';
 				} else {
 					windowsHello.status = 1;
 				}
