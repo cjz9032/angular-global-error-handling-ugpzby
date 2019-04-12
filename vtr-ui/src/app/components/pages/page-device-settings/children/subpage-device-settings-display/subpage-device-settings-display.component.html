@@ -83,7 +83,7 @@
 				[theme]="'white'"
 				(toggle)="onCardCollapse($event)">
 				<div class="alert alert-secondary no-camera-access"
-					*ngIf="!cameraPrivacyModeStatus.available">
+					*ngIf="!dataSource.permission">
 					<div>
 						<strong>Note:</strong> Lenovo Vantage does not have
 						permissions to access your camera. Please turn on access
@@ -96,7 +96,7 @@
 					</button>
 				</div>
 				<ul class="list-group list-group-flush"
-					*ngIf="cameraPrivacyModeStatus.available">
+					*ngIf="cameraPrivacyModeStatus.available && dataSource.permission">
 					<li class="pt-3">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
@@ -126,7 +126,7 @@
 							[resetTextAsButton]="true">
 							<div class="row">
 								<div class="col-12">
-									<vtr-camera-control [cameraSettings]="cameraDetails1"
+									<vtr-camera-control [cameraSettings]="dataSource"
 										[cameraFeatureAccess]="cameraFeatureAccess"
 										(brightnessChange)="onBrightnessChange($event)"
 										(contrastChange)="onContrastChange($event)"

@@ -61,14 +61,14 @@
 				(onClick)="install.launch()"
 				[label]="'security.antivirus.mcafee.launch' | translate"
 				[upperCaseLabel]="false"
-				*ngIf=" install | pipeInstall"></vtr-ui-button>
+				*ngIf="install"></vtr-ui-button>
 			<a class="d-block"
 				href="{{urlGetMcAfee}}"
 				target="_blank">
 				<vtr-ui-button [metricsItem]="'getMcafee'"
 					[label]="'security.antivirus.mcafee.getMacfee' | translate"
 					[upperCaseLabel]="false"
-					*ngIf="! install | pipeInstall"></vtr-ui-button>
+					*ngIf="!install"></vtr-ui-button>
 			</a>
 		</div>
 	</div>

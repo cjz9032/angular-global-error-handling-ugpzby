@@ -14,7 +14,7 @@
 	<label for="{{radioId}}">
 		<span class="label">{{label}}</span>
 
-		<span [ngClass]="'icomoon icomoon-'+getIconName(label)"></span>
+		<span *ngIf="!hideIcon" [ngClass]="'icomoon icomoon-'+getIconName(label)"></span>
 		<!--<fa-icon class="icon"
 			[icon]="['far', 'gem']"></fa-icon>-->
 		<span *ngIf="tooltip"

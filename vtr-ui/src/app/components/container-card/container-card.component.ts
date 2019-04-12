@@ -21,6 +21,8 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 	@Input() ratioX = 1;
 	@Input() ratioY = 1;
 	@Input() cornerShift: String = '';
+	@Input() order:number;
+	@Input() itemID:string;
 
 	ratio = 1;
 	containerHeight = 100;

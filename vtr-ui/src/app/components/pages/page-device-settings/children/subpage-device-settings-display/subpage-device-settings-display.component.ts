@@ -72,9 +72,9 @@ export class SubpageDeviceSettingsDisplayComponent
 		);
 		this.startEyeCareMonitor();
 		this.initEyecaremodeSettings();
-		this.getCameraDetails();
-		this.getCameraPrivacyModeStatus();
 
+		this.getCameraPrivacyModeStatus();
+		this.getCameraDetails();
 		this.statusChangedLocationPermission();
 
 	}
@@ -114,10 +114,11 @@ export class SubpageDeviceSettingsDisplayComponent
 			console.log('Inside');
 			this.displayService.getCameraSettingsInfo().then((response) => {
 				console.log('getCameraDetails.then', response);
-				console.log('response.exposure.supported.then', response.exposure.supported);
-				console.log('response.exposure.autoValue.then', response.exposure.autoValue);
-				this.cameraDetails1 = response;
-				if (this.cameraDetails1.exposure.supported === true && this.cameraDetails1.exposure.autoValue === false) {
+				console.log('getCameraDetails.then permission', response);
+				this.dataSource = response;
+				console.log('getCameraDetails.then permission', this.dataSource.permission);
+				this.cameraFeatureAccess.showAutoExposureSlider = false;
+				if (this.dataSource.exposure.supported === true && this.dataSource.exposure.autoValue === false) {
 					this.cameraFeatureAccess.showAutoExposureSlider = true;
 				}
 			});
