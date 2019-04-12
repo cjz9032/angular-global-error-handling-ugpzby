@@ -217,23 +217,26 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.intelligentCooling = false;
 		} else {
 			this.intelligentCooling = true;
-			this.radioPerformance = !event.switchValue;
+			this.setManualModeSetting('Performance');
 		}
 		this.setAutoModeSetting(event);
-
 	}
+
 	changeQuietCool(event) {
 		console.log('cool');
 		this.setManualModeSetting('Cool');
 	}
+
 	changePerformance(event) {
 		console.log('perform');
 		this.setManualModeSetting('Performance');
 	}
+
 	ngOnInit() {
 		this.getMachineInfo();
 		this.startMonitor();
 		this.getVantageToolBarStatus();
+		this.getManualModeSetting();
 	}
 
 	ngOnDestroy() {
@@ -381,14 +384,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 								this.toggleIntelligentCooling = false;
 								this.toggleIntelligentCoolingStatus = false;
 								this.intelligentCooling = true;
-								if (this.cQLCapability === false) {
-									this.SetPerformanceAndCool('performance');
-								} else {
-									this.getManualModeSetting();
-								}
-								//
-								// this.manualModeSettingStatus = 'error';
-
 							}
 						} else if (value === 5) {
 							this.showIntelligentCooling = 3;
@@ -407,23 +402,21 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 	private SetPerformanceAndCool(status: string) {
-		switch (status) {
+		switch (status.toLocaleLowerCase()) {
 			case 'cool':
-				console.log('manualModeSettingStatus: cool');
+				console.log('manualModeSettingStatus: Cool');
 				this.radioQuietCool = true;
-				//this.toggleIntelligentCooling = true;
-				//this.toggleIntelligentCoolingStatus = false;
-				//this.intelligentCooling = true;
+				this.radioPerformance = false;
 				break;
 			case 'performance':
+				console.log('manualModeSettingStatus: Performance');
 				this.radioPerformance = true;
-				//this.toggleIntelligentCooling = true;
-				//this.toggleIntelligentCoolingStatus = false;
-				//	this.intelligentCooling = true;
-				console.log('manualModeSettingStatus: performance');
+				this.radioQuietCool = false;
 				break;
 			case 'error':
-				this.toggleIntelligentCooling = false;
+				let event = { switchValue: true }
+				this.onIntelligentCoolingToggle(event);
+				this.toggleIntelligentCoolingStatus = true;
 				console.log('manualModeSettingStatus: error');
 				break;
 		}
@@ -457,7 +450,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					.setAutoModeSetting(event.switchValue)
 					.then((value: boolean) => {
 						console.log('setAutoModeSetting.then', value);
-
 					})
 					.catch(error => {
 						console.error('setAutoModeSetting', error);
@@ -474,7 +466,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					.setManualModeSetting(arg)
 					.then((value: boolean) => {
 						console.log('setManualModeSetting.then', value);
-						this.getManualModeSetting();
+						this.SetPerformanceAndCool(arg)
 					})
 					.catch(error => {
 						console.error('setManualModeSetting', error);
