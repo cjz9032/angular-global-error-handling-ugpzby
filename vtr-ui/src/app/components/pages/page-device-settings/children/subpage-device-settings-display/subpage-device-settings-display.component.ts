@@ -420,6 +420,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		console.log('called from eyecare monitor', JSON.stringify(resetData));
 		this.eyeCareDataSource.current = resetData.colorTemperature;
 		this.eyeCareModeStatus.status = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
+		this.enableSlider = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
 		this.sunsetToSunriseModeStatus.status = (resetData.autoEyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
 	}
 	public startEyeCareMonitor() {
