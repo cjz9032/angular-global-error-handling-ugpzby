@@ -43,7 +43,7 @@
 								*ngIf="!autoDolbyFeatureStatus.status && dolbyModeResponse.available">
 								<vtr-ui-circle-radio *ngFor="let dolbyMode of dolbyModeResponse.supporedModes"
 									theme="blue"
-													 [radioId]="'radio'| uniqueId"
+									[radioId]="'radio'| uniqueId"
 									[group]="radioGroupAutoDolbySettings"
 									[label]="dolbyMode | dolbyModesTranslation"
 									[value]='dolbyMode'
@@ -146,7 +146,7 @@
 					</li>
 
 					<li class=""
-					    *ngIf="microphoneProperties.AEC != undefined">
+						*ngIf="microphoneProperties.AEC != undefined">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.acoustic.title' | translate"
 							name="'device.deviceSettings.audio.microphone.acoustic.title' | translate"
 							componentName="Acoustic Echo Cancellation"
@@ -177,13 +177,13 @@
 							[theme]="'white'">
 							<div class="row no-gutters">
 								<vtr-ui-circle-radio *ngFor="let optimizeMode of microOptimizeModeResponse.modes"
-														[radioId]="'radio'| uniqueId"
-														[group]="radioOptimiseMicSettings"
-														[label]="(optimizeMode?optimizeMode:'LE-Multiple-voices2x') | separatePascalCase"
-														[value]='optimizeMode'
-														[checked]="optimizeMode === microOptimizeModeResponse.current"
-														[disabled]="microphoneProperties.disableEffect"
-														(change)="onOptimizeModesRadioChange($event)">
+									[radioId]="'radio'| uniqueId"
+									[group]="radioOptimiseMicSettings"
+									[label]="(optimizeMode?optimizeMode:'LE-Multiple-voices2x') | separatePascalCase"
+									[value]='optimizeMode'
+									[checked]="optimizeMode === microOptimizeModeResponse.current"
+									[disabled]="microphoneProperties.disableEffect"
+									(change)="onOptimizeModesRadioChange($event)">
 								</vtr-ui-circle-radio>
 							</div>
 						</vtr-ui-row-switch>

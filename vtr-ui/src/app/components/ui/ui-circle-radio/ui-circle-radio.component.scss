@@ -14,7 +14,7 @@
 		position: absolute;
 	}
 
-	.checkbox-custom + .checkbox-custom-label > .icomoon {
+	.checkbox-custom+.checkbox-custom-label>.icomoon {
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -23,18 +23,17 @@
 		margin: 0;
 	}
 
-	.checkbox-custom + .checkbox-custom-label > .icomoon::before {
-		color: #4a81fd;;
-
+	.checkbox-custom+.checkbox-custom-label>.icomoon::before {
+		color: $main;
 	}
 
-	.checkbox-custom:checked + .checkbox-custom-label > .icomoon::before {
+	.checkbox-custom:checked+.checkbox-custom-label>.icomoon::before {
 		color: $light;
 
 	}
 
 
-	.checkbox-custom + .checkbox-custom-label {
+	.checkbox-custom+.checkbox-custom-label {
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -56,14 +55,11 @@
 		right: 0;
 		font-weight: 700;
 		font-size: 1.2rem;
-		color:$shade_light;
+		color: $shade_light;
 
 	}
 
-	.checkbox-custom:checked + .checkbox-custom-label {
-		background-color: #4a81fd;
+	.checkbox-custom:checked+.checkbox-custom-label {
+		background-color: $main;
 	}
 }
-
-
-

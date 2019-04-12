@@ -1,9 +1,9 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'vtr-ui-circle-radio',
-  templateUrl: './ui-circle-radio.component.html',
-  styleUrls: ['./ui-circle-radio.component.scss']
+	selector: 'vtr-ui-circle-radio',
+	templateUrl: './ui-circle-radio.component.html',
+	styleUrls: ['./ui-circle-radio.component.scss']
 })
 export class UiCircleRadioComponent implements OnInit {
 
@@ -14,7 +14,7 @@ export class UiCircleRadioComponent implements OnInit {
 	@Input() value: string;
 	@Input() checked: boolean;
 	@Input() disabled = false;
-	@Input() theme:string;
+	@Input() theme: string;
 
 	@Output() change: EventEmitter<any> = new EventEmitter();
 
@@ -27,7 +27,7 @@ export class UiCircleRadioComponent implements OnInit {
 		this.change.emit(event);
 	}
 
-	getIconName(name:string){
+	getIconName(name: string) {
 		return name.toLowerCase();
 	}
 
