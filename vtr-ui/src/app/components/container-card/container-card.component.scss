@@ -166,6 +166,10 @@
 	}
 
 	&.card-article {
+		.row {
+			max-width: 100%;
+		}
+
 		.image-container {
 			height: 60%;
 		}
@@ -184,9 +188,18 @@
 		.content {
 			padding: 3rem 4rem;
 			height: 40%;
+			@media #{$mediaquery_8} {
+				padding: 1.5rem 2rem;
+			}
 
 			.title {
 				font-weight: $weight_light;
+				@media #{$mediaquery_7} {
+					height: 3rem;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
 			}
 
 			.read-more {

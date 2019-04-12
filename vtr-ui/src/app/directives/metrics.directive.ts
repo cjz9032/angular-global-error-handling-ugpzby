@@ -17,6 +17,10 @@ export class MetricsDirective {
 
 	private metrics: any;
 
+
+
+
+
 	@Input() metricsItem: string;
 	@Input() metricsEvent: string;
 	@Input() metricsValue: string;
@@ -88,6 +92,7 @@ export class MetricsDirective {
 
 	@HostListener('click', ['$event.target'])
 	onclick(target) {
+		 console.log('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
 		if(!this.metricsParent){
 			this.metricsParent = this.activatedRoute.snapshot.data['pageName'];
 		}

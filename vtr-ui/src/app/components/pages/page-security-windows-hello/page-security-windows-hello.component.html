@@ -104,12 +104,15 @@
 														<div class="col">
 															<div class="text-regular">
 																{{'security.windowsHello.visitAndRegister' | translate}}
-																<vtr-translate-picker-base [translateString]="'security.windowsHello.visitInSettings' | translate"
-																	[metricsItem]="'setUpWindowsHello'"
-																	[href]="'javascript:void(0)'"
-																	[metricsParent]="'security.windowsHello'"
-																	[onClick]="setUpWindowsHello.bind(this)">
-																</vtr-translate-picker-base>
+																<span *vtrTranslate="'security.windowsHello.visitInSettings' | translate">
+																	<a vtrMetrics 
+																		metricsEvent="itemClick" 
+																		metricsItem="setUpWindowsHello"
+																		metricsParent="security.windowsHello"
+																		href="javascript:void(0)"
+																		(click)="setUpWindowsHello()"
+																		target="_blank"></a>
+																</span>
 															</div>
 														</div>
 													</div>
@@ -187,12 +190,13 @@
 								<div class="row top-line">
 									<div class="col">
 										<div class="list-heading">{{'security.windowsHello.poweredByWindowsHello' | translate}}</div>
-										<p class="text-regular">
-											<vtr-translate-picker-base [translateString]="'security.windowsHello.privacyPolicy' | translate"
-												[metricsItem]="'privacyPolicy'"
-												[href]="'https://support.microsoft.com/en-us/help/4468253/windows-hello-and-privacy-microsoft-privacy'"
-												[metricsParent]="'security.windowsHello'">
-											</vtr-translate-picker-base>
+										<p class="text-regular" *vtrTranslate="'security.windowsHello.privacyPolicy' | translate">
+											<a vtrMetrics 
+												metricsEvent="itemClick" 
+												metricsItem="privacyPolicy"
+												metricsParent="security.windowsHello"
+												href="https://support.microsoft.com/en-us/help/4468253/windows-hello-and-privacy-microsoft-privacy"
+												target="_blank"></a>
 										</p>
 									</div>
 									<div class="pull right"><img class="dashlane_logo_teal"
@@ -223,12 +227,15 @@
 												<li>
 													<div class="text-regular">
 														{{'security.windowsHello.visitAndRegister' | translate}}
-														<vtr-translate-picker-base [translateString]="'security.windowsHello.visitInSettings' | translate"
-															[metricsItem]="'setUpWindowsHello'"
-															[href]="'javascript:void(0)'"
-															[metricsParent]="'security.windowsHello'"
-															[onClick]="setUpWindowsHello.bind(this)">
-														</vtr-translate-picker-base>
+														<span *vtrTranslate="'security.windowsHello.visitInSettings' | translate">
+															<a vtrMetrics 
+																metricsEvent="itemClick" 
+																metricsItem="setUpWindowsHello"
+																metricsParent="security.windowsHello"
+																href="javascript:void(0)"
+																(click)="setUpWindowsHello()"
+																target="_blank"></a>
+														</span>
 													</div>
 												</li>
 												<li>

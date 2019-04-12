@@ -80,6 +80,7 @@ import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-we
 import { ModalLenovoIdComponent } from './components/modal/modal-lenovo-id/modal-lenovo-id.component';
 import { ModalWifiSecurityInvitationComponent } from './components/modal/modal-wifi-security-invitation/modal-wifi-security-invitation.component';
 import { ModalWifiSecuriryLocationNoticeComponent } from './components/modal/modal-wifi-securiry-location-notice/modal-wifi-securiry-location-notice.component';
+import { ModalHomeProtectionLocationNoticeComponent } from './components/modal/modal-home-protection-location-notice/modal-home-protection-location-notice.component';
 
 // APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
@@ -133,7 +134,7 @@ import { WidgetSecurityStatusComponent } from './components/widgets/widget-secur
 
 
 import { MetricsDirective } from './directives/metrics.directive';
-import { DynamicDirective } from './directives/dynamic.directive';
+import { TranslateDirective } from './directives/translate.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
 import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
@@ -161,11 +162,6 @@ import { SubTransformPipe } from './pipe/security-antivirus/sub-transform.pipe';
 import { DateClassPipe } from './pipe/security-antivirus/date-class.pipe';
 import { ModalAboutComponent } from './components/modal/modal-about/modal-about.component';
 import { WifiClassPipe } from './pipe/security-landing/wifi-class.pipe';
-import { TagPickerPipe } from './pipe/translation/tag-picker.pipe';
-import { TextPickerPipe } from './pipe/translation/text-picker.pipe';
-import { WidgetTranslatePickerComponent } from './components/widgets/widget-translate-picker/widget-translate-picker.component';
-import { TranslatePickerBaseComponent } from './components/widgets/widget-translate-picker/base/translate-picker-base/translate-picker-base.component';
-import { TranslatePickerTailComponent } from './components/widgets/widget-translate-picker/base//translate-picker-tail/translate-picker-tail.component';
 import { JoinclassPipe } from './pipe/security-wifi/join-class.pipe';
 import { SuccessClassPipe } from './pipe/security-wifi/success-class.pipe';
 
@@ -255,7 +251,7 @@ library.add(fal);
 		StatusTextPipe,
 		ModalBatteryChargeThresholdComponent,
 		MetricsDirective,
-		DynamicDirective,
+		TranslateDirective,
 		InstallationHistoryComponent,
 		SeparatePascalCasePipe,
 		ModalCommonConfirmationComponent,
@@ -272,6 +268,7 @@ library.add(fal);
 		DolbyModesTranslationPipe,
 		ModalWifiSecurityInvitationComponent,
 		ModalWifiSecuriryLocationNoticeComponent,
+		ModalHomeProtectionLocationNoticeComponent,
 		UiLandingFeatureComponent,
 		UiObjectTitleComponent,
 		UiSecurityStatusbarComponent,
@@ -289,11 +286,6 @@ library.add(fal);
 		DateClassPipe,
 		ModalAboutComponent,
 		WifiClassPipe,
-		TagPickerPipe,
-		TextPickerPipe,
-		WidgetTranslatePickerComponent,
-		TranslatePickerBaseComponent,
-		TranslatePickerTailComponent,
 		JoinclassPipe,
 		SuccessClassPipe
 	],
@@ -337,6 +329,7 @@ library.add(fal);
 		ModalThreatLocatorComponent,
 		ModalWifiSecurityInvitationComponent,
 		ModalWifiSecuriryLocationNoticeComponent,
+		ModalHomeProtectionLocationNoticeComponent,
 		ModalUpdateChangeLogComponent,
 		ModalAboutComponent,
 	],

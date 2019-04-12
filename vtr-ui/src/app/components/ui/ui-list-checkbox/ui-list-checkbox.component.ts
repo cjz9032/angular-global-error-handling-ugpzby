@@ -54,7 +54,10 @@ export class UiListCheckboxComponent implements OnInit {
 			if (this.readMeUrl && this.readMeUrl.length > 0 && this.readMeUrl.startsWith('http', 0)) {
 				this.isReadMeAvailable = true;
 			}
-			if (update.currentInstalledVersion && update.currentInstalledVersion.trim().length === 0) {
+
+			if (update.currentInstalledVersion === null || update.currentInstalledVersion === undefined) {
+				this.installedVersion = 'device.systemUpdates.notInstalled';
+			} else if (update.currentInstalledVersion.trim() === '' || update.currentInstalledVersion.trim().length === 0) {
 				this.installedVersion = 'device.systemUpdates.notInstalled';
 			} else if (update.currentInstalledVersion === '0') {
 				this.installedVersion = 'device.systemUpdates.notAvailable';
