@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, OnChanges, SimpleChanges } from '@angular/core';
 import { ChangeContext } from 'ng5-slider';
 import { EyeCareMode, SunsetToSunriseStatus } from 'src/app/data-models/camera/eyeCareMode.model';
 
@@ -7,18 +7,19 @@ import { EyeCareMode, SunsetToSunriseStatus } from 'src/app/data-models/camera/e
 	templateUrl: './eye-care-mode.component.html',
 	styleUrls: ['./eye-care-mode.component.scss']
 })
-export class EyeCareModeComponent implements OnInit {
+export class EyeCareModeComponent implements OnInit, OnChanges {
 	@Input() eyeCareModeSettings: EyeCareMode;
 	@Input() enableSlider: boolean;
 	@Input() enableSunsetToSunrise: boolean;
-	@Input() sunsetToSunriseStatus: SunsetToSunriseStatus;
+	@Input() sunsetToSunriseStatus: any;
 	@Input() manualRefresh: any;
 
 	@Output() eyeCareTemparatureChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() eyeCareTemparatureValueChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() resetTemparature: EventEmitter<any> = new EventEmitter();
 	@Output() sunsetToSunrise = new EventEmitter<any>();
-	constructor() { }
+
+	public sunriseToSunsetText = '';
 
 	public stepsArray = [
 		{ value: 1 },
@@ -27,10 +28,15 @@ export class EyeCareModeComponent implements OnInit {
 		{ value: 4 }
 	];
 
-	ngOnInit() {
+	constructor() { }
 
+	ngOnInit() { }
+
+	ngOnChanges(changes: SimpleChanges): void {
+		if (changes['sunsetToSunriseStatus'] && !changes['sunsetToSunriseStatus'].firstChange) {
+			this.sunriseToSunsetText = `(${this.sunsetToSunriseStatus.sunsettime} - ${this.sunsetToSunriseStatus.sunrisetime})`;
+		}
 	}
-
 
 	public legendPosition(index: number): number {
 		if (index === 1) {
