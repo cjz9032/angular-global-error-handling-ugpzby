@@ -97,11 +97,15 @@ export class DisplayService {
 		return undefined;
 	}
 	public getCameraSettingsInfo(): Promise<any> {
-		if (this.cameraSettings) {
-			console.log('this.cameraSettings', this.cameraSettings);
-			return this.cameraSettings.getCameraSettings();
+		try {
+			if (this.cameraSettings) {
+				console.log('this.cameraSettings', this.cameraSettings);
+				return this.cameraSettings.getCameraSettings();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
 		}
-		return undefined;
 	}
 	public setCameraBrightness(value: number): Promise<boolean> {
 		if (this.cameraSettings) {
