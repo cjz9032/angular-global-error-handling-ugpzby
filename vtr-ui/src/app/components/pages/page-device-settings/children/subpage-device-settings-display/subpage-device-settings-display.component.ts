@@ -260,6 +260,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.log('temparature reset data', resetData);
 						this.eyeCareDataSource.current = resetData.colorTemperature;
 						this.eyeCareModeStatus.status = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
+						this.enableSlider = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
 						this.sunsetToSunriseModeStatus.status = (resetData.autoEyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
 						console.log('sunsetToSunriseModeStatus.status from temparature reset data', this.sunsetToSunriseModeStatus.status);
 						// this.getDisplayColorTemperature();
@@ -280,6 +281,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						if (response.result === true) {
 							this.eyeCareDataSource.current = response.colorTemperature;
 							this.eyeCareModeStatus.status = response.eyecaremodeState;
+							this.enableSlider = response.eyecaremodeState;
 						}
 
 					}).catch(error => {
@@ -418,6 +420,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		console.log('called from eyecare monitor', JSON.stringify(resetData));
 		this.eyeCareDataSource.current = resetData.colorTemperature;
 		this.eyeCareModeStatus.status = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
+		this.enableSlider = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
 		this.sunsetToSunriseModeStatus.status = (resetData.autoEyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
 	}
 	public startEyeCareMonitor() {
