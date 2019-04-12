@@ -4,8 +4,6 @@ import {
 	Input,
 	Output,
 	EventEmitter,
-	SimpleChanges,
-	OnChanges,
 	AfterContentChecked
 } from '@angular/core';
 import { Options, ChangeContext, ValueToPositionFunction } from 'ng5-slider';
@@ -30,14 +28,15 @@ export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 	@Input() maxValueLegend = ''; // label to display at the end of slider
 	@Input() legendPositionFunction: ValueToPositionFunction; // function to handle legend position for Eye Care
 	@Input() stepsArray: Array<any>; // array with legend value for Eye care
+	@Input() manualRefresh: any;
 
 	@Output() change: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() valueChange: EventEmitter<ChangeContext> = new EventEmitter();
 
-	constructor() {}
+	constructor() { }
 
 	ngAfterContentChecked() {
-		this.options = Object.assign({}, this.options, {disabled: this.enableSlider});
+		this.options = Object.assign({}, this.options, { disabled: this.enableSlider });
 	}
 
 	ngOnInit() {

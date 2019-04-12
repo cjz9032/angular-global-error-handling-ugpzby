@@ -10,7 +10,7 @@
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-lg-8 col-sm-12 vtr-page-left-column">
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 vtr-page-left-column">
 						<div class="vtr-subpage">
 							<div class="vtr-page-shift-up">
 								<div class="vtr-page-security-internet">
@@ -48,13 +48,15 @@
 												<div class="col-12">
 													<vtr-ui-button *ngIf="statusItem.status === 'not-installed'"
 														(click)="getSurfEasy()"
-														[metricsItem]="'security.vpn.getSufEasy' | translate"
-														[label]="'Get SurfEasy'">
+														[metricsItem]="getSufEasy"
+														[metricsParent]="'security.internet'"
+														[label]="'security.vpn.getSufEasy' | translate">
 													</vtr-ui-button>
 													<vtr-ui-button *ngIf="statusItem.status === 'installed'"
 														(click)="openSurfEasy()"
-														[metricsItem]="'security.vpn.openSufEasy' | translate"
-														[label]="'Open SurfEasy'">
+														[metricsItem]="openSufEasy"
+														[metricsParent]="'security.internet'"
+														[label]="'security.vpn.openSufEasy' | translate">
 													</vtr-ui-button>
 												</div>
 											</div>
@@ -317,13 +319,19 @@
 								<div class="row top-line">
 									<div class="col">
 										<div class="list-heading">{{'security.vpn.poweredBySurfEasy' | translate}}</div>
-										<p class="text-regular">
-											<vtr-widget-translate-picker [translateString]="'security.vpn.privacyPolicyAndTermsOfService' | translate"
-												[firstMetricsItem]="'privacyPolicy'" [firstMetricsParent]="'security.internet'"
-												[firstHref]="'https://www.surfeasy.com/privacy_policy/'"
-												[secondMetricsItem]="'termsOfServices'" [secondMetricsParent]="'security.internet'"
-												[secondHref]="'https://www.surfeasy.com/terms_of_service/'">
-											</vtr-widget-translate-picker>
+										<p class="text-regular" *vtrTranslate="'security.vpn.privacyPolicyAndTermsOfService' | translate">
+											<a vtrMetrics 
+												metricsEvent="itemClick" 
+												metricsItem="privacyPolicy"
+												metricsParent="security.internet"
+												href="https://www.surfeasy.com/privacy_policy/"
+												target="_blank"></a>
+											<a vtrMetrics 
+												metricsEvent="itemClick" 
+												metricsItem="termsOfServices"
+												metricsParent="security.internet"
+												href="https://www.surfeasy.com/terms_of_service/"
+												target="_blank"></a>
 										</p>
 									</div>
 									<div class="pull right align-self-center"><img class="surfeasy_logo_teal"
@@ -332,7 +340,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-sm-12 vtr-page-right-column">
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 								<!--Start of Security Card Advisor-->

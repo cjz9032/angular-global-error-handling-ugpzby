@@ -7,7 +7,7 @@
 	<div class="row vtr-page-content">
 		<div class="col vtr-col">
 			<div class="row">
-				<div class="col-lg-8 col-sm-12 vtr-page-left-column">
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 vtr-page-left-column">
 					<div class="vtr-page-shift-up">
 						<div class="vtr-page-left-column-inner">
 							<div class="container-fluid">
@@ -54,7 +54,7 @@
 																<fa-icon class="wifi-font-icon"
 																	[icon]="['fas', 'wifi']"></fa-icon>
 															</div>
-															<div class="col-10">{{'security.landing.maliciousNetwork' | translate:{maliciousWifi:maliciousWifi} }}</div>
+															<div class="col-10">{{'security.landing.maliciousNetwork' | translate:{maliciousWifi:maliciousWifi ? maliciousWifi : 0} }}</div>
 														</div>
 														<ul class="chevron-list">
 															<li *ngFor="let wifi of wifiHistory.slice(0, 2);"
@@ -98,7 +98,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-sm-12 vtr-page-right-column">
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 vtr-page-right-column">
 					<div class="vtr-page-shift-up">
 						<div class="container-fluid">
 							<div class="row">

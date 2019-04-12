@@ -132,6 +132,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				.then((featureStatus: FeatureStatus) => {
 					console.log('getMicrophoneStatus.then', featureStatus);
 					this.microphoneStatus = featureStatus;
+					this.commonService.setSessionStorageValue(SessionStorageKey.DashboardMicrophone, featureStatus);
 				})
 				.catch(error => {
 					console.error('getCameraStatus', error);

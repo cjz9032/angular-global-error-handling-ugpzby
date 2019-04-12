@@ -96,23 +96,36 @@ export class PageSecurityComponent implements OnInit {
 		this.homeProtection = this.securityAdvisor.homeProtection;
 
 		this.createViewModels();
+		this.score = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingScore);
 	}
-	
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		this.securityAdvisor.refresh().then(() => {
-			this.getScore();
-			this.getMaliciousWifi();
-		});
+		this.refreshAll();
 	}
 
 	ngOnInit() {
-		this.securityAdvisor.refresh().then(() => {
+		this.refreshAll();
+		this.fetchCMSArticles();
+	}
+
+	private refreshAll() {
+		this.securityAdvisor.antivirus.refresh().then(() => {
+			this.getScore();
+		});
+		this.securityAdvisor.wifiSecurity.refresh().then(() => {
 			this.getScore();
 			this.getMaliciousWifi();
 		});
-		this.fetchCMSArticles();
+		this.securityAdvisor.passwordManager.refresh().then(() => {
+			this.getScore();
+		});
+		this.securityAdvisor.vpn.refresh().then(() => {
+			this.getScore();
+		});
+		this.securityAdvisor.windowsHello.refresh().then(() => {
+			this.getScore();
+		});
 	}
 
 	createViewModels() {
@@ -122,7 +135,6 @@ export class PageSecurityComponent implements OnInit {
 		this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.wifiSecurity, this.commonService, this.translate);
 		this.homeProtectionLandingViewModel = new HomeProtectionLandingViewModel(this.translate);
 		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
-
 		const windowsHello = this.securityAdvisor.windowsHello;
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		if (cacheShowWindowsHello) {
@@ -193,6 +205,7 @@ export class PageSecurityComponent implements OnInit {
 			}
 		});
 		this.score = scoreTotal;
+		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingScore, this.score);
 	}
 
 	fetchCMSArticles() {

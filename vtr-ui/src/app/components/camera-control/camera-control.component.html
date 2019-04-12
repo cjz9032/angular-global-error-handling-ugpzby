@@ -17,6 +17,7 @@
 					<vtr-ui-range-slider [step]="cameraSettings.brightness.step"
 						[minValue]="cameraSettings.brightness.min"
 						[maxValue]="cameraSettings.brightness.max"
+						[manualRefresh]="manualRefresh"
 						[(value)]="cameraSettings.brightness.value"
 						(change)="onBrightnessSliderChange($event)">
 					</vtr-ui-range-slider>
@@ -29,6 +30,7 @@
 					<vtr-ui-range-slider [step]="cameraSettings.contrast.step"
 						[minValue]="cameraSettings.contrast.min"
 						[maxValue]="cameraSettings.contrast.max"
+						[manualRefresh]="manualRefresh"
 						[(value)]="cameraSettings.contrast.value"
 						(change)="onContrastSliderChange($event)">
 					</vtr-ui-range-slider>
@@ -48,6 +50,7 @@
 						[step]="cameraSettings.exposure.step"
 						[minValue]="cameraSettings.exposure.min"
 						[maxValue]="cameraSettings.exposure.max"
+						[manualRefresh]="manualRefresh"
 						[(value)]="cameraSettings.exposure.value"
 						(change)="onExposureSliderChange($event)">
 					</vtr-ui-range-slider>
