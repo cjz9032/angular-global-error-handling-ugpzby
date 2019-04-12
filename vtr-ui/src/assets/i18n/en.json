@@ -719,6 +719,13 @@
 			"howToStart": "How do I start using Windows Hello?"
 		}
 	},
+	"lenovoId": {
+		"login": "Login",
+		"logout": "Logout",
+		"user": "User",
+		"welcomeText": "Looking energized today {{firstName}}!",
+		"helloUser": "Hello, {{firstName}}!"
+	},
 	"faq": {
 		"footer": {
 			"title": "Not finding what you are looking for?",

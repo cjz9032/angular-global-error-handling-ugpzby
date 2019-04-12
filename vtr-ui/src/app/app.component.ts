@@ -99,20 +99,21 @@ export class AppComponent implements OnInit {
 		const urlParams = new URLSearchParams(window.location.search);
 		this.devService.writeLog('GOT PARAMS', urlParams.toString());
 
-		if (this.deviceService.isShellAvailable) {
-			// When startup try to login Lenovo ID silently (in background),
-			//  if user has already logged in before, this call will login automatically and update UI
-			this.deviceService.getMachineInfo().then((machineInfo) => {
-				if (machineInfo.country !== 'cn') {
-					self.userService.loginSilently();
-				} else {
-					self.devService.writeLog('Do not login silently for China');
-				}
-			}, error => {
-				self.devService.writeLog('getMachineInfo() failed ' + error);
+		// When startup try to login Lenovo ID silently (in background),
+		//  if user has already logged in before, this call will login automatically and update UI
+		this.deviceService.getMachineInfo().then((machineInfo) => {
+			if (machineInfo.country != 'cn' && machineInfo.cpuArchitecture.toLowerCase().indexOf('arm') != 0) {
+				self.userService.isLenovoIdSupported = true;
 				self.userService.loginSilently();
-			});
-		}
+			} else {
+				self.devService.writeLog('Do not login silently for China or ARM');
+			}
+		}, error => {
+			self.userService.isLenovoIdSupported = true;
+			self.devService.writeLog('getMachineInfo() failed ' + error);
+			self.userService.loginSilently();
+		});
+
 		/********* add this for navigation within a page **************/
 		this.router.events.subscribe(s => {
 			if (s instanceof NavigationEnd) {

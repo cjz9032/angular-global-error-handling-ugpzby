@@ -19,11 +19,12 @@
 								<span class="update-title">
 									{{item.packageDesc}}</span>
 							</label>
-						</div>
-						<div class="button-box pl-1"
-							*ngIf="item.packageRebootType === 'RebootForced'">
-							<div class="btn-round-sm">
-								<fa-icon [icon]="['fas', 'undo']"></fa-icon> Reboot required
+
+							<div class="button-box pl-1"
+								*ngIf="item.packageRebootType === 'RebootForced'">
+								<div class="btn-round-sm">
+									<fa-icon [icon]="['fas', 'undo']"></fa-icon> Reboot required
+								</div>
 							</div>
 						</div>
 						<a href="javascript:void();">
