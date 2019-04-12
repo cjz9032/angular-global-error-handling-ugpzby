@@ -14,11 +14,13 @@
 				componentName="display"
 				[isCollapsed]="false"
 				[allowCollapse]="true"
-				[theme]="'white'">
+				[theme]="'white'"
+				(toggle)="onCardCollapse($event)">
 				<ul class="list-group list-group-flush">
 					<li class="pt-3"
 						*ngIf="eyeCareModeStatus.available">
-						<vtr-ui-row-switch [title]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
 							componentName="Eye Care Mode"
 							name="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
 							[caption]=""
@@ -37,6 +39,7 @@
 										[enableSlider]="!enableSlider"
 										[enableSunsetToSunrise]="enableSunsetToSunrise"
 										[sunsetToSunriseStatus]="sunsetToSunriseModeStatus"
+										[manualRefresh]="manualRefresh"
 										(eyeCareTemparatureChange)="onEyeCareTemparatureChange($event)"
 										(resetTemparature)="onResetTemparature($event)"
 										(sunsetToSunrise)="onSunsetToSunrise($event)"></vtr-eye-care-mode>
@@ -77,7 +80,8 @@
 				componentName="Camera"
 				[isCollapsed]="false"
 				[allowCollapse]="true"
-				[theme]="'white'">
+				[theme]="'white'"
+				(toggle)="onCardCollapse($event)">
 				<div class="alert alert-secondary no-camera-access"
 					*ngIf="!cameraPrivacyModeStatus.available">
 					<div>
@@ -94,7 +98,8 @@
 				<ul class="list-group list-group-flush"
 					*ngIf="cameraPrivacyModeStatus.available">
 					<li class="pt-3">
-						<vtr-ui-row-switch [title]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
 							componentName="Camera Privacy Mode"
 							name="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
 							[isSwitchVisible]="true"
@@ -106,7 +111,8 @@
 						</vtr-ui-row-switch>
 					</li>
 					<li class="pt-3">
-						<vtr-ui-row-switch [title]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
 							componentName="Camera"
 							name="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
 							[type]="'Camera'"

@@ -1,16 +1,13 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, EventEmitter } from '@angular/core';
 import { CameraDetail, ICameraSettingsResponse, CameraFeatureAccess } from 'src/app/data-models/camera/camera-detail.model';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { DisplayService } from 'src/app/services/display/display.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { ChangeContext } from 'ng5-slider';
 import { EyeCareMode, SunsetToSunriseStatus } from 'src/app/data-models/camera/eyeCareMode.model';
 import { CommonService } from 'src/app/services/common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
-import { promise } from 'protractor';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 enum defaultTemparature {
 	defaultValue = 4500
@@ -36,6 +33,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public enableSlider = false;
 	public initEyecare = 0;
 	public showHideAutoExposureSlider = false;
+	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	headerMenuItems = [
@@ -441,7 +439,12 @@ export class SubpageDeviceSettingsDisplayComponent
 		if (this.displayService.isShellAvailable) {
 			this.displayService
 				.stopEyeCareMonitor();
+		}
+	}
 
+	public onCardCollapse(isCollapsed: boolean) {
+		if (!isCollapsed) {
+			this.manualRefresh.emit();
 		}
 	}
 }

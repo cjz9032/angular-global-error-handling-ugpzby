@@ -1,8 +1,6 @@
-import { Component, OnInit, Input, EventEmitter, Output, AfterContentChecked } from '@angular/core';
-import { IEyeCareModeResponse } from 'src/app/data-models/camera/camera-detail.model';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { ChangeContext } from 'ng5-slider';
-import { EyeCareMode, SunsetToSunriseStatus} from 'src/app/data-models/camera/eyeCareMode.model';
-import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import { EyeCareMode, SunsetToSunriseStatus } from 'src/app/data-models/camera/eyeCareMode.model';
 
 @Component({
 	selector: 'vtr-eye-care-mode',
@@ -14,6 +12,8 @@ export class EyeCareModeComponent implements OnInit {
 	@Input() enableSlider: boolean;
 	@Input() enableSunsetToSunrise: boolean;
 	@Input() sunsetToSunriseStatus: SunsetToSunriseStatus;
+	@Input() manualRefresh: any;
+
 	@Output() eyeCareTemparatureChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() eyeCareTemparatureValueChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() resetTemparature: EventEmitter<any> = new EventEmitter();
