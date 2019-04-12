@@ -34,17 +34,17 @@
 					</vtr-ui-range-slider>
 				</li>
 				<li class="list-group-item"
-					*ngIf="cameraSettings.exposure.supported">
+					*ngIf="cameraSettings.exposure.autoModeSupported">
 					<div class="d-flex justify-content-between">
 						<div class="slider-item-text text-uppercase">
 							Auto Exposure
 						</div>
 						<div class="float-right">
-							<vtr-ui-switch-onoff [value]="cameraSettings.exposure.autoModeSupported"
+							<vtr-ui-switch-onoff [value]="cameraSettings.exposure.autoValue"
 								(toggle)="onAutoExposureChange($event)"></vtr-ui-switch-onoff>
 						</div>
 					</div>
-					<vtr-ui-range-slider *ngIf="showAutoExposureSlider"
+					<vtr-ui-range-slider *ngIf="cameraFeatureAccess.showAutoExposureSlider"
 						[step]="cameraSettings.exposure.step"
 						[minValue]="cameraSettings.exposure.min"
 						[maxValue]="cameraSettings.exposure.max"

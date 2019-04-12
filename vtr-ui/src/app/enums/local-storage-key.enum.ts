@@ -27,6 +27,7 @@ export enum LocalStorageKey {
 	SecurityHomeProtectionFamilyId = '[LocalStorageKey] SecurityHomeProtectionFamilyId',
 	SecurityLandingAntivirusStatus = '[LocalStorageKey] SecurityLandingAntivirusStatus',
 	SecurityLandingAntivirusFirewallStatus = '[LocalStorageKey] SecurityLandingAntivirusFirewallStatus',
+	SecurityLandingWindowsHelloFingerprintStatus = '[LocalStorageKey] SecurityLandingWindowsHelloFingerprintStatus',
 	DesktopMachine = '[LocalStorageKey] DesktopMachine',
 	HadRunApp = '[LocalStorageKey] HadRunApp',
 }

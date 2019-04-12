@@ -71,6 +71,8 @@ export class PageDashboardComponent implements OnInit {
 			// this.getSecurityStatus();
 		}
 
+		this.setDefaultCMSContent();
+
 		const queryOptions = {
 			'Page': 'dashboard',
 			'Lang': 'EN',
@@ -142,6 +144,107 @@ export class PageDashboardComponent implements OnInit {
 	// }
 
 	public onConnectivityClick($event: any) {
+	}
+
+	private setDefaultCMSContent() {
+		this.heroBannerItems = [{
+			albumId: 1,
+			id: 1,
+			source: "Vantage Beta",
+			title: "Welcome to the next generation of Lenovo Vantage!",
+			url: "./../../../../assets/cms-cache/Vantage3Hero-zone0.png",
+			ActionLink: null
+		}];
+
+		this.cardContentPositionB = {
+			Title: "",
+			ShortTitle: "",
+			Description: "",
+			FeatureImage: "./../../../../assets/cms-cache/Alexa4x3-zone1.png",
+			Action: "",
+			ActionType: "External",
+			ActionLink: null,
+			BrandName: "",
+			BrandImage: "",
+			Priority: "P1",
+			Page: "dashboard",
+			Template: "half-width-title-description-link-image",
+			Position: "position-B",
+			ExpirationDate: null,
+			Filters: null
+		};
+
+		this.cardContentPositionC = {
+			Title: "",
+			ShortTitle: "",
+			Description: "",
+			FeatureImage: "./../../../../assets/cms-cache/Security4x3-zone2.png",
+			Action: "",
+			ActionType: "External",
+			ActionLink: null,
+			BrandName: "",
+			BrandImage: "",
+			Priority: "P1",
+			Page: "dashboard",
+			Template: "half-width-title-description-link-image",
+			Position: "position-C",
+			ExpirationDate: null,
+			Filters: null
+		};
+
+		this.cardContentPositionD = {
+			Title: "",
+			ShortTitle: "",
+			Description: "",
+			FeatureImage: "./../../../../assets/cms-cache/Gamestore8x3-zone3.png",
+			Action: "",
+			ActionType: "External",
+			ActionLink: null,
+			BrandName: "",
+			BrandImage: "",
+			Priority: "P1",
+			Page: "dashboard",
+			Template: "full-width-title-image-background",
+			Position: "position-D",
+			ExpirationDate: null,
+			Filters: null
+		};
+
+		this.cardContentPositionE = {
+			Title: "",
+			ShortTitle: "",
+			Description: "",
+			FeatureImage: "./../../../../assets/cms-cache/content-card-4x4-support.jpg",
+			Action: "",
+			ActionType: "External",
+			ActionLink: null,
+			BrandName: "",
+			BrandImage: "",
+			Priority: "P1",
+			Page: "dashboard",
+			Template: "half-width-top-image-title-link",
+			Position: "position-E",
+			ExpirationDate: null,
+			Filters: null
+		};
+
+		this.cardContentPositionF = {
+			Title: "",
+			ShortTitle: "",
+			Description: "",
+			FeatureImage: "./../../../../assets/cms-cache/content-card-4x4-award.jpg",
+			Action: "",
+			ActionType: "External",
+			ActionLink: null,
+			BrandName: "",
+			BrandImage: "",
+			Priority: "P1",
+			Page: "dashboard",
+			Template: "half-width-top-image-title-link",
+			Position: "position-F",
+			ExpirationDate: null,
+			Filters: null
+		};
 	}
 
 	// private getFormatedTitle(title) {

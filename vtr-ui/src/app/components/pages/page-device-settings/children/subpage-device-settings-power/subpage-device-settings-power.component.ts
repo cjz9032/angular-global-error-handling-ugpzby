@@ -828,7 +828,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						this.vantageToolbarStatus = featureStatus;
 					})
 					.catch(error => {
-						console.error('getEyeCareModeState', error);
+						console.error('getVantageToolBarStatus', error);
 					});
 			}
 		} catch (error) {
@@ -844,7 +844,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						console.log('setVantageToolBarStatus.then', event.switchValue);
 						this.getVantageToolBarStatus();
 					}).catch(error => {
-						console.error('onEyeCareModeStatusToggle', error);
+						console.error('setVantageToolBarStatus', error);
 					});
 			}
 		} catch (error) {
