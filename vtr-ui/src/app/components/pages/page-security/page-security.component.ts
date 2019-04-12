@@ -101,18 +101,31 @@ export class PageSecurityComponent implements OnInit {
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		this.securityAdvisor.refresh().then(() => {
-			this.getScore();
-			this.getMaliciousWifi();
-		});
+		this.refreshAll();
 	}
 
 	ngOnInit() {
-		this.securityAdvisor.refresh().then(() => {
+		this.refreshAll();
+		this.fetchCMSArticles();
+	}
+
+	private refreshAll() {
+		this.securityAdvisor.antivirus.refresh().then(() => {
+			this.getScore();
+		});
+		this.securityAdvisor.wifiSecurity.refresh().then(() => {
 			this.getScore();
 			this.getMaliciousWifi();
 		});
-		this.fetchCMSArticles();
+		this.securityAdvisor.passwordManager.refresh().then(() => {
+			this.getScore();
+		});
+		this.securityAdvisor.vpn.refresh().then(() => {
+			this.getScore();
+		});
+		this.securityAdvisor.windowsHello.refresh().then(() => {
+			this.getScore();
+		});
 	}
 
 	createViewModels() {
