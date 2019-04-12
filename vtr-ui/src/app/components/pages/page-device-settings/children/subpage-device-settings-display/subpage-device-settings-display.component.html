@@ -71,7 +71,7 @@
 	</div>
 	<div class="row py-5 smartsettings-card"
 		id="camera"
-		*ngIf="!isDesktopMachine">
+		*ngIf="cameraPrivacyModeStatus.available">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.displayCamera.camera.title' | translate"
 				componentName="Camera"
@@ -121,6 +121,7 @@
 							<div class="row">
 								<div class="col-12">
 									<vtr-camera-control [cameraSettings]="dataSource"
+										[cameraFeatureAccess]="cameraFeatureAccess"
 										(brightnessChange)="onBrightnessChange($event)"
 										(contrastChange)="onContrastChange($event)"
 										(exposureChange)="onCameraExposureValueChange($event)"

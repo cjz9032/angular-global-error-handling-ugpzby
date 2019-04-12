@@ -8,6 +8,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { DisplayService } from 'src/app/services/display/display.service';
 
 @Component({
 	selector: 'vtr-widget-quicksettings',
@@ -19,7 +20,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public microphoneStatus = new FeatureStatus(false, true);
 	public eyeCareModeStatus = new FeatureStatus(false, true);
 	private notificationSubscription: Subscription;
-	public isDesktopMachine: boolean
 	public quickSettingsWidget = [
 		{
 			tooltipText: 'MICROPHONE',
@@ -38,12 +38,12 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	@Output() toggle = new EventEmitter<{ sender: string; value: boolean }>();
 
 	constructor(
-		public dashboardService: DashboardService
-		, private commonService: CommonService) { }
+		public dashboardService: DashboardService,
+		public displayService: DisplayService,
+		private commonService: CommonService) { }
 
 	ngOnInit() {
 		this.getQuickSettingStatus();
-		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
@@ -56,9 +56,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	}
 
 	//#region private functions
-
 	// DeviceMonitorStatus
-
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			const { type, payload } = notification;
@@ -88,15 +86,30 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		} else {
 			this.getCameraStatus();
 		}
-
-		const eyeCare = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardEyeCareMode);
-		if (eyeCare) {
-			this.eyeCareModeStatus = eyeCare;
-		} else {
-			this.getEyeCareModeStatus();
+		this.initEyecaremodeSettings();
+	}
+	public initEyecaremodeSettings() {
+		try {
+			if (this.displayService.isShellAvailable) {
+				this.displayService.initEyecaremodeSettings()
+					.then((result: boolean) => {
+						console.log('initEyecaremodeSettings.then', result);
+						if (result === true) {
+							const eyeCare = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardEyeCareMode);
+							if (eyeCare) {
+								this.eyeCareModeStatus = eyeCare;
+							} else {
+								this.getEyeCareModeStatus();
+							}
+						}
+					}).catch(error => {
+						console.error('initEyecaremodeSettings', error);
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
 		}
 	}
-
 	private getCameraStatus() {
 		if (this.dashboardService.isShellAvailable) {
 			this.dashboardService

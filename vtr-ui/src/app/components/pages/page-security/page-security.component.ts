@@ -1,16 +1,48 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
-import { MockSecurityAdvisorService } from '../../../services/mock/mockSecurityAdvisor.service';
+import {
+	Component,
+	OnInit,
+	HostListener
+} from '@angular/core';
+import {
+	VantageShellService
+} from '../../../services/vantage-shell/vantage-shell.service';
+import {
+	MockSecurityAdvisorService
+} from '../../../services/mock/mockSecurityAdvisor.service';
 import * as phoenix from '@lenovo/tan-client-bridge';
-import { CMSService } from '../../../services/cms/cms.service';
-import { AntiVirusLandingViewModel } from '../../../data-models/security-advisor/antivirus-landing.model';
-import { HomeProtectionLandingViewModel } from '../../../data-models/security-advisor/homeprotection-landing.model';
-import { PasswordManagerLandingViewModel } from '../../../data-models/security-advisor/passwordmanager-landing.model';
-import { VpnLandingViewModel } from '../../../data-models/security-advisor/vpn-landing.model';
-import { WifiSecurityLandingViewModel } from '../../../data-models/security-advisor/wifisecurity-landing.model';
-import { WindowsHelloLandingViewModel } from '../../../data-models/security-advisor/windowshello-landing.model';
-import { CommonService } from 'src/app/services/common/common.service';
-import { TranslateService } from '@ngx-translate/core';
+import {
+	CMSService
+} from '../../../services/cms/cms.service';
+import {
+	AntiVirusLandingViewModel
+} from '../../../data-models/security-advisor/antivirus-landing.model';
+import {
+	HomeProtectionLandingViewModel
+} from '../../../data-models/security-advisor/homeprotection-landing.model';
+import {
+	PasswordManagerLandingViewModel
+} from '../../../data-models/security-advisor/passwordmanager-landing.model';
+import {
+	VpnLandingViewModel
+} from '../../../data-models/security-advisor/vpn-landing.model';
+import {
+	WifiSecurityLandingViewModel
+} from '../../../data-models/security-advisor/wifisecurity-landing.model';
+import {
+	WindowsHelloLandingViewModel
+} from '../../../data-models/security-advisor/windowshello-landing.model';
+import {
+	CommonService
+} from 'src/app/services/common/common.service';
+import {
+	TranslateService
+} from '@ngx-translate/core';
+import {
+	EventTypes
+} from '@lenovo/tan-client-bridge';
+import {
+	LocalStorageKey
+} from '../../../enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-page-security',
@@ -19,14 +51,6 @@ import { TranslateService } from '@ngx-translate/core';
 })
 
 export class PageSecurityComponent implements OnInit {
-
-	constructor(
-		public vantageShellService: VantageShellService,
-		private mockSecurityAdvisorService: MockSecurityAdvisorService,
-		private cmsService: CMSService,
-		private commonService: CommonService,
-		private translate: TranslateService
-	) {	}
 	title = 'Security';
 
 	passwordManagerLandingViewModel: PasswordManagerLandingViewModel;
@@ -35,7 +59,7 @@ export class PageSecurityComponent implements OnInit {
 	windowsHelloLandingViewModel: WindowsHelloLandingViewModel;
 	wifiSecurityLandingViewModel: WifiSecurityLandingViewModel;
 	homeProtectionLandingViewModel: HomeProtectionLandingViewModel;
-	wifiHistory: Array<phoenix.WifiDetail>;
+	wifiHistory: Array < phoenix.WifiDetail > ;
 	securityAdvisor: phoenix.SecurityAdvisor;
 	antivirus: phoenix.Antivirus;
 	wifiSecurity: phoenix.WifiSecurity;
@@ -57,43 +81,63 @@ export class PageSecurityComponent implements OnInit {
 		1: 'security.landing.suspicious',
 		2: 'security.landing.malicious'
 	};
-
-	@HostListener('window: focus')
-	onFocus(): void {
-		this.securityAdvisor.refresh().then(() => {
-			this.refreshViewModel();
-			this.getScore();
-			this.getMaliciousWifi();
-		});
-	}
-
-	ngOnInit() {
-		this.refreshViewModel();
-		this.getScore();
-		this.getMaliciousWifi();
-		this.fetchCMSArticles();
-	}
-
-	refreshViewModel() {
+	constructor(
+		public vantageShellService: VantageShellService,
+		private mockSecurityAdvisorService: MockSecurityAdvisorService,
+		private cmsService: CMSService,
+		private commonService: CommonService,
+		private translate: TranslateService
+	) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.passwordManager = this.securityAdvisor.passwordManager;
 		this.antivirus = this.securityAdvisor.antivirus;
 		this.vpn = this.securityAdvisor.vpn;
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 		this.homeProtection = this.securityAdvisor.homeProtection;
-		if (this.securityAdvisor.windowsHello.fingerPrintStatus || this.securityAdvisor.windowsHello.facialIdStatus) {
-			this.windowsHello = this.securityAdvisor.windowsHello;
-			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.windowsHello, this.commonService, this.translate);
-		} else {
-			this.windowsHello = null;
-			this.windowsHelloLandingViewModel = null;
-		}
+
+		this.createViewModels();
+	}
+	
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		this.securityAdvisor.refresh().then(() => {
+			this.getScore();
+			this.getMaliciousWifi();
+		});
+	}
+
+	ngOnInit() {
+		this.securityAdvisor.refresh().then(() => {
+			this.getScore();
+			this.getMaliciousWifi();
+		});
+		this.fetchCMSArticles();
+	}
+
+	createViewModels() {
 		this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.passwordManager, this.commonService, this.translate);
 		this.antivirusLandingViewModel = new AntiVirusLandingViewModel(this.antivirus, this.commonService, this.translate);
 		this.vpnLandingViewModel = new VpnLandingViewModel(this.vpn, this.commonService, this.translate);
 		this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.wifiSecurity, this.commonService, this.translate);
 		this.homeProtectionLandingViewModel = new HomeProtectionLandingViewModel(this.translate);
 		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
+
+		const windowsHello = this.securityAdvisor.windowsHello;
+		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
+		if (cacheShowWindowsHello) {
+			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(windowsHello, this.commonService, this.translate);
+		}
+		if (windowsHello.facialIdStatus || windowsHello.fingerPrintStatus) {
+			this.showWindowsHello(windowsHello);
+		}
+		windowsHello.on(EventTypes.helloFacialIdStatusEvent, () => {
+			this.showWindowsHello(windowsHello);
+		}).on(EventTypes.helloFingerPrintStatusEvent, () => {
+			this.showWindowsHello(windowsHello);
+		});
+
+		// this.securityAdvisor.refresh();
 	}
 
 	getWifiStatus(good) {
@@ -129,7 +173,7 @@ export class PageSecurityComponent implements OnInit {
 		}
 	}
 
-	private getScore() {
+	public getScore() {
 		const antivirusScoreInit = [
 			this.antivirusLandingViewModel.subject.status,
 			this.passwordManagerLandingViewModel.subject.status,
@@ -172,5 +216,14 @@ export class PageSecurityComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
+	}
+
+	showWindowsHello(windowsHello: phoenix.WindowsHello): void {
+		if (this.commonService.isRS5OrLater() &&
+			(windowsHello.fingerPrintStatus || windowsHello.facialIdStatus)) {
+			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(windowsHello, this.commonService, this.translate);
+		} else {
+			this.windowsHelloLandingViewModel = null;
+		}
 	}
 }

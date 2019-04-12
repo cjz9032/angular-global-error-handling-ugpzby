@@ -30,7 +30,8 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 	itemStatusIconClass = {
 		0: 'check',
 		1: 'times',
-		2: 'circle'
+		2: 'circle',
+		3: 'minus'
 	};
 
 	constructor(private deviceService: DeviceService) { super(); }

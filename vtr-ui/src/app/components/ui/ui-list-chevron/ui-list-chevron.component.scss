@@ -67,6 +67,15 @@
 				}
 			}
 
+			&.orange {
+				.item-icon {
+					.icon-bkg {
+						background: linear-gradient($gradient_angle, $orange 0%, $orange-light 100%);
+						border-color: $yellow_dark;
+					}
+				}
+			}
+
 			&.blue {
 				.item-icon {
 					.icon-bkg {
@@ -78,15 +87,6 @@
 							line-height: 1rem;
 							vertical-align: 0.1rem;
 						}
-					}
-				}
-			}
-
-			&.orange {
-				.item-icon {
-					.icon-bkg {
-						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
-						border-color: $orange;
 					}
 				}
 			}
@@ -153,7 +153,7 @@
 					}
 
 					&.orange {
-						color: $orange;
+						color: $yellow_dark;
 					}
 
 					&.security {
@@ -198,6 +198,6 @@
 	}
 
 	.disabled {
-		pointer-events: none;
+		cursor: default;
 	}
 }

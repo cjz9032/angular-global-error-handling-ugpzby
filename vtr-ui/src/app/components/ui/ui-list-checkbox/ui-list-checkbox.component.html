@@ -1,10 +1,12 @@
 <div class="vtr-ui-list-checkbox">
-	<ul class="checkbox-list"
+	<!-- update list with checkbox section -->
+	<ul class="list-group"
 		*ngIf="!isInstallationCompleted">
-		<li *ngFor="let item of items; let i = index">
-			<div class="container-fluid">
-				<div class="row align-items-center">
-					<div class="col col-11 item-text">
+		<li class="list-group-item"
+			*ngFor="let item of items; let i = index">
+			<div class="media pl-3 align-items-center">
+				<div class="media-body pb-0 mb-0 small">
+					<div class="d-flex justify-content-between align-items-center w-100">
 						<div class="custom-control custom-checkbox update-checkbox">
 							<input id="{{ 'updateCheckbox' + randomNumber + i }}"
 								type="checkbox"
@@ -14,12 +16,8 @@
 								(change)="onCheckChange($event)" />
 							<label class="custom-control-label "
 								for="{{ 'updateCheckbox' + randomNumber + i }}">
-								<span class="title"
-									[ngClass]="{'light-title':item.lightTitle}">
+								<span class="update-title">
 									{{item.packageDesc}}</span>
-								<!-- <span class="detail"
-									[ngClass]="{'highlight':item.asLink}">
-									{{item.detail}}</span> -->
 							</label>
 						</div>
 						<div class="button-box pl-1"
@@ -28,9 +26,7 @@
 								<fa-icon [icon]="['fas', 'undo']"></fa-icon> Reboot required
 							</div>
 						</div>
-					</div>
-					<div class="col col-1 text-right">
-						<div>
+						<a href="javascript:void();">
 							<fa-icon class="question"
 								triggers="click:blur"
 								placement="auto"
@@ -40,45 +36,48 @@
 								tooltipClass="tooltip-click"
 								#tooltip="ngbTooltip"
 								(click)="onTooltipClick(item, tooltip)"></fa-icon>
-						</div>
+						</a>
 					</div>
 				</div>
 			</div>
 		</li>
 	</ul>
+	<!-- Installation completed section -->
 	<ul class="list-group"
 		*ngIf="isInstallationCompleted">
 		<li class="list-group-item"
 			*ngFor="let item of items">
-			<div class="row align-items-center">
-				<div class="col-auto px-3">
-					<div *ngIf="item.installationStatus.toLocaleLowerCase() === 'success'; else elseBlock">
-						<div class="bullet-icon-check">
-							<div class="icon-bkg">
-								<fa-icon [icon]="['fas', 'check']"></fa-icon>
-							</div>
+			<div class="media pl-3 align-items-center">
+				<div *ngIf="item.installationStatus.toLocaleLowerCase() === 'success'; else elseBlock">
+					<div class="icon-check">
+						<div class="icon-bg text-center">
+							<fa-icon [icon]="['fas', 'check']"></fa-icon>
 						</div>
 					</div>
-					<ng-template #elseBlock>
-						<div class="bullet-icon-times">
-							<div class="icon-bkg">
-								<fa-icon [icon]="['fas', 'times']"></fa-icon>
-							</div>
+				</div>
+				<ng-template #elseBlock>
+					<div class="icon-times">
+						<div class="icon-bg text-center">
+							<fa-icon [icon]="['fas', 'times']"></fa-icon>
 						</div>
-					</ng-template>
+					</div>
+				</ng-template>
+				<div class="media-body pb-0 mb-0 small pl-3">
+					<div class="d-flex justify-content-between align-items-center w-100">
+						<div class="update-title">{{item.packageDesc}}</div>
+						<a href="javascript:void();">
+							<fa-icon class="question"
+								triggers="click:blur"
+								placement="auto"
+								[ngbTooltip]="systemUpdateTooltip"
+								[icon]="['far', 'question-circle']"
+								container="body"
+								tooltipClass="tooltip-click"
+								#tooltip="ngbTooltip"
+								(click)="onTooltipClick(item, tooltip)"></fa-icon>
+						</a>
+					</div>
 				</div>
-				<div class="col col-11 text px-0 button-box">
-					<div class="update-title">{{item.packageDesc}}</div>
-				</div>
-				<fa-icon class="question"
-					triggers="click:blur"
-					placement="auto"
-					[ngbTooltip]="systemUpdateTooltip"
-					[icon]="['far', 'question-circle']"
-					container="body"
-					tooltipClass="tooltip-click"
-					#tooltip="ngbTooltip"
-					(click)="onTooltipClick(item, tooltip)"></fa-icon>
 			</div>
 		</li>
 	</ul>
@@ -98,7 +97,7 @@
 		<ul>
 			<li>Manufacturer: <span>{{ manufacturer }}</span></li>
 			<li>Version: <span>{{ version }}</span></li>
-			<li>Installed version: <span>{{ installedVersion }}</span></li>
+			<li>Installed version: <span>{{ installedVersion | translate }}</span></li>
 			<li>Download size: <span>{{ downloadSize }}</span> </li>
 			<li>Disk space needed: <span>{{ diskSpaceNeeded }}</span></li>
 		</ul>

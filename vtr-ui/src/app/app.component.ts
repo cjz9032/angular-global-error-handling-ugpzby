@@ -12,6 +12,7 @@ import { UserService } from './services/user/user.service';
 import { WelcomeTutorial } from './data-models/common/welcome-tutorial.model';
 import { NetworkStatus } from './enums/network-status.enum';
 import { KeyPress } from './data-models/common/key-press.model';
+import { VantageShellService } from './services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-root',
@@ -19,59 +20,56 @@ import { KeyPress } from './data-models/common/key-press.model';
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+
 	title = 'vtr-ui';
 
 	constructor(
 		private devService: DevService,
 		private displayService: DisplayService,
 		private router: Router,
-		private modalService: NgbModal,
+		// private modalService: NgbModal,
 		public deviceService: DeviceService,
 		private commonService: CommonService,
 		private translate: TranslateService,
-		private userService: UserService
+		private userService: UserService,
+		private vantageShellService: VantageShellService
 	) {
 		translate.addLangs(['en', 'zh-Hans']);
 		this.translate.setDefaultLang('en');
-		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
-
-		// const modalRef = this.modalService.open(ModalWelcomeComponent,
-		// 	{
-		// 		backdrop: 'static'
-		// 		, windowClass: 'welcome-modal-size'
-		// 	});
-		// modalRef.result.then(
-		// 	(result: WelcomeTutorial) => {
-		// 		// on open
-		// 		console.log('welcome-modal-size', result);
-		// 		commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, result);
-		// 	},
-		// 	(reason: WelcomeTutorial) => {
-		// 		// on close
-		// 		console.log('welcome-modal-size', reason);
-		// 		commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
-		// 	}
-		// );
-
-		if (tutorial === undefined && navigator.onLine) {
-			const modalRef = this.modalService.open(ModalWelcomeComponent,
-				{
-					backdrop: 'static'
-					, windowClass: 'welcome-modal-size'
-				});
-			modalRef.result.then(
-				(result: WelcomeTutorial) => {
-					// on open
-					console.log('welcome-modal-size', result);
-					commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, result);
-				},
-				(reason: WelcomeTutorial) => {
-					// on close
-					console.log('welcome-modal-size', reason);
-					commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
-				}
-			);
+		const hadRunApp: boolean = commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
+		const appFirstRun = !hadRunApp;
+		if (appFirstRun && deviceService.isShellAvailable) {
+			commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
+			vantageShellService.getMetrics().sendAsync({
+				ItemType: 'FirstRun'
+			});
 		}
+
+		//#region VAN-2779 this is moved in MVP 2
+
+		// const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+
+		// if (tutorial === undefined && navigator.onLine) {
+		// 	const modalRef = this.modalService.open(ModalWelcomeComponent,
+		// 		{
+		// 			backdrop: 'static'
+		// 			, windowClass: 'welcome-modal-size'
+		// 		});
+		// 	modalRef.result.then(
+		// 		(result: WelcomeTutorial) => {
+		// 			// on open
+		// 			console.log('welcome-modal-size', result);
+		// 			commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, result);
+		// 		},
+		// 		(reason: WelcomeTutorial) => {
+		// 			// on close
+		// 			console.log('welcome-modal-size', reason);
+		// 			commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
+		// 		}
+		// 	);
+		// }
+
+		//#endregion
 
 		window.addEventListener('online', (e) => {
 			console.log('online', e, navigator.onLine);
@@ -176,17 +174,27 @@ export class AppComponent implements OnInit {
 	@HostListener('window:keyup', ['$event'])
 	onKeyUp(event: KeyboardEvent) {
 		try {
-			const response = new KeyPress(
-				event.key,
-				event.keyCode,
-				event.location,
-				event.ctrlKey,
-				event.altKey,
-				event.shiftKey
-			);
-			window.parent.postMessage(response, 'ms-appx-web://e046963f.lenovocompanionbeta/index.html');
+			if (this.deviceService.isShellAvailable) {
+				const response = new KeyPress(
+					event.key,
+					event.keyCode,
+					event.location,
+					event.ctrlKey,
+					event.altKey,
+					event.shiftKey
+				);
+				window.parent.postMessage(response, 'ms-appx-web://e046963f.lenovocompanionbeta/index.html');
+			}
 		} catch (error) {
 			console.error('AppComponent.onKeyUp', error);
 		}
+	}
+
+	@HostListener('window:load', ['$event'])
+	onLoad(event) {
+		const scale = 1 / (window.devicePixelRatio || 1);
+		const content = `shrink-to-fit=no, width=device-width, initial-scale=${scale}, minimum-scale=${scale}`;
+		document.querySelector('meta[name="viewport"]').setAttribute('content', content);
+		console.log('DPI: ', content);
 	}
 }

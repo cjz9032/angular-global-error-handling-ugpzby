@@ -37,6 +37,11 @@ export class WidgetAboutComponent implements OnInit {
 
 	agreementClicked() {
 		const agreementUrl = `assets/licenses/Agreement/${this.agreement[this.lang]}.html`;
+		const aboutModalMetrics = {
+			pageName: 'Page.LicensesAgreement',
+			pageContext: 'Licenses agreement',
+			closeButton: 'LicensesAgreementCloseButton',
+		};
 		const aboutModal: NgbModalRef = this.modalService.open(ModalAboutComponent, {
 			size: 'lg',
 			centered: true,
@@ -44,11 +49,17 @@ export class WidgetAboutComponent implements OnInit {
 		});
 		aboutModal.componentInstance.url = agreementUrl;
 		aboutModal.componentInstance.type = 'html';
+		aboutModal.componentInstance.aboutModalMetrics = aboutModalMetrics;
 
 	}
 
 	openSourceClicked() {
 		const openSourceUrl = `assets/licenses/OpenSource/OpenSourceLicenses.txt`;
+		const aboutModalMetrics = {
+			pageName: 'Page.OpenSourceLicenses',
+			pageContext: 'Open Source Licenses',
+			closeButton: 'OpenSourceLicensesCloseButton',
+		};
 		const aboutModal: NgbModalRef = this.modalService.open(ModalAboutComponent, {
 			size: 'lg',
 			centered: true,
@@ -56,6 +67,7 @@ export class WidgetAboutComponent implements OnInit {
 		});
 		aboutModal.componentInstance.url = openSourceUrl;
 		aboutModal.componentInstance.type = 'txt';
+		aboutModal.componentInstance.aboutModalMetrics = aboutModalMetrics;
 	}
 
 }

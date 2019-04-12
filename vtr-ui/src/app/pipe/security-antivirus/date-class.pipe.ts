@@ -7,11 +7,10 @@ export class DateClassPipe implements PipeTransform {
 
   transform(value: Date): any {
     const nowdate = Date.now();
-    if (value.valueOf() > nowdate) {
-      return 'date';
+    if (value.valueOf() < nowdate) {
+      return 'stopdate';
     }
-    return 'stopdate';
-
+    return 'date';
   }
 
 }

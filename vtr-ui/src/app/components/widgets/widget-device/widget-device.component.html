@@ -1,6 +1,7 @@
 <div class="vtr-widget-device">
 	<div class="container-fluid p-40">
-		<div class="circleimage"><img class="img-fluid" src="../../../../assets/images/circle.png" /> </div>
+		<div class="circleimage"><img class="img-fluid"
+				src="../../../../assets/images/circle.png" /> </div>
 		<div class="row mt-20">
 			<div class="col">
 				<div class="family">{{myDevice.family}}</div>
@@ -11,26 +12,28 @@
 				<span class="d-lg-none sub-header-separator">
 					<fa-icon [icon]="['fas', 'minus']"></fa-icon>
 				</span>
-				<span class="device-sub-header">Serial: {{myDevice.sn}}</span>
+				<span class="device-sub-header">{{'device.myDevice.serial' | translate}}: {{myDevice.sn}}</span>
 
 			</div>
 			<div class="col-12 col-lg-auto px-0">
 				<span class="sub-header-separator">
 					<fa-icon [icon]="['fas', 'minus']"></fa-icon>
 				</span>
-				<span class="device-sub-header">Product number: {{myDevice.productNo}}</span>
+				<span class="device-sub-header">{{'device.myDevice.productNumber' | translate}}:
+					{{myDevice.productNo}}</span>
 			</div>
 			<div class="col-12 col-lg-auto px-0">
-					<span class="sub-header-separator">
+				<span class="sub-header-separator">
 					<fa-icon [icon]="['fas', 'minus']"></fa-icon>
 				</span>
-				<span class="device-sub-header text-wrap">Bios version: {{myDevice.bios}}</span>
+				<span class="device-sub-header text-wrap">{{'device.myDevice.biosVersion'|translate}}:
+					{{myDevice.bios}}</span>
 
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">
-				<div class="subheader">{{subtitle}}</div>
+				<div class="subheader">{{'device.myDevice.subtitle'|translate}}</div>
 			</div>
 		</div>
 		<div class="row">
