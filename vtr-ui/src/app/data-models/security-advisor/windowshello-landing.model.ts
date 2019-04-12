@@ -26,17 +26,17 @@ export class WindowsHelloLandingViewModel {
 				title: 'common.securityAdvisor.windowsHello',
 				type: 'security',
 			};
-			const setWhStatus = (finger: string, facia: string) => {
+			const setWhStatus = (finger: string, facial: string) => {
 				if (!finger) {
 					whStatus.status = 1;
 					whStatus.detail = 'common.securityAdvisor.notFound';
-					subjectStatus.status = 1;
-					commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, 'disabled');
+					subjectStatus.status = facial === 'active' ? 0 : 1;
+					commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, subjectStatus.status === 0 ? 'enabled' : 'disabled');
 					commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus, 'notFound');
 				} else {
 					whStatus.status = finger === 'active' ? 0 : 1;
 					whStatus.detail = finger === 'active' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-					subjectStatus.status = finger === 'active' || facia === 'active' ? 0 : 1;
+					subjectStatus.status = finger === 'active' || facial === 'active' ? 0 : 1;
 					commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, subjectStatus.status === 0 ? 'enabled' : 'disabled');
 					commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus, finger);
 				}
