@@ -288,6 +288,7 @@ export class VantageShellService {
 			try {
 				const deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
 				console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
+				return deviceFilterResult;
 			} catch (error) {
 				console.log('In VantageShellService.deviceFilter. Error:', error);
 				console.log('In VantageShellService.deviceFilter. returning mock true due to error.');
