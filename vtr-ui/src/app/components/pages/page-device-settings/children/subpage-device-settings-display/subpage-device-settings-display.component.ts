@@ -286,6 +286,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						if (response.result === true) {
 							this.eyeCareDataSource.current = response.colorTemperature;
 							this.eyeCareModeStatus.status = response.eyecaremodeState;
+							this.enableSlider = response.eyecaremodeState;
 						}
 
 					}).catch(error => {
