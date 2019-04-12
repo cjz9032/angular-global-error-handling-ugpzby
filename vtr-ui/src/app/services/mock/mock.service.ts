@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Antivirus } from '@lenovo/tan-client-bridge';
 
 @Injectable()
 
@@ -72,7 +73,7 @@ export class MockService {
 			'id': 'systemupdate',
 			'title': 'System Update',
 			'detail': 'Update',
-			'path': '/system-updates',
+			'path': 'device/system-updates',
 			'asLink': true,
 			'type': 'system'
 		}
@@ -163,7 +164,7 @@ export class MockService {
 			'id': 'anti-virus',
 			'title': 'Anti-Virus',
 			'detail': 'Enabled',
-			'path': 'anti-virus',
+			'path': 'security/anti-virus',
 			'type': 'security'
 
 		},
@@ -172,7 +173,7 @@ export class MockService {
 			'id': 'wifi-security',
 			'title': 'WiFi Security',
 			'detail': 'Enabled',
-			'path': 'wifi-security',
+			'path': 'security/wifi-security',
 			'type': 'security'
 
 		},
@@ -181,7 +182,7 @@ export class MockService {
 			'id': 'pwdmgr',
 			'title': 'Password Manager',
 			'detail': 'Installed',
-			'path': 'password-protection',
+			'path': 'security/password-protection',
 			'type': 'security'
 		},
 		{
@@ -189,7 +190,7 @@ export class MockService {
 			'id': 'vpn',
 			'title': 'VPN',
 			'detail': 'Installed',
-			'path': 'internet-protection',
+			'path': 'security/internet-protection',
 			'type': 'security'
 		},
 		{
@@ -197,7 +198,7 @@ export class MockService {
 			'id': 'windows-hello',
 			'title': 'Windows Hello',
 			'detail': 'disabled',
-			'path': 'windows-hello',
+			'path': 'security/windows-hello',
 			'type': 'security'
 
 		}
@@ -209,14 +210,16 @@ export class MockService {
 			'id': 'anti-virus',
 			'title': 'Anti-Virus',
 			'detail': 'Enabled',
-			'path': 'anti-virus'
+			'path': 'security/anti-virus',
+			'type': 'security'
 		},
 		{
 			'status': 1,
 			'id': 'firewall',
 			'title': 'Firewall',
 			'detail': 'Disabled',
-			'path': 'anti-virus'
+			'path': 'security/anti-virus',
+			'type': 'security'
 
 		}
 	];
@@ -227,7 +230,8 @@ export class MockService {
 			'id': 'password-manager',
 			'title': 'Password Manager',
 			'detail': 'Installed',
-			'path': 'password-protection'
+			'path': 'security/password-protection',
+			'type': 'security'
 		}
 	];
 
@@ -237,7 +241,8 @@ export class MockService {
 			'id': 'virtual-private-network',
 			'title': 'Virtual Private Network',
 			'detail': 'Installed',
-			'path': 'internet-protection'
+			'path': 'security/internet-protection',
+			'type': 'security'
 		}
 	];
 
@@ -247,9 +252,22 @@ export class MockService {
 			'id': 'wifi-security',
 			'title': 'WiFi Security',
 			'detail': 'Enabled',
-			'path': 'wifi-security'
+			'path': 'wifi-security',
+			'type': 'security'
 		}
 	];
+
+	wifiHistoryList = [
+		{
+			ssid: 'Lenovo',
+			info: '2019-01-25',
+			good: 0
+		}, {
+			ssid: 'CDL',
+			info: '2019-01-25',
+			good: 1
+		}
+	]
 
 	securityConnectedHome = [
 		{
@@ -257,7 +275,8 @@ export class MockService {
 			'id': 'connected-home-security',
 			'title': 'Connected Home Security',
 			'detail': 'Learn more',
-			'path': 'wifi-security'
+			'path': 'security/wifi-security',
+			'type': 'security'
 		}
 	];
 
@@ -265,9 +284,10 @@ export class MockService {
 		{
 			'status': 0,
 			'id': 'fingerprint-reader',
-			'title': 'Fingerprint reader',
+			'title': 'Fingerprint Reader',
 			'detail': 'Enabled',
-			'path': 'windows-hello'
+			'path': 'security/windows-hello',
+			'type': 'security'
 		}
 	];
 
@@ -300,60 +320,60 @@ export class MockService {
 
 	articles = [
 		{
-			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			'thumbnailUrl': '',
-			'logo': 'assets/images/test-logo.svg',
-			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail/1',
+			'Title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'Thumbnail': '',
+			'Logo': 'assets/images/test-logo.svg',
+			'LogoText': 'LENOVO SPECIAL',
+			'ReadMore': '/#/support-detail/1',
 		},
 		{
-			'title': '',
-			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
-			'logo': 'assets/images/test-logo.svg',
-			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail/1',
+			'Title': '',
+			'Thumbnail': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
+			'Logo': 'assets/images/test-logo.svg',
+			'LogoText': 'LENOVO SPECIAL',
+			'ReadMore': '/#/support-detail/1',
 		},
 		{
-			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
-			'logo': '',
-			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail/1',
+			'Title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'Thumbnail': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
+			'Logo': '',
+			'LogoText': 'LENOVO SPECIAL',
+			'ReadMore': '/#/support-detail/1',
 		},
 		{
-			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
-			'logo': 'assets/images/test-logo.svg',
-			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail/1',
+			'Title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'Thumbnail': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
+			'Logo': 'assets/images/test-logo.svg',
+			'LogoText': 'LENOVO SPECIAL',
+			'ReadMore': '/#/support-detail/1',
 		},
 		{
-			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
-			'logo': 'assets/images/test-logo.svg',
-			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail/1',
+			'Title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'Thumbnail': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
+			'Logo': 'assets/images/test-logo.svg',
+			'LogoText': 'LENOVO SPECIAL',
+			'ReadMore': '/#/support-detail/1',
 		},
 		{
-			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			'thumbnailUrl': '',
-			'logo': '',
-			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail/1',
+			'Title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'Thumbnail': '',
+			'Logo': '',
+			'LogoText': 'LENOVO SPECIAL',
+			'ReadMore': '/#/support-detail/1',
 		},
 		{
-			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			'thumbnailUrl': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
-			'logo': 'assets/images/test-logo.svg',
-			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail/1',
+			'Title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'Thumbnail': 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
+			'Logo': 'assets/images/test-logo.svg',
+			'LogoText': 'LENOVO SPECIAL',
+			'ReadMore': '/#/support-detail/1',
 		},
 		{
-			'title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			'thumbnailUrl': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
-			'logo': '',
-			'logoText': 'LENOVO SPECIAL',
-			'readMore': '/#/support-detail/1',
+			'Title': 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
+			'Thumbnail': 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
+			'Logo': '',
+			'LogoText': 'LENOVO SPECIAL',
+			'ReadMore': '/#/support-detail/1',
 		},
 	];
 
@@ -490,6 +510,54 @@ export class MockService {
 			]
 		}
 	];
+
+
+	// antiVirus: Antivirus = {
+	// 	on() {},
+	// 	off() {},
+	// 	mitt: null,
+	// 	mcafeeDownloadUrl: 'ss',
+	// 	refresh(): Promise<object> {
+	// 		return  Promise.resolve(Object);
+	// 	},
+	// 	mcafee: {
+	// 		localName: 'local',
+	// 		trailUrl: 'url',
+	// 		subscription: 'licenseActive',
+	// 		// McAfee expire date
+	// 		expireAt: '1/21/2020',
+	// 		// McAfee register status
+	// 		registered: true,
+	// 		// McAfee sub-feature information
+	// 		features: [{
+	// 			key: 'Virus Scan',
+	// 			value: true,
+	// 			id: 'Virus Scan'
+	// 		},
+	// 		{
+	// 			key: 'FireWall',
+	// 			value: false,
+	// 			id: 'FireWall',
+	// 		}],
+	// 		// launch McAfee application
+	// 		launch() {
+	// 		}
+	// 	},
+	// 	windowsDefender: {
+	// 		status: false,
+	// 		firewallStatus: false,
+	// 	},
+	// 	others: {
+	// 		antiVirus: [{
+	// 			status: true,
+	// 			name: '360',
+	// 		}],
+	// 		firewall: [{
+	// 			status: true,
+	// 			name: '360',
+	// 		}]
+	// 	}
+	// };
 
 	constructor() { }
 }

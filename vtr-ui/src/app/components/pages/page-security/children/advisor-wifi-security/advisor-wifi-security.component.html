@@ -1,6 +1,6 @@
 <div class="vtr-advisor-wifi-security">
 	<ul class="chevron-list outside">
-		<li class="good">
+		<li [ngClass]="{'good':wifiSecurityEnabled,'bad':!wifiSecurityEnabled}">
 			<a routerLink="/wifi-security"
 				vtrMetrics
 				[metricsItem]="'link.wifisecurity'"
@@ -12,7 +12,7 @@
 								[ngClass]="{'light-title':false}">
 								WiFi Security
 							</div>
-							<div class="detail">
+							<div class="detail security good">
 								Enabled
 							</div>
 						</div>
@@ -32,7 +32,8 @@
 				</div>
 			</a>
 		</li>
-		<li class="detail">
+		<li class="detail"
+			*ngIf="wifiSecurityEnabled">
 			<div class="container-fluid">
 				<div class="row align-items-center">
 					<div class="col col-2 text-center">
@@ -76,7 +77,7 @@
 				<li>
 					<a routerLink="/wifi-security"
 						vtrMetrics
-					    [metricsItem]="'link.JFK_REAL-OFFICIAL-Wifi'"
+						[metricsItem]="'link.JFK_REAL-OFFICIAL-Wifi'"
 						metricsEvent="itemClick">
 						<div class="container-fluid">
 							<div class="row align-items-center">
@@ -103,7 +104,7 @@
 						<div class="title">
 							<a routerLink="/wifi-security"
 								vtrMetrics
-							    [metricsItem]="'link.joinednetworks'"
+								[metricsItem]="'link.joinednetworks'"
 								metricsEvent="itemClick">
 								See all joined networks
 							</a>

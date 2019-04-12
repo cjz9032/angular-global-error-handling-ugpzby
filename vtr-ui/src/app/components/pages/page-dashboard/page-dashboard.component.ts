@@ -7,9 +7,15 @@ import { Status } from 'src/app/data-models/widgets/status.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
-import { UserService } from 'src/app/services/user/user.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
+import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
+import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
+import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
+import { UserService } from '../../../services/user/user.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -21,8 +27,10 @@ export class PageDashboardComponent implements OnInit {
 	firstName = 'User';
 	submit = 'Submit';
 	feedbackButtonText = this.submit;
+	securityAdvisor: SecurityAdvisor;
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
+	public isOnline = true;
 
 	heroBannerItems = [];
 	cardContentPositionB: any = {};
@@ -44,18 +52,26 @@ export class PageDashboardComponent implements OnInit {
 		config: NgbModalConfig,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
-		public cmsService: CMSService
+		private cmsService: CMSService,
+		private systemUpdateService: SystemUpdateService,
+		public userService: UserService,
+		private translate: TranslateService,
+		vantageShellService: VantageShellService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
+		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 	}
 
 	ngOnInit() {
+		this.isOnline = this.commonService.isOnline;
 		if (this.dashboardService.isShellAvailable) {
 			console.log('PageDashboardComponent.getSystemInfo');
 			this.getSystemInfo();
-			this.getSecurityStatus();
+			// this.getSecurityStatus();
 		}
+
+		this.setDefaultCMSContent();
 
 		const queryOptions = {
 			'Page': 'dashboard',
@@ -67,7 +83,7 @@ export class PageDashboardComponent implements OnInit {
 			'Brand': 'Lenovo'
 		};
 
-		this.cmsService.fetchCMSContent(queryOptions).subscribe(
+		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
 				this.heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
 					return {
@@ -101,10 +117,13 @@ export class PageDashboardComponent implements OnInit {
 		});
 	}
 
-	onFeedbackModal(content: any) {
+	onFeedbackModal() {
 		this.modalService
-			.open(content, {
-				centered: true
+			.open(FeedbackFormComponent, {
+				backdrop: 'static',
+				size: 'lg',
+				centered: true,
+				windowClass: 'feedback-form-modal-size'
 			})
 			.result.then(
 				result => {
@@ -116,12 +135,116 @@ export class PageDashboardComponent implements OnInit {
 			);
 	}
 
-	public onFeedbackClick() {
-		this.feedbackButtonText = 'Thank you for your feedback !';
-		setTimeout(() => {
-			this.modalService.dismissAll();
-			this.feedbackButtonText = this.submit;
-		}, 3000);
+	// public onFeedbackClick() {
+	// 	this.feedbackButtonText = 'Thank you for your feedback !';
+	// 	setTimeout(() => {
+	// 		this.modalService.dismissAll();
+	// 		this.feedbackButtonText = this.submit;
+	// 	}, 3000);
+	// }
+
+	public onConnectivityClick($event: any) {
+	}
+
+	private setDefaultCMSContent() {
+		this.heroBannerItems = [{
+			albumId: 1,
+			id: 1,
+			source: "Vantage Beta",
+			title: "Welcome to the next generation of Lenovo Vantage!",
+			url: "./../../../../assets/cms-cache/Vantage3Hero-zone0.png",
+			ActionLink: null
+		}];
+
+		this.cardContentPositionB = {
+			Title: "",
+			ShortTitle: "",
+			Description: "",
+			FeatureImage: "./../../../../assets/cms-cache/Alexa4x3-zone1.png",
+			Action: "",
+			ActionType: "External",
+			ActionLink: null,
+			BrandName: "",
+			BrandImage: "",
+			Priority: "P1",
+			Page: "dashboard",
+			Template: "half-width-title-description-link-image",
+			Position: "position-B",
+			ExpirationDate: null,
+			Filters: null
+		};
+
+		this.cardContentPositionC = {
+			Title: "",
+			ShortTitle: "",
+			Description: "",
+			FeatureImage: "./../../../../assets/cms-cache/Security4x3-zone2.png",
+			Action: "",
+			ActionType: "External",
+			ActionLink: null,
+			BrandName: "",
+			BrandImage: "",
+			Priority: "P1",
+			Page: "dashboard",
+			Template: "half-width-title-description-link-image",
+			Position: "position-C",
+			ExpirationDate: null,
+			Filters: null
+		};
+
+		this.cardContentPositionD = {
+			Title: "",
+			ShortTitle: "",
+			Description: "",
+			FeatureImage: "./../../../../assets/cms-cache/Gamestore8x3-zone3.png",
+			Action: "",
+			ActionType: "External",
+			ActionLink: null,
+			BrandName: "",
+			BrandImage: "",
+			Priority: "P1",
+			Page: "dashboard",
+			Template: "full-width-title-image-background",
+			Position: "position-D",
+			ExpirationDate: null,
+			Filters: null
+		};
+
+		this.cardContentPositionE = {
+			Title: "",
+			ShortTitle: "",
+			Description: "",
+			FeatureImage: "./../../../../assets/cms-cache/content-card-4x4-support.jpg",
+			Action: "",
+			ActionType: "External",
+			ActionLink: null,
+			BrandName: "",
+			BrandImage: "",
+			Priority: "P1",
+			Page: "dashboard",
+			Template: "half-width-top-image-title-link",
+			Position: "position-E",
+			ExpirationDate: null,
+			Filters: null
+		};
+
+		this.cardContentPositionF = {
+			Title: "",
+			ShortTitle: "",
+			Description: "",
+			FeatureImage: "./../../../../assets/cms-cache/content-card-4x4-award.jpg",
+			Action: "",
+			ActionType: "External",
+			ActionLink: null,
+			BrandName: "",
+			BrandImage: "",
+			Priority: "P1",
+			Page: "dashboard",
+			Template: "half-width-top-image-title-link",
+			Position: "position-F",
+			ExpirationDate: null,
+			Filters: null
+		};
 	}
 
 	// private getFormatedTitle(title) {
@@ -155,8 +278,8 @@ export class PageDashboardComponent implements OnInit {
 			const memory = new Status();
 			memory.status = 1;
 			memory.id = 'memory';
-			memory.title = 'Memory';
-			memory.detail = 'Memory not found';
+			memory.title = this.translate.instant('dashboard.systemStatus.memory.title');//'Memory';
+			memory.detail = this.translate.instant('dashboard.systemStatus.memory.detail.notFound');//'Memory not found';
 			memory.path = 'ms-settings:about';
 			memory.asLink = false;
 			memory.isSystemLink = true;
@@ -164,7 +287,7 @@ export class PageDashboardComponent implements OnInit {
 
 			if (response.memory) {
 				const { total, used } = response.memory;
-				memory.detail = `${this.commonService.formatBytes(used, 1)} of ${this.commonService.formatBytes(total, 1)}`;
+				memory.detail = `${this.commonService.formatBytes(used, 1)} ${this.translate.instant('dashboard.systemStatus.memory.detail.of')} ${this.commonService.formatBytes(total, 1)}`;
 				const percent = parseInt(((used / total) * 100).toFixed(0), 10);
 				// const percent = (used / total) * 100;
 				if (percent > 70) {
@@ -178,8 +301,8 @@ export class PageDashboardComponent implements OnInit {
 			const disk = new Status();
 			disk.status = 1;
 			disk.id = 'disk';
-			disk.title = 'Disk Space';
-			disk.detail = 'Disk not found';
+			disk.title = this.translate.instant('dashboard.systemStatus.diskSpace.title');//'Disk Space';
+			disk.detail = this.translate.instant('dashboard.systemStatus.diskSpace.detail.notFound');//'Disk not found';
 			disk.path = 'ms-settings:storagesense';
 			disk.asLink = false;
 			disk.isSystemLink = true;
@@ -187,7 +310,7 @@ export class PageDashboardComponent implements OnInit {
 
 			if (response.disk) {
 				const { total, used } = response.disk;
-				disk.detail = `${this.commonService.formatBytes(used, 1)} of ${this.commonService.formatBytes(total, 1)}`;
+				disk.detail = `${this.commonService.formatBytes(used, 1)} ${this.translate.instant('dashboard.systemStatus.diskSpace.detail.of')} ${this.commonService.formatBytes(total, 1)}`;
 				const percent = parseInt(((used / total) * 100).toFixed(0), 10);
 				// const percent = (used / total) * 100;
 				if (percent > 90) {
@@ -201,8 +324,8 @@ export class PageDashboardComponent implements OnInit {
 			const warranty = new Status();
 			warranty.status = 1;
 			warranty.id = 'warranty';
-			warranty.title = 'Warranty';
-			warranty.detail = 'Warranty not found';
+			warranty.title = this.translate.instant('dashboard.systemStatus.warranty.title'); //'Warranty';
+			warranty.detail = this.translate.instant('dashboard.systemStatus.warranty.detail.notFound'); //'Warranty not found';
 			warranty.path = '/support';
 			warranty.asLink = false;
 			/* warranty.isSystemLink = true; */
@@ -213,13 +336,13 @@ export class PageDashboardComponent implements OnInit {
 				const warrantyDate = this.commonService.formatDate(response.warranty.expired);
 				// in warranty
 				if (response.warranty.status === 0) {
-					warranty.detail = `Until ${warrantyDate}`;
+					warranty.detail = `${this.translate.instant('dashboard.systemStatus.warranty.detail.until')} ${warrantyDate}`;//`Until ${warrantyDate}`;
 					warranty.status = 0;
 				} else if (response.warranty.status === 1) {
-					warranty.detail = `Warranty expired on ${warrantyDate}`;
+					warranty.detail = `${this.translate.instant('dashboard.systemStatus.warranty.detail.expiredOn')} ${warrantyDate}`; //`Warranty expired on ${warrantyDate}`;
 					warranty.status = 1;
 				} else {
-					warranty.detail = 'Warranty not available';
+					warranty.detail = this.translate.instant('dashboard.systemStatus.warranty.detail.notAvailable'); //'Warranty not available';
 					warranty.status = 1;
 				}
 			}
@@ -228,17 +351,23 @@ export class PageDashboardComponent implements OnInit {
 			const systemUpdate = new Status();
 			systemUpdate.status = 1;
 			systemUpdate.id = 'systemupdate';
-			systemUpdate.title = 'System Update';
-			systemUpdate.detail = 'Update';
-			systemUpdate.path = '/system-updates';
+			systemUpdate.title = this.translate.instant('dashboard.systemStatus.systemUpdate.title');//'System Update';
+			systemUpdate.detail = this.translate.instant('dashboard.systemStatus.systemUpdate.detail.update');// 'Update';
+			systemUpdate.path = 'device/system-updates';
 			systemUpdate.asLink = true;
 			systemUpdate.isSystemLink = false;
 			systemUpdate.type = 'system';
 
 			if (response.systemupdate) {
+				const lastUpdate = response.systemupdate.lastupdate;
+				const diffInDays = this.systemUpdateService.dateDiffInDays(lastUpdate);
 				const { status } = response.systemupdate;
 				if (status === 1) {
-					systemUpdate.status = 0;
+					if (diffInDays > 30) {
+						systemUpdate.status = 1;
+					} else {
+						systemUpdate.status = 0;
+					}
 				} else {
 					systemUpdate.status = 1;
 				}
@@ -254,15 +383,15 @@ export class PageDashboardComponent implements OnInit {
 			const antiVirus = new Status();
 			antiVirus.status = 1;
 			antiVirus.id = 'anti-virus';
-			antiVirus.title = 'Anti-Virus';
-			antiVirus.detail = 'Disabled';
-			antiVirus.path = 'anti-virus';
+			antiVirus.title = this.translate.instant('common.securityAdvisor.antiVirus'); //'Anti-Virus';
+			antiVirus.detail = this.translate.instant('common.securityAdvisor.disabled'); //'Disabled';
+			antiVirus.path = 'security/anti-virus';
 			antiVirus.type = 'security';
 
 			if (response.antiVirus) {
 				if (response.antiVirus.status) {
 					antiVirus.status = 0;
-					antiVirus.detail = 'Enabled';
+					antiVirus.detail = this.translate.instant('common.securityAdvisor.enabled');//'Enabled';
 				} else {
 					antiVirus.status = 1;
 				}
@@ -272,15 +401,15 @@ export class PageDashboardComponent implements OnInit {
 			const wiFi = new Status();
 			wiFi.status = 1;
 			wiFi.id = 'wifi-security';
-			wiFi.title = 'WiFi Security';
-			wiFi.detail = 'Disabled';
-			wiFi.path = 'wifi-security';
+			wiFi.title = this.translate.instant('common.securityAdvisor.wifi');//'WiFi Security';
+			wiFi.detail = this.translate.instant('common.securityAdvisor.disabled'); //'Disabled';
+			wiFi.path = 'security/wifi-security';
 			wiFi.type = 'security';
 
 			if (response.wifiSecurity) {
 				if (response.wifiSecurity.status) {
 					wiFi.status = 0;
-					wiFi.detail = 'Enabled';
+					wiFi.detail = this.translate.instant('common.securityAdvisor.enabled');//'Enabled';
 				} else {
 					wiFi.status = 1;
 				}
@@ -290,15 +419,15 @@ export class PageDashboardComponent implements OnInit {
 			const passwordManager = new Status();
 			passwordManager.status = 1;
 			passwordManager.id = 'pwdmgr';
-			passwordManager.title = 'Password Manager';
-			passwordManager.detail = 'Not Installed';
-			passwordManager.path = 'password-protection';
+			passwordManager.title = this.translate.instant('common.securityAdvisor.pswdMgr'); //'Password Manager';
+			passwordManager.detail = this.translate.instant('common.securityAdvisor.notInstalled'); //'Not Installed';
+			passwordManager.path = 'security/password-protection';
 			passwordManager.type = 'security';
 
 			if (response.passwordManager) {
 				if (response.passwordManager.installed) {
-					passwordManager.status = 0;
-					passwordManager.detail = 'Installed';
+					passwordManager.status = 2;
+					passwordManager.detail = this.translate.instant('common.securityAdvisor.installed'); //'Installed';
 				} else {
 					passwordManager.status = 1;
 				}
@@ -308,15 +437,15 @@ export class PageDashboardComponent implements OnInit {
 			const vpn = new Status();
 			vpn.status = 1;
 			vpn.id = 'vpn';
-			vpn.title = 'VPN';
-			vpn.detail = 'Not Installed';
-			vpn.path = 'internet-protection';
+			vpn.title = this.translate.instant('common.securityAdvisor.vpn'); //'VPN';
+			vpn.detail = this.translate.instant('common.securityAdvisor.notInstalled');//'Not Installed';
+			vpn.path = 'security/internet-protection';
 			vpn.type = 'security';
 
 			if (response.VPN) {
 				if (response.VPN.installed) {
-					vpn.status = 0;
-					vpn.detail = 'Installed';
+					vpn.status = 2;
+					vpn.detail = this.translate.instant('common.securityAdvisor.installed');//'Installed';
 				} else {
 					vpn.status = 1;
 				}
@@ -326,15 +455,15 @@ export class PageDashboardComponent implements OnInit {
 			const windowsHello = new Status();
 			windowsHello.status = 1;
 			windowsHello.id = 'windows-hello';
-			windowsHello.title = 'Windows Hello';
-			windowsHello.detail = 'Disabled';
-			windowsHello.path = 'windows-hello';
+			windowsHello.title = this.translate.instant('common.securityAdvisor.windowsHello');// 'Windows Hello';
+			windowsHello.detail = this.translate.instant('common.securityAdvisor.disabled');//'Disabled';
+			windowsHello.path = 'security/windows-hello';
 			windowsHello.type = 'security';
 
 			if (response.windowsHello) {
 				if (response.windowsHello) {
 					windowsHello.status = 0;
-					windowsHello.detail = 'Enabled';
+					windowsHello.detail = this.translate.instant('common.securityAdvisor.enabled');//'Enabled';
 				} else {
 					windowsHello.status = 1;
 				}
@@ -347,10 +476,10 @@ export class PageDashboardComponent implements OnInit {
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			switch (notification.type) {
-				case LenovoIdKey.FirstName:
-					this.firstName = notification.payload;
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
 					break;
-
 				default:
 					break;
 			}

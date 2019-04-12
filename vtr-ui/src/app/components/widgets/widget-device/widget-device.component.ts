@@ -3,6 +3,8 @@ import { DeviceService } from '../../../services/device/device.service';
 import { MyDevice } from 'src/app/data-models/device/my-device.model';
 import { Status } from 'src/app/data-models/widgets/status.model';
 import { CommonService } from 'src/app/services/common/common.service';
+import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-widget-device',
@@ -13,13 +15,15 @@ export class WidgetDeviceComponent implements OnInit {
 	public myDevice: MyDevice;
 	public deviceStatus: Status[];
 
-	subtitle = 'My device status';
+	//subtitle = 'My device status';
 
 	virusImage = '//vtr-ui//src//assets//Device_antivirus.png';
 
 	constructor(
 		public deviceService: DeviceService,
-		private commonService: CommonService
+		private commonService: CommonService,
+		private systemUpdateService: SystemUpdateService,
+		private translate: TranslateService,
 	) {
 		this.myDevice = new MyDevice();
 	}
@@ -48,15 +52,15 @@ export class WidgetDeviceComponent implements OnInit {
 			const processor = new Status();
 			processor.status = 1;
 			processor.id = 'processor';
-			processor.title = 'Processor not found';
-			processor.detail = 'Learn more';
+			processor.title = this.translate.instant('device.myDevice.processor.notFound'); //'Processor not found';
+			processor.detail = this.translate.instant('device.myDevice.learnMore');//'Learn more';
 			processor.path = 'ms-settings:about';
 			processor.asLink = false;
 			processor.isSystemLink = true;
 
 			if (response.processor) {
 				processor.status = 0;
-				processor.title = `Processor`;
+				processor.title = this.translate.instant('device.myDevice.processor.title'); //`Processor`;
 				processor.systemDetails = `${response.processor.name}`;
 			}
 			systemStatus.push(processor);
@@ -64,8 +68,8 @@ export class WidgetDeviceComponent implements OnInit {
 			const memory = new Status();
 			memory.status = 1;
 			memory.id = 'memory';
-			memory.title = 'Memory not found';
-			memory.detail = 'Learn more';
+			memory.title = this.translate.instant('device.myDevice.memory.notFound');// 'Memory not found';
+			memory.detail = this.translate.instant('device.myDevice.learnMore');//'Learn more';
 			memory.path = 'ms-settings:about';
 			memory.asLink = false;
 			memory.isSystemLink = true;
@@ -73,11 +77,11 @@ export class WidgetDeviceComponent implements OnInit {
 			if (response.memory) {
 				const { size, total, used } = response.memory;
 				let type = response.memory.type;
-				memory.title = `Memory `;
+				memory.title = this.translate.instant('device.myDevice.memory.title');//`Memory `;
 				if (type.toLowerCase() === 'unknown') {
 					type = '';
 				}
-				memory.systemDetails = `${this.commonService.formatBytes(size)} of ${type} RAM`;
+				memory.systemDetails = `${this.commonService.formatBytes(size)} ${this.translate.instant('device.myDevice.of')} ${type} ${this.translate.instant('device.myDevice.memory.ram')}`;
 				// const percent = (used / total) * 100;
 				const percent = parseInt(((used / total) * 100).toFixed(0), 10);
 				if (percent > 70) {
@@ -91,16 +95,16 @@ export class WidgetDeviceComponent implements OnInit {
 			const disk = new Status();
 			disk.status = 1;
 			disk.id = 'disk';
-			disk.title = 'Disk not found';
-			disk.detail = 'Learn more';
+			disk.title = this.translate.instant('device.myDevice.diskspace.notFound'); //'Disk not found';
+			disk.detail = this.translate.instant('device.myDevice.learnMore'); //'Learn more';
 			disk.path = 'ms-settings:storagesense';
 			disk.asLink = false;
 			disk.isSystemLink = true;
 
 			if (response.disk) {
 				const { total, used } = response.disk;
-				disk.title = `Disk Space`;
-				disk.systemDetails = `${this.commonService.formatBytes(used)} of ${this.commonService.formatBytes(total)}`;
+				disk.title = this.translate.instant('device.myDevice.diskspace.title'); //`Disk Space`;
+				disk.systemDetails = `${this.commonService.formatBytes(used)} ${this.translate.instant('device.myDevice.of')} ${this.commonService.formatBytes(total)}`;
 				// const percent = (used / total) * 100;
 				const percent = parseInt(((used / total) * 100).toFixed(0), 10);
 				if (percent > 90) {
@@ -114,22 +118,33 @@ export class WidgetDeviceComponent implements OnInit {
 			const systemUpdate = new Status();
 			systemUpdate.status = 1;
 			systemUpdate.id = 'systemupdate';
-			systemUpdate.title = 'System update not found';
-			systemUpdate.detail = 'System update';
-			systemUpdate.path = '/system-updates';
+			systemUpdate.title = this.translate.instant('device.myDevice.systemUpdate.notFound');//'System update not found';
+			systemUpdate.detail = this.translate.instant('device.myDevice.systemUpdate.title');;
+			systemUpdate.path = 'device/system-updates';
 			systemUpdate.asLink = true;
 			systemUpdate.isSystemLink = false;
 
 			if (response.sysupdate) {
 				const updateStatus = response.sysupdate.status;
 				const lastUpdate = response.sysupdate.lastupdate;
+				const diffInDays = this.systemUpdateService.dateDiffInDays(lastUpdate);
+
 				if (updateStatus === 1) {
-					systemUpdate.title = `Software up to date `;
-					systemUpdate.systemDetails = `updated on ${this.commonService.formatDate(lastUpdate)}`;
-					systemUpdate.status = 0;
+					systemUpdate.title = this.translate.instant('device.myDevice.systemUpdate.detail.uptoDate');
+					//`Software up to date `;
+					systemUpdate.systemDetails = `${this.translate.instant('device.myDevice.systemUpdate.detail.updatedOn')} ${this.commonService.formatDate(lastUpdate)}`;
+					if (diffInDays > 30) {
+						systemUpdate.title = this.translate.instant('device.myDevice.systemUpdate.detail.outdated');
+						//`Software outdated `;
+						systemUpdate.status = 1;
+					} else {
+						systemUpdate.status = 0;
+					}
 				} else {
-					systemUpdate.title = `Software outdated `;
-					systemUpdate.systemDetails = `never ran update`;
+					systemUpdate.title = this.translate.instant('device.myDevice.systemUpdate.detail.outdated');
+					//`Software outdated `;
+					systemUpdate.systemDetails = this.translate.instant('device.myDevice.systemUpdate.detail.neverRanUpdate');
+					//`never ran update`;
 					systemUpdate.status = 1;
 				}
 			}
@@ -138,8 +153,8 @@ export class WidgetDeviceComponent implements OnInit {
 			const warranty = new Status();
 			warranty.status = 1;
 			warranty.id = 'warranty';
-			warranty.title = 'Warranty not found';
-			warranty.detail = 'Extend warranty';
+			warranty.title = this.translate.instant('device.myDevice.warranty.notFound'); //'Warranty not found';
+			warranty.detail = this.translate.instant('device.myDevice.warranty.detail.title');//'Extend warranty';
 			warranty.path = '/support';
 			warranty.asLink = true;
 			warranty.isSystemLink = false;
@@ -151,16 +166,19 @@ export class WidgetDeviceComponent implements OnInit {
 					const today = new Date();
 					const expired = new Date(response.warranty.expired);
 					const warrantyInDays = this.commonService.getDaysBetweenDates(today, expired);
-					warranty.title = `In warranty `;
-					warranty.systemDetails = `${warrantyInDays} days remaining`;
+					warranty.title = this.translate.instant('device.myDevice.warranty.detail.inWarranty');//`In warranty `;
+					warranty.systemDetails = `${warrantyInDays} ${this.translate.instant('device.myDevice.warranty.detail.daysRemaining')}`;
+					// days remaining`;
 					warranty.status = 0;
 				} else if (response.warranty.status === 1) {
-					warranty.title = `Out of warranty `;
-					warranty.detail = `Expired on ${warrantyDate}`;
+					warranty.title = this.translate.instant('device.myDevice.warranty.detail.outOfWarranty');//`Out of warranty `;
+					warranty.detail = `${this.translate.instant('device.myDevice.warranty.detail.expiredOn')} ${warrantyDate}`;
+					// `Expired on ${warrantyDate}`;
 					warranty.status = 1;
 				} else {
-					warranty.title = `Warranty not available`;
-					warranty.detail = 'Support';
+					warranty.title = this.translate.instant('device.myDevice.warranty.detail.notAvailable');
+					//`Warranty not available`;
+					warranty.detail = this.translate.instant('device.myDevice.warranty.detail.support');//'Support';
 					warranty.status = 1;
 				}
 			}

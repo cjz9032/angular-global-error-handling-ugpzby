@@ -18,6 +18,7 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 	expandedRecordId = '';
 	public installationHistory: Array<UpdateHistory> = [];
 	private notificationSubscription: Subscription;
+	public showAll = false;
 
 	constructor(
 		public systemUpdateService: SystemUpdateService,
@@ -99,5 +100,17 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 	private sortInstallationHistory(history: Array<UpdateHistory>) {
 		this.installationHistory = this.mapMessage(history);
 		this.systemUpdateService.sortInstallationHistory(this.installationHistory, this.sortAsc);
+		if (this.installationHistory.length > 5 && !this.showAll) {
+			this.installationHistory = this.installationHistory.slice(0, 5);
+		} else {
+			this.showAll = true;
+		}
+	}
+
+	public onShowAllClick() {
+		this.showAll = true;
+		if (this.systemUpdateService.installationHistory) {
+			this.sortInstallationHistory(this.systemUpdateService.installationHistory);
+		}
 	}
 }

@@ -22,7 +22,7 @@
 				line-height: 16rem;
 				text-align: center;
 				font-weight: $weight_bold;
-				background: $main_darkest;
+				background: $main_darker;
 
 				span.percent {
 					font-size: 2.5rem;
@@ -44,33 +44,42 @@
 			}
 			.circle.percent-80,
 			.circle.percent-100 {
-				background: $teal;
+				background: linear-gradient(-45deg, $go_lighter, $go_dark);
 			}
 		}
 		.title {
 			color: $light;
 			font-size: 3.5rem;
-			font-weight: $weight_light;
+			font-weight: $weight_bold;
 			line-height: 4.2rem;
 			padding-left: 1rem;
 			padding-top: 5rem;
 			padding-bottom: 2rem;
 			padding-right: 5rem;
+			@media #{$mediaquery_12} {
+				padding-left: 7rem;
+			}
 		}
 		.row1 {
-			opacity: 0.5;
+			opacity: 1;
 			color: $light;
 			font-size: 1.4rem;
 			line-height: 2.1rem;
 			padding-left: 1rem;
 			padding-top: 0rem;
 			padding-right: 5rem;
+			@media #{$mediaquery_12} {
+				padding-left: 7rem;
+			}
 		}
 		.button-row {
 			padding-left: 1rem;
 			padding-bottom: 5rem;
 			padding-top: 3rem;
 			padding-right: 5rem;
+			@media #{$mediaquery_12} {
+				padding-left: 7rem;
+			}
 			.action-button {
 				border-radius: 2.5rem;
 				background: $gradient_main;
@@ -79,7 +88,7 @@
 				color: $light;
 				font-size: 1.5rem;
 				height: 5rem;
-				font-weight: $weight_medium;
+				font-weight: $weight_bold;
 				line-height: 5rem;
 				text-align: center;
 				border: 0rem;

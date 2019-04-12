@@ -1,4 +1,4 @@
-@import '../../../app.theme';
+@import "../../../app.theme";
 
 .vtr-page-dashboard {
 	.p-30 {
@@ -19,5 +19,12 @@
 
 	.mt--50 {
 		margin-top: -5.3125rem;
+	}
+	.system-status-block {
+		padding-top: 7.5rem;
+	}
+
+	.pt-6 {
+		padding-top: 6rem;
 	}
 }

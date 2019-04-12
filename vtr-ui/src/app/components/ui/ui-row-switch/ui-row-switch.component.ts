@@ -8,13 +8,15 @@ import {
 } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalBatteryChargeThresholdComponent } from '../../modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
-import {BaseComponent} from "../../base/base.component";
+import { BaseComponent } from '../../base/base.component';
+import { DeviceService } from 'src/app/services/device/device.service';
+
 
 @Component({
 	selector: 'vtr-ui-row-switch',
 	templateUrl: './ui-row-switch.component.html',
 	styleUrls: ['./ui-row-switch.component.scss'],
-	exportAs:'uiRowSwitch'
+	exportAs: 'uiRowSwitch'
 })
 export class UiRowSwitchComponent extends BaseComponent {
 	@ViewChild('childContent') childContent: any;
@@ -36,20 +38,29 @@ export class UiRowSwitchComponent extends BaseComponent {
 	@Input() name = '';
 	@Input() disabled = false;
 	@Input() type = undefined;
-
+	@Input() resetTextAsButton = false;
 
 	@Output() toggleOnOff = new EventEmitter<boolean>();
 	@Output() readMoreClick = new EventEmitter<boolean>();
 	@Output() tooltipClick = new EventEmitter<boolean>();
 	@Output() resetClick = new EventEmitter<Event>();
 
-	constructor(public modalService: NgbModal) {
-		super();
-	}
+
+	// private tooltip: NgbTooltip;
+
+	constructor(
+		public modalService: NgbModal
+		, private deviceService: DeviceService
+	) { super(); }
+
 
 	ngOnInit() {
 		this.childContent = {};
 		this.childContent.innerHTML = '';
+
+		// this.commonService.notification.subscribe((notification: AppNotification) => {
+		// 	this.onNotification(notification);
+		// });
 	}
 
 	public onOnOffChange($event) {
@@ -91,5 +102,29 @@ export class UiRowSwitchComponent extends BaseComponent {
 	public onResetClick($event: Event) {
 		this.resetClick.emit($event);
 	}
+
+	public onLinkClick(linkPath) {
+		if (linkPath && linkPath.length > 0) {
+			this.deviceService.launchUri(linkPath);
+		}
+	}
+
+
+	// private closeTooltip($event: Event) {
+	// 	if (!$event.srcElement.classList.contains('fa-question-circle') && this.tooltip && this.tooltip.isOpen()) {
+	// 		this.tooltip.close();
+	// 	}
+	// }
+
+	// private onNotification(notification: AppNotification) {
+	// 	const { type, payload } = notification;
+	// 	switch (type) {
+	// 		case AppEvent.Click:
+	// 			this.closeTooltip(payload);
+	// 			break;
+	// 		default:
+	// 			break;
+	// 	}
+	// }
 
 }

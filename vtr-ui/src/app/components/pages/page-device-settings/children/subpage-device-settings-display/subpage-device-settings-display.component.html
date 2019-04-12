@@ -2,24 +2,25 @@
 	<div class="row">
 		<div class="col">
 			<vtr-ui-header-subpage [items]="headerMenuItems"
-				[title]="title"
-				[caption]="headerCaption"
-				[menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
+				[title]="title | translate"
+				[caption]="'device.deviceSettings.displayCamera.description' | translate"
+				[menuTitle]="'device.deviceSettings.displayCamera.jumpTo.title' | translate"></vtr-ui-header-subpage>
 		</div>
 	</div>
 	<div class="row py-5 smartsettings-card"
 		id="display">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible cardTitle="Display" componentName="display"
+			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.displayCamera.display.title' | translate"
+				componentName="display"
 				[isCollapsed]="false"
 				[allowCollapse]="true"
 				[theme]="'white'">
 				<ul class="list-group list-group-flush">
 					<li class="pt-3"
 						*ngIf="eyeCareModeStatus.available">
-						<vtr-ui-row-switch [title]="'Eye Care Mode'"
-										   componentName="Eye Care Mode"
-										   name="Eye Care Mode"
+						<vtr-ui-row-switch [title]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
+							componentName="Eye Care Mode"
+							name="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
 							[caption]=""
 							[isSwitchVisible]="true"
 							[leftIcon]="['far', 'gem']"
@@ -29,13 +30,16 @@
 							[isSwitchChecked]="eyeCareModeStatus.status"
 							(toggleOnOff)="onEyeCareModeStatusToggle($event)"
 							[theme]="'white'"
-							[tooltipText]="'Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.'">
+							[tooltipText]="'device.deviceSettings.displayCamera.display.eyeCareMode.tooltip' | translate">
 							<div class="row">
 								<div class="col-12">
-									<vtr-eye-care-mode [eyecareModeSettings]="eyecareDatasource"
-										[enableSlider]="eyeCareModeStatus.status"
-										(eyecareTemparatureChange)="onEyeCareTemperatureChange($event)"
-										(resetTemperature)="onResetTemperature($event)"></vtr-eye-care-mode>
+									<vtr-eye-care-mode [eyeCareModeSettings]="eyeCareDataSource"
+										[enableSlider]="!enableSlider"
+										[enableSunsetToSunrise]="enableSunsetToSunrise"
+										[sunsetToSunriseStatus]="sunsetToSunriseModeStatus"
+										(eyeCareTemparatureChange)="onEyeCareTemparatureChange($event)"
+										(resetTemparature)="onResetTemparature($event)"
+										(sunsetToSunrise)="onSunsetToSunrise($event)"></vtr-eye-care-mode>
 								</div>
 							</div>
 						</vtr-ui-row-switch>
@@ -66,14 +70,16 @@
 		</div>
 	</div>
 	<div class="row py-5 smartsettings-card"
-		id="camera">
+		id="camera"
+		*ngIf="cameraPrivacyModeStatus.available">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible cardTitle="Camera" componentName="Camera"
+			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.displayCamera.camera.title' | translate"
+				componentName="Camera"
 				[isCollapsed]="false"
 				[allowCollapse]="true"
 				[theme]="'white'">
-				<!-- <div class="alert alert-secondary no-camera-access"
-					*ngIf="!dataSource.hasAccessToCamera">
+				<div class="alert alert-secondary no-camera-access"
+					*ngIf="!cameraPrivacyModeStatus.available">
 					<div>
 						<strong>Note:</strong> Lenovo Vantage does not have
 						permissions to access your camera. Please turn on access
@@ -84,37 +90,42 @@
 						(click)="onPrivacySettingClick($event)">
 						Go to windows privacy settings
 					</button>
-				</div> -->
-				<ul class="list-group list-group-flush">
+				</div>
+				<ul class="list-group list-group-flush"
+					*ngIf="cameraPrivacyModeStatus.available">
 					<li class="pt-3">
-						<vtr-ui-row-switch [title]="'Camera privacy mode'"
-										     componentName="Camera Privacy Mode"
-										     name="Camera Privacy Mode"
+						<vtr-ui-row-switch [title]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
+							componentName="Camera Privacy Mode"
+							name="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
 							[isSwitchVisible]="true"
 							[leftIcon]="['far', 'gem']"
 							[rightIcon]="['far', 'question-circle']"
 							(toggleOnOff)="onCameraPrivacyModeToggle($event)"
 							[isSwitchChecked]="cameraPrivacyModeStatus.status"
-							[tooltipText]="'The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling.'">
+							[tooltipText]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.tooltip' | translate">
 						</vtr-ui-row-switch>
 					</li>
 					<li class="pt-3">
-						<vtr-ui-row-switch [title]="'Camera'"
-										   componentName="Camera"
-										   name="Camera"
+						<vtr-ui-row-switch [title]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
+							componentName="Camera"
+							name="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
+							[type]="'Camera'"
 							[isSwitchVisible]="false"
 							[leftIcon]="['far', 'gem']"
 							[showChildContent]="true"
-							[resetText]="'Reset factory settings'"
+							[resetText]="'device.deviceSettings.displayCamera.camera.camera.reset' | translate"
 							[rightIcon]="['far', 'question-circle']"
-							[tooltipText]="'Click here to reset Camera properties to default settings.'"
-							(resetClick)="resetCameraSettings()">
+							[tooltipText]="'device.deviceSettings.displayCamera.camera.camera.tooltip' | translate"
+							(resetClick)="resetCameraSettings()"
+							[resetTextAsButton]="true">
 							<div class="row">
 								<div class="col-12">
 									<vtr-camera-control [cameraSettings]="dataSource"
+										[cameraFeatureAccess]="cameraFeatureAccess"
 										(brightnessChange)="onBrightnessChange($event)"
 										(contrastChange)="onContrastChange($event)"
-										(exposureChange)="onCameraExposureValueChange($event)">
+										(exposureChange)="onCameraExposureValueChange($event)"
+										(exposureToggle)="onCameraAutoExposureToggle($event)">
 									</vtr-camera-control>
 								</div>
 							</div>

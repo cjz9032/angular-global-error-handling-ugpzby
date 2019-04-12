@@ -1,0 +1,63 @@
+<div class="article-item mb-80"
+	#articleItemDiv
+	id="{{'article-item-' + this.index}}"
+	[ngClass]="{'item-no-img': !item.FeatureImage, 'item-no-title': !item.Title}">
+	<div class="container-fluid">
+		<div class="row">
+			<a *ngIf="item.FeatureImage"
+				class="col col-12 image"
+				[style.background-image]="'url('+item.FeatureImage+')'"
+				vtrMetrics
+				metricsEvent="DocClick"
+				metricsParent="Page.Support"
+				metricsItemID="{{item.ID}}"
+				metricsItemCategory=""
+				metricsItemPosition="{{index + 1}}"
+				metricsViewOrder="{{metricsDatas.viewOrder}}"
+				metricsPageNumber="{{metricsDatas.pageNumber}}"
+				(click)="showArticleDetails()">
+				<div *ngIf="item.BrandImage"
+					class="logo">
+					<span class="img"
+						*ngIf="item.BrandImage && item.FeatureImage">
+						<img src="{{item.BrandImage}}"
+							alt="{{item.BrandName}}">
+					</span>
+					<span *ngIf="item.BrandName"
+						class="text">{{item.BrandName}}</span>
+				</div>
+			</a>
+			<div *ngIf="item.Title"
+				class="col col-12 content">
+				<a class="title"
+					vtrMetrics
+					metricsEvent="DocClick"
+					metricsParent="Page.Support"
+					metricsItemID="{{item.ID}}"
+					metricsItemCategory=""
+					metricsItemPosition="{{index + 1}}"
+					metricsViewOrder="{{metricsDatas.viewOrder}}"
+					metricsPageNumber="{{metricsDatas.pageNumber}}"
+					(click)="showArticleDetails()">{{item.Title}}</a>
+				<div class="logo-text">
+					<span *ngIf="item.BrandName && !item.FeatureImage">{{item.BrandName}}</span>
+				</div>
+				<div *ngIf="item.ActionLink && item.FeatureImage"
+					class="read-more">
+					<a vtrMetrics
+						metricsEvent="DocClick"
+						metricsParent="Page.Support"
+						metricsItemID="{{item.ID}}"
+						metricsItemCategory=""
+						metricsItemPosition="{{index + 1}}"
+						metricsViewOrder="{{metricsDatas.viewOrder}}"
+						metricsPageNumber="{{metricsDatas.pageNumber}}"
+						(click)="showArticleDetails()">
+						<span class="link-label">{{item.Action}}</span>
+						<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

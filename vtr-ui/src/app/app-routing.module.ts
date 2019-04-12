@@ -16,6 +16,7 @@ import { PageSupportComponent } from './components/pages/page-support/page-suppo
 import { PageSupportDetailComponent } from './components/pages/page-support-detail/page-support-detail.component';
 import { PageUserComponent } from './components/pages/page-user/page-user.component';
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
+import { WindowsHelloGuardService } from './services/guard/windows-hello-guardService.service';
 
 const routes: Routes = [
 	{
@@ -46,6 +47,7 @@ const routes: Routes = [
 			},
 			{
 				path: 'power',
+
 				component: SubpageDeviceSettingsPowerComponent,
 				data:{
 					pageName:"Device.MyDeviceSettings"
@@ -54,10 +56,11 @@ const routes: Routes = [
 			{
 				path: 'audio',
 				component: SubpageDeviceSettingsAudioComponent,
-				data:{
-					pageName:"Device.MyDeviceSettings"
+				data: {
+					pageName: "Device.MyDeviceSettings"
 				}
 			},
+
 			{
 				path: 'display-camera',
 				component: SubpageDeviceSettingsDisplayComponent,
@@ -68,10 +71,12 @@ const routes: Routes = [
 		]
 	}, {
 		path: 'device/system-updates',
+
 		component: PageDeviceUpdatesComponent,
 		data:{
 			pageName:"Device.SystemUpdate"
 		}
+
 	}, {
 		path: 'security',
 		component: PageSecurityComponent,
@@ -79,6 +84,7 @@ const routes: Routes = [
 
 	}, {
 		path: 'security/anti-virus',
+
 		component: PageSecurityAntivirusComponent,
 		data:{
 			pageName:"Security.AntiVirus"
@@ -107,6 +113,7 @@ const routes: Routes = [
 		data:{
 			pageName:"Security.WindowsHello"
 		}
+
 	}, {
 		path: 'support',
 		component: PageSupportComponent,

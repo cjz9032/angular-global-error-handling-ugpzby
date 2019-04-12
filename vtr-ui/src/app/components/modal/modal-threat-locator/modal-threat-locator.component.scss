@@ -1,0 +1,23 @@
+@import '../../../app.theme.scss';
+
+.vtr-modal-threat-locator {
+	&.modal-body {
+		padding: 0;
+	}
+
+	fa-icon {
+		font-size: 3rem;
+		color: $main;
+	}
+
+	h1 {
+		font-size: 3.1rem;
+		font-weight: normal;
+		color: $blue-dark;
+		margin-bottom: 3rem;
+	}
+
+	.iframe-container {
+		height: 46rem;
+	}
+}

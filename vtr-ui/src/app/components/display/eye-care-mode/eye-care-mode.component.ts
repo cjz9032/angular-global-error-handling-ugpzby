@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, EventEmitter, Output, AfterContentChecked } from '@angular/core';
 import { IEyeCareModeResponse } from 'src/app/data-models/camera/camera-detail.model';
 import { ChangeContext } from 'ng5-slider';
+import { EyeCareMode, SunsetToSunriseStatus} from 'src/app/data-models/camera/eyeCareMode.model';
+import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 
 @Component({
 	selector: 'vtr-eye-care-mode',
@@ -8,10 +10,14 @@ import { ChangeContext } from 'ng5-slider';
 	styleUrls: ['./eye-care-mode.component.scss']
 })
 export class EyeCareModeComponent implements OnInit {
-	@Input() eyeCareModeSettings: IEyeCareModeResponse;
+	@Input() eyeCareModeSettings: EyeCareMode;
 	@Input() enableSlider: boolean;
-	@Output() eyeCareTemperatureChange: EventEmitter<ChangeContext> = new EventEmitter();
-	@Output() resetTemperature: EventEmitter<any> = new EventEmitter();
+	@Input() enableSunsetToSunrise: boolean;
+	@Input() sunsetToSunriseStatus: SunsetToSunriseStatus;
+	@Output() eyeCareTemparatureChange: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() eyeCareTemparatureValueChange: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() resetTemparature: EventEmitter<any> = new EventEmitter();
+	@Output() sunsetToSunrise = new EventEmitter<any>();
 	constructor() { }
 
 	public stepsArray = [
@@ -22,6 +28,7 @@ export class EyeCareModeComponent implements OnInit {
 	];
 
 	ngOnInit() {
+
 	}
 
 
@@ -51,12 +58,19 @@ export class EyeCareModeComponent implements OnInit {
 		}
 	}
 
-	public onResetTemperature($event: any) {
-		console.log('todo: on temp reset');
-		this.resetTemperature.emit($event);
+	public onResetTemparature($event: any) {
+		console.log('Reset Temperature');
+		this.resetTemparature.emit($event);
 	}
-	public onEyeCareTemperatureChange($event: ChangeContext) {
-		console.log('Brightness changed', event);
-		this.eyeCareTemperatureChange.emit($event);
+	public onEyeCareTemparatureChange($event: ChangeContext) {
+		this.eyeCareTemparatureChange.emit($event);
+	}
+	public onEyeCareTemparatureValueChange($event: ChangeContext) {
+		this.eyeCareTemparatureValueChange.emit($event);
+	}
+	public onSunsetToSunrise(event: any) {
+		this.sunsetToSunriseStatus.status = !this.sunsetToSunriseStatus.status;
+		console.log('sunset to sunrise in eyecare-mode commponent', this.sunsetToSunriseStatus);
+		this.sunsetToSunrise.emit(event);
 	}
 }

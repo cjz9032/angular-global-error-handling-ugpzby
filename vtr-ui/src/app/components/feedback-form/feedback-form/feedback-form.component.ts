@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import {VantageShellService} from "../../../services/vantage-shell/vantage-shell.service";
 
+
 @Component({
 	selector: 'vtr-feedback-form',
 	templateUrl: './feedback-form.component.html',
@@ -13,10 +14,12 @@ export class FeedbackFormComponent implements OnInit {
 	@Input() buttonText = 'Submit';
 	feedbackForm: FormGroup;
 	feedbackButtonText: string;
+
 	constructor(public activeModal: NgbActiveModal, private shellService: VantageShellService) {
 		this.metrics = shellService.getMetrics();
 	}
 	private metrics: any;
+
 	ngOnInit() {
 		this.feedbackButtonText = this.buttonText;
 		this.createFeedbackForm();
@@ -24,7 +27,15 @@ export class FeedbackFormComponent implements OnInit {
 
 	public onFeedBackSubmit($event): void {
 		const formData = this.feedbackForm.value;
-		console.log('onFeedBackSubmit: ', JSON.stringify(formData), $event);
+		var data={
+		    "ItemType":"UserFeedback",
+			"ItemName":"Submit",
+			"ItemParent":"Dialog.Feedback",
+			"UserEmail":formData.userEmail,
+			"Content": formData.userComment
+		}
+		this.metrics.sendAsync(data);
+		console.log('onFeedBackSubmit: ', JSON.stringify(data), $event);
 		this.feedbackForm.reset();
 		// TODO: integrate with API
 		this.feedbackClick.emit($event);

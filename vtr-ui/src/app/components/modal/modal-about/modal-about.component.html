@@ -1,0 +1,17 @@
+<div class="modal-body vtr-modal-about">
+	<div class="row justify-content-end">
+		<div class="btn-close">
+			<button type="button"
+				class="close"
+				aria-hidden="true"
+				vtrMetrics
+				metricsItem="{{aboutModalMetrics.closeButton}}"
+				metricsEvent="ItemClick"
+				metricsParent="{{aboutModalMetrics.pageName}}"
+				(click)="closeModal()">
+				<fa-icon [icon]="['fas', 'times']"></fa-icon>
+			</button>
+		</div>
+	</div>
+	<div [innerHTML]="articleBody"></div>
+</div>
