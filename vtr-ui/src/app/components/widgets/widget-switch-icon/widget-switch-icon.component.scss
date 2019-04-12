@@ -9,12 +9,17 @@
     width: 12.5rem;
     border-radius: $border_radius;
     @media #{$mediaquery_16} {
-    	height: 10rem;
-    	width: 10rem;
-	}
-	@media #{$mediaquery_19} {
-    	height: 10rem;
-    	width: 10rem;
+      height: 10rem;
+      width: 10rem;
+    }
+    @media #{$mediaquery_19} {
+      height: 10rem;
+      width: 10rem;
+    }
+
+    @media #{$mediaquery_10} {
+      height: 10rem;
+      width: 10rem;
     }
     // @media #{$mediaquery_7} {
     // 	height: 8rem;
@@ -53,13 +58,13 @@
       text-align: center;
       font-size: 1.1rem;
       //margin: 1em 0;
-	  margin: 1rem 0rem 1rem 0rem;
-	  @media #{$mediaquery_16} {
-		  margin: 0.5rem 0rem;
-	  }
-	  @media #{$mediaquery_19} {
-		margin: 0.5rem 0rem;
-	}
+      margin: 1rem 0rem 1rem 0rem;
+      @media #{$mediaquery_16} {
+        margin: 0.5rem 0rem;
+      }
+      @media #{$mediaquery_19} {
+        margin: 0.5rem 0rem;
+      }
       font-weight: $weight_medium;
       letter-spacing: 0;
       height: 1.3rem;
