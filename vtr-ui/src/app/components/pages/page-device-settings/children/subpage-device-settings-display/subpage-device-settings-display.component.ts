@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import { CameraDetail, ICameraSettingsResponse } from 'src/app/data-models/camera/camera-detail.model';
+import { CameraDetail, ICameraSettingsResponse, CameraFeatureAccess } from 'src/app/data-models/camera/camera-detail.model';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { DisplayService } from 'src/app/services/display/display.service';
@@ -27,6 +27,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public dataSource: any;
 	public eyeCareDataSource: EyeCareMode;
 	public cameraDetails1: ICameraSettingsResponse;
+	public cameraFeatureAccess: CameraFeatureAccess;
 	private cameraDetailSubscription: Subscription;
 	public eyeCareModeStatus = new FeatureStatus(false, true);
 	public cameraPrivacyModeStatus = new FeatureStatus(false, true);
@@ -34,9 +35,9 @@ export class SubpageDeviceSettingsDisplayComponent
 	public enableSunsetToSunrise = false;
 	public enableSlider = false;
 	public initEyecare = 0;
+	public showHideAutoExposureSlider = false;
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
-	isDesktopMachine: boolean;
 	headerMenuItems = [
 		{
 			title: 'device.deviceSettings.displayCamera.jumpTo.shortcuts.display.title',
@@ -55,26 +56,16 @@ export class SubpageDeviceSettingsDisplayComponent
 		public displayService: DisplayService,
 		private commonService: CommonService) {
 		this.dataSource = new CameraDetail();
+		this.cameraFeatureAccess = new CameraFeatureAccess();
 		this.eyeCareDataSource = new EyeCareMode();
 	}
 
 	ngOnInit() {
 		console.log('subpage-device-setting-display onInit');
-
-
+		this.startEyeCareMonitor();
 		this.initEyecaremodeSettings();
-
-
-
-
-
 		this.getCameraPrivacyModeStatus();
 		this.getCameraDetails();
-		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
-		if (this.isDesktopMachine) {
-			// on desktop machine, camera section need to hide, so it's Jump to Setting link also need to remove
-			this.headerMenuItems.pop();
-		}
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			cameraDetail => {
 				this.dataSource = cameraDetail;
@@ -84,7 +75,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				console.log(error);
 			}
 		);
-		// this.startEyeCareMonitor();
+
 		this.statusChangedLocationPermission();
 
 	}
@@ -93,6 +84,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		if (this.cameraDetailSubscription) {
 			this.cameraDetailSubscription.unsubscribe();
 		}
+		this.stopEyeCareMonitor();
 	}
 
 	/**
@@ -123,7 +115,14 @@ export class SubpageDeviceSettingsDisplayComponent
 		console.log('Inside');
 		this.displayService.getCameraSettingsInfo().then((response) => {
 			console.log('getCameraDetails.then', response);
+			console.log('response.exposure.supported.then', response.exposure.supported);
+			console.log('response.exposure.autoValue.then', response.exposure.autoValue);
+
 			this.dataSource = response;
+			if (this.dataSource.exposure.supported === true && this.dataSource.exposure.autoValue === false) {
+
+				this.cameraFeatureAccess.showAutoExposureSlider = true;
+			}
 		});
 	}
 	// Start EyeCare Mode
@@ -171,6 +170,7 @@ export class SubpageDeviceSettingsDisplayComponent
 								this.initEyecaremodeSettings();
 							}
 						} else {
+							//
 							this.getSunsetToSunrise();
 							this.getEyeCareModeStatus();
 							this.getDisplayColorTemperature();
@@ -260,6 +260,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.log('temparature reset data', resetData);
 						this.eyeCareDataSource.current = resetData.colorTemperature;
 						this.eyeCareModeStatus.status = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
+						this.enableSlider = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
 						this.sunsetToSunriseModeStatus.status = (resetData.autoEyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
 						console.log('sunsetToSunriseModeStatus.status from temparature reset data', this.sunsetToSunriseModeStatus.status);
 						// this.getDisplayColorTemperature();
@@ -274,7 +275,18 @@ export class SubpageDeviceSettingsDisplayComponent
 			console.log('sunset to sunrise event', $featureStatus.status);
 			if (this.displayService.isShellAvailable) {
 				this.displayService
-					.setEyeCareAutoMode($featureStatus.status);
+					.setEyeCareAutoMode($featureStatus.status).
+					then((response: any) => {
+						console.log('setEyeCareAutoMode.then', response);
+						if (response.result === true) {
+							this.eyeCareDataSource.current = response.colorTemperature;
+							this.eyeCareModeStatus.status = response.eyecaremodeState;
+							this.enableSlider = response.eyecaremodeState;
+						}
+
+					}).catch(error => {
+						console.error('setEyeCareAutoMode', error);
+					});
 			}
 		} catch (error) {
 			console.error(error.message);
@@ -325,10 +337,11 @@ export class SubpageDeviceSettingsDisplayComponent
 			this.displayService
 				.getCameraPrivacyModeState()
 				.then((featureStatus: FeatureStatus) => {
-					if (featureStatus.available) {
-						console.log('cameraPrivacyModeStatus.then', featureStatus);
-						this.cameraPrivacyModeStatus = featureStatus;
-						//this.cameraPrivacyModeStatus.available=false;
+					console.log('cameraPrivacyModeStatus.then', featureStatus);
+					this.cameraPrivacyModeStatus = featureStatus;
+					if (!this.cameraPrivacyModeStatus.available) {
+						// on desktop machine, camera section need to hide, so it's Jump to Setting link also need to remove
+						this.headerMenuItems.pop();
 					}
 				})
 				.catch(error => {
@@ -407,6 +420,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		console.log('called from eyecare monitor', JSON.stringify(resetData));
 		this.eyeCareDataSource.current = resetData.colorTemperature;
 		this.eyeCareModeStatus.status = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
+		this.enableSlider = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
 		this.sunsetToSunriseModeStatus.status = (resetData.autoEyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
 	}
 	public startEyeCareMonitor() {

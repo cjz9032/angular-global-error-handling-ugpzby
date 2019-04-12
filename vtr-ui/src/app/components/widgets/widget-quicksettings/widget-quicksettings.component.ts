@@ -20,7 +20,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public microphoneStatus = new FeatureStatus(false, true);
 	public eyeCareModeStatus = new FeatureStatus(false, true);
 	private notificationSubscription: Subscription;
-	public isDesktopMachine: boolean
 	public quickSettingsWidget = [
 		{
 			tooltipText: 'MICROPHONE',
@@ -45,7 +44,6 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.getQuickSettingStatus();
-		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});

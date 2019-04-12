@@ -6,6 +6,9 @@
 		border-radius: $border_radius;
 		background-color: $light;
 		padding: 1.5rem;
+		.loading {
+			text-align: center;
+		}
 	}
 
 	.vtr-container-collapsible.white-theme {

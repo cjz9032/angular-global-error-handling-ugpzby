@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild, OnDestroy, ElementRef, Output, EventEmitter } from '@angular/core';
-import { CameraDetail, ICameraSettingsResponse } from 'src/app/data-models/camera/camera-detail.model';
+import { CameraDetail, ICameraSettingsResponse, CameraFeatureAccess } from 'src/app/data-models/camera/camera-detail.model';
 import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { Subscription } from 'rxjs/internal/Subscription';
@@ -14,12 +14,13 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 
 export class CameraControlComponent implements OnInit, OnDestroy {
 	@Input() cameraSettings: ICameraSettingsResponse;
+	@Input() cameraFeatureAccess: CameraFeatureAccess;
 	@Output() brightnessChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() contrastChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureToggle: EventEmitter<any> = new EventEmitter();
 	public cameraDetail: CameraDetail;
-	public showAutoExposureSlider: boolean;
+
 
 	private cameraPreview: ElementRef;
 	private _video: HTMLVideoElement;
@@ -167,7 +168,11 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 	public onAutoExposureChange($event: any) {
 		try {
-			this.showAutoExposureSlider = !$event.switchValue;
+			console.log("onAutoExposureChange", this.cameraSettings.exposure.supported);
+			if (this.cameraSettings.exposure.supported === true) {
+
+				this.cameraFeatureAccess.showAutoExposureSlider = !$event.switchValue;
+			}
 			// this.baseCameraDetail.toggleAutoExposure($event.switchValue);
 			this.exposureToggle.emit($event);
 		} catch (error) {

@@ -7,6 +7,9 @@
 			<div class="pull right"><img class="coronet-logo"
 					src="../../../../assets/images/coronet-logo.svg" /></div>
 		</div>
+		<div *ngIf="data.isLWSEnabled===undefined" class="loading">
+			<div class="spinner-border text-primary progress-spinner" role="status"></div>
+		</div>
 		<div class="row mt-20"
 		*ngIf="data.isLWSEnabled!==undefined">
 			<div class="col">

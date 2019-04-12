@@ -10,7 +10,7 @@
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col col-8 vtr-page-left-column">
+					<div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 vtr-page-left-column">
 						<div class="vtr-subpage">
 							<div class="vtr-page-shift-up">
 								<wifi-security [data]="wifiHomeViewModel"
@@ -22,7 +22,7 @@
 								[isShowInvitationCode]="isShowInvitationCode"></vtr-connected-home>
 						</div>
 					</div>
-					<div class="col col-4 vtr-page-right-column">
+					<div class="col-xs-12 col-sm-12 col-md-5 col-lg-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 								<!--Start of Security Card Advisor-->
@@ -59,6 +59,9 @@
 													<div class="col">
 
 														<!--Start of Security Health Advisor When LWS is enabled-->
+														<div *ngIf="securityHealthViewModel.isLWSEnabled===undefined" class="loading">
+															<div class="spinner-border text-primary progress-spinner" role="status"></div>
+														</div>
 														<vtr-ui-list-chevron
 															[items]="securityHealthViewModel.homeDevicePosture"
 															[chevronVisibility]='false'
