@@ -96,6 +96,7 @@ export class PageSecurityComponent implements OnInit {
 		this.homeProtection = this.securityAdvisor.homeProtection;
 
 		this.createViewModels();
+		this.score = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingScore);
 	}
 
 	@HostListener('window: focus')
@@ -121,7 +122,6 @@ export class PageSecurityComponent implements OnInit {
 		this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.wifiSecurity, this.commonService, this.translate);
 		this.homeProtectionLandingViewModel = new HomeProtectionLandingViewModel(this.translate);
 		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
-
 		const windowsHello = this.securityAdvisor.windowsHello;
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		if (cacheShowWindowsHello) {
@@ -192,6 +192,7 @@ export class PageSecurityComponent implements OnInit {
 			}
 		});
 		this.score = scoreTotal;
+		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingScore, this.score);
 	}
 
 	fetchCMSArticles() {
