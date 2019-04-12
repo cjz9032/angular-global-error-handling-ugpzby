@@ -152,7 +152,7 @@ export class AppComponent implements OnInit {
 				this.deviceService.getMachineType()
 					.then((value: any) => {
 						console.log('checkIsDesktopMachine.then', value);
-						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, !(value < 2));
+						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, value == 4);
 					}).catch(error => {
 						console.error('checkIsDesktopMachine', error);
 					});
