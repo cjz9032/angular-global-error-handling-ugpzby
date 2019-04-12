@@ -606,7 +606,7 @@
 			},
 			"invitationcode": {
 					"button": "输入邀请码",
-					"buttonDescribe": "输入邀请码需要启用 WiFi 安全",
+					"buttonDescribe": "您已将此设备添加到一个现有的互联家庭网络账户",
 					"title": "已拥有互联家庭网络安全性？",
 					"titleDescribe": "将此设备添加到您的互联家庭网络",
 					"enterCode": "输入您的连接代码",
