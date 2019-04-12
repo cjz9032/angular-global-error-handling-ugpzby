@@ -14,6 +14,7 @@ export class UiCircleRadioComponent implements OnInit {
 	@Input() value: string;
 	@Input() checked: boolean;
 	@Input() disabled = false;
+	@Input() theme:string;
 
 	@Output() change: EventEmitter<any> = new EventEmitter();
 

@@ -16,6 +16,6 @@
 		<label for="{{radioId}}" class="checkbox-custom-label">
 			<div [ngClass]="'icomoon icomoon-'+getIconName(label)"></div>
 		</label>
-		<div class="title text-center">{{label}}</div>
+		<div [ngClass]="['title','text-center',theme==='white'?'text-primary':'text-white']">{{label}}</div>
 	</div>
 </div>
