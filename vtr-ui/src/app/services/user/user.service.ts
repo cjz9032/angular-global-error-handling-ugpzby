@@ -159,6 +159,7 @@ export class UserService {
 		this.cookieService.deleteAll('/');
 		this.cookies = this.cookieService.getAll();
 		if (this.lid !== undefined) {
+			const lidGuid = this.lid.userGuid;
 			this.lid.logout().then(function (result) {
 				let metricsData: any;
 				if (result.success && result.status === 0) {
@@ -182,7 +183,9 @@ export class UserService {
 						TaskParam: ''
 					};
 				}
-				self.metrics.sendAsync(metricsData).catch((res) => {
+				self.metrics.sendAsyncEx(metricsData, {
+					lidGuid
+				}).catch((res) => {
 					self.devService.writeLog('removeAuth() Exception happen when send metric ', res.message);
 				});
 				self.devService.writeLog('LOGOUT: ', result.success);
