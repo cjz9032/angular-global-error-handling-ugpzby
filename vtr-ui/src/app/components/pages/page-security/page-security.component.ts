@@ -137,6 +137,7 @@ export class PageSecurityComponent implements OnInit {
 		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
 		const windowsHello = this.securityAdvisor.windowsHello;
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
+		const wifiSecurity = this.securityAdvisor.wifiSecurity;
 		if (cacheShowWindowsHello) {
 			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(windowsHello, this.commonService, this.translate);
 		}
@@ -147,6 +148,11 @@ export class PageSecurityComponent implements OnInit {
 			this.showWindowsHello(windowsHello);
 		}).on(EventTypes.helloFingerPrintStatusEvent, () => {
 			this.showWindowsHello(windowsHello);
+		});
+		wifiSecurity.on(EventTypes.wsStateEvent, () => {
+			this.getScore();
+		}).on(EventTypes.geolocatorPermissionEvent, (data) => {
+			this.getScore();
 		});
 
 		// this.securityAdvisor.refresh();
