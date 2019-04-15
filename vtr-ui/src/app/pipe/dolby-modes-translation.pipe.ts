@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'dolbyModesTranslation'
+  name: 'dolbyModesTranslation',
+  pure: false
 })
 export class DolbyModesTranslationPipe implements PipeTransform {
 

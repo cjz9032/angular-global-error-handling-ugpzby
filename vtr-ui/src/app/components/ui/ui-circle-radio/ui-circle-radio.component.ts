@@ -28,7 +28,15 @@ export class UiCircleRadioComponent implements OnInit {
 	}
 
 	getIconName(name: string) {
-		return name.toLowerCase();
+		if(name) {
+			return name.split(" ").join("").toLowerCase();
+		}
+
+		else {
+			return "";
+		}
+
+
 	}
 
 }
