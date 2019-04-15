@@ -10,7 +10,7 @@
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col col-8 vtr-page-left-column">
+					<div class="col-sm-12 col-md-7 col-lg-7 col-xl-8 vtr-page-left-column">
 						<div class="vtr-subpage">
 							<div class="vtr-page-shift-up">
 								<div class="vtr-page-security-windows-hello">
@@ -51,7 +51,8 @@
 										<div *ngIf="statusItem.status === 'disabled'"
 											class="row mt-40">
 											<div class="col">
-												<div class="text-regular">{{'security.windowsHello.signIn' | translate}}</div>
+												<div class="text-regular">{{'security.windowsHello.signIn' | translate}}
+												</div>
 											</div>
 											<div class=" pull right">
 												<div class="col-12">
@@ -74,7 +75,8 @@
 								<div class="col col-12 col-sm-12 mt-40">
 									<div>
 										<p class="title">{{'security.windowsHello.whyWindowsHello' | translate}}</p>
-										<p class="text-regular">{{'security.windowsHello.whyWindowsHelloDescription1' | translate}}</p>
+										<p class="text-regular">
+											{{'security.windowsHello.whyWindowsHelloDescription1' | translate}}</p>
 									</div>
 								</div>
 							</div>
@@ -88,7 +90,8 @@
 								<div class="col col-6 mt-40">
 									<div class="col">
 										<div class="list-heading">
-											<p class="adjust-left">{{'security.windowsHello.startUsingToday' | translate}}</p>
+											<p class="adjust-left">
+												{{'security.windowsHello.startUsingToday' | translate}}</p>
 										</div>
 										<ul class="bullet-list">
 											<li class="good">
@@ -104,12 +107,16 @@
 														<div class="col">
 															<div class="text-regular">
 																{{'security.windowsHello.visitAndRegister' | translate}}
-																<vtr-translate-picker-base [translateString]="'security.windowsHello.visitInSettings' | translate"
-																	[metricsItem]="'setUpWindowsHello'"
-																	[href]="'javascript:void(0)'"
-																	[metricsParent]="'security.windowsHello'"
-																	[onClick]="setUpWindowsHello.bind(this)">
-																</vtr-translate-picker-base>
+																<span
+																	*vtrTranslate="'security.windowsHello.visitInSettings' | translate">
+																	<a vtrMetrics
+																		metricsEvent="itemClick"
+																		metricsItem="setUpWindowsHello"
+																		metricsParent="security.windowsHello"
+																		href="javascript:void(0)"
+																		(click)="setUpWindowsHello()"
+																		target="_blank"></a>
+																</span>
 															</div>
 														</div>
 													</div>
@@ -166,8 +173,7 @@
 														<div class="col">
 															<div class="text-regular">
 																{{'security.windowsHello.startUsingWindowsHello' | translate}}
-																<a
-																	target="_blank"
+																<a target="_blank"
 																	vtrMetrics
 																	metricsItem="visitMicrosoft"
 																	metricsEvent="itemClick"
@@ -186,13 +192,16 @@
 							<div class="col col-12 ">
 								<div class="row top-line">
 									<div class="col">
-										<div class="list-heading">{{'security.windowsHello.poweredByWindowsHello' | translate}}</div>
-										<p class="text-regular">
-											<vtr-translate-picker-base [translateString]="'security.windowsHello.privacyPolicy' | translate"
-												[metricsItem]="'privacyPolicy'"
-												[href]="'https://support.microsoft.com/en-us/help/4468253/windows-hello-and-privacy-microsoft-privacy'"
-												[metricsParent]="'security.windowsHello'">
-											</vtr-translate-picker-base>
+										<div class="list-heading">
+											{{'security.windowsHello.poweredByWindowsHello' | translate}}</div>
+										<p class="text-regular"
+											*vtrTranslate="'security.windowsHello.privacyPolicy' | translate">
+											<a vtrMetrics
+												metricsEvent="itemClick"
+												metricsItem="privacyPolicy"
+												metricsParent="security.windowsHello"
+												href="https://support.microsoft.com/en-us/help/4468253/windows-hello-and-privacy-microsoft-privacy"
+												target="_blank"></a>
 										</p>
 									</div>
 									<div class="pull right"><img class="dashlane_logo_teal"
@@ -206,8 +215,10 @@
 								<div class="col col-12 col-sm-12 mt-40">
 									<div>
 										<p class="title">{{'security.windowsHello.signIn' | translate}}</p>
-										<p class="text-regular">{{'security.windowsHello.whyWindowsHelloDescription2' | translate}}</p>
-										<p class="sub-heading-2 mt-40">{{'security.windowsHello.authentication' | translate}}</p>
+										<p class="text-regular">
+											{{'security.windowsHello.whyWindowsHelloDescription2' | translate}}</p>
+										<p class="sub-heading-2 mt-40">
+											{{'security.windowsHello.authentication' | translate}}</p>
 										<p class="text-regular">{{'security.windowsHello.traditional' | translate}}</p>
 									</div>
 								</div>
@@ -216,19 +227,24 @@
 								<div class="col col-6 mt-40">
 									<div class="col">
 										<div class="list-heading">
-											<p class="adjust-left">{{'security.windowsHello.howToStart' | translate}}</p>
+											<p class="adjust-left">{{'security.windowsHello.howToStart' | translate}}
+											</p>
 										</div>
 										<div class="number-list">
 											<ol>
 												<li>
 													<div class="text-regular">
 														{{'security.windowsHello.visitAndRegister' | translate}}
-														<vtr-translate-picker-base [translateString]="'security.windowsHello.visitInSettings' | translate"
-															[metricsItem]="'setUpWindowsHello'"
-															[href]="'javascript:void(0)'"
-															[metricsParent]="'security.windowsHello'"
-															[onClick]="setUpWindowsHello.bind(this)">
-														</vtr-translate-picker-base>
+														<span
+															*vtrTranslate="'security.windowsHello.visitInSettings' | translate">
+															<a vtrMetrics
+																metricsEvent="itemClick"
+																metricsItem="setUpWindowsHello"
+																metricsParent="security.windowsHello"
+																href="javascript:void(0)"
+																(click)="setUpWindowsHello()"
+																target="_blank"></a>
+														</span>
 													</div>
 												</li>
 												<li>
@@ -240,8 +256,7 @@
 													<div class="col">
 														<div class="text-regular">
 															{{'security.windowsHello.startUsingWindowsHello' | translate}}
-															<a
-																target="_blank"
+															<a target="_blank"
 																vtrMetrics
 																metricsItem="visitMicrosoft"
 																metricsEvent="itemClick"
@@ -264,7 +279,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col col-4 vtr-page-right-column">
+					<div class="col-sm-12 col-md-5 col-lg-5 col-xl-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 								<!--Start of Security Card Advisor-->

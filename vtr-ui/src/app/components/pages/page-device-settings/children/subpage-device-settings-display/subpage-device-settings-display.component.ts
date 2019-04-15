@@ -1,16 +1,13 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, EventEmitter } from '@angular/core';
 import { CameraDetail, ICameraSettingsResponse, CameraFeatureAccess } from 'src/app/data-models/camera/camera-detail.model';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { DisplayService } from 'src/app/services/display/display.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { ChangeContext } from 'ng5-slider';
 import { EyeCareMode, SunsetToSunriseStatus } from 'src/app/data-models/camera/eyeCareMode.model';
 import { CommonService } from 'src/app/services/common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
-import { promise } from 'protractor';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 enum defaultTemparature {
 	defaultValue = 4500
@@ -36,6 +33,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public enableSlider = false;
 	public initEyecare = 0;
 	public showHideAutoExposureSlider = false;
+	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	headerMenuItems = [
@@ -62,10 +60,7 @@ export class SubpageDeviceSettingsDisplayComponent
 
 	ngOnInit() {
 		console.log('subpage-device-setting-display onInit');
-		this.startEyeCareMonitor();
-		this.initEyecaremodeSettings();
-		this.getCameraPrivacyModeStatus();
-		this.getCameraDetails();
+
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			cameraDetail => {
 				this.dataSource = cameraDetail;
@@ -75,7 +70,11 @@ export class SubpageDeviceSettingsDisplayComponent
 				console.log(error);
 			}
 		);
+		this.startEyeCareMonitor();
+		this.initEyecaremodeSettings();
 
+		this.getCameraPrivacyModeStatus();
+		this.getCameraDetails();
 		this.statusChangedLocationPermission();
 
 	}
@@ -102,28 +101,31 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	private getCameraDetails() {
+		try {
+			// this.baseCameraDetail
+			// 	.getCameraDetail()
+			// 	.then((response: any) => {
+			// 		// this.dataSource = response;
+			// 		console.log('getCameraDetails.then', response);
+			// 	})
+			// 	.catch(error => {
+			// 		console.log(error);
+			// 	});
+			console.log('Inside');
+			this.displayService.getCameraSettingsInfo().then((response) => {
+				console.log('getCameraDetails.then', response);
+				console.log('getCameraDetails.then permission', response);
+				this.dataSource = response;
+				console.log('getCameraDetails.then permission', this.dataSource.permission);
+				this.cameraFeatureAccess.showAutoExposureSlider = false;
+				if (this.dataSource.exposure.supported === true && this.dataSource.exposure.autoValue === false) {
+					this.cameraFeatureAccess.showAutoExposureSlider = true;
+				}
+			});
+		} catch (error) {
+			console.error(error.message);
+		}
 
-		// this.baseCameraDetail
-		// 	.getCameraDetail()
-		// 	.then((response: any) => {
-		// 		// this.dataSource = response;
-		// 		console.log('getCameraDetails.then', response);
-		// 	})
-		// 	.catch(error => {
-		// 		console.log(error);
-		// 	});
-		console.log('Inside');
-		this.displayService.getCameraSettingsInfo().then((response) => {
-			console.log('getCameraDetails.then', response);
-			console.log('response.exposure.supported.then', response.exposure.supported);
-			console.log('response.exposure.autoValue.then', response.exposure.autoValue);
-
-			this.dataSource = response;
-			if (this.dataSource.exposure.supported === true && this.dataSource.exposure.autoValue === false) {
-
-				this.cameraFeatureAccess.showAutoExposureSlider = true;
-			}
-		});
 	}
 	// Start EyeCare Mode
 	private getDisplayColorTemperature() {
@@ -260,6 +262,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.log('temparature reset data', resetData);
 						this.eyeCareDataSource.current = resetData.colorTemperature;
 						this.eyeCareModeStatus.status = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
+						this.enableSlider = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
 						this.sunsetToSunriseModeStatus.status = (resetData.autoEyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
 						console.log('sunsetToSunriseModeStatus.status from temparature reset data', this.sunsetToSunriseModeStatus.status);
 						// this.getDisplayColorTemperature();
@@ -280,6 +283,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						if (response.result === true) {
 							this.eyeCareDataSource.current = response.colorTemperature;
 							this.eyeCareModeStatus.status = response.eyecaremodeState;
+							this.enableSlider = response.eyecaremodeState;
 						}
 
 					}).catch(error => {
@@ -418,6 +422,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		console.log('called from eyecare monitor', JSON.stringify(resetData));
 		this.eyeCareDataSource.current = resetData.colorTemperature;
 		this.eyeCareModeStatus.status = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
+		this.enableSlider = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
 		this.sunsetToSunriseModeStatus.status = (resetData.autoEyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
 	}
 	public startEyeCareMonitor() {
@@ -438,7 +443,12 @@ export class SubpageDeviceSettingsDisplayComponent
 		if (this.displayService.isShellAvailable) {
 			this.displayService
 				.stopEyeCareMonitor();
+		}
+	}
 
+	public onCardCollapse(isCollapsed: boolean) {
+		if (!isCollapsed) {
+			this.manualRefresh.emit();
 		}
 	}
 }

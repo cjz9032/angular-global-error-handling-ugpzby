@@ -6,6 +6,8 @@ import { Microphone } from 'src/app/data-models/audio/microphone.model';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
 import { MicrophoneOptimizeModes } from 'src/app/data-models/audio/microphone-optimize-modes';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -24,7 +26,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public dolbyModeResponse: DolbyModeResponse;
 	public microOptimizeModeResponse: MicrophoneOptimizeModes;
 
-	constructor(private audioService: AudioService, private dashboardService: DashboardService) {
+	constructor(private audioService: AudioService, 
+		private dashboardService: DashboardService,
+		private commonService: CommonService) {
 	}
 
 	getSupportedModes() {
@@ -65,6 +69,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				this.audioService.getMicrophoneSettings()
 					.then((microphone: Microphone) => {
 						this.microphoneProperties = microphone;
+						let status = new FeatureStatus(microphone.available, microphone.muteDisabled, microphone.permission)
+						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardMicrophone, status);
 						console.log('getMicrophoneSettings', microphone);
 					}).catch(error => {
 						console.error('getMicrophoneSettings', error);
@@ -227,6 +233,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.dashboardService.isShellAvailable) {
 				this.dashboardService.setMicrophoneStatus(event.switchValue)
 					.then((value: boolean) => {
+						let status: FeatureStatus = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardMicrophone);
+						status.status = event.switchValue;
+						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardMicrophone, status);
 						console.log('onToggleOfMicrophone', value);
 					}).catch(error => {
 						console.error('onToggleOfMicrophone', error);

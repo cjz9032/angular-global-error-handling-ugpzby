@@ -29,7 +29,8 @@
 											<div class="p-3">
 												<vtr-ui-button [metricsItem]="'learnMoreAboutMcafee'"
 													[label]="'security.antivirus.windowsDefender.learnMore' | translate"
-													(onClick)="openArticle()"></vtr-ui-button>
+													(onClick)="openArticle()"
+													[upperCaseLabel]=false></vtr-ui-button>
 											</div>
 										</div>
 									</div>
@@ -58,7 +59,7 @@
 										</vtr-ui-security-statusbar>
 
 									</div>
-									<vtr-widget-mcafee [install]="antiVirus.mcafee"
+									<vtr-widget-mcafee [install]="false"
 										[name]="'Windows Defender'"></vtr-widget-mcafee>
 								</div>
 							</div>
@@ -128,16 +129,19 @@
 								<div class="row">
 									<div class="col-auto mr-auto px-0">
 										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
-										<p class="text-regular mt-10">
-											<vtr-widget-translate-picker
-												[translateString]="'security.antivirus.common.privacyTerms' | translate"
-												[firstMetricsItem]="'privacyPolicy'"
-												[firstMetricsParent]="'security.antivirus'"
-												[firstHref]="'https://www.mcafee.com/consumer/en-us/policy/global/legal.html'"
-												[secondMetricsItem]="'termsOfServices'"
-												[secondMetricsParent]="'security.antivirus'"
-												[secondHref]="'https://www.mcafee.com/consumer/en-us/policy/global/legal.html'">
-											</vtr-widget-translate-picker>
+										<p class="text-regular mt-10" *vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
+											<a vtrMetrics 
+												metricsEvent="itemClick" 
+												metricsItem="privacyPolicy"
+												metricsParent="security.antivirus"
+												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
+												target="_blank"></a>
+											<a vtrMetrics 
+												metricsEvent="itemClick" 
+												metricsItem="termsOfServices"
+												metricsParent="security.antivirus"
+												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
+												target="_blank"></a>
 										</p>
 									</div>
 									<div class="col-auto align-self-center px-0">
@@ -308,16 +312,19 @@
 								<div class="row">
 									<div class="col-auto mr-auto px-0">
 										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
-										<p class="text-regular mt-10">
-											<vtr-widget-translate-picker
-												[translateString]="'security.antivirus.common.privacyTerms' | translate"
-												[firstMetricsItem]="'privacyPolicy'"
-												[firstMetricsParent]="'security.antivirus'"
-												[firstHref]="'https://www.mcafee.com/consumer/en-us/policy/global/legal.html'"
-												[secondMetricsItem]="'termsOfServices'"
-												[secondMetricsParent]="'security.antivirus'"
-												[secondHref]="'https://www.mcafee.com/consumer/en-us/policy/global/legal.html'">
-											</vtr-widget-translate-picker>
+										<p class="text-regular mt-10" *vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
+											<a vtrMetrics 
+												metricsEvent="itemClick" 
+												metricsItem="privacyPolicy"
+												metricsParent="security.antivirus"
+												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
+												target="_blank"></a>
+											<a vtrMetrics 
+												metricsEvent="itemClick" 
+												metricsItem="termsOfServices"
+												metricsParent="security.antivirus"
+												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
+												target="_blank"></a>
 										</p>
 									</div>
 									<div class="col-auto align-self-center px-0">
@@ -331,7 +338,7 @@
 
 							<div class="subheader mt-minus">
 								<div class="rounded-card-with-shadow p-5 bg-white">
-									<div *ngIf="viewModel.otherAntiVirus && viewModel.otherAntiVirus?.name">
+									<div *ngIf="viewModel.otherAntiVirus && viewModel.otherAntiVirus.name">
 										<div class="row">
 											<div class="col-auto px-0 mr-auto">
 												<div class="title pb-3">{{viewModel.otherAntiVirus?.name}}</div>
@@ -350,7 +357,7 @@
 										</vtr-ui-security-statusbar>
 
 									</div>
-									<div *ngIf="viewModel.otherFirewall && viewModel.otherFirewall?.name"
+									<div *ngIf="viewModel.otherFirewall && viewModel.otherFirewall.name"
 										class="pt-5">
 										<div class="row">
 											<div class="col-auto px-0 mr-auto">
@@ -370,7 +377,7 @@
 										</vtr-ui-security-statusbar>
 
 									</div>
-									<vtr-widget-mcafee [install]="viewModel.mcafee"
+									<vtr-widget-mcafee [install]="viewModel.mcafeeInstall"
 										[name]="viewModel.otherAntiVirus.name"></vtr-widget-mcafee>
 								</div>
 							</div>
@@ -448,16 +455,19 @@
 								<div class="row">
 									<div class="col-auto mr-auto px-0">
 										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
-										<p class="text-regular mt-10">
-											<vtr-widget-translate-picker
-												[translateString]="'security.antivirus.common.privacyTerms' | translate"
-												[firstMetricsItem]="'privacyPolicy'"
-												[firstMetricsParent]="'security.antivirus'"
-												[firstHref]="'https://www.mcafee.com/consumer/en-us/policy/global/legal.html'"
-												[secondMetricsItem]="'termsOfServices'"
-												[secondMetricsParent]="'security.antivirus'"
-												[secondHref]="'https://www.mcafee.com/consumer/en-us/policy/global/legal.html'">
-											</vtr-widget-translate-picker>
+										<p class="text-regular mt-10" *vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
+											<a vtrMetrics 
+												metricsEvent="itemClick" 
+												metricsItem="privacyPolicy"
+												metricsParent="security.antivirus"
+												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
+												target="_blank"></a>
+											<a vtrMetrics 
+												metricsEvent="itemClick" 
+												metricsItem="termsOfServices"
+												metricsParent="security.antivirus"
+												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
+												target="_blank"></a>
 										</p>
 									</div>
 									<div class="col-auto align-self-center px-0">

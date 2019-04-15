@@ -88,7 +88,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 					title: this.fireWall,
 				}];
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersFirewallStatusList, this.viewModel.othersFirewallstatusList);
-			}
+			} else { this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersFirewallStatusList, null); }
 			if (this.antiVirus.others.antiVirus && this.antiVirus.others.antiVirus.length > 0) {
 				this.viewModel.otherAntiVirus = this.antiVirus.others.antiVirus[0];
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOtherAntiVirus, this.viewModel.otherAntiVirus);
@@ -97,11 +97,12 @@ export class PageSecurityAntivirusComponent implements OnInit {
 					title: this.virusScan,
 				}];
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList, this.viewModel.othersAntistatusList);
-			}
+			} else {this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList, null); }
 		}
 		if (this.antiVirus.mcafee || this.antiVirus.others || this.antiVirus.windowsDefender) {
 			this.viewModel.antiVirusPage(this.antiVirus);
 		}
+		console.log(this.viewModel.otherFirewall);
 		this.antiVirus.on(EventTypes.avMcafeeStatusEvent, (data) => {
 			this.viewModel.mcafee.launch = this.antiVirus.mcafee.launch.bind(this.antiVirus.mcafee);
 			this.viewModel.mcafee.status = data;
@@ -136,21 +137,28 @@ export class PageSecurityAntivirusComponent implements OnInit {
 			this.viewModel.antiVirusPage(this.antiVirus);
 		}).on(EventTypes.avOthersEvent, () => {
 			if (this.antiVirus.others) {
-				this.viewModel.otherFirewall = this.antiVirus.others.firewall[0];
-				this.viewModel.otherAntiVirus = this.antiVirus.others.antiVirus[0];
 				if (this.antiVirus.others.firewall && this.antiVirus.others.firewall.length > 0) {
+					this.viewModel.otherFirewall = this.antiVirus.others.firewall[0];
+					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOtherFirewall, this.viewModel.otherFirewall);
 					this.viewModel.othersFirewallstatusList = [{
 						status: this.viewModel.otherFirewall.status,
 						title: this.fireWall,
 					}];
 					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersFirewallStatusList, this.viewModel.othersFirewallstatusList);
+				} else {
+					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersFirewallStatusList, null);
+					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOtherFirewall, null);
 				}
 				if (this.antiVirus.others.antiVirus && this.antiVirus.others.antiVirus.length > 0) {
+					this.viewModel.otherAntiVirus = this.antiVirus.others.antiVirus[0];
 					this.viewModel.othersAntistatusList = [{
 						status: this.viewModel.otherAntiVirus.status,
 						title: this.virusScan,
 					}];
 					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList, this.viewModel.othersAntistatusList);
+				} else {
+					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOthersAntiStatusList, null);
+					this.commonService.setLocalStorageValue(LocalStorageKey.SecurityOtherAntiVirus, null);
 				}
 			}
 			this.viewModel.antiVirusPage(this.antiVirus);

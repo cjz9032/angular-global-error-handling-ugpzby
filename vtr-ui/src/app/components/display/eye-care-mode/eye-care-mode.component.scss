@@ -21,7 +21,7 @@
     .button-box {
 	  margin: 0rem 0rem 0rem 0.5rem;
 	  ::ng-deep .button {
-		height: 3rem;
+		min-height: 3rem;
 		border-radius: 2.25rem;
 		font-size: 1.08rem;
 		font-weight: $weight_bold;

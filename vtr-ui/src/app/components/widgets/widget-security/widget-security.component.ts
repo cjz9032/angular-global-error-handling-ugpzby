@@ -29,11 +29,7 @@ export class WidgetSecurityComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-		if (this.percentValue === 100) {
-			this.titleStatus = 0;
-		} else {
-			this.titleStatus = 1;
-		}
+		this.titleStatus = this.percentValue === 100 ? 0 : 1;
 	}
 
 	buttonClick() {

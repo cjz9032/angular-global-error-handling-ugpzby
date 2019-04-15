@@ -1,10 +1,10 @@
 import { Antivirus, McAfeeInfo, WindowsDefender, OtherInfo } from '@lenovo/tan-client-bridge';
-import { EventTypes } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from '../../enums/local-storage-key.enum';
 
 export class AntiVirusviewModel {
 	currentPage: string;
+	mcafeeInstall: boolean;
 	mcafee: McAfeeInfo = {
 		localName: 'McAfee LiveSafe',
 		subscription: 'unknown',
@@ -26,10 +26,7 @@ export class AntiVirusviewModel {
 		status: false,
 		name: 'unknown',
 	};
-	otherFirewall: OtherInfo = {
-		status: false,
-		name: 'unknown',
-	};
+	otherFirewall: OtherInfo ;
 	mcafeestatusList: Array<any> = [];
 	windowsDefenderstatusList: Array<any> = [];
 	othersAntistatusList: Array<any> = [];
@@ -78,9 +75,16 @@ export class AntiVirusviewModel {
 	antiVirusPage(antiVirus: Antivirus) {
 		if (antiVirus.mcafee && (antiVirus.mcafee.enabled || !antiVirus.others || !antiVirus.others.enabled)) {
 			this.currentPage = 'mcafee';
+			this.mcafeeInstall = true;
 		} else if (antiVirus.others) {
+			if (antiVirus.mcafee) {
+				this.mcafeeInstall = true;
+			} else { this.mcafeeInstall = false; }
 			this.currentPage = 'others';
-		} else { this.currentPage = 'windows'; }
+		} else {
+			this.currentPage = 'windows';
+			this.mcafeeInstall = false;
+		}
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityCurrentPage, this.currentPage);
 	}
 }

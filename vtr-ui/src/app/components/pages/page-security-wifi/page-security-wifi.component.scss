@@ -11,6 +11,10 @@
 		box-shadow: $drop_shadow;
 		padding: 4rem;
 
+		a {
+			text-decoration: underline;
+		}
+
 		.title {
 			color: $main_darker;
 			font-size: 2.5rem;
@@ -20,6 +24,10 @@
 			color: $shade;
 			font-size: 1.2rem;
 			font-weight: $weight_light;
+		}
+
+		.loading {
+			text-align: center;
 		}
 
 		.home-security {

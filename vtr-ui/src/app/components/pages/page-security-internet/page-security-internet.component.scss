@@ -59,6 +59,10 @@
 	.text-regular {
 		color: $main_dark;
 		font-size: 1.6rem;
+		
+		a {
+			text-decoration: underline;
+		}
 	}
 
 	.btn-round-xs {
@@ -157,18 +161,18 @@
 		margin-top: 1rem;
 		list-style: none;
 		padding: 0;
-			
+
 		.text-regular {
 			color: $main_shade;
 			padding: 0.8rem;
 			font-size: 1.8rem;
 		}
-			
+
 		.serial{
 			font-size: 3.6rem;
 			color: $main_dark;
 		}
-		
+
 	}
 
 	.button-box {
@@ -199,5 +203,10 @@
 			font-weight: $weight_light;
 		}
 	}
-	
+	.vtr-page-right-column{
+		@media #{$mediaquery_16} {
+			padding: 0 8.5rem 4rem;
+		}
+	}
+
 }

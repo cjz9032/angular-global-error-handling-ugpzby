@@ -4,7 +4,7 @@
       </vtr-ui-object-title>
     <vtr-ui-list-chevron [items]="feature.statusList">
     </vtr-ui-list-chevron>
-    <div class="pull">
+    <div class="pull" *ngIf="feature.imgUrl">
       <img class="windows-logo" src="{{feature.imgUrl}}" />
     </div>
   </div>

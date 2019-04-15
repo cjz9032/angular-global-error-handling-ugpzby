@@ -10,7 +10,7 @@
 	<div class="row py-5 smartsettings-card"
 		*ngIf="dolbyModeResponse.available"
 		id="audio">
-		<div class="col-10 mx-auto ">
+		<div class="col-10 mx-auto px-0 ">
 			<vtr-container-collapsible componentName="Audio SmartSettings"
 				[cardTitle]="'device.deviceSettings.audio.audioSmartsettings.title' | translate"
 				[isCollapsed]="false"
@@ -39,16 +39,17 @@
 							(toggleOnOff)="onAutomaticDolbyAudioToggleOnOff($event)"
 							[isSwitchChecked]="autoDolbyFeatureStatus.status">
 
-							<div class="my-3"
+							<div class="row no-gutters"
 								*ngIf="!autoDolbyFeatureStatus.status && dolbyModeResponse.available">
-								<vtr-ui-rectangle-radio *ngFor="let dolbyMode of dolbyModeResponse.supporedModes"
+								<vtr-ui-circle-radio *ngFor="let dolbyMode of dolbyModeResponse.supporedModes"
+									theme="blue"
 									[radioId]="'radio'| uniqueId"
 									[group]="radioGroupAutoDolbySettings"
 									[label]="dolbyMode | dolbyModesTranslation"
 									[value]='dolbyMode'
 									[checked]="dolbyMode == dolbyModeResponse.currentMode"
 									(change)="onDolbySeetingRadioChange($event)">
-								</vtr-ui-rectangle-radio>
+								</vtr-ui-circle-radio>
 							</div>
 						</vtr-ui-row-switch>
 					</li>
@@ -87,7 +88,7 @@
 							componentName="Microphone"
 							[caption]=""
 							[isSwitchVisible]=true
-							[leftIcon]="['icomoon', 'icomoon-FA-Microphone2x']"
+							[leftIcon]="['fal', 'microphone']"
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="true"
@@ -103,7 +104,7 @@
 							name="'device.deviceSettings.audio.microphone.volume.title' | translate"
 							componentName="MicrophoneVolume"
 							[isSwitchVisible]=false
-							[leftIcon]="['far', 'gem']"
+							[leftIcon]="['fal', 'microphone']"
 							[rightIcon]=""
 							[readMoreText]="''"
 							[showChildContent]="true"
@@ -132,7 +133,7 @@
 							componentName="Supress Keyboard noise"
 							[caption]=""
 							[isSwitchVisible]=true
-							[leftIcon]="['far', 'gem']"
+							[leftIcon]="['fal', 'keyboard']"
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="true"
@@ -145,7 +146,7 @@
 					</li>
 
 					<li class=""
-					    *ngIf="microphoneProperties.AEC != undefined">
+						*ngIf="microphoneProperties.AEC != undefined">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.acoustic.title' | translate"
 							name="'device.deviceSettings.audio.microphone.acoustic.title' | translate"
 							componentName="Acoustic Echo Cancellation"
@@ -169,23 +170,21 @@
 							name="Optimize microphone"
 							[caption]="'device.deviceSettings.audio.microphone.optimize.tooltip' | translate"
 							[isSwitchVisible]=false
-							[leftIcon]="['far', 'gem']"
+							[leftIcon]="['fal', 'microphone']"
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[disabled]="microphoneProperties.disableEffect"
 							[theme]="'white'">
-							<div class="row">
-								<div class="col-12 pt-4">
-									<vtr-ui-rectangle-radio *ngFor="let optimizeMode of microOptimizeModeResponse.modes"
-										[radioId]="'radio'| uniqueId"
-										[group]="radioOptimiseMicSettings"
-										[label]="optimizeMode | separatePascalCase"
-										[value]='optimizeMode'
-										[checked]="optimizeMode === microOptimizeModeResponse.current"
-										[disabled]="microphoneProperties.disableEffect"
-										(change)="onOptimizeModesRadioChange($event)">
-									</vtr-ui-rectangle-radio>
-								</div>
+							<div class="row no-gutters">
+								<vtr-ui-circle-radio *ngFor="let optimizeMode of microOptimizeModeResponse.modes"
+									[radioId]="'radio'| uniqueId"
+									[group]="radioOptimiseMicSettings"
+									[label]="(optimizeMode?optimizeMode:'LE-Multiple-voices2x') | separatePascalCase"
+									[value]='optimizeMode'
+									[checked]="optimizeMode === microOptimizeModeResponse.current"
+									[disabled]="microphoneProperties.disableEffect"
+									(change)="onOptimizeModesRadioChange($event)">
+								</vtr-ui-circle-radio>
 							</div>
 						</vtr-ui-row-switch>
 					</li>
