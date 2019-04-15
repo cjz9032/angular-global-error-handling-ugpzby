@@ -15,6 +15,7 @@ export class DolbyModesTranslationPipe implements PipeTransform {
 
 
 
+
     switch(val) {
       case "dynamic":
         return "DYNAMIC";
