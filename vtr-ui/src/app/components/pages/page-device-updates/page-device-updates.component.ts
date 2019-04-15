@@ -27,7 +27,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	back = 'BACK';
 	backarrow = '< ';
 
-	cardContentPositionA: any;
+	cardContentPositionA: any = {};
 
 	private lastUpdatedText = 'Last update was on';
 	private nextScanText = 'Next update scan is scheduled on';
@@ -174,9 +174,13 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
-
-				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				if (cardContentPositionA) {
+					this.cardContentPositionA = cardContentPositionA;
+					if (this.cardContentPositionA.BrandName) {
+						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+					}
+				}
 			},
 			error => {
 				console.log('fetchCMSContent error', error);

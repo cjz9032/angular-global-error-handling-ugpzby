@@ -69,7 +69,7 @@ export class PageSecurityComponent implements OnInit {
 	windowsHello: phoenix.WindowsHello;
 	score: number;
 	maliciousWifi: number;
-	cardContentPositionA: any;
+	cardContentPositionA: any = {};
 
 	itemStatusClass = {
 		0: 'good',
@@ -137,6 +137,7 @@ export class PageSecurityComponent implements OnInit {
 		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
 		const windowsHello = this.securityAdvisor.windowsHello;
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
+		const wifiSecurity = this.securityAdvisor.wifiSecurity;
 		if (cacheShowWindowsHello) {
 			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(windowsHello, this.commonService, this.translate);
 		}
@@ -147,6 +148,11 @@ export class PageSecurityComponent implements OnInit {
 			this.showWindowsHello(windowsHello);
 		}).on(EventTypes.helloFingerPrintStatusEvent, () => {
 			this.showWindowsHello(windowsHello);
+		});
+		wifiSecurity.on(EventTypes.wsStateEvent, () => {
+			this.getScore();
+		}).on(EventTypes.geolocatorPermissionEvent, (data) => {
+			this.getScore();
 		});
 
 		// this.securityAdvisor.refresh();
@@ -221,9 +227,13 @@ export class PageSecurityComponent implements OnInit {
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
-
-				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				if (cardContentPositionA) {
+					this.cardContentPositionA = cardContentPositionA;
+					if (this.cardContentPositionA.BrandName) {
+						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+					}
+				}
 			},
 			error => {
 				console.log('fetchCMSContent error', error);

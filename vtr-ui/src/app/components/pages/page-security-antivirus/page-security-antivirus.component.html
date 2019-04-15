@@ -170,7 +170,8 @@
 									</div>
 
 									<vtr-ui-security-statusbar
-										[statusList]="viewModel.mcafeestatusList | statusTransform">
+										[statusList]="viewModel.mcafeestatusList | statusTransform"
+										[regular]=true>
 									</vtr-ui-security-statusbar>
 
 									<div class="row align-items-center">
@@ -183,7 +184,7 @@
 													{{viewModel.mcafee?.expireAt | date:'MM/dd/yyyy' }}
 												</span>
 												<span>
-													<a *ngIf="viewModel.mcafee?.subscription !== 'licenseActive'"
+													<a *ngIf="viewModel.mcafee?.subscription !== 'licenseActive' || 'licenseExpired'"
 														vtrMetrics
 														metricsItem="upgradeMcafee"
 														metricsEvent="itemClick"
@@ -193,7 +194,7 @@
 												</span>
 											</div>
 										</div>
-										<div class="col-auto px-0 py-5">
+										<div class="col-auto py-5">
 											<vtr-ui-button [metricsItem]="'launchMcafee'"
 												(onClick)=" viewModel.mcafee?.launch()"
 												[label]="'security.antivirus.mcafee.launch' | translate"

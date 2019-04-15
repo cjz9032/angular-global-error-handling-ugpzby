@@ -17,7 +17,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 
 	passwordManager: PasswordManager;
 	statusItem: any;
-	cardContentPositionA: any;
+	cardContentPositionA: any = {};
 	securityAdvisor: SecurityAdvisor;
 
 	constructor(
@@ -76,9 +76,13 @@ export class PageSecurityPasswordComponent implements OnInit {
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
-
-				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				if (cardContentPositionA) {
+					this.cardContentPositionA = cardContentPositionA;
+					if (this.cardContentPositionA.BrandName) {
+						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+					}
+				}
 			},
 			error => {
 				console.log('fetchCMSContent error', error);
