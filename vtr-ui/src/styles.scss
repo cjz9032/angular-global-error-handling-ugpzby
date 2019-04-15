@@ -668,14 +668,11 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	content: "\e909";
 	color: #4a81fd;
 }
-.icomoon-game:before {
+.icomoon-game:before,.icomoon-games:before  {
 	content: "\e90a";
 	color: #4a81fd;
 }
-.icomoon-games:before {
-	content: "\e90a";
-	color: #4a81fd;
-}
+
 .icomoon-FA-Headset2x:before {
 	content: "\e90b";
 	color: #4a81fd;
@@ -708,11 +705,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	content: "\e912";
 	color: #4a81fd;
 }
-.icomoon-voice:before {
-	content: "\e913";
-	color: #4a81fd;
-}
-.icomoon-voip:before {
+.icomoon-voice:before,.icomoon-voip:before {
 	content: "\e913";
 	color: #4a81fd;
 }
