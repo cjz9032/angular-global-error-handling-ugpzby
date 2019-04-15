@@ -10,9 +10,9 @@
 				</div>
 			</div>
 			<div class="col col-9 last-col">
-				<p class="title">{{security.title[titleStatus] | translate}}</p>
-				<p class="row1">{{security.subTitle[titleStatus] | translate}}</p>
-				<p class="row1">{{security.subTitle2[titleStatus] | translate}}</p>
+				<p class="title">{{security.title[percentValue === 100 ? 0 : 1] | translate}}</p>
+				<p class="row1">{{security.subTitle[percentValue === 100 ? 0 : 1] | translate}}</p>
+				<p class="row1">{{security.subTitle2[percentValue === 100 ? 0 : 1] | translate}}</p>
 				<div class="button-row">
 					<button class="action-button" vtrMetrics metricsEvent="itemClick" metricsItem="securityAdvisor101"
 					(click)="buttonClick()">{{'security.landing.security101' | translate}}</button>
