@@ -96,8 +96,7 @@
 			<div class="col">
 				<div class="gem-box">
 					<div class="gem">
-						<img src="assets/images/Banner_no_logo_h&f.jpg"
-							center />
+						<img src="assets/images/Banner_no_logo_h&f.jpg" center />
 					</div>
 				</div>
 			</div>
@@ -111,8 +110,7 @@
 					</div>
 					<div class="col-sm-6">
 						<div class="button-box shift-left">
-							<vtr-ui-button [metricsItem]="'tryNow'"
-								(onClick)="tryNow($event)"
+							<vtr-ui-button [metricsItem]="'tryNow'" (onClick)="tryNow($event)"
 								[label]="'security.homeprotection.homesecurity.tryNow' | translate"
 								[disabled]="!data.tryNowEnable">
 							</vtr-ui-button>
@@ -133,7 +131,7 @@
 			<div class="col">
 				<div class="invitation-code-box">
 					<div class="row">
-						<div class="col-md-12 col-lg-6">
+						<div class="col-md-12 col-lg-7">
 							<div class="sub-heading">
 								{{'security.homeprotection.invitationcode.title' | translate}}
 								<div class="text-regular">
@@ -141,15 +139,15 @@
 							</div>
 
 						</div>
-						<div class="col-md-12 col-lg-6">
+						<div class="col-md-12 col-lg-5">
 							<div class="button-box text-right">
 								<vtr-ui-button [metricsItem]="'enterInvitationCode'"
 									(onClick)="enterActivationCode($event)"
 									[label]="'security.homeprotection.invitationcode.button' | translate"
 									[alreadyJoinGroup]="data.homeStatus"></vtr-ui-button>
-								<div *ngIf="data.homeStatus=='joined' && showDescribe">
-									{{'security.homeprotection.invitationcode.buttonDescribe' | translate}}
-								</div>
+							</div>
+							<div *ngIf="data.homeStatus=='joined' && showDescribe" class="button-description">
+								{{'security.homeprotection.invitationcode.buttonDescribe' | translate}}
 							</div>
 						</div>
 					</div>
