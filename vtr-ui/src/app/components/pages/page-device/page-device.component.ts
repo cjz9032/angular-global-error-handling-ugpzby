@@ -13,7 +13,7 @@ export class PageDeviceComponent implements OnInit {
 	// title = 'My Device';
 	// back = 'BACK';
 	backarrow = '< ';
-	cardContentPositionA: any;
+	cardContentPositionA: any = {};
 
 	constructor(
 		public deviceService: DeviceService,
@@ -40,9 +40,13 @@ export class PageDeviceComponent implements OnInit {
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
-
-				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				if (cardContentPositionA) {
+					this.cardContentPositionA = cardContentPositionA;
+					if (this.cardContentPositionA.BrandName) {
+						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+					}
+				}
 			},
 			error => {
 				console.log('fetchCMSContent error', error);
