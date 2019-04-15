@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { BaseComponent } from "../base/base.component";
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { BaseComponent } from '../base/base.component';
 
 @Component({
 	selector: 'vtr-container-collapsible',
@@ -9,14 +9,19 @@ import { BaseComponent } from "../base/base.component";
 })
 export class ContainerCollapsibleComponent extends BaseComponent {
 	@Input() cardTitle: string;
-	@Input() isCollapsed: boolean = true;
-	@Input() allowCollapse: boolean = true;
-	@Input() theme: string = 'white';
+	@Input() isCollapsed = true;
+	@Input() allowCollapse = true;
+	@Input() theme = 'white';
 
+	@Output() toggle = new EventEmitter();
 
 	constructor() {
 		super();
 	}
 
+	public onToggle() {
+		this.isCollapsed = !this.isCollapsed;
+		this.toggle.emit(this.isCollapsed);
+	}
 
 }

@@ -1,16 +1,13 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, EventEmitter } from '@angular/core';
 import { CameraDetail, ICameraSettingsResponse, CameraFeatureAccess } from 'src/app/data-models/camera/camera-detail.model';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { DisplayService } from 'src/app/services/display/display.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
 import { ChangeContext } from 'ng5-slider';
 import { EyeCareMode, SunsetToSunriseStatus } from 'src/app/data-models/camera/eyeCareMode.model';
 import { CommonService } from 'src/app/services/common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
-import { promise } from 'protractor';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 enum defaultTemparature {
 	defaultValue = 4500
@@ -36,6 +33,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public enableSlider = false;
 	public initEyecare = 0;
 	public showHideAutoExposureSlider = false;
+	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	headerMenuItems = [
@@ -74,9 +72,9 @@ export class SubpageDeviceSettingsDisplayComponent
 		);
 		this.startEyeCareMonitor();
 		this.initEyecaremodeSettings();
-		this.getCameraDetails();
-		this.getCameraPrivacyModeStatus();
 
+		this.getCameraPrivacyModeStatus();
+		this.getCameraDetails();
 		this.statusChangedLocationPermission();
 
 	}
@@ -116,10 +114,11 @@ export class SubpageDeviceSettingsDisplayComponent
 			console.log('Inside');
 			this.displayService.getCameraSettingsInfo().then((response) => {
 				console.log('getCameraDetails.then', response);
-				console.log('response.exposure.supported.then', response.exposure.supported);
-				console.log('response.exposure.autoValue.then', response.exposure.autoValue);
-				this.cameraDetails1 = response;
-				if (this.cameraDetails1.exposure.supported === true && this.cameraDetails1.exposure.autoValue === false) {
+				console.log('getCameraDetails.then permission', response);
+				this.dataSource = response;
+				console.log('getCameraDetails.then permission', this.dataSource.permission);
+				this.cameraFeatureAccess.showAutoExposureSlider = false;
+				if (this.dataSource.exposure.supported === true && this.dataSource.exposure.autoValue === false) {
 					this.cameraFeatureAccess.showAutoExposureSlider = true;
 				}
 			});
@@ -444,7 +443,12 @@ export class SubpageDeviceSettingsDisplayComponent
 		if (this.displayService.isShellAvailable) {
 			this.displayService
 				.stopEyeCareMonitor();
+		}
+	}
 
+	public onCardCollapse(isCollapsed: boolean) {
+		if (!isCollapsed) {
+			this.manualRefresh.emit();
 		}
 	}
 }

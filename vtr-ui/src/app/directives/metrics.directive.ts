@@ -1,6 +1,7 @@
 import {Directive, ElementRef, HostListener, Input} from '@angular/core';
 import {VantageShellService} from '../services/vantage-shell/vantage-shell.service';
 import {ActivatedRoute} from "@angular/router";
+import {VieworderService} from "../services/view-order/vieworder.service";
 
 
 declare var window;
@@ -9,7 +10,8 @@ declare var window;
 	selector: '[vtrMetrics]'
 })
 export class MetricsDirective {
-	constructor(private el: ElementRef, private shellService: VantageShellService,private activatedRoute:ActivatedRoute) {
+
+	constructor(private el: ElementRef, private shellService: VantageShellService,private activatedRoute:ActivatedRoute,private viewOrderService:VieworderService) {
 		this.metrics = shellService.getMetrics();
 	}
 
@@ -56,6 +58,11 @@ export class MetricsDirective {
 			case 'docclick': {
 				data.ItemType = 'DocClick';
 				data.ItemParent = this.metricsParent;
+				if(typeof this.viewOrderService[this.metricsParent]==='undefined'){
+
+					this.viewOrderService[this.metricsParent]=0;
+				}
+				data.viewOrder=(++this.viewOrderService[this.metricsParent]);
 				if (this.metricsItemID) {
 					data.ItemID = this.metricsItemID;
 				}
@@ -64,9 +71,6 @@ export class MetricsDirective {
 				}
 				if (this.metricsItemPosition) {
 					data.ItemPosition = this.metricsItemPosition;
-				}
-				if (this.metricsViewOrder) {
-					data.ViewOrder = this.metricsViewOrder;
 				}
 				if (this.metricsPageNumber) {
 					data.PageNumber = this.metricsPageNumber;
