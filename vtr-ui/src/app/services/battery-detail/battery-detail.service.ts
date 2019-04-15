@@ -34,4 +34,10 @@ export class BatteryDetailService {
 			return this.battery.mainBatteryPercentage;
 		}
 	}
+	
+	getAcIsAttached(): boolean {
+		if (this.isShellAvailable) {
+			return this.battery.isAcAttached;
+		}
+	}
 }
