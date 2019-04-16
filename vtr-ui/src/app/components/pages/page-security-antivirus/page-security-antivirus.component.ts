@@ -24,7 +24,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 	urlPrivacyPolicy = 'https://www.mcafee.com/consumer/en-us/policy/global/legal.html';
 	urlTermsOfService = 'https://www.mcafee.com/consumer/en-us/policy/global/legal.html';
 	urlGetMcAfee = '25CAD7D97D59483381EA39A87685A3C7';
-	cardContentPositionA: any;
+	cardContentPositionA: any = {};
 	securityAdvisor: SecurityAdvisor;
 	virusScan = 'security.antivirus.common.virusScan';
 	fireWall = 'security.antivirus.common.firewall';
@@ -206,9 +206,13 @@ export class PageSecurityAntivirusComponent implements OnInit {
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
-
-				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				if (cardContentPositionA) {
+					this.cardContentPositionA = cardContentPositionA;
+					if (this.cardContentPositionA.BrandName) {
+						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+					}
+				}
 			},
 			error => {
 				console.log('fetchCMSContent error', error);

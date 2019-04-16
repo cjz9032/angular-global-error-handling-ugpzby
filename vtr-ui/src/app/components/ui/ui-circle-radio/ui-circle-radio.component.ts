@@ -17,7 +17,7 @@ export class UiCircleRadioComponent implements OnInit {
 	@Input() theme: string;
 
 	@Output() change: EventEmitter<any> = new EventEmitter();
-
+	hideIcon: boolean = false;
 	constructor() { }
 
 	ngOnInit() {
@@ -28,7 +28,12 @@ export class UiCircleRadioComponent implements OnInit {
 	}
 
 	getIconName(name: string) {
-		return name.toLowerCase();
+		if(name) {
+			return name.split(" ").join("").toLowerCase();
+		}
+		else {
+			return "";
+		}
 	}
 
 }

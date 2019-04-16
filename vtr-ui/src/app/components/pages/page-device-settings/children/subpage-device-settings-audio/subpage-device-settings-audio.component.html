@@ -179,7 +179,8 @@
 								<vtr-ui-circle-radio *ngFor="let optimizeMode of microOptimizeModeResponse.modes"
 									[radioId]="'radio'| uniqueId"
 									[group]="radioOptimiseMicSettings"
-									[label]="(optimizeMode?optimizeMode:'LE-Multiple-voices2x') | separatePascalCase"
+									[label]="optimizeMode | separatePascalCase"
+									[theme]="'white'"
 									[value]='optimizeMode'
 									[checked]="optimizeMode === microOptimizeModeResponse.current"
 									[disabled]="microphoneProperties.disableEffect"

@@ -64,7 +64,19 @@
       }
       @media #{$mediaquery_19} {
         margin: 0.5rem 0rem;
-      }
+	  }
+	  @media #{$mediaquery_20} {
+		  margin: 1rem 0 0;
+	  }
+	  @media #{$mediaquery_21} {
+		margin: 1rem 0 0;
+	}
+	@media #{$mediaquery_22} {
+		margin: 1rem 0 0;
+	}
+	@media #{$mediaquery_23} {
+		margin: 1rem 0 0;
+	}
       font-weight: $weight_medium;
       letter-spacing: 0;
       height: 1.3rem;
@@ -87,7 +99,19 @@
       }
       @media #{$mediaquery_7} {
         display: none;
-      }
+	  }
+	  @media #{$mediaquery_20} {
+		margin: 1rem auto 0;
+	  }
+	  @media #{$mediaquery_21} {
+		margin: 1rem auto 0;
+	  }
+	  @media #{$mediaquery_22} {
+		margin: 1rem auto 0;
+	  }
+	  @media #{$mediaquery_23} {
+		margin: 1rem auto 0;
+	  }
       fa-icon {
         font-size: 4rem;
         line-height: 5.7rem;

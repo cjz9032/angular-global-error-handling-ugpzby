@@ -6,9 +6,6 @@ import {
 import {
 	VantageShellService
 } from '../../../services/vantage-shell/vantage-shell.service';
-import {
-	MockSecurityAdvisorService
-} from '../../../services/mock/mockSecurityAdvisor.service';
 import * as phoenix from '@lenovo/tan-client-bridge';
 import {
 	CMSService
@@ -43,6 +40,9 @@ import {
 import {
 	LocalStorageKey
 } from '../../../enums/local-storage-key.enum';
+import {
+	RegionService
+} from 'src/app/services/region/region.service';
 
 @Component({
 	selector: 'vtr-page-security',
@@ -51,8 +51,6 @@ import {
 })
 
 export class PageSecurityComponent implements OnInit {
-	title = 'Security';
-
 	passwordManagerLandingViewModel: PasswordManagerLandingViewModel;
 	antivirusLandingViewModel: AntiVirusLandingViewModel;
 	vpnLandingViewModel: VpnLandingViewModel;
@@ -69,7 +67,8 @@ export class PageSecurityComponent implements OnInit {
 	windowsHello: phoenix.WindowsHello;
 	score: number;
 	maliciousWifi: number;
-	cardContentPositionA: any;
+	cardContentPositionA: any = {};
+	region: string;
 
 	itemStatusClass = {
 		0: 'good',
@@ -83,10 +82,10 @@ export class PageSecurityComponent implements OnInit {
 	};
 	constructor(
 		public vantageShellService: VantageShellService,
-		private mockSecurityAdvisorService: MockSecurityAdvisorService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		private regionService: RegionService
 	) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.passwordManager = this.securityAdvisor.passwordManager;
@@ -126,6 +125,11 @@ export class PageSecurityComponent implements OnInit {
 		this.securityAdvisor.windowsHello.refresh().then(() => {
 			this.getScore();
 		});
+		this.regionService.getRegion().subscribe({
+			next: x => { this.region = x; },
+			error: err => { console.error(err); },
+			complete: () => { console.log('Done'); }
+		});
 	}
 
 	createViewModels() {
@@ -137,6 +141,7 @@ export class PageSecurityComponent implements OnInit {
 		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
 		const windowsHello = this.securityAdvisor.windowsHello;
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
+		const wifiSecurity = this.securityAdvisor.wifiSecurity;
 		if (cacheShowWindowsHello) {
 			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(windowsHello, this.commonService, this.translate);
 		}
@@ -147,6 +152,11 @@ export class PageSecurityComponent implements OnInit {
 			this.showWindowsHello(windowsHello);
 		}).on(EventTypes.helloFingerPrintStatusEvent, () => {
 			this.showWindowsHello(windowsHello);
+		});
+		wifiSecurity.on(EventTypes.wsStateEvent, () => {
+			this.getScore();
+		}).on(EventTypes.geolocatorPermissionEvent, (data) => {
+			this.getScore();
 		});
 
 		// this.securityAdvisor.refresh();
@@ -221,9 +231,13 @@ export class PageSecurityComponent implements OnInit {
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
-
-				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				if (cardContentPositionA) {
+					this.cardContentPositionA = cardContentPositionA;
+					if (this.cardContentPositionA.BrandName) {
+						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+					}
+				}
 			},
 			error => {
 				console.log('fetchCMSContent error', error);

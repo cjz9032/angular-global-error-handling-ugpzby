@@ -16,7 +16,7 @@ import { DisplayService } from 'src/app/services/display/display.service';
 	styleUrls: ['./widget-quicksettings.component.scss']
 })
 export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
-	public cameraStatus = new FeatureStatus(false, true);
+	public cameraStatus = new FeatureStatus(true, true);
 	public microphoneStatus = new FeatureStatus(false, true);
 	public eyeCareModeStatus = new FeatureStatus(false, true);
 	private notificationSubscription: Subscription;
