@@ -23,7 +23,8 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 		0: 'good',
 		1: 'bad',
 		2: 'blue',
-		3: 'orange'
+		3: 'orange',
+		4: 'blue'
 	};
 
 	/** object having item status icon list*/
