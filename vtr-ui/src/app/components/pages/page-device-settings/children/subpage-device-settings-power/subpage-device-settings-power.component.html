@@ -161,18 +161,18 @@
 								(toggleOnOff)="onIntelligentCoolingToggle($event)">
 								<div class="my-3"
 									*ngIf="intelligentCooling">
-									<vtr-ui-rectangle-radio [radioId]="'radio1'"
+									<vtr-ui-circle-radio [radioId]="'radio1'"
 										[group]="'radio'"
 										[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' | translate"
 										[value]="'PERFORMANCE'"
 										[checked]="radioPerformance"
-										(change)="changePerformance($event)"></vtr-ui-rectangle-radio>
-									<vtr-ui-rectangle-radio [radioId]="'radio2'"
+										(change)="changePerformance($event)"></vtr-ui-circle-radio>
+									<vtr-ui-circle-radio [radioId]="'radio2'"
 										[group]="'radio'"
 										[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool' | translate"
 										[value]="'QUIET & COOL'"
 										[checked]="radioQuietCool"
-										(change)="changeQuietCool($event)"></vtr-ui-rectangle-radio>
+										(change)="changeQuietCool($event)"></vtr-ui-circle-radio>
 								</div>
 							</vtr-ui-row-switch>
 						</li>
@@ -440,10 +440,15 @@
 									(ngModelChange)='onUsbChargingStatusChange()'>
 								<label> {{ powerSettings[0].checkboxDesc }} </label>
 							</div> -->
-							<div class="row">
-								<div class="col-12">
-									<img src="../../../../../../assets/images/AlwaysOnUSBcontext.JPG"
-										alt="" />
+							<div class="row no-gutters">
+								<div class="col-auto justify-content-start align-items-center">
+									<i class="icomoon icomoon-LE-Charging-USB2x"></i>
+								</div>
+								<div class="col-auto">
+                                  or
+								</div>
+								<div class="col-auto">
+									<i class="icomoon icomoon-LE-Charging-USB---SS2x"></i>
 								</div>
 							</div>
 							<div class="row">
