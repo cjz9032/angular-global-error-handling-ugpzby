@@ -1,0 +1,22 @@
+<div class="vtr-widget-about">
+	<div class="container-fluid">
+		<div class="d-flex mb-3">
+			<div class="mr-4">
+				<img class="about-logo" [src]="'assets/icons/Vantage_L_logo.svg'">
+			</div>
+			<div>
+				<div class="title">Lenovo Vantage</div>
+				<div class="version">{{ 'support.about.version' | translate}}: <span *ngIf="shellVersion">{{ shellVersion }} Build </span>{{ buildVersion }}</div>
+			</div>
+		</div>
+		<div class="about-links mb-4">
+			<div class="link"><a href="javascript:;" (click)="agreementClicked()" vtrMetrics
+					metricsItem="About.LicenseAgreementClicked" metricsEvent="ItemClick" metricsParent="Page.Support">{{ 'support.about.licenseAgreement' | translate}}</a></div>
+			<div class="link"><a href="javascript:;" (click)="openSourceClicked()" vtrMetrics
+					metricsItem="About.OpenSourceClicked" metricsEvent="ItemClick" metricsParent="Page.Support">{{ 'support.about.otherSoftwareLicenses' | translate}}</a></div>
+			<div class="link"><a href="https://www.lenovo.com" target="_blank" vtrMetrics
+					metricsItem="About.OurWebsiteLinkClicked" metricsEvent="ItemClick" metricsParent="Page.Support">{{ 'support.about.ourWebsite' | translate}}</a></div>
+		</div>
+		<div class="copyright">{{ 'support.about.copyright' | translate}}</div>
+	</div>
+</div>

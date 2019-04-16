@@ -80,12 +80,11 @@ import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-we
 import { ModalLenovoIdComponent } from './components/modal/modal-lenovo-id/modal-lenovo-id.component';
 import { ModalWifiSecurityInvitationComponent } from './components/modal/modal-wifi-security-invitation/modal-wifi-security-invitation.component';
 import { ModalWifiSecuriryLocationNoticeComponent } from './components/modal/modal-wifi-securiry-location-notice/modal-wifi-securiry-location-notice.component';
+import { ModalHomeProtectionLocationNoticeComponent } from './components/modal/modal-home-protection-location-notice/modal-home-protection-location-notice.component';
 
 // APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
 import { MockService } from './services/mock/mock.service';
-import { MockWifiSecurity } from './services/mock/mockWifiSecurity.service';
-import { MockSecurityAdvisorService } from './services/mock/mockSecurityAdvisor.service';
 import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
 import { CommsService } from './services/comms/comms.service';
@@ -95,6 +94,7 @@ import { UserService } from './services/user/user.service';
 import { BaseCameraDetail } from './services/camera/camera-detail/base-camera-detail.service';
 import { CameraDetailMockService } from './services/camera/camera-detail/camera-detail.mock.service';
 import { AudioService } from './services/audio/audio.service';
+import { RegionService } from './services/region/region.service';
 
 // FONT AWESOME
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -130,9 +130,11 @@ import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-b
 import { MetricService } from './services/metric/metric.service';
 import { WidgetMcafeeComponent } from './components/widgets/widget-mcafee/widget-mcafee.component';
 import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
+import { WidgetSecurityStatusComponent } from './components/widgets/widget-security-status/widget-security-status.component';
 
 
 import { MetricsDirective } from './directives/metrics.directive';
+import { TranslateDirective } from './directives/translate.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
 import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
@@ -155,11 +157,14 @@ import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import { UiFeatureItemComponent } from './components/ui/ui-feature-item/ui-feature-item.component';
 import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
 import { MinutesToHourminPipe } from './pipe/minutes-to-hourmin.pipe';
+import { WidgetAboutComponent } from './components/widgets/widget-about/widget-about.component';
 import { SubTransformPipe } from './pipe/security-antivirus/sub-transform.pipe';
 import { DateClassPipe } from './pipe/security-antivirus/date-class.pipe';
+import { ModalAboutComponent } from './components/modal/modal-about/modal-about.component';
 import { WifiClassPipe } from './pipe/security-landing/wifi-class.pipe';
-
-
+import { JoinclassPipe } from './pipe/security-wifi/join-class.pipe';
+import { SuccessClassPipe } from './pipe/security-wifi/success-class.pipe';
+import { UiCircleRadioComponent } from './components/ui/ui-circle-radio/ui-circle-radio.component';
 
 library.add(fas);
 library.add(fab);
@@ -247,6 +252,7 @@ library.add(fal);
 		StatusTextPipe,
 		ModalBatteryChargeThresholdComponent,
 		MetricsDirective,
+		TranslateDirective,
 		InstallationHistoryComponent,
 		SeparatePascalCasePipe,
 		ModalCommonConfirmationComponent,
@@ -263,6 +269,7 @@ library.add(fal);
 		DolbyModesTranslationPipe,
 		ModalWifiSecurityInvitationComponent,
 		ModalWifiSecuriryLocationNoticeComponent,
+		ModalHomeProtectionLocationNoticeComponent,
 		UiLandingFeatureComponent,
 		UiObjectTitleComponent,
 		UiSecurityStatusbarComponent,
@@ -272,11 +279,17 @@ library.add(fal);
 		TextClassPipe,
 		UiFeatureItemComponent,
 		UiSecurityStatusbarComponent,
+		WidgetSecurityStatusComponent,
 		StatusTransformPipe,
 		MinutesToHourminPipe,
+		WidgetAboutComponent,
 		SubTransformPipe,
 		DateClassPipe,
-		WifiClassPipe
+		ModalAboutComponent,
+		WifiClassPipe,
+		JoinclassPipe,
+		SuccessClassPipe,
+		UiCircleRadioComponent
 	],
 	imports: [
 		BrowserModule,
@@ -297,15 +310,14 @@ library.add(fal);
 		CookieService,
 		DevService,
 		MockService,
-		MockWifiSecurity,
 		DisplayService,
 		ContainerService,
 		CommsService,
 		DashboardService,
 		SecurityService,
-		MockSecurityAdvisorService,
 		UserService,
 		AudioService,
+		RegionService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
 	bootstrap: [AppComponent],
@@ -319,7 +331,9 @@ library.add(fal);
 		ModalThreatLocatorComponent,
 		ModalWifiSecurityInvitationComponent,
 		ModalWifiSecuriryLocationNoticeComponent,
+		ModalHomeProtectionLocationNoticeComponent,
 		ModalUpdateChangeLogComponent,
+		ModalAboutComponent,
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA

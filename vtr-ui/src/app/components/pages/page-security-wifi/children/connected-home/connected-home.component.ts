@@ -3,6 +3,7 @@ import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecu
 import { WinRT } from '@lenovo/tan-client-bridge';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalWifiSecurityInvitationComponent } from '../../../../modal/modal-wifi-security-invitation/modal-wifi-security-invitation.component';
+import { SecurityService } from 'src/app/services/security/security.service';
 
 @Component({
 	selector: 'vtr-connected-home',
@@ -14,10 +15,12 @@ export class ConnectedHomeComponent implements OnInit {
 	@Input() data: WifiHomeViewModel;
 	@Input() isShowInvitationCode: boolean;
 	emitter = new EventEmitter();
+	showDescribe = false;
 
 
 	constructor(
-		private modalService: NgbModal
+		private modalService: NgbModal,
+		public securityService: SecurityService
 	) { }
 
 	ngOnInit() {
@@ -41,9 +44,22 @@ export class ConnectedHomeComponent implements OnInit {
 		console.log('enterActivationCode', event);
 		this.emitter.subscribe((name: string) => {
 			if (name === 'invitationsuccess') {
-				this.isShowInvitationCode = false;
+				this.data.homeStatus = 'joined';
 			}
 		});
-		this.OpenInvitationModal();
+		if (this.data.homeStatus !== 'joined') {
+			this.showDescribe = false;
+			if (this.data.wifiSecurity.isLocationServiceOn !== undefined) {
+				if (this.data.wifiSecurity.isLocationServiceOn) {
+					this.OpenInvitationModal();
+				} else {
+					this.securityService.homeProtectionOpenLocationDialog(this.data.wifiSecurity);
+				}
+			} else {
+				console.log('this.data.wifiSecurity.isLocationServiceOn is undefined!');
+			}
+		} else {
+			this.showDescribe = true;
+		}
 	}
 }

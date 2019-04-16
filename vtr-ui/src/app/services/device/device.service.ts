@@ -37,7 +37,7 @@ export class DeviceService {
 			if (this.isShellAvailable) {
 				this.getMachineInfo()
 					.then((machineInfo: any) => {
-						this.isArm = machineInfo.osBitness.toUpperCase().trim() == "ARM64"
+						this.isArm = machineInfo.cpuArchitecture.toUpperCase().trim() == "ARM64"
 					}).catch(error => {
 						console.error('initArm', error);
 					});
@@ -86,5 +86,11 @@ export class DeviceService {
 				this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
 			});
 		}
+	}
+	getMachineType(): Promise<number> {
+		if (this.sysInfo) {
+			return this.sysInfo.getMachineType();
+		}
+		return undefined;
 	}
 }

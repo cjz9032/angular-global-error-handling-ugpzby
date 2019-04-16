@@ -35,7 +35,7 @@
 					</div>
 					<div class="col-2 p-0 battery-label-text">{{'device.deviceSettings.batteryGauge.details.wattage' | translate }}</div>
 					<div class="col-2 p-0 battery-value-text">
-						{{ model.wattage }} W
+						{{ model.wattage ?  model.wattage + " W" : ""}}
 					</div>
 					<div class="col-2 p-0 battery-label-text">{{'device.deviceSettings.batteryGauge.details.barcode' | translate }}</div>
 					<div class="col-2 p-0 battery-value-text">

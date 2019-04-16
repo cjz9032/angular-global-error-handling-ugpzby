@@ -10,9 +10,9 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 })
 export class ModalArticleDetailComponent implements OnInit {
 	articleId: string;
-	articleTitle: string = '';
-	articleImage: string = '';
-	articleBody: SafeHtml = '';
+	articleTitle = '';
+	articleImage = '';
+	articleBody: SafeHtml = '<div class="spinner-content"><div class="spinner-border text-primary progress-spinner" role="status"></div></div>';
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -27,7 +27,6 @@ export class ModalArticleDetailComponent implements OnInit {
 
 		this.articleTitle = '';
 		this.articleImage = '';
-		this.articleBody = '';
 
 		this.cmsService.fetchCMSArticle(this.articleId, queryOptions).then(
 			(response: any) => {

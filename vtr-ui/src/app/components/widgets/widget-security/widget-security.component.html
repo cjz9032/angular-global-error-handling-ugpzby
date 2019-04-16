@@ -1,7 +1,7 @@
 <div class="vtr-widget-security">
 	<div class="container-fluid">
 		<div class="row security-background">
-			<div class="col col-3">
+			<div class="col-3 col-sm-3 col-md-12 col-lg-3">
 				<div class="row">
 					<div class="col circle-container">
 						<div class="circle percent-{{percentValue}}">{{percentValue}}<span class="percent">%</span>
@@ -9,13 +9,16 @@
 					</div>
 				</div>
 			</div>
-			<div class="col col-9 last-col">
-				<p class="title">{{security.title[titleStatus] | translate}}</p>
-				<p class="row1">{{security.subTitle[titleStatus] | translate}}</p>
-				<p class="row1">{{security.subTitle2[titleStatus] | translate}}</p>
+			<div class="col-9 col-sm-9 col-md-12 col-lg-9 last-col">
+				<p class="title">{{security.title[percentValue === 100 ? 0 : 1] | translate}}</p>
+				<p class="row1">{{security.subTitle[percentValue === 100 ? 0 : 1] | translate}}</p>
+				<p class="row1">{{security.subTitle2[percentValue === 100 ? 0 : 1] | translate}}</p>
 				<div class="button-row">
-					<button class="action-button" vtrMetrics metricsEvent="itemClick" metricsItem="securityAdvisor101"
-					(click)="buttonClick()">{{'security.landing.security101' | translate}}</button>
+					<button class="action-button"
+						vtrMetrics
+						metricsEvent="itemClick"
+						metricsItem="securityAdvisor101"
+						(click)="buttonClick()">{{'security.landing.security101' | translate}}</button>
 				</div>
 			</div>
 		</div>

@@ -65,6 +65,10 @@
 	.text-regular {
 		color: $main_dark;
 		font-size: 1.6rem;
+
+		a {
+			text-decoration: underline;
+		}
 	}
 
 	.btn-round-xs {
@@ -105,16 +109,11 @@
 			color: $main_dark;
 
 			.text-regular {
-				color: $main_dark;
+				color: $main_shade;
 				font-size: 1.6rem;
 
 				a {
-					color: $main;
 					text-decoration: underline;
-
-					&:hover {
-						text-decoration: none;
-					}
 				}
 			}
 
@@ -199,7 +198,11 @@
 					left: 0rem;
 				}
 				.text-regular {
+					color: $main_shade;
 					padding: 0.8rem 0.8rem 0.8rem 2rem;
+					a {
+						text-decoration: underline;
+					}
 				}
 			}
 		}

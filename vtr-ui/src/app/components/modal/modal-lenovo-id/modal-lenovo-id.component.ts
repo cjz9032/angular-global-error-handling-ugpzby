@@ -4,6 +4,7 @@ import { UserService } from '../../../services/user/user.service';
 import { Subscription, timer } from 'rxjs';
 import { SupportService } from '../../../services/support/support.service';
 import { DevService } from '../../../services/dev/dev.service';
+import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-modal-lenovo-id',
@@ -16,15 +17,25 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	private detectConnectionStatusSub: Subscription;
 	private detectConnectionStatusTimer = timer(5000, 5000);
 	public isBroswerVisible = false; // show or hide web browser, hide or show progress spinner
+	private metrics: any;
 	constructor(
 		public activeModal: NgbActiveModal,
 		private userService: UserService,
 		private supportService: SupportService,
-		private devService: DevService
+		private devService: DevService,
+		private vantageShellService: VantageShellService,
 	) {
 		this.isOnline = false;
 		this.cacheCleared = false;
 		this.isBroswerVisible = false;
+
+		this.metrics = vantageShellService.getMetrics();
+		if (!this.metrics) {
+			this.devService.writeLog('ModalLenovoIdComponent constructor: metrics object is undefined');
+			this.metrics = {
+				sendAsync() {}
+			};
+		}
 	}
 
 	// Capture the html content in webView
@@ -55,13 +66,16 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 
 		const webView = document.querySelector('#lid-webview') as MsWebView;
 		if (!this.cacheCleared) {
-			webView.src = 'https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null';
+			// This is the link for SSO production environment
+			//webView.src = 'https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null';
+			// This is the link for SSO dev environment
+			webView.src = 'https://uss-test.lenovomm.cn/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null';
 			this.cacheCleared = true;
 		}
 	}
 
 	//
-	// TODO: The input parameter 'locale' come from field 'locale' in machine info xml, 
+	// The input parameter 'locale' come from field 'locale' in machine info xml, 
 	// it is system locale setting, this fucntion is to convert the locale to LID supported 17 languages.
 	// here is map for each language:
 	//	zh_CN: 中文(简体)
@@ -85,8 +99,56 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	getLidSupportedLanguageFromLocale(locale) {
 		var lang = "en_US";
 		switch(locale) {
+			case "zh-hans":
+				lang = "zh_CN";
+				break;
+			case "zh-hant":
+				lang = "zh_HANT";
+				break;
+			case "da":
+				lang = "da_DK";
+				break;
+			case "de":
+				lang = "de_DE";
+				break;
 			case "en":
-				lang = "en_US";	// change this for testing
+				lang = "en_US";
+				break;
+			case "fr":
+				lang = "fr_FR";
+				break;
+			case "it":
+				lang = "it_IT";
+				break;
+			case "ja":
+				lang = "ja_JP";
+				break;
+			case "ko":
+				lang = "ko_kR";
+				break;
+			case "no":
+				lang = "no_NO";
+				break;
+			case "nl":
+				lang = "nl_NL";
+				break;
+			case "pt_BR":
+				lang = "pt_BR";
+				break;
+			case "pt":
+				lang = "pt_PT";
+				break;
+			case "fi":
+				lang = "fi_FI";
+				break;
+			case "es":
+				lang = "es_ES";
+				break;
+			case "sv":
+				lang = "sv_SE";
+				break;
+			case "ru":
+				lang = "ru_RU";
 				break;
 			default:
 				lang = "en_US";
@@ -137,6 +199,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			const webViewEvent = EventArgs as WebViewEvent;
 			if (webViewEvent.isSuccess) {
 				if (EventArgs.uri.startsWith('https://passport.lenovo.com/wauthen5/userLogout?')) {
+					return;
+				}
+				if (EventArgs.uri.startsWith('https://uss-test.lenovomm.cn/wauthen5/userLogout?')) {
 					return;
 				}
 				self.isBroswerVisible = true;
@@ -216,6 +281,25 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			this.detectConnectionStatusSub.unsubscribe();
 			window.location.reload();
 		});
+	}
+
+	onClose(): void {
+		let metricsData = {
+			ItemType: 'TaskAction',
+			TaskName: 'LID.SignIn',
+			TaskResult: 'failure(rc=UserCancelled)',
+			TaskParam: JSON.stringify({
+				StarterStatus: 'NA',
+				AccountState: 'NA', //{Signin | AlreadySignedIn | NeverSignedIn},
+				FeatureRequested: 'NA' // {AppOpen | SignIn | Vantage feature}
+			})
+		};
+		const self = this;
+		this.metrics.sendAsync(metricsData).catch((res) => {
+			self.devService.writeLog('loginSilently() Exception happen when send metric ', res.message);
+		});
+
+		this.activeModal.dismiss();
 	}
 
 	ngOnDestroy(): void {

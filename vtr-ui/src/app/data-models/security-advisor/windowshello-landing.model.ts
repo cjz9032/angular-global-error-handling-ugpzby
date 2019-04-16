@@ -2,17 +2,21 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 import * as phoenix from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { TranslateService } from '@ngx-translate/core';
 
 export class WindowsHelloLandingViewModel {
 	statusList: Array<any>;
 	subject: any;
 	type = 'security';
 	imgUrl = '../../../../assets/images/windows-logo.svg';
-	constructor(whModel: phoenix.WindowsHello, commonService: CommonService) {
-		if (whModel) {
+	constructor(
+		whModel: phoenix.WindowsHello,
+		commonService: CommonService,
+		translate: TranslateService
+		) {
 			const whStatus = {
 				status: 2,
-				detail: 'common.securityAdvisor.disabled', // active or inactive
+				detail: 'common.securityAdvisor.loading', // active or inactive
 				path: 'security/windows-hello',
 				title: 'security.landing.fingerprint',
 				type: 'security',
@@ -22,34 +26,63 @@ export class WindowsHelloLandingViewModel {
 				title: 'common.securityAdvisor.windowsHello',
 				type: 'security',
 			};
-			let fingerStatus = 'common.securityAdvisor.disabled';
-			let faciaStatus = 'common.securityAdvisor.disabled';
-			const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus);
-			if (cacheStatus) {
-				whStatus.status = cacheStatus === 'active' ? 0 : 1;
-				whStatus.detail = cacheStatus === 'active' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-				subjectStatus.status = cacheStatus === 'active' ? 0 : 1;
-			}
+			const setWhStatus = (finger: string, facial: string) => {
+				if (!finger) {
+					whStatus.status = 1;
+					whStatus.detail = 'common.securityAdvisor.notFound';
+					subjectStatus.status = facial === 'active' ? 0 : 1;
+					commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, subjectStatus.status === 0 ? 'enabled' : 'disabled');
+					commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus, 'notFound');
+				} else {
+					whStatus.status = finger === 'active' ? 0 : 1;
+					whStatus.detail = finger === 'active' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
+					subjectStatus.status = finger === 'active' || facial === 'active' ? 0 : 1;
+					commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, subjectStatus.status === 0 ? 'enabled' : 'disabled');
+					commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus, finger);
+				}
+				translate.get(whStatus.detail).subscribe((res) => {
+					whStatus.detail = res;
+				});
+				translate.get(whStatus.title).subscribe((res) => {
+					whStatus.title = res;
+				});
+				translate.get(subjectStatus.title).subscribe((res) => {
+					subjectStatus.title = res;
+				});
+			};
+		if (whModel) {
 			if (whModel.fingerPrintStatus || whModel.facialIdStatus) {
-				whStatus.status = (whModel.fingerPrintStatus === 'active') ? 0 : 1;
-				whStatus.detail = (whModel.fingerPrintStatus === 'active') ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, whModel.fingerPrintStatus);
-				subjectStatus.status = (whModel.fingerPrintStatus === 'active' || whModel.facialIdStatus === 'active') ? 0 : 1;
+				setWhStatus(whModel.fingerPrintStatus, whModel.facialIdStatus);
 			}
 			whModel.on(EventTypes.helloFingerPrintStatusEvent, (data) => {
-				whStatus.status = (data === 'active') ? 0 : 1;
-				whStatus.detail = data === 'active' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, data);
-				fingerStatus = data === 'active' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-				subjectStatus.status = (faciaStatus === 'active' || fingerStatus === 'active') ? 0 : 1;
+				setWhStatus(data, whModel.facialIdStatus);
 			});
 			whModel.on(EventTypes.helloFacialIdStatusEvent, (data) => {
-				faciaStatus = data === 'active' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-				subjectStatus.status = (faciaStatus === 'active' || fingerStatus === 'active') ? 0 : 1;
+				setWhStatus(whModel.fingerPrintStatus, data);
 			});
-			this.statusList = new Array(whStatus);
-			this.subject = subjectStatus;
-
+		} else {
+			const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus);
+			const cacheFingerStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus);
+			if (cacheFingerStatus && cacheFingerStatus === 'notFound') {
+				whStatus.status = 1;
+				whStatus.detail = 'common.securityAdvisor.notFound';
+				subjectStatus.status = 1;
+			} else {
+				whStatus.status = cacheFingerStatus === 'active' ? 0 : 1;
+				whStatus.detail = cacheFingerStatus === 'active' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
+				subjectStatus.status = cacheStatus;
+			}
+			translate.get(whStatus.detail).subscribe((res) => {
+				whStatus.detail = res;
+			});
+			translate.get(whStatus.title).subscribe((res) => {
+				whStatus.title = res;
+			});
+			translate.get(subjectStatus.title).subscribe((res) => {
+				subjectStatus.title = res;
+			});
 		}
+		this.statusList = new Array(whStatus);
+		this.subject = subjectStatus;
 	}
 }

@@ -5,6 +5,7 @@ import { DevService } from '../dev/dev.service';
 import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Injectable()
 export class UserService {
@@ -13,7 +14,9 @@ export class UserService {
 	auth = false;
 	token = '';
 
-	firstName = 'User';
+	public isLenovoIdSupported = false;
+
+	public firstName = 'User';
 	lastName = '';
 	initials = '';
 
@@ -25,7 +28,8 @@ export class UserService {
 		private commsService: CommsService,
 		private devService: DevService,
 		private vantageShellService: VantageShellService,
-		private commonService: CommonService
+		private commonService: CommonService,
+		private translate: TranslateService
 	) {
 		// DUMMY
 		this.setName(this.firstName, this.lastName);
@@ -41,6 +45,12 @@ export class UserService {
 		if (!this.lid) {
 			this.devService.writeLog('UserService constructor: lid object is undefined');
 		}
+
+		this.translate.stream('lenovoId.user').subscribe((value) => {
+			if (!this.auth) {
+				this.firstName = value;
+			}
+		});
 	}
 
 	checkCookies() {
@@ -57,7 +67,7 @@ export class UserService {
 			this.lid.loginSilently().then((result) => {
 				let metricsData: any;
 				if (result.success && result.status === 0) {
-					this.lid.getUserProfile().then((profile) => {
+					self.lid.getUserProfile().then((profile) => {
 						if (profile.success && profile.status === 0) {
 							self.setName(profile.firstName, profile.lastName);
 							self.auth = true;
@@ -86,8 +96,8 @@ export class UserService {
 					};
 				}
 
-				this.metrics.sendAsync(metricsData).catch((res) => {
-					this.devService.writeLog('loginSilently() Exception happen when send metric ', res.message);
+				self.metrics.sendAsync(metricsData).catch((res) => {
+					self.devService.writeLog('loginSilently() Exception happen when send metric ', res.message);
 				});
 			});
 		}
@@ -106,24 +116,6 @@ export class UserService {
 			return this.lid.enableSSO(useruad, username, userid, userguid);
 		}
 
-		return undefined;
-	}
-
-	public logout(): any {
-		if (this.lid !== undefined) {
-			const that = this;
-			return this.lid.logout().then((result) => {
-				that.metrics.sendAsync({
-					ItemType: 'TaskAction',
-					TaskName: 'LID.SignOut',
-					TaskResult: result && result.success ? 'success' : 'failure'
-				}).catch((res) => {
-					this.devService.writeLog('logout() Exception happen when send metric ', res.message);
-				});
-
-				return result;
-			});
-		}
 		return undefined;
 	}
 
@@ -168,10 +160,31 @@ export class UserService {
 		this.cookies = this.cookieService.getAll();
 		if (this.lid !== undefined) {
 			this.lid.logout().then(function (result) {
+				let metricsData: any;
 				if (result.success && result.status === 0) {
-					self.setName('User', '');
+					self.translate.stream('lenovoId.user').subscribe((value) => {
+						self.setName(value, '');
+					});
 					self.auth = false;
+					metricsData = {
+						ItemType: 'TaskAction',
+						TaskName: 'LID.SignOut',
+						TaskCount: '1',
+						TaskResult: 'success',
+						TaskParam: ''
+					};
+				} else {
+					metricsData = {
+						ItemType: 'TaskAction',
+						TaskName: 'LID.SignOut',
+						TaskCount: '1',
+						TaskResult: 'failure',
+						TaskParam: ''
+					};
 				}
+				self.metrics.sendAsync(metricsData).catch((res) => {
+					self.devService.writeLog('removeAuth() Exception happen when send metric ', res.message);
+				});
 				self.devService.writeLog('LOGOUT: ', result.success);
 			});
 		}
@@ -185,10 +198,19 @@ export class UserService {
 	}
 
 	setName(firstName: string, lastName: string) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.initials = (this.firstName && this.firstName.length > 0) ? this.firstName[0] : '' +
-			(this.lastName && this.lastName.length > 0) ? this.lastName[0] : '';
-		this.commonService.sendNotification(LenovoIdKey.FirstName, firstName);
+		if (!firstName && !lastName) {
+			this.translate.stream('lenovoId.user').subscribe((value) => {
+				this.firstName = value;
+				this.initials = value ? value[0] : '';
+			});
+			this.lastName = "";
+		} else {
+			this.firstName = firstName ? firstName : "";
+			this.lastName = lastName ? lastName : "";
+			this.initials = this.firstName ? this.firstName[0] : '' +
+				this.lastName ? this.lastName[0] : '';
+		}
+		this.commonService.sendNotification(LenovoIdKey.FirstName, firstName? firstName : "");
 	}
+
 }

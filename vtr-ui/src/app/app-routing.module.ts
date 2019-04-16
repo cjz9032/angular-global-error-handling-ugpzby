@@ -16,6 +16,7 @@ import { PageSupportComponent } from './components/pages/page-support/page-suppo
 import { PageSupportDetailComponent } from './components/pages/page-support-detail/page-support-detail.component';
 import { PageUserComponent } from './components/pages/page-user/page-user.component';
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
+import { WindowsHelloGuardService } from './services/guard/windows-hello-guardService.service';
 
 const routes: Routes = [
 	{
@@ -24,10 +25,17 @@ const routes: Routes = [
 		pathMatch: 'full'
 	}, {
 		path: 'dashboard',
-		component: PageDashboardComponent
+		component: PageDashboardComponent,
+		data: {
+			pageName: 'Dashboard'
+		}
 	}, {
 		path: 'device',
-		component: PageDeviceComponent
+		component: PageDeviceComponent,
+		data: {
+			pageName: 'Device.MyDevice'
+		}
+
 	}, {
 		path: 'device/device-settings',
 		component: PageDeviceSettingsComponent,
@@ -39,51 +47,94 @@ const routes: Routes = [
 			},
 			{
 				path: 'power',
-				component: SubpageDeviceSettingsPowerComponent
+				component: SubpageDeviceSettingsPowerComponent,
+				data: {
+					pageName: 'Device.MyDeviceSettings'
+				}
 			},
 			{
 				path: 'audio',
-				component: SubpageDeviceSettingsAudioComponent
+				component: SubpageDeviceSettingsAudioComponent,
+				data: {
+					pageName: 'Device.MyDeviceSettings'
+				}
 			},
+
 			{
 				path: 'display-camera',
-				component: SubpageDeviceSettingsDisplayComponent
+				component: SubpageDeviceSettingsDisplayComponent,
+				data: {
+					pageName: 'Device.MyDeviceSettings'
+				}
 			}
 		]
 	}, {
 		path: 'device/system-updates',
-		component: PageDeviceUpdatesComponent
+		component: PageDeviceUpdatesComponent,
+		data: {
+			pageName: 'Device.SystemUpdate'
+		}
 	}, {
 		path: 'security',
-		component: PageSecurityComponent
+		component: PageSecurityComponent,
+		data: { pageName: 'Security.MySecurity' }
+
 	}, {
 		path: 'security/anti-virus',
-		component: PageSecurityAntivirusComponent
+		component: PageSecurityAntivirusComponent,
+		data: {
+			pageName: 'Security.AntiVirus'
+		}
 	}, {
 		path: 'security/wifi-security',
-		component: PageSecurityWifiComponent
+		component: PageSecurityWifiComponent,
+		data: {
+			pageName: 'Security.WifiSecurity'
+		}
 	}, {
 		path: 'security/password-protection',
-		component: PageSecurityPasswordComponent
+		component: PageSecurityPasswordComponent,
+		data: {
+			pageName: 'Security.PasswordProtection'
+		}
 	}, {
 		path: 'security/internet-protection',
-		component: PageSecurityInternetComponent
+		component: PageSecurityInternetComponent,
+		data: {
+			pageName: 'Security.InternetProtection'
+		}
 	}, {
 		path: 'security/windows-hello',
-		component: PageSecurityWindowsHelloComponent
+		component: PageSecurityWindowsHelloComponent,
+		canActivate: [WindowsHelloGuardService],
+		data: {
+			pageName: 'Security.WindowsHello'
+		}
 	}, {
 		path: 'support',
-		component: PageSupportComponent
+		component: PageSupportComponent,
+		data: {
+			pageName: 'Page.Support'
+		}
 	}, {
 		path: 'support-detail/:id',
-		component: PageSupportDetailComponent
+		component: PageSupportDetailComponent,
+		data: {
+			pageName: 'Support.Detail'
+		}
 	}, {
 		path: 'user',
-		component: PageUserComponent
+		component: PageUserComponent,
+		data: {
+			pageName: 'User'
+		}
 	}, {
-        path: 'privacy',
-        loadChildren: './components/pages/page-privacy/privacy.module#PrivacyModule',
-    },
+		path: 'privacy',
+		loadChildren: './components/pages/page-privacy/privacy.module#PrivacyModule',
+		data: {
+			pageName: 'Privacy'
+		}
+	},
 ];
 
 @NgModule({

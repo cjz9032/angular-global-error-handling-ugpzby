@@ -12,11 +12,11 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	@Input() emitter: EventEmitter<any>;
 	securityAdvisor: any;
 
-	header = 'security.homeprotection.invitation-code.enter-code';
-	description = 'security.homeprotection.invitation-code.add-home';
+	header = 'security.homeprotection.invitationcode.enterCode';
+	description = 'security.homeprotection.invitationcode.addHome';
 
-	OkText = 'security.homeprotection.invitation-code.ok';
-	CancelText = 'security.homeprotection.invitation-code.cancel';
+	OkText = 'security.homeprotection.invitationcode.continue';
+	CancelText = 'security.homeprotection.invitationcode.cancel';
 
 	startJoin = false;
 	joinSuccess = false;
@@ -34,7 +34,6 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	}
 
 	KeyPress(e) {
-		// console.log(e.target.value);
 		const value = e.target.value.replace(/[^0-9a-zA-Z]+/ig, '');
 		e.target.value = value;
 	}
@@ -66,6 +65,11 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 
 	onCancelClick($event: any) {
 		this.activeModal.close(false);
+	}
+
+	show() {
+		const show: HTMLElement = document.querySelector('.activation');
+		show.style.visibility = 'visible';
 	}
 
 }

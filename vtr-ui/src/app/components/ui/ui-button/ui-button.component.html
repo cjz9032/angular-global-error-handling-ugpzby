@@ -1,7 +1,7 @@
 <div class="vtr-ui-button">
 	<div class="button-box"
 		*ngIf="label">
-		<button *ngIf="isLWSEnabled"
+		<button *ngIf="alreadyJoinGroup !== 'joined'"
 			[disabled]="isDisabled"
 			type="button"
 			class="btn button"
@@ -11,12 +11,12 @@
 			[metricsParam]="metricsParam"
 			[metricsValue]="metricsValue"
 			[metricsParent]="metricsParent"
-			[ngClass]="{'fullWidth': isFullWidth === true,'text-upper-case': upperCaseLabel}"
+			[ngClass]="{'fullWidth': isFullWidth === true,'text-upper-case': upperCaseLabel ,'regular-width': isRegular}"
 			(click)="onClickButton($event)">{{label}} </button>
-		<button *ngIf="!isLWSEnabled"
+		<button *ngIf="alreadyJoinGroup === 'joined'"
 			type="button"
 			class="button disable"
-			[disabled]="true"
+			[disabled]="false"
 			vtrMetrics
 			[metricsItem]="metricsItem"
 			[metricsEvent]="'itemClick'"

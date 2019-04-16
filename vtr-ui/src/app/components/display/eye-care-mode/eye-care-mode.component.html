@@ -10,6 +10,7 @@
 			>
 			</vtr-ui-range-slider> -->
 			<vtr-ui-range-slider [step]="100"
+				[manualRefresh]="manualRefresh"
 				[enableSlider]="enableSlider"
 				[minValue]="eyeCareModeSettings.minimum"
 				[maxValue]="eyeCareModeSettings.maximum"
@@ -41,14 +42,15 @@
 		*ngIf="sunsetToSunriseStatus.available">
 		<input id="cb-eye-care-schedule"
 			type="checkbox"
-			[disabled]="enableSlider"
+			[disabled]="enableSunsetToSunrise"
 			class="custom-control-input"
 			[checked]="sunsetToSunriseStatus.status"
 			(change)="onSunsetToSunrise(sunsetToSunriseStatus)" />
 		<label class="custom-control-label"
 			for="cb-eye-care-schedule">
-			<span class="text-capitalize">Schedule eye care mode</span>
-			from sunset to sunrise
+			<span class="text-capitalize">
+				Schedule eye care mode from sunset to sunrise {{sunriseToSunsetText}}
+			</span>
 		</label>
 	</div>
 </div>

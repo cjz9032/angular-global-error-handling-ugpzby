@@ -2,6 +2,7 @@ import { Injectable, Output, EventEmitter } from '@angular/core';
 import { DevService } from '../dev/dev.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import { CommonService } from '../common/common.service';
 @Injectable()
 export class DisplayService {
 	private displayEyeCareMode: any;
@@ -17,7 +18,8 @@ export class DisplayService {
 
 	constructor(
 		private devService: DevService,
-		shellService: VantageShellService
+		shellService: VantageShellService,
+		private commonService: CommonService
 	) {
 		this.displayEyeCareMode = shellService.getEyeCareMode();
 		if (this.displayEyeCareMode) {
@@ -78,13 +80,13 @@ export class DisplayService {
 		}
 		return undefined;
 	}
-	public setEyeCareModeState(value: boolean): Promise<boolean> {
+	public setEyeCareModeState(value: boolean): Promise<any> {
 		try {
 			if (this.displayEyeCareMode) {
 				return this.displayEyeCareMode.setEyeCareMode(value);
 			}
 			return undefined;
-		}	catch (error) {
+		} catch (error) {
 			throw new Error(error.message);
 		}
 	}
@@ -95,11 +97,15 @@ export class DisplayService {
 		return undefined;
 	}
 	public getCameraSettingsInfo(): Promise<any> {
-		if (this.cameraSettings) {
-			console.log('this.cameraSettings', this.cameraSettings);
-			return this.cameraSettings.getCameraSettings();
+		try {
+			if (this.cameraSettings) {
+				console.log('this.cameraSettings', this.cameraSettings);
+				return this.cameraSettings.getCameraSettings();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
 		}
-		return undefined;
 	}
 	public setCameraBrightness(value: number): Promise<boolean> {
 		if (this.cameraSettings) {
@@ -158,7 +164,7 @@ export class DisplayService {
 		}
 		return undefined;
 	}
-	public setEyeCareAutoMode(value: boolean): Promise<boolean> {
+	public setEyeCareAutoMode(value: boolean): Promise<any> {
 		if (this.displayEyeCareMode) {
 			return this.displayEyeCareMode.setEyeCareAutoMode(value);
 		}
@@ -181,5 +187,34 @@ export class DisplayService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
+	}
+	public startEyeCareMonitor(handler: any): Promise<any> {
+		try {
+			if (this.isShellAvailable) {
+				return this.displayEyeCareMode.startMonitor((handler));
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	public stopEyeCareMonitor() {
+		if (this.isShellAvailable) {
+			this.displayEyeCareMode.stopMonitor((response: boolean) => {
+				//this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
+			});
+		}
+	}
+
+	public openPrivacyLocation() {
+		if (this.isShellAvailable) {
+			this.displayEyeCareMode.openPrivacyLocation();
+		}
+	}
+	public initEyecaremodeSettings(): Promise<boolean> {
+		if (this.displayEyeCareMode) {
+			return this.displayEyeCareMode.initEyecaremodeSettings();
+		}
+		return undefined;
 	}
 }

@@ -104,4 +104,9 @@ export interface ICameraSettingsResponse {
 		default: number, //
 		value: number // current value
 	};
+	permission: boolean;
+
+}
+export class CameraFeatureAccess {
+	public showAutoExposureSlider: boolean;
 }

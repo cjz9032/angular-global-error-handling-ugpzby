@@ -36,6 +36,15 @@
 			display: block;
 			font-weight: $weight_bold;
 			font-weight: $weight_light;
+			@media #{$mediaquery_8} {
+				font-size: 2rem;
+			}
+			@media #{$mediaquery_11} {
+				font-size: 1.2rem;
+			}
+			@media #{$mediaquery_14} {
+				font-size: 1.4rem;
+			}
 		}
 
 		.description {
@@ -101,6 +110,7 @@
 		background-position: 50% 50%;
 		background-repeat: no-repeat;
 		display: block;
+		cursor: pointer;
 
 		.bottomright {
 

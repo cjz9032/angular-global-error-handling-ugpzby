@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { MockService } from 'src/app/services/mock/mock.service';
-import { WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
+import { WindowsHello, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { CMSService } from '../../../services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
@@ -13,11 +13,10 @@ import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 })
 export class PageSecurityWindowsHelloComponent implements OnInit {
 
-	title = 'Windows Hello';
-
 	windowsHello: WindowsHello;
 	statusItem: any;
-	cardContentPositionA: any;
+	cardContentPositionA: any = {};
+	securityAdvisor: SecurityAdvisor;
 
 	constructor(
 		public mockService: MockService,
@@ -25,8 +24,10 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 		private commonService: CommonService,
 		vantageShellService: VantageShellService
 	) {
+		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		this.statusItem = {
-			title: 'WINDOWS HELLO'
+			title: 'security.windowsHello.statusTitle',
+			status: 'common.securityAdvisor.loading'
 		};
 		this.windowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
 		this.updateStatus();
@@ -78,9 +79,13 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				this.cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
-
-				this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				if (cardContentPositionA) {
+					this.cardContentPositionA = cardContentPositionA;
+					if (this.cardContentPositionA.BrandName) {
+						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+					}
+				}
 			},
 			error => {
 				console.log('fetchCMSContent error', error);

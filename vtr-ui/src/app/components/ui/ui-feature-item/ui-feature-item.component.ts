@@ -65,7 +65,15 @@ export class UiFeatureItemComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	addViewOrder() {
+	showArticleDetails() {
 		this.metricsDatas.viewOrder++;
+
+		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
+			size: 'lg',
+			centered: true,
+			windowClass: 'Article-Detail-Modal'
+		});
+
+		articleDetailModal.componentInstance.articleId = this.item.ActionLink;
 	}
 }

@@ -6,6 +6,8 @@ import { Microphone } from 'src/app/data-models/audio/microphone.model';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
 import { MicrophoneOptimizeModes } from 'src/app/data-models/audio/microphone-optimize-modes';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -14,8 +16,8 @@ import { MicrophoneOptimizeModes } from 'src/app/data-models/audio/microphone-op
 })
 export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
-	title = 'Audio Settings';
-	headerCaption = `This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.`;
+	title = 'device.deviceSettings.audio.subtitle';
+	headerCaption = 'device.deviceSettings.audio.description';
 
 	radioGroupAutoDolbySettings = 'radio-grp-auto-dolby-settings';
 	radioOptimiseMicSettings = 'radio-grp-optimise-mic-settings';
@@ -24,7 +26,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public dolbyModeResponse: DolbyModeResponse;
 	public microOptimizeModeResponse: MicrophoneOptimizeModes;
 
-	constructor(private audioService: AudioService, private dashboardService: DashboardService) {
+	constructor(private audioService: AudioService, 
+		private dashboardService: DashboardService,
+		private commonService: CommonService) {
 	}
 
 	getSupportedModes() {
@@ -65,6 +69,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				this.audioService.getMicrophoneSettings()
 					.then((microphone: Microphone) => {
 						this.microphoneProperties = microphone;
+						let status = new FeatureStatus(microphone.available, microphone.muteDisabled, microphone.permission)
+						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardMicrophone, status);
 						console.log('getMicrophoneSettings', microphone);
 					}).catch(error => {
 						console.error('getMicrophoneSettings', error);
@@ -115,6 +121,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.audioService.isShellAvailable) {
 				this.audioService.getDolbyMode()
 					.then((response: DolbyModeResponse) => {
+						alert(response);
 						this.dolbyModeResponse = response;
 						console.log('getDolbyModesStatus:', response);
 					}).catch(error => {
@@ -124,6 +131,42 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		} catch (error) {
 			console.error('getDolbyModesStatus' + error.message);
 		}
+	}
+
+	startMonitorForDolby() {
+		try {
+			if (this.audioService.isShellAvailable) {
+				this.audioService.startMonitorForDolby(this.startMonitorHandlerForDolby.bind(this))
+					.then((value: boolean) => {
+						console.log('startMonitorForDolby', value);
+					}).catch(error => {
+						console.error('startMonitorForDolby', error);
+					});
+			}
+		} catch (error) {
+			console.error('startMonitorForDolby' + error.message);
+		}
+	}
+
+	stopMonitorForDolby() {
+		try {
+			if (this.audioService.isShellAvailable) {
+				this.audioService.stopMonitorForDolby()
+					.then((value: boolean) => {
+						console.log('stopMonitorForDolby', value);
+					}).catch(error => {
+						console.error('stopMonitorForDolby', error);
+					});
+			}
+		} catch (error) {
+			console.error('stopMonitorForDolby' + error.message);
+		}
+	}
+
+	startMonitorHandlerForDolby(response: DolbyModeResponse) {
+		// Need to remove comment once response is coming correctly
+		//this.dolbyModeResponse = response;
+		console.log('startMonitorHandlerForDolby', response);
 	}
 
 	onDolbySeetingRadioChange(event) {
@@ -165,6 +208,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		this.getDolbyModesStatus();
 		this.getSupportedModes();
 		this.startMonitor();
+		this.startMonitorForDolby();
 	}
 
 	public setVolume(event) {
@@ -189,6 +233,9 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			if (this.dashboardService.isShellAvailable) {
 				this.dashboardService.setMicrophoneStatus(event.switchValue)
 					.then((value: boolean) => {
+						let status: FeatureStatus = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardMicrophone);
+						status.status = event.switchValue;
+						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardMicrophone, status);
 						console.log('onToggleOfMicrophone', value);
 					}).catch(error => {
 						console.error('onToggleOfMicrophone', error);
@@ -265,17 +312,28 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	initMockData() {
-		this.microphoneProperties = new Microphone(false, 0, '', false, false, false, false, true);
+		this.microphoneProperties = new Microphone(true, false, 0, '', false, false, false, false, true);
 		this.autoDolbyFeatureStatus = new FeatureStatus(true, false);
 
-		const dolbySupportedMode = ['dynamic', 'movie', 'music', 'game', 'voice'];
+		// const dolbySupportedMode = ['dynamic', 'movie', 'music', 'game', 'voice'];
+		const dolbySupportedMode = ['device.deviceSettings.audio.audioSmartsettings.dolby.options.dynamic',
+		'device.deviceSettings.audio.audioSmartsettings.dolby.options.movie',
+		'device.deviceSettings.audio.audioSmartsettings.dolby.options.music',
+		'device.deviceSettings.audio.audioSmartsettings.dolby.options.game',
+		'device.deviceSettings.audio.audioSmartsettings.dolby.options.voice'];
+		
 		this.dolbyModeResponse = new DolbyModeResponse(true, dolbySupportedMode, '');
 
-		const optimizeMode = ['Only My Voice', 'Normal', 'Multiple Voice', 'Voice Recogntion'];
+		// const optimizeMode = ['Only My Voice', 'Normal', 'Multiple Voice', 'Voice Recogntion'];
+		const optimizeMode = ['device.deviceSettings.audio.microphone.optimize.options.onlyMyVoice',
+		 'device.deviceSettings.audio.microphone.optimize.options.normal',
+		 'device.deviceSettings.audio.microphone.optimize.options.multipleVoices',
+		 'device.deviceSettings.audio.microphone.optimize.options.voiceRecoginition'];
 		this.microOptimizeModeResponse = new MicrophoneOptimizeModes(optimizeMode, '');
 	}
 
 	ngOnDestroy() {
 		this.stopMonitor();
+		this.stopMonitorForDolby();
 	}
 }

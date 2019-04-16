@@ -2,6 +2,9 @@
 
 .vtr-page-security {
 	.vtr-page-right-column {
+		@media #{$mediaquery_13} {
+			padding: 4rem 4rem 4rem 8.5rem;
+		}
 		.align-center {
 			padding: 0 6rem 0rem 6rem;
 		}
@@ -52,11 +55,19 @@
 						margin: 0.8rem;
 						.wifi-link {
 							padding-left: 15px;
+							a {
+								font-weight: 500;
+								text-decoration: underline;
+							}
 						}
 						.ellipsis {
 							overflow: hidden;
 							text-overflow: ellipsis;
 							white-space: nowrap;
+						}
+						.wifi-good-font {
+							font-weight: 500;
+							font-size: 1.5rem;
 						}
 						li {
 							height: 4rem;
@@ -73,7 +84,7 @@
 									color: $stop_dark;
 								}
 								.orange {
-									color: $stop_light;
+									color: $yellow-dark;
 								}
 							}
 							.wifi-bg {

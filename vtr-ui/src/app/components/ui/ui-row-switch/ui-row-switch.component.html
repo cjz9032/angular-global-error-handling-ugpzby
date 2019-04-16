@@ -6,13 +6,14 @@
 	<div class="container-fluid p-0"
 		[ngClass]="{'vtr-disabled': disabled}">
 		<div class="row m-0">
-			<div class="col col-xs-8"
+			<div class="col col-8"
 				[ngClass]="{'col-md-8': (type==='auto-updates' || type==='Camera'), 'col-md-10':type===undefined}">
 				<div class="container-fluid p-0">
 					<div class="row m-0">
 						<div class="col-auto left-icon-column"
 							*ngIf="leftIcon.length > 0">
-							<fa-icon *ngIf="leftIcon[0]!=='svg'"
+
+							<fa-icon *ngIf="leftIcon[0]!=='icomoon' && leftIcon[0]!=='svg'"
 								class="left-icon"
 								[icon]="leftIcon"></fa-icon>
 							<svg-icon *ngIf="leftIcon[0]==='svg'"
@@ -20,6 +21,7 @@
 								[stretch]="true"
 								class="left-icon"
 								[src]="'assets/icons/'+leftIcon[1]+'.svg'"></svg-icon>
+							<span *ngIf="leftIcon[0]==='icomoon'"[ngClass]="'icomoon '+leftIcon[1]"></span>
 						</div>
 						<div class="col">
 							<div class="title">{{ title }}</div>
@@ -37,7 +39,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col col-xs-4">
+			<div class="col col-4">
 				<div class="row">
 					<div class="p-0"
 						[ngClass]="{'ml-auto': type!=='Camera'}"

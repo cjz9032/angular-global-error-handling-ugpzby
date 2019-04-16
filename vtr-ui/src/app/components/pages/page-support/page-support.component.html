@@ -8,7 +8,7 @@
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col col-8 vtr-page-left-column">
+					<div class="col-lg-8 col-sm-12 vtr-page-left-column">
 						<div class="vtr-page-shift-up nmx-40">
 
 							<!-- <div class="row">
@@ -69,12 +69,11 @@
 							</vtr-container-article>
 						</div>
 					</div>
-					<div class="col col-4 vtr-page-right-column">
+					<div class="col-lg-4 col-sm-12 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 
-								<div class="row"
-									*ngIf="warranty&&!deviceService.isArm">
+								<div class="row" *ngIf="warranty&&!deviceService.isArm">
 									<div class="col col-12 pb-60">
 										<vtr-widget-warranty [item]="warranty"></vtr-widget-warranty>
 									</div>
@@ -83,15 +82,15 @@
 								<div class="row">
 									<div class="col col-12 pb-60">
 										<vtr-widget-support [title]="'support.documentation.title' | translate"
-											[description]="''"
-											[items]="supportDatas.documentation"></vtr-widget-support>
+											[description]="''" [items]="supportDatas.documentation">
+										</vtr-widget-support>
 									</div>
 								</div>
 
 								<div class="row">
 									<div class="col col-12 pb-60">
-										<vtr-widget-support [title]="'support.need-help.title' | translate"
-											[description]="'support.need-help.description' | translate"
+										<vtr-widget-support [title]="'support.needHelp.title' | translate"
+											[description]="'support.needHelp.description' | translate"
 											[items]="supportDatas.needHelp"></vtr-widget-support>
 									</div>
 								</div>
@@ -101,6 +100,11 @@
 										<vtr-widget-support [title]="'support.quicklinks.title' | translate"
 											[description]="'support.quicklinks.description' | translate"
 											[items]="supportDatas.quicklinks"></vtr-widget-support>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col col-12 pb-60">
+										<vtr-widget-about></vtr-widget-about>
 									</div>
 								</div>
 							</div>

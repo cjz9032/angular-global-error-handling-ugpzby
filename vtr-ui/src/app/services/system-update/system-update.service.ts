@@ -246,11 +246,11 @@ export class SystemUpdateService {
 		}
 	}
 
-	public isRebootRequired(): boolean {
+	public isRebootRequested(): boolean {
 		if (this.updateInfo) {
 			for (let index = 0; index < this.updateInfo.updateList.length; index++) {
 				const update = this.updateInfo.updateList[index];
-				if ((update.packageRebootType === 'RebootRequested' || update.packageRebootType === 'RebootDelayed') && update.isInstalled) {
+				if (update.packageRebootType === 'RebootRequested' && update.isInstalled) {
 					return true;
 				}
 			}
@@ -307,12 +307,10 @@ export class SystemUpdateService {
 	}
 
 	private installUpdates(updates: Array<InstallUpdate>, isInstallingAllUpdates: boolean) {
-		let isInvoked = false;
+		// VAN-2798 immediately show progress bar
+		this.commonService.sendNotification(UpdateProgress.InstallingUpdate, { downloadPercentage: 0, installPercentage: 0 });
+
 		this.systemUpdateBridge.installUpdates(updates, (progress: any) => {
-			if (!isInvoked) {
-				isInvoked = true;
-				this.commonService.sendNotification(UpdateProgress.InstallationStarted);
-			}
 			console.log('installUpdates callback', progress);
 			this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);
 		}).then((response: any) => {
@@ -428,5 +426,17 @@ export class SystemUpdateService {
 		const diffTime = Math.abs(today.getTime() - lastUpdateDate.getTime());
 		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 		return diffDays;
+	}
+
+	public cancelUpdateDownload() {
+		if (this.systemUpdateBridge) {
+			this.systemUpdateBridge.cancelDownload()
+				.then((status: boolean) => {
+					this.commonService.sendNotification(UpdateProgress.UpdateDownloadCancelled, status);
+				})
+				.catch((error) => {
+					console.log('cancelDownload.error', error);
+				});
+		}
 	}
 }

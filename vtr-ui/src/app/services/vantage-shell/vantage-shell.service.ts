@@ -2,20 +2,23 @@
 
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
+import { EventTypes } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
 import { EMPTY, from, Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class VantageShellService {
-	public phoenix: any;
+	private phoenix: any;
+	private shell: any;
 	constructor() {
-		const shell = this.getVantageShell();
-		if (shell) {
-			const rpcClient = shell.VantageRpcClient ? new shell.VantageRpcClient() : null;
-			const metricClient = shell.MetricsClient ? new shell.MetricsClient() : null;
-			const powerClient = shell.PowerClient ? shell.PowerClient() : null;
+		this.shell = this.getVantageShell();
+		if (this.shell) {
+			const rpcClient = this.shell.VantageRpcClient ? new this.shell.VantageRpcClient() : null;
+			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
+			const powerClient = this.shell.PowerClient ? this.shell.PowerClient() : null;
 			this.phoenix = Phoenix.default(
 				new inversify.Container(),
 				{
@@ -27,6 +30,19 @@ export class VantageShellService {
 		}
 	}
 
+	public registerEvent(eventType: any, handler: any) {
+		this.phoenix.on(eventType, (val) => {
+			console.log('Event fired: ', eventType);
+			console.log('Event value: ', val);
+			handler(val);
+		});
+	}
+
+	public unRegisterEvent(eventType: any) {
+		this.phoenix.off(eventType, (val) => {
+			console.log('unRegister Event: ', eventType);
+		});
+	}
 	private getVantageShell(): any {
 		const win: any = window;
 		return win.VantageShellExtension;
@@ -84,10 +100,10 @@ export class VantageShellService {
 		if (this.phoenix && this.phoenix.metrics) {
 			if (!this.phoenix.metrics.isInit) {
 				this.phoenix.metrics.init({
-					appVersion: '1.0.0.0',
+					appVersion: environment.appVersion,
 					appId: 'ZN8F02EQU628',
 					appName: 'vantage3',
-					channel: 'NonPreload',
+					channel: '',
 					ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
 				});
 				this.phoenix.metrics.isInit = true;
@@ -112,6 +128,13 @@ export class VantageShellService {
 	public getSecurityAdvisor(): Phoenix.SecurityAdvisor {
 		if (this.phoenix) {
 			return this.phoenix.securityAdvisor;
+		}
+		return undefined;
+	}
+
+	public getPermission(): any {
+		if (this.phoenix) {
+			return this.phoenix.permissions;
 		}
 		return undefined;
 	}
@@ -266,6 +289,7 @@ export class VantageShellService {
 			try {
 				const deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
 				console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
+				return deviceFilterResult;
 			} catch (error) {
 				console.log('In VantageShellService.deviceFilter. Error:', error);
 				console.log('In VantageShellService.deviceFilter. returning mock true due to error.');
@@ -277,8 +301,22 @@ export class VantageShellService {
 		return true;
 	}
 
-	public sendContractToPrivacyCore<T>
-	(contract: {contract: string, command: string, payload: string | Object}): Observable<T> {
+	public getLogger(): any {
+		if (this.shell) {
+			return this.shell.Logger;
+		}
+		return undefined;
+	}
+
+	public getWindows(): any {
+		const win: any = window;
+		if (win.Windows) {
+			return win.Windows;
+		}
+		return undefined;
+	}
+
+	public sendContractToPrivacyCore<T>(contract: {contract: string, command: string, payload: string | Object}): Observable<T> {
 		if (this.phoenix && this.phoenix.privacy) {
 			return from(this.phoenix.privacy.sendContractToPlugin(contract)) as Observable<T>;
 		}

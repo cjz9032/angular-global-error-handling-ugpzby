@@ -3,7 +3,7 @@
 		<a class="navbar-brand pt-0"
 			href="#"><img src="../../../assets/icons/Vantage_L_logo.svg"
 				alt="L" /></a>
-		<div class="navbar-text">
+		<div class="navbar-text clearfix">
 			<div class="app-title">{{configService.appBrand}} <span class="app-name">{{configService.appName}}</span>
 				<span class="app-version">(v{{appVersion}})</span>
 			</div>
@@ -16,15 +16,15 @@
 			aria-controls="navbarSupportedContent"
 			aria-expanded="false"
 			aria-label="Toggle navigation">
-			<fa-icon [icon]="['fas', 'bars']">
-			</fa-icon>
+			<!-- <fa-icon [icon]="['fas', 'bars']">
+			</fa-icon> -->
 		</button>
 
-		<div class="collapse navbar-collapse"
+		<div class="collapse navbar-collapse hidden-xs"
 			id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<ng-container *ngFor="let item of items; let i=index">
-					<li *ngIf="item.subitems.length===0&&item.id!=='user'"
+					<li *ngIf="item.subitems.length===0&&item.id!=='user'&&showItem(item)"
 						class="nav-item">
 						<a class="nav-link {{item.id}}"
 							vtrMetrics
@@ -35,10 +35,10 @@
 							routerLinkActive="active">
 							<fa-icon [icon]="item.icon"
 								class="fa-icon"></fa-icon>
-							{{item.label}}
+							{{item.label | translate}}
 						</a>
 					</li>
-					<li *ngIf="item.subitems.length>0&&item.id!=='user'"
+					<li *ngIf="item.subitems.length>0&&item.id!=='user'&&showItem(item)"
 						class="nav-item dropdown"
 						[ngClass]="{'active': isParentActive(item)}">
 						<a class="nav-link dropdown-toggle {{item.id}}"
@@ -55,7 +55,7 @@
 							aria-expanded="false">
 							<fa-icon [icon]="item.icon"
 								class="fa-icon"></fa-icon>
-							{{item.label}}
+							{{item.label | translate}}
 						</a>
 						<div class="dropdown-menu"
 							aria-labelledby="navbarDropdown">
@@ -69,10 +69,10 @@
 								[metricsParent]="subitem.metricsParent"
 								[metricsItem]="subitem.metricsItem"
 								class="dropdown-item link"
-								routerLink="/{{item.path}}/{{subitem.path}}">{{subitem.label}}</a>
+								routerLink="/{{item.path}}/{{subitem.path}}">{{subitem.label | translate}}</a>
 						</div>
 					</li>
-					<li *ngIf="item.id==='user'"
+					<li *ngIf="item.id==='user' && userService.isLenovoIdSupported && showItem(item)"
 						class="nav-item dropdown">
 						<!-- <a class="nav-link dropdown-toggle {{item.id}}"
 							routerLink="/{{item.path}}"
@@ -99,23 +99,23 @@
 						</a>
 						<div class="dropdown-menu {{item.id}}"
 							aria-labelledby="navbarDropdown">
-							<div class="dropdown-item">Welcome, {{userService.firstName}}</div>
+							<div class="dropdown-item">{{'lenovoId.helloUser' | translate:{firstName:userService.firstName} }}</div>
 							<a *ngIf="!userService.auth"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
-								[metricsItem]="item.metricsItem"
+								metricsItem="LenovoIdSignInButton"
 								class="dropdown-item link"
-								href="#"
-								(click)="OpenLenovoId()">Login</a>
+								href="javascript:void(0)"
+								(click)="OpenLenovoId()">{{'lenovoId.login' | translate}}</a>
 							<a *ngIf="userService.auth"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
-								[metricsItem]="item.metricsItem"
+								metricsItem="LenovoIdSignOutButton"
 								class="dropdown-item link"
-								href="#"
-								(click)="onLogout()">Logout</a>
+								href="javascript:void(0)"
+								(click)="onLogout()">{{'lenovoId.logout' | translate}}</a>
 						</div>
 					</li>
 				</ng-container>

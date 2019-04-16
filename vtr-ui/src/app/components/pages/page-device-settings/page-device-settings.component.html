@@ -18,15 +18,15 @@
 					<div class="vtr-page-shift-up-medium">
 						<div class="container-fluid">
 							<div class="row mb-40">
-								<div class="col col-12">
-									<vtr-battery-card> </vtr-battery-card>
+								<div class="col col-12"  [ngClass]="{'battery-unavailable': isDesktopMachine}">
+									<vtr-battery-card *ngIf="!isDesktopMachine"> </vtr-battery-card>
 								</div>
 							</div>
 							<div class="row mb-40">
 								<div class="col col-12 cont">
 									<div class="widget-heading mb-40">{{'device.deviceSettings.helpful' | translate}}</div>
-									<vtr-widget-questions [title]="'Q&A for your machine'"
-										[description]="'FIND SOME HELPFUL TIPS FOR YOUR DEVICE.'"
+									<vtr-widget-questions [title]="'common.qAndA.title' | translate"
+										[description]="'common.qAndA.subtitle' | translate"
 										[items]="qaService.qas"></vtr-widget-questions>
 								</div>
 							</div>
