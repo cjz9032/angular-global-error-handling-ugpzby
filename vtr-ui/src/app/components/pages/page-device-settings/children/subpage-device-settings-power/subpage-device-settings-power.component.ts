@@ -82,7 +82,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			{
 				readMoreText: 'Read More',
 				rightImageSource: ['far', 'question-circle'],
-				leftImageSource: ['far', 'gem'],
+				leftImageSource: ['fal', 'plane'],
 				header: 'Airplane Power Mode',
 				subHeader: ' Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance.',
 				isCheckBoxVisible: true,
@@ -93,7 +93,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			{
 				readMoreText: 'Read More',
 				rightImageSource: ['far', 'question-circle'],
-				leftImageSource: ['far', 'gem'],
+				leftImageSource: ['fal', 'battery-half'],
 				header: 'Battery Charge Threshold',
 				subHeader:
 					'If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.',
@@ -106,7 +106,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			{
 				readMoreText: 'Read More',
 				rightImageSource: ['far', 'question-circle'],
-				leftImageSource: ['far', 'gem'],
+				leftImageSource: ['fal', 'battery-bolt'],
 				header: 'Express Charging',
 				subHeader:
 					'Express Charge allows your battery to a full charge much faster than normal mode.',
@@ -118,7 +118,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			{
 				readMoreText: 'Read More',
 				rightImageSource: ['far', 'question-circle'],
-				leftImageSource: ['far', 'gem'],
+				leftImageSource: ['fal', 'battery-quarter'],
 				header: 'Conservation Mode',
 				subHeader:
 					`This function is useful to  extend the lifespan of your battery when plugged. <br>
@@ -135,7 +135,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		{
 			readMoreText: 'Read More',
 			rightImageSource: [],
-			leftImageSource: ['far', 'gem'],
+			leftImageSource: ['fab', 'usb'],
 			header: 'Always on USB',
 			subHeader:
 				'Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:',
@@ -147,7 +147,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		{
 			readMoreText: 'Read More',
 			rightImageSource: ['far', 'question-circle'],
-			leftImageSource: ['far', 'gem'],
+			leftImageSource: ['fal', 'tachometer-fastest '],
 			header: 'Easy Resume',
 			subHeader:
 				`Enable this feature to improve your resume time if you frequently open and close your computer's lid.`,
@@ -165,7 +165,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		{
 			readMoreText: 'Read More',
 			rightImageSource: ['far', 'question-circle'],
-			leftImageSource: ['far', 'gem'],
+			leftImageSource: ['fal', 'thumbtack'],
 			header: 'Lenovo Vantage Toolbar',
 			subHeader:
 				'Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings.',

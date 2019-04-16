@@ -23,14 +23,11 @@ export class WidgetSecurityComponent implements OnInit {
 			''
 		]
 	};
-	titleStatus: number;
 	constructor(
 		public modalService: NgbModal
 	) { }
 
-	ngOnInit() {
-		this.titleStatus = this.percentValue === 100 ? 0 : 1;
-	}
+	ngOnInit() { }
 
 	buttonClick() {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
