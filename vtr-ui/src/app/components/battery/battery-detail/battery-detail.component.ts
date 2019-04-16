@@ -44,7 +44,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 	preProcessBatteryDetailResponse(response: BatteryDetail[]) {
 		let headings = ["Primary Battery", "Secondary Battery", "Tertiary Battery"];
 		this.batteryIndicators.percent = response[0].mainBatteryPercent;
-		this.batteryIndicators.charging = response[0].chargeStatus == BatteryChargeStatus.CHARGING.id;
+		this.batteryIndicators.charging = response[0].isAcAttached;
 		this.batteryIndicators.expressCharging = response[0].isExpressCharging;
 		this.batteryIndicators.voltageError = response[0].isVoltageError;
 		this.batteryIndicators.convertMin(response[0].remainingTime);

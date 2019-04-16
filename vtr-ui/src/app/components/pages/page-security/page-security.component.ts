@@ -6,9 +6,6 @@ import {
 import {
 	VantageShellService
 } from '../../../services/vantage-shell/vantage-shell.service';
-import {
-	MockSecurityAdvisorService
-} from '../../../services/mock/mockSecurityAdvisor.service';
 import * as phoenix from '@lenovo/tan-client-bridge';
 import {
 	CMSService
@@ -43,6 +40,9 @@ import {
 import {
 	LocalStorageKey
 } from '../../../enums/local-storage-key.enum';
+import {
+	RegionService
+} from 'src/app/services/region/region.service';
 
 @Component({
 	selector: 'vtr-page-security',
@@ -51,8 +51,6 @@ import {
 })
 
 export class PageSecurityComponent implements OnInit {
-	title = 'Security';
-
 	passwordManagerLandingViewModel: PasswordManagerLandingViewModel;
 	antivirusLandingViewModel: AntiVirusLandingViewModel;
 	vpnLandingViewModel: VpnLandingViewModel;
@@ -70,6 +68,7 @@ export class PageSecurityComponent implements OnInit {
 	score: number;
 	maliciousWifi: number;
 	cardContentPositionA: any = {};
+	region: string;
 
 	itemStatusClass = {
 		0: 'good',
@@ -83,10 +82,10 @@ export class PageSecurityComponent implements OnInit {
 	};
 	constructor(
 		public vantageShellService: VantageShellService,
-		private mockSecurityAdvisorService: MockSecurityAdvisorService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		private regionService: RegionService
 	) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.passwordManager = this.securityAdvisor.passwordManager;
@@ -125,6 +124,11 @@ export class PageSecurityComponent implements OnInit {
 		});
 		this.securityAdvisor.windowsHello.refresh().then(() => {
 			this.getScore();
+		});
+		this.regionService.getRegion().subscribe({
+			next: x => { this.region = x; },
+			error: err => { console.error(err); },
+			complete: () => { console.log('Done'); }
 		});
 	}
 

@@ -85,7 +85,6 @@ import { ModalHomeProtectionLocationNoticeComponent } from './components/modal/m
 // APPLICATION SERVICES
 import { DevService } from './services/dev/dev.service';
 import { MockService } from './services/mock/mock.service';
-import { MockSecurityAdvisorService } from './services/mock/mockSecurityAdvisor.service';
 import { DisplayService } from './services/display/display.service';
 import { ContainerService } from './services/container/container.service';
 import { CommsService } from './services/comms/comms.service';
@@ -314,7 +313,6 @@ library.add(fal);
 		CommsService,
 		DashboardService,
 		SecurityService,
-		MockSecurityAdvisorService,
 		UserService,
 		AudioService,
 		RegionService,
