@@ -164,6 +164,7 @@ import { WifiClassPipe } from './pipe/security-landing/wifi-class.pipe';
 import { JoinclassPipe } from './pipe/security-wifi/join-class.pipe';
 import { SuccessClassPipe } from './pipe/security-wifi/success-class.pipe';
 import { UiCircleRadioComponent } from './components/ui/ui-circle-radio/ui-circle-radio.component';
+import { WidgetPermissionNoteComponent } from './components/widgets/widget-permission-note/widget-permission-note.component';
 
 library.add(fas);
 library.add(fab);
@@ -288,7 +289,8 @@ library.add(fal);
 		WifiClassPipe,
 		JoinclassPipe,
 		SuccessClassPipe,
-		UiCircleRadioComponent
+		UiCircleRadioComponent,
+		WidgetPermissionNoteComponent
 	],
 	imports: [
 		BrowserModule,
