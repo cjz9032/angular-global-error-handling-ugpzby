@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'dolbyModesTranslation'
+  name: 'dolbyModesTranslation',
+  pure: false
 })
 export class DolbyModesTranslationPipe implements PipeTransform {
 
@@ -12,6 +13,7 @@ export class DolbyModesTranslationPipe implements PipeTransform {
     val=val.substr(val.lastIndexOf(".")+1)
 
     console.log('+++++++++++++++++++++++',val);
+
     return val;
   }
 }
