@@ -28,11 +28,11 @@ export class UiCircleRadioComponent implements OnInit {
 	}
 
 	getIconName(name: string) {
-		if(name) {
-			var arr=name.split(' ');
-			var index=arr.indexOf("&");
-			if(index!==-1){
-				arr.splice(index,1);
+		if (name) {
+			var arr = name.split(' ');
+			var index = arr.indexOf("&");
+			if (index !== -1) {
+				arr.splice(index, 1);
 			}
 			return arr.join("").toLowerCase();
 		}
