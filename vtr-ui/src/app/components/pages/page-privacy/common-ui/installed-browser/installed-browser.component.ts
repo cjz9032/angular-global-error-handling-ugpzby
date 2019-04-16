@@ -1,10 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { InstalledBrowser } from '../../common-services/browser-accounts.service';
 
 @Component({
 	selector: 'vtr-installed-browser',
 	templateUrl: './installed-browser.component.html',
-	styleUrls: ['./installed-browser.component.scss']
+	styleUrls: ['./installed-browser.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InstalledBrowserComponent {
 	@Input() showDetailAction: 'link' | 'expand';
@@ -20,6 +21,10 @@ export class InstalledBrowserComponent {
 
 	showBrowserPasswords() {
 		this.showPasswordForBrowser$.emit(this.installedBrowser.name);
+	}
+
+	trackAccountsById(index) {
+		return index;
 	}
 
 }

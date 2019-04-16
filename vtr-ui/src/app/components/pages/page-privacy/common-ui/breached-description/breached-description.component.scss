@@ -24,9 +24,9 @@
 
 	&__col {
 		display: flex;
-		flex-flow: column;
-		max-width: 50%;
+		width: 100%;
 		padding-left: 4rem;
+		flex-wrap: wrap;
 
 		&:last-child {
 			padding-left: 8rem;
@@ -35,6 +35,7 @@
 
 	&__item {
 		margin-top: 2.7rem;
+		width: 50%;
 		position: relative;
 
 		&:before {

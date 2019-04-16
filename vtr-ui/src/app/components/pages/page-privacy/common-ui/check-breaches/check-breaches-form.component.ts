@@ -27,7 +27,8 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 		private formBuilder: FormBuilder,
 		private emailScannerService: EmailScannerService,
 		private commonPopupService: CommonPopupService,
-	) { }
+	) {
+	}
 
 	ngOnInit() {
 		this.serverCommunication.getLenovoId();
@@ -71,21 +72,6 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 		this.closeLenovoId();
 	}
 
-	getBreachedAccounts(accessToken) {
-
-		this.emailScannerService.scanEmail(accessToken)
-			.pipe(
-				takeUntil(instanceDestroyed(this)),
-			)
-			.subscribe(() => {
-			}, (error) => {
-				if (error === 'confirmationError') {
-					this.emailScannerService.sendConfirmationCode();
-					this.commonPopupService.open(this.confirmationPopupId);
-				}
-			});
-	}
-
 	handleEmailScan() {
 		if (this.emailForm.invalid) {
 			return;
@@ -97,14 +83,6 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 			takeUntil(instanceDestroyed(this)),
 		).subscribe((response) => {
 			this.commonPopupService.open(this.confirmationPopupId);
-		}, (error) => {
-			console.log('confirmation error', error);
-		});
-
-		this.emailScannerService.validationStatusChanged$.pipe(
-			takeUntil(instanceDestroyed(this)),
-		).subscribe((validationResponse) => {
-			this.getBreachedAccounts(validationResponse.payload.accessToken);
 		}, (error) => {
 			console.log('confirmation error', error);
 		});

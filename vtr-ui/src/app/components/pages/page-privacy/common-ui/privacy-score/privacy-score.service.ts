@@ -3,6 +3,8 @@ import { filter, map, switchMap } from 'rxjs/operators';
 import { combineLatest, iif, of } from 'rxjs';
 import { FigleafOverviewService } from '../../common-services/figleaf-overview.service';
 import { BrowserAccountsService } from '../../common-services/browser-accounts.service';
+import { ServerCommunicationService } from '../../common-services/server-communication.service';
+import { CommunicationWithFigleafService } from '../../communication-with-figleaf/communication-with-figleaf.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -11,7 +13,9 @@ export class PrivacyScoreService {
 
 	constructor(
 		private figleafOverviewService: FigleafOverviewService,
-		private browserAccountsService: BrowserAccountsService) {
+		private browserAccountsService: BrowserAccountsService,
+		private communicationWithFigleafService: CommunicationWithFigleafService,
+		private serverCommunicationService: ServerCommunicationService) {
 	}
 
 	readonly scoreWeights = {
@@ -23,9 +27,9 @@ export class PrivacyScoreService {
 	};
 
 	getScoreParametrs() {
-		return this.figleafOverviewService.isFigleafInstalled().pipe(
+		return this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(
 			switchMap(value => iif(
-				() => value.payload.is_figleaf_installed,
+				() => !!value,
 				this.handleInstalledScore(),
 				this.handleUninstalledScore(),
 			)),
@@ -50,8 +54,10 @@ export class PrivacyScoreService {
 			return {
 				privacyLevel: 'low',
 				title: 'Low privacy score',
-				text: 'A lot of your personal info is out there. ' +
-					'Take control of your privacy by choosing when to be private and what to share on every site you interact with.',
+				text: `A lot of your personal info is out there.
+						Take control of your privacy by choosing
+						when to be private and when to share on
+						every site you interact with.`,
 			};
 		} else if (score < 60) {
 			return {
@@ -73,7 +79,6 @@ export class PrivacyScoreService {
 				title: 'High privacy score',
 				text: 'You’re doing a great job controlling your privacy. Keep it up!',
 			};
-
 		}
 	}
 

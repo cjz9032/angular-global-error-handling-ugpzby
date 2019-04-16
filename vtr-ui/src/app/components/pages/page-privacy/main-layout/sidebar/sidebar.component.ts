@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../../common-services/news/news.service';
 import { TipsService } from '../../common-services/tips/tips.service';
+import { AccessTokenService } from '../../common-services/access-token.service';
 
 @Component({
 	selector: 'vtr-side-bar',
@@ -23,10 +24,19 @@ export class SidebarComponent implements OnInit {
 		items: []
 	};
 
-	constructor(private newsService: NewsService, private tipsService: TipsService) {}
+	constructor(
+		private newsService: NewsService,
+		private tipsService: TipsService,
+		private accessTokenService: AccessTokenService,
+	) {
+	}
 
 	ngOnInit() {
 		this.news.items = this.newsService.news;
 		this.tips.items = this.tipsService.tips;
+	}
+
+	deleteAccessToken() {
+		this.accessTokenService.removeAccessToken();
 	}
 }

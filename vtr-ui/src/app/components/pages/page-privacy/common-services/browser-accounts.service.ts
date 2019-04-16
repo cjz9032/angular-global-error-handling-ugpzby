@@ -25,7 +25,7 @@ export class BrowserAccountsService {
 		private http: HttpClient,
 		private serverCommunicationService: ServerCommunicationService,
 		private vantageCommunicationService: VantageCommunicationService,
-		private storageService: StorageService
+		private storageService: StorageService,
 	) {
 	}
 
@@ -48,9 +48,10 @@ export class BrowserAccountsService {
 			map((accountsPassword) => currentBrowsers.map((browser) => (
 					{...browser, accounts: browser.accounts ? browser.accounts : accountsPassword[browser.name]}
 				))
-			)
-		).subscribe((response) => {
-			this.installedBrowsersData$.next(response);
+			),
+			take(1)
+		).subscribe((installedBrowsersData) => {
+			this.installedBrowsersData$.next(installedBrowsersData);
 		});
 	}
 

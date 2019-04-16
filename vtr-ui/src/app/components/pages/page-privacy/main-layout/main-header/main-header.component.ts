@@ -5,6 +5,9 @@ import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
 import { RouterChangeHandlerService } from '../../shared/services/router-change-handler.service';
 
+// todo delete this
+import config from '../../configInfo.json';
+
 interface PageSettings {
 	title: string;
 	backButton: boolean;
@@ -27,6 +30,9 @@ export class MainHeaderComponent implements OnInit, OnDestroy {
 	title = 'Lenovo Privacy';
 	backButton = false;
 	figLeafIcon = true;
+
+	// todo delete this
+	version = config.appVersion;
 
 	@Input() forwardLink: { path: string, label: string };
 	@Input() menuItems: any[];

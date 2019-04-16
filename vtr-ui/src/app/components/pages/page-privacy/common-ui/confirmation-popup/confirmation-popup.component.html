@@ -1,14 +1,14 @@
 <div class="confirm-popup">
-  <form action="" (submit)="confirm()" [formGroup]="confirmationForm">
+  <form action="" (submit)="confirmCode()" [formGroup]="confirmationForm">
 
     <h2 class="confirm-popup__title">Let’s confirm your email</h2>
 
     <div class="confirm-content">
-      <div class="confirm-content__container-top" [class.confirm-content__container-top--error]="isError">
+      <div class="confirm-content__container-top" [class.confirm-content__container-top--error]="isError$ | async">
         <div class="confirm-content__inner-wrapper">
           <p class="confirm-content__title">Enter code</p>
           <div class="verification-input">
-            <input class="verification-input__input" [class.verification-input__input--error]="isError"
+            <input class="verification-input__input" [class.verification-input__input--error]="isError$ | async"
                    type="text" maxlength="6" numbersOnly
                    value="{{verificationCode}}"
                    formControlName="confirmationCode"
@@ -21,7 +21,7 @@
         </div>
       </div>
 
-      <div *ngIf="isError" class="confirm-error">
+      <div *ngIf="isError$ | async" class="confirm-error">
         <img class="confirm-error__img" src="/assets/icons/privacy-tab/error-white.svg" alt="">
         <p class="confirm-error__text">Sorry, the code you entered is not valid. Please try again.</p>
       </div>
@@ -33,8 +33,7 @@
     </div>
 
     <div class="confirm-popup__confirm-btn-wrapper">
-      <!--TODO investigate why doesn't work without 'confirm' function-->
-      <button (click)="confirm()" class="confirm-popup__confirm-btn" [class.confirm-popup__confirm-btn--error]="isError" type="submit">Confirm email</button>
+      <button class="confirm-popup__confirm-btn" [class.confirm-popup__confirm-btn--error]="isError$ | async" type="submit">Confirm email</button>
     </div>
   </form>
 </div>

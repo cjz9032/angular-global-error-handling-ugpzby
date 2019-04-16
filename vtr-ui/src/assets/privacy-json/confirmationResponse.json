@@ -1,0 +1,7 @@
+{
+  "type": "validateConfirmationCode",
+  "status": 0,
+  "payload": {
+    "accessToken": "327843835345"
+  }
+}

@@ -4,6 +4,7 @@ import { CommonPopupService } from '../../common-services/popups/common-popup.se
 import { filter, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
 import { FormBuilder, Validators } from '@angular/forms';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
 	selector: 'vtr-confirmation-popup',
@@ -17,7 +18,8 @@ export class ConfirmationPopupComponent implements OnInit, OnDestroy {
 		confirmationCode: ['', [Validators.required, Validators.minLength(6)]],
 	});
 	verificationCode = '';
-	isError = false; // change on 'true' to see all styles for errors
+	private isError = new BehaviorSubject(false);
+	isError$ = this.isError.asObservable(); // change on 'true' to see all styles for errors
 
 	constructor(
 		private formBuilder: FormBuilder,
@@ -40,25 +42,27 @@ export class ConfirmationPopupComponent implements OnInit, OnDestroy {
 	}
 
 	resendConfirmationCode() {
-		this.emailScannerService.sendConfirmationCode();
+		this.emailScannerService.sendConfirmationCode().subscribe(() => {
+			this.isError.next(false);
+		}, (error) => {
+			this.isError.next(true);
+		});
 	}
 
 	resetVerificationCode() {
 		this.verificationCode = '';
 	}
 
-	confirm() {
+	confirmCode() {
 		if (this.confirmationForm.valid) {
-			this.emailScannerService.validationStatusChanged$.pipe(
-				takeUntil(instanceDestroyed(this)),
-			).subscribe((validationResponse) => {
-				if (validationResponse.status === 0) {
-					return this.commonPopupService.close(this.popupId);
-				} else {
-					// handle errors
-				}
+			this.emailScannerService.validateVerificationCode(this.verificationCode).pipe(
+			).subscribe(() => {
+				this.isError.next(false);
+				return this.commonPopupService.close(this.popupId);
+			}, (error) => {
+				this.isError.next(true);
+				console.error('confirm code error', error);
 			});
-			this.emailScannerService.validateVerificationCode(this.verificationCode);
 		}
 	}
 }
