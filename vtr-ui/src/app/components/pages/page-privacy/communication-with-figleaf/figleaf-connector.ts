@@ -8,12 +8,12 @@ export interface MessageToFigleaf {
 }
 
 const APP_SERVICE_NAME = 'figleaf.lenovoCompanion';
-const PACKAGE_FAMILY_NAME = 'FigLeaf.626177A9E4282_0wysm1pfwxg2e';
+const PACKAGE_FAMILY_NAME = 'Lenovo.FigLeaf_f1fkytm63xmwr';
 
 var onConnectListeners = [];
 var onDisconnectListeners = [];
 var reconnectTimer = null;
-const RECONNECT_TIMEOUT = 3000;
+const RECONNECT_TIMEOUT = 6000;
 var connection = null;
 
 class FigleafConnector {
@@ -64,7 +64,6 @@ class FigleafConnector {
 				onConnectListeners.forEach((cb) => {
 					cb();
 				});
-				onConnectListeners = [];
 			} else {
 				this.disconnectFromFigleaf();
 			}
@@ -80,7 +79,6 @@ class FigleafConnector {
 		onDisconnectListeners.forEach((cb) => {
 			cb();
 		});
-		onDisconnectListeners = [];
 		this.reconnect();
 	}
 
@@ -92,7 +90,7 @@ class FigleafConnector {
 	}
 
 	private serviceClosed() {
-		this.reconnect();
+		this.disconnectFromFigleaf();
 	}
 
 	private requestReceived(service, args) {

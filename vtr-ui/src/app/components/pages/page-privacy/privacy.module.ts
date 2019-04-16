@@ -9,7 +9,8 @@ import { InstalledComponent } from './pages/installed/installed.component';
 import { BrowserAccountsComponent } from './pages/browser-accounts/browser-accounts.component';
 import { ScanComponent } from './pages/scan/scan.component';
 import { ResultComponent } from './pages/result/result.component';
-import { FaqPageComponent } from './pages/faq-page/faq-page.component';
+import { LandingComponent } from './pages/landing/landing.component';
+
 // Main Layout Components
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { MainHeaderComponent } from './main-layout/main-header/main-header.component';
@@ -20,7 +21,7 @@ import { TrackersPopupService } from './common-services/popups/trackers-popup.se
 // Modules
 import { PrivacyRoutingModule } from './privacy-routing.module';
 // Directives
-import { NumpersOnlyDirective } from './common-directives/numpers-only.directive';
+import { NumbersOnlyDirective } from './common-directives/numbers-only.directive';
 // Common UI components
 import { CheckBreachesFormComponent } from './common-ui/check-breaches/check-breaches-form.component';
 import { PageBannerComponent } from './common-ui/page-banner/page-banner.component';
@@ -29,7 +30,7 @@ import { PrivacyScoreComponent } from './common-ui/privacy-score/privacy-score.c
 import { SidebarPreviewComponent } from './main-layout/sidebar/sidebar-preview/sidebar-preview.component';
 import { FaqComponent } from './main-layout/sidebar/faq/faq.component';
 import { BreachedAccountComponent } from './common-ui/breached-account/breached-account.component';
-import { SidebarBenefitsWidgetComponent } from './main-layout/sidebar/sidebar-benefits-widget/sidebar-benefits-widget.component';
+import { SidebarInstallWidgetComponent } from './main-layout/sidebar/sidebar-benefits-widget/sidebar-install-widget.component';
 import { BrowserStoredAccountsComponent } from './common-ui/browser-stored-accounts/browser-stored-accounts.component';
 import { InstalledBrowserComponent } from './common-ui/installed-browser/installed-browser.component';
 import { LightPrivacyBannerComponent } from './common-ui/light-privacy-banner/light-privacy-banner.component';
@@ -63,6 +64,9 @@ import { getPrivacyEnvironment } from './environment';
 import { DataKnowledgeService } from './shared/services/data-knowledge.service';
 import { EmailScannerService } from './common-services/email-scanner.service';
 import { BreachedAccountsService } from './common-services/breached-accounts.service';
+import { CommonTextComponent } from './common-ui/common-text/common-text.component';
+import { TryProductBlockComponent } from './common-ui/try-product-block/try-product-block.component';
+import { PrivacyScoreService } from './common-ui/privacy-score/privacy-score.service';
 
 @NgModule({
 	imports: [
@@ -83,13 +87,12 @@ import { BreachedAccountsService } from './common-services/breached-accounts.ser
 		InstalledComponent,
 		BrowserAccountsComponent,
 		ScanComponent,
-		FaqPageComponent,
 		ResultComponent,
 		// Pipes
 		SafeHtmlPipe,
 		ObjectValuesPipe,
 		// Directives
-		NumpersOnlyDirective,
+		NumbersOnlyDirective,
 		// Common UI components
 		SidebarComponent,
 		CheckBreachesFormComponent,
@@ -98,7 +101,7 @@ import { BreachedAccountsService } from './common-services/breached-accounts.ser
 		PrivacyScoreComponent,
 		FaqComponent,
 		BreachedAccountComponent,
-		SidebarBenefitsWidgetComponent,
+		SidebarInstallWidgetComponent,
 		BrowserStoredAccountsComponent,
 		InstalledBrowserComponent,
 		LightPrivacyBannerComponent,
@@ -124,6 +127,9 @@ import { BreachedAccountsService } from './common-services/breached-accounts.ser
 		SingleTrackerDetailComponent,
 		ToggleButtonComponent,
 		SitesFaviconPipe,
+		LandingComponent,
+		CommonTextComponent,
+		TryProductBlockComponent,
 	],
 	providers: [
 		TrackersPopupService,
@@ -140,6 +146,7 @@ import { BreachedAccountsService } from './common-services/breached-accounts.ser
 		DataKnowledgeService,
 		EmailScannerService,
 		BreachedAccountsService,
+		PrivacyScoreService,
 	],
 })
 export class PrivacyModule {

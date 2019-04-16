@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, ReplaySubject, Subject } from 'rxjs';
-import { mapData } from '../pages/trackers/map-data';
-import { delay, filter, map, startWith } from 'rxjs/operators';
+import { of, ReplaySubject, Subject } from 'rxjs';
+import { map, startWith, switchMap, take } from 'rxjs/operators';
 import { ChoseBrowserService } from './chose-browser.service';
 import { UserAllowService } from '../shared/services/user-allow.service';
-
-export const enum typeData {
-	General = 'general',
-	Users = 'users',
-}
-
-export interface TrackingData {
-	typeData: typeData;
-	trackingData: typeof mapData;
-}
+import { HttpClient } from '@angular/common/http';
+import { VantageCommunicationService, VisitedWebsitesInfo } from './vantage-communication.service';
+import { topVisitedSites } from './tracking-map-top';
+import {
+	SingleTrackersInfo,
+	TrackersInfo,
+	TrackingData, TrackingDataDescription,
+	TrackingDataSiteDescription,
+	typeData
+} from './tracking-map.interface';
+import { returnUniqueElementsInArray } from '../shared/helpers';
 
 @Injectable({
 	providedIn: 'root'
@@ -22,38 +22,73 @@ export class TrackingMapService {
 	private isTrackersBlocked = new Subject<boolean>();
 	isTrackersBlocked$ = this.isTrackersBlocked.asObservable().pipe(startWith(false));
 
-	private generalTrackingData = new ReplaySubject<typeof mapData>(1);
-	generalTrackingData$: Observable<TrackingData> = this.generalTrackingData.asObservable()
-		.pipe(
-			filter(() => !this.choseBrowserService.isBrowserChose() || !this.userAllowService.allowToShow.trackingMap),
-			map((trackingData) => ({typeData: typeData.General, trackingData}))
-		);
+	private trackingData = new ReplaySubject<TrackingData>(1);
+	trackingData$ = this.trackingData.asObservable();
 
-	private usersTrackingData = new ReplaySubject<typeof mapData>(1);
-	usersTrackingData$: Observable<TrackingData> = this.usersTrackingData.asObservable()
-		.pipe(
-			filter(() => this.choseBrowserService.isBrowserChose() && this.userAllowService.allowToShow.trackingMap),
-			map((trackingData) => ({typeData: typeData.Users, trackingData}))
-		);
-
-	private getTrackingSingleData = new ReplaySubject(1);
+	private getTrackingSingleData = new ReplaySubject<SingleTrackersInfo>(1);
 	getTrackingSingleData$ = this.getTrackingSingleData.asObservable();
 
 	constructor(
 		private choseBrowserService: ChoseBrowserService,
-		private userAllowService: UserAllowService
+		private userAllowService: UserAllowService,
+		private http: HttpClient,
+		private vantageCommunicationService: VantageCommunicationService
 	) {
 		this.updateTrackingData();
 	}
 
 	updateTrackingData() {
-		of(mapData).pipe(delay(1000)).subscribe((val) => {
-			this.generalTrackingData.next(val);
-			this.usersTrackingData.next(val);
+		this.getTrackingData().subscribe((val: any) => {
+			this.trackingData.next(val);
 		});
 	}
 
-	setNextSingleData(trackerData) {
+	setNextSingleData(trackerData: SingleTrackersInfo) {
 		this.getTrackingSingleData.next(trackerData);
+	}
+
+	private getTrackingData() {
+		return this.http.get<TrackersInfo>('/assets/privacy-json/trackers.json').pipe(
+			switchMap((trackersInfo) => {
+					let sites = this.getTopWebsites();
+					if (this.choseBrowserService.isBrowserChose() && this.userAllowService.allowToShow.trackingMap) {
+						sites = this.getVisitedWebsites(this.choseBrowserService.getName());
+					}
+
+					return sites.pipe(map((userHistory) => ({trackersInfo, userHistory})));
+				}
+			),
+			map(({trackersInfo, userHistory}) => ({
+				typeData: userHistory.typeData,
+				trackingData: this.convertToTrackingData(trackersInfo, userHistory.sites)
+			})),
+			take(1)
+		);
+	}
+
+	private convertToTrackingData(trackersInfo: TrackersInfo, userHistory: VisitedWebsitesInfo[]): TrackingDataDescription {
+		const sites = userHistory
+			.filter((site) => site && trackersInfo.sites[site.domain])
+			.map((site) => ({
+				domain: site.domain,
+				favicon_url: trackersInfo.sites[site.domain].icon,
+				trackers: trackersInfo.sites[site.domain].trackers
+			}));
+		const trackers = sites
+			.reduce((acc, val) => returnUniqueElementsInArray<TrackingDataSiteDescription>(acc.concat(val.trackers)), [])
+			.reduce((acc, tracker) => ({...acc, [tracker]: trackersInfo.trackers[tracker]}), {});
+
+		return {sites, trackers};
+	}
+
+	private getVisitedWebsites(browserName) {
+		return this.vantageCommunicationService.getVisitedWebsites([browserName]).pipe(
+			map((userHistory) => Object.values(userHistory).reduce((acc, val) => acc.concat(val), [])),
+			map((userHistory) => ({typeData: typeData.Users, sites: userHistory}))
+		);
+	}
+
+	private getTopWebsites() {
+		return of({typeData: typeData.General, sites: topVisitedSites});
 	}
 }

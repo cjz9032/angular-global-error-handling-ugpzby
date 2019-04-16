@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
 import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { filter, share } from 'rxjs/operators';
 
 /**
  * This service need for get current route and subscribe when it changes.
@@ -16,7 +16,8 @@ export class RouterChangeHandlerService {
 	constructor(private route: Router) {
 		this.route.events
 			.pipe(
-				filter((val) => val instanceof NavigationEnd)
+				filter((val) => val instanceof NavigationEnd),
+				share(),
 			)
 			.subscribe((val: NavigationEnd) => {
 				this.currentRoute = this.getCurrentRoute(val.url);

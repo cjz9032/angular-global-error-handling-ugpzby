@@ -10,10 +10,12 @@
 	</div>
 	<vtr-video-popup></vtr-video-popup>
 	<vtr-common-popup [popUpId]="choseBrowserPopupId">
-		<vtr-chose-browser
-			[browserList]="browserList$ | async"
-			(rejection)="closePopUp(choseBrowserPopupId)"
-			(browser)="choseBrowser($event)">
-		</vtr-chose-browser>
+		<ng-template>
+			<vtr-chose-browser
+				[browserList]="browserList$ | async"
+				(rejection)="closePopUp(choseBrowserPopupId)"
+				(browser)="choseBrowser($event)">
+			</vtr-chose-browser>
+		</ng-template>
 	</vtr-common-popup>
 </div>

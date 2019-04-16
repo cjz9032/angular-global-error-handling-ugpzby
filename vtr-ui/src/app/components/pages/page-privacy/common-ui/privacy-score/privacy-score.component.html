@@ -17,5 +17,7 @@
   </div>
 </div>
 <vtr-common-popup popUpId="low-privacy-popup" size="large">
-	<vtr-low-privacy popupId="low-privacy-popup" [steps]="describeSteps"></vtr-low-privacy>
+  <ng-template>
+    <vtr-low-privacy popupId="low-privacy-popup" [steps]="describeSteps"></vtr-low-privacy>
+  </ng-template>
 </vtr-common-popup>

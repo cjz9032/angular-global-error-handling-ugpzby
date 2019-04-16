@@ -27,7 +27,7 @@ export type MaskedPasswords = {
 	[browser in BrowserListKey]: MaskedPasswordsInfo[];
 };
 
-interface VisitedWebsitesInfo {
+export interface VisitedWebsitesInfo {
 	domain: string;
 	totalVisitsCount: string;
 	lastVisitTimeUtc: string;
@@ -63,7 +63,7 @@ export class VantageCommunicationService {
 			}))),
 			tap((val) => console.log('InstalledBrowsers', val)),
 			catchError((err) => {
-				console.log('InstalledBrowsers', err);
+				console.log('InstalledBrowsers err', err);
 				return EMPTY;
 			})
 		);
@@ -81,7 +81,7 @@ export class VantageCommunicationService {
 		return this.vantageShellService.sendContractToPrivacyCore<AccessiblePasswords>(contract).pipe(
 			tap((val) => console.log('AccessiblePasswords', val)),
 			catchError((err) => {
-				console.log('AccessiblePasswords', err);
+				console.log('AccessiblePasswords err', err);
 				return EMPTY;
 			})
 		);
@@ -100,7 +100,7 @@ export class VantageCommunicationService {
 		return this.vantageShellService.sendContractToPrivacyCore<MaskedPasswords>(contract).pipe(
 			tap((val) => console.log('MaskedPasswords', val)),
 			catchError((err) => {
-				console.log('MaskedPasswords', err);
+				console.log('MaskedPasswords err', err);
 				return EMPTY;
 			})
 		);
@@ -117,9 +117,12 @@ export class VantageCommunicationService {
 			})
 		);
 
-		return this.vantageShellService.sendContractToPrivacyCore<VisitedWebsites>(contract).subscribe(
-			(val) => console.log('VisitedWebsites', val),
-			(err) => console.log('VisitedWebsites', err)
+		return this.vantageShellService.sendContractToPrivacyCore<VisitedWebsites>(contract).pipe(
+			tap((val) => console.log('VisitedWebsites', val)),
+			catchError((err) => {
+				console.log('VisitedWebsites err', err);
+				return EMPTY;
+			})
 		);
 	}
 

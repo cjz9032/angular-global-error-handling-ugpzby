@@ -1,12 +1,12 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { TrackingMapService, typeData } from '../../common-services/tracking-map.service';
 import { CommonPopupService } from '../../common-services/popups/common-popup.service';
-import { merge } from 'rxjs';
 import { map, takeUntil, tap } from 'rxjs/operators';
 import { ChoseBrowserService } from '../../common-services/chose-browser.service';
 import { FormControl } from '@angular/forms';
 import { UserAllowService } from '../../shared/services/user-allow.service';
 import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
+import { TrackingMapService } from '../../common-services/tracking-map.service';
+import { SingleTrackersInfo, TrackersInfo, typeData } from '../../common-services/tracking-map.interface';
 
 @Component({
 	selector: 'vtr-tracking-map',
@@ -24,9 +24,14 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 	isUserData = false;
 	choseBrowserName = this.choseBrowserService.getName();
 
-	trackingData$ = this.getTrackingData();
+	trackingData$ = this.getTrackingData().pipe(tap((res) => console.log(res)));
 
 	isTrackersBlocked$ = this.trackingMapService.isTrackersBlocked$;
+
+	defaultIcon = {
+		site: '/assets/images/privacy-tab/Website_Standart.png',
+		tracker: '/assets/images/privacy-tab/Tracker_standart_big.png',
+	};
 
 	constructor(
 		private trackingMapService: TrackingMapService,
@@ -45,12 +50,12 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 
 	getText() {
 		return {
-			chartLabel: this.isUserData ? 'Websites you visit' : 'The most popular websites',
-			cloudLabel: this.isUserData ? 'Companies that track you' : 'Companies who\'s track websites',
+			chartLabel: this.isUserData ? 'Companies that track you' : 'Companies who\'s track websites',
+			cloudLabel: this.isUserData ? 'Websites you visit' : 'The most popular websites',
 		};
 	}
 
-	showDetails(trackerData, trackingsData) {
+	showDetails(trackerData: SingleTrackersInfo, trackingsData: TrackersInfo) {
 		this.percentOfTrack = this.getPercentOfTrack(trackerData, trackingsData);
 		this.trackingMapService.setNextSingleData(trackerData);
 		this.commonPopupService.open(this.trackingMapSinglePopupId);
@@ -60,8 +65,8 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 		return this.choseBrowserService.isBrowserChose();
 	}
 
-	private getPercentOfTrack(trackerData: any, trackingsData: any) {
-		return Math.round((trackerData.sites.length / trackingsData.sites.length) * 100);
+	private getPercentOfTrack(trackerData: SingleTrackersInfo, trackingsData: TrackersInfo) {
+		return Math.round((trackerData.sites.length / Object.keys(trackingsData.sites).length) * 100);
 	}
 
 	private listenTrackingControl() {
@@ -74,11 +79,7 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 	}
 
 	private getTrackingData() {
-		return merge(
-			this.trackingMapService.generalTrackingData$,
-			this.trackingMapService.usersTrackingData$,
-		).pipe(
-			tap((val) => console.log(val)),
+		return this.trackingMapService.trackingData$.pipe(
 			tap((val) => this.isUserData = val.typeData === typeData.Users),
 			map((val) => val.trackingData)
 		);

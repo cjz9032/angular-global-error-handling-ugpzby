@@ -1,7 +1,7 @@
 <div class="breached-account" *ngFor="let account of breachedAccounts; let i = index">
 	<div class="breached-account__preview">
 		<div class="breached-account__social">
-			<img class="breached-account__img" [src]="account.image || defaultImage" alt="">
+			<img class="breached-account__img" [src]="account.image || account.domain | sitesFavicon | async" alt="">
 			<div class="breached-account__social-description">
 				<h4 class="breached-account__title">{{transformDomain(account.domain)}}</h4>
 				<p class="breached-account__email"

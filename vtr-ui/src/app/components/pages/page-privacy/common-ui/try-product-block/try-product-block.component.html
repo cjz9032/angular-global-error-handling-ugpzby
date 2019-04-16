@@ -1,0 +1,20 @@
+<div class="try-product">
+	<div class="try-product__description">
+		<p class="try-product__title">
+			{{texts.title}}
+		</p>
+		<p class="try-product__text">
+			{{texts.text}}
+		</p>
+	</div>
+	<div class="try-product__group-button">
+		<button class="try-product__button"
+				(click)="buttonClick.emit()"
+				*ngIf="texts.buttonText">
+			{{texts.buttonText}}
+		</button>
+		<div class="try-product__button-link" *ngIf="texts.link">
+			<a [href]="texts.link.url">{{texts.link.text}}</a>
+		</div>
+	</div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, ContentChild, TemplateRef } from '@angular/core';
 import { CommonPopupService, CommonPopupEventType } from '../../common-services/popups/common-popup.service';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
@@ -9,7 +9,7 @@ import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-d
 	styleUrls: ['./common-popup.component.scss'],
 })
 export class CommonPopupComponent implements OnInit, OnDestroy {
-
+	@ContentChild(TemplateRef) template: TemplateRef<any>;
 	@Input() popUpId: string;
 
 	isOpen = false;

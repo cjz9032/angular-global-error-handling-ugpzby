@@ -3,19 +3,17 @@ import { filter, map, switchMap } from 'rxjs/operators';
 import { combineLatest, iif, of } from 'rxjs';
 import { FigleafOverviewService } from '../../common-services/figleaf-overview.service';
 import { BrowserAccountsService } from '../../common-services/browser-accounts.service';
-import { ServerCommunicationService } from '../../common-services/server-communication.service';
 import { CommunicationWithFigleafService } from '../../communication-with-figleaf/communication-with-figleaf.service';
+import { BreachedAccountsService } from '../../common-services/breached-accounts.service';
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable()
 export class PrivacyScoreService {
 
 	constructor(
 		private figleafOverviewService: FigleafOverviewService,
 		private browserAccountsService: BrowserAccountsService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
-		private serverCommunicationService: ServerCommunicationService) {
+		private breachedAccountsService: BreachedAccountsService) {
 	}
 
 	readonly scoreWeights = {
@@ -115,10 +113,9 @@ export class PrivacyScoreService {
 	}
 
 	private getInstalledScore() {
-		return this.figleafOverviewService.getBreaches().pipe(
-			map(val => val.payload.breaches),
+		return this.breachedAccountsService.onGetBreachedAccounts$.pipe(
 			map((figleafBreaches) => {
-				const fixedBreachesAmount = figleafBreaches.filter(breach => !!breach.is_fixed).length;
+				const fixedBreachesAmount = figleafBreaches.filter(breach => !!breach.isFixed).length;
 				return {
 					fixedBreaches: fixedBreachesAmount,
 					unfixedBreaches: figleafBreaches.length - fixedBreachesAmount,

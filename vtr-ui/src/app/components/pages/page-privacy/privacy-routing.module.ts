@@ -8,46 +8,47 @@ import { BrowserAccountsComponent } from './pages/browser-accounts/browser-accou
 import { BreachedAccountsComponent } from './pages/breached-accounts/breached-accounts.component';
 import { TrackersComponent } from './pages/trackers/trackers.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
-import { FaqPageComponent } from './pages/faq-page/faq-page.component';
 import { ChoseBrowserGuard } from './common-guards/chose-browser.guard';
 import { TipsListComponent } from './pages/tips-list/tips-list.component';
 import { NewsListComponent } from './pages/news-list/news-list.component';
+import { LandingComponent } from './pages/landing/landing.component';
+import { RoutersName } from './privacy-routing-name';
 
 const adminRoutes: Routes = [
 	{
-		path: '',
+		path: RoutersName.MAIN,
 		component: MainLayoutComponent,
 		children: [
 			{
-				path: '', // /privacy
+				path: RoutersName.MAIN, // /privacy
 				component: ResultComponent,
 				pathMatch: 'full'
 			}, {
-				path: 'scan',
+				path: RoutersName.SCAN,
 				component: ScanComponent,
 				pathMatch: 'full'
 			}, {
-				path: 'breaches',
+				path: RoutersName.BREACHES,
 				component: BreachedAccountsComponent
 			}, {
-				path: 'trackers',
+				path: RoutersName.TRACKERS,
 				component: TrackersComponent,
 				canActivate: [ChoseBrowserGuard]
 			}, {
-				path: 'installed',
+				path: RoutersName.INSTALLED,
 				component: InstalledComponent
 			}, {
-				path: 'browser-accounts',
+				path: RoutersName.BROWSERACCOUNTS,
 				component: BrowserAccountsComponent
 			}, {
-				path: 'faq',
-				component: FaqPageComponent
-			}, {
-				path: 'tips',
+				path: RoutersName.TIPS,
 				component: TipsListComponent
 			}, {
-				path: 'news',
+				path: RoutersName.NEWS,
 				component: NewsListComponent
+			}, {
+				path: RoutersName.LANDING,
+				component: LandingComponent
 			}
 		]
 	},

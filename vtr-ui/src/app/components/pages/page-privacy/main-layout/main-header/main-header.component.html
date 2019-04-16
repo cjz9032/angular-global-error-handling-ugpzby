@@ -1,4 +1,4 @@
-<div class="vtr-header-main">
+<div class="vtr-header-main" [ngClass]="{'vtr-header-main--navigation-block': showNavigationBlock}">
 	<h1 class="title" [ngClass]="{'title--icon': figLeafIcon}">
 		{{title}}
 		<button class="back-button" *ngIf="backButton" (click)="backClicked()">Back</button>
@@ -9,4 +9,18 @@
 
 	<!-- TODO delete this -->
 	<span>{{version}}</span>
+
+	<div *ngIf="showNavigationBlock">
+		<ul class="header-nav">
+			<li class="header-nav__item">
+				<a class="header-nav__link" routerLink="./breaches" routerLinkActive="active">Breached Accounts</a>
+			</li>
+			<li class="header-nav__item">
+				<a class="header-nav__link" routerLink="./trackers" routerLinkActive="active">Visible to Online Trackers</a>
+			</li>
+			<li class="header-nav__item">
+				<a class="header-nav__link" routerLink="./browser-accounts" routerLinkActive="active">Easily Accessible Accounts</a>
+			</li>
+		</ul>
+	</div>
 </div>

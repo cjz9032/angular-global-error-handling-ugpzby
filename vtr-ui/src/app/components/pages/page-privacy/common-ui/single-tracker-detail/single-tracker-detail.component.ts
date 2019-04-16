@@ -17,4 +17,12 @@ export class SingleTrackerDetailComponent implements OnInit {
 	ngOnInit() {
 	}
 
+	getColorForTrackerTypes(trackingTypeName) {
+		return {
+			'tracker__types-item--orange': trackingTypeName.toLowerCase() === 'advertising',
+			'tracker__types-item--blue': trackingTypeName.toLowerCase() === 'social',
+			'tracker__types-item--pink': trackingTypeName.toLowerCase() === 'analytics',
+		};
+	}
+
 }

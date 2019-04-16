@@ -5,25 +5,28 @@
     </div>
 
     <div *ngIf="!(isFigleafReadyForCommunication$ | async) && !breached_accounts.length" class="check-breaches">
-        <p class="check-breaches__title">{{isEmailWasScanned ? nextEmailScanData.title : firstEmailScanData.title}}</p>
+        <p class="check-breaches__title">{{(emailWasScanned | async) ? nextEmailScanData.title : firstEmailScanData.title}}</p>
 
-        <div class="check-breaches__text-content">
-            <p *ngIf="!isEmailWasScanned" class="check-breaches__text">Your Lenovo is designed to put you in control of
+        <div *ngIf="!(emailWasScanned | async)" class="check-breaches__text-content">
+            <p class="check-breaches__text">Your Lenovo is designed to put you in control of
                 your privacy. Let’s start by finding out if your personal info has been part of a data breach.</p>
-            <p *ngIf="!isEmailWasScanned" class="check-breaches__text">Your privacy is important to us, so your email
+            <p class="check-breaches__text">Your privacy is important to us, so your email
                 will only be used to show you what we’ve found. Nothing else.</p>
-            <p *ngIf="isEmailWasScanned" class="check-breaches__text">Good news —
+        </div>
+
+        <div *ngIf="(emailWasScanned | async)" class="check-breaches__text-content">
+            <p class="check-breaches__text">Good news —
                 <strong>{{userEmail || 'your email'}}</strong> didn’t come up in our privacy checkup.
                 If you us another email, make sure it’s safe too.</p>
         </div>
 
         <vtr-check-breaches-form></vtr-check-breaches-form>
 
-        <div *ngIf="!isEmailWasScanned" class="check-breaches__description check-breaches__description--first-scan">
+        <div *ngIf="!(emailWasScanned | async)" class="check-breaches__description check-breaches__description--first-scan">
             <vtr-scan-steps [innerIndent]="true" steps="scanSteps"></vtr-scan-steps>
         </div>
 
-        <div *ngIf="isEmailWasScanned" class="check-breaches__description check-breaches__description--next-scan">
+        <div *ngIf="(emailWasScanned | async)" class="check-breaches__description check-breaches__description--next-scan">
             <div class="check-breaches-description">
                 <div class="check-breaches-description__text">Want to know right away if your info comes up in a futere
                     breach?
@@ -77,6 +80,11 @@
         </p>
     </div>
 
+    <div *ngIf="(isFigleafReadyForCommunication$ | async) && breached_accounts.length === 0" class="privacy-dashboard">
+        <h2 class="privacy-dashboard__title">Privacy control at a glance</h2>
+        <vtr-privacy-dashboard-list></vtr-privacy-dashboard-list>
+    </div>
+
     <div class="trackers">
         <div class="trackers__header-row">
             <h3 class="trackers__title">What are website trackers?</h3>
@@ -104,6 +112,18 @@
             <div class="browser-accounts-concent__btn-wrapper">
                 <button class="browser-accounts-concent__btn" (click)="giveConcentToGetBrowserAccounts()">I agree
                 </button>
+            </div>
+        </div>
+
+        <div *ngIf="isFigleafReadyForCommunication$ | async" class="figleaf-stored-accounts">
+            <img class="figleaf-stored-accounts__img"
+                 src="/assets/images/privacy-tab/logo-leaf.png"
+                 srcset="/assets/images/privacy-tab/logo-leaf@2x.png 2x"
+                 alt="figleaf logo">
+            <div class="figleaf-stored-accounts__details-col">
+                <p class="figleaf-stored-accounts__title"><strong>{{(figleafDashboard | async).maskedAccounts}}</strong>
+                    accounts stored in Lenovo Privacy by FigLeaf</p>
+                <button class="figleaf-stored-accounts__btn">Show details</button>
             </div>
         </div>
 

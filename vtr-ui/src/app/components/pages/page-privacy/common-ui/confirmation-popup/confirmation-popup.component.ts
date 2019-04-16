@@ -1,23 +1,22 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { EmailScannerService } from '../../common-services/email-scanner.service';
 import { CommonPopupService } from '../../common-services/popups/common-popup.service';
-import { filter, takeUntil } from 'rxjs/operators';
-import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
 import { FormBuilder, Validators } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 @Component({
 	selector: 'vtr-confirmation-popup',
 	templateUrl: './confirmation-popup.component.html',
 	styleUrls: ['./confirmation-popup.component.scss']
 })
-export class ConfirmationPopupComponent implements OnInit, OnDestroy {
+export class ConfirmationPopupComponent implements OnInit, OnDestroy, AfterViewInit {
 	@Input() popupId: string;
+	@ViewChild('confirmationInput') confirmationInput: ElementRef;
 
 	confirmationForm = this.formBuilder.group({
 		confirmationCode: ['', [Validators.required, Validators.minLength(6)]],
 	});
-	verificationCode = '';
 	private isError = new BehaviorSubject(false);
 	isError$ = this.isError.asObservable(); // change on 'true' to see all styles for errors
 
@@ -28,17 +27,19 @@ export class ConfirmationPopupComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.commonPopupService.getOpenState(this.popupId).pipe(
-			takeUntil(instanceDestroyed(this)),
-			filter(state => !state.isOpenState)
-		).subscribe(() => this.resetVerificationCode());
+		this.commonPopupService.getOpenState(this.popupId)
+			.pipe(
+				filter((state) => !state.isOpenState)
+			).subscribe(() => {
+				this.emailScannerService.cancelVerification();
+		});
+	}
+
+	ngAfterViewInit(): void {
+		this.confirmationInput.nativeElement.focus();
 	}
 
 	ngOnDestroy() {
-	}
-
-	onInput(ev) {
-		this.verificationCode = ev.target.value;
 	}
 
 	resendConfirmationCode() {
@@ -49,13 +50,9 @@ export class ConfirmationPopupComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	resetVerificationCode() {
-		this.verificationCode = '';
-	}
-
 	confirmCode() {
 		if (this.confirmationForm.valid) {
-			this.emailScannerService.validateVerificationCode(this.verificationCode).pipe(
+			this.emailScannerService.validateVerificationCode(this.confirmationForm.value.confirmationCode).pipe(
 			).subscribe(() => {
 				this.isError.next(false);
 				return this.commonPopupService.close(this.popupId);

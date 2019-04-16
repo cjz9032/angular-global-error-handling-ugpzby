@@ -1,14 +1,19 @@
 <div class="faq" *ngIf="isVisible">
     <div class="faq__head">
         <h4 class="faq__title">{{mainTitle}}</h4>
-        <a routerLink="{{seeMoreLink}}" class="faq__see-more-link">{{seeMoreText}}</a>
     </div>
     <ul class="faq__list">
-        <li class="faq__item" *ngFor="let item of generalQuestions.questions" (click)="goToFaq(item.id)">
-            <img class="faq__item-img" src="{{item.iconPath}}" alt="{{item.title}}">
-            <span class="faq__item-link">
-                <span class="faq__list-text">{{item.title}}</span>
-            </span>
+        <li class="faq__item"
+			*ngFor="let item of questions.questions; let i = index">
+			<div class="faq__item-title"
+				 (click)="openAccordion(i)"
+				 [ngClass]="{'faq__item-title--icon-up': openId === i}">
+				<span class="faq__list-text">{{item.title}}</span>
+			</div>
+			<div class="faq__item-description"
+				 *ngIf="openId === i">
+				{{item.texts}}
+			</div>
         </li>
     </ul>
 </div>

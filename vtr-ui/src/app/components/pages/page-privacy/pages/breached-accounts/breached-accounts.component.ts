@@ -1,54 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { BreachedAccount } from '../../common-ui/breached-account/breached-account.component';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { filter, map } from 'rxjs/operators';
-import { BreachedAccountsService } from '../../common-services/breached-accounts.service';
+import { filter, map, takeUntil } from 'rxjs/operators';
+import { BreachedAccount, BreachedAccountsService } from '../../common-services/breached-accounts.service';
+import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
 
 @Component({
 	// selector: 'app-admin',
 	templateUrl: './breached-accounts.component.html',
 	styleUrls: ['./breached-accounts.component.scss']
 })
-export class BreachedAccountsComponent implements OnInit {
+export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	breached_accounts: BreachedAccount[];
 	openBreachedId$ = this.getParamFromUrl('openId').pipe(map((val) => Number(val)));
 	// static Data transferred to html
-	pageBannerData = {
-		title: 'Lenovo Privacy by FigLeaf — free for 14 days',
-		text: 'Lenovo Privacy by FigLeaf lets you share what you want or keep things private for each site you visit or transact with. ' +
-			'Your email. Payment and billing info. Your location. Even your personal interests. ' +
-			'No matter what you do er where you go, you decide your level of privacy.',
-		image_url: '/assets/images/privacy-tab/banner.png',
-		read_more_link: 'https://figleafapp.com/',
-	};
-	promoFeaturesData = [
-		{
-			title: 'Scan foor breaches',
-			text: 'Start by finding out if any of your accounts have been part of data breach',
-		}, {
-			title: 'Block online trackers',
-			text: 'Do what you love online without being tracked by advertisers and others',
-		}, {
-			title: 'Monitor for future breaches',
-			text: 'If any of your accounts stored in Lenovo Privacy by FigLeaf are part of a breach, You’ll know about it.',
-		}, {
-			title: 'Mask your email',
-			text: 'Sign up at new sites without giving out your real email address',
-		},
-	];
-	promoArticleData = {
-		title: 'What is the risk?',
-		text: 'Major web browsers let you store your usernames and passwords for your favorite sites, so you can log in quickly. ' +
-			'But these passwords are usually not well encrypted, making your accounts vulnerable to hacking.',
-		link_href: 'https://figleafapp.com/',
-		image_url: '/assets/images/privacy-tab/default.png'
-	};
-	promoVideoData = {
-		image_url: '/assets/images/privacy-tab/Video.png'
-	};
-	promoVideoPopupData = {
-		title: 'Promo for breached accaunts page',
-		video_url: 'https://www.youtube.com/embed/tgbNymZ7vqY'
+	commonTexts = {
+		title: 'Breached Accounts',
+		text: 'Some of your personal info has been exposed for anyone to see. It happened after a site you have an account with was hacked.'
 	};
 
 	constructor(
@@ -58,7 +25,16 @@ export class BreachedAccountsComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.breached_accounts = this.breachedAccountsService.onGetBreachedAccounts$.getValue();
+		this.breachedAccountsService.onGetBreachedAccounts$
+			.pipe(
+				takeUntil(instanceDestroyed(this))
+			)
+			.subscribe((breaches) => {
+				this.breached_accounts = breaches;
+			});
+	}
+
+	ngOnDestroy() {
 	}
 
 	private getParamFromUrl(paramName) {

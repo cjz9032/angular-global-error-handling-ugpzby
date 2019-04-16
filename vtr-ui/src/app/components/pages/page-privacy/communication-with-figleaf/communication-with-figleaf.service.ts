@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FigleafConnectorInstance as FigleafConnector, MessageToFigleaf } from './figleaf-connector';
-import { from, ReplaySubject, throwError, timer } from 'rxjs';
-import { filter, switchMap } from 'rxjs/operators';
+import { EMPTY, from, ReplaySubject, timer } from 'rxjs';
+import { catchError, filter, switchMap } from 'rxjs/operators';
 
 export interface MessageFromFigleaf {
 	type: string;
@@ -14,27 +14,12 @@ export interface MessageFromFigleaf {
 })
 export class CommunicationWithFigleafService {
 	isFigleafInstalled$ = new ReplaySubject(1);
-	private isFigleafReadyForCommunication = new ReplaySubject(1);
+	private isFigleafReadyForCommunication = new ReplaySubject<boolean>(1);
 	isFigleafReadyForCommunication$ = this.isFigleafReadyForCommunication.asObservable();
-	messageToFigleafUnresolved = [];
-
-	// TODO move to components
-	getFigleafSettingsMessage: MessageToFigleaf = {
-		type: 'getFigleafSettings',
-	};
-	getFigleafDashboardMessage: MessageToFigleaf = {
-		type: 'getFigleafDashboard',
-	};
 
 	constructor() {
-		this.sendMessageToFigleaf(this.getFigleafSettingsMessage);
-		this.sendMessageToFigleaf(this.getFigleafDashboardMessage);
-
 		FigleafConnector.onConnect(() => {
 			this.isFigleafInstalled$.next(true);
-			this.messageToFigleafUnresolved.forEach((message) => {
-				this.sendMessageToFigleaf(message);
-			});
 		});
 
 		FigleafConnector.onDisconnect(() => {
@@ -51,9 +36,15 @@ export class CommunicationWithFigleafService {
 	}
 
 	receiveFigleafReadyForCommunicationState() {
-		const figleafConnectSubscription = timer(0, 1500).pipe(
+		const figleafConnectSubscription = timer(0, 3000).pipe(
 			switchMap(() => {
-				return this.sendTestMessage();
+				return this.sendTestMessage().pipe(
+					catchError((err) => {
+						console.error('send test message error: ', err);
+						figleafConnectSubscription.unsubscribe();
+						return EMPTY;
+					}),
+				);
 			}),
 		).subscribe((figleafStatus: MessageFromFigleaf) => {
 			const figleafReadyForCommunicationState = figleafStatus.status === 0;
@@ -71,7 +62,7 @@ export class CommunicationWithFigleafService {
 	}
 
 	sendTestMessage() {
-		return from(FigleafConnector.sendMessageToFigleaf({type: 'getFigleafSettings'}));
+		return from(FigleafConnector.sendMessageToFigleaf({type: 'testfigleafStatus'}));
 	}
 
 	sendMessageToFigleaf(message: MessageToFigleaf) {
@@ -80,7 +71,8 @@ export class CommunicationWithFigleafService {
 				if (isFigleafInstalled) {
 					return from(FigleafConnector.sendMessageToFigleaf(message));
 				} else {
-					return throwError('figLeaf not installed');
+					console.error('figLeaf not installed');
+					return EMPTY;
 				}
 			})
 		);

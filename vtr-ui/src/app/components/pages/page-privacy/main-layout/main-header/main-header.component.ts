@@ -7,16 +7,19 @@ import { RouterChangeHandlerService } from '../../shared/services/router-change-
 
 // todo delete this
 import config from '../../configInfo.json';
+import { RoutersName } from '../../privacy-routing-name';
 
 interface PageSettings {
 	title: string;
 	backButton: boolean;
+	showNavigationBlock: boolean;
 	figLeafIcon: boolean;
 }
 
 const defaultPageSettings: PageSettings = {
 	title: 'Lenovo Privacy',
 	backButton: false,
+	showNavigationBlock: false,
 	figLeafIcon: true,
 };
 
@@ -30,6 +33,7 @@ export class MainHeaderComponent implements OnInit, OnDestroy {
 	title = 'Lenovo Privacy';
 	backButton = false;
 	figLeafIcon = true;
+	showNavigationBlock = false;
 
 	// todo delete this
 	version = config.appVersion;
@@ -38,32 +42,43 @@ export class MainHeaderComponent implements OnInit, OnDestroy {
 	@Input() menuItems: any[];
 
 	// look on route list
-	pagesSettings: { [pageRoute: string]: PageSettings } = {
-		defaultPageSettings: defaultPageSettings,
+	pagesSettings: { [path in RoutersName]: PageSettings } = {
+		[RoutersName.MAIN]: defaultPageSettings,
+		tips: defaultPageSettings,
 		privacy: defaultPageSettings,
+		news: defaultPageSettings,
 		scan: defaultPageSettings,
-		result: defaultPageSettings,
 		trackers: {
 			title: 'Am I being tracked?',
 			backButton: true,
+			showNavigationBlock: true,
 			figLeafIcon: false
 		},
 		installed: defaultPageSettings,
 		breaches: {
 			title: 'Breached accounts',
 			backButton: true,
+			showNavigationBlock: true,
 			figLeafIcon: false
 		},
 		'browser-accounts': {
 			title: 'Accounts stored in Browsers',
 			backButton: true,
+			showNavigationBlock: true,
 			figLeafIcon: false
 		},
 		faq: {
 			title: 'F.A.Q’s',
 			backButton: true,
+			showNavigationBlock: false,
 			figLeafIcon: false
 		},
+		landing: {
+			title: 'Lenovo Privacy by FigLeaf',
+			backButton: true,
+			showNavigationBlock: false,
+			figLeafIcon: false
+		}
 	};
 
 	constructor(
@@ -78,10 +93,12 @@ export class MainHeaderComponent implements OnInit, OnDestroy {
 			this.title = this.pagesSettings[routerPage].title;
 			this.backButton = this.pagesSettings[routerPage].backButton;
 			this.figLeafIcon = this.pagesSettings[routerPage].figLeafIcon;
+			this.showNavigationBlock = this.pagesSettings[routerPage].showNavigationBlock;
 		} else {
 			this.title = defaultPageSettings.title;
 			this.backButton = defaultPageSettings.backButton;
 			this.figLeafIcon = defaultPageSettings.figLeafIcon;
+			this.showNavigationBlock = defaultPageSettings.showNavigationBlock;
 		}
 	}
 

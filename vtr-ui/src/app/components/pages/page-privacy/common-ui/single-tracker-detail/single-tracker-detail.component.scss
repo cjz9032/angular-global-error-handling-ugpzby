@@ -106,6 +106,7 @@
 
 	&__text {
 		@extend %text-common;
+		margin: 0 3rem 0 0;
 
 		&--white {
 			color: #FFFFFF;

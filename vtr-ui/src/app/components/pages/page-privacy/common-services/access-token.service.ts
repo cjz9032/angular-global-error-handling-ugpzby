@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
 import { SafeStorageService } from '../shared/services/safe-storage.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class AccessTokenService {
+	private accessTokenIsExist = new BehaviorSubject<boolean>(!!this.getAccessToken());
+	accessTokenIsExist$ = this.accessTokenIsExist.asObservable();
 
 	constructor(private safeStorageService: SafeStorageService) {
 	}
 
 	setAccessToken(accessToken) {
+		this.accessTokenIsExist.next(!!accessToken);
 		this.safeStorageService.setPassword('figleaf-privacy-tab', 'figleaf-accessToken', accessToken);
 	}
 
@@ -18,6 +22,7 @@ export class AccessTokenService {
 	}
 
 	removeAccessToken() {
+		this.accessTokenIsExist.next(false);
 		this.safeStorageService.removePassword('figleaf-privacy-tab', 'figleaf-accessToken');
 	}
 }

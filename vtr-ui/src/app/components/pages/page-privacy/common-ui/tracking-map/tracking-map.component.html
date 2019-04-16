@@ -4,6 +4,8 @@
 						 [labels]="getText()"
 						 [positive]="isTrackersBlocked$ | async"
 						 [animate]="animate"
+						 [defaultSiteIcon]="defaultIcon.site"
+						 [defaultTrackerIcon]="defaultIcon.tracker"
 						 (showDetails)="showDetails($event, trackingData)">
 		</fl-tracking-map>
 	</ng-container>
@@ -25,5 +27,7 @@ Use your browser to view websites, and come back here later, then we can show wh
 </div>
 
 <vtr-common-popup [popUpId]="trackingMapSinglePopupId" size="large">
-	<vtr-single-tracker-detail [percentOfTrack]="percentOfTrack"></vtr-single-tracker-detail>
+	<ng-template>
+		<vtr-single-tracker-detail [percentOfTrack]="percentOfTrack"></vtr-single-tracker-detail>
+	</ng-template>
 </vtr-common-popup>

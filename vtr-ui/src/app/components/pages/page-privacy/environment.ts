@@ -1,7 +1,7 @@
 import { environment } from '../../../../environments/environment';
 
 const productionEnvironment = {
-	backendUrl: 'https://api.figleafapp.com'
+	backendUrl: 'https://api.tz2.figleafapp.com'
 };
 
 const developEnvironment = {

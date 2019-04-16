@@ -1,7 +1,5 @@
 <aside class="sidebar">
-    <vtr-sidebar-benefits-widget></vtr-sidebar-benefits-widget>
-    <vtr-sidebar-preview [data]="news"></vtr-sidebar-preview>
-    <vtr-sidebar-preview [data]="tips"></vtr-sidebar-preview>
+    <vtr-sidebar-install-widget></vtr-sidebar-install-widget>
     <vtr-faq></vtr-faq>
 
     <nav style="font-size: 2rem;">
@@ -30,6 +28,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" routerLink="./news" routerLinkActive="active">NewsList</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="./landing" routerLinkActive="active">Landing</a>
             </li>
         </ul>
         <button (click)="deleteAccessToken()" class="btn" style="background-color: #2E62D9; color: #fff;">Delete AccessToken</button>

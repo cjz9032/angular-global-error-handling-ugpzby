@@ -82,6 +82,9 @@
     font-size: 25px;
     font-weight: 500;
     outline: none;
+    &:focus {
+      border: 2px solid #4A81FD;
+    }
     &--error {
       border: 2px solid #F66A5B;
       color: #F66A5B;

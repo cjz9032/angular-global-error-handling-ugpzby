@@ -1,15 +1,5 @@
 @import "../../styles/common-blocks";
 
-.trackers-page {
-	margin-top: -5.6rem;
-
-	&__wrapper {
-		box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
-		border-radius: .7rem;
-		overflow: hidden;
-	}
-}
-
 .trackers {
 	background-color: #FFFFFF;
 	padding: 3.5rem 4rem;
@@ -17,94 +7,6 @@
 	&__text {
 		@extend %text-common
 	}
-
-	&__privacy {
-		padding: 4rem;
-		background-color: #F5F7F8;
-		display: flex;
-		flex-flow: row;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	&__privacy-description {
-		max-width: 70%;
-		display: flex;
-		flex-flow: column;
-	}
-
-	&__privacy-title {
-		@extend %text-common;
-		font-weight: bold;
-		text-transform: uppercase;
-	}
-
-	&__privacy-text {
-		@extend %text-common;
-	}
-
-	&__privacy-group-button {
-		max-width: 30%;
-		display: flex;
-		flex-flow: column;
-	}
-
-	&__privacy-button {
-		@extend %theme-btn;
-	}
-
-	&__privacy-button-link {
-		margin-top: 2rem;
-		text-align: center;
-
-		a {
-			@extend %button-link;
-			@extend %button-link--to-right;
-		}
-	}
-
-	&__risk {
-		padding: 5rem 4rem;
-		display: flex;
-		flex-flow: row;
-		align-items: center;
-		justify-content: space-between;
-	}
-
-	&__risk-describe {
-		max-width: 68%;
-	}
-
-	&__risk-title {
-		@extend %subtitle;
-	}
-
-	&__risk-text {
-		color: #34495E;
-		font-size: 1.6rem;
-		font-weight: 300;
-		line-height: 3rem;
-		margin-top: 2rem;
-	}
-
-	&__risk-button-link {
-		margin-top: 2rem;
-		@extend %button-link;
-		@extend %button-link__text;
-		padding: 0;
-
-		&:before {
-			width: 0;
-			height: 0;
-		}
-	}
-
-	&__risk-image {
-		max-width: 30%;
-	}
-  &__risk-img {
-    max-width: 100%;
-  }
 }
 
 .stay-private {

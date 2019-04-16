@@ -4,7 +4,7 @@ import { DescribeStep } from '../low-privacy/low-privacy.component';
 import { PrivacyScoreService } from './privacy-score.service';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
-import { BreachedAccountsService } from "../../common-services/breached-accounts.service";
+import { BreachedAccountsService } from '../../common-services/breached-accounts.service';
 
 export interface ScoreParametrs {
 	fixedBreaches: number;
@@ -76,7 +76,6 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 			)
 			.subscribe((scoreParametrs: ScoreParametrs) => {
 				this.scoreParametrs = scoreParametrs;
-				this.scoreParametrs.unfixedBreaches = this.breachedAccountsService.onGetBreachedAccounts$.getValue().length;
 				this.setDataAccordingToScore(scoreParametrs);
 			});
 

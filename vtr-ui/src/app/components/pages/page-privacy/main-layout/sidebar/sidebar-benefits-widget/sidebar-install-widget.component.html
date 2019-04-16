@@ -1,0 +1,30 @@
+<div class="sidebar-install-widget" *ngIf="installWidgetSettings.visible">
+	<div class="sidebar-install-widget__inner">
+		<div>
+			<img class="sidebar-install-widget__main-image"
+				 [src]="'/assets/images/privacy-tab/' + installWidgetSettings.image + '.png'"
+				 [srcset]="'/assets/images/privacy-tab/' + installWidgetSettings.image + '@2x.png 2x'"
+				 [alt]="installWidgetSettings.image">
+		</div>
+		<div class="sidebar-install-widget__text">
+			<strong class="sidebar-install-widget__text-strong">{{installWidgetSettings.title}}</strong>
+			<div class="sidebar-install-widget__main-text"
+				 [ngClass]="{'sidebar-install-widget__main-text--sm': !isMainPage}">
+				<span class="sidebar-install-widget__text-light">{{installWidgetSettings.text}}</span>
+				<span class="sidebar-install-widget__text-light sidebar-install-widget__text-light--bold">
+					14-day free trial.
+				</span>
+				<span class="sidebar-install-widget__text-light">No credit card required.</span>
+			</div>
+		</div>
+		<button class="sidebar-install-widget__button"
+				[ngClass]="{'sidebar-install-widget__button--transparent': isMainPage}">
+			{{primaryButtonText}}
+		</button>
+		<div class="sidebar-install-widget__button-link">
+			<a class="sidebar-install-widget__show-more" routerLink="/privacy/landing">
+				<span class="sidebar-install-widget__show-more-text">{{linkButtonText}}</span>
+			</a>
+		</div>
+	</div>
+</div>

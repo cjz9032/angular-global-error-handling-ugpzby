@@ -8,11 +8,9 @@
         <div class="confirm-content__inner-wrapper">
           <p class="confirm-content__title">Enter code</p>
           <div class="verification-input">
-            <input class="verification-input__input" [class.verification-input__input--error]="isError$ | async"
-                   type="text" maxlength="6" numbersOnly
-                   value="{{verificationCode}}"
-                   formControlName="confirmationCode"
-                   (input)="onInput($event)">
+            <input #confirmationInput class="verification-input__input" [class.verification-input__input--error]="isError$ | async"
+                   type="text" maxlength="6" vtrNumbersOnly
+                   formControlName="confirmationCode">
           </div>
           <div class="confirm-failure">
             <p class="confirm-failure__text">Didn't get the code?</p>

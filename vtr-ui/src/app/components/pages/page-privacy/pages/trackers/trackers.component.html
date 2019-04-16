@@ -1,4 +1,6 @@
 <div class="trackers-page">
+	<vtr-common-text [texts]="commonTexts"></vtr-common-text>
+
 	<div class="trackers-page__wrapper">
 		<div class="trackers">
 			<p class="trackers__text">
@@ -9,62 +11,9 @@
 
 			<vtr-tracking-map [animate]="true"></vtr-tracking-map>
 		</div>
-
-		<div class="trackers__privacy">
-			<div class="trackers__privacy-description">
-				<p class="trackers__privacy-title">
-					Block online trackers with Lenovo Privacy
-				</p>
-				<p class="trackers__privacy-text">
-					Without tracking protection, advertisers can find out your online habits and interests. Stop them in
-					their tracks. Do what you love online without being tracked by advertisers and others.
-				</p>
-			</div>
-			<div class="trackers__privacy-group-button">
-				<button class="trackers__privacy-button">Try Lenovo Privacy</button>
-				<div class="trackers__privacy-button-link"><a href="#">Learn more</a></div>
-			</div>
-		</div>
-	</div>
-
-	<div class="trackers__risk">
-		<div class="trackers__risk-describe">
-			<h3 class="trackers__risk-title">What is the risk?</h3>
-			<p class="trackers__risk-text">
-				While your online activity, interests, and habits help advertisers make money, sometimes the info they
-				collect ends up on the dark web.
-			</p>
-			<a class="trackers__risk-button-link" href="#">Tell me more</a>
-		</div>
-		<div class="trackers__risk-image">
-			<img class="trackers__risk-img"
-				 src="/assets/images/privacy-tab/privacy-search-big.png"
-				 srcset="/assets/images/privacy-tab/privacy-search-big@2x.png 2x"
-				 alt="privacy-search">
-		</div>
-	</div>
-
-	<div class="stay-private">
-		<h3 class="stay-private__title">
-			We recommend an easy way to stay private
-		</h3>
-		<p class="stay-private__text">
-			While your online activity, interests, and habits help advertisers make money, sometimes the info they
-			collect ends up on the dark web.
-		</p>
-		<div class="stay-private__video">
-			<vtr-promo-video
-				[data]="promoVideoData"
-				[popupData]="promoVideoPopupData"
-			></vtr-promo-video>
-		</div>
-
-		<div class="stay-private__steps-wrapper">
-			<vtr-promo-features-list [data]="stayPrivateSteps"></vtr-promo-features-list>
-		</div>
-
-		<div class="stay-private__banner">
-			<vtr-page-banner [data]="pageBannerData"></vtr-page-banner>
-		</div>
+		<vtr-try-product-block
+			[texts]="tryProductText"
+			(buttonClick)="tryProductBlockButtonClick($event)">
+		</vtr-try-product-block>
 	</div>
 </div>

@@ -1,15 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-
-export interface BreachedAccount {
-	domain: string;
-	image: string;
-	email: string;
-	password: string;
-	date: string;
-	name: string;
-	address: string;
-	description: string;
-}
+import { BreachedAccount } from '../../common-services/breached-accounts.service';
 
 export enum BreachedAccountMode {
 	FULL = 'FULL',
@@ -28,7 +18,6 @@ export class BreachedAccountComponent {
 	@Output() detailClick = new EventEmitter<number>();
 
 	readonly breachedAccountMode = BreachedAccountMode;
-	defaultImage = '/assets/images/privacy-tab/default.png';
 
 	transformDomain(domain) {
 		if (domain === 'n/a') {

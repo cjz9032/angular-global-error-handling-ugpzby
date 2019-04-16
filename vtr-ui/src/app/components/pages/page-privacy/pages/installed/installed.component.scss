@@ -1,7 +1,7 @@
 @import "../../styles/common-blocks";
 
 .installed-page {
-  margin: -5.6rem 0 0 0;
+  margin: $topIndent 0 0 0;
   &__tracking-map {
     @extend %common-block-wrapper;
   }

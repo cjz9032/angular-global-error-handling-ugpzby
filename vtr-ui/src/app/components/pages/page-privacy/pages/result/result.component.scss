@@ -1,7 +1,7 @@
 @import "../../styles/common-blocks";
 
 .result-page {
-  margin: -5.6rem 0 0 0;
+  margin: $topIndent 0 0 0;
 }
 
 .breaches-block {
@@ -259,6 +259,35 @@
   &__btn-wrapper {
   }
 
+  &__btn {
+    @extend %theme-btn;
+  }
+}
+
+.figleaf-stored-accounts {
+  border: 1px solid #DBEBDC;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #F7FFF6 0%, #FFFFFF 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.8rem 2rem;
+  &__img {}
+  &__details-col {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 0 2rem;
+  }
+  &__title {
+    color: #34495E;
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 2.9rem;
+    padding: 0 5rem 0 0;
+    margin: 0;
+  }
   &__btn {
     @extend %theme-btn;
   }
