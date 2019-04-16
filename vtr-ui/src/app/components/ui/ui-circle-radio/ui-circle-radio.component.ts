@@ -28,11 +28,12 @@ export class UiCircleRadioComponent implements OnInit {
 	}
 
 	getIconName(name: string) {
-		if (name == undefined || name == "" || name == null) {
-			this.hideIcon =  true;
-			return;
+		if(name) {
+			return name.split(" ").join("").toLowerCase();
 		}
-		return name.toLowerCase();
+		else {
+			return "";
+		}
 	}
 
 }
