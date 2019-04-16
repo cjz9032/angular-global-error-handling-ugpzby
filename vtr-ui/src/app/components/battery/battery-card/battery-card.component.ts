@@ -37,7 +37,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	onPowerSupplyStatusEvent(status: any) {
 		console.log("onPowerSupplyStatusEvent: ", status);
 		if(status) {
-			this.batteryInfo[0].chargeStatus = status.isAcAttached ? BatteryChargeStatus.CHARGING.id : BatteryChargeStatus.DISCHARGING.id;
+			this.batteryInfo[0].isAcAttached = status.isAcAttached;//status.isAcAttached ? BatteryChargeStatus.CHARGING.id : BatteryChargeStatus.DISCHARGING.id;
 			this.updateBatteryDetails();
 		}
 	}
@@ -91,7 +91,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	public updateBatteryDetails() {
 		this.batteryInfo[0].mainBatteryPercent = this.batteryService.getMainBatteryPercentage();
 		this.batteryIndicator.percent = this.batteryService.getMainBatteryPercentage();
-		this.batteryIndicator.charging = this.batteryInfo[0].chargeStatus == BatteryChargeStatus.CHARGING.id;
+		this.batteryIndicator.charging = this.batteryService.getAcIsAttached(); //this.batteryInfo[0].chargeStatus == BatteryChargeStatus.CHARGING.id;
+		this.batteryInfo[0].isAcAttached = this.batteryIndicator.charging;
 		this.batteryIndicator.expressCharging = this.batteryInfo[0].isExpressCharging;
 		this.batteryIndicator.voltageError = this.batteryInfo[0].isVoltageError;
 		this.batteryIndicator.convertMin(this.batteryInfo[0].remainingTime);

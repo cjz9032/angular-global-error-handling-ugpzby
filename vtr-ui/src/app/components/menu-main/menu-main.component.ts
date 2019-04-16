@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -16,6 +16,7 @@ import { TranslationSection } from 'src/app/enums/translation-section.enum';
 import { environment } from '../../../environments/environment';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
 import { WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
+import { RegionService } from 'src/app/services/region/region.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -30,7 +31,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	public appVersion: string = environment.appVersion;
 	constantDevice = 'device';
 	constantDeviceSettings = 'device-settings';
-
+	region: string;
 	items: Array<any> = [
 		{
 			id: 'dashboard',
@@ -132,16 +133,6 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				routerLinkActiveOptions: { exact: true },
 				icon: '',
 				subitems: []
-			}, {
-				id: 'internet-protection',
-				label: 'common.menu.security.sub5',
-				path: 'internet-protection',
-				metricsEvent: 'itemClick',
-				metricsParent: 'navbar',
-				metricsItem: 'link.internetprotection',
-				routerLinkActiveOptions: { exact: true },
-				icon: '',
-				subitems: []
 			}]
 		}, {
 			id: 'support',
@@ -177,8 +168,10 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		public translationService: TranslationService,
 		private modalService: NgbModal,
 		private deviceService: DeviceService,
-		vantageShellService: VantageShellService
+		vantageShellService: VantageShellService,
+		private regionService: RegionService
 	) {
+		this.showVpn();
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		if (cacheShowWindowsHello) {
 			const securityItem = this.items.find(item => item.id === 'security');
@@ -210,6 +203,11 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			.subscribe((translation: Translation) => {
 				this.onLanguageChange(translation);
 			});
+	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		this.showVpn();
 	}
 
 	ngOnInit() {
@@ -296,6 +294,34 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 				});
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, true);
+		}
+	}
+	showVpn() {
+		this.regionService.getRegion().subscribe({
+			next: x => { this.region = x; },
+			error: err => { console.error(err); },
+			complete: () => { console.log('Done'); }
+		});
+		const securityItemForVpn = this.items.find(item => item.id === 'security');
+		const vpnItem = securityItemForVpn.subitems.find(item => item.id === 'internet-protection');
+		if (this.region !== 'CN') {
+			if (!vpnItem) {
+				securityItemForVpn.subitems.splice(4, 0, {
+					id: 'internet-protection',
+					label: 'common.menu.security.sub5',
+					path: 'internet-protection',
+					metricsEvent: 'itemClick',
+					metricsParent: 'navbar',
+					metricsItem: 'link.internetprotection',
+					routerLinkActiveOptions: { exact: true },
+					icon: '',
+					subitems: []
+				});
+			}
+		} else {
+			if (vpnItem) {
+				securityItemForVpn.subitems = securityItemForVpn.subitems.filter(item => item.id !== 'internet-protection');
+			}
 		}
 	}
 }
