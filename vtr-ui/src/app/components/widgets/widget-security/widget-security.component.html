@@ -9,20 +9,16 @@
 					</div>
 				</div>
 			</div>
-<<<<<<< HEAD
 			<div class="col-9 col-sm-9 col-md-12 col-lg-9 last-col">
-				<p class="title">{{security.title[titleStatus] | translate}}</p>
-				<p class="row1">{{security.subTitle[titleStatus] | translate}}</p>
-				<p class="row1">{{security.subTitle2[titleStatus] | translate}}</p>
-=======
-			<div class="col col-9 last-col">
 				<p class="title">{{security.title[percentValue === 100 ? 0 : 1] | translate}}</p>
 				<p class="row1">{{security.subTitle[percentValue === 100 ? 0 : 1] | translate}}</p>
 				<p class="row1">{{security.subTitle2[percentValue === 100 ? 0 : 1] | translate}}</p>
->>>>>>> 4607a3417a3862b74337d497125a72f18ad62244
 				<div class="button-row">
-					<button class="action-button" vtrMetrics metricsEvent="itemClick" metricsItem="securityAdvisor101"
-					(click)="buttonClick()">{{'security.landing.security101' | translate}}</button>
+					<button class="action-button"
+						vtrMetrics
+						metricsEvent="itemClick"
+						metricsItem="securityAdvisor101"
+						(click)="buttonClick()">{{'security.landing.security101' | translate}}</button>
 				</div>
 			</div>
 		</div>
