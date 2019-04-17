@@ -69,6 +69,12 @@
 						</vtr-ui-row-switch>
 					</li> -->
 				</ul>
+				<vtr-widget-permission-note [noteTitle]="'Note'" 
+						[description]="'Lenovo Vantage need to access your location information 
+										for calculating the sunset and sunrise time of your region.'" 
+						[path]="'ms-settings:privacy-location'"
+						*ngIf="!sunsetToSunriseModeStatus.permission">
+				</vtr-widget-permission-note>
 			</vtr-container-collapsible>
 		</div>
 	</div>
@@ -82,19 +88,13 @@
 				[allowCollapse]="true"
 				[theme]="'white'"
 				(toggle)="onCardCollapse($event)">
-				<div class="alert alert-secondary no-camera-access"
-					*ngIf="!dataSource.permission">
-					<div>
-						<strong>Note:</strong> Lenovo Vantage does not have
+				<vtr-widget-permission-note [noteTitle] = "'Note'"
+					[description] = "'Lenovo Vantage does not have
 						permissions to access your camera. Please turn on access
-						to your camera for the Lenovo Vantage app.
-					</div>
-					<button type="button"
-						class="btn btn-link privacy-button pl-0"
-						(click)="onPrivacySettingClick($event)">
-						Go to windows privacy settings
-					</button>
-				</div>
+						to your camera for the Lenovo Vantage app.'"
+					[path] = "'ms-settings:privacy-webcam'"
+					*ngIf = "!dataSource.permission">
+				</vtr-widget-permission-note>
 				<ul class="list-group list-group-flush"
 					*ngIf="cameraPrivacyModeStatus.available && dataSource.permission">
 					<li class="pt-3">
