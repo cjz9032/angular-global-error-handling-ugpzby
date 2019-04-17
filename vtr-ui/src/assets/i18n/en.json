@@ -610,7 +610,7 @@
 				"button": "Enter invitation code",
 				"buttonDescribe": "You have already joined this device to an existing Connected Home Security account.",
 				"title": "Already have Connected Home Security?",
-				"titleDescribe": "Add this device to your Connected Home",
+				"titleDescribe": "Please ensure location permissions are enabled for Vantage in order to add your device to an existing Connected Home Account, and to use Connected Home Security.",
 				"enterCode": "Enter your connection code",
 				"addHome": "Add Home",
 				"ok": "OK",
