@@ -11,7 +11,7 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 export class UserService {
 
 	cookies = {};
-	auth = false;
+	public auth = false;
 	token = '';
 
 	public isLenovoIdSupported = false;
@@ -45,12 +45,6 @@ export class UserService {
 		if (!this.lid) {
 			this.devService.writeLog('UserService constructor: lid object is undefined');
 		}
-
-		this.translate.stream('lenovoId.user').subscribe((value) => {
-			if (!this.auth) {
-				this.firstName = value;
-			}
-		});
 	}
 
 	checkCookies() {
