@@ -208,13 +208,8 @@ export class PageSecurityComponent implements OnInit {
 		const antivirusScore = antivirusScoreInit.filter(current => {
 			return current !== undefined && current !== null && current !== '';
 		});
-		flag = 100 / antivirusScore.length;
-		antivirusScore.forEach(item => {
-			if (item === 0 || item === 2) {
-				scoreTotal += flag;
-			}
-		});
-		this.score = scoreTotal;
+        const valid = antivirusScore.filter(i => i === 0 || i === 2).length;
+		this.score = Math.floor(valid / antivirusScore.length * 100);
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingScore, this.score);
 	}
 
