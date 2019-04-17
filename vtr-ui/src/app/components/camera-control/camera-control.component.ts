@@ -79,9 +79,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		if (this.baseCameraDetail) {
 			this.cameraDetailSubscription.unsubscribe();
 		}
-		if (this._video.src !== '') {
-			this.cleanupCameraAsync();
-		}
+		this.cleanupCameraAsync();
 		document.removeEventListener('visibilitychange', this.visibilityChange);
 	}
 
@@ -146,15 +144,17 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 	stopPreview() {
 		// Cleanup the UI
-		this._video.pause();
-		this._video.src = '';
+		if (this._video) {
+			this._video.pause();
+			this._video.src = '';
+		}
 	}
 
 	cleanupCameraAsync() {
 		console.log('cleanupCameraAsync');
 		this.stopPreview();
 
-		if (this.oMediaCapture != null) {
+		if (this.oMediaCapture) {
 			this.oMediaCapture.close();
 			this.oMediaCapture = null;
 		}
