@@ -500,7 +500,7 @@
 			"vpnVirtual": "Virtual Private Network",
 			"wifiConnected": "WiFi & Connected Home Security",
 			"connectedHomeSecurity": "Connected Home Security",
-			"fingerprint": "Fingerprint reader",
+			"fingerprint": "Fingerprint Reader",
 			"seeAllNetwork": "See all joined networks",
 			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
 			"good": "GOOD",
