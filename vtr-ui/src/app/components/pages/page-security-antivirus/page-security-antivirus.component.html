@@ -184,7 +184,7 @@
 													{{viewModel.mcafee?.expireAt | date:'MM/dd/yyyy' }}
 												</span>
 												<span>
-													<a *ngIf="viewModel.mcafee?.subscription !== 'licenseActive' || 'licenseExpired'"
+													<a *ngIf="viewModel.mcafee?.subscription !== 'licenseActive' && viewModel.mcafee?.subscription !== 'licenseExpired'"
 														vtrMetrics
 														metricsItem="upgradeMcafee"
 														metricsEvent="itemClick"
