@@ -1,13 +1,13 @@
 <div class="vtr-camera-control">
 	<div class="row">
-		<div class="col-6 pl-0 pr-0">
+		<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 pl-0 pr-0">
 			<div class="camera-preview">
 				<video *ngIf="!cameraDetail.isPrivacyModeEnabled"
 					#cameraPreview
 					class="feed"></video>
 			</div>
 		</div>
-		<div class="col-6">
+		<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item border-top"
 					*ngIf="cameraSettings.brightness.supported">
