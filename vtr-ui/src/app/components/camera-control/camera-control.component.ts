@@ -174,6 +174,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			if (this.cameraSettings.exposure.supported === true) {
 
 				this.cameraFeatureAccess.showAutoExposureSlider = !$event.switchValue;
+				this.cameraFeatureAccess.exposureAutoValue = $event.switchValue;
 			}
 			// this.baseCameraDetail.toggleAutoExposure($event.switchValue);
 			this.exposureToggle.emit($event);

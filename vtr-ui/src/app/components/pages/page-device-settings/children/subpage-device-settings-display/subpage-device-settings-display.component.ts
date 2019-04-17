@@ -118,6 +118,11 @@ export class SubpageDeviceSettingsDisplayComponent
 				this.dataSource = response;
 				console.log('getCameraDetails.then permission', this.dataSource.permission);
 				this.cameraFeatureAccess.showAutoExposureSlider = false;
+				if (this.dataSource.exposure.autoValue === true) {
+					this.cameraFeatureAccess.exposureAutoValue = true;
+				} else {
+					this.cameraFeatureAccess.exposureAutoValue = false;
+				}
 				if (this.dataSource.exposure.supported === true && this.dataSource.exposure.autoValue === false) {
 					this.cameraFeatureAccess.showAutoExposureSlider = true;
 				}
@@ -405,17 +410,10 @@ export class SubpageDeviceSettingsDisplayComponent
 		}
 	}
 
-	public statusChangedLocationPermission() {
+	public async statusChangedLocationPermission() {
 		console.log('status changed location permission');
 		if (this.displayService.isShellAvailable) {
-			this.displayService
-				.statusChangedLocationPermission(this.getLocationPermissionStatus.bind(this))
-				.then((value: any) => {
-					console.log('startLocation', value);
-				}).catch(error => {
-					console.error('startLocation', error);
-				});
-
+			await this.displayService.statusChangedLocationPermission(this.getLocationPermissionStatus.bind(this));
 		}
 	}
 	public getResetColorTemparatureCallBack(resetData: any) {
