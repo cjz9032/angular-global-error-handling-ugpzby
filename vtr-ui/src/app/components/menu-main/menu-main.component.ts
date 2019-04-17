@@ -16,6 +16,8 @@ import { TranslationSection } from 'src/app/enums/translation-section.enum';
 import { environment } from '../../../environments/environment';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
 import { WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
+import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -26,6 +28,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 
 	public deviceModel: string;
 	public country: string;
+	public firstName: 'User';
 	commonMenuSubscription: Subscription;
 	public appVersion: string = environment.appVersion;
 	constantDevice = 'device';
@@ -177,7 +180,8 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		public translationService: TranslationService,
 		private modalService: NgbModal,
 		private deviceService: DeviceService,
-		vantageShellService: VantageShellService
+		vantageShellService: VantageShellService,
+		private translate: TranslateService
 	) {
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		if (cacheShowWindowsHello) {
@@ -213,6 +217,12 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		const self = this
+		this.translate.stream('lenovoId.user').subscribe((value) => {
+			if (!self.userService.auth) {
+				self.firstName = value;
+			}
+		});
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -261,6 +271,8 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 					this.deviceModel = notification.payload.family;
 					this.country = notification.payload.country;
 					break;
+				case LenovoIdKey.FirstName:
+					this.firstName = notification.payload;
 				default:
 					break;
 			}
