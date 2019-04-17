@@ -7,6 +7,8 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
+declare var Windows;
+
 @Injectable()
 export class UserService {
 
@@ -58,6 +60,15 @@ export class UserService {
 		this.devService.writeLog('CHECK COOKIES:', this.cookies);
 		if (this.cookies['token']) {
 			this.setToken(this.cookies['token']);
+		}
+	}
+
+	deleteCookies(domain: string) {
+		const myFilter = new Windows.Web.Http.Filters.HttpBaseProtocolFilter();
+		const cookieManager = myFilter.cookieManager;
+		const myCookieJar = cookieManager.getCookies(new Windows.Foundation.Uri(domain));
+		if (myCookieJar) {
+			myCookieJar.forEach(cookie => cookieManager.deleteCookie(cookie));
 		}
 	}
 
@@ -158,6 +169,12 @@ export class UserService {
 		const self = this;
 		this.cookieService.deleteAll('/');
 		this.cookies = this.cookieService.getAll();
+
+		this.deleteCookies('https://passport.lenovo.com');
+		this.deleteCookies('https://www.facebook.com');
+		this.deleteCookies('https://login.live.com');
+		this.deleteCookies('https://www.google.com');
+
 		if (this.lid !== undefined) {
 			const lidGuid = this.lid.userGuid;
 			this.lid.logout().then(function (result) {
