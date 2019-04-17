@@ -3,6 +3,7 @@ import { DevService } from '../dev/dev.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { CommonService } from '../common/common.service';
+import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 @Injectable()
 export class DisplayService {
 	private displayEyeCareMode: any;
@@ -33,6 +34,8 @@ export class DisplayService {
 		if (this.cameraSettings) {
 			this.isShellAvailable = true;
 		}
+		this.startMonitorForEyeCarePermission();
+		this.startMonitorForCameraPermission();
 	}
 
 	startLoading() {
@@ -107,6 +110,7 @@ export class DisplayService {
 			throw new Error(error.message);
 		}
 	}
+
 	public setCameraBrightness(value: number): Promise<boolean> {
 		if (this.cameraSettings) {
 			return this.cameraSettings.setCameraBrightness(value);
@@ -198,6 +202,36 @@ export class DisplayService {
 			throw new Error(error.message);
 		}
 	}
+	public startMonitorForEyeCarePermission() {
+		try {
+			if (this.isShellAvailable) {
+				return this.displayEyeCareMode.statusChangedLocationPermission((response: any) => {
+					console.log("startMonitorForEyeCarePermission", response);
+					this.commonService.sendNotification(DeviceMonitorStatus.EyeCareModeStatus, response.status);
+				});
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public startMonitorForCameraPermission() {
+		try {
+			if (this.isShellAvailable) {
+				return this.cameraSettings.startMonitor((response: any) => {
+					console.log("startMonitorForCameraPermission", response);
+					if (response.permission != undefined) {
+						this.commonService.sendNotification(DeviceMonitorStatus.CameraStatus, response.permission);
+					}
+				});
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
 	public stopEyeCareMonitor() {
 		if (this.isShellAvailable) {
 			this.displayEyeCareMode.stopMonitor((response: boolean) => {

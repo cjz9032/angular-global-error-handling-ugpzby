@@ -9,6 +9,8 @@ import { EyeCareMode, SunsetToSunriseStatus } from 'src/app/data-models/camera/e
 import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 enum defaultTemparature {
 	defaultValue = 4500
 }
@@ -33,6 +35,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public enableSlider = false;
 	public initEyecare = 0;
 	public showHideAutoExposureSlider = false;
+	private notificationSubscription: Subscription;
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
@@ -52,7 +55,8 @@ export class SubpageDeviceSettingsDisplayComponent
 		private deviceService: DeviceService,
 		// public cd: ChangeDetectorRef,
 		public displayService: DisplayService,
-		private commonService: CommonService) {
+		private commonService: CommonService,
+		private cd: ChangeDetectorRef) {
 		this.dataSource = new CameraDetail();
 		this.cameraFeatureAccess = new CameraFeatureAccess();
 		this.eyeCareDataSource = new EyeCareMode();
@@ -60,7 +64,9 @@ export class SubpageDeviceSettingsDisplayComponent
 
 	ngOnInit() {
 		console.log('subpage-device-setting-display onInit');
-
+		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
+			this.onNotification(response);
+		});
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			cameraDetail => {
 				this.dataSource = cameraDetail;
@@ -77,6 +83,25 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.getCameraDetails();
 		this.statusChangedLocationPermission();
 
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			const { type, payload } = notification;
+			switch (type) {
+				case DeviceMonitorStatus.CameraStatus:
+					console.log('DeviceMonitorStatus.CameraStatus', payload);
+					this.dataSource.permission = payload;
+					break;
+				case DeviceMonitorStatus.EyeCareModeStatus:
+					console.log('DeviceMonitorStatus.EyeCareModeStatus', payload);
+					//this.eyeCareModeStatus.permission = payload;
+					this.sunsetToSunriseModeStatus.permission = payload
+					this.cd.detectChanges();
+				default:
+					break;
+			}
+		}
 	}
 
 	ngOnDestroy() {
