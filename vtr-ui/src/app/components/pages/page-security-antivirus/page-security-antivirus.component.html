@@ -10,7 +10,7 @@
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 vtr-page-left-column">
+					<div class="col-12 col-sm-12 col-md-6 col-lg-8 vtr-page-left-column">
 						<div *ngIf="viewModel?.currentPage ==='windows'">
 							<div class="header mt-minus">
 								<div class="rounded-card-with-shadow p-5">
@@ -67,10 +67,10 @@
 								<div>
 									<div class="title py-5">{{'security.antivirus.common.why' | translate}}</div>
 									<div class="row">
-										<div class="col-auto px-0 col-xs-6">
+										<div class="col-auto px-0 col-6">
 											<img src="./../../../../assets/images/antivirus/side.png" />
 										</div>
-										<div class="col px-5 col-xs-6">
+										<div class="col px-5 col-6">
 											<div class="subtitle pb-5">
 												{{'security.antivirus.common.recommends' | translate}}</div>
 											<div>
@@ -184,7 +184,7 @@
 													{{viewModel.mcafee?.expireAt | date:'MM/dd/yyyy' }}
 												</span>
 												<span>
-													<a *ngIf="viewModel.mcafee?.subscription !== 'licenseActive' || 'licenseExpired'"
+													<a *ngIf="viewModel.mcafee?.subscription !== 'licenseActive' && viewModel.mcafee?.subscription !== 'licenseExpired'"
 														vtrMetrics
 														metricsItem="upgradeMcafee"
 														metricsEvent="itemClick"
@@ -208,7 +208,7 @@
 								<div class="title py-4">{{'security.antivirus.mcafee.topBenefits' | translate}}</div>
 								<div class="inner-body">
 									<div class="row">
-										<div class="col-6">
+										<div class="col-12 col-md-12 col-lg-6">
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid"
@@ -262,7 +262,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="col-6">
+										<div class="col-12 col-md-12 col-lg-6">
 											<div class="row pt-5">
 												<div class="col-auto align-self-center">
 													<img class="img-fluid" src="./../../../../assets/images/antivirus/icon5.png" />
@@ -478,7 +478,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 vtr-page-right-column">
+					<div class="col-12 col-sm-12 col-md-6 col-lg-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 								<!--Start of Security Card Advisor-->

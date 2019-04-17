@@ -50,7 +50,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		' You can check the default settings in this section and customize your system according to your needs.';
 	headerMenuTitle = 'Jump to Settings';
 
-	intelligentCooling = false;
+	intelligentCooling = true;
 	showBatteryThreshold = false;
 	value = 1;
 	headerMenuItems = [

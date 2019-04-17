@@ -9,6 +9,7 @@ import { VPNWidgetItem } from 'src/app/data-models/security-advisor/widget-secur
 import { WindowsHelloWidgetItem } from 'src/app/data-models/security-advisor/widget-security-status/windows-hello-widgt-item.model';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
+import { RegionService } from 'src/app/services/region/region.service';
 
 @Component({
 	selector: 'vtr-widget-security-status',
@@ -19,16 +20,16 @@ export class WidgetSecurityStatusComponent implements OnInit {
 
 	@Input() securityAdvisor: SecurityAdvisor;
 	items: Array<WidgetItem>;
+	region: string;
 
-	constructor(private commonService: CommonService, private translateService: TranslateService) {}
+	constructor(private commonService: CommonService, private translateService: TranslateService, private regionService: RegionService) {}
 
 	ngOnInit() {
 		this.items = [];
 		this.items.push(new AntivirusWidgetItem(this.securityAdvisor.antivirus, this.commonService, this.translateService));
 		this.items.push(new WifiSecurityWidgetItem(this.securityAdvisor.wifiSecurity, this.commonService, this.translateService));
 		this.items.push(new PassWordManagerWidgetItem(this.securityAdvisor.passwordManager, this.commonService, this.translateService));
-		this.items.push(new VPNWidgetItem(this.securityAdvisor.vpn, this.commonService, this.translateService));
-
+		this.showVpn();
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		if (cacheShowWindowsHello) {
 			this.items.push(new WindowsHelloWidgetItem(this.securityAdvisor.windowsHello, this.commonService, this.translateService));
@@ -60,9 +61,26 @@ export class WidgetSecurityStatusComponent implements OnInit {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
 		}
 	}
-
+	showVpn() {
+		this.regionService.getRegion().subscribe({
+			next: x => { this.region = x; },
+			error: err => { console.error(err); },
+			complete: () => { console.log('Done'); }
+		});
+		const vpnItem = this.items.find(item => item.id === 'vpn');
+		if (this.region !== 'CN') {
+			if (!vpnItem) {
+				this.items.splice(3, 0, new VPNWidgetItem(this.securityAdvisor.vpn, this.commonService, this.translateService));
+			}
+		} else {
+			if (vpnItem) {
+				this.items = this.items.filter(item => item.id !== 'vpn');
+			}
+		}
+	}
 	@HostListener('window: focus')
 	onFocus(): void {
 		this.securityAdvisor.refresh();
+		this.showVpn();
 	}
 }

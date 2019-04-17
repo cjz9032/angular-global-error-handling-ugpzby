@@ -12,6 +12,7 @@ class BatteryDetail {
 	//#region battery detail properties
 
 	public chargeStatus: number;
+	public isAcAttached: boolean;
 	public chargeStatusString: string;
 	public mainBatteryPercent: number;
 	public remainingPercent: number;

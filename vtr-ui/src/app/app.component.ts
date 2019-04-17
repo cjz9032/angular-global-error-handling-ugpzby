@@ -40,8 +40,14 @@ export class AppComponent implements OnInit {
 		const appFirstRun = !hadRunApp;
 		if (appFirstRun && deviceService.isShellAvailable) {
 			commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
-			vantageShellService.getMetrics().sendAsync({
+			const metricsClient = vantageShellService.getMetrics();
+			if (!metricsClient.sendAsyncEx) {
+				metricsClient.sendAsyncEx = metricsClient.sendAsync;
+			}
+			metricsClient.sendAsyncEx({
 				ItemType: 'FirstRun'
+			}, {
+				forced: true
 			});
 		}
 

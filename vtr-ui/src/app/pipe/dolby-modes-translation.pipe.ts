@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'dolbyModesTranslation'
+  name: 'dolbyModesTranslation',
+  pure: false
 })
 export class DolbyModesTranslationPipe implements PipeTransform {
 
@@ -13,19 +14,6 @@ export class DolbyModesTranslationPipe implements PipeTransform {
 
     console.log('+++++++++++++++++++++++',val);
 
-
-
-    switch(val) {
-      case "dynamic":
-        return "DYNAMIC";
-      case "movie":
-        return "MOVIE";
-      case "music":
-        return "MUSIC";
-      case "game":
-        return "GAME";
-      case "voice":
-        return "VOICE";
-    }
+    return val;
   }
 }
