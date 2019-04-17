@@ -109,6 +109,11 @@ export class PageSecurityComponent implements OnInit {
 	}
 
 	private refreshAll() {
+		this.regionService.getRegion().subscribe({
+			next: x => { this.region = x; },
+			error: err => { console.error(err); },
+			complete: () => { console.log('Done'); }
+		});
 		this.securityAdvisor.antivirus.refresh().then(() => {
 			this.getScore();
 		});
@@ -124,11 +129,6 @@ export class PageSecurityComponent implements OnInit {
 		});
 		this.securityAdvisor.windowsHello.refresh().then(() => {
 			this.getScore();
-		});
-		this.regionService.getRegion().subscribe({
-			next: x => { this.region = x; },
-			error: err => { console.error(err); },
-			complete: () => { console.log('Done'); }
 		});
 	}
 
@@ -199,7 +199,7 @@ export class PageSecurityComponent implements OnInit {
 		const antivirusScoreInit = [
 			this.antivirusLandingViewModel.subject.status,
 			this.passwordManagerLandingViewModel.subject.status,
-			this.vpnLandingViewModel.subject.status,
+			this.region !== 'CN' ? this.vpnLandingViewModel.subject.status : null,
 			this.wifiSecurityLandingViewModel.subject.status,
 			this.windowsHelloLandingViewModel ? this.windowsHelloLandingViewModel.subject.status : null
 		];
