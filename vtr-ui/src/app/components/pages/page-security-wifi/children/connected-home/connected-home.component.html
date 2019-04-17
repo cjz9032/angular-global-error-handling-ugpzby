@@ -139,14 +139,14 @@
 							</div>
 
 						</div>
-						<div class="col-md-12 col-lg-5">
+						<div class="col-md-12 col-lg-5 invitation-button">
 							<div class="button-box text-right">
 								<vtr-ui-button [metricsItem]="'enterInvitationCode'"
 									(onClick)="enterActivationCode($event)"
 									[label]="'security.homeprotection.invitationcode.button' | translate"
 									[alreadyJoinGroup]="data.homeStatus"></vtr-ui-button>
 							</div>
-							<div *ngIf="data.homeStatus=='joined' && showDescribe" class="button-description">
+							<div *ngIf="data.homeStatus==='joined' && showDescribe" class="button-description">
 								{{'security.homeprotection.invitationcode.buttonDescribe' | translate}}
 							</div>
 						</div>
