@@ -70,10 +70,10 @@
 					</li> -->
 				</ul>
 				<vtr-widget-permission-note [noteTitle]="'Note'"
-						[description]="'Lenovo Vantage need to access your location information
+					[description]="'Lenovo Vantage need to access your location information
 										for calculating the sunset and sunrise time of your region.'"
-						[path]="'ms-settings:privacy-location'"
-						*ngIf="enableSunsetToSunrise">
+					[path]="'ms-settings:privacy-location'"
+					*ngIf="enableSunsetToSunrise">
 				</vtr-widget-permission-note>
 			</vtr-container-collapsible>
 		</div>
@@ -87,9 +87,7 @@
 				[allowCollapse]="true"
 				[theme]="'white'"
 				(toggle)="onCardCollapse($event)">
-
-				<ul class="list-group list-group-flush"
-					>
+				<ul class="list-group list-group-flush">
 					<li class="pt-3"
 						*ngIf="cameraPrivacyModeStatus.available">
 						<vtr-ui-row-switch
@@ -104,13 +102,13 @@
 							[tooltipText]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.tooltip' | translate">
 						</vtr-ui-row-switch>
 					</li>
-					<li class="pt-3" >
-							<vtr-widget-permission-note [noteTitle] = "'Note'"
-							[description] = "'Lenovo Vantage does not have
+					<li class="pt-3">
+						<vtr-widget-permission-note [noteTitle]="'Note'"
+							[description]="'Lenovo Vantage does not have
 								permissions to access your camera. Please turn on access
 								to your camera for the Lenovo Vantage app.'"
-							[path] = "'ms-settings:privacy-webcam'"
-							*ngIf = "!dataSource.permission">
+							[path]="'ms-settings:privacy-webcam'"
+							*ngIf="!dataSource.permission">
 						</vtr-widget-permission-note>
 						<vtr-ui-row-switch *ngIf="dataSource.permission"
 							[title]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
@@ -128,6 +126,7 @@
 							<div class="row">
 								<div class="col-12">
 									<vtr-camera-control [cameraSettings]="dataSource"
+										[manualRefresh]="manualRefresh"
 										[cameraFeatureAccess]="cameraFeatureAccess"
 										(brightnessChange)="onBrightnessChange($event)"
 										(contrastChange)="onContrastChange($event)"

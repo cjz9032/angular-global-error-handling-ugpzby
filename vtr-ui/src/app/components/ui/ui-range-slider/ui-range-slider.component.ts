@@ -28,7 +28,7 @@ export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 	@Input() maxValueLegend = ''; // label to display at the end of slider
 	@Input() legendPositionFunction: ValueToPositionFunction; // function to handle legend position for Eye Care
 	@Input() stepsArray: Array<any>; // array with legend value for Eye care
-	@Input() manualRefresh: any;
+	@Input() manualRefresh = new EventEmitter<void>();
 
 	@Output() change: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() valueChange: EventEmitter<ChangeContext> = new EventEmitter();
