@@ -17,7 +17,7 @@ export class WidgetPermissionNoteComponent implements OnInit {
   ngOnInit() {
   }
 
-  onClick() {
+  onClick(event) {
     this.deviceService.launchUri(this.path);
   }
 }
