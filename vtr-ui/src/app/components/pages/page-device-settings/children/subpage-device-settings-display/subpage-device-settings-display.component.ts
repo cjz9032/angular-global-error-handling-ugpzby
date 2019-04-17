@@ -309,7 +309,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.log('getSunsetToSunrise.then', status);
 						this.sunsetToSunriseModeStatus = status;
 						if (status.permission === false) {
-							this.displayService.openPrivacyLocation();
+							//	this.displayService.openPrivacyLocation();
 							this.enableSunsetToSunrise = true;
 						}
 					}).catch(error => {

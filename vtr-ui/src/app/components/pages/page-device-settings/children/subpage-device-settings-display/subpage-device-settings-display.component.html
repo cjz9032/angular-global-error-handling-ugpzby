@@ -87,15 +87,9 @@
 				[allowCollapse]="true"
 				[theme]="'white'"
 				(toggle)="onCardCollapse($event)">
-				<vtr-widget-permission-note [noteTitle] = "'Note'"
-					[description] = "'Lenovo Vantage does not have
-						permissions to access your camera. Please turn on access
-						to your camera for the Lenovo Vantage app.'"
-					[path] = "'ms-settings:privacy-webcam'"
-					*ngIf = "!dataSource.permission">
-				</vtr-widget-permission-note>
+
 				<ul class="list-group list-group-flush"
-					*ngIf="dataSource.permission">
+					>
 					<li class="pt-3"
 						*ngIf="cameraPrivacyModeStatus.available">
 						<vtr-ui-row-switch
@@ -110,8 +104,15 @@
 							[tooltipText]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.tooltip' | translate">
 						</vtr-ui-row-switch>
 					</li>
-					<li class="pt-3">
-						<vtr-ui-row-switch
+					<li class="pt-3" >
+							<vtr-widget-permission-note [noteTitle] = "'Note'"
+							[description] = "'Lenovo Vantage does not have
+								permissions to access your camera. Please turn on access
+								to your camera for the Lenovo Vantage app.'"
+							[path] = "'ms-settings:privacy-webcam'"
+							*ngIf = "!dataSource.permission">
+						</vtr-widget-permission-note>
+						<vtr-ui-row-switch *ngIf="dataSource.permission"
 							[title]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
 							componentName="Camera"
 							name="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
