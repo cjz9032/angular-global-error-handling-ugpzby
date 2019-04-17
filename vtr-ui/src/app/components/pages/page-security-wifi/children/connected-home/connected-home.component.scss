@@ -148,6 +148,13 @@
 		border-radius: $border_radius;
 		text-align: center;
 
+		.invitation-button {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column; 
+		}
+
 		.sub-heading {
 			margin-top: 1rem;
 			color: $main_dark;
