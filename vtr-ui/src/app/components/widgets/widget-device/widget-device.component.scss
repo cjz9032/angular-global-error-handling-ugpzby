@@ -25,7 +25,7 @@
   .device-sub-header {
     color: $shade_darkest;
 	font-size: 1.4rem;
-	@media #{$mediaquery_9} {
+	@media #{$mediaquery_X1} {
 		font-size: 1.25rem;
 	}
   }
@@ -35,7 +35,7 @@
     margin-left: 1.5rem;
     margin-right: 1.5rem;
 	font-size: 1.4rem;
-	@media #{$mediaquery_9} {
+	@media #{$mediaquery_X1} {
 		font-size: 1.25rem;
 	}
   }
@@ -148,10 +148,10 @@
       }
 	}
 	.status-block{
-		@media #{$mediaquery_10} {
+		@media #{$mediaquery_X2} {
 			width: 43%;
 		}
-		@media #{$mediaquery_11} {
+		@media #{$mediaquery_X3} {
 			width: 55%;
 		}
 	}
