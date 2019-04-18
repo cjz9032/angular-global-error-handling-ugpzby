@@ -1,10 +1,25 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ServerCommunicationService } from '../../common-services/server-communication.service';
 import { FormBuilder, Validators } from '@angular/forms';
-import { filter, takeUntil } from 'rxjs/operators';
+import { debounceTime, filter, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
 import { EmailScannerService } from '../../common-services/email-scanner.service';
 import { CommonPopupService } from '../../common-services/popups/common-popup.service';
+import { BehaviorSubject, from } from 'rxjs';
+import { AccessTokenService } from '../../common-services/access-token.service';
+import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
+import { UserService } from '../../../../../services/user/user.service';
+import { validateEmail } from '../../shared/helpers';
+
+interface UserProfile {
+	addressList: string[];
+	emailList: string[];
+	firstName: string;
+	lastName: string;
+	phoneList: string[];
+	status: number;
+	success: boolean;
+	userName: string;
+}
 
 @Component({
 	selector: 'vtr-check-breaches-form',
@@ -12,32 +27,35 @@ import { CommonPopupService } from '../../common-services/popups/common-popup.se
 	styleUrls: ['./check-breaches-form.component.scss'],
 })
 export class CheckBreachesFormComponent implements OnInit, OnDestroy {
+	emailWasScanned$ = this.accessTokenService.accessTokenIsExist$;
+
 	emailForm = this.formBuilder.group({
 		email: ['', [Validators.required, Validators.email]],
 	});
-	isLoading = this.emailScannerService.loadingStatusChanged$;
+	serverError$ = new BehaviorSubject(false);
+	isLoading$ = this.emailScannerService.loadingStatusChanged$;
 	lenovoId: string;
 	islenovoIdOpen = false;
 	isFormFocused = false;
-	isServerError = false; // change to 'true' to see all error styles
-	confirmationPopupId = 'confirmation-popup'; // change to 'true' to see all error styles
+	confirmationPopupId = 'confirmation-popup';
 
 	constructor(
-		private serverCommunication: ServerCommunicationService,
 		private formBuilder: FormBuilder,
 		private emailScannerService: EmailScannerService,
 		private commonPopupService: CommonPopupService,
+		private accessTokenService: AccessTokenService,
+		private vantageShellService: VantageShellService,
+		private userService: UserService
 	) {
 	}
 
 	ngOnInit() {
-		this.serverCommunication.getLenovoId();
-		this.serverCommunication.onGetLenovoId.pipe(
+		this.emailForm.valueChanges.pipe(
+			debounceTime(100),
 			takeUntil(instanceDestroyed(this)),
-		).subscribe(
-			(lenovoIdResponse: { emails: Array<string> }) => {
-				this.lenovoId = lenovoIdResponse.emails[0];
-			});
+		).subscribe(() => {
+			this.serverError$.next(false);
+		});
 
 		this.handleStartTyping();
 	}
@@ -60,6 +78,11 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	}
 
 	openLenovoId() {
+		from(this.userService.getUserProfile())
+			.subscribe((result: UserProfile) => {
+				this.lenovoId = validateEmail(result.userName) ? result.userName : '';
+			});
+
 		this.islenovoIdOpen = true;
 	}
 
@@ -84,7 +107,8 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 		).subscribe((response) => {
 			this.commonPopupService.open(this.confirmationPopupId);
 		}, (error) => {
-			console.log('confirmation error', error);
+			this.serverError$.next(true);
+			console.log('auth error:', error);
 		});
 	}
 

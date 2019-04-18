@@ -34,5 +34,4 @@ export class BreachedAccountComponent {
 		// TODO replace with real ID
 		this.detailClick.emit(i);
 	}
-
 }

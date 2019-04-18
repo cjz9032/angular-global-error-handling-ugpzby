@@ -48,28 +48,32 @@ export class PrivacyScoreService {
 	}
 
 	getStaticDataAccordingToScore(score) {
-		if (score < 40) {
+		if (score === 0) {
+			return {
+				privacyLevel: 'undefined',
+				title: 'Find out your privacy score',
+				text: `Your Lenovo is designed to put you
+						in control of your privacy. It all
+						starts with simple tools to show you how
+						private you are online.`,
+			};
+		} else if (score < 40) {
 			return {
 				privacyLevel: 'low',
 				title: 'Low privacy score',
-				text: `A lot of your personal info is out there.
-						Take control of your privacy by choosing
-						when to be private and when to share on
-						every site you interact with.`,
+				text: `A lot of your personal info is out there. Take control of your privacy by choosing when to be private and when to share on every site you interact with.`,
 			};
 		} else if (score < 60) {
 			return {
 				privacyLevel: 'medium-low',
 				title: 'Medium privacy score',
-				text: 'A lot of your personal info is out there. ' +
-					'Take control of your privacy by choosing when to be private and what to share on every site you interact with.',
+				text: `You’re taking a few steps to be private, but some of your info could easily be exposed. Lenovo Privacy by FigLeaf can help.`,
 			};
 		} else if (score < 80) {
 			return {
 				privacyLevel: 'medium',
 				title: 'Medium privacy score',
-				text: 'A lot of your personal info is out there. ' +
-					'Take control of your privacy by choosing when to be private and what to share on every site you interact with.',
+				text: `You’re taking some steps to be private. But there’s a lot more you can do.`,
 			};
 		} else {
 			return {

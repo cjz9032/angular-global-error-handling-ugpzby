@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { filter, map, takeUntil } from 'rxjs/operators';
 import { BreachedAccount, BreachedAccountsService } from '../../common-services/breached-accounts.service';
 import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
+import { CommunicationWithFigleafService } from '../../communication-with-figleaf/communication-with-figleaf.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -12,6 +13,7 @@ import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-d
 export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	breached_accounts: BreachedAccount[];
 	openBreachedId$ = this.getParamFromUrl('openId').pipe(map((val) => Number(val)));
+	isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 	// static Data transferred to html
 	commonTexts = {
 		title: 'Breached Accounts',
@@ -20,6 +22,7 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private breachedAccountsService: BreachedAccountsService,
+		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private route: ActivatedRoute
 	) {
 	}
@@ -32,6 +35,8 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 			.subscribe((breaches) => {
 				this.breached_accounts = breaches;
 			});
+
+		this.breachedAccountsService.getBreachedAccounts();
 	}
 
 	ngOnDestroy() {

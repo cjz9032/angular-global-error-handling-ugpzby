@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, of } from 'rxjs';
 import { map, switchMap, take } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { ServerCommunicationService } from './server-communication.service';
 import { StorageService } from '../shared/services/storage.service';
 import { MaskedPasswordsInfo, VantageCommunicationService } from './vantage-communication.service';
 
@@ -23,7 +22,6 @@ export class BrowserAccountsService {
 
 	constructor(
 		private http: HttpClient,
-		private serverCommunicationService: ServerCommunicationService,
 		private vantageCommunicationService: VantageCommunicationService,
 		private storageService: StorageService,
 	) {

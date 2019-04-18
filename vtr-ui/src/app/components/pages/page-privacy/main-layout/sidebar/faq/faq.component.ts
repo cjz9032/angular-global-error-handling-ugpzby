@@ -35,6 +35,7 @@ export class FaqComponent implements OnInit, OnDestroy {
 			)
 			.subscribe(
 				(currentPath) => {
+					this.openId = null;
 					this.isVisible = this.faqService.pagesSettings[currentPath].visible;
 					this.questions = this.faqService.pagesSettings[currentPath].questions;
 				}

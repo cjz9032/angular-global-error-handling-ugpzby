@@ -59,12 +59,13 @@ export class DataKnowledgeService {
 		return this.dataKnowledgeCache$;
 	}
 
-	getFaviconImages(domain: string): Observable<string | null> {
+	getFaviconImages(domain: string, defaultImageType?: string): Observable<string | null> {
+		const defaultFavicon = defaultImageType || DEFAULT_SITES_FAVICON;
 		return this.getKnowledgeBase().pipe(
-			map((knowledgeBase) => knowledgeBase[domain] ? knowledgeBase[domain].icon_link : DEFAULT_SITES_FAVICON),
+			map((knowledgeBase) => knowledgeBase[domain] ? knowledgeBase[domain].icon_link : defaultFavicon),
 			catchError((err) => {
 				console.error(err);
-				return of(DEFAULT_SITES_FAVICON);
+				return of(defaultFavicon);
 			})
 		);
 	}

@@ -3,6 +3,7 @@ import { CommonPopupService } from '../../common-services/popups/common-popup.se
 
 export interface DescribeStep {
 	img: string;
+	img2x: string;
 	title: string;
 	button: {
 		name: string;

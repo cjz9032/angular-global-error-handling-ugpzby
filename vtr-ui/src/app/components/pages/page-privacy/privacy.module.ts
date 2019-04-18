@@ -67,6 +67,8 @@ import { BreachedAccountsService } from './common-services/breached-accounts.ser
 import { CommonTextComponent } from './common-ui/common-text/common-text.component';
 import { TryProductBlockComponent } from './common-ui/try-product-block/try-product-block.component';
 import { PrivacyScoreService } from './common-ui/privacy-score/privacy-score.service';
+import { EmailScannerComponent } from './common-ui/email-scanner/email-scanner.component';
+import { SimpleLoaderComponent } from './common-ui/simple-loader/simple-loader.component';
 
 @NgModule({
 	imports: [
@@ -130,6 +132,8 @@ import { PrivacyScoreService } from './common-ui/privacy-score/privacy-score.ser
 		LandingComponent,
 		CommonTextComponent,
 		TryProductBlockComponent,
+		SimpleLoaderComponent,
+		EmailScannerComponent,
 	],
 	providers: [
 		TrackersPopupService,

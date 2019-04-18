@@ -3,7 +3,8 @@ import { EmailScannerService } from '../../common-services/email-scanner.service
 import { CommonPopupService } from '../../common-services/popups/common-popup.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
-import { filter } from 'rxjs/operators';
+import { debounceTime, filter, takeUntil } from 'rxjs/operators';
+import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
 
 @Component({
 	selector: 'vtr-confirmation-popup',
@@ -29,10 +30,21 @@ export class ConfirmationPopupComponent implements OnInit, OnDestroy, AfterViewI
 	ngOnInit() {
 		this.commonPopupService.getOpenState(this.popupId)
 			.pipe(
+				takeUntil(instanceDestroyed(this)),
 				filter((state) => !state.isOpenState)
-			).subscribe(() => {
+			)
+			.subscribe(() => {
 				this.emailScannerService.cancelVerification();
-		});
+			});
+
+		this.confirmationForm.valueChanges
+			.pipe(
+				debounceTime(100),
+				takeUntil(instanceDestroyed(this)),
+			)
+			.subscribe(() => {
+				this.isError.next(false);
+			});
 	}
 
 	ngAfterViewInit(): void {
@@ -43,11 +55,15 @@ export class ConfirmationPopupComponent implements OnInit, OnDestroy, AfterViewI
 	}
 
 	resendConfirmationCode() {
-		this.emailScannerService.sendConfirmationCode().subscribe(() => {
-			this.isError.next(false);
-		}, (error) => {
-			this.isError.next(true);
-		});
+		this.emailScannerService.sendConfirmationCode()
+			.pipe(
+				takeUntil(instanceDestroyed(this)),
+			)
+			.subscribe(() => {
+				this.isError.next(false);
+			}, (error) => {
+				this.isError.next(true);
+			});
 	}
 
 	confirmCode() {

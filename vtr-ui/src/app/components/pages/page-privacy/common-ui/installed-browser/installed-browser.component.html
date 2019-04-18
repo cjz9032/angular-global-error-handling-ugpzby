@@ -3,8 +3,15 @@
     <div class="installed-browser__detail-col">
       <img class="installed-browser__icon" [src]="installedBrowser.img" alt="">
       <div class="installed-browser__description">
-        <p class="installed-browser__title">{{installedBrowser.accountsCount !== null ? installedBrowser.accountsCount : 'Some'}} accounts stored in {{installedBrowser.name}}</p>
-        <p class="installed-browser__text">{{installedBrowser.name}}’s user data can be easily read by any program on your computer</p>
+        <p *ngIf="installedBrowser.accountsCount !== null"
+           class="installed-browser__title">
+          {{installedBrowser.accountsCount}}
+          account{{installedBrowser.accountsCount > 1 ? 's': ''}}
+          stored in {{installedBrowser.name}}
+        </p>
+        <p class="installed-browser__text">
+          You should consider a more private place to store your emails and passwords.
+        </p>
       </div>
     </div>
     <!--before concent-->
@@ -28,7 +35,7 @@
   </div>
   <div *ngIf="isDetailsExpanded" class="installed-browser__content">
     <div *ngIf="!installedBrowser.accounts" class="browser-preview">
-      <p class="browser-preview__text">Find out what password are being stored unsafely in {{installedBrowser.name}}</p>
+      <p class="browser-preview__text">Find out why storing passwords in your browser isn't as private as you think.</p>
       <button class="browser-preview__btn" (click)="showBrowserPasswords()">Show me</button>
     </div>
 

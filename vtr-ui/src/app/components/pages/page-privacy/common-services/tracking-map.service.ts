@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { of, ReplaySubject, Subject } from 'rxjs';
-import { map, startWith, switchMap, take } from 'rxjs/operators';
+import { Observable, of, ReplaySubject } from 'rxjs';
+import { map, shareReplay, startWith, switchMap, take } from 'rxjs/operators';
 import { ChoseBrowserService } from './chose-browser.service';
 import { UserAllowService } from '../shared/services/user-allow.service';
 import { HttpClient } from '@angular/common/http';
@@ -9,18 +9,23 @@ import { topVisitedSites } from './tracking-map-top';
 import {
 	SingleTrackersInfo,
 	TrackersInfo,
-	TrackingData, TrackingDataDescription,
+	TrackingData,
+	TrackingDataDescription,
 	TrackingDataSiteDescription,
 	typeData
 } from './tracking-map.interface';
 import { returnUniqueElementsInArray } from '../shared/helpers';
+import { FigleafOverviewService } from './figleaf-overview.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class TrackingMapService {
-	private isTrackersBlocked = new Subject<boolean>();
-	isTrackersBlocked$ = this.isTrackersBlocked.asObservable().pipe(startWith(false));
+	isTrackersBlocked$ = this.figleafOverviewService.figleafSettings$.asObservable()
+		.pipe(
+			map((settings) => settings.isAntitrackingEnabled),
+			startWith(false)
+		);
 
 	private trackingData = new ReplaySubject<TrackingData>(1);
 	trackingData$ = this.trackingData.asObservable();
@@ -28,11 +33,14 @@ export class TrackingMapService {
 	private getTrackingSingleData = new ReplaySubject<SingleTrackersInfo>(1);
 	getTrackingSingleData$ = this.getTrackingSingleData.asObservable();
 
+	private trackersCache$: Observable<TrackersInfo>;
+
 	constructor(
 		private choseBrowserService: ChoseBrowserService,
 		private userAllowService: UserAllowService,
 		private http: HttpClient,
-		private vantageCommunicationService: VantageCommunicationService
+		private vantageCommunicationService: VantageCommunicationService,
+		private figleafOverviewService: FigleafOverviewService,
 	) {
 		this.updateTrackingData();
 	}
@@ -48,7 +56,7 @@ export class TrackingMapService {
 	}
 
 	private getTrackingData() {
-		return this.http.get<TrackersInfo>('/assets/privacy-json/trackers.json').pipe(
+		return this.downloadTrackersInfo().pipe(
 			switchMap((trackersInfo) => {
 					let sites = this.getTopWebsites();
 					if (this.choseBrowserService.isBrowserChose() && this.userAllowService.allowToShow.trackingMap) {
@@ -90,5 +98,15 @@ export class TrackingMapService {
 
 	private getTopWebsites() {
 		return of({typeData: typeData.General, sites: topVisitedSites});
+	}
+
+
+	private downloadTrackersInfo() {
+		if (!this.trackersCache$) {
+			this.trackersCache$ = this.http.get<TrackersInfo>('/assets/privacy-json/trackers.json').pipe(
+				shareReplay(1)
+			);
+		}
+		return this.trackersCache$;
 	}
 }

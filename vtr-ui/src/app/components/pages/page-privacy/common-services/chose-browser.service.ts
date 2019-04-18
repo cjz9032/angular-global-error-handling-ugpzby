@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { StorageService } from '../shared/services/storage.service';
 import { VantageCommunicationService } from './vantage-communication.service';
+import { map } from 'rxjs/operators';
 
 @Injectable({
 	providedIn: 'root'
@@ -14,7 +15,9 @@ export class ChoseBrowserService {
 	}
 
 	getBrowserList() {
-		return this.vantageCommunicationService.getInstalledBrowsers();
+		return this.vantageCommunicationService.getInstalledBrowsers().pipe(
+			map((browsers) => browsers.filter((browser) => browser.name !== 'edge')),
+		);
 	}
 
 	setBrowser(browserId: string) {

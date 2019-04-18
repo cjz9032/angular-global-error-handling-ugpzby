@@ -1,4 +1,4 @@
-<div class="trackers__wrapper" *ngIf="(trackingData$ | async) as trackingData">
+<div class="trackers__wrapper" *ngIf="(trackingData$ | async) as trackingData; else loader">
 	<ng-container *ngIf="trackingData?.sites.length > 0">
 		<fl-tracking-map [trackers]="trackingData"
 						 [labels]="getText()"
@@ -26,8 +26,25 @@ Use your browser to view websites, and come back here later, then we can show wh
 	</div>
 </div>
 
+<ng-template #loader>
+	<div class="trackers__wrapper trackers__wrapper--loader">
+		<div class="trackers__spinner-border">
+			<div class="trackers__spinner-wrapper">
+				<div class="trackers__spinner">
+					<div class="trackers__spinner-dot1"></div>
+					<div class="trackers__spinner-dot2"></div>
+				</div>
+			</div>
+		</div>
+		<p class="trackers__spinner-text">Creating tracker map for the most popular websitess</p>
+	</div>
+</ng-template>
+
 <vtr-common-popup [popUpId]="trackingMapSinglePopupId" size="large">
 	<ng-template>
-		<vtr-single-tracker-detail [percentOfTrack]="percentOfTrack"></vtr-single-tracker-detail>
+		<vtr-single-tracker-detail
+			[percentOfTrack]="percentOfTrack"
+			[popUpId]="trackingMapSinglePopupId">
+		</vtr-single-tracker-detail>
 	</ng-template>
 </vtr-common-popup>

@@ -23,26 +23,29 @@ export interface ScoreParametrs {
 export class PrivacyScoreComponent implements OnInit, OnDestroy {
 	describeSteps: DescribeStep[] = [
 		{
-			img: '/assets/images/privacy-tab/default.png',
-			title: '8 breached accounts',
+			img: '/assets/images/privacy-tab/score-popup/breached-accounts.png',
+			img2x: '/assets/images/privacy-tab/score-popup/breached-accounts@2x.png',
+			title: 'Breached accounts',
 			button: {
-				name: 'Review Breached Accounts',
+				name: 'Scan the internet',
 				link: '/privacy/breaches'
 			}
 		},
 		{
-			img: '/assets/images/privacy-tab/default.png',
-			title: 'Visible to online trackers',
+			img: '/assets/images/privacy-tab/score-popup/online-trackers.png',
+			img2x: '/assets/images/privacy-tab/score-popup/online-trackers@2x.png',
+			title: 'online trackers',
 			button: {
-				name: 'Review Who’s Tracks Me',
+				name: 'See who’s tracking me',
 				link: '/privacy/trackers'
 			},
 		},
 		{
-			img: '/assets/images/privacy-tab/default.png',
-			title: 'Easily accessible Accounts',
+			img: '/assets/images/privacy-tab/score-popup/public-passwords.png',
+			img2x: '/assets/images/privacy-tab/score-popup/public-passwords@2x.png',
+			title: 'Non-private passwords',
 			button: {
-				name: 'Review Unprotected Passwords',
+				name: 'Check my browsers',
 				link: '/privacy/browser-accounts'
 			},
 		}

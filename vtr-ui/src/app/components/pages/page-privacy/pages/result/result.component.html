@@ -1,134 +1,96 @@
 <section class="result-page">
 
-    <div class="result-page__score">
-        <vtr-privacy-score></vtr-privacy-score>
+	<div class="result-page__score">
+		<vtr-privacy-score></vtr-privacy-score>
+	</div>
+
+    <div *ngIf="!(isFigleafReadyForCommunication$ | async) && !breached_accounts.length" class="email-scanner">
+        <vtr-email-scanner></vtr-email-scanner>
     </div>
 
-    <div *ngIf="!(isFigleafReadyForCommunication$ | async) && !breached_accounts.length" class="check-breaches">
-        <p class="check-breaches__title">{{(emailWasScanned | async) ? nextEmailScanData.title : firstEmailScanData.title}}</p>
+	<div *ngIf="breached_accounts.length" class="breaches-block breaches-block__wrapper">
+		<h3 class="breaches-block__title">{{breached_accounts.length}} breached accounts</h3>
+		<p class="breaches-block__text">
+			Looks like some of your personal info is floating around online, making it easy for others to access your
+			accounts without your knowledge. You should change your passwords right now.
+		</p>
+		<div class="breaches-block__accounts-row">
+			<div class="breaches-block__accounts-container">
+				<vtr-breached-account
+						[mode]="breachedAccountMode.PREVIEW"
+						[breachedAccounts]="breached_accounts_show"
+						(detailClick)="redirectToDetailPage($event)">
+				</vtr-breached-account>
+			</div>
+			<div *ngIf="breached_accounts.length > 3" class="breaches-block__see-more more-breaches">
+				<div class="more-breaches__number">
+					<span class="more-breaches__plus">+</span>
+					{{breached_accounts.length - 3}}
+				</div>
+				<span class="more-breaches__description">breached accounts</span>
+				<a routerLink="./breaches" class="more-breaches__btn">Show All</a>
+			</div>
+		</div>
+		<p class="breaches-block__get-figleaf-text">
+			Ready to take control of your privacy?
+			<a class="breaches-block__get-figleaf-link" href="">Get Lenovo Privacy by FigLeaf</a>
+		</p>
+	</div>
 
-        <div *ngIf="!(emailWasScanned | async)" class="check-breaches__text-content">
-            <p class="check-breaches__text">Your Lenovo is designed to put you in control of
-                your privacy. Let’s start by finding out if your personal info has been part of a data breach.</p>
-            <p class="check-breaches__text">Your privacy is important to us, so your email
-                will only be used to show you what we’ve found. Nothing else.</p>
-        </div>
+	<div *ngIf="(isFigleafReadyForCommunication$ | async) && breached_accounts.length === 0" class="privacy-dashboard">
+		<h2 class="privacy-dashboard__title">Privacy control at a glance</h2>
+		<vtr-privacy-dashboard-list></vtr-privacy-dashboard-list>
+	</div>
 
-        <div *ngIf="(emailWasScanned | async)" class="check-breaches__text-content">
-            <p class="check-breaches__text">Good news —
-                <strong>{{userEmail || 'your email'}}</strong> didn’t come up in our privacy checkup.
-                If you us another email, make sure it’s safe too.</p>
-        </div>
+	<div class="trackers">
+		<div class="trackers__header-row">
+			<h3 class="trackers__title">Check for website trackers</h3>
+			<a class="trackers__popup-btn" routerLink="./trackers">Who’s tracking me?</a>
+		</div>
+		<p class="trackers__text">
+			Some sites use trackers to improve and personalize your experience. Other sites use trackers to collect info
+			about you — things like what device you use, where you shop, and what you buy — and then sell what they
+			learn to advertisers. Lenovo Privacy by FigLeaf gives you a say in when to allow trackers and when to block
+			them.
+		</p>
+		<vtr-tracking-map></vtr-tracking-map>
+	</div>
 
-        <vtr-check-breaches-form></vtr-check-breaches-form>
+	<div class="browser-accounts-block browser-accounts-block__wrapper">
+		<!--Easily accessible passwords-->
+		<h3 class="browser-accounts-block__title">Non-private passwords</h3>
+		<p class="browser-accounts-block__text">You might be storing emails and passwords for your favorite sites right
+			in your browser. This makes it easier for someone to access them without your knowledge. Find out.</p>
 
-        <div *ngIf="!(emailWasScanned | async)" class="check-breaches__description check-breaches__description--first-scan">
-            <vtr-scan-steps [innerIndent]="true" steps="scanSteps"></vtr-scan-steps>
-        </div>
+		<div *ngIf="!(isConsentToGetBrowsersAccountsGiven$ | async)" class="browser-accounts-concent">
+			<div class="browser-accounts-concent__text-wrapper">
+				<p class="browser-accounts-concent__text">
+					We need your permission to access and show you the passwords stored in your browser.
+				</p>
+			</div>
+			<div class="browser-accounts-concent__btn-wrapper">
+				<button class="browser-accounts-concent__btn" (click)="giveConcentToGetBrowserAccounts()">
+					I agree
+				</button>
+			</div>
+		</div>
 
-        <div *ngIf="(emailWasScanned | async)" class="check-breaches__description check-breaches__description--next-scan">
-            <div class="check-breaches-description">
-                <div class="check-breaches-description__text">Want to know right away if your info comes up in a futere
-                    breach?
-                </div>
-                <a class="check-breaches-description__link" href="https://figleafapp.com/">Get Lenovo Privacy by
-                    Figleaf</a>
-            </div>
-            <div class="check-breaches-risks">
-                <div class="check-breaches-risks__text-col">
-                    <div class="check-breaches-risks__description">
-                        <p class="check-breaches-risks__title">What is the risk?</p>
-                        <p class="check-breaches-risks__text">Some of your personal information may be open to all. This
-                            happens after hacking the site where you have an account.</p>
-                    </div>
-                    <a class="check-breaches-risks__link" href="https://figleafapp.com/">Tell me more</a>
-                </div>
-                <div class="check-breaches-risks__img-col">
-                    <picture class="check-breaches-risks__img">
-                        <source srcset="/assets/images/privacy-tab/gray-safe.webp 1x, /assets/images/privacy-tab/gray-safe@2x.webp 2x">
-                        <source srcset="/assets/images/privacy-tab/gray-safe.png 1x, /assets/images/privacy-tab/gray-safe@2x.png 2x">
-                        <img class="check-breaches-risks__img" src="/assets/images/privacy-tab/gray-safe.png" alt="">
-                    </picture>
-                </div>
-            </div>
-        </div>
-    </div>
+		<div *ngIf="isFigleafReadyForCommunication$ | async" class="figleaf-stored-accounts">
+			<img class="figleaf-stored-accounts__img"
+			     src="/assets/images/privacy-tab/logo-leaf.png"
+			     srcset="/assets/images/privacy-tab/logo-leaf@2x.png 2x"
+			     alt="figleaf logo">
+			<div class="figleaf-stored-accounts__details-col">
+				<p class="figleaf-stored-accounts__title">
+					<strong>{{(figleafDashboard | async).maskedAccounts}}</strong>
+					accounts stored in Lenovo Privacy by FigLeaf
+				</p>
+				<button class="figleaf-stored-accounts__btn">Show details</button>
+			</div>
+		</div>
 
-    <div *ngIf="breached_accounts.length" class="breaches-block breaches-block__wrapper">
-        <h3 class="breaches-block__title">{{breached_accounts.length}} breached accounts</h3>
-        <p class="breaches-block__text">Looks like some of your personal info is floating around online, making it easy
-            for others to access your accounts without your knowledge. You should change your passwords right now.</p>
-        <div class="breaches-block__accounts-row">
-            <div class="breaches-block__accounts-container">
-                <vtr-breached-account
-                        [mode]="breachedAccountMode.PREVIEW"
-                        [breachedAccounts]="breached_accounts_show"
-                        (detailClick)="redirectToDetailPage($event)">
-                </vtr-breached-account>
-            </div>
-            <div *ngIf="breached_accounts.length > 3" class="breaches-block__see-more more-breaches">
-                <div class="more-breaches__number">
-                    <span class="more-breaches__plus">+</span>
-                    {{breached_accounts.length - 3}}
-                </div>
-                <span class="more-breaches__description">breached accounts</span>
-                <a routerLink="./breaches" class="more-breaches__btn">Show All</a>
-            </div>
-        </div>
-        <p class="breaches-block__get-figleaf-text">Ready to take control of your privacy?
-            <a class="breaches-block__get-figleaf-link" href="">Get Lenovo Privacy by FigLeaf</a>
-        </p>
-    </div>
+		<vtr-browser-stored-accounts [inputData]="browserStoredAccountsData"></vtr-browser-stored-accounts>
+	</div>
 
-    <div *ngIf="(isFigleafReadyForCommunication$ | async) && breached_accounts.length === 0" class="privacy-dashboard">
-        <h2 class="privacy-dashboard__title">Privacy control at a glance</h2>
-        <vtr-privacy-dashboard-list></vtr-privacy-dashboard-list>
-    </div>
-
-    <div class="trackers">
-        <div class="trackers__header-row">
-            <h3 class="trackers__title">What are website trackers?</h3>
-            <a class="trackers__popup-btn" routerLink="./trackers">Who’s tracking me?</a>
-        </div>
-        <p class="trackers__text">Some sites, like Google and Microsoft, use trackers to improve and personalize your
-            experience. Other sites use trackers to collect info about you —
-            <i>things like what device you use, where you shop, and what you buy</i> — and then sell what they learn to
-            advertisers.</p>
-        <p class="trackers__text">Lenovo Privacy by FigLeaf gives you a say in when to allow trackers and when to block
-            them.</p>
-        <vtr-tracking-map></vtr-tracking-map>
-    </div>
-
-    <div class="browser-accounts-block browser-accounts-block__wrapper">
-        <h3 class="browser-accounts-block__title">Easily accessible passwords</h3>
-        <p class="browser-accounts-block__text">You’re storing some of your passwords in your web browser. It’s
-            convenient, but not all browsers are designed with privacy in mind.</p>
-
-        <div *ngIf="!(isConsentToGetBrowsersAccountsGiven$ | async)" class="browser-accounts-concent">
-            <div class="browser-accounts-concent__text-wrapper">
-                <p class="browser-accounts-concent__text">You agree to give access to view passwords that are stored in
-                    browsers?</p>
-            </div>
-            <div class="browser-accounts-concent__btn-wrapper">
-                <button class="browser-accounts-concent__btn" (click)="giveConcentToGetBrowserAccounts()">I agree
-                </button>
-            </div>
-        </div>
-
-        <div *ngIf="isFigleafReadyForCommunication$ | async" class="figleaf-stored-accounts">
-            <img class="figleaf-stored-accounts__img"
-                 src="/assets/images/privacy-tab/logo-leaf.png"
-                 srcset="/assets/images/privacy-tab/logo-leaf@2x.png 2x"
-                 alt="figleaf logo">
-            <div class="figleaf-stored-accounts__details-col">
-                <p class="figleaf-stored-accounts__title"><strong>{{(figleafDashboard | async).maskedAccounts}}</strong>
-                    accounts stored in Lenovo Privacy by FigLeaf</p>
-                <button class="figleaf-stored-accounts__btn">Show details</button>
-            </div>
-        </div>
-
-        <vtr-browser-stored-accounts [inputData]="browserStoredAccountsData"></vtr-browser-stored-accounts>
-    </div>
-
-    <vtr-support-banner></vtr-support-banner>
+	<vtr-support-banner></vtr-support-banner>
 </section>

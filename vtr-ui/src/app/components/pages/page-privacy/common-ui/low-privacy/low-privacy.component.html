@@ -3,15 +3,15 @@
 		Why the low privacy score?
 	</h2>
 	<p class="low-privacy__text">
-		There are few things you need to take care of.
+		By checking for breached accounts, online trackers, and any passwords stored in your browser, you’ll know if
+		you’re doing enough to stay private.
 	</p>
-	
+
 	<div class="low-privacy__desribe-wrapper">
 		<div class="low-privacy__desribe-step" *ngFor="let step of steps">
 			<picture class="low-privacy__desribe-img">
-				<!--<source srcset="/assets/images/privacy-tab/privacy-search.webp, /assets/images/privacy-tab/privacy-search@2x.webp 2x" type="image/webp">-->
-				<!--<source srcset="/assets/images/privacy-tab/privacy-search@2x.png 2x" type="image/png">-->
-				<img [src]="step.img" alt="default">
+				<source srcset="{{step.img2x}} 2x" type="image/png">
+				<img [src]="step.img" alt="{{step.title}}">
 			</picture>
 			<div class="low-privacy__desribe-title">
 				{{step.title}}
@@ -27,20 +27,16 @@
 		<div class="low-privacy__figleaf-slogan">
 			<h3 class="low-privacy__figleaf-text">Improve your score with Lenovo Privacy by FigLeaf</h3>
 			<img class="low-privacy__figleaf-img"
-				 src="/assets/images/privacy-tab/figleaf.png"
-				 alt="figleaf">
+			     src="/assets/images/privacy-tab/figleaf.png"
+			     srcset="/assets/images/privacy-tab/figleaf@2x.png 2x"
+			     alt="figleaf">
 		</div>
 
 		<p class="low-privacy__text">
 			It lets you share what you want or keep things private for each site you visit or transact with. Your email.
-			Payment and billing info. Your location. Even your personal interests.
-			No matter what you do or where you go, you decide your level of privacy.
+			Payment and billing info. Your location. Even your personal interests. No matter what you do or where you
+			go, you decide your level of privacy. Start your <strong>14-day free trial.</strong> No credit card required.
 		</p>
-
-		<vtr-promo-video
-			[data]="promoVideoData"
-			[popupData]="promoVideoPopupData"
-		></vtr-promo-video>
 	</div>
 
 	<button class="low-privacy__button">

@@ -121,9 +121,19 @@ $leftIndent: 7.5rem;
 		&:not(:first-child) {
 			margin-left: 2.4rem;
 		}
+	}
 
-		&--transparent {
-			@extend %theme-btn--transparent;
-		}
+	&__action-link {
+		@extend %button-link;
+		@extend %button-link--to-right;
+		margin: 0 0 0 4rem;
+	}
+
+	&__show-more-text {
+		@extend %button-link__text;
+		display: inline-block;
+		line-height: 1.8rem;
+		border-bottom: 1px solid #4a81fd;
+		color: #4A81FD;
 	}
 }

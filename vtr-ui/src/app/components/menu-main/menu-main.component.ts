@@ -146,12 +146,17 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			forArm: false,
 			subitems: []
 		}, {
-            id: 'privacy',
-            label: 'Privacy',
-            path: 'privacy',
-            icon: 'privacy',
-            subitems: []
-        }, {
+			id: 'privacy',
+			label: 'common.menu.privacy',
+			path: 'privacy',
+			icon: ['fal', 'eye'],
+			metricsEvent: 'itemClick',
+			metricsParent: 'navbar',
+			metricsItem: 'link.privacy',
+			routerLinkActiveOptions: { exact: true },
+			forArm: false,
+			subitems: []
+		}, {
 			id: 'user',
 			label: 'User',
 			path: 'user',

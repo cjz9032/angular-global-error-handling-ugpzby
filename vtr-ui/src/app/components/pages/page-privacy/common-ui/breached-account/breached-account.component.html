@@ -1,7 +1,9 @@
 <div class="breached-account" *ngFor="let account of breachedAccounts; let i = index">
 	<div class="breached-account__preview">
 		<div class="breached-account__social">
-			<img class="breached-account__img" [src]="account.image || account.domain | sitesFavicon | async" alt="">
+			<img class="breached-account__img"
+				 [src]="account.image || account.domain | sitesFavicon:'/assets/images/privacy-tab/Unknown.png' | async"
+				 [alt]="account.domain">
 			<div class="breached-account__social-description">
 				<h4 class="breached-account__title">{{transformDomain(account.domain)}}</h4>
 				<p class="breached-account__email"
@@ -30,10 +32,10 @@
 	<div *ngIf="openId === i" class="breached-account__description">
 		<vtr-breached-description [breachedAccount]="account"></vtr-breached-description>
 		<div class="breached-account__action">
-			<button class="breached-account__action-button">What should i do?</button>
-			<button class="breached-account__action-button breached-account__action-button--transparent">
-				This is old info
-			</button>
+			<button class="breached-account__action-button">Try Lenovo Privacy</button>
+			<a routerLink="/privacy/landing" class="breached-account__action-link">
+				Learn More
+			</a>
 		</div>
 	</div>
 </div>

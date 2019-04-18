@@ -4,8 +4,7 @@ import { CommonPopupService } from '../common-services/popups/common-popup.servi
 import { ChoseBrowserService } from '../common-services/chose-browser.service';
 import { Router } from '@angular/router';
 import { CommunicationWithFigleafService } from '../communication-with-figleaf/communication-with-figleaf.service';
-import { SafeStorageService } from '../shared/services/safe-storage.service';
-import { SettingsStorageService } from '../shared/services/settings-storage.service';
+import { TrackingMapService } from '../common-services/tracking-map.service';
 
 @Component({
 	// selector: 'vtr-layer',
@@ -22,8 +21,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 		private choseBrowserService: ChoseBrowserService,
 		private router: Router,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
-		private safeStorageService: SafeStorageService,
-		private settingsStorageService: SettingsStorageService,
+		private trackingMapService: TrackingMapService,
 	) {
 	}
 
@@ -40,6 +38,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 
 	choseBrowser(browserValue) {
 		this.choseBrowserService.setBrowser(browserValue);
+		this.trackingMapService.updateTrackingData();
 		this.closePopUp(this.choseBrowserPopupId);
 		this.router.navigateByUrl('/privacy/trackers');
 	}

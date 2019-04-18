@@ -10,8 +10,8 @@ export class SitesFaviconPipe implements PipeTransform {
 	constructor(private dataKnowledgeService: DataKnowledgeService) {
 	}
 
-	transform(domain: string, args?: any): Observable<string> {
-		return this.dataKnowledgeService.getFaviconImages(domain);
+	transform(domain: string, defaultImageType?: string): Observable<string> {
+		return this.dataKnowledgeService.getFaviconImages(domain, defaultImageType);
 	}
 
 }

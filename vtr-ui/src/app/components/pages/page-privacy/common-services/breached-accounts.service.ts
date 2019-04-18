@@ -33,9 +33,7 @@ export class BreachedAccountsService {
 
 	getBreachedAccounts(): Subscription {
 		return merge(
-			this.emailScannerService.validationStatusChanged$.pipe(
-				distinctUntilChanged(),
-			),
+			this.emailScannerService.validationStatusChanged$,
 			this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(
 				distinctUntilChanged(),
 			)
@@ -47,22 +45,24 @@ export class BreachedAccountsService {
 			),
 			switchMap((isFigleafInstalled) => {
 				if (isFigleafInstalled) {
-					return this.communicationWithFigleafService.sendMessageToFigleaf({type: 'getFigleafBreachedAccounts'}).pipe(
-						map((response: GetBreachedAccountsResponse) => {
-							return response.payload.breaches;
-						}),
-						catchError((error) => {
-							console.error('getFigleafBreachedAccounts error: ', error);
-							return EMPTY;
-						}),
-					);
+					return this.communicationWithFigleafService.sendMessageToFigleaf({type: 'getFigleafBreachedAccounts'})
+						.pipe(
+							map((response: GetBreachedAccountsResponse) => {
+								return response.payload.breaches;
+							}),
+							catchError((error) => {
+								console.error('getFigleafBreachedAccounts error: ', error);
+								return EMPTY;
+							}),
+						);
 				} else {
-					return this.emailScannerService.getBreachedAccountsByEmail().pipe(
-						catchError((error) => {
-							console.error('getBreachedAccountsByEmail error', error);
-							return EMPTY;
-						})
-					);
+					return this.emailScannerService.getBreachedAccountsByEmail()
+						.pipe(
+							catchError((error) => {
+								console.error('getBreachedAccountsByEmail error', error);
+								return EMPTY;
+							})
+						);
 				}
 			})
 		).subscribe((response: BreachedAccount[]) => {

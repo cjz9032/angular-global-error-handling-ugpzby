@@ -53,10 +53,7 @@ export class VantageCommunicationService {
 		);
 
 		return this.vantageShellService.sendContractToPrivacyCore<InstalledBrowsers>(contract).pipe(
-			map((response) =>
-				response.browsers.filter((browser) => browser !== 'edge')
-			),
-			map((browsers) => browsers.map((browser) => ({
+			map((response) => response.browsers.map((browser) => ({
 				name: browser,
 				img: `/assets/images/privacy-tab/${browser}.svg`,
 				value: browser

@@ -2,19 +2,16 @@
 	<vtr-common-text [texts]="commonTexts"></vtr-common-text>
 
     <div class="breached-accounts">
-        <p class="breached-accounts__text">Looks like some of your personal info is floating around online, making it easy for others to access your accounts without your knowledge. You should change your passwords right now.</p>
 
-		<vtr-breached-account
-			[breachedAccounts]="breached_accounts"
-			[openId]="openBreachedId$ | async">
-		</vtr-breached-account>
+        <div *ngIf="!(isFigleafReadyForCommunication$ | async) && !breached_accounts?.length" class="email-scanner">
+            <vtr-email-scanner></vtr-email-scanner>
+        </div>
 
-        <div class="breaches-promo">
-            <img class="breaches-promo__img" src="/assets/images/privacy-tab/default.png" alt="">
-            <div class="breaches-promo__text-col">
-                <div class="breaches-promo__text">Use another email? Make sure it’s safe too.</div>
-                <a class="breaches-promo__link" href="https://figleafapp.com/">Get Lenovo Privacy by FigLeaf</a>
-            </div>
+        <div *ngIf="breached_accounts?.length" class="breaches-wrapper">
+            <vtr-breached-account
+                    [breachedAccounts]="breached_accounts"
+                    [openId]="openBreachedId$ | async">
+            </vtr-breached-account>
         </div>
 
     </div>

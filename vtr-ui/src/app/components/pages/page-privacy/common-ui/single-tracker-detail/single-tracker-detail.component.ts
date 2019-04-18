@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TrackingMapService } from '../../common-services/tracking-map.service';
+import { CommonPopupService } from '../../common-services/popups/common-popup.service';
 
 @Component({
 	selector: 'vtr-single-tracker-detail',
@@ -8,10 +9,14 @@ import { TrackingMapService } from '../../common-services/tracking-map.service';
 })
 export class SingleTrackerDetailComponent implements OnInit {
 	@Input() percentOfTrack = 0;
+	@Input() popUpId: string;
 	trackingMapSingleData$ = this.trackingMapService.getTrackingSingleData$;
 	isTrackersBlocked$ = this.trackingMapService.isTrackersBlocked$;
 
-	constructor(private trackingMapService: TrackingMapService) {
+	constructor(
+		private trackingMapService: TrackingMapService,
+		private commonPopupService: CommonPopupService
+	) {
 	}
 
 	ngOnInit() {
@@ -23,6 +28,10 @@ export class SingleTrackerDetailComponent implements OnInit {
 			'tracker__types-item--blue': trackingTypeName.toLowerCase() === 'social',
 			'tracker__types-item--pink': trackingTypeName.toLowerCase() === 'analytics',
 		};
+	}
+
+	closePopup() {
+		this.commonPopupService.close(this.popUpId);
 	}
 
 }

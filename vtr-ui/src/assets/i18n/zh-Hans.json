@@ -17,7 +17,8 @@
 				"sub5": "因特网保护",
 				"sub6": "Windows Hello"
 			},
-			"support": "支持服务"
+			"support": "支持服务",
+			"privacy": "隐私"
 		},
 		"securityAdvisor": {
 			"title": "安全顾问",

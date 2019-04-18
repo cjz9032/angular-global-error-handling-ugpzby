@@ -31,7 +31,7 @@
     </div>
 
     <div class="confirm-popup__confirm-btn-wrapper">
-      <button class="confirm-popup__confirm-btn" [class.confirm-popup__confirm-btn--error]="isError$ | async" type="submit">Confirm email</button>
+      <button class="confirm-popup__confirm-btn" [class.confirm-popup__confirm-btn--error]="confirmationForm.get('confirmationCode').dirty && confirmationForm.get('confirmationCode').invalid || (isError$ | async)" type="submit">Confirm email</button>
     </div>
   </form>
 </div>

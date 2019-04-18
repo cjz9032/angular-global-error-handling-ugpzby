@@ -24,7 +24,7 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 	isUserData = false;
 	choseBrowserName = this.choseBrowserService.getName();
 
-	trackingData$ = this.getTrackingData().pipe(tap((res) => console.log(res)));
+	trackingData$ = this.getTrackingData();
 
 	isTrackersBlocked$ = this.trackingMapService.isTrackersBlocked$;
 
@@ -38,8 +38,7 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 		private commonPopupService: CommonPopupService,
 		private choseBrowserService: ChoseBrowserService,
 		private userAllowService: UserAllowService,
-	) {
-	}
+	) {}
 
 	ngOnInit() {
 		this.listenTrackingControl();

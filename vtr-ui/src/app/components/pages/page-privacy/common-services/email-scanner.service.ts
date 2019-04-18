@@ -75,7 +75,13 @@ export class EmailScannerService {
 		});
 		return this.http.post(`${this.environment.backendUrl}/api/v1/vantage/auth/init`, {
 			'email': this._userEmail$.getValue(),
-		}, {headers: headers});
+		}, {headers: headers})
+			.pipe(
+				catchError((error) => {
+					this.loadingStatusChanged.next(false);
+					return throwError('start authorization error', error);
+				})
+			);
 	}
 
 	validateVerificationCode(code) {

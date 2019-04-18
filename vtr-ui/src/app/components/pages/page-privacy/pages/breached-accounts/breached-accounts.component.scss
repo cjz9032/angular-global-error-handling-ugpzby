@@ -1,8 +1,16 @@
 @import "../../styles/common-blocks";
 
-.breached-accounts {
+.email-scanner {
   @extend %common-block-wrapper;
   padding: 3.5rem 4rem 4rem 4rem;
+}
+
+.breaches-wrapper {
+  @extend %common-block-wrapper;
+  padding: 3.5rem 4rem 4rem 4rem;
+}
+
+.breached-accounts {
   &__text {
     @extend %text-common;
     margin: 0 0 2rem 0;
@@ -15,59 +23,5 @@
   &__account {
     width: 100%;
     margin: 1rem 1.5rem;
-  }
-}
-
-.breaches-promo {
-  border: 1px solid #ECF0F1;
-  border-radius: 10px;
-  margin: 4rem 0 0 0;
-  padding: 3.7rem 4rem 3.8rem 4.2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  &__img {
-    height: 100%;
-    max-height: 4rem;
-  }
-  &__text-col {
-    flex-grow: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 0 0 4.2rem;
-  }
-  &__text {
-    margin: 0;
-    color: #34495E;
-    font-size: 1.6rem;
-    font-weight: bold;
-    padding: 0 1.5rem 0 0;
-  }
-  &__link {
-    @include href();
-    text-transform: uppercase;
-    color: #4A81FD;
-    font-size: 1.3rem;
-    font-weight: 500;
-    line-height: 1.5rem;
-    text-decoration: underline;
-    margin: 0;
-  }
-}
-
-.promo {
-  @extend %common-block-wrapper;
-  padding: 3.5rem 4rem 4rem 4rem;
-  &__title {
-    @extend %subtitle;
-    margin: 0 0 2rem 0;
-  }
-  &__text {
-    @extend %text-common;
-    margin: 0 0 2rem 0;
-  }
-  &__features-list {
-    margin: 3.7rem 0;
   }
 }
