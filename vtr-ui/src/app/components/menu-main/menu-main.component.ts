@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, DoCheck, HostListener, SimpleChanges, SimpleChange } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -25,7 +25,7 @@ import { RegionService } from 'src/app/services/region/region.service';
 	templateUrl: './menu-main.component.html',
 	styleUrls: ['./menu-main.component.scss']
 })
-export class MenuMainComponent implements OnInit, OnDestroy {
+export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 
 	public deviceModel: string;
 	public country: string;
@@ -35,6 +35,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	constantDevice = 'device';
 	constantDeviceSettings = 'device-settings';
 	region: string;
+	public isDashboard = false;
 	items: Array<any> = [
 		{
 			id: 'dashboard',
@@ -174,7 +175,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		vantageShellService: VantageShellService,
 		private translate: TranslateService,
 		private regionService: RegionService
-	) {
+		) {
 		this.showVpn();
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		if (cacheShowWindowsHello) {
@@ -224,6 +225,16 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+		this.isDashboard = true;
+	}
+	ngDoCheck() {
+		if (this.router.url !== null) {
+			if (this.router.url.indexOf('dashboard', 0) > 0) {
+				this.isDashboard = true;
+			} else {
+				this.isDashboard = false;
+			}
+		}
 	}
 	ngOnDestroy() {
 		if (this.commonMenuSubscription) {
@@ -232,7 +243,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	}
 
 	isParentActive(item) {
-		// console.log('IS PARENT ACTIVE', item, this.router, this.route);
+		console.log('IS PARENT ACTIVE', item.id, item.path);
 	}
 
 	showItem(item) {
@@ -246,6 +257,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	}
 
 	menuItemClick(event, path) {
+		// console.log (path);
 		this.router.navigateByUrl(path);
 	}
 

@@ -10,6 +10,7 @@ export class WidgetMcafeeComponent implements OnInit {
 
 	@Input() install: any;
 	@Input() name: string;
+	@Input() mcafee: any;
 	urlGetMcAfee = 'https://home.mcafee.com/root/campaign.aspx?cid=233426'; // todo
 	constructor() { }
 
