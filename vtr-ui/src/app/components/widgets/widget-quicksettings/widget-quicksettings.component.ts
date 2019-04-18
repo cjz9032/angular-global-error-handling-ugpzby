@@ -91,9 +91,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			this.getCameraStatus();
 		}
 
-		this.getEyeCareModePermission();
 		this.initEyecaremodeSettings();
-		//this.getCameraPermission();
 	}
 	
 	public getCameraPermission() {
@@ -128,6 +126,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 							} else {
 								this.getEyeCareModeStatus();
 							}
+							this.getEyeCareModePermission();
 						}
 					}).catch(error => {
 						console.error('initEyecaremodeSettings', error);
@@ -173,7 +172,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				.getEyeCareMode()
 				.then((featureStatus: FeatureStatus) => {
 					console.log('getEyeCareMode.then', featureStatus);
-					this.eyeCareModeStatus = featureStatus;
+					this.eyeCareModeStatus.available = featureStatus.available;
+					this.eyeCareModeStatus.status = featureStatus.status
 					this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, featureStatus);
 				})
 				.catch(error => {
