@@ -5,18 +5,19 @@
 		margin-top: 2.7rem;
 		list-style: none;
 		padding: 0;
-		background-color: $shade_lightest;
+		background-color: #f5f7f8;
 		border: .1rem solid $shade_lighter;
 		border-radius: $border_radius;
 
 		li {
 			min-height: 6rem;
-			padding: 1.5rem 1rem 1.5rem 0;
+			// padding: 1.5rem 1rem 1.5rem 0;
 			border-bottom: .1rem solid $shade_lighter;
 			color: $main_darker;
 
 			&.pointer {
 				cursor: pointer;
+
 				&:hover {
 					background-color: $shade_extralight;
 				}
@@ -31,6 +32,7 @@
 				.item-icon {
 					.icon-bkg {
 						background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+						background-color: $go_dark;
 						border-color: $go_dark;
 					}
 				}
@@ -40,17 +42,27 @@
 				.item-icon {
 					.icon-bkg {
 						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
-						border-color: $stop_dark
+						background-color: $stop_dark;
+						border-color: $stop_dark;
 					}
 				}
 			}
 
 			a {
-				color: $main_darker;
+				width: 100%;
+				height: 100%;
+				color: #34495e;
+				display: block;
+				padding: 1.5rem 1rem 1.5rem 0;
 
 				&:hover {
 					text-decoration: none;
+					background-color: $shade_extralight;
 				}
+			}
+
+			.no-pointer {
+				padding: 1.5rem 1rem 1.5rem 0;
 			}
 
 			.item-icon {
@@ -79,6 +91,13 @@
 				}
 			}
 
+			.item-icon-image {
+				display: inline-block;
+				height: 2.4rem;
+				width: 2.4rem;
+				line-height: 3rem;
+			}
+
 			.item-text {
 				overflow: hidden;
 				display: flex;
@@ -87,7 +106,7 @@
 				.title {
 					line-height: 1.8rem;
 					font-size: 1.4rem;
-					font-weight: $weight_medium;
+					font-weight: $weight_bold;
 					float: left;
 
 					&.light-title {
@@ -121,9 +140,10 @@
 				font-size: 2rem;
 			}
 
-			.image{
+			.image {
 				display: inline-block;
-				img{
+
+				img {
 					width: 74%;
 				}
 			}

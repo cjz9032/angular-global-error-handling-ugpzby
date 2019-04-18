@@ -1,11 +1,10 @@
-import { Component, OnInit, HostListener, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, HostListener, AfterViewInit, OnDestroy, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from '../../../services/user/user.service';
 import { Subscription, timer } from 'rxjs';
-
-// TODO: Create facebook new account within UWP WebView control will increase memory rapidly and crash app fianlly,
-// Test if same issue happen in WINJS webview control.
-// Verified the same issue happen in MS-webview control. Need to fix.
+import { SupportService } from '../../../services/support/support.service';
+import { DevService } from '../../../services/dev/dev.service';
+import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-modal-lenovo-id',
@@ -17,12 +16,26 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	private cacheCleared: boolean;
 	private detectConnectionStatusSub: Subscription;
 	private detectConnectionStatusTimer = timer(5000, 5000);
+	public isBroswerVisible = false; // show or hide web browser, hide or show progress spinner
+	private metrics: any;
 	constructor(
 		public activeModal: NgbActiveModal,
-		private userService: UserService
+		private userService: UserService,
+		private supportService: SupportService,
+		private devService: DevService,
+		private vantageShellService: VantageShellService,
 	) {
 		this.isOnline = false;
 		this.cacheCleared = false;
+		this.isBroswerVisible = false;
+
+		this.metrics = vantageShellService.getMetrics();
+		if (!this.metrics) {
+			this.devService.writeLog('ModalLenovoIdComponent constructor: metrics object is undefined');
+			this.metrics = {
+				sendAsync() {}
+			};
+		}
 	}
 
 	// Capture the html content in webView
@@ -38,9 +51,10 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 
 		promise.then(function (result) {
 			// For result
-			console.log(result);
+			//console.log(result);
 		}).catch(function (error) {
 			// Error
+			console.log(error);
 		});
 		return promise;
 	}
@@ -52,9 +66,95 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 
 		const webView = document.querySelector('#lid-webview') as MsWebView;
 		if (!this.cacheCleared) {
-			webView.src = 'https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null';
+			// This is the link for SSO production environment
+			//webView.src = 'https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null';
+			// This is the link for SSO dev environment
+			webView.src = 'https://uss-test.lenovomm.cn/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null';
 			this.cacheCleared = true;
 		}
+	}
+
+	//
+	// The input parameter 'locale' come from field 'locale' in machine info xml, 
+	// it is system locale setting, this fucntion is to convert the locale to LID supported 17 languages.
+	// here is map for each language:
+	//	zh_CN: 中文(简体)
+	// 	zh_HANT: 中文(繁体)
+	//	da_DK: Dansk
+	// 	de_DE: Deutsch
+	//	en_US: English
+	// 	fr_FR: Francais
+	// 	it_IT: Italiano
+	// 	ja_JP: 日本語
+	// 	ko_kR: Korean
+	//	no_NO: Norsk
+	//  nl_NL: Nederlands
+	//  pt_BR: Portugues(Brasi1)
+	//  pt_PT: Portugues(Portugal)
+	//  fi_FI: Suomi
+	//  es_ES: Espanol
+	//  sv_SE: Svenska
+	//  ru_RU: Russian
+	//
+	getLidSupportedLanguageFromLocale(locale) {
+		var lang = "en_US";
+		switch(locale) {
+			case "zh-hans":
+				lang = "zh_CN";
+				break;
+			case "zh-hant":
+				lang = "zh_HANT";
+				break;
+			case "da":
+				lang = "da_DK";
+				break;
+			case "de":
+				lang = "de_DE";
+				break;
+			case "en":
+				lang = "en_US";
+				break;
+			case "fr":
+				lang = "fr_FR";
+				break;
+			case "it":
+				lang = "it_IT";
+				break;
+			case "ja":
+				lang = "ja_JP";
+				break;
+			case "ko":
+				lang = "ko_kR";
+				break;
+			case "no":
+				lang = "no_NO";
+				break;
+			case "nl":
+				lang = "nl_NL";
+				break;
+			case "pt_BR":
+				lang = "pt_BR";
+				break;
+			case "pt":
+				lang = "pt_PT";
+				break;
+			case "fi":
+				lang = "fi_FI";
+				break;
+			case "es":
+				lang = "es_ES";
+				break;
+			case "sv":
+				lang = "sv_SE";
+				break;
+			case "ru":
+				lang = "ru_RU";
+				break;
+			default:
+				lang = "en_US";
+				break;
+		}
+		return lang;
 	}
 
 	ngAfterViewInit() {
@@ -76,15 +176,22 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		// Get logon url and navigate to it
 		self.userService.getLoginUrl().then((result) => {
 			if (result.success && result.status === 0) {
-				const loginUrl = result.logonURL;
+				var loginUrl = result.logonURL;
 				if (loginUrl.indexOf('sso.lenovo.com') === -1) {
 					self.activeModal.dismiss();
-					console.log('user already logged in');
+					self.devService.writeLog('User has already logged in');
 					return;
 				} else {
-					// TODO: call JS bridge to get current system local and set to url
+					// Get current system local and set to url
+					self.supportService.getMachineInfo().then((machineInfo) => {
+						loginUrl += "&lang=" + self.getLidSupportedLanguageFromLocale(machineInfo.locale);
+						webView.src = loginUrl;
+						self.devService.writeLog('Loading login page ', loginUrl);
+					}, error => {
+						webView.src = loginUrl;
+						self.devService.writeLog('getMachineInfo() failed ' + error + ', loading default login page ' + loginUrl);
+					});
 				}
-				webView.src = loginUrl;
 			}
 		});
 
@@ -92,10 +199,12 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			const webViewEvent = EventArgs as WebViewEvent;
 			if (webViewEvent.isSuccess) {
 				if (EventArgs.uri.startsWith('https://passport.lenovo.com/wauthen5/userLogout?')) {
-					// Prevent the webview from opening URIs in the default browser.
-					// EventArgs.preventDefault();
 					return;
 				}
+				if (EventArgs.uri.startsWith('https://uss-test.lenovomm.cn/wauthen5/userLogout?')) {
+					return;
+				}
+				self.isBroswerVisible = true;
 				if (EventArgs.srcElement.documentTitle.startsWith('Login success')) {
 					self.captureWebViewContent(webView).then((htmlContent: any) => {
 						try {
@@ -116,19 +225,42 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 									self.userService.setAuth(true);
 									// Close logon dialog
 									self.activeModal.dismiss();
-									console.log('login success');
+									self.devService.writeLog('MSWebViewNavigationCompleted: Login success!');
 								}
 							});
 						} catch (error) {
-							console.log(error);
+							self.devService.writeLog('MSWebViewNavigationCompleted: ' + error);
 						}
 					})
 						.catch(console.error);
 				}
 			} else {
 				// Handle error
-				self.activeModal.dismiss();
-				console.log('login not success');
+				//self.activeModal.dismiss();
+				self.devService.writeLog('MSWebViewNavigationCompleted: Login failed!');
+			}
+		});
+
+		//
+		// Create facebook new account within webview control will increase memory rapidly and crash app finally,
+		//  this maybe issue with script running in facebook page.
+		//  this is workaround borrow from Vantage 2.x to launch external browser and avoid the crash. 
+		//  The side effect are:
+		//  1, user have to back to the app and log in again after he/she created account in the brwoser; 
+		//  2, if url was changed by facebook the workaround will not work anymore.
+		//
+		webView.addEventListener('MSWebViewNavigationStarting', (EventArgs) => {
+			if (EventArgs.uri.indexOf("facebook.com/r.php") != -1 ||
+				EventArgs.uri.indexOf("facebook.com/reg/") != -1) {
+				// Open new window to launch default browser to create facebook account
+				if (window) {
+					window.open(EventArgs.uri);
+				}
+				// Prevent navigations to create facebook account
+				EventArgs.preventDefault();
+				return;
+			} else {
+				this.isBroswerVisible = false;
 			}
 		});
 	}
@@ -149,6 +281,25 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			this.detectConnectionStatusSub.unsubscribe();
 			window.location.reload();
 		});
+	}
+
+	onClose(): void {
+		let metricsData = {
+			ItemType: 'TaskAction',
+			TaskName: 'LID.SignIn',
+			TaskResult: 'failure(rc=UserCancelled)',
+			TaskParam: JSON.stringify({
+				StarterStatus: 'NA',
+				AccountState: 'NA', //{Signin | AlreadySignedIn | NeverSignedIn},
+				FeatureRequested: 'NA' // {AppOpen | SignIn | Vantage feature}
+			})
+		};
+		const self = this;
+		this.metrics.sendAsync(metricsData).catch((res) => {
+			self.devService.writeLog('loginSilently() Exception happen when send metric ', res.message);
+		});
+
+		this.activeModal.dismiss();
 	}
 
 	ngOnDestroy(): void {

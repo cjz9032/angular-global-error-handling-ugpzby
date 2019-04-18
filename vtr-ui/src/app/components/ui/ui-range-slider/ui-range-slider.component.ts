@@ -4,8 +4,7 @@ import {
 	Input,
 	Output,
 	EventEmitter,
-	SimpleChanges,
-	OnChanges
+	AfterContentChecked
 } from '@angular/core';
 import { Options, ChangeContext, ValueToPositionFunction } from 'ng5-slider';
 
@@ -14,10 +13,12 @@ import { Options, ChangeContext, ValueToPositionFunction } from 'ng5-slider';
 	templateUrl: './ui-range-slider.component.html',
 	styleUrls: ['./ui-range-slider.component.scss']
 })
-export class UiRangeSliderComponent implements OnInit {
+export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 	// package url https://angular-slider.github.io/ng5-slider/demos
 
 	public options: Options;
+
+	@Input() enableSlider;
 
 	@Input() value = 0; // initial slider value
 	@Input() minValue = 0; // slider minimum end value
@@ -27,15 +28,21 @@ export class UiRangeSliderComponent implements OnInit {
 	@Input() maxValueLegend = ''; // label to display at the end of slider
 	@Input() legendPositionFunction: ValueToPositionFunction; // function to handle legend position for Eye Care
 	@Input() stepsArray: Array<any>; // array with legend value for Eye care
+	@Input() manualRefresh = new EventEmitter<void>();
 
-	@Output() change: EventEmitter<number> = new EventEmitter();
-	@Output() valueChange: EventEmitter<number> = new EventEmitter();
+	@Output() change: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() valueChange: EventEmitter<ChangeContext> = new EventEmitter();
 
-	constructor() {}
+	constructor() { }
+
+	ngAfterContentChecked() {
+		this.options = Object.assign({}, this.options, { disabled: this.enableSlider });
+	}
 
 	ngOnInit() {
 		this.options = {
 			showSelectionBar: true,
+			disabled: this.enableSlider,
 			hideLimitLabels: true,
 			hidePointerLabels: true,
 			showTicks: this.stepsArray && this.stepsArray.length > 0,
@@ -53,7 +60,7 @@ export class UiRangeSliderComponent implements OnInit {
 	 * @param $event event data from ng5-slider component
 	 */
 	public onValueChange($event: ChangeContext) {
-		this.valueChange.emit($event.value);
+		this.valueChange.emit($event);
 	}
 
 	/**
@@ -61,6 +68,11 @@ export class UiRangeSliderComponent implements OnInit {
 	 * @param $event event data from ng5-slider component
 	 */
 	public onChange($event: ChangeContext) {
-		this.change.emit($event.value);
+		console.log('onChange Ui slider');
+		this.change.emit($event);
+	}
+
+	public onSliderChanged(event: any) {
+		console.log('slider changed');
 	}
 }

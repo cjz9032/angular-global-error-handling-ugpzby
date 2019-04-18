@@ -1,36 +1,31 @@
 <div class="vtr-ui-list-support">
 	<ul class="support-list">
 		<li *ngFor="let item of items">
-			<a *ngIf="item.path" routerLink="{{item.path}}">
+			<!-- <a role="button" *ngIf="item.url" href="{{item.url}}" target="_blank"> -->
+			 <a role="button" *ngIf="item.url" href="{{item.url}}" target="_blank" vtrMetrics metricsItem="{{item?.metricsItem}}"
+			 metricsEvent="{{item?.metricsEvent}}" metricsParent="{{item?.metricsParent}}">
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col col-2 text-center">
-							<div class="item-icon status"
-							 *ngIf="item.status!==undefined&&item.status!==''">
-								<div class="icon-bkg">
-									<fa-icon [icon]="['fas', !item.status?'check':'times']"></fa-icon>
-								</div>
-							</div>
 							<div class="item-icon"
-							 *ngIf="item.status===undefined||item.status===''">
+								*ngIf="item.icon">
 								<div class="icon-bkg">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
+							<div class="item-icon-image"
+								*ngIf="item.iconPath">
+								<img [src]="item.iconPath" />
+							</div>
 						</div>
 						<div class="col col-9 item-text">
-							<div class="title"
-							 [ngClass]="{'light-title':item.lightTitle}">
-								{{item.title}}
-							</div>
-							<div class="detail"
-							 [ngClass]="{'highlight':item.asLink}">
-								{{item.detail}}
+							<div class="title">
+								{{item.title | translate}}
 							</div>
 						</div>
 						<div class="col col-1 text-center">
 							<div class="arrow" *ngIf="!item.hideArrow">
-								<fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
+								<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
 							</div>
 						</div>
 						<div class="image text-center w-100 p-4" *ngIf="item.image">
@@ -39,74 +34,29 @@
 					</div>
 				</div>
 			</a>
-			<a *ngIf="item.url" href="{{item.url}}" target="_blank">
+			<div class="no-pointer" *ngIf="!item.url && !item.path">
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col col-2 text-center">
-							<div class="item-icon status"
-							 *ngIf="item.status!==undefined&&item.status!==''">
-								<div class="icon-bkg">
-									<fa-icon [icon]="['fas', !item.status?'check':'times']"></fa-icon>
-								</div>
-							</div>
 							<div class="item-icon"
-							 *ngIf="item.status===undefined||item.status===''">
+								*ngIf="item.icon">
 								<div class="icon-bkg">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
+							<div class="item-icon-image"
+								*ngIf="item.iconPath">
+								<img [src]="item.iconPath" />
+							</div>
 						</div>
 						<div class="col col-9 item-text">
-							<div class="title"
-							 [ngClass]="{'light-title':item.lightTitle}">
-								{{item.title}}
-							</div>
-							<div class="detail"
-							 [ngClass]="{'highlight':item.asLink}">
-								{{item.detail}}
+							<div class="title">
+								{{item.title | translate}}
 							</div>
 						</div>
 						<div class="col col-1 text-center">
 							<div class="arrow" *ngIf="!item.hideArrow">
-								<fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
-							</div>
-						</div>
-						<div class="image text-center w-100 p-4" *ngIf="item.image">
-							<img src="{{item.image}}" alt="item.title">
-						</div>
-					</div>
-				</div>
-			</a>
-			<div *ngIf="!item.url && !item.path">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col col-2 text-center">
-							<div class="item-icon status"
-							 *ngIf="item.status!==undefined&&item.status!==''">
-								<div class="icon-bkg">
-									<fa-icon [icon]="['fas', !item.status?'check':'times']"></fa-icon>
-								</div>
-							</div>
-							<div class="item-icon"
-							 *ngIf="item.status===undefined||item.status===''">
-								<div class="icon-bkg">
-									<fa-icon [icon]="item.icon"></fa-icon>
-								</div>
-							</div>
-						</div>
-						<div class="col col-9 item-text">
-							<div class="title"
-							 [ngClass]="{'light-title':item.lightTitle}">
-								{{item.title}}
-							</div>
-							<div class="detail"
-							 [ngClass]="{'highlight':item.asLink}">
-								{{item.detail}}
-							</div>
-						</div>
-						<div class="col col-1 text-center">
-							<div class="arrow" *ngIf="!item.hideArrow">
-								<fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
+								<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
 							</div>
 						</div>
 						<div class="image text-center w-100 p-4" *ngIf="item.image">

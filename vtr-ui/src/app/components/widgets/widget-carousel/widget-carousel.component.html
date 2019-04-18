@@ -1,14 +1,23 @@
 <div class="vtr-widget-carousel">
-	<ngb-carousel *ngIf="carouselModel">
+	<ngb-carousel *ngIf="carouselModel"
+		[showNavigationArrows]="carouselModel.length>1"
+		[showNavigationIndicators]="carouselModel.length>1">
 		<ng-template *ngFor="let model of carouselModel"
-		 ngbSlide>
+			ngbSlide>
 			<a [href]="model.link"
-			 class="carousel-link">
+				vtrMetrics
+				[metricsItem]="'link.'+model.cardTitle"
+				metricsEvent="itemClick"
+				metricsParent="carousel"
+				target="_blank"
+				class="carousel-link"
+				[ngClass]="{'no-link': !model.link}"
+				(click)="linkClicked($event, model.link)">
 				<img [src]="model.image"
-				 class="image img-fluid">
+					class="image img-fluid">
 				<div class="carousel-caption">
 					<h3 class="source">{{model.source}}</h3>
-					<h2 class="title">{{model.title}}</h2>
+					<h2 class="title">{{model.cardTitle}}</h2>
 				</div>
 			</a>
 		</ng-template>

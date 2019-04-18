@@ -11,10 +11,13 @@
 	position: relative;
 	padding: 5rem $padding_side 8rem $padding_side;
 	height: 100%;
+	@media #{$mediaquery_X4} {
+		padding-left: 5rem;
+	}
 	.title {
 		color: $light;
 		font-size: 5rem;
-		font-weight: $weight_light;
+		font-weight: $weight_medium;
 		display: inline-block;
 		margin: 0;
 	}
@@ -23,7 +26,7 @@
 		font-size: 1.5rem;
 		font-weight: $weight_medium;
 		margin: 0;
-		display: block;
+		display: table;
 		position: relative;
 		cursor: pointer;
 		a {

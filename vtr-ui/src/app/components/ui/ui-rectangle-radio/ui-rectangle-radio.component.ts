@@ -12,9 +12,24 @@ export class UiRectangleRadioComponent implements OnInit {
 	@Input() tooltip: string;
 	@Input() value: string;
 	@Input() checked: boolean;
+	@Input() disabled = false;
 
+	@Output() change: EventEmitter<any> = new EventEmitter();
+	hideIcon: boolean = false;
 	constructor() { }
 
 	ngOnInit() {
+	}
+
+	onChange(event) {
+		this.change.emit(event);
+	}
+
+	getIconName(name:string){
+		if (name == undefined || name == "" || name == null) {
+			this.hideIcon =  true;
+			return;
+		}
+		return name.toLowerCase();
 	}
 }

@@ -12,10 +12,19 @@ export class HeaderMainComponent implements OnInit {
 	@Input() backarrow: string;
 	@Input() forwardLink: { path: string, label: string };
 	@Input() menuItems: any[];
+	@Input() parentPath: string;
 
 	constructor() { }
 
 	ngOnInit() {
+		const self = this;
+		if (this.parentPath !== '' && this.parentPath !== undefined) {
+			this.menuItems.forEach(function (d, i) {
+				d.path = self.parentPath + '/' + d.path;
+				console.log('UPDATED PATH', d.path);
+			});
+		}
+		console.log('MENU ITEMS UPDATED', this.menuItems);
 	}
 
 	goBack() {

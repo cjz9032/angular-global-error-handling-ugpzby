@@ -1,9 +1,29 @@
 <div class="vtr-ui-button">
-	<div class="button-box">
-		<button *ngIf="label"
+	<div class="button-box"
+		*ngIf="label">
+		<button *ngIf="alreadyJoinGroup !== 'joined'"
+			[disabled]="isDisabled"
 			type="button"
-			class="button"
-			[ngClass]="{'fullWidth': isFullWidth === true}"
+			class="btn button"
+			vtrMetrics
+			[metricsItem]="metricsItem"
+			[metricsEvent]="'itemClick'"
+			[metricsParam]="metricsParam"
+			[metricsValue]="metricsValue"
+			[metricsParent]="metricsParent"
+			[ngClass]="{'fullWidth': isFullWidth === true,'text-upper-case': upperCaseLabel ,'regular-width': isRegular}"
+			(click)="onClickButton($event)">{{label}} </button>
+		<button *ngIf="alreadyJoinGroup === 'joined'"
+			type="button"
+			class="button disable"
+			[disabled]="false"
+			vtrMetrics
+			[metricsItem]="metricsItem"
+			[metricsEvent]="'itemClick'"
+			[metricsParam]="metricsParam"
+			[metricsValue]="metricsValue"
+			[metricsParent]="metricsParent"
+			[ngClass]="{'fullWidth': isFullWidth === true ,'text-upper-case': upperCaseLabel}"
 			(click)="onClickButton($event)">{{label}} </button>
 	</div>
 </div>

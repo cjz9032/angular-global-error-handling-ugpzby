@@ -5,21 +5,26 @@
 				<div class="title">Reboot pending</div>
 				<div class="content">
 					<div class="description">
-						In order to succesfully install the updates your computer needs a reboot to ensure everything is
+						In order to successfully install the updates your computer needs a reboot to ensure everything
+						is
 						running safe and
 						smoothly.
 					</div>
 				</div>
 				<div class="button-box">
 					<a role="button"
-						href="/"
+						vtrMetrics
+						metricsItem="reboot now"
+						metricsParent="reboot-pending"
+						metricsEvent="itemClick"
+						href="javascript:void(0);"
 						class="button"
-						target="_blank">Reboot Now</a>
+						(click)="onRebootClick($event)">Reboot Now</a>
 				</div>
 				<a role="link"
-					href="/"
+					href="javascript:void(0);"
 					class="link"
-					target="_blank">Remind me later</a>
+					(click)="onDismissClick($event)">Dismiss</a>
 			</div>
 		</div>
 	</div>

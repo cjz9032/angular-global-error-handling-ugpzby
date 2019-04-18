@@ -1,49 +1,12 @@
 @import "../../../app.theme.scss";
 
 .vtr-ui-list-checkbox {
-	.checkbox-list {
-		margin-top: 2rem;
-		margin-bottom: 3rem;
-		list-style: none;
-		padding: 0;
-		background-color: $shade_extralight;
-		border: 0.1rem solid $shade_lighter;
-		border-radius: $border_radius;
-		li {
-			height: 6rem;
-			padding: 1.5rem 1rem 1.5rem 0;
-			border-bottom: 0.1rem solid $shade_lighter;
-			color: $main_darker;
-			&:last-child {
-				border: none;
-			}
-
-			.update-checkbox {
-				font-size: 1.4rem;
-				padding-left: 3rem;
-			}
-
-			.custom-control {
-				display: inline-block;
-				.custom-control-label {
-					padding-left: 1rem;
-
-					// rounded square-box background
-					&::before {
-						top: 0.2rem;
-						width: 1.5rem;
-						height: 1.5rem;
-					}
-
-					// tick mark
-					&::after {
-						top: 0rem;
-						width: 2rem;
-						height: 2rem;
-						left: -1.7rem;
-					}
-				}
-			}
+	.list-group {
+		margin: 3.5rem 0;
+		box-sizing: unset;
+		.list-group-item {
+			background: $shade_extralight;
+			padding: 1.5rem 1rem 1.5rem 0.2rem;
 
 			.button-box {
 				padding: 0rem;
@@ -60,38 +23,81 @@
 					font-weight: $weight_light;
 				}
 			}
+			.custom-control {
+				display: inline-block;
+				.custom-control-label {
+					padding-left: 1.2rem;
 
-			.item-text {
-				overflow: hidden;
-				.title {
-					font-size: 1.4rem;
-					font-weight: $weight_medium;
-					float: left;
-					&.light-title {
-						font-weight: $weight_light;
+					// rounded square-box background
+					&::before {
+						width: 1.8rem;
+						height: 1.8rem;
 					}
-				}
-				.detail {
-					padding-left: 0.5rem;
-					padding-right: 0.5rem;
-					float: right;
-					text-align: right;
-					font-size: 1.2rem;
-					color: $shade_dark;
-					&.highlight {
-						color: $main_shade;
-						text-decoration: underline;
-						&:hover {
-							text-decoration: none;
-						}
+
+					// tick mark
+					&::after {
+						width: 1.8rem;
+						height: 1.8rem;
 					}
 				}
 			}
+
+			.update-title {
+				font-size: 1.5rem;
+				font-weight: 600;
+				padding-top: 0rem;
+				color: $shade_blue;
+				.update-number {
+					font-weight: normal;
+				}
+			}
+
 			.question {
+				cursor: pointer;
 				color: $main;
-				line-height: 2.8rem;
-				font-size: 2rem;
+				font-size: 1.8rem;
 			}
+		}
+		.icon-check {
+			.icon-bg {
+				display: inline-block;
+				border: 0.23rem solid $go_dark;
+				border-radius: 50%;
+				height: 2.3rem;
+				width: 2.3rem;
+				background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+				background-color: $go_dark;
+				border-color: $go_dark;
+
+				fa-icon {
+					font-size: 1.2rem;
+					color: $light;
+				}
+			}
+		}
+
+		.icon-times {
+			.icon-bg {
+				display: inline-block;
+				border: 0.23rem solid $stop_dark;
+				border-radius: 50%;
+				height: 2.2rem;
+				width: 2.2rem;
+				background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+				background-color: $stop_dark;
+
+				fa-icon {
+					font-size: 1.2rem;
+					color: $light;
+				}
+			}
+		}
+	}
+
+	.tooltip-container {
+		li {
+			padding: 1rem;
+			height: 4rem;
 		}
 	}
 }

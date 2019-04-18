@@ -2,36 +2,34 @@
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
-			 [back]="back"
-			 [title]="title"></vtr-header-main>
+				[back]="back | translate"
+				[title]="title | translate"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col col-8 vtr-page-left-column">
+					<div class="col-sm-12 col-md-7 col-lg-7 col-xl-8 vtr-page-left-column">
 						<div class="vtr-subpage">
 							<div class="vtr-page-shift-up">
-								<wifi-security></wifi-security>
+								<wifi-security [data]="wifiHomeViewModel"
+									[wifiIsShowMore]="wifiIsShowMore"></wifi-security>
 							</div>
 						</div>
-						<div class="connected-home-container">
-							<vtr-connected-home></vtr-connected-home>
+						<div id="home-security" class="connected-home-container">
+							<vtr-connected-home [data]="wifiHomeViewModel"
+								[isShowInvitationCode]="isShowInvitationCode"></vtr-connected-home>
 						</div>
 					</div>
-					<div class="col col-4 vtr-page-right-column">
+					<div class="col-sm-12 col-md-5 col-lg-5 col-xl-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
-
 							<div class="container-fluid">
-
 								<!--Start of Security Card Advisor-->
 								<div class="row mb-40">
 									<div class="col col-12">
-										<vtr-widget-status [title]="'Security Advisor'"
-										 [description]="'Security Status Component'"
-										 [items]="mockService.securityStatus">
-										</vtr-widget-status>
+										<vtr-widget-security-status [securityAdvisor]="securityAdvisor">
+										</vtr-widget-security-status>
 									</div>
 								</div>
 								<!--end of Security Card Advisor-->
@@ -43,9 +41,18 @@
 											<div class="container-fluid">
 												<div class="row">
 													<div class="col">
-														<div class="title">{{'Security Health'}}</div>
-														<div class="description">
-															Learn more about each of these components <a routerLink="/">here</a>.
+														<div class="title">{{'security.homeprotection.securityhealth.title' | translate}}</div>
+														<div class="description"
+															*ngIf="securityHealthViewModel.isLWSEnabled">
+															<span *vtrTranslate="'security.homeprotection.securityhealth.learnMoreAboutSecurityHealth' | translate">
+																<a vtrMetrics 
+																	metricsEvent="itemClick" 
+																	metricsItem="learnMoreAboutSecurityHealth"
+																	metricsParent="security.wifiSecurity"
+																	href="javascript:void(0)"
+																	(click)="openSecurityHealthArticle()"
+																	target="_blank"></a>
+															</span>
 														</div>
 													</div>
 												</div>
@@ -54,23 +61,30 @@
 													<div class="col">
 
 														<!--Start of Security Health Advisor When LWS is enabled-->
-														<vtr-ui-list-chevron [items]="mockService.securityHealth"
-														 *ngIf="isLWSEnabled===true">
+														<div *ngIf="securityHealthViewModel.isLWSEnabled===undefined" class="loading">
+															<div class="spinner-border text-primary progress-spinner" role="status"></div>
+														</div>
+														<vtr-ui-list-chevron
+															[items]="securityHealthViewModel.homeDevicePosture"
+															[chevronVisibility]='false'
+															[clickable]="false"
+															*ngIf="securityHealthViewModel.isLWSEnabled===true">
 														</vtr-ui-list-chevron>
 														<!--end of Security Health Advisor When LWS is enabled-->
 
 														<!--Start of Security Health Advisor When LWS is disabled-->
 														<div class="security-health-disabled"
-														 *ngIf="isLWSEnabled===false">
+															*ngIf="securityHealthViewModel.isLWSEnabled===false">
 															<div class="security-health-disabled-list">
 
 																<div class="peace-of-mind">
-																	Do you want more
-																	peace of mind?
+																	{{'security.homeprotection.securityhealth.peaceOfMind' | translate}}
 																</div>
 																<div class="button-box">
-																	<vtr-ui-button (onClick)="enableWiFiSecurity($event)"
-																	 [label]="'Enable Wifi security'">
+																	<vtr-ui-button metricsParent="security-health"
+																		[metricsItem]="enableWiFiSecurity"
+																		(onClick)="enableWiFiSecurity($event)"
+																		[label]="'security.homeprotection.securityhealth.button' | translate">
 																	</vtr-ui-button>
 																</div>
 															</div>
@@ -78,12 +92,12 @@
 															<div class="coronet-section">
 																<div class="row">
 																	<div class="col">
-																		<div class="pull left view-security-check">
+																		<!-- <div class="pull left view-security-check">
 																			<a routerLink="/{{viewSecChkRoute}}">View
 																				more
 																				security
 																				checks</a>
-																		</div>
+																		</div> -->
 
 																	</div>
 
@@ -91,7 +105,7 @@
 																		<div class="pull right">
 																			<a routerLink="/{{viewSecChkRoute}}">
 																				<img class="coronet_logo_teal"
-																				 src="../../../../assets/images/coronet-icon.png" /></a>
+																					src="../../../../assets/images/coronet-icon.png" /></a>
 																		</div>
 																	</div>
 																</div>
@@ -99,30 +113,30 @@
 														</div>
 
 														<!--end of Security Health Advisor When LWS is disabled-->
-
 													</div>
 												</div>
 											</div>
 										</div>
+										<div *ngIf="securityHealthViewModel.isLWSEnabled" class="security-health"></div>
 									</div>
 								</div>
 								<!--end of Security Health Advisor-->
 
-
-								<!--start of Antivirus ad-->
-								<div class="row mb-40">
+								<div class="row">
 									<div class="col col-12">
-										<vtr-container-card [img]="'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg'"
-										 [title]="'Try out McAfee anti-virus software for 6 months'"
-										 [logoText]="'LENEVO SPECIAL'"
-										 [readMore]="'http://www.google.com'"
-										 [type]="'article'"
-										 [ratioX]="4"
-										 [ratioY]="4">
+										<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+											[caption]="cardContentPositionA.Description"
+											[title]="cardContentPositionA.Title"
+											[logoText]="cardContentPositionA.BrandName"
+											[action]="cardContentPositionA.Action"
+											[actionLink]="cardContentPositionA.ActionLink"
+											[type]="'corner-article'"
+											[ratioX]="4"
+											[ratioY]="2"
+											[cornerShift]="'large'">
 										</vtr-container-card>
 									</div>
 								</div>
-								<!--end of Antivirus ad-->
 							</div>
 						</div>
 					</div>

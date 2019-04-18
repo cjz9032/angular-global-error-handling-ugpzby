@@ -16,73 +16,124 @@ import { PageSupportComponent } from './components/pages/page-support/page-suppo
 import { PageSupportDetailComponent } from './components/pages/page-support-detail/page-support-detail.component';
 import { PageUserComponent } from './components/pages/page-user/page-user.component';
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
+import { WindowsHelloGuardService } from './services/guard/windows-hello-guardService.service';
 
 const routes: Routes = [
 	{
 		path: '',
-		component: PageDashboardComponent
+		redirectTo: 'dashboard',
+		pathMatch: 'full'
 	}, {
 		path: 'dashboard',
-		component: PageDashboardComponent
+		component: PageDashboardComponent,
+		data: {
+			pageName: 'Dashboard'
+		}
 	}, {
 		path: 'device',
-		component: PageDeviceComponent
+		component: PageDeviceComponent,
+		data: {
+			pageName: 'Device.MyDevice'
+		}
+
 	}, {
-		path: 'device-settings',
+		path: 'device/device-settings',
 		component: PageDeviceSettingsComponent,
 		children: [
 			{
 				path: '',
 				redirectTo: 'power',
 				pathMatch: 'full'
-			}, {
+			},
+			{
 				path: 'power',
-				component: SubpageDeviceSettingsPowerComponent
-			}, {
+				component: SubpageDeviceSettingsPowerComponent,
+				data: {
+					pageName: 'Device.MyDeviceSettings'
+				}
+			},
+			{
 				path: 'audio',
-				component: SubpageDeviceSettingsAudioComponent
-			}, {
+				component: SubpageDeviceSettingsAudioComponent,
+				data: {
+					pageName: 'Device.MyDeviceSettings'
+				}
+			},
+
+			{
 				path: 'display-camera',
-				component: SubpageDeviceSettingsDisplayComponent
+				component: SubpageDeviceSettingsDisplayComponent,
+				data: {
+					pageName: 'Device.MyDeviceSettings'
+				}
 			}
 		]
 	}, {
-		path: 'system-updates',
-		component: PageDeviceUpdatesComponent
+		path: 'device/system-updates',
+		component: PageDeviceUpdatesComponent,
+		data: {
+			pageName: 'Device.SystemUpdate'
+		}
 	}, {
 		path: 'security',
-		component: PageSecurityComponent
+		component: PageSecurityComponent,
+		data: { pageName: 'Security.MySecurity' }
+
 	}, {
-		path: 'anti-virus',
-		component: PageSecurityAntivirusComponent
+		path: 'security/anti-virus',
+		component: PageSecurityAntivirusComponent,
+		data: {
+			pageName: 'Security.AntiVirus'
+		}
 	}, {
-		path: 'wifi-security',
-		component: PageSecurityWifiComponent
+		path: 'security/wifi-security',
+		component: PageSecurityWifiComponent,
+		data: {
+			pageName: 'Security.WifiSecurity'
+		}
 	}, {
-		path: 'password-protection',
-		component: PageSecurityPasswordComponent
+		path: 'security/password-protection',
+		component: PageSecurityPasswordComponent,
+		data: {
+			pageName: 'Security.PasswordProtection'
+		}
 	}, {
-		path: 'internet-protection',
-		component: PageSecurityInternetComponent
-	}, 
-	{
-		path: 'windows-hello',
-		component: PageSecurityWindowsHelloComponent
+		path: 'security/internet-protection',
+		component: PageSecurityInternetComponent,
+		data: {
+			pageName: 'Security.InternetProtection'
+		}
+	}, {
+		path: 'security/windows-hello',
+		component: PageSecurityWindowsHelloComponent,
+		canActivate: [WindowsHelloGuardService],
+		data: {
+			pageName: 'Security.WindowsHello'
+		}
 	}, {
 		path: 'support',
-		component: PageSupportComponent
+		component: PageSupportComponent,
+		data: {
+			pageName: 'Page.Support'
+		}
 	}, {
 		path: 'support-detail/:id',
-		component: PageSupportDetailComponent
+		component: PageSupportDetailComponent,
+		data: {
+			pageName: 'Support.Detail'
+		}
 	}, {
 		path: 'user',
-		component: PageUserComponent
+		component: PageUserComponent,
+		data: {
+			pageName: 'User'
+		}
 	}
 ];
 
 @NgModule({
 	imports: [
-		RouterModule.forRoot(routes, { useHash: true })
+		RouterModule.forRoot(routes, { useHash: true, scrollPositionRestoration: 'enabled' })
 	],
 	exports: [
 		RouterModule

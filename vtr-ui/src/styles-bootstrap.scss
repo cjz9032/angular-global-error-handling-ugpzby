@@ -39,6 +39,10 @@
 	margin-bottom: 4rem !important;
 }
 
+.mb-80 {
+	margin-bottom: 8rem !important;
+}
+
 .px-20 {
 	padding-left: 2rem !important;
 	padding-right: 2rem !important;
@@ -80,6 +84,10 @@
 	padding: 4rem !important;
 }
 
+.text-break {
+	word-break: break-word !important;
+}
+
 @media #{$mediaquery_4} {
 	.nmx-40 {
 		margin-left: -3.5rem !important;
@@ -97,6 +105,10 @@
 
 	.p-40 {
 		padding: 3.5rem !important;
+	}
+
+	.mb-80 {
+		margin-bottom: 7rem !important;
 	}
 }
 
@@ -118,6 +130,10 @@
 	.p-40 {
 		padding: 3rem !important;
 	}
+
+	.mb-80 {
+		margin-bottom: 6rem !important;
+	}
 }
 
 @media #{$mediaquery_6} {
@@ -137,6 +153,10 @@
 
 	.p-40 {
 		padding: 2.5rem !important;
+	}
+
+	.mb-80 {
+		margin-bottom: 5rem !important;
 	}
 }
 
@@ -158,19 +178,23 @@
 	.p-40 {
 		padding: 2rem !important;
 	}
+
+	.mb-80 {
+		margin-bottom: 4rem !important;
+	}
 }
 //Added new media query for max-width:800 where vtr-page-right-column margin-left , margin-top css are added to fix VAN-1049 issue.
-@media #{$mediaquery_8} {
+@media #{$mediaquery_10} {
 	.vtr-page-right-column {
-		margin-left: 4.2rem;
-		margin-top: 4rem;
+		// margin-left: 4.2rem;
+		// margin-top: 4rem;
 	}
 }
 
 // override for bootstrap modal size
 .battery-modal-size .modal-dialog {
 	max-width: 150rem;
-	top: 8rem;
+	top: $modal_top_margin;
 }
 
 // feedback modal start:
@@ -204,3 +228,41 @@
 	font-size: 2.5rem;
 }
 // feedback modal end
+
+.welcome-modal-size .modal-dialog {
+	top: $modal_top_margin;
+	max-width: 70rem !important;
+	margin: 0 auto;
+	overflow: hidden;
+	min-height: 60rem;
+}
+
+// override for bootstrap modal size
+.lenovo-id-modal-size .modal-dialog {
+	top: 3.5rem;
+	max-width: 550px !important;
+	margin: 0 auto;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	overflow: hidden;
+	min-height: 640px !important;
+}
+
+.update-read-more-modal-size .modal-dialog {
+	margin: 0 auto;
+	overflow: auto;
+	font-size: 1.4rem;
+	font-weight: 500;
+}
+
+.feedback-form-modal-size .modal-dialog {
+	margin: 0 auto;
+	overflow: auto;
+	font-size: 1.4rem;
+	font-weight: 500;
+	max-width: 70rem !important;
+	.close-button {
+		font-size: 3rem;
+		opacity: 0.8;
+	}
+}

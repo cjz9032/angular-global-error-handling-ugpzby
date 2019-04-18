@@ -12,7 +12,7 @@ export class WidgetCarouselComponent implements OnInit {
 	// images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
 	carouselModel: CarouselModel[] = [];
 
-	@Input() title: string;
+	@Input() cardTitle: string;
 	@Input() source: string;
 	@Input() image: string;
 	@Input() link: string;
@@ -63,24 +63,31 @@ export class WidgetCarouselComponent implements OnInit {
 	}
 
 	parseToCarouselModel() {
+		this.carouselModel = [];
+
 		for (var i = 0; i < this.data.length; i++) {
 			this.carouselModel.push({
-				source: this.byString(this.data[i], this.source),
-				title: this.byString(this.data[i], this.title),
-				image: this.byString(this.data[i], this.image),
-				link: this.byString(this.data[i], this.link)
+				source: this.data[i].source,
+				cardTitle: this.data[i].title,
+				image: this.data[i].url,
+				link: this.data[i].ActionLink ? this.data[i].ActionLink : ''
 			})
 		}
 		console.log('###################', this.carouselModel);
 	}
+
+	linkClicked($event, link) {
+		if (!link) {
+			$event.preventDefault();
+		}
+	}
 }
 
 interface CarouselModel {
-	title: string;
+	cardTitle: string;
 	source: string;
 	image: string;
 	link: string;
-
 }
 
 

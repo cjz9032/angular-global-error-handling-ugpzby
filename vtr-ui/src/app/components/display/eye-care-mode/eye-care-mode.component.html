@@ -1,34 +1,70 @@
 <div class="vtr-eye-care-mode">
 	<div class="row">
 		<div class="col">
-			<vtr-ui-range-slider
+			<!-- <vtr-ui-range-slider
 				[minValueLegend]="'Warm (Better for eyes)'"
 				[maxValueLegend]="'Cold'"
 				[stepsArray]="stepsArray"
 				[legendPositionFunction]="legendPosition"
 				(change)="sliderChange($event)"
 			>
+			</vtr-ui-range-slider> -->
+			<vtr-ui-range-slider [step]="100"
+				[manualRefresh]="manualRefresh"
+				[enableSlider]="enableSlider"
+				[minValue]="eyeCareModeSettings.minimum"
+				[maxValue]="eyeCareModeSettings.maximum"
+				[minValueLegend]="'Warm (Better for eyes)'"
+				[maxValueLegend]="'Cold'"
+				[(value)]="eyeCareModeSettings.current"
+				(change)="onEyeCareTemparatureChange($event)"
+				(valueChange)="onEyeCareTemparatureValueChange($event)">
 			</vtr-ui-range-slider>
 		</div>
-		<div class="reset-temperature align-self-center text-center">
-			<button
-				type="button"
+		<div class="reset-temperature">
+			<!-- <button type="button"
 				class="btn btn-link text"
-				(click)="onResetTemperature()"
-			>
+				(click)="onResetTemparature($event)">
 				Reset temperature
-			</button>
+			</button> -->
+			<div class="button-box">
+				<vtr-ui-button (onClick)="onResetTemparature($event)"
+					metricsEvent="itemClick"
+					metricsParent="eye-care-mode"
+					metricsItem="btn.eye-care-mode.ResetTemparature"
+					[isFullWidth]="false"
+					[label]="'Reset Color Temperature'"></vtr-ui-button>
+			</div>
+
 		</div>
 	</div>
-	<div class="custom-control custom-checkbox eye-care-checkbox">
-		<input
-			id="cb-eye-care-schedule"
+	<div class="custom-control custom-checkbox eye-care-checkbox"
+		*ngIf="sunsetToSunriseStatus.available && enableSunsetToSunrise">
+		<input id="cb-eye-care-schedule"
+			type="checkbox"
+			[disabled]="enableSunsetToSunrise"
+			class="custom-control-input"
+			[checked]="sunsetToSunriseStatus.status"
+			(change)="onSunsetToSunrise(sunsetToSunriseStatus)" />
+		<label class="custom-control-label"
+			for="cb-eye-care-schedule">
+			<span class="text-capitalize">
+				Schedule eye care mode from sunset to sunrise {{sunriseToSunsetText}}
+			</span>
+		</label>
+	</div>
+	<div class="custom-control custom-checkbox eye-care-checkbox"
+		*ngIf="sunsetToSunriseStatus.available && !enableSunsetToSunrise">
+		<input id="cb-eye-care-schedule"
 			type="checkbox"
 			class="custom-control-input"
-			checked=""
-		/>
-		<label class="custom-control-label " for="cb-eye-care-schedule">
-			Schedule eye care mode from sunset to sunrise
+			[checked]="sunsetToSunriseStatus.status"
+			(change)="onSunsetToSunrise(sunsetToSunriseStatus)" />
+		<label class="custom-control-label"
+			for="cb-eye-care-schedule">
+			<span class="text-capitalize">
+				Schedule eye care mode from sunset to sunrise {{sunriseToSunsetText}}
+			</span>
 		</label>
 	</div>
 </div>

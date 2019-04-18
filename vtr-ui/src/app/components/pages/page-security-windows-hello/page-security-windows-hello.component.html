@@ -1,134 +1,67 @@
 <div class="vtr-page-security-windows-hello vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main [backarrow]="backarrow"
-			 [back]="back"
-			 [title]="title"></vtr-header-main>
+			<vtr-header-main [backarrow]="'&lt; '"
+				[back]="'common.ui.back' | translate"
+				[title]="'security.windowsHello.title' | translate"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col col-8 vtr-page-left-column">
+					<div class="col-sm-12 col-md-7 col-lg-7 col-xl-8 vtr-page-left-column">
 						<div class="vtr-subpage">
 							<div class="vtr-page-shift-up">
 								<div class="vtr-page-security-windows-hello">
-									<div class="container-fluid p-40 security-card"
-									 *ngIf="IsWindowsHelloInstalled">
+									<div class="container-fluid p-40 security-card">
 										<div class="row">
 											<div class="col">
-												<div class="heading">Windows Hello</div>
+												<div class="heading">{{'security.windowsHello.title' | translate}}</div>
 											</div>
 											<div class="pull right"><img class="dashlane_logo_teal"
-												 src="../../../../assets/images/windows-logo.png" /></div>
+													src="../../../../assets/images/windows-logo.png" /></div>
 										</div>
-										<div class="row mt-20">
+										<div *ngIf="statusItem.status === 'disabled'"
+											class="row mt-20">
 											<div class="col">
 												<div class="text-regular">
-													Traditional passwords can be stolen and used to access your account from anywhere in the world. More secure and convenient, Windows Hello is the next generation of a password. Use your fingerprint reader (or IR camera) instead of insecure passwords to log in.
+													{{'security.windowsHello.protectYourDevice' | translate}}
+													<!-- Traditional passwords can be stolen and used to access your account
+													from anywhere in the world. More secure and convenient, Windows
+													Hello is the next generation of a password. Use your fingerprint
+													reader (or IR camera) instead of insecure passwords to log in. -->
+												</div>
+											</div>
+										</div>
+										<div *ngIf="statusItem.status === 'enabled'"
+											class="row">
+											<div class="col">
+												<div class="text-regular">
+													{{'security.windowsHello.protectYourDevice' | translate}}
 												</div>
 											</div>
 										</div>
 										<div class="row mt-40">
 											<div class="col">
-												<div class="invitation-code-box">
-													<div class="row">
-														<div class="col col-1">
-															<div>
-																<ul class="bullet-list">
-																	<li class="bad">
-																		<div class="bullet-icon">
-																			<div class="icon-bkg">
-																				<fa-icon [icon]="['fas', 'times']">
-																				</fa-icon>
-																			</div>
-																		</div>
-																	</li>
-																</ul>
-															</div>
-														</div>
-														<div class="col col-2">
-															<div class="sub-heading">
-																<p> Windows Hello</p>
-															</div>
-														</div>
-
-														<div>
-															<div class="button-box">
-																<button type="button"
-																 class="btn btn-danger btn-round-xs text-uppercase">
-																	Disabled
-																</button>
-															</div>
-														</div>
-													</div>
-												</div>
+												<vtr-ui-security-statusbar [statusList]="[statusItem]">
+												</vtr-ui-security-statusbar>
 											</div>
 										</div>
-										<div class="row mt-40">
+										<div *ngIf="statusItem.status === 'disabled'"
+											class="row mt-40">
 											<div class="col">
-												<div class="text-regular">Sign in quickly and securely with Windows
-													Hello</div>
+												<div class="text-regular">{{'security.windowsHello.signIn' | translate}}
+												</div>
 											</div>
 											<div class=" pull right">
 												<div class="col-12">
-													<button type="button" 	(click)="windowsHello()"
-													 class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
-														Setup Windows Hello
-													</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="container-fluid p-40 security-card"
-									 *ngIf="!IsWindowsHelloInstalled">
-										<div class="row">
-											<div class="col">
-												<div class="heading">Windows Hello</div>
-											</div>
-											<div class="pull right"><img class="dashlane_logo_teal"
-												 src="../../../../assets/images/windows-logo.png" /></div>
-										</div>
-										<div class="row">
-											<div class="col">
-												<div class="text-regular">
-													Protect your ideapad with these Lenovo recommended security options.
-												</div>
-											</div>
-										</div>
-										<div class="row mt-40">
-											<div class="col">
-												<div class="invitation-code-box">
-													<div class="row">
-														<div class="col col-1">
-															<div>
-																<ul class="bullet-list">
-																	<li class="good">
-																		<div class="bullet-icon">
-																			<div class="icon-bkg">
-																				<fa-icon [icon]="['fas', 'check']">
-																				</fa-icon>
-																			</div>
-																		</div>
-																	</li>
-																</ul>
-															</div>
-														</div>
-														<div class="col col-2">
-															<div class="sub-heading">
-																Windows Hello
-															</div>
-														</div>
-														<div>
-															<div class="button-box">
-																<button type="button" 	(click)="windowsHello()"
-																 class="btn btn-success btn-round-xs text-uppercase">
-																	Enabled
-																</button>
-															</div>
-														</div>
-													</div>
+													<vtr-ui-button type="button"
+														[metricsItem]="'setUpWindowsHello'"
+														[metricsParent]="'windowsHello'"
+														(click)="setUpWindowsHello()"
+														[label]="'security.windowsHello.setUp' | translate">
+													</vtr-ui-button>
 												</div>
 											</div>
 										</div>
@@ -137,34 +70,34 @@
 							</div>
 						</div>
 						<div class="row vtr-page-security-windows-hello"
-						 *ngIf="IsWindowsHelloInstalled">
+							*ngIf="statusItem.status === 'disabled'">
 							<div class="row">
 								<div class="col col-12 col-sm-12 mt-40">
 									<div>
-										<p class="title"> Why Windows Hello?</p>
-										<p class="text-regular">Windows Hello makes logging into your PC easier and more
-											secure, and can also be used for your online Microsoft apps. Follow the
-											instructions below to begin using Windows Hello.</p>
+										<p class="title">{{'security.windowsHello.whyWindowsHello' | translate}}</p>
+										<p class="text-regular">
+											{{'security.windowsHello.whyWindowsHelloDescription1' | translate}}</p>
 									</div>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col col-6 mt-40">
+							<div class="row w-100">
+								<div class="col-sm-12 col-md-12 col-lg-6 order-lg-2 mt-40">
 									<div class="col">
 										<img src="../../../../assets/images/windows-hello-left-img.png"
-										 class="dashlane-side-left-img" />
+											class="dashlane-side-left-img" />
 									</div>
 								</div>
-								<div class="col col-6 mt-40">
+								<div class="col-sm-12 col-md-12 col-lg-6 order-lg-1 mt-40">
 									<div class="col">
 										<div class="list-heading">
-											<p class="adjust-left">Start using Windows Hello Today</p>
+											<p class="adjust-left">
+												{{'security.windowsHello.startUsingToday' | translate}}</p>
 										</div>
 										<ul class="bullet-list">
 											<li class="good">
 												<div class="container-fluid">
 													<div class="row align-items-center">
-														<div class="col-auto">
+														<div class="col-auto pl-1">
 															<div class="bullet-icon">
 																<div class="icon-bkg">
 																	<fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -173,9 +106,17 @@
 														</div>
 														<div class="col">
 															<div class="text-regular">
-																Visit the Windows Hello page and register your
-																fingerprint
-																Visit Windows Hello system settings
+																{{'security.windowsHello.visitAndRegister' | translate}}
+																<span
+																	*vtrTranslate="'security.windowsHello.visitInSettings' | translate">
+																	<a vtrMetrics
+																		metricsEvent="itemClick"
+																		metricsItem="setUpWindowsHello"
+																		metricsParent="security.windowsHello"
+																		href="javascript:void(0)"
+																		(click)="setUpWindowsHello()"
+																		target="_blank"></a>
+																</span>
 															</div>
 														</div>
 													</div>
@@ -184,7 +125,7 @@
 											<li class="good">
 												<div class="container-fluid">
 													<div class="row align-items-center">
-														<div class="col-auto">
+														<div class="col-auto pl-1">
 															<div class="bullet-icon">
 																<div class="icon-bkg">
 																	<fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -193,14 +134,13 @@
 														</div>
 														<div class="col">
 															<div class="text-regular">
-																Use Windows Hello to log into and unlock your PC with a
-																touch of a finger on the sensor
+																{{'security.windowsHello.unlock' | translate}}
 															</div>
 														</div>
 													</div>
 												</div>
 											</li>
-											<li class="good">
+											<!-- <li class="good">
 												<div class="container-fluid">
 													<div class="row align-items-center">
 														<div class="col-auto">
@@ -219,11 +159,11 @@
 														</div>
 													</div>
 												</div>
-											</li>
+											</li> -->
 											<li class="good">
 												<div class="container-fluid">
 													<div class="row align-items-center">
-														<div class="col-auto">
+														<div class="col-auto pl-1">
 															<div class="bullet-icon">
 																<div class="icon-bkg">
 																	<fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -232,9 +172,14 @@
 														</div>
 														<div class="col">
 															<div class="text-regular">
-																Start using Windows Hello to log into Microsoft Apps
-																such as Outlook, OneDrive, Office 365 and Xbox Live.
-																Visit Microsoft
+																{{'security.windowsHello.startUsingWindowsHello' | translate}}
+																<a target="_blank"
+																	vtrMetrics
+																	metricsItem="visitMicrosoft"
+																	metricsEvent="itemClick"
+																	href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
+																	{{'security.windowsHello.visitMicrosoft' | translate}}
+																</a>
 															</div>
 														</div>
 													</div>
@@ -247,59 +192,83 @@
 							<div class="col col-12 ">
 								<div class="row top-line">
 									<div class="col">
-										<div class="list-heading">Powered By Windows Hello</div>
-										<p class="text-regular">Read more on the <a href=""
-											 class="learnmore">Privacy policy</a> and <a href=""
-											 class="learnmore">lorem ipsum</a></p>
+										<div class="list-heading">
+											{{'security.windowsHello.poweredByWindowsHello' | translate}}</div>
+										<p class="text-regular"
+											*vtrTranslate="'security.windowsHello.privacyPolicy' | translate">
+											<a vtrMetrics
+												metricsEvent="itemClick"
+												metricsItem="privacyPolicy"
+												metricsParent="security.windowsHello"
+												href="https://support.microsoft.com/en-us/help/4468253/windows-hello-and-privacy-microsoft-privacy"
+												target="_blank"></a>
+										</p>
 									</div>
 									<div class="pull right"><img class="dashlane_logo_teal"
-										 src="../../../../assets/images/windows-logo.png" /></div>
+											src="../../../../assets/images/windows-logo.png" /></div>
 								</div>
 							</div>
 						</div>
 						<div class="row vtr-connected-security-password"
-						 *ngIf="!IsWindowsHelloInstalled">
+							*ngIf="statusItem.status === 'enabled'">
 							<div class="row">
 								<div class="col col-12 col-sm-12 mt-40">
 									<div>
-										<p class="title"> Sign in quickly and securely with Windows Hello</p>
-										<p class="text-regular">Windows Hello makes logging into your PC easier and more
-											secure. And you can also be used for your online Microsoft apps. Follow the
-											instructions below to begin using Windows Hello</p>
-										<p class="sub-heading-2"> Windows Hello Authentication</p>
-										<p class="text-regular">Traditional passwords can be stolen and used to access
-											your account from anywhere in the world. More secure and convinient. Windows
-											Hello is the next generation of a password. Use your fingerprint reader [or
-											IR camera] instead of insecure passwords to log in.</p>
+										<p class="title">{{'security.windowsHello.signIn' | translate}}</p>
+										<p class="text-regular">
+											{{'security.windowsHello.whyWindowsHelloDescription2' | translate}}</p>
+										<p class="sub-heading-2 mt-40">
+											{{'security.windowsHello.authentication' | translate}}</p>
+										<p class="text-regular">{{'security.windowsHello.traditional' | translate}}</p>
 									</div>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col col-6 mt-40">
+							<div class="row justify-content-between no-gutters">
+								<div class="col-sm-12 col-md-12 col-lg-6 order-lg-2 mt-40">
+									<div class="col">
+										<img src="assets/images/windows-hello-finger-print.png"
+											class="dashlane-side-right-img pull-right" />
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-12 col-lg-6 order-lg-1 mt-40">
 									<div class="col">
 										<div class="list-heading">
-											<p class="adjust-left">How do I start using Windows Hello</p>
+											<p class="adjust-left">{{'security.windowsHello.howToStart' | translate}}
+											</p>
 										</div>
 										<div class="number-list">
 											<ol>
 												<li>
 													<div class="text-regular">
-														Visit the Windows Hello page and register your fingerprint
-														<a href="#">Visit Windows Hello </a> in system settings
+														{{'security.windowsHello.visitAndRegister' | translate}}
+														<span
+															*vtrTranslate="'security.windowsHello.visitInSettings' | translate">
+															<a vtrMetrics
+																metricsEvent="itemClick"
+																metricsItem="setUpWindowsHello"
+																metricsParent="security.windowsHello"
+																href="javascript:void(0)"
+																(click)="setUpWindowsHello()"
+																target="_blank"></a>
+														</span>
 													</div>
 												</li>
 												<li>
 													<div class="text-regular">
-														Use Windows Hello to log into and unlock your PC with a touch of
-														a finger on the sensor
+														{{'security.windowsHello.unlock' | translate}}
 													</div>
 												</li>
 												<li>
 													<div class="col">
 														<div class="text-regular">
-															Start using Windows Hello to log into Microsoft Apps such as
-															Outlook, OneDrive, Office 365 and Xbox Live. <a href="#">
-																Visit Microsoft</a>
+															{{'security.windowsHello.startUsingWindowsHello' | translate}}
+															<a target="_blank"
+																vtrMetrics
+																metricsItem="visitMicrosoft"
+																metricsEvent="itemClick"
+																metricsParent="security.windowsHello"
+																href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
+																{{'security.windowsHello.visitMicrosoft' | translate}}</a>
 														</div>
 													</div>
 												</li>
@@ -307,37 +276,32 @@
 										</div>
 									</div>
 								</div>
-								<div class="col col-6 mt-40">
-									<div class="col">
-										<img src="../../../../assets/images/dashlane-right-img.png"
-										 class="dashlane-side-right-img pull-right" />
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col col-4 vtr-page-right-column">
+					<div class="col-sm-12 col-md-5 col-lg-5 col-xl-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 								<!--Start of Security Card Advisor-->
 								<div class="row mb-40">
 									<div class="col col-12">
-										<vtr-widget-status [title]="'Security Advisor'"
-										 [description]="'Security Status Component'"
-										 [items]="mockService.securityStatus">
-										</vtr-widget-status>
+										<vtr-widget-security-status [securityAdvisor]="securityAdvisor">
+										</vtr-widget-security-status>
 									</div>
 								</div>
 								<!--End of Security Card Advisor-->
-								<div class="row mb-40">
+								<div class="row">
 									<div class="col col-12">
-										<vtr-container-card [img]="'./../../../../assets/images/antivirus/poaster.png'"
-											[title]="'Lenovo announced new powerful Legion compact series.'"
-											[logoText]="'LENEVO SPECIAL'"
-											[readMore]="'http://www.google.com'"
-											[type]="'article'"
+										<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+											[caption]="cardContentPositionA.Description"
+											[title]="cardContentPositionA.Title"
+											[logoText]="cardContentPositionA.BrandName"
+											[action]="cardContentPositionA.Action"
+											[actionLink]="cardContentPositionA.ActionLink"
+											[type]="'corner-article'"
 											[ratioX]="4"
-											[ratioY]="4">
+											[ratioY]="2"
+											[cornerShift]="'large'">
 										</vtr-container-card>
 									</div>
 								</div>

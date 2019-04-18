@@ -1,4 +1,5 @@
 @import "../../../app.theme";
+
 .vtr-widget-device-update {
 	.systemupdate-background {
 		border-radius: 0.5rem;
@@ -8,6 +9,7 @@
 		width: 100%;
 		background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
 		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+
 		.title {
 			color: $light;
 			font-size: 3.5rem;
@@ -18,6 +20,7 @@
 			padding-bottom: 2rem;
 			padding-right: 5rem;
 		}
+
 		.row1 {
 			opacity: 0.5;
 			color: $light;
@@ -27,11 +30,13 @@
 			padding-top: 0rem;
 			padding-right: 5rem;
 		}
+
 		.button-row {
 			padding-left: 5rem;
 			padding-bottom: 5rem;
 			padding-top: 3rem;
 			padding-right: 5rem;
+
 			.action-button {
 				border-radius: 2.5rem;
 				background: $gradient_main;
@@ -40,18 +45,25 @@
 				color: $light;
 				font-size: 1.5rem;
 				height: 5rem;
-				font-weight: $weight_medium;
+				font-weight: $weight_bold;
 				line-height: 5rem;
 				text-align: center;
 				border: 0rem;
+				cursor: pointer;
 			}
 		}
+
 		.progress-div {
 			padding-left: 5rem;
 			padding-right: 5rem;
 			margin-top: 3rem;
 			border-top: 0.1rem solid;
 			border-color: rgba(255, 255, 255, 0.18);
+
+			&.install-progress {
+				border-top: 0;
+				margin-top: 0;
+			}
 			.progress-title {
 				color: $light;
 				font-size: 2.5rem;
@@ -60,7 +72,15 @@
 				padding-top: 5rem;
 				padding-bottom: 2rem;
 				padding-right: 5rem;
+
+				.installing {
+					color: $light;
+				}
+				.downloading {
+					color: transparent;
+				}
 			}
+
 			.progress-percent-text {
 				color: $light;
 				font-size: 2.5rem;
@@ -69,8 +89,11 @@
 				padding-top: 5rem;
 				padding-bottom: 2rem;
 				float: right;
+
 				.progress-right {
 					float: right;
+					display: inline;
+
 					.progress-value-text {
 						color: $light;
 						font-size: 1.4rem;
@@ -81,29 +104,29 @@
 						text-align: left;
 						font-size: 3rem !important;
 					}
+
 					.progress-complete-text {
 						color: $light;
 						font-size: 1.4rem;
 						font-weight: $weight_light;
 						line-height: 2.9rem;
 						padding-right: 0rem;
-						padding-left: 2rem;
+						padding-left: 0;
 						text-align: left;
 					}
 				}
 			}
 		}
+
 		.progress-bar-div-container {
 			padding-left: 5rem;
 			padding-right: 5rem;
 
 			.progress-bar-div {
-				padding-left: 5rem;
-				padding-bottom: 1rem;
-				padding-top: 1rem;
-				padding-right: 5rem;
+				padding: 1rem;
 				border-radius: 1.5rem;
 				background: linear-gradient($gradient_angle_reverse, $main_darkest 0%, $main_darker 100%);
+
 				::ng-deep .mat-progress-bar-fill::after {
 					background: linear-gradient(90deg, $go 0%, $go 100%);
 				}
@@ -115,22 +138,35 @@
 				::ng-deep .mat-progress-bar {
 					border-radius: 0.4rem;
 				}
+
+				.progress {
+					height: 0.2rem;
+
+					.progress-bar {
+						height: 0.8rem;
+						border-radius: 0.8rem;
+						margin-top: -0.3rem;
+
+						&.bg-info {
+							background: linear-gradient(90deg, $go_light 0%, $go_dark 100%) !important;
+						}
+					}
+				}
 			}
 		}
+
 		.cancel-check {
 			color: $light;
 			font-size: 1.3rem;
 			font-weight: $weight_medium;
 			line-height: 1.5rem;
 			text-align: center;
-			padding-left: 5rem;
-			padding-top: 5rem;
-			padding-bottom: 5rem;
-			padding-right: 5rem;
 			text-transform: uppercase;
 
 			.cancel-check-text {
+				cursor: pointer;
 				text-decoration: underline;
+
 				&:hover {
 					color: $light;
 					text-decoration: none;

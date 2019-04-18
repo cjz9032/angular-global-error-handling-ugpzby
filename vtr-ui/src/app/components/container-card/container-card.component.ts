@@ -1,5 +1,7 @@
 import { Component, Self, ElementRef, OnInit, AfterViewInit, Input } from '@angular/core';
 import { DisplayService } from '../../services/display/display.service';
+import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalArticleDetailComponent } from '../modal/modal-article-detail/modal-article-detail.component';
 
 @Component({
 	selector: 'vtr-container-card',
@@ -8,16 +10,19 @@ import { DisplayService } from '../../services/display/display.service';
 })
 export class ContainerCardComponent implements OnInit, AfterViewInit {
 
-	@Input() img: string = '';
-	@Input() caption: string = '';
-	@Input() title: string = '';
-	@Input() logo: string = '';
-	@Input() logoText: string = '';
-	@Input() readMore: string = '';
-	@Input() type: string = '';
-	@Input() ratioX: number = 1;
-	@Input() ratioY: number = 1;
+	@Input() img = '';
+	@Input() caption = '';
+	@Input() title = '';
+	@Input() logo = '';
+	@Input() logoText = '';
+	@Input() action = '';
+	@Input() actionLink = '';
+	@Input() type = '';
+	@Input() ratioX = 1;
+	@Input() ratioY = 1;
 	@Input() cornerShift: String = '';
+	@Input() order:number;
+	@Input() itemID:string;
 
 	ratio = 1;
 	containerHeight = 100;
@@ -26,7 +31,8 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 
 	constructor(
 		@Self() private element: ElementRef,
-		private displayService: DisplayService
+		private displayService: DisplayService,
+		public modalService: NgbModal
 	) { }
 
 	ngOnInit() {
@@ -39,16 +45,25 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 
 	ngAfterViewInit() {
 		const self = this;
-		const delay = setTimeout(function(){
+		const delay = setTimeout(function () {
 			self.calcHeight(self.element);
-		},500)
+		}, 500);
 	}
 
-	calcHeight(containerCard){
-		if(containerCard){
+	calcHeight(containerCard) {
+		if (containerCard) {
 			this.containerHeight = containerCard.nativeElement.firstElementChild.clientWidth * this.ratio;
-			console.log('RESIZE CONTAINER CARD', this.title, this.ratio, containerCard, this.containerHeight);
+			// console.log('RESIZE CONTAINER CARD', this.title, this.ratio, containerCard, this.containerHeight);
 		}
 	}
 
+	articleClicked(articleId) {
+		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
+			size: 'lg',
+			centered: true,
+			windowClass: 'Article-Detail-Modal'
+		});
+
+		articleDetailModal.componentInstance.articleId = articleId;
+	}
 }

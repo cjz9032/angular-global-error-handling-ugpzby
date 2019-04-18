@@ -3,20 +3,29 @@
 		<div class="row">
 			<div class="col">
 				<div class="header">
-					<div class="heading">Connected Home Security</div>
+					<div class="heading">{{'security.homeprotection.homesecurity.title' | translate}}</div>
 					<div class="text-regular">
-						Connected Home Security keeps you safe in three ways:
+						{{'security.homeprotection.homesecurity.titleDescription' | translate}}
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="row mt-20">
-			<div class="col">
+			<div class="col-sm-12 col-md-12 col-lg-6 order-lg-2">
+				<div class="gem-box">
+					<div class="gem">
+						<img src="assets/images/Banner_no_logo_h&f.jpg"
+							center />
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-12 col-md-12 col-lg-6 order-lg-1">
 				<ul class="bullet-list">
 					<li class="good">
 						<div class="container-fluid">
 							<div class="row align-items-center">
-								<div class="col-auto">
+								<div class="col-auto pl-0">
 									<div class="bullet-icon">
 										<div class="icon-bkg">
 											<fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -25,8 +34,7 @@
 								</div>
 								<div class="col">
 									<div class="text-regular">
-										Connected Home Security ensures your device is safe, and has not been
-										compromised
+										{{'security.homeprotection.homesecurity.homeSecurityAffect1' | translate}}
 									</div>
 								</div>
 							</div>
@@ -36,7 +44,7 @@
 					<li class="good">
 						<div class="container-fluid">
 							<div class="row align-items-center">
-								<div class="col-auto">
+								<div class="col-auto pl-0">
 									<div class="bullet-icon">
 										<div class="icon-bkg">
 											<fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -45,7 +53,7 @@
 								</div>
 								<div class="col">
 									<div class="text-regular">
-										Connected Home Security ensures that the networks you are connected to are safe
+										{{'security.homeprotection.homesecurity.homeSecurityAffect2' | translate}}
 									</div>
 								</div>
 							</div>
@@ -55,7 +63,7 @@
 					<li class="good">
 						<div class="container-fluid">
 							<div class="row align-items-center">
-								<div class="col-auto">
+								<div class="col-auto pl-0">
 									<div class="bullet-icon">
 										<div class="icon-bkg">
 											<fa-icon [icon]="['fas', 'check']"></fa-icon>
@@ -64,8 +72,7 @@
 								</div>
 								<div class="col">
 									<div class="text-regular">
-										Connected Home Security ensures that other devices connected to your home
-										network are safe.
+										{{'security.homeprotection.homesecurity.homeSecurityAffect3' | translate}}
 									</div>
 
 								</div>
@@ -77,7 +84,7 @@
 					<li>
 						<div class="container-fluid">
 							<div class="row align-items-center">
-								<div class="col-auto invisible">
+								<div class="col-auto pl-0 invisible">
 									<div class="bullet-icon">
 										<div class="icon-bkg ">
 
@@ -86,11 +93,7 @@
 								</div>
 								<div class="col">
 									<div class="text-regular">
-										Unsafe devices and networks can introduce malware, lead to identity theft, and
-										leak private
-										and financial information. Enable this feature to reduce the risk of having your
-										device, and
-										your home network exposed to attackers
+										{{'security.homeprotection.homesecurity.describe' | translate}}
 									</div>
 								</div>
 							</div>
@@ -98,37 +101,24 @@
 					</li>
 				</ul>
 			</div>
-
-
-			<div class="col">
-				<div class="gem-box">
-					<div class="gem">
-						<fa-icon class="icon"
-						 [icon]="['far', 'gem']"
-						 center></fa-icon>
-					</div>
-				</div>
-
-			</div>
 		</div>
 
 		<div class="row">
 			<div class="col">
 				<div class="peace-of-mind">
-					<div class="sub-heading">Peace of Mind</div>
-					<div class="text-regular">Connected Home Security will send you an alert if it detects a
-						vulnerability in your device or home network, or if you are connected to a potentially malicious
-						network. Learn even more in about Connected Home Security in Tips and Tricks. </div>
-
-					<div class="col-sm-3">
+					<div class="sub-heading">{{'security.homeprotection.homesecurity.subtitle' | translate}}</div>
+					<div class="text-regular">{{'security.homeprotection.homesecurity.subtitleDescribe' | translate}}
+					</div>
+					<div class="col-sm-6">
 						<div class="button-box shift-left">
-							<vtr-ui-button (onClick)="tryNow($event)"
-							 [label]="'Try Now'"></vtr-ui-button>
+							<vtr-ui-button [metricsItem]="'tryNow'"
+								(onClick)="tryNow($event)"
+								[label]="'security.homeprotection.homesecurity.tryNow' | translate"
+								[disabled]="!data.tryNowEnable">
+							</vtr-ui-button>
 						</div>
-
 					</div>
 				</div>
-
 			</div>
 		</div>
 
@@ -141,17 +131,24 @@
 			<div class="col">
 				<div class="invitation-code-box">
 					<div class="row">
-						<div class="col">
+						<div class="col-md-12 col-lg-7">
 							<div class="sub-heading">
-								Already have Connected Home Security?
-								<div class="text-regular">Add another device to your Connected Home</div>
+								{{'security.homeprotection.invitationcode.title' | translate}}
+								<div class="text-regular">
+									{{'security.homeprotection.invitationcode.titleDescribe' | translate}}</div>
 							</div>
 
 						</div>
-						<div class="col-5">
-							<div class="button-box shift-right">
-								<vtr-ui-button (onClick)="enterActivationCode($event)"
-								 [label]="'Enter invitation code'"></vtr-ui-button>
+						<div class="col-md-12 col-lg-5 invitation-button text-right">
+							<div class="button-box">
+								<vtr-ui-button [metricsItem]="'enterInvitationCode'"
+									(onClick)="enterActivationCode($event)"
+									[label]="'security.homeprotection.invitationcode.button' | translate"
+									[alreadyJoinGroup]="data.homeStatus"></vtr-ui-button>
+							</div>
+							<div *ngIf="data.homeStatus==='joined' && showDescribe"
+								class="button-description">
+								{{'security.homeprotection.invitationcode.buttonDescribe' | translate}}
 							</div>
 						</div>
 					</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 	selector: 'vtr-modal-battery-charge-threshold',
@@ -7,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalBatteryChargeThresholdComponent implements OnInit {
 
-	constructor() { }
+	constructor(public activeModal: NgbActiveModal) { }
 
 	ngOnInit() {
+	}
+
+	enableBatteryChargeThreshold() {
+		this.activeModal.close('enable');
+	}
+
+	closeModal() {
+		this.activeModal.close('close');
 	}
 }

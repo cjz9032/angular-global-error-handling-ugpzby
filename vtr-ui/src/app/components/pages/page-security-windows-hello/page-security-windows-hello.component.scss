@@ -11,13 +11,13 @@
 	.title {
 		color: $main_dark;
 		font-size: 4.5rem;
-		font-weight: $weight_light;
+		font-weight: $weight_regular;
 	}
 
 	.heading {
 		color: $main_dark;
 		font-size: 2.5rem;
-		font-weight: $weight_light;
+		font-weight: $weight_regular;
 	}
 
 	.sub-heading {
@@ -31,6 +31,7 @@
 	.sub-heading-2 {
 		color: $main_dark;
 		font-size: 3rem;
+		font-weight: $weight_regular;
 	}
 
 	.sub-heading-text {
@@ -42,10 +43,10 @@
 	.list-heading {
 		color: $main_dark;
 		font-size: 3rem;
-		font-weight: $weight_bold;
+		font-weight: $weight_regular;
 
 		.adjust-left {
-			padding-left: 2.5rem;
+			padding-left: 0rem;
 		}
 	}
 
@@ -53,7 +54,7 @@
 		margin-top: 4rem;
 		padding-top: 4rem;
 		padding-bottom: 4rem;
-		border-top: .2rem solid $shade_lighter;
+		border-top: 0.2rem solid $shade_lighter;
 	}
 
 	.dashlane_logo_teal {
@@ -64,6 +65,10 @@
 	.text-regular {
 		color: $main_dark;
 		font-size: 1.6rem;
+
+		a {
+			text-decoration: underline;
+		}
 	}
 
 	.btn-round-xs {
@@ -77,6 +82,7 @@
 		border-radius: 4.5rem;
 		padding: 1rem 4rem 1rem 4rem;
 		font-size: 1.8rem;
+		font-weight: $weight_bold;
 	}
 
 	.dashlane-side-left-img {
@@ -85,6 +91,7 @@
 
 	.dashlane-side-right-img {
 		width: 90%;
+		float: right;
 	}
 
 	.learnmore {
@@ -102,14 +109,19 @@
 			color: $main_dark;
 
 			.text-regular {
-				color: $main_dark;
+				color: $main_shade;
 				font-size: 1.6rem;
+
+				a {
+					text-decoration: underline;
+				}
 			}
 
 			&.good {
 				.bullet-icon {
 					.icon-bkg {
 						background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+						background-color: $go_dark;
 						border-color: $go_dark;
 					}
 				}
@@ -119,6 +131,7 @@
 				.bullet-icon {
 					.icon-bkg {
 						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+						background-color: $stop_dark;
 						border-color: $stop_dark;
 					}
 				}
@@ -139,13 +152,12 @@
 					height: 3rem;
 					width: 3rem;
 					border-width: 0.2rem;
-					;
 					border-style: solid;
 					text-align: center;
 
 					fa-icon {
 						font-size: 1.6rem;
-						line-height: 2.8rem;
+						line-height: 2.6rem;
 						color: $light;
 					}
 				}
@@ -162,35 +174,48 @@
 		margin-top: 1rem;
 		list-style: none;
 		padding: 0;
-		font-size: 90%;
+		color: $main_dark;
+		font-size: 1.6rem;
 
-		.ol {
+		ol {
 			margin: 0 0 1.5rem;
 			padding: 0;
-			counter-reset: item;
+			counter-reset: listNumbering;
 			box-sizing: border-box;
-		}
-
-		.ol>li {
-			margin: 0;
-			padding: 0 0 0 2rem;
-			text-indent: -2rem;
-			list-style-type: none;
-			counter-increment: item;
-		}
-
-		.ol>li:before {
-			display: inline-block;
-			width: 1.5rem;
-			padding-right: 0.5rem;
-			text-align: right;
-			content: counter(item) ".";
+			padding-left: 0.5rem;
+			li {
+				margin: 0;
+				padding: 0 0 0 2rem;
+				list-style-type: none;
+				counter-increment: listNumbering;
+				position: relative;
+				&:before {
+					display: inline-block;
+					width: 1.5rem;
+					padding-right: 0.5rem;
+					text-align: left;
+					font-size: 3.6rem;
+					position: absolute;
+					content: counter(listNumbering, decimal) ".";
+					left: 0rem;
+				}
+				.text-regular {
+					color: $main_shade;
+					padding: 0.8rem 0.8rem 0.8rem 2rem;
+					a {
+						text-decoration: underline;
+					}
+				}
+			}
 		}
 	}
 
 	.button-box {
 		padding: 1rem;
 		margin: 1.2rem;
+		button {
+			font-weight: bold;
+		}
 	}
 
 	.invitation-code-box {
@@ -199,6 +224,7 @@
 		border: 0.1rem solid $shade_lighter;
 		border-radius: $border_radius;
 		text-align: center;
+		height: 7rem;
 
 		.sub-heading {
 			margin-top: 2rem;
@@ -206,15 +232,15 @@
 			font-size: 1.8rem;
 			font-weight: $weight_medium;
 			text-transform: uppercase;
-			margin-left: -5rem;
+			margin-left: -4rem;
 			word-break: break-all;
 			word-wrap: break-word;
 		}
 
-		.text-regular {
-			color: $main_dark;
-			font-size: 2rem;
-			font-weight: $weight_light;
-		}
+		// .text-regular {
+		//   color: $main_dark;
+		//   font-size: 2rem;
+		//   font-weight: $weight_light;
+		// }
 	}
 }

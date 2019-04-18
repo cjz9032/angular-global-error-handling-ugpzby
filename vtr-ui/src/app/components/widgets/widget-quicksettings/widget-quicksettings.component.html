@@ -2,30 +2,35 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-12">
-				<div class="heading mb-40">Your Quick Settings</div>
+				<div class="heading">{{'dashboard.quickSettings.title' | translate}}</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col col-4 text-left">
-				<vtr-widget-switch-icon [iconDefinition]="['fas', 'microphone']"
-					[value]="microphoneStatus.status"
+				<vtr-widget-switch-icon [iconDefinition]="['fal', 'microphone']"
+					[value]="microphoneStatus.status && microphoneStatus.permission"
+					[title]="'dashboard.quickSettings.microphone' | translate"
 					[isBlocked]="!microphoneStatus.status"
-					[title]="'Microphone'"
-					(toggle)="onMicrophoneStatusToggle($event)"></vtr-widget-switch-icon>
+					(toggle)="onMicrophoneStatusToggle($event)"
+					[disable]="!(microphoneStatus.permission && microphoneStatus.available && quickSettingsWidget[0].state)">
+				</vtr-widget-switch-icon>
 			</div>
-			<div class="col col-4 text-center">
-				<vtr-widget-switch-icon [iconDefinition]="['fas', 'camera']"
+			<div class="col col-4 text-center"
+				*ngIf="cameraStatus.available">
+				<vtr-widget-switch-icon [iconDefinition]="['fal', 'camera']"
 					[value]="cameraStatus.status"
-					[title]="'Camera Privacy'"
+					[title]="'dashboard.quickSettings.cameraPrivacy' | translate"
 					[isBlocked]="cameraStatus.status"
-					(toggle)="onCameraStatusToggle($event)"></vtr-widget-switch-icon>
+					(toggle)="onCameraStatusToggle($event)"
+					[disable]="!(cameraStatus.available && quickSettingsWidget[1].state)"></vtr-widget-switch-icon>
 			</div>
 			<div class="col col-4 text-right">
-				<vtr-widget-switch-icon [iconDefinition]="['fas', 'eye']"
-					[value]="eyeCareModeStatus.status"
+				<vtr-widget-switch-icon [iconDefinition]="['fal', 'eye']"
+					[title]="'dashboard.quickSettings.eyeCareMode' | translate"
+					[value]="eyeCareModeStatus.status && eyeCareModeStatus.permission"
 					[isBlocked]="!eyeCareModeStatus.status"
-					[title]="'Eye Care Mode'"
-					(toggle)="onEyeCareModeToggle($event)"></vtr-widget-switch-icon>
+					(toggle)="onEyeCareModeToggle($event)"
+					[disable]="!(eyeCareModeStatus.permission && eyeCareModeStatus.available && quickSettingsWidget[2].state)"></vtr-widget-switch-icon>
 			</div>
 		</div>
 	</div>

@@ -1,122 +1,222 @@
 <div class="wifi-security">
-	<div class="container-fluid p-40 security-card"
-	 *ngIf="IsWifiSecurityInstalled==='not-installed'">
+	<div class="container-fluid p-40 security-card">
 		<div class="row">
 			<div class="col">
-				<div class="heading">Lenovo Wifi Security</div>
+				<div class="heading">{{'security.wifisecurity.container.title' | translate}}</div>
 			</div>
 			<div class="pull right"><img class="coronet-logo"
-				 src="../../../../assets/images/coronet-logo.svg" /></div>
+					src="../../../../assets/images/coronet-logo.svg" /></div>
 		</div>
-		<div class="row mt-20">
-			<div class="col">
-				<div class="wifi-security-box">
-					<div class="row">
-						<div class="col col-1">
-							<div>
-								<ul class="bullet-list">
-									<li class="bad">
-										<div class="bullet-icon">
-											<div class="icon-bkg">
-												<fa-icon [icon]="['fas', 'times']">
-												</fa-icon>
+		<div *ngIf="data.isLWSEnabled===undefined"
+			class="loading">
+			<div class="spinner-border text-primary progress-spinner"
+				role="status"></div>
+		</div>
+		<div class="row mt-20 no-gutters"
+			*ngIf="data.isLWSEnabled!==undefined">
+			<div class="col-12">
+				<div class="wifiSecurity">
+					<div class="card"
+						[ngClass]="{'collapsed': isCollapsed && data.isLWSEnabled}">
+						<div class="card-header flex align-items-center"
+							id="wifiSecurity">
+							<div class="row no-gutters">
+								<div class="col-sm-6 subHeading align-items-center"
+									*ngIf="data.isLWSEnabled">
+									<span class="circle green">
+										<fa-icon [icon]="['fas', 'check']"></fa-icon>
+									</span>
+									<h3 class="mb-0">{{'security.wifisecurity.container.name' | translate}}
+										<span
+											class="badge badge-pill badge-danger button-green line-height-2-5 p-0 pl-3 pr-3">{{'security.wifisecurity.container.enable' | translate}}</span>
+									</h3>
+								</div>
+								<div class="col-sm-6 subHeading align-items-center"
+									*ngIf="!data.isLWSEnabled">
+									<span class="circle red">
+										<fa-icon [icon]="['fas', 'times']"></fa-icon>
+									</span>
+									<h3 class="mb-0">{{'security.wifisecurity.container.name' | translate}}
+										<span
+											class="badge badge-pill badge-danger button-red line-height-2-5 p-0 pl-3 pr-3">{{'security.wifisecurity.container.disable' | translate}}</span>
+									</h3>
+								</div>
+								<div class="col-sm-6 align-items-center text-right">
+									<vtr-ui-switch-onoff *ngIf="!data.hasWSEverUsed"
+										name="wifisecurity"
+										[value]="data.isLWSEnabled"
+										[data]="data"></vtr-ui-switch-onoff>
+									<div class="collapse-control"
+										(click)="$event.preventDefault();isCollapsed=!isCollapsed;"
+										[hidden]="!data.isLWSEnabled">
+										<button vtrMetrics
+											metricsItem="collapseWiFiHistory"
+											metricsEvent="itemClick"
+											class="btn btn-link collapse-text p-0"
+											type="button"
+											data-toggle="collapse"
+											data-target="#wifi-collapse"
+											aria-expanded="false"
+											aria-controls="wifi-collapse"
+											*ngIf="isShowMore===false"
+											(click)="isShowMore=true">
+											{{'security.wifisecurity.container.less' | translate}} <fa-icon
+												[icon]="['fas', 'chevron-up']"
+												class="pl-3"></fa-icon></button>
+										<button vtrMetrics
+											metricsItem="expandWiFiHistory"
+											metricsEvent="itemClick"
+											class="btn btn-link collapse-text p-0"
+											type="button"
+											data-toggle="collapse"
+											data-target="#wifi-collapse"
+											aria-expanded="false"
+											aria-controls="wifi-collapse"
+											*ngIf="isShowMore===true"
+											(click)="isShowMore=false">
+											{{'security.wifisecurity.container.more' | translate}} <fa-icon
+												[icon]="['fas', 'chevron-down']"
+												class="pl-3"></fa-icon></button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="wifi-collapse"
+						class="collapse show"
+						*ngIf="data.isLWSEnabled && isShowMore===false">
+						<div class="card-body">
+							<div class="content">
+								<div class="cardTitle">
+									<h3>{{'security.wifisecurity.container.networkHistory' | translate}}</h3>
+									<!-- <small class="status">
+										Show: <a href=""
+											vtrMetrics
+											metricsItem="link.Malicious"
+											metricsEvent="itemclick"
+											metricsParent="wifisecurity"
+											(click)="$event.preventDefault();showAllNetworks=false;"
+											[ngClass]="{'active': !showAllNetworks}">Malicious</a> / <a href=""
+											(click)="$event.preventDefault();showAllNetworks=true;"
+											vtrMetrics
+											metricsItem="link.all"
+											metricsEvent="itemclick"
+											metricsParent="wifisecurity"
+											[ngClass]="{'active': showAllNetworks}">All</a>
+									</small> -->
+								</div>
+								<div class="cardBody">
+									<div class="row no-gutters wifi-card">
+										<div *ngFor="let history of data.historys"
+											class="col-sm-12 col-md-12 col-lg-6 col-xl-6 align-self-center pl-5 wifi">
+											<div class="media pt-3 border-0">
+												<div class="status-icon">
+													<span class="fa-stack fa-3x">
+														<fa-icon [icon]="['fal', 'wifi']"
+															class="menu-pointer"></fa-icon>
+														<span class="circle"
+															[ngClass]="{'green':history.good == 0,'red':history.good != 0}">
+															<fa-icon [icon]="['fal', 'check']"
+																*ngIf="history.good == 0"></fa-icon>
+															<fa-icon [icon]="['fal', 'times']"
+																*ngIf="history.good != 0"></fa-icon>
+														</span>
+													</span>
+												</div>
+												<div class="connection-name media-body border-0">
+													<h5 class="mt-0"
+														title="{{history.ssid}}">{{history.ssid}}</h5>
+													<small class="connection-status text-muted">
+														{{'security.wifisecurity.container.connect' | translate}}
+														{{history.info}}
+													</small>
+												</div>
 											</div>
 										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col col-2">
-							<div class="sub-heading">
-								<p> Wifi Security</p>
-							</div>
-						</div>
-
-						<div>
-							<div class="button-box">
-								<button type="button"
-								 class="btn btn-danger btn-round-xs text-uppercase">
-									Disabled
-								</button>
+									</div>
+									<!-- <ul class="openNetworks">
+										<li *ngFor="let history of data.historys" class="row">
+											<div class="status-icon col-sm-12 col-md-5 col-lg-3 col-xl-3">
+												<span class="fa-stack fa-3x">
+													<fa-icon [icon]="['fas', 'wifi']"
+														class="menu-pointer"></fa-icon>
+													<span class="circle"
+														[ngClass]="{'green':history.good == 0,'red':history.good != 0}">
+														<fa-icon [icon]="['fas', 'check']"
+															*ngIf="history.good == 0"></fa-icon>
+														<fa-icon [icon]="['fas', 'times']"
+															*ngIf="history.good != 0"></fa-icon>
+													</span>
+												</span>
+											</div>
+											<div class="connection-name p-1 pl-0 col-sm-12 col-md-7 col-lg-8 col-xl-8">
+												<span title="{{history.ssid}}">{{history.ssid}}</span>
+												<small class="connection-status">
+													{{'security.wifisecurity.container.connect' | translate}} 
+													{{history.info}}
+												</small>
+											</div>
+										</li>
+									</ul> -->
+								</div>
+								<div class="card-foot"
+									*ngIf="data.hasMore">
+									<a vtrMetrics
+										metricsItem="showMoreWiFiHistory"
+										metricsEvent="itemClick"
+										class="show-more"
+										href="#"
+										(click)="clickShowMore()"
+										*ngIf="isShowMoreLink">{{'security.wifisecurity.container.showmore' | translate}}</a>
+									<a vtrMetrics
+										metricsItem="showMoreWiFiHistory"
+										metricsEvent="itemClick"
+										class="show-more"
+										href="#"
+										(click)="clickShowMore()"
+										*ngIf="!isShowMoreLink">{{'security.wifisecurity.container.showless'| translate}}</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="row mt-10 threat-locator">
+		<div class="row threat-locator"
+			*ngIf="(region !== 'CN') && (!data.isLWSEnabled || isShowMore===false)">
 			<div class="col">
-				<div class="sub-heading-2">Threat locator</div>
-				<div class="text-regular">
-					Use the threat detector to determine the safety of the networks
-					around you.
-				</div>
-				<div class="text-regular">
-					<input type="text"
-					 placeholder="Your location">
-					<button type="button"
-					 class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
-						Check threat
-					</button>
-				</div>
-			</div>
-		</div>
-		<div class="row mt-40">
-			<div class="col">
-			</div>
-			<div class=" pull right">
-				<div class="col-12">
-					<button type="button"
-					 (click)="enableWifiSecurity()"
-					 class="btn btn-primary text-uppercase btn-round-sm  btn-lg">
-						Enable Wifi Security
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="container-fluid p-40 security-card"
-	 *ngIf="IsWifiSecurityInstalled==='active'">
-		<div class="row">
-			<div class="col">
-				<div class="heading">Lenovo Wifi Security</div>
-			</div>
-			<div class="pull right"><img class="coronet-logo"
-				 src="../../../../assets/images/coronet-logo.svg" /></div>
-		</div>
-		<div class="row mt-20">
-			<div class="col">
-				<div class="wifi-security-box">
+				<div class="threat-locator-container">
 					<div class="row">
-						<div class="col col-1">
-							<div>
-								<ul class="bullet-list">
-									<li class="good">
-										<div class="bullet-icon">
-											<div class="icon-bkg">
-												<fa-icon [icon]="['fas', 'check']">
-												</fa-icon>
-											</div>
-										</div>
-									</li>
-								</ul>
+						<div class="col-sm-12 col-md-12 col-lg-8">
+							<div class="sub-heading-2">Threat locator</div>
+							<div class="text-regular">
+								{{'security.wifisecurity.threatlocator.describe' | translate}}
 							</div>
 						</div>
-						<div class="col col-2">
-							<div class="sub-heading">
-								Wifi Security
-							</div>
-						</div>
-						<div>
+						<div class="col-sm-12 col-md-12 col-lg-4 col-check-location">
 							<div class="button-box">
-								<button type="button"
-								 class="btn btn-success btn-round-xs text-uppercase">
-									Enabled
-								</button>
+								<vtr-ui-button [metricsItem]="'checkYourLocation'"
+									(click)="openThreatLocator()"
+									[label]="'security.wifisecurity.threatlocator.button' | translate"></vtr-ui-button>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="row mt-40"
+			*ngIf="!data.isLWSEnabled">
+			<div class="col-sm-12 col-md-12 col-lg-8">
+				<div class="text-regular">{{ 'security.wifisecurity.container.disableDecribe' | translate }}</div>
+			</div>
+			<div class="col-sm-12 col-md-12 col-lg-4 text-right">
+				<vtr-ui-button vtrMetrics
+					metricsParent="lenovo-wifi-security"
+					metricsItem="enableWifiSecurity"
+					metricsEvent="itemClick"
+					(click)="enableWifiSecurity()"
+					[label]="'security.wifisecurity.container.button' | translate"
+					*ngIf="!data.hasWSEverUsed"></vtr-ui-button>
 			</div>
 		</div>
 	</div>

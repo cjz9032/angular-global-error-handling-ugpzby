@@ -3,42 +3,71 @@
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="backarrow"
 				[back]="back"
-				[title]="title"></vtr-header-main>
+				[title]="title">
+			</vtr-header-main>
 		</div>
 	</div>
+
 	<div class="row vtr-page-content">
 		<div class="col vtr-col">
-			<div class="row">
-				<div class="col col-8 vtr-page-left-column">
-					<div class="vtr-page-shift-up">
-						<div class="vtr-device-information">
-							<div class="container-fluid">
-								<div class="row">
-									<div class="col col-12">
-										<vtr-widget-device-update [title]="
-												'An up-to-date system is a healthy system.'
-											"
-											[subTitle1]="'Last update was on'"
-											[subTitle2]="'Next updated scan is scheduled on '"
-											[checkForUpdates]="'Check For Updates'"></vtr-widget-device-update>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12 col-md-6 col-lg-7 col-xl-8 vtr-page-left-column">
+						<div class="vtr-page-shift-up">
+							<div class="vtr-device-information">
+								<div class="container-fluid">
+
+									<div class="row">
+										<div class="col col-12">
+											<vtr-widget-offline-info [title]="'No internet connection detected'"
+												*ngIf="!isOnline"
+												[subtitle]="offlineSubtitle | safeDom : 'html'"
+												[buttonText]="'Get Support'"
+												(buttonClick)="onGetSupportClick($event)"></vtr-widget-offline-info>
+
+											<vtr-widget-device-update [title]="updateTitle"
+												*ngIf="isOnline"
+												[subTitle1]="getLastUpdatedText()"
+												[subTitle2]="getNextUpdatedScanText()"
+												[buttonText]="'Check For Updates'"
+												[percent]="percentCompleted"
+												[showProgress]="isUpdateCheckInProgress"
+												[isUpdateDownloading]="isUpdateDownloading"
+												[installingPercent]="installationPercent"
+												[downloadingPercent]="downloadingPercent"
+												(checkForUpdate)="onCheckForUpdates()"
+												(cancelUpdateCheck)="onCancelUpdateCheck()"
+												(cancelUpdateDownload)="onCancelUpdateDownload()">
+											</vtr-widget-device-update>
+										</div>
 									</div>
-								</div>
 
-								<vtr-available-updates></vtr-available-updates>
+									<vtr-available-updates *ngIf="isUpdateListVisible()"
+										[criticalUpdates]="criticalUpdates"
+										[optionalUpdates]="optionalUpdates"
+										[recommendedUpdates]="recommendedUpdates"
+										[isInstallationCompleted]="isInstallationCompleted"
+										[isInstallationSuccess]="isInstallationSuccess"
+										[isInstallingAllUpdates]="isInstallingAllUpdates"
+										(checkChange)="onUpdateSelectionChange($event)"
+										(installAllUpdate)="showInstallConfirmation('all')"
+										(installSelectedUpdate)="showInstallConfirmation('selected')">
+									</vtr-available-updates>
 
-								<div class="row">
-									<div class="col col-12 installation-history-container">
-										<div class="row">
+									<div class="row">
+										<div class="col col-12 installation-history-container p-5">
+											<!-- Installation timeline is scope of MVP-2 -->
+											<!-- <div class="row">
 											<div class="col installation-history">
 												{{ installationHistory }}
 											</div>
 										</div>
 										<div class="row installation-history-div">
 											<div class="col col-1 installation-history-ellipses">
-												...
+												---
 											</div>
 											<div class="col col-1 installation-history-dash">
-												-
+												<hr>
 											</div>
 											<div class="col col-9 installation-history-text">
 												<div class="row">
@@ -50,7 +79,7 @@
 																	<a routerLink="/{{item.path}}">
 																		<div class="container-fluid">
 																			<div class="row">
-																				<div class="col col-2 text-center">
+																				<div class="col col-2 text-right">
 																					<div class="status-icon">
 																						<div class="icon-bkg">
 																							<fa-icon
@@ -69,55 +98,126 @@
 																	</a>
 																</li>
 															</div>
+															<hr>
 														</ul>
+													</div>
+													<div class="col col-1 installation-history-dash status-now">
+														Now
 													</div>
 												</div>
 											</div>
-											<div class="col col-1 installation-history-dash">
-												Now
+										</div> -->
+
+											<!-- <div class="row">
+											<div class="col row1 full-history">
+												<a (click)="onToggleFullHistory()"
+													class="pointer">Full History</a>
 											</div>
 										</div>
-										<div class="row">
-											<div class="col row1 full-history">
-												Full History
+
+										<vtr-installation-history *ngIf="showFullHistory"
+											(reinstallUpdate)="onReinstallUpdate($event)"></vtr-installation-history> -->
+
+
+											<!-- <ng-template #tipContent>
+											<div>
+												<a href="#"
+													class="reboot-text">
+													<div class="row">
+														<div class="col-auto pl-0 pr-0">
+															<fa-icon [icon]="['fas', 'undo']"></fa-icon>
+														</div>
+														<div class="col">Reboot required</div>
+													</div>
+												</a>
+												<ul>
+													<li>Manufacturer: <span>{{ updateDetails.manufacturer }}</span></li>
+													<li>Version: <span>{{ updateDetails.version }}</span></li>
+													<li>Installed version:
+														<span>{{ updateDetails.installedVersion }}</span></li>
+													<li>Download size: <span>{{ updateDetails.downloadSize }}</span>
+													</li>
+													<li>Disc space needed:
+														<span>{{ updateDetails.diskSpaceNeeded }}</span></li>
+												</ul>
+												<div class="row">
+													<div class="col-auto pl-0">
+														<a href="#"
+															class="read">Read more</a>
+													</div>
+													<div class="col-auto pl-0">
+														<a href="#"
+															class="ignore">Ignore update</a>
+													</div>
+												</div>
 											</div>
+										</ng-template>
+										<div class="row justify-content-center">
+											<fa-icon class="question-icon"
+												placement="auto"
+												[ngbTooltip]="tipContent"
+												[icon]="['far', 'question-circle']"
+												container="body"
+												tooltipClass="tooltip-click"
+												triggers="click:blur">
+											</fa-icon>
+										</div> -->
+
+											<vtr-container-collapsible [cardTitle]="'Full History'"
+												[isCollapsed]="false">
+												<vtr-installation-history (reinstallUpdate)="onReinstallUpdate($event)">
+												</vtr-installation-history>
+											</vtr-container-collapsible>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col col-4 vtr-page-right-column">
-					<div class="vtr-page-shift-up">
-						<div class="container-fluid">
-							<div class="row mb-40">
-								<div class="col col-12 cont">
-									<vtr-widget-device-update-settings [title]="'Auto update settings'"
-										[description]="'Automatically Install Updates'"
-										[items]="dummyUpdates"></vtr-widget-device-update-settings>
-								</div>
-							</div>
-							<div class="row mb-40">
-								<div class="col col-12">
-									<vtr-container-card
-										[img]="'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg'"
-										[title]="'Lenovo Support website'"
-										[logoText]="'LENEVO SPECIAL'"
-										[readMore]="'http://www.google.com'"
-										[type]="'partnerarticle'"
-										[ratioX]="4"
-										[ratioY]="2">
-									</vtr-container-card>
-								</div>
-							</div>
+					<div class="col-sm-12 col-md-6 col-lg-5 col-xl-4 vtr-page-right-column">
+						<div class="vtr-page-shift-up">
+							<div class="container-fluid">
+								<div class="row mb-40">
+									<div class="col col-12 cont">
 
-							<div class="row">
-								<div class="col col-12 pb-40">
-									<vtr-widget-reboot></vtr-widget-reboot>
+										<vtr-widget-device-update-settings [title]="'Auto update settings'"
+											componentName="Auto Update Settings"
+											[description]="'Automatically Install Updates'"
+											[items]="autoUpdateOptions"
+											(toggleOnOff)="onUpdateToggleOnOff($event)">
+										</vtr-widget-device-update-settings>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col col-12 mb-40">
+										<vtr-container-card [img]="'assets/images/support.jpg'"
+											[title]="'Lenovo Support website'"
+											[action]="'Read More'"
+											[actionLink]="'https://pcsupport.lenovo.com/'"
+											[type]="'partnerarticle'"
+											[ratioX]="4"
+											[ratioY]="2">
+										</vtr-container-card>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col col-12 mb-40">
+										<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+											[caption]="cardContentPositionA.Description"
+											[title]="cardContentPositionA.Title"
+											[logoText]="cardContentPositionA.BrandName"
+											[action]="cardContentPositionA.Action"
+											[actionLink]="cardContentPositionA.ActionLink"
+											[type]="'corner-article'"
+											[ratioX]="4"
+											[ratioY]="2"
+											[cornerShift]="'large'">
+										</vtr-container-card>
+									</div>
 								</div>
 							</div>
-
 						</div>
 					</div>
 				</div>

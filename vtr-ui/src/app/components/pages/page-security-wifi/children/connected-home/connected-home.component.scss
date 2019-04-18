@@ -4,33 +4,46 @@
 	box-shadow: $drop_shadow;
 	border-radius: $border_radius;
 	background-color: $light;
+
 	.header {
 		.heading {
-			color: $main_darker;
-			font-size: 3.5rem;
+			color: $main_dark;
+			font-size: 3.6rem;
+			font-weight: $weight_light;
 		}
 	}
+
 	.text-regular {
 		color: $main_shade;
 		font-size: 1.5rem;
 		font-weight: $weight_light;
 		padding: 1rem 1rem 1rem 0rem;
 	}
+
 	.peace-of-mind {
 		margin-left: 4rem;
-		padding: 2rem 2rem 0rem 2rem;
+		padding: 2rem 2rem 0rem 1.2rem;
+
 		.sub-heading {
 			color: $main_dark;
 			font-size: 2rem;
-			font-weight: $weight_medium;
+			font-weight: $weight_bold;
 			text-transform: uppercase;
 		}
+
 		.text-regular {
 			width: 75%;
 		}
+
 		.button-box {
 			padding: 0rem;
 			margin: 1rem;
+
+			button {
+				@media #{$mediaquery_X9} {
+					font-size: 1rem;
+				}
+			}
 
 			&.shift-left {
 				top: 20%;
@@ -41,23 +54,28 @@
 			}
 		}
 	}
+
 	.bullet-list {
 		margin-top: 1rem;
 		list-style: none;
 		padding: 0;
 		background-color: $light;
+
 		li {
 			margin: 0;
 			padding: 1rem 1rem 1rem 0;
 			color: $main_dark;
+
 			&.good {
 				.bullet-icon {
 					.icon-bkg {
 						background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+						background-color: $go_dark;
 						border-color: $go_dark;
 					}
 				}
 			}
+
 			.bullet-icon {
 				.icon-bkg {
 					display: inline-block;
@@ -67,9 +85,10 @@
 					border-width: 0.3rem;
 					border-style: solid;
 					text-align: center;
+
 					fa-icon {
 						font-size: 1.6rem;
-						line-height: 2.9rem;
+						line-height: 2.7rem;
 						color: $light;
 					}
 				}
@@ -78,29 +97,39 @@
 	}
 
 	.gem-box {
-		padding: 5rem 0.5rem 5rem 5rem;
+		//margin: 3rem 2rem 1rem 1rem;
+		padding: 3rem 1rem 4rem 1rem;
+		//border: 1px solid red;
+		height: auto;
 		width: 100%;
-		height: 100%;
-		position: relative;
+		max-width: 100%;
+
 		.gem {
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			box-sizing: border-box;
-			background-color: $shade_lightest;
-			position: absolute;
+			padding: 2.5rem;
+			//border: 1px solid blue;
 			width: 100%;
 			height: 100%;
-			padding: 5rem;
+			//background-color: $shade_extralight;
 			border-radius: $border_radius_sm;
+
+			img {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				width: 100%;
+				max-width: 110%;
+				height: auto;
+				//border: 1px solid green;
+			}
+
 			fa-icon.icon {
 				font-size: 15rem;
 				color: $main;
 				text-align: center;
 				position: relative;
-				padding: 4rem;
-				top: 25%;
-				left: 10%;
+				padding: 2rem;
+				right: 5%;
+				//border: 1px solid green;
 			}
 		}
 	}
@@ -119,27 +148,45 @@
 		border: 0.1rem solid $shade_lighter;
 		border-radius: $border_radius;
 		text-align: center;
+
+		.invitation-button {
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+
 		.sub-heading {
 			margin-top: 1rem;
 			color: $main_dark;
 			font-size: 2rem;
-			font-weight: $weight_medium;
+			font-weight: $weight_bold;
 			text-transform: uppercase;
-			padding-left: 0rem;
+			text-align: left;
+			padding-left: 3rem;
+			font-size: 1.6rem;
+
 			.text-regular {
 				color: $main_dark;
-				font-size: 2rem;
+				font-size: 1.4rem;
 				font-weight: $weight_light;
 				text-transform: none;
+				padding-top: 0rem;
 			}
+
 			.button-box {
 				padding: 0rem;
 				margin: 0.5rem;
+
 				&.shift-right {
 					padding: 0.5rem 0.5rem 0.5rem 0rem;
 					margin: 0.5rem 0.5rem 0.5rem 0rem;
 				}
 			}
+		}
+
+		.button-description {
+			width: 29rem;
+			float: right;
 		}
 	}
 }

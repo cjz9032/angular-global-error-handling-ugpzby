@@ -1,13 +1,6 @@
 @import "../../../app.theme";
 
 .vtr-page-device-updates {
-	.vtr-page-right-column {
-		background-color: $light;
-		.align-center {
-			padding: 0 6rem 0rem 6rem;
-		}
-	}
-
 	.vtr-device-information {
 		box-shadow: $drop_shadow;
 	}
@@ -16,6 +9,7 @@
 		padding-left: 0rem !important;
 		padding-right: 0rem !important;
 	}
+
 	.installation-history-container {
 		border-radius: 0.5rem;
 		border-top-left-radius: 0rem;
@@ -24,35 +18,53 @@
 		height: 100%;
 		width: 100%;
 		background: $light;
+
 		.installation-history {
 			padding-left: 5rem;
-			padding-top: 0rem;
+			padding-top: 4rem;
 			padding-right: 5rem;
-			padding-bottom: 4rem;
+			padding-bottom: 0;
 			color: $main_shade;
 			font-size: 2.5rem;
 			font-weight: $weight_light;
 			line-height: 2.9rem;
 		}
+
 		.installation-history-div {
 			padding-left: 5rem;
 			padding-right: 5rem;
+
 			.installation-history-ellipses {
 				border-radius: 2.5rem;
 				background-color: $shade_extralight;
-				padding-top: 2rem;
+				padding-top: 1.9rem;
 				padding-bottom: 1rem;
 				text-align: center;
 				font-size: 1.1rem;
+				color: $shade;
 			}
+
 			.installation-history-dash {
 				border-radius: 2.5rem;
 				background-color: $shade_extralight;
-				padding-top: 2rem;
+				padding-top: 1.6rem;
 				padding-bottom: 1rem;
 				text-align: center;
-				font-size: 1.1rem;
+				font-size: 1.4rem;
+
+				hr {
+					margin: 0.9rem 3rem;
+					color: $shade;
+				}
+
+				&.status-now {
+					background: $light;
+					padding-top: 0.4rem;
+					padding-bottom: 0.4rem;
+					margin-right: 1rem;
+				}
 			}
+
 			.installation-history-text {
 				border-radius: 2.5rem;
 				background-color: $shade_extralight;
@@ -60,58 +72,101 @@
 				padding-bottom: 0rem;
 				text-align: center;
 			}
+
 			.status-list {
 				list-style: none;
 				padding: 0;
 				border-radius: $border_radius;
+
 				li {
 					display: in-line;
 					width: 33%;
+					background: none !important;
+
 					.installation-date {
 						color: $main_shade;
 						font-size: 1.1rem;
 						line-height: 1.3rem;
 						text-align: right;
 					}
+
 					&:last-child {
 						border: none;
 					}
+
 					&:hover {
 						background-color: $shade_extralight;
 					}
+
 					&.success {
 						.status-icon {
 							.icon-bkg {
 								background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+								background-color: $go_dark;
 								border-color: $go_dark;
 							}
 						}
+
 						.title {
 							color: $main_shade;
+							background: $light;
+							border-radius: 1rem;
+							color: $main_shade;
+							background: $light;
+							width: 70%;
+							position: absolute;
+							left: -10%;
+							top: 1%;
+							padding-left: 2rem;
 						}
 					}
+
 					&.fail {
 						.status-icon {
 							.icon-bkg {
 								background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+								background-color: $stop_dark;
 								border-color: $stop_dark;
 							}
 						}
+
 						.title {
 							color: $main_shade;
+							background: $light;
+							border-radius: 1rem;
+							color: $main_shade;
+							background: $light;
+							width: 70%;
+							position: absolute;
+							left: -10%;
+							top: 1%;
+							padding-left: 2rem;
 						}
 					}
+
 					&.pause {
 						.status-icon {
 							.icon-bkg {
 								background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+								background-color: $stop_dark;
 								border-color: $stop_dark;
 							}
 						}
+
 						.title {
 							color: $main_shade;
+							background: $light;
+							border-radius: 1rem;
+							color: $main_shade;
+							background: $light;
+							width: 70%;
+							position: absolute;
+							left: -10%;
+							top: 1%;
+							padding-left: 2rem;
 						}
 					}
+
 					.status-icon {
 						.icon-bkg {
 							display: inline-block;
@@ -121,36 +176,45 @@
 							border-width: 0.2rem;
 							border-style: solid;
 							text-align: center;
+
 							fa-icon {
 								font-size: 1.2rem;
-								line-height: 2.8rem;
+								line-height: 2.6rem;
 								color: $light;
 							}
 						}
 					}
+
 					.status-text {
 						overflow: hidden;
+
 						.title {
 							line-height: 2.8rem;
 							font-size: 1.4rem;
-							font-weight: $weight_medium;
+							font-weight: normal;
 							float: left;
 						}
 					}
 				}
+
+				hr {
+					margin: -1rem 0rem -1rem 2rem;
+				}
 			}
 		}
 	}
+
 	.full-history {
 		color: $main;
 		font-size: 1.3rem;
 		font-weight: $weight_medium;
 		letter-spacing: 0rem;
 		line-height: 1.5rem;
-		padding-top: 5rem;
-		padding-bottom: 5rem;
-		padding-left: 5rem;
-		padding-right: 5rem;
+		padding: 2rem 5rem;
 		text-transform: uppercase;
+
+		.pointer {
+			cursor: pointer;
+		}
 	}
 }

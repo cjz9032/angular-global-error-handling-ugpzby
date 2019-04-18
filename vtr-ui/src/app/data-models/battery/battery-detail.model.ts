@@ -11,9 +11,13 @@ class BatteryDetail {
 
 	//#region battery detail properties
 
-	public chargeStatus: string;
+	public chargeStatus: number;
+	public isAcAttached: boolean;
+	public chargeStatusString: string;
+	public mainBatteryPercent: number;
 	public remainingPercent: number;
-	public remainingTime: string;
+	public remainingTime: number;
+	public mainBatteryRemainingTime: number; 
 	public remainingCapacity: number;
 	public fullChargeCapacity: number;
 	public voltage: number;
@@ -21,14 +25,16 @@ class BatteryDetail {
 	public temperature: number;
 	public cycleCount: number;
 	public manufacturer: string;
-	public manufactureDate: string;
-	public firstUseDate: string;
+	public manufactureDate: Date;
+	public firstUseDate: Date;
 	public barCode: string;
 	public deviceChemistry: string;
 	public designCapacity: number;
 	public designVoltage: number;
 	public firmwareVersion: string;
-
+	public fruPart: string;
+	public isVoltageError: boolean; 
+	public isExpressCharging: boolean;
 	//#endregion
 
 	public batteryGaugeDetail: BatteryGaugeDetail;

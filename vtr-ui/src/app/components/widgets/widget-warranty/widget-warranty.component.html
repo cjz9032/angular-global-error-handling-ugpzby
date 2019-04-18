@@ -2,28 +2,28 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
-				<div class="title pb-40">{{status.title[item.status]}}</div>
+				<div class="title pb-40">{{status.title[item.status] | translate}}</div>
 				<div class="content" *ngIf="item.status < 2">
-					<div class="sub-title">{{getRoundYear(item.dayDiff)}}Y Depot Warranty</div>
-					<div class="sub-description pb-40">
-						This product has years limited warranty and it entitled to depot repair service. Customers may call their local
-						service center for more information. Dealers may provide carry-in repair for this product.
+					<div class="sub-title">
+						{{getRoundYear(item.dayDiff)}}{{'support.warranty.yearDepotWarranty' | translate}}
 					</div>
-					<div class="sub-title">Warranty Details:</div>
 					<div class="sub-description pb-40">
-						<div class="pb-2">Start date: <b>{{dateFormat(item.startDate)}}</b></div>
-						<div class="pb-2">End date: <b>{{dateFormat(item.endDate)}}</b></div>
-						<div class="pb-2">Status: <b>{{status.detail[item.status]}}</b></div>
+						{{'support.warranty.subDescription1' | translate}}
+					</div>
+					<div class="sub-title">{{'support.warranty.warrantyDetails' | translate}}</div>
+					<div class="sub-description pb-40">
+						<div class="pb-2">{{'support.warranty.startDate' | translate}}<b>{{dateFormat(item.startDate)}}</b></div>
+						<div class="pb-2">{{'support.warranty.endDate' | translate}}<b>{{dateFormat(item.endDate)}}</b></div>
+						<div class="pb-2">{{'support.warranty.status' | translate}}<b>{{status.detail[item.status] | translate}}</b></div>
 					</div>
 				</div>
 				<div class="content" *ngIf="item.status == 2">
 					<div class="sub-description pb-40">
-						We were unable to locate warranty details for your device, to have more warranty options, please visit our support website.
+						{{'support.warranty.subDescription2' | translate}}
 					</div>
 				</div>
 				<div class="button-box">
-					<!-- <a role="button" href="https://pcsupport.lenovo.com/us/en/warrantylookup" class="button">VIEW WARRANTY OPTIONS</a> -->
-					<a role="button" href="{{item.url}}" target="_blank" class="button">VIEW WARRANTY OPTIONS</a>
+					<a role="button" href="{{item.url}}" target="_blank" class="button" vtrMetrics metricsItem="ViewWarrantyOptionsButton" metricsEvent="ItemClick" metricsParent="Page.Support">{{'support.warranty.viewWarrantyOptions' | translate}}</a>
 				</div>
 			</div>
 		</div>

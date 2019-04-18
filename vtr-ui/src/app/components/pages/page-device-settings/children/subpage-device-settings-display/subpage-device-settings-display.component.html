@@ -2,97 +2,139 @@
 	<div class="row">
 		<div class="col">
 			<vtr-ui-header-subpage [items]="headerMenuItems"
-			 [title]="title"
-			 [caption]="headerCaption"
-			 [menuTitle]="headerMenuTitle"></vtr-ui-header-subpage>
+				[title]="title | translate"
+				[caption]="'device.deviceSettings.displayCamera.description' | translate"
+				[menuTitle]="'device.deviceSettings.displayCamera.jumpTo.title' | translate"></vtr-ui-header-subpage>
 		</div>
 	</div>
 	<div class="row py-5 smartsettings-card"
-	 id="display">
+		id="display">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible cardTitle="Display"
-			 [isCollapsed]="false"
-			 [allowCollapse]="true"
-			 [theme]="'white'">
+			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.displayCamera.display.title' | translate"
+				componentName="display"
+				[isCollapsed]="false"
+				[allowCollapse]="true"
+				[theme]="'white'"
+				(toggle)="onCardCollapse($event)">
 				<ul class="list-group list-group-flush">
-					<li class="pt-3">
-						<vtr-ui-row-switch [title]="'Eye Care Mode'"
-						 [caption]=""
-						 [isSwitchVisible]="true"
-						 [leftIcon]="['far', 'gem']"
-						 [rightIcon]="['far', 'question-circle']"
-						 [readMoreText]="''"
-						 [showChildContent]="true"
-						 [theme]="'white'" [tooltipText]="'Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.'">
-							<vtr-eye-care-mode></vtr-eye-care-mode>
-							<br />
-						</vtr-ui-row-switch>
-					</li>
-					<li class="pt-3">
-						<vtr-ui-row-switch [title]="'Display Priority Control'"
-						 [caption]="'Configures microphone effect to enhance your audio experience by different scenarios and environment.'"
-						 [isSwitchVisible]="false"
-						 [leftIcon]="['far', 'gem']"
-						 [readMoreText]="''"
-						 [showChildContent]="true"
-						 [theme]="'white'">
-							<div class="my-3">
-								<vtr-ui-rectangle-radio [radioId]="'radio1'"
-								 [group]="'radio'"
-								 [label]="'HDMI'"
-								 [value]="'DYNAMIC'"></vtr-ui-rectangle-radio>
-								<vtr-ui-rectangle-radio [radioId]="'radio2'"
-								 [group]="'radio'"
-								 [label]="'USB TYPE-c'"
-								 [value]="'MOVIE'"></vtr-ui-rectangle-radio>
+					<li class="pt-3"
+						*ngIf="eyeCareModeStatus.available">
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
+							componentName="Eye Care Mode"
+							name="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
+							[caption]=""
+							[isSwitchVisible]="true"
+							[leftIcon]="['fal', 'eye']"
+							[rightIcon]="['far', 'question-circle']"
+							[readMoreText]="''"
+							[showChildContent]="true"
+							[isSwitchChecked]="eyeCareModeStatus.status"
+							(toggleOnOff)="onEyeCareModeStatusToggle($event)"
+							[theme]="'white'"
+							[tooltipText]="'device.deviceSettings.displayCamera.display.eyeCareMode.tooltip' | translate">
+							<div class="row">
+								<div class="col-12">
+									<vtr-eye-care-mode [eyeCareModeSettings]="eyeCareDataSource"
+										[enableSlider]="!enableSlider"
+										[enableSunsetToSunrise]="enableSunsetToSunrise"
+										[sunsetToSunriseStatus]="sunsetToSunriseModeStatus"
+										[manualRefresh]="manualRefresh"
+										(eyeCareTemparatureChange)="onEyeCareTemparatureChange($event)"
+										(resetTemparature)="onResetTemparature($event)"
+										(sunsetToSunrise)="onSunsetToSunrise($event)"></vtr-eye-care-mode>
+								</div>
 							</div>
 						</vtr-ui-row-switch>
 					</li>
+					<!-- MVP 2 feature -->
+					<!-- <li class="pt-3">
+						<vtr-ui-row-switch [title]="'Display Priority Control'"
+							[caption]="'Configures microphone effect to enhance your audio experience by different scenarios and environment.'"
+							[isSwitchVisible]="false"
+							[leftIcon]="['far', 'gem']"
+							[readMoreText]="''"
+							[showChildContent]="true"
+							[theme]="'white'">
+							<div class="my-3">
+								<vtr-ui-rectangle-radio [radioId]="'radio1'"
+									[group]="'radio'"
+									[label]="'HDMI'"
+									[value]="'DYNAMIC'"></vtr-ui-rectangle-radio>
+								<vtr-ui-rectangle-radio [radioId]="'radio2'"
+									[group]="'radio'"
+									[label]="'USB TYPE-c'"
+									[value]="'MOVIE'"></vtr-ui-rectangle-radio>
+							</div>
+						</vtr-ui-row-switch>
+					</li> -->
 				</ul>
+				<vtr-widget-permission-note [noteTitle]="'Note'"
+					[description]="'Lenovo Vantage need to access your location information
+										for calculating the sunset and sunrise time of your region.'"
+					[path]="'ms-settings:privacy-location'"
+					*ngIf="enableSunsetToSunrise">
+				</vtr-widget-permission-note>
 			</vtr-container-collapsible>
 		</div>
 	</div>
 	<div class="row py-5 smartsettings-card"
-	 id="camera">
+		id="camera">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible cardTitle="Camera"
-			 [isCollapsed]="false"
-			 [allowCollapse]="true"
-			 [theme]="'white'">
-				<div class="alert alert-secondary no-camera-access"
-				 *ngIf="!dataSource.hasAccessToCamera">
-					<div>
-						<strong>Note:</strong> Lenovo Vantage does not have
-						permissions to access your camera. Please turn on access
-						to your camera for the Lenovo Vantage app.
-					</div>
-					<button type="button"
-					 class="btn btn-link privacy-button pl-0"
-					 (click)="onPrivacySettingClick($event)">
-						Go to windows privacy settings
-					</button>
-				</div>
-
-				<ul class="list-group list-group-flush"
-				 *ngIf="dataSource.hasAccessToCamera">
-					<li class="pt-3">
-						<vtr-ui-row-switch [title]="'Camera privacy mode'"
-						 [isSwitchVisible]="true"
-						 [leftIcon]="['far', 'gem']"
-						 [rightIcon]="['far', 'question-circle']"
-						 (toggleOnOff)="onPrivacyModeChange($event)"
-						 [isSwitchChecked]="dataSource.isPrivacyModeEnabled"  [tooltipText]="'The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling.'">
+			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.displayCamera.camera.title' | translate"
+				componentName="Camera"
+				[isCollapsed]="false"
+				[allowCollapse]="true"
+				[theme]="'white'"
+				(toggle)="onCardCollapse($event)">
+				<ul class="list-group list-group-flush">
+					<li class="pt-3"
+						*ngIf="cameraPrivacyModeStatus.available">
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
+							componentName="Camera Privacy Mode"
+							name="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
+							[isSwitchVisible]="true"
+							[leftIcon]="['fal', 'camera']"
+							[rightIcon]="['far', 'question-circle']"
+							(toggleOnOff)="onCameraPrivacyModeToggle($event)"
+							[isSwitchChecked]="cameraPrivacyModeStatus.status"
+							[tooltipText]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.tooltip' | translate">
 						</vtr-ui-row-switch>
 					</li>
 					<li class="pt-3">
-						<vtr-ui-row-switch [title]="'Camera'"
-						 [isSwitchVisible]="false"
-						 [leftIcon]="['far', 'gem']"
-						 [showChildContent]="true"
-						 [resetText]="'Reset factory settings'"
-						 [rightIcon]="['far', 'question-circle']" [tooltipText]="'Click here to reset Camera properties to default settings.'">
-							<vtr-camera-control>
-							</vtr-camera-control>
+						<vtr-widget-permission-note [noteTitle]="'Note'"
+							[description]="'Lenovo Vantage does not have
+								permissions to access your camera. Please turn on access
+								to your camera for the Lenovo Vantage app.'"
+							[path]="'ms-settings:privacy-webcam'"
+							*ngIf="!dataSource.permission">
+						</vtr-widget-permission-note>
+						<vtr-ui-row-switch *ngIf="dataSource.permission"
+							[title]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
+							componentName="Camera"
+							name="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
+							[type]="'Camera'"
+							[isSwitchVisible]="false"
+							[leftIcon]="['fal', 'camera']"
+							[showChildContent]="true"
+							[resetText]="'device.deviceSettings.displayCamera.camera.camera.reset' | translate"
+							[rightIcon]="['far', 'question-circle']"
+							[tooltipText]="'device.deviceSettings.displayCamera.camera.camera.tooltip' | translate"
+							(resetClick)="resetCameraSettings()"
+							[resetTextAsButton]="true">
+							<div class="row">
+								<div class="col-12">
+									<vtr-camera-control [cameraSettings]="dataSource"
+										[manualRefresh]="manualRefresh"
+										[cameraFeatureAccess]="cameraFeatureAccess"
+										(brightnessChange)="onBrightnessChange($event)"
+										(contrastChange)="onContrastChange($event)"
+										(exposureChange)="onCameraExposureValueChange($event)"
+										(exposureToggle)="onCameraAutoExposureToggle($event)">
+									</vtr-camera-control>
+								</div>
+							</div>
 						</vtr-ui-row-switch>
 					</li>
 				</ul>

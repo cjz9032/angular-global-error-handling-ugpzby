@@ -1,0 +1,11 @@
+<div class="security-widget windows-hello">
+  <div class="security-widget-inner">
+    <vtr-ui-object-title [objects]="feature.subject">
+      </vtr-ui-object-title>
+    <vtr-ui-list-chevron [items]="feature.statusList">
+    </vtr-ui-list-chevron>
+    <div class="pull" *ngIf="feature.imgUrl">
+      <img class="windows-logo" src="{{feature.imgUrl}}" />
+    </div>
+  </div>
+</div>
