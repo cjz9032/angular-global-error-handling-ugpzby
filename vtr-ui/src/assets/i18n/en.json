@@ -33,7 +33,9 @@
 			"installed": "INSTALLED",
 			"notInstalled": "NOT INSTALLED",
 			"loading": "Loading",
-			"notFound": "NOT FOUND"
+			"notFound": "NOT FOUND",
+			"registered": "REGISTERED",
+			"notRegistered": "NOT REGISTERED"
 		},
 		"qAndA": {
 			"title": "Q&A for your machine",
