@@ -1,10 +1,13 @@
 <div class="vtr-camera-control">
 	<div class="row">
 		<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 pl-0 pr-0">
-			<div class="camera-preview">
+			<div class="camera-preview" *ngIf="!disabledAll">
 				<video *ngIf="!cameraDetail.isPrivacyModeEnabled"
 					#cameraPreview
 					class="feed"></video>
+			</div>
+			<div class="camera-preview"  *ngIf="disabledAll">
+				 <img  class="feed disable" src="../../../assets/images/camera-disable.png" alt="Camera Not Available"/>
 			</div>
 		</div>
 		<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
@@ -18,6 +21,7 @@
 						[minValue]="cameraSettings.brightness.min"
 						[maxValue]="cameraSettings.brightness.max"
 						[manualRefresh]="manualRefresh"
+						[enableSlider]="disabledAll"
 						[(value)]="cameraSettings.brightness.value"
 						(change)="onBrightnessSliderChange($event)">
 					</vtr-ui-range-slider>
@@ -31,6 +35,7 @@
 						[minValue]="cameraSettings.contrast.min"
 						[maxValue]="cameraSettings.contrast.max"
 						[manualRefresh]="manualRefresh"
+						[enableSlider]="disabledAll"
 						[(value)]="cameraSettings.contrast.value"
 						(change)="onContrastSliderChange($event)">
 					</vtr-ui-range-slider>
@@ -42,7 +47,7 @@
 							Auto Exposure
 						</div>
 						<div class="float-right">
-							<vtr-ui-switch-onoff [value]="cameraFeatureAccess.exposureAutoValue"
+							<vtr-ui-switch-onoff [value]="cameraFeatureAccess.exposureAutoValue" [disabled]="disabledAll"
 								(toggle)="onAutoExposureChange($event)"></vtr-ui-switch-onoff>
 						</div>
 					</div>
@@ -50,6 +55,7 @@
 						[step]="cameraSettings.exposure.step"
 						[minValue]="cameraSettings.exposure.min"
 						[maxValue]="cameraSettings.exposure.max"
+						[enableSlider]="disabledAll"
 						[manualRefresh]="manualRefresh"
 						[(value)]="cameraSettings.exposure.value"
 						(change)="onExposureSliderChange($event)">
