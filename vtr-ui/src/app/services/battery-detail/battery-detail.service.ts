@@ -40,4 +40,10 @@ export class BatteryDetailService {
 			return this.battery.isAcAttached;
 		}
 	}
+
+	getMainBatteryTime(): number {
+		if (this.isShellAvailable) {
+			return this.battery.mainBatteryTime;
+		}
+	}
 }

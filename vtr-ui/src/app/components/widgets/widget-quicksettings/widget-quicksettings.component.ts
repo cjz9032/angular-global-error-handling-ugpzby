@@ -63,10 +63,13 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			const { type, payload } = notification;
 			switch (type) {
 				case DeviceMonitorStatus.MicrophoneStatus:
-					console.log('DeviceMonitorStatus', payload);
+					console.log('DeviceMonitorStatus.MicrophoneStatus', payload);
 					this.microphoneStatus.status = payload.muteDisabled;
 					this.microphoneStatus.permission = payload.permission;
 					break;
+				case DeviceMonitorStatus.EyeCareModeStatus:
+					console.log('DeviceMonitorStatus.EyeCareModeStatus', payload);
+					this.eyeCareModeStatus.permission = payload;
 				default:
 					break;
 			}
@@ -90,7 +93,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 		this.getEyeCareModePermission();
 		this.initEyecaremodeSettings();
-		this.getCameraPermission();
+		//this.getCameraPermission();
 	}
 	
 	public getCameraPermission() {
