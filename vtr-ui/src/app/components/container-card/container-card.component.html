@@ -95,46 +95,54 @@
 	*ngIf="type === 'article'"
 	[style.height.px]="containerHeight">
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col col-12 image-container">
-				<a [attr.href]="!actionLink ? null : actionLink"
-				   metricsItemCategory="article"
-				   vtrMetrics
-				   metricsEvent="docClick"
-				   [metricsItemPosition]="order"
-				   [metricsItemID]="itemID"
-					target="_blank"
-					class="card-image"
-					[style.background-image]="'url(' + img + ')'">
-					<div *ngIf="logo || logoText"
-						class="logo">
-						<span class="logo-img">
-							<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
-						</span>
-						<span class="logo-text">{{logoText}}</span>
-					</div>
-				</a>
-			</div>
+		<a [attr.href]="!actionLink ? null : actionLink"
+			metricsItemCategory="article"
+			vtrMetrics
+			metricsEvent="docClick"
+			[metricsItemPosition]="order"
+			[metricsItemID]="itemID"
+			 target="_blank">
 			<div class="row">
-				<div class="col col-12 content">
-					<div *ngIf="title"
-						class="title">{{title}}</div>
-					<div *ngIf="actionLink"
-						class="read-more">
-						<a [attr.href]="!actionLink ? null : actionLink"
-							target="_blank"
-						   vtrMetrics
-						   metricsItemCategory="article"
-						   metricsEvent="docClick"
-						   [metricsItemPosition]="order"
-						   [metricsItemID]="itemID">
-							<span class="link-label">{{action}}</span>
-							<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
-						</a>
+				<div class="col col-12 image-container">
+					<a [attr.href]="!actionLink ? null : actionLink"
+					metricsItemCategory="article"
+					vtrMetrics
+					metricsEvent="docClick"
+					[metricsItemPosition]="order"
+					[metricsItemID]="itemID"
+						target="_blank"
+						class="card-image"
+						[style.background-image]="'url(' + img + ')'">
+						<div *ngIf="logo || logoText"
+							class="logo">
+							<span class="logo-img">
+								<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
+							</span>
+							<span class="logo-text">{{logoText}}</span>
+						</div>
+					</a>
+				</div>
+				<div class="row">
+					<div class="col col-12 content">
+						<div *ngIf="title"
+							class="title">{{title}}</div>
+						<div *ngIf="actionLink"
+							class="read-more">
+							<a [attr.href]="!actionLink ? null : actionLink"
+								target="_blank"
+							vtrMetrics
+							metricsItemCategory="article"
+							metricsEvent="docClick"
+							[metricsItemPosition]="order"
+							[metricsItemID]="itemID">
+								<span class="link-label">{{action}}</span>
+								<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</a>
 	</div>
 </div>
 

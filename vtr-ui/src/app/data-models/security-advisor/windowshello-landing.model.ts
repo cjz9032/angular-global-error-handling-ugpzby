@@ -35,7 +35,7 @@ export class WindowsHelloLandingViewModel {
 					commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus, 'notFound');
 				} else {
 					whStatus.status = finger === 'active' ? 0 : 1;
-					whStatus.detail = finger === 'active' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
+					whStatus.detail = finger === 'active' ? 'common.securityAdvisor.registered' : 'common.securityAdvisor.notRegistered';
 					subjectStatus.status = finger === 'active' || facial === 'active' ? 0 : 1;
 					commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, subjectStatus.status === 0 ? 'enabled' : 'disabled');
 					commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus, finger);
@@ -69,7 +69,7 @@ export class WindowsHelloLandingViewModel {
 				subjectStatus.status = 1;
 			} else {
 				whStatus.status = cacheFingerStatus === 'active' ? 0 : 1;
-				whStatus.detail = cacheFingerStatus === 'active' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
+				whStatus.detail = cacheFingerStatus === 'active' ? 'common.securityAdvisor.registered' : 'common.securityAdvisor.notRegistered';
 				subjectStatus.status = cacheStatus;
 			}
 			translate.get(whStatus.detail).subscribe((res) => {

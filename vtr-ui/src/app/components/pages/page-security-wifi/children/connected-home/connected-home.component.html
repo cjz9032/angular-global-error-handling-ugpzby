@@ -11,7 +11,16 @@
 			</div>
 		</div>
 		<div class="row mt-20">
-			<div class="col">
+			<div class="col-sm-12 col-md-12 col-lg-6 order-lg-2">
+				<div class="gem-box">
+					<div class="gem">
+						<img src="assets/images/Banner_no_logo_h&f.jpg"
+							center />
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-12 col-md-12 col-lg-6 order-lg-1">
 				<ul class="bullet-list">
 					<li class="good">
 						<div class="container-fluid">
@@ -92,15 +101,6 @@
 					</li>
 				</ul>
 			</div>
-
-			<div class="col">
-				<div class="gem-box">
-					<div class="gem">
-						<img src="assets/images/Banner_no_logo_h&f.jpg"
-							center />
-					</div>
-				</div>
-			</div>
 		</div>
 
 		<div class="row">
@@ -117,10 +117,8 @@
 								[disabled]="!data.tryNowEnable">
 							</vtr-ui-button>
 						</div>
-
 					</div>
 				</div>
-
 			</div>
 		</div>
 
@@ -133,7 +131,7 @@
 			<div class="col">
 				<div class="invitation-code-box">
 					<div class="row">
-						<div class="col-md-12 col-lg-6">
+						<div class="col-md-12 col-lg-7">
 							<div class="sub-heading">
 								{{'security.homeprotection.invitationcode.title' | translate}}
 								<div class="text-regular">
@@ -141,15 +139,16 @@
 							</div>
 
 						</div>
-						<div class="col-md-12 col-lg-6">
-							<div class="button-box text-right">
+						<div class="col-md-12 col-lg-5 invitation-button text-right">
+							<div class="button-box">
 								<vtr-ui-button [metricsItem]="'enterInvitationCode'"
 									(onClick)="enterActivationCode($event)"
 									[label]="'security.homeprotection.invitationcode.button' | translate"
 									[alreadyJoinGroup]="data.homeStatus"></vtr-ui-button>
-								<div *ngIf="data.homeStatus=='joined' && showDescribe">
-									{{'security.homeprotection.invitationcode.buttonDescribe' | translate}}
-								</div>
+							</div>
+							<div *ngIf="data.homeStatus==='joined' && showDescribe"
+								class="button-description">
+								{{'security.homeprotection.invitationcode.buttonDescribe' | translate}}
 							</div>
 						</div>
 					</div>

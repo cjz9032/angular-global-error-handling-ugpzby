@@ -39,10 +39,24 @@
 		</div>
 	</div>
 	<div class="custom-control custom-checkbox eye-care-checkbox"
-		*ngIf="sunsetToSunriseStatus.available">
+		*ngIf="sunsetToSunriseStatus.available && enableSunsetToSunrise">
 		<input id="cb-eye-care-schedule"
 			type="checkbox"
 			[disabled]="enableSunsetToSunrise"
+			class="custom-control-input"
+			[checked]="sunsetToSunriseStatus.status"
+			(change)="onSunsetToSunrise(sunsetToSunriseStatus)" />
+		<label class="custom-control-label"
+			for="cb-eye-care-schedule">
+			<span class="text-capitalize">
+				Schedule eye care mode from sunset to sunrise {{sunriseToSunsetText}}
+			</span>
+		</label>
+	</div>
+	<div class="custom-control custom-checkbox eye-care-checkbox"
+		*ngIf="sunsetToSunriseStatus.available && !enableSunsetToSunrise">
+		<input id="cb-eye-care-schedule"
+			type="checkbox"
 			class="custom-control-input"
 			[checked]="sunsetToSunriseStatus.status"
 			(change)="onSunsetToSunrise(sunsetToSunriseStatus)" />

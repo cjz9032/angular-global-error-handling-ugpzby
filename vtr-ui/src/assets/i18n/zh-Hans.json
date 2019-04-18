@@ -33,7 +33,9 @@
 			"installed": "已安装",
 			"notInstalled": "未安装",
 			"loading": "正在加载",
-			"notFound": "未发现"
+			"notFound": "未发现",
+			"registered": "已注册",
+			"notRegistered": "未注册"
 		},
 		"qAndA": {
 			"title": "关于计算机的常见问题解答​",
@@ -88,7 +90,7 @@
 				}
 			},
 			"diskSpace": {
-				"title": "Disk space",
+				"title": "Disk Space",
 				"detail": {
 					"notFound": "Disk not found",
 					"of": "of"
@@ -609,7 +611,7 @@
 					"button": "输入邀请码",
 					"buttonDescribe": "您已将此设备添加到一个现有的互联家庭网络账户",
 					"title": "已拥有互联家庭网络安全性？",
-					"titleDescribe": "将此设备添加到您的互联家庭网络",
+					"titleDescribe": "请确保已启用Vantage位置权限，以便将您的设备添加到现有的互联家庭网络账户，并使用互联家庭网络安全。",
 					"enterCode": "输入您的连接代码",
 					"addHome": "添加主页",
 					"ok": "确定",
