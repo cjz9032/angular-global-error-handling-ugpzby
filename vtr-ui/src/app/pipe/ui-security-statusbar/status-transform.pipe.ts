@@ -15,6 +15,8 @@ export class StatusTransformPipe implements PipeTransform {
 					case false:
 						e.status = 'disabled';
 						break;
+					case undefined:
+						e.status = 'loading';
 				}
 			});
 			return value;

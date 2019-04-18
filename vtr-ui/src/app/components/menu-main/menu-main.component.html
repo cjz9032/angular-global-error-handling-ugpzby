@@ -104,7 +104,7 @@
 						</a>
 						<div class="dropdown-menu {{item.id}}"
 							aria-labelledby="navbarDropdown">
-							<div class="dropdown-item">{{'lenovoId.helloUser' | translate:{firstName:userService.firstName} }}</div>
+							<div class="dropdown-item">{{'lenovoId.helloUser' | translate:{firstName:firstName} }}</div>
 							<a *ngIf="!userService.auth"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"

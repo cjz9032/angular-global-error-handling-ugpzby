@@ -18,7 +18,7 @@ export class AntivirusWidgetItem extends WidgetItem {
 		const cacheAvStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus);
 		const cacheFwStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus);
 		if (cacheAvStatus || cacheFwStatus) {
-			this.updateStatus(cacheAvStatus === 'enabled', cacheFwStatus === 'enabled');
+			this.updateStatus(cacheAvStatus === 'enabled', cacheFwStatus === 'enabled', commonService);
 		}
 
 		if (antivirus.mcafee || antivirus.windowsDefender || antivirus.others) {
@@ -41,29 +41,15 @@ export class AntivirusWidgetItem extends WidgetItem {
 		const defender = antivirus.windowsDefender;
 		const others = antivirus.others;
 		if (mcafee && (mcafee.enabled || !others || !others.enabled)) {
-			this.updateStatus(mcafee.status, mcafee.firewallStatus);
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, mcafee.status ? 'enabled' : 'disabled');
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, mcafee.firewallStatus ? 'enabled' : 'disabled');
+			this.updateStatus(mcafee.status, mcafee.firewallStatus, commonService);
 		} else if (others) {
-			let avStatus = false;
-			let fwStatus = false;
-			if (others.antiVirus.length > 0) {
-				avStatus = others.antiVirus[0].status;
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, others.antiVirus[0].status ? 'enabled' : 'disabled');
-			}
-			if (others.firewall.length > 0) {
-				fwStatus = others.firewall[0].status;
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, others.firewall[0].status ? 'enabled' : 'disabled');
-			}
-			this.updateStatus(avStatus, fwStatus);
+			this.updateStatus(others.antiVirus.length > 0 ? others.antiVirus[0].status : null, others.firewall.length > 0 ? others.firewall[0].status : null, commonService);
 		} else {
-			this.updateStatus(defender.status, defender.firewallStatus);
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, defender.status ? 'enabled' : 'disabled');
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, defender.firewallStatus ? 'enabled' : 'disabled');
+			this.updateStatus(defender.status, defender.firewallStatus !== undefined ? defender.firewallStatus : null, commonService);
 		}
 	}
 
-	updateStatus(avStatus: boolean, fwStatus: boolean): void {
+	updateStatus(avStatus: boolean, fwStatus: boolean, commonService): void {
 		if (avStatus && fwStatus) {
 			this.status = 0;
 			this.detail = 'enabled';
@@ -83,5 +69,7 @@ export class AntivirusWidgetItem extends WidgetItem {
 				this.detail = value;
 			});
 		}
+		commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, avStatus !== undefined ? avStatus : null);
+		commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fwStatus !== undefined ? fwStatus : null);
 	}
 }

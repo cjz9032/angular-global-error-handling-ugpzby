@@ -50,7 +50,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		' You can check the default settings in this section and customize your system according to your needs.';
 	headerMenuTitle = 'Jump to Settings';
 
-	intelligentCooling = false;
+	intelligentCooling = true;
 	showBatteryThreshold = false;
 	value = 1;
 	headerMenuItems = [
@@ -378,12 +378,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 							if (this.cQLCapability === true || this.tIOCapability === true) {
 								console.log('inside false of CQLCCapability and TIOCCapability');
 								this.toggleIntelligentCooling = true;
-								this.intelligentCooling = false;
-								this.toggleIntelligentCoolingStatus = true;
 							} else {
 								this.toggleIntelligentCooling = false;
-								this.toggleIntelligentCoolingStatus = false;
-								this.intelligentCooling = true;
 							}
 						} else if (value === 5) {
 							this.showIntelligentCooling = 3;
@@ -407,11 +403,13 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				console.log('manualModeSettingStatus: Cool');
 				this.radioQuietCool = true;
 				this.radioPerformance = false;
+				this.toggleIntelligentCoolingStatus = false;
 				break;
 			case 'performance':
 				console.log('manualModeSettingStatus: Performance');
 				this.radioPerformance = true;
 				this.radioQuietCool = false;
+				this.toggleIntelligentCoolingStatus = false;
 				break;
 			case 'error':
 				let event = { switchValue: true }

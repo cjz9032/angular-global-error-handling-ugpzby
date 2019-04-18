@@ -66,6 +66,7 @@
 				height: 2.3rem;
 				width: 2.3rem;
 				background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+				background-color: $go_dark;
 				border-color: $go_dark;
 
 				fa-icon {
@@ -83,6 +84,7 @@
 				height: 2.2rem;
 				width: 2.2rem;
 				background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+				background-color: $stop_dark;
 
 				fa-icon {
 					font-size: 1.2rem;

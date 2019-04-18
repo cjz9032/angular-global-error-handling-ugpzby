@@ -14,20 +14,6 @@ export class DolbyModesTranslationPipe implements PipeTransform {
 
     console.log('+++++++++++++++++++++++',val);
 
-
-
-
-    switch(val) {
-      case "dynamic":
-        return "DYNAMIC";
-      case "movie":
-        return "MOVIE";
-      case "music":
-        return "MUSIC";
-      case "game":
-        return "GAME";
-      case "voice":
-        return "VOICE";
-    }
+    return val;
   }
 }
