@@ -254,6 +254,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	getAndSetAlwaysOnUSBForBrands(machineName: any) {
 		console.log('inside getAndSetAlwaysOnUSBForBrands');
 		console.log('machine', machineName);
+
 		switch (machineName) {
 			case 1:
 				this.getAirplaneModeCapabilityThinkPad();
@@ -690,6 +691,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						this.usbChargingInBatteryModeStatus = featureStatus.available;
 						if (this.usbChargingInBatteryModeStatus) {
 							this.usbChargingCheckboxFlag = featureStatus.status;
+						}
+						if (this.alwaysOnUSBStatus.status) {
+							this.toggleAlwaysOnUsbFlag = true;
 						}
 					})
 					.catch(error => {

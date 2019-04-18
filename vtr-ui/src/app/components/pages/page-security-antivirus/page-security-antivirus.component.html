@@ -67,10 +67,10 @@
 								<div>
 									<div class="title py-5">{{'security.antivirus.common.why' | translate}}</div>
 									<div class="row">
-										<div class="col-auto px-0 col-6">
+										<div class="col-sm-12 col-md-12 col-lg-6 order-lg-1">
 											<img src="./../../../../assets/images/antivirus/side.png" />
 										</div>
-										<div class="col px-5 col-6">
+										<div class="col-sm-12 col-md-12 col-lg-6 order-lg-2">
 											<div class="subtitle pb-5">
 												{{'security.antivirus.common.recommends' | translate}}</div>
 											<div>
@@ -379,7 +379,8 @@
 
 									</div>
 									<vtr-widget-mcafee [install]="viewModel.mcafeeInstall"
-										[name]="viewModel.otherAntiVirus.name"></vtr-widget-mcafee>
+										[name]="viewModel.otherAntiVirus.name"
+										[mcafee]="viewModel.mcafee"></vtr-widget-mcafee>
 								</div>
 							</div>
 							<div class="body antivirus-block">
