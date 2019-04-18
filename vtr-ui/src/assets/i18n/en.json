@@ -63,7 +63,7 @@
 		},
 		"feedback": {
 			"title": "Give Feedback",
-			"subtitle": "Tell us what you think about vantage",
+			"subtitle": "Tell us what you think about vantage.",
 			"button": "Give feedback",
 			"form": {
 				"email": "Email (optional)",
@@ -88,7 +88,7 @@
 				}
 			},
 			"diskSpace": {
-				"title": "Disk space",
+				"title": "Disk Space",
 				"detail": {
 					"notFound": "Disk not found",
 					"of": "of"
@@ -141,7 +141,7 @@
 				"ram": "RAM"
 			},
 			"diskspace": {
-				"title": "Disk space",
+				"title": "Disk Space",
 				"notFound": "Disk not found"
 			},
 			"software": "Software up to date",
@@ -161,10 +161,10 @@
 					"support": "Support"
 				}
 			},
-			"helpful": "Helpful content"
+			"helpful": "Helpful Content"
 		},
 		"deviceSettings": {
-			"helpful": "Helpful content",
+			"helpful": "Helpful Content",
 			"batteryGauge": {
 				"title": "BATTERY GAUGE",
 				"subtitle": "Battery healthy",
