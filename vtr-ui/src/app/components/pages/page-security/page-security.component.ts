@@ -109,6 +109,11 @@ export class PageSecurityComponent implements OnInit {
 	}
 
 	private refreshAll() {
+		this.regionService.getRegion().subscribe({
+			next: x => { this.region = x; },
+			error: err => { console.error(err); },
+			complete: () => { console.log('Done'); }
+		});
 		this.securityAdvisor.antivirus.refresh().then(() => {
 			this.getScore();
 		});
@@ -124,11 +129,6 @@ export class PageSecurityComponent implements OnInit {
 		});
 		this.securityAdvisor.windowsHello.refresh().then(() => {
 			this.getScore();
-		});
-		this.regionService.getRegion().subscribe({
-			next: x => { this.region = x; },
-			error: err => { console.error(err); },
-			complete: () => { console.log('Done'); }
 		});
 	}
 
@@ -199,7 +199,7 @@ export class PageSecurityComponent implements OnInit {
 		const antivirusScoreInit = [
 			this.antivirusLandingViewModel.subject.status,
 			this.passwordManagerLandingViewModel.subject.status,
-			this.vpnLandingViewModel.subject.status,
+			this.region !== 'CN' ? this.vpnLandingViewModel.subject.status : null,
 			this.wifiSecurityLandingViewModel.subject.status,
 			this.windowsHelloLandingViewModel ? this.windowsHelloLandingViewModel.subject.status : null
 		];
@@ -208,13 +208,8 @@ export class PageSecurityComponent implements OnInit {
 		const antivirusScore = antivirusScoreInit.filter(current => {
 			return current !== undefined && current !== null && current !== '';
 		});
-		flag = 100 / antivirusScore.length;
-		antivirusScore.forEach(item => {
-			if (item === 0 || item === 2) {
-				scoreTotal += flag;
-			}
-		});
-		this.score = scoreTotal;
+        const valid = antivirusScore.filter(i => i === 0 || i === 2).length;
+		this.score = Math.floor(valid / antivirusScore.length * 100);
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingScore, this.score);
 	}
 

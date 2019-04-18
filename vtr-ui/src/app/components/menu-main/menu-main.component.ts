@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, DoCheck, HostListener, SimpleChanges, SimpleChange } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -16,6 +16,8 @@ import { TranslationSection } from 'src/app/enums/translation-section.enum';
 import { environment } from '../../../environments/environment';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
 import { WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
+import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
+import { TranslateService } from '@ngx-translate/core';
 import { RegionService } from 'src/app/services/region/region.service';
 
 @Component({
@@ -23,15 +25,17 @@ import { RegionService } from 'src/app/services/region/region.service';
 	templateUrl: './menu-main.component.html',
 	styleUrls: ['./menu-main.component.scss']
 })
-export class MenuMainComponent implements OnInit, OnDestroy {
+export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 
 	public deviceModel: string;
 	public country: string;
+	public firstName: 'User';
 	commonMenuSubscription: Subscription;
 	public appVersion: string = environment.appVersion;
 	constantDevice = 'device';
 	constantDeviceSettings = 'device-settings';
 	region: string;
+	public isDashboard = false;
 	items: Array<any> = [
 		{
 			id: 'dashboard',
@@ -180,8 +184,9 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		private modalService: NgbModal,
 		private deviceService: DeviceService,
 		vantageShellService: VantageShellService,
+		private translate: TranslateService,
 		private regionService: RegionService
-	) {
+		) {
 		this.showVpn();
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		if (cacheShowWindowsHello) {
@@ -222,9 +227,25 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		const self = this
+		this.translate.stream('lenovoId.user').subscribe((value) => {
+			if (!self.userService.auth) {
+				self.firstName = value;
+			}
+		});
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+		this.isDashboard = true;
+	}
+	ngDoCheck() {
+		if (this.router.url !== null) {
+			if (this.router.url.indexOf('dashboard', 0) > 0) {
+				this.isDashboard = true;
+			} else {
+				this.isDashboard = false;
+			}
+		}
 	}
 	ngOnDestroy() {
 		if (this.commonMenuSubscription) {
@@ -233,7 +254,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	}
 
 	isParentActive(item) {
-		// console.log('IS PARENT ACTIVE', item, this.router, this.route);
+		console.log('IS PARENT ACTIVE', item.id, item.path);
 	}
 
 	showItem(item) {
@@ -247,6 +268,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	}
 
 	menuItemClick(event, path) {
+		// console.log (path);
 		this.router.navigateByUrl(path);
 	}
 
@@ -270,6 +292,8 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 					this.deviceModel = notification.payload.family;
 					this.country = notification.payload.country;
 					break;
+				case LenovoIdKey.FirstName:
+					this.firstName = notification.payload;
 				default:
 					break;
 			}

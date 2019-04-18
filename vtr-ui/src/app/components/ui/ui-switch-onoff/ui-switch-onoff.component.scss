@@ -1,8 +1,7 @@
 @import "../../../app.theme";
 
-
 .checkbox {
-	display: block;
+	display: inline-block;
 	position: relative;
 	cursor: pointer;
 }
@@ -29,17 +28,17 @@
 }
 
 .switch,
-.switch>small {
+.switch > small {
 	background-color: $light;
 	height: 2.2rem;
 }
 
-input+.switch {
+input + .switch {
 	background: linear-gradient($gradient_angle, $shade_light 0%, $shade_lightest 100%);
 	margin-right: 0.7rem;
 }
 
-input.wifi-checked+.switch {
+input.wifi-checked + .switch {
 	background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
 	transition: background 1.2s;
 }
@@ -50,7 +49,7 @@ input.wifi-checked+.switch {
 	margin-right: 0.7rem;
 }
 
-.switch>small {
+.switch > small {
 	background-color: $shade_darkest;
 	border-radius: 10rem;
 	width: 2.2rem;
@@ -63,7 +62,7 @@ input.wifi-checked+.switch {
 	transition: background-color 0.4s, left 0.2s;
 }
 
-input.wifi-checked+.switch>small {
+input.wifi-checked + .switch > small {
 	left: 2.2rem;
 	transition: background-color 0.4s, left 0.2s;
 	background-color: rgb(255, 255, 255);
@@ -71,7 +70,7 @@ input.wifi-checked+.switch>small {
 
 /* LARGE - LG */
 
-input.wifi-checked+.switch.switch-lg>small {
+input.wifi-checked + .switch.switch-lg > small {
 	left: 2.6rem;
 }
 
@@ -88,7 +87,7 @@ input.wifi-checked+.switch.switch-lg>small {
 
 /* SMALL - SM */
 
-input.wifi-checked+.switch.switch-sm>small {
+input.wifi-checked + .switch.switch-sm > small {
 	left: 1.8rem;
 }
 
@@ -105,7 +104,7 @@ input.wifi-checked+.switch.switch-sm>small {
 
 /* EXTRA SMALL - XS */
 
-input.wifi-checked+.switch.switch-xs>small {
+input.wifi-checked + .switch.switch-xs > small {
 	left: 4.2rem;
 }
 
@@ -138,8 +137,6 @@ input.wifi-checked+.switch.switch-xs>small {
 	left: auto;
 	right: 0;
 }
-
-
 
 .switch-label {
 	font-size: 1.1rem;

@@ -11,7 +11,7 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 export class UserService {
 
 	cookies = {};
-	auth = false;
+	public auth = false;
 	token = '';
 
 	public isLenovoIdSupported = false;
@@ -45,12 +45,6 @@ export class UserService {
 		if (!this.lid) {
 			this.devService.writeLog('UserService constructor: lid object is undefined');
 		}
-
-		this.translate.stream('lenovoId.user').subscribe((value) => {
-			if (!this.auth) {
-				this.firstName = value;
-			}
-		});
 	}
 
 	checkCookies() {
@@ -159,6 +153,7 @@ export class UserService {
 		this.cookieService.deleteAll('/');
 		this.cookies = this.cookieService.getAll();
 		if (this.lid !== undefined) {
+			const lidGuid = this.lid.userGuid;
 			this.lid.logout().then(function (result) {
 				let metricsData: any;
 				if (result.success && result.status === 0) {
@@ -182,7 +177,9 @@ export class UserService {
 						TaskParam: ''
 					};
 				}
-				self.metrics.sendAsync(metricsData).catch((res) => {
+				self.metrics.sendAsyncEx(metricsData, {
+					lidGuid
+				}).catch((res) => {
 					self.devService.writeLog('removeAuth() Exception happen when send metric ', res.message);
 				});
 				self.devService.writeLog('LOGOUT: ', result.success);

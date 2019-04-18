@@ -211,11 +211,12 @@ button {
 		border-style: solid;
 		text-align: center;
 		background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+		background-color: $go_dark;
 		border-color: $go_dark;
 
 		fa-icon {
 			font-size: 1.6rem;
-			line-height: 2.9rem;
+			line-height: 2.7rem;
 			color: $light;
 		}
 	}
@@ -231,11 +232,12 @@ button {
 		border-style: solid;
 		text-align: center;
 		background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+		background-color: $stop_dark;
 		border-color: $stop_dark;
 
 		fa-icon {
 			font-size: 1.6rem;
-			line-height: 2.9rem;
+			line-height: 2.7rem;
 			color: $light;
 		}
 	}
@@ -512,6 +514,10 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			margin-bottom: 1rem;
 		}
 
+		u{
+			word-break: break-all;
+		}
+
 		img,
 		iframe {
 			max-width: 100%;
@@ -620,9 +626,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
-	font-size:3.2rem;
-	margin-left:-0.6rem;
-	margin-right:-0.6rem;
+	font-size:2.2rem;
 
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
@@ -729,7 +733,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	content: "\e918";
 	color: #4a81fd;
 }
-.icomoon-FA-Tachometer-alt-fast2x:before {
+.icomoon-performance:before {
 	content: "\e919";
 	color: #4a81fd;
 }
@@ -813,7 +817,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	content: "\e92d";
 	color: #4a81fd;
 }
-.icomoon-LE-CoolingDown2x:before {
+.icomoon-quietcool:before {
 	content: "\e92e";
 	color: #4a81fd;
 }

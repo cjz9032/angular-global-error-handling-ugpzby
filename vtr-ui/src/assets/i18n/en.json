@@ -34,7 +34,9 @@
 			"installed": "INSTALLED",
 			"notInstalled": "NOT INSTALLED",
 			"loading": "Loading",
-			"notFound": "NOT FOUND"
+			"notFound": "NOT FOUND",
+			"registered": "REGISTERED",
+			"notRegistered": "NOT REGISTERED"
 		},
 		"qAndA": {
 			"title": "Q&A for your machine",
@@ -64,7 +66,7 @@
 		},
 		"feedback": {
 			"title": "Give Feedback",
-			"subtitle": "Tell us what you think about vantage",
+			"subtitle": "Tell us what you think about vantage.",
 			"button": "Give feedback",
 			"form": {
 				"email": "Email (optional)",
@@ -89,7 +91,7 @@
 				}
 			},
 			"diskSpace": {
-				"title": "Disk space",
+				"title": "Disk Space",
 				"detail": {
 					"notFound": "Disk not found",
 					"of": "of"
@@ -142,7 +144,7 @@
 				"ram": "RAM"
 			},
 			"diskspace": {
-				"title": "Disk space",
+				"title": "Disk Space",
 				"notFound": "Disk not found"
 			},
 			"software": "Software up to date",
@@ -162,10 +164,10 @@
 					"support": "Support"
 				}
 			},
-			"helpful": "Helpful content"
+			"helpful": "Helpful Content"
 		},
 		"deviceSettings": {
-			"helpful": "Helpful content",
+			"helpful": "Helpful Content",
 			"batteryGauge": {
 				"title": "BATTERY GAUGE",
 				"subtitle": "Battery healthy",
@@ -501,7 +503,7 @@
 			"vpnVirtual": "Virtual Private Network",
 			"wifiConnected": "WiFi & Connected Home Security",
 			"connectedHomeSecurity": "Connected Home Security",
-			"fingerprint": "Fingerprint reader",
+			"fingerprint": "Fingerprint Reader",
 			"seeAllNetwork": "See all joined networks",
 			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
 			"good": "GOOD",
@@ -519,7 +521,7 @@
 				"deviceToCloud": "Device to cloud technology that won't slow down your PC",
 				"poweredBy": "Powered By McAfee",
 				"privacyTerms": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
-				"mcafeePremium": "McAfee premium protection",
+				"mcafeePremium": "McAfee Premium Protection",
 				"protectedBy": "You are currently protected by ",
 				"betterProtected": ".However, you could be better protected with McAfee LifeSafe",
 				"virusScan": "VIRUS SCAN",
@@ -611,7 +613,7 @@
 				"button": "Enter invitation code",
 				"buttonDescribe": "You have already joined this device to an existing Connected Home Security account.",
 				"title": "Already have Connected Home Security?",
-				"titleDescribe": "Add this device to your Connected Home",
+				"titleDescribe": "Please ensure location permissions are enabled for Vantage in order to add your device to an existing Connected Home Account, and to use Connected Home Security.",
 				"enterCode": "Enter your connection code",
 				"addHome": "Add Home",
 				"ok": "OK",

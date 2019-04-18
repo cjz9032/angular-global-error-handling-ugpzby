@@ -3,11 +3,14 @@
 		*ngFor="let list of statusList">
 		<div class="row align-items-center">
 			<div class="col-auto px-3">
-				<div class="bullet-icon">
+				<div *ngIf="list.status!=='loading'" class="bullet-icon">
 					<div class="icon-bkg"
 						[ngClass]="list.status | iconClass">
 						<fa-icon [icon]="list.status | iconName"></fa-icon>
 					</div>
+				</div>
+				<div *ngIf="list.status==='loading'" class="spinner-content">
+					<div class="spinner-border text-primary progress-spinner" role="status"></div>
 				</div>
 			</div>
 			<div class="col-auto text px-0">
