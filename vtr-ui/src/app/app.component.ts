@@ -47,8 +47,8 @@ export class AppComponent implements OnInit {
 			metricsClient.sendAsyncEx({
 				ItemType: 'FirstRun'
 			}, {
-				forced: true
-			});
+					forced: true
+				});
 		}
 
 		//#region VAN-2779 this is moved in MVP 2
@@ -202,5 +202,24 @@ export class AppComponent implements OnInit {
 		const content = `shrink-to-fit=no, width=device-width, initial-scale=${scale}, minimum-scale=${scale}`;
 		document.querySelector('meta[name="viewport"]').setAttribute('content', content);
 		console.log('DPI: ', content);
+	}
+
+	// Defect fix VAN-2988
+	@HostListener('window:keydown', ['$event'])
+	disbleCtrlACV($event: KeyboardEvent) {
+		console.log('$event.keyCode ' + $event.keyCode);
+		if (($event.ctrlKey || $event.metaKey) && ($event.keyCode === 65 || $event.keyCode === 67 || $event.keyCode === 86)) {
+			if ($event.keyCode === 65) {
+				console.log('Disable CTRL + A');
+			}
+			if ($event.keyCode === 67) {
+				console.log('Disable CTRL + C');
+			}
+			if ($event.keyCode === 86) {
+				console.log('Disable CTRL +  V');
+			}
+			$event.stopPropagation();
+			$event.preventDefault();
+		}
 	}
 }
