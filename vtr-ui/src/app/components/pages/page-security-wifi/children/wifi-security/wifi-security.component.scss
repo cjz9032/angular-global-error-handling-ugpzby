@@ -320,7 +320,7 @@
 			&.collapsed {
 				border-bottom-left-radius: 0.8rem;
 				border-bottom-right-radius: 0.8rem;
-				border: 0.1rem solid rgba(0, 0, 0, 0.125);
+				// border: 0.1rem solid rgba(0, 0, 0, 0.125);
 			}
 		}
 
@@ -332,6 +332,8 @@
 			.collapse-control {
 				cursor: pointer;
 				margin-top: -0.4rem;
+				display: inline-block;
+				width: 15rem;
 
 				.collapse-text {
 					display: inline-block;
@@ -412,6 +414,26 @@
 				text-transform: uppercase;
 				margin-right: 2.5rem;
 			}
+		}
+	}
+
+	.wifi-card {
+		div.wifi:nth-child(odd) {
+			border-bottom: 0.1rem solid $shade_lighter;
+			border-right: 0.1rem solid $shade_lighter;
+		}
+		div.wifi:nth-child(even) {
+			border-bottom: 0.1rem solid $shade_lighter;
+		}
+
+		div.wifi:nth-last-child(1):nth-child(odd),
+		div.wifi:nth-last-child(2):nth-child(odd) {
+			border-bottom-left-radius: 0.8rem;
+			border-bottom: 0;
+		}
+		div.wifi:nth-last-child(1):nth-child(even) {
+			border-bottom-right-radius: 0.8rem;
+			border-bottom: 0;
 		}
 	}
 }

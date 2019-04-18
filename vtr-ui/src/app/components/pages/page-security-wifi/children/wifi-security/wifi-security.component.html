@@ -42,13 +42,17 @@
 									</h3>
 								</div>
 								<div class="col-sm-6 align-items-center text-right">
+									<vtr-ui-switch-onoff *ngIf="!data.hasWSEverUsed"
+										name="wifisecurity"
+										[value]="data.isLWSEnabled"
+										[data]="data"></vtr-ui-switch-onoff>
 									<div class="collapse-control"
 										(click)="$event.preventDefault();isCollapsed=!isCollapsed;"
 										[hidden]="!data.isLWSEnabled">
 										<button vtrMetrics
 											metricsItem="collapseWiFiHistory"
 											metricsEvent="itemClick"
-											class="btn btn-link collapse-text"
+											class="btn btn-link collapse-text p-0"
 											type="button"
 											data-toggle="collapse"
 											data-target="#wifi-collapse"
@@ -62,7 +66,7 @@
 										<button vtrMetrics
 											metricsItem="expandWiFiHistory"
 											metricsEvent="itemClick"
-											class="btn btn-link collapse-text"
+											class="btn btn-link collapse-text p-0"
 											type="button"
 											data-toggle="collapse"
 											data-target="#wifi-collapse"
@@ -73,12 +77,6 @@
 											{{'security.wifisecurity.container.more' | translate}} <fa-icon
 												[icon]="['fas', 'chevron-down']"
 												class="pl-3"></fa-icon></button>
-									</div>
-									<div class="switch"
-										*ngIf="data.hasWSEverUsed">
-										<vtr-ui-switch-onoff name="wifisecurity"
-											[value]="data.isLWSEnabled"
-											[data]="data"></vtr-ui-switch-onoff>
 									</div>
 								</div>
 							</div>
@@ -108,10 +106,10 @@
 									</small> -->
 								</div>
 								<div class="cardBody">
-									<div class="row">
+									<div class="row no-gutters wifi-card">
 										<div *ngFor="let history of data.historys"
-											class="col-sm-12 col-md-12 col-lg-6 col-xl-6 align-self-center">
-											<div class="media pt-3">
+											class="col-sm-12 col-md-12 col-lg-6 col-xl-6 align-self-center pl-5 wifi">
+											<div class="media pt-3 border-0">
 												<div class="status-icon">
 													<span class="fa-stack fa-3x">
 														<fa-icon [icon]="['fal', 'wifi']"
@@ -125,7 +123,7 @@
 														</span>
 													</span>
 												</div>
-												<div class="connection-name media-body">
+												<div class="connection-name media-body border-0">
 													<h5 class="mt-0"
 														title="{{history.ssid}}">{{history.ssid}}</h5>
 													<small class="connection-status text-muted">
