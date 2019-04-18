@@ -691,7 +691,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						this.usbChargingInBatteryModeStatus = featureStatus.available;
 						if (this.usbChargingInBatteryModeStatus) {
 							this.usbChargingCheckboxFlag = featureStatus.status;
-							this.toggleAlwaysOnUsbFlag = !featureStatus.status;
+						}
+						if (this.alwaysOnUSBStatus.status) {
+							this.toggleAlwaysOnUsbFlag = true;
 						}
 					})
 					.catch(error => {
