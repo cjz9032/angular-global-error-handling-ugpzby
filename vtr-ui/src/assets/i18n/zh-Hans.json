@@ -17,7 +17,8 @@
 				"sub5": "因特网保护",
 				"sub6": "Windows Hello"
 			},
-			"support": "支持服务"
+			"support": "支持服务",
+			"privacy": "Privacy"
 		},
 		"securityAdvisor": {
 			"title": "安全顾问",
@@ -52,6 +53,11 @@
 			"on": "开",
 			"off": "关",
 			"collapse": "折叠"
+		}
+	},
+	"privacy": {
+		"headerMain": {
+			"title": "Privacy"
 		}
 	},
 	"dashboard": {

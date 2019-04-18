@@ -17,7 +17,8 @@
 				"sub5": "Internet Protection",
 				"sub6": "Windows Hello"
 			},
-			"support": "Support"
+			"support": "Support",
+			"privacy": "Privacy"
 		},
 		"securityAdvisor": {
 			"title": "Security Advisor",
@@ -52,6 +53,11 @@
 			"on": "ON",
 			"off": "OFF",
 			"collapse": "Collapse"
+		}
+	},
+	"privacy": {
+		"headerMain": {
+			"title": "Privacy"
 		}
 	},
 	"dashboard": {

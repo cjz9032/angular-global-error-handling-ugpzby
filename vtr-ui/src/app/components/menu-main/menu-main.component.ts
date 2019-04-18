@@ -47,6 +47,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			metricsItem: 'link.dashboard',
 			routerLinkActiveOptions: { exact: true },
 			forArm: true,
+			onlyPrivacy: false,
 			subitems: []
 		}, {
 			id: 'device',
@@ -57,6 +58,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			metricsParent: 'navbar',
 			metricsItem: 'link.device',
 			forArm: false,
+			onlyPrivacy: false,
 			subitems: [{
 				id: 'device',
 				label: 'common.menu.device.sub1',
@@ -97,6 +99,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			metricsParent: 'navbar',
 			metricsItem: 'link.security',
 			forArm: false,
+			onlyPrivacy: false,
 			subitems: [{
 				id: 'security',
 				label: 'common.menu.security.sub1',
@@ -139,6 +142,18 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 				subitems: []
 			}]
 		}, {
+			id: 'privacy',
+			label: 'common.menu.privacy',
+			path: 'privacy',
+			icon: ['fal', 'eye'],
+			metricsEvent: 'itemClick',
+			metricsParent: 'navbar',
+			metricsItem: 'link.privacy',
+			routerLinkActiveOptions: { exact: true },
+			forArm: true,
+			onlyPrivacy: true,
+			subitems: []
+		}, {
 			id: 'support',
 			label: 'common.menu.support',
 			path: 'support',
@@ -148,6 +163,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			metricsItem: 'link.support',
 			routerLinkActiveOptions: { exact: true },
 			forArm: false,
+			onlyPrivacy: false,
 			subitems: []
 		}, {
 			id: 'user',
@@ -159,6 +175,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			metricsItem: 'link.user',
 			routerLinkActiveOptions: { exact: true },
 			forArm: true,
+			onlyPrivacy: false,
 			subitems: []
 		}
 	];
@@ -250,6 +267,11 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 		let showItem = true;
 		if (this.deviceService.isArm) {
 			if (!item.forArm) {
+				showItem = false;
+			}
+		}
+		if (!this.deviceService.showPrivacy) {
+			if (item.onlyPrivacy) {
 				showItem = false;
 			}
 		}

@@ -15,6 +15,7 @@ export class DeviceService {
 	private microphone: any;
 	public isShellAvailable = false;
 	public isArm = false;
+	public showPrivacy = true;
 
 	constructor(
 		shellService: VantageShellService
@@ -45,6 +46,10 @@ export class DeviceService {
 		} catch (error) {
 			console.error('initArm' + error.message);
 		}
+	}
+
+	private initshowPrivacy() {
+		// set this.showPrivacy appropriately based on machineInfo data
 	}
 
 	public getDeviceInfo(): Promise<MyDevice> {
