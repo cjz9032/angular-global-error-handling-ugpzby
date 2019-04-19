@@ -48,13 +48,13 @@
 												<div class="col-12">
 													<vtr-ui-button *ngIf="statusItem.status === 'not-installed'"
 														(click)="getSurfEasy()"
-														[metricsItem]="getSufEasy"
+														[metricsItem]="'getSufEasy'"
 														[metricsParent]="'security.internet'"
 														[label]="'security.vpn.getSufEasy' | translate">
 													</vtr-ui-button>
 													<vtr-ui-button *ngIf="statusItem.status === 'installed'"
 														(click)="openSurfEasy()"
-														[metricsItem]="openSufEasy"
+														[metricsItem]="'openSufEasy'"
 														[metricsParent]="'security.internet'"
 														[label]="'security.vpn.openSufEasy' | translate">
 													</vtr-ui-button>
