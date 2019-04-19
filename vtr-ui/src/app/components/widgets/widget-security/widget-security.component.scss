@@ -28,22 +28,16 @@
 					font-size: 2.5rem;
 				}
 			}
-
-			.circle.percent-0,
-			.circle.percent-20,
-			.circle.percent-25 {
+			.circle.percent-red {
 				background: $pink;
 			}
-			.circle.percent-40,
-			.circle.percent-50 {
+			.circle.percent-orange {
 				background: $orange;
 			}
-			.circle.percent-60,
-			.circle.percent-75 {
+			.circle.percent-yellow {
 				background: $yellow_light;
 			}
-			.circle.percent-80,
-			.circle.percent-100 {
+			.circle.percent-green {
 				background: linear-gradient(-45deg, $go_lighter, $go_dark);
 			}
 		}

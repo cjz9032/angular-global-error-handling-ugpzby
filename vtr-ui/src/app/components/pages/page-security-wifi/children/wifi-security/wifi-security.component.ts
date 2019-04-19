@@ -64,10 +64,9 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 						} else {
 							this.data.isLWSEnabled = false;
 						}
-					}
-						, (error) => {
-							console.log('no permission');
-						});
+					}, (error) => {
+						console.log('no permission');
+					});
 				}
 			}
 		});

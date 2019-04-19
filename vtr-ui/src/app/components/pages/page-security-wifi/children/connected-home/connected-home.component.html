@@ -111,7 +111,7 @@
 					</div>
 					<div class="col-sm-6">
 						<div class="button-box shift-left">
-							<vtr-ui-button [metricsItem]="'tryNow'"
+							<vtr-ui-button metricsItem="tryNow"
 								(onClick)="tryNow($event)"
 								[label]="'security.homeprotection.homesecurity.tryNow' | translate"
 								[disabled]="!data.tryNowEnable">
@@ -141,7 +141,7 @@
 						</div>
 						<div class="col-md-12 col-lg-5 invitation-button text-right">
 							<div class="button-box">
-								<vtr-ui-button [metricsItem]="'enterInvitationCode'"
+								<vtr-ui-button metricsItem="enterInvitationCode"
 									(onClick)="enterActivationCode($event)"
 									[label]="'security.homeprotection.invitationcode.button' | translate"
 									[alreadyJoinGroup]="data.homeStatus"></vtr-ui-button>

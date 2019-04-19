@@ -1,7 +1,7 @@
 <div class="vtr-page-security vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main 
+			<vtr-header-main
 				[title]="'common.menu.security.title' | translate"
 				[backarrow]="'&lt; '"
 				[back]="'common.ui.back' | translate"></vtr-header-main>
@@ -16,7 +16,7 @@
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col col-12">
-										<vtr-widget-security [percentValue]="score"></vtr-widget-security>
+										<vtr-widget-security [percentValue]="score" [percentColorClass]= "percentColorClass"></vtr-widget-security>
 									</div>
 								</div>
 
@@ -57,7 +57,7 @@
 																<fa-icon class="wifi-font-icon"
 																	[icon]="['fas', 'wifi']"></fa-icon>
 															</div>
-															<div class="col-10">{{'security.landing.maliciousNetwork' | translate:{maliciousWifi:maliciousWifi ? maliciousWifi : 0} }}</div>
+															<div class="col-10">{{'security.landing.maliciousNetwork' | translate: { maliciousWifi: maliciousWifi } }}</div>
 														</div>
 														<ul class="chevron-list">
 															<li *ngFor="let wifi of wifiHistory.slice(0, 2);"
