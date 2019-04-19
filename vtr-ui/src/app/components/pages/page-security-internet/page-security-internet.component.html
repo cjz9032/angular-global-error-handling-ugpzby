@@ -48,14 +48,12 @@
 												<div class="col-12">
 													<vtr-ui-button *ngIf="statusItem.status === 'not-installed'"
 														(click)="getSurfEasy()"
-														[metricsItem]="'getSufEasy'"
-														[metricsParent]="'security.internet'"
+														metricsItem="getSufEasy"
 														[label]="'security.vpn.getSufEasy' | translate">
 													</vtr-ui-button>
 													<vtr-ui-button *ngIf="statusItem.status === 'installed'"
 														(click)="openSurfEasy()"
-														[metricsItem]="'openSufEasy'"
-														[metricsParent]="'security.internet'"
+														metricsItem="openSufEasy"
 														[label]="'security.vpn.openSufEasy' | translate">
 													</vtr-ui-button>
 												</div>
@@ -330,13 +328,11 @@
 											<a vtrMetrics
 												metricsEvent="itemClick"
 												metricsItem="privacyPolicy"
-												metricsParent="security.internet"
 												href="https://www.surfeasy.com/privacy_policy/"
 												target="_blank"></a>
 											<a vtrMetrics
 												metricsEvent="itemClick"
 												metricsItem="termsOfServices"
-												metricsParent="security.internet"
 												href="https://www.surfeasy.com/terms_of_service/"
 												target="_blank"></a>
 										</p>

@@ -27,7 +27,7 @@
 												[innerHTML]="'security.antivirus.windowsDefender.subtitle' | translate">
 											</div>
 											<div class="p-3">
-												<vtr-ui-button [metricsItem]="'learnMoreAboutMcafee'"
+												<vtr-ui-button metricsItem="learnMoreAboutMcafee"
 													[label]="'security.antivirus.windowsDefender.learnMore' | translate"
 													(onClick)="openArticle()"
 													[upperCaseLabel]=false></vtr-ui-button>
@@ -195,7 +195,7 @@
 											</div>
 										</div>
 										<div class="col-auto py-5">
-											<vtr-ui-button [metricsItem]="'launchMcafee'"
+											<vtr-ui-button metricsItem="launchMcafee"
 												(onClick)=" viewModel.mcafee?.launch()"
 												[label]="'security.antivirus.mcafee.launch' | translate"
 												[upperCaseLabel]=false></vtr-ui-button>
