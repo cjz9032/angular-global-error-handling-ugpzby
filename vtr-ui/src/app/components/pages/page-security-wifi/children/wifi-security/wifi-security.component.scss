@@ -436,4 +436,10 @@
 			border-bottom: 0;
 		}
 	}
+	.sm-device-responsive{
+		@media #{$mediaquery_12} {
+			position: relative;
+			top: -3rem;
+		}
+	}
 }
