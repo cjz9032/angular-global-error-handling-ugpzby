@@ -17,8 +17,8 @@ export class AntivirusWidgetItem extends WidgetItem {
 		});
 		const cacheAvStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus);
 		const cacheFwStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus);
-		if (cacheAvStatus || cacheFwStatus) {
-			this.updateStatus(cacheAvStatus === 'enabled', cacheFwStatus === 'enabled', commonService);
+		if (typeof cacheAvStatus === 'boolean' || typeof cacheFwStatus === 'boolean') {
+			this.updateStatus(cacheAvStatus, cacheFwStatus, commonService);
 		}
 
 		if (antivirus.mcafee || antivirus.windowsDefender || antivirus.others) {
