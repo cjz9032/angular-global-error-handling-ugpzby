@@ -171,7 +171,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 				description = 'lenovoId.ssoErrorCommonEx';
 				break;
 		}
-
+		modalRef.componentInstance.CancelText = "";
 		modalRef.componentInstance.header = header;
 		modalRef.componentInstance.description = description;
 	}
