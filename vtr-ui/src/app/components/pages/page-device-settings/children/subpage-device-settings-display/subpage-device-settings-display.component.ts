@@ -131,7 +131,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.getCameraPrivacyModeStatus();
 		this.getCameraDetails();
 		this.statusChangedLocationPermission();
-
+		this.displayService.startMonitorForCameraPermission();
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -142,11 +142,6 @@ export class SubpageDeviceSettingsDisplayComponent
 					console.log('DeviceMonitorStatus.CameraStatus', payload);
 					this.dataSource.permission = payload;
 					break;
-				case DeviceMonitorStatus.EyeCareModeStatus:
-					console.log('DeviceMonitorStatus.EyeCareModeStatus', payload);
-					//this.eyeCareModeStatus.permission = payload;
-					this.sunsetToSunriseModeStatus.permission = payload
-					this.cd.detectChanges();
 				default:
 					break;
 			}
@@ -198,6 +193,9 @@ export class SubpageDeviceSettingsDisplayComponent
 					this.dataSource = this.emptyCameraDetails[0];
 					this.shouldCameraSectionDisabled = true;
 					console.log('no camera permission .then', this.emptyCameraDetails[0]);
+					const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
+					privacy.status = false;
+					this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
 				}
 				this.cameraFeatureAccess.showAutoExposureSlider = false;
 				if (this.dataSource.exposure.autoValue === true) {
@@ -488,11 +486,13 @@ export class SubpageDeviceSettingsDisplayComponent
 	// End Camera Privacy
 	public getLocationPermissionStatus(value: any) {
 		console.log('called from loaction service ui', JSON.stringify(value.status));
+		this.sunsetToSunriseModeStatus.permission = value.status;
 		if (value.status === false) {
 			this.enableSunsetToSunrise = true;
 		} else {
 			this.enableSunsetToSunrise = false;
 		}
+		this.cd.detectChanges();
 	}
 
 	public async statusChangedLocationPermission() {
