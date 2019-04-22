@@ -9,6 +9,8 @@ import { EyeCareMode, SunsetToSunriseStatus } from 'src/app/data-models/camera/e
 import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 enum defaultTemparature {
 	defaultValue = 4500
 }
@@ -33,7 +35,9 @@ export class SubpageDeviceSettingsDisplayComponent
 	public enableSlider = false;
 	public initEyecare = 0;
 	public showHideAutoExposureSlider = false;
+	private notificationSubscription: Subscription;
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
+	public shouldCameraSectionDisabled = true;
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	headerMenuItems = [
@@ -47,12 +51,61 @@ export class SubpageDeviceSettingsDisplayComponent
 			path: 'camera'
 		}
 	];
-
+	emptyCameraDetails = [
+		{
+			"brightness":
+			{
+				"autoModeSupported": false,
+				"autoValue": false,
+				"supported": true,
+				"min": 0,
+				"max": 255,
+				"step": 1,
+				"default": 128,
+				"value": 136
+			},
+			"contrast":
+			{
+				"autoModeSupported": false,
+				"autoValue": false,
+				"supported": true,
+				"min": 0,
+				"max": 255,
+				"step": 1,
+				"default": 32,
+				"value": 179
+			},
+			"exposure":
+			{
+				"autoModeSupported": true,
+				"autoValue": true,
+				"supported": true,
+				"min": -11,
+				"max": -3,
+				"step": 1,
+				"default": -6,
+				"value": -5
+			},
+			"focus":
+			{
+				"autoModeSupported": false,
+				"autoValue": false,
+				"supported": false,
+				"min": 0,
+				"max": 0,
+				"step": 0,
+				"default": 0,
+				"value": 0
+			},
+			"permission": false
+		}
+	];
 	constructor(public baseCameraDetail: BaseCameraDetail,
 		private deviceService: DeviceService,
 		// public cd: ChangeDetectorRef,
 		public displayService: DisplayService,
-		private commonService: CommonService) {
+		private commonService: CommonService,
+		private cd: ChangeDetectorRef) {
 		this.dataSource = new CameraDetail();
 		this.cameraFeatureAccess = new CameraFeatureAccess();
 		this.eyeCareDataSource = new EyeCareMode();
@@ -60,7 +113,9 @@ export class SubpageDeviceSettingsDisplayComponent
 
 	ngOnInit() {
 		console.log('subpage-device-setting-display onInit');
-
+		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
+			this.onNotification(response);
+		});
 		this.cameraDetailSubscription = this.baseCameraDetail.cameraDetailObservable.subscribe(
 			cameraDetail => {
 				this.dataSource = cameraDetail;
@@ -76,7 +131,21 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.getCameraPrivacyModeStatus();
 		this.getCameraDetails();
 		this.statusChangedLocationPermission();
+		this.displayService.startMonitorForCameraPermission();
+	}
 
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			const { type, payload } = notification;
+			switch (type) {
+				case DeviceMonitorStatus.CameraStatus:
+					console.log('DeviceMonitorStatus.CameraStatus', payload);
+					this.dataSource.permission = payload;
+					break;
+				default:
+					break;
+			}
+		}
 	}
 
 	ngOnDestroy() {
@@ -114,13 +183,32 @@ export class SubpageDeviceSettingsDisplayComponent
 			console.log('Inside');
 			this.displayService.getCameraSettingsInfo().then((response) => {
 				console.log('getCameraDetails.then', response);
-				console.log('getCameraDetails.then permission', response);
 				this.dataSource = response;
-				console.log('getCameraDetails.then permission', this.dataSource.permission);
+				if (this.dataSource.permission === true) {
+					this.shouldCameraSectionDisabled = false;
+					console.log('getCameraDetails.then permission', this.dataSource.permission);
+
+				} else {
+					//	response.exposure.autoValue = true;
+					this.dataSource = this.emptyCameraDetails[0];
+					this.shouldCameraSectionDisabled = true;
+					console.log('no camera permission .then', this.emptyCameraDetails[0]);
+					const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
+					privacy.status = false;
+					this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
+				}
 				this.cameraFeatureAccess.showAutoExposureSlider = false;
+				if (this.dataSource.exposure.autoValue === true) {
+					this.cameraFeatureAccess.exposureAutoValue = true;
+				} else {
+					this.cameraFeatureAccess.exposureAutoValue = false;
+				}
 				if (this.dataSource.exposure.supported === true && this.dataSource.exposure.autoValue === false) {
 					this.cameraFeatureAccess.showAutoExposureSlider = true;
 				}
+				// if (this.dataSource.permission) {
+				// 	this.shouldCameraSectionDisabled = false;
+				// }
 			});
 		} catch (error) {
 			console.error(error.message);
@@ -304,7 +392,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.log('getSunsetToSunrise.then', status);
 						this.sunsetToSunriseModeStatus = status;
 						if (status.permission === false) {
-							this.displayService.openPrivacyLocation();
+							//	this.displayService.openPrivacyLocation();
 							this.enableSunsetToSunrise = true;
 						}
 					}).catch(error => {
@@ -398,24 +486,19 @@ export class SubpageDeviceSettingsDisplayComponent
 	// End Camera Privacy
 	public getLocationPermissionStatus(value: any) {
 		console.log('called from loaction service ui', JSON.stringify(value.status));
+		this.sunsetToSunriseModeStatus.permission = value.status;
 		if (value.status === false) {
 			this.enableSunsetToSunrise = true;
 		} else {
 			this.enableSunsetToSunrise = false;
 		}
+		this.cd.detectChanges();
 	}
 
-	public statusChangedLocationPermission() {
+	public async statusChangedLocationPermission() {
 		console.log('status changed location permission');
 		if (this.displayService.isShellAvailable) {
-			this.displayService
-				.statusChangedLocationPermission(this.getLocationPermissionStatus.bind(this))
-				.then((value: any) => {
-					console.log('startLocation', value);
-				}).catch(error => {
-					console.error('startLocation', error);
-				});
-
+			await this.displayService.statusChangedLocationPermission(this.getLocationPermissionStatus.bind(this));
 		}
 	}
 	public getResetColorTemparatureCallBack(resetData: any) {

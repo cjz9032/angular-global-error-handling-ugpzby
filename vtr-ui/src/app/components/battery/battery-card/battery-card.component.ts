@@ -61,7 +61,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	onRemainingTimeEvent(mainBatteryTime: number) {
 		console.log("onRemainingTimeEvent: ", mainBatteryTime);
 		if(mainBatteryTime) {
-			this.batteryInfo[0].remainingTime = mainBatteryTime
+			this.batteryInfo[0].mainBatteryRemainingTime = mainBatteryTime
 			this.updateBatteryDetails();
 		}
 	}
@@ -95,7 +95,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryInfo[0].isAcAttached = this.batteryIndicator.charging;
 		this.batteryIndicator.expressCharging = this.batteryInfo[0].isExpressCharging;
 		this.batteryIndicator.voltageError = this.batteryInfo[0].isVoltageError;
-		this.batteryIndicator.convertMin(this.batteryInfo[0].remainingTime);
+		this.batteryInfo[0].mainBatteryRemainingTime = this.batteryService.getMainBatteryTime();
+		this.batteryIndicator.convertMin(this.batteryInfo[0].mainBatteryRemainingTime);
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo,this.batteryInfo);
 		this.cd.detectChanges();
 	}

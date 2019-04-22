@@ -44,7 +44,7 @@
 					<div class="p-0"
 						[ngClass]="{'ml-auto': type!=='Camera'}"
 						*ngIf="resetText.length > 0">
-						<button type="button"
+						<button type="button" [disabled]="disabledAll"
 							class="btn"
 							[ngClass]="{'btn-link text':!resetTextAsButton ,'btn-label':resetTextAsButton}"
 							(click)="onResetClick($event)">

@@ -33,7 +33,9 @@
 			"installed": "INSTALLED",
 			"notInstalled": "NOT INSTALLED",
 			"loading": "Loading",
-			"notFound": "NOT FOUND"
+			"notFound": "NOT FOUND",
+			"registered": "REGISTERED",
+			"notRegistered": "NOT REGISTERED"
 		},
 		"qAndA": {
 			"title": "Q&A for your machine",
@@ -63,7 +65,7 @@
 		},
 		"feedback": {
 			"title": "Give Feedback",
-			"subtitle": "Tell us what you think about vantage",
+			"subtitle": "Tell us what you think about vantage.",
 			"button": "Give feedback",
 			"form": {
 				"email": "Email (optional)",
@@ -88,7 +90,7 @@
 				}
 			},
 			"diskSpace": {
-				"title": "Disk space",
+				"title": "Disk Space",
 				"detail": {
 					"notFound": "Disk not found",
 					"of": "of"
@@ -141,7 +143,7 @@
 				"ram": "RAM"
 			},
 			"diskspace": {
-				"title": "Disk space",
+				"title": "Disk Space",
 				"notFound": "Disk not found"
 			},
 			"software": "Software up to date",
@@ -161,13 +163,13 @@
 					"support": "Support"
 				}
 			},
-			"helpful": "Helpful content"
+			"helpful": "Helpful Content"
 		},
 		"deviceSettings": {
-			"helpful": "Helpful content",
+			"helpful": "Helpful Content",
 			"batteryGauge": {
 				"title": "BATTERY GAUGE",
-				"subtitle": "Battery healthy",
+				"subtitle": "Battery health",
 				"hours": "hours",
 				"minutes": "minutes",
 				"charge": "TIME TO FULLY CHARGE",
@@ -678,24 +680,24 @@
 			"whatIsPmNotInstalled": "The safest, easiest way to save strong, complex passwords and log in instantly on every site.",
 			"whatIsPmInstalled": "A safer digital life is waiting: Add passwords, enable Dark Web Monitoring and autofill personal and payment info.",
 			"startProtect": "Start protecting your online accounts the simple way.",
-			"getDashLane": "Get DashLane",
-			"learnMoreAbout": "<tag>Learn more</tag> about making the most of DashLane",
-			"openDashLane": "Open DashLane",
-			"neverForget": "DashLane: Never forget another password",
-			"whatIsDashLane": "DashLane is a password manager and digital protection app that works with your browser. It automatically saves passwords and personal data, remembers it all for you, and stores everything securely. Dashlane also analyzes your account security and provides easy ways to improve your password health.",
-			"helpYou": "DashLane helps you",
+			"getDashLane": "Get Dashlane",
+			"learnMoreAbout": "<tag>Learn more</tag> about making the most of Dashlane",
+			"openDashLane": "Open Dashlane",
+			"neverForget": "Dashlane: Never forget another password",
+			"whatIsDashLane": "Dashlane is a password manager and digital protection app that works with your browser. It automatically saves passwords and personal data, remembers it all for you, and stores everything securely. Dashlane also analyzes your account security and provides easy ways to improve your password health.",
+			"helpYou": "Dashlane helps you",
 			"helpYou1": "Remember unlimited usernames and passwords.",
 			"helpYou2": "Log in instantly everywhere for seamless browsing",
 			"helpYou3": "Sync across devices so you're never without access to important accounts",
 			"helpYou4": "Improve your online protection with easy, actionable advice",
-			"getStarted": "Getting started with DashLane?",
-			"checkOutThisGuide": "Use DashLane to stay safe online while saving time and frustration. For detailed instructions on how to get started, <tag>check out this guide.</tag>",
-			"allowsYou": "DashLane allows you to",
+			"getStarted": "Getting started with Dashlane?",
+			"checkOutThisGuide": "Use Dashlane to stay safe online while saving time and frustration. For detailed instructions on how to get started, <tag>check out this guide.</tag>",
+			"allowsYou": "Dashlane allows you to",
 			"allowsYou1": "Log in instantly every where for seamless Browsing-Sync across devices so you're never without access to important accounts",
 			"allowsYou2": "Monitor the dark web for your personal information",
 			"allowsYou3": "Stay safe on unsecured WiFi networks with built in VPN",
 			"allowsYou4": "Share passwords securely without revealing them",
-			"poweredByDashLane": "Powered By DashLane",
+			"poweredByDashLane": "Powered By Dashlane",
 			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
 		},
 		"windowsHello": {

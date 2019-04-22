@@ -16,7 +16,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	@Input() cameraSettings: ICameraSettingsResponse;
 	@Input() cameraFeatureAccess: CameraFeatureAccess;
 	@Input() manualRefresh: any;
-
+	@Input() disabledAll: boolean;
 	@Output() brightnessChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() contrastChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureChange: EventEmitter<ChangeContext> = new EventEmitter();
@@ -79,9 +79,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		if (this.baseCameraDetail) {
 			this.cameraDetailSubscription.unsubscribe();
 		}
-		if (this._video.src !== '') {
-			this.cleanupCameraAsync();
-		}
+		this.cleanupCameraAsync();
 		document.removeEventListener('visibilitychange', this.visibilityChange);
 	}
 
@@ -109,7 +107,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		console.log('InitializeCameraAsync');
 		const self = this;
 		// Get available devices for capturing pictures
-		return this.findCameraDeviceByPanelAsync(this.Windows.Devices.Enumeration.Panel.back)
+		return this.findCameraDeviceByPanelAsync(this.Windows.Devices.Enumeration.Panel.front)
 			.then(function (camera) {
 				if (!camera) {
 					console.log('No camera device found!');
@@ -126,6 +124,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 				const settings = new self.Capture.MediaCaptureInitializationSettings();
 				settings.videoDeviceId = camera.id;
+				settings.streamingCaptureMode = 2; // video
+				settings.photoCaptureSource = 0; // auto
 
 				// Initialize media capture and start the preview
 				return self.oMediaCapture.initializeAsync(settings);
@@ -146,15 +146,17 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 	stopPreview() {
 		// Cleanup the UI
-		this._video.pause();
-		this._video.src = '';
+		if (this._video) {
+			this._video.pause();
+			this._video.src = '';
+		}
 	}
 
 	cleanupCameraAsync() {
 		console.log('cleanupCameraAsync');
 		this.stopPreview();
 
-		if (this.oMediaCapture != null) {
+		if (this.oMediaCapture) {
 			this.oMediaCapture.close();
 			this.oMediaCapture = null;
 		}
@@ -174,6 +176,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			if (this.cameraSettings.exposure.supported === true) {
 
 				this.cameraFeatureAccess.showAutoExposureSlider = !$event.switchValue;
+				this.cameraFeatureAccess.exposureAutoValue = $event.switchValue;
 			}
 			// this.baseCameraDetail.toggleAutoExposure($event.switchValue);
 			this.exposureToggle.emit($event);

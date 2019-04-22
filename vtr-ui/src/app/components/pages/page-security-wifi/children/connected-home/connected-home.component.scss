@@ -70,6 +70,7 @@
 				.bullet-icon {
 					.icon-bkg {
 						background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+						background-color: $go_dark;
 						border-color: $go_dark;
 					}
 				}
@@ -87,7 +88,7 @@
 
 					fa-icon {
 						font-size: 1.6rem;
-						line-height: 2.9rem;
+						line-height: 2.7rem;
 						color: $light;
 					}
 				}
@@ -152,7 +153,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			flex-direction: column; 
+			flex-direction: column;
 		}
 
 		.sub-heading {
@@ -187,6 +188,7 @@
 		.button-description {
 			width: 29rem;
 			float: right;
+			text-align: center;
 		}
 	}
 }

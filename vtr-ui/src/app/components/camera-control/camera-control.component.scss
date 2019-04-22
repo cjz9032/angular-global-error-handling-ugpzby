@@ -13,6 +13,9 @@
 			@extend .base-preview;
 			background-color: $dark;
 			transform: rotateY(180deg);
+			&.disable{
+				cursor: not-allowed;
+			}
 		}
 	}
 }

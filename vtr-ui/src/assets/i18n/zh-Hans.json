@@ -33,7 +33,9 @@
 			"installed": "已安装",
 			"notInstalled": "未安装",
 			"loading": "正在加载",
-			"notFound": "未发现"
+			"notFound": "未发现",
+			"registered": "已注册",
+			"notRegistered": "未注册"
 		},
 		"qAndA": {
 			"title": "关于计算机的常见问题解答​",
@@ -88,7 +90,7 @@
 				}
 			},
 			"diskSpace": {
-				"title": "Disk space",
+				"title": "Disk Space",
 				"detail": {
 					"notFound": "Disk not found",
 					"of": "of"
@@ -677,24 +679,24 @@
 				"whatIsPmNotInstalled": "提供保存高强度复杂密码和即时登录到每个站点的最安全、简单的方式。",
 				"whatIsPmInstalled": "更安全的数字生活正在向您招手：添加密码、启用暗网监控、自动填充个人和支付信息。",
 				"startProtect": "开始以简单方式保护您的网上帐户。",
-				"getDashLane": "获取 DashLane",
-				"learnMoreAbout": "了解充分利用 DashLane 的<tag>更多信息</tag>",
-				"openDashLane": "打开 DashLane",
-				"neverForget": "DashLane：永远不再忘记任何密码",
-				"whatIsDashLane": "DashLane 是一个结合浏览器使用的密码管理器和数字保护应用程序。它可以自动保存密码和个人数据，替您记住这些信息，并安全地存储所有内容。Dashlane 还会分析帐户的安全性，并提供简单的方法改善您的密码安全状况。",
-				"helpYou": "DashLane 可帮助您：",
+				"getDashLane": "获取 Dashlane",
+				"learnMoreAbout": "了解充分利用 Dashlane 的<tag>更多信息</tag>",
+				"openDashLane": "打开 Dashlane",
+				"neverForget": "Dashlane：永远不再忘记任何密码",
+				"whatIsDashLane": "Dashlane 是一个结合浏览器使用的密码管理器和数字保护应用程序。它可以自动保存密码和个人数据，替您记住这些信息，并安全地存储所有内容。Dashlane 还会分析帐户的安全性，并提供简单的方法改善您的密码安全状况。",
+				"helpYou": "Dashlane 可帮助您：",
 				"helpYou1": "记住数量不限的用户名和密码。",
 				"helpYou2": "随时随地即时登录进行无缝浏览",
 				"helpYou3": "跨设备同步信息，让您始终可以访问重要的帐户",
 				"helpYou4": "在不显示密码的情况下安全地共享密码",
-				"getStarted": "开始使用 DashLane？",
-				"checkOutThisGuide": "使用 DashLane 保护上网安全，省却时间与烦恼。有关开始使用的详细说明，<tag>请查看此指南</tag>。",
-				"allowsYou": "DashLane 可让您：",
+				"getStarted": "开始使用 Dashlane？",
+				"checkOutThisGuide": "使用 Dashlane 保护上网安全，省却时间与烦恼。有关开始使用的详细说明，<tag>请查看此指南</tag>。",
+				"allowsYou": "Dashlane 可让您：",
 				"allowsYou1": "随时随地即时登录进行无缝浏览 - 跨设备同步信息，让您始终可以访问重要的帐户",
 				"allowsYou2": "监控暗网保障个人信息安全",
 				"allowsYou3": "通过内置 VPN 在不安全的 WiFi 网络上提供安全性",
 				"allowsYou4": "在不显示密码的情况下安全地共享密码",
-				"poweredByDashLane": "DashLane 出品",
+				"poweredByDashLane": "Dashlane 出品",
 				"privacyPolicyAndTermsOfService": "阅读<tag>隐私策略</tag>和<tag>服务条款</tag>的更多信息"
 		},
 		"windowsHello": {

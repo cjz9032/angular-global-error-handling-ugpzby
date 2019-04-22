@@ -27,7 +27,7 @@
 												[innerHTML]="'security.antivirus.windowsDefender.subtitle' | translate">
 											</div>
 											<div class="p-3">
-												<vtr-ui-button [metricsItem]="'learnMoreAboutMcafee'"
+												<vtr-ui-button metricsItem="learnMoreAboutMcafee"
 													[label]="'security.antivirus.windowsDefender.learnMore' | translate"
 													(onClick)="openArticle()"
 													[upperCaseLabel]=false></vtr-ui-button>
@@ -66,58 +66,67 @@
 							<div class="body antivirus-block">
 								<div>
 									<div class="title py-5">{{'security.antivirus.common.why' | translate}}</div>
-									<div class="row">
-										<div class="col-auto px-0 col-6">
-											<img src="./../../../../assets/images/antivirus/side.png" />
+									<div class="row w-100">
+										<div class="col col-6 mt-20">
+											<div class="col">
+												<img class="dashlane-side-left-img"
+													src="./../../../../assets/images/antivirus/side.png" />
+											</div>
 										</div>
-										<div class="col px-5 col-6">
-											<div class="subtitle pb-5">
-												{{'security.antivirus.common.recommends' | translate}}</div>
-											<div>
-												<ul class="list-unstyled">
-													<li class="text pb-4">
-														<div class="row">
-															<div class="col-auto">
-																<div class="bullet-icon-check">
-																	<div class="icon-bkg">
-																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
+										<div class="col col-6 mt-20">
+											<div class="col">
+												<div class="subtitle pb-5">
+													{{'security.antivirus.common.recommends' | translate}}</div>
+												<div>
+													<ul class="list-unstyled">
+														<li class="text pb-4">
+															<div class="row">
+																<div class="col-auto">
+																	<div class="bullet-icon-check">
+																		<div class="icon-bkg">
+																			<fa-icon [icon]="['fas', 'check']">
+																			</fa-icon>
+																		</div>
 																	</div>
 																</div>
-															</div>
-															<div class="col">
-																{{'security.antivirus.common.award' | translate}}</div>
-														</div>
-													</li>
-													<li class="text pb-4">
-														<div class="row">
-															<div class="col-auto">
-																<div class="bullet-icon-check">
-																	<div class="icon-bkg">
-																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
-																	</div>
+																<div class="col">
+																	{{'security.antivirus.common.award' | translate}}
 																</div>
 															</div>
-															<div class="col">
-																{{'security.antivirus.common.dedicated' | translate}}
-															</div>
-														</div>
-													</li>
-													<li class="text">
-														<div class="row">
-															<div class="col-auto">
-																<div class="bullet-icon-check">
-																	<div class="icon-bkg">
-																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
+														</li>
+														<li class="text pb-4">
+															<div class="row">
+																<div class="col-auto">
+																	<div class="bullet-icon-check">
+																		<div class="icon-bkg">
+																			<fa-icon [icon]="['fas', 'check']">
+																			</fa-icon>
+																		</div>
 																	</div>
 																</div>
+																<div class="col">
+																	{{'security.antivirus.common.dedicated' | translate}}
+																</div>
 															</div>
-															<div class="col">
-																{{'security.antivirus.common.deviceToCloud' | translate}}
+														</li>
+														<li class="text">
+															<div class="row">
+																<div class="col-auto">
+																	<div class="bullet-icon-check">
+																		<div class="icon-bkg">
+																			<fa-icon [icon]="['fas', 'check']">
+																			</fa-icon>
+																		</div>
+																	</div>
+																</div>
+																<div class="col">
+																	{{'security.antivirus.common.deviceToCloud' | translate}}
+																</div>
 															</div>
-														</div>
 
-													</li>
-												</ul>
+														</li>
+													</ul>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -130,14 +139,14 @@
 									<div class="col-auto mr-auto px-0">
 										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
 										<p class="text-regular mt-10" *vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
-											<a vtrMetrics 
-												metricsEvent="itemClick" 
+											<a vtrMetrics
+												metricsEvent="itemClick"
 												metricsItem="privacyPolicy"
 												metricsParent="security.antivirus"
 												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
 												target="_blank"></a>
-											<a vtrMetrics 
-												metricsEvent="itemClick" 
+											<a vtrMetrics
+												metricsEvent="itemClick"
 												metricsItem="termsOfServices"
 												metricsParent="security.antivirus"
 												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
@@ -195,7 +204,7 @@
 											</div>
 										</div>
 										<div class="col-auto py-5">
-											<vtr-ui-button [metricsItem]="'launchMcafee'"
+											<vtr-ui-button metricsItem="launchMcafee"
 												(onClick)=" viewModel.mcafee?.launch()"
 												[label]="'security.antivirus.mcafee.launch' | translate"
 												[upperCaseLabel]=false></vtr-ui-button>
@@ -314,14 +323,14 @@
 									<div class="col-auto mr-auto px-0">
 										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
 										<p class="text-regular mt-10" *vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
-											<a vtrMetrics 
-												metricsEvent="itemClick" 
+											<a vtrMetrics
+												metricsEvent="itemClick"
 												metricsItem="privacyPolicy"
 												metricsParent="security.antivirus"
 												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
 												target="_blank"></a>
-											<a vtrMetrics 
-												metricsEvent="itemClick" 
+											<a vtrMetrics
+												metricsEvent="itemClick"
 												metricsItem="termsOfServices"
 												metricsParent="security.antivirus"
 												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
@@ -379,7 +388,8 @@
 
 									</div>
 									<vtr-widget-mcafee [install]="viewModel.mcafeeInstall"
-										[name]="viewModel.otherAntiVirus.name"></vtr-widget-mcafee>
+										[name]="viewModel.otherAntiVirus.name"
+										[mcafee]="viewModel.mcafee"></vtr-widget-mcafee>
 								</div>
 							</div>
 							<div class="body antivirus-block">
@@ -457,14 +467,14 @@
 									<div class="col-auto mr-auto px-0">
 										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
 										<p class="text-regular mt-10" *vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
-											<a vtrMetrics 
-												metricsEvent="itemClick" 
+											<a vtrMetrics
+												metricsEvent="itemClick"
 												metricsItem="privacyPolicy"
 												metricsParent="security.antivirus"
 												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
 												target="_blank"></a>
-											<a vtrMetrics 
-												metricsEvent="itemClick" 
+											<a vtrMetrics
+												metricsEvent="itemClick"
 												metricsItem="termsOfServices"
 												metricsParent="security.antivirus"
 												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"

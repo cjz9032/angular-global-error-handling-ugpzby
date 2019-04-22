@@ -115,5 +115,12 @@
     .mn-6 {
       margin-top: $shift_up_small;
     }
+
+	  @media only screen and (max-width: 992px) {
+		  .vtr-page-right-column {
+			  padding: 0 $padding_side 4rem 12rem;
+		  }
+	  }
+
   }
 }
