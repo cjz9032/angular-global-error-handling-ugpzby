@@ -6,7 +6,7 @@
 	<div class="container-fluid p-0"
 		[ngClass]="{'vtr-disabled': disabled}">
 		<div class="row m-0">
-			<div class="col col-xs-8"
+			<div class="col col-8"
 				[ngClass]="{'col-md-8': (type==='auto-updates' || type==='Camera'), 'col-md-10':type===undefined}">
 				<div class="container-fluid p-0">
 					<div class="row m-0">
@@ -39,12 +39,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="col col-xs-4">
+			<div class="col col-4">
 				<div class="row">
 					<div class="p-0"
 						[ngClass]="{'ml-auto': type!=='Camera'}"
 						*ngIf="resetText.length > 0">
-						<button type="button"
+						<button type="button" [disabled]="disabledAll"
 							class="btn"
 							[ngClass]="{'btn-link text':!resetTextAsButton ,'btn-label':resetTextAsButton}"
 							(click)="onResetClick($event)">

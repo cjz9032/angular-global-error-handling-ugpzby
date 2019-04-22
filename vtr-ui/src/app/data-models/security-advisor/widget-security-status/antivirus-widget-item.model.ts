@@ -2,7 +2,7 @@ import { WidgetItem } from './widget-item.model';
 import { Antivirus, EventTypes } from '@lenovo/tan-client-bridge';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
-import { TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 
 export class AntivirusWidgetItem extends WidgetItem {
 	antivirus: Antivirus;
@@ -17,9 +17,7 @@ export class AntivirusWidgetItem extends WidgetItem {
 		});
 		const cacheAvStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus);
 		const cacheFwStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus);
-		if (cacheAvStatus || cacheFwStatus) {
-			this.updateStatus(cacheAvStatus === 'enabled', cacheFwStatus === 'enabled');
-		}
+		this.updateStatus(cacheAvStatus, cacheFwStatus, commonService);
 
 		if (antivirus.mcafee || antivirus.windowsDefender || antivirus.others) {
 			this.updateStatusByAv(antivirus, commonService);
@@ -40,48 +38,48 @@ export class AntivirusWidgetItem extends WidgetItem {
 		const mcafee = antivirus.mcafee;
 		const defender = antivirus.windowsDefender;
 		const others = antivirus.others;
+		let avStatus: boolean;
+		let fwStatus: boolean;
 		if (mcafee && (mcafee.enabled || !others || !others.enabled)) {
-			this.updateStatus(mcafee.status, mcafee.firewallStatus);
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, mcafee.status ? 'enabled' : 'disabled');
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, mcafee.firewallStatus ? 'enabled' : 'disabled');
+			avStatus = typeof mcafee.status === 'boolean' ? mcafee.status : false;
+			fwStatus = typeof mcafee.firewallStatus === 'boolean' ? mcafee.firewallStatus : false;
 		} else if (others) {
-			let avStatus = false;
-			let fwStatus = false;
-			if (others.antiVirus.length > 0) {
+			avStatus = null;
+			fwStatus = null;
+			if (others.antiVirus && others.antiVirus.length > 0) {
 				avStatus = others.antiVirus[0].status;
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, others.antiVirus[0].status ? 'enabled' : 'disabled');
 			}
-			if (others.firewall.length > 0) {
+			if (others.firewall && others.firewall.length > 0) {
 				fwStatus = others.firewall[0].status;
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, others.firewall[0].status ? 'enabled' : 'disabled');
 			}
-			this.updateStatus(avStatus, fwStatus);
 		} else {
-			this.updateStatus(defender.status, defender.firewallStatus);
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, defender.status ? 'enabled' : 'disabled');
-			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, defender.firewallStatus ? 'enabled' : 'disabled');
+			avStatus = typeof defender.status === 'boolean' ? defender.status : false;
+			fwStatus = typeof defender.firewallStatus === 'boolean' ? defender.firewallStatus : false;
 		}
+		this.updateStatus(avStatus, fwStatus, commonService);
 	}
 
-	updateStatus(avStatus: boolean, fwStatus: boolean): void {
-		if (avStatus && fwStatus) {
-			this.status = 0;
-			this.detail = 'enabled';
+	updateStatus(avStatus: boolean, fwStatus: boolean, commonService: CommonService): void {
+		if (typeof avStatus !== 'boolean' && typeof fwStatus !== 'boolean') { return; }
+		if ((avStatus && fwStatus)
+			|| (avStatus && typeof fwStatus !== 'boolean')
+			|| (fwStatus && typeof avStatus !== 'boolean')) {
 			this.translateService.stream('common.securityAdvisor.enabled').subscribe((value) => {
 				this.detail = value;
+				this.status = 0;
 			});
 		} else if (!avStatus && !fwStatus) {
-			this.status = 1;
-			this.detail = 'disabled';
 			this.translateService.stream('common.securityAdvisor.disabled').subscribe((value) => {
 				this.detail = value;
+				this.status = 1;
 			});
 		} else {
-			this.status = 3;
-			this.detail = 'partially protected';
 			this.translateService.stream('common.securityAdvisor.partiallyProtected').subscribe((value) => {
 				this.detail = value;
+				this.status = 3;
 			});
 		}
+		commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, avStatus);
+		commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fwStatus);
 	}
 }

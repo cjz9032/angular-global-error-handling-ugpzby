@@ -37,8 +37,10 @@ export class UiRowSwitchComponent extends BaseComponent {
 	@Input() tooltipText = '';
 	@Input() name = '';
 	@Input() disabled = false;
+	@Input() disabledAll = false;
 	@Input() type = undefined;
 	@Input() resetTextAsButton = false;
+
 
 	@Output() toggleOnOff = new EventEmitter<boolean>();
 	@Output() readMoreClick = new EventEmitter<boolean>();

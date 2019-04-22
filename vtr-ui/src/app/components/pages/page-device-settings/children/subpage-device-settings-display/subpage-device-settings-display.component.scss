@@ -90,4 +90,8 @@
 	.inline-item {
 		display: -webkit-inline-box;
 	}
+	.disabled{
+		opacity: 0.5;
+		pointer-events: none;
+	}
 }

@@ -6,9 +6,6 @@ import {
 import {
 	VantageShellService
 } from '../../../services/vantage-shell/vantage-shell.service';
-import {
-	MockSecurityAdvisorService
-} from '../../../services/mock/mockSecurityAdvisor.service';
 import * as phoenix from '@lenovo/tan-client-bridge';
 import {
 	CMSService
@@ -43,6 +40,9 @@ import {
 import {
 	LocalStorageKey
 } from '../../../enums/local-storage-key.enum';
+import {
+	RegionService
+} from 'src/app/services/region/region.service';
 
 @Component({
 	selector: 'vtr-page-security',
@@ -51,8 +51,6 @@ import {
 })
 
 export class PageSecurityComponent implements OnInit {
-	title = 'Security';
-
 	passwordManagerLandingViewModel: PasswordManagerLandingViewModel;
 	antivirusLandingViewModel: AntiVirusLandingViewModel;
 	vpnLandingViewModel: VpnLandingViewModel;
@@ -70,6 +68,7 @@ export class PageSecurityComponent implements OnInit {
 	score: number;
 	maliciousWifi: number;
 	cardContentPositionA: any = {};
+	region: string;
 
 	itemStatusClass = {
 		0: 'good',
@@ -83,10 +82,10 @@ export class PageSecurityComponent implements OnInit {
 	};
 	constructor(
 		public vantageShellService: VantageShellService,
-		private mockSecurityAdvisorService: MockSecurityAdvisorService,
 		private cmsService: CMSService,
 		private commonService: CommonService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		private regionService: RegionService
 	) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.passwordManager = this.securityAdvisor.passwordManager;
@@ -97,6 +96,7 @@ export class PageSecurityComponent implements OnInit {
 
 		this.createViewModels();
 		this.score = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingScore);
+		this.maliciousWifi = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingMaliciousWifi, 0);
 	}
 
 	@HostListener('window: focus')
@@ -110,6 +110,11 @@ export class PageSecurityComponent implements OnInit {
 	}
 
 	private refreshAll() {
+		this.regionService.getRegion().subscribe({
+			next: x => { this.region = x; },
+			error: err => { console.error(err); },
+			complete: () => { console.log('Done'); }
+		});
 		this.securityAdvisor.antivirus.refresh().then(() => {
 			this.getScore();
 		});
@@ -179,7 +184,6 @@ export class PageSecurityComponent implements OnInit {
 	}
 
 	private getMaliciousWifi() {
-		this.maliciousWifi = 0;
 		const wifiHistoryList = this.wifiHistory;
 		if (wifiHistoryList && wifiHistoryList.length !== 0) {
 			this.maliciousWifi = wifiHistoryList.filter(wifi => {
@@ -188,6 +192,7 @@ export class PageSecurityComponent implements OnInit {
 				monthFirst.setDate(1);
 				return wifi.good !== '0' && connected > monthFirst;
 			}).length;
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingMaliciousWifi, this.maliciousWifi);
 		}
 	}
 
@@ -195,22 +200,15 @@ export class PageSecurityComponent implements OnInit {
 		const antivirusScoreInit = [
 			this.antivirusLandingViewModel.subject.status,
 			this.passwordManagerLandingViewModel.subject.status,
-			this.vpnLandingViewModel.subject.status,
+			this.region !== 'CN' ? this.vpnLandingViewModel.subject.status : null,
 			this.wifiSecurityLandingViewModel.subject.status,
 			this.windowsHelloLandingViewModel ? this.windowsHelloLandingViewModel.subject.status : null
 		];
-		let flag;
-		let scoreTotal = 0;
 		const antivirusScore = antivirusScoreInit.filter(current => {
 			return current !== undefined && current !== null && current !== '';
 		});
-		flag = 100 / antivirusScore.length;
-		antivirusScore.forEach(item => {
-			if (item === 0 || item === 2) {
-				scoreTotal += flag;
-			}
-		});
-		this.score = scoreTotal;
+		const valid = antivirusScore.filter(i => i === 0 || i === 2).length;
+		this.score = Math.floor(valid / antivirusScore.length * 100);
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingScore, this.score);
 	}
 

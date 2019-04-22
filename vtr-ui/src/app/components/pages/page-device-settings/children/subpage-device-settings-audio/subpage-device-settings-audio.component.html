@@ -81,7 +81,14 @@
 				[isCollapsed]="false"
 				[allowCollapse]="true"
 				[theme]="'white'">
-				<ul class="list-group list-group-flush">
+				<vtr-widget-permission-note [noteTitle] = "'Note'"
+					[description] = "'Lenovo Vantage does not have 
+						permission to access your microphone. Please turn 
+						on access to your microphone for the Lenovo Vantage app.'"
+					[path] = "'ms-settings:privacy-microphone'"
+					*ngIf = "!microphoneProperties.permission">
+				</vtr-widget-permission-note>
+				<ul class="list-group list-group-flush" *ngIf="microphoneProperties.permission">
 					<li class="">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.title' | translate"
 							name="'device.deviceSettings.audio.microphone.title' | translate"
@@ -179,7 +186,8 @@
 								<vtr-ui-circle-radio *ngFor="let optimizeMode of microOptimizeModeResponse.modes"
 									[radioId]="'radio'| uniqueId"
 									[group]="radioOptimiseMicSettings"
-									[label]="(optimizeMode?optimizeMode:'LE-Multiple-voices2x') | separatePascalCase"
+									[label]="optimizeMode | separatePascalCase"
+									[theme]="'white'"
 									[value]='optimizeMode'
 									[checked]="optimizeMode === microOptimizeModeResponse.current"
 									[disabled]="microphoneProperties.disableEffect"

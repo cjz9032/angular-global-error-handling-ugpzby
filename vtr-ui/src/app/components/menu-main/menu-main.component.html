@@ -1,8 +1,13 @@
 <div class="vtr-menu-main">
 	<nav class="navbar navbar-expand-md">
-		<a class="navbar-brand pt-0"
-			href="#"><img src="../../../assets/icons/Vantage_L_logo.svg"
-				alt="L" /></a>
+		<div *ngIf="isDashboard" class="navbar-brand pt-0">
+			<img src="../../../assets/icons/Vantage_L_logo.svg" alt="L" />
+		</div>
+		<div *ngIf="!isDashboard" class="navbar-brand pt-0">
+			<a  href="#">
+				<img src="../../../assets/icons/Vantage_L_logo.svg" alt="L" />
+			</a>
+		</div>
 		<div class="navbar-text clearfix">
 			<div class="app-title">{{configService.appBrand}} <span class="app-name">{{configService.appName}}</span>
 				<span class="app-version">(v{{appVersion}})</span>
@@ -99,7 +104,7 @@
 						</a>
 						<div class="dropdown-menu {{item.id}}"
 							aria-labelledby="navbarDropdown">
-							<div class="dropdown-item">{{'lenovoId.helloUser' | translate:{firstName:userService.firstName} }}</div>
+							<div class="dropdown-item">{{'lenovoId.helloUser' | translate:{firstName:firstName} }}</div>
 							<a *ngIf="!userService.auth"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"

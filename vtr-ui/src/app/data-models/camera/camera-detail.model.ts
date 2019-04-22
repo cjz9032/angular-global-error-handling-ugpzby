@@ -109,4 +109,5 @@ export interface ICameraSettingsResponse {
 }
 export class CameraFeatureAccess {
 	public showAutoExposureSlider: boolean;
+	public exposureAutoValue: boolean;
 }

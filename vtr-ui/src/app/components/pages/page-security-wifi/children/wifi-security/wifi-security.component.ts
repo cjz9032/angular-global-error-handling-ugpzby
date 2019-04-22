@@ -1,13 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { WifiSecurity } from '@lenovo/tan-client-bridge';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalWifiSecuriryLocationNoticeComponent } from '../../../../modal/modal-wifi-securiry-location-notice/modal-wifi-securiry-location-notice.component';
 import { ModalThreatLocatorComponent } from 'src/app/components/modal/modal-threat-locator/modal-threat-locator.component';
 import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { BaseComponent } from '../../../../base/base.component';
 import { CommonService } from 'src/app/services/common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { RegionService } from 'src/app/services/region/region.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { SecurityService } from 'src/app/services/security/security.service';
@@ -62,13 +59,12 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 			} else if (value) {
 				if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
 					this.data.wifiSecurity.enableWifiSecurity().then((res) => {
-						if ( res === true) {
+						if (res === true) {
 							this.data.isLWSEnabled = true;
 						} else {
 							this.data.isLWSEnabled = false;
 						}
-					}
-					, (error) => {
+					}, (error) => {
 						console.log('no permission');
 					});
 				}
@@ -80,7 +76,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		try {
 			if (this.data.wifiSecurity) {
 				this.data.wifiSecurity.enableWifiSecurity().then((res) => {
-					if ( res === true) {
+					if (res === true) {
 						this.data.isLWSEnabled = true;
 					} else {
 						this.data.isLWSEnabled = false;
@@ -99,7 +95,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		try {
 			if (this.data.wifiSecurity) {
 				this.data.wifiSecurity.disableWifiSecurity().then((res) => {
-					if ( res === true) {
+					if (res === true) {
 						this.data.isLWSEnabled = false;
 					} else {
 						this.data.isLWSEnabled = true;
