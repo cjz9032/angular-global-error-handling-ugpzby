@@ -198,6 +198,9 @@ export class SubpageDeviceSettingsDisplayComponent
 					this.dataSource = this.emptyCameraDetails[0];
 					this.shouldCameraSectionDisabled = true;
 					console.log('no camera permission .then', this.emptyCameraDetails[0]);
+					const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
+					privacy.status = false;
+					this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
 				}
 				this.cameraFeatureAccess.showAutoExposureSlider = false;
 				if (this.dataSource.exposure.autoValue === true) {
@@ -493,6 +496,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		} else {
 			this.enableSunsetToSunrise = false;
 		}
+		this.cd.detectChanges();
 	}
 
 	public async statusChangedLocationPermission() {
