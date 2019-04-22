@@ -34,8 +34,6 @@ export class DisplayService {
 		if (this.cameraSettings) {
 			this.isShellAvailable = true;
 		}
-		this.startMonitorForEyeCarePermission();
-		this.startMonitorForCameraPermission();
 	}
 
 	startLoading() {
@@ -181,11 +179,11 @@ export class DisplayService {
 		}
 		return undefined;
 	}
-	public statusChangedLocationPermission(handler: any): Promise<any> {
+	public statusChangedLocationPermission(handler: any) {
 		try {
 			if (this.isShellAvailable) {
 				console.log(JSON.stringify(this.displayEyeCareMode));
-				return this.displayEyeCareMode.statusChangedLocationPermission((handler));
+				this.displayEyeCareMode.statusChangedLocationPermission((handler));
 			}
 			return undefined;
 		} catch (error) {
@@ -202,19 +200,6 @@ export class DisplayService {
 			throw new Error(error.message);
 		}
 	}
-	public startMonitorForEyeCarePermission() {
-		try {
-			if (this.isShellAvailable) {
-				return this.displayEyeCareMode.statusChangedLocationPermission((response: any) => {
-					console.log("startMonitorForEyeCarePermission", response);
-					this.commonService.sendNotification(DeviceMonitorStatus.EyeCareModeStatus, response.status);
-				});
-			}
-			return undefined;
-		} catch (error) {
-			throw new Error(error.message);
-		}
-	}
 
 	public startMonitorForCameraPermission() {
 		try {
@@ -224,6 +209,19 @@ export class DisplayService {
 					if (response.permission != undefined) {
 						this.commonService.sendNotification(DeviceMonitorStatus.CameraStatus, response.permission);
 					}
+				});
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public stopMonitorForCameraPermission() {
+		try {
+			if (this.isShellAvailable) {
+				return this.cameraSettings.stopMonitor((response: boolean) => {
+					console.log("stopMonitorForCameraPermission", response);
 				});
 			}
 			return undefined;
