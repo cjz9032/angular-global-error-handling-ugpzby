@@ -124,8 +124,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 				const settings = new self.Capture.MediaCaptureInitializationSettings();
 				settings.videoDeviceId = camera.id;
-				settings.streamingCaptureMode = 2; // video
-				settings.photoCaptureSource = 0; // auto
+				// settings.streamingCaptureMode = 2; // video
+				// settings.photoCaptureSource = 0; // auto
 
 				// Initialize media capture and start the preview
 				return self.oMediaCapture.initializeAsync(settings);
