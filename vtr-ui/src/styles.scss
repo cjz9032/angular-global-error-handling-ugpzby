@@ -362,6 +362,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .Article-Detail-Modal {
 	.modal-dialog {
 		max-width: 70%;
+		margin: 1.75rem auto;
 		overflow-y: initial !important;
 	}
 
@@ -466,6 +467,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .About-Modal {
 	.modal-dialog {
 		max-width: 70%;
+		margin: 1.75rem auto;
 		overflow-y: initial !important;
 	}
 
@@ -521,8 +523,9 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			margin-bottom: 1rem;
 		}
 
-		u{
+		u {
 			word-break: break-all;
+			display: inline-block;
 		}
 
 		img,

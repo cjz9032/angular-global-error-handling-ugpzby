@@ -133,6 +133,41 @@ $pink: #ff7d70;
 $orange: orange;
 $teal: #35e6b9;
 
+
+// for security score
+$danger_dark: #ED5849;
+$danger_light: #F97163;
+$warning_dark: #EE5A08;
+$warning_light: #FF7E3E;
+$caution_dark: #EDE549;
+$caution_light: #F9E163;
+$good_dark: #2FD07E;
+$good_light: #34E1AD;
+
+
+$percent_0_dark: $danger_dark;
+$percent_0_light: $danger_light;
+$percent_20_dark: $danger_dark;
+$percent_20_light: $danger_light;
+$percent_25_dark: $danger_dark;
+$percent_25_light: $danger_light;
+$percent_33_dark: $danger_dark;
+$percent_33_light: $danger_light;
+$percent_40_dark: $warning_dark;
+$percent_40_light: $warning_light;
+$percent_50_dark: $warning_dark;
+$percent_50_light: $warning_light;
+$percent_60_dark: $caution_dark;
+$percent_60_light: $caution_light;
+$percent_66_dark: $caution_dark;
+$percent_66_light: $caution_light;
+$percent_75_dark: $caution_dark;
+$percent_75_light: $caution_light;
+$percent_80_dark: $good_dark;
+$percent_80_light: $good_light;
+$percent_100_dark: $good_dark;
+$percent_100_light: $good_light;
+
 $menu_height: 9rem;
 $header_height: 20.5rem;
 
