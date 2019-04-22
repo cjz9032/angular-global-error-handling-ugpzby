@@ -9,7 +9,6 @@ import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/mo
 })
 export class WidgetSecurityComponent implements OnInit {
 	@Input() percentValue: number = this.percentValue || 100;
-	@Input() percentColorClass: string;
 	security = {
 		title: [
 			'security.landing.fully',
