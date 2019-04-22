@@ -69,7 +69,6 @@ export class PageSecurityComponent implements OnInit {
 	maliciousWifi: number;
 	cardContentPositionA: any = {};
 	region: string;
-	percentColorClass: string;
 
 	itemStatusClass = {
 		0: 'good',
@@ -211,15 +210,6 @@ export class PageSecurityComponent implements OnInit {
 		const valid = antivirusScore.filter(i => i === 0 || i === 2).length;
 		this.score = Math.floor(valid / antivirusScore.length * 100);
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingScore, this.score);
-		if (this.score < 25) {
-			this.percentColorClass = 'red';
-		} else if (this.score >= 25 && this.score < 50) {
-			this.percentColorClass = 'orange';
-		} else if (this.score >= 50 && this.score < 75) {
-			this.percentColorClass = 'yellow';
-		} else if (this.score >= 75) {
-			this.percentColorClass = 'green';
-		}
 	}
 
 	fetchCMSArticles() {
