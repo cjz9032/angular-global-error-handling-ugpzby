@@ -704,6 +704,7 @@
 				"title": "Windows Hello",
 				"protectYourDevice": "使用 Lenovo 推荐的这些安全产品保护您的设备。",
 				"signIn": "通过 Windows Hello 安全快速地进行登录。",
+				"signInTitle": "通过 Windows Hello 安全快速地进行登录",
 				"setUp": "设置 Windows Hello",
 				"whyWindowsHello": "为什么选择 Windows Hello？",
 				"whyWindowsHelloDescription1": "Windows Hello 可帮助您更加轻松且安全地登录到电脑，它还可用于 Microsoft 在线应用。按照下方说明开始使用 Windows Hello。",
