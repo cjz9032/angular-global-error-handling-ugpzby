@@ -94,4 +94,12 @@ export class ModalWelcomeComponent implements OnInit {
 	public onTutorialClose() {
 		this.activeModal.dismiss(new WelcomeTutorial(true));
 	}
+
+	public onTutorialMaximise() {
+		this.activeModal.dismiss(new WelcomeTutorial(true));
+	}
+
+	public onTutorialMinimise() {
+		this.activeModal.dismiss(new WelcomeTutorial(true));
+	}
 }

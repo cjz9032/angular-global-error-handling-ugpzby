@@ -1,6 +1,11 @@
-@import "../../../app.theme";
+@import "../../../app.theme.scss";
 
 .vtr-modal-welcome {
+	.container{
+
+		width: 50rem;
+		height: 50rem;
+	}
 	/************** common *************/
 	.title {
 		color: $shade_blue;
@@ -9,13 +14,43 @@
 		line-height: 4.2rem;
 		text-align: center;
 	}
-
-	.subtitle {
-		color: $shade_dark;
-		font-size: 1.7rem;
-		font-weight: 400;
-		line-height: 2.8rem;
+	.title1 {
+		color: $light;
+		font-size: 3rem;
 		text-align: center;
+		font-family: 'Segoe UI';
+	}
+	.title2 {
+		color: $shade_darker;
+		font-size: 1.7rem;
+		text-align: center;
+		font-family: 'Segoe UI';
+
+	}
+	.title3 {
+		color: $dark;
+		font-size: 2rem;
+		text-align: center;
+		font-family: 'Segoe UI';
+		font-weight: bold;
+	}
+	.title4 {
+		color: $light_grey;
+		font-size: 1.7rem;
+		text-align: center;
+		font-family: 'Segoe UI';
+	}
+
+	.centered {
+		position: absolute;
+		top: 15rem;
+		left:25rem;
+	}
+	.subtitle {
+		color: $dark;
+		font-size: 1rem;
+		text-align: center;
+		font-family: 'Segoe UI';
 
 	}
 
@@ -137,9 +172,49 @@
 		top: 1rem;
 	}
 
+
 	.button {
 		top: 50%;
 		transform: translateY(-50%);
 		right: 0;
+	}
+
+	.imageheader1 {
+		height: 16rem;
+		width: 40rem;
+	}
+
+	.imageheader2 {
+		height: 10rem;
+		width: 40rem;
+	}
+	.padding1{
+		padding-top: 3.4rem;
+		padding-left: 3.2rem;
+		padding-bottom: 3.4rem;
+	}
+	.padding2{
+		padding-top: 2.8rem;
+		padding-bottom: 3.6rem;
+	}
+	.padding3{
+		padding-top: 3.0rem;
+		padding-bottom: 3.0rem;
+	}
+	.padding4{
+		padding-left: 3.2rem;
+		padding-right: 1.2rem;
+	}
+	.padding5{
+		padding-top: 2.8rem;
+		padding-bottom: 3.6rem;
+	}
+	.padding6{
+		padding-right: 1.0rem;
+		padding-bottom: 3.8rem;
+	}
+	.padding7{
+		padding-top: 12.0rem;
+		// padding-bottom: 3.2rem;
 	}
 }
