@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DeviceService } from '../../../services/device/device.service';
 import { QaService } from '../../../services/qa/qa.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-page-device',
@@ -18,9 +19,15 @@ export class PageDeviceComponent implements OnInit {
 	constructor(
 		public deviceService: DeviceService,
 		public qaService: QaService,
-		private cmsService: CMSService
+		private cmsService: CMSService,
+		private translate: TranslateService,
 	) {
 		this.fetchCMSArticles();
+		qaService.setTranslationService(this.translate);
+		qaService.qas.forEach(qa => {
+			qa.title = this.translate.instant(qa.title);
+			qa.description = this.translate.instant(qa.description);
+		});
 	}
 
 	ngOnInit() {
