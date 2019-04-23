@@ -487,14 +487,13 @@ export class SubpageDeviceSettingsDisplayComponent
 	// End Camera Privacy
 	public getLocationPermissionStatus(value: any) {
 		console.log('called from loaction service ui', JSON.stringify(value.status));
-		//this.sunsetToSunriseModeStatus.permission = value.status;
+		// this.sunsetToSunriseModeStatus.permission = value.status;
 		this.ngZone.run(() => {
 			if (value.status === false) {
 				this.enableSunsetToSunrise = true;
 			} else {
 				this.enableSunsetToSunrise = false;
 			}
-
 		});
 		// this.cd.detectChanges();
 	}
