@@ -287,6 +287,9 @@
 				h5 {
 					font-size: 1.6rem;
 					font-weight: $weight_bold;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 				}
 
 				.connection-status {
