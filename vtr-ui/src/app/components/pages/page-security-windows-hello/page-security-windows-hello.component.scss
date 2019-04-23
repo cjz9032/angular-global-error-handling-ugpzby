@@ -22,28 +22,14 @@
 
 	.sub-heading {
 		color: $main_dark;
-		font-size: 2rem;
-		font-weight: $weight_medium;
-		text-transform: uppercase;
-		margin-bottom: 1rem;
-	}
-
-	.sub-heading-2 {
-		color: $main_dark;
 		font-size: 3rem;
 		font-weight: $weight_regular;
-	}
-
-	.sub-heading-text {
-		color: $main_dark;
-		font-size: 1.5rem;
-		margin-top: 2.3rem;
 	}
 
 	.list-heading {
 		color: $main_dark;
 		font-size: 3rem;
-		font-weight: $weight_regular;
+		font-weight: $weight_bold;
 
 		.adjust-left {
 			padding-left: 0rem;
@@ -208,39 +194,5 @@
 				}
 			}
 		}
-	}
-
-	.button-box {
-		padding: 1rem;
-		margin: 1.2rem;
-		button {
-			font-weight: bold;
-		}
-	}
-
-	.invitation-code-box {
-		padding: 0.5rem;
-		background-color: $shade_lightest;
-		border: 0.1rem solid $shade_lighter;
-		border-radius: $border_radius;
-		text-align: center;
-		height: 7rem;
-
-		.sub-heading {
-			margin-top: 2rem;
-			color: $main_dark;
-			font-size: 1.8rem;
-			font-weight: $weight_medium;
-			text-transform: uppercase;
-			margin-left: -4rem;
-			word-break: break-all;
-			word-wrap: break-word;
-		}
-
-		// .text-regular {
-		//   color: $main_dark;
-		//   font-size: 2rem;
-		//   font-weight: $weight_light;
-		// }
 	}
 }
