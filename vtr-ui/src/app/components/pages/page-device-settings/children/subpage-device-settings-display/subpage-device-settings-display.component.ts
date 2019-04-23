@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, EventEmitter, ApplicationRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, EventEmitter, NgZone } from '@angular/core';
 import { CameraDetail, ICameraSettingsResponse, CameraFeatureAccess } from 'src/app/data-models/camera/camera-detail.model';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { Subscription } from 'rxjs/internal/Subscription';
@@ -106,7 +106,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		public displayService: DisplayService,
 		private commonService: CommonService,
 		private cd: ChangeDetectorRef,
-		public app: ApplicationRef) {
+		private ngZone: NgZone) {
 		this.dataSource = new CameraDetail();
 		this.cameraFeatureAccess = new CameraFeatureAccess();
 		this.eyeCareDataSource = new EyeCareMode();
@@ -488,14 +488,14 @@ export class SubpageDeviceSettingsDisplayComponent
 	public getLocationPermissionStatus(value: any) {
 		console.log('called from loaction service ui', JSON.stringify(value.status));
 		//this.sunsetToSunriseModeStatus.permission = value.status;
-		setTimeout(() => {
+		this.ngZone.run(() => {
 			if (value.status === false) {
 				this.enableSunsetToSunrise = true;
 			} else {
 				this.enableSunsetToSunrise = false;
 			}
-			this.app.tick();
-		}, 500);
+
+		});
 		// this.cd.detectChanges();
 	}
 
