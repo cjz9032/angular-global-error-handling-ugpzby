@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, EventEmitter, NgZone } from '@angular/core';
 import { CameraDetail, ICameraSettingsResponse, CameraFeatureAccess } from 'src/app/data-models/camera/camera-detail.model';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { Subscription } from 'rxjs/internal/Subscription';
@@ -53,51 +53,51 @@ export class SubpageDeviceSettingsDisplayComponent
 	];
 	emptyCameraDetails = [
 		{
-			"brightness":
+			'brightness':
 			{
-				"autoModeSupported": false,
-				"autoValue": false,
-				"supported": true,
-				"min": 0,
-				"max": 255,
-				"step": 1,
-				"default": 128,
-				"value": 136
+				'autoModeSupported': false,
+				'autoValue': false,
+				'supported': true,
+				'min': 0,
+				'max': 255,
+				'step': 1,
+				'default': 128,
+				'value': 136
 			},
-			"contrast":
+			'contrast':
 			{
-				"autoModeSupported": false,
-				"autoValue": false,
-				"supported": true,
-				"min": 0,
-				"max": 255,
-				"step": 1,
-				"default": 32,
-				"value": 179
+				'autoModeSupported': false,
+				'autoValue': false,
+				'supported': true,
+				'min': 0,
+				'max': 255,
+				'step': 1,
+				'default': 32,
+				'value': 179
 			},
-			"exposure":
+			'exposure':
 			{
-				"autoModeSupported": true,
-				"autoValue": true,
-				"supported": true,
-				"min": -11,
-				"max": -3,
-				"step": 1,
-				"default": -6,
-				"value": -5
+				'autoModeSupported': true,
+				'autoValue': true,
+				'supported': true,
+				'min': -11,
+				'max': -3,
+				'step': 1,
+				'default': -6,
+				'value': -5
 			},
-			"focus":
+			'focus':
 			{
-				"autoModeSupported": false,
-				"autoValue": false,
-				"supported": false,
-				"min": 0,
-				"max": 0,
-				"step": 0,
-				"default": 0,
-				"value": 0
+				'autoModeSupported': false,
+				'autoValue': false,
+				'supported': false,
+				'min': 0,
+				'max': 0,
+				'step': 0,
+				'default': 0,
+				'value': 0
 			},
-			"permission": false
+			'permission': false
 		}
 	];
 	constructor(public baseCameraDetail: BaseCameraDetail,
@@ -105,7 +105,8 @@ export class SubpageDeviceSettingsDisplayComponent
 		// public cd: ChangeDetectorRef,
 		public displayService: DisplayService,
 		private commonService: CommonService,
-		private cd: ChangeDetectorRef) {
+		private cd: ChangeDetectorRef,
+		private ngZone: NgZone) {
 		this.dataSource = new CameraDetail();
 		this.cameraFeatureAccess = new CameraFeatureAccess();
 		this.eyeCareDataSource = new EyeCareMode();
@@ -189,7 +190,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					console.log('getCameraDetails.then permission', this.dataSource.permission);
 
 				} else {
-					//	response.exposure.autoValue = true;
+					// 	response.exposure.autoValue = true;
 					this.dataSource = this.emptyCameraDetails[0];
 					this.shouldCameraSectionDisabled = true;
 					console.log('no camera permission .then', this.emptyCameraDetails[0]);
@@ -392,7 +393,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.log('getSunsetToSunrise.then', status);
 						this.sunsetToSunriseModeStatus = status;
 						if (status.permission === false) {
-							//	this.displayService.openPrivacyLocation();
+							// 	this.displayService.openPrivacyLocation();
 							this.enableSunsetToSunrise = true;
 						}
 					}).catch(error => {
@@ -486,13 +487,15 @@ export class SubpageDeviceSettingsDisplayComponent
 	// End Camera Privacy
 	public getLocationPermissionStatus(value: any) {
 		console.log('called from loaction service ui', JSON.stringify(value.status));
-		this.sunsetToSunriseModeStatus.permission = value.status;
-		if (value.status === false) {
-			this.enableSunsetToSunrise = true;
-		} else {
-			this.enableSunsetToSunrise = false;
-		}
-		this.cd.detectChanges();
+		// this.sunsetToSunriseModeStatus.permission = value.status;
+		this.ngZone.run(() => {
+			if (value.status === false) {
+				this.enableSunsetToSunrise = true;
+			} else {
+				this.enableSunsetToSunrise = false;
+			}
+		});
+		// this.cd.detectChanges();
 	}
 
 	public async statusChangedLocationPermission() {
