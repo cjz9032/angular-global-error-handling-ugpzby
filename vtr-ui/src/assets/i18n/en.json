@@ -483,7 +483,7 @@
 		},
 		"about": {
 			"version": "Version",
-			"licenseAgreement": "Licenses agreement",
+			"licenseAgreement": "License agreement",
 			"otherSoftwareLicenses": "Other software licenses",
 			"ourWebsite": "Our website",
 			"copyright": "© 2002-2019 Lenovo all rights reserved"
@@ -705,6 +705,7 @@
 			"title": "Windows Hello",
 			"protectYourDevice": "Protect your device with these Lenovo recommended security options.",
 			"signIn": "Sign in quickly and securely with Windows Hello.",
+			"signInTitle": "Sign in quickly and securely with Windows Hello",
 			"setUp": "Setup Windows Hello",
 			"whyWindowsHello": "Why Windows Hello?",
 			"whyWindowsHelloDescription1": "Windows Hello makes logging into your PC easier and more secure, and can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello.",

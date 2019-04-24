@@ -5,11 +5,12 @@
 		<div class="row">
 			<div class="col col-12 content">
 				<a [attr.href]="!actionLink ? null : actionLink"
-				   vtrMetrics
-				   metricsItemCategory="corner"
-				   metricsEvent="docClick"
-				   [metricsItemPosition]="order"
-				   [metricsItemID]="itemID"
+					(click)="linkClicked(actionType, actionLink)"
+					vtrMetrics
+					metricsItemCategory="corner"
+					metricsEvent="docClick"
+					[metricsItemPosition]="order"
+					[metricsItemID]="itemID"
 					target="_blank"
 					class="card-image"
 					[style.background-image]="'url(' + img + ')'">
@@ -38,13 +39,15 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-12 content">
-				<a (click)="articleClicked(actionLink)"
+				<a [attr.href]="!actionLink ? null : actionLink"
+					(click)="linkClicked(actionType, actionLink)"
+					target="_blank"
 					class="card-image"
-				   vtrMetrics
-				   metricsEvent="docClick"
-				   metricsItemCategory="corner-article"
-				   [metricsItemPosition]="order"
-				   [metricsItemID]="itemID"
+					vtrMetrics
+					metricsEvent="docClick"
+					metricsItemCategory="corner-article"
+					[metricsItemPosition]="order"
+					[metricsItemID]="itemID"
 					[style.background-image]="'url(' + img + ')'">
 					<div class="inner-content">
 						<div *ngIf="title"
@@ -72,11 +75,11 @@
 		<div class="row">
 			<div class="col col-12 content">
 				<a [attr.href]="!actionLink ? null : actionLink"
-				   metricsItemCategory="highlight"
-				   vtrMetrics
-				   metricsEvent="docClick"
-				   [metricsItemPosition]="order"
-				   [metricsItemID]="itemID"
+					metricsItemCategory="highlight"
+					vtrMetrics
+					metricsEvent="docClick"
+					[metricsItemPosition]="order"
+					[metricsItemID]="itemID"
 					target="_blank"
 					class="card-image"
 					[style.background-image]="'url(' + img + ')'">
@@ -101,15 +104,15 @@
 			metricsEvent="docClick"
 			[metricsItemPosition]="order"
 			[metricsItemID]="itemID"
-			 target="_blank">
+			target="_blank">
 			<div class="row">
 				<div class="col col-12 image-container">
 					<a [attr.href]="!actionLink ? null : actionLink"
-					metricsItemCategory="article"
-					vtrMetrics
-					metricsEvent="docClick"
-					[metricsItemPosition]="order"
-					[metricsItemID]="itemID"
+						metricsItemCategory="article"
+						vtrMetrics
+						metricsEvent="docClick"
+						[metricsItemPosition]="order"
+						[metricsItemID]="itemID"
 						target="_blank"
 						class="card-image"
 						[style.background-image]="'url(' + img + ')'">
@@ -130,11 +133,11 @@
 							class="read-more">
 							<a [attr.href]="!actionLink ? null : actionLink"
 								target="_blank"
-							vtrMetrics
-							metricsItemCategory="article"
-							metricsEvent="docClick"
-							[metricsItemPosition]="order"
-							[metricsItemID]="itemID">
+								vtrMetrics
+								metricsItemCategory="article"
+								metricsEvent="docClick"
+								[metricsItemPosition]="order"
+								[metricsItemID]="itemID">
 								<span class="link-label">{{action}}</span>
 								<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 							</a>
@@ -163,11 +166,11 @@
 				<div class="row">
 					<a [attr.href]="!actionLink ? null : actionLink"
 						target="_blank"
-					     vtrMetrics
-					   metricsEvent="docClick"
-					   [metricsItemID]="itemID"
-					   [metricsItemPosition]="order"
-					   metricsItemCategory="partnerarticle">
+						vtrMetrics
+						metricsEvent="docClick"
+						[metricsItemID]="itemID"
+						[metricsItemPosition]="order"
+						metricsItemCategory="partnerarticle">
 						<div class="col col-12 content">
 							<div *ngIf="title"
 								class="title">{{title}}</div>

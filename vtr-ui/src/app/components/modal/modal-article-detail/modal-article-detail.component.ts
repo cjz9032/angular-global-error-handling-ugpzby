@@ -30,9 +30,14 @@ export class ModalArticleDetailComponent implements OnInit {
 
 		this.cmsService.fetchCMSArticle(this.articleId, queryOptions).then(
 			(response: any) => {
-				this.articleTitle = response.Results.Title;
-				this.articleImage = response.Results.Image;
-				this.articleBody = this.sanitizer.bypassSecurityTrustHtml(response.Results.Body);
+				if ('Results' in response) {
+					this.articleTitle = response.Results.Title;
+					this.articleImage = response.Results.Image;
+					this.articleBody = this.sanitizer.bypassSecurityTrustHtml(response.Results.Body);
+				} else {
+					this.articleTitle = response.title;
+					this.articleBody = '';
+				}
 			},
 			error => {
 				console.log('fetchCMSContent error', error);

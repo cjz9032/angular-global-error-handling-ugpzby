@@ -315,8 +315,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 .common-confirmation-modal {
 	.modal-dialog {
-		margin-top: 8rem;
-
 		.modal-content {
 			background-color: transparent;
 			border: none;
@@ -422,6 +420,13 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		iframe {
 			max-width: 100%;
 			margin-bottom: 3rem;
+		}
+
+		p,
+		li,
+		ul 
+		{
+			word-wrap: break-word;
 		}
 	}
 }
