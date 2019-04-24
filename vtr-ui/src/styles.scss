@@ -421,6 +421,13 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			max-width: 100%;
 			margin-bottom: 3rem;
 		}
+
+		p,
+		li,
+		ul 
+		{
+			word-wrap: break-word;
+		}
 	}
 }
 
