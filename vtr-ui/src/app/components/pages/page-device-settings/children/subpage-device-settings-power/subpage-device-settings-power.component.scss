@@ -131,7 +131,8 @@
 		font-size:4.5rem;
 	}
   .custom-control-label {
-    padding-left: 0.5rem;
+	padding-left: 0.5rem;
+	line-height: 1.15;
 
     // rounded square-box background
     &::before {
