@@ -1,27 +1,36 @@
-<div class="vtr-body vtr-modal-welcome container" [ngSwitch]="page">
+<div class="vtr-body vtr-modal-welcome" [ngSwitch]="page">
 	<div *ngSwitchCase="1">
-		<div class="imageheader1 justify-content-center">
-			<img src="./../../../../assets/images/welcome/header-1.jpg" />
-			<div class="centered d-flex justify-content-center title1">
-				<span
-					>{{ "welcometutorial.title1" | translate }}
-					<br />
-					{{ "welcometutorial.title2" | translate }}
-					{{ "welcometutorial.title3" | translate | uppercase }}</span
-				>
+		<div class="banner row justify-content-center align-items-center">
+			<div class="col-auto">
+				<div class="row justify-content-center align-items-center">
+					<div class="col-auto title1">
+						{{ "welcometutorial.title1" | translate }}
+					</div>
+				</div>
+				<div class="row justify-content-center align-items-center ">
+					<div class="col-auto px-1 title1">
+						{{ "welcometutorial.title2" | translate }}
+					</div>
+					<div class="col-auto px-1 title1">
+						{{ "welcometutorial.title3" | translate | uppercase }}
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="padding7"></div>
-		<div class="padding7"></div>
-		<div class="d-flex justify-content-center title2">
-			{{ "welcometutorial.title" | translate }}
+		<div class="row">
+			<div class="col-auto title2">
+				{{ "welcometutorial.title" | translate }}
+			</div>
 		</div>
-		<div class="padding1 d-flex justify-content-center title2">
-			<ul>
-				<li>{{ "welcometutorial.bullets1" | translate }}</li>
-				<li>{{ "welcometutorial.bullets2" | translate }}</li>
-				<li>{{ "welcometutorial.bullets3" | translate }}</li>
-			</ul>
+		<div class="row justify-content-center align-items-center py-5">
+			<div class="col-auto title2">
+					<ul>
+						<li>{{"welcometutorial.bullets1" | translate }}</li>
+						<li>{{"welcometutorial.bullets2" | translate }}</li>
+						<li>{{"welcometutorial.bullets3" | translate }}</li>
+					</ul>
+
+			</div>
 		</div>
 		<div class="d-flex justify-content-center">
 			<vtr-ui-button
