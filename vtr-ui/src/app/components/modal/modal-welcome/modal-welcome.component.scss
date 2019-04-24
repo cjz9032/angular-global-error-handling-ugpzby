@@ -1,11 +1,18 @@
 @import "../../../app.theme.scss";
 
 .vtr-modal-welcome {
-	.container{
+	border: none;
+	scroll-behavior: auto;
 
-		width: 50rem;
-		height: 50rem;
+	.container{
+		width: 55em;
+		height: 55rem;
+		scroll-behavior:auto;
+		overflow-y: scroll;
+		margin: 0 auto;
+		border: none;
 	}
+
 	/************** common *************/
 	.title {
 		color: $shade_blue;
@@ -36,15 +43,16 @@
 	}
 	.title4 {
 		color: $light_grey;
-		font-size: 1.7rem;
+		font-size: 2rem;
 		text-align: center;
 		font-family: 'Segoe UI';
 	}
 
 	.centered {
 		position: absolute;
-		top: 15rem;
-		left:25rem;
+		top: 12rem;
+		left: 35rem;
+		transform: translate(-50%, -50%);
 	}
 	.subtitle {
 		color: $dark;
@@ -54,12 +62,12 @@
 
 	}
 
-	.divider {
-		height: 0.1rem;
-		border: 0.1rem solid $shade_extralight;
-		background-color: $shade_light;
-		margin: 2rem 0;
-	}
+	// .divider {
+	// 	height: 0.1rem;
+	// 	border: 0.1rem solid $shade_extralight;
+	// 	background-color: $shade_light;
+	// 	margin: 2rem 0;
+	// }
 
 	.list-inline-item {
 		border-radius: 50%;
@@ -172,7 +180,6 @@
 		top: 1rem;
 	}
 
-
 	.button {
 		top: 50%;
 		transform: translateY(-50%);
@@ -180,13 +187,17 @@
 	}
 
 	.imageheader1 {
-		height: 16rem;
-		width: 40rem;
+		//padding-top: 1rem;
+		height: 25rem;
+		width: 60rem;
+		border-radius: 1rem;
 	}
 
 	.imageheader2 {
-		height: 10rem;
-		width: 40rem;
+		//padding-top: 1rem;
+		height: 12rem;
+		width: 60rem;
+		border-radius: 1rem;
 	}
 	.padding1{
 		padding-top: 3.4rem;
@@ -216,5 +227,26 @@
 	.padding7{
 		padding-top: 12.0rem;
 		// padding-bottom: 3.2rem;
+	}
+
+	div{
+		border: none;
+		margin: 0 auto;
+	}
+
+	.custom {
+		height: 8rem;
+		width: 16rem;
+		border-radius: 1rem;
+	}
+	.personal {
+		height: 8rem;
+		width: 16rem;
+		border-radius: 1rem;
+	}
+	.business {
+		height: 8rem;
+		width: 16em;
+		border-radius: 1rem;
 	}
 }
