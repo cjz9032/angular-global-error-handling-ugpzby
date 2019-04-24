@@ -2,13 +2,12 @@
 
 .vtr-modal-welcome {
 	border: none;
-	scroll-behavior: auto;
+	// scroll-behavior: auto;
+	// overflow-y:scroll;
 
 	.container{
 		width: 55em;
 		height: 55rem;
-		scroll-behavior:auto;
-		overflow-y: scroll;
 		margin: 0 auto;
 		border: none;
 	}
@@ -24,15 +23,12 @@
 	.title1 {
 		color: $light;
 		font-size: 3rem;
-		text-align: center;
 		font-family: 'Segoe UI';
 	}
 	.title2 {
 		color: $shade_darker;
 		font-size: 1.7rem;
-		text-align: center;
 		font-family: 'Segoe UI';
-
 	}
 	.title3 {
 		color: $dark;
@@ -51,7 +47,7 @@
 	.centered {
 		position: absolute;
 		top: 12rem;
-		left: 35rem;
+		left: 30rem;
 		transform: translate(-50%, -50%);
 	}
 	.subtitle {
@@ -62,12 +58,12 @@
 
 	}
 
-	// .divider {
-	// 	height: 0.1rem;
-	// 	border: 0.1rem solid $shade_extralight;
-	// 	background-color: $shade_light;
-	// 	margin: 2rem 0;
-	// }
+	.divider {
+		height: 0.1rem;
+		border: 0.1rem solid $shade_extralight;
+		background-color: $shade_light;
+		margin: 2rem 0;
+	}
 
 	.list-inline-item {
 		border-radius: 50%;
@@ -189,14 +185,14 @@
 	.imageheader1 {
 		//padding-top: 1rem;
 		height: 25rem;
-		width: 60rem;
+		width: 50rem;
 		border-radius: 1rem;
 	}
 
 	.imageheader2 {
 		//padding-top: 1rem;
 		height: 12rem;
-		width: 60rem;
+		width: 50rem;
 		border-radius: 1rem;
 	}
 	.padding1{
@@ -236,17 +232,39 @@
 
 	.custom {
 		height: 8rem;
-		width: 16rem;
+		width: 12rem;
 		border-radius: 1rem;
 	}
 	.personal {
 		height: 8rem;
-		width: 16rem;
+		width: 12rem;
 		border-radius: 1rem;
 	}
 	.business {
 		height: 8rem;
-		width: 16em;
+		width: 12em;
 		border-radius: 1rem;
+	}
+	.progress-bar{
+		background-color:black !important;
+	}
+
+	.checkboxwidth {
+		width: 1rem;
+	}
+	.autocheckbox {
+		input {
+			width: 1.5rem;
+			height: 1.5rem;
+			position: relative;
+			top: -0.1rem;
+			margin-right: 0.5rem;
+		}
+		label {
+			color: $shade_darker;
+			font-size: 1.5rem;
+			font-weight: $weight_light;
+			text-align: center;
+		}
 	}
 }

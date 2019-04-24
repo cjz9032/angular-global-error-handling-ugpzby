@@ -19,20 +19,16 @@
 						</span>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col">
-						<div
-							class="d-flex justify-content-center title2 padding3"
-						>
+				<div class="row padding1">
+					<div class="col justify-content-center">
+						<div class="d-flex title2 ">
 							{{ "welcometutorial.title" | translate }}
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col">
-						<div
-							class="padding1 d-flex justify-content-center title2"
-						>
+				<div class="row padding1">
+					<div class="col justify-content-center">
+						<div class="d-flex title2">
 							<ul>
 								<li style="text-align: left">
 									{{ "welcometutorial.bullets1" | translate }}
@@ -69,7 +65,7 @@
 
 				<div class="row">
 					<div class="col d-flex justify-content-center">
-						TBD--Add progress bar
+						<ngb-progressbar type="success" [value]="50" [height]="'0.6rem'"></ngb-progressbar>
 					</div>
 				</div>
 			</div>
@@ -161,7 +157,7 @@
 					{{ "welcometutorial.subtitle2" | translate }}
 				</div>
 
-				<div class="d-flex justify-content-center">
+				<div class="d-flex d-flex justify-content-center">
 					<div class="inline-block">
 						<input
 							type="checkbox"
@@ -177,7 +173,7 @@
 						<label for="checkbox1">GAMES</label>
 					</div>
 					<div class="inline-block">
-						<input
+						<input class="checkboxwidth"
 							type="checkbox"
 							id="checkbox2"
 							vtrMetrics
@@ -191,7 +187,7 @@
 						<label for="checkbox2">NEWS</label>
 					</div>
 					<div class="inline-block">
-						<input
+						<input class="checkboxwidth"
 							type="checkbox"
 							id="checkbox3"
 							vtrMetrics
@@ -204,8 +200,8 @@
 						/>
 						<label for="checkbox3">ENTERTAINMENT</label>
 					</div>
-					<div class="inline-block">
-						<input
+					<div class="inline-block ">
+						<input class="checkboxwidth"
 							type="checkbox"
 							id="checkbox5"
 							vtrMetrics
@@ -219,9 +215,9 @@
 						<label for="checkbox5">TECHNOLOGY</label>
 					</div>
 				</div>
-				<div class="d-flex justify-content-center">
+				<div class="d-flex">
 					<div class="inline-block">
-						<input
+						<input class="checkboxwidth"
 							type="checkbox"
 							id="checkbox7"
 							vtrMetrics
@@ -235,7 +231,7 @@
 						<label for="checkbox7">SPORTS</label>
 					</div>
 					<div class="inline-block">
-						<input
+						<input class="checkboxwidth"
 							type="checkbox"
 							id="checkbox4"
 							vtrMetrics
@@ -249,7 +245,7 @@
 						<label for="checkbox4">ARTS</label>
 					</div>
 					<div class="inline-block">
-						<input
+						<input class="checkboxwidth"
 							type="checkbox"
 							id="checkbox8"
 							vtrMetrics
@@ -263,7 +259,7 @@
 						<label for="checkbox8">REGIONAL NEWS</label>
 					</div>
 					<div class="inline-block">
-						<input
+						<input class="checkboxwidth"
 							type="checkbox"
 							id="checkbox6"
 							vtrMetrics
@@ -281,25 +277,17 @@
 					{{ "welcometutorial.subtitle3" | translate }}
 				</div>
 
-				<div class="d-flex justify-content-center title4">
-					<div class="inline-block">
-						<input
-							type="checkbox"
-							id="privacypolicy"
-							vtrMetrics
-							metricsEvent="itemClick"
-							metricsItem="chk.politics"
-							metricsParent="modalwelcome"
-							[metricsValue]="!checkbox6.checked"
-							#checkbox10
-							(click)="toggle($event, 'PRIVACYPOLICY')"
+				<!-- <div class="row">
+					<div class="col">
+						<input type="checkbox" id="privacypolicy" class="autocheckbox"
+							(click)="savePrivacy($event, 'PRIVACYPOLICY')"
 						/>
-						<label for="checkbox6">POLITICS</label>
+						<label for="privacypolicy"></label>
 					</div>
-					<div>
+					<div class="d-flex justify-content-center title4">
 						{{ "welcometutorial.privacytitle" | translate }}
 					</div>
-				</div>
+				</div> -->
 
 				<div
 					class="d-flex justify-content-center padding3"
@@ -317,7 +305,6 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="row justify-content-end">
 		<div class="btn-close position-absolute">
 			<button
@@ -330,4 +317,5 @@
 			</button>
 		</div>
 	</div>
+
 </div>

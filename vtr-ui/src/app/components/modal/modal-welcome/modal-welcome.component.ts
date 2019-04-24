@@ -9,6 +9,7 @@ import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.mod
 })
 export class ModalWelcomeComponent implements OnInit {
 	page = 1;
+	privacyPolicy: boolean;
 	checkedArray: string[] = [];
 	data: any = {
 		page2: {
@@ -18,7 +19,7 @@ export class ModalWelcomeComponent implements OnInit {
 		}
 	};
 
-	constructor(public activeModal: NgbActiveModal, public welcomeDatamodel: WelcomeTutorial) {
+	constructor(public activeModal: NgbActiveModal) {
 
 	}
 
@@ -26,7 +27,7 @@ export class ModalWelcomeComponent implements OnInit {
 	}
 
 	next(page) {
-		if (++page < 4) {
+		if (++page < 3) {
 			this.page = page;
 		} else {
 			const response = new WelcomeTutorial(true, this.data.page2.radioValue, this.checkedArray);
@@ -36,19 +37,19 @@ export class ModalWelcomeComponent implements OnInit {
 
 	toggle($event, value) {
 		if ($event.target.checked) {
-			// this.checkedArray.push(value);
-			this.welcomeDatamodel.interests.push(value);
+			this.checkedArray.push(value);
+			//this.welcomeDatamodel.interests.push(value);
 		} else {
-			// this.checkedArray.splice(this.checkedArray.indexOf(value), 1);
-			this.welcomeDatamodel.interests.splice(this.welcomeDatamodel.interests.indexOf(value), 1);
+			 this.checkedArray.splice(this.checkedArray.indexOf(value), 1);
+			//this.welcomeDatamodel.interests.splice(this.welcomeDatamodel.interests.indexOf(value), 1);
 		}
-		console.log(this.welcomeDatamodel.interests.length);
+		console.log(this.checkedArray.length);
 	}
 
-	saveUsageType($event, value){
+	saveUsageType($event, value) {
 		if ($event.target.checked) {
-			this.welcomeDatamodel.usageType = value;
-			console.log(this.welcomeDatamodel.usageType);
+			//this.welcomeDatamodel.usageType = value;
+			console.log(value);
 		}
 
 	}
@@ -57,13 +58,13 @@ export class ModalWelcomeComponent implements OnInit {
 	}
 
 	onTutorialDone() {
-		this.welcomeDatamodel.isTutorialCompleted = true;
+		//this.welcomeDatamodel.isTutorialCompleted = true;
 		this.onTutorialClose();
 	}
 
 	savePrivacy($event, value) {
 		if ($event.target.checked) {
-			this.welcomeDatamodel.isPrivacyPolicy = value;
+			this.privacyPolicy = value;
 		}
 	}
 }
