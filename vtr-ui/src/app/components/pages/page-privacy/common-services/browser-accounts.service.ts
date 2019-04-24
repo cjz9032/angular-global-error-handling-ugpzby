@@ -4,11 +4,12 @@ import { map, switchMap, take } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { StorageService } from '../shared/services/storage.service';
 import { MaskedPasswordsInfo, VantageCommunicationService } from './vantage-communication.service';
+import { convertBrowserNameToBrowserData } from '../shared/helpers';
 
 export interface InstalledBrowser {
 	name: string;
 	img: string;
-	accounts: MaskedPasswordsInfo[];
+	accounts?: MaskedPasswordsInfo[];
 	accountsCount: number;
 }
 
@@ -29,6 +30,7 @@ export class BrowserAccountsService {
 
 	getInstalledBrowsersDefaultData() {
 		this.vantageCommunicationService.getInstalledBrowsers().pipe(
+			map((response) => convertBrowserNameToBrowserData(response.browsers)),
 			switchMap((browserData) => this.concatPasswordsCount(browserData)),
 			take(1),
 		).subscribe((browserData) => this.installedBrowsersData$.next(browserData));
@@ -53,7 +55,7 @@ export class BrowserAccountsService {
 		});
 	}
 
-	private concatPasswordsCount(browserData) {
+	private concatPasswordsCount(browserData: ReturnType<typeof convertBrowserNameToBrowserData>) {
 		const isConsentGiven = this.isConsentGiven$.getValue();
 
 		if (isConsentGiven) {

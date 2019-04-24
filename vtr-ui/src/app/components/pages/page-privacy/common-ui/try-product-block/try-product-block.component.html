@@ -9,12 +9,12 @@
 	</div>
 	<div class="try-product__group-button">
 		<button class="try-product__button"
-				(click)="buttonClick.emit()"
+				vtrOpenFigleafInstaller
 				*ngIf="texts.buttonText">
 			{{texts.buttonText}}
 		</button>
 		<div class="try-product__button-link" *ngIf="texts.link">
-			<a [href]="texts.link.url">{{texts.link.text}}</a>
+			<a [href]="texts.link.url"><span>{{texts.link.text}}</span></a>
 		</div>
 	</div>
 </div>

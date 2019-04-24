@@ -4,6 +4,7 @@ import { filter, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../shared/custom-rxjs-operators/instance-destroyed';
 import { InstallWidgetPageSettings, SidebarInstallWidgetService } from './sidebar-install-widget.service';
 import { RoutersName } from '../../../privacy-routing-name';
+import { CommunicationWithFigleafService } from '../../../communication-with-figleaf/communication-with-figleaf.service';
 
 @Component({
 	selector: 'vtr-sidebar-install-widget',
@@ -23,9 +24,12 @@ export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
 		image: '',
 	};
 
+	isFigleafInstalled$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
+
 	constructor(
 		private routerChangeHandler: RouterChangeHandlerService,
-		private sidebarInstallWidgetService: SidebarInstallWidgetService
+		private sidebarInstallWidgetService: SidebarInstallWidgetService,
+		private communicationWithFigleafService: CommunicationWithFigleafService,
 	) {
 	}
 

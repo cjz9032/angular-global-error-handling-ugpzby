@@ -1,12 +1,10 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ChangeDetectorRef } from '@angular/core';
 import { BreachedAccountMode } from '../../common-ui/breached-account/breached-account.component';
 import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
-import { BrowserAccountsService } from '../../common-services/browser-accounts.service';
-import { BreachedAccountsService, BreachedAccount } from '../../common-services/breached-accounts.service';
+import { BreachedAccount, BreachedAccountsService } from '../../common-services/breached-accounts.service';
 import { CommunicationWithFigleafService } from '../../communication-with-figleaf/communication-with-figleaf.service';
-import { FigleafOverviewService } from '../../common-services/figleaf-overview.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -15,24 +13,18 @@ import { FigleafOverviewService } from '../../common-services/figleaf-overview.s
 })
 export class ResultComponent implements OnInit, OnDestroy {
 	readonly breachedAccountMode = BreachedAccountMode;
+	browserStoredAccountsData = {showDetailAction: 'link'};
 
 	isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 
-	figleafDashboard = this.figleafOverviewService.figleafDashboard$;
-
-	isConsentToGetBrowsersAccountsGiven$ = this.browserAccountsService.isConsentGiven$;
-
 	breached_accounts: BreachedAccount[] = [];
 	breached_accounts_show: BreachedAccount[];
-	// static Data for html
-	browserStoredAccountsData = {showDetailAction: 'link'};
 
 	constructor(
 		private router: Router,
-		private browserAccountsService: BrowserAccountsService,
 		private breachedAccountsService: BreachedAccountsService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
-		private figleafOverviewService: FigleafOverviewService,
+		private changeDetectorRef: ChangeDetectorRef,
 	) {
 	}
 
@@ -43,8 +35,11 @@ export class ResultComponent implements OnInit, OnDestroy {
 				takeUntil(instanceDestroyed(this)),
 			)
 			.subscribe((breachedAccounts) => {
-				this.breached_accounts = breachedAccounts;
+				this.breached_accounts = breachedAccounts.filter((breach) => {
+					return !(breach.hasOwnProperty('isFixed') && breach.isFixed === true);
+				});
 				this.breached_accounts_show = this.breached_accounts.slice(0, 3);
+				this.changeDetectorRef.detectChanges();
 			});
 
 		this.breachedAccountsService.getBreachedAccounts();
@@ -55,14 +50,5 @@ export class ResultComponent implements OnInit, OnDestroy {
 
 	redirectToDetailPage(index: number) {
 		this.router.navigate(['privacy', 'breaches'], {queryParams: {openId: index}});
-	}
-
-	giveConcentToGetBrowserAccounts() {
-		this.browserAccountsService.giveConcent();
-		this.getBrowserAccountsDetail();
-	}
-
-	getBrowserAccountsDetail() {
-		this.browserAccountsService.getInstalledBrowsersDefaultData();
 	}
 }

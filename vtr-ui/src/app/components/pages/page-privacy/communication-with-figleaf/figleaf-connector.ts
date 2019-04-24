@@ -15,6 +15,7 @@ var onDisconnectListeners = [];
 var reconnectTimer = null;
 const RECONNECT_TIMEOUT = 6000;
 var connection = null;
+var serviceClosedCount = 0;
 
 class FigleafConnector {
 	private serviceClosedCallback = this.serviceClosed.bind(this);
@@ -64,6 +65,7 @@ class FigleafConnector {
 				onConnectListeners.forEach((cb) => {
 					cb();
 				});
+				serviceClosedCount = 0;
 			} else {
 				this.disconnectFromFigleaf();
 			}
@@ -71,7 +73,7 @@ class FigleafConnector {
 	}
 
 	disconnect() {
-		console.log('connection', connection);
+		console.log('disconnect');
 		connection.close();
 	}
 
@@ -83,6 +85,7 @@ class FigleafConnector {
 	}
 
 	private reconnect() {
+		console.log('reconnect');
 		clearTimeout(reconnectTimer);
 		reconnectTimer = setTimeout(() => {
 			this.connect();
@@ -90,7 +93,11 @@ class FigleafConnector {
 	}
 
 	private serviceClosed() {
-		this.disconnectFromFigleaf();
+		this.connect();
+		if (serviceClosedCount >= 1) {
+			this.disconnectFromFigleaf();
+		}
+		serviceClosedCount++;
 	}
 
 	private requestReceived(service, args) {

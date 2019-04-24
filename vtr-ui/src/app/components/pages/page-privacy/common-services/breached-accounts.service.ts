@@ -17,8 +17,9 @@ export interface BreachedAccount {
 	password: string;
 	date: string;
 	name: string;
-	description: string;
+	details: string;
 	isFixed?: boolean;
+	link?: string;
 }
 
 @Injectable()

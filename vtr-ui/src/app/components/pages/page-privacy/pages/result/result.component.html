@@ -4,9 +4,9 @@
 		<vtr-privacy-score></vtr-privacy-score>
 	</div>
 
-    <div *ngIf="!(isFigleafReadyForCommunication$ | async) && !breached_accounts.length" class="email-scanner">
-        <vtr-email-scanner></vtr-email-scanner>
-    </div>
+	<div *ngIf="!(isFigleafReadyForCommunication$ | async) && !breached_accounts.length" class="email-scanner">
+		<vtr-email-scanner></vtr-email-scanner>
+	</div>
 
 	<div *ngIf="breached_accounts.length" class="breaches-block breaches-block__wrapper">
 		<h3 class="breaches-block__title">{{breached_accounts.length}} breached accounts</h3>
@@ -17,24 +17,19 @@
 		<div class="breaches-block__accounts-row">
 			<div class="breaches-block__accounts-container">
 				<vtr-breached-account
-						[mode]="breachedAccountMode.PREVIEW"
-						[breachedAccounts]="breached_accounts_show"
-						(detailClick)="redirectToDetailPage($event)">
+					[mode]="breachedAccountMode.PREVIEW"
+					[breachedAccounts]="breached_accounts_show"
+					(detailClick)="redirectToDetailPage($event)">
 				</vtr-breached-account>
 			</div>
 			<div *ngIf="breached_accounts.length > 3" class="breaches-block__see-more more-breaches">
 				<div class="more-breaches__number">
-					<span class="more-breaches__plus">+</span>
-					{{breached_accounts.length - 3}}
+					+{{breached_accounts.length - 3}}
 				</div>
 				<span class="more-breaches__description">breached accounts</span>
 				<a routerLink="./breaches" class="more-breaches__btn">Show All</a>
 			</div>
 		</div>
-		<p class="breaches-block__get-figleaf-text">
-			Ready to take control of your privacy?
-			<a class="breaches-block__get-figleaf-link" href="">Get Lenovo Privacy by FigLeaf</a>
-		</p>
 	</div>
 
 	<div *ngIf="(isFigleafReadyForCommunication$ | async) && breached_accounts.length === 0" class="privacy-dashboard">
@@ -42,55 +37,11 @@
 		<vtr-privacy-dashboard-list></vtr-privacy-dashboard-list>
 	</div>
 
-	<div class="trackers">
-		<div class="trackers__header-row">
-			<h3 class="trackers__title">Check for website trackers</h3>
-			<a class="trackers__popup-btn" routerLink="./trackers">Who’s tracking me?</a>
-		</div>
-		<p class="trackers__text">
-			Some sites use trackers to improve and personalize your experience. Other sites use trackers to collect info
-			about you — things like what device you use, where you shop, and what you buy — and then sell what they
-			learn to advertisers. Lenovo Privacy by FigLeaf gives you a say in when to allow trackers and when to block
-			them.
-		</p>
+	<div class="privacy-tracking-map">
 		<vtr-tracking-map></vtr-tracking-map>
 	</div>
 
-	<div class="browser-accounts-block browser-accounts-block__wrapper">
-		<!--Easily accessible passwords-->
-		<h3 class="browser-accounts-block__title">Non-private passwords</h3>
-		<p class="browser-accounts-block__text">You might be storing emails and passwords for your favorite sites right
-			in your browser. This makes it easier for someone to access them without your knowledge. Find out.</p>
-
-		<div *ngIf="!(isConsentToGetBrowsersAccountsGiven$ | async)" class="browser-accounts-concent">
-			<div class="browser-accounts-concent__text-wrapper">
-				<p class="browser-accounts-concent__text">
-					We need your permission to access and show you the passwords stored in your browser.
-				</p>
-			</div>
-			<div class="browser-accounts-concent__btn-wrapper">
-				<button class="browser-accounts-concent__btn" (click)="giveConcentToGetBrowserAccounts()">
-					I agree
-				</button>
-			</div>
-		</div>
-
-		<div *ngIf="isFigleafReadyForCommunication$ | async" class="figleaf-stored-accounts">
-			<img class="figleaf-stored-accounts__img"
-			     src="/assets/images/privacy-tab/logo-leaf.png"
-			     srcset="/assets/images/privacy-tab/logo-leaf@2x.png 2x"
-			     alt="figleaf logo">
-			<div class="figleaf-stored-accounts__details-col">
-				<p class="figleaf-stored-accounts__title">
-					<strong>{{(figleafDashboard | async).maskedAccounts}}</strong>
-					accounts stored in Lenovo Privacy by FigLeaf
-				</p>
-				<button class="figleaf-stored-accounts__btn">Show details</button>
-			</div>
-		</div>
-
-		<vtr-browser-stored-accounts [inputData]="browserStoredAccountsData"></vtr-browser-stored-accounts>
-	</div>
+	<vtr-non-private-password [browserStoredAccountsData]="browserStoredAccountsData"></vtr-non-private-password>
 
 	<vtr-support-banner></vtr-support-banner>
 </section>

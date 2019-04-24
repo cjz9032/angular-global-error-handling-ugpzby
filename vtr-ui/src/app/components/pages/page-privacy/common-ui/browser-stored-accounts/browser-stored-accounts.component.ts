@@ -7,6 +7,7 @@ import { BrowserAccountsService } from '../../common-services/browser-accounts.s
 	styleUrls: ['./browser-stored-accounts.component.scss']
 })
 export class BrowserStoredAccountsComponent implements OnInit {
+	@Input() openPasswordId: number;
 	@Input() inputData: { showDetailAction: 'expand' | 'link' };
 
 	installedBrowsers$ = this.browserAccountsService.installedBrowsersData$;

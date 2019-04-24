@@ -30,7 +30,12 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.breachedAccountsService.onGetBreachedAccounts$
 			.pipe(
-				takeUntil(instanceDestroyed(this))
+				takeUntil(instanceDestroyed(this)),
+				map((breachedAccounts) => {
+					return breachedAccounts.filter((breach) => {
+						return !(breach.hasOwnProperty('isFixed') && breach.isFixed === true);
+					});
+				})
 			)
 			.subscribe((breaches) => {
 				this.breached_accounts = breaches;

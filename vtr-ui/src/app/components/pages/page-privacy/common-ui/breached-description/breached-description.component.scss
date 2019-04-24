@@ -1,10 +1,10 @@
 .breached-description {
-	font-size: 1.65rem;
+	font-size: 1.4rem;
 	font-weight: 500;
 	&__text {
 		color: #667481;
 		font-weight: 300;
-		line-height: 2.75rem;
+		line-height: 2.2rem;
 		padding-bottom: 2.4rem;
 	}
 
@@ -27,28 +27,11 @@
 		width: 100%;
 		padding-left: 4rem;
 		flex-wrap: wrap;
-
-		&:last-child {
-			padding-left: 8rem;
-		}
 	}
 
 	&__item {
 		margin-top: 2.7rem;
 		width: 50%;
 		position: relative;
-
-		&:before {
-			content: '';
-			position: absolute;
-			background-image: url("/assets/images/privacy-tab/default.svg");
-			background-repeat: no-repeat;
-			width: 2.4rem;
-			height: 2.1rem;
-			left: -16%;
-			top: 50%;
-			transform: translateX(-50%) translateY(-50%);
-			background-size: contain;
-		}
 	}
 }

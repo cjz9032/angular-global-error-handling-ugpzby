@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { filter, map, switchMap } from 'rxjs/operators';
-import { combineLatest, iif, of } from 'rxjs';
+import { distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
+import { combineLatest } from 'rxjs';
 import { FigleafOverviewService } from '../../common-services/figleaf-overview.service';
 import { BrowserAccountsService } from '../../common-services/browser-accounts.service';
 import { CommunicationWithFigleafService } from '../../communication-with-figleaf/communication-with-figleaf.service';
@@ -25,12 +25,25 @@ export class PrivacyScoreService {
 	};
 
 	getScoreParametrs() {
+		let figleafInstalled = false;
 		return this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(
-			switchMap(value => iif(
-				() => !!value,
-				this.handleInstalledScore(),
-				this.handleUninstalledScore(),
-			)),
+			distinctUntilChanged(),
+			switchMap((isFigleafInstalled) => {
+				figleafInstalled = isFigleafInstalled;
+				return combineLatest(
+					this.getBreachesScore(),
+					this.getStoragesScore(),
+				).pipe(
+					map(val => {
+						const receivedScoreParam = val.reduce((acc, curr) => ({...acc, ...curr}));
+						return {
+							...receivedScoreParam,
+							monitoringEnabled: figleafInstalled,
+							trackingEnabled: figleafInstalled,
+						};
+					})
+				);
+			}),
 		);
 	}
 
@@ -38,13 +51,15 @@ export class PrivacyScoreService {
 		const leaksScore = this.calculateLeaksScore(params.fixedBreaches, params.unfixedBreaches);
 		const passwordStorageScore = this.calculatePasswordStorageScore(params.fixedStorages, params.unfixedStorages);
 
-		return this.calculateScore({
+		const calculatedScore = this.calculateScore({
 			leaksScore,
 			passwordStorageScore,
 			monitoringEnabled: params.monitoringEnabled,
 			trackingEnabled: params.trackingEnabled,
 			constant: 0
 		});
+
+		return calculatedScore < 10 ? 10 : calculatedScore;
 	}
 
 	getStaticDataAccordingToScore(score) {
@@ -84,39 +99,7 @@ export class PrivacyScoreService {
 		}
 	}
 
-	private handleInstalledScore() {
-		return combineLatest(
-			this.getInstalledScore(),
-			this.getStoragesScore(),
-		).pipe(
-			map(val => {
-				const receivedScoreParam = val.reduce((acc, curr) => ({...acc, ...curr}));
-				return {
-					...receivedScoreParam,
-					monitoringEnabled: true,
-					trackingEnabled: true,
-				};
-			})
-		);
-	}
-
-	private handleUninstalledScore() {
-		return combineLatest(
-			this.getUninstalledScore(),
-			this.getStoragesScore(),
-		).pipe(
-			map(val => {
-				const receivedScoreParam = val.reduce((acc, curr) => ({...acc, ...curr}));
-				return {
-					...receivedScoreParam,
-					monitoringEnabled: false,
-					trackingEnabled: false,
-				};
-			})
-		);
-	}
-
-	private getInstalledScore() {
+	private getBreachesScore() {
 		return this.breachedAccountsService.onGetBreachedAccounts$.pipe(
 			map((figleafBreaches) => {
 				const fixedBreachesAmount = figleafBreaches.filter(breach => !!breach.isFixed).length;
@@ -126,13 +109,6 @@ export class PrivacyScoreService {
 				};
 			})
 		);
-	}
-
-	private getUninstalledScore() {
-		return of({
-			fixedBreaches: 0,
-			unfixedBreaches: 0,
-		});
 	}
 
 	private getStoragesScore() {

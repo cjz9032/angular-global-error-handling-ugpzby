@@ -43,14 +43,13 @@
 				<div class="tracker__stop-wrapper">
 					<div class="tracker__stop">
 						<h3 class="tracker__stop-title">
-							Want to stop trackers
+							Want to stop trackers?
 						</h3>
 						<div class="tracker__text">
-							Lenovo privacy by Figleaf lets you share what you. want or keep things private for each site
-							of you visit or transact with.
+							Lenovo Privacy by FigLeaf lets you share what you want or keep things private for each site you visit or transact with. Start your 14-day free trial. No credit card required.
 						</div>
 						<div class="tracker__btn-group">
-							<button class="tracker__btn">Try Lenovo Privacy</button>
+							<button class="tracker__btn" vtrOpenFigleafInstaller>Try Lenovo Privacy</button>
 							<a class="tracker__link" routerLink="./landing" (click)="closePopup()">Read more</a>
 						</div>
 					</div>
@@ -59,10 +58,12 @@
 		</div>
 		<div class="tracker__map">
 			<h3 class="tracker__map-title">
-				Where I’m being tracked?
+				Where am I being tracked?
 			</h3>
 			<div class="tracker__map-wrapper">
 				<fl-tracking-map-single [trackers]="trackingMapSingleData"
+										[defaultSiteIcon]="defaultIcon.site"
+										[defaultTrackerIcon]="defaultIcon.tracker"
 										height="600"
 										width="255"
 										[positive]="isTrackersBlocked$ | async">

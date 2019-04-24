@@ -70,101 +70,8 @@
   margin-top: 5rem;
 }
 
-.trackers {
-	@extend %common-block-wrapper;
-	margin: 5rem 0;
-
-	&__header-row {
-		display: flex;
-		justify-content: space-between;
-		margin: 0 0 1.6rem 0;
-	}
-
-	&__title {
-		@extend %subtitle;
-	}
-
-	&__text {
-		@extend %text-common;
-	}
-
-	&__popup-btn {
-		@extend %theme-btn;
-	}
-
-	&__wrapper {
-		border: 1px solid #ECF0F1;
-		padding: 1.3rem 2.6rem;
-		border-radius: 5px;
-		overflow: hidden;
-		display: flex;
-		justify-content: center;
-	}
-}
-
-.browser-accounts-concent {
-	display: flex;
-	justify-content: space-between;
-	border: 1px solid #ECF0F1;
-	border-radius: 5px;
-	background-color: #F5F7F8;
-	padding: 2.5rem 2rem;
-	margin: 0 0 1rem 0;
-
-	&__text-wrapper {
-		display: flex;
-		align-items: center;
-		margin: 0 3.5rem 0 0;
-	}
-
-	&__text {
-		color: #34495E;
-		font-size: 2.5rem;
-		font-weight: 300;
-		line-height: 2.9rem;
-		margin: 0;
-	}
-
-	&__btn-wrapper {
-	}
-
-	&__btn {
-		@extend %theme-btn;
-	}
-}
-
-.figleaf-stored-accounts {
-	border: 1px solid #DBEBDC;
-	border-radius: 8px;
-	background: linear-gradient(45deg, #F7FFF6 0%, #FFFFFF 100%);
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 2.8rem 2rem;
-
-	&__img {
-	}
-
-	&__details-col {
-		display: flex;
-		flex-grow: 1;
-		justify-content: space-between;
-		align-items: center;
-		padding: 0 0 0 2rem;
-	}
-
-	&__title {
-		color: #34495E;
-		font-size: 2.5rem;
-		font-weight: 300;
-		line-height: 2.9rem;
-		padding: 0 5rem 0 0;
-		margin: 0;
-	}
-
-	&__btn {
-		@extend %theme-btn;
-	}
+.privacy-tracking-map {
+  margin: 5rem 0;
 }
 
 .more-breaches {
@@ -177,8 +84,8 @@
 
   &__number {
     color: #4A81FD;
-    font-size: 5.5rem;
-    line-height: 6.5rem;
+    font-size: 4.4rem;
+    line-height: 5.2rem;
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -190,18 +97,16 @@
 
   &__description {
     color: #4A81FD;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
-    line-height: 3.75rem;
+    line-height: 3rem;
     margin-left: 3rem;
   }
 
   &__btn {
     @extend %theme-btn;
-    min-width: 23.75rem;
     margin-left: auto;
     font-weight: 500;
-    font-size: 1.85rem;
     text-transform: uppercase;
   }
 }

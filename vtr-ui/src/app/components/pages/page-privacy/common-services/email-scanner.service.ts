@@ -46,6 +46,9 @@ export class EmailScannerService {
 	private _userEmail$ = new BehaviorSubject<string>('');
 	userEmail$ = this._userEmail$.asObservable();
 
+	private _userEmailToShow$ = new Subject<string>();
+	userEmailToShow$ = this._userEmailToShow$.asObservable();
+
 	private validationStatusChanged = new Subject<ConfirmationCodeValidationResponse>();
 	validationStatusChanged$ = this.validationStatusChanged.asObservable();
 
@@ -62,6 +65,9 @@ export class EmailScannerService {
 
 	setUserEmail(userEmail) {
 		this._userEmail$.next(userEmail);
+	}
+	setDisplayedUserEmail(userEmail) {
+		this._userEmailToShow$.next(userEmail);
 	}
 
 	cancelVerification() {
@@ -122,6 +128,7 @@ export class EmailScannerService {
 					switchMap((breaches: BreachedAccountsFromServerResponse) => {
 						this.loadingStatusChanged.next(false);
 						this.setUserEmail(breaches.userEmail);
+						this.setDisplayedUserEmail(breaches.userEmail);
 						return [this.transformBreachesFromServer(breaches)];
 					}),
 					catchError((error) => {
@@ -146,7 +153,7 @@ export class EmailScannerService {
 				email: breachData.email,
 				password: breachData.password_plaintext,
 				name: breachData.username,
-				description: breachData.breach.description,
+				details: breachData.breach.description,
 				image: '',
 			};
 			acc.push(newData);

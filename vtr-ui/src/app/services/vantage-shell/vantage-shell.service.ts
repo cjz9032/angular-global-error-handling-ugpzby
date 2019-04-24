@@ -316,10 +316,10 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public sendContractToPrivacyCore<T>(contract: {contract: string, command: string, payload: string | Object}): Observable<T> {
+	public getPrivacyCore() {
 		if (this.phoenix && this.phoenix.privacy) {
-			return from(this.phoenix.privacy.sendContractToPlugin(contract)) as Observable<T>;
+			return this.phoenix.privacy;
 		}
-		return EMPTY;
+		return undefined;
 	}
 }

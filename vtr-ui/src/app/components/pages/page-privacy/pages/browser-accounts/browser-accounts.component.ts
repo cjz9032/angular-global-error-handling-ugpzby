@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class BrowserAccountsComponent {
 	browserStoredAccountsData = {showDetailAction: 'expand'};
 	commonTexts = {
-		title: 'Easy accesible accounts',
-		text: 'Major web browsers let you store your usernames and passwords for your favorite sites, so you can log in quickly. But these passwords are usually not well encrypted, making your accounts vulnerable to hacking.'
+		title: 'Non-private passwords',
+		text: 'Web browsers can store your emails and passwords for your favorite sites so you can log in quickly. But browsers don’t always keep your credentials private from everyone.'
 	};
 }

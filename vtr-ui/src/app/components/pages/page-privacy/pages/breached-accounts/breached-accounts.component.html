@@ -1,18 +1,22 @@
 <section class="breaches-page">
 	<vtr-common-text [texts]="commonTexts"></vtr-common-text>
 
-    <div class="breached-accounts">
+	<div class="breached-accounts">
 
-        <div *ngIf="!(isFigleafReadyForCommunication$ | async) && !breached_accounts?.length" class="email-scanner">
-            <vtr-email-scanner></vtr-email-scanner>
-        </div>
+		<div *ngIf="!(isFigleafReadyForCommunication$ | async) && !breached_accounts?.length" class="email-scanner">
+			<vtr-email-scanner></vtr-email-scanner>
+		</div>
 
-        <div *ngIf="breached_accounts?.length" class="breaches-wrapper">
-            <vtr-breached-account
-                    [breachedAccounts]="breached_accounts"
-                    [openId]="openBreachedId$ | async">
-            </vtr-breached-account>
-        </div>
+		<div *ngIf="breached_accounts?.length" class="breaches-wrapper">
+			<p class="breached-accounts__text">
+				Looks like some of your personal info is floating around online, making it easy for others to access
+				your accounts without your knowledge. You should change your passwords right now.
+			</p>
+			<vtr-breached-account
+					[breachedAccounts]="breached_accounts"
+					[openId]="openBreachedId$ | async">
+			</vtr-breached-account>
+		</div>
 
-    </div>
+	</div>
 </section>

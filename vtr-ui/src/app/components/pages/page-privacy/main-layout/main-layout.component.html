@@ -12,6 +12,7 @@
 		<ng-template>
 			<vtr-chose-browser
 				[browserList]="browserList$ | async"
+				[isBrowserListEmpty]="isBrowserListEmpty$ | async"
 				(rejection)="closePopUp(choseBrowserPopupId)"
 				(browser)="choseBrowser($event)">
 			</vtr-chose-browser>

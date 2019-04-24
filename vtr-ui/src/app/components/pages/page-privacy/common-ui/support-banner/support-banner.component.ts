@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonPopupService } from '../../common-services/popups/common-popup.service';
+import { VantageCommunicationService } from '../../common-services/vantage-communication.service';
 
 @Component({
 	selector: 'vtr-support-banner',
@@ -8,7 +9,9 @@ import { CommonPopupService } from '../../common-services/popups/common-popup.se
 })
 export class SupportBannerComponent implements OnInit {
 
-	constructor(private commonPopupService: CommonPopupService) {
+	constructor(
+		private commonPopupService: CommonPopupService,
+		private vantageCommunicationService: VantageCommunicationService) {
 	}
 
 	ngOnInit() {
@@ -20,5 +23,9 @@ export class SupportBannerComponent implements OnInit {
 
 	closePopup(id) {
 		this.commonPopupService.close(id);
+	}
+
+	openLenovoSupport() {
+		this.vantageCommunicationService.openUri('https://support.lenovo.com');
 	}
 }

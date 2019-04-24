@@ -1,19 +1,5 @@
 <div class="trackers-page">
 	<vtr-common-text [texts]="commonTexts"></vtr-common-text>
 
-	<div class="trackers-page__wrapper">
-		<div class="trackers">
-			<p class="trackers__text">
-				Tracking companies make mooney by following you online, collecting info about you, and selling these
-				details advertisers. What kind of info? Things like what devices you use, where you shopn and what you
-				buy.
-			</p>
-
-			<vtr-tracking-map [animate]="true"></vtr-tracking-map>
-		</div>
-		<vtr-try-product-block
-			[texts]="tryProductText"
-			(buttonClick)="tryProductBlockButtonClick($event)">
-		</vtr-try-product-block>
-	</div>
+	<vtr-tracking-map [animate]="true"></vtr-tracking-map>
 </div>

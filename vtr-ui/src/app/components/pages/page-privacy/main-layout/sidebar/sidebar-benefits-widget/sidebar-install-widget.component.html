@@ -1,4 +1,4 @@
-<div class="sidebar-install-widget" *ngIf="installWidgetSettings.visible">
+<div class="sidebar-install-widget" *ngIf="installWidgetSettings.visible && !(isFigleafInstalled$ | async)">
 	<div class="sidebar-install-widget__inner">
 		<div>
 			<img class="sidebar-install-widget__main-image"
@@ -11,13 +11,13 @@
 			<div class="sidebar-install-widget__main-text"
 				 [ngClass]="{'sidebar-install-widget__main-text--sm': !isMainPage}">
 				<span class="sidebar-install-widget__text-light">{{installWidgetSettings.text}}</span>
-				<span class="sidebar-install-widget__text-light sidebar-install-widget__text-light--bold">
-					14-day free trial.
-				</span>
-				<span class="sidebar-install-widget__text-light">No credit card required.</span>
+				<p class="sidebar-install-widget__text-light sidebar-install-widget__text-light--bold">
+					14-day free trial. <span class="sidebar-install-widget__text-light">No credit card required.</span>
+				</p>
 			</div>
 		</div>
 		<button class="sidebar-install-widget__button"
+				vtrOpenFigleafInstaller
 				[ngClass]="{'sidebar-install-widget__button--transparent': isMainPage}">
 			{{primaryButtonText}}
 		</button>

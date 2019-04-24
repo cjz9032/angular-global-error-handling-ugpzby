@@ -52,7 +52,7 @@ import { PRIVACY_BASE_URL, PRIVACY_ENVIRONMENT } from './shared/injection-tokens
 import { ChoseBrowserGuard } from './common-guards/chose-browser.guard';
 import { ObjectValuesPipe } from './common-pipe/object-values.pipe';
 import { TipsListComponent } from './pages/tips-list/tips-list.component';
-import { FlTrackingMapModule } from 'fl-tracking-map';
+import { FlTrackingMapModule } from './fl-tracking-map';
 import { PrivacyTipComponent } from './common-ui/privacy-tip/privacy-tip.component';
 import { NewsItemComponent } from './common-ui/news-item/news-item.component';
 import { NewsListComponent } from './pages/news-list/news-list.component';
@@ -69,6 +69,8 @@ import { TryProductBlockComponent } from './common-ui/try-product-block/try-prod
 import { PrivacyScoreService } from './common-ui/privacy-score/privacy-score.service';
 import { EmailScannerComponent } from './common-ui/email-scanner/email-scanner.component';
 import { SimpleLoaderComponent } from './common-ui/simple-loader/simple-loader.component';
+import { OpenFigleafInstallerDirective } from './common-directives/open-figleaf-installer.directive';
+import { NonPrivatePasswordComponent } from './common-ui/non-private-password/non-private-password.component';
 
 @NgModule({
 	imports: [
@@ -134,6 +136,8 @@ import { SimpleLoaderComponent } from './common-ui/simple-loader/simple-loader.c
 		TryProductBlockComponent,
 		SimpleLoaderComponent,
 		EmailScannerComponent,
+		OpenFigleafInstallerDirective,
+		NonPrivatePasswordComponent,
 	],
 	providers: [
 		TrackersPopupService,

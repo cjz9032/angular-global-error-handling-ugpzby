@@ -10,12 +10,12 @@ import { AccessTokenService } from '../../common-services/access-token.service';
 	styleUrls: ['./email-scanner.component.scss']
 })
 export class EmailScannerComponent implements OnInit, OnDestroy {
-	userEmail: string;
+	userEmail = '';
 	emailWasScanned = this.accessTokenService.accessTokenIsExist$;
 
 	// Static Data for html
 	firstEmailScanData = {
-		title: 'Check my privacy level',
+		title: 'Check for breached accounts',
 	};
 	nextEmailScanData = {
 		title: 'We didn’t find any breached accounts',
@@ -28,7 +28,7 @@ export class EmailScannerComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.emailScannerService.userEmail$
+		this.emailScannerService.userEmailToShow$
 			.pipe(
 				takeUntil(instanceDestroyed(this))
 			)

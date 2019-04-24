@@ -7,6 +7,12 @@ import { UserAllowService } from '../../shared/services/user-allow.service';
 import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
 import { TrackingMapService } from '../../common-services/tracking-map.service';
 import { SingleTrackersInfo, TrackersInfo, typeData } from '../../common-services/tracking-map.interface';
+import { CommunicationWithFigleafService } from '../../communication-with-figleaf/communication-with-figleaf.service';
+
+export const DEFAULT_ICON = {
+	site: '/assets/images/privacy-tab/Website_Standart.png',
+	tracker: '/assets/images/privacy-tab/Tracker_standart_big.png',
+};
 
 @Component({
 	selector: 'vtr-tracking-map',
@@ -15,6 +21,7 @@ import { SingleTrackersInfo, TrackersInfo, typeData } from '../../common-service
 })
 export class TrackingMapComponent implements OnInit, OnDestroy {
 	@Input() animate = false;
+	isFigleafInstalled$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 
 	trackingControl = new FormControl(this.userAllowService.allowToShow.trackingMap);
 
@@ -28,9 +35,17 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 
 	isTrackersBlocked$ = this.trackingMapService.isTrackersBlocked$;
 
-	defaultIcon = {
-		site: '/assets/images/privacy-tab/Website_Standart.png',
-		tracker: '/assets/images/privacy-tab/Tracker_standart_big.png',
+	defaultIcon = DEFAULT_ICON;
+
+	tryProductText = {
+		title: 'Block online trackers with lenovo privacy by figleaf',
+		text: 'Do what you love online without being tracked by advertisers and others. Start your 14-day free trial. No credit card required.',
+		buttonText: 'Try Lenovo Privacy',
+		link: {
+			text: 'Learn more',
+			url: '/#/privacy/landing'
+		},
+
 	};
 
 	constructor(
@@ -38,6 +53,7 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 		private commonPopupService: CommonPopupService,
 		private choseBrowserService: ChoseBrowserService,
 		private userAllowService: UserAllowService,
+		private communicationWithFigleafService: CommunicationWithFigleafService,
 	) {}
 
 	ngOnInit() {
@@ -75,6 +91,10 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 			this.userAllowService.setShowTrackingMap(val);
 			this.trackingMapService.updateTrackingData();
 		});
+	}
+
+	tryProductBlockButtonClick(event) {
+		console.log('try figleaf');
 	}
 
 	private getTrackingData() {

@@ -1,11 +1,11 @@
 @import "../../styles/common-blocks";
 
 .try-product {
-	padding: 4rem;
+	padding: 3rem 0;
 	display: flex;
 	flex-flow: column;
 	justify-content: space-between;
-	background-color: #FFFFFF;
+	background-color: inherit;
 
 	&__description {
 		display: flex;
@@ -42,6 +42,10 @@
 		a {
 			@extend %button-link;
 			@extend %button-link--to-right;
+
+			span {
+				border-bottom: 1px solid;
+			}
 		}
 	}
 }

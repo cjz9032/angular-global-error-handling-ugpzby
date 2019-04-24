@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { convertBrowserNameToBrowserData } from '../../shared/helpers';
 
 @Component({
 	selector: 'vtr-chose-browser',
@@ -6,7 +7,8 @@ import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from
 	styleUrls: ['./chose-browser.component.scss']
 })
 export class ChoseBrowserComponent implements OnChanges {
-	@Input() browserList: any[] = [];
+	@Input() browserList: ReturnType<typeof convertBrowserNameToBrowserData> = [];
+	@Input() isBrowserListEmpty = true;
 	@Output() rejection = new EventEmitter<void>();
 	@Output() browser = new EventEmitter<string>();
 

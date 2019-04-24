@@ -87,71 +87,52 @@
 		}
 	}
 
-	$radioSize: 20px;
+	$radioSize: 21px;
 	$radioBorder: #4A81FD;
-	$radioActive: #4A81FD;
+	$radioActive: $radioBorder;
+
+	&__el {
+		height: $radioSize;
+		width: $radioSize;
+		display: block;
+		position: relative;
+		border-radius: 50%;
+		background: #fff;
+		border: 2px solid $radioBorder;
+		transition: border .2s ease;
+
+		&:after {
+			$innerDotSize: 10px;
+			border-radius: 50%;
+			content: '';
+			width: $innerDotSize;
+			height: $innerDotSize;
+			display: block;
+			left: 50%;
+			top: 50%;
+			margin: ($innerDotSize / 2 * -1) 0 0 ($innerDotSize / 2 * -1);
+			position: absolute;
+		}
+		.choose-browser__radio:hover & {
+			&:after {
+				background: lighten($radioActive, 10);
+			}
+		}
+		.choose-browser__radio-input:checked + & {
+
+			&:after {
+				background: $radioActive;
+			}
+		}
+	}
+	&__radio-input {
+		position: absolute;
+		right: 100%;
+		top: 0;
+	}
 	&__radio {
 		cursor: pointer;
-
-		&:not(:first-child) {
-			margin-left: 2rem;
-		}
-
-		input {
-			display: none;
-			& + span {
-				line-height: $radioSize;
-				height: $radioSize;
-				padding-left: $radioSize;
-				display: block;
-				position: relative;
-				&:not(:empty) {
-					padding-left: $radioSize + 8;
-				}
-				&:before,
-				&:after {
-					content: '';
-					width: $radioSize;
-					height: $radioSize;
-					display: block;
-					border-radius: 50%;
-					left: 0;
-					top: 0;
-					position: absolute;
-				}
-				&:before {
-					background: $radioBorder;
-					transition: background .2s ease, transform .4s cubic-bezier(.175, .885, .32, 2);
-				}
-				&:after {
-					background: #fff;
-					transform: scale(.78);
-					transition: transform .6s cubic-bezier(.175, .885, .32, 1.4);
-				}
-			}
-			&:checked + span {
-				&:before {
-					transform: scale(.92);
-					background: $radioActive;
-				}
-				&:after {
-					border: .4rem solid #fff;
-					background: $radioActive;
-					transition: transform .3s ease;
-				}
-			}
-		}
-		&:hover {
-			input {
-				& + span {
-					&:before {
-						transform: scale(.92);
-					}
-					&:after {
-						transform: scale(.74);
-					}
-				}
-			}
-		}
+		position: relative;
+		overflow: hidden;
 	}
 }

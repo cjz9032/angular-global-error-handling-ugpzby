@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TrackingMapService } from '../../common-services/tracking-map.service';
 import { CommonPopupService } from '../../common-services/popups/common-popup.service';
+import { DEFAULT_ICON } from '../tracking-map/tracking-map.component';
 
 @Component({
 	selector: 'vtr-single-tracker-detail',
@@ -12,6 +13,7 @@ export class SingleTrackerDetailComponent implements OnInit {
 	@Input() popUpId: string;
 	trackingMapSingleData$ = this.trackingMapService.getTrackingSingleData$;
 	isTrackersBlocked$ = this.trackingMapService.isTrackersBlocked$;
+	defaultIcon = DEFAULT_ICON;
 
 	constructor(
 		private trackingMapService: TrackingMapService,

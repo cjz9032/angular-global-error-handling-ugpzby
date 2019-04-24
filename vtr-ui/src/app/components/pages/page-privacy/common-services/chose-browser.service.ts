@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { StorageService } from '../shared/services/storage.service';
-import { VantageCommunicationService } from './vantage-communication.service';
+import { BrowserListType, VantageCommunicationService } from './vantage-communication.service';
 import { map } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { convertBrowserNameToBrowserData } from '../shared/helpers';
 
 @Injectable({
 	providedIn: 'root'
@@ -16,7 +18,18 @@ export class ChoseBrowserService {
 
 	getBrowserList() {
 		return this.vantageCommunicationService.getInstalledBrowsers().pipe(
+			map((response) => {
+				const defaultBrowsers = [BrowserListType.chrome, BrowserListType.firefox, BrowserListType.edge];
+				return response.browsers.length === 0 ? defaultBrowsers : response.browsers;
+			}),
+			map((browsers) => convertBrowserNameToBrowserData(browsers)),
 			map((browsers) => browsers.filter((browser) => browser.name !== 'edge')),
+		);
+	}
+
+	isBrowserListEmpty() {
+		return this.vantageCommunicationService.getInstalledBrowsers().pipe(
+			map((response) => response.browsers.length === 0)
 		);
 	}
 

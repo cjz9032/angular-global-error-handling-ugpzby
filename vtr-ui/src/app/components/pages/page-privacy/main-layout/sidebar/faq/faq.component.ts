@@ -11,7 +11,7 @@ import { RouterChangeHandlerService } from '../../../shared/services/router-chan
 	styleUrls: ['./faq.component.scss']
 })
 export class FaqComponent implements OnInit, OnDestroy {
-	mainTitle = 'FAQ’s';
+	mainTitle = 'Q&A';
 	isVisible = false;
 	openId = null;
 	questions;

@@ -22,7 +22,7 @@
     max-height: 4.3rem;
   }
   &__description {
-    padding: 0 0 0 1.3rem;
+    padding: 0 1rem 0 1.7rem;
   }
   &__title {
     text-transform: uppercase;
@@ -32,6 +32,9 @@
     line-height: 2.3rem;
     margin: 0;
   }
+	&__number {
+		color: #FE5050;
+	}
   &__text {
     color: #667481;
     font-size: 1.4rem;
@@ -41,6 +44,7 @@
   }
   &__btn {
     @extend %theme-btn;
+	min-width: 20rem;
     text-transform: uppercase;
     font-weight: 500;
     transition: all 0.2s ease-in-out;
@@ -54,8 +58,8 @@
     }
   }
   &__content {
-    height: 30rem;
     margin-top: 2rem;
+	margin-left: 6rem;
     border-radius: 5px;
     overflow: hidden;
   }
@@ -70,6 +74,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 30rem;
   &__text {
     color: #34495E;
     font-size: 2.5rem;
@@ -89,9 +94,9 @@
 
 .browser-accounts {
   background: #fff;
-  box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
-  height: calc(100% - 2.5rem);
+  height: 30rem;
   overflow: auto;
+  border: 1px solid #C2C8CE;
   &__wrapper {
     height: 100%;
   }

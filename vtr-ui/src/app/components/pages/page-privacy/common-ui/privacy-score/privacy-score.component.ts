@@ -4,7 +4,8 @@ import { DescribeStep } from '../low-privacy/low-privacy.component';
 import { PrivacyScoreService } from './privacy-score.service';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
-import { BreachedAccountsService } from '../../common-services/breached-accounts.service';
+import { CommunicationWithFigleafService } from '../../communication-with-figleaf/communication-with-figleaf.service';
+import { VantageCommunicationService } from '../../common-services/vantage-communication.service';
 
 export interface ScoreParametrs {
 	fixedBreaches: number;
@@ -59,17 +60,25 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 		monitoringEnabled: false,
 		trackingEnabled: false,
 	};
+
+	isFigLeafReadyForCommunication = false;
+
 	// default data
-	title = 'Your privacy score';
-	text = 'Take control of your privacy by choosing when to be private and what to share on every site you interact with.';
+	title = 'Find out your privacy score';
+	text = `Your Lenovo is designed to put you
+			in control of your privacy. It all
+			starts with simple tools to show you how
+			private you are online.`;
 	btn_text = 'Understand my score';
-	privacyLevel = 'low';
+	privacyLevel = 'undefined';
+	defaultScoreImageUrl = '/assets/images/privacy-tab/Main_icon.svg';
 	score = 0;
 
 	constructor(
 		private privacyScoreService: PrivacyScoreService,
-		private commonPopupService: CommonPopupService,
-		private breachedAccountsService: BreachedAccountsService) {
+		private communicationWithFigleafService: CommunicationWithFigleafService,
+		private vantageCommunicationService: VantageCommunicationService,
+		private commonPopupService: CommonPopupService) {
 	}
 
 	ngOnInit() {
@@ -82,12 +91,15 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 				this.setDataAccordingToScore(scoreParametrs);
 			});
 
-		this.breachedAccountsService.onGetBreachedAccounts$.pipe(
-			takeUntil(instanceDestroyed(this)),
-		).subscribe(breachedAccounts => {
-			this.scoreParametrs.unfixedBreaches = breachedAccounts.length;
-			this.setDataAccordingToScore(this.scoreParametrs);
-		});
+		this.communicationWithFigleafService.isFigleafReadyForCommunication$
+			.subscribe((isFigleafInstalled) => {
+				if (isFigleafInstalled) {
+					this.btn_text = 'Open Lenovo Privacy';
+					this.isFigLeafReadyForCommunication = true;
+				} else {
+					this.isFigLeafReadyForCommunication = false;
+				}
+			});
 	}
 
 	ngOnDestroy() {
@@ -104,5 +116,9 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 
 	openPopUp(popUpID) {
 		this.commonPopupService.open(popUpID);
+	}
+
+	openFigleafApp() {
+		this.vantageCommunicationService.openFigleafByUrl('lenovoprivacy:');
 	}
 }

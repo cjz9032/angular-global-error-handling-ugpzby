@@ -1,6 +1,8 @@
 <vtr-installed-browser
-		*ngFor="let browser of (installedBrowsers$ | async); trackBy: trackByBrowser;"
+		*ngFor="let browser of (installedBrowsers$ | async); trackBy: trackByBrowser; let i = index"
 		[installedBrowser]="browser"
 		[showDetailAction]="inputData.showDetailAction"
+		[index]="i"
+		[isDetailsExpanded]="i === openPasswordId"
 		(showPasswordForBrowser$)="showPasswordForBrowser($event)">
 </vtr-installed-browser>

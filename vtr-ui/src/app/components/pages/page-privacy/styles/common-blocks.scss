@@ -32,7 +32,7 @@ $topIndent: -5.6rem;
 	text-transform: uppercase;
 	display: inline-block;
 	vertical-align: middle;
-	padding: 1.5rem 3rem;
+	padding: 1.5rem 4rem;
 	min-width: 15rem;
 	max-width: 100%;
 	background: transparent linear-gradient(-270deg, #4980FC 0%, #2E62D9 100%) 0 0 no-repeat;
@@ -44,6 +44,10 @@ $topIndent: -5.6rem;
 	letter-spacing: 0.1rem;
 	text-align: center;
 	font-weight: 500; // TODO check in design
+
+	@media (max-width: 1200px) {
+		padding: 1.5rem 1rem;
+	}
 
 	&:focus,
 	&:hover {

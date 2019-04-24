@@ -24,7 +24,7 @@ interface FigleafDashboard {
 	totalAccounts: number;
 	maskedAccounts: number;
 	blockedTrackers: number;
-	websitesConnectedPrivatly: number;
+	websitesConnectedPrivately: number;
 }
 
 @Injectable({

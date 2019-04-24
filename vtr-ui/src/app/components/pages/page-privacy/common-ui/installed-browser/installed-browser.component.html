@@ -1,14 +1,19 @@
-<div *ngIf="!(!installedBrowser.accountsCount && showDetailAction === 'expand')" class="installed-browser__wrapper">
+<div class="installed-browser__wrapper">
   <div class="installed-browser__collapsed">
     <div class="installed-browser__detail-col">
       <img class="installed-browser__icon" [src]="installedBrowser.img" alt="">
       <div class="installed-browser__description">
-        <p *ngIf="installedBrowser.accountsCount !== null"
+        <p *ngIf="installedBrowser.accountsCount !== null && installedBrowser.accountsCount > 0"
            class="installed-browser__title">
-          {{installedBrowser.accountsCount}}
+          <span class="installed-browser__number">{{installedBrowser.accountsCount}}</span>
           account{{installedBrowser.accountsCount > 1 ? 's': ''}}
           stored in {{installedBrowser.name}}
         </p>
+		<p *ngIf="installedBrowser.accountsCount !== null && installedBrowser.accountsCount === 0"
+		   class="installed-browser__title">
+			No saved accounts in {{installedBrowser.name}}
+		</p>
+		<p *ngIf="installedBrowser.accountsCount === null" class="installed-browser__title">{{installedBrowser.name}}</p>
         <p class="installed-browser__text">
           You should consider a more private place to store your emails and passwords.
         </p>
@@ -24,10 +29,11 @@
     <!--browser has stored passwords-->
     <a *ngIf="showDetailAction === 'link' && installedBrowser.accountsCount"
 	   class="installed-browser__btn"
-	   routerLink="./browser-accounts">
+	   routerLink="./browser-accounts"
+	   [queryParams]="{openId: index}">
 		Show details
 	</a>
-    <button *ngIf="showDetailAction === 'expand'"
+    <button *ngIf="showDetailAction === 'expand' && installedBrowser.accountsCount"
 			class="installed-browser__btn" (click)="toggleDetails()"
 			[class.installed-browser__btn--expanded]="isDetailsExpanded">
 		{{isDetailsExpanded ? 'Hide' : 'Show'}} details
@@ -77,7 +83,10 @@
           </div>
         </div>
       </div>
+		<vtr-try-product-block *ngIf="isFigleafInstalled$" [texts]="tryProductText">
+		</vtr-try-product-block>
     </div>
   </div>
+
 
 </div>

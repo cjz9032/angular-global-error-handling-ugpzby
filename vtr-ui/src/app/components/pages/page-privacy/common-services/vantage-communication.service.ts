@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../../../services/vantage-shell/vantage-shell.service';
-import { catchError, map, tap } from 'rxjs/operators';
-import { EMPTY } from 'rxjs';
+import { catchError, share, tap } from 'rxjs/operators';
+import { EMPTY, from, Observable } from 'rxjs';
 
-enum BrowserList {
-	chrome, firefox
+export enum BrowserListType {
+	chrome = 'chrome',
+	firefox = 'firefox',
+	edge = 'edge'
 }
 
 export interface InstalledBrowsers {
-	browsers: string[];
+	browsers: BrowserListType[];
 }
 
-type BrowserListKey = keyof typeof BrowserList;
+type BrowserListKey = keyof typeof BrowserListType;
 export type AccessiblePasswords = {
 	[browser in BrowserListKey]: number;
 };
@@ -52,12 +54,8 @@ export class VantageCommunicationService {
 			''
 		);
 
-		return this.vantageShellService.sendContractToPrivacyCore<InstalledBrowsers>(contract).pipe(
-			map((response) => response.browsers.map((browser) => ({
-				name: browser,
-				img: `/assets/images/privacy-tab/${browser}.svg`,
-				value: browser
-			}))),
+		return this.sendContractToPrivacyCore<InstalledBrowsers>(contract).pipe(
+			share(),
 			tap((val) => console.log('InstalledBrowsers', val)),
 			catchError((err) => {
 				console.log('InstalledBrowsers err', err);
@@ -75,7 +73,7 @@ export class VantageCommunicationService {
 			})
 		);
 
-		return this.vantageShellService.sendContractToPrivacyCore<AccessiblePasswords>(contract).pipe(
+		return this.sendContractToPrivacyCore<AccessiblePasswords>(contract).pipe(
 			tap((val) => console.log('AccessiblePasswords', val)),
 			catchError((err) => {
 				console.log('AccessiblePasswords err', err);
@@ -94,7 +92,7 @@ export class VantageCommunicationService {
 			})
 		);
 
-		return this.vantageShellService.sendContractToPrivacyCore<MaskedPasswords>(contract).pipe(
+		return this.sendContractToPrivacyCore<MaskedPasswords>(contract).pipe(
 			tap((val) => console.log('MaskedPasswords', val)),
 			catchError((err) => {
 				console.log('MaskedPasswords err', err);
@@ -114,7 +112,7 @@ export class VantageCommunicationService {
 			})
 		);
 
-		return this.vantageShellService.sendContractToPrivacyCore<VisitedWebsites>(contract).pipe(
+		return this.sendContractToPrivacyCore<VisitedWebsites>(contract).pipe(
 			tap((val) => console.log('VisitedWebsites', val)),
 			catchError((err) => {
 				console.log('VisitedWebsites err', err);
@@ -123,11 +121,43 @@ export class VantageCommunicationService {
 		);
 	}
 
+	openInstaller() {
+		if (this.vantageShellService.getPrivacyCore()) {
+			return from(this.vantageShellService.getPrivacyCore().openInstaller());
+		} else {
+			return EMPTY;
+		}
+	}
+
+	openFigleafByUrl(link) {
+		if (this.vantageShellService.getPrivacyCore()) {
+			return from(this.vantageShellService.getPrivacyCore().openFigleafByUrl(link));
+		} else {
+			return EMPTY;
+		}
+	}
+
+	openUri(uri: string) {
+		if (this.vantageShellService.getPrivacyCore()) {
+			return from(this.vantageShellService.getPrivacyCore().openUriInDefaultBrowser(uri));
+		} else {
+			return EMPTY;
+		}
+	}
+
 	private getContractObject(contract: string, command: string, payload?: string) {
 		return {
 			contract,
 			command,
 			payload: payload ? payload : ''
 		};
+	}
+
+	private sendContractToPrivacyCore<T>(contract: { contract: string, command: string, payload: string | Object }): Observable<T> {
+		if (this.vantageShellService.getPrivacyCore()) {
+			return from(this.vantageShellService.getPrivacyCore().sendContractToPlugin(contract)) as Observable<T>;
+		} else {
+			return EMPTY;
+		}
 	}
 }

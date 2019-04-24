@@ -14,6 +14,7 @@ import { TrackingMapService } from '../common-services/tracking-map.service';
 export class MainLayoutComponent implements OnInit, OnDestroy {
 	choseBrowserPopupId = 'choseBrowserPopup';
 	browserList$ = this.choseBrowserService.getBrowserList();
+	isBrowserListEmpty$ = this.choseBrowserService.isBrowserListEmpty();
 
 	constructor(
 		private locationHistoryService: LocationHistoryService,
