@@ -129,7 +129,7 @@
 		</div>
 	</div> -->
 
-	<div *ngIf="showIntelligentCooling===2">
+	<div *ngIf="showIntelligentCooling===2 && !isDesktopMachine">
 		<div class="row py-5 smartsettings-card"
 			id="cooling">
 			<div class="col-10 mx-auto ">
@@ -182,7 +182,7 @@
 		</div>
 	</div>
 
-	<div *ngIf="showIntelligentCooling===3">
+	<div *ngIf="showIntelligentCooling===3 && !isDesktopMachine">
 		<div class="row py-5 smartsettings-card"
 			id="cooling">
 			<div class="col-10 mx-auto ">
@@ -245,7 +245,7 @@
 		</div>
 	</div>
 
-	<div *ngIf="showIntelligentCooling===4">
+	<div *ngIf="showIntelligentCooling===4 && !isDesktopMachine">
 		<div class="row py-5 smartsettings-card"
 			id="cooling">
 			<div class="col-10 mx-auto ">

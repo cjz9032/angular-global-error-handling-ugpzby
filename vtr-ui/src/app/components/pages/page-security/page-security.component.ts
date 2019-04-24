@@ -96,6 +96,7 @@ export class PageSecurityComponent implements OnInit {
 
 		this.createViewModels();
 		this.score = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingScore);
+		this.maliciousWifi = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingMaliciousWifi, 0);
 	}
 
 	@HostListener('window: focus')
@@ -183,7 +184,6 @@ export class PageSecurityComponent implements OnInit {
 	}
 
 	private getMaliciousWifi() {
-		this.maliciousWifi = 0;
 		const wifiHistoryList = this.wifiHistory;
 		if (wifiHistoryList && wifiHistoryList.length !== 0) {
 			this.maliciousWifi = wifiHistoryList.filter(wifi => {
@@ -192,6 +192,7 @@ export class PageSecurityComponent implements OnInit {
 				monthFirst.setDate(1);
 				return wifi.good !== '0' && connected > monthFirst;
 			}).length;
+			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingMaliciousWifi, this.maliciousWifi);
 		}
 	}
 
@@ -203,12 +204,10 @@ export class PageSecurityComponent implements OnInit {
 			this.wifiSecurityLandingViewModel.subject.status,
 			this.windowsHelloLandingViewModel ? this.windowsHelloLandingViewModel.subject.status : null
 		];
-		let flag;
-		let scoreTotal = 0;
 		const antivirusScore = antivirusScoreInit.filter(current => {
 			return current !== undefined && current !== null && current !== '';
 		});
-        const valid = antivirusScore.filter(i => i === 0 || i === 2).length;
+		const valid = antivirusScore.filter(i => i === 0 || i === 2).length;
 		this.score = Math.floor(valid / antivirusScore.length * 100);
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingScore, this.score);
 	}

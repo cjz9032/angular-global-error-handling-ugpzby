@@ -16,6 +16,7 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 	@Input() logo = '';
 	@Input() logoText = '';
 	@Input() action = '';
+	@Input() actionType = '';
 	@Input() actionLink = '';
 	@Input() type = '';
 	@Input() ratioX = 1;
@@ -55,6 +56,15 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 			this.containerHeight = containerCard.nativeElement.firstElementChild.clientWidth * this.ratio;
 			// console.log('RESIZE CONTAINER CARD', this.title, this.ratio, containerCard, this.containerHeight);
 		}
+	}
+
+	linkClicked(actionType: string, actionLink: string) {
+		if (!actionType || actionType !== 'Internal') {
+			return;
+		}
+
+		this.articleClicked(actionLink);
+		return false;
 	}
 
 	articleClicked(articleId) {

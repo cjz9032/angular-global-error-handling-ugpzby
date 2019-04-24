@@ -227,7 +227,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	ngOnInit() {
-		const self = this
+		const self = this;
 		this.translate.stream('lenovoId.user').subscribe((value) => {
 			if (!self.userService.auth) {
 				self.firstName = value;
@@ -254,7 +254,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	isParentActive(item) {
-		console.log('IS PARENT ACTIVE', item.id, item.path);
+		// console.log('IS PARENT ACTIVE', item.id, item.path);
 	}
 
 	showItem(item) {
@@ -294,6 +294,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 					break;
 				case LenovoIdKey.FirstName:
 					this.firstName = notification.payload;
+					break;
 				default:
 					break;
 			}

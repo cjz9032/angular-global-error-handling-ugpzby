@@ -67,9 +67,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		const webView = document.querySelector('#lid-webview') as MsWebView;
 		if (!this.cacheCleared) {
 			// This is the link for SSO production environment
-			//webView.src = 'https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null';
+			webView.src = 'https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null';
 			// This is the link for SSO dev environment
-			webView.src = 'https://uss-test.lenovomm.cn/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null';
+			//webView.src = 'https://uss-test.lenovomm.cn/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null';
 			this.cacheCleared = true;
 		}
 	}
@@ -201,9 +201,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 				if (EventArgs.uri.startsWith('https://passport.lenovo.com/wauthen5/userLogout?')) {
 					return;
 				}
-				if (EventArgs.uri.startsWith('https://uss-test.lenovomm.cn/wauthen5/userLogout?')) {
-					return;
-				}
+				//if (EventArgs.uri.startsWith('https://uss-test.lenovomm.cn/wauthen5/userLogout?')) {
+				//	return;
+				//}
 				self.isBroswerVisible = true;
 				if (EventArgs.srcElement.documentTitle.startsWith('Login success')) {
 					self.captureWebViewContent(webView).then((htmlContent: any) => {

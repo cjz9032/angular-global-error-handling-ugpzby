@@ -39,7 +39,7 @@ export class AntiVirusLandingViewModel {
 			type: 'security',
 		};
 		const setAntivirusStatus = (av: boolean, fw: boolean, currentPage: string) => {
-			if (av !== null && av !== undefined && fw !== null && fw !== undefined) {
+			if (typeof av === 'boolean' && typeof fw === 'boolean') {
 				avStatus.status = av === true ? 0 : 1;
 				avStatus.detail = av === true ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
 				fwStatus.status = fw === true ? 0 : 1;
@@ -51,7 +51,7 @@ export class AntiVirusLandingViewModel {
 				} else {
 					subjectStatus.status = 1;
 				}
-			} else if ((fw === null || fw === undefined) && (av !== null && av !== undefined)) {
+			} else if (typeof fw !== 'boolean' && typeof av === 'boolean') {
 				avStatus.status = av === true ? 0 : 1;
 				avStatus.detail = av === true ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
 				fwStatus.status = null;
@@ -61,7 +61,7 @@ export class AntiVirusLandingViewModel {
 					fwStatus.detail = 'common.securityAdvisor.loading';
 					subjectStatus.status = av === true ? 3 : 1;
 				}
-			} else if ((av === null || av === undefined) && (fw !== null && fw !== undefined)) {
+			} else if (typeof av !== 'boolean' && typeof fw === 'boolean') {
 				fwStatus.status = fw === true ? 0 : 1;
 				fwStatus.detail = fw === true ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
 				avStatus.status = null;

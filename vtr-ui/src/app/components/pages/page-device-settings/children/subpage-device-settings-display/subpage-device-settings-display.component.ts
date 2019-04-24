@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, EventEmitter, NgZone } from '@angular/core';
 import { CameraDetail, ICameraSettingsResponse, CameraFeatureAccess } from 'src/app/data-models/camera/camera-detail.model';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { Subscription } from 'rxjs/internal/Subscription';
@@ -37,6 +37,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public showHideAutoExposureSlider = false;
 	private notificationSubscription: Subscription;
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
+	public shouldCameraSectionDisabled = true;
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	headerMenuItems = [
@@ -50,13 +51,62 @@ export class SubpageDeviceSettingsDisplayComponent
 			path: 'camera'
 		}
 	];
-
+	emptyCameraDetails = [
+		{
+			'brightness':
+			{
+				'autoModeSupported': false,
+				'autoValue': false,
+				'supported': true,
+				'min': 0,
+				'max': 255,
+				'step': 1,
+				'default': 128,
+				'value': 136
+			},
+			'contrast':
+			{
+				'autoModeSupported': false,
+				'autoValue': false,
+				'supported': true,
+				'min': 0,
+				'max': 255,
+				'step': 1,
+				'default': 32,
+				'value': 179
+			},
+			'exposure':
+			{
+				'autoModeSupported': true,
+				'autoValue': true,
+				'supported': true,
+				'min': -11,
+				'max': -3,
+				'step': 1,
+				'default': -6,
+				'value': -5
+			},
+			'focus':
+			{
+				'autoModeSupported': false,
+				'autoValue': false,
+				'supported': false,
+				'min': 0,
+				'max': 0,
+				'step': 0,
+				'default': 0,
+				'value': 0
+			},
+			'permission': false
+		}
+	];
 	constructor(public baseCameraDetail: BaseCameraDetail,
 		private deviceService: DeviceService,
 		// public cd: ChangeDetectorRef,
 		public displayService: DisplayService,
 		private commonService: CommonService,
-		private cd: ChangeDetectorRef) {
+		private cd: ChangeDetectorRef,
+		private ngZone: NgZone) {
 		this.dataSource = new CameraDetail();
 		this.cameraFeatureAccess = new CameraFeatureAccess();
 		this.eyeCareDataSource = new EyeCareMode();
@@ -82,7 +132,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.getCameraPrivacyModeStatus();
 		this.getCameraDetails();
 		this.statusChangedLocationPermission();
-
+		this.displayService.startMonitorForCameraPermission();
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -93,11 +143,6 @@ export class SubpageDeviceSettingsDisplayComponent
 					console.log('DeviceMonitorStatus.CameraStatus', payload);
 					this.dataSource.permission = payload;
 					break;
-				case DeviceMonitorStatus.EyeCareModeStatus:
-					console.log('DeviceMonitorStatus.EyeCareModeStatus', payload);
-					//this.eyeCareModeStatus.permission = payload;
-					this.sunsetToSunriseModeStatus.permission = payload
-					this.cd.detectChanges();
 				default:
 					break;
 			}
@@ -139,9 +184,20 @@ export class SubpageDeviceSettingsDisplayComponent
 			console.log('Inside');
 			this.displayService.getCameraSettingsInfo().then((response) => {
 				console.log('getCameraDetails.then', response);
-				console.log('getCameraDetails.then permission', response);
 				this.dataSource = response;
-				console.log('getCameraDetails.then permission', this.dataSource.permission);
+				if (this.dataSource.permission === true) {
+					this.shouldCameraSectionDisabled = false;
+					console.log('getCameraDetails.then permission', this.dataSource.permission);
+
+				} else {
+					// 	response.exposure.autoValue = true;
+					this.dataSource = this.emptyCameraDetails[0];
+					this.shouldCameraSectionDisabled = true;
+					console.log('no camera permission .then', this.emptyCameraDetails[0]);
+					const privacy = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy);
+					privacy.status = false;
+					this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, privacy);
+				}
 				this.cameraFeatureAccess.showAutoExposureSlider = false;
 				if (this.dataSource.exposure.autoValue === true) {
 					this.cameraFeatureAccess.exposureAutoValue = true;
@@ -151,6 +207,9 @@ export class SubpageDeviceSettingsDisplayComponent
 				if (this.dataSource.exposure.supported === true && this.dataSource.exposure.autoValue === false) {
 					this.cameraFeatureAccess.showAutoExposureSlider = true;
 				}
+				// if (this.dataSource.permission) {
+				// 	this.shouldCameraSectionDisabled = false;
+				// }
 			});
 		} catch (error) {
 			console.error(error.message);
@@ -334,7 +393,7 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.log('getSunsetToSunrise.then', status);
 						this.sunsetToSunriseModeStatus = status;
 						if (status.permission === false) {
-							//	this.displayService.openPrivacyLocation();
+							// 	this.displayService.openPrivacyLocation();
 							this.enableSunsetToSunrise = true;
 						}
 					}).catch(error => {
@@ -428,11 +487,15 @@ export class SubpageDeviceSettingsDisplayComponent
 	// End Camera Privacy
 	public getLocationPermissionStatus(value: any) {
 		console.log('called from loaction service ui', JSON.stringify(value.status));
-		if (value.status === false) {
-			this.enableSunsetToSunrise = true;
-		} else {
-			this.enableSunsetToSunrise = false;
-		}
+		// this.sunsetToSunriseModeStatus.permission = value.status;
+		this.ngZone.run(() => {
+			if (value.status === false) {
+				this.enableSunsetToSunrise = true;
+			} else {
+				this.enableSunsetToSunrise = false;
+			}
+		});
+		// this.cd.detectChanges();
 	}
 
 	public async statusChangedLocationPermission() {

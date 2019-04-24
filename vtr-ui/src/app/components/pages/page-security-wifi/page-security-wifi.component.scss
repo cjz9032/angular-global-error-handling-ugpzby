@@ -110,5 +110,10 @@
 			}
 		}
 	}
+	.vtr-page-right-column{
+		@media #{$mediaquery_X5} {
+			padding: 4rem 4rem 4rem 8.5rem;
+		}
+	}
 
 }
