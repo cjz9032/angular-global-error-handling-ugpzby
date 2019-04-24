@@ -1,8 +1,7 @@
 <div class="vtr-page-security vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main
-				[title]="'common.menu.security.title' | translate"
+			<vtr-header-main [title]="'common.menu.security.title' | translate"
 				[backarrow]="'&lt; '"
 				[back]="'common.ui.back' | translate"></vtr-header-main>
 		</div>
@@ -23,18 +22,15 @@
 								<div class="row">
 									<div class="col-sm-12 col-md-12 col-lg-6 security-widgets-container left">
 
-										<vtr-ui-landing-feature
-											*ngIf="antivirusLandingViewModel.subject.status !== undefined && antivirusLandingViewModel.subject.status !== null"
+										<vtr-ui-landing-feature *ngIf="antivirusLandingViewModel.subject.status !== undefined && antivirusLandingViewModel.subject.status !== null"
 											[feature]='antivirusLandingViewModel'>
 										</vtr-ui-landing-feature>
 
-										<vtr-ui-landing-feature
-											*ngIf="passwordManagerLandingViewModel.subject.status !== undefined && passwordManagerLandingViewModel.subject.status !== null"
+										<vtr-ui-landing-feature *ngIf="passwordManagerLandingViewModel.subject.status !== undefined && passwordManagerLandingViewModel.subject.status !== null"
 											[feature]='passwordManagerLandingViewModel'>
 										</vtr-ui-landing-feature>
 
-										<vtr-ui-landing-feature
-											*ngIf="vpnLandingViewModel.subject.status !== undefined && vpnLandingViewModel.subject.status !== null && region !== 'CN'"
+										<vtr-ui-landing-feature *ngIf="vpnLandingViewModel.subject.status !== undefined && vpnLandingViewModel.subject.status !== null && region !== 'CN'"
 											[feature]='vpnLandingViewModel'>
 										</vtr-ui-landing-feature>
 									</div>
@@ -44,11 +40,9 @@
 											*ngIf="wifiSecurityLandingViewModel.subject.status !== undefined && wifiSecurityLandingViewModel.subject.status !== null">
 											<div class="security-widget-inner">
 												<div class="security-widget-wifi">
-													<vtr-ui-object-title
-														[objects]="wifiSecurityLandingViewModel.subject">
+													<vtr-ui-object-title [objects]="wifiSecurityLandingViewModel.subject">
 													</vtr-ui-object-title>
-													<vtr-ui-list-chevron
-														[items]="wifiSecurityLandingViewModel.statusList">
+													<vtr-ui-list-chevron [items]="wifiSecurityLandingViewModel.statusList">
 													</vtr-ui-list-chevron>
 													<div class="wifi-history"
 														*ngIf="wifiHistory && wifiSecurityLandingViewModel.subject.status === 0 && wifiHistory.length !== 0">
@@ -68,7 +62,8 @@
 																			[icon]="['fas', 'wifi']"></fa-icon>
 																	</div>
 																</div>
-																<div class="col-6 pl-0 ellipsis wifi-good-font" title="{{wifi.ssid}}">{{wifi.ssid}}</div>
+																<div class="col-6 pl-0 ellipsis wifi-good-font"
+																	title="{{wifi.ssid}}">{{wifi.ssid}}</div>
 																<div class="wifi-bg col-4 pl-0 pr-3">
 																	<span class="wifi-good pt-1 pb-1 pr-2 pl-2"
 																		[ngClass]="getWifiStatus(wifi.good)">
@@ -77,21 +72,19 @@
 																</div>
 															</li>
 															<li class="wifi-link"><a routerLink="wifi-security"
-																[queryParams]="{isShowMore:false}">{{'security.landing.seeAllNetwork' | translate}}</a>
+																	[queryParams]="{isShowMore:false}">{{'security.landing.seeAllNetwork' | translate}}</a>
 															</li>
 														</ul>
 													</div>
 												</div>
-												<vtr-ui-list-chevron
-													[items]="homeProtectionLandingViewModel.statusList">
+												<vtr-ui-list-chevron [items]="homeProtectionLandingViewModel.statusList">
 												</vtr-ui-list-chevron>
 												<div class="pull"><img class="coronet-logo"
 														src="{{wifiSecurityLandingViewModel.imgUrl}}" />
 												</div>
 											</div>
 										</div>
-										<vtr-ui-landing-feature
-											*ngIf="windowsHelloLandingViewModel"
+										<vtr-ui-landing-feature *ngIf="windowsHelloLandingViewModel"
 											[feature]='windowsHelloLandingViewModel'>
 										</vtr-ui-landing-feature>
 
@@ -111,6 +104,7 @@
 										[title]="cardContentPositionA.Title"
 										[logoText]="cardContentPositionA.BrandName"
 										[action]="cardContentPositionA.Action"
+										[actionType]="cardContentPositionA.ActionType"
 										[actionLink]="cardContentPositionA.ActionLink"
 										[type]="'corner-article'"
 										[ratioX]="4"
