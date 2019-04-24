@@ -40,6 +40,9 @@
   .custom-control-label {
 	padding-left: 0.5rem;
 	line-height: 1.15;
+	@media #{$mediaquery_14} {
+		line-height: 1.3;
+	}
 
     // rounded square-box background
     &::before {
