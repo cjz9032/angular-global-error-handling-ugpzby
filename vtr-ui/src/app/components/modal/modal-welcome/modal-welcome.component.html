@@ -1,49 +1,55 @@
 <div class="vtr-body vtr-modal-welcome" [ngSwitch]="page">
 	<div *ngSwitchCase="1">
-		<div class="banner row justify-content-center align-items-center">
-			<div class="col-auto">
-				<div class="row justify-content-center align-items-center">
-					<div class="col-auto title1">
-						{{ "welcometutorial.title1" | translate }}
+		<div class="screen1 p-3">
+			<div class="card shadow-sm">
+				<div class="card-body p-0">
+					<div class="banner row justify-content-center align-items-center">
+						<div class="col-auto">
+							<div class="row justify-content-center align-items-center">
+								<div class="col-auto title1">
+									{{ "welcometutorial.title1" | translate }}
+								</div>
+							</div>
+							<div class="row justify-content-center align-items-center ">
+								<div class="col-auto px-1 title1">
+									{{ "welcometutorial.title2" | translate }}
+								</div>
+								<div class="col-auto px-1 title1">
+									{{ "welcometutorial.title3" | translate | uppercase }}
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class="row justify-content-center align-items-center ">
-					<div class="col-auto px-1 title1">
-						{{ "welcometutorial.title2" | translate }}
+					<div class="row py-5">
+						<div class="col-auto title2">
+							{{ "welcometutorial.title" | translate }}
+						</div>
 					</div>
-					<div class="col-auto px-1 title1">
-						{{ "welcometutorial.title3" | translate | uppercase }}
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-auto title2">
-				{{ "welcometutorial.title" | translate }}
-			</div>
-		</div>
-		<div class="row justify-content-center align-items-center py-5">
-			<div class="col-auto title2">
-					<ul>
-						<li>{{"welcometutorial.bullets1" | translate }}</li>
-						<li>{{"welcometutorial.bullets2" | translate }}</li>
-						<li>{{"welcometutorial.bullets3" | translate }}</li>
-					</ul>
+					<div class="row justify-content-center align-items-center py-5">
+						<div class="col-auto title2">
+							<ul>
+								<li>{{"welcometutorial.bullets1" | translate }}</li>
+								<li>{{"welcometutorial.bullets2" | translate }}</li>
+								<li>{{"welcometutorial.bullets3" | translate }}</li>
+							</ul>
 
+						</div>
+					</div>
+					<div class="row justify-content-center align-items-center">
+						<div class="col-auto">
+							<vtr-ui-button label="next"></vtr-ui-button>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="d-flex justify-content-center">
-			<vtr-ui-button
-				metricsEvent="itemClick"
-				metricsParent="modal-welcome"
-				[metricsItem]="'btn.startpersonalizing'"
-				[label]="'NEXT'"
-				(onClick)="next(1)"
-			></vtr-ui-button>
-		</div>
-		<div class="divider"></div>
-		<div class="d-flex justify-content-center align-items-center">
-			TBD--Add progress bar
+			<div class="my-3">
+				<ul id="skill">
+					<li>
+						<span class="bar1 html-css"></span>
+						<span class="bar2"></span>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 
@@ -266,4 +272,6 @@
 			</button>
 		</div>
 	</div>
+
 </div>
+
