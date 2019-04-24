@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QaService } from "../../../services/qa/qa.service";
 import { QA } from "../../../data-models/qa/qa.model";
 import { ActivatedRoute } from "@angular/router";
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-page-support-detail',
@@ -26,11 +27,21 @@ export class PageSupportDetailComponent implements OnInit {
 		]
 	}
 
-	constructor(public qaService: QaService, private activateRoute: ActivatedRoute) {
+	constructor(public qaService: QaService,
+		private translate: TranslateService,
+		private activateRoute: ActivatedRoute) {
+
+		qaService.setTranslationService(this.translate);
+		qaService.qas.forEach(qa => {
+			qa.title = this.translate.instant(qa.title);
+			qa.description = this.translate.instant(qa.description);
+		});
+
 		this.activateRoute.params.subscribe((params) => {
 			this.qa = this.qaService.getById(parseInt(params['id']));
 		})
 	}
+
 
 	ngOnInit() {
 	}

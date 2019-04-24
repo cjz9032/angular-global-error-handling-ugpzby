@@ -24,11 +24,6 @@
 			width: 10rem;
 		}
 
-		@media #{$mediaquery_11} {
-			height: 19rem;
-			width: 19rem;
-		}
-
 		&.checked {
 			border: 1px solid $go;
 			background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
@@ -72,11 +67,6 @@
 			@media #{$mediaquery_9} {
 				margin: .5rem 0rem .8rem 0;
 			}
-			@media #{$mediaquery_11} {
-				margin: 1.5rem 0rem;
-				font-size: 1.6rem;
-				height: 1.9rem;
-			}
 		}
 
 		.icon-container {
@@ -101,11 +91,6 @@
 				height: 4rem;
 				width: 4rem;
 			}
-			@media #{$mediaquery_11} {
-				width: 9rem;
-				height: 9rem;
-				margin: 1.5rem auto;
-			}
 
 			fa-icon {
 				font-size: 4rem;
@@ -124,10 +109,6 @@
 				@media #{$mediaquery_9} {
 					font-size: 2.7rem;
 					line-height: 3.9rem;
-				}
-				@media #{$mediaquery_11} {
-					font-size: 6.2rem;
-					line-height: 8.2rem;
 				}
 			}
 
@@ -159,9 +140,6 @@
 			position: relative;
 			font-size: 1.1rem;
 			font-weight: $weight_medium;
-			@media #{$mediaquery_11} {
-				font-size: 1.6rem;
-			}
 			.off-label {
 				color: $shade_darker;
 			}
