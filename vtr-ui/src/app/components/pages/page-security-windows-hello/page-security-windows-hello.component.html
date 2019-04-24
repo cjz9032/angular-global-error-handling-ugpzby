@@ -106,8 +106,7 @@
 														<div class="col">
 															<div class="text-regular">
 																{{'security.windowsHello.visitAndRegister' | translate}}
-																<span
-																	*vtrTranslate="'security.windowsHello.visitInSettings' | translate">
+																<span *vtrTranslate="'security.windowsHello.visitInSettings' | translate">
 																	<a vtrMetrics
 																		metricsEvent="itemClick"
 																		metricsItem="setUpWindowsHello"
@@ -238,8 +237,7 @@
 												<li>
 													<div class="text-regular">
 														{{'security.windowsHello.visitAndRegister' | translate}}
-														<span
-															*vtrTranslate="'security.windowsHello.visitInSettings' | translate">
+														<span *vtrTranslate="'security.windowsHello.visitInSettings' | translate">
 															<a vtrMetrics
 																metricsEvent="itemClick"
 																metricsItem="setUpWindowsHello"
@@ -292,6 +290,7 @@
 											[title]="cardContentPositionA.Title"
 											[logoText]="cardContentPositionA.BrandName"
 											[action]="cardContentPositionA.Action"
+											[actionType]="cardContentPositionA.ActionType"
 											[actionLink]="cardContentPositionA.ActionLink"
 											[type]="'corner-article'"
 											[ratioX]="4"

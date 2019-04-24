@@ -17,7 +17,8 @@
 									[wifiIsShowMore]="wifiIsShowMore"></wifi-security>
 							</div>
 						</div>
-						<div id="home-security" class="connected-home-container">
+						<div id="home-security"
+							class="connected-home-container">
 							<vtr-connected-home [data]="wifiHomeViewModel"
 								[isShowInvitationCode]="isShowInvitationCode"></vtr-connected-home>
 						</div>
@@ -61,11 +62,12 @@
 													<div class="col">
 
 														<!--Start of Security Health Advisor When LWS is enabled-->
-														<div *ngIf="securityHealthViewModel.isLWSEnabled===undefined" class="loading">
-															<div class="spinner-border text-primary progress-spinner" role="status"></div>
+														<div *ngIf="securityHealthViewModel.isLWSEnabled===undefined"
+															class="loading">
+															<div class="spinner-border text-primary progress-spinner"
+																role="status"></div>
 														</div>
-														<vtr-ui-list-chevron
-															[items]="securityHealthViewModel.homeDevicePosture"
+														<vtr-ui-list-chevron [items]="securityHealthViewModel.homeDevicePosture"
 															[chevronVisibility]='false'
 															[clickable]="false"
 															*ngIf="securityHealthViewModel.isLWSEnabled===true">
@@ -117,7 +119,8 @@
 												</div>
 											</div>
 										</div>
-										<div *ngIf="securityHealthViewModel.isLWSEnabled" class="security-health"></div>
+										<div *ngIf="securityHealthViewModel.isLWSEnabled"
+											class="security-health"></div>
 									</div>
 								</div>
 								<!--end of Security Health Advisor-->
@@ -129,6 +132,7 @@
 											[title]="cardContentPositionA.Title"
 											[logoText]="cardContentPositionA.BrandName"
 											[action]="cardContentPositionA.Action"
+											[actionType]="cardContentPositionA.ActionType"
 											[actionLink]="cardContentPositionA.ActionLink"
 											[type]="'corner-article'"
 											[ratioX]="4"
