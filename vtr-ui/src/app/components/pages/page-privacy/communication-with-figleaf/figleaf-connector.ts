@@ -8,7 +8,7 @@ export interface MessageToFigleaf {
 }
 
 const APP_SERVICE_NAME = 'figleaf.lenovoCompanion';
-const PACKAGE_FAMILY_NAME = 'Lenovo.FigLeaf_f1fkytm63xmwr';
+const PACKAGE_FAMILY_NAME = 'Lenovo.FigLeaf_e83k4pgknp69a';
 
 var onConnectListeners = [];
 var onDisconnectListeners = [];
