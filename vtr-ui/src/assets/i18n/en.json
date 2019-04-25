@@ -51,7 +51,8 @@
 			"back": "BACK",
 			"on": "ON",
 			"off": "OFF",
-			"collapse": "Collapse"
+			"collapse": "Collapse",
+			"expand": "Expand"
 		}
 	},
 	"dashboard": {
