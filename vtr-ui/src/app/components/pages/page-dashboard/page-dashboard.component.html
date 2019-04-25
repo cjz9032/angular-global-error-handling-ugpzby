@@ -9,10 +9,11 @@
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="row">
-					<div [ngClass]="{
+					<!--<div [ngClass]="{
 							'col-sm-12 col-md-7 col-lg-7 col-xl-8 vtr-page-left-column':!deviceService.isArm,
 							'vtr-arm-page': deviceService.isArm
-						}">
+						}">-->
+					<div [ngClass]="'col-sm-12 col-md-7 col-lg-7 col-xl-8 vtr-page-left-column'">
 						<div class="vtr-page-shift-up nmx-40">
 
 							<div class="container-fluid">
@@ -45,6 +46,7 @@
 											[title]="cardContentPositionB.Title"
 											[logoText]="cardContentPositionB.BrandName"
 											[action]="cardContentPositionB.Action"
+											[actionType]="cardContentPositionB.ActionType"
 											[actionLink]="cardContentPositionB.ActionLink"
 											[type]="'corner'"
 											[ratioX]="4"
@@ -58,6 +60,7 @@
 											[title]="cardContentPositionC.Title"
 											[logoText]="cardContentPositionC.BrandName"
 											[action]="cardContentPositionC.Action"
+											[actionType]="cardContentPositionC.ActionType"
 											[actionLink]="cardContentPositionC.ActionLink"
 											[type]="'corner'"
 											[ratioX]="4"
@@ -72,6 +75,7 @@
 										[title]="cardContentPositionD.Title"
 										[logoText]="cardContentPositionD.BrandName"
 										[action]="cardContentPositionD.Action"
+										[actionType]="cardContentPositionD.ActionType"
 										[actionLink]="cardContentPositionD.ActionLink"
 										[type]="'highlight'"
 										[ratioX]="8"
@@ -85,6 +89,7 @@
 										[title]="cardContentPositionE.Title"
 										[logoText]="cardContentPositionE.BrandName"
 										[action]="cardContentPositionE.Action"
+										[actionType]="cardContentPositionE.ActionType"
 										[actionLink]="cardContentPositionE.ActionLink"
 										[type]="'article'"
 										[ratioX]="4"
@@ -96,6 +101,7 @@
 										[title]="cardContentPositionF.Title"
 										[logoText]="cardContentPositionF.BrandName"
 										[action]="cardContentPositionF.Action"
+										[actionType]="cardContentPositionF.ActionType"
 										[actionLink]="cardContentPositionF.ActionLink"
 										[type]="'article'"
 										[ratioX]="4"

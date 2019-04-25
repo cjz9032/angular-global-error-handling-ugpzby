@@ -41,8 +41,8 @@
 											class="badge badge-pill badge-danger button-red line-height-2-5 p-0 pl-3 pr-3">{{'security.wifisecurity.container.disable' | translate}}</span>
 									</h3>
 								</div>
-								<div class="col-sm-6 align-items-center text-right">
-									<vtr-ui-switch-onoff *ngIf="!data.hasWSEverUsed"
+								<div class="col-sm-6 align-items-center text-right sm-device-responsive">
+									<vtr-ui-switch-onoff *ngIf="data.wifiSecurity.state !== 'never-used'"
 										name="wifisecurity"
 										[value]="data.isLWSEnabled"
 										[data]="data"></vtr-ui-switch-onoff>
@@ -152,7 +152,7 @@
 											<div class="connection-name p-1 pl-0 col-sm-12 col-md-7 col-lg-8 col-xl-8">
 												<span title="{{history.ssid}}">{{history.ssid}}</span>
 												<small class="connection-status">
-													{{'security.wifisecurity.container.connect' | translate}} 
+													{{'security.wifisecurity.container.connect' | translate}}
 													{{history.info}}
 												</small>
 											</div>
@@ -206,17 +206,16 @@
 		</div>
 		<div class="row mt-40"
 			*ngIf="!data.isLWSEnabled">
-			<div class="col-sm-12 col-md-12 col-lg-8">
+			<div class="col-12" [ngClass]="{'col-lg-7':data.wifiSecurity.state==='never-used'}">
 				<div class="text-regular">{{ 'security.wifisecurity.container.disableDecribe' | translate }}</div>
 			</div>
-			<div class="col-sm-12 col-md-12 col-lg-4 text-right">
+			<div class="col-sm-12 col-md-12 col-lg-5 text-right" *ngIf="data.wifiSecurity.state==='never-used'">
 				<vtr-ui-button vtrMetrics
 					metricsParent="lenovo-wifi-security"
 					metricsItem="enableWifiSecurity"
 					metricsEvent="itemClick"
 					(click)="enableWifiSecurity()"
-					[label]="'security.wifisecurity.container.button' | translate"
-					*ngIf="!data.hasWSEverUsed"></vtr-ui-button>
+					[label]="'security.wifisecurity.container.button' | translate"></vtr-ui-button>
 			</div>
 		</div>
 	</div>

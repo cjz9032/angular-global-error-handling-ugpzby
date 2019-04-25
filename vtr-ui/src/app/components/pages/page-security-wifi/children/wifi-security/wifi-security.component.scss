@@ -287,6 +287,9 @@
 				h5 {
 					font-size: 1.6rem;
 					font-weight: $weight_bold;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 				}
 
 				.connection-status {
@@ -434,6 +437,12 @@
 		div.wifi:nth-last-child(1):nth-child(even) {
 			border-bottom-right-radius: 0.8rem;
 			border-bottom: 0;
+		}
+	}
+	.sm-device-responsive{
+		@media #{$mediaquery_12} {
+			position: relative;
+			top: -3rem;
 		}
 	}
 }

@@ -19,7 +19,6 @@ export class WifiHomeViewModel {
 	wifiSecurity: WifiSecurity;
 	homeProtection: HomeProtection;
 	isLWSEnabled: boolean;
-	hasWSEverUsed: boolean;
 	allHistorys: Array<phoenix.WifiDetail>;
 	hasMore: boolean;
 	historys: Array<phoenix.WifiDetail>;
@@ -28,17 +27,15 @@ export class WifiHomeViewModel {
 	tryNowEnable = false;
 
 	constructor(wifiSecurity: phoenix.WifiSecurity, homeProtection: phoenix.HomeProtection, private commonService: CommonService) {
-		// commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, 'enabled');
 		const cacheWifiSecurityState = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
 		const cacheWifiSecurityHistory = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys);
 		const cacheWifiSecurityChsConsoleUrl = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionChsConsoleUrl);
-		const cacheWifiSecurityHasEverUsed = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHasEverUsed);
 		const cacheHomeStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus);
 		wifiSecurity.on(EventTypes.wsStateEvent, (value) => {
 			if (value) {
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
 				if (this.wifiSecurity.isLocationServiceOn !== undefined) {
 					this.isLWSEnabled = (value === 'enabled' && this.wifiSecurity.isLocationServiceOn);
-					commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, value);
 				}
 			}
 		});
@@ -54,12 +51,6 @@ export class WifiHomeViewModel {
 				if (this.wifiSecurity.state) {
 					this.isLWSEnabled = (this.wifiSecurity.state === 'enabled' && value);
 				}
-			}
-		});
-		wifiSecurity.on(EventTypes.wsHasEverUsed, (value) => {
-			if (value !== undefined) {
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHasEverUsed, value);
-				this.hasWSEverUsed = value;
 			}
 		});
 		wifiSecurity.on(EventTypes.wsWifiHistoryEvent, (value) => {
@@ -112,12 +103,6 @@ export class WifiHomeViewModel {
 				if (wifiSecurity.isLocationServiceOn !== undefined) {
 					this.isLWSEnabled = (cacheWifiSecurityState === 'enabled' && wifiSecurity.isLocationServiceOn);
 				}
-			}
-			if (wifiSecurity.hasEverUsed !== undefined) {
-				this.hasWSEverUsed = wifiSecurity.hasEverUsed;
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHasEverUsed, wifiSecurity.hasEverUsed);
-			} else if (cacheWifiSecurityHasEverUsed !== undefined) {
-				this.hasWSEverUsed = cacheWifiSecurityHasEverUsed;
 			}
 			if (wifiSecurity.wifiHistory) {
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, wifiSecurity.wifiHistory);

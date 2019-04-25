@@ -23,7 +23,7 @@ interface DevicePostureDetail {
 }
 
 interface WifiSecurityState {
-	state: string; // enabled,disabled
+	state: string; // enabled,disabled,never-used
 	isLocationServiceOn: boolean; // true,false
 	isLWSPluginInstalled: boolean; // true,false
 }
