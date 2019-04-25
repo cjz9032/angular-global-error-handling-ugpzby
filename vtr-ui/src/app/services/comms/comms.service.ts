@@ -36,10 +36,4 @@ export class CommsService {
 		this.devService.writeLog('FLAT GET ENDPOINT: ', url);
 		return this.http.get(url);
 	}
-
-	login() {
-		const url = this.env.ssoLogin + this.env.ssoCallback;
-		this.devService.writeLog('LOGIN: ', url);
-		return this.flatGetCall(url);
-	}
 }
