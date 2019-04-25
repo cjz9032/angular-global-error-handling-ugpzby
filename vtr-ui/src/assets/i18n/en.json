@@ -69,8 +69,11 @@
 			"button": "Give feedback",
 			"form": {
 				"email": "Email (optional)",
-				"comments": "Comments",
-				"button": "Submit"
+				"comments": "Comments...",
+				"button": "Submit",
+				"messages": {
+					"feedbackSuccess": "Thank you for your feedback !"
+				}
 			}
 		},
 		"quickSettings": {
@@ -414,6 +417,10 @@
 					"title": "Camera",
 					"tooltip": "Click here to reset Camera properties to default settings.",
 					"reset": "Reset factory settings"
+				},
+				"recommended": {
+					"title": "推荐更新",
+					"tooltip": "推荐的驱动程序更新使计算机运行保持最佳性能。"
 				},
 				"windows": {
 					"title": "Windows Updates",
