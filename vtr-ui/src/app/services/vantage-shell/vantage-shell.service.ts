@@ -2,9 +2,8 @@
 
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
-import { EventTypes } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
-import { EMPTY, from, Observable } from 'rxjs';
+import { EventTypes } from '@lenovo/tan-client-bridge';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
