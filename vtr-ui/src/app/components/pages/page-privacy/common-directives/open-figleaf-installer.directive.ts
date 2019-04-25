@@ -11,8 +11,8 @@ export class OpenFigleafInstallerDirective {
 
 	@HostListener('click', ['$event']) onClick() {
 		this.vantageCommunicationService.openInstaller().subscribe(
-			(res) => console.log('openInstaller', res),
-			(err) => console.log('openInstaller', err),
+			() => {},
+			(err) => console.error('openInstaller', err),
 		);
 	}
 }

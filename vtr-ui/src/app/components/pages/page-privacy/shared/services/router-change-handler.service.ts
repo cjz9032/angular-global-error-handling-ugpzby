@@ -22,7 +22,7 @@ export class RouterChangeHandlerService {
 			.subscribe((val: NavigationEnd) => {
 				this.currentRoute = this.getCurrentRoute(val.url);
 				this.changeHandler$.next(this.currentRoute);
-			}); // FIXME unsubscribe me
+			});
 	}
 
 	private changeHandler$ = new ReplaySubject<string>(1);

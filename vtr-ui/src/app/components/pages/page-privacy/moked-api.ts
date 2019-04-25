@@ -1,5 +1,3 @@
-// TODO: move this to correct place
-
 if (!window['Windows']) {
 	console.error('no windows in window. Now used mocked data');
 }

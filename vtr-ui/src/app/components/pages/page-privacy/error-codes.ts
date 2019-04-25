@@ -1,1 +1,1 @@
-export const INVALID_TOKEN = 403;
+export const INVALID_TOKEN = 401;

@@ -5,8 +5,6 @@ import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
 import { RouterChangeHandlerService } from '../../shared/services/router-change-handler.service';
 
-// todo delete this
-import config from '../../configInfo.json';
 import { RoutersName } from '../../privacy-routing-name';
 
 interface PageSettings {
@@ -34,9 +32,6 @@ export class MainHeaderComponent implements OnInit, OnDestroy {
 	backButton = false;
 	figLeafIcon = true;
 	showNavigationBlock = false;
-
-	// todo delete this
-	version = config.appVersion;
 
 	@Input() forwardLink: { path: string, label: string };
 	@Input() menuItems: any[];

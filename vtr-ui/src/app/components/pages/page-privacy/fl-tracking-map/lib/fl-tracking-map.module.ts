@@ -12,8 +12,6 @@ import {MapTextComponent} from './map-text/map-text.component';
 import {CommonModule} from '@angular/common';
 import {ImageComponent} from './image/image.component';
 
-// TODO: Add d3
-
 @NgModule({
 	declarations: [
 		MapComponent,

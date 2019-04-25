@@ -94,7 +94,6 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 	}
 
 	tryProductBlockButtonClick(event) {
-		console.log('try figleaf');
 	}
 
 	private getTrackingData() {

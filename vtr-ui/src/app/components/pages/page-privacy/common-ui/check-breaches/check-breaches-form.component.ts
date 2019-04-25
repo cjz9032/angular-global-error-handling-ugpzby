@@ -108,7 +108,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 			this.commonPopupService.open(this.confirmationPopupId);
 		}, (error) => {
 			this.serverError$.next(true);
-			console.log('auth error:', error);
+			console.error('auth error:', error);
 		});
 	}
 

@@ -61,7 +61,6 @@ export class BreachedAccountComponent implements OnInit {
 	}
 
 	detailClickEmit(i) {
-		// TODO replace with real ID
 		this.detailClick.emit(i);
 	}
 }

@@ -72,7 +72,6 @@ export class ChartPieLine {
 
 	style: PieLineStyle;
 
-	// TODO: define PIE type
 	pie: any;
 	protected _chartProps: ChartProps;
 

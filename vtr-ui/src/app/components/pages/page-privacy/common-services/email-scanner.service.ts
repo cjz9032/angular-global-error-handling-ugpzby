@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { BehaviorSubject, EMPTY, Observable, Subject, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, throwError, of } from 'rxjs';
 import { catchError, switchMap, tap } from 'rxjs/operators';
 import { StorageService } from '../shared/services/storage.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -109,7 +109,7 @@ export class EmailScannerService {
 					this.accessTokenService.setAccessToken(response.token);
 					this.validationStatusChanged.next();
 				}, (error) => {
-					console.log('Confirmation Error', error);
+					console.error('Confirmation Error', error);
 				}),
 			);
 	}
@@ -135,8 +135,9 @@ export class EmailScannerService {
 						console.error('Confirmation Error', error);
 						if (error.status === INVALID_TOKEN) {
 							this.accessTokenService.removeAccessToken();
+							return of([]);
 						}
-						return EMPTY;
+						return throwError('get breaches from server error');
 					})
 				);
 		} else {

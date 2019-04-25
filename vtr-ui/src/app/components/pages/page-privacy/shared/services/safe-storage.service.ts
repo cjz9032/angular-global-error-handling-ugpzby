@@ -38,7 +38,7 @@ export class SafeStorageService {
 			const credential = this.vault.retrieve(resource, username);
 			this.vault.remove(credential);
 		} catch (error) {
-			console.log('removePassword error', error);
+			console.error('removePassword error', error);
 		}
 	}
 }

@@ -40,7 +40,6 @@
 		"bootstrap": "^4.2.1",
 		"core-js": "^2.5.4",
 		"d3": "^5.9.2",
-		"fl-tracking-map": "git+ssh://git@gitlab-privacy.zeo.lcl:2222/techb/fl-tracking-map-source.git#v0.0.10",
 		"inversify": "^5.0.1",
 		"jquery": "^3.3.1",
 		"mitt": "^1.1.3",

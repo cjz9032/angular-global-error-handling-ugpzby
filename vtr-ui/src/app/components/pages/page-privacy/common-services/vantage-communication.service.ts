@@ -56,9 +56,8 @@ export class VantageCommunicationService {
 
 		return this.sendContractToPrivacyCore<InstalledBrowsers>(contract).pipe(
 			share(),
-			tap((val) => console.log('InstalledBrowsers', val)),
 			catchError((err) => {
-				console.log('InstalledBrowsers err', err);
+				console.error('InstalledBrowsers err', err);
 				return EMPTY;
 			})
 		);
@@ -74,9 +73,8 @@ export class VantageCommunicationService {
 		);
 
 		return this.sendContractToPrivacyCore<AccessiblePasswords>(contract).pipe(
-			tap((val) => console.log('AccessiblePasswords', val)),
 			catchError((err) => {
-				console.log('AccessiblePasswords err', err);
+				console.error('AccessiblePasswords err', err);
 				return EMPTY;
 			})
 		);
@@ -93,9 +91,8 @@ export class VantageCommunicationService {
 		);
 
 		return this.sendContractToPrivacyCore<MaskedPasswords>(contract).pipe(
-			tap((val) => console.log('MaskedPasswords', val)),
 			catchError((err) => {
-				console.log('MaskedPasswords err', err);
+				console.error('MaskedPasswords err', err);
 				return EMPTY;
 			})
 		);
@@ -113,9 +110,8 @@ export class VantageCommunicationService {
 		);
 
 		return this.sendContractToPrivacyCore<VisitedWebsites>(contract).pipe(
-			tap((val) => console.log('VisitedWebsites', val)),
 			catchError((err) => {
-				console.log('VisitedWebsites err', err);
+				console.error('VisitedWebsites err', err);
 				return EMPTY;
 			})
 		);

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonPopupService } from '../../common-services/popups/common-popup.service';
 import { DescribeStep } from '../low-privacy/low-privacy.component';
 import { PrivacyScoreService } from './privacy-score.service';
@@ -78,6 +78,7 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 		private privacyScoreService: PrivacyScoreService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private vantageCommunicationService: VantageCommunicationService,
+		private changeDetectorRef: ChangeDetectorRef,
 		private commonPopupService: CommonPopupService) {
 	}
 
@@ -89,6 +90,7 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 			.subscribe((scoreParametrs: ScoreParametrs) => {
 				this.scoreParametrs = scoreParametrs;
 				this.setDataAccordingToScore(scoreParametrs);
+				this.changeDetectorRef.detectChanges();
 			});
 
 		this.communicationWithFigleafService.isFigleafReadyForCommunication$

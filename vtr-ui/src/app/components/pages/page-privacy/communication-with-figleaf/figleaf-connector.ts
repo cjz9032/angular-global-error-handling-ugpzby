@@ -13,7 +13,7 @@ const PACKAGE_FAMILY_NAME = 'Lenovo.FigLeaf_f1fkytm63xmwr';
 var onConnectListeners = [];
 var onDisconnectListeners = [];
 var reconnectTimer = null;
-const RECONNECT_TIMEOUT = 6000;
+const RECONNECT_TIMEOUT = 10000;
 var connection = null;
 var serviceClosedCount = 0;
 
@@ -37,10 +37,10 @@ class FigleafConnector {
 		return new Promise((resolve, reject) => {
 			connection.sendMessageAsync(message).then((response) => {
 				if (response.status === Windows.ApplicationModel.AppService.AppServiceResponseStatus.success) {
-					console.log('responseMessage from FigLeaf', response.message.result);
 					const responseMessage = JSON.parse(response.message.result);
 					resolve(responseMessage);
 				} else {
+					connection = null;
 					this.disconnectFromFigleaf();
 					reject('request message to figleaf failed');
 				}
@@ -49,7 +49,6 @@ class FigleafConnector {
 	}
 
 	connect() {
-		console.log('CONNECT');
 		if (connection) {
 			connection.close();
 		}
@@ -61,20 +60,21 @@ class FigleafConnector {
 			if (connectionStatus === Windows.ApplicationModel.AppService.AppServiceConnectionStatus.success) {
 				connection.onserviceclosed = this.serviceClosedCallback;
 				connection.onrequestreceived = this.requestReceivedCallback;
-				console.log('connection established');
 				onConnectListeners.forEach((cb) => {
 					cb();
 				});
 				serviceClosedCount = 0;
 			} else {
+				connection = null;
 				this.disconnectFromFigleaf();
 			}
 		});
 	}
 
 	disconnect() {
-		console.log('disconnect');
-		connection.close();
+		if (connection) {
+			connection.close();
+		}
 	}
 
 	private disconnectFromFigleaf() {
@@ -85,7 +85,9 @@ class FigleafConnector {
 	}
 
 	private reconnect() {
-		console.log('reconnect');
+		if (connection) {
+			return;
+		}
 		clearTimeout(reconnectTimer);
 		reconnectTimer = setTimeout(() => {
 			this.connect();
@@ -93,6 +95,7 @@ class FigleafConnector {
 	}
 
 	private serviceClosed() {
+		connection = null;
 		this.connect();
 		if (serviceClosedCount >= 1) {
 			this.disconnectFromFigleaf();

@@ -51,7 +51,6 @@ export class DataKnowledgeService {
 					result[item.domains[0]] = item;
 					return result;
 				}, {})),
-				tap((response) => console.log('dataKnowledgeCache$', response)),
 				shareReplay(1)
 			);
 		}
