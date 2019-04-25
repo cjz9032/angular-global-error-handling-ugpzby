@@ -14,8 +14,8 @@
 				[enableSlider]="enableSlider"
 				[minValue]="eyeCareModeSettings.minimum"
 				[maxValue]="eyeCareModeSettings.maximum"
-				[minValueLegend]="'Warm (Better for eyes)'"
-				[maxValueLegend]="'Cold'"
+				[minValueLegend]="'device.deviceSettings.displayCamera.display.eyeCareMode.options.warm' | translate"
+				[maxValueLegend]="'device.deviceSettings.displayCamera.display.eyeCareMode.options.cold' | translate"
 				[(value)]="eyeCareModeSettings.current"
 				(change)="onEyeCareTemparatureChange($event)"
 				(valueChange)="onEyeCareTemparatureValueChange($event)">
@@ -33,7 +33,9 @@
 					metricsParent="eye-care-mode"
 					metricsItem="btn.eye-care-mode.ResetTemparature"
 					[isFullWidth]="false"
-					[label]="'Reset Color Temperature'"></vtr-ui-button>
+					[label]="'device.deviceSettings.displayCamera.display.eyeCareMode.reset' | translate">
+				</vtr-ui-button>
+
 			</div>
 
 		</div>
@@ -49,7 +51,9 @@
 		<label class="custom-control-label"
 			for="cb-eye-care-schedule">
 			<span class="text-capitalize">
-				Schedule eye care mode from sunset to sunrise {{sunriseToSunsetText}}
+				<!-- Schedule eye care mode from sunset to sunrise  -->
+				{{'device.deviceSettings.displayCamera.display.eyeCareMode.onSunsetToSunriseScheduleDescription' | translate}}
+				{{sunriseToSunsetText}}
 			</span>
 		</label>
 	</div>
@@ -63,7 +67,8 @@
 		<label class="custom-control-label"
 			for="cb-eye-care-schedule">
 			<span class="text-capitalize">
-				Schedule eye care mode from sunset to sunrise {{sunriseToSunsetText}}
+				{{'device.deviceSettings.displayCamera.display.eyeCareMode.onSunsetToSunriseScheduleDescription' | translate}}
+				<!-- Schedule eye care mode from sunset to sunrise --> {{sunriseToSunsetText}}
 			</span>
 		</label>
 	</div>

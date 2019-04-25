@@ -215,9 +215,15 @@
 				"powerSmartSettings": {
 					"title": "电源智能设置",
 					"subtitle": "智能散热",
+					"subtitle1": "Battery & Quiet",
 					"description1": "此功能动态调节散热设置以满足您的需求。此功能开启时，在手持或空闲状态下可调节设置使设备保持较低温度或较低噪声。而设备放置在稳定平面上时，此功能可优化性能。此功能关闭时，您可以手动设置散热优先级。",
 					"description2": "智能散热可调节风扇速度、最高表面温度和性能。此功能具有以下模式，且现在支持通过 Windows 性能电源滑块访问。",
-					"gotoWindows": "转到 Windows 设置",
+					"description3": "Battery & Quiet lorem ipsum is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+					"readMore": "Read more.",
+					"gotoWindows": {
+						"title": "转到 Windows 设置",
+						"modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
+					},
 					"intelligentCooling": {
 						"title": "智能散热",
 						"description": "",
@@ -230,6 +236,13 @@
 							"line1": "安静模式：滑块位于最左边。降低风扇速度和性能以使计算机温度更低、更安静，并且可获得最佳的电池使用时间。",
 							"line2": "平衡模式：滑块位于中央。以动态方式平衡风扇速度和性能以获得最佳体验。",
 							"line3": "性能模式：滑块位于最右边。提高风扇速度和允许的表面温度以获得最大性能。"
+						}
+					},
+					"nonintelligentCooling": {
+						"options": {
+							"intelligentCooling": "INTELLIGENT COOLING",
+							"extremeCooling": "EXTREME PERFORMANCE",
+							"battery&Quite": "BATTERY & QUIET"
 						}
 					}
 				},
@@ -296,6 +309,7 @@
 					"description": "根据您使用的不同应用程序自动调节音频设置。",
 					"dolby": {
 						"title": "自动 Dolby 音频设置",
+						"tooltip": "Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
 						"options": {
 							"dynamic": "动态",
 							"movie": "影片",
@@ -304,10 +318,17 @@
 							"voice": "语音"
 						}
 					},
-					"voip": "自动 VoIP 音频优化"
+					"voip": {
+						"title": "自动 VoIP 音频优化",
+						"tooltip": "Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality."
+					}
 				},
 				"microphone": {
 					"title": "麦克风",
+					"note": {
+						"title": "Note",
+						"description": "Lenovo Vantage does not have permission to access your microphone. Please turn on access to your microphone for the Lenovo Vantage app."
+					},
 					"microphone": {
 						"title": "麦克风",
 						"tooltip": "可以通过调整麦克风音量并指定合适的模式来定制您的麦克风效果。"
@@ -365,12 +386,20 @@
 							"cold": "冷"
 						},
 						"reset": "重置温度",
-						"tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。"
+						"tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。",
+						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+						"note": {
+							"title": "Note",
+							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+						}
 					}
 				},
 				"camera": {
 					"title": "摄像头",
-					"note": "注：Lenovo Vantage 无权访问您的摄像头。请允许 Lenovo Vantage 应用访问您的摄像头。",
+					"note": {
+						"title": "注",
+						"description": "Lenovo Vantage 无权访问您的摄像头。请允许 Lenovo Vantage 应用访问您的摄像头。"
+					},
 					"url": "转到 Windows 隐私设置",
 					"cameraPrivacy": {
 						"title": "摄像头隐私模式",
@@ -384,7 +413,8 @@
 					"brightness": "亮度",
 					"contrast": "对比度",
 					"autoExposure": "自动曝光",
-					"autoFocus": "自动对焦"
+					"autoFocus": "自动对焦",
+					"notAvailable": "Camera Not Available"
 				}
 			}
 		},

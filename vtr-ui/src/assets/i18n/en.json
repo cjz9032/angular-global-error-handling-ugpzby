@@ -215,9 +215,15 @@
 				"powerSmartSettings": {
 					"title": "Power Smart Settings",
 					"subtitle": "INTELLIGENT COOLING",
+					"subtitle1": "Battery & Quiet",
 					"description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
 					"description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
-					"gotoWindows": "Go to windows settings",
+					"description3": "Battery & Quiet lorem ipsum is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+					"readMore": "Read more.",
+					"gotoWindows": {
+						"title": "Go to windows settings",
+						"modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
+					},
 					"intelligentCooling": {
 						"title": "Intelligent cooling",
 						"description": "",
@@ -230,6 +236,13 @@
 							"line1": "Quiet mode: Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
 							"line2": "Balanced mode: Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
 							"line3": "Performance mode: Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+						}
+					},
+					"nonintelligentCooling": {
+						"options": {
+							"intelligentCooling": "INTELLIGENT COOLING",
+							"extremeCooling": "EXTREME PERFORMANCE",
+							"battery&Quite": "BATTERY & QUIET"
 						}
 					}
 				},
@@ -296,6 +309,7 @@
 					"description": "Automatically adjust audio settings according to different apps you are using.",
 					"dolby": {
 						"title": "Automatic Dolby Audio settings",
+						"tooltip": "Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
 						"options": {
 							"dynamic": "DYNAMIC",
 							"movie": "MOVIE",
@@ -304,10 +318,17 @@
 							"voice": "VOICE"
 						}
 					},
-					"voip": "Automatic Audio Optimization for VoIP"
+					"voip": {
+						"title": "Automatic Audio Optimization for VoIP",
+						"tooltip": "Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality."
+					}
 				},
 				"microphone": {
 					"title": "Microphone",
+					"note": {
+						"title": "Note",
+						"description": "Lenovo Vantage does not have permission to access your microphone. Please turn on access to your microphone for the Lenovo Vantage app."
+					},
 					"microphone": {
 						"title": "Microphone",
 						"tooltip": "You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode."
@@ -365,12 +386,20 @@
 							"cold": "Cold"
 						},
 						"reset": "Reset temperature",
-						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain."
+						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
+						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+						"note": {
+							"title": "Note",
+							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+						}
 					}
 				},
 				"camera": {
 					"title": "Camera",
-					"note": "Note: Lenovo Vantage does not have permissions to access your camera. Please turn on access to your camera for the Lenovo Vantage app.",
+					"note": {
+						"title": "Note",
+						"description": "Lenovo Vantage does not have permissions to access your camera. Please turn on access to your camera for the Lenovo Vantage app."
+					},
 					"url": "Go to windows privacy settings",
 					"cameraPrivacy": {
 						"title": "Camera privacy mode",
@@ -384,7 +413,8 @@
 					"brightness": "Brightness",
 					"contrast": "Contrast",
 					"autoExposure": "Auto Exposure",
-					"autoFocus": "Auto focus"
+					"autoFocus": "Auto focus",
+					"notAvailable": "Camera Not Available"
 				}
 			}
 		},
