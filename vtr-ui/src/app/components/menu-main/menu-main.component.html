@@ -38,8 +38,9 @@
 							[metricsItem]="item.metricsItem"
 							routerLink="/{{item.path}}"
 							routerLinkActive="active">
-							<fa-icon [icon]="item.icon"
+							<fa-icon *ngIf="item.icon[0]==='icon'" [icon]="item.icon"
 								class="fa-icon"></fa-icon>
+							<span *ngIf="item.icon[0]==='icomoon'" [ngClass]="[item.icon[0],item.icon[1]]"></span>
 							{{item.label | translate}}
 						</a>
 					</li>

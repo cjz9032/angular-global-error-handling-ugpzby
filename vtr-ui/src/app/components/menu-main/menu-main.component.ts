@@ -145,7 +145,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			id: 'privacy',
 			label: 'common.menu.privacy',
 			path: 'privacy',
-			icon: ['fal', 'eye'],
+			icon: ['icomoon', 'icomoon-LE-Figleaf2x'],
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.privacy',
