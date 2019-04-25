@@ -231,12 +231,17 @@
 
 .welcome-modal-size .modal-dialog {
 	top: $modal_top_margin;
-	max-width: 70rem !important;
+	max-width: 60rem !important;
 	margin: 0 auto;
 	overflow: hidden;
 	min-height: 60rem;
+	border: 0;
 }
 
+// added to hide the unwanted border in overlay welcome tutorial and Feedabck page
+.modal-content{
+	border:0;
+}
 // override for bootstrap modal size
 .lenovo-id-modal-size .modal-dialog {
 	top: 3.5rem;

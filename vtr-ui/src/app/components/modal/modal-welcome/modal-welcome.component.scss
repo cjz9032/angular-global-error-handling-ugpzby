@@ -1,11 +1,17 @@
 @import "../../../app.theme.scss";
 
 .vtr-modal-welcome {
-	.container{
+	border: none;
+	// scroll-behavior: auto;
+	// overflow-y:scroll;
 
-		width: 50rem;
-		height: 50rem;
+	.container{
+		width: 55em;
+		height: 55rem;
+		margin: 0 auto;
+		border: none;
 	}
+
 	.banner{
 		border-top-left-radius:1rem;
 		border-top-right-radius:1rem;
@@ -21,6 +27,7 @@
 	.card{
 		border-radius:1rem;
 	}
+
 	/************** common *************/
 	.title {
 		color: $shade_blue;
@@ -32,15 +39,12 @@
 	.title1 {
 		color: $light;
 		font-size: 3rem;
-		text-align: center;
 		font-family: 'Segoe UI';
 	}
 	.title2 {
 		color: $shade_darker;
 		font-size: 1.7rem;
-		text-align: center;
 		font-family: 'Segoe UI';
-
 	}
 	.title3 {
 		color: $dark;
@@ -51,15 +55,16 @@
 	}
 	.title4 {
 		color: $light_grey;
-		font-size: 1.7rem;
+		font-size: 2rem;
 		text-align: center;
 		font-family: 'Segoe UI';
 	}
 
 	.centered {
 		position: absolute;
-		top: 15rem;
-		left:25rem;
+		top: 12rem;
+		left: 30rem;
+		transform: translate(-50%, -50%);
 	}
 	.subtitle {
 		color: $dark;
@@ -187,7 +192,6 @@
 		top: 1rem;
 	}
 
-
 	.button {
 		top: 50%;
 		transform: translateY(-50%);
@@ -195,13 +199,17 @@
 	}
 
 	.imageheader1 {
-		height: 16rem;
-		width: 40rem;
+		//padding-top: 1rem;
+		height: 25rem;
+		width: 50rem;
+		border-radius: 1rem;
 	}
 
 	.imageheader2 {
-		height: 10rem;
-		width: 40rem;
+		//padding-top: 1rem;
+		height: 12rem;
+		width: 50rem;
+		border-radius: 1rem;
 	}
 	.padding1{
 		padding-top: 3.4rem;
@@ -232,6 +240,7 @@
 		padding-top: 12.0rem;
 		// padding-bottom: 3.2rem;
 	}
+
 
 	#skill {
 		list-style: none;
@@ -308,6 +317,7 @@
 
 
 	@-webkit-keyframes html-css        { 0%  { width:0px;} 100%{ width:90%;}  }
+
 
 
 }
