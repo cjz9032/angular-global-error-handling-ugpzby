@@ -117,10 +117,10 @@
 							[tooltipText]="'device.deviceSettings.displayCamera.camera.camera.tooltip' | translate"
 							(resetClick)="resetCameraSettings()"
 							[resetTextAsButton]="true"
-							[disabledAll]="shouldCameraSectionDisabled" >
+							[disabledAll]="shouldCameraSectionDisabled">
 							<div class="row">
 								<div class="col-12">
-										<vtr-widget-permission-note [noteTitle]="'Note'"
+									<vtr-widget-permission-note [noteTitle]="'Note'"
 										[description]="'Lenovo Vantage does not have
 											permissions to access your camera. Please turn on access
 											to your camera for the Lenovo Vantage app.'"
@@ -133,7 +133,8 @@
 										(brightnessChange)="onBrightnessChange($event)"
 										(contrastChange)="onContrastChange($event)"
 										(exposureChange)="onCameraExposureValueChange($event)"
-										(exposureToggle)="onCameraAutoExposureToggle($event)" [disabledAll]="shouldCameraSectionDisabled" >
+										(exposureToggle)="onCameraAutoExposureToggle($event)"
+										[disabledAll]="shouldCameraSectionDisabled">
 									</vtr-camera-control>
 								</div>
 							</div>
