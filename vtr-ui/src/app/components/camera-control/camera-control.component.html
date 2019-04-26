@@ -1,13 +1,16 @@
 <div class="vtr-camera-control">
 	<div class="row">
 		<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 pl-0 pr-0">
-			<div class="camera-preview" *ngIf="!disabledAll">
-				<video *ngIf="!cameraDetail.isPrivacyModeEnabled"
-					#cameraPreview
+			<div class="camera-preview"
+				[hidden]="disabledAll">
+				<video #cameraPreview
 					class="feed"></video>
 			</div>
-			<div class="camera-preview"  *ngIf="disabledAll">
-				 <img  class="feed disable" src="../../../assets/images/camera-disable.png" alt="Camera Not Available"/>
+			<div class="camera-preview"
+				*ngIf="disabledAll">
+				<img class="feed disable"
+					src="../../../assets/images/camera-disable.png"
+					alt="Camera Not Available" />
 			</div>
 		</div>
 		<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
@@ -47,7 +50,8 @@
 							Auto Exposure
 						</div>
 						<div class="float-right">
-							<vtr-ui-switch-onoff [value]="cameraFeatureAccess.exposureAutoValue" [disabled]="disabledAll"
+							<vtr-ui-switch-onoff [value]="cameraFeatureAccess.exposureAutoValue"
+								[disabled]="disabledAll"
 								(toggle)="onAutoExposureChange($event)"></vtr-ui-switch-onoff>
 						</div>
 					</div>
