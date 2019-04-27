@@ -11,7 +11,7 @@ export class VpnLandingViewModel {
 	imgUrl = '../../../../assets/images/surfeasy-logo.svg';
 	constructor(vpnModel: phoenix.Vpn, commonService: CommonService, translate: TranslateService) {
 		const vpnStatus = {
-			status: 2,
+			status: 4,
 			detail: 'common.securityAdvisor.loading', // installed or not-installed
 			path: 'security/internet-protection',
 			title: 'security.landing.vpnVirtual',

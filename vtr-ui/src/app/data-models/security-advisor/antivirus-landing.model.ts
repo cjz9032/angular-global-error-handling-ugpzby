@@ -20,14 +20,14 @@ export class AntiVirusLandingViewModel {
 	currentPage: string;
 	constructor(avModel: phoenix.Antivirus, commonService: CommonService, translate: TranslateService) {
 		const avStatus = {
-			status: 2,
+			status: 4,
 			detail: 'common.securityAdvisor.loading',
 			path: 'security/anti-virus',
 			title: 'common.securityAdvisor.antiVirus',
 			type: 'security',
 		};
 		const fwStatus = {
-			status: 2,
+			status: 4,
 			detail: 'common.securityAdvisor.loading',
 			path: 'security/anti-virus',
 			title: 'security.landing.firewall',
