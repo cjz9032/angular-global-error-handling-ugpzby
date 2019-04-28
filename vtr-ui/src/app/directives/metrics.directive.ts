@@ -17,10 +17,6 @@ export class MetricsDirective {
 
 	private metrics: any;
 
-
-
-
-
 	@Input() metricsItem: string;
 	@Input() metricsEvent: string;
 	@Input() metricsValue: string;
@@ -43,8 +39,9 @@ export class MetricsDirective {
 		};
 		const eventName = this.metricsEvent.toLowerCase();
 		switch (eventName) {
+			case 'featureclick':
 			case 'itemclick': {
-				data.ItemType = 'ItemClick';
+				data.ItemType = 'FeatureClick';
 				data.ItemName = this.metricsItem;
 				data.ItemParent = this.metricsParent;
 				if (this.metricsParam) {
@@ -55,8 +52,9 @@ export class MetricsDirective {
 				}
 			}
 			break;
+			case 'articleclick':
 			case 'docclick': {
-				data.ItemType = 'DocClick';
+				data.ItemType = 'ArticleClick';
 				data.ItemParent = this.metricsParent;
 				if(typeof this.viewOrderService[this.metricsParent]==='undefined'){
 
@@ -92,7 +90,6 @@ export class MetricsDirective {
 
 	@HostListener('click', ['$event.target'])
 	onclick(target) {
-		 console.log('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
 		if(!this.metricsParent){
 			this.metricsParent = this.activatedRoute.snapshot.data['pageName'];
 		}
@@ -100,9 +97,6 @@ export class MetricsDirective {
 		if (this.metrics && this.metrics.sendAsync) {
 			this.metrics.sendAsync(data);
 		}
-
-		// for debug
-		console.log('------reporting metrics------\n'.concat(JSON.stringify(data)));
 	}
 
 
