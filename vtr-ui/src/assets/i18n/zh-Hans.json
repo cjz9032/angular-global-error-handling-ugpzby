@@ -437,7 +437,7 @@
 					"success": "All Updates were installed correctly",
 					"fail": {
 						"title": "Some updates were not installed correctly.",
-						"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off computer when installing these updates."
+						"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
 					}
 				}
 			}
