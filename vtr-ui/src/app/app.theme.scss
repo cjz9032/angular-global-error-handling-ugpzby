@@ -89,6 +89,7 @@ $mediaquery_11: "only screen and (max-width: 768px)";
 $mediaquery_12: "only screen and (max-width: 575px)";
 $mediaquery_13: "only screen and (min-width: 576px) and (max-width : 735px)";
 $mediaquery_14: "only screen and (min-width: 768px) and (max-width : 1366px) and (max-resolution: 125dpi)";
+$mediaquery_15: "only screen and (max-width: 767px)";
 
 $mediaquery_X1: "only screen and (min-width: 800px) and (max-width : 1200px)";
 $mediaquery_X2: "only screen and (min-width: 769px) and (max-width : 966px)";
@@ -152,8 +153,8 @@ $percent_20_dark: $danger_dark;
 $percent_20_light: $danger_light;
 $percent_25_dark: $danger_dark;
 $percent_25_light: $danger_light;
-$percent_33_dark: $danger_dark;
-$percent_33_light: $danger_light;
+$percent_33_dark: $warning_dark;
+$percent_33_light: $warning_light;
 $percent_40_dark: $warning_dark;
 $percent_40_light: $warning_light;
 $percent_50_dark: $warning_dark;

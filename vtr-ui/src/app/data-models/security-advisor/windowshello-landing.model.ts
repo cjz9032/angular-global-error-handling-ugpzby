@@ -23,7 +23,7 @@ export class WindowsHelloLandingViewModel {
 		translate: TranslateService
 	) {
 		const whStatus = {
-			status: 2,
+			status: 4,
 			detail: 'common.securityAdvisor.loading', // active or inactive
 			path: 'security/windows-hello',
 			title: 'security.landing.fingerprint',
