@@ -55,6 +55,30 @@
 			"expand": "Expand"
 		}
 	},
+	"tutorial": {
+		"almostThere": "Almost there!",
+		"para1": "Just a few more buttons to press before we can have liftoff.",
+		"para2": "Before we can give you the most optimal experience there are still a few things to setup.",
+		"personalise": "START PERSONALIZING",
+		"howIsitUsed": "How will you use it?",
+		"howMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
+		"business": "BUSINESS",
+		"personal": "PERSONAL",
+		"custom": "CUSTOM",
+		"skip": "SKIP",
+		"next": "NEXT",
+		"interests": "What are your interests?",
+		"howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
+		"games": "GAMES",
+		"news": "NEWS",
+		"entertainment": "ENTERTAINMENT",
+		"arts": "ARTS",
+		"technology": "TECHNOLOGY",
+		"politics": "POLITICS",
+		"sports": "SPORTS",
+		"regionalNews": "REGIONAL NEWS",
+		"technology": "TECHNOLOGY"
+	},
 	"dashboard": {
 		"headerMain": {
 			"title": "Looking energized today "

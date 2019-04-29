@@ -55,6 +55,30 @@
 			"expand": "Expand"
 		}
 	},
+	"tutorial": {
+		"almostThere": "马上就要成功了！",
+		"para1": "只需再按几个按钮就可以完成啦。",
+		"para2": "在获得最佳体验之前，还有几项内容需要设置。​",
+		"personalise": "开始个性化​",
+		"howIsitUsed": "您使用它的目的是什么？",
+		"howMachinUsed": "请单击一项符合您使用此计算机的用途描述",
+		"business": "商务",
+		"personal": "个人",
+		"custom": "自定义",
+		"skip": "跳过",
+		"next": "下一步",
+		"interests": "您感兴趣的是什么？",
+		"howOnesMachinUsed": "请单击一项符合您使用此计算机的用途描述",
+		"games": "游戏",
+		"news": "新闻",
+		"entertainment": "娱乐",
+		"arts": "艺术",
+		"technology": "技术",
+		"politics": "政治",
+		"sports": "体育",
+		"regionalNews": "地方新闻",
+		"technology": "技术"
+	},
 	"dashboard": {
 		"headerMain": {
 			"title": "今天也是活力满满的一天 "
