@@ -74,7 +74,7 @@
 			top: 116 / 182 * 100%;
 			left: 40 / 430 * 100%;
 			font-size: 1.3rem;
-			font-weight: $weight_medium;
+			font-weight: $weight_bold;
 			cursor: pointer;
 			text-transform: uppercase;
 
@@ -85,7 +85,8 @@
 					text-decoration: none;
 
 					.link-label {
-						border-bottom: .2rem solid transparent;
+						padding-bottom: .2rem;
+						border-bottom: .2rem solid $main;
 					}
 				}
 
