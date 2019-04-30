@@ -64,7 +64,7 @@ export class PageDashboardComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		const self = this
+		const self = this;
 		this.translate.stream('lenovoId.user').subscribe((value) => {
 			if (!self.userService.auth) {
 				self.firstName = value;
@@ -511,6 +511,7 @@ export class PageDashboardComponent implements OnInit {
 					break;
 				case LenovoIdKey.FirstName:
 					this.firstName = notification.payload;
+					break;
 				default:
 					break;
 			}
