@@ -45,6 +45,9 @@
 					@media #{$mediaquery_X3} {
 						padding: 2rem;
 					}
+					@media #{$mediaquery_X4} {
+						padding: 2rem;
+					}
 
 					.title {
 						color: $light;
@@ -97,7 +100,7 @@
 				.inner-content {
 					position: relative;
 					z-index: 1;
-					padding: 3rem;
+					padding: 2rem;
 					height: 100%;
 					@media #{$mediaquery_X1} {
 						padding: 2rem;
@@ -105,6 +108,9 @@
 					@media #{$mediaquery_10} {
 						padding: 1.5rem 2rem;
 					}
+					// @media #{$mediaquery_17} {
+					// 	padding: 1.5rem 2rem;
+					// }
 
 					.title {
 						color: $light;
@@ -225,7 +231,6 @@
 						text-decoration: none;
 					}
 					@media #{$mediaquery_7} {
-						height: 3rem;
 						overflow: hidden;
 						text-overflow: ellipsis;
 						white-space: nowrap;
@@ -333,9 +338,18 @@
 			color: $main_dark;
 			font-size: 2.5rem;
 			font-weight: $weight_bold;
-			@media #{$mediaquery_X3} {
+			@media #{$mediaquery_X4} {
 				font-size: 2rem;
 			}
+			@media #{$mediaquery_X7} {
+				font-size: 2rem;
+			}
+			@media #{$mediaquery_X11} {
+				font-size: 2rem;
+			}
+			// @media #{$mediaquery_17} {
+			// 	font-size: 1.8rem;
+			// }
 		}
 
 		.description {
@@ -346,9 +360,18 @@
 		.caption {
 			color: $main_shade;
 			font-size: 2.2rem;
-			@media #{$mediaquery_X3} {
+			@media #{$mediaquery_X4} {
 				font-size: 1.8rem;
 			}
+			@media #{$mediaquery_X7} {
+				font-size: 1.8rem;
+			}
+			@media #{$mediaquery_X11} {
+				font-size: 1.8rem;
+			}
+			// @media #{$mediaquery_17} {
+			// 	font-size: 1.6rem;
+			// }
 		}
 
 		.logo {
