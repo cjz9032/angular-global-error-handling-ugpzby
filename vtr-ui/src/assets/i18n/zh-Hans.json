@@ -339,8 +339,8 @@
 							"dynamic": "动态",
 							"movie": "影片",
 							"music": "音乐",
-							"game": "游戏",
-							"voice": "语音"
+							"games": "游戏",
+							"voip": "语音"
 						}
 					},
 					"voip": {
@@ -378,10 +378,10 @@
 						"title": "优化麦克风：",
 						"tooltip": "配置麦克风效果以增强不同场景和环境下的音频体验。",
 						"options": {
-							"voiceRecoginition": "语音识别",
-							"onlyMyVoice": "仅我的语言",
-							"normal": "正常",
-							"multipleVoices": "多个语音"
+							"VoiceRecognition": "语音识别",
+							"OnlyMyVoice": "仅我的语言",
+							"Normal": "正常",
+							"MultipleVoices": "多个语音"
 						}
 					}
 				}
