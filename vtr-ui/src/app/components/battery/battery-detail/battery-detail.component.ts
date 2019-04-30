@@ -82,6 +82,13 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		});
 	}
 
+	isValid(val: number) {
+		if(val == undefined || val === 0) {
+			return false;
+		}
+		return true;
+	}
+
 	ngOnDestroy() {
 		//clearTimeout(this.batteryTimer);
 		if (this.notificationSubscription) {

@@ -34,8 +34,8 @@
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.chargeStatusString }}
 					</div>
-					<div *ngIf="model.wattage != 0" class="col-2 p-0 battery-label-text">{{'device.deviceSettings.batteryGauge.details.wattage' | translate }}</div>
-					<div *ngIf="model.wattage != 0" class="col-2 p-0 battery-value-text">
+					<div *ngIf="isValid(model.wattage)" class="col-2 p-0 battery-label-text">{{'device.deviceSettings.batteryGauge.details.wattage' | translate }}</div>
+					<div *ngIf="isValid(model.wattage)" class="col-2 p-0 battery-value-text">
 						{{ model.wattage + " W"}}
 					</div>
 					<div class="col-2 p-0 battery-label-text">{{'device.deviceSettings.batteryGauge.details.barcode' | translate }}</div>
@@ -66,10 +66,10 @@
 				<!-- </div> -->
 				<!-- row-3 -->
 				<!-- <div class="row"> -->
-					<div *ngIf="model.remainingTime != 0" class="col-2 p-0 battery-label-text">
+					<div *ngIf="isValid(model.remainingTime)" class="col-2 p-0 battery-label-text">
 						{{ remainingTimeText }}
 					</div>
-					<div *ngIf="model.remainingTime != 0" class="col-2 p-0 battery-value-text">
+					<div *ngIf="isValid(model.remainingTime)" class="col-2 p-0 battery-value-text">
 						{{ model.remainingTime | minutesToHourmin }}
 					</div>
 					<div class="col-2 p-0 battery-label-text">
