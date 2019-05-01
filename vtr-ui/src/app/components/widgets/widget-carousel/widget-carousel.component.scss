@@ -10,7 +10,7 @@
 	.carousel-caption {
 		position: absolute;
 		top: 5%;
-		left: 5%;
+		left: 3%;
 		padding: 0;
 		right: 0 !important;
 		text-align: left;
@@ -21,6 +21,7 @@
 			font-size: 3rem;
 			color: $light;
 			text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+			max-width: 60%;
 		}
 
 		.source {
