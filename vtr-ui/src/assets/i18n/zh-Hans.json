@@ -451,6 +451,11 @@
 			"history": "完整历史记录",
 			"notAvailable": "Not Available",
 			"notInstalled": "未安装",
+			"criticalUpdates": "Critical Update(s)",
+			"recommendedUpdates": "Recommended Update(s)",
+			"successInstall": "Successfully installed on",
+			"failedInstall": "Failed to installed on",
+			"at": "at",
 			"popup": {
 				"reboot": "Reboot",
 				"shutdown": "Shut Down",
