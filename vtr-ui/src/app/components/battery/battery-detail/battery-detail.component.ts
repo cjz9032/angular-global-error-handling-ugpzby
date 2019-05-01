@@ -10,6 +10,7 @@ import { BatteryInformation } from 'src/app/enums/battery-information.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs';
+import { ViewRef_ } from '@angular/core/src/view';
 @Component({
 	selector: 'vtr-battery-detail',
 	templateUrl: './battery-detail.component.html',
@@ -70,7 +71,11 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 			}
 		}
 		this.dataSource = response;
-		this.cd.detectChanges();
+		if ( this.cd !== null &&
+            this.cd !== undefined &&
+            ! (this.cd as ViewRef_).destroyed ) {
+                this.cd.detectChanges();
+        }
 	}
 
 	ngOnInit() {
@@ -80,6 +85,13 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+	}
+
+	isValid(val: number) {
+		if(val == undefined || val === 0) {
+			return false;
+		}
+		return true;
 	}
 
 	ngOnDestroy() {
