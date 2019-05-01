@@ -81,8 +81,33 @@
 			"back": "BACK",
 			"on": "ON",
 			"off": "OFF",
-			"collapse": "Collapse"
+			"collapse": "Collapse",
+			"expand": "Expand"
 		}
+	},
+	"tutorial": {
+		"almostThere": "Almost there!",
+		"para1": "Just a few more buttons to press before we can have liftoff.",
+		"para2": "Before we can give you the most optimal experience there are still a few things to setup.",
+		"personalise": "START PERSONALIZING",
+		"howIsitUsed": "How will you use it?",
+		"howMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
+		"business": "BUSINESS",
+		"personal": "PERSONAL",
+		"custom": "CUSTOM",
+		"skip": "SKIP",
+		"next": "NEXT",
+		"interests": "What are your interests?",
+		"howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
+		"games": "GAMES",
+		"news": "NEWS",
+		"entertainment": "ENTERTAINMENT",
+		"arts": "ARTS",
+		"technology": "TECHNOLOGY",
+		"politics": "POLITICS",
+		"sports": "SPORTS",
+		"regionalNews": "REGIONAL NEWS",
+		"technology": "TECHNOLOGY"
 	},
 	"dashboard": {
 		"headerMain": {
@@ -99,8 +124,11 @@
 			"button": "Give feedback",
 			"form": {
 				"email": "Email (optional)",
-				"comments": "Comments",
-				"button": "Submit"
+				"comments": "Comments...",
+				"button": "Submit",
+				"messages": {
+					"feedbackSuccess": "Thank you for your feedback !"
+				}
 			}
 		},
 		"quickSettings": {
@@ -242,9 +270,15 @@
 				"powerSmartSettings": {
 					"title": "Power Smart Settings",
 					"subtitle": "INTELLIGENT COOLING",
+					"subtitle1": "Battery & Quiet",
 					"description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
 					"description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
-					"gotoWindows": "Go to windows settings",
+					"description3": "Battery & Quiet lorem ipsum is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+					"readMore": "Read more.",
+					"gotoWindows": {
+						"title": "Go to windows settings",
+						"modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
+					},
 					"intelligentCooling": {
 						"title": "Intelligent cooling",
 						"description": "",
@@ -254,9 +288,19 @@
 							"performance": "Performance"
 						},
 						"readMore": {
-							"line1": "Quiet mode: Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-							"line2": "Balanced mode: Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
-							"line3": "Performance mode: Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+							"mode1": "Quiet mode",
+							"mode2": "Balanced mode",
+							"mode3": "Performance mode",
+							"line1": "Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+							"line2": "Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
+							"line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+						}
+					},
+					"nonintelligentCooling": {
+						"options": {
+							"intelligentCooling": "INTELLIGENT COOLING",
+							"extremeCooling": "EXTREME PERFORMANCE",
+							"battery&Quite": "BATTERY & QUIET"
 						}
 					}
 				},
@@ -282,10 +326,6 @@
 				},
 				"batterySettings": {
 					"title": "Battery Settings",
-					"airPlanePower": {
-						"title": "Airplane Power Mode",
-						"description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
-					},
 					"batteryThreshold": {
 						"title": "Battery Charge Threshold",
 						"description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
@@ -310,6 +350,10 @@
 							"line2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
 							"line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
 						}
+					},
+					"airplanePower": {
+						"title": "Airplane Power Mode",
+						"description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
 					}
 				}
 			},
@@ -323,18 +367,26 @@
 					"description": "Automatically adjust audio settings according to different apps you are using.",
 					"dolby": {
 						"title": "Automatic Dolby Audio settings",
+						"tooltip": "Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
 						"options": {
 							"dynamic": "DYNAMIC",
 							"movie": "MOVIE",
 							"music": "MUSIC",
-							"game": "GAME",
-							"voice": "VOICE"
+							"games": "GAME",
+							"voip": "VOICE"
 						}
 					},
-					"voip": "Automatic Audio Optimization for VoIP"
+					"voip": {
+						"title": "Automatic Audio Optimization for VoIP",
+						"tooltip": "Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality."
+					}
 				},
 				"microphone": {
 					"title": "Microphone",
+					"note": {
+						"title": "Note",
+						"description": "Lenovo Vantage does not have permission to access your microphone. Please turn on access to your microphone for the Lenovo Vantage app."
+					},
 					"microphone": {
 						"title": "Microphone",
 						"tooltip": "You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode."
@@ -359,10 +411,10 @@
 						"title": "Optimize my microphone for:",
 						"tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
 						"options": {
-							"voiceRecoginition": "VOICE RECOGNITION",
-							"onlyMyVoice": "ONLY MY VOICE",
-							"normal": "NORMAL",
-							"multipleVoices": "MULTIPLE VOICES"
+							"VoiceRecognition": "VOICE RECOGNITION",
+							"OnlyMyVoice": "ONLY MY VOICE",
+							"Normal": "NORMAL",
+							"MultipleVoices": "MULTIPLE VOICES"
 						}
 					}
 				}
@@ -392,12 +444,20 @@
 							"cold": "Cold"
 						},
 						"reset": "Reset temperature",
-						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain."
+						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
+						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+						"note": {
+							"title": "Note",
+							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+						}
 					}
 				},
 				"camera": {
 					"title": "Camera",
-					"note": "Note: Lenovo Vantage does not have permissions to access your camera. Please turn on access to your camera for the Lenovo Vantage app.",
+					"note": {
+						"title": "Note",
+						"description": "Lenovo Vantage does not have permissions to access your camera. Please turn on access to your camera for the Lenovo Vantage app."
+					},
 					"url": "Go to windows privacy settings",
 					"cameraPrivacy": {
 						"title": "Camera privacy mode",
@@ -411,7 +471,8 @@
 					"brightness": "Brightness",
 					"contrast": "Contrast",
 					"autoExposure": "Auto Exposure",
-					"autoFocus": "Auto focus"
+					"autoFocus": "Auto focus",
+					"notAvailable": "Camera Not Available"
 				}
 			}
 		},
@@ -445,6 +506,10 @@
 					"tooltip": "Click here to reset Camera properties to default settings.",
 					"reset": "Reset factory settings"
 				},
+				"recommended": {
+					"title": "推荐更新",
+					"tooltip": "推荐的驱动程序更新使计算机运行保持最佳性能。"
+				},
 				"windows": {
 					"title": "Windows Updates",
 					"url": "Windows Settings"
@@ -468,7 +533,7 @@
 					"success": "All Updates were installed correctly",
 					"fail": {
 						"title": "Some updates were not installed correctly.",
-						"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off computer when installing these updates."
+						"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
 					}
 				}
 			}
@@ -908,9 +973,14 @@
 			"para5": "1. Home 2. Notebook 3. Settings 4. Feedback",
 			"para6": "Here are some things Cortana can do for you:",
 			"bulletset1": [
-				"Use the shared edge between two snapped apps to resize both apps at the same time.",
-				"Open a new app from task view—select Task view on the taskbar, select an app, then drag it to one side to snap it into your divided screen.",
-				"Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
+				"Give you reminders based on time, places, or people.",
+				"Track packages, teams, interests, and flights.",
+				"Send emails and texts.",
+				"Manage your calendar and keep you up to date.",
+				"Create and manage lists.",
+				"Chit chat and play games.",
+				"Find facts, files, places, and info.",
+				"Open any app on your system."
 			],
 			"heading2": "Try this: Set a reminder",
 			"para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",

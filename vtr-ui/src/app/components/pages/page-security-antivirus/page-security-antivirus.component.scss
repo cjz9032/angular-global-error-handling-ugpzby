@@ -139,7 +139,7 @@
 				font-weight: $weight_bold;
 				line-height: 3rem;
       }
-      
+
       .stopdate{
         color: $stop_dark;
 				font-size: 1.6rem;
@@ -233,5 +233,10 @@
 
 	.dashlane-side-left-img{
 		width: 90%;
+	}
+	.vtr-page-right-column{
+		@media #{$mediaquery_X5} {
+			padding: 4rem 4rem 4rem 8.5rem;
+		}
 	}
 }
