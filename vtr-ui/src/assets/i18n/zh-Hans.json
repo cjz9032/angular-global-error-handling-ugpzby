@@ -15,7 +15,7 @@
 				"sub3": "WiFi 安全",
 				"sub4": "密码健康",
 				"sub5": "因特网保护",
-				"sub6": "Windows Hello"
+				"sub6": "Windows你好"
 			},
 			"support": "支持服务"
 		},
@@ -26,7 +26,7 @@
 			"wifi": "WiFi 安全",
 			"pswdMgr": "密码管理器",
 			"vpn": "VPN",
-			"windowsHello": "Windows Hello",
+			"windowsHello": "Windows你好",
 			"enabled": "已启用",
 			"disabled": "已禁用",
 			"partiallyProtected": "局部受保护",
@@ -52,7 +52,7 @@
 			"on": "开",
 			"off": "关",
 			"collapse": "折叠",
-			"expand": "Expand"
+			"expand": "扩大"
 		}
 	},
 	"tutorial": {
@@ -73,7 +73,6 @@
 		"news": "新闻",
 		"entertainment": "娱乐",
 		"arts": "艺术",
-		"technology": "技术",
 		"politics": "政治",
 		"sports": "体育",
 		"regionalNews": "地方新闻",
@@ -84,9 +83,9 @@
 			"title": "今天也是活力满满的一天 "
 		},
 		"offlineInfo": {
-			"title": "No internet connection detected",
-			"subtitle": "Learn more on how to solve connection issues in our",
-			"buttonText": "Connectivity 101"
+			"title": "未检测到互联网连接",
+			"subtitle": "详细了解如何解决我们的连接问题",
+			"buttonText": "连通性101"
 		},
 		"feedback": {
 			"title": "提供反馈",
@@ -97,7 +96,7 @@
 				"comments": "注释",
 				"button": "提交",
 				"messages": {
-					"feedbackSuccess": "Thank you for your feedback !"
+					"feedbackSuccess": "感谢您的反馈意见 ！"
 				}
 			}
 		},
@@ -113,24 +112,24 @@
 			"memory": {
 				"title": "内存",
 				"detail": {
-					"notFound": "Memory not found",
+					"notFound": "找不到记忆",
 					"of": "/"
 				}
 			},
 			"diskSpace": {
 				"title": "磁盘空间",
 				"detail": {
-					"notFound": "Disk not found",
+					"notFound": "磁盘未找到",
 					"of": "/"
 				}
 			},
 			"warranty": {
 				"title": "保修",
 				"detail": {
-					"notFound": "Warranty not found",
+					"notFound": "保修未找到",
 					"until": "​截止时间：",
-					"expiredOn": "Warranty expired on",
-					"notAvailable": "Warranty not available"
+					"expiredOn": "保修已到期",
+					"notAvailable": "保修无法提供"
 				}
 			},
 			"systemUpdate": {
@@ -152,27 +151,27 @@
 			"freeMemory": "可用内存",
 			"systemUpdate": {
 				"title": "系统更新",
-				"notFound": "System update not found",
+				"notFound": "未找到系统更新",
 				"detail": {
 					"uptoDate": "软件为最新",
-					"updatedOn": "updated on ",
-					"outdated": "Software outdated ",
-					"neverRanUpdate": "never ran update"
+					"updatedOn": "更新",
+					"outdated": "软件已过时",
+					"neverRanUpdate": "从未运行过更新"
 				}
 			},
 			"extendedWarranty": "延长保修",
 			"processor": {
 				"title": "处理器",
-				"notFound": "Processor not found"
+				"notFound": "找不到处理器"
 			},
 			"memory": {
 				"title": "内存",
-				"notFound": "Memory not found",
-				"ram": "RAM"
+				"notFound": "找不到记忆",
+				"ram": "内存"
 			},
 			"diskspace": {
 				"title": "磁盘空间",
-				"notFound": "Disk not found"
+				"notFound": "磁盘未找到"
 			},
 			"software": "软件为最新",
 			"updated": "已更新",
@@ -180,15 +179,15 @@
 			"expired": "到期时间：",
 			"of": "/",
 			"warranty": {
-				"notFound": "Warranty not found",
+				"notFound": "保修未找到",
 				"detail": {
 					"title": "延长保修",
-					"inWarranty": "In warranty ",
-					"daysRemaining": "days remaining",
+					"inWarranty": "在保修期内",
+					"daysRemaining": "剩余天数",
 					"outOfWarranty": "保修期已过 ",
 					"expiredOn": "到期时间：",
-					"notAvailable": "Warranty not available",
-					"support": "Support"
+					"notAvailable": "保修无法提供",
+					"support": "支持"
 				}
 			},
 			"helpful": "帮助内容"
@@ -240,14 +239,14 @@
 				"powerSmartSettings": {
 					"title": "电源智能设置",
 					"subtitle": "智能散热",
-					"subtitle1": "Battery & Quiet",
+					"subtitle1": "电池和安静",
 					"description1": "此功能动态调节散热设置以满足您的需求。此功能开启时，在手持或空闲状态下可调节设置使设备保持较低温度或较低噪声。而设备放置在稳定平面上时，此功能可优化性能。此功能关闭时，您可以手动设置散热优先级。",
 					"description2": "智能散热可调节风扇速度、最高表面温度和性能。此功能具有以下模式，且现在支持通过 Windows 性能电源滑块访问。",
-					"description3": "Battery & Quiet lorem ipsum is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+					"description3": "Battery＆Quiet lorem ipsum是一个长期存在的事实，当阅读其布局时，读者将被页面的可读内容分散注意力。",
 					"readMore": "阅读更多.",
 					"gotoWindows": {
 						"title": "转到 Windows 设置",
-						"modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
+						"modalBodyText1": "单击系统托盘上的Windows电池图标以访问Windows性能电源滑块"
 					},
 					"intelligentCooling": {
 						"title": "智能散热",
@@ -269,8 +268,8 @@
 					"nonintelligentCooling": {
 						"options": {
 							"intelligentCooling": "智能散热",
-							"extremeCooling": "EXTREME PERFORMANCE",
-							"battery&Quite": "BATTERY & QUIET"
+							"extremeCooling": "极端的表现",
+							"battery&Quite": "电池和安静"
 						}
 					}
 				},
@@ -337,7 +336,7 @@
 					"description": "根据您使用的不同应用程序自动调节音频设置。",
 					"dolby": {
 						"title": "自动 Dolby 音频设置",
-						"tooltip": "Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
+						"tooltip": "自动Dolby Audio设置可将Dolby音频设置配置为适用于您正在使用的不同应用程序的模式，以增强您的音频体验。",
 						"options": {
 							"dynamic": "动态",
 							"movie": "影片",
@@ -348,14 +347,14 @@
 					},
 					"voip": {
 						"title": "自动 VoIP 音频优化",
-						"tooltip": "Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality."
+						"tooltip": "在VoIP呼叫期间自动切换到Dolby Voice模式，以提供清晰，一致的语音质量。"
 					}
 				},
 				"microphone": {
 					"title": "麦克风",
 					"note": {
 						"title": "注",
-						"description": "Lenovo Vantage does not have permission to access your microphone. Please turn on access to your microphone for the Lenovo Vantage app."
+						"description": "Lenovo Vantage无权访问您的麦克风。请打开Lenovo Vantage应用程序的麦克风访问权限。"
 					},
 					"microphone": {
 						"title": "麦克风",
@@ -415,10 +414,10 @@
 						},
 						"reset": "重置温度",
 						"tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。",
-						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+						"onSunsetToSunriseScheduleDescription": "安排从日落到日出的眼保健模式",
 						"note": {
 							"title": "注",
-							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+							"description": "Lenovo Vantage需要访问您的位置信息，以计算您所在地区的日落和日出时间。"
 						}
 					}
 				},
@@ -442,27 +441,27 @@
 					"contrast": "对比度",
 					"autoExposure": "自动曝光",
 					"autoFocus": "自动对焦",
-					"notAvailable": "Camera Not Available"
+					"notAvailable": "相机不可用"
 				}
 			}
 		},
 		"systemUpdates": {
 			"title": "系统更新",
 			"history": "完整历史记录",
-			"notAvailable": "Not Available",
+			"notAvailable": "无法使用",
 			"notInstalled": "未安装",
 			"popup": {
-				"reboot": "Reboot",
-				"shutdown": "Shut Down",
-				"rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-				"shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-				"rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-				"rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
-				"okayButton": "OK",
-				"cancelButton": "Cancel",
-				"rebootButton": "REBOOT NOW",
-				"dismissButton": "DISMISS",
-				"rebootPending": "Reboot pending"
+				"reboot": "重启",
+				"shutdown": "关掉",
+				"rebootForceMsg": "您选择的更新将导致系统在安装后自动重新启动。",
+				"shutdownForceMsg": "您选择的更新将导致系统在安装后自动关闭。",
+				"rebootDelayedMsg": "您选择的更新将导致系统在安装后重新启动，在安装更新期间，请不要关闭系统，卸下电源或附件。我们建议您保存工作以准备重新启动系统。",
+				"rebootRequiredMsg": "为了成功安装更新，您的计算机需要重新启动才能确保一切运行安全，顺畅。",
+				"okayButton": "好",
+				"cancelButton": "取消",
+				"rebootButton": "马上重启",
+				"dismissButton": "解雇",
+				"rebootPending": "重新启动等待"
 			},
 			"autoUpdateSettings": {
 				"title": "自动更新设置",
@@ -473,7 +472,7 @@
 				},
 				"camera": {
 					"title": "摄像头",
-					"tooltip": "Click here to reset Camera properties to default settings.",
+					"tooltip": "单击此处将相机属性重置为默认设置。",
 					"reset": "重置出厂设置"
 				},
 				"recommended": {
@@ -500,10 +499,10 @@
 				"description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。关键更新对保护计算机上的数据来说也很重要，一旦可用就应该尽快安装。未能安装这些软件包可能会导致数据丢失、系统故障或硬件故障",
 				"installButton": "安装所有更新",
 				"result": {
-					"success": "All Updates were installed correctly",
+					"success": "所有更新都已正确安装",
 					"fail": {
-						"title": "Some updates were not installed correctly.",
-						"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+						"title": "某些更新未正确安装。",
+						"description": "在下载或安装这些更新期间出现问题。请确保您在线，并且在安装更新时不要关闭计算机。"
 					}
 				}
 			}
@@ -766,26 +765,26 @@
 			"privacyPolicyAndTermsOfService": "阅读<tag>隐私策略</tag>和<tag>服务条款</tag>的更多信息"
 		},
 		"windowsHello": {
-			"statusTitle": "WINDOWS HELLO",
-			"title": "Windows Hello",
+			"statusTitle": "Windows你好",
+			"title": "Windows你好",
 			"protectYourDevice": "使用 Lenovo 推荐的这些安全产品保护您的设备。",
-			"signIn": "通过 Windows Hello 安全快速地进行登录。",
-			"signInTitle": "通过 Windows Hello 安全快速地进行登录",
-			"setUp": "设置 Windows Hello",
-			"whyWindowsHello": "为什么选择 Windows Hello？",
-			"whyWindowsHelloDescription1": "Windows Hello 可帮助您更加轻松且安全地登录到电脑，它还可用于 Microsoft 在线应用。按照下方说明开始使用 Windows Hello。",
-			"startUsingToday": "立即开始使用 Windows Hello",
-			"visitAndRegister": "访问 Windows Hello 页面，并注册您的指纹。",
-			"visitInSettings": "在系统设置中<tag>访问 Windows Hello</tag>",
+			"signIn": "通过 Windows你好 安全快速地进行登录。",
+			"signInTitle": "通过 Windows你好 安全快速地进行登录",
+			"setUp": "设置 Windows你好",
+			"whyWindowsHello": "为什么选择 Windows你好？",
+			"whyWindowsHelloDescription1": "Windows你好 可帮助您更加轻松且安全地登录到电脑，它还可用于 Microsoft 在线应用。按照下方说明开始使用 Windows Hello。",
+			"startUsingToday": "立即开始使用 Windows你好",
+			"visitAndRegister": "访问 Windows你好 页面，并注册您的指纹。",
+			"visitInSettings": "在系统设置中<tag>访问 Windows你好</tag>",
 			"unlock": "使用 Windows Hello 登录并通过用手指触摸传感器来解锁您的电脑。",
-			"startUsingWindowsHello": "开始使用 Windows Hello 登录 Outlook、OneDrive、Office 365 和 Xbox Live 等 Microsoft 应用。",
+			"startUsingWindowsHello": "开始使用 Windows你好 登录 Outlook、OneDrive、Office 365 和 Xbox Live 等 Microsoft 应用。",
 			"visitMicrosoft": "访问 Microsoft",
-			"poweredByWindowsHello": "Windows Hello 出品",
+			"poweredByWindowsHello": "Windows你好 出品",
 			"privacyPolicy": "阅读<tag>隐私政策</tag>的更多信息",
-			"whyWindowsHelloDescription2": "Windows Hello 让登录电脑更简单、更安全。此外，它还能用于您的 Microsoft 在线应用。按照下方说明开始使用 Windows Hello",
-			"authentication": "Windows Hello 认证",
-			"traditional": "传统密码可能会遭到盗窃，并从世界任何地方用于访问您的帐户。更安全、便捷​。Windows Hello 是密码的新一代演变成果。使用指纹读取器 [或红外摄像头] 来取代不安全的密码进行登录。",
-			"howToStart": "如何开始使用 Windows Hello？"
+			"whyWindowsHelloDescription2": "Windows你好 让登录电脑更简单、更安全。此外，它还能用于您的 Microsoft 在线应用。按照下方说明开始使用 Windows Hello",
+			"authentication": "Windows你好 认证",
+			"traditional": "传统密码可能会遭到盗窃，并从世界任何地方用于访问您的帐户。更安全、便捷​。Windows你好 是密码的新一代演变成果。使用指纹读取器 [或红外摄像头] 来取代不安全的密码进行登录。",
+			"howToStart": "如何开始使用 Windows你好？"
 		}
 	},
 	"lenovoId": {
