@@ -1,4 +1,36 @@
 {
+	"gaming": {
+		"dashboard": {
+			"device": {
+				"quickSettings": {
+					"title": "Thermal Mode",
+					"status": {
+						"performance": "Performance",
+						"balance": "Balance",
+						"quiet": "Quiet"
+					},
+					"wifiSecurity": "Wifi Security",
+					"dolby": "Dolby",
+					"rapidCharge": "Rapid Charge"
+				},
+				"legionEdge": {
+					"title": "CPU Overlock",
+					"status": {
+						"alwayson": "Always On",
+						"whenGaming": "When Gaming",
+						"off": "Off"
+					},
+					"ramOverlock": "Ram Overlock",
+					"autoClose": "Auto Close",
+					"networkBoost": "Network Boost",
+					"hybridMode": "Hybrid Mode",
+					"touchpadLock": "Touchpad Lock"
+				}
+			}
+		}
+	},
+
+
 	"common": {
 		"menu": {
 			"dashboard": "仪表板",
