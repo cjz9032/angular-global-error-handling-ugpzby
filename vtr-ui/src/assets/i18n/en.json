@@ -451,6 +451,11 @@
 			"history": "FULL HISTORY",
 			"notAvailable": "Not Available",
 			"notInstalled": "Not Installed",
+			"criticalUpdates": "Critical Update(s)",
+			"recommendedUpdates": "Recommended Update(s)",
+			"successInstall": "Successfully installed on",
+			"failedInstall": "Failed to installed on",
+			"at": "at",
 			"popup": {
 				"reboot": "Reboot",
 				"shutdown": "Shut Down",
