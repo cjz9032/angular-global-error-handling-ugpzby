@@ -213,6 +213,7 @@
 					"temp": "Temperature",
 					"frupn": "FRU part number",
 					"remainingTime": "Remaining time",
+					"chargeCompletionTime": "Charge completion time",
 					"cycleCount": "Cycle count",
 					"chemistry": "Device chemistry",
 					"remainingCap": "Remaining capacity",

@@ -213,6 +213,7 @@
 					"temp": "温度",
 					"frupn": "FRU 部件号",
 					"remainingTime": "剩余时间",
+					"chargeCompletionTime": "Charge completion time",
 					"cycleCount": "充放周期数",
 					"chemistry": "设备化学组成",
 					"remainingCap": "剩余电量",
