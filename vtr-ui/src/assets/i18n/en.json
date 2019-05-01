@@ -258,9 +258,12 @@
 							"performance": "Performance"
 						},
 						"readMore": {
-							"line1": "Quiet mode: Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-							"line2": "Balanced mode: Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
-							"line3": "Performance mode: Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+							"mode1": "Quiet mode",
+							"mode2": "Balanced mode",
+							"mode3": "Performance mode",
+							"line1": "Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+							"line2": "Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
+							"line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
 						}
 					},
 					"nonintelligentCooling": {
@@ -339,8 +342,8 @@
 							"dynamic": "DYNAMIC",
 							"movie": "MOVIE",
 							"music": "MUSIC",
-							"game": "GAME",
-							"voice": "VOICE"
+							"games": "GAME",
+							"voip": "VOICE"
 						}
 					},
 					"voip": {
@@ -378,10 +381,10 @@
 						"title": "Optimize my microphone for:",
 						"tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
 						"options": {
-							"voiceRecoginition": "VOICE RECOGNITION",
-							"onlyMyVoice": "ONLY MY VOICE",
-							"normal": "NORMAL",
-							"multipleVoices": "MULTIPLE VOICES"
+							"VoiceRecognition": "VOICE RECOGNITION",
+							"OnlyMyVoice": "ONLY MY VOICE",
+							"Normal": "NORMAL",
+							"MultipleVoices": "MULTIPLE VOICES"
 						}
 					}
 				}
