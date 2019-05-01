@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MockService } from '../../../services/mock/mock.service';
 import { QaService } from '../../../services/qa/qa.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Status } from 'src/app/data-models/widgets/status.model';
 import { CommonService } from 'src/app/services/common/common.service';
+import { ConfigService } from 'src/app/services/config/config.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -45,12 +47,14 @@ export class PageDashboardComponent implements OnInit {
 	};*/
 
 	constructor(
+		private router: Router,
 		public dashboardService: DashboardService,
 		public mockService: MockService,
 		public qaService: QaService,
 		private modalService: NgbModal,
 		config: NgbModalConfig,
 		private commonService: CommonService,
+		private configService: ConfigService,
 		public deviceService: DeviceService,
 		private cmsService: CMSService,
 		private systemUpdateService: SystemUpdateService,
@@ -64,6 +68,10 @@ export class PageDashboardComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		// reroute default application's default URL if gaming device
+		if (this.deviceService.isGaming) {
+			this.router.navigateByUrl(this.configService.getMenuItems(this.deviceService.isGaming)[0].path);
+		}
 		const self = this
 		this.translate.stream('lenovoId.user').subscribe((value) => {
 			if (!self.userService.auth) {
