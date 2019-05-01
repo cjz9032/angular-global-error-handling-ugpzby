@@ -46,7 +46,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 		public userService: UserService,
 		public translationService: TranslationService,
 		private modalService: NgbModal,
-		private deviceService: DeviceService,
+		public deviceService: DeviceService,
 		vantageShellService: VantageShellService,
 		private translate: TranslateService,
 		private regionService: RegionService

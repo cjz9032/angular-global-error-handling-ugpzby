@@ -15,7 +15,7 @@ export class DeviceService {
 	private microphone: any;
 	public isShellAvailable = false;
 	public isArm = false;
-	public isGaming = true;
+	public isGaming = false;
 
 	constructor(
 		shellService: VantageShellService
