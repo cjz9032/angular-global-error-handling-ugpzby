@@ -251,11 +251,11 @@
 	#skill li {
 		background:$shade_dark;
 		background-image: -webkit-gradient(linear, left top, left bottom, from(#e1ddd9), to(#e9e5e2));
-		background-image: -webkit-linear-gradient(top, #e1ddd9, #e9e5e2);
-		background-image: -moz-linear-gradient(top, #e1ddd9, #e9e5e2);
-		background-image: -ms-linear-gradient(top, #e1ddd9, #e9e5e2);
-		background-image: -o-linear-gradient(top, #e1ddd9, #e9e5e2);
-		background-image: linear-gradient(top, #e1ddd9, #e9e5e2);
+		background-image: -webkit-linear-gradient(to top, #e1ddd9, #e9e5e2);
+		background-image: -moz-linear-gradient(to top, #e1ddd9, #e9e5e2);
+		background-image: -ms-linear-gradient(to top, #e1ddd9, #e9e5e2);
+		background-image: -o-linear-gradient(to top, #e1ddd9, #e9e5e2);
+		background-image: linear-gradient(to top, #e1ddd9, #e9e5e2);
 		height:20px;
 		padding:0 5px;
 		border-radius:10px;
@@ -303,11 +303,11 @@
 		-webkit-animation:html-css 2s ease-out;
 		background-color: #00FFFF;
 		background-image: -webkit-gradient(linear, left top, left bottom, from(#E0FFFF), to(#00FFFF));
-		background-image: -webkit-linear-gradient(top, #E0FFFF, #00FFFF);
-		background-image: -moz-linear-gradient(top, #E0FFFF, #00FFFF);
-		background-image: -ms-linear-gradient(top, #E0FFFF, #00FFFF);
-		background-image: -o-linear-gradient(top, #E0FFFF, #00FFFF);
-		background-image: linear-gradient(top, #E0FFFF, #00FFFF);
+		background-image: -webkit-linear-gradient(to top, #E0FFFF, #00FFFF);
+		background-image: -moz-linear-gradient(to top, #E0FFFF, #00FFFF);
+		background-image: -ms-linear-gradient(to top, #E0FFFF, #00FFFF);
+		background-image: -o-linear-gradient(to top, #E0FFFF, #00FFFF);
+		background-image: linear-gradient(to top, #E0FFFF, #00FFFF);
 	}
 
 

@@ -27,7 +27,9 @@ export class ModalWelcomeComponent implements OnInit {
 	}
 
 	next(page) {
+
 		if (++page < 3) {
+			alert(page);
 			this.page = page;
 		} else {
 			const response = new WelcomeTutorial(true, this.data.page2.radioValue, this.checkedArray);
