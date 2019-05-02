@@ -25,6 +25,13 @@
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
 					"touchpadLock": "Touchpad Lock"
+				},
+				"systemTools": {
+					"power": "Power",
+					"media": "Media",
+					"macroKey": "Marco Key",
+					"hardwareScan": "Hardware Scan",
+					"systemUpdate": "System Update"
 				}
 			}
 		}
