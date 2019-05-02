@@ -45,6 +45,9 @@
 					@media #{$mediaquery_X3} {
 						padding: 2rem;
 					}
+					@media #{$mediaquery_X4} {
+						padding: 2rem;
+					}
 
 					.title {
 						color: $light;
@@ -97,7 +100,7 @@
 				.inner-content {
 					position: relative;
 					z-index: 1;
-					padding: 3rem;
+					padding: 2rem;
 					height: 100%;
 					@media #{$mediaquery_X1} {
 						padding: 2rem;
@@ -105,6 +108,9 @@
 					@media #{$mediaquery_10} {
 						padding: 1.5rem 2rem;
 					}
+					// @media #{$mediaquery_17} {
+					// 	padding: 1.5rem 2rem;
+					// }
 
 					.title {
 						color: $light;
@@ -199,7 +205,7 @@
 			.image-container {
 				height: 60%;
 			}
-	
+
 			.card-image {
 				display: block;
 				background-size: cover;
@@ -210,14 +216,14 @@
 				width: 100%;
 				height: 100%;
 			}
-	
+
 			.content {
 				padding: 3rem 4rem;
 				height: 40%;
 				@media #{$mediaquery_10} {
 					padding: 1.5rem 2rem;
 				}
-	
+
 				.title {
 					font-weight: $weight_light;
 					text-decoration: none;
@@ -225,13 +231,12 @@
 						text-decoration: none;
 					}
 					@media #{$mediaquery_7} {
-						height: 3rem;
 						overflow: hidden;
 						text-overflow: ellipsis;
 						white-space: nowrap;
 					}
 				}
-	
+
 				.read-more {
 					position: absolute;
 					margin-top: 2rem;
@@ -239,27 +244,27 @@
 					font-size: 1.3rem;
 					cursor: pointer;
 					text-transform: uppercase;
-	
+
 					a {
 						color: $main;
-	
+
 						&:hover {
 							text-decoration: none;
 						}
-	
+
 						.link-label {
 							padding-bottom: 0.2rem;
 							border-bottom: 0.2rem solid $main;
 							font-weight: $weight_bold;
 						}
-	
+
 						fa-icon {
 							color: $main;
 							margin-left: 1rem;
 						}
 					}
 				}
-			}	
+			}
 		}
 	}
 
@@ -333,15 +338,18 @@
 			color: $main_dark;
 			font-size: 2.5rem;
 			font-weight: $weight_bold;
-			@media #{$mediaquery_X9} {
-				font-size: 1.4rem;
-			}
-			@media #{$mediaquery_X10} {
+			@media #{$mediaquery_X4} {
 				font-size: 2rem;
 			}
-			@media #{$mediaquery_X3} {
+			@media #{$mediaquery_X7} {
 				font-size: 2rem;
 			}
+			@media #{$mediaquery_X11} {
+				font-size: 2rem;
+			}
+			// @media #{$mediaquery_17} {
+			// 	font-size: 1.8rem;
+			// }
 		}
 
 		.description {
@@ -352,15 +360,18 @@
 		.caption {
 			color: $main_shade;
 			font-size: 2.2rem;
-			@media #{$mediaquery_X9} {
-				font-size: 1.2rem;
-			}
-			@media #{$mediaquery_X10} {
+			@media #{$mediaquery_X4} {
 				font-size: 1.8rem;
 			}
-			@media #{$mediaquery_X3} {
+			@media #{$mediaquery_X7} {
 				font-size: 1.8rem;
 			}
+			@media #{$mediaquery_X11} {
+				font-size: 1.8rem;
+			}
+			// @media #{$mediaquery_17} {
+			// 	font-size: 1.6rem;
+			// }
 		}
 
 		.logo {

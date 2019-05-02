@@ -1,5 +1,5 @@
 export class CameraDetail {
-	public isPrivacyModeEnabled: boolean;
+	public isPrivacyModeEnabled = false;
 	public isAutoExposureEnabled: boolean;
 	public isAutoFocusEnabled: boolean;
 	public hasAccessToCamera = true;

@@ -15,7 +15,11 @@ export class DeviceService {
 	private microphone: any;
 	public isShellAvailable = false;
 	public isArm = false;
+
 	public showPrivacy = true;
+
+	public isGaming = false;
+
 
 	constructor(
 		shellService: VantageShellService
@@ -50,6 +54,18 @@ export class DeviceService {
 
 	private initshowPrivacy() {
 		// set this.showPrivacy appropriately based on machineInfo data
+		try {
+			if (this.isShellAvailable) {
+				this.getMachineInfo()
+					.then((machineInfo: any) => {
+						this.showPrivacy = machineInfo.cpuArchitecture.toUpperCase().trim() == "ARM64"
+					}).catch(error => {
+					console.error('initprivacy', error);
+				});
+			}
+		} catch (error) {
+			console.error('initPrivacy' + error.message);
+		}
 	}
 
 	public getDeviceInfo(): Promise<MyDevice> {

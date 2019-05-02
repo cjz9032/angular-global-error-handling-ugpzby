@@ -987,3 +987,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	content: "\e93a";
 	color:#fff;
 }
+// gaming overrides need to be at the bottom here
+@import "./styles-gaming.scss";
+

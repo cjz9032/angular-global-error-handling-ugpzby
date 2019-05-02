@@ -458,6 +458,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isUpdateDownloading = false;
 					this.isInstallationCompleted = true;
 					this.isInstallationSuccess = this.getInstallationSuccess(payload);
+					this.systemUpdateService.getUpdateHistory();
 					this.checkRebootRequested();
 					break;
 				case UpdateProgress.AutoUpdateStatus:
@@ -519,6 +520,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isInstallationCompleted = true;
 					this.isInstallationSuccess = this.getInstallationSuccess(payload);
 					this.setUpdateByCategory(payload.updateList);
+					this.systemUpdateService.getUpdateHistory();
 					this.checkRebootRequested();
 					break;
 				default:

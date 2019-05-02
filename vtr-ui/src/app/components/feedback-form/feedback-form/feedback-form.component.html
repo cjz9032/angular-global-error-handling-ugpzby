@@ -21,7 +21,7 @@
 		<div class="row">
 			<div class="col">
 				<input autocomplete="off"
-					placeholder="Email (optional)"
+					placeholder="{{'dashboard.feedback.form.email' | translate}}"
 					type="email"
 					class="form-control user-email text-center"
 					formControlName="userEmail"
@@ -31,7 +31,7 @@
 		<br />
 		<div class="row">
 			<div class="col">
-				<textarea placeholder="Comments..."
+				<textarea placeholder="{{'dashboard.feedback.form.comments' | translate}}"
 					class="form-control user-comment text-center"
 					cols="30"
 					rows="10"
@@ -43,6 +43,7 @@
 		<div class="row">
 			<div class="col text-center">
 				<button type="submit"
+					name="{{'dashboard.feedback.form.button' | translate}}"
 					class="btn btn-primary btn-lg user-submit"
 					[disabled]="feedbackForm.invalid">
 					{{ feedbackButtonText }}
