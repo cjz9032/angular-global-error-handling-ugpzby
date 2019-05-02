@@ -137,9 +137,11 @@ export class SystemUpdateService {
 	}
 
 	public cancelUpdateCheck() {
+		console.log('cancelUpdateCheck');
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.cancelSearch()
 				.then((status: boolean) => {
+					console.log('cancelUpdateCheck then', status);
 					// todo: ui changes to show on update cancel
 				})
 				.catch((error) => {
@@ -489,7 +491,7 @@ export class SystemUpdateService {
 			this.systemUpdateBridge.cancelDownload()
 				.then((status: boolean) => {
 					this.isUpdateDownloading = false;
-					this.isInstallingAllUpdates = true;
+					// this.isInstallingAllUpdates = true;
 					this.percentCompleted = 0;
 					this.isUpdatesAvailable = true;
 					this.installationPercent = 0;
