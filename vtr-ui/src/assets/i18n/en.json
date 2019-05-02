@@ -460,6 +460,7 @@
 			"notInstalled": "Not Installed",
 			"criticalUpdates": "Critical Update(s)",
 			"recommendedUpdates": "Recommended Update(s)",
+			"optionalUpdates": "Optional Update(s)",
 			"successInstall": "Successfully installed on",
 			"failedInstall": "Failed to installed on",
 			"at": "at",
