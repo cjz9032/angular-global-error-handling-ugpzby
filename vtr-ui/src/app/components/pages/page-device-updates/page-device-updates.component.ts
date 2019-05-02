@@ -265,7 +265,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.setUpdateTitle();
 			this.isUserCancelledUpdateCheck = false;
 			this.isUpdateCheckInProgress = true;
+			this.isUpdatesAvailable = false;
 			this.systemUpdateService.isUpdatesAvailable = false;
+			this.isInstallingAllUpdates = true;
 			this.systemUpdateService.isInstallingAllUpdates = true;
 			this.resetState();
 			this.systemUpdateService.checkForUpdates();
@@ -296,6 +298,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private installAllUpdate(removeDelayedUpdates: boolean) {
 		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
+			this.isInstallingAllUpdates = true;
 			this.systemUpdateService.isInstallingAllUpdates = true;
 			this.resetState();
 			this.systemUpdateService.installAllUpdates(removeDelayedUpdates);
@@ -304,6 +307,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private installSelectedUpdate(removeDelayedUpdates: boolean) {
 		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
+			this.isInstallingAllUpdates = false;
 			this.systemUpdateService.isInstallingAllUpdates = false;
 			this.resetState();
 			this.systemUpdateService.installSelectedUpdates(removeDelayedUpdates);
@@ -488,6 +492,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isUpdateCheckInProgress = false;
 					this.percentCompleted = this.systemUpdateService.percentCompleted;
 					this.isUpdatesAvailable = this.systemUpdateService.isUpdatesAvailable;
+					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.setUpdateByCategory(payload.updateList);
 					this.systemUpdateService.getIgnoredUpdates();
 					break;
