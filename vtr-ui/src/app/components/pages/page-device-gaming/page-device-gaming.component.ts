@@ -20,12 +20,14 @@ import { UserService } from '../../../services/user/user.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-	selector: 'vtr-page-dashboard',
-	templateUrl: './page-dashboard.component.html',
-	styleUrls: ['./page-dashboard.component.scss'],
+	selector: 'vtr-page-device-gaming',
+	templateUrl: './page-device-gaming.component.html',
+	styleUrls: ['./page-device-gaming.component.scss'],
 	providers: [NgbModalConfig, NgbModal]
+
 })
-export class PageDashboardComponent implements OnInit {
+export class PageDeviceGamingComponent implements OnInit {
+
 	firstName = 'User';
 	submit = 'Submit';
 	feedbackButtonText = this.submit;
@@ -40,11 +42,6 @@ export class PageDashboardComponent implements OnInit {
 	cardContentPositionD: any = {};
 	cardContentPositionE: any = {};
 	cardContentPositionF: any = {};
-
-	/*forwardLink = {
-		path: 'dashboard-customize',
-		label: 'Customize Dashboard'
-	};*/
 
 	constructor(
 		private router: Router,
@@ -68,10 +65,7 @@ export class PageDashboardComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		// reroute default application's default URL if gaming device
-		if (this.deviceService.isGaming) {
-			this.router.navigateByUrl(this.configService.getMenuItems(this.deviceService.isGaming)[0].path);
-		}
+
 		const self = this
 		this.translate.stream('lenovoId.user').subscribe((value) => {
 			if (!self.userService.auth) {
@@ -153,32 +147,6 @@ export class PageDashboardComponent implements OnInit {
 			this.onNotification(notification);
 		});
 	}
-
-	onFeedbackModal() {
-		this.modalService
-			.open(FeedbackFormComponent, {
-				backdrop: 'static',
-				size: 'lg',
-				centered: true,
-				windowClass: 'feedback-form-modal-size'
-			})
-			.result.then(
-				result => {
-					// on open
-				},
-				reason => {
-					// on close
-				}
-			);
-	}
-
-	// public onFeedbackClick() {
-	// 	this.feedbackButtonText = 'Thank you for your feedback !';
-	// 	setTimeout(() => {
-	// 		this.modalService.dismissAll();
-	// 		this.feedbackButtonText = this.submit;
-	// 	}, 3000);
-	// }
 
 	public onConnectivityClick($event: any) {
 	}
@@ -283,11 +251,6 @@ export class PageDashboardComponent implements OnInit {
 			Filters: null
 		};
 	}
-
-	// private getFormatedTitle(title) {
-	// 	var formatedTitle = 'Looking energized today ' + title + '!';
-	// 	return formatedTitle;
-	// }
 
 	private getSystemInfo() {
 		this.dashboardService.getSystemInfo()
@@ -524,4 +487,5 @@ export class PageDashboardComponent implements OnInit {
 			}
 		}
 	}
+
 }
