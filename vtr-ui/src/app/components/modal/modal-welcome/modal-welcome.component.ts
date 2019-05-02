@@ -38,17 +38,14 @@ export class ModalWelcomeComponent implements OnInit {
 	toggle($event, value) {
 		if ($event.target.checked) {
 			this.checkedArray.push(value);
-			//this.welcomeDatamodel.interests.push(value);
 		} else {
 			 this.checkedArray.splice(this.checkedArray.indexOf(value), 1);
-			//this.welcomeDatamodel.interests.splice(this.welcomeDatamodel.interests.indexOf(value), 1);
 		}
 		console.log(this.checkedArray.length);
 	}
 
 	saveUsageType($event, value) {
 		if ($event.target.checked) {
-			//this.welcomeDatamodel.usageType = value;
 			console.log(value);
 		}
 
@@ -58,7 +55,6 @@ export class ModalWelcomeComponent implements OnInit {
 	}
 
 	onTutorialDone() {
-		//this.welcomeDatamodel.isTutorialCompleted = true;
 		this.onTutorialClose();
 	}
 

@@ -39,7 +39,13 @@
 					</div>
 					<div class="row justify-content-center align-items-center">
 						<div class="col-auto">
-							<vtr-ui-button label="next"></vtr-ui-button>
+							<vtr-ui-button
+							metricsParent="modal-welcome"
+							metricsEvent="itemClick"
+							[metricsItem]="'NEXT'"
+							[label]="'NEXT'"
+							(onclick)="next(1)">
+							</vtr-ui-button>
 						</div>
 					</div>
 				</div>
@@ -57,24 +63,20 @@
 
 	<!-- end of page1-->
 	<!-- start of page 2-->
-	<div class="row">
-		<div class="col">
-			<div *ngSwitchCase="2">
-				<div class="d-flex justify-content-center">
-					<img
-						src="./../../../../assets/images/welcome/header-2.jpg"
-						alt="Avatar"
-						class="imageheader2"
-					/>
-				</div>
-				<div class="padding3">
-					<div class="d-flex justify-content-center title3">
-						{{ "welcometutorial.subtitle1" | translate }}
+	<div *ngSwitchCase="2">
+		<div class="screen1 p-3">
+			<div class="card shadow-sm">
+				<div class="card-body p-0">
+					<div class="banner2 row justify-content-center align-items-center">
 					</div>
-				</div>
-				<div class="d-flex justify-content-center">
-					<div>
-						<input
+					<div class="row py-5">
+						<div class="col-auto title2">
+							{{ "welcometutorial.subtitle1" | translate }}
+						</div>
+					</div>
+					<div class="row py-5">
+						<div class="col-auto title2">
+							<input
 							type="radio"
 							name="radio"
 							id="radio1"
@@ -85,35 +87,41 @@
 							metricsItem="radio.personal"
 							[metricsValue]="!radio1.checked"
 							#radio2
-							[(ngModel)]="data.page2.radioValue"
-						/>
-						<img
-							alt="Personal Use"
-							for="radio1"
-							src="./../../../../assets/images/welcome/personal-use.jpg"
-							class="personal"
-							(click)="saveUsageType($event, 'PERSONAL')"
-						/>
-						<input
-							type="radio"
-							name="radio"
-							id="radio2"
-							value="business"
-							vtrMetrics
-							metricsEvent="itemClick"
-							metricsParent="modalwelcome"
-							metricsItem="radio.business"
-							[metricsValue]="!radio2.checked"
-							#radio1
-							[(ngModel)]="data.page2.radioValue"
-						/>
-						<img
-							alt="Business Use"
-							for="radio2"
-							src="./../../../../assets/images/welcome/business-use.jpg"
-							class="business"
-							(click)="saveUsageType($event, 'BUSINESS')"
-						/>
+							[(ngModel)]="data.page2.radioValue"	/>
+							<img
+								alt="Personal Use"
+								for="radio1"
+								src="./../../../../assets/images/welcome/personal-use.jpg"
+								class="personal"
+								(click)="saveUsageType($event, 'PERSONAL')"
+							/>
+							<label class="centered title5">{{ "welcometutorial.personaluse" | translate }}</label>
+						</div>
+						<div class="col-auto">
+							<input
+								type="radio"
+								name="radio"
+								id="radio2"
+								value="business"
+								vtrMetrics
+								metricsEvent="itemClick"
+								metricsParent="modalwelcome"
+								metricsItem="radio.business"
+								[metricsValue]="!radio2.checked"
+								#radio1
+								[(ngModel)]="data.page2.radioValue"
+							/>
+							<img
+								alt="Business Use"
+								for="radio2"
+								src="./../../../../assets/images/welcome/business-use.jpg"
+								class="business"
+								(click)="saveUsageType($event, 'BUSINESS')"
+							/>
+							<label class="centered title5">{{ "welcometutorial.businessuse" | translate }}</label>
+						</div>
+						<div class="col-auto">
+
 						<input
 							type="radio"
 							name="radio"
@@ -134,14 +142,18 @@
 							class="custom"
 							(click)="saveUsageType($event, 'CUSTOM')"
 						/>
+						<label class="centered title5">{{ "welcometutorial.custom" | translate }}</label>
 					</div>
 				</div>
-				<div class="padding3 d-flex justify-content-center title3">
-					{{ "welcometutorial.subtitle2" | translate }}
+
+				<div class="row py-5 padding3">
+					<div class="col-auto">
+						{{ "welcometutorial.subtitle2" | translate }}
+					</div>
 				</div>
 
-				<div class="d-flex d-flex justify-content-center">
-					<div class="inline-block">
+				<div class="row py-5 d-flex padding3 justify-content-center">
+					<div class="col-auto inline-block">
 						<input
 							type="checkbox"
 							id="checkbox1"
@@ -153,9 +165,9 @@
 							#checkbox1
 							(click)="toggle($event, 'GAMES')"
 						/>
-						<label for="checkbox1">GAMES</label>
+						<label for="checkbox1">{{ "welcometutorial.games" | translate }}</label>
 					</div>
-					<div class="inline-block">
+					<div class="col-auto inline-block">
 						<input class="checkboxwidth"
 							type="checkbox"
 							id="checkbox2"
@@ -167,9 +179,9 @@
 							#checkbox2
 							(click)="toggle($event, 'NEWS')"
 						/>
-						<label for="checkbox2">NEWS</label>
+						<label for="checkbox2">{{ "welcometutorial.news" | translate }}</label>
 					</div>
-					<div class="inline-block">
+					<div class="col-auto inline-block">
 						<input class="checkboxwidth"
 							type="checkbox"
 							id="checkbox3"
@@ -181,9 +193,9 @@
 							#checkbox3
 							(click)="toggle($event, 'ENTERTAINMENT')"
 						/>
-						<label for="checkbox3">ENTERTAINMENT</label>
+						<label for="checkbox3">{{ "welcometutorial.entertainment" | translate }}</label>
 					</div>
-					<div class="inline-block ">
+					<div class="col-auto inline-block">
 						<input class="checkboxwidth"
 							type="checkbox"
 							id="checkbox5"
@@ -195,12 +207,13 @@
 							#checkbox5
 							(click)="toggle($event, 'TECHNOLOGY')"
 						/>
-						<label for="checkbox5">TECHNOLOGY</label>
+						<label for="checkbox5">{{ "welcometutorial.technology" | translate }}</label>
 					</div>
 				</div>
-				<div class="d-flex">
-					<div class="inline-block">
-						<input class="checkboxwidth"
+
+				<div class="row py-5 d-flex justify-content-center">
+					<div class="col-auto inline-block">
+					<input class="checkboxwidth"
 							type="checkbox"
 							id="checkbox7"
 							vtrMetrics
@@ -211,7 +224,7 @@
 							#checkbox7
 							(click)="toggle($event, 'SPORTS')"
 						/>
-						<label for="checkbox7">SPORTS</label>
+						<label for="checkbox7">{{ "welcometutorial.sports" | translate }}</label>
 					</div>
 					<div class="inline-block">
 						<input class="checkboxwidth"
@@ -225,7 +238,7 @@
 							#checkbox4
 							(click)="toggle($event, 'ARTS')"
 						/>
-						<label for="checkbox4">ARTS</label>
+						<label for="checkbox4">{{ "welcometutorial.arts" | translate }}</label>
 					</div>
 					<div class="inline-block">
 						<input class="checkboxwidth"
@@ -239,7 +252,7 @@
 							#checkbox8
 							(click)="toggle($event, 'REGIONAL NEWS')"
 						/>
-						<label for="checkbox8">REGIONAL NEWS</label>
+						<label for="checkbox8">{{ "welcometutorial.regionalnews" | translate }}</label>
 					</div>
 					<div class="inline-block">
 						<input class="checkboxwidth"
@@ -253,51 +266,53 @@
 							#checkbox6
 							(click)="toggle($event, 'POLITICS')"
 						/>
-						<label for="checkbox6">POLITICS</label>
+						<label for="checkbox6">{{ "welcometutorial.politics" | translate }}</label>
 					</div>
 				</div>
-				<div class="padding3 justify-content-center title4">
-					{{ "welcometutorial.subtitle3" | translate }}
+				<div class="row py-5 padding3">
+					<div class="col-auto title2 ">
+						{{ "welcometutorial.subtitle3" | translate }}
+					</div>
 				</div>
-
-				<!-- <div class="row">
-					<div class="col">
+				<div class="row py-5 padding3">
+					<div class="col-auto">
 						<input type="checkbox" id="privacypolicy" class="autocheckbox"
 							(click)="savePrivacy($event, 'PRIVACYPOLICY')"
 						/>
 						<label for="privacypolicy"></label>
 					</div>
-					<div class="d-flex justify-content-center title4">
-						{{ "welcometutorial.privacytitle" | translate }}
+					<div class="col-auto d-flex justify-content-center title4">
+						{{ "welcometutorial.privacytitle" | translate }}&nbsp;<a class="linktext" href="https://www.lenovo.com/us/en/privacy"> {{ "welcometutorial.privacypolicy" | translate }}</a>
 					</div>
-				</div> -->
-
-				<div
-					class="d-flex justify-content-center padding3"
-					style="border: none"
-				>
-					<vtr-ui-button
-						metricsParent="modal-welcome"
-						metricsEvent="itemClick"
-						[metricsItem]="'DONE'"
-						[label]="'DONE'"
-						(onClick)="onTutorialDone()"
-					>
-					</vtr-ui-button>
 				</div>
+				<div class="row" py-5 padding3>
+					<div class="d-flex justify-content-center padding3"
+						style="border: none">
+						<vtr-ui-button
+							metricsParent="modal-welcome"
+							metricsEvent="itemClick"
+							[metricsItem]="'DONE'"
+							[label]="'DONE'"
+							(onClick)="next(2)">
+						</vtr-ui-button>
+					</div>
+				</div>
+
+
+					<div class="row justify-content-end">
+						<div class="btn-close position-absolute">
+							<button
+								type="button"
+								class="close"
+								aria-hidden="true"
+								(click)="onTutorialClose()">
+							<fa-icon [icon]="['fas', 'times']"></fa-icon>
+							</button>
+						</div>
+					</div>
+				</div>
+
 			</div>
-		</div>
-	</div>
-	<div class="row justify-content-end">
-		<div class="btn-close position-absolute">
-			<button
-				type="button"
-				class="close"
-				aria-hidden="true"
-				(click)="onTutorialClose()"
-			>
-				<fa-icon [icon]="['fas', 'times']"></fa-icon>
-			</button>
 		</div>
 	</div>
 
