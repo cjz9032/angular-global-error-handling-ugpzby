@@ -321,7 +321,7 @@
 							"line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
 						}
 					},
-					"airplanePower": {
+					"airPlanePower": {
 						"title": "Airplane Power Mode",
 						"description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
 					}

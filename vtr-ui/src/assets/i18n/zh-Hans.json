@@ -212,7 +212,7 @@
 					"temp": "温度",
 					"frupn": "FRU 部件号",
 					"remainingTime": "剩余时间",
-					"chargeCompletionTime": "Charge completion time",
+					"chargeCompletionTime": "充电完成时间",
 					"cycleCount": "充放周期数",
 					"chemistry": "设备化学组成",
 					"remainingCap": "剩余电量",
@@ -321,7 +321,7 @@
 							"line3": "注：快速充电和节电模式无法同时进行。如果启用其中一个模式，则将自动关闭另一个模式。"
 						}
 					},
-					"airplanePower": {
+					"airPlanePower": {
 						"title": "飞行电源模式",
 						"description": "通过控制系统耗电量保护飞机交流电源插座。启用飞行电源模式后，计算机将通过限制电池充电速度和系统性能来降低耗电量。"
 					}
@@ -451,12 +451,12 @@
 			"history": "完整历史记录",
 			"notAvailable": "无法使用",
 			"notInstalled": "未安装",
-			"criticalUpdates": "Critical Update(s)",
-			"recommendedUpdates": "Recommended Update(s)",
-			"optionalUpdates": "Optional Update(s)",
-			"successInstall": "Successfully installed on",
-			"failedInstall": "Failed to installed on",
-			"at": "at",
+			"criticalUpdates": "关键更新",
+			"recommendedUpdates": "推荐更新",
+			"optionalUpdates": "可选更新",
+			"successInstall": "已成功安装",
+			"failedInstall": "无法安装",
+			"at": "在",
 			"popup": {
 				"reboot": "重启",
 				"shutdown": "关掉",
