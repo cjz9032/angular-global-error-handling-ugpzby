@@ -533,6 +533,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
 					this.setUpdateByCategory(payload.updateList);
+					this.systemUpdateService.getUpdateHistory();
 					this.checkRebootRequested();
 					break;
 				default:

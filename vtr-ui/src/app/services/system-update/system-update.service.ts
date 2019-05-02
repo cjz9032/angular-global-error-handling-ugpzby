@@ -448,8 +448,10 @@ export class SystemUpdateService {
 				const pkg = updateInstallationList.find((uil) => {
 					return update.packageID === uil.packageID;
 				});
-				update.installationStatus = pkg.actionResult;
-				update.isInstalled = (update.installationStatus === UpdateActionResult.Success);
+				if (pkg) {
+					update.installationStatus = pkg.actionResult;
+					update.isInstalled = (update.installationStatus === UpdateActionResult.Success);
+				}
 			}
 		});
 	}

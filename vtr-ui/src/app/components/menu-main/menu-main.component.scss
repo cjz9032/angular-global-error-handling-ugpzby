@@ -12,6 +12,9 @@
 		color: $light;
 		justify-content: left;
 
+		.active .icomoon::before{
+			color:$main;
+		}
 		.navbar-brand {
 			font-size: 5rem;
 			font-weight: $weight_bold;
@@ -20,6 +23,11 @@
 			background-color: $main;
 			text-align: center;
 			color: $light;
+			overflow: hidden;
+			img {
+				max-width: 100%;
+				max-height: 100%;
+			}
 		}
 
 		.navbar-text {
@@ -55,7 +63,7 @@
 						font-weight: 400;
 						line-height: calc(#{$menu_height} - 0.65rem);
 						color: $light;
-						padding: 0 1.5rem;
+						padding: 0 2.5rem;
 						border-bottom: transparent solid 0.5rem;
 
 						@media #{$mediaquery_4} {
@@ -80,7 +88,6 @@
 
 						&.user {
 							padding: 2rem 2rem 2rem 2rem;
-							margin-left: 2rem;
 							height: $menu_height;
 							line-height: 4.6rem;
 							border-bottom: none;

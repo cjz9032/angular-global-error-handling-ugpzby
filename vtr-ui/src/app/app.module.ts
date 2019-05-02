@@ -167,6 +167,15 @@ import { UiCircleRadioComponent } from './components/ui/ui-circle-radio/ui-circl
 import { WidgetPermissionNoteComponent } from './components/widgets/widget-permission-note/widget-permission-note.component';
 import { SpinnerComponent } from './components/common/spinner/spinner.component';
 
+import { PagePrivacyComponent } from './components/pages/page-privacy/page-privacy.component';
+import { PageDeviceGamingComponent } from './components/pages/page-device-gaming/page-device-gaming.component';
+import { WidgetLegionEdgeComponent } from './components/widgets/widget-legion-edge/widget-legion-edge.component';
+import { WidgetSystemToolsComponent } from './components/widgets/widget-system-tools/widget-system-tools.component';
+import { WidgetSystemMonitorComponent } from './components/widgets/widget-system-monitor/widget-system-monitor.component';
+import { WidgetQuicksettingsListComponent } from './components/widgets/widget-quicksettings-list/widget-quicksettings-list.component';
+import { WidgetLightingComponent } from './components/widgets/widget-lighting/widget-lighting.component';
+
+
 library.add(fas);
 library.add(fab);
 library.add(far);
@@ -292,7 +301,15 @@ library.add(fal);
 		SuccessClassPipe,
 		UiCircleRadioComponent,
 		WidgetPermissionNoteComponent,
-		SpinnerComponent
+		SpinnerComponent,
+		PagePrivacyComponent,
+		PageDeviceGamingComponent,
+		WidgetLegionEdgeComponent,
+		WidgetSystemToolsComponent,
+		WidgetSystemMonitorComponent,
+		WidgetQuicksettingsListComponent,
+		WidgetLightingComponent
+
 	],
 	imports: [
 		BrowserModule,

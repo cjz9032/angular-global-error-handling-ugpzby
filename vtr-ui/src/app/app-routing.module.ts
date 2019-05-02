@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
 import { PageDeviceComponent } from './components/pages/page-device/page-device.component';
+import { PageDeviceGamingComponent } from './components/pages/page-device-gaming/page-device-gaming.component';
 import { PageDeviceSettingsComponent } from './components/pages/page-device-settings/page-device-settings.component';
 import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
@@ -13,6 +14,7 @@ import { PageSecurityWifiComponent } from './components/pages/page-security-wifi
 import { PageSecurityPasswordComponent } from './components/pages/page-security-password/page-security-password.component';
 import { PageSecurityInternetComponent } from './components/pages/page-security-internet/page-security-internet.component';
 import { PageSupportComponent } from './components/pages/page-support/page-support.component';
+import { PagePrivacyComponent } from './components/pages/page-privacy/page-privacy.component';
 import { PageSupportDetailComponent } from './components/pages/page-support-detail/page-support-detail.component';
 import { PageUserComponent } from './components/pages/page-user/page-user.component';
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
@@ -35,7 +37,12 @@ const routes: Routes = [
 		data: {
 			pageName: 'Device.MyDevice'
 		}
-
+	}, {
+		path: 'device-gaming',
+		component: PageDeviceGamingComponent,
+		data: {
+			pageName: 'Device.MyDevice'
+		}
 	}, {
 		path: 'device/device-settings',
 		component: PageDeviceSettingsComponent,
@@ -109,6 +116,12 @@ const routes: Routes = [
 		canActivate: [WindowsHelloGuardService],
 		data: {
 			pageName: 'Security.WindowsHello'
+		}
+	}, {
+		path: 'privacy',
+		component: PagePrivacyComponent,
+		data: {
+			pageName: 'Page.Privacy'
 		}
 	}, {
 		path: 'support',

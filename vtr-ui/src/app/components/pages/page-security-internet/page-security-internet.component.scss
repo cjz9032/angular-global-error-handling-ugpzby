@@ -59,7 +59,7 @@
 	.text-regular {
 		color: $main_dark;
 		font-size: 1.6rem;
-		
+
 		a {
 			text-decoration: underline;
 		}
@@ -207,7 +207,7 @@
 	}
 	.vtr-page-right-column{
 		@media #{$mediaquery_X8} {
-			padding: 0 8.5rem 4rem;
+			padding: 0 4rem 4rem 8.5rem;
 		}
 	}
 

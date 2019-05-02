@@ -39,8 +39,16 @@
 	margin-bottom: 4rem !important;
 }
 
+.mb-60 {
+	margin-bottom: 6rem !important;
+}
+
 .mb-80 {
 	margin-bottom: 8rem !important;
+}
+
+.mb-100 {
+	margin-bottom: 10rem !important;
 }
 
 .px-20 {
@@ -107,8 +115,16 @@
 		padding: 3.5rem !important;
 	}
 
+	.mb-60 {
+		margin-bottom: 5.5rem !important;
+	}
+
 	.mb-80 {
 		margin-bottom: 7rem !important;
+	}
+
+	.mb-100 {
+		margin-bottom: 9rem !important;
 	}
 }
 
@@ -131,8 +147,16 @@
 		padding: 3rem !important;
 	}
 
+	.mb-60 {
+		margin-bottom: 5rem !important;
+	}
+
 	.mb-80 {
-		margin-bottom: 6rem !important;
+		margin-bottom: 6.5rem !important;
+	}
+
+	.mb-100 {
+		margin-bottom: 8rem !important;
 	}
 }
 
@@ -155,8 +179,16 @@
 		padding: 2.5rem !important;
 	}
 
+	.mb-60 {
+		margin-bottom: 4.5rem !important;
+	}
+
 	.mb-80 {
-		margin-bottom: 5rem !important;
+		margin-bottom: 6rem !important;
+	}
+
+	.mb-100 {
+		margin-bottom: 7.5rem !important;
 	}
 }
 
@@ -179,8 +211,16 @@
 		padding: 2rem !important;
 	}
 
-	.mb-80 {
+	.mb-60 {
 		margin-bottom: 4rem !important;
+	}
+
+	.mb-80 {
+		margin-bottom: 5rem !important;
+	}
+
+	.mb-100 {
+		margin-bottom: 7rem !important;
 	}
 }
 //Added new media query for max-width:800 where vtr-page-right-column margin-left , margin-top css are added to fix VAN-1049 issue.

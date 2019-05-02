@@ -1,0 +1,13 @@
+@import '../../../app.theme.scss';
+
+.vtr-widget-system-monitor {
+	.widget-container {
+		border-radius: $border_radius;
+		background-color: $gaming_dark;
+		box-shadow: $drop_shadow_gaming;
+		padding: 4rem;
+
+		// remove once populated
+		min-height: 40rem;
+	}
+}

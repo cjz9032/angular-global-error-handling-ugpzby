@@ -10,7 +10,7 @@
 				*ngIf="disabledAll">
 				<img class="feed disable"
 					src="../../../assets/images/camera-disable.png"
-					alt="Camera Not Available" />
+					title="{{'device.deviceSettings.displayCamera.camera.notAvailable' | translate}}" />
 			</div>
 		</div>
 		<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
@@ -18,7 +18,8 @@
 				<li class="list-group-item border-top"
 					*ngIf="cameraSettings.brightness.supported">
 					<div class="slider-item-text text-uppercase">
-						Brightness
+						<!-- Brightness -->
+						{{'device.deviceSettings.displayCamera.camera.brightness' | translate}}
 					</div>
 					<vtr-ui-range-slider [step]="cameraSettings.brightness.step"
 						[minValue]="cameraSettings.brightness.min"
@@ -32,7 +33,8 @@
 				<li class="list-group-item"
 					*ngIf="cameraSettings.contrast.supported">
 					<div class="slider-item-text text-uppercase">
-						Contrast
+						<!-- Contrast -->
+						{{'device.deviceSettings.displayCamera.camera.contrast' | translate}}
 					</div>
 					<vtr-ui-range-slider [step]="cameraSettings.contrast.step"
 						[minValue]="cameraSettings.contrast.min"
@@ -47,7 +49,8 @@
 					*ngIf="cameraSettings.exposure.autoModeSupported">
 					<div class="d-flex justify-content-between">
 						<div class="slider-item-text text-uppercase">
-							Auto Exposure
+							<!-- Auto Exposure -->
+							{{'device.deviceSettings.displayCamera.camera.autoExposure' | translate}}
 						</div>
 						<div class="float-right">
 							<vtr-ui-switch-onoff [value]="cameraFeatureAccess.exposureAutoValue"
@@ -69,7 +72,8 @@
 					*ngIf="cameraSettings.focus.supported">
 					<div class="d-flex justify-content-between">
 						<div class="slider-item-text text-uppercase ">
-							Auto Focus
+							<!-- Auto Focus -->
+							{{'device.deviceSettings.displayCamera.camera.autoFocus' | translate}}
 						</div>
 
 						<div class="float-right">

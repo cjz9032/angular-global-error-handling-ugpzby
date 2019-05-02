@@ -3,7 +3,10 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
 	selector: 'vtr-header-main',
 	templateUrl: './header-main.component.html',
-	styleUrls: ['./header-main.component.scss']
+	styleUrls: [
+		'./header-main.component.scss',
+		'./header-main.component.gaming.scss'
+	]
 })
 export class HeaderMainComponent implements OnInit {
 

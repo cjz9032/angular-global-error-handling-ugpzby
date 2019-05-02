@@ -8,7 +8,27 @@ $main_light: #5086cb;
 $main_lighter: #b5d0f4;
 $main_lightest: #eaf2fd;
 
+$gaming_darkest: #1F2A42;
+$gaming_darker: #253048;
+$gaming_dark: #323F5B;
+$gaming_shade: #46526B;
+$gaming_gstart: #2d5dcf;
+$gaming: #4579f0;
+$gaming_light: #5086cb;
+$gaming_lighter: #b5d0f4;
+$gaming_lightest: #FBFDFF;
+
 $highlight: #2ec5eb;
+
+$shade_extradark: #1b1b1b;
+$shade_darkest: #333;
+$shade_darker: #6b6b6b;
+$shade_dark: #9d9d9d;
+$shade: #adadad;
+$shade_light: #c8cbcb;
+$shade_lighter: #e6e6e6;
+$shade_lightest: #f1f1f1;
+$shade_extralight: #f6f8f8;
 
 $alt: #e02725;
 $orange-light: #ff7e3e;
@@ -23,15 +43,6 @@ $stop: #ea5545;
 $stop_light: #f97264;
 $stop_dark: #d94839;
 
-$shade_extradark: #1b1b1b;
-$shade_darkest: #333;
-$shade_darker: #6b6b6b;
-$shade_dark: #9d9d9d;
-$shade: #adadad;
-$shade_light: #c8cbcb;
-$shade_lighter: #e6e6e6;
-$shade_lightest: #f1f1f1;
-$shade_extralight: #f6f8f8;
 $shade_blue: #34495e;
 $blue-dark: #24536d;
 $light-grey: #788590;
@@ -50,6 +61,7 @@ $screen_light_15: rgba(255, 255, 255, 0.15);
 
 $drop_shadow: 0 0 1.5rem 0 $screen_dark_15;
 $drop_shadow_1: 0 0 1rem 0 $screen_dark_15;
+$drop_shadow_gaming: 0 0 3.5rem 0 $screen_dark_30;
 $text_shadow: 0 0 0.3rem $screen_dark_70;
 
 $weight_light: 300;
@@ -88,6 +100,11 @@ $mediaquery_10: "only screen and (max-width: 800px)";
 $mediaquery_11: "only screen and (max-width: 768px)";
 $mediaquery_12: "only screen and (max-width: 575px)";
 $mediaquery_13: "only screen and (min-width: 576px) and (max-width : 735px)";
+$mediaquery_14: "only screen and (min-width: 768px) and (max-width : 1366px) and (max-resolution: 125dpi)";
+$mediaquery_15: "only screen and (max-width: 767px)";
+$mediaquery_16: "only screen and (min-width: 531px) and (max-width : 585px)";
+$mediaquery_17: "only screen and (min-width: 1196px) and (max-width : 1346px)";
+
 
 $mediaquery_X1: "only screen and (min-width: 800px) and (max-width : 1200px)";
 $mediaquery_X2: "only screen and (min-width: 769px) and (max-width : 966px)";
