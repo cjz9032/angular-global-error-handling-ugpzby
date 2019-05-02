@@ -467,6 +467,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					});
 					break;
 				case UpdateProgress.InstallationComplete:
+					this.systemUpdateService.getUpdateHistory();
 					this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
 					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
@@ -581,25 +582,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			);
 		}
 	}
-
-	// check for installed updates, if all installed correctly return true else return false
-	// private getInstallationSuccess(payload: any): boolean {
-	// 	let isSuccess = false;
-	// 	if (payload.status !== SystemUpdateStatusMessage.SUCCESS.code) {
-	// 		isSuccess = false;
-	// 	} else {
-	// 		for (let index = 0; index < payload.updateList.length; index++) {
-	// 			const update = payload.updateList[index];
-	// 			if (update.installationStatus === UpdateActionResult.Success || update.installationStatus === UpdateActionResult.Unknown) {
-	// 				isSuccess = true;
-	// 			} else {
-	// 				isSuccess = false;
-	// 				break;
-	// 			}
-	// 		}
-	// 	}
-	// 	return isSuccess;
-	// }
 
 	public onCancelUpdateDownload() {
 		this.systemUpdateService.cancelUpdateDownload();

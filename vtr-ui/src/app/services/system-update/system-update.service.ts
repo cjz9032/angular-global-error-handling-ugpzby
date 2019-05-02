@@ -29,7 +29,6 @@ export class SystemUpdateService {
 	public autoUpdateStatus: any;
 	public isShellAvailable = false;
 	public isCheckForUpdateComplete = true;
-	// public isInstallationComplete = false;
 	public updateInfo: AvailableUpdate;
 	public installationHistory: Array<UpdateHistory>;
 
@@ -165,29 +164,6 @@ export class SystemUpdateService {
 
 	private processScheduleUpdate(response: any) {
 		const status = response.status.toLowerCase();
-		// if ((status === 'installing' || status === 'checking' || status === 'downloading') && response.updateTaskList === null) {
-		// 	if (status === 'installing') {
-		// 		this.commonService.sendNotification(UpdateProgress.ScheduleUpdateInstalling);
-		// 	} else if (status === 'checking') {
-		// 		this.commonService.sendNotification(UpdateProgress.ScheduleUpdateChecking);
-		// 	} else if (status === 'downloading') {
-		// 		this.commonService.sendNotification(UpdateProgress.ScheduleUpdateDownloading);
-		// 	}
-		// 	this.getScheduleUpdateStatus(true);
-		// } else if (status === 'installing') {
-		// 	this.commonService.sendNotification(UpdateProgress.ScheduleUpdateInstalling, response);
-		// } else if (status === 'checking') {
-		// 	this.commonService.sendNotification(UpdateProgress.ScheduleUpdateChecking, response);
-		// } else if (status === 'downloading') {
-		// 	this.commonService.sendNotification(UpdateProgress.ScheduleUpdateDownloading, response);
-		// } else if (status === 'idle') {
-		// 	if (response.updateTaskList && response.updateTaskList.length > 0) {
-		// 		this.updateInfo = this.mapScheduleInstallResponse(response.updateTaskList);
-		// 		this.commonService.sendNotification(UpdateProgress.ScheduleUpdateCheckComplete, this.updateInfo);
-		// 	} else {
-		// 		this.commonService.sendNotification(UpdateProgress.ScheduleUpdateIdle, response);
-		// 	}
-		// }
 		if (status === 'installing' || status === 'checking' || status === 'downloading') {
 			if (status === 'installing') {
 				this.isUpdateDownloading = true;
@@ -310,9 +286,16 @@ export class SystemUpdateService {
 
 	public isRebootRequested(): boolean {
 		if (this.updateInfo) {
+			const delayedPackages = this.updateInfo.updateList.filter(pkg => {
+				return pkg.packageRebootType.toLowerCase() === 'rebootdelayed' && pkg.isInstalled;
+			});
+			// if reboot delayed packages are there then don't show reboot requested dialog/modal
+			if (delayedPackages.length > 0) {
+				return false;
+			}
 			for (let index = 0; index < this.updateInfo.updateList.length; index++) {
 				const update = this.updateInfo.updateList[index];
-				if (update.packageRebootType === 'RebootRequested' && update.isInstalled) {
+				if (update.packageRebootType.toLowerCase() === 'rebootrequested' && update.isInstalled) {
 					return true;
 				}
 			}

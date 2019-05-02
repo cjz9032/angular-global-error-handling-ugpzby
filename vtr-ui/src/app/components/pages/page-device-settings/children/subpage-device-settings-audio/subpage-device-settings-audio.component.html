@@ -120,9 +120,10 @@
 							[theme]="'white'">
 							<div class="row">
 								<div class="col-10">
-									<vtr-ui-range-slider [minValueLegend]="'Silent'"
+									<vtr-ui-range-slider
+										[minValueLegend]="'device.deviceSettings.audio.microphone.volume.options.silent' | translate"
 										[minValue]="0"
-										[maxValueLegend]="'Loud'"
+										[maxValueLegend]="'device.deviceSettings.audio.microphone.volume.options.loud' | translate"
 										[maxValue]="100"
 										(change)="setVolume($event)"
 										[enableSlider]="!microphoneProperties.permission"
