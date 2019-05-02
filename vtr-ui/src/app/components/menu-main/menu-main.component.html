@@ -26,7 +26,7 @@
 		<div class="collapse navbar-collapse hidden-xs"
 			id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
-				<ng-container *ngFor="let item of configService.getMenuItems(deviceService.isGaming); let i=index">
+				<ng-container *ngFor="let item of items; let i=index">
 					<li *ngIf="item.subitems.length===0&&item.id!=='user'&&showItem(item)"
 						class="nav-item">
 						<a class="nav-link {{item.id}}"
@@ -36,8 +36,9 @@
 							[metricsItem]="item.metricsItem"
 							routerLink="/{{item.path}}"
 							routerLinkActive="active">
-							<fa-icon [icon]="item.icon"
+							<fa-icon *ngIf="item.icon[0]==='icon'" [icon]="item.icon"
 								class="fa-icon"></fa-icon>
+							<span *ngIf="item.icon[0]==='icomoon'" [ngClass]="[item.icon[0],item.icon[1]]"></span>
 							{{item.label | translate}}
 						</a>
 					</li>

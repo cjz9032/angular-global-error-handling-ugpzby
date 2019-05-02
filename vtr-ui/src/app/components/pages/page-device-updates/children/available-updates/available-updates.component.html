@@ -96,7 +96,7 @@
 					*ngIf="optionalUpdates && optionalUpdates.length > 0">
 					<div class="col">
 						<div class="header">
-							<div class="heading">{{optionalUpdates.length}} Optional updates</div>
+							<div class="heading">{{optionalUpdates.length}} {{'device.systemUpdates.optionalUpdates' | translate}}</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
 								[isInstallationCompleted]="isInstallationCompleted"
 								[isInstallationSuccess]="isInstallationSuccess"
