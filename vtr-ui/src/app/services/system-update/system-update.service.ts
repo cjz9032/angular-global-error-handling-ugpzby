@@ -29,7 +29,6 @@ export class SystemUpdateService {
 	public autoUpdateStatus: any;
 	public isShellAvailable = false;
 	public isCheckForUpdateComplete = true;
-	// public isInstallationComplete = false;
 	public updateInfo: AvailableUpdate;
 	public installationHistory: Array<UpdateHistory>;
 
@@ -287,9 +286,16 @@ export class SystemUpdateService {
 
 	public isRebootRequested(): boolean {
 		if (this.updateInfo) {
+			const delayedPackages = this.updateInfo.updateList.filter(pkg => {
+				return pkg.packageRebootType.toLowerCase() === 'rebootdelayed' && pkg.isInstalled;
+			});
+			// if reboot delayed packages are there then don't show reboot requested dialog/modal
+			if (delayedPackages.length > 0) {
+				return false;
+			}
 			for (let index = 0; index < this.updateInfo.updateList.length; index++) {
 				const update = this.updateInfo.updateList[index];
-				if (update.packageRebootType === 'RebootRequested' && update.isInstalled) {
+				if (update.packageRebootType.toLowerCase() === 'rebootrequested' && update.isInstalled) {
 					return true;
 				}
 			}
