@@ -69,7 +69,7 @@
 					*ngIf="criticalUpdates && criticalUpdates.length > 0">
 					<div class="col">
 						<div class="header">
-							<div class="heading">{{criticalUpdates.length}} Critical updates</div>
+							<div class="heading">{{criticalUpdates.length}} {{'device.systemUpdates.criticalUpdates' | translate}}</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
 								[isInstallationCompleted]="isInstallationCompleted"
 								[isInstallationSuccess]="isInstallationSuccess"
@@ -83,7 +83,7 @@
 					*ngIf="recommendedUpdates && recommendedUpdates.length > 0">
 					<div class="col">
 						<div class="header">
-							<div class="heading">{{recommendedUpdates.length}} Recommended updates</div>
+							<div class="heading">{{recommendedUpdates.length}} {{'device.systemUpdates.recommendedUpdates' | translate}}</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
 								[isInstallationCompleted]="isInstallationCompleted"
 								[isInstallationSuccess]="isInstallationSuccess"
