@@ -12,6 +12,9 @@
 		color: $light;
 		justify-content: left;
 
+		.active .icomoon::before{
+			color:$main;
+		}
 		.navbar-brand {
 			font-size: 5rem;
 			font-weight: $weight_bold;

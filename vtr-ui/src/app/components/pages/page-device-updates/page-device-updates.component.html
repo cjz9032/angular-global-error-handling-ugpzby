@@ -46,9 +46,9 @@
 										[criticalUpdates]="criticalUpdates"
 										[optionalUpdates]="optionalUpdates"
 										[recommendedUpdates]="recommendedUpdates"
-										[isInstallationCompleted]="isInstallationCompleted"
-										[isInstallationSuccess]="isInstallationSuccess"
-										[isInstallingAllUpdates]="isInstallingAllUpdates"
+										[isInstallationCompleted]="systemUpdateService.isInstallationCompleted"
+										[isInstallationSuccess]="systemUpdateService.isInstallationSuccess"
+										[isInstallingAllUpdates]="systemUpdateService.isInstallingAllUpdates"
 										(checkChange)="onUpdateSelectionChange($event)"
 										(installAllUpdate)="showInstallConfirmation('all')"
 										(installSelectedUpdate)="showInstallConfirmation('selected')">

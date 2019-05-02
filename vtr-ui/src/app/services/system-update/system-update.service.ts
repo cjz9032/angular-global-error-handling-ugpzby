@@ -29,10 +29,18 @@ export class SystemUpdateService {
 	public autoUpdateStatus: any;
 	public isShellAvailable = false;
 	public isCheckForUpdateComplete = true;
-	public isUpdatesAvailable = false;
-	public isInstallationComplete = false;
+	// public isInstallationComplete = false;
 	public updateInfo: AvailableUpdate;
 	public installationHistory: Array<UpdateHistory>;
+
+	public isUpdatesAvailable = false;
+	public isUpdateDownloading = false;
+	public isInstallingAllUpdates = true;
+	public percentCompleted = 0;
+	public installationPercent = 0;
+	public downloadingPercent = 0;
+	public isInstallationCompleted = false;
+	public isInstallationSuccess = false;
 
 	/**
 	 * gets data about last scan, install & schedule scan date-time for Check for Update section
@@ -100,9 +108,10 @@ export class SystemUpdateService {
 		// checkForUpdates requires callback
 		if (this.systemUpdateBridge) {
 			this.isCheckForUpdateComplete = false;
-			this.isInstallationComplete = false;
+			this.isInstallationCompleted = false;
 			this.systemUpdateBridge.checkForUpdates((progressPercentage: number) => {
 				console.log('checkForUpdates callback', progressPercentage);
+				this.percentCompleted = progressPercentage;
 				this.commonService.sendNotification(UpdateProgress.UpdateCheckInProgress, progressPercentage);
 			}).then((response) => {
 				console.log('checkForUpdates response', response, typeof response.status);
@@ -111,10 +120,15 @@ export class SystemUpdateService {
 				this.isUpdatesAvailable = (response.updateList && response.updateList.length > 0);
 
 				if (status === SystemUpdateStatusMessage.SUCCESS.code) { // success
+					this.percentCompleted = 0;
+					this.isUpdatesAvailable = true;
 					this.updateInfo = { status: status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
 					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
 				} else {
-					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, { ...response, status });
+					this.percentCompleted = 0;
+					const payload = { ...response, status };
+					this.isInstallationSuccess = this.getInstallationSuccess(payload);
+					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
 				}
 			}).catch((error) => {
 				console.log('checkForUpdates.error', error);
@@ -151,16 +165,64 @@ export class SystemUpdateService {
 
 	private processScheduleUpdate(response: any) {
 		const status = response.status.toLowerCase();
-		if ((status === 'installing' || status === 'checking' || status === 'downloading') && response.updateTaskList === null) {
+		// if ((status === 'installing' || status === 'checking' || status === 'downloading') && response.updateTaskList === null) {
+		// 	if (status === 'installing') {
+		// 		this.commonService.sendNotification(UpdateProgress.ScheduleUpdateInstalling);
+		// 	} else if (status === 'checking') {
+		// 		this.commonService.sendNotification(UpdateProgress.ScheduleUpdateChecking);
+		// 	} else if (status === 'downloading') {
+		// 		this.commonService.sendNotification(UpdateProgress.ScheduleUpdateDownloading);
+		// 	}
+		// 	this.getScheduleUpdateStatus(true);
+		// } else if (status === 'installing') {
+		// 	this.commonService.sendNotification(UpdateProgress.ScheduleUpdateInstalling, response);
+		// } else if (status === 'checking') {
+		// 	this.commonService.sendNotification(UpdateProgress.ScheduleUpdateChecking, response);
+		// } else if (status === 'downloading') {
+		// 	this.commonService.sendNotification(UpdateProgress.ScheduleUpdateDownloading, response);
+		// } else if (status === 'idle') {
+		// 	if (response.updateTaskList && response.updateTaskList.length > 0) {
+		// 		this.updateInfo = this.mapScheduleInstallResponse(response.updateTaskList);
+		// 		this.commonService.sendNotification(UpdateProgress.ScheduleUpdateCheckComplete, this.updateInfo);
+		// 	} else {
+		// 		this.commonService.sendNotification(UpdateProgress.ScheduleUpdateIdle, response);
+		// 	}
+		// }
+		if (status === 'installing' || status === 'checking' || status === 'downloading') {
+			if (status === 'installing') {
+				this.isUpdateDownloading = true;
+				this.downloadingPercent = 100;
+				if (response && response.installProgress) {
+					this.installationPercent = response.installProgress.progressinPercentage;
+				}
+				if (response.updateTaskList === null) {
+					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateInstalling);
+				} else {
+					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateInstalling, response);
+				}
+			} else if (status === 'checking') {
+				if (response.updateTaskList === null) {
+					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateChecking);
+				} else {
+					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateChecking, response);
+				}
+			} else if (status === 'downloading') {
+				this.isUpdateDownloading = true;
+				this.installationPercent = 0;
+				if (response && response.downloadProgress) {
+					this.downloadingPercent = response.downloadProgress.progressinPercentage;
+				}
+				if (response.updateTaskList === null) {
+					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateDownloading);
+				} else {
+					this.commonService.sendNotification(UpdateProgress.ScheduleUpdateDownloading, response);
+				}
+			}
 			this.getScheduleUpdateStatus(true);
-		} else if (status === 'installing') {
-			this.commonService.sendNotification(UpdateProgress.ScheduleUpdateInstalling, response);
-		} else if (status === 'checking') {
-			this.commonService.sendNotification(UpdateProgress.ScheduleUpdateChecking, response);
-		} else if (status === 'downloading') {
-			this.commonService.sendNotification(UpdateProgress.ScheduleUpdateDownloading, response);
 		} else if (status === 'idle') {
+			this.isUpdateDownloading = false;
 			if (response.updateTaskList && response.updateTaskList.length > 0) {
+				this.isInstallationCompleted = true;
 				this.updateInfo = this.mapScheduleInstallResponse(response.updateTaskList);
 				this.commonService.sendNotification(UpdateProgress.ScheduleUpdateCheckComplete, this.updateInfo);
 			} else {
@@ -299,7 +361,6 @@ export class SystemUpdateService {
 	}
 
 	private getUpdateByRebootType(updateList: Array<AvailableUpdateDetail>, rebootType: UpdateRebootType, source: string): Array<AvailableUpdateDetail> {
-
 		const updates = updateList.filter((value: AvailableUpdateDetail) => {
 			return ((value.packageRebootType.toLowerCase() === rebootType.toLocaleLowerCase()) && (value.isSelected || source === 'all'));
 		});
@@ -308,19 +369,29 @@ export class SystemUpdateService {
 
 	private installUpdates(updates: Array<InstallUpdate>, isInstallingAllUpdates: boolean) {
 		// VAN-2798 immediately show progress bar
+		this.isUpdateDownloading = true;
+		this.installationPercent = 0;
+		this.downloadingPercent = 0;
 		this.commonService.sendNotification(UpdateProgress.InstallingUpdate, { downloadPercentage: 0, installPercentage: 0 });
 
 		this.systemUpdateBridge.installUpdates(updates, (progress: any) => {
-			console.log('installUpdates callback', progress);
+			console.log('installUpdates callback', progress.installPercentage, progress);
+			this.isUpdateDownloading = true;
+			this.installationPercent = progress.installPercentage;
+			this.downloadingPercent = progress.downloadPercentage;
 			this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);
 		}).then((response: any) => {
 			console.log('installUpdates response', response);
 			if (response) {
-				this.isInstallationComplete = true;
+				this.isUpdateDownloading = false;
+				this.isInstallationCompleted = true;
+				this.downloadingPercent = 100;
+				this.installationPercent = 100;
 				this.mapInstallationStatus(this.updateInfo.updateList, response.updateResultList, isInstallingAllUpdates);
 				const payload = new AvailableUpdate();
 				payload.status = parseInt(response.status, 10);
 				payload.updateList = this.updateInfo.updateList;
+				this.isInstallationSuccess = this.getInstallationSuccess(payload);
 				this.commonService.sendNotification(UpdateProgress.InstallationComplete, payload);
 			}
 		});
@@ -434,11 +505,36 @@ export class SystemUpdateService {
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.cancelDownload()
 				.then((status: boolean) => {
+					this.isUpdateDownloading = false;
+					this.isInstallingAllUpdates = true;
+					this.percentCompleted = 0;
+					this.isUpdatesAvailable = true;
+					this.installationPercent = 0;
+					this.downloadingPercent = 0;
 					this.commonService.sendNotification(UpdateProgress.UpdateDownloadCancelled, status);
 				})
 				.catch((error) => {
 					console.log('cancelDownload.error', error);
 				});
 		}
+	}
+
+	// check for installed updates, if all installed correctly return true else return false
+	private getInstallationSuccess(payload: any): boolean {
+		let isSuccess = false;
+		if (payload.status !== SystemUpdateStatusMessage.SUCCESS.code) {
+			isSuccess = false;
+		} else {
+			for (let index = 0; index < payload.updateList.length; index++) {
+				const update = payload.updateList[index];
+				if (update.installationStatus === UpdateActionResult.Success || update.installationStatus === UpdateActionResult.Unknown) {
+					isSuccess = true;
+				} else {
+					isSuccess = false;
+					break;
+				}
+			}
+		}
+		return isSuccess;
 	}
 }
