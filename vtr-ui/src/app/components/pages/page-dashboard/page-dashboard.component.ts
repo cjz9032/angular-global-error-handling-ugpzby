@@ -72,7 +72,7 @@ export class PageDashboardComponent implements OnInit {
 		if (this.deviceService.isGaming) {
 			this.router.navigateByUrl(this.configService.getMenuItems(this.deviceService.isGaming)[0].path);
 		}
-		const self = this
+		const self = this;
 		this.translate.stream('lenovoId.user').subscribe((value) => {
 			if (!self.userService.auth) {
 				self.firstName = value;
@@ -519,6 +519,7 @@ export class PageDashboardComponent implements OnInit {
 					break;
 				case LenovoIdKey.FirstName:
 					this.firstName = notification.payload;
+					break;
 				default:
 					break;
 			}

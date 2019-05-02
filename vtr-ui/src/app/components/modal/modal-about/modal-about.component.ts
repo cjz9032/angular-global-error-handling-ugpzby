@@ -27,9 +27,9 @@ export class ModalAboutComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.http.get(this.url, { responseType: 'text' }).subscribe((results: any) => {
-			// console.log(this.sanitizer.bypassSecurityTrustHtml(results));
+			// console.log('OSS license', results, results.length);
 			if (this.type === 'txt') {
-				this.articleBody = `<pre>${results}</pre>`;
+				this.articleBody = this.sanitizer.bypassSecurityTrustHtml(`<pre>${results}</pre>`);
 			} else {
 				this.articleBody = this.sanitizer.bypassSecurityTrustHtml(results);
 			}

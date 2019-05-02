@@ -164,9 +164,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	startMonitorHandlerForDolby(response: DolbyModeResponse) {
-		// Need to remove comment once response is coming correctly
-		//this.dolbyModeResponse = response;
 		console.log('startMonitorHandlerForDolby', response);
+		this.dolbyModeResponse = response;
 	}
 
 	onDolbySeetingRadioChange(event) {

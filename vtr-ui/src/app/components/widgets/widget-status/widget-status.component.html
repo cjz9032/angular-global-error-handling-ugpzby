@@ -9,7 +9,12 @@
 	</div>
 	<div class="row">
 		<div class="col">
-			<vtr-ui-list-chevron [items]="items"></vtr-ui-list-chevron>
+			<div class="text-center"
+				*ngIf="items.length === 0">
+				<vtr-spinner></vtr-spinner>
+			</div>
+			<vtr-ui-list-chevron [items]="items"
+				*ngIf="items.length > 0"></vtr-ui-list-chevron>
 		</div>
 	</div>
 </div>

@@ -108,11 +108,6 @@
 			<div class="row">
 				<div class="col col-12 image-container">
 					<a [attr.href]="!actionLink ? null : actionLink"
-						metricsItemCategory="article"
-						vtrMetrics
-						metricsEvent="docClick"
-						[metricsItemPosition]="order"
-						[metricsItemID]="itemID"
 						target="_blank"
 						class="card-image"
 						[style.background-image]="'url(' + img + ')'">
@@ -131,13 +126,7 @@
 							class="title">{{title}}</div>
 						<div *ngIf="actionLink"
 							class="read-more">
-							<a [attr.href]="!actionLink ? null : actionLink"
-								target="_blank"
-								vtrMetrics
-								metricsItemCategory="article"
-								metricsEvent="docClick"
-								[metricsItemPosition]="order"
-								[metricsItemID]="itemID">
+							<a [attr.href]="!actionLink ? null : actionLink">
 								<span class="link-label">{{action}}</span>
 								<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 							</a>
