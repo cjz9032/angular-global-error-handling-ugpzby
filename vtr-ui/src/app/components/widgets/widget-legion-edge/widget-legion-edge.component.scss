@@ -4,11 +4,76 @@
 	border-radius: $border_radius;
 	background-color: $gaming_dark;
 	box-shadow: $drop_shadow_gaming;
-	padding: 4rem;
+	padding: 2.2rem;
 
 	// remove once populated
 	min-height: 30rem;
 	.gaming-header-image {
-		height: 2.5rem;
+		height: 4rem;
+		margin-top: 0.8rem;
+	}
+	.help-box {
+		height: 4rem;
+		margin-top: 1.6rem;
+		.icomoon {
+			background: $gaming_icon_gradient;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			font-size: 2.6rem;
+		}
+	}
+	.legionEdge-list-items {
+		/*margin-bottom: -2rem;
+		.list-group-item{
+			background: transparent;
+			color: white;
+			padding: 1.8rem 0.8rem;
+			font-size: 1.8rem;
+			border: none;
+			border-bottom: 1px solid $screen_dark_15;
+			&:last-child{
+				border-bottom: none;
+			}
+			h4 {
+				font-weight: bold;
+				small{
+					display: block;
+					color: $shade_light;
+					padding-top: 1rem;
+				}
+			}
+		}*/
+		&::ng-deep .vtr-widget-device-update-settings {
+			background-color: transparent;
+			padding: 0;
+			box-shadow: none;
+			border: none;
+			.settings-container{
+				.list-group-item{
+					background: transparent;
+					color: white;
+					padding: 1.8rem 0.8rem;
+					font-size: 1.8rem;
+					border: none;
+					border-bottom: 1px solid $screen_dark_15;
+					&:last-child{
+						border-bottom: none;
+					}
+					.media {
+						padding-left: 0 !important;
+						fa-icon{
+							display: none;
+						}
+						.media-body {
+							padding-left: 0 !important;
+						}
+					}
+					.update-title{
+						color: white;
+					}
+				}
+			}
+		}
 	}
 }

@@ -7,6 +7,50 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WidgetLegionEdgeComponent implements OnInit {
 
+  public autoUpdateOptions = [
+		{
+			readMoreText: '',
+			rightImageSource: ['far', 'question-circle'],
+			leftImageSource: ['fas', 'battery-three-quarters'],
+			header: 'Critical Updates',
+			name: 'critical-updates',
+			subHeader: '',
+			isCheckBoxVisible: true,
+			isSwitchVisible: true,
+			isChecked: true,
+			tooltipText: 'Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption.',
+			type: 'auto-updates'
+		},
+		{
+			readMoreText: '',
+			rightImageSource: ['far', 'question-circle'],
+			leftImageSource: ['fas', 'battery-three-quarters'],
+			header: 'Recommended Updates',
+			name: 'recommended-updates',
+			subHeader: '',
+			isCheckBoxVisible: false,
+			isSwitchVisible: true,
+			isChecked: true,
+			tooltipText: 'Recommended driver updates keep your computer running at optimal performance.',
+			type: 'auto-updates'
+		},
+		{
+			readMoreText: '',
+			rightImageSource: '',
+			leftImageSource: ['fas', 'battery-three-quarters'],
+			header: 'Windows Updates',
+			name: 'windows-updates',
+			subHeader: '',
+			isCheckBoxVisible: false,
+			isSwitchVisible: false,
+			isChecked: true,
+			linkText: 'Windows settings',
+			linkPath: 'ms-settings:windowsupdate',
+			type: 'auto-updates'
+
+		}
+	];
+
   constructor() { }
 
   ngOnInit() {

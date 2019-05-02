@@ -17,6 +17,7 @@ $gaming: #4579f0;
 $gaming_light: #5086cb;
 $gaming_lighter: #b5d0f4;
 $gaming_lightest: #FBFDFF;
+$gaming_icon_gradient: linear-gradient(45deg, #3592ff, #0078ff);
 
 $highlight: #2ec5eb;
 
@@ -185,3 +186,9 @@ $menu_height: 9rem;
 $header_height: 20.5rem;
 
 $modal_top_margin: 8rem;
+
+
+/*media screen sizes for gaming*/
+$small-screen: "only screen and (max-width : 767px)";
+$medium-screen: "only screen and (min-width : 768px) and (max-width : 992px)";
+$large-screen: "only screen and (min-width : 1200px)";
