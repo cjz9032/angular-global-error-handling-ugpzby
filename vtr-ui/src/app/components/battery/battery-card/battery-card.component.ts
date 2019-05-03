@@ -16,7 +16,7 @@ import { ViewRef_ } from '@angular/core/src/view';
 })
 export class BatteryCardComponent implements OnInit, OnDestroy {
 	constructor(
-		private modalService: NgbModal, 
+		private modalService: NgbModal,
 		private batteryService: BatteryDetailService,
 		public shellServices: VantageShellService,
 		private commonService: CommonService,
@@ -27,7 +27,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	batteryCardTimer: any;
 	batteryIndicator = new BatteryIndicator();
 	flag = true;
-	
+
 	ngOnInit() {
 		this.shellServices.registerEvent(EventTypes.pwrPowerSupplyStatusEvent, this.onPowerSupplyStatusEvent.bind(this));
 		this.shellServices.registerEvent(EventTypes.pwrRemainingPercentageEvent, this.onRemainingPercentageEvent.bind(this));
@@ -105,10 +105,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
                 this.cd.detectChanges();
         }
 	}
-	
+
 	public showDetailModal(content: any): void {
 		this.modalService
 			.open(content, {
+				backdrop: 'static',
 				size: 'lg',
 				windowClass: 'battery-modal-size'
 			})

@@ -128,6 +128,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 
 	openThreatLocator() {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalThreatLocatorComponent, {
+			backdrop: 'static',
 			size: 'lg',
 			centered: true,
 			windowClass: 'Threat-Locator-Modal'
