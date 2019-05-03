@@ -323,7 +323,7 @@ export class ConfigService {
 		return this.deviceService.getMachineInfo().then((machineInfo)=>{
 			if(isGaming){
 				return this.menuItemsGaming;
-			} else if(this.countryCodes.indexOf(machineInfo.country.toUpperCase())===-1) {
+			} else if(this.countryCodes.indexOf(machineInfo.country.toUpperCase())!==-1) {
 				return this.menuItemsPrivacy;
 			}else{
 				return this.menuItems;
