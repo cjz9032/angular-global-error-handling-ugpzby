@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WidgetLegionEdgeComponent implements OnInit {
 
-	public autoUpdateOptions = [
+  public legionUpdate = [
 		{
 			readMoreText: '',
 			rightImageSource: ['far', 'question-circle'],
