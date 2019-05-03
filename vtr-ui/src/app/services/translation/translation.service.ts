@@ -26,10 +26,7 @@ export class TranslationService {
 		// subscribe to top level object and update text in one go
 		translate.get(TranslationSection.CommonMenu)
 			.subscribe((changes: any) => {
-				console.log('translateStrings', changes);
-
 				this.notifyChanges(TranslationSection.CommonMenu, changes);
-
 			});
 
 		translate.get(TranslationSection.CommonUi)

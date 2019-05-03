@@ -20,6 +20,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	public fillWidth = 0;
 	public fillStartColor = '#ff0000';
 	public fillEndColor = '#00ff00';
+	hideRemainingTimeTxt = false;
 
 	@ViewChild('battery') battery: ElementRef;
 	@ViewChild('batteryIndicator') batteryIndicator: ElementRef;
@@ -36,12 +37,14 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	ngOnInit() {
 		this.getCssDeclaration();
 		this.refreshLevel();
+		this.checkRemainingTimeIsZero();
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
 		if (changes['percentage'] && !changes['percentage'].firstChange) {
 			this.refreshLevel();
 		}
+		this.checkRemainingTimeIsZero();
 	}
 
 	// Note : when page is resized, battery fill is not showing correctly.
@@ -148,6 +151,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	}
 
 	public getTimeRemaining(): string {
+		this.checkRemainingTimeIsZero();
 		if (Number.isNaN(this.remainingMinutes)) {
 			return "0 minutes";
 		}
@@ -165,6 +169,22 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 			} ${minutes}`;
 	}
 
+	checkRemainingTimeIsZero() {
+		let isZero = false;
+		if (Number.isNaN(this.remainingMinutes)) {
+			this.hideRemainingTimeTxt = true
+			return;
+		}
+		if(this.remainingHour == 0) {
+			if (this.remainingMinutes == 0) {
+				this.hideRemainingTimeTxt = true
+			} else { 
+				this.hideRemainingTimeTxt = false;
+			}
+			return;
+		}
+		this.hideRemainingTimeTxt = false;
+	}
 	// returns windows object
 	private getCssPropertyValue(propertyName: string): string {
 		if (this.cssStyleDeclaration) {

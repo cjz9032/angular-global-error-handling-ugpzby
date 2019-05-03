@@ -150,11 +150,9 @@
 								list-group-flush">
 						<li class="">
 							<vtr-ui-row-switch
-								[title]="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate | lowercase"
 								[caption]="''"
 								[isSwitchVisible]="toggleIntelligentCooling"
 								[isSwitchChecked]="toggleIntelligentCoolingStatus"
-								[leftIcon]="['fas', 'search']"
 								[readMoreText]="''"
 								[showChildContent]="true"
 								[theme]="'blue'"
@@ -193,16 +191,22 @@
 					[theme]="'blue'">
 					<div class="row">
 						<div class="col-auto text-wrap subtitle">
-							<h3>Intelligent Cooling</h3>
+							<h3>
+								<!-- Intelligent Cooling  -->
+								{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate | lowercase}}
+							</h3>
 							<p>{{'device.deviceSettings.power.powerSmartSettings.description2' | translate}}
 								<!-- <a class="read-more-link"
 									(click)="">Read more.</a> -->
 							</p>
-							<p> {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line1' | translate}}
+							<p> <span class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode1' | translate}}:</span>
+									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line1' | translate}}
 							</p>
-							<p>{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line2' | translate}}
+							<p> <span class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode2' | translate}}:</span>
+								{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line2' | translate}}
 							</p>
-							<p>{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line3' | translate}}
+							<p> <span class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode3' | translate}}:</span>
+								{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line3' | translate}}
 							</p>
 						</div>
 					</div>
@@ -218,7 +222,8 @@
 							</div>
 						</div>
 						<div class="col-auto"><a class="settings-link"
-								(click)="openContextModal(template)">{{'device.deviceSettings.power.powerSmartSettings.gotoWindows' | translate}}</a>
+								(click)="openContextModal(template)">
+								{{'device.deviceSettings.power.powerSmartSettings.gotoWindows.title' | translate}}</a>
 							<ng-template #template>
 								<div class="justify-content-end">
 									<button type="button"
@@ -229,7 +234,10 @@
 									</button>
 								</div>
 								<div class="modal-body">
-									<p>Click on Windows battery icon on System tray to access Windows performance power slider</p>
+									<p>{{'device.deviceSettings.power.powerSmartSettings.gotoWindows.modalBodyText1' | translate}}
+										<!-- 	Click on Windows battery icon on System tray to access Windows performance power
+										slider -->
+									</p>
 									<!-- <span>Performance mode: </span>Slider is far right. Fan speed and
 												performance. -->
 								</div>
@@ -249,16 +257,26 @@
 		<div class="row py-5 smartsettings-card"
 			id="cooling">
 			<div class="col-10 mx-auto ">
-				<vtr-container-collapsible cardTitle="Power Smartsettings"
+				<vtr-container-collapsible
+					cardTitle="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate | lowercase"
 					[isCollapsed]="false"
 					[allowCollapse]="false"
 					[theme]="'blue'">
 					<div class="row">
 						<div class="col-auto text-wrap subtitle">
-							<h3>Battery & Quiet</h3>
-							<p>Battery & Quiet lorem ipsum is a long established fact that a reader will be distracted
-								by the readable content of a page when looking at its layout. <a class="read-more-link"
-									href="#">Read more.</a></p>
+							<h3> {{'device.deviceSettings.power.powerSmartSettings.subtitle1' | translate | lowercase}}
+								<!-- Battery & Quiet -->
+							</h3>
+							<p>
+								{{'device.deviceSettings.power.powerSmartSettings.description3' | translate | lowercase}}
+
+								<!-- Battery & Quiet lorem ipsum is a long established fact that a reader will be distracted
+								by the readable content of a page when looking at its layout. -->
+								<a class="read-more-link"
+									href="#">
+									{{'device.deviceSettings.power.powerSmartSettings.readMore' | translate | lowercase}}
+									<!--  Read more -->
+								</a></p>
 						</div>
 					</div>
 					<ul class="list-group list-group-flush">
@@ -269,15 +287,15 @@
 									*ngIf="!intelligentCooling">
 									<vtr-ui-rectangle-radio [radioId]="'radio1'"
 										[group]="'radio'"
-										[label]="'INTELLIGENT COOLING'"
+										[label]="'device.deviceSettings.power.powerSmartSettings.nonintelligentCooling.options.intelligentCooling' | translate"
 										[value]="'INTELLIGENT COOLING'"></vtr-ui-rectangle-radio>
 									<vtr-ui-rectangle-radio [radioId]="'radio2'"
 										[group]="'radio'"
-										[label]="'EXTREME PERFORMANCE'"
+										[label]="'device.deviceSettings.power.powerSmartSettings.nonintelligentCooling.options.extremeCooling' | translate"
 										[value]="'EXTREME PERFORMANCE'"></vtr-ui-rectangle-radio>
 									<vtr-ui-rectangle-radio [radioId]="'radio3'"
 										[group]="'radio'"
-										[label]="'BATTERY & QUIET'"
+										[label]="'device.deviceSettings.power.powerSmartSettings.nonintelligentCooling.options.battery&Quite' | translate"
 										[value]="'BATTERY & QUIET'"></vtr-ui-rectangle-radio>
 
 								</div>
@@ -451,7 +469,8 @@
 							</div>
 							<div class="row">
 								<div class="col-12">
-									<div class="custom-control custom-checkbox always-on-usb-checkbox" *ngIf="usbChargingInBatteryModeStatus">
+									<div class="custom-control custom-checkbox always-on-usb-checkbox"
+										*ngIf="usbChargingInBatteryModeStatus">
 										<input id="cb-always-on-usb"
 											type="checkbox"
 											name="always-on-usb-checkbox-id"
@@ -460,7 +479,7 @@
 											(ngModelChange)='onUsbChargingStatusChange()'
 											class="custom-control-input"
 											checked="" />
-											<!-- [disabled]="!toggleAlwaysOnUsbFlag" -->
+										<!-- [disabled]="!toggleAlwaysOnUsbFlag" -->
 										<label class="custom-control-label "
 											for="cb-always-on-usb">
 											{{ 'device.deviceSettings.power.powerSettings.alwaysUSB.checkbox' | translate }}
