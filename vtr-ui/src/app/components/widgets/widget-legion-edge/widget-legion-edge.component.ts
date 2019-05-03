@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'vtr-widget-legion-edge',
-  templateUrl: './widget-legion-edge.component.html',
-  styleUrls: ['./widget-legion-edge.component.scss']
+	selector: 'vtr-widget-legion-edge',
+	templateUrl: './widget-legion-edge.component.html',
+	styleUrls: ['./widget-legion-edge.component.scss']
 })
 export class WidgetLegionEdgeComponent implements OnInit {
 
-  public autoUpdateOptions = [
+	public autoUpdateOptions = [
 		{
 			readMoreText: '',
 			rightImageSource: ['far', 'question-circle'],
@@ -51,9 +51,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		}
 	];
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
 
 }
