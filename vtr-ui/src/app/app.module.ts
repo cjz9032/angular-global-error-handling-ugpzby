@@ -165,6 +165,7 @@ import { JoinclassPipe } from './pipe/security-wifi/join-class.pipe';
 import { SuccessClassPipe } from './pipe/security-wifi/success-class.pipe';
 import { UiCircleRadioComponent } from './components/ui/ui-circle-radio/ui-circle-radio.component';
 import { WidgetPermissionNoteComponent } from './components/widgets/widget-permission-note/widget-permission-note.component';
+import { SpinnerComponent } from './components/common/spinner/spinner.component';
 
 import { PagePrivacyComponent } from './components/pages/page-privacy/page-privacy.component';
 import { PageDeviceGamingComponent } from './components/pages/page-device-gaming/page-device-gaming.component';
@@ -300,6 +301,7 @@ library.add(fal);
 		SuccessClassPipe,
 		UiCircleRadioComponent,
 		WidgetPermissionNoteComponent,
+		SpinnerComponent,
 		PagePrivacyComponent,
 		PageDeviceGamingComponent,
 		WidgetLegionEdgeComponent,
