@@ -93,7 +93,6 @@
 			"expand": "扩大"
 		}
 	},
-
 	"privacy": {
 		"headerMain": {
 			"title": "Privacy"
@@ -121,7 +120,6 @@
 		"sports": "体育",
 		"regionalNews": "地方新闻",
 		"technology": "技术"
-
 	},
 	"dashboard": {
 		"headerMain": {
@@ -336,7 +334,7 @@
 					"title": "其他设置",
 					"vantageToolbar": {
 						"title": "Lenovo Vantage 工具栏",
-						"tooltip": "将 Vantage 工具栏固定到 Windows 任务栏以轻松地获取更多电池详细信息及访问快速设置。"
+						"description": "将 Vantage 工具栏固定到 Windows 任务栏以轻松地获取更多电池详细信息及访问快速设置。"
 					}
 				},
 				"batterySettings": {
