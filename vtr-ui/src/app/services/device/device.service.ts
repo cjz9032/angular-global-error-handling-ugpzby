@@ -18,7 +18,7 @@ export class DeviceService {
 
 	public showPrivacy = true;
 
-	public isGaming = false;
+	public isGaming = true;
 
 
 	constructor(

@@ -24,26 +24,6 @@
 		}
 	}
 	.legionEdge-list-items {
-		/*margin-bottom: -2rem;
-		.list-group-item{
-			background: transparent;
-			color: white;
-			padding: 1.8rem 0.8rem;
-			font-size: 1.8rem;
-			border: none;
-			border-bottom: 1px solid $screen_dark_15;
-			&:last-child{
-				border-bottom: none;
-			}
-			h4 {
-				font-weight: bold;
-				small{
-					display: block;
-					color: $shade_light;
-					padding-top: 1rem;
-				}
-			}
-		}*/
 		&::ng-deep .vtr-widget-device-update-settings {
 			background-color: transparent;
 			padding: 0;
