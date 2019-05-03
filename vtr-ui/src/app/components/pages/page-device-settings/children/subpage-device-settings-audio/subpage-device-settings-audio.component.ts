@@ -164,9 +164,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	startMonitorHandlerForDolby(response: DolbyModeResponse) {
-		// Need to remove comment once response is coming correctly
-		//this.dolbyModeResponse = response;
 		console.log('startMonitorHandlerForDolby', response);
+		this.dolbyModeResponse = response;
 	}
 
 	onDolbySeetingRadioChange(event) {
@@ -319,16 +318,16 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		const dolbySupportedMode = ['device.deviceSettings.audio.audioSmartsettings.dolby.options.dynamic',
 		'device.deviceSettings.audio.audioSmartsettings.dolby.options.movie',
 		'device.deviceSettings.audio.audioSmartsettings.dolby.options.music',
-		'device.deviceSettings.audio.audioSmartsettings.dolby.options.game',
-		'device.deviceSettings.audio.audioSmartsettings.dolby.options.voice'];
+		'device.deviceSettings.audio.audioSmartsettings.dolby.options.games',
+		'device.deviceSettings.audio.audioSmartsettings.dolby.options.voip'];
 		
 		this.dolbyModeResponse = new DolbyModeResponse(true, dolbySupportedMode, '');
 
 		// const optimizeMode = ['Only My Voice', 'Normal', 'Multiple Voice', 'Voice Recogntion'];
-		const optimizeMode = ['device.deviceSettings.audio.microphone.optimize.options.onlyMyVoice',
-		 'device.deviceSettings.audio.microphone.optimize.options.normal',
-		 'device.deviceSettings.audio.microphone.optimize.options.multipleVoices',
-		 'device.deviceSettings.audio.microphone.optimize.options.voiceRecoginition'];
+		const optimizeMode = ['device.deviceSettings.audio.microphone.optimize.options.OnlyMyVoice',
+		 'device.deviceSettings.audio.microphone.optimize.options.Normal',
+		 'device.deviceSettings.audio.microphone.optimize.options.MultipleVoices',
+		 'device.deviceSettings.audio.microphone.optimize.options.VoiceRecognition'];
 		this.microOptimizeModeResponse = new MicrophoneOptimizeModes(optimizeMode, '');
 	}
 

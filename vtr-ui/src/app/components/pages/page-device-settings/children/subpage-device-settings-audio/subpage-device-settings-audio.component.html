@@ -10,7 +10,7 @@
 	<div class="row py-5 smartsettings-card"
 		*ngIf="dolbyModeResponse.available"
 		id="audio">
-		<div class="col-10 mx-auto px-0 ">
+		<div class="col-10 mx-auto">
 			<vtr-container-collapsible componentName="Audio SmartSettings"
 				[cardTitle]="'device.deviceSettings.audio.audioSmartsettings.title' | translate"
 				[isCollapsed]="false"
@@ -35,7 +35,7 @@
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'blue'"
-							[tooltipText]="'Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.'"
+							[tooltipText]="'device.deviceSettings.audio.audioSmartsettings.dolby.tooltip'|translate"
 							(toggleOnOff)="onAutomaticDolbyAudioToggleOnOff($event)"
 							[isSwitchChecked]="autoDolbyFeatureStatus.status">
 
@@ -54,7 +54,8 @@
 						</vtr-ui-row-switch>
 					</li>
 					<li class="">
-						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.audioSmartsettings.voip' | translate"
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.audio.audioSmartsettings.voip.title' | translate"
 							name="'device.deviceSettings.audio.audioSmartsettings.voip' | translate"
 							componentName="Automatic Audio Optimization for VoIP"
 							[caption]="''"
@@ -64,7 +65,7 @@
 							[readMoreText]="''"
 							[showChildContent]="false"
 							[theme]="'blue'"
-							[tooltipText]="'Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality.'"
+							[tooltipText]="'device.deviceSettings.audio.audioSmartsettings.voip.tooltip' | translate"
 							(toggleOnOff)="onToggleOfMicrophoneAutoOptimization($event)"
 							[isSwitchChecked]="microphoneProperties.autoOptimization">
 						</vtr-ui-row-switch>
@@ -81,14 +82,14 @@
 				[isCollapsed]="false"
 				[allowCollapse]="true"
 				[theme]="'white'">
-				<vtr-widget-permission-note [noteTitle] = "'Note'"
-					[description] = "'Lenovo Vantage does not have 
-						permission to access your microphone. Please turn 
-						on access to your microphone for the Lenovo Vantage app.'"
-					[path] = "'ms-settings:privacy-microphone'"
-					*ngIf = "!microphoneProperties.permission">
+				<vtr-widget-permission-note
+					[noteTitle]="'device.deviceSettings.audio.microphone.note.title' | translate"
+					[description]="'device.deviceSettings.audio.microphone.note.description' | translate"
+					[path]="'ms-settings:privacy-microphone'"
+					*ngIf="!microphoneProperties.permission">
 				</vtr-widget-permission-note>
-				<ul class="list-group list-group-flush" *ngIf="microphoneProperties.permission">
+				<ul class="list-group list-group-flush"
+					*ngIf="microphoneProperties.permission">
 					<li class="">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.title' | translate"
 							name="'device.deviceSettings.audio.microphone.title' | translate"
@@ -119,9 +120,10 @@
 							[theme]="'white'">
 							<div class="row">
 								<div class="col-10">
-									<vtr-ui-range-slider [minValueLegend]="'Silent'"
+									<vtr-ui-range-slider
+										[minValueLegend]="'device.deviceSettings.audio.microphone.volume.options.silent' | translate"
 										[minValue]="0"
-										[maxValueLegend]="'Loud'"
+										[maxValueLegend]="'device.deviceSettings.audio.microphone.volume.options.loud' | translate"
 										[maxValue]="100"
 										(change)="setVolume($event)"
 										[enableSlider]="!microphoneProperties.permission"
