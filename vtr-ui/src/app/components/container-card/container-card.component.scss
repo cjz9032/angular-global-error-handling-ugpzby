@@ -108,9 +108,12 @@
 					@media #{$mediaquery_10} {
 						padding: 1.5rem 2rem;
 					}
-					// @media #{$mediaquery_17} {
-					// 	padding: 1.5rem 2rem;
-					// }
+					@media #{$mediaquery_X7} {
+						padding: 1.5rem;
+					}
+					@media #{$mediaquery_18}{
+						padding: 1.5rem;
+					}
 
 					.title {
 						color: $light;

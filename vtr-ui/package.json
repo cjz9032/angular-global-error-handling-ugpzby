@@ -1,6 +1,6 @@
 {
 	"name": "vtr-ui",
-	"version": "0.0.46",
+	"version": "0.0.47",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
@@ -47,6 +47,7 @@
 		"popper.js": "^1.15.0",
 		"rxjs": "^6.3.3",
 		"tslib": "^1.9.0",
+		"x2js": "^3.2.6",
 		"zone.js": "~0.8.26"
 	},
 	"devDependencies": {
