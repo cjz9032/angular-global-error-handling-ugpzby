@@ -8,7 +8,7 @@ export class ConfigService {
 
 	appBrand = 'Lenovo';
 	appName = 'Vantage';
-	public countryCodes=['US','CA','IE','DE','FR','ES','IT','AU'];
+	public countryCodes=['us','ca','gb','ie','de','fr','es','it','au'];
 	constructor(private deviceService:DeviceService) { }
 
 	menuItemsGaming: Array<any> = [
@@ -321,6 +321,7 @@ export class ConfigService {
 
 	getMenuItemsAsync(isGaming){
 		return this.deviceService.getMachineInfo().then((machineInfo)=>{
+			console.log('*****************************************',machineInfo.country)
 			if(isGaming){
 				return this.menuItemsGaming;
 			} else if(this.countryCodes.indexOf(machineInfo.country.toUpperCase())!==-1) {

@@ -2,6 +2,7 @@ import {Directive, ElementRef, HostListener, Input} from '@angular/core';
 import {VantageShellService} from '../services/vantage-shell/vantage-shell.service';
 import {ActivatedRoute} from "@angular/router";
 import {VieworderService} from "../services/view-order/vieworder.service";
+import {DeviceService} from "../services/device/device.service";
 
 
 declare var window;
@@ -11,8 +12,13 @@ declare var window;
 })
 export class MetricsDirective {
 
-	constructor(private el: ElementRef, private shellService: VantageShellService,private activatedRoute:ActivatedRoute,private viewOrderService:VieworderService) {
+	machineInfo:any;
+
+	constructor(private deviceService:DeviceService,private el: ElementRef, private shellService: VantageShellService,private activatedRoute:ActivatedRoute,private viewOrderService:VieworderService) {
 		this.metrics = shellService.getMetrics();
+		this.deviceService.getMachineInfo().then((machineInfo)=>{
+			this.machineInfo=machineInfo;
+		})
 	}
 
 	private metrics: any;
@@ -90,6 +96,7 @@ export class MetricsDirective {
 
 	@HostListener('click', ['$event.target'])
 	onclick(target) {
+		console.log('*********************<<<<>>>>>>>>******************************',this.machineInfo.country,this.machineInfo.locale)
 		if(!this.metricsParent){
 			this.metricsParent = this.activatedRoute.snapshot.data['pageName'];
 		}
