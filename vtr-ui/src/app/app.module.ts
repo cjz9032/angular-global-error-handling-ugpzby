@@ -157,7 +157,6 @@ import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import { UiFeatureItemComponent } from './components/ui/ui-feature-item/ui-feature-item.component';
 import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
 import { MinutesToHourminPipe } from './pipe/minutes-to-hourmin.pipe';
-import { WidgetAboutComponent } from './components/widgets/widget-about/widget-about.component';
 import { SubTransformPipe } from './pipe/security-antivirus/sub-transform.pipe';
 import { DateClassPipe } from './pipe/security-antivirus/date-class.pipe';
 import { ModalAboutComponent } from './components/modal/modal-about/modal-about.component';
@@ -166,6 +165,8 @@ import { JoinclassPipe } from './pipe/security-wifi/join-class.pipe';
 import { SuccessClassPipe } from './pipe/security-wifi/success-class.pipe';
 import { UiCircleRadioComponent } from './components/ui/ui-circle-radio/ui-circle-radio.component';
 import { WidgetPermissionNoteComponent } from './components/widgets/widget-permission-note/widget-permission-note.component';
+import { ModalSupportWechatComponent } from './components/modal/modal-support-wechat/modal-support-wechat.component';
+import { ModalLicenseComponent } from './components/modal/modal-license/modal-license.component';
 import { SpinnerComponent } from './components/common/spinner/spinner.component';
 
 import { PagePrivacyComponent } from './components/pages/page-privacy/page-privacy.component';
@@ -293,7 +294,6 @@ library.add(fal);
 		WidgetSecurityStatusComponent,
 		StatusTransformPipe,
 		MinutesToHourminPipe,
-		WidgetAboutComponent,
 		SubTransformPipe,
 		DateClassPipe,
 		ModalAboutComponent,
@@ -302,6 +302,8 @@ library.add(fal);
 		SuccessClassPipe,
 		UiCircleRadioComponent,
 		WidgetPermissionNoteComponent,
+		ModalSupportWechatComponent,
+		ModalLicenseComponent,
 		SpinnerComponent,
 		PagePrivacyComponent,
 		PageDeviceGamingComponent,
@@ -355,6 +357,8 @@ library.add(fal);
 		ModalHomeProtectionLocationNoticeComponent,
 		ModalUpdateChangeLogComponent,
 		ModalAboutComponent,
+		ModalSupportWechatComponent,
+		ModalLicenseComponent
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA

@@ -587,19 +587,22 @@
 			"description": "CONTACT US TO HELP YOU OUT.",
 			"listLenovoCommunity": "Lenovo Community",
 			"listContactCustomerService": "Contact customer service",
-			"listContactUsOnWechat": "Contact us on WeChat"
+			"listContactUsOnWechat": "Contact us on WeChat",
+			"weChatDescription": "Shoot us a question on WeChat and we’ll be sure to respond quickly"
 		},
 		"quicklinks": {
 			"title": "Quicklinks",
 			"description": "CONTACT US TO HELP YOU OUT.",
 			"listETicket": "Get support with E-ticket",
-			"listServiceProvider": "Find a service provider"
+			"listServiceProvider": "Find a service provider",
+			"listAboutLenovoVantage": "About Lenovo Vantage"
 		},
 		"about": {
 			"version": "Version",
 			"licenseAgreement": "License agreement",
 			"otherSoftwareLicenses": "Other software licenses",
 			"ourWebsite": "Our website",
+			"aboutYourDevice": "About your device",
 			"copyright": "© 2002-2019 Lenovo all rights reserved"
 		}
 	},
