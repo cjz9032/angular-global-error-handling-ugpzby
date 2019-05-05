@@ -14,6 +14,7 @@ import { PageSecurityWifiComponent } from './components/pages/page-security-wifi
 import { PageSecurityPasswordComponent } from './components/pages/page-security-password/page-security-password.component';
 import { PageSecurityInternetComponent } from './components/pages/page-security-internet/page-security-internet.component';
 import { PageSupportComponent } from './components/pages/page-support/page-support.component';
+import { PagePrivacyComponent } from './components/pages/page-privacy/page-privacy.component';
 import { PageSupportDetailComponent } from './components/pages/page-support-detail/page-support-detail.component';
 import { PageUserComponent } from './components/pages/page-user/page-user.component';
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
@@ -115,6 +116,12 @@ const routes: Routes = [
 		canActivate: [WindowsHelloGuardService],
 		data: {
 			pageName: 'Security.WindowsHello'
+		}
+	}, {
+		path: 'privacy',
+		component: PagePrivacyComponent,
+		data: {
+			pageName: 'Page.Privacy'
 		}
 	}, {
 		path: 'support',

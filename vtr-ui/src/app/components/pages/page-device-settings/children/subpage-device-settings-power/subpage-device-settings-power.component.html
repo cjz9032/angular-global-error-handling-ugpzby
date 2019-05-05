@@ -149,12 +149,9 @@
 					<ul class=" list-group
 								list-group-flush">
 						<li class="">
-							<vtr-ui-row-switch
-								[title]="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate | lowercase"
-								[caption]="''"
+							<vtr-ui-row-switch [caption]="''"
 								[isSwitchVisible]="toggleIntelligentCooling"
 								[isSwitchChecked]="toggleIntelligentCoolingStatus"
-								[leftIcon]="['fas', 'search']"
 								[readMoreText]="''"
 								[showChildContent]="true"
 								[theme]="'blue'"
@@ -201,13 +198,16 @@
 								<!-- <a class="read-more-link"
 									(click)="">Read more.</a> -->
 							</p>
-							<p> <span class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode1' | translate}}:</span>
-									{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line1' | translate}}
+							<p> <span
+									class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode1' | translate}}:</span>
+								{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line1' | translate}}
 							</p>
-							<p> <span class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode2' | translate}}:</span>
+							<p> <span
+									class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode2' | translate}}:</span>
 								{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line2' | translate}}
 							</p>
-							<p> <span class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode3' | translate}}:</span>
+							<p> <span
+									class="cooling-modes">{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.mode3' | translate}}:</span>
 								{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.readMore.line3' | translate}}
 							</p>
 						</div>
@@ -364,6 +364,7 @@
 						*ngIf="showAirplanePowerModeSection">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
+							[name]="'device.deviceSettings.power.batterySettings.airPlanePower.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.airPlanePower.description' | translate"
 							[isSwitchVisible]=true
 							[leftIcon]="batterySettings.items[0].leftImageSource"
@@ -404,6 +405,7 @@
 						-->
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
+							[name]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.expressCharging.description' | translate"
 							[isSwitchVisible]=true
 							[leftIcon]="batterySettings.items[2].leftImageSource"
@@ -417,6 +419,7 @@
 						<!-- *ngIf="batterySettings.status.conservationMode"* -->
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.batterySettings.conservationMode.title' | translate"
+							[name]="'device.deviceSettings.power.batterySettings.conservationMode.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.conservationMode.description' | translate"
 							[isSwitchVisible]=true
 							[leftIcon]="batterySettings.items[3].leftImageSource"
@@ -441,6 +444,7 @@
 					<li class="">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
+							[name]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
 							[caption]="'device.deviceSettings.power.powerSettings.alwaysUSB.description' | translate"
 							[isSwitchVisible]=true
 							[isSwitchChecked]="alwaysOnUSBStatus.status"
@@ -495,6 +499,7 @@
 						*ngIf="showEasyResumeSection">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
+							[name]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
 							[caption]="'device.deviceSettings.power.powerSettings.easyResume.description' | translate"
 							[isSwitchVisible]=true
 							[isSwitchChecked]='toggleEasyResumeStatus'

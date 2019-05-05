@@ -17,6 +17,7 @@ class BatteryDetail {
 	public mainBatteryPercent: number;
 	public remainingPercent: number;
 	public remainingTime: number;
+	public remainingTimeText: string;// to show label on detail if 2 batteries with different charging status 
 	public mainBatteryRemainingTime: number; 
 	public remainingCapacity: number;
 	public fullChargeCapacity: number;
