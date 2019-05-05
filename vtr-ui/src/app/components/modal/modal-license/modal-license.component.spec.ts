@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WidgetAboutComponent } from './widget-about.component';
+import { ModalLicenseComponent } from './modal-license.component';
 
-describe('WidgetAboutComponent', () => {
-  let component: WidgetAboutComponent;
-  let fixture: ComponentFixture<WidgetAboutComponent>;
+describe('ModalLicenseComponent', () => {
+  let component: ModalLicenseComponent;
+  let fixture: ComponentFixture<ModalLicenseComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WidgetAboutComponent ]
+      declarations: [ ModalLicenseComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WidgetAboutComponent);
+    fixture = TestBed.createComponent(ModalLicenseComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -587,20 +587,23 @@
 			"description": "联系我们以获取帮助。",
 			"listLenovoCommunity": "联想社区",
 			"listContactCustomerService": "联系客户服务部门",
-			"listContactUsOnWechat": "通过微信联系我们"
+			"listContactUsOnWechat": "通过微信联系我们",
+			"weChatDescription": "Shoot us a question on WeChat and we’ll be sure to respond quickly"
 		},
 		"quicklinks": {
 			"title": "快速链接",
 			"description": "联系我们以获取帮助。",
 			"listETicket": "通过电子凭单获取支持",
-			"listServiceProvider": "查找服务供应商"
+			"listServiceProvider": "查找服务供应商",
+			"listAboutLenovoVantage": "About Lenovo Vantage"
 		},
 		"about": {
 			"version": "版本",
 			"licenseAgreement": "许可协议",
 			"otherSoftwareLicenses": "其他软件许可证",
 			"ourWebsite": "我们的网站",
-			"copyright": "© 2002-2019 联想版权所有。"
+			"aboutYourDevice": "About your device",
+			"copyright": "© 2002-2019 联想保留所有权利。"
 		}
 	},
 	"security": {
