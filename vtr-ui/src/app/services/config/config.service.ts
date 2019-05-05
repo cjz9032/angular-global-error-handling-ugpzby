@@ -275,18 +275,6 @@ export class ConfigService {
 				icon: '',
 				subitems: []
 			}]
-		}, {
-			id: 'privacy',
-			label: 'common.menu.privacy',
-			path: 'privacy',
-			icon: ['icomoon', 'icomoon-LE-Figleaf2x'],
-			metricsEvent: 'itemClick',
-			metricsParent: 'navbar',
-			metricsItem: 'link.privacy',
-			routerLinkActiveOptions: { exact: true },
-			forArm: true,
-			onlyPrivacy: true,
-			subitems: []
 		},{
 			id: 'support',
 			label: 'common.menu.support',
