@@ -1,4 +1,8 @@
-<section class="breaches-page">
+<section class="breaches-page"
+         vtrSendAnalytics
+		 [metricsEvent]="'PageView'"
+		 [metricsItem]="'BreachedAccounts'"
+>
 	<vtr-common-text [texts]="commonTexts"></vtr-common-text>
 
 	<div class="breached-accounts">

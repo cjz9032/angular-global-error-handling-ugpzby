@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { filter, map, takeUntil } from 'rxjs/operators';
-import { BreachedAccount, BreachedAccountsService } from '../../common-services/breached-accounts.service';
-import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
-import { CommunicationWithFigleafService } from '../../communication-with-figleaf/communication-with-figleaf.service';
+import { BreachedAccount, BreachedAccountsService } from '../../common/services/breached-accounts.service';
+import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
+import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 
 @Component({
 	// selector: 'app-admin',

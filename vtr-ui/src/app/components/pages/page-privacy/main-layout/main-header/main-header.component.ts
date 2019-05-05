@@ -2,8 +2,8 @@ import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { takeUntil } from 'rxjs/operators';
-import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
-import { RouterChangeHandlerService } from '../../shared/services/router-change-handler.service';
+import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
+import { RouterChangeHandlerService } from '../../common/services/router-change-handler.service';
 
 import { RoutersName } from '../../privacy-routing-name';
 
