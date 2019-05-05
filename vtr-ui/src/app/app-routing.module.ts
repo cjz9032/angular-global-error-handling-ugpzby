@@ -13,6 +13,7 @@ import { PageSecurityAntivirusComponent } from './components/pages/page-security
 import { PageSecurityWifiComponent } from './components/pages/page-security-wifi/page-security-wifi.component';
 import { PageSecurityPasswordComponent } from './components/pages/page-security-password/page-security-password.component';
 import { PageSecurityInternetComponent } from './components/pages/page-security-internet/page-security-internet.component';
+import { PageSecurityHomeSecurityComponent } from './components/pages/page-security-home-security/page-security-home-security.component';
 import { PageSupportComponent } from './components/pages/page-support/page-support.component';
 import { PagePrivacyComponent } from './components/pages/page-privacy/page-privacy.component';
 import { PageSupportDetailComponent } from './components/pages/page-support-detail/page-support-detail.component';
@@ -116,6 +117,12 @@ const routes: Routes = [
 		canActivate: [WindowsHelloGuardService],
 		data: {
 			pageName: 'Security.WindowsHello'
+		}
+	}, {
+		path: 'security/home-security',
+		component: PageSecurityHomeSecurityComponent,
+		data: {
+			pageName: 'Security.HomeSecurity'
 		}
 	}, {
 		path: 'privacy',

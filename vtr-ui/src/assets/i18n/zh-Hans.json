@@ -618,7 +618,7 @@
 			"pwdHealth": "密码安全状况",
 			"vpnSecurity": "VPN 安全性",
 			"vpnVirtual": "虚拟专用网络",
-			"wifiConnected": "WiFi 和互联家庭网络安全性",
+			"wifiConnected": "WiFi 安全",
 			"connectedHomeSecurity": "互联家庭网络安全性",
 			"fingerprint": "指纹读取器",
 			"seeAllNetwork": "请查看所有加入的网络",
@@ -685,7 +685,7 @@
 		},
 		"wifisecurity": {
 			"header": {
-				"title": "WiFi 和互联家庭网络安全性",
+				"title": "WiFi 安全",
 				"back": "返回"
 			},
 			"container": {
