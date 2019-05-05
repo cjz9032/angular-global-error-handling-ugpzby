@@ -70,6 +70,7 @@
 			"partiallyProtected": "局部受保护",
 			"installed": "已安装",
 			"notInstalled": "未安装",
+			"installing": "正在安装",
 			"loading": "正在加载",
 			"notFound": "未发现",
 			"registered": "已注册",

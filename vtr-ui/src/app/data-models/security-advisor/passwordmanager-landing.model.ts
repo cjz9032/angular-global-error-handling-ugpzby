@@ -24,17 +24,30 @@ export class PasswordManagerLandingViewModel {
 			type: 'security',
 		};
 		const setPmStatus = (status: string) => {
-			pmStatus.detail = status === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
-			pmStatus.status = status === 'installed' ? 2 : 1;
+			switch (status) {
+				case 'installed':
+					pmStatus.detail = 'common.securityAdvisor.installed';
+					pmStatus.status = 5;
+					subjectStatus.status = 2;
+					break;
+				case 'installing':
+					pmStatus.detail = 'common.securityAdvisor.installing';
+					pmStatus.status = 4;
+					subjectStatus.status = 1;
+					break;
+				default:
+					pmStatus.detail = 'common.securityAdvisor.notInstalled';
+					pmStatus.status = 5;
+					subjectStatus.status = 1;
+			}
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus, status);
-			subjectStatus.status = (status === 'installed') ? 2 : 1;
-			translate.get(pmStatus.detail).subscribe((res) => {
+			translate.stream(pmStatus.detail).subscribe((res) => {
 				pmStatus.detail = res;
 			});
-			translate.get(pmStatus.title).subscribe((res) => {
+			translate.stream(pmStatus.title).subscribe((res) => {
 				pmStatus.title = res;
 			});
-			translate.get(subjectStatus.title).subscribe((res) => {
+			translate.stream(subjectStatus.title).subscribe((res) => {
 				subjectStatus.title = res;
 			});
 		};

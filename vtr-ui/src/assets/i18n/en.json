@@ -71,6 +71,7 @@
 			"installed": "INSTALLED",
 			"notInstalled": "NOT INSTALLED",
 			"loading": "Loading",
+			"installing": "INSTALLING",
 			"notFound": "NOT FOUND",
 			"registered": "REGISTERED",
 			"notRegistered": "NOT REGISTERED"

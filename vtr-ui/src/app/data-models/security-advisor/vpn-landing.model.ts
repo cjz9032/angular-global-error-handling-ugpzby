@@ -27,13 +27,13 @@ export class VpnLandingViewModel {
 			vpnStatus.detail = status === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, status);
 			subjectStatus.status = status === 'installed' ? 2 : 1;
-			translate.get(vpnStatus.detail).subscribe((res) => {
+			translate.stream(vpnStatus.detail).subscribe((res) => {
 				vpnStatus.detail = res;
 			});
-			translate.get(vpnStatus.title).subscribe((res) => {
+			translate.stream(vpnStatus.title).subscribe((res) => {
 				vpnStatus.title = res;
 			});
-			translate.get(subjectStatus.title).subscribe((res) => {
+			translate.stream(subjectStatus.title).subscribe((res) => {
 				subjectStatus.title = res;
 			});
 		};
