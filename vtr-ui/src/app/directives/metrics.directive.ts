@@ -3,6 +3,22 @@ import {VantageShellService} from '../services/vantage-shell/vantage-shell.servi
 import {ActivatedRoute} from "@angular/router";
 import {VieworderService} from "../services/view-order/vieworder.service";
 
+export interface MetricsData {
+	ItemType: string;
+	ItemName?: string;
+	ItemParent?: string;
+	ItemParm?: string;
+	ItemValue?: string;
+	viewOrder?: number;
+	ItemID?: string;
+	ItemCategory?: string;
+	ItemPosition?: string;
+	PageNumber?: string;
+	SettingParent?: string;
+	SettingName?: string;
+	SettingValue?: string;
+	SettingParm?: string;
+}
 
 declare var window;
 
