@@ -150,6 +150,9 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	ngOnDestroy() {
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
 		if (this.cameraDetailSubscription) {
 			this.cameraDetailSubscription.unsubscribe();
 		}
@@ -456,6 +459,8 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 	public onCameraAutoExposureToggle($event: any) {
 		console.log('setCameraAutoExposure.then', $event);
+		this.cameraFeatureAccess.showAutoExposureSlider = !$event.switchValue;
+		this.cameraFeatureAccess.exposureAutoValue = $event.switchValue;
 		if (this.displayService.isShellAvailable) {
 			this.displayService
 				.setCameraAutoExposure($event.switchValue);

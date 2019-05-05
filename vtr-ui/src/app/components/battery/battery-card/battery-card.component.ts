@@ -8,6 +8,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { BatteryInformation } from 'src/app/enums/battery-information.enum';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { ViewRef_ } from '@angular/core/src/view';
 @Component({
 	selector: 'vtr-battery-card',
 	templateUrl: './battery-card.component.html',
@@ -98,7 +99,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryInfo[0].mainBatteryRemainingTime = this.batteryService.getMainBatteryTime();
 		this.batteryIndicator.convertMin(this.batteryInfo[0].mainBatteryRemainingTime);
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo,this.batteryInfo);
-		this.cd.detectChanges();
+		if ( this.cd !== null &&
+            this.cd !== undefined &&
+            ! (this.cd as ViewRef_).destroyed ) {
+                this.cd.detectChanges();
+        }
 	}
 	
 	public showDetailModal(content: any): void {

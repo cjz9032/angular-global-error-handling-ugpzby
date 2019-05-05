@@ -19,9 +19,15 @@
 									[metricsParent]="cardTitle"
 									(click)="onToggle()">
 									<div *ngIf="isCollapsed"
-										class="collapse-text">Expand</div>
+										class="collapse-text">
+										<!-- Expand -->
+										{{'common.ui.expand' | translate}}
+									</div>
 									<div *ngIf="!isCollapsed"
-										class="collapse-text">Collapse</div>
+										class="collapse-text">
+										<!-- Collapse -->
+										{{'common.ui.collapse' | translate}}
+									</div>
 									<fa-icon *ngIf="isCollapsed"
 										[icon]="['fas', 'chevron-down']"></fa-icon>
 									<fa-icon *ngIf="!isCollapsed"

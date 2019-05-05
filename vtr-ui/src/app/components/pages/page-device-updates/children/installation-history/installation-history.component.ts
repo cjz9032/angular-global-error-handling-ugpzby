@@ -77,7 +77,7 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 			if (item.status.toLocaleLowerCase() === 'installed') {
 				item.message = `Successfully installed on ${date} at ${time}`;
 			} else {
-				item.message = `Failed installed on ${date} at ${time}`;
+				item.message = `Failed to installed on ${date} at ${time}`;
 			}
 		});
 		return historyList;

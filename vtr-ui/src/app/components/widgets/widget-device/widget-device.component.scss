@@ -18,6 +18,13 @@
 	.family {
 		color: $main_dark;
 		font-size: 3.8rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		max-width: 75%;
+		@media #{$mediaquery_12} {
+			max-width: 65%;
+		}
 	}
 	.device-sub-header {
 		color: $shade_darkest;
