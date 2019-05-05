@@ -11,6 +11,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs';
 import { ViewRef_ } from '@angular/core/src/view';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
 	selector: 'vtr-battery-detail',
 	templateUrl: './battery-detail.component.html',
@@ -19,14 +20,16 @@ import { ViewRef_ } from '@angular/core/src/view';
 export class BatteryDetailComponent implements OnInit, OnDestroy {
 	public dataSource: BatteryDetail[];
 	@Input() data: BatteryDetail[];
-	remainingTimeText = "Remaining time";
+	remainingTimeText = ""
+	chargeCompletionTimeText = ""
 	batteryIndicators = new BatteryIndicator();
 	private notificationSubscription: Subscription;
 	constructor(
 		private batteryService: BatteryDetailService,
 		public shellServices: VantageShellService,
 		public commonService: CommonService,
-		public cd: ChangeDetectorRef) {
+		public cd: ChangeDetectorRef,
+		public translate: TranslateService) {
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -65,9 +68,9 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 				response[i].remainingTime = undefined;
 			}
 			if(response[i].chargeStatus == BatteryChargeStatus.CHARGING.id) {
-				this.remainingTimeText = "Charge completion time"
+				response[i].remainingTimeText = this.chargeCompletionTimeText;
 			} else {
-				this.remainingTimeText = "Remaining time";
+				response[i].remainingTimeText = this.remainingTimeText;
 			}
 		}
 		this.dataSource = response;
@@ -85,6 +88,8 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+		this.remainingTimeText = this.translate.instant('device.deviceSettings.batteryGauge.details.remainingTime');
+		this.chargeCompletionTimeText = this.translate.instant('device.deviceSettings.batteryGauge.details.chargeCompletionTime');
 	}
 
 	isValid(val: number) {

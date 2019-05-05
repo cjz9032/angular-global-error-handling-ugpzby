@@ -1,4 +1,41 @@
 {
+	"gaming": {
+		"dashboard": {
+			"device": {
+				"quickSettings": {
+					"title": "Thermal Mode",
+					"status": {
+						"performance": "Performance",
+						"balance": "Balance",
+						"quiet": "Quiet"
+					},
+					"wifiSecurity": "Wifi Security",
+					"dolby": "Dolby",
+					"rapidCharge": "Rapid Charge"
+				},
+				"legionEdge": {
+					"title": "CPU Overlock",
+					"status": {
+						"alwayson": "Always On",
+						"whenGaming": "When Gaming",
+						"off": "Off"
+					},
+					"ramOverlock": "Ram Overlock",
+					"autoClose": "Auto Close",
+					"networkBoost": "Network Boost",
+					"hybridMode": "Hybrid Mode",
+					"touchpadLock": "Touchpad Lock"
+				},
+				"systemTools": {
+					"power": "Power",
+					"media": "Media",
+					"macroKey": "Marco Key",
+					"hardwareScan": "Hardware Scan",
+					"systemUpdate": "System Update"
+				}
+			}
+		}
+	},
 	"common": {
 		"menu": {
 			"dashboard": "Dashboard",
@@ -56,6 +93,11 @@
 			"expand": "Expand"
 		}
 	},
+	"privacy": {
+		"headerMain": {
+			"title": "Privacy"
+		}
+	},
 	"tutorial": {
 		"almostThere": "Almost there!",
 		"para1": "Just a few more buttons to press before we can have liftoff.",
@@ -74,7 +116,6 @@
 		"news": "NEWS",
 		"entertainment": "ENTERTAINMENT",
 		"arts": "ARTS",
-		"technology": "TECHNOLOGY",
 		"politics": "POLITICS",
 		"sports": "SPORTS",
 		"regionalNews": "REGIONAL NEWS",
@@ -214,6 +255,7 @@
 					"temp": "Temperature",
 					"frupn": "FRU part number",
 					"remainingTime": "Remaining time",
+					"chargeCompletionTime": "Charge completion time",
 					"cycleCount": "Cycle count",
 					"chemistry": "Device chemistry",
 					"remainingCap": "Remaining capacity",
@@ -322,7 +364,7 @@
 							"line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
 						}
 					},
-					"airplanePower": {
+					"airPlanePower": {
 						"title": "Airplane Power Mode",
 						"description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
 					}
@@ -452,6 +494,12 @@
 			"history": "FULL HISTORY",
 			"notAvailable": "Not Available",
 			"notInstalled": "Not Installed",
+			"criticalUpdates": "Critical Update(s)",
+			"recommendedUpdates": "Recommended Update(s)",
+			"optionalUpdates": "Optional Update(s)",
+			"successInstall": "Successfully installed on",
+			"failedInstall": "Failed to installed on",
+			"at": "at",
 			"popup": {
 				"reboot": "Reboot",
 				"shutdown": "Shut Down",
@@ -806,55 +854,117 @@
 		"question1": {
 			"title": "Back up and restore your files",
 			"description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        Back up and restore your files\n    </div>\n    <hr />\n    <div style='margin-bottom:7rem;'>\n        It's always good to have a backup. Keep copies of your files on another drive in case something happens to the\n        originals.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Set up your backup\n    </div>\n    <hr />\n    <div class='mb-5'>\n        Select the <span style='font-weight:bold'>Start</span> button, select\n        <span style='font-weight:bold'>Settings</span> >\n        <span style='font-weight:bold'>Update & security</span> >\n        <span style='font-weight:bold'>Backup</span> > <span style='font-weight:bold'>Add a drive</span> , and then\n        choose an external drive or network location for your backups.\n    </div>\n    <div class='mb-5'>\n        <img src='./../../../../assets/images/qa/1.1.png' />\n    </div>\n    <div class='mb-5'>\n        All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files\n        get backed up or how often backups happen, go to\n        <span style='font-weight:bold;'>More options</span>.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Restore your files\n    </div>\n    <div class='mb-5'>\n        If you're missing an important file or folder, here's how to get it back:\n    </div>\n    <div>\n\n        <div class='mb-3'>1. Type <span style='font-weight:bold;'>Restore files</span>\n            in the search box on the taskbar, and then select\n            <span class='font-weight:bold'> Restore your files with File History</span>.</div>\n        <div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div>\n        <div class='mb-3'>3. When you find the version you want, select\n            <span style='font-weight:bold'>Restore</span>\n            to save it in its original location. To save it in a different place, press and hold (or right-click)\n            <span style='font-weight:bold'>Restore</span>, select <span style='font-weight:bold'>Restore to</span>, and\n            then choose a new location.</div>\n\n    </div>\n</div>",
-			"para1": "It's always good to have a backup. Keep copies of your files on another drive in case something happens to the originals.",
+			"para1": {
+				"line1": "It's always good to have a backup.",
+				"line2": "Keep copies of your files on another drive in case something happens to the originals."
+			},
 			"heading1": "Set up your backup",
-			"para2": "Select the Start button, select Settings > Update & security > Backup > Add a drive , and then choose an external drive or network location for your backups.",
-			"para3": "All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files get backed up or how often backups happen, go to More options.",
+			"para2": {
+				"span1": "Select the",
+				"span2": "Start",
+				"span3": "button, select",
+				"span4": "Settings",
+				"span5": "Update & security",
+				"span6": "Backup",
+				"span7": "Add a drive",
+				"span8": ", and then choose an external drive or network location for your backups."
+			},
+			"para3": {
+				"span1": "All set.",
+				"span2": "Every hour, we'll back up everything in your user folder (C:\\Users\\username).",
+				"span3": "To change which files get backed up or how often backups happen, go to",
+				"span4": "More options."
+			},
 			"heading2": "Restore your files",
 			"para4": "If you're missing an important file or folder, here's how to get it back:",
-			"bulletset1": [
-				"1. Type Restore files in the search box on the taskbar, and then select Restore your files with File History.",
-				"2. Look for the file you need, then use the arrows to see all its versions",
-				"3. When you find the version you want, select Restore to save it in its original location. To save it in a different place, press and hold (or right-click) Restore, select Restore to, and then choose a new location."
-			]
+			"para5": {
+				"span1": "1. Type",
+				"span2": "Restore files",
+				"span3": "in the search box on the taskbar, and then select",
+				"span4": "Restore your files with File History.",
+				"span5": "2. Look for the file you need, then use the arrows to see all its versions",
+				"span6": "3. When you find the version you want, select",
+				"span7": "Restore",
+				"span8": "to save it in its original location. To save it in a different place, press and hold (or right-click)",
+				"span9": "Restore",
+				"span10": ", select",
+				"span11": "Restore to",
+				"span12": "and then choose a new location."
+			}
 		},
 		"question2": {
 			"title": "How to refresh your PC",
 			"description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        How to refresh your PC\n    </div>\n    <hr>\n    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>\n        Symptom\n    </div>\n    <div style='padding:5px 0;'>\n        If your PC isn't performing as well as it once did, and you don't know why,\n        you can refresh your PC without deleting any of your personal files or\n        changing your settings. Windows can “refresh” your PC so it’s more like a\n        fresh install without deleting your personal files.\n    </div>\n    <div style='padding:5px 0;'>\n        Refresh your PC, Here is what will happen: your files and personalized\n        settings won’t change\n    </div>\n    <div style='padding:5px 0;'>\n        <ul>\n            <li>Your PC settings will be changed back to its defaults</li>\n            <li>Apps from windows store will be kept</li>\n            <li>Apps you installed from disc or website will be removed</li>\n            <li>A list of removed files will be saved on your desktop</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Affected Brands\n    </div>\n\n    <div>\n        <ul>\n            <li>All Desktop and Laptops</li>\n\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Operation System\n    </div>\n\n    <div>\n        <ul>\n            <li>Windows 8, 8.1 & 10</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Solution\n    </div>\n\n    <div>\n        <ul class='list-unstyled'>\n            <li>\n                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>\n                <ol>\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Settings </span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Update and recovery</span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <div>Tap or click <span style='font-weight:bold;'> Recovery</span></div>\n                        <div style='padding:5px 0'>Under Refresh your PC without affecting your files, tap or click\n                            <span style='font-weight:bold;'> Get started.</span></div>\n                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>\n\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Next'</span>.\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Refresh' </span>to start the refresh process.\n                    </li>\n                    <li style='padding:5px 0;'>\n                        Once the refresh process is done, you can find a Removed Apps list on the desktop\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        You can find the removed apps while refreshing your system\n                    </li>\n                </ol>\n            </li>\n            <li style='padding:10px 0;'>\n                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>\n                <ol>\n                    <li style='padding:5px 0;'> Search for <span style='font-weight:bold;'> refresh </span>in the search\n                        tool available in the Start menu,</li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on <span style='font-weight:bold;'> 'Refresh your PC without affecting your\n                                files'</span> in the search results as shown below.</div>\n                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on the\n                            <span style='font-weight:bold;'> Get started </span>\n                            button just below the heading<span style='font-weight:bold;'> 'Refresh your PC without\n                                affecting your files'</span> to start refreshing your Windows 10 PC.</div>\n                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>\n                    </li>\n                </ol>\n            </li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;'>\n        Additional Information\n    </div>\n\n    <div>\n        In most cases, once you start to refresh your PC, it’ll finish on its own.\n        However, if Windows needs missing files, you’ll be asked to insert recovery\n        media, which is typically a DVD disc or thumb drive. If that happens, what\n        you’ll need depends on your PC.\n    </div>\n    <div style='padding:10px 0'>\n        If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use\n        that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact\n        Microsoft Support.\n    </div>\n\n</div>",
 			"heading1": "Symptom",
-			"para1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings. Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files.",
+			"para1": {
+				"span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
+				"span2": "Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files."
+			},
 			"para2": "Refresh your PC, Here is what will happen: your files and personalized settings won’t change",
-			"bulletset1": [
-				"Your PC settings will be changed back to its defaults",
-				"Apps from windows store will be kept",
-				"Apps you installed from disc or website will be removed",
-				"A list of removed files will be saved on your desktop"
-			],
+			"para3": {
+				"span1": "Your PC settings will be changed back to its defaults",
+				"span2": "Apps from windows store will be kept",
+				"span3": "Apps you installed from disc or website will be removed",
+				"span4": "A list of removed files will be saved on your desktop"
+			},
 			"heading2": "Affected Brands",
-			"para3": "All Desktop and Laptops",
+			"para4": "All Desktop and Laptops",
 			"heading3": "Operation System",
-			"para4": "Windows 8, 8.1 & 10",
+			"para5": "Windows 8, 8.1 & 10",
 			"heading4": "Solution",
-			"para5": "<span style=\"text-decoration: underline;padding:10px 0;font-weight: bold\">Windows 8/8.1</span>",
-			"bulletset2": [
-				"Tap or click <span style=\"font-weight:bold;\"> Settings </span>",
-				"Tap or click <span style=\"font-weight:bold;\"> Update and recovery</span>",
-				"Tap or click <span style=\"font-weight:bold;\">  Recovery</span>",
-				"Under Refresh your PC without affecting your files, tap or click <span style=\"font-weight:bold;\"> Get started.</span>",
-				"Click <span style=\"font-weight:bold;\">  \"Next\"</span>.",
-				"Click <span style=\"font-weight:bold;\"> \"Refresh\" </span>to start the refresh process.",
-				"Once the refresh process is done, you can find a Removed Apps list on the desktop",
-				"You can find the removed apps while refreshing your system"
-			],
-			"para6": "<span style=\"text-decoration: underline;font-weight: bold\">Windows 10</span>",
-			"bulletset3": [
-				"Search for <span style=\"font-weight:bold;\"> refresh </span>in the search tool available in the Start menu",
-				"Click on <span style=\"font-weight:bold;\"> \"Refresh your PC without affecting your files\"</span> in the search results as shown below.",
-				"Click on the <span style=\"font-weight:bold;\"> Get started </span>button just below the heading<span style=\"font-weight:bold;\">  \"Refresh your PC without affecting your files\"</span> to start refreshing your Windows 10 PC."
-			],
+			"para6": "Windows 8/8.1",
+			"para7": {
+				"span1": {
+					"line1": "Tap or click",
+					"line2": "Settings "
+				},
+				"span2": {
+					"line1": "Tap or click",
+					"line2": "Update and recovery"
+				},
+				"span3": {
+					"line1": "Tap or click",
+					"line2": "Recovery"
+				},
+				"span4": {
+					"line1": "Under Refresh your PC without affecting your files, tap or click",
+					"line2": "Get started."
+				},
+				"span5": {
+					"line1": "Click",
+					"line2": "\"Next\"."
+				},
+				"span6": {
+					"line1": "Click",
+					"line2": "\"Refresh\"",
+					"line3": "to start the refresh process."
+				},
+				"span7": "Once the refresh process is done, you can find a Removed Apps list on the desktop",
+				"span8": "You can find the removed apps while refreshing your system"
+			},
+			"para8": "Windows 10",
+			"para9": {
+				"span1": {
+					"line1": "Search for",
+					"line2": "refresh",
+					"line3": "in the search tool available in the Start menu"
+				},
+				"span2": {
+					"line1": "Click on",
+					"line2": "\"Refresh your PC without affecting your files\"",
+					"line3": " in the search results as shown below."
+				},
+				"span3": {
+					"line1": "Click on the",
+					"line2": "Get started",
+					"line3": "button just below the heading",
+					"line4": "\"Refresh your PC without affecting your files\"",
+					"line5": "to start refreshing your Windows 10 PC."
+				}
+			},
 			"header5": "Additional Information",
-			"para7": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
-			"para8": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
+			"para10": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
+			"para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
 		},
 		"question3": {
 			"title": "How to know your machine's CPU",
@@ -867,31 +977,93 @@
 			"heading3": "Operating System",
 			"para4": "Windows 7, 8, 10",
 			"heading4": "Solution",
-			"para5": "<span style=\"text-decoration: underline;padding:10px 0;font-weight: bold\">Windows 7 or Vista</span>",
-			"bulletset1": [
-				"Open System by clicking the Start button Picture of the Start button, right-clicking Computer, and then clicking Properties",
-				"Under System, you can view the system type."
-			],
-			"para6": "<span style=\"text-decoration: underline;font-weight: bold\">Windows 8 and Windows 10</span>",
-			"bulletset2": [
-				"Method 1: View the System window in Control Panel",
-				"Swipe in from the right edge of the screen, and then tap Search. Or, if you are using a mouse, point to the lower-right corner of the screen, and then click Search.",
-				"Type system in the search box, and then tap or click Settings.",
-				"Tap or click System",
-				"If you are running a 64-bit version of Windows 8, 64-bit Operating System is displayed in the System type field under the System heading. If you are running a 32-bit version of Windows 8, 32-bit Operating System is displayed in the System type field under the System heading.",
-				"Method 2: View the System Information window",
-				"Swipe in from the right edge of the screen, and then tap Search. Or, if you are using a mouse, point to the lower-right corner of the screen, and then click Search.",
-				"In the search box, type system information",
-				"Tap or click System, tap or click System Information, and then click System Summary.",
-				"If you are running a 64-bit version of Windows 8, x64-based PC is displayed in the System type field under the Item heading."
-			],
-			"para7": "If you are running a 32-bit version of Windows 8, x86-based PC is displayed in the System type field under the Item heading."
+			"para5": "Windows 7 or Vista",
+			"para6": {
+				"span1": {
+					"line1": "Open System by clicking the",
+					"line2": "Start button",
+					"line3": "Picture of the Start button, right-clicking Computer, and then clicking Properties"
+				},
+				"span2": "Under System, you can view the system type."
+			},
+			"para7": "Windows 8 and Windows 10",
+			"para8": {
+				"span1": {
+					"line1": "Method 1:",
+					"line2": "View the System window in Control Panel"
+				},
+				"span2": {
+					"line1": "Swipe in from the right edge of the screen, and then tap",
+					"line2": "Search.",
+					"line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
+					"line4": "Search."
+				},
+				"span3": {
+					"line1": "Type",
+					"line2": "system",
+					"line3": "in the search box, and then tap or click",
+					"line4": "Settings."
+				},
+				"span4": {
+					"line1": "Tap or click",
+					"line2": "System"
+				},
+				"span5": {
+					"line1": "If you are running a 64-bit version of Windows 8,",
+					"line2": "64-bit Operating System",
+					"line3": "is displayed in the System type field under the System heading.",
+					"line4": "If you are running a 32",
+					"line5": "-bit version of Windows 8, 32-bit Operating",
+					"line6": "System is displayed in the System type field under the System heading."
+				},
+				"span6": {
+					"line1": "Method 2:",
+					"line2": "View the System Information window"
+				},
+				"span7": {
+					"line1": "Swipe in from the right edge of the screen, and then tap",
+					"line2": "Search.",
+					"line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
+					"line4": "Search."
+				},
+				"span8": {
+					"line1": "In the search box, type",
+					"line2": "system information"
+				},
+				"span9": {
+					"line1": "Tap or click",
+					"line2": "System",
+					"line3": ", tap or click",
+					"line4": "System Information,",
+					"line5": "and then click",
+					"line6": "System Summary."
+				},
+				"span10": {
+					"line1": "If you are running a",
+					"line2": "64",
+					"line3": "bit version of Windows 8, 32-bit Operating,",
+					"line4": "x64-based PC is displayed in the",
+					"line5": "System type",
+					"line6": "field under the Item heading."
+				}
+			},
+			"para9": {
+				"line1": "If you are running a",
+				"line2": "32-bit",
+				"line3": "version of Windows 8,x86-based PC is displayed in the",
+				"line4": "System type",
+				"line5": "field under the Item heading."
+			}
 		},
 		"question4": {
 			"title": "Check your machine's battery use",
 			"description": "<div style='font-size:4rem;font-weight:bold;'>\n    Check your machine's battery use\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> \n    screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.\n    That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;\n    apps&ndash;are using too much power.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n\n<ul>\n    <li>Lenovo laptops, desktops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Systems</h3>\n<ul>\n    <li>All</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operationg System</h3>\n<ul>\n    <li>Window 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your\n    traditional <strong>control panel </strong>view, this feature is located in the\n    new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>\n    select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br />\n        <br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last\n    from last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;\n    <strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,\n    the display,</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong>\n     options show how much power is used by applications while you&rsquo;re using them, compared to applications\n    running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>\n        &ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.\n    This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this\n    feature.\n    It will display a list of the apps have used battery power in that period, and show you what percentage of your\n    battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
 			"heading1": "Symptom",
-			"para1": "Windows 10 includes a new “Battery Use” screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power.",
+			"para1": {
+				"span1": "Windows 10 includes a new",
+				"span2": "“Battery Use”",
+				"span3": "screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power."
+			},
 			"heading2": "Affected Brands",
 			"para2": "Lenovo laptops, desktops",
 			"heading3": "Affected Systems",
@@ -899,67 +1071,133 @@
 			"heading4": "Operating System",
 			"para4": "Windows 10",
 			"heading5": "Solution",
-			"para5": "This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional control panel view, this feature is located in the new “Settings” app",
-			"bulletset1": [
-				"A. Find the Battery Use Screen",
-				"1. Click or Tap the “Settings” option from the start menu",
-				"2. In Settings select “System”and then select “Battery saver.”",
-				"3. Click or tap the “Battery use” link under this heading to see more details.",
-				"B. Analyze Your Power Usage",
-				"4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
-				"5. “System,” “Display,” and “Wi-Fi” percentages. This shows how much battery power has been used by system processes, the display,",
-				"6. The “In use” and “Background” options show how much power is used by applications while you’re using them, compared to applications running in the background.",
-				"7. If apps are using power in the background, you can click or tap the “Change background app settings” link and configure apps to not run in the background. This only works for universal Windows 10 apps.",
-				"8. Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used"
-			]
+			"para5": {
+				"line1": "This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional",
+				"line2": "control panel",
+				"line3": "view, this feature is located in the new",
+				"line4": "“Settings”",
+				"line5": "app"
+			},
+			"para6": {
+				"span1": "A. Find the Battery Use Screen",
+				"span2": {
+					"line1": "1. Click or Tap the",
+					"line2": "“Settings”",
+					"line3": "option from the start menu"
+				},
+				"span3": {
+					"line1": "2. In",
+					"line2": "Settings",
+					"line3": "select",
+					"line4": "“System”",
+					"line5": "and then select",
+					"line6": "“Battery saver.”"
+				},
+				"span4": {
+					"line1": "3. Click or tap the",
+					"line2": "“Battery use”",
+					"line3": "link under this heading to see more details."
+				},
+				"span5": "B. Analyze Your Power Usage",
+				"span6": "4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
+				"span7": {
+					"line1": "5.",
+					"line2": "“System”,",
+					"line3": "“Display”,",
+					"line4": "and",
+					"line5": "“Wi-Fi”",
+					"line6": "percentages. This shows how much battery power has been used by system processes, the display,"
+				},
+				"span8": {
+					"line1": "6. The",
+					"line2": "“In use”",
+					"line3": "and",
+					"line4": "“Background”",
+					"line5": "options show how much power is used by applications while you’re using them, compared to applications running in the background."
+				},
+				"span9": {
+					"line1": "7. If apps are using power in the background, you can click or tap the",
+					"line2": "“Change background app settings”",
+					"line3": "link and configure apps to not run in the background. This only works for universal Windows 10 apps."
+				},
+				"span10": "8. Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used."
+			}
 		},
 		"question5": {
 			"title": "Use your PC like a tablet",
 			"description": "<div style='font-size:4rem;font-weight:bold;'>\n    Use your PC like a tablet\n</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet\n        mode</strong> .</p>\n<p> </p>\n<p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device \n    on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and\n    how the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the\n    screen.</p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.\n    Select the <strong>Start </strong>button, select <strong>Settings </strong>>\n    <strong>System </strong>> <strong>\n        Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.\n    To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and\n    you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n    <li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n    <li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then\n        drag it to one side to snap it into your divided screen.</li>\n    <li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
 			"para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
 			"heading1": "Use tablet mode",
-			"para2": "To turn on tablet mode, select action center on the taskbar, then select Tablet mode.",
+			"para2": {
+				"span1": "To turn on tablet mode, select",
+				"span2": "action center",
+				"span3": "on the taskbar, then select",
+				"span4": "Tablet mode."
+			},
 			"heading2": "Note",
 			"para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
 			"para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
 			"heading3": "Tip",
-			"para5": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen. Select the Start button, select Settings > System > Tablet mode , then turn on Automatically hide the taskbar in tablet mode. To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.",
+			"para5": {
+				"span1": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.",
+				"span2": "Select the",
+				"span3": "Start",
+				"span4": "button, select",
+				"span5": " Settings",
+				"span6": "System",
+				"span7": "Tablet mode",
+				"span8": ", then turn on",
+				"span9": "Automatically hide the taskbar in tablet mode.",
+				"span10": "To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there."
+			},
 			"heading4": "Use two apps simultaneously",
 			"para6": "To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.",
 			"para7": "In this view, you can also:",
-			"bulletset1": [
-				"Use the shared edge between two snapped apps to resize both apps at the same time.",
-				"Open a new app from task view—select Task view on the taskbar, select an app, then drag it to one side to snap it into your divided screen.",
-				"Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
-			]
+			"para8": {
+				"span1": "Use the shared edge between two snapped apps to resize both apps at the same time.",
+				"span2": {
+					"line1": "Open a new app from task view—select",
+					"line2": "Task view",
+					"line3": "on the taskbar, select an app, then drag it to one side to snap it into your divided screen."
+				},
+				"span3": "Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
+			}
 		},
 		"question6": {
 			"title": "Get to know Cortona, your personal assistant",
-			"description": "<div style='font-size:4rem;font-weight:bold;'>\n    Get to know Cortana, your personal assistant\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>What is Cortana?</h3>\n<hr />\n<p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing\n    works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you\n    select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n    <li>Give you reminders based on time, places, or people.</li>\n    <li>Track packages, teams, interests, and flights.</li>\n    <li>Send emails and texts.</li>\n    <li>Manage your calendar and keep you up to date.</li>\n    <li>Create and manage lists.</li>\n    <li>Chit chat and play games.</li>\n    <li>Find facts, files, places, and info.</li>\n    <li>Open any app on your system.</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Try this: Set a reminder</h3>\n<hr />\n\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or\n    even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync\n    notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3>\n<hr />\n<p>Set Cortana to hear you anytime you say\n    'Hey Cortana.' Select the search box on the taskbar to open Cortana home.\n    Then select <strong>Settings</strong>  and turn on <strong>Let Cortana respond to 'Hey\n        Cortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.\n</p>\n<p> </p>",
+			"description": "<div style='font-size:4rem;font-weight:bold;'>\n    Get to know Cortana, your personal assistant\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>What is Cortana?</h3>\n<hr />\n<p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing\n    works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you\n    select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n    <li>Give you reminders based on time, places, or people.</li>\n    <li>Track packages, teams, interests, and flights.</li>\n    <li>Send emails and texts.</li>\n    <li>Manage your calendar and keep you up to date.</li>\n    <li>Create and manage lists.</li>\n    <li>Chit chat and play games.</li>\n    <li>Find facts, files, places, and info.</li>\n    <li>Open any app on your system.</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Try this: Set a reminder</h3>\n<hr />\n\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or\n    even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync\n    notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3>\n<hr />\n<p>Set Cortana to hear you anytime you say\n    'Hey Cortana.' Select the search box on the taskbar to open Cortana home.\n    Then select <strong>Settings</strong>  and turn on <strong>Let Cortana respond to 'Hey\n        Cortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.\n</p>\n<p> </p>",
 			"heading1": "What is Cortana?",
 			"para1": "Cortana is your digital agent. She'll help you get things done.",
 			"para2": "The more you use Cortana, the more personalized your experience will be.",
 			"para3": "To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
 			"para4": "If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
-			"para5": "1. Home 2. Notebook 3. Settings 4. Feedback",
+			"para5": " Home 2. Notebook 3. Settings 4. Feedback",
 			"para6": "Here are some things Cortana can do for you:",
-			"bulletset1": [
-				"Give you reminders based on time, places, or people.",
-				"Track packages, teams, interests, and flights.",
-				"Send emails and texts.",
-				"Manage your calendar and keep you up to date.",
-				"Create and manage lists.",
-				"Chit chat and play games.",
-				"Find facts, files, places, and info.",
-				"Open any app on your system."
-			],
+			"bulletset1": {
+				"span1": "Give you reminders based on time, places, or people.",
+				"span2": "Track packages, teams, interests, and flights.",
+				"span3": "Send emails and texts.",
+				"span4": "Manage your calendar and keep you up to date.",
+				"span5": "Create and manage lists.",
+				"span6": "Chit chat and play games.",
+				"span7": "Find facts, files, places, and info.",
+				"span8": "Open any app on your system."
+			},
 			"heading2": "Try this: Set a reminder",
 			"para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",
 			"para8": "For example, type or say, “Remind me to congratulate Tanya the next time she calls.”",
 			"para9": "The reminder will appear when you get a call from Tanya.",
 			"para10": "Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.",
 			"heading3": "Hey Cortana?",
-			"para11": "Set Cortana to hear you anytime you say “Hey Cortana.” Select the search box on the taskbar to open Cortana home. Then select Settings  and turn on Let Cortana respond to “Hey Cortana.”",
+			"para11": {
+				"span1": "Set Cortana to hear you anytime you say “Hey Cortana.” Select the search box on the taskbar to open Cortana home.",
+				"span2": {
+					"line1": "Then select",
+					"line2": "Settings",
+					"line3": "and turn on",
+					"line4": "Let Cortana respond to “Hey Cortana.”"
+				}
+			},
 			"para12": "Note",
 			"para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
 		}

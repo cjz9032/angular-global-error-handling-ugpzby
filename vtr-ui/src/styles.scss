@@ -640,7 +640,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
-	line-height: 1;
 	font-size:2.2rem;
 
 	/* Better Font Rendering =========== */
@@ -983,31 +982,10 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	content: "\e953";
 	color: #4a81fd;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.icomoon-LE-Figleaf2x:before {
+	content: "\e93a";
+	color:#fff;
+}
 // gaming overrides need to be at the bottom here
 @import "./styles-gaming.scss";
+

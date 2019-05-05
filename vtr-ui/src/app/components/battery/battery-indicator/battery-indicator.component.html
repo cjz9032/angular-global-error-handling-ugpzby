@@ -20,7 +20,7 @@
 				</div>
 			</div>
 
-			<div *ngIf="!isVoltageError">
+			<div *ngIf="!isVoltageError && !hideRemainingTimeTxt">
 				<div class="remaining-time">
 					{{ getTimeRemaining() }}
 				</div>
