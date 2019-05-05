@@ -1,6 +1,10 @@
 @import '../../../app.theme.scss';
 
-.vtr-modal-article-detail {
+.vtr-modal-license {
+
+	&.modal-body {
+		padding: 0;
+	}
 
 	fa-icon {
 		font-size: 2rem;
@@ -40,6 +44,15 @@
 }
 
 :host ::ng-deep {
+	pre {
+		font-family: "Segoe UI", Sans-serif;
+		font-size: 1.8rem;
+		color: $main_dark;
+		word-wrap: break-word;
+		white-space: pre-wrap;
+		white-space: -moz-pre-wrap;
+	}
+
 	.spinner-content {
 		width: 100%;
 		height: calc(83vh - 1rem);
