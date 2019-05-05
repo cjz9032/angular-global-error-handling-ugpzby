@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { LocationHistoryService } from '../shared/services/location-history.service';
-import { CommonPopupService } from '../common-services/popups/common-popup.service';
-import { ChoseBrowserService } from '../common-services/chose-browser.service';
+import { LocationHistoryService } from '../common/services/location-history.service';
+import { CommonPopupService } from '../common/services/popups/common-popup.service';
+import { ChoseBrowserService } from '../common/services/chose-browser.service';
 import { Router } from '@angular/router';
-import { CommunicationWithFigleafService } from '../communication-with-figleaf/communication-with-figleaf.service';
-import { TrackingMapService } from '../common-services/tracking-map.service';
+import { CommunicationWithFigleafService } from '../utils/communication-with-figleaf/communication-with-figleaf.service';
+import { TrackingMapService } from '../feature/tracking-map/services/tracking-map.service';
 
 @Component({
 	// selector: 'vtr-layer',

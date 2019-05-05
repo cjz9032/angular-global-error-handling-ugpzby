@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit, ChangeDetectorRef } from '@angular/core';
-import { BreachedAccountMode } from '../../common-ui/breached-account/breached-account.component';
+import { BreachedAccountMode } from '../../feature/check-breached-accounts/breached-account/breached-account.component';
 import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
-import { instanceDestroyed } from '../../shared/custom-rxjs-operators/instance-destroyed';
-import { BreachedAccount, BreachedAccountsService } from '../../common-services/breached-accounts.service';
-import { CommunicationWithFigleafService } from '../../communication-with-figleaf/communication-with-figleaf.service';
+import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
+import { BreachedAccount, BreachedAccountsService } from '../../common/services/breached-accounts.service';
+import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 
 @Component({
 	// selector: 'app-admin',
