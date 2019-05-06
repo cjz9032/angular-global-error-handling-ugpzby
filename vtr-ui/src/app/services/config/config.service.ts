@@ -324,7 +324,7 @@ export class ConfigService {
 			console.log('*****************************************',machineInfo.country)
 			if(isGaming){
 				return this.menuItemsGaming;
-			} else if(this.countryCodes.indexOf(machineInfo.country.toUpperCase())!==-1) {
+			} else if(this.countryCodes.indexOf(machineInfo.country.toLowerCase())!==-1) {
 				return this.menuItemsPrivacy;
 			}else{
 				return this.menuItems;
