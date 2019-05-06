@@ -30,11 +30,21 @@ export class PassWordManagerWidgetItem extends WidgetItem {
 	}
 
 	updateStatus(status: string) {
-		this.detail = status;
-		this.status = status === 'installed' ? 2 : 1;
-
-		const translateKey = status === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
-		this.translateService.stream(translateKey).subscribe((value) => {
+		let translateKey: string;
+		switch (status) {
+			case 'installed':
+				translateKey = 'common.securityAdvisor.installed';
+				this.status = 5;
+				break;
+			case 'installing':
+				translateKey = 'common.securityAdvisor.installing';
+				this.status = 4;
+				break;
+			default:
+				translateKey = 'common.securityAdvisor.notInstalled';
+				this.status = 5;
+		}
+		this.translateService.stream(translateKey).subscribe((value: string) => {
 			this.detail = value;
 		});
 	}

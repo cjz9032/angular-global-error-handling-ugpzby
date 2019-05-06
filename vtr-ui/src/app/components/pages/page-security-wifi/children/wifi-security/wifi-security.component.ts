@@ -20,7 +20,6 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	isShowMore = true; // less info, more info
 	isShowMoreLink = true; // show more link
 	region: string;
-	// showAllNetworks: boolean = true;
 	isCollapsed = true;
 	isWifiSecurityEnabled = true;
 	showAllNetworks = true;
