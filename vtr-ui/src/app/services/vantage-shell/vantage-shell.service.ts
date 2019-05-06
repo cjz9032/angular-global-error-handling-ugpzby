@@ -122,7 +122,7 @@ export class VantageShellService {
 						}
 					}
 
-					this.sendAsyncOrignally(data);
+					return this.sendAsyncOrignally(data);
 				};
 			}
 

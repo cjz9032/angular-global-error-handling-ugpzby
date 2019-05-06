@@ -15,6 +15,8 @@ reference : https://fonts.google.com/specimen/Rubik
 
 @import "app/app.theme";
 
+
+
 html {
 	margin: 0;
 	padding: 0;
@@ -630,6 +632,8 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	background: linear-gradient(135deg, $go 0%, $go_light 100%);
 }
 
+// gaming overrides need to be at the bottom here
+@import "./styles-gaming.scss";
 
 
 /************************* icomoon icons ****************/
@@ -999,6 +1003,5 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	content: "\e93a";
 	color:#fff;
 }
-// gaming overrides need to be at the bottom here
-@import "./styles-gaming.scss";
+
 

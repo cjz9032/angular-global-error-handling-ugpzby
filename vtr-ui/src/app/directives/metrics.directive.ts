@@ -33,6 +33,10 @@ export class MetricsDirective {
 
 	private metrics: any;
 
+
+
+
+
 	@Input() metricsItem: string;
 	@Input() metricsEvent: string;
 	@Input() metricsValue: string;
@@ -55,9 +59,8 @@ export class MetricsDirective {
 		};
 		const eventName = this.metricsEvent.toLowerCase();
 		switch (eventName) {
-			case 'featureclick':
 			case 'itemclick': {
-				data.ItemType = 'FeatureClick';
+				data.ItemType = 'ItemClick';
 				data.ItemName = this.metricsItem;
 				data.ItemParent = this.metricsParent;
 				if (this.metricsParam) {
@@ -67,10 +70,9 @@ export class MetricsDirective {
 					data.ItemValue = this.metricsValue;
 				}
 			}
-			break;
-			case 'articleclick':
+				break;
 			case 'docclick': {
-				data.ItemType = 'ArticleClick';
+				data.ItemType = 'DocClick';
 				data.ItemParent = this.metricsParent;
 				if(typeof this.viewOrderService[this.metricsParent]==='undefined'){
 
@@ -90,7 +92,7 @@ export class MetricsDirective {
 					data.PageNumber = this.metricsPageNumber;
 				}
 			}
-			break;
+				break;
 			case 'settingupdate': {
 				data.ItemType = 'SettingUpdate';
 				data.SettingParent = this.metricsParent;
@@ -113,6 +115,9 @@ export class MetricsDirective {
 		if (this.metrics && this.metrics.sendAsync) {
 			this.metrics.sendAsync(data);
 		}
+
+		// for debug
+		console.log('------reporting metrics------\n'.concat(JSON.stringify(data)));
 	}
 
 
