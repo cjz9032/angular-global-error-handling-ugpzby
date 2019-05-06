@@ -21,7 +21,8 @@ $gaming_icon_gradient: linear-gradient(45deg, #3592ff, #0078ff);
 $gaming_switch_light: #f2f2f2;
 $gaming_switch_dark: #6d6d6d;
 $gaming_green_gradient: linear-gradient(90deg, #2ecc71, #35e6ba);
-
+$gaming-slate-blue: #30415a;
+$gaming-Darkslate-blue: #233043;
 
 $highlight: #2ec5eb;
 
@@ -110,6 +111,7 @@ $mediaquery_15: "only screen and (max-width: 767px)";
 $mediaquery_16: "only screen and (min-width: 531px) and (max-width : 585px)";
 $mediaquery_17: "only screen and (min-width: 1196px) and (max-width : 1346px)";
 $mediaquery_18: "only screen and (min-width: 1258px) and (max-width : 1271px)";
+$mediaquery_19: "only screen and (min-width: 2160px) and (max-width : 3840px) and (max-resolution: 300dpi)";
 
 
 $mediaquery_X1: "only screen and (min-width: 800px) and (max-width : 1200px)";
@@ -126,7 +128,7 @@ $mediaquery_X11: "only screen and (min-width: 1201px) and (max-width : 1257px)";
 $mediaquery_X12: "only screen and (min-width: 900px) and (max-width : 1440px)";
 $mediaquery_X13: "only screen and (min-width: 900px) and (max-width : 1600px)";
 $mediaquery_X14: "only screen and (min-width: 1080px) and (max-width : 1920px)";
-$mediaquery_X15: "only screen and (min-width: 1080px) and (max-width : 1920px) and (min-resolution: 125dpi)";
+$mediaquery_X15: "only screen and (min-width: 1080px) and (max-width : 1920px) and (max-resolution: 125dpi)";
 
 $dpiquery_0: "max-resolution: 350dpi";
 $dpiquery_1: "max-resolution: 275dpi";

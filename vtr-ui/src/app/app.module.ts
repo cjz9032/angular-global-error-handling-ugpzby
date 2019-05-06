@@ -176,6 +176,7 @@ import { WidgetSystemToolsComponent } from './components/widgets/widget-system-t
 import { WidgetSystemMonitorComponent } from './components/widgets/widget-system-monitor/widget-system-monitor.component';
 import { WidgetQuicksettingsListComponent } from './components/widgets/widget-quicksettings-list/widget-quicksettings-list.component';
 import { WidgetLightingComponent } from './components/widgets/widget-lighting/widget-lighting.component';
+import { ModalGamingLegionedgeComponent } from './components/modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 
 
 library.add(fas);
@@ -311,7 +312,8 @@ library.add(fal);
 		WidgetSystemToolsComponent,
 		WidgetSystemMonitorComponent,
 		WidgetQuicksettingsListComponent,
-		WidgetLightingComponent
+		WidgetLightingComponent,
+		ModalGamingLegionedgeComponent
 
 	],
 	imports: [
@@ -358,7 +360,8 @@ library.add(fal);
 		ModalUpdateChangeLogComponent,
 		ModalAboutComponent,
 		ModalSupportWechatComponent,
-		ModalLicenseComponent
+		ModalLicenseComponent,
+		ModalGamingLegionedgeComponent
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
