@@ -276,6 +276,18 @@ export class ConfigService {
 				subitems: []
 			}]
 		},{
+			id: 'privacy',
+			label: 'common.menu.privacy',
+			path: 'privacy',
+			icon: ['icomoon', 'icomoon-LE-Figleaf2x'],
+			metricsEvent: 'itemClick',
+			metricsParent: 'navbar',
+			metricsItem: 'link.privacy',
+			routerLinkActiveOptions: { exact: true },
+			forArm: false,
+			subitems: []
+		},
+		{
 			id: 'support',
 			label: 'common.menu.support',
 			path: 'support',
@@ -283,17 +295,6 @@ export class ConfigService {
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.support',
-			routerLinkActiveOptions: { exact: true },
-			forArm: false,
-			subitems: []
-		},{
-			id: 'privacy',
-			label: 'common.menu.privacy',
-			path: 'privacy',
-			icon: ['fal', 'eye'],
-			metricsEvent: 'itemClick',
-			metricsParent: 'navbar',
-			metricsItem: 'link.privacy',
 			routerLinkActiveOptions: { exact: true },
 			forArm: false,
 			subitems: []
