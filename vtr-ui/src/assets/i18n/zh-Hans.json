@@ -726,6 +726,7 @@
 		"logout": "注销",
 		"user": "用户",
 		"welcomeText": "元气满满的一天 {{firstName}}！",
+		"welcomeTextWithouUserName": "元气满满的一天！",
 		"helloUser": "{{firstName}}，你好！",
 		"ssoErrorTitle": "错误",
 		"ssoErrorCommon": "糟糕，出现了错误。请重试。",

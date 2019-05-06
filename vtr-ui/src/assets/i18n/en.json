@@ -727,6 +727,7 @@
 		"logout": "Logout",
 		"user": "User",
 		"welcomeText": "Looking energized today {{firstName}}!",
+		"welcomeTextWithoutUserName": "Looking energized today!",
 		"helloUser": "Hello, {{firstName}}!",
 		"ssoErrorTitle": "Error",
 		"ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",

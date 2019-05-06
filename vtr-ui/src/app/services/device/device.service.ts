@@ -34,6 +34,7 @@ export class DeviceService {
 	
 	private initIsArm() {
 		try {
+			//this.isArm = true;
 			if (this.isShellAvailable) {
 				this.getMachineInfo()
 					.then((machineInfo: any) => {

@@ -14,8 +14,6 @@ export class UserService {
 	public auth = false;
 	token = '';
 
-	public isLenovoIdSupported = false;
-
 	public firstName = 'User';
 	lastName = '';
 	initials = '';
