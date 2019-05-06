@@ -1,20 +1,17 @@
 <div class="vtr-ui-list-support">
 	<ul class="support-list">
 		<li *ngFor="let item of items">
-			<!-- <a role="button" *ngIf="item.url" href="{{item.url}}" target="_blank"> -->
-			 <a role="button" *ngIf="item.url" href="{{item.url}}" target="_blank" vtrMetrics metricsItem="{{item?.metricsItem}}"
+			<a role="button" *ngIf="item.url" href="{{item.url}}" target="_blank" vtrMetrics metricsItem="{{item?.metricsItem}}"
 			 metricsEvent="{{item?.metricsEvent}}" metricsParent="{{item?.metricsParent}}">
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col col-2 text-center">
-							<div class="item-icon"
-								*ngIf="item.icon">
+							<div class="item-icon" *ngIf="item.icon">
 								<div class="icon-bkg">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
-							<div class="item-icon-image"
-								*ngIf="item.iconPath">
+							<div class="item-icon-image" *ngIf="item.iconPath">
 								<img [src]="item.iconPath" />
 							</div>
 						</div>
@@ -27,25 +24,21 @@
 							<div class="arrow" *ngIf="!item.hideArrow">
 								<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
 							</div>
-						</div>
-						<div class="image text-center w-100 p-4" *ngIf="item.image">
-							<img src="{{item.image}}" alt="item.title">
 						</div>
 					</div>
 				</div>
 			</a>
-			<div class="no-pointer" *ngIf="!item.url && !item.path">
+			<a role="button" href="javascript:;" *ngIf="item.clickItem" (click)="itemClick(item.clickItem)" vtrMetrics metricsItem="{{item?.metricsItem}}"
+			 metricsEvent="{{item?.metricsEvent}}" metricsParent="{{item?.metricsParent}}">
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col col-2 text-center">
-							<div class="item-icon"
-								*ngIf="item.icon">
+							<div class="item-icon" *ngIf="item.icon">
 								<div class="icon-bkg">
 									<fa-icon [icon]="item.icon"></fa-icon>
 								</div>
 							</div>
-							<div class="item-icon-image"
-								*ngIf="item.iconPath">
+							<div class="item-icon-image" *ngIf="item.iconPath">
 								<img [src]="item.iconPath" />
 							</div>
 						</div>
@@ -59,12 +52,9 @@
 								<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
 							</div>
 						</div>
-						<div class="image text-center w-100 p-4" *ngIf="item.image">
-							<img src="{{item.image}}" alt="item.title">
-						</div>
 					</div>
 				</div>
-			</div>
+			</a>
 		</li>
 	</ul>
 </div>

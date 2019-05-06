@@ -1,52 +1,85 @@
-@import '../../../app.theme.scss';
+@import "../../../app.theme.scss";
 
-.vtr-modal-about {
-
-	&.modal-body {
-		padding: 0;
-	}
-
-	fa-icon {
-		font-size: 2rem;
-		color: $main;
-	}
-
-	h1 {
-		font-size: 3.1rem;
-		font-weight: normal;
-		color: $blue-dark;
-		margin-bottom: 3rem;
-	}
-
-	img,
-	iframe {
-		max-width: 100%;
-		margin-bottom: 3rem;
-	}
+:host {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
 }
 
-:host ::ng-deep {
-	pre {
-		font-family: "Segoe UI", Sans-serif;
-    font-size: 1.8rem;
-		color: $main_dark;
-		word-wrap: break-word;
-		white-space: pre-wrap;
-		white-space: -moz-pre-wrap;
-	}
+.vtr-widget-about {
+	border-radius: $border_radius;
+	background: $light;
+	background-size: cover;
+	color: $main_dark;
+	box-shadow: $drop_shadow;
+	padding: 4rem;
+	position: relative;
+	width: 47.8rem;
 
-	.spinner-content {
-		width: 100%;
-		height: calc(83vh - 1rem);
+	.img-con {
+		height: 28rem;
 		display: flex;
 		justify-content: center;
-		align-items: center;
+	}
 
-		.spinner-border {
-			width: 5rem !important;
-			height: 5rem !important;
-			padding: 5rem;
-			margin-bottom: 6rem;
+	.qr-img {
+		width: 22.5rem;
+		height: 22.5rem;
+	}
+
+	.content{
+		padding-top: 6rem;
+		padding-bottom: 2.5rem;
+	}
+
+	.title {
+		font-size: 3.5rem;
+		font-weight: $weight_regular;
+		color: $shade_blue;
+		letter-spacing: 0;
+	}
+
+	.description {
+		width: 76%;
+		margin-left: 12%;
+		font-size: 1.6rem;
+		font-weight: $weight_regular;
+		color: #667481;
+		letter-spacing: 0;
+	}
+
+	.line {
+		width: 100%;
+		height: 1px;
+		background-color: #f5f7f8;
+		margin-bottom: 2.5rem;
+	}
+
+	.about-links{
+		font-size: 1.6rem;
+		letter-spacing: 0;
+		color: #667481;
+		a{
+			text-decoration: underline;
+		}
+	}
+
+	.close-btn {
+		position: absolute;
+		right: 1.8rem;
+		top: 1.8rem;
+		width: 2.2rem;
+		height: 2.2rem;
+		cursor: pointer;
+
+		&:hover {
+			opacity: 0.7;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
 		}
 	}
 }

@@ -1,0 +1,46 @@
+<div class="breached-account" *ngFor="let account of breachedAccounts; let i = index">
+	<div class="breached-account__preview">
+		<div class="breached-account__image">
+			<ng-template #defaultFavicon>
+				<img class="breached-account__img" src="/assets/images/privacy-tab/Unknown.png" alt="unknown favicon">
+			</ng-template>
+			<img class="breached-account__img"
+				 *ngIf="account.domain | sitesFavicon:'/assets/images/privacy-tab/Unknown.png' | async as favicon; else defaultFavicon"
+				 [src]="account.image || favicon"
+				 [alt]="account.domain">
+		</div>
+        <div class="breached-account__text">
+            <div class="breached-account__social">
+                <div class="breached-account__social-description">
+                    <h4 class="breached-account__title">{{transformDomain(account.domain)}}</h4>
+                    <p class="breached-account__email"
+                       title="{{account.email}}" *ngIf="openId !== i">{{account.email}}</p>
+                </div>
+            </div>
+
+            <span class="breached-account__date" *ngIf="openId !== i">Breached on {{account.date}}</span>
+
+            <div class="breached-account__details">
+                <button class="breached-account__preview-link"
+                        (click)="isFigleafReadyForCommunication ? openFigleaf(account.link) : detailClickEmit(i)"
+                        *ngIf="mode === breachedAccountMode.PREVIEW">
+                    <span>Details</span>
+                </button>
+
+                <button class="breached-account__accordion-button"
+                        *ngIf="mode === breachedAccountMode.FULL"
+                        [ngClass]="{'breached-account__accordion-button--open': openId === i}"
+                        (click)="isFigleafReadyForCommunication ? openFigleaf(account.link) : openAccordion(i)">
+                    <span>Details</span>
+                </button>
+            </div>
+        </div>
+	</div>
+
+	<div *ngIf="openId === i" class="breached-account__description">
+		<vtr-breached-description [breachedAccount]="account"></vtr-breached-description>
+		<vtr-try-product-block
+			[texts]="tryProductText">
+		</vtr-try-product-block>
+	</div>
+</div>

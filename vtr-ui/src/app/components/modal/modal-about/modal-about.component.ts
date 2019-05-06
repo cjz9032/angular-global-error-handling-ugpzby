@@ -1,59 +1,72 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { HttpClient } from '@angular/common/http';
-import { SupportService } from 'src/app/services/support/support.service';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { ModalLicenseComponent } from '../../modal/modal-license/modal-license.component';
+import { TranslateService } from '@ngx-translate/core';
+import { environment } from '../../../../environments/environment';
 
+declare var Windows;
 @Component({
 	selector: 'vtr-modal-about',
 	templateUrl: './modal-about.component.html',
 	styleUrls: ['./modal-about.component.scss']
 })
-export class ModalAboutComponent implements OnInit, OnDestroy {
+export class ModalAboutComponent implements OnInit {
 
-	url: string;
-	/** type will be 'html' or 'txt' */
-	type: string;
-	articleBody: SafeHtml = '<div class="spinner-content"><div class="spinner-border text-primary progress-spinner" role="status"></div></div>';
-	aboutModalMetrics: any;
-	pageDuration: number;
+	lang = 'en';
 
+	buildVersion = environment.appVersion;
+	shellVersion: string;
 	constructor(
 		public activeModal: NgbActiveModal,
-		private http: HttpClient,
-		private sanitizer: DomSanitizer,
-		private supportService: SupportService
+		public modalService: NgbModal,
+		private translate: TranslateService,
 	) { }
 
 	ngOnInit() {
-		this.http.get(this.url, { responseType: 'text' }).subscribe((results: any) => {
-			// console.log('OSS license', results, results.length);
-			if (this.type === 'txt') {
-				this.articleBody = this.sanitizer.bypassSecurityTrustHtml(`<pre>${results}</pre>`);
-			} else {
-				this.articleBody = this.sanitizer.bypassSecurityTrustHtml(results);
-			}
-		});
-		this.pageDuration = 0;
-		setInterval(() => {
-			this.pageDuration += 1;
-		}, 1000);
+		if (this.translate.currentLang) { this.lang = this.translate.currentLang; }
+
+		if (Windows) {
+			const packageVersion = Windows.ApplicationModel.Package.current.id.version;
+			// packageVersion.major, packageVersion.minor, packageVersion.build, packageVersion.revision
+			this.shellVersion = `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}`;
+		}
 	}
 
-	ngOnDestroy() {
-		const pageViewMetrics = {
-			ItemType: 'PageView',
-			PageName: this.aboutModalMetrics.pageName,
-			PageContext: this.aboutModalMetrics.pageContext,
-			PageDuration: this.pageDuration,
-			OnlineStatus: ''
+	agreementClicked() {
+		const agreementUrl = `assets/licenses/Agreement/${this.lang}.html`;
+		const licenseModalMetrics = {
+			pageName: 'Page.Support.Article',
+			pageContext: 'Licenses agreement',
+			closeButton: 'LicensesAgreementCloseButton',
 		};
-		this.supportService.sendMetricsAsync(pageViewMetrics);
-		console.log(pageViewMetrics);
+		const aboutModal: NgbModalRef = this.modalService.open(ModalLicenseComponent, {
+			size: 'lg',
+			centered: true,
+			windowClass: 'license-Modal'
+		});
+		aboutModal.componentInstance.url = agreementUrl;
+		aboutModal.componentInstance.type = 'html';
+		aboutModal.componentInstance.licenseModalMetrics = licenseModalMetrics;
+		this.closeModal();
 	}
 
-	enableBatteryChargeThreshold() {
-		this.activeModal.close('enable');
+	openSourceClicked() {
+		const openSourceUrl = `assets/licenses/OpenSource/OpenSourceLicenses.txt`;
+		const licenseModalMetrics = {
+			pageName: 'Page.Support.Article',
+			pageContext: 'Open Source Licenses',
+			closeButton: 'OpenSourceLicensesCloseButton',
+		};
+		const aboutModal: NgbModalRef = this.modalService.open(ModalLicenseComponent, {
+			size: 'lg',
+			centered: true,
+			windowClass: 'license-Modal'
+		});
+		aboutModal.componentInstance.url = openSourceUrl;
+		aboutModal.componentInstance.type = 'txt';
+		aboutModal.componentInstance.licenseModalMetrics = licenseModalMetrics;
+		this.closeModal();
 	}
 
 	closeModal() {

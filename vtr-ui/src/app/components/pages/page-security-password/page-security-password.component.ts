@@ -31,7 +31,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 		this.passwordManager = vantageShellService.getSecurityAdvisor().passwordManager;
 		this.statusItem = {
 			title: 'security.passwordManager.statusTitle',
-			status: 'common.securityAdvisor.loading'
+			status: 'loading'
 		};
 		const cacheStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityPasswordManagerStatus);
 		if (cacheStatus) {
@@ -92,6 +92,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 
 	openDashLaneArticle(): void {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
+			backdrop: 'static',
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal'

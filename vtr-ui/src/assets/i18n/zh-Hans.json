@@ -55,7 +55,7 @@
 				"sub6": "Windows你好"
 			},
 			"support": "支持服务",
-			"privacy": "Privacy"
+			"privacy": "隐私"
 		},
 		"securityAdvisor": {
 			"title": "安全顾问",
@@ -70,6 +70,7 @@
 			"partiallyProtected": "局部受保护",
 			"installed": "已安装",
 			"notInstalled": "未安装",
+			"installing": "正在安装",
 			"loading": "正在加载",
 			"notFound": "未发现",
 			"registered": "已注册",
@@ -286,7 +287,7 @@
 					"subtitle1": "电池和安静",
 					"description1": "此功能动态调节散热设置以满足您的需求。此功能开启时，在手持或空闲状态下可调节设置使设备保持较低温度或较低噪声。而设备放置在稳定平面上时，此功能可优化性能。此功能关闭时，您可以手动设置散热优先级。",
 					"description2": "智能散热可调节风扇速度、最高表面温度和性能。此功能具有以下模式，且现在支持通过 Windows 性能电源滑块访问。",
-					"description3": "Battery＆Quiet lorem ipsum是一个长期存在的事实，当阅读其布局时，读者将被页面的可读内容分散注意力。",
+					"description3": "Battery＆Quiet 是一个长期存在的事实，当阅读其布局时，读者将被页面的可读内容分散注意力。",
 					"readMore": "阅读更多.",
 					"gotoWindows": {
 						"title": "转到 Windows 设置",
@@ -587,20 +588,23 @@
 			"description": "联系我们以获取帮助。",
 			"listLenovoCommunity": "联想社区",
 			"listContactCustomerService": "联系客户服务部门",
-			"listContactUsOnWechat": "通过微信联系我们"
+			"listContactUsOnWechat": "通过微信联系我们",
+			"weChatDescription": "Shoot us a question on WeChat and we’ll be sure to respond quickly"
 		},
 		"quicklinks": {
 			"title": "快速链接",
 			"description": "联系我们以获取帮助。",
 			"listETicket": "通过电子凭单获取支持",
-			"listServiceProvider": "查找服务供应商"
+			"listServiceProvider": "查找服务供应商",
+			"listAboutLenovoVantage": "About Lenovo Vantage"
 		},
 		"about": {
 			"version": "版本",
 			"licenseAgreement": "许可协议",
 			"otherSoftwareLicenses": "其他软件许可证",
 			"ourWebsite": "我们的网站",
-			"copyright": "© 2002-2019 联想版权所有。"
+			"aboutYourDevice": "About your device",
+			"copyright": "© 2002-2019 联想保留所有权利。"
 		}
 	},
 	"security": {
@@ -614,7 +618,7 @@
 			"pwdHealth": "密码安全状况",
 			"vpnSecurity": "VPN 安全性",
 			"vpnVirtual": "虚拟专用网络",
-			"wifiConnected": "WiFi 和互联家庭网络安全性",
+			"wifiConnected": "WiFi 安全",
 			"connectedHomeSecurity": "互联家庭网络安全性",
 			"fingerprint": "指纹读取器",
 			"seeAllNetwork": "请查看所有加入的网络",
@@ -681,7 +685,7 @@
 		},
 		"wifisecurity": {
 			"header": {
-				"title": "WiFi 和互联家庭网络安全性",
+				"title": "WiFi 安全",
 				"back": "返回"
 			},
 			"container": {

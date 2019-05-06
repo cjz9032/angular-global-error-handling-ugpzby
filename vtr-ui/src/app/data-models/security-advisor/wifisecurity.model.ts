@@ -239,7 +239,7 @@ export class SecurityHealthViewModel {
 			it.status = item.vulnerable === 'true' ? 1 : 2;
 			it.title = this.mappingDevicePosture(item.config);
 			it.detail = item.vulnerable === 'true' ? 'security.homeprotection.securityhealth.fail' : 'security.homeprotection.securityhealth.pass';
-			this.translate.get(it.detail).subscribe((res) => {
+			this.translate.stream(it.detail).subscribe((res) => {
 				it.detail = res;
 			});
 			if (it.title !== 'other') {
@@ -287,7 +287,7 @@ export class SecurityHealthViewModel {
 		} else {
 			title = 'other';
 		}
-		this.translate.get(title).subscribe((res) => {
+		this.translate.stream(title).subscribe((res) => {
 			title = res;
 		});
 		return title;

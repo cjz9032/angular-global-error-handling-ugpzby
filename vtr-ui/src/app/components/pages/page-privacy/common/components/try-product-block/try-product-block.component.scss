@@ -1,0 +1,51 @@
+@import "../../../styles/common-blocks";
+
+.try-product {
+	padding: 3rem 0;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+	background-color: inherit;
+
+	&__description {
+		display: flex;
+		flex-flow: column;
+	}
+
+	&__title {
+		@extend %text-common;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 0.89px;
+		color: #34495E;
+	}
+
+	&__text {
+		@extend %text-common;
+	}
+
+	&__group-button {
+		display: flex;
+		flex-flow: row;
+		align-items: center;
+		margin-top: 2rem;
+	}
+
+	&__button {
+		@extend %theme-btn;
+		margin-right: 2rem;
+	}
+
+	&__button-link {
+		text-align: center;
+
+		a {
+			@extend %button-link;
+			@extend %button-link--to-right;
+
+			span {
+				border-bottom: 1px solid;
+			}
+		}
+	}
+}
