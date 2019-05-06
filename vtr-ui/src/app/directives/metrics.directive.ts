@@ -48,7 +48,7 @@ export class MetricsDirective {
 	@Input() metricsItemCategory: string;
 	@Input() metricsItemPosition: string;
 	@Input() metricsViewOrder: string;
-	@Input() metricsPageNumber: string;
+	@Input() metricsPageNumber: string="1";
 
 	@Input() metricsSettingName: string;
 	@Input() metricsSettingParm: string;
