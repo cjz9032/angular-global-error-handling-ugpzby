@@ -199,10 +199,11 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 		private regionService: RegionService
 		) {
 		this.showVpn();
-		this.getMenuItems();
-		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
+		this.getMenuItems().then((items)=>{
+			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		if (cacheShowWindowsHello) {
-			const securityItem = this.getItems().find(item => item.id === 'security');
+
+			const securityItem =items.find(item => item.id === 'security');
 			securityItem.subitems.push({
 				id: 'windows-hello',
 				label: 'common.menu.security.sub6',
@@ -231,6 +232,8 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			.subscribe((translation: Translation) => {
 				this.onLanguageChange(translation);
 			});
+		});
+
 	}
 
 	@HostListener('window: focus')
@@ -266,9 +269,9 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 		}
 	}
 
-	getItems() {
+/*	getItems() {
 		return this.configService.getMenuItems(this.deviceService.isGaming);
-	}	
+	}	*/
 
 	isParentActive(item) {
 		// console.log('IS PARENT ACTIVE', item.id, item.path);
@@ -324,35 +327,41 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	onLanguageChange(translation: Translation) {
-		if (translation && translation.type === TranslationSection.CommonMenu && !this.deviceService.isGaming) {
-			this.getItems()[0].label = translation.payload.dashboard;
-		}
+		this.getMenuItems().then((items)=>{
+			if (translation && translation.type === TranslationSection.CommonMenu && !this.deviceService.isGaming) {
+				items[0].label = translation.payload.dashboard;
+			}
+		})
+
 	}
 
 	showWindowsHello(windowsHello: WindowsHello) {
-		const securityItem = this.getItems().find(item => item.id === 'security');
-		if (!this.commonService.isRS5OrLater()
-			|| (typeof windowsHello.facialIdStatus !== 'string'
-				&& typeof windowsHello.fingerPrintStatus !== 'string')) {
-			securityItem.subitems = securityItem.subitems.filter(subitem => subitem.id !== 'windows-hello');
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
-		} else {
-			const windowsHelloItem = securityItem.subitems.find(item => item.id === 'windows-hello');
-			if (!windowsHelloItem) {
-				securityItem.subitems.push({
-					id: 'windows-hello',
-					label: 'common.menu.security.sub6',
-					path: 'windows-hello',
-					icon: '',
-					metricsEvent: 'itemClick',
-					metricsParent: 'navbar',
-					metricsItem: 'link.windowshello',
-					routerLinkActiveOptions: { exact: true },
-					subitems: []
-				});
+		this.getMenuItems().then((items)=>{
+			const securityItem = items.find(item => item.id === 'security');
+			if (!this.commonService.isRS5OrLater()
+				|| (typeof windowsHello.facialIdStatus !== 'string'
+					&& typeof windowsHello.fingerPrintStatus !== 'string')) {
+				securityItem.subitems = securityItem.subitems.filter(subitem => subitem.id !== 'windows-hello');
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
+			} else {
+				const windowsHelloItem = securityItem.subitems.find(item => item.id === 'windows-hello');
+				if (!windowsHelloItem) {
+					securityItem.subitems.push({
+						id: 'windows-hello',
+						label: 'common.menu.security.sub6',
+						path: 'windows-hello',
+						icon: '',
+						metricsEvent: 'itemClick',
+						metricsParent: 'navbar',
+						metricsItem: 'link.windowshello',
+						routerLinkActiveOptions: { exact: true },
+						subitems: []
+					});
+				}
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, true);
 			}
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, true);
-		}
+		})
+
 	}
 	showPrivacy(){
 
@@ -364,33 +373,36 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			error: err => { console.error(err); },
 			complete: () => { console.log('Done'); }
 		});
-		const securityItemForVpn = this.getItems().find(item => item.id === 'security');
-		if(securityItemForVpn!==undefined) {
-			const vpnItem = securityItemForVpn.subitems.find(item => item.id === 'internet-protection');
-			if (this.region !== 'CN') {
-				if (!vpnItem) {
-					securityItemForVpn.subitems.splice(4, 0, {
-						id: 'internet-protection',
-						label: 'common.menu.security.sub5',
-						path: 'internet-protection',
-						metricsEvent: 'itemClick',
-						metricsParent: 'navbar',
-						metricsItem: 'link.internetprotection',
-						routerLinkActiveOptions: { exact: true },
-						icon: '',
-						subitems: []
-					});
-				}
-			} else {
-				if (vpnItem) {
-					securityItemForVpn.subitems = securityItemForVpn.subitems.filter(item => item.id !== 'internet-protection');
-				}
-			}
-		}
+		 this.getMenuItems().then((items)=>{
+			 const securityItemForVpn = items.find(item => item.id === 'security');
+			 if(securityItemForVpn!==undefined) {
+				 const vpnItem = securityItemForVpn.subitems.find(item => item.id === 'internet-protection');
+				 if (this.region !== 'CN') {
+					 if (!vpnItem) {
+						 securityItemForVpn.subitems.splice(4, 0, {
+							 id: 'internet-protection',
+							 label: 'common.menu.security.sub5',
+							 path: 'internet-protection',
+							 metricsEvent: 'itemClick',
+							 metricsParent: 'navbar',
+							 metricsItem: 'link.internetprotection',
+							 routerLinkActiveOptions: { exact: true },
+							 icon: '',
+							 subitems: []
+						 });
+					 }
+				 } else {
+					 if (vpnItem) {
+						 securityItemForVpn.subitems = securityItemForVpn.subitems.filter(item => item.id !== 'internet-protection');
+					 }
+				 }
+			 }
+		 })
 	}
-	getMenuItems(){
-		this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items)=>{
-           this.items=items;
+	getMenuItems():Promise<any>{
+		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items)=>{
+            this.items=items;
+            return this.items;
 		})
 	}
 }
