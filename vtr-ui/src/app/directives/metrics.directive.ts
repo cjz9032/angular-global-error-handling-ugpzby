@@ -2,7 +2,6 @@ import {Directive, ElementRef, HostListener, Input} from '@angular/core';
 import {VantageShellService} from '../services/vantage-shell/vantage-shell.service';
 import {ActivatedRoute} from "@angular/router";
 import {VieworderService} from "../services/view-order/vieworder.service";
-import {DeviceService} from "../services/device/device.service";
 
 
 declare var window;
@@ -12,16 +11,15 @@ declare var window;
 })
 export class MetricsDirective {
 
-	machineInfo:any;
-
-	constructor(private deviceService:DeviceService,private el: ElementRef, private shellService: VantageShellService,private activatedRoute:ActivatedRoute,private viewOrderService:VieworderService) {
+	constructor(private el: ElementRef, private shellService: VantageShellService,private activatedRoute:ActivatedRoute,private viewOrderService:VieworderService) {
 		this.metrics = shellService.getMetrics();
-		this.deviceService.getMachineInfo().then((machineInfo)=>{
-			this.machineInfo=machineInfo;
-		})
 	}
 
 	private metrics: any;
+
+
+
+
 
 	@Input() metricsItem: string;
 	@Input() metricsEvent: string;
@@ -45,9 +43,8 @@ export class MetricsDirective {
 		};
 		const eventName = this.metricsEvent.toLowerCase();
 		switch (eventName) {
-			case 'featureclick':
 			case 'itemclick': {
-				data.ItemType = 'FeatureClick';
+				data.ItemType = 'ItemClick';
 				data.ItemName = this.metricsItem;
 				data.ItemParent = this.metricsParent;
 				if (this.metricsParam) {
@@ -57,10 +54,9 @@ export class MetricsDirective {
 					data.ItemValue = this.metricsValue;
 				}
 			}
-			break;
-			case 'articleclick':
+				break;
 			case 'docclick': {
-				data.ItemType = 'ArticleClick';
+				data.ItemType = 'DocClick';
 				data.ItemParent = this.metricsParent;
 				if(typeof this.viewOrderService[this.metricsParent]==='undefined'){
 
@@ -80,7 +76,7 @@ export class MetricsDirective {
 					data.PageNumber = this.metricsPageNumber;
 				}
 			}
-			break;
+				break;
 			case 'settingupdate': {
 				data.ItemType = 'SettingUpdate';
 				data.SettingParent = this.metricsParent;
@@ -96,7 +92,6 @@ export class MetricsDirective {
 
 	@HostListener('click', ['$event.target'])
 	onclick(target) {
-		console.log('*********************<<<<>>>>>>>>******************************',this.machineInfo.country,this.machineInfo.locale)
 		if(!this.metricsParent){
 			this.metricsParent = this.activatedRoute.snapshot.data['pageName'];
 		}
@@ -104,6 +99,9 @@ export class MetricsDirective {
 		if (this.metrics && this.metrics.sendAsync) {
 			this.metrics.sendAsync(data);
 		}
+
+		// for debug
+		console.log('------reporting metrics------\n'.concat(JSON.stringify(data)));
 	}
 
 
