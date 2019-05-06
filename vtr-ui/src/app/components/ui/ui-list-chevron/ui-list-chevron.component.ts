@@ -24,7 +24,8 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 		1: 'bad',
 		2: 'blue',
 		3: 'orange',
-		4: 'text-secondary'
+		4: 'text-dark',
+		5: 'black'
 	};
 
 	/** object having item status icon list*/
@@ -32,7 +33,8 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 		0: 'check',
 		1: 'times',
 		2: 'circle',
-		3: 'minus'
+		3: 'minus',
+		5: 'circle'
 	};
 
 	constructor(private deviceService: DeviceService) { super(); }

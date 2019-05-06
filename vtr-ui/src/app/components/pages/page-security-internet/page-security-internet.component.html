@@ -24,13 +24,8 @@
 										</div>
 										<div class="row mt-20">
 											<div class="col">
-												<div *ngIf="statusItem.status === 'not-installed'"
-													class="text-regular">
+												<div class="text-regular">
 													{{'security.vpn.whatIsSufEasy' | translate}}
-												</div>
-												<div *ngIf="statusItem.status === 'installed'"
-													class="text-regular">
-													{{'security.vpn.whatCanSufEasy1' | translate}}
 												</div>
 											</div>
 										</div>
@@ -41,8 +36,8 @@
 											</div>
 										</div>
 										<div class="row mt-40">
-											<div class="col">
-
+											<div class="col text-regular">
+												{{'security.vpn.helpKeep' | translate}}
 											</div>
 											<div class=" pull right">
 												<div class="col-12">
@@ -74,9 +69,9 @@
 									</div>
 								</div>
 								<div class="row w-100">
-									<div class="col-sm-12 col-md-12 col-lg-6 order-lg-1 mt-40">
-										<div class="col">
-											<img src="../../../../assets/images/surfeasy-left-img.png"
+									<div class="col-sm-12 col-md-12 col-lg-6 order-lg-1 mt-40 p-0">
+										<div class="col mt-4">
+											<img src="../../../../assets/images/surfeasy-left-img.jpg"
 												class="surfeasy-side-left-img" />
 										</div>
 									</div>
@@ -141,24 +136,6 @@
 														</div>
 													</div>
 												</li>
-												<li class="good">
-													<div class="container-fluid">
-														<div class="row align-items-center">
-															<div class="col-auto pl-0">
-																<div class="bullet-icon">
-																	<div class="icon-bkg">
-																		<fa-icon [icon]="['fas', 'check']"></fa-icon>
-																	</div>
-																</div>
-															</div>
-															<div class="col">
-																<div class="text-regular">
-																	{{'security.vpn.startUseSufEasy4' | translate}}
-																</div>
-															</div>
-														</div>
-													</div>
-												</li>
 											</ul>
 										</div>
 									</div>
@@ -176,9 +153,9 @@
 								</div>
 								<div class="row">
 									<div class="col col-6 mt-40">
-										<div class="col">
-											<img src="../../../../assets/images/SurfEasy-Left-img-2.png"
-												class="surfeasy-side-right-img pull-right" />
+										<div class="col mt-4">
+											<img src="../../../../assets/images/SurfEasy-Left-img-2.jpg"
+												class="surfeasy-side-right-img" />
 										</div>
 									</div>
 									<div class="col col-6 mt-40">
@@ -205,111 +182,6 @@
 														<span class="text-regular">{{'security.vpn.getStarted3' | translate}}</span>
 													</div>
 												</li>
-											</div>
-											<div class="col col-12 mt-40">
-												<div class="col">
-													<div class="list-heading">
-														<p class="adjust-left sub-heading">
-															{{'security.vpn.howToGetData' | translate}}</p>
-													</div>
-													<ul class="bullet-list">
-														<li class="good">
-															<div class="container-fluid">
-																<div class="row align-items-center">
-																	<div class="col-auto pl-0">
-																		<div class="bullet-icon">
-																			<div class="icon-bkg">
-																				<fa-icon [icon]="['fas', 'check']">
-																				</fa-icon>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="col">
-																		<div class="text-regular">
-																			{{'security.vpn.howToGetData1' | translate}}
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</li>
-														<li class="good">
-															<div class="container-fluid">
-																<div class="row align-items-center">
-																	<div class="col-auto pl-0">
-																		<div class="bullet-icon">
-																			<div class="icon-bkg">
-																				<fa-icon [icon]="['fas', 'check']">
-																				</fa-icon>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="col">
-																		<div class="text-regular">
-																			{{'security.vpn.howToGetData2' | translate}}
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</li>
-														<li class="good">
-															<div class="container-fluid">
-																<div class="row align-items-center">
-																	<div class="col-auto pl-0">
-																		<div class="bullet-icon">
-																			<div class="icon-bkg">
-																				<fa-icon [icon]="['fas', 'check']">
-																				</fa-icon>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="col">
-																		<div class="text-regular">
-																			{{'security.vpn.howToGetData3' | translate}}
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</li>
-														<li class="good">
-															<div class="container-fluid">
-																<div class="row align-items-center">
-																	<div class="col-auto pl-0">
-																		<div class="bullet-icon">
-																			<div class="icon-bkg">
-																				<fa-icon [icon]="['fas', 'check']">
-																				</fa-icon>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="col">
-																		<div class="text-regular">
-																			{{'security.vpn.howToGetData4' | translate}}
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</li>
-														<li class="good">
-															<div class="container-fluid">
-																<div class="row align-items-center">
-																	<div class="col-auto pl-0">
-																		<div class="bullet-icon">
-																			<div class="icon-bkg">
-																				<fa-icon [icon]="['fas', 'check']">
-																				</fa-icon>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="col">
-																		<div class="text-regular">
-																			{{'security.vpn.howToGetData5' | translate}}
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</li>
-													</ul>
-												</div>
 											</div>
 										</div>
 									</div>

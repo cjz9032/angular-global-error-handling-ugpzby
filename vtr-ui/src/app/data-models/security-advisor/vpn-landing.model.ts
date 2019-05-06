@@ -23,7 +23,7 @@ export class VpnLandingViewModel {
 			type: 'security',
 		};
 		const setVpnStatus = (status: string) => {
-			vpnStatus.status = status === 'installed' ? 2 : 1;
+			vpnStatus.status = 5;
 			vpnStatus.detail = status === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, status);
 			subjectStatus.status = status === 'installed' ? 2 : 1;
