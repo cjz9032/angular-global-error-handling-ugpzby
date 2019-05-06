@@ -56,6 +56,7 @@ import { PageSecurityAntivirusComponent } from './components/pages/page-security
 import { PageSecurityWifiComponent } from './components/pages/page-security-wifi/page-security-wifi.component';
 import { PageSecurityPasswordComponent } from './components/pages/page-security-password/page-security-password.component';
 import { PageSecurityInternetComponent } from './components/pages/page-security-internet/page-security-internet.component';
+import { PageSecurityHomeSecurityComponent } from './components/pages/page-security-home-security/page-security-home-security.component';
 
 
 // APPLICATION SUBPAGE COMPONENTS
@@ -156,7 +157,6 @@ import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import { UiFeatureItemComponent } from './components/ui/ui-feature-item/ui-feature-item.component';
 import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
 import { MinutesToHourminPipe } from './pipe/minutes-to-hourmin.pipe';
-import { WidgetAboutComponent } from './components/widgets/widget-about/widget-about.component';
 import { SubTransformPipe } from './pipe/security-antivirus/sub-transform.pipe';
 import { DateClassPipe } from './pipe/security-antivirus/date-class.pipe';
 import { ModalAboutComponent } from './components/modal/modal-about/modal-about.component';
@@ -165,6 +165,18 @@ import { JoinclassPipe } from './pipe/security-wifi/join-class.pipe';
 import { SuccessClassPipe } from './pipe/security-wifi/success-class.pipe';
 import { UiCircleRadioComponent } from './components/ui/ui-circle-radio/ui-circle-radio.component';
 import { WidgetPermissionNoteComponent } from './components/widgets/widget-permission-note/widget-permission-note.component';
+import { ModalSupportWechatComponent } from './components/modal/modal-support-wechat/modal-support-wechat.component';
+import { ModalLicenseComponent } from './components/modal/modal-license/modal-license.component';
+import { SpinnerComponent } from './components/common/spinner/spinner.component';
+
+import { PagePrivacyComponent } from './components/pages/page-privacy/page-privacy.component';
+import { PageDeviceGamingComponent } from './components/pages/page-device-gaming/page-device-gaming.component';
+import { WidgetLegionEdgeComponent } from './components/widgets/widget-legion-edge/widget-legion-edge.component';
+import { WidgetSystemToolsComponent } from './components/widgets/widget-system-tools/widget-system-tools.component';
+import { WidgetSystemMonitorComponent } from './components/widgets/widget-system-monitor/widget-system-monitor.component';
+import { WidgetQuicksettingsListComponent } from './components/widgets/widget-quicksettings-list/widget-quicksettings-list.component';
+import { WidgetLightingComponent } from './components/widgets/widget-lighting/widget-lighting.component';
+
 
 library.add(fas);
 library.add(fab);
@@ -201,6 +213,7 @@ library.add(fal);
 		PageSecurityWifiComponent,
 		PageSecurityPasswordComponent,
 		PageSecurityInternetComponent,
+		PageSecurityHomeSecurityComponent,
 		MenuHeaderComponent,
 		SubpageDeviceSettingsPowerComponent,
 		SubpageDeviceSettingsAudioComponent,
@@ -282,7 +295,6 @@ library.add(fal);
 		WidgetSecurityStatusComponent,
 		StatusTransformPipe,
 		MinutesToHourminPipe,
-		WidgetAboutComponent,
 		SubTransformPipe,
 		DateClassPipe,
 		ModalAboutComponent,
@@ -290,7 +302,18 @@ library.add(fal);
 		JoinclassPipe,
 		SuccessClassPipe,
 		UiCircleRadioComponent,
-		WidgetPermissionNoteComponent
+		WidgetPermissionNoteComponent,
+		ModalSupportWechatComponent,
+		ModalLicenseComponent,
+		SpinnerComponent,
+		PagePrivacyComponent,
+		PageDeviceGamingComponent,
+		WidgetLegionEdgeComponent,
+		WidgetSystemToolsComponent,
+		WidgetSystemMonitorComponent,
+		WidgetQuicksettingsListComponent,
+		WidgetLightingComponent
+
 	],
 	imports: [
 		BrowserModule,
@@ -334,6 +357,8 @@ library.add(fal);
 		ModalHomeProtectionLocationNoticeComponent,
 		ModalUpdateChangeLogComponent,
 		ModalAboutComponent,
+		ModalSupportWechatComponent,
+		ModalLicenseComponent
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA

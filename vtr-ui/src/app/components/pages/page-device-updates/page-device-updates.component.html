@@ -19,11 +19,12 @@
 
 									<div class="row">
 										<div class="col col-12">
-											<vtr-widget-offline-info [title]="'No internet connection detected'"
+											<!-- enable once offline mode implementation is done VAN-314 -->
+											<!-- <vtr-widget-offline-info [title]="'No internet connection detected'"
 												*ngIf="!isOnline"
 												[subtitle]="offlineSubtitle | safeDom : 'html'"
 												[buttonText]="'Get Support'"
-												(buttonClick)="onGetSupportClick($event)"></vtr-widget-offline-info>
+												(buttonClick)="onGetSupportClick($event)"></vtr-widget-offline-info> -->
 
 											<vtr-widget-device-update [title]="updateTitle"
 												*ngIf="isOnline"
@@ -46,9 +47,9 @@
 										[criticalUpdates]="criticalUpdates"
 										[optionalUpdates]="optionalUpdates"
 										[recommendedUpdates]="recommendedUpdates"
-										[isInstallationCompleted]="isInstallationCompleted"
-										[isInstallationSuccess]="isInstallationSuccess"
-										[isInstallingAllUpdates]="isInstallingAllUpdates"
+										[isInstallationCompleted]="systemUpdateService.isInstallationCompleted"
+										[isInstallationSuccess]="systemUpdateService.isInstallationSuccess"
+										[isInstallingAllUpdates]="systemUpdateService.isInstallingAllUpdates"
 										(checkChange)="onUpdateSelectionChange($event)"
 										(installAllUpdate)="showInstallConfirmation('all')"
 										(installSelectedUpdate)="showInstallConfirmation('selected')">
@@ -194,6 +195,7 @@
 										<vtr-container-card [img]="'assets/images/support.jpg'"
 											[title]="'Lenovo Support website'"
 											[action]="'Read More'"
+											[actionType]="'External'"
 											[actionLink]="'https://pcsupport.lenovo.com/'"
 											[type]="'partnerarticle'"
 											[ratioX]="4"
@@ -209,6 +211,7 @@
 											[title]="cardContentPositionA.Title"
 											[logoText]="cardContentPositionA.BrandName"
 											[action]="cardContentPositionA.Action"
+											[actionType]="cardContentPositionA.ActionType"
 											[actionLink]="cardContentPositionA.ActionLink"
 											[type]="'corner-article'"
 											[ratioX]="4"

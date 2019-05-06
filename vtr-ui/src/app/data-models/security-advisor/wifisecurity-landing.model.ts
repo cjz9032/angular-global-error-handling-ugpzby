@@ -24,7 +24,7 @@ export class WifiSecurityLandingViewModel {
 		translate: TranslateService
 	) {
 		const wfStatus = {
-			status: 2,
+			status: 4,
 			detail: 'common.securityAdvisor.loading',
 			path: 'security/wifi-security',
 			title: 'common.securityAdvisor.wifi',
@@ -40,33 +40,38 @@ export class WifiSecurityLandingViewModel {
 			if (location) {
 				wfStatus.status = state === 'enabled' ? 0 : 1;
 				wfStatus.detail = state === 'enabled' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, state);
 				subjectStatus.status = (state === 'enabled') ? 0 : 1;
 			} else {
 				wfStatus.status = 1;
 				wfStatus.detail = 'common.securityAdvisor.disabled';
 				subjectStatus.status = 1;
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, 'disabled');
+			}
+			if (state) {
+				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, state);
 			}
 
-			translate.get(wfStatus.detail).subscribe((res) => {
+			translate.stream(wfStatus.detail).subscribe((res) => {
 				wfStatus.detail = res;
 			});
-			translate.get(wfStatus.title).subscribe((res) => {
+			translate.stream(wfStatus.title).subscribe((res) => {
 				wfStatus.title = res;
 			});
-			translate.get(subjectStatus.title).subscribe((res) => {
+			translate.stream(subjectStatus.title).subscribe((res) => {
 				subjectStatus.title = res;
 			});
-		}
+		};
 
 		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
-		setWiFiSecurityState(cacheStatus, wfModel.isLocationServiceOn);
+		if (cacheStatus) {
+			setWiFiSecurityState(cacheStatus, wfModel.isLocationServiceOn);
+		}
 		const cacheWifiHistory = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys);
 		if (cacheWifiHistory) {
 			this.wifiHistory = cacheWifiHistory;
 		}
-		setWiFiSecurityState(wfModel.state, wfModel.isLocationServiceOn);
+		if (wfModel.state) {
+			setWiFiSecurityState(wfModel.state, wfModel.isLocationServiceOn);
+		}
 		if (wfModel.wifiHistory && wfModel.wifiHistory.length > 0) {
 			this.wifiHistory = wfModel.wifiHistory;
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, wfModel.wifiHistory);
@@ -77,15 +82,12 @@ export class WifiSecurityLandingViewModel {
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, data);
 		});
 		wfModel.on(EventTypes.geolocatorPermissionEvent, (data) => {
-			console.log(`geolocator event ----- geo: ${data}, wifi state: ${wfModel.state}`);
 			setWiFiSecurityState(wfModel.state, data);
 		});
 		wfModel.on(EventTypes.wsStateEvent, (data) => {
-			console.log(`wifi state event ----- geo: ${wfModel.isLocationServiceOn}, wifi state: ${data}`);
 			setWiFiSecurityState(data, wfModel.isLocationServiceOn);
 		});
 		wfModel.on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
-			console.log(`isLocationServiceOn event ----- geo: ${data}, wifi state: ${wfModel.state}`);
 			setWiFiSecurityState(wfModel.state, data);
 		});
 

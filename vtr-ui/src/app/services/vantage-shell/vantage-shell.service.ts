@@ -5,6 +5,7 @@ import * as inversify from 'inversify';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
 import { environment } from '../../../environments/environment';
+import { CommonService } from '../../services/common/common.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -12,7 +13,7 @@ import { environment } from '../../../environments/environment';
 export class VantageShellService {
 	private phoenix: any;
 	private shell: any;
-	constructor() {
+	constructor(private commonService: CommonService) {
 		this.shell = this.getVantageShell();
 		if (this.shell) {
 			const rpcClient = this.shell.VantageRpcClient ? new this.shell.VantageRpcClient() : null;
@@ -96,20 +97,36 @@ export class VantageShellService {
 	 * returns metric object from VantageShellService of JS Bridge
 	 */
 	public getMetrics(): any {
-		if (this.phoenix && this.phoenix.metrics) {
-			if (!this.phoenix.metrics.isInit) {
-				this.phoenix.metrics.init({
+		const metricClient = this.phoenix.metrics;
+		if (this.phoenix && metricClient) {
+			if (!metricClient.isInit) {
+				metricClient.init({
 					appVersion: environment.appVersion,
 					appId: 'ZN8F02EQU628',
 					appName: 'vantage3',
 					channel: '',
 					ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
 				});
-				this.phoenix.metrics.isInit = true;
-				this.phoenix.metrics.metricsEnabled = true;
+				metricClient.isInit = true;
+				metricClient.metricsEnabled = true;
+
+				metricClient.sendAsyncOrignally = metricClient.sendAsync;
+				metricClient.commonService = this.commonService;
+				metricClient.sendAsync = function sendAsync(data) {
+					const eventType = data.ItemType.toLowerCase();
+
+					// automatically fill the OnlineStatus for page view event
+					if (eventType === 'pageview') {
+						if (!data.OnlineStatus) {
+							data.OnlineStatus = this.commonService.isOnline ? 1 : 0;
+						}
+					}
+
+					this.sendAsyncOrignally(data);
+				};
 			}
 
-			return this.phoenix.metrics;
+			return metricClient;
 		}
 		return undefined;
 	}

@@ -1,0 +1,20 @@
+@import '../../../app.theme.scss';
+
+.vtr-widget-lighting {
+	.widget-title {
+		color: $gaming_lightest;
+		font-size: 5rem;
+		margin-bottom: 1rem;
+		font-weight: $weight-light;
+	}
+	.widget-container {
+		border-radius: $border_radius;
+		background-color: $gaming_dark;
+		box-shadow: $drop_shadow_gaming;
+		padding: 4rem;
+		background: url(./../../../../assets/images/gaming/lightingImage@2x.png) center top no-repeat;
+		background-size: 100% auto;
+		// remove once populated
+		min-height: 50rem;
+	}
+}

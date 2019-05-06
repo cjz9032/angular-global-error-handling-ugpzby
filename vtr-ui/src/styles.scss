@@ -315,8 +315,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 .common-confirmation-modal {
 	.modal-dialog {
-		margin-top: 8rem;
-
 		.modal-content {
 			background-color: transparent;
 			border: none;
@@ -423,6 +421,13 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			max-width: 100%;
 			margin-bottom: 3rem;
 		}
+
+		p,
+		li,
+		ul 
+		{
+			word-wrap: break-word;
+		}
 	}
 }
 
@@ -464,7 +469,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	}
 }
 
-.About-Modal {
+.license-Modal {
 	.modal-dialog {
 		max-width: 70%;
 		margin: 1.75rem auto;
@@ -533,6 +538,19 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			max-width: 100%;
 			margin-bottom: 3rem;
 		}
+	}
+}
+.weChat-Modal {
+	.modal-dialog {
+		// max-width: 75%;
+		margin: 1.75rem auto;
+		overflow-y: initial !important;
+	}
+
+	.modal-content {
+		border-radius: 1rem;
+		background: none;
+		border: none;
 	}
 }
 
@@ -635,7 +653,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
-	line-height: 1;
 	font-size:2.2rem;
 
 	/* Better Font Rendering =========== */
@@ -978,3 +995,10 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	content: "\e953";
 	color: #4a81fd;
 }
+.icomoon-LE-Figleaf2x:before {
+	content: "\e93a";
+	color:#fff;
+}
+// gaming overrides need to be at the bottom here
+@import "./styles-gaming.scss";
+

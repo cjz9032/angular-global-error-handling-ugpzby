@@ -6,6 +6,9 @@ import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import * as X2JS from 'x2js';
+
+declare var Windows;
 
 @Injectable()
 export class UserService {
@@ -47,11 +50,81 @@ export class UserService {
 		}
 	}
 
+	xml2Json(xmlStr: string) {
+		const x2js = new X2JS();
+		return x2js.xml2js(xmlStr);
+	}
+
+	json2xml(jsObj: object) {
+		const x2js = new X2JS();
+		return x2js.js2xml(jsObj);
+	}
+
+	readXmlFile(fileName: String) {
+		return new Promise((resolve, reject) => {
+			const fileObj = Windows.Storage.ApplicationData.current.localFolder.getFileAsync(fileName);
+			if (fileObj === null) {
+				resolve(null);
+				return;
+			}
+
+			fileObj.then((targetFile) => {
+				Windows.Storage.FileIO.readTextAsync(targetFile)
+					.then((contents) => {
+						if (!contents) {
+							resolve({});
+						} else {
+							resolve(this.xml2Json(contents));
+						}
+					}, (error) => {
+						resolve(null);
+					});
+			}, (error) => {
+				resolve(null);
+			});
+		});
+	}
+
+	writeXmlFile(fileName: string, jsObj: object, xmlHeader: string) {
+		return new Promise((resolve, reject) => {
+			let xmlString = this.json2xml(jsObj);
+			if (!xmlString) {
+				xmlString = '';
+			}
+
+			if (xmlHeader) {
+				xmlString = xmlHeader + xmlString;
+			}
+
+			Windows.Storage.ApplicationData.current.localFolder
+				.createFileAsync(fileName, Windows.Storage.CreationCollisionOption.replaceExisting)
+				.then(function (targetFile) {
+					Windows.Storage.FileIO.writeTextAsync(targetFile, xmlString)
+					.then((result)	=> {
+						resolve(true);
+					}, () => {
+						resolve(false);
+					});
+				}, () => {
+					resolve(false);
+				});
+		});
+	}
+
 	checkCookies() {
 		this.cookies = this.cookieService.getAll();
 		this.devService.writeLog('CHECK COOKIES:', this.cookies);
 		if (this.cookies['token']) {
 			this.setToken(this.cookies['token']);
+		}
+	}
+
+	deleteCookies(domain: string) {
+		const myFilter = new Windows.Web.Http.Filters.HttpBaseProtocolFilter();
+		const cookieManager = myFilter.cookieManager;
+		const myCookieJar = cookieManager.getCookies(new Windows.Foundation.Uri(domain));
+		if (myCookieJar) {
+			myCookieJar.forEach(cookie => cookieManager.deleteCookie(cookie));
 		}
 	}
 
@@ -152,6 +225,12 @@ export class UserService {
 		const self = this;
 		this.cookieService.deleteAll('/');
 		this.cookies = this.cookieService.getAll();
+
+		this.deleteCookies('https://passport.lenovo.com');
+		this.deleteCookies('https://www.facebook.com');
+		this.deleteCookies('https://login.live.com');
+		this.deleteCookies('https://www.google.com');
+
 		if (this.lid !== undefined) {
 			const lidGuid = this.lid.userGuid;
 			this.lid.logout().then(function (result) {

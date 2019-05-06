@@ -5,6 +5,7 @@ import { UpdateHistory } from 'src/app/data-models/system-update/update-history.
 import { Subscription } from 'rxjs/internal/Subscription';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-installation-history',
@@ -22,7 +23,8 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 
 	constructor(
 		public systemUpdateService: SystemUpdateService,
-		public commonService: CommonService
+		public commonService: CommonService,
+		private translate: TranslateService
 	) { }
 
 	ngOnInit() {
@@ -75,9 +77,9 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 			const date = this.commonService.formatDate(item.utcInstallDate);
 			const time = this.commonService.formatTime(item.utcInstallDate);
 			if (item.status.toLocaleLowerCase() === 'installed') {
-				item.message = `Successfully installed on ${date} at ${time}`;
+				item.message = this.translate.instant('device.systemUpdates.successInstall') + ' ' + date + ' ' + this.translate.instant('device.systemUpdates.at') + ' ' + time;
 			} else {
-				item.message = `Failed installed on ${date} at ${time}`;
+				item.message = this.translate.instant('device.systemUpdates.failedInstall') + ' ' + date + ' ' + this.translate.instant('device.systemUpdates.at') + ' ' + time;
 			}
 		});
 		return historyList;

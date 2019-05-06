@@ -16,8 +16,8 @@
 
 		<span class="switch {{ size }}"> <small></small> </span>
 		<div *ngIf="!value"
-			class="switch-label off-label">{{ offLabel }}</div>
+			class="switch-label off-label">{{'common.ui.off' | translate}}</div>
 		<div *ngIf="value"
-			class="switch-label on-label">{{ onLabel }}</div>
+			class="switch-label on-label">{{'common.ui.on' | translate}}</div>
 	</label>
 </div>

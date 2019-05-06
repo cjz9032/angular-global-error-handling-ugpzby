@@ -6,6 +6,7 @@
 	background-color: $light;
 
 	.header {
+		padding-left: 1.5rem;
 		.heading {
 			color: $main_dark;
 			font-size: 3.6rem;
@@ -21,7 +22,7 @@
 	}
 
 	.peace-of-mind {
-		margin-left: 4rem;
+		margin-left: 6rem;
 		padding: 2rem 2rem 0rem 1.2rem;
 
 		.sub-heading {
@@ -34,24 +35,23 @@
 		.text-regular {
 			width: 75%;
 		}
+	}
 
-		.button-box {
-			padding: 0rem;
-			margin: 1rem;
+	.button-box {
+		padding: 0rem;
+		margin: 1rem;
 
-			button {
-				@media #{$mediaquery_X9} {
-					font-size: 1rem;
-				}
+		button {
+			@media #{$mediaquery_X9} {
+				font-size: 1rem;
 			}
+		}
 
-			&.shift-left {
-				top: 20%;
-				left: 20%;
-				transform: translate(-12%, -12%);
-				padding-top: 1rem 0.5rem 0.5rem 0rem;
-				margin: 1rem 0.5rem 0.5rem 0rem;
-			}
+		&.shift-left {
+			top: 20%;
+			left: 20%;
+			padding-top: 1rem 0.5rem 0.5rem 0rem;
+			margin: 1rem 0.5rem 0.5rem 0rem;
 		}
 	}
 
@@ -131,64 +131,6 @@
 				right: 5%;
 				//border: 1px solid green;
 			}
-		}
-	}
-
-	.row-seperator {
-		width: 100%;
-		height: 0.2rem;
-		background-color: $shade_lightest;
-		margin: 0.5rem 1.5rem 1.5rem 0rem;
-	}
-
-	.invitation-code-box {
-		margin: 1rem;
-		padding: 2rem 2rem 2rem 0rem;
-		background-color: $shade_lightest;
-		border: 0.1rem solid $shade_lighter;
-		border-radius: $border_radius;
-		text-align: center;
-
-		.invitation-button {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
-		}
-
-		.sub-heading {
-			margin-top: 1rem;
-			color: $main_dark;
-			font-size: 2rem;
-			font-weight: $weight_bold;
-			text-transform: uppercase;
-			text-align: left;
-			padding-left: 3rem;
-			font-size: 1.6rem;
-
-			.text-regular {
-				color: $main_dark;
-				font-size: 1.4rem;
-				font-weight: $weight_light;
-				text-transform: none;
-				padding-top: 0rem;
-			}
-
-			.button-box {
-				padding: 0rem;
-				margin: 0.5rem;
-
-				&.shift-right {
-					padding: 0.5rem 0.5rem 0.5rem 0rem;
-					margin: 0.5rem 0.5rem 0.5rem 0rem;
-				}
-			}
-		}
-
-		.button-description {
-			width: 29rem;
-			float: right;
-			text-align: center;
 		}
 	}
 }

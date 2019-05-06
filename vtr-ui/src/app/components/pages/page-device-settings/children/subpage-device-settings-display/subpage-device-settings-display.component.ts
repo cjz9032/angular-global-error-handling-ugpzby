@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, EventEmitter, NgZone } from '@angular/core';
 import { CameraDetail, ICameraSettingsResponse, CameraFeatureAccess } from 'src/app/data-models/camera/camera-detail.model';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { Subscription } from 'rxjs/internal/Subscription';
@@ -105,7 +105,8 @@ export class SubpageDeviceSettingsDisplayComponent
 		// public cd: ChangeDetectorRef,
 		public displayService: DisplayService,
 		private commonService: CommonService,
-		private cd: ChangeDetectorRef) {
+		private cd: ChangeDetectorRef,
+		private ngZone: NgZone) {
 		this.dataSource = new CameraDetail();
 		this.cameraFeatureAccess = new CameraFeatureAccess();
 		this.eyeCareDataSource = new EyeCareMode();
@@ -149,6 +150,9 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	ngOnDestroy() {
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
 		if (this.cameraDetailSubscription) {
 			this.cameraDetailSubscription.unsubscribe();
 		}
@@ -455,6 +459,8 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 	public onCameraAutoExposureToggle($event: any) {
 		console.log('setCameraAutoExposure.then', $event);
+		this.cameraFeatureAccess.showAutoExposureSlider = !$event.switchValue;
+		this.cameraFeatureAccess.exposureAutoValue = $event.switchValue;
 		if (this.displayService.isShellAvailable) {
 			this.displayService
 				.setCameraAutoExposure($event.switchValue);
@@ -486,12 +492,14 @@ export class SubpageDeviceSettingsDisplayComponent
 	// End Camera Privacy
 	public getLocationPermissionStatus(value: any) {
 		console.log('called from loaction service ui', JSON.stringify(value.status));
-		this.sunsetToSunriseModeStatus.permission = value.status;
-		if (value.status === false) {
-			this.enableSunsetToSunrise = true;
-		} else {
-			this.enableSunsetToSunrise = false;
-		}
+		// this.sunsetToSunriseModeStatus.permission = value.status;
+		this.ngZone.run(() => {
+			if (value.status === false) {
+				this.enableSunsetToSunrise = true;
+			} else {
+				this.enableSunsetToSunrise = false;
+			}
+		});
 		// this.cd.detectChanges();
 	}
 

@@ -219,32 +219,6 @@
 			border-radius: 0.8rem;
 			background: $light;
 
-			// ul.openNetworks {
-			// 	padding-left: 0rem;
-			// 	display: flex;
-			// 	flex-wrap: wrap;
-			// 	margin-bottom: 0rem;
-
-			// 	li {
-			// 		list-style: none;
-			// 		width: 50%;
-			// 		border-right: 0.1rem solid $shade_lighter;
-			// 		border-bottom: 0.1rem solid $shade_lighter;
-			// 		flex-wrap: wrap;
-			// 		align-items: center;
-
-			// 		&:nth-child(even) {
-			// 			border-right: none;
-			// 		}
-
-			// &:last-child {
-			// 	border-bottom: none;
-			// }
-
-			// &:nth-last-child(2) {
-			// 	border-bottom: none;
-			// }
-
 			.status-icon {
 				position: relative;
 				width: 5.5rem;
@@ -287,6 +261,9 @@
 				h5 {
 					font-size: 1.6rem;
 					font-weight: $weight_bold;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 				}
 
 				.connection-status {
@@ -326,8 +303,8 @@
 
 		.card-header {
 			padding: 2.5rem;
-			// height: 7.8rem;
 			background: $shade_lightest;
+			border: 0rem;
 
 			.collapse-control {
 				cursor: pointer;

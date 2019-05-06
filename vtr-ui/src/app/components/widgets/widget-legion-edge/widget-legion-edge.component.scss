@@ -1,0 +1,115 @@
+@import '../../../app.theme.scss';
+
+.vtr-widget-legion-edge {
+	border-radius: $border_radius;
+	background-color: $gaming_dark;
+	box-shadow: $drop_shadow_gaming;
+	padding: 2.2rem;
+
+	// remove once populated
+	min-height: 30rem;
+	.gaming-header-image {
+		height: 4rem;
+		margin-top: 0.8rem;
+	}
+	.help-box {
+		height: 4rem;
+		margin-top: 1.6rem;
+		.icomoon {
+			background: $gaming_icon_gradient;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			font-size: 2.6rem;
+		}
+	}
+	.legionEdge-list-items {
+		&::ng-deep .vtr-widget-device-update-settings {
+			background-color: transparent;
+			padding: 0;
+			box-shadow: none;
+			border: none;
+			.settings-container{
+				.list-group-item{
+					background: transparent;
+					color: white;
+					padding: 1.8rem 0.8rem;
+					font-size: 1.8rem;
+					border: none;
+					border-bottom: 1px solid $screen_dark_15;
+					&:last-child{
+						border-bottom: none;
+					}
+					.media {
+						padding-left: 0 !important;
+						fa-icon{
+							display: none;
+						}
+						.media-body {
+							padding-left: 0 !important;
+						}
+					}
+					.update-title{
+						color: white;
+					}
+				}
+				&::ng-deep vtr-ui-switch-onoff{
+					.checkbox{
+						input {
+							&+ .switch{
+								background: $gaming_switch_light;
+								height: 2.4rem;
+								width: 5.4rem;
+								transition: all .2s ease-in;
+								small {
+									background: $gaming_switch_dark;
+									height: 1.8rem;
+									width: 1.8rem;
+									margin-top: 0.1rem;
+									transition: all .2s ease-in;
+								}
+							}
+							&.wifi-checked + .switch {
+								background: $gaming_green_gradient;
+								transition: all .2s ease-in;
+								small{
+									background: $gaming_lightest;
+									transition: all .2s ease-in;
+									left: 3.2rem;
+								}
+							}
+						}
+						.switch-label.on-label{
+							color: $gaming_lightest;
+							font-weight: bold;
+							font-size: 1.2rem;
+							padding-top: 0.1rem;
+							text-indent: -0.4rem;
+							transition: all .2s ease-in;
+							@media #{$medium-screen}{
+								padding-top: 0.3rem;
+							}
+							@media #{$small-screen}{
+								padding-top: 0.3rem;
+							}
+						}
+						.switch-label.off-label{
+							color: $gaming_switch_dark;
+							font-weight: bold;
+							font-size: 1.2rem;
+							padding-top: 0.1rem;
+							text-indent: 0;
+							transition: all .2s ease-in;
+							@media #{$medium-screen}{
+								padding-top: 0.3rem;
+							}
+							@media #{$small-screen}{
+								padding-top: 0.3rem;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
