@@ -56,6 +56,7 @@ import { PageSecurityAntivirusComponent } from './components/pages/page-security
 import { PageSecurityWifiComponent } from './components/pages/page-security-wifi/page-security-wifi.component';
 import { PageSecurityPasswordComponent } from './components/pages/page-security-password/page-security-password.component';
 import { PageSecurityInternetComponent } from './components/pages/page-security-internet/page-security-internet.component';
+import { PageSecurityHomeSecurityComponent } from './components/pages/page-security-home-security/page-security-home-security.component';
 
 
 // APPLICATION SUBPAGE COMPONENTS
@@ -213,6 +214,7 @@ library.add(fal);
 		PageSecurityWifiComponent,
 		PageSecurityPasswordComponent,
 		PageSecurityInternetComponent,
+		PageSecurityHomeSecurityComponent,
 		MenuHeaderComponent,
 		SubpageDeviceSettingsPowerComponent,
 		SubpageDeviceSettingsAudioComponent,
