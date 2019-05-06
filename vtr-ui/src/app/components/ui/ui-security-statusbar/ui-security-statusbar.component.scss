@@ -13,6 +13,11 @@
 		font-size: 1.4rem;
 		font-weight: $weight_bold;
 	}
+
+	.installing-text {
+		color: $main_lightest;
+		background-color: $main_gstart;
+	}
 }
 
 .bullet-icon {

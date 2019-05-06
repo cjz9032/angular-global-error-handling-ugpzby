@@ -50,13 +50,13 @@ export class WifiSecurityLandingViewModel {
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, state);
 			}
 
-			translate.get(wfStatus.detail).subscribe((res) => {
+			translate.stream(wfStatus.detail).subscribe((res) => {
 				wfStatus.detail = res;
 			});
-			translate.get(wfStatus.title).subscribe((res) => {
+			translate.stream(wfStatus.title).subscribe((res) => {
 				wfStatus.title = res;
 			});
-			translate.get(subjectStatus.title).subscribe((res) => {
+			translate.stream(subjectStatus.title).subscribe((res) => {
 				subjectStatus.title = res;
 			});
 		};

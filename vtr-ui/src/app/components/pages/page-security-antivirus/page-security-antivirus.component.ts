@@ -222,6 +222,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 
 	openArticle() {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
+			backdrop: 'static',
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal'

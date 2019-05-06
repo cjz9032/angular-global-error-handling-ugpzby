@@ -1,4 +1,41 @@
 {
+	"gaming": {
+		"dashboard": {
+			"device": {
+				"quickSettings": {
+					"title": "Thermal Mode",
+					"status": {
+						"performance": "Performance",
+						"balance": "Balance",
+						"quiet": "Quiet"
+					},
+					"wifiSecurity": "Wifi Security",
+					"dolby": "Dolby",
+					"rapidCharge": "Rapid Charge"
+				},
+				"legionEdge": {
+					"title": "CPU Overlock",
+					"status": {
+						"alwayson": "Always On",
+						"whenGaming": "When Gaming",
+						"off": "Off"
+					},
+					"ramOverlock": "Ram Overlock",
+					"autoClose": "Auto Close",
+					"networkBoost": "Network Boost",
+					"hybridMode": "Hybrid Mode",
+					"touchpadLock": "Touchpad Lock"
+				},
+				"systemTools": {
+					"power": "Power",
+					"media": "Media",
+					"macroKey": "Marco Key",
+					"hardwareScan": "Hardware Scan",
+					"systemUpdate": "System Update"
+				}
+			}
+		}
+	},
 	"common": {
 		"menu": {
 			"dashboard": "仪表板",
@@ -17,7 +54,8 @@
 				"sub5": "因特网保护",
 				"sub6": "Windows你好"
 			},
-			"support": "支持服务"
+			"support": "支持服务",
+			"privacy": "隐私"
 		},
 		"securityAdvisor": {
 			"title": "安全顾问",
@@ -32,6 +70,7 @@
 			"partiallyProtected": "局部受保护",
 			"installed": "已安装",
 			"notInstalled": "未安装",
+			"installing": "正在安装",
 			"loading": "正在加载",
 			"notFound": "未发现",
 			"registered": "已注册",
@@ -53,6 +92,11 @@
 			"off": "关",
 			"collapse": "折叠",
 			"expand": "扩大"
+		}
+	},
+	"privacy": {
+		"headerMain": {
+			"title": "Privacy"
 		}
 	},
 	"tutorial": {
@@ -212,7 +256,7 @@
 					"temp": "温度",
 					"frupn": "FRU 部件号",
 					"remainingTime": "剩余时间",
-					"chargeCompletionTime": "Charge completion time",
+					"chargeCompletionTime": "充电完成时间",
 					"cycleCount": "充放周期数",
 					"chemistry": "设备化学组成",
 					"remainingCap": "剩余电量",
@@ -243,7 +287,7 @@
 					"subtitle1": "电池和安静",
 					"description1": "此功能动态调节散热设置以满足您的需求。此功能开启时，在手持或空闲状态下可调节设置使设备保持较低温度或较低噪声。而设备放置在稳定平面上时，此功能可优化性能。此功能关闭时，您可以手动设置散热优先级。",
 					"description2": "智能散热可调节风扇速度、最高表面温度和性能。此功能具有以下模式，且现在支持通过 Windows 性能电源滑块访问。",
-					"description3": "Battery＆Quiet lorem ipsum是一个长期存在的事实，当阅读其布局时，读者将被页面的可读内容分散注意力。",
+					"description3": "Battery＆Quiet 是一个长期存在的事实，当阅读其布局时，读者将被页面的可读内容分散注意力。",
 					"readMore": "阅读更多.",
 					"gotoWindows": {
 						"title": "转到 Windows 设置",
@@ -291,7 +335,7 @@
 					"title": "其他设置",
 					"vantageToolbar": {
 						"title": "Lenovo Vantage 工具栏",
-						"tooltip": "将 Vantage 工具栏固定到 Windows 任务栏以轻松地获取更多电池详细信息及访问快速设置。"
+						"description": "将 Vantage 工具栏固定到 Windows 任务栏以轻松地获取更多电池详细信息及访问快速设置。"
 					}
 				},
 				"batterySettings": {
@@ -321,7 +365,7 @@
 							"line3": "注：快速充电和节电模式无法同时进行。如果启用其中一个模式，则将自动关闭另一个模式。"
 						}
 					},
-					"airplanePower": {
+					"airPlanePower": {
 						"title": "飞行电源模式",
 						"description": "通过控制系统耗电量保护飞机交流电源插座。启用飞行电源模式后，计算机将通过限制电池充电速度和系统性能来降低耗电量。"
 					}
@@ -451,11 +495,12 @@
 			"history": "完整历史记录",
 			"notAvailable": "无法使用",
 			"notInstalled": "未安装",
-			"criticalUpdates": "Critical Update(s)",
-			"recommendedUpdates": "Recommended Update(s)",
-			"successInstall": "Successfully installed on",
-			"failedInstall": "Failed to installed on",
-			"at": "at",
+			"criticalUpdates": "关键更新",
+			"recommendedUpdates": "推荐更新",
+			"optionalUpdates": "可选更新",
+			"successInstall": "已成功安装",
+			"failedInstall": "无法安装",
+			"at": "在",
 			"popup": {
 				"reboot": "重启",
 				"shutdown": "关掉",
@@ -543,20 +588,23 @@
 			"description": "联系我们以获取帮助。",
 			"listLenovoCommunity": "联想社区",
 			"listContactCustomerService": "联系客户服务部门",
-			"listContactUsOnWechat": "通过微信联系我们"
+			"listContactUsOnWechat": "通过微信联系我们",
+			"weChatDescription": "Shoot us a question on WeChat and we’ll be sure to respond quickly"
 		},
 		"quicklinks": {
 			"title": "快速链接",
 			"description": "联系我们以获取帮助。",
 			"listETicket": "通过电子凭单获取支持",
-			"listServiceProvider": "查找服务供应商"
+			"listServiceProvider": "查找服务供应商",
+			"listAboutLenovoVantage": "About Lenovo Vantage"
 		},
 		"about": {
 			"version": "版本",
 			"licenseAgreement": "许可协议",
 			"otherSoftwareLicenses": "其他软件许可证",
 			"ourWebsite": "我们的网站",
-			"copyright": "© 2002-2019 联想版权所有。"
+			"aboutYourDevice": "About your device",
+			"copyright": "© 2002-2019 联想保留所有权利。"
 		}
 	},
 	"security": {
@@ -570,7 +618,7 @@
 			"pwdHealth": "密码安全状况",
 			"vpnSecurity": "VPN 安全性",
 			"vpnVirtual": "虚拟专用网络",
-			"wifiConnected": "WiFi 和互联家庭网络安全性",
+			"wifiConnected": "WiFi 安全",
 			"connectedHomeSecurity": "互联家庭网络安全性",
 			"fingerprint": "指纹读取器",
 			"seeAllNetwork": "请查看所有加入的网络",
@@ -637,7 +685,7 @@
 		},
 		"wifisecurity": {
 			"header": {
-				"title": "WiFi 和互联家庭网络安全性",
+				"title": "WiFi 安全",
 				"back": "返回"
 			},
 			"container": {
@@ -810,55 +858,117 @@
 		"question1": {
 			"title": "备份和恢复文件",
 			"description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        备份和恢复文件\n    </div>\n    <hr />\n    <div style='margin-bottom:7rem;'>\n        进行备份总是有益无害。​将文件备份到其他驱动器上以防止源文件发生意外情况。​\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        设置您的备份\n    </div>\n    <hr />\n    <div class='mb-5'>\n        选择“开始”按钮，,\n        <span style='font-weight:bold'>然后选择“设置</span> >\n        <span style='font-weight:bold'>更新和安全</span> >\n        <span style='font-weight:bold'>备份</span> > <span style='font-weight:bold'>添加驱动器</span> ”，最后选择外部驱动器或网络位置进行备份。\n\n    </div>\n    <div class='mb-5'>\n        <img src='./../../../../assets/images/qa/1.1.png' />\n    </div>\n    <div class='mb-5'>\n        准备就绪。我们每个小时都会对您的用户文件夹（C:\\Users\\username）中的所有文件进行备份。​要更改备份的文件对象或备份频率，\n        <span style='font-weight:bold;'>请转至“更多选项”。</span>.\n\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        恢复文件\n    </div>\n    <div class='mb-5'>\n        如果丢失了重要文件或文件夹，可通过以下方法进行恢复：\n    </div>\n    <div>\n\n        <div class='mb-3'>1.在任务栏的搜索框中输入“还原文件”，然后选择“通过文件历史记录还原你的文件”。</div>\n        <div class='mb-3'>2.查找所需的文件，然后使用箭头查看所有版本</div>\n        <div class='mb-3'>3.找到所需版本后，选择“还原”将其保存到原始位置。要将其保存到其他位置，请按住（或右键单击）“还原”，选择“还原为”，然后选择一个新的位置。\n        </div>\n\n    </div>\n</div>\n",
-			"para1": "进行备份总是有益无害。​将文件备份到其他驱动器上以防止源文件发生意外情况。​",
+			"para1": {
+				"line1": "进行备份总是有益无害。",
+				"line2": "​将文件备份到其他驱动器上以防止源文件发生意外情况。​"
+			},
 			"heading1": "设置您的备份",
-			"para2": "选择“开始”按钮，然后选择“设置 > 更新和安全 > 备份 > 添加驱动器”，最后选择外部驱动器或网络位置进行备份。\n",
-			"para3": "准备就绪。我们每个小时都会对您的用户文件夹（C:\\Users\\username）中的所有文件进行备份。​要更改备份的文件对象或备份频率，请转至“更多选项”。\n",
+			"para2": {
+				"span1": "选择",
+				"span2": "“开始”",
+				"span3": "按钮，",
+				"span4": "然后选择“设置",
+				"span5": " 更新和安全",
+				"span6": "备份",
+				"span7": " 添加驱动器”",
+				"span8": "最后选择外部驱动器或网络位置进行备份。"
+			},
+			"para3": {
+				"span1": "准备就绪。",
+				"span2": "我们每个小时都会对您的用户文件夹（C:\\Users\\username）中的所有文件进行备份。",
+				"span3": "​要更改备份的文件对象或备份频率，请转至",
+				"span4": "“更多选项”。"
+			},
 			"heading2": "恢复文件",
-			"para4": "如果丢失了重要文件或文件夹，可通过以下方法进行恢复：\n",
-			"bulletset1": [
-				"1.在任务栏的搜索框中输入“还原文件”，然后选择“通过文件历史记录还原你的文件”。\n",
-				"2.查找所需的文件，然后使用箭头查看所有版本",
-				"3.找到所需版本后，选择“还原”将其保存到原始位置。要将其保存到其他位置，请按住（或右键单击）“还原”，选择“还原为”，然后选择一个新的位置。\n"
-			]
+			"para4": "如果丢失了重要文件或文件夹，可通过以下方法进行恢复：",
+			"para5": {
+				"span1": "在任务栏的搜索框中输入",
+				"span2": "“还原文件”，",
+				"span3": "然后选择",
+				"span4": "“通过文件历史记录还原你的文件”。",
+				"span5": "查找所需的文件，然后使用箭头查看所有版本",
+				"span6": "找到所需版本后，选择",
+				"span7": "“还原”",
+				"span8": "将其保存到原始位置。要将其保存到其他位置，请按住（或右键单击）",
+				"span9": "“还原”，",
+				"span10": "选择",
+				"span11": "“还原为”",
+				"span12": "，然后选择一个新的位置。"
+			}
 		},
 		"question2": {
 			"title": "如何刷新您的电脑",
 			"description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        如何刷新您的电脑\n    </div>\n    <hr>\n    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>\n        症状\n    </div>\n    <div style='padding:5px 0;'>\n        如果您的电脑性能不如从前却不知道原因，则可以刷新您的电脑，这不会删除​任何个人文件或更改您的设置。Windows 可以&ldquo;刷新&rdquo;您的电脑，这就像在不删除个人文件的情况下进行全新安装。\n    </div>\n    <div style='padding:5px 0;'>\n        刷新电脑会发生以下结果：您的文件和个性化设置将不会更改\n    </div>\n    <div style='padding:5px 0;'>\n        <ul>\n            <li>您的电脑设置将恢复为缺省设置</li>\n            <li>来自 Windows 应用商店的应用程序将会保留</li>\n            <li>从磁盘或网站安装的应用程序将被删除</li>\n            <li> 已删除文件的列表将保存在您的桌面上</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        受影响的品牌\n    </div>\n\n    <div>\n        <ul>\n            <li>所有台式机和笔记本电脑/li>\n\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        操作系统\n    </div>\n\n    <div>\n        <ul>\n            <li> Windows 8、8.1 和 10</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        解决方案\n    </div>\n\n    <div>\n        <ul class='list-unstyled'>\n            <li>\n                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>\n                <ol>\n                    <li style='padding:5px 0;'>\n                        轻触或单击&ldquo;设置<span style='font-weight:bold;'> &rdquo; </span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        轻触或单击&ldquo;更新和恢复 <span style='font-weight:bold;'>&rdquo;​</span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <div>轻触或单击&ldquo;恢复<span style='font-weight:bold;'> &rdquo;</span></div>\n                        <div style='padding:5px 0'>。在&ldquo;恢复电脑而不影响你的文件&rdquo;下\n                            <span style='font-weight:bold;'> ，轻触或单击&ldquo;开始&rdquo;。</span></div>\n                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>\n\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <span style='font-weight:bold;'> 单击&ldquo;下一步&rdquo;。</span>.\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <span style='font-weight:bold;'> 请单击&ldquo;刷新&rdquo;开始刷新过程。</span>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        刷新过程完成后，可在桌面上找到&ldquo;已删除的应用&rdquo;列表\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        可以找到刷新系统时删除的应用程序\n                    </li>\n                </ol>\n            </li>\n            <li style='padding:10px 0;'>\n                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>\n                <ol>\n                    <li style='padding:5px 0;'> 在&ldquo;开始&rdquo;菜单提供的搜索工具中搜索&ldquo;刷新&rdquo;，</li>\n                    <li style='padding:5px 0;'>\n                        <div>在搜索结果中单击&ldquo;恢复电脑而不影响你的文件&rdquo;，如下所示。</div>\n                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        <div>单击&ldquo;恢复电脑而不影响你的文件&rdquo;​标题下方的&ldquo;开始&rdquo;按钮开始刷新您的 Windows 10 电脑。</div>\n                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>\n                    </li>\n                </ol>\n            </li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;'>\n        其他信息\n    </div>\n\n    <div>\n        大多数情况下，开始刷新电脑后，它将自己完成该过程。但是，如果 Windows 需要缺少的文件，将会要求您插入恢复盘，通常是 DVD 光盘或 U 盘。如果发生这种情况，所需介质取决于您的电脑。\n\n    </div>\n    <div style='padding:10px 0'>\n        如果曾使用 DVD 光盘将电脑升级到 Windows 8.1 或 Windows RT 8.1，请使用该光盘。如果没有 Windows 8.1 或 Windows RT 8.1 介质，请联系 Microsoft 支持。\n    </div>\n\n</div>",
 			"heading1": "症状",
-			"para1": "如果您的电脑性能不如从前却不知道原因，则可以刷新您的电脑，这不会删除​任何个人文件或更改您的设置。Windows 可以“刷新”您的电脑，这就像在不删除个人文件的情况下进行全新安装。\n",
+			"para1": {
+				"span1": "如果您的电脑性能不如从前却不知道原因，则可以刷新您的电脑，这不会删除​任何个人文件或更改您的设置。",
+				"span2": "Windows 可以“刷新”您的电脑，这就像在不删除个人文件的情况下进行全新安装。"
+			},
 			"para2": "刷新电脑会发生以下结果：您的文件和个性化设置将不会更改",
-			"bulletset1": [
-				"您的电脑设置将恢复为缺省设置",
-				"来自 Windows 应用商店的应用程序将会保留",
-				"从磁盘或网站安装的应用程序将被删除",
-				"已删除文件的列表将保存在您的桌面上"
-			],
+			"para3": {
+				"span1": "您的电脑设置将恢复为缺省设置",
+				"span2": "来自 Windows 应用商店的应用程序将会保留",
+				"span3": "从磁盘或网站安装的应用程序将被删除",
+				"span4": "已删除文件的列表将保存在您的桌面上"
+			},
 			"heading2": "受影响的品牌",
-			"para3": "所有台式机和笔记本电脑",
+			"para4": "所有台式机和笔记本电脑",
 			"heading3": "操作系统",
-			"para4": "Windows 8、8.1 和 10",
-			"heading4": "解决方案\n",
-			"para5": "<span style=\"text-decoration: underline;padding:10px 0;font-weight: bold\">Windows 8/8.1</span>",
-			"bulletset2": [
-				"轻触或单击“设置”",
-				"轻触或单击“更新和恢复”​",
-				"轻触或单击“恢复”。",
-				"在“恢复电脑而不影响你的文件”下，轻触或单击“开始”。",
-				"单击“下一步”。",
-				"请单击“刷新”开始刷新过程。",
-				"刷新过程完成后，可在桌面上找到“已删除的应用”列表",
-				"可以找到刷新系统时删除的应用程序"
-			],
-			"para6": "<span style=\"text-decoration: underline;font-weight: bold\">Windows 10</span>",
-			"bulletset3": [
-				"在“开始”菜单提供的搜索工具中搜索“刷新”，",
-				"在搜索结果中单击“恢复电脑而不影响你的文件”，如下所示。",
-				"单击“恢复电脑而不影响你的文件”​标题下方的“开始”按钮开始刷新您的 Windows 10 电脑。\n"
-			],
+			"para5": "Windows 8、8.1 和 10",
+			"heading4": "解决方案",
+			"para6": "Windows 8/8.1",
+			"para7": {
+				"span1": {
+					"line1": "轻触或单击",
+					"line2": "“设置”"
+				},
+				"span2": {
+					"line1": "轻触或单击",
+					"line2": "“更新和恢复”​"
+				},
+				"span3": {
+					"line1": "轻触或单击",
+					"line2": "“恢复”。"
+				},
+				"span4": {
+					"line1": "在“恢复电脑而不影响你的文件”下，",
+					"line2": "轻触或单击“开始”。"
+				},
+				"span5": {
+					"line1": "单击",
+					"line2": "“下一步”。"
+				},
+				"span6": {
+					"line1": "请单击",
+					"line2": "“刷新”",
+					"line3": "开始刷新过程。"
+				},
+				"span7": "刷新过程完成后，可在桌面上找到“已删除的应用”列表",
+				"span8": "可以找到刷新系统时删除的应用程序"
+			},
+			"para8": "Windows 10",
+			"para9": {
+				"span1": {
+					"line1": "在",
+					"line2": "“开始”菜单提供的搜索工具中搜索",
+					"line3": "“刷新”，"
+				},
+				"span2": {
+					"line1": "在搜索结果中单击",
+					"line2": "“恢复电脑而不影响你的文件”，",
+					"line3": "如下所示。"
+				},
+				"span3": {
+					"line1": "单击",
+					"line2": "“恢复电脑而不影响你的文件”",
+					"line3": "​标题下方的",
+					"line4": "“开始”",
+					"line5": "按钮开始刷新您的 Windows 10 电脑。"
+				}
+			},
 			"header5": "其他信息",
-			"para7": "大多数情况下，开始刷新电脑后，它将自己完成该过程。但是，如果 Windows 需要缺少的文件，将会要求您插入恢复盘，通常是 DVD 光盘或 U 盘。如果发生这种情况，所需介质取决于您的电脑。\n",
-			"para8": "如果曾使用 DVD 光盘将电脑升级到 Windows 8.1 或 Windows RT 8.1，请使用该光盘。如果没有 Windows 8.1 或 Windows RT 8.1 介质，请联系 Microsoft 支持。\n"
+			"para10": "大多数情况下，开始刷新电脑后，它将自己完成该过程。但是，如果 Windows 需要缺少的文件，将会要求您插入恢复盘，通常是 DVD 光盘或 U 盘。如果发生这种情况，所需介质取决于您的电脑。\n",
+			"para11": "如果曾使用 DVD 光盘将电脑升级到 Windows 8.1 或 Windows RT 8.1，请使用该光盘。如果没有 Windows 8.1 或 Windows RT 8.1 介质，请联系 Microsoft 支持。\n"
 		},
 		"question3": {
 			"title": "如何了解计算机的 CPU 情况",
@@ -872,30 +982,92 @@
 			"para4": "Windows 7、8、10",
 			"heading4": "解决方案",
 			"para5": "Windows 7 或 Vista",
-			"bulletset1": [
-				"单击“开始”按钮（“开始”按钮图片），然后右键单击“计算机”，最后单击“属性”打开“系统”",
-				"在“系统”下，可查看系统类型。"
-			],
-			"para6": "Windows 8 和 Windows 10",
-			"bulletset2": [
-				"方法 1：在“控制面板”中查看“系统”窗口",
-				"1.从屏幕右边缘扫入，然后点击“搜索”。如果使用的是鼠标，请将指针指向屏幕右下角，然后单击“搜索”。\n",
-				"2.在搜索框中输入“系统”，然后轻触或单击“设置”。",
-				"3.轻触或单击“系统”",
-				"4.如果运行的是 Windows 8 64 位版本，“系统”标题下的“系统类型”字段中将显示“64 位操作系统”。如果运行的是 Windows 8 32 位版本，“系统”标题下的“系统类型”字段中将显示“32 位操作系统”。\n",
-				"方法 2：查看“系统信息”窗口",
-				"1.从屏幕右边缘扫入，然后点击“搜索”。如果使用的是鼠标，请将指针指向屏幕右下角，然后单击“搜索”。\n",
-				"2.在搜索框中，输入“系统信息”\n",
-				"3.轻触或单击“系统”，然后轻触或单击“系统信息”，最后单击“系统摘要”。",
-				"4.如果运行的是 Windows 8 64 位版本，“项目”标题下的“系统类型”字段中将显示“基于 x64 的电脑”。\n"
-			],
-			"para7": "如果运行的是 Windows 8 32 位版本，“项目”标题下的“系统类型”字段中将显示“基于 x86 的电脑”。\n"
+			"para6": {
+				"span1": {
+					"line1": "单击",
+					"line2": "“开始”",
+					"line3": "按钮（“开始”按钮图片），然后右键单击“计算机”，最后单击“属性”打开“系统”"
+				},
+				"span2": "在“系统”下，可查看系统类型。"
+			},
+			"para7": "Windows 8 和 Windows 10",
+			"para8": {
+				"span1": {
+					"line1": "方法 1：",
+					"line2": "在“控制面板”中查看“系统”窗口"
+				},
+				"span2": {
+					"line1": "从屏幕右边缘扫入，然后点击",
+					"line2": "“搜索”。",
+					"line3": "如果使用的是鼠标，请将指针指向屏幕右下角，然后单击",
+					"line4": "“搜索”。"
+				},
+				"span3": {
+					"line1": "在搜索框中输入",
+					"line2": "“系统”，",
+					"line3": "然后轻触或单击",
+					"line4": "“设置”。"
+				},
+				"span4": {
+					"line1": "轻触或单击",
+					"line2": "“系统”"
+				},
+				"span5": {
+					"line1": "如果运行的是 Windows 8 64 位版本，",
+					"line2": "“系统”标题下的“系统类型”字段中将显示",
+					"line3": "“64 位操作系统”。",
+					"line4": "如果运行的是 Windows 8 32 位版本，",
+					"line5": "“系统”标题下的",
+					"line6": "“系统类型”字段中将显示“32 位操作系统”。"
+				},
+				"span6": {
+					"line1": "方法 2：",
+					"line2": "查看“系统信息”窗口"
+				},
+				"span7": {
+					"line1": "从屏幕右边缘扫入，然后点击",
+					"line2": "“搜索”。",
+					"line3": "如果使用的是鼠标，请将指针指向屏幕右下角，然后单击",
+					"line4": "“搜索”。"
+				},
+				"span8": {
+					"line1": "在搜索框中，",
+					"line2": "输入“系统信息”"
+				},
+				"span9": {
+					"line1": "轻触或单击",
+					"line2": "“系统”",
+					"line3": "，然后轻触或单击",
+					"line4": "“系统信息”",
+					"line5": "，最后单击",
+					"line6": "“系统摘要”。"
+				},
+				"span10": {
+					"line1": "如果运行的是 ",
+					"line2": "Windows 8 64",
+					"line3": " 位版本，",
+					"line4": "“项目”标题下的",
+					"line5": "“系统类型”",
+					"line6": "字段中将显示“基于 x64 的电脑”。"
+				}
+			},
+			"para9": {
+				"line1": "如果运行的是 ",
+				"line2": " Windows 8 32 位版本，",
+				"line3": "“项目”标题下的",
+				"line4": "“系统类型”",
+				"line5": "字段中将显示“基于 x86 的电脑”。"
+			}
 		},
 		"question4": {
 			"title": "检查计算机的电池使用情况",
 			"description": "<div style='font-size:4rem;font-weight:bold;'>\n    检查计算机的电池使用情况\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>症状</h3>\n<p>Windows 10 包含一个新&ldquo;电池使用情况&rdquo;屏幕，可显示正在消耗笔记本电脑电量的程序。也就是说，该屏幕可清楚显示哪些应用程序（包括桌面程序和 Windows 10 &ldquo;通用&rdquo;应用）正在消耗过多的电量。​\n</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>受影响的品牌</h3>\n\n<ul>\n    <li>Lenovo 笔记本电脑、台式机</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>受影响的系统</h3>\n<ul>\n    <li>所有</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>操作系统</h3>\n<ul>\n    <li>Window 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>解决方案</h3>\n<p>此功能是 Windows 10 中的新功能，首先需要找到此功能，因为它不在传统的&ldquo;控制面板&rdquo;视图中，而是位于新的&ldquo;设置&rdquo;应用程序中</p>\n<p><br /> </p>\n<p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. 找到&ldquo;电池使用情况&rdquo;屏幕</h3>\n</p>\n<p>1.单击或轻触&ldquo;开始&rdquo;菜单中的&ldquo;设置&rdquo;选项</p>\n<p>2.在&ldquo;设置&rdquo;中选择&ldquo;系统&rdquo;，然后选择&ldquo;节电模式&rdquo;。</p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3.单击或轻触此标题下的&ldquo;电池使用情况&rdquo;链接以查看更多详细信息。 </p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. 分析电源使用情况</h3>\n<p>4.您可以更改设置使电池使用情况屏幕显示过去 24 小时到过去 48 小时或过去一周的电池使用情况</p>\n<p>5 &ldquo;系统&rdquo;、&ldquo;显示器&rdquo;和&ldquo;Wi-Fi&rdquo;​百分比。这将显示系统进程、显示器使用的电量</p>\n<p>6 ​&ldquo;使用中&rdquo;和&ldquo;后台&rdquo;选项对比显示正在使用的应用程序和在后台运行的应用程序消耗的电量。</p>\n<p>7 如果应用程序在后台消耗电量，可点击或轻触&ldquo;更改后台应用设置&rdquo;​链接，然后配置让应用程序不在后台运行。​此功能仅适用于通用 Windows 10 应用程序。</p>\n<p>8 进一步向下滚动，您将看到一个应用程序列表，这是此功能最有用的部分。它将显示在该期间内使用过电池电量的应用程序列表，并显示每个应用程序消耗的电池电量百分比\n</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
 			"heading1": "症状",
-			"para1": "Windows 10 包含一个新“电池使用情况”屏幕，可显示正在消耗笔记本电脑电量的程序。也就是说，该屏幕可清楚显示哪些应用程序（包括桌面程序和 Windows 10 “通用”应用）正在消耗过多的电量。​\n",
+			"para1": {
+				"span1": "Windows 10 包含一个新",
+				"span2": "“电池使用情况”",
+				"span3": "屏幕，可显示正在消耗笔记本电脑电量的程序。也就是说，该屏幕可清楚显示哪些应用程序（包括桌面程序和 Windows 10 “通用”应用）正在消耗过多的电量。​"
+			},
 			"heading2": "受影响的品牌",
 			"para2": " Lenovo 笔记本电脑、台式机\n受影响的系统",
 			"heading3": "受影响的系统",
@@ -903,69 +1075,135 @@
 			"heading4": "操作系统",
 			"para4": "Windows 10",
 			"heading5": "解决方案",
-			"para5": "此功能是 Windows 10 中的新功能，首先需要找到此功能，因为它不在传统的“控制面板”视图中，而是位于新的“设置”应用程序中\n",
-			"bulletset1": [
-				"A. 找到“电池使用情况”屏幕",
-				"1.单击或轻触“开始”菜单中的“设置”选项",
-				"2.在“设置”中选择“系统”，然后选择“节电模式”。\n",
-				"3.单击或轻触此标题下的“电池使用情况”链接以查看更多详细信息。\n",
-				"B. 分析电源使用情况",
-				"4.您可以更改设置使电池使用情况屏幕显示过去 24 小时到过去 48 小时或过去一周的电池使用情况\n",
-				"5.“系统”、“显示器”和“Wi-Fi”​百分比。这将显示系统进程、显示器使用的电量\n",
-				"6.​“使用中”和“后台”选项对比显示正在使用的应用程序和在后台运行的应用程序消耗的电量。\n",
-				"7.如果应用程序在后台消耗电量，可点击或轻触“更改后台应用设置”​链接，然后配置让应用程序不在后台运行。​此功能仅适用于通用 Windows 10 应用程序。\n",
-				"8.进一步向下滚动，您将看到一个应用程序列表，这是此功能最有用的部分。它将显示在该期间内使用过电池电量的应用程序列表，并显示每个应用程序消耗的电池电量百分比\n"
-			]
+			"para5": {
+				"line1": "此功能是 Windows 10 中的新功能，首先需要找到此功能，因为它不在传统的",
+				"line2": "“控制面板”",
+				"line3": "视图中，而是位于新的",
+				"line4": "“设置”",
+				"line5": "应用程序中"
+			},
+			"para6": {
+				"span1": "A. 找到“电池使用情况”屏幕",
+				"span2": {
+					"line1": "1.单击或轻触",
+					"line2": "“开始”",
+					"line3": "菜单中的“设置”选项"
+				},
+				"span3": {
+					"line1": "2.在",
+					"line2": "“设置”",
+					"line3": "中选择",
+					"line4": "“系统”，",
+					"line5": "然后选择",
+					"line6": "“节电模式”。"
+				},
+				"span4": {
+					"line1": "3.单击或轻触此标题下的",
+					"line2": "“电池使用情况”",
+					"line3": "链接以查看更多详细信息。"
+				},
+				"span5": "B. 分析电源使用情况",
+				"span6": "4.您可以更改设置使电池使用情况屏幕显示过去 24 小时到过去 48 小时或过去一周的电池使用情况",
+				"span7": {
+					"line1": "5.",
+					"line2": "“系统”、",
+					"line3": "“显示器”",
+					"line4": "和",
+					"line5": "“Wi-Fi”​",
+					"line6": "百分比。这将显示系统进程、显示器使用的电量"
+				},
+				"span8": {
+					"line1": "6.",
+					"line2": "​“使用中”",
+					"line3": "和",
+					"line4": "“后台”",
+					"line5": "选项对比显示正在使用的应用程序和在后台运行的应用程序消耗的电量。"
+				},
+				"span9": {
+					"line1": "7.如果应用程序在后台消耗电量，可点击或轻触",
+					"line2": "“更改后台应用设置”​",
+					"line3": "链接，然后配置让应用程序不在后台运行。​此功能仅适用于通用 Windows 10 应用程序。"
+				},
+				"span10": "8.进一步向下滚动，您将看到一个应用程序列表，这是此功能最有用的部分。它将显示在该期间内使用过电池电量的应用程序列表，并显示每个应用程序消耗的电池电量百分比"
+			}
 		},
 		"question5": {
 			"title": "像使用平板电脑一样使用您的计算机",
 			"description": "<div style='font-size:4rem;font-weight:bold;'>\n    ​像使用平板电脑一样使用您的计算机\n</div>\n<hr>\n<p>对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>使用平板电脑模式</h3>\n<p>要开启平板电脑模式，请在任务栏上选择&ldquo;操作中心&rdquo;，然后选择&ldquo;平板模式&rdquo;。</p>\n<p> </p>\n<p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>注</h3>\n<p>要确定您的设备是否可以自动打开平板电脑模式，请在制造商的网站上搜索您的设备。是否支持此功能取决于硬件、安装的驱动程序以及制造商设置设备的方 式。  </p>\n<p> </p>\n<p>在平板电脑模式下将以全屏模式打开应用程序，从而提供更多工作空间。要关闭应用程序，请将其拖到屏幕底部。\n</p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>提示</h3>\n<p>计算机处于平板电脑模式时会显示任务栏，但如果需要更多屏幕空间，可以将其隐藏。选择&ldquo;开始&rdquo;按钮，选择&ldquo;设置 > 系统 > 平板模式&rdquo;，然后打开&ldquo;在平板模式下自动隐藏任务栏&rdquo;。要查看隐藏的任务栏，从屏幕底部向上轻扫，或将鼠标悬停在该处。\n</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>同时使用两个应用程序</h3>\n<p>要在平板电脑模式下并排使用两个应用程序，请将一个打开的应用程序向下拖动，然后拖向一边。​您将看到它​贴靠的位置并看到它旁边的所有打开的应用程序。\n</p>\n<p>在此视图中，您还可以：/p>\n    <ul>\n        <li>使用两个辅屏之间共享的边缘来同时重新调整两个应用程序的大小。</li>\n        <li> 在任务视图中打开一个新应用程序——在任务栏上选择&ldquo;任务视图&rdquo;，选择一个应用程序，然后将其拖到一侧以将其贴靠在分隔的屏幕中。\n        </li>\n        <li>使用任务栏上的后退按钮返回应用程序，或打开一个之前用过的应用程序。\n        </li>\n    </ul>\n    <p> </p>",
 			"para1": "对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。\n",
 			"heading1": "使用平板电脑模式",
-			"para2": "要开启平板电脑模式，请在任务栏上选择“操作中心”，然后选择“平板模式”。",
+			"para2": {
+				"span1": "要开启平板电脑模式，请在任务栏上选择 ",
+				"span2": "“操作中心”",
+				"span3": "，然后选择",
+				"span4": "“平板模式”。"
+			},
 			"heading2": "注",
 			"para3": "要确定您的设备是否可以自动打开平板电脑模式，请在制造商的网站上搜索您的设备。是否支持此功能取决于硬件、安装的驱动程序以及制造商设置设备的方式。\n",
 			"para4": "在平板电脑模式下将以全屏模式打开应用程序，从而提供更多工作空间。要关闭应用程序，请将其拖到屏幕底部。",
 			"heading3": "提示",
-			"para5": "计算机处于平板电脑模式时会显示任务栏，但如果需要更多屏幕空间，可以将其隐藏。选择“开始”按钮，选择“设置 > 系统 > 平板模式”，然后打开“在平板模式下自动隐藏任务栏”。要查看隐藏的任务栏，从屏幕底部向上轻扫，或将鼠标悬停在该处。",
+			"para5": {
+				"span1": "计算机处于平板电脑模式时会显示任务栏，但如果需要更多屏幕空间，可以将其隐藏。",
+				"span2": "选择",
+				"span3": "“开始”",
+				"span4": "按钮，选择",
+				"span5": "“设置",
+				"span6": "系统",
+				"span7": "平板模式”",
+				"span8": "，然后打开",
+				"span9": "“在平板模式下自动隐藏任务栏”。",
+				"span10": "要查看隐藏的任务栏，从屏幕底部向上轻扫，或将鼠标悬停在该处。"
+			},
 			"heading4": "同时使用两个应用程序",
 			"para6": "要在平板电脑模式下并排使用两个应用程序，请将一个打开的应用程序向下拖动，然后拖向一边。​您将看到它​贴靠的位置并看到它旁边的所有打开的应用程序。",
 			"para7": "在此视图中，您还可以：",
-			"bulletset1": [
-				"使用两个辅屏之间共享的边缘来同时重新调整两个应用程序的大小。",
-				"在任务视图中打开一个新应用程序——在任务栏上选择“任务视图”，选择一个应用程序，然后将其拖到一侧以将其贴靠在分隔的屏幕中。",
-				"使用任务栏上的后退按钮返回应用程序，或打开一个之前用过的应用程序。"
-			]
+			"para8": {
+				"span1": "使用两个辅屏之间共享的边缘来同时重新调整两个应用程序的大小。",
+				"span2": {
+					"line1": "在任务视图中打开一个新应用程序——在任务栏上选择",
+					"line2": "“任务视图”",
+					"line3": "，选择一个应用程序，然后将其拖到一侧以将其贴靠在分隔的屏幕中。"
+				},
+				"span3": "使用任务栏上的后退按钮返回应用程序，或打开一个之前用过的应用程序。"
+			}
 		},
 		"question6": {
 			"title": "了解您的个人助理 Cortona",
-			"description": "<div style='font-size:4rem;font-weight:bold;'>\n    了解您的个人助理 Cortona\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Cortana 是什么？</h3>\n<hr />\n<p>Cortana 是您的数字助手。她可以帮助您完成工作。\n</p>\n<p>使用 Cortana 的次数越多，获得的体验也会更具个性化。</p>\n<p>要开始使用，请在搜索框中输入一个问题，或选择麦克风，然后通过语音与 Cortana 交互。（所有类型的电脑均支持手动输入，但必须具有麦克风才能进行语音输入。）\n</p>\n<p>如果不确定要说些什么，可参考锁屏界面以及 Cortana 主页（在任务栏上选择搜索框时显示）中的建议。\n</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>1.主页 2. 笔记本 3. 设置 4. 反馈</li>\n</ol>\n<p>以下是 Cortana 可为您做的一些事情：/p>\n    <ul>\n        <li> 基于时间、地点、人物为您提供提醒。</li>\n        <li>跟踪包裹、团队、兴趣和航班。</li>\n        <li>发送电子邮件和文本。</li>\n        <li>管理您的日历，不错失最新动态。</li>\n        <li>创建和管理列表。</li>\n        <li>聊天和玩游戏。</li>\n        <li>查找事件、文件、地点和信息。</li>\n        <li>打开系统上的任何应用程序。</li>\n    </ul>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>\n        试试这个：设置提醒</h3>\n    <hr />\n\n    <p>Cortana 可执行的操作之一是向您提供提醒。她可以基于事件、地点，甚至人物来向您提醒待办事项。\n    </p>\n    <p>例如，您可以手动输入或语音说出：&ldquo;下次 Tanya 来电时提醒我向她表示祝贺&rdquo;。\"</p>\n    <p>当收到 Tanya 的来电时，将显示这条提醒。</p>\n    <p>此外还有更棒的消息—如果您有 Windows phone 或适用于 iPhone 或 Android 的 Cortana，则可以设置 Cortana 在电脑和手机之间同步通知。\n    </p>\n    <p><img src='./../../../assets/images/qa/6.2.png' /></p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>你好小娜？</h3>\n    <hr />\n    <p>设置 Cortana 随时在您说出&ldquo;你好小娜&rdquo;时听取您的语音。选择任务栏上的搜索框以打开 Cortana 主页。然后选择&ldquo;设置&rdquo;并打开&ldquo;让 Cortana 响应&ldquo;你好小娜&rdquo;&rdquo;。\"\n    </p>\n    <p><img src='./../../../assets/images/qa/6.3.png' /></p>\n    <p>注</p>\n    <p>Cortana 仅在某些国家/地区可用，且部分 Cortana 功能并非在所有国家/地区可用。\n    </p>\n    <p> </p>",
+			"description": "<div style='font-size:4rem;font-weight:bold;'>\n    了解您的个人助理 Cortona\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Cortana 是什么？</h3>\n<hr />\n<p>Cortana 是您的数字助手。她可以帮助您完成工作。\n</p>\n<p>使用 Cortana 的次数越多，获得的体验也会更具个性化。</p>\n<p>要开始使用，请在搜索框中输入一个问题，或选择麦克风，然后通过语音与 Cortana 交互。（所有类型的电脑均支持手动输入，但必须具有麦克风才能进行语音输入。）\n</p>\n<p>如果不确定要说些什么，可参考锁屏界面以及 Cortana 主页（在任务栏上选择搜索框时显示）中的建议。\n</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>1.主页 2. 笔记本 3. 设置 4. 反馈</li>\n</ol>\n<p>以下是 Cortana 可为您做的一些事情：/p>\n    <ul>\n        <li> 基于时间、地点、人物为您提供提醒。</li>\n        <li>跟踪包裹、团队、兴趣和航班。</li>\n        <li>发送电子邮件和文本。</li>\n        <li>管理您的日历，不错失最新动态。</li>\n        <li>创建和管理列表。</li>\n        <li>聊天和玩游戏。</li>\n        <li>查找事件、文件、地点和信息。</li>\n        <li>打开系统上的任何应用程序。</li>\n    </ul>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>\n        试试这个：设置提醒</h3>\n    <hr />\n\n    <p>Cortana 可执行的操作之一是向您提供提醒。她可以基于事件、地点，甚至人物来向您提醒待办事项。\n    </p>\n    <p>例如，您可以手动输入或语音说出：&ldquo;下次 Tanya 来电时提醒我向她表示祝贺&rdquo;。\"</p>\n    <p>当收到 Tanya 的来电时，将显示这条提醒。</p>\n    <p>此外还有更棒的消息—如果您有 Windows phone 或适用于 iPhone 或 Android 的 Cortana，则可以设置 Cortana 在电脑和手机之间同步通知。\n    </p>\n    <p><img src='./../../../assets/images/qa/6.2.png' /></p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>你好小娜？</h3>\n    <hr />\n    <p>设置 Cortana 随时在您说出&ldquo;你好小娜&rdquo;时听取您的语音。选择任务栏上的搜索框以打开 Cortana 主页。然后选择&ldquo;设置&rdquo;并打开&ldquo;让 Cortana 响应&ldquo;你好小娜&rdquo;&rdquo;。\"\n    </p>\n    <p><img src='./../../../assets/images/qa/6.3.png' /></p>\n    <p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>注</p>\n    <p>Cortana 仅在某些国家/地区可用，且部分 Cortana 功能并非在所有国家/地区可用。\n    </p>\n    <p> </p>",
 			"heading1": "Cortana 是什么？",
 			"para1": "Cortana 是您的数字助手。她可以帮助您完成工作。",
 			"para2": "使用 Cortana 的次数越多，获得的体验也会更具个性化。",
 			"para3": "要开始使用，请在搜索框中输入一个问题，或选择麦克风，然后通过语音与 Cortana 交互。（所有类型的电脑均支持手动输入，但必须具有麦克风才能进行语音输入。）",
-			"para4": "如果不确定要说些什么，可参考锁屏界面以及 Cortana 主页（在任务栏上选择搜索框时显示）中的建议。\n",
-			"para5": "1.主页 2. 笔记本 3. 设置 4. 反馈",
+			"para4": "如果不确定要说些什么，可参考锁屏界面以及 Cortana 主页（在任务栏上选择搜索框时显示）中的建议。",
+			"para5": "主页 2. 笔记本 3. 设置 4. 反馈",
 			"para6": "以下是 Cortana 可为您做的一些事情：",
-			"bulletset1": [
-				"基于时间、地点、人物为您提供提醒。​",
-				"跟踪包裹、团队、兴趣和航班。",
-				"发送电子邮件和文本。",
-				"管理您的日历，不错失最新动态。",
-				"创建和管理列表。",
-				"聊天和玩游戏。",
-				"查找事件、文件、地点和信息。",
-				"打开系统上的任何应用程序。"
-			],
-			"heading2": "试试这个：设置提醒\n",
-			"para7": "Cortana 可执行的操作之一是向您提供提醒。她可以基于事件、地点，甚至人物来向您提醒待办事项。\n",
-			"para8": "例如，您可以手动输入或语音说出：“下次 Tanya 来电时提醒我向她表示祝贺”。\"\n",
+			"bulletset1": {
+				"span1": "基于时间、地点、人物为您提供提醒。​",
+				"span2": "跟踪包裹、团队、兴趣和航班。",
+				"span3": "发送电子邮件和文本。",
+				"span4": "管理您的日历，不错失最新动态。",
+				"span5": "创建和管理列表。",
+				"span6": "聊天和玩游戏。",
+				"span7": "查找事件、文件、地点和信息。",
+				"span8": "打开系统上的任何应用程序。"
+			},
+			"heading2": "试试这个：设置提醒",
+			"para7": "Cortana 可执行的操作之一是向您提供提醒。她可以基于事件、地点，甚至人物来向您提醒待办事项。",
+			"para8": "例如，您可以手动输入或语音说出：“下次 Tanya 来电时提醒我向她表示祝贺”。",
 			"para9": "当收到 Tanya 的来电时，将显示这条提醒。",
-			"para10": "此外还有更棒的消息—如果您有 Windows phone 或适用于 iPhone 或 Android 的 Cortana，则可以设置 Cortana 在电脑和手机之间同步通知。\n",
+			"para10": "此外还有更棒的消息—如果您有 Windows phone 或适用于 iPhone 或 Android 的 Cortana，则可以设置 Cortana 在电脑和手机之间同步通知。",
 			"heading3": "你好小娜？",
-			"para11": "设置 Cortana 随时在您说出“你好小娜”时听取您的语音。选择任务栏上的搜索框以打开 Cortana 主页。然后选择“设置”并打开“让 Cortana 响应“你好小娜””。\"\n",
+			"para11": {
+				"span1": "设置 Cortana 随时在您说出“你好小娜”时听取您的语音。选择任务栏上的搜索框以打开 Cortana 主页。",
+				"span2": {
+					"line1": "然后选择",
+					"line2": "“设置”",
+					"line3": "并打开",
+					"line4": "“让 Cortana 响应“你好小娜””。"
+				}
+			},
 			"para12": "注",
-			"para13": "Cortana 仅在某些国家/地区可用，且部分 Cortana 功能并非在所有国家/地区可用。\n"
+			"para13": "Cortana 仅在某些国家/地区可用，且部分 Cortana 功能并非在所有国家/地区可用。"
 		}
 	}
 }

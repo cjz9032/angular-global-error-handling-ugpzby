@@ -3,6 +3,22 @@ import {VantageShellService} from '../services/vantage-shell/vantage-shell.servi
 import {ActivatedRoute} from "@angular/router";
 import {VieworderService} from "../services/view-order/vieworder.service";
 
+export interface MetricsData {
+	ItemType: string;
+	ItemName?: string;
+	ItemParent?: string;
+	ItemParm?: string;
+	ItemValue?: string;
+	viewOrder?: number;
+	ItemID?: string;
+	ItemCategory?: string;
+	ItemPosition?: string;
+	PageNumber?: string;
+	SettingParent?: string;
+	SettingName?: string;
+	SettingValue?: string;
+	SettingParm?: string;
+}
 
 declare var window;
 
@@ -54,7 +70,7 @@ export class MetricsDirective {
 					data.ItemValue = this.metricsValue;
 				}
 			}
-			break;
+				break;
 			case 'docclick': {
 				data.ItemType = 'DocClick';
 				data.ItemParent = this.metricsParent;
@@ -76,7 +92,7 @@ export class MetricsDirective {
 					data.PageNumber = this.metricsPageNumber;
 				}
 			}
-			break;
+				break;
 			case 'settingupdate': {
 				data.ItemType = 'SettingUpdate';
 				data.SettingParent = this.metricsParent;
@@ -92,7 +108,6 @@ export class MetricsDirective {
 
 	@HostListener('click', ['$event.target'])
 	onclick(target) {
-		 console.log('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
 		if(!this.metricsParent){
 			this.metricsParent = this.activatedRoute.snapshot.data['pageName'];
 		}

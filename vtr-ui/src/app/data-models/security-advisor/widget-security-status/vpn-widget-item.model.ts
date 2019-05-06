@@ -30,7 +30,7 @@ export class VPNWidgetItem extends WidgetItem {
 	}
 
 	updateStatus(status: string) {
-		this.status = status === 'installed' ? 2 : 1;
+		this.status = 5;
 		this.detail = status;
 
 		const translateKey = status === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';

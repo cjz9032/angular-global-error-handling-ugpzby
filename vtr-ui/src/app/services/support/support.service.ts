@@ -6,6 +6,10 @@ import { Injectable } from '@angular/core';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { ModalSupportWechatComponent } from '../../components/modal/modal-support-wechat/modal-support-wechat.component';
+import { ModalAboutComponent } from 'src/app/components/modal/modal-about/modal-about.component';
+
 @Injectable({
 	providedIn: 'root'
 })
@@ -19,7 +23,10 @@ export class SupportService {
 	};
 
 	// public isShellAvailable = false;
-	constructor(shellService: VantageShellService) {
+	constructor(
+		private shellService: VantageShellService,
+		private modalService: NgbModal,
+	) {
 		this.sysinfo = shellService.getSysinfo();
 		this.warranty = shellService.getWarranty();
 		this.metrics = shellService.getMetrics();
@@ -45,5 +52,26 @@ export class SupportService {
 		} else {
 			console.log('can not find metrics');
 		}
+	}
+
+	widgetItemClick(clickItem: string) {
+		if (clickItem === 'qrCode') {
+			this.showQRCodePop();
+		} else if (clickItem === 'about') {
+			this.showAboutPop();
+		}
+	}
+
+	showQRCodePop() {
+		const weChatModal: NgbModalRef = this.modalService.open(ModalSupportWechatComponent, {
+			centered: true,
+			windowClass: 'weChat-Modal'
+		});
+	}
+	showAboutPop() {
+		const aboutModal: NgbModalRef = this.modalService.open(ModalAboutComponent, {
+			centered: true,
+			windowClass: 'weChat-Modal'
+		});
 	}
 }

@@ -13,6 +13,7 @@ import { PageSecurityAntivirusComponent } from './components/pages/page-security
 import { PageSecurityWifiComponent } from './components/pages/page-security-wifi/page-security-wifi.component';
 import { PageSecurityPasswordComponent } from './components/pages/page-security-password/page-security-password.component';
 import { PageSecurityInternetComponent } from './components/pages/page-security-internet/page-security-internet.component';
+import { PageSecurityHomeSecurityComponent } from './components/pages/page-security-home-security/page-security-home-security.component';
 import { PageSupportComponent } from './components/pages/page-support/page-support.component';
 import { PageSupportDetailComponent } from './components/pages/page-support-detail/page-support-detail.component';
 import { PageUserComponent } from './components/pages/page-user/page-user.component';
@@ -117,6 +118,12 @@ const routes: Routes = [
 			pageName: 'Security.WindowsHello'
 		}
 	}, {
+		path: 'security/home-security',
+		component: PageSecurityHomeSecurityComponent,
+		data: {
+			pageName: 'Security.HomeSecurity'
+		}
+	}, {
 		path: 'support',
 		component: PageSupportComponent,
 		data: {
@@ -134,7 +141,13 @@ const routes: Routes = [
 		data: {
 			pageName: 'User'
 		}
-	}
+	}, {
+		path: 'privacy',
+		loadChildren: './components/pages/page-privacy/privacy.module#PrivacyModule',
+		data: {
+			pageName: 'Page.Privacy'
+		}
+	},
 ];
 
 @NgModule({

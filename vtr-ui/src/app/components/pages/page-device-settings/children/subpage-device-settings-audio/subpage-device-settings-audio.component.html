@@ -10,7 +10,7 @@
 	<div class="row py-5 smartsettings-card"
 		*ngIf="dolbyModeResponse.available"
 		id="audio">
-		<div class="col-10 mx-auto px-0 ">
+		<div class="col-10 mx-auto">
 			<vtr-container-collapsible componentName="Audio SmartSettings"
 				[cardTitle]="'device.deviceSettings.audio.audioSmartsettings.title' | translate"
 				[isCollapsed]="false"
@@ -56,7 +56,7 @@
 					<li class="">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.audio.audioSmartsettings.voip.title' | translate"
-							name="'device.deviceSettings.audio.audioSmartsettings.voip' | translate"
+							[name]="'device.deviceSettings.audio.audioSmartsettings.voip' | translate"
 							componentName="Automatic Audio Optimization for VoIP"
 							[caption]="''"
 							[isSwitchVisible]=true
@@ -92,7 +92,7 @@
 					*ngIf="microphoneProperties.permission">
 					<li class="">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.title' | translate"
-							name="'device.deviceSettings.audio.microphone.title' | translate"
+							[name]="'device.deviceSettings.audio.microphone.title' | translate"
 							componentName="Microphone"
 							[caption]=""
 							[isSwitchVisible]=true
@@ -109,7 +109,7 @@
 					</li>
 					<li class="">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.volume.title' | translate"
-							name="'device.deviceSettings.audio.microphone.volume.title' | translate"
+							[name]="'device.deviceSettings.audio.microphone.volume.title' | translate"
 							componentName="MicrophoneVolume"
 							[isSwitchVisible]=false
 							[leftIcon]="['fal', 'microphone']"
@@ -120,9 +120,10 @@
 							[theme]="'white'">
 							<div class="row">
 								<div class="col-10">
-									<vtr-ui-range-slider [minValueLegend]="'Silent'"
+									<vtr-ui-range-slider
+										[minValueLegend]="'device.deviceSettings.audio.microphone.volume.options.silent' | translate"
 										[minValue]="0"
-										[maxValueLegend]="'Loud'"
+										[maxValueLegend]="'device.deviceSettings.audio.microphone.volume.options.loud' | translate"
 										[maxValue]="100"
 										(change)="setVolume($event)"
 										[enableSlider]="!microphoneProperties.permission"
@@ -137,7 +138,7 @@
 					<li class=""
 						*ngIf="microphoneProperties.keyboardNoiseSuppression != undefined">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.suppress.title' | translate"
-							name="'device.deviceSettings.audio.microphone.suppress.title' | translate"
+							[name]="'device.deviceSettings.audio.microphone.suppress.title' | translate"
 							componentName="Supress Keyboard noise"
 							[caption]=""
 							[isSwitchVisible]=true
@@ -156,7 +157,7 @@
 					<li class=""
 						*ngIf="microphoneProperties.AEC != undefined">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.acoustic.title' | translate"
-							name="'device.deviceSettings.audio.microphone.acoustic.title' | translate"
+							[name]="'device.deviceSettings.audio.microphone.acoustic.title' | translate"
 							componentName="Acoustic Echo Cancellation"
 							[caption]=""
 							[isSwitchVisible]=true
@@ -175,7 +176,7 @@
 					<li class="">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.optimize.title' | translate"
 							componentName="Optimize my microphone for"
-							name="Optimize microphone"
+							[name]="'device.deviceSettings.audio.microphone.optimize.title' | translate"
 							[caption]="'device.deviceSettings.audio.microphone.optimize.tooltip' | translate"
 							[isSwitchVisible]=false
 							[leftIcon]="['fal', 'microphone']"
