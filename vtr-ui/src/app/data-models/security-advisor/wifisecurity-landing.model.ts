@@ -29,6 +29,7 @@ export class WifiSecurityLandingViewModel {
 			path: 'security/wifi-security',
 			title: 'common.securityAdvisor.wifi',
 			type: 'security',
+			id: 'sa-ov-link-wifiSecurity'
 		};
 		const subjectStatus = {
 			title: 'security.landing.wifiConnected',

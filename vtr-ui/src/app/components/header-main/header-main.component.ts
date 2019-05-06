@@ -16,7 +16,7 @@ export class HeaderMainComponent implements OnInit {
 	@Input() forwardLink: { path: string, label: string };
 	@Input() menuItems: any[];
 	@Input() parentPath: string;
-
+	@Input() backId: string;
 	constructor() { }
 
 	ngOnInit() {

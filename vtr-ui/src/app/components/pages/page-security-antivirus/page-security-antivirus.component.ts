@@ -30,6 +30,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 	fireWall = 'security.antivirus.common.firewall';
 	enablevirus = 'security.antivirus.common.enableVirusScan';
 	enableFirewall = 'security.antivirus.common.enableFirewall';
+	backId = 'sa-av-btn-back';
 
 	@HostListener('window:focus')
 	onFocus(): void {

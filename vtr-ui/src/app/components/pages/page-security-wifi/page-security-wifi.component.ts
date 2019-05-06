@@ -45,6 +45,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	title = 'security.wifisecurity.header.title';
 	back = 'security.wifisecurity.header.back';
 	backarrow = '< ';
+	backId = 'sa-ws-btn-back';
 	viewSecChkRoute = 'viewSecChkRoute';
 	cardContentPositionA: any = {};
 	wifiIsShowMore: boolean;

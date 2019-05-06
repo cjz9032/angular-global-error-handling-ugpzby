@@ -2,7 +2,7 @@
 	<ul class="chevron-list" [ngClass]="{'wifiStatus-no-border-bottom': items[0].path === 'security/wifi-security' && items[0].status === 0}">
 		<li *ngFor="let item of items" [ngClass]="getItemStatusClass(item)">
 			<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->
-			<a routerLink="/{{item.path}}" [queryParams]="item.pathParams" vtrMetrics [metricsItem]="item.title" metricsEvent="itemClick"
+			<a id="{{item.id}}" routerLink="/{{item.path}}" [queryParams]="item.pathParams" vtrMetrics [metricsItem]="item.title" metricsEvent="itemClick"
 				[ngClass]="clickable?'':'disabled'"
 				*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false)">
 				<div class="container-fluid">
