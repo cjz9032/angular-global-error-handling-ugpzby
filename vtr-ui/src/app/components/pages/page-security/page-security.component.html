@@ -3,7 +3,8 @@
 		<div class="col vtr-col">
 			<vtr-header-main [title]="'common.menu.security.title' | translate"
 				[backarrow]="'&lt; '"
-				[back]="'common.ui.back' | translate"></vtr-header-main>
+				[back]="'common.ui.back' | translate">
+			</vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -47,7 +48,7 @@
 													<div class="wifi-history"
 														*ngIf="wifiHistory && wifiSecurityLandingViewModel.subject.status === 0 && wifiHistory.length !== 0">
 														<div class="row align-items-center pt-wifiLength">
-															<div class="col-2 row justify-content-center">
+															<div class="col-2 row justify-content-center pl-3">
 																<fa-icon class="wifi-font-icon"
 																	[icon]="['fas', 'wifi']"></fa-icon>
 															</div>
@@ -56,7 +57,7 @@
 														<ul class="chevron-list">
 															<li *ngFor="let wifi of wifiHistory.slice(0, 2);"
 																class="row no-gutters">
-																<div class="col-2 item-icon">
+																<div class="col-2 d-flex justify-content-center align-items-center">
 																	<div class="icon-bkg">
 																		<fa-icon [icon]="['fas', 'wifi']"></fa-icon>
 																	</div>

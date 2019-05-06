@@ -35,6 +35,15 @@ export class WifiSecurityLandingViewModel {
 			status: 2,
 			type: 'security',
 		};
+		translate.stream(wfStatus.detail).subscribe((res) => {
+			wfStatus.detail = res;
+		});
+		translate.stream(wfStatus.title).subscribe((res) => {
+			wfStatus.title = res;
+		});
+		translate.stream(subjectStatus.title).subscribe((res) => {
+			subjectStatus.title = res;
+		});
 
 		const setWiFiSecurityState = (state: string, location: any) => {
 			if (location) {
@@ -62,14 +71,14 @@ export class WifiSecurityLandingViewModel {
 		};
 
 		const cacheStatus = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
-		if (cacheStatus) {
+		if (cacheStatus && wfModel.isLocationServiceOn !== undefined) {
 			setWiFiSecurityState(cacheStatus, wfModel.isLocationServiceOn);
 		}
 		const cacheWifiHistory = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys);
 		if (cacheWifiHistory) {
 			this.wifiHistory = cacheWifiHistory;
 		}
-		if (wfModel.state) {
+		if (wfModel.state && wfModel.isLocationServiceOn !== undefined) {
 			setWiFiSecurityState(wfModel.state, wfModel.isLocationServiceOn);
 		}
 		if (wfModel.wifiHistory && wfModel.wifiHistory.length > 0) {

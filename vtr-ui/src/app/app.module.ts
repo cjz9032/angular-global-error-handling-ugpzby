@@ -161,7 +161,6 @@ import { MinutesToHourminPipe } from './pipe/minutes-to-hourmin.pipe';
 import { SubTransformPipe } from './pipe/security-antivirus/sub-transform.pipe';
 import { DateClassPipe } from './pipe/security-antivirus/date-class.pipe';
 import { ModalAboutComponent } from './components/modal/modal-about/modal-about.component';
-import { WifiClassPipe } from './pipe/security-landing/wifi-class.pipe';
 import { JoinclassPipe } from './pipe/security-wifi/join-class.pipe';
 import { SuccessClassPipe } from './pipe/security-wifi/success-class.pipe';
 import { UiCircleRadioComponent } from './components/ui/ui-circle-radio/ui-circle-radio.component';
@@ -299,7 +298,6 @@ library.add(fal);
 		SubTransformPipe,
 		DateClassPipe,
 		ModalAboutComponent,
-		WifiClassPipe,
 		JoinclassPipe,
 		SuccessClassPipe,
 		UiCircleRadioComponent,

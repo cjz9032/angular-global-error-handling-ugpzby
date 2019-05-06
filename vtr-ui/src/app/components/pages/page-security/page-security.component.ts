@@ -69,7 +69,7 @@ export class PageSecurityComponent implements OnInit {
 	maliciousWifi: number;
 	cardContentPositionA: any = {};
 	region: string;
-
+	backId = 'sa-ov-btn-back';
 	itemStatusClass = {
 		0: 'good',
 		1: 'orange',
