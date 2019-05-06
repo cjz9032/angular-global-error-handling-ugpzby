@@ -88,6 +88,9 @@ export class MetricsDirective {
 				if (this.metricsItemPosition) {
 					data.ItemPosition = this.metricsItemPosition;
 				}
+				if(!this.metricsPageNumber){
+					data.pageNumber="1";
+				}
 				if (this.metricsPageNumber) {
 					data.PageNumber = this.metricsPageNumber;
 				}
