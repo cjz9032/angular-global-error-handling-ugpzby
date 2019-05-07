@@ -40,7 +40,7 @@
 		<div class="row py-5 smartsettings-card"
 			id="cooling">
 			<div class="col-10 mx-auto ">
-				<vtr-container-collapsible cardTitle="Power Smartsettings"
+				<vtr-container-collapsible [cardTitle]="Power Smartsettings"
 					[isCollapsed]="false"
 					[allowCollapse]="false"
 					[theme]="'blue'">
@@ -86,7 +86,7 @@
 		<div class="row py-5 smartsettings-card"
 			id="cooling">
 			<div class="col-10 mx-auto ">
-				<vtr-container-collapsible cardTitle="Power Smartsettings"
+				<vtr-container-collapsible [cardTitle]="Power Smartsettings"
 					[isCollapsed]="false"
 					[allowCollapse]="false"
 					[theme]="'blue'">
@@ -260,7 +260,7 @@
 			id="cooling">
 			<div class="col-10 mx-auto ">
 				<vtr-container-collapsible
-					cardTitle="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate | lowercase"
+					[cardTitle]="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate | lowercase"
 					[isCollapsed]="false"
 					[allowCollapse]="false"
 					[theme]="'blue'">
@@ -311,7 +311,7 @@
 	<!-- <div class="row py-5 smartsettings-card"
 		id="cooling">
 		<div class="col-10 mx-auto ">
-			<vtr-container-collapsible cardTitle="Power Smartsettings"
+			<vtr-container-collapsible [cardTitle]="Power Smartsettings"
 				[isCollapsed]="false"
 				[allowCollapse]="false"
 				[theme]="'blue'">
@@ -519,7 +519,7 @@
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible
 				componentName="'device.deviceSettings.power.otherSettings.title' | translate | lowercase"
-				cardTitle="Other Settings"
+				[cardTitle]="'device.deviceSettings.power.otherSettings.title' | translate | lowercase"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
 					<li class=""
