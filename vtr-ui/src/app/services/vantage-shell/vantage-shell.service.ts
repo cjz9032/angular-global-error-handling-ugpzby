@@ -2,8 +2,8 @@
 
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
-import { EventTypes } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
+import { EventTypes } from '@lenovo/tan-client-bridge';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
 
@@ -122,7 +122,7 @@ export class VantageShellService {
 						}
 					}
 
-					this.sendAsyncOrignally(data);
+					return this.sendAsyncOrignally(data);
 				};
 			}
 
@@ -328,6 +328,13 @@ export class VantageShellService {
 		const win: any = window;
 		if (win.Windows) {
 			return win.Windows;
+		}
+		return undefined;
+	}
+
+	public getPrivacyCore() {
+		if (this.phoenix && this.phoenix.privacy) {
+			return this.phoenix.privacy;
 		}
 		return undefined;
 	}

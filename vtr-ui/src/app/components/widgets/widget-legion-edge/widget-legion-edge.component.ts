@@ -1,4 +1,7 @@
+import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
+import { ModalWelcomeComponent } from './../../modal/modal-welcome/modal-welcome.component';
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 	selector: 'vtr-widget-legion-edge',
@@ -51,9 +54,14 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		}
 	];
 
-	constructor() { }
+	constructor(private modalService: NgbModal) { }
 
 	ngOnInit() {
+	}
+
+	openModal() {
+		//this.modalService.open(ModalWelcomeComponent);
+		this.modalService.open(ModalGamingLegionedgeComponent);
 	}
 
 }

@@ -3,7 +3,8 @@
 		<div class="col vtr-col">
 			<vtr-header-main [title]="'common.menu.security.title' | translate"
 				[backarrow]="'&lt; '"
-				[back]="'common.ui.back' | translate"></vtr-header-main>
+				[back]="'common.ui.back' | translate"
+				[backId]="backId"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -47,7 +48,7 @@
 													<div class="wifi-history"
 														*ngIf="wifiHistory && wifiSecurityLandingViewModel.subject.status === 0 && wifiHistory.length !== 0">
 														<div class="row align-items-center pt-wifiLength">
-															<div class="col-2 row justify-content-center">
+															<div class="col-2 row justify-content-center pl-3">
 																<fa-icon class="wifi-font-icon"
 																	[icon]="['fas', 'wifi']"></fa-icon>
 															</div>
@@ -56,10 +57,9 @@
 														<ul class="chevron-list">
 															<li *ngFor="let wifi of wifiHistory.slice(0, 2);"
 																class="row no-gutters">
-																<div class="col-2 item-icon">
+																<div class="col-2 d-flex justify-content-center align-items-center">
 																	<div class="icon-bkg">
-																		<fa-icon [ngClass]="getWifiStatus(wifi.good)"
-																			[icon]="['fas', 'wifi']"></fa-icon>
+																		<fa-icon [icon]="['fas', 'wifi']"></fa-icon>
 																	</div>
 																</div>
 																<div class="col-6 pl-0 ellipsis wifi-good-font"
@@ -72,6 +72,7 @@
 																</div>
 															</li>
 															<li class="wifi-link"><a routerLink="wifi-security"
+																	id="sa-ov-link-seeAllNetwork"
 																	[queryParams]="{isShowMore:false}">{{'security.landing.seeAllNetwork' | translate}}</a>
 															</li>
 														</ul>
@@ -95,7 +96,7 @@
 				<div class="col-12 col-sm-12 col-md-6 col-lg-4 vtr-page-right-column">
 					<div class="vtr-page-shift-up">
 						<div class="container-fluid">
-							<div class="row">
+							<div class="row" id="sa-ov-modal-article">
 								<div class="col col-12">
 									<vtr-container-card [img]="cardContentPositionA.FeatureImage"
 										[caption]="cardContentPositionA.Description"

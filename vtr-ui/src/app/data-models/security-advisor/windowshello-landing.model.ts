@@ -28,6 +28,7 @@ export class WindowsHelloLandingViewModel {
 			path: 'security/windows-hello',
 			title: 'security.landing.fingerprint',
 			type: 'security',
+			id: 'sa-ov-link-windowsHello'
 		};
 		const subjectStatus = {
 			status: 2,

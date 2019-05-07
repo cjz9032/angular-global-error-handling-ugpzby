@@ -78,6 +78,11 @@
 							line-height: calc(#{$menu_height} - 0.5rem);
 						}
 
+						@media #{$mediaquery_9} {
+							padding: 0 0.5rem;
+						}
+
+
 						&.active {
 							border-bottom: $main solid 0.5rem;
 
@@ -92,6 +97,7 @@
 							line-height: 4.6rem;
 							border-bottom: none;
 							background-color: $main_darkest;
+
 
 							.user-initials {
 								display: inline-block;
@@ -190,6 +196,15 @@
 								transform: rotate(135deg);
 								right: 2rem;
 								top: 4rem;
+							}
+							&.user{
+								padding-right: 5.2rem;
+								&::after{
+									right: 3rem;
+								}
+								&::before{
+									right: 4rem;
+								}
 							}
 						}
 					}
