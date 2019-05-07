@@ -17,6 +17,7 @@ export class PageSecurityInternetComponent implements OnInit {
 	statusItem: any;
 	cardContentPositionA: any = {};
 	securityAdvisor: SecurityAdvisor;
+	backId = 'sa-vpn-btn-back';
 
 	constructor(
 		public mockService: MockService,

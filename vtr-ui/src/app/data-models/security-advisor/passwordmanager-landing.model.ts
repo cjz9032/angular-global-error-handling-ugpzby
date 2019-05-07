@@ -17,6 +17,7 @@ export class PasswordManagerLandingViewModel {
 			path: 'security/password-protection',
 			title: 'common.securityAdvisor.pswdMgr',
 			type: 'security',
+			id: 'sa-ov-link-passwordManager'
 		};
 		const subjectStatus = {
 			status: 2,

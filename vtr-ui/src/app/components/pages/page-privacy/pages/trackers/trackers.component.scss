@@ -1,0 +1,38 @@
+@import "../../styles/common-blocks";
+
+.trackers {
+	background-color: #FFFFFF;
+	padding: 3.5rem 4rem;
+
+	&__text {
+		@extend %text-common
+	}
+}
+
+.stay-private {
+	padding: 3.5rem 4rem;
+	background-color: #FFFFFF;
+	border-radius: 7px;
+	box-shadow: 0 0 15px 0 rgba(0,0,0,0.15);
+
+	&__title {
+		@extend %subtitle;
+	}
+
+	&__text {
+		margin-top: 2rem;
+		@extend %text-common;
+	}
+
+	&__video {
+		margin-top: 4rem;
+	}
+
+	&__steps-wrapper {
+		margin-top: 4rem;
+	}
+
+	&__banner {
+		margin-top: 4rem;
+	}
+}

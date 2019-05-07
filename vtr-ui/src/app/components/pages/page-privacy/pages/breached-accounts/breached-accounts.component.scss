@@ -1,0 +1,27 @@
+@import "../../styles/common-blocks";
+
+.email-scanner {
+  @extend %common-block-wrapper;
+  padding: 3.5rem 4rem 4rem 4rem;
+}
+
+.breaches-wrapper {
+  @extend %common-block-wrapper;
+  padding: 3.5rem 4rem 4rem 4rem;
+}
+
+.breached-accounts {
+  &__text {
+    @extend %text-common;
+    margin: 0 0 2rem 0;
+  }
+  &__acc-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1rem -1.5rem;
+  }
+  &__account {
+    width: 100%;
+    margin: 1rem 1.5rem;
+  }
+}

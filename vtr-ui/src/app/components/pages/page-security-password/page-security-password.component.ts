@@ -19,7 +19,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 	statusItem: any;
 	cardContentPositionA: any = {};
 	securityAdvisor: SecurityAdvisor;
-
+	backId = 'sa-pm-btn-back';
 	constructor(
 		public mockService: MockService,
 		private commonService: CommonService,
@@ -92,6 +92,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 
 	openDashLaneArticle(): void {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
+			backdrop: 'static',
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal'

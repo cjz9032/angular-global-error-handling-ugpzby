@@ -126,6 +126,7 @@ import { ArticleItemComponent } from './components/article-item/article-item.com
 import { SanitizeUrlPipe } from './pipe/sanitise-url.pipe';
 import { UniqueIdPipe } from './pipe/unique-id.pipe';
 import { environment } from '../environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
 import { MetricService } from './services/metric/metric.service';
 import { WidgetMcafeeComponent } from './components/widgets/widget-mcafee/widget-mcafee.component';
@@ -160,7 +161,6 @@ import { MinutesToHourminPipe } from './pipe/minutes-to-hourmin.pipe';
 import { SubTransformPipe } from './pipe/security-antivirus/sub-transform.pipe';
 import { DateClassPipe } from './pipe/security-antivirus/date-class.pipe';
 import { ModalAboutComponent } from './components/modal/modal-about/modal-about.component';
-import { WifiClassPipe } from './pipe/security-landing/wifi-class.pipe';
 import { JoinclassPipe } from './pipe/security-wifi/join-class.pipe';
 import { SuccessClassPipe } from './pipe/security-wifi/success-class.pipe';
 import { UiCircleRadioComponent } from './components/ui/ui-circle-radio/ui-circle-radio.component';
@@ -176,6 +176,7 @@ import { WidgetSystemToolsComponent } from './components/widgets/widget-system-t
 import { WidgetSystemMonitorComponent } from './components/widgets/widget-system-monitor/widget-system-monitor.component';
 import { WidgetQuicksettingsListComponent } from './components/widgets/widget-quicksettings-list/widget-quicksettings-list.component';
 import { WidgetLightingComponent } from './components/widgets/widget-lighting/widget-lighting.component';
+import { ModalGamingLegionedgeComponent } from './components/modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 
 
 library.add(fas);
@@ -298,7 +299,6 @@ library.add(fal);
 		SubTransformPipe,
 		DateClassPipe,
 		ModalAboutComponent,
-		WifiClassPipe,
 		JoinclassPipe,
 		SuccessClassPipe,
 		UiCircleRadioComponent,
@@ -312,7 +312,8 @@ library.add(fal);
 		WidgetSystemToolsComponent,
 		WidgetSystemMonitorComponent,
 		WidgetQuicksettingsListComponent,
-		WidgetLightingComponent
+		WidgetLightingComponent,
+		ModalGamingLegionedgeComponent
 
 	],
 	imports: [
@@ -327,7 +328,8 @@ library.add(fal);
 		Ng5SliderModule,
 		ReactiveFormsModule,
 		// ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-		TranslationModule
+		TranslationModule,
+		BrowserAnimationsModule
 	],
 	providers: [
 		CookieService,
@@ -358,7 +360,8 @@ library.add(fal);
 		ModalUpdateChangeLogComponent,
 		ModalAboutComponent,
 		ModalSupportWechatComponent,
-		ModalLicenseComponent
+		ModalLicenseComponent,
+		ModalGamingLegionedgeComponent
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA

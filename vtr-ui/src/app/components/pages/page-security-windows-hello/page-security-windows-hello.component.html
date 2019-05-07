@@ -3,7 +3,8 @@
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="'&lt; '"
 				[back]="'common.ui.back' | translate"
-				[title]="'security.windowsHello.title' | translate"></vtr-header-main>
+				[title]="'security.windowsHello.title' | translate"
+				[backId]="backId"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -56,7 +57,7 @@
 											</div>
 											<div class=" pull right">
 												<div class="col-12">
-													<vtr-ui-button type="button"
+													<vtr-ui-button id="sa-wh-btn-setupwindowshello"
 														metricsItem="setUpWindowsHello"
 														(click)="setUpWindowsHello()"
 														[label]="'security.windowsHello.setUp' | translate">
@@ -107,7 +108,8 @@
 															<div class="text-regular">
 																{{'security.windowsHello.visitAndRegister' | translate}}
 																<span *vtrTranslate="'security.windowsHello.visitInSettings' | translate">
-																	<a vtrMetrics
+																	<a id="sa-wh-lnk-visitwindowshello"
+																		vtrMetrics
 																		metricsEvent="itemClick"
 																		metricsItem="setUpWindowsHello"
 																		href="javascript:void(0)"
@@ -170,7 +172,8 @@
 														<div class="col">
 															<div class="text-regular">
 																{{'security.windowsHello.startUsingWindowsHello' | translate}}
-																<a target="_blank"
+																<a id="sa-wh-lnk-visitmicrosoft"
+																	target="_blank"
 																	vtrMetrics
 																	metricsItem="visitMicrosoft"
 																	metricsEvent="itemClick"
@@ -193,7 +196,8 @@
 											{{'security.windowsHello.poweredByWindowsHello' | translate}}</div>
 										<p class="text-regular"
 											*vtrTranslate="'security.windowsHello.privacyPolicy' | translate">
-											<a vtrMetrics
+											<a id="sa-wh-lnk-privacypolicy"
+												vtrMetrics
 												metricsEvent="itemClick"
 												metricsItem="privacyPolicy"
 												href="https://support.microsoft.com/en-us/help/4468253/windows-hello-and-privacy-microsoft-privacy"
@@ -238,7 +242,8 @@
 													<div class="text-regular">
 														{{'security.windowsHello.visitAndRegister' | translate}}
 														<span *vtrTranslate="'security.windowsHello.visitInSettings' | translate">
-															<a vtrMetrics
+															<a id="sa-wh-lnk-visitwindowshello"
+																vtrMetrics
 																metricsEvent="itemClick"
 																metricsItem="setUpWindowsHello"
 																href="javascript:void(0)"
@@ -256,7 +261,8 @@
 													<div class="col">
 														<div class="text-regular">
 															{{'security.windowsHello.startUsingWindowsHello' | translate}}
-															<a target="_blank"
+															<a id="sa-wh-lnk-visitmicrosoft"
+																target="_blank"
 																vtrMetrics
 																metricsItem="visitMicrosoft"
 																metricsEvent="itemClick"
@@ -285,7 +291,8 @@
 								<!--End of Security Card Advisor-->
 								<div class="row">
 									<div class="col col-12">
-										<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+										<vtr-container-card id="sa-wh-lnk-card-content"
+											[img]="cardContentPositionA.FeatureImage"
 											[caption]="cardContentPositionA.Description"
 											[title]="cardContentPositionA.Title"
 											[logoText]="cardContentPositionA.BrandName"

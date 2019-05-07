@@ -32,6 +32,19 @@
 					"macroKey": "Marco Key",
 					"hardwareScan": "Hardware Scan",
 					"systemUpdate": "System Update"
+				},
+				"legionEdgeModal": {
+					"line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
+					"line2": "Feature Management Overview <br> Some features not available on all devices",
+					"line3": "CPU Overclocking <br> Boost the maximum speed for your processor",
+					"line4": "RAM Overclocking <br> Boost the maximum speed for your memory",
+					"line5": "Network Boost <br> Prioritize network traffic for the game you're playing",
+					"line6": "Dolby <br> Tune your audio specifically for gaming with Dolby technology",
+					"line7": "Hybrid Mode <br> Disable advanced GPU settings when not gaming to boost battery performance",
+					"line8": "Rapid Charge <br> Game on the go longer with quicker battery charging",
+					"line9": "Touchpad Lock <br> Prevent mistaken inputs by disabling the touchpad while gaming",
+					"line10": "Auto Close <br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
+					"line11": "Thermal Mode <br> Set your preferred device profile for fan speed and cooling control"
 				}
 			}
 		}
@@ -55,7 +68,7 @@
 				"sub6": "Windows你好"
 			},
 			"support": "支持服务",
-			"privacy": "Privacy"
+			"privacy": "隐私"
 		},
 		"securityAdvisor": {
 			"title": "安全顾问",
@@ -287,7 +300,7 @@
 					"subtitle1": "电池和安静",
 					"description1": "此功能动态调节散热设置以满足您的需求。此功能开启时，在手持或空闲状态下可调节设置使设备保持较低温度或较低噪声。而设备放置在稳定平面上时，此功能可优化性能。此功能关闭时，您可以手动设置散热优先级。",
 					"description2": "智能散热可调节风扇速度、最高表面温度和性能。此功能具有以下模式，且现在支持通过 Windows 性能电源滑块访问。",
-					"description3": "Battery＆Quiet lorem ipsum是一个长期存在的事实，当阅读其布局时，读者将被页面的可读内容分散注意力。",
+					"description3": "Battery＆Quiet 是一个长期存在的事实，当阅读其布局时，读者将被页面的可读内容分散注意力。",
 					"readMore": "阅读更多.",
 					"gotoWindows": {
 						"title": "转到 Windows 设置",
