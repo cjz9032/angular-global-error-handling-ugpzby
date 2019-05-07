@@ -514,6 +514,7 @@
 			"successInstall": "已成功安装",
 			"failedInstall": "无法安装",
 			"at": "在",
+			"readMore": "Read more",
 			"popup": {
 				"reboot": "重启",
 				"shutdown": "关掉",
@@ -859,7 +860,15 @@
 		"logout": "注销",
 		"user": "用户",
 		"welcomeText": "元气满满的一天 {{firstName}}！",
-		"helloUser": "{{firstName}}，你好！"
+		"welcomeTextWithouUserName": "元气满满的一天！",
+		"helloUser": "{{firstName}}，你好！",
+		"ssoErrorTitle": "错误",
+		"ssoErrorCommon": "糟糕，出现了错误。请重试。",
+		"ssoErrorCommonEx": "意外错误。请重试",
+		"ssoErrorTimeStampIncorrect": "糟糕，似乎您的电脑时间不正确。请更正您的电脑时间，然后重试。",
+		"ssoErrorNetworkDisconnected": "糟糕！连接失败了！请检查您的因特网连接并重试。",
+		"ssoErrorCommunicating": "网络错误。请检查连接，然后重试。",
+		"ssoErrorAccountPluginNotExist": "缺少插件。如果您已连接因特网，我们将在后台自动恢复插件。这可能需要花费一些时间，请稍后重试。"
 	},
 	"faq": {
 		"footer": {

@@ -1,25 +1,73 @@
-import { Component, OnInit, OnDestroy, DoCheck, HostListener, SimpleChanges, SimpleChange } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs/internal/Subscription';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {
+	Component,
+	OnInit,
+	OnDestroy,
+	DoCheck,
+	HostListener,
+	SimpleChanges,
+	SimpleChange
+} from '@angular/core';
+import {
+	Router,
+	ActivatedRoute
+} from '@angular/router';
+import {
+	Subscription
+} from 'rxjs/internal/Subscription';
+import {
+	NgbModal
+} from '@ng-bootstrap/ng-bootstrap';
 
-import { ConfigService } from '../../services/config/config.service';
-import { DeviceService } from '../../services/device/device.service';
-import { UserService } from '../../services/user/user.service';
-import { ModalLenovoIdComponent } from '../modal/modal-lenovo-id/modal-lenovo-id.component';
-import { CommonService } from 'src/app/services/common/common.service';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { TranslationService } from 'src/app/services/translation/translation.service';
+import {
+	ConfigService
+} from '../../services/config/config.service';
+import {
+	DeviceService
+} from '../../services/device/device.service';
+import {
+	UserService
+} from '../../services/user/user.service';
+import {
+	ModalLenovoIdComponent
+} from '../modal/modal-lenovo-id/modal-lenovo-id.component';
+import {
+	CommonService
+} from 'src/app/services/common/common.service';
+import {
+	AppNotification
+} from 'src/app/data-models/common/app-notification.model';
+import {
+	LocalStorageKey
+} from 'src/app/enums/local-storage-key.enum';
+import {
+	TranslationService
+} from 'src/app/services/translation/translation.service';
 import Translation from 'src/app/data-models/translation/translation';
-import { TranslationSection } from 'src/app/enums/translation-section.enum';
-import { environment } from '../../../environments/environment';
-import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
-import { WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
-import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
-import { TranslateService } from '@ngx-translate/core';
-import { RegionService } from 'src/app/services/region/region.service';
-import {SupportService} from "../../services/support/support.service";
+import {
+	TranslationSection
+} from 'src/app/enums/translation-section.enum';
+import {
+	environment
+} from '../../../environments/environment';
+import {
+	VantageShellService
+} from '../../services/vantage-shell/vantage-shell.service';
+import {
+	WindowsHello,
+	EventTypes
+} from '@lenovo/tan-client-bridge';
+import {
+	LenovoIdKey
+} from 'src/app/enums/lenovo-id-key.enum';
+import {
+	TranslateService
+} from '@ngx-translate/core';
+import {
+	RegionService
+} from 'src/app/services/region/region.service';
+import {
+	SupportService
+} from '../../services/support/support.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -37,9 +85,9 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	constantDeviceSettings = 'device-settings';
 	region: string;
 	public isDashboard = false;
-	public countryCode:string;
-	public locale:string;
-	public items:any;
+	public countryCode: string;
+	public locale: string;
+	public items: any;
 
 	/*items: Array<any> = [
 		{
@@ -194,44 +242,46 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 		public translationService: TranslationService,
 		private modalService: NgbModal,
 		public deviceService: DeviceService,
-		vantageShellService: VantageShellService,
+		public vantageShellService: VantageShellService,
 		private translate: TranslateService,
 		private regionService: RegionService
-		) {
+	) {
 		this.showVpn();
-		this.getMenuItems().then((items)=>{
+		this.getMenuItems().then((items) => {
 			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
-		if (cacheShowWindowsHello) {
+			if (cacheShowWindowsHello) {
 
-			const securityItem =items.find(item => item.id === 'security');
-			securityItem.subitems.push({
-				id: 'windows-hello',
-				label: 'common.menu.security.sub6',
-				path: 'windows-hello',
-				icon: '',
-				metricsEvent: 'itemClick',
-				metricsParent: 'navbar',
-				metricsItem: 'link.windowshello',
-				routerLinkActiveOptions: { exact: true },
-				subitems: []
-			});
-		}
-		const securityAdvisor = vantageShellService.getSecurityAdvisor();
-		if (securityAdvisor) {
-			const windowsHello: WindowsHello = securityAdvisor.windowsHello;
-			if (windowsHello.facialIdStatus || windowsHello.fingerPrintStatus) {
-				this.showWindowsHello(windowsHello);
+				const securityItem = items.find(item => item.id === 'security');
+				securityItem.subitems.push({
+					id: 'windows-hello',
+					label: 'common.menu.security.sub6',
+					path: 'windows-hello',
+					icon: '',
+					metricsEvent: 'itemClick',
+					metricsParent: 'navbar',
+					metricsItem: 'link.windowshello',
+					routerLinkActiveOptions: {
+						exact: true
+					},
+					subitems: []
+				});
 			}
-			windowsHello.on(EventTypes.helloFacialIdStatusEvent, () => {
-				this.showWindowsHello(windowsHello);
-			}).on(EventTypes.helloFingerPrintStatusEvent, () => {
-				this.showWindowsHello(windowsHello);
-			});
-		}
-		this.commonMenuSubscription = this.translationService.subscription
-			.subscribe((translation: Translation) => {
-				this.onLanguageChange(translation);
-			});
+			const securityAdvisor = vantageShellService.getSecurityAdvisor();
+			if (securityAdvisor) {
+				const windowsHello: WindowsHello = securityAdvisor.windowsHello;
+				if (windowsHello.facialIdStatus || windowsHello.fingerPrintStatus) {
+					this.showWindowsHello(windowsHello);
+				}
+				windowsHello.on(EventTypes.helloFacialIdStatusEvent, () => {
+					this.showWindowsHello(windowsHello);
+				}).on(EventTypes.helloFingerPrintStatusEvent, () => {
+					this.showWindowsHello(windowsHello);
+				});
+			}
+			this.commonMenuSubscription = this.translationService.subscription
+				.subscribe((translation: Translation) => {
+					this.onLanguageChange(translation);
+				});
 		});
 
 	}
@@ -242,7 +292,6 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	ngOnInit() {
-
 		const self = this;
 		this.translate.stream('lenovoId.user').subscribe((value) => {
 			if (!self.userService.auth) {
@@ -254,6 +303,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 		});
 		this.isDashboard = true;
 	}
+
 	ngDoCheck() {
 		if (this.router.url !== null) {
 			if (this.router.url.indexOf('dashboard', 0) > 0) {
@@ -263,15 +313,16 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			}
 		}
 	}
+
 	ngOnDestroy() {
 		if (this.commonMenuSubscription) {
 			this.commonMenuSubscription.unsubscribe();
 		}
 	}
 
-/*	getItems() {
-		return this.configService.getMenuItems(this.deviceService.isGaming);
-	}	*/
+	/*	getItems() {
+			return this.configService.getMenuItems(this.deviceService.isGaming);
+		}	*/
 
 	isParentActive(item) {
 		// console.log('IS PARENT ACTIVE', item.id, item.path);
@@ -327,20 +378,19 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	onLanguageChange(translation: Translation) {
-		this.getMenuItems().then((items)=>{
+		this.getMenuItems().then((items) => {
 			if (translation && translation.type === TranslationSection.CommonMenu && !this.deviceService.isGaming) {
 				items[0].label = translation.payload.dashboard;
 			}
-		})
-
+		});
 	}
 
 	showWindowsHello(windowsHello: WindowsHello) {
-		this.getMenuItems().then((items)=>{
+		this.getMenuItems().then((items) => {
 			const securityItem = items.find(item => item.id === 'security');
-			if (!this.commonService.isRS5OrLater()
-				|| (typeof windowsHello.facialIdStatus !== 'string'
-					&& typeof windowsHello.fingerPrintStatus !== 'string')) {
+			if (!this.commonService.isRS5OrLater() ||
+				(typeof windowsHello.facialIdStatus !== 'string' &&
+					typeof windowsHello.fingerPrintStatus !== 'string')) {
 				securityItem.subitems = securityItem.subitems.filter(subitem => subitem.id !== 'windows-hello');
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
 			} else {
@@ -354,55 +404,66 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 						metricsEvent: 'itemClick',
 						metricsParent: 'navbar',
 						metricsItem: 'link.windowshello',
-						routerLinkActiveOptions: { exact: true },
+						routerLinkActiveOptions: {
+							exact: true
+						},
 						subitems: []
 					});
 				}
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, true);
 			}
-		})
+		});
 
 	}
-	showPrivacy(){
+	showPrivacy() {
 
 
 	}
 	showVpn() {
 		this.regionService.getRegion().subscribe({
-			next: x => { this.region = x; },
-			error: err => { console.error(err); },
-			complete: () => { console.log('Done'); }
+			next: x => {
+				this.region = x;
+			},
+			error: err => {
+				this.region = 'US';
+			},
+			complete: () => {
+				console.log('Done');
+			}
 		});
-		 this.getMenuItems().then((items)=>{
-			 const securityItemForVpn = items.find(item => item.id === 'security');
-			 if(securityItemForVpn!==undefined) {
-				 const vpnItem = securityItemForVpn.subitems.find(item => item.id === 'internet-protection');
-				 if (this.region !== 'CN') {
-					 if (!vpnItem) {
-						 securityItemForVpn.subitems.splice(4, 0, {
-							 id: 'internet-protection',
-							 label: 'common.menu.security.sub5',
-							 path: 'internet-protection',
-							 metricsEvent: 'itemClick',
-							 metricsParent: 'navbar',
-							 metricsItem: 'link.internetprotection',
-							 routerLinkActiveOptions: { exact: true },
-							 icon: '',
-							 subitems: []
-						 });
-					 }
-				 } else {
-					 if (vpnItem) {
-						 securityItemForVpn.subitems = securityItemForVpn.subitems.filter(item => item.id !== 'internet-protection');
-					 }
-				 }
-			 }
-		 })
+		this.getMenuItems().then((items) => {
+			const securityItemForVpn = items.find(item => item.id === 'security');
+			if (securityItemForVpn !== undefined) {
+				const vpnItem = securityItemForVpn.subitems.find(item => item.id === 'internet-protection');
+				if (this.region !== 'CN') {
+					if (!vpnItem) {
+						securityItemForVpn.subitems.splice(4, 0, {
+							id: 'internet-protection',
+							label: 'common.menu.security.sub5',
+							path: 'internet-protection',
+							metricsEvent: 'itemClick',
+							metricsParent: 'navbar',
+							metricsItem: 'link.internetprotection',
+							routerLinkActiveOptions: {
+								exact: true
+							},
+							icon: '',
+							subitems: []
+						});
+					}
+				} else {
+					if (vpnItem) {
+						securityItemForVpn.subitems = securityItemForVpn.subitems.filter(item => item.id !== 'internet-protection');
+					}
+				}
+			}
+		});
 	}
-	getMenuItems():Promise<any>{
-		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items)=>{
-            this.items=items;
-            return this.items;
-		})
+
+	getMenuItems(): Promise <any> {
+		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
+			this.items = items;
+			return this.items;
+		});
 	}
 }
