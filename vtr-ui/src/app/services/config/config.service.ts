@@ -368,13 +368,17 @@ export class ConfigService {
 
 	getMenuItemsAsync(isGaming) {
 		return this.deviceService.getMachineInfo().then((machineInfo) => {
-			console.log('*****************************************', machineInfo.country);
-			if (isGaming) {
-				return this.menuItemsGaming;
-			} else if (this.countryCodes.indexOf(machineInfo.country.toLowerCase()) !== -1) {
+			try {
+				console.log('*****************************************', machineInfo.country);
+				if (isGaming) {
+					return this.menuItemsGaming;
+				} else if (this.countryCodes.indexOf(machineInfo.country.toLowerCase()) !== -1) {
+					return this.menuItemsPrivacy;
+				} else {
+					return this.menuItems;
+				}
+			} catch (error) {
 				return this.menuItemsPrivacy;
-			} else {
-				return this.menuItems;
 			}
 		});
 	}
