@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class WifiSecurityWidgetItem extends WidgetItem {
 	constructor(wifiSecurity: WifiSecurity, commonService: CommonService, private translateService: TranslateService) {
 		super({
-			id: 'wifi-security',
+			id: 'sa-widget-lnk-ws',
 			path: 'security/wifi-security',
 			type: 'security'
 		}, translateService);

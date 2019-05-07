@@ -32,6 +32,19 @@
 					"macroKey": "Marco Key",
 					"hardwareScan": "Hardware Scan",
 					"systemUpdate": "System Update"
+				},
+				"legionEdgeModal": {
+					"line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
+					"line2": "Feature Management Overview <br> Some features not available on all devices",
+					"line3": "CPU Overclocking <br> Boost the maximum speed for your processor",
+					"line4": "RAM Overclocking <br> Boost the maximum speed for your memory",
+					"line5": "Network Boost <br> Prioritize network traffic for the game you're playing",
+					"line6": "Dolby <br> Tune your audio specifically for gaming with Dolby technology",
+					"line7": "Hybrid Mode <br> Disable advanced GPU settings when not gaming to boost battery performance",
+					"line8": "Rapid Charge <br> Game on the go longer with quicker battery charging",
+					"line9": "Touchpad Lock <br> Prevent mistaken inputs by disabling the touchpad while gaming",
+					"line10": "Auto Close <br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
+					"line11": "Thermal Mode <br> Set your preferred device profile for fan speed and cooling control"
 				}
 			}
 		}
@@ -71,6 +84,7 @@
 			"installed": "INSTALLED",
 			"notInstalled": "NOT INSTALLED",
 			"loading": "Loading",
+			"installing": "INSTALLING",
 			"notFound": "NOT FOUND",
 			"registered": "REGISTERED",
 			"notRegistered": "NOT REGISTERED"
@@ -93,7 +107,6 @@
 			"expand": "Expand"
 		}
 	},
-
 	"privacy": {
 		"headerMain": {
 			"title": "Privacy"
@@ -501,6 +514,7 @@
 			"successInstall": "Successfully installed on",
 			"failedInstall": "Failed to installed on",
 			"at": "at",
+			"readMore": "Read more",
 			"popup": {
 				"reboot": "Reboot",
 				"shutdown": "Shut Down",
@@ -588,19 +602,22 @@
 			"description": "CONTACT US TO HELP YOU OUT.",
 			"listLenovoCommunity": "Lenovo Community",
 			"listContactCustomerService": "Contact customer service",
-			"listContactUsOnWechat": "Contact us on WeChat"
+			"listContactUsOnWechat": "Contact us on WeChat",
+			"weChatDescription": "Shoot us a question on WeChat and we’ll be sure to respond quickly"
 		},
 		"quicklinks": {
 			"title": "Quicklinks",
 			"description": "CONTACT US TO HELP YOU OUT.",
 			"listETicket": "Get support with E-ticket",
-			"listServiceProvider": "Find a service provider"
+			"listServiceProvider": "Find a service provider",
+			"listAboutLenovoVantage": "About Lenovo Vantage"
 		},
 		"about": {
 			"version": "Version",
 			"licenseAgreement": "License agreement",
 			"otherSoftwareLicenses": "Other software licenses",
 			"ourWebsite": "Our website",
+			"aboutYourDevice": "About your device",
 			"copyright": "© 2002-2019 Lenovo all rights reserved"
 		}
 	},
@@ -615,7 +632,7 @@
 			"pwdHealth": "Password Health",
 			"vpnSecurity": "VPN Security",
 			"vpnVirtual": "Virtual Private Network",
-			"wifiConnected": "WiFi & Connected Home Security",
+			"wifiConnected": "WiFi Security",
 			"connectedHomeSecurity": "Connected Home Security",
 			"fingerprint": "Fingerprint Reader",
 			"seeAllNetwork": "See all joined networks",
@@ -682,7 +699,7 @@
 		},
 		"wifisecurity": {
 			"header": {
-				"title": "WiFi and Connected Home Security",
+				"title": "WiFi Security",
 				"back": "BACK"
 			},
 			"container": {
@@ -762,29 +779,22 @@
 			"statusTitle": "SURFEASY VPN",
 			"title": "VPN Security",
 			"header": "SurfEasy Virtual Private Network",
-			"whatIsSufEasy": "SurfEasy is a VPN, or Virtual Private Network provider that helps protect you while you are surfing the internet. Without a VPN, your PC may be more vulnerable to attackers and identity thieves. A VPN runs silently in the background and provides additional safety and privacy measures while you use the internet.",
-			"whatCanSufEasy1": "A Virtual Private Network provider helps you protect while you are surfing the internet. Without a VPN, your PC may be more vulnerable to attackers and identity thieves. A VPN runs silently in the background and provides safety and privacy measures.",
+			"whatIsSufEasy": "SurfEasy VPN encrypts the information you send and receive so you can safely and privately use your PC, Mac®, smartphone or tablet on any Internet connection without worry.",
+			"helpKeep": "Help keep your online activity secure and private with SurfEasy VPN.",
 			"getSufEasy": "Get SurfEasy",
 			"openSufEasy": "Open SurfEasy",
-			"whySufEasy": "Why SurfEasy?",
-			"whySufEasyDescription": "SurfEasy makes it easy to stay safe while surfing the internet. It helps you remain anonymous, and adds an additional layer of security between you and anyone that wants your personal information.",
+			"whySufEasy": "Why use a Virtual Private Network (VPN)?",
+			"whySufEasyDescription": "Using Wi-Fi hotspots, like those at coffee shops or airports, could expose your sensitive information to cybercriminals. SurfEasy VPN is a no-log VPN that encrypts your personal information and doesn’t track or store your online activity or location.",
 			"startUseSufEasy": "Start using SurfEasy Today",
-			"startUseSufEasy1": "Using a VPN adds Security. SurfEasy encrypts your data, adding anonymity and security.",
-			"startUseSufEasy2": "Once registered SurfEasy runs silently in the background so everything runs the same but better.",
-			"startUseSufEasy3": "Start using SurfEasy to protect yourself while browsing the internet. Enjoy the no-log VPN that works on every device.",
-			"startUseSufEasy4": "As a surfEasy user enjoy 250 MB of free data every 30 days! Unlock additional data by following the steps on the \"Rewards\" tab of the SurfEasy app.",
+			"startUseSufEasy1": "Help ensure the data you send and receive is secure and private with bank-grade encryption.",
+			"startUseSufEasy2": "Help prevent companies from tracking your online activities or location.",
+			"startUseSufEasy3": "Free and premium offerings provide multiple options to fit your needs and budget.",
 			"howToUseSufEasy": "How to use SurfEasy VPN",
-			"whatCanSufEasy2": "A VPN provider helps to protect you while you are surfing the internet. Without a VPN, our PC may be more vulnerable to attackers and identity thieves. A VPN runs silently in the background and provides safety and privacy measures.",
-			"getStarted": "Get started:",
-			"getStarted1": "After installing SurfEasy, register and make an account.",
-			"getStarted2": "Log in with your secure credentials.",
-			"getStarted3": "Wait for confirmation to know you are connected, and then begin browsing securely.",
-			"howToGetData": "HOW TO GET FREE DATA:",
-			"howToGetData1": "Confirm email and earn +250 MB",
-			"howToGetData2": "Add second device and earn +250 Mb",
-			"howToGetData3": "Refer a friend and earn +500 MB",
-			"howToGetData4": "Like SurfEasy on Facebook and earn +100 MB",
-			"howToGetData5": "Follow SurfEasy on Twitter and earn +100 MB",
+			"whatCanSufEasy2": "Protect your privacy and turn on SurfEasy VPN when accessing a public Wi-Fi hotspot. With a Lenovo Starter VPN Plan, you can complete Reward activities to earn more data protection bandwidth. Upgrade to protect up to 5 smartphones, tablets and computers with unlimited bandwidth.",
+			"getStarted": "Turn on SurfEasy VPN:",
+			"getStarted1": "Click on the “Open SurfEasy” button above to launch SurfEasy VPN.",
+			"getStarted2": "Turn on the VPN and wait a brief moment for confirmation of a secure connection.",
+			"getStarted3": "Change your region or location if desired, and enjoy secure, private networking.",
 			"poweredBySurfEasy": "Powered By SurfEasy",
 			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
 		},
@@ -795,6 +805,8 @@
 			"whatIsPmNotInstalled": "The safest, easiest way to save strong, complex passwords and log in instantly on every site.",
 			"whatIsPmInstalled": "A safer digital life is waiting: Add passwords, enable Dark Web Monitoring and autofill personal and payment info.",
 			"startProtect": "Start protecting your online accounts the simple way.",
+			"discount": "Lenovo users enjoy an exclusive 6 months free of Dashlane Premium.",
+			"offer": "Offer available for new Dashlane users only!",
 			"getDashLane": "Get Dashlane",
 			"learnMoreAbout": "<tag>Learn more</tag> about making the most of Dashlane",
 			"openDashLane": "Open Dashlane",
@@ -843,7 +855,15 @@
 		"logout": "Logout",
 		"user": "User",
 		"welcomeText": "Looking energized today {{firstName}}!",
-		"helloUser": "Hello, {{firstName}}!"
+		"welcomeTextWithoutUserName": "Looking energized today!",
+		"helloUser": "Hello, {{firstName}}!",
+		"ssoErrorTitle": "Error",
+		"ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
+		"ssoErrorCommonEx": "Unexpected error. Please try again.",
+		"ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
+		"ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
+		"ssoErrorCommunicating": "Network error. Please check your connection and try again.",
+		"ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
 	},
 	"faq": {
 		"footer": {

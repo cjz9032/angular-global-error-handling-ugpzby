@@ -20,7 +20,6 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	isShowMore = true; // less info, more info
 	isShowMoreLink = true; // show more link
 	region: string;
-	// showAllNetworks: boolean = true;
 	isCollapsed = true;
 	isWifiSecurityEnabled = true;
 	showAllNetworks = true;
@@ -46,7 +45,10 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	ngOnInit() {
 		this.regionService.getRegion().subscribe({
 			next: x => { this.region = x; },
-			error: err => { console.error(err); },
+			error: err => {
+				console.error(err);
+				this.region = 'US';
+			},
 			complete: () => { console.log('Done'); }
 		});
 		if (this.wifiIsShowMore === 'false') {
@@ -128,6 +130,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 
 	openThreatLocator() {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalThreatLocatorComponent, {
+			backdrop: 'static',
 			size: 'lg',
 			centered: true,
 			windowClass: 'Threat-Locator-Modal'

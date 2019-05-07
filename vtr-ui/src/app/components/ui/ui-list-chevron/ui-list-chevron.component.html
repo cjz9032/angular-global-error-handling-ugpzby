@@ -1,8 +1,8 @@
 <div class="vtr-ui-list-chevron">
-	<ul class="chevron-list" [ngClass]="items | wifiClass">
+	<ul class="chevron-list" [ngClass]="{'wifiStatus-no-border-bottom': items[0].path === 'security/wifi-security' && items[0].status === 0}">
 		<li *ngFor="let item of items" [ngClass]="getItemStatusClass(item)">
 			<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->
-			<a routerLink="/{{item.path}}" [queryParams]="item.pathParams" vtrMetrics [metricsItem]="item.title" metricsEvent="itemClick"
+			<a id="{{item.id}}" routerLink="/{{item.path}}" [queryParams]="item.pathParams" vtrMetrics [metricsItem]="item.title" metricsEvent="itemClick"
 				[ngClass]="clickable?'':'disabled'"
 				*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false)">
 				<div class="container-fluid">
@@ -13,7 +13,7 @@
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
-							<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-primary progress-spinner" role="status"></div></div>
+							<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-secondary progress-spinner" role="status"></div></div>
 							<fa-icon *ngIf="item.circle === 'questionCircle'" class="question-icon" placement="auto" [icon]="['far', 'question-circle']" container="body"></fa-icon>
 							<div class="item-icon" *ngIf="item.icon">
 								<div class="icon-bkg">
@@ -46,7 +46,7 @@
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
-							<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-primary progress-spinner" role="status"></div></div>
+							<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-secondary progress-spinner" role="status"></div></div>
 							<fa-icon *ngIf="item.circle === 'questionCircle'" class="question-icon" placement="auto" [icon]="['far', 'question-circle']" container="body"></fa-icon>
 							<div class="item-icon" *ngIf="item.icon">
 								<div class="icon-bkg">
@@ -76,7 +76,7 @@
 									<fa-icon [icon]="['fas', getItemStatusIconClass(item)]"></fa-icon>
 								</div>
 							</div>
-							<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-primary progress-spinner" role="status"></div></div>
+							<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-secondary progress-spinner" role="status"></div></div>
 							<fa-icon *ngIf="item.circle === 'questionCircle'" class="question-icon" placement="auto" [icon]="['far', 'question-circle']" container="body"></fa-icon>
 							<div class="item-icon" *ngIf="item.icon">
 								<div class="icon-bkg">
@@ -110,7 +110,7 @@
 								</div>
 
 							</div>
-							<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-primary progress-spinner" role="status"></div></div>
+							<div *ngIf="item.status === 4" class="spinner-content"><div class="spinner-border text-secondary progress-spinner" role="status"></div></div>
 							<fa-icon *ngIf="item.circle === 'questionCircle'" class="question-icon" placement="auto" [icon]="['far', 'question-circle']" container="body"></fa-icon>
 							<div class="item-icon" *ngIf="item.icon">
 								<div class="icon-bkg">

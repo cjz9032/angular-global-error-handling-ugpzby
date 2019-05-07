@@ -12,10 +12,10 @@ export class HomeProtectionLandingViewModel {
 			type: 'security',
 			circle: 'questionCircle'
 		};
-		this.translate.get(hpStatus.title).subscribe((res) => {
+		this.translate.stream(hpStatus.title).subscribe((res) => {
 			hpStatus.title = res;
 		});
-		this.translate.get(hpStatus.detail).subscribe((res) => {
+		this.translate.stream(hpStatus.detail).subscribe((res) => {
 			hpStatus.detail = res;
 		});
 		this.statusList = new Array(hpStatus);

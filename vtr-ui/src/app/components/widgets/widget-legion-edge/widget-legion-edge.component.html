@@ -5,15 +5,16 @@
 				<img class="gaming-header-image"
 					src="./../../../../assets/images/gaming/legionEdge.png" />
 				<div class="help-box">
-					<i class="icomoon icon-question"></i>
+					<a (click)="openModal()"><i class="icomoon icon-question" ></i></a>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col legionEdge-list-items">
-			<vtr-widget-device-update-settings componentName="Legion Edge"
-				[items]="autoUpdateOptions">
+			<vtr-widget-device-update-settings
+				componentName="Legion Edge"
+				[items]="legionUpdate">
 			</vtr-widget-device-update-settings>
 		</div>
 	</div>

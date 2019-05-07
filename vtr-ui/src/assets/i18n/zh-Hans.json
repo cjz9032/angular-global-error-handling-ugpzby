@@ -32,6 +32,19 @@
 					"macroKey": "Marco Key",
 					"hardwareScan": "Hardware Scan",
 					"systemUpdate": "System Update"
+				},
+				"legionEdgeModal": {
+					"line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
+					"line2": "Feature Management Overview <br> Some features not available on all devices",
+					"line3": "CPU Overclocking <br> Boost the maximum speed for your processor",
+					"line4": "RAM Overclocking <br> Boost the maximum speed for your memory",
+					"line5": "Network Boost <br> Prioritize network traffic for the game you're playing",
+					"line6": "Dolby <br> Tune your audio specifically for gaming with Dolby technology",
+					"line7": "Hybrid Mode <br> Disable advanced GPU settings when not gaming to boost battery performance",
+					"line8": "Rapid Charge <br> Game on the go longer with quicker battery charging",
+					"line9": "Touchpad Lock <br> Prevent mistaken inputs by disabling the touchpad while gaming",
+					"line10": "Auto Close <br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
+					"line11": "Thermal Mode <br> Set your preferred device profile for fan speed and cooling control"
 				}
 			}
 		}
@@ -55,7 +68,7 @@
 				"sub6": "Windows你好"
 			},
 			"support": "支持服务",
-			"privacy": "Privacy"
+			"privacy": "隐私"
 		},
 		"securityAdvisor": {
 			"title": "安全顾问",
@@ -70,6 +83,7 @@
 			"partiallyProtected": "局部受保护",
 			"installed": "已安装",
 			"notInstalled": "未安装",
+			"installing": "正在安装",
 			"loading": "正在加载",
 			"notFound": "未发现",
 			"registered": "已注册",
@@ -93,7 +107,6 @@
 			"expand": "扩大"
 		}
 	},
-
 	"privacy": {
 		"headerMain": {
 			"title": "Privacy"
@@ -121,7 +134,6 @@
 		"sports": "体育",
 		"regionalNews": "地方新闻",
 		"technology": "技术"
-
 	},
 	"dashboard": {
 		"headerMain": {
@@ -288,7 +300,7 @@
 					"subtitle1": "电池和安静",
 					"description1": "此功能动态调节散热设置以满足您的需求。此功能开启时，在手持或空闲状态下可调节设置使设备保持较低温度或较低噪声。而设备放置在稳定平面上时，此功能可优化性能。此功能关闭时，您可以手动设置散热优先级。",
 					"description2": "智能散热可调节风扇速度、最高表面温度和性能。此功能具有以下模式，且现在支持通过 Windows 性能电源滑块访问。",
-					"description3": "Battery＆Quiet lorem ipsum是一个长期存在的事实，当阅读其布局时，读者将被页面的可读内容分散注意力。",
+					"description3": "Battery＆Quiet 是一个长期存在的事实，当阅读其布局时，读者将被页面的可读内容分散注意力。",
 					"readMore": "阅读更多.",
 					"gotoWindows": {
 						"title": "转到 Windows 设置",
@@ -336,7 +348,7 @@
 					"title": "其他设置",
 					"vantageToolbar": {
 						"title": "Lenovo Vantage 工具栏",
-						"tooltip": "将 Vantage 工具栏固定到 Windows 任务栏以轻松地获取更多电池详细信息及访问快速设置。"
+						"description": "将 Vantage 工具栏固定到 Windows 任务栏以轻松地获取更多电池详细信息及访问快速设置。"
 					}
 				},
 				"batterySettings": {
@@ -502,6 +514,7 @@
 			"successInstall": "已成功安装",
 			"failedInstall": "无法安装",
 			"at": "在",
+			"readMore": "Read more",
 			"popup": {
 				"reboot": "重启",
 				"shutdown": "关掉",
@@ -589,20 +602,23 @@
 			"description": "联系我们以获取帮助。",
 			"listLenovoCommunity": "联想社区",
 			"listContactCustomerService": "联系客户服务部门",
-			"listContactUsOnWechat": "通过微信联系我们"
+			"listContactUsOnWechat": "通过微信联系我们",
+			"weChatDescription": "Shoot us a question on WeChat and we’ll be sure to respond quickly"
 		},
 		"quicklinks": {
 			"title": "快速链接",
 			"description": "联系我们以获取帮助。",
 			"listETicket": "通过电子凭单获取支持",
-			"listServiceProvider": "查找服务供应商"
+			"listServiceProvider": "查找服务供应商",
+			"listAboutLenovoVantage": "About Lenovo Vantage"
 		},
 		"about": {
 			"version": "版本",
 			"licenseAgreement": "许可协议",
 			"otherSoftwareLicenses": "其他软件许可证",
 			"ourWebsite": "我们的网站",
-			"copyright": "© 2002-2019 联想版权所有。"
+			"aboutYourDevice": "About your device",
+			"copyright": "© 2002-2019 联想保留所有权利。"
 		}
 	},
 	"security": {
@@ -616,7 +632,7 @@
 			"pwdHealth": "密码安全状况",
 			"vpnSecurity": "VPN 安全性",
 			"vpnVirtual": "虚拟专用网络",
-			"wifiConnected": "WiFi 和互联家庭网络安全性",
+			"wifiConnected": "WiFi 安全",
 			"connectedHomeSecurity": "互联家庭网络安全性",
 			"fingerprint": "指纹读取器",
 			"seeAllNetwork": "请查看所有加入的网络",
@@ -683,7 +699,7 @@
 		},
 		"wifisecurity": {
 			"header": {
-				"title": "WiFi 和互联家庭网络安全性",
+				"title": "WiFi 安全",
 				"back": "返回"
 			},
 			"container": {
@@ -844,7 +860,15 @@
 		"logout": "注销",
 		"user": "用户",
 		"welcomeText": "元气满满的一天 {{firstName}}！",
-		"helloUser": "{{firstName}}，你好！"
+		"welcomeTextWithouUserName": "元气满满的一天！",
+		"helloUser": "{{firstName}}，你好！",
+		"ssoErrorTitle": "错误",
+		"ssoErrorCommon": "糟糕，出现了错误。请重试。",
+		"ssoErrorCommonEx": "意外错误。请重试",
+		"ssoErrorTimeStampIncorrect": "糟糕，似乎您的电脑时间不正确。请更正您的电脑时间，然后重试。",
+		"ssoErrorNetworkDisconnected": "糟糕！连接失败了！请检查您的因特网连接并重试。",
+		"ssoErrorCommunicating": "网络错误。请检查连接，然后重试。",
+		"ssoErrorAccountPluginNotExist": "缺少插件。如果您已连接因特网，我们将在后台自动恢复插件。这可能需要花费一些时间，请稍后重试。"
 	},
 	"faq": {
 		"footer": {

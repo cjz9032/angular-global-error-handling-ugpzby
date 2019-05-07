@@ -16,6 +16,7 @@ export class VpnLandingViewModel {
 			path: 'security/internet-protection',
 			title: 'security.landing.vpnVirtual',
 			type: 'security',
+			id: 'sa-ov-link-vpn'
 		};
 		const subjectStatus = {
 			status: 2,
@@ -23,17 +24,17 @@ export class VpnLandingViewModel {
 			type: 'security',
 		};
 		const setVpnStatus = (status: string) => {
-			vpnStatus.status = status === 'installed' ? 2 : 1;
+			vpnStatus.status = 5;
 			vpnStatus.detail = status === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, status);
 			subjectStatus.status = status === 'installed' ? 2 : 1;
-			translate.get(vpnStatus.detail).subscribe((res) => {
+			translate.stream(vpnStatus.detail).subscribe((res) => {
 				vpnStatus.detail = res;
 			});
-			translate.get(vpnStatus.title).subscribe((res) => {
+			translate.stream(vpnStatus.title).subscribe((res) => {
 				vpnStatus.title = res;
 			});
-			translate.get(subjectStatus.title).subscribe((res) => {
+			translate.stream(subjectStatus.title).subscribe((res) => {
 				subjectStatus.title = res;
 			});
 		};
