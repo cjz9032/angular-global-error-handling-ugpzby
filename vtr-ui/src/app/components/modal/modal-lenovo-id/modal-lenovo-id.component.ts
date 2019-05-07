@@ -1,10 +1,86 @@
-import { Component, OnInit, HostListener, AfterViewInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from '../../../services/user/user.service';
-import { Subscription, timer } from 'rxjs';
 import { SupportService } from '../../../services/support/support.service';
 import { DevService } from '../../../services/dev/dev.service';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { ModalCommonConfirmationComponent } from '../../modal/modal-common-confirmation/modal-common-confirmation.component';
+
+enum ssoErroType {
+
+	SSO_ErrorType_NoErr = 0,
+
+	//
+	// server error type
+	//
+
+	// Invalid request parameters, some parameters may be empty
+	SSO_ErrorType_InvalidParam,
+
+	// Sign error
+	SSO_ErrorType_SignInFailed,
+
+	// Invalid aid
+	SSO_ErrorType_InvalidAID,
+
+	SSO_ErrorType_InvalidDidByServer,
+
+	// Invalid UAD
+	SSO_ErrorType_InvalidUAD,
+
+	// Invalid UD
+	SSO_ErrorType_InvalidUD,
+
+	// Invalid UAD type
+	SSO_ErrorType_InvalidUADType,
+
+	// ClientTimeStamp is incorrect
+	SSO_ErrorType_TimeStampIncorrect,
+
+	// Server Error
+	SSO_ErrorType_ServerError = -99,
+
+	//
+	// sso client error type
+	//
+
+	// Unknown/Undefined client error
+	SSO_ErrorType_Unknown = 1000,
+
+	// Error communicating with server
+	SSO_ErrorType_Conmmunicating,
+
+	// Invalid response from server
+	SSO_ErrorTyoe_InvalidResponse,
+
+	// Invalid response logon URL returned from server
+	SSO_ErrorType_InvalidURL,
+
+	// Invalid dId returned from server
+	SSO_ErrorType_InvalidDID,
+
+	// Error accessing Windows credential manager
+	SSO_ErrorType_CannotAccessCredential,
+
+	// Problem obtaining MTM/serial number 
+	SSO_ErrorType_MTMORSerialNumber,
+
+	// custom
+	// the user was not signed in yet,
+	SSO_ErrorType_NotSignedIn = 2000,
+	 
+	SSO_ErrorType_UnknownCrashed = 2001,
+
+	SSO_ErrorType_DisConnect = 2002,
+
+	SSO_ErrorType_SSORequestTimeOut = 2003,
+
+	SSO_ErrorType_AccountPluginDoesnotExist = 2004,
+}
 
 @Component({
 	selector: 'vtr-modal-lenovo-id',
@@ -12,22 +88,23 @@ import { VantageShellService } from '../../../services/vantage-shell/vantage-she
 	styleUrls: ['./modal-lenovo-id.component.scss']
 })
 export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy {
-	public isOnline: boolean;
+	public isOnline = true;
 	private cacheCleared: boolean;
-	private detectConnectionStatusSub: Subscription;
-	private detectConnectionStatusTimer = timer(5000, 5000);
 	public isBroswerVisible = false; // show or hide web browser, hide or show progress spinner
 	private metrics: any;
+
 	constructor(
 		public activeModal: NgbActiveModal,
 		private userService: UserService,
 		private supportService: SupportService,
 		private devService: DevService,
 		private vantageShellService: VantageShellService,
+		private commonService: CommonService,
+		private modalService: NgbModal,
 	) {
-		this.isOnline = false;
 		this.cacheCleared = false;
 		this.isBroswerVisible = false;
+		this.isOnline = this.commonService.isOnline;
 
 		this.metrics = vantageShellService.getMetrics();
 		if (!this.metrics) {
@@ -59,7 +136,58 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		return promise;
 	}
 
+	// error is come from response status of LID contact request
+	popupErrorMessage(error: number) {
+		const modalRef = this.modalService
+		.open(ModalCommonConfirmationComponent, {
+			backdrop: 'static',
+			size: 'lg',
+			centered: true,
+			windowClass: 'common-confirmation-modal'
+		});
+
+		var header = 'lenovoId.ssoErrorTitle';
+		var description = 'lenovoId.ssoErrorCommonEx';
+
+		switch (error)
+		{
+			case ssoErroType.SSO_ErrorType_TimeStampIncorrect:
+				description = 'lenovoId.ssoErrorTimeStampIncorrect';
+				break;
+
+			case ssoErroType.SSO_ErrorType_DisConnect:
+				description = 'lenovoId.ssoErrorNetworkDisconnected';
+				break;
+
+			case ssoErroType.SSO_ErrorType_Conmmunicating:
+				description = 'lenovoId.ssoErrorCommunicating';
+				break;
+
+			case ssoErroType.SSO_ErrorType_AccountPluginDoesnotExist:
+				description = 'lenovoId.ssoErrorAccountPluginNotExist';
+				break;
+
+			default:
+				description = 'lenovoId.ssoErrorCommonEx';
+				break;
+		}
+		modalRef.componentInstance.CancelText = "";
+		modalRef.componentInstance.header = header;
+		modalRef.componentInstance.description = description;
+	}
+
 	ngOnInit() {
+
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+
+		if (!this.isOnline) {
+			this.popupErrorMessage(ssoErroType.SSO_ErrorType_DisConnect);
+			this.activeModal.dismiss();
+			return;
+		}
+
 		interface MsWebView {
 			src?: string;
 		}
@@ -72,6 +200,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			//webView.src = 'https://uss-test.lenovomm.cn/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null';
 			this.cacheCleared = true;
 		}
+
 	}
 
 	//
@@ -175,11 +304,11 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		const webView = document.querySelector('#lid-webview') as MsWebView;
 		// Get logon url and navigate to it
 		self.userService.getLoginUrl().then((result) => {
-			if (result.success && result.status === 0) {
+			if (result.success && result.status === ssoErroType.SSO_ErrorType_NoErr) {
 				var loginUrl = result.logonURL;
 				if (loginUrl.indexOf('sso.lenovo.com') === -1) {
-					self.activeModal.dismiss();
 					self.devService.writeLog('User has already logged in');
+					self.activeModal.dismiss();
 					return;
 				} else {
 					// Get current system local and set to url
@@ -192,6 +321,10 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 						self.devService.writeLog('getMachineInfo() failed ' + error + ', loading default login page ' + loginUrl);
 					});
 				}
+			} else {
+				this.popupErrorMessage(result.status);
+				self.devService.writeLog('getLoginUrl() failed ' + result.status);
+				self.activeModal.dismiss();
 			}
 		});
 
@@ -265,22 +398,17 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		});
 	}
 
-	@HostListener('window:offline', ['$event']) onOffline() {
-		this.isOnline = false;
-		// TODO: show error message when network get disconnected
-		// PopErrorMessage(SSOErrorType.SSO_ErrorType_DisConnect);
-		// "Oops! Connection failed! Please check your Internet connection and try again."
-		if (this.detectConnectionStatusSub) {
-			this.detectConnectionStatusSub.unsubscribe();
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
 		}
-	}
-
-	@HostListener('window:online', ['$event']) onOnline() {
-		this.isOnline = true;
-		this.detectConnectionStatusSub = this.detectConnectionStatusTimer.subscribe(() => {
-			this.detectConnectionStatusSub.unsubscribe();
-			window.location.reload();
-		});
 	}
 
 	onClose(): void {
@@ -303,9 +431,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	}
 
 	ngOnDestroy(): void {
-		if (this.detectConnectionStatusSub) {
-			this.detectConnectionStatusSub.unsubscribe();
-		}
+
 	}
 
 }

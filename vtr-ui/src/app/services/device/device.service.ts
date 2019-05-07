@@ -36,6 +36,7 @@ export class DeviceService {
 
 	private initIsArm() {
 		try {
+			//this.isArm = true;
 			if (this.isShellAvailable) {
 				this.getMachineInfo()
 					.then((machineInfo: any) => {
@@ -76,7 +77,7 @@ export class DeviceService {
 		if (this.sysInfo) {
 			return this.sysInfo.getMachineInfo();
 		}
-		return undefined;
+		return Promise.resolve(undefined);
 	}
 	getHardwareInfo(): Promise<any> {
 		if (this.sysInfo) {
