@@ -4,7 +4,7 @@
 	border: none;
 	// scroll-behavior: auto;
 	// overflow-y:scroll;
-
+	background: $shade_lightest;
 	.container{
 		width: 55em;
 		height: 55rem;
@@ -12,14 +12,67 @@
 		border: none;
 	}
 
-	.banner{
+	.banner {
 		border-top-left-radius:1rem;
 		border-top-right-radius:1rem;
 		background:url('./../../../../assets/images/welcome/header-1.jpg') no-repeat ;
-		background-size:100% 160px;
-		height:160px;
+		//background-size:100% 160px;
+		height: 275px;
 		width:100%;
+		background-position: center;
+		@media #{$mediaquery_9} {
+			height: 160px;
+		}
+		.title-alignment{
+			align-self: flex-end;
+			margin-bottom: 37px;
+			line-height: 6.0rem;
+			.title1{
+				color: $light;
+				font-size: 36pt;
+				@media #{$mediaquery_9} {
+					font-size: 35pt;
+				}
+				span {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	.content {
+		overflow-y:scroll;
+		font-size: 14pt;
+		color: $dark;
+		padding: 0px 37px 0px 57px;
+		
+		margin-top: 29px;
+		margin-right: 20px;
+		height: 184px;
+		font-family: 'Segoe UI Semilight';
+		@media #{$mediaquery_9} {
+			padding: 0px 0px 0px 17px;
+			height: 116px;
+		}
+		ul li {
+			margin-bottom: 18px;
+		}
+		div.row:first-child {
+			margin-bottom: 24px	
+		}
+	}
+	.next-btn {
+		margin-bottom: 31px;
+		margin-top: 33px;
+		@media #{$mediaquery_9} {
+			margin-top: 23px;
+		}
+	}
 
+	.vtr-progress-bar {
+		padding: 44px 7px 22px 7px;
+		@media #{$mediaquery_9} {
+			padding: 10px 7px 15px 7px;
+		}
 	}
 	.screen1{
 	  background-color:$shade_lighter;
@@ -29,30 +82,6 @@
 	}
 
 	/************** common *************/
-	.title {
-		color: $shade_blue;
-		font-size: 3.5rem;
-		font-weight: 300;
-		line-height: 4.2rem;
-		text-align: center;
-	}
-	.title1 {
-		color: $light;
-		font-size: 3rem;
-		font-family: 'Segoe UI';
-	}
-	.title2 {
-		color: $shade_darker;
-		font-size: 1.7rem;
-		font-family: 'Segoe UI';
-	}
-	.title3 {
-		color: $dark;
-		font-size: 2rem;
-		text-align: center;
-		font-family: 'Segoe UI';
-		font-weight: bold;
-	}
 	.title4 {
 		color: $light_grey;
 		font-size: 2rem;
@@ -250,18 +279,18 @@
 
 	#skill li {
 		background:$shade_dark;
-		background-image: -webkit-gradient(linear, left top, left bottom, from(#e1ddd9), to(#e9e5e2));
-		background-image: -webkit-linear-gradient(to top, #e1ddd9, #e9e5e2);
-		background-image: -moz-linear-gradient(to top, #e1ddd9, #e9e5e2);
-		background-image: -ms-linear-gradient(to top, #e1ddd9, #e9e5e2);
-		background-image: -o-linear-gradient(to top, #e1ddd9, #e9e5e2);
-		background-image: linear-gradient(to top, #e1ddd9, #e9e5e2);
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#191C28), to(#2F3447));
+		background-image: -webkit-linear-gradient(to right, #191C28, #2F3447);
+		background-image: -moz-linear-gradient(to right, #191C28, #2F3447);
+		background-image: -ms-linear-gradient(to right, #191C28, #2F3447);
+		background-image: -o-linear-gradient(to right, #191C28, #2F3447);
+		background-image: linear-gradient(to right, #191C28, #2F3447);
 		height:20px;
 		padding:0 5px;
 		border-radius:10px;
-		-moz-box-shadow: 0 1px 0px #bebbb9 inset, 0 1px 0 #fcfcfc;
-		-webkit-box-shadow: 0 1px 0px #bebbb9 inset, 0 1px 0 #fcfcfc;
-		box-shadow: 0 1px 0px #bebbb9 inset, 0 1px 0 #fcfcfc;
+		// -moz-box-shadow: 0 1px 0px #bebbb9 inset, 0 1px 0 #fcfcfc;
+		// -webkit-box-shadow: 0 1px 0px #bebbb9 inset, 0 1px 0 #fcfcfc;
+		// box-shadow: 0 1px 0px #bebbb9 inset, 0 1px 0 #fcfcfc;
 	}
 
 	#skill{
@@ -270,18 +299,18 @@
 
 
 	.bar1 {
-		height:10px;
+		height:6px;
 		position:absolute;
 		z-index:1000;
 		top:50%;
 		transform: translateY(-50%);
 		border-radius:10px;
-		-moz-box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #bebbb9;
-		-webkit-box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #bebbb9;
-		box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #bebbb9;
+		// -moz-box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #bebbb9;
+		// -webkit-box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #bebbb9;
+		// box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #bebbb9;
 	}
 	.bar2 {
-		height:3px;
+		height:2px;
 		width:98%;
 		position:absolute;
 		background:white;
@@ -289,9 +318,9 @@
 		top:50%;
 		transform: translateY(-50%);
 		border-radius:10px;
-		-moz-box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #fcfcfc;
-		-webkit-box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #fcfcfc;
-		box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #fcfcfc;
+		// -moz-box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #fcfcfc;
+		// -webkit-box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #fcfcfc;
+		// box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #fcfcfc;
 
 	}
 
@@ -301,23 +330,24 @@
 		width:90%;
 		-moz-animation:html-css 2s ease-out;
 		-webkit-animation:html-css 2s ease-out;
-		background-color: #00FFFF;
-		background-image: -webkit-gradient(linear, left top, left bottom, from(#E0FFFF), to(#00FFFF));
-		background-image: -webkit-linear-gradient(to top, #E0FFFF, #00FFFF);
-		background-image: -moz-linear-gradient(to top, #E0FFFF, #00FFFF);
-		background-image: -ms-linear-gradient(to top, #E0FFFF, #00FFFF);
-		background-image: -o-linear-gradient(to top, #E0FFFF, #00FFFF);
-		background-image: linear-gradient(to top, #E0FFFF, #00FFFF);
+		background-color: #35E6B9;
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#2ECC71), to(#35E6B9));
+		background-image: -webkit-linear-gradient(to right, #2ECC71, #35E6B9);
+		background-image: -moz-linear-gradient(to right, #2ECC71, #35E6B9);
+		background-image: -ms-linear-gradient(to right, #2ECC71, #35E6B9);
+		background-image: -o-linear-gradient(to right, #2ECC71, #35E6B9);
+		background-image: linear-gradient(to right, #2ECC71, #35E6B9);
 	}
 
+	#welcome-body-scroll::-webkit-scrollbar {
+		width: 5px;
+	}
 
-
+	#welcome-body-scroll::-webkit-scrollbar-thumb
+	{
+		background-color: $shade;
+	}
 
 	@-moz-keyframes html-css        { 0%  { width:0px;} 100%{ width:90%;}  }
-
-
 	@-webkit-keyframes html-css        { 0%  { width:0px;} 100%{ width:90%;}  }
-
-
-
 }
