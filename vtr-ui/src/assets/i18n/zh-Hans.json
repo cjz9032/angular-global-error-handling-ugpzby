@@ -514,6 +514,7 @@
 			"successInstall": "已成功安装",
 			"failedInstall": "无法安装",
 			"at": "在",
+			"readMore": "Read more",
 			"popup": {
 				"reboot": "重启",
 				"shutdown": "关掉",
