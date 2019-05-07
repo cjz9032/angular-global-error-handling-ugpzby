@@ -108,7 +108,7 @@ export class AppComponent implements OnInit {
 		// When startup try to login Lenovo ID silently (in background),
 		//  if user has already logged in before, this call will login automatically and update UI
 		this.deviceService.getMachineInfo().then((machineInfo) => {
-			if (machineInfo.country != 'cn' && machineInfo.cpuArchitecture.toLowerCase().indexOf('arm') != 0) {
+			if (machineInfo && machineInfo.country != 'cn' && machineInfo.cpuArchitecture.toLowerCase().indexOf('arm') != 0) {
 				self.userService.isLenovoIdSupported = true;
 				self.userService.loginSilently();
 			} else {
@@ -142,7 +142,7 @@ export class AppComponent implements OnInit {
 			this.deviceService.getMachineInfo()
 				.then((value: any) => {
 					console.log('getMachineInfo.then', value);
-					if (value.locale.toLowerCase() === 'zh-hans') {
+					if (value && value.locale.toLowerCase() === 'zh-hans') {
 						this.translate.use('zh-Hans');
 					}
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
