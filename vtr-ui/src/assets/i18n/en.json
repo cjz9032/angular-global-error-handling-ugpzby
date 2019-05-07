@@ -514,6 +514,7 @@
 			"successInstall": "Successfully installed on",
 			"failedInstall": "Failed to installed on",
 			"at": "at",
+			"readMore": "Read more",
 			"popup": {
 				"reboot": "Reboot",
 				"shutdown": "Shut Down",

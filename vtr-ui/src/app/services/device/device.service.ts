@@ -77,7 +77,7 @@ export class DeviceService {
 		if (this.sysInfo) {
 			return this.sysInfo.getMachineInfo();
 		}
-		return undefined;
+		return Promise.resolve(undefined);
 	}
 	getHardwareInfo(): Promise<any> {
 		if (this.sysInfo) {

@@ -133,7 +133,7 @@ export class AppComponent implements OnInit {
 			this.deviceService.getMachineInfo()
 				.then((value: any) => {
 					console.log('getMachineInfo.then', value);
-					if (value.locale.toLowerCase() === 'zh-hans') {
+					if (value && value.locale.toLowerCase() === 'zh-hans') {
 						this.translate.use('zh-Hans');
 					}
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
