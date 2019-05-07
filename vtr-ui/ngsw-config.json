@@ -20,7 +20,27 @@
 			"resources": {
 				"files": [
 					"/assets/**"
+				],
+				"urls": [
+					"https://qa.csw.lenovo.com/-/media/Lenovo/Vantage/",
+					"https://vantage-qa.csw.lenovo.com/api/v1/",
+					"https://vantage.csw.lenovo.com/api/v1/"
 				]
+			}
+		}
+	],
+	"dataGroups": [
+		{
+			"name": "cms",
+			"urls": [
+				"https://vantage-qa.csw.lenovo.com/api/v1/",
+				"https://vantage.csw.lenovo.com/api/v1/"
+			],
+			"cacheConfig": {
+				"maxSize": 10,
+				"maxAge": "30m",
+				"timeout": "10s",
+				"strategy": "freshness"
 			}
 		}
 	]

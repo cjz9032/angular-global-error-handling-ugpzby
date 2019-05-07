@@ -10,7 +10,7 @@
 		"e2e": "ng e2e",
 		"stats": "ng build --prod --stats-json && npx webpack-bundle-analyzer dist/vtr-ui/stats.json",
 		"pwa": "ng build --prod & http-server ./dist/vtr-ui -p 4200 -c-1 ",
-		"http": "http-server ./dist/vtr-ui -p 4200 -c-1 -o",
+		"http": "http-server ./dist/vtr-ui -p 4200 -c-1",
 		"https": "ng build --prod --base-href=/angular/",
 		"release": "standard-version"
 	},
