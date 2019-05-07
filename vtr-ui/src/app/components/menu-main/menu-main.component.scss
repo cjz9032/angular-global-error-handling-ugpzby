@@ -11,6 +11,7 @@
 		background-color: $main_darker;
 		color: $light;
 		justify-content: left;
+		padding-right: 16px;
 
 		.active .icomoon::before{
 			color:$main;
