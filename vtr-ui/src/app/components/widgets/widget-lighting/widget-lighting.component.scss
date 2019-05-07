@@ -72,7 +72,7 @@
 				& ~ label {
 					color: $gaming;
 					font-size: 1.8rem;
-					width: 6.5rem;
+					width: 25%;
 					height: 4.2rem;
 					border-radius: 4.2rem;
 					margin: 0.4rem 0.2rem;
@@ -88,7 +88,7 @@
 			.toggle {
 				position: absolute;
 				background: $gaming_lighting_gradient;
-				width: 6.5rem;
+				width: 25%;
 				height: 4.2rem;
 				border-radius: 4.2rem;
 				margin: 0.4rem 0.2rem;
@@ -100,7 +100,7 @@
 					color: $gaming_lightest;
 				}
 				& ~ .toggle {
-					left: 0rem;
+					left: 0%;
 				}
 			}
 			#first_radio:checked {
@@ -108,7 +108,7 @@
 					color: $gaming_lightest;
 				}
 				& ~ .toggle {
-					left: 7rem;
+					left: 25%;
 				}
 			}
 			#second_radio:checked {
@@ -116,7 +116,7 @@
 					color: $gaming_lightest;
 				}
 				& ~ .toggle {
-					left: 14rem;
+					left: 50%;
 				}
 			}
 			#third_radio:checked {
@@ -124,7 +124,7 @@
 					color: $gaming_lightest;
 				}
 				& ~ .toggle {
-					left: 21.2rem;
+					left: 74%;
 				}
 			}
 		}
