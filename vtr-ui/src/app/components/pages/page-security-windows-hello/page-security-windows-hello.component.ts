@@ -17,6 +17,7 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 	statusItem: any;
 	cardContentPositionA: any = {};
 	securityAdvisor: SecurityAdvisor;
+	backId = 'sa-wh-btn-back';
 
 	constructor(
 		public mockService: MockService,
@@ -27,7 +28,7 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		this.statusItem = {
 			title: 'security.windowsHello.statusTitle',
-			status: 'common.securityAdvisor.loading'
+			status: 'loading'
 		};
 		this.windowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
 		this.updateStatus();

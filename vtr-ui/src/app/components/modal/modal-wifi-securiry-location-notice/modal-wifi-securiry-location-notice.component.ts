@@ -17,6 +17,9 @@ export class ModalWifiSecuriryLocationNoticeComponent implements OnInit {
 	@Input() url: string;
 	@Input() wifiSecurity: WifiSecurity;
 	// @Input() okHandler: Function;
+	@Input() closeButtonId: string;
+	@Input() agreeButtonId: string;
+	@Input() cancelButtonId: string;
 	@Input() packages: string[];
 	@Input() OkText = 'security.wifisecurity.locationmodal.agree';
 	@Input() CancelText = 'security.wifisecurity.locationmodal.cancel';

@@ -125,7 +125,7 @@ export class AppComponent implements OnInit {
 			}
 		});
 		this.getMachineInfo();
-		this.checkIsDesktopMachine();
+		this.checkIsDesktopOrAllInOneMachine();
 	}
 
 	private getMachineInfo() {
@@ -143,13 +143,13 @@ export class AppComponent implements OnInit {
 		}
 	}
 
-	private checkIsDesktopMachine() {
+	private checkIsDesktopOrAllInOneMachine() {
 		try {
 			if (this.deviceService.isShellAvailable) {
 				this.deviceService.getMachineType()
 					.then((value: any) => {
 						console.log('checkIsDesktopMachine.then', value);
-						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, value == 4);
+						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, (value == 2 || value === 3 || value === 4));
 					}).catch(error => {
 						console.error('checkIsDesktopMachine', error);
 					});

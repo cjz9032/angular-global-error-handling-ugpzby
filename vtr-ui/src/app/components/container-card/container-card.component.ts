@@ -6,7 +6,10 @@ import { ModalArticleDetailComponent } from '../modal/modal-article-detail/modal
 @Component({
 	selector: 'vtr-container-card',
 	templateUrl: './container-card.component.html',
-	styleUrls: ['./container-card.component.scss']
+	styleUrls: [
+		'./container-card.component.scss',
+		'./container-card.component.gaming.scss'
+	]
 })
 export class ContainerCardComponent implements OnInit, AfterViewInit {
 
@@ -16,6 +19,7 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 	@Input() logo = '';
 	@Input() logoText = '';
 	@Input() action = '';
+	@Input() actionType = '';
 	@Input() actionLink = '';
 	@Input() type = '';
 	@Input() ratioX = 1;
@@ -57,8 +61,18 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 		}
 	}
 
+	linkClicked(actionType: string, actionLink: string) {
+		if (!actionType || actionType !== 'Internal') {
+			return;
+		}
+
+		this.articleClicked(actionLink);
+		return false;
+	}
+
 	articleClicked(articleId) {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
+			backdrop: 'static',
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal'

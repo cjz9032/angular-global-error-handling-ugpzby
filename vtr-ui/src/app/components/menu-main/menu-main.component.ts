@@ -19,6 +19,7 @@ import { WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { RegionService } from 'src/app/services/region/region.service';
+import {SupportService} from "../../services/support/support.service";
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -36,7 +37,11 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	constantDeviceSettings = 'device-settings';
 	region: string;
 	public isDashboard = false;
-	items: Array<any> = [
+	public countryCode:string;
+	public locale:string;
+	public items:any;
+
+	/*items: Array<any> = [
 		{
 			id: 'dashboard',
 			label: 'common.menu.dashboard',
@@ -47,6 +52,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			metricsItem: 'link.dashboard',
 			routerLinkActiveOptions: { exact: true },
 			forArm: true,
+			onlyPrivacy: false,
 			subitems: []
 		}, {
 			id: 'device',
@@ -57,6 +63,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			metricsParent: 'navbar',
 			metricsItem: 'link.device',
 			forArm: false,
+			onlyPrivacy: false,
 			subitems: [{
 				id: 'device',
 				label: 'common.menu.device.sub1',
@@ -97,6 +104,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			metricsParent: 'navbar',
 			metricsItem: 'link.security',
 			forArm: false,
+			onlyPrivacy: false,
 			subitems: [{
 				id: 'security',
 				label: 'common.menu.security.sub1',
@@ -139,6 +147,18 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 				subitems: []
 			}]
 		}, {
+			id: 'privacy',
+			label: 'common.menu.privacy',
+			path: 'privacy',
+			icon: ['icomoon', 'icomoon-LE-Figleaf2x'],
+			metricsEvent: 'itemClick',
+			metricsParent: 'navbar',
+			metricsItem: 'link.privacy',
+			routerLinkActiveOptions: { exact: true },
+			forArm: true,
+			onlyPrivacy: true,
+			subitems: []
+		}, {
 			id: 'support',
 			label: 'common.menu.support',
 			path: 'support',
@@ -148,6 +168,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			metricsItem: 'link.support',
 			routerLinkActiveOptions: { exact: true },
 			forArm: false,
+			onlyPrivacy: false,
 			subitems: []
 		}, {
 			id: 'user',
@@ -159,9 +180,10 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			metricsItem: 'link.user',
 			routerLinkActiveOptions: { exact: true },
 			forArm: true,
+			onlyPrivacy: false,
 			subitems: []
 		}
-	];
+	];*/
 
 	constructor(
 		private router: Router,
@@ -171,15 +193,17 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 		public userService: UserService,
 		public translationService: TranslationService,
 		private modalService: NgbModal,
-		private deviceService: DeviceService,
+		public deviceService: DeviceService,
 		vantageShellService: VantageShellService,
 		private translate: TranslateService,
 		private regionService: RegionService
 		) {
 		this.showVpn();
-		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
+		this.getMenuItems().then((items)=>{
+			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		if (cacheShowWindowsHello) {
-			const securityItem = this.items.find(item => item.id === 'security');
+
+			const securityItem =items.find(item => item.id === 'security');
 			securityItem.subitems.push({
 				id: 'windows-hello',
 				label: 'common.menu.security.sub6',
@@ -208,6 +232,8 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			.subscribe((translation: Translation) => {
 				this.onLanguageChange(translation);
 			});
+		});
+
 	}
 
 	@HostListener('window: focus')
@@ -216,6 +242,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	ngOnInit() {
+
 		const self = this;
 		this.translate.stream('lenovoId.user').subscribe((value) => {
 			if (!self.userService.auth) {
@@ -242,6 +269,10 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 		}
 	}
 
+/*	getItems() {
+		return this.configService.getMenuItems(this.deviceService.isGaming);
+	}	*/
+
 	isParentActive(item) {
 		// console.log('IS PARENT ACTIVE', item.id, item.path);
 	}
@@ -250,6 +281,11 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 		let showItem = true;
 		if (this.deviceService.isArm) {
 			if (!item.forArm) {
+				showItem = false;
+			}
+		}
+		if (!this.deviceService.showPrivacy) {
+			if (item.onlyPrivacy) {
 				showItem = false;
 			}
 		}
@@ -291,35 +327,45 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	onLanguageChange(translation: Translation) {
-		if (translation && translation.type === TranslationSection.CommonMenu) {
-			this.items[0].label = translation.payload.dashboard;
-		}
+		this.getMenuItems().then((items)=>{
+			if (translation && translation.type === TranslationSection.CommonMenu && !this.deviceService.isGaming) {
+				items[0].label = translation.payload.dashboard;
+			}
+		})
+
 	}
 
 	showWindowsHello(windowsHello: WindowsHello) {
-		const securityItem = this.items.find(item => item.id === 'security');
-		if (!this.commonService.isRS5OrLater()
-			|| (typeof windowsHello.facialIdStatus !== 'string'
-				&& typeof windowsHello.fingerPrintStatus !== 'string')) {
-			securityItem.subitems = securityItem.subitems.filter(subitem => subitem.id !== 'windows-hello');
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
-		} else {
-			const windowsHelloItem = securityItem.subitems.find(item => item.id === 'windows-hello');
-			if (!windowsHelloItem) {
-				securityItem.subitems.push({
-					id: 'windows-hello',
-					label: 'common.menu.security.sub6',
-					path: 'windows-hello',
-					icon: '',
-					metricsEvent: 'itemClick',
-					metricsParent: 'navbar',
-					metricsItem: 'link.windowshello',
-					routerLinkActiveOptions: { exact: true },
-					subitems: []
-				});
+		this.getMenuItems().then((items)=>{
+			const securityItem = items.find(item => item.id === 'security');
+			if (!this.commonService.isRS5OrLater()
+				|| (typeof windowsHello.facialIdStatus !== 'string'
+					&& typeof windowsHello.fingerPrintStatus !== 'string')) {
+				securityItem.subitems = securityItem.subitems.filter(subitem => subitem.id !== 'windows-hello');
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
+			} else {
+				const windowsHelloItem = securityItem.subitems.find(item => item.id === 'windows-hello');
+				if (!windowsHelloItem) {
+					securityItem.subitems.push({
+						id: 'windows-hello',
+						label: 'common.menu.security.sub6',
+						path: 'windows-hello',
+						icon: '',
+						metricsEvent: 'itemClick',
+						metricsParent: 'navbar',
+						metricsItem: 'link.windowshello',
+						routerLinkActiveOptions: { exact: true },
+						subitems: []
+					});
+				}
+				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, true);
 			}
-			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, true);
-		}
+		})
+
+	}
+	showPrivacy(){
+
+
 	}
 	showVpn() {
 		this.regionService.getRegion().subscribe({
@@ -327,26 +373,36 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			error: err => { console.error(err); },
 			complete: () => { console.log('Done'); }
 		});
-		const securityItemForVpn = this.items.find(item => item.id === 'security');
-		const vpnItem = securityItemForVpn.subitems.find(item => item.id === 'internet-protection');
-		if (this.region !== 'CN') {
-			if (!vpnItem) {
-				securityItemForVpn.subitems.splice(4, 0, {
-					id: 'internet-protection',
-					label: 'common.menu.security.sub5',
-					path: 'internet-protection',
-					metricsEvent: 'itemClick',
-					metricsParent: 'navbar',
-					metricsItem: 'link.internetprotection',
-					routerLinkActiveOptions: { exact: true },
-					icon: '',
-					subitems: []
-				});
-			}
-		} else {
-			if (vpnItem) {
-				securityItemForVpn.subitems = securityItemForVpn.subitems.filter(item => item.id !== 'internet-protection');
-			}
-		}
+		 this.getMenuItems().then((items)=>{
+			 const securityItemForVpn = items.find(item => item.id === 'security');
+			 if(securityItemForVpn!==undefined) {
+				 const vpnItem = securityItemForVpn.subitems.find(item => item.id === 'internet-protection');
+				 if (this.region !== 'CN') {
+					 if (!vpnItem) {
+						 securityItemForVpn.subitems.splice(4, 0, {
+							 id: 'internet-protection',
+							 label: 'common.menu.security.sub5',
+							 path: 'internet-protection',
+							 metricsEvent: 'itemClick',
+							 metricsParent: 'navbar',
+							 metricsItem: 'link.internetprotection',
+							 routerLinkActiveOptions: { exact: true },
+							 icon: '',
+							 subitems: []
+						 });
+					 }
+				 } else {
+					 if (vpnItem) {
+						 securityItemForVpn.subitems = securityItemForVpn.subitems.filter(item => item.id !== 'internet-protection');
+					 }
+				 }
+			 }
+		 })
+	}
+	getMenuItems():Promise<any>{
+		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items)=>{
+            this.items=items;
+            return this.items;
+		})
 	}
 }

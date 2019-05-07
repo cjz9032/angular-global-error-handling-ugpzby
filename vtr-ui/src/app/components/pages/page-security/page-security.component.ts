@@ -69,7 +69,7 @@ export class PageSecurityComponent implements OnInit {
 	maliciousWifi: number;
 	cardContentPositionA: any = {};
 	region: string;
-
+	backId = 'sa-ov-btn-back';
 	itemStatusClass = {
 		0: 'good',
 		1: 'orange',
@@ -112,7 +112,10 @@ export class PageSecurityComponent implements OnInit {
 	private refreshAll() {
 		this.regionService.getRegion().subscribe({
 			next: x => { this.region = x; },
-			error: err => { console.error(err); },
+			error: err => {
+				console.error(err);
+				this.region = 'US';
+			},
 			complete: () => { console.log('Done'); }
 		});
 		this.securityAdvisor.antivirus.refresh().then(() => {

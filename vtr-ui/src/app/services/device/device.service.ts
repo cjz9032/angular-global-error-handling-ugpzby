@@ -15,6 +15,8 @@ export class DeviceService {
 	private microphone: any;
 	public isShellAvailable = false;
 	public isArm = false;
+	public showPrivacy = true;
+	public isGaming = false;
 
 	constructor(
 		shellService: VantageShellService
@@ -31,20 +33,36 @@ export class DeviceService {
 		}
 		this.initIsArm();
 	}
-	
+
 	private initIsArm() {
 		try {
 			//this.isArm = true;
 			if (this.isShellAvailable) {
 				this.getMachineInfo()
 					.then((machineInfo: any) => {
-						this.isArm = machineInfo.cpuArchitecture.toUpperCase().trim() == "ARM64"
+						this.isArm = machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
 					}).catch(error => {
 						console.error('initArm', error);
 					});
 			}
 		} catch (error) {
 			console.error('initArm' + error.message);
+		}
+	}
+
+	private initshowPrivacy() {
+		// set this.showPrivacy appropriately based on machineInfo data
+		try {
+			if (this.isShellAvailable) {
+				this.getMachineInfo()
+					.then((machineInfo: any) => {
+						this.showPrivacy = machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
+					}).catch(error => {
+						console.error('initprivacy', error);
+					});
+			}
+		} catch (error) {
+			console.error('initPrivacy' + error.message);
 		}
 	}
 

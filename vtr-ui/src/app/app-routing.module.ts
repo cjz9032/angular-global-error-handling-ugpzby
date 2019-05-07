@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
 import { PageDeviceComponent } from './components/pages/page-device/page-device.component';
+import { PageDeviceGamingComponent } from './components/pages/page-device-gaming/page-device-gaming.component';
 import { PageDeviceSettingsComponent } from './components/pages/page-device-settings/page-device-settings.component';
 import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
@@ -12,6 +13,7 @@ import { PageSecurityAntivirusComponent } from './components/pages/page-security
 import { PageSecurityWifiComponent } from './components/pages/page-security-wifi/page-security-wifi.component';
 import { PageSecurityPasswordComponent } from './components/pages/page-security-password/page-security-password.component';
 import { PageSecurityInternetComponent } from './components/pages/page-security-internet/page-security-internet.component';
+import { PageSecurityHomeSecurityComponent } from './components/pages/page-security-home-security/page-security-home-security.component';
 import { PageSupportComponent } from './components/pages/page-support/page-support.component';
 import { PageSupportDetailComponent } from './components/pages/page-support-detail/page-support-detail.component';
 import { PageUserComponent } from './components/pages/page-user/page-user.component';
@@ -35,7 +37,12 @@ const routes: Routes = [
 		data: {
 			pageName: 'Device.MyDevice'
 		}
-
+	}, {
+		path: 'device-gaming',
+		component: PageDeviceGamingComponent,
+		data: {
+			pageName: 'Device.MyDevice'
+		}
 	}, {
 		path: 'device/device-settings',
 		component: PageDeviceSettingsComponent,
@@ -111,6 +118,12 @@ const routes: Routes = [
 			pageName: 'Security.WindowsHello'
 		}
 	}, {
+		path: 'security/home-security',
+		component: PageSecurityHomeSecurityComponent,
+		data: {
+			pageName: 'Security.HomeSecurity'
+		}
+	}, {
 		path: 'support',
 		component: PageSupportComponent,
 		data: {
@@ -128,7 +141,13 @@ const routes: Routes = [
 		data: {
 			pageName: 'User'
 		}
-	}
+	}, {
+		path: 'privacy',
+		loadChildren: './components/pages/page-privacy/privacy.module#PrivacyModule',
+		data: {
+			pageName: 'Page.Privacy'
+		}
+	},
 ];
 
 @NgModule({

@@ -8,6 +8,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { BatteryInformation } from 'src/app/enums/battery-information.enum';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { ViewRef_ } from '@angular/core/src/view';
 @Component({
 	selector: 'vtr-battery-card',
 	templateUrl: './battery-card.component.html',
@@ -15,7 +16,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 })
 export class BatteryCardComponent implements OnInit, OnDestroy {
 	constructor(
-		private modalService: NgbModal, 
+		private modalService: NgbModal,
 		private batteryService: BatteryDetailService,
 		public shellServices: VantageShellService,
 		private commonService: CommonService,
@@ -26,7 +27,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	batteryCardTimer: any;
 	batteryIndicator = new BatteryIndicator();
 	flag = true;
-	
+
 	ngOnInit() {
 		this.shellServices.registerEvent(EventTypes.pwrPowerSupplyStatusEvent, this.onPowerSupplyStatusEvent.bind(this));
 		this.shellServices.registerEvent(EventTypes.pwrRemainingPercentageEvent, this.onRemainingPercentageEvent.bind(this));
@@ -98,12 +99,17 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryInfo[0].mainBatteryRemainingTime = this.batteryService.getMainBatteryTime();
 		this.batteryIndicator.convertMin(this.batteryInfo[0].mainBatteryRemainingTime);
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo,this.batteryInfo);
-		this.cd.detectChanges();
+		if ( this.cd !== null &&
+            this.cd !== undefined &&
+            ! (this.cd as ViewRef_).destroyed ) {
+                this.cd.detectChanges();
+        }
 	}
-	
+
 	public showDetailModal(content: any): void {
 		this.modalService
 			.open(content, {
+				backdrop: 'static',
 				size: 'lg',
 				windowClass: 'battery-modal-size'
 			})

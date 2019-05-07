@@ -20,18 +20,20 @@ export class AntiVirusLandingViewModel {
 	currentPage: string;
 	constructor(avModel: phoenix.Antivirus, commonService: CommonService, translate: TranslateService) {
 		const avStatus = {
-			status: 2,
+			status: 4,
 			detail: 'common.securityAdvisor.loading',
 			path: 'security/anti-virus',
 			title: 'common.securityAdvisor.antiVirus',
 			type: 'security',
+			id: 'sa-ov-link-antivirus'
 		};
 		const fwStatus = {
-			status: 2,
+			status: 4,
 			detail: 'common.securityAdvisor.loading',
 			path: 'security/anti-virus',
 			title: 'security.landing.firewall',
 			type: 'security',
+			id: 'sa-ov-link-firewall'
 		};
 		const subjectStatus = {
 			status: 2,
@@ -91,19 +93,19 @@ export class AntiVirusLandingViewModel {
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fw !== undefined ? fw : null);
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingAntivirusStatus, av !== undefined ? av : null);
 
-			translate.get(avStatus.detail).subscribe((res) => {
+			translate.stream(avStatus.detail).subscribe((res) => {
 				avStatus.detail = res;
 			});
-			translate.get(avStatus.title).subscribe((res) => {
+			translate.stream(avStatus.title).subscribe((res) => {
 				avStatus.title = res;
 			});
-			translate.get(fwStatus.detail).subscribe((res) => {
+			translate.stream(fwStatus.detail).subscribe((res) => {
 				fwStatus.detail = res;
 			});
-			translate.get(fwStatus.title).subscribe((res) => {
+			translate.stream(fwStatus.title).subscribe((res) => {
 				fwStatus.title = res;
 			});
-			translate.get(subjectStatus.title).subscribe((res) => {
+			translate.stream(subjectStatus.title).subscribe((res) => {
 				subjectStatus.title = res;
 			});
 		};

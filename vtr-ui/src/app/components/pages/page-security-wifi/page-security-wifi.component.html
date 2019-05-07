@@ -1,28 +1,31 @@
 <div class="vtr-page-security-wifi vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main [backarrow]="backarrow"
+			<vtr-header-main
+				[backarrow]="backarrow"
 				[back]="back | translate"
-				[title]="title | translate"></vtr-header-main>
+				[title]="title | translate"
+				[backId]="backId"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-sm-12 col-md-7 col-lg-7 col-xl-8 vtr-page-left-column">
+					<div class="col-sm-12 col-lg-8 col-xl-8 vtr-page-left-column">
 						<div class="vtr-subpage">
 							<div class="vtr-page-shift-up">
 								<wifi-security [data]="wifiHomeViewModel"
 									[wifiIsShowMore]="wifiIsShowMore"></wifi-security>
 							</div>
 						</div>
-						<div id="home-security" class="connected-home-container">
+						<div id="home-security"
+							class="connected-home-container">
 							<vtr-connected-home [data]="wifiHomeViewModel"
 								[isShowInvitationCode]="isShowInvitationCode"></vtr-connected-home>
 						</div>
 					</div>
-					<div class="col-sm-12 col-md-5 col-lg-5 col-xl-4 vtr-page-right-column">
+					<div class="col-sm-12 col-lg-4 col-xl-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 								<!--Start of Security Card Advisor-->
@@ -45,8 +48,9 @@
 														<div class="description"
 															*ngIf="securityHealthViewModel.isLWSEnabled">
 															<span *vtrTranslate="'security.homeprotection.securityhealth.learnMoreAboutSecurityHealth' | translate">
-																<a vtrMetrics 
-																	metricsEvent="itemClick" 
+																<a id="sa-ws-lnk-sh-learnmore"
+																	vtrMetrics
+																	metricsEvent="itemClick"
 																	metricsItem="learnMoreAboutSecurityHealth"
 																	metricsParent="security.wifiSecurity"
 																	href="javascript:void(0)"
@@ -61,11 +65,12 @@
 													<div class="col">
 
 														<!--Start of Security Health Advisor When LWS is enabled-->
-														<div *ngIf="securityHealthViewModel.isLWSEnabled===undefined" class="loading">
-															<div class="spinner-border text-primary progress-spinner" role="status"></div>
+														<div *ngIf="securityHealthViewModel.isLWSEnabled===undefined"
+															class="loading">
+															<div class="spinner-border text-primary progress-spinner"
+																role="status"></div>
 														</div>
-														<vtr-ui-list-chevron
-															[items]="securityHealthViewModel.homeDevicePosture"
+														<vtr-ui-list-chevron [items]="securityHealthViewModel.homeDevicePosture"
 															[chevronVisibility]='false'
 															[clickable]="false"
 															*ngIf="securityHealthViewModel.isLWSEnabled===true">
@@ -81,7 +86,8 @@
 																	{{'security.homeprotection.securityhealth.peaceOfMind' | translate}}
 																</div>
 																<div class="button-box">
-																	<vtr-ui-button metricsParent="security-health"
+																	<vtr-ui-button id="sa-ws-btn-sh-enablewifisecurity" 
+																		metricsParent="security-health"
 																		metricsItem="enableWiFiSecurity"
 																		(onClick)="enableWiFiSecurity($event)"
 																		[label]="'security.homeprotection.securityhealth.button' | translate">
@@ -103,7 +109,7 @@
 
 																	<div class="col-4 p-0">
 																		<div class="pull right">
-																			<a routerLink="/{{viewSecChkRoute}}">
+																			<a id="sa-ws-lnk-coroneticon" routerLink="/{{viewSecChkRoute}}">
 																				<img class="coronet_logo_teal"
 																					src="../../../../assets/images/coronet-icon.png" /></a>
 																		</div>
@@ -117,18 +123,21 @@
 												</div>
 											</div>
 										</div>
-										<div *ngIf="securityHealthViewModel.isLWSEnabled" class="security-health"></div>
+										<div *ngIf="securityHealthViewModel.isLWSEnabled"
+											class="security-health"></div>
 									</div>
 								</div>
 								<!--end of Security Health Advisor-->
 
 								<div class="row">
 									<div class="col col-12">
-										<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+										<vtr-container-card id="sa-ws-lnk-cardcontent" 
+											[img]="cardContentPositionA.FeatureImage"
 											[caption]="cardContentPositionA.Description"
 											[title]="cardContentPositionA.Title"
 											[logoText]="cardContentPositionA.BrandName"
 											[action]="cardContentPositionA.Action"
+											[actionType]="cardContentPositionA.ActionType"
 											[actionLink]="cardContentPositionA.ActionLink"
 											[type]="'corner-article'"
 											[ratioX]="4"

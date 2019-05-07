@@ -1,0 +1,165 @@
+@import "app/app.theme";
+
+
+@font-face {
+	font-family: 'icomoon';
+	src:  url('./assets/gaming-icons/icomoon.eot?t2n255');
+	src:  url('./assets/gaming-icons/icomoon.eot?t2n255#iefix') format('embedded-opentype'),
+	  url('./assets/gaming-icons/icomoon.ttf?t2n255') format('truetype'),
+	  url('./assets/gaming-icons/icomoon.woff?t2n255') format('woff'),
+	  url('./assets/gaming-icons/icomoon.svg?t2n255#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'icomoon' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+  
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-press:before {
+	content: "\e900";
+	color: #fff;
+  }
+  .icon-release:before {
+	content: "\e901";
+	color: #fff;
+  }
+  .icon-macroKey:before {
+	content: "\e902";
+  }
+  .icon-media:before {
+	content: "\e903";
+  }
+  .icon-power:before {
+	content: "\e904";
+  }
+  .icon-systemUpdate:before {
+	content: "\e905";
+  }
+  .icon-wifiSecurity:before {
+	content: "\e906";
+  }
+  .icon-add:before {
+	content: "\e907";
+	color: #fff;
+  }
+  .icon-arrowDown:before {
+	content: "\e908";
+	color: #fff;
+  }
+  .icon-backArrow:before {
+	content: "\e909";
+	color: #fff;
+  }
+  .icon-bin:before {
+	content: "\e90a";
+	color: #fff;
+  }
+  .icon-Check:before {
+	content: "\e90b";
+  }
+  .icon-checkIcon .path1:before {
+	content: "\e90c";
+	color: rgb(251, 253, 255);
+	opacity: 0.0800;
+  }
+  .icon-checkIcon .path2:before {
+	content: "\e90d";
+	margin-left: -1em;
+	color: rgb(4, 122, 255);
+  }
+  .icon-checkLine:before {
+	content: "\e90e";
+	color: #fff;
+  }
+  .icon-Close:before {
+	content: "\e90f";
+	color: #fff;
+  }
+  .icon-dots:before {
+	content: "\e910";
+	color: #fff;
+  }
+  .icon-gear:before {
+	content: "\e911";
+	color: #fff;
+  }
+  .icon-menu:before {
+	content: "\e912";
+	color: #fff;
+  }
+  .icon-question:before {
+	content: "\e913";
+	color: #fff;
+  }
+  .icon-radio:before {
+	content: "\e914";
+	color: #047aff;
+  }
+  .icon-refresh:before {
+	content: "\e915";
+	color: #fff;
+  }
+  .icon-windows:before {
+	content: "\e916";
+	color: #fff;
+  }
+  .icon-Logo:before {
+	content: "\e917";
+	color: #fff;
+  }
+  .icon-content:before {
+	content: "\e918";
+	color: #fff;
+  }
+  .icon-device:before {
+	content: "\e919";
+	color: #fff;
+  }
+  .icon-store:before {
+	content: "\e91a";
+	color: #fff;
+  }
+  .icon-support:before {
+	content: "\e91b";
+	color: #fff;
+  }
+  
+
+.is-gaming {
+	.vtr-page {
+		.vtr-page-content {
+			.vtr-page-left-column {
+				background-color: $gaming_darkest;
+				@media #{$medium-screen}{
+					padding: 4rem;
+				}
+			}
+			.vtr-page-right-column {
+				background-color: $gaming_darker;
+				padding-left: 2.2rem;
+				@media #{$small-screen} {
+					margin-top: -0.1rem;
+					padding: 6rem 1.5rem 1.5rem 1.5rem;
+					background-color: $gaming_darkest;
+				}
+				@media #{$medium-screen} {
+					margin-top: -0.1rem;
+					padding: 6rem 2rem 2rem 2rem;
+					background-color: $gaming_darkest;
+				}
+			}
+		}
+	}
+}

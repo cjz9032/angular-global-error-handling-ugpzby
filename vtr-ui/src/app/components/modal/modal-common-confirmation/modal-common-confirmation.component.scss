@@ -49,8 +49,8 @@
 		padding-bottom: 1.5rem;
 		margin-bottom: 2rem;
 		border-bottom: 0.1rem solid $main_lightest;
+		overflow-y: auto;
 
-		//overflow-y: scroll;
 		ul {
 			list-style: none;
 			padding: 0;
