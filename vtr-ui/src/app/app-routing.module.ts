@@ -19,6 +19,7 @@ import { PageSupportDetailComponent } from './components/pages/page-support-deta
 import { PageUserComponent } from './components/pages/page-user/page-user.component';
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
 import { WindowsHelloGuardService } from './services/guard/windows-hello-guardService.service';
+import {PageGuardService} from "./guards/page-guard.service";
 
 const routes: Routes = [
 	{
@@ -28,12 +29,16 @@ const routes: Routes = [
 	}, {
 		path: 'dashboard',
 		component: PageDashboardComponent,
+		canDeactivate:[PageGuardService],
+		canActivate:[PageGuardService],
 		data: {
 			pageName: 'Dashboard'
 		}
 	}, {
 		path: 'device',
 		component: PageDeviceComponent,
+		canDeactivate:[PageGuardService],
+		canActivate:[PageGuardService],
 		data: {
 			pageName: 'Device.MyDevice'
 		}
@@ -46,6 +51,8 @@ const routes: Routes = [
 	}, {
 		path: 'device/device-settings',
 		component: PageDeviceSettingsComponent,
+		canDeactivate:[PageGuardService],
+		canActivate:[PageGuardService],
 		children: [
 			{
 				path: '',
@@ -55,6 +62,8 @@ const routes: Routes = [
 			{
 				path: 'power',
 				component: SubpageDeviceSettingsPowerComponent,
+				canDeactivate:[PageGuardService],
+				canActivate:[PageGuardService],
 				data: {
 					pageName: 'Device.MyDeviceSettings'
 				}
@@ -62,6 +71,8 @@ const routes: Routes = [
 			{
 				path: 'audio',
 				component: SubpageDeviceSettingsAudioComponent,
+				canDeactivate:[PageGuardService],
+				canActivate:[PageGuardService],
 				data: {
 					pageName: 'Device.MyDeviceSettings'
 				}
@@ -70,6 +81,8 @@ const routes: Routes = [
 			{
 				path: 'display-camera',
 				component: SubpageDeviceSettingsDisplayComponent,
+				canDeactivate:[PageGuardService],
+				canActivate:[PageGuardService],
 				data: {
 					pageName: 'Device.MyDeviceSettings'
 				}
@@ -78,42 +91,56 @@ const routes: Routes = [
 	}, {
 		path: 'device/system-updates',
 		component: PageDeviceUpdatesComponent,
+		canDeactivate:[PageGuardService],
+		canActivate:[PageGuardService],
 		data: {
 			pageName: 'Device.SystemUpdate'
 		}
 	}, {
 		path: 'security',
 		component: PageSecurityComponent,
+		canDeactivate:[PageGuardService],
+		canActivate:[PageGuardService],
 		data: { pageName: 'Security.MySecurity' }
 
 	}, {
 		path: 'security/anti-virus',
 		component: PageSecurityAntivirusComponent,
+		canDeactivate:[PageGuardService],
+		canActivate:[PageGuardService],
 		data: {
 			pageName: 'Security.AntiVirus'
 		}
 	}, {
 		path: 'security/wifi-security',
 		component: PageSecurityWifiComponent,
+		canDeactivate:[PageGuardService],
+		canActivate:[PageGuardService],
 		data: {
 			pageName: 'Security.WifiSecurity'
 		}
 	}, {
 		path: 'security/password-protection',
 		component: PageSecurityPasswordComponent,
+		canDeactivate:[PageGuardService],
+		canActivate:[PageGuardService],
 		data: {
 			pageName: 'Security.PasswordProtection'
 		}
 	}, {
 		path: 'security/internet-protection',
 		component: PageSecurityInternetComponent,
+		canDeactivate:[PageGuardService],
+		canActivate:[PageGuardService],
 		data: {
 			pageName: 'Security.InternetProtection'
 		}
 	}, {
 		path: 'security/windows-hello',
 		component: PageSecurityWindowsHelloComponent,
-		canActivate: [WindowsHelloGuardService],
+		canActivate: [PageGuardService,WindowsHelloGuardService],
+		canDeactivate:[PageGuardService],
+
 		data: {
 			pageName: 'Security.WindowsHello'
 		}
@@ -126,18 +153,24 @@ const routes: Routes = [
 	}, {
 		path: 'support',
 		component: PageSupportComponent,
+		canDeactivate:[PageGuardService],
+		canActivate:[PageGuardService],
 		data: {
 			pageName: 'Page.Support'
 		}
 	}, {
 		path: 'support-detail/:id',
 		component: PageSupportDetailComponent,
+		canDeactivate:[PageGuardService],
+		canActivate:[PageGuardService],
 		data: {
 			pageName: 'Support.Detail'
 		}
 	}, {
 		path: 'user',
 		component: PageUserComponent,
+		canDeactivate:[PageGuardService],
+		canActivate:[PageGuardService],
 		data: {
 			pageName: 'User'
 		}
