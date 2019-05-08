@@ -16,6 +16,7 @@ export class VpnLandingViewModel {
 			path: 'security/internet-protection',
 			title: 'security.landing.vpnVirtual',
 			type: 'security',
+			id: 'sa-ov-link-vpn'
 		};
 		const subjectStatus = {
 			status: 2,

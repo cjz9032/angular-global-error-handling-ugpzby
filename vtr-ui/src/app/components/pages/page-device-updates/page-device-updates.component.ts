@@ -215,8 +215,13 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private getLastUpdateScanDetail() {
 		if (this.systemUpdateService.isShellAvailable) {
+			// tslint:disable-next-line: no-console
+			console.time('getMostRecentUpdateInfo');
 			this.systemUpdateService.getMostRecentUpdateInfo()
 				.then((value: any) => {
+					// tslint:disable-next-line: no-console
+					console.timeEnd('getMostRecentUpdateInfo');
+
 					// console.log('getLastUpdateScanDetail.then', value);
 					if (value.lastInstallTime && value.lastInstallTime.length > 0) {
 						this.lastInstallTime = value.lastInstallTime;

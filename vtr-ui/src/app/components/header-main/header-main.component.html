@@ -1,5 +1,5 @@
 <div class="vtr-header-main">
-	<div class="back">{{backarrow}}<a (click)="goBack()">{{back}}</a></div>
+	<div class="back">{{backarrow}}<a (click)="goBack()" id="{{backId}}">{{back}}</a></div>
 	<h1 class="title">{{title}}</h1>
 	<ng-content></ng-content>
 	<div *ngIf="forwardLink"

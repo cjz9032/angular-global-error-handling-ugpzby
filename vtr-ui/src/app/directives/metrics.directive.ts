@@ -52,7 +52,7 @@ export class MetricsDirective {
 	@Input() metricsItemCategory: string;
 	@Input() metricsItemPosition: string;
 	@Input() metricsViewOrder: string;
-	@Input() metricsPageNumber: string;
+	@Input() metricsPageNumber: string="1";
 
 	@Input() metricsSettingName: string;
 	@Input() metricsSettingParm: string;
@@ -92,6 +92,9 @@ export class MetricsDirective {
 				}
 				if (this.metricsItemPosition) {
 					data.ItemPosition = this.metricsItemPosition;
+				}
+				if(!this.metricsPageNumber){
+					data.pageNumber="1";
 				}
 				if (this.metricsPageNumber) {
 					data.PageNumber = this.metricsPageNumber;

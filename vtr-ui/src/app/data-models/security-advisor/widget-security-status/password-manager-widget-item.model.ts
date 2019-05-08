@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class PassWordManagerWidgetItem extends WidgetItem {
 	constructor(passwordManager: PasswordManager, commonService: CommonService, private translateService: TranslateService) {
 		super({
-			id: 'password-manager',
+			id: 'sa-widget-lnk-pm',
 			path: 'security/password-protection',
 			type: 'security'
 		}, translateService);

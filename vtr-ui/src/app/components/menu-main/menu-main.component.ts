@@ -47,7 +47,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			label: 'common.menu.dashboard',
 			path: 'dashboard',
 			icon: ['fal', 'columns'],
-			metricsEvent: 'featureClick',
+			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.dashboard',
 			routerLinkActiveOptions: { exact: true },
@@ -59,7 +59,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			label: 'common.menu.device.title',
 			path: 'device',
 			icon: ['fal', 'laptop'],
-			metricsEvent: 'featureClick',
+			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.device',
 			forArm: false,
@@ -69,7 +69,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 				label: 'common.menu.device.sub1',
 				path: '',
 				icon: '',
-				metricsEvent: 'featureClick',
+				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
 				metricsItem: 'link.mydevice',
 				routerLinkActiveOptions: { exact: true },
@@ -79,7 +79,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 				label: 'common.menu.device.sub2',
 				path: 'device-settings',
 				icon: '',
-				metricsEvent: 'featureClick',
+				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
 				metricsItem: 'link.mydevicesettings',
 				routerLinkActiveOptions: { exact: false },
@@ -89,7 +89,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 				label: 'common.menu.device.sub3',
 				path: 'system-updates',
 				icon: '',
-				metricsEvent: 'featureClick',
+				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
 				metricsItem: 'link.systemupdates',
 				routerLinkActiveOptions: { exact: true },
@@ -100,7 +100,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			label: 'common.menu.security.title',
 			path: 'security',
 			icon: ['fal', 'lock'],
-			metricsEvent: 'featureClick',
+			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.security',
 			forArm: false,
@@ -110,7 +110,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 				label: 'common.menu.security.sub1',
 				path: '',
 				icon: '',
-				metricsEvent: 'featureClick',
+				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
 				metricsItem: 'link.mysecurity',
 				routerLinkActiveOptions: { exact: true },
@@ -120,7 +120,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 				label: 'common.menu.security.sub2',
 				path: 'anti-virus',
 				icon: '',
-				metricsEvent: 'featureClick',
+				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
 				metricsItem: 'link.antivirus',
 				routerLinkActiveOptions: { exact: true },
@@ -130,7 +130,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 				label: 'common.menu.security.sub3',
 				path: 'wifi-security',
 				icon: '',
-				metricsEvent: 'featureClick',
+				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
 				metricsItem: 'link.wifisecurity',
 				routerLinkActiveOptions: { exact: true },
@@ -139,7 +139,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 				id: 'password-protection',
 				label: 'common.menu.security.sub4',
 				path: 'password-protection',
-				metricsEvent: 'featureClick',
+				metricsEvent: 'itemClick',
 				metricsParent: 'navbar',
 				metricsItem: 'link.passwordprotection',
 				routerLinkActiveOptions: { exact: true },
@@ -151,7 +151,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			label: 'common.menu.privacy',
 			path: 'privacy',
 			icon: ['icomoon', 'icomoon-LE-Figleaf2x'],
-			metricsEvent: 'featureClick',
+			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.privacy',
 			routerLinkActiveOptions: { exact: true },
@@ -163,7 +163,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			label: 'common.menu.support',
 			path: 'support',
 			icon: ['fal', 'wrench'],
-			metricsEvent: 'featureClick',
+			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.support',
 			routerLinkActiveOptions: { exact: true },
@@ -175,7 +175,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			label: 'User',
 			path: 'user',
 			icon: 'user',
-			metricsEvent: 'featureClick',
+			metricsEvent: 'ItemClick',
 			metricsParent: 'NavigationLenovoAccount.Submenu',
 			metricsItem: 'link.user',
 			routerLinkActiveOptions: { exact: true },
@@ -197,41 +197,41 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 		vantageShellService: VantageShellService,
 		private translate: TranslateService,
 		private regionService: RegionService
-		) {
+	) {
 		this.showVpn();
 		this.getMenuItems().then((items)=>{
 			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
-		if (cacheShowWindowsHello) {
+			if (cacheShowWindowsHello) {
 
-			const securityItem =items.find(item => item.id === 'security');
-			securityItem.subitems.push({
-				id: 'windows-hello',
-				label: 'common.menu.security.sub6',
-				path: 'windows-hello',
-				icon: '',
-				metricsEvent: 'featureClick',
-				metricsParent: 'navbar',
-				metricsItem: 'link.windowshello',
-				routerLinkActiveOptions: { exact: true },
-				subitems: []
-			});
-		}
-		const securityAdvisor = vantageShellService.getSecurityAdvisor();
-		if (securityAdvisor) {
-			const windowsHello: WindowsHello = securityAdvisor.windowsHello;
-			if (windowsHello.facialIdStatus || windowsHello.fingerPrintStatus) {
-				this.showWindowsHello(windowsHello);
+				const securityItem =items.find(item => item.id === 'security');
+				securityItem.subitems.push({
+					id: 'windows-hello',
+					label: 'common.menu.security.sub6',
+					path: 'windows-hello',
+					icon: '',
+					metricsEvent: 'itemClick',
+					metricsParent: 'navbar',
+					metricsItem: 'link.windowshello',
+					routerLinkActiveOptions: { exact: true },
+					subitems: []
+				});
 			}
-			windowsHello.on(EventTypes.helloFacialIdStatusEvent, () => {
-				this.showWindowsHello(windowsHello);
-			}).on(EventTypes.helloFingerPrintStatusEvent, () => {
-				this.showWindowsHello(windowsHello);
-			});
-		}
-		this.commonMenuSubscription = this.translationService.subscription
-			.subscribe((translation: Translation) => {
-				this.onLanguageChange(translation);
-			});
+			const securityAdvisor = vantageShellService.getSecurityAdvisor();
+			if (securityAdvisor) {
+				const windowsHello: WindowsHello = securityAdvisor.windowsHello;
+				if (windowsHello.facialIdStatus || windowsHello.fingerPrintStatus) {
+					this.showWindowsHello(windowsHello);
+				}
+				windowsHello.on(EventTypes.helloFacialIdStatusEvent, () => {
+					this.showWindowsHello(windowsHello);
+				}).on(EventTypes.helloFingerPrintStatusEvent, () => {
+					this.showWindowsHello(windowsHello);
+				});
+			}
+			this.commonMenuSubscription = this.translationService.subscription
+				.subscribe((translation: Translation) => {
+					this.onLanguageChange(translation);
+				});
 		});
 
 	}
@@ -269,9 +269,9 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 		}
 	}
 
-/*	getItems() {
-		return this.configService.getMenuItems(this.deviceService.isGaming);
-	}	*/
+	/*	getItems() {
+            return this.configService.getMenuItems(this.deviceService.isGaming);
+        }	*/
 
 	isParentActive(item) {
 		// console.log('IS PARENT ACTIVE', item.id, item.path);
@@ -351,7 +351,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 						label: 'common.menu.security.sub6',
 						path: 'windows-hello',
 						icon: '',
-						metricsEvent: 'featureClick',
+						metricsEvent: 'itemClick',
 						metricsParent: 'navbar',
 						metricsItem: 'link.windowshello',
 						routerLinkActiveOptions: { exact: true },
@@ -373,36 +373,36 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			error: err => { console.error(err); },
 			complete: () => { console.log('Done'); }
 		});
-		 this.getMenuItems().then((items)=>{
-			 const securityItemForVpn = items.find(item => item.id === 'security');
-			 if(securityItemForVpn!==undefined) {
-				 const vpnItem = securityItemForVpn.subitems.find(item => item.id === 'internet-protection');
-				 if (this.region !== 'CN') {
-					 if (!vpnItem) {
-						 securityItemForVpn.subitems.splice(4, 0, {
-							 id: 'internet-protection',
-							 label: 'common.menu.security.sub5',
-							 path: 'internet-protection',
-							 metricsEvent: 'featureClick',
-							 metricsParent: 'navbar',
-							 metricsItem: 'link.internetprotection',
-							 routerLinkActiveOptions: { exact: true },
-							 icon: '',
-							 subitems: []
-						 });
-					 }
-				 } else {
-					 if (vpnItem) {
-						 securityItemForVpn.subitems = securityItemForVpn.subitems.filter(item => item.id !== 'internet-protection');
-					 }
-				 }
-			 }
-		 })
+		this.getMenuItems().then((items)=>{
+			const securityItemForVpn = items.find(item => item.id === 'security');
+			if(securityItemForVpn!==undefined) {
+				const vpnItem = securityItemForVpn.subitems.find(item => item.id === 'internet-protection');
+				if (this.region !== 'CN') {
+					if (!vpnItem) {
+						securityItemForVpn.subitems.splice(4, 0, {
+							id: 'internet-protection',
+							label: 'common.menu.security.sub5',
+							path: 'internet-protection',
+							metricsEvent: 'itemClick',
+							metricsParent: 'navbar',
+							metricsItem: 'link.internetprotection',
+							routerLinkActiveOptions: { exact: true },
+							icon: '',
+							subitems: []
+						});
+					}
+				} else {
+					if (vpnItem) {
+						securityItemForVpn.subitems = securityItemForVpn.subitems.filter(item => item.id !== 'internet-protection');
+					}
+				}
+			}
+		})
 	}
 	getMenuItems():Promise<any>{
 		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items)=>{
-            this.items=items;
-            return this.items;
+			this.items=items;
+			return this.items;
 		})
 	}
 }
