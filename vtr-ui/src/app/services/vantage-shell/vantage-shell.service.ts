@@ -24,7 +24,9 @@ export class VantageShellService {
 				{
 					hsaBroker: rpcClient,
 					metricsBroker: metricClient,
-					hsaPowerBroker: powerClient
+					hsaPowerBroker: powerClient,
+					hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
+					hsaForteBroker: this.shell.ForteRpcClient ? this.shell.ForteRpcClient.getInstance() : null
 				}
 			);
 		}
@@ -335,6 +337,13 @@ export class VantageShellService {
 	public getPrivacyCore() {
 		if (this.phoenix && this.phoenix.privacy) {
 			return this.phoenix.privacy;
+		}
+		return undefined;
+	}
+
+	public launchUserGuide(launchPDF?: boolean) {
+		if (this.phoenix && this.phoenix.userGuide) {
+			this.phoenix.userGuide.launch(launchPDF);
 		}
 		return undefined;
 	}
