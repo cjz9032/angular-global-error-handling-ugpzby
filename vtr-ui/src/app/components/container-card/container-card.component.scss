@@ -34,7 +34,7 @@
 				.inner-content {
 					position: relative;
 					z-index: 1;
-					padding: 3rem;
+					padding: 2.5rem;
 					height: 100%;
 					@media #{$mediaquery_X9} {
 						padding: 1.5rem;
@@ -43,10 +43,13 @@
 						padding: 2rem;
 					}
 					@media #{$mediaquery_X3} {
-						padding: 2rem;
+						padding: 1.5rem;
 					}
 					@media #{$mediaquery_X4} {
 						padding: 2rem;
+					}
+					@media #{$mediaquery_X7} {
+						padding: 1rem;
 					}
 
 					.title {
@@ -350,9 +353,15 @@
 			@media #{$mediaquery_X11} {
 				font-size: 2rem;
 			}
-			// @media #{$mediaquery_17} {
-			// 	font-size: 1.8rem;
-			// }
+			@media #{$mediaquery_17} {
+				font-size: 2rem;
+			}
+			@media #{$mediaquery_X3} {
+				font-size: 1.6rem;
+			}
+			@media #{$mediaquery_X7} {
+				font-size: 1.6rem;
+			}
 		}
 
 		.description {
@@ -372,9 +381,15 @@
 			@media #{$mediaquery_X11} {
 				font-size: 1.8rem;
 			}
-			// @media #{$mediaquery_17} {
-			// 	font-size: 1.6rem;
-			// }
+			@media #{$mediaquery_17} {
+				font-size: 1.8rem;
+			}
+			@media #{$mediaquery_X3} {
+				font-size: 1.6rem;
+			}
+			@media #{$mediaquery_X7} {
+				font-size: 1.5rem;
+			}
 		}
 
 		.logo {

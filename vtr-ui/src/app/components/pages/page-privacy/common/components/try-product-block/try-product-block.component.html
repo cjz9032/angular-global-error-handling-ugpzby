@@ -1,0 +1,20 @@
+<div class="try-product">
+	<div class="try-product__description">
+		<p class="try-product__title">
+			{{texts.title}}
+		</p>
+		<p class="try-product__text">
+			{{texts.text}}
+		</p>
+	</div>
+	<div class="try-product__group-button">
+		<button class="try-product__button"
+				vtrOpenFigleafInstaller
+				*ngIf="texts.buttonText">
+			{{texts.buttonText}}
+		</button>
+		<div class="try-product__button-link" *ngIf="texts.link">
+			<a [href]="texts.link.url"><span>{{texts.link.text}}</span></a>
+		</div>
+	</div>
+</div>

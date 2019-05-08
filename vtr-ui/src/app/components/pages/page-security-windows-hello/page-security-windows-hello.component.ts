@@ -17,6 +17,7 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 	statusItem: any;
 	cardContentPositionA: any = {};
 	securityAdvisor: SecurityAdvisor;
+	backId = 'sa-wh-btn-back';
 
 	constructor(
 		public mockService: MockService,

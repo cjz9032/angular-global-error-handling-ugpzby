@@ -47,7 +47,7 @@ export class WidgetSecurityStatusComponent implements OnInit {
 	}
 
 	showWindowsHello(windowsHello: WindowsHello) {
-		const windowsHelloItem = this.items.find(item => item.id === 'windows-hello');
+		const windowsHelloItem = this.items.find(item => item.id === 'sa-widget-lnk-wh');
 		if (this.commonService.isRS5OrLater()
 		&& (typeof windowsHello.facialIdStatus === 'string' || typeof windowsHello.fingerPrintStatus === 'string')) {
 			if (!windowsHelloItem) {
@@ -56,7 +56,7 @@ export class WidgetSecurityStatusComponent implements OnInit {
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, true);
 		} else {
 			if (windowsHelloItem) {
-				this.items = this.items.filter(item => item.id !== 'windows-hello');
+				this.items = this.items.filter(item => item.id !== 'sa-widget-lnk-wh');
 			}
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
 		}
@@ -64,20 +64,20 @@ export class WidgetSecurityStatusComponent implements OnInit {
 	showVpn() {
 		this.regionService.getRegion().subscribe({
 			next: x => { this.region = x; },
-			error: err => { console.error(err); },
-			complete: () => { console.log('Done'); }
+			error: () => { this.region = 'US'; }
 		});
-		const vpnItem = this.items.find(item => item.id === 'vpn');
+		const vpnItem = this.items.find(item => item.id === 'sa-widget-lnk-vpn');
 		if (this.region !== 'CN') {
 			if (!vpnItem) {
 				this.items.splice(3, 0, new VPNWidgetItem(this.securityAdvisor.vpn, this.commonService, this.translateService));
 			}
 		} else {
 			if (vpnItem) {
-				this.items = this.items.filter(item => item.id !== 'vpn');
+				this.items = this.items.filter(item => item.id !== 'sa-widget-lnk-vpn');
 			}
 		}
 	}
+
 	@HostListener('window: focus')
 	onFocus(): void {
 		this.securityAdvisor.refresh();

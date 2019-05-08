@@ -32,10 +32,29 @@ export class DeviceService {
 			this.startDeviceMonitor();
 		}
 		this.initIsArm();
+		this.initIsGaming();
+	}
+	private initIsGaming() {
+		try {
+			if (this.isShellAvailable) {
+				this.getMachineInfo()
+					.then((machineInfo: any) => {
+						if (machineInfo.isGaming !== undefined) {
+							console.log('initIsGaming', machineInfo.isGaming);
+							this.isGaming = machineInfo.isGaming;
+						}
+					}).catch(error => {
+						console.error('initIsGaming', error);
+					});
+			}
+		} catch (error) {
+			console.error('initArm' + error.message);
+		}
 	}
 
 	private initIsArm() {
 		try {
+			//this.isArm = true;
 			if (this.isShellAvailable) {
 				this.getMachineInfo()
 					.then((machineInfo: any) => {
@@ -76,7 +95,7 @@ export class DeviceService {
 		if (this.sysInfo) {
 			return this.sysInfo.getMachineInfo();
 		}
-		return undefined;
+		return Promise.resolve(undefined);
 	}
 	getHardwareInfo(): Promise<any> {
 		if (this.sysInfo) {

@@ -8,7 +8,7 @@ export class AntivirusWidgetItem extends WidgetItem {
 	antivirus: Antivirus;
 	constructor(antivirus: Antivirus, commonService: CommonService, private translateService: TranslateService) {
 		super({
-			id: 'anti-virus',
+			id: 'sa-widget-lnk-av',
 			path: 'security/anti-virus',
 			type: 'security'
 		}, translateService);

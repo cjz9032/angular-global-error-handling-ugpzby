@@ -2,8 +2,8 @@
 
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
-import { EventTypes } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
+import { EventTypes } from '@lenovo/tan-client-bridge';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
 
@@ -99,8 +99,8 @@ export class VantageShellService {
 	 * returns metric object from VantageShellService of JS Bridge
 	 */
 	public getMetrics(): any {
-		const metricClient = this.phoenix.metrics;
-		if (this.phoenix && metricClient) {
+		if (this.phoenix && this.phoenix.metrics) {
+			const metricClient = this.phoenix.metrics;
 			if (!metricClient.isInit) {
 				metricClient.init({
 					appVersion: environment.appVersion,
@@ -124,7 +124,7 @@ export class VantageShellService {
 						}
 					}
 
-					this.sendAsyncOrignally(data);
+					return this.sendAsyncOrignally(data);
 				};
 			}
 
@@ -330,6 +330,13 @@ export class VantageShellService {
 		const win: any = window;
 		if (win.Windows) {
 			return win.Windows;
+		}
+		return undefined;
+	}
+
+	public getPrivacyCore() {
+		if (this.phoenix && this.phoenix.privacy) {
+			return this.phoenix.privacy;
 		}
 		return undefined;
 	}

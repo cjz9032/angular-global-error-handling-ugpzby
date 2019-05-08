@@ -1,0 +1,14 @@
+.fl-data-line-vertical {
+	stroke-dashoffset: 300;
+	animation: mLineV 8s infinite linear;
+}
+
+.fl-tracking-map-single {
+	width: 100%
+}
+
+@keyframes mLineV {
+	to {
+		stroke-dashoffset: 0;
+	}
+}

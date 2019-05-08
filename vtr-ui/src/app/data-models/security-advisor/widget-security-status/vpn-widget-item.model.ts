@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class VPNWidgetItem extends WidgetItem {
 	constructor(vpn: Vpn, commonService: CommonService, private translateService: TranslateService) {
 		super({
-			id: 'vpn',
+			id: 'sa-widget-lnk-vpn',
 			path: 'security/internet-protection',
 			type: 'security'
 		}, translateService);
@@ -30,7 +30,7 @@ export class VPNWidgetItem extends WidgetItem {
 	}
 
 	updateStatus(status: string) {
-		this.status = status === 'installed' ? 2 : 1;
+		this.status = 5;
 		this.detail = status;
 
 		const translateKey = status === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';

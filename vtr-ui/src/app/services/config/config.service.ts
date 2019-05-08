@@ -8,7 +8,7 @@ export class ConfigService {
 
 	appBrand = 'Lenovo';
 	appName = 'Vantage';
-	public countryCodes=['US','CA','IE','DE','FR','ES','IT','AU'];
+	public countryCodes=['us','ca','gb','ie','de','fr','es','it','au'];
 	constructor(private deviceService:DeviceService) { }
 
 	menuItemsGaming: Array<any> = [
@@ -275,18 +275,6 @@ export class ConfigService {
 				icon: '',
 				subitems: []
 			}]
-		}, {
-			id: 'privacy',
-			label: 'common.menu.privacy',
-			path: 'privacy',
-			icon: ['icomoon', 'icomoon-LE-Figleaf2x'],
-			metricsEvent: 'itemClick',
-			metricsParent: 'navbar',
-			metricsItem: 'link.privacy',
-			routerLinkActiveOptions: { exact: true },
-			forArm: true,
-			onlyPrivacy: true,
-			subitems: []
 		},{
 			id: 'support',
 			label: 'common.menu.support',
@@ -295,6 +283,17 @@ export class ConfigService {
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.support',
+			routerLinkActiveOptions: { exact: true },
+			forArm: false,
+			subitems: []
+		},{
+			id: 'privacy',
+			label: 'common.menu.privacy',
+			path: 'privacy',
+			icon: ['fal', 'eye'],
+			metricsEvent: 'itemClick',
+			metricsParent: 'navbar',
+			metricsItem: 'link.privacy',
 			routerLinkActiveOptions: { exact: true },
 			forArm: false,
 			subitems: []
@@ -309,7 +308,7 @@ export class ConfigService {
 			routerLinkActiveOptions: { exact: true },
 			forArm: true,
 			subitems: []
-		}
+		},
 	];
 	getMenuItems(isGaming){
 		if(isGaming){
@@ -323,7 +322,7 @@ export class ConfigService {
 		return this.deviceService.getMachineInfo().then((machineInfo)=>{
 			if(isGaming){
 				return this.menuItemsGaming;
-			} else if(this.countryCodes.indexOf(machineInfo.country.toUpperCase())!==-1) {
+			} else if(this.countryCodes.indexOf(machineInfo.country.toLowerCase())!==-1) {
 				return this.menuItemsPrivacy;
 			}else{
 				return this.menuItems;

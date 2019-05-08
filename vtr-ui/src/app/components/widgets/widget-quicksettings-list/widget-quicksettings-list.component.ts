@@ -13,5 +13,59 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 
 	ngOnInit() {
 	}
+	public quickSettings = [
+		{
+			readMoreText: '',
+			rightImageSource:'',
+			leftImageSource:'',
+			header: 'gaming.dashboard.device.quickSettings.title',
+			name: 'gaming.dashboard.device.quickSettings.title',
+			subHeader: '',
+			isCheckBoxVisible: true,
+			isSwitchVisible: true,
+			isChecked: true,
+			tooltipText: '',
+			type: 'auto-updates'
+		},
+		{
+			readMoreText: '',
+			rightImageSource: '',
+			leftImageSource:'',
+			header: 'gaming.dashboard.device.quickSettings.wifiSecurity',
+			name: 'gaming.dashboard.device.quickSettings.wifiSecurity',
+			subHeader: '',
+			isCheckBoxVisible: true,
+			isSwitchVisible: true,
+			isChecked: true,
+			tooltipText: '',
+			type: 'auto-updates'
+		},
+		{
+			readMoreText: '',
+			rightImageSource: '',
+			leftImageSource: '',
+			header: 'gaming.dashboard.device.quickSettings.dolby',
+			name: 'gaming.dashboard.device.quickSettings.dolby',
+			subHeader: '',
+			isCheckBoxVisible: true,
+			isSwitchVisible: true,
+			isChecked: true,
+			tooltipText: '',
+			type: 'auto-updates'
+		},
+		{
+			readMoreText: '',
+			rightImageSource: '',
+			leftImageSource: '',
+			header: 'Rapid Charge',
+			name: 'Rapid Charge',
+			subHeader: '',
+			isCheckBoxVisible: true,
+			isSwitchVisible: true,
+			isChecked: true,
+			tooltipText: '',
+			type: 'auto-updates'
+		}
 
+	];
 }

@@ -65,6 +65,27 @@ export class PageDashboardComponent implements OnInit {
 		config.backdrop = 'static';
 		config.keyboard = false;
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
+
+		qaService.setTranslationService(this.translate);
+		qaService.qas.forEach(qa => {
+			try {
+				qa.title = this.translate.instant(qa.title);
+				qa.description = this.translate.instant(qa.description);
+				console.log(qa.description);
+				this.translate.get(qa.keys).subscribe((translation: [string]) => {
+					console.log(JSON.stringify(translation));
+					qa.keys = translation;
+					console.log(JSON.stringify(qa.keys));
+				});
+			}
+			catch (e) {
+				console.log("already translated");
+			}
+			finally {
+				console.log("already translated");
+			}
+
+		});
 	}
 
 	ngOnInit() {
@@ -76,6 +97,8 @@ export class PageDashboardComponent implements OnInit {
 		this.translate.stream('lenovoId.user').subscribe((value) => {
 			if (!self.userService.auth) {
 				self.firstName = value;
+			} else {
+				self.firstName = this.userService.firstName;
 			}
 		});
 		this.isOnline = this.commonService.isOnline;

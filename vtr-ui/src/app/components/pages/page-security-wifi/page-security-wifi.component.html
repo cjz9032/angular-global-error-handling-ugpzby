@@ -1,9 +1,12 @@
 <div class="vtr-page-security-wifi vtr-page">
+<div class="vtr-page-security-wifi vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main [backarrow]="backarrow"
+			<vtr-header-main
+				[backarrow]="backarrow"
 				[back]="back | translate"
-				[title]="title | translate"></vtr-header-main>
+				[title]="title | translate"
+				[backId]="backId"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -46,8 +49,10 @@
 														<div class="description"
 															*ngIf="securityHealthViewModel.isLWSEnabled">
 															<span *vtrTranslate="'security.homeprotection.securityhealth.learnMoreAboutSecurityHealth' | translate">
-																<a vtrMetrics
-																	metricsEvent="itemClick"
+
+																<a vtrMetrics  id="sa-ws-lnk-sh-learnmore"
+																	metricsEvent="featureClick"
+
 																	metricsItem="learnMoreAboutSecurityHealth"
 																	metricsParent="security.wifiSecurity"
 																	href="javascript:void(0)"
@@ -83,7 +88,8 @@
 																	{{'security.homeprotection.securityhealth.peaceOfMind' | translate}}
 																</div>
 																<div class="button-box">
-																	<vtr-ui-button metricsParent="security-health"
+																	<vtr-ui-button id="sa-ws-btn-sh-enablewifisecurity" 
+																		metricsParent="security-health"
 																		metricsItem="enableWiFiSecurity"
 																		(onClick)="enableWiFiSecurity($event)"
 																		[label]="'security.homeprotection.securityhealth.button' | translate">
@@ -105,7 +111,7 @@
 
 																	<div class="col-4 p-0">
 																		<div class="pull right">
-																			<a routerLink="/{{viewSecChkRoute}}">
+																			<a id="sa-ws-lnk-coroneticon" routerLink="/{{viewSecChkRoute}}">
 																				<img class="coronet_logo_teal"
 																					src="../../../../assets/images/coronet-icon.png" /></a>
 																		</div>
@@ -127,7 +133,8 @@
 
 								<div class="row">
 									<div class="col col-12">
-										<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+										<vtr-container-card id="sa-ws-lnk-cardcontent" 
+											[img]="cardContentPositionA.FeatureImage"
 											[caption]="cardContentPositionA.Description"
 											[title]="cardContentPositionA.Title"
 											[logoText]="cardContentPositionA.BrandName"
