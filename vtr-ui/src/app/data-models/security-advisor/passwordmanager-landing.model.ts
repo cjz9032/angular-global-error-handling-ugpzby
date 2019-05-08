@@ -10,7 +10,7 @@ export class PasswordManagerLandingViewModel {
 	type = 'security';
 	imgUrl = '../../../../assets/images/Dashlane_Logo_Teal _Web.png';
 
-	constructor(pmModel: phoenix.PasswordManager, commonService: CommonService, translate: TranslateService) {
+	constructor(translate: TranslateService, pmModel: phoenix.PasswordManager, commonService: CommonService, ) {
 		const pmStatus = {
 			status: 4,
 			detail: 'common.securityAdvisor.loading',
@@ -24,6 +24,15 @@ export class PasswordManagerLandingViewModel {
 			title: 'security.landing.pwdHealth',
 			type: 'security',
 		};
+		translate.stream(pmStatus.detail).subscribe((res) => {
+			pmStatus.detail = res;
+		});
+		translate.stream(pmStatus.title).subscribe((res) => {
+			pmStatus.title = res;
+		});
+		translate.stream(subjectStatus.title).subscribe((res) => {
+			subjectStatus.title = res;
+		});
 		const setPmStatus = (status: string) => {
 			switch (status) {
 				case 'installed':

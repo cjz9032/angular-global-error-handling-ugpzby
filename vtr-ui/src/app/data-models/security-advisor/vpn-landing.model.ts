@@ -9,7 +9,7 @@ export class VpnLandingViewModel {
 	subject: any;
 	type = 'security';
 	imgUrl = '../../../../assets/images/surfeasy-logo.svg';
-	constructor(vpnModel: phoenix.Vpn, commonService: CommonService, translate: TranslateService) {
+	constructor(translate: TranslateService, vpnModel: phoenix.Vpn, commonService: CommonService) {
 		const vpnStatus = {
 			status: 4,
 			detail: 'common.securityAdvisor.loading', // installed or not-installed
@@ -23,6 +23,15 @@ export class VpnLandingViewModel {
 			title: 'security.landing.vpnSecurity',
 			type: 'security',
 		};
+		translate.stream(vpnStatus.detail).subscribe((res) => {
+			vpnStatus.detail = res;
+		});
+		translate.stream(vpnStatus.title).subscribe((res) => {
+			vpnStatus.title = res;
+		});
+		translate.stream(subjectStatus.title).subscribe((res) => {
+			subjectStatus.title = res;
+		});
 		const setVpnStatus = (status: string) => {
 			vpnStatus.status = 5;
 			vpnStatus.detail = status === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';

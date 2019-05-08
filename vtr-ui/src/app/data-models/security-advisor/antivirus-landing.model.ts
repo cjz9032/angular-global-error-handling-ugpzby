@@ -18,7 +18,7 @@ export class AntiVirusLandingViewModel {
 	type = 'security';
 	imgUrl = '';
 	currentPage: string;
-	constructor(avModel: phoenix.Antivirus, commonService: CommonService, translate: TranslateService) {
+	constructor(translate: TranslateService, avModel: phoenix.Antivirus, commonService: CommonService, ) {
 		const avStatus = {
 			status: 4,
 			detail: 'common.securityAdvisor.loading',
@@ -40,6 +40,21 @@ export class AntiVirusLandingViewModel {
 			title: 'common.securityAdvisor.antiVirus',
 			type: 'security',
 		};
+		translate.stream(avStatus.detail).subscribe((res) => {
+			avStatus.detail = res;
+		});
+		translate.stream(avStatus.title).subscribe((res) => {
+			avStatus.title = res;
+		});
+		translate.stream(fwStatus.detail).subscribe((res) => {
+			fwStatus.detail = res;
+		});
+		translate.stream(fwStatus.title).subscribe((res) => {
+			fwStatus.title = res;
+		});
+		translate.stream(subjectStatus.title).subscribe((res) => {
+			subjectStatus.title = res;
+		});
 		const setAntivirusStatus = (av: boolean, fw: boolean, currentPage: string) => {
 			if (typeof av === 'boolean' && typeof fw === 'boolean') {
 				avStatus.status = av === true ? 0 : 1;
@@ -142,7 +157,9 @@ export class AntiVirusLandingViewModel {
 		if (cacheCurrentPage) {
 			this.currentPage = cacheCurrentPage;
 		}
-		setAntivirusStatus(cacheAvStatus, cacheFwStatus, cacheCurrentPage);
+		if (cacheAvStatus || cacheFwStatus) {
+			setAntivirusStatus(cacheAvStatus, cacheFwStatus, cacheCurrentPage);
+		}
 
 		avModel.on(EventTypes.avRefreshedEvent, (av) => {
 			setPage(av);

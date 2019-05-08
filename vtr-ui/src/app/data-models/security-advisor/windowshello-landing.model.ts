@@ -18,9 +18,9 @@ export class WindowsHelloLandingViewModel {
 	type = 'security';
 	imgUrl = '../../../../assets/images/windows-logo.svg';
 	constructor(
+		translate: TranslateService,
 		whModel: phoenix.WindowsHello,
 		commonService: CommonService,
-		translate: TranslateService
 	) {
 		const whStatus = {
 			status: 4,
@@ -35,6 +35,15 @@ export class WindowsHelloLandingViewModel {
 			title: 'common.securityAdvisor.windowsHello',
 			type: 'security',
 		};
+		translate.stream(whStatus.detail).subscribe((res) => {
+			whStatus.detail = res;
+		});
+		translate.stream(whStatus.title).subscribe((res) => {
+			whStatus.title = res;
+		});
+		translate.stream(subjectStatus.title).subscribe((res) => {
+			subjectStatus.title = res;
+		});
 		const setWhStatus = (finger: string, facial: string) => {
 			if (!finger) {
 				whStatus.status = 1;
