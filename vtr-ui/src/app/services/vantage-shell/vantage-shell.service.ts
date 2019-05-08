@@ -24,7 +24,9 @@ export class VantageShellService {
 				{
 					hsaBroker: rpcClient,
 					metricsBroker: metricClient,
-					hsaPowerBroker: powerClient
+					hsaPowerBroker: powerClient,
+					hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
+					hsaForteBroker: this.shell.ForteRpcClient ? this.shell.ForteRpcClient.getInstance() : null
 				}
 			);
 		}
