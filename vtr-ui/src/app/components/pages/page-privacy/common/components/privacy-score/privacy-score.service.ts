@@ -17,11 +17,11 @@ export class PrivacyScoreService {
 	}
 
 	readonly scoreWeights = {
-		leaksScore: 1,
-		monitoringEnabled: 1,
-		trackingEnabled: 1,
-		passwordStorageScore: 1,
-		constant: 1
+		leaksScore: 1.25,
+		monitoringEnabled: 1.25,
+		trackingEnabled: 1.25,
+		passwordStorageScore: 1.25,
+		constant: 0
 	};
 
 	getScoreParametrs() {
@@ -50,17 +50,16 @@ export class PrivacyScoreService {
 	calculate(params) {
 		const leaksScore = this.calculateLeaksScore(params.fixedBreaches, params.unfixedBreaches);
 		const passwordStorageScore = this.calculatePasswordStorageScore(params.fixedStorages, params.unfixedStorages);
-		const scoreItems = {
+
+		const calculatedScore = this.calculateScore({
 			leaksScore,
 			passwordStorageScore,
 			monitoringEnabled: params.monitoringEnabled,
 			trackingEnabled: params.trackingEnabled,
-			constant: 1
-		};
+			constant: 0
+		});
 
-		const calculatedScore = this.calculateScore(scoreItems);
-
-		return calculatedScore;
+		return calculatedScore < 10 ? 10 : calculatedScore;
 	}
 
 	getStaticDataAccordingToScore(score) {
