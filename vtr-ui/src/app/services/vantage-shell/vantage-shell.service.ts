@@ -97,8 +97,8 @@ export class VantageShellService {
 	 * returns metric object from VantageShellService of JS Bridge
 	 */
 	public getMetrics(): any {
-		const metricClient = this.phoenix.metrics;
-		if (this.phoenix && metricClient) {
+		if (this.phoenix && this.phoenix.metrics) {
+			const metricClient = this.phoenix.metrics;
 			if (!metricClient.isInit) {
 				metricClient.init({
 					appVersion: environment.appVersion,

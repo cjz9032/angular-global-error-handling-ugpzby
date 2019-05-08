@@ -25,6 +25,7 @@ export class AntiVirusLandingViewModel {
 			path: 'security/anti-virus',
 			title: 'common.securityAdvisor.antiVirus',
 			type: 'security',
+			id: 'sa-ov-link-antivirus'
 		};
 		const fwStatus = {
 			status: 4,
@@ -32,6 +33,7 @@ export class AntiVirusLandingViewModel {
 			path: 'security/anti-virus',
 			title: 'security.landing.firewall',
 			type: 'security',
+			id: 'sa-ov-link-firewall'
 		};
 		const subjectStatus = {
 			status: 2,

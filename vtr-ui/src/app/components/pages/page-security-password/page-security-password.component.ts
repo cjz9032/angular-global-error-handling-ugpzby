@@ -19,7 +19,7 @@ export class PageSecurityPasswordComponent implements OnInit {
 	statusItem: any;
 	cardContentPositionA: any = {};
 	securityAdvisor: SecurityAdvisor;
-
+	backId = 'sa-pm-btn-back';
 	constructor(
 		public mockService: MockService,
 		private commonService: CommonService,

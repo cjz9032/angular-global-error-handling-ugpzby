@@ -23,7 +23,7 @@
         </span></h3>
 			</div>
 			<div *ngIf="list.buttonTitle && list.status === 'disabled'" class="col-auto pr-2">
-				<vtr-ui-button (onClick)="list.buttonClick()" metricsEvent="itemClick" [metricsItem]="list.metricsItem"
+				<vtr-ui-button id="sa-av-btn-launchmcafee" (onClick)="list.buttonClick()" metricsEvent="itemClick" [metricsItem]="list.metricsItem"
 					[label]="list.buttonTitle | translate" [isRegular]=regular ></vtr-ui-button>
 			</div>
 		</div>

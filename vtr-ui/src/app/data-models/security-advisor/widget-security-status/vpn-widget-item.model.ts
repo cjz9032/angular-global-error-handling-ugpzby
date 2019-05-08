@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class VPNWidgetItem extends WidgetItem {
 	constructor(vpn: Vpn, commonService: CommonService, private translateService: TranslateService) {
 		super({
-			id: 'vpn',
+			id: 'sa-widget-lnk-vpn',
 			path: 'security/internet-protection',
 			type: 'security'
 		}, translateService);

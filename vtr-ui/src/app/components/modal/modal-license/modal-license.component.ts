@@ -32,7 +32,8 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 		this.http.get(this.url, { responseType: 'text' }).subscribe((results: any) => {
 			// console.log(this.sanitizer.bypassSecurityTrustHtml(results));
 			if (this.type === 'txt') {
-				this.articleBody = `<pre>${results}</pre>`;
+				const openSource = results.replace(/\< /g, '<').replace(/ \>/g, '>').replace(/\</g, '< ').replace(/\>/g, ' >');
+				this.articleBody = `<pre>${openSource}</pre>`;
 			} else {
 				this.articleBody = this.sanitizer.bypassSecurityTrustHtml(results);
 			}

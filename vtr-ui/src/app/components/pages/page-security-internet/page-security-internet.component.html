@@ -3,7 +3,8 @@
 		<div class="col vtr-col">
 			<vtr-header-main [backarrow]="'&lt; '"
 				[back]="'common.ui.back' | translate"
-				[title]="'security.vpn.title' | translate"></vtr-header-main>
+				[title]="'security.vpn.title' | translate"
+				[backId]="backId"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -41,12 +42,14 @@
 											</div>
 											<div class=" pull right">
 												<div class="col-12">
-													<vtr-ui-button *ngIf="statusItem.status === 'not-installed'"
+													<vtr-ui-button id="sa-vpn-btn-getsufeasy"
+														*ngIf="statusItem.status === 'not-installed'"
 														(click)="getSurfEasy()"
 														metricsItem="getSufEasy"
 														[label]="'security.vpn.getSufEasy' | translate">
 													</vtr-ui-button>
-													<vtr-ui-button *ngIf="statusItem.status === 'installed'"
+													<vtr-ui-button id="sa-vpn-btn-opensufeasy"
+														*ngIf="statusItem.status === 'installed'"
 														(click)="openSurfEasy()"
 														metricsItem="openSufEasy"
 														[label]="'security.vpn.openSufEasy' | translate">
@@ -152,7 +155,7 @@
 									</div>
 								</div>
 								<div class="row">
-									<div class="col col-6 mt-40">
+									<div class="col-12 col-lg-6 mt-40">
 										<div class="col mt-4">
 											<img src="../../../../assets/images/SurfEasy-Left-img-2.jpg"
 												class="surfeasy-side-right-img" />
@@ -194,12 +197,14 @@
 										<div class="list-heading">{{'security.vpn.poweredBySurfEasy' | translate}}</div>
 										<p class="text-regular"
 											*vtrTranslate="'security.vpn.privacyPolicyAndTermsOfService' | translate">
-											<a vtrMetrics
+											<a id="sa-vpn-lnk-privacypolicy"
+												vtrMetrics
 												metricsEvent="itemClick"
 												metricsItem="privacyPolicy"
 												href="https://www.surfeasy.com/privacy_policy/"
 												target="_blank"></a>
-											<a vtrMetrics
+											<a id="sa-vpn-lnk-termsofservices"
+												vtrMetrics
 												metricsEvent="itemClick"
 												metricsItem="termsOfServices"
 												href="https://www.surfeasy.com/terms_of_service/"
@@ -225,7 +230,8 @@
 								<!--End of Security Card Advisor-->
 								<div class="row">
 									<div class="col col-12">
-										<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+										<vtr-container-card id="sa-vpn-lnk-cardcontent"
+											[img]="cardContentPositionA.FeatureImage"
 											[caption]="cardContentPositionA.Description"
 											[title]="cardContentPositionA.Title"
 											[logoText]="cardContentPositionA.BrandName"
