@@ -55,10 +55,18 @@ export class SupportService {
 	}
 
 	widgetItemClick(clickItem: string) {
-		if (clickItem === 'qrCode') {
-			this.showQRCodePop();
-		} else if (clickItem === 'about') {
-			this.showAboutPop();
+		switch (clickItem) {
+			case 'qrCode':
+				this.showQRCodePop();
+				break;
+			case 'about':
+				this.showAboutPop();
+				break;
+			case 'userGuide':
+				this.launchUserGuide(false);
+				break;
+			default:
+				break;
 		}
 	}
 
@@ -73,5 +81,9 @@ export class SupportService {
 			centered: true,
 			windowClass: 'weChat-Modal'
 		});
+	}
+
+	launchUserGuide(launchPDF?: boolean) {
+		this.shellService.launchUserGuide(launchPDF);
 	}
 }

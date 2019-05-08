@@ -105,12 +105,10 @@
 				.base-percentage-text {
 					position: absolute;
 					z-index: 5;
-					text-align: left;
+					text-align: center;
 					width: calc(100% - 0.8rem);
 					font-size: 6rem;
 					font-weight: bold;
-					left: 5.5rem;
-					top: 1rem;
 				}
 
 				.battery-error {
@@ -144,9 +142,8 @@
 				z-index: 5;
 				font-weight: 600;
 				width: 100%;
-				text-align: left;
+				text-align: center;
 				letter-spacing: 0;
-				left: 5.5rem;
 			}
 
 			.remaining-time {

@@ -24,7 +24,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			{
 				'icon': ['fal', 'book'],
 				'title': 'support.documentation.listUserGuide',
-				'url': 'https://support.lenovo.com',
+				'clickItem': 'userGuide',
 				'metricsItem': 'Documentation.UserGuideButton',
 				'metricsEvent': 'FeatureClick',
 				'metricsParent': 'Page.Support'
@@ -51,7 +51,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				'iconPath': 'assets/images/support/svg_icon_wechat.svg',
 				'title': 'support.needHelp.listContactUsOnWechat',
 				'clickItem': 'qrCode',
-				'metricsItem': 'NeedHelp.ContactUsOnWeChat',
+				'metricsItem': 'NeedHelp.ContactUsOnWeChatButton',
 				'metricsEvent': 'FeatureClick',
 				'metricsParent': 'Page.Support'
 			}
@@ -77,7 +77,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				'iconPath': 'assets/images/support/svg_icon_about_us.svg',
 				'title': 'support.quicklinks.listAboutLenovoVantage',
 				'clickItem': 'about',
-				'metricsItem': 'NeedHelp.AboutUs',
+				'metricsItem': 'Quicklinks.AboutLenovoVantageButton',
 				'metricsEvent': 'FeatureClick',
 				'metricsParent': 'Page.Support'
 			}
