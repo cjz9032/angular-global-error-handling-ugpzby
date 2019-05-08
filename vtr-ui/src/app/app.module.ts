@@ -177,6 +177,7 @@ import { WidgetSystemMonitorComponent } from './components/widgets/widget-system
 import { WidgetQuicksettingsListComponent } from './components/widgets/widget-quicksettings-list/widget-quicksettings-list.component';
 import { WidgetLightingComponent } from './components/widgets/widget-lighting/widget-lighting.component';
 import { ModalGamingLegionedgeComponent } from './components/modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
+import { UiGamingCollapsibleContainerComponent } from './components/ui/ui-gaming-collapsible-container/ui-gaming-collapsible-container.component';
 
 
 library.add(fas);
@@ -313,7 +314,8 @@ library.add(fal);
 		WidgetSystemMonitorComponent,
 		WidgetQuicksettingsListComponent,
 		WidgetLightingComponent,
-		ModalGamingLegionedgeComponent
+		ModalGamingLegionedgeComponent,
+		UiGamingCollapsibleContainerComponent
 
 	],
 	imports: [
