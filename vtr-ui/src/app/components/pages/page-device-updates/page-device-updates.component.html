@@ -164,7 +164,8 @@
 											</fa-icon>
 										</div> -->
 
-											<vtr-container-collapsible [cardTitle]="'Full History'"
+											<vtr-container-collapsible
+												[cardTitle]="'device.systemUpdates.history' | translate | lowercase"
 												[isCollapsed]="false">
 												<vtr-installation-history (reinstallUpdate)="onReinstallUpdate($event)">
 												</vtr-installation-history>
