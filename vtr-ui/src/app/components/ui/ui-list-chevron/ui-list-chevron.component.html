@@ -2,7 +2,7 @@
 	<ul class="chevron-list" [ngClass]="items | wifiClass">
 		<li *ngFor="let item of items" [ngClass]="getItemStatusClass(item)">
 			<!--Open vantage subapges if isSystemLink===undefined or  isSystemLink  === false then user routerLink to naviagate within Lenovo Vantage Application -->
-			<a routerLink="/{{item.path}}" [queryParams]="item.pathParams" vtrMetrics [metricsItem]="item.title" metricsEvent="itemClick"
+			<a routerLink="/{{item.path}}" [queryParams]="item.pathParams" vtrMetrics [metricsItem]="item.title" metricsEvent="featureClick"
 				[ngClass]="clickable?'':'disabled'"
 				*ngIf="item.isSystemLink===undefined || (item.isSystemLink!==undefined && item.isSystemLink===false)">
 				<div class="container-fluid">
@@ -66,7 +66,7 @@
 				</div>
 			</a>
 			<!--Open Windows Settings /subapges if isSystemLink is not undefined and  true or  then sanitise URL of windows settings page like (ms-settings:storagesense) , link href instead of routerlink value is set to URL-->
-			<a href="#!" id="{{item.title+item.id}}"  vtrMetrics [metricsItem]="item.title" metricsEvent="itemClick" (click)="launchSystemUri(item.path)" [ngClass]="clickable?'':'disabled'"
+			<a href="#!" id="{{item.title+item.id}}"  vtrMetrics [metricsItem]="item.title" metricsEvent="featureClick" (click)="launchSystemUri(item.path)" [ngClass]="clickable?'':'disabled'"
 				*ngIf="item.isSystemLink!==undefined &&  item.isSystemLink===true">
 				<div class="container-fluid">
 					<div class="row align-items-center">

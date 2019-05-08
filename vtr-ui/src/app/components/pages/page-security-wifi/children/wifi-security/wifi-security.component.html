@@ -51,7 +51,7 @@
 										[hidden]="!data.isLWSEnabled">
 										<button vtrMetrics
 											metricsItem="collapseWiFiHistory"
-											metricsEvent="itemClick"
+											metricsEvent="featureClick"
 											class="btn btn-link collapse-text p-0"
 											type="button"
 											data-toggle="collapse"
@@ -65,7 +65,7 @@
 												class="pl-3"></fa-icon></button>
 										<button vtrMetrics
 											metricsItem="expandWiFiHistory"
-											metricsEvent="itemClick"
+											metricsEvent="featureClick"
 											class="btn btn-link collapse-text p-0"
 											type="button"
 											data-toggle="collapse"
@@ -93,14 +93,14 @@
 										Show: <a href=""
 											vtrMetrics
 											metricsItem="link.Malicious"
-											metricsEvent="itemclick"
+											metricsEvent="featureClick"
 											metricsParent="wifisecurity"
 											(click)="$event.preventDefault();showAllNetworks=false;"
 											[ngClass]="{'active': !showAllNetworks}">Malicious</a> / <a href=""
 											(click)="$event.preventDefault();showAllNetworks=true;"
 											vtrMetrics
 											metricsItem="link.all"
-											metricsEvent="itemclick"
+											metricsEvent="featureClick"
 											metricsParent="wifisecurity"
 											[ngClass]="{'active': showAllNetworks}">All</a>
 									</small> -->
@@ -163,14 +163,14 @@
 									*ngIf="data.hasMore">
 									<a vtrMetrics
 										metricsItem="showMoreWiFiHistory"
-										metricsEvent="itemClick"
+										metricsEvent="featureClick"
 										class="show-more"
 										href="#"
 										(click)="clickShowMore()"
 										*ngIf="isShowMoreLink">{{'security.wifisecurity.container.showmore' | translate}}</a>
 									<a vtrMetrics
 										metricsItem="showMoreWiFiHistory"
-										metricsEvent="itemClick"
+										metricsEvent="featureClick"
 										class="show-more"
 										href="#"
 										(click)="clickShowMore()"
@@ -213,7 +213,7 @@
 				<vtr-ui-button vtrMetrics
 					metricsParent="lenovo-wifi-security"
 					metricsItem="enableWifiSecurity"
-					metricsEvent="itemClick"
+					metricsEvent="featureClick"
 					(click)="enableWifiSecurity()"
 					[label]="'security.wifisecurity.container.button' | translate"></vtr-ui-button>
 			</div>

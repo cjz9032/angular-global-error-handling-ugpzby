@@ -141,13 +141,13 @@
 										<p class="text-regular mt-10"
 											*vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
 											<a vtrMetrics
-												metricsEvent="itemClick"
+												metricsEvent="featureClick"
 												metricsItem="privacyPolicy"
 												metricsParent="security.antivirus"
 												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
 												target="_blank"></a>
 											<a vtrMetrics
-												metricsEvent="itemClick"
+												metricsEvent="featureClick"
 												metricsItem="termsOfServices"
 												metricsParent="security.antivirus"
 												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
@@ -197,7 +197,7 @@
 													<a *ngIf="viewModel.mcafee?.subscription !== 'licenseActive' && viewModel.mcafee?.subscription !== 'licenseExpired'"
 														vtrMetrics
 														metricsItem="upgradeMcafee"
-														metricsEvent="itemClick"
+														metricsEvent="featureClick"
 														target="_blank"
 														href="{{viewModel.mcafee?.trialUrl}}"
 														class="text">{{'security.antivirus.mcafee.upgrade' | translate}}</a>
