@@ -56,19 +56,19 @@
 
 	.font-14-semi {
 		font-size: 14pt;
-		font-family: 'Segoe UI Semilight';
+		font-weight: 300;
 	}
 	.font-12-semi {
 		font-size: 12pt;
-		font-family: 'Segoe UI Semilight';
+		font-weight: 300;
 	}
 	.font-14-bold {
 		font-size: 14pt;
-		font-family: 'Segoe UI Semibold';
+		font-weight: 600;
 	}
 	.font-12-bold {
 		font-size: 12pt;
-		font-family: 'Segoe UI Semibold';
+		font-weight: 600;
 	}
 	.content-page-2 {
 		overflow-y:scroll;
@@ -157,7 +157,7 @@
 		margin-top: 29px;
 		margin-right: 20px;
 		height: 184px;
-		font-family: 'Segoe UI Semilight';
+		font-weight: 300;
 		@media #{$mediaquery_9} {
 			padding: 0px 0px 0px 17px;
 			height: 116px;
@@ -191,13 +191,6 @@
 	}
 
 	/************** common *************/
-	.title4 {
-		color: $light_grey;
-		font-size: 2rem;
-		text-align: center;
-		font-family: 'Segoe UI';
-	}
-
 	.centered {
 		position: absolute;
 		top: 50%;
@@ -205,13 +198,6 @@
 		transform: translate(-50%, -50%);
 		color: $light;
 		text-align: center;
-	}
-	.subtitle {
-		color: $dark;
-		font-size: 1rem;
-		text-align: center;
-		font-family: 'Segoe UI';
-
 	}
 
 	.divider {
