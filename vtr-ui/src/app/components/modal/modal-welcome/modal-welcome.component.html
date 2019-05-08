@@ -15,7 +15,7 @@
 			experience there are still a few things to setup.
 		</div>
 		<div class="d-flex justify-content-center">
-			<vtr-ui-button metricsEvent="itemClick"
+			<vtr-ui-button metricsEvent="featureClick"
 				metricsParent="modal-welcome"
 				[metricsItem]="'btn.startpersonalizing'"
 				[label]="'START PERSONALIZING'"
@@ -54,7 +54,7 @@
 					id="radio1"
 					value="business"
 					vtrMetrics
-					metricsEvent="itemClick"
+					metricsEvent="featureClick"
 					metricsParent="modalwelcome"
 					metricsItem="radio.business"
 					[metricsValue]="!radio1.checked"
@@ -67,7 +67,7 @@
 					id="radio2"
 					value="personal"
 					vtrMetrics
-					metricsEvent="itemClick"
+					metricsEvent="featureClick"
 					metricsParent="modalwelcome"
 					metricsItem="radio.personal"
 					[metricsValue]="!radio2.checked"
@@ -80,7 +80,7 @@
 					id="radio3"
 					value="custom"
 					vtrMetrics
-					metricsEvent="itemClick"
+					metricsEvent="featureClick"
 					metricsParent="modalwelcome"
 					metricsItem="radio.custom"
 					[metricsValue]="!radio3.checked"
@@ -104,7 +104,7 @@
 			</div>
 			<div class="position-absolute button">
 				<vtr-ui-button metricsParent="modal-welcome"
-					metricsEvent="itemClick"
+					metricsEvent="featureClick"
 					[metricsItem]="'btn.'+(data.page2.radioValue?'NEXT':'SKIP')"
 					[label]="data.page2.radioValue?'NEXT':'SKIP'"
 					(onClick)="next(2)"></vtr-ui-button>
@@ -131,7 +131,7 @@
 					<input type="checkbox"
 						id="checkbox1"
 						vtrMetrics
-						metricsEvent="itemClick"
+						metricsEvent="featureClick"
 						metricsItem="chk.games"
 						metricsParent="modalwelcome"
 						[metricsValue]="!checkbox1.checked"
@@ -143,7 +143,7 @@
 					<input type="checkbox"
 						id="checkbox2"
 						vtrMetrics
-						metricsEvent="itemClick"
+						metricsEvent="featureClick"
 						metricsItem="chk.news"
 						metricsParent="modalwelcome"
 						[metricsValue]="!checkbox2.checked"
@@ -155,7 +155,7 @@
 					<input type="checkbox"
 						id="checkbox3"
 						vtrMetrics
-						metricsEvent="itemClick"
+						metricsEvent="featureClick"
 						metricsItem="chk.entertainment"
 						metricsParent="modalwelcome"
 						[metricsValue]="!checkbox3.checked"
@@ -167,7 +167,7 @@
 					<input type="checkbox"
 						id="checkbox4"
 						vtrMetrics
-						metricsEvent="itemClick"
+						metricsEvent="featureClick"
 						metricsItem="chk.arts"
 						metricsParent="modalwelcome"
 						[metricsValue]="!checkbox4.checked"
@@ -184,7 +184,7 @@
 					<input type="checkbox"
 						id="checkbox5"
 						vtrMetrics
-						metricsEvent="itemClick"
+						metricsEvent="featureClick"
 						metricsItem="chk.technology"
 						metricsParent="modalwelcome"
 						[metricsValue]="!checkbox5.checked"
@@ -196,7 +196,7 @@
 					<input type="checkbox"
 						id="checkbox6"
 						vtrMetrics
-						metricsEvent="itemClick"
+						metricsEvent="featureClick"
 						metricsItem="chk.politics"
 						metricsParent="modalwelcome"
 						[metricsValue]="!checkbox6.checked"
@@ -208,7 +208,7 @@
 					<input type="checkbox"
 						id="checkbox7"
 						vtrMetrics
-						metricsEvent="itemClick"
+						metricsEvent="featureClick"
 						metricsItem="chk.sports"
 						metricsParent="modalwelcome"
 						[metricsValue]="!checkbox7.checked"
@@ -226,7 +226,7 @@
 					<input type="checkbox"
 						id="checkbox8"
 						vtrMetrics
-						metricsEvent="itemClick"
+						metricsEvent="featureClick"
 						metricsItem="chk.reginalnews"
 						metricsParent="modalwelcome"
 						[metricsValue]="!checkbox8.checked"
@@ -251,7 +251,7 @@
 			</div>
 			<div class="position-absolute button">
 
-				<vtr-ui-button metricsEvent="itemClick"
+				<vtr-ui-button metricsEvent="featureClick"
 					metricsParent="modal-welcome"
 					[metricsItem]="'btn.'+(checkedArray.length>0?'NEXT':'SKIP')"
 					[label]="checkedArray.length>0?'NEXT':'SKIP'"
