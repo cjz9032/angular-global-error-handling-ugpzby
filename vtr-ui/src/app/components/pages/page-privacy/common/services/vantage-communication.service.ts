@@ -153,6 +153,7 @@ export class VantageCommunicationService {
 		if (this.vantageShellService.getPrivacyCore()) {
 			return from(this.vantageShellService.getPrivacyCore().sendContractToPlugin(contract)) as Observable<T>;
 		} else {
+			console.error('JS bridge error');
 			return EMPTY;
 		}
 	}
