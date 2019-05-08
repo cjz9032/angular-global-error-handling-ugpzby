@@ -56,17 +56,7 @@ Use your browser to view websites, and come back here later, then we can show wh
 	</vtr-try-product-block>
 
 	<ng-template #loader>
-		<div class="trackers__wrapper trackers__wrapper--loader">
-			<div class="trackers__spinner-border">
-				<div class="trackers__spinner-wrapper">
-					<div class="trackers__spinner">
-						<div class="trackers__spinner-dot1"></div>
-						<div class="trackers__spinner-dot2"></div>
-					</div>
-				</div>
-			</div>
-			<p class="trackers__spinner-text">Creating tracker map for the most popular websitess</p>
-		</div>
+		<vtr-big-loader [text]="textForLoader"></vtr-big-loader>
 	</ng-template>
 
 	<vtr-common-popup [popUpId]="trackingMapSinglePopupId" size="large">
