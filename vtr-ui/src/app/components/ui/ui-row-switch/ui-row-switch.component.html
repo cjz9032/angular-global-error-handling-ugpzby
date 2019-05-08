@@ -6,7 +6,7 @@
 	<div class="container-fluid p-0"
 		[ngClass]="{'vtr-disabled': disabled}">
 		<div class="row m-0">
-			<div class="col col-8"
+			<div class="col"
 				[ngClass]="{'col-md-8': (type==='auto-updates' || type==='Camera'), 'col-md-10':type===undefined}">
 				<div class="container-fluid p-0">
 					<div class="row m-0">
@@ -40,7 +40,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col col-4">
+			<div class="col d-flex justify-content-end">
 				<div class="row">
 					<div class="p-0"
 						[ngClass]="{'ml-auto': type!=='Camera'}"
