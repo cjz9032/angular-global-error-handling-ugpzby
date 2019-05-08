@@ -51,7 +51,7 @@ export class AnalyticsService {
 	send(data: ExtendedMetricsData) {
 		console.log('ANALYTICS data: ', data);
 		if (this.metrics && this.metrics.sendAsync) {
-			this.metrics.sendAsync(JSON.stringify(data));
+			// this.metrics.sendAsync(JSON.stringify(data)); // TODO LVPT-273
 		}
 	}
 

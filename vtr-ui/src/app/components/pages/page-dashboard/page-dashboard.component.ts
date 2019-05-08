@@ -97,6 +97,8 @@ export class PageDashboardComponent implements OnInit {
 		this.translate.stream('lenovoId.user').subscribe((value) => {
 			if (!self.userService.auth) {
 				self.firstName = value;
+			} else {
+				self.firstName = this.userService.firstName;
 			}
 		});
 		this.isOnline = this.commonService.isOnline;
