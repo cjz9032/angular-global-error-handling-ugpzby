@@ -24,7 +24,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			{
 				'icon': ['fal', 'book'],
 				'title': 'support.documentation.listUserGuide',
-				'url': 'https://support.lenovo.com',
+				'clickItem': 'userGuide',
 				'metricsItem': 'Documentation.UserGuideButton',
 				'metricsEvent': 'FeatureClick',
 				'metricsParent': 'Page.Support'

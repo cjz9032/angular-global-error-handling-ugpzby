@@ -10,7 +10,8 @@ export class HomeProtectionLandingViewModel {
 			pathParams: { fragment: 'home-security' },
 			title: 'security.landing.connectedHomeSecurity',
 			type: 'security',
-			circle: 'questionCircle'
+			circle: 'questionCircle',
+			id: 'sa-ov-link-homeProtection'
 		};
 		this.translate.stream(hpStatus.title).subscribe((res) => {
 			hpStatus.title = res;
