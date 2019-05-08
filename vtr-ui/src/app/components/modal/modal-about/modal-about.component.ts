@@ -4,6 +4,7 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalLicenseComponent } from '../../modal/modal-license/modal-license.component';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../../../environments/environment';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 declare var Windows;
 @Component({
@@ -21,6 +22,7 @@ export class ModalAboutComponent implements OnInit {
 		public activeModal: NgbActiveModal,
 		public modalService: NgbModal,
 		private translate: TranslateService,
+		private shellService: VantageShellService,
 	) { }
 
 	ngOnInit() {
@@ -67,6 +69,10 @@ export class ModalAboutComponent implements OnInit {
 		aboutModal.componentInstance.type = 'txt';
 		aboutModal.componentInstance.licenseModalMetrics = licenseModalMetrics;
 		this.closeModal();
+	}
+
+	launchUserGuide() {
+		this.shellService.launchUserGuide(true);
 	}
 
 	closeModal() {

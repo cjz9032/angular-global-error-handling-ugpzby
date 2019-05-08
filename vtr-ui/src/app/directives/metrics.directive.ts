@@ -1,7 +1,8 @@
-import {Directive, ElementRef, HostListener, Input} from '@angular/core';
-import {VantageShellService} from '../services/vantage-shell/vantage-shell.service';
-import {ActivatedRoute} from "@angular/router";
-import {VieworderService} from "../services/view-order/vieworder.service";
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { VantageShellService } from '../services/vantage-shell/vantage-shell.service';
+import { ActivatedRoute } from '@angular/router';
+import { VieworderService } from '../services/view-order/vieworder.service';
+import { DeviceService } from '../services/device/device.service';
 
 export interface MetricsData {
 	ItemType: string;
@@ -20,6 +21,7 @@ export interface MetricsData {
 	SettingParm?: string;
 }
 
+
 declare var window;
 
 @Directive({
@@ -27,14 +29,16 @@ declare var window;
 })
 export class MetricsDirective {
 
-	constructor(private el: ElementRef, private shellService: VantageShellService,private activatedRoute:ActivatedRoute,private viewOrderService:VieworderService) {
-		this.metrics = shellService.getMetrics();
-	}
-
 	private metrics: any;
 
+	constructor(private deviceService: DeviceService,
+		private el: ElementRef,
+		private shellService: VantageShellService,
+		private activatedRoute: ActivatedRoute,
+		private viewOrderService: VieworderService) {
+		this.metrics = shellService.getMetrics();
 
-
+	}
 
 
 	@Input() metricsItem: string;
@@ -48,19 +52,19 @@ export class MetricsDirective {
 	@Input() metricsItemCategory: string;
 	@Input() metricsItemPosition: string;
 	@Input() metricsViewOrder: string;
-	@Input() metricsPageNumber: string="1";
+	@Input() metricsPageNumber = '1';
 
 	@Input() metricsSettingName: string;
 	@Input() metricsSettingParm: string;
 	@Input() metricsSettingValue: string;
 
 	ComposeMetricsData() {
-		const data: any = {
-		};
+		const data: any = {};
 		const eventName = this.metricsEvent.toLowerCase();
 		switch (eventName) {
+			case 'featureclick':
 			case 'itemclick': {
-				data.ItemType = 'ItemClick';
+				data.ItemType = 'FeatureClick';
 				data.ItemName = this.metricsItem;
 				data.ItemParent = this.metricsParent;
 				if (this.metricsParam) {
@@ -71,14 +75,15 @@ export class MetricsDirective {
 				}
 			}
 				break;
+			case 'articleclick':
 			case 'docclick': {
-				data.ItemType = 'DocClick';
+				data.ItemType = 'ArticleClick';
 				data.ItemParent = this.metricsParent;
-				if(typeof this.viewOrderService[this.metricsParent]==='undefined'){
+				if (typeof this.viewOrderService[this.metricsParent] === 'undefined') {
 
-					this.viewOrderService[this.metricsParent]=0;
+					this.viewOrderService[this.metricsParent] = 0;
 				}
-				data.viewOrder=(++this.viewOrderService[this.metricsParent]);
+				data.viewOrder = (++this.viewOrderService[this.metricsParent]);
 				if (this.metricsItemID) {
 					data.ItemID = this.metricsItemID;
 				}
@@ -88,14 +93,14 @@ export class MetricsDirective {
 				if (this.metricsItemPosition) {
 					data.ItemPosition = this.metricsItemPosition;
 				}
-				if(!this.metricsPageNumber){
-					data.pageNumber="1";
+				if (!this.metricsPageNumber) {
+					data.pageNumber = '1';
 				}
 				if (this.metricsPageNumber) {
 					data.PageNumber = this.metricsPageNumber;
 				}
-			}
 				break;
+			}
 			case 'settingupdate': {
 				data.ItemType = 'SettingUpdate';
 				data.SettingParent = this.metricsParent;
@@ -111,10 +116,17 @@ export class MetricsDirective {
 
 	@HostListener('click', ['$event.target'])
 	onclick(target) {
-		if(!this.metricsParent){
+
+
+		if (!this.metricsParent) {
 			this.metricsParent = this.activatedRoute.snapshot.data['pageName'];
 		}
 		const data = this.ComposeMetricsData();
+
+		/** to prefix the item type with btn, a ,div etc **/
+		data.ItemName = this.getTagName(target) + data.ItemName;
+
+
 		if (this.metrics && this.metrics.sendAsync) {
 			this.metrics.sendAsync(data);
 		}
@@ -124,4 +136,15 @@ export class MetricsDirective {
 	}
 
 
+	getTagName(target) {
+		const tagName = target.tagName;
+		switch (tagName) {
+			case 'A':
+				return 'a.';
+			case 'BUTTON':
+				return 'btn.';
+			default:
+				return '';
+		}
+	}
 }

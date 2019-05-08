@@ -45,8 +45,9 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 			text: 'Learn more',
 			url: '/#/privacy/landing'
 		},
-
 	};
+
+	textForLoader = 'Creating tracker map for the most popular websitess';
 
 	constructor(
 		private trackingMapService: TrackingMapService,

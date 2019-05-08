@@ -19,9 +19,9 @@ export class WifiSecurityLandingViewModel {
 	wifiHistory: Array < phoenix.WifiDetail > ;
 	imgUrl = '../../../../assets/images/coronet-logo.svg';
 	constructor(
+		translate: TranslateService,
 		wfModel: phoenix.WifiSecurity,
 		commonService: CommonService,
-		translate: TranslateService
 	) {
 		const wfStatus = {
 			status: 4,
