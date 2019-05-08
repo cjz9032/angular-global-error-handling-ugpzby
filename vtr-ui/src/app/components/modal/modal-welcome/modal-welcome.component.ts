@@ -18,7 +18,14 @@ export class ModalWelcomeComponent implements OnInit {
 			radioValue: null,
 		}
 	};
-
+	interests = [
+		"games", "news", "entertainment", "technology",
+		"sports", "arts", "regionalNews", "politics", 
+		"music", "science"
+	];
+	// to show small list. on click of More Interest show all.
+	interestCopy = this.interests.slice(0,8);
+	hideMoreInterestBtn = false;
 	constructor(public activeModal: NgbActiveModal) {
 
 	}
@@ -29,7 +36,6 @@ export class ModalWelcomeComponent implements OnInit {
 	next(page) {
 
 		if (++page < 3) {
-			alert(page);
 			this.page = page;
 		} else {
 			const response = new WelcomeTutorial(true, this.data.page2.radioValue, this.checkedArray);
@@ -43,6 +49,7 @@ export class ModalWelcomeComponent implements OnInit {
 		} else {
 			 this.checkedArray.splice(this.checkedArray.indexOf(value), 1);
 		}
+		console.log(this.checkedArray);
 		console.log(this.checkedArray.length);
 	}
 
@@ -64,5 +71,9 @@ export class ModalWelcomeComponent implements OnInit {
 		if ($event.target.checked) {
 			this.privacyPolicy = value;
 		}
+	}
+	moreInterestClicked() {
+		this.interestCopy = this.interests;
+		this.hideMoreInterestBtn = true;
 	}
 }
