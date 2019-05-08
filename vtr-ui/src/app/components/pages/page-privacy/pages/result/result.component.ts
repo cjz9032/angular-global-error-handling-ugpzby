@@ -5,6 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
 import { BreachedAccount, BreachedAccountsService } from '../../common/services/breached-accounts.service';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
+import { AccessTokenService } from '../../common/services/access-token.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -20,20 +21,22 @@ export class ResultComponent implements OnInit, OnDestroy {
 	breached_accounts: BreachedAccount[] = [];
 	breached_accounts_show: BreachedAccount[];
 
+	isWasScanned = this.accessTokenService.accessTokenIsExist$;
+	textForLoader = '';
+
 	constructor(
 		private router: Router,
 		private breachedAccountsService: BreachedAccountsService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private changeDetectorRef: ChangeDetectorRef,
+		private accessTokenService: AccessTokenService
 	) {
 	}
 
 	ngOnInit() {
 		this.breached_accounts_show = this.breached_accounts.slice(0, 3);
 		this.breachedAccountsService.onGetBreachedAccounts$
-			.pipe(
-				takeUntil(instanceDestroyed(this)),
-			)
+			.pipe(takeUntil(instanceDestroyed(this)))
 			.subscribe((breachedAccounts) => {
 				this.breached_accounts = breachedAccounts.filter((breach) => {
 					return !(breach.hasOwnProperty('isFixed') && breach.isFixed === true);

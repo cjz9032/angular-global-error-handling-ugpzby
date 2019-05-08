@@ -14,6 +14,7 @@ import { SupportBannerComponent } from './support-banner/support-banner.componen
 import { PipesModule } from '../pipes/pipes.module';
 import { RouterModule } from '@angular/router';
 import { DirectivesModule } from '../directives/directives.module';
+import { BigLoaderComponent } from './big-loader/big-loader.component';
 
 @NgModule({
 	declarations: [
@@ -27,6 +28,7 @@ import { DirectivesModule } from '../directives/directives.module';
 		LowPrivacyComponent,
 		PrivacyScoreComponent,
 		SupportBannerComponent,
+		BigLoaderComponent,
 	],
 	exports: [
 		SimpleLoaderComponent,
@@ -39,6 +41,7 @@ import { DirectivesModule } from '../directives/directives.module';
 		LowPrivacyComponent,
 		PrivacyScoreComponent,
 		SupportBannerComponent,
+		BigLoaderComponent,
 	],
 	imports: [
 		CommonModule,
