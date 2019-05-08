@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { EMPTY, merge, ReplaySubject, Subscription } from 'rxjs';
-import { catchError, distinctUntilChanged, map, switchMap, switchMapTo, take } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, map, switchMap, switchMapTo, take, tap } from 'rxjs/operators';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
 
@@ -65,6 +65,11 @@ export class BreachedAccountsService {
 							})
 						);
 				}
+			}),
+			map((breachedAccounts) => {
+				const breaches = breachedAccounts.filter(x => x.domain !== 'n/a');
+				const unknownBreaches = breachedAccounts.filter(x => x.domain === 'n/a');
+				return [...breaches, ...unknownBreaches];
 			})
 		).subscribe((response: BreachedAccount[]) => {
 			this.onGetBreachedAccounts$.next(response);

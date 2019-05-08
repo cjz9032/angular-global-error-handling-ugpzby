@@ -11,6 +11,7 @@
 		background-color: $main_darker;
 		color: $light;
 		justify-content: left;
+		padding-right: 16px;
 
 		.active .icomoon::before{
 			color:$main;
@@ -97,6 +98,7 @@
 							line-height: 4.6rem;
 							border-bottom: none;
 							background-color: $main_darkest;
+
 
 							.user-initials {
 								display: inline-block;
@@ -195,6 +197,15 @@
 								transform: rotate(135deg);
 								right: 2rem;
 								top: 4rem;
+							}
+							&.user{
+								padding-right: 5.2rem;
+								&::after{
+									right: 3rem;
+								}
+								&::before{
+									right: 4rem;
+								}
 							}
 						}
 					}

@@ -45,7 +45,10 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	ngOnInit() {
 		this.regionService.getRegion().subscribe({
 			next: x => { this.region = x; },
-			error: err => { console.error(err); },
+			error: err => {
+				console.error(err);
+				this.region = 'US';
+			},
 			complete: () => { console.log('Done'); }
 		});
 		if (this.wifiIsShowMore === 'false') {

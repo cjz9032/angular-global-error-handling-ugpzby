@@ -32,6 +32,19 @@
 					"macroKey": "Marco Key",
 					"hardwareScan": "Hardware Scan",
 					"systemUpdate": "System Update"
+				},
+				"legionEdgeModal": {
+					"line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
+					"line2": "Feature Management Overview <br> Some features not available on all devices",
+					"line3": "CPU Overclocking <br> Boost the maximum speed for your processor",
+					"line4": "RAM Overclocking <br> Boost the maximum speed for your memory",
+					"line5": "Network Boost <br> Prioritize network traffic for the game you're playing",
+					"line6": "Dolby <br> Tune your audio specifically for gaming with Dolby technology",
+					"line7": "Hybrid Mode <br> Disable advanced GPU settings when not gaming to boost battery performance",
+					"line8": "Rapid Charge <br> Game on the go longer with quicker battery charging",
+					"line9": "Touchpad Lock <br> Prevent mistaken inputs by disabling the touchpad while gaming",
+					"line10": "Auto Close <br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
+					"line11": "Thermal Mode <br> Set your preferred device profile for fan speed and cooling control"
 				}
 			}
 		}
@@ -501,6 +514,7 @@
 			"successInstall": "Successfully installed on",
 			"failedInstall": "Failed to installed on",
 			"at": "at",
+			"readMore": "Read more",
 			"popup": {
 				"reboot": "Reboot",
 				"shutdown": "Shut Down",
@@ -841,7 +855,15 @@
 		"logout": "Logout",
 		"user": "User",
 		"welcomeText": "Looking energized today {{firstName}}!",
-		"helloUser": "Hello, {{firstName}}!"
+		"welcomeTextWithoutUserName": "Looking energized today!",
+		"helloUser": "Hello, {{firstName}}!",
+		"ssoErrorTitle": "Error",
+		"ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
+		"ssoErrorCommonEx": "Unexpected error. Please try again.",
+		"ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
+		"ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
+		"ssoErrorCommunicating": "Network error. Please check your connection and try again.",
+		"ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
 	},
 	"faq": {
 		"footer": {

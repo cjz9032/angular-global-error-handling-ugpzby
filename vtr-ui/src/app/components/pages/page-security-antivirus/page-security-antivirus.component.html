@@ -1,9 +1,11 @@
 <div class="vtr-page-security-antivirus vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main [backarrow]="backarrow"
+			<vtr-header-main
+				[backarrow]="backarrow"
 				[back]="back | translate"
-				[title]="title | translate"></vtr-header-main>
+				[title]="title | translate"
+				[backId]="backId"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -28,7 +30,7 @@
 												[innerHTML]="'security.antivirus.windowsDefender.subtitle' | translate">
 											</div>
 											<div class="p-3">
-												<vtr-ui-button metricsItem="learnMoreAboutMcafee"
+												<vtr-ui-button id="sa-av-btn-learnmore" metricsItem="learnMoreAboutMcafee"
 													[label]="'security.antivirus.windowsDefender.learnMore' | translate"
 													(onClick)="openArticle()"
 													[upperCaseLabel]=false></vtr-ui-button>
@@ -140,13 +142,15 @@
 										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
 										<p class="text-regular mt-10"
 											*vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
-											<a vtrMetrics
+											<a	id="sa-av-link-privacypolicy"
+												vtrMetrics
 												metricsEvent="itemClick"
 												metricsItem="privacyPolicy"
 												metricsParent="security.antivirus"
 												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
 												target="_blank"></a>
-											<a vtrMetrics
+											<a	id="sa-av-link-termsofservices"
+												vtrMetrics
 												metricsEvent="itemClick"
 												metricsItem="termsOfServices"
 												metricsParent="security.antivirus"
@@ -194,7 +198,8 @@
 													{{viewModel.mcafee?.expireAt | date:'MM/dd/yyyy' }}
 												</span>
 												<span>
-													<a *ngIf="viewModel.mcafee?.subscription !== 'licenseActive' && viewModel.mcafee?.subscription !== 'licenseExpired'"
+													<a *ngIf="viewModel.mcafee?.trialUrl && viewModel.mcafee?.trialUrl !== 'unknown'"
+														id="sa-av-link-upgrademcafee"
 														vtrMetrics
 														metricsItem="upgradeMcafee"
 														metricsEvent="itemClick"
@@ -205,7 +210,8 @@
 											</div>
 										</div>
 										<div class="col-auto py-5">
-											<vtr-ui-button metricsItem="launchMcafee"
+											<vtr-ui-button id="sa-av-btn-launchmcafee"
+												metricsItem="launchMcafee"
 												(onClick)=" viewModel.mcafee?.launch()"
 												[label]="'security.antivirus.mcafee.launch' | translate"
 												[upperCaseLabel]=false></vtr-ui-button>
@@ -329,13 +335,15 @@
 										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
 										<p class="text-regular mt-10"
 											*vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
-											<a vtrMetrics
+											<a	id="sa-av-link-privacypolicy"
+												vtrMetrics
 												metricsEvent="itemClick"
 												metricsItem="privacyPolicy"
 												metricsParent="security.antivirus"
 												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
 												target="_blank"></a>
-											<a vtrMetrics
+											<a 	id="sa-av-link-termsofservices"
+												vtrMetrics
 												metricsEvent="itemClick"
 												metricsItem="termsOfServices"
 												metricsParent="security.antivirus"
@@ -473,13 +481,15 @@
 										<div class="title">{{'security.antivirus.common.poweredBy' | translate}}</div>
 										<p class="text-regular mt-10"
 											*vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
-											<a vtrMetrics
+											<a	id="sa-av-link-privacypolicy"
+												vtrMetrics
 												metricsEvent="itemClick"
 												metricsItem="privacyPolicy"
 												metricsParent="security.antivirus"
 												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
 												target="_blank"></a>
-											<a vtrMetrics
+											<a	id="sa-av-link-termsofservices"
+												vtrMetrics
 												metricsEvent="itemClick"
 												metricsItem="termsOfServices"
 												metricsParent="security.antivirus"
@@ -509,7 +519,8 @@
 
 								<div class="row">
 									<div class="col col-12">
-										<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+										<vtr-container-card id="sa-av-btn-mcafeearticle"
+											[img]="cardContentPositionA.FeatureImage"
 											[caption]="cardContentPositionA.Description"
 											[title]="cardContentPositionA.Title"
 											[logoText]="cardContentPositionA.BrandName"

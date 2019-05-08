@@ -43,13 +43,13 @@
 						padding: 2rem;
 					}
 					@media #{$mediaquery_X3} {
-						padding: 2rem;
+						padding: 1.5rem;
 					}
 					@media #{$mediaquery_X4} {
 						padding: 2rem;
 					}
 					@media #{$mediaquery_X7} {
-						padding: 2rem;
+						padding: 1rem;
 					}
 
 					.title {
@@ -356,6 +356,12 @@
 			@media #{$mediaquery_17} {
 				font-size: 2rem;
 			}
+			@media #{$mediaquery_X3} {
+				font-size: 1.6rem;
+			}
+			@media #{$mediaquery_X7} {
+				font-size: 1.6rem;
+			}
 		}
 
 		.description {
@@ -377,6 +383,12 @@
 			}
 			@media #{$mediaquery_17} {
 				font-size: 1.8rem;
+			}
+			@media #{$mediaquery_X3} {
+				font-size: 1.6rem;
+			}
+			@media #{$mediaquery_X7} {
+				font-size: 1.5rem;
 			}
 		}
 

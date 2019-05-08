@@ -32,6 +32,19 @@
 					"macroKey": "Marco Key",
 					"hardwareScan": "Hardware Scan",
 					"systemUpdate": "System Update"
+				},
+				"legionEdgeModal": {
+					"line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
+					"line2": "Feature Management Overview <br> Some features not available on all devices",
+					"line3": "CPU Overclocking <br> Boost the maximum speed for your processor",
+					"line4": "RAM Overclocking <br> Boost the maximum speed for your memory",
+					"line5": "Network Boost <br> Prioritize network traffic for the game you're playing",
+					"line6": "Dolby <br> Tune your audio specifically for gaming with Dolby technology",
+					"line7": "Hybrid Mode <br> Disable advanced GPU settings when not gaming to boost battery performance",
+					"line8": "Rapid Charge <br> Game on the go longer with quicker battery charging",
+					"line9": "Touchpad Lock <br> Prevent mistaken inputs by disabling the touchpad while gaming",
+					"line10": "Auto Close <br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
+					"line11": "Thermal Mode <br> Set your preferred device profile for fan speed and cooling control"
 				}
 			}
 		}
@@ -501,6 +514,7 @@
 			"successInstall": "已成功安装",
 			"failedInstall": "无法安装",
 			"at": "在",
+			"readMore": "Read more",
 			"popup": {
 				"reboot": "重启",
 				"shutdown": "关掉",
@@ -846,7 +860,15 @@
 		"logout": "注销",
 		"user": "用户",
 		"welcomeText": "元气满满的一天 {{firstName}}！",
-		"helloUser": "{{firstName}}，你好！"
+		"welcomeTextWithouUserName": "元气满满的一天！",
+		"helloUser": "{{firstName}}，你好！",
+		"ssoErrorTitle": "错误",
+		"ssoErrorCommon": "糟糕，出现了错误。请重试。",
+		"ssoErrorCommonEx": "意外错误。请重试",
+		"ssoErrorTimeStampIncorrect": "糟糕，似乎您的电脑时间不正确。请更正您的电脑时间，然后重试。",
+		"ssoErrorNetworkDisconnected": "糟糕！连接失败了！请检查您的因特网连接并重试。",
+		"ssoErrorCommunicating": "网络错误。请检查连接，然后重试。",
+		"ssoErrorAccountPluginNotExist": "缺少插件。如果您已连接因特网，我们将在后台自动恢复插件。这可能需要花费一些时间，请稍后重试。"
 	},
 	"faq": {
 		"footer": {

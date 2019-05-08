@@ -1,4 +1,7 @@
+import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
+import { ModalWelcomeComponent } from './../../modal/modal-welcome/modal-welcome.component';
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 	selector: 'vtr-widget-legion-edge',
@@ -10,50 +13,93 @@ export class WidgetLegionEdgeComponent implements OnInit {
   public legionUpdate = [
 		{
 			readMoreText: '',
-			rightImageSource: ['far', 'question-circle'],
-			leftImageSource: ['fas', 'battery-three-quarters'],
-			header: 'Critical Updates',
-			name: 'critical-updates',
+			rightImageSource: '',
+			leftImageSource: '',
+			header: 'gaming.dashboard.device.legionEdge.title',
+			name: 'gaming.dashboard.device.legionEdge.title',
 			subHeader: '',
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isChecked: true,
-			tooltipText: 'Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption.',
-			type: 'auto-updates'
-		},
-		{
-			readMoreText: '',
-			rightImageSource: ['far', 'question-circle'],
-			leftImageSource: ['fas', 'battery-three-quarters'],
-			header: 'Recommended Updates',
-			name: 'recommended-updates',
-			subHeader: '',
-			isCheckBoxVisible: false,
-			isSwitchVisible: true,
-			isChecked: true,
-			tooltipText: 'Recommended driver updates keep your computer running at optimal performance.',
+			tooltipText: '',
 			type: 'auto-updates'
 		},
 		{
 			readMoreText: '',
 			rightImageSource: '',
-			leftImageSource: ['fas', 'battery-three-quarters'],
-			header: 'Windows Updates',
-			name: 'windows-updates',
+			leftImageSource: '',
+			header: 'gaming.dashboard.device.legionEdge.ramOverlock',
+			name: 'gaming.dashboard.device.legionEdge.ramOverlock',
 			subHeader: '',
-			isCheckBoxVisible: false,
-			isSwitchVisible: false,
+			isCheckBoxVisible: true,
+			isSwitchVisible: true,
 			isChecked: true,
-			linkText: 'Windows settings',
-			linkPath: 'ms-settings:windowsupdate',
+			tooltipText: '',
 			type: 'auto-updates'
-
+		},
+		{
+			readMoreText: '',
+			rightImageSource: '',
+			leftImageSource: '',
+			header: 'gaming.dashboard.device.legionEdge.autoClose',
+			name: 'gaming.dashboard.device.legionEdge.autoClose',
+			subHeader: '',
+			isCheckBoxVisible: true,
+			isSwitchVisible: true,
+			isChecked: true,
+			tooltipText: '',
+			type: 'auto-updates'
+		},
+		{
+			readMoreText: '',
+			rightImageSource: '',
+			leftImageSource: '',
+			header: 'gaming.dashboard.device.legionEdge.networkBoost',
+			name: 'gaming.dashboard.device.legionEdge.networkBoost',
+			subHeader: '',
+			isCheckBoxVisible: true,
+			isSwitchVisible: true,
+			isChecked: true,
+			tooltipText: '',
+			type: 'auto-updates'
+		},
+		{
+			readMoreText: '',
+			rightImageSource: '',
+			leftImageSource:'',
+			header: 'gaming.dashboard.device.legionEdge.hybridMode',
+			name: 'gaming.dashboard.device.legionEdge.hybridMode',
+			subHeader: '',
+			isCheckBoxVisible: true,
+			isSwitchVisible: true,
+			isChecked: true,
+			tooltipText: '',
+			type: 'auto-updates'
+		}
+		,
+		{
+			readMoreText: '',
+			rightImageSource: '',
+			leftImageSource: '',
+			header: 'gaming.dashboard.device.legionEdge.touchpadLock',
+			name: 'gaming.dashboard.device.legionEdge.touchpadLock',
+			subHeader: '',
+			isCheckBoxVisible: true,
+			isSwitchVisible: true,
+			isChecked: true,
+			tooltipText: '',
+			type: 'auto-updates'
 		}
 	];
 
-	constructor() { }
+	constructor(private modalService: NgbModal) { }
 
 	ngOnInit() {
+	}
+
+	openModal() {
+		//this.modalService.open(ModalWelcomeComponent);
+		this.modalService.open(ModalGamingLegionedgeComponent);
 	}
 
 }
