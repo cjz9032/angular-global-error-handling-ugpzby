@@ -213,7 +213,7 @@ export class PageSecurityComponent implements OnInit {
 		const valid = antivirusScore.filter(i => i === 0 || i === 2).length;
 		this.score = Math.floor(valid / antivirusScore.length * 100);
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingScore, this.score);
-		this.securityAdvisor.setScoreRegistry(this.score);
+		// this.securityAdvisor.setScoreRegistry(this.score);
 	}
 
 	fetchCMSArticles() {
