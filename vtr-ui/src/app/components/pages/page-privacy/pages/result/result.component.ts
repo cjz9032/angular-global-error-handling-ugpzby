@@ -29,12 +29,11 @@ export class ResultComponent implements OnInit, OnDestroy {
 		private breachedAccountsService: BreachedAccountsService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private changeDetectorRef: ChangeDetectorRef,
-		private accessTokenService: AccessTokenService
+		private accessTokenService: AccessTokenService,
 	) {
 	}
 
 	ngOnInit() {
-		this.breached_accounts_show = this.breached_accounts.slice(0, 3);
 		this.breachedAccountsService.onGetBreachedAccounts$
 			.pipe(takeUntil(instanceDestroyed(this)))
 			.subscribe((breachedAccounts) => {

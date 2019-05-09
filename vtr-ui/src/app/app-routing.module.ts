@@ -19,6 +19,7 @@ import { PageSupportDetailComponent } from './components/pages/page-support-deta
 import { PageUserComponent } from './components/pages/page-user/page-user.component';
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
 import { WindowsHelloGuardService } from './services/guard/windows-hello-guardService.service';
+import { PrivacyModule } from './components/pages/page-privacy/privacy.module';
 
 const routes: Routes = [
 	{
@@ -143,7 +144,7 @@ const routes: Routes = [
 		}
 	}, {
 		path: 'privacy',
-		loadChildren: './components/pages/page-privacy/privacy.module#PrivacyModule',
+		loadChildren: () => PrivacyModule,
 		data: {
 			pageName: 'Page.Privacy'
 		}

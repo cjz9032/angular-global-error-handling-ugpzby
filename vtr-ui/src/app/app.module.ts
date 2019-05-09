@@ -177,6 +177,7 @@ import { WidgetSystemMonitorComponent } from './components/widgets/widget-system
 import { WidgetQuicksettingsListComponent } from './components/widgets/widget-quicksettings-list/widget-quicksettings-list.component';
 import { WidgetLightingComponent } from './components/widgets/widget-lighting/widget-lighting.component';
 import { ModalGamingLegionedgeComponent } from './components/modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
+import { PrivacyModule } from './components/pages/page-privacy/privacy.module';
 
 
 library.add(fas);
@@ -329,7 +330,8 @@ library.add(fal);
 		ReactiveFormsModule,
 		// ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 		TranslationModule,
-		BrowserAnimationsModule
+		BrowserAnimationsModule,
+		PrivacyModule
 	],
 	providers: [
 		CookieService,
