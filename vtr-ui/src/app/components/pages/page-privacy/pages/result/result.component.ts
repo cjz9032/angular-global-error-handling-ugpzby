@@ -23,6 +23,7 @@ export class ResultComponent implements OnInit, OnDestroy {
 
 	isWasScanned = this.accessTokenService.accessTokenIsExist$;
 	textForLoader = '';
+	isDownloadBreachedAccounts = false;
 
 	constructor(
 		private router: Router,
@@ -37,6 +38,7 @@ export class ResultComponent implements OnInit, OnDestroy {
 		this.breachedAccountsService.onGetBreachedAccounts$
 			.pipe(takeUntil(instanceDestroyed(this)))
 			.subscribe((breachedAccounts) => {
+				this.isDownloadBreachedAccounts = true;
 				this.breached_accounts = breachedAccounts.filter((breach) => {
 					return !(breach.hasOwnProperty('isFixed') && breach.isFixed === true);
 				});
