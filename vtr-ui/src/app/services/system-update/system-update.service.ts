@@ -468,6 +468,7 @@ export class SystemUpdateService {
 				update.installationStatus = UpdateActionResult.Success;
 				installedCount++;
 			}
+			update.isInstalled = (update.installationStatus === UpdateActionResult.Success);
 			updates.push(update);
 		});
 		availableUpdate.status = (updateTaskList.length === installedCount) ? SystemUpdateStatusMessage.SUCCESS.code : SystemUpdateStatusMessage.FAILURE.code;
