@@ -1,7 +1,13 @@
-<div class="vtr-widget-about">
+<div class="vtr-widget-about"
+	id="about-dialog"
+	role="dialog"
+	tabindex="-1"
+	ngbAutofocus>
 	<div class="content">
 		<div class="img-con pt-4">
-			<img class="qr-img" src="/assets/icons/Vantage_L_logo.svg" alt="Lenovo Vantage Logo" />
+			<img class="qr-img"
+				src="/assets/icons/Vantage_L_logo.svg"
+				alt="Lenovo Vantage Logo" />
 		</div>
 		<div class="text-center title mb-2">Lenovo Vantage</div>
 		<div class="text-center description">{{ 'support.about.version' | translate}}: <span
@@ -11,28 +17,52 @@
 	<div class="line"></div>
 	<div class="about-links mb-4 text-center">
 		<div class="mb-2">
-			<a href="javascript:;" class="mr-1" (click)="agreementClicked()" vtrMetrics metricsItem="About.LicenseAgreement"
+			<a href="javascript:;"
+				class="mr-1"
+				(click)="agreementClicked()"
+				vtrMetrics
+				metricsItem="About.LicenseAgreement"
 				metricsEvent="FeatureClick"
 				metricsParent="Page.Support.About">{{ 'support.about.licenseAgreement' | translate}}</a>
 			|
-			<a href="javascript:;" class="ml-1" (click)="openSourceClicked()" vtrMetrics metricsItem="About.OtherSoftwareLicenses"
+			<a href="javascript:;"
+				class="ml-1"
+				(click)="openSourceClicked()"
+				vtrMetrics
+				metricsItem="About.OtherSoftwareLicenses"
 				metricsEvent="FeatureClick"
 				metricsParent="Page.Support.About">{{ 'support.about.otherSoftwareLicenses' | translate}}</a>
 		</div>
 		<div class="mb-2">
-			<a href="https://www.lenovo.com" class="mr-1" target="_blank" vtrMetrics metricsItem="About.OurWebsiteLink"
+			<a href="https://www.lenovo.com"
+				class="mr-1"
+				target="_blank"
+				vtrMetrics
+				metricsItem="About.OurWebsiteLink"
 				metricsEvent="FeatureClick"
 				metricsParent="Page.Support.About">{{ 'support.about.ourWebsite' | translate}}</a>
 			|
-			<a href="javascript:;" class="ml-1" (click)="launchUserGuide()" vtrMetrics metricsItem="About.AboutYourDevice"
+			<a href="javascript:;"
+				class="ml-1"
+				(click)="launchUserGuide()"
+				vtrMetrics
+				metricsItem="About.AboutYourDevice"
 				metricsEvent="FeatureClick"
 				metricsParent="Page.Support.About">{{ 'support.about.aboutYourDevice' | translate}}</a>
 		</div>
 		<div>{{ 'support.about.copyright' | translate}}</div>
 	</div>
-	
-	<a role="button" href="javascript:;" class="close-btn" vtrMetrics metricsItem="AboutModalCloseButton" metricsEvent="FeatureClick"
-		metricsParent="Page.Support.About" (click)="closeModal()">
-		<img src="/assets/icons/Close.svg" alt="" srcset="">
+
+	<a role="button"
+		href="javascript:;"
+		class="close-btn"
+		vtrMetrics
+		metricsItem="AboutModalCloseButton"
+		metricsEvent="FeatureClick"
+		metricsParent="Page.Support.About"
+		(click)="closeModal()">
+		<img src="/assets/icons/Close.svg"
+			alt=""
+			srcset="">
 	</a>
 </div>
