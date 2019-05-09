@@ -23,21 +23,22 @@ export class ResultComponent implements OnInit, OnDestroy {
 
 	isWasScanned = this.accessTokenService.accessTokenIsExist$;
 	textForLoader = '';
+	isDownloadBreachedAccounts = false;
 
 	constructor(
 		private router: Router,
 		private breachedAccountsService: BreachedAccountsService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private changeDetectorRef: ChangeDetectorRef,
-		private accessTokenService: AccessTokenService
+		private accessTokenService: AccessTokenService,
 	) {
 	}
 
 	ngOnInit() {
-		this.breached_accounts_show = this.breached_accounts.slice(0, 3);
 		this.breachedAccountsService.onGetBreachedAccounts$
 			.pipe(takeUntil(instanceDestroyed(this)))
 			.subscribe((breachedAccounts) => {
+				this.isDownloadBreachedAccounts = true;
 				this.breached_accounts = breachedAccounts.filter((breach) => {
 					return !(breach.hasOwnProperty('isFixed') && breach.isFixed === true);
 				});
