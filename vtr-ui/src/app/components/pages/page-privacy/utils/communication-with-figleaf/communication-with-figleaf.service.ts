@@ -49,7 +49,7 @@ export class CommunicationWithFigleafService {
 				);
 			}),
 		).subscribe((figleafStatus: MessageFromFigleaf) => {
-			const figleafReadyForCommunicationState = figleafStatus.status === 0;
+			const figleafReadyForCommunicationState = figleafStatus.status === 0; // TODO: need change status in ux when status === 1 then need open figleaf but not ask info from app (also when logout in figleaf need )
 			this.isFigleafReadyForCommunication.next(figleafReadyForCommunicationState);
 			if (figleafReadyForCommunicationState) {
 				figleafConnectSubscription.unsubscribe();
