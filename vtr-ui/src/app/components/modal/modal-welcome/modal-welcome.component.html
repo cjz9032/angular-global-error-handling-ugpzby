@@ -75,7 +75,7 @@
 								</div>
 							</div>
 							<div class="row top-margin" [ngClass]="{'radio-is-selected' : data.page2.radioValue !== null }">
-								<div class="col-4 device-image">
+								<div class="col-4 device-image" (click)="saveUsageType($event, 'PERSONAL')">
 									<input
 										type="radio"
 										name="radio"
@@ -87,18 +87,17 @@
 										metricsItem="radio.personal"
 										[metricsValue]="!radio1.checked"
 										#radio1
-										[(ngModel)]="data.page2.radioValue"	/>
+										/>
 										<img
 										for="radio1"
 										alt="Personal Use"
 										for="radio1"
 										src="./../../../../assets/images/welcome/personal-use.jpg"
 										class=""
-										(click)="saveUsageType($event, 'PERSONAL')"
 										/>
 									<label for="radio1" class="centered">{{ "welcometutorial.personal" | translate }}</label>
 								</div>
-								<div class="col-4 device-image">
+								<div class="col-4 device-image" (click)="saveUsageType($event, 'BUSINESS')">
 									<input
 										type="radio"
 										name="radio"
@@ -110,19 +109,16 @@
 										metricsItem="radio.business"
 										[metricsValue]="!radio2.checked"
 										#radio2
-										[(ngModel)]="data.page2.radioValue"
 									/>
 									<img
 										alt="Business Use"
 										for="radio2"
 										src="./../../../../assets/images/welcome/business-use.jpg"
 										class="business"
-										(click)="saveUsageType($event, 'BUSINESS')"
 									/>
 									<label for="radio2" class="centered">{{ "welcometutorial.business" | translate }}</label>
 								</div>
-								<div class="col-4 device-image">
-
+								<div class="col-4 device-image" (click)="saveUsageType($event, 'CUSTOM')">
 									<input
 										type="radio"
 										name="radio"
@@ -134,14 +130,12 @@
 										metricsItem="radio.custom"
 										[metricsValue]="!radio3.checked"
 										#radio3
-										[(ngModel)]="data.page2.radioValue"
 									/>
 									<img
 										alt="Custom Experience"
 										for="radio3"
 										src="./../../../../assets/images/welcome/custom-use.jpg"
 										class="custom"
-										(click)="saveUsageType($event, 'CUSTOM')"
 									/>
 									<label for="radio3" class="centered">{{ "welcometutorial.custom" | translate }}</label>
 								</div>
@@ -204,7 +198,7 @@
 			<div class="vtr-progress-bar">
 				<ul id="skill">
 					<li>
-						<span class="bar1 html-css"></span>
+						<span class="bar1 html-css" [style.width]="progress + '%'"></span>
 						<span class="bar2"></span>
 					</li>
 				</ul>

@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
-
 @Component({
 	selector: 'vtr-modal-welcome',
 	templateUrl: './modal-welcome.component.html',
 	styleUrls: ['./modal-welcome.component.scss']
 })
 export class ModalWelcomeComponent implements OnInit {
+	progress = 25;
+	isInterestProgressChanged = false;
 	page = 1;
 	privacyPolicy: boolean;
 	checkedArray: string[] = [];
@@ -34,13 +35,14 @@ export class ModalWelcomeComponent implements OnInit {
 	}
 
 	next(page) {
-
-		if (++page < 3) {
+		if (page < 2) {
 			this.page = page;
+			this.progress = 49;
 		} else {
 			const response = new WelcomeTutorial(true, this.data.page2.radioValue, this.checkedArray);
 			this.activeModal.close(response);
 		}
+		this.page = ++page;;
 	}
 
 	toggle($event, value) {
@@ -51,25 +53,34 @@ export class ModalWelcomeComponent implements OnInit {
 		}
 		console.log(this.checkedArray);
 		console.log(this.checkedArray.length);
+		if(!this.isInterestProgressChanged) {
+			this.progress += 15;
+			this.isInterestProgressChanged = true;
+		} else if (this.checkedArray.length === 0) {
+			this.progress -= 15;
+			this.isInterestProgressChanged = false;
+		}
 	}
 
 	saveUsageType($event, value) {
 		if ($event.target.checked) {
 			console.log(value);
 		}
-
+		if(this.data.page2.radioValue == null) {
+			this.progress += 15;
+		}
+		this.data.page2.radioValue= value
 	}
 	onTutorialClose() {
 		this.activeModal.dismiss(new WelcomeTutorial(true));
 	}
 
-	onTutorialDone() {
-		this.onTutorialClose();
-	}
-
 	savePrivacy($event, value) {
 		if ($event.target.checked) {
 			this.privacyPolicy = value;
+			this.progress += 15;
+		} else {
+			this.progress -= 15;
 		}
 	}
 	moreInterestClicked() {

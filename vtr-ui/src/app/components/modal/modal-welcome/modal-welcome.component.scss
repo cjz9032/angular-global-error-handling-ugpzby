@@ -404,6 +404,7 @@
 		top:50%;
 		transform: translateY(-50%);
 		border-radius:10px;
+		width: 0%
 		// -moz-box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #bebbb9;
 		// -webkit-box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #bebbb9;
 		// box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #bebbb9;
@@ -429,9 +430,7 @@
 
 
 	.html-css {
-		width:49%;
-		-moz-animation:html-css 2s ease-out;
-		-webkit-animation:html-css 2s ease-out;
+		width:2%;
 		background-color: #35E6B9;
 		background-image: -webkit-gradient(linear, left top, left bottom, from(#2ECC71), to(#35E6B9));
 		background-image: -webkit-linear-gradient(to right, #2ECC71, #35E6B9);
