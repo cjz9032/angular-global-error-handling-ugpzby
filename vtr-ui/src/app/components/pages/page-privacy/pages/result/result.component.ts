@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { BreachedAccountMode } from '../../feature/check-breached-accounts/breached-account/breached-account.component';
 import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
@@ -23,6 +23,8 @@ export class ResultComponent implements OnInit, OnDestroy {
 
 	isWasScanned = this.accessTokenService.accessTokenIsExist$;
 	textForLoader = '';
+
+	onGetBreachedAccountsCompleted$ = this.breachedAccountsService.onGetBreachedAccountsCompleted$;
 
 	constructor(
 		private router: Router,
