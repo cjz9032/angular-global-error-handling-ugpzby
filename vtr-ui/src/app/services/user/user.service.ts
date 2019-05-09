@@ -6,7 +6,10 @@ import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import * as X2JS from 'x2js';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DeviceService } from '../../services/device/device.service';
+import {LIDStarterHelper} from './stater.helper';
+
 
 declare var Windows;
 
@@ -23,14 +26,15 @@ export class UserService {
 
 	private lid: any;
 	private metrics: any;
-
+	private lidStarterHelper: LIDStarterHelper;
 	constructor(
 		private cookieService: CookieService,
 		private commsService: CommsService,
 		private devService: DevService,
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService,
-		private translate: TranslateService
+		private translate: TranslateService,
+		public deviceService: DeviceService
 	) {
 		// DUMMY
 		this.setName(this.firstName, this.lastName);
@@ -39,74 +43,15 @@ export class UserService {
 		if (!this.metrics) {
 			this.devService.writeLog('UserService constructor: metrics object is undefined');
 			this.metrics = {
-				sendAsync() {}
+				sendAsync() { }
 			};
 		}
 
 		if (!this.lid) {
 			this.devService.writeLog('UserService constructor: lid object is undefined');
 		}
-	}
 
-	xml2Json(xmlStr: string) {
-		const x2js = new X2JS();
-		return x2js.xml2js(xmlStr);
-	}
-
-	json2xml(jsObj: object) {
-		const x2js = new X2JS();
-		return x2js.js2xml(jsObj);
-	}
-
-	readXmlFile(fileName: String) {
-		return new Promise((resolve, reject) => {
-			const fileObj = Windows.Storage.ApplicationData.current.localFolder.getFileAsync(fileName);
-			if (fileObj === null) {
-				resolve(null);
-				return;
-			}
-
-			fileObj.then((targetFile) => {
-				Windows.Storage.FileIO.readTextAsync(targetFile)
-					.then((contents) => {
-						if (!contents) {
-							resolve({});
-						} else {
-							resolve(this.xml2Json(contents));
-						}
-					}, (error) => {
-						resolve(null);
-					});
-			}, (error) => {
-				resolve(null);
-			});
-		});
-	}
-
-	writeXmlFile(fileName: string, jsObj: object, xmlHeader: string) {
-		return new Promise((resolve, reject) => {
-			let xmlString = this.json2xml(jsObj);
-			if (!xmlString) {
-				xmlString = '';
-			}
-
-			if (xmlHeader) {
-				xmlString = xmlHeader + xmlString;
-			}
-
-			Windows.Storage.ApplicationData.current.localFolder
-				.createFileAsync(fileName, Windows.Storage.CreationCollisionOption.replaceExisting)
-				.then(function (targetFile) {
-					Windows.Storage.FileIO.writeTextAsync(targetFile, xmlString)
-					.then((result)	=> {
-						resolve(true);
-					}, () => {
-						resolve(false);
-					});
-				}, () => {
-					resolve(false);
-				});
-		});
+		this.lidStarterHelper = new LIDStarterHelper(devService, commonService, deviceService, vantageShellService);
 	}
 
 	checkCookies() {
@@ -143,9 +88,9 @@ export class UserService {
 						TaskName: 'LID.SignIn',
 						TaskResult: 'success',
 						TaskParam: JSON.stringify({
-								StarterStatus: 'NA',
-								AccountState: 'NA', //{Signin | AlreadySignedIn | NeverSignedIn},
-								FeatureRequested: 'NA' // {AppOpen | SignIn | Vantage feature}
+							StarterStatus: 'NA',
+							AccountState: 'NA', //{Signin | AlreadySignedIn | NeverSignedIn},
+							FeatureRequested: 'NA' // {AppOpen | SignIn | Vantage feature}
 						})
 					};
 				} else {
@@ -277,14 +222,14 @@ export class UserService {
 				this.firstName = value;
 				this.initials = value ? value[0] : '';
 			});
-			this.lastName = "";
+			this.lastName = '';
 		} else {
-			this.firstName = firstName ? firstName : "";
-			this.lastName = lastName ? lastName : "";
+			this.firstName = firstName ? firstName : '';
+			this.lastName = lastName ? lastName : '';
 			this.initials = this.firstName ? this.firstName[0] : '' +
 				this.lastName ? this.lastName[0] : '';
 		}
-		this.commonService.sendNotification(LenovoIdKey.FirstName, firstName? firstName : "");
+		this.commonService.sendNotification(LenovoIdKey.FirstName, firstName ? firstName : '');
 	}
 
 }
