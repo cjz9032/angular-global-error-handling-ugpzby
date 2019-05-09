@@ -61,8 +61,8 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 		const openSourceUrl = `assets/licenses/OpenSource/OpenSourceLicenses.txt`;
 		const licenseModalMetrics = {
 			pageName: 'Page.Support.Article',
-			pageContext: 'Open Source Licenses',
-			closeButton: 'OpenSourceLicensesCloseButton',
+			pageContext: 'Other Software Licenses',
+			closeButton: 'OtherSoftwareLicensesCloseButton',
 		};
 		const aboutModal: NgbModalRef = this.modalService.open(ModalLicenseComponent, {
 			size: 'lg',
