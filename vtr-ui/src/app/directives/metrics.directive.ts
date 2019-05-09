@@ -1,8 +1,8 @@
-import {Directive, ElementRef, HostListener, Input} from '@angular/core';
-import {VantageShellService} from '../services/vantage-shell/vantage-shell.service';
-import {ActivatedRoute} from "@angular/router";
-import {VieworderService} from "../services/view-order/vieworder.service";
-import {DeviceService} from "../services/device/device.service";
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { VantageShellService } from '../services/vantage-shell/vantage-shell.service';
+import { ActivatedRoute } from '@angular/router';
+import { VieworderService } from '../services/view-order/vieworder.service';
+import { DeviceService } from '../services/device/device.service';
 
 export interface MetricsData {
 	ItemType: string;
@@ -32,10 +32,10 @@ export class MetricsDirective {
 	private metrics: any;
 
 	constructor(private deviceService: DeviceService,
-				private el: ElementRef,
-				private shellService: VantageShellService,
-				private activatedRoute: ActivatedRoute,
-				private viewOrderService: VieworderService) {
+		private el: ElementRef,
+		private shellService: VantageShellService,
+		private activatedRoute: ActivatedRoute,
+		private viewOrderService: VieworderService) {
 		this.metrics = shellService.getMetrics();
 
 	}
@@ -52,7 +52,7 @@ export class MetricsDirective {
 	@Input() metricsItemCategory: string;
 	@Input() metricsItemPosition: string;
 	@Input() metricsViewOrder: string;
-	@Input() metricsPageNumber: string="1";
+	@Input() metricsPageNumber = '1';
 
 	@Input() metricsSettingName: string;
 	@Input() metricsSettingParm: string;
@@ -62,8 +62,8 @@ export class MetricsDirective {
 		const data: any = {};
 		const eventName = this.metricsEvent.toLowerCase();
 		switch (eventName) {
-			case 'featureclick' :
-			case 'itemClick': {
+			case 'featureclick':
+			case 'itemclick': {
 				data.ItemType = 'FeatureClick';
 				data.ItemName = this.metricsItem;
 				data.ItemParent = this.metricsParent;
@@ -93,8 +93,8 @@ export class MetricsDirective {
 				if (this.metricsItemPosition) {
 					data.ItemPosition = this.metricsItemPosition;
 				}
-				if(!this.metricsPageNumber){
-					data.pageNumber="1";
+				if (!this.metricsPageNumber) {
+					data.pageNumber = '1';
 				}
 				if (this.metricsPageNumber) {
 					data.PageNumber = this.metricsPageNumber;
@@ -124,7 +124,7 @@ export class MetricsDirective {
 		const data = this.ComposeMetricsData();
 
 		/** to prefix the item type with btn, a ,div etc **/
-			data.ItemName=this.getTagName(target)+data.ItemName;
+		data.ItemName = this.getTagName(target) + data.ItemName;
 
 
 		if (this.metrics && this.metrics.sendAsync) {
@@ -137,14 +137,14 @@ export class MetricsDirective {
 
 
 	getTagName(target) {
-		var tagName = target.tagName;
+		const tagName = target.tagName;
 		switch (tagName) {
 			case 'A':
-				return "a.";
+				return 'a.';
 			case 'BUTTON':
 				return 'btn.';
 			default:
-				return "";
+				return '';
 		}
 	}
 }

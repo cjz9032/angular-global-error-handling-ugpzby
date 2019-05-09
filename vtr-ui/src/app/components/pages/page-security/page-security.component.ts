@@ -95,7 +95,7 @@ export class PageSecurityComponent implements OnInit {
 		this.homeProtection = this.securityAdvisor.homeProtection;
 
 		this.createViewModels();
-		this.score = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingScore);
+		this.score = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingScore, 0);
 		this.maliciousWifi = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityLandingMaliciousWifi, 0);
 	}
 
@@ -137,17 +137,17 @@ export class PageSecurityComponent implements OnInit {
 	}
 
 	createViewModels() {
-		this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.passwordManager, this.commonService, this.translate);
-		this.antivirusLandingViewModel = new AntiVirusLandingViewModel(this.antivirus, this.commonService, this.translate);
-		this.vpnLandingViewModel = new VpnLandingViewModel(this.vpn, this.commonService, this.translate);
-		this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.wifiSecurity, this.commonService, this.translate);
+		this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.translate, this.passwordManager, this.commonService);
+		this.antivirusLandingViewModel = new AntiVirusLandingViewModel(this.translate, this.antivirus, this.commonService);
+		this.vpnLandingViewModel = new VpnLandingViewModel(this.translate, this.vpn, this.commonService);
+		this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.translate, this.wifiSecurity, this.commonService);
 		this.homeProtectionLandingViewModel = new HomeProtectionLandingViewModel(this.translate);
 		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
 		const windowsHello = this.securityAdvisor.windowsHello;
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		const wifiSecurity = this.securityAdvisor.wifiSecurity;
 		if (cacheShowWindowsHello) {
-			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(windowsHello, this.commonService, this.translate);
+			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.translate, windowsHello, this.commonService);
 		}
 		if (windowsHello.facialIdStatus || windowsHello.fingerPrintStatus) {
 			this.showWindowsHello(windowsHello);
@@ -213,6 +213,7 @@ export class PageSecurityComponent implements OnInit {
 		const valid = antivirusScore.filter(i => i === 0 || i === 2).length;
 		this.score = Math.floor(valid / antivirusScore.length * 100);
 		this.commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingScore, this.score);
+		this.securityAdvisor.setScoreRegistry(this.score);
 	}
 
 	fetchCMSArticles() {
@@ -245,7 +246,7 @@ export class PageSecurityComponent implements OnInit {
 	showWindowsHello(windowsHello: phoenix.WindowsHello): void {
 		if (this.commonService.isRS5OrLater() &&
 			(windowsHello.fingerPrintStatus || windowsHello.facialIdStatus)) {
-			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(windowsHello, this.commonService, this.translate);
+			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.translate, windowsHello, this.commonService);
 		} else {
 			this.windowsHelloLandingViewModel = null;
 		}

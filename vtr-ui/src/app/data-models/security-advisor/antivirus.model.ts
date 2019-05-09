@@ -3,7 +3,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from '../../enums/local-storage-key.enum';
 
 export class AntiVirusviewModel {
-	currentPage: string;
+	currentPage = 'windows';
 	mcafeeInstall: boolean;
 	mcafee: McAfeeInfo = {
 		localName: 'McAfee LiveSafe',
@@ -18,8 +18,8 @@ export class AntiVirusviewModel {
 		launch() { return Promise.resolve(true); }
 	};
 	windowsDefender: WindowsDefender = {
-		firewallStatus: false,
-		status: false,
+		firewallStatus: undefined,
+		status: undefined,
 		enabled: false
 	};
 	otherAntiVirus: OtherInfo = {
@@ -28,7 +28,13 @@ export class AntiVirusviewModel {
 	};
 	otherFirewall: OtherInfo ;
 	mcafeestatusList: Array<any> = [];
-	windowsDefenderstatusList: Array<any> = [];
+	windowsDefenderstatusList: Array<any> = [{
+		status: this.windowsDefender.status,
+		title: 'security.antivirus.common.virusScan',
+	}, {
+		status: this.windowsDefender.firewallStatus,
+		title: 'security.antivirus.common.firewall',
+	}];
 	othersAntistatusList: Array<any> = [];
 	othersFirewallstatusList: Array<any> = [];
 
