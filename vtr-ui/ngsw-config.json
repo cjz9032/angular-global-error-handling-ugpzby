@@ -22,9 +22,10 @@
 					"/assets/**"
 				],
 				"urls": [
-					"https://qa.csw.lenovo.com/-/media/Lenovo/Vantage/",
-					"https://vantage-qa.csw.lenovo.com/api/v1/",
-					"https://vantage.csw.lenovo.com/api/v1/"
+					"https://qa.csw.lenovo.com/**",
+					"https://vantage-qa.csw.lenovo.com/**",
+					"https://vantage.csw.lenovo.com/**",
+					"https://cms.csw.lenovo.com/**"
 				]
 			}
 		}
@@ -33,13 +34,13 @@
 		{
 			"name": "cms",
 			"urls": [
-				"https://vantage-qa.csw.lenovo.com/api/v1/",
-				"https://vantage.csw.lenovo.com/api/v1/"
+				"https://vantage-qa.csw.lenovo.com/**",
+				"https://vantage.csw.lenovo.com/**"
 			],
 			"cacheConfig": {
 				"maxSize": 10,
-				"maxAge": "30m",
-				"timeout": "10s",
+				"maxAge": "24h",
+				"timeout": "5s",
 				"strategy": "freshness"
 			}
 		}
