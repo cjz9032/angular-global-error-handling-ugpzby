@@ -19,6 +19,9 @@ export function convertBrowserNameToBrowserData(browsers: BrowserListType[]) {
 
 export function getHashCode(value: string) {
 	// tslint:disable
+	if (typeof value !== 'string') {
+		return value
+	}
 	return value.split('').reduce((a, b) => {
 		a = ((a << 5) - a) + b.charCodeAt(0);
 		return a & a;

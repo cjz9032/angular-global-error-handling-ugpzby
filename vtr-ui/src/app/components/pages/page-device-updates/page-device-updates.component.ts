@@ -348,6 +348,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				centered: true,
 				windowClass: 'common-confirmation-modal'
 			});
+		modalRef.componentInstance.metricsParent = "Pages.SystemUpdate.RebootRequiredControl";
 		const { rebootType, packages } = this.systemUpdateService.getRebootType(this.systemUpdateService.updateInfo.updateList, source);
 
 		if (rebootType === UpdateRebootType.RebootDelayed) {
