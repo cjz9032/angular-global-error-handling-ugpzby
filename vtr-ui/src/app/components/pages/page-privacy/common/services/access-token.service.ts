@@ -26,7 +26,7 @@ export class AccessTokenService {
 
 	getAccessToken() {
 		const tokenFromSafeStorage = this.safeStorageService.getPassword('figleaf-privacy-tab', 'figleaf-accessToken');
-		const hashFromSafeStorage = getHashCode(tokenFromSafeStorage).toString();
+		const hashFromSafeStorage = getHashCode(tokenFromSafeStorage) ? getHashCode(tokenFromSafeStorage).toString() : '';
 		const hashFromMainStorage = this.storageService.getItem('hashForToken');
 		const isEqualHash = hashFromMainStorage === hashFromSafeStorage;
 
@@ -35,6 +35,7 @@ export class AccessTokenService {
 
 	removeAccessToken() {
 		this.accessTokenIsExist.next(false);
+		this.storageService.removeItem('hashForToken');
 		this.safeStorageService.removePassword('figleaf-privacy-tab', 'figleaf-accessToken');
 	}
 }
