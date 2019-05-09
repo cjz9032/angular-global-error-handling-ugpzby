@@ -68,7 +68,8 @@ export class VantageCommunicationService {
 			'VantageService.BrowserInfo',
 			'Get-AccessiblePasswords',
 			JSON.stringify({
-				browsers
+				browsers,
+				userName: 'current'
 			})
 		);
 
@@ -86,7 +87,7 @@ export class VantageCommunicationService {
 			'Get-MaskedPasswords',
 			JSON.stringify({
 				browsers,
-				userName: 'all'
+				userName: 'current'
 			})
 		);
 
@@ -104,7 +105,7 @@ export class VantageCommunicationService {
 			'Get-VisitedWebsites',
 			JSON.stringify({
 				browsers,
-				userName: 'all',
+				userName: 'current',
 				topVisited: '50'
 			})
 		);
