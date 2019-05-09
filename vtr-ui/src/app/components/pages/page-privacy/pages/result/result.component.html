@@ -35,7 +35,8 @@
 		<vtr-privacy-dashboard-list></vtr-privacy-dashboard-list>
 	</div>
 
-	<div class="breaches-block breaches-block__wrapper" *ngIf="(isWasScanned | async) && !breached_accounts.length">
+	<div class="breaches-block breaches-block__wrapper"
+		 *ngIf="!(isFigleafReadyForCommunication$ | async) && (isWasScanned | async) && !breached_accounts.length">
 		<vtr-big-loader [text]="textForLoader"></vtr-big-loader>
 	</div>
 	<div class="privacy-tracking-map">
