@@ -22,13 +22,22 @@
 		<div class="ml-0 mr-4 pl-0">
 			<button type="button"
 				class="btn btn-default modal-button"
+				vtrMetrics
+				[metricsItem]="'btn.modal-button-ok'"
+				[metricsParent]="'modal-common-confirmation.component'"
+				metricsEvent="itemClick"
 				(click)="onOkClick($event)">
 				{{OkText | translate}}
 			</button>
 		</div>
-		<div class="ml-0 mr-4 pl-0" *ngIf="!CancelText">
+		<div class="ml-0 mr-4 pl-0"
+			*ngIf="!CancelText">
 			<div role="button"
 				class="btn btn-default modal-button-cancel"
+				vtrMetrics
+				[metricsItem]="'btn.modal-button-cancel'"
+				[metricsParent]="'modal-common-confirmation.component'"
+				metricsEvent="itemClick"
 				(click)="onCancelClick($event)">
 				{{CancelText | translate}}
 			</div>
