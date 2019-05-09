@@ -3,7 +3,7 @@
 	<div class="result-page__score">
 		<vtr-privacy-score></vtr-privacy-score>
 	</div>
-	<div *ngIf="!(isFigleafReadyForCommunication$ | async) && !breached_accounts.length && !(isWasScanned | async)" class="email-scanner">
+	<div *ngIf="!(isFigleafReadyForCommunication$ | async) && !breached_accounts.length && isDownloadBreachedAccounts" class="email-scanner">
 		<vtr-email-scanner></vtr-email-scanner>
 	</div>
 	<div *ngIf="breached_accounts.length" class="breaches-block breaches-block__wrapper">
@@ -34,9 +34,8 @@
 		<h2 class="privacy-dashboard__title">Privacy control at a glance</h2>
 		<vtr-privacy-dashboard-list></vtr-privacy-dashboard-list>
 	</div>
-
 	<div class="breaches-block breaches-block__wrapper"
-		 *ngIf="!(isFigleafReadyForCommunication$ | async) && (isWasScanned | async) && !breached_accounts.length">
+		 *ngIf="!(isFigleafReadyForCommunication$ | async) && (isWasScanned | async) && !isDownloadBreachedAccounts">
 		<vtr-big-loader [text]="textForLoader"></vtr-big-loader>
 	</div>
 	<div class="privacy-tracking-map">
