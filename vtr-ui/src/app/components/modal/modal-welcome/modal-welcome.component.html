@@ -24,7 +24,7 @@
 								<div class="row justify-content-center align-items-center ">
 									<div class="col-auto px-1 title1">
 										{{ "welcometutorial.title2" | translate | uppercase }}
-										<span>{{ "welcometutorial.title3" | translate | uppercase }}</span> 
+										<span>{{ "welcometutorial.title3" | translate | uppercase }}</span>
 									</div>
 								</div>
 							</div>
@@ -122,7 +122,7 @@
 									<label for="radio2" class="centered">{{ "welcometutorial.business" | translate }}</label>
 								</div>
 								<div class="col-4 device-image">
-		
+
 									<input
 										type="radio"
 										name="radio"
@@ -146,7 +146,7 @@
 									<label for="radio3" class="centered">{{ "welcometutorial.custom" | translate }}</label>
 								</div>
 							</div>
-		
+
 							<div class="row justify-content-center align-items-center font-14-bold">
 								<div class="col-auto title2">
 									{{ "welcometutorial.subtitle2" | translate | uppercase}}
@@ -170,7 +170,7 @@
 							</div>
 							<div *ngIf="!hideMoreInterestBtn" class="row justify-content-center align-items-center font-12-semi more-interest">
 								<div class="col-auto title2" (click)="moreInterestClicked()">
-									{{ "welcometutorial.moreInterest" | translate | lowercase }}
+									<span class="more-interests">{{ "welcometutorial.moreInterest" | translate | lowercase }}</span>
 								</div>
 							</div>
 							<div class="row privacy-check">
@@ -178,7 +178,7 @@
 									<input type="checkbox" (click)="savePrivacy($event, 'PRIVACYPOLICY')" class="custom-control-input" id="defaultUnchecked">
 									<label class="custom-control-label font-14-semi" for="defaultUnchecked">
 										{{ "welcometutorial.privacytitle" | translate }}&nbsp;
-										<a class="linktext" href="https://www.lenovo.com/us/en/privacy" target="_blank"> 
+										<a class="linktext" href="https://www.lenovo.com/us/en/privacy" target="_blank">
 											{{ "welcometutorial.privacypolicy" | translate }}
 										</a>
 									</label>

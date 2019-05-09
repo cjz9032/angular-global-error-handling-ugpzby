@@ -6,7 +6,7 @@
 	// overflow-y:scroll;
 	background: $shade_lightest;
 	.container{
-		width: 55em;
+		width: 55rem;
 		height: 55rem;
 		margin: 0 auto;
 		border: none;
@@ -29,9 +29,9 @@
 			line-height: 6.0rem;
 			.title1{
 				color: $light;
-				font-size: 36pt;
+				font-size: 4.8rem;
 				@media #{$mediaquery_9} {
-					font-size: 35pt;
+					font-size: 4.6rem;
 				}
 				span {
 					font-weight: bold;
@@ -55,19 +55,19 @@
 	}
 
 	.font-14-semi {
-		font-size: 14pt;
+		font-size: 1.8rem;
 		font-weight: 300;
 	}
 	.font-12-semi {
-		font-size: 12pt;
+		font-size: 1.6rem;
 		font-weight: 300;
 	}
 	.font-14-bold {
-		font-size: 14pt;
+		font-size: 1.8rem;
 		font-weight: 600;
 	}
 	.font-12-bold {
-		font-size: 12pt;
+		font-size: 1.6rem;
 		font-weight: 600;
 	}
 	.content-page-2 {
@@ -133,14 +133,14 @@
 		.custom-control-label {
 			padding-left: 23px;
 			line-height: 1.15;
-		
+
 			// rounded square-box background
 			&::before {
 				top: 0.6rem;
 				width: 2rem;
 				height: 2rem;
 			}
-		
+
 			// tick mark
 			&::after {
 				top: 0.5rem;
@@ -167,7 +167,7 @@
 			margin-bottom: 18px;
 		}
 		div.row:first-child {
-			margin-bottom: 24px	
+			margin-bottom: 24px
 		}
 	}
 	.next-btn {
@@ -422,11 +422,14 @@
 		// box-shadow: 0 1px 0px #fcfcfc inset, 0 1px 0 #fcfcfc;
 
 	}
+	.more-interests{
+		cursor: pointer;
+	}
 
 
 
 	.html-css {
-		width:90%;
+		width:49%;
 		-moz-animation:html-css 2s ease-out;
 		-webkit-animation:html-css 2s ease-out;
 		background-color: #35E6B9;
@@ -446,6 +449,7 @@
 	{
 		background-color: $shade;
 	}
+
 
 	@-moz-keyframes html-css        { 0%  { width:0px;} 100%{ width:90%;}  }
 	@-webkit-keyframes html-css        { 0%  { width:0px;} 100%{ width:90%;}  }
