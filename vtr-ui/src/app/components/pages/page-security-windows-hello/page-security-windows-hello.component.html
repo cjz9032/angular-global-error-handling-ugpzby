@@ -58,6 +58,7 @@
 											<div class=" pull right">
 												<div class="col-12">
 													<vtr-ui-button id="sa-wh-btn-setupwindowshello"
+														metricsEvent="FeatureClick"
 														metricsItem="setUpWindowsHello"
 														(click)="setUpWindowsHello()"
 														[label]="'security.windowsHello.setUp' | translate">
@@ -107,7 +108,7 @@
 																<span *vtrTranslate="'security.windowsHello.visitInSettings' | translate">
 																	<a id="sa-wh-lnk-visitwindowshello"
 																		vtrMetrics
-																		metricsEvent="itemClick"
+																		metricsEvent="FeatureClick"
 																		metricsItem="setUpWindowsHello"
 																		href="javascript:void(0)"
 																		(click)="setUpWindowsHello()"
@@ -173,7 +174,7 @@
 																	target="_blank"
 																	vtrMetrics
 																	metricsItem="visitMicrosoft"
-																	metricsEvent="itemClick"
+																	metricsEvent="FeatureClick"
 																	href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
 																	{{'security.windowsHello.visitMicrosoft' | translate}}
 																</a>
@@ -195,7 +196,7 @@
 											*vtrTranslate="'security.windowsHello.privacyPolicy' | translate">
 											<a id="sa-wh-lnk-privacypolicy"
 												vtrMetrics
-												metricsEvent="itemClick"
+												metricsEvent="FeatureClick"
 												metricsItem="privacyPolicy"
 												href="https://support.microsoft.com/en-us/help/4468253/windows-hello-and-privacy-microsoft-privacy"
 												target="_blank"></a>
@@ -241,7 +242,7 @@
 														<span *vtrTranslate="'security.windowsHello.visitInSettings' | translate">
 															<a id="sa-wh-lnk-visitwindowshello"
 																vtrMetrics
-																metricsEvent="itemClick"
+																metricsEvent="FeatureClick"
 																metricsItem="setUpWindowsHello"
 																href="javascript:void(0)"
 																(click)="setUpWindowsHello()"
@@ -262,7 +263,7 @@
 																target="_blank"
 																vtrMetrics
 																metricsItem="visitMicrosoft"
-																metricsEvent="itemClick"
+																metricsEvent="FeatureClick"
 																href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
 																{{'security.windowsHello.visitMicrosoft' | translate}}</a>
 														</div>
