@@ -178,6 +178,9 @@ import { WidgetQuicksettingsListComponent } from './components/widgets/widget-qu
 import { WidgetLightingComponent } from './components/widgets/widget-lighting/widget-lighting.component';
 import { ModalGamingLegionedgeComponent } from './components/modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { PrivacyModule } from './components/pages/page-privacy/privacy.module';
+import { PageMacrokeyComponent } from './components/pages/page-macrokey/page-macrokey.component';
+import { PageLightingcustomizeComponent } from './components/pages/page-lightingcustomize/page-lightingcustomize.component';
+import { PageHardwarescanComponent } from './components/pages/page-hardwarescan/page-hardwarescan.component';
 
 
 library.add(fas);
@@ -314,8 +317,10 @@ library.add(fal);
 		WidgetSystemMonitorComponent,
 		WidgetQuicksettingsListComponent,
 		WidgetLightingComponent,
-		ModalGamingLegionedgeComponent
-
+		ModalGamingLegionedgeComponent,
+		PageMacrokeyComponent,
+		PageLightingcustomizeComponent,
+		PageHardwarescanComponent
 	],
 	imports: [
 		BrowserModule,
