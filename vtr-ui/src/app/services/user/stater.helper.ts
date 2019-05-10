@@ -81,6 +81,7 @@ class UserSettingsPayload {
 }
 
 export class LIDStarterHelper {
+	private static signinDateFromSSO;
 	private lid: any;
 
 	constructor(
@@ -235,6 +236,33 @@ export class LIDStarterHelper {
 		return userSettingsXml;
 	}
 
+	async hadEverSignIn() {
+		try {
+			// get signin date from local
+			let signinDate = this.commonService.getLocalStorageValue(LocalStorageKey.LidFirstSignInDate);
+			if (signinDate) {
+				return true;
+			}
+
+			// get sigin date from sso GetLastLoginTime
+			if (!LIDStarterHelper.signinDateFromSSO) {
+				LIDStarterHelper.signinDateFromSSO = this.lid.getLastLoginTime();
+			}
+			signinDate = await LIDStarterHelper.signinDateFromSSO;
+			if (signinDate && signinDate.lastLoginTime) {
+				signinDate = new Date(signinDate.lastLoginTime).toISOString().substring(0, 19);
+				this.commonService.setLocalStorageValue(LocalStorageKey.LidFirstSignInDate, signinDate);
+				this.updateUserSettingXml({ lastSignIndate: signinDate, staterAccount: null });
+				return true;
+			}
+		} catch (ex) {
+			this.devService.writeLog('Testing ever sign in lid', ex.message);
+			return false;
+		}
+
+		return false;
+	}
+
 	async isStarterAccountScenario() {
 		try {
 			// get signin date from local
@@ -244,7 +272,10 @@ export class LIDStarterHelper {
 			}
 
 			// get sigin date from sso GetLastLoginTime
-			signinDate = await this.lid.getLastLoginTime();
+			if (!LIDStarterHelper.signinDateFromSSO) {
+				LIDStarterHelper.signinDateFromSSO = this.lid.getLastLoginTime();
+			}
+			signinDate = await LIDStarterHelper.signinDateFromSSO;
 			if (signinDate && signinDate.lastLoginTime) {
 				signinDate = new Date(signinDate.lastLoginTime).toISOString().substring(0, 19);
 				this.commonService.setLocalStorageValue(LocalStorageKey.LidFirstSignInDate, signinDate);
@@ -310,6 +341,29 @@ export class LIDStarterHelper {
 		}
 
 		return email.toLocaleLowerCase().endsWith('@lenovoid.com');
+	}
+
+	async hasCreateStarterAccount() {
+		// option1: get from web-localstorage
+		let starterAccount = this.commonService.getLocalStorageValue(LocalStorageKey.LidStarterAccount);
+		if (this.isStarterAccount(starterAccount)) {
+			return true;
+		}
+
+		const LidHasCreateStarterAccount = this.commonService.getLocalStorageValue(LocalStorageKey.LidHasCreateStarterAccount);
+		if (LidHasCreateStarterAccount) {
+			return true;
+		}
+
+		// option2: get from oobe xml
+		const oobeData = await this.getDataFromOOBE();
+		starterAccount = oobeData ? oobeData.starterAccount : null;
+		if (this.isStarterAccount(starterAccount)) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.LidHasCreateStarterAccount, true);
+			return true;
+		}
+
+		return false;
 	}
 
 	async updateUserSettingXml(payload: UserSettingsPayload, userSettingsXml: Promise<{}> = null) {

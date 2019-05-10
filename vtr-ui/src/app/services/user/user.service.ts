@@ -9,6 +9,7 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DeviceService } from '../../services/device/device.service';
 import {LIDStarterHelper} from './stater.helper';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 
 declare var Windows;
@@ -54,6 +55,15 @@ export class UserService {
 		this.lidStarterHelper = new LIDStarterHelper(devService, commonService, deviceService, vantageShellService);
 	}
 
+	async getStarterIdStatus() {
+		const result = await this.lidStarterHelper.hasCreateStarterAccount();
+		if (result) {
+			return 'created';
+		}
+
+		return 'none';
+	}
+
 	checkCookies() {
 		this.cookies = this.cookieService.getAll();
 		this.devService.writeLog('CHECK COOKIES:', this.cookies);
@@ -71,44 +81,24 @@ export class UserService {
 		}
 	}
 
-	loginSilently() {
+	loginSilently(appFeature = null) {
 		const self = this;
+		const accountState = this.hadEverSignIn();
+		const starterStatus = this.getStarterIdStatus();
+		let loginSuccess = false;
 		if (this.lid !== undefined) {
 			this.lid.loginSilently().then((result) => {
-				let metricsData: any;
 				if (result.success && result.status === 0) {
+					loginSuccess = true;
 					self.lid.getUserProfile().then((profile) => {
 						if (profile.success && profile.status === 0) {
 							self.setName(profile.firstName, profile.lastName);
 							self.auth = true;
 						}
 					});
-					metricsData = {
-						ItemType: 'TaskAction',
-						TaskName: 'LID.SignIn',
-						TaskResult: 'success',
-						TaskParam: JSON.stringify({
-							StarterStatus: 'NA',
-							AccountState: 'NA', //{Signin | AlreadySignedIn | NeverSignedIn},
-							FeatureRequested: 'NA' // {AppOpen | SignIn | Vantage feature}
-						})
-					};
-				} else {
-					metricsData = {
-						ItemType: 'TaskAction',
-						TaskName: 'LID.SignIn',
-						TaskResult: 'failure',
-						TaskParam: JSON.stringify({
-							StarterStatus: 'NA',
-							AccountState: 'NA', //{Signin | AlreadySignedIn | NeverSignedIn},
-							FeatureRequested: 'NA' // {AppOpen | SignIn | Vantage feature}
-						})
-					};
 				}
 
-				self.metrics.sendAsync(metricsData).catch((res) => {
-					self.devService.writeLog('loginSilently() Exception happen when send metric ', res.message);
-				});
+				this.sendSigninMetrics(loginSuccess ? 'success' : 'failure', starterStatus, accountState, 'AppOpen');
 			});
 		}
 		this.devService.writeLog('LOGIN(SILENTLY): ', self.auth);
@@ -143,22 +133,15 @@ export class UserService {
 		return undefined;
 	}
 
-	setAuth(auth = false) {
-		this.devService.writeLog('SET AUTH');
-		if (auth) {
-			this.metrics.sendAsync({
-				ItemType: 'TaskAction',
-				TaskName: 'LID.SignIn',
-				TaskResult: 'success',
-				TaskParam: JSON.stringify({
-					StarterStatus: 'NA',
-					AccountState: 'NA', //{Signin | AlreadySignedIn | NeverSignedIn},
-					FeatureRequested: 'NA' // {AppOpen | SignIn | Vantage feature}
-				})
-			}).catch((res) => {
-				this.devService.writeLog('setAuth() Exception happen when send metric ', res.message);
-			});
+	setAuth(auth = false, appFeature = null) {
+		let signinDate = this.commonService.getLocalStorageValue(LocalStorageKey.LidFirstSignInDate);
+		if (!signinDate) {
+			signinDate = new Date().toISOString().substring(0, 19);
+			this.commonService.getLocalStorageValue(LocalStorageKey.LidFirstSignInDate, signinDate);
+			this.lidStarterHelper.updateUserSettingXml({ lastSignIndate: signinDate, staterAccount: null });
 		}
+
+		this.devService.writeLog('SET AUTH');
 		this.devService.writeLog('LOGIN RES', auth);
 		this.auth = auth;
 	}
@@ -230,6 +213,30 @@ export class UserService {
 				this.lastName ? this.lastName[0] : '';
 		}
 		this.commonService.sendNotification(LenovoIdKey.FirstName, firstName ? firstName : '');
+	}
+
+	async hadEverSignIn() {
+		return await this.lidStarterHelper.hadEverSignIn();
+	}
+
+	async sendSigninMetrics(taskResult, starterStatus, everSignIn, appFeature = null) {
+		const starterStatusResult = await starterStatus;
+		const everSignInResult = await everSignIn;
+		const self = this;
+		const metricsData = {
+			ItemType: 'TaskAction',
+			TaskName: 'LID.SignIn',
+			TaskResult: taskResult,
+			TaskParam: {
+				StarterStatus: starterStatusResult,
+				AccountState: everSignInResult ? 'AlreadySignedIn' : 'NeverSignedIn', //{Signin | AlreadySignedIn | NeverSignedIn},
+				FeatureRequested: appFeature ? appFeature : 'SignIn' // {AppOpen | SignIn | Vantage feature}
+			}
+		};
+
+		self.metrics.sendAsync(metricsData).catch((ex) => {
+			self.devService.writeLog('Exception happen when send metric ', ex.message);
+		});
 	}
 
 }
