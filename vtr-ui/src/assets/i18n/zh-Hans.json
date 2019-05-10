@@ -14,13 +14,13 @@
 					"rapidCharge": "Rapid Charge"
 				},
 				"legionEdge": {
-					"title": "CPU Overclock",
+					"title": "CPU Overlock",
 					"status": {
 						"alwayson": "Always On",
 						"whenGaming": "When Gaming",
 						"off": "Off"
 					},
-					"ramOverlock": "Ram Overclock",
+					"ramOverlock": "Ram Overlock",
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
@@ -255,13 +255,16 @@
 				"title": "电池量表",
 				"subtitle": "电池运行状况",
 				"hours": "小时",
+				"hour":"hour",
 				"minutes": "分钟",
+				"minute": "minute",
 				"charge": "充满电所需的时间",
 				"button": "查看电池详细信息",
 				"details": {
 					"title": "电池详细信息",
 					"primary": "主电池",
 					"secondary": "备用电池",
+					"tertiary": "Tertiary Battery",
 					"status": "状态",
 					"wattage": "功率",
 					"barcode": "条码",
@@ -280,7 +283,15 @@
 					"designVolt": "设计电压",
 					"volts": "电压",
 					"firstUseDt": "首次使用日期",
-					"firmwareVer": "固件版本"
+					"firmwareVer": "固件版本",
+					"chargeStatusString": {
+						"error": "ERROR",
+						"notinstalled": "Not installed",
+						"noactivity": "No activity",
+						"charging": "Charging",
+						"discharging": "Discharging",
+						"acdischarging": "Discharging (with ac)"
+					}
 				}
 			},
 			"power": {

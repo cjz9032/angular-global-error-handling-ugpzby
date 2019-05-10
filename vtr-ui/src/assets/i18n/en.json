@@ -14,13 +14,13 @@
 					"rapidCharge": "Rapid Charge"
 				},
 				"legionEdge": {
-					"title": "CPU Overclock",
+					"title": "CPU Overlock",
 					"status": {
 						"alwayson": "Always On",
 						"whenGaming": "When Gaming",
 						"off": "Off"
 					},
-					"ramOverlock": "Ram Overclock",
+					"ramOverlock": "Ram Overlock",
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
@@ -255,13 +255,16 @@
 				"title": "BATTERY GAUGE",
 				"subtitle": "Battery health",
 				"hours": "hours",
+				"hour":"hour",
 				"minutes": "minutes",
+				"minute": "minute",
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
 				"details": {
 					"title": "Battery Details",
 					"primary": "Primary Battery",
 					"secondary": "Secondary Battery",
+					"tertiary": "Tertiary Battery",
 					"status": "Status",
 					"wattage": "Wattage",
 					"barcode": "Bar-Code",
@@ -280,7 +283,15 @@
 					"designVolt": "Design voltage",
 					"volts": "Voltage",
 					"firstUseDt": "First use date",
-					"firmwareVer": "Firmware version"
+					"firmwareVer": "Firmware version",
+					"chargeStatusString": {
+						"error": "ERROR",
+						"notinstalled": "Not installed",
+						"noactivity": "No activity",
+						"charging": "Charging",
+						"discharging": "Discharging",
+						"acdischarging": "Discharging (with ac)"
+					}
 				}
 			},
 			"power": {
