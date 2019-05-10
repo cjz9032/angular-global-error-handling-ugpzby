@@ -27,13 +27,6 @@ export class PageDeviceComponent implements OnInit {
 		qaService.qas.forEach(qa => {
 			try {
 				qa.title = this.translate.instant(qa.title);
-				qa.description = this.translate.instant(qa.description);
-				//console.log(qa.description);
-				this.translate.get(qa.keys).subscribe((translation: [string]) => {
-					//console.log(JSON.stringify(translation));
-					qa.keys = translation;
-					//console.log(JSON.stringify(qa.keys));
-				});
 			}
 			catch (e) {
 				console.log("already translated");
