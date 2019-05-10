@@ -19,7 +19,7 @@ export class UserService {
 
 	cookies = {};
 	public auth = false;
-	public starter = true;
+	public starter = false;
 	token = '';
 
 	public firstName = 'User';
