@@ -178,6 +178,7 @@ import { WidgetQuicksettingsListComponent } from './components/widgets/widget-qu
 import { WidgetLightingComponent } from './components/widgets/widget-lighting/widget-lighting.component';
 import { ModalGamingLegionedgeComponent } from './components/modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { PrivacyModule } from './components/pages/page-privacy/privacy.module';
+import { UiGamingCollapsibleContainerComponent } from './components/ui/ui-gaming-collapsible-container/ui-gaming-collapsible-container.component';
 
 
 library.add(fas);

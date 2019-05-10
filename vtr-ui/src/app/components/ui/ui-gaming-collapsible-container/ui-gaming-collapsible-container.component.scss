@@ -97,10 +97,22 @@
         padding: 1.6rem;
         background-color:transparent;
         color: $main_lightest;
-        
+        position: relative;
+        padding-left: 4rem;
         &:hover,
         &:focus {
             background-color: $screen_light_15;
+        }
+        .check {
+            position: absolute;
+            left: 1.6rem;
+            top: 1.8rem;
+            font-size: 1.6rem;
+            background: $gaming_green_gradient;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
         }
     }
 }

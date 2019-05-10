@@ -1,141 +1,121 @@
 @import "app/app.theme";
 
-
-@font-face {
-	font-family: 'icomoon';
-	src:  url('./assets/gaming-icons/icomoon.eot?t2n255');
-	src:  url('./assets/gaming-icons/icomoon.eot?t2n255#iefix') format('embedded-opentype'),
-	  url('./assets/gaming-icons/icomoon.ttf?t2n255') format('truetype'),
-	  url('./assets/gaming-icons/icomoon.woff?t2n255') format('woff'),
-	  url('./assets/gaming-icons/icomoon.svg?t2n255#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
-  }
-  
-  [class^="icon-"], [class*=" icon-"] {
-	/* use !important to prevent issues with browser extensions that change fonts */
-	font-family: 'icomoon' !important;
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-  
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-  }
-  
-  .icon-press:before {
-	content: "\e900";
-	color: #fff;
-  }
-  .icon-release:before {
-	content: "\e901";
-	color: #fff;
-  }
-  .icon-macroKey:before {
-	content: "\e902";
-  }
-  .icon-media:before {
-	content: "\e903";
-  }
-  .icon-power:before {
-	content: "\e904";
-  }
-  .icon-systemUpdate:before {
-	content: "\e905";
-  }
-  .icon-wifiSecurity:before {
-	content: "\e906";
-  }
-  .icon-add:before {
-	content: "\e907";
-	color: #fff;
-  }
-  .icon-arrowDown:before {
-	content: "\e908";
-	color: #fff;
-  }
-  .icon-backArrow:before {
-	content: "\e909";
-	color: #fff;
-  }
-  .icon-bin:before {
-	content: "\e90a";
-	color: #fff;
-  }
-  .icon-Check:before {
-	content: "\e90b";
-  }
-  .icon-checkIcon .path1:before {
-	content: "\e90c";
-	color: rgb(251, 253, 255);
-	opacity: 0.0800;
-  }
-  .icon-checkIcon .path2:before {
-	content: "\e90d";
-	margin-left: -1em;
-	color: rgb(4, 122, 255);
-  }
-  .icon-checkLine:before {
-	content: "\e90e";
-	color: #fff;
-  }
-  .icon-Close:before {
-	content: "\e90f";
-	color: #fff;
-  }
-  .icon-dots:before {
-	content: "\e910";
-	color: #fff;
-  }
-  .icon-gear:before {
-	content: "\e911";
-	color: #fff;
-  }
-  .icon-menu:before {
-	content: "\e912";
-	color: #fff;
-  }
-  .icon-question:before {
-	content: "\e913";
-	color: #fff;
-  }
-  .icon-radio:before {
-	content: "\e914";
-	color: #047aff;
-  }
-  .icon-refresh:before {
-	content: "\e915";
-	color: #fff;
-  }
-  .icon-windows:before {
-	content: "\e916";
-	color: #fff;
-  }
-  .icon-Logo:before {
-	content: "\e917";
-	color: #fff;
-  }
-  .icon-content:before {
-	content: "\e918";
-	color: #fff;
-  }
-  .icon-device:before {
-	content: "\e919";
-	color: #fff;
-  }
-  .icon-store:before {
-	content: "\e91a";
-	color: #fff;
-  }
-  .icon-support:before {
-	content: "\e91b";
-	color: #fff;
-  }
-  
+	@font-face {
+		font-family: "gaming-icon";
+		src:url("./assets/gaming-icons/gaming-icon.eot");
+		src:url("./assets/gaming-icons/gaming-icon.eot?#iefix") format("embedded-opentype"),
+			url("./assets/gaming-icons/gaming-icon.woff") format("woff"),
+			url("./assets/gaming-icons/gaming-icon.ttf") format("truetype"),
+			url("./assets/gaming-icons/gaming-icon.svg#gaming-icon") format("svg");
+		font-weight: normal;
+		font-style: normal;
+	}
+	
+	[data-icon]:before {
+		font-family: "gaming-icon" !important;
+		content: attr(data-icon);
+		font-style: normal !important;
+		font-weight: normal !important;
+		font-variant: normal !important;
+		text-transform: none !important;
+		speak: none;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	
+	[class^="icon-"]:before,
+	[class*=" icon-"]:before {
+		font-family: "gaming-icon" !important;
+		font-style: normal !important;
+		font-weight: normal !important;
+		font-variant: normal !important;
+		text-transform: none !important;
+		speak: none;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	
+	.icon-add:before {
+		content: "\61";
+	}
+	.icon-arrowdown:before {
+		content: "\62";
+	}
+	.icon-media:before {
+		content: "\63";
+	}
+	.icon-menu:before {
+		content: "\64";
+	}
+	.icon-power:before {
+		content: "\65";
+	}
+	.icon-backarrow:before {
+		content: "\66";
+	}
+	.icon-bin:before {
+		content: "\67";
+	}
+	.icon-press:before {
+		content: "\68";
+	}
+	.icon-question:before {
+		content: "\69";
+	}
+	.icon-check:before {
+		content: "\6a";
+	}
+	.icon-checkicon:before {
+		content: "\6b";
+	}
+	.icon-radio:before {
+		content: "\6c";
+	}
+	.icon-refresh:before {
+		content: "\6d";
+	}
+	.icon-checkline:before {
+		content: "\6e";
+	}
+	.icon-close:before {
+		content: "\6f";
+	}
+	.icon-release:before {
+		content: "\70";
+	}
+	.icon-store:before {
+		content: "\71";
+	}
+	.icon-content:before {
+		content: "\72";
+	}
+	.icon-device:before {
+		content: "\73";
+	}
+	.icon-support:before {
+		content: "\74";
+	}
+	.icon-systemupdate:before {
+		content: "\75";
+	}
+	.icon-dots:before {
+		content: "\76";
+	}
+	.icon-gear:before {
+		content: "\77";
+	}
+	.icon-wifisecurity:before {
+		content: "\78";
+	}
+	.icon-windows:before {
+		content: "\79";
+	}
+	.icon-macrokey:before {
+		content: "\7a";
+	}
+	
 
 .is-gaming {
 	.vtr-page {
