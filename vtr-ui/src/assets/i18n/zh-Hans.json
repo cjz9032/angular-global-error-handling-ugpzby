@@ -858,6 +858,7 @@
 	"lenovoId": {
 		"login": "登录",
 		"logout": "注销",
+		"unlockExclusives": "开放独享内容",
 		"user": "用户",
 		"welcomeText": "元气满满的一天 {{firstName}}！",
 		"welcomeTextWithouUserName": "元气满满的一天！",
