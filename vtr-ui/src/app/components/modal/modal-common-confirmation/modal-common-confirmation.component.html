@@ -1,6 +1,10 @@
 <div class="common-confirmation-modal">
 	<h1>{{ header | translate }} </h1>
-	<div role="button" vtrMetrics metricsItem="Close Button" metricsEvent="featureClick" [metricsParent]="metricsParent"
+	<div role="button"
+		vtrMetrics
+		metricsItem="Close Button"
+		metricsEvent="featureClick"
+		[metricsParent]="metricsParent"
 		class="close-btn"
 		(click)="onCancelClick($event)">
 		<img src="assets/icons/Close.svg"
@@ -20,14 +24,23 @@
 
 	<div class="d-flex">
 		<div class="ml-0 mr-4 pl-0">
-			<button type="button" vtrMetrics metricsItem="Ok Button" metricsEvent="featureClick" [metricsParent]="metricsParent"
+			<button type="button"
+				vtrMetrics
+				metricsItem="Ok Button"
+				metricsEvent="featureClick"
+				[metricsParent]="metricsParent"
 				class="btn btn-default modal-button"
 				(click)="onOkClick($event)">
 				{{OkText | translate}}
 			</button>
 		</div>
-		<div class="ml-0 mr-4 pl-0" *ngIf="!CancelText">
-			<div role="button" vtrMetrics metricsItem="Cancel Button" metricsEvent="featureClick" [metricsParent]="metricsParent"
+		<div class="ml-0 mr-4 pl-0"
+			*ngIf="CancelText.length > 0">
+			<div role="button"
+				vtrMetrics
+				metricsItem="Cancel Button"
+				metricsEvent="featureClick"
+				[metricsParent]="metricsParent"
 				class="btn btn-default modal-button-cancel"
 				(click)="onCancelClick($event)">
 				{{CancelText | translate}}
