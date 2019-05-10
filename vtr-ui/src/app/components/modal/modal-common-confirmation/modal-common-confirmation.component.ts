@@ -16,6 +16,8 @@ export class ModalCommonConfirmationComponent implements OnInit {
 	@Input() OkText = 'Okay';
 	@Input() CancelText = 'Cancel';
 
+	@Input() metricsParent;
+
 	@Output() OkClick = new EventEmitter<any>();
 	@Output() CancelClick = new EventEmitter<any>();
 

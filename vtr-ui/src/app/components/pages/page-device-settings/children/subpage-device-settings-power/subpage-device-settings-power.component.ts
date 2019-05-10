@@ -173,7 +173,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			isSwitchVisible: true
 		}
 	];
-	changeBatteryMode(event, mode) {
+	async changeBatteryMode(event, mode) {
 		// console.log(event.switchValue);
 		// console.log('initially conservationMode:' + this.batterySettings.status.conservationMode);
 		// console.log('initially expressCharging:' + this.batterySettings.status.expressCharging);
@@ -191,19 +191,31 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		// console.log('after expressCharging :' + this.batterySettings.status.expressCharging);
 		if (mode !== undefined) {
 			if (mode === 'expressCharging') {
-				if (event.switchValue) {
+				if (this.conservationModeStatus.status === true && event.switchValue) {
+					await this.setConservationModeStatusIdeaNoteBook(!event.switchValue);
+					await this.setRapidChargeModeStatusIdeaNoteBook(event.switchValue);
 					this.conservationModeStatus.status = !event.switchValue;
-					this.setConservationModeStatusIdeaNoteBook(!event.switchValue);
-				}
-				this.expressChargingStatus.status = event.switchValue;
-				this.setRapidChargeModeStatusIdeaNoteBook(event.switchValue);
-			} else {
-				if (event.switchValue) {
+					this.expressChargingStatus.status = event.switchValue;
+				} else if (this.conservationModeStatus.status !== true && event.switchValue) {
+					await this.setRapidChargeModeStatusIdeaNoteBook(event.switchValue);
+					this.expressChargingStatus.status = event.switchValue;
+				} else if (this.conservationModeStatus.status !== true && !event.switchValue) {
+					await this.setRapidChargeModeStatusIdeaNoteBook(event.switchValue);
 					this.expressChargingStatus.status = !event.switchValue;
-					this.setRapidChargeModeStatusIdeaNoteBook(!event.switchValue);
 				}
-				this.conservationModeStatus.status = event.switchValue;
-				this.setConservationModeStatusIdeaNoteBook(event.switchValue);
+			} else if (mode === 'conservationMode') {
+				if (this.expressChargingStatus.status === true && event.switchValue) {
+					await this.setRapidChargeModeStatusIdeaNoteBook(!event.switchValue);
+					await this.setConservationModeStatusIdeaNoteBook(event.switchValue);
+					this.expressChargingStatus.status = !event.switchValue;
+					this.conservationModeStatus.status = event.switchValue;
+				} else if (this.expressChargingStatus.status !== true && event.switchValue) {
+					await this.setConservationModeStatusIdeaNoteBook(event.switchValue);
+					this.conservationModeStatus.status = event.switchValue;
+				} else if (this.expressChargingStatus.status !== true && !event.switchValue) {
+					await this.setConservationModeStatusIdeaNoteBook(event.switchValue);
+					this.conservationModeStatus.status = !event.switchValue;
+				}
 			}
 		}
 	}
@@ -234,7 +246,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine)
-		if(this.isDesktopMachine) {
+		if (this.isDesktopMachine) {
 			this.headerMenuItems.splice(0, 1);
 		}
 		this.getMachineInfo();
@@ -776,37 +788,45 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.error(error.message);
 		}
 	}
-	private setConservationModeStatusIdeaNoteBook(status: any) {
+	private async setConservationModeStatusIdeaNoteBook(status: any) {
 		try {
 			console.log('setConservationModeStatusIdeaNoteBook.then', status);
 			if (this.powerService.isShellAvailable) {
-				this.powerService
-					.setConservationModeStatusIdeaNoteBook(status)
-					.then((value: boolean) => {
-						console.log('setConservationModeStatusIdeaNoteBook.then', value);
-						//this.getConservationModeStatusIdeaPad();
-					})
-					.catch(error => {
-						console.error('setConservationModeStatusIdeaNoteBook', error);
-					});
+				let value = await this.powerService
+					.setConservationModeStatusIdeaNoteBook(status);
+				console.log('setConservationModeStatusIdeaNoteBook.then', value);
+
+				// await	this.powerService
+				// 		.setConservationModeStatusIdeaNoteBook(status)
+				// 		.then((value: boolean) => {
+				// 			console.log('setConservationModeStatusIdeaNoteBook.then', value);
+				// 			//this.getConservationModeStatusIdeaPad();
+				// 		})
+				// 		.catch(error => {
+				// 			console.error('setConservationModeStatusIdeaNoteBook', error);
+				// 		});
 			}
 		} catch (error) {
 			console.error(error.message);
 		}
 	}
-	private setRapidChargeModeStatusIdeaNoteBook(status) {
+	private async setRapidChargeModeStatusIdeaNoteBook(status) {
 		try {
 			console.log('setRapidChargeModeStatusIdeaNoteBook.then', status);
+
 			if (this.powerService.isShellAvailable) {
-				this.powerService
-					.setRapidChargeModeStatusIdeaNoteBook(status)
-					.then((value: boolean) => {
-						console.log('setRapidChargeModeStatusIdeaNoteBook.then', value);
-						//this.getRapidChargeModeStatusIdeaPad();
-					})
-					.catch(error => {
-						console.error('setRapidChargeModeStatusIdeaNoteBook', error);
-					});
+				let value = this.powerService
+					.setRapidChargeModeStatusIdeaNoteBook(status);
+				console.log('setRapidChargeModeStatusIdeaNoteBook.then', value);
+				// this.powerService
+				// 	.setRapidChargeModeStatusIdeaNoteBook(status)
+				// 	.then((value: boolean) => {
+				// 		console.log('setRapidChargeModeStatusIdeaNoteBook.then', value);
+				// 		//this.getRapidChargeModeStatusIdeaPad();
+				// 	})
+				// 	.catch(error => {
+				// 		console.error('setRapidChargeModeStatusIdeaNoteBook', error);
+				// 	});
 			}
 		} catch (error) {
 			console.error(error.message);
