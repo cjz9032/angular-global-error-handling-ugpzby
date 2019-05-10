@@ -63,7 +63,7 @@
 		"menu": {
 			"dashboard": "Dashboard",
 			"device": {
-				"title": "Device",
+				"title": "My Device",
 				"sub1": "My Device",
 				"sub2": "My Device Settings",
 				"sub3": "System Updates"
@@ -1261,13 +1261,13 @@
 		"title3": "Vantage",
 		"privacypolicy": "Lenovo's Private Policy",
 		"interests" : {
-			"games": "Games", 
+			"games": "Games",
 			"news" : "News",
 			"entertainment" : "Entertainment",
 			"technology" : "Technology",
-			"sports" : "Sports", 
-			"arts" : "Arts", 
-			"regionalNews" : "Regional News", 
+			"sports" : "Sports",
+			"arts" : "Arts",
+			"regionalNews" : "Regional News",
 			"politics" : "Politics",
 			"music" : "Music",
 			"science": "Science"

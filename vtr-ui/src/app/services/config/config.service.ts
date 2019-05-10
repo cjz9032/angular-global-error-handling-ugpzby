@@ -28,7 +28,7 @@ export class ConfigService {
 			label: 'gaming.common.menu.support.title',
 			path: 'support',
 			icon: ['fal', 'wrench'],
-			metricsEvent: 'itemClick',
+			metricsEvent: 'featureClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.support',
 			routerLinkActiveOptions: { exact: true },
@@ -36,11 +36,11 @@ export class ConfigService {
 			subitems: [{
 				id: 'support',
 				label: 'gaming.common.menu.support.sub1',
-				path: '',
+				path: 'support',
 				icon: '',
-				metricsEvent: 'itemClick',
+				metricsEvent: 'featureClick',
 				metricsParent: 'navbar',
-				metricsItem: 'link.mydevice',
+				metricsItem: 'support',
 				routerLinkActiveOptions: { exact: true },
 				subitems: []
 			}, {
@@ -48,9 +48,9 @@ export class ConfigService {
 				label: 'gaming.common.menu.support.sub2',
 				path: 'https://www.facebook.com/LenovoLegion/',
 				icon: '',
-				metricsEvent: 'itemClick',
+				metricsEvent: 'featureClick',
 				metricsParent: 'navbar',
-				metricsItem: 'link.mydevicesettings',
+				metricsItem: 'facebook',
 				routerLinkActiveOptions: { exact: false },
 				subitems: []
 			}, {
@@ -58,9 +58,9 @@ export class ConfigService {
 				label: 'gaming.common.menu.support.sub3',
 				path: 'https://www.instagram.com/lenovolegion/',
 				icon: '',
-				metricsEvent: 'itemClick',
+				metricsEvent: 'featureClick',
 				metricsParent: 'navbar',
-				metricsItem: 'link.systemupdates',
+				metricsItem: 'instagaram',
 				routerLinkActiveOptions: { exact: true },
 				subitems: []
 			}]
