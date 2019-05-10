@@ -48,6 +48,17 @@
 				}
 			}
 		}
+		,
+		"common":{
+			"menu":{
+				"support": {
+					"title": "Support",
+					"sub1": "Support",
+					"sub2": "Face Book",
+					"sub3": "Instagram"
+				}
+			}
+		}
 	},
 	"common": {
 		"menu": {

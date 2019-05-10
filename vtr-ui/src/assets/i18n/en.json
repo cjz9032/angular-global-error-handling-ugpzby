@@ -47,6 +47,16 @@
 					"line11": "Thermal Mode <br> Set your preferred device profile for fan speed and cooling control"
 				}
 			}
+		},
+		"common":{
+			"menu":{
+				"support": {
+					"title": "Support",
+					"sub1": "Support",
+					"sub2": "Face Book",
+					"sub3": "Instagram"
+				}
+			}
 		}
 	},
 	"common": {
