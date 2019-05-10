@@ -1,3 +1,6 @@
+import { PageLightingcustomizeComponent } from './components/pages/page-lightingcustomize/page-lightingcustomize.component';
+import { PageHardwarescanComponent } from './components/pages/page-hardwarescan/page-hardwarescan.component';
+import { PageMacrokeyComponent } from './components/pages/page-macrokey/page-macrokey.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
@@ -31,7 +34,27 @@ const routes: Routes = [
 		data: {
 			pageName: 'Dashboard'
 		}
-	}, {
+	},{
+		path: 'macrokey',
+		component: PageMacrokeyComponent,
+		data: {
+			pageName: 'Macrokey'
+		}
+	},{
+		path: 'hardwarescan',
+		component: PageHardwarescanComponent,
+
+		data: {
+			pageName: 'Hardwarescan'
+		}
+	},{
+		path: 'lightingcustomize',
+		component: PageLightingcustomizeComponent,
+
+		data: {
+			pageName: 'Lightingcustomize'
+		}
+	},{
 		path: 'device',
 		component: PageDeviceComponent,
 		data: {
@@ -75,7 +98,8 @@ const routes: Routes = [
 				}
 			}
 		]
-	}, {
+	},
+	 {
 		path: 'device/system-updates',
 		component: PageDeviceUpdatesComponent,
 		data: {

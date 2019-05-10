@@ -1227,5 +1227,34 @@
 			"para12": "注",
 			"para13": "Cortana 仅在某些国家/地区可用，且部分 Cortana 功能并非在所有国家/地区可用。"
 		}
+	},
+	"welcometutorial": {
+		"description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
+		"bullets1": "Optimize your system with lorem ipsum dolor set",
+		"bullets2":	"Security Advisor makes managing your security easy ",
+		"bullets3": "Automatic updates keep your device in tip top shape",
+		"subtitle1": "How will you be using your device?",
+		"subtitle2": "Tell us about your interests",
+		"personal": "Personal Use",
+		"business": "Business Use",
+		"custom": "Custom Experience",
+		"privacytitle": "Help us improve the quality of the app by allowing anonymous collection of usage statistics.",
+		"moreInterest": "+ more interests",
+		"title1": "Welcome to",
+		"title2": "Lenovo",
+		"title3": "Vantage",
+		"privacypolicy": "Lenovo's Private Policy",
+		"interests" : {
+			"games": "Games", 
+			"news" : "News",
+			"entertainment" : "Entertainment",
+			"technology" : "Technology",
+			"sports" : "Sports", 
+			"arts" : "Arts", 
+			"regionalNews" : "Regional News", 
+			"politics" : "Politics",
+			"music" : "Music",
+			"science": "Science"
+		}
 	}
 }
