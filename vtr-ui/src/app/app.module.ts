@@ -178,6 +178,7 @@ import { WidgetQuicksettingsListComponent } from './components/widgets/widget-qu
 import { WidgetLightingComponent } from './components/widgets/widget-lighting/widget-lighting.component';
 import { ModalGamingLegionedgeComponent } from './components/modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { PrivacyModule } from './components/pages/page-privacy/privacy.module';
+import { UiGamingCollapsibleContainerComponent } from './components/ui/ui-gaming-collapsible-container/ui-gaming-collapsible-container.component';
 import { PageMacrokeyComponent } from './components/pages/page-macrokey/page-macrokey.component';
 import { PageLightingcustomizeComponent } from './components/pages/page-lightingcustomize/page-lightingcustomize.component';
 import { PageHardwarescanComponent } from './components/pages/page-hardwarescan/page-hardwarescan.component';
@@ -318,6 +319,7 @@ library.add(fal);
 		WidgetQuicksettingsListComponent,
 		WidgetLightingComponent,
 		ModalGamingLegionedgeComponent,
+		UiGamingCollapsibleContainerComponent,
 		PageMacrokeyComponent,
 		PageLightingcustomizeComponent,
 		PageHardwarescanComponent

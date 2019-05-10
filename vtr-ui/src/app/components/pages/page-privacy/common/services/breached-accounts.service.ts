@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, EMPTY, merge, ReplaySubject, Subject, Subscription } from 'rxjs';
+import { EMPTY, merge, ReplaySubject, Subscription } from 'rxjs';
 import { catchError, distinctUntilChanged, map, switchMap, switchMapTo, take, tap } from 'rxjs/operators';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
@@ -26,7 +26,6 @@ export interface BreachedAccount {
 export class BreachedAccountsService {
 
 	onGetBreachedAccounts$ = new ReplaySubject<BreachedAccount[]>(1);
-	onGetBreachedAccountsCompleted$ = new BehaviorSubject(false);
 
 	constructor(
 		private communicationWithFigleafService: CommunicationWithFigleafService,
@@ -45,7 +44,6 @@ export class BreachedAccountsService {
 					take(1)
 				)
 			),
-			tap(() => this.onGetBreachedAccountsCompleted$.next(false)),
 			switchMap((isFigleafInstalled) => {
 				if (isFigleafInstalled) {
 					return this.communicationWithFigleafService.sendMessageToFigleaf({type: 'getFigleafBreachedAccounts'})
@@ -55,7 +53,6 @@ export class BreachedAccountsService {
 							}),
 							catchError((error) => {
 								console.error('getFigleafBreachedAccounts error: ', error);
-								this.onGetBreachedAccountsCompleted$.next(true);
 								return EMPTY;
 							}),
 						);
@@ -64,7 +61,6 @@ export class BreachedAccountsService {
 						.pipe(
 							catchError((error) => {
 								console.error('getBreachedAccountsByEmail error', error);
-								this.onGetBreachedAccountsCompleted$.next(true);
 								return EMPTY;
 							})
 						);
@@ -77,10 +73,8 @@ export class BreachedAccountsService {
 			})
 		).subscribe((response: BreachedAccount[]) => {
 			this.onGetBreachedAccounts$.next(response);
-			this.onGetBreachedAccountsCompleted$.next(true);
 		}, (error) => {
 			console.error('error', error);
-			this.onGetBreachedAccountsCompleted$.next(true);
 		});
 	}
 }

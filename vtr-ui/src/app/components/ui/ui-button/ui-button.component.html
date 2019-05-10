@@ -7,11 +7,15 @@
 			class="btn button"
 			vtrMetrics
 			[metricsItem]="metricsItem"
-			[metricsEvent]="'featureClick'"
+			[metricsEvent]="metricsEvent"
 			[metricsParam]="metricsParam"
 			[metricsValue]="metricsValue"
+			[metricsItemPosition]="metricsItemPosition"
+			[metricsPageNumber]="metricsPageNumber"
 			[metricsParent]="metricsParent"
-			[ngClass]="{'fullWidth': isFullWidth === true,'text-upper-case': upperCaseLabel ,'regular-width': isRegular}"
+			[ngClass]="{'fullWidth': isFullWidth === true,'text-upper-case': upperCaseLabel,
+						'regular-width': isRegular, 'min-height': btnHeight, 
+						'btn-gradient': isGradient}"
 			(click)="onClickButton($event)">{{label}} </button>
 		<button *ngIf="alreadyJoinGroup === 'joined'"
 			type="button"
@@ -19,9 +23,11 @@
 			[disabled]="false"
 			vtrMetrics
 			[metricsItem]="metricsItem"
-			[metricsEvent]="'featureClick'"
+			[metricsEvent]="metricsEvent"
 			[metricsParam]="metricsParam"
 			[metricsValue]="metricsValue"
+			[metricsItemPosition]="metricsItemPosition"
+			[metricsPageNumber]="metricsPageNumber"
 			[metricsParent]="metricsParent"
 			[ngClass]="{'fullWidth': isFullWidth === true ,'text-upper-case': upperCaseLabel}"
 			(click)="onClickButton($event)">{{label}} </button>
