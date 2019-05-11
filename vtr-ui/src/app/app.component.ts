@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
 		private devService: DevService,
 		private displayService: DisplayService,
 		private router: Router,
-		// private modalService: NgbModal,
+		private modalService: NgbModal,
 		public deviceService: DeviceService,
 		private commonService: CommonService,
 		private translate: TranslateService,
@@ -53,26 +53,26 @@ export class AppComponent implements OnInit {
 
 		//#region VAN-2779 this is moved in MVP 2
 
-		// const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
 
 		// if (tutorial === undefined && navigator.onLine) {
-		// 	const modalRef = this.modalService.open(ModalWelcomeComponent,
-		// 		{
-		// 			backdrop: 'static'
-		// 			, windowClass: 'welcome-modal-size'
-		// 		});
-		// 	modalRef.result.then(
-		// 		(result: WelcomeTutorial) => {
-		// 			// on open
-		// 			console.log('welcome-modal-size', result);
-		// 			commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, result);
-		// 		},
-		// 		(reason: WelcomeTutorial) => {
-		// 			// on close
-		// 			console.log('welcome-modal-size', reason);
-		// 			commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
-		// 		}
-		// 	);
+			const modalRef = this.modalService.open(ModalWelcomeComponent,
+				{
+					backdrop: 'static'
+					, windowClass: 'welcome-modal-size'
+				});
+			modalRef.result.then(
+				(result: WelcomeTutorial) => {
+					// on open
+					console.log('welcome-modal-size', result);
+					commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, result);
+				},
+				(reason: WelcomeTutorial) => {
+					// on close
+					console.log('welcome-modal-size', reason);
+					commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
+				}
+			);
 		// }
 
 		//#endregion
@@ -149,7 +149,7 @@ export class AppComponent implements OnInit {
 				this.deviceService.getMachineType()
 					.then((value: any) => {
 						console.log('checkIsDesktopMachine.then', value);
-						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, (value === 4));
+						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, (value == 2 || value === 3 || value === 4));
 					}).catch(error => {
 						console.error('checkIsDesktopMachine', error);
 					});

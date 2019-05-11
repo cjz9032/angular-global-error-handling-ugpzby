@@ -51,10 +51,10 @@
 															<span *vtrTranslate="'security.homeprotection.securityhealth.learnMoreAboutSecurityHealth' | translate">
 
 																<a vtrMetrics  id="sa-ws-lnk-sh-learnmore"
-																	metricsEvent="featureClick"
-
+																	metricsEvent="ArticleClick"
 																	metricsItem="learnMoreAboutSecurityHealth"
-																	metricsParent="security.wifiSecurity"
+																	metricsItemPosition="1"
+																	metricsPageNumber="1"
 																	href="javascript:void(0)"
 																	(click)="openSecurityHealthArticle()"
 																	target="_blank"></a>
@@ -88,8 +88,8 @@
 																	{{'security.homeprotection.securityhealth.peaceOfMind' | translate}}
 																</div>
 																<div class="button-box">
-																	<vtr-ui-button id="sa-ws-btn-sh-enablewifisecurity" 
-																		metricsParent="security-health"
+																	<vtr-ui-button id="sa-ws-btn-sh-enablewifisecurity"
+																		metricsEvent="FeatureClick"
 																		metricsItem="enableWiFiSecurity"
 																		(onClick)="enableWiFiSecurity($event)"
 																		[label]="'security.homeprotection.securityhealth.button' | translate">

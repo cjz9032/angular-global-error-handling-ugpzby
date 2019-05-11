@@ -12,9 +12,6 @@
 		background-color: $gaming_dark;
 		box-shadow: $drop_shadow_gaming;
 		padding: 4rem;
-
-		// remove once populated
-		min-height: 50rem;
 	}
 	.quickSettings-list-items {
 		&::ng-deep .vtr-widget-device-update-settings {

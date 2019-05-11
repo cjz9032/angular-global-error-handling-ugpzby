@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalLicenseComponent } from '../../modal/modal-license/modal-license.component';
@@ -12,7 +12,7 @@ declare var Windows;
 	templateUrl: './modal-about.component.html',
 	styleUrls: ['./modal-about.component.scss']
 })
-export class ModalAboutComponent implements OnInit, AfterViewInit {
+export class ModalAboutComponent implements OnInit {
 
 	lang = 'en';
 
@@ -33,10 +33,6 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 			// packageVersion.major, packageVersion.minor, packageVersion.build, packageVersion.revision
 			this.shellVersion = `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}`;
 		}
-	}
-
-	ngAfterViewInit() {
-		setTimeout(() => { document.getElementById('about-dialog').focus(); }, 0);
 	}
 
 	agreementClicked() {
@@ -61,8 +57,8 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 		const openSourceUrl = `assets/licenses/OpenSource/OpenSourceLicenses.txt`;
 		const licenseModalMetrics = {
 			pageName: 'Page.Support.Article',
-			pageContext: 'Other Software Licenses',
-			closeButton: 'OtherSoftwareLicensesCloseButton',
+			pageContext: 'Open Source Licenses',
+			closeButton: 'OpenSourceLicensesCloseButton',
 		};
 		const aboutModal: NgbModalRef = this.modalService.open(ModalLicenseComponent, {
 			size: 'lg',

@@ -70,7 +70,9 @@
 				class="d-block"
 				href="{{urlGetMcAfee}}"
 				target="_blank">
-				<vtr-ui-button [metricsItem]="'getMcafee'"
+				<vtr-ui-button
+					metricsEvent="FeatureClick"
+					metricsItem="getMcafee"
 					[label]="'security.antivirus.mcafee.getMacfee' | translate"
 					[upperCaseLabel]="false"
 					*ngIf="!install"></vtr-ui-button>
