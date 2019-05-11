@@ -43,7 +43,7 @@
 										</div>
 									</div>
 
-									<vtr-available-updates
+									<vtr-available-updates *ngIf="isUpdateListVisible()"
 										[criticalUpdates]="criticalUpdates"
 										[optionalUpdates]="optionalUpdates"
 										[recommendedUpdates]="recommendedUpdates"
@@ -199,7 +199,6 @@
 											[actionType]="'External'"
 											[actionLink]="'https://pcsupport.lenovo.com/'"
 											[type]="'partnerarticle'"
-											[order]="1"
 											[ratioX]="4"
 											[ratioY]="2">
 										</vtr-container-card>
@@ -216,7 +215,6 @@
 											[actionType]="cardContentPositionA.ActionType"
 											[actionLink]="cardContentPositionA.ActionLink"
 											[type]="'corner-article'"
-											[order]="2"
 											[ratioX]="4"
 											[ratioY]="2"
 											[cornerShift]="'large'">
