@@ -299,6 +299,10 @@
 				border-bottom-right-radius: 0.8rem;
 				// border: 0.1rem solid rgba(0, 0, 0, 0.125);
 			}
+			
+			.no-gutters {
+				height: 2.7rem;
+			}
 		}
 
 		.card-header {
@@ -411,11 +415,26 @@
 			border-bottom-right-radius: 0.8rem;
 			border-bottom: 0;
 		}
+		div.wifi:nth-child(odd) {
+			@media #{$mediaquery_7} {
+				border-right: 0;
+			}
+		}
+		div.wifi:nth-last-child(2):nth-child(odd) {
+			@media #{$mediaquery_7} {
+				border-bottom-left-radius: 0;
+				border-bottom: 0.1rem solid $shade_lighter;
+			}
+		}
 	}
 	.sm-device-responsive{
 		@media #{$mediaquery_12} {
 			position: relative;
 			top: -3rem;
+		}
+		.switch-disable {
+			opacity: 0.3;
+			cursor: auto;
 		}
 	}
 }

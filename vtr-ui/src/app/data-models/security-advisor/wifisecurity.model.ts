@@ -241,7 +241,7 @@ export class SecurityHealthViewModel {
 				path: 'security/wifi-security',
 				type: 'security'
 			};
-			it.status = item.vulnerable === 'true' ? 1 : 2;
+			it.status = item.vulnerable === 'true' ? 1 : 6;
 			it.title = this.mappingDevicePosture(item.config);
 			it.detail = item.vulnerable === 'true' ? 'security.homeprotection.securityhealth.fail' : 'security.homeprotection.securityhealth.pass';
 			this.translate.stream(it.detail).subscribe((res) => {
