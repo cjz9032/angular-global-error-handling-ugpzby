@@ -1,76 +1,66 @@
 @import '../../../app.theme.scss';
 
+
+
+
 .select-box {
-    position: relative;
-    display: block;
-    width: 100%;
-    margin: 0 auto;
-    font-size: 1.4rem;
-    z-index: 99;
-    &__current {
-        position: relative;
-        cursor: pointer;
-        outline: none;
-        
-        &:focus {
-            & + .select-box__list {
-                opacity: 1;        
-                animation-name: none;
-                border-radius: 5px;
-                background: $gaming_blue_grey_light;
-                
-                .select-box__option {
-                    cursor: pointer;
-                }
-            }   
-            .select-box__icon {
-                transform: translateY(-50%) rotate(180deg);
+    &:hover {
+        .dropdown-menu{
+            display: none;
+            &.show{
+                display: block;
             }
         }
     }
-      
-    &__icon {
-        position: absolute;
-        top: 50%;
-        right: 15px;
-        transform: translateY(-50%);
-        width: 20px;
-        opacity: 0.3;
-        transition: 0.2s ease;
-    }
-      
-    &__value {
+    .dropdown-toggle {
         display: flex;
-    }
-      
-    &__input {
-        display: none;
-        
-        &:checked + .select-box__input-text {
-            display: block;
+        justify-content: space-between;
+        font-size: 1.6rem;
+        color: $shade_light;
+        margin-bottom: -1.2rem;
+        .icon {
+            position: relative;
+            font-size: 2.2rem;
+            top: -0.8rem;
+        }
+        &::after {
+            display: none;
         }
     }
-      
-    &__input-text {
-        display: none;
+    .dropdown-menu {
         width: 100%;
-        margin: 0;
-        padding: 1rem 0;
-        background-color: transparent;
-        font-size: 1.4rem;
-        color: $main_lightest;
-    }
-      
-    &__list {
-        position: absolute;
-        width: 100%;
-        padding: 0;
-        list-style: none;
-        opacity: 0;
-        overflow: hidden;
-        &:first-child {
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
+        background-color: $gaming_shade;
+        border: none;
+        border-radius: 0.8rem;
+        li {
+            .dropdown-item {
+                color: $gaming_lightest;
+                font-size: 1.6rem;
+                height: 5.5rem;
+                line-height: 5.5rem;
+                position: relative;
+                padding-left: 5rem;
+                .icon {
+                    position: absolute;
+                    left: 2rem;
+                    font-size: 2rem;
+                    background: $gaming_green_gradient;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    opacity: 0;
+                }
+                &:hover {
+                    background: $gaming_hover;
+                }
+            }
+            &.selected {
+                .dropdown-item{
+                    .icon {
+                        opacity: 1;
+                    }
+                }
+            }
         }
         .information {
             margin: 1.6rem;
@@ -78,49 +68,24 @@
             margin-top: 0;
             border-top: 1px solid $gaming_darkest;
             padding-top: 1.6rem;
-            p {
+            p{
                 font-size: 1.4rem;
                 color: $main_lightest;
+                display: none;
+            }
+            
+        }
+        li{
+            &:nth-child(1):hover ~ .information p:nth-child(1){
+                display: block;
+            }
+            &:nth-child(2):hover ~ .information p:nth-child(2){
+                display: block;
+            }
+            &:nth-child(3):hover ~ .information p:nth-child(3){
+                display: block;
             }
         }
-        
-        animation-name: HideList;
-        animation-duration: 0.5s;
-        animation-delay: 0.5s;
-        animation-fill-mode: forwards;
-        animation-timing-function: step-start;
-        box-shadow: 0 15px 30px -10px transparentize(#000, 0.9);
-    }
-      
-    &__option {
-        display: block;
-        padding: 1.6rem;
-        background-color:transparent;
-        color: $main_lightest;
-        position: relative;
-        padding-left: 4rem;
-        &:hover,
-        &:focus {
-            background-color: $screen_light_15;
-        }
-        .check {
-            position: absolute;
-            left: 1.6rem;
-            top: 1.8rem;
-            font-size: 1.6rem;
-            background: $gaming_green_gradient;
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-            background-clip: text;
-            opacity: 0;
-        }
     }
 }
-@keyframes HideList {
-    from {
-        transform: scaleY(1);
-    }
-    to {
-        transform: scaleY(0);
-    }
-}
+

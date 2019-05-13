@@ -1,4 +1,4 @@
-<div class="select-box">
+<!--<div class="select-box">
   <div class="select-box__current" tabindex="1">
     <div class="select-box__value">
       <input class="select-box__input" type="radio" id="0" value="on" name="choose" />
@@ -28,4 +28,23 @@
       <p>CPU Overclock will be activated all the time.</p>
     </div>
   </ul>
+</div>-->
+
+<div class="select-box">
+  <div class="dropdown">
+    <a class="dropdown-toggle" id="gaming-drop" data-toggle="dropdown" aria-expanded="false">
+      <span>Always On</span> 
+      <i class="icon icon-arrowdown"></i>
+    </a>
+    <div class="dropdown-menu">
+      <li class="selected"><a class="dropdown-item"><i class="icon icon-checkline"></i>Always On</a></li>
+      <li><a class="dropdown-item"><i class="icon icon-checkline"></i>When Gaming</a></li>
+      <li><a class="dropdown-item"><i class="icon icon-checkline"></i>Off</a></li>  
+      <div class="information">
+          <p>CPU Overclock will be activated all the time.</p>
+          <p>CPU Overclock will be activated while Gaming.</p>
+          <p>CPU Overclock will off all the time.</p>
+      </div>    
+    </div>
+  </div>
 </div>
