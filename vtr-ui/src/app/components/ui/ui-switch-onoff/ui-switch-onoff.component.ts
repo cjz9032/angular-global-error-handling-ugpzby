@@ -4,7 +4,8 @@ import {
 	Input,
 	Output,
 	EventEmitter,
-	OnDestroy
+	OnDestroy,
+	ChangeDetectorRef
 } from '@angular/core';
 import {
 	TranslationService
@@ -40,6 +41,7 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	@Input() data: WifiHomeViewModel;
 	@Input() name: string;
 	@Input() disabled = false;
+	isSwitchDisable = false;
 
 	uiSubscription: Subscription;
 
@@ -47,7 +49,13 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	offLabel = 'off';
 	size = 'switch-xs';
 
-	constructor(public translationService: TranslationService, public commonService: CommonService, public modalService: NgbModal, private securityService: SecurityService, ) {
+	constructor(
+		public translationService: TranslationService,
+		public commonService: CommonService,
+		public modalService: NgbModal,
+		private securityService: SecurityService,
+		private cd: ChangeDetectorRef
+		) {
 		this.uiSubscription = this.translationService.subscription
 			.subscribe((translation: Translation) => {
 				this.onLanguageChange(translation);
@@ -66,41 +74,49 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	onChange(event) {
 		this.disabled = true;
 		try {
-			if (this.data) {
-				if (this.value) {
-					// this.data.isLWSEnabled = false;
-					// this.value = false; // 让switch尽快change
-					this.data.wifiSecurity.disableWifiSecurity().then((res) => {
-						if (res === true) {
-							this.data.isLWSEnabled = false;
-							this.value = false;
-						} else {
-							this.data.isLWSEnabled = true;
-							this.value = true;
-						}
-					});
-				} else {
-					// this.data.isLWSEnabled = true;
-					// this.value = true; // 让switch尽快change
-					this.data.wifiSecurity.enableWifiSecurity().then((res) => {
-						if (res === true) {
-							this.data.isLWSEnabled = true;
-							this.value = true;
-						} else {
-							this.data.isLWSEnabled = false;
-							this.value = false;
-						}
-					}, (error) => {
-						this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);
-					});
+			if (this.name === 'wifiSecurity') {
+				// this.cd.detach();
+				this.isSwitchDisable = true;
+				// this.cd.detectChanges();
+				if (this.data) {
+					if (this.value) {
+						this.data.wifiSecurity.disableWifiSecurity().then((res) => {
+							if (res === true) {
+								this.data.isLWSEnabled = false;
+								this.value = false;
+							} else {
+								this.data.isLWSEnabled = true;
+								this.value = true;
+							}
+							this.disabled = false;
+							this.isSwitchDisable = false;
+							// this.cd.reattach();
+						});
+					} else {
+						this.data.wifiSecurity.enableWifiSecurity().then((res) => {
+							if (res === true) {
+								this.data.isLWSEnabled = true;
+								this.value = true;
+							} else {
+								this.data.isLWSEnabled = false;
+								this.value = false;
+							}
+							this.disabled = false;
+							this.isSwitchDisable = false;
+							// this.cd.reattach();
+						}, (error) => {
+							this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);
+							this.disabled = false;
+							this.isSwitchDisable = false;
+							// this.cd.reattach();
+						});
+					}
 				}
 			} else {
 				this.value = !this.value;
 			}
 		} catch (err) {
 			throw new Error('wifiSecurity is null');
-		} finally {
-			this.disabled = false;
 		}
 
 		event.switchValue = this.value;
