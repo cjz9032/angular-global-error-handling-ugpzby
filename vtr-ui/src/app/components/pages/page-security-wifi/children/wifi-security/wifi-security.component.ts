@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, NgZone } from '@angular/core';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalThreatLocatorComponent } from 'src/app/components/modal/modal-threat-locator/modal-threat-locator.component';
 import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
@@ -30,7 +30,8 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		public modalService: NgbModal,
 		private commonService: CommonService,
 		public regionService: RegionService,
-		private securityService: SecurityService
+        private securityService: SecurityService,
+        private ngZone: NgZone
 	) {
 		super();
 		// if (typeof Windows !== undefined) {
@@ -55,22 +56,24 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 			this.isShowMore = false;
 		}
 		// this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
-		this.data.wifiSecurity.on(EventTypes.geolocatorPermissionEvent, (value) => {
-			if (!value && this.data.wifiSecurity.state === 'enabled') {
-				this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);
-			} else if (value) {
-				if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
-					this.data.wifiSecurity.enableWifiSecurity().then((res) => {
-						if (res === true) {
-							this.data.isLWSEnabled = true;
-						} else {
-							this.data.isLWSEnabled = false;
-						}
-					}, (error) => {
-						console.log('no permission');
-					});
-				}
-			}
+		this.data.wifiSecurity.on(EventTypes.geolocatorPermissionEvent, (value) => {          
+            this.ngZone.run(() => {
+                if (!value && this.data.wifiSecurity.state === 'enabled') {
+                    this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);
+                } else if (value) {
+                    if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
+                        this.data.wifiSecurity.enableWifiSecurity().then((res) => {
+                            if (res === true) {
+                                this.data.isLWSEnabled = true;
+                            } else {
+                                this.data.isLWSEnabled = false;
+                            }
+                        }, (error) => {
+                            console.log('no permission');
+                        });
+                    }
+                }
+            });
 		});
 	}
 
