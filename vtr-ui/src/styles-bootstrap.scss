@@ -275,12 +275,42 @@
 
 .welcome-modal-size .modal-dialog {
 	top: $modal_top_margin;
-	max-width: 70rem !important;
 	margin: 0 auto;
 	overflow: hidden;
 	min-height: 60rem;
+	margin-bottom: 2rem;
+	max-width: 600px;
+	border-radius: 5px;
+	@media #{$mediaquery_11} {
+		top: 4rem;
+		width: 460px;
+	}
+	.modal-header {
+		background: black;
+		border-radius: 0px;
+		.close-button {
+			font-size: 3rem;
+			opacity: 0.8;
+			color: white;
+			font-weight: 100;
+			outline: none;
+		}
+	}
+	// .vtr-modal-body {
+	// 	width: 600px;
+	// 	// margin: auto;
+	// 	// margin-top: 50px;
+	// 	@media #{$mediaquery_11} {
+	// 		width: 460px;
+	// 		// margin-top: 25px;
+	// 	}
+	// }
 }
 
+// added to hide the unwanted border in overlay welcome tutorial and Feedabck page
+.modal-content{
+	border:0;
+}
 // override for bootstrap modal size
 .lenovo-id-modal-size .modal-dialog {
 	top: 3.5rem;

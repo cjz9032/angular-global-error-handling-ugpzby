@@ -27,6 +27,7 @@ export class FeedbackFormComponent implements OnInit {
 		this.feedbackButtonText = this.buttonText;
 		this.createFeedbackForm();
 		this.elementRef.nativeElement.focus();
+		window.scrollTo(0, 0);
 
 	}
 

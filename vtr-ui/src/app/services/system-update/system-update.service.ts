@@ -200,7 +200,6 @@ export class SystemUpdateService {
 			if (response.updateTaskList && response.updateTaskList.length > 0) {
 				this.isInstallationCompleted = true;
 				this.updateInfo = this.mapScheduleInstallResponse(response.updateTaskList);
-				this.isInstallationSuccess = this.updateInfo.status === SystemUpdateStatusMessage.SUCCESS.code;
 				this.commonService.sendNotification(UpdateProgress.ScheduleUpdateCheckComplete, this.updateInfo);
 			} else {
 				this.commonService.sendNotification(UpdateProgress.ScheduleUpdateIdle, response);
@@ -366,7 +365,7 @@ export class SystemUpdateService {
 			this.commonService.sendNotification(UpdateProgress.InstallingUpdate, progress);
 		}).then((response: any) => {
 			console.log('installUpdates response', response);
-			if (response && response.updateResultList && response.updateResultList.length > 0) {
+			if (response) {
 				this.isUpdateDownloading = false;
 				this.isInstallationCompleted = true;
 				this.downloadingPercent = 100;
@@ -377,14 +376,6 @@ export class SystemUpdateService {
 				payload.updateList = this.updateInfo.updateList;
 				this.isInstallationSuccess = this.getInstallationSuccess(payload);
 				this.commonService.sendNotification(UpdateProgress.InstallationComplete, payload);
-			} else {
-				// VAN-3314, sometimes, the install complete response will contains empty UpdateTaskList
-				this.getScheduleUpdateStatus(true);
-			}
-		}).catch((error) => {
-			console.log(error);
-			if (error && error.description && error.description.includes('errorcode: 606')) {
-				this.getScheduleUpdateStatus(true);
 			}
 		});
 	}
@@ -468,7 +459,6 @@ export class SystemUpdateService {
 				update.installationStatus = UpdateActionResult.Success;
 				installedCount++;
 			}
-			update.isInstalled = (update.installationStatus === UpdateActionResult.Success);
 			updates.push(update);
 		});
 		availableUpdate.status = (updateTaskList.length === installedCount) ? SystemUpdateStatusMessage.SUCCESS.code : SystemUpdateStatusMessage.FAILURE.code;

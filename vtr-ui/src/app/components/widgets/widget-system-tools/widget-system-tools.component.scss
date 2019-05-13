@@ -24,7 +24,7 @@
 					text-align: center;
 					color: $light;
 					max-width: 10rem;
-					.icon {
+					.system-icon {
 						display: flex;
 						align-items: center;
 						justify-content: center;
@@ -63,6 +63,15 @@
 							z-index: 0;
 						}
 						.icomoon {
+							position: relative;
+							z-index: 2;
+							font-size: 4rem;
+							background: $gaming_icon_gradient;
+							-webkit-background-clip: text;
+							-webkit-text-fill-color: transparent;
+							background-clip: text;
+						}
+						.icon {
 							position: relative;
 							z-index: 2;
 							font-size: 4rem;
