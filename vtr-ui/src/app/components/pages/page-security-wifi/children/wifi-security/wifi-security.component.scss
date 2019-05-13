@@ -415,6 +415,17 @@
 			border-bottom-right-radius: 0.8rem;
 			border-bottom: 0;
 		}
+		div.wifi:nth-child(odd) {
+			@media #{$mediaquery_7} {
+				border-right: 0;
+			}
+		}
+		div.wifi:nth-last-child(2):nth-child(odd) {
+			@media #{$mediaquery_7} {
+				border-bottom-left-radius: 0;
+				border-bottom: 0.1rem solid $shade_lighter;
+			}
+		}
 	}
 	.sm-device-responsive{
 		@media #{$mediaquery_12} {
