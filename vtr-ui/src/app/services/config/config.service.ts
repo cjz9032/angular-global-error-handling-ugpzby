@@ -25,15 +25,45 @@ export class ConfigService {
 			subitems: []
 		}, {
 			id: 'support',
-			label: 'common.menu.support',
+			label: 'gaming.common.menu.support.title',
 			path: 'support',
 			icon: ['fal', 'wrench'],
-			metricsEvent: 'itemClick',
+			metricsEvent: 'featureClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.support',
 			routerLinkActiveOptions: { exact: true },
 			forArm: false,
-			subitems: []
+			subitems: [{
+				id: 'support',
+				label: 'gaming.common.menu.support.sub1',
+				path: 'support',
+				icon: '',
+				metricsEvent: 'featureClick',
+				metricsParent: 'navbar',
+				metricsItem: 'support',
+				routerLinkActiveOptions: { exact: true },
+				subitems: []
+			}, {
+				id: 'facebook',
+				label: 'gaming.common.menu.support.sub2',
+				path: 'https://www.facebook.com/LenovoLegion/',
+				icon: '',
+				metricsEvent: 'featureClick',
+				metricsParent: 'navbar',
+				metricsItem: 'facebook',
+				routerLinkActiveOptions: { exact: false },
+				subitems: []
+			}, {
+				id: 'instagram',
+				label: 'gaming.common.menu.support.sub3',
+				path: 'https://www.instagram.com/lenovolegion/',
+				icon: '',
+				metricsEvent: 'featureClick',
+				metricsParent: 'navbar',
+				metricsItem: 'instagaram',
+				routerLinkActiveOptions: { exact: true },
+				subitems: []
+			}]
 		}, {
 			id: 'user',
 			label: 'User',
