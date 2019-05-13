@@ -9,23 +9,23 @@ export class BatteryChargeStatus {
     public static DISCHARGING_WITH_AC = { str:"Discharging (with ac)", id:3 };
     public static getBatteryChargeStatus(id: number): string {
         switch(id) {
-            case BatteryChargeStatus.ERROR.id: 
-                return BatteryChargeStatus.ERROR.str;
+            case BatteryChargeStatus.ERROR.id:
+                return "device.deviceSettings.batteryGauge.details.chargeStatusString.error";
 
-            case BatteryChargeStatus.NOT_INSTALLED.id: 
-               return BatteryChargeStatus.NOT_INSTALLED.str;
+            case BatteryChargeStatus.NOT_INSTALLED.id:
+               return "device.deviceSettings.batteryGauge.details.chargeStatusString.notinstalled";
 
-            case BatteryChargeStatus.NO_ACTIVITY.id: 
-               return BatteryChargeStatus.NO_ACTIVITY.str;
+            case BatteryChargeStatus.NO_ACTIVITY.id:
+               return "device.deviceSettings.batteryGauge.details.chargeStatusString.noactivity";
 
-           case BatteryChargeStatus.CHARGING.id: 
-              return BatteryChargeStatus.CHARGING.str;
+           case BatteryChargeStatus.CHARGING.id:
+              return "device.deviceSettings.batteryGauge.details.chargeStatusString.charging";
 
-            case BatteryChargeStatus.DISCHARGING.id: 
-                return BatteryChargeStatus.DISCHARGING.str;
+            case BatteryChargeStatus.DISCHARGING.id:
+			  return "device.deviceSettings.batteryGauge.details.chargeStatusString.discharging";
 
-            case BatteryChargeStatus.DISCHARGING_WITH_AC.id: 
-               return BatteryChargeStatus.DISCHARGING_WITH_AC.str;
+            case BatteryChargeStatus.DISCHARGING_WITH_AC.id:
+               return "device.deviceSettings.batteryGauge.details.chargeStatusString.acdischarging";
         }
     }
 }

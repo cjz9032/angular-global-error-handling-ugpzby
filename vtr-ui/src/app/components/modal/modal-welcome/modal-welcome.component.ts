@@ -7,7 +7,7 @@ import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.mod
 	styleUrls: ['./modal-welcome.component.scss']
 })
 export class ModalWelcomeComponent implements OnInit {
-	progress = 25;
+	progress = 49;
 	isInterestProgressChanged = false;
 	page = 1;
 	privacyPolicy: boolean;
@@ -54,10 +54,10 @@ export class ModalWelcomeComponent implements OnInit {
 		console.log(this.checkedArray);
 		console.log(this.checkedArray.length);
 		if(!this.isInterestProgressChanged) {
-			this.progress += 15;
+			this.progress += 16;
 			this.isInterestProgressChanged = true;
 		} else if (this.checkedArray.length === 0) {
-			this.progress -= 15;
+			this.progress -= 16;
 			this.isInterestProgressChanged = false;
 		}
 	}
@@ -67,7 +67,7 @@ export class ModalWelcomeComponent implements OnInit {
 			console.log(value);
 		}
 		if(this.data.page2.radioValue == null) {
-			this.progress += 15;
+			this.progress += 16;
 		}
 		this.data.page2.radioValue= value
 	}
@@ -78,9 +78,9 @@ export class ModalWelcomeComponent implements OnInit {
 	savePrivacy($event, value) {
 		if ($event.target.checked) {
 			this.privacyPolicy = value;
-			this.progress += 15;
+			this.progress += 17;
 		} else {
-			this.progress -= 15;
+			this.progress -= 17;
 		}
 	}
 	moreInterestClicked() {

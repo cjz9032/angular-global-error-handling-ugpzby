@@ -6,8 +6,9 @@ import {
 	Input,
 	HostListener,
 	SimpleChanges,
-	OnChanges
+	OnChanges,
 } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-battery-indicator',
@@ -32,7 +33,8 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	@Input() remainingHour = 0; // number of hours remaining
 	@Input() remainingMinutes = 0; // number of minutes remaining
 
-	constructor() { }
+	constructor(public translate: TranslateService) {
+	}
 
 	ngOnInit() {
 		this.getCssDeclaration();
@@ -156,11 +158,11 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 			return "0 minutes";
 		}
 		const hours =
-			this.remainingHour > 0 && this.remainingHour < 2 ? 'hour' : 'hours';
+			this.remainingHour > 0 && this.remainingHour < 2 ? this.translate.instant('device.deviceSettings.batteryGauge.hour') : this.translate.instant('device.deviceSettings.batteryGauge.hours');
 		const minutes =
 			this.remainingMinutes > 0 && this.remainingMinutes < 2
-				? 'minute'
-				: 'minutes';
+				? this.translate.instant('device.deviceSettings.batteryGauge.minute')
+				: this.translate.instant('device.deviceSettings.batteryGauge.minutes');
 		if(this.remainingHour == 0) {
 			return `${this.remainingMinutes} ${minutes}`;
 		}
@@ -178,7 +180,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 		if(this.remainingHour == 0) {
 			if (this.remainingMinutes == 0) {
 				this.hideRemainingTimeTxt = true
-			} else { 
+			} else {
 				this.hideRemainingTimeTxt = false;
 			}
 			return;
