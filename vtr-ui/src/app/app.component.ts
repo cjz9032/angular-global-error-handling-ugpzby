@@ -34,7 +34,8 @@ export class AppComponent implements OnInit {
 		private userService: UserService,
 		private vantageShellService: VantageShellService
 	) {
-		translate.addLangs(['en', 'zh-Hans']);
+		translate.addLangs(['en', 'zh-Hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it',
+		'ja', 'ko', 'nb', 'nl', 'pl', 'pt-BR', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-Latn', 'sv', 'tr', 'uk', 'zh-Hant']);
 		this.translate.setDefaultLang('en');
 		const hadRunApp: boolean = commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
 		const appFirstRun = !hadRunApp;
@@ -133,8 +134,21 @@ export class AppComponent implements OnInit {
 			this.deviceService.getMachineInfo()
 				.then((value: any) => {
 					console.log('getMachineInfo.then', value);
-					if (value && value.locale.toLowerCase() === 'zh-hans') {
-						this.translate.use('zh-Hans');
+					if (value && !['zh', 'sr', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
+						this.translate.use(value.locale.substring(0, 2));
+					} else {
+						if (value && value.locale.toLowerCase() === 'zh-hans') {
+							this.translate.use('zh-Hans');
+						}
+						if (value && value.locale.toLowerCase() === 'zh-hant') {
+							this.translate.use('zh-Hant');
+						}
+						if (value && value.locale.toLowerCase() === 'sr-latn') {
+							this.translate.use('sr-Latn');
+						}
+						if (value && value.locale.toLowerCase() === 'pt-br') {
+							this.translate.use('pt-BR');
+						}
 					}
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
 				}).catch(error => {
