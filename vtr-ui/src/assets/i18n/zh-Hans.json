@@ -14,13 +14,13 @@
 					"rapidCharge": "Rapid Charge"
 				},
 				"legionEdge": {
-					"title": "CPU Overlock",
+					"title": "CPU Overclock",
 					"status": {
 						"alwayson": "Always On",
 						"whenGaming": "When Gaming",
 						"off": "Off"
 					},
-					"ramOverlock": "Ram Overlock",
+					"ramOverlock": "Ram Overclock",
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
