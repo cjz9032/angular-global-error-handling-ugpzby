@@ -55,7 +55,7 @@ export class AppComponent implements OnInit {
 
 		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
 
-		// if (tutorial === undefined && navigator.onLine) {
+		if (tutorial === undefined && navigator.onLine) {
 			const modalRef = this.modalService.open(ModalWelcomeComponent,
 				{
 					backdrop: 'static'
@@ -73,7 +73,7 @@ export class AppComponent implements OnInit {
 					commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
 				}
 			);
-		// }
+		}
 
 		//#endregion
 
