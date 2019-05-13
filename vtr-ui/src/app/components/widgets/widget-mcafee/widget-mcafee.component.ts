@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import * as _ from 'lodash/isString';
+import { isString } from 'lodash/isString';
 
 
 @Component({
@@ -40,7 +40,7 @@ export class WidgetMcafeeComponent implements OnInit {
 
 	getLanguageIdentifier() {
 		if (this.nls.has(navigator.language)) { return this.nls.get(navigator.language); }
-		const language = _.isString(navigator.language) ? navigator.language.substring(0, 2) : '*';
+		const language = isString(navigator.language) ? navigator.language.substring(0, 2) : '*';
 		if (this.nls.has(language)) { return this.nls.get(language); }
 		return this.nls.get('*');
 	}

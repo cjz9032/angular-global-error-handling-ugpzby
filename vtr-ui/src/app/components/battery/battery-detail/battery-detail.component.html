@@ -32,7 +32,7 @@
 				<!-- <div class="row"> -->
 					<div class="col-2 p-0 battery-label-text">{{'device.deviceSettings.batteryGauge.details.status' | translate }}</div>
 					<div class="col-2 p-0 battery-value-text">
-						{{ model.chargeStatusString }}
+						{{ model.chargeStatusString | translate}}
 					</div>
 					<div *ngIf="isValid(model.wattage)" class="col-2 p-0 battery-label-text">{{'device.deviceSettings.batteryGauge.details.wattage' | translate }}</div>
 					<div *ngIf="isValid(model.wattage)" class="col-2 p-0 battery-value-text">
@@ -82,7 +82,7 @@
 						{{'device.deviceSettings.batteryGauge.details.chemistry' | translate }}
 					</div>
 					<div class="col-2 p-0 battery-value-text">
-						{{ model.deviceChemistry }}
+						{{ model.deviceChemistry | translate }}
 					</div>
 				<!-- </div> -->
 				<!-- row-4 -->

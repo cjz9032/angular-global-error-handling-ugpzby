@@ -5,9 +5,6 @@
 	background-color: $gaming_dark;
 	box-shadow: $drop_shadow_gaming;
 	padding: 2.2rem;
-
-	// remove once populated
-	min-height: 30rem;
 	.gaming-header-image {
 		height: 4rem;
 		margin-top: 0.8rem;
@@ -15,12 +12,13 @@
 	.help-box {
 		height: 4rem;
 		margin-top: 1.6rem;
-		.icomoon {
+		.icon {
 			background: $gaming_icon_gradient;
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
 			background-clip: text;
 			font-size: 2.6rem;
+			cursor: pointer;
 		}
 	}
 	.legionEdge-list-items {
@@ -39,6 +37,13 @@
 					border-bottom: 1px solid $screen_dark_15;
 					&:last-child{
 						border-bottom: none;
+					}
+					&:first-child{
+						.media-body {
+							> div {
+								display: block !important;
+							}
+						}
 					}
 					.media {
 						padding-left: 0 !important;

@@ -45,12 +45,14 @@
 													<vtr-ui-button id="sa-vpn-btn-getsufeasy"
 														*ngIf="statusItem.status === 'not-installed'"
 														(click)="getSurfEasy()"
+														metricsEvent="FeatureClick"
 														metricsItem="getSufEasy"
 														[label]="'security.vpn.getSufEasy' | translate">
 													</vtr-ui-button>
 													<vtr-ui-button id="sa-vpn-btn-opensufeasy"
 														*ngIf="statusItem.status === 'installed'"
 														(click)="openSurfEasy()"
+														metricsEvent="FeatureClick"
 														metricsItem="openSufEasy"
 														[label]="'security.vpn.openSufEasy' | translate">
 													</vtr-ui-button>
@@ -66,7 +68,7 @@
 									<div class="col col-12 col-sm-12 mt-40">
 										<div>
 											<p class="title">{{'security.vpn.whySufEasy' | translate}}</p>
-											<p class="text-regular">{{'security.vpn.whySufEasyDescription' | translate}}
+											<p class="text">{{'security.vpn.whySufEasyDescription' | translate}}
 											</p>
 										</div>
 									</div>
@@ -150,7 +152,7 @@
 									<div class="col col-12 col-sm-12 mt-40">
 										<div>
 											<p class="title">{{'security.vpn.howToUseSufEasy' | translate}}</p>
-											<p class="text-regular">{{'security.vpn.whatCanSufEasy2' | translate}}</p>
+											<p class="text">{{'security.vpn.whatCanSufEasy2' | translate}}</p>
 										</div>
 									</div>
 								</div>

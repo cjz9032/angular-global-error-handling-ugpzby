@@ -1,4 +1,4 @@
-<div class="breached-account" [ngClass]="{'breached-account_open': i === openId}" *ngFor="let account of breachedAccounts; let i = index">
+<div class="breached-account" *ngFor="let account of breachedAccounts; let i = index">
 	<div class="breached-account__preview">
 		<div class="breached-account__image">
 			<ng-template #defaultFavicon>

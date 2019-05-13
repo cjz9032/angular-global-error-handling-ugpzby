@@ -441,7 +441,7 @@
 				[cardTitle]="'device.deviceSettings.power.powerSettings.title' | translate | lowercase"
 				[isCollapsed]="false">
 				<ul class="list-group list-group-flush">
-					<li class="">
+					<li class="" *ngIf="!isDesktopMachine">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
 							[name]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"

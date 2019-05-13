@@ -1,11 +1,4 @@
-import {
-	Component,
-	EventEmitter,
-	Input,
-	Output,
-	OnInit,
-	AfterViewInit,
-} from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { BreachedAccount } from '../../../common/services/breached-accounts.service';
 import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
@@ -20,7 +13,7 @@ export enum BreachedAccountMode {
 	templateUrl: './breached-account.component.html',
 	styleUrls: ['./breached-account.component.scss']
 })
-export class BreachedAccountComponent implements OnInit, AfterViewInit {
+export class BreachedAccountComponent implements OnInit {
 	@Input() mode: BreachedAccountMode = BreachedAccountMode.FULL;
 	@Input() breachedAccounts: BreachedAccount[];
 	@Input() openId = null;
@@ -50,14 +43,6 @@ export class BreachedAccountComponent implements OnInit, AfterViewInit {
 		this.communicationWithFigleafService.isFigleafReadyForCommunication$.subscribe((isFigleafReady) => {
 			this.isFigleafReadyForCommunication = isFigleafReady;
 		});
-	}
-
-	ngAfterViewInit() {
-		const el = document.querySelector('.breached-account_open');
-		if (this.openId != null && el) {
-			const {top} = el.getBoundingClientRect();
-			window.scrollTo(0, top, );
-		}
 	}
 
 	transformDomain(domain) {
