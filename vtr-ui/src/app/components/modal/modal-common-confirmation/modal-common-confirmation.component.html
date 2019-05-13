@@ -31,8 +31,8 @@
 				[metricsParent]="metricsParent"
 				class="btn btn-default modal-button"
 				vtrMetrics
-				[metricsItem]="'btn.modal-button-ok'"
-				[metricsParent]="'modal-common-confirmation.component'"
+				[metricsItem]="'Ok button'"
+				[metricsParent]="'Pages.SystemUpdate.RebootRequiredControl'"
 				metricsEvent="itemClick"
 				(click)="onOkClick($event)">
 				{{OkText | translate}}
@@ -47,8 +47,8 @@
 				[metricsParent]="metricsParent"
 				class="btn btn-default modal-button-cancel"
 				vtrMetrics
-				[metricsItem]="'btn.modal-button-cancel'"
-				[metricsParent]="'modal-common-confirmation.component'"
+				[metricsItem]="'Cancel-button'"
+				[metricsParent]="'Pages.SystemUpdate.RebootRequiredControl'"
 				metricsEvent="itemClick"
 				(click)="onCancelClick($event)">
 				{{CancelText | translate}}

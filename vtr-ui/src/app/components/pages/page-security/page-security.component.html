@@ -71,9 +71,15 @@
 																	</span>
 																</div>
 															</li>
-															<li class="wifi-link"><a routerLink="wifi-security"
+															<li class="wifi-link">
+																<a routerLink="wifi-security"
 																	id="sa-ov-link-seeAllNetwork"
-																	[queryParams]="{isShowMore:false}">{{'security.landing.seeAllNetwork' | translate}}</a>
+																	[queryParams]="{isShowMore:false}"
+																	vtrMetrics
+																	metricsEvent="FeatureClick"
+																	metricsItem="seeAllNetwork">
+																	{{'security.landing.seeAllNetwork' | translate}}
+																</a>
 															</li>
 														</ul>
 													</div>

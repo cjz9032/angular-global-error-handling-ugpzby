@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
 	selector: 'vtr-modal-article-detail',
@@ -13,14 +15,23 @@ export class ModalArticleDetailComponent implements OnInit {
 	articleTitle = '';
 	articleImage = '';
 	articleBody: SafeHtml = '<div class="spinner-content"><div class="spinner-border text-primary progress-spinner" role="status"></div></div>';
+	articleCategory: string;
+	metricClient: any;
+	enterTime: number;
 
 	constructor(
 		public activeModal: NgbActiveModal,
 		private cmsService: CMSService,
-		private sanitizer: DomSanitizer
-	) { }
+		vantageShellService: VantageShellService,
+		private activatedRoute: ActivatedRoute,
+		private sanitizer: DomSanitizer,
+		private element: ElementRef
+	) {
+		this.metricClient = vantageShellService.getMetrics();
+	}
 
 	ngOnInit() {
+		this.enterTime = new Date().getTime();
 		const queryOptions = {
 			'Lang': 'EN'
 		};
@@ -34,6 +45,9 @@ export class ModalArticleDetailComponent implements OnInit {
 					this.articleTitle = response.Results.Title;
 					this.articleImage = response.Results.Image;
 					this.articleBody = this.sanitizer.bypassSecurityTrustHtml(response.Results.Body);
+					if (response.Results.Category && response.Results.Category.length > 0) {
+						this.articleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
+					}
 				} else {
 					this.articleTitle = response.title;
 					this.articleBody = '';
@@ -50,6 +64,20 @@ export class ModalArticleDetailComponent implements OnInit {
 	}
 
 	closeModal() {
+		if (this.metricClient) {
+			const modalElement = this.element.nativeElement.closest('ngb-modal-window');
+			const metricsData = {
+				ItemType: 'ArticleView',
+				ItemID: this.articleId,
+				ItemParent: this.activatedRoute.firstChild.snapshot.data.pageName,
+				ItemCategory: this.articleCategory,
+				Duration: (new Date().getTime() - this.enterTime) / 1000,
+				DocReadPosition: Math.round((modalElement.scrollTop + window.innerHeight) / modalElement.scrollHeight * 100),
+				MediaReadPosition: 0
+			};
+			console.log('------reporting metrics------\n'.concat(JSON.stringify(metricsData)));
+			this.metricClient.sendAsync(metricsData);
+		}
 		this.activeModal.close('close');
 	}
 }
