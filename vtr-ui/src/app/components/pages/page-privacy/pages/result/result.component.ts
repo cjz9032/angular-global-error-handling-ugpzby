@@ -36,7 +36,6 @@ export class ResultComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.breached_accounts_show = this.breached_accounts.slice(0, 3);
 		this.breachedAccountsService.onGetBreachedAccounts$
 			.pipe(takeUntil(instanceDestroyed(this)))
 			.subscribe((breachedAccounts) => {
