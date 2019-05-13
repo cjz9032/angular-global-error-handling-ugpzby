@@ -36,7 +36,7 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 	}
 
 	ngAfterViewInit() {
-		setTimeout(() => { document.getElementById('about-dialog').focus(); }, 0);
+		setTimeout(() => { document.getElementById('about-dialog').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
 	}
 
 	agreementClicked() {
