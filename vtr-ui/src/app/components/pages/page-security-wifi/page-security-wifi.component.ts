@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, HostListener, AfterViewInit, OnDestroy, NgZone } from '@angular/core';
 import { ModalWifiSecuriryLocationNoticeComponent } from '../../modal/modal-wifi-securiry-location-notice/modal-wifi-securiry-location-notice.component';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -69,13 +69,14 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		public modalService: NgbModal,
 		public shellService: VantageShellService,
 		private cmsService: CMSService,
-		public translate: TranslateService
+        public translate: TranslateService,
+        private ngZone: NgZone
 	) {
 		this.securityAdvisor = shellService.getSecurityAdvisor();
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 		this.homeProtection = this.securityAdvisor.homeProtection;
-		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.homeProtection, this.commonService );
-		this.securityHealthViewModel = new SecurityHealthViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.translate);
+		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.ngZone );
+		this.securityHealthViewModel = new SecurityHealthViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.translate, this.ngZone);
 		this.wifiSecurity.refresh();
 		this.homeProtection.refresh();
 		this.wifiSecurity.getWifiSecurityState(this.getActivateDeviceStateHandler.bind(this));

@@ -11,6 +11,7 @@ import {
 import {
 	TranslateService
 } from '@ngx-translate/core';
+import { NgZone } from '@angular/core';
 
 export class WifiSecurityLandingViewModel {
 	statusList: Array < any > ;
@@ -22,6 +23,7 @@ export class WifiSecurityLandingViewModel {
 		translate: TranslateService,
 		wfModel: phoenix.WifiSecurity,
 		commonService: CommonService,
+        ngZone: NgZone
 	) {
 		const wfStatus = {
 			status: 4,
@@ -92,7 +94,9 @@ export class WifiSecurityLandingViewModel {
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, data);
 		});
 		wfModel.on(EventTypes.geolocatorPermissionEvent, (data) => {
-			setWiFiSecurityState(wfModel.state, data);
+            ngZone.run(() => {
+                setWiFiSecurityState(wfModel.state, data);
+            });
 		});
 		wfModel.on(EventTypes.wsStateEvent, (data) => {
 			setWiFiSecurityState(data, wfModel.isLocationServiceOn);

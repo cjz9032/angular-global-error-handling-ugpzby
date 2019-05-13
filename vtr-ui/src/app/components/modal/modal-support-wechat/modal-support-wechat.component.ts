@@ -14,7 +14,7 @@ export class ModalSupportWechatComponent implements OnInit, AfterViewInit {
 	}
 
 	ngAfterViewInit() {
-		setTimeout(() => { document.getElementById('weChat-dialog').focus(); }, 0);
+		setTimeout(() => { document.getElementById('weChat-dialog').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
 	}
 
 	public onCancelClick() {
