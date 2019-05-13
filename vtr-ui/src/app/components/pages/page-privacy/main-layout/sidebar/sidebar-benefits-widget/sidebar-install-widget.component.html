@@ -1,4 +1,4 @@
-<div class="sidebar-install-widget" *ngIf="installWidgetSettings.visible && !(isFigleafInstalled$ | async)">
+<div class="sidebar-install-widget" data-analyticsName="PromotionBlock" *ngIf="installWidgetSettings.visible && !(isFigleafInstalled$ | async)">
 	<div class="sidebar-install-widget__inner">
 		<div>
 			<img class="sidebar-install-widget__main-image"
@@ -18,11 +18,18 @@
 		</div>
 		<button class="sidebar-install-widget__button"
 				vtrOpenFigleafInstaller
+				vtrSendAnalytics
+				[metricsEvent]="'ItemClick'"
+				[metricsItem]="'TryLenovoPrivacyButton'"
 				[ngClass]="{'sidebar-install-widget__button--transparent': isMainPage}">
 			{{primaryButtonText}}
 		</button>
 		<div class="sidebar-install-widget__button-link">
-			<a class="sidebar-install-widget__show-more" routerLink="/privacy/landing">
+			<a class="sidebar-install-widget__show-more"
+			   vtrSendAnalytics
+			   [metricsEvent]="'ItemClick'"
+			   [metricsItem]="'LenovoPrivacyLearnMoreButton'"
+			   routerLink="/privacy/landing">
 				<span class="sidebar-install-widget__show-more-text">{{linkButtonText}}</span>
 			</a>
 		</div>

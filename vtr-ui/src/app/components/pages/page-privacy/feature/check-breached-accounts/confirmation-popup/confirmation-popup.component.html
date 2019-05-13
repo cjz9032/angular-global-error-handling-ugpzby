@@ -1,4 +1,4 @@
-<div class="confirm-popup">
+<div class="confirm-popup" data-analyticsName="ConfirmYourEmailPopup">
   <form action="" (submit)="confirmCode()" [formGroup]="confirmationForm">
 
     <h2 class="confirm-popup__title">Let’s confirm your email</h2>
@@ -14,7 +14,14 @@
           </div>
           <div class="confirm-failure">
             <p class="confirm-failure__text">Didn't get the code?</p>
-            <button type="reset" class="confirm-failure__btn" (click)="resendConfirmationCode()">send it again</button>
+            <button type="reset"
+                    class="confirm-failure__btn"
+                    vtrSendAnalytics
+                    [metricsEvent]="'ItemClick'"
+                    [metricsItem]="'BreachedAccountsSendItAgainLink'"
+                    (click)="resendConfirmationCode()">
+              send it again
+            </button>
           </div>
         </div>
       </div>
@@ -31,7 +38,14 @@
     </div>
 
     <div class="confirm-popup__confirm-btn-wrapper">
-      <button class="confirm-popup__confirm-btn" [class.confirm-popup__confirm-btn--error]="confirmationForm.get('confirmationCode').dirty && confirmationForm.get('confirmationCode').invalid || (isError$ | async)" type="submit">Confirm email</button>
+      <button class="confirm-popup__confirm-btn"
+              vtrSendAnalytics
+              [metricsEvent]="'ItemClick'"
+              [metricsItem]="'BreachedAccountsConfirmEmailButton'"
+              [class.confirm-popup__confirm-btn--error]="confirmationForm.get('confirmationCode').dirty && confirmationForm.get('confirmationCode').invalid || (isError$ | async)"
+              type="submit">
+        Confirm email
+      </button>
     </div>
   </form>
 </div>

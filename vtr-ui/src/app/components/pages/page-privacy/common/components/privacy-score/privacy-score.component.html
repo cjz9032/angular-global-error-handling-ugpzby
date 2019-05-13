@@ -1,4 +1,4 @@
-<div class="privacy-score">
+<div class="privacy-score" data-analyticsName="ScoreBlock">
   <div class="privacy-score__picture score-pic">
     <div [class]="'score-pic__circle score-pic__circle--'+privacyLevel">
       <div *ngIf="privacyLevel === 'undefined'" class="score-pic__symbol">
@@ -15,7 +15,13 @@
       <p class="score-description__text">{{text}}</p>
     </div>
     <div class="privacy-score__btn-container">
-      <button class="privacy-score__btn" (click)="isFigLeafReadyForCommunication ? openFigleafApp() : openPopUp('low-privacy-popup')">{{btn_text}}</button>
+      <button class="privacy-score__btn"
+              vtrSendAnalytics
+              [metricsEvent]="'ItemClick'"
+              [metricsItem]="clickEventName"
+              (click)="isFigLeafReadyForCommunication ? openFigleafApp() : openPopUp('low-privacy-popup')">
+        {{btn_text}}
+      </button>
     </div>
   </div>
 </div>

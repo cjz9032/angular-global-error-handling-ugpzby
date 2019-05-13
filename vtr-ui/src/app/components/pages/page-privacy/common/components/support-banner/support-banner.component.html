@@ -7,12 +7,18 @@
         <p class="support-banner__support-time">
             <strong>24/7</strong> Live Chat
         </p>
-        <button class="support-banner__button" (click)="openPopup('support-popup')">Chat now</button>
+        <button class="support-banner__button"
+                vtrSendAnalytics
+                [metricsEvent]="'ItemClick'"
+                [metricsItem]="'ChatNowButton'"
+                (click)="openPopup('support-popup')">
+            Chat now
+        </button>
     </div>
 </div>
 <vtr-common-popup popUpId="support-popup" size="big">
     <ng-template>
-        <div class="support-popup">
+        <div class="support-popup" data-analyticsName="KindOfHelpPopup">
             <h3 class="support-popup__title">What kind of help do you need?</h3>
             <!--<p class="support-popup__text">Make sure your question relates to the support you choose.</p>-->
             <div class="support-popup__row">
@@ -45,7 +51,13 @@
                         <li class="support-popup__list-item">Chat with us live</li>
                     </ul>
                     <div class="support-popup__buttons">
-                        <button class="support-popup__button" (click)="openLenovoSupport()">Get Technical Support</button>
+                        <button class="support-popup__button"
+                                vtrSendAnalytics
+                                [metricsEvent]="'ItemClick'"
+                                [metricsItem]="'ChatNowGetTechnicalSupportButton'"
+                                (click)="openLenovoSupport()">
+                            Get Technical Support
+                        </button>
                     </div>
                 </div>
             </div>

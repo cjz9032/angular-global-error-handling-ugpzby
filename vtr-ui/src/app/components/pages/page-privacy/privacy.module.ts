@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+// font awesome
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fal } from '@fortawesome/pro-light-svg-icons';
 // Pages
 import { BreachedAccountsComponent } from './pages/breached-accounts/breached-accounts.component';
 import { TrackersComponent } from './pages/trackers/trackers.component';
@@ -31,9 +35,15 @@ import { CheckBreachedAccountsModule } from './feature/check-breached-accounts/c
 import { TrackingMapModule } from './feature/tracking-map/tracking-map.module';
 import { NonPrivatePasswordModule } from './feature/non-private-password/non-private-password.module';
 import { VtrCommonModule } from './common/vtr-common.module';
+import { UserDataGetStateService } from './common/services/user-data-get-state.service';
+import { AnalyticsService } from './common/services/analytics.service';
+import { TaskActionService } from './common/services/task-action.service';
+
+library.add(fal);
 
 @NgModule({
 	imports: [
+		FontAwesomeModule,
 		PrivacyRoutingModule,
 		CommonModule,
 		ReactiveFormsModule,
@@ -74,6 +84,9 @@ import { VtrCommonModule } from './common/vtr-common.module';
 		DataKnowledgeService,
 		BreachedAccountsService,
 		PrivacyScoreService,
+		UserDataGetStateService,
+		AnalyticsService,
+		TaskActionService,
 	],
 })
 export class PrivacyModule {

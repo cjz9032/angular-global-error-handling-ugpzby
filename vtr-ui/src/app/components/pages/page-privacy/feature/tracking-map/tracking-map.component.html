@@ -1,8 +1,11 @@
-<div class="trackers">
+<div class="trackers" data-analyticsName="WebsiteTrackersBlock">
 	<div class="trackers__header-row" *ngIf="!animate">
 		<h3 class="trackers__title" *ngIf="!(isFigleafInstalled$ | async)">Check for website trackers</h3>
 		<h3 class="trackers__title" *ngIf="isFigleafInstalled$ | async">Trackers you should know about</h3>
 		<a class="trackers__popup-btn"
+		   vtrSendAnalytics
+		   [metricsEvent]="'ItemClick'"
+		   [metricsItem]="'WebsiteTrackersWhoTrackingMeButton'"
 		   *ngIf="!(isFigleafInstalled$ | async)"
 		   routerLink="./trackers">
 			Who’s tracking me?
@@ -30,7 +33,7 @@
 							 [animate]="animate"
 							 [defaultSiteIcon]="defaultIcon.site"
 							 [defaultTrackerIcon]="defaultIcon.tracker"
-							 (showDetails)="showDetails($event, trackingData)">
+							 (showDetails)="showDetails($event, trackingData); sendAnalytics()">
 			</fl-tracking-map>
 		</ng-container>
 

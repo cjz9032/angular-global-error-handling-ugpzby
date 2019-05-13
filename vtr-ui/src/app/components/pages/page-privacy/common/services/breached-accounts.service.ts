@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, EMPTY, merge, ReplaySubject, Subject, Subscription } from 'rxjs';
 import { catchError, distinctUntilChanged, map, switchMap, switchMapTo, take, tap } from 'rxjs/operators';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
+import { EmailScannerService, ErrorNames } from '../../feature/check-breached-accounts/services/email-scanner.service';
 
 interface GetBreachedAccountsResponse {
 	type: string;
@@ -22,11 +22,19 @@ export interface BreachedAccount {
 	link?: string;
 }
 
+interface GetBreachedAccountsState {
+	breaches: BreachedAccount[];
+	error: string | null;
+}
+
 @Injectable()
 export class BreachedAccountsService {
 
-	onGetBreachedAccounts$ = new ReplaySubject<BreachedAccount[]>(1);
+	onGetBreachedAccounts$ = new ReplaySubject<GetBreachedAccountsState>(1);
 	onGetBreachedAccountsCompleted$ = new BehaviorSubject(false);
+
+	taskStartedTime = 0;
+	scanBreachesAction$ = new Subject<{ TaskDuration: number }>();
 
 	constructor(
 		private communicationWithFigleafService: CommunicationWithFigleafService,
@@ -47,6 +55,7 @@ export class BreachedAccountsService {
 			),
 			tap(() => this.onGetBreachedAccountsCompleted$.next(false)),
 			switchMap((isFigleafInstalled) => {
+				this.taskStartedTime = Date.now();
 				if (isFigleafInstalled) {
 					return this.communicationWithFigleafService.sendMessageToFigleaf({type: 'getFigleafBreachedAccounts'})
 						.pipe(
@@ -56,6 +65,8 @@ export class BreachedAccountsService {
 							catchError((error) => {
 								console.error('getFigleafBreachedAccounts error: ', error);
 								this.onGetBreachedAccountsCompleted$.next(true);
+								this.onGetBreachedAccounts$.next({breaches: [], error: error});
+								this.sendTaskAcrion();
 								return EMPTY;
 							}),
 						);
@@ -65,6 +76,10 @@ export class BreachedAccountsService {
 							catchError((error) => {
 								console.error('getBreachedAccountsByEmail error', error);
 								this.onGetBreachedAccountsCompleted$.next(true);
+								if (error !== ErrorNames.noAccessToken) {
+									this.onGetBreachedAccounts$.next({breaches: [], error: error});
+									this.sendTaskAcrion();
+								}
 								return EMPTY;
 							})
 						);
@@ -76,11 +91,18 @@ export class BreachedAccountsService {
 				return [...breaches, ...unknownBreaches];
 			})
 		).subscribe((response: BreachedAccount[]) => {
-			this.onGetBreachedAccounts$.next(response);
+			this.onGetBreachedAccounts$.next({breaches: response, error: null});
 			this.onGetBreachedAccountsCompleted$.next(true);
+			this.sendTaskAcrion();
 		}, (error) => {
-			console.error('error', error);
 			this.onGetBreachedAccountsCompleted$.next(true);
+			this.onGetBreachedAccounts$.next({breaches: [], error: error});
+			this.sendTaskAcrion();
 		});
+	}
+
+	private sendTaskAcrion() {
+		const taskDuration = (Date.now() - this.taskStartedTime) / 1000;
+		this.scanBreachesAction$.next({TaskDuration: taskDuration});
 	}
 }

@@ -5,6 +5,7 @@ import { ChoseBrowserService } from '../common/services/chose-browser.service';
 import { Router } from '@angular/router';
 import { CommunicationWithFigleafService } from '../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { TrackingMapService } from '../feature/tracking-map/services/tracking-map.service';
+import { TaskActionService } from '../common/services/task-action.service';
 
 @Component({
 	// selector: 'vtr-layer',
@@ -17,6 +18,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 	isBrowserListEmpty$ = this.choseBrowserService.isBrowserListEmpty();
 
 	constructor(
+		private taskActionService: TaskActionService,
 		private locationHistoryService: LocationHistoryService,
 		private commonPopupService: CommonPopupService,
 		private choseBrowserService: ChoseBrowserService,

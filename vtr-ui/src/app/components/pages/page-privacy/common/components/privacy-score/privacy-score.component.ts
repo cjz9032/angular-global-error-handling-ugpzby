@@ -27,6 +27,7 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 			img: '/assets/images/privacy-tab/score-popup/breached-accounts.png',
 			img2x: '/assets/images/privacy-tab/score-popup/breached-accounts@2x.png',
 			title: 'Breached accounts',
+			clickEventName: 'ScanTheInternetButton',
 			button: {
 				name: 'Scan the internet',
 				link: '/privacy/breaches'
@@ -36,6 +37,7 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 			img: '/assets/images/privacy-tab/score-popup/online-trackers.png',
 			img2x: '/assets/images/privacy-tab/score-popup/online-trackers@2x.png',
 			title: 'online trackers',
+			clickEventName: 'SeeWhoTrakingMeButton',
 			button: {
 				name: 'See who’s tracking me',
 				link: '/privacy/trackers'
@@ -45,6 +47,7 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 			img: '/assets/images/privacy-tab/score-popup/public-passwords.png',
 			img2x: '/assets/images/privacy-tab/score-popup/public-passwords@2x.png',
 			title: 'Non-private passwords',
+			clickEventName: 'CheckMyBrowsersButton',
 			button: {
 				name: 'Check my browsers',
 				link: '/privacy/browser-accounts'
@@ -74,6 +77,8 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 	defaultScoreImageUrl = '/assets/images/privacy-tab/Main_icon.svg';
 	score = 0;
 
+	clickEventName = 'UnderstandMyScoreButton';
+
 	constructor(
 		private privacyScoreService: PrivacyScoreService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
@@ -97,6 +102,7 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 			.subscribe((isFigleafInstalled) => {
 				if (isFigleafInstalled) {
 					this.btn_text = 'Open Lenovo Privacy';
+					this.clickEventName = 'OpenLenovoPrivacyButton';
 					this.isFigLeafReadyForCommunication = true;
 				} else {
 					this.isFigLeafReadyForCommunication = false;

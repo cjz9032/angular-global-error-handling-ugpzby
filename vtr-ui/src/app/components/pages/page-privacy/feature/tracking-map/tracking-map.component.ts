@@ -8,6 +8,8 @@ import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-de
 import { TrackingMapService } from './services/tracking-map.service';
 import { SingleTrackersInfo, TrackersInfo, typeData } from './services/tracking-map.interface';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
+import { AnalyticsService } from '../../common/services/analytics.service';
+import { GetParentForAnalyticsService } from '../../common/services/get-parent-for-analytics.service';
 
 export const DEFAULT_ICON = {
 	site: '/assets/images/privacy-tab/Website_Standart.png',
@@ -54,6 +56,8 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 		private commonPopupService: CommonPopupService,
 		private choseBrowserService: ChoseBrowserService,
 		private userAllowService: UserAllowService,
+		private analyticsService: AnalyticsService,
+		private getParentForAnalyticsService: GetParentForAnalyticsService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 	) {
 	}
@@ -80,6 +84,13 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 
 	isShowToggle() {
 		return this.choseBrowserService.isBrowserChose();
+	}
+
+	sendAnalytics() {
+		this.analyticsService.sendItemClickData({
+			ItemName: 'WebsiteTrackersDetailItem',
+			ItemParent: this.getParentForAnalyticsService.getPageName() + '.' + 'WebsiteTrackersBlock',
+		});
 	}
 
 	private getPercentOfTrack(trackerData: SingleTrackersInfo, trackingsData: TrackersInfo) {

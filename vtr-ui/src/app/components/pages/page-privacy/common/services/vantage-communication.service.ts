@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
-import { catchError, share, tap } from 'rxjs/operators';
-import { EMPTY, from, Observable } from 'rxjs';
+import { catchError, share } from 'rxjs/operators';
+import { EMPTY, from, Observable, throwError } from 'rxjs';
 
 export enum BrowserListType {
 	chrome = 'chrome',
@@ -112,8 +112,7 @@ export class VantageCommunicationService {
 
 		return this.sendContractToPrivacyCore<VisitedWebsites>(contract).pipe(
 			catchError((err) => {
-				console.error('VisitedWebsites err', err);
-				return EMPTY;
+				return throwError('VisitedWebsites err', err);
 			})
 		);
 	}

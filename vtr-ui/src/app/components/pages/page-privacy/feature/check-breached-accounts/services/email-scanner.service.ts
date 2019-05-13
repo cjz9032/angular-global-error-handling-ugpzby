@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject, throwError, of } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, throwError, of, EMPTY } from 'rxjs';
 import { catchError, switchMap, tap } from 'rxjs/operators';
 import { StorageService } from '../../../common/services/storage.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -40,6 +40,10 @@ export interface BreachData {
 	};
 }
 
+export enum ErrorNames {
+	noAccessToken = 'noAccessToken'
+}
+
 
 @Injectable()
 export class EmailScannerService {
@@ -66,6 +70,7 @@ export class EmailScannerService {
 	setUserEmail(userEmail) {
 		this._userEmail$.next(userEmail);
 	}
+
 	setDisplayedUserEmail(userEmail) {
 		this._userEmailToShow$.next(userEmail);
 	}
@@ -141,7 +146,7 @@ export class EmailScannerService {
 					})
 				);
 		} else {
-			return throwError('no accessToken');
+			return throwError(ErrorNames.noAccessToken);
 		}
 	}
 

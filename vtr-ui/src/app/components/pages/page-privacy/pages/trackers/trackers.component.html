@@ -1,4 +1,7 @@
-<div class="trackers-page">
+<div class="trackers-page"
+	 vtrSendAnalytics
+	 [metricsEvent]="'PageView'"
+	 [metricsItem]="'VisibleToOnlineTrackers'">
 	<vtr-common-text [texts]="commonTexts"></vtr-common-text>
 
 	<vtr-tracking-map [animate]="true"></vtr-tracking-map>

@@ -42,14 +42,12 @@ export class MainHeaderComponent implements OnInit, OnDestroy {
 		tips: defaultPageSettings,
 		privacy: defaultPageSettings,
 		news: defaultPageSettings,
-		scan: defaultPageSettings,
 		trackers: {
 			title: 'Am I being tracked?',
 			backButton: true,
 			showNavigationBlock: true,
 			figLeafIcon: false
 		},
-		installed: defaultPageSettings,
 		breaches: {
 			title: 'Breached accounts',
 			backButton: true,

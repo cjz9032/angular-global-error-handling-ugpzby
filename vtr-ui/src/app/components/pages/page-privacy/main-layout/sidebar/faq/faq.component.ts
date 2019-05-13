@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FaqService } from '../../../common/services/faq/faq.service';
+import { FaqService, Questions } from '../../../common/services/faq/faq.service';
 import { filter, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { RouterChangeHandlerService } from '../../../common/services/router-change-handler.service';
@@ -14,7 +14,7 @@ export class FaqComponent implements OnInit, OnDestroy {
 	mainTitle = 'Q&A';
 	isVisible = false;
 	openId = null;
-	questions;
+	questions: Questions;
 
 	constructor(
 		private faqService: FaqService,
