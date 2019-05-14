@@ -12,7 +12,6 @@ export interface MessageFromFigleaf {
 @Injectable({
 	providedIn: 'root'
 })
-
 export class CommunicationWithFigleafService {
 	isFigleafInstalled$ = new ReplaySubject(1);
 	private isFigleafReadyForCommunication = new ReplaySubject<boolean>(1);
