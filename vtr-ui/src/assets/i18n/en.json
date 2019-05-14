@@ -14,13 +14,13 @@
 					"rapidCharge": "Rapid Charge"
 				},
 				"legionEdge": {
-					"title": "CPU Overlock",
+					"title": "CPU Overclock",
 					"status": {
 						"alwayson": "Always On",
 						"whenGaming": "When Gaming",
 						"off": "Off"
 					},
-					"ramOverlock": "Ram Overlock",
+					"ramOverlock": "Ram Overclock",
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
@@ -674,8 +674,7 @@
 				"poweredBy": "Powered By McAfee",
 				"privacyTerms": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
 				"mcafeePremium": "McAfee Premium Protection",
-				"protectedBy": "You are currently protected by ",
-				"betterProtected": ".However, you could be better protected with McAfee LifeSafe",
+				"protectedBy": "You are currently protected by {{protectedName}}. However, you could be better protected with McAfee LiveSafe",
 				"virusScan": "VIRUS SCAN",
 				"firewall": "FIREWALL",
 				"disabled": "DISABLED",
@@ -684,7 +683,7 @@
 			},
 			"windowsDefender": {
 				"optimallyProtected": "Not Optimally Protected",
-				"subtitle": "You are currently being protected by Windows Defender.However, you could be better protected with McAfee LiveSafe. Learn more below.",
+				"subtitle": "You are currently being protected by Windows Defender. However, you could be better protected with McAfee LiveSafe. Learn more below.",
 				"learnMore": "LEARN MORE ABOUT McAfee",
 				"windowsProtected": "Windows Defender basic protection",
 				"windowsSubtitle": "Windows defender offers basic protection for your device"
@@ -799,7 +798,7 @@
 		"vpn": {
 			"statusTitle": "SURFEASY VPN",
 			"title": "VPN Security",
-			"header": "SurfEasy Virtual Private Network",
+			"header": "SurfEasy VPN",
 			"whatIsSufEasy": "SurfEasy VPN encrypts the information you send and receive so you can safely and privately use your PC, Mac®, smartphone or tablet on any Internet connection without worry.",
 			"helpKeep": "Help keep your online activity secure and private with SurfEasy VPN.",
 			"getSufEasy": "Get SurfEasy",

@@ -1,7 +1,8 @@
 import {
 	Component,
 	OnInit,
-	HostListener
+	HostListener,
+    NgZone
 } from '@angular/core';
 import {
 	VantageShellService
@@ -85,7 +86,8 @@ export class PageSecurityComponent implements OnInit {
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		private translate: TranslateService,
-		private regionService: RegionService
+        private regionService: RegionService,
+        private ngZone: NgZone
 	) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.passwordManager = this.securityAdvisor.passwordManager;
@@ -140,7 +142,7 @@ export class PageSecurityComponent implements OnInit {
 		this.passwordManagerLandingViewModel = new PasswordManagerLandingViewModel(this.translate, this.passwordManager, this.commonService);
 		this.antivirusLandingViewModel = new AntiVirusLandingViewModel(this.translate, this.antivirus, this.commonService);
 		this.vpnLandingViewModel = new VpnLandingViewModel(this.translate, this.vpn, this.commonService);
-		this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.translate, this.wifiSecurity, this.commonService);
+		this.wifiSecurityLandingViewModel = new WifiSecurityLandingViewModel(this.translate, this.wifiSecurity, this.commonService, this.ngZone);
 		this.homeProtectionLandingViewModel = new HomeProtectionLandingViewModel(this.translate);
 		this.wifiHistory = this.wifiSecurityLandingViewModel.wifiHistory;
 		const windowsHello = this.securityAdvisor.windowsHello;
@@ -160,7 +162,9 @@ export class PageSecurityComponent implements OnInit {
 		wifiSecurity.on(EventTypes.wsStateEvent, () => {
 			this.getScore();
 		}).on(EventTypes.geolocatorPermissionEvent, (data) => {
-			this.getScore();
+            this.ngZone.run(() => {
+                this.getScore();
+            });
 		});
 
 		// this.securityAdvisor.refresh();
