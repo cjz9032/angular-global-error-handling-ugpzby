@@ -244,6 +244,10 @@ export class FaqService {
 		faq: {
 			visible: false,
 			questions: this.questionCategories.dataBreaches
+		},
+		articles: {
+			visible: false,
+			questions: this.questionCategories.dataBreaches
 		}
 	};
 }

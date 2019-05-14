@@ -71,6 +71,12 @@ export class MainHeaderComponent implements OnInit, OnDestroy {
 			backButton: true,
 			showNavigationBlock: false,
 			figLeafIcon: false
+		},
+		articles: {
+			title: 'Privacy Hub',
+			backButton: true,
+			showNavigationBlock: false,
+			figLeafIcon: false
 		}
 	};
 

@@ -71,6 +71,12 @@ export class SidebarInstallWidgetService {
 			title: 'The choice to be private is here',
 			text: '',
 			image: 'pitch-block/Img_Pith_Main',
+		},
+		articles: {
+			visible: false,
+			title: 'The choice to be private is here',
+			text: '',
+			image: 'pitch-block/Img_Pith_Main',
 		}
 	};
 }

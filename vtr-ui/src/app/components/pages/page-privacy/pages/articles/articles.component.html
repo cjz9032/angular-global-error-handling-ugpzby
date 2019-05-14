@@ -1,0 +1,4 @@
+
+<div class="article-wrapper" *ngFor="let article of articles | objectValues">
+    <div [innerHTML]="article.content"></div>
+</div>
