@@ -5,6 +5,7 @@ import { LocalStorageKey } from '../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { CommsService } from 'src/app/services/comms/comms.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { NgZone } from '@angular/core';
 
 
 interface DevicePostureDetail {
@@ -26,7 +27,7 @@ export class WifiHomeViewModel {
 	homeStatus: string;
 	tryNowEnable = false;
 
-	constructor(wifiSecurity: phoenix.WifiSecurity, homeProtection: phoenix.HomeProtection, private commonService: CommonService) {
+	constructor(wifiSecurity: phoenix.WifiSecurity, homeProtection: phoenix.HomeProtection, private commonService: CommonService, private ngZone: NgZone) {
 		const cacheWifiSecurityState = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
 		const cacheWifiSecurityHistory = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys);
 		const cacheWifiSecurityChsConsoleUrl = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionChsConsoleUrl);
@@ -47,11 +48,13 @@ export class WifiHomeViewModel {
 			}
 		});
 		wifiSecurity.on(EventTypes.geolocatorPermissionEvent, (value) => {
-			if (value !== undefined) {
-				if (this.wifiSecurity.state) {
-					this.isLWSEnabled = (this.wifiSecurity.state === 'enabled' && value);
-				}
-			}
+            this.ngZone.run(() => {
+                if (value !== undefined) {
+                    if (this.wifiSecurity.state) {
+                        this.isLWSEnabled = (this.wifiSecurity.state === 'enabled' && value);
+                    }
+                }
+            });
 		});
 		wifiSecurity.on(EventTypes.wsWifiHistoryEvent, (value) => {
 			if (value) {
@@ -172,7 +175,7 @@ export class SecurityHealthViewModel {
 	isLWSEnabled: boolean;
 	homeDevicePosture: Array<DevicePostureDetail> = [];
 
-	constructor(wifiSecurity: phoenix.WifiSecurity, homeProtection: phoenix.HomeProtection, private commonService: CommonService, public translate: TranslateService) {
+	constructor(wifiSecurity: phoenix.WifiSecurity, homeProtection: phoenix.HomeProtection, private commonService: CommonService, public translate: TranslateService, private ngZone: NgZone) {
 		const cacheWifiSecurityState = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
 		const cacheHomeDevicePosture = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture);
 		try {
@@ -212,11 +215,13 @@ export class SecurityHealthViewModel {
 			}
 		});
 		wifiSecurity.on(EventTypes.geolocatorPermissionEvent, (value) => {
-			if (value !== undefined) {
-				if (wifiSecurity.state) {
-					this.isLWSEnabled = (wifiSecurity.state === 'enabled' && value);
-				}
-			}
+            this.ngZone.run(() => {
+                if (value !== undefined) {
+                    if (wifiSecurity.state) {
+                        this.isLWSEnabled = (wifiSecurity.state === 'enabled' && value);
+                    }
+                }
+            });
 		});
 		homeProtection.on(EventTypes.homeDevicePostureEvent, (value) => {
 			if (value) {
@@ -236,7 +241,7 @@ export class SecurityHealthViewModel {
 				path: 'security/wifi-security',
 				type: 'security'
 			};
-			it.status = item.vulnerable === 'true' ? 1 : 2;
+			it.status = item.vulnerable === 'true' ? 1 : 6;
 			it.title = this.mappingDevicePosture(item.config);
 			it.detail = item.vulnerable === 'true' ? 'security.homeprotection.securityhealth.fail' : 'security.homeprotection.securityhealth.pass';
 			this.translate.stream(it.detail).subscribe((res) => {

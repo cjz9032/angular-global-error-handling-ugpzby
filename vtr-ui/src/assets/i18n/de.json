@@ -1,0 +1,310 @@
+{
+    "common": {
+        "menu": {
+            "security": {
+                "title": "Sicherheit",
+                "sub1": "Meine Sicherheit",
+                "sub2": "Antivirus",
+                "sub3": "WiFi-Sicherheit",
+                "sub4": "Kennwortzustand",
+                "sub5": "Internetschutz",
+                "sub6": "Windows Hello"
+            }
+        },
+        "securityAdvisor": {
+            "title": "Sicherheitsratgeber",
+            "subtitle": "PRÜFEN SIE, OB IHR GERÄT GESICHERT IST.",
+            "antiVirus": "Antivirus",
+            "wifi": "WiFi-Sicherheit",
+            "pswdMgr": "Password Manager",
+            "vpn": "VPN",
+            "windowsHello": "Windows Hello",
+            "enabled": "AKTIVIERT",
+            "disabled": "DEAKTIVIERT",
+            "partiallyProtected": "TEILWEISE GESCHÜTZT",
+            "installed": "INSTALLIERT",
+            "notInstalled": "NICHT INSTALLIERT",
+            "loading": "Laden",
+            "notFound": "NICHT GEFUNDEN",
+            "registered": "REGISTRIERT",
+            "notRegistered": "NICHT REGISTRIERT"
+        }
+    },
+    "support": {
+        "common": {
+            "getSupport": "Support anfordern"
+        },
+        "warranty": {
+            "titleInWarranty": "IN GARANTIE",
+            "titleWarrantyExpired": "GARANTIE ABGELAUFEN",
+            "titleWarrantyNotFound": "GARANTIE WURDE NICHT GEFUNDEN",
+            "statusInWarranty": "In Garantie",
+            "statusWarrantyExpired": "Abgelaufen",
+            "statusWarrantyNotFound": "Garantie wurde nicht gefunden",
+            "yearDepotWarranty": "Y Depot-Garantie",
+            "warrantyDetails": "Garantiedetails:",
+            "startDate": "Startdatum: ",
+            "endDate": "Enddatum: ",
+            "status": "Status: ",
+            "subDescription1": "Dieses Produkt hat eine jahrelange beschränkte Garantie und ist berechtigt für einen Depot-Reparaturservice. Kunden können sich für weitere Informationen an ihr lokales Service-Center wenden. Händler können für dieses Produkt eine Reparatur mit Einschicken des Geräts durch den Kunden durchführen.",
+            "subDescription2": "Wir konnten keine Garantieinformationen für Ihr Gerät finden, um weitere Garantieoptionen zu erhalten. Besuchen Sie bitte unsere Support-Website.",
+            "viewWarrantyOptions": "GARANTIEOPTIONEN ANZEIGEN"
+        },
+        "documentation": {
+            "title": "Dokumentation",
+            "listUserGuide": "Benutzerhandbuch"
+        },
+        "needHelp": {
+            "title": "Benötigen Sie Hilfe?",
+            "description": "KONTAKTIEREN SIE UNS, WIR HELFEN IHNEN GERNE.",
+            "listLenovoCommunity": "Lenovo-Community",
+            "listContactCustomerService": "Kundenservice kontaktieren",
+            "listContactUsOnWechat": "Auf WeChat kontaktieren",
+            "weChatDescription": "Stellen Sie uns eine Frage auf WeChat und wir werden Ihnen schnell antworten."
+        },
+        "quicklinks": {
+            "title": "Quick Links",
+            "description": "KONTAKTIEREN SIE UNS, WIR HELFEN IHNEN GERNE.",
+            "listETicket": "Erhalten Sie Support mit E-Ticket",
+            "listServiceProvider": "Service-Provider finden",
+            "listAboutLenovoVantage": "Über Lenovo Vantage"
+        },
+        "about": {
+            "version": "Version",
+            "licenseAgreement": "Lizenzvereinbarung",
+            "otherSoftwareLicenses": "Sonstige Softwarelizenzen",
+            "ourWebsite": "Unsere Website",
+            "aboutYourDevice": "Über Ihre Einheit",
+            "copyright": "© 2002–2019 Lenovo. Alle Rechte vorbehalten."
+        }
+    },
+    "security": {
+        "landing": {
+            "fully": "Vollständig geschützt",
+            "fullyDesc": "Herzlichen Glückwunsch! Sie sind gut geschützt.",
+            "notFully": "Nicht vollständig geschützt",
+            "notFullyDesc": "Sie sind nicht vollständig geschützt. Erfahren Sie jetzt, wie Sie sich besser schützen können.",
+            "security101": "SICHERHEITSRATGEBER 101",
+            "firewall": "Firewall",
+            "pwdHealth": "Kennwortzustand",
+            "vpnSecurity": "VPN-Sicherheit",
+            "vpnVirtual": "Virtuelles Privates Netzwerk",
+            "wifiConnected": "Sicherheit für WiFi und das verbundene Zuhause",
+            "connectedHomeSecurity": "Sicherheit für das verbundene Zuhause",
+            "fingerprint": "Lesegerät für Fingerabdrücke",
+            "seeAllNetwork": "Alle verknüpften Netzwerke anzeigen",
+            "maliciousNetwork": "Hat verhindert, dass sich Ihr Computer diesen Monat mit {{maliciousWifi}} zerstörerischen Netzwerken verbindet.",
+            "good": "GUT",
+            "malicious": "ZERSTÖRERISCH",
+            "suspicious": "VERDÄCHTIG"
+        },
+        "antivirus": {
+            "common": {
+                "title": "Antivirus",
+                "back": "ZURÜCK",
+                "why": "Warum McAfee?",
+                "recommends": "Lenovo empfiehlt McAfee für den Schutz Ihrer Geräte:",
+                "award": "Preisgekrönter Schutz vor den neuesten Onlinebedrohungen, einschließlich Ransomware und Malware",
+                "dedicated": "Dedizierte Sicherheit, die Defender und andere führende Anbieter von Virenschutzsoftware regelmäßig übertritt",
+                "deviceToCloud": "Geräte-zu-Cloud-Technologie, die Ihren PC nicht ausbremst",
+                "poweredBy": "Unterstützt von McAfee",
+                "privacyTerms": "Für weitere Informationen lesen Sie die <tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>",
+                "mcafeePremium": "McAfee Premium-Schutz",
+                "protectedBy": "Sie sind derzeit geschützt durch: ",
+                "betterProtected": ".Mit McAfee LiveSafe können Sie sich jedoch noch besser schützen",
+                "virusScan": "VIREN-SCAN",
+                "firewall": "FIREWALL",
+                "disabled": "DEAKTIVIERT",
+                "enableVirusScan": "VIREN-SCAN AKTIVIEREN",
+                "enableFirewall": "FIREWALL AKTIVIEREN"
+            },
+            "windowsDefender": {
+                "optimallyProtected": "Nicht optimal geschützt",
+                "subtitle": "Sie sind derzeit durch Windows Defender geschützt.Mit McAfee LiveSafe können Sie sich jedoch noch besser schützen. Erfahren Sie unten mehr.",
+                "learnMore": "ERFAHREN SIE MEHR ÜBER McAfee",
+                "windowsProtected": "Windows Defender Basisschutz",
+                "windowsSubtitle": "Windows Defender bietet einen Basisschutz für Ihr Gerät"
+            },
+            "mcafee": {
+                "title": "McAfee LiveSafe",
+                "subtitle": "Sie werden derzeit von McAfee LiveSafe geschützt",
+                "valid": "Gültig bis",
+                "upgrade": "Entscheiden Sie sich jetzt für ein Upgrade",
+                "launch": "McAfee STARTEN",
+                "getMacfee": "HOLEN SIE SICH McAfee",
+                "topBenefits": "Top-Vorteile von McAfee LiveSafe",
+                "awardTitle": "Preisgekrönter Virenschutz",
+                "awardSubtitle": "Blockiert Viren, Malware, Ransomware, Spyware, unerwünschte Programme und mehr auf Ihrem PC.",
+                "encryptedTitle": "Verschlüsselter Speicher",
+                "encryptedSubtitle": "Halten Sie sensible Dateien geheim, indem Sie sie auf Ihrem PC mit 128-Bit-Verschlüsselung speichern.",
+                "identityTitle": "Schutz vor Identitätsdiebstahl",
+                "identitySubtitle": "Übernehmen Sie den Schutz Ihrer Identität vor Diebstahl und Betrug.",
+                "supportTitle": "Kostenloser Kundensupport",
+                "supportSubtitle": "Support per Telefon, Chat und online während der gesamten Laufzeit Ihres Abonnements.",
+                "antiTitle": "Anti-Spam",
+                "antiSubtitle": "Blockiert gefährliche Nachrichten, bevor sie Ihren Posteingang erreichen, indem E-Mails mit potenziell gefährlichen Links und Viren gelöscht werden.",
+                "virusTitle": "Virenschutz-Versprechen",
+                "virusSubtitle": "Gibt Ihnen die Gewissheit, dass Ihr PC bei einem Virenfund per Remote-Zugriff von einem McAfee-Experten bereinigt wird.",
+                "parentalTitle": "Kinderschutz",
+                "parentalSubtitle": "Blockiert Websites und Suchergebnisse, die Ihre Kinder nicht sehen sollen. Ermöglicht zudem das Begrenzen der Zeit, die Ihre Kinder online verbringen.",
+                "license": "Lizenz gültig bis",
+                "trial": "Testversion gültig bis"
+            },
+            "others": {
+                "othersProtection": "bietet einen Basisschutz für Ihr Gerät"
+            }
+        },
+        "wifisecurity": {
+            "header": {
+                "title": "WiFi-Sicherheit und Sicherheit für das verbundene Zuhause",
+                "back": "ZURÜCK"
+            },
+            "container": {
+                "title": "Lenovo WiFi-Sicherheit",
+                "name": "WIFI-SICHERHEIT",
+                "enable": "AKTIVIERT",
+                "disable": "DEAKTIVIERT",
+                "less": "Weniger Info",
+                "more": "Mehr Info",
+                "networkHistory": "Netzwerkverlauf",
+                "connect": "Letzte Verbindung",
+                "showmore": "Mehr anzeigen",
+                "showless": "Weniger anzeigen",
+                "button": "WiFi-Sicherheit aktivieren",
+                "disableDecribe": "Lenovo WiFi-Sicherheit ist eine fortschrittliche, cloud-basierte Software, dank der Ihre Einheit zwischen sicheren und potenziell unsicheren Drahtlosnetzwerken unterscheiden kann."
+            },
+            "threatlocator": {
+                "describe": "Verwenden Sie die Bedrohungssuche, um die Sicherheit der Netzwerke um Sie herum zu ermitteln.",
+                "button": "Bedrohung überprüfen"
+            },
+            "locationmodal": {
+                "title": "Standortdienste aktivieren",
+                "describe1": "Um Lenovo WiFi-Sicherheit zu verwenden, müssen Sie die Standortdienste für Lenovo Vantage aktivieren. Möchten Sie den Standortdienst jetzt aktivieren?",
+                "describe2": "Um die Funktion \"Sicherheit für das verbundene Zuhause\" zu verwenden, müssen Sie die Standortdienste für Lenovo Vantage aktivieren. Möchten Sie den Standortdienst jetzt aktivieren?",
+                "agree": "ZUSTIMMEN",
+                "cancel": "ABBRECHEN"
+            }
+        },
+        "homeprotection": {
+            "homesecurity": {
+                "title": "Sicherheit für das verbundene Zuhause",
+                "titleDescription": "Mit der Funktion \"Sicherheit für das verbundene Zuhause\" sind Sie in dreifacher Weise geschützt:",
+                "homeSecurityAffect1": "Sicherstellung, dass Ihr Gerät sicher ist und nicht kompromittiert wurde.",
+                "homeSecurityAffect2": "Gewährleistung, dass Sie sich nur mit sicheren Netzwerken verbinden.",
+                "homeSecurityAffect3": "Sicherstellung, dass andere Geräte, die sich mit Ihrem privaten Netzwerk verbinden, sicher sind.",
+                "describe": "Unsichere Geräte und Netzwerke können Malware einschleusen, zu Identitätsdiebstahl führen und private sowie finanzielle Informationen preisgeben. Aktivieren Sie diese Funktion, um das Risiko zu verringern, dass Ihr Gerät und Ihr privates Netzwerk Angreifern ausgesetzt werden.",
+                "subtitle": "Immer auf Nummer sicher",
+                "subtitleDescribe": "Die Funktion \"Sicherheit für das verbundene Zuhause\" sendet Ihnen eine Warnung, wenn sie eine angreifbare Stelle in Ihrem Gerät oder privaten Netzwerk erkennt oder wenn Sie sich mit einem potenziell zerstörerischen Netzwerk verbinden. Weitere Informationen hierzu finden Sie im Abschnitt \"Sicherheit für das verbundene Zuhause\" unter \"Tipps und Tricks\".",
+                "tryNow": "Jetzt testen"
+            },
+            "invitationcode": {
+                "button": "Einladungscode eingeben",
+                "buttonDescribe": "Sie haben dieses Gerät bereits mit einem vorhandenen Konto für die Sicherheit für das verbundene Zuhause verbunden.",
+                "title": "Verfügen Sie bereits über \"Sicherheit für das verbundene Zuhause\"?",
+                "titleDescribe": "Stellen Sie sicher, dass die lokalen Berechtigungen für Vantage aktiviert sind, um Ihr Gerät einem vorhandenen \"Verbundenes Zuhause\"-Konto hinzuzufügen und die Funktion \"Sicherheit für das verbundene Zuhause\" nutzen zu können.",
+                "enterCode": "Geben Sie Ihren Verbindungscode ein",
+                "addHome": "Zuhause hinzufügen",
+                "ok": "OK",
+                "continue": "FORTSETZEN",
+                "cancel": "Abbrechen",
+                "validateCode": "CODE VALIDIEREN",
+                "success": "Verbindung erfolgreich hergestellt",
+                "canUse": "Profitieren Sie jetzt von der Funktion \"Sicherheit für das verbundene Zuhause\"",
+                "tryAgain": "Der Code ist falsch, versuchen Sie es erneut.",
+                "activationCode": "AKTIVIERUNGSCODE"
+            },
+            "securityhealth": {
+                "title": "Sicherheitszustand",
+                "deviceName1": "Apps von vertrauenswürdigen Quellen",
+                "deviceName2": "Entwicklermodus",
+                "deviceName3": "Benutzerkontensteuerung-Benachrichtigung",
+                "deviceName4": "Antivirus-Verfügbarkeit",
+                "deviceName5": "Festplattenlaufwerk-Verschlüsselung",
+                "deviceName6": "Firewall-Verfügbarkeit",
+                "deviceName7": "Windows aktiviert",
+                "deviceName8": "Verfügbarkeit von Sicherheitsaktualisierungen",
+                "deviceName9": "Kennwortschutz",
+                "deviceName10": "Verfügbarkeit des Service für automatische Aktualisierung",
+                "fail": "FEHLGESCHLAGEN",
+                "pass": "BESTANDEN",
+                "learnMoreAboutSecurityHealth": "Weitere Informationen über jede dieser Komponenten finden Sie <tag>hier</tag>.",
+                "peaceOfMind": "Sie möchten auf Nummer sicher gehen?",
+                "button": "WiFi-Sicherheit aktivieren"
+            }
+        },
+        "vpn": {
+            "statusTitle": "SURFEASY VPN",
+            "title": "VPN-Sicherheit",
+            "header": "SurfEasy Virtuelles Privates Netzwerk",
+            "whatIsSufEasy": "SurfEasy VPN verschlüsselt die Informationen, die Sie senden und empfangen, damit Sie Ihren PC, Mac®, Smartphone oder Tablet bedenkenlos sicher und privat mit jeder Internetverbindung nutzen können.",
+            "helpKeep": "Sorgen Sie mit SurfEasy VPN dafür, dass Ihre Online-Aktivität sicher und geschützt bleibt.",
+            "getSufEasy": "Holen Sie sich SurfEasy",
+            "openSufEasy": "SurfEasy öffnen",
+            "whySufEasy": "Warum sollten Sie ein Virtuelles Privates Netzwerk (VPN) verwenden?",
+            "whySufEasyDescription": "Bei der Nutzung von Wi-Fi-Hotspots wie in Cafés oder an Flughäfen können Ihre vertraulichen Daten Internetbetrügern ausgesetzt sein. SurfEasy VPN ist ein VPN ohne Anmelden, das Ihre persönlichen Informationen verschlüsselt und Ihre Online-Aktivität oder Ihren Standort nicht erfasst oder speichert.",
+            "startUseSufEasy": "Profitieren Sie schon heute von SurfEasy",
+            "startUseSufEasy1": "Sorgen Sie mit dieser Verschlüsselung auf Bankenniveau dafür, dass die Daten, die Sie senden und empfangen sicher und geschützt sind.",
+            "startUseSufEasy2": "Hilft dabei, zu verhindern, dass Unternehmen Ihre Online-Aktivitäten oder Ihren Standort erfassen.",
+            "startUseSufEasy3": "Von der kostenlosen Version bis hin zum Premiumangebot finden Sie zahlreiche Optionen für Ihre Bedürfnisse und Budget.",
+            "howToUseSufEasy": "Hinweise zum Verwenden von SurfEasy VPN",
+            "whatCanSufEasy2": "Schützen Sie Ihre Daten und schalten Sie SurfEasy VPN ein, wenn Sie sich mit einem öffentlichen Wi-Fi-Hotspot verbinden. Mit einem Lenovo Starter VPN-Plan können Sie Prämien-Aktivitäten ausführen, um mehr Datenschutz-Bandbreite zu gewinnen. Führen Sie ein Upgrade aus, um bis zu 5 Smartphones, Tablets und Computer mit unbegrenzter Bandbreite zu schützen.",
+            "getStarted": "Schalten Sie SurfEasy VPN ein:",
+            "getStarted1": "Klicken Sie oben auf die Schaltfläche \"SurfEasy öffnen\", um SurfEasy VPN zu starten.",
+            "getStarted2": "Schalten Sie das VPN ein und warten Sie kurz auf die Bestätigung einer sicheren Verbindung.",
+            "getStarted3": "Ändern Sie die Region oder den Standort nach Wunsch und genießen Sie die Nutzung eines sicheren und geschützten Netzwerks.",
+            "poweredBySurfEasy": "Unterstützt von SurfEasy",
+            "privacyPolicyAndTermsOfService": "Für weitere Informationen lesen Sie die <tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>"
+        },
+        "passwordManager": {
+            "statusTitle": "DASHLANE-KENNWORTMANAGER",
+            "title": "Kennwortzustand",
+            "header": "Dashlane",
+            "whatIsPmNotInstalled": "Der sicherste und einfachste Weg, um sichere, komplexe Kennwörter zu speichern und sich unmittelbar auf jeder Website anzumelden.",
+            "whatIsPmInstalled": "Machen Sie Ihren digitalen Alltag sicherer: Hinzufügen von Kennwörtern, Aktivierung von Dark Web-Überwachung und automatische Eingabe persönlicher und zahlungsbezogener Daten.",
+            "startProtect": "Schützen Sie Ihre Online-Konten auf einfache Weise.",
+            "discount": "Lenovo Benutzer können Dashlane Premium exklusiv und kostenlos 6 Monate lang ausprobieren.",
+            "offer": "Dieses Angebot gilt nur für neue Dashlane-Benutzer.",
+            "getDashLane": "Holen Sie sich Dashlane",
+            "learnMoreAbout": "<tag>Erfahren Sie mehr</tag> darüber, wie Sie das Beste aus Dashlane herausholen können",
+            "openDashLane": "Dashlane öffnen",
+            "neverForget": "Dashlane: Nie wieder ein Kennwort vergessen",
+            "whatIsDashLane": "Dashlane ist eine App für das Verwalten von Kennwörtern und für digitalen Schutz, die mit Ihrem Browser funktioniert. Sie speichert automatisch Kennwörter und persönliche Daten, ruft diese für Sie ab und sorgt für umfassende Sicherheit. Zudem analysiert Dashlane Ihre Kontosicherheit und bietet einfache Möglichkeiten, die Sicherheit Ihrer Kennwörter zu verbessern.",
+            "helpYou": "Vorteile von Dashlane:",
+            "helpYou1": "Speicherung einer unbegrenzten Anzahl von Benutzernamen und Kennwörtern.",
+            "helpYou2": "Unmittelbare Anmeldung auf sämtlichen Seiten für ein reibungsloses Surfen im Internet.",
+            "helpYou3": "Synchronisierung verschiedener Geräte, sodass Sie stets Zugriff auf Ihre wichtigen Konten haben.",
+            "helpYou4": "Verbesserung Ihres Online-Schutzes durch einfache. praktische Ratschläge.",
+            "getStarted": "Erste Schritte mit Dashlane",
+            "checkOutThisGuide": "Nutzen Sie Dashlane, um sicher online zu sein und dabei Zeit und Aufwand zu sparen. Detaillierte Informationen zu den ersten Schritten <tag>finden Sie in diesem Handbuch.</tag>",
+            "allowsYou": "Dashlane ermöglicht Ihnen:",
+            "allowsYou1": "Unmittelbare Anmeldung auf sämtlichen Seiten für ein reibungsloses Surfen im Internet - Synchronisierung verschiedener Geräte, sodass Sie stets Zugriff auf Ihre wichtigen Konten haben.",
+            "allowsYou2": "Die Überwachung des Dark Web, um Ihre persönlichen Informationen zu schützen.",
+            "allowsYou3": "Sicherheit bei ungesicherten Wi-Fi-Netzwerken dank integriertem VPN.",
+            "allowsYou4": "Das sichere Teilen von Kennwörtern, ohne diese preiszugeben.",
+            "poweredByDashLane": "Unterstützt von Dashlane",
+            "privacyPolicyAndTermsOfService": "Für weitere Informationen lesen Sie die <tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>"
+        },
+        "windowsHello": {
+            "statusTitle": "WINDOWS HELLO",
+            "title": "Windows Hello",
+            "protectYourDevice": "Schützen Sie Ihr Gerät mit diesen von Lenovo empfohlenen Sicherheitsoptionen.",
+            "signIn": "Schnelles und sicheres Anmelden mit Windows Hello.",
+            "signInTitle": "Schnelles und sicheres Anmelden mit Windows Hello",
+            "setUp": "Windows Hello einrichten",
+            "whyWindowsHello": "Warum Windows Hello?",
+            "whyWindowsHelloDescription1": "Windows Hello macht die Anmeldung an Ihrem PC einfacher und sicherer. Sie können Windows Hello auch für Ihre Online-Apps von Microsoft verwenden. Befolgen Sie die unten stehenden Anweisungen, um Windows Hello zu verwenden.",
+            "startUsingToday": "Profitieren Sie schon heute von Windows Hello",
+            "visitAndRegister": "Rufen Sie die Website von Windows Hello auf und registrieren Sie Ihren Fingerabdruck.",
+            "visitInSettings": "<tag> Sie finden Windows Hello</tag> in den Systemeinstellungen",
+            "unlock": "Verwenden Sie Windows Hello, um sich anzumelden und Ihren PC zu entsperren, indem Sie lediglich mit dem Finger den Sensor berühren.",
+            "startUsingWindowsHello": "Nutzen Sie Windows Hello, um sich bei Microsoft-Apps wie z. B. Outlook, OneDrive, Office 365 und Xbox Live anzumelden.",
+            "visitMicrosoft": "Microsoft aufrufen",
+            "poweredByWindowsHello": "Unterstützt von Windows Hello",
+            "privacyPolicy": "Weitere Informationen finden Sie in der <tag>Datenschutzrichtlinie</tag>",
+            "whyWindowsHelloDescription2": "Windows Hello erleichtert Ihnen das Anmelden auf Ihrem PC und macht es sicherer. Außerdem können Sie es auch für Ihre Microsoft-Apps online verwenden. Befolgen Sie die unten stehenden Anweisungen, um Windows Hello zu verwenden.",
+            "authentication": "Authentifizierung über Windows Hello",
+            "traditional": "Herkömmliche Kennwörter können leicht gestohlen und missbraucht werden, um sich von überall auf der Welt Zugriff auf Ihr Konto zu verschaffen. Sicher und praktisch. Windows Hello ist die neue Generation der Kennwörter. Verwenden Sie für die Anmeldung Ihr Lesegerät für Fingerabdrücke [oder die IR-Kamera] anstatt unsicherer Kennwörter.",
+            "howToStart": "Wie nutze ich Windows Hello?"
+        }
+    }
+}

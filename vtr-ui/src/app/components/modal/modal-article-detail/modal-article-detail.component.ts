@@ -18,6 +18,7 @@ export class ModalArticleDetailComponent implements OnInit {
 	articleCategory: string;
 	metricClient: any;
 	enterTime: number;
+	metricsParent = '';
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -28,6 +29,7 @@ export class ModalArticleDetailComponent implements OnInit {
 		private element: ElementRef
 	) {
 		this.metricClient = vantageShellService.getMetrics();
+		this.metricsParent = this.activatedRoute.firstChild.snapshot.data.pageName + '.Article';
 	}
 
 	ngOnInit() {
@@ -69,7 +71,7 @@ export class ModalArticleDetailComponent implements OnInit {
 			const metricsData = {
 				ItemType: 'ArticleView',
 				ItemID: this.articleId,
-				ItemParent: this.activatedRoute.firstChild.snapshot.data.pageName,
+				ItemParent: this.metricsParent,
 				ItemCategory: this.articleCategory,
 				Duration: (new Date().getTime() - this.enterTime) / 1000,
 				DocReadPosition: Math.round((modalElement.scrollTop + window.innerHeight) / modalElement.scrollHeight * 100),

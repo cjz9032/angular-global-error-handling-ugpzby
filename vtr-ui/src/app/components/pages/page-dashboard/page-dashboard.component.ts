@@ -65,7 +65,6 @@ export class PageDashboardComponent implements OnInit {
 		config.backdrop = 'static';
 		config.keyboard = false;
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
-
 		qaService.setTranslationService(this.translate);
 		qaService.qas.forEach(qa => {
 			try {

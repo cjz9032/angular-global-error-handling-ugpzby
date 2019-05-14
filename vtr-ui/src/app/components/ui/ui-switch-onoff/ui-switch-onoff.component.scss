@@ -4,6 +4,18 @@
 	display: inline-block;
 	position: relative;
 	cursor: pointer;
+	&.switch-disable {
+		opacity: 0.3;
+		cursor: auto;
+		
+		.switch {
+			cursor: auto;
+		}
+
+		.switch-label {
+			cursor: auto;
+		}
+	}
 }
 
 .checkbox input {

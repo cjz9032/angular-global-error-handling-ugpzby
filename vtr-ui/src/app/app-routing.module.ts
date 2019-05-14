@@ -2,7 +2,7 @@ import { PageLightingcustomizeComponent } from './components/pages/page-lighting
 import { PageHardwarescanComponent } from './components/pages/page-hardwarescan/page-hardwarescan.component';
 import { PageMacrokeyComponent } from './components/pages/page-macrokey/page-macrokey.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
 import { PageDeviceComponent } from './components/pages/page-device/page-device.component';
 import { PageDeviceGamingComponent } from './components/pages/page-device-gaming/page-device-gaming.component';
@@ -164,12 +164,6 @@ const routes: Routes = [
 		component: PageUserComponent,
 		data: {
 			pageName: 'User'
-		}
-	}, {
-		path: 'privacy',
-		loadChildren: './components/pages/page-privacy/privacy.module#PrivacyModule',
-		data: {
-			pageName: 'Page.Privacy'
 		}
 	},
 ];

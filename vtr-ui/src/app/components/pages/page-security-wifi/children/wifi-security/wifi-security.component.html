@@ -7,13 +7,7 @@
 			<div class="pull right"><img class="coronet-logo"
 					src="../../../../assets/images/coronet-logo.svg" /></div>
 		</div>
-		<div *ngIf="data.isLWSEnabled===undefined"
-			class="loading">
-			<div class="spinner-border text-primary progress-spinner"
-				role="status"></div>
-		</div>
-		<div class="row mt-20 no-gutters"
-			*ngIf="data.isLWSEnabled!==undefined">
+		<div class="row mt-20 no-gutters">
 			<div class="col-12">
 				<div class="wifiSecurity">
 					<div class="card"
@@ -21,32 +15,34 @@
 						<div class="card-header flex align-items-center"
 							id="wifiSecurity">
 							<div class="row no-gutters">
-								<div class="col-sm-6 subHeading align-items-center"
-									*ngIf="data.isLWSEnabled">
-									<span class="circle green">
+								<div class="col-sm-6 subHeading align-items-center">
+									<span class="circle green" *ngIf="data.isLWSEnabled">
 										<fa-icon [icon]="['fas', 'check']"></fa-icon>
 									</span>
-									<h3 class="mb-0">{{'security.wifisecurity.container.name' | translate}}
-										<span
-											class="badge badge-pill badge-danger button-green line-height-2-5 p-0 pl-3 pr-3">{{'security.wifisecurity.container.enable' | translate}}</span>
-									</h3>
-								</div>
-								<div class="col-sm-6 subHeading align-items-center"
-									*ngIf="!data.isLWSEnabled">
-									<span class="circle red">
+									<span class="circle red" *ngIf="data.isLWSEnabled===false">
 										<fa-icon [icon]="['fas', 'times']"></fa-icon>
 									</span>
+									<div *ngIf="data.isLWSEnabled===undefined"
+										class="loading">
+										<div class="spinner-border text-primary progress-spinner"
+											role="status"></div>
+									</div>
 									<h3 class="mb-0">{{'security.wifisecurity.container.name' | translate}}
 										<span
-											class="badge badge-pill badge-danger button-red line-height-2-5 p-0 pl-3 pr-3">{{'security.wifisecurity.container.disable' | translate}}</span>
+											class="badge badge-pill badge-danger button-green line-height-2-5 p-0 pl-3 pr-3" *ngIf="data.isLWSEnabled">{{'security.wifisecurity.container.enable' | translate}}</span>
+										<span
+											class="badge badge-pill badge-danger button-red line-height-2-5 p-0 pl-3 pr-3" *ngIf="data.isLWSEnabled===false">{{'security.wifisecurity.container.disable' | translate}}</span>
 									</h3>
 								</div>
 								<div class="col-sm-6 align-items-center text-right sm-device-responsive">
 									<vtr-ui-switch-onoff id="sa-ws-btn-switchstatus"
+										[ngClass]="{'switch-disable': isDisableToggle()}"
 										*ngIf="data.wifiSecurity.state !== 'never-used'"
 										name="wifisecurity"
 										[value]="data.isLWSEnabled"
-										[data]="data"></vtr-ui-switch-onoff>
+										[data]="data"
+										[name]="'wifiSecurity'"
+										[disabled]="switchDisabled"></vtr-ui-switch-onoff>
 									<div class="collapse-control" 
 										id="sa-ws-lnk-collapsecontrol"
 										(click)="$event.preventDefault();isCollapsed=!isCollapsed;"
@@ -91,21 +87,6 @@
 							<div class="content">
 								<div class="cardTitle">
 									<h3>{{'security.wifisecurity.container.networkHistory' | translate}}</h3>
-									<!-- <small class="status">
-										Show: <a href=""
-											vtrMetrics
-											metricsItem="link.Malicious"
-											metricsEvent="featureClick"
-											metricsParent="wifisecurity"
-											(click)="$event.preventDefault();showAllNetworks=false;"
-											[ngClass]="{'active': !showAllNetworks}">Malicious</a> / <a href=""
-											(click)="$event.preventDefault();showAllNetworks=true;"
-											vtrMetrics
-											metricsItem="link.all"
-											metricsEvent="featureClick"
-											metricsParent="wifisecurity"
-											[ngClass]="{'active': showAllNetworks}">All</a>
-									</small> -->
 								</div>
 								<div class="cardBody">
 									<div class="row no-gutters wifi-card">
@@ -136,30 +117,6 @@
 											</div>
 										</div>
 									</div>
-									<!-- <ul class="openNetworks">
-										<li *ngFor="let history of data.historys" class="row">
-											<div class="status-icon col-sm-12 col-md-5 col-lg-3 col-xl-3">
-												<span class="fa-stack fa-3x">
-													<fa-icon [icon]="['fas', 'wifi']"
-														class="menu-pointer"></fa-icon>
-													<span class="circle"
-														[ngClass]="{'green':history.good == 0,'red':history.good != 0}">
-														<fa-icon [icon]="['fas', 'check']"
-															*ngIf="history.good == 0"></fa-icon>
-														<fa-icon [icon]="['fas', 'times']"
-															*ngIf="history.good != 0"></fa-icon>
-													</span>
-												</span>
-											</div>
-											<div class="connection-name p-1 pl-0 col-sm-12 col-md-7 col-lg-8 col-xl-8">
-												<span title="{{history.ssid}}">{{history.ssid}}</span>
-												<small class="connection-status">
-													{{'security.wifisecurity.container.connect' | translate}}
-													{{history.info}}
-												</small>
-											</div>
-										</li>
-									</ul> -->
 								</div>
 								<div class="card-foot"
 									*ngIf="data.hasMore">
