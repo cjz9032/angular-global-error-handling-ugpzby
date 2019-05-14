@@ -1,11 +1,23 @@
-<div class="weChat-Modal">
-	<a role="button" type="button" href="javascript:;" class="close-btn"  vtrMetrics metricsItem="WeChatModalCloseButton"
-			 metricsEvent="FeatureClick" metricsParent="Page.Support.WeChat" (click)="onCancelClick($event)">
-		<img src="/assets/icons/Close.svg" alt="" srcset="">
+<div class="weChat-Modal"
+	id="weChat-dialog">
+	<a role="button"
+		type="button"
+		href="javascript:;"
+		class="close-btn"
+		vtrMetrics
+		metricsItem="WeChatModalCloseButton"
+		metricsEvent="FeatureClick"
+		metricsParent="Page.Support.WeChat"
+		(click)="onCancelClick()">
+		<img src="/assets/icons/Close.svg"
+			alt=""
+			srcset="">
 	</a>
 	<div class="content py-40">
 		<div class="img-con pt-4 pb-40">
-			<img class="qr-img" src="/assets/images/wechat-qrcode.png" alt="{{ 'support.needHelp.listContactUsOnWechat' | translate}}" />
+			<img class="qr-img"
+				src="/assets/images/wechat-qrcode.png"
+				alt="{{ 'support.needHelp.listContactUsOnWechat' | translate}}" />
 		</div>
 		<div class="text-center title mb-2">{{ 'support.needHelp.listContactUsOnWechat' | translate}}</div>
 		<div class="text-center description">{{ 'support.needHelp.weChatDescription' | translate}}</div>

@@ -3,9 +3,10 @@ import { WifiSecurity, EventTypes } from '@lenovo/tan-client-bridge';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
+import { NgZone } from '@angular/core';
 
 export class WifiSecurityWidgetItem extends WidgetItem {
-	constructor(wifiSecurity: WifiSecurity, commonService: CommonService, private translateService: TranslateService) {
+	constructor(wifiSecurity: WifiSecurity, commonService: CommonService, private translateService: TranslateService, private ngZone: NgZone) {
 		super({
 			id: 'sa-widget-lnk-ws',
 			path: 'security/wifi-security',
@@ -33,20 +34,22 @@ export class WifiSecurityWidgetItem extends WidgetItem {
 			this.updateStatus(wifiSecurity.state, status);
 		}).on(EventTypes.wsIsLocationServiceOnEvent, (status) => {
 			this.updateStatus(wifiSecurity.state, status);
-		});
+        });
 	}
 
 	updateStatus(status: string, location: boolean) {
-		if (!status) { return; }
-		if (location) {
-			this.status = status === 'enabled' ? 0 : 1;
-			this.detail = status;
-		} else {
-			this.status = 1;
-			this.detail = 'disabled';
-		}
-
-		this.translateStatus(this.detail);
+        this.ngZone.run(() => {
+            if (!status) { return; }
+            if (location) {
+                this.status = status === 'enabled' ? 0 : 1;
+                this.detail = status;
+            } else {
+                this.status = 1;
+                this.detail = 'disabled';
+            }
+    
+            this.translateStatus(this.detail);
+        });
 	}
 
 	translateStatus(status: string) {

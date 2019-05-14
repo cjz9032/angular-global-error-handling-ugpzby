@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostListener } from '@angular/core';
+import { Component, OnInit, Input, HostListener, NgZone } from '@angular/core';
 import { SecurityAdvisor, WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { WidgetItem } from 'src/app/data-models/security-advisor/widget-security-status/widget-item.model';
@@ -22,12 +22,12 @@ export class WidgetSecurityStatusComponent implements OnInit {
 	items: Array<WidgetItem>;
 	region: string;
 
-	constructor(private commonService: CommonService, private translateService: TranslateService, private regionService: RegionService) {}
+	constructor(private commonService: CommonService, private translateService: TranslateService, private regionService: RegionService, private ngZone: NgZone) {}
 
 	ngOnInit() {
 		this.items = [];
 		this.items.push(new AntivirusWidgetItem(this.securityAdvisor.antivirus, this.commonService, this.translateService));
-		this.items.push(new WifiSecurityWidgetItem(this.securityAdvisor.wifiSecurity, this.commonService, this.translateService));
+		this.items.push(new WifiSecurityWidgetItem(this.securityAdvisor.wifiSecurity, this.commonService, this.translateService, this.ngZone));
 		this.items.push(new PassWordManagerWidgetItem(this.securityAdvisor.passwordManager, this.commonService, this.translateService));
 		this.showVpn();
 		const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);

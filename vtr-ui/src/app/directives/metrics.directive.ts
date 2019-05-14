@@ -1,8 +1,8 @@
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
-import { VantageShellService } from '../services/vantage-shell/vantage-shell.service';
-import { ActivatedRoute } from '@angular/router';
-import { VieworderService } from '../services/view-order/vieworder.service';
-import { DeviceService } from '../services/device/device.service';
+import {Directive, ElementRef, HostListener, Input} from '@angular/core';
+import {VantageShellService} from '../services/vantage-shell/vantage-shell.service';
+import {ActivatedRoute} from '@angular/router';
+import {VieworderService} from '../services/view-order/vieworder.service';
+import {DeviceService} from '../services/device/device.service';
 
 export interface MetricsData {
 	ItemType: string;
@@ -32,10 +32,10 @@ export class MetricsDirective {
 	private metrics: any;
 
 	constructor(private deviceService: DeviceService,
-		private el: ElementRef,
-		private shellService: VantageShellService,
-		private activatedRoute: ActivatedRoute,
-		private viewOrderService: VieworderService) {
+				private el: ElementRef,
+				private shellService: VantageShellService,
+				private activatedRoute: ActivatedRoute,
+				private viewOrderService: VieworderService) {
 		this.metrics = shellService.getMetrics();
 
 	}
@@ -62,8 +62,8 @@ export class MetricsDirective {
 		const data: any = {};
 		const eventName = this.metricsEvent.toLowerCase();
 		switch (eventName) {
-			case 'featureclick':
-			case 'itemclick': {
+			case 'featureclick' :
+			case 'itemClick': {
 				data.ItemType = 'FeatureClick';
 				data.ItemName = this.metricsItem;
 				data.ItemParent = this.metricsParent;
@@ -79,6 +79,9 @@ export class MetricsDirective {
 			case 'docclick': {
 				data.ItemType = 'ArticleClick';
 				data.ItemParent = this.metricsParent;
+				if(this.metricsItem){
+					data.ItemName=this.metricsItem;
+				}
 				if (typeof this.viewOrderService[this.metricsParent] === 'undefined') {
 
 					this.viewOrderService[this.metricsParent] = 0;
@@ -124,7 +127,7 @@ export class MetricsDirective {
 		const data = this.ComposeMetricsData();
 
 		/** to prefix the item type with btn, a ,div etc **/
-		data.ItemName = this.getTagName(target) + data.ItemName;
+			data.ItemName = this.getTagName(target) + data.ItemName;
 
 
 		if (this.metrics && this.metrics.sendAsync) {

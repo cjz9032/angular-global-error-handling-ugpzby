@@ -95,7 +95,7 @@
 				}
 			}
 
-			&.black {
+			&.black, &.text-blue {
 				.item-icon {
 					.icon-bkg {
 						background: linear-gradient($gradient_angle, $main_darker 0%, $main_darkest 100%);
@@ -168,7 +168,7 @@
 						color: $stop_dark;
 					}
 
-					&.blue {
+					&.blue, &.text-blue {
 						color: $main_gstart;
 					}
 

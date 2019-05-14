@@ -6,9 +6,9 @@
 			ngbSlide>
 			<a [href]="model.link"
 				vtrMetrics
-				[metricsItem]="'link.'+model.cardTitle"
-				[metricsParent]="'carousel'"
-				[metricsEvent]="'docClick'"
+				[metricsItem]="model.cardTitle"
+				[metricsParent]="'dashboard'"
+				[metricsEvent]="'articleclick'"
 				[metricsViewOrder]="cIndex"
 				[metricsPageNumber]="cIndex"
 				[metricsItemPosition]="cIndex"
