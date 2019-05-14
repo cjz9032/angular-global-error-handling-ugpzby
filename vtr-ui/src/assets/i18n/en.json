@@ -853,6 +853,7 @@
 	"lenovoId": {
 		"login": "Login",
 		"logout": "Logout",
+		"unlockExclusives": "Unlock Exclusives",
 		"user": "User",
 		"welcomeText": "Looking energized today {{firstName}}!",
 		"welcomeTextWithoutUserName": "Looking energized today!",

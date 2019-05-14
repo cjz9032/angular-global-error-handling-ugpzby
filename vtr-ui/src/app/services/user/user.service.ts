@@ -19,6 +19,7 @@ export class UserService {
 
 	cookies = {};
 	public auth = false;
+	public starter = false;
 	token = '';
 
 	public firstName = 'User';
@@ -86,21 +87,32 @@ export class UserService {
 		const accountState = this.hadEverSignIn();
 		const starterStatus = this.getStarterIdStatus();
 		let loginSuccess = false;
-		if (this.lid !== undefined) {
-			this.lid.loginSilently().then((result) => {
-				if (result.success && result.status === 0) {
-					loginSuccess = true;
-					self.lid.getUserProfile().then((profile) => {
-						if (profile.success && profile.status === 0) {
-							self.setName(profile.firstName, profile.lastName);
-							self.auth = true;
+		this.lidStarterHelper.isStarterAccountScenario().then((isStarterAccount) => {
+			if (self.lid !== undefined) {
+				if (!isStarterAccount) {
+					self.lid.loginSilently().then((result) => {
+						if (result.success && result.status === 0) {
+							loginSuccess = true;
+							self.lid.getUserProfile().then((profile) => {
+								if (profile.success && profile.status === 0) {
+									self.setName(profile.firstName, profile.lastName);
+									self.setAuth(true);
+								}
+							});
 						}
+		
+						self.sendSigninMetrics(loginSuccess ? 'success' : 'failure', starterStatus, accountState, 'AppOpen');
 					});
+				} else {
+					self.lidStarterHelper.getStarterAccountToken().then((token) => {
+						if (token && self.lidStarterHelper.isStarterAccount(token)) {
+							self.starter = true;
+						}
+					})
 				}
+			}
+		})
 
-				this.sendSigninMetrics(loginSuccess ? 'success' : 'failure', starterStatus, accountState, 'AppOpen');
-			});
-		}
 		this.devService.writeLog('LOGIN(SILENTLY): ', self.auth);
 	}
 
@@ -140,7 +152,9 @@ export class UserService {
 			this.commonService.getLocalStorageValue(LocalStorageKey.LidFirstSignInDate, signinDate);
 			this.lidStarterHelper.updateUserSettingXml({ lastSignIndate: signinDate, staterAccount: null });
 		}
-
+		if (auth && this.starter) {
+			this.starter = false;
+		}
 		this.devService.writeLog('SET AUTH');
 		this.devService.writeLog('LOGIN RES', auth);
 		this.auth = auth;
