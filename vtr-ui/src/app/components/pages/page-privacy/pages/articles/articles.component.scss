@@ -1,0 +1,11 @@
+
+.articles-wrapper {
+  width: 100%;
+  display: flex;
+}
+.article-preview {
+  width: 50%;
+  &__image {
+    width: 100%;
+  }
+}

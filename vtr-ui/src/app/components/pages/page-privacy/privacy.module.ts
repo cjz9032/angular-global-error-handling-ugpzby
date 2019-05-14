@@ -39,6 +39,7 @@ import { UserDataGetStateService } from './common/services/user-data-get-state.s
 import { AnalyticsService } from './common/services/analytics.service';
 import { TaskActionService } from './common/services/task-action.service';
 import { ArticlesComponent } from './pages/articles/articles.component';
+import { ArticleSingleComponent } from './pages/articles/article-single/article-single.component';
 
 library.add(fal);
 
@@ -71,6 +72,7 @@ library.add(fal);
 		PrivacyDashboardListComponent,
 		LandingComponent,
 		ArticlesComponent,
+		ArticleSingleComponent,
 	],
 	providers: [
 		TrackersPopupService,
