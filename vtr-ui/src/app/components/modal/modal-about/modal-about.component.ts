@@ -43,8 +43,8 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 		const agreementUrl = `assets/licenses/Agreement/${this.lang}.html`;
 		const licenseModalMetrics = {
 			pageName: 'Page.Support.Article',
-			pageContext: 'Licenses agreement',
-			closeButton: 'LicensesAgreementCloseButton',
+			pageContext: 'License agreement',
+			closeButton: 'LicenseAgreementCloseButton',
 		};
 		const aboutModal: NgbModalRef = this.modalService.open(ModalLicenseComponent, {
 			size: 'lg',
