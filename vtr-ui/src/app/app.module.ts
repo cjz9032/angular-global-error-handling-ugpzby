@@ -182,6 +182,8 @@ import { UiGamingCollapsibleContainerComponent } from './components/ui/ui-gaming
 import { PageMacrokeyComponent } from './components/pages/page-macrokey/page-macrokey.component';
 import { PageLightingcustomizeComponent } from './components/pages/page-lightingcustomize/page-lightingcustomize.component';
 import { PageHardwarescanComponent } from './components/pages/page-hardwarescan/page-hardwarescan.component';
+import { UiRoundedRectangleRadioComponent } from './components/ui/ui-rounded-rectangle-radio/ui-rounded-rectangle-radio.component';
+import { CameraBackgroundBlurComponent } from './components/camera-background-blur/camera-background-blur.component';
 
 
 library.add(fas);
@@ -322,7 +324,9 @@ library.add(fal);
 		UiGamingCollapsibleContainerComponent,
 		PageMacrokeyComponent,
 		PageLightingcustomizeComponent,
-		PageHardwarescanComponent
+		PageHardwarescanComponent,
+		UiRoundedRectangleRadioComponent,
+		CameraBackgroundBlurComponent
 	],
 	imports: [
 		BrowserModule,

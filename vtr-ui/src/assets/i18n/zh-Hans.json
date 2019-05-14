@@ -499,7 +499,11 @@
                     "contrast": "对比度",
                     "autoExposure": "自动曝光",
                     "autoFocus": "自动对焦",
-                    "notAvailable": "相机不可用"
+					"notAvailable": "相机不可用",
+					"camerablur": {
+						"title": "Camera Background Blur",
+						"caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections."
+					}
                 }
             }
         },

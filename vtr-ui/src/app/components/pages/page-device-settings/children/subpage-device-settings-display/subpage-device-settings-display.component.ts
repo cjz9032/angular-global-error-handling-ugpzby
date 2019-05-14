@@ -38,6 +38,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	private notificationSubscription: Subscription;
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	public shouldCameraSectionDisabled = true;
+	public showCameraBackgroundBlurFeature = true;
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	headerMenuItems = [
@@ -540,6 +541,14 @@ export class SubpageDeviceSettingsDisplayComponent
 	public onCardCollapse(isCollapsed: boolean) {
 		if (!isCollapsed) {
 			this.manualRefresh.emit();
+		}
+	}
+
+	public onCameraBackgroundBlur($event: any) {
+		try {
+			this.showCameraBackgroundBlurFeature = $event.switchValue;
+		} catch (error) {
+			console.error(error.message);
 		}
 	}
 }
