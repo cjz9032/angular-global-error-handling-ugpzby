@@ -22,6 +22,9 @@ import { PageSupportDetailComponent } from './components/pages/page-support-deta
 import { PageUserComponent } from './components/pages/page-user/page-user.component';
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
 import { WindowsHelloGuardService } from './services/guard/windows-hello-guardService.service';
+import { PrivacyModule } from './components/pages/page-privacy/privacy.module';
+import { GuardService } from './services/guard/security-guardService.service';
+import { LocalStorageKey } from './enums/local-storage-key.enum';
 
 const routes: Routes = [
 	{
@@ -99,7 +102,7 @@ const routes: Routes = [
 			}
 		]
 	},
-	 {
+	{
 		path: 'device/system-updates',
 		component: PageDeviceUpdatesComponent,
 		data: {
@@ -108,29 +111,42 @@ const routes: Routes = [
 	}, {
 		path: 'security',
 		component: PageSecurityComponent,
-		data: { pageName: 'Security.MySecurity' }
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
+		data: {
+			pageName: 'Security.MySecurity'
+		}
 
 	}, {
 		path: 'security/anti-virus',
 		component: PageSecurityAntivirusComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
-			pageName: 'Security.AntiVirus'
+			pageName: 'Security.AntiVirus',
+			pageContent: LocalStorageKey.SecurityCurrentPage
 		}
 	}, {
 		path: 'security/wifi-security',
 		component: PageSecurityWifiComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Security.WifiSecurity'
 		}
 	}, {
 		path: 'security/password-protection',
 		component: PageSecurityPasswordComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Security.PasswordProtection'
 		}
 	}, {
 		path: 'security/internet-protection',
 		component: PageSecurityInternetComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Security.InternetProtection'
 		}
@@ -138,6 +154,7 @@ const routes: Routes = [
 		path: 'security/windows-hello',
 		component: PageSecurityWindowsHelloComponent,
 		canActivate: [WindowsHelloGuardService],
+		canDeactivate: [GuardService],
 		data: {
 			pageName: 'Security.WindowsHello'
 		}
