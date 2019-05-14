@@ -11,13 +11,12 @@ import { ChoseBrowserGuard } from './common/guards/chose-browser.guard';
 
 const adminRoutes: Routes = [
 	{
-		path: RoutersName.MAIN,
+		path: RoutersName.PRIVACY,
 		component: MainLayoutComponent,
 		children: [
 			{
 				path: RoutersName.MAIN, // /privacy
 				component: ResultComponent,
-				pathMatch: 'full'
 			}, {
 				path: RoutersName.BREACHES,
 				component: BreachedAccountsComponent

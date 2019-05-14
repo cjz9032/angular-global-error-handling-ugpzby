@@ -2,7 +2,7 @@ import { PageLightingcustomizeComponent } from './components/pages/page-lighting
 import { PageHardwarescanComponent } from './components/pages/page-hardwarescan/page-hardwarescan.component';
 import { PageMacrokeyComponent } from './components/pages/page-macrokey/page-macrokey.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
 import { PageDeviceComponent } from './components/pages/page-device/page-device.component';
 import { PageDeviceGamingComponent } from './components/pages/page-device-gaming/page-device-gaming.component';
@@ -22,7 +22,6 @@ import { PageSupportDetailComponent } from './components/pages/page-support-deta
 import { PageUserComponent } from './components/pages/page-user/page-user.component';
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
 import { WindowsHelloGuardService } from './services/guard/windows-hello-guardService.service';
-import { PrivacyModule } from './components/pages/page-privacy/privacy.module';
 
 const routes: Routes = [
 	{
@@ -165,12 +164,6 @@ const routes: Routes = [
 		component: PageUserComponent,
 		data: {
 			pageName: 'User'
-		}
-	}, {
-		path: 'privacy',
-		loadChildren: () => PrivacyModule,
-		data: {
-			pageName: 'Page.Privacy'
 		}
 	},
 ];
