@@ -6,7 +6,6 @@ import * as X2JS from 'x2js';
 import { DeviceService } from '../device/device.service';
 import { environment } from '../../../environments/environment';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import {v4 as uuidv4 } from 'uuid';
 
 declare var Windows;
 
@@ -88,7 +87,7 @@ export class LIDStarterHelper {
 		private devService: DevService,
 		private commonService: CommonService,
 		private deviceService: DeviceService,
-		vantageShellService: VantageShellService,
+		private vantageShellService: VantageShellService,
 	) {
 		// DUMMY
 		this.lid = vantageShellService.getLenovoId();
@@ -108,7 +107,7 @@ export class LIDStarterHelper {
 	getDeviceId() {
 		let deviceId = this.commonService.getLocalStorageValue(LocalStorageKey.LidFakeDeviceID);
 		if (!deviceId) {
-			deviceId = uuidv4().replace(/-/g, '');
+			deviceId = this.vantageShellService.generateGuid().replace(/-/g, '');
 			this.commonService.setLocalStorageValue(LocalStorageKey.LidFakeDeviceID, deviceId);
 		}
 		return deviceId;
@@ -153,13 +152,16 @@ export class LIDStarterHelper {
 		return oobeData;
 	}
 
-
-	async postAsync(strUrl, postData) {
+	async postFormData(strUrl, postData) {
 		try {
-			const httpContent = new Windows.Web.Http.HttpFormUrlEncodedContent(postData);
-			const url = new Windows.Foundation.Uri(strUrl);
 			const client = new Windows.Web.Http.HttpClient();
-			const response = await client.postAsync(url, httpContent);
+			const url = new Windows.Foundation.Uri(strUrl);
+			const request = new Windows.Web.Http.HttpRequestMessage(Windows.Web.Http.HttpMethod.post, url);
+			request.content = new Windows.Web.Http.HttpStringContent(postData,
+				Windows.Storage.Streams.UnicodeEncoding.utf8,
+				'application/x-www-form-urlencoded');
+
+			const response = await client.sendRequestAsync(request);
 			return await response.content.readAsStringAsync();
 		} catch (ex) {
 			this.devService.writeLog('Getting starter id info', ex.message);
@@ -202,28 +204,31 @@ export class LIDStarterHelper {
 			lanName = languageDic['en_us'];
 		}
 
-		const payload = new Windows.Foundation.Collections.StringMap();
+		const mapData = new Windows.Foundation.Collections.StringMap();
 		try {
-			payload.insert('oobeversion', 'W10_WW_1.0_A');
-			payload.insert('optins', '00:00:00:00');
-			payload.insert('liduid', 'STARTER');
-			payload.insert('email', '');
-			payload.insert('name', '');
-			payload.insert('lang', lanName);
-			payload.insert('source', this.generateSourceName('starterid'));
-			payload.insert('deviceid', this.getDeviceId());
-			payload.insert('deviceidtype', DEVICE_ID_TYPE);
-			payload.insert('model', mathineInfo.mtm);
-			payload.insert('serial', mathineInfo.serialnumber);
-			payload.insert('date', new Date().toISOString().substring(0, 19));
+			//payload.insert('oobeversion', 'W10_WW_1.0_A');
+			mapData.insert('optins', '00:00:00:00');
+			mapData.insert('liduid', 'STARTER');
+			mapData.insert('email', '');
+			mapData.insert('name', '');
+			mapData.insert('lang', lanName);
+			mapData.insert('source', this.generateSourceName('starterid'));
+			mapData.insert('deviceid', this.getDeviceId());
+			mapData.insert('deviceidtype', DEVICE_ID_TYPE);
+			mapData.insert('model', mathineInfo.mtm);
+			mapData.insert('serial', mathineInfo.serialnumber);
+			mapData.insert('date', new Date().toISOString().substring(0, 19));
 		} catch (ex) {
 			console.log(ex.message);
 		}
 
-		const result = await this.postAsync(url, payload);
-		const accountUIDPatten = /<LenovoID>[\w|\W]*<AccountUID>([\w\s]+)<\/AccountUID>[\w|\W]*<\/LenovoID>/;
+		const formContent = new Windows.Web.Http.HttpFormUrlEncodedContent(mapData);
+		const strContent = 'oobeversion=W10_WW_1.0_A&' + formContent.toString();
+
+		const result = await this.postFormData(url, strContent);
+		const accountUIDPatten = /<LenovoID>[\w|\W]*<AccountUID>([\w\s]+@lenovoid.com)<\/AccountUID>[\w|\W]*<\/LenovoID>/;
 		const rexAccountUID = accountUIDPatten.exec(result);
-		return rexAccountUID ?  rexAccountUID[1] : '';
+		return rexAccountUID ? rexAccountUID[1] : '';
 	}
 
 	async getFromUserSetting() {
