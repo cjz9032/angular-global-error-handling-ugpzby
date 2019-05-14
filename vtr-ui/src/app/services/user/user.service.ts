@@ -105,7 +105,7 @@ export class UserService {
 					});
 				} else {
 					self.lidStarterHelper.getStarterAccountToken().then((token) => {
-						if (token && self.lidStarterHelper.isStarterAccount(token)) {
+						if (token && self.lidStarterHelper.isStarterToken(token)) {
 							self.starter = true;
 						}
 					})

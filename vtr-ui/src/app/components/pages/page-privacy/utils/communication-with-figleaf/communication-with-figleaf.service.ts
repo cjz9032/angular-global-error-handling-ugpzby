@@ -1,4 +1,4 @@
-import { ApplicationRef, ChangeDetectorRef, Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { FigleafConnectorInstance as FigleafConnector, MessageToFigleaf } from './figleaf-connector';
 import { EMPTY, from, ReplaySubject, timer } from 'rxjs';
 import { catchError, filter, switchMap } from 'rxjs/operators';

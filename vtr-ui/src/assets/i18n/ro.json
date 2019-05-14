@@ -1,0 +1,310 @@
+{
+    "common": {
+        "menu": {
+            "security": {
+                "title": "Securitate",
+                "sub1": "Securitatea mea",
+                "sub2": "Antivirus:",
+                "sub3": "Securitate WiFi",
+                "sub4": "Sănătatea parolei",
+                "sub5": "Protecție pe internet",
+                "sub6": "Windows Hello"
+            }
+        },
+        "securityAdvisor": {
+            "title": "Asistenţă securitate",
+            "subtitle": "VERIFICAȚI DACĂ DISPOZITIVUL DVS. ESTE SECURIZAT.",
+            "antiVirus": "Antivirus:",
+            "wifi": "Securitate WiFi",
+            "pswdMgr": "Password Manager",
+            "vpn": "VPN",
+            "windowsHello": "Windows Hello",
+            "enabled": "ACTIVAT",
+            "disabled": "DEZACTIVAT",
+            "partiallyProtected": "PROTEJAT PARȚIAL",
+            "installed": "INSTALAT",
+            "notInstalled": "NEINSTALAT",
+            "loading": "Încărcare",
+            "notFound": "NEGĂSIT",
+            "registered": "ÎNREGISTRAT",
+            "notRegistered": "NEÎNREGISTRAT"
+        }
+    },
+    "support": {
+        "common": {
+            "getSupport": "Obțineți asistență"
+        },
+        "warranty": {
+            "titleInWarranty": "ÎN GARANȚIE",
+            "titleWarrantyExpired": "GARANȚIA A EXPIRAT",
+            "titleWarrantyNotFound": "GARANȚIA NU A FOST GĂSITĂ",
+            "statusInWarranty": "În garanție",
+            "statusWarrantyExpired": "Expirat",
+            "statusWarrantyNotFound": "Garanția nu a fost găsită",
+            "yearDepotWarranty": "Garanție de tip Y Depot",
+            "warrantyDetails": "Detalii garanție:",
+            "startDate": "Dată de început: ",
+            "endDate": "Dată de încheiere: ",
+            "status": "Stare: ",
+            "subDescription1": "Acest produs are garanția limitată și beneficiază de service depot. Clienții pot apela la centrul de service local pentru informații suplimentare. Reprezentanții pot furniza reparații pentru acest produs.",
+            "subDescription2": "Nu am putut localiza detaliile de garanție pentru dispozitivul dvs. Pentru a obține mai multe opțiuni de garanție, accesați site-ul nostru de asistență.",
+            "viewWarrantyOptions": "VIZUALIZARE OPȚIUNI DE GARANȚIE"
+        },
+        "documentation": {
+            "title": "Documentație",
+            "listUserGuide": "Ghidul utilizatorului"
+        },
+        "needHelp": {
+            "title": "Aveţi nevoie de ajutor?",
+            "description": "CONTACTAȚI-NE PENTRU A VĂ AJUTA.",
+            "listLenovoCommunity": "Comunitatea Lenovo",
+            "listContactCustomerService": "Contactați serviciul pentru clienți",
+            "listContactUsOnWechat": "Contactați-ne pe WeChat",
+            "weChatDescription": "Puneți-ne o întrebare pe WeChat și vă vom răspunde rapid"
+        },
+        "quicklinks": {
+            "title": "Linkuri rapide",
+            "description": "CONTACTAȚI-NE PENTRU A VĂ AJUTA.",
+            "listETicket": "Obțineți asistență cu E-ticket",
+            "listServiceProvider": "Găsiți un furnizor de servicii",
+            "listAboutLenovoVantage": "Despre Lenovo Vantage"
+        },
+        "about": {
+            "version": "Versiune",
+            "licenseAgreement": "Acord de licenţă",
+            "otherSoftwareLicenses": "Alte licențe software",
+            "ourWebsite": "Site-ul nostru",
+            "aboutYourDevice": "Despre dispozitiv",
+            "copyright": "© 2002-2019 Lenovo toate drepturile sunt rezervate"
+        }
+    },
+    "security": {
+        "landing": {
+            "fully": "Complet protejat",
+            "fullyDesc": "Felicitări! Sunteți bine protejat.",
+            "notFully": "Neprotejat complet",
+            "notFullyDesc": "Nu sunteți complet protejat. Aflați acum ce puteți face ca să vă protejați mai bine.",
+            "security101": "ASISTENȚĂ PRIVIND SECURITATEA 101",
+            "firewall": "Paravan de protecție",
+            "pwdHealth": "Sănătatea parolei",
+            "vpnSecurity": "Securitate VPN",
+            "vpnVirtual": "Rețea virtuală privată",
+            "wifiConnected": "WiFi și securitate conectată, la domiciliu",
+            "connectedHomeSecurity": "Securitate conectată, la domiciliu",
+            "fingerprint": "Cititor de amprentă",
+            "seeAllNetwork": "Vizualizați toate rețelele asociate",
+            "maliciousNetwork": "Computerul dvs. a fost împiedicat să se alăture {{maliciousWifi}} rețele rău-intenționate, în această lună.",
+            "good": "BUN",
+            "malicious": "RĂU-INTENȚIONAT",
+            "suspicious": "SUSPECTED"
+        },
+        "antivirus": {
+            "common": {
+                "title": "Antivirus:",
+                "back": "ÎNAPOI",
+                "why": "De ce McAfee?",
+                "recommends": "Lenovo recomandă McAfee pentru a vă proteja toate dispozitivele cu:",
+                "award": "protecția premiată de la cele mai recente amenințări online, inclusiv ransomware și malware",
+                "dedicated": "Securitate dedicată care depășește în mod constant performanța Defender-ului și a altor furnizori principali de programe antivirus",
+                "deviceToCloud": "Tehnologie „de la dispozitiv la cloud”, care nu vă va încetini PC-ul",
+                "poweredBy": "Dezvoltat de McAfee",
+                "privacyTerms": "Citiți mai multe despre <tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>",
+                "mcafeePremium": "Protecție premium de la McAfee",
+                "protectedBy": "La ora actuală, sunteți protejat de: ",
+                "betterProtected": ".Totuși, ați putea fi mai bine protejat cu McAfee LiveSafe",
+                "virusScan": "SCANARE VIRUȘI",
+                "firewall": "PARAVAN DE PROTECȚIE",
+                "disabled": "DEZACTIVAT",
+                "enableVirusScan": "ACTIVARE SCANARE VIRUȘI",
+                "enableFirewall": "ACTIVARE PARAVAN DE PROTECȚIE"
+            },
+            "windowsDefender": {
+                "optimallyProtected": "Nu este protejat în mod optim",
+                "subtitle": "La ora actuală, sunteți protejat de Windows Defender.Totuși, ați putea fi mai bine protejat cu McAfee LiveSafe. Aflaţi mai multe mai jos.",
+                "learnMore": "AFLAȚI MAI MULTE DESPRE McAfee",
+                "windowsProtected": "Protecție de bază Windows Defender",
+                "windowsSubtitle": "Windows Defender oferă protecție de bază pentru dispozitivul dvs."
+            },
+            "mcafee": {
+                "title": "McAfee LiveSafe",
+                "subtitle": "La ora actuală, sunteți protejat de McAfee LiveSafe",
+                "valid": "Valabil până la",
+                "upgrade": "Faceți upgrade acum",
+                "launch": "LANSAȚI McAfee",
+                "getMacfee": "OBȚINEȚI McAfee",
+                "topBenefits": "Cele mai importante avantaje ale McAfee LiveSafe",
+                "awardTitle": "Antivirus premiat",
+                "awardSubtitle": "Blochează viruși, programe de tip malware, ransomware, spyware, programe nedorite și multe altele pe computerul dvs.",
+                "encryptedTitle": "Stocare criptată",
+                "encryptedSubtitle": "Păstraţi fişierele sensibile private stocându-le pe PC, cu criptare pe 128 de biţi.",
+                "identityTitle": "Protecție împotriva furtului de identitate",
+                "identitySubtitle": "Protejaţi-vă singur identitatea împotriva furtului şi fraudei.",
+                "supportTitle": "Asistenţă pentru clienţi gratuită",
+                "supportSubtitle": "Primiţi asistenţă prin telefon, prin chat sau online pe toată durata abonamentului.",
+                "antiTitle": "Anti-spam",
+                "antiSubtitle": "Blochează mesajele periculoase înainte de a ajunge în Inbox, eliminând e-mailurile care pot include linkuri riscante şi viruşi.",
+                "virusTitle": "Angajament de protecție împotriva virușilor",
+                "virusSubtitle": "Vă oferă siguranţa că, în cazul în care PC-ul este infectat de un virus, un expert McAfee va accesa de la distanţă computerul pentru a-l elimina.",
+                "parentalTitle": "Control parental",
+                "parentalSubtitle": "Blochează site-urile web şi rezultatele căutărilor pe care nu doriţi să le vadă copiii dumneavoastră. De asemenea, vă permite să setaţi limite pentru timpul petrecut online.",
+                "license": "Licență valabilă până la",
+                "trial": "Perioadă de încercare valabilă până la"
+            },
+            "others": {
+                "othersProtection": "vă oferă protecție de bază pentru dispozitivul dvs."
+            }
+        },
+        "wifisecurity": {
+            "header": {
+                "title": "WiFi și securitate conectată, la domiciliu",
+                "back": "ÎNAPOI"
+            },
+            "container": {
+                "title": "Securitate Wifi Lenovo",
+                "name": "SECURITATE WIFI",
+                "enable": "ACTIVAT",
+                "disable": "DEZACTIVAT",
+                "less": "Mai puține informații",
+                "more": "Mai multe informații",
+                "networkHistory": "Istoric reţea",
+                "connect": "Ultima conectare",
+                "showmore": "Se afişează mai multe",
+                "showless": "Afișează mai puțin",
+                "button": "Activare securitate WiFi",
+                "disableDecribe": "Securitate WiFi Lenovo este un serviciu software avansat bazat pe cloud care ajută dispozitivul să diferenţieze reţelele fără fir sigure de cele potenţial rău intenţionate."
+            },
+            "threatlocator": {
+                "describe": "Utilizați detectorul de amenințări pentru a determina siguranța rețelelor din jurul dvs.",
+                "button": "Verificați amenințarea"
+            },
+            "locationmodal": {
+                "title": "Activare servicii de localizare",
+                "describe1": "Pentru a utiliza funcția Securitate WiFi Lenovo, trebuie să activați serviciile de localizare pentru Lenovo Vantage. Doriţi să activaţi acum localizarea?",
+                "describe2": "Pentru a utiliza funcția securitate conectată, la domiciliu, trebuie să activați serviciile de localizare pentru Lenovo Vantage. Doriţi să activaţi acum localizarea?",
+                "agree": "DE ACORD",
+                "cancel": "ANULARE"
+            }
+        },
+        "homeprotection": {
+            "homesecurity": {
+                "title": "Securitate conectată, la domiciliu",
+                "titleDescription": "Securitatea conectată, la domiciliu, vă menține în siguranță în trei moduri:",
+                "homeSecurityAffect1": "Securitatea conectată, la domiciliu, asigură siguranța dispozitivului și nu a fost atacată",
+                "homeSecurityAffect2": "Securitatea conectată, la domiciliu, asigură faptul că rețelele la care sunteți conectat sunt sigure",
+                "homeSecurityAffect3": "Securitatea conectată, la domiciliu, asigură faptul că alte dispozitive conectate la rețeaua casei dvs. sunt sigure.",
+                "describe": "Dispozitivele și rețelele nesigure pot introduce programe rău-intenționate, pot conduce la furtul de identitate și la scurgeri de date private și financiare. Activați această funcție pentru a reduce riscul de expunere a dispozitivului și rețelei dvs. la atacuri",
+                "subtitle": "Liniştea minţii",
+                "subtitleDescribe": "Securitatea conectată, la domiciliu, vă va trimite o alertă dacă detectează o vulnerabilitate în dispozitivul sau în rețeaua dvs., sau dacă sunteți conectat la o rețea potențial rău-intenționată. Aflați și mai multe despre securitatea conectată, la domiciliu, în „Sfaturi și trucuri”.",
+                "tryNow": "Încercați acum"
+            },
+            "invitationcode": {
+                "button": "Introduceți codul invitației",
+                "buttonDescribe": "Ați conectat deja acest dispozitiv la un cont existent de securitate conectată, la domiciliu.",
+                "title": "Aveți deja cont de securitate conectată, la domiciliu?",
+                "titleDescribe": "Vă rugăm să vă asigurați că permisiunile privind localizarea sunt activate pentru Vantage, pentru a vă adăuga dispozitivul la un cont pentru securitate conectată, la domiciliu, și pentru a utiliza securitatea conectată, la domiciliu.",
+                "enterCode": "Introduceți codul conexiunii",
+                "addHome": "Adăugare domiciliu",
+                "ok": "OK",
+                "continue": "CONTINUARE",
+                "cancel": "Anulare",
+                "validateCode": "VALIDARE COD",
+                "success": "Conectat cu succes",
+                "canUse": "Acum puteți începe să utilizați securitatea conectată, la domiciliu",
+                "tryAgain": "Parola este incorectă. Vă rugăm să încercați din nou!",
+                "activationCode": "COD DE ACTIVARE"
+            },
+            "securityhealth": {
+                "title": "Sănătatea securității",
+                "deviceName1": "Aplicații din surse de încredere",
+                "deviceName2": "Mod dezvoltator",
+                "deviceName3": "Notificare UAC",
+                "deviceName4": "Disponibilitate antivirus",
+                "deviceName5": "Criptare unitate HDD",
+                "deviceName6": "Disponibilitate paravan de protecție",
+                "deviceName7": "Windows activat",
+                "deviceName8": "Disponibilitate actualizări de securitate",
+                "deviceName9": "Protecţie parolă",
+                "deviceName10": "Actualizări automate Disponibilitate serviciu",
+                "fail": "EȘUAT",
+                "pass": "REUȘIT",
+                "learnMoreAboutSecurityHealth": "Aflați mai multe despre fiecare dintre aceste componente <tag>aici</tag>.",
+                "peaceOfMind": "Vreți mai multă liniște sufletească?",
+                "button": "Activare securitate WiFi."
+            }
+        },
+        "vpn": {
+            "statusTitle": "SURFEASY VPN",
+            "title": "Securitate VPN",
+            "header": "Rețea virtuală privată SurfEasy",
+            "whatIsSufEasy": "SurfEasy VPN criptează informațiile pe care le trimiteți și le primiți, astfel încât să vă puteți utiliza în siguranță și privat PC-ul, Mac®-ul, telefonul inteligent sau tableta pe orice conexiune la internet, fără griji.",
+            "helpKeep": "Ajutați păstrarea, în siguranță și privată, a activității dvs. online, cu ajutorul SurfEasy VPN.",
+            "getSufEasy": "Obțineți SurfEasy",
+            "openSufEasy": "Deschideți SurfEasy",
+            "whySufEasy": "De ce să utilizați o rețea virtuală privată (VPN)?",
+            "whySufEasyDescription": "Utilizarea hotspot-urilor Wi-Fi, cum ar fi cele de la cafenele sau aeroporturi, v-ar putea expune datele sensibile la infractorii cibernetici. SurfEasy VPN este un VPN fără jurnal, care criptează datele personale și care nu vă urmărește sau stochează activitatea online sau localizarea.",
+            "startUseSufEasy": "Începeți să utilizați SurfEasy VPN astăzi",
+            "startUseSufEasy1": "Vă ajută să vă asigurați că datele pe care le trimiteți și le primiți sunt securizate și private cu criptare la nivel de bancă.",
+            "startUseSufEasy2": "Ajută la împiedicarea companiilor de a vă urmări activitățile online sau localizarea.",
+            "startUseSufEasy3": "Ofertele gratuite și cele Premium oferă mai multe opțiuni, pentru a se potrivi nevoilor și bugetului dumneavoastră.",
+            "howToUseSufEasy": "Cum se utilizează SurfEasy VPN",
+            "whatCanSufEasy2": "Protejați-vă confidențialitatea și activați SurfEasy VPN atunci când accesați un hotspot Wi-Fi public. Cu un abonament Lenovo Starter VPN, puteți finaliza activitățile de recompensă pentru a câștiga mai multă lățimea de bandă pentru protecția datelor. Faceți upgrade pentru a proteja până la 5 telefoane inteligente, tablete și computere cu lățime de bandă nelimitată.",
+            "getStarted": "Activați SurfEasy VPN:",
+            "getStarted1": "Dați clic pe butonul de mai sus, „Open SurfEasy”, pentru a lansa SurfEasy VPN.",
+            "getStarted2": "Porniți VPN și așteptați un scurt moment pentru confirmarea unei conexiuni securizate.",
+            "getStarted3": "Schimbați regiunea sau localizarea, dacă doriți, și bucurați-vă de o rețea privată securizată.",
+            "poweredBySurfEasy": "Dezvoltat de SurfEasy",
+            "privacyPolicyAndTermsOfService": "Citiți mai multe despre <tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>"
+        },
+        "passwordManager": {
+            "statusTitle": "MANAGER PAROLE DASHLANE",
+            "title": "Sănătatea parolei",
+            "header": "Dashlane",
+            "whatIsPmNotInstalled": "Cel mai sigur, cel mai simplu mod de a salva parole puternice, complexe, și de a vă conecta instantaneu la fiecare site.",
+            "whatIsPmInstalled": "O viață digitală mai sigură vă așteaptă: adăugați parole, activați monitorizarea dark-web-ului, completați automat date personale și de plată.",
+            "startProtect": "Începeți să vă protejați conturile online, în modul simplu.",
+            "discount": "Utilizatorii Lenovo se bucură de Dashlane Premium exclusiv, gratuit 6 luni.",
+            "offer": "Această ofertă este valabilă doar pentru utilizatorii Dashlane!",
+            "getDashLane": "Obțineți Dashlane",
+            "learnMoreAbout": "<tag>Aflați mai multe</tag> despre a profita la maximum de Dashlane",
+            "openDashLane": "Deschideți Dashlane",
+            "neverForget": "Dashlane: nu mai uitați niciodată o parolă",
+            "whatIsDashLane": "Dashlane este un manager de parole și o aplicație de protecție digitală, care funcționează cu browserul dvs. Acesta salvează automat parolele și datele personale, și le amintește pe toate pentru dvs. și stochează totul în siguranță. Dashlane analizează, de asemenea, securitatea contului și oferă modalități ușoare de îmbunătățire a sănătății parolei.",
+            "helpYou": "Dashlane vă ajută",
+            "helpYou1": "Să vă amintiți un număr nelimitat de nume de utilizator și parole.",
+            "helpYou2": "Să vă conectați instantaneu peste tot pentru navigare fără probleme",
+            "helpYou3": "Să vă sincronizați dispozitivele astfel încât să nu rămâneți niciodată fără acces la conturile importante",
+            "helpYou4": "Să vă îmbunătățiți protecția online cu sfaturi ușoare, acționabile",
+            "getStarted": "Începeți să utilizați Dashlane?",
+            "checkOutThisGuide": "Utilizați Dashlane pentru a rămâne în siguranță online, economisind timp și eliminând frustrarea. Pentru instrucțiuni detaliate despre cum să începeți, <tag>consultați acest ghid.</tag>",
+            "allowsYou": "Dashlane vă permite să",
+            "allowsYou1": "Să vă conectați instantaneu peste tot pentru navigare fără probleme - Să vă sincronizați dispozitivele astfel încât să nu rămâneți niciodată fără acces la conturile importante",
+            "allowsYou2": "monitorizați dark web-ul pentru datele dvs. cu caracter personal",
+            "allowsYou3": "să rămâneți în siguranță pe rețelele WiFi nesecurizate cu VPN integrat",
+            "allowsYou4": "să partajați parole în siguranță, fără a le dezvălui",
+            "poweredByDashLane": "Dezvoltat de Dashlane",
+            "privacyPolicyAndTermsOfService": "Citiți mai multe despre <tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>"
+        },
+        "windowsHello": {
+            "statusTitle": "WINDOWS HELLO",
+            "title": "Windows Hello",
+            "protectYourDevice": "Protejați-vă dispozitivul cu aceste opțiuni de siguranță recomandate de Lenovo.",
+            "signIn": "Autentificați-vă rapid și în siguranță cu ajutorul Windows Hello.",
+            "signInTitle": "Autentificați-vă rapid și în siguranță cu ajutorul Windows Hello",
+            "setUp": "Instalați Windows Hello",
+            "whyWindowsHello": "De ce Windows Hello?",
+            "whyWindowsHelloDescription1": "Windows Hello face autentificarea în computerul dvs. mai ușoară și mai sigură și poate fi utilizată și pentru aplicațiile Microsoft online. Urmați instrucțiunile de mai jos pentru a începe să utilizați Windows Hello.",
+            "startUsingToday": "Începeți să utilizați Windows Hello astăzi",
+            "visitAndRegister": "Vizitați pagina Windows Hello și înregistrați-vă amprenta.",
+            "visitInSettings": "<tag> Accesați Windows Hello</tag> în setările de sistem",
+            "unlock": "Utilizați Windows Hello pentru a vă conecta și a vă debloca PC-ul cu atingerea unui deget pe senzor.",
+            "startUsingWindowsHello": "Începeți să utilizați Windows Hello pentru a vă autentifica la aplicațiile Microsoft, cum ar fi Outlook, OneDrive, Office 365 și Xbox Live.",
+            "visitMicrosoft": "Vizitați Microsoft",
+            "poweredByWindowsHello": "Dezvoltat de Windows Hello",
+            "privacyPolicy": "Citiți mai multe despre <tag>politica privind confidențialitatea</tag>",
+            "whyWindowsHelloDescription2": "Windows Hello face autentificarea în PC-ul dvs. să fie mai ușoară și mai sigură. De asemenea, poate fi utilizat pentru aplicațiile Microsoft online. Urmați instrucțiunile de mai jos, pentru a începe să utilizați Windows Hello",
+            "authentication": "Autentificare Windows Hello",
+            "traditional": "Parolele tradiționale pot fi furate și folosite pentru a vă accesa contul de oriunde din lume. Mai sigur și mai convenabil. Windows Hello este următoarea generație în domeniul parolelor. Utilizați cititorul de amprente [sau camera IR] în locul parolelor nesigure, pentru a vă autentifica.",
+            "howToStart": "Cum încep să utilizez Windows Hello?"
+        }
+    }
+}

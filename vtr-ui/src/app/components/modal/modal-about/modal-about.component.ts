@@ -36,15 +36,15 @@ export class ModalAboutComponent implements OnInit, AfterViewInit {
 	}
 
 	ngAfterViewInit() {
-		setTimeout(() => { document.getElementById('about-dialog').focus(); }, 0);
+		setTimeout(() => { document.getElementById('about-dialog').parentElement.parentElement.parentElement.parentElement.focus(); }, 0);
 	}
 
 	agreementClicked() {
 		const agreementUrl = `assets/licenses/Agreement/${this.lang}.html`;
 		const licenseModalMetrics = {
 			pageName: 'Page.Support.Article',
-			pageContext: 'Licenses agreement',
-			closeButton: 'LicensesAgreementCloseButton',
+			pageContext: 'License agreement',
+			closeButton: 'LicenseAgreementCloseButton',
 		};
 		const aboutModal: NgbModalRef = this.modalService.open(ModalLicenseComponent, {
 			size: 'lg',

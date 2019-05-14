@@ -1,5 +1,12 @@
 <div class="modal-body vtr-modal-article-detail">
-	<div role="button" class="close-btn" aria-hidden="true" (click)="closeModal()">
+	<div role="button"
+		class="close-btn"
+		aria-hidden="true"
+		vtrMetrics
+		metricsItem="ArticleCloseButton"
+		metricsEvent="FeatureClick"
+		metricsParent="{{ metricsParent }}"
+	 (click)="closeModal()">
 		<img src="/assets/icons/Close.svg" alt="" srcset="">
 	</div>
 	<h1>{{articleTitle}}</h1>

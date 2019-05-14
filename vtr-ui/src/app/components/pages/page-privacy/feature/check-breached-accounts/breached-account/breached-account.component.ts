@@ -1,11 +1,4 @@
-import {
-	Component,
-	EventEmitter,
-	Input,
-	Output,
-	OnInit,
-	AfterViewInit,
-} from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit, AfterViewInit } from '@angular/core';
 import { BreachedAccount } from '../../../common/services/breached-accounts.service';
 import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';

@@ -1,0 +1,310 @@
+{
+    "common": {
+        "menu": {
+            "security": {
+                "title": "Sikkerhet",
+                "sub1": "Min sikkerhet",
+                "sub2": "Antivirus",
+                "sub3": "WiFi-sikkerhet",
+                "sub4": "Passordtilstand",
+                "sub5": "Internettbeskyttelse",
+                "sub6": "Windows Hello"
+            }
+        },
+        "securityAdvisor": {
+            "title": "Sikkerhetsrådgivning",
+            "subtitle": "KONTROLLER OM ENHETEN ER SIKRET.",
+            "antiVirus": "Antivirus",
+            "wifi": "WiFi-sikkerhet",
+            "pswdMgr": "Password Manager",
+            "vpn": "VPN",
+            "windowsHello": "Windows Hello",
+            "enabled": "AKTIVERT",
+            "disabled": "DEAKTIVERT",
+            "partiallyProtected": "DELVIS BESKYTTET",
+            "installed": "INSTALLERT",
+            "notInstalled": "IKKE INSTALLERT",
+            "loading": "Laster",
+            "notFound": "IKKE FUNNET",
+            "registered": "REGISTRERT",
+            "notRegistered": "IKKE REGISTRERT"
+        }
+    },
+    "support": {
+        "common": {
+            "getSupport": "Få støtte"
+        },
+        "warranty": {
+            "titleInWarranty": "INNENFOR GARANTIPERIODEN",
+            "titleWarrantyExpired": "GARANTIEN ER UTLØPT",
+            "titleWarrantyNotFound": "FANT IKKE GARANTI",
+            "statusInWarranty": "Innenfor garantiperioden",
+            "statusWarrantyExpired": "Utløpt",
+            "statusWarrantyNotFound": "Fant ikke garanti",
+            "yearDepotWarranty": "års servicesentergaranti",
+            "warrantyDetails": "Garantidetaljer:",
+            "startDate": "Startdato: ",
+            "endDate": "Sluttdato: ",
+            "status": "Status: ",
+            "subDescription1": "Dette produktet dekkes av den begrensede garantien og er berettiget til reparasjon på servicesenter. Kunder kan ringe sitt lokale servicesenter for å få mer informasjon. Forhandlere kan tilby reparasjon av dette produktet.",
+            "subDescription2": "Vi fant ikke noen garantidetaljer for enheten din. Gå til støttenettstedet vårt for å få flere garantialternativer.",
+            "viewWarrantyOptions": "SE GARANTIALTERNATIVER"
+        },
+        "documentation": {
+            "title": "Dokumentasjon",
+            "listUserGuide": "Brukerveiledning"
+        },
+        "needHelp": {
+            "title": "Trener du hjelp?",
+            "description": "KONTAKT OSS FOR Å FÅ HJELP.",
+            "listLenovoCommunity": "Lenovo-samfunnet",
+            "listContactCustomerService": "Kontakt kundeservice",
+            "listContactUsOnWechat": "Kontakt oss på WeChat",
+            "weChatDescription": "Still oss et spørsmål på WeChat, så skal vi svare så fort vi kan"
+        },
+        "quicklinks": {
+            "title": "Hurtigkoblinger",
+            "description": "KONTAKT OSS FOR Å FÅ HJELP.",
+            "listETicket": "Få støtte med en e-forespørsel",
+            "listServiceProvider": "Finn en tjenesteleverandør",
+            "listAboutLenovoVantage": "Om Lenovo Vantage"
+        },
+        "about": {
+            "version": "Versjon",
+            "licenseAgreement": "Lisensavtale",
+            "otherSoftwareLicenses": "Andre programvarelisenser",
+            "ourWebsite": "Nettstedet vårt",
+            "aboutYourDevice": "Om enheten din",
+            "copyright": "© 2002–2019 Lenovo. Med enerett."
+        }
+    },
+    "security": {
+        "landing": {
+            "fully": "FULLSTENDIG BESKYTTET",
+            "fullyDesc": "Gratulerer! Du er godt beskyttet.",
+            "notFully": "Ikke fullstendig beskyttet",
+            "notFullyDesc": "Du er ikke fullstendig beskyttet. Finn ut nå hvordan du beskytter deg selv.",
+            "security101": "SIKKERHETSRÅDGIVER 101",
+            "firewall": "Brannmur",
+            "pwdHealth": "Passordtilstand",
+            "vpnSecurity": "VPN-sikkerhet",
+            "vpnVirtual": "Virtuelt privat nettverk",
+            "wifiConnected": "WiFi og Sikkerhet for tilkoblede hjem",
+            "connectedHomeSecurity": "Sikkerhet for tilkoblede hjem",
+            "fingerprint": "Fingeravtrykkleser",
+            "seeAllNetwork": "Se alle sammenkoblede nettverk",
+            "maliciousNetwork": "Hindret at datamaskinen ble med i {{maliciousWifi}}skadelig nettverk denne måneden.",
+            "good": "GOD",
+            "malicious": "SKADELIG",
+            "suspicious": "MISTENKELIG"
+        },
+        "antivirus": {
+            "common": {
+                "title": "Antivirus",
+                "back": "TILBAKE",
+                "why": "Hvorfor McAfee?",
+                "recommends": "Lenovo anbefaler å beskytte alle enhetene dine med McAfee, som gir deg følgende:",
+                "award": "Prisbelønt beskyttelse mot de nyeste truslene på nettet, inkludert løsepengevirus og skadelig programvare",
+                "dedicated": "Dedikert sikkerhet som gjennomgående gir bedre resultater enn Defender og andre ledende antivirusleverandører",
+                "deviceToCloud": "Skyteknologi som ikke gjør PC-en tregere",
+                "poweredBy": "Leveres av McAfee",
+                "privacyTerms": "Les mer i <tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>",
+                "mcafeePremium": "McAfee Premium-beskyttelse",
+                "protectedBy": "Du er for øyeblikket beskyttet av ",
+                "betterProtected": ".Du kunne imidlertid vært bedre beskyttet med McAfee LiveSafe",
+                "virusScan": "VIRUSSØK",
+                "firewall": "BRANNMUR",
+                "disabled": "DEAKTIVERT",
+                "enableVirusScan": "AKTIVER VIRUSSØK",
+                "enableFirewall": "AKTIVER BRANNMUR"
+            },
+            "windowsDefender": {
+                "optimallyProtected": "Ikke optimalt beskyttet",
+                "subtitle": "Du blir for øyeblikket beskyttet av Windows Defender.Du kan imidlertid beskyttes bedre med McAfee LiveSafe. Finn ut mer nedenfor.",
+                "learnMore": "FINN UT MER OM McAfee",
+                "windowsProtected": "Windows Defender grunnleggende beskyttelse",
+                "windowsSubtitle": "Windows defender gir grunnleggende beskyttelse for enheten din"
+            },
+            "mcafee": {
+                "title": "McAfee LiveSafe",
+                "subtitle": "Du er for øyeblikket beskyttet av McAfee LiveSafe",
+                "valid": "Gyldig til",
+                "upgrade": "Oppgrader nå",
+                "launch": "START McAfee",
+                "getMacfee": "Få tak i McAfee",
+                "topBenefits": "De beste fordelene til McAfee LiveSafe",
+                "awardTitle": "Prisvinnende antivirus",
+                "awardSubtitle": "Blokkerer virus, skadelig programvare, spionvare, uønskede program og mye mer på PC-en din.",
+                "encryptedTitle": "Kryptert lagring",
+                "encryptedSubtitle": "Beskytt sensitive filer ved å lagre dem med 128-biters kryptering på PC-en.",
+                "identityTitle": "Beskyttelse mot identitetstyveri",
+                "identitySubtitle": "Ta kontrollen, og beskytt identiteten din mot tyveri og svindel.",
+                "supportTitle": "GRATIS kundestøtte",
+                "supportSubtitle": "Du er dekket via telefon, chatting eller via nettet så lenge du abonnerer.",
+                "antiTitle": "Antispam",
+                "antiSubtitle": "Blokkerer skadelige meldinger før de når innboksen din ved å fjerne e-post som kan inneholde farlige koblinger eller virus.",
+                "virusTitle": "Løfte om virusbeskyttelse",
+                "virusSubtitle": "Gir deg trygghet for at hvis PC-en din får et virus, vil en McAfee-ekspert kunne fjerne det fra datamaskinen din fra utsiden.",
+                "parentalTitle": "Tilgangskontroll",
+                "parentalSubtitle": "Blokkerer nettsider og søkeresultater som du ikke vil at barna dine skal se. Lar deg også sette grenser for hvor mye tid de bruker på nettet.",
+                "license": "Lisens gyldig til",
+                "trial": "Prøveversjon gyldig til"
+            },
+            "others": {
+                "othersProtection": "gir grunnleggende beskyttelse for enheten din"
+            }
+        },
+        "wifisecurity": {
+            "header": {
+                "title": "WiFi og Sikkerhet for tilkoblede hjem",
+                "back": "TILBAKE"
+            },
+            "container": {
+                "title": "Lenovo WiFi Sikkerhet",
+                "name": "WIFI-SIKKERHET",
+                "enable": "AKTIVERT",
+                "disable": "DEAKTIVERT",
+                "less": "Mindre informasjon",
+                "more": "Mer info",
+                "networkHistory": "Nettverkshistorikk",
+                "connect": "Sist koblet til",
+                "showmore": "Vis mer",
+                "showless": "Vis mindre",
+                "button": "Aktiver WiFi-sikkerhet",
+                "disableDecribe": "Lenovo WiFi Sikkerhet er en avansert, skybasert programtjeneste som hjelper enhet med å skille trygge trådløse nettverk fra potensielt farlige."
+            },
+            "threatlocator": {
+                "describe": "Bruk trusseldetektoren til å finne ut hvor sikre nettverkene rundt deg er.",
+                "button": "Kontroller trussel"
+            },
+            "locationmodal": {
+                "title": "Aktiver posisjonstjenester",
+                "describe1": "For å bruke Lenovo WiFi Sikkerhet må du aktivere posisjonstjenester for Lenovo Vantage. Vil du aktivere sted nå?",
+                "describe2": "For å bruke Sikkerhet for tilkoblede hjem må du aktivere posisjonstjenester for Lenovo Vantage. Vil du aktivere sted nå?",
+                "agree": "AKSEPTER",
+                "cancel": "AVBRYT"
+            }
+        },
+        "homeprotection": {
+            "homesecurity": {
+                "title": "Sikkerhet for tilkoblede hjem",
+                "titleDescription": "Sikkerhet for tilkoblede hjem holder deg trygg på tre måter:",
+                "homeSecurityAffect1": "Sikkerhet for tilkoblede hjem sikrer at enheten er trygg, og ikke er satt i fare",
+                "homeSecurityAffect2": "Sikkerhet for tilkoblede hjem sikrer at nettverkene du er koblet til er sikre",
+                "homeSecurityAffect3": "Sikkerhet for tilkoblede hjem sikrer at andre enheter som er koblet til hjemmenettverket ditt er sikre.",
+                "describe": "Usikre enheter og nettverk kan medføre skadelig programvare, føre til identitetstyveri og lekke private og økonomiske opplysninger. Aktiver denne funksjonen for å redusere risikoen for enheten din og at hjemmenettverket ditt utsettes for angripere",
+                "subtitle": "Trygghet",
+                "subtitleDescribe": "Sikkerhet for tilkoblede hjem sender deg et varsel hvis den oppdager et sikkerhetsproblem i enheten eller hjemmenettverket, eller hvis du er koblet til et skadelig nettverk. Finn ut mer om Sikkerhet for tilkoblede hjem i Tips og triks.",
+                "tryNow": "Prøv nå"
+            },
+            "invitationcode": {
+                "button": "Skriv inn invitasjonskode",
+                "buttonDescribe": "Du har allerede lagt til denne enheten til en eksisterende Sikkerhet for tilkoblede hjem-konto.",
+                "title": "Har du allerede Sikkerhet for tilkoblede hjem?",
+                "titleDescribe": "Kontroller at plassering er aktivert for Vantage for å legge til enheten i en eksisterende Sikkerhet for tilkoblede hjem-konto, og for å bruke Sikkerhet for tilkoblede hjem.",
+                "enterCode": "Skriv inn tilkoblingskoden",
+                "addHome": "Legg til Hjem",
+                "ok": "OK",
+                "continue": "FORTSETT",
+                "cancel": "Avbryt",
+                "validateCode": "VALIDER KODEN",
+                "success": "Tilkobling vellykket",
+                "canUse": "Du kan nå begynne å bruke Sikkerhet for tilkoblede hjem",
+                "tryAgain": "Koden er feil. Prøv på nytt.",
+                "activationCode": "AKTIVERINGSKODE"
+            },
+            "securityhealth": {
+                "title": "Sikkerhetstilstand",
+                "deviceName1": "Apper fra klarerte kilder",
+                "deviceName2": "Utviklermodus",
+                "deviceName3": "UAC-varsling",
+                "deviceName4": "Antivirus-tilgjengelighet",
+                "deviceName5": "Koding av harddisk",
+                "deviceName6": "Tilgjengelighet av brannmur",
+                "deviceName7": "Aktivert Windows",
+                "deviceName8": "Tilgjengelige sikkerhetsoppdateringer",
+                "deviceName9": "Passordbeskyttelse",
+                "deviceName10": "Tilgjengelighet av automatiske oppdateringstjenester",
+                "fail": "IKKE BESTÅTT",
+                "pass": "BESTÅTT",
+                "learnMoreAboutSecurityHealth": "Få mer informasjon om hver av disse komponentene <tag>her</tag>.",
+                "peaceOfMind": "Vil du ha mer trygghet?",
+                "button": "Aktiver WiFi-sikkerhet"
+            }
+        },
+        "vpn": {
+            "statusTitle": "SURFEASY VPN",
+            "title": "VPN-sikkerhet",
+            "header": "SurfEasy virtuelt privat nettverk",
+            "whatIsSufEasy": "SurfEasy VPN krypterer informasjonen du sender og mottar, slik at du sikkert og privat og uten problemer kan bruk PC, Mac®, smarttelefon eller nettbrett på en internettforbindelse.",
+            "helpKeep": "Bidra til å holde nettaktiviteten din sikker og privat med SurfEasy VPN.",
+            "getSufEasy": "Få tak i SurfEasy",
+            "openSufEasy": "Åpne SurfEasy",
+            "whySufEasy": "Hvorfor bruke virtuelt privat nettverk (VPN)?",
+            "whySufEasyDescription": "Å bruke Wi-Fi-tilkoblingspunkter på kafeer eller flyplasser kan eksponere den sensitive informasjonen din for nettkriminelle. SurfEasy VPN er et ikke-loggende VPN som krypterer de personlige dataene dine. Det verken sporer eller lagrer nettaktiviteten eller plasseringen din.",
+            "startUseSufEasy": "Begynn å bruke SurfEasy i dag",
+            "startUseSufEasy1": "Bidrar til å sikre at dataene du sender og mottar er sikre og private med kryptering på banknivå.",
+            "startUseSufEasy2": "Bidrar til å hindre at selskaper sporer internettaktivitetene eller plasseringene dine.",
+            "startUseSufEasy3": "Gratis og premium tilbud har flere alternativer som kan tilpasses behovene dine og budsjettet ditt.",
+            "howToUseSufEasy": "Slik bruker du SurfEasy VPN",
+            "whatCanSufEasy2": "Beskytt privatlivet ditt og aktiver SurfEasy VPN når du kobler til et felles Wi-Fi-tilknytningspunkt. Med et Lenovo Starter VPN-abonnement kan du utføre belønningsaktiviteter for å få mer databåndbreddebeskyttelse. Oppgrader for å beskytte opptil 5 smarttelefoner, nettbrett og maskiner med ubegrenset båndbredde.",
+            "getStarted": "Slå på SurfEasy VPN:",
+            "getStarted1": "Klikk på \"Åpne SurfEasy\"-knappen ovenfor for å starte SurfEasy VPN.",
+            "getStarted2": "Slå på VPN og vent et lite øyeblikk på bekreftelse av en sikker tilkobling.",
+            "getStarted3": "Endre region eller plassering hvis du ønsker, og få sikkert og privat nettverk.",
+            "poweredBySurfEasy": "Leveres av SurfEasy",
+            "privacyPolicyAndTermsOfService": "Les mer i <tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>"
+        },
+        "passwordManager": {
+            "statusTitle": "DASHLANE PASSORDADMINISTRATOR",
+            "title": "Passordtilstand",
+            "header": "Dashlane",
+            "whatIsPmNotInstalled": "Den tryggeste, enkleste måten å lagre sterke, komplekse passord og logge deg umiddelbart på hvert område.",
+            "whatIsPmInstalled": "Et tryggere digitalt liv venter: Legg til passord, aktivere Dark Web-overvåking og automatisk utfylling av personlig informasjon og betalingsinformasjon.",
+            "startProtect": "Start å beskytte internettkontoene dine på en enkel måte.",
+            "discount": "Lenovo-brukere får en eksklusiv 6 måneder gratis bruk av Dashlane Premium.",
+            "offer": "Dette tilbudet gjelder bare for nye Dashlane-brukere.",
+            "getDashLane": "Få tak i Dashlane",
+            "learnMoreAbout": "<tag>Finn ut mer</tag> om hvordan du får mest mulig ut av Dashlane",
+            "openDashLane": "Åpne Dashlane",
+            "neverForget": "Dashlane: Aldri glem et passord igjen",
+            "whatIsDashLane": "Dashlane er en app for passordadministrasjon og digital beskyttelse som arbeider sammen med nettleseren din. Den lagrer automatisk passord og personlige data, husker dem for deg, og lagrer alt du trenger en sikker måte. Dashlane analyserer også sikkerheten på brukerkontoen din og gir enkle måter å forbedre passordtilstanden på.",
+            "helpYou": "Dashlane hjelper deg med å",
+            "helpYou1": "huske ubegrenset med brukernavn og passord.",
+            "helpYou2": "logge på umiddelbart hvor som helst for sømløs surfing",
+            "helpYou3": "synkronisere på tvers av enheter, slik at du aldri er uten tilgang til viktige kontoer",
+            "helpYou4": "forbedre beskyttelsen når du er på nettet med enkle, praktiske råd",
+            "getStarted": "Har du kommet i gang med Dashlane?",
+            "checkOutThisGuide": "Bruk Dashlane til å være trygg på nettet samtidig som du sparer tid og unngår frustrasjon. For detaljert informasjon om hvordan du kommer i gang kan du <tag>se denne håndboken.</tag>",
+            "allowsYou": "Dashlane gjør det mulig for deg å",
+            "allowsYou1": "logge på umiddelbart hvor som helst for sømløs surfing - synkronisere på tvers av enheter, slik at du aldri er uten tilgang til viktige kontoer",
+            "allowsYou2": "overvåke den mørke weben for å beskytte dine personlige data",
+            "allowsYou3": "være trygg på usikrede WiFi-nettverk med innebygd VPN",
+            "allowsYou4": "dele passord på en sikker måte uten å oppgi dem",
+            "poweredByDashLane": "Leveres av Dashlane",
+            "privacyPolicyAndTermsOfService": "Les mer i <tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>"
+        },
+        "windowsHello": {
+            "statusTitle": "WINDOWS HELLO",
+            "title": "Windows Hello",
+            "protectYourDevice": "Beskytt enheten din med disse sikkerhetsalternativene, anbefalt av Lenovo.",
+            "signIn": "Logg deg på raskt og sikkert med Windows Hello.",
+            "signInTitle": "Logg deg på raskt og sikkert med Windows Hello",
+            "setUp": "Konfigurer Windows Hello",
+            "whyWindowsHello": "Hvorfor Windows Hello?",
+            "whyWindowsHelloDescription1": "Windows Hello gjør det enklere og sikrere å logge seg på PC-en og kan også brukes for Microsoft-apper på nettet. Følg instruksjonene under for å begynne å bruke Windows Hello.",
+            "startUsingToday": "Begynn å bruke Windows Hello i dag",
+            "visitAndRegister": "Gå til Windows Hello-siden, og registrer fingeravtrykket ditt.",
+            "visitInSettings": "<tag> Gå til Windows Hello</tag> i systeminnstillinger",
+            "unlock": "Bruk Windows Hello til å logge deg på og låse opp PC-en din med et enkelt trykk av en finger på sensoren.",
+            "startUsingWindowsHello": "Begynn å bruke Windows Hello til å logge deg på Microsoft-apper som Outlook, OneDrive, Office 365 og Xbox Live.",
+            "visitMicrosoft": "Gå til Microsoft",
+            "poweredByWindowsHello": "Leveres av Windows Hello",
+            "privacyPolicy": "Les mer i <tag>retningslinjene for personvern</tag>",
+            "whyWindowsHelloDescription2": "Windows Hello gjør at du kan logge deg på PC-en din enklere og sikrere. Og den kan også brukes for de tilkoblede Microsoft-appene dine. Følg instruksjonene under for å begynne å bruke Windows Hello",
+            "authentication": "Autentisering med Windows Hello",
+            "traditional": "Tradisjonelle passord kan bli stjålet og brukt til å få tilgang til kontoen din fra overalt i verden. Sikrere og mer praktisk. Windows Hello er neste generasjon passord. Bruk fingeravtrykksleseren (eller det infrarøde kameraet) i stedet for usikre passord til å logge deg på.",
+            "howToStart": "Hvordan begynner jeg å bruke Windows Hello?"
+        }
+    }
+}

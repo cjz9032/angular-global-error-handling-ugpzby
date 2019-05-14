@@ -31,7 +31,7 @@ export class ResultComponent implements OnInit, OnDestroy {
 		private breachedAccountsService: BreachedAccountsService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private changeDetectorRef: ChangeDetectorRef,
-		private accessTokenService: AccessTokenService,
+		private accessTokenService: AccessTokenService
 	) {
 	}
 

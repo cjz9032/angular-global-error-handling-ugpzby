@@ -116,7 +116,7 @@ export class LIDStarterHelper {
 	generateStarterAccountToken(account: string) {
 		let tokenInfo = null;
 		if (account) {
-			tokenInfo += '|Format=ST|' + STARTER_ACCOUNT_TOKEN;
+			tokenInfo =  STARTER_ACCOUNT_TOKEN;
 		}
 		return tokenInfo;
 	}
@@ -347,6 +347,15 @@ export class LIDStarterHelper {
 
 		return email.toLocaleLowerCase().endsWith('@lenovoid.com');
 	}
+
+	isStarterToken(token: string) {
+		if (!token || token !== STARTER_ACCOUNT_TOKEN) {
+			return false;
+		}
+
+		return true;
+	}
+
 
 	async hasCreateStarterAccount() {
 		// option1: get from web-localstorage

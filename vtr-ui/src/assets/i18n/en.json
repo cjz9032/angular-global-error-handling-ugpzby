@@ -14,13 +14,13 @@
 					"rapidCharge": "Rapid Charge"
 				},
 				"legionEdge": {
-					"title": "CPU Overlock",
+					"title": "CPU Overclock",
 					"status": {
 						"alwayson": "Always On",
 						"whenGaming": "When Gaming",
 						"off": "Off"
 					},
-					"ramOverlock": "Ram Overlock",
+					"ramOverlock": "Ram Overclock",
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
@@ -47,13 +47,23 @@
 					"line11": "Thermal Mode <br> Set your preferred device profile for fan speed and cooling control"
 				}
 			}
+		},
+		"common":{
+			"menu":{
+				"support": {
+					"title": "Support",
+					"sub1": "Support",
+					"sub2": "Face Book",
+					"sub3": "Instagram"
+				}
+			}
 		}
 	},
 	"common": {
 		"menu": {
 			"dashboard": "Dashboard",
 			"device": {
-				"title": "Device",
+				"title": "My Device",
 				"sub1": "My Device",
 				"sub2": "My Device Settings",
 				"sub3": "System Updates"
@@ -255,13 +265,16 @@
 				"title": "BATTERY GAUGE",
 				"subtitle": "Battery health",
 				"hours": "hours",
+				"hour":"hour",
 				"minutes": "minutes",
+				"minute": "minute",
 				"charge": "TIME TO FULLY CHARGE",
 				"button": "SEE BATTERY DETAILS",
 				"details": {
 					"title": "Battery Details",
 					"primary": "Primary Battery",
 					"secondary": "Secondary Battery",
+					"tertiary": "Tertiary Battery",
 					"status": "Status",
 					"wattage": "Wattage",
 					"barcode": "Bar-Code",
@@ -280,7 +293,15 @@
 					"designVolt": "Design voltage",
 					"volts": "Voltage",
 					"firstUseDt": "First use date",
-					"firmwareVer": "Firmware version"
+					"firmwareVer": "Firmware version",
+					"chargeStatusString": {
+						"error": "ERROR",
+						"notinstalled": "Not installed",
+						"noactivity": "No activity",
+						"charging": "Charging",
+						"discharging": "Discharging",
+						"acdischarging": "Discharging (with ac)"
+					}
 				}
 			},
 			"power": {
@@ -653,8 +674,7 @@
 				"poweredBy": "Powered By McAfee",
 				"privacyTerms": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>",
 				"mcafeePremium": "McAfee Premium Protection",
-				"protectedBy": "You are currently protected by ",
-				"betterProtected": ".However, you could be better protected with McAfee LifeSafe",
+				"protectedBy": "You are currently protected by {{protectedName}}. However, you could be better protected with McAfee LiveSafe",
 				"virusScan": "VIRUS SCAN",
 				"firewall": "FIREWALL",
 				"disabled": "DISABLED",
@@ -663,7 +683,7 @@
 			},
 			"windowsDefender": {
 				"optimallyProtected": "Not Optimally Protected",
-				"subtitle": "You are currently being protected by Windows Defender.However, you could be better protected with McAfee LiveSafe. Learn more below.",
+				"subtitle": "You are currently being protected by Windows Defender. However, you could be better protected with McAfee LiveSafe. Learn more below.",
 				"learnMore": "LEARN MORE ABOUT McAfee",
 				"windowsProtected": "Windows Defender basic protection",
 				"windowsSubtitle": "Windows defender offers basic protection for your device"
@@ -778,7 +798,7 @@
 		"vpn": {
 			"statusTitle": "SURFEASY VPN",
 			"title": "VPN Security",
-			"header": "SurfEasy Virtual Private Network",
+			"header": "SurfEasy VPN",
 			"whatIsSufEasy": "SurfEasy VPN encrypts the information you send and receive so you can safely and privately use your PC, Mac®, smartphone or tablet on any Internet connection without worry.",
 			"helpKeep": "Help keep your online activity secure and private with SurfEasy VPN.",
 			"getSufEasy": "Get SurfEasy",
@@ -1222,6 +1242,35 @@
 			},
 			"para12": "Note",
 			"para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
+		}
+	},
+	"welcometutorial": {
+		"description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
+		"bullets1": "Optimize your system with lorem ipsum dolor set",
+		"bullets2":	"Security Advisor makes managing your security easy ",
+		"bullets3": "Automatic updates keep your device in tip top shape",
+		"subtitle1": "How will you be using your device?",
+		"subtitle2": "Tell us about your interests",
+		"personal": "Personal Use",
+		"business": "Business Use",
+		"custom": "Custom Experience",
+		"privacytitle": "Help us improve the quality of the app by allowing anonymous collection of usage statistics.",
+		"moreInterest": "+ more interests",
+		"title1": "Welcome to",
+		"title2": "Lenovo",
+		"title3": "Vantage",
+		"privacypolicy": "Lenovo's Private Policy",
+		"interests" : {
+			"games": "Games",
+			"news" : "News",
+			"entertainment" : "Entertainment",
+			"technology" : "Technology",
+			"sports" : "Sports",
+			"arts" : "Arts",
+			"regionalNews" : "Regional News",
+			"politics" : "Politics",
+			"music" : "Music",
+			"science": "Science"
 		}
 	}
 }
