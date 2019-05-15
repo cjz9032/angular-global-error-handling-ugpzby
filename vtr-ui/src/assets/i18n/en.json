@@ -520,7 +520,11 @@
 					"contrast": "Contrast",
 					"autoExposure": "Auto Exposure",
 					"autoFocus": "Auto focus",
-					"notAvailable": "Camera Not Available"
+					"notAvailable": "Camera Not Available",
+					"camerablur": {
+						"title": "Camera Background Blur",
+						"caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections."
+					}
 				}
 			}
 		},
