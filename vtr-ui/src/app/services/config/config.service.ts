@@ -114,7 +114,7 @@ export class ConfigService {
 				path: 'device-settings',
 				icon: '',
 				metricsEvent: 'itemClick',
-				metricsParent: 'device.navbar',
+				metricsParent: 'devie.navbar',
 				metricsItem: 'link.mydevicesettings',
 				routerLinkActiveOptions: { exact: false },
 				subitems: []
