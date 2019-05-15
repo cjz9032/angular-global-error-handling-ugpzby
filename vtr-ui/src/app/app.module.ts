@@ -184,6 +184,8 @@ import { PageLightingcustomizeComponent } from './components/pages/page-lighting
 import { PageHardwarescanComponent } from './components/pages/page-hardwarescan/page-hardwarescan.component';
 import { UiRoundedRectangleRadioComponent } from './components/ui/ui-rounded-rectangle-radio/ui-rounded-rectangle-radio.component';
 import { CameraBackgroundBlurComponent } from './components/camera-background-blur/camera-background-blur.component';
+import { PageAutocloseComponent } from './components/pages/page-autoclose/page-autoclose.component';
+import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
 
 
 library.add(fas);
@@ -326,7 +328,9 @@ library.add(fal);
 		PageLightingcustomizeComponent,
 		PageHardwarescanComponent,
 		UiRoundedRectangleRadioComponent,
-		CameraBackgroundBlurComponent
+		CameraBackgroundBlurComponent,
+		PageAutocloseComponent,
+		PageNetworkBoostComponent
 	],
 	imports: [
 		BrowserModule,

@@ -25,6 +25,8 @@ import { WindowsHelloGuardService } from './services/guard/windows-hello-guardSe
 import { PrivacyModule } from './components/pages/page-privacy/privacy.module';
 import { GuardService } from './services/guard/security-guardService.service';
 import { LocalStorageKey } from './enums/local-storage-key.enum';
+import { PageAutocloseComponent } from './components/pages/page-autoclose/page-autoclose.component';
+import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
 
 const routes: Routes = [
 	{
@@ -182,7 +184,21 @@ const routes: Routes = [
 		data: {
 			pageName: 'User'
 		}
-	},
+	},{
+		path: 'autoclose',
+		component: PageAutocloseComponent,
+
+		data: {
+			pageName: 'AutoClose'
+		}
+	},{
+		path: 'networkboost',
+		component: PageNetworkBoostComponent,
+
+		data: {
+			pageName: 'NetworkBoost'
+		}
+	}
 ];
 
 @NgModule({
