@@ -1,15 +1,11 @@
 
 <div class="articles-wrapper">
-    <ng-container *ngIf="openArticleId">
-        <vtr-article-single [articleData]="articles.openArticleId"></vtr-article-single>
+    <ng-container *ngIf="openArticleId && articles[openArticleId]">
+        <vtr-article-single [articleData]="articles[openArticleId]"></vtr-article-single>
     </ng-container>
-    <div class="article-preview" *ngFor="let articleItem of articles | keyvalue">
-        <div *ngIf="articleItem.value as article" (click)="openSingleArticle(article.id)">
-            <div>
-                <h1>{{article.title}}</h1>
-                <img class="article-preview__image" src="{{article.image}}" alt="{{article.title}}">
-                <!--        <div [innerHTML]="article.content"></div>-->
-            </div>
+    <ng-container *ngIf="!openArticleId || !articles[openArticleId]">
+        <div class="article-preview" *ngFor="let articleItem of articles | keyvalue">
+            <vtr-article-preview [article]="articleItem.value"></vtr-article-preview>
         </div>
-    </div>
+    </ng-container>
 </div>
