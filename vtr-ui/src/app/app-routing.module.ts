@@ -187,14 +187,12 @@ const routes: Routes = [
 	},{
 		path: 'autoclose',
 		component: PageAutocloseComponent,
-
 		data: {
 			pageName: 'AutoClose'
 		}
 	},{
 		path: 'networkboost',
 		component: PageNetworkBoostComponent,
-
 		data: {
 			pageName: 'NetworkBoost'
 		}
