@@ -41,6 +41,7 @@ import { TaskActionService } from './common/services/task-action.service';
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { ArticleSingleComponent } from './pages/articles/article-single/article-single.component';
 import { ArticlePreviewComponent } from './pages/articles/article-preview/article-preview.component';
+import { ArticleSidebarComponent } from './pages/articles/article-sidebar/article-sidebar.component';
 
 library.add(fal);
 
@@ -75,6 +76,7 @@ library.add(fal);
 		ArticlesComponent,
 		ArticleSingleComponent,
 		ArticlePreviewComponent,
+		ArticleSidebarComponent,
 	],
 	providers: [
 		TrackersPopupService,
