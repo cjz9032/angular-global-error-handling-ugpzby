@@ -9,10 +9,7 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 
 	@Input() title = '';
 
-	constructor() { }
 
-	ngOnInit() {
-	}
 	public quickSettings = [
 		{
 			readMoreText: '',
@@ -21,9 +18,10 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			header: 'gaming.dashboard.device.quickSettings.title',
 			name: 'gaming.dashboard.device.quickSettings.title',
 			subHeader: '',
-			isCheckBoxVisible: true,
-			isSwitchVisible: true,
-			isChecked: true,
+			isCollapsible: true,
+			isCheckBoxVisible: false,
+			isSwitchVisible: false,
+			isChecked: false,
 			tooltipText: '',
 			type: 'auto-updates'
 		},
@@ -34,6 +32,9 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			header: 'gaming.dashboard.device.quickSettings.wifiSecurity',
 			name: 'gaming.dashboard.device.quickSettings.wifiSecurity',
 			subHeader: '',
+			isCustomizable: true,
+			routerLink: '/security/wifi-security',
+			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isChecked: true,
@@ -47,6 +48,9 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			header: 'gaming.dashboard.device.quickSettings.dolby',
 			name: 'gaming.dashboard.device.quickSettings.dolby',
 			subHeader: '',
+			isCustomizable: true,
+			routerLink: '/device/device-settings/audio',
+			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isChecked: true,
@@ -60,6 +64,9 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			header: 'gaming.dashboard.device.quickSettings.rapidCharge',
 			name: 'gaming.dashboard.device.quickSettings.rapidCharge',
 			subHeader: '',
+			isCustomizable: false,
+			setLink: '',
+			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isChecked: true,
@@ -68,4 +75,9 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 		}
 
 	];
+
+	constructor() { }
+
+	ngOnInit() {
+	}
 }

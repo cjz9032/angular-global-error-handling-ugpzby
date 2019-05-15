@@ -1,6 +1,6 @@
 {
 	"name": "vtr-ui",
-	"version": "0.0.55",
+	"version": "0.0.57",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
@@ -32,7 +32,7 @@
 		"@fortawesome/free-regular-svg-icons": "^5.8.1",
 		"@fortawesome/free-solid-svg-icons": "^5.8.1",
 		"@fortawesome/pro-light-svg-icons": "^5.8.1",
-		"@lenovo/tan-client-bridge": "^10.1906.0-alpha.5",
+		"@lenovo/tan-client-bridge": "^10.1906.0-alpha.6",
 		"@ng-bootstrap/ng-bootstrap": "^4.1.1",
 		"@ngx-translate/core": "^11.0.1",
 		"@ngx-translate/http-loader": "^4.0.0",

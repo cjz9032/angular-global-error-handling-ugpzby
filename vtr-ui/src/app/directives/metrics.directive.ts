@@ -1,8 +1,9 @@
-import {Directive, ElementRef, HostListener, Input} from '@angular/core';
-import {VantageShellService} from '../services/vantage-shell/vantage-shell.service';
-import {ActivatedRoute} from '@angular/router';
-import {VieworderService} from '../services/view-order/vieworder.service';
-import {DeviceService} from '../services/device/device.service';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { VantageShellService } from '../services/vantage-shell/vantage-shell.service';
+import { ActivatedRoute } from '@angular/router';
+import { VieworderService } from '../services/view-order/vieworder.service';
+import { DeviceService } from '../services/device/device.service';
+import { DevService } from '../services/dev/dev.service';
 
 export interface MetricsData {
 	ItemType: string;
@@ -28,18 +29,18 @@ declare var window;
 	selector: '[vtrMetrics]'
 })
 export class MetricsDirective {
-
 	private metrics: any;
 
 	constructor(private deviceService: DeviceService,
-				private el: ElementRef,
-				private shellService: VantageShellService,
-				private activatedRoute: ActivatedRoute,
-				private viewOrderService: VieworderService) {
+		private el: ElementRef,
+		shellService: VantageShellService,
+		private activatedRoute: ActivatedRoute,
+		private viewOrderService: VieworderService,
+		private devService: DevService,
+		) {
 		this.metrics = shellService.getMetrics();
 
 	}
-
 
 	@Input() metricsItem: string;
 	@Input() metricsEvent: string;
@@ -58,12 +59,12 @@ export class MetricsDirective {
 	@Input() metricsSettingParm: string;
 	@Input() metricsSettingValue: string;
 
-	ComposeMetricsData() {
+	composeMetricsData() {
 		const data: any = {};
 		const eventName = this.metricsEvent.toLowerCase();
 		switch (eventName) {
-			case 'featureclick' :
-			case 'itemClick': {
+			case 'featureclick':
+			case 'itemclick': {
 				data.ItemType = 'FeatureClick';
 				data.ItemName = this.metricsItem;
 				data.ItemParent = this.metricsParent;
@@ -79,6 +80,9 @@ export class MetricsDirective {
 			case 'docclick': {
 				data.ItemType = 'ArticleClick';
 				data.ItemParent = this.metricsParent;
+				if (this.metricsItem) {
+					data.ItemName = this.metricsItem;
+				}
 				if (typeof this.viewOrderService[this.metricsParent] === 'undefined') {
 
 					this.viewOrderService[this.metricsParent] = 0;
@@ -115,36 +119,24 @@ export class MetricsDirective {
 	}
 
 	@HostListener('click', ['$event.target'])
-	onclick(target) {
-
-
+	async onclick(target) {
 		if (!this.metricsParent) {
 			this.metricsParent = this.activatedRoute.snapshot.data['pageName'];
 		}
-		const data = this.ComposeMetricsData();
 
-		/** to prefix the item type with btn, a ,div etc **/
-			data.ItemName = this.getTagName(target) + data.ItemName;
-
-
-		if (this.metrics && this.metrics.sendAsync) {
-			this.metrics.sendAsync(data);
+		if (!this.metricsEvent || !this.metricsParent) {
+			this.devService.writeLog('sending metric breaks, missing event name or parent');
+			return;
 		}
 
-		// for debug
-		console.log('------reporting metrics------\n'.concat(JSON.stringify(data)));
-	}
+		const data = this.composeMetricsData();
 
-
-	getTagName(target) {
-		const tagName = target.tagName;
-		switch (tagName) {
-			case 'A':
-				return 'a.';
-			case 'BUTTON':
-				return 'btn.';
-			default:
-				return '';
+		if (this.metrics && this.metrics.sendAsync) {
+			try {
+				await this.metrics.sendAsync(data);
+			} catch (ex) {
+				this.devService.writeLog('sending metric breaks with exception:' + ex);
+			}
 		}
 	}
 }

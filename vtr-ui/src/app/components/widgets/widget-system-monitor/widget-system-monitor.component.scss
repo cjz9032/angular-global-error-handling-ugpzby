@@ -17,6 +17,7 @@
 
 		.monitor-col {
 			padding: 4rem 0;
+			position: relative;
 			@media #{$mediaquery_5} {
 				padding: 3rem 0;
 			}
@@ -30,6 +31,26 @@
 				padding-left: 3rem;
 				@media #{$mediaquery_5} {
 					padding-left: 2rem;
+				}
+			}
+			.link-container {
+				position: absolute;
+				font-size: 1.6rem;
+				text-transform: uppercase;
+				color: $gaming_gstart;
+				top: -0.3rem;
+				right: 0;
+				display: inline-block;
+				font-weight: $weight_black;
+				display: flex;
+				justify-content: space-between;
+				.icon {
+					background: $gaming_icon_gradient;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					transform: scale(-1, 1);
+					margin-left: 0.8rem;
+					font-size: 2rem;
 				}
 			}
 			.monitor-section {

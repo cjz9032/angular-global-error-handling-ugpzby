@@ -113,12 +113,13 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 					}
 				}
 			} else {
+				this.disabled = false;
 				this.value = !this.value;
 			}
 		} catch (err) {
+			this.disabled = false;
 			throw new Error('wifiSecurity is null');
 		}
-
 		event.switchValue = this.value;
 		this.toggle.emit(event);
 	}

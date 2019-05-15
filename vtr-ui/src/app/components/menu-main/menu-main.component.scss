@@ -85,7 +85,7 @@
 
 
 						&.active {
-							border-bottom: $main solid 0.5rem;
+							border-bottom: $menu_hover solid 0.5rem;
 
 							.fa-icon {
 								color: $main;
@@ -118,7 +118,7 @@
 						box-shadow: $drop_shadow;
 						margin-top: -1rem;
 						padding: 2.5rem 1.5rem;
-						min-width: 20rem;
+						min-width: 22.5rem;
 
 						&.user {
 							margin-left: -1.5rem;
@@ -151,7 +151,8 @@
 								text-decoration: underline;
 
 								&:hover {
-									color: $main;
+									color: $menu_hover;
+									font-weight: $weight_bold;
 								}
 							}
 

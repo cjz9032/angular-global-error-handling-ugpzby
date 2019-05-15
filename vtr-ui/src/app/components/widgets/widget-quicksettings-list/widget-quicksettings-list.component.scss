@@ -20,7 +20,6 @@
 			box-shadow: none;
 			border: none;
 			.settings-container{
-				margin-top:0rem;
 				.list-group-item{
 					background: transparent;
 					color: white;
@@ -31,6 +30,13 @@
 					&:last-child{
 						border-bottom: none;
 					}
+					&:first-child{
+						.media-body {
+							> div {
+								display: block !important;
+							}
+						}
+					}
 					.media {
 						padding-left: 0 !important;
 						fa-icon{
@@ -38,6 +44,43 @@
 						}
 						.media-body {
 							padding-left: 0 !important;
+							.no-pointer {
+								width: 6rem;
+							}
+							.customizable {
+								flex-grow: 5;
+								text-align: right;
+								margin-right: 2rem;
+								margin-left: 35%;
+								display: inline-block;
+								text-decoration: none;
+								height: 3.2rem;
+								width: 3.2rem;
+								border-radius: 3.2rem;
+								margin-top: 0.3rem;
+								.icon {
+									text-align: center;
+									font-size: 2.2rem;
+									color: $gaming_grey_lightest;
+									line-height: 3.2rem;
+									position: relative;
+									&::after{
+										content: '';
+										position: absolute;
+										height: 3.2rem;
+										width: 3.2rem;
+										border-radius: 3.2rem;
+										background: $screen_dark_20;
+										transition: all .3s ease-in;
+										right: -0.6rem;
+										top: -0.4rem;
+										opacity: 0;
+									}
+								}
+								&:hover .icon::after {
+									opacity: 1;
+								}
+							}
 						}
 					}
 					.update-title{

@@ -10,8 +10,7 @@
 			<div class="col">
 				<div class="settings-container">
 					<ul class="list-group">
-						<li class="list-group-item"
-							*ngFor="let item of items">
+						<li class="list-group-item" *ngFor="let item of items">
 							<div class="media pl-3 align-items-center">
 								<fa-icon [icon]="item.leftImageSource"></fa-icon>
 								<div class="media-body pb-0 mb-0 small pl-3">
@@ -19,25 +18,20 @@
 										<div class="update-title"
 											[innerHTML]="item.header | translate | safeDom : 'html' "></div>
 										<vtr-ui-gaming-collapsible-container *ngIf="item.isCollapsible">
-											</vtr-ui-gaming-collapsible-container>
-										<a href="javascript:void();"
-											*ngIf="item.isSwitchVisible"
+										</vtr-ui-gaming-collapsible-container>
+										<a [routerLink]="item.routerLink" *ngIf="item.isCustomizable" class="customizable">
+											<i class="icon icon-gear"></i>
+										</a>
+										<a href="javascript:void();" *ngIf="item.isSwitchVisible"
 											class="d-flex no-pointer">
-											<vtr-ui-switch-onoff [name]="item.type"
-												(toggle)="onToggleOnOff($event)">
+											<vtr-ui-switch-onoff [name]="item.type" (toggle)="onToggleOnOff($event)">
 											</vtr-ui-switch-onoff>
 
-											<fa-icon class="question"
-												triggers="click:blur"
-												placement="auto"
-												[ngbTooltip]="item.tooltipText"
-												[icon]="['far', 'question-circle']"
-												container="body"
-												tooltipClass="vtr-tooltip"></fa-icon>
+											<fa-icon class="question" triggers="click:blur" placement="auto"
+												[ngbTooltip]="item.tooltipText" [icon]="['far', 'question-circle']"
+												container="body" tooltipClass="vtr-tooltip"></fa-icon>
 										</a>
-										<a href="javascript:void();"
-											class="link-text"
-											*ngIf="!item.isSwitchVisible"
+										<a href="javascript:void();" class="link-text" *ngIf="!item.isSwitchVisible"
 											(click)="onLinkClick(item.linkPath)">
 											{{item.linkText}}
 										</a>

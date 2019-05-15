@@ -31,8 +31,10 @@
 				[metricsParent]="metricsParent"
 				class="btn btn-default modal-button"
 				vtrMetrics
-				[metricsItem]="'Ok button'"
+
+				[metricsItem]="'Ok Button'"
 				[metricsParent]="'Pages.SystemUpdate.RebootRequiredControl'"
+
 				metricsEvent="itemClick"
 				(click)="onOkClick($event)">
 				{{OkText | translate}}
@@ -47,7 +49,8 @@
 				[metricsParent]="metricsParent"
 				class="btn btn-default modal-button-cancel"
 				vtrMetrics
-				[metricsItem]="'Cancel-button'"
+
+				[metricsItem]="'Cancel Button'"
 				[metricsParent]="'Pages.SystemUpdate.RebootRequiredControl'"
 				metricsEvent="itemClick"
 				(click)="onCancelClick($event)">

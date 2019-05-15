@@ -499,7 +499,11 @@
                     "contrast": "对比度",
                     "autoExposure": "自动曝光",
                     "autoFocus": "自动对焦",
-                    "notAvailable": "相机不可用"
+					"notAvailable": "相机不可用",
+					"camerablur": {
+						"title": "Camera Background Blur",
+						"caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections."
+					}
                 }
             }
         },
@@ -600,25 +604,25 @@
         "needHelp": {
             "title": "需要帮助？",
             "description": "联系我们以获取帮助。",
-            "listLenovoCommunity": "联想社区",
+            "listLenovoCommunity": "Lenovo 社区",
             "listContactCustomerService": "联系客户服务部门",
             "listContactUsOnWechat": "通过微信联系我们",
-            "weChatDescription": "Shoot us a question on WeChat and we’ll be sure to respond quickly"
+            "weChatDescription": "在微信上向我们提问，我们定会迅速回复"
         },
         "quicklinks": {
             "title": "快速链接",
             "description": "联系我们以获取帮助。",
             "listETicket": "通过电子凭单获取支持",
             "listServiceProvider": "查找服务供应商",
-            "listAboutLenovoVantage": "About Lenovo Vantage"
+            "listAboutLenovoVantage": "关于 Lenovo Vantage"
         },
         "about": {
             "version": "版本",
             "licenseAgreement": "许可协议",
             "otherSoftwareLicenses": "其他软件许可证",
             "ourWebsite": "我们的网站",
-            "aboutYourDevice": "About your device",
-            "copyright": "© 2002-2019 联想保留所有权利。"
+            "aboutYourDevice": "关于您的设备",
+            "copyright": "© 2002-2019 Lenovo All Rights Reserved"
         }
     },
     "security": {
@@ -731,13 +735,13 @@
         "homeprotection": {
             "homesecurity": {
                 "title": "互联家庭网络安全性",
-				"titleDescription": "\"互联家庭网络安全性\"功能通过以下三种方式确保安全性：",
+                "titleDescription": "\"互联家庭网络安全性\"功能通过以下三种方式确保安全性：",
                 "homeSecurityAffect1": "互联家庭网络安全性可确保您的设备安全、未被入侵",
                 "homeSecurityAffect2": "互联家庭网络安全性可确保所连接的网络的安全性",
                 "homeSecurityAffect3": "互联家庭网络安全性可确保连接到您家庭网络的其他设备的安全性。",
                 "describe": "不安全设备和网络可能引入恶意软件、导致身份信息被盗以及泄露个人和财务信息。启用此功能以降低将设备和家庭网络曝露给攻击者的风险",
                 "subtitle": "高枕无忧",
-				"subtitleDescribe": "检测到设备或家庭网络存在漏洞，或正在连接到一个潜在恶意网络时，\"互联家庭网络安全性\"功能会向您发送警报。请在\"提示和技巧\"中了解有关互联家庭网络安全性的更多信息。",
+                "subtitleDescribe": "检测到设备或家庭网络存在漏洞，或正在连接到一个潜在恶意网络时，\"互联家庭网络安全性\"功能会向您发送警报。请在\"提示和技巧\"中了解有关互联家庭网络安全性的更多信息。",
                 "tryNow": "立即试用"
             },
             "invitationcode": {
@@ -1230,34 +1234,34 @@
             "para12": "注",
             "para13": "Cortana 仅在某些国家/地区可用，且部分 Cortana 功能并非在所有国家/地区可用。"
         }
-	},
-	"welcometutorial": {
-		"description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-		"bullets1": "Optimize your system with lorem ipsum dolor set",
-		"bullets2":	"Security Advisor makes managing your security easy ",
-		"bullets3": "Automatic updates keep your device in tip top shape",
-		"subtitle1": "How will you be using your device?",
-		"subtitle2": "Tell us about your interests",
-		"personal": "Personal Use",
-		"business": "Business Use",
-		"custom": "Custom Experience",
-		"privacytitle": "Help us improve the quality of the app by allowing anonymous collection of usage statistics.",
-		"moreInterest": "+ more interests",
-		"title1": "Welcome to",
-		"title2": "Lenovo",
-		"title3": "Vantage",
-		"privacypolicy": "Lenovo's Private Policy",
-		"interests" : {
-			"games": "Games",
-			"news" : "News",
-			"entertainment" : "Entertainment",
-			"technology" : "Technology",
-			"sports" : "Sports",
-			"arts" : "Arts",
-			"regionalNews" : "Regional News",
-			"politics" : "Politics",
-			"music" : "Music",
-			"science": "Science"
-		}
-	}
+    },
+    "welcometutorial": {
+        "description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
+        "bullets1": "Optimize your system with lorem ipsum dolor set",
+        "bullets2": "Security Advisor makes managing your security easy ",
+        "bullets3": "Automatic updates keep your device in tip top shape",
+        "subtitle1": "How will you be using your device?",
+        "subtitle2": "Tell us about your interests",
+        "personal": "Personal Use",
+        "business": "Business Use",
+        "custom": "Custom Experience",
+        "privacytitle": "Help us improve the quality of the app by allowing anonymous collection of usage statistics.",
+        "moreInterest": "+ more interests",
+        "title1": "Welcome to",
+        "title2": "Lenovo",
+        "title3": "Vantage",
+        "privacypolicy": "Lenovo's Private Policy",
+        "interests": {
+            "games": "Games",
+            "news": "News",
+            "entertainment": "Entertainment",
+            "technology": "Technology",
+            "sports": "Sports",
+            "arts": "Arts",
+            "regionalNews": "Regional News",
+            "politics": "Politics",
+            "music": "Music",
+            "science": "Science"
+        }
+    }
 }
