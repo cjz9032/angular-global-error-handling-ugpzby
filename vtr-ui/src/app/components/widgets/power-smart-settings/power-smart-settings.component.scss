@@ -1,0 +1,55 @@
+@import "../../../app.theme";
+
+.smartsettings-card {
+    .subtitle {
+      width: 100%;
+
+        h3 {
+        opacity: 0.8;
+        color: $light;
+        font-size: 1.8rem;
+        line-height: 2.8rem;
+        margin-top: 1.5rem;
+        text-transform: capitalize;
+        font-weight: 600;
+        }
+        p {
+            opacity: 0.8;
+            color: $light;
+            font-size: 1.6rem;
+            a {
+                list-style: none;
+                text-decoration: underline;
+                color: $light;
+
+                &:hover {
+                list-style: none;
+                color: $light;
+                text-decoration: underline;
+                }
+            }
+        }
+        .well {
+            padding: 15px;
+            background: #225faa;
+            border-radius: 10px;
+            opacity: 0.9;
+            font-size: 1.7rem;
+        }
+    }
+    li vtr-ui-row-switch div {
+        margin-left: -10px;
+    }
+    .optimize {
+        color: $light;
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 10px
+    }
+}
+
+.read-more-link {
+color: $light;
+text-decoration: underline;
+cursor: pointer;
+}
