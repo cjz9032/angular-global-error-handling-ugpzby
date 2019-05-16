@@ -14,10 +14,10 @@ export class WidgetItem {
 		this.detail = arg.detail;
 		this.path = arg.path;
 		this.type = arg.type;
+		this.status = 4;
 		translateService.stream('common.securityAdvisor.loading').subscribe((value) => {
 			if (!this.detail) {
 				this.detail = value;
-				this.status = 4;
 			}
 		});
 	}

@@ -235,7 +235,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "VPN 보안",
-            "header": "SurfEasy 가상 사설 네트워크",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "사용자가 PC, Mac®, 스마트폰 또는 태블릿을 모든 인터넷에 연결 상태에서 걱정 없이 안전하고 개인적으로 사용할 수 있도록 SurfEasy VPN는 사용자가 보내고 받는 정보를 암호화합니다.",
             "helpKeep": "SurfEasy VPN으로 온라인 활동을 안전하고 개인적으로 유지할 수 있습니다.",
             "getSufEasy": "SurfEasy 가져오기",

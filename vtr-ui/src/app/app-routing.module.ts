@@ -2,7 +2,7 @@ import { PageLightingcustomizeComponent } from './components/pages/page-lighting
 import { PageHardwarescanComponent } from './components/pages/page-hardwarescan/page-hardwarescan.component';
 import { PageMacrokeyComponent } from './components/pages/page-macrokey/page-macrokey.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
 import { PageDeviceComponent } from './components/pages/page-device/page-device.component';
 import { PageDeviceGamingComponent } from './components/pages/page-device-gaming/page-device-gaming.component';
@@ -23,6 +23,10 @@ import { PageUserComponent } from './components/pages/page-user/page-user.compon
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
 import { WindowsHelloGuardService } from './services/guard/windows-hello-guardService.service';
 import { PrivacyModule } from './components/pages/page-privacy/privacy.module';
+import { GuardService } from './services/guard/security-guardService.service';
+import { LocalStorageKey } from './enums/local-storage-key.enum';
+import { PageAutocloseComponent } from './components/pages/page-autoclose/page-autoclose.component';
+import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
 
 const routes: Routes = [
 	{
@@ -100,7 +104,7 @@ const routes: Routes = [
 			}
 		]
 	},
-	 {
+	{
 		path: 'device/system-updates',
 		component: PageDeviceUpdatesComponent,
 		data: {
@@ -109,29 +113,42 @@ const routes: Routes = [
 	}, {
 		path: 'security',
 		component: PageSecurityComponent,
-		data: { pageName: 'Security.MySecurity' }
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
+		data: {
+			pageName: 'Security.MySecurity'
+		}
 
 	}, {
 		path: 'security/anti-virus',
 		component: PageSecurityAntivirusComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
-			pageName: 'Security.AntiVirus'
+			pageName: 'Security.AntiVirus',
+			pageContent: LocalStorageKey.SecurityCurrentPage
 		}
 	}, {
 		path: 'security/wifi-security',
 		component: PageSecurityWifiComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Security.WifiSecurity'
 		}
 	}, {
 		path: 'security/password-protection',
 		component: PageSecurityPasswordComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Security.PasswordProtection'
 		}
 	}, {
 		path: 'security/internet-protection',
 		component: PageSecurityInternetComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Security.InternetProtection'
 		}
@@ -139,6 +156,7 @@ const routes: Routes = [
 		path: 'security/windows-hello',
 		component: PageSecurityWindowsHelloComponent,
 		canActivate: [WindowsHelloGuardService],
+		canDeactivate: [GuardService],
 		data: {
 			pageName: 'Security.WindowsHello'
 		}
@@ -166,13 +184,19 @@ const routes: Routes = [
 		data: {
 			pageName: 'User'
 		}
-	}, {
-		path: 'privacy',
-		loadChildren: () => PrivacyModule,
+	},{
+		path: 'autoclose',
+		component: PageAutocloseComponent,
 		data: {
-			pageName: 'Page.Privacy'
+			pageName: 'AutoClose'
 		}
-	},
+	},{
+		path: 'networkboost',
+		component: PageNetworkBoostComponent,
+		data: {
+			pageName: 'NetworkBoost'
+		}
+	}
 ];
 
 @NgModule({

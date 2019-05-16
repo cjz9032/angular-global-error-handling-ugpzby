@@ -24,6 +24,9 @@
 					text-align: center;
 					color: $light;
 					max-width: 10rem;
+					a{
+						text-decoration: none;
+					}
 					.system-icon {
 						display: flex;
 						align-items: center;
