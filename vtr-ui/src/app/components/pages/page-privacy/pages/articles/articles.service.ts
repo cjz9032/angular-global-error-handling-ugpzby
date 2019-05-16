@@ -32,7 +32,7 @@ export class ArticlesService {
 			content: page1, // https://markdowntohtml.com/ // https://stackedit.io/app#
 		},
 		'myths-about-privacy': {
-			id: 'breaches-privacy-1',
+			id: 'myths-about-privacy',
 			category: 'breaches',
 			title: '5 myths about the definition of privacy you probably believe',
 			image: '/assets/images/privacy-tab/tips-bg.png',
