@@ -1,7 +1,7 @@
 
 <div class="articles-wrapper">
     <ng-container *ngIf="openArticleId && articles[openArticleId]">
-        <vtr-article-single [articleData]="articles[openArticleId]"></vtr-article-single>
+        <vtr-article-single class="article-single" [articleData]="articles[openArticleId]"></vtr-article-single>
     </ng-container>
     <ng-container *ngIf="!openArticleId || !articles[openArticleId]">
         <div class="article" *ngFor="let articleItem of articles | keyvalue">

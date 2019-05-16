@@ -1,9 +1,26 @@
-
 .article {
+  &__title {
+    color: #34495E;
+    font-size: 3.5rem;
+    line-height: 4.2rem;
+  }
+  &__img {
+    margin: 4rem 0;
+  }
+}
+
+::ng-deep .article {
+  width: 100%;
   p {
     color: #647683;
     font-size: 1.4rem;
     font-weight: 300;
+    line-height: 2.2rem;
+  }
+  h2 {
+    color: #647683;
+    font-size: 1.4rem;
+    font-weight: 500;
     line-height: 2.2rem;
   }
   img {
