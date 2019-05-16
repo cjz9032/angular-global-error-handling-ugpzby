@@ -590,10 +590,10 @@
         "warranty": {
             "titleInWarranty": "在保修期内",
             "titleWarrantyExpired": "保修到期",
-            "titleWarrantyNotFound": "未找到保修",
+            "titleWarrantyNotFound": "未找到保修信息",
             "statusInWarranty": "在保修期内",
             "statusWarrantyExpired": "已到期",
-            "statusWarrantyNotFound": "未找到保修",
+            "statusWarrantyNotFound": "未找到保修信息",
             "yearDepotWarranty": "年维修站保修",
             "warrantyDetails": "保修详细信息：",
             "startDate": "开始日期：",
@@ -608,7 +608,7 @@
             "listUserGuide": "用户指南"
         },
         "needHelp": {
-            "title": "需要帮助？",
+            "title": "需要帮助",
             "description": "联系我们以获取帮助。",
             "listLenovoCommunity": "Lenovo 社区",
             "listContactCustomerService": "联系客户服务部门",
@@ -616,11 +616,11 @@
             "weChatDescription": "在微信上向我们提问，我们定会迅速回复"
         },
         "quicklinks": {
-            "title": "快速链接",
+            "title": "直通车",
             "description": "联系我们以获取帮助。",
             "listETicket": "通过电子凭单获取支持",
             "listServiceProvider": "查找服务供应商",
-            "listAboutLenovoVantage": "关于 Lenovo Vantage"
+            "listAboutLenovoVantage": "关于我们"
         },
         "about": {
             "version": "版本",
