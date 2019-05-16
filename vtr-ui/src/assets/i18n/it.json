@@ -306,7 +306,7 @@
             "privacyPolicy": "Ulteriori informazioni sull'<tag>informativa sulla privacy</tag>",
             "whyWindowsHelloDescription2": "Windows Hello semplifica e rende più sicuro l'accesso al tuo PC. Può essere utilizzato anche per le applicazioni Microsoft online. Seguire le istruzioni riportate di seguito per iniziare a utilizzare Windows Hello",
             "authentication": "Autenticazione Windows Hello",
-            "traditional": "Le password tradizionali possono essere rubate e utilizzate per accedere all'account da qualsiasi parte del mondo. Più sicuro e comodo. Windows Hello è il sistema di nuova generazione per l'utilizzo delle password. Per accedere è possibile utilizzare il lettore di impronte digitali (o la fotocamera IR) invece di password non sicure.",
+            "traditional": "Le password tradizionali possono essere rubate e utilizzate per accedere all'account da qualsiasi parte del mondo. Più sicuro e comodo. Windows Hello è il sistema di nuova generazione per l'utilizzo delle password. Per accedere è possibile utilizzare il lettore di impronte digitali invece di password non sicure.",
             "howToStart": "Come posso iniziare a utilizzare Windows Hello?"
         }
     }

@@ -306,7 +306,7 @@
             "privacyPolicy": "Lea más información sobre la <tag>Política de privacidad</tag>",
             "whyWindowsHelloDescription2": "Windows Hello hace que iniciar sesión en su PC sea más fácil y seguro. Y también se puede utilizar para sus aplicaciones de Microsoft en línea. Siga las siguientes instrucciones para empezar a utilizar Windows Hello",
             "authentication": "Autenticación de Windows Hello",
-            "traditional": "Las contraseñas tradicionales se pueden robar y utilizar para acceder a su cuenta desde cualquier parte del mundo. Más seguro y conveniente. Windows Hello es la próxima generación de contraseñas. Utilice el lector de huellas dactilares [o cámara IR] en lugar de contraseñas no seguras para iniciar sesión.",
+            "traditional": "Las contraseñas tradicionales se pueden robar y utilizar para acceder a su cuenta desde cualquier parte del mundo. Más seguro y conveniente. Windows Hello es la próxima generación de contraseñas. Utilice el lector de huellas dactilares en lugar de contraseñas no seguras para iniciar sesión.",
             "howToStart": "¿Cómo se puede iniciar utilizando Windows Hello?"
         }
     }
