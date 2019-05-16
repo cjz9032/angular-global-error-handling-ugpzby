@@ -24,54 +24,54 @@ export interface Articles {
 })
 export class ArticlesService {
 	articles: Articles = {
-		'myths-about-privacy': {
-			id: 'myths-about-privacy',
+		'information-exposed': {
+			id: 'information-exposed',
 			category: 'breaches',
-			title: '5 myths about the definition of privacy you probably believe',
+			title: 'Why finding out if your information is exposed changes everything',
 			image: '/assets/images/privacy-tab/articles/Img_Pith_Passwords@2x.png',
 			content: page1, // https://markdowntohtml.com/ // https://stackedit.io/app#
 		},
-		'breaches-privacy-1': {
+		'myths-about-privacy': {
 			id: 'breaches-privacy-1',
 			category: 'breaches',
-			title: '2 breaches 5 myths of privacy you probably believe',
+			title: '5 myths about the definition of privacy you probably believe',
 			image: '/assets/images/privacy-tab/articles/Img_Pith_Passwords@2x.png',
-			content: page2, // https://markdowntohtml.com/ // https://stackedit.io/app#
+			content: page2,
 		},
-		'breaches-privacy-2': {
-			id: 'breaches-privacy-2',
+		'tweak-your-internet-privacy': {
+			id: 'tweak-your-internet-privacy',
 			category: 'breaches',
-			title: '3 breaches 5 myths of privacy you probably believe',
+			title: 'How to tweak your internet privacy settings in 5 easy steps',
 			image: '/assets/images/privacy-tab/articles/Img_Pith_Passwords@2x.png',
-			content: page3, // https://markdowntohtml.com/ // https://stackedit.io/app#
+			content: page3,
 		},
-		'trackers-privacy': {
-			id: 'trackers-privacy',
+		'everything-about-trackers': {
+			id: 'everything-about-trackers',
 			category: 'trackers',
-			title: 'trackers 5 myths of privacy you probably believe',
+			title: 'Everything you need to know about trackers is 20 seconds',
 			image: '/assets/images/privacy-tab/articles/Img_Pith_Passwords@2x.png',
-			content: page4, // https://markdowntohtml.com/ // https://stackedit.io/app#
+			content: page4,
 		},
-		'trackers-privacy-1': {
-			id: 'trackers-privacy-1',
+		'what-cookies-reveal': {
+			id: 'what-cookies-reveal',
 			category: 'trackers',
-			title: '2 trackers 5 myths of privacy you probably believe',
+			title: 'What cookies reveal about you',
 			image: '/assets/images/privacy-tab/articles/Img_Pith_Passwords@2x.png',
-			content: page5, // https://markdowntohtml.com/ // https://stackedit.io/app#
+			content: page5,
 		},
-		'browsers-privacy': {
-			id: 'browsers-privacy',
+		'guide-to-private-browsing': {
+			id: 'guide-to-private-browsing',
 			category: 'non-private-passwords',
-			title: 'browsers 5 myths of privacy you probably believe',
+			title: 'The Ultimate Guide to Private Browsing',
 			image: '/asset7/images/privacy-tab/articles/Img_Pith_Passwords@2x.png',
-			content: page6, // https://markdowntohtml.com/ // https://stackedit.io/app#
+			content: page6,
 		},
-		'browsers-privacy-1': {
-			id: 'browsers-privacy-1',
+		'companies-hit-by-data-breaches': {
+			id: 'companies-hit-by-data-breaches',
 			category: 'non-private-passwords',
-			title: '2 browsers myths',
+			title: 'These companies were all hit by data breaches. Do you have accounts with them?',
 			image: '/assets/images/privacy-tab/articles/Img_Pith_Passwords@2x.png',
-			content: page7, // https://markdowntohtml.com/ // https://stackedit.io/app#
+			content: page7,
 		},
 	};
 
