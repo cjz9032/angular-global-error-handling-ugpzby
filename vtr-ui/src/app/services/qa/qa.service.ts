@@ -733,12 +733,7 @@ export class QaService {
 		}
 	];
 
-	constructor(private translate: TranslateService) {
-		translate.addLangs(['en', 'zh-Hans']);
-		this.translate.setDefaultLang('en');
-		const browserLang = this.translate.getBrowserLang();
-		this.translate.use(browserLang);
-	}
+	constructor(private translate: TranslateService) {}
 
 	setTranslationService(translate: TranslateService) {
 		this.translate = translate;
