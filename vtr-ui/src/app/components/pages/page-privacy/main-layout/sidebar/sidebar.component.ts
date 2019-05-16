@@ -7,15 +7,9 @@ import { AccessTokenService } from '../../common/services/access-token.service';
 	styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-	constructor(
-		private accessTokenService: AccessTokenService,
-	) {
+	constructor() {
 	}
 
 	ngOnInit() {
-	}
-
-	deleteAccessToken() {
-		this.accessTokenService.removeAccessToken();
 	}
 }
