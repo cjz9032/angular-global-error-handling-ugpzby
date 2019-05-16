@@ -41,4 +41,19 @@
 		background-color: $shade_lightest;
 		// margin: 0.5rem 1.5rem 1.5rem 0rem;
 	}
+	.collapse-control {
+		cursor: pointer;
+		.collapse-text {
+			display: inline-block;
+			color: $main;
+			font-size: 1.6rem;
+			margin-right: 1rem;
+			vertical-align: middle;
+		}
+		fa-icon {
+			font-size: 2.4rem;
+			color: $main;
+			vertical-align: middle;
+		}
+	}
 }

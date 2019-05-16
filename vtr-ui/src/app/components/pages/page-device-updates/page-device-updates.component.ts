@@ -38,6 +38,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public criticalUpdates: AvailableUpdateDetail[];
 	public recommendedUpdates: AvailableUpdateDetail[];
 	public optionalUpdates: AvailableUpdateDetail[];
+	public ignoredUpdates: AvailableUpdateDetail[];
 	public isUpdateCheckInProgress = false;
 	public isRebootRequested = false;
 	public showFullHistory = false;
@@ -283,6 +284,16 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.systemUpdateService.toggleUpdateSelection(item.name, item.checked);
 	}
 
+	public onIgnoredUpdate($event: any){
+		const packageName = $event.packageName;
+		const isIgnored = $event.isIgnored;
+		if (isIgnored === true){
+			this.systemUpdateService.ignoreUpdate(packageName);
+		} else {
+			this.systemUpdateService.unIgnoreUpdate(packageName);
+		}
+	}
+
 	private installAllUpdate() {
 		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
 			this.systemUpdateService.isInstallingAllUpdates = true;
@@ -414,10 +425,12 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	private setUpdateByCategory(updateList: Array<AvailableUpdateDetail>) {
+		this.ignoredUpdates =  [];
 		if (updateList) {
 			this.optionalUpdates = this.filterUpdate(updateList, 'optional');
 			this.recommendedUpdates = this.filterUpdate(updateList, 'recommended');
 			this.criticalUpdates = this.filterUpdate(updateList, 'critical');
+			this.systemUpdateService.getIgnoredUpdates();
 		}
 	}
 
@@ -498,6 +511,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 						this.downloadingPercent = this.systemUpdateService.downloadingPercent;
 					});
 					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
+					break;
+				case UpdateProgress.IgnoredUpdates:
+					this.setIgnoredUpdates(notification.payload);
 					break;
 				default:
 					break;
@@ -587,6 +603,59 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				}
 			);
 		}
+	}
+
+	private setIgnoredUpdates(ignoredUpdates){
+		const ignoredUpdateDetails = [];
+		const unIgnoredRecommendUpdates = [];
+		const unIgnoredOptionalUpdates = [];
+		if (this.recommendedUpdates && this.recommendedUpdates.length > 0) {
+			this.recommendedUpdates.forEach((update) => {
+				const result = ignoredUpdates.find(x => x.packageName === update.packageName);
+				if (result) {
+					update.isIgnored = true;
+					ignoredUpdateDetails.push(update);
+				} else {
+					update.isIgnored = false;
+					unIgnoredRecommendUpdates.push(update);
+				}
+			});
+			
+		}
+
+		if (this.optionalUpdates && this.optionalUpdates.length > 0) {
+			this.optionalUpdates.forEach((update) => {
+				const result = ignoredUpdates.find(x => x.packageName === update.packageName);
+				if (result) {
+					update.isIgnored = true;
+					ignoredUpdateDetails.push(update);
+				} else {
+					update.isIgnored = false;
+					unIgnoredOptionalUpdates.push(update);
+				}
+			});
+			
+		}
+
+		if (this.ignoredUpdates && this.ignoredUpdates.length > 0) {
+			this.ignoredUpdates.forEach((update) => {
+				const result = ignoredUpdates.find(x => x.packageName === update.packageName);
+				if (result) {
+					update.isIgnored = true;
+					ignoredUpdateDetails.push(update);
+				} else if (update.packageSeverity === UpdateInstallSeverity.Recommended) {
+					update.isIgnored = false;
+					unIgnoredRecommendUpdates.push(update);
+				} else if (update.packageSeverity === UpdateInstallSeverity.Optional) {
+					update.isIgnored = false;
+					unIgnoredOptionalUpdates.push(update);
+				}
+			});
+		}
+
+		this.recommendedUpdates = unIgnoredRecommendUpdates;
+		this.optionalUpdates = unIgnoredOptionalUpdates;
+		this.ignoredUpdates = ignoredUpdateDetails;
 	}
 
 	public onCancelUpdateDownload() {

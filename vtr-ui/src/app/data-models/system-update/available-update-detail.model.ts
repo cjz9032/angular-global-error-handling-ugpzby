@@ -20,5 +20,6 @@ export class AvailableUpdateDetail {
 	public readmeUrl: string;
 	public isSelected = true;
 	public isInstalled = false;
+	public isIgnored = false;
 	public installationStatus: UpdateActionResult = UpdateActionResult.Unknown;
 }

@@ -210,7 +210,8 @@ export class SystemUpdateService {
 
 	public installAllUpdates() {
 		if (this.systemUpdateBridge && this.isUpdatesAvailable) {
-			const updates = this.mapToInstallRequest(this.updateInfo.updateList);
+			const unIgnoredUpdates = this.getUnIgnoredUpdates(this.updateInfo.updateList);
+			const updates = this.mapToInstallRequest(unIgnoredUpdates);
 			this.installUpdates(updates, true);
 		}
 	}
@@ -249,16 +250,53 @@ export class SystemUpdateService {
 	}
 
 	public getIgnoredUpdates() {
-
+		if (this.systemUpdateBridge) {
+			this.systemUpdateBridge.getIgnoredUpdates()
+			.then((ignoredUpdates) => {
+				this.updateIgnoredStatus(ignoredUpdates);
+			})
+			.catch((error) => {
+				console.log('getIgnoredUpdates.error', error);
+			});
+		}
+	}
+	
+	public ignoreUpdate(packageName: string) {
+		if (this.systemUpdateBridge) {
+			console.log('Call js bridge ignoreUpdate');
+			this.systemUpdateBridge.ignoreUpdate(packageName)
+			.then((ignoredUpdates) => {
+				this.updateIgnoredStatus(ignoredUpdates);
+			})
+			.catch((error) => {
+				console.log('ignoreUpdate.error', error);
+			});
+		}
 	}
 
-	public ignoreUpdate() {
-
-		// package name
+	public unIgnoreUpdate(packageName: string) {
+		if (this.systemUpdateBridge) {
+			this.systemUpdateBridge.unignoreUpdate(packageName)
+			.then((ignoredUpdates) => {
+				this.updateIgnoredStatus(ignoredUpdates);
+			})
+			.catch((error) => {
+				console.log('unIgnoreUpdate.error', error);
+			});
+		}
 	}
-	public unignoreUpdate() {
 
-		// package name
+	private updateIgnoredStatus(ignoredUpdates: any) {
+		this.updateInfo.updateList.forEach((update) => {
+			const result = ignoredUpdates.find(x => x.packageName === update.packageName);
+			if (result) {
+				update.isIgnored = true;
+			}
+			else {
+				update.isIgnored = false;
+			}
+		});
+		this.commonService.sendNotification(UpdateProgress.IgnoredUpdates, ignoredUpdates);
 	}
 
 	public toggleUpdateSelection(packageName: string, isSelected: boolean) {
@@ -346,7 +384,7 @@ export class SystemUpdateService {
 
 	private getUpdateByRebootType(updateList: Array<AvailableUpdateDetail>, rebootType: UpdateRebootType, source: string): Array<AvailableUpdateDetail> {
 		const updates = updateList.filter((value: AvailableUpdateDetail) => {
-			return ((value.packageRebootType.toLowerCase() === rebootType.toLocaleLowerCase()) && (value.isSelected || source === 'all'));
+			return ((value.packageRebootType.toLowerCase() === rebootType.toLocaleLowerCase()) && (value.isSelected || (source === 'all' && !value.isIgnored)));
 		});
 		return updates;
 	}
@@ -480,6 +518,16 @@ export class SystemUpdateService {
 		if (updateList && updateList.length > 0) {
 			const updates = updateList.filter((value) => {
 				return value.isSelected;
+			});
+			return updates;
+		}
+		return undefined;
+	}
+
+	public getUnIgnoredUpdates(updateList: Array<AvailableUpdateDetail>): Array<AvailableUpdateDetail> {
+		if (updateList && updateList.length > 0) {
+			const updates = updateList.filter((value) => {
+				return !value.isIgnored;
 			});
 			return updates;
 		}
