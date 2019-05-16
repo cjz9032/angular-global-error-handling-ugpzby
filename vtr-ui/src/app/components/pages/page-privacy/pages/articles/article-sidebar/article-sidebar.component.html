@@ -1,2 +1,8 @@
 
-<vtr-article-preview *ngIf="showedArticle" [article]="showedArticle"></vtr-article-preview>
+<div *ngIf="showedArticle" class="article-widget">
+    <div class="article-widget__top-description">
+        <p class="article-widget__title">Privacy hub</p>
+        <a class="article-widget__link" routerLink="/privacy/articles">See all articles</a>
+    </div>
+    <vtr-article-preview [article]="showedArticle"></vtr-article-preview>
+</div>

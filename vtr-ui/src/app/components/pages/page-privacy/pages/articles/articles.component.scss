@@ -3,7 +3,9 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
-.article-preview {
-  width: 50%;
+.article {
+  width: calc(50% - 3.5rem);
+  margin: 0 0 5rem 0;
 }

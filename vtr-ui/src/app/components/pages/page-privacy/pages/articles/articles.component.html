@@ -4,7 +4,7 @@
         <vtr-article-single [articleData]="articles[openArticleId]"></vtr-article-single>
     </ng-container>
     <ng-container *ngIf="!openArticleId || !articles[openArticleId]">
-        <div class="article-preview" *ngFor="let articleItem of articles | keyvalue">
+        <div class="article" *ngFor="let articleItem of articles | keyvalue">
             <vtr-article-preview [article]="articleItem.value"></vtr-article-preview>
         </div>
     </ng-container>
