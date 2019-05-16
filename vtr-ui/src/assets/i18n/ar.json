@@ -28,7 +28,10 @@
             "notFound": "لم يتم العثور عليه",
             "registered": "مسجل",
             "notRegistered": "غير مسجل"
-        }
+        },
+        "ui": {
+			"back": "السابق"
+		}
     },
     "support": {
         "common": {

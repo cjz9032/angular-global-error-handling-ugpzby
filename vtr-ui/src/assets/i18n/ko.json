@@ -28,7 +28,10 @@
             "notFound": "찾을 수 없음",
             "registered": "등록됨",
             "notRegistered": "등록되지 않음"
-        }
+        },
+        "ui": {
+			"back": "뒤로"
+		}
     },
     "support": {
         "common": {

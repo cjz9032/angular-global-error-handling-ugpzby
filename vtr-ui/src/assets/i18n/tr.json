@@ -28,7 +28,10 @@
             "notFound": "BULUNAMADI",
             "registered": "KAYITLI",
             "notRegistered": "KAYITLI DEĞİL"
-        }
+        },
+        "ui": {
+			"back": "GERİ"
+		}
     },
     "support": {
         "common": {

@@ -38,9 +38,6 @@ interface HomeProtectionDeviceInfo {
 	styleUrls: ['./page-security-wifi.component.scss']
 })
 export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewInit {
-
-	title = 'security.wifisecurity.header.title';
-	back = 'security.wifisecurity.header.back';
 	backarrow = '< ';
 	backId = 'sa-ws-btn-back';
 	viewSecChkRoute = 'viewSecChkRoute';

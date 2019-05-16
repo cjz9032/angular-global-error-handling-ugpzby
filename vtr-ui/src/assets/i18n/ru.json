@@ -28,7 +28,10 @@
             "notFound": "НЕ ОБНАРУЖЕНО",
             "registered": "ЗАРЕГИСТРИРОВАНО",
             "notRegistered": "НЕ ЗАРЕГИСТРИРОВАНО"
-        }
+        },
+        "ui": {
+			"back": "НАЗАД"
+		}
     },
     "support": {
         "common": {

@@ -28,7 +28,10 @@
             "notFound": "NENÁJDENÉ",
             "registered": "REGISTROVANÉ",
             "notRegistered": "NEREGISTROVANÉ"
-        }
+        },
+        "ui": {
+			"back": "SPÄŤ"
+		}
     },
     "support": {
         "common": {

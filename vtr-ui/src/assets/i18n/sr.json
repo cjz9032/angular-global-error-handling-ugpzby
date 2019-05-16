@@ -28,7 +28,10 @@
             "notFound": "NIJE PRONAĐEN",
             "registered": "REGISTROVAN",
             "notRegistered": "NIJE REGISTROVAN"
-        }
+        },
+        "ui": {
+			"back": "NAZAD"
+		}
     },
     "support": {
         "common": {

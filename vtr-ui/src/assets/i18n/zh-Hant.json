@@ -28,7 +28,10 @@
             "notFound": "找不到",
             "registered": "已註冊",
             "notRegistered": "未註冊"
-        }
+        },
+        "ui": {
+            "back": "上一步"
+		}
     },
     "support": {
         "common": {

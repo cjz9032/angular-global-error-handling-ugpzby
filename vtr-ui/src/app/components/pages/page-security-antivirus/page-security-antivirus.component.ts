@@ -15,9 +15,6 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 	styleUrls: ['./page-security-antivirus.component.scss']
 })
 export class PageSecurityAntivirusComponent implements OnInit {
-
-	title = 'security.antivirus.common.title' ;
-	back = 'security.antivirus.common.back';
 	backarrow = '< ';
 	antiVirus: Antivirus;
 	viewModel: any;

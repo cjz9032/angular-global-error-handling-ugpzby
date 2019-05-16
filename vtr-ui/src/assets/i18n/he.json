@@ -28,7 +28,10 @@
             "notFound": "לא נמצא",
             "registered": "רשום",
             "notRegistered": "לא רשום"
-        }
+        },
+        "ui": {
+			"back": "חזרה"
+		}
     },
     "support": {
         "common": {
