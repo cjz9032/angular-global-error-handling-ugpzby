@@ -33,4 +33,5 @@ export class HeaderMainComponent implements OnInit {
 	goBack() {
 		window.history.back();
 	}
+
 }
