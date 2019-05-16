@@ -300,7 +300,7 @@
                     "subtitle1": "电池和安静",
                     "description1": "此功能动态调节散热设置以满足您的需求。此功能开启时，在手持或空闲状态下可调节设置使设备保持较低温度或较低噪声。而设备放置在稳定平面上时，此功能可优化性能。此功能关闭时，您可以手动设置散热优先级。",
                     "description2": "智能散热可调节风扇速度、最高表面温度和性能。此功能具有以下模式，且现在支持通过 Windows 性能电源滑块访问。",
-                    "description3": "Battery＆Quiet 是一个长期存在的事实，当阅读其布局时，读者将被页面的可读内容分散注意力。",
+                    "description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
                     "readMore": "阅读更多.",
                     "gotoWindows": {
                         "title": "转到 Windows 设置",
@@ -310,10 +310,16 @@
                         "title": "智能散热",
                         "description": "",
                         "tooltip": "",
-                        "options": {
-                            "quiteCool": "安静和低温模式",
-                            "performance": "性能"
-                        },
+                        "optimize": "optimize system for",
+						"apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
+						"options": {
+							"quiteCool3": "Cool Mode",
+							"performance3": "High Performance",
+							"quiteCool4": "安静和低温模式",
+							"performance4": "性能",
+							"quiteCool5": "安静和低温模式",
+							"performance5": "性能"
+						},
                         "readMore": {
                             "mode1": "安静模式",
                             "mode2": "平衡模式",

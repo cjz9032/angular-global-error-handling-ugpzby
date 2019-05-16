@@ -186,6 +186,7 @@ import { UiRoundedRectangleRadioComponent } from './components/ui/ui-rounded-rec
 import { CameraBackgroundBlurComponent } from './components/camera-background-blur/camera-background-blur.component';
 import { PageAutocloseComponent } from './components/pages/page-autoclose/page-autoclose.component';
 import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
+import { PowerSmartSettingsComponent } from './components/widgets/power-smart-settings/power-smart-settings.component';
 
 
 library.add(fas);
@@ -330,7 +331,8 @@ library.add(fal);
 		UiRoundedRectangleRadioComponent,
 		CameraBackgroundBlurComponent,
 		PageAutocloseComponent,
-		PageNetworkBoostComponent
+		PageNetworkBoostComponent,
+		PowerSmartSettingsComponent
 	],
 	imports: [
 		BrowserModule,
