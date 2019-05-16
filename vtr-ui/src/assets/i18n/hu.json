@@ -306,7 +306,7 @@
             "privacyPolicy": "További információ az <tag>adatvédelmi irányelvek között található</tag>",
             "whyWindowsHelloDescription2": "A Windows Hello használatával könnyebben és biztonságosabban jelentkezhet be a számítógépre. Az online Microsoft-alkalmazásokat ugyancsak használhatja. A Windows Hello használatának megkezdéséhez kövesse az alábbi utasításokat",
             "authentication": "Windows Hello-hitelesítés",
-            "traditional": "A hagyományos jelszó ellopható, majd a világon bárhonnan hozzáférhetnek vele az Ön fiókjához. Biztonságosabb és kényelmesebb. A Windows Hello következő generációs jelszót kínál. A nem biztonságos jelszavak helyett ujjlenyomat-olvasással [vagy infravörös kamerával] jelentkezhet be.",
+            "traditional": "A hagyományos jelszó ellopható, majd a világon bárhonnan hozzáférhetnek vele az Ön fiókjához. Biztonságosabb és kényelmesebb. A Windows Hello következő generációs jelszót kínál. A nem biztonságos jelszavak helyett ujjlenyomat-olvasással jelentkezhet be.",
             "howToStart": "Melyek a Windows Hello használatának kezdő lépései?"
         }
     }

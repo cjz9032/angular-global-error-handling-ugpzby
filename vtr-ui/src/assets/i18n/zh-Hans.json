@@ -864,7 +864,7 @@
             "privacyPolicy": "阅读<tag>隐私政策</tag>的更多信息",
             "whyWindowsHelloDescription2": "Windows Hello 让登录电脑更简单、更安全。此外，它还能用于您的 Microsoft 在线应用。按照下方说明开始使用 Windows Hello",
             "authentication": "Windows Hello 认证",
-            "traditional": "传统密码可能会遭到盗窃，并从世界任何地方用于访问您的帐户。更安全、更便捷。Windows Hello 是密码的新一代演变成果。使用指纹读取器 [或红外摄像头] 来取代不安全的密码进行登录。",
+            "traditional": "传统密码可能会遭到盗窃，并从世界任何地方用于访问您的帐户。更安全、更便捷。Windows Hello 是密码的新一代演变成果。使用指纹读取器来取代不安全的密码进行登录。",
             "howToStart": "如何开始使用 Windows Hello？"
         }
     },

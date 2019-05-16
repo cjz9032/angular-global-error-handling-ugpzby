@@ -306,7 +306,7 @@
             "privacyPolicy": "Läs mer i <tag>sekretesspolicyn</tag>",
             "whyWindowsHelloDescription2": "Windows Hello gör inloggningen på din dator enklare och säkrare. Det kan även användas tillsammans med dina Microsoft-appar online. Följ anvisningarna nedan för att börja använda Windows Hello.",
             "authentication": "Autentisering med Windows Hello",
-            "traditional": "Traditionella lösenord kan bli stulna och användas för att komma åt ditt konto var som helst i världen. Säkrare och enklare. Windows Hello är nästa generations lösenord. Logga in med hjälp av din fingeravtrycksläsare (eller IR-kamera) i stället för med ett osäkert lösenord.",
+            "traditional": "Traditionella lösenord kan bli stulna och användas för att komma åt ditt konto var som helst i världen. Säkrare och enklare. Windows Hello är nästa generations lösenord. Logga in med hjälp av din fingeravtrycksläsare i stället för med ett osäkert lösenord.",
             "howToStart": "Hur börjar jag använda Windows Hello?"
         }
     }

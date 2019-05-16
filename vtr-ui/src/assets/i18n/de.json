@@ -306,7 +306,7 @@
             "privacyPolicy": "Weitere Informationen finden Sie in der <tag>Datenschutzrichtlinie</tag>",
             "whyWindowsHelloDescription2": "Windows Hello erleichtert Ihnen das Anmelden auf Ihrem PC und macht es sicherer. Außerdem können Sie es auch für Ihre Microsoft-Apps online verwenden. Befolgen Sie die unten stehenden Anweisungen, um Windows Hello zu verwenden.",
             "authentication": "Authentifizierung über Windows Hello",
-            "traditional": "Herkömmliche Kennwörter können leicht gestohlen und missbraucht werden, um sich von überall auf der Welt Zugriff auf Ihr Konto zu verschaffen. Sicher und praktisch. Windows Hello ist die neue Generation der Kennwörter. Verwenden Sie für die Anmeldung Ihr Lesegerät für Fingerabdrücke [oder die IR-Kamera] anstatt unsicherer Kennwörter.",
+            "traditional": "Herkömmliche Kennwörter können leicht gestohlen und missbraucht werden, um sich von überall auf der Welt Zugriff auf Ihr Konto zu verschaffen. Sicher und praktisch. Windows Hello ist die neue Generation der Kennwörter. Verwenden Sie für die Anmeldung Ihr Lesegerät für Fingerabdrücke anstatt unsicherer Kennwörter.",
             "howToStart": "Wie nutze ich Windows Hello?"
         }
     }
