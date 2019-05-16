@@ -355,4 +355,11 @@ export class VantageShellService {
 
 		return undefined;
 	}
+
+	public getCameraBlur(): any {
+		if (this.phoenix && this.phoenix.hwsettings.camera.cameraBlur) {
+			return this.phoenix.hwsettings.camera.cameraBlur;
+		}
+		return undefined;
+	}
 }
