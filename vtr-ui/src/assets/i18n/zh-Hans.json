@@ -51,17 +51,17 @@
     },
     "common": {
         "menu": {
-            "dashboard": "仪表板",
+            "dashboard": "首页",
             "device": {
-                "title": "设备",
-                "sub1": "我的设备",
-                "sub2": "我的设备设置",
+                "title": "我的设备",
+                "sub1": "设备信息",
+                "sub2": "设备设置",
                 "sub3": "系统更新"
             },
             "security": {
                 "title": "安全性",
                 "sub1": "我的安全性",
-                "sub2": "反病毒",
+                "sub2": "病毒防护",
                 "sub3": "WiFi 安全",
                 "sub4": "密码安全状况",
                 "sub5": "因特网保护",
@@ -72,8 +72,8 @@
         },
         "securityAdvisor": {
             "title": "安全顾问",
-            "subtitle": "检查设备是否受安全保护。",
-            "antiVirus": "反病毒",
+            "subtitle": "检查设备是否受安全保护",
+            "antiVirus": "病毒防护",
             "wifi": "WiFi 安全",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
@@ -91,7 +91,7 @@
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
-            "subtitle": "查找关于设备的实用小提示。",
+            "subtitle": "查找关于设备的实用小提示",
             "question1": "备份和恢复文件",
             "question2": "如何刷新您的电脑",
             "question3": "如何了解计算机的 CPU 情况",
@@ -149,8 +149,8 @@
             "subtitle": "告诉我们您对 VANTAGE 的想法",
             "button": "提供反馈",
             "form": {
-                "email": "电子邮件（可选）",
-                "comments": "注释",
+                "email": "联系方式（如果您不喜欢可留空）",
+                "comments": "内容",
                 "button": "提交",
                 "messages": {
                     "feedbackSuccess": "感谢您的反馈意见 ！"
@@ -158,14 +158,14 @@
             }
         },
         "quickSettings": {
-            "title": "您的快速设置",
+            "title": "您的设置",
             "microphone": "麦克风",
-            "cameraPrivacy": "摄像头隐私",
+            "cameraPrivacy": "摄像头挡板",
             "eyeCareMode": "护眼模式"
         },
         "systemStatus": {
             "title": "系统状态",
-            "subtitle": "快速了解设备状态。",
+            "subtitle": "快速了解设备状态",
             "memory": {
                 "title": "内存",
                 "detail": {
@@ -199,18 +199,18 @@
     },
     "device": {
         "myDevice": {
-            "title": "我的设备",
-            "subtitle": "我的设备状态",
+            "title": "设备信息",
+            "subtitle": "设备状态",
             "serial": "序列号",
             "productNumber": "产品编号",
             "biosVersion": "BIOS 版本",
             "learnMore": "了解更多信息",
             "freeMemory": "可用内存",
             "systemUpdate": {
-                "title": "系统更新",
+                "title": "系统升级",
                 "notFound": "未找到系统更新",
                 "detail": {
-                    "uptoDate": "软件为最新",
+                    "uptoDate": "软件已更新",
                     "updatedOn": "更新",
                     "outdated": "软件已过时",
                     "neverRanUpdate": "从未运行过更新"
@@ -243,11 +243,11 @@
                     "daysRemaining": "剩余天数",
                     "outOfWarranty": "保修期已过 ",
                     "expiredOn": "到期时间：",
-                    "notAvailable": "保修无法提供",
+                    "notAvailable": "无保修信息",
                     "support": "支持"
                 }
             },
-            "helpful": "帮助内容"
+            "helpful": "常见问题"
         },
         "deviceSettings": {
             "helpful": "帮助内容",
@@ -653,7 +653,7 @@
         },
         "antivirus": {
             "common": {
-                "title": "反病毒",
+                "title": "病毒防护",
                 "back": "返回",
                 "why": "为什么选择 McAfee？",
                 "recommends": "Lenovo 建议您采用 McAfee 来保护您的所有设备，它具备如下优势：",
@@ -686,7 +686,7 @@
                 "launch": "启动 McAfee",
                 "getMacfee": "获取 McAfee",
                 "topBenefits": "McAfee LiveSafe 的主要优势",
-                "awardTitle": "屡获殊荣的反病毒软件",
+                "awardTitle": "屡获殊荣的病毒防护软件",
                 "awardSubtitle": "在电脑上拦截病毒、恶意软件、勒索软件、间谍软件、有害程序等。",
                 "encryptedTitle": "加密存储",
                 "encryptedSubtitle": "通过使用 128 位加密技术将敏感文件存储至 PC 来对这些文件进行保密。",
@@ -771,7 +771,7 @@
                 "deviceName1": "可信来源的应用程序",
                 "deviceName2": "开发人员模式",
                 "deviceName3": "UAC 通知",
-                "deviceName4": "反病毒可用性",
+                "deviceName4": "病毒防护可用性",
                 "deviceName5": "硬盘加密",
                 "deviceName6": "防火墙可用性",
                 "deviceName7": "已激活的 Windows",
