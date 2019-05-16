@@ -2,6 +2,7 @@
 	<div class="button-box"
 		*ngIf="label">
 		<button *ngIf="alreadyJoinGroup !== 'joined'"
+			title="{{label}}"
 			[disabled]="isDisabled"
 			type="button"
 			class="btn button"
@@ -18,6 +19,7 @@
 						'btn-gradient': isGradient}"
 			(click)="onClickButton($event)">{{label}} </button>
 		<button *ngIf="alreadyJoinGroup === 'joined'"
+			title="{{label}}"
 			type="button"
 			class="button disable"
 			[disabled]="false"
