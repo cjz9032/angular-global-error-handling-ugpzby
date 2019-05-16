@@ -186,7 +186,7 @@
                     "notFound": "保修未找到",
                     "until": "​截止时间：",
                     "expiredOn": "保修已到期",
-                    "notAvailable": "保修无法提供"
+                    "notAvailable": "无保修信息"
                 }
             },
             "systemUpdate": {
