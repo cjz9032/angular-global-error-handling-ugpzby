@@ -235,7 +235,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "VPN セキュリティー",
-            "header": "SurfEasy仮想プライベート・ネットワーク",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPNは、懸念なく安全かつ個人的に任意のインターネット接続で PC、Mac®、スマートフォン、タブレットを使用できるように、送受信する情報を暗号化します。",
             "helpKeep": "SurfEasy VPN を使用することで、オンライン・アクティビティを安全かつプライベートに維持できます。",
             "getSufEasy": "SurfEasy を入手",

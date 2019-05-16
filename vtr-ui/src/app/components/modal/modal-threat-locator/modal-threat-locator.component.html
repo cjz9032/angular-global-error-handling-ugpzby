@@ -1,4 +1,4 @@
-<div class="modal-body vtr-modal-threat-locator">
+<div class="modal-body vtr-modal-threat-locator" [ngClass]="{'connection-error-modal': !online}">
 	<div class="row justify-content-end">
 		<div class="btn-close">
 			<button id="sa-ws-btn-locatorclose"
@@ -12,7 +12,11 @@
 	</div>
 	<h1>Threat locator</h1>
 	<div class="iframe-container">
-		<iframe [src]="threatLocatorUrl | safeDom : 'resourceUrl'"
+		<div *ngIf="!online" class="disabled-network p-5">
+			<p class="title">{{ 'security.wifisecurity.threatlocator.connectionError' | translate}}</p>
+			<p class="subscribe">{{ 'security.wifisecurity.threatlocator.tryAgain' | translate}}</p>
+		</div>
+		<iframe *ngIf="online" [src]="threatLocatorUrl | safeDom : 'resourceUrl'"
 			class="w-100 h-100 border"
 			scrolling="no"
 			frameborder="0"></iframe>

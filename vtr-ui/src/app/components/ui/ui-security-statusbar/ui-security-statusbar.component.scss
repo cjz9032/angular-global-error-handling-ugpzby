@@ -43,6 +43,10 @@
 		border-color: $go_dark;
 	}
 
+	.icon-check:before {
+		content: '';
+	}
+
 	.icon-times {
 		background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
 		background-color: $stop_dark;

@@ -321,7 +321,7 @@
 					"subtitle1": "Battery & Quiet",
 					"description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
 					"description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
-					"description3": "Battery & Quiet lorem ipsum is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+					"description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
 					"readMore": "Read more.",
 					"gotoWindows": {
 						"title": "Go to windows settings",
@@ -331,9 +331,15 @@
 						"title": "Intelligent cooling",
 						"description": "",
 						"tooltip": "",
+						"optimize": "optimize system for",
+						"apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
 						"options": {
-							"quiteCool": "Quiet & Cool",
-							"performance": "Performance"
+							"quiteCool3": "Cool Mode",
+							"performance3": "High Performance",
+							"quiteCool4": "Quiet & Cool",
+							"performance4": "Performance",
+							"quiteCool5": "Quiet & Cool",
+							"performance5": "Performance"
 						},
 						"readMore": {
 							"mode1": "Quiet mode",
@@ -742,7 +748,9 @@
 			},
 			"threatlocator": {
 				"describe": "Use the threat detector to determine the safety of the networks around you.",
-				"button": "Check threat"
+				"button": "Check threat",
+				"connectionError": "Connection Error",
+				"tryAgain": "We are unable to locate your device due to network unavailable, please get connected with Internet and try again."
 			},
 			"locationmodal": {
 				"title": "Enable location services",
