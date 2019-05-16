@@ -28,7 +28,11 @@
             "notFound": "NIE ZNALEZIONO",
             "registered": "ZAREJESTROWANY",
             "notRegistered": "NIE ZAREJESTROWANY"
-        }
+        },
+        "ui": {
+			"back": "WSTECZ"
+		}
+
     },
     "support": {
         "common": {

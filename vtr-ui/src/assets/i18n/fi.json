@@ -28,7 +28,10 @@
             "notFound": "EI LÖYTYNYT",
             "registered": "REKISTERÖITY",
             "notRegistered": "EI REKISTERÖITY"
-        }
+        },
+        "ui": {
+			"back": "EDELLINEN"
+		}
     },
     "support": {
         "common": {

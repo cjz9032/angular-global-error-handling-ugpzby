@@ -28,7 +28,10 @@
             "notFound": "NEM TALÁLHATÓ",
             "registered": "REGISZTRÁLT",
             "notRegistered": "NEM REGISZTRÁLT"
-        }
+        }, 
+        "ui": {
+			"back": "VISSZA"
+		}
     },
     "support": {
         "common": {

@@ -82,6 +82,9 @@
 						@media #{$mediaquery_9} {
 							padding: 0 0;
 						}
+						@media #{$mediaquery_8} {
+							padding: 0 0.5rem;
+						}
 
 
 						&.active {
@@ -94,6 +97,9 @@
 
 						&.user {
 							padding: 2rem 2rem 2rem 2rem;
+							@media #{$mediaquery_9} {
+								padding: 2rem 0 2rem 0;
+							}
 							height: $menu_height;
 							line-height: 4.6rem;
 							border-bottom: none;
@@ -105,6 +111,9 @@
 								text-align: center;
 								font-size: 2rem;
 								width: 4.6rem;
+								@media #{$mediaquery_9} {
+									width: 2.6rem;
+								}
 								height: 4.6rem;
 								border-radius: 2.3rem;
 								background-color: $main_darker;
@@ -201,6 +210,9 @@
 							}
 							&.user{
 								padding-right: 5.2rem;
+								@media #{$mediaquery_9} {
+									padding-right: 4.2rem;
+								}
 								&::after{
 									right: 3rem;
 								}

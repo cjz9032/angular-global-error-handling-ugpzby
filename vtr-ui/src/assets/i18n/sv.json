@@ -28,7 +28,10 @@
             "notFound": "HITTADES INTE",
             "registered": "REGISTRERAD",
             "notRegistered": "INTE REGISTRERAD"
-        }
+        },
+        "ui": {
+			"back": "TILLBAKA"
+		}
     },
     "support": {
         "common": {

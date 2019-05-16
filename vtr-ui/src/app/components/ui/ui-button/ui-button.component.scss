@@ -21,6 +21,10 @@
       display: inline-block;
       // cursor: pointer;
       padding: 0 2.5rem;
+      max-width: 33rem;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     .text-upper-case {

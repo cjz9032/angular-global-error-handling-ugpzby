@@ -104,19 +104,28 @@
 			<li>Disk space needed: <span>{{ diskSpaceNeeded }}</span></li>
 		</ul>
 		<div class="row"
+			*ngIf="isReadMeAvailable || severity !== 'Critical'">
+			<div class="col-6 pl-0 pr-0 text-left" 
 			*ngIf="isReadMeAvailable">
-			<div class="col-6 pl-0 pr-0 text-left">
 				<a href="javascript:void(0)"
 					class="read"
 					(click)="onReadMoreClick($event)">Read more</a>
 			</div>
 			<!-- required in MVP 2 -->
-			<!-- <div class="col-6 pl-0 pr-0 text-right">
+			<div class="col-6 pl-0 pr-0 text-left" 
+				*ngIf="severity !== 'Critical' && isIgnored === false">
 				<a href="javascript:void(0)"
 					class="ignore"
-					(click)="onIgnoreUpdateClick($event)"
-					>Ignore update</a>
-			</div> -->
+					(click)="onIgnoreUpdateClick(packageName, true)"
+					>Ignore</a>
+			</div>
+			<div class="col-6 pl-0 pr-0 text-left" 
+				*ngIf="severity !== 'Critical' && isIgnored === true">
+				<a href="javascript:void(0)"
+					class="ignore"
+					(click)="onIgnoreUpdateClick(packageName, false)"
+					>Attend</a>
+			</div>
 		</div>
 	</div>
 </ng-template>

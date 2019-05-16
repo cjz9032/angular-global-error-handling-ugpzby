@@ -28,7 +28,10 @@
             "notFound": "見つかりませんでした",
             "registered": "登録済み",
             "notRegistered": "未登録"
-        }
+        },
+        "ui": {
+			"back": "戻る"
+		}
     },
     "support": {
         "common": {

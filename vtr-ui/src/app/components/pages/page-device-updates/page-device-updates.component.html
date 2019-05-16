@@ -47,10 +47,12 @@
 										[criticalUpdates]="criticalUpdates"
 										[optionalUpdates]="optionalUpdates"
 										[recommendedUpdates]="recommendedUpdates"
+										[ignoredUpdates]="ignoredUpdates"
 										[isInstallationCompleted]="systemUpdateService.isInstallationCompleted"
 										[isInstallationSuccess]="systemUpdateService.isInstallationSuccess"
 										[isInstallingAllUpdates]="systemUpdateService.isInstallingAllUpdates"
 										(checkChange)="onUpdateSelectionChange($event)"
+										(ignoreUpdate)="onIgnoredUpdate($event)"
 										(installAllUpdate)="showInstallConfirmation('all')"
 										(installSelectedUpdate)="showInstallConfirmation('selected')">
 									</vtr-available-updates>

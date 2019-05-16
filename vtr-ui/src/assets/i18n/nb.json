@@ -28,7 +28,10 @@
             "notFound": "IKKE FUNNET",
             "registered": "REGISTRERT",
             "notRegistered": "IKKE REGISTRERT"
-        }
+        },
+        "ui": {
+			"back": "TILBAKE"
+		}
     },
     "support": {
         "common": {

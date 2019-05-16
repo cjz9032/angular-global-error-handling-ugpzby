@@ -28,7 +28,10 @@
             "notFound": "ΔΕΝ ΒΡΕΘΗΚΕ",
             "registered": "ΔΗΛΩΘΗΚΕ",
             "notRegistered": "ΔΕΝ ΔΗΛΩΘΗΚΕ"
-        }
+        },
+        "ui": {
+			"back": "ΠΙΣΩ"
+		}
     },
     "support": {
         "common": {
