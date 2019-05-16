@@ -8,18 +8,26 @@
   height: 100%;
   background: rgba(#0d0d0d, .2);
   overflow: auto;
-  display: flex;
-  padding: 2rem;
-
+  padding: 2rem 2rem 5rem 2rem;
+  text-align: center;
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+    vertical-align: middle;
+  }
   &__inner {
-    margin: auto;
-    position: relative;
     background: #fff;
     width: 63rem;
     max-width: 90%;
     padding: 3.5rem 4rem 3rem 4rem;
     border-radius: 10px;
     box-shadow: 0 0 15px 0 rgba(0,0,0,0.15);
+    text-align: left;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
 
     .popup_big & {
       width: 86rem;
