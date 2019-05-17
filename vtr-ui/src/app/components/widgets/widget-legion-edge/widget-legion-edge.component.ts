@@ -54,7 +54,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isSwitchVisible: true,
 			isChecked: true,
 			tooltipText: '',
-			type: 'auto-updates'
+			type: 'auto-updates',
+			routerLink:'/autoclose'
 		},
 		{
 			readMoreText: '',
@@ -69,7 +70,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isSwitchVisible: true,
 			isChecked: true,
 			tooltipText: '',
-			type: 'auto-updates'
+			type: 'auto-updates',
+			routerLink:'/networkboost'
 		},
 		{
 			readMoreText: '',

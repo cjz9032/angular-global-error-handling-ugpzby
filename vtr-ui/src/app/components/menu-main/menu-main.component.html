@@ -107,7 +107,7 @@
 							*ngIf="!deviceService.isArm"
 							aria-labelledby="navbarDropdown">
 							<div class="dropdown-item">{{'lenovoId.helloUser' | translate:{firstName:firstName} }}</div>
-							<a *ngIf="!userService.auth"
+							<a *ngIf="!userService.auth && !userService.starter"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
@@ -115,6 +115,14 @@
 								class="dropdown-item link"
 								href="javascript:void(0)"
 								(click)="OpenLenovoId()">{{'lenovoId.login' | translate}}</a>
+							<a *ngIf="!userService.auth && userService.starter"
+								vtrMetrics
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="LenovoIdStarterIdButton"
+								class="dropdown-item link"
+								href="javascript:void(0)"
+								(click)="OpenLenovoId()">{{'lenovoId.unlockExclusives' | translate}}</a>
 							<a *ngIf="userService.auth"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"

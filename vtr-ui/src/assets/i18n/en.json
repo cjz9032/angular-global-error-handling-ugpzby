@@ -53,7 +53,7 @@
 				"support": {
 					"title": "Support",
 					"sub1": "Support",
-					"sub2": "Face Book",
+					"sub2": "Facebook",
 					"sub3": "Instagram"
 				}
 			}
@@ -321,7 +321,7 @@
 					"subtitle1": "Battery & Quiet",
 					"description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
 					"description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
-					"description3": "Battery & Quiet lorem ipsum is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+					"description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
 					"readMore": "Read more.",
 					"gotoWindows": {
 						"title": "Go to windows settings",
@@ -331,9 +331,15 @@
 						"title": "Intelligent cooling",
 						"description": "",
 						"tooltip": "",
+						"optimize": "optimize system for",
+						"apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
 						"options": {
-							"quiteCool": "Quiet & Cool",
-							"performance": "Performance"
+							"quiteCool3": "Cool Mode",
+							"performance3": "High Performance",
+							"quiteCool4": "Quiet & Cool",
+							"performance4": "Performance",
+							"quiteCool5": "Quiet & Cool",
+							"performance5": "Performance"
 						},
 						"readMore": {
 							"mode1": "Quiet mode",
@@ -520,7 +526,11 @@
 					"contrast": "Contrast",
 					"autoExposure": "Auto Exposure",
 					"autoFocus": "Auto focus",
-					"notAvailable": "Camera Not Available"
+					"notAvailable": "Camera Not Available",
+					"camerablur": {
+						"title": "Camera Background Blur",
+						"caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections."
+					}
 				}
 			}
 		},
@@ -532,6 +542,7 @@
 			"criticalUpdates": "Critical Update(s)",
 			"recommendedUpdates": "Recommended Update(s)",
 			"optionalUpdates": "Optional Update(s)",
+			"ignoredUpdates":"Ignored Update(s)",
 			"successInstall": "Successfully installed on",
 			"failedInstall": "Failed to installed on",
 			"at": "at",
@@ -738,7 +749,9 @@
 			},
 			"threatlocator": {
 				"describe": "Use the threat detector to determine the safety of the networks around you.",
-				"button": "Check threat"
+				"button": "Check threat",
+				"connectionError": "Connection Error",
+				"tryAgain": "We are unable to locate your device due to network unavailable, please get connected with Internet and try again."
 			},
 			"locationmodal": {
 				"title": "Enable location services",
@@ -866,13 +879,14 @@
 			"privacyPolicy": "Read more on the <tag>Privacy Policy</tag>",
 			"whyWindowsHelloDescription2": "Windows Hello makes logging into your PC easier and more secure. And you can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello",
 			"authentication": "Windows Hello Authentication",
-			"traditional": "Traditional passwords can be stolen and used to access your account from anywhere in the world. More secure and convenient. Windows Hello is the next generation of a password. Use your fingerprint reader [or IR camera] instead of insecure passwords to log in.",
+			"traditional": "Traditional passwords can be stolen and used to access your account from anywhere in the world. More secure and convenient. Windows Hello is the next generation of a password. Use your fingerprint reader instead of insecure passwords to log in.",
 			"howToStart": "How do I start using Windows Hello?"
 		}
 	},
 	"lenovoId": {
 		"login": "Login",
 		"logout": "Logout",
+		"unlockExclusives": "Unlock Exclusives",
 		"user": "User",
 		"welcomeText": "Looking energized today {{firstName}}!",
 		"welcomeTextWithoutUserName": "Looking energized today!",

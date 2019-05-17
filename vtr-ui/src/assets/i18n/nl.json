@@ -28,7 +28,10 @@
             "notFound": "NIET GEVONDEN",
             "registered": "GEREGISTREERD",
             "notRegistered": "NIET GEREGISTREERD"
-        }
+        },
+        "ui": {
+			"back": "TERUG"
+		}
     },
     "support": {
         "common": {
@@ -235,7 +238,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "VPN-beveiliging",
-            "header": "SurfEasy Virtueel particulier netwerk",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN versleutelt de informatie die u verzendt en ontvangt, zodat u uw pc, Mac®, smartphone of tablet zorgeloos veilig en privé kunt gebruiken met elke internetverbinding.",
             "helpKeep": "Help uw online activiteiten veilig en privé te houden met SurfEasy VPN.",
             "getSufEasy": "SurfEasy downloaden",
@@ -303,7 +306,7 @@
             "privacyPolicy": "Meer informatie over het <tag>privacybeleid</tag>",
             "whyWindowsHelloDescription2": "Windows Hello maakt uw aanmelding bij een pc eenvoudiger en veiliger. En het kan ook worden gebruikt voor uw online Microsoft-apps. Volg onderstaande instructies om met Windows Hello aan de slag te gaan",
             "authentication": "Windows Hello-verificatie",
-            "traditional": "Traditionele wachtwoorden kunnen worden gestolen en vanaf elke plek ter wereld worden gebruikt om toegang tot uw account te krijgen. Veiliger en gemakkelijker. Windows Hello is de nieuwe generatie van wachtwoorden. Gebruik de vingerafdruklezer [of IR-camera] in plaats van een onveilig wachtwoord om u aan te melden.",
+            "traditional": "Traditionele wachtwoorden kunnen worden gestolen en vanaf elke plek ter wereld worden gebruikt om toegang tot uw account te krijgen. Veiliger en gemakkelijker. Windows Hello is de nieuwe generatie van wachtwoorden. Gebruik de vingerafdruklezer in plaats van een onveilig wachtwoord om u aan te melden.",
             "howToStart": "Hoe ga ik aan de slag met Windows Hello?"
         }
     }

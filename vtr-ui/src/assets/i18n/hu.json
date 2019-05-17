@@ -28,7 +28,10 @@
             "notFound": "NEM TALÁLHATÓ",
             "registered": "REGISZTRÁLT",
             "notRegistered": "NEM REGISZTRÁLT"
-        }
+        }, 
+        "ui": {
+			"back": "VISSZA"
+		}
     },
     "support": {
         "common": {
@@ -235,7 +238,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "VPN-biztonság",
-            "header": "SurfEasy virtuális magánhálózat",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "A SurfEasy VPN titkosítja a küldött és fogadott adatokat, így Ön bármilyen internetkapcsolattal biztonságosan használhatja a számítógépet, a Mac® rendszert, az okostelefont vagy a táblagépet.",
             "helpKeep": "Biztonságos és privát online tevékenység a SurfEasy VPN használatával.",
             "getSufEasy": "A SurfEasy beszerzése",
@@ -303,7 +306,7 @@
             "privacyPolicy": "További információ az <tag>adatvédelmi irányelvek között található</tag>",
             "whyWindowsHelloDescription2": "A Windows Hello használatával könnyebben és biztonságosabban jelentkezhet be a számítógépre. Az online Microsoft-alkalmazásokat ugyancsak használhatja. A Windows Hello használatának megkezdéséhez kövesse az alábbi utasításokat",
             "authentication": "Windows Hello-hitelesítés",
-            "traditional": "A hagyományos jelszó ellopható, majd a világon bárhonnan hozzáférhetnek vele az Ön fiókjához. Biztonságosabb és kényelmesebb. A Windows Hello következő generációs jelszót kínál. A nem biztonságos jelszavak helyett ujjlenyomat-olvasással [vagy infravörös kamerával] jelentkezhet be.",
+            "traditional": "A hagyományos jelszó ellopható, majd a világon bárhonnan hozzáférhetnek vele az Ön fiókjához. Biztonságosabb és kényelmesebb. A Windows Hello következő generációs jelszót kínál. A nem biztonságos jelszavak helyett ujjlenyomat-olvasással jelentkezhet be.",
             "howToStart": "Melyek a Windows Hello használatának kezdő lépései?"
         }
     }
