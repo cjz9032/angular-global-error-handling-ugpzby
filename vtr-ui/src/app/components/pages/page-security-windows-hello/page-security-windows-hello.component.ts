@@ -34,8 +34,6 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 		this.updateStatus();
 		this.windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
 			this.updateStatus();
-		}).on(EventTypes.helloFacialIdStatusEvent, () => {
-			this.updateStatus();
 		});
 		this.fetchCMSArticles();
 	}
@@ -56,9 +54,8 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 		if (cacheStatus) {
 			this.statusItem.status = cacheStatus;
 		}
-		if (this.windowsHello && (this.windowsHello.fingerPrintStatus || this.windowsHello.facialIdStatus)) {
-			if (this.windowsHello.fingerPrintStatus === 'active' ||
-				this.windowsHello.facialIdStatus === 'active') {
+		if (this.windowsHello && (this.windowsHello.fingerPrintStatus)) {
+			if (this.windowsHello.fingerPrintStatus === 'active') {
 				this.statusItem.status = 'enabled';
 			} else {
 				this.statusItem.status = 'disabled';

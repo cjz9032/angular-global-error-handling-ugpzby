@@ -38,6 +38,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	private notificationSubscription: Subscription;
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	public shouldCameraSectionDisabled = true;
+	public showCameraBackgroundBlurFeature = true;
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	headerMenuItems = [
@@ -133,6 +134,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.getCameraDetails();
 		this.statusChangedLocationPermission();
 		this.displayService.startMonitorForCameraPermission();
+		this.startMonitorForCamera();
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -157,6 +159,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			this.cameraDetailSubscription.unsubscribe();
 		}
 		this.stopEyeCareMonitor();
+		this.stopMonitorForCamera();
 	}
 
 	/**
@@ -443,6 +446,45 @@ export class SubpageDeviceSettingsDisplayComponent
 				});
 		}
 	}
+
+	startMonitorHandlerForCamera(value: FeatureStatus) {
+		console.log('startMonitorHandlerForCamera', value);
+		this.cameraPrivacyModeStatus = value;
+		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraPrivacyModeStatus);
+	}
+
+	startMonitorForCamera() {
+		console.log('startMonitorForCamera');
+		try {
+			if (this.displayService.isShellAvailable) {
+				this.displayService.startMonitorForCamera(this.startMonitorHandlerForCamera.bind(this))
+					.then((val) => {
+						console.log('startMonitorForCamera.then', val);
+						
+					}).catch(error => {
+						console.error('startMonitorForCamera', error);
+					});
+			}
+		} catch (error) {
+			console.log('startMonitorForCamera', error);
+		}
+	}
+
+	stopMonitorForCamera() {
+		try {
+			if (this.displayService.isShellAvailable) {
+				this.displayService.stopMonitorForCamera()
+					.then((value: any) => {
+						console.log('stopMonitorForCamera.then', value);
+					}).catch(error => {
+						console.error('stopMonitorForCamera', error);
+					});
+			}
+		} catch (error) {
+			console.log('stopMonitorForCamera', error);
+		}
+	}
+
 	public onBrightnessChange($event: ChangeContext) {
 		console.log('setCameraBrightness in display', $event);
 		if (this.displayService.isShellAvailable) {
@@ -540,6 +582,14 @@ export class SubpageDeviceSettingsDisplayComponent
 	public onCardCollapse(isCollapsed: boolean) {
 		if (!isCollapsed) {
 			this.manualRefresh.emit();
+		}
+	}
+
+	public onCameraBackgroundBlur($event: any) {
+		try {
+			this.showCameraBackgroundBlurFeature = $event.switchValue;
+		} catch (error) {
+			console.error(error.message);
 		}
 	}
 }

@@ -348,7 +348,7 @@
 				font-size: 2rem;
 			}
 			@media #{$mediaquery_X7} {
-				font-size: 2rem;
+				font-size: 1.85rem;
 			}
 			@media #{$mediaquery_X11} {
 				font-size: 2rem;
@@ -357,9 +357,6 @@
 				font-size: 2rem;
 			}
 			@media #{$mediaquery_X3} {
-				font-size: 1.6rem;
-			}
-			@media #{$mediaquery_X7} {
 				font-size: 1.6rem;
 			}
 		}
@@ -376,7 +373,7 @@
 				font-size: 1.8rem;
 			}
 			@media #{$mediaquery_X7} {
-				font-size: 1.8rem;
+				font-size: 1.7rem;
 			}
 			@media #{$mediaquery_X11} {
 				font-size: 1.8rem;
@@ -386,9 +383,6 @@
 			}
 			@media #{$mediaquery_X3} {
 				font-size: 1.6rem;
-			}
-			@media #{$mediaquery_X7} {
-				font-size: 1.5rem;
 			}
 		}
 

@@ -28,7 +28,10 @@
             "notFound": "찾을 수 없음",
             "registered": "등록됨",
             "notRegistered": "등록되지 않음"
-        }
+        },
+        "ui": {
+			"back": "뒤로"
+		}
     },
     "support": {
         "common": {
@@ -235,7 +238,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "VPN 보안",
-            "header": "SurfEasy 가상 사설 네트워크",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "사용자가 PC, Mac®, 스마트폰 또는 태블릿을 모든 인터넷에 연결 상태에서 걱정 없이 안전하고 개인적으로 사용할 수 있도록 SurfEasy VPN는 사용자가 보내고 받는 정보를 암호화합니다.",
             "helpKeep": "SurfEasy VPN으로 온라인 활동을 안전하고 개인적으로 유지할 수 있습니다.",
             "getSufEasy": "SurfEasy 가져오기",
@@ -303,7 +306,7 @@
             "privacyPolicy": "<tag>개인 정보 보호 정책</tag>에 대해 자세히 읽기",
             "whyWindowsHelloDescription2": "Windows Hello를 사용하면, PC에 더욱 간편하고 안전하게 로그인할 수 있습니다. 온라인 Microsoft 앱에도 사용할 수 있습니다. 아래 지침에 따라 Windows Hello 사용 시작",
             "authentication": "Windows Hello 인증",
-            "traditional": "전통적인 암호는 도난당할 수 있고 세계 어느 곳에서나 사용자 계정에 접속하는데 사용될 수 있습니다. 더욱 안전하고 편리하게 하십시오. Windows Hello는 차세대 암호입니다. 안전하지 않은 암호 대신 지문 판독기 [또는 IR 카메라]를 사용하여 로그인하십시오.",
+            "traditional": "전통적인 암호는 도난당할 수 있고 세계 어느 곳에서나 사용자 계정에 접속하는데 사용될 수 있습니다. 더욱 안전하고 편리하게 하십시오. Windows Hello는 차세대 암호입니다. 안전하지 않은 암호 대신 지문 판독기 를 사용하여 로그인하십시오.",
             "howToStart": "Windows Hello 사용을 시작하려면 어떻게 하나요?"
         }
     }
