@@ -38,6 +38,7 @@ import { VtrCommonModule } from './common/vtr-common.module';
 import { UserDataGetStateService } from './common/services/user-data-get-state.service';
 import { AnalyticsService } from './common/services/analytics.service';
 import { TaskActionService } from './common/services/task-action.service';
+import { OneClickScanModule } from './feature/one-click-scan/one-click-scan.module';
 
 library.add(fal);
 
@@ -52,7 +53,8 @@ library.add(fal);
 		CheckBreachedAccountsModule,
 		TrackingMapModule,
 		NonPrivatePasswordModule,
-		VtrCommonModule
+		VtrCommonModule,
+		OneClickScanModule
 	],
 	declarations: [
 		// Mail Layout Components
