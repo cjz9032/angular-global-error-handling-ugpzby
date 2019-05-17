@@ -1,4 +1,5 @@
 import { BrowserListType } from '../common/services/vantage-communication.service';
+import { createHash } from './createHash';
 
 export function returnUniqueElementsInArray<T>(arr: T[]): T[] {
 	return Array.from(new Set<T>(arr));
@@ -18,13 +19,8 @@ export function convertBrowserNameToBrowserData(browsers: BrowserListType[]) {
 }
 
 export function getHashCode(value: string) {
-	// tslint:disable
 	if (typeof value !== 'string') {
 		return value;
 	}
-	return value.split('').reduce((a, b) => {
-		a = ((a << 5) - a) + b.charCodeAt(0);
-		return a & a;
-	}, 0);
-	// tslint:enable
+	return createHash(value);
 }
