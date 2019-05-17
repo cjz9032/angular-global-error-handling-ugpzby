@@ -1,0 +1,19 @@
+@import "../../styles/common-blocks";
+
+.articles-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+
+.article {
+  width: calc(50% - 3.5rem);
+  margin: 0 0 5rem 0;
+}
+
+.article-single {
+  @extend %common-block-wrapper;
+  margin-top: -10.6rem;
+}

@@ -1,0 +1,14 @@
+<div class="article-preview" (click)="openSingleArticle(article.id)">
+  <img class="article-preview__image" src="{{article.image}}" alt="{{article.title}}">
+  <div class="article-preview__description">
+    <h2 class="article-preview__title">{{article.title}}</h2>
+    <div class="article-preview__read-more">Read more</div>
+  </div>
+</div>
+
+<vtr-common-popup [popUpId]="articlePopupId" size="large">
+  <ng-template>
+    <vtr-article-single [articleData]="article"></vtr-article-single>
+    <a class="all-articles-link" routerLink="/privacy/articles">see all articles</a>
+  </ng-template>
+</vtr-common-popup>

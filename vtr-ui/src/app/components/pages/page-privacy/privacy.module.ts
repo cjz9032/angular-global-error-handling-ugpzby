@@ -38,6 +38,10 @@ import { VtrCommonModule } from './common/vtr-common.module';
 import { UserDataGetStateService } from './common/services/user-data-get-state.service';
 import { AnalyticsService } from './common/services/analytics.service';
 import { TaskActionService } from './common/services/task-action.service';
+import { ArticlesComponent } from './pages/articles/articles.component';
+import { ArticleSingleComponent } from './pages/articles/article-single/article-single.component';
+import { ArticlePreviewComponent } from './pages/articles/article-preview/article-preview.component';
+import { ArticleSidebarComponent } from './pages/articles/article-sidebar/article-sidebar.component';
 
 library.add(fal);
 
@@ -69,6 +73,10 @@ library.add(fal);
 		SidebarInstallWidgetComponent,
 		PrivacyDashboardListComponent,
 		LandingComponent,
+		ArticlesComponent,
+		ArticleSingleComponent,
+		ArticlePreviewComponent,
+		ArticleSidebarComponent,
 	],
 	providers: [
 		TrackersPopupService,

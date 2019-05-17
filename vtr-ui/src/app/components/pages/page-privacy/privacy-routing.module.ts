@@ -8,6 +8,7 @@ import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { RoutersName } from './privacy-routing-name';
 import { ChoseBrowserGuard } from './common/guards/chose-browser.guard';
+import { ArticlesComponent } from './pages/articles/articles.component';
 
 const adminRoutes: Routes = [
 	{
@@ -30,6 +31,9 @@ const adminRoutes: Routes = [
 			}, {
 				path: RoutersName.LANDING,
 				component: LandingComponent
+			}, {
+				path: RoutersName.ARTICLES,
+				component: ArticlesComponent
 			}
 		]
 	},
