@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import * as $ from 'jquery';
 
 @Component({
@@ -7,20 +7,40 @@ import * as $ from 'jquery';
   styleUrls: ['./ui-gaming-collapsible-container.component.scss']
 })
 export class UiGamingCollapsibleContainerComponent implements OnInit {
+	@Input() public options;
+	public showOptions = false;
+	public buttonName: any = 'Show';
+	public selected = false;
+	public currentOption: string;
+	public currentDescription: string;
 
-  constructor() { }
+	public toggleOptions() {
+		this.showOptions = !this.showOptions;
 
-  ngOnInit() {
-    $(".select-box").click(function(){
-      $(".select-box .dropdown-menu").toggleClass("show");
-    });
+		// CHANGE THE NAME OF THE BUTTON.
+		if (this.showOptions) {
+			this.buttonName = 'Hide';
+		} else {
+			this.buttonName = 'Show';
+		}
+	}
+	constructor() { }
 
-    $(".select-box .dropdown-item").click(function(){
-      var selected_item = $(this).text();
-      $(".select-box .dropdown-toggle span").text(selected_item);
-      $(".select-box .dropdown-menu li").removeClass("selected");
-      $(this).parent().addClass("selected");
-    });
-  }
+	ngOnInit() {
+	this.options.forEach(option => {
+		this.currentOption = option.defaultOption ? option.name : this.currentOption;
+		this.currentDescription = option.defaultOption ? option.description : this.currentOption;
+	});
+	}
+
+
+	public optionSelected(option) {
+	this.currentOption = option.name;
+	this.showOptions = false;
+}
+
+public showDescription(option) {
+	this.currentDescription = option.description;
+}
 
 }

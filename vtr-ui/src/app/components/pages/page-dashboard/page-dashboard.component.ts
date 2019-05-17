@@ -202,7 +202,7 @@ export class PageDashboardComponent implements OnInit {
 	// 	}, 3000);
 	// }
 
-	public onConnectivityClick($event: any) {
+	public onGetSupportClick($event: any) {
 	}
 
 	private setDefaultCMSContent() {

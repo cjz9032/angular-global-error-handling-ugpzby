@@ -76,6 +76,24 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 
 	];
 
+	public listingopt = [
+		{
+			header: 'gaming.dashboard.device.quickSettings.status.performance',
+			name: 'gaming.dashboard.device.quickSettings.status.performance',
+			defaultOption: false
+		},
+		{
+			header: 'gaming.dashboard.device.quickSettings.status.balance',
+			name: 'gaming.dashboard.device.quickSettings.status.balance',
+			defaultOption: true
+		},
+		{
+			header: 'gaming.dashboard.device.quickSettings.status.quiet',
+			name: 'gaming.dashboard.device.quickSettings.status.quiet',
+			defaultOption: false
+		}
+	];
+
 	constructor() { }
 
 	ngOnInit() {
