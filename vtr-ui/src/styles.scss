@@ -469,6 +469,14 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			margin-bottom: 3rem;
 		}
 	}
+	.vtr-modal-threat-locator {
+		&.connection-error-modal {
+			margin-bottom: 4rem;
+			.iframe-container {
+				height: auto !important;
+			}
+		}
+	}	
 }
 
 .license-Modal {

@@ -81,6 +81,30 @@ export class DisplayService {
 		}
 		return undefined;
 	}
+
+	public startMonitorForCamera(callback: any): Promise<FeatureStatus> {
+		try {
+			if (this.cameraPrivacyStatus) {
+				return this.cameraPrivacyStatus.startMonitor(callback);
+			}
+			return undefined;
+		} catch(error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public stopMonitorForCamera(): Promise<FeatureStatus> {
+		try {
+			if (this.cameraPrivacyStatus) {
+				return this.cameraPrivacyStatus.stopMonitor();
+			}
+			
+			return undefined;
+		} catch(error) {
+			throw new Error(error.message);
+		}
+	}
+
 	public setEyeCareModeState(value: boolean): Promise<any> {
 		try {
 			if (this.displayEyeCareMode) {

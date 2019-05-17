@@ -1,5 +1,8 @@
 <div class="checkbox" [ngClass]="{'switch-disable': isSwitchDisable}">
-	<label>
+	<label vtrMetrics
+		metricsEvent="featureClick"
+		[metricsItem]="'chk.'+name"
+		[metricsValue]="!value">
 		<input type="checkbox"
 			[name]="name"
 			class="switch"
@@ -7,11 +10,11 @@
 			[value]="value"
 			(change)="onChange($event)"
 			[checked]="value"
-			vtrMetrics
+			   vtrMetrics
 			metricsEvent="featureClick"
 			[metricsItem]="name"
 			[metricsValue]="!value"
-			[disabled]="disabled"
+			   [disabled]="disabled"
 			[checked]="value" />
 
 		<span class="switch {{ size }}"> <small></small> </span>

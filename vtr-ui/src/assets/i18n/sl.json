@@ -28,7 +28,10 @@
             "notFound": "NI BILO MOGOČE NAJTI",
             "registered": "REGISTRIRANO",
             "notRegistered": "REGISTRIRANO"
-        }
+        },
+        "ui": {
+			"back": "NAZAJ"
+		}
     },
     "support": {
         "common": {
@@ -235,7 +238,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "VPN Varnost",
-            "header": "SurfEasy Navidezno zasebno omrežje",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN šifrira podatke, ki jih pošiljate in prejemate, tako da lahko varno in zasebno uporabo računalnika, Mac®, pametni telefon ali tablični računalnik na kateri koli internetni povezavi brez skrbi.",
             "helpKeep": "Pomoč vztrajati vaš online marljivost zanesljiv ter zaseben s SurfEasy VPN.",
             "getSufEasy": "Pridobijte SurfEasy",
@@ -303,7 +306,7 @@
             "privacyPolicy": "Preberite več o pravilniku <tag>o zasebnosti</tag>",
             "whyWindowsHelloDescription2": "Windows Hello omogoča lažje in varnejše beleženje v računalnik. In lahko se uporablja tudi za vaše spletne Microsoftove aplikacije. Upoštevajte spodnja navodila, če želite začeti uporabljati Windows Hello",
             "authentication": "Preverjanje pristnosti s funkcijo Windows Hello",
-            "traditional": "Običajna gesla je mogoče ukrasti in uporabiti za dostop do vašega računa kjer koli na svetu. Bolj varno in priročno. Bolj varno in priročno, Windows Hello je naslednja generacija gesla. Namesto gesel, ki niso varna, za prijavo uporabite bralnik prstnih odtisov [ali IR-kamero].",
+            "traditional": "Običajna gesla je mogoče ukrasti in uporabiti za dostop do vašega računa kjer koli na svetu. Bolj varno in priročno. Bolj varno in priročno, Windows Hello je naslednja generacija gesla. Namesto gesel, ki niso varna, za prijavo uporabite bralnik prstnih odtisov.",
             "howToStart": "Kako začnem uporabljati Windows Hello?"
         }
     }
