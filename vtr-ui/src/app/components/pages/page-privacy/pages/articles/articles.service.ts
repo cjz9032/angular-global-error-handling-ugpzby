@@ -86,9 +86,9 @@ export class ArticlesService {
 		[RoutersName.MAIN]: {
 			visible: true,
 			articles: [
-				...this.filterBreachesByCategory('breaches'),
-				...this.filterBreachesByCategory('trackers'),
-				...this.filterBreachesByCategory('non-private-passwords'),
+				...this.filterArticlesByCategory('breaches'),
+				...this.filterArticlesByCategory('trackers'),
+				...this.filterArticlesByCategory('non-private-passwords'),
 			]
 		},
 		[RoutersName.TIPS]: {
@@ -106,22 +106,22 @@ export class ArticlesService {
 		[RoutersName.PRIVACY]: {
 			visible: true,
 			articles: [
-				...this.filterBreachesByCategory('breaches'),
-				...this.filterBreachesByCategory('trackers'),
-				...this.filterBreachesByCategory('non-private-passwords'),
+				...this.filterArticlesByCategory('breaches'),
+				...this.filterArticlesByCategory('trackers'),
+				...this.filterArticlesByCategory('non-private-passwords'),
 			]
 		},
 		[RoutersName.BREACHES]: {
 			visible: true,
-			articles: this.filterBreachesByCategory('breaches')
+			articles: this.filterArticlesByCategory('breaches')
 		},
 		[RoutersName.TRACKERS]: {
 			visible: true,
-			articles: this.filterBreachesByCategory('trackers')
+			articles: this.filterArticlesByCategory('trackers')
 		},
 		[RoutersName.BROWSERACCOUNTS]: {
 			visible: true,
-			articles: this.filterBreachesByCategory('non-private-passwords')
+			articles: this.filterArticlesByCategory('non-private-passwords')
 		},
 		[RoutersName.FAQ]: {
 			visible: false,
@@ -133,7 +133,7 @@ export class ArticlesService {
 		}
 	};
 
-	private filterBreachesByCategory(category) {
+	private filterArticlesByCategory(category) {
 		return Object.keys(this.articles).reduce((acc, articleKey) => {
 			const currArticle = this.articles[articleKey];
 			if (currArticle.category === category) {
