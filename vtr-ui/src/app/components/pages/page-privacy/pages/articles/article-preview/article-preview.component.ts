@@ -12,6 +12,8 @@ import { RouterChangeHandlerService } from '../../../common/services/router-chan
 export class ArticlePreviewComponent implements OnInit {
 	@Input() article: Article;
 
+	articlePopupId = 'articlePopupId';
+
 	constructor(
 		private router: Router,
 		private routerChangeHandlerService: RouterChangeHandlerService,
@@ -26,7 +28,7 @@ export class ArticlePreviewComponent implements OnInit {
 		if (this.routerChangeHandlerService.currentRoute === 'articles') {
 			this.router.navigate(['privacy', 'articles'], {queryParams: {id: id}});
 		} else {
-			this.commonPopupService.open('articlePopupId');
+			this.commonPopupService.open(this.articlePopupId);
 		}
 	}
 
