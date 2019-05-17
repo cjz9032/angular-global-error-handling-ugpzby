@@ -3,8 +3,8 @@
 		<div class="col vtr-col">
 			<vtr-header-main
 				[backarrow]="backarrow"
-				[back]="back | translate"
-				[title]="title | translate"
+				[back]="'common.ui.back' | translate"
+				[title]="'security.antivirus.common.title' | translate"
 				[backId]="backId"></vtr-header-main>
 		</div>
 	</div>
@@ -35,6 +35,8 @@
 													metricsEvent="ArticleClick"
 													metricsItemPosition="1"
 													metricsPageNumber="1"
+													[metricsItemID]="urlGetMcAfee"
+													[metricsItemCategory]="mcafeeArticleCategory"
 													[label]="'security.antivirus.windowsDefender.learnMore' | translate"
 													(onClick)="openArticle()"
 													[upperCaseLabel]=false></vtr-ui-button>
@@ -536,10 +538,12 @@
 											[action]="cardContentPositionA.Action"
 											[actionType]="cardContentPositionA.ActionType"
 											[actionLink]="cardContentPositionA.ActionLink"
-											[type]="'corner-article'"
+											[itemID]="cardContentPositionA.ActionLink"
 											[ratioX]="4"
 											[ratioY]="2"
-											[cornerShift]="'large'">
+											type="corner-article"
+											cornerShift="large"
+											order="r1">
 										</vtr-container-card>
 									</div>
 								</div>

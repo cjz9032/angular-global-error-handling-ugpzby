@@ -28,7 +28,10 @@
             "notFound": "NIJE PRONAĐEN",
             "registered": "REGISTROVAN",
             "notRegistered": "NIJE REGISTROVAN"
-        }
+        },
+        "ui": {
+			"back": "NAZAD"
+		}
     },
     "support": {
         "common": {
@@ -235,7 +238,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "Bezbednost VPN mreže",
-            "header": "Virtuelna privatna mreža SurfEasy",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN šifruje informacije koje šaljete i primate tako da možete bezbedno i privatno koristiti svoj lični računar, Mac®, pametni telefon ili tablet na bilo kojoj Internet vezi bez brige.",
             "helpKeep": "Pomoću SurfEasy VPN mreže čuvajte sigurnost i privatnost vaših aktivnosti na internetu.",
             "getSufEasy": "Nabavi SurfEasy",
@@ -303,7 +306,7 @@
             "privacyPolicy": "Pročitajte više o <tag>Politici privatnosti</tag>",
             "whyWindowsHelloDescription2": "Windows Hello čini vaše prijavljivanje računar lakšim i bezbednijim. Možete ga takođe koristiti i za Microsoft aplikacije na mreži. Pratite dolenavedena uputstva da biste počeli da koristite Windows Hello",
             "authentication": "Windows Hello potvrda identiteta",
-            "traditional": "Tradicionalne lozinke se mogu ukrasti i koristiti za pristup vašem nalogu iz bilo kog mesta u svetu. Bezbedniji i praktičniji. Windows Hello je sledeća generacija lozinki. Koristite čitač otisaka prstiju [ili IC kameru] umesto prijavljivanja pomoću lozinke.",
+            "traditional": "Tradicionalne lozinke se mogu ukrasti i koristiti za pristup vašem nalogu iz bilo kog mesta u svetu. Bezbedniji i praktičniji. Windows Hello je sledeća generacija lozinki. Koristite čitač otisaka prstiju umesto prijavljivanja pomoću lozinke.",
             "howToStart": "Kako da počnem da koristim Windows Hello?"
         }
     }

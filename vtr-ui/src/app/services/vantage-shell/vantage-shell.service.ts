@@ -347,4 +347,12 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	public generateGuid() {
+		if (this.phoenix && this.phoenix.metrics) {
+			return this.phoenix.metrics.metricsComposer.getGuid();
+		}
+
+		return undefined;
+	}
 }

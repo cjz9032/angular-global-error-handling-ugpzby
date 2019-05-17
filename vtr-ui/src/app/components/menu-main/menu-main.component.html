@@ -1,11 +1,26 @@
 <div class="vtr-menu-main">
 	<nav class="navbar navbar-expand-md pr-0">
-		<div *ngIf="!deviceService.isGaming" class="navbar-brand pt-0">
-			<img src="../../../assets/icons/Vantage_L_logo.svg" alt="L" />
+		<div *ngIf="!deviceService.isGaming"
+			class="navbar-brand pt-0">
+
+			<a vtrMetrics
+				routerLinkActive="link-active"
+				[routerLinkActiveOptions]="items[0].routerLinkActiveOptions"
+				[metricsEvent]="items[0].metricsEvent"
+				[metricsParent]="items[0].metricsParent"
+				[metricsItem]="items[0].metricsItem"
+				routerLink="/{{items.path}}">
+				<img src="../../../assets/icons/Vantage_L_logo.svg"
+					alt="L" />
+			</a>
+
+
 		</div>
-		<div *ngIf="deviceService.isGaming" class="navbar-brand pt-0">
-				<img src="../../../assets/images/gaming/gaming-logo-small.png" alt="L" />
-			</div>
+		<div *ngIf="deviceService.isGaming"
+			class="navbar-brand pt-0">
+			<img src="../../../assets/images/gaming/gaming-logo-small.png"
+				alt="L" />
+		</div>
 		<div class="navbar-text clearfix">
 			<div class="app-title">{{configService.appBrand}} <span class="app-name">{{configService.appName}}</span>
 				<span class="app-version">(v{{appVersion}})</span>
@@ -36,9 +51,11 @@
 							[metricsItem]="item.metricsItem"
 							routerLink="/{{item.path}}"
 							routerLinkActive="active">
-							<fa-icon *ngIf="item.icon[0]!=='icomoon'" [icon]="item.icon"
+							<fa-icon *ngIf="item.icon[0]!=='icomoon'"
+								[icon]="item.icon"
 								class="fa-icon"></fa-icon>
-							<span *ngIf="item.icon[0]==='icomoon'" [ngClass]="['navbar-icon',item.icon[0],item.icon[1]]"></span>
+							<span *ngIf="item.icon[0]==='icomoon'"
+								[ngClass]="['navbar-icon',item.icon[0],item.icon[1]]"></span>
 							{{item.label | translate}}
 						</a>
 					</li>
@@ -107,7 +124,7 @@
 							*ngIf="!deviceService.isArm"
 							aria-labelledby="navbarDropdown">
 							<div class="dropdown-item">{{'lenovoId.helloUser' | translate:{firstName:firstName} }}</div>
-							<a *ngIf="!userService.auth"
+							<a *ngIf="!userService.auth && !userService.starter"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
@@ -115,6 +132,14 @@
 								class="dropdown-item link"
 								href="javascript:void(0)"
 								(click)="OpenLenovoId()">{{'lenovoId.login' | translate}}</a>
+							<a *ngIf="!userService.auth && userService.starter"
+								vtrMetrics
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="LenovoIdStarterIdButton"
+								class="dropdown-item link"
+								href="javascript:void(0)"
+								(click)="OpenLenovoId()">{{'lenovoId.unlockExclusives' | translate}}</a>
 							<a *ngIf="userService.auth"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"

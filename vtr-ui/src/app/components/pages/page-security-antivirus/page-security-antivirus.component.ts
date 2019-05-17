@@ -15,9 +15,6 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 	styleUrls: ['./page-security-antivirus.component.scss']
 })
 export class PageSecurityAntivirusComponent implements OnInit {
-
-	title = 'security.antivirus.common.title' ;
-	back = 'security.antivirus.common.back';
 	backarrow = '< ';
 	antiVirus: Antivirus;
 	viewModel: any;
@@ -31,6 +28,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 	enablevirus = 'security.antivirus.common.enableVirusScan';
 	enableFirewall = 'security.antivirus.common.enableFirewall';
 	backId = 'sa-av-btn-back';
+	mcafeeArticleCategory: string;
 
 	@HostListener('window:focus')
 	onFocus(): void {
@@ -219,6 +217,12 @@ export class PageSecurityAntivirusComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
+
+		this.cmsService.fetchCMSArticle(this.urlGetMcAfee, {'Lang': 'EN'}).then((response: any) => {
+			if (response && response.Results && response.Results.Category) {
+				this.mcafeeArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
+			}
+		});
 	}
 
 	openArticle() {

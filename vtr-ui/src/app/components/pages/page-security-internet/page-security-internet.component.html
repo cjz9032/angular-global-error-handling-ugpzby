@@ -46,14 +46,14 @@
 														*ngIf="statusItem.status === 'not-installed'"
 														(click)="getSurfEasy()"
 														metricsEvent="FeatureClick"
-														metricsItem="getSufEasy"
+														metricsItem="getSurfEasy"
 														[label]="'security.vpn.getSufEasy' | translate">
 													</vtr-ui-button>
 													<vtr-ui-button id="sa-vpn-btn-opensufeasy"
 														*ngIf="statusItem.status === 'installed'"
 														(click)="openSurfEasy()"
 														metricsEvent="FeatureClick"
-														metricsItem="openSufEasy"
+														metricsItem="openSurfEasy"
 														[label]="'security.vpn.openSufEasy' | translate">
 													</vtr-ui-button>
 												</div>
@@ -241,10 +241,12 @@
 											[action]="cardContentPositionA.Action"
 											[actionType]="cardContentPositionA.ActionType"
 											[actionLink]="cardContentPositionA.ActionLink"
-											[type]="'corner-article'"
+											[itemID]="cardContentPositionA.ActionLink"
 											[ratioX]="4"
 											[ratioY]="2"
-											[cornerShift]="'large'">
+											type="corner-article"
+											cornerShift="large"
+											order="r1">
 										</vtr-container-card>
 									</div>
 								</div>

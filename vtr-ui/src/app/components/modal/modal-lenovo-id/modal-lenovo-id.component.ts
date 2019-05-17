@@ -72,7 +72,7 @@ enum ssoErroType {
 	// custom
 	// the user was not signed in yet,
 	SSO_ErrorType_NotSignedIn = 2000,
-	 
+
 	SSO_ErrorType_UnknownCrashed = 2001,
 
 	SSO_ErrorType_DisConnect = 2002,
@@ -92,6 +92,8 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	private cacheCleared: boolean;
 	public isBroswerVisible = false; // show or hide web browser, hide or show progress spinner
 	private metrics: any;
+	private starterStatus: any;
+	private everSignIn: any;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -105,8 +107,9 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		this.cacheCleared = false;
 		this.isBroswerVisible = false;
 		this.isOnline = this.commonService.isOnline;
-
 		this.metrics = vantageShellService.getMetrics();
+		this.starterStatus = this.userService.getStarterIdStatus();
+		this.everSignIn = this.userService.hadEverSignIn();
 		if (!this.metrics) {
 			this.devService.writeLog('ModalLenovoIdComponent constructor: metrics object is undefined');
 			this.metrics = {
@@ -139,18 +142,17 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	// error is come from response status of LID contact request
 	popupErrorMessage(error: number) {
 		const modalRef = this.modalService
-		.open(ModalCommonConfirmationComponent, {
-			backdrop: 'static',
-			size: 'lg',
-			centered: true,
-			windowClass: 'common-confirmation-modal'
-		});
+			.open(ModalCommonConfirmationComponent, {
+				backdrop: 'static',
+				size: 'lg',
+				centered: true,
+				windowClass: 'common-confirmation-modal'
+			});
 
 		var header = 'lenovoId.ssoErrorTitle';
 		var description = 'lenovoId.ssoErrorCommonEx';
 
-		switch (error)
-		{
+		switch (error) {
 			case ssoErroType.SSO_ErrorType_TimeStampIncorrect:
 				description = 'lenovoId.ssoErrorTimeStampIncorrect';
 				break;
@@ -200,7 +202,6 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			//webView.src = 'https://uss-test.lenovomm.cn/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null';
 			this.cacheCleared = true;
 		}
-
 	}
 
 	//
@@ -227,7 +228,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	//
 	getLidSupportedLanguageFromLocale(locale) {
 		var lang = "en_US";
-		switch(locale) {
+		switch (locale) {
 			case "zh-hans":
 				lang = "zh_CN";
 				break;
@@ -359,6 +360,8 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 									// Close logon dialog
 									self.activeModal.dismiss();
 									self.devService.writeLog('MSWebViewNavigationCompleted: Login success!');
+									//the metrics need to be sent after enabling sso, some data like user guid would be available after that.
+									self.userService.sendSigninMetrics('success', self.starterStatus,  self.everSignIn);
 								}
 							});
 						} catch (error) {
@@ -370,6 +373,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			} else {
 				// Handle error
 				//self.activeModal.dismiss();
+				self.userService.sendSigninMetrics('failure', self.starterStatus, self.everSignIn);
 				self.devService.writeLog('MSWebViewNavigationCompleted: Login failed!');
 			}
 		});
@@ -411,27 +415,13 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		}
 	}
 
-	onClose(): void {
-		let metricsData = {
-			ItemType: 'TaskAction',
-			TaskName: 'LID.SignIn',
-			TaskResult: 'failure(rc=UserCancelled)',
-			TaskParam: JSON.stringify({
-				StarterStatus: 'NA',
-				AccountState: 'NA', //{Signin | AlreadySignedIn | NeverSignedIn},
-				FeatureRequested: 'NA' // {AppOpen | SignIn | Vantage feature}
-			})
-		};
-		const self = this;
-		this.metrics.sendAsync(metricsData).catch((res) => {
-			self.devService.writeLog('loginSilently() Exception happen when send metric ', res.message);
-		});
+	
 
+	onClose(): void {
+		this.userService.sendSigninMetrics('failure(rc=UserCancelled)', this.starterStatus, this.everSignIn);
 		this.activeModal.dismiss();
 	}
 
 	ngOnDestroy(): void {
-
 	}
-
 }

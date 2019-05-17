@@ -19,7 +19,7 @@
 											[innerHTML]="item.header | translate | safeDom : 'html' "></div>
 										<vtr-ui-gaming-collapsible-container *ngIf="item.isCollapsible">
 										</vtr-ui-gaming-collapsible-container>
-										<a href="javascript:void();" *ngIf="item.isCustomizable" class="customizable">
+										<a [routerLink]="item.routerLink" *ngIf="item.isCustomizable" class="customizable">
 											<i class="icon icon-gear"></i>
 										</a>
 										<a href="javascript:void();" *ngIf="item.isSwitchVisible"
