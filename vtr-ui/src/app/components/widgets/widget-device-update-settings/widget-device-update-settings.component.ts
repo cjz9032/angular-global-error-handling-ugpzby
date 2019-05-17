@@ -12,6 +12,7 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 	@Input() title: string;
 	@Input() description: string;
 	@Input() items: any[];
+	@Input() options;
 
 	@Output() toggleOnOff = new EventEmitter<any>();
 
