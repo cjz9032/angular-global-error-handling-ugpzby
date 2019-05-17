@@ -3,6 +3,7 @@ import { Article } from '../articles.service';
 import { Router } from '@angular/router';
 import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
 import { RouterChangeHandlerService } from '../../../common/services/router-change-handler.service';
+import { RoutersName } from '../../../privacy-routing-name';
 
 @Component({
 	selector: 'vtr-article-preview',
@@ -25,8 +26,8 @@ export class ArticlePreviewComponent implements OnInit {
 	}
 
 	openSingleArticle(id) {
-		if (this.routerChangeHandlerService.currentRoute === 'articles') {
-			this.router.navigate(['privacy', 'articles'], {queryParams: {id: id}});
+		if (this.routerChangeHandlerService.currentRoute === RoutersName.ARTICLES) {
+			this.router.navigate([RoutersName.PRIVACY, RoutersName.ARTICLES], {queryParams: {id: id}});
 		} else {
 			this.commonPopupService.open(this.articlePopupId);
 		}
