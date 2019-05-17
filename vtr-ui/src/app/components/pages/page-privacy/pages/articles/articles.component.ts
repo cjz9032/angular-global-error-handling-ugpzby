@@ -11,6 +11,7 @@ export class ArticlesComponent implements OnInit, OnDestroy {
 
 	articles = this.articlesService.articles;
 	openArticleId = null;
+	recommendationsArticles = null;
 
 	constructor(
 		private activatedRoute: ActivatedRoute,
@@ -21,6 +22,9 @@ export class ArticlesComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.activatedRoute.queryParams.subscribe((val) => {
 			this.openArticleId = val.id || null;
+			const openArticle = this.articles[this.openArticleId];
+			this.recommendationsArticles = openArticle ? this.articlesService.filterArticlesByCategory(openArticle.category) : null;
+			console.log('++++++++++++++++++= this.recommendationsArticles', this.recommendationsArticles);
 		});
 	}
 

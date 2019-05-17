@@ -5,13 +5,7 @@ import { BrowserAccountsService } from './browser-accounts.service';
 import { TrackingMapService } from '../../feature/tracking-map/services/tracking-map.service';
 import { filter } from 'rxjs/operators';
 import { typeData } from '../../feature/tracking-map/services/tracking-map.interface';
-
-enum UserDataStatuses {
-	undefined = 'undefined',
-	none = 'none',
-	exist = 'exist',
-	error = 'error'
-}
+import { UserDataStatuses } from '../../userDataStatuses';
 
 @Injectable()
 export class UserDataGetStateService {

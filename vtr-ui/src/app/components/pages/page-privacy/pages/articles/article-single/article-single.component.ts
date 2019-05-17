@@ -1,18 +1,30 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Article } from '../articles.service';
+import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
 
 @Component({
 	selector: 'vtr-article-single',
 	templateUrl: './article-single.component.html',
 	styleUrls: ['./article-single.component.scss']
 })
-export class ArticleSingleComponent implements OnInit {
+export class ArticleSingleComponent implements OnInit, AfterViewInit {
+	@ViewChild('innerHTML') childContent: any;
 	@Input() articleData: Article;
 
-	constructor() {
+	constructor(private vantageCommunicationService: VantageCommunicationService) {
 	}
 
 	ngOnInit() {
+	}
+
+	ngAfterViewInit() {
+		const thisElement = this.childContent.nativeElement;
+		thisElement.addEventListener('click', (event) => {
+			if (event.target.tagName === 'A') { // TODO check
+				this.vantageCommunicationService.openUri(event.target.href);
+			}
+			event.preventDefault();
+		});
 	}
 
 }
