@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { Article } from '../articles.service';
 import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
 
@@ -8,7 +8,7 @@ import { VantageCommunicationService } from '../../../common/services/vantage-co
 	styleUrls: ['./article-single.component.scss']
 })
 export class ArticleSingleComponent implements OnInit, AfterViewInit {
-	@ViewChild('innerHTML') childContent: any;
+	@ViewChild('innerHTML') articleInner: ElementRef;
 	@Input() articleData: Article;
 
 	constructor(private vantageCommunicationService: VantageCommunicationService) {
@@ -18,7 +18,7 @@ export class ArticleSingleComponent implements OnInit, AfterViewInit {
 	}
 
 	ngAfterViewInit() {
-		const thisElement = this.childContent.nativeElement;
+		const thisElement = this.articleInner.nativeElement;
 		thisElement.addEventListener('click', (event) => {
 			if (event.target.tagName === 'A') { // TODO check
 				this.vantageCommunicationService.openUri(event.target.href);
