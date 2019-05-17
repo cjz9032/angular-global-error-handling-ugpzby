@@ -12,6 +12,6 @@ export class MetricHelper {
 	}
 
 	public static timeSpan(dateEnd, dateStart) {
-		return (dateEnd.getTime() - dateStart.getTime()) / 1000;
+		return Math.round((dateEnd.getTime() - dateStart.getTime()) / 1000);
 	}
 }
