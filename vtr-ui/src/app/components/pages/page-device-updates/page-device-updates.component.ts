@@ -531,7 +531,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 					break;
 				case UpdateProgress.IgnoredUpdates:
-				this.setUpdateByCategory(notification.payload);
+					this.setUpdateByCategory(notification.payload);
 					break;
 				default:
 					break;
