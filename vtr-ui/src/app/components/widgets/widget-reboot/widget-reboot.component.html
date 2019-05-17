@@ -16,12 +16,16 @@
 						vtrMetrics
 						metricsItem="reboot now"
 						metricsParent="reboot-pending"
-						metricsEvent="itemClick"
+						metricsEvent="featureclick"
 						href="javascript:void(0);"
 						class="button"
 						(click)="onRebootClick($event)">Reboot Now</a>
 				</div>
 				<a role="link"
+				   vtrMetrics
+				   metricsEvent="featureclick"
+				   metricsItem="DoneButton"
+				   metricsParent="SystemUpdate.Results"
 					href="javascript:void(0);"
 					class="link"
 					(click)="onDismissClick($event)">Dismiss</a>

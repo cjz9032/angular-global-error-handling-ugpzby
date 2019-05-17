@@ -12,6 +12,7 @@ import { UpdateRebootType } from 'src/app/enums/update-reboot-type.enum';
 import { SystemUpdateStatusMessage } from 'src/app/data-models/system-update/system-update-status-message.model';
 import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enum';
 import { WinRT } from '@lenovo/tan-client-bridge';
+import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -22,11 +23,13 @@ export class SystemUpdateService {
 		shellService: VantageShellService
 		, private commonService: CommonService) {
 		this.systemUpdateBridge = shellService.getSystemUpdate();
+		this.metricClient = shellService.getMetrics();
 		if (this.systemUpdateBridge) {
 			this.isShellAvailable = true;
 		}
 	}
 	private systemUpdateBridge: any;
+	private metricClient: any;
 	public autoUpdateStatus: any;
 	public isShellAvailable = false;
 	public isCheckForUpdateComplete = true;
@@ -112,8 +115,26 @@ export class SystemUpdateService {
 				});
 		}
 	}
+
+	private mapStatusToMessage(status: number) {
+		let errorMessage = 'failure';
+		for (const errorkey of Object.getOwnPropertyNames(SystemUpdateStatusMessage)) {
+			const errorStatus = SystemUpdateStatusMessage[errorkey];
+			if (errorStatus.code === status) {
+				errorMessage = errorStatus.message;
+				break;
+			}
+		}
+		return errorMessage;
+	}
+
+	private mapPackageListToIdString(updateList: Array<AvailableUpdateDetail>) {
+		return updateList.map(item => item.packageID).join(',');
+	}
+
 	public checkForUpdates() {
 		// checkForUpdates requires callback
+		const timeStartSearch = new Date();
 		if (this.systemUpdateBridge) {
 			this.isCheckForUpdateComplete = false;
 			this.isInstallationCompleted = false;
@@ -132,13 +153,31 @@ export class SystemUpdateService {
 					this.isUpdatesAvailable = true;
 					this.updateInfo = { status: status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
 					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
+					MetricHelper.sendSystemUpdateMetric(
+						this.metricClient,
+						this.updateInfo.updateList.length,
+						this.mapPackageListToIdString(this.updateInfo.updateList),
+						'success',
+						MetricHelper.timeSpan(new Date(), timeStartSearch));
 				} else {
 					this.percentCompleted = 0;
 					const payload = { ...response, status };
 					this.isInstallationSuccess = this.getInstallationSuccess(payload);
 					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
+					MetricHelper.sendSystemUpdateMetric(
+						this.metricClient,
+						0,
+						'',
+						this.mapStatusToMessage(status),
+						MetricHelper.timeSpan(new Date(), timeStartSearch));
 				}
 			}).catch((error) => {
+				MetricHelper.sendSystemUpdateMetric(
+					this.metricClient,
+					0,
+					'',
+					error.message,
+					MetricHelper.timeSpan(new Date(), timeStartSearch));
 				console.log('checkForUpdates.error', error);
 			});
 		}
@@ -307,7 +346,7 @@ export class SystemUpdateService {
 				update.isIgnored = false;
 			}
 		});
-		this.commonService.sendNotification(UpdateProgress.IgnoredUpdates, ignoredUpdates);
+		this.commonService.sendNotification(UpdateProgress.IgnoredUpdates, this.updateInfo.updateList);
 	}
 
 	public toggleUpdateSelection(packageName: string, isSelected: boolean) {
@@ -550,7 +589,7 @@ export class SystemUpdateService {
 				if (pkg) {
 					update.installationStatus = pkg.actionResult;
 					update.isInstalled = (update.installationStatus === UpdateActionResult.Success);
-					this.installedUpdates.push(pkg);
+					this.installedUpdates.push(update);
 				}
 			}
 		});

@@ -133,6 +133,7 @@ export class MetricsDirective {
 
 		if (this.metrics && this.metrics.sendAsync) {
 			try {
+				console.log('metrics ==> ',JSON.stringify(data));
 				await this.metrics.sendAsync(data);
 			} catch (ex) {
 				this.devService.writeLog('sending metric breaks with exception:' + ex);
