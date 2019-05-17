@@ -38,9 +38,6 @@ interface HomeProtectionDeviceInfo {
 	styleUrls: ['./page-security-wifi.component.scss']
 })
 export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewInit {
-
-	title = 'security.wifisecurity.header.title';
-	back = 'security.wifisecurity.header.back';
 	backarrow = '< ';
 	backId = 'sa-ws-btn-back';
 	viewSecChkRoute = 'viewSecChkRoute';
@@ -52,6 +49,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	isShowInvitationCode: boolean;
 	wifiHomeViewModel: WifiHomeViewModel;
 	securityHealthViewModel: SecurityHealthViewModel;
+	securityHealthArticleId = '9CEBB4794F534648A64C5B376FBC2E39';
+	securityHealthArticleCategory: string;
 
 	@HostListener('window:focus')
 	onFocus(): void {
@@ -166,6 +165,12 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 				console.log('fetchCMSContent error', error);
 			}
 		);
+
+		this.cmsService.fetchCMSArticle(this.securityHealthArticleId, {'Lang': 'EN'}).then((response: any) => {
+			if (response && response.Results && response.Results.Category) {
+				this.securityHealthArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
+			}
+		});
 	}
 
 	enableWiFiSecurity(event): void {
@@ -194,6 +199,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			windowClass: 'Article-Detail-Modal'
 		});
 
-		articleDetailModal.componentInstance.articleId = '9CEBB4794F534648A64C5B376FBC2E39';
+		articleDetailModal.componentInstance.articleId = this.securityHealthArticleId;
 	}
 }

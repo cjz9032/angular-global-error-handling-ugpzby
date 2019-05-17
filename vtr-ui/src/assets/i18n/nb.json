@@ -28,7 +28,10 @@
             "notFound": "IKKE FUNNET",
             "registered": "REGISTRERT",
             "notRegistered": "IKKE REGISTRERT"
-        }
+        },
+        "ui": {
+			"back": "TILBAKE"
+		}
     },
     "support": {
         "common": {
@@ -235,7 +238,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "VPN-sikkerhet",
-            "header": "SurfEasy virtuelt privat nettverk",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN krypterer informasjonen du sender og mottar, slik at du sikkert og privat og uten problemer kan bruk PC, Mac®, smarttelefon eller nettbrett på en internettforbindelse.",
             "helpKeep": "Bidra til å holde nettaktiviteten din sikker og privat med SurfEasy VPN.",
             "getSufEasy": "Få tak i SurfEasy",
@@ -303,7 +306,7 @@
             "privacyPolicy": "Les mer i <tag>retningslinjene for personvern</tag>",
             "whyWindowsHelloDescription2": "Windows Hello gjør at du kan logge deg på PC-en din enklere og sikrere. Og den kan også brukes for de tilkoblede Microsoft-appene dine. Følg instruksjonene under for å begynne å bruke Windows Hello",
             "authentication": "Autentisering med Windows Hello",
-            "traditional": "Tradisjonelle passord kan bli stjålet og brukt til å få tilgang til kontoen din fra overalt i verden. Sikrere og mer praktisk. Windows Hello er neste generasjon passord. Bruk fingeravtrykksleseren (eller det infrarøde kameraet) i stedet for usikre passord til å logge deg på.",
+            "traditional": "Tradisjonelle passord kan bli stjålet og brukt til å få tilgang til kontoen din fra overalt i verden. Sikrere og mer praktisk. Windows Hello er neste generasjon passord. Bruk fingeravtrykksleseren i stedet for usikre passord til å logge deg på.",
             "howToStart": "Hvordan begynner jeg å bruke Windows Hello?"
         }
     }

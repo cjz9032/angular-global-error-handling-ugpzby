@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
 
 		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
 
-		if (tutorial === undefined && navigator.onLine) {
+		/*if (tutorial === undefined && navigator.onLine) {*/
 			const modalRef = this.modalService.open(ModalWelcomeComponent,
 				{
 					backdrop: 'static'
@@ -74,8 +74,8 @@ export class AppComponent implements OnInit {
 					commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
 				}
 			);
-		}
-
+		/*}
+*/
 		//#endregion
 
 		window.addEventListener('online', (e) => {
@@ -134,20 +134,17 @@ export class AppComponent implements OnInit {
 			this.deviceService.getMachineInfo()
 				.then((value: any) => {
 					console.log('getMachineInfo.then', value);
-					if (value && !['zh', 'sr', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
+					if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
 						this.translate.use(value.locale.substring(0, 2));
 					} else {
+						if (value && value.locale.substring(0, 2).toLowerCase() === 'pt') {
+							value.locale.toLowerCase() === 'pt-br' ? this.translate.use('pt-BR') : this.translate.use('pt');
+						}
 						if (value && value.locale.toLowerCase() === 'zh-hans') {
 							this.translate.use('zh-Hans');
 						}
 						if (value && value.locale.toLowerCase() === 'zh-hant') {
 							this.translate.use('zh-Hant');
-						}
-						if (value && value.locale.toLowerCase() === 'sr-latn') {
-							this.translate.use('sr-Latn');
-						}
-						if (value && value.locale.toLowerCase() === 'pt-br') {
-							this.translate.use('pt-BR');
 						}
 					}
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);

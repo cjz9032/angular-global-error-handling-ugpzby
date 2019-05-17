@@ -44,15 +44,15 @@ export class WindowsHelloLandingViewModel {
 		translate.stream(subjectStatus.title).subscribe((res) => {
 			subjectStatus.title = res;
 		});
-		const setWhStatus = (finger: string, facial: string) => {
+		const setWhStatus = (finger: string) => {
 			if (!finger) {
 				whStatus.status = 1;
 				whStatus.detail = 'common.securityAdvisor.notFound';
-				subjectStatus.status = facial === 'active' ? 0 : 1;
+				subjectStatus.status = 1;
 			} else {
 				whStatus.status = finger === 'active' ? 0 : 1;
 				whStatus.detail = finger === 'active' ? 'common.securityAdvisor.registered' : 'common.securityAdvisor.notRegistered';
-				subjectStatus.status = finger === 'active' || facial === 'active' ? 0 : 1;
+				subjectStatus.status = finger === 'active' ? 0 : 1;
 			}
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus, finger ? finger : 'notFound');
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWindowsHelloStatus, subjectStatus.status === 0 ? 'enabled' : 'disabled');
@@ -86,14 +86,11 @@ export class WindowsHelloLandingViewModel {
 		translate.stream(subjectStatus.title).subscribe((res) => {
 			subjectStatus.title = res;
 		});
-		if (whModel && (whModel.fingerPrintStatus || whModel.facialIdStatus)) {
-			setWhStatus(whModel.fingerPrintStatus, whModel.facialIdStatus);
+		if (whModel && whModel.fingerPrintStatus) {
+			setWhStatus(whModel.fingerPrintStatus);
 		}
 		whModel.on(EventTypes.helloFingerPrintStatusEvent, (data) => {
-			setWhStatus(data, whModel.facialIdStatus);
-		});
-		whModel.on(EventTypes.helloFacialIdStatusEvent, (data) => {
-			setWhStatus(whModel.fingerPrintStatus, data);
+			setWhStatus(data);
 		});
 		this.statusList = new Array(whStatus);
 		this.subject = subjectStatus;

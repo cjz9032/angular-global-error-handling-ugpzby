@@ -28,7 +28,10 @@
             "notFound": "NENÁJDENÉ",
             "registered": "REGISTROVANÉ",
             "notRegistered": "NEREGISTROVANÉ"
-        }
+        },
+        "ui": {
+			"back": "SPÄŤ"
+		}
     },
     "support": {
         "common": {
@@ -235,7 +238,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "Zabezpečenie VPN",
-            "header": "Virtuálna súkromná sieť SurfEasy",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "Služba SurfEasy VPN šifruje informácie, ktoré odosielate a prijímate, aby ste mohli bezpečne a súkromne používať PC, Mac®, smartfón alebo tablet v prípade akéhokoľvek pripojenia k internetu bez obáv.",
             "helpKeep": "Služba SurfEasy VPN vám pomôže zaistiť zabezpečenie a súkromný charakter online aktivity.",
             "getSufEasy": "Získať aplikáciu SurfEasy",
@@ -303,7 +306,7 @@
             "privacyPolicy": "Prečítajte si viac o <tag>zásadách ochrany osobných údajov</tag>",
             "whyWindowsHelloDescription2": "Služba Windows Hello zaistí, aby bolo prihlásenie do počítača jednoduchšie a bezpečnejšie. Navyše ju možno použiť pre online aplikácie spoločnosti Microsoft. Ak chcete začať používať službu Windows Hello, postupujte podľa pokynov uvedených ďalej",
             "authentication": "Overenie totožnosti službou Windows Hello",
-            "traditional": "Tradičné heslá je možné odcudziť a používať na prístup k vášmu účtu odkiaľkoľvek na svete. Bezpečnejšie a pohodlnejšie. Služba Windows Hello predstavuje ďalšiu generáciu hesla. Použite snímač odtlačkov prstov [alebo infračervenú kameru] namiesto nezabezpečených hesiel na prihlásenie.",
+            "traditional": "Tradičné heslá je možné odcudziť a používať na prístup k vášmu účtu odkiaľkoľvek na svete. Bezpečnejšie a pohodlnejšie. Služba Windows Hello predstavuje ďalšiu generáciu hesla. Použite snímač odtlačkov prstov namiesto nezabezpečených hesiel na prihlásenie.",
             "howToStart": "Ako začať používať službu Windows Hello?"
         }
     }

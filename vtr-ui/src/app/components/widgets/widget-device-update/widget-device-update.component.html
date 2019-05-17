@@ -43,7 +43,11 @@
 					<div class="col col-12 row">
 						<div class="col col-12 cancel-check p-5">
 							<a class="cancel-check-text"
-								(click)="cancelUpdates()">{{cancelCheck}}</a>
+							   vtrMetrics
+							   metricsEvent="ItemClick"
+							   metricsParent="Pages.SystemUpdate"
+							   [metricsItem]="'btn.cancel'"
+							   (click)="cancelUpdates($event)">{{cancelCheck}}</a>
 						</div>
 					</div>
 				</div>
