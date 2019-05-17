@@ -48,12 +48,14 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
+		this.startMonitorForCamera();
 	}
 
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
+		this.stopMonitorForCamera();
 	}
 
 	//#region private functions
@@ -144,6 +146,44 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				.catch(error => {
 					console.error('getCameraStatus', error);
 				});
+		}
+	}
+
+	startMonitorHandlerForCamera(value: FeatureStatus) {
+		console.log('startMonitorHandlerForCamera', value);
+		this.cameraStatus = value;
+		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, this.cameraStatus);
+	}
+
+	startMonitorForCamera() {
+		console.log('startMonitorForCamera');
+		try {
+			if (this.displayService.isShellAvailable) {
+				this.displayService.startMonitorForCamera(this.startMonitorHandlerForCamera.bind(this))
+					.then((val) => {
+						console.log('startMonitorForCamera.then', val);
+						
+					}).catch(error => {
+						console.error('startMonitorForCamera', error);
+					});
+			}
+		} catch (error) {
+			console.log('startMonitorForCamera', error);
+		}
+	}
+
+	stopMonitorForCamera() {
+		try {
+			if (this.displayService.isShellAvailable) {
+				this.displayService.stopMonitorForCamera()
+					.then((value: any) => {
+						console.log('stopMonitorForCamera.then', value);
+					}).catch(error => {
+						console.error('stopMonitorForCamera', error);
+					});
+			}
+		} catch (error) {
+			console.log('stopMonitorForCamera', error);
 		}
 	}
 

@@ -34,15 +34,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	toggleEasyResumeStatus = false;
 	showAirplanePowerModeSection = false;
 	toggleAirplanePowerModeFlag = false;
-	dYTCRevision = 0;
-	cQLCapability = false;
-	tIOCapability = false;
-	showIntelligentCooling = 0;
-	toggleIntelligentCooling = true;
-	radioPerformance = false;
-	radioQuietCool = false;
-	toggleIntelligentCoolingStatus = false;
-	manualModeSettingStatus: string;
 	usbChargingInBatteryModeStatus = true;
 	headerCaption =
 		'This section enables you to dynamically adjust thermal performance and maximize the battery life.' +
@@ -50,7 +41,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		' You can check the default settings in this section and customize your system according to your needs.';
 	headerMenuTitle = 'Jump to Settings';
 	isDesktopMachine = true;
-	intelligentCooling = true;
 	showBatteryThreshold = false;
 	value = 1;
 	headerMenuItems = [
@@ -224,26 +214,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		public modalService: NgbModal) { }
 
-	onIntelligentCoolingToggle(event) {
-		if (event.switchValue) {
-			this.intelligentCooling = false;
-		} else {
-			this.intelligentCooling = true;
-			this.setManualModeSetting('Performance');
-		}
-		this.setAutoModeSetting(event);
-	}
-
-	changeQuietCool(event) {
-		console.log('cool');
-		this.setManualModeSetting('Cool');
-	}
-
-	changePerformance(event) {
-		console.log('perform');
-		this.setManualModeSetting('Performance');
-	}
-
 	ngOnInit() {
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine)
 		if (this.isDesktopMachine) {
@@ -252,7 +222,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.getMachineInfo();
 		this.startMonitor();
 		this.getVantageToolBarStatus();
-		this.getManualModeSetting();
 	}
 
 	ngOnDestroy() {
@@ -366,7 +335,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						// 2 means "ideaCenter"
 						// 3 means "thinkCenter"
 						console.log('getMachineInfo.then', this.machineBrand);
-						this.getDYTCRevision();
 						this.getAndSetAlwaysOnUSBForBrands(this.machineBrand);
 					}).catch(error => {
 						console.error('getMachineInfo', error);
@@ -376,140 +344,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.error(error.message);
 		}
 	}
-	// Power Smart Settings
-	private getDYTCRevision() {
-		try {
-			if (this.powerService.isShellAvailable) {
-				this.powerService
-					.getDYTCRevision()
-					.then(async (value: number) => {
-						console.log('getDYTCRevision.then', value);
-						//	value=5;
-						if (value === 4) {
-							this.showIntelligentCooling = 2;
-							await this.getCQLCapability();
-							await this.getTIOCapability();
-							console.log(this.cQLCapability);
-							console.log(this.tIOCapability);
-
-							if (this.cQLCapability === true || this.tIOCapability === true) {
-								console.log('inside false of CQLCCapability and TIOCCapability');
-								this.toggleIntelligentCooling = true;
-							} else {
-								this.toggleIntelligentCooling = false;
-							}
-						} else if (value === 5) {
-							this.showIntelligentCooling = 3;
-
-						} else {
-							this.showIntelligentCooling = 0;
-							this.headerMenuItems.splice(0, 1);
-						}
-					})
-					.catch(error => {
-						console.error('getDYTCRevision', error);
-					});
-			}
-		} catch (error) {
-			console.error(error.message);
-		}
-	}
-	private SetPerformanceAndCool(status: string) {
-		switch (status.toLocaleLowerCase()) {
-			case 'cool':
-				console.log('manualModeSettingStatus: Cool');
-				this.radioQuietCool = true;
-				this.radioPerformance = false;
-				this.toggleIntelligentCoolingStatus = false;
-				break;
-			case 'performance':
-				console.log('manualModeSettingStatus: Performance');
-				this.radioPerformance = true;
-				this.radioQuietCool = false;
-				this.toggleIntelligentCoolingStatus = false;
-				break;
-			case 'error':
-				let event = { switchValue: true }
-				this.onIntelligentCoolingToggle(event);
-				this.toggleIntelligentCoolingStatus = true;
-				console.log('manualModeSettingStatus: error');
-				break;
-		}
-	}
-	private async getCQLCapability() {
-		try {
-			if (this.powerService.isShellAvailable) {
-				let value = await this.powerService.getCQLCapability()
-				console.log('getCQLCapability.then', value);
-				this.cQLCapability = value;
-			}
-		} catch (error) {
-			console.error(error.message);
-		}
-	}
-	private async getTIOCapability() {
-		try {
-			if (this.powerService.isShellAvailable) {
-				let value = await this.powerService.getTIOCapability()
-				console.log('getTIOCapability.then', value);
-				this.tIOCapability = value;
-			}
-		} catch (error) {
-			console.error(error.message);
-		}
-	}
-	private setAutoModeSetting(event: any) {
-		try {
-			if (this.powerService.isShellAvailable) {
-				this.powerService
-					.setAutoModeSetting(event.switchValue)
-					.then((value: boolean) => {
-						console.log('setAutoModeSetting.then', value);
-					})
-					.catch(error => {
-						console.error('setAutoModeSetting', error);
-					});
-			}
-		} catch (error) {
-			console.error(error.message);
-		}
-	}
-	private setManualModeSetting(arg: string) {
-		try {
-			if (this.powerService.isShellAvailable) {
-				this.powerService
-					.setManualModeSetting(arg)
-					.then((value: boolean) => {
-						console.log('setManualModeSetting.then', value);
-						this.SetPerformanceAndCool(arg)
-					})
-					.catch(error => {
-						console.error('setManualModeSetting', error);
-					});
-			}
-		} catch (error) {
-			console.error(error.message);
-		}
-	}
-	private getManualModeSetting() {
-		try {
-			if (this.powerService.isShellAvailable) {
-				this.powerService
-					.getManualModeSetting()
-					.then((value: string) => {
-						console.log('getManualModeSetting.then', value);
-						this.manualModeSettingStatus = value;
-						this.SetPerformanceAndCool(this.manualModeSettingStatus);
-					})
-					.catch(error => {
-						console.error('getManualModeSetting', error);
-					});
-			}
-		} catch (error) {
-			console.error(error.message);
-		}
-	}
-	// End Power Smart Settings
 
 	// Start ThinkPad
 	private getAlwaysOnUSBCapabilityThinkPad() {
@@ -903,5 +737,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (path) {
 			this.deviceService.launchUri(path);
 		}
+	}
+
+	hidePowerSmartSetting(hide: boolean) {
+		hide ? this.headerMenuItems.splice(0, 1) : "";
 	}
 }

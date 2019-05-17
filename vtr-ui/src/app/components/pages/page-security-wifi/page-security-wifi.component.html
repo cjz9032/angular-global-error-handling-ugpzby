@@ -3,8 +3,8 @@
 		<div class="col vtr-col">
 			<vtr-header-main
 				[backarrow]="backarrow"
-				[back]="back | translate"
-				[title]="title | translate"
+				[back]="'common.ui.back'| translate"
+				[title]="'common.securityAdvisor.wifi' | translate"
 				[backId]="backId"></vtr-header-main>
 		</div>
 	</div>
@@ -54,6 +54,8 @@
 																	metricsItem="learnMoreAboutSecurityHealth"
 																	metricsItemPosition="1"
 																	metricsPageNumber="1"
+																	[metricsItemID]="securityHealthArticleId"
+																	[metricsItemCategory]="securityHealthArticleCategory"
 																	href="javascript:void(0)"
 																	(click)="openSecurityHealthArticle()"
 																	target="_blank"></a>
@@ -132,10 +134,12 @@
 											[action]="cardContentPositionA.Action"
 											[actionType]="cardContentPositionA.ActionType"
 											[actionLink]="cardContentPositionA.ActionLink"
-											[type]="'corner-article'"
+											[itemID]="cardContentPositionA.ActionLink"
 											[ratioX]="4"
 											[ratioY]="2"
-											[cornerShift]="'large'">
+											type="corner-article"
+											cornerShift="large"
+											order="r1">
 										</vtr-container-card>
 									</div>
 								</div>

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { isString } from 'lodash/isString';
+import isString from 'lodash/isString';
 
 
 @Component({

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from "../../../services/vantage-shell/vantage-shell.service";
@@ -13,7 +13,6 @@ import { TranslateService } from '@ngx-translate/core';
 export class FeedbackFormComponent implements OnInit {
 	@Output() feedbackClick = new EventEmitter<any>();
 	@Input() buttonText = 'Submit';
-	@ViewChild('emailfield') private elementRef: ElementRef;
 	feedbackForm: FormGroup;
 	feedbackButtonText: string;
 
@@ -24,11 +23,9 @@ export class FeedbackFormComponent implements OnInit {
 	private metrics: any;
 
 	ngOnInit() {
+		this.buttonText=this.translate.instant('dashboard.feedback.form.button');
 		this.feedbackButtonText = this.buttonText;
 		this.createFeedbackForm();
-		this.elementRef.nativeElement.focus();
-		window.scrollTo(0, 0);
-
 	}
 
 

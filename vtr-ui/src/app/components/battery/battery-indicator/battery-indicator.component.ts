@@ -32,6 +32,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	@Input() percentage = 50; // number without % symbol
 	@Input() remainingHour = 0; // number of hours remaining
 	@Input() remainingMinutes = 0; // number of minutes remaining
+	@Input() timeText = "";
 
 	constructor(public translate: TranslateService) {
 	}
@@ -155,7 +156,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	public getTimeRemaining(): string {
 		this.checkRemainingTimeIsZero();
 		if (Number.isNaN(this.remainingMinutes)) {
-			return "0 minutes";
+			return "";
 		}
 		const hours =
 			this.remainingHour > 0 && this.remainingHour < 2 ? this.translate.instant('device.deviceSettings.batteryGauge.hour') : this.translate.instant('device.deviceSettings.batteryGauge.hours');

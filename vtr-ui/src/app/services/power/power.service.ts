@@ -210,7 +210,9 @@ export class PowerService {
 		}
 	}
 	// End Vantage ToolBar
+
 	// Power smart settings
+	// ----------start ITC Capable
 	public getDYTCRevision(): Promise<number> {
 		try {
 			if (this.devicePowerItsIntelligentCooling) {
@@ -271,5 +273,96 @@ export class PowerService {
 			throw new Error(error.message);
 		}
 	}
+	// ----------End ITC Capable
+	// ----------Start Legacy Capable
+	public getAPSState(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getAPSState();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getLegacyCQLCapability(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getLegacyCQLCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getLegacyTIOCapability(): Promise<number> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getLegacyTIOCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getLegacyManualModeCapability(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getLegacyManualModeCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getLegacyAutoModeState(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getLegacyAutoModeState();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public getLegacyManualModeState(): Promise<boolean> {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.getLegacyManualModeState();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setLegacyAutoModeState(value: boolean) {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.setLegacyAutoModeState(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setLegacyManualModeState(value: boolean) {
+		try {
+			if (this.devicePowerItsIntelligentCooling) {
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.setLegacyManualModeState(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	// ---------- End Legacy Capable
 	// End Power smart settings
 }
