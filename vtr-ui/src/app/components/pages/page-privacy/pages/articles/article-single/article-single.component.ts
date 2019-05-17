@@ -20,7 +20,7 @@ export class ArticleSingleComponent implements OnInit, AfterViewInit {
 	ngAfterViewInit() {
 		const thisElement = this.articleInner.nativeElement;
 		thisElement.addEventListener('click', (event) => {
-			if (event.target.tagName === 'A') { // TODO check
+			if (event.target.tagName.toLowerCase() === 'a') {
 				this.vantageCommunicationService.openUri(event.target.href);
 			}
 			event.preventDefault();
