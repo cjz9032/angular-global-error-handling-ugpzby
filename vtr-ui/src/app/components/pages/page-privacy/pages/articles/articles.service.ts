@@ -25,7 +25,6 @@ export interface Articles {
 
 interface ArticlesByPathSettings {
 	visible: boolean;
-	articles: Article[];
 }
 
 @Injectable({
@@ -100,43 +99,33 @@ export class ArticlesService {
 	} = {
 		[RoutersName.MAIN]: {
 			visible: true,
-			articles: this.getFilteredArticlesByUserStatus()
 		},
 		[RoutersName.TIPS]: {
 			visible: false,
-			articles: [],
 		},
 		[RoutersName.NEWS]: {
 			visible: false,
-			articles: [],
 		},
 		[RoutersName.LANDING]: {
 			visible: false,
-			articles: [],
 		},
 		[RoutersName.PRIVACY]: {
 			visible: true,
-			articles: this.getFilteredArticlesByUserStatus()
 		},
 		[RoutersName.BREACHES]: {
 			visible: true,
-			articles: this.getFilteredArticlesByUserStatus()
 		},
 		[RoutersName.TRACKERS]: {
 			visible: true,
-			articles: this.getFilteredArticlesByUserStatus()
 		},
 		[RoutersName.BROWSERACCOUNTS]: {
 			visible: true,
-			articles: this.getFilteredArticlesByUserStatus()
 		},
 		[RoutersName.FAQ]: {
 			visible: false,
-			articles: [],
 		},
 		[RoutersName.ARTICLES]: {
 			visible: false,
-			articles: [],
 		}
 	};
 
