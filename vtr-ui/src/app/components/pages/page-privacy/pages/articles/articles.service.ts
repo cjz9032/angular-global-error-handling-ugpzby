@@ -129,7 +129,7 @@ export class ArticlesService {
 		}
 	};
 
-	getUserCategory() {
+	private getUserCategory() {
 		if (this.isFigleafReadyForCommunication) {
 			return 'FigLeafInstalled';
 		}

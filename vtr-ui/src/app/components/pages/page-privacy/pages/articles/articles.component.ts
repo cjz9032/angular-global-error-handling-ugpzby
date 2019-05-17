@@ -20,11 +20,13 @@ export class ArticlesComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		const getFilteredArticlesByCategory = (category) => {
+			return this.articlesService.filterArticlesByCategory(category).filter((article) => article.id !== this.openArticleId);
+		};
 		this.activatedRoute.queryParams.subscribe((val) => {
 			this.openArticleId = val.id || null;
 			const openArticle = this.articles[this.openArticleId];
-			this.recommendationsArticles = openArticle ? this.articlesService.filterArticlesByCategory(openArticle.category) : null;
-			console.log('++++++++++++++++++= this.recommendationsArticles', this.recommendationsArticles);
+			this.recommendationsArticles = openArticle ? getFilteredArticlesByCategory(openArticle.category) : null;
 		});
 	}
 
