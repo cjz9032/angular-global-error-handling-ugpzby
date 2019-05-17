@@ -22,7 +22,7 @@ export class ArticleSidebarComponent implements OnInit, OnDestroy {
 		this.routerChangeHandler.onChange$
 			.pipe(
 				takeUntil(instanceDestroyed(this)),
-				filter((currentPath) => this.articlesService.pagesSettings[currentPath])
+				filter((currentPath) => !!this.articlesService.pagesSettings[currentPath])
 			)
 			.subscribe(
 				(currentPath) => {

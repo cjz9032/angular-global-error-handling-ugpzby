@@ -19,6 +19,11 @@ export interface Articles {
 	[key: string]: Article;
 }
 
+interface ArticlesByPathSettings {
+	visible: boolean;
+	articles: Article[];
+}
+
 @Injectable({
 	providedIn: 'root'
 })
@@ -75,7 +80,9 @@ export class ArticlesService {
 		},
 	};
 
-	pagesSettings = {
+	pagesSettings: {
+		[path in RoutersName]: ArticlesByPathSettings
+	} = {
 		[RoutersName.MAIN]: {
 			visible: true,
 			articles: [
@@ -84,19 +91,19 @@ export class ArticlesService {
 				...this.filterBreachesByCategory('non-private-passwords'),
 			]
 		},
-		tips: {
+		[RoutersName.TIPS]: {
 			visible: false,
 			articles: [],
 		},
-		news: {
+		[RoutersName.NEWS]: {
 			visible: false,
 			articles: [],
 		},
-		landing: {
+		[RoutersName.LANDING]: {
 			visible: false,
 			articles: [],
 		},
-		privacy: {
+		[RoutersName.PRIVACY]: {
 			visible: true,
 			articles: [
 				...this.filterBreachesByCategory('breaches'),
@@ -104,23 +111,23 @@ export class ArticlesService {
 				...this.filterBreachesByCategory('non-private-passwords'),
 			]
 		},
-		breaches: {
+		[RoutersName.BREACHES]: {
 			visible: true,
 			articles: this.filterBreachesByCategory('breaches')
 		},
-		trackers: {
+		[RoutersName.TRACKERS]: {
 			visible: true,
 			articles: this.filterBreachesByCategory('trackers')
 		},
-		'browser-accounts': {
+		[RoutersName.BROWSERACCOUNTS]: {
 			visible: true,
 			articles: this.filterBreachesByCategory('non-private-passwords')
 		},
-		faq: {
+		[RoutersName.FAQ]: {
 			visible: false,
 			articles: [],
 		},
-		articles: {
+		[RoutersName.ARTICLES]: {
 			visible: false,
 			articles: [],
 		}
