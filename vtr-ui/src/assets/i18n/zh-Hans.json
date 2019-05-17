@@ -255,7 +255,9 @@
 				"title": "电池量表",
 				"subtitle": "电池运行状况",
 				"hours": "小时",
+				"hour": "小时",
 				"minutes": "分钟",
+				"minute": "分钟",
 				"charge": "充满电所需的时间",
 				"button": "查看电池详细信息",
 				"details": {
