@@ -346,7 +346,7 @@ export class SystemUpdateService {
 				update.isIgnored = false;
 			}
 		});
-		this.commonService.sendNotification(UpdateProgress.IgnoredUpdates, ignoredUpdates);
+		this.commonService.sendNotification(UpdateProgress.IgnoredUpdates, this.updateInfo.updateList);
 	}
 
 	public toggleUpdateSelection(packageName: string, isSelected: boolean) {
@@ -589,7 +589,7 @@ export class SystemUpdateService {
 				if (pkg) {
 					update.installationStatus = pkg.actionResult;
 					update.isInstalled = (update.installationStatus === UpdateActionResult.Success);
-					this.installedUpdates.push(pkg);
+					this.installedUpdates.push(update);
 				}
 			}
 		});
