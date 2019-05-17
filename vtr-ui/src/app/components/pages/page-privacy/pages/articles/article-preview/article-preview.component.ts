@@ -33,4 +33,7 @@ export class ArticlePreviewComponent implements OnInit {
 		}
 	}
 
+	closeArticlePopup() {
+		this.commonPopupService.close(this.articlePopupId);
+	}
 }
