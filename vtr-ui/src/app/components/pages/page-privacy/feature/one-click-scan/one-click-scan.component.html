@@ -1,8 +1,21 @@
 <p>
 	one-click-scan works!
 </p>
-<!--<ng-template vtrPermit></ng-template>-->
-<ng-container *ngFor="let permitItem of permitItems">
-	<div>{{permitItem.data.index}}</div>
-	<ng-container *ngComponentOutlet="permitItem.component; injector: createInjector(permitItem.data)"></ng-container>
+<ng-container [ngSwitch]="currentStep.step">
+	<vtr-permit
+		[data]="{
+			index: currentStep.index,
+			length: currentStep.length
+		}"
+		*ngSwitchCase="oneClickScanSteps.PERMIT_TRACKERS_AND_PASSWORD"
+		(allow)="handlerAllow($event, oneClickScanSteps.PERMIT_TRACKERS_AND_PASSWORD)">
+	</vtr-permit>
+	<vtr-enter-email
+		[data]="{
+			index: currentStep.index,
+			length: currentStep.length
+		}"
+		*ngSwitchCase="oneClickScanSteps.VERIFY_EMAIL"
+		(allow)="handlerAllow($event, oneClickScanSteps.PERMIT_TRACKERS_AND_PASSWORD)">
+	</vtr-enter-email>
 </ng-container>
