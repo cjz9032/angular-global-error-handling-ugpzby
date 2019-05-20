@@ -265,7 +265,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.setUpdateTitle();
 			this.isUserCancelledUpdateCheck = false;
 			this.isUpdateCheckInProgress = true;
+			this.isUpdatesAvailable = false;
 			this.systemUpdateService.isUpdatesAvailable = false;
+			this.isInstallingAllUpdates = true;
 			this.systemUpdateService.isInstallingAllUpdates = true;
 			this.resetState();
 			this.systemUpdateService.checkForUpdates();
@@ -294,19 +296,21 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private installAllUpdate() {
+	private installAllUpdate(removeDelayedUpdates: boolean) {
 		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
+			this.isInstallingAllUpdates = true;
 			this.systemUpdateService.isInstallingAllUpdates = true;
 			this.resetState();
-			this.systemUpdateService.installAllUpdates();
+			this.systemUpdateService.installAllUpdates(removeDelayedUpdates);
 		}
 	}
 
-	private installSelectedUpdate() {
+	private installSelectedUpdate(removeDelayedUpdates: boolean) {
 		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
+			this.isInstallingAllUpdates = false;
 			this.systemUpdateService.isInstallingAllUpdates = false;
 			this.resetState();
-			this.systemUpdateService.installSelectedUpdates();
+			this.systemUpdateService.installSelectedUpdates(removeDelayedUpdates);
 		}
 	}
 
@@ -361,7 +365,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			});
 		modalRef.componentInstance.metricsParent = "Pages.SystemUpdate.RebootRequiredControl";
 		const { rebootType, packages } = this.systemUpdateService.getRebootType(this.systemUpdateService.updateInfo.updateList, source);
-
+		let removeDelayedUpdates = false;
+		console.log('reboot tye is', rebootType, packages);
 		if (rebootType === UpdateRebootType.RebootDelayed) {
 			this.showRebootDelayedModal(modalRef);
 		} else if (rebootType === UpdateRebootType.RebootForced) {
@@ -371,7 +376,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		} else {
 			modalRef.dismiss();
 			// its normal update type installation which doesn't require rebooting/power-off
-			this.installUpdateBySource(source);
+			this.installUpdateBySource(source, removeDelayedUpdates);
 			return;
 		}
 		modalRef.componentInstance.packages = packages;
@@ -380,14 +385,21 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		modalRef.result.then(
 			result => {
 				// on open
-				console.log('common-confirmation-modal', result, source);
+				console.log('common-confirmation-modal on open', result, source);
 				if (result) {
-					this.installUpdateBySource(source);
+					console.log('confirmation model', removeDelayedUpdates);
+					if(this.systemUpdateService.getACAttachedStatus()) {
+						removeDelayedUpdates = false;
+					} else {
+						removeDelayedUpdates = true;
+					}
+					console.log('confirmation model,  remove reboot delay', removeDelayedUpdates);
+					this.installUpdateBySource(source, removeDelayedUpdates);
 				}
 			},
 			reason => {
 				// on close
-				console.log('common-confirmation-modal', reason, source);
+				console.log('common-confirmation-modal on close', reason, source);
 			}
 		);
 	}
@@ -395,11 +407,12 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public onGetSupportClick($event: any) {
 	}
 
-	private installUpdateBySource(source: string) {
+	private installUpdateBySource(source: string, removeDelayedUpdates: boolean) {
+		console.log('install udpate by source,', source);
 		if (source === 'selected') {
-			this.installSelectedUpdate();
+			this.installSelectedUpdate(removeDelayedUpdates);
 		} else {
-			this.installAllUpdate();
+			this.installAllUpdate(removeDelayedUpdates);
 		}
 	}
 
@@ -425,13 +438,20 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	private setUpdateByCategory(updateList: Array<AvailableUpdateDetail>) {
-		this.ignoredUpdates =  [];
 		if (updateList) {
-			this.optionalUpdates = this.filterUpdate(updateList, 'optional');
-			this.recommendedUpdates = this.filterUpdate(updateList, 'recommended');
-			this.criticalUpdates = this.filterUpdate(updateList, 'critical');
-			this.systemUpdateService.getIgnoredUpdates();
+			this.ignoredUpdates =  this.filterIgnoredUpdate(updateList, true);
+			const unIgnoredUpdates = this.filterIgnoredUpdate(updateList, false);
+			this.optionalUpdates = this.filterUpdate(unIgnoredUpdates, 'optional');
+			this.recommendedUpdates = this.filterUpdate(unIgnoredUpdates, 'recommended');
+			this.criticalUpdates = this.filterUpdate(unIgnoredUpdates, 'critical');
 		}
+	}
+
+	private filterIgnoredUpdate(updateList: Array<AvailableUpdateDetail>, isIgnored: boolean) {
+		const updates = updateList.filter((value: AvailableUpdateDetail) => {
+			return (value.isIgnored === isIgnored);
+		});
+		return updates;
 	}
 
 	private filterUpdate(updateList: Array<AvailableUpdateDetail>, packageSeverity: string) {
@@ -472,7 +492,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isUpdateCheckInProgress = false;
 					this.percentCompleted = this.systemUpdateService.percentCompleted;
 					this.isUpdatesAvailable = this.systemUpdateService.isUpdatesAvailable;
+					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.setUpdateByCategory(payload.updateList);
+					this.systemUpdateService.getIgnoredUpdates();
 					break;
 				case UpdateProgress.InstallationStarted:
 					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
@@ -491,6 +513,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
 					this.checkRebootRequested();
+					this.setUpdateByCategory(payload.updateList);
 					break;
 				case UpdateProgress.AutoUpdateStatus:
 					this.autoUpdateOptions[0].isChecked = payload.criticalAutoUpdates;
@@ -513,7 +536,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 					break;
 				case UpdateProgress.IgnoredUpdates:
-					this.setIgnoredUpdates(notification.payload);
+					this.setUpdateByCategory(notification.payload);
 					break;
 				default:
 					break;
@@ -620,7 +643,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					unIgnoredRecommendUpdates.push(update);
 				}
 			});
-			
+
 		}
 
 		if (this.optionalUpdates && this.optionalUpdates.length > 0) {
@@ -634,7 +657,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					unIgnoredOptionalUpdates.push(update);
 				}
 			});
-			
+
 		}
 
 		if (this.ignoredUpdates && this.ignoredUpdates.length > 0) {

@@ -306,7 +306,7 @@
             "privacyPolicy": "Prečítajte si viac o <tag>zásadách ochrany osobných údajov</tag>",
             "whyWindowsHelloDescription2": "Služba Windows Hello zaistí, aby bolo prihlásenie do počítača jednoduchšie a bezpečnejšie. Navyše ju možno použiť pre online aplikácie spoločnosti Microsoft. Ak chcete začať používať službu Windows Hello, postupujte podľa pokynov uvedených ďalej",
             "authentication": "Overenie totožnosti službou Windows Hello",
-            "traditional": "Tradičné heslá je možné odcudziť a používať na prístup k vášmu účtu odkiaľkoľvek na svete. Bezpečnejšie a pohodlnejšie. Služba Windows Hello predstavuje ďalšiu generáciu hesla. Použite snímač odtlačkov prstov [alebo infračervenú kameru] namiesto nezabezpečených hesiel na prihlásenie.",
+            "traditional": "Tradičné heslá je možné odcudziť a používať na prístup k vášmu účtu odkiaľkoľvek na svete. Bezpečnejšie a pohodlnejšie. Služba Windows Hello predstavuje ďalšiu generáciu hesla. Použite snímač odtlačkov prstov namiesto nezabezpečených hesiel na prihlásenie.",
             "howToStart": "Ako začať používať službu Windows Hello?"
         }
     }

@@ -19,18 +19,18 @@
 
 									<div class="row">
 										<div class="col col-12">
-											<!-- enable once offline mode implementation is done VAN-314 -->
-											<!-- <vtr-widget-offline-info [title]="'No internet connection detected'"
-												*ngIf="!isOnline"
-												[subtitle]="offlineSubtitle | safeDom : 'html'"
-												[buttonText]="'Get Support'"
-												(buttonClick)="onGetSupportClick($event)"></vtr-widget-offline-info> -->
+											<vtr-widget-offline-info *ngIf="!isOnline"
+												[isButtonVisible]="true"
+												[title]="'dashboard.offlineInfo.title' | translate"
+												[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+												[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
+												(buttonClick)="onGetSupportClick($event)"></vtr-widget-offline-info>
 
 											<vtr-widget-device-update [title]="updateTitle"
 												*ngIf="isOnline"
 												[subTitle1]="getLastUpdatedText()"
 												[subTitle2]="getNextUpdatedScanText()"
-												[buttonText]="'Check For Updates'"
+												[buttonText]="'device.systemUpdates.banner.checkButton' | translate"
 												[percent]="percentCompleted"
 												[showProgress]="isUpdateCheckInProgress"
 												[isUpdateDownloading]="isUpdateDownloading"
@@ -42,6 +42,7 @@
 											</vtr-widget-device-update>
 										</div>
 									</div>
+
 
 									<vtr-available-updates *ngIf="isUpdateListVisible()"
 										[criticalUpdates]="criticalUpdates"

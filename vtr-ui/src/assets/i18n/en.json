@@ -35,21 +35,21 @@
 				},
 				"legionEdgeModal": {
 					"line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
-					"line2": "Feature Management Overview <br> Some features not available on all devices",
-					"line3": "CPU Overclocking <br> Boost the maximum speed for your processor",
-					"line4": "RAM Overclocking <br> Boost the maximum speed for your memory",
-					"line5": "Network Boost <br> Prioritize network traffic for the game you're playing",
-					"line6": "Dolby <br> Tune your audio specifically for gaming with Dolby technology",
-					"line7": "Hybrid Mode <br> Disable advanced GPU settings when not gaming to boost battery performance",
-					"line8": "Rapid Charge <br> Game on the go longer with quicker battery charging",
-					"line9": "Touchpad Lock <br> Prevent mistaken inputs by disabling the touchpad while gaming",
-					"line10": "Auto Close <br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
-					"line11": "Thermal Mode <br> Set your preferred device profile for fan speed and cooling control"
+					"line2": "<b>Feature Management Overview</b> <br> Some features not available on all devices",
+					"line3": "<b>CPU Overclocking </b><br> Boost the maximum speed for your processor",
+					"line4": "<b>RAM Overclocking </b><br> Boost the maximum speed for your memory",
+					"line5": "<b>Network Boost </b><br> Prioritize network traffic for the game you're playing",
+					"line6": "<b>Dolby </b><br> Tune your audio specifically for gaming with Dolby technology",
+					"line7": "<b>Hybrid Mode </b><br> Disable advanced GPU settings when not gaming to boost battery performance",
+					"line8": "<b>Rapid Charge </b><br> Game on the go longer with quicker battery charging",
+					"line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
+					"line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
+					"line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control"
 				}
 			}
 		},
-		"common":{
-			"menu":{
+		"common": {
+			"menu": {
 				"support": {
 					"title": "Support",
 					"sub1": "Support",
@@ -152,7 +152,7 @@
 		"offlineInfo": {
 			"title": "No internet connection detected",
 			"subtitle": "Learn more on how to solve connection issues in our",
-			"buttonText": "Connectivity 101"
+			"buttonText": "Get Support"
 		},
 		"feedback": {
 			"title": "Give Feedback",
@@ -265,7 +265,7 @@
 				"title": "BATTERY GAUGE",
 				"subtitle": "Battery health",
 				"hours": "hours",
-				"hour":"hour",
+				"hour": "hour",
 				"minutes": "minutes",
 				"minute": "minute",
 				"charge": "TIME TO FULLY CHARGE",
@@ -532,6 +532,56 @@
 						"caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections."
 					}
 				}
+			},
+			"smartAssist": {
+				"title": "Smart Assist",
+				"description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+				"jumpTo": {
+					"title": "JUMP TO SETTINGS",
+					"security": "Security",
+					"screen": "Screen",
+					"media": "Media",
+					"voice": "Voice"
+				},
+				"intelligentSecurity": {
+					"title": "Intelligent Security",
+					"readMore": "Read more",
+					"HumanPresenceDetection": {
+						"title": "Human Presence Detection"
+					},
+					"autoIrCameraLogin": {
+						"title": "Auto IR camera Login",
+						"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it. Auto IR camera login"
+					},
+					"autoScreenLock": {
+						"title": "Auto screen lock",
+						"caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+						"autoScreenLockTimer": {
+							"title": "AUTO SCREEN LOCK TIMER",
+							"radioButton": {
+								"fast": "Fast",
+								"medium": "Medium",
+								"slow": "Slow"
+							},
+							"toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+						}
+					},
+					"distanceSensitivityAdjusting": {
+						"title": "Distance sensitivity adjusting"
+					},
+					"note": {
+						"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
+						"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect, save, of leak any personal data or image.",
+						"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
+						"description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
+						"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+					},
+					"WindowsLink": {
+						"goToWindowsHello": "Go to Windows Hello Settings",
+						"screenTimeoutSettings": "Go to Screen timeout settings"
+					}
+				}
+
 			}
 		},
 		"systemUpdates": {
@@ -542,7 +592,7 @@
 			"criticalUpdates": "Critical Update(s)",
 			"recommendedUpdates": "Recommended Update(s)",
 			"optionalUpdates": "Optional Update(s)",
-			"ignoredUpdates":"Ignored Update(s)",
+			"ignoredUpdates": "Ignored Update(s)",
 			"successInstall": "Successfully installed on",
 			"failedInstall": "Failed to installed on",
 			"at": "at",
@@ -585,7 +635,7 @@
 				"title": "An up-to-date system is a healthy system.",
 				"last": "Last update was on",
 				"next": "Next updated scan is scheduled on",
-				"checkButton": "CHECK FOR UPDATES",
+				"checkButton": "CHECK FOR UPDATES ",
 				"checking": "Checking for updates",
 				"downloading": "Downloading updates done",
 				"installing": "Installing updates",
@@ -879,7 +929,7 @@
 			"privacyPolicy": "Read more on the <tag>Privacy Policy</tag>",
 			"whyWindowsHelloDescription2": "Windows Hello makes logging into your PC easier and more secure. And you can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello",
 			"authentication": "Windows Hello Authentication",
-			"traditional": "Traditional passwords can be stolen and used to access your account from anywhere in the world. More secure and convenient. Windows Hello is the next generation of a password. Use your fingerprint reader [or IR camera] instead of insecure passwords to log in.",
+			"traditional": "Traditional passwords can be stolen and used to access your account from anywhere in the world. More secure and convenient. Windows Hello is the next generation of a password. Use your fingerprint reader instead of insecure passwords to log in.",
 			"howToStart": "How do I start using Windows Hello?"
 		}
 	},
@@ -1260,7 +1310,7 @@
 	"welcometutorial": {
 		"description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
 		"bullets1": "Optimize your system with lorem ipsum dolor set",
-		"bullets2":	"Security Advisor makes managing your security easy ",
+		"bullets2": "Security Advisor makes managing your security easy ",
 		"bullets3": "Automatic updates keep your device in tip top shape",
 		"subtitle1": "How will you be using your device?",
 		"subtitle2": "Tell us about your interests",
@@ -1273,16 +1323,16 @@
 		"title2": "Lenovo",
 		"title3": "Vantage",
 		"privacypolicy": "Lenovo's Private Policy",
-		"interests" : {
+		"interests": {
 			"games": "Games",
-			"news" : "News",
-			"entertainment" : "Entertainment",
-			"technology" : "Technology",
-			"sports" : "Sports",
-			"arts" : "Arts",
-			"regionalNews" : "Regional News",
-			"politics" : "Politics",
-			"music" : "Music",
+			"news": "News",
+			"entertainment": "Entertainment",
+			"technology": "Technology",
+			"sports": "Sports",
+			"arts": "Arts",
+			"regionalNews": "Regional News",
+			"politics": "Politics",
+			"music": "Music",
 			"science": "Science"
 		}
 	}

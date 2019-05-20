@@ -8,6 +8,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 export class WidgetOfflineInfoComponent implements OnInit {
 	@Input() title: string;
 	@Input() subtitle: string;
+	@Input() isButtonVisible = false;
 	@Input() buttonText: string;
 	@Output() buttonClick = new EventEmitter();
 
