@@ -1,5 +1,5 @@
 <div class="checkbox" [ngClass]="{'switch-disable': isSwitchDisable}">
-	<label vtrMetrics metricsEvent="featureClick" [metricsItem]="'chk.'+name" [metricsValue]="!value">
+	<label>
 		<input type="checkbox" [name]="name" class="switch" [ngClass]="{'wifi-checked': value===true}" [value]="value"
 			(change)="onChange($event)" [checked]="value" vtrMetrics metricsEvent="featureClick" [metricsItem]="name"
 			[metricsValue]="!value" [disabled]="disabled" [checked]="value" />

@@ -126,6 +126,9 @@
 			*ngIf="isReadMeAvailable">
 				<a href="javascript:void(0)"
 					class="read"
+				   vtrMetrics
+				   metricsItem="readme"
+				   metricsEvent="featureClick"
 					(click)="onReadMoreClick($event)">Read more</a>
 			</div>
 			<!-- required in MVP 2 -->
