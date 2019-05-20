@@ -11,6 +11,7 @@ export class ArticlesComponent implements OnInit, OnDestroy {
 
 	articles = this.articlesService.articles;
 	openArticleId = null;
+	recommendationsArticles = null;
 
 	constructor(
 		private activatedRoute: ActivatedRoute,
@@ -19,8 +20,13 @@ export class ArticlesComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		const getFilteredArticlesByCategory = (category) => {
+			return this.articlesService.filterArticlesByCategory(category).filter((article) => article.id !== this.openArticleId);
+		};
 		this.activatedRoute.queryParams.subscribe((val) => {
 			this.openArticleId = val.id || null;
+			const openArticle = this.articles[this.openArticleId];
+			this.recommendationsArticles = openArticle ? getFilteredArticlesByCategory(openArticle.category) : null;
 		});
 	}
 

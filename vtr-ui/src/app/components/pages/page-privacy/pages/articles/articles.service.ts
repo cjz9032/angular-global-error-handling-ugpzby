@@ -7,73 +7,87 @@ import * as page5 from './pages/article2b.html';
 import * as page6 from './pages/article3a.html';
 import * as page7 from './pages/article3b.html';
 import { RoutersName } from '../../privacy-routing-name';
+import { UserDataGetStateService } from '../../common/services/user-data-get-state.service';
+import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
+import { UserDataStatuses } from '../../userDataStatuses';
 
 export interface Article {
 	id: string;
-	category: 'breaches' | 'trackers' | 'non-private-passwords';
+	category: 'FigLeafInstalled' | 'ScanPerformed' | 'FirstTimeVisitor';
 	title: string;
 	image: string;
 	content: typeof import('.html');
 }
+
 export interface Articles {
 	[key: string]: Article;
 }
 
 interface ArticlesByPathSettings {
 	visible: boolean;
-	articles: Article[];
 }
 
 @Injectable({
 	providedIn: 'root'
 })
 export class ArticlesService {
+	isFigleafReadyForCommunication = false;
+
+	constructor(
+		private userDataGetStateService: UserDataGetStateService,
+		private communicationWithFigleafService: CommunicationWithFigleafService
+	) {
+		this.communicationWithFigleafService.isFigleafReadyForCommunication$.subscribe((isReady) => {
+			this.isFigleafReadyForCommunication = isReady;
+		});
+	}
+
 	articles: Articles = {
 		'information-exposed': {
 			id: 'information-exposed',
-			category: 'breaches',
+			category: 'FigLeafInstalled',
 			title: 'Why finding out if your information is exposed changes everything',
 			image: '/assets/images/privacy-tab/tips-bg.png',
 			content: page1, // https://markdowntohtml.com/ // https://stackedit.io/app#
 		},
 		'myths-about-privacy': {
 			id: 'myths-about-privacy',
-			category: 'breaches',
+			category: 'FigLeafInstalled',
 			title: '5 myths about the definition of privacy you probably believe',
 			image: '/assets/images/privacy-tab/tips-bg.png',
 			content: page2,
 		},
 		'tweak-your-internet-privacy': {
 			id: 'tweak-your-internet-privacy',
-			category: 'breaches',
+			category: 'FigLeafInstalled',
 			title: 'How to tweak your internet privacy settings in 5 easy steps',
 			image: '/assets/images/privacy-tab/tips-bg.png',
 			content: page3,
 		},
 		'everything-about-trackers': {
 			id: 'everything-about-trackers',
-			category: 'trackers',
+			category: 'ScanPerformed',
 			title: 'Everything you need to know about trackers is 20 seconds',
 			image: '/assets/images/privacy-tab/tips-bg.png',
 			content: page4,
 		},
 		'what-cookies-reveal': {
 			id: 'what-cookies-reveal',
-			category: 'trackers',
+			category: 'ScanPerformed',
 			title: 'What cookies reveal about you',
 			image: '/assets/images/privacy-tab/tips-bg.png',
 			content: page5,
 		},
 		'guide-to-private-browsing': {
 			id: 'guide-to-private-browsing',
-			category: 'non-private-passwords',
+			category: 'FirstTimeVisitor',
 			title: 'The Ultimate Guide to Private Browsing',
 			image: '/assets/images/privacy-tab/tips-bg.png',
 			content: page6,
 		},
 		'companies-hit-by-data-breaches': {
 			id: 'companies-hit-by-data-breaches',
-			category: 'non-private-passwords',
+			category: 'FirstTimeVisitor',
 			title: 'These companies were all hit by data breaches. Do you have accounts with them?',
 			image: '/assets/images/privacy-tab/tips-bg.png',
 			content: page7,
@@ -85,55 +99,54 @@ export class ArticlesService {
 	} = {
 		[RoutersName.MAIN]: {
 			visible: true,
-			articles: [
-				...this.filterArticlesByCategory('breaches'),
-				...this.filterArticlesByCategory('trackers'),
-				...this.filterArticlesByCategory('non-private-passwords'),
-			]
 		},
 		[RoutersName.TIPS]: {
 			visible: false,
-			articles: [],
 		},
 		[RoutersName.NEWS]: {
 			visible: false,
-			articles: [],
 		},
 		[RoutersName.LANDING]: {
 			visible: false,
-			articles: [],
 		},
 		[RoutersName.PRIVACY]: {
 			visible: true,
-			articles: [
-				...this.filterArticlesByCategory('breaches'),
-				...this.filterArticlesByCategory('trackers'),
-				...this.filterArticlesByCategory('non-private-passwords'),
-			]
 		},
 		[RoutersName.BREACHES]: {
 			visible: true,
-			articles: this.filterArticlesByCategory('breaches')
 		},
 		[RoutersName.TRACKERS]: {
 			visible: true,
-			articles: this.filterArticlesByCategory('trackers')
 		},
 		[RoutersName.BROWSERACCOUNTS]: {
 			visible: true,
-			articles: this.filterArticlesByCategory('non-private-passwords')
 		},
 		[RoutersName.FAQ]: {
 			visible: false,
-			articles: [],
 		},
 		[RoutersName.ARTICLES]: {
 			visible: false,
-			articles: [],
 		}
 	};
 
-	private filterArticlesByCategory(category) {
+	private getUserCategory() {
+		if (this.isFigleafReadyForCommunication) {
+			return 'FigLeafInstalled';
+		}
+		const userDataStatus = this.userDataGetStateService.getUserDataStatus();
+		for (const dataState of Object.keys(userDataStatus)) {
+			if (userDataStatus[dataState] !== UserDataStatuses.undefined) {
+				return 'ScanPerformed';
+			}
+		}
+		return 'FirstTimeVisitor';
+	}
+
+	getFilteredArticlesByUserStatus() {
+		return this.filterArticlesByCategory(this.getUserCategory());
+	}
+
+	filterArticlesByCategory(category) {
 		return Object.keys(this.articles).reduce((acc, articleKey) => {
 			const currArticle = this.articles[articleKey];
 			if (currArticle.category === category) {
@@ -141,8 +154,5 @@ export class ArticlesService {
 			}
 			return acc;
 		}, []);
-	}
-
-	constructor() {
 	}
 }

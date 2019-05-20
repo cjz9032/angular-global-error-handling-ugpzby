@@ -9,6 +9,6 @@
 <vtr-common-popup [popUpId]="articlePopupId" size="large">
   <ng-template>
     <vtr-article-single [articleData]="article"></vtr-article-single>
-    <a class="all-articles-link" routerLink="/privacy/articles">see all articles</a>
+    <a class="all-articles-link" routerLink="/privacy/articles" (click)="closeArticlePopup()">see all articles</a>
   </ng-template>
 </vtr-common-popup>

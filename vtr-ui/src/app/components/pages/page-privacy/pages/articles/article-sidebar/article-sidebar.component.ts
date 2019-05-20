@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { filter, takeUntil } from 'rxjs/operators';
+import { filter, map, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { RouterChangeHandlerService } from '../../../common/services/router-change-handler.service';
 import { Article, ArticlesService } from '../articles.service';
@@ -10,7 +10,7 @@ import { Article, ArticlesService } from '../articles.service';
 	styleUrls: ['./article-sidebar.component.scss']
 })
 export class ArticleSidebarComponent implements OnInit, OnDestroy {
-	showedArticle: Article;
+	showedArticle: Article | null;
 
 	constructor(
 		private articlesService: ArticlesService,
@@ -22,13 +22,17 @@ export class ArticleSidebarComponent implements OnInit, OnDestroy {
 		this.routerChangeHandler.onChange$
 			.pipe(
 				takeUntil(instanceDestroyed(this)),
-				filter((currentPath) => !!this.articlesService.pagesSettings[currentPath])
+				filter((currentPath) => this.articlesService.pagesSettings[currentPath]),
+				map((currentPath) => this.articlesService.pagesSettings[currentPath])
 			)
-			.subscribe(
-				(currentPath) => {
-					const articlesForCurrentPath = this.articlesService.pagesSettings[currentPath].articles;
-					const randomIndex = Math.floor(Math.random() * articlesForCurrentPath.length);
-					this.showedArticle = articlesForCurrentPath[randomIndex];
+			.subscribe((currentPageSettings) => {
+					if (currentPageSettings.visible) {
+						const articlesForCurrentPage = this.articlesService.getFilteredArticlesByUserStatus();
+						const randomIndex = Math.floor(Math.random() * articlesForCurrentPage.length);
+						this.showedArticle = articlesForCurrentPage[randomIndex];
+					} else {
+						this.showedArticle = null;
+					}
 				}
 			);
 	}
