@@ -13,8 +13,7 @@
 		@media #{$mediaquery_6} {
 			padding: 4rem;
 			height: 36rem;
-		}
-
+		}				
 		.monitor-col {
 			padding: 4rem 0;
 			position: relative;
@@ -58,7 +57,57 @@
 				background-color: $gaming_darkest;
 				height: 100%;
 				position: relative;
+				ngb-tooltip-window.tooltip {
+					border-radius: 0.4rem;
+					background-color: $light;
+					box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+					color:$gaming_dark;
+				
+					.tooltip-inner {
+						padding: 1.2rem;
+						color: $main_dark;
+						border-radius: 0.4rem;
+						background-color: $light;
+						font-size: 1.4rem;
+						text-align: left;
+					}
+				}
 
+				.gaming-tooltip{
+					max-width: 85%;
+					padding: 3rem;
+					background: $gaming_lightest;
+					color: $main_dark;
+					border-radius: 0.8rem;
+					position: absolute;
+					display: none;
+					z-index: 99;
+					top:-6rem;
+					left: calc(50% - 42.5%);
+					opacity: 0;
+					transition: all .5s ease-in-out;
+					&::after{
+						content: '';
+						position: absolute;
+						width: 0;
+						height: 0;
+						border-bottom: 3rem solid $gaming_lightest;
+						border-left: 3rem solid transparent;
+						transform: rotate(45deg);
+						bottom: -1rem;
+						left: calc(50% - 1.5rem);
+					}
+					p {
+						font-size: 2rem;
+						line-height: 2.6rem;
+					}
+				}
+				&:hover {
+					.gaming-tooltip {
+						display: inline-block;
+						opacity: 1;
+					}
+				}
 				.monitor-inner {
 					height: 100%;
 					position: absolute;

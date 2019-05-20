@@ -6,7 +6,7 @@
 					<div class="row h-100">
 						<div class="col-8 monitor-col left">
 							<div class="monitor-section">
-
+								<div class="gaming-tooltip"><p>{{'gaming.dashboard.device.systemInfo.systenTooltip'|translate}}</p></div>
 								<div class="monitor-inner gpu">
 									<div class="monitor-stack">
 										<div class="stack-container">
@@ -74,7 +74,8 @@
 						</div>
 						<div class="col-4 monitor-col right">
 							<div class="link-container">
-								<a routerLink="/device" class="info-link">Info</a>
+								<a vtrMetrics [metricsItem]="'System Status'"
+								metricsEvent="featureClick" routerLink="/device" class="info-link">Info</a>
 								<div class="icon icon-backarrow"></div>
 							</div>
 
