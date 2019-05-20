@@ -41,6 +41,9 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	@Input() data: WifiHomeViewModel;
 	@Input() name: string;
 	@Input() disabled = false;
+	@Input() showLoader = false;
+	@Input() theme = 'white';
+
 	isSwitchDisable = false;
 
 	uiSubscription: Subscription;
