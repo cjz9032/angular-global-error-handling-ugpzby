@@ -30,7 +30,7 @@ export class UserDataGetStateService {
 
 		this.browserAccountsService.installedBrowsersData$.subscribe((installedBrowsersData) => {
 			const storagesCount = installedBrowsersData.browserData.filter((installedBrowser) => installedBrowser.accountsCount !== null).length; // accountsCount set to 'null' before user gave concent
-			var status = UserDataStatuses.undefined;
+			let status = UserDataStatuses.undefined;
 			if (storagesCount) {
 				const unsafeStoragesCount = installedBrowsersData.browserData.filter((installedBrowser) => installedBrowser.accountsCount).length;
 				status = unsafeStoragesCount ? UserDataStatuses.exist : UserDataStatuses.none;
