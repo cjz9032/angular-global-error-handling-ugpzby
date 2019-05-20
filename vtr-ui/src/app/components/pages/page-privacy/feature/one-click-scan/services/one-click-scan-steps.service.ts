@@ -31,21 +31,21 @@ export class OneClickScanStepsService {
 	}
 
 	nextStep() {
-		const nextStepIndex = this.oneClickScanSteps.findIndex((step) => !step.isShow);
+		const nextStepIndex = this.oneClickScanSteps.findIndex((step) => !step.wasShow);
 		return nextStepIndex ? this.activateStep(nextStepIndex) : null;
 	}
 
 	private getStepsMap() {
 		return Object.keys(OneClickScanSteps).map((step, index, array) => ({
 				step: OneClickScanSteps[step],
-				isShow: false,
+				wasShow: false,
 				index,
 				length: array.length
 		}));
 	}
 
 	private activateStep(index) {
-		this.oneClickScanSteps[index].isShow = true;
+		this.oneClickScanSteps[index].wasShow = true;
 		return this.oneClickScanSteps[index];
 	}
 }
