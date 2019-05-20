@@ -1,11 +1,23 @@
-<div class="checkbox" [ngClass]="{'switch-disable': isSwitchDisable}">
-	<label vtrMetrics metricsEvent="featureClick" [metricsItem]="'chk.'+name" [metricsValue]="!value">
-		<input type="checkbox" [name]="name" class="switch" [ngClass]="{'wifi-checked': value===true}" [value]="value"
-			(change)="onChange($event)" [checked]="value" vtrMetrics metricsEvent="featureClick" [metricsItem]="name"
-			[metricsValue]="!value" [disabled]="disabled" [checked]="value" />
+<div class="checkbox"
+	[ngClass]="{'switch-disable': isSwitchDisable}">
+	<label>
+		<input type="checkbox"
+			[name]="name"
+			class="switch"
+			[ngClass]="{'wifi-checked': value===true}"
+			[value]="value"
+			[checked]="value"
+			[disabled]="disabled"
+			(change)="onChange($event)"
+			vtrMetrics
+			metricsEvent="featureClick"
+			[metricsItem]="'chk.'+name"
+			[metricsValue]="value" />
 
 		<span class="switch {{ size }}"> <small></small> </span>
-		<div *ngIf="!value" class="switch-label off-label">{{'common.ui.off' | translate}}</div>
-		<div *ngIf="value" class="switch-label on-label">{{'common.ui.on' | translate}}</div>
+		<div *ngIf="!value"
+			class="switch-label off-label">{{'common.ui.off' | translate}}</div>
+		<div *ngIf="value"
+			class="switch-label on-label">{{'common.ui.on' | translate}}</div>
 	</label>
 </div>
