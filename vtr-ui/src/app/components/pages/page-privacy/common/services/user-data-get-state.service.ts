@@ -29,8 +29,12 @@ export class UserDataGetStateService {
 		});
 
 		this.browserAccountsService.installedBrowsersData$.subscribe((installedBrowsersData) => {
-			const unsafeStoragesCount = installedBrowsersData.browserData.filter((installedBrowser) => installedBrowser.accountsCount).length;
-			let status = unsafeStoragesCount ? UserDataStatuses.exist : UserDataStatuses.none;
+			const storagesCount = installedBrowsersData.browserData.filter((installedBrowser) => installedBrowser.accountsCount !== null).length; // accountsCount set to 'null' before user gave concent
+			var status = UserDataStatuses.undefined;
+			if (storagesCount) {
+				const unsafeStoragesCount = installedBrowsersData.browserData.filter((installedBrowser) => installedBrowser.accountsCount).length;
+				status = unsafeStoragesCount ? UserDataStatuses.exist : UserDataStatuses.none;
+			}
 			if (installedBrowsersData.error) {
 				status = UserDataStatuses.error;
 			}
