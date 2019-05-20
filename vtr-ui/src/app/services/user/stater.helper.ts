@@ -251,11 +251,11 @@ export class LIDStarterHelper {
 
 			// get sigin date from sso GetLastLoginTime
 			if (!LIDStarterHelper.signinDateFromSSO) {
-				LIDStarterHelper.signinDateFromSSO = this.lid.getLastLoginTime();
+				LIDStarterHelper.signinDateFromSSO = this.lid.getLastLoginTimeRegistry(this.deviceService.is64bit);
 			}
 			signinDate = await LIDStarterHelper.signinDateFromSSO;
-			if (signinDate && signinDate.lastLoginTime) {
-				signinDate = new Date(signinDate.lastLoginTime).toISOString().substring(0, 19);
+			if (signinDate) {
+				signinDate = new Date(signinDate).toISOString().substring(0, 19);
 				this.commonService.setLocalStorageValue(LocalStorageKey.LidFirstSignInDate, signinDate);
 				this.updateUserSettingXml({ lastSignIndate: signinDate, staterAccount: null });
 				return true;
@@ -278,11 +278,11 @@ export class LIDStarterHelper {
 
 			// get sigin date from sso GetLastLoginTime
 			if (!LIDStarterHelper.signinDateFromSSO) {
-				LIDStarterHelper.signinDateFromSSO = this.lid.getLastLoginTime();
+				LIDStarterHelper.signinDateFromSSO = this.lid.getLastLoginTimeRegistry(this.deviceService.is64bit);
 			}
 			signinDate = await LIDStarterHelper.signinDateFromSSO;
-			if (signinDate && signinDate.lastLoginTime) {
-				signinDate = new Date(signinDate.lastLoginTime).toISOString().substring(0, 19);
+			if (signinDate) {
+				signinDate = new Date(signinDate).toISOString().substring(0, 19);
 				this.commonService.setLocalStorageValue(LocalStorageKey.LidFirstSignInDate, signinDate);
 				this.updateUserSettingXml({ lastSignIndate: signinDate, staterAccount: null });
 				return false;
@@ -294,7 +294,7 @@ export class LIDStarterHelper {
 				return false;
 			}
 		} catch (ex) {
-			this.devService.writeLog('Testing starter scenirio', ex.message);
+			this.devService.writeLog('isStarterAccountScenario() exception happen ', ex.message);
 			return false;
 		}
 
