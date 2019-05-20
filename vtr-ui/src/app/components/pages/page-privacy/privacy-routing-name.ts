@@ -7,5 +7,6 @@ export enum RoutersName {
 	FAQ = 'faq',
 	TIPS = 'tips',
 	NEWS = 'news',
-	LANDING = 'landing'
+	LANDING = 'landing',
+	ARTICLES = 'articles'
 }
