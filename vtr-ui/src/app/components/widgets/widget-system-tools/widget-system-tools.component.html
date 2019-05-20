@@ -8,15 +8,17 @@
 				<div class="col">
 					<ul class="system-tool-icons d-flex justify-content-around">
 						<li>
-							<figure>
-								<a routerLink="/device/system-updates">
+						<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.systemUpdate' | translate" metricsEvent="featureClick"
+						routerLink="/device/system-updates">
+								<figure>
 									<div class="system-icon">
 										<i class="icon icon-systemupdate"></i>
 									</div>
-								</a>
+
 								<figcaption>{{'gaming.dashboard.device.systemTools.systemUpdate' | translate}}
 								</figcaption>
 							</figure>
+						</a>
 						</li>
 						<li>
 							<figure>
