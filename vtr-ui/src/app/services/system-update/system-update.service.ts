@@ -185,9 +185,11 @@ export class SystemUpdateService {
 	}
 
 	public cancelUpdateCheck() {
+		console.log('cancelUpdateCheck');
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.cancelSearch()
 				.then((status: boolean) => {
+					console.log('cancelUpdateCheck then', status);
 					// todo: ui changes to show on update cancel
 				})
 				.catch((error) => {
@@ -346,7 +348,7 @@ export class SystemUpdateService {
 				update.isIgnored = false;
 			}
 		});
-		this.commonService.sendNotification(UpdateProgress.IgnoredUpdates, ignoredUpdates);
+		this.commonService.sendNotification(UpdateProgress.IgnoredUpdates, this.updateInfo.updateList);
 	}
 
 	public toggleUpdateSelection(packageName: string, isSelected: boolean) {
@@ -589,7 +591,7 @@ export class SystemUpdateService {
 				if (pkg) {
 					update.installationStatus = pkg.actionResult;
 					update.isInstalled = (update.installationStatus === UpdateActionResult.Success);
-					this.installedUpdates.push(pkg);
+					this.installedUpdates.push(update);
 				}
 			}
 		});
@@ -656,7 +658,7 @@ export class SystemUpdateService {
 			this.systemUpdateBridge.cancelDownload()
 				.then((status: boolean) => {
 					this.isUpdateDownloading = false;
-					this.isInstallingAllUpdates = true;
+					// this.isInstallingAllUpdates = true;
 					this.percentCompleted = 0;
 					this.isUpdatesAvailable = true;
 					this.installationPercent = 0;

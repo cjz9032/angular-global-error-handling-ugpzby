@@ -18,7 +18,7 @@ export class ConfigService {
 			path: 'device-gaming',
 			icon: ['fas', 'desktop'],
 			metricsEvent: 'itemClick',
-			metricsParent: 'navbar',
+			metricsParent: 'device.navbar',
 			metricsItem: 'link.device',
 			routerLinkActiveOptions: { exact: true },
 			forArm: true,
@@ -114,7 +114,7 @@ export class ConfigService {
 				path: 'device-settings',
 				icon: '',
 				metricsEvent: 'itemClick',
-				metricsParent: 'navbar',
+				metricsParent: 'device.navbar',
 				metricsItem: 'link.mydevicesettings',
 				routerLinkActiveOptions: { exact: false },
 				subitems: []
@@ -240,7 +240,7 @@ export class ConfigService {
 				path: 'device-settings',
 				icon: '',
 				metricsEvent: 'itemClick',
-				metricsParent: 'navbar',
+				metricsParent: 'device.navbar',
 				metricsItem: 'link.mydevicesettings',
 				routerLinkActiveOptions: { exact: false },
 				subitems: []
