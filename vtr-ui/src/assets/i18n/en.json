@@ -384,9 +384,14 @@
 						"title": "Battery Charge Threshold",
 						"description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
 						"tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
+						"settings": {
+							"title1": "Threshold for Built in battery",
+							"title2": "Threshold for Removable battery"
+						},
 						"popup": {
 							"title": "Enable Battery Charge Threshold",
-							"description": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life. In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+							"description1": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life.",
+							"description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
 							"enable": "ENABLE",
 							"cancel": "CANCEL"
 						}
