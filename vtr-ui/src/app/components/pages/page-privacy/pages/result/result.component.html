@@ -7,7 +7,7 @@
 		<vtr-privacy-score></vtr-privacy-score>
 	</div>
 
-	<ng-container *ngIf="(onGetBreachedAccountsCompleted$ | async)" data-analyticsName="BreachedAccountsBlock">
+	<div *ngIf="(onGetBreachedAccountsCompleted$ | async)" data-analyticsName="BreachedAccountsBlock">
 		<div *ngIf="!(isFigleafReadyForCommunication$ | async) && !breached_accounts.length" class="email-scanner">
 			<vtr-email-scanner></vtr-email-scanner>
 		</div>
@@ -48,7 +48,7 @@
 			<h2 class="privacy-dashboard__title">Privacy control at a glance</h2>
 			<vtr-privacy-dashboard-list></vtr-privacy-dashboard-list>
 		</div>
-	</ng-container>
+	</div>
 	<div class="breaches-block breaches-block__wrapper"
 		 *ngIf="!(isFigleafReadyForCommunication$ | async) && (isWasScanned | async) && !(onGetBreachedAccountsCompleted$ | async)">
 		<vtr-big-loader [text]="textForLoader"></vtr-big-loader>
