@@ -5,7 +5,7 @@ export interface StepScanInputData {
 	length: number;
 }
 
-export interface OneClickScan {
+export interface Permit {
 	data: StepScanInputData;
 	allow: EventEmitter<boolean>;
 	allowEmitter();

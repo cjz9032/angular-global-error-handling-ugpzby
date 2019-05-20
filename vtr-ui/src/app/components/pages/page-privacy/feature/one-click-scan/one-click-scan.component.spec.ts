@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OneClickScanComponent } from './one-click-scan.component';
 
-describe('OneClickScan', () => {
+describe('Permit', () => {
 	let component: OneClickScanComponent;
 	let fixture: ComponentFixture<OneClickScanComponent>;
 
