@@ -307,7 +307,7 @@
             "privacyPolicy": "Przeczytaj więcej na temat <tag>polityki prywatności</tag>",
             "whyWindowsHelloDescription2": "Windows Hello sprawia, że logowanie do komputera jest łatwiejsze i bezpieczniejsze. Możesz także korzystać z internetowych aplikacji Microsoft. Postępuj zgodnie z poniższymi instrukcjami, aby rozpocząć korzystanie z Windows Hello",
             "authentication": "Uwierzytelnianie Windows Hello",
-            "traditional": "Tradycyjne hasła mogą zostać skradzione i wykorzystane do uzyskania dostępu do konta z dowolnego miejsca na świecie. Bezpieczniejsze i wygodniejsze. Windows Hello to system haseł następnej generacji. Zamiast niezabezpieczonych haseł użyj czytnika odcisków palców [lub kamery IR], aby się zalogować.",
+            "traditional": "Tradycyjne hasła mogą zostać skradzione i wykorzystane do uzyskania dostępu do konta z dowolnego miejsca na świecie. Bezpieczniejsze i wygodniejsze. Windows Hello to system haseł następnej generacji. Zamiast niezabezpieczonych haseł użyj czytnika odcisków palców, aby się zalogować.",
             "howToStart": "Jak rozpocząć korzystanie z Windows Hello?"
         }
     }

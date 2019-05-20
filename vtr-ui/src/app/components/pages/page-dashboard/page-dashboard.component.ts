@@ -70,18 +70,18 @@ export class PageDashboardComponent implements OnInit {
 			try {
 				qa.title = this.translate.instant(qa.title);
 				qa.description = this.translate.instant(qa.description);
-				//console.log(qa.description);
+				// console.log(qa.description);
 				this.translate.get(qa.keys).subscribe((translation: [string]) => {
-					//console.log(JSON.stringify(translation));
+					// console.log(JSON.stringify(translation));
 					qa.keys = translation;
-					//console.log(JSON.stringify(qa.keys));
+					// console.log(JSON.stringify(qa.keys));
 				});
 			}
 			catch (e) {
-				console.log("already translated");
+				console.log('already translated');
 			}
 			finally {
-				console.log("already translated");
+				console.log('already translated');
 			}
 
 		});
@@ -202,7 +202,7 @@ export class PageDashboardComponent implements OnInit {
 	// 	}, 3000);
 	// }
 
-	public onConnectivityClick($event: any) {
+	public onGetSupportClick($event: any) {
 	}
 
 	private setDefaultCMSContent() {

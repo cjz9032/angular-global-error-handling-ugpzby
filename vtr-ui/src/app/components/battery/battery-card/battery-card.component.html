@@ -13,7 +13,7 @@
 			</button>
 		</div>
 		<div class="modal-body">
-			<vtr-battery-detail [data]="batteryInfo"> </vtr-battery-detail>
+			<vtr-battery-detail [data]="batteryInfo" [dataGauge]="batteryGauge"> </vtr-battery-detail>
 		</div>
 	</ng-template>
 	<div class="container p-5">
@@ -30,7 +30,8 @@
 				[percentage]="batteryIndicator.percent"
 				[isCharging]="batteryIndicator.charging"
 				[isExpressCharging]="batteryIndicator.expressCharging"
-				[isVoltageError]="batteryIndicator.voltageError">
+				[isVoltageError]="batteryIndicator.voltageError"
+				[timeText]="batteryIndicator.timeText">
 			</vtr-battery-indicator>
 		</div>
 		<div class="pt-4 text-center">

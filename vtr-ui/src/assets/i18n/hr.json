@@ -306,7 +306,7 @@
             "privacyPolicy": "Pročitajte više o <tag>Pravilniku o zaštiti podataka</tag>",
             "whyWindowsHelloDescription2": "Windows Hello omogućava lakšu i sigurniju prijavu na vaše osobno računalo. Također, možete ga upotrebljavati za svoje mrežne Microsoft aplikacije. Da biste počeli upotrebljavati Windows Hello, slijedite upute u nastavku.",
             "authentication": "Provjera autentičnosti Windows Hello",
-            "traditional": "Tradicionalne lozinke mogu se ukrasti i koristiti za pristup vašem računu s bilo kojeg mjesta u svijetu. Sigurniji i prikladniji. Windows Hello sljedeća je generacija lozinki. Umjesto nesigurnih lozinki, za prijavu koristite čitač otiska prsta [ili infracrvenu kameru].",
+            "traditional": "Tradicionalne lozinke mogu se ukrasti i koristiti za pristup vašem računu s bilo kojeg mjesta u svijetu. Sigurniji i prikladniji. Windows Hello sljedeća je generacija lozinki. Umjesto nesigurnih lozinki, za prijavu koristite čitač otiska prsta.",
             "howToStart": "Kako da počnem koristiti Windows Hello?"
         }
     }
