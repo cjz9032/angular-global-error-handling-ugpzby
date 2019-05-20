@@ -82,15 +82,28 @@
 							aria-labelledby="navbarDropdown">
 							<fa-icon [icon]="['fas', 'square']"
 								class="menu-pointer"></fa-icon>
-							<a *ngFor="let subitem of item.subitems; let ii=index"
-								vtrMetrics
-								routerLinkActive="link-active"
-								[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
-								[metricsEvent]="subitem.metricsEvent"
-								[metricsParent]="subitem.metricsParent"
-								[metricsItem]="subitem.metricsItem"
-								class="dropdown-item link"
-								routerLink="/{{item.path}}/{{subitem.path}}">{{subitem.label | translate}}</a>
+								<span  *ngFor="let subitem of item.subitems; let ii=index">
+									<a *ngIf="subitem.externallink"
+									vtrMetrics
+									routerLinkActive="link-active"
+									[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
+									[metricsEvent]="subitem.metricsEvent"
+									[metricsParent]="subitem.metricsParent"
+									[metricsItem]="subitem.metricsItem"
+									class="dropdown-item link"
+									target="_blank"
+									href = "{{subitem.path}}">{{subitem.label | translate}}</a>
+									<a *ngIf = "!subitem.externallink"
+									vtrMetrics
+									routerLinkActive="link-active"
+									[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
+									[metricsEvent]="subitem.metricsEvent"
+									[metricsParent]="subitem.metricsParent"
+									[metricsItem]="subitem.metricsItem"
+									class="dropdown-item link"
+									routerLink="/{{item.path}}/{{subitem.path}}">{{subitem.label | translate}}</a>
+								</span>
+
 						</div>
 					</li>
 					<li *ngIf="item.id==='user'"
