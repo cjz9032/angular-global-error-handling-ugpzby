@@ -14,19 +14,19 @@
       <h4 class="score-description__title">{{title}}</h4>
       <p class="score-description__text">{{text}}</p>
     </div>
-    <div class="privacy-score__btn-container">
+    <div class="privacy-score__btn-container" *ngIf="privacyLevel === 'undefined'">
       <button class="privacy-score__btn"
               vtrSendAnalytics
               [metricsEvent]="'ItemClick'"
               [metricsItem]="clickEventName"
-              (click)="isFigLeafReadyForCommunication ? openFigleafApp() : openPopUp('low-privacy-popup')">
+              (click)="openPopUp('one-click-scan')">
         {{btn_text}}
       </button>
     </div>
   </div>
 </div>
-<vtr-common-popup popUpId="low-privacy-popup" size="big">
+<vtr-common-popup popUpId="one-click-scan" size="big">
   <ng-template>
-    <vtr-low-privacy popupId="low-privacy-popup" [steps]="describeSteps"></vtr-low-privacy>
+	<vtr-one-click-scan popupId="low-privacy-popup"></vtr-one-click-scan>
   </ng-template>
 </vtr-common-popup>

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { OneClickScanSteps, OneClickScanStepsService } from './services/one-click-scan-steps.service';
 import { PermitService } from './services/permit.service';
 
@@ -9,13 +9,16 @@ import { PermitService } from './services/permit.service';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OneClickScanComponent {
+	@Input() popupId: string;
+
 	readonly oneClickScanSteps = OneClickScanSteps;
 	currentStep = this.oneClickScanService.getFirstStep();
 
 	constructor(
 		private oneClickScanService: OneClickScanStepsService,
 		private permitService: PermitService
-	) {	}
+	) {
+	}
 
 	handlerAllow(permitValue: boolean, step: OneClickScanSteps) {
 		if (permitValue) {
