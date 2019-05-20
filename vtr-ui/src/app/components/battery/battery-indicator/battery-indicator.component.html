@@ -25,11 +25,11 @@
 					{{ getTimeRemaining() }}
 				</div>
 				<div class="remaining-text text-uppercase"
-				 *ngIf="!isCharging">
+				 *ngIf="timeText === 'timeRemaining'">
 					{{'device.deviceSettings.batteryGauge.details.remainingTime' | translate}}
 				</div>
 				<div class="remaining-text text-uppercase"
-				 *ngIf="isCharging">
+				 *ngIf="timeText === 'timeCompletion'">
 					{{'device.deviceSettings.batteryGauge.charge' | translate}}
 				</div>
 			</div>
