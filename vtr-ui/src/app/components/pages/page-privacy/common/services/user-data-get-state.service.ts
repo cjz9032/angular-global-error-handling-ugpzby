@@ -9,9 +9,9 @@ import { UserDataStatuses } from '../../userDataStatuses';
 
 @Injectable()
 export class UserDataGetStateService {
-	breachedAccountsResult = new BehaviorSubject<string>(UserDataStatuses.undefined);
-	websiteTrackersResult = new BehaviorSubject<string>(UserDataStatuses.undefined);
-	nonPrivatePasswordResult = new BehaviorSubject<string>(UserDataStatuses.undefined);
+	breachedAccountsResult = new BehaviorSubject<UserDataStatuses>(UserDataStatuses.undefined);
+	websiteTrackersResult = new BehaviorSubject<UserDataStatuses>(UserDataStatuses.undefined);
+	nonPrivatePasswordResult = new BehaviorSubject<UserDataStatuses>(UserDataStatuses.undefined);
 
 	constructor(
 		private breachedAccountsService: BreachedAccountsService,
