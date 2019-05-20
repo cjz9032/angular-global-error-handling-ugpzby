@@ -111,20 +111,26 @@ export class VantageShellService {
 				});
 				metricClient.isInit = true;
 				metricClient.metricsEnabled = true;
-
 				metricClient.sendAsyncOrignally = metricClient.sendAsync;
 				metricClient.commonService = this.commonService;
-				metricClient.sendAsync = function sendAsync(data) {
-					const eventType = data.ItemType.toLowerCase();
-
-					// automatically fill the OnlineStatus for page view event
-					if (eventType === 'pageview') {
-						if (!data.OnlineStatus) {
-							data.OnlineStatus = this.commonService.isOnline ? 1 : 0;
+				metricClient.sendAsync = async function sendAsync(data) {
+					try {
+						// automatically fill the OnlineStatus for page view event
+						const eventType = data.ItemType.toLowerCase();
+						if (eventType === 'pageview') {
+							if (!data.OnlineStatus) {
+								data.OnlineStatus = this.commonService.isOnline ? 1 : 0;
+							}
 						}
-					}
 
-					return this.sendAsyncOrignally(data);
+						return await this.sendAsyncOrignally(data);
+					} catch (ex) {
+						console.log('an error ocurr when sending metrics event');
+						return Promise.resolve({
+							status: 0,
+							desc: 'ok'
+						});
+					}
 				};
 			}
 
