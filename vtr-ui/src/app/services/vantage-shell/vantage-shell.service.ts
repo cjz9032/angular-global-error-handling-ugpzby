@@ -16,13 +16,11 @@ export class VantageShellService {
 	constructor(private commonService: CommonService) {
 		this.shell = this.getVantageShell();
 		if (this.shell) {
-			const rpcClient = this.shell.VantageRpcClient ? new this.shell.VantageRpcClient() : null;
 			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
 			const powerClient = this.shell.PowerClient ? this.shell.PowerClient() : null;
 			this.phoenix = Phoenix.default(
 				new inversify.Container(),
 				{
-					hsaBroker: rpcClient,
 					metricsBroker: metricClient,
 					hsaPowerBroker: powerClient,
 					hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
