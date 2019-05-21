@@ -455,7 +455,7 @@
 						"tooltip": "配置麦克风效果以增强不同场景和环境下的音频体验。",
 						"options": {
 							"VoiceRecognition": "语音识别",
-							"OnlyMyVoice": "仅我的语言",
+							"OnlyMyVoice": "仅我的语音",
 							"Normal": "正常",
 							"MultipleVoices": "多个语音"
 						}
