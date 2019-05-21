@@ -1,13 +1,12 @@
-<div class="vtr-camera-background-blur"
-	*ngIf="showHideCameraBackground">
+<div class="vtr-camera-background-blur">
 	<div class="row">
 		<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 pl-0 pr-0">
 			<div class="img-preview">
-				<img *ngIf="imageMode === 'blur'"
+				<img *ngIf="option.currentMode.toLowerCase() === 'blur'"
 					src="assets/images/camera-background-blur/blur-mode.png" />
-				<img *ngIf="imageMode === 'comic'"
+				<img *ngIf="option.currentMode.toLowerCase() === 'comic'"
 					src="assets/images/camera-background-blur/comic-mode.png" />
-				<img *ngIf="imageMode === 'sketch'"
+				<img *ngIf="option.currentMode.toLowerCase() === 'sketch'"
 					src="assets/images/camera-background-blur/sketch-mode.png" />
 			</div>
 		</div>
@@ -18,18 +17,20 @@
 						<vtr-ui-rounded-rectangle-radio [radioId]="'radio1'"
 							[group]="'radio'"
 							[label]="'device.deviceSettings.displayCamera.camera.camerablur.blurMode' | translate"
-							[value]="'blur'"
-							[checked]="true"
+							[value]="'Blur'"
+							[checked]="option.currentMode.toLowerCase() === 'blur'"
 							(change)="onChange($event)"></vtr-ui-rounded-rectangle-radio>
 						<vtr-ui-rounded-rectangle-radio [radioId]="'radio2'"
 							[group]="'radio'"
 							[label]="'device.deviceSettings.displayCamera.camera.camerablur.comicMode' | translate"
-							[value]="'comic'"
+							[value]="'Comic'"
+							[checked]="option.currentMode.toLowerCase() === 'comic'"
 							(change)="onChange($event)"></vtr-ui-rounded-rectangle-radio>
 						<vtr-ui-rounded-rectangle-radio [radioId]="'radio3'"
 							[group]="'radio'"
 							[label]="'device.deviceSettings.displayCamera.camera.camerablur.sketchMode' | translate"
-							[value]="'sketch'"
+							[value]="'Sketch'"
+							[checked]="option.currentMode.toLowerCase() === 'sketch'"
 							(change)="onChange($event)"></vtr-ui-rounded-rectangle-radio>
 					</div>
 				</li>

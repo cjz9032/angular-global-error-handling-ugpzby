@@ -140,7 +140,7 @@
 						</vtr-ui-row-switch>
 					</li>
 
-					<li class="pt-3">
+					<li class="pt-3" *ngIf="cameraBlur.available">
 
 						<vtr-ui-row-switch
 						[title]="'device.deviceSettings.displayCamera.camera.camerablur.title' | translate"
@@ -157,7 +157,8 @@
 							<div class="row">
 								<div class="col-12 pr-0 my-3">
 									<vtr-camera-background-blur
-									[showHideCameraBackground] = "showCameraBackgroundBlurFeature">
+									[option]="cameraBlur"
+									(change)="onCameraBackgroundOptionChange($event)">
 									</vtr-camera-background-blur>
 								</div>
 							</div>

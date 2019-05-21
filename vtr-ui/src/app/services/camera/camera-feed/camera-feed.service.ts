@@ -9,7 +9,7 @@ export class CameraFeedService {
 	public isShellAvailable = false;
 	private cameraBlur: any;
 
-	constructor(private shellService: VantageShellService) {
+	constructor(shellService: VantageShellService) {
 		this.cameraBlur = shellService.getCameraBlur();
 
 		if (this.cameraBlur) {
@@ -40,6 +40,18 @@ export class CameraFeedService {
 	public getCameraBlurSettings(): Promise<any> {
 		if (this.cameraBlur) {
 			return this.cameraBlur.getCameraBlurSettings();
+		}
+		return undefined;
+	}
+
+	public setCameraBlurSettings(isEnabled: boolean, mode: string): Promise<any> {
+		if (this.cameraBlur) {
+			if (isEnabled) {
+				const enable = isEnabled ? '1' : '0';
+				return this.cameraBlur.setCameraBlurSettings(true, enable);
+			} else {
+				return this.cameraBlur.setCameraSettings(false, mode);
+			}
 		}
 		return undefined;
 	}
