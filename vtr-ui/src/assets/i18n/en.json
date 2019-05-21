@@ -33,6 +33,9 @@
 					"hardwareScan": "Hardware Scan",
 					"systemUpdate": "System Update"
 				},
+				"lighting": {
+					"title": "Lighting Customize"
+				},
 				"legionEdgeModal": {
 					"line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
 					"line2": "<b>Feature Management Overview</b> <br> Some features not available on all devices",
@@ -45,6 +48,9 @@
 					"line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
 					"line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
 					"line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control"
+				},
+				"systemInfo": {
+					"systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
 				}
 			}
 		},
@@ -384,9 +390,14 @@
 						"title": "Battery Charge Threshold",
 						"description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
 						"tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
+						"settings": {
+							"title1": "Threshold for Built in battery",
+							"title2": "Threshold for Removable battery"
+						},
 						"popup": {
 							"title": "Enable Battery Charge Threshold",
-							"description": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life. In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+							"description1": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life.",
+							"description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
 							"enable": "ENABLE",
 							"cancel": "CANCEL"
 						}

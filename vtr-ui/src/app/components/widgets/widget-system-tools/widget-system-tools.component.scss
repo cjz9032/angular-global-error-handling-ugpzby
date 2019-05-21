@@ -20,13 +20,28 @@
 			padding-left: 0rem;
 			margin-bottom: -1.4rem;
 			li {
+				width: calc(100% / 5);
+				a{
+					text-decoration: none;
+					display: inline-block;
+					padding: 2rem 3rem;
+					border-radius: 1.2rem;
+					width: 100%;
+					background: transparent;
+					transition: all .3s ease-in-out;
+					min-height: 18.5rem;
+					&:hover {
+						background: $gaming_shade;
+						.system-icon::before {
+							background: $gaming_shade;
+						}
+					}
+				}
 				figure {
 					text-align: center;
 					color: $light;
 					max-width: 10rem;
-					a{
-						text-decoration: none;
-					}
+					margin: auto;
 					.system-icon {
 						display: flex;
 						align-items: center;
@@ -64,6 +79,7 @@
 							margin: 0;
 							background: $gaming_dark;
 							z-index: 0;
+							transition: all .3s ease-in-out;
 						}
 						.icon {
 							position: relative;
@@ -73,6 +89,7 @@
 							-webkit-background-clip: text;
 							-webkit-text-fill-color: transparent;
 							background-clip: text;
+							padding-top: 0.8rem;
 						}
 					}
 					figcaption {
