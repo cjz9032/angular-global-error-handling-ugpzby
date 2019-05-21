@@ -7,8 +7,41 @@ $main: #4579f0;
 $main_light: #5086cb;
 $main_lighter: #b5d0f4;
 $main_lightest: #eaf2fd;
+$menu_hover: #4A81FD;
+
+$gaming_darkest: #1F2A42;
+$gaming_darker: #253048;
+$gaming_dark: #323F5B;
+$gaming_shade: #46526B;
+$gaming_gstart: #2d5dcf;
+$gaming: #4579f0;
+$gaming_light: #5086cb;
+$gaming_lighter: #b5d0f4;
+$gaming_lightest: #FBFDFF;
+$gaming_icon_gradient: linear-gradient(45deg, #3592ff, #0078ff);
+$gaming_lighting_gradient: linear-gradient(90deg, #0078ff, #3592ff);
+$gaming_green_gradient: linear-gradient(90deg, #2fcc74, #33dfa6);
+$gaming_switch_light: #f2f2f2;
+$gaming_switch_dark: #6d6d6d;
+$gaming-slate-blue: #30415a;
+$gaming-Darkslate-blue: #233043;
+$gaming_blue_grey_light: #425067;
+$gaming_grey_lightest: #aab0bc;
+$gaming_hover: #545f76;
+$gaming_dark_popup: #404d5f;
 
 $highlight: #2ec5eb;
+$highlight_bright: #53f9ff;
+
+$shade_extradark: #1b1b1b;
+$shade_darkest: #333;
+$shade_darker: #6b6b6b;
+$shade_dark: #9d9d9d;
+$shade: #adadad;
+$shade_light: #c8cbcb;
+$shade_lighter: #e6e6e6;
+$shade_lightest: #f1f1f1;
+$shade_extralight: #f6f8f8;
 
 $alt: #e02725;
 $orange-light: #ff7e3e;
@@ -28,6 +61,7 @@ $shade_darkest: #333;
 $shade_darker: #6b6b6b;
 $shade_dark: #9d9d9d;
 $shade: #adadad;
+$shade_btn_light:#bdbcbc;
 $shade_light: #c8cbcb;
 $shade_lighter: #e6e6e6;
 $shade_lightest: #f1f1f1;
@@ -50,6 +84,7 @@ $screen_light_15: rgba(255, 255, 255, 0.15);
 
 $drop_shadow: 0 0 1.5rem 0 $screen_dark_15;
 $drop_shadow_1: 0 0 1rem 0 $screen_dark_15;
+$drop_shadow_gaming: 0 0 3.5rem 0 $screen_dark_30;
 $text_shadow: 0 0 0.3rem $screen_dark_70;
 
 $weight_light: 300;
@@ -82,18 +117,40 @@ $mediaquery_4: "only screen and (max-width : 1800px)";
 $mediaquery_5: "only screen and (max-width : 1600px)";
 $mediaquery_6: "only screen and (max-width : 1400px)";
 $mediaquery_7: "only screen and (max-width : 1200px)";
-$mediaquery_8: "only screen and (max-width: 800px)";
-$mediaquery_9: "only screen and (min-width: 800px) and (max-width : 1200px)";
-$mediaquery_10: "only screen and (min-width: 769px) and (max-width : 966px)";
-$mediaquery_11: "only screen and (max-width: 530px)";
-$mediaquery_12: "only screen and (max-width: 768px)";
-$mediaquery_13: "only screen and (min-width: 770px) and (max-width : 991px)";
-$mediaquery_14: "only screen and (min-width: 530px) and (max-width: 768px)";
-$mediaquery_15: "only screen and (min-width: 992px) and (max-width: 1195px)";
-$mediaquery_16: "only screen and (min-width: 769px) and (max-width : 990px)";
-$mediaquery_17: "only screen and (min-width: 770px) and (max-width : 872px)";
-$mediaquery_18: "only screen and (min-width: 874px) and (max-width : 1045px)";
-$mediaquery_19: "only screen and (min-width: 1201px) and (max-width : 1257px)";
+$mediaquery_8: "only screen and (max-width : 1000px)";
+$mediaquery_9: "only screen and (max-width : 900px)";
+$mediaquery_10: "only screen and (max-width: 800px)";
+$mediaquery_11: "only screen and (max-width: 768px)";
+$mediaquery_12: "only screen and (max-width: 575px)";
+$mediaquery_13: "only screen and (min-width: 576px) and (max-width : 735px)";
+$mediaquery_14: "only screen and (min-width: 768px) and (max-width : 1366px) and (max-resolution: 125dpi)";
+$mediaquery_15: "only screen and (max-width: 767px)";
+$mediaquery_16: "only screen and (min-width: 531px) and (max-width : 585px)";
+$mediaquery_17: "only screen and (min-width: 1196px) and (max-width : 1346px)";
+$mediaquery_18: "only screen and (min-width: 1258px) and (max-width : 1271px)";
+$mediaquery_19: "only screen and (min-width: 2160px) and (max-width : 3840px) and (max-resolution: 300dpi)";
+
+
+$mediaquery_X1: "only screen and (min-width: 800px) and (max-width : 1200px)";
+$mediaquery_X2: "only screen and (min-width: 769px) and (max-width : 966px)";
+$mediaquery_X3: "only screen and (max-width: 530px)";
+$mediaquery_X4: "only screen and (max-width: 768px)";
+$mediaquery_X5: "only screen and (min-width: 770px) and (max-width : 991px)";
+$mediaquery_X6: "only screen and (min-width: 530px) and (max-width: 768px)";
+$mediaquery_X7: "only screen and (min-width: 992px) and (max-width: 1195px)";
+$mediaquery_X8: "only screen and (min-width: 769px) and (max-width : 990px)";
+$mediaquery_X9: "only screen and (min-width: 770px) and (max-width : 872px)";
+$mediaquery_X10: "only screen and (min-width: 874px) and (max-width : 1045px)";
+$mediaquery_X11: "only screen and (min-width: 1201px) and (max-width : 1257px)";
+$mediaquery_X12: "only screen and (min-width: 900px) and (max-width : 1440px)";
+$mediaquery_X13: "only screen and (min-width: 900px) and (max-width : 1600px)";
+$mediaquery_X14: "only screen and (min-width: 1080px) and (max-width : 1920px)";
+$mediaquery_X15: "only screen and (min-width: 1080px) and (max-width : 1920px) and (max-resolution: 125dpi)";
+$mediaquery_X16: "only screen and (min-width: 703px) and (max-width : 963px)";
+$mediaquery_X17: "only screen and (min-width: 500px) and (max-width : 702px)";
+$mediaquery_X18: "only screen and (min-width: 703px) and (max-width : 963px) and (max-resolution: 150dpi)";
+$mediaquery_X19: "only screen and (min-width: 703px) and (max-width : 963px) and (max-resolution: 175dpi)";
+$mediaquery_X20: "only screen and (min-width: 703px) and (max-width : 963px) and (max-resolution: 125dpi)";
 
 $dpiquery_0: "max-resolution: 350dpi";
 $dpiquery_1: "max-resolution: 275dpi";
@@ -123,7 +180,48 @@ $pink: #ff7d70;
 $orange: orange;
 $teal: #35e6b9;
 
+
+// for security score
+$danger_dark: #ED5849;
+$danger_light: #F97163;
+$warning_dark: #EE5A08;
+$warning_light: #FF7E3E;
+$caution_dark: #EDE549;
+$caution_light: #F9E163;
+$good_dark: #2FD07E;
+$good_light: #34E1AD;
+
+
+$percent_0_dark: $danger_dark;
+$percent_0_light: $danger_light;
+$percent_20_dark: $danger_dark;
+$percent_20_light: $danger_light;
+$percent_25_dark: $danger_dark;
+$percent_25_light: $danger_light;
+$percent_33_dark: $warning_dark;
+$percent_33_light: $warning_light;
+$percent_40_dark: $warning_dark;
+$percent_40_light: $warning_light;
+$percent_50_dark: $warning_dark;
+$percent_50_light: $warning_light;
+$percent_60_dark: $caution_dark;
+$percent_60_light: $caution_light;
+$percent_66_dark: $caution_dark;
+$percent_66_light: $caution_light;
+$percent_75_dark: $caution_dark;
+$percent_75_light: $caution_light;
+$percent_80_dark: $good_dark;
+$percent_80_light: $good_light;
+$percent_100_dark: $good_dark;
+$percent_100_light: $good_light;
+
 $menu_height: 9rem;
 $header_height: 20.5rem;
 
 $modal_top_margin: 8rem;
+
+
+/*media screen sizes for gaming*/
+$small-screen: "only screen and (max-width : 767px)";
+$medium-screen: "only screen and (min-width : 768px) and (max-width : 992px)";
+$large-screen: "only screen and (min-width : 1200px)";

@@ -1,0 +1,136 @@
+<div class="vtr-widget-system-monitor">
+	<div class="widget-container">
+		<div class="container-fluid h-100">
+			<div class="row h-100">
+				<div class="col">
+					<div class="row h-100">
+						<div class="col-8 monitor-col left">
+							<div class="monitor-section">
+								<div class="gaming-tooltip">
+									<p>{{'gaming.dashboard.device.systemInfo.systenTooltip'|translate}}</p>
+								</div>
+								<div class="monitor-inner gpu">
+									<div class="monitor-stack">
+										<div class="stack-container">
+											<div class="stack-content gpu"></div>
+											<div class="stack-mask"
+											 [ngStyle]="{'height':getStackHeight(gpuCurrent, gpuMax)+'%'}"></div>
+										</div>
+										<div class="stack-label">
+											<div class="stack-title">
+												GPU
+											</div>
+											<div class="stack-status">
+												{{gpuCurrent}}/{{gpuMax}}GHz
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="monitor-cpu">
+									<div class="cpu-ring"></div>
+									<div class="cpu-mask left">
+										<div class="mask-obj"
+										 [ngStyle]="{'transform':'rotate('+getLeftDeg(cpuCurrent, cpuMax)+'deg)'}">
+											<div class="mask-ring"></div>
+										</div>
+									</div>
+									<div class="cpu-mask right"
+									 [ngClass]="{'hidden':cpuCurrent/cpuMax>.5}">
+										<div class="mask-obj"
+										 [ngStyle]="{'transform':'rotate('+getRightDeg(cpuCurrent, cpuMax)+'deg)'}">
+											<div class="mask-ring"></div>
+										</div>
+									</div>
+									<div class="cpu-inner-ring">
+										<div class="cpu-inner-circle">
+											<div class="cpu-label">
+												<div class="cpu-title">
+													CPU
+												</div>
+												<div class="cpu-status">
+													{{ramCurrent}}/{{ramMax}}GHz
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="monitor-inner ram">
+									<div class="monitor-stack">
+										<div class="stack-container">
+											<div class="stack-content ram"></div>
+											<div class="stack-mask"
+											 [ngStyle]="{'height':getStackHeight(ramCurrent, ramMax)+'%'}"></div>
+										</div>
+										<div class="stack-label">
+											<div class="stack-title">
+												RAM
+											</div>
+											<div class="stack-status">
+												{{ramCurrent}}/{{ramMax}}GB
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="col-4 monitor-col right">
+							<div class="link-container">
+								<a vtrMetrics
+								 [metricsItem]="'System Status'"
+								 metricsEvent="featureClick"
+								 routerLink="/device"
+								 class="info-link">Info</a>
+								<div class="icon icon-backarrow"></div>
+							</div>
+							<div class="monitor-section">
+								<div class="hd-list">
+									<div class="hd-item"
+									 [ngClass]="{'danger':hd.current/hd.max>.75}"
+									 *ngFor="let hd of hds; let i=index;">
+										<div class="monitor-hd">
+											<div class="hd-ring"></div>
+											<div class="hd-mask left">
+												<div class="mask-obj"
+												 [ngStyle]="{'transform':'rotate('+getLeftDeg(hd.current, hd.max)+'deg)'}">
+													<div class="mask-ring"></div>
+												</div>
+											</div>
+											<div class="hd-mask right"
+											 [ngClass]="{'hidden':hd.current/hd.max>.5}">
+												<div class="mask-obj"
+												 [ngStyle]="{'transform':'rotate('+getRightDeg(hd.current, hd.max)+'deg)'}">
+													<div class="mask-ring"></div>
+												</div>
+											</div>
+											<div class="hd-inner-ring">
+												<div class="hd-inner-circle">
+													<div class="hd-label">
+														<div class="hd-pct">
+															{{getFloorPct(hd.current, hd.max)}}<span class="pct">%</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="hd-item-label">
+											<div class="hd-title">
+												<!-- <fa-icon [icon]="['fab', 'windows']"
+												 *ngIf="hd.system"></fa-icon> -->
+												{{hd.title}}
+											</div>
+											<div class="hd-status">
+												{{getHDSize(hd.current)}}/{{getHDSize(hd.max)}}
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

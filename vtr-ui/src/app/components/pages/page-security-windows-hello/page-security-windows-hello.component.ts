@@ -17,6 +17,7 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 	statusItem: any;
 	cardContentPositionA: any = {};
 	securityAdvisor: SecurityAdvisor;
+	backId = 'sa-wh-btn-back';
 
 	constructor(
 		public mockService: MockService,
@@ -27,13 +28,11 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		this.statusItem = {
 			title: 'security.windowsHello.statusTitle',
-			status: 'common.securityAdvisor.loading'
+			status: 'loading'
 		};
 		this.windowsHello = vantageShellService.getSecurityAdvisor().windowsHello;
 		this.updateStatus();
 		this.windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
-			this.updateStatus();
-		}).on(EventTypes.helloFacialIdStatusEvent, () => {
 			this.updateStatus();
 		});
 		this.fetchCMSArticles();
@@ -55,9 +54,8 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 		if (cacheStatus) {
 			this.statusItem.status = cacheStatus;
 		}
-		if (this.windowsHello && (this.windowsHello.fingerPrintStatus || this.windowsHello.facialIdStatus)) {
-			if (this.windowsHello.fingerPrintStatus === 'active' ||
-				this.windowsHello.facialIdStatus === 'active') {
+		if (this.windowsHello && (this.windowsHello.fingerPrintStatus)) {
+			if (this.windowsHello.fingerPrintStatus === 'active') {
 				this.statusItem.status = 'enabled';
 			} else {
 				this.statusItem.status = 'disabled';

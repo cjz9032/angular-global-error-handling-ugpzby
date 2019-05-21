@@ -2,15 +2,16 @@
 	<ngb-carousel *ngIf="carouselModel"
 		[showNavigationArrows]="carouselModel.length>1"
 		[showNavigationIndicators]="carouselModel.length>1">
-		<ng-template *ngFor="let model of carouselModel"
+		<ng-template *ngFor="let model of carouselModel let cIndex = index"
 			ngbSlide>
 			<a [href]="model.link"
 				vtrMetrics
-				[metricsItem]="model.cardTitle"
-				metricsEvent="itemClick"
+			    [metricsItem]="model.cardTitle"
+				metricsEvent="articleclick"
 				metricsParent="carousel"
 			    [metricsItemPosition]="order"
-				target="_blank"
+                [metricsParent]="'dashboard'"
+			    target="_blank"
 				class="carousel-link"
 				[ngClass]="{'no-link': !model.link}"
 				(click)="linkClicked($event, model.link)">

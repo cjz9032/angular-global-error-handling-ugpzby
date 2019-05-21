@@ -1,272 +1,221 @@
-<div class="modal-body vtr-modal-welcome"
-	[ngSwitch]="page">
-	<div *ngSwitchCase="1"
-		class="screen-1 p-5">
-		<div class="d-flex justify-content-center">
-			<img height="300px"
-				width="300px"
-				src="./../../../../assets/images/bitmap1.png" />
-		</div>
-		<div class="d-flex justify-content-center title py-4">
-			Almost there!
-		</div>
-		<div class="d-flex justify-content-center subtitle text-wrap py-3">
-			Just a few more buttons to press before we can have liftoff. Before we can give you the most optimal
-			experience there are still a few things to setup.
-		</div>
-		<div class="d-flex justify-content-center">
-			<vtr-ui-button metricsEvent="itemClick"
-				metricsParent="modal-welcome"
-				[metricsItem]="'btn.startpersonalizing'"
-				[label]="'START PERSONALIZING'"
-				(onClick)="next(1)"></vtr-ui-button>
-		</div>
-		<div class="divider"></div>
-		<div class="d-flex justify-content-center align-items-center">
-			<ul class="list-inline">
-				<li class="list-inline-item current d-inline-flex justify-content-center align-items-center"><span
-						class="text">1</span></li>
-				<li class="list-inline-item next d-inline-flex justify-content-center align-items-center"><span
-						class="text invisible">2</span></li>
-				<li class="list-inline-item next d-inline-flex justify-content-center align-items-center"><span
-						class="text invisible">3</span></li>
-			</ul>
-		</div>
-
-	</div>
-	<div *ngSwitchCase="2"
-		class="screen-2 p-5">
-		<div class="d-flex justify-content-center">
-			<img src="./../../../../assets/images/bitmap2.png"
-				height="300px"
-				width="300px" />
-		</div>
-		<div class="d-flex justify-content-center title py-4">
-			How will you use it?
-		</div>
-		<div class="d-flex justify-content-center subtitle py-3">
-			Click on one of these uses to tell us how you will use this machine?
-		</div>
-		<div class="d-flex justify-content-center">
-			<div>
-				<input type="radio"
-					name="radio"
-					id="radio1"
-					value="business"
-					vtrMetrics
-					metricsEvent="itemClick"
-					metricsParent="modalwelcome"
-					metricsItem="radio.business"
-					[metricsValue]="!radio1.checked"
-					#radio1
-					[(ngModel)]="data.page2.radioValue" />
-				<label for="radio1"
-					class="radio-label">BUSINESS</label>
-				<input type="radio"
-					name="radio"
-					id="radio2"
-					value="personal"
-					vtrMetrics
-					metricsEvent="itemClick"
-					metricsParent="modalwelcome"
-					metricsItem="radio.personal"
-					[metricsValue]="!radio2.checked"
-					#radio2
-					[(ngModel)]="data.page2.radioValue" />
-				<label for="radio2"
-					class="radio-label">PERSONAL</label>
-				<input type="radio"
-					name="radio"
-					id="radio3"
-					value="custom"
-					vtrMetrics
-					metricsEvent="itemClick"
-					metricsParent="modalwelcome"
-					metricsItem="radio.custom"
-					[metricsValue]="!radio3.checked"
-					#radio3
-					[(ngModel)]="data.page2.radioValue" />
-				<label for="radio3"
-					class="radio-label">CUSTOM</label>
-			</div>
-		</div>
-		<div class="divider"></div>
-		<div class="row justify-content-center align-items-center position-relative">
-			<div class="col-auto px-0">
-				<ul class="list-inline">
-					<li class="list-inline-item previous d-inline-flex justify-content-center align-items-center"><span
-							class="text invisible">1</span></li>
-					<li class="list-inline-item current d-inline-flex justify-content-center align-items-center"><span
-							class="text">2</span></li>
-					<li class="list-inline-item next d-inline-flex justify-content-center align-items-center"><span
-							class="text invisible">3</span></li>
-				</ul>
-			</div>
-			<div class="position-absolute button">
-				<vtr-ui-button metricsParent="modal-welcome"
-					metricsEvent="itemClick"
-					[metricsItem]="'btn.'+(data.page2.radioValue?'NEXT':'SKIP')"
-					[label]="data.page2.radioValue?'NEXT':'SKIP'"
-					(onClick)="next(2)"></vtr-ui-button>
-			</div>
-
-		</div>
-	</div>
-	<div *ngSwitchCase="3"
-		class="p-5">
-		<div class="d-flex justify-content-center">
-			<img src="./../../../../assets/images/bitmap3.png"
-				height="300px"
-				width="300px" />
-		</div>
-		<div class="d-flex justify-content-center title py-4">
-			What are your interests?
-		</div>
-		<div class="d-flex justify-content-center subtitle py-3">
-			Click on one of these uses to tell us how you will use this machine?
-		</div>
-		<div class="d-flex justify-content-center py-3">
-			<div class="d-flex justify-content-center">
-				<div class="inline-block">
-					<input type="checkbox"
-						id="checkbox1"
-						vtrMetrics
-						metricsEvent="itemClick"
-						metricsItem="chk.games"
-						metricsParent="modalwelcome"
-						[metricsValue]="!checkbox1.checked"
-						#checkbox1
-						(click)="toggle($event,'GAMES')" />
-					<label for="checkbox1">GAMES</label>
-				</div>
-				<div class="inline-block">
-					<input type="checkbox"
-						id="checkbox2"
-						vtrMetrics
-						metricsEvent="itemClick"
-						metricsItem="chk.news"
-						metricsParent="modalwelcome"
-						[metricsValue]="!checkbox2.checked"
-						#checkbox2
-						(click)="toggle($event,'NEWS')" />
-					<label for="checkbox2">NEWS</label>
-				</div>
-				<div class="inline-block">
-					<input type="checkbox"
-						id="checkbox3"
-						vtrMetrics
-						metricsEvent="itemClick"
-						metricsItem="chk.entertainment"
-						metricsParent="modalwelcome"
-						[metricsValue]="!checkbox3.checked"
-						#checkbox3
-						(click)="toggle($event,'ENTERTAINMENT')" />
-					<label for="checkbox3">ENTERTAINMENT</label>
-				</div>
-				<div class="inline-block">
-					<input type="checkbox"
-						id="checkbox4"
-						vtrMetrics
-						metricsEvent="itemClick"
-						metricsItem="chk.arts"
-						metricsParent="modalwelcome"
-						[metricsValue]="!checkbox4.checked"
-						#checkbox4
-						(click)="toggle($event,'ARTS')" />
-					<label for="checkbox4">ARTS</label>
-				</div>
-			</div>
-
-		</div>
-		<div class="d-flex justify-content-center py-3">
-			<div class="d-flex justify-content-center">
-				<div class="inline-block">
-					<input type="checkbox"
-						id="checkbox5"
-						vtrMetrics
-						metricsEvent="itemClick"
-						metricsItem="chk.technology"
-						metricsParent="modalwelcome"
-						[metricsValue]="!checkbox5.checked"
-						#checkbox5
-						(click)="toggle($event,'TECHNOLOGY')" />
-					<label for="checkbox5">TECHNOLOGY</label>
-				</div>
-				<div class="inline-block">
-					<input type="checkbox"
-						id="checkbox6"
-						vtrMetrics
-						metricsEvent="itemClick"
-						metricsItem="chk.politics"
-						metricsParent="modalwelcome"
-						[metricsValue]="!checkbox6.checked"
-						#checkbox6
-						(click)="toggle($event,'POLITICS')" />
-					<label for="checkbox6">POLITICS</label>
-				</div>
-				<div class="inline-block">
-					<input type="checkbox"
-						id="checkbox7"
-						vtrMetrics
-						metricsEvent="itemClick"
-						metricsItem="chk.sports"
-						metricsParent="modalwelcome"
-						[metricsValue]="!checkbox7.checked"
-						#checkbox7
-						(click)="toggle($event,'SPORTS')" />
-					<label for="checkbox7">SPORTS</label>
-				</div>
-
-			</div>
-
-		</div>
-		<div class="d-flex justify-content-center py-3">
-			<div class="d-flex justify-content-center">
-				<div class="inline-block">
-					<input type="checkbox"
-						id="checkbox8"
-						vtrMetrics
-						metricsEvent="itemClick"
-						metricsItem="chk.reginalnews"
-						metricsParent="modalwelcome"
-						[metricsValue]="!checkbox8.checked"
-						#checkbox8
-						(click)="toggle($event,'REGIONAL NEWS')" />
-					<label for="checkbox8">REGIONAL NEWS</label>
-				</div>
-			</div>
-		</div>
-		<div class="divider"></div>
-		<div class="row justify-content-center align-items-center position-relative">
-
-			<div class="col-auto px-0">
-				<ul class="list-inline">
-					<li class="list-inline-item previous d-inline-flex justify-content-center align-items-center"><span
-							class="text invisible">1</span></li>
-					<li class="list-inline-item previous d-inline-flex justify-content-center align-items-center"><span
-							class="text invisible">2</span></li>
-					<li class="list-inline-item current d-inline-flex justify-content-center align-items-center"><span
-							class="text ">3</span></li>
-				</ul>
-			</div>
-			<div class="position-absolute button">
-
-				<vtr-ui-button metricsEvent="itemClick"
-					metricsParent="modal-welcome"
-					[metricsItem]="'btn.'+(checkedArray.length>0?'NEXT':'SKIP')"
-					[label]="checkedArray.length>0?'NEXT':'SKIP'"
-					(onClick)="next(3)"></vtr-ui-button>
-			</div>
-		</div>
-	</div>
-
-
-	<div class="btn-close position-absolute">
+<div class="vtr-body vtr-modal-welcome" [ngSwitch]="page">
+	<!-- <div class="modal-header">
 		<button type="button"
-			class="close"
-			aria-hidden="true"
-			(click)="onTutorialClose()">
-			<h1>&times;</h1>
+			class="close close-button"
+			data-dismiss="modal"
+			(click)="onTutorialClose()"
+			aria-label="Close">
+			<span aria-hidden="true">&times;</span>
 		</button>
-	</div>
+	</div> -->
+	<!-- <div class="vtr-modal-body"> -->
+		<div *ngSwitchCase="1">
+			<div class="card shadow-sm">
+				<div class="card-body p-0">
+					<div class="banner row justify-content-center align-items-center">
+						<div class="col-auto title-alignment">
+							<div class="row justify-content-center align-items-center">
+								<div class="col-auto title1">
+									{{ "welcometutorial.title1" | translate }}
+								</div>
+							</div>
+							<div class="row justify-content-center align-items-center ">
+								<div class="col-auto px-1 title1">
+									{{ "welcometutorial.title2" | translate | uppercase }}
+									<span>{{ "welcometutorial.title3" | translate | uppercase }}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="content font-14-semi" id="welcome-body-scroll">
+						<div class="row">
+							<div class="col-auto title2">
+								{{ "welcometutorial.description" | translate }}
+							</div>
+						</div>
+						<div class="row justify-content-center align-items-center">
+							<div class="col-auto title2">
+								<ul>
+									<li>{{"welcometutorial.bullets1" | translate }}</li>
+									<li>{{"welcometutorial.bullets2" | translate }}</li>
+									<li>{{"welcometutorial.bullets3" | translate }}</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="row justify-content-center align-items-center next-btn">
+						<div class="col-auto ">
+							<vtr-ui-button
+							metricsParent="modal-welcome"
+							metricsEvent="featureClick"
+							[metricsItem]="'NEXT'"
+							[label]="'NEXT'"
+							[btnHeight]=true
+							[isGradient]=true
+							(onClick)="next(1)">
+							</vtr-ui-button>
+						</div>
+					</div>
+					<div class="vtr-progress-bar">
+						<ul id="skill">
+							<li>
+								<span class="bar1 html-css" [style.width]="progress + '%'"></span>
+								<span class="bar2"></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- start of page 2-->
+	<!-- end of page1-->
+		<div *ngSwitchCase="2">
+			<div class="card shadow-sm">
+				<div class="card-body p-0">
+					<div class="banner-page-2 row justify-content-center align-items-center">
+					</div>
+					<div class="content-page-2" id="welcome-body-scroll">
+						<div class="row justify-content-center align-items-center font-14-bold">
+							<div class="col-auto title2">
+								{{ "welcometutorial.subtitle1" | translate | uppercase }}
+							</div>
+						</div>
+						<div class="row top-margin" [ngClass]="{'radio-is-selected' : data.page2.radioValue !== null }">
+							<div class="col-4 device-image" (click)="saveUsageType($event, 'PERSONAL')">
+								<input
+									type="radio"
+									name="radio"
+									id="radio1"
+									value="personal"
+									vtrMetrics
+									metricsEvent="featureClick"
+									metricsParent="WelcomePage"
+									metricsItem="radio.personal"
+									[metricsValue]="!radio1.checked"
+									#radio1
+									/>
+									<img
+									for="radio1"
+									alt="Personal Use"
+									for="radio1"
+									src="./../../../../assets/images/welcome/personal-use.jpg"
+									class=""
+									/>
+								<label for="radio1" class="centered">{{ "welcometutorial.personal" | translate }}</label>
+							</div>
+							<div class="col-4 device-image" (click)="saveUsageType($event, 'BUSINESS')">
+								<input
+									type="radio"
+									name="radio"
+									id="radio2"
+									value="business"
+									vtrMetrics
+									metricsEvent="featureClick"
+									metricsParent="WelcomePage"
+									metricsItem="radio.business"
+									[metricsValue]="!radio2.checked"
+									#radio2
+								/>
+								<img
+									alt="Business Use"
+									for="radio2"
+									src="./../../../../assets/images/welcome/business-use.jpg"
+									class="business"
+								/>
+								<label for="radio2" class="centered">{{ "welcometutorial.business" | translate }}</label>
+							</div>
+							<div class="col-4 device-image" (click)="saveUsageType($event, 'CUSTOM')">
+								<input
+									type="radio"
+									name="radio"
+									id="radio3"
+									value="custom"
+									vtrMetrics
+									metricsEvent="featureClick"
+									metricsParent="WelcomePage"
+									metricsItem="radio.custom"
+									[metricsValue]="!radio3.checked"
+									#radio3
+								/>
+								<img
+									alt="Custom Experience"
+									for="radio3"
+									src="./../../../../assets/images/welcome/custom-use.jpg"
+									class="custom"
+								/>
+								<label for="radio3" class="centered">{{ "welcometutorial.custom" | translate }}</label>
+							</div>
+						</div>
+
+						<div class="row justify-content-center align-items-center font-14-bold">
+							<div class="col-auto title2">
+								{{ "welcometutorial.subtitle2" | translate | uppercase}}
+							</div>
+						</div>
+						<div class="row d-flex justify-content-center interests">
+							<div class="col-auto inline-block" *ngFor="let interest of interestCopy">
+								<input
+									type="checkbox"
+									[id]="interest + 'checkbox'"
+									vtrMetrics
+									metricsEvent="featureClick"
+									[metricsItem]="'chk.' + interest"
+									metricsParent="WelcomePage"
+									[metricsValue]="!checkbox1.checked"
+									#checkbox1
+									(click)="toggle($event, interest)"
+								/>
+								<label [for]="interest + 'checkbox'">{{ "welcometutorial.interests." + interest | translate }}</label>
+							</div>
+						</div>
+						<div *ngIf="!hideMoreInterestBtn" class="row justify-content-center align-items-center font-12-semi more-interest">
+							<div class="col-auto title2" (click)="moreInterestClicked()">
+								<span class="more-interests">{{ "welcometutorial.moreInterest" | translate | lowercase }}</span>
+							</div>
+						</div>
+						<div class="row privacy-check">
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" (click)="savePrivacy($event, 'PRIVACYPOLICY')" class="custom-control-input" id="defaultUnchecked">
+								<label class="custom-control-label font-14-semi" for="defaultUnchecked">
+									{{ "welcometutorial.privacytitle" | translate }}&nbsp;
+									<a class="linktext" href="https://www.lenovo.com/us/en/privacy" target="_blank">
+										{{ "welcometutorial.privacypolicy" | translate }}
+									</a>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="row justify-content-center align-items-center next-btn">
+						<div class="col-auto ">
+							<vtr-ui-button
+							metricsParent="modal-welcome"
+							metricsEvent="featureClick"
+							[metricsItem]="'DONE'"
+							[label]="'DONE'"
+							[btnHeight]=true
+							[isGradient]=true
+							(onClick)="next(2)">
+							</vtr-ui-button>
+						</div>
+					</div>
+					<div class="vtr-progress-bar">
+						<ul id="skill">
+							<li>
+								<span class="bar1 html-css" [style.width]="progress + '%'"></span>
+								<span class="bar2"></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="vtr-progress-bar">
+			<ul id="skill">
+				<li>
+					<span class="bar1 html-css" [style.width]="progress + '%'"></span>
+					<span class="bar2"></span>
+				</li>
+			</ul>
+		</div> -->
 </div>
+

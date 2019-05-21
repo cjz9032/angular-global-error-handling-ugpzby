@@ -10,6 +10,9 @@ import { BatteryInformation } from 'src/app/enums/battery-information.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs';
+import { ViewRef_ } from '@angular/core/src/view';
+import { TranslateService } from '@ngx-translate/core';
+import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail-model';
 @Component({
 	selector: 'vtr-battery-detail',
 	templateUrl: './battery-detail.component.html',
@@ -17,15 +20,19 @@ import { Subscription } from 'rxjs';
 })
 export class BatteryDetailComponent implements OnInit, OnDestroy {
 	public dataSource: BatteryDetail[];
+	public dataSourceGauge: BatteryGaugeDetail; //BI Update
 	@Input() data: BatteryDetail[];
-	remainingTimeText = "Remaining time";
+	@Input() dataGauge: BatteryGaugeDetail; //BI Update
+	remainingTimeText = ""
+	chargeCompletionTimeText = ""
 	batteryIndicators = new BatteryIndicator();
 	private notificationSubscription: Subscription;
 	constructor(
 		private batteryService: BatteryDetailService,
 		public shellServices: VantageShellService,
 		public commonService: CommonService,
-		public cd: ChangeDetectorRef) {
+		public cd: ChangeDetectorRef,
+		public translate: TranslateService) {
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -41,45 +48,67 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	preProcessBatteryDetailResponse(response: BatteryDetail[]) {
-		let headings = ["Primary Battery", "Secondary Battery", "Tertiary Battery"];
-		this.batteryIndicators.percent = response[0].mainBatteryPercent;
-		this.batteryIndicators.charging = response[0].chargeStatus == BatteryChargeStatus.CHARGING.id;
-		this.batteryIndicators.expressCharging = response[0].isExpressCharging;
-		this.batteryIndicators.voltageError = response[0].isVoltageError;
-		this.batteryIndicators.convertMin(response[0].remainingTime);
-		for(let i=0; i<response.length ;i++) {
-			response[i].remainingCapacity = Math.round(response[i].remainingCapacity * 100) / 100;
-			response[i].fullChargeCapacity = Math.round(response[i].fullChargeCapacity * 100) / 100;
-			response[i].voltage = Math.round(response[i].voltage * 100) / 100;
-			response[i].wattage = Math.round(response[i].wattage * 100) / 100;
-			response[i].heading = response.length > 1 ? headings[i] : "";
-			let id = response[i].chargeStatus
-			response[i].chargeStatusString = BatteryChargeStatus.getBatteryChargeStatus(id);
-			if(response[i].chargeStatus == BatteryChargeStatus.NO_ACTIVITY.id
-			|| response[i].chargeStatus == BatteryChargeStatus.ERROR.id
-			|| response[i].chargeStatus == BatteryChargeStatus.NOT_INSTALLED.id) {
+	preProcessBatteryDetailResponse(response: any) {
+		let headings = [
+			this.translate.instant('device.deviceSettings.batteryGauge.details.primary'),
+			this.translate.instant('device.deviceSettings.batteryGauge.details.secondary'),
+			this.translate.instant('device.deviceSettings.batteryGauge.details.tertiary')];
+		this.batteryIndicators.percent = response.gauge.percentage;
+		this.batteryIndicators.charging = response.gauge.isAttached;
+		this.batteryIndicators.convertMin( response.gauge.time);
+
+		this.batteryIndicators.timeText = response.gauge.timeType;
+		this.batteryIndicators.expressCharging = response.detail[0].isExpressCharging;
+		this.batteryIndicators.voltageError = response.detail[0].isVoltageError;
+
+		for(let i=0; i<response.detail.length ;i++) {
+			response.detail[i].remainingCapacity = Math.round(response.detail[i].remainingCapacity * 100) / 100;
+			response.detail[i].fullChargeCapacity = Math.round(response.detail[i].fullChargeCapacity * 100) / 100;
+			response.detail[i].voltage = Math.round(response.detail[i].voltage * 100) / 100;
+			response.detail[i].wattage = Math.round(response.detail[i].wattage * 100) / 100;
+			response.detail[i].heading = response.length > 1 ? headings[i] : "";
+			let id = response.detail[i].chargeStatus
+			response.detail[i].chargeStatusString = BatteryChargeStatus.getBatteryChargeStatus(id);
+			if(response.detail[i].chargeStatus == BatteryChargeStatus.NO_ACTIVITY.id
+			|| response.detail[i].chargeStatus == BatteryChargeStatus.ERROR.id
+			|| response.detail[i].chargeStatus == BatteryChargeStatus.NOT_INSTALLED.id) {
 				///if chargeStatus is 'No activity' | 'Error' | 'Not installed'
 				// remaining time will not be displayed
-				response[i].remainingTime = undefined;
+				response.detail[i].remainingTime = undefined;
 			}
-			if(response[i].chargeStatus == BatteryChargeStatus.CHARGING.id) {
-				this.remainingTimeText = "Charge completion time"
+			//response[i].chargeStatus == BatteryChargeStatus.CHARGING.id
+			if(response.gauge.timeType == 'timeCompletion') {
+				response.detail[i].remainingTimeText = this.chargeCompletionTimeText;
 			} else {
-				this.remainingTimeText = "Remaining time";
+				response.detail[i].remainingTimeText = this.remainingTimeText;
 			}
 		}
-		this.dataSource = response;
-		this.cd.detectChanges();
+		this.dataSource = response.detail;
+		this.dataSourceGauge = response.gauge;
+		if ( this.cd !== null &&
+            this.cd !== undefined &&
+            ! (this.cd as ViewRef_).destroyed ) {
+                this.cd.detectChanges();
+        }
 	}
 
 	ngOnInit() {
 		console.log('In ngOnInit');
+		this.remainingTimeText = this.translate.instant('device.deviceSettings.batteryGauge.details.remainingTime');
+		this.chargeCompletionTimeText = this.translate.instant('device.deviceSettings.batteryGauge.details.chargeCompletionTime');
 		this.dataSource = this.data;
-		this.preProcessBatteryDetailResponse(this.dataSource);
+		this.dataSourceGauge = this.dataGauge;
+		this.preProcessBatteryDetailResponse({ detail: this.dataSource, gauge: this.dataSourceGauge});
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+	}
+
+	isValid(val: number) {
+		if(val == undefined || val === 0) {
+			return false;
+		}
+		return true;
 	}
 
 	ngOnDestroy() {

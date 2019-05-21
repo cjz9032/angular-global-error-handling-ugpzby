@@ -1,0 +1,15 @@
+<div class="vtr-ui-rounded-rectangle-radio">
+	<input id="{{radioId}}"
+		name="{{group}}"
+		type="radio"
+		[value]="value"
+		[checked]="checked"
+		[disabled]="disabled"
+		#radio
+		(click)="onChange(value)"
+		 />
+	<label for="{{radioId}}">
+		<span class="label">{{label}}</span>
+
+	</label>
+</div>

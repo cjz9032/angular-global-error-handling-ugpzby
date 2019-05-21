@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class WindowsHelloWidgetItem extends WidgetItem {
 	constructor(windowsHello: WindowsHello, commonService: CommonService, private translateService: TranslateService) {
 		super({
-			id: 'windows-hello',
+			id: 'sa-widget-lnk-wh',
 			path: 'security/windows-hello',
 			type: 'security'
 		}, translateService);

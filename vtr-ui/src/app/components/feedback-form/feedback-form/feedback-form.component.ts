@@ -1,7 +1,8 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import {VantageShellService} from "../../../services/vantage-shell/vantage-shell.service";
+import { VantageShellService } from "../../../services/vantage-shell/vantage-shell.service";
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -15,23 +16,27 @@ export class FeedbackFormComponent implements OnInit {
 	feedbackForm: FormGroup;
 	feedbackButtonText: string;
 
-	constructor(public activeModal: NgbActiveModal, private shellService: VantageShellService) {
+	constructor(public activeModal: NgbActiveModal, private shellService: VantageShellService,
+		private translate: TranslateService) {
 		this.metrics = shellService.getMetrics();
 	}
 	private metrics: any;
 
 	ngOnInit() {
+		this.buttonText=this.translate.instant('dashboard.feedback.form.button');
 		this.feedbackButtonText = this.buttonText;
 		this.createFeedbackForm();
 	}
 
+
+
 	public onFeedBackSubmit($event): void {
 		const formData = this.feedbackForm.value;
-		var data={
-		    "ItemType":"UserFeedback",
-			"ItemName":"Submit",
-			"ItemParent":"Dialog.Feedback",
-			"UserEmail":formData.userEmail,
+		var data = {
+			"ItemType": "UserFeedback",
+			"ItemName": "Submit",
+			"ItemParent": "Dialog.Feedback",
+			"UserEmail": formData.userEmail,
 			"Content": formData.userComment
 		}
 		this.metrics.sendAsync(data);
@@ -39,7 +44,7 @@ export class FeedbackFormComponent implements OnInit {
 		this.feedbackForm.reset();
 		// TODO: integrate with API
 		this.feedbackClick.emit($event);
-		this.feedbackButtonText = 'Thank you for your feedback !';
+		this.feedbackButtonText = this.translate.instant('dashboard.feedback.form.messages.feedbackSuccess');  //'Thank you for your feedback !';
 		setTimeout(() => {
 			this.activeModal.close();
 			this.feedbackButtonText = this.buttonText;

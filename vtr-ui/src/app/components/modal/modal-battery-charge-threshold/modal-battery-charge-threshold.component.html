@@ -5,21 +5,19 @@
 				class="close"
 				aria-hidden="true"
 				(click)="closeModal()">
-				<fa-icon [icon]="['fas', 'times']"></fa-icon>
+				<fa-icon [icon]="['fal', 'times']"></fa-icon>
 			</button>
 		</div>
 	</div>
-	<h1>Enable Battery Charge Threshold</h1>
-	<p>Enabling a custom battery charge will allow for the overall battery health to last longer as you use this
-		device. However, not having a full charge will allow less runtime battery life.</p>
-	<p>In order to fully enable this feature, please unplug your machine and allow your battery to drain to or
-		below the stop-charging threshold.</p>
+	<h1>{{'device.deviceSettings.power.batterySettings.batteryThreshold.popup.title' | translate}}</h1>
+	<p>{{'device.deviceSettings.power.batterySettings.batteryThreshold.popup.description1' | translate}}</p>
+	<p>{{'device.deviceSettings.power.batterySettings.batteryThreshold.popup.description2' | translate}}</p>
 	<hr>
 	<div class="row">
 		<button class="btn enable-button"
-			(click)="enableBatteryChargeThreshold()">ENABLE</button>
+			(click)="enableBatteryChargeThreshold()">{{'device.deviceSettings.power.batterySettings.batteryThreshold.popup.enable' | translate}}</button>
 		<a (click)="closeModal()"
-			class="cancel-link">CANCEL</a>
+			class="cancel-link">{{'device.deviceSettings.power.batterySettings.batteryThreshold.popup.cancel' | translate}}</a>
 	</div>
 
 </div>

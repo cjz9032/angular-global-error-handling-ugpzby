@@ -2,9 +2,10 @@
 
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
-import { EventTypes } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
+import { EventTypes } from '@lenovo/tan-client-bridge';
 import { environment } from '../../../environments/environment';
+import { CommonService } from '../../services/common/common.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -12,18 +13,18 @@ import { environment } from '../../../environments/environment';
 export class VantageShellService {
 	private phoenix: any;
 	private shell: any;
-	constructor() {
+	constructor(private commonService: CommonService) {
 		this.shell = this.getVantageShell();
 		if (this.shell) {
-			const rpcClient = this.shell.VantageRpcClient ? new this.shell.VantageRpcClient() : null;
 			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
 			const powerClient = this.shell.PowerClient ? this.shell.PowerClient() : null;
 			this.phoenix = Phoenix.default(
 				new inversify.Container(),
 				{
-					hsaBroker: rpcClient,
 					metricsBroker: metricClient,
-					hsaPowerBroker: powerClient
+					hsaPowerBroker: powerClient,
+					hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
+					hsaForteBroker: this.shell.ForteRpcClient ? this.shell.ForteRpcClient.getInstance() : null
 				}
 			);
 		}
@@ -97,19 +98,41 @@ export class VantageShellService {
 	 */
 	public getMetrics(): any {
 		if (this.phoenix && this.phoenix.metrics) {
-			if (!this.phoenix.metrics.isInit) {
-				this.phoenix.metrics.init({
+			const metricClient = this.phoenix.metrics;
+			if (!metricClient.isInit) {
+				metricClient.init({
 					appVersion: environment.appVersion,
 					appId: 'ZN8F02EQU628',
 					appName: 'vantage3',
 					channel: '',
 					ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
 				});
-				this.phoenix.metrics.isInit = true;
-				this.phoenix.metrics.metricsEnabled = true;
+				metricClient.isInit = true;
+				metricClient.metricsEnabled = true;
+				metricClient.sendAsyncOrignally = metricClient.sendAsync;
+				metricClient.commonService = this.commonService;
+				metricClient.sendAsync = async function sendAsync(data) {
+					try {
+						// automatically fill the OnlineStatus for page view event
+						const eventType = data.ItemType.toLowerCase();
+						if (eventType === 'pageview') {
+							if (!data.OnlineStatus) {
+								data.OnlineStatus = this.commonService.isOnline ? 1 : 0;
+							}
+						}
+
+						return await this.sendAsyncOrignally(data);
+					} catch (ex) {
+						console.log('an error ocurr when sending metrics event');
+						return Promise.resolve({
+							status: 0,
+							desc: 'ok'
+						});
+					}
+				};
 			}
 
-			return this.phoenix.metrics;
+			return metricClient;
 		}
 		return undefined;
 	}
@@ -312,6 +335,28 @@ export class VantageShellService {
 		if (win.Windows) {
 			return win.Windows;
 		}
+		return undefined;
+	}
+
+	public getPrivacyCore() {
+		if (this.phoenix && this.phoenix.privacy) {
+			return this.phoenix.privacy;
+		}
+		return undefined;
+	}
+
+	public launchUserGuide(launchPDF?: boolean) {
+		if (this.phoenix && this.phoenix.userGuide) {
+			this.phoenix.userGuide.launch(launchPDF);
+		}
+		return undefined;
+	}
+
+	public generateGuid() {
+		if (this.phoenix && this.phoenix.metrics) {
+			return this.phoenix.metrics.metricsComposer.getGuid();
+		}
+
 		return undefined;
 	}
 }

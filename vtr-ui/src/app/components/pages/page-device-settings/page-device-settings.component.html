@@ -11,20 +11,22 @@
 	<div class="row vtr-page-content">
 		<div class="col vtr-col">
 			<div class="row">
-				<div class="col col-8 vtr-page-left-column">
+				<div class="col-lg-8 col-sm-12 vtr-page-left-column">
 					<router-outlet></router-outlet>
 				</div>
-				<div class="col col-4 vtr-page-right-column">
+				<div class="col-lg-4 col-sm-12 vtr-page-right-column">
 					<div class="vtr-page-shift-up-medium">
 						<div class="container-fluid">
 							<div class="row mb-40">
-								<div class="col col-12"  [ngClass]="{'battery-unavailable': isDesktopMachine}">
+								<div class="col col-12"
+									[ngClass]="{'battery-unavailable': isDesktopMachine}">
 									<vtr-battery-card *ngIf="!isDesktopMachine"> </vtr-battery-card>
 								</div>
 							</div>
 							<div class="row mb-40">
 								<div class="col col-12 cont">
-									<div class="widget-heading mb-40">{{'device.deviceSettings.helpful' | translate}}</div>
+									<div class="widget-heading mb-40">{{'device.deviceSettings.helpful' | translate}}
+									</div>
 									<vtr-widget-questions [title]="'common.qAndA.title' | translate"
 										[description]="'common.qAndA.subtitle' | translate"
 										[items]="qaService.qas"></vtr-widget-questions>
@@ -37,10 +39,12 @@
 										[title]="cardContentPositionA.Title"
 										[logoText]="cardContentPositionA.BrandName"
 										[action]="cardContentPositionA.Action"
+										[actionType]="cardContentPositionA.ActionType"
 										[actionLink]="cardContentPositionA.ActionLink"
 										[type]="'corner-article'"
 										[ratioX]="4"
 										[ratioY]="2"
+										[order]="1"
 										[cornerShift]="'large'">
 									</vtr-container-card>
 								</div>
@@ -51,7 +55,8 @@
 			</div>
 		</div>
 	</div>
-	<form class="card">
+	<!-- VAN-3149 hide till search is implemented -->
+	<!-- <form class="card">
 		<div class="card-body row no-gutters align-items-center">
 			<div class="search-icon">
 				<fa-icon [icon]="['fas', 'search']"></fa-icon>
@@ -62,5 +67,5 @@
 					placeholder="Filter settings">
 			</div>
 		</div>
-	</form>
+	</form> -->
 </div>

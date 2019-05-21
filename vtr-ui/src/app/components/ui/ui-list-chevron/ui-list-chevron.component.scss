@@ -53,6 +53,7 @@
 				.item-icon {
 					.icon-bkg {
 						background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+						background-color: $go_dark;
 						border-color: $go_dark;
 					}
 				}
@@ -62,6 +63,7 @@
 				.item-icon {
 					.icon-bkg {
 						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+						background-color: $stop_dark;
 						border-color: $stop_dark;
 					}
 				}
@@ -71,6 +73,7 @@
 				.item-icon {
 					.icon-bkg {
 						background: linear-gradient($gradient_angle, $orange 0%, $orange-light 100%);
+						background-color: $yellow_dark;
 						border-color: $yellow_dark;
 					}
 				}
@@ -80,11 +83,28 @@
 				.item-icon {
 					.icon-bkg {
 						background: linear-gradient($gradient_angle, $main 0%, $main_light 100%);
+						background-color: $main_gstart;
 						border-color: $main_gstart;
 
 						fa-icon {
 							font-size: 0.5rem;
 							line-height: 1rem;
+							vertical-align: 0.1rem;
+						}
+					}
+				}
+			}
+
+			&.black, &.text-blue {
+				.item-icon {
+					.icon-bkg {
+						background: linear-gradient($gradient_angle, $main_darker 0%, $main_darkest 100%);
+						background-color: $main_darker;
+						border-color: $main_darker;
+
+						fa-icon {
+							font-size: 0.5rem;
+							line-height: 1.6rem;
 							vertical-align: 0.1rem;
 						}
 					}
@@ -148,12 +168,16 @@
 						color: $stop_dark;
 					}
 
-					&.blue {
+					&.blue, &.text-blue {
 						color: $main_gstart;
 					}
 
 					&.orange {
 						color: $yellow_dark;
+					}
+
+					&.black {
+						color: $main_darker;
 					}
 
 					&.security {
@@ -200,4 +224,5 @@
 	.disabled {
 		cursor: default;
 	}
+
 }

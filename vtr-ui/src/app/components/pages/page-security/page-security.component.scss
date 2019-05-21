@@ -2,9 +2,6 @@
 
 .vtr-page-security {
 	.vtr-page-right-column {
-		@media #{$mediaquery_13} {
-			padding: 4rem 4rem 4rem 8.5rem;
-		}
 		.align-center {
 			padding: 0 6rem 0rem 6rem;
 		}
@@ -42,7 +39,7 @@
 						padding-top: 0.8rem;
 						.wifi-font-icon {
 							font-size: 4rem;
-							color: $main;
+							color: $main_darker;
 						}
 					}
 					.chevron-list {
@@ -77,15 +74,6 @@
 							line-height: 4rem;
 							.icon-bkg {
 								text-align: center;
-								.good {
-									color: $go_dark;
-								}
-								.bad {
-									color: $stop_dark;
-								}
-								.orange {
-									color: $yellow-dark;
-								}
 							}
 							.wifi-bg {
 								border-radius: 1rem;

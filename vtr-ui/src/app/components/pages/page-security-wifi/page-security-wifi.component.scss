@@ -61,6 +61,11 @@
 					margin: 1rem 1rem 7rem 0.25rem;
 					width: 100%;
 					text-align: center;
+					button {
+						@media #{$mediaquery_X9} {
+							font-size:1rem;
+						}
+					}
 				}
 			}
 
@@ -103,6 +108,11 @@
 				-o-filter: blur(0.5rem);
 				-ms-filter: blur(0.5rem);
 			}
+		}
+	}
+	.vtr-page-right-column{
+		@media #{$mediaquery_X5} {
+			padding: 4rem 4rem 4rem 8.5rem;
 		}
 	}
 

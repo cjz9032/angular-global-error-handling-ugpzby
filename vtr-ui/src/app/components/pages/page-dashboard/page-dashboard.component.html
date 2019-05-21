@@ -1,7 +1,7 @@
 <div class="vtr-page-dashboard vtr-page container-fluid">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main [title]="'lenovoId.welcomeText' | translate: firstName"
+			<vtr-header-main [title]="deviceService.isArm ? ('lenovoId.welcomeTextWithoutUserName' | translate) : ('lenovoId.welcomeText' | translate:{firstName:firstName})"
 				[forwardLink]=""></vtr-header-main>
 		</div>
 	</div>
@@ -9,10 +9,11 @@
 		<div class="col vtr-col">
 			<div class="container-fluid">
 				<div class="row">
-					<div [ngClass]="{
+					<!--<div [ngClass]="{
 							'col-sm-12 col-md-7 col-lg-7 col-xl-8 vtr-page-left-column':!deviceService.isArm,
 							'vtr-arm-page': deviceService.isArm
-						}">
+						}">-->
+					<div [ngClass]="'col-sm-12 col-lg-7 col-xl-8 vtr-page-left-column'">
 						<div class="vtr-page-shift-up nmx-40">
 
 							<div class="container-fluid">
@@ -21,13 +22,14 @@
 									<div class="col col-12 px-40 pb-40">
 										<vtr-widget-offline-info [title]="'dashboard.offlineInfo.title' | translate"
 											[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+											[isButtonVisible]="!deviceService.isArm"
 											[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
-											(buttonClick)="onConnectivityClick($event)"></vtr-widget-offline-info>
+											(buttonClick)="onGetSupportClick($event)"></vtr-widget-offline-info>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col col-12 px-40 pb-40">
-										<vtr-widget-carousel [data]="heroBannerItems"
+										<vtr-widget-carousel [data]="heroBannerItems" [itemID]="cardContentPositionC.Id"
 											source="title"
 											[interval]="2000"
 											cardTitle="title"
@@ -41,11 +43,14 @@
 								</div>
 								<div class="row">
 									<div class="col col-6 p-40">
-										<vtr-container-card order="2" [itemID]="cardContentPositionB.Id"  [img]="cardContentPositionB.FeatureImage"
+										<vtr-container-card order="2"
+											[itemID]="cardContentPositionB.Id"
+											[img]="cardContentPositionB.FeatureImage"
 											[caption]="cardContentPositionB.Description"
 											[title]="cardContentPositionB.Title"
 											[logoText]="cardContentPositionB.BrandName"
 											[action]="cardContentPositionB.Action"
+											[actionType]="cardContentPositionB.ActionType"
 											[actionLink]="cardContentPositionB.ActionLink"
 											[type]="'corner'"
 											[ratioX]="4"
@@ -54,11 +59,14 @@
 										</vtr-container-card>
 									</div>
 									<div class="col col-6 p-40">
-										<vtr-container-card order="3" [itemID]="cardContentPositionC.Id"  [img]="cardContentPositionC.FeatureImage"
+										<vtr-container-card order="3"
+											[itemID]="cardContentPositionC.Id"
+											[img]="cardContentPositionC.FeatureImage"
 											[caption]="cardContentPositionC.Description"
 											[title]="cardContentPositionC.Title"
 											[logoText]="cardContentPositionC.BrandName"
 											[action]="cardContentPositionC.Action"
+											[actionType]="cardContentPositionC.ActionType"
 											[actionLink]="cardContentPositionC.ActionLink"
 											[type]="'corner'"
 											[ratioX]="4"
@@ -69,10 +77,13 @@
 							</div>
 							<div class="row">
 								<div class="col col-12 p-40">
-									<vtr-container-card order="4"  [itemID]="cardContentPositionD.Id"  [img]="cardContentPositionD.FeatureImage"
+									<vtr-container-card order="4"
+										[itemID]="cardContentPositionD.Id"
+										[img]="cardContentPositionD.FeatureImage"
 										[title]="cardContentPositionD.Title"
 										[logoText]="cardContentPositionD.BrandName"
 										[action]="cardContentPositionD.Action"
+										[actionType]="cardContentPositionD.ActionType"
 										[actionLink]="cardContentPositionD.ActionLink"
 										[type]="'highlight'"
 										[ratioX]="8"
@@ -82,10 +93,13 @@
 							</div>
 							<div class="row">
 								<div class="col col-6 p-40">
-									<vtr-container-card  order="5" [itemID]="cardContentPositionE.Id"  [img]="cardContentPositionE.FeatureImage"
+									<vtr-container-card order="5"
+										[itemID]="cardContentPositionE.Id"
+										[img]="cardContentPositionE.FeatureImage"
 										[title]="cardContentPositionE.Title"
 										[logoText]="cardContentPositionE.BrandName"
 										[action]="cardContentPositionE.Action"
+										[actionType]="cardContentPositionE.ActionType"
 										[actionLink]="cardContentPositionE.ActionLink"
 										[type]="'article'"
 										[ratioX]="4"
@@ -93,10 +107,13 @@
 									</vtr-container-card>
 								</div>
 								<div class="col col-6 p-40">
-									<vtr-container-card order="6"  [itemID]="cardContentPositionF.Id"  [img]="cardContentPositionF.FeatureImage"
+									<vtr-container-card order="6"
+										[itemID]="cardContentPositionF.Id"
+										[img]="cardContentPositionF.FeatureImage"
 										[title]="cardContentPositionF.Title"
 										[logoText]="cardContentPositionF.BrandName"
 										[action]="cardContentPositionF.Action"
+										[actionType]="cardContentPositionF.ActionType"
 										[actionLink]="cardContentPositionF.ActionLink"
 										[type]="'article'"
 										[ratioX]="4"
@@ -106,7 +123,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-12 col-md-5 col-lg-5 col-xl-4 vtr-page-right-column">
+					<div class="col-sm-12 col-lg-5 col-xl-4 vtr-page-right-column">
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 								<div class="row no-gutters">

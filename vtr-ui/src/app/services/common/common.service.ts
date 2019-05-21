@@ -92,12 +92,16 @@ export class CommonService {
 	 * Returns parsed json object if key is found else returns undefined
 	 * @param key key use to store value in local storage
 	 */
-	public getLocalStorageValue(key: LocalStorageKey): any {
+	public getLocalStorageValue(key: LocalStorageKey, defaultValue?: any): any {
 		const value = window.localStorage.getItem(key);
 		if (value) {
-			return JSON.parse(value);
+			try {
+				return JSON.parse(value);
+			} catch (e) {
+				return value;
+			}
 		}
-		return undefined;
+		return arguments.length === 1 ? undefined : defaultValue;
 	}
 
 	public sendNotification(action: string, payload?: any) {
@@ -134,11 +138,15 @@ export class CommonService {
 	 * Returns parsed json object if key is found else returns undefined
 	 * @param key key use to store value in session storage
 	 */
-	public getSessionStorageValue(key: SessionStorageKey): any {
+	public getSessionStorageValue(key: SessionStorageKey, defaultValue?: any): any {
 		const value = window.sessionStorage.getItem(key);
 		if (value) {
-			return JSON.parse(value);
+			try {
+				return JSON.parse(value);
+			} catch (e) {
+				return value;
+			}
 		}
-		return undefined;
+		return arguments.length === 1 ? undefined : defaultValue;
 	}
 }

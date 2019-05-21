@@ -28,23 +28,40 @@
 					font-size: 2.5rem;
 				}
 			}
-
-			.circle.percent-0,
-			.circle.percent-20,
-			.circle.percent-25 {
-				background: $pink;
-			}
-			.circle.percent-40,
-			.circle.percent-50 {
-				background: $orange;
-			}
-			.circle.percent-60,
-			.circle.percent-75 {
-				background: $yellow_light;
-			}
-			.circle.percent-80,
-			.circle.percent-100 {
-				background: linear-gradient(-45deg, $go_lighter, $go_dark);
+			.circle{
+				&.percent-0{
+					background: linear-gradient(90deg, $percent_0_dark, $percent_0_light);
+				}
+				&.percent-20{
+					background: linear-gradient(90deg, $percent_20_dark, $percent_20_light);
+				}
+				&.percent-25{
+					background: linear-gradient(90deg, $percent_25_dark, $percent_25_light);
+				}
+				&.percent-33{
+					background: linear-gradient(90deg, $percent_33_dark, $percent_33_light);
+				}
+				&.percent-40{
+					background: linear-gradient(90deg, $percent_40_dark, $percent_40_light);
+				}
+				&.percent-50{
+					background: linear-gradient(90deg, $percent_50_dark, $percent_50_light);
+				}
+				&.percent-60{
+					background: linear-gradient(90deg, $percent_60_dark, $percent_60_light);
+				}
+				&.percent-66{
+					background: linear-gradient(90deg, $percent_66_dark, $percent_66_light);
+				}
+				&.percent-75{
+					background: linear-gradient(90deg, $percent_75_dark, $percent_75_light);
+				}
+				&.percent-80{
+					background: linear-gradient(90deg, $percent_80_dark, $percent_80_light);
+				}
+				&.percent-100{
+					background: linear-gradient(90deg, $percent_100_dark, $percent_100_light);
+				}
 			}
 		}
 		.title {
@@ -56,7 +73,7 @@
 			padding-top: 5rem;
 			padding-bottom: 2rem;
 			padding-right: 5rem;
-			@media #{$mediaquery_12} {
+			@media #{$mediaquery_X4} {
 				padding-left: 7rem;
 			}
 		}
@@ -68,7 +85,7 @@
 			padding-left: 1rem;
 			padding-top: 0rem;
 			padding-right: 5rem;
-			@media #{$mediaquery_12} {
+			@media #{$mediaquery_X4} {
 				padding-left: 7rem;
 			}
 		}
@@ -77,21 +94,8 @@
 			padding-bottom: 5rem;
 			padding-top: 3rem;
 			padding-right: 5rem;
-			@media #{$mediaquery_12} {
+			@media #{$mediaquery_X4} {
 				padding-left: 7rem;
-			}
-			.action-button {
-				border-radius: 2.5rem;
-				background: $gradient_main;
-				text-transform: uppercase;
-				padding: 0 3rem;
-				color: $light;
-				font-size: 1.5rem;
-				height: 5rem;
-				font-weight: $weight_bold;
-				line-height: 5rem;
-				text-align: center;
-				border: 0rem;
 			}
 		}
 	}

@@ -11,7 +11,6 @@ import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecu
 	providedIn: 'root'
 })
 export class SecurityService {
-
 	constructor(private commonService: CommonService,
 		public modalService: NgbModal)  { }
 
@@ -30,6 +29,9 @@ export class SecurityService {
 			modal.componentInstance.description = 'security.wifisecurity.locationmodal.describe1';
 			modal.componentInstance.url = 'ms-settings:privacy-location';
 			modal.componentInstance.wifiSecurity = wifiSecurity;
+			modal.componentInstance.closeButtonId = 'sa-ws-btn-locationclose';
+			modal.componentInstance.agreeButtonId = 'sa-ws-btn-locationagree';
+			modal.componentInstance.cancelButtonId = 'sa-ws-btn-locationcancel';
 			wifiSecurity.on(EventTypes.geolocatorPermissionEvent, (para) => {
 				if (para) {
 					modal.close();
@@ -52,6 +54,9 @@ export class SecurityService {
 			modal.componentInstance.description = 'security.wifisecurity.locationmodal.describe2';
 			modal.componentInstance.url = 'ms-settings:privacy-location';
 			modal.componentInstance.wifiSecurity = wifiSecurity;
+			modal.componentInstance.closeButtonId = 'sa-ws-btn-locationclose';
+			modal.componentInstance.agreeButtonId = 'sa-ws-btn-locationagree';
+			modal.componentInstance.cancelButtonId = 'sa-ws-btn-locationcancel';
 			wifiSecurity.on(EventTypes.geolocatorPermissionEvent, (para) => {
 				if (para) {
 					modal.close();

@@ -19,17 +19,18 @@
 
 									<div class="row">
 										<div class="col col-12">
-											<vtr-widget-offline-info [title]="'No internet connection detected'"
-												*ngIf="!isOnline"
-												[subtitle]="offlineSubtitle | safeDom : 'html'"
-												[buttonText]="'Get Support'"
+											<vtr-widget-offline-info *ngIf="!isOnline"
+												[isButtonVisible]="true"
+												[title]="'dashboard.offlineInfo.title' | translate"
+												[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+												[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
 												(buttonClick)="onGetSupportClick($event)"></vtr-widget-offline-info>
 
 											<vtr-widget-device-update [title]="updateTitle"
 												*ngIf="isOnline"
 												[subTitle1]="getLastUpdatedText()"
 												[subTitle2]="getNextUpdatedScanText()"
-												[buttonText]="'Check For Updates'"
+												[buttonText]="'device.systemUpdates.banner.checkButton' | translate"
 												[percent]="percentCompleted"
 												[showProgress]="isUpdateCheckInProgress"
 												[isUpdateDownloading]="isUpdateDownloading"
@@ -42,14 +43,17 @@
 										</div>
 									</div>
 
-									<vtr-available-updates *ngIf="isUpdateListVisible()"
+
+									<vtr-available-updates
 										[criticalUpdates]="criticalUpdates"
 										[optionalUpdates]="optionalUpdates"
 										[recommendedUpdates]="recommendedUpdates"
-										[isInstallationCompleted]="isInstallationCompleted"
-										[isInstallationSuccess]="isInstallationSuccess"
-										[isInstallingAllUpdates]="isInstallingAllUpdates"
+										[ignoredUpdates]="ignoredUpdates"
+										[isInstallationCompleted]="systemUpdateService.isInstallationCompleted"
+										[isInstallationSuccess]="systemUpdateService.isInstallationSuccess"
+										[isInstallingAllUpdates]="systemUpdateService.isInstallingAllUpdates"
 										(checkChange)="onUpdateSelectionChange($event)"
+										(ignoreUpdate)="onIgnoredUpdate($event)"
 										(installAllUpdate)="showInstallConfirmation('all')"
 										(installSelectedUpdate)="showInstallConfirmation('selected')">
 									</vtr-available-updates>
@@ -163,7 +167,8 @@
 											</fa-icon>
 										</div> -->
 
-											<vtr-container-collapsible [cardTitle]="'Full History'"
+											<vtr-container-collapsible
+												[cardTitle]="'device.systemUpdates.history' | translate | lowercase"
 												[isCollapsed]="false">
 												<vtr-installation-history (reinstallUpdate)="onReinstallUpdate($event)">
 												</vtr-installation-history>
@@ -194,8 +199,10 @@
 										<vtr-container-card [img]="'assets/images/support.jpg'"
 											[title]="'Lenovo Support website'"
 											[action]="'Read More'"
+											[actionType]="'External'"
 											[actionLink]="'https://pcsupport.lenovo.com/'"
 											[type]="'partnerarticle'"
+											[order]="1"
 											[ratioX]="4"
 											[ratioY]="2">
 										</vtr-container-card>
@@ -209,8 +216,10 @@
 											[title]="cardContentPositionA.Title"
 											[logoText]="cardContentPositionA.BrandName"
 											[action]="cardContentPositionA.Action"
+											[actionType]="cardContentPositionA.ActionType"
 											[actionLink]="cardContentPositionA.ActionLink"
 											[type]="'corner-article'"
+											[order]="2"
 											[ratioX]="4"
 											[ratioY]="2"
 											[cornerShift]="'large'">

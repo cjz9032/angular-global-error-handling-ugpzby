@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+ import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MockService } from '../../../services/mock/mock.service';
 import { QaService } from '../../../services/qa/qa.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Status } from 'src/app/data-models/widgets/status.model';
 import { CommonService } from 'src/app/services/common/common.service';
+import { ConfigService } from 'src/app/services/config/config.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -24,7 +26,7 @@ import { TranslateService } from '@ngx-translate/core';
 	providers: [NgbModalConfig, NgbModal]
 })
 export class PageDashboardComponent implements OnInit {
-	firstName = { firstName: 'User' };
+	firstName = 'User';
 	submit = 'Submit';
 	feedbackButtonText = this.submit;
 	securityAdvisor: SecurityAdvisor;
@@ -45,12 +47,14 @@ export class PageDashboardComponent implements OnInit {
 	};*/
 
 	constructor(
+		private router: Router,
 		public dashboardService: DashboardService,
 		public mockService: MockService,
 		public qaService: QaService,
 		private modalService: NgbModal,
 		config: NgbModalConfig,
 		private commonService: CommonService,
+		private configService: ConfigService,
 		public deviceService: DeviceService,
 		private cmsService: CMSService,
 		private systemUpdateService: SystemUpdateService,
@@ -61,10 +65,41 @@ export class PageDashboardComponent implements OnInit {
 		config.backdrop = 'static';
 		config.keyboard = false;
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
+		qaService.setTranslationService(this.translate);
+		qaService.qas.forEach(qa => {
+			try {
+				qa.title = this.translate.instant(qa.title);
+				qa.description = this.translate.instant(qa.description);
+				// console.log(qa.description);
+				this.translate.get(qa.keys).subscribe((translation: [string]) => {
+					// console.log(JSON.stringify(translation));
+					qa.keys = translation;
+					// console.log(JSON.stringify(qa.keys));
+				});
+			}
+			catch (e) {
+				console.log('already translated');
+			}
+			finally {
+				console.log('already translated');
+			}
+
+		});
 	}
 
 	ngOnInit() {
-		this.firstName.firstName = this.userService.firstName;
+		// reroute default application's default URL if gaming device
+		if (this.deviceService.isGaming) {
+			this.router.navigateByUrl(this.configService.getMenuItems(this.deviceService.isGaming)[0].path);
+		}
+		const self = this;
+		this.translate.stream('lenovoId.user').subscribe((value) => {
+			if (!self.userService.auth) {
+				self.firstName = value;
+			} else {
+				self.firstName = this.userService.firstName;
+			}
+		});
 		this.isOnline = this.commonService.isOnline;
 		if (this.dashboardService.isShellAvailable) {
 			console.log('PageDashboardComponent.getSystemInfo');
@@ -167,7 +202,7 @@ export class PageDashboardComponent implements OnInit {
 	// 	}, 3000);
 	// }
 
-	public onConnectivityClick($event: any) {
+	public onGetSupportClick($event: any) {
 	}
 
 	private setDefaultCMSContent() {
@@ -503,6 +538,9 @@ export class PageDashboardComponent implements OnInit {
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
+					break;
+				case LenovoIdKey.FirstName:
+					this.firstName = notification.payload;
 					break;
 				default:
 					break;

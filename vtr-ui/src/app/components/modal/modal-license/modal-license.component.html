@@ -1,0 +1,11 @@
+<div class="modal-body vtr-modal-license">
+  <div role="button" class="close-btn" aria-hidden="true"
+				vtrMetrics
+				metricsItem="{{licenseModalMetrics.closeButton}}"
+				metricsEvent="FeatureClick"
+				metricsParent="{{licenseModalMetrics.pageName}}"
+				(click)="closeModal()">
+		<img src="/assets/icons/Close.svg" alt="" srcset="">
+	</div>
+	<div [innerHTML]="articleBody"></div>
+</div>

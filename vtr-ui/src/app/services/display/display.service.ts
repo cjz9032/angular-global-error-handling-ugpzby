@@ -3,6 +3,7 @@ import { DevService } from '../dev/dev.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { CommonService } from '../common/common.service';
+import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 @Injectable()
 export class DisplayService {
 	private displayEyeCareMode: any;
@@ -80,6 +81,30 @@ export class DisplayService {
 		}
 		return undefined;
 	}
+
+	public startMonitorForCamera(callback: any): Promise<FeatureStatus> {
+		try {
+			if (this.cameraPrivacyStatus) {
+				return this.cameraPrivacyStatus.startMonitor(callback);
+			}
+			return undefined;
+		} catch(error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public stopMonitorForCamera(): Promise<FeatureStatus> {
+		try {
+			if (this.cameraPrivacyStatus) {
+				return this.cameraPrivacyStatus.stopMonitor();
+			}
+			
+			return undefined;
+		} catch(error) {
+			throw new Error(error.message);
+		}
+	}
+
 	public setEyeCareModeState(value: boolean): Promise<any> {
 		try {
 			if (this.displayEyeCareMode) {
@@ -107,6 +132,7 @@ export class DisplayService {
 			throw new Error(error.message);
 		}
 	}
+
 	public setCameraBrightness(value: number): Promise<boolean> {
 		if (this.cameraSettings) {
 			return this.cameraSettings.setCameraBrightness(value);
@@ -177,11 +203,11 @@ export class DisplayService {
 		}
 		return undefined;
 	}
-	public statusChangedLocationPermission(handler: any): Promise<any> {
+	public statusChangedLocationPermission(handler: any) {
 		try {
 			if (this.isShellAvailable) {
 				console.log(JSON.stringify(this.displayEyeCareMode));
-				return this.displayEyeCareMode.statusChangedLocationPermission((handler));
+				this.displayEyeCareMode.statusChangedLocationPermission((handler));
 			}
 			return undefined;
 		} catch (error) {
@@ -198,6 +224,36 @@ export class DisplayService {
 			throw new Error(error.message);
 		}
 	}
+
+	public startMonitorForCameraPermission() {
+		try {
+			if (this.isShellAvailable) {
+				return this.cameraSettings.startMonitor((response: any) => {
+					console.log("startMonitorForCameraPermission", response);
+					if (response.permission != undefined) {
+						this.commonService.sendNotification(DeviceMonitorStatus.CameraStatus, response.permission);
+					}
+				});
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public stopMonitorForCameraPermission() {
+		try {
+			if (this.isShellAvailable) {
+				return this.cameraSettings.stopMonitor((response: boolean) => {
+					console.log("stopMonitorForCameraPermission", response);
+				});
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
 	public stopEyeCareMonitor() {
 		if (this.isShellAvailable) {
 			this.displayEyeCareMode.stopMonitor((response: boolean) => {

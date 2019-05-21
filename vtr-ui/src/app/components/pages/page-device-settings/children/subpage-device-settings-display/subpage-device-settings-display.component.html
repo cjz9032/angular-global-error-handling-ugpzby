@@ -22,7 +22,7 @@
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
 							componentName="Eye Care Mode"
-							name="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
+							[name]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
 							[caption]=""
 							[isSwitchVisible]="true"
 							[leftIcon]="['fal', 'eye']"
@@ -69,12 +69,17 @@
 						</vtr-ui-row-switch>
 					</li> -->
 				</ul>
+				<vtr-widget-permission-note
+					[noteTitle]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.title' | translate"
+					[description]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.description' | translate"
+					[path]="'ms-settings:privacy-location'"
+					*ngIf="enableSunsetToSunrise">
+				</vtr-widget-permission-note>
 			</vtr-container-collapsible>
 		</div>
 	</div>
 	<div class="row py-5 smartsettings-card"
-		id="camera"
-		*ngIf="cameraPrivacyModeStatus.available">
+		id="camera">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.displayCamera.camera.title' | translate"
 				componentName="Camera"
@@ -82,26 +87,13 @@
 				[allowCollapse]="true"
 				[theme]="'white'"
 				(toggle)="onCardCollapse($event)">
-				<div class="alert alert-secondary no-camera-access"
-					*ngIf="!dataSource.permission">
-					<div>
-						<strong>Note:</strong> Lenovo Vantage does not have
-						permissions to access your camera. Please turn on access
-						to your camera for the Lenovo Vantage app.
-					</div>
-					<button type="button"
-						class="btn btn-link privacy-button pl-0"
-						(click)="onPrivacySettingClick($event)">
-						Go to windows privacy settings
-					</button>
-				</div>
-				<ul class="list-group list-group-flush"
-					*ngIf="cameraPrivacyModeStatus.available && dataSource.permission">
-					<li class="pt-3">
+				<ul class="list-group list-group-flush">
+					<li class="pt-3"
+						*ngIf="cameraPrivacyModeStatus.available">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
 							componentName="Camera Privacy Mode"
-							name="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
+							[name]="'device.deviceSettings.displayCamera.camera.cameraPrivacy.title' | translate"
 							[isSwitchVisible]="true"
 							[leftIcon]="['fal', 'camera']"
 							[rightIcon]="['far', 'question-circle']"
@@ -111,10 +103,11 @@
 						</vtr-ui-row-switch>
 					</li>
 					<li class="pt-3">
+
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
 							componentName="Camera"
-							name="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
+							[name]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
 							[type]="'Camera'"
 							[isSwitchVisible]="false"
 							[leftIcon]="['fal', 'camera']"
@@ -123,16 +116,49 @@
 							[rightIcon]="['far', 'question-circle']"
 							[tooltipText]="'device.deviceSettings.displayCamera.camera.camera.tooltip' | translate"
 							(resetClick)="resetCameraSettings()"
-							[resetTextAsButton]="true">
+							[resetTextAsButton]="true"
+							[disabledAll]="shouldCameraSectionDisabled">
 							<div class="row">
-								<div class="col-12">
+								<div class="col-12 pr-0">
+									<vtr-widget-permission-note
+										[noteTitle]="'device.deviceSettings.displayCamera.camera.note.title' | translate"
+										[description]="'device.deviceSettings.displayCamera.camera.note.description' | translate"
+										[path]="'ms-settings:privacy-webcam'"
+										*ngIf="!dataSource.permission">
+									</vtr-widget-permission-note>
 									<vtr-camera-control [cameraSettings]="dataSource"
+										[manualRefresh]="manualRefresh"
 										[cameraFeatureAccess]="cameraFeatureAccess"
 										(brightnessChange)="onBrightnessChange($event)"
 										(contrastChange)="onContrastChange($event)"
 										(exposureChange)="onCameraExposureValueChange($event)"
-										(exposureToggle)="onCameraAutoExposureToggle($event)">
+										(exposureToggle)="onCameraAutoExposureToggle($event)"
+										[disabledAll]="shouldCameraSectionDisabled">
 									</vtr-camera-control>
+								</div>
+							</div>
+						</vtr-ui-row-switch>
+					</li>
+
+					<li class="pt-3">
+
+						<vtr-ui-row-switch
+						[title]="'device.deviceSettings.displayCamera.camera.camerablur.title' | translate"
+						componentName="Camera Background Blur"
+
+						[caption]="'device.deviceSettings.displayCamera.camera.camerablur.caption' | translate"
+						[isSwitchVisible]="true"
+						[leftIcon]="['fal', 'gem']"
+						[rightIcon]="['far', 'question-circle']"
+						[showChildContent]="true"
+						[isSwitchChecked]="true"
+						(toggleOnOff)="onCameraBackgroundBlur($event)"
+						[theme]="'white'">
+							<div class="row">
+								<div class="col-12 pr-0 my-3">
+									<vtr-camera-background-blur
+									[showHideCameraBackground] = "showCameraBackgroundBlurFeature">
+									</vtr-camera-background-blur>
 								</div>
 							</div>
 						</vtr-ui-row-switch>

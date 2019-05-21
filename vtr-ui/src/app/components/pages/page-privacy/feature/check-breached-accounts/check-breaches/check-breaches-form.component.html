@@ -1,0 +1,52 @@
+<div class="check-breaches">
+    <form class="check-breaches__form" [formGroup]="emailForm" (submit)="handleEmailScan()">
+        <div class="check-breaches__input-wrapper"
+             [ngClass]="{
+			 	'check-breaches__input-wrapper--focused': isFormFocused,
+			 	'check-breaches__input-wrapper--validation-error': emailForm.dirty && emailForm.touched && emailForm.invalid,
+			 	'check-breaches__input-wrapper--server-error': (serverError$ | async)
+			 }">
+            <div class="check-breaches__input-with-id">
+                <input class="check-breaches__input" type="text"
+                       [class.check-breaches__input--validation-error]="emailForm.get('email').dirty && emailForm.get('email').touched && emailForm.get('email').invalid"
+                       (focus)="handleFocus()"
+                       (blur)="handleBlur()"
+                       placeholder="Enter your email"
+                       formControlName="email"
+                >
+                <div *ngIf="lenovoId && islenovoIdOpen"
+                     class="check-breaches__lenovo-id lenovo-id"
+                     (mousedown)="preventFireBlur($event)"
+                     (click)="setLenovoId()">
+                    <p class="lenovo-id__text">Use my lenovo id:
+                        <span class="lenovo-id__id">{{lenovoId}}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="check-breaches__loader" *ngIf="isLoading$ | async">
+                <vtr-simple-loader></vtr-simple-loader>
+            </div>
+            <button class="check-breaches__button"
+                    [class.check-breaches__button--error]="(emailForm.dirty && emailForm.touched && emailForm.invalid)"
+                    type='submit'>
+                {{(emailWasScanned$ | async) ? "Scan My Email" : "Run Checkup"}}
+            </button>
+        </div>
+
+        <div *ngIf="emailForm.get('email').dirty && emailForm.get('email').touched && emailForm.get('email').invalid"
+             class="check-error check-error--validation">
+            <img class="check-error__img" src="/assets/icons/privacy-tab/error-white.svg" alt="warning-icon">
+            <p class="check-error__text">Sorry, the email you entered is not correct. Please try again.</p>
+        </div>
+        <div *ngIf="(serverError$ | async)" class="check-error check-error--server">
+            <img class="check-error__img" src="/assets/icons/privacy-tab/error-white.svg" alt="warning-icon">
+            <p class="check-error__text">Sorry, the server is not available at the moment. Please try again later.</p>
+        </div>
+    </form>
+</div>
+
+<vtr-common-popup popUpId="{{confirmationPopupId}}" size="default">
+    <ng-template>
+        <vtr-confirmation-popup popupId="{{confirmationPopupId}}"></vtr-confirmation-popup>
+    </ng-template>
+</vtr-common-popup>

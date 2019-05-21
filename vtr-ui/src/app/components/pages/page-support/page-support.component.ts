@@ -24,10 +24,10 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			{
 				'icon': ['fal', 'book'],
 				'title': 'support.documentation.listUserGuide',
-				'url': 'https://support.lenovo.com',
+				'clickItem': 'userGuide',
 				'metricsItem': 'Documentation.UserGuideButton',
-				'metricsEvent': 'ItemClick',
-				'metricsParent': 'Page.Support',
+				'metricsEvent': 'FeatureClick',
+				'metricsParent': 'Page.Support'
 			}
 		],
 		needHelp: [
@@ -36,22 +36,24 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				'title': 'support.needHelp.listLenovoCommunity',
 				'url': 'https://community.lenovo.com',
 				'metricsItem': 'NeedHelp.LenovoCommunityButton',
-				'metricsEvent': 'ItemClick',
-				'metricsParent': 'Page.Support',
+				'metricsEvent': 'FeatureClick',
+				'metricsParent': 'Page.Support'
 			},
 			{
 				'icon': ['fal', 'share-alt'],
 				'title': 'support.needHelp.listContactCustomerService',
 				'url': 'https://support.lenovo.com/',
 				'metricsItem': 'NeedHelp.ContactCustomerServiceButton',
-				'metricsEvent': 'ItemClick',
-				'metricsParent': 'Page.Support',
+				'metricsEvent': 'FeatureClick',
+				'metricsParent': 'Page.Support'
 			},
 			{
 				'iconPath': 'assets/images/support/svg_icon_wechat.svg',
 				'title': 'support.needHelp.listContactUsOnWechat',
-				'hideArrow': true,
-				'image': 'assets/images/wechat-qrcode.png',
+				'clickItem': 'qrCode',
+				'metricsItem': 'NeedHelp.ContactUsOnWeChatButton',
+				'metricsEvent': 'FeatureClick',
+				'metricsParent': 'Page.Support'
 			}
 		],
 		quicklinks: [
@@ -60,16 +62,24 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				'title': 'support.quicklinks.listETicket',
 				'url': 'https://pcsupport.lenovo.com/us/en/eticketwithservice',
 				'metricsItem': 'Quicklinks.E-ticketButton',
-				'metricsEvent': 'ItemClick',
-				'metricsParent': 'Page.Support',
+				'metricsEvent': 'FeatureClick',
+				'metricsParent': 'Page.Support'
 			},
 			{
 				'icon': ['fal', 'briefcase'],
 				'title': 'support.quicklinks.listServiceProvider',
 				'url': 'https://www.lenovo.com/us/en/ordersupport/',
 				'metricsItem': 'Quicklinks.ServiceProviderButton',
-				'metricsEvent': 'ItemClick',
-				'metricsParent': 'Page.Support',
+				'metricsEvent': 'FeatureClick',
+				'metricsParent': 'Page.Support'
+			},
+			{
+				'iconPath': 'assets/images/support/svg_icon_about_us.svg',
+				'title': 'support.quicklinks.listAboutLenovoVantage',
+				'clickItem': 'about',
+				'metricsItem': 'Quicklinks.AboutLenovoVantageButton',
+				'metricsEvent': 'FeatureClick',
+				'metricsParent': 'Page.Support'
 			}
 		],
 	};
@@ -111,7 +121,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		console.log('Open support page.');
+		// console.log('Open support page.');
 		this.location = window.location.href.substring(window.location.href.indexOf('#') + 2).split('/').join('.');
 		this.pageDuration = 0;
 		setInterval(() => {
@@ -128,7 +138,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			OnlineStatus: ''
 		};
 		this.supportService.sendMetricsAsync(pageViewMetrics);
-		console.log(pageViewMetrics);
+		// console.log(pageViewMetrics);
 	}
 
 	fetchCMSArticles() {

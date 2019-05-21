@@ -1,16 +1,37 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { WifiSecurity } from '@lenovo/tan-client-bridge';
-import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalWifiSecuriryLocationNoticeComponent } from '../../../../modal/modal-wifi-securiry-location-notice/modal-wifi-securiry-location-notice.component';
-import { ModalThreatLocatorComponent } from 'src/app/components/modal/modal-threat-locator/modal-threat-locator.component';
-import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
-import { EventTypes } from '@lenovo/tan-client-bridge';
-import { BaseComponent } from '../../../../base/base.component';
-import { CommonService } from 'src/app/services/common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { RegionService } from 'src/app/services/region/region.service';
-import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
-import { SecurityService } from 'src/app/services/security/security.service';
+import {
+	Component,
+	OnInit,
+	Input,
+	NgZone
+} from '@angular/core';
+import {
+	NgbModalRef,
+	NgbModal
+} from '@ng-bootstrap/ng-bootstrap';
+import {
+	ModalThreatLocatorComponent
+} from 'src/app/components/modal/modal-threat-locator/modal-threat-locator.component';
+import {
+	WifiHomeViewModel
+} from 'src/app/data-models/security-advisor/wifisecurity.model';
+import {
+	EventTypes
+} from '@lenovo/tan-client-bridge';
+import {
+	BaseComponent
+} from '../../../../base/base.component';
+import {
+	CommonService
+} from 'src/app/services/common/common.service';
+import {
+	RegionService
+} from 'src/app/services/region/region.service';
+import {
+	SessionStorageKey
+} from 'src/app/enums/session-storage-key-enum';
+import {
+	SecurityService
+} from 'src/app/services/security/security.service';
 
 @Component({
 	selector: 'wifi-security',
@@ -23,56 +44,56 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	isShowMore = true; // less info, more info
 	isShowMoreLink = true; // show more link
 	region: string;
-	// showAllNetworks: boolean = true;
 	isCollapsed = true;
 	isWifiSecurityEnabled = true;
 	showAllNetworks = true;
 	showMore = false;
 	hasMore: boolean;
+	switchDisabled = false;
+	locatorButtonDisable = false;
 
 	constructor(
 		public modalService: NgbModal,
 		private commonService: CommonService,
 		public regionService: RegionService,
-		private securityService: SecurityService
+		private securityService: SecurityService,
+		private ngZone: NgZone
 	) {
 		super();
-		// if (typeof Windows !== undefined) {
-		// 	if (Windows.System.UserProfile.GlobalizationPreferences.homeGeographicRegion === 'CN') {
-		// 		this.isThreatLocatorExist = false;
-		// 	} else {
-		// 		this.isThreatLocatorExist = true;
-		// 	}
-		// }
 	}
 
 	ngOnInit() {
 		this.regionService.getRegion().subscribe({
-			next: x => { this.region = x; },
-			error: err => { console.error(err); },
-			complete: () => { console.log('Done'); }
+			next: x => {
+				this.region = x;
+			},
+			error: err => {
+				console.error(err);
+				this.region = 'US';
+			}
 		});
 		if (this.wifiIsShowMore === 'false') {
 			this.isShowMore = false;
 		}
 		// this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
 		this.data.wifiSecurity.on(EventTypes.geolocatorPermissionEvent, (value) => {
-			if (!value && this.data.wifiSecurity.state === 'enabled') {
-				this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);
-			} else if (value) {
-				if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
-					this.data.wifiSecurity.enableWifiSecurity().then((res) => {
-						if ( res === true) {
-							this.data.isLWSEnabled = true;
-						} else {
-							this.data.isLWSEnabled = false;
-						}
+			this.ngZone.run(() => {
+				if (!value && this.data.wifiSecurity.state === 'enabled') {
+					this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);
+				} else if (value) {
+					if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
+						this.data.wifiSecurity.enableWifiSecurity().then((res) => {
+							if (res === true) {
+								this.data.isLWSEnabled = true;
+							} else {
+								this.data.isLWSEnabled = false;
+							}
+						}, (error) => {
+							console.log('no permission');
+						});
 					}
-					, (error) => {
-						console.log('no permission');
-					});
 				}
-			}
+			});
 		});
 	}
 
@@ -80,7 +101,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		try {
 			if (this.data.wifiSecurity) {
 				this.data.wifiSecurity.enableWifiSecurity().then((res) => {
-					if ( res === true) {
+					if (res === true) {
 						this.data.isLWSEnabled = true;
 					} else {
 						this.data.isLWSEnabled = false;
@@ -99,13 +120,12 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		try {
 			if (this.data.wifiSecurity) {
 				this.data.wifiSecurity.disableWifiSecurity().then((res) => {
-					if ( res === true) {
+					if (res === true) {
 						this.data.isLWSEnabled = false;
 					} else {
 						this.data.isLWSEnabled = true;
 					}
 				});
-				// this.wifiHomeViewModel.isLWSEnabled = (this.wifiHomeViewModel.wifiSecurity.state === 'enabled');
 			}
 		} catch {
 			throw new Error('wifiSecurity is null');
@@ -130,11 +150,29 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		return false;
 	}
 
+	isDisableToggle(): boolean {
+		if (this.data.isLWSEnabled === undefined) {
+			this.switchDisabled = true;
+			return true;
+		} else {
+			this.switchDisabled = false;
+			return false;
+		}
+	}
+
 	openThreatLocator() {
-		const articleDetailModal: NgbModalRef = this.modalService.open(ModalThreatLocatorComponent, {
+		if (this.modalService.hasOpenModals()) {
+			return;
+		}
+		this.locatorButtonDisable = true;
+		const threatLocatorModal: NgbModalRef = this.modalService.open(ModalThreatLocatorComponent, {
+			backdrop: 'static',
 			size: 'lg',
 			centered: true,
 			windowClass: 'Threat-Locator-Modal'
+		});
+		threatLocatorModal.result.finally(() => {
+			this.locatorButtonDisable = false;
 		});
 	}
 }

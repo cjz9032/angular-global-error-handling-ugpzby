@@ -6,22 +6,23 @@
 	<div class="container-fluid p-0"
 		[ngClass]="{'vtr-disabled': disabled}">
 		<div class="row m-0">
-			<div class="col col-xs-8"
+			<div class="col"
 				[ngClass]="{'col-md-8': (type==='auto-updates' || type==='Camera'), 'col-md-10':type===undefined}">
 				<div class="container-fluid p-0">
 					<div class="row m-0">
 						<div class="col-auto left-icon-column"
 							*ngIf="leftIcon.length > 0">
-
-							<fa-icon *ngIf="leftIcon[0]!=='icomoon' && leftIcon[0]!=='svg'"
+							<div class="left-icon-block">
+								<fa-icon *ngIf="leftIcon[0]!=='icomoon' && leftIcon[0]!=='svg'"
 								class="left-icon"
 								[icon]="leftIcon"></fa-icon>
-							<svg-icon *ngIf="leftIcon[0]==='svg'"
+								<svg-icon *ngIf="leftIcon[0]==='svg'"
 								[applyCss]="true"
 								[stretch]="true"
 								class="left-icon"
 								[src]="'assets/icons/'+leftIcon[1]+'.svg'"></svg-icon>
-							<span *ngIf="leftIcon[0]==='icomoon'"[ngClass]="'icomoon '+leftIcon[1]"></span>
+								<span *ngIf="leftIcon[0]==='icomoon'"[ngClass]="'icomoon '+leftIcon[1]"></span>
+							</div>
 						</div>
 						<div class="col">
 							<div class="title">{{ title }}</div>
@@ -39,12 +40,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="col col-xs-4">
+			<div class="col d-flex justify-content-end">
 				<div class="row">
 					<div class="p-0"
 						[ngClass]="{'ml-auto': type!=='Camera'}"
 						*ngIf="resetText.length > 0">
-						<button type="button"
+						<button type="button" [disabled]="disabledAll"
 							class="btn"
 							[ngClass]="{'btn-link text':!resetTextAsButton ,'btn-label':resetTextAsButton}"
 							(click)="onResetClick($event)">

@@ -1,0 +1,104 @@
+@import '../../../app.theme.scss';
+
+.vtr-widget-system-tools {
+	.widget-title {
+		color: $gaming_lightest;
+		font-size: 5rem;
+		margin-bottom: 1rem;
+		font-weight: $weight-light;
+	}
+	.widget-container {
+		border-radius: $border_radius;
+		background-color: $gaming_dark;
+		box-shadow: $drop_shadow_gaming;
+		padding: 4rem;
+
+		// remove once populated
+		min-height: 20rem;
+		.system-tool-icons {
+			list-style: none;
+			padding-left: 0rem;
+			margin-bottom: -1.4rem;
+			li {
+				width: calc(100% / 5);
+				a{
+					text-decoration: none;
+					display: inline-block;
+					padding: 2rem 3rem;
+					border-radius: 1.2rem;
+					width: 100%;
+					background: transparent;
+					transition: all .3s ease-in-out;
+					min-height: 18.5rem;
+					&:hover {
+						background: $gaming_shade;
+						.system-icon::before {
+							background: $gaming_shade;
+						}
+					}
+				}
+				figure {
+					text-align: center;
+					color: $light;
+					max-width: 10rem;
+					margin: auto;
+					.system-icon {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						height: 8rem;
+						width: 8rem;
+						border-radius: 50%;
+						margin: auto;
+						background: $gaming_dark;
+						position: relative;
+						z-index: 1;
+						box-sizing: border-box;
+						background-clip: padding-box;
+						border: solid 0.4rem transparent;
+						&::after {
+							content: '';
+							position: absolute;
+							border-radius: 50%;
+							top: 0;
+							left: 0;
+							bottom: 0;
+							right: 0;
+							margin: -0.4rem;
+							background-image: $gaming_icon_gradient;
+							z-index: -1;
+						}
+						&::before {
+							content: '';
+							position: absolute;
+							border-radius: 50%;
+							top: 0;
+							left: 0;
+							bottom: 0;
+							right: 0;
+							margin: 0;
+							background: $gaming_dark;
+							z-index: 0;
+							transition: all .3s ease-in-out;
+						}
+						.icon {
+							position: relative;
+							z-index: 2;
+							font-size: 4rem;
+							background: $gaming_icon_gradient;
+							-webkit-background-clip: text;
+							-webkit-text-fill-color: transparent;
+							background-clip: text;
+							padding-top: 0.8rem;
+						}
+					}
+					figcaption {
+						font-size: 1.6rem;
+						line-height: 2rem;
+						margin-top: 1.2rem;
+					}
+				}
+			}
+		}
+	}
+}

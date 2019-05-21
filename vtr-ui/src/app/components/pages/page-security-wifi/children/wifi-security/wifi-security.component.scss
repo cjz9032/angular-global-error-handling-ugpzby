@@ -81,6 +81,7 @@
 				.bullet-icon {
 					.icon-bkg {
 						background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+						background-color: $go_dark;
 						border-color: $go_dark;
 					}
 				}
@@ -90,6 +91,7 @@
 				.bullet-icon {
 					.icon-bkg {
 						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+						background-color: $stop_dark;
 						border-color: $stop_dark;
 					}
 				}
@@ -115,7 +117,7 @@
 
 					fa-icon {
 						font-size: 1.6rem;
-						line-height: 2.5rem;
+						line-height: 2.4rem;
 						color: $light;
 					}
 				}
@@ -217,79 +219,63 @@
 			border-radius: 0.8rem;
 			background: $light;
 
-			ul.openNetworks {
-				padding-left: 0rem;
-				display: flex;
-				flex-wrap: wrap;
-				margin-bottom: 0rem;
-				
-				li {
-					list-style: none;
-					width: 50%;
-					border-right: 0.1rem solid $shade_lighter;
-					border-bottom: 0.1rem solid $shade_lighter;
-					flex-wrap: wrap;
-					align-items: center;
+			.status-icon {
+				position: relative;
+				width: 5.5rem;
 
-					&:nth-child(even) {
-						border-right: none;
+				fa-icon {
+					color: $main;
+				}
+
+				.circle {
+					background-color: $go;
+					background-image: linear-gradient(313deg, $go_light 25%, $go 100%);
+					height: 2rem;
+					width: 2rem;
+					border-radius: 2rem;
+					border: 0.1rem solid $go_dark;
+					text-align: center;
+					line-height: 0.9rem;
+					display: inline-block;
+					position: absolute;
+					top: 1.9rem;
+					left: 2.1rem;
+
+					fa-icon {
+						font-size: 1.5rem;
+						color: $shade_extralight;
 					}
 
-					// &:last-child {
-					// 	border-bottom: none;
-					// }
-
-					// &:nth-last-child(2) {
-					// 	border-bottom: none;
-					// }
-
-					.status-icon {
-						position: relative;
-						width: 5.5rem;
-
-						fa-icon {
-							color: $main;
-						}
-
-						.circle {
-							background-color: $go;
-							background-image: linear-gradient(313deg, $go_light 25%, $go 100%);
-							height: 2rem;
-							width: 2rem;
-							border-radius: 2rem;
-							border: 0.1rem solid $go_dark;
-							text-align: center;
-							line-height: 0.9rem;
-							display: inline-block;
-							position: absolute;
-							top: 1.9rem;
-							left: 2.1rem;
-
-							fa-icon {
-								font-size: 1.5rem;
-								color: $shade_extralight;
-							}
-
-							&.red {
-								background-color: $stop;
-								background-image: linear-gradient(315deg, $stop_light 25%, $stop 100%);
-								border: 0.1rem solid $stop_dark;
-							}
-						}
-					}
-
-					.connection-name {
-						font-size: 1.7rem;
-						font-weight: $weight_bold;
-						overflow: hidden;
-						text-overflow: ellipsis;
-						small {
-							font-weight: $weight_light;
-							display: block;
-						}
+					&.red {
+						background-color: $stop;
+						background-image: linear-gradient(315deg, $stop_light 25%, $stop 100%);
+						border: 0.1rem solid $stop_dark;
 					}
 				}
 			}
+
+			.connection-name {
+				overflow: hidden;
+				text-overflow: ellipsis;
+
+				h5 {
+					font-size: 1.6rem;
+					font-weight: $weight_bold;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+
+				.connection-status {
+					font-size: 1.6rem;
+				}
+				small {
+					font-weight: $weight_light;
+					display: block;
+				}
+			}
+			// 	}
+			// }
 		}
 
 		.card-foot {
@@ -311,19 +297,23 @@
 			&.collapsed {
 				border-bottom-left-radius: 0.8rem;
 				border-bottom-right-radius: 0.8rem;
-				border: 0.1rem solid rgba(0, 0, 0, 0.125);
+				// border: 0.1rem solid rgba(0, 0, 0, 0.125);
+			}
+			
+			.no-gutters {
+				height: 2.7rem;
 			}
 		}
 
-
 		.card-header {
 			padding: 2.5rem;
-			height: 7.8rem;
 			background: $shade_lightest;
+			border: 0rem;
 
 			.collapse-control {
-				cursor: pointer;
 				margin-top: -0.4rem;
+				display: inline-block;
+				width: 15rem;
 
 				.collapse-text {
 					display: inline-block;
@@ -381,7 +371,7 @@
 				border: 0.1rem solid $go_dark;
 				text-align: center;
 				display: inline-block;
-				margin-right: 2.5rem;
+				margin-right: 1rem;
 
 				fa-icon {
 					font-size: 1.5rem;
@@ -404,6 +394,60 @@
 				text-transform: uppercase;
 				margin-right: 2.5rem;
 			}
+		}
+	}
+
+	.wifi-card {
+		div.wifi {
+			padding-right: 1rem;
+			.media {
+				justify-content: center;
+				align-items: center;
+			}
+		}
+		div.wifi:nth-child(odd) {
+			border-bottom: 0.1rem solid $shade_lighter;
+			border-right: 0.1rem solid $shade_lighter;
+		}
+		div.wifi:nth-child(even) {
+			border-bottom: 0.1rem solid $shade_lighter;
+		}
+
+		div.wifi:nth-last-child(1):nth-child(odd),
+		div.wifi:nth-last-child(2):nth-child(odd) {
+			border-bottom-left-radius: 0.8rem;
+			border-bottom: 0;
+		}
+		div.wifi:nth-last-child(1):nth-child(even) {
+			border-bottom-right-radius: 0.8rem;
+			border-bottom: 0;
+		}
+		div.wifi:nth-child(odd) {
+			@media #{$mediaquery_X5, $mediaquery_10} {
+				border-right: 0;
+			}
+		}
+		div.wifi:nth-last-child(2):nth-child(odd) {
+			@media #{$mediaquery_X5, $mediaquery_10} {
+				border-bottom-left-radius: 0;
+				border-bottom: 0.1rem solid $shade_lighter;
+			}
+		}
+		.connection-name {
+			h5 {
+				line-height: 2.2rem;
+			}
+		}
+
+	}
+	.sm-device-responsive{
+		@media #{$mediaquery_12} {
+			position: relative;
+			top: -3rem;
+		}
+		.switch-disable {
+			opacity: 0.3;
+			cursor: auto;
 		}
 	}
 }

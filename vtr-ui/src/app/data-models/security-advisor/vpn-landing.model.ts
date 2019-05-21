@@ -9,31 +9,41 @@ export class VpnLandingViewModel {
 	subject: any;
 	type = 'security';
 	imgUrl = '../../../../assets/images/surfeasy-logo.svg';
-	constructor(vpnModel: phoenix.Vpn, commonService: CommonService, translate: TranslateService) {
+	constructor(translate: TranslateService, vpnModel: phoenix.Vpn, commonService: CommonService) {
 		const vpnStatus = {
-			status: 2,
+			status: 4,
 			detail: 'common.securityAdvisor.loading', // installed or not-installed
 			path: 'security/internet-protection',
 			title: 'security.landing.vpnVirtual',
 			type: 'security',
+			id: 'sa-ov-link-vpn'
 		};
 		const subjectStatus = {
 			status: 2,
 			title: 'security.landing.vpnSecurity',
 			type: 'security',
 		};
+		translate.stream(vpnStatus.detail).subscribe((res) => {
+			vpnStatus.detail = res;
+		});
+		translate.stream(vpnStatus.title).subscribe((res) => {
+			vpnStatus.title = res;
+		});
+		translate.stream(subjectStatus.title).subscribe((res) => {
+			subjectStatus.title = res;
+		});
 		const setVpnStatus = (status: string) => {
-			vpnStatus.status = status === 'installed' ? 2 : 1;
+			vpnStatus.status = 5;
 			vpnStatus.detail = status === 'installed' ? 'common.securityAdvisor.installed' : 'common.securityAdvisor.notInstalled';
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityVPNStatus, status);
 			subjectStatus.status = status === 'installed' ? 2 : 1;
-			translate.get(vpnStatus.detail).subscribe((res) => {
+			translate.stream(vpnStatus.detail).subscribe((res) => {
 				vpnStatus.detail = res;
 			});
-			translate.get(vpnStatus.title).subscribe((res) => {
+			translate.stream(vpnStatus.title).subscribe((res) => {
 				vpnStatus.title = res;
 			});
-			translate.get(subjectStatus.title).subscribe((res) => {
+			translate.stream(subjectStatus.title).subscribe((res) => {
 				subjectStatus.title = res;
 			});
 		};

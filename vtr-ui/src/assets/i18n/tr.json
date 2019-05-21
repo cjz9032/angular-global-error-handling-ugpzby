@@ -1,0 +1,313 @@
+{
+    "common": {
+        "menu": {
+            "security": {
+                "title": "Güvenlik",
+                "sub1": "Güvenliğim",
+                "sub2": "Virüsten Koruma",
+                "sub3": "WiFi Güvenliği",
+                "sub4": "Parola Durumu",
+                "sub5": "İnternet Koruması",
+                "sub6": "Windows Hello"
+            }
+        },
+        "securityAdvisor": {
+            "title": "Güvenlik Danışmanı",
+            "subtitle": "CİHAZINIZIN GÜVENLİ OLUP OLMADIĞINI KONTROL EDİN.",
+            "antiVirus": "Virüsten Koruma",
+            "wifi": "WiFi Güvenliği",
+            "pswdMgr": "Password Manager",
+            "vpn": "VPN",
+            "windowsHello": "Windows Hello",
+            "enabled": "ETKİN",
+            "disabled": "DEVRE DIŞI",
+            "partiallyProtected": "KISMEN KORUNUYOR",
+            "installed": "KURULU",
+            "notInstalled": "KURULU DEĞİL",
+            "loading": "Yükleniyor",
+            "notFound": "BULUNAMADI",
+            "registered": "KAYITLI",
+            "notRegistered": "KAYITLI DEĞİL"
+        },
+        "ui": {
+			"back": "GERİ"
+		}
+    },
+    "support": {
+        "common": {
+            "getSupport": "Destek Alın"
+        },
+        "warranty": {
+            "titleInWarranty": "GARANTİ KAPSAMINDA",
+            "titleWarrantyExpired": "GARANTİ SÜRESİ SONA ERDİ",
+            "titleWarrantyNotFound": "GARANTİ BULUNAMADI",
+            "statusInWarranty": "Garanti kapsamında",
+            "statusWarrantyExpired": "Süresi Doldu",
+            "statusWarrantyNotFound": "Garanti bulunamadı",
+            "yearDepotWarranty": "Yıllık Depo Garantisi",
+            "warrantyDetails": "Garanti Ayrıntıları:",
+            "startDate": "Başlangıç tarihi: ",
+            "endDate": "Bitiş tarihi: ",
+            "status": "Durum: ",
+            "subDescription1": "Bu ürün yıllık sınırlı garanti ve depo onarım hizmeti hakkına sahiptir. Müşteriler daha fazla bilgi için yerel hizmet merkezini arayabilir. Bayiler, müşteri tarafından teslim halinde bu ürün için onarım sağlayabilir.",
+            "subDescription2": "Cihazınız için garanti ayrıntılarını bulamadık. Diğer garanti seçenekleri için lütfen destek web sitemizi ziyaret edin.",
+            "viewWarrantyOptions": "GARANTİ SEÇENEKLERİNİ GÖRÜNTÜLE"
+        },
+        "documentation": {
+            "title": "Belgeler",
+            "listUserGuide": "Tanıtma ve Kullanma Kılavuzu"
+        },
+        "needHelp": {
+            "title": "Yardım mı Gerekiyor?",
+            "description": "YARDIM ALMAK İÇİN BİZE ULAŞIN.",
+            "listLenovoCommunity": "Lenovo Topluluğu",
+            "listContactCustomerService": "Müşteri Hizmetleri ile iletişim kurun",
+            "listContactUsOnWechat": "WeChat'te bize ulaşın",
+            "weChatDescription": "WeChat'te sorunuzu bizimle paylaşırsanız hızlı bir şekilde yanıt alabilirsiniz"
+        },
+        "quicklinks": {
+            "title": "Hızlı Bağlantılar",
+            "description": "YARDIM ALMAK İÇİN BİZE ULAŞIN.",
+            "listETicket": "E-bilet ile destek alın",
+            "listServiceProvider": "Garanti Hizmet Çözüm Ortağı bulun",
+            "listAboutLenovoVantage": "Lenovo Vantage hakkında"
+        },
+        "about": {
+            "version": "Sürüm",
+            "licenseAgreement": "Lisans sözleşmesi",
+            "otherSoftwareLicenses": "Diğer yazılım lisansları",
+            "ourWebsite": "Web sitemiz",
+            "aboutYourDevice": "Cihazınız hakkında",
+            "copyright": "© 2002-2019 Lenovo. Her hakkı saklıdır."
+        }
+    },
+    "security": {
+        "landing": {
+            "fully": "Tam korunuyor",
+            "fullyDesc": "Tebrikler! Çok iyi korunuyorsunuz.",
+            "notFully": "Tam olarak korunmuyor",
+            "notFullyDesc": "Tam olarak korunmuyorsunuz. Kendinizi nasıl daha iyi koruyabileceğinizi öğrenin.",
+            "security101": "GÜVENLİK DANIŞMANI 101",
+            "firewall": "Güvenlik Duvarı",
+            "pwdHealth": "Parola Durumu",
+            "vpnSecurity": "VPN Güvenliği",
+            "vpnVirtual": "Sanal Özel Ağ",
+            "wifiConnected": "WiFi ve Bağlı Ev Güvenliği",
+            "connectedHomeSecurity": "Bağlı Ev Güvenliği",
+            "fingerprint": "Parmak İzi Okuyucu",
+            "seeAllNetwork": "Katılım sağlanan tüm ağları göster",
+            "maliciousNetwork": "Bu ay bilgisayarınızın {{maliciousWifi}} kötü amaçlı ağa katılması önlendi.",
+            "good": "İYİ",
+            "malicious": "KÖTÜ AMAÇLI",
+            "suspicious": "ŞÜPHELİ"
+        },
+        "antivirus": {
+            "common": {
+                "title": "Virüsten Koruma",
+                "back": "GERİ",
+                "why": "Neden McAfee?",
+                "recommends": "Lenovo, McAfee'nin tüm cihazlarınızı korumasını önerir:",
+                "award": "Fidye yazılımları ve kötü amaçlı yazılımlar da dahil olmak üzere en yeni çevrimiçi tehditlere karşı ödüllü koruma",
+                "dedicated": "Defender ve diğer önde gelen AV sağlayıcılarını sürekli olarak geride bırakan özel güvenlik",
+                "deviceToCloud": "Bilgisayarınızı yavaşlatmayan cihazdan buluta teknolojisi",
+                "poweredBy": "McAfee Tarafından Desteklenmektedir",
+                "privacyTerms": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag> hakkında daha fazla bilgi edinin",
+                "mcafeePremium": "McAfee Premium Koruma",
+                "protectedBy": "Şu anda şu yazılım tarafından korunuyorsunuz: ",
+                "betterProtected": ".Ancak McAfee LiveSafe ile daha iyi korunabilirsiniz",
+                "virusScan": "VİRÜS TARAMASI",
+                "firewall": "GÜVENLİK DUVARI",
+                "disabled": "DEVRE DIŞI",
+                "enableVirusScan": "VİRÜS TARAMASINI ETKİNLEŞTİR",
+                "enableFirewall": "GÜVENLİK DUVARINI ETKİNLEŞTİR"
+            },
+            "windowsDefender": {
+                "optimallyProtected": "En İyi Şekilde Korunmuyor",
+                "subtitle": "Şu anda Windows Defender tarafından korunuyorsunuz.Ancak, McAfee LiveSafe ile daha iyi korunabilirsiniz. Aşağıdan daha fazla bilgi edinin.",
+                "learnMore": "McAfee HAKKINDA DAHA FAZLA BİLGİ EDİNİN",
+                "windowsProtected": "Windows Defender temel koruması",
+                "windowsSubtitle": "Windows Defender, cihazınız için temel koruma sunar"
+            },
+            "mcafee": {
+                "title": "McAfee LiveSafe",
+                "subtitle": "Şu anda McAfee LiveSafe tarafından korunuyorsunuz",
+                "valid": "Son Geçerlilik Tarihi:",
+                "upgrade": "Şimdi Yükseltin",
+                "launch": "McAfee'yi BAŞLATIN",
+                "getMacfee": "McAfee'yi EDİNİN",
+                "topBenefits": "McAfee LiveSafe'in Başlıca Avantajları",
+                "awardTitle": "Ödüllü Virüsten Koruma Yazılımı",
+                "awardSubtitle": "Bilgisayarınızda virüsleri, kötü amaçlı yazılımları, fidye yazılımlarını, casus yazılımları, istenmeyen programları ve çok daha fazlasını engelleyin.",
+                "encryptedTitle": "Şifreli Depolama",
+                "encryptedSubtitle": "Hassas dosyaları 128-bit şifreleme ile PC'nizde depolayarak güvenliğini sağlayın.",
+                "identityTitle": "Kimlik hırsızlığı koruması",
+                "identitySubtitle": "Kimliğinizi hırsızlığa ve dolandırıcılığa karşı korumaya dikkat edin.",
+                "supportTitle": "ÜCRETSİZ Müşteri Desteği",
+                "supportSubtitle": "Aboneliğiniz boyunca telefonla, sohbet yoluyla veya çevrimiçi olarak yanınızdadır.",
+                "antiTitle": "İstenmeyen Posta Önleme",
+                "antiSubtitle": "Riskli bağlantılar ve virüsler içerebilecek e-postaları temizleyerek tehlikeli iletileri gelen kutunuza gelmeden engeller.",
+                "virusTitle": "Virüsten koruma taahhüdü",
+                "virusSubtitle": "Bilgisayarınıza virüs bulaşması halinde bir McAfee uzmanının virüsü temizlemek için uzaktan bilgisayarınıza erişim sağlayacağından emin olabilirsiniz.",
+                "parentalTitle": "Ebeveyn denetimleri",
+                "parentalSubtitle": "Çocuklarınızın görmesini istemediğiniz web sitelerini ve arama sonuçlarını engelleyin. Ayrıca çevrimiçi geçirecekleri zaman için sınırlamalar ayarlamanızı sağlar.",
+                "license": "Lisans Son Geçerlilik Tarihi:",
+                "trial": "Deneme Sürümü Son Geçerlilik Tarihi:"
+            },
+            "others": {
+                "othersProtection": "cihazınız için temel koruma sunar"
+            }
+        },
+        "wifisecurity": {
+            "header": {
+                "title": "WiFi ve Bağlı Ev Güvenliği",
+                "back": "GERİ"
+            },
+            "container": {
+                "title": "Lenovo Wifi Güvenliği",
+                "name": "WIFI GÜVENLİĞİ",
+                "enable": "ETKİN",
+                "disable": "DEVRE DIŞI",
+                "less": "Daha az bilgi",
+                "more": "Daha fazla bilgi",
+                "networkHistory": "Ağ Geçmişi",
+                "connect": "Son bağlantı",
+                "showmore": "Daha fazlasını göster",
+                "showless": "Ayrıntıları gizle",
+                "button": "Wifi güvenliğini etkinleştirin",
+                "disableDecribe": "Lenovo WiFi Güvenliği, cihazınızın güvenli kablosuz ağları olası kötü amaçlı ağlardan ayırmasına yardımcı olan gelişmiş bulut tabanlı bir yazılım hizmetidir."
+            },
+            "threatlocator": {
+                "describe": "Çevrenizdeki ağların güvenliğini belirlemek için tehdit dedektörünü kullanın.",
+                "button": "Tehdidi denetle"
+            },
+            "locationmodal": {
+                "title": "Konum hizmetlerini etkinleştir",
+                "describe1": "Lenovo WiFi Güvenliği'ni kullanmak isterseniz Lenovo Vantage için konum hizmetlerini etkinleştirmeniz gerekir. Konumu şimdi etkinleştirmek ister misiniz?",
+                "describe2": "Bağlı Ev Güvenliği'ni kullanmak isterseniz Lenovo Vantage için konum hizmetlerini etkinleştirmeniz gerekir. Konumu şimdi etkinleştirmek ister misiniz?",
+                "agree": "KABUL EDİYORUM",
+                "cancel": "İPTAL"
+            }
+        },
+        "homeprotection": {
+            "homesecurity": {
+                "title": "Bağlı Ev Güvenliği",
+                "titleDescription": "Bağlı Ev Güvenliği, güvenliğinizi üç şekilde sağlar:",
+                "homeSecurityAffect1": "Bağlı Ev Güvenliği, cihazınızın güvende olmasını ve güvenliğinin ihlal edilmemesini sağlar",
+                "homeSecurityAffect2": "Bağlı Ev Güvenliği, bağlandığınız ağların güvende olmasını sağlar",
+                "homeSecurityAffect3": "Bağlı Ev Güvenliği, ev ağınıza bağlanan diğer cihazların güvende olmasını sağlar.",
+                "describe": "Güvenilmez cihazlar ve ağlar kötü amaçlı yazılımları bulaştırabilir, kimlik hırsızlığına yol açabilir, özel ve finansal bilgileri sızdırabilir. Saldırganların cihazınıza ve ev ağınıza erişme riskini azaltmak için bu özelliği etkinleştirin",
+                "subtitle": "İçiniz Rahat Olsun",
+                "subtitleDescribe": "Bağlı Ev Güvenliği, cihazınızda veya ev ağınızda bir güvenlik açığı algılarsa ya da kötü amaçlı olabilecek bir ağa bağlanırsanız size bir uyarı gönderir. İpuçları ve Püf Noktaları bölümünde Bağlı Ev Güvenliği hakkında daha fazla bilgi edinebilirsiniz.",
+                "tryNow": "Şimdi Deneyin"
+            },
+            "invitationcode": {
+                "button": "Davet kodunu girin",
+                "buttonDescribe": "Bu cihazı daha önce mevcut bir Bağlı Ev Güvenliği hesabına eklediniz.",
+                "title": "Bağlı Ev Güvenliğiniz zaten var mı?",
+                "titleDescribe": "Cihazınızı mevcut bir Bağlı Ev Hesabı'na eklemek ve Bağlı Ev Güvenliği'ni kullanmak üzere lütfen Vantage için konum izinlerinin etkinleştirildiğinden emin olun.",
+                "enterCode": "Bağlantı kodunuzu girin",
+                "addHome": "Ev Ekle",
+                "ok": "TAMAM",
+                "continue": "DEVAM",
+                "cancel": "İptal",
+                "validateCode": "KODU DOĞRULA",
+                "success": "Başarıyla bağlandı",
+                "canUse": "Şimdi Bağlı Ev Güvenliği'ni kullanmaya başlayabilirsiniz",
+                "tryAgain": "Kod hatalı, lütfen yeniden deneyin!",
+                "activationCode": "ETKİNLEŞTİRME KODU"
+            },
+            "securityhealth": {
+                "title": "Güvenlik Durumu",
+                "deviceName1": "Güvenilen Kaynaklardan Uygulamalar",
+                "deviceName2": "Geliştirici Kipi",
+                "deviceName3": "UAC Bildirimi",
+                "deviceName4": "Virüsten Koruma Kullanılabilirliği",
+                "deviceName5": "Sabit Sürücü Şifrelemesi",
+                "deviceName6": "Güvenlik Duvarı Kullanılabilirliği",
+                "deviceName7": "Windows Etkinleştirildi",
+                "deviceName8": "Güvenlik Güncellemelerinin Kullanılabilirliği",
+                "deviceName9": "Parola Koruması",
+                "deviceName10": "Otomatik Güncellemeler Hizmeti Kullanılabilirliği",
+                "fail": "BAŞARISIZ OLDU",
+                "pass": "BAŞARILI OLDU",
+                "learnMoreAboutSecurityHealth": "Bu bileşenlerin her biri hakkında daha fazla bilgiyi <tag>burada</tag> bulabilirsiniz.",
+                "peaceOfMind": "Daha huzurlu olmak ister misiniz?",
+                "button": "Wifi güvenliğini etkinleştirin"
+            }
+        },
+        "vpn": {
+            "statusTitle": "SURFEASY VPN",
+            "title": "VPN Güvenliği",
+            "header": "SurfEasy VPN",
+            "whatIsSufEasy": "SurfEasy VPN, gönderdiğiniz ve aldığınız bilgileri şifreleyerek bilgisayar, Mac®, akıllı telefon veya tabletinizi herhangi bir İnternet bağlantısında endişe duymadan, güvenli ve özel bir şekilde kullanabilmenizi sağlar.",
+            "helpKeep": "SurfEasy VPN ile çevrimiçi etkinliğinizi güvenli ve özel tutmaya yardımcı olun.",
+            "getSufEasy": "SurfEasy'yi Edinin",
+            "openSufEasy": "SurfEasy'yi Açın",
+            "whySufEasy": "Neden bir Sanal Özel Ağ (VPN) kullanmalısınız?",
+            "whySufEasyDescription": "Kafeler veya havaalanlarındaki gibi Wi-Fi erişim noktalarını kullandığınızda, hassas bilgileriniz siber suçluların erişimine açık hale gelebilir. SurfEasy VPN, kişisel bilgilerinizi şifrelemeyen ve çevrimiçi etkinliğinizi veya konumunuzu izlemeyen ya da kaydetmeyen, günlük tutulmayan bir VPN'dir.",
+            "startUseSufEasy": "SurfEasy'yi Kullanmaya Bugün Başlayın",
+            "startUseSufEasy1": "Banka düzeyinde şifreleme sayesinde, gönderdiğiniz ve aldığınız verilerin güvende ve özel kalmasını sağlamaya yardımcı olun.",
+            "startUseSufEasy2": "Şirketlerin çevrimiçi etkinliklerinizi veya konumunuzu izlemelerini engellemeye yardımcı olun.",
+            "startUseSufEasy3": "Ücretsiz ve premium teklifler, gereksinimlerinize ve bütçenize uygun birden fazla seçenek sağlar.",
+            "howToUseSufEasy": "SurfEasy VPN'i kullanma",
+            "whatCanSufEasy2": "Bir genel Wi-Fi erişim noktasına erişim sağlarken SurfEasy VPN'i açın ve gizliliğinizi koruyun. Bir Lenovo Starter VPN Planı ile daha fazla veri koruması bant genişliği kazanmak için Ödül etkinliklerini tamamlayabilirsiniz. Yükseltme yaparak en fazla 5 akıllı telefonu, tableti ve bilgisayarı sınırsız bant genişliği ile koruyabilirsiniz.",
+            "getStarted": "SurfEasy VPN'i açın:",
+            "getStarted1": "SurfEasy VPN'i başlatmak için yukarıdaki “Open SurfEasy” (SurfEasy'yi Aç) düğmesini tıklatın.",
+            "getStarted2": "VPN'i açın ve güvenli bağlantının onaylanması için kısa bir süre bekleyin.",
+            "getStarted3": "Dilerseniz bölgenizi veya konumunuzu değiştirin ve güvenli, özel ağın keyfini çıkarın.",
+            "poweredBySurfEasy": "SurfEasy Tarafından Desteklenmektedir",
+            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag> hakkında daha fazla bilgi edinin"
+        },
+        "passwordManager": {
+            "statusTitle": "DASHLANE PAROLA YÖNETİCİSİ",
+            "title": "Parola Durumu",
+            "header": "Dashlane",
+            "whatIsPmNotInstalled": "Güçlü, karmaşık parolaları kaydetmenin ve her sitede anında oturum açmanın en güvenli, en kolay yolu.",
+            "whatIsPmInstalled": "Daha güvenli bir dijital yaşam sizi bekliyor: Parola ekleyin, Karanlık Ağ İzleme özelliğini etkinleştirin, kişisel bilgileri ve ödeme bilgilerini otomatik olarak doldurun.",
+            "startProtect": "Çevrimiçi hesaplarınızı basit bir şekilde korumaya başlayın.",
+            "discount": "Lenovo kullanıcıları, özel 6 aylık ücretsiz Dashlane Premium teklifinden yararlanabilir.",
+            "offer": "Bu teklif yalnızca yeni Dashlane kullanıcıları için geçerlidir!",
+            "getDashLane": "Dashlane'i Edinin",
+            "learnMoreAbout": "Dashlane'den en iyi şekilde yararlanma hakkında <tag>daha fazla bilgi edinin</tag>",
+            "openDashLane": "Dashlane'i Açın",
+            "neverForget": "Dashlane: Bundan sonra hiçbir parolanızı unutmayacaksınız",
+            "whatIsDashLane": "Dashlane, tarayıcınızla çalışan bir parola yöneticisi ve dijital koruma uygulamasıdır. Parolaları ve kişisel verileri otomatik olarak kaydeder, tüm bilgileri sizin için hatırlar ve her şeyi güvenli bir şekilde depolar. Dashlane aynı zamanda hesap güvenliğinizi analiz eder ve parola durumunuzu iyileştirmek için kolay yollar sağlar.",
+            "helpYou": "Dashlane size şu konularda yardımcı olur:",
+            "helpYou1": "Sınırsız sayıda kullanıcı adını ve parolayı hatırlama.",
+            "helpYou2": "Kesintisiz gezinme deneyimi için her yerde anında oturum açma",
+            "helpYou3": "Önemli hesaplara erişiminizi hiçbir zaman kaybetmemeniz için cihazlar arasında eşzamanlama yapma",
+            "helpYou4": "Kolay, gerçekleştirilebilir tavsiyelerle çevrimiçi korumanızı iyileştirme",
+            "getStarted": "Dashlane'i kullanmaya mı başlıyorsunuz?",
+            "checkOutThisGuide": "Beklenmeyen durumlarla karşılaşmayıp zamandan tasarruf ederken çevrimiçi güvenliğinizi sağlamak için Dashlane'i kullanın. Kullanmaya başlamayla ilgili ayrıntılı yönergeler için <tag>kılavuzumuza göz atın.</tag>",
+            "allowsYou": "Dashlane şunları yapmanıza olanak tanır:",
+            "allowsYou1": "Kesintisiz gezinme deneyimi için her yerde anında oturum açma - Önemli hesaplara erişiminizi hiçbir zaman kaybetmemeniz için cihazlar arasında eşzamanlama yapma",
+            "allowsYou2": "Kişisel bilgileriniz için karanlık ağ izlemesi",
+            "allowsYou3": "Yerleşik VPN sayesinde, güvenli olmayan WiFi ağlarında güvende olma",
+            "allowsYou4": "Parolaları göstermeden, güvenli bir şekilde paylaşma",
+            "poweredByDashLane": "Dashlane Tarafından Desteklenmektedir",
+            "privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag> hakkında daha fazla bilgi edinin"
+        },
+        "windowsHello": {
+            "statusTitle": "WINDOWS HELLO",
+            "title": "Windows Hello",
+            "protectYourDevice": "Cihazınızı Lenovo'nun önerdiği güvenlik seçenekleriyle koruyun.",
+            "signIn": "Windows Hello ile hızlı ve güvenli bir şekilde oturum açın.",
+            "signInTitle": "Windows Hello ile hızlı ve güvenli bir şekilde oturum açın",
+            "setUp": "Windows Hello kurulumu",
+            "whyWindowsHello": "Neden Windows Hello?",
+            "whyWindowsHelloDescription1": "Windows Hello, bilgisayarınızda oturum açmayı daha kolay ve daha güvenli bir hale getirir. Ayrıca çevrimiçi Microsoft uygulamalarınız için de kullanılabilir. Windows Hello kullanmaya başlamak için aşağıdaki yönergeleri izleyin.",
+            "startUsingToday": "Windows Hello'yu Kullanmaya Bugün Başlayın",
+            "visitAndRegister": "Windows Hello sayfasını ziyaret edin ve parmak izinizi kaydedin.",
+            "visitInSettings": "Sistem ayarlarında <tag>Windows Hello'yu ziyaret edin</tag>",
+            "unlock": "Parmağınızı sensöre dokundurarak bilgisayarınıza giriş yapmak ve bilgisayarınızın kilidini açmak için Windows Hello'yu kullanın.",
+            "startUsingWindowsHello": "Outlook, OneDrive, Office 365 ve Xbox Live gibi Microsoft Uygulamalarında oturum açmak için Windows Hello'yu kullanmaya başlayın.",
+            "visitMicrosoft": "Microsoft'u ziyaret edin",
+            "poweredByWindowsHello": "Windows Hello Tarafından Desteklenmektedir",
+            "privacyPolicy": "<tag>Gizlilik Politikası</tag> hakkında daha fazla bilgi edinin",
+            "whyWindowsHelloDescription2": "Windows Hello, bilgisayarınızda oturum açmayı daha kolay ve daha güvenli hale getirir. Çevrimiçi Microsoft uygulamalarınız için de kullanılabilir. Windows Hello kullanmaya başlamak için aşağıdaki yönergeleri izleyin",
+            "authentication": "Windows Hello Kimlik Doğrulaması",
+            "traditional": "Geleneksel parolalar çalınabilir ve hesabınıza dünyanın herhangi bir yerinden erişmek için kullanılabilir. Daha güvenli ve kullanımı kolay. Windows Hello, yeni nesil paroladır. Oturum açmak için güvenli olmayan parolalar yerine parmak izi okuyucuyu kullanın.",
+            "howToStart": "Windows Hello kullanmaya nasıl başlayabilirim?"
+        }
+    }
+}

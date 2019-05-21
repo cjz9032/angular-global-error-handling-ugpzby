@@ -27,48 +27,54 @@ export class AppComponent implements OnInit {
 		private devService: DevService,
 		private displayService: DisplayService,
 		private router: Router,
-		// private modalService: NgbModal,
+		private modalService: NgbModal,
 		public deviceService: DeviceService,
 		private commonService: CommonService,
 		private translate: TranslateService,
 		private userService: UserService,
 		private vantageShellService: VantageShellService
 	) {
-		translate.addLangs(['en', 'zh-Hans']);
+		translate.addLangs(['en', 'zh-Hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it',
+		'ja', 'ko', 'nb', 'nl', 'pl', 'pt-BR', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-Latn', 'sv', 'tr', 'uk', 'zh-Hant']);
 		this.translate.setDefaultLang('en');
 		const hadRunApp: boolean = commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
 		const appFirstRun = !hadRunApp;
 		if (appFirstRun && deviceService.isShellAvailable) {
 			commonService.setLocalStorageValue(LocalStorageKey.HadRunApp, true);
-			vantageShellService.getMetrics().sendAsync({
+			const metricsClient = vantageShellService.getMetrics();
+			if (!metricsClient.sendAsyncEx) {
+				metricsClient.sendAsyncEx = metricsClient.sendAsync;
+			}
+			metricsClient.sendAsyncEx({
 				ItemType: 'FirstRun'
-			});
+			}, {
+					forced: true
+				});
 		}
 
 		//#region VAN-2779 this is moved in MVP 2
 
-		// const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
+		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
 
-		// if (tutorial === undefined && navigator.onLine) {
-		// 	const modalRef = this.modalService.open(ModalWelcomeComponent,
-		// 		{
-		// 			backdrop: 'static'
-		// 			, windowClass: 'welcome-modal-size'
-		// 		});
-		// 	modalRef.result.then(
-		// 		(result: WelcomeTutorial) => {
-		// 			// on open
-		// 			console.log('welcome-modal-size', result);
-		// 			commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, result);
-		// 		},
-		// 		(reason: WelcomeTutorial) => {
-		// 			// on close
-		// 			console.log('welcome-modal-size', reason);
-		// 			commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
-		// 		}
-		// 	);
-		// }
-
+		if (tutorial === undefined && navigator.onLine) {
+			const modalRef = this.modalService.open(ModalWelcomeComponent,
+				{
+					backdrop: 'static'
+					, windowClass: 'welcome-modal-size'
+				});
+			modalRef.result.then(
+				(result: WelcomeTutorial) => {
+					// on open
+					console.log('welcome-modal-size', result);
+					commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, result);
+				},
+				(reason: WelcomeTutorial) => {
+					// on close
+					console.log('welcome-modal-size', reason);
+					commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
+				}
+			);
+		}
 		//#endregion
 
 		window.addEventListener('online', (e) => {
@@ -101,18 +107,9 @@ export class AppComponent implements OnInit {
 
 		// When startup try to login Lenovo ID silently (in background),
 		//  if user has already logged in before, this call will login automatically and update UI
-		this.deviceService.getMachineInfo().then((machineInfo) => {
-			if (machineInfo.country != 'cn' && machineInfo.cpuArchitecture.toLowerCase().indexOf('arm') != 0) {
-				self.userService.isLenovoIdSupported = true;
-				self.userService.loginSilently();
-			} else {
-				self.devService.writeLog('Do not login silently for China or ARM');
-			}
-		}, error => {
-			self.userService.isLenovoIdSupported = true;
-			self.devService.writeLog('getMachineInfo() failed ' + error);
-			self.userService.loginSilently();
-		});
+		if (!this.deviceService.isArm) {
+			this.userService.loginSilently();
+		}
 
 		/********* add this for navigation within a page **************/
 		this.router.events.subscribe(s => {
@@ -128,7 +125,7 @@ export class AppComponent implements OnInit {
 			}
 		});
 		this.getMachineInfo();
-		this.checkIsDesktopMachine();
+		this.checkIsDesktopOrAllInOneMachine();
 	}
 
 	private getMachineInfo() {
@@ -136,8 +133,18 @@ export class AppComponent implements OnInit {
 			this.deviceService.getMachineInfo()
 				.then((value: any) => {
 					console.log('getMachineInfo.then', value);
-					if (value.locale.toLowerCase() === 'zh-hans') {
-						this.translate.use('zh-Hans');
+					if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
+						this.translate.use(value.locale.substring(0, 2));
+					} else {
+						if (value && value.locale.substring(0, 2).toLowerCase() === 'pt') {
+							value.locale.toLowerCase() === 'pt-br' ? this.translate.use('pt-BR') : this.translate.use('pt');
+						}
+						if (value && value.locale.toLowerCase() === 'zh-hans') {
+							this.translate.use('zh-Hans');
+						}
+						if (value && value.locale.toLowerCase() === 'zh-hant') {
+							this.translate.use('zh-Hant');
+						}
 					}
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
 				}).catch(error => {
@@ -146,13 +153,13 @@ export class AppComponent implements OnInit {
 		}
 	}
 
-	private checkIsDesktopMachine() {
+	private checkIsDesktopOrAllInOneMachine() {
 		try {
 			if (this.deviceService.isShellAvailable) {
 				this.deviceService.getMachineType()
 					.then((value: any) => {
 						console.log('checkIsDesktopMachine.then', value);
-						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, value == 4);
+						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, (value === 4));
 					}).catch(error => {
 						console.error('checkIsDesktopMachine', error);
 					});
@@ -196,5 +203,24 @@ export class AppComponent implements OnInit {
 		const content = `shrink-to-fit=no, width=device-width, initial-scale=${scale}, minimum-scale=${scale}`;
 		document.querySelector('meta[name="viewport"]').setAttribute('content', content);
 		console.log('DPI: ', content);
+	}
+
+	// Defect fix VAN-2988
+	@HostListener('window:keydown', ['$event'])
+	disbleCtrlACV($event: KeyboardEvent) {
+		console.log('$event.keyCode ' + $event.keyCode);
+		if (($event.ctrlKey || $event.metaKey) && ($event.keyCode === 65 || $event.keyCode === 67 || $event.keyCode === 86)) {
+			if ($event.keyCode === 65) {
+				console.log('Disable CTRL + A');
+			}
+			if ($event.keyCode === 67) {
+				console.log('Disable CTRL + C');
+			}
+			if ($event.keyCode === 86) {
+				console.log('Disable CTRL +  V');
+			}
+			$event.stopPropagation();
+			$event.preventDefault();
+		}
 	}
 }

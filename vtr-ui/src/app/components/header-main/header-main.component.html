@@ -1,6 +1,16 @@
 <div class="vtr-header-main">
-	<div class="back">{{backarrow}}<a (click)="goBack()">{{back}}</a></div>
+	<div class="back">{{backarrow}}
+		<a vtrMetrics
+			metricsEvent="FeatureClick"
+			metricsItem="back"
+		   metricsParent="device.mydevice"
+			(click)="goBack()" 
+			id="{{backId}}">
+			{{back}}
+		</a>
+	</div>
 	<h1 class="title">{{title}}</h1>
+	<ng-content></ng-content>
 	<div *ngIf="forwardLink"
 		class="forward-link">
 		<a routerLink="/{{forwardLink.path}}"><span class="forward-link-label">{{forwardLink.label}}</span>

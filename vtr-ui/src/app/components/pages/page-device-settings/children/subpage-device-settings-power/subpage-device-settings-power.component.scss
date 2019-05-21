@@ -8,6 +8,7 @@
     line-height: 8.2rem;
   }
 
+
   .left-border {
     border-left: 1rem solid $main;
 
@@ -123,8 +124,15 @@
     font-size: 1.5rem;
   }
 
+	.seperator{
+		font-size:2.5rem;
+	}
+	.icomoon:before{
+		font-size:4.5rem;
+	}
   .custom-control-label {
-    padding-left: 0.5rem;
+	padding-left: 0.5rem;
+	line-height: 1.15;
 
     // rounded square-box background
     &::before {
@@ -140,5 +148,8 @@
       height: 2rem;
       left: -1.7rem;
     }
+  }
+  .cooling-modes {
+	  font-weight: $weight_bold;
   }
 }

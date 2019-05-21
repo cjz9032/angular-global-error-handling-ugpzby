@@ -10,7 +10,7 @@
 	<div class="row py-5 smartsettings-card"
 		*ngIf="dolbyModeResponse.available"
 		id="audio">
-		<div class="col-10 mx-auto px-0 ">
+		<div class="col-10 mx-auto">
 			<vtr-container-collapsible componentName="Audio SmartSettings"
 				[cardTitle]="'device.deviceSettings.audio.audioSmartsettings.title' | translate"
 				[isCollapsed]="false"
@@ -35,7 +35,7 @@
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'blue'"
-							[tooltipText]="'Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.'"
+							[tooltipText]="'device.deviceSettings.audio.audioSmartsettings.dolby.tooltip'|translate"
 							(toggleOnOff)="onAutomaticDolbyAudioToggleOnOff($event)"
 							[isSwitchChecked]="autoDolbyFeatureStatus.status">
 
@@ -54,8 +54,9 @@
 						</vtr-ui-row-switch>
 					</li>
 					<li class="">
-						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.audioSmartsettings.voip' | translate"
-							name="'device.deviceSettings.audio.audioSmartsettings.voip' | translate"
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.audio.audioSmartsettings.voip.title' | translate"
+							[name]="'device.deviceSettings.audio.audioSmartsettings.voip' | translate"
 							componentName="Automatic Audio Optimization for VoIP"
 							[caption]="''"
 							[isSwitchVisible]=true
@@ -64,7 +65,7 @@
 							[readMoreText]="''"
 							[showChildContent]="false"
 							[theme]="'blue'"
-							[tooltipText]="'Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality.'"
+							[tooltipText]="'device.deviceSettings.audio.audioSmartsettings.voip.tooltip' | translate"
 							(toggleOnOff)="onToggleOfMicrophoneAutoOptimization($event)"
 							[isSwitchChecked]="microphoneProperties.autoOptimization">
 						</vtr-ui-row-switch>
@@ -81,10 +82,18 @@
 				[isCollapsed]="false"
 				[allowCollapse]="true"
 				[theme]="'white'">
-				<ul class="list-group list-group-flush">
+				<vtr-widget-permission-note
+					[noteTitle]="'device.deviceSettings.audio.microphone.note.title' | translate"
+					[description]="'device.deviceSettings.audio.microphone.note.description' | translate"
+					[path]="'ms-settings:privacy-microphone'"
+					*ngIf="!microphoneProperties.permission">
+
+				</vtr-widget-permission-note>
+				<ul class="list-group list-group-flush"
+					*ngIf="microphoneProperties.permission">
 					<li class="">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.title' | translate"
-							name="'device.deviceSettings.audio.microphone.title' | translate"
+							[name]="'device.deviceSettings.audio.microphone.title' | translate"
 							componentName="Microphone"
 							[caption]=""
 							[isSwitchVisible]=true
@@ -101,7 +110,7 @@
 					</li>
 					<li class="">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.volume.title' | translate"
-							name="'device.deviceSettings.audio.microphone.volume.title' | translate"
+							[name]="'device.deviceSettings.audio.microphone.volume.title' | translate"
 							componentName="MicrophoneVolume"
 							[isSwitchVisible]=false
 							[leftIcon]="['fal', 'microphone']"
@@ -112,9 +121,10 @@
 							[theme]="'white'">
 							<div class="row">
 								<div class="col-10">
-									<vtr-ui-range-slider [minValueLegend]="'Silent'"
+									<vtr-ui-range-slider
+										[minValueLegend]="'device.deviceSettings.audio.microphone.volume.options.silent' | translate"
 										[minValue]="0"
-										[maxValueLegend]="'Loud'"
+										[maxValueLegend]="'device.deviceSettings.audio.microphone.volume.options.loud' | translate"
 										[maxValue]="100"
 										(change)="setVolume($event)"
 										[enableSlider]="!microphoneProperties.permission"
@@ -129,7 +139,7 @@
 					<li class=""
 						*ngIf="microphoneProperties.keyboardNoiseSuppression != undefined">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.suppress.title' | translate"
-							name="'device.deviceSettings.audio.microphone.suppress.title' | translate"
+							[name]="'device.deviceSettings.audio.microphone.suppress.title' | translate"
 							componentName="Supress Keyboard noise"
 							[caption]=""
 							[isSwitchVisible]=true
@@ -148,7 +158,7 @@
 					<li class=""
 						*ngIf="microphoneProperties.AEC != undefined">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.acoustic.title' | translate"
-							name="'device.deviceSettings.audio.microphone.acoustic.title' | translate"
+							[name]="'device.deviceSettings.audio.microphone.acoustic.title' | translate"
 							componentName="Acoustic Echo Cancellation"
 							[caption]=""
 							[isSwitchVisible]=true
@@ -167,7 +177,7 @@
 					<li class="">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone.optimize.title' | translate"
 							componentName="Optimize my microphone for"
-							name="Optimize microphone"
+							[name]="'device.deviceSettings.audio.microphone.optimize.title' | translate"
 							[caption]="'device.deviceSettings.audio.microphone.optimize.tooltip' | translate"
 							[isSwitchVisible]=false
 							[leftIcon]="['fal', 'microphone']"
@@ -179,7 +189,8 @@
 								<vtr-ui-circle-radio *ngFor="let optimizeMode of microOptimizeModeResponse.modes"
 									[radioId]="'radio'| uniqueId"
 									[group]="radioOptimiseMicSettings"
-									[label]="(optimizeMode?optimizeMode:'LE-Multiple-voices2x') | separatePascalCase"
+									[label]="optimizeMode | separatePascalCase"
+									[theme]="'white'"
 									[value]='optimizeMode'
 									[checked]="optimizeMode === microOptimizeModeResponse.current"
 									[disabled]="microphoneProperties.disableEffect"

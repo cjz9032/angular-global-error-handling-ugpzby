@@ -10,7 +10,8 @@
 							[percentage]="batteryIndicators.percent"
 							[isCharging]="batteryIndicators.charging"
 							[isExpressCharging]="batteryIndicators.expressCharging"
-							[isVoltageError]="batteryIndicators.voltageError">
+							[isVoltageError]="batteryIndicators.voltageError"
+							[timeText]="batteryIndicators.timeText">
 						</vtr-battery-indicator>
 					</div>
 				</div>
@@ -27,23 +28,24 @@
 						</h2>
 					</div>
 				</div>
-				<!-- row-1 -->
 				<div class="row">
+				<!-- row-1 -->
+				<!-- <div class="row"> -->
 					<div class="col-2 p-0 battery-label-text">{{'device.deviceSettings.batteryGauge.details.status' | translate }}</div>
 					<div class="col-2 p-0 battery-value-text">
-						{{ model.chargeStatusString }}
+						{{ model.chargeStatusString | translate}}
 					</div>
-					<div class="col-2 p-0 battery-label-text">{{'device.deviceSettings.batteryGauge.details.wattage' | translate }}</div>
-					<div class="col-2 p-0 battery-value-text">
-						{{ model.wattage ?  model.wattage + " W" : ""}}
+					<div *ngIf="isValid(model.wattage)" class="col-2 p-0 battery-label-text">{{'device.deviceSettings.batteryGauge.details.wattage' | translate }}</div>
+					<div *ngIf="isValid(model.wattage)" class="col-2 p-0 battery-value-text">
+						{{ model.wattage + " W"}}
 					</div>
 					<div class="col-2 p-0 battery-label-text">{{'device.deviceSettings.batteryGauge.details.barcode' | translate }}</div>
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.barCode }}
 					</div>
-				</div>
+				<!-- </div> -->
 				<!-- row-2 -->
-				<div class="row">
+				<!-- <div class="row"> -->
 					<div class="col-2 p-0 battery-label-text">
 						{{'device.deviceSettings.batteryGauge.details.remainingPercent' | translate }}
 					</div>
@@ -62,13 +64,13 @@
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.fruPart }}
 					</div>
-				</div>
+				<!-- </div> -->
 				<!-- row-3 -->
-				<div class="row">
-					<div class="col-2 p-0 battery-label-text">
-						{{ remainingTimeText }}
+				<!-- <div class="row"> -->
+					<div *ngIf="isValid(model.remainingTime)" class="col-2 p-0 battery-label-text">
+						{{ model.remainingTimeText == "" ? remainingTimeText : model.remainingTimeText }}
 					</div>
-					<div class="col-2 p-0 battery-value-text">
+					<div *ngIf="isValid(model.remainingTime)" class="col-2 p-0 battery-value-text">
 						{{ model.remainingTime | minutesToHourmin }}
 					</div>
 					<div class="col-2 p-0 battery-label-text">
@@ -81,11 +83,11 @@
 						{{'device.deviceSettings.batteryGauge.details.chemistry' | translate }}
 					</div>
 					<div class="col-2 p-0 battery-value-text">
-						{{ model.deviceChemistry }}
+						{{ model.deviceChemistry | translate }}
 					</div>
-				</div>
+				<!-- </div> -->
 				<!-- row-4 -->
-				<div class="row">
+				<!-- <div class="row"> -->
 					<div class="col-2 p-0 battery-label-text">
 						{{'device.deviceSettings.batteryGauge.details.remainingCap' | translate }}
 					</div>
@@ -104,9 +106,9 @@
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.designCapacity }} Wh
 					</div>
-				</div>
+				<!-- </div> -->
 				<!-- row-5 -->
-				<div class="row">
+				<!-- <div class="row"> -->
 					<div class="col-2 p-0 battery-label-text">
 						{{'device.deviceSettings.batteryGauge.details.fullChargeCap' | translate }}
 					</div>
@@ -125,9 +127,9 @@
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.designVoltage }} V
 					</div>
-				</div>
+				<!-- </div> -->
 				<!-- row-5 -->
-				<div class="row">
+				<!-- <div class="row"> -->
 					<div class="col-2 p-0 battery-label-text">	{{'device.deviceSettings.batteryGauge.details.volts' | translate }}</div>
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.voltage }} V
@@ -144,8 +146,8 @@
 					<div class="col-2 p-0 battery-value-text">
 						{{ model.firmwareVersion }}
 					</div>
+				<!-- </div> -->
 				</div>
-
 				<!-- battery gauge section - raj : required in MVP 2 -->
 				<!-- <div class="battery-gauge p-5 mt-5">
 					<div class="container-fluid">

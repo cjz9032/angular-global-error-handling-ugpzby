@@ -6,8 +6,9 @@ import {
 	Input,
 	HostListener,
 	SimpleChanges,
-	OnChanges
+	OnChanges,
 } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-battery-indicator',
@@ -20,6 +21,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	public fillWidth = 0;
 	public fillStartColor = '#ff0000';
 	public fillEndColor = '#00ff00';
+	hideRemainingTimeTxt = false;
 
 	@ViewChild('battery') battery: ElementRef;
 	@ViewChild('batteryIndicator') batteryIndicator: ElementRef;
@@ -30,18 +32,22 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	@Input() percentage = 50; // number without % symbol
 	@Input() remainingHour = 0; // number of hours remaining
 	@Input() remainingMinutes = 0; // number of minutes remaining
+	@Input() timeText = '';
 
-	constructor() { }
+	constructor(public translate: TranslateService) {
+	}
 
 	ngOnInit() {
 		this.getCssDeclaration();
 		this.refreshLevel();
+		this.checkRemainingTimeIsZero();
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
 		if (changes['percentage'] && !changes['percentage'].firstChange) {
 			this.refreshLevel();
 		}
+		this.checkRemainingTimeIsZero();
 	}
 
 	// Note : when page is resized, battery fill is not showing correctly.
@@ -148,16 +154,17 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	}
 
 	public getTimeRemaining(): string {
+		this.checkRemainingTimeIsZero();
 		if (Number.isNaN(this.remainingMinutes)) {
-			return "0 minutes";
+			return '';
 		}
 		const hours =
-			this.remainingHour > 0 && this.remainingHour < 2 ? 'hour' : 'hours';
+			this.remainingHour > 0 && this.remainingHour < 2 ? this.translate.instant('device.deviceSettings.batteryGauge.hour') : this.translate.instant('device.deviceSettings.batteryGauge.hours');
 		const minutes =
 			this.remainingMinutes > 0 && this.remainingMinutes < 2
-				? 'minute'
-				: 'minutes';
-		if(this.remainingHour == 0) {
+				? this.translate.instant('device.deviceSettings.batteryGauge.minute')
+				: this.translate.instant('device.deviceSettings.batteryGauge.minutes');
+		if (this.remainingHour === 0) {
 			return `${this.remainingMinutes} ${minutes}`;
 		}
 		return `${this.remainingHour} ${hours} ${
@@ -165,6 +172,22 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 			} ${minutes}`;
 	}
 
+	checkRemainingTimeIsZero() {
+		let isZero = false;
+		if (Number.isNaN(this.remainingMinutes)) {
+			this.hideRemainingTimeTxt = true;
+			return;
+		}
+		if (this.remainingHour === 0) {
+			if (this.remainingMinutes === 0) {
+				this.hideRemainingTimeTxt = true;
+			} else {
+				this.hideRemainingTimeTxt = false;
+			}
+			return;
+		}
+		this.hideRemainingTimeTxt = false;
+	}
 	// returns windows object
 	private getCssPropertyValue(propertyName: string): string {
 		if (this.cssStyleDeclaration) {

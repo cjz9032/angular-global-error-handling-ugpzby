@@ -1,159 +1,165 @@
 @import "../../../app.theme";
 
 .vtr-widget-device {
-  box-shadow: $drop_shadow;
-  border-radius: $border_radius;
-  background-color: $light;
-  overflow: hidden;
-  position: relative;
-  .circleimage {
-    img {
-      position: absolute;
-      top: -13rem;
-      right: -10rem;
-      width: 42rem;
-      height: 45rem;
-      min-width: 20rem;
-      max-width: 42rem;
-    }
-  }
-
-  .family {
-    color: $main_dark;
-    font-size: 3.8rem;
-  }
-  .device-sub-header {
-    color: $shade_darkest;
-	font-size: 1.4rem;
-	@media #{$mediaquery_9} {
-		font-size: 1.25rem;
+	box-shadow: $drop_shadow;
+	border-radius: $border_radius;
+	background-color: $light;
+	overflow: hidden;
+	position: relative;
+	.circleimage {
+		img {
+			position: absolute;
+			top: 2rem;
+			right: 2rem;
+			width: 20rem;
+		}
 	}
-  }
 
-  .sub-header-separator {
-    color: $shade_darkest;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-	font-size: 1.4rem;
-	@media #{$mediaquery_9} {
-		font-size: 1.25rem;
+	.family {
+		color: $main_dark;
+		font-size: 3.8rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		max-width: 75%;
+		@media #{$mediaquery_12} {
+			max-width: 65%;
+		}
 	}
-  }
+	.device-sub-header {
+		color: $shade_darkest;
+		font-size: 1.4rem;
+		@media #{$mediaquery_X1} {
+			font-size: 1.25rem;
+		}
+	}
 
-  .subheader {
-    color: $main_dark;
-    font-size: 3rem;
-    margin-top: 4rem;
-    font-weight: $weight_bold;
-  }
+	.sub-header-separator {
+		color: $shade_darkest;
+		margin-left: 1.5rem;
+		margin-right: 1.5rem;
+		font-size: 1.4rem;
+		@media #{$mediaquery_X1} {
+			font-size: 1.25rem;
+		}
+	}
 
-  .status-list {
-    margin-top: 2.7rem;
-    list-style: none;
-    padding: 0;
-    background-color: $light;
-    border: 0.1rem solid $shade_lightest;
-    li {
-      margin: 0;
-      padding: 3rem 1.3rem 3rem 0;
-      border-bottom: 1px solid $shade_lighter;
-      &:last-child {
-        border: none;
-      }
-      &:hover {
-        background-color: $shade_extralight;
-      }
-      &.good {
-        .status-icon {
-          .icon-bkg {
-            background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
-            border-color: $go_dark;
-          }
-        }
+	.subheader {
+		color: $main_dark;
+		font-size: 3rem;
+		margin-top: 4rem;
+		font-weight: $weight_bold;
+	}
 
-        .detail {
-          color: $shade_darkest;
-          /*  &.highlight {
+	.status-list {
+		margin-top: 2.7rem;
+		list-style: none;
+		padding: 0;
+		background-color: $light;
+		border: 0.1rem solid $shade_lightest;
+		li {
+			margin: 0;
+			padding: 3rem 1.3rem 3rem 0;
+			border-bottom: 1px solid $shade_lighter;
+			&:last-child {
+				border: none;
+			}
+			&:hover {
+				background-color: $shade_extralight;
+			}
+			&.good {
+				.status-icon {
+					.icon-bkg {
+						background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+						background-color: $go_dark;
+						border-color: $go_dark;
+					}
+				}
+
+				.detail {
+					color: $shade_darkest;
+					/*  &.highlight {
             color: $shade_darkest;
           } */
-        }
-      }
-      &.bad {
-        .status-icon {
-          .icon-bkg {
-            background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
-            border-color: $stop_dark;
-          }
-        }
-        .detail {
-          color: $stop;
-        }
-        .arrow {
-          color: $stop;
-        }
-      }
-      a {
-        &:hover {
-          text-decoration: none;
-        }
-      }
-      .status-icon {
-        .icon-bkg {
-          display: inline-block;
-          border-radius: 50%;
-          height: 3.3rem;
-          width: 3.3rem;
-          border-width: 3px;
-          border-style: solid;
-          text-align: center;
-          fa-icon {
-            font-size: 1.6rem;
-            line-height: 2.9rem;
-            color: $light;
-          }
-        }
-      }
-      .title {
-        font-size: 1.5rem;
-        font-weight: $weight_medium;
-        margin-bottom: 0.5rem;
-        color: $main_darker;
+				}
+			}
+			&.bad {
+				.status-icon {
+					.icon-bkg {
+						background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+						background-color: $stop_dark;
+						border-color: $stop_dark;
+					}
+				}
+				.detail {
+					color: $stop;
+				}
+				.arrow {
+					color: $stop;
+				}
+			}
+			a {
+				&:hover {
+					text-decoration: none;
+				}
+			}
+			.status-icon {
+				.icon-bkg {
+					display: inline-block;
+					border-radius: 50%;
+					height: 3.3rem;
+					width: 3.3rem;
+					border-width: 0.3rem;
+					border-style: solid;
+					text-align: center;
+					fa-icon {
+						font-size: 1.6rem;
+						line-height: 2.7rem;
+						color: $light;
+					}
+				}
+			}
+			.title {
+				font-size: 1.5rem;
+				font-weight: $weight_medium;
+				margin-bottom: 0.5rem;
+				color: $main_darker;
 
-        .systemDetails {
-          font-size: 1.4rem;
-          font-weight: $weight_light;
-          color: $shade_darkest;
-        }
-      }
-      .description {
-        font-size: 1.4rem;
-        color: $shade;
-      }
-      .detail {
-        font-size: 1.4rem;
-        text-decoration: underline;
-        margin-right: -3rem;
-        &.highlight {
-          text-decoration: underline;
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-      .arrow {
-        color: $main_darker;
-        line-height: 3.8rem;
-        font-size: 1.1rem;
-        font-weight: $weight_light;
-      }
-	}
-	.status-block{
-		@media #{$mediaquery_10} {
-			width: 43%;
+				.systemDetails {
+					font-size: 1.4rem;
+					font-weight: $weight_light;
+					color: $shade_darkest;
+				}
+			}
+			.description {
+				font-size: 1.4rem;
+				color: $shade;
+			}
+			.detail {
+				font-size: 1.4rem;
+				text-decoration: underline;
+				margin-right: -3rem;
+				&.highlight {
+					text-decoration: underline;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+			.arrow {
+				color: $main_darker;
+				line-height: 3.8rem;
+				font-size: 1.1rem;
+				font-weight: $weight_light;
+			}
 		}
-		@media #{$mediaquery_11} {
-			width: 55%;
+		.status-block {
+			@media #{$mediaquery_X2} {
+				width: 43%;
+			}
+			@media #{$mediaquery_X3} {
+				width: 55%;
+			}
 		}
 	}
-  }
 }

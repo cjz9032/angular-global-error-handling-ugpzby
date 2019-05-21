@@ -35,24 +35,27 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	// private lastScanTime = new Date('1970-01-01T01:00:00');
 	private nextScheduleScanTime: string;
 	private isScheduleScanEnabled = false;
-	public percentCompleted = 0;
 	public criticalUpdates: AvailableUpdateDetail[];
 	public recommendedUpdates: AvailableUpdateDetail[];
 	public optionalUpdates: AvailableUpdateDetail[];
-	public isUpdatesAvailable = false;
+	public ignoredUpdates: AvailableUpdateDetail[];
 	public isUpdateCheckInProgress = false;
-	public isUpdateDownloading = false;
-	public installationPercent = 0;
-	public downloadingPercent = 0;
 	public isRebootRequested = false;
-	public isInstallationSuccess = false;
-	public isInstallationCompleted = false;
 	public showFullHistory = false;
 	private notificationSubscription: Subscription;
 	private isComponentInitialized = false;
 	public updateTitle = '';
 	private isUserCancelledUpdateCheck = false;
+
+	public isInstallationSuccess = false;
+	public isInstallationCompleted = false;
+	public percentCompleted = 0;
+	public isUpdatesAvailable = false;
+	public isUpdateDownloading = false;
+	public installationPercent = 0;
+	public downloadingPercent = 0;
 	public isInstallingAllUpdates = true;
+
 	public isOnline = true;
 	public offlineSubtitle: string;
 
@@ -133,7 +136,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	};
 
 	constructor(
-		private systemUpdateService: SystemUpdateService,
+		public systemUpdateService: SystemUpdateService,
 		private commonService: CommonService,
 		private ngZone: NgZone,
 		private modalService: NgbModal,
@@ -144,12 +147,21 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
+		this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
+		this.percentCompleted = this.systemUpdateService.percentCompleted;
+		this.isUpdatesAvailable = this.systemUpdateService.isUpdatesAvailable;
+		this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
+		this.installationPercent = this.systemUpdateService.installationPercent;
+		this.downloadingPercent = this.systemUpdateService.downloadingPercent;
+		this.isInstallingAllUpdates = this.systemUpdateService.isInstallingAllUpdates;
+
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
 
-		if (this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isInstallationComplete) {
-			this.isUpdatesAvailable = true;
+		if (this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isInstallationCompleted) {
+			this.systemUpdateService.isUpdatesAvailable = true;
 			this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 		}
 
@@ -204,8 +216,13 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private getLastUpdateScanDetail() {
 		if (this.systemUpdateService.isShellAvailable) {
+			// tslint:disable-next-line: no-console
+			console.time('getMostRecentUpdateInfo');
 			this.systemUpdateService.getMostRecentUpdateInfo()
 				.then((value: any) => {
+					// tslint:disable-next-line: no-console
+					console.timeEnd('getMostRecentUpdateInfo');
+
 					// console.log('getLastUpdateScanDetail.then', value);
 					if (value.lastInstallTime && value.lastInstallTime.length > 0) {
 						this.lastInstallTime = value.lastInstallTime;
@@ -249,7 +266,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.isUserCancelledUpdateCheck = false;
 			this.isUpdateCheckInProgress = true;
 			this.isUpdatesAvailable = false;
+			this.systemUpdateService.isUpdatesAvailable = false;
 			this.isInstallingAllUpdates = true;
+			this.systemUpdateService.isInstallingAllUpdates = true;
 			this.resetState();
 			this.systemUpdateService.checkForUpdates();
 		}
@@ -267,19 +286,31 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.systemUpdateService.toggleUpdateSelection(item.name, item.checked);
 	}
 
-	private installAllUpdate() {
-		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
-			this.isInstallingAllUpdates = true;
-			this.resetState();
-			this.systemUpdateService.installAllUpdates();
+	public onIgnoredUpdate($event: any){
+		const packageName = $event.packageName;
+		const isIgnored = $event.isIgnored;
+		if (isIgnored === true){
+			this.systemUpdateService.ignoreUpdate(packageName);
+		} else {
+			this.systemUpdateService.unIgnoreUpdate(packageName);
 		}
 	}
 
-	private installSelectedUpdate() {
+	private installAllUpdate(removeDelayedUpdates: boolean) {
+		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
+			this.isInstallingAllUpdates = true;
+			this.systemUpdateService.isInstallingAllUpdates = true;
+			this.resetState();
+			this.systemUpdateService.installAllUpdates(removeDelayedUpdates);
+		}
+	}
+
+	private installSelectedUpdate(removeDelayedUpdates: boolean) {
 		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
 			this.isInstallingAllUpdates = false;
+			this.systemUpdateService.isInstallingAllUpdates = false;
 			this.resetState();
-			this.systemUpdateService.installSelectedUpdates();
+			this.systemUpdateService.installSelectedUpdates(removeDelayedUpdates);
 		}
 	}
 
@@ -312,7 +343,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	public isUpdateListVisible() {
-		const isVisible = (this.isUpdatesAvailable && !this.isUpdateDownloading) || this.isInstallationCompleted;
+		const isVisible = (this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isUpdateDownloading) || this.systemUpdateService.isInstallationCompleted;
 		return isVisible;
 	}
 
@@ -332,8 +363,10 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				centered: true,
 				windowClass: 'common-confirmation-modal'
 			});
+		modalRef.componentInstance.metricsParent = "Pages.SystemUpdate.RebootRequiredControl";
 		const { rebootType, packages } = this.systemUpdateService.getRebootType(this.systemUpdateService.updateInfo.updateList, source);
-
+		let removeDelayedUpdates = false;
+		console.log('reboot tye is', rebootType, packages);
 		if (rebootType === UpdateRebootType.RebootDelayed) {
 			this.showRebootDelayedModal(modalRef);
 		} else if (rebootType === UpdateRebootType.RebootForced) {
@@ -343,7 +376,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		} else {
 			modalRef.dismiss();
 			// its normal update type installation which doesn't require rebooting/power-off
-			this.installUpdateBySource(source);
+			this.installUpdateBySource(source, removeDelayedUpdates);
 			return;
 		}
 		modalRef.componentInstance.packages = packages;
@@ -352,14 +385,21 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		modalRef.result.then(
 			result => {
 				// on open
-				console.log('common-confirmation-modal', result, source);
+				console.log('common-confirmation-modal on open', result, source);
 				if (result) {
-					this.installUpdateBySource(source);
+					console.log('confirmation model', removeDelayedUpdates);
+					if(this.systemUpdateService.getACAttachedStatus()) {
+						removeDelayedUpdates = false;
+					} else {
+						removeDelayedUpdates = true;
+					}
+					console.log('confirmation model,  remove reboot delay', removeDelayedUpdates);
+					this.installUpdateBySource(source, removeDelayedUpdates);
 				}
 			},
 			reason => {
 				// on close
-				console.log('common-confirmation-modal', reason, source);
+				console.log('common-confirmation-modal on close', reason, source);
 			}
 		);
 	}
@@ -367,11 +407,12 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public onGetSupportClick($event: any) {
 	}
 
-	private installUpdateBySource(source: string) {
+	private installUpdateBySource(source: string, removeDelayedUpdates: boolean) {
+		console.log('install udpate by source,', source);
 		if (source === 'selected') {
-			this.installSelectedUpdate();
+			this.installSelectedUpdate(removeDelayedUpdates);
 		} else {
-			this.installAllUpdate();
+			this.installAllUpdate(removeDelayedUpdates);
 		}
 	}
 
@@ -398,10 +439,19 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private setUpdateByCategory(updateList: Array<AvailableUpdateDetail>) {
 		if (updateList) {
-			this.optionalUpdates = this.filterUpdate(updateList, 'optional');
-			this.recommendedUpdates = this.filterUpdate(updateList, 'recommended');
-			this.criticalUpdates = this.filterUpdate(updateList, 'critical');
+			this.ignoredUpdates =  this.filterIgnoredUpdate(updateList, true);
+			const unIgnoredUpdates = this.filterIgnoredUpdate(updateList, false);
+			this.optionalUpdates = this.filterUpdate(unIgnoredUpdates, 'optional');
+			this.recommendedUpdates = this.filterUpdate(unIgnoredUpdates, 'recommended');
+			this.criticalUpdates = this.filterUpdate(unIgnoredUpdates, 'critical');
 		}
+	}
+
+	private filterIgnoredUpdate(updateList: Array<AvailableUpdateDetail>, isIgnored: boolean) {
+		const updates = updateList.filter((value: AvailableUpdateDetail) => {
+			return (value.isIgnored === isIgnored);
+		});
+		return updates;
 	}
 
 	private filterUpdate(updateList: Array<AvailableUpdateDetail>, packageSeverity: string) {
@@ -419,12 +469,12 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				case UpdateProgress.UpdateCheckInProgress:
 					this.ngZone.run(() => {
 						this.isUpdateCheckInProgress = true;
-						this.percentCompleted = payload;
+						this.percentCompleted = this.systemUpdateService.percentCompleted;
 					});
 					break;
 				case UpdateProgress.UpdateCheckCompleted:
 					this.isUpdateCheckInProgress = false;
-					this.percentCompleted = 0;
+					this.percentCompleted = this.systemUpdateService.percentCompleted;
 
 					for (const key in SystemUpdateStatusMessage) {
 						if (SystemUpdateStatusMessage.hasOwnProperty(key)) {
@@ -440,25 +490,30 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					break;
 				case UpdateProgress.UpdatesAvailable:
 					this.isUpdateCheckInProgress = false;
-					this.percentCompleted = 0;
-					this.isUpdatesAvailable = true;
+					this.percentCompleted = this.systemUpdateService.percentCompleted;
+					this.isUpdatesAvailable = this.systemUpdateService.isUpdatesAvailable;
+					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.setUpdateByCategory(payload.updateList);
+					this.systemUpdateService.getIgnoredUpdates();
 					break;
 				case UpdateProgress.InstallationStarted:
 					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 					break;
 				case UpdateProgress.InstallingUpdate:
+					this.isUpdateCheckInProgress = false;
 					this.ngZone.run(() => {
-						this.isUpdateDownloading = true;
-						this.installationPercent = payload.installPercentage;
-						this.downloadingPercent = payload.downloadPercentage;
+						this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
+						this.installationPercent = this.systemUpdateService.installationPercent;
+						this.downloadingPercent = this.systemUpdateService.downloadingPercent;
 					});
 					break;
 				case UpdateProgress.InstallationComplete:
-					this.isUpdateDownloading = false;
-					this.isInstallationCompleted = true;
-					this.isInstallationSuccess = this.getInstallationSuccess(payload);
+					this.systemUpdateService.getUpdateHistory();
+					this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
+					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
+					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
 					this.checkRebootRequested();
+					this.setUpdateByCategory(payload.updateList);
 					break;
 				case UpdateProgress.AutoUpdateStatus:
 					this.autoUpdateOptions[0].isChecked = payload.criticalAutoUpdates;
@@ -470,13 +525,18 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.offlineSubtitle = `${this.getLastUpdatedText()}<br>${this.getNextUpdatedScanText()}`;
 					break;
 				case UpdateProgress.UpdateDownloadCancelled:
-					this.isUpdateDownloading = false;
-					this.isInstallingAllUpdates = true;
-					this.percentCompleted = 0;
-					this.isUpdatesAvailable = true;
-					this.installationPercent = 0;
-					this.downloadingPercent = 0;
+					this.ngZone.run(() => {
+						this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
+						this.isInstallingAllUpdates = this.systemUpdateService.isInstallingAllUpdates;
+						this.percentCompleted = this.systemUpdateService.percentCompleted;
+						this.isUpdatesAvailable = this.systemUpdateService.isUpdatesAvailable;
+						this.installationPercent = this.systemUpdateService.installationPercent;
+						this.downloadingPercent = this.systemUpdateService.downloadingPercent;
+					});
 					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
+					break;
+				case UpdateProgress.IgnoredUpdates:
+					this.setUpdateByCategory(notification.payload);
 					break;
 				default:
 					break;
@@ -494,31 +554,32 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isUpdateCheckInProgress = true;
 					break;
 				case UpdateProgress.ScheduleUpdateDownloading:
-					this.isUpdateCheckInProgress = false;
-					this.isUpdateDownloading = true;
-					this.installationPercent = 0;
-					if (payload.downloadProgress) {
-						this.downloadingPercent = payload.downloadProgress.progressinPercentage;
-					}
+					this.ngZone.run(() => {
+						this.isUpdateCheckInProgress = false;
+						this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
+						this.installationPercent = this.systemUpdateService.installationPercent;
+						this.downloadingPercent = this.systemUpdateService.downloadingPercent;
+					});
 					break;
 				case UpdateProgress.ScheduleUpdateInstalling:
-					this.isUpdateCheckInProgress = false;
-					this.isUpdateDownloading = true;
-					this.downloadingPercent = 100;
-					if (payload.installProgress) {
-						this.installationPercent = payload.installProgress.progressinPercentage;
-					}
+					this.ngZone.run(() => {
+						this.isUpdateCheckInProgress = false;
+						this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
+						this.downloadingPercent = this.systemUpdateService.downloadingPercent;
+						this.installationPercent = this.systemUpdateService.installationPercent;
+					});
 					break;
 				case UpdateProgress.ScheduleUpdateIdle:
 					this.isUpdateCheckInProgress = false;
-					this.isUpdateDownloading = false;
+					this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
 					this.resetState();
 					break;
 				case UpdateProgress.ScheduleUpdateCheckComplete:
-					this.isUpdateDownloading = false;
-					this.isInstallationCompleted = true;
-					this.isInstallationSuccess = this.getInstallationSuccess(payload);
+					this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
+					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
+					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
 					this.setUpdateByCategory(payload.updateList);
+					this.systemUpdateService.getUpdateHistory();
 					this.checkRebootRequested();
 					break;
 				default:
@@ -528,9 +589,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	private resetState() {
-		this.isUpdateDownloading = false;
-		this.isInstallationSuccess = false;
-		this.isInstallationCompleted = false;
+		this.systemUpdateService.isUpdateDownloading = false;
+		this.systemUpdateService.isInstallationSuccess = false;
+		this.systemUpdateService.isInstallationCompleted = false;
 	}
 
 	private getScheduleUpdateStatus(reportProgress: boolean) {
@@ -567,23 +628,57 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	// check for installed updates, if all installed correctly return true else return false
-	private getInstallationSuccess(payload: any): boolean {
-		let isSuccess = false;
-		if (payload.status !== SystemUpdateStatusMessage.SUCCESS.code) {
-			isSuccess = false;
-		} else {
-			for (let index = 0; index < payload.updateList.length; index++) {
-				const update = payload.updateList[index];
-				if (update.installationStatus === UpdateActionResult.Success || update.installationStatus === UpdateActionResult.Unknown) {
-					isSuccess = true;
+	private setIgnoredUpdates(ignoredUpdates){
+		const ignoredUpdateDetails = [];
+		const unIgnoredRecommendUpdates = [];
+		const unIgnoredOptionalUpdates = [];
+		if (this.recommendedUpdates && this.recommendedUpdates.length > 0) {
+			this.recommendedUpdates.forEach((update) => {
+				const result = ignoredUpdates.find(x => x.packageName === update.packageName);
+				if (result) {
+					update.isIgnored = true;
+					ignoredUpdateDetails.push(update);
 				} else {
-					isSuccess = false;
-					break;
+					update.isIgnored = false;
+					unIgnoredRecommendUpdates.push(update);
 				}
-			}
+			});
+
 		}
-		return isSuccess;
+
+		if (this.optionalUpdates && this.optionalUpdates.length > 0) {
+			this.optionalUpdates.forEach((update) => {
+				const result = ignoredUpdates.find(x => x.packageName === update.packageName);
+				if (result) {
+					update.isIgnored = true;
+					ignoredUpdateDetails.push(update);
+				} else {
+					update.isIgnored = false;
+					unIgnoredOptionalUpdates.push(update);
+				}
+			});
+
+		}
+
+		if (this.ignoredUpdates && this.ignoredUpdates.length > 0) {
+			this.ignoredUpdates.forEach((update) => {
+				const result = ignoredUpdates.find(x => x.packageName === update.packageName);
+				if (result) {
+					update.isIgnored = true;
+					ignoredUpdateDetails.push(update);
+				} else if (update.packageSeverity === UpdateInstallSeverity.Recommended) {
+					update.isIgnored = false;
+					unIgnoredRecommendUpdates.push(update);
+				} else if (update.packageSeverity === UpdateInstallSeverity.Optional) {
+					update.isIgnored = false;
+					unIgnoredOptionalUpdates.push(update);
+				}
+			});
+		}
+
+		this.recommendedUpdates = unIgnoredRecommendUpdates;
+		this.optionalUpdates = unIgnoredOptionalUpdates;
+		this.ignoredUpdates = ignoredUpdateDetails;
 	}
 
 	public onCancelUpdateDownload() {

@@ -39,8 +39,16 @@
 	margin-bottom: 4rem !important;
 }
 
+.mb-60 {
+	margin-bottom: 6rem !important;
+}
+
 .mb-80 {
 	margin-bottom: 8rem !important;
+}
+
+.mb-100 {
+	margin-bottom: 10rem !important;
 }
 
 .px-20 {
@@ -107,8 +115,16 @@
 		padding: 3.5rem !important;
 	}
 
+	.mb-60 {
+		margin-bottom: 5.5rem !important;
+	}
+
 	.mb-80 {
 		margin-bottom: 7rem !important;
+	}
+
+	.mb-100 {
+		margin-bottom: 9rem !important;
 	}
 }
 
@@ -131,8 +147,16 @@
 		padding: 3rem !important;
 	}
 
+	.mb-60 {
+		margin-bottom: 5rem !important;
+	}
+
 	.mb-80 {
-		margin-bottom: 6rem !important;
+		margin-bottom: 6.5rem !important;
+	}
+
+	.mb-100 {
+		margin-bottom: 8rem !important;
 	}
 }
 
@@ -155,8 +179,16 @@
 		padding: 2.5rem !important;
 	}
 
+	.mb-60 {
+		margin-bottom: 4.5rem !important;
+	}
+
 	.mb-80 {
-		margin-bottom: 5rem !important;
+		margin-bottom: 6rem !important;
+	}
+
+	.mb-100 {
+		margin-bottom: 7.5rem !important;
 	}
 }
 
@@ -179,12 +211,20 @@
 		padding: 2rem !important;
 	}
 
-	.mb-80 {
+	.mb-60 {
 		margin-bottom: 4rem !important;
+	}
+
+	.mb-80 {
+		margin-bottom: 5rem !important;
+	}
+
+	.mb-100 {
+		margin-bottom: 7rem !important;
 	}
 }
 //Added new media query for max-width:800 where vtr-page-right-column margin-left , margin-top css are added to fix VAN-1049 issue.
-@media #{$mediaquery_8} {
+@media #{$mediaquery_10} {
 	.vtr-page-right-column {
 		// margin-left: 4.2rem;
 		// margin-top: 4rem;
@@ -223,6 +263,10 @@
 	z-index: 10001;
 }
 
+.modal-content{
+	user-select: none;
+}
+
 .battery-detail-modal-title {
 	color: $main_dark;
 	font-size: 2.5rem;
@@ -231,12 +275,42 @@
 
 .welcome-modal-size .modal-dialog {
 	top: $modal_top_margin;
-	max-width: 70rem !important;
 	margin: 0 auto;
 	overflow: hidden;
 	min-height: 60rem;
+	margin-bottom: 2rem;
+	max-width: 600px;
+	border-radius: 5px;
+	@media #{$mediaquery_11} {
+		top: 4rem;
+		width: 460px;
+	}
+	.modal-header {
+		background: black;
+		border-radius: 0px;
+		.close-button {
+			font-size: 3rem;
+			opacity: 0.8;
+			color: white;
+			font-weight: 100;
+			outline: none;
+		}
+	}
+	// .vtr-modal-body {
+	// 	width: 600px;
+	// 	// margin: auto;
+	// 	// margin-top: 50px;
+	// 	@media #{$mediaquery_11} {
+	// 		width: 460px;
+	// 		// margin-top: 25px;
+	// 	}
+	// }
 }
 
+// added to hide the unwanted border in overlay welcome tutorial and Feedabck page
+.modal-content{
+	border:0;
+}
 // override for bootstrap modal size
 .lenovo-id-modal-size .modal-dialog {
 	top: 3.5rem;

@@ -64,6 +64,8 @@ export class WidgetCarouselComponent implements OnInit {
 	}
 
 	parseToCarouselModel() {
+		this.carouselModel = [];
+
 		for (var i = 0; i < this.data.length; i++) {
 			this.carouselModel.push({
 				source: this.data[i].source,

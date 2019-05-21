@@ -22,7 +22,9 @@
 				<div class="button-box shift-right">
 					<vtr-ui-button (onClick)="onInstallAllUpdates($event)"
 						[upperCaseLabel]="true"
-						[label]="'Install all updates'"></vtr-ui-button>
+						[label]="'Install all updates'"
+						metricsParent="Pages.SystemUpdate.NewUpdateAvailable"
+						metricsItem="btn.Install all updates"></vtr-ui-button>
 				</div>
 			</div>
 		</div>
@@ -50,7 +52,7 @@
 			<div class="col">
 				<div class="text-regular">
 					Something went wrong during the downloading and installation of these updates.
-					Please make sure you are online and keep don't turn of your computer when installing updates.
+					Please make sure you are online and don't turn off your computer when installing updates.
 				</div>
 			</div>
 		</div>
@@ -69,7 +71,8 @@
 					*ngIf="criticalUpdates && criticalUpdates.length > 0">
 					<div class="col">
 						<div class="header">
-							<div class="heading">{{criticalUpdates.length}} Critical updates</div>
+							<div class="heading">{{criticalUpdates.length}}
+								{{'device.systemUpdates.criticalUpdates' | translate}}</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
 								[isInstallationCompleted]="isInstallationCompleted"
 								[isInstallationSuccess]="isInstallationSuccess"
@@ -83,8 +86,10 @@
 					*ngIf="recommendedUpdates && recommendedUpdates.length > 0">
 					<div class="col">
 						<div class="header">
-							<div class="heading">{{recommendedUpdates.length}} Recommended updates</div>
+							<div class="heading">{{recommendedUpdates.length}}
+								{{'device.systemUpdates.recommendedUpdates' | translate}}</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
+								(ignoreUpdate)="onIgnoreUpdate($event)"
 								[isInstallationCompleted]="isInstallationCompleted"
 								[isInstallationSuccess]="isInstallationSuccess"
 								[items]="recommendedUpdates"></vtr-ui-list-checkbox>
@@ -98,10 +103,43 @@
 						<div class="header">
 							<div class="heading">{{optionalUpdates.length}} Optional updates</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
+								(ignoreUpdate)="onIgnoreUpdate($event)"
 								[isInstallationCompleted]="isInstallationCompleted"
 								[isInstallationSuccess]="isInstallationSuccess"
 								[items]="optionalUpdates"></vtr-ui-list-checkbox>
 						</div>
+					</div>
+				</div>
+
+				<div class="row"
+					*ngIf="ignoredUpdates && ignoredUpdates.length > 0">
+					<div class="col">
+						<div class="header">
+							<div class="row d-flex justify-content-between w-100">
+								<div class="heading">{{ignoredUpdates.length}} 
+									{{'device.systemUpdates.ignoredUpdates' | translate}}</div>
+								<div class="px-3 collapse-control"
+									(click)="onToggle()">
+									<div *ngIf="isCollapsed"
+										class="collapse-text">
+										{{'common.ui.expand' | translate}}
+									</div>
+									<div *ngIf="!isCollapsed"
+										class="collapse-text">
+										{{'common.ui.collapse' | translate}}
+									</div>
+									<fa-icon *ngIf="isCollapsed"
+										[icon]="['fas', 'chevron-down']"></fa-icon>
+									<fa-icon *ngIf="!isCollapsed"
+										[icon]="['fas', 'chevron-up']"></fa-icon>
+								</div>
+							</div>
+						</div>
+						<vtr-ui-list-checkbox *ngIf="!isCollapsed" (checkChange)="onCheckChange($event)"
+								(ignoreUpdate)="onIgnoreUpdate($event)"
+								[isInstallationCompleted]="isInstallationCompleted"
+								[isInstallationSuccess]="isInstallationSuccess"
+								[items]="ignoredUpdates"></vtr-ui-list-checkbox>
 					</div>
 				</div>
 
@@ -112,7 +150,9 @@
 							<vtr-ui-button (onClick)="onInstallSelectedUpdates($event)"
 								[isDisabled]="!isUpdateSelected"
 								[upperCaseLabel]="true"
-								[label]="'Install Selected updates'"></vtr-ui-button>
+								[label]="'Install Selected updates'"
+								metricsParent="Pages.SystemUpdate.NewUpdateAvailable"
+								metricsItem="btn.Install selected updates"></vtr-ui-button>
 						</div>
 					</div>
 				</div>

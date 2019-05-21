@@ -12,6 +12,10 @@ export class TextClassPipe implements PipeTransform {
 				return 'badge-danger';
 			case 'not-installed':
 				return 'badge-danger';
+			case 'loading':
+				return 'badge-secondary';
+			case 'installing':
+				return 'installing-text';
 		}
 	}
 }

@@ -13,9 +13,9 @@ class BatteryDetail {
 
 	public chargeStatus: number;
 	public chargeStatusString: string;
-	public mainBatteryPercent: number;
 	public remainingPercent: number;
 	public remainingTime: number;
+	public remainingTimeText: string;// to show label on detail if 2 batteries with different charging status 
 	public remainingCapacity: number;
 	public fullChargeCapacity: number;
 	public voltage: number;
@@ -34,8 +34,6 @@ class BatteryDetail {
 	public isVoltageError: boolean; 
 	public isExpressCharging: boolean;
 	//#endregion
-
-	public batteryGaugeDetail: BatteryGaugeDetail;
 }
 
 export default BatteryDetail;

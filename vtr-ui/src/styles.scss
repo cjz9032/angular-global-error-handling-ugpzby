@@ -15,6 +15,8 @@ reference : https://fonts.google.com/specimen/Rubik
 
 @import "app/app.theme";
 
+
+
 html {
 	margin: 0;
 	padding: 0;
@@ -211,11 +213,12 @@ button {
 		border-style: solid;
 		text-align: center;
 		background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+		background-color: $go_dark;
 		border-color: $go_dark;
 
 		fa-icon {
 			font-size: 1.6rem;
-			line-height: 2.9rem;
+			line-height: 2.7rem;
 			color: $light;
 		}
 	}
@@ -231,11 +234,12 @@ button {
 		border-style: solid;
 		text-align: center;
 		background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+		background-color: $stop_dark;
 		border-color: $stop_dark;
 
 		fa-icon {
 			font-size: 1.6rem;
-			line-height: 2.9rem;
+			line-height: 2.7rem;
 			color: $light;
 		}
 	}
@@ -313,8 +317,6 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 .common-confirmation-modal {
 	.modal-dialog {
-		margin-top: 8rem;
-
 		.modal-content {
 			background-color: transparent;
 			border: none;
@@ -347,7 +349,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 /*Battery-charge-threshold-modal-styles*/
 .Battery-Charge-Threshold-Modal {
 	.modal-dialog {
-		max-width: 32%;
+		max-width: 35%;
 	}
 
 	.modal-content {
@@ -360,6 +362,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .Article-Detail-Modal {
 	.modal-dialog {
 		max-width: 70%;
+		margin: 1.75rem auto;
 		overflow-y: initial !important;
 	}
 
@@ -420,6 +423,13 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			max-width: 100%;
 			margin-bottom: 3rem;
 		}
+
+		p,
+		li,
+		ul
+		{
+			word-wrap: break-word;
+		}
 	}
 }
 
@@ -427,6 +437,13 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	.modal-dialog {
 		max-width: 70%;
 		overflow-y: initial !important;
+		@media #{$mediaquery_12} {
+			max-width: 95%;
+			margin: 1rem auto;
+		}
+		@media #{$mediaquery_13} {
+			max-width: 90%;
+		}
 	}
 
 	.modal-content {
@@ -452,11 +469,20 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			margin-bottom: 3rem;
 		}
 	}
+	.vtr-modal-threat-locator {
+		&.connection-error-modal {
+			margin-bottom: 4rem;
+			.iframe-container {
+				height: auto !important;
+			}
+		}
+	}
 }
 
-.About-Modal {
+.license-Modal {
 	.modal-dialog {
 		max-width: 70%;
+		margin: 1.75rem auto;
 		overflow-y: initial !important;
 	}
 
@@ -512,11 +538,29 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			margin-bottom: 1rem;
 		}
 
+		u {
+			word-break: break-all;
+			display: inline-block;
+		}
+
 		img,
 		iframe {
 			max-width: 100%;
 			margin-bottom: 3rem;
 		}
+	}
+}
+.weChat-Modal {
+	.modal-dialog {
+		// max-width: 75%;
+		margin: 1.75rem auto;
+		overflow-y: initial !important;
+	}
+
+	.modal-content {
+		border-radius: 1rem;
+		background: none;
+		border: none;
 	}
 }
 
@@ -596,6 +640,8 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	background: linear-gradient(135deg, $go 0%, $go_light 100%);
 }
 
+// gaming overrides need to be at the bottom here
+@import "./styles-gaming.scss";
 
 
 /************************* icomoon icons ****************/
@@ -619,10 +665,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
-	line-height: 1;
-	font-size:3.2rem;
-	margin-left:-0.6rem;
-	margin-right:-0.6rem;
+	font-size:2.2rem;
 
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
@@ -668,10 +711,11 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	content: "\e909";
 	color: #4a81fd;
 }
-.icomoon-game:before {
+.icomoon-game:before,.icomoon-games:before  {
 	content: "\e90a";
 	color: #4a81fd;
 }
+
 .icomoon-FA-Headset2x:before {
 	content: "\e90b";
 	color: #4a81fd;
@@ -704,7 +748,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	content: "\e912";
 	color: #4a81fd;
 }
-.icomoon-voice:before {
+.icomoon-voice:before,.icomoon-voip:before {
 	content: "\e913";
 	color: #4a81fd;
 }
@@ -728,7 +772,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	content: "\e918";
 	color: #4a81fd;
 }
-.icomoon-FA-Tachometer-alt-fast2x:before {
+.icomoon-performance:before {
 	content: "\e919";
 	color: #4a81fd;
 }
@@ -812,7 +856,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	content: "\e92d";
 	color: #4a81fd;
 }
-.icomoon-LE-CoolingDown2x:before {
+.icomoon-quietcool:before {
 	content: "\e92e";
 	color: #4a81fd;
 }
@@ -903,11 +947,11 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	content: "\e944";
 	color: #fff;
 }
-.icomoon-LE-Multiple-voices2x:before {
+.icomoon-multiplevoices:before {
 	content: "\e945";
 	color: #4a81fd;
 }
-.icomoon-LE-OnlyMyVoice2x:before {
+.icomoon-onlymyvoice:before {
 	content: "\e946";
 	color: #4a81fd;
 }
@@ -947,7 +991,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	content: "\e94f";
 	color: #4a81fd;
 }
-.icomoon-LE-Voice2x:before {
+.icomoon-normal:before {
 	content: "\e950";
 	color: #4a81fd;
 }
@@ -955,7 +999,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	content: "\e951";
 	color: #4a81fd;
 }
-.icomoon-LE-VoiceRecognition2x:before {
+.icomoon-voicerecognition:before {
 	content: "\e952";
 	color: #4a81fd;
 }
@@ -963,3 +1007,9 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	content: "\e953";
 	color: #4a81fd;
 }
+.icomoon-LE-Figleaf2x:before {
+	content: "\e93a";
+	color:#fff;
+}
+
+

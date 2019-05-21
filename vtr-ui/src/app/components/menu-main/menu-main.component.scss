@@ -11,7 +11,11 @@
 		background-color: $main_darker;
 		color: $light;
 		justify-content: left;
+		padding-right: 16px;
 
+		.active .icomoon::before{
+			color:$main;
+		}
 		.navbar-brand {
 			font-size: 5rem;
 			font-weight: $weight_bold;
@@ -20,6 +24,11 @@
 			background-color: $main;
 			text-align: center;
 			color: $light;
+			overflow: hidden;
+			img {
+				max-width: 100%;
+				max-height: 100%;
+			}
 		}
 
 		.navbar-text {
@@ -30,7 +39,7 @@
 				font-size: 2rem;
 
 				.app-name {
-					font-weight: $weight_medium;
+					font-weight: $weight_black;
 				}
 
 				.app-version {
@@ -55,7 +64,7 @@
 						font-weight: 400;
 						line-height: calc(#{$menu_height} - 0.65rem);
 						color: $light;
-						padding: 0 1.5rem;
+						padding: 0 2.5rem;
 						border-bottom: transparent solid 0.5rem;
 
 						@media #{$mediaquery_4} {
@@ -70,8 +79,16 @@
 							line-height: calc(#{$menu_height} - 0.5rem);
 						}
 
+						@media #{$mediaquery_9} {
+							padding: 0 0;
+						}
+						@media #{$mediaquery_8} {
+							padding: 0 0.5rem;
+						}
+
+
 						&.active {
-							border-bottom: $main solid 0.5rem;
+							border-bottom: $menu_hover solid 0.5rem;
 
 							.fa-icon {
 								color: $main;
@@ -80,17 +97,23 @@
 
 						&.user {
 							padding: 2rem 2rem 2rem 2rem;
-							margin-left: 2rem;
+							@media #{$mediaquery_9} {
+								padding: 2rem 0 2rem 0;
+							}
 							height: $menu_height;
 							line-height: 4.6rem;
 							border-bottom: none;
 							background-color: $main_darkest;
+
 
 							.user-initials {
 								display: inline-block;
 								text-align: center;
 								font-size: 2rem;
 								width: 4.6rem;
+								@media #{$mediaquery_9} {
+									width: 2.6rem;
+								}
 								height: 4.6rem;
 								border-radius: 2.3rem;
 								background-color: $main_darker;
@@ -104,7 +127,7 @@
 						box-shadow: $drop_shadow;
 						margin-top: -1rem;
 						padding: 2.5rem 1.5rem;
-						min-width: 20rem;
+						min-width: 22.5rem;
 
 						&.user {
 							margin-left: -1.5rem;
@@ -137,7 +160,8 @@
 								text-decoration: underline;
 
 								&:hover {
-									color: $main;
+									color: $menu_hover;
+									font-weight: $weight_bold;
 								}
 							}
 
@@ -184,6 +208,18 @@
 								right: 2rem;
 								top: 4rem;
 							}
+							&.user{
+								padding-right: 5.2rem;
+								@media #{$mediaquery_9} {
+									padding-right: 4.2rem;
+								}
+								&::after{
+									right: 3rem;
+								}
+								&::before{
+									right: 4rem;
+								}
+							}
 						}
 					}
 				}
@@ -205,5 +241,11 @@
 			padding-right: 0.3rem;
 			font-size: 2.1rem;
 		}
+		.navbar-icon{
+            display: inline-block;
+			position:relative;
+			top:0.3rem;
+		}
 	}
+
 }
