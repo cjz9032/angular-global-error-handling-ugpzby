@@ -42,6 +42,7 @@ import { ArticlesComponent } from './pages/articles/articles.component';
 import { ArticleSingleComponent } from './pages/articles/article-single/article-single.component';
 import { ArticlePreviewComponent } from './pages/articles/article-preview/article-preview.component';
 import { ArticleSidebarComponent } from './pages/articles/article-sidebar/article-sidebar.component';
+import { OneClickScanModule } from './feature/one-click-scan/one-click-scan.module';
 
 library.add(fal);
 
@@ -56,7 +57,8 @@ library.add(fal);
 		CheckBreachedAccountsModule,
 		TrackingMapModule,
 		NonPrivatePasswordModule,
-		VtrCommonModule
+		VtrCommonModule,
+		OneClickScanModule
 	],
 	declarations: [
 		// Mail Layout Components
