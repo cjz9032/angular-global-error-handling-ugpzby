@@ -107,7 +107,11 @@
 			"on": "开",
 			"off": "关",
 			"collapse": "折叠",
-			"expand": "扩大"
+			"expand": "扩大",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
 		}
 	},
 	"privacy": {
