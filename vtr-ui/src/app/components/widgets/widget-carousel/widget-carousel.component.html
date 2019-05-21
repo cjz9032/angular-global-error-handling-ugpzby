@@ -6,9 +6,10 @@
 			ngbSlide>
 			<a [href]="model.link"
 				vtrMetrics
-				[metricsItem]="'link.'+model.cardTitle"
+				[metricsItem]="model.cardTitle"
 				metricsEvent="itemClick"
 				metricsParent="carousel"
+			    [metricsItemPosition]="order"
 				target="_blank"
 				class="carousel-link"
 				[ngClass]="{'no-link': !model.link}"

@@ -23,6 +23,7 @@ export class WidgetCarouselComponent implements OnInit {
 	@Input() showNavigationArrows: boolean;
 	@Input() showNavigationIndicators: boolean;
 	@Input() wrap: boolean;
+	@Input() order:number;
 
 	constructor(private config: NgbCarouselConfig) {
 
