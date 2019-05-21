@@ -3,6 +3,8 @@ import * as $ from 'jquery';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
+import { CPUOCStatus } from 'src/app/data-models/system-update/cpu-overclock-status.model';
 
 @Component({
   selector: 'vtr-ui-gaming-collapsible-container',
@@ -16,16 +18,25 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	public selected = false;
 	public currentOption: string;
 	public currentDescription: string;
+	public CpuOCStatus: CPUOCStatus;
+
 
 	constructor(
 		shellService: VantageShellService,
-		commonSercice: CommonService
+		systemUpdateService: SystemUpdateService,
 	) {
-		this.currentOption = commonSercice.getLocalStorageValue(LocalStorageKey.CpuOCStatus);
-		this.currentOption = shellService.getCPUOverClockStatus();
+		this.currentOption = systemUpdateService.GetCPUOverClockStatus();
+		const CpuOCStatusFromShell = shellService.getCPUOCStatus();
+		if (CpuOCStatusFromShell !== undefined) {
+			this.currentOption = CpuOCStatusFromShell;
+			this.CpuOCStatus = new CPUOCStatus();
+			this.CpuOCStatus.cpuOCStatus = CpuOCStatusFromShell;
+			systemUpdateService.SetCPUOverClockStatus(this.CpuOCStatus);
+		}
 	}
 
 	ngOnInit() {
+		console.log(this.options);
 		this.options.forEach(option => {
 			this.currentOption = option.defaultOption ? option.name : this.currentOption;
 			this.currentDescription = option.defaultOption ? option.description : this.currentOption;
@@ -44,6 +55,7 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	}
 
 	public optionSelected(option) {
+		console.log(option);
 		this.currentOption = option.name;
 		this.showOptions = false;
 	}

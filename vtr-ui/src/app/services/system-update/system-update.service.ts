@@ -13,6 +13,8 @@ import { SystemUpdateStatusMessage } from 'src/app/data-models/system-update/sys
 import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enum';
 import { WinRT } from '@lenovo/tan-client-bridge';
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { CPUOCStatus } from 'src/app/data-models/system-update/cpu-overclock-status.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -688,5 +690,13 @@ export class SystemUpdateService {
 			}
 		}
 		return isSuccess;
+	}
+
+	public GetCPUOverClockStatus(): any  {
+		return this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus);
+	}
+
+	public SetCPUOverClockStatus(CpuOCStatus: CPUOCStatus): any {
+		return this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, CpuOCStatus);
 	}
 }

@@ -359,4 +359,24 @@ export class VantageShellService {
 
 		return undefined;
 	}
+
+	public getCPUOCStatus(): any {
+		if (this.phoenix) {
+			// TODO \Un comment below line when JSBridge is ready for integration.
+			// return this.phoenix.gaming.gamingOverclock.GetCpuOCStatus();
+			return 1;
+		}
+
+		return undefined;
+	}
+
+	public setCPUOCStatus(CPUOCStatus: Number): any {
+		if (this.phoenix) {
+			// TODO \Un comment below line when JSBridge is ready for integration.
+			// return this.phoenix.gaming.gamingOverclock.SetCpuOCStatus(CPUOCStatus);
+			return CPUOCStatus;
+		}
+
+		return undefined;
+	}
 }
