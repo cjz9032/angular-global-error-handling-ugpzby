@@ -6,7 +6,9 @@
 					<div class="row h-100">
 						<div class="col-8 monitor-col left">
 							<div class="monitor-section">
-
+								<div class="gaming-tooltip">
+									<p>{{'gaming.dashboard.device.systemInfo.systenTooltip'|translate}}</p>
+								</div>
 								<div class="monitor-inner gpu">
 									<div class="monitor-stack">
 										<div class="stack-container">
@@ -58,7 +60,7 @@
 									<div class="monitor-stack">
 										<div class="stack-container">
 											<div class="stack-content ram"></div>
-											 <div class="stack-mask"
+											<div class="stack-mask"
 											 [ngStyle]="{'height':getStackHeight(ramCurrent, ramMax)+'%'}"></div>
 										</div>
 										<div class="stack-label">
@@ -75,9 +77,18 @@
 							</div>
 						</div>
 						<div class="col-4 monitor-col right">
+							<div class="link-container">
+								<a vtrMetrics
+								 [metricsItem]="'System Status'"
+								 metricsEvent="featureClick"
+								 routerLink="/device"
+								 class="info-link">Info</a>
+								<div class="icon icon-backarrow"></div>
+							</div>
 							<div class="monitor-section">
 								<div class="hd-list">
-									<div class="hd-item" [ngClass]="{'danger':hd.current/hd.max>.75}"
+									<div class="hd-item"
+									 [ngClass]="{'danger':hd.current/hd.max>.75}"
 									 *ngFor="let hd of hds; let i=index;">
 										<div class="monitor-hd">
 											<div class="hd-ring"></div>
