@@ -1,12 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
 
-export interface StepScanInputData {
-	index: number;
-	length: number;
-}
-
 export interface Permit {
-	data: StepScanInputData;
 	allow: EventEmitter<boolean>;
 	allowEmitter();
 	disallowEmitter();

@@ -14,6 +14,7 @@ import { PipesModule } from '../pipes/pipes.module';
 import { RouterModule } from '@angular/router';
 import { DirectivesModule } from '../directives/directives.module';
 import { BigLoaderComponent } from './big-loader/big-loader.component';
+import { StepsViewComponent } from './steps-view/steps-view.component';
 
 @NgModule({
 	declarations: [
@@ -27,6 +28,7 @@ import { BigLoaderComponent } from './big-loader/big-loader.component';
 		LowPrivacyComponent,
 		SupportBannerComponent,
 		BigLoaderComponent,
+		StepsViewComponent,
 	],
 	exports: [
 		SimpleLoaderComponent,
@@ -39,6 +41,7 @@ import { BigLoaderComponent } from './big-loader/big-loader.component';
 		LowPrivacyComponent,
 		SupportBannerComponent,
 		BigLoaderComponent,
+		StepsViewComponent,
 	],
 	imports: [
 		CommonModule,

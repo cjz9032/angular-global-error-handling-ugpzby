@@ -6,7 +6,7 @@ import { PermitService } from './services/permit.service';
 	selector: 'vtr-one-click-scan',
 	templateUrl: './one-click-scan.component.html',
 	styleUrls: ['./one-click-scan.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush
+	// changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OneClickScanComponent {
 	@Input() popupId: string;
