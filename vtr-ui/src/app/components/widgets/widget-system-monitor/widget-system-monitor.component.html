@@ -6,11 +6,12 @@
 					<div class="row h-100">
 						<div class="col-8 monitor-col left">
 							<div class="monitor-section">
-								<div class="gaming-tooltip"><p>{{'gaming.dashboard.device.systemInfo.systenTooltip'|translate}}</p></div>
+
 								<div class="monitor-inner gpu">
 									<div class="monitor-stack">
 										<div class="stack-container">
-											<div class="stack-content"
+											<div class="stack-content gpu"></div>
+											<div class="stack-mask"
 											 [ngStyle]="{'height':getStackHeight(gpuCurrent, gpuMax)+'%'}"></div>
 										</div>
 										<div class="stack-label">
@@ -56,7 +57,8 @@
 								<div class="monitor-inner ram">
 									<div class="monitor-stack">
 										<div class="stack-container">
-											<div class="stack-content"
+											<div class="stack-content ram"></div>
+											 <div class="stack-mask"
 											 [ngStyle]="{'height':getStackHeight(ramCurrent, ramMax)+'%'}"></div>
 										</div>
 										<div class="stack-label">
@@ -73,15 +75,9 @@
 							</div>
 						</div>
 						<div class="col-4 monitor-col right">
-							<div class="link-container">
-								<a vtrMetrics [metricsItem]="'System Status'"
-								metricsEvent="featureClick" routerLink="/device" class="info-link">Info</a>
-								<div class="icon icon-backarrow"></div>
-							</div>
-
 							<div class="monitor-section">
 								<div class="hd-list">
-									<div class="hd-item"
+									<div class="hd-item" [ngClass]="{'danger':hd.current/hd.max>.75}"
 									 *ngFor="let hd of hds; let i=index;">
 										<div class="monitor-hd">
 											<div class="hd-ring"></div>
@@ -112,7 +108,7 @@
 											<div class="hd-title">
 												<!-- <fa-icon [icon]="['fab', 'windows']"
 												 *ngIf="hd.system"></fa-icon> -->
-												 {{hd.title}}
+												{{hd.title}}
 											</div>
 											<div class="hd-status">
 												{{getHDSize(hd.current)}}/{{getHDSize(hd.max)}}
