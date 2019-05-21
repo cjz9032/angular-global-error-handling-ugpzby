@@ -30,7 +30,15 @@
             "notRegistered": "NIJE REGISTROVAN"
         },
         "ui": {
-			"back": "NAZAD"
+            "back": "NAZAD",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
 		}
     },
     "support": {
