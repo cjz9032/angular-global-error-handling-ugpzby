@@ -17,8 +17,7 @@ export class OneClickScanComponent {
 	constructor(
 		private oneClickScanService: OneClickScanStepsService,
 		private permitService: PermitService
-	) {
-	}
+	) {	}
 
 	handlerAllow(permitValue: boolean, step: OneClickScanSteps) {
 		if (permitValue) {

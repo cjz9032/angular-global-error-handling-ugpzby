@@ -50,7 +50,7 @@ export class ModalWelcomeComponent implements OnInit {
 				PageDuration:(this.endTime-this.startTime)
 			}
 			console.log('metrics data',JSON.stringify(data));
-			this.metrics.sendAsync(data);
+			// this.metrics.sendAsync(data);
 			const response = new WelcomeTutorial(true, this.data.page2.radioValue, this.checkedArray);
 			this.activeModal.close(response);
 		}
