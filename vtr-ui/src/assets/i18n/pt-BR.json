@@ -30,7 +30,15 @@
             "notRegistered": "NÃO REGISTRADO"
         },
         "ui": {
-			"back": "VOLTAR"
+            "back": "VOLTAR",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
 		}
     },
     "support": {

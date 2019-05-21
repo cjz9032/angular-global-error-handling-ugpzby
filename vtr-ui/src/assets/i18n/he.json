@@ -30,7 +30,15 @@
             "notRegistered": "לא רשום"
         },
         "ui": {
-			"back": "חזרה"
+            "back": "חזרה",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
 		}
     },
     "support": {
