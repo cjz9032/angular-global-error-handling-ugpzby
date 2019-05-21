@@ -30,7 +30,15 @@
             "notRegistered": "غير مسجل"
         },
         "ui": {
-			"back": "السابق"
+            "back": "السابق",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
 		}
     },
     "support": {

@@ -37,7 +37,8 @@
 							[theme]="'blue'"
 							[tooltipText]="'device.deviceSettings.audio.audioSmartsettings.dolby.tooltip'|translate"
 							(toggleOnOff)="onAutomaticDolbyAudioToggleOnOff($event)"
-							[isSwitchChecked]="autoDolbyFeatureStatus.status">
+							[isSwitchChecked]="autoDolbyFeatureStatus.status"
+							[showLoaderState]="autoDolbyFeatureLoader">
 
 							<div class="row no-gutters"
 								*ngIf="!autoDolbyFeatureStatus.status && dolbyModeResponse.available">
@@ -67,7 +68,8 @@
 							[theme]="'blue'"
 							[tooltipText]="'device.deviceSettings.audio.audioSmartsettings.voip.tooltip' | translate"
 							(toggleOnOff)="onToggleOfMicrophoneAutoOptimization($event)"
-							[isSwitchChecked]="microphoneProperties.autoOptimization">
+							[isSwitchChecked]="microphoneProperties.autoOptimization"
+							[showLoaderState]="microphoneLoader">
 						</vtr-ui-row-switch>
 					</li>
 				</ul>
@@ -105,7 +107,8 @@
 							[disabled]="!microphoneProperties.permission"
 							[tooltipText]="'device.deviceSettings.audio.microphone.microphone.tooltip' | translate"
 							(toggleOnOff)="onToggleOfMicrophone($event)"
-							[isSwitchChecked]="microphoneProperties.muteDisabled">
+							[isSwitchChecked]="microphoneProperties.muteDisabled"
+							[showLoaderState]="microphoneLoader">
 						</vtr-ui-row-switch>
 					</li>
 					<li class="">
@@ -151,7 +154,8 @@
 							[tooltipText]="'device.deviceSettings.audio.microphone.suppress.tooltip' | translate"
 							(toggleOnOff)="onToggleOfSuppressKbdNoise($event)"
 							[disabled]="microphoneProperties.disableEffect"
-							[isSwitchChecked]="microphoneProperties.keyboardNoiseSuppression">
+							[isSwitchChecked]="microphoneProperties.keyboardNoiseSuppression"
+							[showLoaderState]="microphoneLoader">
 						</vtr-ui-row-switch>
 					</li>
 
@@ -170,7 +174,8 @@
 							[tooltipText]="'device.deviceSettings.audio.microphone.acoustic.tooltip' | translate"
 							(toggleOnOff)="setMicrophoneAEC($event)"
 							[disabled]="microphoneProperties.disableEffect"
-							[isSwitchChecked]="microphoneProperties.AEC">
+							[isSwitchChecked]="microphoneProperties.AEC"
+							[showLoaderState]="microphoneLoader">
 						</vtr-ui-row-switch>
 					</li>
 
