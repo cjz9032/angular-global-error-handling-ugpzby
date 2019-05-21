@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
+import {VantageShellService} from "../../../services/vantage-shell/vantage-shell.service";
 @Component({
 	selector: 'vtr-modal-welcome',
 	templateUrl: './modal-welcome.component.html',
@@ -12,6 +13,9 @@ export class ModalWelcomeComponent implements OnInit {
 	page = 1;
 	privacyPolicy: boolean;
 	checkedArray: string[] = [];
+	startTime:number;
+	endTime:number;
+	metrics:any;
 	data: any = {
 		page2: {
 			title: 'How will you use it?',
@@ -21,14 +25,15 @@ export class ModalWelcomeComponent implements OnInit {
 	};
 	interests = [
 		"games", "news", "entertainment", "technology",
-		"sports", "arts", "regionalNews", "politics", 
+		"sports", "arts", "regionalNews", "politics",
 		"music", "science"
 	];
 	// to show small list. on click of More Interest show all.
 	interestCopy = this.interests.slice(0,8);
 	hideMoreInterestBtn = false;
-	constructor(public activeModal: NgbActiveModal) {
-
+	constructor(public activeModal: NgbActiveModal,shellService: VantageShellService) {
+		this.startTime=new Date().getTime();
+		this.metrics = shellService.getMetrics();
 	}
 
 	ngOnInit() {
@@ -39,6 +44,13 @@ export class ModalWelcomeComponent implements OnInit {
 			this.page = page;
 			this.progress = 49;
 		} else {
+			this.endTime=new Date().getTime();
+			let data={
+				PageName:"Tutorial",
+				PageDuration:(this.endTime-this.startTime)
+			}
+			console.log('metrics data',JSON.stringify(data));
+			this.metrics.sendAsync(data);
 			const response = new WelcomeTutorial(true, this.data.page2.radioValue, this.checkedArray);
 			this.activeModal.close(response);
 		}
@@ -49,7 +61,7 @@ export class ModalWelcomeComponent implements OnInit {
 		if ($event.target.checked) {
 			this.checkedArray.push(value);
 		} else {
-			 this.checkedArray.splice(this.checkedArray.indexOf(value), 1);
+			this.checkedArray.splice(this.checkedArray.indexOf(value), 1);
 		}
 		console.log(this.checkedArray);
 		console.log(this.checkedArray.length);

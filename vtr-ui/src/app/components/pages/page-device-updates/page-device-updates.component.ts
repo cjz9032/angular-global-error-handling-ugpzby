@@ -265,7 +265,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.setUpdateTitle();
 			this.isUserCancelledUpdateCheck = false;
 			this.isUpdateCheckInProgress = true;
+			this.isUpdatesAvailable = false;
 			this.systemUpdateService.isUpdatesAvailable = false;
+			this.isInstallingAllUpdates = true;
 			this.systemUpdateService.isInstallingAllUpdates = true;
 			this.resetState();
 			this.systemUpdateService.checkForUpdates();
@@ -296,6 +298,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private installAllUpdate(removeDelayedUpdates: boolean) {
 		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
+			this.isInstallingAllUpdates = true;
 			this.systemUpdateService.isInstallingAllUpdates = true;
 			this.resetState();
 			this.systemUpdateService.installAllUpdates(removeDelayedUpdates);
@@ -304,6 +307,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private installSelectedUpdate(removeDelayedUpdates: boolean) {
 		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
+			this.isInstallingAllUpdates = false;
 			this.systemUpdateService.isInstallingAllUpdates = false;
 			this.resetState();
 			this.systemUpdateService.installSelectedUpdates(removeDelayedUpdates);
@@ -434,13 +438,20 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	private setUpdateByCategory(updateList: Array<AvailableUpdateDetail>) {
-		this.ignoredUpdates =  [];
 		if (updateList) {
-			this.optionalUpdates = this.filterUpdate(updateList, 'optional');
-			this.recommendedUpdates = this.filterUpdate(updateList, 'recommended');
-			this.criticalUpdates = this.filterUpdate(updateList, 'critical');
-			this.systemUpdateService.getIgnoredUpdates();
+			this.ignoredUpdates =  this.filterIgnoredUpdate(updateList, true);
+			const unIgnoredUpdates = this.filterIgnoredUpdate(updateList, false);
+			this.optionalUpdates = this.filterUpdate(unIgnoredUpdates, 'optional');
+			this.recommendedUpdates = this.filterUpdate(unIgnoredUpdates, 'recommended');
+			this.criticalUpdates = this.filterUpdate(unIgnoredUpdates, 'critical');
 		}
+	}
+
+	private filterIgnoredUpdate(updateList: Array<AvailableUpdateDetail>, isIgnored: boolean) {
+		const updates = updateList.filter((value: AvailableUpdateDetail) => {
+			return (value.isIgnored === isIgnored);
+		});
+		return updates;
 	}
 
 	private filterUpdate(updateList: Array<AvailableUpdateDetail>, packageSeverity: string) {
@@ -481,7 +492,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isUpdateCheckInProgress = false;
 					this.percentCompleted = this.systemUpdateService.percentCompleted;
 					this.isUpdatesAvailable = this.systemUpdateService.isUpdatesAvailable;
+					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.setUpdateByCategory(payload.updateList);
+					this.systemUpdateService.getIgnoredUpdates();
 					break;
 				case UpdateProgress.InstallationStarted:
 					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
@@ -523,7 +536,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 					break;
 				case UpdateProgress.IgnoredUpdates:
-					this.setIgnoredUpdates(notification.payload);
+					this.setUpdateByCategory(notification.payload);
 					break;
 				default:
 					break;

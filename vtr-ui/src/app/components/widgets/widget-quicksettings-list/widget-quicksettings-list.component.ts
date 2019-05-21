@@ -25,6 +25,23 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			tooltipText: '',
 			type: 'auto-updates'
 		},
+
+		{
+			readMoreText: '',
+			rightImageSource: '',
+			leftImageSource: '',
+			header: 'gaming.dashboard.device.quickSettings.rapidCharge',
+			name: 'gaming.dashboard.device.quickSettings.rapidCharge',
+			subHeader: '',
+			isCustomizable: false,
+			setLink: '',
+			isCollapsible: false,
+			isCheckBoxVisible: true,
+			isSwitchVisible: true,
+			isChecked: true,
+			tooltipText: '',
+			type: 'auto-updates'
+		},
 		{
 			readMoreText: '',
 			rightImageSource: '',
@@ -56,24 +73,26 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			isChecked: true,
 			tooltipText: '',
 			type: 'auto-updates'
+		}
+		
+	];
+
+	public listingopt = [
+		{
+			header: 'gaming.dashboard.device.quickSettings.status.performance',
+			name: 'gaming.dashboard.device.quickSettings.status.performance',
+			defaultOption: false
 		},
 		{
-			readMoreText: '',
-			rightImageSource: '',
-			leftImageSource: '',
-			header: 'gaming.dashboard.device.quickSettings.rapidCharge',
-			name: 'gaming.dashboard.device.quickSettings.rapidCharge',
-			subHeader: '',
-			isCustomizable: false,
-			setLink: '',
-			isCollapsible: false,
-			isCheckBoxVisible: true,
-			isSwitchVisible: true,
-			isChecked: true,
-			tooltipText: '',
-			type: 'auto-updates'
+			header: 'gaming.dashboard.device.quickSettings.status.balance',
+			name: 'gaming.dashboard.device.quickSettings.status.balance',
+			defaultOption: true
+		},
+		{
+			header: 'gaming.dashboard.device.quickSettings.status.quiet',
+			name: 'gaming.dashboard.device.quickSettings.status.quiet',
+			defaultOption: false
 		}
-
 	];
 
 	constructor() { }

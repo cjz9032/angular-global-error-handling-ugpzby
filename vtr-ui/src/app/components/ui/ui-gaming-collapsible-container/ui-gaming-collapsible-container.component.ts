@@ -1,26 +1,59 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import * as $ from 'jquery';
 
 @Component({
-  selector: 'vtr-ui-gaming-collapsible-container',
-  templateUrl: './ui-gaming-collapsible-container.component.html',
-  styleUrls: ['./ui-gaming-collapsible-container.component.scss']
+	selector: 'vtr-ui-gaming-collapsible-container',
+	templateUrl: './ui-gaming-collapsible-container.component.html',
+	styleUrls: ['./ui-gaming-collapsible-container.component.scss'],
+	host: {
+		'(document:click)': 'generalClick($event)'
+	},
 })
 export class UiGamingCollapsibleContainerComponent implements OnInit {
+	@Input() public options;
+	public showOptions = false;
+	public buttonName: any = 'Show';
+	public selected = false;
+	public currentOption: string;
+	public currentDescription: string;
 
-  constructor() { }
+	public toggleOptions() {
+		this.showOptions = !this.showOptions;
 
-  ngOnInit() {
-    $(".select-box").click(function(){
-      $(".select-box .dropdown-menu").toggleClass("show");
-    });
+		// CHANGE THE NAME OF THE BUTTON.
+		if (this.showOptions) {
+			this.buttonName = 'Hide';
+		} else {
+			this.buttonName = 'Show';
+		}
+	}
+	constructor(private elementRef: ElementRef) { }
 
-    $(".select-box .dropdown-item").click(function(){
-      var selected_item = $(this).text();
-      $(".select-box .dropdown-toggle span").text(selected_item);
-      $(".select-box .dropdown-menu li").removeClass("selected");
-      $(this).parent().addClass("selected");
-    });
-  }
+	ngOnInit() {
+	this.options.forEach(option => {
+		this.currentOption = option.defaultOption ? option.name : this.currentOption;
+		this.currentDescription = option.defaultOption ? option.description : this.currentOption;
+	});
+	}
+
+
+	public optionSelected(option) {
+	this.currentOption = option.name;
+	this.showOptions = false;
+}
+
+	public showDescription(option) {
+		this.currentDescription = option.description;
+	}
+
+	public generalClick(event: Event) {
+		if (this.elementRef.nativeElement) {
+			if (!this.elementRef.nativeElement.contains(event.target)) {
+				if (this.showOptions) {
+					this.showOptions = false;
+				}
+			}
+		}
+	}
 
 }

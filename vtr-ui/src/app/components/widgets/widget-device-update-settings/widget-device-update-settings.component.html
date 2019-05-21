@@ -17,9 +17,9 @@
 									<div class="d-flex justify-content-between align-items-center w-100">
 										<div class="update-title"
 											[innerHTML]="item.header | translate | safeDom : 'html' "></div>
-										<vtr-ui-gaming-collapsible-container *ngIf="item.isCollapsible">
+										<vtr-ui-gaming-collapsible-container [options]="options" *ngIf="item.isCollapsible">
 										</vtr-ui-gaming-collapsible-container>
-										<a [routerLink]="item.routerLink" *ngIf="item.isCustomizable" class="customizable">
+										<a vtrMetrics [metricsItem]="item.header | translate "  metricsEvent="featureClick" [routerLink]="item.routerLink" *ngIf="item.isCustomizable" class="customizable">
 											<i class="icon icon-gear"></i>
 										</a>
 										<a href="javascript:void();" *ngIf="item.isSwitchVisible"

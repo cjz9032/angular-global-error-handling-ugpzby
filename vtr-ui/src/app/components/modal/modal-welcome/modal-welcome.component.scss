@@ -92,7 +92,8 @@
 			padding-right: 6px;
 			padding-left: 6px;
 			label {
-				@extend .font-14-semi;
+				font-size: 1.8rem;
+				font-weight: bold;
 				width: 100%;
 				height: 100%;
 				align-items: center;
@@ -100,7 +101,7 @@
 				justify-content: center;
 			}
 			img {
-				opacity: 0.7;
+				//opacity: 0.7;
 			}
 			input {
 				display: none;
@@ -274,11 +275,11 @@
 
 	input[type="radio"]:checked + img {
 		border: 2pt solid #21C48A;
-		opacity: 0.7 !important;
+		//opacity: 0.7 !important;
 	}
 
 	.radio-is-selected img {
-		opacity: 0.5 !important;
+		//opacity: 0.5 !important;
 	}
 
 	.content-page-2 .interests input[type="checkbox"] {

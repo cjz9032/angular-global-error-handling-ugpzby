@@ -106,6 +106,27 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		}
 	];
 
+	public edgeopt = [
+		{
+			header: 'gaming.dashboard.device.legionEdge.status.alwayson',
+			name: 'gaming.dashboard.device.legionEdge.status.alwayson',
+			description: 'gaming.dashboard.device.legionEdge.status.alwayson',
+			defaultOption: true
+		},
+		{
+			header: 'gaming.dashboard.device.legionEdge.status.whenGaming',
+			name: 'gaming.dashboard.device.legionEdge.status.whenGaming',
+			description: 'gaming.dashboard.device.legionEdge.status.whenGaming',
+			defaultOption: false
+		},
+		{
+			header: 'gaming.dashboard.device.legionEdge.status.off',
+			name: 'gaming.dashboard.device.legionEdge.status.off',
+			description: 'gaming.dashboard.device.legionEdge.status.off',
+			defaultOption: false
+		}
+	];
+
 	constructor(private modalService: NgbModal) { }
 
 	ngOnInit() {

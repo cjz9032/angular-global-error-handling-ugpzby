@@ -19,9 +19,12 @@
 							<label for="third_radio" id="third_lbl">3</label>
 							<div class="toggle"></div>
 						</div>
-						<hr class="dark-dashline"/>
+						<hr class="dark-dashline" />
 						<ul class="list-group">
-							<li class="list-group-item"><a routerLink="/lightingcustomize"><i class="icon icon-gear"></i> Customize</a></li>
+							<li class="list-group-item"><a vtrMetrics
+									[metricsItem]="'gaming.dashboard.device.lighting.title' | translate"
+									metricsEvent="featureClick" routerLink="/lightingcustomize"><i
+										class="icon icon-gear"></i> Customize</a></li>
 						</ul>
 					</div>
 

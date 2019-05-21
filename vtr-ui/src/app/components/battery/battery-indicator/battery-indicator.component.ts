@@ -32,7 +32,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	@Input() percentage = 50; // number without % symbol
 	@Input() remainingHour = 0; // number of hours remaining
 	@Input() remainingMinutes = 0; // number of minutes remaining
-	@Input() timeText = "";
+	@Input() timeText = '';
 
 	constructor(public translate: TranslateService) {
 	}
@@ -156,7 +156,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	public getTimeRemaining(): string {
 		this.checkRemainingTimeIsZero();
 		if (Number.isNaN(this.remainingMinutes)) {
-			return "";
+			return '';
 		}
 		const hours =
 			this.remainingHour > 0 && this.remainingHour < 2 ? this.translate.instant('device.deviceSettings.batteryGauge.hour') : this.translate.instant('device.deviceSettings.batteryGauge.hours');
@@ -164,7 +164,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 			this.remainingMinutes > 0 && this.remainingMinutes < 2
 				? this.translate.instant('device.deviceSettings.batteryGauge.minute')
 				: this.translate.instant('device.deviceSettings.batteryGauge.minutes');
-		if(this.remainingHour == 0) {
+		if (this.remainingHour === 0) {
 			return `${this.remainingMinutes} ${minutes}`;
 		}
 		return `${this.remainingHour} ${hours} ${
@@ -175,12 +175,12 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	checkRemainingTimeIsZero() {
 		let isZero = false;
 		if (Number.isNaN(this.remainingMinutes)) {
-			this.hideRemainingTimeTxt = true
+			this.hideRemainingTimeTxt = true;
 			return;
 		}
-		if(this.remainingHour == 0) {
-			if (this.remainingMinutes == 0) {
-				this.hideRemainingTimeTxt = true
+		if (this.remainingHour === 0) {
+			if (this.remainingMinutes === 0) {
+				this.hideRemainingTimeTxt = true;
 			} else {
 				this.hideRemainingTimeTxt = false;
 			}
