@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
-import { FigleafOverviewService } from '../../services/figleaf-overview.service';
-import { BrowserAccountsService } from '../../services/browser-accounts.service';
+import { FigleafOverviewService } from '../../../common/services/figleaf-overview.service';
+import { BrowserAccountsService } from '../../../common/services/browser-accounts.service';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { BreachedAccountsService } from '../../services/breached-accounts.service';
+import { BreachedAccountsService } from '../../../common/services/breached-accounts.service';
 
 @Injectable()
 export class PrivacyScoreService {

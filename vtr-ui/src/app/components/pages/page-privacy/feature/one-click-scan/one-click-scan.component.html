@@ -1,21 +1,19 @@
-<p>
-	one-click-scan works!
-</p>
 <ng-container [ngSwitch]="currentStep.step">
 	<vtr-permit-trackers-and-passwords
-		[data]="{
-			index: currentStep.index,
-			length: currentStep.length
-		}"
 		*ngSwitchCase="oneClickScanSteps.PERMIT_TRACKERS_AND_PASSWORD"
 		(allow)="handlerAllow($event, oneClickScanSteps.PERMIT_TRACKERS_AND_PASSWORD)">
+		<ng-container class="stepper" [ngTemplateOutlet]="stepper"></ng-container>
 	</vtr-permit-trackers-and-passwords>
 	<vtr-enter-email
-		[data]="{
-			index: currentStep.index,
-			length: currentStep.length
-		}"
 		*ngSwitchCase="oneClickScanSteps.VERIFY_EMAIL"
 		(allow)="handlerAllow($event, oneClickScanSteps.VERIFY_EMAIL)">
+		<ng-container class="stepper" [ngTemplateOutlet]="stepper"></ng-container>
 	</vtr-enter-email>
 </ng-container>
+
+<ng-template #stepper>
+	<vtr-steps-view
+		[index]="currentStep.index + 1"
+		[length]="currentStep.length"
+	></vtr-steps-view>
+</ng-template>

@@ -30,7 +30,7 @@ import { PRIVACY_BASE_URL, PRIVACY_ENVIRONMENT } from './utils/injection-tokens'
 import { getPrivacyEnvironment } from './environment';
 import { DataKnowledgeService } from './common/services/data-knowledge.service';
 import { BreachedAccountsService } from './common/services/breached-accounts.service';
-import { PrivacyScoreService } from './common/components/privacy-score/privacy-score.service';
+import { PrivacyScoreService } from './pages/result/privacy-score/privacy-score.service';
 import { CheckBreachedAccountsModule } from './feature/check-breached-accounts/check-breached-accounts.module';
 import { TrackingMapModule } from './feature/tracking-map/tracking-map.module';
 import { NonPrivatePasswordModule } from './feature/non-private-password/non-private-password.module';
@@ -43,6 +43,7 @@ import { ArticleSingleComponent } from './pages/articles/article-single/article-
 import { ArticlePreviewComponent } from './pages/articles/article-preview/article-preview.component';
 import { ArticleSidebarComponent } from './pages/articles/article-sidebar/article-sidebar.component';
 import { OneClickScanModule } from './feature/one-click-scan/one-click-scan.module';
+import { PrivacyScoreComponent } from './pages/result/privacy-score/privacy-score.component';
 
 library.add(fal);
 
@@ -74,6 +75,7 @@ library.add(fal);
 		FaqComponent,
 		SidebarInstallWidgetComponent,
 		PrivacyDashboardListComponent,
+		PrivacyScoreComponent,
 		LandingComponent,
 		ArticlesComponent,
 		ArticleSingleComponent,
