@@ -46,6 +46,9 @@
 					"line10": "Auto Close <br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
 					"line11": "Thermal Mode <br> Set your preferred device profile for fan speed and cooling control"
 				}
+			},
+			"systemInfo": {
+				"systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
 			}
 		}
 	},
