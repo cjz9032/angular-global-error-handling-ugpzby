@@ -28,22 +28,4 @@ export class BatteryDetailService {
 			throw new Error(error.message);
 		}
 	}
-
-	getMainBatteryPercentage(): number {
-		if (this.isShellAvailable) {
-			return this.battery.mainBatteryPercentage;
-		}
-	}
-	
-	getAcIsAttached(): boolean {
-		if (this.isShellAvailable) {
-			return this.battery.isAcAttached;
-		}
-	}
-
-	getMainBatteryTime(): number {
-		if (this.isShellAvailable) {
-			return this.battery.mainBatteryTime;
-		}
-	}
 }

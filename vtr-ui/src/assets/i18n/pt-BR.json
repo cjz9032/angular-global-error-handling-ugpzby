@@ -28,7 +28,10 @@
             "notFound": "NÃO ENCONTRADO",
             "registered": "REGISTRADO",
             "notRegistered": "NÃO REGISTRADO"
-        }
+        },
+        "ui": {
+			"back": "VOLTAR"
+		}
     },
     "support": {
         "common": {
@@ -303,7 +306,7 @@
             "privacyPolicy": "Leia mais na <tag>Política de Privacidade</tag>",
             "whyWindowsHelloDescription2": "O Windows Hello torna o acesso ao seu PC mais fácil e seguro. E você também pode usá-lo para seus aplicativos Microsoft online. Siga as instruções abaixo para começar a utilizar o Windows Hello",
             "authentication": "Autenticação do Windows Hello",
-            "traditional": "Senhas convencionais podem ser roubadas e usadas para acessar sua conta de qualquer parte do mundo. Mais seguro e conveniente. O Windows Hello usa senhas de última geração. Use o leitor de impressões digitais [ou a câmera IR] para fazer login em vez de senhas precárias.",
+            "traditional": "Senhas convencionais podem ser roubadas e usadas para acessar sua conta de qualquer parte do mundo. Mais seguro e conveniente. O Windows Hello usa senhas de última geração. Use o leitor de impressões digitais para fazer login em vez de senhas precárias.",
             "howToStart": "Como começo a usar o Windows Hello?"
         }
     }

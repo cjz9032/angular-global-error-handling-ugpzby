@@ -14,8 +14,7 @@ export class WindowsHelloGuardService implements CanActivate {
 		const windowsHello = this.vantageShellService.getSecurityAdvisor().windowsHello;
 		const showWhPage = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 		return this.commonService.isRS5OrLater()
-			&& (typeof windowsHello.facialIdStatus === 'string'
-				|| typeof windowsHello.fingerPrintStatus === 'string' || showWhPage);
+			&& (typeof windowsHello.fingerPrintStatus === 'string' || showWhPage);
 
 	}
 }

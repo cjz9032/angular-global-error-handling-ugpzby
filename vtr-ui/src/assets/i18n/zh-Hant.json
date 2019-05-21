@@ -28,7 +28,10 @@
             "notFound": "找不到",
             "registered": "已註冊",
             "notRegistered": "未註冊"
-        }
+        },
+        "ui": {
+            "back": "上一步"
+		}
     },
     "support": {
         "common": {
@@ -303,7 +306,7 @@
             "privacyPolicy": "進一步瞭解<tag>隱私權政策</tag>",
             "whyWindowsHelloDescription2": "Windows Hello 讓登入電腦變得更簡單、更安全。而您也可以用於您的線上 Microsoft 應用程式。依照以下指示開始使用 Windows Hello",
             "authentication": "Windows Hello 鑑別",
-            "traditional": "傳統密碼可能會遭竊，並從世界任何地方用於存取您的帳戶。更安全、更方便。Windows Hello 是新一代密碼。使用您的指紋辨識器 [或紅外線攝影機] 來取代不安全的密碼登入。",
+            "traditional": "傳統密碼可能會遭竊，並從世界任何地方用於存取您的帳戶。更安全、更方便。Windows Hello 是新一代密碼。使用您的指紋辨識器來取代不安全的密碼登入。",
             "howToStart": "如何開始使用 Windows Hello？"
         }
     }

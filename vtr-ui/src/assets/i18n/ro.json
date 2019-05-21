@@ -28,7 +28,10 @@
             "notFound": "NEGĂSIT",
             "registered": "ÎNREGISTRAT",
             "notRegistered": "NEÎNREGISTRAT"
-        }
+        },
+        "ui": {
+			"back": "ÎNAPOI"
+		}
     },
     "support": {
         "common": {
@@ -303,7 +306,7 @@
             "privacyPolicy": "Citiți mai multe despre <tag>politica privind confidențialitatea</tag>",
             "whyWindowsHelloDescription2": "Windows Hello face autentificarea în PC-ul dvs. să fie mai ușoară și mai sigură. De asemenea, poate fi utilizat pentru aplicațiile Microsoft online. Urmați instrucțiunile de mai jos, pentru a începe să utilizați Windows Hello",
             "authentication": "Autentificare Windows Hello",
-            "traditional": "Parolele tradiționale pot fi furate și folosite pentru a vă accesa contul de oriunde din lume. Mai sigur și mai convenabil. Windows Hello este următoarea generație în domeniul parolelor. Utilizați cititorul de amprente [sau camera IR] în locul parolelor nesigure, pentru a vă autentifica.",
+            "traditional": "Parolele tradiționale pot fi furate și folosite pentru a vă accesa contul de oriunde din lume. Mai sigur și mai convenabil. Windows Hello este următoarea generație în domeniul parolelor. Utilizați cititorul de amprente în locul parolelor nesigure, pentru a vă autentifica.",
             "howToStart": "Cum încep să utilizez Windows Hello?"
         }
     }

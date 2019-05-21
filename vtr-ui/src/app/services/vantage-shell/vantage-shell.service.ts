@@ -16,13 +16,11 @@ export class VantageShellService {
 	constructor(private commonService: CommonService) {
 		this.shell = this.getVantageShell();
 		if (this.shell) {
-			const rpcClient = this.shell.VantageRpcClient ? new this.shell.VantageRpcClient() : null;
 			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
 			const powerClient = this.shell.PowerClient ? this.shell.PowerClient() : null;
 			this.phoenix = Phoenix.default(
 				new inversify.Container(),
 				{
-					hsaBroker: rpcClient,
 					metricsBroker: metricClient,
 					hsaPowerBroker: powerClient,
 					hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
@@ -111,20 +109,26 @@ export class VantageShellService {
 				});
 				metricClient.isInit = true;
 				metricClient.metricsEnabled = true;
-
 				metricClient.sendAsyncOrignally = metricClient.sendAsync;
 				metricClient.commonService = this.commonService;
-				metricClient.sendAsync = function sendAsync(data) {
-					const eventType = data.ItemType.toLowerCase();
-
-					// automatically fill the OnlineStatus for page view event
-					if (eventType === 'pageview') {
-						if (!data.OnlineStatus) {
-							data.OnlineStatus = this.commonService.isOnline ? 1 : 0;
+				metricClient.sendAsync = async function sendAsync(data) {
+					try {
+						// automatically fill the OnlineStatus for page view event
+						const eventType = data.ItemType.toLowerCase();
+						if (eventType === 'pageview') {
+							if (!data.OnlineStatus) {
+								data.OnlineStatus = this.commonService.isOnline ? 1 : 0;
+							}
 						}
-					}
 
-					return this.sendAsyncOrignally(data);
+						return await this.sendAsyncOrignally(data);
+					} catch (ex) {
+						console.log('an error ocurr when sending metrics event');
+						return Promise.resolve({
+							status: 0,
+							desc: 'ok'
+						});
+					}
 				};
 			}
 

@@ -75,7 +75,6 @@ export class AppComponent implements OnInit {
 				}
 			);
 		}
-
 		//#endregion
 
 		window.addEventListener('online', (e) => {

@@ -28,7 +28,10 @@
             "notFound": "見つかりませんでした",
             "registered": "登録済み",
             "notRegistered": "未登録"
-        }
+        },
+        "ui": {
+			"back": "戻る"
+		}
     },
     "support": {
         "common": {
@@ -303,7 +306,7 @@
             "privacyPolicy": "<tag>プライバシー・ポリシー</tag>の詳細を読む",
             "whyWindowsHelloDescription2": "Windows Hello を使用すると、PC へのログインがより簡単かつ安全になります。また、オンラインの Microsoft アプリにも使用できます。Windows Hello の使用を開始するには、次の手順に従います",
             "authentication": "Windows Hello の認証",
-            "traditional": "従来のパスワードは盗まれるおそれがあり、世界のどこかでそのパスワードを使って自分のアカウントにアクセスされる可能性があります。より安全で便利な方法です。Windows Hello は、次世代のパスワードです。安全性の低いパスワードの代わりに指紋リーダー (または IR カメラ) を使用してログインます。",
+            "traditional": "従来のパスワードは盗まれるおそれがあり、世界のどこかでそのパスワードを使って自分のアカウントにアクセスされる可能性があります。より安全で便利な方法です。Windows Hello は、次世代のパスワードです。安全性の低いパスワードの代わりに指紋リーダー を使用してログインます。",
             "howToStart": "Windows Hello の使用を開始する方法"
         }
     }

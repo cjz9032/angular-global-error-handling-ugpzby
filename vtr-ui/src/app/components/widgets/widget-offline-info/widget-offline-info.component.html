@@ -15,7 +15,8 @@
 							<div class="col subtitle"
 								[innerHTML]="subtitle"></div>
 						</div>
-						<div class="row">
+						<div class="row"
+							*ngIf="isButtonVisible">
 							<div class="col button-row">
 								<button class="action-button"
 									vtrMetrics

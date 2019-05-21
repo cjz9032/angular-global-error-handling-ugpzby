@@ -54,7 +54,8 @@ export class WidgetSystemMonitorComponent implements OnInit {
 
 	getStackHeight(current, max) {
 		const pct = (current / max);
-		const height = 100 * pct;
+		const mask = 1 - pct;
+		const height = 100 * mask;
 		return height;
 	}
 

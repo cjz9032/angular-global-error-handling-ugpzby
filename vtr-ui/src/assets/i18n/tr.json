@@ -28,7 +28,10 @@
             "notFound": "BULUNAMADI",
             "registered": "KAYITLI",
             "notRegistered": "KAYITLI DEĞİL"
-        }
+        },
+        "ui": {
+			"back": "GERİ"
+		}
     },
     "support": {
         "common": {
@@ -303,7 +306,7 @@
             "privacyPolicy": "<tag>Gizlilik Politikası</tag> hakkında daha fazla bilgi edinin",
             "whyWindowsHelloDescription2": "Windows Hello, bilgisayarınızda oturum açmayı daha kolay ve daha güvenli hale getirir. Çevrimiçi Microsoft uygulamalarınız için de kullanılabilir. Windows Hello kullanmaya başlamak için aşağıdaki yönergeleri izleyin",
             "authentication": "Windows Hello Kimlik Doğrulaması",
-            "traditional": "Geleneksel parolalar çalınabilir ve hesabınıza dünyanın herhangi bir yerinden erişmek için kullanılabilir. Daha güvenli ve kullanımı kolay. Windows Hello, yeni nesil paroladır. Oturum açmak için güvenli olmayan parolalar yerine parmak izi okuyucuyu [veya kızılötesi kamerayı] kullanın.",
+            "traditional": "Geleneksel parolalar çalınabilir ve hesabınıza dünyanın herhangi bir yerinden erişmek için kullanılabilir. Daha güvenli ve kullanımı kolay. Windows Hello, yeni nesil paroladır. Oturum açmak için güvenli olmayan parolalar yerine parmak izi okuyucuyu kullanın.",
             "howToStart": "Windows Hello kullanmaya nasıl başlayabilirim?"
         }
     }
