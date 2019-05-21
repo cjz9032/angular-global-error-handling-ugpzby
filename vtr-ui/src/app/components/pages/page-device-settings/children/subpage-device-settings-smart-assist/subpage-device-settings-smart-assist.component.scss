@@ -74,3 +74,8 @@
 	}
 }
 
+.disabled-overlay {
+	background-color: #F6F8F8;
+	z-index: 2;
+	pointer-events: none;
+}

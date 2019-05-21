@@ -562,7 +562,8 @@
 					"title": "Intelligent Security",
 					"readMore": "Read more",
 					"HumanPresenceDetection": {
-						"title": "Human Presence Detection"
+						"title": "Human Presence Detection",
+						"tooltip": "Click here to reset human presence Detection settings."
 					},
 					"autoIrCameraLogin": {
 						"title": "Auto IR camera Login",
@@ -570,7 +571,7 @@
 					},
 					"autoScreenLock": {
 						"title": "Auto screen lock",
-						"caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+						"caption": "Dims the display and locks the computer when the user presence is not detected.",
 						"autoScreenLockTimer": {
 							"title": "AUTO SCREEN LOCK TIMER",
 							"radioButton": {
@@ -582,7 +583,13 @@
 						}
 					},
 					"distanceSensitivityAdjusting": {
-						"title": "Distance sensitivity adjusting"
+						"title1": "Distance sensitivity adjusting",
+						"title2": "Auto Distance sensitivity adjusting",
+						"caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+						"options": {
+							"near": "Near",
+							"far": "Far"
+						}
 					},
 					"note": {
 						"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
