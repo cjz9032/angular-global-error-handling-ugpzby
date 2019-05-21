@@ -22,7 +22,7 @@ import { CPUOCStatus } from 'src/app/data-models/system-update/cpu-overclock-sta
 export class SystemUpdateService {
 
 	constructor(
-		shellService: VantageShellService
+		private shellService: VantageShellService
 		, private commonService: CommonService) {
 		this.systemUpdateBridge = shellService.getSystemUpdate();
 		this.metricClient = shellService.getMetrics();
@@ -693,10 +693,21 @@ export class SystemUpdateService {
 	}
 
 	public GetCPUOverClockStatus(): any  {
+		const CpuOCStatus = this.shellService.getCPUOCStatus();
+		if (CpuOCStatus !== undefined) {
+			const CpuOCStatusObj = new CPUOCStatus();
+			CpuOCStatusObj.cpuOCStatus = CpuOCStatus;
+			return CpuOCStatusObj;
+		}
 		return this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus);
 	}
 
 	public SetCPUOverClockStatus(CpuOCStatus: CPUOCStatus): any {
-		return this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, CpuOCStatus);
+		const UpdatedCpuOCStatus = this.shellService.setCPUOCStatus(CpuOCStatus);
+		if (UpdatedCpuOCStatus !== undefined) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, CpuOCStatus);
+			return CpuOCStatus;
+		}
+		return undefined;
 	}
 }

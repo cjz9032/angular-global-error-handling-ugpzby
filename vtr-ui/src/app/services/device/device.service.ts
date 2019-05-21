@@ -20,7 +20,7 @@ export class DeviceService {
 	public isArm = false;
 	public is64bit = true;
 	public showPrivacy = true;
-	public isGaming = true;
+	public isGaming = false;
 	private isGamingDashboardLoaded = false;
 
 	constructor(

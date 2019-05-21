@@ -26,24 +26,17 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 
 	constructor(
 		private elementRef: ElementRef,
-		private shellService: VantageShellService,
 		private systemUpdateService: SystemUpdateService,
 	) {
-		this.currentOption = systemUpdateService.GetCPUOverClockStatus();
-		const CpuOCStatusFromShell = shellService.getCPUOCStatus();
-		if (CpuOCStatusFromShell !== undefined) {
-			this.currentOption = CpuOCStatusFromShell;
-			this.CpuOCStatus = new CPUOCStatus();
-			this.CpuOCStatus.cpuOCStatus = CpuOCStatusFromShell;
-			systemUpdateService.SetCPUOverClockStatus(this.CpuOCStatus);
-		}
+		this.CpuOCStatus = systemUpdateService.GetCPUOverClockStatus();
 	}
 
 	ngOnInit() {
-		console.log(this.options);
 		this.options.forEach(option => {
-			this.currentOption = option.defaultOption ? option.name : this.currentOption;
-			this.currentDescription = option.defaultOption ? option.description : this.currentOption;
+			if (option.value === this.CpuOCStatus.cpuOCStatus) {
+				this.currentOption = option.name;
+				this.currentDescription = option.description;
+			}
 		});
 	}
 
@@ -59,9 +52,10 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	}
 
 	public optionSelected(option) {
-		console.log(option);
+		this.CpuOCStatus.cpuOCStatus = option.value;
 		this.currentOption = option.name;
 		this.showOptions = false;
+		this.systemUpdateService.SetCPUOverClockStatus(this.CpuOCStatus);
 	}
 
 	public showDescription(option) {
