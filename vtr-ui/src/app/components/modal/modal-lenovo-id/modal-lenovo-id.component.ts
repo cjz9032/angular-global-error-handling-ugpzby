@@ -312,9 +312,14 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 					self.activeModal.dismiss();
 					return;
 				} else {
-					// Get current system local and set to url
+					// Change UI language to current system local or user selection saved in cookie
 					self.supportService.getMachineInfo().then((machineInfo) => {
-						loginUrl += "&lang=" + self.getLidSupportedLanguageFromLocale(machineInfo.locale);
+						let lang = self.userService.getLidLanguageSelectionFromCookies('https://passport.lenovo.com');
+						if (lang != '') {
+							loginUrl += "&lang=" + lang;
+						} else {
+							loginUrl += "&lang=" + self.getLidSupportedLanguageFromLocale(machineInfo.locale);
+						}
 						webView.src = loginUrl;
 						self.devService.writeLog('Loading login page ', loginUrl);
 					}, error => {
