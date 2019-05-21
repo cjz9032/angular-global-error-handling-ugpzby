@@ -40,8 +40,6 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 			.subscribe((breaches) => {
 				this.breached_accounts = breaches;
 			});
-
-		this.breachedAccountsService.getBreachedAccounts();
 	}
 
 	ngOnDestroy() {

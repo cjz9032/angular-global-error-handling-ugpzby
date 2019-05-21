@@ -39,6 +39,7 @@ export class BreachedAccountsService {
 	constructor(
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private emailScannerService: EmailScannerService) {
+		this.getBreachedAccounts();
 	}
 
 	getBreachedAccounts(): Subscription {
