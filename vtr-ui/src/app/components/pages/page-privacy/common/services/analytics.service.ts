@@ -97,9 +97,11 @@ export class AnalyticsService {
 			case RoutersName.BROWSERACCOUNTS:
 				return 'NonPrivatePassword';
 			case  RoutersName.NEWS:
-				return 'News.';
+				return 'News';
 			case  RoutersName.TIPS:
-				return 'Tips.';
+				return 'Tips';
+			case  RoutersName.LANDING:
+				return 'LenovoPrivacyLanding';
 			default:
 				return '';
 		}
