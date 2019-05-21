@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { IntelligentSecurity } from 'src/app/data-models/intellegent-security';
+import { IntelligentSecurity } from 'src/app/data-models/intellegent-security.model';
 import { ChangeContext } from 'ng5-slider';
 
 @Component({
