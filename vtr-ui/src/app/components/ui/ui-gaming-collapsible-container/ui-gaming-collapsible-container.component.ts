@@ -3,8 +3,8 @@ import * as $ from 'jquery';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { CPUOCStatus } from 'src/app/data-models/system-update/cpu-overclock-status.model';
+import { GamingSystemUpdateService } from 'src/app/services/gaming/gaming-system-update/gaming-system-update.service';
 
 @Component({
 	selector: 'vtr-ui-gaming-collapsible-container',
@@ -26,9 +26,9 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 
 	constructor(
 		private elementRef: ElementRef,
-		private systemUpdateService: SystemUpdateService,
+		private gamingSystemUpdateService: GamingSystemUpdateService,
 	) {
-		this.CpuOCStatus = systemUpdateService.GetCPUOverClockStatus();
+		this.CpuOCStatus = gamingSystemUpdateService.GetCPUOverClockStatus();
 	}
 
 	ngOnInit() {
@@ -55,7 +55,7 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 		this.CpuOCStatus.cpuOCStatus = option.value;
 		this.currentOption = option.name;
 		this.showOptions = false;
-		this.systemUpdateService.SetCPUOverClockStatus(this.CpuOCStatus);
+		this.gamingSystemUpdateService.SetCPUOverClockStatus(this.CpuOCStatus);
 	}
 
 	public showDescription(option) {

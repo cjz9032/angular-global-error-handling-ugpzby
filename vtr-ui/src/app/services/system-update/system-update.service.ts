@@ -691,23 +691,4 @@ export class SystemUpdateService {
 		}
 		return isSuccess;
 	}
-
-	public GetCPUOverClockStatus(): any  {
-		const CpuOCStatus = this.shellService.getCPUOCStatus();
-		if (CpuOCStatus !== undefined) {
-			const CpuOCStatusObj = new CPUOCStatus();
-			CpuOCStatusObj.cpuOCStatus = CpuOCStatus;
-			return CpuOCStatusObj;
-		}
-		return this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus);
-	}
-
-	public SetCPUOverClockStatus(CpuOCStatus: CPUOCStatus): any {
-		const UpdatedCpuOCStatus = this.shellService.setCPUOCStatus(CpuOCStatus);
-		if (UpdatedCpuOCStatus !== undefined) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, CpuOCStatus);
-			return CpuOCStatus;
-		}
-		return undefined;
-	}
 }
