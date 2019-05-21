@@ -120,7 +120,11 @@
 			"on": "ON",
 			"off": "OFF",
 			"collapse": "Collapse",
-			"expand": "Expand"
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
 		}
 	},
 	"privacy": {
