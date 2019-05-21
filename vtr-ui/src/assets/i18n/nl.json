@@ -30,7 +30,15 @@
             "notRegistered": "NIET GEREGISTREERD"
         },
         "ui": {
-			"back": "TERUG"
+            "back": "TERUG",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
 		}
     },
     "support": {

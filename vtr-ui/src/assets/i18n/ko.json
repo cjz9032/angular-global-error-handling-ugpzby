@@ -30,7 +30,15 @@
             "notRegistered": "등록되지 않음"
         },
         "ui": {
-			"back": "뒤로"
+            "back": "뒤로",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
 		}
     },
     "support": {
