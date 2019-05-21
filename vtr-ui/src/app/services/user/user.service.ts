@@ -73,6 +73,21 @@ export class UserService {
 		}
 	}
 
+	getLidLanguageSelectionFromCookies(domain: string) {
+		var lang = '';
+		const myFilter = new Windows.Web.Http.Filters.HttpBaseProtocolFilter();
+		const cookieManager = myFilter.cookieManager;
+		const myCookieJar = cookieManager.getCookies(new Windows.Foundation.Uri(domain));
+		if (myCookieJar) {
+			myCookieJar.forEach(cookie => {
+				if (cookie.name === 'lang') {
+					lang = cookie.value;
+				}
+			});
+		}
+		return lang;
+	}
+
 	deleteCookies(domain: string) {
 		const myFilter = new Windows.Web.Http.Filters.HttpBaseProtocolFilter();
 		const cookieManager = myFilter.cookieManager;

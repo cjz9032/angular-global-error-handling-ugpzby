@@ -1,10 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import * as $ from 'jquery';
 
 @Component({
-  selector: 'vtr-ui-gaming-collapsible-container',
-  templateUrl: './ui-gaming-collapsible-container.component.html',
-  styleUrls: ['./ui-gaming-collapsible-container.component.scss']
+	selector: 'vtr-ui-gaming-collapsible-container',
+	templateUrl: './ui-gaming-collapsible-container.component.html',
+	styleUrls: ['./ui-gaming-collapsible-container.component.scss'],
+	host: {
+		'(document:click)': 'generalClick($event)'
+	},
 })
 export class UiGamingCollapsibleContainerComponent implements OnInit {
 	@Input() public options;
@@ -24,7 +27,7 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 			this.buttonName = 'Show';
 		}
 	}
-	constructor() { }
+	constructor(private elementRef: ElementRef) { }
 
 	ngOnInit() {
 	this.options.forEach(option => {
@@ -39,8 +42,18 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	this.showOptions = false;
 }
 
-public showDescription(option) {
-	this.currentDescription = option.description;
-}
+	public showDescription(option) {
+		this.currentDescription = option.description;
+	}
+
+	public generalClick(event: Event) {
+		if (this.elementRef.nativeElement) {
+			if (!this.elementRef.nativeElement.contains(event.target)) {
+				if (this.showOptions) {
+					this.showOptions = false;
+				}
+			}
+		}
+	}
 
 }
