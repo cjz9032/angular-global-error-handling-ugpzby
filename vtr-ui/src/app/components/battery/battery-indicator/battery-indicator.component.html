@@ -35,12 +35,8 @@
 			</div>
 			<div class="battery-charging"
 			 *ngIf="!isVoltageError">
-				<fa-icon [icon]="['fas', 'bolt']"
-				 *ngIf="(isCharging && !isExpressCharging)">
-				</fa-icon>
-				<fa-icon [icon]="['fas', 'plug']"
-				 *ngIf="(isCharging && isExpressCharging)">
-				</fa-icon>
+				<span  *ngIf="(isCharging && !isExpressCharging)" class="icomoon icomoon-FA-Plug2x"></span>
+				<span  *ngIf="(isCharging && isExpressCharging)" class="icomoon icomoon-LE-expressCharging2x"></span>
 			</div>
 		</div>
 	</div>

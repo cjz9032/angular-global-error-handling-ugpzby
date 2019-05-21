@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import * as $ from 'jquery';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -7,9 +7,12 @@ import { SystemUpdateService } from 'src/app/services/system-update/system-updat
 import { CPUOCStatus } from 'src/app/data-models/system-update/cpu-overclock-status.model';
 
 @Component({
-  selector: 'vtr-ui-gaming-collapsible-container',
-  templateUrl: './ui-gaming-collapsible-container.component.html',
-  styleUrls: ['./ui-gaming-collapsible-container.component.scss']
+	selector: 'vtr-ui-gaming-collapsible-container',
+	templateUrl: './ui-gaming-collapsible-container.component.html',
+	styleUrls: ['./ui-gaming-collapsible-container.component.scss'],
+	host: {
+		'(document:click)': 'generalClick($event)'
+	},
 })
 export class UiGamingCollapsibleContainerComponent implements OnInit {
 	@Input() public options;
@@ -22,8 +25,9 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 
 
 	constructor(
-		shellService: VantageShellService,
-		systemUpdateService: SystemUpdateService,
+		private elementRef: ElementRef,
+		private shellService: VantageShellService,
+		private systemUpdateService: SystemUpdateService,
 	) {
 		this.currentOption = systemUpdateService.GetCPUOverClockStatus();
 		const CpuOCStatusFromShell = shellService.getCPUOCStatus();
@@ -64,4 +68,13 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 		this.currentDescription = option.description;
 	}
 
+	public generalClick(event: Event) {
+		if (this.elementRef.nativeElement) {
+			if (!this.elementRef.nativeElement.contains(event.target)) {
+				if (this.showOptions) {
+					this.showOptions = false;
+				}
+			}
+		}
+	}
 }
