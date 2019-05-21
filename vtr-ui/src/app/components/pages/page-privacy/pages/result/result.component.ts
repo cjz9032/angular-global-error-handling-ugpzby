@@ -47,8 +47,6 @@ export class ResultComponent implements OnInit, OnDestroy {
 				this.breached_accounts_show = this.breached_accounts.slice(0, 3);
 				this.changeDetectorRef.detectChanges();
 			});
-
-		this.breachedAccountsService.getBreachedAccounts();
 	}
 
 	ngOnDestroy() {
