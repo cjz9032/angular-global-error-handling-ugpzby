@@ -22,7 +22,7 @@ import { CPUOCStatus } from 'src/app/data-models/system-update/cpu-overclock-sta
 export class SystemUpdateService {
 
 	constructor(
-		private shellService: VantageShellService
+		shellService: VantageShellService
 		, private commonService: CommonService) {
 		this.systemUpdateBridge = shellService.getSystemUpdate();
 		this.metricClient = shellService.getMetrics();
