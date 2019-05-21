@@ -8,7 +8,8 @@
 				<div class="col">
 					<ul class="system-tool-icons d-flex justify-content-around">
 						<li>
-							<a routerLink="/device/system-updates">
+							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.systemUpdate' | translate"
+								metricsEvent="featureClick" routerLink="/device/system-updates">
 								<figure>
 									<div class="system-icon">
 										<i class="icon icon-systemupdate"></i>
@@ -19,7 +20,8 @@
 							</a>
 						</li>
 						<li>
-							<a routerLink="/macrokey">
+							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.macroKey' | translate"
+								metricsEvent="featureClick" routerLink="/macrokey">
 								<figure>
 									<div class="system-icon">
 										<i class="icon icon-macrokey"></i>
@@ -31,28 +33,35 @@
 						</li>
 
 						<li>
-							<a routerLink="/device/device-settings/power">
+							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.power' | translate"
+								metricsEvent="featureClick" routerLink="/device/device-settings/power">
 								<figure>
+
 									<div class="system-icon">
 										<i class="icon icon-power"></i>
 									</div>
+
 									<figcaption>{{'gaming.dashboard.device.systemTools.power' | translate}}</figcaption>
 								</figure>
 							</a>
 						</li>
 						<li>
-							<a routerLink="/device/device-settings/display-camera">
+							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.media' | translate"
+								metricsEvent="featureClick" routerLink="/device/device-settings/display-camera">
 								<figure>
+
 									<div class="system-icon">
 										<i class="icon icon-media"></i>
 									</div>
+
 									<figcaption>{{'gaming.dashboard.device.systemTools.media' | translate}}</figcaption>
 								</figure>
 							</a>
 						</li>
 
 						<li>
-							<a routerLink="/hardwarescan">
+							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.media' | translate"
+								metricsEvent="featureClick" routerLink="/hardwarescan">
 								<figure>
 									<div class="system-icon">
 										<i class="icon icon-hardwarescan"></i>

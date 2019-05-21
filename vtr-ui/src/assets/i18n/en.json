@@ -33,6 +33,9 @@
 					"hardwareScan": "Hardware Scan",
 					"systemUpdate": "System Update"
 				},
+				"lighting": {
+					"title": "Lighting Customize"
+				},
 				"legionEdgeModal": {
 					"line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
 					"line2": "<b>Feature Management Overview</b> <br> Some features not available on all devices",
