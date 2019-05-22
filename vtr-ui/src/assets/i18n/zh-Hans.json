@@ -16,7 +16,7 @@
 				"legionEdge": {
 					"title": "CPU Overlock",
 					"status": {
-						"alwayson": "Always On",
+						"alwayson": "On",
 						"whenGaming": "When Gaming",
 						"off": "Off"
 					},
