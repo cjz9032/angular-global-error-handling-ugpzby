@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { IntelligentSecurity } from 'src/app/data-models/intellegent-security.model';
 import { ChangeContext } from 'ng5-slider';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-smart-assist',
@@ -10,9 +11,7 @@ import { ChangeContext } from 'ng5-slider';
 })
 export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 
-	// service call to fetch type of device
 	public isThinkpad = false;
-
 	public tooltipText = 'device.deviceSettings.smartAssist.intelligentSecurity.autoScreenLock.autoScreenLockTimer.toolTipContent';
 	title = 'device.deviceSettings.smartAssist.title';
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
@@ -20,6 +19,7 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	public autoIrCameraLoginStatus = new FeatureStatus(false, true);
 	public intelligentSecurityProperties: IntelligentSecurity;
 	public autoScreenLockTimer = false;
+	public distanceSensitivityTitle: string;
 	@Output() distanceChange: EventEmitter<ChangeContext> = new EventEmitter();
 
 	headerMenuItems = [
@@ -41,11 +41,12 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 		}
 	];
 
-	constructor() { }
+	constructor(public translate: TranslateService) { }
 
 	ngOnInit() {
 		console.log('subpage-device-setting-display onInit');
-		this.getIntelligentSecurityProperties();
+		this.setIntelligentSecurityProperties();
+		this.setIsThinkpad();
 	}
 
 	public onCardCollapse(isCollapsed: boolean) {
@@ -69,7 +70,7 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	public onChangeAutoScreenLockFlag($event) {
 		this.intelligentSecurityProperties.autoScreenLockFlag = !this.intelligentSecurityProperties.autoScreenLockFlag;
 	}
-	public getIntelligentSecurityProperties() {
+	public setIntelligentSecurityProperties() {
 		// service call to fetch Intelligent Security Properties
 		this.intelligentSecurityProperties = new IntelligentSecurity(true,10,true,true,"fast");
 	}
@@ -80,5 +81,11 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	public setHumanDistance(event: ChangeContext) {
 		console.log('Human Distance changed', event);
 		this.intelligentSecurityProperties.humanDistance = event.value;
+	}
+	public setIsThinkpad() {
+		// service call to fetch type of device
+		this.isThinkpad = true;
+		this.distanceSensitivityTitle = this.isThinkpad ? this.translate.instant('device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title1') :
+					this.translate.instant('device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title2');
 	}
 }

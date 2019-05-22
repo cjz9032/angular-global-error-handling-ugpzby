@@ -44,7 +44,7 @@
 					</li>
 					<li class="pt-3 pl-5" [ngClass]="{'ml-4':'isThinkpad', 'disabled-overlay': !intelligentSecurityProperties.humanPresenceDetectionFlag }">
 						<vtr-ui-row-switch
-							[title]="isThinkPad?'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title1': 'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title2' | translate"
+							[title]="distanceSensitivityTitle"
 							[isSwitchVisible]="false" [leftIcon]="['fal', 'gem']" [showChildContent]="true"
 							[readMoreText]="''" [theme]="'white'"
 							[disabled]="!intelligentSecurityProperties.autoIRLoginFlag">
