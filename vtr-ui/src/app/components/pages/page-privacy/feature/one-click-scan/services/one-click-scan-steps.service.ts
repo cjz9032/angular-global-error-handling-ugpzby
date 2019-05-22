@@ -9,6 +9,7 @@ export interface Permit {
 export enum OneClickScanSteps {
 	PERMIT_TRACKERS_AND_PASSWORD = 'Permit analyse trackers and get password from browser',
 	VERIFY_EMAIL = 'Verify email',
+	SCAN = 'Scan tour'
 }
 
 @Injectable({

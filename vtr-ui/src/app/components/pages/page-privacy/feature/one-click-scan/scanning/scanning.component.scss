@@ -1,0 +1,9 @@
+@import "../../../styles/common-blocks";
+
+.scanning {
+	&__button{
+		&--skip {
+			@extend %button-text;
+		}
+	}
+}

@@ -1,14 +1,18 @@
 <ng-container [ngSwitch]="currentStep.step">
 	<vtr-permit-trackers-and-passwords
 		*ngSwitchCase="oneClickScanSteps.PERMIT_TRACKERS_AND_PASSWORD"
-		(allow)="handlerAllow($event, oneClickScanSteps.PERMIT_TRACKERS_AND_PASSWORD)">
+		(allow)="handleAllow($event, oneClickScanSteps.PERMIT_TRACKERS_AND_PASSWORD)">
 		<ng-container class="stepper" [ngTemplateOutlet]="stepper"></ng-container>
 	</vtr-permit-trackers-and-passwords>
 	<vtr-enter-email
 		*ngSwitchCase="oneClickScanSteps.VERIFY_EMAIL"
-		(allow)="handlerAllow($event, oneClickScanSteps.VERIFY_EMAIL)">
+		(allow)="handleAllow($event, oneClickScanSteps.VERIFY_EMAIL)">
 		<ng-container class="stepper" [ngTemplateOutlet]="stepper"></ng-container>
 	</vtr-enter-email>
+	<vtr-scanning
+		*ngSwitchCase="oneClickScanSteps.SCAN"
+		(allow)="handleScanAllow($event)">
+	</vtr-scanning>
 </ng-container>
 
 <ng-template #stepper>

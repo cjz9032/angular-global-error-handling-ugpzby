@@ -5,9 +5,10 @@ import { PermitTrackersAndPasswordsComponent } from './permit-trackers-and-passw
 import { EnterEmailComponent } from './enter-email/enter-email.component';
 import { ComponentsModule } from '../../common/components/components.module';
 import { CheckBreachedAccountsModule } from '../check-breached-accounts/check-breached-accounts.module';
+import { ScanningComponent } from './scanning/scanning.component';
 
 @NgModule({
-	declarations: [OneClickScanComponent, PermitTrackersAndPasswordsComponent, EnterEmailComponent],
+	declarations: [OneClickScanComponent, PermitTrackersAndPasswordsComponent, EnterEmailComponent, ScanningComponent],
 	imports: [
 		CommonModule,
 		ComponentsModule,
