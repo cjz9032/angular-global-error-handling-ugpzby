@@ -21,9 +21,8 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 	}
 
 	ngOnInit() { }
-
 	showVar: boolean = false;
-
+	
 	public onToggleOnOff($event: any) {
 		this.toggleOnOff.emit($event);
 		this.showVar = !this.showVar;
@@ -33,6 +32,8 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 		if (path && path.length > 0) {
 			this.deviceService.launchUri(path);
 		}
-	}	
+	}
+
+	
 }
 

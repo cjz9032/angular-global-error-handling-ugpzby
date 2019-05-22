@@ -22,6 +22,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCollapsible: true,
 			isCheckBoxVisible: false,
 			isSwitchVisible: false,
+			isPopup: false,
 			isChecked: false,
 			tooltipText: '',
 			type: 'auto-updates'
@@ -37,6 +38,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
+			isPopup: true,
 			isChecked: true,
 			tooltipText: '',
 			type: 'auto-updates'
@@ -52,6 +54,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
+			isPopup: false,
 			isChecked: true,
 			tooltipText: '',
 			type: 'auto-updates',
@@ -68,6 +71,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
+			isPopup: false,
 			isChecked: true,
 			tooltipText: '',
 			type: 'auto-updates',
@@ -84,6 +88,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
+			isPopup: true,
 			isChecked: true,
 			tooltipText: '',
 			type: 'auto-updates'
@@ -100,6 +105,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
+			isPopup: false,
 			isChecked: true,
 			tooltipText: '',
 			type: 'auto-updates'
@@ -134,7 +140,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 	openModal() {
 		//this.modalService.open(ModalWelcomeComponent);
-		this.modalService.open(ModalGamingLegionedgeComponent);
+		this.modalService.open(ModalGamingLegionedgeComponent,{windowClass: 'gaming-help-modal'});
 	}
 
 }
