@@ -10,28 +10,34 @@
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible
 				[cardTitle]="'device.deviceSettings.smartAssist.intelligentSecurity.title' | translate"
-				componentName="intelligent security" [isCollapsed]="false" [allowCollapse]="true" [theme]="'white'"
+				componentName="intelligent security" 
+				[isCollapsed]="false" 
+				[allowCollapse]="true" 
+				[theme]="'white'"
 				(toggle)="onCardCollapse($event)">
-				<ul class="list-group list-group-flush">
+				<!-- <ul class="list-group list-group-flush">
 					<li class="pt-3" *ngIf="isThinkpad">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.smartAssist.intelligentSecurity.HumanPresenceDetection.title' | translate"
-							componentName="Human presence detection" [isSwitchVisible]="true"
-							[leftIcon]="['fal', 'gem']" [rightIcon]="['far', 'question-circle']"
-							[tooltipText]="'device.deviceSettings.smartAssist.intelligentSecurity.HumanPresenceDetection.tooltip' | translate"
-							[showChildContent]="true" [isSwitchChecked]="intelligentSecurity.humanPresenceDetectionFlag"
-							(toggleOnOff)="onHumanPresenceDetectStatusToggle($event)" [theme]="'white'">
+							componentName="Human presence detection" 
+							[isSwitchVisible]="true"
+							[leftIcon]="['fal', 'gem']"
+							[showChildContent]="true" 
+							[isSwitchChecked]="intelligentSecurity.humanPresenceDetectionFlag"
+							(toggleOnOff)="onHumanPresenceDetectStatusToggle($event)" 
+							[theme]="'white'">
 						</vtr-ui-row-switch>
 					</li>
 					<li class="pt-3"
 						[ngClass]="{'ml-4':'isThinkpad', 'disabled-overlay': !intelligentSecurity.humanPresenceDetectionFlag }">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLogin.title' | translate"
-							[isSwitchVisible]="true" [leftIcon]="['fal', 'gem']"
-							[rightIcon]="['far', 'question-circle']"
-							[tooltipText]="'device.deviceSettings.smartAssist.intelligentSecurity.HumanPresenceDetection.tooltip' | translate"
-							[showChildContent]="true" [isSwitchChecked]="intelligentSecurity.zeroTouchLoginFlag"
-							(toggleOnOff)="onzeroTouchLoginStatusToggle($event)" [theme]="'white'"
+							[isSwitchVisible]="true" 
+							[leftIcon]="['fal', 'gem']"
+							[showChildContent]="true"
+							[isSwitchChecked]="intelligentSecurity.zeroTouchLoginFlag"
+							(toggleOnOff)="onzeroTouchLoginStatusToggle($event)" 
+							[theme]="'white'"
 							[disabled]="!intelligentSecurity.humanPresenceDetectionFlag">
 							<div class="caption">
 								<p>{{ 'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLogin.caption' | translate }}
@@ -44,8 +50,12 @@
 					</li>
 					<li class="pt-3 pl-5"
 						[ngClass]="{'ml-4':'isThinkpad', 'disabled-overlay': !intelligentSecurity.humanPresenceDetectionFlag }">
-						<vtr-ui-row-switch [title]="distanceSensitivityTitle" [isSwitchVisible]="false"
-							[leftIcon]="['fal', 'gem']" [showChildContent]="true" [readMoreText]="''" [theme]="'white'"
+						<vtr-ui-row-switch [title]="distanceSensitivityTitle | translate" 
+							[isSwitchVisible]="false"
+							[leftIcon]="['fal', 'gem']" 
+							[showChildContent]="true" 
+							[readMoreText]="''" 
+							[theme]="'white'"
 							[disabled]="!intelligentSecurity.zeroTouchLoginFlag">
 							<div class="caption">
 								<p>{{ 'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate }}
@@ -55,7 +65,8 @@
 								[minValueLegend]="'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
 								[minValue]="0"
 								[maxValueLegend]="'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
-								[maxValue]="100" (change)="setHumanDistance($event)"
+								[maxValue]="100" 
+								(change)="setHumanDistance($event)"
 								[enableSlider]="!intelligentSecurity.zeroTouchLoginFlag"
 								[value]="intelligentSecurity.humanDistance">
 							</vtr-ui-range-slider>
@@ -76,17 +87,19 @@
 							</div>
 						</vtr-ui-row-switch>
 					</li>
+				</ul> -->
+				<ul class="list-group list-group-flush">
 					<li class="pt-3 auto-screen-block"
 						[ngClass]="{'ml-4':'isThinkpad', 'disabled-overlay': !intelligentSecurity.humanPresenceDetectionFlag }">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.title' | translate"
 							[caption]=" 'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.caption' | translate"
-							[isSwitchVisible]="true" [leftIcon]="['fal', 'gem']"
-							[rightIcon]="['far', 'question-circle']"
-							[tooltipText]="'device.deviceSettings.smartAssist.intelligentSecurity.HumanPresenceDetection.tooltip' | translate"
+							[isSwitchVisible]="true" 
+							[leftIcon]="['fal', 'gem']"
 							[readMoreText]="''" [showChildContent]="true"
 							[isSwitchChecked]="intelligentSecurity.zeroTouchLockFlag"
-							(toggleOnOff)="onChangezeroTouchLockFlag($event)" [theme]="'white'"
+							(toggleOnOff)="onChangezeroTouchLockFlag($event)" 
+							[theme]="'white'"
 							[disabled]="!intelligentSecurity.humanPresenceDetectionFlag">
 							<div class="row blur" [class.disabled]="!intelligentSecurity.zeroTouchLockFlag">
 								<div class="col-12 py-4 pr-0 d-flex justify-content-between auto-screen-lock-timer">

@@ -12,7 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 
 	public isThinkpad = false;
-	public tooltipText = 'device.deviceSettings.smartAssist.intelligentSecurity.autoScreenLock.autoScreenLockTimer.toolTipContent';
+	public tooltipText = 'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.toolTipContent';
 	title = 'device.deviceSettings.smartAssist.title';
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	public humanPresenceDetecStatus = new FeatureStatus(false, true);
@@ -89,7 +89,7 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	public setIsThinkpad() {
 		// service call to fetch type of device
 		this.isThinkpad = true;
-		this.distanceSensitivityTitle = this.isThinkpad ? this.translate.instant('device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title1') :
-					this.translate.instant('device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title2');
+		this.distanceSensitivityTitle = this.isThinkpad ? 'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title1' :
+					'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title2';
 	}
 }
