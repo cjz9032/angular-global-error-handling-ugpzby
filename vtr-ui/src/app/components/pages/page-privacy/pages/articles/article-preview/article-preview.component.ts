@@ -48,22 +48,21 @@ export class ArticlePreviewComponent implements OnInit, AfterViewInit {
 		const cutHtmlElement = this.articleTitle.nativeElement;
 		cutHtmlElement.innerHTML = '';
 
-		let lineHeight = 0;
+		let allowedHeight = 0;
 		let currHeight = 0;
 		let lastAddedWordIndex = 0;
 		const allowedLines = 2;
 		textToAdd.forEach((word, index) => {
-			if (currHeight <= lineHeight * allowedLines) {
+			if (currHeight <= allowedHeight) {
 				cutHtmlElement.innerHTML += `${word} `;
 				currHeight = cutHtmlElement.offsetHeight;
 				if (index === 0) {
-					lineHeight = currHeight;
+					allowedHeight = currHeight * allowedLines + (allowedLines / 2); // (allowedLines / 2) - for case if browser will round height
 				}
 				lastAddedWordIndex = index;
 			}
 		});
 		const hasMoreWords = lastAddedWordIndex <= textToAdd.length - 1;
-		const allowedHeight = lineHeight * allowedLines;
 		if (hasMoreWords && currHeight > allowedHeight) {
 			cutHtmlElement.innerHTML = cutHtmlElement.innerHTML.replace(` ${textToAdd[lastAddedWordIndex]}`, '...');
 			currHeight = cutHtmlElement.offsetHeight;
