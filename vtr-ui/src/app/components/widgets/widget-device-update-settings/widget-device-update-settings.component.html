@@ -24,7 +24,7 @@
 										</a>
 										<a href="javascript:void();" *ngIf="item.isSwitchVisible"
 											class="d-flex no-pointer">
-											<vtr-ui-switch-onoff [name]="item.type" (toggle)="onToggleOnOff($event)">
+											<vtr-ui-switch-onoff [name]="item.type" [value]="item.isChecked" (toggle)="onToggleOnOff($event)">
 											</vtr-ui-switch-onoff>
 
 											<fa-icon class="question" triggers="click:blur" placement="auto"
