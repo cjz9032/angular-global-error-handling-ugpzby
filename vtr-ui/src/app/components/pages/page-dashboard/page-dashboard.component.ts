@@ -35,6 +35,7 @@ export class PageDashboardComponent implements OnInit {
 	public isOnline = true;
 
 	heroBannerItems = [];
+	cardContentPositionA: any = {};
 	cardContentPositionB: any = {};
 	cardContentPositionC: any = {};
 	cardContentPositionD: any = {};
