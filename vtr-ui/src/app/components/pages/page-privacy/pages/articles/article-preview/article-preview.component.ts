@@ -5,6 +5,7 @@ import {
 	OnInit,
 	AfterViewInit,
 	ViewChild,
+	HostListener,
 } from '@angular/core';
 import { Article } from '../articles.service';
 import { Router } from '@angular/router';
@@ -12,10 +13,11 @@ import { CommonPopupService } from '../../../common/services/popups/common-popup
 import { RouterChangeHandlerService } from '../../../common/services/router-change-handler.service';
 import { RoutersName } from '../../../privacy-routing-name';
 
+@HostListener('window:resize', ['$event'])
 @Component({
 	selector: 'vtr-article-preview',
 	templateUrl: './article-preview.component.html',
-	styleUrls: ['./article-preview.component.scss']
+	styleUrls: ['./article-preview.component.scss'],
 })
 export class ArticlePreviewComponent implements OnInit, AfterViewInit {
 	@Input() article: Article;
@@ -34,8 +36,17 @@ export class ArticlePreviewComponent implements OnInit, AfterViewInit {
 	}
 
 	ngAfterViewInit() {
+		this.addCutText();
+	}
+
+	onResizeFn() {
+		this.addCutText();
+	}
+
+	addCutText() {
 		const textToAdd = this.article.title.split(' ');
 		const cutHtmlElement = this.articleTitle.nativeElement;
+		cutHtmlElement.innerHTML = '';
 
 		let lineHeight = 0;
 		let currHeight = 0;
@@ -52,9 +63,13 @@ export class ArticlePreviewComponent implements OnInit, AfterViewInit {
 			}
 		});
 		const hasMoreWords = lastAddedWordIndex <= textToAdd.length - 1;
-		const higherThenAllowed = currHeight > lineHeight * allowedLines;
-		if (hasMoreWords && higherThenAllowed) {
+		const allowedHeight = lineHeight * allowedLines;
+		if (hasMoreWords && currHeight > allowedHeight) {
 			cutHtmlElement.innerHTML = cutHtmlElement.innerHTML.replace(` ${textToAdd[lastAddedWordIndex]}`, '...');
+			currHeight = cutHtmlElement.offsetHeight;
+		}
+		if (currHeight > allowedHeight) { // if last word moved to next line after adding '...'
+			cutHtmlElement.innerHTML = cutHtmlElement.innerHTML.replace(` ${textToAdd[lastAddedWordIndex - 1]}...`, '...');
 		}
 	}
 
