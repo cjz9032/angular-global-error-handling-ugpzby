@@ -1,5 +1,10 @@
 import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import * as $ from 'jquery';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { CPUOCStatus } from 'src/app/data-models/system-update/cpu-overclock-status.model';
+import { GamingSystemUpdateService } from 'src/app/services/gaming/gaming-system-update/gaming-system-update.service';
 
 @Component({
 	selector: 'vtr-ui-gaming-collapsible-container',
@@ -16,6 +21,24 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	public selected = false;
 	public currentOption: string;
 	public currentDescription: string;
+	public CpuOCStatus: CPUOCStatus;
+
+
+	constructor(
+		private elementRef: ElementRef,
+		private gamingSystemUpdateService: GamingSystemUpdateService,
+	) {
+		this.CpuOCStatus = gamingSystemUpdateService.GetCPUOverClockStatus();
+	}
+
+	ngOnInit() {
+		this.options.forEach(option => {
+			if (option.value === this.CpuOCStatus.cpuOCStatus) {
+				this.currentOption = option.name;
+				this.currentDescription = option.description;
+			}
+		});
+	}
 
 	public toggleOptions() {
 		this.showOptions = !this.showOptions;
@@ -27,20 +50,13 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 			this.buttonName = 'Show';
 		}
 	}
-	constructor(private elementRef: ElementRef) { }
-
-	ngOnInit() {
-	this.options.forEach(option => {
-		this.currentOption = option.defaultOption ? option.name : this.currentOption;
-		this.currentDescription = option.defaultOption ? option.description : this.currentOption;
-	});
-	}
-
 
 	public optionSelected(option) {
-	this.currentOption = option.name;
-	this.showOptions = false;
-}
+		this.CpuOCStatus.cpuOCStatus = option.value;
+		this.currentOption = option.name;
+		this.showOptions = false;
+		this.gamingSystemUpdateService.SetCPUOverClockStatus(this.CpuOCStatus);
+	}
 
 	public showDescription(option) {
 		this.currentDescription = option.description;
@@ -55,5 +71,4 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 			}
 		}
 	}
-
 }

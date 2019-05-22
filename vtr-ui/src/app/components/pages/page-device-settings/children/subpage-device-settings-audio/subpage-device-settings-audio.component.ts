@@ -25,6 +25,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	public autoDolbyFeatureStatus: FeatureStatus;
 	public dolbyModeResponse: DolbyModeResponse;
 	public microOptimizeModeResponse: MicrophoneOptimizeModes;
+	microphoneLoader = true;
+	autoDolbyFeatureLoader = true;
 
 	constructor(private audioService: AudioService, 
 		private dashboardService: DashboardService,
@@ -71,6 +73,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 						this.microphoneProperties = microphone;
 						let status = new FeatureStatus(microphone.available, microphone.muteDisabled, microphone.permission)
 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardMicrophone, status);
+						this.microphoneLoader = false;
 						console.log('getMicrophoneSettings', microphone);
 					}).catch(error => {
 						console.error('getMicrophoneSettings', error);
@@ -106,6 +109,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				this.audioService.getDolbyFeatureStatus()
 					.then((dolbyFeature: FeatureStatus) => {
 						this.autoDolbyFeatureStatus = dolbyFeature;
+						this.autoDolbyFeatureLoader = false;
 						console.log('getDolbyFeatureStatus:', dolbyFeature);
 					}).catch(error => {
 						console.error('getDolbyFeatureStatus', error);
@@ -307,6 +311,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	startMonitorHandler(microphone: Microphone) {
 		this.microphoneProperties = microphone;
+		this.microphoneLoader = false;
 		console.log('startMonitorHandler', microphone);
 	}
 

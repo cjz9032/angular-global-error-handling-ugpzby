@@ -9,7 +9,8 @@
                 "sub4": "Jačina lozinke",
                 "sub5": "Zaštita na internetu",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Savjetnik za sigurnost tvrtke",
@@ -30,8 +31,25 @@
             "notRegistered": "NIJE REGISTRIRAN"
         },
         "ui": {
-			"back": "NATRAG"
+            "back": "NATRAG",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
 		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
