@@ -2,33 +2,43 @@ import { Injectable } from '@angular/core';
 import { OneClickScanSteps } from './one-click-scan-steps.service';
 import { UserAllowService } from '../../../common/services/user-allow.service';
 import { BrowserAccountsService } from '../../../common/services/browser-accounts.service';
+import { EmailScannerService } from '../../check-breached-accounts/services/email-scanner.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class PermitService {
 	readonly oneClickScanSteps = OneClickScanSteps;
+	permitsValue: OneClickScanSteps[] = [];
 
 	constructor(
 		private userAllowService: UserAllowService,
-		private browserAccountsService: BrowserAccountsService
+		private browserAccountsService: BrowserAccountsService,
+		private emailScannerService: EmailScannerService,
 	) {
 	}
 
-	setPermit(permitValue: boolean, step: OneClickScanSteps) {
-		switch (step) {
-			case this.oneClickScanSteps.PERMIT_TRACKERS_AND_PASSWORD:
-				this.setPermitTrackersAndPassword(permitValue);
-				break;
-			default:
-				break;
-		}
+	savePermit(step: OneClickScanSteps) {
+		this.permitsValue.push(step);
 	}
 
-	private setPermitTrackersAndPassword(permitValue: boolean) {
-		this.userAllowService.setShowTrackingMap(permitValue);
-		if (permitValue) {
-			this.browserAccountsService.giveConcent();
-		}
+	setPermit() {
+		this.permitsValue.forEach((step) => {
+			switch (step) {
+				case this.oneClickScanSteps.PERMIT_TRACKERS_AND_PASSWORD:
+					this.setPermitTrackersAndPassword();
+					break;
+				case this.oneClickScanSteps.VERIFY_EMAIL:
+					this.emailScannerService.sendConfirmationCode();
+					break;
+				default:
+					break;
+			}
+		});
+	}
+
+	private setPermitTrackersAndPassword() {
+		this.userAllowService.setShowTrackingMap(true);
+		this.browserAccountsService.giveConcent();
 	}
 }

@@ -9,26 +9,22 @@
 		<ng-content select=".stepper"></ng-content>
 	</div>
 
-	<ng-container *ngIf="!isOpenConfirmationComponent">
-		<h2 class="enter-email__title">
-			Can we check your email?
-		</h2>
+	<h2 class="enter-email__title">
+		Can we check your email?
+	</h2>
 
-		<div class="enter-email__text-block">
-			<p class="enter-email__text">
-				Data breaches compromised millions of user accounts. Check if your private data was leaked.
-			</p>
-		</div>
+	<div class="enter-email__text-block">
+		<p class="enter-email__text">
+			Data breaches compromised millions of user accounts. Check if your private data was leaked.
+		</p>
+	</div>
 
-		<vtr-check-breaches-form size="small"
-								 class="enter-email__check-form"
-								 (openConfirmationCode)="openConfirmationComponent()">
-		</vtr-check-breaches-form>
+	<vtr-check-breaches-form size="small"
+							 class="enter-email__check-form"
+							 (userEmail)="allowEmitter()">
+	</vtr-check-breaches-form>
 
-		<button class="enter-email__button--skip" (click)="disallowEmitter()">
-			Skip
-		</button>
-	</ng-container>
-	<vtr-confirmation *ngIf="isOpenConfirmationComponent" (confirmationSuccess)="allowEmitter()">
-	</vtr-confirmation>
+	<button class="enter-email__button--skip" (click)="disallowEmitter()">
+		Skip
+	</button>
 </section>

@@ -23,17 +23,18 @@ export class OneClickScanComponent {
 
 	handlerAllow(permitValue: boolean, step: OneClickScanSteps) {
 		if (permitValue) {
-			this.permitService.setPermit(permitValue, step);
+			this.permitService.savePermit(step);
 		}
 
 		this.nextStep();
+
+		if (this.currentStep === null) {
+			this.permitService.setPermit();
+			this.commonPopupService.close(this.popupId);
+		}
 	}
 
 	private nextStep() {
 		this.currentStep = this.oneClickScanService.nextStep();
-
-		if (this.currentStep === null) {
-			this.commonPopupService.close(this.popupId);
-		}
 	}
 }

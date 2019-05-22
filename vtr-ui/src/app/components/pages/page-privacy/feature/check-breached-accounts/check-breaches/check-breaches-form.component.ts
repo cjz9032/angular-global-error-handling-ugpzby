@@ -28,7 +28,7 @@ interface UserProfile {
 })
 export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	@Input() size: 'default' | 'small' = 'default';
-	@Output() openConfirmationCode = new EventEmitter<boolean>();
+	@Output() userEmail = new EventEmitter<string>();
 	emailWasScanned$ = this.accessTokenService.accessTokenIsExist$;
 
 	emailForm = this.formBuilder.group({
@@ -102,18 +102,10 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 			return;
 		}
 
-		this.emailScannerService.setUserEmail(this.emailForm.value.email);
+		const userEmail = this.emailForm.value.email;
 
-		this.emailScannerService.sendConfirmationCode().pipe(
-			takeUntil(instanceDestroyed(this)),
-		).subscribe((response) => {
-			this.size === 'default' ?
-				this.commonPopupService.open(this.confirmationPopupId) :
-				this.openConfirmationCode.emit(true);
-		}, (error) => {
-			this.serverError$.next(true);
-			console.error('auth error:', error);
-		});
+		this.emailScannerService.setUserEmail(userEmail);
+		this.size === 'default' ? this.sendConfirmationCode() : this.userEmail.emit(userEmail);
 	}
 
 	private handleStartTyping() {
@@ -129,6 +121,17 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 			takeUntil(instanceDestroyed(this))
 		).subscribe(() => {
 			this.openLenovoId();
+		});
+	}
+
+	private sendConfirmationCode() {
+		this.emailScannerService.sendConfirmationCode().pipe(
+			takeUntil(instanceDestroyed(this)),
+		).subscribe((response) => {
+			this.commonPopupService.open(this.confirmationPopupId);
+		}, (error) => {
+			this.serverError$.next(true);
+			console.error('auth error:', error);
 		});
 	}
 }

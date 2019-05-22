@@ -9,17 +9,11 @@ import { Permit } from '../services/one-click-scan-steps.service';
 export class EnterEmailComponent implements Permit {
 	@Output() allow = new EventEmitter<boolean>();
 
-	isOpenConfirmationComponent = false;
-
 	allowEmitter() {
 		this.allow.emit(true);
 	}
 
 	disallowEmitter() {
 		this.allow.emit(false);
-	}
-
-	openConfirmationComponent() {
-		this.isOpenConfirmationComponent = true;
 	}
 }
