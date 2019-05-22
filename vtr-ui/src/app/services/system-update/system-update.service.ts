@@ -385,6 +385,11 @@ export class SystemUpdateService {
 			} else {
 				coreqUpdate.isDependency = false;
 			}
+			if (coreqUpdate.coreqPackageID) {
+				const packages = coreqUpdate.coreqPackageID.split(',');
+				this.selectCoreqUpdate(updateList, packages, isSelected);
+			}
+
 		});
 	}
 
