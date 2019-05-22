@@ -343,7 +343,7 @@ library.add(fal);
 		PageNetworkBoostComponent,
 		PowerSmartSettingsComponent,
 		SubpageDeviceSettingsSmartAssistComponent,
-		UiPopoverComponent
+		UiPopoverComponent,
 		WidgetHomeSecurityDeviceComponent
 	],
 	imports: [
