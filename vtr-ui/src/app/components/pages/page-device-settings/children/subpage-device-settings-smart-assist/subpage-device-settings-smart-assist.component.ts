@@ -1,8 +1,9 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { DeviceService } from 'src/app/services/device/device.service';
+import { ChangeContext } from 'ng5-slider';
+
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { IntelligentSecurity } from 'src/app/data-models/intellegent-security.model';
-import { ChangeContext } from 'ng5-slider';
-import { TranslateService } from '@ngx-translate/core';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 
 @Component({
@@ -43,7 +44,10 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 		// }
 	];
 
-	constructor(private smartAssist: SmartAssistService) { }
+	constructor(
+		private smartAssist: SmartAssistService,
+		private deviceService: DeviceService
+	) { }
 
 	ngOnInit() {
 		console.log('subpage-device-setting-display onInit');
@@ -89,5 +93,13 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 		this.isThinkPad = true;
 		this.distanceSensitivityTitle = this.isThinkPad ? 'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title1' :
 			'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title2';
+	}
+
+	public launchPowerAndSleep() {
+		this.deviceService.launchUri('ms-settings:powersleep');
+	}
+
+	public launchFaceEnrollment() {
+		this.deviceService.launchUri('ms-settings:signinoptions-launchfaceenrollment');
 	}
 }
