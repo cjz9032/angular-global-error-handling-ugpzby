@@ -43,7 +43,7 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 		// }
 	];
 
-	constructor(public smartAssist: SmartAssistService) { }
+	constructor(private smartAssist: SmartAssistService) { }
 
 	ngOnInit() {
 		console.log('subpage-device-setting-display onInit');

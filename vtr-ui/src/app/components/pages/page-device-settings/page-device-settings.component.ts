@@ -7,6 +7,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AudioService } from 'src/app/services/audio/audio.service';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
+import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -59,7 +60,8 @@ export class PageDeviceSettingsComponent implements OnInit {
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
-		public audioService: AudioService
+		public audioService: AudioService,
+		private smartAssist: SmartAssistService
 	) {
 		this.fetchCMSArticles();
 		this.getMicrophoneSettings();
@@ -67,7 +69,7 @@ export class PageDeviceSettingsComponent implements OnInit {
 
 	ngOnInit() {
 		this.devService.writeLog('DEVICE SETTINGS INIT', this.menuItems);
-		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine)
+		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 	}
 
 	getMicrophoneSettings() {
@@ -76,9 +78,9 @@ export class PageDeviceSettingsComponent implements OnInit {
 				this.audioService.getMicrophoneSettings()
 					.then((microphone: Microphone) => {
 						console.log('getMicrophoneSettings', microphone);
-						 if (!microphone.available) {
+						if (!microphone.available) {
 							this.menuItems.splice(1, 1);
-						 }
+						}
 					}).catch(error => {
 						console.error('getMicrophoneSettings', error);
 					});

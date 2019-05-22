@@ -16,4 +16,8 @@ export class SmartAssistService {
 			this.isShellAvailable = true;
 		}
 	}
+
+	public getHPDCapability() {
+
+	}
 }
