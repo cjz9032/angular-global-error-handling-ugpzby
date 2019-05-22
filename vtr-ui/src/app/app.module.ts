@@ -44,18 +44,12 @@ import { UiHeaderSubpageComponent } from './components/ui/ui-header-subpage/ui-h
 // APPLICATION PAGE COMPONENTS
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
 import { PageDeviceComponent } from './components/pages/page-device/page-device.component';
-import { PageSecurityComponent } from './components/pages/page-security/page-security.component';
 import { PageSupportComponent } from './components/pages/page-support/page-support.component';
 import { PageUserComponent } from './components/pages/page-user/page-user.component';
 import { PageQuestionsComponent } from './components/pages/page-questions/page-questions.component';
 import { PageDeviceSettingsComponent } from './components/pages/page-device-settings/page-device-settings.component';
 import { PageDeviceUpdatesComponent } from './components/pages/page-device-updates/page-device-updates.component';
 import { AvailableUpdatesComponent } from './components/pages/page-device-updates/children/available-updates/available-updates.component';
-import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
-import { PageSecurityWifiComponent } from './components/pages/page-security-wifi/page-security-wifi.component';
-import { PageSecurityPasswordComponent } from './components/pages/page-security-password/page-security-password.component';
-import { PageSecurityInternetComponent } from './components/pages/page-security-internet/page-security-internet.component';
-import { PageSecurityHomeSecurityComponent } from './components/pages/page-security-home-security/page-security-home-security.component';
 
 
 // APPLICATION SUBPAGE COMPONENTS
@@ -107,12 +101,6 @@ import { fal } from '@fortawesome/pro-light-svg-icons';
 
 import { EyeCareModeComponent } from './components/display/eye-care-mode/eye-care-mode.component';
 import { UiButtonComponent } from './components/ui/ui-button/ui-button.component';
-import { ConnectedHomeComponent } from './components/pages/page-security-wifi/children/connected-home/connected-home.component';
-import { ConnectedHomeMyHomeComponent } from './components/pages/page-security-wifi/children/connected-home-my-home/connected-home-my-home.component';
-import { WifiSecurityComponent } from './components/pages/page-security-wifi/children/wifi-security/wifi-security.component';
-import { AdvisorWifiSecurityComponent } from './components/pages/page-security/children/advisor-wifi-security/advisor-wifi-security.component';
-
-import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
 import { CameraControlComponent } from './components/camera-control/camera-control.component';
 import { PageSupportDetailComponent } from './components/pages/page-support-detail/page-support-detail.component';
 import { WidgetSupportComponent } from './components/widgets/widget-support/widget-support.component';
@@ -126,17 +114,11 @@ import { SanitizeUrlPipe } from './pipe/sanitise-url.pipe';
 import { UniqueIdPipe } from './pipe/unique-id.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
-import { WidgetMcafeeComponent } from './components/widgets/widget-mcafee/widget-mcafee.component';
-import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
-import { WidgetSecurityStatusComponent } from './components/widgets/widget-security-status/widget-security-status.component';
-
-
 import { MetricsDirective } from './directives/metrics.directive';
 import { TranslateDirective } from './directives/translate.directive';
 import { InstallationHistoryComponent } from './components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { SeparatePascalCasePipe } from './pipe/separate-pascal-case.pipe';
 import { ModalCommonConfirmationComponent } from './components/modal/modal-common-confirmation/modal-common-confirmation.component';
-
 import { BaseComponent } from './components/base/base.component';
 import { AppEventDirective } from './directives/app-event.directive';
 import { SafeDomPipe } from './pipe/safe-dom/safe-dom.pipe';
@@ -148,24 +130,14 @@ import { WidgetOfflineInfoComponent } from './components/widgets/widget-offline-
 import { UiLandingFeatureComponent } from './components/ui/ui-landing-feature/ui-landing-feature.component';
 import { UiObjectTitleComponent } from './components/ui/ui-object-title/ui-object-title.component';
 import { UiSecurityStatusbarComponent } from './components/ui/ui-security-statusbar/ui-security-statusbar.component';
-import { IconClassPipe } from './pipe/ui-security-statusbar/icon-class.pipe';
-import { IconNamePipe } from './pipe/ui-security-statusbar/icon-name.pipe';
-import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
-import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import { UiFeatureItemComponent } from './components/ui/ui-feature-item/ui-feature-item.component';
-import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
 import { MinutesToHourminPipe } from './pipe/minutes-to-hourmin.pipe';
-import { SubTransformPipe } from './pipe/security-antivirus/sub-transform.pipe';
-import { DateClassPipe } from './pipe/security-antivirus/date-class.pipe';
 import { ModalAboutComponent } from './components/modal/modal-about/modal-about.component';
-import { JoinclassPipe } from './pipe/security-wifi/join-class.pipe';
-import { SuccessClassPipe } from './pipe/security-wifi/success-class.pipe';
 import { UiCircleRadioComponent } from './components/ui/ui-circle-radio/ui-circle-radio.component';
 import { WidgetPermissionNoteComponent } from './components/widgets/widget-permission-note/widget-permission-note.component';
 import { ModalSupportWechatComponent } from './components/modal/modal-support-wechat/modal-support-wechat.component';
 import { ModalLicenseComponent } from './components/modal/modal-license/modal-license.component';
 import { SpinnerComponent } from './components/common/spinner/spinner.component';
-
 import { PagePrivacyComponent } from './components/pages/page-privacy/page-privacy.component';
 import { PageDeviceGamingComponent } from './components/pages/page-device-gaming/page-device-gaming.component';
 import { WidgetLegionEdgeComponent } from './components/widgets/widget-legion-edge/widget-legion-edge.component';
@@ -186,6 +158,42 @@ import { PageNetworkBoostComponent } from './components/pages/page-network-boost
 import { PowerSmartSettingsComponent } from './components/widgets/power-smart-settings/power-smart-settings.component';
 import { SubpageDeviceSettingsSmartAssistComponent } from './components/pages/page-device-settings/children/subpage-device-settings-smart-assist/subpage-device-settings-smart-assist.component';
 import { UiPopoverComponent } from './components/ui/ui-popover/ui-popover.component';
+
+// SA Components
+import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
+import { PageSecurityWifiComponent } from './components/pages/page-security-wifi/page-security-wifi.component';
+import { PageSecurityPasswordComponent } from './components/pages/page-security-password/page-security-password.component';
+import { PageSecurityInternetComponent } from './components/pages/page-security-internet/page-security-internet.component';
+import { PageSecurityHomeSecurityComponent } from './components/pages/page-security-home-security/page-security-home-security.component';
+import { PageSecurityComponent } from './components/pages/page-security/page-security.component';
+import { PageConnectedHomeSecurityComponent } from './components/pages/page-connected-home-security/page-connected-home-security.component';
+import { ConnectedHomeComponent } from './components/pages/page-security-wifi/children/connected-home/connected-home.component';
+import { ConnectedHomeMyHomeComponent } from './components/pages/page-security-wifi/children/connected-home-my-home/connected-home-my-home.component';
+import { WifiSecurityComponent } from './components/pages/page-security-wifi/children/wifi-security/wifi-security.component';
+import { AdvisorWifiSecurityComponent } from './components/pages/page-security/children/advisor-wifi-security/advisor-wifi-security.component';
+import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
+
+
+// SA Widgets
+import { WidgetHomeSecurityDeviceComponent } from './components/widgets/widget-home-security-device/widget-home-security-device.component';
+import { WidgetSecurityStatusComponent } from './components/widgets/widget-security-status/widget-security-status.component';
+import { WidgetMcafeeComponent } from './components/widgets/widget-mcafee/widget-mcafee.component';
+import { WidgetHomeSecurityAccountStatusComponent } from './components/widgets/widget-home-security-account-status/widget-home-security-account-status.component';
+
+// SA pipes
+import { JoinclassPipe } from './pipe/security-wifi/join-class.pipe';
+import { SuccessClassPipe } from './pipe/security-wifi/success-class.pipe';
+import { SubTransformPipe } from './pipe/security-antivirus/sub-transform.pipe';
+import { DateClassPipe } from './pipe/security-antivirus/date-class.pipe';
+import { IconClassPipe } from './pipe/ui-security-statusbar/icon-class.pipe';
+import { IconNamePipe } from './pipe/ui-security-statusbar/icon-name.pipe';
+import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
+import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
+import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
+import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
+
+
+
 
 
 library.add(fas);
@@ -213,6 +221,7 @@ library.add(fal);
 		WidgetQuestionsComponent,
 		WidgetDeviceUpdateComponent,
 		WidgetDeviceUpdateSettingsComponent,
+		WidgetHomeSecurityAccountStatusComponent,
 		PageQuestionsComponent,
 		ContainerCardComponent,
 		HeaderMainComponent,
@@ -322,6 +331,7 @@ library.add(fal);
 		WidgetSystemMonitorComponent,
 		WidgetQuicksettingsListComponent,
 		WidgetLightingComponent,
+		PageConnectedHomeSecurityComponent,
 		ModalGamingLegionedgeComponent,
 		UiGamingCollapsibleContainerComponent,
 		PageMacrokeyComponent,
@@ -334,6 +344,7 @@ library.add(fal);
 		PowerSmartSettingsComponent,
 		SubpageDeviceSettingsSmartAssistComponent,
 		UiPopoverComponent
+		WidgetHomeSecurityDeviceComponent
 	],
 	imports: [
 		BrowserModule,

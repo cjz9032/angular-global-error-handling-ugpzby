@@ -16,6 +16,7 @@ import { SystemUpdateStatusMessage } from 'src/app/data-models/system-update/sys
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import {UpdateFailToastMessage} from 'src/app/enums/update.enum'
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -246,7 +247,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			const installTime = this.commonService.formatTime(this.lastInstallTime);
 			return `${this.lastUpdatedText} ${installDate} at ${installTime}`;
 		}
-		return `Your device has never checked for updates.`;
+		return `Welcome to use System Update.`;
 	}
 
 	public getNextUpdatedScanText() {
@@ -315,7 +316,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	public onUpdateToggleOnOff($event) {
-		console.log('onUpdateToggleOnOff', $event);
 		if (this.systemUpdateService.isShellAvailable) {
 			const { name, checked } = $event.target;
 			let { criticalAutoUpdates, recommendedAutoUpdates } = this.systemUpdateService.autoUpdateStatus;
@@ -366,7 +366,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		modalRef.componentInstance.metricsParent = "Pages.SystemUpdate.RebootRequiredControl";
 		const { rebootType, packages } = this.systemUpdateService.getRebootType(this.systemUpdateService.updateInfo.updateList, source);
 		let removeDelayedUpdates = false;
-		console.log('reboot tye is', rebootType, packages);
 		if (rebootType === UpdateRebootType.RebootDelayed) {
 			this.showRebootDelayedModal(modalRef);
 		} else if (rebootType === UpdateRebootType.RebootForced) {
@@ -385,15 +384,12 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		modalRef.result.then(
 			result => {
 				// on open
-				console.log('common-confirmation-modal on open', result, source);
 				if (result) {
-					console.log('confirmation model', removeDelayedUpdates);
 					if(this.systemUpdateService.getACAttachedStatus()) {
 						removeDelayedUpdates = false;
 					} else {
 						removeDelayedUpdates = true;
 					}
-					console.log('confirmation model,  remove reboot delay', removeDelayedUpdates);
 					this.installUpdateBySource(source, removeDelayedUpdates);
 				}
 			},
@@ -408,7 +404,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	private installUpdateBySource(source: string, removeDelayedUpdates: boolean) {
-		console.log('install udpate by source,', source);
 		if (source === 'selected') {
 			this.installSelectedUpdate(removeDelayedUpdates);
 		} else {
@@ -444,6 +439,16 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.optionalUpdates = this.filterUpdate(unIgnoredUpdates, 'optional');
 			this.recommendedUpdates = this.filterUpdate(unIgnoredUpdates, 'recommended');
 			this.criticalUpdates = this.filterUpdate(unIgnoredUpdates, 'critical');
+		}
+	}
+
+	private showToastMessage(updateList: Array<AvailableUpdateDetail>) {
+		const failedUpdates = updateList.find((update) => {
+			return (update.installationStatus === UpdateActionResult.DownloadFailed 
+				|| update.installationStatus === UpdateActionResult.InstallFailed);
+		});
+		if (failedUpdates) {
+			this.systemUpdateService.queueToastMessage(UpdateFailToastMessage.MessageID, '', '');
 		}
 	}
 
@@ -513,7 +518,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
 					this.checkRebootRequested();
-					this.setUpdateByCategory(payload.updateList);
+					this.showToastMessage(payload.updateList);
+					this.setUpdateByCategory(payload.updateList);					
 					break;
 				case UpdateProgress.AutoUpdateStatus:
 					this.autoUpdateOptions[0].isChecked = payload.criticalAutoUpdates;
@@ -548,7 +554,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	// handle background update notification
 	private onScheduleUpdateNotification(type: string, payload: any) {
 		if (this.isComponentInitialized) {
-			console.log('onScheduleUpdateNotification', type, payload);
 			switch (type) {
 				case UpdateProgress.ScheduleUpdateChecking:
 					this.isUpdateCheckInProgress = true;

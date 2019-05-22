@@ -1,11 +1,31 @@
-<div class="checkbox" [ngClass]="{'switch-disable': isSwitchDisable}">
-	<label>
-		<input type="checkbox" [name]="name" class="switch" [ngClass]="{'wifi-checked': value===true}" [value]="value"
-			[checked]="value" [disabled]="disabled" (change)="onChange($event)" vtrMetrics metricsEvent="featureClick"
-			[metricsItem]="'chk.'+name" [metricsValue]="value" />
+<div>
+	<div *ngIf="showLoader" class="row spinner-row"
+		[ngClass]="{'white-theme': theme==='white',
+					'blue-theme': theme==='blue'}">
+		<vtr-spinner></vtr-spinner>
+		<span class="spinner-text">{{ 'common.ui.loader.text1' | translate }} <br/> {{ 'common.ui.loader.text2' | translate }}</span>
+	</div>
+	<div *ngIf="!showLoader" class="checkbox"
+		[ngClass]="{'switch-disable': isSwitchDisable}">
+		<label>
+			<input type="checkbox"
+				[name]="name"
+				class="switch"
+				[ngClass]="{'wifi-checked': value===true}"
+				[value]="value"
+				[checked]="value"
+				[disabled]="disabled"
+				(change)="onChange($event)"
+				vtrMetrics
+				metricsEvent="featureClick"
+				[metricsItem]="'chk.'+name"
+				[metricsValue]="value" />
 
-		<span class="switch {{ size }}"> <small></small> </span>
-		<div *ngIf="!value" class="switch-label off-label">{{'common.ui.off' | translate}}</div>
-		<div *ngIf="value" class="switch-label on-label">{{'common.ui.on' | translate}}</div>
-	</label>
+			<span class="switch {{ size }}"> <small></small> </span>
+			<div *ngIf="!value"
+				class="switch-label off-label">{{'common.ui.off' | translate}}</div>
+			<div *ngIf="value"
+				class="switch-label on-label">{{'common.ui.on' | translate}}</div>
+		</label>
+	</div>
 </div>

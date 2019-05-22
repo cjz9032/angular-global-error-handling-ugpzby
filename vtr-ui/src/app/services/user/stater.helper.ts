@@ -31,17 +31,26 @@ const STARTER_ACCOUNT_TOKEN = 'ZAgAAAAAAA_STARTER_1.0_AAAAAAAAAAAAAAAAAAAAAAAAAA
 		}
 	}
  */
-class LenovoIDUserSettingsXml {
-	public Settings: Settings;
-}
 
 class Settings {
+	constructor() {
+		this.Behaviors = {};
+		this.Metrics = {};
+	}
+
 	public SettingsVersion = '1.1';
 	public Metrics: any;
 	public Behaviors: any;
-	public IsLenovoIDFeatureEnabled: string;
+	public IsLenovoIDFeatureEnabled = 'True';
 	public '_xmlns:xsi' = 'http://www.w3.org/2001/XMLSchema-instance';
 	public '_xmlns:xsd' = 'http://www.w3.org/2001/XMLSchema';
+}
+
+class LenovoIDUserSettingsXml {
+	constructor() {
+		this.Settings = new Settings();
+	}
+	public Settings: Settings;
 }
 
 /**	UAPOOBEDataResponse.Xml this file is created by oobe plugin, please don't update it
@@ -387,20 +396,28 @@ export class LIDStarterHelper {
 		}
 
 		let userSettings = await userSettingsXml as LenovoIDUserSettingsXml;
-		if (!userSettings) {
+		if (!userSettings || Object.keys(userSettings).length === 0) {
 			userSettings = new LenovoIDUserSettingsXml();
 		}
 
+		if (!userSettings.Settings) {
+			userSettings.Settings = new Settings();
+		}
+
+		if (!userSettings.Settings.Behaviors) {
+			userSettings.Settings.Behaviors = {};
+		}
+
 		if (payload.staterAccount
-			&& userSettings.Settings.Behaviors.starterAccount !== payload.staterAccount) {
+			&& userSettings.Settings.Behaviors.StarterAccount !== payload.staterAccount) {
 			needUpdate = true;
-			userSettings.Settings.Behaviors.starterAccount = payload.staterAccount;
+			userSettings.Settings.Behaviors.StarterAccount = payload.staterAccount;
 		}
 
 		if (payload.lastSignIndate
-			&& userSettings.Settings.Behaviors[0].DateFirstSignin !== payload.lastSignIndate) {
+			&& userSettings.Settings.Behaviors.DateFirstSignin !== payload.lastSignIndate) {
 			needUpdate = true;
-			userSettings.Settings.Behaviors[0].DateFirstSignin = payload.lastSignIndate;
+			userSettings.Settings.Behaviors.DateFirstSignin = payload.lastSignIndate;
 		}
 
 		if (!needUpdate) {

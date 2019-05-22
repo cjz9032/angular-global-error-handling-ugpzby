@@ -9,7 +9,8 @@
                 "sub4": "암호 상태",
                 "sub5": "인터넷 보호",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "보안 어드바이저",
@@ -30,8 +31,25 @@
             "notRegistered": "등록되지 않음"
         },
         "ui": {
-			"back": "뒤로"
+            "back": "뒤로",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
 		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
