@@ -73,7 +73,8 @@
 						<div class="vtr-page-shift-up">
 							<div class="container-fluid">
 
-								<div class="row" *ngIf="warranty&&!deviceService.isArm">
+								<div class="row"
+									*ngIf="warranty&&!deviceService.isArm">
 									<div class="col col-12 pb-60">
 										<vtr-widget-warranty [item]="warranty"></vtr-widget-warranty>
 									</div>
@@ -82,7 +83,8 @@
 								<div class="row">
 									<div class="col col-12 pb-60">
 										<vtr-widget-support [title]="'support.documentation.title' | translate"
-											[description]="''" [items]="supportDatas.documentation">
+											[description]="''"
+											[items]="supportDatas.documentation">
 										</vtr-widget-support>
 									</div>
 								</div>
@@ -97,8 +99,9 @@
 
 								<div class="row">
 									<div class="col col-12 pb-60">
+										<!-- 	[description]="'support.quicklinks.description' | translate" -->
 										<vtr-widget-support [title]="'support.quicklinks.title' | translate"
-											[description]="'support.quicklinks.description' | translate"
+											[description]="''"
 											[items]="supportDatas.quicklinks"></vtr-widget-support>
 									</div>
 								</div>

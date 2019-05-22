@@ -9,7 +9,8 @@
                 "sub4": "Εύρυθμη λειτουργία κωδικών πρόσβασης",
                 "sub5": "Προστασία στο Internet",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Σύμβουλος ασφάλειας",
@@ -30,8 +31,25 @@
             "notRegistered": "ΔΕΝ ΔΗΛΩΘΗΚΕ"
         },
         "ui": {
-			"back": "ΠΙΣΩ"
+            "back": "ΠΙΣΩ",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
 		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {

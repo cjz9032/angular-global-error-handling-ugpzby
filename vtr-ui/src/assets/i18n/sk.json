@@ -9,7 +9,8 @@
                 "sub4": "Sila hesla",
                 "sub5": "Internetová ochrana",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Poradca zabezpečením",
@@ -30,8 +31,25 @@
             "notRegistered": "NEREGISTROVANÉ"
         },
         "ui": {
-			"back": "SPÄŤ"
+            "back": "SPÄŤ",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
 		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
