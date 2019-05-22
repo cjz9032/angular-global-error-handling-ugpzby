@@ -5,6 +5,7 @@ import { Directive, ElementRef, Input, AfterViewInit, HostListener } from '@angu
 })
 export class CutMultilineTextWithDotsDirective implements AfterViewInit {
 	@Input() textToAppend: string;
+	@Input() allowedLinesAmount?: number;
 
 	constructor(
 		private el: ElementRef,
@@ -28,7 +29,7 @@ export class CutMultilineTextWithDotsDirective implements AfterViewInit {
 		let allowedHeight = 0;
 		let currHeight = 0;
 		let lastAddedWordIndex = 0;
-		const allowedLines = 2;
+		const allowedLines = this.allowedLinesAmount || 2;
 		textToAdd.forEach((word, index) => {
 			if (currHeight <= allowedHeight) {
 				cutHtmlElement.innerHTML += `${word} `;
