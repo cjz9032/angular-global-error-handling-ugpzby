@@ -46,12 +46,10 @@ export class AvailableUpdatesComponent implements OnInit {
 	}
 
 	onInstallAllUpdates(event) {
-		console.log('installUpdates', event);
 		this.installAllUpdate.emit(event);
 	}
 
 	onInstallSelectedUpdates(event) {
-		console.log('installSelectedUpdates', event);
 		this.installSelectedUpdate.emit(event);
 	}
 

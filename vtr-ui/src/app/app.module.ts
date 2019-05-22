@@ -57,7 +57,6 @@ import { PageSecurityPasswordComponent } from './components/pages/page-security-
 import { PageSecurityInternetComponent } from './components/pages/page-security-internet/page-security-internet.component';
 import { PageSecurityHomeSecurityComponent } from './components/pages/page-security-home-security/page-security-home-security.component';
 
-
 // APPLICATION SUBPAGE COMPONENTS
 import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
@@ -74,6 +73,7 @@ import { WidgetQuestionsComponent } from './components/widgets/widget-questions/
 import { WidgetFeedbackComponent } from './components/widgets/widget-feedback/widget-feedback.component';
 import { WidgetDeviceUpdateComponent } from './components/widgets/widget-device-update/widget-device-update.component';
 import { WidgetDeviceUpdateSettingsComponent } from './components/widgets/widget-device-update-settings/widget-device-update-settings.component';
+import { WidgetHomeSecurityAccountStatusComponent } from './components/widgets/widget-home-security-account-status/widget-home-security-account-status.component';
 
 // APPLICATION MODALS
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
@@ -173,6 +173,7 @@ import { WidgetSystemToolsComponent } from './components/widgets/widget-system-t
 import { WidgetSystemMonitorComponent } from './components/widgets/widget-system-monitor/widget-system-monitor.component';
 import { WidgetQuicksettingsListComponent } from './components/widgets/widget-quicksettings-list/widget-quicksettings-list.component';
 import { WidgetLightingComponent } from './components/widgets/widget-lighting/widget-lighting.component';
+import { PageConnectedHomeSecurityComponent } from './components/pages/page-connected-home-security/page-connected-home-security.component';
 import { ModalGamingLegionedgeComponent } from './components/modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { PrivacyModule } from './components/pages/page-privacy/privacy.module';
 import { UiGamingCollapsibleContainerComponent } from './components/ui/ui-gaming-collapsible-container/ui-gaming-collapsible-container.component';
@@ -212,6 +213,7 @@ library.add(fal);
 		WidgetQuestionsComponent,
 		WidgetDeviceUpdateComponent,
 		WidgetDeviceUpdateSettingsComponent,
+		WidgetHomeSecurityAccountStatusComponent,
 		PageQuestionsComponent,
 		ContainerCardComponent,
 		HeaderMainComponent,
@@ -321,6 +323,7 @@ library.add(fal);
 		WidgetSystemMonitorComponent,
 		WidgetQuicksettingsListComponent,
 		WidgetLightingComponent,
+		PageConnectedHomeSecurityComponent,
 		ModalGamingLegionedgeComponent,
 		UiGamingCollapsibleContainerComponent,
 		PageMacrokeyComponent,

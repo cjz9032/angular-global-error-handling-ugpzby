@@ -13,10 +13,10 @@
 		@media #{$mediaquery_6} {
 			padding: 4rem;
 			height: 36rem;
-		}
-
+		}				
 		.monitor-col {
 			padding: 4rem 0;
+			position: relative;
 			@media #{$mediaquery_5} {
 				padding: 3rem 0;
 			}

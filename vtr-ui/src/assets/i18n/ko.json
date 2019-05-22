@@ -9,7 +9,8 @@
                 "sub4": "암호 상태",
                 "sub5": "인터넷 보호",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "보안 어드바이저",
@@ -40,6 +41,11 @@
 				"text2": "Status"
 			}
 		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview"
     },
     "support": {
         "common": {
