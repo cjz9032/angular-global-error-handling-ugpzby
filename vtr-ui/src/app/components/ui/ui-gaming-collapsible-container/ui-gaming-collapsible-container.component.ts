@@ -1,6 +1,4 @@
 import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
-import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
-import { GamingSystemUpdateService } from 'src/app/services/gaming/gaming-system-update/gaming-system-update.service';
 
 @Component({
 	selector: 'vtr-ui-gaming-collapsible-container',
