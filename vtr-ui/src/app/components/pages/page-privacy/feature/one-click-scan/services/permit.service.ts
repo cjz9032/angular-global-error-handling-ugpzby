@@ -9,7 +9,7 @@ import { EmailScannerService } from '../../check-breached-accounts/services/emai
 })
 export class PermitService {
 	readonly oneClickScanSteps = OneClickScanSteps;
-	permitsValue: OneClickScanSteps[] = [];
+	private permitsValue: OneClickScanSteps[] = [];
 
 	constructor(
 		private userAllowService: UserAllowService,
@@ -35,6 +35,10 @@ export class PermitService {
 					break;
 			}
 		});
+	}
+
+	clearPermit() {
+		this.permitsValue = [];
 	}
 
 	private setPermitTrackersAndPassword() {

@@ -30,6 +30,10 @@ export class OneClickScanStepsService {
 		return nextStepIndex > 0 ? this.activateStep(nextStepIndex) : null;
 	}
 
+	resetStep() {
+		this.oneClickScanSteps = this.getStepsMap();
+	}
+
 	private getStepsMap() {
 		return Object.keys(OneClickScanSteps).map((step, index, array) => ({
 				step: OneClickScanSteps[step],
