@@ -3,6 +3,7 @@ import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { IntelligentSecurity } from 'src/app/data-models/intellegent-security.model';
 import { ChangeContext } from 'ng5-slider';
 import { TranslateService } from '@ngx-translate/core';
+import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-smart-assist',
@@ -11,37 +12,38 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 
-	public isThinkpad = false;
+	@Output() distanceChange: EventEmitter<ChangeContext> = new EventEmitter();
+	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
+	public isThinkPad = false;
 	public tooltipText = 'device.deviceSettings.smartAssist.intelligentSecurity.autoScreenLock.autoScreenLockTimer.toolTipContent';
 	title = 'device.deviceSettings.smartAssist.title';
-	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
-	public humanPresenceDetecStatus = new FeatureStatus(false, true);
+	public humanPresenceDetectStatus = new FeatureStatus(false, true);
 	public autoIrCameraLoginStatus = new FeatureStatus(false, true);
 	public intelligentSecurityProperties: IntelligentSecurity;
 	public autoScreenLockTimer = false;
 	public distanceSensitivityTitle: string;
-	@Output() distanceChange: EventEmitter<ChangeContext> = new EventEmitter();
 
 	headerMenuItems = [
 		{
 			title: 'device.deviceSettings.smartAssist.jumpTo.security',
 			path: 'security'
 		},
-		{
-			title: 'device.deviceSettings.smartAssist.jumpTo.screen',
-			path: 'screen'
-		},
-		{
-			title: 'device.deviceSettings.smartAssist.jumpTo.media',
-			path: 'media'
-		},
-		{
-			title: 'device.deviceSettings.smartAssist.jumpTo.voice',
-			path: 'voice'
-		}
+		// enable this when UI is completed for that section
+		// {
+		// 	title: 'device.deviceSettings.smartAssist.jumpTo.screen',
+		// 	path: 'screen'
+		// },
+		// {
+		// 	title: 'device.deviceSettings.smartAssist.jumpTo.media',
+		// 	path: 'media'
+		// },
+		// {
+		// 	title: 'device.deviceSettings.smartAssist.jumpTo.voice',
+		// 	path: 'voice'
+		// }
 	];
 
-	constructor(public translate: TranslateService) { }
+	constructor(public smartAssist: SmartAssistService) { }
 
 	ngOnInit() {
 		console.log('subpage-device-setting-display onInit');
@@ -72,7 +74,7 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	}
 	public setIntelligentSecurityProperties() {
 		// service call to fetch Intelligent Security Properties
-		this.intelligentSecurityProperties = new IntelligentSecurity(true,10,true,true,"fast");
+		this.intelligentSecurityProperties = new IntelligentSecurity(true, 10, true, true, 'fast');
 	}
 	public onAutoScreenLockStatusToggle(event) {
 		this.intelligentSecurityProperties.autoScreenLockTimer = event.value;
@@ -84,8 +86,8 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	}
 	public setIsThinkpad() {
 		// service call to fetch type of device
-		this.isThinkpad = true;
-		this.distanceSensitivityTitle = this.isThinkpad ? this.translate.instant('device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title1') :
-					this.translate.instant('device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title2');
+		this.isThinkPad = true;
+		this.distanceSensitivityTitle = this.isThinkPad ? 'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title1' :
+			'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title2';
 	}
 }

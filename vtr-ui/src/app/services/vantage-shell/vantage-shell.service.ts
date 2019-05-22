@@ -1,9 +1,6 @@
-/// <reference path='../../../../node_modules/@lenovo/tan-client-bridge/src/index.js' />
-
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
 import * as Phoenix from '@lenovo/tan-client-bridge';
-import { EventTypes } from '@lenovo/tan-client-bridge';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
 
@@ -357,6 +354,13 @@ export class VantageShellService {
 			return this.phoenix.metrics.metricsComposer.getGuid();
 		}
 
+		return undefined;
+	}
+
+	public getIntelligentSensing(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.lis.IntelligentSensing;
+		}
 		return undefined;
 	}
 }
