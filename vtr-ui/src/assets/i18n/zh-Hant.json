@@ -9,7 +9,8 @@
                 "sub4": "密碼安全狀態",
                 "sub5": "網際網路保護",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "安全顧問",
@@ -40,6 +41,11 @@
 				"text2": "Status"
 			}
 		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview"
     },
     "support": {
         "common": {

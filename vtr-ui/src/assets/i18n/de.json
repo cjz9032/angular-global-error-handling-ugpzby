@@ -9,7 +9,8 @@
                 "sub4": "Kennwortzustand",
                 "sub5": "Internetschutz",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Sicherheitsratgeber",
@@ -40,6 +41,11 @@
 				"text2": "Status"
 			}
 		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview"
     },
     "support": {
         "common": {

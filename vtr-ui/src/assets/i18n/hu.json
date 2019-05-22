@@ -9,7 +9,8 @@
                 "sub4": "Jelszó állapota",
                 "sub5": "Védelem az interneten",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Bizt. Tanácsadó",
@@ -28,7 +29,7 @@
             "notFound": "NEM TALÁLHATÓ",
             "registered": "REGISZTRÁLT",
             "notRegistered": "NEM REGISZTRÁLT"
-        }, 
+        },
         "ui": {
             "back": "VISSZA",
             "on": "ON",
@@ -40,6 +41,11 @@
 				"text2": "Status"
 			}
 		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview"
     },
     "support": {
         "common": {

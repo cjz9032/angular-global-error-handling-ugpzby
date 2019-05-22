@@ -34,5 +34,6 @@ export enum LocalStorageKey {
 	LidFakeDeviceID = '[LocalStorageKey] LidFakeDeviceID',
 	LidStarterAccount = '[LocalStorageKey] LidStarterAccount',
 	LidFirstSignInDate = '[LocalStorageKey] LidFirstSignInDate',
-	LidHasCreateStarterAccount = '[LocalStorageKey] LidHasCreateStarterAccount'
+	LidHasCreateStarterAccount = '[LocalStorageKey] LidHasCreateStarterAccount',
+	CpuOCStatus = '[LocalStorageKey] CpuOCStatus'
 }
