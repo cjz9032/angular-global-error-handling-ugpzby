@@ -45,7 +45,11 @@
     "homeSecurity": {
         "title": "Connected Home Security",
         "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Device Security Overview"
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
