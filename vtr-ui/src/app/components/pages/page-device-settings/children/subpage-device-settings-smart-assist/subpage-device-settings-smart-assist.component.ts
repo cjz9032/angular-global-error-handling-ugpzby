@@ -16,11 +16,12 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	title = 'device.deviceSettings.smartAssist.title';
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	public humanPresenceDetecStatus = new FeatureStatus(false, true);
-	public autoIrCameraLoginStatus = new FeatureStatus(false, true);
-	public intelligentSecurityProperties: IntelligentSecurity;
+	public zeroTouchLoginStatus = new FeatureStatus(false, true);
+	public intelligentSecurity: IntelligentSecurity;
 	public autoScreenLockTimer = false;
 	public distanceSensitivityTitle: string;
 	@Output() distanceChange: EventEmitter<ChangeContext> = new EventEmitter();
+	public autoScreenLockStatus: boolean[];
 
 	headerMenuItems = [
 		{
@@ -45,7 +46,8 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 
 	ngOnInit() {
 		console.log('subpage-device-setting-display onInit');
-		this.setIntelligentSecurityProperties();
+		this.autoScreenLockStatus  = [false, false, false];
+		this.setintelligentSecurity();
 		this.setIsThinkpad();
 	}
 
@@ -56,31 +58,33 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	}
 
 	public onHumanPresenceDetectStatusToggle($event) {
-		this.intelligentSecurityProperties.humanPresenceDetectionFlag = !this.intelligentSecurityProperties.humanPresenceDetectionFlag;
-		if (!this.intelligentSecurityProperties.humanPresenceDetectionFlag) {
-			this.intelligentSecurityProperties.autoIRLoginFlag = false;
-			this.intelligentSecurityProperties.autoScreenLockFlag = false;
+		this.intelligentSecurity.humanPresenceDetectionFlag = !this.intelligentSecurity.humanPresenceDetectionFlag;
+		if (!this.intelligentSecurity.humanPresenceDetectionFlag) {
+			this.intelligentSecurity.zeroTouchLoginFlag = false;
+			this.intelligentSecurity.zeroTouchLockFlag = false;
 		}
 	}
 
-	public onAutoIRCameraLoginStatusToggle($event) {
-		this.intelligentSecurityProperties.autoIRLoginFlag = !this.intelligentSecurityProperties.autoIRLoginFlag;
+	public onzeroTouchLoginStatusToggle($event) {
+		this.intelligentSecurity.zeroTouchLoginFlag = !this.intelligentSecurity.zeroTouchLoginFlag;
 	}
 
-	public onChangeAutoScreenLockFlag($event) {
-		this.intelligentSecurityProperties.autoScreenLockFlag = !this.intelligentSecurityProperties.autoScreenLockFlag;
+	public onChangezeroTouchLockFlag($event) {
+		this.intelligentSecurity.zeroTouchLockFlag = !this.intelligentSecurity.zeroTouchLockFlag;
 	}
-	public setIntelligentSecurityProperties() {
+	public setintelligentSecurity() {
 		// service call to fetch Intelligent Security Properties
-		this.intelligentSecurityProperties = new IntelligentSecurity(true,10,true,true,"fast");
+		this.intelligentSecurity = new IntelligentSecurity(true,10,true,true,1);
+		this.autoScreenLockStatus[this.intelligentSecurity.autoScreenLockTimer] = true;
 	}
-	public onAutoScreenLockStatusToggle(event) {
-		this.intelligentSecurityProperties.autoScreenLockTimer = event.value;
+	public onAutoScreenLockStatusToggle(event, value) {
+		console.log(value);
+		this.intelligentSecurity.autoScreenLockTimer = value;
 	}
 
 	public setHumanDistance(event: ChangeContext) {
 		console.log('Human Distance changed', event);
-		this.intelligentSecurityProperties.humanDistance = event.value;
+		this.intelligentSecurity.humanDistance = event.value;
 	}
 	public setIsThinkpad() {
 		// service call to fetch type of device

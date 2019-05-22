@@ -565,13 +565,13 @@
 						"title": "Human Presence Detection",
 						"tooltip": "Click here to reset human presence Detection settings."
 					},
-					"autoIrCameraLogin": {
-						"title": "Auto IR camera Login",
-						"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it. Auto IR camera login"
+					"zeroTouchLogin": {
+						"title": "Zero Touch Login",
+						"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
 					},
-					"autoScreenLock": {
-						"title": "Auto screen lock",
-						"caption": "Dims the display and locks the computer when the user presence is not detected.",
+					"zeroTouchLock": {
+						"title": "Zero Touch lock",
+						"caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
 						"autoScreenLockTimer": {
 							"title": "AUTO SCREEN LOCK TIMER",
 							"radioButton": {

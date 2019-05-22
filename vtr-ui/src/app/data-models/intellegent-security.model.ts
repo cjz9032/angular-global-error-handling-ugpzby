@@ -2,8 +2,8 @@ export class IntelligentSecurity {
     constructor(
 		public humanPresenceDetectionFlag: boolean,
         public humanDistance: number,
-        public autoIRLoginFlag: boolean,
-        public autoScreenLockFlag: boolean,
-        public autoScreenLockTimer: string
+        public zeroTouchLoginFlag: boolean,
+        public zeroTouchLockFlag: boolean,
+        public autoScreenLockTimer: number
 	) { }
 }
