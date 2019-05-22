@@ -185,6 +185,7 @@ import { PageAutocloseComponent } from './components/pages/page-autoclose/page-a
 import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
 import { PowerSmartSettingsComponent } from './components/widgets/power-smart-settings/power-smart-settings.component';
 import { SubpageDeviceSettingsSmartAssistComponent } from './components/pages/page-device-settings/children/subpage-device-settings-smart-assist/subpage-device-settings-smart-assist.component';
+import { UiPopoverComponent } from './components/ui/ui-popover/ui-popover.component';
 
 
 library.add(fas);
@@ -331,7 +332,8 @@ library.add(fal);
 		PageAutocloseComponent,
 		PageNetworkBoostComponent,
 		PowerSmartSettingsComponent,
-		SubpageDeviceSettingsSmartAssistComponent
+		SubpageDeviceSettingsSmartAssistComponent,
+		UiPopoverComponent
 	],
 	imports: [
 		BrowserModule,
