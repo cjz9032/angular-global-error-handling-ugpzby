@@ -5,7 +5,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class GamingSystemUpdateService {
 

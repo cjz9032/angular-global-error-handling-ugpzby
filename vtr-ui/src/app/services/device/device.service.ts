@@ -21,6 +21,7 @@ export class DeviceService {
 	public is64bit = true;
 	public showPrivacy = true;
 	public isGaming = false;
+	public isSmartFanFeature = true;
 	private isGamingDashboardLoaded = false;
 
 	constructor(
