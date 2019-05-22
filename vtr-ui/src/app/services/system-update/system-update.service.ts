@@ -78,7 +78,6 @@ export class SystemUpdateService {
 
 	public getACAttachedStatus(): boolean {
 		if (WinRT.getAcAttachedStatus) {
-			console.log('get AC attached status.');
 			return WinRT.getAcAttachedStatus();
 		}
 	}
@@ -187,7 +186,6 @@ export class SystemUpdateService {
 	}
 
 	public cancelUpdateCheck() {
-		console.log('cancelUpdateCheck');
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.cancelSearch()
 				.then((status: boolean) => {
@@ -265,7 +263,6 @@ export class SystemUpdateService {
 			this.selectCoreqUpdateForInstallAll();
 			const unIgnoredUpdates = this.getUnIgnoredUpdates(this.updateInfo.updateList);
 			const updates = this.mapToInstallRequest(unIgnoredUpdates, removeDelayedUpdates);
-			console.log("install all update", updates);
 			this.installUpdates(updates, true);
 		}
 	}
@@ -274,14 +271,12 @@ export class SystemUpdateService {
 		if (this.systemUpdateBridge && this.isUpdatesAvailable) {
 			const updatesToInstall = this.getSelectedUpdates(this.updateInfo.updateList);
 			const updates = this.mapToInstallRequest(updatesToInstall, removeDelayedUpdates);
-			console.log('installSelectedUpdates', updatesToInstall, updates);
 			this.installUpdates(updates, false);
 		}
 	}
 
 	public installFailedUpdate(update: InstallUpdate) {
 		if (this.systemUpdateBridge) {
-			console.log('installFailedUpdate', update);
 			const updates = new Array<InstallUpdate>();
 			updates.push(update);
 			this.installUpdates(updates, false);
@@ -317,7 +312,6 @@ export class SystemUpdateService {
 
 	public ignoreUpdate(packageName: string) {
 		if (this.systemUpdateBridge) {
-			console.log('Call js bridge ignoreUpdate');
 			this.systemUpdateBridge.ignoreUpdate(packageName)
 			.then((ignoredUpdates) => {
 				this.updateIgnoredStatus(ignoredUpdates);
@@ -385,7 +379,6 @@ export class SystemUpdateService {
 			const coreqUpdate = updateList.find((value) => {
 				return value.packageID === coreqPackage;
 			});
-			console.log('select coreq package', coreqUpdate.packageID);
 			coreqUpdate.isSelected = isSelected;
 			if(isSelected) {
 				coreqUpdate.isDependency = true;
@@ -475,13 +468,11 @@ export class SystemUpdateService {
 	}
 
 	private installUpdates(updates: Array<InstallUpdate>, isInstallingAllUpdates: boolean) {
-		console.log('install update.');
 		if(updates.length == 0) {
 			const payload = new AvailableUpdate();
 			payload.status = 20;
 			payload.updateList = this.ignoredRebootDelayUpdates;
 			this.isInstallationCompleted = true;
-			console.log('Directly notify install result.');
 			this.commonService.sendNotification(UpdateProgress.InstallationComplete, payload);
 			return;
 		}
@@ -530,7 +521,6 @@ export class SystemUpdateService {
 				const pkg = new InstallUpdate();
 				pkg.packageID = update.packageID;
 				pkg.severity = update.packageSeverity;
-				console.log('Package reboot type is ', update.packageRebootType);
 				if(removeDelayedUpdates && update.packageRebootType === 'RebootDelayed'){
 					update.installationStatus = UpdateActionResult.InstallFailed;
 					this.ignoredRebootDelayUpdates.push(update);
@@ -690,5 +680,12 @@ export class SystemUpdateService {
 			}
 		}
 		return isSuccess;
+	}
+
+	public queueToastMessage(messageID: string, fileLocation: string, resources: string): boolean {
+		if (this.systemUpdateBridge) {
+			return this.systemUpdateBridge.queueToastMessage(messageID, fileLocation, resources);
+		}
+		return false;
 	}
 }
