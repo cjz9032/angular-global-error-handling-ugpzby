@@ -9,6 +9,7 @@ import { EmailScannerService } from './services/email-scanner.service';
 import { VtrCommonModule } from '../../common/vtr-common.module';
 import { BreachedAccountComponent } from './breached-account/breached-account.component';
 import { BreachedDescriptionComponent } from './breached-description/breached-description.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 
 @NgModule({
@@ -19,13 +20,15 @@ import { BreachedDescriptionComponent } from './breached-description/breached-de
 		ConfirmationPopupComponent,
 		BreachedAccountComponent,
 		BreachedDescriptionComponent,
+		ConfirmationComponent,
 	],
 	exports: [
 		EmailScannerComponent,
 		CheckBreachesFormComponent,
 		ScanStepsComponent,
 		BreachedAccountComponent,
-		BreachedDescriptionComponent
+		BreachedDescriptionComponent,
+		ConfirmationComponent,
 	],
 	imports: [
 		CommonModule,

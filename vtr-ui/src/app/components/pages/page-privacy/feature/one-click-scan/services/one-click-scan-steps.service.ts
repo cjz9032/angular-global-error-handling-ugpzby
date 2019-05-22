@@ -26,7 +26,7 @@ export class OneClickScanStepsService {
 
 	nextStep() {
 		const nextStepIndex = this.oneClickScanSteps.findIndex((step) => !step.wasShow);
-		return nextStepIndex ? this.activateStep(nextStepIndex) : null;
+		return nextStepIndex > 0 ? this.activateStep(nextStepIndex) : null;
 	}
 
 	private getStepsMap() {

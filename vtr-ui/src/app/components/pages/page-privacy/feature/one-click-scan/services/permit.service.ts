@@ -20,7 +20,8 @@ export class PermitService {
 			case this.oneClickScanSteps.PERMIT_TRACKERS_AND_PASSWORD:
 				this.setPermitTrackersAndPassword(permitValue);
 				break;
-
+			default:
+				break;
 		}
 	}
 

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { debounceTime, filter, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
@@ -27,6 +27,8 @@ interface UserProfile {
 	styleUrls: ['./check-breaches-form.component.scss'],
 })
 export class CheckBreachesFormComponent implements OnInit, OnDestroy {
+	@Input() size: 'default' | 'small' = 'default';
+	@Output() openConfirmationCode = new EventEmitter<boolean>();
 	emailWasScanned$ = this.accessTokenService.accessTokenIsExist$;
 
 	emailForm = this.formBuilder.group({
@@ -105,7 +107,9 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 		this.emailScannerService.sendConfirmationCode().pipe(
 			takeUntil(instanceDestroyed(this)),
 		).subscribe((response) => {
-			this.commonPopupService.open(this.confirmationPopupId);
+			this.size === 'default' ?
+				this.commonPopupService.open(this.confirmationPopupId) :
+				this.openConfirmationCode.emit(true);
 		}, (error) => {
 			this.serverError$.next(true);
 			console.error('auth error:', error);
