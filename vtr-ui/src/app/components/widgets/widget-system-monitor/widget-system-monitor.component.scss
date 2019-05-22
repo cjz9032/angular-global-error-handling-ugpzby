@@ -13,10 +13,10 @@
 		@media #{$mediaquery_6} {
 			padding: 4rem;
 			height: 36rem;
-		}
-
+		}				
 		.monitor-col {
 			padding: 4rem 0;
+			position: relative;
 			@media #{$mediaquery_5} {
 				padding: 3rem 0;
 			}
@@ -140,10 +140,10 @@
 								background-position: 50% 100%;
 								background-repeat: no-repeat;
 								&.gpu {
-									background-image:url('/assets/gaming-gpu-stack.svg');
+									background-image:url('/assets/images/gaming/gaming-gpu-stack.svg');
 								}
 								&.ram {
-									background-image:url('/assets/gaming-ram-stack.svg');
+									background-image:url('/assets/images/gaming/gaming-ram-stack.svg');
 								}
 							}
 							.stack-mask {
@@ -190,7 +190,7 @@
 					}
 					.cpu-ring {
 						// background-color: $highlight;
-						background-image:url('/assets/gaming-cpu-ring.svg');
+						background-image:url('/assets/images/gaming/gaming-cpu-ring.svg');
 						background-size: 100% 100%;
 						background-position: 50% 50%;
 						background-repeat: no-repeat;

@@ -9,7 +9,8 @@
                 "sub4": "Ispravnost lozinke",
                 "sub5": "Zaštita na internetu",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Savetnik za bezb.",
@@ -40,6 +41,15 @@
 				"text2": "Status"
 			}
 		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
