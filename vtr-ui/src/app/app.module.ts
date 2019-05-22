@@ -3,11 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ServiceWorkerModule } from '@angular/service-worker';
 
 // THIRD PARTY MODULES
 import { CookieService } from 'ngx-cookie-service';
-import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
@@ -58,7 +57,6 @@ import { PageSecurityPasswordComponent } from './components/pages/page-security-
 import { PageSecurityInternetComponent } from './components/pages/page-security-internet/page-security-internet.component';
 import { PageSecurityHomeSecurityComponent } from './components/pages/page-security-home-security/page-security-home-security.component';
 
-
 // APPLICATION SUBPAGE COMPONENTS
 import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
@@ -75,6 +73,7 @@ import { WidgetQuestionsComponent } from './components/widgets/widget-questions/
 import { WidgetFeedbackComponent } from './components/widgets/widget-feedback/widget-feedback.component';
 import { WidgetDeviceUpdateComponent } from './components/widgets/widget-device-update/widget-device-update.component';
 import { WidgetDeviceUpdateSettingsComponent } from './components/widgets/widget-device-update-settings/widget-device-update-settings.component';
+import { WidgetHomeSecurityAccountStatusComponent } from './components/widgets/widget-home-security-account-status/widget-home-security-account-status.component';
 
 // APPLICATION MODALS
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
@@ -125,10 +124,8 @@ import { ContainerArticleComponent } from './components/container-article/contai
 import { ArticleItemComponent } from './components/article-item/article-item.component';
 import { SanitizeUrlPipe } from './pipe/sanitise-url.pipe';
 import { UniqueIdPipe } from './pipe/unique-id.pipe';
-import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalBatteryChargeThresholdComponent } from './components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
-import { MetricService } from './services/metric/metric.service';
 import { WidgetMcafeeComponent } from './components/widgets/widget-mcafee/widget-mcafee.component';
 import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
 import { WidgetSecurityStatusComponent } from './components/widgets/widget-security-status/widget-security-status.component';
@@ -176,6 +173,7 @@ import { WidgetSystemToolsComponent } from './components/widgets/widget-system-t
 import { WidgetSystemMonitorComponent } from './components/widgets/widget-system-monitor/widget-system-monitor.component';
 import { WidgetQuicksettingsListComponent } from './components/widgets/widget-quicksettings-list/widget-quicksettings-list.component';
 import { WidgetLightingComponent } from './components/widgets/widget-lighting/widget-lighting.component';
+import { PageConnectedHomeSecurityComponent } from './components/pages/page-connected-home-security/page-connected-home-security.component';
 import { ModalGamingLegionedgeComponent } from './components/modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { PrivacyModule } from './components/pages/page-privacy/privacy.module';
 import { UiGamingCollapsibleContainerComponent } from './components/ui/ui-gaming-collapsible-container/ui-gaming-collapsible-container.component';
@@ -184,6 +182,10 @@ import { PageLightingcustomizeComponent } from './components/pages/page-lighting
 import { PageHardwarescanComponent } from './components/pages/page-hardwarescan/page-hardwarescan.component';
 import { UiRoundedRectangleRadioComponent } from './components/ui/ui-rounded-rectangle-radio/ui-rounded-rectangle-radio.component';
 import { CameraBackgroundBlurComponent } from './components/camera-background-blur/camera-background-blur.component';
+import { PageAutocloseComponent } from './components/pages/page-autoclose/page-autoclose.component';
+import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
+import { PowerSmartSettingsComponent } from './components/widgets/power-smart-settings/power-smart-settings.component';
+import { SubpageDeviceSettingsSmartAssistComponent } from './components/pages/page-device-settings/children/subpage-device-settings-smart-assist/subpage-device-settings-smart-assist.component';
 
 
 library.add(fas);
@@ -211,6 +213,7 @@ library.add(fal);
 		WidgetQuestionsComponent,
 		WidgetDeviceUpdateComponent,
 		WidgetDeviceUpdateSettingsComponent,
+		WidgetHomeSecurityAccountStatusComponent,
 		PageQuestionsComponent,
 		ContainerCardComponent,
 		HeaderMainComponent,
@@ -320,13 +323,18 @@ library.add(fal);
 		WidgetSystemMonitorComponent,
 		WidgetQuicksettingsListComponent,
 		WidgetLightingComponent,
+		PageConnectedHomeSecurityComponent,
 		ModalGamingLegionedgeComponent,
 		UiGamingCollapsibleContainerComponent,
 		PageMacrokeyComponent,
 		PageLightingcustomizeComponent,
 		PageHardwarescanComponent,
 		UiRoundedRectangleRadioComponent,
-		CameraBackgroundBlurComponent
+		CameraBackgroundBlurComponent,
+		PageAutocloseComponent,
+		PageNetworkBoostComponent,
+		PowerSmartSettingsComponent,
+		SubpageDeviceSettingsSmartAssistComponent
 	],
 	imports: [
 		BrowserModule,

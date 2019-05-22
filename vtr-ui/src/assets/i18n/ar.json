@@ -9,7 +9,8 @@
                 "sub4": "سلامة كلمة المرور",
                 "sub5": "حماية الإنترنت",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "مستشار الأمان",
@@ -28,7 +29,23 @@
             "notFound": "لم يتم العثور عليه",
             "registered": "مسجل",
             "notRegistered": "غير مسجل"
-        }
+        },
+        "ui": {
+            "back": "السابق",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
+		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview"
     },
     "support": {
         "common": {
@@ -235,7 +252,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "أمان VPN",
-            "header": "شبكه خاصه ظاهرية SurfEasy",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "تعمل الشبكة الخاصة الظاهرية SurfEasy VPN على تشفير المعلومات التي ترسلها وتتلقاها بحيث تتمكن من استخدام الكمبيوتر الشخصي أو جهاز Mac® أو الهاتف الذكي أو الكمبيوتر اللوحي بطريقة تحافظ فيها على أمانك وخصوصيتك على أي اتصال إنترنت من دون أي قلق.",
             "helpKeep": "استخدم SurfEasy VPN للمساعدة في الحفاظ على أمان وخصوصية نشاطك عبر الإنترنت.",
             "getSufEasy": "الحصول على SurfEasy",
@@ -303,7 +320,7 @@
             "privacyPolicy": "اقرأ المزيد حول <tag>سياسة الخصوصية</tag>",
             "whyWindowsHelloDescription2": "يضفي Windows Hello المزيد من السهولة والأمان على تسجيل الدخول إلى الكمبيوتر. ويمكن استخدامه أيضًأ لتطبيقات Microsoft عبر الإنترنت. اتبع الإرشادات التالية لبدء استخدام Windows Hello",
             "authentication": "مصادقة Windows Hello",
-            "traditional": "يمكن سرقة كلمات المرور التقليدية واستخدامها للدخول إلى حسابك من أي مكان في العالم. أكثر أمانًا وراحة. يُعد Windows Hello الجيل التالي من كلمات المرور. استخدم قارئ بصمة الإصبع [أو كاميرا IR] بدلاً من كلمات المرور غير الآمنة لتسجيل الدخول.",
+            "traditional": "يمكن سرقة كلمات المرور التقليدية واستخدامها للدخول إلى حسابك من أي مكان في العالم. أكثر أمانًا وراحة. يُعد Windows Hello الجيل التالي من كلمات المرور. استخدم قارئ بصمة الإصبع بدلاً من كلمات المرور غير الآمنة لتسجيل الدخول.",
             "howToStart": "كيف يمكنني بدء استخدام Windows Hello؟"
         }
     }

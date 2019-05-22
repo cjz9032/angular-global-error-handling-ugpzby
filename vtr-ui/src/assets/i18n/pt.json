@@ -9,7 +9,8 @@
                 "sub4": "Estado de palavra-passe",
                 "sub5": "Proteção da Internet",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Assistente de Segurança",
@@ -28,7 +29,23 @@
             "notFound": "NÃO ENCONTRADO",
             "registered": "REGISTADO",
             "notRegistered": "NÃO REGISTADO"
-        }
+        },
+        "ui": {
+            "back": "RETROCEDER",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
+		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview"
     },
     "support": {
         "common": {
@@ -235,7 +252,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "Segurança de VPN",
-            "header": "Rede privada virtual SurfEasy",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "A SurfEasy VPN encripta as informações enviadas e recebidas, de modo a que possa utilizar sem preocupações o seu PC, Mac®, smartphone ou tablet de forma segura e privada em qualquer ligação à Internet.",
             "helpKeep": "Ajude a manter as suas atividades online seguras e privadas com a SurfEasy VPN.",
             "getSufEasy": "Obter SurfEasy",
@@ -303,7 +320,7 @@
             "privacyPolicy": "Leia mais na <tag>Política de Privacidade</tag>",
             "whyWindowsHelloDescription2": "O Windows Hello torna o início de sessão no seu PC mais fácil e seguro. E pode também ser utilizado para as suas aplicações Microsoft online. Siga as instruções abaixo para começar a utilizar o Windows Hello",
             "authentication": "Autenticação do Windows Hello",
-            "traditional": "As palavras-passe tradicionais podem ser roubadas e utilizadas para aceder à sua conta a partir de qualquer parte do mundo. Mais seguro e conveniente. O Windows Hello é a próxima geração de palavras-passe. Utilize o leitor de impressões digitais (ou a câmara de IV) como alternativa a palavras-passe não seguras para iniciar sessão.",
+            "traditional": "As palavras-passe tradicionais podem ser roubadas e utilizadas para aceder à sua conta a partir de qualquer parte do mundo. Mais seguro e conveniente. O Windows Hello é a próxima geração de palavras-passe. Utilize o leitor de impressões digitais como alternativa a palavras-passe não seguras para iniciar sessão.",
             "howToStart": "Como começo a utilizar o Windows Hello?"
         }
     }

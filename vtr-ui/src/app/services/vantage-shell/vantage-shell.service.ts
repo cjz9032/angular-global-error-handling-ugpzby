@@ -6,6 +6,7 @@ import * as Phoenix from '@lenovo/tan-client-bridge';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
+import { CPUOCStatus } from 'src/app/data-models/system-update/cpu-overclock-status.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -16,13 +17,11 @@ export class VantageShellService {
 	constructor(private commonService: CommonService) {
 		this.shell = this.getVantageShell();
 		if (this.shell) {
-			const rpcClient = this.shell.VantageRpcClient ? new this.shell.VantageRpcClient() : null;
 			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
 			const powerClient = this.shell.PowerClient ? this.shell.PowerClient() : null;
 			this.phoenix = Phoenix.default(
 				new inversify.Container(),
 				{
-					hsaBroker: rpcClient,
 					metricsBroker: metricClient,
 					hsaPowerBroker: powerClient,
 					hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
@@ -111,20 +110,26 @@ export class VantageShellService {
 				});
 				metricClient.isInit = true;
 				metricClient.metricsEnabled = true;
-
 				metricClient.sendAsyncOrignally = metricClient.sendAsync;
 				metricClient.commonService = this.commonService;
-				metricClient.sendAsync = function sendAsync(data) {
-					const eventType = data.ItemType.toLowerCase();
-
-					// automatically fill the OnlineStatus for page view event
-					if (eventType === 'pageview') {
-						if (!data.OnlineStatus) {
-							data.OnlineStatus = this.commonService.isOnline ? 1 : 0;
+				metricClient.sendAsync = async function sendAsync(data) {
+					try {
+						// automatically fill the OnlineStatus for page view event
+						const eventType = data.ItemType.toLowerCase();
+						if (eventType === 'pageview') {
+							if (!data.OnlineStatus) {
+								data.OnlineStatus = this.commonService.isOnline ? 1 : 0;
+							}
 						}
-					}
 
-					return this.sendAsyncOrignally(data);
+						return await this.sendAsyncOrignally(data);
+					} catch (ex) {
+						console.log('an error ocurr when sending metrics event');
+						return Promise.resolve({
+							status: 0,
+							desc: 'ok'
+						});
+					}
 				};
 			}
 
@@ -345,6 +350,34 @@ export class VantageShellService {
 		if (this.phoenix && this.phoenix.userGuide) {
 			this.phoenix.userGuide.launch(launchPDF);
 		}
+		return undefined;
+	}
+
+	public generateGuid() {
+		if (this.phoenix && this.phoenix.metrics) {
+			return this.phoenix.metrics.metricsComposer.getGuid();
+		}
+
+		return undefined;
+	}
+
+	public getCPUOCStatus(): any {
+		if (this.phoenix) {
+			// TODO Un comment below line when JSBridge is ready for integration.
+			// return this.phoenix.gaming.gamingOverclock.GetCpuOCStatus();
+			return undefined;
+		}
+
+		return undefined;
+	}
+
+	public setCPUOCStatus(CpuOCStatus: CPUOCStatus): any {
+		if (this.phoenix) {
+			// TODO Un comment below line when JSBridge is ready for integration.
+			// return this.phoenix.gaming.gamingOverclock.SetCpuOCStatus(CpuOCStatus.cpuOCStatus);
+			return CpuOCStatus;
+		}
+
 		return undefined;
 	}
 }

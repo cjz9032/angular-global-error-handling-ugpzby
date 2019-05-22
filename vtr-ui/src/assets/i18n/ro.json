@@ -9,7 +9,8 @@
                 "sub4": "Sănătatea parolei",
                 "sub5": "Protecție pe internet",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Asistenţă securitate",
@@ -28,7 +29,23 @@
             "notFound": "NEGĂSIT",
             "registered": "ÎNREGISTRAT",
             "notRegistered": "NEÎNREGISTRAT"
-        }
+        },
+        "ui": {
+            "back": "ÎNAPOI",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
+		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview"
     },
     "support": {
         "common": {
@@ -235,7 +252,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "Securitate VPN",
-            "header": "Rețea virtuală privată SurfEasy",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN criptează informațiile pe care le trimiteți și le primiți, astfel încât să vă puteți utiliza în siguranță și privat PC-ul, Mac®-ul, telefonul inteligent sau tableta pe orice conexiune la internet, fără griji.",
             "helpKeep": "Ajutați păstrarea, în siguranță și privată, a activității dvs. online, cu ajutorul SurfEasy VPN.",
             "getSufEasy": "Obțineți SurfEasy",
@@ -303,7 +320,7 @@
             "privacyPolicy": "Citiți mai multe despre <tag>politica privind confidențialitatea</tag>",
             "whyWindowsHelloDescription2": "Windows Hello face autentificarea în PC-ul dvs. să fie mai ușoară și mai sigură. De asemenea, poate fi utilizat pentru aplicațiile Microsoft online. Urmați instrucțiunile de mai jos, pentru a începe să utilizați Windows Hello",
             "authentication": "Autentificare Windows Hello",
-            "traditional": "Parolele tradiționale pot fi furate și folosite pentru a vă accesa contul de oriunde din lume. Mai sigur și mai convenabil. Windows Hello este următoarea generație în domeniul parolelor. Utilizați cititorul de amprente [sau camera IR] în locul parolelor nesigure, pentru a vă autentifica.",
+            "traditional": "Parolele tradiționale pot fi furate și folosite pentru a vă accesa contul de oriunde din lume. Mai sigur și mai convenabil. Windows Hello este următoarea generație în domeniul parolelor. Utilizați cititorul de amprente în locul parolelor nesigure, pentru a vă autentifica.",
             "howToStart": "Cum încep să utilizez Windows Hello?"
         }
     }

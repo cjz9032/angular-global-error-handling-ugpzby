@@ -2,7 +2,7 @@ import {
 	Component,
 	OnInit,
 	HostListener,
-    NgZone
+	NgZone
 } from '@angular/core';
 import {
 	VantageShellService
@@ -86,8 +86,8 @@ export class PageSecurityComponent implements OnInit {
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		private translate: TranslateService,
-        private regionService: RegionService,
-        private ngZone: NgZone
+		private regionService: RegionService,
+		private ngZone: NgZone
 	) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.passwordManager = this.securityAdvisor.passwordManager;
@@ -151,20 +151,18 @@ export class PageSecurityComponent implements OnInit {
 		if (cacheShowWindowsHello) {
 			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.translate, windowsHello, this.commonService);
 		}
-		if (windowsHello.facialIdStatus || windowsHello.fingerPrintStatus) {
+		if (windowsHello.fingerPrintStatus) {
 			this.showWindowsHello(windowsHello);
 		}
-		windowsHello.on(EventTypes.helloFacialIdStatusEvent, () => {
-			this.showWindowsHello(windowsHello);
-		}).on(EventTypes.helloFingerPrintStatusEvent, () => {
+		windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
 			this.showWindowsHello(windowsHello);
 		});
 		wifiSecurity.on(EventTypes.wsStateEvent, () => {
 			this.getScore();
 		}).on(EventTypes.geolocatorPermissionEvent, (data) => {
-            this.ngZone.run(() => {
-                this.getScore();
-            });
+			this.ngZone.run(() => {
+				this.getScore();
+			});
 		});
 
 		// this.securityAdvisor.refresh();
@@ -249,7 +247,7 @@ export class PageSecurityComponent implements OnInit {
 
 	showWindowsHello(windowsHello: phoenix.WindowsHello): void {
 		if (this.commonService.isRS5OrLater() &&
-			(windowsHello.fingerPrintStatus || windowsHello.facialIdStatus)) {
+			windowsHello.fingerPrintStatus) {
 			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.translate, windowsHello, this.commonService);
 		} else {
 			this.windowsHelloLandingViewModel = null;

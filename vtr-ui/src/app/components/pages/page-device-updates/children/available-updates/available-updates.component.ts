@@ -12,15 +12,19 @@ export class AvailableUpdatesComponent implements OnInit {
 	@Input() criticalUpdates: AvailableUpdateDetail[];
 	@Input() recommendedUpdates: AvailableUpdateDetail[];
 	@Input() optionalUpdates: AvailableUpdateDetail[];
+	@Input() ignoredUpdates: AvailableUpdateDetail[];
 	@Input() isInstallationSuccess = false;
 	@Input() isInstallationCompleted = false;
 	@Input() isInstallingAllUpdates = true;
 
 	@Output() checkChange = new EventEmitter<any>();
+	@Output() ignoreUpdate = new EventEmitter<any>();
 	@Output() installAllUpdate = new EventEmitter<any>();
 	@Output() installSelectedUpdate = new EventEmitter<any>();
 
 	public isUpdateSelected = false;
+
+	public isCollapsed = true;
 
 	constructor(private systemUpdateService: SystemUpdateService) { }
 
@@ -42,18 +46,24 @@ export class AvailableUpdatesComponent implements OnInit {
 	}
 
 	onInstallAllUpdates(event) {
-		console.log('installUpdates', event);
 		this.installAllUpdate.emit(event);
 	}
 
 	onInstallSelectedUpdates(event) {
-		console.log('installSelectedUpdates', event);
 		this.installSelectedUpdate.emit(event);
 	}
 
 	public onCheckChange($event: any) {
 		this.checkChange.emit($event);
 		this.checkSelectedUpdateStatus();
+	}
+
+	public onIgnoreUpdate($event: any) {
+		this.ignoreUpdate.emit($event);
+	}
+
+	public onToggle() {
+		this.isCollapsed = !this.isCollapsed;
 	}
 
 	private checkSelectedUpdateStatus() {

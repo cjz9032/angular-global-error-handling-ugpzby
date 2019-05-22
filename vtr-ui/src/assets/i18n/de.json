@@ -9,7 +9,8 @@
                 "sub4": "Kennwortzustand",
                 "sub5": "Internetschutz",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Sicherheitsratgeber",
@@ -28,7 +29,23 @@
             "notFound": "NICHT GEFUNDEN",
             "registered": "REGISTRIERT",
             "notRegistered": "NICHT REGISTRIERT"
-        }
+        },
+        "ui": {
+            "back": "ZURÜCK",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
+		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview"
     },
     "support": {
         "common": {
@@ -235,7 +252,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "VPN-Sicherheit",
-            "header": "SurfEasy Virtuelles Privates Netzwerk",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN verschlüsselt die Informationen, die Sie senden und empfangen, damit Sie Ihren PC, Mac®, Smartphone oder Tablet bedenkenlos sicher und privat mit jeder Internetverbindung nutzen können.",
             "helpKeep": "Sorgen Sie mit SurfEasy VPN dafür, dass Ihre Online-Aktivität sicher und geschützt bleibt.",
             "getSufEasy": "Holen Sie sich SurfEasy",
@@ -303,7 +320,7 @@
             "privacyPolicy": "Weitere Informationen finden Sie in der <tag>Datenschutzrichtlinie</tag>",
             "whyWindowsHelloDescription2": "Windows Hello erleichtert Ihnen das Anmelden auf Ihrem PC und macht es sicherer. Außerdem können Sie es auch für Ihre Microsoft-Apps online verwenden. Befolgen Sie die unten stehenden Anweisungen, um Windows Hello zu verwenden.",
             "authentication": "Authentifizierung über Windows Hello",
-            "traditional": "Herkömmliche Kennwörter können leicht gestohlen und missbraucht werden, um sich von überall auf der Welt Zugriff auf Ihr Konto zu verschaffen. Sicher und praktisch. Windows Hello ist die neue Generation der Kennwörter. Verwenden Sie für die Anmeldung Ihr Lesegerät für Fingerabdrücke [oder die IR-Kamera] anstatt unsicherer Kennwörter.",
+            "traditional": "Herkömmliche Kennwörter können leicht gestohlen und missbraucht werden, um sich von überall auf der Welt Zugriff auf Ihr Konto zu verschaffen. Sicher und praktisch. Windows Hello ist die neue Generation der Kennwörter. Verwenden Sie für die Anmeldung Ihr Lesegerät für Fingerabdrücke anstatt unsicherer Kennwörter.",
             "howToStart": "Wie nutze ich Windows Hello?"
         }
     }

@@ -398,6 +398,13 @@
 	}
 
 	.wifi-card {
+		div.wifi {
+			padding-right: 1rem;
+			.media {
+				justify-content: center;
+				align-items: center;
+			}
+		}
 		div.wifi:nth-child(odd) {
 			border-bottom: 0.1rem solid $shade_lighter;
 			border-right: 0.1rem solid $shade_lighter;
@@ -416,18 +423,27 @@
 			border-bottom: 0;
 		}
 		div.wifi:nth-child(odd) {
-			@media #{$mediaquery_7} {
+			@media #{$mediaquery_X5, $mediaquery_10} {
 				border-right: 0;
 			}
 		}
 		div.wifi:nth-last-child(2):nth-child(odd) {
-			@media #{$mediaquery_7} {
+			@media #{$mediaquery_X5, $mediaquery_10} {
 				border-bottom-left-radius: 0;
 				border-bottom: 0.1rem solid $shade_lighter;
 			}
 		}
+		.connection-name {
+			h5 {
+				line-height: 2.2rem;
+			}
+		}
+
 	}
 	.sm-device-responsive{
+		vtr-ui-switch-onoff {
+			display: inline-block;
+		}
 		@media #{$mediaquery_12} {
 			position: relative;
 			top: -3rem;

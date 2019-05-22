@@ -2,7 +2,7 @@
 
 .vtr-ui-rounded-rectangle-radio {
 	box-sizing: border-box;
-	background-color: $shade_lightest;
+	background: linear-gradient(to left, $light, $shade_extralight);
 	display: inline-block;
 	margin-right: 1.5rem;
 	margin-bottom: 1rem;
@@ -10,7 +10,26 @@
 	width: 25rem;
 	height: 6.5rem;
 	border-radius: 20rem;
-	border: 0.2rem solid $main;
+	border: 1.5px solid $shade_lightest;
+	cursor: pointer;
+	&:hover{
+		border: 1.5px solid $main;
+	}
+	@media #{$mediaquery_X20} {
+		width: 40rem;
+	}
+	@media #{$mediaquery_X19} {
+		width: 30.5rem;
+	}
+	@media #{$mediaquery_X18} {
+		width: 18rem;
+		margin-right: 1rem;
+	}
+	@media #{$mediaquery_X16} {
+		width: 16.5rem;
+		margin-right: 1rem;
+	}
+
 	label {
 		box-sizing: border-box;
 		padding: 0rem;

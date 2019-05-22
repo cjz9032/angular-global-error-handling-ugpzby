@@ -9,7 +9,8 @@
                 "sub4": "Integrità password",
                 "sub5": "Protezione Internet",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Assistente sicurezza",
@@ -28,7 +29,23 @@
             "notFound": "NON TROVATO",
             "registered": "REGISTRATO",
             "notRegistered": "NON REGISTRATO"
-        }
+        },
+        "ui": {
+            "back": "INDIETRO",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
+		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview"
     },
     "support": {
         "common": {
@@ -235,7 +252,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "Protezione VPN",
-            "header": "SurfEasy Virtual Private Network",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN codifica le informazioni inviate e ricevute, in modo da utilizzare PC, Mac®, smartphone o tablet in massima sicurezza con qualsiasi connessione Internet.",
             "helpKeep": "SurfEasy VPN garantisce la protezione e la privacy delle attività online.",
             "getSufEasy": "Scarica SurfEasy",
@@ -303,7 +320,7 @@
             "privacyPolicy": "Ulteriori informazioni sull'<tag>informativa sulla privacy</tag>",
             "whyWindowsHelloDescription2": "Windows Hello semplifica e rende più sicuro l'accesso al tuo PC. Può essere utilizzato anche per le applicazioni Microsoft online. Seguire le istruzioni riportate di seguito per iniziare a utilizzare Windows Hello",
             "authentication": "Autenticazione Windows Hello",
-            "traditional": "Le password tradizionali possono essere rubate e utilizzate per accedere all'account da qualsiasi parte del mondo. Più sicuro e comodo. Windows Hello è il sistema di nuova generazione per l'utilizzo delle password. Per accedere è possibile utilizzare il lettore di impronte digitali (o la fotocamera IR) invece di password non sicure.",
+            "traditional": "Le password tradizionali possono essere rubate e utilizzate per accedere all'account da qualsiasi parte del mondo. Più sicuro e comodo. Windows Hello è il sistema di nuova generazione per l'utilizzo delle password. Per accedere è possibile utilizzare il lettore di impronte digitali invece di password non sicure.",
             "howToStart": "Come posso iniziare a utilizzare Windows Hello?"
         }
     }

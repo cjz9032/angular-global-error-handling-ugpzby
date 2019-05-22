@@ -9,7 +9,8 @@
                 "sub4": "Parola Durumu",
                 "sub5": "İnternet Koruması",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Güvenlik Danışmanı",
@@ -28,7 +29,23 @@
             "notFound": "BULUNAMADI",
             "registered": "KAYITLI",
             "notRegistered": "KAYITLI DEĞİL"
-        }
+        },
+        "ui": {
+            "back": "GERİ",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
+		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview"
     },
     "support": {
         "common": {
@@ -235,7 +252,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "VPN Güvenliği",
-            "header": "SurfEasy Sanal Özel Ağı",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN, gönderdiğiniz ve aldığınız bilgileri şifreleyerek bilgisayar, Mac®, akıllı telefon veya tabletinizi herhangi bir İnternet bağlantısında endişe duymadan, güvenli ve özel bir şekilde kullanabilmenizi sağlar.",
             "helpKeep": "SurfEasy VPN ile çevrimiçi etkinliğinizi güvenli ve özel tutmaya yardımcı olun.",
             "getSufEasy": "SurfEasy'yi Edinin",
@@ -303,7 +320,7 @@
             "privacyPolicy": "<tag>Gizlilik Politikası</tag> hakkında daha fazla bilgi edinin",
             "whyWindowsHelloDescription2": "Windows Hello, bilgisayarınızda oturum açmayı daha kolay ve daha güvenli hale getirir. Çevrimiçi Microsoft uygulamalarınız için de kullanılabilir. Windows Hello kullanmaya başlamak için aşağıdaki yönergeleri izleyin",
             "authentication": "Windows Hello Kimlik Doğrulaması",
-            "traditional": "Geleneksel parolalar çalınabilir ve hesabınıza dünyanın herhangi bir yerinden erişmek için kullanılabilir. Daha güvenli ve kullanımı kolay. Windows Hello, yeni nesil paroladır. Oturum açmak için güvenli olmayan parolalar yerine parmak izi okuyucuyu [veya kızılötesi kamerayı] kullanın.",
+            "traditional": "Geleneksel parolalar çalınabilir ve hesabınıza dünyanın herhangi bir yerinden erişmek için kullanılabilir. Daha güvenli ve kullanımı kolay. Windows Hello, yeni nesil paroladır. Oturum açmak için güvenli olmayan parolalar yerine parmak izi okuyucuyu kullanın.",
             "howToStart": "Windows Hello kullanmaya nasıl başlayabilirim?"
         }
     }

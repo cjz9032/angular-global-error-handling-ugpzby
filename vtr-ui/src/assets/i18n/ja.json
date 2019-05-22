@@ -9,7 +9,8 @@
                 "sub4": "パスワードの健全性",
                 "sub5": "インターネット保護",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "セキュリティー・アドバイザー",
@@ -28,7 +29,23 @@
             "notFound": "見つかりませんでした",
             "registered": "登録済み",
             "notRegistered": "未登録"
-        }
+        },
+        "ui": {
+            "back": "戻る",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
+		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview"
     },
     "support": {
         "common": {
@@ -235,7 +252,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "VPN セキュリティー",
-            "header": "SurfEasy仮想プライベート・ネットワーク",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPNは、懸念なく安全かつ個人的に任意のインターネット接続で PC、Mac®、スマートフォン、タブレットを使用できるように、送受信する情報を暗号化します。",
             "helpKeep": "SurfEasy VPN を使用することで、オンライン・アクティビティを安全かつプライベートに維持できます。",
             "getSufEasy": "SurfEasy を入手",
@@ -303,7 +320,7 @@
             "privacyPolicy": "<tag>プライバシー・ポリシー</tag>の詳細を読む",
             "whyWindowsHelloDescription2": "Windows Hello を使用すると、PC へのログインがより簡単かつ安全になります。また、オンラインの Microsoft アプリにも使用できます。Windows Hello の使用を開始するには、次の手順に従います",
             "authentication": "Windows Hello の認証",
-            "traditional": "従来のパスワードは盗まれるおそれがあり、世界のどこかでそのパスワードを使って自分のアカウントにアクセスされる可能性があります。より安全で便利な方法です。Windows Hello は、次世代のパスワードです。安全性の低いパスワードの代わりに指紋リーダー (または IR カメラ) を使用してログインます。",
+            "traditional": "従来のパスワードは盗まれるおそれがあり、世界のどこかでそのパスワードを使って自分のアカウントにアクセスされる可能性があります。より安全で便利な方法です。Windows Hello は、次世代のパスワードです。安全性の低いパスワードの代わりに指紋リーダー を使用してログインます。",
             "howToStart": "Windows Hello の使用を開始する方法"
         }
     }

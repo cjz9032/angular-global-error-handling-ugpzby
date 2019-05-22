@@ -9,7 +9,8 @@
                 "sub4": "État de santé du mot de passe",
                 "sub5": "Protection Internet",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Conseil sécurité",
@@ -28,7 +29,23 @@
             "notFound": "NON TROUVÉ",
             "registered": "ENREGISTRÉ",
             "notRegistered": "NON ENREGISTRÉ"
-        }
+        },
+        "ui": {
+            "back": "RETOUR",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
+		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview"
     },
     "support": {
         "common": {
@@ -235,7 +252,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "Sécurité VPN",
-            "header": "Réseau privé virtuel SurfEasy",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN chiffre les informations que vous envoyez et recevez de sorte que vous pouvez utilisez à titre privé et en toute sécurité votre PC, Mac®, smartphone ou tablette sur toutes les connexions Internet sans souci.",
             "helpKeep": "SurfEasy VPN vous aide à garder vos activités en ligne sécurisés et confidentielles.",
             "getSufEasy": "Obtenir SurfEasy",
@@ -303,7 +320,7 @@
             "privacyPolicy": "En savoir plus sur la <tag>Politique de confidentialité</tag>",
             "whyWindowsHelloDescription2": "Windows Hello rend les connexions sur votre PC plus facile et plus sûr. Et il peut également être utilisé pour vos applications Microsoft en ligne. Suivre les instructions ci-dessous pour commencer à utiliser Windows Hello",
             "authentication": "Authentification Windows Hello",
-            "traditional": "Les mots de passe traditionnels peuvent être volés et utilisés pour accéder à votre compte depuis n'importe où dans le monde. Plus sûr et plus pratique. Windows Hello est la nouvelle génération de mot de passe. Utilisez le lecteur d'empreintes digitales [ou la caméra infrarouge] au lieu de mots de passe non sécurisés pour vous connecter.",
+            "traditional": "Les mots de passe traditionnels peuvent être volés et utilisés pour accéder à votre compte depuis n'importe où dans le monde. Plus sûr et plus pratique. Windows Hello est la nouvelle génération de mot de passe. Utilisez le lecteur d'empreintes digitales au lieu de mots de passe non sécurisés pour vous connecter.",
             "howToStart": "Comment est-ce que je commence à utiliser Windows Hello ?"
         }
     }

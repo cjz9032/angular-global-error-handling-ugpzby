@@ -9,7 +9,8 @@
                 "sub4": "Bezpieczeństwo hasła",
                 "sub5": "Ochrona internetowa",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Doradca zabezpieczeń",
@@ -28,7 +29,23 @@
             "notFound": "NIE ZNALEZIONO",
             "registered": "ZAREJESTROWANY",
             "notRegistered": "NIE ZAREJESTROWANY"
-        }
+        },
+        "ui": {
+            "back": "WSTECZ",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
+		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview"
     },
     "support": {
         "common": {
@@ -235,7 +252,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "Zabezpieczenia VPN",
-            "header": "Wirtualna sieć prywatna SurfEasy",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN szyfruje informacje, które wysyłasz i otrzymujesz, dzięki czemu możesz bezpiecznie i prywatnie korzystać z komputera PC, Mac®, smartfona lub tabletu na dowolnym połączeniu internetowym bez obaw.",
             "helpKeep": "Pomóż chronić swoją aktywność w Internecie dzięki SurfEasy VPN.",
             "getSufEasy": "Kup SurfEasy",
@@ -303,7 +320,7 @@
             "privacyPolicy": "Przeczytaj więcej na temat <tag>polityki prywatności</tag>",
             "whyWindowsHelloDescription2": "Windows Hello sprawia, że logowanie do komputera jest łatwiejsze i bezpieczniejsze. Możesz także korzystać z internetowych aplikacji Microsoft. Postępuj zgodnie z poniższymi instrukcjami, aby rozpocząć korzystanie z Windows Hello",
             "authentication": "Uwierzytelnianie Windows Hello",
-            "traditional": "Tradycyjne hasła mogą zostać skradzione i wykorzystane do uzyskania dostępu do konta z dowolnego miejsca na świecie. Bezpieczniejsze i wygodniejsze. Windows Hello to system haseł następnej generacji. Zamiast niezabezpieczonych haseł użyj czytnika odcisków palców [lub kamery IR], aby się zalogować.",
+            "traditional": "Tradycyjne hasła mogą zostać skradzione i wykorzystane do uzyskania dostępu do konta z dowolnego miejsca na świecie. Bezpieczniejsze i wygodniejsze. Windows Hello to system haseł następnej generacji. Zamiast niezabezpieczonych haseł użyj czytnika odcisków palców, aby się zalogować.",
             "howToStart": "Jak rozpocząć korzystanie z Windows Hello?"
         }
     }

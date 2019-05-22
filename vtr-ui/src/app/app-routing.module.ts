@@ -22,9 +22,12 @@ import { PageSupportDetailComponent } from './components/pages/page-support-deta
 import { PageUserComponent } from './components/pages/page-user/page-user.component';
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
 import { WindowsHelloGuardService } from './services/guard/windows-hello-guardService.service';
+import { PageConnectedHomeSecurityComponent } from './components/pages/page-connected-home-security/page-connected-home-security.component';
 import { PrivacyModule } from './components/pages/page-privacy/privacy.module';
 import { GuardService } from './services/guard/security-guardService.service';
 import { LocalStorageKey } from './enums/local-storage-key.enum';
+import { PageAutocloseComponent } from './components/pages/page-autoclose/page-autoclose.component';
+import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
 
 const routes: Routes = [
 	{
@@ -141,7 +144,7 @@ const routes: Routes = [
 		canActivate: [GuardService],
 		data: {
 			pageName: 'Security.PasswordProtection'
-		}
+        }
 	}, {
 		path: 'security/internet-protection',
 		component: PageSecurityInternetComponent,
@@ -159,12 +162,6 @@ const routes: Routes = [
 			pageName: 'Security.WindowsHello'
 		}
 	}, {
-		path: 'security/home-security',
-		component: PageSecurityHomeSecurityComponent,
-		data: {
-			pageName: 'Security.HomeSecurity'
-		}
-	}, {
 		path: 'support',
 		component: PageSupportComponent,
 		data: {
@@ -175,6 +172,12 @@ const routes: Routes = [
 		component: PageSupportDetailComponent,
 		data: {
 			pageName: 'Support.Detail'
+        }
+    }, {
+		path: 'home-security',
+		component: PageConnectedHomeSecurityComponent,
+		data: {
+			pageName: 'ConnectedHomeSecurity'
 		}
 	}, {
 		path: 'user',
@@ -182,7 +185,19 @@ const routes: Routes = [
 		data: {
 			pageName: 'User'
 		}
-	},
+	},{
+		path: 'autoclose',
+		component: PageAutocloseComponent,
+		data: {
+			pageName: 'AutoClose'
+		}
+	},{
+		path: 'networkboost',
+		component: PageNetworkBoostComponent,
+		data: {
+			pageName: 'NetworkBoost'
+		}
+	}
 ];
 
 @NgModule({

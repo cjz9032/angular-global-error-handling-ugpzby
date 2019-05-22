@@ -18,6 +18,7 @@ export class DeviceService {
 	private microphone: any;
 	public isShellAvailable = false;
 	public isArm = false;
+	public is64bit = true;
 	public showPrivacy = true;
 	public isGaming = false;
 	private isGamingDashboardLoaded = false;
@@ -31,6 +32,14 @@ export class DeviceService {
 		if (machineInfo && machineInfo.isGaming) {
 			this.isGaming = machineInfo.isGaming;
 			this.loadGamingDashboard();
+		}
+
+		if (machineInfo && machineInfo.cpuArchitecture) {
+			if (machineInfo.cpuArchitecture.indexOf('64') === -1) {
+				this.is64bit = false;
+			} else {
+				this.is64bit = true;
+			}
 		}
 
 		this.device = shellService.getDevice();

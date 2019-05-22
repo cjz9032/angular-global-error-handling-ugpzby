@@ -58,10 +58,10 @@
 								{
 									"type": "initial",
 									"maximumWarning": "2mb",
-									"maximumError": "5mb"
+									"maximumError": "7mb"
 								}
 							],
-							"serviceWorker": false
+							"serviceWorker": true
 						}
 					}
 				},

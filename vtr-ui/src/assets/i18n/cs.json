@@ -9,7 +9,8 @@
                 "sub4": "Stav hesla",
                 "sub5": "Internetová ochrana",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Bezpečnostního rádce",
@@ -28,7 +29,23 @@
             "notFound": "NENALEZENO",
             "registered": "REGISTROVÁNO",
             "notRegistered": "NENÍ REGISTROVÁNO"
-        }
+        },
+        "ui": {
+            "back": "ZPĚT",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
+		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview"
     },
     "support": {
         "common": {
@@ -235,7 +252,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "Zabezpečení VPN",
-            "header": "Virtuální privátní síť SurfEasy",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN šifruje informace, které odesíláte a přijímáte, takže můžete bez obav bezpečně a soukromě používat svůj počítač PC, Mac®, chytrý telefon nebo tablet s libovolným internetovým připojením.",
             "helpKeep": "SurfEasy VPN pomáhá zajišťovat bezpečí a soukromí vašich online aktivit.",
             "getSufEasy": "Získat SurfEasy",
@@ -303,7 +320,7 @@
             "privacyPolicy": "Další informace najdete v <tag>Zásadách ochrany osobních údajů</tag>",
             "whyWindowsHelloDescription2": "Program Windows Hello usnadňuje a zabezpečuje přihlášení k počítači. Lze jej použít také v online aplikacích Microsoft. Níže najdete pokyny, jak Windows Hello začít používat.",
             "authentication": "Ověřování pomocí Windows Hello",
-            "traditional": "Tradiční hesla mohou být zcizena a použita pro přístup k vašemu účtu odkudkoli na světě. Bezpečnější a pohodlnější. Windows Hello představuje novou generaci práce s hesly. Na rozdíl od klasických rizikových hesel se přihlásíte pomocí snímače otisku prstu (nebo infračervené kamery).",
+            "traditional": "Tradiční hesla mohou být zcizena a použita pro přístup k vašemu účtu odkudkoli na světě. Bezpečnější a pohodlnější. Windows Hello představuje novou generaci práce s hesly. Na rozdíl od klasických rizikových hesel se přihlásíte pomocí snímače otisku prstu.",
             "howToStart": "Jak začít používat Windows Hello?"
         }
     }

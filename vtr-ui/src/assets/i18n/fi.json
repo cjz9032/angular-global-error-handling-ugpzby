@@ -9,7 +9,8 @@
                 "sub4": "Salasanan kunto",
                 "sub5": "Internet-suojaus",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Security Advisor",
@@ -28,7 +29,23 @@
             "notFound": "EI LÖYTYNYT",
             "registered": "REKISTERÖITY",
             "notRegistered": "EI REKISTERÖITY"
-        }
+        },
+        "ui": {
+            "back": "EDELLINEN",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
+		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview"
     },
     "support": {
         "common": {
@@ -235,7 +252,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "VPN-suojaus",
-            "header": "SurfEasy näennäisverkko",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN salaa lähettämäsi ja vastaanottamasi tiedot niin, että voit käyttää PC- tai Mac®-tietokonettasi, älypuhelintasi tai tablettiasi millä tahansa Internet-yhteydellä tarvitsematta huolehtia.",
             "helpKeep": "Pidä toimintasi verkossa turvallisena ja yksityisenä SurfEasy VPN:n avulla.",
             "getSufEasy": "Hanki SurfEasy",
@@ -303,7 +320,7 @@
             "privacyPolicy": "Lue lisätietoja <tag>tietosuojakäytännöstä</tag>",
             "whyWindowsHelloDescription2": "Windows Hellon avulla voit kirjautua tietokoneellesi helpommin ja turvallisemmin. Voit käyttää sitä myös Microsoftin verkkosovelluksiin. Aloita Windows Hellon käyttö noudattamalla alla olevia ohjeita",
             "authentication": "Windows Hello -todennus",
-            "traditional": "Perinteiset salasanat voidaan varastaa ja niiden avulla tiliäsi voidaan käyttää kaikkialla maailmassa. Turvallisempi ja helppokäyttöisempi. Windows Hello on salasanan seuraava sukupolvi. Kirjaudu sisään epäluotettavien salasanojen sijasta sormenjälkitunnistimen [tai infrapunakameran] avulla.",
+            "traditional": "Perinteiset salasanat voidaan varastaa ja niiden avulla tiliäsi voidaan käyttää kaikkialla maailmassa. Turvallisempi ja helppokäyttöisempi. Windows Hello on salasanan seuraava sukupolvi. Kirjaudu sisään epäluotettavien salasanojen sijasta sormenjälkitunnistimen avulla.",
             "howToStart": "Miten Windows Hellon käyttö aloitetaan?"
         }
     }

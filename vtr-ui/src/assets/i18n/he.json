@@ -9,7 +9,8 @@
                 "sub4": "תקינות סיסמה",
                 "sub5": "הגנה באינטרנט",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "יועץ האבטחה",
@@ -28,7 +29,23 @@
             "notFound": "לא נמצא",
             "registered": "רשום",
             "notRegistered": "לא רשום"
-        }
+        },
+        "ui": {
+            "back": "חזרה",
+            "on": "ON",
+			"off": "OFF",
+			"collapse": "Collapse",
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
+		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview"
     },
     "support": {
         "common": {
@@ -235,7 +252,7 @@
         "vpn": {
             "statusTitle": "SURFEASY VPN",
             "title": "אבטחת VPN",
-            "header": "רשת וירטואלית פרטית SurfEasy",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "רשת SurfEasy VPN מצפינה את המידע שאתם שולחים ומקבלים, כך שתוכלו להשתמש באופן בטוח ופרטי במחשב האישי, במחשב Mac®, בטלפון החכם או במחשב הלוח שלכם בכל חיבור לאינטרנט ללא חששות.",
             "helpKeep": "שמרו על האבטחה והפרטיות של פעילותכם באינטרנט באמצעות SurfEasy VPN.",
             "getSufEasy": "רכישת SurfEasy",
@@ -303,7 +320,7 @@
             "privacyPolicy": "קראו עוד על <tag>מדיניות הפרטיות</tag>",
             "whyWindowsHelloDescription2": "Windows Hello מסייע להיכנס למחשב האישי באופן קל ומאובטח יותר. כמו כן, ניתן להשתמש בו גם עבור יישומי Microsoft מקוונים. בצעו את ההוראות הבאות כדי להתחיל להשתמש ב-Windows Hello",
             "authentication": "אימות Windows Hello",
-            "traditional": "כשמשתמשים בסיסמאות מסורתיות, יש אנשים שיכולים לגנוב אותן ולהשתמש בהן כדי לגשת לחשבונך מכל מקום בעולם. יותר מאובטח ונוח. Windows Hello הוא הדור הבא בכל מה שקשור לסיסמאות. השתמשו בקורא טביעות האצבע [או במצלמת IR] במקום בסיסמאות לא מאובטחות לצורך התחברות.",
+            "traditional": "כשמשתמשים בסיסמאות מסורתיות, יש אנשים שיכולים לגנוב אותן ולהשתמש בהן כדי לגשת לחשבונך מכל מקום בעולם. יותר מאובטח ונוח. Windows Hello הוא הדור הבא בכל מה שקשור לסיסמאות. השתמשו בקורא טביעות האצבע במקום בסיסמאות לא מאובטחות לצורך התחברות.",
             "howToStart": "איך מתחילים להשתמש ב-Windows Hello?"
         }
     }

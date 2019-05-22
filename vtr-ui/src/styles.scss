@@ -349,7 +349,15 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 /*Battery-charge-threshold-modal-styles*/
 .Battery-Charge-Threshold-Modal {
 	.modal-dialog {
-		max-width: 32%;
+		max-width: 35%;
+		@media #{$mediaquery_11} {
+			max-width: 75%;
+			margin: 0 auto;
+		}
+
+		@media #{$mediaquery_X8} {
+			max-width: 50%;
+		}
 	}
 
 	.modal-content {
@@ -426,7 +434,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 		p,
 		li,
-		ul 
+		ul
 		{
 			word-wrap: break-word;
 		}
@@ -467,6 +475,14 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			font-size: 3.1rem;
 			margin-top: 0rem;
 			margin-bottom: 3rem;
+		}
+	}
+	.vtr-modal-threat-locator {
+		&.connection-error-modal {
+			margin-bottom: 4rem;
+			.iframe-container {
+				height: auto !important;
+			}
 		}
 	}
 }

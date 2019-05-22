@@ -16,6 +16,7 @@ import { SystemUpdateStatusMessage } from 'src/app/data-models/system-update/sys
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import {UpdateFailToastMessage} from 'src/app/enums/update.enum'
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -38,6 +39,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public criticalUpdates: AvailableUpdateDetail[];
 	public recommendedUpdates: AvailableUpdateDetail[];
 	public optionalUpdates: AvailableUpdateDetail[];
+	public ignoredUpdates: AvailableUpdateDetail[];
 	public isUpdateCheckInProgress = false;
 	public isRebootRequested = false;
 	public showFullHistory = false;
@@ -264,7 +266,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			this.setUpdateTitle();
 			this.isUserCancelledUpdateCheck = false;
 			this.isUpdateCheckInProgress = true;
+			this.isUpdatesAvailable = false;
 			this.systemUpdateService.isUpdatesAvailable = false;
+			this.isInstallingAllUpdates = true;
 			this.systemUpdateService.isInstallingAllUpdates = true;
 			this.resetState();
 			this.systemUpdateService.checkForUpdates();
@@ -283,24 +287,35 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.systemUpdateService.toggleUpdateSelection(item.name, item.checked);
 	}
 
-	private installAllUpdate() {
-		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
-			this.systemUpdateService.isInstallingAllUpdates = true;
-			this.resetState();
-			this.systemUpdateService.installAllUpdates();
+	public onIgnoredUpdate($event: any){
+		const packageName = $event.packageName;
+		const isIgnored = $event.isIgnored;
+		if (isIgnored === true){
+			this.systemUpdateService.ignoreUpdate(packageName);
+		} else {
+			this.systemUpdateService.unIgnoreUpdate(packageName);
 		}
 	}
 
-	private installSelectedUpdate() {
+	private installAllUpdate(removeDelayedUpdates: boolean) {
 		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
+			this.isInstallingAllUpdates = true;
+			this.systemUpdateService.isInstallingAllUpdates = true;
+			this.resetState();
+			this.systemUpdateService.installAllUpdates(removeDelayedUpdates);
+		}
+	}
+
+	private installSelectedUpdate(removeDelayedUpdates: boolean) {
+		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
+			this.isInstallingAllUpdates = false;
 			this.systemUpdateService.isInstallingAllUpdates = false;
 			this.resetState();
-			this.systemUpdateService.installSelectedUpdates();
+			this.systemUpdateService.installSelectedUpdates(removeDelayedUpdates);
 		}
 	}
 
 	public onUpdateToggleOnOff($event) {
-		console.log('onUpdateToggleOnOff', $event);
 		if (this.systemUpdateService.isShellAvailable) {
 			const { name, checked } = $event.target;
 			let { criticalAutoUpdates, recommendedAutoUpdates } = this.systemUpdateService.autoUpdateStatus;
@@ -350,7 +365,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			});
 		modalRef.componentInstance.metricsParent = "Pages.SystemUpdate.RebootRequiredControl";
 		const { rebootType, packages } = this.systemUpdateService.getRebootType(this.systemUpdateService.updateInfo.updateList, source);
-
+		let removeDelayedUpdates = false;
 		if (rebootType === UpdateRebootType.RebootDelayed) {
 			this.showRebootDelayedModal(modalRef);
 		} else if (rebootType === UpdateRebootType.RebootForced) {
@@ -360,7 +375,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		} else {
 			modalRef.dismiss();
 			// its normal update type installation which doesn't require rebooting/power-off
-			this.installUpdateBySource(source);
+			this.installUpdateBySource(source, removeDelayedUpdates);
 			return;
 		}
 		modalRef.componentInstance.packages = packages;
@@ -369,14 +384,18 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		modalRef.result.then(
 			result => {
 				// on open
-				console.log('common-confirmation-modal', result, source);
 				if (result) {
-					this.installUpdateBySource(source);
+					if(this.systemUpdateService.getACAttachedStatus()) {
+						removeDelayedUpdates = false;
+					} else {
+						removeDelayedUpdates = true;
+					}
+					this.installUpdateBySource(source, removeDelayedUpdates);
 				}
 			},
 			reason => {
 				// on close
-				console.log('common-confirmation-modal', reason, source);
+				console.log('common-confirmation-modal on close', reason, source);
 			}
 		);
 	}
@@ -384,11 +403,11 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public onGetSupportClick($event: any) {
 	}
 
-	private installUpdateBySource(source: string) {
+	private installUpdateBySource(source: string, removeDelayedUpdates: boolean) {
 		if (source === 'selected') {
-			this.installSelectedUpdate();
+			this.installSelectedUpdate(removeDelayedUpdates);
 		} else {
-			this.installAllUpdate();
+			this.installAllUpdate(removeDelayedUpdates);
 		}
 	}
 
@@ -415,10 +434,29 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private setUpdateByCategory(updateList: Array<AvailableUpdateDetail>) {
 		if (updateList) {
-			this.optionalUpdates = this.filterUpdate(updateList, 'optional');
-			this.recommendedUpdates = this.filterUpdate(updateList, 'recommended');
-			this.criticalUpdates = this.filterUpdate(updateList, 'critical');
+			this.ignoredUpdates =  this.filterIgnoredUpdate(updateList, true);
+			const unIgnoredUpdates = this.filterIgnoredUpdate(updateList, false);
+			this.optionalUpdates = this.filterUpdate(unIgnoredUpdates, 'optional');
+			this.recommendedUpdates = this.filterUpdate(unIgnoredUpdates, 'recommended');
+			this.criticalUpdates = this.filterUpdate(unIgnoredUpdates, 'critical');
 		}
+	}
+
+	private showToastMessage(updateList: Array<AvailableUpdateDetail>) {
+		const failedUpdates = updateList.find((update) => {
+			return (update.installationStatus === UpdateActionResult.DownloadFailed 
+				|| update.installationStatus === UpdateActionResult.InstallFailed);
+		});
+		if (failedUpdates) {
+			this.systemUpdateService.queueToastMessage(UpdateFailToastMessage.MessageID, '', '');
+		}
+	}
+
+	private filterIgnoredUpdate(updateList: Array<AvailableUpdateDetail>, isIgnored: boolean) {
+		const updates = updateList.filter((value: AvailableUpdateDetail) => {
+			return (value.isIgnored === isIgnored);
+		});
+		return updates;
 	}
 
 	private filterUpdate(updateList: Array<AvailableUpdateDetail>, packageSeverity: string) {
@@ -459,7 +497,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isUpdateCheckInProgress = false;
 					this.percentCompleted = this.systemUpdateService.percentCompleted;
 					this.isUpdatesAvailable = this.systemUpdateService.isUpdatesAvailable;
+					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.setUpdateByCategory(payload.updateList);
+					this.systemUpdateService.getIgnoredUpdates();
 					break;
 				case UpdateProgress.InstallationStarted:
 					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
@@ -478,6 +518,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
 					this.checkRebootRequested();
+					this.showToastMessage(payload.updateList);
+					this.setUpdateByCategory(payload.updateList);					
 					break;
 				case UpdateProgress.AutoUpdateStatus:
 					this.autoUpdateOptions[0].isChecked = payload.criticalAutoUpdates;
@@ -499,6 +541,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					});
 					this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 					break;
+				case UpdateProgress.IgnoredUpdates:
+					this.setUpdateByCategory(notification.payload);
+					break;
 				default:
 					break;
 			}
@@ -509,7 +554,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	// handle background update notification
 	private onScheduleUpdateNotification(type: string, payload: any) {
 		if (this.isComponentInitialized) {
-			console.log('onScheduleUpdateNotification', type, payload);
 			switch (type) {
 				case UpdateProgress.ScheduleUpdateChecking:
 					this.isUpdateCheckInProgress = true;
@@ -587,6 +631,59 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				}
 			);
 		}
+	}
+
+	private setIgnoredUpdates(ignoredUpdates){
+		const ignoredUpdateDetails = [];
+		const unIgnoredRecommendUpdates = [];
+		const unIgnoredOptionalUpdates = [];
+		if (this.recommendedUpdates && this.recommendedUpdates.length > 0) {
+			this.recommendedUpdates.forEach((update) => {
+				const result = ignoredUpdates.find(x => x.packageName === update.packageName);
+				if (result) {
+					update.isIgnored = true;
+					ignoredUpdateDetails.push(update);
+				} else {
+					update.isIgnored = false;
+					unIgnoredRecommendUpdates.push(update);
+				}
+			});
+
+		}
+
+		if (this.optionalUpdates && this.optionalUpdates.length > 0) {
+			this.optionalUpdates.forEach((update) => {
+				const result = ignoredUpdates.find(x => x.packageName === update.packageName);
+				if (result) {
+					update.isIgnored = true;
+					ignoredUpdateDetails.push(update);
+				} else {
+					update.isIgnored = false;
+					unIgnoredOptionalUpdates.push(update);
+				}
+			});
+
+		}
+
+		if (this.ignoredUpdates && this.ignoredUpdates.length > 0) {
+			this.ignoredUpdates.forEach((update) => {
+				const result = ignoredUpdates.find(x => x.packageName === update.packageName);
+				if (result) {
+					update.isIgnored = true;
+					ignoredUpdateDetails.push(update);
+				} else if (update.packageSeverity === UpdateInstallSeverity.Recommended) {
+					update.isIgnored = false;
+					unIgnoredRecommendUpdates.push(update);
+				} else if (update.packageSeverity === UpdateInstallSeverity.Optional) {
+					update.isIgnored = false;
+					unIgnoredOptionalUpdates.push(update);
+				}
+			});
+		}
+
+		this.recommendedUpdates = unIgnoredRecommendUpdates;
+		this.optionalUpdates = unIgnoredOptionalUpdates;
+		this.ignoredUpdates = ignoredUpdateDetails;
 	}
 
 	public onCancelUpdateDownload() {
