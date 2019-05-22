@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'vtr-header-main',
@@ -17,7 +18,7 @@ export class HeaderMainComponent implements OnInit {
 	@Input() menuItems: any[];
 	@Input() parentPath: string;
 	@Input() backId: string;
-	constructor() { }
+	constructor(private router: Router) { }
 
 	ngOnInit() {
 		const self = this;
@@ -31,6 +32,7 @@ export class HeaderMainComponent implements OnInit {
 	}
 
 	goBack() {
-		window.history.back();
+		if (window.history.length > 1) { return window.history.back(); }
+		this.router.navigate(['dashboard']);
 	}
 }

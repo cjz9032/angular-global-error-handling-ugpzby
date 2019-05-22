@@ -9,7 +9,8 @@
                 "sub4": "Sănătatea parolei",
                 "sub5": "Protecție pe internet",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Asistenţă securitate",
@@ -40,6 +41,11 @@
 				"text2": "Status"
 			}
 		}
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview"
     },
     "support": {
         "common": {
