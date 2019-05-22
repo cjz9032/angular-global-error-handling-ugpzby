@@ -37,18 +37,24 @@ const routes: Routes = [
 	}, {
 		path: 'dashboard',
 		component: PageDashboardComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Dashboard'
 		}
 	},{
 		path: 'macrokey',
 		component: PageMacrokeyComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Macrokey'
 		}
 	},{
 		path: 'hardwarescan',
 		component: PageHardwarescanComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 
 		data: {
 			pageName: 'Hardwarescan'
@@ -56,6 +62,8 @@ const routes: Routes = [
 	},{
 		path: 'lightingcustomize',
 		component: PageLightingcustomizeComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 
 		data: {
 			pageName: 'Lightingcustomize'
@@ -63,18 +71,24 @@ const routes: Routes = [
 	},{
 		path: 'device',
 		component: PageDeviceComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Device.MyDevice'
 		}
 	}, {
 		path: 'device-gaming',
 		component: PageDeviceGamingComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Device.MyDevice'
 		}
 	}, {
 		path: 'device/device-settings',
 		component: PageDeviceSettingsComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		children: [
 			{
 				path: '',
@@ -84,6 +98,8 @@ const routes: Routes = [
 			{
 				path: 'power',
 				component: SubpageDeviceSettingsPowerComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService],
 				data: {
 					pageName: 'Device.MyDeviceSettings'
 				}
@@ -91,6 +107,8 @@ const routes: Routes = [
 			{
 				path: 'audio',
 				component: SubpageDeviceSettingsAudioComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService],
 				data: {
 					pageName: 'Device.MyDeviceSettings'
 				}
@@ -99,6 +117,8 @@ const routes: Routes = [
 			{
 				path: 'display-camera',
 				component: SubpageDeviceSettingsDisplayComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService],
 				data: {
 					pageName: 'Device.MyDeviceSettings'
 				}
@@ -108,6 +128,8 @@ const routes: Routes = [
 	{
 		path: 'device/system-updates',
 		component: PageDeviceUpdatesComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Device.SystemUpdate'
 		}
@@ -156,7 +178,7 @@ const routes: Routes = [
 	}, {
 		path: 'security/windows-hello',
 		component: PageSecurityWindowsHelloComponent,
-		canActivate: [WindowsHelloGuardService],
+		canActivate: [GuardService,WindowsHelloGuardService],
 		canDeactivate: [GuardService],
 		data: {
 			pageName: 'Security.WindowsHello'
@@ -164,36 +186,48 @@ const routes: Routes = [
 	}, {
 		path: 'support',
 		component: PageSupportComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Page.Support'
 		}
 	}, {
 		path: 'support-detail/:id',
 		component: PageSupportDetailComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Support.Detail'
         }
     }, {
 		path: 'home-security',
 		component: PageConnectedHomeSecurityComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'ConnectedHomeSecurity'
 		}
 	}, {
 		path: 'user',
 		component: PageUserComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'User'
 		}
 	},{
 		path: 'autoclose',
 		component: PageAutocloseComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'AutoClose'
 		}
 	},{
 		path: 'networkboost',
 		component: PageNetworkBoostComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'NetworkBoost'
 		}
