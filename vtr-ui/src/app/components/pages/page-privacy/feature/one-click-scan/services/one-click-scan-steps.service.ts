@@ -12,7 +12,9 @@ export enum OneClickScanSteps {
 	SCAN = 'Scan tour'
 }
 
-@Injectable({
+const STEPS_WITHOUT_COUNTER = [OneClickScanSteps.SCAN];
+
+	@Injectable({
 	providedIn: 'root'
 })
 export class OneClickScanStepsService {
@@ -35,16 +37,20 @@ export class OneClickScanStepsService {
 	}
 
 	private getStepsMap() {
-		return Object.keys(OneClickScanSteps).map((step, index, array) => ({
-				step: OneClickScanSteps[step],
+		return Object.values(OneClickScanSteps).map((step, index, array) => ({
+				step,
 				wasShow: false,
 				index,
-				length: array.length
+				length: this.calculateLength(array)
 		}));
 	}
 
 	private activateStep(index) {
 		this.oneClickScanSteps[index].wasShow = true;
 		return this.oneClickScanSteps[index];
+	}
+
+	private calculateLength(array: OneClickScanSteps[]) {
+		return array.filter((val) => !STEPS_WITHOUT_COUNTER.includes(val)).length;
 	}
 }

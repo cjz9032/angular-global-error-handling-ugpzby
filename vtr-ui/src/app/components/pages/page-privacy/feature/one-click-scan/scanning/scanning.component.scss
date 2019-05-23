@@ -1,6 +1,11 @@
 @import "../../../styles/common-blocks";
 
 .scanning {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	padding: 4.5rem 12rem;
+
 	&__button{
 		&--skip {
 			@extend %button-text;
