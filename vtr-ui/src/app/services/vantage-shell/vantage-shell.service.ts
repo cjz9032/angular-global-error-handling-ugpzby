@@ -8,7 +8,7 @@ import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
-import { RamOCSatus } from 'src/app/data-models/gaming/gaming-legion-edge.model';
+import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -401,31 +401,32 @@ export class VantageShellService {
 		return true;
 	}
 
-	public setRAMOCStatus(RamOCStatus: RamOCSatus): any {
-		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingOverclock.SetCpuOCStatus(CpuOCStatus.cpuOCStatus);
-			return RamOCSatus;
-		}
-
-		return undefined;
-	}
-
 	public getRAMOCStatus(): any {
 		if (this.phoenix) {
 			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingOverclock.GetCpuOCStatus();
+			// return this.phoenix.gaming.gamingOverclock.GetRamOCStatus();
 			return undefined;
 		}
-
 		return undefined;
 	}
+
+	public setRAMOCStatus(ramOCStausObj: RamOCSatus): any {
+		if (this.phoenix) {
+			// TODO Un comment below line when JSBridge is ready for integration.
+			// return this.phoenix.gaming.gamingOverclock.SetRamOCStatus(ramOCStausObj.ramOcStatuss);
+			return ramOCStausObj.ramOcStatus;
+		}
+
+		return ramOCStausObj.ramOcStatus;
+	}
+
 	public getGamingAllCapabilities(): any {
 		if (this.phoenix && this.phoenix.gaming) {
 			return this.phoenix.gaming.gamingAllCapabilities();
 		}
 		return undefined;
 	}
+
 	public getGamingLighting(): any {
 		if (this.phoenix && this.phoenix.gaming) {
 			return this.phoenix.gaming.gamingLighting();
