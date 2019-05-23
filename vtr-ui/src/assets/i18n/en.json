@@ -584,8 +584,8 @@
 						}
 					},
 					"distanceSensitivityAdjusting": {
-						"title1": "Distance sensitivity adjusting",
-						"title2": "Auto Distance sensitivity adjusting",
+						"title1": "DISTANCE SENSITIVITY ADJUSTING",
+						"title2": "AUTO DISTANCE SENSITIVITY ADJUSTING",
 						"caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
 						"options": {
 							"near": "Near",

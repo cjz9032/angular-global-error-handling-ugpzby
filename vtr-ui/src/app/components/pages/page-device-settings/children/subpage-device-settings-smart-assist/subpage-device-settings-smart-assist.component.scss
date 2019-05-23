@@ -89,3 +89,15 @@
 		font-size: 3rem;
 	}
 }
+
+.no-border-bottom {
+	::ng-deep .vtr-ui-switch-row {
+		border-bottom: none !important;
+	}
+	::ng-deep .vtr-ui-switch-row.white-theme .title {
+		font-weight: 700;
+	}
+	::ng-deep .vtr-ui-switch-row.white-theme.row.col-12 {
+		padding-left: 0;
+	}
+}

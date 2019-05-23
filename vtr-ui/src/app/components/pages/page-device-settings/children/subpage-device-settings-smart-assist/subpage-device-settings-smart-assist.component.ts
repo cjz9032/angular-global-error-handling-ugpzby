@@ -74,12 +74,15 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	}
 	public setintelligentSecurity() {
 		// service call to fetch Intelligent Security Properties
-		this.intelligentSecurity = new IntelligentSecurity(true,10,true,true,1);
+		this.intelligentSecurity = new IntelligentSecurity(true,true,10,true,true,1);
 		this.autoScreenLockStatus[this.intelligentSecurity.autoScreenLockTimer] = true;
 	}
 	public onAutoScreenLockStatusToggle(event, value) {
 		console.log(value);
 		this.intelligentSecurity.autoScreenLockTimer = value;
+	}
+	distanceSensitivityStatusToggle(event: ChangeContext) {
+		this.intelligentSecurity.distanceSensitivityFlag = !this.intelligentSecurity.distanceSensitivityFlag;
 	}
 
 	public setHumanDistance(event: ChangeContext) {
@@ -88,7 +91,7 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	}
 	public setIsThinkpad() {
 		// service call to fetch type of device
-		this.isThinkpad = true;
+		this.isThinkpad = false;
 		this.distanceSensitivityTitle = this.isThinkpad ? 'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title1' :
 					'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title2';
 	}
