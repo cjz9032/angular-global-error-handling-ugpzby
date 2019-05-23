@@ -26,6 +26,7 @@
             "installed": "INSTALLIERT",
             "notInstalled": "NICHT INSTALLIERT",
             "loading": "Laden",
+            "installing": "WIRD INSTALLIERT",
             "notFound": "NICHT GEFUNDEN",
             "registered": "REGISTRIERT",
             "notRegistered": "NICHT REGISTRIERT"
@@ -33,14 +34,14 @@
         "ui": {
             "back": "ZURÜCK",
             "on": "ON",
-			"off": "OFF",
-			"collapse": "Collapse",
-			"expand": "Expand",
-			"loader": {
-				"text1": "Fetching",
-				"text2": "Status"
-			}
-		}
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",
@@ -131,8 +132,7 @@
                 "poweredBy": "Unterstützt von McAfee",
                 "privacyTerms": "Für weitere Informationen lesen Sie die <tag>Datenschutzrichtlinie</tag> und die <tag>Servicebedingungen</tag>",
                 "mcafeePremium": "McAfee Premium-Schutz",
-                "protectedBy": "Sie sind derzeit geschützt durch: ",
-                "betterProtected": ".Mit McAfee LiveSafe können Sie sich jedoch noch besser schützen",
+                "protectedBy": "Sie werden derzeit von {{protectedName}} geschützt. McAfee LiveSafe bietet jedoch einen besseren Schutz.",
                 "virusScan": "VIREN-SCAN",
                 "firewall": "FIREWALL",
                 "disabled": "DEAKTIVIERT",
@@ -196,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "Verwenden Sie die Bedrohungssuche, um die Sicherheit der Netzwerke um Sie herum zu ermitteln.",
-                "button": "Bedrohung überprüfen"
+                "button": "Bedrohung überprüfen",
+                "connectionError": "Verbindungsfehler",
+                "tryAgain": "Wir konnten Ihre Einheit aufgrund fehlender Netzwerkverbindung nicht orten. Stellen Sie eine Internetverbindung her und versuchen Sie es erneut."
             },
             "locationmodal": {
                 "title": "Standortdienste aktivieren",
