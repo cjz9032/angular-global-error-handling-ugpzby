@@ -34,6 +34,32 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
+
+		const self = this;
+		const loop = setInterval(function () {
+			const pct = (70 + (Math.random() * 10)) / 100;
+			// console.log('PCT', pct);
+			self.cpuCurrent = parseFloat((4.3 * pct).toFixed(2));
+			self.gpuCurrent = parseFloat((3.3 * pct).toFixed(2));
+			self.ramCurrent = parseFloat((32 * pct).toFixed(2));
+			self.hds = [
+				{
+					title: 'SSD',
+					system: true,
+					current: parseFloat((2000 * pct).toFixed(2)),
+					max: 2000
+				},
+				{
+					title: 'HDD 1',
+					system: false,
+					current: parseFloat((2000 * (pct/2)).toFixed(2)),
+					max: 2000
+				}
+			];
+			// console.log('LOOP', self.cpuCurrent, self.gpuCurrent, self.ramCurrent, self.hds);
+			
+		}, 200);
+
 	}
 
 	getLeftDeg(current, max) {
