@@ -28,6 +28,9 @@
 												<vtr-ui-switch-onoff [name]="item.type" (toggle)="onToggleOnOff($event)">
 												</vtr-ui-switch-onoff>
 
+												<vtr-ui-popover [showMePartially]="item.isPopup" >
+												</vtr-ui-popover>
+
 												<fa-icon class="question" triggers="click:blur" placement="auto"
 													[ngbTooltip]="item.tooltipText" [icon]="['far', 'question-circle']"
 													container="body" tooltipClass="vtr-tooltip"></fa-icon>

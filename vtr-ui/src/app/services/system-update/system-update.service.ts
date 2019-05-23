@@ -502,6 +502,10 @@ export class SystemUpdateService {
 				const payload = new AvailableUpdate();
 				payload.status = parseInt(response.status, 10);
 				payload.updateList = this.installedUpdates;
+				if(this.ignoredRebootDelayUpdates) {
+					this.ignoredRebootDelayUpdates.forEach(
+						(rebootDelayUpdate) => payload.updateList.push(rebootDelayUpdate));
+				}
 				this.isInstallationSuccess = this.getInstallationSuccess(payload);
 				this.commonService.sendNotification(UpdateProgress.InstallationComplete, payload);
 			} else {

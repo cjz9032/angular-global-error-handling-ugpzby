@@ -37,5 +37,6 @@ export enum LocalStorageKey {
 	LidHasCreateStarterAccount = '[LocalStorageKey] LidHasCreateStarterAccount',
 	CpuOCStatus = '[LocalStorageKey] CpuOCStatus',
 	CurrentThermalModeStatus = '[LocalStorageKey] CurrentThermalModeStatus',
-	PrevThermalModeStatus = '[LocalStorageKey] PrevThermalModeStatus'
+	PrevThermalModeStatus = '[LocalStorageKey] PrevThermalModeStatus',
+	RamOcStatus = '[LocalStorageKey] RamOcStatus'
 }

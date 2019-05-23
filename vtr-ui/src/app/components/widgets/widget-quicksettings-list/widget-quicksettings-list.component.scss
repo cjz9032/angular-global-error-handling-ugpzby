@@ -11,7 +11,7 @@
 		border-radius: $border_radius;
 		background-color: $gaming_dark;
 		box-shadow: $drop_shadow_gaming;
-		padding: 4rem;
+		padding: 2rem;
 	}
 	.quickSettings-list-items {
 		&::ng-deep .vtr-widget-device-update-settings {
@@ -20,6 +20,7 @@
 			box-shadow: none;
 			border: none;
 			.settings-container{
+				margin-top: 0;
 				.list-group-item{
 					background: transparent;
 					color: white;

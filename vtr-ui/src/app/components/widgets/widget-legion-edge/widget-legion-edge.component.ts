@@ -1,8 +1,14 @@
 import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CommonService } from 'src/app/services/common/common.service';
+import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { RamOCSatus } from 'src/app/data-models/gaming/gaming-legion-edge.model';
+import { isUndefined } from 'util';
 import { GamingSystemUpdateService } from 'src/app/services/gaming/gaming-system-update/gaming-system-update.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
+
 
 @Component({
 	selector: 'vtr-widget-legion-edge',
@@ -10,7 +16,8 @@ import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.mod
 	styleUrls: ['./widget-legion-edge.component.scss']
 })
 export class WidgetLegionEdgeComponent implements OnInit {
-
+	// creating object of RamOCSatus;
+	public ramOCSatus_wle = new RamOCSatus();
 	public legionUpdate = [
 		{
 			readMoreText: '',
@@ -24,9 +31,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCollapsible: true,
 			isCheckBoxVisible: false,
 			isSwitchVisible: false,
+			isPopup: false,
 			isChecked: false,
 			tooltipText: '',
-			type: 'auto-updates'
+			type: 'gaming.dashboard.device.legionEdge.title',
 		},
 		{
 			readMoreText: '',
@@ -40,9 +48,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
+			isPopup: false,
 			isChecked: true,
 			tooltipText: '',
-			type: 'auto-updates'
+			type: 'gaming.dashboard.device.legionEdge.ramOverlock'
 		},
 		{
 			readMoreText: '',
@@ -56,9 +65,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
+			isPopup: false,
 			isChecked: true,
 			tooltipText: '',
-			type: 'auto-updates',
+			type: 'gaming.dashboard.device.legionEdge.autoClose',
 			routerLink: '/autoclose'
 		},
 		{
@@ -73,9 +83,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
+			isPopup: false,
 			isChecked: true,
 			tooltipText: '',
-			type: 'auto-updates',
+			type: 'gaming.dashboard.device.legionEdge.networkBoost',
 			routerLink: '/networkboost'
 		},
 		{
@@ -90,9 +101,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
+			isPopup: false,
 			isChecked: true,
 			tooltipText: '',
-			type: 'auto-updates'
+			type: 'gaming.dashboard.device.legionEdge.hybridMode'
 		},
 		{
 			readMoreText: '',
@@ -106,9 +118,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
+			isPopup: false,
 			isChecked: true,
 			tooltipText: '',
-			type: 'auto-updates'
+			type: 'gaming.dashboard.device.legionEdge.touchpadLock'
 		}
 	];
 
@@ -140,12 +153,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	];
 	public CpuOCStatus: CPUOCStatus;
 
-	constructor(
-		private modalService: NgbModal,
-		private gamingSystemUpdateService: GamingSystemUpdateService,
-	) { }
+constructor(private modalService: NgbModal, public systemUpdateService: SystemUpdateService, private commonService: CommonService, private gamingSystemUpdateService: GamingSystemUpdateService) { }
 
 	ngOnInit() {
+		this.getRamOverClockStatus();
 		this.CpuOCStatus = this.gamingSystemUpdateService.GetCPUOverClockStatus();
 		if (this.CpuOCStatus !== undefined) {
 			this.edgeopt.forEach((option) => {
@@ -168,8 +179,52 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 
 	openModal() {
-		// this.modalService.open(ModalWelcomeComponent);
-		this.modalService.open(ModalGamingLegionedgeComponent);
+		//this.modalService.open(ModalWelcomeComponent);
+		this.modalService.open(ModalGamingLegionedgeComponent,{windowClass: 'gaming-help-modal'});
 	}
 
+	//Getter
+	public getRamOverClockStatus() {
+		//Useing Common Service
+		let gt_cs = this.commonService.getLocalStorageValue(LocalStorageKey.RamOcStatus);
+
+		if (isUndefined(gt_cs)) {
+			//assign the dafault value to RamOcStatus
+			this.setRamOverClockStatus(false);
+		}
+		// setting value.
+		this.ramOCSatus_wle.ramOcStatus = gt_cs;
+
+		//Binding to UI
+		if(this.legionUpdate[1].name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
+			this.legionUpdate[1].isChecked = this.ramOCSatus_wle.ramOcStatus;
+		}
+	//	this.legionUpdate[1].isChecked = this.ramOCSatus_wle.ramOcStatus;
+		//console.log("ramoc status "+ this.legionUpdate[1].isChecked);
+    //return this.legionUpdate[1].isChecked;
+	}
+
+	//setter
+	public setRamOverClockStatus($value: boolean) {
+		//Set using common service
+		if (this.commonService) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.RamOcStatus, $value);
+		}
+	}
+
+	public toggleOnOffRamOCStatus($event) {
+		const { name, checked } = $event.target;
+				if (name === 'gaming.dashboard.device.legionEdge.ramOverlock' && $event.switchValue === true) {
+			this.legionUpdate[1].isPopup = true;
+
+		 } else {
+			this.legionUpdate[1].isPopup = false;
+		 }
+		 if (name === 'gaming.dashboard.device.legionEdge.hybridMode' && $event.switchValue === true) {
+			this.legionUpdate[4].isPopup = true;
+		 } else {
+			this.legionUpdate[4].isPopup = false;
+		 }
+
+	  }
 }
