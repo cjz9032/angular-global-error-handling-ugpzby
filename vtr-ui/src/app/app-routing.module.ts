@@ -40,27 +40,27 @@ const routes: Routes = [
 		data: {
 			pageName: 'Dashboard'
 		}
-	},{
+	}, {
 		path: 'macrokey',
 		component: PageMacrokeyComponent,
 		data: {
 			pageName: 'Macrokey'
 		}
-	},{
+	}, {
 		path: 'hardwarescan',
 		component: PageHardwarescanComponent,
 
 		data: {
 			pageName: 'Hardwarescan'
 		}
-	},{
+	}, {
 		path: 'lightingcustomize',
 		component: PageLightingcustomizeComponent,
 
 		data: {
 			pageName: 'Lightingcustomize'
 		}
-	},{
+	}, {
 		path: 'device',
 		component: PageDeviceComponent,
 		data: {
@@ -191,13 +191,13 @@ const routes: Routes = [
 		data: {
 			pageName: 'User'
 		}
-	},{
+	}, {
 		path: 'autoclose',
 		component: PageAutocloseComponent,
 		data: {
 			pageName: 'AutoClose'
 		}
-	},{
+	}, {
 		path: 'networkboost',
 		component: PageNetworkBoostComponent,
 		data: {

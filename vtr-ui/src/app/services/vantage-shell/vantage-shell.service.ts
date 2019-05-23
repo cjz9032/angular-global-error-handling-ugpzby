@@ -307,7 +307,7 @@ export class VantageShellService {
 		if (this.phoenix) {
 			try {
 				const deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
-				console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
+				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 				return deviceFilterResult;
 			} catch (error) {
 				console.log('In VantageShellService.deviceFilter. Error:', error);
@@ -359,7 +359,7 @@ export class VantageShellService {
 
 	public getIntelligentSensing(): any {
 		if (this.phoenix) {
-			return this.phoenix.hwsettings.lis.IntelligentSensing;
+			return this.phoenix.hwsettings.lis.intelligentSensing;
 		}
 		return undefined;
 	}

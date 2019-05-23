@@ -8,6 +8,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AudioService } from 'src/app/services/audio/audio.service';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -20,7 +21,7 @@ export class PageDeviceSettingsComponent implements OnInit {
 	back = 'BACK';
 	backarrow = '< ';
 	parentPath = 'device';
-	menuItems = [
+	public menuItems = [
 		{
 			id: 'power',
 			label: 'Power',
@@ -61,10 +62,12 @@ export class PageDeviceSettingsComponent implements OnInit {
 		private commonService: CommonService,
 		public deviceService: DeviceService,
 		public audioService: AudioService,
-		private smartAssist: SmartAssistService
+		private smartAssist: SmartAssistService,
+		private logger: LoggerService
 	) {
 		this.fetchCMSArticles();
 		this.getMicrophoneSettings();
+		// this.getHPDStatus();
 	}
 
 	ngOnInit() {
@@ -115,6 +118,28 @@ export class PageDeviceSettingsComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
+	}
+
+	private getHPDStatus() {
+		this.smartAssist.getHPDCapability()
+			.then((isAvailable: boolean) => {
+				console.log('getHPDStatus.getHPDCapability()', isAvailable);
+				isAvailable = true;
+				this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
+				if (isAvailable) {
+					this.menuItems.push({
+						id: 'smart-assist',
+						label: 'Smart Assist',
+						path: 'device-settings/smart-assist',
+						icon: 'smart-assist',
+						subitems: [],
+						active: false
+					});
+				}
+			})
+			.catch(error => {
+				this.logger.error('error in getHPDStatus.getHPDCapability()', error);
+			});
 	}
 
 }

@@ -17,7 +17,44 @@ export class SmartAssistService {
 		}
 	}
 
-	public getHPDCapability() {
+	public getHPDCapability(): Promise<boolean> {
+		// Is (Intelligent Security) supported
+		return this.intelligentSensing.GetHPDCapability();
+	}
 
+	public getAutoLockVisibility(): Promise<boolean> {
+		// Get Auto Screen Lock section visibility
+		return this.intelligentSensing.GetHPDLeaveCapability();
+	}
+
+	public getAutoLockStatus(): Promise<boolean> {
+		// Get Auto Screen Lock setting
+		return this.intelligentSensing.GetHPDPresentLeaveSetting();
+	}
+
+	/**
+	 * Get currently selected lock screen timer value
+	 * 1 = Fast
+	 * 2 = Medium
+	 * 3 = Slow
+	 */
+	public getSelectedLockTimer(): Promise<number> {
+		// Get Auto Screen Lock setting
+		return this.intelligentSensing.GetHPDLeaveWait();
+	}
+
+	/**
+	 * Get currently selected lock screen timer value
+	 * '1' = Fast
+	 * '2' = Medium
+	 * '3' = Slow
+	 */
+	public setSelectedLockTimer(value: string): Promise<boolean> {
+		return this.intelligentSensing.SetHPDAutoAdjustSetting(value);
+	}
+
+	// set auto adjust for IdeaPad models
+	public setAutoLockStatus(value: boolean): Promise<boolean> {
+		return this.intelligentSensing.SetHPDPresentLeaveSetting(value);
 	}
 }
