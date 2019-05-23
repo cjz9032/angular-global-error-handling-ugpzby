@@ -44,6 +44,7 @@ import { ArticlePreviewComponent } from './pages/articles/article-preview/articl
 import { ArticleSidebarComponent } from './pages/articles/article-sidebar/article-sidebar.component';
 import { OneClickScanModule } from './feature/one-click-scan/one-click-scan.module';
 import { PrivacyScoreComponent } from './pages/result/privacy-score/privacy-score.component';
+import { ArticlePitchComponent } from './pages/articles/article-pitch/article-pitch.component';
 
 library.add(fal);
 
@@ -81,6 +82,7 @@ library.add(fal);
 		ArticleSingleComponent,
 		ArticlePreviewComponent,
 		ArticleSidebarComponent,
+		ArticlePitchComponent,
 	],
 	providers: [
 		TrackersPopupService,
