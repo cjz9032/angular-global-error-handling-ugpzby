@@ -16,7 +16,8 @@
 			<vtr-widget-device-update-settings
 				componentName="Legion Edge"
 				[items]="legionUpdate"
-				[options]="edgeopt">
+				[options]="edgeopt"
+				(optionSelected)="onOptionSelected($event)">
 			</vtr-widget-device-update-settings>
 		</div>
 	</div>

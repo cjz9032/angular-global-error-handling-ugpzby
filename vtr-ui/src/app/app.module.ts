@@ -56,6 +56,7 @@ import { AvailableUpdatesComponent } from './components/pages/page-device-update
 import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
 import { SubpageDeviceSettingsDisplayComponent } from './components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
+import { SubpageDeviceSettingsSmartAssistComponent } from './components/pages/page-device-settings/children/subpage-device-settings-smart-assist/subpage-device-settings-smart-assist.component';
 
 // APPLICATION WIDGET COMPONENTS
 import { WidgetSwitchIconComponent } from './components/widgets/widget-switch-icon/widget-switch-icon.component';
@@ -156,7 +157,6 @@ import { CameraBackgroundBlurComponent } from './components/camera-background-bl
 import { PageAutocloseComponent } from './components/pages/page-autoclose/page-autoclose.component';
 import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
 import { PowerSmartSettingsComponent } from './components/widgets/power-smart-settings/power-smart-settings.component';
-import { SubpageDeviceSettingsSmartAssistComponent } from './components/pages/page-device-settings/children/subpage-device-settings-smart-assist/subpage-device-settings-smart-assist.component';
 import { UiPopoverComponent } from './components/ui/ui-popover/ui-popover.component';
 
 // SA Components
@@ -237,6 +237,7 @@ library.add(fal);
 		SubpageDeviceSettingsPowerComponent,
 		SubpageDeviceSettingsAudioComponent,
 		SubpageDeviceSettingsDisplayComponent,
+		SubpageDeviceSettingsSmartAssistComponent,
 		PageQuestionsComponent,
 		ModalWelcomeComponent,
 		ContainerCollapsibleComponent,

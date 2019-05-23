@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BaseComponent } from '../../base/base.component';
 import { DeviceService } from 'src/app/services/device/device.service';
-
+import { GamingCollapsableContainerEvent } from 'src/app/data-models/gaming/gaming-collapsable-container-event';
 @Component({
 	selector: 'vtr-widget-device-update-settings',
 	templateUrl: './widget-device-update-settings.component.html',
@@ -13,7 +13,7 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 	@Input() description: string;
 	@Input() items: any[];
 	@Input() options;
-
+	@Output() optionSelected = new EventEmitter<any>();
 	@Output() toggleOnOff = new EventEmitter<any>();
 
 	constructor(private deviceService: DeviceService) {
@@ -23,6 +23,12 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 	ngOnInit() { }
 	showVar: boolean = false;
 	
+
+	public optionChanged(option: any, item: any) {
+		const gamingCollapsableContainerEvent = new GamingCollapsableContainerEvent(option, item);
+		this.optionSelected.emit(gamingCollapsableContainerEvent);
+	}
+
 	public onToggleOnOff($event: any) {
 		this.toggleOnOff.emit($event);
 		this.showVar = !this.showVar;

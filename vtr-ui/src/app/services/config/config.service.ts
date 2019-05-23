@@ -368,20 +368,20 @@ export class ConfigService {
 			icon: '',
 			subitems: []
 		}]
-	}, {
-		id: 'support',
-		label: 'common.menu.support',
-		path: 'support',
-		icon: ['fal', 'wrench'],
+	},  {
+		id: 'privacy',
+		label: 'common.menu.privacy',
+		path: 'privacy',
+		icon: ['fal', 'eye'],
 		metricsEvent: 'itemClick',
 		metricsParent: 'navbar',
-		metricsItem: 'link.support',
+		metricsItem: 'link.privacy',
 		routerLinkActiveOptions: {
 			exact: true
 		},
 		forArm: false,
 		subitems: []
-	}, {
+	},  {
 		id: 'home-security',
 		label: 'common.menu.homeSecurity',
 		path: 'home-security',
@@ -395,13 +395,13 @@ export class ConfigService {
 		forArm: false,
 		subitems: []
 	}, {
-		id: 'privacy',
-		label: 'common.menu.privacy',
-		path: 'privacy',
-		icon: ['fal', 'eye'],
+		id: 'support',
+		label: 'common.menu.support',
+		path: 'support',
+		icon: ['fal', 'wrench'],
 		metricsEvent: 'itemClick',
 		metricsParent: 'navbar',
-		metricsItem: 'link.privacy',
+		metricsItem: 'link.support',
 		routerLinkActiveOptions: {
 			exact: true
 		},
