@@ -93,16 +93,13 @@ export class WifiSecurityLandingViewModel {
 			this.wifiHistory = data;
 			commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys, data);
 		});
-		wfModel.on(EventTypes.geolocatorPermissionEvent, (data) => {
-            ngZone.run(() => {
-                setWiFiSecurityState(wfModel.state, data);
-            });
+		wfModel.on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
+			ngZone.run(() => {
+				setWiFiSecurityState(wfModel.state, data);
+			});
 		});
 		wfModel.on(EventTypes.wsStateEvent, (data) => {
 			setWiFiSecurityState(data, wfModel.isLocationServiceOn);
-		});
-		wfModel.on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
-			setWiFiSecurityState(wfModel.state, data);
 		});
 
 		this.statusList = new Array(wfStatus);

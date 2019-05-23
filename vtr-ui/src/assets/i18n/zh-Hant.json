@@ -26,6 +26,7 @@
             "installed": "已安裝",
             "notInstalled": "未安裝",
             "loading": "正在載入",
+            "installing": "正在安裝",
             "notFound": "找不到",
             "registered": "已註冊",
             "notRegistered": "未註冊"
@@ -33,14 +34,14 @@
         "ui": {
             "back": "上一步",
             "on": "ON",
-			"off": "OFF",
-			"collapse": "Collapse",
-			"expand": "Expand",
-			"loader": {
-				"text1": "Fetching",
-				"text2": "Status"
-			}
-		}
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",
@@ -131,8 +132,7 @@
                 "poweredBy": "搭載 McAfee",
                 "privacyTerms": "進一步瞭解<tag>隱私權政策</tag>和<tag>服務條款</tag>",
                 "mcafeePremium": "McAfee 特級保護",
-                "protectedBy": "您目前受到以下軟體的保護：",
-                "betterProtected": "。不過，您可以透過 McAfee LiveSafe 獲得更佳的保護",
+                "protectedBy": "您目前受到 {{protectedName}} 的保護。但是，您可以透過 McAfee LiveSafe 獲得更好的保護。",
                 "virusScan": "病毒掃描",
                 "firewall": "防火牆",
                 "disabled": "已停用",
@@ -196,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "使用威脅偵測器判斷您周圍網路的安全性。",
-                "button": "檢查威脅"
+                "button": "檢查威脅",
+                "connectionError": "連線錯誤",
+                "tryAgain": "網路無法使用，因此我們找不到您的裝置，請連接到網際網路，然後重試。"
             },
             "locationmodal": {
                 "title": "啟用位置服務",

@@ -93,7 +93,16 @@
 									class="dropdown-item link"
 									target="_blank"
 									href = "{{subitem.path}}">{{subitem.label | translate}}</a>
-									<a *ngIf = "!subitem.externallink"
+									<a *ngIf = "!subitem.externallink && subitem.path==='support'"
+									vtrMetrics
+									routerLinkActive="link-active"
+									[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
+									[metricsEvent]="subitem.metricsEvent"
+									[metricsParent]="subitem.metricsParent"
+									[metricsItem]="subitem.metricsItem"
+									class="dropdown-item link"
+									routerLink="{{subitem.path}}">{{subitem.label | translate}}</a>
+									<a *ngIf = "!subitem.externallink  && subitem.path!=='support'"
 									vtrMetrics
 									routerLinkActive="link-active"
 									[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"

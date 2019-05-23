@@ -41,6 +41,14 @@ export class PageDeviceSettingsComponent implements OnInit {
 			icon: 'display-camera',
 			subitems: [],
 			active: false
+		},
+		{
+			id: 'smart-assist',
+			label: 'Smart Assist',
+			path: 'device-settings/smart-assist',
+			icon: 'smart-assist',
+			subitems: [],
+			active: false
 		}
 	];
 	cardContentPositionA: any = {};

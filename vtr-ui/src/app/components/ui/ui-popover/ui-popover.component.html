@@ -1,0 +1,13 @@
+<ui-popover *ngIf="showMePartially">
+  <div class="ui-popover-head">
+    <button class="close" type="button" (click)="close()">
+		<i class="icon icon-close"></i>
+	</button>
+  </div>
+  <div class="ui-popover-content">
+      <p>{{'gaming.dashboard.device.legionEdge.popup.text' | translate}}</p>
+  </div>
+  <div class="ui-popover-footer">
+    <button class="btn btn-rounded" (click)="close()">{{'gaming.dashboard.device.legionEdge.popup.button' | translate}}</button>
+  </div>
+</ui-popover>
