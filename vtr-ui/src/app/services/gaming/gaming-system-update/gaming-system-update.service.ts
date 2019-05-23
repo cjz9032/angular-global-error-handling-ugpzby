@@ -6,7 +6,7 @@ import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.mod
 import { RamOCSatus } from 'src/app/data-models/gaming/gaming-legion-edge.model';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class GamingSystemUpdateService {
 

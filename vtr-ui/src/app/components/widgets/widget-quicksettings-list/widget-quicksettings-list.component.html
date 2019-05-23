@@ -6,8 +6,11 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col quickSettings-list-items">
-					<vtr-widget-device-update-settings componentName="Quick Setting" [items]="quickSettings"
-						[options]="listingopt">
+					<vtr-widget-device-update-settings
+						componentName="Quick Setting"
+						[items]="quickSettings"
+						[options]="listingopt"
+						(optionSelected)="onOptionSelected($event)">
 					</vtr-widget-device-update-settings>
 				</div>
 			</div>
