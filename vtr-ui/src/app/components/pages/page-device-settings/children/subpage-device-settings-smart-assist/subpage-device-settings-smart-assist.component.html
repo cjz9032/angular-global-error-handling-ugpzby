@@ -101,7 +101,7 @@
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[isSwitchChecked]="intelligentSecurity.zeroTouchLockFlag"
-							(toggleOnOff)="onChangezeroTouchLockFlag($event)"
+							(toggleOnOff)="onChangeZeroTouchLockFlag($event)"
 							[theme]="'white'"
 							[disabled]="!intelligentSecurity.humanPresenceDetectionFlag">
 							<div class="row blur"
@@ -124,25 +124,25 @@
 									<vtr-ui-rounded-rectangle-radio [radioId]="'radio1'"
 										[group]="'radio'"
 										[label]="'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast' | translate"
-										[value]="'fast'"
+										[value]="'1'"
 										[checked]="autoScreenLockStatus[0]"
-										(change)="onAutoScreenLockStatusToggle($event,0)"
+										(change)="onAutoScreenLockStatusToggle($event, '1')"
 										[disabled]="!intelligentSecurity.zeroTouchLockFlag">
 									</vtr-ui-rounded-rectangle-radio>
 									<vtr-ui-rounded-rectangle-radio [radioId]="'radio2'"
 										[group]="'radio'"
 										[label]="'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium' | translate"
-										[value]="'medium'"
+										[value]="'2'"
 										[checked]="autoScreenLockStatus[1]"
-										(change)="onAutoScreenLockStatusToggle($event,1)"
+										(change)="onAutoScreenLockStatusToggle($event, '2')"
 										[disabled]="!intelligentSecurity.zeroTouchLockFlag">
 									</vtr-ui-rounded-rectangle-radio>
 									<vtr-ui-rounded-rectangle-radio [radioId]="'radio3'"
 										[group]="'radio'"
 										[label]="'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow' | translate"
-										[value]="'slow'"
+										[value]="'3'"
 										[checked]="autoScreenLockStatus[2]"
-										(change)="onAutoScreenLockStatusToggle($event,2)"
+										(change)="onAutoScreenLockStatusToggle($event, '3')"
 										[disabled]="!intelligentSecurity.zeroTouchLockFlag">
 									</vtr-ui-rounded-rectangle-radio>
 								</div>

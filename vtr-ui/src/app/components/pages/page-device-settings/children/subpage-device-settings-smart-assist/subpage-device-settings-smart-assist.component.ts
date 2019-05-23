@@ -6,6 +6,7 @@ import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { IntelligentSecurity } from 'src/app/data-models/intellegent-security.model';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { fal } from '@fortawesome/pro-light-svg-icons';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-smart-assist',
@@ -58,21 +59,22 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		console.log('subpage-device-setting-display onInit');
 		this.autoScreenLockStatus = [false, false, false];
 		this.setintelligentSecurity();
-		this.setIsThinkpad();
+		this.setIsThinkPad();
 	}
 
 	// invoke HPD related JS bridge calls
 	private initSmartAssist() {
 		Promise.all([
-			this.smartAssist.getAutoLockVisibility,
-			this.smartAssist.getAutoLockStatus,
-			this.smartAssist.getSelectedLockTimer
+			this.smartAssist.getAutoLockVisibility(),
+			this.smartAssist.getAutoLockStatus(),
+			this.smartAssist.getSelectedLockTimer()
 		]).then((responses: any[]) => {
 
-			// this.intelligentSecurity.isAutoScreenLockChecked = responses[1];
+			this.intelligentSecurity.isZeroTouchLockVisible = responses[0];
+			this.intelligentSecurity.zeroTouchLockFlag = responses[1];
+			this.intelligentSecurity.autoScreenLockTimer = responses[2].toString();
 			console.log('initSmartAssist.Promise.all()', responses);
 		}).catch(error => {
 			this.logger.error('error in initSmartAssist.Promise.all()', error);
@@ -97,33 +99,30 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 		this.intelligentSecurity.zeroTouchLockFlag = !this.intelligentSecurity.zeroTouchLockFlag;
 	}
 
-	public onChangeAutoScreenLockFlag($event) {
-		this.intelligentSecurity.zeroTouchLockFlag = !this.intelligentSecurity.zeroTouchLockFlag;
-		this.smartAssist.setAutoLockStatus(this.intelligentSecurity.zeroTouchLockFlag)
-			.then((isSuccess: boolean) => {
-
-			});
-	}
-
 	public onzeroTouchLoginStatusToggle($event) {
 		this.intelligentSecurity.zeroTouchLoginFlag = !this.intelligentSecurity.zeroTouchLoginFlag;
 	}
 
-	public onChangezeroTouchLockFlag($event) {
+	// this is invoked when auto lock feature is toggled
+	public onChangeZeroTouchLockFlag($event) {
 		this.intelligentSecurity.zeroTouchLockFlag = !this.intelligentSecurity.zeroTouchLockFlag;
+		this.smartAssist.setAutoLockStatus(this.intelligentSecurity.zeroTouchLockFlag)
+			.then((isSuccess: boolean) => {
+				console.log('onChangeZeroTouchLockFlag.setAutoLockStatus', isSuccess);
+			});
 	}
 	public setintelligentSecurity() {
 		// service call to fetch Intelligent Security Properties
-		this.intelligentSecurity = new IntelligentSecurity(true, 10, true, true, 1);
+		this.intelligentSecurity = new IntelligentSecurity(true, 10, true, true, 1, false);
 		this.autoScreenLockStatus[this.intelligentSecurity.autoScreenLockTimer] = true;
 	}
 	public onAutoScreenLockStatusToggle(event, value) {
-		this.intelligentSecurity.autoScreenLockTimer = event.value;
+		this.intelligentSecurity.autoScreenLockTimer = value;
 		this.intelligentSecurity.zeroTouchLoginFlag = false;
 		this.intelligentSecurity.zeroTouchLockFlag = false;
-		this.smartAssist.setSelectedLockTimer(event.value.toString())
+		this.smartAssist.setSelectedLockTimer(value)
 			.then((isSuccess: boolean) => {
-
+				console.log('onAutoScreenLockStatusToggle.setSelectedLockTimer', isSuccess);
 			});
 	}
 
@@ -131,7 +130,7 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 		console.log('Human Distance changed', event);
 		this.intelligentSecurity.humanDistance = event.value;
 	}
-	public setIsThinkpad() {
+	public setIsThinkPad() {
 		// service call to fetch type of device
 		this.isThinkPad = true;
 		this.distanceSensitivityTitle = this.isThinkPad ? 'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title1' :

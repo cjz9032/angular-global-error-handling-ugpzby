@@ -34,8 +34,8 @@ export class SmartAssistService {
 
 	/**
 	 * Get currently selected lock screen timer value
-	 * 1 = Fast
-	 * 2 = Medium
+	 * 1 = Fast,
+	 * 2 = Medium,
 	 * 3 = Slow
 	 */
 	public getSelectedLockTimer(): Promise<number> {

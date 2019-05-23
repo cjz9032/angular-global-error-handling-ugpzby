@@ -4,6 +4,7 @@ export class IntelligentSecurity {
 		public humanDistance: number,
 		public zeroTouchLoginFlag: boolean,
 		public zeroTouchLockFlag: boolean,
-		public autoScreenLockTimer: number
+		public autoScreenLockTimer: number,
+		public isZeroTouchLockVisible: boolean,
 	) { }
 }
