@@ -13,5 +13,7 @@ export class UiPopoverComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  close(){
+	this.showMePartially = !this.showMePartially;
+  }
 }

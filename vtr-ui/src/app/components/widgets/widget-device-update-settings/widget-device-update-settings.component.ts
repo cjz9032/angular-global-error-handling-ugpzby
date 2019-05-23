@@ -22,16 +22,9 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 
 	ngOnInit() { }
 	showVar: boolean = false;
-	
-
-	public optionChanged(option: any, item: any) {
-		const gamingCollapsableContainerEvent = new GamingCollapsableContainerEvent(option, item);
-		this.optionSelected.emit(gamingCollapsableContainerEvent);
-	}
 
 	public onToggleOnOff($event: any) {
 		this.toggleOnOff.emit($event);
-		this.showVar = !this.showVar;
 	}
 
 	public onLinkClick(path: string) {
@@ -39,7 +32,5 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 			this.deviceService.launchUri(path);
 		}
 	}
-
-	
 }
 

@@ -21,6 +21,10 @@
 						"off": "Off"
 					},
 					"ramOverlock": "Ram Overclock",
+					"popup": {
+						"text": "Change will be effective after restarting computer.",
+						"button": "ok"
+					},
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",

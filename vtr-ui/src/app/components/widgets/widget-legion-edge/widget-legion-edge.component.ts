@@ -33,7 +33,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isPopup: false,
 			isChecked: false,
 			tooltipText: '',
-			type: 'auto-updates'
+			type: 'gaming.dashboard.device.legionEdge.title',
 		},
 		{
 			readMoreText: '',
@@ -46,10 +46,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
-			isPopup: true,
-			isChecked: false,
+			isPopup: false,
+			isChecked: true,
 			tooltipText: '',
-			type: 'auto-updates'
+			type: 'gaming.dashboard.device.legionEdge.ramOverlock'
 		},
 		{
 			readMoreText: '',
@@ -63,10 +63,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isPopup: false,
-			isChecked: false,
+			isChecked: true,
 			tooltipText: '',
-			type: 'auto-updates',
-			routerLink: '/autoclose'
+			type: 'gaming.dashboard.device.legionEdge.autoClose',
+			routerLink:'/autoclose'
 		},
 		{
 			readMoreText: '',
@@ -80,15 +80,15 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isPopup: false,
-			isChecked: false,
+			isChecked: true,
 			tooltipText: '',
-			type: 'auto-updates',
-			routerLink: '/networkboost'
+			type: 'gaming.dashboard.device.legionEdge.networkBoost',
+			routerLink:'/networkboost'
 		},
 		{
 			readMoreText: '',
 			rightImageSource: '',
-			leftImageSource: '',
+			leftImageSource:'',
 			header: 'gaming.dashboard.device.legionEdge.hybridMode',
 			name: 'gaming.dashboard.device.legionEdge.hybridMode',
 			subHeader: '',
@@ -96,10 +96,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
-			isPopup: true,
-			isChecked: false,
+			isPopup: false,
+			isChecked: true,
 			tooltipText: '',
-			type: 'auto-updates'
+			type: 'gaming.dashboard.device.legionEdge.hybridMode'
 		}
 		,
 		{
@@ -114,9 +114,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isPopup: false,
-			isChecked: false,
+			isChecked: true,
 			tooltipText: '',
-			type: 'auto-updates'
+			type: 'gaming.dashboard.device.legionEdge.touchpadLock'
 		}
 	];
 
@@ -178,9 +178,9 @@ constructor(private modalService: NgbModal, public systemUpdateService: SystemUp
 		this.modalService.open(ModalGamingLegionedgeComponent,{windowClass: 'gaming-help-modal'});
 	}
 
-	//Getter 
+	//Getter
 	public getRamOverClockStatus() {
-		//Useing Common Service 
+		//Useing Common Service
 		let gt_cs = this.commonService.getLocalStorageValue(LocalStorageKey.RamOcStatus);
 
 		if (isUndefined(gt_cs)) {
@@ -209,21 +209,17 @@ constructor(private modalService: NgbModal, public systemUpdateService: SystemUp
 
 	public toggleOnOffRamOCStatus($event) {
 		const { name, checked } = $event.target;
-		//this.commonService.setLocalStorageValue(LocalStorageKey.RamOcStatus, false);
-		//console.log('ent', $event );
-		//console.log('evnt1', $event.target);
-			/*if (this.legionUpdate[1].name === 'gaming.dashboard.device.legionEdge.ramOverlock' && $event.switchValue === true) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.RamOcStatus, $event.switchValue);
-			} else if (this.legionUpdate[1].name !== 'gaming.dashboard.device.legionEdge.ramOverlock' && $event.switchValue === false) {
-				this.commonService.setLocalStorageValue(LocalStorageKey.RamOcStatus, $event.switchValue);
-			}*/
-		//console.log(this.commonService.getLocalStorageValue(LocalStorageKey.RamOcStatus));
-		if (this.legionUpdate[1].name === 'gaming.dashboard.device.legionEdge.ramOverlock' && $event.switchValue === true) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.RamOcStatus, true);
+				if (name === 'gaming.dashboard.device.legionEdge.ramOverlock' && $event.switchValue === true) {
+			this.legionUpdate[1].isPopup = true;
+
 		 } else {
-			this.commonService.setLocalStorageValue(LocalStorageKey.RamOcStatus, false);
+			this.legionUpdate[1].isPopup = false;
+		 }
+		 if (name === 'gaming.dashboard.device.legionEdge.hybridMode' && $event.switchValue === true) {
+			this.legionUpdate[4].isPopup = true;
+		 } else {
+			this.legionUpdate[4].isPopup = false;
 		 }
 
-	}
-
+	  }
 }
