@@ -169,6 +169,9 @@
 			position: absolute;
 			top: 20%;
 			left: 5%;
+			@media #{$mediaquery_X21} {
+				top: 10%;
+			}
 			.transparent {
 				color: transparent;
 			}

@@ -549,7 +549,10 @@
 					"notAvailable": "Camera Not Available",
 					"camerablur": {
 						"title": "Camera Background Blur",
-						"caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections."
+						"caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections.",
+						"blurMode":"Blur mode",
+						"comicMode":"Comic mode",
+						"sketchMode":"Sketch mode"
 					}
 				}
 			},
