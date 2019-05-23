@@ -382,19 +382,6 @@ export class ConfigService {
 		forArm: false,
 		subitems: []
 	},  {
-		id: 'home-security',
-		label: 'common.menu.homeSecurity',
-		path: 'home-security',
-		metricsEvent: 'itemClick',
-		metricsParent: 'navbar',
-		metricsItem: 'link.homesecurity',
-		routerLinkActiveOptions: {
-			exact: true
-		},
-		icon: ['fal', 'home-lg-alt'],
-		forArm: false,
-		subitems: []
-	}, {
 		id: 'support',
 		label: 'common.menu.support',
 		path: 'support',
@@ -405,6 +392,19 @@ export class ConfigService {
 		routerLinkActiveOptions: {
 			exact: true
 		},
+		forArm: false,
+		subitems: []
+	}, {
+		id: 'home-security',
+		label: 'common.menu.homeSecurity',
+		path: 'home-security',
+		metricsEvent: 'itemClick',
+		metricsParent: 'navbar',
+		metricsItem: 'link.homesecurity',
+		routerLinkActiveOptions: {
+			exact: true
+		},
+		icon: ['fal', 'home-lg-alt'],
 		forArm: false,
 		subitems: []
 	}, {
