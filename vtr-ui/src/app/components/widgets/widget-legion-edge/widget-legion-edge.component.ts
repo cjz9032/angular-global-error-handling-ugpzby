@@ -16,9 +16,9 @@ import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.mod
 	styleUrls: ['./widget-legion-edge.component.scss']
 })
 export class WidgetLegionEdgeComponent implements OnInit {
-  //creating object of RamOCSatus;
-  public ramOCSatus_wle = new RamOCSatus();
-  public legionUpdate = [
+	// creating object of RamOCSatus;
+	public ramOCSatus_wle = new RamOCSatus();
+	public legionUpdate = [
 		{
 			readMoreText: '',
 			rightImageSource: '',
@@ -26,6 +26,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			header: 'gaming.dashboard.device.legionEdge.title',
 			name: 'gaming.dashboard.device.legionEdge.title',
 			subHeader: '',
+			isVisible: true,
 			isCustomizable: false,
 			isCollapsible: true,
 			isCheckBoxVisible: false,
@@ -42,6 +43,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			header: 'gaming.dashboard.device.legionEdge.ramOverlock',
 			name: 'gaming.dashboard.device.legionEdge.ramOverlock',
 			subHeader: '',
+			isVisible: true,
 			isCustomizable: false,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
@@ -58,6 +60,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			header: 'gaming.dashboard.device.legionEdge.autoClose',
 			name: 'gaming.dashboard.device.legionEdge.autoClose',
 			subHeader: '',
+			isVisible: true,
 			isCustomizable: true,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
@@ -66,7 +69,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isChecked: true,
 			tooltipText: '',
 			type: 'gaming.dashboard.device.legionEdge.autoClose',
-			routerLink:'/autoclose'
+			routerLink: '/autoclose'
 		},
 		{
 			readMoreText: '',
@@ -75,6 +78,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			header: 'gaming.dashboard.device.legionEdge.networkBoost',
 			name: 'gaming.dashboard.device.legionEdge.networkBoost',
 			subHeader: '',
+			isVisible: true,
 			isCustomizable: true,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
@@ -83,15 +87,16 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isChecked: true,
 			tooltipText: '',
 			type: 'gaming.dashboard.device.legionEdge.networkBoost',
-			routerLink:'/networkboost'
+			routerLink: '/networkboost'
 		},
 		{
 			readMoreText: '',
 			rightImageSource: '',
-			leftImageSource:'',
+			leftImageSource: '',
 			header: 'gaming.dashboard.device.legionEdge.hybridMode',
 			name: 'gaming.dashboard.device.legionEdge.hybridMode',
 			subHeader: '',
+			isVisible: true,
 			isCustomizable: false,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
@@ -100,8 +105,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isChecked: true,
 			tooltipText: '',
 			type: 'gaming.dashboard.device.legionEdge.hybridMode'
-		}
-		,
+		},
 		{
 			readMoreText: '',
 			rightImageSource: '',
@@ -109,6 +113,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			header: 'gaming.dashboard.device.legionEdge.touchpadLock',
 			name: 'gaming.dashboard.device.legionEdge.touchpadLock',
 			subHeader: '',
+			isVisible: true,
 			isCustomizable: false,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
