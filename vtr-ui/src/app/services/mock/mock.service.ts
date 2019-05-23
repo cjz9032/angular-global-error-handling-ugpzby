@@ -72,7 +72,7 @@ export class MockService {
 			'title': 'System Update',
 			'detail': 'Update',
 			'path': 'device/system-updates',
-			'asLink': true,
+			'asLink': false,
 			'type': 'system'
 		}
 	];

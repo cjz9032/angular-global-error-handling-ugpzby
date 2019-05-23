@@ -74,3 +74,18 @@
 	}
 }
 
+.disabled-overlay {
+	background-color: #F6F8F8;
+	z-index: 2;
+	pointer-events: none;
+}
+.disabled {
+	pointer-events: none;
+}
+
+.feature-note {
+	fa-icon {
+		color: red;
+		font-size: 3rem;
+	}
+}

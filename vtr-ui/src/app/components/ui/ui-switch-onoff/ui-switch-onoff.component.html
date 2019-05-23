@@ -1,6 +1,6 @@
 <div>
-	<div *ngIf="showLoader" class="row spinner-row" 
-		[ngClass]="{'white-theme': theme==='white', 
+	<div *ngIf="showLoader" class="row spinner-row"
+		[ngClass]="{'white-theme': theme==='white',
 					'blue-theme': theme==='blue'}">
 		<vtr-spinner></vtr-spinner>
 		<span class="spinner-text">{{ 'common.ui.loader.text1' | translate }} <br/> {{ 'common.ui.loader.text2' | translate }}</span>

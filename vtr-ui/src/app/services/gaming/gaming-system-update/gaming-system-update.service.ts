@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 import { CommonService } from '../../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { CPUOCStatus } from 'src/app/data-models/system-update/cpu-overclock-status.model';
+import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { RamOCSatus } from 'src/app/data-models/gaming/gaming-legion-edge.model';
 
 @Injectable({

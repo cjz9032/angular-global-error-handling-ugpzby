@@ -1,10 +1,4 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
-import * as $ from 'jquery';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { CommonService } from 'src/app/services/common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { CPUOCStatus } from 'src/app/data-models/system-update/cpu-overclock-status.model';
-import { GamingSystemUpdateService } from 'src/app/services/gaming/gaming-system-update/gaming-system-update.service';
+import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
 
 @Component({
 	selector: 'vtr-ui-gaming-collapsible-container',
@@ -16,26 +10,28 @@ import { GamingSystemUpdateService } from 'src/app/services/gaming/gaming-system
 })
 export class UiGamingCollapsibleContainerComponent implements OnInit {
 	@Input() public options;
+	@Output() public change = new EventEmitter<any>();
 	public showOptions = false;
 	public buttonName: any = 'Show';
 	public selected = false;
 	public currentOption: string;
 	public currentDescription: string;
-	public CpuOCStatus: CPUOCStatus;
 
 
 	constructor(
 		private elementRef: ElementRef,
-		private gamingSystemUpdateService: GamingSystemUpdateService,
-	) {
-		this.CpuOCStatus = gamingSystemUpdateService.GetCPUOverClockStatus();
-	}
+	) {}
 
 	ngOnInit() {
 		this.options.forEach(option => {
-			if (option.value === this.CpuOCStatus.cpuOCStatus) {
-				this.currentOption = option.name;
-				this.currentDescription = option.description;
+			if (option.selectedOption) {
+				this.optionSelected(option);
+				return;
+			}
+
+			if (option.defaultOption) {
+				this.optionSelected(option);
+				return;
 			}
 		});
 	}
@@ -52,10 +48,10 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	}
 
 	public optionSelected(option) {
-		this.CpuOCStatus.cpuOCStatus = option.value;
 		this.currentOption = option.name;
+		this.currentDescription = option.description;
 		this.showOptions = false;
-		this.gamingSystemUpdateService.SetCPUOverClockStatus(this.CpuOCStatus);
+		this.change.emit(option);
 	}
 
 	public showDescription(option) {
