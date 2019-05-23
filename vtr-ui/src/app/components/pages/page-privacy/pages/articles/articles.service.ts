@@ -107,7 +107,7 @@ export class ArticlesService {
 			visible: false,
 		},
 		[RoutersName.LANDING]: {
-			visible: false,
+			visible: true,
 		},
 		[RoutersName.PRIVACY]: {
 			visible: true,
