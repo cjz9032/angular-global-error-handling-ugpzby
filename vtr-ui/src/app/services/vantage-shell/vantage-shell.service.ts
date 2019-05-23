@@ -363,6 +363,13 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getCameraBlur(): any {
+		if (this.phoenix && this.phoenix.hwsettings.camera.cameraBlur) {
+			return this.phoenix.hwsettings.camera.cameraBlur;
+		}
+		return undefined;
+	}
+
 	public getCPUOCStatus(): any {
 		if (this.phoenix) {
 			// TODO Un comment below line when JSBridge is ready for integration.
@@ -379,7 +386,6 @@ export class VantageShellService {
 			// return this.phoenix.gaming.gamingOverclock.SetCpuOCStatus(CpuOCStatus.cpuOCStatus);
 			return CpuOCStatus;
 		}
-
 		return undefined;
 	}
 
