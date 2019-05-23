@@ -11,6 +11,7 @@
 	</vtr-enter-email>
 	<vtr-scanning
 		*ngSwitchCase="oneClickScanSteps.SCAN"
+		[scanSteps]="getStepForScanning()"
 		(allow)="handleScanAllow($event)">
 	</vtr-scanning>
 </ng-container>

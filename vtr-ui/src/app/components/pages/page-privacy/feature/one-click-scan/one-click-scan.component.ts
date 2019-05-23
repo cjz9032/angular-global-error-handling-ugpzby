@@ -33,6 +33,10 @@ export class OneClickScanComponent {
 		permitValue ? this.nextStep() : this.resetScan();
 	}
 
+	getStepForScanning() {
+		return this.permitService.getPermits();
+	}
+
 	private nextStep() {
 		this.currentStep = this.oneClickScanStepsService.nextStep();
 
@@ -43,7 +47,7 @@ export class OneClickScanComponent {
 	}
 
 	private resetScan() {
-		this.permitService.clearPermit();
+		this.permitService.clearPermits();
 		this.oneClickScanStepsService.resetStep();
 		this.commonPopupService.close(this.popupId);
 	}

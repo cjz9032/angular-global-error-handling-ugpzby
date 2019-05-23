@@ -37,8 +37,12 @@ export class PermitService {
 		});
 	}
 
-	clearPermit() {
+	clearPermits() {
 		this.permitsValue = [];
+	}
+
+	getPermits() {
+		return this.permitsValue;
 	}
 
 	private setPermitTrackersAndPassword() {

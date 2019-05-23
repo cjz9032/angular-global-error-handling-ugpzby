@@ -153,7 +153,7 @@ $topIndent: -5.6rem;
 }
 
 %button-text {
-	width: 9rem;
+	min-width: 9rem;
 	margin-top: 4rem;
 	border: none;
 	background: inherit;
