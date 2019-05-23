@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
 		private vantageShellService: VantageShellService
 	) {
 		translate.addLangs(['en', 'zh-Hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it',
-		'ja', 'ko', 'nb', 'nl', 'pl', 'pt-BR', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-Latn', 'sv', 'tr', 'uk', 'zh-Hant']);
+			'ja', 'ko', 'nb', 'nl', 'pl', 'pt-BR', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-Latn', 'sv', 'tr', 'uk', 'zh-Hant']);
 		this.translate.setDefaultLang('en');
 		const hadRunApp: boolean = commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
 		const appFirstRun = !hadRunApp;
@@ -160,6 +160,7 @@ export class AppComponent implements OnInit {
 					.then((value: any) => {
 						console.log('checkIsDesktopMachine.then', value);
 						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, (value === 4));
+						this.commonService.setLocalStorageValue(LocalStorageKey.MachineType, value);
 					}).catch(error => {
 						console.error('checkIsDesktopMachine', error);
 					});

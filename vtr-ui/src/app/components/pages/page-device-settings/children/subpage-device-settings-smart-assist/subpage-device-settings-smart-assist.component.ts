@@ -6,7 +6,8 @@ import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { IntelligentSecurity } from 'src/app/data-models/intellegent-security.model';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { TranslateService } from '@ngx-translate/core';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-smart-assist',
@@ -17,7 +18,7 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 
 	@Output() distanceChange: EventEmitter<ChangeContext> = new EventEmitter();
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
-	public isThinkPad = false;
+	public isThinkPad = true;
 	public tooltipText = 'device.deviceSettings.smartAssist.intelligentSecurity.autoScreenLock.autoScreenLockTimer.toolTipContent';
 	title = 'device.deviceSettings.smartAssist.title';
 	public humanPresenceDetectStatus = new FeatureStatus(false, true);
@@ -55,7 +56,7 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 		private smartAssist: SmartAssistService,
 		private deviceService: DeviceService,
 		private logger: LoggerService,
-		public translate: TranslateService
+		private commonService: CommonService
 	) {
 		if (this.smartAssist.isShellAvailable) {
 			this.initSmartAssist();
@@ -65,7 +66,8 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	ngOnInit() {
 		this.autoScreenLockStatus = [false, false, false];
 		this.setIntelligentSecurity();
-		this.setIsThinkPad();
+		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		this.setIsThinkPad(machineType === 1);
 	}
 
 	// invoke HPD related JS bridge calls
@@ -118,24 +120,25 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 		this.intelligentSecurity.zeroTouchLockFlag = !this.intelligentSecurity.zeroTouchLockFlag;
 		this.smartAssist.setAutoLockStatus(this.intelligentSecurity.zeroTouchLockFlag)
 			.then((isSuccess: boolean) => {
-				console.log('onChangeZeroTouchLockFlag.setAutoLockStatus', isSuccess);
+				console.log('onChangeZeroTouchLockFlag.setAutoLockStatus', isSuccess, this.intelligentSecurity.zeroTouchLockFlag);
 			});
 	}
 	public setIntelligentSecurity() {
 		// service call to fetch Intelligent Security Properties
-		this.intelligentSecurity = new IntelligentSecurity(true, 10, true, true, 1, false, false);
+		this.intelligentSecurity = new IntelligentSecurity(true, 10, true, true, '0', false, false);
 		this.autoScreenLockStatus[this.intelligentSecurity.autoScreenLockTimer] = true;
 	}
-	public onAutoScreenLockStatusToggle(event, value) {
-		this.intelligentSecurity.autoScreenLockTimer = value;
-		this.intelligentSecurity.zeroTouchLoginFlag = false;
-		this.intelligentSecurity.zeroTouchLockFlag = false;
-		this.smartAssist.setSelectedLockTimer(value)
+
+	public onAutoScreenLockStatusToggle(event: any, value: number) {
+		const option = value.toString();
+		this.intelligentSecurity.autoScreenLockTimer = option;
+		this.smartAssist.setSelectedLockTimer(option)
 			.then((isSuccess: boolean) => {
-				console.log('onAutoScreenLockStatusToggle.setSelectedLockTimer', isSuccess);
+				console.log('onAutoScreenLockStatusToggle.setSelectedLockTimer', isSuccess, option);
 			});
 	}
-	distanceSensitivityStatusToggle(event: ChangeContext) {
+
+	public distanceSensitivityStatusToggle(event: ChangeContext) {
 		this.intelligentSecurity.distanceSensitivityFlag = !this.intelligentSecurity.distanceSensitivityFlag;
 	}
 
@@ -143,9 +146,10 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 		console.log('Human Distance changed', event);
 		this.intelligentSecurity.humanDistance = event.value;
 	}
-	public setIsThinkPad() {
+
+	public setIsThinkPad(isThinkPad) {
 		// service call to fetch type of device
-		this.isThinkPad = false;
+		this.isThinkPad = isThinkPad;
 		this.distanceSensitivityTitle = this.isThinkPad ? 'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title1' :
 			'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title2';
 		this.zeroTouchLockTitle = this.isThinkPad ? 'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.title2' :
