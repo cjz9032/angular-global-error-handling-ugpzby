@@ -688,29 +688,29 @@
 		}
 	},
 	"systemUpdates": {
-		"title": "系统更新",
-		"history": "完整历史记录",
-		"notAvailable": "无法使用",
-		"notInstalled": "未安装",
-		"criticalUpdates": "关键更新",
-		"recommendedUpdates": "推荐更新",
-		"optionalUpdates": "可选更新",
-		"successInstall": "已成功安装",
-		"failedInstall": "无法安装",
-		"at": "在",
+		"title": "system update",
+		"history": "Full history",
+		"notAvailable": "Not available",
+		"notInstalled": "Not Installed",
+		"criticalUpdates": "Critical update",
+		"recommendedUpdates": "Recommended update",
+		"optionalUpdates": "Optional update",
+		"successInstall": "Successfully installed",
+		"failedInstall": "Unable to install",
+		"at": "at",
 		"readMore": "Read more",
 		"popup": {
-			"reboot": "重启",
-			"shutdown": "关掉",
-			"rebootForceMsg": "您选择的更新将导致系统在安装后自动重新启动。",
-			"shutdownForceMsg": "您选择的更新将导致系统在安装后自动关闭。",
-			"rebootDelayedMsg": "您选择的更新将导致系统在安装后重新启动，在安装更新期间，请不要关闭系统，卸下电源或附件。我们建议您保存工作以准备重新启动系统。",
-			"rebootRequiredMsg": "为了成功安装更新，您的计算机需要重新启动才能确保一切运行安全，顺畅。",
-			"okayButton": "好",
-			"cancelButton": "取消",
-			"rebootButton": "马上重启",
-			"dismissButton": "解雇",
-			"rebootPending": "重新启动等待"
+			"reboot": "Restart",
+			"shutdown": "Turn off",
+			"rebootForceMsg": "The update you choose will cause the system to automatically restart after installation.",
+			"shutdownForceMsg": "The update you choose will cause the system to automatically shut down after installation.",
+			"rebootDelayedMsg": "The update you choose will cause the system to reboot after installation. During the installation of the update, do not shut down the system and remove the power supply or accessories. We recommend that you save your work in preparation for restarting your system.",
+			"rebootRequiredMsg": "In order to successfully install the update, your computer needs to be restarted to ensure that everything runs safely and smoothly.",
+			"okayButton": "Ok",
+			"cancelButton": "Cancel",
+			"rebootButton": "Reboot",
+			"dismissButton": "Dismiss",
+			"rebootPending": "Restart Pending"
 		},
 		"autoUpdateSettings": {
 			"title": "Auto update settings",
@@ -725,8 +725,8 @@
 				"reset": "Reset factory settings"
 			},
 			"recommended": {
-				"title": "推荐更新",
-				"tooltip": "推荐的驱动程序更新使计算机运行保持最佳性能。"
+				"title": "Recommended update",
+				"tooltip": "Recommended driver updates keep your computer running at peak performance."
 			},
 			"windows": {
 				"title": "Windows Updates",
