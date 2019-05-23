@@ -32,6 +32,11 @@ export class SmartAssistService {
 		return this.intelligentSensing.GetHPDPresentLeaveSetting();
 	}
 
+	// set auto adjust for IdeaPad models
+	public setAutoLockStatus(value: boolean): Promise<boolean> {
+		return this.intelligentSensing.SetHPDPresentLeaveSetting(value);
+	}
+
 	/**
 	 * Get currently selected lock screen timer value
 	 * 1 = Fast,
@@ -50,11 +55,8 @@ export class SmartAssistService {
 	 * '3' = Slow
 	 */
 	public setSelectedLockTimer(value: string): Promise<boolean> {
-		return this.intelligentSensing.SetHPDAutoAdjustSetting(value);
+		return this.intelligentSensing.SetHPDLeaveWaitSetting(value);
 	}
 
-	// set auto adjust for IdeaPad models
-	public setAutoLockStatus(value: boolean): Promise<boolean> {
-		return this.intelligentSensing.SetHPDPresentLeaveSetting(value);
-	}
+
 }
