@@ -40,7 +40,7 @@
 					}
 					&:first-child{
 						.media-body {
-							> div {
+							> div.collapsible {
 								display: block !important;
 							}
 						}

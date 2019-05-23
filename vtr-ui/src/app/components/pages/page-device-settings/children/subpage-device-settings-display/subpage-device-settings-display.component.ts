@@ -11,6 +11,8 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
+import { CameraFeedService } from 'src/app/services/camera/camera-feed/camera-feed.service';
+import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
 enum defaultTemparature {
 	defaultValue = 4500
 }
@@ -38,7 +40,6 @@ export class SubpageDeviceSettingsDisplayComponent
 	private notificationSubscription: Subscription;
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	public shouldCameraSectionDisabled = true;
-	public showCameraBackgroundBlurFeature = true;
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	headerMenuItems = [
@@ -101,13 +102,13 @@ export class SubpageDeviceSettingsDisplayComponent
 			'permission': false
 		}
 	];
+	public cameraBlur = new CameraBlur();
 	constructor(public baseCameraDetail: BaseCameraDetail,
 		private deviceService: DeviceService,
-		// public cd: ChangeDetectorRef,
 		public displayService: DisplayService,
 		private commonService: CommonService,
-		private cd: ChangeDetectorRef,
-		private ngZone: NgZone) {
+		private ngZone: NgZone,
+		private cameraFeedService: CameraFeedService) {
 		this.dataSource = new CameraDetail();
 		this.cameraFeatureAccess = new CameraFeatureAccess();
 		this.eyeCareDataSource = new EyeCareMode();
@@ -135,6 +136,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.statusChangedLocationPermission();
 		this.displayService.startMonitorForCameraPermission();
 		this.startMonitorForCamera();
+		this.initCameraBlurMethods();
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -554,8 +556,8 @@ export class SubpageDeviceSettingsDisplayComponent
 	public getResetColorTemparatureCallBack(resetData: any) {
 		console.log('called from eyecare monitor', JSON.stringify(resetData));
 		this.eyeCareDataSource.current = resetData.colorTemperature;
-		this.eyeCareModeStatus.status = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
-		this.enableSlider = (resetData.eyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
+		this.eyeCareModeStatus.status = resetData.eyecaremodeState;
+		this.enableSlider = resetData.eyecaremodeState;
 		this.sunsetToSunriseModeStatus.status = (resetData.autoEyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
 	}
 	public startEyeCareMonitor() {
@@ -587,9 +589,36 @@ export class SubpageDeviceSettingsDisplayComponent
 
 	public onCameraBackgroundBlur($event: any) {
 		try {
-			this.showCameraBackgroundBlurFeature = $event.switchValue;
+			this.cameraBlur.enabled = $event.switchValue
+			this.onCameraBackgroundOptionChange(true, "");
 		} catch (error) {
 			console.error(error.message);
+		}
+	}
+
+	private initCameraBlurMethods() {
+		if (this.cameraFeedService.isShellAvailable) {
+			this.cameraFeedService.getCameraBlurSettings()
+				.then((response: CameraBlur) => {
+					this.cameraBlur = response
+					console.log('initCameraBlurMethods', response);
+				}).catch(error => {
+					console.log('initCameraBlurMethods', error);
+				});
+		}
+	}
+
+	public onCameraBackgroundOptionChange(isEnabling: boolean, mode: string) {
+		if(mode != "") {
+			this.cameraBlur.currentMode = mode;
+		}
+		if (this.cameraFeedService.isShellAvailable) {
+			this.cameraFeedService.setCameraBlurSettings(isEnabling, mode)
+				.then((response) => {
+					console.log('onCameraBackgroundOptionChange', response);
+				}).catch(error => {
+					console.log('onCameraBackgroundOptionChange', error);
+				});
 		}
 	}
 }
