@@ -9,6 +9,31 @@
 <vtr-common-popup [popUpId]="articlePopupId" size="large">
   <ng-template>
     <vtr-article-single [articleData]="article"></vtr-article-single>
+    <div class="pitch">
+      <div class="pitch__description">
+        <p class="pitch__title">
+          The choice to be private is here
+        </p>
+        <p class="pitch__text">
+          Get the app that lets you decide when to share
+          and when to be private, wherever you go online.
+          <strong>Trial duration 14-day.</strong> No credit card required.
+        </p>
+        <div class="pitch__group-button">
+          <button class="pitch__button" vtrOpenFigleafInstaller>
+            Try FigLeaf
+          </button>
+          <a class="pitch__link" routerLink="./landing">
+            Learn more
+          </a>
+        </div>
+      </div>
+      <div class="pitch__image">
+        <img src="/assets/images/privacy-tab/pitch-block/Img_Pith_Breach.png"
+             srcset="/assets/images/privacy-tab/pitch-block/Img_Pith_Breach@2x.png 2x"
+             alt="Try FigLeaf">
+      </div>
+    </div>
     <a class="all-articles-link" routerLink="/privacy/articles" (click)="closeArticlePopup()">see all articles</a>
   </ng-template>
 </vtr-common-popup>
