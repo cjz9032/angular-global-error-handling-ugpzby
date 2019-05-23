@@ -2,6 +2,9 @@
 	<p>
 		scanning works!
 	</p>
+	<vtr-progress-bar [progress]="progressTime$ | async"
+					  class="scanning__progress-bar">
+	</vtr-progress-bar>
 	<button class="scanning__button--skip" (click)="disallowEmitter()">
 		Cancel check
 	</button>

@@ -11,4 +11,8 @@
 			@extend %button-text;
 		}
 	}
+
+	&__progress-bar {
+		width: 100%;
+	}
 }
