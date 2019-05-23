@@ -26,6 +26,7 @@
             "installed": "インストール済み",
             "notInstalled": "未インストール",
             "loading": "ロード中",
+            "installing": "インストール中",
             "notFound": "見つかりませんでした",
             "registered": "登録済み",
             "notRegistered": "未登録"
@@ -33,14 +34,14 @@
         "ui": {
             "back": "戻る",
             "on": "ON",
-			"off": "OFF",
-			"collapse": "Collapse",
-			"expand": "Expand",
-			"loader": {
-				"text1": "Fetching",
-				"text2": "Status"
-			}
-		}
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",
@@ -131,8 +132,7 @@
                 "poweredBy": "McAfee 搭載",
                 "privacyTerms": "<tag>プライバシー・ポリシー</tag>と<tag>サービス契約条件</tag>の詳細を読む",
                 "mcafeePremium": "McAfee プレミアムプロテクション",
-                "protectedBy": "現在、以下によって保護されています:",
-                "betterProtected": "。ただし、McAfee LiveSafe を使用すると、より適切に保護される可能性があります",
+                "protectedBy": "現在、{{protectedName}} によって保護されています。ただし、McAfee LiveSafe を使用すると、より適切に保護される可能性があります。",
                 "virusScan": "ウイルス・スキャン",
                 "firewall": "ファイアウォール",
                 "disabled": "無効",
@@ -196,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "脅威検出器を使用して、周囲のネットワークの安全性を判断します。",
-                "button": "脅威を確認"
+                "button": "脅威を確認",
+                "connectionError": "接続エラー",
+                "tryAgain": "ネットワークが利用できないため、デバイスを見つけることができません。インターネットに接続してからもう一度お試しください。"
             },
             "locationmodal": {
                 "title": "位置情報サービスの有効化",

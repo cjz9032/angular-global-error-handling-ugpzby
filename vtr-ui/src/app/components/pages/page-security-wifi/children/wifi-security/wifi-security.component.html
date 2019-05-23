@@ -130,7 +130,7 @@
 										*ngIf="isShowMoreLink">{{'security.wifisecurity.container.showmore' | translate}}</a>
 									<a id="sa-ws-lnk-wh-showless"
 										vtrMetrics
-										metricsItem="showMoreWiFiHistory"
+										metricsItem="showLessWiFiHistory"
 										metricsEvent="featureClick"
 										class="show-more"
 										href="#"
@@ -157,7 +157,8 @@
 						<div class="col-sm-12 col-md-12 col-lg-4 col-check-location">
 							<div class="button-box">
 								<vtr-ui-button id="sa-ws-btn-openlocator"
-									[metricsItem]="'checkYourLocation'"
+									metricsEvent="featureClick"
+									metricsItem="checkYourLocation"
 									[isDisabled]="locatorButtonDisable"
 									(click)="openThreatLocator()"
 									[label]="'security.wifisecurity.threatlocator.button' | translate"></vtr-ui-button>
@@ -174,8 +175,6 @@
 			</div>
 			<div class="col-sm-12 col-md-12 col-lg-5 text-right" *ngIf="data.wifiSecurity.state==='never-used'">
 				<vtr-ui-button id="sa-ws-btn-enablewifisecurity"
-					vtrMetrics
-					metricsParent="lenovo-wifi-security"
 					metricsItem="enableWifiSecurity"
 					metricsEvent="featureClick"
 					(click)="enableWifiSecurity()"

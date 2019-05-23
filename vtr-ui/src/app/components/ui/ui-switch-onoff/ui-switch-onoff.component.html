@@ -7,7 +7,10 @@
 	</div>
 	<div *ngIf="!showLoader" class="checkbox"
 		[ngClass]="{'switch-disable': isSwitchDisable}">
-		<label>
+		<label vtrMetrics
+			metricsEvent="featureClick"
+			[metricsItem]="'chk.'+name"
+			[metricsValue]="!value">
 			<input type="checkbox"
 				[name]="name"
 				class="switch"
@@ -15,11 +18,7 @@
 				[value]="value"
 				[checked]="value"
 				[disabled]="disabled"
-				(change)="onChange($event)"
-				vtrMetrics
-				metricsEvent="featureClick"
-				[metricsItem]="'chk.'+name"
-				[metricsValue]="value" />
+				(change)="onChange($event)"/>
 
 			<span class="switch {{ size }}"> <small></small> </span>
 			<div *ngIf="!value"

@@ -26,6 +26,7 @@
             "installed": "INSTALLERET",
             "notInstalled": "IKKE INSTALLERET",
             "loading": "Indlæser",
+            "installing": "INSTALLATION",
             "notFound": "IKKE FUNDET",
             "registered": "REGISTRERET",
             "notRegistered": "IKKE REGISTRERET"
@@ -33,14 +34,14 @@
         "ui": {
             "back": "TILBAGE",
             "on": "ON",
-			"off": "OFF",
-			"collapse": "Collapse",
-			"expand": "Expand",
-			"loader": {
-				"text1": "Fetching",
-				"text2": "Status"
-			}
-		}
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",
@@ -131,8 +132,7 @@
                 "poweredBy": "Udarbejdet af McAfee",
                 "privacyTerms": "Læs mere i <tag>Politik om beskyttelse af personlige oplysninger</tag> og <tag>Vilkår for tjeneste</tag>",
                 "mcafeePremium": "McAfee førsteklasses beskyttelse",
-                "protectedBy": "Du er i øjeblikket beskyttet af ",
-                "betterProtected": ".Men du kan blive endnu bedre beskyttet med McAfee LiveSafe",
+                "protectedBy": "Du er i øjeblikket beskyttet af {{protectedName}}. Men du kan blive endnu bedre beskyttet med McAfee LiveSafe.",
                 "virusScan": "VIRUSSCANNING",
                 "firewall": "FIREWALL",
                 "disabled": "DEAKTIVERET",
@@ -196,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "Brug trusselssensoren til at bestemme sikkerheden i dine nærliggende netværk.",
-                "button": "Kontrollér trussel"
+                "button": "Kontrollér trussel",
+                "connectionError": "Forbindelsesfejl",
+                "tryAgain": "Vi kan ikke finde din enhed, fordi netværket ikke er tilgængeligt. Opret forbindelse til internettet, og prøv igen."
             },
             "locationmodal": {
                 "title": "Aktivér placeringstjenester",
