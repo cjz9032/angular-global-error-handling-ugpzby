@@ -157,6 +157,7 @@ import { CameraBackgroundBlurComponent } from './components/camera-background-bl
 import { PageAutocloseComponent } from './components/pages/page-autoclose/page-autoclose.component';
 import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
 import { PowerSmartSettingsComponent } from './components/widgets/power-smart-settings/power-smart-settings.component';
+import { UiPopoverComponent } from './components/ui/ui-popover/ui-popover.component';
 
 // SA Components
 import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
@@ -343,6 +344,7 @@ library.add(fal);
 		PageNetworkBoostComponent,
 		PowerSmartSettingsComponent,
 		SubpageDeviceSettingsSmartAssistComponent,
+		UiPopoverComponent,
 		WidgetHomeSecurityDeviceComponent
 	],
 	imports: [

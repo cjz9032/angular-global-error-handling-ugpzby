@@ -16,11 +16,15 @@
 				"legionEdge": {
 					"title": "CPU Overclock",
 					"status": {
-						"alwayson": "Always On",
+						"alwayson": "On",
 						"whenGaming": "When Gaming",
 						"off": "Off"
 					},
 					"ramOverlock": "Ram Overclock",
+					"popup": {
+						"text": "Change will be effective after restarting computer.",
+						"button": "ok"
+					},
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
@@ -833,7 +837,7 @@
 				"describe": "Use the threat detector to determine the safety of the networks around you.",
 				"button": "Check threat",
 				"connectionError": "Connection Error",
-				"tryAgain": "We are unable to locate your device due to network unavailable, please get connected with Internet and try again."
+				"tryAgain": "We are unable to locate threat for you due to network unavailable, please get connected to Internet and try again."
 			},
 			"locationmodal": {
 				"title": "Enable location services",

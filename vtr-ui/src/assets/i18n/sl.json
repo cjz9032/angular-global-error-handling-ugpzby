@@ -26,6 +26,7 @@
             "installed": "NAMEŠČENO",
             "notInstalled": "NIJE NAMEŠČENO",
             "loading": "Nalaganje",
+            "installing": "NAMEŠČANJE",
             "notFound": "NI BILO MOGOČE NAJTI",
             "registered": "REGISTRIRANO",
             "notRegistered": "REGISTRIRANO"
@@ -33,14 +34,14 @@
         "ui": {
             "back": "NAZAJ",
             "on": "ON",
-			"off": "OFF",
-			"collapse": "Collapse",
-			"expand": "Expand",
-			"loader": {
-				"text1": "Fetching",
-				"text2": "Status"
-			}
-		}
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",
@@ -131,8 +132,7 @@
                 "poweredBy": "Powered by McAfee",
                 "privacyTerms": "Preberite več o <tag>pravilniku o zasebnosti</tag> in <tag>pogojih storitve</tag>",
                 "mcafeePremium": "McAfee Premium zaščita",
-                "protectedBy": "Trenutno ste zaštičeni z ",
-                "betterProtected": ".Lahko pa bi bili še varnejši s storitvijo McAfee LiveSafe",
+                "protectedBy": "Trenutno ste zaščiteni s programom {{protectedName}}. Še bolje pa bi se lahko zaščitili s programom McAfee LiveSafe.",
                 "virusScan": "VIRUS SCAN",
                 "firewall": "POŽARNI ZID",
                 "disabled": "ONEMOGOČEN",
@@ -196,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "Če želite ugotoviti, kako varna so omrežja okrog vas, uporabite detektor groženj.",
-                "button": "Preverite, da"
+                "button": "Preverite, da",
+                "connectionError": "Napaka povezave",
+                "tryAgain": "Vaše naprave ne moremo najti, ker omrežje ni na voljo. Vzpostavite internetno povezavo in poskusite znova."
             },
             "locationmodal": {
                 "title": "Omogoči lokacijske storitve",
@@ -270,7 +272,7 @@
             "howToUseSufEasy": "Kako uporabljati SurfEasy VPN",
             "whatCanSufEasy2": "Zavarovati vaš osamljenost ter zavoj naprej SurfEasy VPN čas postranski a obačen Wi-Fi srborit. Z Lenovo Starter VPN načrt, lahko dokončate nagradne dejavnosti, da zaslužijo več pasovne širine varstva podatkov. Nadgradnja za zaščito do 5 pametnih telefonov, tablet in računalnikov z neomejeno pasovno širino.",
             "getStarted": "Vklopite SurfEasy VPN:",
-            "getStarted1": "Udarjanje z nogo ob nogo naprej »plan SurfEasy« popek zgoraj v splavitev SurfEasy VPN.",
+            "getStarted1": "Kliknite gumb »Odpri SurfEasy« zgoraj, da zaženete SurfEasy VPN.",
             "getStarted2": "Vklopite VPN in počakajte kratek trenutek za potrditev varne povezave.",
             "getStarted3": "Po želji spremenite regijo ali lokacijo in uživajte v varnem, zasebnem mreženju.",
             "poweredBySurfEasy": "Poganja SurfEasy",
