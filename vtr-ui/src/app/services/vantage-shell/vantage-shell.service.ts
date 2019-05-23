@@ -401,4 +401,17 @@ export class VantageShellService {
 
 		return undefined;
 	}
+	public getGamingAllCapabilities(): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingAllCapabilities();
+		}
+		return undefined;
+	}
+	public getGamingLighting(): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingLighting();
+		}
+		return undefined;
+	}
+
 }
