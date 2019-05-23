@@ -30,6 +30,12 @@
 					background: transparent;
 					transition: all .3s ease-in-out;
 					min-height: 18.5rem;
+					@media #{$medium-screen} {
+						padding: 2rem 0rem;
+					}
+					@media #{$small-screen} {
+						padding: 2rem 0rem;
+					}
 					&:hover {
 						background: $gaming_shade;
 						.system-icon::before {

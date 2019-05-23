@@ -234,7 +234,7 @@ export class ConfigService {
 		routerLinkActiveOptions: {
 			exact: true
 		},
-		icon: ['fal', 'lock'],
+		icon: ['fal', 'home-lg-alt'],
 		forArm: false,
 		subitems: []
 	}, {
@@ -368,7 +368,20 @@ export class ConfigService {
 			icon: '',
 			subitems: []
 		}]
-	}, {
+	},  {
+		id: 'privacy',
+		label: 'common.menu.privacy',
+		path: 'privacy',
+		icon: ['fal', 'eye'],
+		metricsEvent: 'itemClick',
+		metricsParent: 'navbar',
+		metricsItem: 'link.privacy',
+		routerLinkActiveOptions: {
+			exact: true
+		},
+		forArm: false,
+		subitems: []
+	},  {
 		id: 'support',
 		label: 'common.menu.support',
 		path: 'support',
@@ -391,20 +404,7 @@ export class ConfigService {
 		routerLinkActiveOptions: {
 			exact: true
 		},
-		icon: ['fal', 'lock'],
-		forArm: false,
-		subitems: []
-	}, {
-		id: 'privacy',
-		label: 'common.menu.privacy',
-		path: 'privacy',
-		icon: ['fal', 'eye'],
-		metricsEvent: 'itemClick',
-		metricsParent: 'navbar',
-		metricsItem: 'link.privacy',
-		routerLinkActiveOptions: {
-			exact: true
-		},
+		icon: ['fal', 'home-lg-alt'],
 		forArm: false,
 		subitems: []
 	}, {
