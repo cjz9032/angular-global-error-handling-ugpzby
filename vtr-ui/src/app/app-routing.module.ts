@@ -10,6 +10,7 @@ import { PageDeviceSettingsComponent } from './components/pages/page-device-sett
 import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
 import { SubpageDeviceSettingsDisplayComponent } from './components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
+import { SubpageDeviceSettingsSmartAssistComponent } from './components/pages/page-device-settings/children/subpage-device-settings-smart-assist/subpage-device-settings-smart-assist.component';
 import { PageDeviceUpdatesComponent } from './components/pages/page-device-updates/page-device-updates.component';
 import { PageSecurityComponent } from './components/pages/page-security/page-security.component';
 import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
@@ -95,10 +96,16 @@ const routes: Routes = [
 					pageName: 'Device.MyDeviceSettings'
 				}
 			},
-
 			{
 				path: 'display-camera',
 				component: SubpageDeviceSettingsDisplayComponent,
+				data: {
+					pageName: 'Device.MyDeviceSettings'
+				}
+			},
+			{
+				path: 'smart-assist',
+				component: SubpageDeviceSettingsSmartAssistComponent,
 				data: {
 					pageName: 'Device.MyDeviceSettings'
 				}

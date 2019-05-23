@@ -1,7 +1,8 @@
 import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
-import { ModalWelcomeComponent } from './../../modal/modal-welcome/modal-welcome.component';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { GamingSystemUpdateService } from 'src/app/services/gaming/gaming-system-update/gaming-system-update.service';
+import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 
 @Component({
 	selector: 'vtr-widget-legion-edge',
@@ -10,7 +11,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class WidgetLegionEdgeComponent implements OnInit {
 
-  public legionUpdate = [
+	public legionUpdate = [
 		{
 			readMoreText: '',
 			rightImageSource: '',
@@ -55,7 +56,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isChecked: true,
 			tooltipText: '',
 			type: 'auto-updates',
-			routerLink:'/autoclose'
+			routerLink: '/autoclose'
 		},
 		{
 			readMoreText: '',
@@ -71,12 +72,12 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isChecked: true,
 			tooltipText: '',
 			type: 'auto-updates',
-			routerLink:'/networkboost'
+			routerLink: '/networkboost'
 		},
 		{
 			readMoreText: '',
 			rightImageSource: '',
-			leftImageSource:'',
+			leftImageSource: '',
 			header: 'gaming.dashboard.device.legionEdge.hybridMode',
 			name: 'gaming.dashboard.device.legionEdge.hybridMode',
 			subHeader: '',
@@ -111,6 +112,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			header: 'gaming.dashboard.device.legionEdge.status.alwayson',
 			name: 'gaming.dashboard.device.legionEdge.status.alwayson',
 			description: 'gaming.dashboard.device.legionEdge.status.alwayson',
+			selectedOption: false,
 			defaultOption: false,
 			value: 1,
 		},
@@ -118,25 +120,50 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			header: 'gaming.dashboard.device.legionEdge.status.whenGaming',
 			name: 'gaming.dashboard.device.legionEdge.status.whenGaming',
 			description: 'gaming.dashboard.device.legionEdge.status.whenGaming',
-			defaultOption: false,
+			selectedOption: false,
+			defaultOption: true,
 			value: 2,
 		},
 		{
 			header: 'gaming.dashboard.device.legionEdge.status.off',
 			name: 'gaming.dashboard.device.legionEdge.status.off',
 			description: 'gaming.dashboard.device.legionEdge.status.off',
-			defaultOption: true,
+			selectedOption: false,
+			defaultOption: false,
 			value: 3,
 		}
 	];
+	public CpuOCStatus: CPUOCStatus;
 
-	constructor(private modalService: NgbModal) { }
+	constructor(
+		private modalService: NgbModal,
+		private gamingSystemUpdateService: GamingSystemUpdateService,
+	) { }
 
 	ngOnInit() {
+		this.CpuOCStatus = this.gamingSystemUpdateService.GetCPUOverClockStatus();
+		if (this.CpuOCStatus !== undefined) {
+			this.edgeopt.forEach((option) => {
+				if (option.value === this.CpuOCStatus.cpuOCStatus) {
+					option.selectedOption = true;
+					return;
+				}
+			});
+		}
+	}
+
+	onOptionSelected(event) {
+		if (event.target.name === 'gaming.dashboard.device.legionEdge.title') {
+			if (this.CpuOCStatus === undefined) {
+				this.CpuOCStatus = new CPUOCStatus();
+			}
+			this.CpuOCStatus.cpuOCStatus = event.option.value;
+			this.gamingSystemUpdateService.SetCPUOverClockStatus(this.CpuOCStatus);
+		}
 	}
 
 	openModal() {
-		//this.modalService.open(ModalWelcomeComponent);
+		// this.modalService.open(ModalWelcomeComponent);
 		this.modalService.open(ModalGamingLegionedgeComponent);
 	}
 
