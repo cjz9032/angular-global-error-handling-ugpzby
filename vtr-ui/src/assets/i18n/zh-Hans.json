@@ -618,6 +618,7 @@
 			"criticalUpdates": "关键更新",
 			"recommendedUpdates": "推荐更新",
 			"optionalUpdates": "可选更新",
+			"ignoredUpdates": "忽略的更新",
 			"successInstall": "已成功安装",
 			"failedInstall": "无法安装",
 			"at": "在",
@@ -1053,6 +1054,7 @@
 	"lenovoId": {
 		"login": "登录",
 		"logout": "注销",
+		"unlockExclusives": "解锁独家",
 		"user": "用户",
 		"welcomeText": "元气满满的一天 {{firstName}}！",
 		"welcomeTextWithouUserName": "元气满满的一天！",
