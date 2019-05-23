@@ -1,0 +1,52 @@
+@import "../../../styles/common-blocks";
+
+.enter-email {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	padding: 4.5rem 12rem;
+
+	&__stepper {
+		margin-top: 3rem;
+	}
+
+	&__title {
+		margin-top: 1rem;
+		@extend %subtitle;
+	}
+
+	&__text-block {
+		margin-top: 3rem;
+	}
+
+	&__text {
+		@extend %text-common;
+		text-align: center;
+
+		&--block {
+			display: block;
+		}
+	}
+
+	&__check-form {
+		margin-top: 7rem;
+		width: 100%;
+	}
+
+	&__button {
+		&--skip {
+			width: 9rem;
+			margin-top: 4rem;
+			border: none;
+			background: inherit;
+			text-transform: uppercase;
+			opacity: 0.4;
+			color: #444F78;
+			font-size: 11px;
+			font-weight: 500;
+			letter-spacing: 0.7px;
+			line-height: 13px;
+			text-align: center;
+		}
+	}
+}

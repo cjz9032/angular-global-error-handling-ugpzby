@@ -2,6 +2,7 @@
     <form class="check-breaches__form" [formGroup]="emailForm" (submit)="handleEmailScan()">
         <div class="check-breaches__input-wrapper"
              [ngClass]="{
+             	'check-breaches__input-wrapper--small': size === 'small',
 			 	'check-breaches__input-wrapper--focused': isFormFocused,
 			 	'check-breaches__input-wrapper--validation-error': emailForm.dirty && emailForm.touched && emailForm.invalid,
 			 	'check-breaches__input-wrapper--server-error': (serverError$ | async)
@@ -32,7 +33,7 @@
                     [metricsEvent]="'ItemClick'"
                     [metricsItem]="'BreachedAccountsRunCheckupButton'"
                     type='submit'>
-                {{(emailWasScanned$ | async) ? "Scan My Email" : "Run Checkup"}}
+                {{(emailWasScanned$ | async) ? "Scan My Email" : "Checkup"}}
             </button>
         </div>
 

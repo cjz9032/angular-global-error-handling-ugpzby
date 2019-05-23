@@ -26,6 +26,7 @@
             "installed": "УСТАНОВЛЕНО",
             "notInstalled": "НЕ УСТАНОВЛЕНО",
             "loading": "Загрузка",
+            "installing": "УСТАНОВКА",
             "notFound": "НЕ ОБНАРУЖЕНО",
             "registered": "ЗАРЕГИСТРИРОВАНО",
             "notRegistered": "НЕ ЗАРЕГИСТРИРОВАНО"
@@ -33,14 +34,14 @@
         "ui": {
             "back": "НАЗАД",
             "on": "ON",
-			"off": "OFF",
-			"collapse": "Collapse",
-			"expand": "Expand",
-			"loader": {
-				"text1": "Fetching",
-				"text2": "Status"
-			}
-		}
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",
@@ -131,8 +132,7 @@
                 "poweredBy": "На основе McAfee",
                 "privacyTerms": "Подробнее ознакомьтесь с <tag>Политикой конфиденциальности</tag> и <tag>Условиями обслуживания</tag>",
                 "mcafeePremium": "Первоклассная защита McAfee",
-                "protectedBy": "На данный момент безопасность вашего устройства обеспечивает ",
-                "betterProtected": ".Однако McAfee LiveSafe сможет защитить его лучше",
+                "protectedBy": "В настоящее время вашу безопасность обеспечивает {{protectedName}}. Однако McAfee LiveSafe сможет защитить вас лучше.",
                 "virusScan": "ПРОВЕРКА НАЛИЧИЯ ВИРУСОВ",
                 "firewall": "БРАНДМАУЭР",
                 "disabled": "ВЫКЛЮЧЕНО",
@@ -196,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "С помощью детектора угроз можно найти ближайшие безопасные сети.",
-                "button": "Проверить наличие угроз"
+                "button": "Проверить наличие угроз",
+                "connectionError": "Ошибка подключения",
+                "tryAgain": "Не удается найти ваше устройство, так как сеть недоступна. Обеспечьте подключение к Интернету и повторите попытку."
             },
             "locationmodal": {
                 "title": "Включить службы определения местоположения",

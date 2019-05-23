@@ -16,5 +16,4 @@ export class EnterEmailComponent implements Permit {
 	disallowEmitter() {
 		this.allow.emit(false);
 	}
-
 }

@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { OneClickScanSteps, OneClickScanStepsService } from './services/one-click-scan-steps.service';
 import { PermitService } from './services/permit.service';
+import { CommonPopupService } from '../../common/services/popups/common-popup.service';
 
 @Component({
 	selector: 'vtr-one-click-scan',
@@ -16,22 +17,24 @@ export class OneClickScanComponent {
 
 	constructor(
 		private oneClickScanService: OneClickScanStepsService,
-		private permitService: PermitService
+		private permitService: PermitService,
+		private commonPopupService: CommonPopupService,
 	) {	}
 
 	handlerAllow(permitValue: boolean, step: OneClickScanSteps) {
 		if (permitValue) {
-			this.permitService.setPermit(permitValue, step);
+			this.permitService.savePermit(step);
 		}
 
 		this.nextStep();
+
+		if (this.currentStep === null) {
+			this.permitService.setPermit();
+			this.commonPopupService.close(this.popupId);
+		}
 	}
 
 	private nextStep() {
 		this.currentStep = this.oneClickScanService.nextStep();
-
-		if (this.currentStep === null) {
-			console.log('close verification');
-		}
 	}
 }

@@ -21,6 +21,13 @@
     justify-content: space-between;
     border: 2px solid transparent;
     transition: border-color .1s linear;
+
+	&--small {
+	  border-radius: 25px;
+	  padding: 0;
+	  min-height: 5rem;
+	  border: none;
+	}
     &--focused {
       border: 2px solid #4A81FD;
     }

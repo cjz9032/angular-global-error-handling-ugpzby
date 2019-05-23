@@ -1,5 +1,30 @@
-<p>
-	enter-email works!
-	<button (click)="allowEmitter()">Allow</button>
-	<ng-content select=".stepper"></ng-content>
-</p>
+<section class="enter-email">
+	<figure class="enter-email__figure">
+		<img src="/assets/images/privacy-tab/privacy-search-completed.png"
+			 srcset="/assets/images/privacy-tab/privacy-search-completed@2x.png 2x"
+			 alt="email">
+	</figure>
+
+	<div class="enter-email__stepper">
+		<ng-content select=".stepper"></ng-content>
+	</div>
+
+	<h2 class="enter-email__title">
+		Can we check your email?
+	</h2>
+
+	<div class="enter-email__text-block">
+		<p class="enter-email__text">
+			Data breaches compromised millions of user accounts. Check if your private data was leaked.
+		</p>
+	</div>
+
+	<vtr-check-breaches-form size="small"
+							 class="enter-email__check-form"
+							 (userEmail)="allowEmitter()">
+	</vtr-check-breaches-form>
+
+	<button class="enter-email__button--skip" (click)="disallowEmitter()">
+		Skip
+	</button>
+</section>
