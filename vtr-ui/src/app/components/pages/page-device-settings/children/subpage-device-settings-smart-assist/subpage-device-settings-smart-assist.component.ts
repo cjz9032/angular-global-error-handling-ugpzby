@@ -24,6 +24,8 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	public intelligentSecurity: IntelligentSecurity;
 	public autoScreenLockTimer = false;
 	public distanceSensitivityTitle: string;
+	public zeroTouchLoginStatus = new FeatureStatus(false, true);
+	public autoScreenLockStatus: boolean[];
 
 	headerMenuItems = [
 		{
@@ -57,7 +59,8 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 
 	ngOnInit() {
 		console.log('subpage-device-setting-display onInit');
-		this.setIntelligentSecurityProperties();
+		this.autoScreenLockStatus = [false, false, false];
+		this.setintelligentSecurity();
 		this.setIsThinkpad();
 	}
 
@@ -85,30 +88,39 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	public onHumanPresenceDetectStatusToggle($event) {
 		this.intelligentSecurity.humanPresenceDetectionFlag = !this.intelligentSecurity.humanPresenceDetectionFlag;
 		if (!this.intelligentSecurity.humanPresenceDetectionFlag) {
-			this.intelligentSecurity.autoIRLoginFlag = false;
-			this.intelligentSecurity.isAutoScreenLockChecked = false;
+			this.intelligentSecurity.zeroTouchLockFlag = false;
+			this.intelligentSecurity.zeroTouchLoginFlag = false;
 		}
 	}
 
 	public onAutoIRCameraLoginStatusToggle($event) {
-		this.intelligentSecurity.autoIRLoginFlag = !this.intelligentSecurity.autoIRLoginFlag;
+		this.intelligentSecurity.zeroTouchLockFlag = !this.intelligentSecurity.zeroTouchLockFlag;
 	}
 
 	public onChangeAutoScreenLockFlag($event) {
-		this.intelligentSecurity.isAutoScreenLockChecked = !this.intelligentSecurity.isAutoScreenLockChecked;
-		this.smartAssist.setAutoLockStatus(this.intelligentSecurity.isAutoScreenLockChecked)
+		this.intelligentSecurity.zeroTouchLockFlag = !this.intelligentSecurity.zeroTouchLockFlag;
+		this.smartAssist.setAutoLockStatus(this.intelligentSecurity.zeroTouchLockFlag)
 			.then((isSuccess: boolean) => {
 
 			});
 	}
 
-	private setIntelligentSecurityProperties() {
-		// service call to fetch Intelligent Security Properties
-		this.intelligentSecurity = new IntelligentSecurity(true, 10, true, true, 'fast');
+	public onzeroTouchLoginStatusToggle($event) {
+		this.intelligentSecurity.zeroTouchLoginFlag = !this.intelligentSecurity.zeroTouchLoginFlag;
 	}
 
-	public onAutoScreenLockStatusToggle(event) {
+	public onChangezeroTouchLockFlag($event) {
+		this.intelligentSecurity.zeroTouchLockFlag = !this.intelligentSecurity.zeroTouchLockFlag;
+	}
+	public setintelligentSecurity() {
+		// service call to fetch Intelligent Security Properties
+		this.intelligentSecurity = new IntelligentSecurity(true, 10, true, true, 1);
+		this.autoScreenLockStatus[this.intelligentSecurity.autoScreenLockTimer] = true;
+	}
+	public onAutoScreenLockStatusToggle(event, value) {
 		this.intelligentSecurity.autoScreenLockTimer = event.value;
+		this.intelligentSecurity.zeroTouchLoginFlag = false;
+		this.intelligentSecurity.zeroTouchLockFlag = false;
 		this.smartAssist.setSelectedLockTimer(event.value.toString())
 			.then((isSuccess: boolean) => {
 

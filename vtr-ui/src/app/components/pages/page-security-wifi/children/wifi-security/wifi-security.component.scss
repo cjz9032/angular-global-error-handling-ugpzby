@@ -441,6 +441,9 @@
 
 	}
 	.sm-device-responsive{
+		vtr-ui-switch-onoff {
+			display: inline-block;
+		}
 		@media #{$mediaquery_12} {
 			position: relative;
 			top: -3rem;

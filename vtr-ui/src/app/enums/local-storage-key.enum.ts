@@ -35,5 +35,7 @@ export enum LocalStorageKey {
 	LidStarterAccount = '[LocalStorageKey] LidStarterAccount',
 	LidFirstSignInDate = '[LocalStorageKey] LidFirstSignInDate',
 	LidHasCreateStarterAccount = '[LocalStorageKey] LidHasCreateStarterAccount',
-	IsHPDSupported = '[LocalStorageKey] IsHPDSupported'
+	IsHPDSupported = '[LocalStorageKey] IsHPDSupported',
+	CpuOCStatus = '[LocalStorageKey] CpuOCStatus',
+	RamOcStatus = '[LocalStorageKey] RamOcStatus'
 }

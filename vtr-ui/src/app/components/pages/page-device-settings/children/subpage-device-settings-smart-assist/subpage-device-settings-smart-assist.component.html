@@ -17,16 +17,13 @@
 				[allowCollapse]="true"
 				[theme]="'white'"
 				(toggle)="onCardCollapse($event)">
-				<ul class="list-group list-group-flush">
-					<li class="pt-3"
-						*ngIf="isThinkPad">
+				<!-- <ul class="list-group list-group-flush">
+					<li class="pt-3" *ngIf="isThinkpad">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.smartAssist.intelligentSecurity.HumanPresenceDetection.title' | translate"
 							componentName="Human presence detection"
 							[isSwitchVisible]="true"
 							[leftIcon]="['fal', 'gem']"
-							[rightIcon]="['far', 'question-circle']"
-							[tooltipText]="'device.deviceSettings.smartAssist.intelligentSecurity.HumanPresenceDetection.tooltip' | translate"
 							[showChildContent]="true"
 							[isSwitchChecked]="intelligentSecurity.humanPresenceDetectionFlag"
 							(toggleOnOff)="onHumanPresenceDetectStatusToggle($event)"
@@ -34,36 +31,34 @@
 						</vtr-ui-row-switch>
 					</li>
 					<li class="pt-3"
-						[ngClass]="{'ml-4':'isThinkPad', 'disabled-overlay': !intelligentSecurity.humanPresenceDetectionFlag }">
+						[ngClass]="{'ml-4':'isThinkpad', 'disabled-overlay': !intelligentSecurity.humanPresenceDetectionFlag }">
 						<vtr-ui-row-switch
-							[title]="'device.deviceSettings.smartAssist.intelligentSecurity.autoIrCameraLogin.title' | translate"
+							[title]="'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLogin.title' | translate"
 							[isSwitchVisible]="true"
 							[leftIcon]="['fal', 'gem']"
-							[rightIcon]="['far', 'question-circle']"
-							[tooltipText]="'device.deviceSettings.smartAssist.intelligentSecurity.HumanPresenceDetection.tooltip' | translate"
 							[showChildContent]="true"
-							[isSwitchChecked]="intelligentSecurity.autoIRLoginFlag"
-							(toggleOnOff)="onAutoIRCameraLoginStatusToggle($event)"
+							[isSwitchChecked]="intelligentSecurity.zeroTouchLoginFlag"
+							(toggleOnOff)="onzeroTouchLoginStatusToggle($event)"
 							[theme]="'white'"
 							[disabled]="!intelligentSecurity.humanPresenceDetectionFlag">
 							<div class="caption">
-								<p>{{ 'device.deviceSettings.smartAssist.intelligentSecurity.autoIrCameraLogin.caption' | translate }}
-									<a
-										href="javascript:void();">{{ 'device.deviceSettings.smartAssist.intelligentSecurity.readMore' | translate}}</a>
+								<p>{{ 'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLogin.caption' | translate }}
+									<a href="#">
+										{{ 'device.deviceSettings.smartAssist.intelligentSecurity.readMore' | translate}}</a>
 								</p>
 							</div>
 
 						</vtr-ui-row-switch>
 					</li>
 					<li class="pt-3 pl-5"
-						[ngClass]="{'ml-4':'isThinkPad', 'disabled-overlay': !intelligentSecurity.humanPresenceDetectionFlag }">
+						[ngClass]="{'ml-4':'isThinkpad', 'disabled-overlay': !intelligentSecurity.humanPresenceDetectionFlag }">
 						<vtr-ui-row-switch [title]="distanceSensitivityTitle | translate"
 							[isSwitchVisible]="false"
 							[leftIcon]="['fal', 'gem']"
 							[showChildContent]="true"
 							[readMoreText]="''"
 							[theme]="'white'"
-							[disabled]="!intelligentSecurity.autoIRLoginFlag">
+							[disabled]="!intelligentSecurity.zeroTouchLoginFlag">
 							<div class="caption">
 								<p>{{ 'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate }}
 								</p>
@@ -74,38 +69,45 @@
 								[maxValueLegend]="'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
 								[maxValue]="100"
 								(change)="setHumanDistance($event)"
-								[enableSlider]="!intelligentSecurity.autoIRLoginFlag"
+								[enableSlider]="!intelligentSecurity.zeroTouchLoginFlag"
 								[value]="intelligentSecurity.humanDistance">
 							</vtr-ui-range-slider>
 							<div class="pt-3">
 								<div class="feature-note p-4">
-									<p>{{'device.deviceSettings.smartAssist.intelligentSecurity.note.description1' | translate}}
-										<a href="javascript:void()"
-											(click)="launchFaceEnrollment()">{{'device.deviceSettings.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}</a>
-									</p>
+									<div class="row">
+										<div class="col-auto">
+											<fa-icon [icon]="['fal', 'exclamation-circle']"></fa-icon>
+										</div>
+										<div class="col">
+											<p>{{'device.deviceSettings.smartAssist.intelligentSecurity.note.description1' | translate}}
+												<a
+													href="ms-settings:signinoptions-launchfaceenrollment">{{'device.deviceSettings.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}</a>
+											</p>
+										</div>
+									</div>
 								</div>
 							</div>
 						</vtr-ui-row-switch>
 					</li>
+				</ul> -->
+				<ul class="list-group list-group-flush">
 					<li class="pt-3 auto-screen-block"
-						[ngClass]="{'ml-4':'isThinkPad', 'disabled-overlay': !intelligentSecurity.humanPresenceDetectionFlag }">
+						[ngClass]="{'ml-4':'isThinkpad', 'disabled-overlay': !intelligentSecurity.humanPresenceDetectionFlag }">
 						<vtr-ui-row-switch
-							[title]="'device.deviceSettings.smartAssist.intelligentSecurity.autoScreenLock.title' | translate"
-							[caption]=" 'device.deviceSettings.smartAssist.intelligentSecurity.autoScreenLock.caption' | translate"
+							[title]="'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.title' | translate"
+							[caption]=" 'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.caption' | translate"
 							[isSwitchVisible]="true"
 							[leftIcon]="['fal', 'gem']"
-							[rightIcon]="['far', 'question-circle']"
-							[tooltipText]="'device.deviceSettings.smartAssist.intelligentSecurity.HumanPresenceDetection.tooltip' | translate"
 							[readMoreText]="''"
 							[showChildContent]="true"
-							[isSwitchChecked]="intelligentSecurity.isAutoScreenLockChecked"
-							(toggleOnOff)="onChangeAutoScreenLockFlag($event)"
+							[isSwitchChecked]="intelligentSecurity.zeroTouchLockFlag"
+							(toggleOnOff)="onChangezeroTouchLockFlag($event)"
 							[theme]="'white'"
 							[disabled]="!intelligentSecurity.humanPresenceDetectionFlag">
 							<div class="row blur"
-								[class.disabled]="!intelligentSecurity.isAutoScreenLockChecked">
+								[class.disabled]="!intelligentSecurity.zeroTouchLockFlag">
 								<div class="col-12 py-4 pr-0 d-flex justify-content-between auto-screen-lock-timer">
-									<h3>{{ 'device.deviceSettings.smartAssist.intelligentSecurity.autoScreenLock.autoScreenLockTimer.title' | translate}}
+									<h3>{{ 'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.title' | translate}}
 									</h3>
 									<a href="javascript:void();"
 										class="d-flex no-pointer">
@@ -121,27 +123,27 @@
 								<div class="row no-gutters pl-4 ">
 									<vtr-ui-rounded-rectangle-radio [radioId]="'radio1'"
 										[group]="'radio'"
-										[label]="'device.deviceSettings.smartAssist.intelligentSecurity.autoScreenLock.autoScreenLockTimer.radioButton.fast' | translate"
-										[value]="1"
-										[checked]="true"
-										(change)="onAutoScreenLockStatusToggle($event)"
-										[disabled]="!intelligentSecurity.autoScreenLockFlag">
+										[label]="'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast' | translate"
+										[value]="'fast'"
+										[checked]="autoScreenLockStatus[0]"
+										(change)="onAutoScreenLockStatusToggle($event,0)"
+										[disabled]="!intelligentSecurity.zeroTouchLockFlag">
 									</vtr-ui-rounded-rectangle-radio>
 									<vtr-ui-rounded-rectangle-radio [radioId]="'radio2'"
 										[group]="'radio'"
-										[label]="'device.deviceSettings.smartAssist.intelligentSecurity.autoScreenLock.autoScreenLockTimer.radioButton.medium' | translate"
-										[value]="2"
-										[checked]="''"
-										(change)="onAutoScreenLockStatusToggle($event)"
-										[disabled]="!intelligentSecurity.autoScreenLockFlag">
+										[label]="'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium' | translate"
+										[value]="'medium'"
+										[checked]="autoScreenLockStatus[1]"
+										(change)="onAutoScreenLockStatusToggle($event,1)"
+										[disabled]="!intelligentSecurity.zeroTouchLockFlag">
 									</vtr-ui-rounded-rectangle-radio>
 									<vtr-ui-rounded-rectangle-radio [radioId]="'radio3'"
 										[group]="'radio'"
-										[label]="'device.deviceSettings.smartAssist.intelligentSecurity.autoScreenLock.autoScreenLockTimer.radioButton.slow' | translate"
-										[value]="3"
-										[checked]="''"
-										(change)="onAutoScreenLockStatusToggle($event)"
-										[disabled]="!intelligentSecurity.autoScreenLockFlag">
+										[label]="'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow' | translate"
+										[value]="'slow'"
+										[checked]="autoScreenLockStatus[2]"
+										(change)="onAutoScreenLockStatusToggle($event,2)"
+										[disabled]="!intelligentSecurity.zeroTouchLockFlag">
 									</vtr-ui-rounded-rectangle-radio>
 								</div>
 								<div class="feature-note screen-lock-note p-4 ml-4 mt-2 mb-2 mr-2">

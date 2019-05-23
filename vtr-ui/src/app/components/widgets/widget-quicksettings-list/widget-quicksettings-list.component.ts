@@ -74,7 +74,7 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			tooltipText: '',
 			type: 'auto-updates'
 		}
-		
+
 	];
 
 	public listingopt = [

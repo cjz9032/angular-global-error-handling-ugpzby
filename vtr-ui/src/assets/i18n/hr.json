@@ -9,7 +9,8 @@
                 "sub4": "Jačina lozinke",
                 "sub5": "Zaštita na internetu",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Savjetnik za sigurnost tvrtke",
@@ -25,6 +26,7 @@
             "installed": "INSTALIRAN",
             "notInstalled": "NIJE INSTALIRAN",
             "loading": "Učitavanje",
+            "installing": "INSTALACIJA",
             "notFound": "NIJE PRONAĐEN",
             "registered": "REGISTRIRAN",
             "notRegistered": "NIJE REGISTRIRAN"
@@ -32,14 +34,23 @@
         "ui": {
             "back": "NATRAG",
             "on": "ON",
-			"off": "OFF",
-			"collapse": "Collapse",
-			"expand": "Expand",
-			"loader": {
-				"text1": "Fetching",
-				"text2": "Status"
-			}
-		}
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -121,8 +132,7 @@
                 "poweredBy": "Pokreće McAfee",
                 "privacyTerms": "Pročitajte više o <tag>Pravilniku o zaštiti privatnosti</tag> i <tag>Uvjetima pružanja usluge</tag>",
                 "mcafeePremium": "Vrhunska zaštita McAfee",
-                "protectedBy": "Trenutačno vas štiti ",
-                "betterProtected": ".Međutim, bolju vam zaštitu može pružiti McAfee LiveSafe",
+                "protectedBy": "Trenutno vas štiti {{protectedName}}. Međutim, McAfee LiveSafe bi vam mogao pružiti bolju zaštitu.",
                 "virusScan": "TRAŽENJE VIRUSA",
                 "firewall": "VATROZID",
                 "disabled": "ONEMOGUĆENO",
@@ -186,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "Upotrijebite alat za lociranje prijetnji da biste utvrdili sigurnost mreža koje su vam dostupne.",
-                "button": "Provjeri prijetnju"
+                "button": "Provjeri prijetnju",
+                "connectionError": "Pogreška prilikom povezivanja",
+                "tryAgain": "Nismo u mogućnosti locirati uređaj uslijed nedostupnosti mreže, povežite se na Internet i pokušajte iznova."
             },
             "locationmodal": {
                 "title": "Omogući lokacijske usluge",
@@ -260,7 +272,7 @@
             "howToUseSufEasy": "Kako upotrebljavati SurfEasy VPN",
             "whatCanSufEasy2": "Zaštitite svoju privatnost i uključite SurfEasy VPN tijekom pristupa javnoj Wi-Fi pristupnoj točki. S planom Lenovo Starter VPN možete ispuniti nagradne aktivnosti da biste zaradili više propusnosti za zaštitu podataka. Nadogradite da biste zaštitili do 5 pametnih telefona, tableta i računala s neograničenom propusnosti.",
             "getStarted": "Uključite SurfEasy VPN:",
-            "getStarted1": "Kliknite iznad na gumb \"Open SurfEasy\" da biste pokrenuli SurfEasy VPN.",
+            "getStarted1": "Kliknite iznad na gumb \"Otvori SurfEasy\" da biste pokrenuli SurfEasy VPN.",
             "getStarted2": "Uključite VPN i pričekajte trenutak na potvrdu sigurne veze.",
             "getStarted3": "Promijenite regiju ili lokaciju ako želite i uživajte u sigurnoj, privatnoj mreži.",
             "poweredBySurfEasy": "Pokreće SurfEasy",

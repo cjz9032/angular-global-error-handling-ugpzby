@@ -30,26 +30,24 @@ export class WifiSecurityWidgetItem extends WidgetItem {
 			if (status) {
 				commonService.setLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState, status);
 			}
-		}).on(EventTypes.geolocatorPermissionEvent, (status) => {
-			this.updateStatus(wifiSecurity.state, status);
 		}).on(EventTypes.wsIsLocationServiceOnEvent, (status) => {
 			this.updateStatus(wifiSecurity.state, status);
-        });
+		});
 	}
 
 	updateStatus(status: string, location: boolean) {
-        this.ngZone.run(() => {
-            if (!status) { return; }
-            if (location) {
-                this.status = status === 'enabled' ? 0 : 1;
-                this.detail = status;
-            } else {
-                this.status = 1;
-                this.detail = 'disabled';
-            }
-    
-            this.translateStatus(this.detail);
-        });
+		this.ngZone.run(() => {
+			if (!status) { return; }
+			if (location) {
+				this.status = status === 'enabled' ? 0 : 1;
+				this.detail = status;
+			} else {
+				this.status = 1;
+				this.detail = 'disabled';
+			}
+
+			this.translateStatus(this.detail);
+		});
 	}
 
 	translateStatus(status: string) {

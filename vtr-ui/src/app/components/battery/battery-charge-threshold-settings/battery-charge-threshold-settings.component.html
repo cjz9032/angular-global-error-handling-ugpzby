@@ -3,7 +3,7 @@
 		<!--start of display title in row-->
 		<div class="row"
 		 *ngIf="title && !displayNoteOnly">
-			<div class="col px-20">
+			<div class="col px-20 pb-4">
 				<div class="threshold-for-built-in-battery">
 					{{ title }}
 				</div>
@@ -18,7 +18,7 @@
 				<div class="inputSection">
 					<div class="row">
 						<!--start of left dropdown box for action in row-->
-						<div class="col px-20">
+						<div class="col-sm-12 col-md-6 col-lg-6 px-20 pb-4">
 							<div class="btn-group btn-block dropdown-left"
 							 ngbDropdown
 							 [ngClass]="['disabled',isCheckedAuto === true ?'disabled':'']" placement="bottom-right">
@@ -26,17 +26,17 @@
 								 ngbDropdownToggle
 								 [disabled]="isCheckedAuto?true:false"
 								 type="button">
-									<div class="row justify-content-center align-items-center text-left">
-										<div class="col">
+									<div class="row d-flex justify-content-between">
+										<div class="col-auto pl-1 pr-1">
 											<div class="select-title">
 												Start charging when below
 											</div>
 
-											<div class="select-text">
+											<div class="select-text text-left">
 												{{selectedStartAtCharge}}%
 											</div>
 										</div>
-										<div class="col-auto">
+										<div class="col-auto pl-0 pr-1">
 											<div class="dropdown-icon">
 												<fa-icon [icon]="['fas', 'chevron-down']"></fa-icon>
 											</div>
@@ -55,22 +55,22 @@
 						<!--end of left dropdown box for action in row-->
 
 						<!--start of right dropdown box for action in row-->
-						<div class="col px-20">
+						<div class="col-sm-12 col-md-6 col-lg-6 px-20 pb-4">
 							<div class="btn-group btn-block dropdown-right"
 							 ngbDropdown placement="bottom-right">
 								<button [ngClass]="['btn','btn-outline-shadow']"
 								 ngbDropdownToggle
 								 type="button">
-									<div class="row justify-content-center align-items-center text-left">
-										<div class="col">
+									<div class="row d-flex justify-content-between">
+										<div class="col-auto pl-1 pr-1">
 											<div class="select-title">
 												Stop charging at
 											</div>
-											<div class="select-text">
+											<div class="select-text text-left">
 												{{selectedStopAtCharge}}%
 											</div>
 										</div>
-										<div class="col-auto">
+										<div class="col-auto pl-0 pr-1">
 											<div class="dropdown-icon">
 												<fa-icon [icon]="['fas', 'chevron-down']"></fa-icon>
 											</div>

@@ -9,7 +9,8 @@
                 "sub4": "Passordtilstand",
                 "sub5": "Internettbeskyttelse",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Sikkerhetsrådgivning",
@@ -25,6 +26,7 @@
             "installed": "INSTALLERT",
             "notInstalled": "IKKE INSTALLERT",
             "loading": "Laster",
+            "installing": "INSTALLERING",
             "notFound": "IKKE FUNNET",
             "registered": "REGISTRERT",
             "notRegistered": "IKKE REGISTRERT"
@@ -32,14 +34,23 @@
         "ui": {
             "back": "TILBAKE",
             "on": "ON",
-			"off": "OFF",
-			"collapse": "Collapse",
-			"expand": "Expand",
-			"loader": {
-				"text1": "Fetching",
-				"text2": "Status"
-			}
-		}
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -121,8 +132,7 @@
                 "poweredBy": "Leveres av McAfee",
                 "privacyTerms": "Les mer i <tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>",
                 "mcafeePremium": "McAfee Premium-beskyttelse",
-                "protectedBy": "Du er for øyeblikket beskyttet av ",
-                "betterProtected": ".Du kunne imidlertid vært bedre beskyttet med McAfee LiveSafe",
+                "protectedBy": "Du er for øyeblikket beskyttet av {{protectedName}}. Du kunne imidlertid vært bedre beskyttet med McAfee LiveSafe.",
                 "virusScan": "VIRUSSØK",
                 "firewall": "BRANNMUR",
                 "disabled": "DEAKTIVERT",
@@ -186,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "Bruk trusseldetektoren til å finne ut hvor sikre nettverkene rundt deg er.",
-                "button": "Kontroller trussel"
+                "button": "Kontroller trussel",
+                "connectionError": "Tilkoblingsfeil",
+                "tryAgain": "Vi finner ikke enheten din på grunn av manglende nettverkstilgang. Koble til Internett, og prøv på nytt."
             },
             "locationmodal": {
                 "title": "Aktiver posisjonstjenester",
@@ -260,7 +272,7 @@
             "howToUseSufEasy": "Slik bruker du SurfEasy VPN",
             "whatCanSufEasy2": "Beskytt privatlivet ditt og aktiver SurfEasy VPN når du kobler til et felles Wi-Fi-tilknytningspunkt. Med et Lenovo Starter VPN-abonnement kan du utføre belønningsaktiviteter for å få mer databåndbreddebeskyttelse. Oppgrader for å beskytte opptil 5 smarttelefoner, nettbrett og maskiner med ubegrenset båndbredde.",
             "getStarted": "Slå på SurfEasy VPN:",
-            "getStarted1": "Klikk på \"Åpne SurfEasy\"-knappen ovenfor for å starte SurfEasy VPN.",
+            "getStarted1": "Klikk på knappen \"Åpne SurfEasy\" ovenfor for å starte SurfEasy VPN.",
             "getStarted2": "Slå på VPN og vent et lite øyeblikk på bekreftelse av en sikker tilkobling.",
             "getStarted3": "Endre region eller plassering hvis du ønsker, og få sikkert og privat nettverk.",
             "poweredBySurfEasy": "Leveres av SurfEasy",

@@ -9,7 +9,8 @@
                 "sub4": "Jelszó állapota",
                 "sub5": "Védelem az interneten",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Bizt. Tanácsadó",
@@ -25,6 +26,7 @@
             "installed": "TELEPÍTVE",
             "notInstalled": "NINCS TELEPÍTVE",
             "loading": "Betöltés",
+            "installing": "TELEPÍTÉS",
             "notFound": "NEM TALÁLHATÓ",
             "registered": "REGISZTRÁLT",
             "notRegistered": "NEM REGISZTRÁLT"
@@ -32,14 +34,23 @@
         "ui": {
             "back": "VISSZA",
             "on": "ON",
-			"off": "OFF",
-			"collapse": "Collapse",
-			"expand": "Expand",
-			"loader": {
-				"text1": "Fetching",
-				"text2": "Status"
-			}
-		}
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -121,8 +132,7 @@
                 "poweredBy": "A McAfee technológiája",
                 "privacyTerms": "További információ az <tag>Adatvédelmi irányelvben</tag> és a <tag>Használati feltételek</tag> között található",
                 "mcafeePremium": "Prémium verziójú védelmi szolgáltatása a McAfee-től",
-                "protectedBy": "Jelenleg a következő rendszer biztosítja a védelmét: ",
-                "betterProtected": ".A McAfee LiveSafe azonban hatékonyabb védelmet nyújthat",
+                "protectedBy": "Önt jelenleg a(z) {{protectedName}} védi. A McAfee LiveSafe azonban hatékonyabb védelmet nyújthat.",
                 "virusScan": "VÍRUSKERESÉS",
                 "firewall": "TŰZFAL",
                 "disabled": "LETILTOTT",
@@ -186,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "A veszélyészlelővel megállapíthatja, mennyire biztonságosak a közeli hálózatok.",
-                "button": "Veszélyforrások ellenőrzése"
+                "button": "Veszélyforrások ellenőrzése",
+                "connectionError": "Kapcsolódási hiba",
+                "tryAgain": "A hálózat nem érhető el, ezért nem tudjuk megkeresni az eszközét. Csatlakozzon az internethez, és próbálkozzon újra!"
             },
             "locationmodal": {
                 "title": "Helyszolgáltatások engedélyezése",
