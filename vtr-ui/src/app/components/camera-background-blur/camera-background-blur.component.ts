@@ -8,14 +8,14 @@ import { CameraBlur } from 'src/app/data-models/camera/camera-blur-model';
 })
 export class CameraBackgroundBlurComponent implements OnInit {
 	@Input() option = new CameraBlur();
-	@Output() change = new EventEmitter<string>();
+	@Output() onOptionChanged = new EventEmitter<boolean>();
 
 	constructor() { }
 
 	ngOnInit() {
 	}
 
-	public onChange(mode: string) {
-		this.change.emit(mode);
+	public onChange(event: any) {
+		this.onOptionChanged.emit(event.target.value);
 	}
 }

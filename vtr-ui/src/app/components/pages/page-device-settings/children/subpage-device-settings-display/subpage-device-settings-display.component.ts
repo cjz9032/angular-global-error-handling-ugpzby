@@ -40,7 +40,6 @@ export class SubpageDeviceSettingsDisplayComponent
 	private notificationSubscription: Subscription;
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	public shouldCameraSectionDisabled = true;
-	public isCameraBlurEnabled = false;
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	headerMenuItems = [
@@ -590,7 +589,8 @@ export class SubpageDeviceSettingsDisplayComponent
 
 	public onCameraBackgroundBlur($event: any) {
 		try {
-			this.isCameraBlurEnabled = $event.switchValue;
+			this.cameraBlur.enabled = $event.switchValue
+			this.onCameraBackgroundOptionChange(true, "");
 		} catch (error) {
 			console.error(error.message);
 		}
@@ -600,6 +600,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		if (this.cameraFeedService.isShellAvailable) {
 			this.cameraFeedService.getCameraBlurSettings()
 				.then((response: CameraBlur) => {
+					this.cameraBlur = response
 					console.log('initCameraBlurMethods', response);
 				}).catch(error => {
 					console.log('initCameraBlurMethods', error);
@@ -607,9 +608,12 @@ export class SubpageDeviceSettingsDisplayComponent
 		}
 	}
 
-	public onCameraBackgroundOptionChange(mode: string) {
+	public onCameraBackgroundOptionChange(isEnabling: boolean, mode: string) {
+		if(mode != "") {
+			this.cameraBlur.currentMode = mode;
+		}
 		if (this.cameraFeedService.isShellAvailable) {
-			this.cameraFeedService.setCameraBlurSettings(this.isCameraBlurEnabled, mode)
+			this.cameraFeedService.setCameraBlurSettings(isEnabling, mode)
 				.then((response) => {
 					console.log('onCameraBackgroundOptionChange', response);
 				}).catch(error => {
