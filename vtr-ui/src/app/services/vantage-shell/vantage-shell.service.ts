@@ -395,8 +395,8 @@ export class VantageShellService {
 		if (this.phoenix) {
 			// TODO Un comment below line when JSBridge is ready for integration.
 			// return this.phoenix.gaming.gamingThermal.setThermalModeStatus(ThermalModeStatusObj.thermalModeStatus);
-			return true;
+			return false;
 		}
-		return true;
+		return false;
 	}
 }

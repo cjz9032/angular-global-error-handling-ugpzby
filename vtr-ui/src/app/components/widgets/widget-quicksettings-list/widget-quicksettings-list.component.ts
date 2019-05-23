@@ -1,8 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GamingQuickSettingsService } from 'src/app/services/gaming/gaming-quick-settings/gaming-quick-settings.service';
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
-import { DeviceService } from 'src/app/services/device/device.service';
-
 @Component({
 	selector: 'vtr-widget-quicksettings-list',
 	templateUrl: './widget-quicksettings-list.component.html',
@@ -13,7 +11,74 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 	@Input() title = '';
 
 
-	public quickSettings = [];
+	public quickSettings = [
+		{
+			readMoreText: '',
+			rightImageSource: '',
+			leftImageSource: '',
+			header: 'gaming.dashboard.device.quickSettings.title',
+			name: 'gaming.dashboard.device.quickSettings.title',
+			subHeader: '',
+			isVisible: true,
+			isCollapsible: true,
+			isCheckBoxVisible: false,
+			isSwitchVisible: false,
+			isChecked: false,
+			tooltipText: '',
+			type: 'auto-updates'
+		},
+		{
+			readMoreText: '',
+			rightImageSource: '',
+			leftImageSource: '',
+			header: 'gaming.dashboard.device.quickSettings.rapidCharge',
+			name: 'gaming.dashboard.device.quickSettings.rapidCharge',
+			subHeader: '',
+			isCustomizable: false,
+			setLink: '',
+			isVisible: true,
+			isCollapsible: false,
+			isCheckBoxVisible: true,
+			isSwitchVisible: true,
+			isChecked: true,
+			tooltipText: '',
+			type: 'auto-updates'
+		},
+		{
+			readMoreText: '',
+			rightImageSource: '',
+			leftImageSource: '',
+			header: 'gaming.dashboard.device.quickSettings.wifiSecurity',
+			name: 'gaming.dashboard.device.quickSettings.wifiSecurity',
+			subHeader: '',
+			isCustomizable: true,
+			routerLink: '/security/wifi-security',
+			isVisible: true,
+			isCollapsible: false,
+			isCheckBoxVisible: true,
+			isSwitchVisible: true,
+			isChecked: true,
+			tooltipText: '',
+			type: 'auto-updates'
+		},
+		{
+			readMoreText: '',
+			rightImageSource: '',
+			leftImageSource: '',
+			header: 'gaming.dashboard.device.quickSettings.dolby',
+			name: 'gaming.dashboard.device.quickSettings.dolby',
+			subHeader: '',
+			isCustomizable: true,
+			routerLink: '/device/device-settings/audio',
+			isVisible: true,
+			isCollapsible: false,
+			isCheckBoxVisible: true,
+			isSwitchVisible: true,
+			isChecked: true,
+			tooltipText: '',
+			type: 'auto-updates'
+		}
+	];
 
 	public listingopt = [
 		{
@@ -39,132 +104,50 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 		}
 	];
 	public thermalModeStatusObj: ThermalModeStatus;
+	public gamingSettings: any = {
+		cpuInfoFeature: true,
+		gpuInfoFeature: true,
+		memoryInfoFeature: true,
+		hddInfoFeature: true,
+		winKeyLockFeature: true,
+		rapidChargeFeature: true,
+		dolbySoundFeature: true,
+		touchpadLockFeature: true,
+		networkBoostFeature: true,
+		cpuOCFeature: true,
+		ledSetFeature: true,
+		memOCFeature: true,
+		macroKeyFeature: true,
+		hybridModeFeature: true,
+		optimizationFeature: true,
+		smartFanFeature: true,
+		xtuService: true,
+		fbnetFilter: true,
+		ledDriver: true
+	};
 
 	constructor(
-		private gamingQuickSettingsService: GamingQuickSettingsService,
-		private deviceService: DeviceService
-	) {
-		if (this.deviceService.isSmartFanFeature) {
-			this.quickSettings = [
-				{
-					readMoreText: '',
-					rightImageSource: '',
-					leftImageSource: '',
-					header: 'gaming.dashboard.device.quickSettings.title',
-					name: 'gaming.dashboard.device.quickSettings.title',
-					subHeader: '',
-					isCollapsible: true,
-					isCheckBoxVisible: false,
-					isSwitchVisible: false,
-					isChecked: false,
-					tooltipText: '',
-					type: 'auto-updates'
-				},
-				{
-					readMoreText: '',
-					rightImageSource: '',
-					leftImageSource: '',
-					header: 'gaming.dashboard.device.quickSettings.rapidCharge',
-					name: 'gaming.dashboard.device.quickSettings.rapidCharge',
-					subHeader: '',
-					isCustomizable: false,
-					setLink: '',
-					isCollapsible: false,
-					isCheckBoxVisible: true,
-					isSwitchVisible: true,
-					isChecked: true,
-					tooltipText: '',
-					type: 'auto-updates'
-				},
-				{
-					readMoreText: '',
-					rightImageSource: '',
-					leftImageSource: '',
-					header: 'gaming.dashboard.device.quickSettings.wifiSecurity',
-					name: 'gaming.dashboard.device.quickSettings.wifiSecurity',
-					subHeader: '',
-					isCustomizable: true,
-					routerLink: '/security/wifi-security',
-					isCollapsible: false,
-					isCheckBoxVisible: true,
-					isSwitchVisible: true,
-					isChecked: true,
-					tooltipText: '',
-					type: 'auto-updates'
-				},
-				{
-					readMoreText: '',
-					rightImageSource: '',
-					leftImageSource: '',
-					header: 'gaming.dashboard.device.quickSettings.dolby',
-					name: 'gaming.dashboard.device.quickSettings.dolby',
-					subHeader: '',
-					isCustomizable: true,
-					routerLink: '/device/device-settings/audio',
-					isCollapsible: false,
-					isCheckBoxVisible: true,
-					isSwitchVisible: true,
-					isChecked: true,
-					tooltipText: '',
-					type: 'auto-updates'
-				}
-			];
-		} else {
-			this.quickSettings = [
-				{
-					readMoreText: '',
-					rightImageSource: '',
-					leftImageSource: '',
-					header: 'gaming.dashboard.device.quickSettings.rapidCharge',
-					name: 'gaming.dashboard.device.quickSettings.rapidCharge',
-					subHeader: '',
-					isCustomizable: false,
-					setLink: '',
-					isCollapsible: false,
-					isCheckBoxVisible: true,
-					isSwitchVisible: true,
-					isChecked: true,
-					tooltipText: '',
-					type: 'auto-updates'
-				},
-				{
-					readMoreText: '',
-					rightImageSource: '',
-					leftImageSource: '',
-					header: 'gaming.dashboard.device.quickSettings.wifiSecurity',
-					name: 'gaming.dashboard.device.quickSettings.wifiSecurity',
-					subHeader: '',
-					isCustomizable: true,
-					routerLink: '/security/wifi-security',
-					isCollapsible: false,
-					isCheckBoxVisible: true,
-					isSwitchVisible: true,
-					isChecked: true,
-					tooltipText: '',
-					type: 'auto-updates'
-				},
-				{
-					readMoreText: '',
-					rightImageSource: '',
-					leftImageSource: '',
-					header: 'gaming.dashboard.device.quickSettings.dolby',
-					name: 'gaming.dashboard.device.quickSettings.dolby',
-					subHeader: '',
-					isCustomizable: true,
-					routerLink: '/device/device-settings/audio',
-					isCollapsible: false,
-					isCheckBoxVisible: true,
-					isSwitchVisible: true,
-					isChecked: true,
-					tooltipText: '',
-					type: 'auto-updates'
-				}
-			];
-		}
-	}
+		private gamingQuickSettingsService: GamingQuickSettingsService
+	) { }
 
 	ngOnInit() {
-		if (this.deviceService.isSmartFanFeature) {
+		if (!this.gamingSettings.smartFanFeature) {
+			this.quickSettings[0].isVisible = false;
+		}
+
+		if (!this.gamingSettings.rapidChargeFeature) {
+			this.quickSettings[1].isVisible = false;
+		}
+
+		if (!this.gamingSettings.winKeyLockFeature) {
+			this.quickSettings[2].isVisible = false;
+		}
+
+		if (!this.gamingSettings.dolbySoundFeature) {
+			this.quickSettings[3].isVisible = false;
+		}
+
+		if (this.gamingSettings.smartFanFeature) {
 			this.thermalModeStatusObj = this.gamingQuickSettingsService.GetThermalModeStatus();
 			if (this.thermalModeStatusObj !== undefined) {
 				this.listingopt.forEach((option) => {
@@ -180,14 +163,13 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 	}
 
 	onOptionSelected(event) {
-		if (this.deviceService.isSmartFanFeature) {
+		if (this.gamingSettings.smartFanFeature) {
 			if (event.target.name === 'gaming.dashboard.device.quickSettings.title') {
 				if (this.thermalModeStatusObj === undefined) {
 					this.thermalModeStatusObj = new ThermalModeStatus();
 				}
 				this.thermalModeStatusObj.thermalModeStatus = event.option.value;
 				const oldThermalModeStatusObj = this.gamingQuickSettingsService.GetThermalModeStatus();
-				console.log(this.thermalModeStatusObj, oldThermalModeStatusObj);
 				this.gamingQuickSettingsService.setThermalModeStatus(this.thermalModeStatusObj, oldThermalModeStatusObj);
 			}
 		}
