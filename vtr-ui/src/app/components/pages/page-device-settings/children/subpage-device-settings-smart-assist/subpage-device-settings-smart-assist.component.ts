@@ -18,10 +18,13 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	public humanPresenceDetecStatus = new FeatureStatus(false, true);
 	public zeroTouchLoginStatus = new FeatureStatus(false, true);
 	public intelligentSecurity: IntelligentSecurity;
+	public intelligentSecurityCopy: IntelligentSecurity;
 	public autoScreenLockTimer = false;
 	public distanceSensitivityTitle: string;
+	public zeroTouchLockTitle: string;
 	@Output() distanceChange: EventEmitter<ChangeContext> = new EventEmitter();
 	public autoScreenLockStatus: boolean[];
+	public options: any;
 
 	headerMenuItems = [
 		{
@@ -43,7 +46,6 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	];
 
 	constructor(public translate: TranslateService) { }
-
 	ngOnInit() {
 		console.log('subpage-device-setting-display onInit');
 		this.autoScreenLockStatus  = [false, false, false];
@@ -59,9 +61,17 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 
 	public onHumanPresenceDetectStatusToggle($event) {
 		this.intelligentSecurity.humanPresenceDetectionFlag = !this.intelligentSecurity.humanPresenceDetectionFlag;
+		debugger;
 		if (!this.intelligentSecurity.humanPresenceDetectionFlag) {
+			this.intelligentSecurityCopy = {...this.intelligentSecurity};
 			this.intelligentSecurity.zeroTouchLoginFlag = false;
 			this.intelligentSecurity.zeroTouchLockFlag = false;
+			this.intelligentSecurity.distanceSensitivityFlag = false;
+		}
+		else {
+			this.intelligentSecurity.zeroTouchLoginFlag = this.intelligentSecurityCopy.zeroTouchLoginFlag;
+			this.intelligentSecurity.zeroTouchLockFlag = this.intelligentSecurityCopy.zeroTouchLockFlag;
+			this.intelligentSecurity.distanceSensitivityFlag = this.intelligentSecurityCopy.distanceSensitivityFlag;
 		}
 	}
 
@@ -94,5 +104,7 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 		this.isThinkpad = false;
 		this.distanceSensitivityTitle = this.isThinkpad ? 'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title1' :
 					'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title2';
+		this.zeroTouchLockTitle = this.isThinkpad? 'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.title2' :
+					'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.title1';
 	}
 }

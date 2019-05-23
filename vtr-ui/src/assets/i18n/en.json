@@ -566,16 +566,18 @@
 				"intelligentSecurity": {
 					"title": "Intelligent Security",
 					"readMore": "Read more",
-					"HumanPresenceDetection": {
+					"humanPresenceDetection": {
 						"title": "Human Presence Detection",
 						"tooltip": "Click here to reset human presence Detection settings."
 					},
 					"zeroTouchLogin": {
-						"title": "Zero Touch Login",
+						"title1": "Zero Touch Login",
+						"title2": "Auto IR Login",
 						"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
 					},
 					"zeroTouchLock": {
-						"title": "Zero Touch lock",
+						"title1": "Zero Touch Lock",
+						"title2": "Auto Screen Lock",
 						"caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
 						"autoScreenLockTimer": {
 							"title": "AUTO SCREEN LOCK TIMER",
