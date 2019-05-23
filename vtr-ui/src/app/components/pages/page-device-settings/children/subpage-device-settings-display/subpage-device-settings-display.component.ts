@@ -460,7 +460,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				this.displayService.startMonitorForCamera(this.startMonitorHandlerForCamera.bind(this))
 					.then((val) => {
 						console.log('startMonitorForCamera.then', val);
-						
+
 					}).catch(error => {
 						console.error('startMonitorForCamera', error);
 					});
@@ -493,10 +493,10 @@ export class SubpageDeviceSettingsDisplayComponent
 		}
 	}
 	public onContrastChange($event: ChangeContext) {
-		console.log('setCameraContrst', $event);
+		console.log('setCameraContrast', $event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService
-				.setCameraContrst($event.value);
+				.setCameraContrast($event.value);
 		}
 	}
 	public onCameraAutoExposureToggle($event: any) {
