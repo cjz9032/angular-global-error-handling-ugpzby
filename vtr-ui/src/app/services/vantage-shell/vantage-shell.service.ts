@@ -6,7 +6,8 @@ import * as Phoenix from '@lenovo/tan-client-bridge';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
-import { CPUOCStatus } from 'src/app/data-models/system-update/cpu-overclock-status.model';
+import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
+import { RamOCSatus } from 'src/app/data-models/gaming/gaming-legion-edge.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -384,6 +385,26 @@ export class VantageShellService {
 			// return this.phoenix.gaming.gamingOverclock.SetCpuOCStatus(CpuOCStatus.cpuOCStatus);
 			return CpuOCStatus;
 		}
+		return undefined;
+	}
+
+	public setRAMOCStatus(RamOCStatus: RamOCSatus): any {
+		if (this.phoenix) {
+			// TODO Un comment below line when JSBridge is ready for integration.
+			// return this.phoenix.gaming.gamingOverclock.SetCpuOCStatus(CpuOCStatus.cpuOCStatus);
+			return RamOCSatus;
+		}
+
+		return undefined;
+	}
+
+	public getRAMOCStatus(): any {
+		if (this.phoenix) {
+			// TODO Un comment below line when JSBridge is ready for integration.
+			// return this.phoenix.gaming.gamingOverclock.GetCpuOCStatus();
+			return undefined;
+		}
+
 		return undefined;
 	}
 }

@@ -26,6 +26,7 @@
             "installed": "INSTALLERAD",
             "notInstalled": "INTE INSTALLERAD",
             "loading": "Läser in",
+            "installing": "INSTALLERAR",
             "notFound": "HITTADES INTE",
             "registered": "REGISTRERAD",
             "notRegistered": "INTE REGISTRERAD"
@@ -33,19 +34,23 @@
         "ui": {
             "back": "TILLBAKA",
             "on": "ON",
-			"off": "OFF",
-			"collapse": "Collapse",
-			"expand": "Expand",
-			"loader": {
-				"text1": "Fetching",
-				"text2": "Status"
-			}
-		}
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",
         "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Device Security Overview"
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -127,8 +132,7 @@
                 "poweredBy": "Från McAfee",
                 "privacyTerms": "Läs mer i vår <tag>sekretesspolicy</tag> och våra <tag>servicevillkor</tag>",
                 "mcafeePremium": "McAfee premiumskydd",
-                "protectedBy": "Du skyddas för närvarande med ",
-                "betterProtected": ".Men du kan få ett bättre skydd med McAfee LiveSafe",
+                "protectedBy": "Du skyddas för närvarande med {{protectedName}}. Men du kan få ett bättre skydd med McAfee LiveSafe.",
                 "virusScan": "VIRUSKONTROLL",
                 "firewall": "BRANDVÄGG",
                 "disabled": "INAKTIVERAD",
@@ -192,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "Använd hotidentifieraren för att utvärdera säkerheten i nätverken.",
-                "button": "Kontrollera hot"
+                "button": "Kontrollera hot",
+                "connectionError": "Anslutningsfel",
+                "tryAgain": "Det gick inte att hitta enheten på grund av att nätverket inte är tillgängligt. Anslut till internet och försök igen."
             },
             "locationmodal": {
                 "title": "Aktivera platstjänster",
@@ -266,7 +272,7 @@
             "howToUseSufEasy": "Så använder du SurfEasy VPN",
             "whatCanSufEasy2": "Skydda din sekretess och aktivera SurfEasy VPN när du använder en offentlig Wi-Fi-åtkomstpunkt. Med en Lenovo Starter VPN-prenumeration kan du tjäna poäng genom att utföra särskilda aktiviteter och få dataskydd med ännu större bandbredd. Uppgradera för att skydda upp till fem smartphones, pekplattor och datorer med obegränsad bandbredd.",
             "getStarted": "Aktivera SurfEasy VPN:",
-            "getStarted1": "Klicka på Öppna SurfEasy ovan för att öppna SurfEasy VPN.",
+            "getStarted1": "Klicka på ”Öppna SurfEasy” ovan för att öppna SurfEasy VPN.",
             "getStarted2": "Aktivera VPN och vänta tills du ser en bekräftelse på att anslutningen är säker.",
             "getStarted3": "Ändra din region eller plats vid behov och surfa med ett säkert och privat nätverk.",
             "poweredBySurfEasy": "Från SurfEasy",

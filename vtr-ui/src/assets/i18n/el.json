@@ -26,6 +26,7 @@
             "installed": "ΕΓΚΑΤΑΣΤΑΘΗΚΕ",
             "notInstalled": "ΔΕΝ ΕΓΚΑΤΑΣΤΑΘΗΚΕ",
             "loading": "Φόρτωση",
+            "installing": "ΕΓΚΑΤΑΣΤΑΣΗ",
             "notFound": "ΔΕΝ ΒΡΕΘΗΚΕ",
             "registered": "ΔΗΛΩΘΗΚΕ",
             "notRegistered": "ΔΕΝ ΔΗΛΩΘΗΚΕ"
@@ -33,19 +34,23 @@
         "ui": {
             "back": "ΠΙΣΩ",
             "on": "ON",
-			"off": "OFF",
-			"collapse": "Collapse",
-			"expand": "Expand",
-			"loader": {
-				"text1": "Fetching",
-				"text2": "Status"
-			}
-		}
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",
         "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Device Security Overview"
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -127,8 +132,7 @@
                 "poweredBy": "Υποστηρίζεται από την McAfee",
                 "privacyTerms": "Διαβάστε περισσότερα για την <tag>Πολιτική απορρήτου</tag> και τους <tag>Όρους παροχής υπηρεσιών</tag>",
                 "mcafeePremium": "Προστασία ανώτερης αξίας με το McAfee",
-                "protectedBy": "Προς το παρόν, προστατεύεστε με το ",
-                "betterProtected": ".Ωστόσο, θα μπορούσατε να προστατευτείτε καλύτερα με το McAfee LiveSafe",
+                "protectedBy": "Προς το παρόν, προστατεύεστε με το {{protectedName}}. Ωστόσο, θα μπορούσατε να προστατευτείτε καλύτερα με το McAfee LiveSafe.",
                 "virusScan": "ΣΑΡΩΣΗ ΓΙΑ ΙΟΥΣ",
                 "firewall": "ΤΕΙΧΟΣ ΠΡΟΣΤΑΣΙΑΣ",
                 "disabled": "ΑΠΕΝΕΡΓΟΠΟΙΗΘΗΚΕ",
@@ -192,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "Χρησιμοποιήστε τον ανιχνευτή απειλών για να προσδιορίσετε την ασφάλεια των δικτύων γύρω σας.",
-                "button": "Έλεγχος απειλής"
+                "button": "Έλεγχος απειλής",
+                "connectionError": "Σφάλμα σύνδεσης",
+                "tryAgain": "Δεν μπορούμε να εντοπίσουμε τη συσκευή σας λόγω μη διαθέσιμου δικτύου, συνδεθείτε στο Internet και δοκιμάστε ξανά."
             },
             "locationmodal": {
                 "title": "Ενεργοποίηση υπηρεσιών τοποθεσίας",
@@ -266,7 +272,7 @@
             "howToUseSufEasy": "Πώς να χρησιμοποιήσετε το SurfEasy VPN",
             "whatCanSufEasy2": "Προστατεύστε τα προσωπικά δεδομένα σας και ενεργοποιήστε το SurfEasy VPN κατά την πρόσβαση σε ένα δημόσιο hotspot Wi-Fi. Με ένα πρόγραμμα Lenovo Starter VPN, μπορείτε να ολοκληρώσετε ανταποδοτικές δραστηριότητες και να κερδίσετε περισσότερο εύρος ζώνης προστασίας δεδομένων. Πραγματοποιήστε αναβάθμιση για να προστατεύσετε έως 5 smartphone, tablet και υπολογιστές με απεριόριστο εύρος ζώνης.",
             "getStarted": "Ενεργοποιήστε το SurfEasy VPN:",
-            "getStarted1": "Κάντε κλικ στο κουμπί \"Άνοιγμα του SurfEasy\" παραπάνω για να ανοίξει το SurfEasy VPN.",
+            "getStarted1": "Κάντε κλικ στο κουμπί \"Άνοιγμα του SurfEasy\" παραπάνω για να ανοίξετε το SurfEasy VPN.",
             "getStarted2": "Ενεργοποιήστε το VPN και περιμένετε λίγο για να λάβετε την επιβεβαίωση ασφαλούς σύνδεσης.",
             "getStarted3": "Αλλάξτε την περιοχή ή την τοποθεσία σας, αν θέλετε, και απολαύστε ασφαλή, ιδιωτική δικτύωση.",
             "poweredBySurfEasy": "Υποστηρίζεται από το SurfEasy",

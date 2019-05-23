@@ -26,6 +26,7 @@
             "installed": "מותקן",
             "notInstalled": "לא מותקן",
             "loading": "טוען",
+            "installing": "מתקין",
             "notFound": "לא נמצא",
             "registered": "רשום",
             "notRegistered": "לא רשום"
@@ -33,19 +34,23 @@
         "ui": {
             "back": "חזרה",
             "on": "ON",
-			"off": "OFF",
-			"collapse": "Collapse",
-			"expand": "Expand",
-			"loader": {
-				"text1": "Fetching",
-				"text2": "Status"
-			}
-		}
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",
         "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Device Security Overview"
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -127,8 +132,7 @@
                 "poweredBy": "מופעל על-ידי McAfee",
                 "privacyTerms": "קראו עוד על <tag>מדיניות הפרטיות</tag> ועל <tag>תנאי השירות</tag>",
                 "mcafeePremium": "הגנת פרימיום של McAfee",
-                "protectedBy": "אתם מוגנים כעת על-ידי ",
-                "betterProtected": ".עם זאת, McAfee LiveSafe יכול לספק לכם הגנה טובה יותר",
+                "protectedBy": "כרגע אתם מוגנים על-ידי {{protectedName}}. עם זאת, התוכנה McAfee LiveSafe יכולה לספק הגנה טובה יותר. ",
                 "virusScan": "סריקת וירוסים",
                 "firewall": "חומת אש",
                 "disabled": "מושבת",
@@ -192,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "השתמשו ב'גלאי האיומים' כדי לבדוק את רמת הבטיחות של הרשתות שסביבכם.",
-                "button": "בדיקת איום"
+                "button": "בדיקת איום",
+                "connectionError": "שגיאת חיבור",
+                "tryAgain": "לא ניתן לאתר את המכשיר מפני שהרשת אינה זמינה, התחברו לאינטרנט ונסו שוב."
             },
             "locationmodal": {
                 "title": "הפעלת שירותי מיקום",
@@ -266,7 +272,7 @@
             "howToUseSufEasy": "כיצד להשתמש ב-SurfEasy VPN",
             "whatCanSufEasy2": "הגנו על פרטיותכם והפעילו את SurfEasy VPN בעת גישה לנקודת Wi-Fi חמה ציבורית. תוכנית Lenovo Starter VPN מאפשרת לכם לבצע פעילויות שמקנות פרסים ולזכות ברוחב פס נוסף להגנת נתונים. שדרגו וקבלו הגנה לעד 5 טלפונים חכמים, מחשבי לוח ומחשבים עם רוחב פס בלתי מוגבל.",
             "getStarted": "להפעלת SurfEasy VPN:",
-            "getStarted1": "לחצו על הלחצן \"פתח SurfEasy\" למעלה כדי להפעיל את SurfEasy VPN.",
+            "getStarted1": "לחצו על הלחצן \"פתח את SurfEasy\" למעלה כדי להפעיל את SurfEasy VPN.",
             "getStarted2": "הפעילו את רשת ה-VPN והמתינו רגע לאישור החיבור המאובטח.",
             "getStarted3": "שנו את האזור או המיקום שלכם במידת הצורך, ותיהנו מעבודה ברשת פרטית מאובטחת.",
             "poweredBySurfEasy": "מופעל על ידי SurfEasy",

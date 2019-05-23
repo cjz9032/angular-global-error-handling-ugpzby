@@ -26,6 +26,7 @@
             "installed": "INSTALADO",
             "notInstalled": "NO INSTALADO",
             "loading": "Cargando",
+            "installing": "INSTALANDO",
             "notFound": "NO ENCONTRADO",
             "registered": "REGISTRADO",
             "notRegistered": "NO REGISTRADO"
@@ -33,19 +34,23 @@
         "ui": {
             "back": "ATRÁS",
             "on": "ON",
-			"off": "OFF",
-			"collapse": "Collapse",
-			"expand": "Expand",
-			"loader": {
-				"text1": "Fetching",
-				"text2": "Status"
-			}
-		}
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",
         "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Device Security Overview"
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -127,8 +132,7 @@
                 "poweredBy": "Con tecnología McAfee",
                 "privacyTerms": "Lea más información sobre la <tag>Política de privacidad</tag> y las <tag>Condiciones de servicio</tag>",
                 "mcafeePremium": "Protección McAfee Premium",
-                "protectedBy": "Actualmente está protegido por ",
-                "betterProtected": ".Sin embargo, podría estar mejor protegido con McAfee LiveSafe",
+                "protectedBy": "Actualmente está protegido por {{protectedName}}. Sin embargo, podría estar mejor protegido con McAfee LiveSafe.",
                 "virusScan": "EXPLORACIÓN DE ANTIVIRUS",
                 "firewall": "CORTAFUEGOS",
                 "disabled": "DESHABILITADO",
@@ -192,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "Utilice el detector de amenazas para determinar la seguridad de las redes a su alrededor.",
-                "button": "Comprobar amenaza"
+                "button": "Comprobar amenaza",
+                "connectionError": "Error de conexión",
+                "tryAgain": "No encontramos el dispositivo debido a que la red no está disponible, conéctese a Internet y vuelva a intentarlo."
             },
             "locationmodal": {
                 "title": "Habilitar servicios de ubicación",

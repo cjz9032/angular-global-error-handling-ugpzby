@@ -26,6 +26,7 @@
             "installed": "INSTALLÉ",
             "notInstalled": "NON INSTALLÉ",
             "loading": "Chargement",
+            "installing": "INSTALLATION EN COURS",
             "notFound": "NON TROUVÉ",
             "registered": "ENREGISTRÉ",
             "notRegistered": "NON ENREGISTRÉ"
@@ -33,19 +34,23 @@
         "ui": {
             "back": "RETOUR",
             "on": "ON",
-			"off": "OFF",
-			"collapse": "Collapse",
-			"expand": "Expand",
-			"loader": {
-				"text1": "Fetching",
-				"text2": "Status"
-			}
-		}
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",
         "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Device Security Overview"
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -127,8 +132,7 @@
                 "poweredBy": "Protégé par McAfee",
                 "privacyTerms": "Pour en savoir plus, lisez la <tag>Politique de confidentialité</tag> et les <tag>Conditions d'utilisation</tag>",
                 "mcafeePremium": "Protection McAfee Premium",
-                "protectedBy": "Vous êtes actuellement protégé par ",
-                "betterProtected": ".Cependant, vous pouvez être encore mieux protégé avec McAfee LiveSafe",
+                "protectedBy": "Vous êtes actuellement protégé par {{protectedName}}. Toutefois, vous pourriez être encore mieux protégé avec McAfee LiveSafe.",
                 "virusScan": "RECHERCHE DE VIRUS",
                 "firewall": "PARE-FEU",
                 "disabled": "DÉSACTIVÉ",
@@ -192,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "Utiliser l'outil de détection des menaces pour déterminer la sécurité des réseaux alentours.",
-                "button": "Vérifier les menaces"
+                "button": "Vérifier les menaces",
+                "connectionError": "Erreur de connexion",
+                "tryAgain": "Impossible de localiser votre périphérique car le réseau n'est pas disponible. Connectez-vous à Internet et réessayez."
             },
             "locationmodal": {
                 "title": "Activer les services de localisation",

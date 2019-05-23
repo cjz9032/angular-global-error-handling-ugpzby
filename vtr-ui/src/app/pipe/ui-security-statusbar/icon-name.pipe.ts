@@ -12,6 +12,10 @@ export class IconNamePipe implements PipeTransform {
 				return ['fas', 'times'];
 			case 'not-installed':
 				return ['fas', 'times'];
+			case 'protected':
+				return ['fas', 'check'];
+			case 'not-protected':
+				return ['fas', 'times'];
 		}
 	}
 }

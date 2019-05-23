@@ -116,7 +116,7 @@ export class UserService {
 							});
 						}
 		
-						self.sendSigninMetrics(loginSuccess ? 'success' : 'failure', starterStatus, accountState, 'AppOpen');
+						self.sendSigninMetrics(loginSuccess ? 'success' : 'failure(rc=UserInteractionRequired)', starterStatus, accountState, 'AppOpen');
 					});
 				} else {
 					self.lidStarterHelper.getStarterAccountToken().then((token) => {

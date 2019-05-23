@@ -26,6 +26,7 @@
             "installed": "УСТАНОВЛЕНО",
             "notInstalled": "НЕ ВСТАНОВЛЕНО",
             "loading": "Завантаження",
+            "installing": "ІНСТАЛЯЦІЯ",
             "notFound": "НЕ ВИЯВЛЕНО",
             "registered": "ЗАРЕЄСТРОВАНО",
             "notRegistered": "НЕ ЗАРЕЄСТРОВАНО"
@@ -33,19 +34,23 @@
         "ui": {
             "back": "НАЗАД",
             "on": "ON",
-			"off": "OFF",
-			"collapse": "Collapse",
-			"expand": "Expand",
-			"loader": {
-				"text1": "Fetching",
-				"text2": "Status"
-			}
-		}
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",
         "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Device Security Overview"
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -127,8 +132,7 @@
                 "poweredBy": "Технології McAfee",
                 "privacyTerms": "Дізнайтеся більше про <tag>політику конфіденційності</tag> та <tag>умови надання послуг</tag>",
                 "mcafeePremium": "Захист McAfee преміум-класу",
-                "protectedBy": "Наразі ввімкнуто захист: ",
-                "betterProtected": ".Однак ви можете скористатися покращеним захистом McAfee LiveSafe",
+                "protectedBy": "Наразі вас захищає {{protectedName}}. Однак McAfee LiveSafe захистить вас краще.",
                 "virusScan": "ПЕРЕВІРКА НА ВІРУСИ",
                 "firewall": "БРАНДМАУЕР",
                 "disabled": "ВИМКНУТО",
@@ -192,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "Використовуйте детектор загроз, щоб визначити, чи безпечні мережі поблизу.",
-                "button": "Перевірка загроз"
+                "button": "Перевірка загроз",
+                "connectionError": "Помилка підключення",
+                "tryAgain": "Не вдалося знайти ваш пристрій, мережа не доступна. Підключіться до Інтернету й повторіть спробу."
             },
             "locationmodal": {
                 "title": "Увімкнути служби геолокації",
