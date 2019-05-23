@@ -16,6 +16,10 @@ export class StatusTextPipe implements PipeTransform {
 				return 'common.securityAdvisor.loading';
 			case 'installing':
 				return 'common.securityAdvisor.installing';
+			case 'protected':
+				return 'homeSecurity.protected';
+			case 'not-protected':
+				return  'homeSecurity.notProtected';
 		}
 	}
 }

@@ -1,4 +1,4 @@
- import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MockService } from '../../../services/mock/mock.service';
 import { QaService } from '../../../services/qa/qa.service';
@@ -17,7 +17,7 @@ import { SystemUpdateService } from 'src/app/services/system-update/system-updat
 import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { UserService } from '../../../services/user/user.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -27,12 +27,13 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class PageDashboardComponent implements OnInit {
 	firstName = 'User';
-	submit = 'Submit';
+	submit = this.translate.instant('dashboard.feedback.form.button');
 	feedbackButtonText = this.submit;
 	securityAdvisor: SecurityAdvisor;
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
 	public isOnline = true;
+	//qas: QA[] = [];
 
 	heroBannerItems = [];
 	cardContentPositionA: any = {};
@@ -66,26 +67,33 @@ export class PageDashboardComponent implements OnInit {
 		config.backdrop = 'static';
 		config.keyboard = false;
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
-		qaService.setTranslationService(this.translate);
-		qaService.qas.forEach(qa => {
-			try {
-				qa.title = this.translate.instant(qa.title);
-				qa.description = this.translate.instant(qa.description);
-				// console.log(qa.description);
-				this.translate.get(qa.keys).subscribe((translation: [string]) => {
-					// console.log(JSON.stringify(translation));
-					qa.keys = translation;
-					// console.log(JSON.stringify(qa.keys));
-				});
-			}
-			catch (e) {
-				console.log('already translated');
-			}
-			finally {
-				console.log('already translated');
-			}
 
-		});
+		//Evaluate the translations for QA on language Change
+		translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.qaService.setTranslationService(this.translate);
+			this.qaService.qas.forEach(qa => {
+				try {
+					qa.title = this.translate.instant(qa.title);
+					qa.description = this.translate.instant(qa.description);
+					// console.log(qa.description);
+					this.translate.get(qa.keys).subscribe((translation: [string]) => {
+						// console.log(JSON.stringify(translation));
+						qa.keys = translation;
+						// console.log(JSON.stringify(qa.keys));
+					});
+				}
+				catch (e) {
+					console.log('already translated');
+				}
+				finally {
+					console.log('already translated');
+				}
+
+			});
+
+			//this.qas = this.qaService.qas;
+		})
+
 	}
 
 	ngOnInit() {
@@ -175,6 +183,8 @@ export class PageDashboardComponent implements OnInit {
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+
+
 	}
 
 	onFeedbackModal() {
@@ -548,4 +558,5 @@ export class PageDashboardComponent implements OnInit {
 			}
 		}
 	}
+
 }
