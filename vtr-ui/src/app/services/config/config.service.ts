@@ -234,7 +234,7 @@ export class ConfigService {
 		routerLinkActiveOptions: {
 			exact: true
 		},
-		icon: ['fal', 'lock'],
+		icon: ['fal', 'home-lg-alt'],
 		forArm: false,
 		subitems: []
 	}, {
@@ -391,7 +391,7 @@ export class ConfigService {
 		routerLinkActiveOptions: {
 			exact: true
 		},
-		icon: ['fal', 'lock'],
+		icon: ['fal', 'home-lg-alt'],
 		forArm: false,
 		subitems: []
 	}, {
