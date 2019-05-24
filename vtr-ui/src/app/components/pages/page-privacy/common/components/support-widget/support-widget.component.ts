@@ -2,14 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { CommonPopupService } from '../../services/popups/common-popup.service';
 
 @Component({
-	selector: 'vtr-support-banner',
-	templateUrl: './support-banner.component.html',
-	styleUrls: ['./support-banner.component.scss'],
+	selector: 'vtr-support-widget',
+	templateUrl: './support-widget.component.html',
+	styleUrls: ['./support-widget.component.scss']
 })
-export class SupportBannerComponent implements OnInit {
+export class SupportWidgetComponent implements OnInit {
 
 	constructor(
-		private commonPopupService: CommonPopupService) {
+		private commonPopupService: CommonPopupService
+	) {
 	}
 
 	ngOnInit() {
@@ -18,4 +19,5 @@ export class SupportBannerComponent implements OnInit {
 	openPopup(id) {
 		this.commonPopupService.open(id);
 	}
+
 }
