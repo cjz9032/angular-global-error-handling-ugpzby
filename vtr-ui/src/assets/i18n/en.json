@@ -550,9 +550,9 @@
 					"camerablur": {
 						"title": "Camera Background Blur",
 						"caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections.",
-						"blurMode":"Blur mode",
-						"comicMode":"Comic mode",
-						"sketchMode":"Sketch mode"
+						"blurMode": "Blur mode",
+						"comicMode": "Comic mode",
+						"sketchMode": "Sketch mode"
 					}
 				}
 			},
@@ -638,6 +638,49 @@
 				"rebootButton": "REBOOT NOW",
 				"dismissButton": "DISMISS",
 				"rebootPending": "Reboot pending"
+			},
+			"autoUpdateSettings": {
+				"title": "Auto update settings",
+				"subtitle": "AUTOMATICALLY INSTALL UPDATES",
+				"critical": {
+					"title": "Critical Updates",
+					"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+				},
+				"camera": {
+					"title": "Camera",
+					"tooltip": "Click here to reset Camera properties to default settings.",
+					"reset": "Reset factory settings"
+				},
+				"recommended": {
+					"title": "Recommended update",
+					"tooltip": "Recommended driver updates keep your computer running at peak performance."
+				},
+				"windows": {
+					"title": "Windows Updates",
+					"url": "Windows Settings"
+				}
+			},
+			"banner": {
+				"title": "An up-to-date system is a healthy system.",
+				"last": "Last update was on",
+				"next": "Next updated scan is scheduled on",
+				"checkButton": "CHECK FOR UPDATES ",
+				"checking": "Checking for updates",
+				"downloading": "Downloading updates done",
+				"installing": "Installing updates",
+				"percent": "% complete",
+				"cancelCheck": "Cancel check",
+				"cancelUpdates": "CANCEL UPDATES",
+				"available": "Available updates",
+				"description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
+				"installButton": "INSTALL ALL UPDATES",
+				"result": {
+					"success": "All Updates were installed correctly",
+					"fail": {
+						"title": "Some updates were not installed correctly.",
+						"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+					}
+				}
 			},
 			"smartAssist": {
 				"title": "Smart Assist",
