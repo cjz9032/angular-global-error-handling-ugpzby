@@ -1,0 +1,212 @@
+@import "../../../app.theme.scss";
+
+.ui-lighting-profile {
+    border-radius: $border_radius;
+    background: $dark_cell;
+    box-shadow: $drop_shadow_gaming;
+    padding: 6rem;
+    height: auto;
+    @media #{$mediaquery_5} {
+        height: auto;
+    }
+    @media #{$mediaquery_6} {
+        padding: 4rem;
+        height: auto;
+    }
+
+    .multi-state-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 5rem;
+        width: 80%;
+        border-radius: 5rem;
+        margin: auto;
+        background: $gaming_dark;
+        position: relative;
+        z-index: 0;
+        box-sizing: border-box;
+        background-clip: padding-box;
+        border: solid 0.2rem transparent;
+        &::after {
+            content: ' ';
+            position: absolute;
+            border-radius: 5rem;
+            top: 0rem;
+            left: 0rem;
+            bottom: 0rem;
+            right: 0rem;
+            margin: 0rem;
+            background: $gaming_dark;
+            z-index: -1;
+        }
+        &::before {
+            content: ' ';
+            position: absolute;
+            border-radius: 5rem;
+            top: 0rem;
+            left: 0rem;
+            bottom: 0rem;
+            right: 0rem;
+            margin: -0.2rem;
+            background-image: $gaming_lighting_gradient;
+            z-index: -1;
+        }
+
+        input {
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            & ~ label {
+                color: $gaming;
+                font-size: 1.8rem;
+                width: 25%;
+                height: 4.2rem;
+                border-radius: 4.2rem;
+                margin: 0.4rem 0.2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                z-index: 1;
+                cursor: pointer;
+            }
+        }
+
+        .toggle {
+            position: absolute;
+            background: $gaming_lighting_gradient;
+            width: 25%;
+            height: 4.2rem;
+            border-radius: 4.2rem;
+            margin: 0.4rem 0.2rem;
+            transition: all .3s ease-in-out;
+            left: 0;
+        }
+        #off_radio:checked {
+            & ~ #off {
+                color: $gaming_lightest;
+            }
+            & ~ .toggle {
+                left: 0%;
+            }
+        }
+        #first_radio:checked {
+            & ~ #first_lbl {
+                color: $gaming_lightest;
+            }
+            & ~ .toggle {
+                left: 25%;
+            }
+        }
+        #second_radio:checked {
+            & ~ #second_lbl {
+                color: $gaming_lightest;
+            }
+            & ~ .toggle {
+                left: 50%;
+            }
+        }
+        #third_radio:checked {
+            & ~ #third_lbl {
+                color: $gaming_lightest;
+            }
+            & ~ .toggle {
+                left: 74.5%;
+            }
+        }
+    }
+    .lighting-area {
+        min-height: 40rem;
+        margin-top: 2.2rem;
+        background: $gaming_lighting_profile_bg;
+        border-radius: 0.5rem;
+        background: url(./../../../../assets/images/gaming/lighting/blueBG.png) left center no-repeat $gaming_lighting_profile_bg;
+        background-size: contain;
+        padding: 2rem;
+        .gaming-device-image {
+            max-width: 45%;
+            .img-responsive {
+                width: 100%;
+                max-width: 40rem;
+                height: auto;
+            }
+        }
+    }
+
+    .gaming-light-options {
+        margin-top: 9rem;
+        margin-left: 4rem;
+        .light-option {
+            .content-title{
+                color: $gaming_lightest;
+                font-weight: $weight_medium;
+                font-size: 2rem;
+                letter-spacing: -0.02rem;
+                line-height: 2rem;
+            }
+        }
+    }
+    .lighting-list-option {
+        padding-left: 0;
+        list-style: none;
+        margin-top: 2rem;
+        li {
+            margin-bottom: 2rem;
+        }
+    }
+    .gaming-radio {
+        display: block;
+        position: relative;
+        padding-left: 3rem;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 1.6rem;
+        color: $gaming_lightest;
+        line-height: 3rem;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            &:checked {
+                &~.checkmark {
+                    background-color: transparent;
+                    &:after {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .checkmark {
+            &:after {
+                top: 2px;
+                left: 2px;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background:$gaming_light_blue;
+            }
+        }
+    }
+    .checkmark {
+        position: absolute;
+        top: 0.4rem;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: transparent;
+        border: 0.3rem solid $gaming_light_blue;
+        border-radius: 50%;
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+    }
+}

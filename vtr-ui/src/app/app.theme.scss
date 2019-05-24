@@ -9,9 +9,12 @@ $main_lighter: #b5d0f4;
 $main_lightest: #eaf2fd;
 $menu_hover: #4A81FD;
 
+$dark_cell: linear-gradient(0deg, #2e4255, #293c4f);
+$dark_popup_cell: linear-gradient(0deg, #435064, #3d4c5c);
+
 $gaming_darkest: #1F2A42;
 $gaming_darker: #253048;
-$gaming_dark: #323F5B;
+$gaming_dark: #293c4f;
 $gaming_shade: #46526B;
 $gaming_gstart: #2d5dcf;
 $gaming: #4579f0;
@@ -31,6 +34,9 @@ $gaming_hover: #545f76;
 $gaming_dark_popup: #404d5f;
 $gaming_light_08: rgba(255,255,255,.8);
 $gaming_light_09: rgba(255,255,255,.9);
+
+$gaming_lighting_profile_bg: rgba(20,29,49,0.45);
+$gaming_light_blue: #047AFF;
 
 $highlight: #2ec5eb;
 $highlight_bright: #53f9ff;
