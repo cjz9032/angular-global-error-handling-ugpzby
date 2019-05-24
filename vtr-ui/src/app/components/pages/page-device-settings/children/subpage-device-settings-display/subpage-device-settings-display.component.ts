@@ -495,10 +495,10 @@ export class SubpageDeviceSettingsDisplayComponent
 		}
 	}
 	public onContrastChange($event: ChangeContext) {
-		console.log('setCameraContrst', $event);
+		console.log('setCameraContrast', $event);
 		if (this.displayService.isShellAvailable) {
 			this.displayService
-				.setCameraContrst($event.value);
+				.setCameraContrast($event.value);
 		}
 	}
 	public onCameraAutoExposureToggle($event: any) {

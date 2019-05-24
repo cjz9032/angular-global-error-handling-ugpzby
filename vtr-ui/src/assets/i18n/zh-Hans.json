@@ -3,65 +3,75 @@
 		"dashboard": {
 			"device": {
 				"quickSettings": {
-					"title": "Thermal Mode",
+					"title": "热模式",
 					"status": {
-						"performance": "Performance",
-						"balance": "Balance",
-						"quiet": "Quiet"
+						"performance": "性能",
+						"balance": "平衡",
+						"quiet": "安静"
 					},
-					"wifiSecurity": "Wifi Security",
-					"dolby": "Dolby",
-					"rapidCharge": "Rapid Charge"
+					"wifiSecurity": "Wifi安全",
+					"dolby": "杜比",
+					"rapidCharge": "快速充电"
 				},
 				"legionEdge": {
-					"title": "CPU Overlock",
+					"title": "CPU重叠",
 					"status": {
-						"alwayson": "On",
-						"whenGaming": "When Gaming",
-						"off": "Off"
+						"alwayson": "上",
+						"whenGaming": "当游戏",
+						"off": "离"
 					},
 					"ramOverlock": "Ram Overlock",
 					"popup": {
-						"text": "Change will be effective after restarting computer.",
-						"button": "ok"
+						"text": "重新启动计算机后更改将生效。",
+						"button": "好"
 					},
-					"autoClose": "Auto Close",
-					"networkBoost": "Network Boost",
-					"hybridMode": "Hybrid Mode",
-					"touchpadLock": "Touchpad Lock"
+					"autoClose": "自动关闭",
+					"networkBoost": "网络提升",
+					"hybridMode": "混合模式",
+					"touchpadLock": "触摸板锁定"
 				},
 				"systemTools": {
-					"power": "Power",
-					"media": "Media",
+					"power": "功率",
+					"media": "媒体",
 					"macroKey": "Marco Key",
-					"hardwareScan": "Hardware Scan",
-					"systemUpdate": "System Update"
+					"hardwareScan": "硬件扫描",
+					"systemUpdate": "系统更新"
 				},
 				"lighting": {
-					"title": "Lighting Customize"
+					"title": "照明定制"
 				},
 				"legionEdgeModal": {
-					"line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
-					"line2": "Feature Management Overview <br> Some features not available on all devices",
-					"line3": "CPU Overclocking <br> Boost the maximum speed for your processor",
-					"line4": "RAM Overclocking <br> Boost the maximum speed for your memory",
-					"line5": "Network Boost <br> Prioritize network traffic for the game you're playing",
-					"line6": "Dolby <br> Tune your audio specifically for gaming with Dolby technology",
-					"line7": "Hybrid Mode <br> Disable advanced GPU settings when not gaming to boost battery performance",
-					"line8": "Rapid Charge <br> Game on the go longer with quicker battery charging",
-					"line9": "Touchpad Lock <br> Prevent mistaken inputs by disabling the touchpad while gaming",
-					"line10": "Auto Close <br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
-					"line11": "Thermal Mode <br> Set your preferred device profile for fan speed and cooling control"
+					"line1": "使用Vantage Edge，您的设置将根据使用情况自动调整。游戏时的最佳性能，更长的电池续航时间。",
+					"line2": "功能管理概述<br>某些功能并非在所有设备上都可用",
+					"line3": "CPU超频<br>提高处理器的最大速度",
+					"line4": "RAM超频<br>提高内存的最大速度",
+					"line5": "网络提升<br>优先考虑您正在玩的游戏的网络流量",
+					"line6": "杜比技术 - 使用杜比技术专门为游戏调整音频",
+					"line7": "混合模式<br>在不进行游戏时禁用高级GPU设置以提高电池性能",
+					"line8": "快速充电 - 游戏随时随着电池充电速度的提高而增加",
+					"line9": "触摸板锁定<br>通过在游戏时禁用触摸板来防止错误输入",
+					"line10": "自动关闭<br>在开始播放之前清除游戏不需要的进程以最大化可用的系统资源",
+					"line11": "散热模式<br>为风扇速度和冷却控制设置首选设备配置文件 "
+				},
+				"systemInfo": {
+					"systenTooltip": "将鼠标悬停在CPU / GPU / RAM和不同驱动器上以显示其描述，包括制造和型号信息"
 				}
-			},
-			"systemInfo": {
-				"systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+			}
+		},
+		"common": {
+			"menu": {
+				"support": {
+					"title": "支持",
+					"sub1": "支持",
+					"sub2": "Facebook的",
+					"sub3": "Instagram的"
+				}
 			}
 		}
 	},
 	"common": {
 		"menu": {
-			"dashboard": "首页",
+			"dashboard": "仪表板",
 			"device": {
 				"title": "我的设备",
 				"sub1": "设备信息",
@@ -77,8 +87,8 @@
 				"sub5": "网络保护",
 				"sub6": "Windows Hello"
 			},
-            "homeSecurity": "Connected Home",
 			"support": "支持服务",
+			"homeSecurity": "Connected Home",
 			"privacy": "隐私"
 		},
 		"securityAdvisor": {
@@ -279,6 +289,7 @@
 					"title": "电池详细信息",
 					"primary": "主电池",
 					"secondary": "备用电池",
+					"tertiary": "仪表板",
 					"status": "状态",
 					"wattage": "功率",
 					"barcode": "条码",
@@ -297,7 +308,15 @@
 					"designVolt": "设计电压",
 					"volts": "电压",
 					"firstUseDt": "首次使用日期",
-					"firmwareVer": "固件版本"
+					"firmwareVer": "固件版本",
+					"chargeStatusString": {
+						"error": "错误",
+						"notinstalled": "未安装",
+						"noactivity": "没有活动",
+						"charging": "充电",
+						"discharging": "放电",
+						"acdischarging": "放电（带交流）"
+					}
 				}
 			},
 			"power": {
@@ -317,7 +336,7 @@
 					"subtitle1": "电池和安静",
 					"description1": "此功能动态调节散热设置以满足您的需求。此功能开启时，在手持或空闲状态下可调节设置使设备保持较低温度或较低噪声。而设备放置在稳定平面上时，此功能可优化性能。此功能关闭时，您可以手动设置散热优先级。",
 					"description2": "智能散热可调节风扇速度、最高表面温度和性能。此功能具有以下模式，且现在支持通过 Windows 性能电源滑块访问。",
-					"description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
+					"description3": "智能散热可自动平衡散热性能，以根据您的需求进行调整。智能散热功能可调节性能设置，以便在握持笔记本电脑时提供更舒适的表面。当设备位于桌面上时，此功能可优化性能。",
 					"readMore": "阅读更多.",
 					"gotoWindows": {
 						"title": "转到 Windows 设置",
@@ -327,11 +346,11 @@
 						"title": "智能冷却",
 						"description": "",
 						"tooltip": "",
-						"optimize": "optimize system for",
-						"apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
+						"optimize": "优化系统",
+						"apsHint": "要启用智能散热，您必须安装并启用Lenovo Active Protection System。",
 						"options": {
-							"quiteCool3": "Cool Mode",
-							"performance3": "High Performance",
+							"quiteCool3": "酷模式",
+							"performance3": "高性能",
 							"quiteCool4": "安静和低温模式",
 							"performance4": "性能",
 							"quiteCool5": "安静和低温模式",
@@ -381,8 +400,8 @@
 						"description": "如果主要在连接交流电源适配器时使用计算机，仅偶尔使用电池供电，则可通过将最大电量值设置为低于 100%，延长电池使用期限。这一点很有用，因为偶尔使用的电池保持不充满的电量可延长使用期限。",
 						"tooltip": "如果电池当前的充电电量高于停止充电阈值，则需要拔下电源，直至电池放电至停止充电阈值或低于停止充电阈值。 根据电池状态（新旧程度），开始或停止充电的精确点最大可有 2% 的相差幅度。如果启用此功能，建议偶尔执行一次&ldquo;电池量表重置&rdquo;，以确保电池运行状况报告准确。",
 						"settings": {
-							"title1": "Threshold for Built in battery",
-							"title2": "Threshold for Removable battery"
+							"title1": "内置电池的阈值",
+							"title2": "可拆卸电池的阈值"
 						},
 						"popup": {
 							"title": "启用电池充电阈值",
@@ -529,8 +548,8 @@
 					"autoFocus": "自动对焦",
 					"notAvailable": "相机不可用",
 					"camerablur": {
-						"title": "Camera Background Blur",
-						"caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections.",
+						"title": "相机背景模糊",
+						"caption": "当您使用相机进行任何视频通话或拍照时，此功能会模糊您的背景。您可以从以下选项中选择不同的效果。",
 						"blurMode":"Blur mode",
 						"comicMode":"Comic mode",
 						"sketchMode":"Sketch mode"
@@ -592,7 +611,6 @@
 						"screenTimeoutSettings": "Go to Screen timeout settings"
 					}
 				}
-
 			}
 		},
 		"systemUpdates": {
@@ -603,6 +621,7 @@
 			"criticalUpdates": "关键更新",
 			"recommendedUpdates": "推荐更新",
 			"optionalUpdates": "可选更新",
+			"ignoredUpdates": "忽略的更新",
 			"successInstall": "已成功安装",
 			"failedInstall": "无法安装",
 			"at": "在",
@@ -668,773 +687,774 @@
 						"screenTimeoutSettings": "Go to Screen timeout settings"
 					}
 				}
-            }
-        }
-    },
-    "systemUpdates": {
-        "title": "系统更新",
-        "history": "完整历史记录",
-        "notAvailable": "无法使用",
-        "notInstalled": "未安装",
-        "criticalUpdates": "关键更新",
-        "recommendedUpdates": "推荐更新",
-        "optionalUpdates": "可选更新",
-        "successInstall": "已成功安装",
-        "failedInstall": "无法安装",
-        "at": "在",
-        "readMore": "Read more",
-        "popup": {
-            "reboot": "重启",
-            "shutdown": "关掉",
-            "rebootForceMsg": "您选择的更新将导致系统在安装后自动重新启动。",
-            "shutdownForceMsg": "您选择的更新将导致系统在安装后自动关闭。",
-            "rebootDelayedMsg": "您选择的更新将导致系统在安装后重新启动，在安装更新期间，请不要关闭系统，卸下电源或附件。我们建议您保存工作以准备重新启动系统。",
-            "rebootRequiredMsg": "为了成功安装更新，您的计算机需要重新启动才能确保一切运行安全，顺畅。",
-            "okayButton": "好",
-            "cancelButton": "取消",
-            "rebootButton": "马上重启",
-            "dismissButton": "解雇",
-            "rebootPending": "重新启动等待"
-        },
-        "autoUpdateSettings": {
-            "title": "自动更新设置",
-            "subtitle": "自动安装更新",
-            "critical": {
-                "title": "关键更新",
-                "tooltip": "关键更新可防止发生重大问题、严重故障、硬件故障或数据损坏。"
-            },
-            "camera": {
-                "title": "摄像头",
-                "tooltip": "单击此处将相机属性重置为默认设置。",
-                "reset": "重置出厂设置"
-            },
-            "recommended": {
-                "title": "推荐更新",
-                "tooltip": "推荐的驱动程序更新使计算机运行保持最佳性能。"
-            },
-            "windows": {
-                "title": "Windows 更新",
-                "url": "Windows 设置"
-            }
-        },
-        "banner": {
-            "title": "​保持最新状态的系统才是健康的系统。",
-            "last": "上次更新时间为",
-            "next": "下次更新扫描计划时间：",
-            "checkButton": "检查更新",
-            "checking": "正在检查更新",
-            "downloading": "下载更新完成",
-            "installing": "正在安装更新",
-            "percent": "% 已完成",
-            "cancelCheck": "取消检查",
-            "cancelUpdates": "取消更新",
-            "available": "可用更新",
-            "description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。关键更新对保护计算机上的数据来说也很重要，一旦可用就应该尽快安装。未能安装这些软件包可能会导致数据丢失、系统故障或硬件故障",
-            "installButton": "安装所有更新",
-            "result": {
-                "success": "所有更新都已正确安装",
-                "fail": {
-                    "title": "某些更新未正确安装。",
-                    "description": "在下载或安装这些更新期间出现问题。请确保您在线，并且在安装更新时不要关闭计算机。"
-                }
-            }
-        }
-    },
-    "homeSecurity": {
-        "title": "Connected Home Security",
-        "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Device Security Overview",
-        "thisDevice": "This device",
+			}
+		}
+	},
+	"systemUpdates": {
+		"title": "系统更新",
+		"history": "完整历史记录",
+		"notAvailable": "无法使用",
+		"notInstalled": "未安装",
+		"criticalUpdates": "关键更新",
+		"recommendedUpdates": "推荐更新",
+		"optionalUpdates": "可选更新",
+		"successInstall": "已成功安装",
+		"failedInstall": "无法安装",
+		"at": "在",
+		"readMore": "Read more",
+		"popup": {
+			"reboot": "重启",
+			"shutdown": "关掉",
+			"rebootForceMsg": "您选择的更新将导致系统在安装后自动重新启动。",
+			"shutdownForceMsg": "您选择的更新将导致系统在安装后自动关闭。",
+			"rebootDelayedMsg": "您选择的更新将导致系统在安装后重新启动，在安装更新期间，请不要关闭系统，卸下电源或附件。我们建议您保存工作以准备重新启动系统。",
+			"rebootRequiredMsg": "为了成功安装更新，您的计算机需要重新启动才能确保一切运行安全，顺畅。",
+			"okayButton": "好",
+			"cancelButton": "取消",
+			"rebootButton": "马上重启",
+			"dismissButton": "解雇",
+			"rebootPending": "重新启动等待"
+		},
+		"autoUpdateSettings": {
+			"title": "自动更新设置",
+			"subtitle": "自动安装更新",
+			"critical": {
+				"title": "关键更新",
+				"tooltip": "关键更新可防止发生重大问题、严重故障、硬件故障或数据损坏。"
+			},
+			"camera": {
+				"title": "摄像头",
+				"tooltip": "单击此处将相机属性重置为默认设置。",
+				"reset": "重置出厂设置"
+			},
+			"recommended": {
+				"title": "推荐更新",
+				"tooltip": "推荐的驱动程序更新使计算机运行保持最佳性能。"
+			},
+			"windows": {
+				"title": "Windows 更新",
+				"url": "Windows 设置"
+			}
+		},
+		"banner": {
+			"title": "​保持最新状态的系统才是健康的系统。",
+			"last": "上次更新时间为",
+			"next": "下次更新扫描计划时间：",
+			"checkButton": "检查更新",
+			"checking": "正在检查更新",
+			"downloading": "下载更新完成",
+			"installing": "正在安装更新",
+			"percent": "% 已完成",
+			"cancelCheck": "取消检查",
+			"cancelUpdates": "取消更新",
+			"available": "可用更新",
+			"description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。关键更新对保护计算机上的数据来说也很重要，一旦可用就应该尽快安装。未能安装这些软件包可能会导致数据丢失、系统故障或硬件故障",
+			"installButton": "安装所有更新",
+			"result": {
+				"success": "所有更新都已正确安装",
+				"fail": {
+					"title": "某些更新未正确安装。",
+					"description": "在下载或安装这些更新期间出现问题。请确保您在线，并且在安装更新时不要关闭计算机。"
+				}
+			}
+		}
+	},
+	"homeSecurity": {
+		"title": "Connected Home Security",
+		"ecosystemBlockTitle": "Protect your device ecosystem",
+		"overviewBlockTitle": "Your Device Security Overview",
+		"thisDevice": "This device",
 		"allDevices": "All Devices",
 		"protected": "Protected",
 		"notProtected": "Not Protected"
-    },
-    "support": {
-        "common": {
-            "getSupport": "获取支持"
-        },
-        "warranty": {
-            "titleInWarranty": "在保修期内",
-            "titleWarrantyExpired": "保修到期",
-            "titleWarrantyNotFound": "未找到保修信息",
-            "statusInWarranty": "在保修期内",
-            "statusWarrantyExpired": "已到期",
-            "statusWarrantyNotFound": "未找到保修信息",
-            "yearDepotWarranty": "年维修站保修",
-            "warrantyDetails": "保修详细信息：",
-            "startDate": "开始日期：",
-            "endDate": "结束日期：",
-            "status": "状态：",
-            "subDescription1": "本产品具有若干年的有限保修，并有权送往维修站获得维修服务。客户可以致电其当地服务中心来获取更多信息。经销商可对本产品提供送修服务。",
-            "subDescription2": "我们无法找到适用于您设备的保修详细信息，要获取更多保修选项，请访问我们的支持网站。",
-            "viewWarrantyOptions": "查看保修选项"
-        },
-        "documentation": {
-            "title": "文档",
-            "listUserGuide": "用户指南"
-        },
-        "needHelp": {
-            "title": "需要帮助",
-            "description": "联系我们以获取帮助。",
-            "listLenovoCommunity": "Lenovo 社区",
-            "listContactCustomerService": "联系客户服务部门",
-            "listContactUsOnWechat": "通过微信联系我们",
-            "weChatDescription": "在微信上向我们提问，我们定会迅速回复"
-        },
-        "quicklinks": {
-            "title": "直通车",
-            "description": "联系我们以获取帮助。",
-            "listETicket": "通过电子凭单获取支持",
-            "listServiceProvider": "查找服务供应商",
-            "listAboutLenovoVantage": "关于我们"
-        },
-        "about": {
-            "version": "版本",
-            "licenseAgreement": "许可协议",
-            "otherSoftwareLicenses": "其他软件许可证",
-            "ourWebsite": "我们的网站",
-            "aboutYourDevice": "关于您的设备",
-            "copyright": "© 2002-2019 Lenovo All Rights Reserved"
-        }
-    },
-    "security": {
-        "landing": {
-            "fully": "受全面保护",
-            "fullyDesc": "恭喜您！您受到良好保护。",
-            "notFully": "未受全面保护",
-            "notFullyDesc": "您并未受到全面保护。立即了解如何更好地保护自己。",
-            "security101": "安全顾问 101",
-            "firewall": "防火墙",
-            "pwdHealth": "密码保险箱",
-            "vpnSecurity": "VPN 安全顾问",
-            "vpnVirtual": "VPN",
-            "wifiConnected": "WiFi 和互联家庭网络安全顾问",
-            "connectedHomeSecurity": "互联家庭网络安全顾问",
-            "fingerprint": "指纹读取器",
-            "seeAllNetwork": "请查看所有加入的网络",
-            "maliciousNetwork": "本月阻止了您的计算机加入 {{maliciousWifi}} 个恶意网络。",
-            "good": "良好",
-            "malicious": "恶意",
-            "suspicious": "可疑"
-        },
-        "antivirus": {
-            "common": {
-                "title": "病毒防护",
-                "back": "返回",
-                "why": "为什么选择 McAfee？",
-                "recommends": "Lenovo 建议您采用 McAfee 来保护您的所有设备，它具备如下优势：",
-                "award": "对包括勒索软件和恶意软件在内的最新网络威胁的防护能力屡获殊荣",
-                "dedicated": "一贯优于 Defender 和其他领先型 AV 供应商的专用安全顾问",
-                "deviceToCloud": "采用了不会减慢电脑运行速度的设备到云技术",
-                "poweredBy": "McAfee 出品",
-                "privacyTerms": "阅读<tag>隐私策略</tag>和<tag>服务条款</tag>的更多信息",
-                "mcafeePremium": "McAfee 高级保护",
-                "protectedBy": "您目前受到 {{protectedName}} 的保护。但是，您可以通过 McAfee LiveSafe 获得更好的保护。",
-                "virusScan": "病毒扫描",
-                "firewall": "防火墙",
-                "disabled": "已禁用",
-                "enableVirusScan": "启用病毒扫描",
-                "enablenFirewall": "启用防火墙"
-            },
-            "windowsDefender": {
-                "optimallyProtected": "未受最佳保护",
-                "subtitle": "您当前正受到 Windows Defender 的保护。但是，您可以通过 McAfee LiveSafe 获得更好的保护。通过以下内容了解更多信息。",
-                "learnMore": "了解 McAfee 的更多信息",
-                "windowsProtected": "Windows Defender 基本保护",
-                "windowsSubtitle": "Windows Defender 为您的设备提供基本保护"
-            },
-            "mcafee": {
-                "title": "McAfee LiveSafe",
-                "subtitle": "您当前受到 McAfee LiveSafe 的保护",
-                "valid": "有效期截止于：",
-                "upgrade": "立即升级",
-                "launch": "启动 McAfee",
-                "getMacfee": "获取 McAfee",
-                "topBenefits": "McAfee LiveSafe 的主要优势",
-                "awardTitle": "屡获殊荣的病毒防护软件",
-                "awardSubtitle": "在电脑上拦截病毒、恶意软件、勒索软件、间谍软件、有害程序等。",
-                "encryptedTitle": "加密存储",
-                "encryptedSubtitle": "通过使用 128 位加密技术将敏感文件存储至 PC 来对这些文件进行保密。",
-                "identityTitle": "身份盗窃防护",
-                "identitySubtitle": "负责保护您的身份免受盗窃和欺诈。",
-                "supportTitle": "免费的客户支持",
-                "supportSubtitle": "在软件的整个订阅期内通过电话、聊天或在线方式为您提供支持服务。",
-                "antiTitle": "反垃圾邮件",
-                "antiSubtitle": "通过删除可能包含危险链接和病毒的电子邮件，阻止危险邮件到达您的收件箱。",
-                "virusTitle": "病毒防护承诺",
-                "virusSubtitle": "当电脑感染病毒时，McAfee 专家将远程访问您的计算机以清除病毒，消除您的后顾之忧。",
-                "parentalTitle": "家长控制",
-                "parentalSubtitle": "阻止不希望孩子看到的网站和搜索结果。此外还可以设置孩子上网的时长限制。",
-                "license": "许可证有效期截止于：",
-                "trial": "试用有效期截止于："
-            },
-            "others": {
-                "othersProtection": "为您的设备提供基本保护"
-            }
-        },
-        "wifisecurity": {
-            "header": {
-                "title": "WiFi 和互联家庭网络安全顾问",
-                "back": "返回"
-            },
-            "container": {
-                "title": "Lenovo WiFi 安全",
-                "name": "WIFI 安全",
-                "enable": "已启用",
-                "disable": "已禁用",
-                "less": "缩略信息",
-                "more": "更多信息",
-                "networkHistory": "网络历史记录",
-                "connect": "最后连接",
-                "showmore": "显示更多内容",
-                "showless": "显示更少内容",
-                "button": "启用 WiFi 安全",
-                "disableDecribe": "Lenovo WiFi 安全是一项基于云的先进软件服务，可帮助您的设备区分安全的无线网络与潜在的恶意网络。"
-            },
-            "threatlocator": {
-                "describe": "使用威胁检测程序来确定您周围网络的安全性。",
-                "button": "检查威胁",
-                "connectionError": "连接错误",
-                "tryAgain": "由于网络不可用，我们无法找到您的设备，请连接因特网并重试。"
-            },
-            "locationmodal": {
-                "title": "启用位置服务",
-                "describe1": "要使用 Lenovo WiFi 安全，您必须为 Lenovo Vantage 启用位置服务。是否立即启用位置？",
-                "describe2": "要使用互联家庭网络安全顾问，您必须为 Lenovo Vantage 启用位置服务。是否立即启用位置？",
-                "agree": "同意",
-                "cancel": "取消"
-            }
-        },
-        "homeprotection": {
-            "homesecurity": {
-                "title": "互联家庭网络安全顾问",
-                "titleDescription": "\"互联家庭网络安全顾问\"功能通过以下三种方式确保安全性：",
-                "homeSecurityAffect1": "互联家庭网络安全顾问可确保您的设备安全、未被入侵",
-                "homeSecurityAffect2": "互联家庭网络安全顾问可确保所连接的网络的安全性",
-                "homeSecurityAffect3": "互联家庭网络安全顾问可确保连接到您家庭网络的其他设备的安全性。",
-                "describe": "不安全设备和网络可能引入恶意软件、导致身份信息被盗以及泄露个人和财务信息。启用此功能以降低将设备和家庭网络曝露给攻击者的风险",
-                "subtitle": "高枕无忧",
-                "subtitleDescribe": "检测到设备或家庭网络存在漏洞，或正在连接到一个潜在恶意网络时，\"互联家庭网络安全顾问\"功能会向您发送警报。请在\"提示和技巧\"中了解有关互联家庭网络安全顾问的更多信息。",
-                "tryNow": "立即试用"
-            },
-            "invitationcode": {
-                "button": "输入邀请码",
-                "buttonDescribe": "您已将此设备加入一个现有互联家庭网络安全顾问帐户。",
-                "title": "已拥有互联家庭网络安全顾问？",
-                "titleDescribe": "请确保已为 Vantage 启用了位置权限，以便将此设备加入一个现有互联家庭网络安全顾问帐户，以及使用互联家庭网络安全顾问。",
-                "enterCode": "输入您的连接代码",
-                "addHome": "添加主页",
-                "ok": "确定",
-                "continue": "继续",
-                "cancel": "取消",
-                "validateCode": "验证码",
-                "success": "已成功连接",
-                "canUse": "现在即可开始使用互联家庭网络安全顾问",
-                "tryAgain": "代码有误，请重试！",
-                "activationCode": "激活码"
-            },
-            "securityhealth": {
-                "title": "安全性状况",
-                "deviceName1": "可信来源的应用程序",
-                "deviceName2": "开发人员模式",
-                "deviceName3": "UAC 通知",
-                "deviceName4": "病毒防护可用性",
-                "deviceName5": "硬盘加密",
-                "deviceName6": "防火墙可用性",
-                "deviceName7": "已激活的 Windows",
-                "deviceName8": "安全更新可用性",
-                "deviceName9": "密码保护",
-                "deviceName10": "自动更新服务可用性",
-                "fail": "失败",
-                "pass": "通过",
-                "learnMoreAboutSecurityHealth": "在<tag>此处</tag>了解这些组件各自的详细信息。",
-                "peaceOfMind": "想更加放心吗？",
-                "button": "启用 WiFi 安全"
-            }
-        },
-        "vpn": {
-            "statusTitle": "SURFEASY VPN",
-            "title": "VPN 安全顾问",
-            "header": "SurfEasy VPN",
-            "whatIsSufEasy": "SurfEasy VPN 会加密您收发的信息，所以您可以安心、安全、隐秘地使用任何 Internet 连接和电脑、Mac®、智能手机或平板电脑。",
-            "whatCanSufEasy1": "一家在上网时为您提供保护的虚拟专用网络提供商。不使用 VPN 的情况下，您的电脑可能更容易受到攻击者和身份盗窃者的攻击。VPN 以静默方式在后台运行，并提供安全和隐私保护措施。",
-            "startUseSufEasy4": "SurfEasy 用户可以享受每 30 天 250 MB 的免费流量！按照 SurfEasy 应用的&ldquo;奖励&rdquo;选项卡上的步骤操作即可获取更多流量。",
-            "howToGetData": "如何获得免费流量：",
-            "howToGetData1": "确认电子邮件，赢取 +250 MB 流量",
-            "howToGetData2": "添加第二部设备，赢取 +250 MB 流量",
-            "howToGetData3": "推荐朋友，赢取 +500 MB 流量",
-            "howToGetData4": "在 Facebook 上为 SurfEasy 点赞，赢取 +100 MB 流量",
-            "howToGetData5": "在 Twitter 上关注 SurfEasy，赢取 +100 MB 流量",
-            "helpKeep": "SurfEasy VPN 可帮助您的联机活动保持安全和隐秘。",
-            "getSufEasy": "获取 SurfEasy",
-            "openSufEasy": "打开 SurfEasy",
-            "whySufEasy": "为何要使用虚拟专用网络（VPN）？",
-            "whySufEasyDescription": "使用咖啡店或机场等地的 Wi-Fi 热点会让您的敏感信息暴露给网络犯罪分子。SurfEasy VPN 是一种无记录 VPN，用于加密个人信息，并且不会跟踪或存储联机活动或位置。",
-            "startUseSufEasy": "立即开始使用 SurfEasy",
-            "startUseSufEasy1": "通过银行级加密帮助确保您收发的数据的安全和隐秘。",
-            "startUseSufEasy2": "帮助防止公司跟踪您的联机活动或位置。",
-            "startUseSufEasy3": "免费产品和高级产品提供多种选项，以满足您的需要和预算。",
-            "howToUseSufEasy": "如何使用 SurfEasy VPN",
-            "whatCanSufEasy2": "在访问公共 Wi-Fi 热点时保护您的隐私和允许您开启 SurfEasy VPN。加入 Lenovo Starter VPN 套餐后，您可以完成奖励活动以赢取更多数据保护带宽。请升级，以便使用不受限制的带宽保护最多 5 台智能手机、平板电脑和计算机。",
-            "getStarted": "开启 SurfEasy VPN：",
-            "getStarted1": "单击上面的“打开 SurfEasy”按钮以启动 SurfEasy VPN。",
-            "getStarted2": "开启 VPN，稍等片刻，以便确认连接安全。",
-            "getStarted3": "如果需要，更改您的区域或位置，然后畅享安全、隐秘的网络。",
-            "poweredBySurfEasy": "SurfEasy 出品",
-            "privacyPolicyAndTermsOfService": "阅读<tag>隐私策略</tag>和<tag>服务条款</tag>的更多信息"
-        },
-        "passwordManager": {
-            "statusTitle": "DASHLANE 密码管理器",
-            "title": "密码保险箱",
-            "header": "Dashlane",
-            "whatIsPmNotInstalled": "提供保存高强度复杂密码和即时登录到每个站点的最安全、简单的方式。",
-            "whatIsPmInstalled": "更安全的数字生活正在向您招手：添加密码、启用暗网监控、自动填充个人和支付信息。",
-            "startProtect": "开始以简单方式保护您的网上帐户。",
-            "discount": "Lenovo 用户可以专享 6 个月的免费 Dashlane 高级版。",
-            "offer": "此优惠仅面向 Dashlane 新用户！",
-            "getDashLane": "获取 Dashlane",
-            "learnMoreAbout": "了解充分利用 Dashlane 的<tag>更多信息</tag>",
-            "openDashLane": "打开 Dashlane",
-            "neverForget": "Dashlane：永远不再忘记任何密码",
-            "whatIsDashLane": "Dashlane 是一个结合浏览器使用的密码管理器和数字保护应用程序。它可以自动保存密码和个人数据，替您记住这些信息，并安全地存储所有内容。Dashlane 还会分析帐户的安全性，并提供简单的方法改善您的密码安全状况。",
-            "helpYou": "Dashlane 可帮助您：",
-            "helpYou1": "记住数量不限的用户名和密码。",
-            "helpYou2": "随时随地即时登录进行无缝浏览",
-            "helpYou3": "跨设备同步信息，让您始终可以访问重要的帐户",
-            "helpYou4": "提供简单、可操作的建议增强您的网上保护",
-            "getStarted": "开始使用 Dashlane？",
-            "checkOutThisGuide": "使用 Dashlane 保护上网安全，省却时间与烦恼。有关开始使用的详细说明，<tag>请查看此指南</tag>。",
-            "allowsYou": "Dashlane 可让您：",
-            "allowsYou1": "随时随地即时登录进行无缝浏览 - 跨设备同步信息，让您始终可以访问重要的帐户",
-            "allowsYou2": "监控暗网保障个人信息安全",
-            "allowsYou3": "通过内置 VPN 在不安全的 WiFi 网络上提供安全性",
-            "allowsYou4": "在不显示密码的情况下安全地共享密码",
-            "poweredByDashLane": "Dashlane 出品",
-            "privacyPolicyAndTermsOfService": "阅读<tag>隐私策略</tag>和<tag>服务条款</tag>的更多信息"
-        },
-        "windowsHello": {
-            "statusTitle": "WINDOWS HELLO",
-            "title": "Windows Hello",
-            "protectYourDevice": "使用 Lenovo 推荐的这些安全产品保护您的设备。",
-            "signIn": "通过 Windows Hello 安全快速地进行登录。",
-            "signInTitle": "通过 Windows Hello 安全快速地进行登录",
-            "setUp": "设置 Windows Hello",
-            "whyWindowsHello": "为什么选择 Windows Hello？",
-            "whyWindowsHelloDescription1": "Windows Hello 可帮助您更加轻松且安全地登录到电脑，它还可用于 Microsoft 在线应用。按照下方说明开始使用 Windows Hello。",
-            "startUsingToday": "立即开始使用 Windows Hello",
-            "visitAndRegister": "访问 Windows Hello 页面，并注册您的指纹。",
-            "visitInSettings": "在系统设置中<tag>访问 Windows Hello</tag>",
-            "unlock": "使用 Windows Hello 登录并通过用手指触摸传感器来解锁您的电脑。",
-            "startUsingWindowsHello": "开始使用 Windows Hello 登录 Outlook、OneDrive、Office 365 和 Xbox Live 等 Microsoft 应用。",
-            "visitMicrosoft": "访问 Microsoft",
-            "poweredByWindowsHello": "Windows Hello 出品",
-            "privacyPolicy": "阅读<tag>隐私政策</tag>的更多信息",
-            "whyWindowsHelloDescription2": "Windows Hello 让登录电脑更简单、更安全。此外，它还能用于您的 Microsoft 在线应用。按照下方说明开始使用 Windows Hello",
-            "authentication": "Windows Hello 认证",
-            "traditional": "传统密码可能会遭到盗窃，并从世界任何地方用于访问您的帐户。更安全、更便捷。Windows Hello 是密码的新一代演变成果。使用指纹读取器来取代不安全的密码进行登录。",
-            "howToStart": "如何开始使用 Windows Hello？"
-        }
-    },
-    "lenovoId": {
-        "login": "登录",
-        "logout": "注销",
-        "user": "用户",
-        "welcomeText": "元气满满的一天 {{firstName}}！",
-        "welcomeTextWithouUserName": "元气满满的一天！",
-        "helloUser": "{{firstName}}，你好！",
-        "ssoErrorTitle": "错误",
-        "ssoErrorCommon": "糟糕，出现了错误。请重试。",
-        "ssoErrorCommonEx": "意外错误。请重试",
-        "ssoErrorTimeStampIncorrect": "糟糕，似乎您的电脑时间不正确。请更正您的电脑时间，然后重试。",
-        "ssoErrorNetworkDisconnected": "糟糕！连接失败了！请检查您的因特网连接并重试。",
-        "ssoErrorCommunicating": "网络错误。请检查连接，然后重试。",
-        "ssoErrorAccountPluginNotExist": "缺少插件。如果您已连接因特网，我们将在后台自动恢复插件。这可能需要花费一些时间，请稍后重试。"
-    },
-    "faq": {
-        "footer": {
-            "title": "没找到所需信息？",
-            "description": "需要更多支持吗？欢迎通过以下方式联系我们：​",
-            "body": "Lenovo 社区",
-            "button": "访问论坛"
-        },
-        "question1": {
-            "title": "备份和恢复文件",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        备份和恢复文件\n    </div>\n    <hr />\n    <div style='margin-bottom:7rem;'>\n        进行备份总是有益无害。​将文件备份到其他驱动器上以防止源文件发生意外情况。​\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        设置您的备份\n    </div>\n    <hr />\n    <div class='mb-5'>\n        选择“开始”按钮，,\n        <span style='font-weight:bold'>然后选择“设置</span> >\n        <span style='font-weight:bold'>更新和安全</span> >\n        <span style='font-weight:bold'>备份</span> > <span style='font-weight:bold'>添加驱动器</span> ”，最后选择外部驱动器或网络位置进行备份。\n\n    </div>\n    <div class='mb-5'>\n        <img src='./../../../../assets/images/qa/1.1.png' />\n    </div>\n    <div class='mb-5'>\n        准备就绪。我们每个小时都会对您的用户文件夹（C:\\Users\\username）中的所有文件进行备份。​要更改备份的文件对象或备份频率，\n        <span style='font-weight:bold;'>请转至“更多选项”。</span>.\n\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        恢复文件\n    </div>\n    <div class='mb-5'>\n        如果丢失了重要文件或文件夹，可通过以下方法进行恢复：\n    </div>\n    <div>\n\n        <div class='mb-3'>1.在任务栏的搜索框中输入“还原文件”，然后选择“通过文件历史记录还原你的文件”。</div>\n        <div class='mb-3'>2.查找所需的文件，然后使用箭头查看所有版本</div>\n        <div class='mb-3'>3.找到所需版本后，选择“还原”将其保存到原始位置。要将其保存到其他位置，请按住（或右键单击）“还原”，选择“还原为”，然后选择一个新的位置。\n        </div>\n\n    </div>\n</div>\n",
-            "para1": {
-                "line1": "进行备份总是有益无害。",
-                "line2": "​将文件备份到其他驱动器上以防止源文件发生意外情况。​"
-            },
-            "heading1": "设置您的备份",
-            "para2": {
-                "span1": "选择",
-                "span2": "“开始”",
-                "span3": "按钮，",
-                "span4": "然后选择“设置",
-                "span5": " 更新和安全",
-                "span6": "备份",
-                "span7": " 添加驱动器”",
-                "span8": "最后选择外部驱动器或网络位置进行备份。"
-            },
-            "para3": {
-                "span1": "准备就绪。",
-                "span2": "我们每个小时都会对您的用户文件夹（C:\\Users\\username）中的所有文件进行备份。",
-                "span3": "​要更改备份的文件对象或备份频率，请转至",
-                "span4": "“更多选项”。"
-            },
-            "heading2": "恢复文件",
-            "para4": "如果丢失了重要文件或文件夹，可通过以下方法进行恢复：",
-            "para5": {
-                "span1": "在任务栏的搜索框中输入",
-                "span2": "“还原文件”，",
-                "span3": "然后选择",
-                "span4": "“通过文件历史记录还原你的文件”。",
-                "span5": "查找所需的文件，然后使用箭头查看所有版本",
-                "span6": "找到所需版本后，选择",
-                "span7": "“还原”",
-                "span8": "将其保存到原始位置。要将其保存到其他位置，请按住（或右键单击）",
-                "span9": "“还原”，",
-                "span10": "选择",
-                "span11": "“还原为”",
-                "span12": "，然后选择一个新的位置。"
-            }
-        },
-        "question2": {
-            "title": "如何刷新您的电脑",
-            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        如何刷新您的电脑\n    </div>\n    <hr>\n    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>\n        症状\n    </div>\n    <div style='padding:5px 0;'>\n        如果您的电脑性能不如从前却不知道原因，则可以刷新您的电脑，这不会删除​任何个人文件或更改您的设置。Windows 可以&ldquo;刷新&rdquo;您的电脑，这就像在不删除个人文件的情况下进行全新安装。\n    </div>\n    <div style='padding:5px 0;'>\n        刷新电脑会发生以下结果：您的文件和个性化设置将不会更改\n    </div>\n    <div style='padding:5px 0;'>\n        <ul>\n            <li>您的电脑设置将恢复为缺省设置</li>\n            <li>来自 Windows 应用商店的应用程序将会保留</li>\n            <li>从磁盘或网站安装的应用程序将被删除</li>\n            <li> 已删除文件的列表将保存在您的桌面上</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        受影响的品牌\n    </div>\n\n    <div>\n        <ul>\n            <li>所有台式机和笔记本电脑/li>\n\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        操作系统\n    </div>\n\n    <div>\n        <ul>\n            <li> Windows 8、8.1 和 10</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        解决方案\n    </div>\n\n    <div>\n        <ul class='list-unstyled'>\n            <li>\n                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>\n                <ol>\n                    <li style='padding:5px 0;'>\n                        轻触或单击&ldquo;设置<span style='font-weight:bold;'> &rdquo; </span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        轻触或单击&ldquo;更新和恢复 <span style='font-weight:bold;'>&rdquo;​</span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <div>轻触或单击&ldquo;恢复<span style='font-weight:bold;'> &rdquo;</span></div>\n                        <div style='padding:5px 0'>。在&ldquo;恢复电脑而不影响你的文件&rdquo;下\n                            <span style='font-weight:bold;'> ，轻触或单击&ldquo;开始&rdquo;。</span></div>\n                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>\n\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <span style='font-weight:bold;'> 单击&ldquo;下一步&rdquo;。</span>.\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <span style='font-weight:bold;'> 请单击&ldquo;刷新&rdquo;开始刷新过程。</span>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        刷新过程完成后，可在桌面上找到&ldquo;已删除的应用&rdquo;列表\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        可以找到刷新系统时删除的应用程序\n                    </li>\n                </ol>\n            </li>\n            <li style='padding:10px 0;'>\n                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>\n                <ol>\n                    <li style='padding:5px 0;'> 在&ldquo;开始&rdquo;菜单提供的搜索工具中搜索&ldquo;刷新&rdquo;，</li>\n                    <li style='padding:5px 0;'>\n                        <div>在搜索结果中单击&ldquo;恢复电脑而不影响你的文件&rdquo;，如下所示。</div>\n                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        <div>单击&ldquo;恢复电脑而不影响你的文件&rdquo;​标题下方的&ldquo;开始&rdquo;按钮开始刷新您的 Windows 10 电脑。</div>\n                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>\n                    </li>\n                </ol>\n            </li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;'>\n        其他信息\n    </div>\n\n    <div>\n        大多数情况下，开始刷新电脑后，它将自己完成该过程。但是，如果 Windows 需要缺少的文件，将会要求您插入恢复盘，通常是 DVD 光盘或 U 盘。如果发生这种情况，所需介质取决于您的电脑。\n\n    </div>\n    <div style='padding:10px 0'>\n        如果曾使用 DVD 光盘将电脑升级到 Windows 8.1 或 Windows RT 8.1，请使用该光盘。如果没有 Windows 8.1 或 Windows RT 8.1 介质，请联系 Microsoft 支持。\n    </div>\n\n</div>",
-            "heading1": "症状",
-            "para1": {
-                "span1": "如果您的电脑性能不如从前却不知道原因，则可以刷新您的电脑，这不会删除​任何个人文件或更改您的设置。",
-                "span2": "Windows 可以“刷新”您的电脑，这就像在不删除个人文件的情况下进行全新安装。"
-            },
-            "para2": "刷新电脑会发生以下结果：您的文件和个性化设置将不会更改",
-            "para3": {
-                "span1": "您的电脑设置将恢复为缺省设置",
-                "span2": "来自 Windows 应用商店的应用程序将会保留",
-                "span3": "从磁盘或网站安装的应用程序将被删除",
-                "span4": "已删除文件的列表将保存在您的桌面上"
-            },
-            "heading2": "受影响的品牌",
-            "para4": "所有台式机和笔记本电脑",
-            "heading3": "操作系统",
-            "para5": "Windows 8、8.1 和 10",
-            "heading4": "解决方案",
-            "para6": "Windows 8/8.1",
-            "para7": {
-                "span1": {
-                    "line1": "轻触或单击",
-                    "line2": "“设置”"
-                },
-                "span2": {
-                    "line1": "轻触或单击",
-                    "line2": "“更新和恢复”​"
-                },
-                "span3": {
-                    "line1": "轻触或单击",
-                    "line2": "“恢复”。"
-                },
-                "span4": {
-                    "line1": "在“恢复电脑而不影响你的文件”下，",
-                    "line2": "轻触或单击“开始”。"
-                },
-                "span5": {
-                    "line1": "单击",
-                    "line2": "“下一步”。"
-                },
-                "span6": {
-                    "line1": "请单击",
-                    "line2": "“刷新”",
-                    "line3": "开始刷新过程。"
-                },
-                "span7": "刷新过程完成后，可在桌面上找到“已删除的应用”列表",
-                "span8": "可以找到刷新系统时删除的应用程序"
-            },
-            "para8": "Windows 10",
-            "para9": {
-                "span1": {
-                    "line1": "在",
-                    "line2": "“开始”菜单提供的搜索工具中搜索",
-                    "line3": "“刷新”，"
-                },
-                "span2": {
-                    "line1": "在搜索结果中单击",
-                    "line2": "“恢复电脑而不影响你的文件”，",
-                    "line3": "如下所示。"
-                },
-                "span3": {
-                    "line1": "单击",
-                    "line2": "“恢复电脑而不影响你的文件”",
-                    "line3": "​标题下方的",
-                    "line4": "“开始”",
-                    "line5": "按钮开始刷新您的 Windows 10 电脑。"
-                }
-            },
-            "header5": "其他信息",
-            "para10": "大多数情况下，开始刷新电脑后，它将自己完成该过程。但是，如果 Windows 需要缺少的文件，将会要求您插入恢复盘，通常是 DVD 光盘或 U 盘。如果发生这种情况，所需介质取决于您的电脑。\n",
-            "para11": "如果曾使用 DVD 光盘将电脑升级到 Windows 8.1 或 Windows RT 8.1，请使用该光盘。如果没有 Windows 8.1 或 Windows RT 8.1 介质，请联系 Microsoft 支持。\n"
-        },
-        "question3": {
-            "title": "如何了解计算机的 CPU 情况",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    如何了解计算机的 CPU 情况\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>症状</h3>\n<p>&ldquo;32 位&rdquo;​和&ldquo;64 位&rdquo;是指计算机处理器（也称为 CPU）处理信息的方式。64 位版本的 Windows 可比 32 位的系统更高效地处理大量随机存取内存（RAM）。</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>受影响的品牌</h3>\n<p>上述症状与以下系统相关，但并不限于以下系统：</p>\n<ul>\n    <li>所有台式机和笔记本电脑</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>操作系统</h3>\n<ul>\n    <li>Windows 7、8、10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>解决方案</h3>\n<p><strong><u>Windows 7 或 Vista</u></strong></p>\n<ol>\n    <li>单击&ldquo;开始&rdquo;按钮（&ldquo;开始&rdquo;按钮图片），然后右键单击&ldquo;计算机&rdquo;，最后单击&ldquo;属性&rdquo;打开&ldquo;系统&rdquo;</li>\n    <li>在&ldquo;系统&rdquo;下，可查看系统类型。</li>\n</ol>\n<p><strong><u>Windows 8 和 Windows 10/u></strong></p>\n<p><strong>方法 1：</strong> 在&ldquo;控制面板&rdquo;中查看&ldquo;系统&rdquo;窗口</p>\n<ol>\n    <li>从屏幕右边缘扫入，然后点击&ldquo;搜索&rdquo;。如果使用的是鼠标，请将指针指向屏幕右下角，然后单击&ldquo;搜索&rdquo;。</li>\n    <li>在搜索框中输入&ldquo;系统&rdquo;，然后轻触或单击&ldquo;设置&rdquo;。</strong></li>\n    <li>轻触或单击&ldquo;系统&rdquo;</li>\n    <li>如果运行的是 Windows 8 64 位版本，&ldquo;系统&rdquo;标题下的&ldquo;系统类型&rdquo;字段中将显示&ldquo;64 位操作系统&rdquo;。如果运行的是 Windows 8 32 位版本，&ldquo;系统&rdquo;标题下的&ldquo;系统类型&rdquo;字段中将显示&ldquo;32 位操作系统&rdquo;。\n         </li>\n</ol>\n<p><strong>方法 2 :</strong> 查看&ldquo;系统信息&rdquo;窗口</p>\n<ol>\n    <li>从屏幕右边缘扫入，然后点击&ldquo;搜索&rdquo;。如果使用的是鼠标，请将指针指向屏幕右下角，然后单击&ldquo;搜索&rdquo;。</li>\n    <li>在搜索框中，输入&ldquo;系统信息&rdquo;</li>\n    <li>轻触或单击&ldquo;系统&rdquo;，然后轻触或单击&ldquo;系统信息&rdquo;，最后单击&ldquo;系统摘要&rdquo;。</li>\n    <li>如果运行的是 Windows 8 64 位版本，&ldquo;项目&rdquo;标题下的&ldquo;系统类型&rdquo;字段中将显示&ldquo;基于 x64 的电脑&rdquo;。\n         <br /> <br /> 如果运行的是 Windows 8 32 位版本，&ldquo;项目&rdquo;标题下的&ldquo;系统类型&rdquo;字段中将显示&ldquo;基于 x86 的电脑&rdquo;。\n         </li>\n</ol>\n<p> </p>",
-            "heading1": "症状",
-            "para1": "“32 位”​和“64 位”是指计算机处理器（也称为 CPU）处理信息的方式。64 位版本的 Windows 可比 32 位的系统更高效地处理大量随机存取内存（RAM）。",
-            "heading2": "受影响的品牌",
-            "para2": "上述症状与以下系统相关，但并不限于以下系统：",
-            "para3": "所有台式机和笔记本电脑",
-            "heading3": "操作系统",
-            "para4": "Windows 7、8、10",
-            "heading4": "解决方案",
-            "para5": "Windows 7 或 Vista",
-            "para6": {
-                "span1": {
-                    "line1": "单击",
-                    "line2": "“开始”",
-                    "line3": "按钮（“开始”按钮图片），然后右键单击“计算机”，最后单击“属性”打开“系统”"
-                },
-                "span2": "在“系统”下，可查看系统类型。"
-            },
-            "para7": "Windows 8 和 Windows 10",
-            "para8": {
-                "span1": {
-                    "line1": "方法 1：",
-                    "line2": "在“控制面板”中查看“系统”窗口"
-                },
-                "span2": {
-                    "line1": "从屏幕右边缘扫入，然后点击",
-                    "line2": "“搜索”。",
-                    "line3": "如果使用的是鼠标，请将指针指向屏幕右下角，然后单击",
-                    "line4": "“搜索”。"
-                },
-                "span3": {
-                    "line1": "在搜索框中输入",
-                    "line2": "“系统”，",
-                    "line3": "然后轻触或单击",
-                    "line4": "“设置”。"
-                },
-                "span4": {
-                    "line1": "轻触或单击",
-                    "line2": "“系统”"
-                },
-                "span5": {
-                    "line1": "如果运行的是 Windows 8 64 位版本，",
-                    "line2": "“系统”标题下的“系统类型”字段中将显示",
-                    "line3": "“64 位操作系统”。",
-                    "line4": "如果运行的是 Windows 8 32 位版本，",
-                    "line5": "“系统”标题下的",
-                    "line6": "“系统类型”字段中将显示“32 位操作系统”。"
-                },
-                "span6": {
-                    "line1": "方法 2：",
-                    "line2": "查看“系统信息”窗口"
-                },
-                "span7": {
-                    "line1": "从屏幕右边缘扫入，然后点击",
-                    "line2": "“搜索”。",
-                    "line3": "如果使用的是鼠标，请将指针指向屏幕右下角，然后单击",
-                    "line4": "“搜索”。"
-                },
-                "span8": {
-                    "line1": "在搜索框中，",
-                    "line2": "输入“系统信息”"
-                },
-                "span9": {
-                    "line1": "轻触或单击",
-                    "line2": "“系统”",
-                    "line3": "，然后轻触或单击",
-                    "line4": "“系统信息”",
-                    "line5": "，最后单击",
-                    "line6": "“系统摘要”。"
-                },
-                "span10": {
-                    "line1": "如果运行的是 ",
-                    "line2": "Windows 8 64",
-                    "line3": " 位版本，",
-                    "line4": "“项目”标题下的",
-                    "line5": "“系统类型”",
-                    "line6": "字段中将显示“基于 x64 的电脑”。"
-                }
-            },
-            "para9": {
-                "line1": "如果运行的是 ",
-                "line2": " Windows 8 32 位版本，",
-                "line3": "“项目”标题下的",
-                "line4": "“系统类型”",
-                "line5": "字段中将显示“基于 x86 的电脑”。"
-            }
-        },
-        "question4": {
-            "title": "检查计算机的电池使用情况",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    检查计算机的电池使用情况\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>症状</h3>\n<p>Windows 10 包含一个新&ldquo;电池使用情况&rdquo;屏幕，可显示正在消耗笔记本电脑电量的程序。也就是说，该屏幕可清楚显示哪些应用程序（包括桌面程序和 Windows 10 &ldquo;通用&rdquo;应用）正在消耗过多的电量。​\n</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>受影响的品牌</h3>\n\n<ul>\n    <li>Lenovo 笔记本电脑、台式机</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>受影响的系统</h3>\n<ul>\n    <li>所有</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>操作系统</h3>\n<ul>\n    <li>Window 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>解决方案</h3>\n<p>此功能是 Windows 10 中的新功能，首先需要找到此功能，因为它不在传统的&ldquo;控制面板&rdquo;视图中，而是位于新的&ldquo;设置&rdquo;应用程序中</p>\n<p><br /> </p>\n<p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. 找到&ldquo;电池使用情况&rdquo;屏幕</h3>\n</p>\n<p>1.单击或轻触&ldquo;开始&rdquo;菜单中的&ldquo;设置&rdquo;选项</p>\n<p>2.在&ldquo;设置&rdquo;中选择&ldquo;系统&rdquo;，然后选择&ldquo;节电模式&rdquo;。</p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3.单击或轻触此标题下的&ldquo;电池使用情况&rdquo;链接以查看更多详细信息。 </p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. 分析电源使用情况</h3>\n<p>4.您可以更改设置使电池使用情况屏幕显示过去 24 小时到过去 48 小时或过去一周的电池使用情况</p>\n<p>5 &ldquo;系统&rdquo;、&ldquo;显示器&rdquo;和&ldquo;Wi-Fi&rdquo;​百分比。这将显示系统进程、显示器使用的电量</p>\n<p>6 ​&ldquo;使用中&rdquo;和&ldquo;后台&rdquo;选项对比显示正在使用的应用程序和在后台运行的应用程序消耗的电量。</p>\n<p>7 如果应用程序在后台消耗电量，可点击或轻触&ldquo;更改后台应用设置&rdquo;​链接，然后配置让应用程序不在后台运行。​此功能仅适用于通用 Windows 10 应用程序。</p>\n<p>8 进一步向下滚动，您将看到一个应用程序列表，这是此功能最有用的部分。它将显示在该期间内使用过电池电量的应用程序列表，并显示每个应用程序消耗的电池电量百分比\n</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
-            "heading1": "症状",
-            "para1": {
-                "span1": "Windows 10 包含一个新",
-                "span2": "“电池使用情况”",
-                "span3": "屏幕，可显示正在消耗笔记本电脑电量的程序。也就是说，该屏幕可清楚显示哪些应用程序（包括桌面程序和 Windows 10 “通用”应用）正在消耗过多的电量。​"
-            },
-            "heading2": "受影响的品牌",
-            "para2": " Lenovo 笔记本电脑、台式机\n受影响的系统",
-            "heading3": "受影响的系统",
-            "para3": "所有",
-            "heading4": "操作系统",
-            "para4": "Windows 10",
-            "heading5": "解决方案",
-            "para5": {
-                "line1": "此功能是 Windows 10 中的新功能，首先需要找到此功能，因为它不在传统的",
-                "line2": "“控制面板”",
-                "line3": "视图中，而是位于新的",
-                "line4": "“设置”",
-                "line5": "应用程序中"
-            },
-            "para6": {
-                "span1": "A. 找到“电池使用情况”屏幕",
-                "span2": {
-                    "line1": "1.单击或轻触",
-                    "line2": "“开始”",
-                    "line3": "菜单中的“设置”选项"
-                },
-                "span3": {
-                    "line1": "2.在",
-                    "line2": "“设置”",
-                    "line3": "中选择",
-                    "line4": "“系统”，",
-                    "line5": "然后选择",
-                    "line6": "“节电模式”。"
-                },
-                "span4": {
-                    "line1": "3.单击或轻触此标题下的",
-                    "line2": "“电池使用情况”",
-                    "line3": "链接以查看更多详细信息。"
-                },
-                "span5": "B. 分析电源使用情况",
-                "span6": "4.您可以更改设置使电池使用情况屏幕显示过去 24 小时到过去 48 小时或过去一周的电池使用情况",
-                "span7": {
-                    "line1": "5.",
-                    "line2": "“系统”、",
-                    "line3": "“显示器”",
-                    "line4": "和",
-                    "line5": "“Wi-Fi”​",
-                    "line6": "百分比。这将显示系统进程、显示器使用的电量"
-                },
-                "span8": {
-                    "line1": "6.",
-                    "line2": "​“使用中”",
-                    "line3": "和",
-                    "line4": "“后台”",
-                    "line5": "选项对比显示正在使用的应用程序和在后台运行的应用程序消耗的电量。"
-                },
-                "span9": {
-                    "line1": "7.如果应用程序在后台消耗电量，可点击或轻触",
-                    "line2": "“更改后台应用设置”​",
-                    "line3": "链接，然后配置让应用程序不在后台运行。​此功能仅适用于通用 Windows 10 应用程序。"
-                },
-                "span10": "8.进一步向下滚动，您将看到一个应用程序列表，这是此功能最有用的部分。它将显示在该期间内使用过电池电量的应用程序列表，并显示每个应用程序消耗的电池电量百分比"
-            }
-        },
-        "question5": {
-            "title": "像使用平板电脑一样使用您的计算机",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    ​像使用平板电脑一样使用您的计算机\n</div>\n<hr>\n<p>对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>使用平板电脑模式</h3>\n<p>要开启平板电脑模式，请在任务栏上选择&ldquo;操作中心&rdquo;，然后选择&ldquo;平板模式&rdquo;。</p>\n<p> </p>\n<p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>注</h3>\n<p>要确定您的设备是否可以自动打开平板电脑模式，请在制造商的网站上搜索您的设备。是否支持此功能取决于硬件、安装的驱动程序以及制造商设置设备的方 式。  </p>\n<p> </p>\n<p>在平板电脑模式下将以全屏模式打开应用程序，从而提供更多工作空间。要关闭应用程序，请将其拖到屏幕底部。\n</p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>提示</h3>\n<p>计算机处于平板电脑模式时会显示任务栏，但如果需要更多屏幕空间，可以将其隐藏。选择&ldquo;开始&rdquo;按钮，选择&ldquo;设置 > 系统 > 平板模式&rdquo;，然后打开&ldquo;在平板模式下自动隐藏任务栏&rdquo;。要查看隐藏的任务栏，从屏幕底部向上轻扫，或将鼠标悬停在该处。\n</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>同时使用两个应用程序</h3>\n<p>要在平板电脑模式下并排使用两个应用程序，请将一个打开的应用程序向下拖动，然后拖向一边。​您将看到它​贴靠的位置并看到它旁边的所有打开的应用程序。\n</p>\n<p>在此视图中，您还可以：/p>\n    <ul>\n        <li>使用两个辅屏之间共享的边缘来同时重新调整两个应用程序的大小。</li>\n        <li> 在任务视图中打开一个新应用程序——在任务栏上选择&ldquo;任务视图&rdquo;，选择一个应用程序，然后将其拖到一侧以将其贴靠在分隔的屏幕中。\n        </li>\n        <li>使用任务栏上的后退按钮返回应用程序，或打开一个之前用过的应用程序。\n        </li>\n    </ul>\n    <p> </p>",
-            "para1": "对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。\n",
-            "heading1": "使用平板电脑模式",
-            "para2": {
-                "span1": "要开启平板电脑模式，请在任务栏上选择 ",
-                "span2": "“操作中心”",
-                "span3": "，然后选择",
-                "span4": "“平板模式”。"
-            },
-            "heading2": "注",
-            "para3": "要确定您的设备是否可以自动打开平板电脑模式，请在制造商的网站上搜索您的设备。是否支持此功能取决于硬件、安装的驱动程序以及制造商设置设备的方式。\n",
-            "para4": "在平板电脑模式下将以全屏模式打开应用程序，从而提供更多工作空间。要关闭应用程序，请将其拖到屏幕底部。",
-            "heading3": "提示",
-            "para5": {
-                "span1": "计算机处于平板电脑模式时会显示任务栏，但如果需要更多屏幕空间，可以将其隐藏。",
-                "span2": "选择",
-                "span3": "“开始”",
-                "span4": "按钮，选择",
-                "span5": "“设置",
-                "span6": "系统",
-                "span7": "平板模式”",
-                "span8": "，然后打开",
-                "span9": "“在平板模式下自动隐藏任务栏”。",
-                "span10": "要查看隐藏的任务栏，从屏幕底部向上轻扫，或将鼠标悬停在该处。"
-            },
-            "heading4": "同时使用两个应用程序",
-            "para6": "要在平板电脑模式下并排使用两个应用程序，请将一个打开的应用程序向下拖动，然后拖向一边。​您将看到它​贴靠的位置并看到它旁边的所有打开的应用程序。",
-            "para7": "在此视图中，您还可以：",
-            "para8": {
-                "span1": "使用两个辅屏之间共享的边缘来同时重新调整两个应用程序的大小。",
-                "span2": {
-                    "line1": "在任务视图中打开一个新应用程序——在任务栏上选择",
-                    "line2": "“任务视图”",
-                    "line3": "，选择一个应用程序，然后将其拖到一侧以将其贴靠在分隔的屏幕中。"
-                },
-                "span3": "使用任务栏上的后退按钮返回应用程序，或打开一个之前用过的应用程序。"
-            }
-        },
-        "question6": {
-            "title": "了解您的个人助理 Cortona",
-            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    了解您的个人助理 Cortona\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Cortana 是什么？</h3>\n<hr />\n<p>Cortana 是您的数字助手。她可以帮助您完成工作。\n</p>\n<p>使用 Cortana 的次数越多，获得的体验也会更具个性化。</p>\n<p>要开始使用，请在搜索框中输入一个问题，或选择麦克风，然后通过语音与 Cortana 交互。（所有类型的电脑均支持手动输入，但必须具有麦克风才能进行语音输入。）\n</p>\n<p>如果不确定要说些什么，可参考锁屏界面以及 Cortana 主页（在任务栏上选择搜索框时显示）中的建议。\n</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>1.主页 2. 笔记本 3. 设置 4. 反馈</li>\n</ol>\n<p>以下是 Cortana 可为您做的一些事情：/p>\n    <ul>\n        <li> 基于时间、地点、人物为您提供提醒。</li>\n        <li>跟踪包裹、团队、兴趣和航班。</li>\n        <li>发送电子邮件和文本。</li>\n        <li>管理您的日历，不错失最新动态。</li>\n        <li>创建和管理列表。</li>\n        <li>聊天和玩游戏。</li>\n        <li>查找事件、文件、地点和信息。</li>\n        <li>打开系统上的任何应用程序。</li>\n    </ul>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>\n        试试这个：设置提醒</h3>\n    <hr />\n\n    <p>Cortana 可执行的操作之一是向您提供提醒。她可以基于事件、地点，甚至人物来向您提醒待办事项。\n    </p>\n    <p>例如，您可以手动输入或语音说出：&ldquo;下次 Tanya 来电时提醒我向她表示祝贺&rdquo;。\"</p>\n    <p>当收到 Tanya 的来电时，将显示这条提醒。</p>\n    <p>此外还有更棒的消息—如果您有 Windows phone 或适用于 iPhone 或 Android 的 Cortana，则可以设置 Cortana 在电脑和手机之间同步通知。\n    </p>\n    <p><img src='./../../../assets/images/qa/6.2.png' /></p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>你好小娜？</h3>\n    <hr />\n    <p>设置 Cortana 随时在您说出&ldquo;你好小娜&rdquo;时听取您的语音。选择任务栏上的搜索框以打开 Cortana 主页。然后选择&ldquo;设置&rdquo;并打开&ldquo;让 Cortana 响应&ldquo;你好小娜&rdquo;&rdquo;。\"\n    </p>\n    <p><img src='./../../../assets/images/qa/6.3.png' /></p>\n    <p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>注</p>\n    <p>Cortana 仅在某些国家/地区可用，且部分 Cortana 功能并非在所有国家/地区可用。\n    </p>\n    <p> </p>",
-            "heading1": "Cortana 是什么？",
-            "para1": "Cortana 是您的数字助手。她可以帮助您完成工作。",
-            "para2": "使用 Cortana 的次数越多，获得的体验也会更具个性化。",
-            "para3": "要开始使用，请在搜索框中输入一个问题，或选择麦克风，然后通过语音与 Cortana 交互。（所有类型的电脑均支持手动输入，但必须具有麦克风才能进行语音输入。）",
-            "para4": "如果不确定要说些什么，可参考锁屏界面以及 Cortana 主页（在任务栏上选择搜索框时显示）中的建议。",
-            "para5": "主页 2. 笔记本 3. 设置 4. 反馈",
-            "para6": "以下是 Cortana 可为您做的一些事情：",
-            "bulletset1": {
-                "span1": "基于时间、地点、人物为您提供提醒。​",
-                "span2": "跟踪包裹、团队、兴趣和航班。",
-                "span3": "发送电子邮件和文本。",
-                "span4": "管理您的日历，不错失最新动态。",
-                "span5": "创建和管理列表。",
-                "span6": "聊天和玩游戏。",
-                "span7": "查找事件、文件、地点和信息。",
-                "span8": "打开系统上的任何应用程序。"
-            },
-            "heading2": "试试这个：设置提醒",
-            "para7": "Cortana 可执行的操作之一是向您提供提醒。她可以基于事件、地点，甚至人物来向您提醒待办事项。",
-            "para8": "例如，您可以手动输入或语音说出：“下次 Tanya 来电时提醒我向她表示祝贺”。",
-            "para9": "当收到 Tanya 的来电时，将显示这条提醒。",
-            "para10": "此外还有更棒的消息—如果您有 Windows phone 或适用于 iPhone 或 Android 的 Cortana，则可以设置 Cortana 在电脑和手机之间同步通知。",
-            "heading3": "你好小娜？",
-            "para11": {
-                "span1": "设置 Cortana 随时在您说出“你好小娜”时听取您的语音。选择任务栏上的搜索框以打开 Cortana 主页。",
-                "span2": {
-                    "line1": "然后选择",
-                    "line2": "“设置”",
-                    "line3": "并打开",
-                    "line4": "“让 Cortana 响应“你好小娜””。"
-                }
-            },
-            "para12": "注",
-            "para13": "Cortana 仅在某些国家/地区可用，且部分 Cortana 功能并非在所有国家/地区可用。"
-        }
-    },
-    "welcometutorial": {
-        "description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-        "bullets1": "Optimize your system with lorem ipsum dolor set",
-        "bullets2": "Security Advisor makes managing your security easy ",
-        "bullets3": "Automatic updates keep your device in tip top shape",
-        "subtitle1": "How will you be using your device?",
-        "subtitle2": "Tell us about your interests",
-        "personal": "Personal Use",
-        "business": "Business Use",
-        "custom": "Custom Experience",
-        "privacytitle": "Help us improve the quality of the app by allowing anonymous collection of usage statistics.",
-        "moreInterest": "+ more interests",
-        "title1": "Welcome to",
-        "title2": "Lenovo",
-        "title3": "Vantage",
-        "privacypolicy": "Lenovo's Private Policy",
-        "interests": {
-            "games": "Games",
-            "news": "News",
-            "entertainment": "Entertainment",
-            "technology": "Technology",
-            "sports": "Sports",
-            "arts": "Arts",
-            "regionalNews": "Regional News",
-            "politics": "Politics",
-            "music": "Music",
-            "science": "Science"
-        }
-    }
+	},
+	"support": {
+		"common": {
+			"getSupport": "获取支持"
+		},
+		"warranty": {
+			"titleInWarranty": "在保修期内",
+			"titleWarrantyExpired": "保修到期",
+			"titleWarrantyNotFound": "未找到保修信息",
+			"statusInWarranty": "在保修期内",
+			"statusWarrantyExpired": "已到期",
+			"statusWarrantyNotFound": "未找到保修信息",
+			"yearDepotWarranty": "年维修站保修",
+			"warrantyDetails": "保修详细信息：",
+			"startDate": "开始日期：",
+			"endDate": "结束日期：",
+			"status": "状态：",
+			"subDescription1": "本产品具有若干年的有限保修，并有权送往维修站获得维修服务。客户可以致电其当地服务中心来获取更多信息。经销商可对本产品提供送修服务。",
+			"subDescription2": "我们无法找到适用于您设备的保修详细信息，要获取更多保修选项，请访问我们的支持网站。",
+			"viewWarrantyOptions": "查看保修选项"
+		},
+		"documentation": {
+			"title": "文档",
+			"listUserGuide": "用户指南"
+		},
+		"needHelp": {
+			"title": "需要帮助",
+			"description": "联系我们以获取帮助。",
+			"listLenovoCommunity": "Lenovo 社区",
+			"listContactCustomerService": "联系客户服务部门",
+			"listContactUsOnWechat": "通过微信联系我们",
+			"weChatDescription": "在微信上向我们提问，我们定会迅速回复"
+		},
+		"quicklinks": {
+			"title": "直通车",
+			"description": "联系我们以获取帮助。",
+			"listETicket": "通过电子凭单获取支持",
+			"listServiceProvider": "查找服务供应商",
+			"listAboutLenovoVantage": "关于我们"
+		},
+		"about": {
+			"version": "版本",
+			"licenseAgreement": "许可协议",
+			"otherSoftwareLicenses": "其他软件许可证",
+			"ourWebsite": "我们的网站",
+			"aboutYourDevice": "关于您的设备",
+			"copyright": "© 2002-2019 Lenovo All Rights Reserved"
+		}
+	},
+	"security": {
+		"landing": {
+			"fully": "受全面保护",
+			"fullyDesc": "恭喜您！您受到良好保护。",
+			"notFully": "未受全面保护",
+			"notFullyDesc": "您并未受到全面保护。立即了解如何更好地保护自己。",
+			"security101": "安全顾问 101",
+			"firewall": "防火墙",
+			"pwdHealth": "密码保险箱",
+			"vpnSecurity": "VPN 安全顾问",
+			"vpnVirtual": "VPN",
+			"wifiConnected": "WiFi 和互联家庭网络安全顾问",
+			"connectedHomeSecurity": "互联家庭网络安全顾问",
+			"fingerprint": "指纹读取器",
+			"seeAllNetwork": "请查看所有加入的网络",
+			"maliciousNetwork": "本月阻止了您的计算机加入 {{maliciousWifi}} 个恶意网络。",
+			"good": "良好",
+			"malicious": "恶意",
+			"suspicious": "可疑"
+		},
+		"antivirus": {
+			"common": {
+				"title": "病毒防护",
+				"back": "返回",
+				"why": "为什么选择 McAfee？",
+				"recommends": "Lenovo 建议您采用 McAfee 来保护您的所有设备，它具备如下优势：",
+				"award": "对包括勒索软件和恶意软件在内的最新网络威胁的防护能力屡获殊荣",
+				"dedicated": "一贯优于 Defender 和其他领先型 AV 供应商的专用安全顾问",
+				"deviceToCloud": "采用了不会减慢电脑运行速度的设备到云技术",
+				"poweredBy": "McAfee 出品",
+				"privacyTerms": "阅读<tag>隐私策略</tag>和<tag>服务条款</tag>的更多信息",
+				"mcafeePremium": "McAfee 高级保护",
+				"protectedBy": "您目前受到 {{protectedName}} 的保护。但是，您可以通过 McAfee LiveSafe 获得更好的保护。",
+				"virusScan": "病毒扫描",
+				"firewall": "防火墙",
+				"disabled": "已禁用",
+				"enableVirusScan": "启用病毒扫描",
+				"enablenFirewall": "启用防火墙"
+			},
+			"windowsDefender": {
+				"optimallyProtected": "未受最佳保护",
+				"subtitle": "您当前正受到 Windows Defender 的保护。但是，您可以通过 McAfee LiveSafe 获得更好的保护。通过以下内容了解更多信息。",
+				"learnMore": "了解 McAfee 的更多信息",
+				"windowsProtected": "Windows Defender 基本保护",
+				"windowsSubtitle": "Windows Defender 为您的设备提供基本保护"
+			},
+			"mcafee": {
+				"title": "McAfee LiveSafe",
+				"subtitle": "您当前受到 McAfee LiveSafe 的保护",
+				"valid": "有效期截止于：",
+				"upgrade": "立即升级",
+				"launch": "启动 McAfee",
+				"getMacfee": "获取 McAfee",
+				"topBenefits": "McAfee LiveSafe 的主要优势",
+				"awardTitle": "屡获殊荣的病毒防护软件",
+				"awardSubtitle": "在电脑上拦截病毒、恶意软件、勒索软件、间谍软件、有害程序等。",
+				"encryptedTitle": "加密存储",
+				"encryptedSubtitle": "通过使用 128 位加密技术将敏感文件存储至 PC 来对这些文件进行保密。",
+				"identityTitle": "身份盗窃防护",
+				"identitySubtitle": "负责保护您的身份免受盗窃和欺诈。",
+				"supportTitle": "免费的客户支持",
+				"supportSubtitle": "在软件的整个订阅期内通过电话、聊天或在线方式为您提供支持服务。",
+				"antiTitle": "反垃圾邮件",
+				"antiSubtitle": "通过删除可能包含危险链接和病毒的电子邮件，阻止危险邮件到达您的收件箱。",
+				"virusTitle": "病毒防护承诺",
+				"virusSubtitle": "当电脑感染病毒时，McAfee 专家将远程访问您的计算机以清除病毒，消除您的后顾之忧。",
+				"parentalTitle": "家长控制",
+				"parentalSubtitle": "阻止不希望孩子看到的网站和搜索结果。此外还可以设置孩子上网的时长限制。",
+				"license": "许可证有效期截止于：",
+				"trial": "试用有效期截止于："
+			},
+			"others": {
+				"othersProtection": "为您的设备提供基本保护"
+			}
+		},
+		"wifisecurity": {
+			"header": {
+				"title": "WiFi 和互联家庭网络安全顾问",
+				"back": "返回"
+			},
+			"container": {
+				"title": "Lenovo WiFi 安全",
+				"name": "WIFI 安全",
+				"enable": "已启用",
+				"disable": "已禁用",
+				"less": "缩略信息",
+				"more": "更多信息",
+				"networkHistory": "网络历史记录",
+				"connect": "最后连接",
+				"showmore": "显示更多内容",
+				"showless": "显示更少内容",
+				"button": "启用 WiFi 安全",
+				"disableDecribe": "Lenovo WiFi 安全是一项基于云的先进软件服务，可帮助您的设备区分安全的无线网络与潜在的恶意网络。"
+			},
+			"threatlocator": {
+				"describe": "使用威胁检测程序来确定您周围网络的安全性。",
+				"button": "检查威胁",
+				"connectionError": "连接错误",
+				"tryAgain": "由于网络不可用，我们无法找到您的设备，请连接因特网并重试。"
+			},
+			"locationmodal": {
+				"title": "启用位置服务",
+				"describe1": "要使用 Lenovo WiFi 安全，您必须为 Lenovo Vantage 启用位置服务。是否立即启用位置？",
+				"describe2": "要使用互联家庭网络安全顾问，您必须为 Lenovo Vantage 启用位置服务。是否立即启用位置？",
+				"agree": "同意",
+				"cancel": "取消"
+			}
+		},
+		"homeprotection": {
+			"homesecurity": {
+				"title": "互联家庭网络安全顾问",
+				"titleDescription": "\"互联家庭网络安全顾问\"功能通过以下三种方式确保安全性：",
+				"homeSecurityAffect1": "互联家庭网络安全顾问可确保您的设备安全、未被入侵",
+				"homeSecurityAffect2": "互联家庭网络安全顾问可确保所连接的网络的安全性",
+				"homeSecurityAffect3": "互联家庭网络安全顾问可确保连接到您家庭网络的其他设备的安全性。",
+				"describe": "不安全设备和网络可能引入恶意软件、导致身份信息被盗以及泄露个人和财务信息。启用此功能以降低将设备和家庭网络曝露给攻击者的风险",
+				"subtitle": "高枕无忧",
+				"subtitleDescribe": "检测到设备或家庭网络存在漏洞，或正在连接到一个潜在恶意网络时，\"互联家庭网络安全顾问\"功能会向您发送警报。请在\"提示和技巧\"中了解有关互联家庭网络安全顾问的更多信息。",
+				"tryNow": "立即试用"
+			},
+			"invitationcode": {
+				"button": "输入邀请码",
+				"buttonDescribe": "您已将此设备加入一个现有互联家庭网络安全顾问帐户。",
+				"title": "已拥有互联家庭网络安全顾问？",
+				"titleDescribe": "请确保已为 Vantage 启用了位置权限，以便将此设备加入一个现有互联家庭网络安全顾问帐户，以及使用互联家庭网络安全顾问。",
+				"enterCode": "输入您的连接代码",
+				"addHome": "添加主页",
+				"ok": "确定",
+				"continue": "继续",
+				"cancel": "取消",
+				"validateCode": "验证码",
+				"success": "已成功连接",
+				"canUse": "现在即可开始使用互联家庭网络安全顾问",
+				"tryAgain": "代码有误，请重试！",
+				"activationCode": "激活码"
+			},
+			"securityhealth": {
+				"title": "安全性状况",
+				"deviceName1": "可信来源的应用程序",
+				"deviceName2": "开发人员模式",
+				"deviceName3": "UAC 通知",
+				"deviceName4": "病毒防护可用性",
+				"deviceName5": "硬盘加密",
+				"deviceName6": "防火墙可用性",
+				"deviceName7": "已激活的 Windows",
+				"deviceName8": "安全更新可用性",
+				"deviceName9": "密码保护",
+				"deviceName10": "自动更新服务可用性",
+				"fail": "失败",
+				"pass": "通过",
+				"learnMoreAboutSecurityHealth": "在<tag>此处</tag>了解这些组件各自的详细信息。",
+				"peaceOfMind": "想更加放心吗？",
+				"button": "启用 WiFi 安全"
+			}
+		},
+		"vpn": {
+			"statusTitle": "SURFEASY VPN",
+			"title": "VPN 安全顾问",
+			"header": "SurfEasy VPN",
+			"whatIsSufEasy": "SurfEasy VPN 会加密您收发的信息，所以您可以安心、安全、隐秘地使用任何 Internet 连接和电脑、Mac®、智能手机或平板电脑。",
+			"whatCanSufEasy1": "一家在上网时为您提供保护的虚拟专用网络提供商。不使用 VPN 的情况下，您的电脑可能更容易受到攻击者和身份盗窃者的攻击。VPN 以静默方式在后台运行，并提供安全和隐私保护措施。",
+			"startUseSufEasy4": "SurfEasy 用户可以享受每 30 天 250 MB 的免费流量！按照 SurfEasy 应用的&ldquo;奖励&rdquo;选项卡上的步骤操作即可获取更多流量。",
+			"howToGetData": "如何获得免费流量：",
+			"howToGetData1": "确认电子邮件，赢取 +250 MB 流量",
+			"howToGetData2": "添加第二部设备，赢取 +250 MB 流量",
+			"howToGetData3": "推荐朋友，赢取 +500 MB 流量",
+			"howToGetData4": "在 Facebook 上为 SurfEasy 点赞，赢取 +100 MB 流量",
+			"howToGetData5": "在 Twitter 上关注 SurfEasy，赢取 +100 MB 流量",
+			"helpKeep": "SurfEasy VPN 可帮助您的联机活动保持安全和隐秘。",
+			"getSufEasy": "获取 SurfEasy",
+			"openSufEasy": "打开 SurfEasy",
+			"whySufEasy": "为何要使用虚拟专用网络（VPN）？",
+			"whySufEasyDescription": "使用咖啡店或机场等地的 Wi-Fi 热点会让您的敏感信息暴露给网络犯罪分子。SurfEasy VPN 是一种无记录 VPN，用于加密个人信息，并且不会跟踪或存储联机活动或位置。",
+			"startUseSufEasy": "立即开始使用 SurfEasy",
+			"startUseSufEasy1": "通过银行级加密帮助确保您收发的数据的安全和隐秘。",
+			"startUseSufEasy2": "帮助防止公司跟踪您的联机活动或位置。",
+			"startUseSufEasy3": "免费产品和高级产品提供多种选项，以满足您的需要和预算。",
+			"howToUseSufEasy": "如何使用 SurfEasy VPN",
+			"whatCanSufEasy2": "在访问公共 Wi-Fi 热点时保护您的隐私和允许您开启 SurfEasy VPN。加入 Lenovo Starter VPN 套餐后，您可以完成奖励活动以赢取更多数据保护带宽。请升级，以便使用不受限制的带宽保护最多 5 台智能手机、平板电脑和计算机。",
+			"getStarted": "开启 SurfEasy VPN：",
+			"getStarted1": "单击上面的“打开 SurfEasy”按钮以启动 SurfEasy VPN。",
+			"getStarted2": "开启 VPN，稍等片刻，以便确认连接安全。",
+			"getStarted3": "如果需要，更改您的区域或位置，然后畅享安全、隐秘的网络。",
+			"poweredBySurfEasy": "SurfEasy 出品",
+			"privacyPolicyAndTermsOfService": "阅读<tag>隐私策略</tag>和<tag>服务条款</tag>的更多信息"
+		},
+		"passwordManager": {
+			"statusTitle": "DASHLANE 密码管理器",
+			"title": "密码保险箱",
+			"header": "Dashlane",
+			"whatIsPmNotInstalled": "提供保存高强度复杂密码和即时登录到每个站点的最安全、简单的方式。",
+			"whatIsPmInstalled": "更安全的数字生活正在向您招手：添加密码、启用暗网监控、自动填充个人和支付信息。",
+			"startProtect": "开始以简单方式保护您的网上帐户。",
+			"discount": "Lenovo 用户可以专享 6 个月的免费 Dashlane 高级版。",
+			"offer": "此优惠仅面向 Dashlane 新用户！",
+			"getDashLane": "获取 Dashlane",
+			"learnMoreAbout": "了解充分利用 Dashlane 的<tag>更多信息</tag>",
+			"openDashLane": "打开 Dashlane",
+			"neverForget": "Dashlane：永远不再忘记任何密码",
+			"whatIsDashLane": "Dashlane 是一个结合浏览器使用的密码管理器和数字保护应用程序。它可以自动保存密码和个人数据，替您记住这些信息，并安全地存储所有内容。Dashlane 还会分析帐户的安全性，并提供简单的方法改善您的密码安全状况。",
+			"helpYou": "Dashlane 可帮助您：",
+			"helpYou1": "记住数量不限的用户名和密码。",
+			"helpYou2": "随时随地即时登录进行无缝浏览",
+			"helpYou3": "跨设备同步信息，让您始终可以访问重要的帐户",
+			"helpYou4": "提供简单、可操作的建议增强您的网上保护",
+			"getStarted": "开始使用 Dashlane？",
+			"checkOutThisGuide": "使用 Dashlane 保护上网安全，省却时间与烦恼。有关开始使用的详细说明，<tag>请查看此指南</tag>。",
+			"allowsYou": "Dashlane 可让您：",
+			"allowsYou1": "随时随地即时登录进行无缝浏览 - 跨设备同步信息，让您始终可以访问重要的帐户",
+			"allowsYou2": "监控暗网保障个人信息安全",
+			"allowsYou3": "通过内置 VPN 在不安全的 WiFi 网络上提供安全性",
+			"allowsYou4": "在不显示密码的情况下安全地共享密码",
+			"poweredByDashLane": "Dashlane 出品",
+			"privacyPolicyAndTermsOfService": "阅读<tag>隐私策略</tag>和<tag>服务条款</tag>的更多信息"
+		},
+		"windowsHello": {
+			"statusTitle": "WINDOWS HELLO",
+			"title": "Windows Hello",
+			"protectYourDevice": "使用 Lenovo 推荐的这些安全产品保护您的设备。",
+			"signIn": "通过 Windows Hello 安全快速地进行登录。",
+			"signInTitle": "通过 Windows Hello 安全快速地进行登录",
+			"setUp": "设置 Windows Hello",
+			"whyWindowsHello": "为什么选择 Windows Hello？",
+			"whyWindowsHelloDescription1": "Windows Hello 可帮助您更加轻松且安全地登录到电脑，它还可用于 Microsoft 在线应用。按照下方说明开始使用 Windows Hello。",
+			"startUsingToday": "立即开始使用 Windows Hello",
+			"visitAndRegister": "访问 Windows Hello 页面，并注册您的指纹。",
+			"visitInSettings": "在系统设置中<tag>访问 Windows Hello</tag>",
+			"unlock": "使用 Windows Hello 登录并通过用手指触摸传感器来解锁您的电脑。",
+			"startUsingWindowsHello": "开始使用 Windows Hello 登录 Outlook、OneDrive、Office 365 和 Xbox Live 等 Microsoft 应用。",
+			"visitMicrosoft": "访问 Microsoft",
+			"poweredByWindowsHello": "Windows Hello 出品",
+			"privacyPolicy": "阅读<tag>隐私政策</tag>的更多信息",
+			"whyWindowsHelloDescription2": "Windows Hello 让登录电脑更简单、更安全。此外，它还能用于您的 Microsoft 在线应用。按照下方说明开始使用 Windows Hello",
+			"authentication": "Windows Hello 认证",
+			"traditional": "传统密码可能会遭到盗窃，并从世界任何地方用于访问您的帐户。更安全、更便捷。Windows Hello 是密码的新一代演变成果。使用指纹读取器来取代不安全的密码进行登录。",
+			"howToStart": "如何开始使用 Windows Hello？"
+		}
+	},
+	"lenovoId": {
+		"login": "登录",
+		"logout": "注销",
+		"unlockExclusives": "解锁独家",
+		"user": "用户",
+		"welcomeText": "元气满满的一天 {{firstName}}！",
+		"welcomeTextWithouUserName": "元气满满的一天！",
+		"helloUser": "{{firstName}}，你好！",
+		"ssoErrorTitle": "错误",
+		"ssoErrorCommon": "糟糕，出现了错误。请重试。",
+		"ssoErrorCommonEx": "意外错误。请重试",
+		"ssoErrorTimeStampIncorrect": "糟糕，似乎您的电脑时间不正确。请更正您的电脑时间，然后重试。",
+		"ssoErrorNetworkDisconnected": "糟糕！连接失败了！请检查您的因特网连接并重试。",
+		"ssoErrorCommunicating": "网络错误。请检查连接，然后重试。",
+		"ssoErrorAccountPluginNotExist": "缺少插件。如果您已连接因特网，我们将在后台自动恢复插件。这可能需要花费一些时间，请稍后重试。"
+	},
+	"faq": {
+		"footer": {
+			"title": "没找到所需信息？",
+			"description": "需要更多支持吗？欢迎通过以下方式联系我们：​",
+			"body": "Lenovo 社区",
+			"button": "访问论坛"
+		},
+		"question1": {
+			"title": "备份和恢复文件",
+			"description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        备份和恢复文件\n    </div>\n    <hr />\n    <div style='margin-bottom:7rem;'>\n        进行备份总是有益无害。​将文件备份到其他驱动器上以防止源文件发生意外情况。​\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        设置您的备份\n    </div>\n    <hr />\n    <div class='mb-5'>\n        选择“开始”按钮，,\n        <span style='font-weight:bold'>然后选择“设置</span> >\n        <span style='font-weight:bold'>更新和安全</span> >\n        <span style='font-weight:bold'>备份</span> > <span style='font-weight:bold'>添加驱动器</span> ”，最后选择外部驱动器或网络位置进行备份。\n\n    </div>\n    <div class='mb-5'>\n        <img src='./../../../../assets/images/qa/1.1.png' />\n    </div>\n    <div class='mb-5'>\n        准备就绪。我们每个小时都会对您的用户文件夹（C:\\Users\\username）中的所有文件进行备份。​要更改备份的文件对象或备份频率，\n        <span style='font-weight:bold;'>请转至“更多选项”。</span>.\n\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        恢复文件\n    </div>\n    <div class='mb-5'>\n        如果丢失了重要文件或文件夹，可通过以下方法进行恢复：\n    </div>\n    <div>\n\n        <div class='mb-3'>1.在任务栏的搜索框中输入“还原文件”，然后选择“通过文件历史记录还原你的文件”。</div>\n        <div class='mb-3'>2.查找所需的文件，然后使用箭头查看所有版本</div>\n        <div class='mb-3'>3.找到所需版本后，选择“还原”将其保存到原始位置。要将其保存到其他位置，请按住（或右键单击）“还原”，选择“还原为”，然后选择一个新的位置。\n        </div>\n\n    </div>\n</div>\n",
+			"para1": {
+				"line1": "进行备份总是有益无害。",
+				"line2": "​将文件备份到其他驱动器上以防止源文件发生意外情况。​"
+			},
+			"heading1": "设置您的备份",
+			"para2": {
+				"span1": "选择",
+				"span2": "“开始”",
+				"span3": "按钮，",
+				"span4": "然后选择“设置",
+				"span5": " 更新和安全",
+				"span6": "备份",
+				"span7": " 添加驱动器”",
+				"span8": "最后选择外部驱动器或网络位置进行备份。"
+			},
+			"para3": {
+				"span1": "准备就绪。",
+				"span2": "我们每个小时都会对您的用户文件夹（C:\\Users\\username）中的所有文件进行备份。",
+				"span3": "​要更改备份的文件对象或备份频率，请转至",
+				"span4": "“更多选项”。"
+			},
+			"heading2": "恢复文件",
+			"para4": "如果丢失了重要文件或文件夹，可通过以下方法进行恢复：",
+			"para5": {
+				"span1": "在任务栏的搜索框中输入",
+				"span2": "“还原文件”，",
+				"span3": "然后选择",
+				"span4": "“通过文件历史记录还原你的文件”。",
+				"span5": "查找所需的文件，然后使用箭头查看所有版本",
+				"span6": "找到所需版本后，选择",
+				"span7": "“还原”",
+				"span8": "将其保存到原始位置。要将其保存到其他位置，请按住（或右键单击）",
+				"span9": "“还原”，",
+				"span10": "选择",
+				"span11": "“还原为”",
+				"span12": "，然后选择一个新的位置。"
+			}
+		},
+		"question2": {
+			"title": "如何刷新您的电脑",
+			"description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        如何刷新您的电脑\n    </div>\n    <hr>\n    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>\n        症状\n    </div>\n    <div style='padding:5px 0;'>\n        如果您的电脑性能不如从前却不知道原因，则可以刷新您的电脑，这不会删除​任何个人文件或更改您的设置。Windows 可以&ldquo;刷新&rdquo;您的电脑，这就像在不删除个人文件的情况下进行全新安装。\n    </div>\n    <div style='padding:5px 0;'>\n        刷新电脑会发生以下结果：您的文件和个性化设置将不会更改\n    </div>\n    <div style='padding:5px 0;'>\n        <ul>\n            <li>您的电脑设置将恢复为缺省设置</li>\n            <li>来自 Windows 应用商店的应用程序将会保留</li>\n            <li>从磁盘或网站安装的应用程序将被删除</li>\n            <li> 已删除文件的列表将保存在您的桌面上</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        受影响的品牌\n    </div>\n\n    <div>\n        <ul>\n            <li>所有台式机和笔记本电脑/li>\n\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        操作系统\n    </div>\n\n    <div>\n        <ul>\n            <li> Windows 8、8.1 和 10</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        解决方案\n    </div>\n\n    <div>\n        <ul class='list-unstyled'>\n            <li>\n                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>\n                <ol>\n                    <li style='padding:5px 0;'>\n                        轻触或单击&ldquo;设置<span style='font-weight:bold;'> &rdquo; </span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        轻触或单击&ldquo;更新和恢复 <span style='font-weight:bold;'>&rdquo;​</span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <div>轻触或单击&ldquo;恢复<span style='font-weight:bold;'> &rdquo;</span></div>\n                        <div style='padding:5px 0'>。在&ldquo;恢复电脑而不影响你的文件&rdquo;下\n                            <span style='font-weight:bold;'> ，轻触或单击&ldquo;开始&rdquo;。</span></div>\n                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>\n\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <span style='font-weight:bold;'> 单击&ldquo;下一步&rdquo;。</span>.\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <span style='font-weight:bold;'> 请单击&ldquo;刷新&rdquo;开始刷新过程。</span>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        刷新过程完成后，可在桌面上找到&ldquo;已删除的应用&rdquo;列表\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        可以找到刷新系统时删除的应用程序\n                    </li>\n                </ol>\n            </li>\n            <li style='padding:10px 0;'>\n                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>\n                <ol>\n                    <li style='padding:5px 0;'> 在&ldquo;开始&rdquo;菜单提供的搜索工具中搜索&ldquo;刷新&rdquo;，</li>\n                    <li style='padding:5px 0;'>\n                        <div>在搜索结果中单击&ldquo;恢复电脑而不影响你的文件&rdquo;，如下所示。</div>\n                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        <div>单击&ldquo;恢复电脑而不影响你的文件&rdquo;​标题下方的&ldquo;开始&rdquo;按钮开始刷新您的 Windows 10 电脑。</div>\n                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>\n                    </li>\n                </ol>\n            </li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;'>\n        其他信息\n    </div>\n\n    <div>\n        大多数情况下，开始刷新电脑后，它将自己完成该过程。但是，如果 Windows 需要缺少的文件，将会要求您插入恢复盘，通常是 DVD 光盘或 U 盘。如果发生这种情况，所需介质取决于您的电脑。\n\n    </div>\n    <div style='padding:10px 0'>\n        如果曾使用 DVD 光盘将电脑升级到 Windows 8.1 或 Windows RT 8.1，请使用该光盘。如果没有 Windows 8.1 或 Windows RT 8.1 介质，请联系 Microsoft 支持。\n    </div>\n\n</div>",
+			"heading1": "症状",
+			"para1": {
+				"span1": "如果您的电脑性能不如从前却不知道原因，则可以刷新您的电脑，这不会删除​任何个人文件或更改您的设置。",
+				"span2": "Windows 可以“刷新”您的电脑，这就像在不删除个人文件的情况下进行全新安装。"
+			},
+			"para2": "刷新电脑会发生以下结果：您的文件和个性化设置将不会更改",
+			"para3": {
+				"span1": "您的电脑设置将恢复为缺省设置",
+				"span2": "来自 Windows 应用商店的应用程序将会保留",
+				"span3": "从磁盘或网站安装的应用程序将被删除",
+				"span4": "已删除文件的列表将保存在您的桌面上"
+			},
+			"heading2": "受影响的品牌",
+			"para4": "所有台式机和笔记本电脑",
+			"heading3": "操作系统",
+			"para5": "Windows 8、8.1 和 10",
+			"heading4": "解决方案",
+			"para6": "Windows 8/8.1",
+			"para7": {
+				"span1": {
+					"line1": "轻触或单击",
+					"line2": "“设置”"
+				},
+				"span2": {
+					"line1": "轻触或单击",
+					"line2": "“更新和恢复”​"
+				},
+				"span3": {
+					"line1": "轻触或单击",
+					"line2": "“恢复”。"
+				},
+				"span4": {
+					"line1": "在“恢复电脑而不影响你的文件”下，",
+					"line2": "轻触或单击“开始”。"
+				},
+				"span5": {
+					"line1": "单击",
+					"line2": "“下一步”。"
+				},
+				"span6": {
+					"line1": "请单击",
+					"line2": "“刷新”",
+					"line3": "开始刷新过程。"
+				},
+				"span7": "刷新过程完成后，可在桌面上找到“已删除的应用”列表",
+				"span8": "可以找到刷新系统时删除的应用程序"
+			},
+			"para8": "Windows 10",
+			"para9": {
+				"span1": {
+					"line1": "在",
+					"line2": "“开始”菜单提供的搜索工具中搜索",
+					"line3": "“刷新”，"
+				},
+				"span2": {
+					"line1": "在搜索结果中单击",
+					"line2": "“恢复电脑而不影响你的文件”，",
+					"line3": "如下所示。"
+				},
+				"span3": {
+					"line1": "单击",
+					"line2": "“恢复电脑而不影响你的文件”",
+					"line3": "​标题下方的",
+					"line4": "“开始”",
+					"line5": "按钮开始刷新您的 Windows 10 电脑。"
+				}
+			},
+			"header5": "其他信息",
+			"para10": "大多数情况下，开始刷新电脑后，它将自己完成该过程。但是，如果 Windows 需要缺少的文件，将会要求您插入恢复盘，通常是 DVD 光盘或 U 盘。如果发生这种情况，所需介质取决于您的电脑。\n",
+			"para11": "如果曾使用 DVD 光盘将电脑升级到 Windows 8.1 或 Windows RT 8.1，请使用该光盘。如果没有 Windows 8.1 或 Windows RT 8.1 介质，请联系 Microsoft 支持。\n"
+		},
+		"question3": {
+			"title": "如何了解计算机的 CPU 情况",
+			"description": "<div style='font-size:4rem;font-weight:bold;'>\n    如何了解计算机的 CPU 情况\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>症状</h3>\n<p>&ldquo;32 位&rdquo;​和&ldquo;64 位&rdquo;是指计算机处理器（也称为 CPU）处理信息的方式。64 位版本的 Windows 可比 32 位的系统更高效地处理大量随机存取内存（RAM）。</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>受影响的品牌</h3>\n<p>上述症状与以下系统相关，但并不限于以下系统：</p>\n<ul>\n    <li>所有台式机和笔记本电脑</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>操作系统</h3>\n<ul>\n    <li>Windows 7、8、10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>解决方案</h3>\n<p><strong><u>Windows 7 或 Vista</u></strong></p>\n<ol>\n    <li>单击&ldquo;开始&rdquo;按钮（&ldquo;开始&rdquo;按钮图片），然后右键单击&ldquo;计算机&rdquo;，最后单击&ldquo;属性&rdquo;打开&ldquo;系统&rdquo;</li>\n    <li>在&ldquo;系统&rdquo;下，可查看系统类型。</li>\n</ol>\n<p><strong><u>Windows 8 和 Windows 10/u></strong></p>\n<p><strong>方法 1：</strong> 在&ldquo;控制面板&rdquo;中查看&ldquo;系统&rdquo;窗口</p>\n<ol>\n    <li>从屏幕右边缘扫入，然后点击&ldquo;搜索&rdquo;。如果使用的是鼠标，请将指针指向屏幕右下角，然后单击&ldquo;搜索&rdquo;。</li>\n    <li>在搜索框中输入&ldquo;系统&rdquo;，然后轻触或单击&ldquo;设置&rdquo;。</strong></li>\n    <li>轻触或单击&ldquo;系统&rdquo;</li>\n    <li>如果运行的是 Windows 8 64 位版本，&ldquo;系统&rdquo;标题下的&ldquo;系统类型&rdquo;字段中将显示&ldquo;64 位操作系统&rdquo;。如果运行的是 Windows 8 32 位版本，&ldquo;系统&rdquo;标题下的&ldquo;系统类型&rdquo;字段中将显示&ldquo;32 位操作系统&rdquo;。\n         </li>\n</ol>\n<p><strong>方法 2 :</strong> 查看&ldquo;系统信息&rdquo;窗口</p>\n<ol>\n    <li>从屏幕右边缘扫入，然后点击&ldquo;搜索&rdquo;。如果使用的是鼠标，请将指针指向屏幕右下角，然后单击&ldquo;搜索&rdquo;。</li>\n    <li>在搜索框中，输入&ldquo;系统信息&rdquo;</li>\n    <li>轻触或单击&ldquo;系统&rdquo;，然后轻触或单击&ldquo;系统信息&rdquo;，最后单击&ldquo;系统摘要&rdquo;。</li>\n    <li>如果运行的是 Windows 8 64 位版本，&ldquo;项目&rdquo;标题下的&ldquo;系统类型&rdquo;字段中将显示&ldquo;基于 x64 的电脑&rdquo;。\n         <br /> <br /> 如果运行的是 Windows 8 32 位版本，&ldquo;项目&rdquo;标题下的&ldquo;系统类型&rdquo;字段中将显示&ldquo;基于 x86 的电脑&rdquo;。\n         </li>\n</ol>\n<p> </p>",
+			"heading1": "症状",
+			"para1": "“32 位”​和“64 位”是指计算机处理器（也称为 CPU）处理信息的方式。64 位版本的 Windows 可比 32 位的系统更高效地处理大量随机存取内存（RAM）。",
+			"heading2": "受影响的品牌",
+			"para2": "上述症状与以下系统相关，但并不限于以下系统：",
+			"para3": "所有台式机和笔记本电脑",
+			"heading3": "操作系统",
+			"para4": "Windows 7、8、10",
+			"heading4": "解决方案",
+			"para5": "Windows 7 或 Vista",
+			"para6": {
+				"span1": {
+					"line1": "单击",
+					"line2": "“开始”",
+					"line3": "按钮（“开始”按钮图片），然后右键单击“计算机”，最后单击“属性”打开“系统”"
+				},
+				"span2": "在“系统”下，可查看系统类型。"
+			},
+			"para7": "Windows 8 和 Windows 10",
+			"para8": {
+				"span1": {
+					"line1": "方法 1：",
+					"line2": "在“控制面板”中查看“系统”窗口"
+				},
+				"span2": {
+					"line1": "从屏幕右边缘扫入，然后点击",
+					"line2": "“搜索”。",
+					"line3": "如果使用的是鼠标，请将指针指向屏幕右下角，然后单击",
+					"line4": "“搜索”。"
+				},
+				"span3": {
+					"line1": "在搜索框中输入",
+					"line2": "“系统”，",
+					"line3": "然后轻触或单击",
+					"line4": "“设置”。"
+				},
+				"span4": {
+					"line1": "轻触或单击",
+					"line2": "“系统”"
+				},
+				"span5": {
+					"line1": "如果运行的是 Windows 8 64 位版本，",
+					"line2": "“系统”标题下的“系统类型”字段中将显示",
+					"line3": "“64 位操作系统”。",
+					"line4": "如果运行的是 Windows 8 32 位版本，",
+					"line5": "“系统”标题下的",
+					"line6": "“系统类型”字段中将显示“32 位操作系统”。"
+				},
+				"span6": {
+					"line1": "方法 2：",
+					"line2": "查看“系统信息”窗口"
+				},
+				"span7": {
+					"line1": "从屏幕右边缘扫入，然后点击",
+					"line2": "“搜索”。",
+					"line3": "如果使用的是鼠标，请将指针指向屏幕右下角，然后单击",
+					"line4": "“搜索”。"
+				},
+				"span8": {
+					"line1": "在搜索框中，",
+					"line2": "输入“系统信息”"
+				},
+				"span9": {
+					"line1": "轻触或单击",
+					"line2": "“系统”",
+					"line3": "，然后轻触或单击",
+					"line4": "“系统信息”",
+					"line5": "，最后单击",
+					"line6": "“系统摘要”。"
+				},
+				"span10": {
+					"line1": "如果运行的是 ",
+					"line2": "Windows 8 64",
+					"line3": " 位版本，",
+					"line4": "“项目”标题下的",
+					"line5": "“系统类型”",
+					"line6": "字段中将显示“基于 x64 的电脑”。"
+				}
+			},
+			"para9": {
+				"line1": "如果运行的是 ",
+				"line2": " Windows 8 32 位版本，",
+				"line3": "“项目”标题下的",
+				"line4": "“系统类型”",
+				"line5": "字段中将显示“基于 x86 的电脑”。"
+			}
+		},
+		"question4": {
+			"title": "检查计算机的电池使用情况",
+			"description": "<div style='font-size:4rem;font-weight:bold;'>\n    检查计算机的电池使用情况\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>症状</h3>\n<p>Windows 10 包含一个新&ldquo;电池使用情况&rdquo;屏幕，可显示正在消耗笔记本电脑电量的程序。也就是说，该屏幕可清楚显示哪些应用程序（包括桌面程序和 Windows 10 &ldquo;通用&rdquo;应用）正在消耗过多的电量。​\n</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>受影响的品牌</h3>\n\n<ul>\n    <li>Lenovo 笔记本电脑、台式机</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>受影响的系统</h3>\n<ul>\n    <li>所有</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>操作系统</h3>\n<ul>\n    <li>Window 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>解决方案</h3>\n<p>此功能是 Windows 10 中的新功能，首先需要找到此功能，因为它不在传统的&ldquo;控制面板&rdquo;视图中，而是位于新的&ldquo;设置&rdquo;应用程序中</p>\n<p><br /> </p>\n<p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. 找到&ldquo;电池使用情况&rdquo;屏幕</h3>\n</p>\n<p>1.单击或轻触&ldquo;开始&rdquo;菜单中的&ldquo;设置&rdquo;选项</p>\n<p>2.在&ldquo;设置&rdquo;中选择&ldquo;系统&rdquo;，然后选择&ldquo;节电模式&rdquo;。</p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3.单击或轻触此标题下的&ldquo;电池使用情况&rdquo;链接以查看更多详细信息。 </p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. 分析电源使用情况</h3>\n<p>4.您可以更改设置使电池使用情况屏幕显示过去 24 小时到过去 48 小时或过去一周的电池使用情况</p>\n<p>5 &ldquo;系统&rdquo;、&ldquo;显示器&rdquo;和&ldquo;Wi-Fi&rdquo;​百分比。这将显示系统进程、显示器使用的电量</p>\n<p>6 ​&ldquo;使用中&rdquo;和&ldquo;后台&rdquo;选项对比显示正在使用的应用程序和在后台运行的应用程序消耗的电量。</p>\n<p>7 如果应用程序在后台消耗电量，可点击或轻触&ldquo;更改后台应用设置&rdquo;​链接，然后配置让应用程序不在后台运行。​此功能仅适用于通用 Windows 10 应用程序。</p>\n<p>8 进一步向下滚动，您将看到一个应用程序列表，这是此功能最有用的部分。它将显示在该期间内使用过电池电量的应用程序列表，并显示每个应用程序消耗的电池电量百分比\n</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+			"heading1": "症状",
+			"para1": {
+				"span1": "Windows 10 包含一个新",
+				"span2": "“电池使用情况”",
+				"span3": "屏幕，可显示正在消耗笔记本电脑电量的程序。也就是说，该屏幕可清楚显示哪些应用程序（包括桌面程序和 Windows 10 “通用”应用）正在消耗过多的电量。​"
+			},
+			"heading2": "受影响的品牌",
+			"para2": " Lenovo 笔记本电脑、台式机\n受影响的系统",
+			"heading3": "受影响的系统",
+			"para3": "所有",
+			"heading4": "操作系统",
+			"para4": "Windows 10",
+			"heading5": "解决方案",
+			"para5": {
+				"line1": "此功能是 Windows 10 中的新功能，首先需要找到此功能，因为它不在传统的",
+				"line2": "“控制面板”",
+				"line3": "视图中，而是位于新的",
+				"line4": "“设置”",
+				"line5": "应用程序中"
+			},
+			"para6": {
+				"span1": "A. 找到“电池使用情况”屏幕",
+				"span2": {
+					"line1": "1.单击或轻触",
+					"line2": "“开始”",
+					"line3": "菜单中的“设置”选项"
+				},
+				"span3": {
+					"line1": "2.在",
+					"line2": "“设置”",
+					"line3": "中选择",
+					"line4": "“系统”，",
+					"line5": "然后选择",
+					"line6": "“节电模式”。"
+				},
+				"span4": {
+					"line1": "3.单击或轻触此标题下的",
+					"line2": "“电池使用情况”",
+					"line3": "链接以查看更多详细信息。"
+				},
+				"span5": "B. 分析电源使用情况",
+				"span6": "4.您可以更改设置使电池使用情况屏幕显示过去 24 小时到过去 48 小时或过去一周的电池使用情况",
+				"span7": {
+					"line1": "5.",
+					"line2": "“系统”、",
+					"line3": "“显示器”",
+					"line4": "和",
+					"line5": "“Wi-Fi”​",
+					"line6": "百分比。这将显示系统进程、显示器使用的电量"
+				},
+				"span8": {
+					"line1": "6.",
+					"line2": "​“使用中”",
+					"line3": "和",
+					"line4": "“后台”",
+					"line5": "选项对比显示正在使用的应用程序和在后台运行的应用程序消耗的电量。"
+				},
+				"span9": {
+					"line1": "7.如果应用程序在后台消耗电量，可点击或轻触",
+					"line2": "“更改后台应用设置”​",
+					"line3": "链接，然后配置让应用程序不在后台运行。​此功能仅适用于通用 Windows 10 应用程序。"
+				},
+				"span10": "8.进一步向下滚动，您将看到一个应用程序列表，这是此功能最有用的部分。它将显示在该期间内使用过电池电量的应用程序列表，并显示每个应用程序消耗的电池电量百分比"
+			}
+		},
+		"question5": {
+			"title": "像使用平板电脑一样使用您的计算机",
+			"description": "<div style='font-size:4rem;font-weight:bold;'>\n    ​像使用平板电脑一样使用您的计算机\n</div>\n<hr>\n<p>对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>使用平板电脑模式</h3>\n<p>要开启平板电脑模式，请在任务栏上选择&ldquo;操作中心&rdquo;，然后选择&ldquo;平板模式&rdquo;。</p>\n<p> </p>\n<p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>注</h3>\n<p>要确定您的设备是否可以自动打开平板电脑模式，请在制造商的网站上搜索您的设备。是否支持此功能取决于硬件、安装的驱动程序以及制造商设置设备的方 式。  </p>\n<p> </p>\n<p>在平板电脑模式下将以全屏模式打开应用程序，从而提供更多工作空间。要关闭应用程序，请将其拖到屏幕底部。\n</p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>提示</h3>\n<p>计算机处于平板电脑模式时会显示任务栏，但如果需要更多屏幕空间，可以将其隐藏。选择&ldquo;开始&rdquo;按钮，选择&ldquo;设置 > 系统 > 平板模式&rdquo;，然后打开&ldquo;在平板模式下自动隐藏任务栏&rdquo;。要查看隐藏的任务栏，从屏幕底部向上轻扫，或将鼠标悬停在该处。\n</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>同时使用两个应用程序</h3>\n<p>要在平板电脑模式下并排使用两个应用程序，请将一个打开的应用程序向下拖动，然后拖向一边。​您将看到它​贴靠的位置并看到它旁边的所有打开的应用程序。\n</p>\n<p>在此视图中，您还可以：/p>\n    <ul>\n        <li>使用两个辅屏之间共享的边缘来同时重新调整两个应用程序的大小。</li>\n        <li> 在任务视图中打开一个新应用程序——在任务栏上选择&ldquo;任务视图&rdquo;，选择一个应用程序，然后将其拖到一侧以将其贴靠在分隔的屏幕中。\n        </li>\n        <li>使用任务栏上的后退按钮返回应用程序，或打开一个之前用过的应用程序。\n        </li>\n    </ul>\n    <p> </p>",
+			"para1": "对于有触摸屏的设备，平板电脑模式让 Windows 操作更直观、更易于使用。\n",
+			"heading1": "使用平板电脑模式",
+			"para2": {
+				"span1": "要开启平板电脑模式，请在任务栏上选择 ",
+				"span2": "“操作中心”",
+				"span3": "，然后选择",
+				"span4": "“平板模式”。"
+			},
+			"heading2": "注",
+			"para3": "要确定您的设备是否可以自动打开平板电脑模式，请在制造商的网站上搜索您的设备。是否支持此功能取决于硬件、安装的驱动程序以及制造商设置设备的方式。\n",
+			"para4": "在平板电脑模式下将以全屏模式打开应用程序，从而提供更多工作空间。要关闭应用程序，请将其拖到屏幕底部。",
+			"heading3": "提示",
+			"para5": {
+				"span1": "计算机处于平板电脑模式时会显示任务栏，但如果需要更多屏幕空间，可以将其隐藏。",
+				"span2": "选择",
+				"span3": "“开始”",
+				"span4": "按钮，选择",
+				"span5": "“设置",
+				"span6": "系统",
+				"span7": "平板模式”",
+				"span8": "，然后打开",
+				"span9": "“在平板模式下自动隐藏任务栏”。",
+				"span10": "要查看隐藏的任务栏，从屏幕底部向上轻扫，或将鼠标悬停在该处。"
+			},
+			"heading4": "同时使用两个应用程序",
+			"para6": "要在平板电脑模式下并排使用两个应用程序，请将一个打开的应用程序向下拖动，然后拖向一边。​您将看到它​贴靠的位置并看到它旁边的所有打开的应用程序。",
+			"para7": "在此视图中，您还可以：",
+			"para8": {
+				"span1": "使用两个辅屏之间共享的边缘来同时重新调整两个应用程序的大小。",
+				"span2": {
+					"line1": "在任务视图中打开一个新应用程序——在任务栏上选择",
+					"line2": "“任务视图”",
+					"line3": "，选择一个应用程序，然后将其拖到一侧以将其贴靠在分隔的屏幕中。"
+				},
+				"span3": "使用任务栏上的后退按钮返回应用程序，或打开一个之前用过的应用程序。"
+			}
+		},
+		"question6": {
+			"title": "了解您的个人助理 Cortona",
+			"description": "<div style='font-size:4rem;font-weight:bold;'>\n    了解您的个人助理 Cortona\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Cortana 是什么？</h3>\n<hr />\n<p>Cortana 是您的数字助手。她可以帮助您完成工作。\n</p>\n<p>使用 Cortana 的次数越多，获得的体验也会更具个性化。</p>\n<p>要开始使用，请在搜索框中输入一个问题，或选择麦克风，然后通过语音与 Cortana 交互。（所有类型的电脑均支持手动输入，但必须具有麦克风才能进行语音输入。）\n</p>\n<p>如果不确定要说些什么，可参考锁屏界面以及 Cortana 主页（在任务栏上选择搜索框时显示）中的建议。\n</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>1.主页 2. 笔记本 3. 设置 4. 反馈</li>\n</ol>\n<p>以下是 Cortana 可为您做的一些事情：/p>\n    <ul>\n        <li> 基于时间、地点、人物为您提供提醒。</li>\n        <li>跟踪包裹、团队、兴趣和航班。</li>\n        <li>发送电子邮件和文本。</li>\n        <li>管理您的日历，不错失最新动态。</li>\n        <li>创建和管理列表。</li>\n        <li>聊天和玩游戏。</li>\n        <li>查找事件、文件、地点和信息。</li>\n        <li>打开系统上的任何应用程序。</li>\n    </ul>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>\n        试试这个：设置提醒</h3>\n    <hr />\n\n    <p>Cortana 可执行的操作之一是向您提供提醒。她可以基于事件、地点，甚至人物来向您提醒待办事项。\n    </p>\n    <p>例如，您可以手动输入或语音说出：&ldquo;下次 Tanya 来电时提醒我向她表示祝贺&rdquo;。\"</p>\n    <p>当收到 Tanya 的来电时，将显示这条提醒。</p>\n    <p>此外还有更棒的消息—如果您有 Windows phone 或适用于 iPhone 或 Android 的 Cortana，则可以设置 Cortana 在电脑和手机之间同步通知。\n    </p>\n    <p><img src='./../../../assets/images/qa/6.2.png' /></p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>你好小娜？</h3>\n    <hr />\n    <p>设置 Cortana 随时在您说出&ldquo;你好小娜&rdquo;时听取您的语音。选择任务栏上的搜索框以打开 Cortana 主页。然后选择&ldquo;设置&rdquo;并打开&ldquo;让 Cortana 响应&ldquo;你好小娜&rdquo;&rdquo;。\"\n    </p>\n    <p><img src='./../../../assets/images/qa/6.3.png' /></p>\n    <p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>注</p>\n    <p>Cortana 仅在某些国家/地区可用，且部分 Cortana 功能并非在所有国家/地区可用。\n    </p>\n    <p> </p>",
+			"heading1": "Cortana 是什么？",
+			"para1": "Cortana 是您的数字助手。她可以帮助您完成工作。",
+			"para2": "使用 Cortana 的次数越多，获得的体验也会更具个性化。",
+			"para3": "要开始使用，请在搜索框中输入一个问题，或选择麦克风，然后通过语音与 Cortana 交互。（所有类型的电脑均支持手动输入，但必须具有麦克风才能进行语音输入。）",
+			"para4": "如果不确定要说些什么，可参考锁屏界面以及 Cortana 主页（在任务栏上选择搜索框时显示）中的建议。",
+			"para5": "主页 2. 笔记本 3. 设置 4. 反馈",
+			"para6": "以下是 Cortana 可为您做的一些事情：",
+			"bulletset1": {
+				"span1": "基于时间、地点、人物为您提供提醒。​",
+				"span2": "跟踪包裹、团队、兴趣和航班。",
+				"span3": "发送电子邮件和文本。",
+				"span4": "管理您的日历，不错失最新动态。",
+				"span5": "创建和管理列表。",
+				"span6": "聊天和玩游戏。",
+				"span7": "查找事件、文件、地点和信息。",
+				"span8": "打开系统上的任何应用程序。"
+			},
+			"heading2": "试试这个：设置提醒",
+			"para7": "Cortana 可执行的操作之一是向您提供提醒。她可以基于事件、地点，甚至人物来向您提醒待办事项。",
+			"para8": "例如，您可以手动输入或语音说出：“下次 Tanya 来电时提醒我向她表示祝贺”。",
+			"para9": "当收到 Tanya 的来电时，将显示这条提醒。",
+			"para10": "此外还有更棒的消息—如果您有 Windows phone 或适用于 iPhone 或 Android 的 Cortana，则可以设置 Cortana 在电脑和手机之间同步通知。",
+			"heading3": "你好小娜？",
+			"para11": {
+				"span1": "设置 Cortana 随时在您说出“你好小娜”时听取您的语音。选择任务栏上的搜索框以打开 Cortana 主页。",
+				"span2": {
+					"line1": "然后选择",
+					"line2": "“设置”",
+					"line3": "并打开",
+					"line4": "“让 Cortana 响应“你好小娜””。"
+				}
+			},
+			"para12": "注",
+			"para13": "Cortana 仅在某些国家/地区可用，且部分 Cortana 功能并非在所有国家/地区可用。"
+		}
+	},
+	"welcometutorial": {
+		"description": "Vantage使您可以轻松更新驱动程序，运行诊断程序，请求支持以及了解您的设备。快速定制您的体验，并根据您的需求找到有用的信息",
+		"bullets1": "使用lorem ipsum dolor set优化您的系统",
+		"bullets2": "Security Advisor使您可以轻松管理安全性",
+		"bullets3": "自动更新可使您的设备保持最佳状态",
+		"subtitle1": "你将如何使用你的设备？",
+		"subtitle2": "告诉我们您的兴趣",
+		"personal": "个人使用",
+		"business": "商业用途",
+		"custom": "定制体验",
+		"privacytitle": "通过匿名收集使用统计信息，帮助我们提高应用程序的质量。",
+		"moreInterest": "+更多的兴趣",
+		"title1": "欢迎来到",
+		"title2": "Lenovo",
+		"title3": "Vantage",
+		"privacypolicy": "Lenovo's 私人政策",
+		"interests": {
+			"games": "游戏",
+			"news": "新闻",
+			"entertainment": "娱乐",
+			"technology": "技术",
+			"sports": "体育",
+			"arts": "艺术",
+			"regionalNews": "区域新闻",
+			"politics": "政治",
+			"music": "音乐",
+			"science": "科学"
+		}
+	}
 }
