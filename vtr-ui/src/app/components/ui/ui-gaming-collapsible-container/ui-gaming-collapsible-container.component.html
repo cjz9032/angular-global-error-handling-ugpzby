@@ -7,13 +7,14 @@
 		<ng-container *ngIf="showOptions">
 			<div class="gaming-dropdown-menu">
 				<ng-container *ngFor="let option of options; index as i">
-					<li [ngClass]="{ 'selected': option.name===currentOption }" (click)="optionSelected(option)">
+					<li [ngClass]="{ 'selected': option.name===currentOption }" (click)="optionSelected(option)" (mouseenter)="changeDescription(option)"
+					(mouseleave)="resetDescription(option)">
 						<a class="dropdown-item"><i class="icon icon-checkline"></i>{{ option.name  | translate}}</a>
 					</li>
 				</ng-container>
-				<!--<div class="information">
+				<div class="information">
 				  <p>{{ currentDescription | translate }}</p>
-				</div>-->
+				</div>
 			</div>
 		</ng-container>
 	</div>

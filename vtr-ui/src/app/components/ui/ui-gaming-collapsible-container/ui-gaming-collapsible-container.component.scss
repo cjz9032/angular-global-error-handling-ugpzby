@@ -73,19 +73,9 @@
       p {
         font-size: 1.4rem;
         color: $main_lightest;
-        display: none;
+
       }
     }
-    li {
-      &:nth-child(1):hover ~ .information p:nth-child(1) {
-        display: block;
-      }
-      &:nth-child(2):hover ~ .information p:nth-child(2) {
-        display: block;
-      }
-      &:nth-child(3):hover ~ .information p:nth-child(3) {
-        display: block;
-      }
-    }
+
   }
 }
