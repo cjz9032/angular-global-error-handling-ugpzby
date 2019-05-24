@@ -1,12 +1,11 @@
 @import "../../../styles/common-blocks";
 
-.support-banner {
+.support-widget {
   @extend %common-block-wrapper;
   padding-top: 2.4rem;
   padding-bottom: 2.4rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   margin: 5rem 0;
 
   &__col {
@@ -27,31 +26,39 @@
     color: #667481;
     line-height: 2.3rem;
   }
+  &__button {
+    border: 1px solid #ECF0F1;
+    border-radius: 5px;
+    background-color: #F5F7F8;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    padding: 1.7rem 0 1.8rem 1.5rem;
+  }
+  &__icon {
+    max-height: 2.2rem;
+    margin-right: 1.5rem;
+  }
   &__support-time {
-    color: #4A81FD;
-    font-size: 1.4rem;
-    padding: 1rem 0 0 1.6rem;
-    margin: 0 4rem 0 4rem;
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-
-    &:before {
-      position: absolute;
-      left: 0;
-      top: 0;
-      content: '';
-      width: 2.6rem;
-      height: 2.3rem;
-      background: url("/assets/icons/privacy-tab/icon-support-clock.svg") center no-repeat;
-      background-size: cover;
-    }
+    font-size: 1.2rem;
+    color: #34495E;
+    line-height: 1.6rem;
+    display: flex;
+    align-items: center;
     strong {
       font-weight: bold;
     }
   }
-  &__button {
-    @extend %theme-btn;
-    @extend %theme-btn--transparent;
+  &__support-time {
+    margin: 0;
+    width: 100%;
+    position: relative;
+    &::after {
+      content: '>';
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translate(-50%, 0);
+    }
   }
 }
