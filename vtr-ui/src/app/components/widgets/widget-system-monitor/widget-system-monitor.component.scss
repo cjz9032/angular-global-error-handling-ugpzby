@@ -22,12 +22,16 @@
 				}
 				@media #{$mediaquery_X3} {
 					padding-right: 0rem;
+					height: 28rem;
 				}
 			}
 			&.right {
 				padding-left: 3rem;
 				@media #{$mediaquery_5} {
 					padding-left: 2rem;
+				}
+				@media #{$mediaquery_X3} {
+					padding-left: 0rem;
 				}
 			}
 			&.link-wrapper {
