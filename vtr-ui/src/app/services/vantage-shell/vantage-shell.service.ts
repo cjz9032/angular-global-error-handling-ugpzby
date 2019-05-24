@@ -1,9 +1,6 @@
-/// <reference path='../../../../node_modules/@lenovo/tan-client-bridge/src/index.js' />
-
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
 import * as Phoenix from '@lenovo/tan-client-bridge';
-import { EventTypes } from '@lenovo/tan-client-bridge';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
@@ -313,7 +310,7 @@ export class VantageShellService {
 		if (this.phoenix) {
 			try {
 				const deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
-				console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
+				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 				return deviceFilterResult;
 			} catch (error) {
 				console.log('In VantageShellService.deviceFilter. Error:', error);
@@ -422,7 +419,6 @@ export class VantageShellService {
 			// return this.phoenix.gaming.gamingOverclock.SetRamOCStatus(ramOCStausObj.ramOcStatuss);
 			return ramOCStausObj.ramOcStatus;
 		}
-
 		return ramOCStausObj.ramOcStatus;
 	}
 
@@ -440,4 +436,9 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getIntelligentSensing(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.lis.intelligentSensing;
+		} return undefined;
+	}
 }

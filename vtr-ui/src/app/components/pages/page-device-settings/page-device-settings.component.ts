@@ -7,6 +7,8 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AudioService } from 'src/app/services/audio/audio.service';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
+import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -19,7 +21,7 @@ export class PageDeviceSettingsComponent implements OnInit {
 	back = 'BACK';
 	backarrow = '< ';
 	parentPath = 'device';
-	menuItems = [
+	public menuItems = [
 		{
 			id: 'power',
 			label: 'Power',
@@ -41,14 +43,6 @@ export class PageDeviceSettingsComponent implements OnInit {
 			icon: 'display-camera',
 			subitems: [],
 			active: false
-		},
-		{
-			id: 'smart-assist',
-			label: 'Smart Assist',
-			path: 'device-settings/smart-assist',
-			icon: 'smart-assist',
-			subitems: [],
-			active: false
 		}
 	];
 	cardContentPositionA: any = {};
@@ -59,15 +53,18 @@ export class PageDeviceSettingsComponent implements OnInit {
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
-		public audioService: AudioService
+		public audioService: AudioService,
+		private smartAssist: SmartAssistService,
+		private logger: LoggerService
 	) {
 		this.fetchCMSArticles();
 		this.getMicrophoneSettings();
+		this.getHPDStatus();
 	}
 
 	ngOnInit() {
 		this.devService.writeLog('DEVICE SETTINGS INIT', this.menuItems);
-		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine)
+		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 	}
 
 	getMicrophoneSettings() {
@@ -76,9 +73,9 @@ export class PageDeviceSettingsComponent implements OnInit {
 				this.audioService.getMicrophoneSettings()
 					.then((microphone: Microphone) => {
 						console.log('getMicrophoneSettings', microphone);
-						 if (!microphone.available) {
+						if (!microphone.available) {
 							this.menuItems.splice(1, 1);
-						 }
+						}
 					}).catch(error => {
 						console.error('getMicrophoneSettings', error);
 					});
@@ -113,6 +110,31 @@ export class PageDeviceSettingsComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
+	}
+
+	/**
+	 * check if HPD related features are supported or not. If yes show Smart Assist tab else hide. Default is hidden
+	 */
+	private getHPDStatus() {
+		this.smartAssist.getHPDCapability()
+			.then((isAvailable: boolean) => {
+				console.log('getHPDStatus.getHPDCapability()', isAvailable);
+				// isAvailable = true;
+				this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
+				if (isAvailable) {
+					this.menuItems.push({
+						id: 'smart-assist',
+						label: 'Smart Assist',
+						path: 'device/device-settings/smart-assist',
+						icon: 'smart-assist',
+						subitems: [],
+						active: false
+					});
+				}
+			})
+			.catch(error => {
+				this.logger.error('error in getHPDStatus.getHPDCapability()', error);
+			});
 	}
 
 }
