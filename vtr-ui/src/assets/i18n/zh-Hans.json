@@ -82,16 +82,6 @@
 				}
 			}
         },
-        "common": {
-			"menu": {
-				"support": {
-					"title": "Support",
-					"sub1": "Support",
-					"sub2": "Facebook",
-					"sub3": "Instagram"
-				}
-			}
-		},
 		"lightingProfile": {
 			"title": "Lighting"
 		}
