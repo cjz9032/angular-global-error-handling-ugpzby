@@ -126,7 +126,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		{
 			header: 'gaming.dashboard.device.legionEdge.status.alwayson',
 			name: 'gaming.dashboard.device.legionEdge.status.alwayson',
-			description: 'gaming.dashboard.device.legionEdge.status.alwayson',
+			description: 'gaming.dashboard.device.legionEdge.statusText.onText',
 			selectedOption: false,
 			defaultOption: false,
 			value: 1,
@@ -134,7 +134,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		{
 			header: 'gaming.dashboard.device.legionEdge.status.whenGaming',
 			name: 'gaming.dashboard.device.legionEdge.status.whenGaming',
-			description: 'gaming.dashboard.device.legionEdge.status.whenGaming',
+			description: 'gaming.dashboard.device.legionEdge.statusText.gamingText',
 			selectedOption: false,
 			defaultOption: true,
 			value: 2,
@@ -142,7 +142,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		{
 			header: 'gaming.dashboard.device.legionEdge.status.off',
 			name: 'gaming.dashboard.device.legionEdge.status.off',
-			description: 'gaming.dashboard.device.legionEdge.status.off',
+			description: 'gaming.dashboard.device.legionEdge.statusText.offText',
 			selectedOption: false,
 			defaultOption: false,
 			value: 3,

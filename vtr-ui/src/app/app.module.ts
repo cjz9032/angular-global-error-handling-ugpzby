@@ -191,6 +191,7 @@ import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
 import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
 import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
+import { UiLightingProfileComponent } from './components/ui/ui-lighting-profile/ui-lighting-profile.component';
 
 
 
@@ -345,7 +346,8 @@ library.add(fal);
 		PowerSmartSettingsComponent,
 		SubpageDeviceSettingsSmartAssistComponent,
 		UiPopoverComponent,
-		WidgetHomeSecurityDeviceComponent
+		WidgetHomeSecurityDeviceComponent,
+		UiLightingProfileComponent
 	],
 	imports: [
 		BrowserModule,
