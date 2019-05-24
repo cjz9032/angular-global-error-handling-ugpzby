@@ -20,6 +20,8 @@
 		font-weight: $weight_medium;
 		display: inline-block;
 		margin: 0;
+		position: relative;
+		z-index: 1;
 	}
 	.back {
 		color: $light;
@@ -29,6 +31,7 @@
 		display: table;
 		position: relative;
 		cursor: pointer;
+		z-index: 1;
 		a {
 			border-bottom: 0.1rem solid $light;
 		}
@@ -38,6 +41,8 @@
 		margin-top: 3.5rem;
 		text-transform: uppercase;
 		font-size: 1.2rem;
+		position: relative;
+		z-index: 1;
 		a {
 			color: $light;
 			text-decoration: none;
