@@ -3,10 +3,10 @@ import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 import { CommonService } from '../../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
-import { RamOCSatus } from 'src/app/data-models/gaming/gaming-legion-edge.model';
+import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class GamingSystemUpdateService {
 
@@ -33,14 +33,7 @@ export class GamingSystemUpdateService {
 		}
 		return undefined;
 	}
-	public SetRAMOverClockStatus(RamOCStatus: RamOCSatus): any {
-		const UpdatedRamOCStatus = this.shellService.setRAMOCStatus(RamOCStatus);
-		if (UpdatedRamOCStatus !== undefined) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.RamOcStatus, RamOCStatus);
-			return RamOCStatus;
-		}
-		return undefined;
-	}
+
 	public GetRAMOverClockStatus(): any  {
 		const RamOCStatus = this.shellService.getRAMOCStatus();
 		if (RamOCStatus !== undefined) {
@@ -49,5 +42,14 @@ export class GamingSystemUpdateService {
 			return RamOCStatusObj;
 		}
 		return this.commonService.getLocalStorageValue(LocalStorageKey.RamOcStatus);
+	}
+
+	public SetRAMOverClockStatus(RamOCStatus: RamOCSatus): any {
+		const UpdatedRamOCStatus = this.shellService.setRAMOCStatus(RamOCStatus);
+		if (UpdatedRamOCStatus !== undefined) {
+			this.commonService.setLocalStorageValue(LocalStorageKey.RamOcStatus, RamOCStatus);
+			return RamOCStatus;
+		}
+		return undefined;
 	}
 }

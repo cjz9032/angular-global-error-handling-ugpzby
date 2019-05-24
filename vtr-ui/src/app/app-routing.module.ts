@@ -43,7 +43,7 @@ const routes: Routes = [
 		data: {
 			pageName: 'Dashboard'
 		}
-	},{
+	}, {
 		path: 'macrokey',
 		component: PageMacrokeyComponent,
 		canDeactivate: [GuardService],
@@ -51,7 +51,7 @@ const routes: Routes = [
 		data: {
 			pageName: 'Macrokey'
 		}
-	},{
+	}, {
 		path: 'hardwarescan',
 		component: PageHardwarescanComponent,
 		canDeactivate: [GuardService],
@@ -60,7 +60,7 @@ const routes: Routes = [
 		data: {
 			pageName: 'Hardwarescan'
 		}
-	},{
+	}, {
 		path: 'lightingcustomize',
 		component: PageLightingcustomizeComponent,
 		canDeactivate: [GuardService],
@@ -69,7 +69,7 @@ const routes: Routes = [
 		data: {
 			pageName: 'Lightingcustomize'
 		}
-	},{
+	}, {
 		path: 'device',
 		component: PageDeviceComponent,
 		canDeactivate: [GuardService],
@@ -126,6 +126,8 @@ const routes: Routes = [
 			{
 				path: 'smart-assist',
 				component: SubpageDeviceSettingsSmartAssistComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService],
 				data: {
 					pageName: 'Device.MyDeviceSettings'
 				}
@@ -173,7 +175,7 @@ const routes: Routes = [
 		canActivate: [GuardService],
 		data: {
 			pageName: 'Security.PasswordProtection'
-        }
+		}
 	}, {
 		path: 'security/internet-protection',
 		component: PageSecurityInternetComponent,
@@ -185,7 +187,7 @@ const routes: Routes = [
 	}, {
 		path: 'security/windows-hello',
 		component: PageSecurityWindowsHelloComponent,
-		canActivate: [GuardService,WindowsHelloGuardService],
+		canActivate: [GuardService, WindowsHelloGuardService],
 		canDeactivate: [GuardService],
 		data: {
 			pageName: 'Security.WindowsHello'
@@ -205,8 +207,8 @@ const routes: Routes = [
 		canActivate: [GuardService],
 		data: {
 			pageName: 'Support.Detail'
-        }
-    }, {
+		}
+	}, {
 		path: 'home-security',
 		component: PageConnectedHomeSecurityComponent,
 		canDeactivate: [GuardService],
@@ -222,7 +224,7 @@ const routes: Routes = [
 		data: {
 			pageName: 'User'
 		}
-	},{
+	}, {
 		path: 'autoclose',
 		component: PageAutocloseComponent,
 		canDeactivate: [GuardService],
@@ -230,7 +232,7 @@ const routes: Routes = [
 		data: {
 			pageName: 'AutoClose'
 		}
-	},{
+	}, {
 		path: 'networkboost',
 		component: PageNetworkBoostComponent,
 		canDeactivate: [GuardService],

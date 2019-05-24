@@ -20,6 +20,11 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 		super();
 	}
 
+	public optionChanged(option: any, item: any) {
+		const gamingCollapsableContainerEvent = new GamingCollapsableContainerEvent(option, item);
+		this.optionSelected.emit(gamingCollapsableContainerEvent);
+	}
+
 	ngOnInit() { }
 	showVar: boolean = false;
 

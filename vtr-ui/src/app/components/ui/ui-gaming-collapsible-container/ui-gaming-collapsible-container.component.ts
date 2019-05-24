@@ -24,14 +24,12 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 
 	ngOnInit() {
 		this.options.forEach(option => {
-			if (option.selectedOption) {
+			if (option.selectedOption && this.currentOption === undefined) {
 				this.optionSelected(option);
-				return;
 			}
 
-			if (option.defaultOption) {
+			if (option.defaultOption && this.currentOption === undefined) {
 				this.optionSelected(option);
-				return;
 			}
 		});
 	}
