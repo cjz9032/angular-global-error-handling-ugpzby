@@ -9,6 +9,11 @@
 						"balance": "平衡",
 						"quiet": "安静"
 					},
+					"statusText":{
+						"perText": "Higher CPU usage, Higher fan speed",
+						"balText": "Normal CPU and fan speed",
+						"quietText": "Lower CPU usage, Lower fan speed"
+					},
 					"wifiSecurity": "Wifi安全",
 					"dolby": "杜比",
 					"rapidCharge": "快速充电"
@@ -19,6 +24,11 @@
 						"alwayson": "上",
 						"whenGaming": "当游戏",
 						"off": "离"
+					},
+					"statusText":{
+						"onText": "CPU Overclocking will be activated",
+						"gamingText": "CPU Overclocking will be activated automatically while game launches",
+						"offText": "CPU Overclocking will be disabled"
 					},
 					"ramOverlock": "Ram Overlock",
 					"popup": {
