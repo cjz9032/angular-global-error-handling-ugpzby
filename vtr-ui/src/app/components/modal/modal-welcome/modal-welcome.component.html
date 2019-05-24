@@ -104,48 +104,47 @@
 										/>
 									<label for="radio1" class="centered">{{ "welcometutorial.personal" | translate }}</label>
 								</div>
-								<div class="col-4 device-image" (click)="saveUsageType($event, 'BUSINESS')">
-									<input
-										type="radio"
-										name="radio"
-										id="radio2"
-										value="business"
-										vtrMetrics
-										metricsEvent="featureClick"
-										metricsParent="WelcomePage"
-										metricsItem="radio.business"
-										[metricsValue]="!radio2.checked"
-										#radio2
-									/>
-									<img
-										alt="Business Use"
-										for="radio2"
-										src="./../../../../assets/images/welcome/business-use.jpg"
-										class="business"
-									/>
-									<label for="radio2" class="centered">{{ "welcometutorial.business" | translate }}</label>
-								</div>
-								<div class="col-4 device-image" (click)="saveUsageType($event, 'CUSTOM')">
-									<input
-										type="radio"
-										name="radio"
-										id="radio3"
-										value="custom"
-										vtrMetrics
-										metricsEvent="featureClick"
-										metricsParent="WelcomePage"
-										metricsItem="radio.custom"
-										[metricsValue]="!radio3.checked"
-										#radio3
-									/>
-									<img
-										alt="Custom Experience"
-										for="radio3"
-										src="./../../../../assets/images/welcome/custom-use.jpg"
-										class="custom"
-									/>
-									<label for="radio3" class="centered">{{ "welcometutorial.custom" | translate }}</label>
-								</div>
+							<div class="col-4 device-image" (click)="saveUsageType($event, 'BUSINESS')">
+								<input
+									type="radio"
+									name="radio"
+									id="radio2"
+									value="business"
+									vtrMetrics
+									metricsEvent="featureClick"
+									metricsParent="WelcomePage"
+									metricsItem="radio.business"
+									[metricsValue]="!radio2.checked"
+									#radio2
+								/>
+								<img
+									alt="Business Use"
+									for="radio2"
+									src="./../../../../assets/images/welcome/business-use.jpg"
+									class="business"
+								/>
+								<label for="radio2" class="centered">{{ "welcometutorial.business" | translate }}</label>
+							</div>
+							<div class="col-4 device-image" (click)="saveUsageType($event, 'CUSTOM')">
+								<input
+									type="radio"
+									name="radio"
+									id="radio3"
+									value="custom"
+									vtrMetrics
+									metricsEvent="featureClick"
+									metricsParent="WelcomePage"
+									metricsItem="radio.custom"
+									[metricsValue]="!radio3.checked"
+									#radio3
+								/>
+								<img
+									alt="Custom Experience"
+									for="radio3"
+									src="./../../../../assets/images/welcome/custom-use.jpg"
+									class="custom"
+								/>
+								<label for="radio3" class="centered">{{ "welcometutorial.custom" | translate }}<br>{{ "welcometutorial.experience" | translate }}</label>
 							</div>
 	
 							<div class="row justify-content-center align-items-center font-14-bold">

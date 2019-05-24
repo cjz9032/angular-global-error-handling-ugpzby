@@ -550,9 +550,9 @@
 					"camerablur": {
 						"title": "Camera Background Blur",
 						"caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections.",
-						"blurMode":"Blur mode",
-						"comicMode":"Comic mode",
-						"sketchMode":"Sketch mode"
+						"blurMode": "Blur mode",
+						"comicMode": "Comic mode",
+						"sketchMode": "Sketch mode"
 					}
 				}
 			},
@@ -569,16 +569,18 @@
 				"intelligentSecurity": {
 					"title": "Intelligent Security",
 					"readMore": "Read more",
-					"HumanPresenceDetection": {
+					"humanPresenceDetection": {
 						"title": "Human Presence Detection",
 						"tooltip": "Click here to reset human presence Detection settings."
 					},
 					"zeroTouchLogin": {
-						"title": "Zero Touch Login",
+						"title1": "Zero Touch Login",
+						"title2": "Auto IR Login",
 						"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
 					},
 					"zeroTouchLock": {
-						"title": "Zero Touch lock",
+						"title1": "Zero Touch Lock",
+						"title2": "Auto Screen Lock",
 						"caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
 						"autoScreenLockTimer": {
 							"title": "AUTO SCREEN LOCK TIMER",
@@ -591,8 +593,8 @@
 						}
 					},
 					"distanceSensitivityAdjusting": {
-						"title1": "Distance sensitivity adjusting",
-						"title2": "Auto Distance sensitivity adjusting",
+						"title1": "DISTANCE SENSITIVITY ADJUSTING",
+						"title2": "AUTO DISTANCE SENSITIVITY ADJUSTING",
 						"caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
 						"options": {
 							"near": "Near",
@@ -638,6 +640,49 @@
 				"rebootButton": "REBOOT NOW",
 				"dismissButton": "DISMISS",
 				"rebootPending": "Reboot pending"
+			},
+			"autoUpdateSettings": {
+				"title": "Auto update settings",
+				"subtitle": "AUTOMATICALLY INSTALL UPDATES",
+				"critical": {
+					"title": "Critical Updates",
+					"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+				},
+				"camera": {
+					"title": "Camera",
+					"tooltip": "Click here to reset Camera properties to default settings.",
+					"reset": "Reset factory settings"
+				},
+				"recommended": {
+					"title": "Recommended update",
+					"tooltip": "Recommended driver updates keep your computer running at peak performance."
+				},
+				"windows": {
+					"title": "Windows Updates",
+					"url": "Windows Settings"
+				}
+			},
+			"banner": {
+				"title": "An up-to-date system is a healthy system.",
+				"last": "Last update was on",
+				"next": "Next updated scan is scheduled on",
+				"checkButton": "CHECK FOR UPDATES ",
+				"checking": "Checking for updates",
+				"downloading": "Downloading updates done",
+				"installing": "Installing updates",
+				"percent": "% complete",
+				"cancelCheck": "Cancel check",
+				"cancelUpdates": "CANCEL UPDATES",
+				"available": "Available updates",
+				"description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
+				"installButton": "INSTALL ALL UPDATES",
+				"result": {
+					"success": "All Updates were installed correctly",
+					"fail": {
+						"title": "Some updates were not installed correctly.",
+						"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+					}
+				}
 			},
 			"smartAssist": {
 				"title": "Smart Assist",
@@ -1437,7 +1482,8 @@
 		"subtitle2": "Tell us about your interests",
 		"personal": "Personal Use",
 		"business": "Business Use",
-		"custom": "Custom Experience",
+		"custom": "Custom",
+		"experience":"Experience",
 		"privacytitle": "Help us improve the quality of the app by allowing anonymous collection of usage statistics.",
 		"moreInterest": "+ more interests",
 		"title1": "Welcome to",
