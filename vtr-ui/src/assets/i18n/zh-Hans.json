@@ -467,7 +467,7 @@
 						"tooltip": "配置麦克风效果以增强不同场景和环境下的音频体验。",
 						"options": {
 							"VoiceRecognition": "语音识别",
-							"OnlyMyVoice": "仅我的语言",
+							"OnlyMyVoice": "仅我的语音",
 							"Normal": "正常",
 							"MultipleVoices": "多个语音"
 						}
@@ -530,7 +530,10 @@
 					"notAvailable": "相机不可用",
 					"camerablur": {
 						"title": "Camera Background Blur",
-						"caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections."
+						"caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections.",
+						"blurMode":"Blur mode",
+						"comicMode":"Comic mode",
+						"sketchMode":"Sketch mode"
 					}
 				}
 			},
@@ -547,16 +550,18 @@
 				"intelligentSecurity": {
 					"title": "Intelligent Security",
 					"readMore": "Read more",
-					"HumanPresenceDetection": {
+					"humanPresenceDetection": {
 						"title": "Human Presence Detection",
 						"tooltip": "Click here to reset human presence Detection settings."
 					},
 					"zeroTouchLogin": {
-						"title": "Zero Touch Login",
+						"title1": "Zero Touch Login",
+						"title2": "Auto IR Login",
 						"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
 					},
 					"zeroTouchLock": {
-						"title": "Zero Touch lock",
+						"title1": "Zero Touch Lock",
+						"title2": "Auto Screen Lock",
 						"caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
 						"autoScreenLockTimer": {
 							"title": "AUTO SCREEN LOCK TIMER",
@@ -569,8 +574,8 @@
 						}
 					},
 					"distanceSensitivityAdjusting": {
-						"title1": "Distance sensitivity adjusting",
-						"title2": "Auto Distance sensitivity adjusting",
+						"title1": "DISTANCE SENSITIVITY ADJUSTING",
+						"title2": "AUTO DISTANCE SENSITIVITY ADJUSTING",
 						"caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
 						"options": {
 							"near": "Near",
