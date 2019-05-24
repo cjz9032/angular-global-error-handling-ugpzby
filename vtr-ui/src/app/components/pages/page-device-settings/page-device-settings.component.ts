@@ -43,14 +43,6 @@ export class PageDeviceSettingsComponent implements OnInit {
 			icon: 'display-camera',
 			subitems: [],
 			active: false
-		},
-		{
-			id: 'smart-assist',
-			label: 'Smart Assist',
-			path: 'device-settings/smart-assist',
-			icon: 'smart-assist',
-			subitems: [],
-			active: false
 		}
 	];
 	cardContentPositionA: any = {};
@@ -67,7 +59,7 @@ export class PageDeviceSettingsComponent implements OnInit {
 	) {
 		this.fetchCMSArticles();
 		this.getMicrophoneSettings();
-		// this.getHPDStatus();
+		this.getHPDStatus();
 	}
 
 	ngOnInit() {
@@ -120,17 +112,20 @@ export class PageDeviceSettingsComponent implements OnInit {
 		);
 	}
 
+	/**
+	 * check if HPD related features are supported or not. If yes show Smart Assist tab else hide. Default is hidden
+	 */
 	private getHPDStatus() {
 		this.smartAssist.getHPDCapability()
 			.then((isAvailable: boolean) => {
 				console.log('getHPDStatus.getHPDCapability()', isAvailable);
-				isAvailable = true;
+				// isAvailable = true;
 				this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
 				if (isAvailable) {
 					this.menuItems.push({
 						id: 'smart-assist',
 						label: 'Smart Assist',
-						path: 'device-settings/smart-assist',
+						path: 'device/device-settings/smart-assist',
 						icon: 'smart-assist',
 						subitems: [],
 						active: false

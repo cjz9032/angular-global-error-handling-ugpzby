@@ -1,4 +1,5 @@
-<div class="vtr-ui-rounded-rectangle-radio" [style.border]="checked?'1.5px solid $main':'1.5px solid $shade_lightest'">
+<div class="vtr-ui-rounded-rectangle-radio"
+	[ngClass]="{'border-blue':checked, 'border-grey':!checked}">
 	<input id="{{radioId}}"
 		name="{{group}}"
 		type="radio"
@@ -6,10 +7,15 @@
 		[checked]="checked"
 		[disabled]="disabled"
 		#radio
-		(click)="onChange(value)"
-		 />
+		(click)="onChange(value)" />
 	<label for="{{radioId}}">
+		<fa-layers [fixedWidth]="true"
+			class="icon-circle">
+			<fa-icon [icon]="['fal', 'circle']"></fa-icon>
+			<fa-icon [icon]="['fas', 'circle']"
+				transform="shrink-6"
+				*ngIf="checked"></fa-icon>
+		</fa-layers>
 		<span class="label">{{label}}</span>
-
 	</label>
 </div>

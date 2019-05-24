@@ -126,6 +126,8 @@ const routes: Routes = [
 			{
 				path: 'smart-assist',
 				component: SubpageDeviceSettingsSmartAssistComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService],
 				data: {
 					pageName: 'Device.MyDeviceSettings'
 				}
@@ -173,7 +175,7 @@ const routes: Routes = [
 		canActivate: [GuardService],
 		data: {
 			pageName: 'Security.PasswordProtection'
-        }
+		}
 	}, {
 		path: 'security/internet-protection',
 		component: PageSecurityInternetComponent,
@@ -185,7 +187,7 @@ const routes: Routes = [
 	}, {
 		path: 'security/windows-hello',
 		component: PageSecurityWindowsHelloComponent,
-		canActivate: [GuardService,WindowsHelloGuardService],
+		canActivate: [GuardService, WindowsHelloGuardService],
 		canDeactivate: [GuardService],
 		data: {
 			pageName: 'Security.WindowsHello'
@@ -205,8 +207,8 @@ const routes: Routes = [
 		canActivate: [GuardService],
 		data: {
 			pageName: 'Support.Detail'
-        }
-    }, {
+		}
+	}, {
 		path: 'home-security',
 		component: PageConnectedHomeSecurityComponent,
 		canDeactivate: [GuardService],

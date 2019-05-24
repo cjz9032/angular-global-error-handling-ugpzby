@@ -125,7 +125,7 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	}
 	public setIntelligentSecurity() {
 		// service call to fetch Intelligent Security Properties
-		this.intelligentSecurity = new IntelligentSecurity(true, 10, true, true, '0', false, false);
+		this.intelligentSecurity = new IntelligentSecurity(true, 10, true, true, '0', true, false);
 		this.autoScreenLockStatus[this.intelligentSecurity.autoScreenLockTimer] = true;
 	}
 
