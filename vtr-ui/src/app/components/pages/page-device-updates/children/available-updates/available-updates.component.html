@@ -21,6 +21,7 @@
 			<div class="col-sm-12 col-md-12 col-lg-4">
 				<div class="button-box shift-right">
 					<vtr-ui-button (onClick)="onInstallAllUpdates($event)"
+						[isDisabled]="!((criticalUpdates && criticalUpdates.length > 0) || (recommendedUpdates && recommendedUpdates.length > 0) || (optionalUpdates && optionalUpdates.length > 0))"
 						[upperCaseLabel]="true"
 						[label]="'Install all updates'"
 						metricsParent="Pages.SystemUpdate.NewUpdateAvailable"
