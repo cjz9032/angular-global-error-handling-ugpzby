@@ -81,6 +81,9 @@
 					"sub3": "Instagram的"
 				}
 			}
+        },
+		"lightingProfile": {
+			"title": "Lighting"
 		}
 	},
 	"common": {
