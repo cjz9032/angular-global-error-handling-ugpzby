@@ -10,6 +10,6 @@ export enum LenovoIdStatus {
 	StarterId = '[LenovoIdStatus] StarterId',
 	SignedIn = '[LenovoIdStatus] SignedIn',
 	SignedOut = '[LenovoIdStatus] SignedOut',
-	Disabled = '[LenovoIdStatus] SignedOut',
-	Pending = '[LenovoIdStatus] SignedOut'
+	Disabled = '[LenovoIdStatus] Disabled',
+	Pending = '[LenovoIdStatus] Pending'
 }
