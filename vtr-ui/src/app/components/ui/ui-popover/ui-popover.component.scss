@@ -4,18 +4,24 @@ ui-popover{
     position: absolute;
     width: 55rem;
     padding: 3rem 5rem;
-    background: $gaming_light_09;
+    background: $gaming_lightest;
     z-index: 9;
     border-radius: 1rem;
     box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
     right: 8rem;
     top: -13rem;
+    @media #{$small-screen} {
+        width: 45rem;
+    }
+    @media #{$medium-screen} {
+        width: 50rem;
+    }
     &::after {
         content: '';
         position: absolute;
         width: 0;
         height: 0;
-        border-bottom: 3rem solid $gaming_light_09;
+        border-bottom: 3rem solid $gaming_lightest;
         border-left: 3rem solid transparent;
         //transform: rotate(45deg);
         bottom: -1rem;
@@ -27,7 +33,7 @@ ui-popover{
         position: relative;
         height: 3.2rem;
         .close {
-            color: $gaming_darkest;
+            color: $gaming_gstart;
             position: absolute;
             right: -2rem;
             font-size: 3rem;
@@ -52,6 +58,8 @@ ui-popover{
             background: $gaming_lighting_gradient;
             color: $gaming_lightest;
             font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: -0.1rem;
         }
     }
 }

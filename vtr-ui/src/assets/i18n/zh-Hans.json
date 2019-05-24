@@ -57,6 +57,19 @@
 			"systemInfo": {
 				"systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
 			}
+        },
+        "common": {
+			"menu": {
+				"support": {
+					"title": "Support",
+					"sub1": "Support",
+					"sub2": "Facebook",
+					"sub3": "Instagram"
+				}
+			}
+		},
+		"lightingProfile": {
+			"title": "Lighting"
 		}
 	},
 	"common": {
