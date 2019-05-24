@@ -94,6 +94,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	private metrics: any;
 	private starterStatus: any;
 	private everSignIn: any;
+	public appFeature = null;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -366,7 +367,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 									self.activeModal.dismiss();
 									self.devService.writeLog('MSWebViewNavigationCompleted: Login success!');
 									//the metrics need to be sent after enabling sso, some data like user guid would be available after that.
-									self.userService.sendSigninMetrics('success', self.starterStatus,  self.everSignIn);
+									self.userService.sendSigninMetrics('success', self.starterStatus, 'AlreadySignedIn', self.appFeature);
 								}
 							});
 						} catch (error) {
@@ -378,7 +379,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			} else {
 				// Handle error
 				//self.activeModal.dismiss();
-				self.userService.sendSigninMetrics('failure', self.starterStatus, self.everSignIn);
+				self.userService.sendSigninMetrics('failure', self.starterStatus, self.everSignIn, self.appFeature);
 				self.devService.writeLog('MSWebViewNavigationCompleted: Login failed!');
 			}
 		});
@@ -423,7 +424,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	
 
 	onClose(): void {
-		this.userService.sendSigninMetrics('failure(rc=UserCancelled)', this.starterStatus, this.everSignIn);
+		this.userService.sendSigninMetrics('failure(rc=UserCancelled)', this.starterStatus, this.everSignIn, this.appFeature);
 		this.activeModal.dismiss();
 	}
 
