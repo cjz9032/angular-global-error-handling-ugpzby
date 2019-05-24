@@ -172,6 +172,9 @@
 			@media #{$mediaquery_X21} {
 				top: 10%;
 			}
+			@media #{$mediaquery_X23} {
+				left: 0%;
+			}
 			.transparent {
 				color: transparent;
 			}
