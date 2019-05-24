@@ -38,5 +38,13 @@ export enum LocalStorageKey {
 	CpuOCStatus = '[LocalStorageKey] CpuOCStatus',
 	CurrentThermalModeStatus = '[LocalStorageKey] CurrentThermalModeStatus',
 	PrevThermalModeStatus = '[LocalStorageKey] PrevThermalModeStatus',
-	RamOcStatus = '[LocalStorageKey] RamOcStatus'
+	RamOcStatus = '[LocalStorageKey] RamOcStatus',
+	IsHPDSupported = '[LocalStorageKey] IsHPDSupported',
+	/**
+	 * 0  means "ideaPad",
+	 * 1  means "thinkPad",
+	 * 2 means "ideaCenter",
+	 * 3 means "thinkCenter"
+	 */
+	MachineType = '[LocalStorageKey] MachineType',
 }

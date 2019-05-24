@@ -229,15 +229,13 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 
 	public toggleOnOffRamOCStatus($event) {
-		console.log($event);
 		const { name, checked } = $event.target;
 
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			this.RamOCSatusObj.ramOcStatus = $event.switchValue;
 			this.gamingSystemUpdateService.SetRAMOverClockStatus(this.RamOCSatusObj);
+			this.legionUpdate[1].isPopup = $event.switchValue;
 		}
-		this.legionUpdate[1].isPopup = $event.switchValue;
-
 
 		if (name === 'gaming.dashboard.device.legionEdge.hybridMode' && $event.switchValue === true) {
 			this.legionUpdate[4].isPopup = true;
