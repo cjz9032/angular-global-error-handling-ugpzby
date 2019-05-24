@@ -285,6 +285,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public onUpdateSelectionChange($event: any) {
 		const item = $event.target;
 		this.systemUpdateService.toggleUpdateSelection(item.name, item.checked);
+		document.body.style.zoom = '1.0';
 	}
 
 	public onIgnoredUpdate($event: any){
