@@ -98,7 +98,7 @@ export class DisplayService {
 			if (this.cameraPrivacyStatus) {
 				return this.cameraPrivacyStatus.stopMonitor();
 			}
-			
+
 			return undefined;
 		} catch(error) {
 			throw new Error(error.message);
@@ -139,7 +139,7 @@ export class DisplayService {
 		}
 		return undefined;
 	}
-	public setCameraContrst(value: number): Promise<boolean> {
+	public setCameraContrast(value: number): Promise<boolean> {
 		if (this.cameraSettings) {
 			return this.cameraSettings.setCameraContrast(value);
 		}

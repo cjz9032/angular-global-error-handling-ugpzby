@@ -85,10 +85,10 @@
 				"sub3": "WiFi Security",
 				"sub4": "Password Health",
 				"sub5": "Internet Protection",
-                "sub6": "Windows Hello"
+				"sub6": "Windows Hello"
 			},
-            "support": "Support",
-            "homeSecurity": "Connected Home",
+			"support": "Support",
+			"homeSecurity": "Connected Home",
 			"privacy": "Privacy"
 		},
 		"securityAdvisor": {
@@ -613,7 +613,6 @@
 						"screenTimeoutSettings": "Go to Screen timeout settings"
 					}
 				}
-
 			}
 		},
 		"systemUpdates": {
@@ -642,60 +641,135 @@
 				"dismissButton": "DISMISS",
 				"rebootPending": "Reboot pending"
 			},
-			"autoUpdateSettings": {
-				"title": "Auto update settings",
-				"subtitle": "AUTOMATICALLY INSTALL UPDATES",
-				"critical": {
-					"title": "Critical Updates",
-					"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+			"smartAssist": {
+				"title": "Smart Assist",
+				"description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+				"jumpTo": {
+					"title": "JUMP TO SETTINGS",
+					"security": "Security",
+					"screen": "Screen",
+					"media": "Media",
+					"voice": "Voice"
 				},
-				"camera": {
-					"title": "Camera",
-					"tooltip": "Click here to reset Camera properties to default settings.",
-					"reset": "Reset factory settings"
-				},
-				"recommended": {
-					"title": "推荐更新",
-					"tooltip": "推荐的驱动程序更新使计算机运行保持最佳性能。"
-				},
-				"windows": {
-					"title": "Windows Updates",
-					"url": "Windows Settings"
-				}
-			},
-			"banner": {
-				"title": "An up-to-date system is a healthy system.",
-				"last": "Last update was on",
-				"next": "Next updated scan is scheduled on",
-				"checkButton": "CHECK FOR UPDATES ",
-				"checking": "Checking for updates",
-				"downloading": "Downloading updates done",
-				"installing": "Installing updates",
-				"percent": "% complete",
-				"cancelCheck": "Cancel check",
-				"cancelUpdates": "CANCEL UPDATES",
-				"available": "Available updates",
-				"description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-				"installButton": "INSTALL ALL UPDATES",
-				"result": {
-					"success": "All Updates were installed correctly",
-					"fail": {
-						"title": "Some updates were not installed correctly.",
-						"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+				"intelligentSecurity": {
+					"title": "Intelligent Security",
+					"readMore": "Read more",
+					"HumanPresenceDetection": {
+						"title": "Human Presence Detection"
+					},
+					"autoIrCameraLogin": {
+						"title": "Auto IR camera Login",
+						"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it. Auto IR camera login"
+					},
+					"autoScreenLock": {
+						"title": "Auto screen lock",
+						"caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+						"autoScreenLockTimer": {
+							"title": "AUTO SCREEN LOCK TIMER",
+							"radioButton": {
+								"fast": "Fast",
+								"medium": "Medium",
+								"slow": "Slow"
+							},
+							"toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+						}
+					},
+					"distanceSensitivityAdjusting": {
+						"title": "Distance sensitivity adjusting"
+					},
+					"note": {
+						"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
+						"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect, save, of leak any personal data or image.",
+						"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
+						"description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
+						"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+					},
+					"WindowsLink": {
+						"goToWindowsHello": "Go to Windows Hello Settings",
+						"screenTimeoutSettings": "Go to Screen timeout settings"
 					}
 				}
 			}
 		}
 	},
-    "homeSecurity": {
-        "title": "Connected Home Security",
-        "ecosystemBlockTitle": "Protect your device ecosystem",
+	"systemUpdates": {
+		"title": "system update",
+		"history": "Full history",
+		"notAvailable": "Not available",
+		"notInstalled": "Not Installed",
+		"criticalUpdates": "Critical update",
+		"recommendedUpdates": "Recommended update",
+		"optionalUpdates": "Optional update",
+		"successInstall": "Successfully installed",
+		"failedInstall": "Unable to install",
+		"at": "at",
+		"readMore": "Read more",
+		"popup": {
+			"reboot": "Restart",
+			"shutdown": "Turn off",
+			"rebootForceMsg": "The update you choose will cause the system to automatically restart after installation.",
+			"shutdownForceMsg": "The update you choose will cause the system to automatically shut down after installation.",
+			"rebootDelayedMsg": "The update you choose will cause the system to reboot after installation. During the installation of the update, do not shut down the system and remove the power supply or accessories. We recommend that you save your work in preparation for restarting your system.",
+			"rebootRequiredMsg": "In order to successfully install the update, your computer needs to be restarted to ensure that everything runs safely and smoothly.",
+			"okayButton": "Ok",
+			"cancelButton": "Cancel",
+			"rebootButton": "Reboot",
+			"dismissButton": "Dismiss",
+			"rebootPending": "Restart Pending"
+		},
+		"autoUpdateSettings": {
+			"title": "Auto update settings",
+			"subtitle": "AUTOMATICALLY INSTALL UPDATES",
+			"critical": {
+				"title": "Critical Updates",
+				"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+			},
+			"camera": {
+				"title": "Camera",
+				"tooltip": "Click here to reset Camera properties to default settings.",
+				"reset": "Reset factory settings"
+			},
+			"recommended": {
+				"title": "Recommended update",
+				"tooltip": "Recommended driver updates keep your computer running at peak performance."
+			},
+			"windows": {
+				"title": "Windows Updates",
+				"url": "Windows Settings"
+			}
+		},
+		"banner": {
+			"title": "An up-to-date system is a healthy system.",
+			"last": "Last update was on",
+			"next": "Next updated scan is scheduled on",
+			"checkButton": "CHECK FOR UPDATES ",
+			"checking": "Checking for updates",
+			"downloading": "Downloading updates done",
+			"installing": "Installing updates",
+			"percent": "% complete",
+			"cancelCheck": "Cancel check",
+			"cancelUpdates": "CANCEL UPDATES",
+			"available": "Available updates",
+			"description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
+			"installButton": "INSTALL ALL UPDATES",
+			"result": {
+				"success": "All Updates were installed correctly",
+				"fail": {
+					"title": "Some updates were not installed correctly.",
+					"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+				}
+			}
+		}
+	},
+	"homeSecurity": {
+		"title": "Connected Home Security",
+		"ecosystemBlockTitle": "Protect your device ecosystem",
 		"overviewBlockTitle": "Your Device Security Overview",
 		"thisDevice": "This device",
 		"allDevices": "All Devices",
 		"protected": "Protected",
 		"notProtected": "Not Protected"
-    },
+	},
 	"support": {
 		"common": {
 			"getSupport": "Get Support"
@@ -743,7 +817,7 @@
 			"aboutYourDevice": "About your device",
 			"copyright": "© 2002-2019 Lenovo all rights reserved"
 		}
-    },
+	},
 	"security": {
 		"landing": {
 			"fully": "Fully protected",
@@ -904,6 +978,14 @@
 			"title": "VPN Security",
 			"header": "SurfEasy VPN",
 			"whatIsSufEasy": "SurfEasy VPN encrypts the information you send and receive so you can safely and privately use your PC, Mac®, smartphone or tablet on any Internet connection without worry.",
+			"whatCanSufEasy1": "A virtual private network provider that protects you while you are online. Without a VPN, your computer may be more vulnerable to attackers and identity theft. The VPN runs silently in the background and provides security and privacy protection.",
+			"startUseSufEasy4": "SurfEasy users can enjoy 250 MB of free traffic every 30 days! Follow the steps on the &quot;Rewards&quot; tab of the SurfEasy app to get more traffic.",
+			"howToGetData": "How to get free traffic:",
+			"howToGetData1": "Confirm email to win +250 MB traffic",
+			"howToGetData2": "Add a second device to win +250 MB of traffic",
+			"howToGetData3": "Refer a friend and win +500 MB of traffic",
+			"howToGetData4": "Like SurfEasy on Facebook, earn +100 MB of traffic,",
+			"howToGetData5": "Follow SurfEasy on Twitter and win +100 MB of traffic",
 			"helpKeep": "Help keep your online activity secure and private with SurfEasy VPN.",
 			"getSufEasy": "Get SurfEasy",
 			"openSufEasy": "Open SurfEasy",
@@ -972,7 +1054,7 @@
 			"authentication": "Windows Hello Authentication",
 			"traditional": "Traditional passwords can be stolen and used to access your account from anywhere in the world. More secure and convenient. Windows Hello is the next generation of a password. Use your fingerprint reader instead of insecure passwords to log in.",
 			"howToStart": "How do I start using Windows Hello?"
-        }
+		}
 	},
 	"lenovoId": {
 		"login": "Login",
