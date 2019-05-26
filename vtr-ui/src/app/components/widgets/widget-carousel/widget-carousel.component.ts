@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import {MockService} from "../../../services/mock/mock.service";
 
 @Component({
 	selector: 'vtr-widget-carousel',
@@ -24,7 +25,7 @@ export class WidgetCarouselComponent implements OnInit {
 	@Input() showNavigationIndicators: boolean;
 	@Input() wrap: boolean;
 
-	constructor(private config: NgbCarouselConfig) {
+	constructor(private config: NgbCarouselConfig,private MocckService:MockService) {
 
 	}
 
