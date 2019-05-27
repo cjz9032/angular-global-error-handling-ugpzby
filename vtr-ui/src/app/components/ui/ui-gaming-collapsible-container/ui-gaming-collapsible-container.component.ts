@@ -28,11 +28,15 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 			if (option.selectedOption && this.currentOption === undefined) {
 				this.optionSelected(option);
 			}
-
-			if (option.defaultOption && this.currentOption === undefined) {
-				this.optionSelected(option);
-			}
 		});
+
+		if (this.currentOption === undefined) {
+			this.options.forEach(option => {
+				if (option.defaultOption) {
+					this.optionSelected(option);
+				}
+			});
+		}
 	}
 
 	public toggleOptions() {
