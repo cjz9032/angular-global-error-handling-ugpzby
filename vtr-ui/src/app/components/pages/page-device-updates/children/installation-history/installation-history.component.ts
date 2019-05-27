@@ -77,9 +77,9 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 			const date = this.commonService.formatDate(item.utcInstallDate);
 			const time = this.commonService.formatTime(item.utcInstallDate);
 			if (item.status.toLocaleLowerCase() === 'installed') {
-				item.message = this.translate.instant('device.systemUpdates.successInstall') + ' ' + date + ' ' + this.translate.instant('device.systemUpdates.at') + ' ' + time;
+				item.message = this.translate.instant('systemUpdates.successInstall') + ' ' + date + ' ' + this.translate.instant('systemUpdates.at') + ' ' + time;
 			} else {
-				item.message = this.translate.instant('device.systemUpdates.failedInstall') + ' ' + date + ' ' + this.translate.instant('device.systemUpdates.at') + ' ' + time;
+				item.message = this.translate.instant('systemUpdates.failedInstall') + ' ' + date + ' ' + this.translate.instant('systemUpdates.at') + ' ' + time;
 			}
 		});
 		return historyList;
