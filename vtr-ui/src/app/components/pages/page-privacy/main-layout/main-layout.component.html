@@ -1,21 +1,23 @@
 <div class="privacy-wrapper" data-analyticsName="privacy">
-	<vtr-main-header></vtr-main-header>
-	<div class="privacy-wrapper__content">
-		<div class="privacy-wrapper__main-col">
-			<router-outlet></router-outlet>
-		</div>
-		<div class="privacy-wrapper__side-col">
-			<vtr-side-bar></vtr-side-bar>
-		</div>
-	</div>
-	<vtr-common-popup [popUpId]="choseBrowserPopupId">
-		<ng-template>
-			<vtr-chose-browser
-				[browserList]="browserList$ | async"
-				[isBrowserListEmpty]="isBrowserListEmpty$ | async"
-				(rejection)="closePopUp(choseBrowserPopupId)"
-				(browser)="choseBrowser($event)">
-			</vtr-chose-browser>
-		</ng-template>
-	</vtr-common-popup>
+    <vtr-main-header></vtr-main-header>
+    <div class="privacy-wrapper__content">
+        <div class="privacy-wrapper__main-col">
+            <vtr-privacy-score></vtr-privacy-score>
+            <vtr-nav-tabs></vtr-nav-tabs>
+            <router-outlet></router-outlet>
+        </div>
+        <div class="privacy-wrapper__side-col">
+            <vtr-side-bar></vtr-side-bar>
+        </div>
+    </div>
+    <vtr-common-popup [popUpId]="choseBrowserPopupId">
+        <ng-template>
+            <vtr-chose-browser
+                    [browserList]="browserList$ | async"
+                    [isBrowserListEmpty]="isBrowserListEmpty$ | async"
+                    (rejection)="closePopUp(choseBrowserPopupId)"
+                    (browser)="choseBrowser($event)">
+            </vtr-chose-browser>
+        </ng-template>
+    </vtr-common-popup>
 </div>

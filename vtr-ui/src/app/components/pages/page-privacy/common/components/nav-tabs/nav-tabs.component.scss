@@ -1,0 +1,27 @@
+.header-nav {
+  display: flex;
+
+  &__item {
+    list-style-type: none;
+  }
+
+  &__link {
+    color: red;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.5px;
+
+    &.active {
+      display: flex;
+      position: relative;
+      color: #5671ff;
+      font-weight: bold;
+      height: 100%;
+
+      &:hover {
+        cursor: default;
+        text-decoration: none;
+      }
+    }
+  }
+}
