@@ -16,6 +16,8 @@ import { DirectivesModule } from '../directives/directives.module';
 import { BigLoaderComponent } from './big-loader/big-loader.component';
 import { StepsViewComponent } from './steps-view/steps-view.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { SupportWidgetComponent } from './support-widget/support-widget.component';
+import { SupportPopupComponent } from './support-popup/support-popup.component';
 
 @NgModule({
 	declarations: [
@@ -31,6 +33,8 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 		BigLoaderComponent,
 		StepsViewComponent,
 		ProgressBarComponent,
+		SupportWidgetComponent,
+		SupportPopupComponent,
 	],
 	exports: [
 		SimpleLoaderComponent,
@@ -45,6 +49,7 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 		BigLoaderComponent,
 		StepsViewComponent,
 		ProgressBarComponent,
+		SupportWidgetComponent
 	],
 	imports: [
 		CommonModule,
