@@ -25,8 +25,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 	`],
 	template: `
 		<div class=\"progress-outer\">
-			<div class=\"progress-inner\" [style.width]=\"whichProgress(progress) + '%'\"
-				 [style.background-color]=\"degraded == null ? color : whichColor(progress)\">
+			<div class=\"progress-inner\" [style.width]=\"whichProgress(progress) + '%'\">
 			</div>
 		</div>
 	`,
@@ -34,24 +33,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class ProgressBarComponent {
 	@Input() progress = 0;
-	@Input() color = '#488aff';
-	@Input() degraded: any;
-
-	whichColor(percent: string) {
-		let k: Array<any> = Object.keys(this.degraded);
-		k.forEach((e, i) => k[i] = +e);
-		k = k.sort((a, b) => a - b);
-		const p = +percent;
-		let last = k[0];
-		for (const val of k) {
-			if (val < p) {
-				last = val;
-			} else if (val >= p - 1) {
-				return this.degraded[last];
-			}
-		}
-		return this.degraded[last];
-	}
 
 	whichProgress(progress: number) {
 		try {

@@ -99,8 +99,8 @@ export class ScanningComponent implements OnInit, OnDestroy, Permit {
 		}
 	}
 
-	private calculateProgressTime(scanStep: OneClickScanSteps[]) {
-		return scanStep.length * DURATION_FOR_ONE_SLIDE_MS;
+	private calculateProgressTime(scanSteps: OneClickScanSteps[]): number {
+		return scanSteps.length * DURATION_FOR_ONE_SLIDE_MS;
 	}
 
 	private makeSliderForShow() {
