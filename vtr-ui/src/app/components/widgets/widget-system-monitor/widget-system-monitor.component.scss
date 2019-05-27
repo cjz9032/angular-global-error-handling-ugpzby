@@ -3,18 +3,12 @@
 .vtr-widget-system-monitor {
 	.widget-container {
 		border-radius: $border_radius;
-		background-color: $gaming_dark;
+		background: $dark_cell;
 		box-shadow: $drop_shadow_gaming;
 		padding: 6rem;
-		height: 44rem;
-		@media #{$mediaquery_5} {
-			height: 42rem;
-		}
 		@media #{$mediaquery_6} {
 			padding: 4rem;
-			height: 36rem;
 		}
-
 		.monitor-col {
 			padding: 4rem 0;
 			position: relative;
@@ -26,12 +20,22 @@
 				@media #{$mediaquery_5} {
 					padding-right: 2rem;
 				}
+				@media #{$mediaquery_X3} {
+					padding-right: 0rem;
+					height: 28rem;
+				}
 			}
 			&.right {
 				padding-left: 3rem;
 				@media #{$mediaquery_5} {
 					padding-left: 2rem;
 				}
+				@media #{$mediaquery_X3} {
+					padding-left: 0rem;
+				}
+			}
+			&.link-wrapper {
+				padding: 0.5rem;
 			}
 			.link-container {
 				position: absolute;
@@ -58,7 +62,57 @@
 				background-color: $gaming_darkest;
 				height: 100%;
 				position: relative;
+				ngb-tooltip-window.tooltip {
+					border-radius: 0.4rem;
+					background-color: $light;
+					box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+					color:$gaming_dark;
 
+					.tooltip-inner {
+						padding: 1.2rem;
+						color: $main_dark;
+						border-radius: 0.4rem;
+						background-color: $light;
+						font-size: 1.4rem;
+						text-align: left;
+					}
+				}
+
+				.gaming-tooltip{
+					max-width: 85%;
+					padding: 3rem;
+					background: $gaming_lightest;
+					color: $main_dark;
+					border-radius: 0.8rem;
+					position: absolute;
+					display: none;
+					z-index: 99;
+					top:-6rem;
+					left: calc(50% - 42.5%);
+					opacity: 0;
+					transition: all .5s ease-in-out;
+					&::after{
+						content: '';
+						position: absolute;
+						width: 0;
+						height: 0;
+						border-bottom: 3rem solid $gaming_lightest;
+						border-left: 3rem solid transparent;
+						transform: rotate(45deg);
+						bottom: -1rem;
+						left: calc(50% - 1.5rem);
+					}
+					p {
+						font-size: 2rem;
+						line-height: 2.6rem;
+					}
+				}
+				&:hover {
+					.gaming-tooltip {
+						display: inline-block;
+						opacity: 1;
+					}
+				}
 				.monitor-inner {
 					height: 100%;
 					position: absolute;
@@ -86,8 +140,23 @@
 								position: absolute;
 								bottom: 0.5rem;
 								width: calc(100% - 1rem);
-								height: 50%;
-								background-color: $highlight;
+								height: calc(100% - 1rem);
+								background-size: 100% 100%;
+								background-position: 50% 100%;
+								background-repeat: no-repeat;
+								&.gpu {
+									background-image:url('/assets/images/gaming/gaming-gpu-stack.svg');
+								}
+								&.ram {
+									background-image:url('/assets/images/gaming/gaming-ram-stack.svg');
+								}
+							}
+							.stack-mask {
+								position: absolute;
+								top: 0;
+								left: 0;
+								width: 100%;
+								background-color: $gaming_darker;
 							}
 						}
 						.stack-label {
@@ -125,14 +194,18 @@
 						margin-left: -14.5rem;
 					}
 					.cpu-ring {
-						background-color: $highlight;
+						// background-color: $highlight;
+						background-image:url('/assets/images/gaming/gaming-cpu-ring.svg');
+						background-size: 100% 100%;
+						background-position: 50% 50%;
+						background-repeat: no-repeat;
 						width: 34.5rem;
 						height: 34.5rem;
 						position: relative;
 						top: 1.75rem;
 						left: 1.75rem;
 						border-radius: 50%;
-						border: 1px solid $gaming_dark;
+						border: .75rem solid $gaming_darkest;
 						@media #{$mediaquery_6} {
 							top: 1rem;
 							left: 1rem;
@@ -217,9 +290,10 @@
 						top: 6rem;
 						left: 6rem;
 						background-color: $gaming_dark;
-						width: 26.5rem;
-						height: 26.5rem;
+						width: 26rem;
+						height: 26rem;
 						border-radius: 50%;
+						border: .75rem solid $gaming_darkest;
 						@media #{$mediaquery_6} {
 							top: 4.5rem;
 							left: 4.5rem;
@@ -231,8 +305,8 @@
 							top: 1.5rem;
 							left: 1.5rem;
 							background-color: $gaming_darkest;
-							width: 23.5rem;
-							height: 23.5rem;
+							width: 21.5rem;
+							height: 21.5rem;
 							border-radius: 50%;
 							text-align: center;
 							@media #{$mediaquery_6} {
@@ -266,6 +340,22 @@
 				.hd-list {
 					padding: 3rem;
 					.hd-item {
+						&.danger {
+							.monitor-hd {
+								.hd-ring {
+									background: linear-gradient(125deg, $stop_dark 50%, $stop_light 100%);
+								}
+								.hd-inner-ring {
+									.hd-inner-circle {
+										.hd-label {
+											.hd-pct {
+												color: $stop;
+											}
+										}
+									}
+								}
+							}
+						}
 						margin-bottom: 2.5rem;
 						.hd-item-label {
 							display: inline-block;
@@ -295,7 +385,7 @@
 								height: 6rem;
 							}
 							.hd-ring {
-								background-color: $highlight;
+								background: linear-gradient(125deg, $main_gstart 50%, $highlight_bright 100%);
 								width: 7.6rem;
 								height: 7.6rem;
 								position: relative;

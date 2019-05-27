@@ -12,7 +12,9 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class FeedbackFormComponent implements OnInit {
 	@Output() feedbackClick = new EventEmitter<any>();
-	@Input() buttonText = 'Submit';
+	// @Input() buttonText = 'Submit';
+	@Input() buttonText = this.translate.instant('dashboard.feedback.form.button');
+
 	feedbackForm: FormGroup;
 	feedbackButtonText: string;
 
@@ -23,6 +25,7 @@ export class FeedbackFormComponent implements OnInit {
 	private metrics: any;
 
 	ngOnInit() {
+		this.buttonText = this.translate.instant('dashboard.feedback.form.button');
 		this.feedbackButtonText = this.buttonText;
 		this.createFeedbackForm();
 	}

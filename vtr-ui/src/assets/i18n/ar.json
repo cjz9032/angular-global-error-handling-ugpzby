@@ -9,7 +9,8 @@
                 "sub4": "سلامة كلمة المرور",
                 "sub5": "حماية الإنترنت",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "مستشار الأمان",
@@ -25,10 +26,31 @@
             "installed": "مثبّت",
             "notInstalled": "غير مثبّت",
             "loading": "تحميل",
+            "installing": "التثبيت",
             "notFound": "لم يتم العثور عليه",
             "registered": "مسجل",
             "notRegistered": "غير مسجل"
+        },
+        "ui": {
+            "back": "السابق",
+            "on": "ON",
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
         }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -110,8 +132,7 @@
                 "poweredBy": "مشغّل بواسطة McAfee",
                 "privacyTerms": "اقرأ المزيد حول <tag>سياسة الخصوصية</tag> و<tag>شروط الخدمة</tag>",
                 "mcafeePremium": "حماية ممتازة بواسطة McAfee",
-                "protectedBy": "أنت محمي في الوقت الحالي بواسطة ",
-                "betterProtected": ".ومع ذلك، يمكن أن تكون محميًا بشكل أفضل مع McAfee LiveSafe",
+                "protectedBy": "أنت محمي في الوقت الحالي من خلال {{protectedName}}. ومع ذلك، يمكن أن تكون محميًا بشكل أفضل مع McAfee LiveSafe.",
                 "virusScan": "فحص الفيروسات",
                 "firewall": "جدار الحماية",
                 "disabled": "معطل",
@@ -175,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "استخدم محدد مواقع التهديدات للتعرف على مدى سلامة الشبكات من حولك.",
-                "button": "التحقق من التهديد"
+                "button": "التحقق من التهديد",
+                "connectionError": "خطأ في الاتصال",
+                "tryAgain": "تعذر علينا تحديد مكان الجهاز الخاص بك نظرًا لعدم توفر الشبكة، يرجى الاتصال بالإنترنت وحاول مرة أخرى."
             },
             "locationmodal": {
                 "title": "تمكين خدمات تحديد الموقع",
@@ -249,7 +272,7 @@
             "howToUseSufEasy": "كيفيه استخدام SurfEasy VPN",
             "whatCanSufEasy2": "تمكّن من حماية خصوصيتك وشغّل SurfEasy VPN عند الوصول إلى نقطة اتصال Wi-Fi عامة. مع خطة Lenovo Starter VPN، يمكنك إكمال أنشطة المكافآت لكسب المزيد من النطاق الترددي لحماية البيانات. يمكنك الترقية لحماية ما يصل إلى 5 هواتف ذكية وأجهزة كمبيوتر لوحية وأجهزة كمبيوتر مع نطاق ترددي غير محدود.",
             "getStarted": "تشغيل SurfEasy VPN:",
-            "getStarted1": "انقر فوق الزر “فتح SurfEasy” أعلاه لبدء تشغيل SurfEasy VPN.",
+            "getStarted1": "انقر فوق الزر \"فتح SurfEasy\" أعلاه لبدء تشغيل SurfEasy VPN.",
             "getStarted2": "شغّل شبكة VPN وانتظر برهة قصيرة لتلقي تأكيد الاتصال الآمن.",
             "getStarted3": "يمكنك تغيير منطقتك أو موقعك، إذا لزم الآمر، والاستمتاع بشبكة آمنة وخاصة.",
             "poweredBySurfEasy": "مشغّلة بواسطة SurfEasy",
@@ -303,7 +326,7 @@
             "privacyPolicy": "اقرأ المزيد حول <tag>سياسة الخصوصية</tag>",
             "whyWindowsHelloDescription2": "يضفي Windows Hello المزيد من السهولة والأمان على تسجيل الدخول إلى الكمبيوتر. ويمكن استخدامه أيضًأ لتطبيقات Microsoft عبر الإنترنت. اتبع الإرشادات التالية لبدء استخدام Windows Hello",
             "authentication": "مصادقة Windows Hello",
-            "traditional": "يمكن سرقة كلمات المرور التقليدية واستخدامها للدخول إلى حسابك من أي مكان في العالم. أكثر أمانًا وراحة. يُعد Windows Hello الجيل التالي من كلمات المرور. استخدم قارئ بصمة الإصبع [أو كاميرا IR] بدلاً من كلمات المرور غير الآمنة لتسجيل الدخول.",
+            "traditional": "يمكن سرقة كلمات المرور التقليدية واستخدامها للدخول إلى حسابك من أي مكان في العالم. أكثر أمانًا وراحة. يُعد Windows Hello الجيل التالي من كلمات المرور. استخدم قارئ بصمة الإصبع بدلاً من كلمات المرور غير الآمنة لتسجيل الدخول.",
             "howToStart": "كيف يمكنني بدء استخدام Windows Hello؟"
         }
     }

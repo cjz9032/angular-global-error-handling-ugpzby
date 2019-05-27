@@ -140,7 +140,7 @@
 				position: absolute;
 				font-size: 1.1rem;
 				z-index: 5;
-				font-weight: 600;
+				font-weight: $weight_bold;
 				width: 100%;
 				text-align: center;
 				letter-spacing: 0;
@@ -169,9 +169,15 @@
 			position: absolute;
 			top: 20%;
 			left: 5%;
+			@media #{$mediaquery_X21} {
+				top: 10%;
+			}
 			.transparent {
 				color: transparent;
 			}
+		}
+		.icomoon:before{
+			font-size:48px;
 		}
 	}
 }

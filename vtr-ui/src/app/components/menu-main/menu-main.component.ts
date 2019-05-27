@@ -219,12 +219,10 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			const securityAdvisor = vantageShellService.getSecurityAdvisor();
 			if (securityAdvisor) {
 				const windowsHello: WindowsHello = securityAdvisor.windowsHello;
-				if (windowsHello.facialIdStatus || windowsHello.fingerPrintStatus) {
+				if (windowsHello.fingerPrintStatus) {
 					this.showWindowsHello(windowsHello);
 				}
-				windowsHello.on(EventTypes.helloFacialIdStatusEvent, () => {
-					this.showWindowsHello(windowsHello);
-				}).on(EventTypes.helloFingerPrintStatusEvent, () => {
+				windowsHello.on(EventTypes.helloFingerPrintStatusEvent, () => {
 					this.showWindowsHello(windowsHello);
 				});
 			}
@@ -336,11 +334,10 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	showWindowsHello(windowsHello: WindowsHello) {
-		this.getMenuItems().then((items)=>{
+		this.getMenuItems().then((items) => {
 			const securityItem = items.find(item => item.id === 'security');
 			if (!this.commonService.isRS5OrLater()
-				|| (typeof windowsHello.facialIdStatus !== 'string'
-					&& typeof windowsHello.fingerPrintStatus !== 'string')) {
+				|| (typeof windowsHello.fingerPrintStatus !== 'string')) {
 				securityItem.subitems = securityItem.subitems.filter(subitem => subitem.id !== 'windows-hello');
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, false);
 			} else {

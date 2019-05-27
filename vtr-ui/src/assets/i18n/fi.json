@@ -9,7 +9,8 @@
                 "sub4": "Salasanan kunto",
                 "sub5": "Internet-suojaus",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Security Advisor",
@@ -25,10 +26,31 @@
             "installed": "ASENNETTU",
             "notInstalled": "EI ASENNETTU",
             "loading": "Ladataan",
+            "installing": "ASENNETAAN",
             "notFound": "EI LÖYTYNYT",
             "registered": "REKISTERÖITY",
             "notRegistered": "EI REKISTERÖITY"
+        },
+        "ui": {
+            "back": "EDELLINEN",
+            "on": "ON",
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
         }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -110,8 +132,7 @@
                 "poweredBy": "McAfeen tarjoama",
                 "privacyTerms": "Lue lisää <tag>tietosuojakäytännöstämme</tag> ja <tag>palveluehdoistamme</tag>",
                 "mcafeePremium": "McAfee Premium -suojaus",
-                "protectedBy": "Sinut suojaa tällä hetkellä ",
-                "betterProtected": ".Voit kuitenkin saada paremman suojauksen käyttämällä McAfee LiveSafea",
+                "protectedBy": "{{protectedName}} suojaa tietokonetta tällä hetkellä. Voit kuitenkin saada paremman suojauksen käyttämällä McAfee LiveSafea.",
                 "virusScan": "VIRUSTARKISTUS",
                 "firewall": "PALOMUURI",
                 "disabled": "POISSA KÄYTÖSTÄ",
@@ -175,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "Määritä uhkien paikantimen avulla ympärilläsi olevien verkkojen turvallisuus.",
-                "button": "Tarkista uhat"
+                "button": "Tarkista uhat",
+                "connectionError": "Yhteysvirhe",
+                "tryAgain": "Laitteen paikantaminen ei onnistu, koska verkko ei ole käytettävissä. Muodosta yhteys Internetiin ja yritä uudelleen."
             },
             "locationmodal": {
                 "title": "Ota sijaintipalvelut käyttöön",
@@ -249,7 +272,7 @@
             "howToUseSufEasy": "SurfEasy VPN -palvelun käyttö",
             "whatCanSufEasy2": "Suojaa yksityisyytesi ja ota SurfEasy VPN käyttöön, kun luot yhteyden julkiseen Wi-Fi-tukiasemaan. Lenovo Starter VPN -sopimuksella voit suorittaa palkintotoimintoja, joilla ansaitset lisää kaistanleveyttä tietosuojaa varten. Korota sopimuksesi ja suojaa jopa viisi älypuhelinta, tablettia ja tietokonetta rajattomalla kaistanleveydellä.",
             "getStarted": "Ottaa käyttöön SurfEasy VPN seuraavasti:",
-            "getStarted1": "Käynnistä SurfEasy VPN napauttamalla \"Avaa SurfEasy\".",
+            "getStarted1": "Käynnistä SurfEasy VPN napsauttamalla \"Avaa SurfEasy\".",
             "getStarted2": "Ota VPN-yhteys käyttöön ja odota hetki, jotta saat vahvistuksen turvallisesta yhteydestä.",
             "getStarted3": "Muuta halutessasi alue tai sijainti ja nauti turvallisesta, yksityisestä verkon käytöstä.",
             "poweredBySurfEasy": "SurfEasyn tarjoama",
@@ -303,7 +326,7 @@
             "privacyPolicy": "Lue lisätietoja <tag>tietosuojakäytännöstä</tag>",
             "whyWindowsHelloDescription2": "Windows Hellon avulla voit kirjautua tietokoneellesi helpommin ja turvallisemmin. Voit käyttää sitä myös Microsoftin verkkosovelluksiin. Aloita Windows Hellon käyttö noudattamalla alla olevia ohjeita",
             "authentication": "Windows Hello -todennus",
-            "traditional": "Perinteiset salasanat voidaan varastaa ja niiden avulla tiliäsi voidaan käyttää kaikkialla maailmassa. Turvallisempi ja helppokäyttöisempi. Windows Hello on salasanan seuraava sukupolvi. Kirjaudu sisään epäluotettavien salasanojen sijasta sormenjälkitunnistimen [tai infrapunakameran] avulla.",
+            "traditional": "Perinteiset salasanat voidaan varastaa ja niiden avulla tiliäsi voidaan käyttää kaikkialla maailmassa. Turvallisempi ja helppokäyttöisempi. Windows Hello on salasanan seuraava sukupolvi. Kirjaudu sisään epäluotettavien salasanojen sijasta sormenjälkitunnistimen avulla.",
             "howToStart": "Miten Windows Hellon käyttö aloitetaan?"
         }
     }

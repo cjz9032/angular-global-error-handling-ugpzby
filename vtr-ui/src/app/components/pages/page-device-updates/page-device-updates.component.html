@@ -19,18 +19,18 @@
 
 									<div class="row">
 										<div class="col col-12">
-											<!-- enable once offline mode implementation is done VAN-314 -->
-											<!-- <vtr-widget-offline-info [title]="'No internet connection detected'"
-												*ngIf="!isOnline"
-												[subtitle]="offlineSubtitle | safeDom : 'html'"
-												[buttonText]="'Get Support'"
-												(buttonClick)="onGetSupportClick($event)"></vtr-widget-offline-info> -->
+											<vtr-widget-offline-info *ngIf="!isOnline"
+												[isButtonVisible]="true"
+												[title]="'dashboard.offlineInfo.title' | translate"
+												[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+												[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
+												(buttonClick)="onGetSupportClick($event)"></vtr-widget-offline-info>
 
 											<vtr-widget-device-update [title]="updateTitle"
 												*ngIf="isOnline"
 												[subTitle1]="getLastUpdatedText()"
 												[subTitle2]="getNextUpdatedScanText()"
-												[buttonText]="'Check For Updates'"
+												[buttonText]="'systemUpdates.banner.checkButton' | translate"
 												[percent]="percentCompleted"
 												[showProgress]="isUpdateCheckInProgress"
 												[isUpdateDownloading]="isUpdateDownloading"
@@ -43,14 +43,21 @@
 										</div>
 									</div>
 
+<<<<<<< HEAD
 									<vtr-available-updates
+=======
+
+									<vtr-available-updates *ngIf="isUpdateListVisible()"
+>>>>>>> 98b8736af37a1dea9b71d43b774c6999c9d4bd77
 										[criticalUpdates]="criticalUpdates"
 										[optionalUpdates]="optionalUpdates"
 										[recommendedUpdates]="recommendedUpdates"
+										[ignoredUpdates]="ignoredUpdates"
 										[isInstallationCompleted]="systemUpdateService.isInstallationCompleted"
 										[isInstallationSuccess]="systemUpdateService.isInstallationSuccess"
 										[isInstallingAllUpdates]="systemUpdateService.isInstallingAllUpdates"
 										(checkChange)="onUpdateSelectionChange($event)"
+										(ignoreUpdate)="onIgnoredUpdate($event)"
 										(installAllUpdate)="showInstallConfirmation('all')"
 										(installSelectedUpdate)="showInstallConfirmation('selected')">
 									</vtr-available-updates>

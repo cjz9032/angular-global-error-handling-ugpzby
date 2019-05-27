@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
 		private vantageShellService: VantageShellService
 	) {
 		translate.addLangs(['en', 'zh-Hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it',
-		'ja', 'ko', 'nb', 'nl', 'pl', 'pt-BR', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-Latn', 'sv', 'tr', 'uk', 'zh-Hant']);
+			'ja', 'ko', 'nb', 'nl', 'pl', 'pt-BR', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-Latn', 'sv', 'tr', 'uk', 'zh-Hant']);
 		this.translate.setDefaultLang('en');
 		const hadRunApp: boolean = commonService.getLocalStorageValue(LocalStorageKey.HadRunApp);
 		const appFirstRun = !hadRunApp;
@@ -55,27 +55,12 @@ export class AppComponent implements OnInit {
 		//#region VAN-2779 this is moved in MVP 2
 
 		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
-
 		if (tutorial === undefined && navigator.onLine) {
-			const modalRef = this.modalService.open(ModalWelcomeComponent,
-				{
-					backdrop: 'static'
-					, windowClass: 'welcome-modal-size'
-				});
-			modalRef.result.then(
-				(result: WelcomeTutorial) => {
-					// on open
-					console.log('welcome-modal-size', result);
-					commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, result);
-				},
-				(reason: WelcomeTutorial) => {
-					// on close
-					console.log('welcome-modal-size', reason);
-					commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
-				}
-			);
+			this.openWelcomeModal(1);
+		} else if(tutorial && tutorial.page == 1 && navigator.onLine) {
+			this.openWelcomeModal(2);
 		}
-
+		
 		//#endregion
 
 		window.addEventListener('online', (e) => {
@@ -88,6 +73,29 @@ export class AppComponent implements OnInit {
 			this.notifyNetworkState();
 		}, false);
 		this.notifyNetworkState();
+	}
+
+	openWelcomeModal(page: number) {
+		const modalRef = this.modalService.open(ModalWelcomeComponent,
+			{
+				backdrop: 'static'
+				, windowClass: 'welcome-modal-size'
+			});
+		modalRef.componentInstance.page = page;
+		modalRef.result.then(
+			(result: WelcomeTutorial) => {
+				// on open
+				console.log('welcome-modal-size', result);
+				this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, result);
+			},
+			(reason: WelcomeTutorial) => {
+				// on close
+				console.log('welcome-modal-size', reason);
+				if(reason instanceof WelcomeTutorial) {
+					this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
+				}
+			}
+		);
 	}
 
 	ngOnInit() {
@@ -161,6 +169,7 @@ export class AppComponent implements OnInit {
 					.then((value: any) => {
 						console.log('checkIsDesktopMachine.then', value);
 						this.commonService.setLocalStorageValue(LocalStorageKey.DesktopMachine, (value === 4));
+						this.commonService.setLocalStorageValue(LocalStorageKey.MachineType, value);
 					}).catch(error => {
 						console.error('checkIsDesktopMachine', error);
 					});

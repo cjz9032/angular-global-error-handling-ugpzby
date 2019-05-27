@@ -9,7 +9,8 @@
                 "sub4": "パスワードの健全性",
                 "sub5": "インターネット保護",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "セキュリティー・アドバイザー",
@@ -25,10 +26,31 @@
             "installed": "インストール済み",
             "notInstalled": "未インストール",
             "loading": "ロード中",
+            "installing": "インストール中",
             "notFound": "見つかりませんでした",
             "registered": "登録済み",
             "notRegistered": "未登録"
+        },
+        "ui": {
+            "back": "戻る",
+            "on": "ON",
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
         }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -110,8 +132,7 @@
                 "poweredBy": "McAfee 搭載",
                 "privacyTerms": "<tag>プライバシー・ポリシー</tag>と<tag>サービス契約条件</tag>の詳細を読む",
                 "mcafeePremium": "McAfee プレミアムプロテクション",
-                "protectedBy": "現在、以下によって保護されています:",
-                "betterProtected": "。ただし、McAfee LiveSafe を使用すると、より適切に保護される可能性があります",
+                "protectedBy": "現在、{{protectedName}} によって保護されています。ただし、McAfee LiveSafe を使用すると、より適切に保護される可能性があります。",
                 "virusScan": "ウイルス・スキャン",
                 "firewall": "ファイアウォール",
                 "disabled": "無効",
@@ -175,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "脅威検出器を使用して、周囲のネットワークの安全性を判断します。",
-                "button": "脅威を確認"
+                "button": "脅威を確認",
+                "connectionError": "接続エラー",
+                "tryAgain": "ネットワークが利用できないため、デバイスを見つけることができません。インターネットに接続してからもう一度お試しください。"
             },
             "locationmodal": {
                 "title": "位置情報サービスの有効化",
@@ -303,7 +326,7 @@
             "privacyPolicy": "<tag>プライバシー・ポリシー</tag>の詳細を読む",
             "whyWindowsHelloDescription2": "Windows Hello を使用すると、PC へのログインがより簡単かつ安全になります。また、オンラインの Microsoft アプリにも使用できます。Windows Hello の使用を開始するには、次の手順に従います",
             "authentication": "Windows Hello の認証",
-            "traditional": "従来のパスワードは盗まれるおそれがあり、世界のどこかでそのパスワードを使って自分のアカウントにアクセスされる可能性があります。より安全で便利な方法です。Windows Hello は、次世代のパスワードです。安全性の低いパスワードの代わりに指紋リーダー (または IR カメラ) を使用してログインます。",
+            "traditional": "従来のパスワードは盗まれるおそれがあり、世界のどこかでそのパスワードを使って自分のアカウントにアクセスされる可能性があります。より安全で便利な方法です。Windows Hello は、次世代のパスワードです。安全性の低いパスワードの代わりに指紋リーダー を使用してログインます。",
             "howToStart": "Windows Hello の使用を開始する方法"
         }
     }

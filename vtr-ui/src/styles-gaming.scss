@@ -10,7 +10,7 @@
 		font-weight: normal;
 		font-style: normal;
 	}
-	
+
 	[data-icon]:before {
 		font-family: "gaming-icon" !important;
 		content: attr(data-icon);
@@ -23,7 +23,7 @@
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
-	
+
 	[class^="icon-"]:before,
 	[class*=" icon-"]:before {
 		font-family: "gaming-icon" !important;
@@ -36,7 +36,7 @@
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
-	
+
 	.icon-add:before {
 		content: "\61";
 	}
@@ -115,7 +115,10 @@
 	.icon-macrokey:before {
 		content: "\7a";
 	}
-	
+	.icon-hardwarescan:before {
+        content: "\41";
+    }
+
 
 .is-gaming {
 	.vtr-page {
@@ -147,6 +150,12 @@
 		background: $gaming_darkest;
 		width: 100%;
 		clear: both;
-		margin-top: 2.2rem;  
+		margin-top: 2.2rem;
 	}
 }
+.gaming-help-modal {
+	.modal-dialog {
+		top: 16rem;	
+	}
+}
+button:focus {outline:0;}

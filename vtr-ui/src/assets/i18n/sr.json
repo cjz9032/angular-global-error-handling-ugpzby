@@ -9,7 +9,8 @@
                 "sub4": "Ispravnost lozinke",
                 "sub5": "Zaštita na internetu",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Savetnik za bezb.",
@@ -25,10 +26,31 @@
             "installed": "INSTALIRAN",
             "notInstalled": "NIJE INSTALIRAN",
             "loading": "Učitavanje",
+            "installing": "INSTALIRA SE",
             "notFound": "NIJE PRONAĐEN",
             "registered": "REGISTROVAN",
             "notRegistered": "NIJE REGISTROVAN"
+        },
+        "ui": {
+            "back": "NAZAD",
+            "on": "ON",
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
         }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -110,8 +132,7 @@
                 "poweredBy": "Obezbeđuje McAfee",
                 "privacyTerms": "Pročitajte više o <tag>Politici privatnosti</tag> i <tag>Uslovima korišćenja usluge</tag>",
                 "mcafeePremium": "Vrhunska zaštita McAfee",
-                "protectedBy": "Trenutno vas štiti ",
-                "betterProtected": ".Međutim, mogli biste da budete bolje zaštićeni pomoću usluge McAfee LiveSafe",
+                "protectedBy": "Trenutno vas štiti {{protectedName}}. Međutim, možete da budete bolje zaštićeni pomoću usluge McAfee LiveSafe.",
                 "virusScan": "SKENIRANJE VIRUSA",
                 "firewall": "ZAŠTITNI ZID",
                 "disabled": "ONEMOGUĆENO",
@@ -175,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "Koristite detektor pretnji za utvrđivanje bezbednosti mreža oko vas.",
-                "button": "Proveri pretnju"
+                "button": "Proveri pretnju",
+                "connectionError": "Greška veze",
+                "tryAgain": "Ne možemo da lociramo vaš uređaj zato što mreža nije dostupna, povežite se sa internetom i pokušajte ponovo."
             },
             "locationmodal": {
                 "title": "Omogućite usluge određivanja lokacije",
@@ -249,7 +272,7 @@
             "howToUseSufEasy": "Kako koristiti SurfEasy VPN",
             "whatCanSufEasy2": "Zaštitite svoju privatnost i uključite SurfEasy VPN kada pristupate javnoj Wi-Fi pristupnoj tački. S planom Lenovo Starter VPN možete ispuniti nagradne aktivnosti da biste zaradili veći propusni opseg zaštite podataka. Nadogradite da biste zaštitili do 5 pametnih telefona, tableta i računara sa neograničenim propusnim opsegom.",
             "getStarted": "Uključite SurfEasy VPN:",
-            "getStarted1": "Kliknite iznad na dugme „SurfEasy“ da biste pokrenuli SurfEasy VPN.",
+            "getStarted1": "Kliknite iznad na dugme „Otvori SurfEasy“ da biste pokrenuli SurfEasy VPN.",
             "getStarted2": "Uključite VPN i pričekajte trenutak za potvrdu bezbedne veze.",
             "getStarted3": "Promenite region ili lokaciju ako želite i uživajte u bezbednom, privatnom umrežavanju.",
             "poweredBySurfEasy": "Obezbeđuje SurfEasy",
@@ -303,7 +326,7 @@
             "privacyPolicy": "Pročitajte više o <tag>Politici privatnosti</tag>",
             "whyWindowsHelloDescription2": "Windows Hello čini vaše prijavljivanje računar lakšim i bezbednijim. Možete ga takođe koristiti i za Microsoft aplikacije na mreži. Pratite dolenavedena uputstva da biste počeli da koristite Windows Hello",
             "authentication": "Windows Hello potvrda identiteta",
-            "traditional": "Tradicionalne lozinke se mogu ukrasti i koristiti za pristup vašem nalogu iz bilo kog mesta u svetu. Bezbedniji i praktičniji. Windows Hello je sledeća generacija lozinki. Koristite čitač otisaka prstiju [ili IC kameru] umesto prijavljivanja pomoću lozinke.",
+            "traditional": "Tradicionalne lozinke se mogu ukrasti i koristiti za pristup vašem nalogu iz bilo kog mesta u svetu. Bezbedniji i praktičniji. Windows Hello je sledeća generacija lozinki. Koristite čitač otisaka prstiju umesto prijavljivanja pomoću lozinke.",
             "howToStart": "Kako da počnem da koristim Windows Hello?"
         }
     }

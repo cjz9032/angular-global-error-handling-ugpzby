@@ -9,7 +9,8 @@
                 "sub4": "암호 상태",
                 "sub5": "인터넷 보호",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "보안 어드바이저",
@@ -25,10 +26,31 @@
             "installed": "설치됨",
             "notInstalled": "설치되지 않음",
             "loading": "로드 중",
+            "installing": "설치하기",
             "notFound": "찾을 수 없음",
             "registered": "등록됨",
             "notRegistered": "등록되지 않음"
+        },
+        "ui": {
+            "back": "뒤로",
+            "on": "ON",
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
         }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -110,8 +132,7 @@
                 "poweredBy": "McAfee로 실행",
                 "privacyTerms": "<tag>개인 정보 보호 정책</tag> 및 <tag>서비스 약관</tag>에 대해 자세히 읽기",
                 "mcafeePremium": "McAfee 프리미엄 보호",
-                "protectedBy": "현재 다음으로 보호됨 ",
-                "betterProtected": ".그러나 McAfee LiveSafe를 사용하면, 더 효과적으로 보호를 받을 수 있음",
+                "protectedBy": "현재 {{protectedName}}(으)로 보호되고 있습니다. 그러나 McAfee LiveSafe를 사용하면 더 효과적으로 보호 받을 수 있습니다.",
                 "virusScan": "바이러스 검색",
                 "firewall": "방화벽",
                 "disabled": "사용 안 함",
@@ -175,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "위협 감지기를 사용하여 주변 네트워크의 안전성을 확인합니다.",
-                "button": "위협 확인"
+                "button": "위협 확인",
+                "connectionError": "접속 오류",
+                "tryAgain": "가용 네트워크가 없어서 기기를 찾을 수 없습니다. 인터넷에 접속하여 다시 시도하십시오."
             },
             "locationmodal": {
                 "title": "위치 서비스 사용",
@@ -249,7 +272,7 @@
             "howToUseSufEasy": "SurfEasy VPN 사용 방법",
             "whatCanSufEasy2": "공개 Wi-Fi 핫스팟에 액세스하는 경우, 사용자의 개인 정보를 보호하고 SurfEasy VPN의 전원을 켜십시오. Lenovo Starter VPN 계획을 사용하면, 보상 활동을 완료하여 더 많은 데이터 보호 대역폭을 획득할 수 있습니다. 최대 5대의 스마트폰, 태블릿 및 컴퓨터를 업그레이드하여 무제한 대역폭으로 보호하십시오.",
             "getStarted": "SurfEasy VPN 켜기:",
-            "getStarted1": "위의 \"SurfEasy 열기\" 버튼을 SurfEasy VPN을 실행하십시오.",
+            "getStarted1": "위의 \"SurfEasy 열기\" 버튼을 클릭하여 SurfEasy VPN을 실행하십시오.",
             "getStarted2": "보안 연결을 확인하려면 VPN을 켜고 잠시 기다리십시오.",
             "getStarted3": "원하는 경우 지역 또는 위치를 변경하여 안전하고 개인적인 네트워킹을 즐기십시오.",
             "poweredBySurfEasy": "SurfEasy로 실행",
@@ -303,7 +326,7 @@
             "privacyPolicy": "<tag>개인 정보 보호 정책</tag>에 대해 자세히 읽기",
             "whyWindowsHelloDescription2": "Windows Hello를 사용하면, PC에 더욱 간편하고 안전하게 로그인할 수 있습니다. 온라인 Microsoft 앱에도 사용할 수 있습니다. 아래 지침에 따라 Windows Hello 사용 시작",
             "authentication": "Windows Hello 인증",
-            "traditional": "전통적인 암호는 도난당할 수 있고 세계 어느 곳에서나 사용자 계정에 접속하는데 사용될 수 있습니다. 더욱 안전하고 편리하게 하십시오. Windows Hello는 차세대 암호입니다. 안전하지 않은 암호 대신 지문 판독기 [또는 IR 카메라]를 사용하여 로그인하십시오.",
+            "traditional": "전통적인 암호는 도난당할 수 있고 세계 어느 곳에서나 사용자 계정에 접속하는데 사용될 수 있습니다. 더욱 안전하고 편리하게 하십시오. Windows Hello는 차세대 암호입니다. 안전하지 않은 암호 대신 지문 판독기 를 사용하여 로그인하십시오.",
             "howToStart": "Windows Hello 사용을 시작하려면 어떻게 하나요?"
         }
     }
