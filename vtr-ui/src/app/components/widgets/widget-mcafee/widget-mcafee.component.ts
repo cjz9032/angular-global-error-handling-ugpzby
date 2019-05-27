@@ -16,9 +16,9 @@ export class WidgetMcafeeComponent implements OnInit {
 	urlGetMcAfee: string;
 	country: string;
 	nls = new Map([
-		['cs', 'CZ'],
-		['da', 'DK'],
-		['nl', 'NL'],
+		['cs', 'Cs-CZ'],
+		['da', 'Da-DK'],
+		['nl', 'Nl-NL'],
 		['gb', 'En-GB'],
 		['fi', 'Fi-FI'],
 		['fr', 'Fr-FR'],

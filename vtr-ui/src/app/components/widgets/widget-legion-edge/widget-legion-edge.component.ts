@@ -1,10 +1,7 @@
 import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { CommonService } from 'src/app/services/common/common.service';
-import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { RamOCSatus } from 'src/app/data-models/gaming/gaming-legion-edge.model';
+import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
 import { isUndefined } from 'util';
 import { GamingSystemUpdateService } from 'src/app/services/gaming/gaming-system-update/gaming-system-update.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
@@ -16,8 +13,8 @@ import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.mod
 	styleUrls: ['./widget-legion-edge.component.scss']
 })
 export class WidgetLegionEdgeComponent implements OnInit {
-	// creating object of RamOCSatus;
-	public ramOCSatus_wle = new RamOCSatus();
+
+	public RamOCSatusObj = new RamOCSatus();
 	public legionUpdate = [
 		{
 			readMoreText: '',
@@ -49,7 +46,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isPopup: false,
-			isChecked: true,
+			isChecked: false,
 			tooltipText: '',
 			type: 'gaming.dashboard.device.legionEdge.ramOverlock'
 		},
@@ -66,7 +63,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isPopup: false,
-			isChecked: true,
+			isChecked: false,
 			tooltipText: '',
 			type: 'gaming.dashboard.device.legionEdge.autoClose',
 			routerLink: '/autoclose'
@@ -84,7 +81,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isPopup: false,
-			isChecked: true,
+			isChecked: false,
 			tooltipText: '',
 			type: 'gaming.dashboard.device.legionEdge.networkBoost',
 			routerLink: '/networkboost'
@@ -102,7 +99,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isPopup: false,
-			isChecked: true,
+			isChecked: false,
 			tooltipText: '',
 			type: 'gaming.dashboard.device.legionEdge.hybridMode'
 		},
@@ -119,7 +116,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isPopup: false,
-			isChecked: true,
+			isChecked: false,
 			tooltipText: '',
 			type: 'gaming.dashboard.device.legionEdge.touchpadLock'
 		}
@@ -129,7 +126,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		{
 			header: 'gaming.dashboard.device.legionEdge.status.alwayson',
 			name: 'gaming.dashboard.device.legionEdge.status.alwayson',
-			description: 'gaming.dashboard.device.legionEdge.status.alwayson',
+			description: 'gaming.dashboard.device.legionEdge.statusText.onText',
 			selectedOption: false,
 			defaultOption: false,
 			value: 1,
@@ -137,7 +134,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		{
 			header: 'gaming.dashboard.device.legionEdge.status.whenGaming',
 			name: 'gaming.dashboard.device.legionEdge.status.whenGaming',
-			description: 'gaming.dashboard.device.legionEdge.status.whenGaming',
+			description: 'gaming.dashboard.device.legionEdge.statusText.gamingText',
 			selectedOption: false,
 			defaultOption: true,
 			value: 2,
@@ -145,18 +142,52 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		{
 			header: 'gaming.dashboard.device.legionEdge.status.off',
 			name: 'gaming.dashboard.device.legionEdge.status.off',
-			description: 'gaming.dashboard.device.legionEdge.status.off',
+			description: 'gaming.dashboard.device.legionEdge.statusText.offText',
 			selectedOption: false,
 			defaultOption: false,
 			value: 3,
 		}
 	];
 	public CpuOCStatus: CPUOCStatus;
+	private gamingSettings: any = {
+		cpuInfoFeature: true,
+		gpuInfoFeature: true,
+		memoryInfoFeature: true,
+		hddInfoFeature: true,
+		winKeyLockFeature: true,
+		touchpadLockFeature: true,
+		networkBoostFeature: true,
+		cpuOCFeature: true,
+		ledSetFeature: false,
+		memOCFeature: true,
+		macroKeyFeature: false,
+		hybridModeFeature: true,
+		optimizationFeature: true,
+		smartFanFeature: false,
+		xtuService: true,
+		fbnetFilter: true,
+		ledDriver: false
+	};
 
-constructor(private modalService: NgbModal, public systemUpdateService: SystemUpdateService, private commonService: CommonService, private gamingSystemUpdateService: GamingSystemUpdateService) { }
+	constructor(
+		private modalService: NgbModal,
+		private gamingSystemUpdateService: GamingSystemUpdateService
+	) { }
 
 	ngOnInit() {
-		this.getRamOverClockStatus();
+		this.legionUpdate[0].isVisible = this.gamingSettings.cpuOCFeature;
+		this.legionUpdate[1].isVisible = this.gamingSettings.memOCFeature;
+
+		if (this.gamingSettings.cpuOCFeature) {
+			this.renderCPUOverClockStatus();
+		}
+
+		if (this.gamingSettings.memOCFeature) {
+			this.renderRamOverClockStatus();
+		}
+	}
+
+	public renderCPUOverClockStatus() {
 		this.CpuOCStatus = this.gamingSystemUpdateService.GetCPUOverClockStatus();
 		if (this.CpuOCStatus !== undefined) {
 			this.edgeopt.forEach((option) => {
@@ -179,52 +210,41 @@ constructor(private modalService: NgbModal, public systemUpdateService: SystemUp
 	}
 
 	openModal() {
-		//this.modalService.open(ModalWelcomeComponent);
-		this.modalService.open(ModalGamingLegionedgeComponent,{windowClass: 'gaming-help-modal'});
+		// this.modalService.open(ModalWelcomeComponent);
+		this.modalService.open(ModalGamingLegionedgeComponent, {windowClass: 'gaming-help-modal'});
 	}
 
-	//Getter
-	public getRamOverClockStatus() {
-		//Useing Common Service
-		let gt_cs = this.commonService.getLocalStorageValue(LocalStorageKey.RamOcStatus);
+	public renderRamOverClockStatus() {
+		this.RamOCSatusObj = this.gamingSystemUpdateService.GetRAMOverClockStatus();
 
-		if (isUndefined(gt_cs)) {
-			//assign the dafault value to RamOcStatus
-			this.setRamOverClockStatus(false);
+		if (isUndefined(this.RamOCSatusObj)) {
+			this.RamOCSatusObj = new RamOCSatus();
+			this.gamingSystemUpdateService.SetRAMOverClockStatus(this.RamOCSatusObj);
 		}
-		// setting value.
-		this.ramOCSatus_wle.ramOcStatus = gt_cs;
 
-		//Binding to UI
-		if(this.legionUpdate[1].name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
-			this.legionUpdate[1].isChecked = this.ramOCSatus_wle.ramOcStatus;
-		}
-	//	this.legionUpdate[1].isChecked = this.ramOCSatus_wle.ramOcStatus;
-		//console.log("ramoc status "+ this.legionUpdate[1].isChecked);
-    //return this.legionUpdate[1].isChecked;
-	}
-
-	//setter
-	public setRamOverClockStatus($value: boolean) {
-		//Set using common service
-		if (this.commonService) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.RamOcStatus, $value);
+		// Binding to UI
+		if (this.legionUpdate[1].name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
+			this.legionUpdate[1].isChecked = this.RamOCSatusObj.ramOcStatus;
 		}
 	}
 
 	public toggleOnOffRamOCStatus($event) {
+		console.log($event);
 		const { name, checked } = $event.target;
-				if (name === 'gaming.dashboard.device.legionEdge.ramOverlock' && $event.switchValue === true) {
-			this.legionUpdate[1].isPopup = true;
 
-		 } else {
+		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
+			this.RamOCSatusObj.ramOcStatus = $event.switchValue;
+			this.gamingSystemUpdateService.SetRAMOverClockStatus(this.RamOCSatusObj);
+			this.legionUpdate[1].isPopup = $event.switchValue;
+		}
+		else {
 			this.legionUpdate[1].isPopup = false;
-		 }
-		 if (name === 'gaming.dashboard.device.legionEdge.hybridMode' && $event.switchValue === true) {
-			this.legionUpdate[4].isPopup = true;
-		 } else {
-			this.legionUpdate[4].isPopup = false;
-		 }
+		}
 
-	  }
+		if (name === 'gaming.dashboard.device.legionEdge.hybridMode' && $event.switchValue === true) {
+			this.legionUpdate[4].isPopup = true;
+		} else {
+			this.legionUpdate[4].isPopup = false;
+		}
+	}
 }

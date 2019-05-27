@@ -45,7 +45,12 @@
         font-size: 1.6rem;
         font-weight: 700;
         margin-bottom: 10px
-    }
+	}
+	::ng-deep .vtr-ui-rounded-rectangle-radio{
+		&.border-grey {
+			border: none;
+		}
+	}
 }
 
 .read-more-link {

@@ -1,3 +1,48 @@
-<p>
-  page-lightingcustomize works!
-</p>
+<div class="vtr-page-lightingcustomize vtr-page container-fluid">
+    <div class="row vtr-page-header">
+      <div class="col vtr-col">
+          <vtr-header-main [backarrow]="'&lt; '"
+          [back]="'common.ui.back' | translate"
+          [title]="'gaming.lightingProfile.title' | translate"></vtr-header-main>
+      </div>
+    </div>
+    <div class="row vtr-page-content">
+      <div class="col vtr-col">
+        <div class="container-fluid">
+          <div class="row">
+            <div [ngClass]="'col-sm-12 col-md-12 col-lg-7 col-xl-8 vtr-page-left-column'">
+              <div class="vtr-page-shift-up nmx-40">
+                <div class="container-fluid">
+                  <div class="row mb-60">
+                    <div class="col col-12 px-40">
+                      <vtr-ui-lighting-profile></vtr-ui-lighting-profile>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-5 col-xl-4 vtr-page-right-column">
+              <div class="vtr-page-shift-up">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-12 mb-60">
+                      <div class="tryMcAfee card">
+                        <img src="./../../../../assets/images/gaming/try-mcafee.png"/>
+                      </div>
+                    </div>
+  
+                    <div class="col-sm-12 col-md-6 col-lg-12 mb-60">
+                      <div class="manage-pass card">
+                        <img src="./../../../../assets/images/gaming/manage-password.png"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
