@@ -16,7 +16,8 @@ import { SystemUpdateStatusMessage } from 'src/app/data-models/system-update/sys
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import {UpdateFailToastMessage} from 'src/app/enums/update.enum'
+import { UpdateFailToastMessage } from 'src/app/enums/update.enum';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -59,6 +60,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	public isOnline = true;
 	public offlineSubtitle: string;
+	public supportLink = 'https://support.lenovo.com/';
 
 	nextUpdatedDate = '11/12/2018 at 10:00 AM';
 	installationHistory = 'Installation History';
@@ -145,6 +147,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	) {
 		this.isOnline = this.commonService.isOnline;
 		this.fetchCMSArticles();
+		this.getSpecificSupportLink();
 	}
 
 	ngOnInit() {
@@ -204,6 +207,14 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
+		}
+	}
+
+	private getSpecificSupportLink() {
+		const machineInfo = this.commonService.getLocalStorageValue(LocalStorageKey.MachineInfo);
+		if (machineInfo && machineInfo.serialnumber && machineInfo.mtm) {
+			const specificSupportLink = `${this.supportLink}qrcode?sn=${machineInfo.serialnumber}&mtm=${machineInfo.mtm}`;
+			this.supportLink = specificSupportLink;
 		}
 	}
 
