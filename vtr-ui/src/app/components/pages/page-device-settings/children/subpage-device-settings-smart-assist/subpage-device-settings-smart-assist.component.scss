@@ -65,6 +65,12 @@
 	}
 	::ng-deep .vtr-ui-rounded-rectangle-radio{
 		width: 16.5rem;
+			@media #{$mediaquery_X22} {
+				width: 25.5rem;
+			}
+			@media #{$mediaquery_X23} {
+				width: 25.5rem;
+			}
 	}
 
 	.auto-screen-block{
@@ -87,5 +93,16 @@
 	fa-icon {
 		color: red;
 		font-size: 3rem;
+	}
+}
+
+.no-border-bottom {
+	::ng-deep .vtr-ui-switch-row {
+		border-bottom: none !important;
+	}
+}
+.bold-title {
+	::ng-deep .vtr-ui-switch-row.white-theme .title {
+		font-weight: 700;
 	}
 }

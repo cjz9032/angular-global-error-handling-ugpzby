@@ -9,9 +9,12 @@ $main_lighter: #b5d0f4;
 $main_lightest: #eaf2fd;
 $menu_hover: #4A81FD;
 
+$dark_cell: linear-gradient(0deg, #2e4255, #293c4f);
+$dark_popup_cell: linear-gradient(0deg, #435064, #3d4c5c);
+
 $gaming_darkest: #1F2A42;
 $gaming_darker: #253048;
-$gaming_dark: #323F5B;
+$gaming_dark: #293c4f;
 $gaming_shade: #46526B;
 $gaming_gstart: #2d5dcf;
 $gaming: #4579f0;
@@ -31,6 +34,9 @@ $gaming_hover: #545f76;
 $gaming_dark_popup: #404d5f;
 $gaming_light_08: rgba(255,255,255,.8);
 $gaming_light_09: rgba(255,255,255,.9);
+
+$gaming_lighting_profile_bg: rgba(20,29,49,0.45);
+$gaming_light_blue: #047AFF;
 
 $highlight: #2ec5eb;
 $highlight_bright: #53f9ff;
@@ -147,12 +153,16 @@ $mediaquery_X11: "only screen and (min-width: 1201px) and (max-width : 1257px)";
 $mediaquery_X12: "only screen and (min-width: 900px) and (max-width : 1440px)";
 $mediaquery_X13: "only screen and (min-width: 900px) and (max-width : 1600px)";
 $mediaquery_X14: "only screen and (min-width: 1080px) and (max-width : 1920px)";
-$mediaquery_X15: "only screen and (min-width: 1080px) and (max-width : 1920px) and (max-resolution: 125dpi)";
+$mediaquery_X15: "only screen and (min-width: 1080px) and (max-width : 1920px) and (max-resolution: 150dpi)";
 $mediaquery_X16: "only screen and (min-width: 703px) and (max-width : 963px)";
 $mediaquery_X17: "only screen and (min-width: 500px) and (max-width : 702px)";
 $mediaquery_X18: "only screen and (min-width: 703px) and (max-width : 963px) and (max-resolution: 150dpi)";
 $mediaquery_X19: "only screen and (min-width: 703px) and (max-width : 963px) and (max-resolution: 175dpi)";
 $mediaquery_X20: "only screen and (min-width: 703px) and (max-width : 963px) and (max-resolution: 125dpi)";
+$mediaquery_X21: "only screen and (min-width: 2160px) and (max-width : 3840px) and (max-resolution: 350dpi)";
+$mediaquery_X22: "only screen and (min-width: 500px) and (max-width : 661px)";
+$mediaquery_X23: "only screen and (min-width: 990px) and (max-width : 1040px)";
+
 
 $dpiquery_0: "max-resolution: 350dpi";
 $dpiquery_1: "max-resolution: 275dpi";

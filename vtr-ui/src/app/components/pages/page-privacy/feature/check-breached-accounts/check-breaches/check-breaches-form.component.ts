@@ -34,6 +34,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	emailForm = this.formBuilder.group({
 		email: ['', [Validators.required, Validators.email]],
 	});
+	emailWasSubmitted = false;
 	serverError$ = new BehaviorSubject(false);
 	isLoading$ = this.emailScannerService.loadingStatusChanged$;
 	lenovoId: string;
@@ -98,6 +99,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	}
 
 	handleEmailScan() {
+		this.emailWasSubmitted = true;
 		if (this.emailForm.invalid) {
 			return;
 		}

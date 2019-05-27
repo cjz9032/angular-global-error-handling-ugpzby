@@ -4,12 +4,12 @@
              [ngClass]="{
              	'check-breaches__input-wrapper--small': size === 'small',
 			 	'check-breaches__input-wrapper--focused': isFormFocused,
-			 	'check-breaches__input-wrapper--validation-error': emailForm.dirty && emailForm.touched && emailForm.invalid,
+			 	'check-breaches__input-wrapper--validation-error': emailWasSubmitted && emailForm.dirty && emailForm.touched && emailForm.invalid,
 			 	'check-breaches__input-wrapper--server-error': (serverError$ | async)
 			 }">
             <div class="check-breaches__input-with-id">
                 <input class="check-breaches__input" type="text"
-                       [class.check-breaches__input--validation-error]="emailForm.get('email').dirty && emailForm.get('email').touched && emailForm.get('email').invalid"
+                       [class.check-breaches__input--validation-error]="emailWasSubmitted && emailForm.dirty && emailForm.touched && emailForm.invalid"
                        (focus)="handleFocus()"
                        (blur)="handleBlur()"
                        placeholder="Enter your email"
@@ -37,10 +37,10 @@
             </button>
         </div>
 
-        <div *ngIf="emailForm.get('email').dirty && emailForm.get('email').touched && emailForm.get('email').invalid"
+        <div *ngIf="emailWasSubmitted && emailForm.dirty && emailForm.touched && emailForm.invalid"
              class="check-error check-error--validation">
             <img class="check-error__img" src="/assets/icons/privacy-tab/error-white.svg" alt="warning-icon">
-            <p class="check-error__text">Sorry, the email you entered is not correct. Please try again.</p>
+            <p class="check-error__text">Please enter a valid email address.</p>
         </div>
         <div *ngIf="(serverError$ | async)" class="check-error check-error--server">
             <img class="check-error__img" src="/assets/icons/privacy-tab/error-white.svg" alt="warning-icon">
