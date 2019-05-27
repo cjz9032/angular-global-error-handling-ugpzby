@@ -9,10 +9,9 @@
 	}
 	.widget-container {
 		border-radius: $border_radius;
-		background-color: $gaming_dark;
 		box-shadow: $drop_shadow_gaming;
 		padding: 4rem;
-		background: url(./../../../../assets/images/gaming/lightingImage@2x.png) center top no-repeat;
+		background: url(./../../../../assets/images/gaming/lightingImage@2x.png) center top no-repeat $gaming_dark;
 		background-size: 100% auto;
 		padding-top:18rem;
 	}

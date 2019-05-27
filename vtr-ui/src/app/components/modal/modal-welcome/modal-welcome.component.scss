@@ -70,6 +70,11 @@
 		font-size: 1.6rem;
 		font-weight: 600;
 	}
+	.padding-right-1 {
+		@media #{$mediaquery_11} {
+			padding-right: 12px;
+		}
+	}
 	.content-page-2 {
 		overflow-y:scroll;
 		overflow-x: hidden;
@@ -80,6 +85,7 @@
 		@media #{$mediaquery_11} {
 			height: 236px;
 			padding: 0px 0px 0px 32px;
+			margin-right: 14px;
 		}
 		img {
 			width: 100%;
@@ -89,6 +95,7 @@
 			margin: 25px 0px 25px -6px;
 		}
 		.device-image {
+			cursor: pointer;
 			padding-right: 6px;
 			padding-left: 6px;
 			label {
@@ -288,7 +295,7 @@
 
 	.content-page-2 .interests input[type="checkbox"] + label {
 		padding: 0.5rem 2.5rem;
-		border: 0.5pt solid $shade_btn_light;
+		border: 1pt solid $shade_btn_light;
 		border-radius: 2.5rem;
 		@extend .font-12-semi;
 		font-size: 1.5rem;
