@@ -329,6 +329,10 @@
 						"charging": "充电",
 						"discharging": "放电",
 						"acdischarging": "放电（带交流）"
+					},
+					"deviceChemistry": {
+						"li-polymer": "Li-Polymer",
+						"li-ion": "Li-Ion"
 					}
 				}
 			},

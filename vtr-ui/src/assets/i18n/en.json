@@ -330,7 +330,12 @@
 						"charging": "Charging",
 						"discharging": "Discharging",
 						"acdischarging": "Discharging (with ac)"
+					},
+					"deviceChemistry": {
+						"li-polymer": "Li-Polymer",
+						"li-ion": "Li-Ion"
 					}
+
 				}
 			},
 			"power": {
