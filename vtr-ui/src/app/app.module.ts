@@ -158,6 +158,7 @@ import { PageAutocloseComponent } from './components/pages/page-autoclose/page-a
 import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
 import { PowerSmartSettingsComponent } from './components/widgets/power-smart-settings/power-smart-settings.component';
 import { UiPopoverComponent } from './components/ui/ui-popover/ui-popover.component';
+import { ModalChsWelcomeContainerComponent } from './components/modal/modal-chs-welcome-container/modal-chs-welcome-container.component';
 
 // SA Components
 import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
@@ -191,7 +192,9 @@ import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
 import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
 import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
+import { LoginLenovoIdComponent } from './components/modal/modal-chs-welcome-container/child/login-lenovo-id/login-lenovo-id.component';
 import { UiLightingProfileComponent } from './components/ui/ui-lighting-profile/ui-lighting-profile.component';
+import { AutoupdateSettingsComponent } from './components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
 
 
 
@@ -345,9 +348,12 @@ library.add(fal);
 		PageNetworkBoostComponent,
 		PowerSmartSettingsComponent,
 		SubpageDeviceSettingsSmartAssistComponent,
-		UiPopoverComponent,
 		WidgetHomeSecurityDeviceComponent,
-		UiLightingProfileComponent
+		UiLightingProfileComponent,
+		AutoupdateSettingsComponent,
+		UiPopoverComponent,
+		ModalChsWelcomeContainerComponent,
+		LoginLenovoIdComponent
 	],
 	imports: [
 		BrowserModule,
@@ -395,7 +401,8 @@ library.add(fal);
 		ModalAboutComponent,
 		ModalSupportWechatComponent,
 		ModalLicenseComponent,
-		ModalGamingLegionedgeComponent
+		ModalGamingLegionedgeComponent,
+		ModalChsWelcomeContainerComponent
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
