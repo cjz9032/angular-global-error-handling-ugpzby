@@ -229,6 +229,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 
 	public toggleOnOffRamOCStatus($event) {
+		console.log($event);
 		const { name, checked } = $event.target;
 
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {

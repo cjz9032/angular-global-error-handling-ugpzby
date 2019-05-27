@@ -192,6 +192,7 @@ import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
 import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
 import { UiLightingProfileComponent } from './components/ui/ui-lighting-profile/ui-lighting-profile.component';
+import { AutoupdateSettingsComponent } from './components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
 
 
 
@@ -347,7 +348,8 @@ library.add(fal);
 		SubpageDeviceSettingsSmartAssistComponent,
 		UiPopoverComponent,
 		WidgetHomeSecurityDeviceComponent,
-		UiLightingProfileComponent
+		UiLightingProfileComponent,
+		AutoupdateSettingsComponent
 	],
 	imports: [
 		BrowserModule,
