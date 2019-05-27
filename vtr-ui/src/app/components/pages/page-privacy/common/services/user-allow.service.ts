@@ -6,7 +6,7 @@ import { StorageService } from './storage.service';
 })
 export class UserAllowService {
 	allowToShow = JSON.parse(this.storageService.getItem('allowMap')) || {
-		trackingMap: true,
+		trackingMap: false,
 	};
 
 	constructor(private storageService: StorageService) {

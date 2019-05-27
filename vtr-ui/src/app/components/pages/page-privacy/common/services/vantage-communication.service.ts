@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
-import { catchError, share } from 'rxjs/operators';
+import { catchError, share, tap } from 'rxjs/operators';
 import { EMPTY, from, Observable, throwError } from 'rxjs';
 
 export enum BrowserListType {
@@ -111,6 +111,7 @@ export class VantageCommunicationService {
 		);
 
 		return this.sendContractToPrivacyCore<VisitedWebsites>(contract).pipe(
+			tap((res) => console.log('Get-VisitedWebsites', res)),
 			catchError((err) => {
 				return throwError('VisitedWebsites err', err);
 			})

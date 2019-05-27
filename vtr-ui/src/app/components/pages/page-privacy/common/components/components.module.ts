@@ -16,6 +16,7 @@ import { DirectivesModule } from '../directives/directives.module';
 import { BigLoaderComponent } from './big-loader/big-loader.component';
 import { StepsViewComponent } from './steps-view/steps-view.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { PermitTrackersAndPasswordsComponent } from './permit-trackers-and-passwords/permit-trackers-and-passwords.component';
 
 @NgModule({
 	declarations: [
@@ -31,6 +32,7 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 		BigLoaderComponent,
 		StepsViewComponent,
 		ProgressBarComponent,
+		PermitTrackersAndPasswordsComponent
 	],
 	exports: [
 		SimpleLoaderComponent,
@@ -45,6 +47,7 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 		BigLoaderComponent,
 		StepsViewComponent,
 		ProgressBarComponent,
+		PermitTrackersAndPasswordsComponent,
 	],
 	imports: [
 		CommonModule,

@@ -8,14 +8,11 @@
 			<vtr-side-bar></vtr-side-bar>
 		</div>
 	</div>
-	<vtr-common-popup [popUpId]="choseBrowserPopupId">
+	<vtr-common-popup [popUpId]="permitTrackersAndPasswordsPopupId">
 		<ng-template>
-			<vtr-chose-browser
-				[browserList]="browserList$ | async"
-				[isBrowserListEmpty]="isBrowserListEmpty$ | async"
-				(rejection)="closePopUp(choseBrowserPopupId)"
-				(browser)="choseBrowser($event)">
-			</vtr-chose-browser>
+			<vtr-permit-trackers-and-passwords
+				(allow)="setPermit($event, permitTrackersAndPasswordsPopupId)">
+			</vtr-permit-trackers-and-passwords>
 		</ng-template>
 	</vtr-common-popup>
 </div>

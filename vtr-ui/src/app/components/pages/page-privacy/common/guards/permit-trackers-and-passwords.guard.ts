@@ -4,11 +4,12 @@ import { CommonPopupService } from '../services/popups/common-popup.service';
 import { ChoseBrowserService } from '../services/chose-browser.service';
 import { LocationHistoryService } from '../services/location-history.service';
 import { PRIVACY_BASE_URL } from '../../utils/injection-tokens';
+import { UserAllowService } from '../services/user-allow.service';
 
-export class ChoseBrowserGuard implements CanActivate {
+export class PermitTrackersAndPasswordsGuard implements CanActivate {
 	constructor(
 		private commonPopupService: CommonPopupService,
-		private choseBrowserService: ChoseBrowserService,
+		private userAllowService: UserAllowService,
 		private locationHistoryService: LocationHistoryService,
 		private router: Router,
 		@Inject(PRIVACY_BASE_URL) private baseUrl: string,
@@ -16,11 +17,11 @@ export class ChoseBrowserGuard implements CanActivate {
 	}
 
 	canActivate() {
-		if (this.choseBrowserService.isBrowserChose()) {
+		if (this.userAllowService.allowToShow.trackingMap) {
 			return true;
 		}
 
-		this.commonPopupService.open('choseBrowserPopup');
+		this.commonPopupService.open('permitTrackersAndPasswordsPopup');
 
 		const urlForRedirect = this.locationHistoryService.getPreviousUrl() ?
 			this.locationHistoryService.getCurrentUrl() :

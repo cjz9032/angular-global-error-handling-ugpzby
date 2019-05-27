@@ -69,7 +69,7 @@ export class TrackingMapService {
 		return this.downloadTrackersInfo().pipe(
 			switchMap((trackersInfo) => {
 					let sites = this.getTopWebsites();
-					if (this.choseBrowserService.isBrowserChose() && this.userAllowService.allowToShow.trackingMap) {
+					if (this.userAllowService.allowToShow.trackingMap) {
 						sites = this.getVisitedWebsites(this.choseBrowserService.getName());
 					}
 
