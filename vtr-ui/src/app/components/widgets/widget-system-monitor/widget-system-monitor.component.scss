@@ -6,14 +6,9 @@
 		background: $dark_cell;
 		box-shadow: $drop_shadow_gaming;
 		padding: 6rem;
-		height: 44rem;
-		@media #{$mediaquery_5} {
-			height: 42rem;
-		}
 		@media #{$mediaquery_6} {
 			padding: 4rem;
-			height: 36rem;
-		}				
+		}
 		.monitor-col {
 			padding: 4rem 0;
 			position: relative;
@@ -25,12 +20,22 @@
 				@media #{$mediaquery_5} {
 					padding-right: 2rem;
 				}
+				@media #{$mediaquery_X3} {
+					padding-right: 0rem;
+					height: 28rem;
+				}
 			}
 			&.right {
 				padding-left: 3rem;
 				@media #{$mediaquery_5} {
 					padding-left: 2rem;
 				}
+				@media #{$mediaquery_X3} {
+					padding-left: 0rem;
+				}
+			}
+			&.link-wrapper {
+				padding: 0.5rem;
 			}
 			.link-container {
 				position: absolute;
@@ -62,7 +67,7 @@
 					background-color: $light;
 					box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 					color:$gaming_dark;
-				
+
 					.tooltip-inner {
 						padding: 1.2rem;
 						color: $main_dark;
