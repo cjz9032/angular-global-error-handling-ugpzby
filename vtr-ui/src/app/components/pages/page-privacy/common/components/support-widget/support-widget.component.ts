@@ -12,7 +12,7 @@ import { RoutersName } from '../../../privacy-routing-name';
 })
 export class SupportWidgetComponent implements OnInit, OnDestroy {
 	showOnPages: string[] = [RoutersName.ARTICLES, RoutersName.LANDING];
-	isSupportWidgetDisplayed = false;
+	wasSupportWidgetDisplayed = false;
 
 	constructor(
 		private commonPopupService: CommonPopupService,
@@ -26,7 +26,7 @@ export class SupportWidgetComponent implements OnInit, OnDestroy {
 				takeUntil(instanceDestroyed(this)),
 			)
 			.subscribe((currPage) => {
-					this.isSupportWidgetDisplayed = this.showOnPages.includes(currPage);
+					this.wasSupportWidgetDisplayed = this.showOnPages.includes(currPage);
 				}
 			);
 	}
