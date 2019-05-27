@@ -13,28 +13,42 @@ export class OneClickScanComponent {
 	@Input() popupId: string;
 
 	readonly oneClickScanSteps = OneClickScanSteps;
-	currentStep = this.oneClickScanService.getFirstStep();
+	currentStep = this.oneClickScanStepsService.getFirstStep();
 
 	constructor(
-		private oneClickScanService: OneClickScanStepsService,
+		private oneClickScanStepsService: OneClickScanStepsService,
 		private permitService: PermitService,
 		private commonPopupService: CommonPopupService,
 	) {	}
 
-	handlerAllow(permitValue: boolean, step: OneClickScanSteps) {
+	handleAllow(permitValue: boolean, step: OneClickScanSteps) {
 		if (permitValue) {
 			this.permitService.savePermit(step);
 		}
 
 		this.nextStep();
+	}
 
-		if (this.currentStep === null) {
-			this.permitService.setPermit();
-			this.commonPopupService.close(this.popupId);
-		}
+	handleScanAllow(permitValue: boolean) {
+		permitValue ? this.nextStep() : this.resetScan();
+	}
+
+	getStepForScanning() {
+		return this.permitService.getPermits();
 	}
 
 	private nextStep() {
-		this.currentStep = this.oneClickScanService.nextStep();
+		this.currentStep = this.oneClickScanStepsService.nextStep();
+
+		if (this.currentStep === null) {
+			this.permitService.setPermit();
+			this.resetScan();
+		}
+	}
+
+	private resetScan() {
+		this.permitService.clearPermits();
+		this.oneClickScanStepsService.resetStep();
+		this.commonPopupService.close(this.popupId);
 	}
 }

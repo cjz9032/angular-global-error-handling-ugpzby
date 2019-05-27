@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { DirectivesModule } from '../directives/directives.module';
 import { BigLoaderComponent } from './big-loader/big-loader.component';
 import { StepsViewComponent } from './steps-view/steps-view.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 @NgModule({
 	declarations: [
@@ -29,6 +30,7 @@ import { StepsViewComponent } from './steps-view/steps-view.component';
 		SupportBannerComponent,
 		BigLoaderComponent,
 		StepsViewComponent,
+		ProgressBarComponent,
 	],
 	exports: [
 		SimpleLoaderComponent,
@@ -42,6 +44,7 @@ import { StepsViewComponent } from './steps-view/steps-view.component';
 		SupportBannerComponent,
 		BigLoaderComponent,
 		StepsViewComponent,
+		ProgressBarComponent,
 	],
 	imports: [
 		CommonModule,
