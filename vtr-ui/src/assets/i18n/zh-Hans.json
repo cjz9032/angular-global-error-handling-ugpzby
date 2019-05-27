@@ -25,16 +25,12 @@
 						"whenGaming": "当游戏",
 						"off": "离"
 					},
-<<<<<<< HEAD
 					"statusText":{
 						"onText": "CPU Overclocking will be activated",
 						"gamingText": "CPU Overclocking will be activated automatically while game launches",
 						"offText": "CPU Overclocking will be disabled"
 					},
-					"ramOverlock": "Ram Overlock",
-=======
 					"ramOverlock": "Ram超频",
->>>>>>> fb31961d8b4f577d44b395df664a88f5897da201
 					"popup": {
 						"text": "重新启动计算机后更改将生效。",
 						"button": "好"
