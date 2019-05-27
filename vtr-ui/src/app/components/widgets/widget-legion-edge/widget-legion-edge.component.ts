@@ -236,6 +236,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			this.gamingSystemUpdateService.SetRAMOverClockStatus(this.RamOCSatusObj);
 			this.legionUpdate[1].isPopup = $event.switchValue;
 		}
+		else {
+			this.legionUpdate[1].isPopup = false;
+		}
 
 		if (name === 'gaming.dashboard.device.legionEdge.hybridMode' && $event.switchValue === true) {
 			this.legionUpdate[4].isPopup = true;

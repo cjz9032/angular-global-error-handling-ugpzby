@@ -40,7 +40,7 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
-			isChecked: true,
+			isChecked: false,
 			tooltipText: '',
 			type: 'auto-updates'
 		},
@@ -57,7 +57,7 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
-			isChecked: true,
+			isChecked: false,
 			tooltipText: '',
 			type: 'auto-updates'
 		},
@@ -74,7 +74,7 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
-			isChecked: true,
+			isChecked: false,
 			tooltipText: '',
 			type: 'auto-updates'
 		}
