@@ -11,7 +11,7 @@ import { RoutersName } from '../../../privacy-routing-name';
 	styleUrls: ['./support-widget.component.scss']
 })
 export class SupportWidgetComponent implements OnInit, OnDestroy {
-	showOnPages: string[] = [RoutersName.ARTICLES, RoutersName.LANDING];
+	showOnPages = [RoutersName.ARTICLES, RoutersName.LANDING];
 	wasSupportWidgetDisplayed = false;
 
 	constructor(
@@ -25,7 +25,7 @@ export class SupportWidgetComponent implements OnInit, OnDestroy {
 			.pipe(
 				takeUntil(instanceDestroyed(this)),
 			)
-			.subscribe((currPage) => {
+			.subscribe((currPage: RoutersName) => {
 					this.wasSupportWidgetDisplayed = this.showOnPages.includes(currPage);
 				}
 			);
