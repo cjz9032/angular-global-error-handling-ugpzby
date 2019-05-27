@@ -1,57 +1,65 @@
 @import "../../../app.theme.scss";
 
-ui-popover{
+ui-popover {
+  position: absolute;
+  width: 55rem;
+  padding: 3rem 5rem;
+  background: $gaming_lightest;
+  z-index: 9;
+  border-radius: 1rem;
+  box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
+  right: 8rem;
+  top: -13rem;
+  @media #{$small-screen} {
+    width: 45rem;
+  }
+  @media #{$medium-screen} {
+    width: 50rem;
+  }
+  &::after {
+    content: "";
     position: absolute;
-    width: 55rem;
-    padding: 3rem 5rem;
-    background: $gaming_light_09;
-    z-index: 9;
-    border-radius: 1rem;
-    box-shadow: 0 0.8rem 1.5rem $screen_dark_30;
-    right: 8rem;
-    top: -13rem;
-    &::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 0;
-        border-bottom: 3rem solid $gaming_light_09;
-        border-left: 3rem solid transparent;
-        //transform: rotate(45deg);
-        bottom: -1rem;
-        top: calc(50% - 1.5rem);
-        right: -1.5rem;
-        transform: rotate(-45deg);
+    width: 0;
+    height: 0;
+    border-bottom: 3rem solid $gaming_lightest;
+    border-left: 3rem solid transparent;
+    //transform: rotate(45deg);
+    bottom: -1rem;
+    top: calc(50% - 1.5rem);
+    right: -1.5rem;
+    transform: rotate(-45deg);
+  }
+  .ui-popover-head {
+    position: relative;
+    height: 3.2rem;
+    .close {
+      color: $gaming_gstart;
+      position: absolute;
+      right: -2rem;
+      font-size: 3rem;
     }
-    .ui-popover-head {
-        position: relative;
-        height: 3.2rem;
-        .close {
-            color: $gaming_darkest;
-            position: absolute;
-            right: -2rem;
-            font-size: 3rem;
-        }
+  }
+  .ui-popover-content {
+    min-height: 12rem;
+    p {
+      color: $main_darkest;
+      font-size: 2.5rem;
+      line-height: 3.6rem;
     }
-    .ui-popover-content {
-        min-height: 12rem;
-        p {
-            color: $main_darkest;
-            font-size: 2.5rem;
-            line-height: 3.6rem;
-        }
+  }
+  .ui-popover-footer {
+    border-top: 1px solid $screen_dark_30;
+    padding-top: 2.4rem;
+    .btn-rounded {
+      height: 4rem;
+      border-radius: 3rem;
+      min-width: 15rem;
+      border: none;
+      background: $gaming_lighting_gradient;
+      color: $gaming_lightest;
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: -0.1rem;
     }
-    .ui-popover-footer{
-        border-top: 1px solid $screen_dark_30;
-        padding-top: 2.4rem;
-        .btn-rounded{
-            height: 4rem;
-            border-radius: 3rem;
-            min-width: 15rem;
-            border: none;
-            background: $gaming_lighting_gradient;
-            color: $gaming_lightest;
-            font-size: 2rem;
-        }
-    }
+  }
 }

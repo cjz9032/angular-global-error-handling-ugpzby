@@ -9,6 +9,11 @@
 						"balance": "Balance",
 						"quiet": "Quiet"
 					},
+					"statusText":{
+						"perText": "Higher CPU usage, Higher fan speed",
+						"balText": "Normal CPU and fan speed",
+						"quietText": "Lower CPU usage, Lower fan speed"
+					},
 					"wifiSecurity": "Wifi Security",
 					"dolby": "Dolby",
 					"rapidCharge": "Rapid Charge"
@@ -20,6 +25,12 @@
 						"whenGaming": "When Gaming",
 						"off": "Off"
 					},
+					"statusText":{
+						"onText": "CPU Overclocking will be activated",
+						"gamingText": "CPU Overclocking will be activated automatically while game launches",
+						"offText": "CPU Overclocking will be disabled"
+					},
+
 					"ramOverlock": "Ram Overclock",
 					"popup": {
 						"text": "Change will be effective after restarting computer.",
@@ -67,6 +78,9 @@
 					"sub3": "Instagram"
 				}
 			}
+		},
+		"lightingProfile": {
+			"title": "Lighting"
 		}
 	},
 	"common": {
@@ -603,7 +617,7 @@
 					},
 					"note": {
 						"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-						"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect, save, of leak any personal data or image.",
+						"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
 						"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
 						"description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
 						"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
