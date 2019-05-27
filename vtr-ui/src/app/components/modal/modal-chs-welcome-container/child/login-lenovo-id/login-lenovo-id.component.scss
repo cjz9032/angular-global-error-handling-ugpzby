@@ -1,0 +1,66 @@
+@import "../../../../../app.theme.scss";
+.vtr-login-lenovo-id {
+    .chs-logo {
+        border-bottom: 0.1rem solid $shade_extralight;
+        img {
+            width: 200px;
+            height: 60px;
+        }
+    }
+    .chs-login-content {
+        margin-top: 5rem;
+        .bullet-icon-check {
+            .icon-bkg {
+                width: 2.3rem;
+                height: 2.3rem;
+                fa-icon {
+                    font-size: 1.2rem;
+                    line-height: 1.7rem;
+                }
+            }
+        }
+        .text-regular {
+            color: $blue-dark;
+            font-size: 1.5rem;
+            .h4 {
+                font-weight: $weight_medium;
+            }
+            .h1 {
+                font-weight: $weight_bold;
+            }
+        }
+        ul {
+            .text {
+                color: $shade_darker;
+            }
+        }
+        
+    }
+    .chs-create-lenovoId {
+        margin-top: 2rem;
+        font-size: 1.5rem;
+        color: $blue-dark;
+        a {
+            text-decoration: underline;
+        }
+    }
+    
+    .start-trial {
+        height: 100px;
+        border: 0.1rem solid $shade_extralight;
+        margin-bottom: 2rem;
+        padding: 2rem 2rem 4rem;
+        align-items: center;
+    }
+
+    .chs-account {
+        height: 100px;
+        padding: 2rem 2rem 4rem;
+        align-items: center;
+        background-color: $shade_extralight;
+        a {
+            font-size: 1.5rem;
+            text-decoration: underline;
+        }
+    }
+}

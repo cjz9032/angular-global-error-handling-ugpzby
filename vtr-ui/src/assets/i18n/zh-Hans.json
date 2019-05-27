@@ -84,12 +84,12 @@
 	},
 	"common": {
 		"menu": {
-			"dashboard": "仪表板",
+			"dashboard": "首页",
 			"device": {
 				"title": "我的设备",
 				"sub1": "设备信息",
 				"sub2": "设备设置",
-				"sub3": "系统更新"
+				"sub3": "系统升级"
 			},
 			"security": {
 				"title": "安全顾问",
@@ -228,7 +228,7 @@
 				}
 			},
 			"systemUpdate": {
-				"title": "系统更新",
+				"title": "系统升级",
 				"detail": {
 					"update": "更新"
 				}
@@ -743,78 +743,83 @@
 						"screenTimeoutSettings": "转到屏幕超时设置"
 					}
 				}
-			}
-		}
-	},
-	"systemUpdates": {
-		"title": "系统更新",
-		"history": "完整历史记录",
-		"notAvailable": "无法使用",
-		"notInstalled": "未安装",
-		"criticalUpdates": "关键更新",
-		"recommendedUpdates": "推荐更新",
-		"optionalUpdates": "可选更新",
-		"successInstall": "已成功安装",
-		"failedInstall": "无法安装",
-		"at": "在",
-		"readMore": "阅读更多",
-		"popup": {
-			"reboot": "重启",
-			"shutdown": "关掉",
-			"rebootForceMsg": "您选择的更新将导致系统在安装后自动重新启动。",
-			"shutdownForceMsg": "您选择的更新将导致系统在安装后自动关闭。",
-			"rebootDelayedMsg": "您选择的更新将导致系统在安装后重新启动，在安装更新期间，请不要关闭系统，卸下电源或附件。我们建议您保存工作以准备重新启动系统。",
-			"rebootRequiredMsg": "为了成功安装更新，您的计算机需要重新启动才能确保一切运行安全，顺畅。",
-			"okayButton": "好",
-			"cancelButton": "取消",
-			"rebootButton": "马上重启",
-			"dismissButton": "解雇",
-			"rebootPending": "重新启动等待"
-		},
-		"autoUpdateSettings": {
-			"title": "自动更新设置",
-			"subtitle": "自动安装更新",
-			"critical": {
-				"title": "关键更新",
-				"tooltip": "关键更新可防止发生重大问题、严重故障、硬件故障或数据损坏。"
-			},
-			"camera": {
-				"title": "摄像头",
-				"tooltip": "单击此处将相机属性重置为默认设置。",
-				"reset": "重置出厂设置"
-			},
-			"recommended": {
-				"title": "推荐更新",
-				"tooltip": "推荐的驱动程序更新使计算机运行保持最佳性能。"
-			},
-			"windows": {
-				"title": "Windows 更新",
-				"url": "Windows 设置"
-			}
-		},
-		"banner": {
-			"title": "​保持最新状态的系统才是健康的系统。",
-			"last": "上次更新时间为",
-			"next": "下次更新扫描计划时间：",
-			"checkButton": "检查更新",
-			"checking": "正在检查更新",
-			"downloading": "下载更新完成",
-			"installing": "正在安装更新",
-			"percent": "% 已完成",
-			"cancelCheck": "取消检查",
-			"cancelUpdates": "取消更新",
-			"available": "可用更新",
-			"description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。关键更新对保护计算机上的数据来说也很重要，一旦可用就应该尽快安装。未能安装这些软件包可能会导致数据丢失、系统故障或硬件故障",
-			"installButton": "安装所有更新",
-			"result": {
-				"success": "所有更新都已正确安装",
-				"fail": {
-					"title": "某些更新未正确安装。",
-					"description": "在下载或安装这些更新期间出现问题。请确保您在线，并且在安装更新时不要关闭计算机。"
-				}
-			}
-		}
-	},
+            }
+        }
+    },
+    "systemUpdates": {
+        "title": "系统更新",
+        "back": "返回",
+        "history": "完整历史记录",
+        "notAvailable": "无法使用",
+        "notInstalled": "未安装",
+        "criticalUpdates": "关键更新",
+        "recommendedUpdates": "推荐更新",
+        "optionalUpdates": "可选更新",
+        "ignoredUpdates": "忽略的更新",
+        "successInstall": "已成功安装",
+        "failedInstall": "无法安装",
+        "at": "在",
+        "readMore": "Read more",
+        "popup": {
+            "reboot": "重启",
+            "shutdown": "关掉",
+            "rebootForceMsg": "您选择的更新将导致系统在安装后自动重新启动。",
+            "shutdownForceMsg": "您选择的更新将导致系统在安装后自动关闭。",
+            "rebootDelayedMsg": "您选择的更新将导致系统在安装后重新启动，在安装更新期间，请不要关闭系统，卸下电源或附件。我们建议您保存工作以准备重新启动系统。",
+            "rebootRequiredMsg": "为了成功安装更新，您的计算机需要重新启动才能确保一切运行安全，顺畅。",
+            "okayButton": "好",
+            "cancelButton": "取消",
+            "rebootButton": "马上重启",
+            "dismissButton": "解雇",
+            "rebootPending": "重新启动等待"
+        },
+        "autoUpdateSettings": {
+            "title": "自动更新设置",
+            "subtitle": "自动安装更新",
+            "critical": {
+                "title": "关键更新",
+                "tooltip": "关键更新可防止发生重大问题、严重故障、硬件故障或数据损坏。"
+            },
+            "camera": {
+                "title": "摄像头",
+                "tooltip": "单击此处将相机属性重置为默认设置。",
+                "reset": "重置出厂设置"
+            },
+            "recommended": {
+                "title": "推荐更新",
+                "tooltip": "推荐的驱动程序更新使计算机运行保持最佳性能。"
+            },
+            "windows": {
+                "title": "Windows 更新",
+                "url": "Windows 设置"
+            }
+        },
+        "support": {
+            "title": "Lenovo Support website"
+        },
+        "banner": {
+            "title": "​保持最新状态的系统才是健康的系统。",
+            "last": "上次更新时间为",
+            "next": "下次更新扫描计划时间：",
+            "checkButton": "检查更新",
+            "checking": "正在检查更新",
+            "downloading": "下载更新完成",
+            "installing": "正在安装更新",
+            "percent": "% 已完成",
+            "cancelCheck": "取消检查",
+            "cancelUpdates": "取消更新",
+            "available": "可用更新",
+            "description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。关键更新对保护计算机上的数据来说也很重要，一旦可用就应该尽快安装。未能安装这些软件包可能会导致数据丢失、系统故障或硬件故障",
+            "installButton": "安装所有更新",
+            "result": {
+                "success": "所有更新都已正确安装",
+                "fail": {
+                    "title": "某些更新未正确安装。",
+                    "description": "在下载或安装这些更新期间出现问题。请确保您在线，并且在安装更新时不要关闭计算机。"
+                }
+            }
+        }
+    },
 	"homeSecurity": {
 		"title": "连接家庭安全",
 		"ecosystemBlockTitle": "保护您的设备生态系统",
@@ -878,7 +883,7 @@
 			"fullyDesc": "恭喜您！您受到良好保护。",
 			"notFully": "未受全面保护",
 			"notFullyDesc": "您并未受到全面保护。立即了解如何更好地保护自己。",
-			"security101": "安全顾问 101",
+			"security101": "安全建议入门",
 			"firewall": "防火墙",
 			"pwdHealth": "密码保险箱",
 			"vpnSecurity": "VPN 安全顾问",
