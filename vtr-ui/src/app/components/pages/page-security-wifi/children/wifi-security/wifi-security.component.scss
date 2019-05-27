@@ -361,7 +361,9 @@
 
 		.subHeading {
 			display: flex;
-
+			.loading {
+				margin-right: 1rem;
+			}
 			.circle {
 				background-color: $go;
 				background-image: linear-gradient(313deg, $go_light 25%, $go 100%);
