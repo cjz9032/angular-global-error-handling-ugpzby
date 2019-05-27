@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AccessTokenService } from '../../common/services/access-token.service';
 
 @Component({
 	selector: 'vtr-side-bar',

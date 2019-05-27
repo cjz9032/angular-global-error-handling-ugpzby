@@ -1,4 +1,4 @@
-<div class="support-widget">
+<div *ngIf="isSupportWidgetDisplayed" class="support-widget">
   <h3 class="support-widget__title">Got privacy questions?</h3>
   <p class="support-widget__text">We’re standing by to help, whenever you need it.</p>
   <button class="support-widget__button" (click)="openPopup('support-popup')">
