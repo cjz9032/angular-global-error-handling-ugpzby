@@ -74,6 +74,7 @@
 															<li class="wifi-link">
 																<a routerLink="wifi-security"
 																	id="sa-ov-link-seeAllNetwork"
+																	aria-label="sa-ov-link-seeAllNetwork"
 																	[queryParams]="{isShowMore:false}"
 																	vtrMetrics
 																	metricsEvent="FeatureClick"
@@ -102,7 +103,7 @@
 				<div class="col-12 col-sm-12 col-md-6 col-lg-4 vtr-page-right-column">
 					<div class="vtr-page-shift-up">
 						<div class="container-fluid">
-							<div class="row" id="sa-ov-modal-article">
+							<div class="row" id="sa-ov-modal-article" aria-label="sa-ov-modal-article">
 								<div class="col col-12">
 									<vtr-container-card [img]="cardContentPositionA.FeatureImage"
 										[caption]="cardContentPositionA.Description"

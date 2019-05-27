@@ -682,6 +682,7 @@
 			"title": "Lenovo Support website"
 		},
 		"banner": {
+			"neverChecked": "Welcome to use System Update.",
 			"title": "An up-to-date system is a healthy system.",
 			"last": "Last update was on",
 			"next": "Next updated scan is scheduled on",

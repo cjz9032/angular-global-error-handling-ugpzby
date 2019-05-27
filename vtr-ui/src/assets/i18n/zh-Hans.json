@@ -84,12 +84,12 @@
 	},
 	"common": {
 		"menu": {
-			"dashboard": "仪表板",
+			"dashboard": "首页",
 			"device": {
 				"title": "我的设备",
 				"sub1": "设备信息",
 				"sub2": "设备设置",
-				"sub3": "系统更新"
+				"sub3": "系统升级"
 			},
 			"security": {
 				"title": "安全顾问",
@@ -228,7 +228,7 @@
 				}
 			},
 			"systemUpdate": {
-				"title": "系统更新",
+				"title": "系统升级",
 				"detail": {
 					"update": "更新"
 				}
