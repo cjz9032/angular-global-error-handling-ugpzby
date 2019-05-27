@@ -367,7 +367,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 									self.activeModal.dismiss();
 									self.devService.writeLog('MSWebViewNavigationCompleted: Login success!');
 									//the metrics need to be sent after enabling sso, some data like user guid would be available after that.
-									self.userService.sendSigninMetrics('success', self.starterStatus, 'AlreadySignedIn', self.appFeature);
+									self.userService.sendSigninMetrics('success', self.starterStatus, self.everSignIn, self.appFeature);
 								}
 							});
 						} catch (error) {
