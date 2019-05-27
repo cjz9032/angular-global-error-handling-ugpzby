@@ -30,7 +30,7 @@
 												*ngIf="isOnline"
 												[subTitle1]="getLastUpdatedText()"
 												[subTitle2]="getNextUpdatedScanText()"
-												[buttonText]="'device.systemUpdates.banner.checkButton' | translate"
+												[buttonText]="'systemUpdates.banner.checkButton' | translate"
 												[percent]="percentCompleted"
 												[showProgress]="isUpdateCheckInProgress"
 												[isUpdateDownloading]="isUpdateDownloading"
@@ -44,7 +44,7 @@
 									</div>
 
 
-									<vtr-available-updates
+									<vtr-available-updates *ngIf="isUpdateListVisible()"
 										[criticalUpdates]="criticalUpdates"
 										[optionalUpdates]="optionalUpdates"
 										[recommendedUpdates]="recommendedUpdates"
@@ -168,7 +168,7 @@
 										</div> -->
 
 											<vtr-container-collapsible
-												[cardTitle]="'device.systemUpdates.history' | translate | lowercase"
+												[cardTitle]="'systemUpdates.history' | translate | lowercase"
 												[isCollapsed]="false">
 												<vtr-installation-history (reinstallUpdate)="onReinstallUpdate($event)">
 												</vtr-installation-history>
@@ -185,22 +185,22 @@
 								<div class="row mb-40">
 									<div class="col col-12 cont">
 
-										<vtr-widget-device-update-settings [title]="'Auto update settings'"
+										<vtr-autoupdate-settings [title]="'systemUpdates.autoUpdateSettings.title' | translate"										
 											componentName="Auto Update Settings"
-											[description]="'Automatically Install Updates'"
+											[description]="'systemUpdates.autoUpdateSettings.subtitle' | translate"
 											[items]="autoUpdateOptions"
 											(toggleOnOff)="onUpdateToggleOnOff($event)">
-										</vtr-widget-device-update-settings>
+										</vtr-autoupdate-settings>
 									</div>
 								</div>
 
 								<div class="row">
 									<div class="col col-12 mb-40">
 										<vtr-container-card [img]="'assets/images/support.jpg'"
-											[title]="'Lenovo Support website'"
+											[title]="'systemUpdates.support.title' | translate"
 											[action]="'Read More'"
 											[actionType]="'External'"
-											[actionLink]="'https://pcsupport.lenovo.com/'"
+											[actionLink]="supportLink"
 											[type]="'partnerarticle'"
 											[order]="1"
 											[ratioX]="4"

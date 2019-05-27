@@ -40,7 +40,7 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
-			isChecked: true,
+			isChecked: false,
 			tooltipText: '',
 			type: 'auto-updates'
 		},
@@ -57,7 +57,7 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
-			isChecked: true,
+			isChecked: false,
 			tooltipText: '',
 			type: 'auto-updates'
 		},
@@ -74,7 +74,7 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
-			isChecked: true,
+			isChecked: false,
 			tooltipText: '',
 			type: 'auto-updates'
 		}
@@ -84,6 +84,7 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 		{
 			header: 'gaming.dashboard.device.quickSettings.status.performance',
 			name: 'gaming.dashboard.device.quickSettings.status.performance',
+			description: 'gaming.dashboard.device.quickSettings.statusText.perText',
 			selectedOption: false,
 			defaultOption: false,
 			value: 3
@@ -91,6 +92,7 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 		{
 			header: 'gaming.dashboard.device.quickSettings.status.balance',
 			name: 'gaming.dashboard.device.quickSettings.status.balance',
+			description: 'gaming.dashboard.device.quickSettings.statusText.balText',
 			selectedOption: false,
 			defaultOption: true,
 			value: 2
@@ -98,6 +100,7 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 		{
 			header: 'gaming.dashboard.device.quickSettings.status.quiet',
 			name: 'gaming.dashboard.device.quickSettings.status.quiet',
+			description: 'gaming.dashboard.device.quickSettings.statusText.quietText',
 			selectedOption: false,
 			defaultOption: false,
 			value: 1
