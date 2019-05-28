@@ -43,13 +43,9 @@
 				 srcset="/assets/images/privacy-tab/privacy-search-completed@2x.png 2x"
 				 alt="search completed"
 				 class="history-clean__img">
-			<span class="history-clean__bold-text">Your {{choseBrowserName}} browser history is clean.</span>
+			<span class="history-clean__bold-text">Your browser history is clean.</span>
 			<span class="history-clean__text">We cannot compile a tracking map, as there is no data. You could clear the browser history, or you had a new PC.
 Use your browser to view websites, and come back here later, then we can show who’s tracking you...</span>
-		</div>
-		<div class="trackers__toggle" *ngIf="isShowToggle()">
-			<span class="trackers__toggle--text">Show who's tracking me</span>
-			<vtr-toggle-button [controlName]="trackingControl"></vtr-toggle-button>
 		</div>
 	</div>
 

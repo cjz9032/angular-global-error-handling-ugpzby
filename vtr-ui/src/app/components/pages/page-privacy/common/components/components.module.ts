@@ -16,6 +16,7 @@ import { DirectivesModule } from '../directives/directives.module';
 import { BigLoaderComponent } from './big-loader/big-loader.component';
 import { StepsViewComponent } from './steps-view/steps-view.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { PermitTrackersAndPasswordsComponent } from './permit-trackers-and-passwords/permit-trackers-and-passwords.component';
 import { SupportWidgetComponent } from './support-widget/support-widget.component';
 import { SupportPopupComponent } from './support-popup/support-popup.component';
 
@@ -35,6 +36,7 @@ import { SupportPopupComponent } from './support-popup/support-popup.component';
 		ProgressBarComponent,
 		SupportWidgetComponent,
 		SupportPopupComponent,
+		PermitTrackersAndPasswordsComponent
 	],
 	exports: [
 		SimpleLoaderComponent,
@@ -49,6 +51,7 @@ import { SupportPopupComponent } from './support-popup/support-popup.component';
 		BigLoaderComponent,
 		StepsViewComponent,
 		ProgressBarComponent,
+		PermitTrackersAndPasswordsComponent,
 		SupportWidgetComponent
 	],
 	imports: [

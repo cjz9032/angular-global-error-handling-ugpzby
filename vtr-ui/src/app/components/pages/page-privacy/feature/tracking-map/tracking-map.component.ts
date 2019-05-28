@@ -1,8 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CommonPopupService } from '../../common/services/popups/common-popup.service';
-import { map, takeUntil, tap } from 'rxjs/operators';
-import { ChoseBrowserService } from '../../common/services/chose-browser.service';
-import { FormControl } from '@angular/forms';
+import { filter, map, takeUntil, tap } from 'rxjs/operators';
 import { UserAllowService } from '../../common/services/user-allow.service';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
 import { TrackingMapService } from './services/tracking-map.service';
@@ -25,18 +23,11 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 	@Input() animate = false;
 	isFigleafInstalled$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 
-	trackingControl = new FormControl(this.userAllowService.allowToShow.trackingMap);
-
 	percentOfTrack = 0;
 	readonly trackingMapSinglePopupId = 'trackingMapSingle';
-
 	isUserData = false;
-	choseBrowserName = this.choseBrowserService.getName();
-
 	trackingData$ = this.getTrackingData();
-
 	isTrackersBlocked$ = this.trackingMapService.isTrackersBlocked$;
-
 	defaultIcon = DEFAULT_ICON;
 
 	tryProductText = {
@@ -54,7 +45,6 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 	constructor(
 		private trackingMapService: TrackingMapService,
 		private commonPopupService: CommonPopupService,
-		private choseBrowserService: ChoseBrowserService,
 		private userAllowService: UserAllowService,
 		private analyticsService: AnalyticsService,
 		private getParentForAnalyticsService: GetParentForAnalyticsService,
@@ -63,7 +53,7 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.listenTrackingControl();
+		this.listenPermit();
 	}
 
 	ngOnDestroy() {
@@ -82,10 +72,6 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 		this.commonPopupService.open(this.trackingMapSinglePopupId);
 	}
 
-	isShowToggle() {
-		return this.choseBrowserService.isBrowserChose();
-	}
-
 	sendAnalytics() {
 		this.analyticsService.sendItemClickData({
 			ItemName: 'WebsiteTrackersDetailItem',
@@ -97,19 +83,17 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 		return Math.round((trackerData.sites.length / Object.keys(trackingsData.sites).length) * 100);
 	}
 
-	private listenTrackingControl() {
-		this.trackingControl.valueChanges.pipe(
-			takeUntil(instanceDestroyed(this)),
-		).subscribe((val) => {
-			this.userAllowService.setShowTrackingMap(val);
-			this.trackingMapService.updateTrackingData();
-		});
-	}
-
 	private getTrackingData() {
 		return this.trackingMapService.trackingData$.pipe(
 			tap((val) => this.isUserData = val.typeData === typeData.Users),
 			map((val) => val.trackingData)
 		);
+	}
+
+	private listenPermit() {
+		this.userAllowService.allowToShow.pipe(
+			filter((value) => value.hasOwnProperty('trackingMap')),
+			takeUntil(instanceDestroyed(this)),
+		).subscribe(() => this.trackingMapService.updateTrackingData());
 	}
 }
