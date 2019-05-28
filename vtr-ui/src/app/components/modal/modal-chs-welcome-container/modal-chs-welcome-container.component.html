@@ -1,0 +1,98 @@
+<div class="vtr-modal-chs-welcome-container">
+	<div class="modal-header">
+		<button type="button" class="close close-button" id="chs-tour-btn-close" data-dismiss="modal"
+			(click)="closeModal()" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<!-- start of page 1-->
+	<div class="page page-one" *ngIf="switchPage === 1">
+		<div class="text-center">
+			<div class="page-img">
+				<img src="../../../../assets//images/connected-home-my-home.png" alt="">
+			</div>
+			<p class="page-title mb-3">Welcome</p>
+			<p class="page-desc">Intelligent Cooling automatically balances thermal performance to adjust to your needs.
+				The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your
+				comfort, when the notebook is being held. When the device is on a desktop surface, this feature
+				optimizes performance.</p>
+		</div>
+	</div>
+	<!-- end of page1-->
+	<!-- start of page 2-->
+	<div class="page page-two" *ngIf="switchPage === 2">
+		<div class="text-center">
+			<div class="page-img">
+				<img src="../../../../assets//images/connected-home-my-home.png" alt="">
+			</div>
+			<p class="page-title mb-3">Protect you devices</p>
+			<p class="page-desc">Now it's time to secure your family's devices - which includes WI-FI vulnerability
+				monitoring.</p>
+		</div>
+	</div>
+	<!-- end of page2-->
+	<!-- start of page 3-->
+	<div class="page page-three" *ngIf="switchPage === 3 && idLenovoIdLogin === false">
+		<vtr-login-lenovo-id>
+
+		</vtr-login-lenovo-id>
+	</div>
+	<!-- end of page3-->
+	<!-- start of page 4-->
+	<div class="page page-four" *ngIf="switchPage === 4 && isLocationServiceOn === false">
+		<p class="description">
+			Enable location services
+    </p>
+    <p class="sub-desc">
+      Please ensure you have enabled location permissions for Vantage, in order to add your device to a Connected Home account.
+    </p>
+		<div class="d-flex">
+			<div class="ml-0 mr-4 pl-0">
+				<button id="chs-tour-location-agree-btn" type="button" class="btn btn-default modal-button"
+					(click)="onOkClick($event)" vtrMetrics metricsParent="Security.WifiSecurity"
+					metricsItem="agreeOpenLocation" metricsEvent="featureClick">
+					{{'device.systemUpdates.popup.okayButton' | translate}}
+				</button>
+			</div>
+			<div class="ml-0 mr-4 pl-0">
+				<div id="chs-tour-location-cancel-btn" role="button" class="btn btn-default modal-button-cancel"
+					(click)="closeModal()" vtrMetrics metricsParent="Security.WifiSecurity"
+					metricsItem="cancelOpenLocation" metricsEvent="featureClick">
+					{{'common.ui.no' | translate}}
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end of page4-->
+	<div class="page-indicator">
+		<div *ngIf="switchPage === 1 || switchPage === containerPage"
+			class="row text-center align-items-center justify-content-center">
+			<div class="button-welcome">
+				<vtr-ui-button *ngIf="switchPage === 1" id="chs-tour-btn-start" [isDisabled]="locatorButtonDisable"
+					(click)="next(switchPage)" [label]="'tutorial.start' | translate"></vtr-ui-button>
+				<vtr-ui-button *ngIf="switchPage === containerPage && isLocationServiceOn !== false" id="chs-tour-btn-done"
+					[isDisabled]="locatorButtonDisable" (click)="closeModal()" [label]="'tutorial.done' | translate">
+				</vtr-ui-button>
+			</div>
+		</div>
+		<div *ngIf="switchPage !== containerPage && switchPage > 1" class="row text-center align-items-center">
+			<div class="col-2">
+				<a href="javascript:void(0)" class="skip" id="chs-btn-skip" (click)="closeModal()">SKIP TOUR</a>
+			</div>
+			<div class="col-8">
+				<div class="tour-indicator d-flex justify-content-center align-items-center">
+					<div class="tour-indicator-num d-flex justify-content-center align-items-center m-3"
+						*ngFor="let item of itemsList;let first = first;last as isLast;let i = index"
+						[ngClass]="{'selected': i+1 === switchPage,'completed': i+1 < switchPage,'unselected': i+1 > switchPage}"
+						id="chs-tour-indicator-{{i}}" (click)="selected(i)">
+						<span>{{i+1 === switchPage ? i+1 : ''}}</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-2 button-welcome">
+				<vtr-ui-button id="chs-tour-btn-next" [isDisabled]="locatorButtonDisable" (click)="next(switchPage)"
+					[label]="'tutorial.next' | translate"></vtr-ui-button>
+			</div>
+		</div>
+	</div>
+</div>

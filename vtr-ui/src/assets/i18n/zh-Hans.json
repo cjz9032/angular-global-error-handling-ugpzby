@@ -84,12 +84,12 @@
 	},
 	"common": {
 		"menu": {
-			"dashboard": "仪表板",
+			"dashboard": "首页",
 			"device": {
 				"title": "我的设备",
 				"sub1": "设备信息",
 				"sub2": "设备设置",
-				"sub3": "系统更新"
+				"sub3": "系统升级"
 			},
 			"security": {
 				"title": "安全顾问",
@@ -228,7 +228,7 @@
 				}
 			},
 			"systemUpdate": {
-				"title": "系统更新",
+				"title": "系统升级",
 				"detail": {
 					"update": "更新"
 				}
@@ -883,7 +883,7 @@
 			"fullyDesc": "恭喜您！您受到良好保护。",
 			"notFully": "未受全面保护",
 			"notFullyDesc": "您并未受到全面保护。立即了解如何更好地保护自己。",
-			"security101": "安全顾问 101",
+			"security101": "安全建议入门",
 			"firewall": "防火墙",
 			"pwdHealth": "密码保险箱",
 			"vpnSecurity": "VPN 安全顾问",
