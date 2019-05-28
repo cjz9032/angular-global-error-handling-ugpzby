@@ -6,6 +6,22 @@ import { Router } from '@angular/router';
 import { CommunicationWithFigleafService } from '../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { TrackingMapService } from '../feature/tracking-map/services/tracking-map.service';
 import { TaskActionService } from '../common/services/task-action.service';
+import { RouterChangeHandlerService } from '../common/services/router-change-handler.service';
+import { takeUntil } from 'rxjs/operators';
+import { instanceDestroyed } from '../utils/custom-rxjs-operators/instance-destroyed';
+import { RoutersName } from '../privacy-routing-name';
+
+interface PageSettings {
+	showPrivacyScore: boolean;
+	showNavigationBlock: boolean;
+	showSupportBanner: boolean;
+}
+
+const defaultPageSettings: PageSettings = {
+	showPrivacyScore: false,
+	showNavigationBlock: false,
+	showSupportBanner: false,
+};
 
 @Component({
 	// selector: 'vtr-layer',
@@ -17,6 +33,35 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 	browserList$ = this.choseBrowserService.getBrowserList();
 	isBrowserListEmpty$ = this.choseBrowserService.isBrowserListEmpty();
 
+	showPrivacyScore = false;
+	showNavigationBlock = false;
+	showSupportBanner = false;
+
+	pagesSettings: { [path in RoutersName]: PageSettings } = {
+		[RoutersName.MAIN]: defaultPageSettings,
+		tips: defaultPageSettings,
+		privacy: defaultPageSettings,
+		faq: defaultPageSettings,
+		news: defaultPageSettings,
+		landing: defaultPageSettings,
+		articles: defaultPageSettings,
+		trackers: {
+			showPrivacyScore: true,
+			showNavigationBlock: true,
+			showSupportBanner: true,
+		},
+		breaches: {
+			showPrivacyScore: true,
+			showNavigationBlock: true,
+			showSupportBanner: true,
+		},
+		'browser-accounts': {
+			showPrivacyScore: true,
+			showNavigationBlock: true,
+			showSupportBanner: true,
+		},
+	};
+
 	constructor(
 		private taskActionService: TaskActionService,
 		private locationHistoryService: LocationHistoryService,
@@ -25,14 +70,28 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 		private router: Router,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private trackingMapService: TrackingMapService,
+		private routerChangeHandler: RouterChangeHandlerService,
 	) {
 	}
 
 	ngOnInit() {
+		this.routerChangeHandler.onChange$
+			.pipe(
+				takeUntil(instanceDestroyed(this)),
+			)
+			.subscribe(
+				(currentPath) => this.setCurrentRouterPage(currentPath)
+			);
 	}
 
 	ngOnDestroy() {
 		this.communicationWithFigleafService.disconnect();
+	}
+
+	setCurrentRouterPage(routerPage: string) {
+		this.showPrivacyScore = this.pagesSettings[routerPage].showPrivacyScore;
+		this.showNavigationBlock = this.pagesSettings[routerPage].showNavigationBlock;
+		this.showSupportBanner = this.pagesSettings[routerPage].showSupportBanner;
 	}
 
 	closePopUp(popupId) {
