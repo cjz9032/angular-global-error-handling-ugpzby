@@ -906,6 +906,11 @@
 			"ourWebsite": "Our website",
 			"aboutYourDevice": "About your device",
 			"copyright": "© 2002-2019 Lenovo all rights reserved"
+		},
+		"quickAccess": {
+			"categories": "Categories",
+			"categoriesDesc": "Find helpful information in our articles",
+			"seeArticles": "SEE ARTICLES"
 		}
 	},
 	"security": {

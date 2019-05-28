@@ -3,6 +3,7 @@ import { MockService } from '../../../services/mock/mock.service';
 import { SupportService } from '../../../services/support/support.service';
 import { DeviceService } from '../../../services/device/device.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-page-support',
@@ -15,10 +16,15 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	searchWords = '';
 	searchCount = 1;
 	articles: any;
+	/** content | articles */
+	articlesType = 'loading';
+	articleCategories: any = [];
 	warranty: any;
 	pageDuration: number;
 	location: any;
 	warrantyNormalUrl = 'https://pcsupport.lenovo.com/us/en/warrantylookup';
+	langText = 'en';
+	// langText = 'zh-hans';
 	supportDatas = {
 		documentation: [
 			{
@@ -88,10 +94,34 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		public mockService: MockService,
 		public supportService: SupportService,
 		public deviceService: DeviceService,
+		private translate: TranslateService,
 		private cmsService: CMSService
 	) {
+	}
+
+	ngOnInit() {
+		if (this.translate.currentLang) { this.langText = this.translate.currentLang; }
 		this.getMachineInfo();
-		this.fetchCMSArticles();
+		this.fetchCMSContents(this.langText);
+		this.fetchCMSArticleCategory(this.langText);
+		// console.log('Open support page.');
+		this.location = window.location.href.substring(window.location.href.indexOf('#') + 2).split('/').join('.');
+		this.pageDuration = 0;
+		setInterval(() => {
+			this.pageDuration += 1;
+		}, 1000);
+	}
+
+	ngOnDestroy() {
+		const pageViewMetrics = {
+			ItemType: 'PageView',
+			PageName: this.location,
+			PageContext: 'Get support page',
+			PageDuration: this.pageDuration,
+			OnlineStatus: ''
+		};
+		this.supportService.sendMetricsAsync(pageViewMetrics);
+		// console.log(pageViewMetrics);
 	}
 
 	getMachineInfo() {
@@ -120,31 +150,11 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	ngOnInit() {
-		// console.log('Open support page.');
-		this.location = window.location.href.substring(window.location.href.indexOf('#') + 2).split('/').join('.');
-		this.pageDuration = 0;
-		setInterval(() => {
-			this.pageDuration += 1;
-		}, 1000);
-	}
-
-	ngOnDestroy() {
-		const pageViewMetrics = {
-			ItemType: 'PageView',
-			PageName: this.location,
-			PageContext: 'Get support page',
-			PageDuration: this.pageDuration,
-			OnlineStatus: ''
-		};
-		this.supportService.sendMetricsAsync(pageViewMetrics);
-		// console.log(pageViewMetrics);
-	}
-
-	fetchCMSArticles() {
+	fetchCMSContents(lang: string) {
+		this.articlesType = 'loading';
 		const queryOptions = {
 			'Page': 'support',
-			'Lang': 'EN',
+			'Lang': lang,
 			'GEO': 'US',
 			'OEM': 'Lenovo',
 			'OS': 'Windows',
@@ -154,11 +164,80 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				// console.log(response);
-				this.articles = response.slice(0, 8);
+				if (response.length > 0) {
+					this.articles = response.slice(0, 8);
+					console.log(this.articles);
+					this.articlesType = 'content';
+				} else {
+					this.fetchCMSContents('EN');
+				}
 			},
 			error => {
 				console.log('fetchCMSContent error', error);
+				if (lang !== 'EN') {
+					this.fetchCMSContents('EN');
+				}
+			}
+		);
+	}
+
+	fetchCMSArticleCategory(lang: string) {
+		const queryOptions = {
+			'Lang': lang,
+			'GEO': 'US',
+			'OEM': 'Lenovo',
+			'OS': 'Windows',
+			'Segment': 'SMB',
+			'Brand': 'idea',
+		};
+
+		this.cmsService.fetchCMSArticleCategories(queryOptions).then(
+			(response: any) => {
+				if (response.length > 0) {
+					this.articleCategories = response.slice(0, 4);
+				} else {
+					this.fetchCMSArticleCategory('EN');
+				}
+			},
+			error => {
+				console.log('fetchCMSArticleCategories error', error);
+				if (lang !== 'EN') {
+					this.fetchCMSArticleCategory('EN');
+				}
+			}
+		);
+	}
+
+	clickCategory(categoryId: string) {
+		this.fetchCMSArticles(categoryId, this.langText);
+	}
+
+	fetchCMSArticles(categoryId: string, lang: string) {
+		this.articlesType = 'loading';
+		const queryOptions = {
+			'Lang': lang,
+			'GEO': 'US',
+			'OEM': 'Lenovo',
+			'OS': 'Windows',
+			'Segment': 'SMB',
+			'Brand': 'idea',
+			'category': categoryId,
+		};
+
+		this.cmsService.fetchCMSArticles(queryOptions, true).then(
+			(response: any) => {
+				if (response.length > 0) {
+					this.articles = response;
+					this.articlesType = 'articles';
+				} else {
+					this.fetchCMSArticles(categoryId, 'EN');
+				}
+			},
+			error => {
+				console.log('fetchCMSArticleCategories error', error);
+				if (lang !== 'EN') {
+					this.fetchCMSArticles(categoryId, 'EN');
+				}
 			}
 		);
 	}
