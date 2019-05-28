@@ -168,7 +168,7 @@
 									<label [for]="interest + 'checkbox'">{{ "welcometutorial.interests." + interest | translate }}</label>
 								</div>
 							</div>
-							<div *ngIf="!hideMoreInterestBtn" class="row justify-content-center align-items-center font-12-semi more-interest">
+							<div *ngIf="!hideMoreInterestBtn" class="row justify-content-center align-items-center font-12-semi more-interest col-12">
 								<div class="col-auto title2" (click)="moreInterestClicked()">
 									<span class="more-interests">{{ "welcometutorial.moreInterest" | translate | lowercase }}</span>
 								</div>
