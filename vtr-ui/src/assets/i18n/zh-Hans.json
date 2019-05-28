@@ -331,8 +331,8 @@
 						"acdischarging": "放电（带交流）"
 					},
 					"deviceChemistry": {
-						"li-polymer": "Li-Polymer",
-						"li-ion": "Li-Ion"
+						"li-polymer": "锂聚合物",
+						"li-ion": "锂离子电池"
 					}
 				}
 			},
