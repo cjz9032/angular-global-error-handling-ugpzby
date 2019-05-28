@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { StorageService } from './storage.service';
 import { MaskedPasswordsInfo, VantageCommunicationService } from './vantage-communication.service';
 import { convertBrowserNameToBrowserData } from '../../utils/helpers';
+import { el } from '@angular/platform-browser/testing/src/browser_util';
 
 export interface InstalledBrowser {
 	name: string;
@@ -41,6 +42,7 @@ export class BrowserAccountsService {
 		this.vantageCommunicationService.getInstalledBrowsers().pipe(
 			map((response) => convertBrowserNameToBrowserData(response.browsers)),
 			switchMap((browserData) => this.concatPasswordsCount(browserData)),
+			switchMap((browserData) => this.concatPasswords(browserData)),
 			take(1),
 		).subscribe((browserData) => {
 			this.installedBrowsersData$.next({browserData: browserData, error: null});
@@ -56,24 +58,27 @@ export class BrowserAccountsService {
 		this.isConsentGiven$.next(true);
 	}
 
-	concatPasswords(browsers: string[]) {
-		const currentBrowsers = this.installedBrowsersData$.getValue();
+	concatPasswords(browserData: InstalledBrowser[]) {
+		const isConsentGiven = this.isConsentGiven$.getValue();
 
-		this.vantageCommunicationService.getMaskedPasswords(browsers)
-			.pipe(
-				map((accountsPassword) => currentBrowsers.browserData.map((browser) => (
-						{...browser, accounts: browser.accounts ? browser.accounts : accountsPassword[browser.name]}
-					))
-				),
-				take(1),
-				catchError((error) => {
-					console.error(error);
-					return EMPTY;
-				})
-			)
-			.subscribe((installedBrowsersData) => {
-				this.installedBrowsersData$.next({browserData: installedBrowsersData, error: null});
-			});
+		if (isConsentGiven) {
+			const browsersNamesArray = browserData.map((browser) => browser.name);
+			return this.vantageCommunicationService.getMaskedPasswords(browsersNamesArray)
+				.pipe(
+					map((accountsPassword) => browserData.map((browser) => (
+							{...browser, accounts: accountsPassword[browser.name]}
+						))
+					),
+					take(1),
+					catchError((error) => {
+						this.installedBrowsersData$.next({browserData: [], error: error});
+						console.error(error);
+						return EMPTY;
+					})
+				);
+		} else {
+			return of(browserData.map((browser) => ({...browser, accounts: null})));
+		}
 	}
 
 	private concatPasswordsCount(browserData: ReturnType<typeof convertBrowserNameToBrowserData>) {
