@@ -343,6 +343,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public onUpdateSelectionChange($event: any) {
 		const item = $event.target;
 		this.systemUpdateService.toggleUpdateSelection(item.name, item.checked);
+		// set the value twice to trigger the ui refresh, Some times the ui get some strange problems
+		document.body.style.zoom = '1.1';
 		document.body.style.zoom = '1.0';
 	}
 
@@ -380,8 +382,22 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			let { criticalAutoUpdates, recommendedAutoUpdates } = this.systemUpdateService.autoUpdateStatus;
 			if (name === 'critical-updates') {
 				criticalAutoUpdates = checked;
+				if(!checked) {
+					const recommendUpdate = this.autoUpdateOptions.find((update) => {
+						return update.name === 'recommended-updates';
+					});
+					recommendedAutoUpdates = false;
+					recommendUpdate.isChecked = false;
+				}
 			} else if (name === 'recommended-updates') {
 				recommendedAutoUpdates = checked;
+				const criticalUpdate = this.autoUpdateOptions.find((update) => {
+					return update.name === 'critical-updates';
+				});
+				if(checked && !criticalUpdate.isChecked) {
+					criticalUpdate.isChecked = true;
+					criticalAutoUpdates = true;
+				}
 			}
 			this.systemUpdateService.setUpdateSchedule(criticalAutoUpdates, recommendedAutoUpdates);
 		}

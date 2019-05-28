@@ -329,6 +329,10 @@
 						"charging": "充电",
 						"discharging": "放电",
 						"acdischarging": "放电（带交流）"
+					},
+					"deviceChemistry": {
+						"li-polymer": "Li-Polymer",
+						"li-ion": "Li-Ion"
 					}
 				}
 			},
@@ -622,6 +626,24 @@
 					"WindowsLink": {
 						"goToWindowsHello": "转到Windows Hello设置",
 						"screenTimeoutSettings": "转到屏幕超时设置"
+					}
+				},
+				"intelligentScreen": {
+					"title": "Intelligent Screen",
+					"description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+					"autoScreenOff": {
+						"title": "Auto screen off",
+						"caption": "Automatically turn off display when face-down or walking.",
+						"note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
+						"windowsLink": "Go to Power & sleep settings in Windows settings"
+					},
+					"keepMyDisplay": {
+						"title": "Keep my display",
+						"caption": "Keep my display when I am reading or browsing.",
+						"displaySlider": {
+							"startTime": "0 minutes",
+							"endTime": "60 minutes"
+						}
 					}
 				}
 			}
