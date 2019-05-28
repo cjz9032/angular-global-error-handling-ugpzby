@@ -8,7 +8,7 @@
 			<vtr-side-bar></vtr-side-bar>
 		</div>
 	</div>
-	<vtr-common-popup [popUpId]="permitTrackersAndPasswordsPopupId">
+	<vtr-common-popup [popUpId]="permitTrackersAndPasswordsPopupId" size="large">
 		<ng-template>
 			<vtr-permit-trackers-and-passwords
 				(allow)="setPermit($event, permitTrackersAndPasswordsPopupId)">

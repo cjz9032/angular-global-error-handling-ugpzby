@@ -40,6 +40,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 			this.userAllowService.setShowTrackingMap(true);
 			this.browserAccountsService.giveConcent();
 			this.trackingMapService.updateTrackingData();
+			this.router.navigateByUrl('/privacy/trackers');
 		}
 		this.commonPopupService.close(popupId);
 	}

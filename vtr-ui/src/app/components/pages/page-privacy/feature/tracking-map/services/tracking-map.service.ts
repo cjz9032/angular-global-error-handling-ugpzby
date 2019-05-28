@@ -68,11 +68,8 @@ export class TrackingMapService {
 		this.taskStartedTime = Date.now();
 		return this.downloadTrackersInfo().pipe(
 			switchMap((trackersInfo) => {
-					let sites = this.getTopWebsites();
-					if (this.userAllowService.allowToShow.trackingMap) {
-						sites = this.getVisitedWebsites(this.choseBrowserService.getName());
-					}
-
+					const isAllowScanHistory = this.userAllowService.allowToShow.getValue().trackingMap;
+					const sites = isAllowScanHistory ? this.getVisitedWebsites() : this.getTopWebsites();
 					return sites.pipe(map((userHistory) => ({trackersInfo, userHistory})));
 				}
 			),
@@ -100,10 +97,10 @@ export class TrackingMapService {
 		return {sites, trackers};
 	}
 
-	private getVisitedWebsites(browserName) {
-		return this.vantageCommunicationService.getVisitedWebsites([browserName])
+	private getVisitedWebsites() {
+		return this.vantageCommunicationService.getVisitedWebsites()
 			.pipe(
-				map((userHistory) => Object.values(userHistory).reduce((acc, val) => acc.concat(val), [])),
+				map((userHistory) => userHistory.visitedWebsites),
 				map((userHistory) => ({typeData: typeData.Users, sites: userHistory})),
 				catchError((err) => {
 					this.trackingData.next({typeData: typeData.Users, trackingData: {sites: [], trackers: {}}, error: err});

@@ -17,7 +17,7 @@ export class PermitTrackersAndPasswordsGuard implements CanActivate {
 	}
 
 	canActivate() {
-		if (this.userAllowService.allowToShow.trackingMap) {
+		if (this.userAllowService.allowToShow.getValue().trackingMap) {
 			return true;
 		}
 
