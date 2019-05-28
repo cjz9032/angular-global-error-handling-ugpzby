@@ -118,7 +118,8 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	// this is invoked when auto lock feature is toggled
 	public onChangeZeroTouchLockFlag($event) {
 		this.intelligentSecurity.zeroTouchLockFlag = !this.intelligentSecurity.zeroTouchLockFlag;
-		this.smartAssist.setAutoLockStatus(this.intelligentSecurity.zeroTouchLockFlag)
+		const option = this.intelligentSecurity.zeroTouchLockFlag ? 'True' : 'False';
+		this.smartAssist.setAutoLockStatus(option)
 			.then((isSuccess: boolean) => {
 				console.log('onChangeZeroTouchLockFlag.setAutoLockStatus', isSuccess, this.intelligentSecurity.zeroTouchLockFlag);
 			});

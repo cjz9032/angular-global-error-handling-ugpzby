@@ -18,7 +18,7 @@
 				[theme]="'white'"
 				(toggle)="onCardCollapse($event)">
 				<!-- <ul class="list-group list-group-flush"
-					*ngIf="!isThinkpad">
+					*ngIf="!isThinkPad">
 					<li class="pt-3">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLogin.title1' | translate"
@@ -68,7 +68,7 @@
 							</div>
 						</vtr-ui-row-switch>
 					</li>
-				</ul>
+				</ul> -->
 				<ul class="list-group list-group-flush"
 					*ngIf="isThinkPad">
 					<li class="pt-3">
@@ -134,7 +134,7 @@
 							</div>
 						</vtr-ui-row-switch>
 					</li>
-				</ul> -->
+				</ul>
 				<ul class="list-group list-group-flush"
 					[class.disabled-overlay]="!intelligentSecurity.humanPresenceDetectionFlag"
 					*ngIf="intelligentSecurity.isZeroTouchLockVisible">
