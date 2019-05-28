@@ -50,6 +50,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	showMore = false;
 	hasMore: boolean;
 	switchDisabled = false;
+	locatorButtonDisable = false;
 
 	constructor(
 		public modalService: NgbModal,
@@ -74,8 +75,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		if (this.wifiIsShowMore === 'false') {
 			this.isShowMore = false;
 		}
-		// this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
-		this.data.wifiSecurity.on(EventTypes.geolocatorPermissionEvent, (value) => {
+		this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
 			this.ngZone.run(() => {
 				if (!value && this.data.wifiSecurity.state === 'enabled') {
 					this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);
@@ -160,11 +160,18 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	}
 
 	openThreatLocator() {
-		const articleDetailModal: NgbModalRef = this.modalService.open(ModalThreatLocatorComponent, {
+		if (this.modalService.hasOpenModals()) {
+			return;
+		}
+		this.locatorButtonDisable = true;
+		const threatLocatorModal: NgbModalRef = this.modalService.open(ModalThreatLocatorComponent, {
 			backdrop: 'static',
 			size: 'lg',
 			centered: true,
 			windowClass: 'Threat-Locator-Modal'
+		});
+		threatLocatorModal.result.finally(() => {
+			this.locatorButtonDisable = false;
 		});
 	}
 }

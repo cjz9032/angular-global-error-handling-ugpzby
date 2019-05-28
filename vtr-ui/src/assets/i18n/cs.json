@@ -9,7 +9,8 @@
                 "sub4": "Stav hesla",
                 "sub5": "Internetová ochrana",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Bezpečnostního rádce",
@@ -25,10 +26,31 @@
             "installed": "INSTALOVÁNO",
             "notInstalled": "NENÍ INSTALOVÁNO",
             "loading": "Nahrávání",
+            "installing": "INSTALACE",
             "notFound": "NENALEZENO",
             "registered": "REGISTROVÁNO",
             "notRegistered": "NENÍ REGISTROVÁNO"
+        },
+        "ui": {
+            "back": "ZPĚT",
+            "on": "ON",
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
         }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -110,8 +132,7 @@
                 "poweredBy": "Používá technologii McAfee",
                 "privacyTerms": "Další informace najdete v <tag>Zásadách ochrany osobních údajů</tag> a <tag>Podmínkách služby</tag>",
                 "mcafeePremium": "Prémiová ochrana McAfee",
-                "protectedBy": "Momentálně vás chrání ",
-                "betterProtected": ".Můžete se však chránit lépe pomocí McAfee LiveSafe",
+                "protectedBy": "Nyní vás chrání program {{protectedName}}. Můžete se však chránit lépe pomocí programu McAfee LiveSafe.",
                 "virusScan": "VYHLEDÁVÁNÍ VIRŮ",
                 "firewall": "FIREWALL",
                 "disabled": "ZAKÁZÁNO",
@@ -175,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "Vyhledávač hrozeb vám pomůže zjistit, jak bezpečné jsou sítě kolem vás.",
-                "button": "Zkontrolovat hrozby"
+                "button": "Zkontrolovat hrozby",
+                "connectionError": "Chyba spojení",
+                "tryAgain": "Vaše zařízení nemůžeme najít, protože síť není k dispozici; připojte se k internetu a zkuste to znovu."
             },
             "locationmodal": {
                 "title": "Povolit zjišťování polohy",
@@ -249,7 +272,7 @@
             "howToUseSufEasy": "Jak používat SurfEasy VPN",
             "whatCanSufEasy2": "Před připojením k veřejnému přístupovému bodu Wi-Fi zapněte SurfEasy VPN a chraňte své soukromí. V rámci plánu Lenovo Starter VPN můžete svými aktivitami získávat odměny, jako je větší šířka pásma ochrany dat. Upgradujte na ochranu až pro 5 chytrých telefonů, tabletů a počítačů s neomezenou šířkou pásma.",
             "getStarted": "Zapněte SurfEasy VPN:",
-            "getStarted1": "Nahoře klepněte na tlačítko „Otevřít SurfEasy“ nahoře a spusťte SurfEasy VPN.",
+            "getStarted1": "Klikněte na tlačítko „Otevřít SurfEasy“ nahoře a spusťte SurfEasy VPN.",
             "getStarted2": "Zapněte VPN a chvíli čekejte na potvrzení bezpečného připojení.",
             "getStarted3": "Dle potřeby změňte oblast nebo polohu a užívejte si bezpečné a soukromé práce v síti.",
             "poweredBySurfEasy": "Používá technologii SurfEasy",
@@ -303,7 +326,7 @@
             "privacyPolicy": "Další informace najdete v <tag>Zásadách ochrany osobních údajů</tag>",
             "whyWindowsHelloDescription2": "Program Windows Hello usnadňuje a zabezpečuje přihlášení k počítači. Lze jej použít také v online aplikacích Microsoft. Níže najdete pokyny, jak Windows Hello začít používat.",
             "authentication": "Ověřování pomocí Windows Hello",
-            "traditional": "Tradiční hesla mohou být zcizena a použita pro přístup k vašemu účtu odkudkoli na světě. Bezpečnější a pohodlnější. Windows Hello představuje novou generaci práce s hesly. Na rozdíl od klasických rizikových hesel se přihlásíte pomocí snímače otisku prstu (nebo infračervené kamery).",
+            "traditional": "Tradiční hesla mohou být zcizena a použita pro přístup k vašemu účtu odkudkoli na světě. Bezpečnější a pohodlnější. Windows Hello představuje novou generaci práce s hesly. Na rozdíl od klasických rizikových hesel se přihlásíte pomocí snímače otisku prstu.",
             "howToStart": "Jak začít používat Windows Hello?"
         }
     }

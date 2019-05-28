@@ -19,7 +19,8 @@ export class GamingSystemUpdateService {
 		const CpuOCStatus = this.shellService.getCPUOCStatus();
 		if (CpuOCStatus !== undefined) {
 			const CpuOCStatusObj = new CPUOCStatus();
-			// @ts-ignore
+
+
 			CpuOCStatusObj.cpuOCStatus = CpuOCStatus;
 			return CpuOCStatusObj;
 		}
@@ -39,7 +40,7 @@ export class GamingSystemUpdateService {
 		const RamOCStatus = this.shellService.getRAMOCStatus();
 		if (RamOCStatus !== undefined) {
 			const RamOCStatusObj = new RamOCSatus();
-			// @ts-ignore
+
 			RamOCStatusObj.ramOcStatus = RamOCStatus;
 			return RamOCStatusObj;
 		}

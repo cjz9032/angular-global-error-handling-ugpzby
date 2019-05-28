@@ -28,10 +28,6 @@
 											<div class="col">
 												<div class="text-regular">
 													{{'security.windowsHello.protectYourDevice' | translate}}
-													<!-- Traditional passwords can be stolen and used to access your account
-													from anywhere in the world. More secure and convenient, Windows
-													Hello is the next generation of a password. Use your fingerprint
-													reader (or IR camera) instead of insecure passwords to log in. -->
 												</div>
 											</div>
 										</div>
@@ -58,6 +54,7 @@
 											<div class=" pull right">
 												<div class="col-12">
 													<vtr-ui-button id="sa-wh-btn-setupwindowshello"
+														aria-label="sa-wh-btn-setupwindowshello"
 														metricsEvent="FeatureClick"
 														metricsItem="setUpWindowsHello"
 														(click)="setUpWindowsHello()"
@@ -107,6 +104,7 @@
 																{{'security.windowsHello.visitAndRegister' | translate}}
 																<span *vtrTranslate="'security.windowsHello.visitInSettings' | translate">
 																	<a id="sa-wh-lnk-visitwindowshello"
+																		aria-label="sa-wh-lnk-visitwindowshello"
 																		vtrMetrics
 																		metricsEvent="FeatureClick"
 																		metricsItem="setUpWindowsHello"
@@ -171,6 +169,7 @@
 															<div class="text-regular">
 																{{'security.windowsHello.startUsingWindowsHello' | translate}}
 																<a id="sa-wh-lnk-visitmicrosoft"
+																	aria-label="sa-wh-lnk-visitmicrosoft"
 																	target="_blank"
 																	vtrMetrics
 																	metricsItem="visitMicrosoft"
@@ -195,6 +194,7 @@
 										<p class="text-regular"
 											*vtrTranslate="'security.windowsHello.privacyPolicy' | translate">
 											<a id="sa-wh-lnk-privacypolicy"
+												aria-label="sa-wh-lnk-privacypolicy"
 												vtrMetrics
 												metricsEvent="FeatureClick"
 												metricsItem="privacyPolicy"
@@ -241,6 +241,7 @@
 														{{'security.windowsHello.visitAndRegister' | translate}}
 														<span *vtrTranslate="'security.windowsHello.visitInSettings' | translate">
 															<a id="sa-wh-lnk-visitwindowshello"
+																aria-label="sa-wh-lnk-visitwindowshello"
 																vtrMetrics
 																metricsEvent="FeatureClick"
 																metricsItem="setUpWindowsHello"
@@ -260,6 +261,7 @@
 														<div class="text-regular">
 															{{'security.windowsHello.startUsingWindowsHello' | translate}}
 															<a id="sa-wh-lnk-visitmicrosoft"
+																aria-label="sa-wh-lnk-visitmicrosoft"
 																target="_blank"
 																vtrMetrics
 																metricsItem="visitMicrosoft"
@@ -290,6 +292,7 @@
 								<div class="row">
 									<div class="col col-12">
 										<vtr-container-card id="sa-wh-lnk-card-content"
+											aria-label="sa-wh-lnk-card-content"
 											[img]="cardContentPositionA.FeatureImage"
 											[caption]="cardContentPositionA.Description"
 											[title]="cardContentPositionA.Title"

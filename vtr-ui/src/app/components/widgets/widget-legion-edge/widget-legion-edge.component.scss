@@ -2,7 +2,7 @@
 
 .vtr-widget-legion-edge {
 	border-radius: $border_radius;
-	background-color: $gaming_dark;
+	background: $dark_cell;
 	box-shadow: $drop_shadow_gaming;
 	padding: 2.2rem;
 	.gaming-header-image {
@@ -40,7 +40,7 @@
 					}
 					&:first-child{
 						.media-body {
-							> div {
+							> div.collapsible {
 								display: block !important;
 							}
 						}
@@ -54,9 +54,9 @@
 							padding-left: 0 !important;
 							.no-pointer {
 								width: 6rem;
+								position: relative;
 							}
 							.customizable {
-								flex-grow: 5;
 								text-align: right;
 								margin-right: 2rem;
 								margin-left: 35%;
@@ -66,6 +66,8 @@
 								width: 3.2rem;
 								border-radius: 3.2rem;
 								margin-top: 0.3rem;
+								position:absolute;
+								right:6rem;
 								.icon {
 									text-align: center;
 									font-size: 2.2rem;

@@ -8,45 +8,69 @@
 				<div class="col">
 					<ul class="system-tool-icons d-flex justify-content-around">
 						<li>
-							<figure>
-								<a routerLink="/device/device-settings/power"><div class="system-icon">
-								<i class="icon icon-power"></i>
-								</div></a>
-								<figcaption>{{'gaming.dashboard.device.systemTools.power' | translate}}</figcaption>
-							</figure>
-						</li>
-						<li>
-							<figure>
-								<a routerLink="/device/device-settings/display-camera"><div class="system-icon">
-									<i class="icon icon-media"></i>
-								</div></a>
-								<figcaption>{{'gaming.dashboard.device.systemTools.media' | translate}}</figcaption>
-							</figure>
-						</li>
-						<li>
-							<figure>
-								<a routerLink="/macrokey"><div class="system-icon">
-									<i class="icon icon-macrokey"></i>
-								</div></a>
-								<figcaption>{{'gaming.dashboard.device.systemTools.macroKey' | translate}}</figcaption>
-							</figure>
-						</li>
-						<li>
-							<figure>
-								<a routerLink="/hardwarescan"><div class="system-icon">
-									<i class="icon icon-systemupdate"></i>
-								</div></a>
-								<figcaption>{{'gaming.dashboard.device.systemTools.hardwareScan' | translate}}</figcaption>
-							</figure>
-						</li>
-						<li>
-							<figure>
-								<a routerLink="/device/system-updates"><div class="system-icon">
+							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.systemUpdate' | translate"
+								metricsEvent="featureClick" routerLink="/device/system-updates">
+								<figure>
+									<div class="system-icon">
 										<i class="icon icon-systemupdate"></i>
-								</div></a>
-								<figcaption>{{'gaming.dashboard.device.systemTools.systemUpdate' | translate}}</figcaption>
-							</figure>
+									</div>
+									<figcaption>{{'gaming.dashboard.device.systemTools.systemUpdate' | translate}}
+									</figcaption>
+								</figure>
+							</a>
 						</li>
+						<li>
+							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.macroKey' | translate"
+								metricsEvent="featureClick" routerLink="/macrokey">
+								<figure>
+									<div class="system-icon">
+										<i class="icon icon-macrokey"></i>
+									</div>
+									<figcaption>{{'gaming.dashboard.device.systemTools.macroKey' | translate}}
+									</figcaption>
+								</figure>
+							</a>
+						</li>
+
+						<li>
+							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.power' | translate"
+								metricsEvent="featureClick" routerLink="/device/device-settings/power">
+								<figure>
+
+									<div class="system-icon">
+										<i class="icon icon-power"></i>
+									</div>
+
+									<figcaption>{{'gaming.dashboard.device.systemTools.power' | translate}}</figcaption>
+								</figure>
+							</a>
+						</li>
+						<li>
+							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.media' | translate"
+								metricsEvent="featureClick" routerLink="/device/device-settings/display-camera">
+								<figure>
+
+									<div class="system-icon">
+										<i class="icon icon-media"></i>
+									</div>
+
+									<figcaption>{{'gaming.dashboard.device.systemTools.media' | translate}}</figcaption>
+								</figure>
+							</a>
+						</li>
+
+						<!-- <li>
+							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.media' | translate"
+								metricsEvent="featureClick" routerLink="/hardwarescan">
+								<figure>
+									<div class="system-icon">
+										<i class="icon icon-hardwarescan"></i>
+									</div>
+									<figcaption>{{'gaming.dashboard.device.systemTools.hardwareScan' | translate}}
+									</figcaption>
+								</figure>
+							</a>
+						</li> -->
 					</ul>
 				</div>
 			</div>

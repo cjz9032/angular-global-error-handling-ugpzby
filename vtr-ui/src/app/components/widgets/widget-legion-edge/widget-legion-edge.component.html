@@ -15,7 +15,10 @@
 		<div class="col legionEdge-list-items">
 			<vtr-widget-device-update-settings
 				componentName="Legion Edge"
-				[items]="legionUpdate">
+				[items]="legionUpdate"
+				[options]="edgeopt"
+				(toggleOnOff)="toggleOnOffRamOCStatus($event)"
+				(optionSelected)="onOptionSelected($event)">
 			</vtr-widget-device-update-settings>
 		</div>
 	</div>

@@ -9,7 +9,8 @@
                 "sub4": "Надійність паролю",
                 "sub5": "Захист в Інтернеті",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Порадник з безпеки",
@@ -25,10 +26,31 @@
             "installed": "УСТАНОВЛЕНО",
             "notInstalled": "НЕ ВСТАНОВЛЕНО",
             "loading": "Завантаження",
+            "installing": "ІНСТАЛЯЦІЯ",
             "notFound": "НЕ ВИЯВЛЕНО",
             "registered": "ЗАРЕЄСТРОВАНО",
             "notRegistered": "НЕ ЗАРЕЄСТРОВАНО"
+        },
+        "ui": {
+            "back": "НАЗАД",
+            "on": "ON",
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
         }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -110,8 +132,7 @@
                 "poweredBy": "Технології McAfee",
                 "privacyTerms": "Дізнайтеся більше про <tag>політику конфіденційності</tag> та <tag>умови надання послуг</tag>",
                 "mcafeePremium": "Захист McAfee преміум-класу",
-                "protectedBy": "Наразі ввімкнуто захист: ",
-                "betterProtected": ".Однак ви можете скористатися покращеним захистом McAfee LiveSafe",
+                "protectedBy": "Наразі вас захищає {{protectedName}}. Однак McAfee LiveSafe захистить вас краще.",
                 "virusScan": "ПЕРЕВІРКА НА ВІРУСИ",
                 "firewall": "БРАНДМАУЕР",
                 "disabled": "ВИМКНУТО",
@@ -175,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "Використовуйте детектор загроз, щоб визначити, чи безпечні мережі поблизу.",
-                "button": "Перевірка загроз"
+                "button": "Перевірка загроз",
+                "connectionError": "Помилка підключення",
+                "tryAgain": "Не вдалося знайти ваш пристрій, мережа не доступна. Підключіться до Інтернету й повторіть спробу."
             },
             "locationmodal": {
                 "title": "Увімкнути служби геолокації",
@@ -303,7 +326,7 @@
             "privacyPolicy": "Докладніше про <tag>політику конфіденційності</tag>",
             "whyWindowsHelloDescription2": "Windows Hello робить вхід у систему простішим і безпечнішим. І ви також можете використовувати його для своїх хмарних програм Microsoft. Щоб почати використовувати Windows Hello, дотримуйтесь інструкцій нижче",
             "authentication": "Автентифікація Windows Hello",
-            "traditional": "Традиційні паролі можуть викрасти й використовувати для доступу до вашого облікового запису з будь-якої точки світу. Безпечніше й зручніше. Windows Hello — це нове покоління паролів. Використовуйте для входу пристрій зчитування відбитків пальців [або інфрачервону камеру] замість ненадійних паролів.",
+            "traditional": "Традиційні паролі можуть викрасти й використовувати для доступу до вашого облікового запису з будь-якої точки світу. Безпечніше й зручніше. Windows Hello — це нове покоління паролів. Використовуйте для входу пристрій зчитування відбитків пальців замість ненадійних паролів.",
             "howToStart": "Як почати використовувати Windows Hello"
         }
     }

@@ -28,7 +28,9 @@
 								</div>
 								<div class="row">
 									<div class="col col-12 px-40 pb-40">
-										<vtr-widget-carousel [data]="heroBannerItems"
+<<<<<<< HEAD
+										<vtr-widget-carousel [data]="heroBannerItems" order="1"
+
 											source="title"
 											[interval]="2000"
 											cardTitle="title"
@@ -37,34 +39,47 @@
 											[showNavigationArrows]="true"
 											[showNavigationIndicators]="true"
 											link="thumbnailUrl"></vtr-widget-carousel>
+=======
+										<vtr-widget-carousel [data]="heroBannerItems"
+															 order="1"
+															 source="title"
+															 [interval]="2000"
+															 cardTitle="title"
+															 pauseOnHover="true"
+															 image="url"
+															 [showNavigationArrows]="true"
+															 [showNavigationIndicators]="true"
+															 link="thumbnailUrl"></vtr-widget-carousel>
+>>>>>>> 98b8736af37a1dea9b71d43b774c6999c9d4bd77
 									</div>
-								</div>
-								<div class="row">
+
 									<div class="col col-6 p-40">
-										<vtr-container-card order="2" [itemID]="cardContentPositionB.Id"  [img]="cardContentPositionB.FeatureImage"
-											[caption]="cardContentPositionB.Description"
-											[title]="cardContentPositionB.Title"
-											[logoText]="cardContentPositionB.BrandName"
-											[action]="cardContentPositionB.Action"
-											[actionType]="cardContentPositionB.ActionType"
-											[actionLink]="cardContentPositionB.ActionLink"
-											[type]="'corner'"
-											[ratioX]="4"
-											[ratioY]="2"
-											[cornerShift]="'large'">
+										<vtr-container-card order="2" [itemID]="cardContentPositionA.id"
+															[img]="cardContentPositionB.FeatureImage"
+															[caption]="cardContentPositionB.Description"
+															[title]="cardContentPositionB.Title"
+															[logoText]="cardContentPositionB.BrandName"
+															[action]="cardContentPositionB.Action"
+															[actionType]="cardContentPositionB.ActionType"
+															[actionLink]="cardContentPositionB.ActionLink"
+															[type]="'corner'"
+															[ratioX]="4"
+															[ratioY]="2"
+															[cornerShift]="'large'">
 										</vtr-container-card>
 									</div>
 									<div class="col col-6 p-40">
-										<vtr-container-card order="3" [itemID]="cardContentPositionC.Id"  [img]="cardContentPositionC.FeatureImage"
-											[caption]="cardContentPositionC.Description"
-											[title]="cardContentPositionC.Title"
-											[logoText]="cardContentPositionC.BrandName"
-											[action]="cardContentPositionC.Action"
-											[actionType]="cardContentPositionC.ActionType"
-											[actionLink]="cardContentPositionC.ActionLink"
-											[type]="'corner'"
-											[ratioX]="4"
-											[ratioY]="2">
+										<vtr-container-card order="3" [itemID]="cardContentPositionC.Id"
+															[img]="cardContentPositionC.FeatureImage"
+															[caption]="cardContentPositionC.Description"
+															[title]="cardContentPositionC.Title"
+															[logoText]="cardContentPositionC.BrandName"
+															[action]="cardContentPositionC.Action"
+															[actionType]="cardContentPositionC.ActionType"
+															[actionLink]="cardContentPositionC.ActionLink"
+															[type]="'corner'"
+															[ratioX]="4"
+															[ratioY]="2">
 										</vtr-container-card>
 									</div>
 								</div>
@@ -119,8 +134,7 @@
 										<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
 											[description]="'dashboard.feedback.subtitle' | translate"
 											[actionName]="'dashboard.feedback.button' | translate"
-											[action]="'feedback'"
-											(feedBackClick)="onFeedbackModal()">
+											[action]="'feedback'" (feedBackClick)="onFeedbackModal()">
 										</vtr-widget-feedback>
 										<!-- </div> -->
 										<!-- </div> -->

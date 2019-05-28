@@ -3,26 +3,21 @@
 		<div class="row">
 			<div class="col">
 				<div class="header">
-					<div class="heading">Available updates</div>
+					<div class="heading">{{'systemUpdates.availableUpdates.title' | translate}}</div>
 				</div>
 			</div>
 		</div>
 
 		<div class="row no-gutters">
 			<div class="col-sm-12 col-md-12 col-lg-8">
-				<div class="text-regular">
-					These packages include updates that are critical for the correct operation of your computer.
-					Critical updates help keep your computer more secure and reliable and should be installed as they
-					become available.
-					Recommended updates and optional updates help keep your software up to date and your computer
-					running at its best.
-				</div>
+				<div class="text-regular">{{'systemUpdates.availableUpdates.description' | translate}}</div>
 			</div>
 			<div class="col-sm-12 col-md-12 col-lg-4">
 				<div class="button-box shift-right">
 					<vtr-ui-button (onClick)="onInstallAllUpdates($event)"
+						[isDisabled]="!((criticalUpdates && criticalUpdates.length > 0) || (recommendedUpdates && recommendedUpdates.length > 0) || (optionalUpdates && optionalUpdates.length > 0))"
 						[upperCaseLabel]="true"
-						[label]="'Install all updates'"
+						[label]="'systemUpdates.availableUpdates.installAllUpdates' | translate"
 						metricsParent="Pages.SystemUpdate.NewUpdateAvailable"
 						metricsItem="btn.Install all updates"></vtr-ui-button>
 				</div>
@@ -34,7 +29,7 @@
 		<div class="row">
 			<div class="col">
 				<div class="header">
-					<div class="heading">All updates were installed correctly</div>
+					<div class="heading">{{'systemUpdates.availableUpdates.installSuccessHeader' | translate}}</div>
 				</div>
 			</div>
 		</div>
@@ -44,16 +39,13 @@
 		<div class="row">
 			<div class="col">
 				<div class="header">
-					<div class="heading">Some updates were not installed correctly</div>
+					<div class="heading">{{'systemUpdates.availableUpdates.installFailHeader' | translate}}</div>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">
-				<div class="text-regular">
-					Something went wrong during the downloading and installation of these updates.
-					Please make sure you are online and don't turn off your computer when installing updates.
-				</div>
+				<div class="text-regular">{{'systemUpdates.availableUpdates.installFailDescription' | translate}}</div>
 			</div>
 		</div>
 	</div>
@@ -72,7 +64,7 @@
 					<div class="col">
 						<div class="header">
 							<div class="heading">{{criticalUpdates.length}}
-								{{'device.systemUpdates.criticalUpdates' | translate}}</div>
+								{{'systemUpdates.criticalUpdates' | translate}}</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
 								[isInstallationCompleted]="isInstallationCompleted"
 								[isInstallationSuccess]="isInstallationSuccess"
@@ -87,8 +79,9 @@
 					<div class="col">
 						<div class="header">
 							<div class="heading">{{recommendedUpdates.length}}
-								{{'device.systemUpdates.recommendedUpdates' | translate}}</div>
+								{{'systemUpdates.recommendedUpdates' | translate}}</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
+								(ignoreUpdate)="onIgnoreUpdate($event)"
 								[isInstallationCompleted]="isInstallationCompleted"
 								[isInstallationSuccess]="isInstallationSuccess"
 								[items]="recommendedUpdates"></vtr-ui-list-checkbox>
@@ -100,12 +93,46 @@
 					*ngIf="optionalUpdates && optionalUpdates.length > 0">
 					<div class="col">
 						<div class="header">
-							<div class="heading">{{optionalUpdates.length}} Optional updates</div>
+							<div class="heading">{{optionalUpdates.length}}
+									{{'systemUpdates.availableUpdates.optionalUpdates' | translate}}</div>
 							<vtr-ui-list-checkbox (checkChange)="onCheckChange($event)"
+								(ignoreUpdate)="onIgnoreUpdate($event)"
 								[isInstallationCompleted]="isInstallationCompleted"
 								[isInstallationSuccess]="isInstallationSuccess"
 								[items]="optionalUpdates"></vtr-ui-list-checkbox>
 						</div>
+					</div>
+				</div>
+
+				<div class="row"
+					*ngIf="ignoredUpdates && ignoredUpdates.length > 0">
+					<div class="col">
+						<div class="header">
+							<div class="row d-flex justify-content-between w-100">
+								<div class="heading">{{ignoredUpdates.length}} 
+									{{'systemUpdates.ignoredUpdates' | translate}}</div>
+								<div class="px-3 collapse-control"
+									(click)="onToggle()">
+									<div *ngIf="isCollapsed"
+										class="collapse-text">
+										{{'common.ui.expand' | translate}}
+									</div>
+									<div *ngIf="!isCollapsed"
+										class="collapse-text">
+										{{'common.ui.collapse' | translate}}
+									</div>
+									<fa-icon *ngIf="isCollapsed"
+										[icon]="['fas', 'chevron-down']"></fa-icon>
+									<fa-icon *ngIf="!isCollapsed"
+										[icon]="['fas', 'chevron-up']"></fa-icon>
+								</div>
+							</div>
+						</div>
+						<vtr-ui-list-checkbox *ngIf="!isCollapsed" (checkChange)="onCheckChange($event)"
+								(ignoreUpdate)="onIgnoreUpdate($event)"
+								[isInstallationCompleted]="isInstallationCompleted"
+								[isInstallationSuccess]="isInstallationSuccess"
+								[items]="ignoredUpdates"></vtr-ui-list-checkbox>
 					</div>
 				</div>
 
@@ -116,7 +143,7 @@
 							<vtr-ui-button (onClick)="onInstallSelectedUpdates($event)"
 								[isDisabled]="!isUpdateSelected"
 								[upperCaseLabel]="true"
-								[label]="'Install Selected updates'"
+								[label]="'systemUpdates.availableUpdates.installSelectedUpdates' | translate"
 								metricsParent="Pages.SystemUpdate.NewUpdateAvailable"
 								metricsItem="btn.Install selected updates"></vtr-ui-button>
 						</div>

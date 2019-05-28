@@ -19,6 +19,8 @@ export class UiButtonComponent implements OnInit {
 	@Input() metricsParam: string;
 	@Input() metricsItemPosition: string;
 	@Input() metricsPageNumber: string;
+	@Input() metricsItemID: string;
+	@Input() metricsItemCategory: string;
 	@Input() isDisabled = false;
 	@Input() isRegular = false;
 	@Input() btnHeight = false;
