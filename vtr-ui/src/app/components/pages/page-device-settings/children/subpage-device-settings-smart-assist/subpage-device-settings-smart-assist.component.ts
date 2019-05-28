@@ -33,6 +33,7 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	public options: any;
 	public keepMyDisplay: boolean;
 
+
 	headerMenuItems = [
 		{
 			title: 'device.deviceSettings.smartAssist.jumpTo.security',
@@ -165,8 +166,10 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 		this.deviceService.launchUri('ms-settings:signinoptions-launchfaceenrollment');
 	}
 
+
 	public displayDim(event) {
 		this.keepMyDisplay = !this.keepMyDisplay;
 	}
+
 
 }
