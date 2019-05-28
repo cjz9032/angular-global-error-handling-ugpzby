@@ -480,7 +480,17 @@
 		background-color: $shade;
 	}
 
+	.content-page-2 .interests input[type="checkbox"] + label, .content-page-2 .privacy-check .custom-checkbox {
+		cursor: pointer;
+	}
+
+	.content-page-2 div.more-interest:hover, .content-page-2 .privacy-check .linktext:hover {
+		color: blue; 
+	} 
+
+
 
 	@-moz-keyframes html-css        { 0%  { width:0px;} 100%{ width:90%;}  }
 	@-webkit-keyframes html-css        { 0%  { width:0px;} 100%{ width:90%;}  }
+
 }
