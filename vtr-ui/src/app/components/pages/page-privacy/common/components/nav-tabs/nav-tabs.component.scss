@@ -4,19 +4,33 @@
 
   &__item {
     list-style-type: none;
-  }
+}
 
   &__link {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-decoration: none;
 
     &.active {
       color: #5671ff;
 
+      border-radius: 20px 20px 0 0;
+      background-color: #FFFFFF;
+      box-shadow: 0 0 15px 0 rgba(0,0,0,0.15);
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        height: 17px;
+        width: 100%;
+        background: #fff;
+      }
+
       &:hover {
         color: #34495E;
-        text-decoration: none;
       }
     }
   }
