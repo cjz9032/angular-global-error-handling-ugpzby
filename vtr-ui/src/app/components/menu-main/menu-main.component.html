@@ -1,3 +1,7 @@
+<style type="text/css">
+	#navbarDropdown {
+	}
+</style>
 <div class="vtr-menu-main">
 	<nav class="navbar navbar-expand-md pr-0">
 		<div *ngIf="!deviceService.isGaming"
@@ -12,8 +16,6 @@
 				<img src="../../../assets/icons/Vantage_L_logo.svg"
 					alt="L" />
 			</a>
-
-
 		</div>
 		<div *ngIf="deviceService.isGaming"
 			class="navbar-brand pt-0">
@@ -109,7 +111,7 @@
 									[metricsParent]="subitem.metricsParent"
 									[metricsItem]="subitem.metricsItem"
 									class="dropdown-item link"
-									routerLink="/{{item.path}}/{{subitem.path}}">{{subitem.label | translate}}</a>
+									routerLink="/{{item.path}}/{{subitem.path}}">{{subitem.label | trans}</a>
 								</span>
 
 						</div>
