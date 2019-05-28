@@ -609,6 +609,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	public onCameraBackgroundOptionChange(isEnabling: boolean, mode: string) {
+		console.log("onCameraBackgroundOptionChange: " + isEnabling + ", " + mode);
 		if(mode != "") {
 			this.cameraBlur.currentMode = mode;
 		}

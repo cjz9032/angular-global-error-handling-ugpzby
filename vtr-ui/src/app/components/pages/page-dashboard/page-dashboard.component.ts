@@ -424,7 +424,7 @@ export class PageDashboardComponent implements OnInit {
 			systemUpdate.title = this.translate.instant('dashboard.systemStatus.systemUpdate.title'); // 'System Update';
 			systemUpdate.detail = this.translate.instant('dashboard.systemStatus.systemUpdate.detail.update'); // 'Update';
 			systemUpdate.path = 'device/system-updates';
-			systemUpdate.asLink = true;
+			systemUpdate.asLink = false;
 			systemUpdate.isSystemLink = false;
 			systemUpdate.type = 'system';
 

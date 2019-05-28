@@ -94,6 +94,7 @@ export class SystemUpdateService {
 			this.systemUpdateBridge.setUpdateSchedule(request)
 				.then((response) => {
 					console.log('setUpdateSchedule', response);
+					this.getUpdateSchedule();
 				}).catch((error) => {
 					// get current status
 					this.getUpdateSchedule();
