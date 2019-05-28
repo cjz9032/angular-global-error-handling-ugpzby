@@ -46,12 +46,13 @@
 						[icon]="['fas', 'times-circle']" 
 						class="poor">
 				</fa-icon>
-				<fa-layers *ngIf="batteryQuality[batteryCondition.quality]== 'Fair'"
+				<fa-layers *ngIf="batteryQuality[batteryCondition.quality]== 'Fair'" 
 						[fixedWidth]="true">
 					<fa-icon [icon]="['fas', 'circle']" class="fair"></fa-icon>
-					<fa-icon [icon]="['fas', 'exclamation-triangle']" transform="shrink-6" class="fair-inner-icon">
+					<fa-icon [icon]="['fas', 'exclamation-triangle']" transform="shrink-6" 
+						class="fair-inner-icon">
 					</fa-icon>
-			</fa-layers>
+				</fa-layers>
 			</div>
 		
 			<div class="col">

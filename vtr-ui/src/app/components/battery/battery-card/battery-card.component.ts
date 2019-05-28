@@ -132,7 +132,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	public getBatteryCondition() {
 		// server api call to fetch battery conditions
-		this.batteryCondition = new BatteryConditionModel(2, 2);
+		this.batteryCondition = new BatteryConditionModel(1, 2);
 		console.log('Battery Condition', this.batteryCondition);
 		this.batteryConditionTranslation = this.batteryCondition.getBatteryCondition(this.batteryConditionsEnum[this.batteryCondition.condition]);
 	}
