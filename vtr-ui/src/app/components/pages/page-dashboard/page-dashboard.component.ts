@@ -33,7 +33,7 @@ export class PageDashboardComponent implements OnInit {
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
 	public isOnline = true;
-	//qas: QA[] = [];
+	// qas: QA[] = [];
 
 	heroBannerItems = [];
 	cardContentPositionA: any = {};
@@ -89,8 +89,7 @@ export class PageDashboardComponent implements OnInit {
 						qa.keys = translation;
 						// console.log(JSON.stringify(qa.keys));
 					});
-				}
-				catch (e) {
+				} catch (e) {
 					console.log('already translated');
 				}
 				finally {
@@ -99,8 +98,8 @@ export class PageDashboardComponent implements OnInit {
 
 			});
 
-			//this.qas = this.qaService.qas;
-		})
+			// this.qas = this.qaService.qas;
+		});
 
 	}
 
@@ -221,7 +220,7 @@ export class PageDashboardComponent implements OnInit {
 	// 	}, 3000);
 	// }
 
-	public onGetSupportClick($event: any) {
+	public onConnectivityClick($event: any) {
 	}
 
 	private setDefaultCMSContent() {
@@ -510,7 +509,7 @@ export class PageDashboardComponent implements OnInit {
 			systemUpdate.title = this.translate.instant('dashboard.systemStatus.systemUpdate.title'); // 'System Update';
 			systemUpdate.detail = this.translate.instant('dashboard.systemStatus.systemUpdate.detail.update'); // 'Update';
 			systemUpdate.path = 'device/system-updates';
-			systemUpdate.asLink = true;
+			systemUpdate.asLink = false;
 			systemUpdate.isSystemLink = false;
 			systemUpdate.type = 'system';
 
