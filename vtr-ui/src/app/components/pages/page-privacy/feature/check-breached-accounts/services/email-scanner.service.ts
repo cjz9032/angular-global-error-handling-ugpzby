@@ -7,6 +7,7 @@ import { AccessTokenService } from '../../../common/services/access-token.servic
 import { PRIVACY_ENVIRONMENT } from '../../../utils/injection-tokens';
 import { BreachedAccount } from '../../../common/services/breached-accounts.service';
 import { INVALID_TOKEN } from '../../../utils/error-codes';
+import { getHashCode } from '../../../utils/helpers';
 
 interface ConfirmationCodeValidationResponse {
 	status: string;
@@ -56,6 +57,9 @@ export class EmailScannerService {
 	private validationStatusChanged = new Subject<ConfirmationCodeValidationResponse>();
 	validationStatusChanged$ = this.validationStatusChanged.asObservable();
 
+	private scanBreachedAccounts = new Subject<boolean>();
+	scanBreachedAccounts$ = this.scanBreachedAccounts.asObservable();
+
 	private loadingStatusChanged = new Subject<boolean>();
 	loadingStatusChanged$ = this.loadingStatusChanged.asObservable();
 
@@ -69,6 +73,10 @@ export class EmailScannerService {
 
 	setUserEmail(userEmail) {
 		this._userEmail$.next(userEmail);
+	}
+
+	setScanBreachedAccounts() {
+		this.scanBreachedAccounts.next(true);
 	}
 
 	setDisplayedUserEmail(userEmail) {
@@ -119,7 +127,31 @@ export class EmailScannerService {
 			);
 	}
 
-	getBreachedAccountsByEmail(): Observable<BreachedAccount[]> {
+	getBreachedAccounts() {
+		const accessToken = this.accessTokenService.getAccessToken();
+
+		const getBreachedAccounts = accessToken ? this.getBreachedAccountsByEmailWithToken() : this.getBreachedAccountsWithoutToken();
+
+		return getBreachedAccounts.pipe(
+			tap((breaches) => console.log('breaches', breaches)),
+			switchMap((breaches: BreachedAccountsFromServerResponse) => {
+				this.loadingStatusChanged.next(false);
+				this.setUserEmail(breaches.userEmail);
+				this.setDisplayedUserEmail(breaches.userEmail);
+				return [this.transformBreachesFromServer(breaches)];
+			}),
+			catchError((error) => {
+				console.error('Confirmation Error', error);
+				if (error.status === INVALID_TOKEN) {
+					this.accessTokenService.removeAccessToken();
+					return of([]);
+				}
+				return throwError('get breaches from server error');
+			})
+		);
+	}
+
+	getBreachedAccountsByEmailWithToken() {
 		const accessToken = this.accessTokenService.getAccessToken();
 		if (accessToken) {
 			const headers = new HttpHeaders({
@@ -128,26 +160,18 @@ export class EmailScannerService {
 			return this.http.get<BreachedAccountsFromServerResponse>(
 				`${this.environment.backendUrl}/api/v1/vantage/emailbreaches`,
 				{headers: headers}
-			)
-				.pipe(
-					switchMap((breaches: BreachedAccountsFromServerResponse) => {
-						this.loadingStatusChanged.next(false);
-						this.setUserEmail(breaches.userEmail);
-						this.setDisplayedUserEmail(breaches.userEmail);
-						return [this.transformBreachesFromServer(breaches)];
-					}),
-					catchError((error) => {
-						console.error('Confirmation Error', error);
-						if (error.status === INVALID_TOKEN) {
-							this.accessTokenService.removeAccessToken();
-							return of([]);
-						}
-						return throwError('get breaches from server error');
-					})
-				);
+			);
 		} else {
 			return throwError(ErrorNames.noAccessToken);
 		}
+	}
+
+	getBreachedAccountsWithoutToken() {
+		const SHA1HashFromEmail = getHashCode(this._userEmail$.getValue());
+
+		return this.http.get<BreachedAccountsFromServerResponse>(
+			`${this.environment.backendUrl}/api/v1/vantage/public/emailbreaches?email_hash=${SHA1HashFromEmail}`,
+		);
 	}
 
 	private transformBreachesFromServer(breaches: BreachedAccountsFromServerResponse) {

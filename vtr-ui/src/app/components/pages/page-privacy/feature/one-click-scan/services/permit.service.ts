@@ -3,7 +3,6 @@ import { OneClickScanSteps } from './one-click-scan-steps.service';
 import { UserAllowService } from '../../../common/services/user-allow.service';
 import { BrowserAccountsService } from '../../../common/services/browser-accounts.service';
 import { EmailScannerService } from '../../check-breached-accounts/services/email-scanner.service';
-import { TrackingMapService } from '../../tracking-map/services/tracking-map.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -16,7 +15,6 @@ export class PermitService {
 		private userAllowService: UserAllowService,
 		private browserAccountsService: BrowserAccountsService,
 		private emailScannerService: EmailScannerService,
-		private trackingMapService: TrackingMapService,
 	) {
 	}
 
@@ -31,7 +29,7 @@ export class PermitService {
 					this.setPermitTrackersAndPassword();
 					break;
 				case this.oneClickScanSteps.VERIFY_EMAIL:
-					this.emailScannerService.sendConfirmationCode();
+					this.emailScannerService.setScanBreachedAccounts();
 					break;
 				default:
 					break;
