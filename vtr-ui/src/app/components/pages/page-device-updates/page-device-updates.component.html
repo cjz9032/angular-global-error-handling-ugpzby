@@ -43,12 +43,8 @@
 										</div>
 									</div>
 
-<<<<<<< HEAD
-									<vtr-available-updates
-=======
 
 									<vtr-available-updates *ngIf="isUpdateListVisible()"
->>>>>>> 98b8736af37a1dea9b71d43b774c6999c9d4bd77
 										[criticalUpdates]="criticalUpdates"
 										[optionalUpdates]="optionalUpdates"
 										[recommendedUpdates]="recommendedUpdates"
@@ -189,7 +185,8 @@
 								<div class="row mb-40">
 									<div class="col col-12 cont">
 
-										<vtr-autoupdate-settings [title]="'systemUpdates.autoUpdateSettings.title' | translate"										
+										<vtr-autoupdate-settings
+											[title]="'systemUpdates.autoUpdateSettings.title' | translate"
 											componentName="Auto Update Settings"
 											[description]="'systemUpdates.autoUpdateSettings.subtitle' | translate"
 											[items]="autoUpdateOptions"
