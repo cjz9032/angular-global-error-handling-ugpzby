@@ -1,7 +1,3 @@
-<style type="text/css">
-	#navbarDropdown {
-	}
-</style>
 <div class="vtr-menu-main">
 	<nav class="navbar navbar-expand-md pr-0">
 		<div *ngIf="!deviceService.isGaming"
@@ -111,7 +107,7 @@
 									[metricsParent]="subitem.metricsParent"
 									[metricsItem]="subitem.metricsItem"
 									class="dropdown-item link"
-									routerLink="/{{item.path}}/{{subitem.path}}">{{subitem.label | trans}</a>
+									routerLink="/{{item.path}}/{{subitem.path}}">{{subitem.label | translate}}</a>
 								</span>
 
 						</div>
