@@ -57,7 +57,7 @@
               </h3>
               <p *ngIf="showIC===4"> {{'device.deviceSettings.power.powerSmartSettings.description1' | translate}}</p>
               <p *ngIf="showIC===3"> {{'device.deviceSettings.power.powerSmartSettings.description3' | translate}}</p>
-              <p class="well" *ngIf="showIC===3"> {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.apsHint' | translate }} </p>
+              <p class="well" *ngIf="showIC===3 && !apsStatus"> {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.apsHint' | translate }} </p>
             </div>
           </div>
           <ul class=" list-group

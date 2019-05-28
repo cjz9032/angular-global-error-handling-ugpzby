@@ -82,6 +82,8 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 			} else {
 				response.detail[i].remainingTimeText = this.remainingTimeText;
 			}
+			let chemistry: string = response.detail[i].deviceChemistry; 
+			response.detail[i].deviceChemistry = this.translate.instant('device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase());
 		}
 		this.dataSource = response.detail;
 		this.dataSourceGauge = response.gauge;

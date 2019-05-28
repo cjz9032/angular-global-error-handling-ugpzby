@@ -259,7 +259,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private getSpecificSupportLink() {
 		const machineInfo = this.commonService.getLocalStorageValue(LocalStorageKey.MachineInfo);
-		if (machineInfo && machineInfo.serialnumber && machineInfo.mtm) {
+		if (machineInfo && machineInfo.serialnumber && machineInfo.mtm && machineInfo.mtm.toLowerCase() !== 'invalid') {
 			const specificSupportLink = `${this.supportLink}qrcode?sn=${machineInfo.serialnumber}&mtm=${machineInfo.mtm}`;
 			this.supportLink = specificSupportLink;
 		}
