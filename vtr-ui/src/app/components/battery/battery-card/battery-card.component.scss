@@ -8,11 +8,23 @@
 		padding-left: 8.5rem;
 		padding-top: 12.5rem;
 	}
+	.background-red {
+		background-image: url(../../../../assets/images/battery/Red--Top.png), url(../../../../assets/images/battery/Red--Bottom.png);
+	}
+	.background-green {
+		background-image: url(../../../../assets/images/battery/Green-Top.png), url(../../../../assets/images/battery/Green-Bottom.png);
+	}
+	.background-orange {
+		background-image: url(../../../../assets/images/battery/Orange--Top.png), url(../../../../assets/images/battery/Orange--Bottom.png);
+	}
+	
 	.container {
 		border-radius: 1rem;
 		background-color: $light;
 		box-shadow: $drop_shadow;
-
+        background-position: right top, right bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
 		.battery-gauge-label {
 			opacity: 0.58;
 			color: $main_dark;

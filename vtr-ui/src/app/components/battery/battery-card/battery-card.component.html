@@ -16,7 +16,9 @@
 			<vtr-battery-detail [data]="batteryInfo" [dataGauge]="batteryGauge"> </vtr-battery-detail>
 		</div>
 	</ng-template>
-	<div class="container p-5">
+	<div class="container p-5" [ngClass]="{'background-green':batteryQuality[batteryCondition.quality]== 'Good',
+		'background-orange': batteryQuality[batteryCondition.quality]== 'Fair',
+		'background-red':batteryQuality[batteryCondition.quality]== 'Poor'}">
 		<div class="battery-gauge-label text-uppercase">
 			{{'device.deviceSettings.batteryGauge.title' | translate}}
 		</div>
@@ -36,15 +38,15 @@
 		</div>
 		<div class="p-3 row">
 			<div class="p-0 pr-2 col-auto battery-conditions-icon">
-				<fa-icon *ngIf="batteryCondition.quality ==1" 
+				<fa-icon *ngIf="batteryQuality[batteryCondition.quality]== 'Good'" 
 						[icon]="['fas', 'check-circle']" 
 						class="good">
 				</fa-icon>
-				<fa-icon *ngIf="batteryCondition.quality == 3" 
+				<fa-icon *ngIf="batteryQuality[batteryCondition.quality]== 'Poor'" 
 						[icon]="['fas', 'times-circle']" 
 						class="poor">
 				</fa-icon>
-				<fa-layers *ngIf="batteryCondition.quality == 2"
+				<fa-layers *ngIf="batteryQuality[batteryCondition.quality]== 'Fair'"
 						[fixedWidth]="true">
 					<fa-icon [icon]="['fas', 'circle']" class="fair"></fa-icon>
 					<fa-icon [icon]="['fas', 'exclamation-triangle']" transform="shrink-6" class="fair-inner-icon">
