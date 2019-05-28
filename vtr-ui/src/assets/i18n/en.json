@@ -9,7 +9,7 @@
 						"balance": "Balance",
 						"quiet": "Quiet"
 					},
-					"statusText":{
+					"statusText": {
 						"perText": "Higher CPU usage, Higher fan speed",
 						"balText": "Normal CPU and fan speed",
 						"quietText": "Lower CPU usage, Lower fan speed"
@@ -25,12 +25,11 @@
 						"whenGaming": "When Gaming",
 						"off": "Off"
 					},
-					"statusText":{
+					"statusText": {
 						"onText": "CPU Overclocking will be activated",
 						"gamingText": "CPU Overclocking will be activated automatically while game launches",
 						"offText": "CPU Overclocking will be disabled"
 					},
-
 					"ramOverlock": "Ram Overclock",
 					"popup": {
 						"text": "Change will be effective after restarting computer.",
@@ -335,7 +334,6 @@
 						"li-polymer": "Li-Polymer",
 						"li-ion": "Li-Ion"
 					}
-
 				}
 			},
 			"power": {
@@ -589,17 +587,15 @@
 					"title": "Intelligent Security",
 					"readMore": "Read more",
 					"humanPresenceDetection": {
-						"title": "Human Presence Detection",
+						"title": "User Presence Sensing",
 						"tooltip": "Click here to reset human presence Detection settings."
 					},
 					"zeroTouchLogin": {
-						"title1": "Zero Touch Login",
-						"title2": "Auto IR Login",
+						"title": "Zero Touch Login",
 						"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
 					},
 					"zeroTouchLock": {
-						"title1": "Zero Touch Lock",
-						"title2": "Auto Screen Lock",
+						"title": "Zero Touch Lock",
 						"caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
 						"autoScreenLockTimer": {
 							"title": "AUTO SCREEN LOCK TIMER",
@@ -612,7 +608,7 @@
 						}
 					},
 					"distanceSensitivityAdjusting": {
-						"title1": "DISTANCE SENSITIVITY ADJUSTING",
+						"title1": "Distance Sensitivity Adjusting",
 						"title2": "AUTO DISTANCE SENSITIVITY ADJUSTING",
 						"caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
 						"options": {
@@ -666,7 +662,7 @@
 		"successInstall": "Successfully installed on",
 		"failedInstall": "Failed to installed on",
 		"at": "at",
-		"readMore": "Read more",			
+		"readMore": "Read more",
 		"popup": {
 			"reboot": "Reboot",
 			"shutdown": "Shut Down",
@@ -743,7 +739,7 @@
 						"title": "Human Presence Detection"
 					},
 					"autoIrCameraLogin": {
-						"title": "Auto IR camera Login",
+						"title": "Zero Touch Login",
 						"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it. Auto IR camera login"
 					},
 					"autoScreenLock": {
@@ -1490,7 +1486,7 @@
 		"personal": "Personal Use",
 		"business": "Business Use",
 		"custom": "Custom",
-		"experience":"Experience",
+		"experience": "Experience",
 		"privacytitle": "Help us improve the quality of the app by allowing anonymous collection of usage statistics.",
 		"moreInterest": "+ more interests",
 		"title1": "Welcome to",
