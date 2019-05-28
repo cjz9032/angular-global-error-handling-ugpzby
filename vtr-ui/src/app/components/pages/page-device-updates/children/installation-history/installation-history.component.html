@@ -11,11 +11,11 @@
 								<div class="container-fluid">
 									<div class="row align-items-center">
 										<div class="col col-9">
-											<div class="item-text">Name</div>
+											<div class="item-text">{{'systemUpdates.installationHistory.name' | translate}}</div>
 										</div>
 										<div class="col col-3 sort-order">
 											<a (click)="toggleSortOrder()">
-												<div class="sort-heading-text">Sort by Date</div>
+												<div class="sort-heading-text">{{'systemUpdates.installationHistory.sortByDate' | translate}}</div>
 												<div class="sort-icon">
 													<fa-icon *ngIf="!sortAsc"
 														[icon]="['fas', 'caret-up']"></fa-icon>
@@ -56,7 +56,7 @@
 												<div class="row">
 													<div class="col">
 														<span class="installation-details">
-															Package Size:
+															{{'systemUpdates.installationHistory.packageSize' | translate}}
 															{{commonService.formatBytes(item.packageSize)}}
 														</span>
 													</div>
@@ -64,7 +64,7 @@
 												<div class="row">
 													<div class="col">
 														<span class="installation-details">
-															Release Date:
+															{{'systemUpdates.installationHistory.releaseDate' | translate}}
 															{{commonService.formatDate(item.packageReleaseDate)}}
 														</span>
 													</div>
@@ -102,15 +102,13 @@
 					*ngIf="!showAll">
 					<button type="button"
 						(click)="onShowAllClick()"
-						class="btn btn-link">Show All</button>
+						class="btn btn-link">{{'systemUpdates.installationHistory.showAll' | translate}}</button>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="row"
 		*ngIf="installationHistory.length === 0">
-		<div class="col-12 heading text-center">
-			No installation history available
-		</div>
+		<div class="col-12 heading text-center">{{'systemUpdates.installationHistory.noInstallationHistory' | translate}}</div>
 	</div>
 </div>

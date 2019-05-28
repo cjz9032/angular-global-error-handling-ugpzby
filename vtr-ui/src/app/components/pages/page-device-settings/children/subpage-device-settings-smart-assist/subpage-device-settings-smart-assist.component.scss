@@ -43,6 +43,15 @@
 		&.screen-lock-note{
 			max-width: 64rem;
 		}
+		&.auto-screen-off-note{
+			p{
+				color: $alt;
+			}
+			span{
+				font-size: 1.5rem;
+			}
+
+		}
 	}
 	.blur{
 		&.disabled {
@@ -65,12 +74,31 @@
 	}
 	::ng-deep .vtr-ui-rounded-rectangle-radio{
 		width: 16.5rem;
+			@media #{$mediaquery_X22} {
+				width: 25.5rem;
+			}
+			@media #{$mediaquery_X23} {
+				width: 25.5rem;
+			}
 	}
 
-	.auto-screen-block{
+	.auto-screen-block, .auto-screen-off-block {
 		::ng-deep .vtr-ui-switch-row {
 			border-bottom: none;
 		}
+	}
+
+	.int-screen-desc{
+		p{
+			font-size: 1.5rem;
+		}
+	}
+
+	.keep-my-display-block{
+			::ng-deep .vtr-ui-switch-row {
+				border-top: 0.1rem solid $shade_lighter;
+				border-bottom: none;
+			}
 	}
 }
 
@@ -87,5 +115,16 @@
 	fa-icon {
 		color: red;
 		font-size: 3rem;
+	}
+}
+
+.no-border-bottom {
+	::ng-deep .vtr-ui-switch-row {
+		border-bottom: none !important;
+	}
+}
+.bold-title {
+	::ng-deep .vtr-ui-switch-row.white-theme .title {
+		font-weight: 700;
 	}
 }

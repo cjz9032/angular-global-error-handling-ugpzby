@@ -210,10 +210,12 @@ export class SecurityHealthViewModel {
 			});
 		});
 		homeProtection.on(EventTypes.homeDevicePostureEvent, (value) => {
-			if (value) {
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, value);
-				this.createHomeDevicePosture(value);
-			}
+			this.ngZone.run(() => {
+				if (value) {
+					commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, value);
+					this.createHomeDevicePosture(value);
+				}
+			});
 		});
 	}
 

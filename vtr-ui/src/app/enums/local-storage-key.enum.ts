@@ -36,7 +36,16 @@ export enum LocalStorageKey {
 	LidFirstSignInDate = '[LocalStorageKey] LidFirstSignInDate',
 	LidHasCreateStarterAccount = '[LocalStorageKey] LidHasCreateStarterAccount',
 	CpuOCStatus = '[LocalStorageKey] CpuOCStatus',
+	RamOcStatus = '[LocalStorageKey] RamOcStatus',
 	CurrentThermalModeStatus = '[LocalStorageKey] CurrentThermalModeStatus',
 	PrevThermalModeStatus = '[LocalStorageKey] PrevThermalModeStatus',
-	RamOcStatus = '[LocalStorageKey] RamOcStatus'
+	IsHPDSupported = '[LocalStorageKey] IsHPDSupported',
+	ConnectedHomeSecurityShowWelcome = '[LocalStorageKey] ConnectedHomeSecurityShowWelcome',
+	/**
+	 * 0  means "ideaPad",
+	 * 1  means "thinkPad",
+	 * 2 means "ideaCenter",
+	 * 3 means "thinkCenter"
+	 */
+	MachineType = '[LocalStorageKey] MachineType',
 }
