@@ -3,6 +3,7 @@ import { SystemUpdateService } from 'src/app/services/system-update/system-updat
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateService } from '@ngx-translate/core';
 
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
@@ -16,7 +17,8 @@ import { SystemUpdateStatusMessage } from 'src/app/data-models/system-update/sys
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import {UpdateFailToastMessage} from 'src/app/enums/update.enum'
+import { UpdateFailToastMessage } from 'src/app/enums/update.enum';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -24,14 +26,16 @@ import {UpdateFailToastMessage} from 'src/app/enums/update.enum'
 	styleUrls: ['./page-device-updates.component.scss']
 })
 export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
-	title = 'System Updates';
-	back = 'BACK';
+	title = 'systemUpdates.title';
+	back = 'systemUpdates.back';
 	backarrow = '< ';
+	updateToDateTitle = 'systemUpdates.banner.title';
 
 	cardContentPositionA: any = {};
 
-	private lastUpdatedText = 'Last update was on';
-	private nextScanText = 'Next update scan is scheduled on';
+	private lastUpdatedText = 'systemUpdates.banner.last';
+	private nextScanText = 'systemUpdates.banner.next';
+	private neverCheckedText = 'systemUpdates.banner.neverChecked';
 	private lastInstallTime: string;
 	// private lastScanTime = new Date('1970-01-01T01:00:00');
 	private nextScheduleScanTime: string;
@@ -59,9 +63,10 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	public isOnline = true;
 	public offlineSubtitle: string;
+	public supportLink = 'https://support.lenovo.com/';
 
 	nextUpdatedDate = '11/12/2018 at 10:00 AM';
-	installationHistory = 'Installation History';
+	installationHistory = 'systemUpdates.installationHistory';
 
 	installationHistoryList = [
 		{
@@ -89,39 +94,39 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			readMoreText: '',
 			rightImageSource: ['far', 'question-circle'],
 			leftImageSource: ['fas', 'battery-three-quarters'],
-			header: 'Critical Updates',
+			header: 'systemUpdates.autoUpdateSettings.critical.title',
 			name: 'critical-updates',
 			subHeader: '',
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isChecked: true,
-			tooltipText: 'Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption.',
+			tooltipText: 'systemUpdates.autoUpdateSettings.critical.tooltip',
 			type: 'auto-updates'
 		},
 		{
 			readMoreText: '',
 			rightImageSource: ['far', 'question-circle'],
 			leftImageSource: ['fas', 'battery-three-quarters'],
-			header: 'Recommended Updates',
+			header: 'systemUpdates.autoUpdateSettings.recommended.title',
 			name: 'recommended-updates',
 			subHeader: '',
 			isCheckBoxVisible: false,
 			isSwitchVisible: true,
 			isChecked: true,
-			tooltipText: 'Recommended driver updates keep your computer running at optimal performance.',
+			tooltipText: 'systemUpdates.autoUpdateSettings.recommended.tooltip',
 			type: 'auto-updates'
 		},
 		{
 			readMoreText: '',
 			rightImageSource: '',
 			leftImageSource: ['fas', 'battery-three-quarters'],
-			header: 'Windows Updates',
+			header: 'systemUpdates.autoUpdateSettings.windows.title',
 			name: 'windows-updates',
 			subHeader: '',
 			isCheckBoxVisible: false,
 			isSwitchVisible: false,
 			isChecked: true,
-			linkText: 'Windows settings',
+			linkText: 'systemUpdates.autoUpdateSettings.windows.url',
 			linkPath: 'ms-settings:windowsupdate',
 			type: 'auto-updates'
 
@@ -131,7 +136,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public updateDetails = {
 		manufacturer: 'Lenovo',
 		version: '11.85.45.123',
-		installedVersion: 'Not avaialable',
+		installedVersion: 'Not available',
 		downloadSize: '7.3 MB',
 		diskSpaceNeeded: '30.5 MB'
 	};
@@ -141,10 +146,55 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private ngZone: NgZone,
 		private modalService: NgbModal,
-		private cmsService: CMSService
+		private cmsService: CMSService,
+		private translate: TranslateService
 	) {
 		this.isOnline = this.commonService.isOnline;
 		this.fetchCMSArticles();
+		this.getSpecificSupportLink();
+		this.translateStrings();
+	}
+
+	private translateStrings() {
+		this.translate.stream(this.title).subscribe((res) => {
+			this.title = res;
+		});
+		this.translate.stream(this.back).subscribe((res) => {
+			this.back = res;
+		});
+		this.translate.stream(this.lastUpdatedText).subscribe((res) => {
+			this.lastUpdatedText = res;
+		});
+		this.translate.stream(this.nextScanText).subscribe((res) => {
+			this.nextScanText = res;
+		});
+		this.translate.stream(this.installationHistory).subscribe((res) => {
+			this.installationHistory = res;
+		});
+		this.translate.stream(this.autoUpdateOptions[0].header).subscribe((res) => {
+			this.autoUpdateOptions[0].header = res;
+		});
+		this.translate.stream(this.autoUpdateOptions[0].tooltipText).subscribe((res) => {
+			this.autoUpdateOptions[0].tooltipText = res;
+		});
+		this.translate.stream(this.autoUpdateOptions[1].header).subscribe((res) => {
+			this.autoUpdateOptions[1].header = res;
+		});
+		this.translate.stream(this.autoUpdateOptions[1].tooltipText).subscribe((res) => {
+			this.autoUpdateOptions[1].tooltipText = res;
+		});
+		this.translate.stream(this.autoUpdateOptions[2].header).subscribe((res) => {
+			this.autoUpdateOptions[2].header = res;
+		});
+		this.translate.stream(this.autoUpdateOptions[2].linkText).subscribe((res) => {
+			this.autoUpdateOptions[2].linkText = res;
+		});
+		this.translate.stream(this.updateToDateTitle).subscribe((res) => {
+			this.updateToDateTitle = res;
+		});
+		this.translate.stream(this.neverCheckedText).subscribe((res) => {
+			this.neverCheckedText = res;
+		});
 	}
 
 	ngOnInit() {
@@ -207,11 +257,19 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	private getSpecificSupportLink() {
+		const machineInfo = this.commonService.getLocalStorageValue(LocalStorageKey.MachineInfo);
+		if (machineInfo && machineInfo.serialnumber && machineInfo.mtm && machineInfo.mtm.toLowerCase() !== 'invalid') {
+			const specificSupportLink = `${this.supportLink}qrcode?sn=${machineInfo.serialnumber}&mtm=${machineInfo.mtm}`;
+			this.supportLink = specificSupportLink;
+		}
+	}
+
 	private setUpdateTitle(title?: string) {
 		if (title) {
 			this.updateTitle = title;
 		} else {
-			this.updateTitle = 'An up-to-date system is a healthy system.';
+			this.updateTitle = this.updateToDateTitle;
 		}
 	}
 
@@ -247,7 +305,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			const installTime = this.commonService.formatTime(this.lastInstallTime);
 			return `${this.lastUpdatedText} ${installDate} at ${installTime}`;
 		}
-		return `Welcome to use System Update.`;
+		return this.neverCheckedText;
 	}
 
 	public getNextUpdatedScanText() {
@@ -380,8 +438,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			return;
 		}
 		modalRef.componentInstance.packages = packages;
-		modalRef.componentInstance.OkText = 'device.systemUpdates.popup.okayButton';
-		modalRef.componentInstance.CancelText = 'device.systemUpdates.popup.cancelButton';
+		modalRef.componentInstance.OkText = 'systemUpdates.popup.okayButton';
+		modalRef.componentInstance.CancelText = 'systemUpdates.popup.cancelButton';
 		modalRef.result.then(
 			result => {
 				// on open
@@ -413,22 +471,22 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	private showRebootForceModal(modalRef: NgbModalRef) {
-		const header = 'device.systemUpdates.popup.reboot';
-		const description = 'device.systemUpdates.popup.rebootForceMsg';
+		const header = 'systemUpdates.popup.reboot';
+		const description = 'systemUpdates.popup.rebootForceMsg';
 		modalRef.componentInstance.header = header;
 		modalRef.componentInstance.description = description;
 	}
 
 	private showPowerOffForceModal(modalRef: NgbModalRef) {
-		const header = 'device.systemUpdates.popup.shutdown';
-		const description = 'device.systemUpdates.popup.shutdownForceMsg';
+		const header = 'systemUpdates.popup.shutdown';
+		const description = 'systemUpdates.popup.shutdownForceMsg';
 		modalRef.componentInstance.header = header;
 		modalRef.componentInstance.description = description;
 	}
 
 	private showRebootDelayedModal(modalRef: NgbModalRef) {
-		const header = 'device.systemUpdates.popup.reboot';
-		const description = 'device.systemUpdates.popup.rebootDelayedMsg';
+		const header = 'systemUpdates.popup.reboot';
+		const description = 'systemUpdates.popup.rebootDelayedMsg';
 		modalRef.componentInstance.header = header;
 		modalRef.componentInstance.description = description;
 	}
@@ -615,12 +673,12 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					windowClass: 'common-confirmation-modal'
 				});
 
-			const header = 'device.systemUpdates.popup.rebootPending';
-			const description = 'device.systemUpdates.popup.rebootRequiredMsg';
+			const header = 'systemUpdates.popup.rebootPending';
+			const description = 'systemUpdates.popup.rebootRequiredMsg';
 			modalRef.componentInstance.header = header;
 			modalRef.componentInstance.description = description;
-			modalRef.componentInstance.OkText = 'device.systemUpdates.popup.rebootButton';
-			modalRef.componentInstance.CancelText = 'device.systemUpdates.popup.dismissButton';
+			modalRef.componentInstance.OkText = 'systemUpdates.popup.rebootButton';
+			modalRef.componentInstance.CancelText = 'systemUpdates.popup.dismissButton';
 			modalRef.result.then(
 				(result) => {
 					if (result) {
@@ -632,59 +690,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				}
 			);
 		}
-	}
-
-	private setIgnoredUpdates(ignoredUpdates){
-		const ignoredUpdateDetails = [];
-		const unIgnoredRecommendUpdates = [];
-		const unIgnoredOptionalUpdates = [];
-		if (this.recommendedUpdates && this.recommendedUpdates.length > 0) {
-			this.recommendedUpdates.forEach((update) => {
-				const result = ignoredUpdates.find(x => x.packageName === update.packageName);
-				if (result) {
-					update.isIgnored = true;
-					ignoredUpdateDetails.push(update);
-				} else {
-					update.isIgnored = false;
-					unIgnoredRecommendUpdates.push(update);
-				}
-			});
-
-		}
-
-		if (this.optionalUpdates && this.optionalUpdates.length > 0) {
-			this.optionalUpdates.forEach((update) => {
-				const result = ignoredUpdates.find(x => x.packageName === update.packageName);
-				if (result) {
-					update.isIgnored = true;
-					ignoredUpdateDetails.push(update);
-				} else {
-					update.isIgnored = false;
-					unIgnoredOptionalUpdates.push(update);
-				}
-			});
-
-		}
-
-		if (this.ignoredUpdates && this.ignoredUpdates.length > 0) {
-			this.ignoredUpdates.forEach((update) => {
-				const result = ignoredUpdates.find(x => x.packageName === update.packageName);
-				if (result) {
-					update.isIgnored = true;
-					ignoredUpdateDetails.push(update);
-				} else if (update.packageSeverity === UpdateInstallSeverity.Recommended) {
-					update.isIgnored = false;
-					unIgnoredRecommendUpdates.push(update);
-				} else if (update.packageSeverity === UpdateInstallSeverity.Optional) {
-					update.isIgnored = false;
-					unIgnoredOptionalUpdates.push(update);
-				}
-			});
-		}
-
-		this.recommendedUpdates = unIgnoredRecommendUpdates;
-		this.optionalUpdates = unIgnoredOptionalUpdates;
-		this.ignoredUpdates = ignoredUpdateDetails;
 	}
 
 	public onCancelUpdateDownload() {

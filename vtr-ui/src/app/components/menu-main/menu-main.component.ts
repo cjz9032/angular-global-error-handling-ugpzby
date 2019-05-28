@@ -325,12 +325,11 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	onLanguageChange(translation: Translation) {
-		this.getMenuItems().then((items)=>{
-			if (translation && translation.type === TranslationSection.CommonMenu && !this.deviceService.isGaming) {
-				items[0].label = translation.payload.dashboard;
-			}
-		})
-
+		// this.getMenuItems().then((items)=>{
+		// 	if (translation && translation.type === TranslationSection.CommonMenu && !this.deviceService.isGaming) {
+		// 		items[0].label = translation.payload.dashboard;
+		// 	}
+		// })
 	}
 
 	showWindowsHello(windowsHello: WindowsHello) {

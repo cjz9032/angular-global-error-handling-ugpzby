@@ -65,6 +65,12 @@
 	}
 	::ng-deep .vtr-ui-rounded-rectangle-radio{
 		width: 16.5rem;
+			@media #{$mediaquery_X22} {
+				width: 25.5rem;
+			}
+			@media #{$mediaquery_X23} {
+				width: 25.5rem;
+			}
 	}
 
 	.auto-screen-block{
