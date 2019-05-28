@@ -7,7 +7,6 @@
   }
 
   &__link {
-    color: red;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,10 +14,30 @@
     &.active {
       color: #5671ff;
 
-      //&:hover {
-      //  cursor: default;
-      //  text-decoration: none;
-      //}
+      &:hover {
+        color: #34495E;
+        text-decoration: none;
+      }
     }
+  }
+
+  &__number {
+    font-size: 1.4rem;
+    font-weight: bold;
+    height: 2.2rem;
+    &--exist {
+      color: red;
+    }
+    &--none {
+      color: green;
+    }
+  }
+
+  &__title {
+    color: #34495E;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 2.2rem;
+    text-transform: uppercase;
   }
 }

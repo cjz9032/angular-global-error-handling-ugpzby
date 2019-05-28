@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, ReplaySubject } from 'rxjs';
 import { BreachedAccountsService } from './breached-accounts.service';
 import { BrowserAccountsService } from './browser-accounts.service';
 import { TrackingMapService } from '../../feature/tracking-map/services/tracking-map.service';
@@ -7,16 +7,26 @@ import { filter } from 'rxjs/operators';
 import { typeData } from '../../feature/tracking-map/services/tracking-map.interface';
 import { UserDataStatuses } from '../../userDataStatuses';
 
+interface UserStatuses {
+	breachedAccountsResult: UserDataStatuses;
+	websiteTrackersResult: UserDataStatuses;
+	nonPrivatePasswordResult: UserDataStatuses;
+}
+
 @Injectable()
 export class UserDataGetStateService {
 	breachedAccountsResult = new BehaviorSubject<UserDataStatuses>(UserDataStatuses.undefined);
 	websiteTrackersResult = new BehaviorSubject<UserDataStatuses>(UserDataStatuses.undefined);
 	nonPrivatePasswordResult = new BehaviorSubject<UserDataStatuses>(UserDataStatuses.undefined);
+	userDataStatus = new ReplaySubject<UserStatuses>();
+	userDataStatus$ = this.userDataStatus.asObservable();
 
 	constructor(
 		private breachedAccountsService: BreachedAccountsService,
 		private browserAccountsService: BrowserAccountsService,
 		private trackingMapService: TrackingMapService) {
+
+		this.updateUserDataSubject();
 
 		// TODO add combineLatest instead of 3 subscribers
 
@@ -26,6 +36,7 @@ export class UserDataGetStateService {
 				status = UserDataStatuses.error;
 			}
 			this.breachedAccountsResult.next(status);
+			this.updateUserDataSubject();
 		});
 
 		this.browserAccountsService.installedBrowsersData$.subscribe((installedBrowsersData) => {
@@ -39,6 +50,7 @@ export class UserDataGetStateService {
 				status = UserDataStatuses.error;
 			}
 			this.nonPrivatePasswordResult.next(status);
+			this.updateUserDataSubject();
 		});
 
 		this.trackingMapService.trackingData$.pipe(
@@ -50,6 +62,7 @@ export class UserDataGetStateService {
 				status = UserDataStatuses.error;
 			}
 			this.websiteTrackersResult.next(status);
+			this.updateUserDataSubject();
 		});
 	}
 
@@ -59,5 +72,9 @@ export class UserDataGetStateService {
 			websiteTrackersResult: this.websiteTrackersResult.getValue(),
 			nonPrivatePasswordResult: this.nonPrivatePasswordResult.getValue(),
 		};
+	}
+
+	private updateUserDataSubject() {
+		this.userDataStatus.next(this.getUserDataStatus());
 	}
 }
