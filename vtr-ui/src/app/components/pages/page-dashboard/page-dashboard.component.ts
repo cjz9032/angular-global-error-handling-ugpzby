@@ -33,7 +33,7 @@ export class PageDashboardComponent implements OnInit {
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
 	public isOnline = true;
-	//qas: QA[] = [];
+	// qas: QA[] = [];
 
 	heroBannerItems = [];
 	cardContentPositionA: any = {};
@@ -68,7 +68,7 @@ export class PageDashboardComponent implements OnInit {
 		config.keyboard = false;
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 
-		//Evaluate the translations for QA on language Change
+		// Evaluate the translations for QA on language Change
 		translate.onLangChange.subscribe((event: LangChangeEvent) => {
 			this.qaService.setTranslationService(this.translate);
 			this.qaService.qas.forEach(qa => {
@@ -81,8 +81,7 @@ export class PageDashboardComponent implements OnInit {
 						qa.keys = translation;
 						// console.log(JSON.stringify(qa.keys));
 					});
-				}
-				catch (e) {
+				} catch (e) {
 					console.log('already translated');
 				}
 				finally {
@@ -91,8 +90,8 @@ export class PageDashboardComponent implements OnInit {
 
 			});
 
-			//this.qas = this.qaService.qas;
-		})
+			// this.qas = this.qaService.qas;
+		});
 
 	}
 
@@ -213,7 +212,7 @@ export class PageDashboardComponent implements OnInit {
 	// 	}, 3000);
 	// }
 
-	public onGetSupportClick($event: any) {
+	public onConnectivityClick($event: any) {
 	}
 
 	private setDefaultCMSContent() {
