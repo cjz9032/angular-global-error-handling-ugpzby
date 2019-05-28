@@ -335,7 +335,55 @@
 						"li-polymer": "Li-Polymer",
 						"li-ion": "Li-Ion"
 					}
-
+				},
+				"condition": {
+					"Illegal": {
+						"title": "This system may not support battery that",
+						"description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
+						"description1": "Attention:",
+						"description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+					},
+					"Good": {
+						"title": "The battery is in good Condition"
+					},
+					"Exhaustion": {
+						"title": "The battery has failed due to normal",
+						"description": "wear. The battery cannot be charged. Replace the battery."
+					},
+					"Bad": {
+						"title": "A battery error has occurred.",
+						"description": "The battery cannot be charged/discharged . Replace the battery."
+					},
+					"NotDetected": {
+						"title": "No battery detected or not",
+						"description": "plugged in battery."
+					},
+					"NotGood": {
+						"title": "The battery is not in a good Condition"
+					},
+					"LimitedACAdapterSupport": {
+						"title": "Limited Support AC Adapter"
+					},
+					"NotSupportACAdapter": {
+						"title": "Not support AC Adapter"
+					},
+					"ACAdapterNotSupported": {
+						"title":"AC adapter not supported.",
+						"description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
+					},
+					"EnoughPowerACAdapter": {
+						"title": "AC adapter cannot provide enough power",
+						"description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+					},
+					"MissingDriver": {
+						"title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
+						"description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
+					},
+					"StoreLimitation": {
+						"title": "The battery can only store",
+						"description1": "of",
+						"description2":  "it's original full charge capacity"
+					}
 				}
 			},
 			"power": {

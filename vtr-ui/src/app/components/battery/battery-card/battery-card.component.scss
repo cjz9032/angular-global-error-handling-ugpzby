@@ -9,7 +9,6 @@
 		padding-top: 12.5rem;
 	}
 	.container {
-		height: 32.1rem;
 		border-radius: 1rem;
 		background-color: $light;
 		box-shadow: $drop_shadow;
@@ -46,6 +45,34 @@
 			font-size: 1.5rem;
 			font-weight: $weight_bold;
 			letter-spacing: 0.1rem;
+		}
+		.battery-conditions-title {
+			font-size: 1.8rem;
+			z-index: 5;
+			font-weight: $weight_bold;
+			width: 100%;
+			letter-spacing: 0;
+		}
+		.battery-conditions-description {
+			font-size: 1.8rem;
+			z-index: 5;
+			width: 100%;
+			letter-spacing: 0;
+		}
+		.battery-conditions-icon {
+			font-size: 2.0rem;
+		}
+		.good {
+			color: #{$go_light};
+		}
+		.poor {
+			color: #{$stop_dark};
+		}
+		.fair {
+			color: #{$orange};
+		}
+		.fair-inner-icon{
+			color: #{$light};
 		}
 	}
 }
