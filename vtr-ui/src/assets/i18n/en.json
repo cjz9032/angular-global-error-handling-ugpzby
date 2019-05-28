@@ -9,6 +9,11 @@
 						"balance": "Balance",
 						"quiet": "Quiet"
 					},
+					"statusText":{
+						"perText": "Higher CPU usage, Higher fan speed",
+						"balText": "Normal CPU and fan speed",
+						"quietText": "Lower CPU usage, Lower fan speed"
+					},
 					"wifiSecurity": "Wifi Security",
 					"dolby": "Dolby",
 					"rapidCharge": "Rapid Charge"
@@ -16,11 +21,21 @@
 				"legionEdge": {
 					"title": "CPU Overclock",
 					"status": {
-						"alwayson": "Always On",
+						"alwayson": "On",
 						"whenGaming": "When Gaming",
 						"off": "Off"
 					},
+					"statusText":{
+						"onText": "CPU Overclocking will be activated",
+						"gamingText": "CPU Overclocking will be activated automatically while game launches",
+						"offText": "CPU Overclocking will be disabled"
+					},
+
 					"ramOverlock": "Ram Overclock",
+					"popup": {
+						"text": "Change will be effective after restarting computer.",
+						"button": "ok"
+					},
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
@@ -63,6 +78,9 @@
 					"sub3": "Instagram"
 				}
 			}
+		},
+		"lightingProfile": {
+			"title": "Lighting"
 		}
 	},
 	"common": {
@@ -84,6 +102,7 @@
 				"sub6": "Windows Hello"
 			},
 			"support": "Support",
+			"homeSecurity": "Connected Home",
 			"privacy": "Privacy"
 		},
 		"securityAdvisor": {
@@ -120,7 +139,11 @@
 			"on": "ON",
 			"off": "OFF",
 			"collapse": "Collapse",
-			"expand": "Expand"
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
 		}
 	},
 	"privacy": {
@@ -307,7 +330,12 @@
 						"charging": "Charging",
 						"discharging": "Discharging",
 						"acdischarging": "Discharging (with ac)"
+					},
+					"deviceChemistry": {
+						"li-polymer": "Li-Polymer",
+						"li-ion": "Li-Ion"
 					}
+
 				}
 			},
 			"power": {
@@ -540,8 +568,162 @@
 					"notAvailable": "Camera Not Available",
 					"camerablur": {
 						"title": "Camera Background Blur",
-						"caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections."
+						"caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections.",
+						"blurMode": "Blur mode",
+						"comicMode": "Comic mode",
+						"sketchMode": "Sketch mode"
 					}
+				}
+			},
+			"smartAssist": {
+				"title": "Smart Assist",
+				"description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+				"jumpTo": {
+					"title": "JUMP TO SETTINGS",
+					"security": "Security",
+					"screen": "Screen",
+					"media": "Media",
+					"voice": "Voice"
+				},
+				"intelligentSecurity": {
+					"title": "Intelligent Security",
+					"readMore": "Read more",
+					"humanPresenceDetection": {
+						"title": "Human Presence Detection",
+						"tooltip": "Click here to reset human presence Detection settings."
+					},
+					"zeroTouchLogin": {
+						"title1": "Zero Touch Login",
+						"title2": "Auto IR Login",
+						"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
+					},
+					"zeroTouchLock": {
+						"title1": "Zero Touch Lock",
+						"title2": "Auto Screen Lock",
+						"caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+						"autoScreenLockTimer": {
+							"title": "AUTO SCREEN LOCK TIMER",
+							"radioButton": {
+								"fast": "Fast",
+								"medium": "Medium",
+								"slow": "Slow"
+							},
+							"toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+						}
+					},
+					"distanceSensitivityAdjusting": {
+						"title1": "DISTANCE SENSITIVITY ADJUSTING",
+						"title2": "AUTO DISTANCE SENSITIVITY ADJUSTING",
+						"caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+						"options": {
+							"near": "Near",
+							"far": "Far"
+						}
+					},
+					"note": {
+						"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
+						"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
+						"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
+						"description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
+						"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+					},
+					"WindowsLink": {
+						"goToWindowsHello": "Go to Windows Hello Settings",
+						"screenTimeoutSettings": "Go to Screen timeout settings"
+					}
+				},
+				"intelligentScreen": {
+					"title": "Intelligent Screen",
+					"description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+					"autoScreenOff": {
+						"title": "Auto screen off",
+						"caption": "Automatically turn off display when face-down or walking.",
+						"note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
+						"windowsLink": "Go to Power & sleep settings in Windows settings"
+					},
+					"keepMyDisplay": {
+						"title": "Keep my display",
+						"caption": "Keep my display when I am reading or browsing.",
+						"displaySlider": {
+							"startTime": "0 minutes",
+							"endTime": "60 minutes"
+						}
+					}
+				}
+			}
+		}
+	},
+	"systemUpdates": {
+		"title": "System Updates",
+		"back": "BACK",
+		"history": "FULL HISTORY",
+		"notAvailable": "Not Available",
+		"notInstalled": "Not Installed",
+		"criticalUpdates": "Critical Update(s)",
+		"recommendedUpdates": "Recommended Update(s)",
+		"optionalUpdates": "Optional Update(s)",
+		"ignoredUpdates": "Ignored Update(s)",
+		"successInstall": "Successfully installed on",
+		"failedInstall": "Failed to installed on",
+		"at": "at",
+		"readMore": "Read more",			
+		"popup": {
+			"reboot": "Reboot",
+			"shutdown": "Shut Down",
+			"rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
+			"shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
+			"rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
+			"rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+			"okayButton": "OK",
+			"cancelButton": "Cancel",
+			"rebootButton": "REBOOT NOW",
+			"dismissButton": "DISMISS",
+			"rebootPending": "Reboot pending"
+		},
+		"autoUpdateSettings": {
+			"title": "Auto update settings",
+			"subtitle": "AUTOMATICALLY INSTALL UPDATES",
+			"critical": {
+				"title": "Critical Updates",
+				"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+			},
+			"camera": {
+				"title": "Camera",
+				"tooltip": "Click here to reset Camera properties to default settings.",
+				"reset": "Reset factory settings"
+			},
+			"recommended": {
+				"title": "Recommended Updates",
+				"tooltip": "Recommended driver updates keep your computer running at optimal performance."
+			},
+			"windows": {
+				"title": "Windows Updates",
+				"url": "Windows Settings"
+			}
+		},
+		"support": {
+			"title": "Lenovo Support website"
+		},
+		"banner": {
+			"neverChecked": "Welcome to use System Update.",
+			"title": "An up-to-date system is a healthy system.",
+			"last": "Last update was on",
+			"next": "Next updated scan is scheduled on",
+			"checkButton": "CHECK FOR UPDATES ",
+			"checking": "Checking for updates",
+			"downloading": "Downloading updates",
+			"installing": "Installing updates",
+			"percent": "% complete",
+			"cancelCheck": "Cancel check",
+			"cancelUpdates": "CANCEL UPDATES",
+			"available": "Available updates",
+			"description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
+			"installButton": "INSTALL ALL UPDATES",
+			"result": {
+				"success": "All Updates were installed correctly",
+				"fail": {
+					"title": "Some updates were not installed correctly.",
+					"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
 				}
 			},
 			"smartAssist": {
@@ -592,79 +774,46 @@
 						"screenTimeoutSettings": "Go to Screen timeout settings"
 					}
 				}
-
 			}
 		},
-		"systemUpdates": {
-			"title": "System Updates",
-			"history": "FULL HISTORY",
-			"notAvailable": "Not Available",
-			"notInstalled": "Not Installed",
-			"criticalUpdates": "Critical Update(s)",
-			"recommendedUpdates": "Recommended Update(s)",
-			"optionalUpdates": "Optional Update(s)",
-			"ignoredUpdates": "Ignored Update(s)",
-			"successInstall": "Successfully installed on",
-			"failedInstall": "Failed to installed on",
-			"at": "at",
-			"readMore": "Read more",
-			"popup": {
-				"reboot": "Reboot",
-				"shutdown": "Shut Down",
-				"rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-				"shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-				"rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-				"rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
-				"okayButton": "OK",
-				"cancelButton": "Cancel",
-				"rebootButton": "REBOOT NOW",
-				"dismissButton": "DISMISS",
-				"rebootPending": "Reboot pending"
-			},
-			"autoUpdateSettings": {
-				"title": "Auto update settings",
-				"subtitle": "AUTOMATICALLY INSTALL UPDATES",
-				"critical": {
-					"title": "Critical Updates",
-					"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
-				},
-				"camera": {
-					"title": "Camera",
-					"tooltip": "Click here to reset Camera properties to default settings.",
-					"reset": "Reset factory settings"
-				},
-				"recommended": {
-					"title": "推荐更新",
-					"tooltip": "推荐的驱动程序更新使计算机运行保持最佳性能。"
-				},
-				"windows": {
-					"title": "Windows Updates",
-					"url": "Windows Settings"
-				}
-			},
-			"banner": {
-				"title": "An up-to-date system is a healthy system.",
-				"last": "Last update was on",
-				"next": "Next updated scan is scheduled on",
-				"checkButton": "CHECK FOR UPDATES ",
-				"checking": "Checking for updates",
-				"downloading": "Downloading updates done",
-				"installing": "Installing updates",
-				"percent": "% complete",
-				"cancelCheck": "Cancel check",
-				"cancelUpdates": "CANCEL UPDATES",
-				"available": "Available updates",
-				"description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-				"installButton": "INSTALL ALL UPDATES",
-				"result": {
-					"success": "All Updates were installed correctly",
-					"fail": {
-						"title": "Some updates were not installed correctly.",
-						"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
-					}
-				}
-			}
+		"updateCheckbox": {
+			"rebootRequired": "Reboot required",
+			"failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
+			"manufacturer": "Manufacturer: ",
+			"version": "Version: ",
+			"installVersion": "Installed version: ",
+			"downloadSize": "Download size: ",
+			"diskSpaceNeeded": "Disk space needed: ",
+			"ignore": "Ignore",
+			"attend": "Attend"
+		},
+		"availableUpdates": {
+			"title": "Available updates",
+			"description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
+			"installAllUpdates": "Install all updates",
+			"installSuccessHeader": "All updates were installed correctly",
+			"installFailHeader": "Some updates were not installed correctly",
+			"installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
+			"optionalUpdates": "Optional updates",
+			"installSelectedUpdates": "Install Selected updates"
+		},
+		"installationHistory": {
+			"name": "Name",
+			"sortByDate": "Sort by Date",
+			"packageSize": "Package Size:",
+			"releaseDate": "Release Date:",
+			"showAll": "Show All",
+			"noInstallationHistory": "No installation history available"
 		}
+	},
+	"homeSecurity": {
+		"title": "Connected Home Security",
+		"ecosystemBlockTitle": "Protect your device ecosystem",
+		"overviewBlockTitle": "Your Device Security Overview",
+		"thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
 	},
 	"support": {
 		"common": {
@@ -812,7 +961,7 @@
 				"describe": "Use the threat detector to determine the safety of the networks around you.",
 				"button": "Check threat",
 				"connectionError": "Connection Error",
-				"tryAgain": "We are unable to locate your device due to network unavailable, please get connected with Internet and try again."
+				"tryAgain": "We are unable to locate threat for you due to network unavailable, please get connected to Internet and try again."
 			},
 			"locationmodal": {
 				"title": "Enable location services",
@@ -874,6 +1023,14 @@
 			"title": "VPN Security",
 			"header": "SurfEasy VPN",
 			"whatIsSufEasy": "SurfEasy VPN encrypts the information you send and receive so you can safely and privately use your PC, Mac®, smartphone or tablet on any Internet connection without worry.",
+			"whatCanSufEasy1": "A virtual private network provider that protects you while you are online. Without a VPN, your computer may be more vulnerable to attackers and identity theft. The VPN runs silently in the background and provides security and privacy protection.",
+			"startUseSufEasy4": "SurfEasy users can enjoy 250 MB of free traffic every 30 days! Follow the steps on the &quot;Rewards&quot; tab of the SurfEasy app to get more traffic.",
+			"howToGetData": "How to get free traffic:",
+			"howToGetData1": "Confirm email to win +250 MB traffic",
+			"howToGetData2": "Add a second device to win +250 MB of traffic",
+			"howToGetData3": "Refer a friend and win +500 MB of traffic",
+			"howToGetData4": "Like SurfEasy on Facebook, earn +100 MB of traffic,",
+			"howToGetData5": "Follow SurfEasy on Twitter and win +100 MB of traffic",
 			"helpKeep": "Help keep your online activity secure and private with SurfEasy VPN.",
 			"getSufEasy": "Get SurfEasy",
 			"openSufEasy": "Open SurfEasy",
@@ -899,7 +1056,7 @@
 			"whatIsPmNotInstalled": "The safest, easiest way to save strong, complex passwords and log in instantly on every site.",
 			"whatIsPmInstalled": "A safer digital life is waiting: Add passwords, enable Dark Web Monitoring and autofill personal and payment info.",
 			"startProtect": "Start protecting your online accounts the simple way.",
-			"discount": "Lenovo users enjoy an exclusive 6 months free of Dashlane Premium.",
+			"discount": "Lenovo users enjoy an exclusive 50% off of Dashlane Premium.",
 			"offer": "Offer available for new Dashlane users only!",
 			"getDashLane": "Get Dashlane",
 			"learnMoreAbout": "<tag>Learn more</tag> about making the most of Dashlane",
@@ -1327,7 +1484,8 @@
 		"subtitle2": "Tell us about your interests",
 		"personal": "Personal Use",
 		"business": "Business Use",
-		"custom": "Custom Experience",
+		"custom": "Custom",
+		"experience":"Experience",
 		"privacytitle": "Help us improve the quality of the app by allowing anonymous collection of usage statistics.",
 		"moreInterest": "+ more interests",
 		"title1": "Welcome to",

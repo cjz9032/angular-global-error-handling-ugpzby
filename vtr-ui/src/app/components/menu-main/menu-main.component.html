@@ -93,7 +93,16 @@
 									class="dropdown-item link"
 									target="_blank"
 									href = "{{subitem.path}}">{{subitem.label | translate}}</a>
-									<a *ngIf = "!subitem.externallink"
+									<a *ngIf = "!subitem.externallink && subitem.path==='support'"
+									vtrMetrics
+									routerLinkActive="link-active"
+									[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
+									[metricsEvent]="subitem.metricsEvent"
+									[metricsParent]="subitem.metricsParent"
+									[metricsItem]="subitem.metricsItem"
+									class="dropdown-item link"
+									routerLink="{{subitem.path}}">{{subitem.label | translate}}</a>
+									<a *ngIf = "!subitem.externallink  && subitem.path!=='support'"
 									vtrMetrics
 									routerLinkActive="link-active"
 									[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
@@ -144,7 +153,7 @@
 								metricsItem="LenovoIdSignInButton"
 								class="dropdown-item link"
 								href="javascript:void(0)"
-								(click)="OpenLenovoId()">{{'lenovoId.login' | translate}}</a>
+								(click)="OpenLenovoId('NavigationLenovoAccount.Submenu')">{{'lenovoId.login' | translate}}</a>
 							<a *ngIf="!userService.auth && userService.starter"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -152,7 +161,7 @@
 								metricsItem="LenovoIdStarterIdButton"
 								class="dropdown-item link"
 								href="javascript:void(0)"
-								(click)="OpenLenovoId()">{{'lenovoId.unlockExclusives' | translate}}</a>
+								(click)="OpenLenovoId('NavigationLenovoAccount.Submenu')">{{'lenovoId.unlockExclusives' | translate}}</a>
 							<a *ngIf="userService.auth"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"

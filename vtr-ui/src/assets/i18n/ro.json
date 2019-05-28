@@ -9,7 +9,8 @@
                 "sub4": "Sănătatea parolei",
                 "sub5": "Protecție pe internet",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Asistenţă securitate",
@@ -25,13 +26,31 @@
             "installed": "INSTALAT",
             "notInstalled": "NEINSTALAT",
             "loading": "Încărcare",
+            "installing": "SE INSTALEAZĂ",
             "notFound": "NEGĂSIT",
             "registered": "ÎNREGISTRAT",
             "notRegistered": "NEÎNREGISTRAT"
         },
         "ui": {
-			"back": "ÎNAPOI"
-		}
+            "back": "ÎNAPOI",
+            "on": "ON",
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -113,8 +132,7 @@
                 "poweredBy": "Dezvoltat de McAfee",
                 "privacyTerms": "Citiți mai multe despre <tag>politica privind confidențialitatea</tag> și <tag>termenii privind serviciul</tag>",
                 "mcafeePremium": "Protecție premium de la McAfee",
-                "protectedBy": "La ora actuală, sunteți protejat de: ",
-                "betterProtected": ".Totuși, ați putea fi mai bine protejat cu McAfee LiveSafe",
+                "protectedBy": "Sunteți protejat(ă) de {{protectedName}}. Cu toate acestea, McAfee LiveSafe v-ar putea oferi o protecție și mai bună.",
                 "virusScan": "SCANARE VIRUȘI",
                 "firewall": "PARAVAN DE PROTECȚIE",
                 "disabled": "DEZACTIVAT",
@@ -178,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "Utilizați detectorul de amenințări pentru a determina siguranța rețelelor din jurul dvs.",
-                "button": "Verificați amenințarea"
+                "button": "Verificați amenințarea",
+                "connectionError": "Eroare de conexiune",
+                "tryAgain": "Nu vă putem localiza dispozitivul, deoarece rețeaua nu este disponibilă. Vă rugăm să vă conectați la internet și să încercați din nou."
             },
             "locationmodal": {
                 "title": "Activare servicii de localizare",
@@ -252,7 +272,7 @@
             "howToUseSufEasy": "Cum se utilizează SurfEasy VPN",
             "whatCanSufEasy2": "Protejați-vă confidențialitatea și activați SurfEasy VPN atunci când accesați un hotspot Wi-Fi public. Cu un abonament Lenovo Starter VPN, puteți finaliza activitățile de recompensă pentru a câștiga mai multă lățimea de bandă pentru protecția datelor. Faceți upgrade pentru a proteja până la 5 telefoane inteligente, tablete și computere cu lățime de bandă nelimitată.",
             "getStarted": "Activați SurfEasy VPN:",
-            "getStarted1": "Dați clic pe butonul de mai sus, „Open SurfEasy”, pentru a lansa SurfEasy VPN.",
+            "getStarted1": "Dați clic pe butonul de mai sus, „Deschideți SurfEasy”, pentru a lansa SurfEasy VPN.",
             "getStarted2": "Porniți VPN și așteptați un scurt moment pentru confirmarea unei conexiuni securizate.",
             "getStarted3": "Schimbați regiunea sau localizarea, dacă doriți, și bucurați-vă de o rețea privată securizată.",
             "poweredBySurfEasy": "Dezvoltat de SurfEasy",

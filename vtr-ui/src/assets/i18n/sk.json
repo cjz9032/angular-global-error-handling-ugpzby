@@ -9,7 +9,8 @@
                 "sub4": "Sila hesla",
                 "sub5": "Internetová ochrana",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Poradca zabezpečením",
@@ -25,13 +26,31 @@
             "installed": "NAINŠTALOVANÉ",
             "notInstalled": "NENAINŠTALOVANÉ",
             "loading": "Načítava sa",
+            "installing": "INŠTALÁCIA",
             "notFound": "NENÁJDENÉ",
             "registered": "REGISTROVANÉ",
             "notRegistered": "NEREGISTROVANÉ"
         },
         "ui": {
-			"back": "SPÄŤ"
-		}
+            "back": "SPÄŤ",
+            "on": "ON",
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -113,8 +132,7 @@
                 "poweredBy": "Využíva technológiu McAfee",
                 "privacyTerms": "Prečítajte si viac o <tag>zásadách ochrany osobných údajov</tag> a <tag>podmienkach poskytovania služieb</tag>",
                 "mcafeePremium": "Prémiová ochrana McAfee",
-                "protectedBy": "V súčasnosti ste chránení riešením ",
-                "betterProtected": ".Môžete byť lepšie chránení lepšie pomocou programu McAfee LiveSafe",
+                "protectedBy": "V súčasnosti ste chránení programom {{protectedName}}. Môžete však byť chránení lepšie pomocou programu McAfee LiveSafe.",
                 "virusScan": "KONTROLA VÍRUSOV",
                 "firewall": "BRÁNA FIREWALL",
                 "disabled": "VYPNUTÉ",
@@ -178,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "Pomocou funkcie Detektor hrozieb určte bezpečnosť okolitých sietí.",
-                "button": "Preveriť hrozbu"
+                "button": "Preveriť hrozbu",
+                "connectionError": "Chyba pripojenia",
+                "tryAgain": "Vaše zariadenie nemôžeme nájsť, pretože sieť nie je k dispozícii. Pripojte sa na Internet a skúste to znova."
             },
             "locationmodal": {
                 "title": "Zapnúť služby na základe polohy",

@@ -9,7 +9,8 @@
                 "sub4": "Wachtwoordstatus",
                 "sub5": "Internetbeveiliging",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Beveiligingsadviseur",
@@ -25,13 +26,31 @@
             "installed": "GEÏNSTALLEERD",
             "notInstalled": "NIET GEÏNSTALLEERD",
             "loading": "Bezig met laden...",
+            "installing": "INSTALLEREN",
             "notFound": "NIET GEVONDEN",
             "registered": "GEREGISTREERD",
             "notRegistered": "NIET GEREGISTREERD"
         },
         "ui": {
-			"back": "TERUG"
-		}
+            "back": "TERUG",
+            "on": "ON",
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -113,8 +132,7 @@
                 "poweredBy": "Powered By McAfee",
                 "privacyTerms": "Meer informatie over het <tag>privacybeleid</tag> en de <tag>servicevoorwaarden</tag>",
                 "mcafeePremium": "McAfee Premium-bescherming",
-                "protectedBy": "U wordt momenteel beveiligd door ",
-                "betterProtected": ".U kunt echter beter worden beschermd door McAfee LiveSafe",
+                "protectedBy": "U wordt op dit moment beveiligd door {{protectedName}}. U kunt echter beter worden beveiligd door McAfee LiveSafe.",
                 "virusScan": "VIRUSSCAN",
                 "firewall": "FIREWALL",
                 "disabled": "UITGESCHAKELD",
@@ -178,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "Gebruik de dreigingsdetector om de veiligheid van de netwerken om u heen te bepalen.",
-                "button": "Bedreiging controleren"
+                "button": "Bedreiging controleren",
+                "connectionError": "Verbindingsfout",
+                "tryAgain": "We kunnen uw apparaat niet vinden omdat er geen netwerk beschikbaar is. Maak verbinding met internet en probeer het nog eens."
             },
             "locationmodal": {
                 "title": "Locatieservices inschakelen",
@@ -252,7 +272,7 @@
             "howToUseSufEasy": "SurfEasy VPN gebruiken",
             "whatCanSufEasy2": "Bescherm uw privacy en schakel SurfEasy VPN in wanneer u gebruikmaakt van een openbare Wi-Fi-hotspot. Met een Lenovo Starter VPN-plan kunt u beloningsactiviteiten uitvoeren om meer bandbreedte voor gegevensbescherming te winnen. Voer een upgrade uit om maximaal 5 smartphones, tablets en computers met onbeperkte bandbreedte te beveiligen.",
             "getStarted": "SurfEasy VPN inschakelen:",
-            "getStarted1": "Klik hierboven op de knop SurfEasy openen om SurfEasy VPN te starten.",
+            "getStarted1": "Klik hierboven op de knop \"SurfEasy openen\" om SurfEasy VPN te starten.",
             "getStarted2": "Schakel het VPN in en wacht even op bevestiging van een beveiligde verbinding.",
             "getStarted3": "Wijzig zo nodig uw regio of locatie en geniet van een veilig en persoonlijk netwerk.",
             "poweredBySurfEasy": "Powered By SurfEasy",

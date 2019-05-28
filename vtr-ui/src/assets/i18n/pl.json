@@ -9,7 +9,8 @@
                 "sub4": "Bezpieczeństwo hasła",
                 "sub5": "Ochrona internetowa",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Doradca zabezpieczeń",
@@ -25,14 +26,31 @@
             "installed": "ZAINSTALOWANE",
             "notInstalled": "NIE ZAINSTALOWANE",
             "loading": "Wczytywanie",
+            "installing": "INSTALOWANIE",
             "notFound": "NIE ZNALEZIONO",
             "registered": "ZAREJESTROWANY",
             "notRegistered": "NIE ZAREJESTROWANY"
         },
         "ui": {
-			"back": "WSTECZ"
-		}
-
+            "back": "WSTECZ",
+            "on": "ON",
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -114,8 +132,7 @@
                 "poweredBy": "Zasilany przez McAfee",
                 "privacyTerms": "Przeczytaj więcej na temat <tag>polityki</tag> prywatności i <tag>warunków korzystania z usługi</tag>",
                 "mcafeePremium": "Ochrona McAfee Premium",
-                "protectedBy": "Jesteś obecnie chroniony przez ",
-                "betterProtected": ".Jednak możesz być lepiej chroniony dzięki McAfee LiveSafe",
+                "protectedBy": "Obecnie korzystasz z ochrony oprogramowania {{protectedName}}. Program McAfee LiveSafe może jednak zapewnić lepszą ochronę.",
                 "virusScan": "SKANOWANIE ANTYWIRUSOWE",
                 "firewall": "ZAPORA",
                 "disabled": "WYŁĄCZONO",
@@ -179,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "Funkcja Detektor zagrożeń sprawdza bezpieczeństwo sieci wokół Ciebie.",
-                "button": "Sprawdź zagrożenie"
+                "button": "Sprawdź zagrożenie",
+                "connectionError": "Błąd połączenia",
+                "tryAgain": "Nie możemy zlokalizować Twojego urządzenia z powodu braku dostępu do sieci, połącz się z Internetem i spróbuj ponownie."
             },
             "locationmodal": {
                 "title": "Włącz usługi lokalizacyjne",
@@ -253,7 +272,7 @@
             "howToUseSufEasy": "Jak korzystać z SurfEasy VPN",
             "whatCanSufEasy2": "Chroń swoją prywatność i włącz SurfEasy VPN podczas uzyskiwania dostępu do publicznego hotspotu Wi-Fi. Dzięki planowi Lenovo Starter VPN możesz ukończyć działania w ramach nagrody, aby uzyskać większą przepustowość ochrony danych. Uaktualnij, aby chronić do 5 smartfonów, tabletów i komputerów o nieograniczonej przepustowości.",
             "getStarted": "Włącz SurfEasy VPN:",
-            "getStarted1": "Kliknij na „Open SurfEasy” przycisk powyżej, aby uruchomić SurfEasy VPN.",
+            "getStarted1": "Kliknij na „Otwórz SurfEasy” przycisk powyżej, aby uruchomić SurfEasy VPN.",
             "getStarted2": "Włącz VPN i poczekaj krótką chwilę na potwierdzenie bezpiecznego połączenia.",
             "getStarted3": "W razie potrzeby zmień region lub lokalizację i korzystaj z bezpiecznej sieci prywatnej.",
             "poweredBySurfEasy": "Zasilane przez SurfEasy",

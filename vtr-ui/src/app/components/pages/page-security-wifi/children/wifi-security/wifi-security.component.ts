@@ -75,8 +75,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		if (this.wifiIsShowMore === 'false') {
 			this.isShowMore = false;
 		}
-		// this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
-		this.data.wifiSecurity.on(EventTypes.geolocatorPermissionEvent, (value) => {
+		this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
 			this.ngZone.run(() => {
 				if (!value && this.data.wifiSecurity.state === 'enabled') {
 					this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);

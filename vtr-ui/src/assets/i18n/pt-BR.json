@@ -9,7 +9,8 @@
                 "sub4": "Integridade de senha",
                 "sub5": "Proteção de internet",
                 "sub6": "Windows Hello"
-            }
+            },
+            "homeSecurity": "Connected Home"
         },
         "securityAdvisor": {
             "title": "Orient. Segurança",
@@ -25,13 +26,31 @@
             "installed": "INSTALADO",
             "notInstalled": "NÃO INSTALADO",
             "loading": "Carregando",
+            "installing": "INSTALANDO",
             "notFound": "NÃO ENCONTRADO",
             "registered": "REGISTRADO",
             "notRegistered": "NÃO REGISTRADO"
         },
         "ui": {
-			"back": "VOLTAR"
-		}
+            "back": "VOLTAR",
+            "on": "ON",
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
+    },
+    "homeSecurity": {
+        "title": "Connected Home Security",
+        "ecosystemBlockTitle": "Protect your device ecosystem",
+        "overviewBlockTitle": "Your Device Security Overview",
+        "thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -113,8 +132,7 @@
                 "poweredBy": "Tecnologia McAfee",
                 "privacyTerms": "Leia mais na <tag>Política de Privacidade</tag> e nos <tag>Termos de Serviço</tag>",
                 "mcafeePremium": "Proteção McAfee Premium",
-                "protectedBy": "No momento você está protegido por ",
-                "betterProtected": ".No entanto, você poderia estar mais protegido com o McAfee LiveSafe",
+                "protectedBy": "No momento você está protegido pelo {{protectedName}}. No entanto, você poderia estar mais protegido com o McAfee LiveSafe.",
                 "virusScan": "VERIFICAÇÃO DE VÍRUS",
                 "firewall": "FIREWALL",
                 "disabled": "DESATIVADO",
@@ -178,7 +196,9 @@
             },
             "threatlocator": {
                 "describe": "Use o detector de ameaças para determinar a segurança das redes ao seu redor.",
-                "button": "Verificar ameaças"
+                "button": "Verificar ameaças",
+                "connectionError": "Erro de conexão",
+                "tryAgain": "Não foi possível localizar seu dispositivo devido à rede não estar disponível, conecte-se à Internet e tente novamente."
             },
             "locationmodal": {
                 "title": "Ativar serviços de localização",

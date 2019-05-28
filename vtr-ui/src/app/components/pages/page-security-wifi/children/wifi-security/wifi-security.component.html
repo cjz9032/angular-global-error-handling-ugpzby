@@ -36,6 +36,7 @@
 								</div>
 								<div class="col-sm-6 align-items-center text-right sm-device-responsive">
 									<vtr-ui-switch-onoff id="sa-ws-btn-switchstatus"
+										aria-label="sa-ws-btn-switchstatus"
 										[ngClass]="{'switch-disable': isDisableToggle()}"
 										*ngIf="data.wifiSecurity.state !== 'never-used'"
 										name="wifisecurity"
@@ -45,9 +46,11 @@
 										[disabled]="switchDisabled"></vtr-ui-switch-onoff>
 									<div class="collapse-control" 
 										id="sa-ws-lnk-collapsecontrol"
+										aria-label="sa-ws-lnk-collapsecontrol"
 										(click)="$event.preventDefault();isCollapsed=!isCollapsed;"
 										[hidden]="!data.isLWSEnabled">
 										<button id="sa-ws-btn-lessinfo" vtrMetrics
+											aria-label="sa-ws-btn-lessinfo"
 											metricsItem="collapseWiFiHistory"
 											metricsEvent="featureClick"
 											class="btn btn-link collapse-text p-0"
@@ -62,6 +65,7 @@
 												[icon]="['fas', 'chevron-up']"
 												class="pl-3"></fa-icon></button>
 										<button id="sa-ws-btn-moreinfo" vtrMetrics
+											aria-label="sa-ws-btn-moreinfo"
 											metricsItem="expandWiFiHistory"
 											metricsEvent="featureClick"
 											class="btn btn-link collapse-text p-0"
@@ -121,6 +125,7 @@
 								<div class="card-foot"
 									*ngIf="data.hasMore">
 									<a id="sa-ws-lnk-wh-showmore"
+										aria-label="sa-ws-lnk-wh-showmore"
 										vtrMetrics
 										metricsItem="showMoreWiFiHistory"
 										metricsEvent="featureClick"
@@ -129,8 +134,9 @@
 										(click)="clickShowMore()"
 										*ngIf="isShowMoreLink">{{'security.wifisecurity.container.showmore' | translate}}</a>
 									<a id="sa-ws-lnk-wh-showless"
+										aria-label="sa-ws-lnk-wh-showless"
 										vtrMetrics
-										metricsItem="showMoreWiFiHistory"
+										metricsItem="showLessWiFiHistory"
 										metricsEvent="featureClick"
 										class="show-more"
 										href="#"
@@ -157,7 +163,9 @@
 						<div class="col-sm-12 col-md-12 col-lg-4 col-check-location">
 							<div class="button-box">
 								<vtr-ui-button id="sa-ws-btn-openlocator"
-									[metricsItem]="'checkYourLocation'"
+									aria-label="sa-ws-btn-openlocator"
+									metricsEvent="featureClick"
+									metricsItem="checkYourLocation"
 									[isDisabled]="locatorButtonDisable"
 									(click)="openThreatLocator()"
 									[label]="'security.wifisecurity.threatlocator.button' | translate"></vtr-ui-button>
@@ -174,8 +182,7 @@
 			</div>
 			<div class="col-sm-12 col-md-12 col-lg-5 text-right" *ngIf="data.wifiSecurity.state==='never-used'">
 				<vtr-ui-button id="sa-ws-btn-enablewifisecurity"
-					vtrMetrics
-					metricsParent="lenovo-wifi-security"
+					aria-label="sa-ws-btn-enablewifisecurity"
 					metricsItem="enableWifiSecurity"
 					metricsEvent="featureClick"
 					(click)="enableWifiSecurity()"
