@@ -43,6 +43,15 @@
 		&.screen-lock-note{
 			max-width: 64rem;
 		}
+		&.auto-screen-off-note{
+			p{
+				color: $alt;
+			}
+			span{
+				font-size: 1.5rem;
+			}
+
+		}
 	}
 	.blur{
 		&.disabled {
@@ -73,10 +82,23 @@
 			}
 	}
 
-	.auto-screen-block{
+	.auto-screen-block, .auto-screen-off-block {
 		::ng-deep .vtr-ui-switch-row {
 			border-bottom: none;
 		}
+	}
+
+	.int-screen-desc{
+		p{
+			font-size: 1.5rem;
+		}
+	}
+
+	.keep-my-display-block{
+			::ng-deep .vtr-ui-switch-row {
+				border-top: 0.1rem solid $shade_lighter;
+				border-bottom: none;
+			}
 	}
 }
 

@@ -31,6 +31,7 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	public zeroTouchLockTitle: string;
 	public autoScreenLockStatus: boolean[];
 	public options: any;
+	public keepMyDisplay: boolean;
 
 	headerMenuItems = [
 		{
@@ -163,4 +164,9 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	public launchFaceEnrollment() {
 		this.deviceService.launchUri('ms-settings:signinoptions-launchfaceenrollment');
 	}
+
+	public displayDim(event) {
+		this.keepMyDisplay = !this.keepMyDisplay;
+	}
+
 }

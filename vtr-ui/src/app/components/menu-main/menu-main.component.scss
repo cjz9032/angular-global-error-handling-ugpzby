@@ -59,6 +59,9 @@
 			.navbar-nav {
 				.nav-item {
 					.nav-link {
+						@media #{$mediaquery_8} {
+							display: none;
+						}
 						display: inline-table;
 						font-size: 1.7rem;
 						font-weight: 400;
@@ -81,9 +84,6 @@
 
 						@media #{$mediaquery_9} {
 							padding: 0 0;
-						}
-						@media #{$mediaquery_8} {
-							padding: 0 0.5rem;
 						}
 
 						&.active {
@@ -248,3 +248,14 @@
 	}
 
 }
+/*
+@media screen and (min-width: 1200px) {
+	.navbar-nav{
+		.nav-link{
+			.nav-item{
+				display: none;
+			}
+		}
+	}
+}
+*/
