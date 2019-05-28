@@ -120,7 +120,8 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	// this is invoked when auto lock feature is toggled
 	public onChangeZeroTouchLockFlag($event) {
 		this.intelligentSecurity.zeroTouchLockFlag = !this.intelligentSecurity.zeroTouchLockFlag;
-		this.smartAssist.setAutoLockStatus(this.intelligentSecurity.zeroTouchLockFlag)
+		const option = this.intelligentSecurity.zeroTouchLockFlag ? 'True' : 'False';
+		this.smartAssist.setAutoLockStatus(option)
 			.then((isSuccess: boolean) => {
 				console.log('onChangeZeroTouchLockFlag.setAutoLockStatus', isSuccess, this.intelligentSecurity.zeroTouchLockFlag);
 			});
@@ -152,10 +153,9 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	public setIsThinkPad(isThinkPad) {
 		// service call to fetch type of device
 		this.isThinkPad = isThinkPad;
-		this.distanceSensitivityTitle = this.isThinkPad ? 'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title1' :
-			'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title2';
-		this.zeroTouchLockTitle = this.isThinkPad ? 'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.title2' :
-			'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.title1';
+		this.distanceSensitivityTitle = this.isThinkPad ?
+			'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title1' : 'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title2';
+		// this.zeroTouchLockTitle = 'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.title1';
 	}
 
 	public launchPowerAndSleep() {
