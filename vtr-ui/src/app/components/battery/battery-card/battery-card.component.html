@@ -36,20 +36,21 @@
 		</div>
 		<div class="p-3 row">
 			<div class="p-0 pr-2 col-auto battery-conditions-icon">
-				<fa-icon *ngIf="batteryCondition.quality ==1" 
+				<fa-icon *ngIf="batteryQuality[batteryCondition.quality]== 'Good'" 
 						[icon]="['fas', 'check-circle']" 
 						class="good">
 				</fa-icon>
-				<fa-icon *ngIf="batteryCondition.quality == 3" 
+				<fa-icon *ngIf="batteryQuality[batteryCondition.quality]== 'Poor'" 
 						[icon]="['fas', 'times-circle']" 
 						class="poor">
 				</fa-icon>
-				<fa-layers *ngIf="batteryCondition.quality == 2"
+				<fa-layers *ngIf="batteryQuality[batteryCondition.quality]== 'Fair'" 
 						[fixedWidth]="true">
 					<fa-icon [icon]="['fas', 'circle']" class="fair"></fa-icon>
-					<fa-icon [icon]="['fas', 'exclamation-triangle']" transform="shrink-6" class="fair-inner-icon">
+					<fa-icon [icon]="['fas', 'exclamation-triangle']" transform="shrink-6" 
+						class="fair-inner-icon">
 					</fa-icon>
-			</fa-layers>
+				</fa-layers>
 			</div>
 		
 			<div class="col">
