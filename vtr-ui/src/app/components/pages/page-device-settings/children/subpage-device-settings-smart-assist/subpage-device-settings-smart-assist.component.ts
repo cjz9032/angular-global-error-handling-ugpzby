@@ -152,10 +152,9 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	public setIsThinkPad(isThinkPad) {
 		// service call to fetch type of device
 		this.isThinkPad = isThinkPad;
-		this.distanceSensitivityTitle = this.isThinkPad ? 'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title1' :
-			'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title2';
-		this.zeroTouchLockTitle = this.isThinkPad ? 'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.title2' :
-			'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.title1';
+		this.distanceSensitivityTitle = this.isThinkPad ?
+			'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title1' : 'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title2';
+		// this.zeroTouchLockTitle = 'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.title1';
 	}
 
 	public launchPowerAndSleep() {

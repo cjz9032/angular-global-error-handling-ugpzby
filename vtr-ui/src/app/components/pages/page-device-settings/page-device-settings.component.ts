@@ -119,7 +119,7 @@ export class PageDeviceSettingsComponent implements OnInit {
 		this.smartAssist.getHPDCapability()
 			.then((isAvailable: boolean) => {
 				console.log('getHPDStatus.getHPDCapability()', isAvailable);
-				isAvailable = true;
+				// isAvailable = true;
 				this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
 				if (isAvailable) {
 					this.menuItems.push({
