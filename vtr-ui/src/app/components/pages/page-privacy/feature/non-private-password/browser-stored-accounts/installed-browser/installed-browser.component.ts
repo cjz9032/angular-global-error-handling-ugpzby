@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { InstalledBrowser } from '../../../../common/services/browser-accounts.service';
 import { CommunicationWithFigleafService } from '../../../../utils/communication-with-figleaf/communication-with-figleaf.service';
 
@@ -13,7 +13,6 @@ export class InstalledBrowserComponent {
 	@Input() installedBrowser: InstalledBrowser;
 	@Input() index: number;
 	@Input() isDetailsExpanded = false;
-	@Output() showPasswordForBrowser$ = new EventEmitter<string>();
 
 	tryProductText = {
 		title: 'Keep all passwords private with Lenovo Privacy',
@@ -33,10 +32,6 @@ export class InstalledBrowserComponent {
 
 	toggleDetails() {
 		this.isDetailsExpanded = !this.isDetailsExpanded;
-	}
-
-	showBrowserPasswords() {
-		this.showPasswordForBrowser$.emit(this.installedBrowser.name);
 	}
 
 	trackAccountsById(index) {

@@ -5,7 +5,6 @@ import { HttpClient } from '@angular/common/http';
 import { StorageService } from './storage.service';
 import { MaskedPasswordsInfo, VantageCommunicationService } from './vantage-communication.service';
 import { convertBrowserNameToBrowserData } from '../../utils/helpers';
-import { el } from '@angular/platform-browser/testing/src/browser_util';
 
 export interface InstalledBrowser {
 	name: string;
