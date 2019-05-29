@@ -23,56 +23,38 @@ export class SidebarInstallWidgetService {
 				'and when to be private, wherever you go online.\n',
 			image: 'pitch-block/Img_Pith_Main',
 		},
-		tips: {
+		[RoutersName.LANDING]: {
 			visible: false,
 			title: 'The choice to be private is here',
 			text: '',
 			image: 'pitch-block/Img_Pith_Main',
 		},
-		news: {
-			visible: false,
-			title: 'The choice to be private is here',
-			text: '',
-			image: 'pitch-block/Img_Pith_Main',
-		},
-		landing: {
-			visible: false,
-			title: 'The choice to be private is here',
-			text: '',
-			image: 'pitch-block/Img_Pith_Main',
-		},
-		privacy: {
+		[RoutersName.PRIVACY]: {
 			visible: true,
 			title: 'The choice to be private is here',
 			text: 'Get the app that lets you decide when to share \n' +
 				'and when to be private, wherever you go online.\n',
 			image: 'pitch-block/Img_Pith_Main',
 		},
-		breaches: {
+		[RoutersName.BREACHES]: {
 			visible: true,
 			title: 'Fix breaches and watch for future ones',
 			text: '',
 			image: 'pitch-block/Img_Pith_Breach',
 		},
-		trackers: {
+		[RoutersName.TRACKERS]: {
 			visible: true,
 			title: 'Block trackers and stay private with Lenovo Privacy',
 			text: '',
 			image: 'pitch-block/Img_Pith_Trackers',
 		},
-		'browser-accounts': {
+		[RoutersName.BROWSERACCOUNTS]: {
 			visible: true,
 			title: 'Take back control over your data with Lenovo Privacy',
 			text: '',
 			image: 'pitch-block/Img_Pith_Passwords',
 		},
-		faq: {
-			visible: false,
-			title: 'The choice to be private is here',
-			text: '',
-			image: 'pitch-block/Img_Pith_Main',
-		},
-		articles: {
+		[RoutersName.ARTICLES]: {
 			visible: false,
 			title: 'The choice to be private is here',
 			text: '',

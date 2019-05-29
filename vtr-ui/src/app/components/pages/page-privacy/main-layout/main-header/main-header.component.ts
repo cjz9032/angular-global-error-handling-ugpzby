@@ -36,9 +36,7 @@ export class MainHeaderComponent implements OnInit, OnDestroy {
 	// look on route list
 	pagesSettings: { [path in RoutersName]: PageSettings } = {
 		[RoutersName.MAIN]: defaultPageSettings,
-		tips: defaultPageSettings,
 		privacy: defaultPageSettings,
-		news: defaultPageSettings,
 		trackers: {
 			title: 'Am I being tracked?',
 			backButton: true,
@@ -51,11 +49,6 @@ export class MainHeaderComponent implements OnInit, OnDestroy {
 		},
 		'browser-accounts': {
 			title: 'Accounts stored in Browsers',
-			backButton: true,
-			figLeafIcon: false
-		},
-		faq: {
-			title: 'F.A.Q’s',
 			backButton: true,
 			figLeafIcon: false
 		},

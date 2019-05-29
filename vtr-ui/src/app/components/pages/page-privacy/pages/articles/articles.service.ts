@@ -91,12 +91,6 @@ export class ArticlesService {
 		[RoutersName.MAIN]: {
 			visible: true,
 		},
-		[RoutersName.TIPS]: {
-			visible: false,
-		},
-		[RoutersName.NEWS]: {
-			visible: false,
-		},
 		[RoutersName.LANDING]: {
 			visible: true,
 		},
@@ -111,9 +105,6 @@ export class ArticlesService {
 		},
 		[RoutersName.BROWSERACCOUNTS]: {
 			visible: true,
-		},
-		[RoutersName.FAQ]: {
-			visible: false,
 		},
 		[RoutersName.ARTICLES]: {
 			visible: false,

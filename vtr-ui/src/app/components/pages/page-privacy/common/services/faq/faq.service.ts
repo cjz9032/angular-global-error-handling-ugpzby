@@ -213,14 +213,6 @@ export class FaqService {
 			visible: true,
 			questions: this.questionCategories.dataBreaches
 		},
-		tips: {
-			visible: false,
-			questions: this.questionCategories.dataBreaches
-		},
-		news: {
-			visible: false,
-			questions: this.questionCategories.dataBreaches
-		},
 		landing: {
 			visible: false,
 			questions: this.questionCategories.dataBreaches
@@ -240,10 +232,6 @@ export class FaqService {
 		'browser-accounts': {
 			visible: true,
 			questions: this.questionCategories.accesiblePasswords
-		},
-		faq: {
-			visible: false,
-			questions: this.questionCategories.dataBreaches
 		},
 		articles: {
 			visible: false,

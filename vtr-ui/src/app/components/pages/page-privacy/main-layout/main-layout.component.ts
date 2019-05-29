@@ -37,22 +37,19 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 	showSupportBanner = false;
 
 	pagesSettings: { [path in RoutersName]: PageSettings } = {
-		tips: defaultPageSettings,
-		faq: defaultPageSettings,
-		news: defaultPageSettings,
-		landing: defaultPageSettings,
-		articles: defaultPageSettings,
-		trackers: {
+		[RoutersName.LANDING]: defaultPageSettings,
+		[RoutersName.ARTICLES]: defaultPageSettings,
+		[RoutersName.TRACKERS]: {
 			showPrivacyScore: true,
 			showNavigationBlock: true,
 			showSupportBanner: true,
 		},
-		breaches: {
+		[RoutersName.BREACHES]: {
 			showPrivacyScore: true,
 			showNavigationBlock: true,
 			showSupportBanner: true,
 		},
-		privacy: {
+		[RoutersName.PRIVACY]: {
 			showPrivacyScore: true,
 			showNavigationBlock: true,
 			showSupportBanner: true,
@@ -62,7 +59,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 			showNavigationBlock: true,
 			showSupportBanner: true,
 		},
-		'browser-accounts': {
+		[RoutersName.BROWSERACCOUNTS]: {
 			showPrivacyScore: true,
 			showNavigationBlock: true,
 			showSupportBanner: true,
