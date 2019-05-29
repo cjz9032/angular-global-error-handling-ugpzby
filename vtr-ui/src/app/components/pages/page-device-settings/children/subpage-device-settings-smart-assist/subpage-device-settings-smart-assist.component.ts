@@ -29,7 +29,6 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	public distanceSensitivityTitle: string;
 	public zeroTouchLoginStatus = new FeatureStatus(false, true);
 	public zeroTouchLockTitle: string;
-	public autoScreenLockStatus: boolean[];
 	public options: any;
 	public keepMyDisplay: boolean;
 
@@ -65,10 +64,9 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.autoScreenLockStatus = [false, false, false];
 		this.setIntelligentSecurity();
 		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
-		this.setIsThinkPad(machineType === 1);
+		this.setIsThinkPad(machineType === 0);
 	}
 
 	// invoke HPD related JS bridge calls
@@ -79,9 +77,9 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 			this.smartAssist.getSelectedLockTimer()
 		]).then((responses: any[]) => {
 
-			this.intelligentSecurity.isZeroTouchLockVisible = responses[0];
-			this.intelligentSecurity.zeroTouchLockFlag = responses[1];
-			this.intelligentSecurity.autoScreenLockTimer = responses[2].toString();
+			// this.intelligentSecurity.isZeroTouchLockVisible = responses[0];
+			// this.intelligentSecurity.zeroTouchLockFlag = responses[1];
+			// this.intelligentSecurity.autoScreenLockTimer = responses[2].toString();
 			console.log('initSmartAssist.Promise.all()', responses);
 		}).catch(error => {
 			this.logger.error('error in initSmartAssist.Promise.all()', error);
@@ -128,7 +126,6 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	public setIntelligentSecurity() {
 		// service call to fetch Intelligent Security Properties
 		this.intelligentSecurity = new IntelligentSecurity(true, 10, true, true, '0', true, false);
-		this.autoScreenLockStatus[this.intelligentSecurity.autoScreenLockTimer] = true;
 	}
 
 	public onAutoScreenLockStatusToggle(event: any, value: number) {
@@ -167,6 +164,10 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 
 	public displayDim(event) {
 		this.keepMyDisplay = !this.keepMyDisplay;
+	}
+
+	public onResetIntelligentSecurity() {
+
 	}
 
 }

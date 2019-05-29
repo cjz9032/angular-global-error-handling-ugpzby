@@ -584,6 +584,7 @@
 					"voice": "语音"
 				},
 				"intelligentSecurity": {
+					"resetSettings":"Reset to default settings",
 					"title": "智能安全",
 					"readMore": "阅读更多",
 					"HumanPresenceDetection": {

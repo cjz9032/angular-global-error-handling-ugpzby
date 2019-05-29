@@ -139,6 +139,56 @@
 				<ul class="list-group list-group-flush pt-3 pl-5"
 					[class.disabled-overlay]="!intelligentSecurity.humanPresenceDetectionFlag"
 					*ngIf="intelligentSecurity.isZeroTouchLockVisible">
+					<li class="pt-3"
+						[class.disabled-overlay]="!intelligentSecurity.humanPresenceDetectionFlag">
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLogin.title' | translate"
+							[caption]=" 'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLogin.caption' | translate"
+							[isSwitchVisible]="true"
+							[leftIcon]="['fal', 'gem']"
+							[showChildContent]="true"
+							[isSwitchChecked]="intelligentSecurity.zeroTouchLoginFlag"
+							(toggleOnOff)="onZeroTouchLoginStatusToggle($event)"
+							[theme]="'white'"
+							[disabled]="!intelligentSecurity.humanPresenceDetectionFlag">
+							<div class="bold-title no-border-bottom">
+								<vtr-ui-row-switch [title]="distanceSensitivityTitle | translate"
+									[caption]="'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate"
+									[isSwitchVisible]="false"
+									[showChildContent]="true"
+									[isSwitchChecked]="intelligentSecurity.distanceSensitivityFlag"
+									(toggleOnOff)="distanceSensitivityStatusToggle($event)"
+									[theme]="'white'"
+									[disabled]="!intelligentSecurity.zeroTouchLoginFlag">
+
+									<vtr-ui-range-slider
+										[minValueLegend]="'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
+										[minValue]="0"
+										[maxValueLegend]="'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
+										[maxValue]="100"
+										(change)="setHumanDistance($event)"
+										[enableSlider]="!intelligentSecurity.distanceSensitivityFlag"
+										[value]="intelligentSecurity.humanDistance">
+									</vtr-ui-range-slider>
+									<div class="pt-3">
+										<div class="feature-note pr-1 pt-3">
+											<div class="row">
+												<div class="col-auto pl-3">
+													<fa-icon [icon]="['fal', 'exclamation-circle']"></fa-icon>
+												</div>
+												<div class="col">
+													<p>{{'device.deviceSettings.smartAssist.intelligentSecurity.note.description1' | translate}}
+														<a (click)="launchFaceEnrollment()"
+															href="javascript:void()">{{'device.deviceSettings.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}</a>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</vtr-ui-row-switch>
+							</div>
+						</vtr-ui-row-switch>
+					</li>
 					<li class="pt-3 auto-screen-block">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.title' | translate"
@@ -202,13 +252,21 @@
 							</div>
 						</vtr-ui-row-switch>
 					</li>
-
 				</ul>
 				<div class="row">
 					<div class="feature-note p-4 m-4">
 						<p>{{'device.deviceSettings.smartAssist.intelligentSecurity.note.description3' | translate}}</p>
 						<p>{{'device.deviceSettings.smartAssist.intelligentSecurity.note.description4' | translate}}</p>
 						<p>{{'device.deviceSettings.smartAssist.intelligentSecurity.note.description5' | translate}}</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="pl-4 pb-4">
+						<a class="reset-link"
+							href="javascript:void()"
+							(click)="onResetIntelligentSecurity()">
+							{{'device.deviceSettings.smartAssist.intelligentSecurity.resetSettings' | translate}}
+						</a>
 					</div>
 				</div>
 			</vtr-container-collapsible>
