@@ -16,16 +16,16 @@
 		}
 	}
 
+	a {
+		cursor: pointer;
+	}
+
 	.content {
 		position: relative;
 		z-index: 1;
 		width: 100%;
 		padding: 32 / 420 * 100% 40 / 430 * 100% 0;
 		height: 40%;
-
-		a {
-			cursor: pointer;
-		}
 
 		.title {
 			color: $main_dark;

@@ -57,7 +57,7 @@
               </h3>
               <p *ngIf="showIC===4"> {{'device.deviceSettings.power.powerSmartSettings.description1' | translate}}</p>
               <p *ngIf="showIC===3"> {{'device.deviceSettings.power.powerSmartSettings.description3' | translate}}</p>
-              <p class="well" *ngIf="showIC===3"> {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.apsHint' | translate }} </p>
+              <p class="well" *ngIf="showIC===3 && !apsStatus"> {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.apsHint' | translate }} </p>
             </div>
           </div>
           <ul class=" list-group
@@ -69,7 +69,7 @@
                 <div *ngIf="showIC===3 && showIntelligentCoolingModes" class="optimize">
                   {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.optimize' | translate | uppercase }} </div>
                 <div class="row no-gutters" *ngIf="showIntelligentCoolingModes">
-                  <vtr-ui-rounded-rectangle-radio 
+                  <vtr-ui-rounded-rectangle-radio
                     [radioId]="'radio1'"
                     [group]="'radio'"
                     [label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' + showIC | translate"
@@ -77,7 +77,7 @@
                     [checked]="radioPerformance"
                     (change)="changePerformance($event)">
                   </vtr-ui-rounded-rectangle-radio>
-                  <vtr-ui-rounded-rectangle-radio 
+                  <vtr-ui-rounded-rectangle-radio
                     [radioId]="'radio2'"
                     [group]="'radio'"
                     [label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool' + showIC | translate"

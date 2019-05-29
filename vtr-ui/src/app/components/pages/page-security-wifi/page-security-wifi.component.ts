@@ -72,11 +72,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.homeProtection = this.securityAdvisor.homeProtection;
 		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.ngZone );
 		this.securityHealthViewModel = new SecurityHealthViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.translate, this.ngZone);
-		this.wifiSecurity.refresh();
-		this.homeProtection.refresh();
-		this.wifiSecurity.getWifiSecurityState(this.getActivateDeviceStateHandler.bind(this));
-		this.homeProtection.getActivateDeviceState(this.ShowInvitationhandler.bind(this));
-		this.homeProtection.getDevicePosture(this.startGetDevicePosture.bind(this));
 		const cacheHomeStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus);
 		if (this.homeProtection.status) {
 			this.isShowInvitationCode = !(this.homeProtection.status === 'joined');
@@ -89,6 +84,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 
 	ngOnInit() {
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, 'true');
+		this.wifiSecurity.refresh();
+		this.homeProtection.refresh();
 		this.wifiSecurity.getWifiState().then((res) => {}, (error) => {
 			this.securityService.wifiSecurityLocationDialog(this.wifiSecurity);
 		});

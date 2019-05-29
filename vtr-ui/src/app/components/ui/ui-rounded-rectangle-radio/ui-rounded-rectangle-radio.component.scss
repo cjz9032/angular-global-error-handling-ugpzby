@@ -39,10 +39,10 @@
 
 		.label {
 			position: absolute;
-			top: 35%;
-			left: 35%;
+			top: 1.8rem;
+			left: 6rem;
 			color: $main_darkest;
-			font-size: 1.4rem;
+			font-size: 1.5rem;
 			font-weight: bold;
 			word-wrap: break-word;
 			word-break: break-all;
@@ -52,8 +52,8 @@
 		.icon-circle {
 			font-size: 3rem;
 			color: $main;
-			top: 25%;
-			left: 10%;
+			top: 1.5rem;
+			left: 1.5rem;
 		}
 
 		fa-icon.icon {
