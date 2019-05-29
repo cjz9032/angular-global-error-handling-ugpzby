@@ -106,6 +106,9 @@
 					<div class="col col-12 row">
 						<div class="col col-12 cancel-check p-5">
 							<button type="button"
+									metricsEvent="ItemClick"
+									metricsParent="Pages.SystemUpdate"
+									[metricsItem]="'btn.cancel'"
 								class="btn btn-link cancel-check"
 								[disabled]="downloadingPercent === 100"
 								(click)="onCancelUpdateDownload()">Cancel Updates</button>
