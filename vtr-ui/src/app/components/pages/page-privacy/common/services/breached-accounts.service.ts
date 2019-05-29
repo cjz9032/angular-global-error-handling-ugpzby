@@ -50,7 +50,6 @@ export class BreachedAccountsService {
 				distinctUntilChanged(),
 			)
 		).pipe(
-			tap(() => console.log(123123123123123123123)),
 			switchMapTo(this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(take(1))),
 			tap(() => this.onGetBreachedAccountsCompleted$.next(false)),
 			switchMap((isFigleafInstalled) => {
