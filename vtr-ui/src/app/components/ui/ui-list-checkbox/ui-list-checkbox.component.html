@@ -24,7 +24,19 @@
 							<div class="button-box pl-1"
 								*ngIf="item.packageRebootType === 'RebootForced'">
 								<div class="btn-round-sm">
-									<fa-icon [icon]="['fas', 'undo']"></fa-icon> {{'systemUpdates.updateCheckbox.rebootRequired' | translate}}
+									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.rebootRequiredTag' | translate}}
+								</div>
+							</div>
+							<div class="button-box pl-1"
+								*ngIf="item.packageRebootType === 'RebootDelayed'">
+								<div class="btn-round-sm">
+									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.rebootDelayTag' | translate}}
+								</div>
+							</div>
+							<div class="button-box pl-1"
+								*ngIf="item.packageRebootType === 'PowerOffForced'">
+								<div class="btn-round-sm">
+									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.shutdownRequiredTag' | translate}}
 								</div>
 							</div>
 						</div>
@@ -103,16 +115,6 @@
 </div>
 <ng-template #systemUpdateTooltip>
 	<div class="tooltip-container">
-		<div href="#"
-			*ngIf="packageRebootType === 'RebootForced'"
-			class="reboot-text">
-			<div class="row">
-				<div class="col-auto pl-0 pr-0">
-					<fa-icon [icon]="['fas', 'undo']"></fa-icon>
-				</div>
-				<div class="col">{{'systemUpdates.updateCheckbox.rebootRequired' | translate}}</div>
-			</div>
-		</div>
 		<ul>
 			<li>{{'systemUpdates.updateCheckbox.manufacturer' | translate}}<span>{{ manufacturer }}</span></li>
 			<li>{{'systemUpdates.updateCheckbox.version' | translate}}<span>{{ version }}</span></li>

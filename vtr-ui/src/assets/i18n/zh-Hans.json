@@ -198,7 +198,7 @@
         "quickSettings": {
             "title": "您的设置",
             "microphone": "麦克风",
-            "cameraPrivacy": "相机隐私",
+            "cameraPrivacy": "摄像头挡板",
             "eyeCareMode": "护眼模式"
         },
         "systemStatus": {
@@ -706,125 +706,6 @@
                     }
                 }
             }
-        },
-        "systemUpdates": {
-            "title": "系统更新",
-            "history": "完整历史记录",
-            "notAvailable": "无法使用",
-            "notInstalled": "未安装",
-            "criticalUpdates": "关键更新",
-            "recommendedUpdates": "推荐更新",
-            "optionalUpdates": "可选更新",
-            "ignoredUpdates": "忽略的更新",
-            "successInstall": "已成功安装",
-            "failedInstall": "无法安装",
-            "at": "在",
-            "readMore": "Read more",
-            "popup": {
-                "reboot": "重启",
-                "shutdown": "关掉",
-                "rebootForceMsg": "您选择的更新将导致系统在安装后自动重新启动。",
-                "shutdownForceMsg": "您选择的更新将导致系统在安装后自动关闭。",
-                "rebootDelayedMsg": "您选择的更新将导致系统在安装后重新启动，在安装更新期间，请不要关闭系统，卸下电源或附件。我们建议您保存工作以准备重新启动系统。",
-                "rebootRequiredMsg": "为了成功安装更新，您的计算机需要重新启动才能确保一切运行安全，顺畅。",
-                "okayButton": "好",
-                "cancelButton": "取消",
-                "rebootButton": "马上重启",
-                "dismissButton": "解雇",
-                "rebootPending": "重新启动等待"
-            },
-            "autoUpdateSettings": {
-                "title": "自动更新设置",
-                "subtitle": "自动安装更新",
-                "critical": {
-                    "title": "关键更新",
-                    "tooltip": "关键更新可防止发生重大问题、严重故障、硬件故障或数据损坏。"
-                },
-                "camera": {
-                    "title": "摄像头",
-                    "tooltip": "单击此处将相机属性重置为默认设置。",
-                    "reset": "重置出厂设置"
-                },
-                "recommended": {
-                    "title": "推荐更新",
-                    "tooltip": "推荐的驱动程序更新使计算机运行保持最佳性能。"
-                },
-                "windows": {
-                    "title": "Windows 更新",
-                    "url": "Windows 设置"
-                }
-            },
-            "banner": {
-                "title": "​保持最新状态的系统才是健康的系统。",
-                "last": "上次更新时间为",
-                "next": "下次更新扫描计划时间：",
-                "checkButton": "检查更新",
-                "checking": "正在检查更新",
-                "downloading": "下载更新完成",
-                "installing": "正在安装更新",
-                "percent": "% 已完成",
-                "cancelCheck": "取消检查",
-                "cancelUpdates": "取消更新",
-                "available": "可用更新",
-                "description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。关键更新对保护计算机上的数据来说也很重要，一旦可用就应该尽快安装。未能安装这些软件包可能会导致数据丢失、系统故障或硬件故障",
-                "installButton": "安装所有更新",
-                "result": {
-                    "success": "所有更新都已正确安装",
-                    "fail": {
-                        "title": "某些更新未正确安装。",
-                        "description": "在下载或安装这些更新期间出现问题。请确保您在线，并且在安装更新时不要关闭计算机。"
-                    }
-                }
-            },
-            "smartAssist": {
-                "title": "智能助手",
-                "description": "Lenovo Intelligent Sensing结合了计算机上的传感器来检测您的活动，调整设置以实现最佳电源管理并保护您的隐私。",
-                "jumpTo": {
-                    "title": "跳到设置",
-                    "security": "安全",
-                    "screen": "屏幕",
-                    "media": "媒体",
-                    "voice": "语音"
-                },
-                "intelligentSecurity": {
-                    "title": "智能安全",
-                    "readMore": "阅读更多",
-                    "HumanPresenceDetection": {
-                        "title": "人体存在检测"
-                    },
-                    "autoIrCameraLogin": {
-                        "title": "自动红外摄像机登录",
-                        "caption": "当您在电脑前或接近电脑时，此功能会自动解锁或唤醒电脑。自动红外摄像机登录"
-                    },
-                    "autoScreenLock": {
-                        "title": "自动屏幕锁定",
-                        "caption": "当未检测到用户状态时，此功能将使显示屏变暗并锁定计算机。当您离开计算机无人看管和解锁时，它可以减少未经授权访问计算机的机会。当您未检测到存在时，它还可以通过将系统置于Modern Standby来降低功耗。",
-                        "autoScreenLockTimer": {
-                            "title": "自动屏幕锁定时器",
-                            "radioButton": {
-                                "fast": "快速",
-                                "medium": "介质",
-                                "slow": "慢"
-                            },
-                            "toolTipContent": "选择所需选项，以便在未检测到状态时以快/中/慢速度锁定屏幕。但是，屏幕锁定的时间也会受到实际用户方案，传感器功能和Windows屏幕超时设置的影响。因此，我们强烈建议您在离开前立即锁定系统。"
-                        }
-                    },
-                    "distanceSensitivityAdjusting": {
-                        "title": "距离灵敏度调整"
-                    },
-                    "note": {
-                        "description1": "此功能依赖于Windows Hello。确保在Windows设置中打开了脸部识别功能。",
-                        "description2": "该功能使用传感器和相机来检测您的存在。但是，该功能不会收集，保存泄漏任何个人数据或图像。",
-                        "description3": "1.如果您的计算机处于帐篷，平板电脑或支架模式，则这些功能可能无法正常工作。",
-                        "description4": "2.如果您的计算机处于休眠模式或已关闭。自动红外摄像机登录无效。",
-                        "description5": "3.请将电脑屏幕调整到合适的角度，以便红外热像仪能识别您的脸部以便自动登录。"
-                    },
-                    "WindowsLink": {
-                        "goToWindowsHello": "转到Windows Hello设置",
-                        "screenTimeoutSettings": "转到屏幕超时设置"
-                    }
-                }
-            }
         }
     },
     "systemUpdates": {
@@ -861,11 +742,6 @@
                 "title": "关键更新",
                 "tooltip": "关键更新可防止发生重大问题、严重故障、硬件故障或数据损坏。"
             },
-            "camera": {
-                "title": "摄像头",
-                "tooltip": "单击此处将相机属性重置为默认设置。",
-                "reset": "重置出厂设置"
-            },
             "recommended": {
                 "title": "推荐更新",
                 "tooltip": "推荐的驱动程序更新使计算机运行保持最佳性能。"
@@ -899,55 +775,6 @@
                     "title": "某些更新未正确安装。",
                     "description": "在下载或安装这些更新期间出现问题。请确保您在线，并且在安装更新时不要关闭计算机。"
                 }
-            },
-            "smartAssist": {
-                "title": "Smart Assist",
-                "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
-                "jumpTo": {
-                    "title": "JUMP TO SETTINGS",
-                    "security": "Security",
-                    "screen": "Screen",
-                    "media": "Media",
-                    "voice": "Voice"
-                },
-                "intelligentSecurity": {
-                    "title": "Intelligent Security",
-                    "readMore": "Read more",
-                    "HumanPresenceDetection": {
-                        "title": "Human Presence Detection"
-                    },
-                    "autoIrCameraLogin": {
-                        "title": "Zero Touch Login",
-                        "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it. Auto IR camera login"
-                    },
-                    "autoScreenLock": {
-                        "title": "Auto screen lock",
-                        "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
-                        "autoScreenLockTimer": {
-                            "title": "AUTO SCREEN LOCK TIMER",
-                            "radioButton": {
-                                "fast": "Fast",
-                                "medium": "Medium",
-                                "slow": "Slow"
-                            },
-                            "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
-                        }
-                    },
-                    "distanceSensitivityAdjusting": {
-                        "title": "Distance sensitivity adjusting"
-                    },
-                    "note": {
-                        "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-                        "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect, save, of leak any personal data or image.",
-                        "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-                        "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-                        "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
-                    },
-                    "WindowsLink": {
-                        "goToWindowsHello": "Go to Windows Hello Settings",
-                        "screenTimeoutSettings": "Go to Screen timeout settings"
-                    }
-                }
             }
         },
         "updateCheckbox": {
@@ -959,7 +786,10 @@
             "downloadSize": "Download size: ",
             "diskSpaceNeeded": "Disk space needed: ",
             "ignore": "Ignore",
-            "attend": "Attend"
+			"attend": "Attend",
+			"rebootRequiredTag": "Reboot Required",
+			"rebootDelayTag": "Reboot Required, Power Source Required",
+			"shutdownRequiredTag": "Shutdown Required"
         },
         "availableUpdates": {
             "title": "Available updates",
