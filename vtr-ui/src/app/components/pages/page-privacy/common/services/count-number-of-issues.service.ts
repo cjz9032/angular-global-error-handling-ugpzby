@@ -20,7 +20,6 @@ export class CountNumberOfIssuesService {
 		private trackingMapService: TrackingMapService) {
 
 		this.breachedAccountsService.onGetBreachedAccounts$.subscribe((breachesState) => {
-			console.log('-------- breachesState.breaches.length', breachesState.breaches.length);
 			this.breachedAccountsCount.next(breachesState.breaches.length);
 		});
 
@@ -29,7 +28,6 @@ export class CountNumberOfIssuesService {
 				acc += curr.accountsCount;
 				return acc;
 			}, 0);
-			console.log('-------- nonPrivatePasswordcount', nonPrivatePasswordcount);
 			this.nonPrivatePasswordCount.next(nonPrivatePasswordcount);
 		});
 
@@ -37,7 +35,6 @@ export class CountNumberOfIssuesService {
 			filter((trackingData) => trackingData.typeData === typeData.Users),
 		).subscribe((trackingData) => {
 			const trackersCount = Object.keys(trackingData.trackingData.trackers).length;
-			console.log('-------- trackersCount', trackersCount);
 			this.websiteTrackersCount.next(trackersCount);
 		});
 	}
