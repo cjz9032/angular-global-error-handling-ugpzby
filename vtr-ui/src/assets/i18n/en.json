@@ -190,6 +190,7 @@
 				"email": "Email (optional)",
 				"comments": "Comments...",
 				"button": "Submit",
+				"addScreenshot": "Add ScreenShot",
 				"messages": {
 					"feedbackSuccess": "Thank you for your feedback !"
 				}
@@ -314,7 +315,6 @@
 					"cycleCount": "Cycle count",
 					"chemistry": "Device chemistry",
 					"remainingCap": "Remaining capacity",
-					"manufacturer": "Manufacturer",
 					"designCap": "Design capacity",
 					"fullChargeCap": "Full charge capacity",
 					"manufDt": "Manufacture date",
@@ -332,7 +332,14 @@
 					},
 					"deviceChemistry": {
 						"li-polymer": "Li-Polymer",
-						"li-ion": "Li-Ion"
+						"li-ion": "Li-Ion",
+						"li_polymer": "Li-Polymer",
+						"li_ion": "Li-Ion"
+					},
+					"manufacturer": {
+						"title": "Manufacturer",
+						"celxpert": "Celxpert",
+						"smp": "SMP"
 					}
 				},
 				"condition": {
@@ -738,11 +745,6 @@
 				"title": "Critical Updates",
 				"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
 			},
-			"camera": {
-				"title": "Camera",
-				"tooltip": "Click here to reset Camera properties to default settings.",
-				"reset": "Reset factory settings"
-			},
 			"recommended": {
 				"title": "Recommended Updates",
 				"tooltip": "Recommended driver updates keep your computer running at optimal performance."
@@ -776,55 +778,6 @@
 					"title": "Some updates were not installed correctly.",
 					"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
 				}
-			},
-			"smartAssist": {
-				"title": "Smart Assist",
-				"description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
-				"jumpTo": {
-					"title": "JUMP TO SETTINGS",
-					"security": "Security",
-					"screen": "Screen",
-					"media": "Media",
-					"voice": "Voice"
-				},
-				"intelligentSecurity": {
-					"title": "Intelligent Security",
-					"readMore": "Read more",
-					"HumanPresenceDetection": {
-						"title": "Human Presence Detection"
-					},
-					"autoIrCameraLogin": {
-						"title": "Zero Touch Login",
-						"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it. Auto IR camera login"
-					},
-					"autoScreenLock": {
-						"title": "Auto screen lock",
-						"caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
-						"autoScreenLockTimer": {
-							"title": "AUTO SCREEN LOCK TIMER",
-							"radioButton": {
-								"fast": "Fast",
-								"medium": "Medium",
-								"slow": "Slow"
-							},
-							"toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
-						}
-					},
-					"distanceSensitivityAdjusting": {
-						"title": "Distance sensitivity adjusting"
-					},
-					"note": {
-						"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-						"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect, save, of leak any personal data or image.",
-						"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-						"description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-						"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
-					},
-					"WindowsLink": {
-						"goToWindowsHello": "Go to Windows Hello Settings",
-						"screenTimeoutSettings": "Go to Screen timeout settings"
-					}
-				}
 			}
 		},
 		"updateCheckbox": {
@@ -836,7 +789,10 @@
 			"downloadSize": "Download size: ",
 			"diskSpaceNeeded": "Disk space needed: ",
 			"ignore": "Ignore",
-			"attend": "Attend"
+			"attend": "Attend",
+			"rebootRequiredTag": "Reboot Required",
+			"rebootDelayTag": "Reboot Required, Power Source Required",
+			"shutdownRequiredTag": "Shutdown Required"
 		},
 		"availableUpdates": {
 			"title": "Available updates",
