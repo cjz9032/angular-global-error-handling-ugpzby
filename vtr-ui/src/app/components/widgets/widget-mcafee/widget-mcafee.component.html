@@ -12,51 +12,8 @@
 		{{'security.antivirus.common.protectedBy' | translate: {protectedName: name } }}
 	</div>
 
-	<ul class="list-group">
-		<li class="list-group-item">
-			<div class="row align-items-center">
-				<div class="col-auto px-3">
-					<div class="bullet-icon-times">
-						<div class="icon-bkg">
-							<fa-icon [icon]="['fas', 'times']"></fa-icon>
-						</div>
-					</div>
-				</div>
-				<div class="col-auto px-0 text">
-					{{'security.antivirus.common.virusScan' | translate}}
-				</div>
-				<div class="col-auto mr-auto">
-					<h3>
-						<span
-							class="badge badge-pill badge-danger">{{'security.antivirus.common.disabled' | translate}}</span>
-					</h3>
-				</div>
-			</div>
-
-		</li>
-
-		<li class="list-group-item">
-			<div class="row align-items-center">
-				<div class="col-auto px-3">
-					<div class="bullet-icon-times">
-						<div class="icon-bkg">
-							<fa-icon [icon]="['fas', 'times']"></fa-icon>
-						</div>
-					</div>
-				</div>
-				<div class="col-auto px-0 text">
-					{{'security.antivirus.common.firewall' | translate}}
-				</div>
-				<div class="col-auto mr-auto">
-					<h3><span
-							class="badge badge-pill badge-danger">{{'security.antivirus.common.disabled' | translate}}</span>
-					</h3>
-				</div>
-			</div>
-
-		</li>
-
-	</ul>
+	<vtr-ui-security-statusbar [statusList]="statusList | statusTransform">
+	</vtr-ui-security-statusbar>
 
 	<div class="row justify-content-end">
 		<div class="col-auto py-5">
