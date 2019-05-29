@@ -46,17 +46,6 @@
 	</button>
   </div>
   <div *ngIf="isDetailsExpanded" class="installed-browser__content" data-analyticsName="Details">
-    <div *ngIf="!installedBrowser.accounts" class="browser-preview">
-      <p class="browser-preview__text">Find out why storing passwords in your browser isn't as private as you think.</p>
-      <button class="browser-preview__btn"
-              vtrSendAnalytics
-              [metricsEvent]="'ItemClick'"
-              [metricsItem]="'NonPrivatePasswordsDetailItemShowMeButton'"
-              (click)="showBrowserPasswords()">
-          Show me
-      </button>
-    </div>
-
     <div *ngIf="installedBrowser.accounts" class="browser-accounts__wrapper">
       <div class="accounts-title">
         <div class="accounts-title__img-col"></div>
