@@ -336,55 +336,55 @@
                     }
                 },
                 "condition": {
-                    "Illegal": {
-                        "title": "This system may not support battery that",
-                        "description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
-                        "description1": "Attention:",
-                        "description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
-                    },
-                    "Good": {
-                        "title": "The battery is in good Condition"
-                    },
-                    "Exhaustion": {
-                        "title": "The battery has failed due to normal",
-                        "description": "wear. The battery cannot be charged. Replace the battery."
-                    },
-                    "Bad": {
-                        "title": "A battery error has occurred.",
-                        "description": "The battery cannot be charged/discharged . Replace the battery."
-                    },
-                    "NotDetected": {
-                        "title": "No battery detected or not",
-                        "description": "plugged in battery."
-                    },
-                    "NotGood": {
-                        "title": "The battery is not in a good Condition"
-                    },
-                    "LimitedACAdapterSupport": {
-                        "title": "Limited Support AC Adapter"
-                    },
-                    "NotSupportACAdapter": {
-                        "title": "Not support AC Adapter"
-                    },
-                    "ACAdapterNotSupported": {
-                        "title": "AC adapter not supported.",
-                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
-                    },
-                    "EnoughPowerACAdapter": {
-                        "title": "AC adapter cannot provide enough power",
-                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
-                    },
-                    "MissingDriver": {
-                        "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
-                        "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
-                    },
-                    "StoreLimitation": {
-                        "title": "The battery can only store",
-                        "description1": "of",
-                        "description2": "it's original full charge capacity"
-                    }
-                }
-            },
+					"Illegal": {
+						"title": "该系统可能不支持电池",
+						"description": "不是联想制造或授权的正版。系统将继续启动，但可能不会使用未经授权的电池充电。",
+						"description1": "注意：",
+						"description2": "Lenovo对未经授权的电池的性能或安全性不承担任何责任，并且不对因使用而导致的故障或损坏提供任何保证。"
+					},
+					"Good": {
+						"title": "电池状况良好"
+					},
+					"Exhaustion": {
+						"title": "电池因正常而发生故障",
+						"description": "穿。电池无法充电。更换电池。"
+					},
+					"Bad": {
+						"title": "发生电池错误。",
+						"description": "电池无法充电/放电。更换电池。"
+					},
+					"NotDetected": {
+						"title": "没有检测到电池",
+						"description": "插上电池。"
+					},
+					"NotGood": {
+						"title": "电池状况不佳"
+					},
+					"LimitedACAdapterSupport": {
+						"title": "有限支持AC适配器"
+					},
+					"NotSupportACAdapter": {
+						"title": "不支持AC适配器"
+					},
+					"ACAdapterNotSupported": {
+						"title":"不支持AC适配器。",
+						"description": "您的Lenovo计算机不支持此AC适配器。它可能会导致突然关机。请连接正确的AC适配器"
+					},
+					"EnoughPowerACAdapter": {
+						"title": "AC适配器无法提供足够的电量",
+						"description": "您的Lenovo计算机将影响系统性能和充电速度。请重新连接正确的AC适配器。"
+					},
+					"MissingDriver": {
+						"title": "Lenovo Power Manager驱动程序未安装或无法正常工作。请运行Windows Update以安装最新的驱动程序",
+						"description": "未安装或无法正常工作。请运行Windows Update以安装最新的驱动程序"
+					},
+					"StoreLimitation": {
+						"title": "电池只能存放",
+						"description1": "的",
+						"description2":  "它是原始的完全充电容量"
+					}
+				}
+			},
             "power": {
                 "title": "电源管理",
                 "subtitle": "电源设置",

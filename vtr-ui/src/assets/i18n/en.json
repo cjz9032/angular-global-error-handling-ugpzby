@@ -190,6 +190,7 @@
 				"email": "Email (optional)",
 				"comments": "Comments...",
 				"button": "Submit",
+				"addScreenshot": "Add ScreenShot",
 				"messages": {
 					"feedbackSuccess": "Thank you for your feedback !"
 				}
