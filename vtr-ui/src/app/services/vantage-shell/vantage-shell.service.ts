@@ -1,11 +1,11 @@
-/// <reference path='../../../../node_modules/@lenovo/tan-client-bridge/src/index.js' />
-
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
 import * as Phoenix from '@lenovo/tan-client-bridge';
-import { EventTypes } from '@lenovo/tan-client-bridge';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
+import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
+import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
+import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -16,13 +16,11 @@ export class VantageShellService {
 	constructor(private commonService: CommonService) {
 		this.shell = this.getVantageShell();
 		if (this.shell) {
-			const rpcClient = this.shell.VantageRpcClient ? new this.shell.VantageRpcClient() : null;
 			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
 			const powerClient = this.shell.PowerClient ? this.shell.PowerClient() : null;
 			this.phoenix = Phoenix.default(
 				new inversify.Container(),
 				{
-					hsaBroker: rpcClient,
 					metricsBroker: metricClient,
 					hsaPowerBroker: powerClient,
 					hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
@@ -110,21 +108,26 @@ export class VantageShellService {
 					ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
 				});
 				metricClient.isInit = true;
-				metricClient.metricsEnabled = true;
-
 				metricClient.sendAsyncOrignally = metricClient.sendAsync;
 				metricClient.commonService = this.commonService;
-				metricClient.sendAsync = function sendAsync(data) {
-					const eventType = data.ItemType.toLowerCase();
-
-					// automatically fill the OnlineStatus for page view event
-					if (eventType === 'pageview') {
-						if (!data.OnlineStatus) {
-							data.OnlineStatus = this.commonService.isOnline ? 1 : 0;
+				metricClient.sendAsync = async function sendAsync(data) {
+					try {
+						// automatically fill the OnlineStatus for page view event
+						const eventType = data.ItemType.toLowerCase();
+						if (eventType === 'pageview') {
+							if (!data.OnlineStatus) {
+								data.OnlineStatus = this.commonService.isOnline ? 1 : 0;
+							}
 						}
-					}
 
-					return this.sendAsyncOrignally(data);
+						return await this.sendAsyncOrignally(data);
+					} catch (ex) {
+						console.log('an error ocurr when sending metrics event');
+						return Promise.resolve({
+							status: 0,
+							desc: 'ok'
+						});
+					}
 				};
 			}
 
@@ -306,7 +309,7 @@ export class VantageShellService {
 		if (this.phoenix) {
 			try {
 				const deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
-				console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
+				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 				return deviceFilterResult;
 			} catch (error) {
 				console.log('In VantageShellService.deviceFilter. Error:', error);
@@ -346,5 +349,101 @@ export class VantageShellService {
 			this.phoenix.userGuide.launch(launchPDF);
 		}
 		return undefined;
+	}
+
+	public generateGuid() {
+		if (this.phoenix && this.phoenix.metrics) {
+			return this.phoenix.metrics.metricsComposer.getGuid();
+		}
+
+		return undefined;
+	}
+
+	public getCameraBlur(): any {
+		if (this.phoenix && this.phoenix.hwsettings.camera.cameraBlur) {
+			return this.phoenix.hwsettings.camera.cameraBlur;
+		}
+		return undefined;
+	}
+
+	public getCPUOCStatus(): any {
+		if (this.phoenix) {
+			// TODO Un comment below line when JSBridge is ready for integration.
+			// return this.phoenix.gaming.gamingOverclock.GetCpuOCStatus();
+			return undefined;
+		}
+
+		return undefined;
+	}
+
+	public setCPUOCStatus(CpuOCStatus: CPUOCStatus): any {
+		if (this.phoenix) {
+			// TODO Un comment below line when JSBridge is ready for integration.
+			// return this.phoenix.gaming.gamingOverclock.SetCpuOCStatus(CpuOCStatus.cpuOCStatus);
+			return CpuOCStatus;
+		}
+		return undefined;
+	}
+
+	public getThermalModeStatus(): any {
+		if (this.phoenix) {
+			// TODO Un comment below line when JSBridge is ready for integration.
+			// return this.phoenix.gaming.gamingThermal.getThermalModeStatus();
+			return undefined;
+		}
+		return undefined;
+	}
+
+	public setThermalModeStatus(ThermalModeStatusObj: ThermalModeStatus): Boolean {
+		if (this.phoenix) {
+			// TODO Un comment below line when JSBridge is ready for integration.
+			// return this.phoenix.gaming.gamingThermal.setThermalModeStatus(ThermalModeStatusObj.thermalModeStatus);
+			return true;
+		}
+		return true;
+	}
+
+	public getRAMOCStatus(): any {
+		if (this.phoenix) {
+			// TODO Un comment below line when JSBridge is ready for integration.
+			// return this.phoenix.gaming.gamingOverclock.GetRamOCStatus();
+			return undefined;
+		}
+		return undefined;
+	}
+
+	public setRAMOCStatus(ramOCStausObj: RamOCSatus): any {
+		if (this.phoenix) {
+			// TODO Un comment below line when JSBridge is ready for integration.
+			// return this.phoenix.gaming.gamingOverclock.SetRamOCStatus(ramOCStausObj.ramOcStatuss);
+			return ramOCStausObj.ramOcStatus;
+		}
+		return ramOCStausObj.ramOcStatus;
+	}
+
+	public getGamingAllCapabilities(): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingAllCapabilities();
+		}
+		return undefined;
+	}
+
+	public getGamingLighting(): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingLighting();
+		}
+		return undefined;
+	}
+
+	public getIntelligentSensing(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.lis.intelligentSensing;
+		} return undefined;
+	}
+
+	public getMetricPreferencePlugin() {
+		if (this.phoenix) {
+			return this.phoenix.genericMetricsPreference;
+		}
 	}
 }

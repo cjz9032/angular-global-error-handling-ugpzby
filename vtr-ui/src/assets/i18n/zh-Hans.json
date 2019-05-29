@@ -3,77 +3,111 @@
         "dashboard": {
             "device": {
                 "quickSettings": {
-                    "title": "Thermal Mode",
+                    "title": "热模式",
                     "status": {
-                        "performance": "Performance",
-                        "balance": "Balance",
-                        "quiet": "Quiet"
+                        "performance": "性能",
+                        "balance": "平衡",
+                        "quiet": "安静"
                     },
-                    "wifiSecurity": "Wifi Security",
-                    "dolby": "Dolby",
-                    "rapidCharge": "Rapid Charge"
+                    "statusText": {
+                        "perText": "Higher CPU usage, Higher fan speed",
+                        "balText": "Normal CPU and fan speed",
+                        "quietText": "Lower CPU usage, Lower fan speed"
+                    },
+                    "wifiSecurity": "Wifi安全",
+                    "dolby": "杜比",
+                    "rapidCharge": "快速充电"
                 },
                 "legionEdge": {
-                    "title": "CPU Overlock",
+                    "title": "CPU重叠",
                     "status": {
-                        "alwayson": "Always On",
-                        "whenGaming": "When Gaming",
-                        "off": "Off"
+                        "alwayson": "上",
+                        "whenGaming": "当游戏",
+                        "off": "离"
                     },
-                    "ramOverlock": "Ram Overlock",
-                    "autoClose": "Auto Close",
-                    "networkBoost": "Network Boost",
-                    "hybridMode": "Hybrid Mode",
-                    "touchpadLock": "Touchpad Lock"
+                    "statusText": {
+                        "onText": "CPU Overclocking will be activated",
+                        "gamingText": "CPU Overclocking will be activated automatically while game launches",
+                        "offText": "CPU Overclocking will be disabled"
+                    },
+                    "ramOverlock": "Ram超频",
+                    "popup": {
+                        "text": "重新启动计算机后更改将生效。",
+                        "button": "好"
+                    },
+                    "autoClose": "自动关闭",
+                    "networkBoost": "网络提升",
+                    "hybridMode": "混合模式",
+                    "touchpadLock": "触摸板锁定"
                 },
                 "systemTools": {
-                    "power": "Power",
-                    "media": "Media",
+                    "power": "功率",
+                    "media": "媒体",
                     "macroKey": "Marco Key",
-                    "hardwareScan": "Hardware Scan",
-                    "systemUpdate": "System Update"
+                    "hardwareScan": "硬件扫描",
+                    "systemUpdate": "系统更新"
+                },
+                "lighting": {
+                    "title": "照明定制"
                 },
                 "legionEdgeModal": {
-                    "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
-                    "line2": "Feature Management Overview <br> Some features not available on all devices",
-                    "line3": "CPU Overclocking <br> Boost the maximum speed for your processor",
-                    "line4": "RAM Overclocking <br> Boost the maximum speed for your memory",
-                    "line5": "Network Boost <br> Prioritize network traffic for the game you're playing",
-                    "line6": "Dolby <br> Tune your audio specifically for gaming with Dolby technology",
-                    "line7": "Hybrid Mode <br> Disable advanced GPU settings when not gaming to boost battery performance",
-                    "line8": "Rapid Charge <br> Game on the go longer with quicker battery charging",
-                    "line9": "Touchpad Lock <br> Prevent mistaken inputs by disabling the touchpad while gaming",
-                    "line10": "Auto Close <br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
-                    "line11": "Thermal Mode <br> Set your preferred device profile for fan speed and cooling control"
+                    "line1": "使用Vantage Edge，您的设置将根据使用情况自动调整。游戏时的最佳性能，更长的电池续航时间。",
+                    "line2": "功能管理概述<br>某些功能并非在所有设备上都可用",
+                    "line3": "CPU超频<br>提高处理器的最大速度",
+                    "line4": "RAM超频<br>提高内存的最大速度",
+                    "line5": "网络提升<br>优先考虑您正在玩的游戏的网络流量",
+                    "line6": "杜比技术 - 使用杜比技术专门为游戏调整音频",
+                    "line7": "混合模式<br>在不进行游戏时禁用高级GPU设置以提高电池性能",
+                    "line8": "快速充电 - 游戏随时随着电池充电速度的提高而增加",
+                    "line9": "触摸板锁定<br>通过在游戏时禁用触摸板来防止错误输入",
+                    "line10": "自动关闭<br>在开始播放之前清除游戏不需要的进程以最大化可用的系统资源",
+                    "line11": "散热模式<br>为风扇速度和冷却控制设置首选设备配置文件 "
+                },
+                "systemInfo": {
+                    "systenTooltip": "将鼠标悬停在CPU / GPU / RAM和不同驱动器上以显示其描述，包括制造和型号信息"
                 }
             }
+        },
+        "common": {
+            "menu": {
+                "support": {
+                    "title": "支持",
+                    "sub1": "支持",
+                    "sub2": "Facebook的",
+                    "sub3": "Instagram的"
+                }
+            }
+        },
+        "lightingProfile": {
+            "title": "Lighting"
         }
     },
     "common": {
         "menu": {
-            "dashboard": "仪表板",
+            "dashboard": "首页",
             "device": {
-                "title": "设备",
-                "sub1": "我的设备",
-                "sub2": "我的设备设置",
-                "sub3": "系统更新"
+                "title": "我的设备",
+                "sub1": "设备信息",
+                "sub2": "设备设置",
+                "sub3": "系统升级"
             },
             "security": {
-                "title": "安全性",
-                "sub1": "我的安全性",
-                "sub2": "反病毒",
+                "title": "安全顾问",
+                "sub1": "我的安全顾问",
+                "sub2": "病毒防护",
                 "sub3": "WiFi 安全",
-                "sub4": "密码安全状况",
-                "sub5": "因特网保护",
+                "sub4": "密码保险箱",
+                "sub5": "网络保护",
                 "sub6": "Windows Hello"
             },
             "support": "支持服务",
+            "homeSecurity": "Connected Home",
             "privacy": "隐私"
         },
         "securityAdvisor": {
             "title": "安全顾问",
-            "subtitle": "检查设备是否受安全保护。",
-            "antiVirus": "反病毒",
+            "subtitle": "检查设备是否受安全保护",
+            "antiVirus": "病毒防护",
             "wifi": "WiFi 安全",
             "pswdMgr": "Password Manager",
             "vpn": "VPN",
@@ -91,7 +125,7 @@
         },
         "qAndA": {
             "title": "关于计算机的常见问题解答​",
-            "subtitle": "查找关于设备的实用小提示。",
+            "subtitle": "查找关于设备的实用小提示",
             "question1": "备份和恢复文件",
             "question2": "如何刷新您的电脑",
             "question3": "如何了解计算机的 CPU 情况",
@@ -104,12 +138,16 @@
             "on": "开",
             "off": "关",
             "collapse": "折叠",
-            "expand": "扩大"
+            "expand": "扩大",
+            "loader": {
+                "text1": "取",
+                "text2": "状态"
+            }
         }
     },
     "privacy": {
         "headerMain": {
-            "title": "Privacy"
+            "title": "隐私"
         }
     },
     "tutorial": {
@@ -142,15 +180,15 @@
         "offlineInfo": {
             "title": "未检测到互联网连接",
             "subtitle": "详细了解如何解决我们的连接问题",
-            "buttonText": "连通性101"
+            "buttonText": "获取支持"
         },
         "feedback": {
             "title": "提供反馈",
             "subtitle": "告诉我们您对 VANTAGE 的想法",
             "button": "提供反馈",
             "form": {
-                "email": "电子邮件（可选）",
-                "comments": "注释",
+                "email": "联系方式（如果您不喜欢可留空）",
+                "comments": "内容",
                 "button": "提交",
                 "messages": {
                     "feedbackSuccess": "感谢您的反馈意见 ！"
@@ -158,14 +196,14 @@
             }
         },
         "quickSettings": {
-            "title": "您的快速设置",
+            "title": "您的设置",
             "microphone": "麦克风",
-            "cameraPrivacy": "摄像头隐私",
+            "cameraPrivacy": "相机隐私",
             "eyeCareMode": "护眼模式"
         },
         "systemStatus": {
             "title": "系统状态",
-            "subtitle": "快速了解设备状态。",
+            "subtitle": "快速了解设备状态",
             "memory": {
                 "title": "内存",
                 "detail": {
@@ -186,11 +224,11 @@
                     "notFound": "保修未找到",
                     "until": "​截止时间：",
                     "expiredOn": "保修已到期",
-                    "notAvailable": "保修无法提供"
+                    "notAvailable": "无保修信息"
                 }
             },
             "systemUpdate": {
-                "title": "系统更新",
+                "title": "系统升级",
                 "detail": {
                     "update": "更新"
                 }
@@ -199,18 +237,18 @@
     },
     "device": {
         "myDevice": {
-            "title": "我的设备",
-            "subtitle": "我的设备状态",
+            "title": "设备信息",
+            "subtitle": "设备状态",
             "serial": "序列号",
             "productNumber": "产品编号",
             "biosVersion": "BIOS 版本",
             "learnMore": "了解更多信息",
             "freeMemory": "可用内存",
             "systemUpdate": {
-                "title": "系统更新",
+                "title": "系统升级",
                 "notFound": "未找到系统更新",
                 "detail": {
-                    "uptoDate": "软件为最新",
+                    "uptoDate": "软件已更新",
                     "updatedOn": "更新",
                     "outdated": "软件已过时",
                     "neverRanUpdate": "从未运行过更新"
@@ -243,11 +281,11 @@
                     "daysRemaining": "剩余天数",
                     "outOfWarranty": "保修期已过 ",
                     "expiredOn": "到期时间：",
-                    "notAvailable": "保修无法提供",
+                    "notAvailable": "无保修信息",
                     "support": "支持"
                 }
             },
-            "helpful": "帮助内容"
+            "helpful": "常见问题"
         },
         "deviceSettings": {
             "helpful": "帮助内容",
@@ -255,13 +293,16 @@
                 "title": "电池量表",
                 "subtitle": "电池运行状况",
                 "hours": "小时",
+                "hour": "小时",
                 "minutes": "分钟",
+                "minute": "分钟",
                 "charge": "充满电所需的时间",
                 "button": "查看电池详细信息",
                 "details": {
                     "title": "电池详细信息",
                     "primary": "主电池",
                     "secondary": "备用电池",
+                    "tertiary": "仪表板",
                     "status": "状态",
                     "wattage": "功率",
                     "barcode": "条码",
@@ -280,7 +321,68 @@
                     "designVolt": "设计电压",
                     "volts": "电压",
                     "firstUseDt": "首次使用日期",
-                    "firmwareVer": "固件版本"
+                    "firmwareVer": "固件版本",
+                    "chargeStatusString": {
+                        "error": "错误",
+                        "notinstalled": "未安装",
+                        "noactivity": "没有活动",
+                        "charging": "充电",
+                        "discharging": "放电",
+                        "acdischarging": "放电（带交流）"
+                    },
+                    "deviceChemistry": {
+                        "li-polymer": "锂聚合物",
+                        "li-ion": "锂离子电池"
+                    }
+                },
+                "condition": {
+                    "Illegal": {
+                        "title": "This system may not support battery that",
+                        "description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
+                        "description1": "Attention:",
+                        "description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+                    },
+                    "Good": {
+                        "title": "The battery is in good Condition"
+                    },
+                    "Exhaustion": {
+                        "title": "The battery has failed due to normal",
+                        "description": "wear. The battery cannot be charged. Replace the battery."
+                    },
+                    "Bad": {
+                        "title": "A battery error has occurred.",
+                        "description": "The battery cannot be charged/discharged . Replace the battery."
+                    },
+                    "NotDetected": {
+                        "title": "No battery detected or not",
+                        "description": "plugged in battery."
+                    },
+                    "NotGood": {
+                        "title": "The battery is not in a good Condition"
+                    },
+                    "LimitedACAdapterSupport": {
+                        "title": "Limited Support AC Adapter"
+                    },
+                    "NotSupportACAdapter": {
+                        "title": "Not support AC Adapter"
+                    },
+                    "ACAdapterNotSupported": {
+                        "title": "AC adapter not supported.",
+                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
+                    },
+                    "EnoughPowerACAdapter": {
+                        "title": "AC adapter cannot provide enough power",
+                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    },
+                    "MissingDriver": {
+                        "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
+                        "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
+                    },
+                    "StoreLimitation": {
+                        "title": "The battery can only store",
+                        "description1": "of",
+                        "description2": "it's original full charge capacity"
+                    }
                 }
             },
             "power": {
@@ -291,28 +393,34 @@
                     "title": "跳到设置",
                     "battery": "电池",
                     "power": "电源管理",
-                    "cooling": "散热",
+                    "cooling": "智能冷却",
                     "other": "其他"
                 },
                 "powerSmartSettings": {
                     "title": "电源智能设置",
-                    "subtitle": "智能散热",
+                    "subtitle": "智能冷却",
                     "subtitle1": "电池和安静",
                     "description1": "此功能动态调节散热设置以满足您的需求。此功能开启时，在手持或空闲状态下可调节设置使设备保持较低温度或较低噪声。而设备放置在稳定平面上时，此功能可优化性能。此功能关闭时，您可以手动设置散热优先级。",
                     "description2": "智能散热可调节风扇速度、最高表面温度和性能。此功能具有以下模式，且现在支持通过 Windows 性能电源滑块访问。",
-                    "description3": "Battery＆Quiet 是一个长期存在的事实，当阅读其布局时，读者将被页面的可读内容分散注意力。",
+                    "description3": "智能散热可自动平衡散热性能，以根据您的需求进行调整。智能散热功能可调节性能设置，以便在握持笔记本电脑时提供更舒适的表面。当设备位于桌面上时，此功能可优化性能。",
                     "readMore": "阅读更多.",
                     "gotoWindows": {
                         "title": "转到 Windows 设置",
                         "modalBodyText1": "单击系统托盘上的Windows电池图标以访问Windows性能电源滑块"
                     },
                     "intelligentCooling": {
-                        "title": "智能散热",
+                        "title": "智能冷却",
                         "description": "",
                         "tooltip": "",
+                        "optimize": "优化系统",
+                        "apsHint": "要启用智能散热，您必须安装并启用Lenovo Active Protection System。",
                         "options": {
-                            "quiteCool": "安静和低温模式",
-                            "performance": "性能"
+                            "quiteCool3": "酷模式",
+                            "performance3": "高性能",
+                            "quiteCool4": "安静和低温模式",
+                            "performance4": "性能",
+                            "quiteCool5": "安静和低温模式",
+                            "performance5": "性能"
                         },
                         "readMore": {
                             "mode1": "安静模式",
@@ -325,7 +433,7 @@
                     },
                     "nonintelligentCooling": {
                         "options": {
-                            "intelligentCooling": "智能散热",
+                            "intelligentCooling": "智能冷却",
                             "extremeCooling": "极端的表现",
                             "battery&Quite": "电池和安静"
                         }
@@ -357,9 +465,14 @@
                         "title": "电池充电阈值",
                         "description": "如果主要在连接交流电源适配器时使用计算机，仅偶尔使用电池供电，则可通过将最大电量值设置为低于 100%，延长电池使用期限。这一点很有用，因为偶尔使用的电池保持不充满的电量可延长使用期限。",
                         "tooltip": "如果电池当前的充电电量高于停止充电阈值，则需要拔下电源，直至电池放电至停止充电阈值或低于停止充电阈值。 根据电池状态（新旧程度），开始或停止充电的精确点最大可有 2% 的相差幅度。如果启用此功能，建议偶尔执行一次&ldquo;电池量表重置&rdquo;，以确保电池运行状况报告准确。",
+                        "settings": {
+                            "title1": "内置电池的阈值",
+                            "title2": "可拆卸电池的阈值"
+                        },
                         "popup": {
                             "title": "启用电池充电阈值",
-                            "description": "在您使用此设备时，启用自定义电池充电可延长电池的整体使用寿命。然而，未能完全充满电将减少电池使用寿命。 为完全发挥此功能的作用，请拔下计算机的电源插头并消耗电池电量，使电池电量达到或低于停止充电阈值。",
+                            "description1": "在您使用此设备时，启用自定义电池充电可延长电池的整体使用寿命。然而，未能完全充满电将减少电池使用寿命。",
+                            "description2": "为完全发挥此功能的作用，请拔下计算机的电源插头并消耗电池电量，使电池电量达到或低于停止充电阈值。",
                             "enable": "启用",
                             "cancel": "取消"
                         }
@@ -439,7 +552,7 @@
                         "tooltip": "配置麦克风效果以增强不同场景和环境下的音频体验。",
                         "options": {
                             "VoiceRecognition": "语音识别",
-                            "OnlyMyVoice": "仅我的语言",
+                            "OnlyMyVoice": "仅我的语音",
                             "Normal": "正常",
                             "MultipleVoices": "多个语音"
                         }
@@ -499,7 +612,92 @@
                     "contrast": "对比度",
                     "autoExposure": "自动曝光",
                     "autoFocus": "自动对焦",
-                    "notAvailable": "相机不可用"
+                    "notAvailable": "相机不可用",
+                    "camerablur": {
+                        "title": "相机背景模糊",
+                        "caption": "当您使用相机进行任何视频通话或拍照时，此功能会模糊您的背景。您可以从以下选项中选择不同的效果。",
+                        "blurMode": "模糊模式",
+                        "comicMode": "漫画模式",
+                        "sketchMode": "草图模式"
+                    }
+                }
+            },
+            "smartAssist": {
+                "title": "智能助手",
+                "description": "Lenovo Intelligent Sensing结合了计算机上的传感器来检测您的活动，调整设置以实现最佳电源管理并保护您的隐私。",
+                "jumpTo": {
+                    "title": "跳到设置",
+                    "security": "安全",
+                    "screen": "屏幕",
+                    "media": "媒体",
+                    "voice": "语音"
+                },
+                "intelligentSecurity": {
+                    "title": "智能安全",
+                    "readMore": "阅读更多",
+                    "HumanPresenceDetection": {
+                        "title": "人体存在检测",
+                        "tooltip": "单击此处重置人体存在检测设置。"
+                    },
+                    "humanPresenceDetection": {
+                        "title": "User Presence Sensing",
+                        "tooltip": "Click here to reset human presence Detection settings."
+                    },
+                    "zeroTouchLogin": {
+                        "title": "零接触登录",
+                        "caption": "当您在电脑前或接近电脑时，此功能会自动解锁或唤醒电脑。"
+                    },
+                    "zeroTouchLock": {
+                        "title": "零接触锁定",
+                        "caption": "当未检测到用户状态时，此功能将使显示屏变暗并锁定计算机。当您离开计算机无人看管和解锁时，它可以减少未经授权访问计算机的机会。当您未检测到存在时，它还可以通过将系统置于Modern Standby来降低功耗。",
+                        "autoScreenLockTimer": {
+                            "title": "自动屏幕锁定时器",
+                            "radioButton": {
+                                "fast": "快速",
+                                "medium": "介质",
+                                "slow": "慢"
+                            },
+                            "toolTipContent": "选择所需选项，以便在未检测到状态时以快/中/慢速度锁定屏幕。但是，屏幕锁定的时间也会受到实际用户方案，传感器功能和Windows屏幕超时设置的影响。因此，我们强烈建议您在离开前立即锁定系统。"
+                        }
+                    },
+                    "distanceSensitivityAdjusting": {
+                        "title1": "距离灵敏度调整",
+                        "title2": "自动距离灵敏度调整",
+                        "caption": "自动距离调整将通过AI引擎自动更新检测距离。",
+                        "options": {
+                            "near": "近",
+                            "far": "远"
+                        }
+                    },
+                    "note": {
+                        "description1": "此功能依赖于Windows Hello。确保在Windows设置中打开了脸部识别功能。",
+                        "description2": "该功能使用传感器和相机来检测您的存在。但是，该功能不会收集，保存泄漏任何个人数据或图像。",
+                        "description3": "1.如果您的计算机处于帐篷，平板电脑或支架模式，则这些功能可能无法正常工作。",
+                        "description4": "2.如果您的计算机处于休眠模式或已关闭。自动红外摄像机登录无效。",
+                        "description5": "3.请将电脑屏幕调整到合适的角度，以便红外热像仪能识别您的脸部以便自动登录。"
+                    },
+                    "WindowsLink": {
+                        "goToWindowsHello": "转到Windows Hello设置",
+                        "screenTimeoutSettings": "转到屏幕超时设置"
+                    }
+                },
+                "intelligentScreen": {
+                    "title": "Intelligent Screen",
+                    "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                    "autoScreenOff": {
+                        "title": "Auto screen off",
+                        "caption": "Automatically turn off display when face-down or walking.",
+                        "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
+                        "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    },
+                    "keepMyDisplay": {
+                        "title": "Keep my display",
+                        "caption": "Keep my display when I am reading or browsing.",
+                        "displaySlider": {
+                            "startTime": "0 minutes",
+                            "endTime": "60 minutes"
+                        }
+                    }
                 }
             }
         },
@@ -511,6 +709,7 @@
             "criticalUpdates": "关键更新",
             "recommendedUpdates": "推荐更新",
             "optionalUpdates": "可选更新",
+            "ignoredUpdates": "忽略的更新",
             "successInstall": "已成功安装",
             "failedInstall": "无法安装",
             "at": "在",
@@ -570,8 +769,219 @@
                         "description": "在下载或安装这些更新期间出现问题。请确保您在线，并且在安装更新时不要关闭计算机。"
                     }
                 }
+            },
+            "smartAssist": {
+                "title": "智能助手",
+                "description": "Lenovo Intelligent Sensing结合了计算机上的传感器来检测您的活动，调整设置以实现最佳电源管理并保护您的隐私。",
+                "jumpTo": {
+                    "title": "跳到设置",
+                    "security": "安全",
+                    "screen": "屏幕",
+                    "media": "媒体",
+                    "voice": "语音"
+                },
+                "intelligentSecurity": {
+                    "title": "智能安全",
+                    "readMore": "阅读更多",
+                    "HumanPresenceDetection": {
+                        "title": "人体存在检测"
+                    },
+                    "autoIrCameraLogin": {
+                        "title": "自动红外摄像机登录",
+                        "caption": "当您在电脑前或接近电脑时，此功能会自动解锁或唤醒电脑。自动红外摄像机登录"
+                    },
+                    "autoScreenLock": {
+                        "title": "自动屏幕锁定",
+                        "caption": "当未检测到用户状态时，此功能将使显示屏变暗并锁定计算机。当您离开计算机无人看管和解锁时，它可以减少未经授权访问计算机的机会。当您未检测到存在时，它还可以通过将系统置于Modern Standby来降低功耗。",
+                        "autoScreenLockTimer": {
+                            "title": "自动屏幕锁定时器",
+                            "radioButton": {
+                                "fast": "快速",
+                                "medium": "介质",
+                                "slow": "慢"
+                            },
+                            "toolTipContent": "选择所需选项，以便在未检测到状态时以快/中/慢速度锁定屏幕。但是，屏幕锁定的时间也会受到实际用户方案，传感器功能和Windows屏幕超时设置的影响。因此，我们强烈建议您在离开前立即锁定系统。"
+                        }
+                    },
+                    "distanceSensitivityAdjusting": {
+                        "title": "距离灵敏度调整"
+                    },
+                    "note": {
+                        "description1": "此功能依赖于Windows Hello。确保在Windows设置中打开了脸部识别功能。",
+                        "description2": "该功能使用传感器和相机来检测您的存在。但是，该功能不会收集，保存泄漏任何个人数据或图像。",
+                        "description3": "1.如果您的计算机处于帐篷，平板电脑或支架模式，则这些功能可能无法正常工作。",
+                        "description4": "2.如果您的计算机处于休眠模式或已关闭。自动红外摄像机登录无效。",
+                        "description5": "3.请将电脑屏幕调整到合适的角度，以便红外热像仪能识别您的脸部以便自动登录。"
+                    },
+                    "WindowsLink": {
+                        "goToWindowsHello": "转到Windows Hello设置",
+                        "screenTimeoutSettings": "转到屏幕超时设置"
+                    }
+                }
             }
         }
+    },
+    "systemUpdates": {
+        "title": "系统更新",
+        "back": "返回",
+        "history": "完整历史记录",
+        "notAvailable": "无法使用",
+        "notInstalled": "未安装",
+        "criticalUpdates": "关键更新",
+        "recommendedUpdates": "推荐更新",
+        "optionalUpdates": "可选更新",
+        "ignoredUpdates": "忽略的更新",
+        "successInstall": "已成功安装",
+        "failedInstall": "无法安装",
+        "at": "在",
+        "readMore": "Read more",
+        "popup": {
+            "reboot": "重启",
+            "shutdown": "关掉",
+            "rebootForceMsg": "您选择的更新将导致系统在安装后自动重新启动。",
+            "shutdownForceMsg": "您选择的更新将导致系统在安装后自动关闭。",
+            "rebootDelayedMsg": "您选择的更新将导致系统在安装后重新启动，在安装更新期间，请不要关闭系统，卸下电源或附件。我们建议您保存工作以准备重新启动系统。",
+            "rebootRequiredMsg": "为了成功安装更新，您的计算机需要重新启动才能确保一切运行安全，顺畅。",
+            "okayButton": "好",
+            "cancelButton": "取消",
+            "rebootButton": "马上重启",
+            "dismissButton": "解雇",
+            "rebootPending": "重新启动等待"
+        },
+        "autoUpdateSettings": {
+            "title": "自动更新设置",
+            "subtitle": "自动安装更新",
+            "critical": {
+                "title": "关键更新",
+                "tooltip": "关键更新可防止发生重大问题、严重故障、硬件故障或数据损坏。"
+            },
+            "camera": {
+                "title": "摄像头",
+                "tooltip": "单击此处将相机属性重置为默认设置。",
+                "reset": "重置出厂设置"
+            },
+            "recommended": {
+                "title": "推荐更新",
+                "tooltip": "推荐的驱动程序更新使计算机运行保持最佳性能。"
+            },
+            "windows": {
+                "title": "Windows 更新",
+                "url": "Windows 设置"
+            }
+        },
+        "support": {
+            "title": "Lenovo Support website"
+        },
+        "banner": {
+            "neverChecked": "Welcome to use System Update.",
+            "title": "​保持最新状态的系统才是健康的系统。",
+            "last": "上次更新时间为",
+            "next": "下次更新扫描计划时间：",
+            "checkButton": "检查更新",
+            "checking": "正在检查更新",
+            "downloading": "下载更新完成",
+            "installing": "正在安装更新",
+            "percent": "% 已完成",
+            "cancelCheck": "取消检查",
+            "cancelUpdates": "取消更新",
+            "available": "可用更新",
+            "description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。关键更新对保护计算机上的数据来说也很重要，一旦可用就应该尽快安装。未能安装这些软件包可能会导致数据丢失、系统故障或硬件故障",
+            "installButton": "安装所有更新",
+            "result": {
+                "success": "所有更新都已正确安装",
+                "fail": {
+                    "title": "某些更新未正确安装。",
+                    "description": "在下载或安装这些更新期间出现问题。请确保您在线，并且在安装更新时不要关闭计算机。"
+                }
+            },
+            "smartAssist": {
+                "title": "Smart Assist",
+                "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+                "jumpTo": {
+                    "title": "JUMP TO SETTINGS",
+                    "security": "Security",
+                    "screen": "Screen",
+                    "media": "Media",
+                    "voice": "Voice"
+                },
+                "intelligentSecurity": {
+                    "title": "Intelligent Security",
+                    "readMore": "Read more",
+                    "HumanPresenceDetection": {
+                        "title": "Human Presence Detection"
+                    },
+                    "autoIrCameraLogin": {
+                        "title": "Zero Touch Login",
+                        "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it. Auto IR camera login"
+                    },
+                    "autoScreenLock": {
+                        "title": "Auto screen lock",
+                        "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+                        "autoScreenLockTimer": {
+                            "title": "AUTO SCREEN LOCK TIMER",
+                            "radioButton": {
+                                "fast": "Fast",
+                                "medium": "Medium",
+                                "slow": "Slow"
+                            },
+                            "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+                        }
+                    },
+                    "distanceSensitivityAdjusting": {
+                        "title": "Distance sensitivity adjusting"
+                    },
+                    "note": {
+                        "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
+                        "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect, save, of leak any personal data or image.",
+                        "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
+                        "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
+                        "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+                    },
+                    "WindowsLink": {
+                        "goToWindowsHello": "Go to Windows Hello Settings",
+                        "screenTimeoutSettings": "Go to Screen timeout settings"
+                    }
+                }
+            }
+        },
+        "updateCheckbox": {
+            "rebootRequired": "Reboot required",
+            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
+            "manufacturer": "Manufacturer: ",
+            "version": "Version: ",
+            "installVersion": "Installed version: ",
+            "downloadSize": "Download size: ",
+            "diskSpaceNeeded": "Disk space needed: ",
+            "ignore": "Ignore",
+            "attend": "Attend"
+        },
+        "availableUpdates": {
+            "title": "Available updates",
+            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
+            "installAllUpdates": "Install all updates",
+            "installSuccessHeader": "All updates were installed correctly",
+            "installFailHeader": "Some updates were not installed correctly",
+            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
+            "optionalUpdates": "Optional updates",
+            "installSelectedUpdates": "Install Selected updates"
+        },
+        "installationHistory": {
+            "name": "Name",
+            "sortByDate": "Sort by Date",
+            "packageSize": "Package Size:",
+            "releaseDate": "Release Date:",
+            "showAll": "Show All",
+            "noInstallationHistory": "No installation history available"
+        }
+    },
+    "homeSecurity": {
+        "title": "连接家庭安全",
+        "ecosystemBlockTitle": "保护您的设备生态系统",
+        "overviewBlockTitle": "您的设备安全概述",
+        "thisDevice": "这个设备",
+        "allDevices": "所有设备",
+        "protected": "受保护",
+        "notProtected": "不受保护"
     },
     "support": {
         "common": {
@@ -580,10 +990,10 @@
         "warranty": {
             "titleInWarranty": "在保修期内",
             "titleWarrantyExpired": "保修到期",
-            "titleWarrantyNotFound": "未找到保修",
+            "titleWarrantyNotFound": "未找到保修信息",
             "statusInWarranty": "在保修期内",
             "statusWarrantyExpired": "已到期",
-            "statusWarrantyNotFound": "未找到保修",
+            "statusWarrantyNotFound": "未找到保修信息",
             "yearDepotWarranty": "年维修站保修",
             "warrantyDetails": "保修详细信息：",
             "startDate": "开始日期：",
@@ -598,7 +1008,7 @@
             "listUserGuide": "用户指南"
         },
         "needHelp": {
-            "title": "需要帮助？",
+            "title": "需要帮助",
             "description": "联系我们以获取帮助。",
             "listLenovoCommunity": "Lenovo 社区",
             "listContactCustomerService": "联系客户服务部门",
@@ -606,11 +1016,11 @@
             "weChatDescription": "在微信上向我们提问，我们定会迅速回复"
         },
         "quicklinks": {
-            "title": "快速链接",
+            "title": "直通车",
             "description": "联系我们以获取帮助。",
             "listETicket": "通过电子凭单获取支持",
             "listServiceProvider": "查找服务供应商",
-            "listAboutLenovoVantage": "关于 Lenovo Vantage"
+            "listAboutLenovoVantage": "关于我们"
         },
         "about": {
             "version": "版本",
@@ -619,6 +1029,11 @@
             "ourWebsite": "我们的网站",
             "aboutYourDevice": "关于您的设备",
             "copyright": "© 2002-2019 Lenovo All Rights Reserved"
+        },
+        "quickAccess": {
+            "categories": "Categories",
+            "categoriesDesc": "Find helpful information in our articles",
+            "seeArticles": "SEE ARTICLES"
         }
     },
     "security": {
@@ -627,13 +1042,13 @@
             "fullyDesc": "恭喜您！您受到良好保护。",
             "notFully": "未受全面保护",
             "notFullyDesc": "您并未受到全面保护。立即了解如何更好地保护自己。",
-            "security101": "安全顾问 101",
+            "security101": "安全建议入门",
             "firewall": "防火墙",
-            "pwdHealth": "密码安全状况",
-            "vpnSecurity": "VPN 安全性",
-            "vpnVirtual": "虚拟专用网络",
-            "wifiConnected": "WiFi 和互联家庭网络安全性",
-            "connectedHomeSecurity": "互联家庭网络安全性",
+            "pwdHealth": "密码保险箱",
+            "vpnSecurity": "VPN 安全顾问",
+            "vpnVirtual": "VPN",
+            "wifiConnected": "WiFi 和互联家庭网络安全顾问",
+            "connectedHomeSecurity": "互联家庭网络安全顾问",
             "fingerprint": "指纹读取器",
             "seeAllNetwork": "请查看所有加入的网络",
             "maliciousNetwork": "本月阻止了您的计算机加入 {{maliciousWifi}} 个恶意网络。",
@@ -643,23 +1058,23 @@
         },
         "antivirus": {
             "common": {
-                "title": "反病毒",
+                "title": "病毒防护",
                 "back": "返回",
                 "why": "为什么选择 McAfee？",
                 "recommends": "Lenovo 建议您采用 McAfee 来保护您的所有设备，它具备如下优势：",
                 "award": "对包括勒索软件和恶意软件在内的最新网络威胁的防护能力屡获殊荣",
-                "dedicated": "一贯优于 Defender 和其他领先型 AV 供应商的专用安全性",
+                "dedicated": "一贯优于 Defender 和其他领先型 AV 供应商的专用安全顾问",
                 "deviceToCloud": "采用了不会减慢电脑运行速度的设备到云技术",
                 "poweredBy": "McAfee 出品",
                 "privacyTerms": "阅读<tag>隐私策略</tag>和<tag>服务条款</tag>的更多信息",
                 "mcafeePremium": "McAfee 高级保护",
-                "protectedBy": "您目前正受到以下软件的保护：",
-                "betterProtected": "。但是，您可以通过 McAfee LiveSafe 获得更好的保护",
+                "protectedBy": "您目前受到 {{protectedName}} 的保护。但是，您可以通过 McAfee LiveSafe 获得更好的保护。",
                 "virusScan": "病毒扫描",
                 "firewall": "防火墙",
                 "disabled": "已禁用",
                 "enableVirusScan": "启用病毒扫描",
-                "enableFirewall": "启用防火墙"
+                "enablenFirewall": "启用防火墙",
+                "enableFirewall": "ENABLE FIREWALL"
             },
             "windowsDefender": {
                 "optimallyProtected": "未受最佳保护",
@@ -676,7 +1091,7 @@
                 "launch": "启动 McAfee",
                 "getMacfee": "获取 McAfee",
                 "topBenefits": "McAfee LiveSafe 的主要优势",
-                "awardTitle": "屡获殊荣的反病毒软件",
+                "awardTitle": "屡获殊荣的病毒防护软件",
                 "awardSubtitle": "在电脑上拦截病毒、恶意软件、勒索软件、间谍软件、有害程序等。",
                 "encryptedTitle": "加密存储",
                 "encryptedSubtitle": "通过使用 128 位加密技术将敏感文件存储至 PC 来对这些文件进行保密。",
@@ -699,7 +1114,7 @@
         },
         "wifisecurity": {
             "header": {
-                "title": "WiFi 和互联家庭网络安全性",
+                "title": "WiFi 和互联家庭网络安全顾问",
                 "back": "返回"
             },
             "container": {
@@ -718,33 +1133,35 @@
             },
             "threatlocator": {
                 "describe": "使用威胁检测程序来确定您周围网络的安全性。",
-                "button": "检查威胁"
+                "button": "检查威胁",
+                "connectionError": "连接错误",
+                "tryAgain": "由于网络不可用，我们无法找到您的设备，请连接因特网并重试。"
             },
             "locationmodal": {
                 "title": "启用位置服务",
                 "describe1": "要使用 Lenovo WiFi 安全，您必须为 Lenovo Vantage 启用位置服务。是否立即启用位置？",
-                "describe2": "要使用互联家庭网络安全性，您必须为 Lenovo Vantage 启用位置服务。是否立即启用位置？",
+                "describe2": "要使用互联家庭网络安全顾问，您必须为 Lenovo Vantage 启用位置服务。是否立即启用位置？",
                 "agree": "同意",
                 "cancel": "取消"
             }
         },
         "homeprotection": {
             "homesecurity": {
-                "title": "互联家庭网络安全性",
-                "titleDescription": "\"互联家庭网络安全性\"功能通过以下三种方式确保安全性：",
-                "homeSecurityAffect1": "互联家庭网络安全性可确保您的设备安全、未被入侵",
-                "homeSecurityAffect2": "互联家庭网络安全性可确保所连接的网络的安全性",
-                "homeSecurityAffect3": "互联家庭网络安全性可确保连接到您家庭网络的其他设备的安全性。",
+                "title": "互联家庭网络安全顾问",
+                "titleDescription": "\"互联家庭网络安全顾问\"功能通过以下三种方式确保安全性：",
+                "homeSecurityAffect1": "互联家庭网络安全顾问可确保您的设备安全、未被入侵",
+                "homeSecurityAffect2": "互联家庭网络安全顾问可确保所连接的网络的安全性",
+                "homeSecurityAffect3": "互联家庭网络安全顾问可确保连接到您家庭网络的其他设备的安全性。",
                 "describe": "不安全设备和网络可能引入恶意软件、导致身份信息被盗以及泄露个人和财务信息。启用此功能以降低将设备和家庭网络曝露给攻击者的风险",
                 "subtitle": "高枕无忧",
-                "subtitleDescribe": "检测到设备或家庭网络存在漏洞，或正在连接到一个潜在恶意网络时，\"互联家庭网络安全性\"功能会向您发送警报。请在\"提示和技巧\"中了解有关互联家庭网络安全性的更多信息。",
+                "subtitleDescribe": "检测到设备或家庭网络存在漏洞，或正在连接到一个潜在恶意网络时，\"互联家庭网络安全顾问\"功能会向您发送警报。请在\"提示和技巧\"中了解有关互联家庭网络安全顾问的更多信息。",
                 "tryNow": "立即试用"
             },
             "invitationcode": {
                 "button": "输入邀请码",
-                "buttonDescribe": "您已将此设备加入一个现有互联家庭网络安全性帐户。",
-                "title": "已拥有互联家庭网络安全性？",
-                "titleDescribe": "请确保已为 Vantage 启用了位置权限，以便将此设备加入一个现有互联家庭网络安全性帐户，以及使用互联家庭网络安全性。",
+                "buttonDescribe": "您已将此设备加入一个现有互联家庭网络安全顾问帐户。",
+                "title": "已拥有互联家庭网络安全顾问？",
+                "titleDescribe": "请确保已为 Vantage 启用了位置权限，以便将此设备加入一个现有互联家庭网络安全顾问帐户，以及使用互联家庭网络安全顾问。",
                 "enterCode": "输入您的连接代码",
                 "addHome": "添加主页",
                 "ok": "确定",
@@ -752,7 +1169,7 @@
                 "cancel": "取消",
                 "validateCode": "验证码",
                 "success": "已成功连接",
-                "canUse": "现在即可开始使用互联家庭网络安全性",
+                "canUse": "现在即可开始使用互联家庭网络安全顾问",
                 "tryAgain": "代码有误，请重试！",
                 "activationCode": "激活码"
             },
@@ -761,7 +1178,7 @@
                 "deviceName1": "可信来源的应用程序",
                 "deviceName2": "开发人员模式",
                 "deviceName3": "UAC 通知",
-                "deviceName4": "反病毒可用性",
+                "deviceName4": "病毒防护可用性",
                 "deviceName5": "硬盘加密",
                 "deviceName6": "防火墙可用性",
                 "deviceName7": "已激活的 Windows",
@@ -777,8 +1194,8 @@
         },
         "vpn": {
             "statusTitle": "SURFEASY VPN",
-            "title": "VPN 安全性",
-            "header": "SurfEasy 虚拟专用网络",
+            "title": "VPN 安全顾问",
+            "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN 会加密您收发的信息，所以您可以安心、安全、隐秘地使用任何 Internet 连接和电脑、Mac®、智能手机或平板电脑。",
             "whatCanSufEasy1": "一家在上网时为您提供保护的虚拟专用网络提供商。不使用 VPN 的情况下，您的电脑可能更容易受到攻击者和身份盗窃者的攻击。VPN 以静默方式在后台运行，并提供安全和隐私保护措施。",
             "startUseSufEasy4": "SurfEasy 用户可以享受每 30 天 250 MB 的免费流量！按照 SurfEasy 应用的&ldquo;奖励&rdquo;选项卡上的步骤操作即可获取更多流量。",
@@ -792,7 +1209,7 @@
             "getSufEasy": "获取 SurfEasy",
             "openSufEasy": "打开 SurfEasy",
             "whySufEasy": "为何要使用虚拟专用网络（VPN）？",
-            "whySufEasyDescription": "使用咖啡店或机场等地的 Wi-Fi 热点会让您的敏感信息暴露给网络犯罪。SurfEasy VPN 是一种无记录 VPN，用于加密个人信息，并且不会跟踪或存储联机活动或位置。",
+            "whySufEasyDescription": "使用咖啡店或机场等地的 Wi-Fi 热点会让您的敏感信息暴露给网络犯罪分子。SurfEasy VPN 是一种无记录 VPN，用于加密个人信息，并且不会跟踪或存储联机活动或位置。",
             "startUseSufEasy": "立即开始使用 SurfEasy",
             "startUseSufEasy1": "通过银行级加密帮助确保您收发的数据的安全和隐秘。",
             "startUseSufEasy2": "帮助防止公司跟踪您的联机活动或位置。",
@@ -808,7 +1225,7 @@
         },
         "passwordManager": {
             "statusTitle": "DASHLANE 密码管理器",
-            "title": "密码安全状况",
+            "title": "密码保险箱",
             "header": "Dashlane",
             "whatIsPmNotInstalled": "提供保存高强度复杂密码和即时登录到每个站点的最安全、简单的方式。",
             "whatIsPmInstalled": "更安全的数字生活正在向您招手：添加密码、启用暗网监控、自动填充个人和支付信息。",
@@ -854,16 +1271,18 @@
             "privacyPolicy": "阅读<tag>隐私政策</tag>的更多信息",
             "whyWindowsHelloDescription2": "Windows Hello 让登录电脑更简单、更安全。此外，它还能用于您的 Microsoft 在线应用。按照下方说明开始使用 Windows Hello",
             "authentication": "Windows Hello 认证",
-            "traditional": "传统密码可能会遭到盗窃，并从世界任何地方用于访问您的帐户。更安全、更便捷。Windows Hello 是密码的新一代演变成果。使用指纹读取器 [或红外摄像头] 来取代不安全的密码进行登录。",
+            "traditional": "传统密码可能会遭到盗窃，并从世界任何地方用于访问您的帐户。更安全、更便捷。Windows Hello 是密码的新一代演变成果。使用指纹读取器来取代不安全的密码进行登录。",
             "howToStart": "如何开始使用 Windows Hello？"
         }
     },
     "lenovoId": {
         "login": "登录",
         "logout": "注销",
+        "unlockExclusives": "解锁独家",
         "user": "用户",
         "welcomeText": "元气满满的一天 {{firstName}}！",
         "welcomeTextWithouUserName": "元气满满的一天！",
+        "welcomeTextWithoutUserName": "Looking energized today!",
         "helloUser": "{{firstName}}，你好！",
         "ssoErrorTitle": "错误",
         "ssoErrorCommon": "糟糕，出现了错误。请重试。",
@@ -1232,32 +1651,33 @@
         }
     },
     "welcometutorial": {
-        "description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-        "bullets1": "Optimize your system with lorem ipsum dolor set",
-        "bullets2": "Security Advisor makes managing your security easy ",
-        "bullets3": "Automatic updates keep your device in tip top shape",
-        "subtitle1": "How will you be using your device?",
-        "subtitle2": "Tell us about your interests",
-        "personal": "Personal Use",
-        "business": "Business Use",
-        "custom": "Custom Experience",
-        "privacytitle": "Help us improve the quality of the app by allowing anonymous collection of usage statistics.",
-        "moreInterest": "+ more interests",
-        "title1": "Welcome to",
+        "description": "Vantage使您可以轻松更新驱动程序，运行诊断程序，请求支持以及了解您的设备。快速定制您的体验，并根据您的需求找到有用的信息",
+        "bullets1": "使用lorem ipsum dolor set优化您的系统",
+        "bullets2": "Security Advisor使您可以轻松管理安全性",
+        "bullets3": "自动更新可使您的设备保持最佳状态",
+        "subtitle1": "你将如何使用你的设备？",
+        "subtitle2": "告诉我们您的兴趣",
+        "personal": "个人使用",
+        "business": "商业用途",
+        "custom": "习惯",
+        "experience": "经验",
+        "privacytitle": "通过匿名收集使用统计信息，帮助我们提高应用程序的质量。",
+        "moreInterest": "+更多的兴趣",
+        "title1": "欢迎来到",
         "title2": "Lenovo",
         "title3": "Vantage",
-        "privacypolicy": "Lenovo's Private Policy",
+        "privacypolicy": "Lenovo's 私人政策",
         "interests": {
-            "games": "Games",
-            "news": "News",
-            "entertainment": "Entertainment",
-            "technology": "Technology",
-            "sports": "Sports",
-            "arts": "Arts",
-            "regionalNews": "Regional News",
-            "politics": "Politics",
-            "music": "Music",
-            "science": "Science"
+            "games": "游戏",
+            "news": "新闻",
+            "entertainment": "娱乐",
+            "technology": "技术",
+            "sports": "体育",
+            "arts": "艺术",
+            "regionalNews": "区域新闻",
+            "politics": "政治",
+            "music": "音乐",
+            "science": "科学"
         }
     }
 }

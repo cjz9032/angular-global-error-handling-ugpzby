@@ -25,8 +25,9 @@
 					type="email"
 					class="form-control user-email text-center"
 					formControlName="userEmail"
+					pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
 					email
-					#emailfield/>
+					ngbAutofocus />
 			</div>
 		</div>
 		<br />
@@ -37,6 +38,7 @@
 					cols="30"
 					rows="10"
 					formControlName="userComment"
+					pattern="^(?!\s*$).+"
 					required></textarea>
 			</div>
 		</div>

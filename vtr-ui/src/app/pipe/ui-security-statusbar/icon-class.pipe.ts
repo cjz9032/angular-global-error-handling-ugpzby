@@ -12,6 +12,10 @@ export class IconClassPipe implements PipeTransform {
 				return 'icon-times';
 			case 'not-installed':
 				return 'icon-times';
+			case 'protected':
+				return 'icon-check';
+			case 'not-protected':
+				return 'icon-times';
 		}
 	}
 }

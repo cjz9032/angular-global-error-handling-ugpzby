@@ -41,20 +41,13 @@ export class WifiHomeViewModel {
 			}
 		});
 		wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
-			if (value !== undefined) {
-				if (this.wifiSecurity.state) {
-					this.isLWSEnabled = (value && this.wifiSecurity.state === 'enabled');
+			this.ngZone.run(() => {
+				if (value !== undefined) {
+					if (this.wifiSecurity.state) {
+						this.isLWSEnabled = (this.wifiSecurity.state === 'enabled' && value);
+					}
 				}
-			}
-		});
-		wifiSecurity.on(EventTypes.geolocatorPermissionEvent, (value) => {
-            this.ngZone.run(() => {
-                if (value !== undefined) {
-                    if (this.wifiSecurity.state) {
-                        this.isLWSEnabled = (this.wifiSecurity.state === 'enabled' && value);
-                    }
-                }
-            });
+			});
 		});
 		wifiSecurity.on(EventTypes.wsWifiHistoryEvent, (value) => {
 			if (value) {
@@ -208,26 +201,21 @@ export class SecurityHealthViewModel {
 			}
 		});
 		wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
-			if (value !== undefined) {
-				if (wifiSecurity.state) {
-					this.isLWSEnabled = (value && wifiSecurity.state === 'enabled');
+			this.ngZone.run(() => {
+				if (value !== undefined) {
+					if (wifiSecurity.state) {
+						this.isLWSEnabled = (wifiSecurity.state === 'enabled' && value);
+					}
 				}
-			}
-		});
-		wifiSecurity.on(EventTypes.geolocatorPermissionEvent, (value) => {
-            this.ngZone.run(() => {
-                if (value !== undefined) {
-                    if (wifiSecurity.state) {
-                        this.isLWSEnabled = (wifiSecurity.state === 'enabled' && value);
-                    }
-                }
-            });
+			});
 		});
 		homeProtection.on(EventTypes.homeDevicePostureEvent, (value) => {
-			if (value) {
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, value);
-				this.createHomeDevicePosture(value);
-			}
+			this.ngZone.run(() => {
+				if (value) {
+					commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, value);
+					this.createHomeDevicePosture(value);
+				}
+			});
 		});
 	}
 

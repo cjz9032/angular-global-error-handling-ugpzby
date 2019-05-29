@@ -10,6 +10,7 @@ import { PageDeviceSettingsComponent } from './components/pages/page-device-sett
 import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
 import { SubpageDeviceSettingsDisplayComponent } from './components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
+import { SubpageDeviceSettingsSmartAssistComponent } from './components/pages/page-device-settings/children/subpage-device-settings-smart-assist/subpage-device-settings-smart-assist.component';
 import { PageDeviceUpdatesComponent } from './components/pages/page-device-updates/page-device-updates.component';
 import { PageSecurityComponent } from './components/pages/page-security/page-security.component';
 import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
@@ -22,6 +23,12 @@ import { PageSupportDetailComponent } from './components/pages/page-support-deta
 import { PageUserComponent } from './components/pages/page-user/page-user.component';
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
 import { WindowsHelloGuardService } from './services/guard/windows-hello-guardService.service';
+import { PageConnectedHomeSecurityComponent } from './components/pages/page-connected-home-security/page-connected-home-security.component';
+import { PrivacyModule } from './components/pages/page-privacy/privacy.module';
+import { GuardService } from './services/guard/security-guardService.service';
+import { LocalStorageKey } from './enums/local-storage-key.enum';
+import { PageAutocloseComponent } from './components/pages/page-autoclose/page-autoclose.component';
+import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
 
 const routes: Routes = [
 	{
@@ -31,44 +38,58 @@ const routes: Routes = [
 	}, {
 		path: 'dashboard',
 		component: PageDashboardComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Dashboard'
 		}
-	},{
+	}, {
 		path: 'macrokey',
 		component: PageMacrokeyComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Macrokey'
 		}
-	},{
+	}, {
 		path: 'hardwarescan',
 		component: PageHardwarescanComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 
 		data: {
 			pageName: 'Hardwarescan'
 		}
-	},{
+	}, {
 		path: 'lightingcustomize',
 		component: PageLightingcustomizeComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 
 		data: {
 			pageName: 'Lightingcustomize'
 		}
-	},{
+	}, {
 		path: 'device',
 		component: PageDeviceComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Device.MyDevice'
 		}
 	}, {
 		path: 'device-gaming',
 		component: PageDeviceGamingComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Device.MyDevice'
 		}
 	}, {
 		path: 'device/device-settings',
 		component: PageDeviceSettingsComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		children: [
 			{
 				path: '',
@@ -78,6 +99,8 @@ const routes: Routes = [
 			{
 				path: 'power',
 				component: SubpageDeviceSettingsPowerComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService],
 				data: {
 					pageName: 'Device.MyDeviceSettings'
 				}
@@ -85,87 +108,139 @@ const routes: Routes = [
 			{
 				path: 'audio',
 				component: SubpageDeviceSettingsAudioComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService],
 				data: {
 					pageName: 'Device.MyDeviceSettings'
 				}
 			},
-
 			{
 				path: 'display-camera',
 				component: SubpageDeviceSettingsDisplayComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService],
+				data: {
+					pageName: 'Device.MyDeviceSettings'
+				}
+			},
+			{
+				path: 'smart-assist',
+				component: SubpageDeviceSettingsSmartAssistComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService],
 				data: {
 					pageName: 'Device.MyDeviceSettings'
 				}
 			}
 		]
 	},
-	 {
+	{
 		path: 'device/system-updates',
 		component: PageDeviceUpdatesComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Device.SystemUpdate'
 		}
 	}, {
 		path: 'security',
 		component: PageSecurityComponent,
-		data: { pageName: 'Security.MySecurity' }
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
+		data: {
+			pageName: 'Security.MySecurity'
+		}
 
 	}, {
 		path: 'security/anti-virus',
 		component: PageSecurityAntivirusComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
-			pageName: 'Security.AntiVirus'
+			pageName: 'Security.AntiVirus',
+			pageContent: LocalStorageKey.SecurityCurrentPage
 		}
 	}, {
 		path: 'security/wifi-security',
 		component: PageSecurityWifiComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Security.WifiSecurity'
 		}
 	}, {
 		path: 'security/password-protection',
 		component: PageSecurityPasswordComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Security.PasswordProtection'
 		}
 	}, {
 		path: 'security/internet-protection',
 		component: PageSecurityInternetComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Security.InternetProtection'
 		}
 	}, {
 		path: 'security/windows-hello',
 		component: PageSecurityWindowsHelloComponent,
-		canActivate: [WindowsHelloGuardService],
+		canActivate: [GuardService, WindowsHelloGuardService],
+		canDeactivate: [GuardService],
 		data: {
 			pageName: 'Security.WindowsHello'
 		}
 	}, {
-		path: 'security/home-security',
-		component: PageSecurityHomeSecurityComponent,
-		data: {
-			pageName: 'Security.HomeSecurity'
-		}
-	}, {
 		path: 'support',
 		component: PageSupportComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Page.Support'
 		}
 	}, {
 		path: 'support-detail/:id',
 		component: PageSupportDetailComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Support.Detail'
 		}
 	}, {
+		path: 'home-security',
+		component: PageConnectedHomeSecurityComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
+		data: {
+			pageName: 'ConnectedHomeSecurity'
+		}
+	}, {
 		path: 'user',
 		component: PageUserComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'User'
 		}
-	},
+	}, {
+		path: 'autoclose',
+		component: PageAutocloseComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
+		data: {
+			pageName: 'AutoClose'
+		}
+	}, {
+		path: 'networkboost',
+		component: PageNetworkBoostComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
+		data: {
+			pageName: 'NetworkBoost'
+		}
+	}
 ];
 
 @NgModule({

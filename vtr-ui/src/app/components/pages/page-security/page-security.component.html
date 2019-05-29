@@ -64,20 +64,22 @@
 																</div>
 																<div class="col-6 pl-0 ellipsis wifi-good-font"
 																	title="{{wifi.ssid}}">{{wifi.ssid}}</div>
-																<div class="wifi-bg col-4 pl-0 pr-3">
-																	<span class="wifi-good pt-1 pb-1 pr-2 pl-2"
-																		[ngClass]="getWifiStatus(wifi.good)">
+																<div class="wifi-bg col-4 pl-0 pr-3 ellipsis">
+																	<div class="wifi-good pt-1 pb-1 pr-2 pl-2 "
+																		[ngClass]="getWifiStatus(wifi.good)" title="{{getWifiDetail(wifi.good) | translate}}">
 																		{{getWifiDetail(wifi.good) | translate}}
-																	</span>
+																</div>
 																</div>
 															</li>
 															<li class="wifi-link">
-																<a routerLink="wifi-security"
+																<a routerLink="wifi-security" 
 																	id="sa-ov-link-seeAllNetwork"
+																	aria-label="sa-ov-link-seeAllNetwork"
 																	[queryParams]="{isShowMore:false}"
 																	vtrMetrics
 																	metricsEvent="FeatureClick"
-																	metricsItem="seeAllNetwork">
+																	metricsItem="seeAllNetwork"
+																	title="{{'security.landing.seeAllNetwork' | translate}}">
 																	{{'security.landing.seeAllNetwork' | translate}}
 																</a>
 															</li>
@@ -102,7 +104,7 @@
 				<div class="col-12 col-sm-12 col-md-6 col-lg-4 vtr-page-right-column">
 					<div class="vtr-page-shift-up">
 						<div class="container-fluid">
-							<div class="row" id="sa-ov-modal-article">
+							<div class="row" id="sa-ov-modal-article" aria-label="sa-ov-modal-article">
 								<div class="col col-12">
 									<vtr-container-card [img]="cardContentPositionA.FeatureImage"
 										[caption]="cardContentPositionA.Description"
@@ -111,11 +113,12 @@
 										[action]="cardContentPositionA.Action"
 										[actionType]="cardContentPositionA.ActionType"
 										[actionLink]="cardContentPositionA.ActionLink"
-										[type]="'corner-article'"
+										[itemID]="cardContentPositionA.ActionLink"
 										[ratioX]="4"
 										[ratioY]="2"
-														order="r1"
-										[cornerShift]="'large'">
+										type="corner-article"
+										order="r1"
+										cornerShift="large">
 									</vtr-container-card>
 								</div>
 							</div>

@@ -41,12 +41,12 @@
 		</div>
 	</div>
 	<div class="custom-control custom-checkbox eye-care-checkbox"
-		*ngIf="sunsetToSunriseStatus.available && enableSunsetToSunrise">
+		*ngIf="sunsetToSunriseStatus.available">
 		<input id="cb-eye-care-schedule"
 			type="checkbox"
-			[disabled]="enableSunsetToSunrise"
+			[disabled]="enableSunsetToSunrise || enableSlider"
 			class="custom-control-input"
-			[checked]="sunsetToSunriseStatus.status"
+			[checked]="sunsetToSunriseStatus.status && !(enableSunsetToSunrise || enableSlider)"
 			(change)="onSunsetToSunrise(sunsetToSunriseStatus)" />
 		<label class="custom-control-label"
 			for="cb-eye-care-schedule">
@@ -54,21 +54,6 @@
 				<!-- Schedule eye care mode from sunset to sunrise  -->
 				{{'device.deviceSettings.displayCamera.display.eyeCareMode.onSunsetToSunriseScheduleDescription' | translate}}
 				{{sunriseToSunsetText}}
-			</span>
-		</label>
-	</div>
-	<div class="custom-control custom-checkbox eye-care-checkbox"
-		*ngIf="sunsetToSunriseStatus.available && !enableSunsetToSunrise">
-		<input id="cb-eye-care-schedule-1"
-			type="checkbox"
-			class="custom-control-input"
-			[checked]="sunsetToSunriseStatus.status"
-			(change)="onSunsetToSunrise(sunsetToSunriseStatus)" />
-		<label class="custom-control-label"
-			for="cb-eye-care-schedule">
-			<span class="text-capitalize">
-				{{'device.deviceSettings.displayCamera.display.eyeCareMode.onSunsetToSunriseScheduleDescription' | translate}}
-				<!-- Schedule eye care mode from sunset to sunrise --> {{sunriseToSunsetText}}
 			</span>
 		</label>
 	</div>

@@ -36,11 +36,14 @@ import {
 	styleUrls: ['./ui-switch-onoff.component.scss']
 })
 export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
-	@Output() toggle: EventEmitter < any > = new EventEmitter();
+	@Output() toggle: EventEmitter<any> = new EventEmitter();
 	@Input() value: boolean;
 	@Input() data: WifiHomeViewModel;
 	@Input() name: string;
 	@Input() disabled = false;
+	@Input() showLoader = false;
+	@Input() theme = 'white';
+
 	isSwitchDisable = false;
 
 	uiSubscription: Subscription;
@@ -55,14 +58,14 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 		public modalService: NgbModal,
 		private securityService: SecurityService,
 		private cd: ChangeDetectorRef
-		) {
+	) {
 		this.uiSubscription = this.translationService.subscription
 			.subscribe((translation: Translation) => {
 				this.onLanguageChange(translation);
 			});
 	}
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	ngOnDestroy() {
 		if (this.uiSubscription) {
@@ -71,7 +74,7 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	}
 
 
-	onChange(event) {
+	onChange($event) {
 		this.disabled = true;
 		try {
 			if (this.name === 'wifiSecurity') {
@@ -113,14 +116,15 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 					}
 				}
 			} else {
+				this.disabled = false;
 				this.value = !this.value;
 			}
 		} catch (err) {
+			this.disabled = false;
 			throw new Error('wifiSecurity is null');
 		}
-
-		event.switchValue = this.value;
-		this.toggle.emit(event);
+		$event.switchValue = this.value;
+		this.toggle.emit($event);
 	}
 
 	onLanguageChange(translation: Translation) {

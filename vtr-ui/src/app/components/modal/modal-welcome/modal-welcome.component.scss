@@ -70,6 +70,11 @@
 		font-size: 1.6rem;
 		font-weight: 600;
 	}
+	.padding-right-1 {
+		@media #{$mediaquery_11} {
+			padding-right: 12px;
+		}
+	}
 	.content-page-2 {
 		overflow-y:scroll;
 		overflow-x: hidden;
@@ -80,6 +85,7 @@
 		@media #{$mediaquery_11} {
 			height: 236px;
 			padding: 0px 0px 0px 32px;
+			margin-right: 14px;
 		}
 		img {
 			width: 100%;
@@ -89,18 +95,36 @@
 			margin: 25px 0px 25px -6px;
 		}
 		.device-image {
+			cursor: pointer;
 			padding-right: 6px;
 			padding-left: 6px;
+			position: relative;
+			&::after {
+				content: '';
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: rgba(0,0,0,0.3);
+				position: absolute;
+				z-index: 1;
+				margin-left: 6px;
+				margin-right: 6px;
+			}
 			label {
-				@extend .font-14-semi;
+				font-size: 1.8rem;
+				font-weight: bold;
 				width: 100%;
 				height: 100%;
 				align-items: center;
 				display: flex;
 				justify-content: center;
+				z-index: 2;
 			}
 			img {
-				opacity: 0.7;
+				//opacity: 0.7;
+				position: relative;
+				z-index: 0;
 			}
 			input {
 				display: none;
@@ -274,11 +298,11 @@
 
 	input[type="radio"]:checked + img {
 		border: 2pt solid #21C48A;
-		opacity: 0.7 !important;
+		//opacity: 0.7 !important;
 	}
 
 	.radio-is-selected img {
-		opacity: 0.5 !important;
+		//opacity: 0.5 !important;
 	}
 
 	.content-page-2 .interests input[type="checkbox"] {
@@ -287,7 +311,7 @@
 
 	.content-page-2 .interests input[type="checkbox"] + label {
 		padding: 0.5rem 2.5rem;
-		border: 0.5pt solid $shade_btn_light;
+		border: 1pt solid $shade_btn_light;
 		border-radius: 2.5rem;
 		@extend .font-12-semi;
 		font-size: 1.5rem;
@@ -376,7 +400,9 @@
 		// padding-bottom: 3.2rem;
 	}
 
-
+	.margin-top-25 {
+		margin-top: 25px;
+	}
 	#skill {
 		list-style: none;
 		position: relative;
@@ -456,7 +482,17 @@
 		background-color: $shade;
 	}
 
+	.content-page-2 .interests input[type="checkbox"] + label, .content-page-2 .privacy-check .custom-checkbox {
+		cursor: pointer;
+	}
+
+	.content-page-2 div.more-interest:hover, .content-page-2 .privacy-check .linktext:hover {
+		color: blue; 
+	} 
+
+
 
 	@-moz-keyframes html-css        { 0%  { width:0px;} 100%{ width:90%;}  }
 	@-webkit-keyframes html-css        { 0%  { width:0px;} 100%{ width:90%;}  }
+
 }

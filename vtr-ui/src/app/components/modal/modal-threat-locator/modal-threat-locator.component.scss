@@ -16,7 +16,17 @@
 		color: $blue-dark;
 		margin-bottom: 3rem;
 	}
-
+	.disabled-network {
+		font-weight: normal;
+		color: $blue-dark;
+		border: 00.1rem solid $shade_lighter;
+		.title {
+			font-size: 2.8rem;	
+		}
+		.subscribe {
+			font-size: 2rem;
+		}
+	}
 	.iframe-container {
 		height: 46rem;
 	}

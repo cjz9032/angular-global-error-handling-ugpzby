@@ -20,6 +20,9 @@ export class PageSecurityPasswordComponent implements OnInit {
 	cardContentPositionA: any = {};
 	securityAdvisor: SecurityAdvisor;
 	backId = 'sa-pm-btn-back';
+	dashlaneArticleId = '0EEB43BE718446C6B49F2C83FC190758';
+	dashlaneArticleCategory: string;
+
 	constructor(
 		public mockService: MockService,
 		private commonService: CommonService,
@@ -88,6 +91,12 @@ export class PageSecurityPasswordComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
+
+		this.cmsService.fetchCMSArticle(this.dashlaneArticleId, {'Lang': 'EN'}).then((response: any) => {
+			if (response && response.Results && response.Results.Category) {
+				this.dashlaneArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
+			}
+		});
 	}
 
 	openDashLaneArticle(): void {
@@ -97,6 +106,6 @@ export class PageSecurityPasswordComponent implements OnInit {
 			centered: true,
 			windowClass: 'Article-Detail-Modal'
 		});
-		articleDetailModal.componentInstance.articleId = '0EEB43BE718446C6B49F2C83FC190758';
+		articleDetailModal.componentInstance.articleId = this.dashlaneArticleId;
 	}
 }

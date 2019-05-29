@@ -9,6 +9,11 @@
 						"balance": "Balance",
 						"quiet": "Quiet"
 					},
+					"statusText": {
+						"perText": "Higher CPU usage, Higher fan speed",
+						"balText": "Normal CPU and fan speed",
+						"quietText": "Lower CPU usage, Lower fan speed"
+					},
 					"wifiSecurity": "Wifi Security",
 					"dolby": "Dolby",
 					"rapidCharge": "Rapid Charge"
@@ -16,11 +21,20 @@
 				"legionEdge": {
 					"title": "CPU Overclock",
 					"status": {
-						"alwayson": "Always On",
+						"alwayson": "On",
 						"whenGaming": "When Gaming",
 						"off": "Off"
 					},
+					"statusText": {
+						"onText": "CPU Overclocking will be activated",
+						"gamingText": "CPU Overclocking will be activated automatically while game launches",
+						"offText": "CPU Overclocking will be disabled"
+					},
 					"ramOverlock": "Ram Overclock",
+					"popup": {
+						"text": "Change will be effective after restarting computer.",
+						"button": "ok"
+					},
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
@@ -33,30 +47,39 @@
 					"hardwareScan": "Hardware Scan",
 					"systemUpdate": "System Update"
 				},
+				"lighting": {
+					"title": "Lighting Customize"
+				},
 				"legionEdgeModal": {
 					"line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
-					"line2": "Feature Management Overview <br> Some features not available on all devices",
-					"line3": "CPU Overclocking <br> Boost the maximum speed for your processor",
-					"line4": "RAM Overclocking <br> Boost the maximum speed for your memory",
-					"line5": "Network Boost <br> Prioritize network traffic for the game you're playing",
-					"line6": "Dolby <br> Tune your audio specifically for gaming with Dolby technology",
-					"line7": "Hybrid Mode <br> Disable advanced GPU settings when not gaming to boost battery performance",
-					"line8": "Rapid Charge <br> Game on the go longer with quicker battery charging",
-					"line9": "Touchpad Lock <br> Prevent mistaken inputs by disabling the touchpad while gaming",
-					"line10": "Auto Close <br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
-					"line11": "Thermal Mode <br> Set your preferred device profile for fan speed and cooling control"
+					"line2": "<b>Feature Management Overview</b> <br> Some features not available on all devices",
+					"line3": "<b>CPU Overclocking </b><br> Boost the maximum speed for your processor",
+					"line4": "<b>RAM Overclocking </b><br> Boost the maximum speed for your memory",
+					"line5": "<b>Network Boost </b><br> Prioritize network traffic for the game you're playing",
+					"line6": "<b>Dolby </b><br> Tune your audio specifically for gaming with Dolby technology",
+					"line7": "<b>Hybrid Mode </b><br> Disable advanced GPU settings when not gaming to boost battery performance",
+					"line8": "<b>Rapid Charge </b><br> Game on the go longer with quicker battery charging",
+					"line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
+					"line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
+					"line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control"
+				},
+				"systemInfo": {
+					"systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
 				}
 			}
 		},
-		"common":{
-			"menu":{
+		"common": {
+			"menu": {
 				"support": {
 					"title": "Support",
 					"sub1": "Support",
-					"sub2": "Face Book",
+					"sub2": "Facebook",
 					"sub3": "Instagram"
 				}
 			}
+		},
+		"lightingProfile": {
+			"title": "Lighting"
 		}
 	},
 	"common": {
@@ -78,6 +101,7 @@
 				"sub6": "Windows Hello"
 			},
 			"support": "Support",
+			"homeSecurity": "Connected Home",
 			"privacy": "Privacy"
 		},
 		"securityAdvisor": {
@@ -114,7 +138,11 @@
 			"on": "ON",
 			"off": "OFF",
 			"collapse": "Collapse",
-			"expand": "Expand"
+			"expand": "Expand",
+			"loader": {
+				"text1": "Fetching",
+				"text2": "Status"
+			}
 		}
 	},
 	"privacy": {
@@ -152,7 +180,7 @@
 		"offlineInfo": {
 			"title": "No internet connection detected",
 			"subtitle": "Learn more on how to solve connection issues in our",
-			"buttonText": "Connectivity 101"
+			"buttonText": "Get Support"
 		},
 		"feedback": {
 			"title": "Give Feedback",
@@ -265,7 +293,7 @@
 				"title": "BATTERY GAUGE",
 				"subtitle": "Battery health",
 				"hours": "hours",
-				"hour":"hour",
+				"hour": "hour",
 				"minutes": "minutes",
 				"minute": "minute",
 				"charge": "TIME TO FULLY CHARGE",
@@ -301,6 +329,59 @@
 						"charging": "Charging",
 						"discharging": "Discharging",
 						"acdischarging": "Discharging (with ac)"
+					},
+					"deviceChemistry": {
+						"li-polymer": "Li-Polymer",
+						"li-ion": "Li-Ion"
+					}
+				},
+				"condition": {
+					"Illegal": {
+						"title": "This system may not support battery that",
+						"description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
+						"description1": "Attention:",
+						"description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+					},
+					"Good": {
+						"title": "The battery is in good Condition"
+					},
+					"Exhaustion": {
+						"title": "The battery has failed due to normal",
+						"description": "wear. The battery cannot be charged. Replace the battery."
+					},
+					"Bad": {
+						"title": "A battery error has occurred.",
+						"description": "The battery cannot be charged/discharged . Replace the battery."
+					},
+					"NotDetected": {
+						"title": "No battery detected or not",
+						"description": "plugged in battery."
+					},
+					"NotGood": {
+						"title": "The battery is not in a good Condition"
+					},
+					"LimitedACAdapterSupport": {
+						"title": "Limited Support AC Adapter"
+					},
+					"NotSupportACAdapter": {
+						"title": "Not support AC Adapter"
+					},
+					"ACAdapterNotSupported": {
+						"title":"AC adapter not supported.",
+						"description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
+					},
+					"EnoughPowerACAdapter": {
+						"title": "AC adapter cannot provide enough power",
+						"description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+					},
+					"MissingDriver": {
+						"title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
+						"description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
+					},
+					"StoreLimitation": {
+						"title": "The battery can only store",
+						"description1": "of",
+						"description2":  "it's original full charge capacity"
 					}
 				}
 			},
@@ -321,7 +402,7 @@
 					"subtitle1": "Battery & Quiet",
 					"description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
 					"description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
-					"description3": "Battery & Quiet lorem ipsum is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+					"description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
 					"readMore": "Read more.",
 					"gotoWindows": {
 						"title": "Go to windows settings",
@@ -331,9 +412,15 @@
 						"title": "Intelligent cooling",
 						"description": "",
 						"tooltip": "",
+						"optimize": "optimize system for",
+						"apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
 						"options": {
-							"quiteCool": "Quiet & Cool",
-							"performance": "Performance"
+							"quiteCool3": "Cool Mode",
+							"performance3": "High Performance",
+							"quiteCool4": "Quiet & Cool",
+							"performance4": "Performance",
+							"quiteCool5": "Quiet & Cool",
+							"performance5": "Performance"
 						},
 						"readMore": {
 							"mode1": "Quiet mode",
@@ -378,9 +465,14 @@
 						"title": "Battery Charge Threshold",
 						"description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
 						"tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
+						"settings": {
+							"title1": "Threshold for Built in battery",
+							"title2": "Threshold for Removable battery"
+						},
 						"popup": {
 							"title": "Enable Battery Charge Threshold",
-							"description": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life. In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+							"description1": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life.",
+							"description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
 							"enable": "ENABLE",
 							"cancel": "CANCEL"
 						}
@@ -520,79 +612,253 @@
 					"contrast": "Contrast",
 					"autoExposure": "Auto Exposure",
 					"autoFocus": "Auto focus",
-					"notAvailable": "Camera Not Available"
-				}
-			}
-		},
-		"systemUpdates": {
-			"title": "System Updates",
-			"history": "FULL HISTORY",
-			"notAvailable": "Not Available",
-			"notInstalled": "Not Installed",
-			"criticalUpdates": "Critical Update(s)",
-			"recommendedUpdates": "Recommended Update(s)",
-			"optionalUpdates": "Optional Update(s)",
-			"successInstall": "Successfully installed on",
-			"failedInstall": "Failed to installed on",
-			"at": "at",
-			"readMore": "Read more",
-			"popup": {
-				"reboot": "Reboot",
-				"shutdown": "Shut Down",
-				"rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-				"shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-				"rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-				"rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
-				"okayButton": "OK",
-				"cancelButton": "Cancel",
-				"rebootButton": "REBOOT NOW",
-				"dismissButton": "DISMISS",
-				"rebootPending": "Reboot pending"
-			},
-			"autoUpdateSettings": {
-				"title": "Auto update settings",
-				"subtitle": "AUTOMATICALLY INSTALL UPDATES",
-				"critical": {
-					"title": "Critical Updates",
-					"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
-				},
-				"camera": {
-					"title": "Camera",
-					"tooltip": "Click here to reset Camera properties to default settings.",
-					"reset": "Reset factory settings"
-				},
-				"recommended": {
-					"title": "推荐更新",
-					"tooltip": "推荐的驱动程序更新使计算机运行保持最佳性能。"
-				},
-				"windows": {
-					"title": "Windows Updates",
-					"url": "Windows Settings"
+					"notAvailable": "Camera Not Available",
+					"camerablur": {
+						"title": "Camera Background Blur",
+						"caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections.",
+						"blurMode": "Blur mode",
+						"comicMode": "Comic mode",
+						"sketchMode": "Sketch mode"
+					}
 				}
 			},
-			"banner": {
-				"title": "An up-to-date system is a healthy system.",
-				"last": "Last update was on",
-				"next": "Next updated scan is scheduled on",
-				"checkButton": "CHECK FOR UPDATES",
-				"checking": "Checking for updates",
-				"downloading": "Downloading updates done",
-				"installing": "Installing updates",
-				"percent": "% complete",
-				"cancelCheck": "Cancel check",
-				"cancelUpdates": "CANCEL UPDATES",
-				"available": "Available updates",
-				"description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-				"installButton": "INSTALL ALL UPDATES",
-				"result": {
-					"success": "All Updates were installed correctly",
-					"fail": {
-						"title": "Some updates were not installed correctly.",
-						"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+			"smartAssist": {
+				"title": "Smart Assist",
+				"description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+				"jumpTo": {
+					"title": "JUMP TO SETTINGS",
+					"security": "Security",
+					"screen": "Screen",
+					"media": "Media",
+					"voice": "Voice"
+				},
+				"intelligentSecurity": {
+					"title": "Intelligent Security",
+					"readMore": "Read more",
+					"humanPresenceDetection": {
+						"title": "User Presence Sensing",
+						"tooltip": "Click here to reset human presence Detection settings."
+					},
+					"zeroTouchLogin": {
+						"title": "Zero Touch Login",
+						"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
+					},
+					"zeroTouchLock": {
+						"title": "Zero Touch Lock",
+						"caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+						"autoScreenLockTimer": {
+							"title": "AUTO SCREEN LOCK TIMER",
+							"radioButton": {
+								"fast": "Fast",
+								"medium": "Medium",
+								"slow": "Slow"
+							},
+							"toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+						}
+					},
+					"distanceSensitivityAdjusting": {
+						"title1": "Distance Sensitivity Adjusting",
+						"title2": "AUTO DISTANCE SENSITIVITY ADJUSTING",
+						"caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+						"options": {
+							"near": "Near",
+							"far": "Far"
+						}
+					},
+					"note": {
+						"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
+						"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
+						"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
+						"description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
+						"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+					},
+					"WindowsLink": {
+						"goToWindowsHello": "Go to Windows Hello Settings",
+						"screenTimeoutSettings": "Go to Screen timeout settings"
+					}
+				},
+				"intelligentScreen": {
+					"title": "Intelligent Screen",
+					"description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+					"autoScreenOff": {
+						"title": "Auto screen off",
+						"caption": "Automatically turn off display when face-down or walking.",
+						"note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
+						"windowsLink": "Go to Power & sleep settings in Windows settings"
+					},
+					"keepMyDisplay": {
+						"title": "Keep my display",
+						"caption": "Keep my display when I am reading or browsing.",
+						"displaySlider": {
+							"startTime": "0 minutes",
+							"endTime": "60 minutes"
+						}
 					}
 				}
 			}
 		}
+	},
+	"systemUpdates": {
+		"title": "System Updates",
+		"back": "BACK",
+		"history": "FULL HISTORY",
+		"notAvailable": "Not Available",
+		"notInstalled": "Not Installed",
+		"criticalUpdates": "Critical Update(s)",
+		"recommendedUpdates": "Recommended Update(s)",
+		"optionalUpdates": "Optional Update(s)",
+		"ignoredUpdates": "Ignored Update(s)",
+		"successInstall": "Successfully installed on",
+		"failedInstall": "Failed to installed on",
+		"at": "at",
+		"readMore": "Read more",
+		"popup": {
+			"reboot": "Reboot",
+			"shutdown": "Shut Down",
+			"rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
+			"shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
+			"rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
+			"rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+			"okayButton": "OK",
+			"cancelButton": "Cancel",
+			"rebootButton": "REBOOT NOW",
+			"dismissButton": "DISMISS",
+			"rebootPending": "Reboot pending"
+		},
+		"autoUpdateSettings": {
+			"title": "Auto update settings",
+			"subtitle": "AUTOMATICALLY INSTALL UPDATES",
+			"critical": {
+				"title": "Critical Updates",
+				"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+			},
+			"camera": {
+				"title": "Camera",
+				"tooltip": "Click here to reset Camera properties to default settings.",
+				"reset": "Reset factory settings"
+			},
+			"recommended": {
+				"title": "Recommended Updates",
+				"tooltip": "Recommended driver updates keep your computer running at optimal performance."
+			},
+			"windows": {
+				"title": "Windows Updates",
+				"url": "Windows Settings"
+			}
+		},
+		"support": {
+			"title": "Lenovo Support website"
+		},
+		"banner": {
+			"neverChecked": "Welcome to use System Update.",
+			"title": "An up-to-date system is a healthy system.",
+			"last": "Last update was on",
+			"next": "Next updated scan is scheduled on",
+			"checkButton": "CHECK FOR UPDATES ",
+			"checking": "Checking for updates",
+			"downloading": "Downloading updates",
+			"installing": "Installing updates",
+			"percent": "% complete",
+			"cancelCheck": "Cancel check",
+			"cancelUpdates": "CANCEL UPDATES",
+			"available": "Available updates",
+			"description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
+			"installButton": "INSTALL ALL UPDATES",
+			"result": {
+				"success": "All Updates were installed correctly",
+				"fail": {
+					"title": "Some updates were not installed correctly.",
+					"description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+				}
+			},
+			"smartAssist": {
+				"title": "Smart Assist",
+				"description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+				"jumpTo": {
+					"title": "JUMP TO SETTINGS",
+					"security": "Security",
+					"screen": "Screen",
+					"media": "Media",
+					"voice": "Voice"
+				},
+				"intelligentSecurity": {
+					"title": "Intelligent Security",
+					"readMore": "Read more",
+					"HumanPresenceDetection": {
+						"title": "Human Presence Detection"
+					},
+					"autoIrCameraLogin": {
+						"title": "Zero Touch Login",
+						"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it. Auto IR camera login"
+					},
+					"autoScreenLock": {
+						"title": "Auto screen lock",
+						"caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+						"autoScreenLockTimer": {
+							"title": "AUTO SCREEN LOCK TIMER",
+							"radioButton": {
+								"fast": "Fast",
+								"medium": "Medium",
+								"slow": "Slow"
+							},
+							"toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+						}
+					},
+					"distanceSensitivityAdjusting": {
+						"title": "Distance sensitivity adjusting"
+					},
+					"note": {
+						"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
+						"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect, save, of leak any personal data or image.",
+						"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
+						"description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
+						"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+					},
+					"WindowsLink": {
+						"goToWindowsHello": "Go to Windows Hello Settings",
+						"screenTimeoutSettings": "Go to Screen timeout settings"
+					}
+				}
+			}
+		},
+		"updateCheckbox": {
+			"rebootRequired": "Reboot required",
+			"failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
+			"manufacturer": "Manufacturer: ",
+			"version": "Version: ",
+			"installVersion": "Installed version: ",
+			"downloadSize": "Download size: ",
+			"diskSpaceNeeded": "Disk space needed: ",
+			"ignore": "Ignore",
+			"attend": "Attend"
+		},
+		"availableUpdates": {
+			"title": "Available updates",
+			"description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
+			"installAllUpdates": "Install all updates",
+			"installSuccessHeader": "All updates were installed correctly",
+			"installFailHeader": "Some updates were not installed correctly",
+			"installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
+			"optionalUpdates": "Optional updates",
+			"installSelectedUpdates": "Install Selected updates"
+		},
+		"installationHistory": {
+			"name": "Name",
+			"sortByDate": "Sort by Date",
+			"packageSize": "Package Size:",
+			"releaseDate": "Release Date:",
+			"showAll": "Show All",
+			"noInstallationHistory": "No installation history available"
+		}
+	},
+	"homeSecurity": {
+		"title": "Connected Home Security",
+		"ecosystemBlockTitle": "Protect your device ecosystem",
+		"overviewBlockTitle": "Your Device Security Overview",
+		"thisDevice": "This device",
+		"allDevices": "All Devices",
+		"protected": "Protected",
+		"notProtected": "Not Protected"
 	},
 	"support": {
 		"common": {
@@ -640,6 +906,11 @@
 			"ourWebsite": "Our website",
 			"aboutYourDevice": "About your device",
 			"copyright": "© 2002-2019 Lenovo all rights reserved"
+		},
+		"quickAccess": {
+			"categories": "Categories",
+			"categoriesDesc": "Find helpful information in our articles",
+			"seeArticles": "SEE ARTICLES"
 		}
 	},
 	"security": {
@@ -738,7 +1009,9 @@
 			},
 			"threatlocator": {
 				"describe": "Use the threat detector to determine the safety of the networks around you.",
-				"button": "Check threat"
+				"button": "Check threat",
+				"connectionError": "Connection Error",
+				"tryAgain": "We are unable to locate threat for you due to network unavailable, please get connected to Internet and try again."
 			},
 			"locationmodal": {
 				"title": "Enable location services",
@@ -800,6 +1073,14 @@
 			"title": "VPN Security",
 			"header": "SurfEasy VPN",
 			"whatIsSufEasy": "SurfEasy VPN encrypts the information you send and receive so you can safely and privately use your PC, Mac®, smartphone or tablet on any Internet connection without worry.",
+			"whatCanSufEasy1": "A virtual private network provider that protects you while you are online. Without a VPN, your computer may be more vulnerable to attackers and identity theft. The VPN runs silently in the background and provides security and privacy protection.",
+			"startUseSufEasy4": "SurfEasy users can enjoy 250 MB of free traffic every 30 days! Follow the steps on the &quot;Rewards&quot; tab of the SurfEasy app to get more traffic.",
+			"howToGetData": "How to get free traffic:",
+			"howToGetData1": "Confirm email to win +250 MB traffic",
+			"howToGetData2": "Add a second device to win +250 MB of traffic",
+			"howToGetData3": "Refer a friend and win +500 MB of traffic",
+			"howToGetData4": "Like SurfEasy on Facebook, earn +100 MB of traffic,",
+			"howToGetData5": "Follow SurfEasy on Twitter and win +100 MB of traffic",
 			"helpKeep": "Help keep your online activity secure and private with SurfEasy VPN.",
 			"getSufEasy": "Get SurfEasy",
 			"openSufEasy": "Open SurfEasy",
@@ -825,7 +1106,7 @@
 			"whatIsPmNotInstalled": "The safest, easiest way to save strong, complex passwords and log in instantly on every site.",
 			"whatIsPmInstalled": "A safer digital life is waiting: Add passwords, enable Dark Web Monitoring and autofill personal and payment info.",
 			"startProtect": "Start protecting your online accounts the simple way.",
-			"discount": "Lenovo users enjoy an exclusive 6 months free of Dashlane Premium.",
+			"discount": "Lenovo users enjoy an exclusive 50% off of Dashlane Premium.",
 			"offer": "Offer available for new Dashlane users only!",
 			"getDashLane": "Get Dashlane",
 			"learnMoreAbout": "<tag>Learn more</tag> about making the most of Dashlane",
@@ -866,13 +1147,14 @@
 			"privacyPolicy": "Read more on the <tag>Privacy Policy</tag>",
 			"whyWindowsHelloDescription2": "Windows Hello makes logging into your PC easier and more secure. And you can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello",
 			"authentication": "Windows Hello Authentication",
-			"traditional": "Traditional passwords can be stolen and used to access your account from anywhere in the world. More secure and convenient. Windows Hello is the next generation of a password. Use your fingerprint reader [or IR camera] instead of insecure passwords to log in.",
+			"traditional": "Traditional passwords can be stolen and used to access your account from anywhere in the world. More secure and convenient. Windows Hello is the next generation of a password. Use your fingerprint reader instead of insecure passwords to log in.",
 			"howToStart": "How do I start using Windows Hello?"
 		}
 	},
 	"lenovoId": {
 		"login": "Login",
 		"logout": "Logout",
+		"unlockExclusives": "Unlock Exclusives",
 		"user": "User",
 		"welcomeText": "Looking energized today {{firstName}}!",
 		"welcomeTextWithoutUserName": "Looking energized today!",
@@ -1246,29 +1528,30 @@
 	"welcometutorial": {
 		"description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
 		"bullets1": "Optimize your system with lorem ipsum dolor set",
-		"bullets2":	"Security Advisor makes managing your security easy ",
+		"bullets2": "Security Advisor makes managing your security easy ",
 		"bullets3": "Automatic updates keep your device in tip top shape",
 		"subtitle1": "How will you be using your device?",
 		"subtitle2": "Tell us about your interests",
 		"personal": "Personal Use",
 		"business": "Business Use",
-		"custom": "Custom Experience",
+		"custom": "Custom",
+		"experience": "Experience",
 		"privacytitle": "Help us improve the quality of the app by allowing anonymous collection of usage statistics.",
 		"moreInterest": "+ more interests",
 		"title1": "Welcome to",
 		"title2": "Lenovo",
 		"title3": "Vantage",
-		"privacypolicy": "Lenovo's Private Policy",
-		"interests" : {
+		"privacypolicy": "Lenovo's Privacy Policy",
+		"interests": {
 			"games": "Games",
-			"news" : "News",
-			"entertainment" : "Entertainment",
-			"technology" : "Technology",
-			"sports" : "Sports",
-			"arts" : "Arts",
-			"regionalNews" : "Regional News",
-			"politics" : "Politics",
-			"music" : "Music",
+			"news": "News",
+			"entertainment": "Entertainment",
+			"technology": "Technology",
+			"sports": "Sports",
+			"arts": "Arts",
+			"regionalNews": "Regional News",
+			"politics": "Politics",
+			"music": "Music",
 			"science": "Science"
 		}
 	}

@@ -8,7 +8,7 @@ export class PasswordManagerLandingViewModel {
 	statusList: Array<any>;
 	subject: any;
 	type = 'security';
-	imgUrl = '../../../../assets/images/Dashlane_Logo_Teal _Web.png';
+	imgUrl = '../../../../assets/images/Dashlane_Logo_Teal_Web.png';
 
 	constructor(translate: TranslateService, pmModel: phoenix.PasswordManager, commonService: CommonService, ) {
 		const pmStatus = {

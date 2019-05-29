@@ -43,17 +43,19 @@
 											<div class=" pull right">
 												<div class="col-12">
 													<vtr-ui-button id="sa-vpn-btn-getsufeasy"
+														aria-label="sa-vpn-btn-getsufeasy"
 														*ngIf="statusItem.status === 'not-installed'"
 														(click)="getSurfEasy()"
 														metricsEvent="FeatureClick"
-														metricsItem="getSufEasy"
+														metricsItem="getSurfEasy"
 														[label]="'security.vpn.getSufEasy' | translate">
 													</vtr-ui-button>
 													<vtr-ui-button id="sa-vpn-btn-opensufeasy"
+														aria-label="sa-vpn-btn-opensufeasy"
 														*ngIf="statusItem.status === 'installed'"
 														(click)="openSurfEasy()"
 														metricsEvent="FeatureClick"
-														metricsItem="openSufEasy"
+														metricsItem="openSurfEasy"
 														[label]="'security.vpn.openSufEasy' | translate">
 													</vtr-ui-button>
 												</div>
@@ -201,12 +203,14 @@
 											*vtrTranslate="'security.vpn.privacyPolicyAndTermsOfService' | translate">
 
 											<a id="sa-vpn-lnk-privacypolicy"
+												aria-label="sa-vpn-lnk-privacypolicy"
 												vtrMetrics
 												metricsEvent="featureClick"
 												metricsItem="privacyPolicy"
 												href="https://www.surfeasy.com/privacy_policy/"
 												target="_blank"></a>
 											<a id="sa-vpn-lnk-termsofservices"
+												aria-label="sa-vpn-lnk-termsofservices"
 												vtrMetrics
 												metricsEvent="featureClick"
 												metricsItem="termsOfServices"
@@ -234,6 +238,7 @@
 								<div class="row">
 									<div class="col col-12">
 										<vtr-container-card id="sa-vpn-lnk-cardcontent"
+											aria-label="sa-vpn-lnk-cardcontent"
 											[img]="cardContentPositionA.FeatureImage"
 											[caption]="cardContentPositionA.Description"
 											[title]="cardContentPositionA.Title"
@@ -241,10 +246,12 @@
 											[action]="cardContentPositionA.Action"
 											[actionType]="cardContentPositionA.ActionType"
 											[actionLink]="cardContentPositionA.ActionLink"
-											[type]="'corner-article'"
+											[itemID]="cardContentPositionA.ActionLink"
 											[ratioX]="4"
 											[ratioY]="2"
-											[cornerShift]="'large'">
+											type="corner-article"
+											cornerShift="large"
+											order="r1">
 										</vtr-container-card>
 									</div>
 								</div>

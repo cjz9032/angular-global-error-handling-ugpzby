@@ -1,0 +1,97 @@
+@import "../../../app.theme";
+
+.vtr-ui-rounded-rectangle-radio {
+	box-sizing: border-box;
+	background: linear-gradient(to left, $light, $shade_extralight);
+	display: inline-block;
+	margin-right: 1.5rem;
+	margin-bottom: 1rem;
+	position: relative;
+	width: 25rem;
+	height: 6.5rem;
+	border-radius: 20rem;
+	cursor: pointer;
+
+	@media #{$mediaquery_X20} {
+		width: 40rem;
+	}
+	@media #{$mediaquery_X19} {
+		width: 30.5rem;
+	}
+	@media #{$mediaquery_X18} {
+		width: 18rem;
+		margin-right: 1rem;
+	}
+	@media #{$mediaquery_X16} {
+		width: 16.5rem;
+		margin-right: 1rem;
+	}
+
+	label {
+		box-sizing: border-box;
+		padding: 0rem;
+		width: 100%;
+		height: 100%;
+		display: block;
+		position: relative;
+		z-index: 2;
+		overflow: hidden;
+
+		.label {
+			position: absolute;
+			top: 1.8rem;
+			left: 6rem;
+			color: $main_darkest;
+			font-size: 1.5rem;
+			font-weight: bold;
+			word-wrap: break-word;
+			word-break: break-all;
+			padding-right: 1rem;
+		}
+
+		.icon-circle {
+			font-size: 3rem;
+			color: $main;
+			top: 1.5rem;
+			left: 1.5rem;
+		}
+
+		fa-icon.icon {
+			position: absolute;
+			left: 9rem;
+			top: 9rem;
+			font-size: 3.2rem;
+			color: $main;
+		}
+
+		span.question {
+			position: absolute;
+			left: 9.5rem;
+			top: 9.3rem;
+			font-size: 1.8rem;
+			color: $main;
+		}
+	}
+
+	input[type="radio"]:not(:checked) + label::after {
+		opacity: 0;
+		transition: all 1s ease;
+	}
+	input:checked + label::after {
+		opacity: 1;
+	}
+
+	input {
+		position: absolute;
+		visibility: hidden;
+	}
+
+	&.border-blue {
+		border: 0.3rem solid $main;
+		// transition: all 50ms ease-in;
+	}
+	&.border-grey {
+		border: 0.3rem solid $shade_lightest;
+		// transition: all 50ms ease-in;
+	}
+}

@@ -39,7 +39,7 @@
 				font-size: 2rem;
 
 				.app-name {
-					font-weight: $weight_medium;
+					font-weight: $weight_black;
 				}
 
 				.app-version {
@@ -59,6 +59,9 @@
 			.navbar-nav {
 				.nav-item {
 					.nav-link {
+						@media #{$mediaquery_7} {
+							display: none;
+						}
 						display: inline-table;
 						font-size: 1.7rem;
 						font-weight: 400;
@@ -83,9 +86,8 @@
 							padding: 0 0;
 						}
 
-
 						&.active {
-							border-bottom: $main solid 0.5rem;
+							border-bottom: $menu_hover solid 0.5rem;
 
 							.fa-icon {
 								color: $main;
@@ -94,6 +96,9 @@
 
 						&.user {
 							padding: 2rem 2rem 2rem 2rem;
+							@media #{$mediaquery_9} {
+								padding: 2rem 0 2rem 0;
+							}
 							height: $menu_height;
 							line-height: 4.6rem;
 							border-bottom: none;
@@ -105,6 +110,9 @@
 								text-align: center;
 								font-size: 2rem;
 								width: 4.6rem;
+								@media #{$mediaquery_9} {
+									width: 2.6rem;
+								}
 								height: 4.6rem;
 								border-radius: 2.3rem;
 								background-color: $main_darker;
@@ -118,7 +126,7 @@
 						box-shadow: $drop_shadow;
 						margin-top: -1rem;
 						padding: 2.5rem 1.5rem;
-						min-width: 20rem;
+						min-width: 22.5rem;
 
 						&.user {
 							margin-left: -1.5rem;
@@ -151,7 +159,8 @@
 								text-decoration: underline;
 
 								&:hover {
-									color: $main;
+									color: $menu_hover;
+									font-weight: $weight_bold;
 								}
 							}
 
@@ -200,6 +209,9 @@
 							}
 							&.user{
 								padding-right: 5.2rem;
+								@media #{$mediaquery_9} {
+									padding-right: 4.2rem;
+								}
 								&::after{
 									right: 3rem;
 								}
@@ -236,3 +248,14 @@
 	}
 
 }
+/*
+@media screen and (min-width: 1200px) {
+	.navbar-nav{
+		.nav-link{
+			.nav-item{
+				display: none;
+			}
+		}
+	}
+}
+*/
