@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDataGetStateService } from '../../services/user-data-get-state.service';
-import { UserDataStatuses } from '../../../userDataStatuses';
+import { FeaturesStatuses } from '../../../userDataStatuses';
 import { CountNumberOfIssuesService } from '../../services/count-number-of-issues.service';
 
 interface FeatureSettings {
@@ -12,13 +12,13 @@ interface FeatureSettings {
 
 interface TabsConfig {
 	breaches: {
-		[status in UserDataStatuses]: FeatureSettings
+		[status in FeaturesStatuses]: FeatureSettings
 	};
 	trackers: {
-		[status in UserDataStatuses]: FeatureSettings
+		[status in FeaturesStatuses]: FeatureSettings
 	};
 	passwords: {
-		[status in UserDataStatuses]: FeatureSettings
+		[status in FeaturesStatuses]: FeatureSettings
 	};
 }
 
@@ -30,75 +30,75 @@ interface TabsConfig {
 export class NavTabsComponent implements OnInit {
 	tabsConfig: TabsConfig = {
 		breaches: {
-			[UserDataStatuses.undefined]: {
+			[FeaturesStatuses.undefined]: {
 				state: 'undefined',
 				image: '/assets/images/privacy-tab/nav-tabs/Breach/Unknown.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Breach/Unknown@2x.png',
 			},
-			[UserDataStatuses.exist]: {
+			[FeaturesStatuses.exist]: {
 				state: 'exist',
 				image: '/assets/images/privacy-tab/nav-tabs/Breach/Bad.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Breach/Bad@2x.png',
 			},
-			[UserDataStatuses.none]: {
+			[FeaturesStatuses.none]: {
 				state: 'none',
 				image: '/assets/images/privacy-tab/nav-tabs/Breach/Good.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Breach/Good@2x.png',
 			},
-			[UserDataStatuses.error]: {
+			[FeaturesStatuses.error]: {
 				state: 'undefined',
 				image: '/assets/images/privacy-tab/nav-tabs/Breach/Unknown.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Breach/Unknown@2x.png',
 			},
 		},
 		trackers: {
-			[UserDataStatuses.undefined]: {
+			[FeaturesStatuses.undefined]: {
 				state: 'undefined',
 				image: '/assets/images/privacy-tab/nav-tabs/Tracker/Unknown.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Tracker/Unknown@2x.png',
 			},
-			[UserDataStatuses.exist]: {
+			[FeaturesStatuses.exist]: {
 				state: 'exist',
 				image: '/assets/images/privacy-tab/nav-tabs/Tracker/Bad.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Tracker/Bad@2x.png',
 			},
-			[UserDataStatuses.none]: {
+			[FeaturesStatuses.none]: {
 				state: 'none',
 				image: '/assets/images/privacy-tab/nav-tabs/Tracker/Good.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Tracker/Good@2x.png',
 			},
-			[UserDataStatuses.error]: {
+			[FeaturesStatuses.error]: {
 				state: 'undefined',
 				image: '/assets/images/privacy-tab/nav-tabs/Tracker/Unknown.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Tracker/Unknown@2x.png',
 			},
 		},
 		passwords: {
-			[UserDataStatuses.undefined]: {
+			[FeaturesStatuses.undefined]: {
 				state: 'undefined',
 				image: '/assets/images/privacy-tab/nav-tabs/Pass/Unknown.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Pass/Unknown@2x.png',
 			},
-			[UserDataStatuses.exist]: {
+			[FeaturesStatuses.exist]: {
 				state: 'exist',
 				image: '/assets/images/privacy-tab/nav-tabs/Pass/Bad.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Pass/Bad@2x.png',
 			},
-			[UserDataStatuses.none]: {
+			[FeaturesStatuses.none]: {
 				state: 'none',
 				image: '/assets/images/privacy-tab/nav-tabs/Pass/Good.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Pass/Good@2x.png',
 			},
-			[UserDataStatuses.error]: {
+			[FeaturesStatuses.error]: {
 				state: 'undefined',
 				image: '/assets/images/privacy-tab/nav-tabs/Pass/Unknown.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Pass/Unknown@2x.png',
 			},
 		},
 	};
-	breachesConfig = this.tabsConfig.breaches[UserDataStatuses.undefined];
-	trackersConfig = this.tabsConfig.trackers[UserDataStatuses.undefined];
-	passwordsConfig = this.tabsConfig.passwords[UserDataStatuses.undefined];
+	breachesConfig = this.tabsConfig.breaches[FeaturesStatuses.undefined];
+	trackersConfig = this.tabsConfig.trackers[FeaturesStatuses.undefined];
+	passwordsConfig = this.tabsConfig.passwords[FeaturesStatuses.undefined];
 
 	constructor(
 		private userDataGetStateService: UserDataGetStateService,
