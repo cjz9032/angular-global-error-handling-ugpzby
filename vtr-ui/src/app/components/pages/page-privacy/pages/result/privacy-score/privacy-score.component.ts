@@ -1,11 +1,11 @@
 import { Component, OnDestroy, OnInit, ChangeDetectorRef } from '@angular/core';
-import { CommonPopupService } from '../../services/popups/common-popup.service';
-import { DescribeStep } from '../low-privacy/low-privacy.component';
+import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
+import { DescribeStep } from '../../../common/components/low-privacy/low-privacy.component';
 import { PrivacyScoreService } from './privacy-score.service';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { VantageCommunicationService } from '../../services/vantage-communication.service';
+import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
 
 export interface ScoreParametrs {
 	fixedBreaches: number;
@@ -19,39 +19,9 @@ export interface ScoreParametrs {
 @Component({
 	selector: 'vtr-privacy-score',
 	templateUrl: './privacy-score.component.html',
-	styleUrls: ['./privacy-score.component.scss']
+	styleUrls: ['./privacy-score.component.scss'],
 })
 export class PrivacyScoreComponent implements OnInit, OnDestroy {
-	describeSteps: DescribeStep[] = [
-		{
-			img: '/assets/images/privacy-tab/score-popup/breached-accounts.png',
-			img2x: '/assets/images/privacy-tab/score-popup/breached-accounts@2x.png',
-			title: 'Breached accounts',
-			button: {
-				name: 'Scan the internet',
-				link: '/privacy/breaches'
-			}
-		},
-		{
-			img: '/assets/images/privacy-tab/score-popup/online-trackers.png',
-			img2x: '/assets/images/privacy-tab/score-popup/online-trackers@2x.png',
-			title: 'online trackers',
-			button: {
-				name: 'See who’s tracking me',
-				link: '/privacy/trackers'
-			},
-		},
-		{
-			img: '/assets/images/privacy-tab/score-popup/public-passwords.png',
-			img2x: '/assets/images/privacy-tab/score-popup/public-passwords@2x.png',
-			title: 'Non-private passwords',
-			button: {
-				name: 'Check my browsers',
-				link: '/privacy/browser-accounts'
-			},
-		}
-	];
-
 	scoreParametrs: ScoreParametrs = {
 		fixedBreaches: 0,
 		unfixedBreaches: 0,
@@ -61,18 +31,18 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 		trackingEnabled: false,
 	};
 
-	isFigLeafReadyForCommunication = false;
-
 	// default data
 	title = 'Find out your privacy score';
 	text = `Your Lenovo is designed to put you
 			in control of your privacy. It all
 			starts with simple tools to show you how
 			private you are online.`;
-	btn_text = 'Understand my score';
+	btn_text = 'Define my score';
 	privacyLevel = 'undefined';
 	defaultScoreImageUrl = '/assets/images/privacy-tab/Main_icon.svg';
 	score = 0;
+
+	clickEventName = 'UnderstandMyScoreButton';
 
 	constructor(
 		private privacyScoreService: PrivacyScoreService,
@@ -92,16 +62,6 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 				this.setDataAccordingToScore(scoreParametrs);
 				this.changeDetectorRef.detectChanges();
 			});
-
-		this.communicationWithFigleafService.isFigleafReadyForCommunication$
-			.subscribe((isFigleafInstalled) => {
-				if (isFigleafInstalled) {
-					this.btn_text = 'Open Lenovo Privacy';
-					this.isFigLeafReadyForCommunication = true;
-				} else {
-					this.isFigLeafReadyForCommunication = false;
-				}
-			});
 	}
 
 	ngOnDestroy() {
@@ -118,9 +78,5 @@ export class PrivacyScoreComponent implements OnInit, OnDestroy {
 
 	openPopUp(popUpID) {
 		this.commonPopupService.open(popUpID);
-	}
-
-	openFigleafApp() {
-		this.vantageCommunicationService.openFigleafByUrl('lenovoprivacy:');
 	}
 }

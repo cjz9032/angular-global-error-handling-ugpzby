@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
-import { FigleafOverviewService } from '../../services/figleaf-overview.service';
-import { BrowserAccountsService } from '../../services/browser-accounts.service';
+import { FigleafOverviewService } from '../../../common/services/figleaf-overview.service';
+import { BrowserAccountsService } from '../../../common/services/browser-accounts.service';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { BreachedAccountsService } from '../../services/breached-accounts.service';
+import { BreachedAccountsService } from '../../../common/services/breached-accounts.service';
 
 @Injectable()
 export class PrivacyScoreService {
@@ -17,11 +17,11 @@ export class PrivacyScoreService {
 	}
 
 	readonly scoreWeights = {
-		leaksScore: 1.25,
-		monitoringEnabled: 1.25,
-		trackingEnabled: 1.25,
-		passwordStorageScore: 1.25,
-		constant: 0
+		leaksScore: 1,
+		monitoringEnabled: 1,
+		trackingEnabled: 1,
+		passwordStorageScore: 1,
+		constant: 1
 	};
 
 	getScoreParametrs() {
@@ -50,16 +50,17 @@ export class PrivacyScoreService {
 	calculate(params) {
 		const leaksScore = this.calculateLeaksScore(params.fixedBreaches, params.unfixedBreaches);
 		const passwordStorageScore = this.calculatePasswordStorageScore(params.fixedStorages, params.unfixedStorages);
-
-		const calculatedScore = this.calculateScore({
+		const scoreItems = {
 			leaksScore,
 			passwordStorageScore,
 			monitoringEnabled: params.monitoringEnabled,
 			trackingEnabled: params.trackingEnabled,
-			constant: 0
-		});
+			constant: 1
+		};
 
-		return calculatedScore < 10 ? 10 : calculatedScore;
+		const calculatedScore = this.calculateScore(scoreItems);
+
+		return calculatedScore;
 	}
 
 	getStaticDataAccordingToScore(score) {
@@ -102,10 +103,10 @@ export class PrivacyScoreService {
 	private getBreachesScore() {
 		return this.breachedAccountsService.onGetBreachedAccounts$.pipe(
 			map((figleafBreaches) => {
-				const fixedBreachesAmount = figleafBreaches.filter(breach => !!breach.isFixed).length;
+				const fixedBreachesAmount = figleafBreaches.breaches.filter(breach => !!breach.isFixed).length;
 				return {
 					fixedBreaches: fixedBreachesAmount,
-					unfixedBreaches: figleafBreaches.length - fixedBreachesAmount,
+					unfixedBreaches: figleafBreaches.breaches.length - fixedBreachesAmount,
 				};
 			})
 		);
@@ -113,8 +114,8 @@ export class PrivacyScoreService {
 
 	private getStoragesScore() {
 		return this.browserAccountsService.installedBrowsersData$.pipe(
-			filter((response) => response.length > 0),
-			map((response) => response.reduce((result, item) => {
+			filter((response) => response.browserData.length > 0),
+			map((response) => response.browserData.reduce((result, item) => {
 				result[item.name] = item.accountsCount;
 				return result;
 			}, {})),

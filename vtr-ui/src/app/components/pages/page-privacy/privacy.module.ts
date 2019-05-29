@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+// font awesome
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fal } from '@fortawesome/pro-light-svg-icons';
 // Pages
 import { BreachedAccountsComponent } from './pages/breached-accounts/breached-accounts.component';
 import { TrackersComponent } from './pages/trackers/trackers.component';
@@ -26,14 +30,27 @@ import { PRIVACY_BASE_URL, PRIVACY_ENVIRONMENT } from './utils/injection-tokens'
 import { getPrivacyEnvironment } from './environment';
 import { DataKnowledgeService } from './common/services/data-knowledge.service';
 import { BreachedAccountsService } from './common/services/breached-accounts.service';
-import { PrivacyScoreService } from './common/components/privacy-score/privacy-score.service';
+import { PrivacyScoreService } from './pages/result/privacy-score/privacy-score.service';
 import { CheckBreachedAccountsModule } from './feature/check-breached-accounts/check-breached-accounts.module';
 import { TrackingMapModule } from './feature/tracking-map/tracking-map.module';
 import { NonPrivatePasswordModule } from './feature/non-private-password/non-private-password.module';
 import { VtrCommonModule } from './common/vtr-common.module';
+import { UserDataGetStateService } from './common/services/user-data-get-state.service';
+import { AnalyticsService } from './common/services/analytics.service';
+import { TaskActionService } from './common/services/task-action.service';
+import { ArticlesComponent } from './pages/articles/articles.component';
+import { ArticleSingleComponent } from './pages/articles/article-single/article-single.component';
+import { ArticlePreviewComponent } from './pages/articles/article-preview/article-preview.component';
+import { ArticleSidebarComponent } from './pages/articles/article-sidebar/article-sidebar.component';
+import { OneClickScanModule } from './feature/one-click-scan/one-click-scan.module';
+import { PrivacyScoreComponent } from './pages/result/privacy-score/privacy-score.component';
+import { ArticlePitchComponent } from './pages/articles/article-pitch/article-pitch.component';
+
+library.add(fal);
 
 @NgModule({
 	imports: [
+		FontAwesomeModule,
 		PrivacyRoutingModule,
 		CommonModule,
 		ReactiveFormsModule,
@@ -42,7 +59,8 @@ import { VtrCommonModule } from './common/vtr-common.module';
 		CheckBreachedAccountsModule,
 		TrackingMapModule,
 		NonPrivatePasswordModule,
-		VtrCommonModule
+		VtrCommonModule,
+		OneClickScanModule
 	],
 	declarations: [
 		// Mail Layout Components
@@ -58,7 +76,13 @@ import { VtrCommonModule } from './common/vtr-common.module';
 		FaqComponent,
 		SidebarInstallWidgetComponent,
 		PrivacyDashboardListComponent,
+		PrivacyScoreComponent,
 		LandingComponent,
+		ArticlesComponent,
+		ArticleSingleComponent,
+		ArticlePreviewComponent,
+		ArticleSidebarComponent,
+		ArticlePitchComponent,
 	],
 	providers: [
 		TrackersPopupService,
@@ -74,6 +98,9 @@ import { VtrCommonModule } from './common/vtr-common.module';
 		DataKnowledgeService,
 		BreachedAccountsService,
 		PrivacyScoreService,
+		UserDataGetStateService,
+		AnalyticsService,
+		TaskActionService,
 	],
 })
 export class PrivacyModule {
