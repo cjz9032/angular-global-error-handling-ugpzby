@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import {VantageShellService} from "../../../services/vantage-shell/vantage-shell.service";
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { CommonService } from 'src/app/services/common/common.service';
 @Component({
 	selector: 'vtr-modal-welcome',
 	templateUrl: './modal-welcome.component.html',
@@ -31,7 +33,9 @@ export class ModalWelcomeComponent implements OnInit {
 	// to show small list. on click of More Interest show all.
 	interestCopy = this.interests.slice(0,8);
 	hideMoreInterestBtn = false;
-	constructor(public activeModal: NgbActiveModal,shellService: VantageShellService) {
+	constructor(public activeModal: NgbActiveModal,
+		shellService: VantageShellService,
+		public commonService: CommonService) {
 		this.startTime=new Date().getTime();
 		this.metrics = shellService.getMetrics();
 	}
@@ -40,19 +44,35 @@ export class ModalWelcomeComponent implements OnInit {
 	}
 
 	next(page) {
+		this.metrics.metricsEnabled = (this.privacyPolicy === true);
+		let tutorialData;
 		if (page < 2) {
 			this.page = page;
 			this.progress = 49;
+			tutorialData = new WelcomeTutorial(1, null, null);
+			this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, tutorialData);
 		} else {
-			this.endTime=new Date().getTime();
-			let data={
-				PageName:"Tutorial",
-				PageDuration:(this.endTime-this.startTime)
+			const settingData = {
+				ItemType: 'SettingUpdate',
+				SettingName: 'Accept Privacy Policy',
+				SettingValue: this.privacyPolicy ? 'Enabled' : 'Disabled',
+				SettingParent: 'WelcomePage'
 			}
-			console.log('metrics data',JSON.stringify(data));
+
+			this.metrics.sendAsyncEx(settingData, {
+				forced: true
+			});
+
+			this.endTime = new Date().getTime();
+			let data = {
+				PageName: 'WelcomePage',
+				PageDuration: (this.endTime - this.startTime)
+			}
+			console.log('metrics data', JSON.stringify(data));
 			this.metrics.sendAsync(data);
-			const response = new WelcomeTutorial(true, this.data.page2.radioValue, this.checkedArray);
-			this.activeModal.close(response);
+
+			tutorialData = new WelcomeTutorial(2, this.data.page2.radioValue, this.checkedArray);
+			this.activeModal.close(tutorialData);
 		}
 		this.page = ++page;;
 	}
@@ -83,13 +103,10 @@ export class ModalWelcomeComponent implements OnInit {
 		}
 		this.data.page2.radioValue= value
 	}
-	onTutorialClose() {
-		this.activeModal.dismiss(new WelcomeTutorial(true));
-	}
 
 	savePrivacy($event, value) {
+		this.privacyPolicy = $event.target.checked;
 		if ($event.target.checked) {
-			this.privacyPolicy = value;
 			this.progress += 17;
 		} else {
 			this.progress -= 17;

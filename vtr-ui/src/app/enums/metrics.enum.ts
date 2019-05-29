@@ -3,6 +3,7 @@ export enum MetricEvent {
 }
 
 export enum MetricString {
-	TaskCheckSystemUpdate = 'SystemUpdate.CheckForUpdates'
+	TaskCheckSystemUpdate = 'SystemUpdate.CheckForUpdates',
+	TaskInstallSystemUpdate = 'SystemUpdate.InstallUpdates'
 }
 

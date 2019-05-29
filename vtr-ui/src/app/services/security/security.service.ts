@@ -32,7 +32,7 @@ export class SecurityService {
 			modal.componentInstance.closeButtonId = 'sa-ws-btn-locationclose';
 			modal.componentInstance.agreeButtonId = 'sa-ws-btn-locationagree';
 			modal.componentInstance.cancelButtonId = 'sa-ws-btn-locationcancel';
-			wifiSecurity.on(EventTypes.geolocatorPermissionEvent, (para) => {
+			wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (para) => {
 				if (para) {
 					modal.close();
 				}
@@ -57,7 +57,7 @@ export class SecurityService {
 			modal.componentInstance.closeButtonId = 'sa-ws-btn-locationclose';
 			modal.componentInstance.agreeButtonId = 'sa-ws-btn-locationagree';
 			modal.componentInstance.cancelButtonId = 'sa-ws-btn-locationcancel';
-			wifiSecurity.on(EventTypes.geolocatorPermissionEvent, (para) => {
+			wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (para) => {
 				if (para) {
 					modal.close();
 				}

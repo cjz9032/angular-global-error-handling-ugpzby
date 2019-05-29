@@ -56,6 +56,7 @@ import { AvailableUpdatesComponent } from './components/pages/page-device-update
 import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
 import { SubpageDeviceSettingsDisplayComponent } from './components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
+import { SubpageDeviceSettingsSmartAssistComponent } from './components/pages/page-device-settings/children/subpage-device-settings-smart-assist/subpage-device-settings-smart-assist.component';
 
 // APPLICATION WIDGET COMPONENTS
 import { WidgetSwitchIconComponent } from './components/widgets/widget-switch-icon/widget-switch-icon.component';
@@ -156,7 +157,8 @@ import { CameraBackgroundBlurComponent } from './components/camera-background-bl
 import { PageAutocloseComponent } from './components/pages/page-autoclose/page-autoclose.component';
 import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
 import { PowerSmartSettingsComponent } from './components/widgets/power-smart-settings/power-smart-settings.component';
-import { SubpageDeviceSettingsSmartAssistComponent } from './components/pages/page-device-settings/children/subpage-device-settings-smart-assist/subpage-device-settings-smart-assist.component';
+import { UiPopoverComponent } from './components/ui/ui-popover/ui-popover.component';
+import { ModalChsWelcomeContainerComponent } from './components/modal/modal-chs-welcome-container/modal-chs-welcome-container.component';
 
 // SA Components
 import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
@@ -190,6 +192,9 @@ import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
 import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
 import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
+import { LoginLenovoIdComponent } from './components/modal/modal-chs-welcome-container/child/login-lenovo-id/login-lenovo-id.component';
+import { UiLightingProfileComponent } from './components/ui/ui-lighting-profile/ui-lighting-profile.component';
+import { AutoupdateSettingsComponent } from './components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
 
 
 
@@ -236,6 +241,7 @@ library.add(fal);
 		SubpageDeviceSettingsPowerComponent,
 		SubpageDeviceSettingsAudioComponent,
 		SubpageDeviceSettingsDisplayComponent,
+		SubpageDeviceSettingsSmartAssistComponent,
 		PageQuestionsComponent,
 		ModalWelcomeComponent,
 		ContainerCollapsibleComponent,
@@ -342,7 +348,12 @@ library.add(fal);
 		PageNetworkBoostComponent,
 		PowerSmartSettingsComponent,
 		SubpageDeviceSettingsSmartAssistComponent,
-		WidgetHomeSecurityDeviceComponent
+		WidgetHomeSecurityDeviceComponent,
+		UiLightingProfileComponent,
+		AutoupdateSettingsComponent,
+		UiPopoverComponent,
+		ModalChsWelcomeContainerComponent,
+		LoginLenovoIdComponent
 	],
 	imports: [
 		BrowserModule,
@@ -390,7 +401,8 @@ library.add(fal);
 		ModalAboutComponent,
 		ModalSupportWechatComponent,
 		ModalLicenseComponent,
-		ModalGamingLegionedgeComponent
+		ModalGamingLegionedgeComponent,
+		ModalChsWelcomeContainerComponent
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA

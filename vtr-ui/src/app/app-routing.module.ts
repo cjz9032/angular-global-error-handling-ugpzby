@@ -10,6 +10,7 @@ import { PageDeviceSettingsComponent } from './components/pages/page-device-sett
 import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
 import { SubpageDeviceSettingsDisplayComponent } from './components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
+import { SubpageDeviceSettingsSmartAssistComponent } from './components/pages/page-device-settings/children/subpage-device-settings-smart-assist/subpage-device-settings-smart-assist.component';
 import { PageDeviceUpdatesComponent } from './components/pages/page-device-updates/page-device-updates.component';
 import { PageSecurityComponent } from './components/pages/page-security/page-security.component';
 import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
@@ -42,7 +43,7 @@ const routes: Routes = [
 		data: {
 			pageName: 'Dashboard'
 		}
-	},{
+	}, {
 		path: 'macrokey',
 		component: PageMacrokeyComponent,
 		canDeactivate: [GuardService],
@@ -50,7 +51,7 @@ const routes: Routes = [
 		data: {
 			pageName: 'Macrokey'
 		}
-	},{
+	}, {
 		path: 'hardwarescan',
 		component: PageHardwarescanComponent,
 		canDeactivate: [GuardService],
@@ -59,7 +60,7 @@ const routes: Routes = [
 		data: {
 			pageName: 'Hardwarescan'
 		}
-	},{
+	}, {
 		path: 'lightingcustomize',
 		component: PageLightingcustomizeComponent,
 		canDeactivate: [GuardService],
@@ -68,7 +69,7 @@ const routes: Routes = [
 		data: {
 			pageName: 'Lightingcustomize'
 		}
-	},{
+	}, {
 		path: 'device',
 		component: PageDeviceComponent,
 		canDeactivate: [GuardService],
@@ -113,10 +114,18 @@ const routes: Routes = [
 					pageName: 'Device.MyDeviceSettings'
 				}
 			},
-
 			{
 				path: 'display-camera',
 				component: SubpageDeviceSettingsDisplayComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService],
+				data: {
+					pageName: 'Device.MyDeviceSettings'
+				}
+			},
+			{
+				path: 'smart-assist',
+				component: SubpageDeviceSettingsSmartAssistComponent,
 				canDeactivate: [GuardService],
 				canActivate: [GuardService],
 				data: {
@@ -166,7 +175,7 @@ const routes: Routes = [
 		canActivate: [GuardService],
 		data: {
 			pageName: 'Security.PasswordProtection'
-        }
+		}
 	}, {
 		path: 'security/internet-protection',
 		component: PageSecurityInternetComponent,
@@ -178,7 +187,7 @@ const routes: Routes = [
 	}, {
 		path: 'security/windows-hello',
 		component: PageSecurityWindowsHelloComponent,
-		canActivate: [GuardService,WindowsHelloGuardService],
+		canActivate: [GuardService, WindowsHelloGuardService],
 		canDeactivate: [GuardService],
 		data: {
 			pageName: 'Security.WindowsHello'
@@ -198,8 +207,8 @@ const routes: Routes = [
 		canActivate: [GuardService],
 		data: {
 			pageName: 'Support.Detail'
-        }
-    }, {
+		}
+	}, {
 		path: 'home-security',
 		component: PageConnectedHomeSecurityComponent,
 		canDeactivate: [GuardService],
@@ -215,7 +224,7 @@ const routes: Routes = [
 		data: {
 			pageName: 'User'
 		}
-	},{
+	}, {
 		path: 'autoclose',
 		component: PageAutocloseComponent,
 		canDeactivate: [GuardService],
@@ -223,7 +232,7 @@ const routes: Routes = [
 		data: {
 			pageName: 'AutoClose'
 		}
-	},{
+	}, {
 		path: 'networkboost',
 		component: PageNetworkBoostComponent,
 		canDeactivate: [GuardService],

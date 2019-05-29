@@ -1,4 +1,4 @@
- import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MockService } from '../../../services/mock/mock.service';
 import { QaService } from '../../../services/qa/qa.service';
@@ -17,7 +17,7 @@ import { SystemUpdateService } from 'src/app/services/system-update/system-updat
 import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { UserService } from '../../../services/user/user.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -27,14 +27,16 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class PageDashboardComponent implements OnInit {
 	firstName = 'User';
-	submit = 'Submit';
+	submit = this.translate.instant('dashboard.feedback.form.button');
 	feedbackButtonText = this.submit;
 	securityAdvisor: SecurityAdvisor;
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
 	public isOnline = true;
+	// qas: QA[] = [];
 
 	heroBannerItems = [];
+	cardContentPositionA: any = {};
 	cardContentPositionB: any = {};
 	cardContentPositionC: any = {};
 	cardContentPositionD: any = {};
@@ -65,26 +67,40 @@ export class PageDashboardComponent implements OnInit {
 		config.backdrop = 'static';
 		config.keyboard = false;
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
-		qaService.setTranslationService(this.translate);
-		qaService.qas.forEach(qa => {
-			try {
-				qa.title = this.translate.instant(qa.title);
-				qa.description = this.translate.instant(qa.description);
-				// console.log(qa.description);
-				this.translate.get(qa.keys).subscribe((translation: [string]) => {
-					// console.log(JSON.stringify(translation));
-					qa.keys = translation;
-					// console.log(JSON.stringify(qa.keys));
-				});
-			}
-			catch (e) {
-				console.log('already translated');
-			}
-			finally {
-				console.log('already translated');
-			}
 
+		this.setDefaultSystemStatus();
+		this.setDefaultSecurityStatus();
+
+		translate.stream('dashboard.feedback.form.button').subscribe((value) => {
+			this.submit = value;
+			this.feedbackButtonText = this.submit;
 		});
+
+		//Evaluate the translations for QA on language Change
+		translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.qaService.setTranslationService(this.translate);
+			this.qaService.qas.forEach(qa => {
+				try {
+					qa.title = this.translate.instant(qa.title);
+					qa.description = this.translate.instant(qa.description);
+					// console.log(qa.description);
+					this.translate.get(qa.keys).subscribe((translation: [string]) => {
+						// console.log(JSON.stringify(translation));
+						qa.keys = translation;
+						// console.log(JSON.stringify(qa.keys));
+					});
+				} catch (e) {
+					console.log('already translated');
+				}
+				finally {
+					console.log('already translated');
+				}
+
+			});
+
+			// this.qas = this.qaService.qas;
+		});
+
 	}
 
 	ngOnInit() {
@@ -174,6 +190,8 @@ export class PageDashboardComponent implements OnInit {
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+
+
 	}
 
 	onFeedbackModal() {
@@ -202,7 +220,7 @@ export class PageDashboardComponent implements OnInit {
 	// 	}, 3000);
 	// }
 
-	public onGetSupportClick($event: any) {
+	public onConnectivityClick($event: any) {
 	}
 
 	private setDefaultCMSContent() {
@@ -331,6 +349,84 @@ export class PageDashboardComponent implements OnInit {
 			});
 	}
 
+	private setDefaultSystemStatus() {
+		let memory = new Status();
+		memory.status = 4;
+		memory.id = 'memory';
+
+		this.translate.stream('dashboard.systemStatus.memory.title').subscribe((value) => {
+			memory.title = value;
+		});
+
+		this.translate.stream('dashboard.systemStatus.memory.detail.notFound').subscribe((value) => {
+			memory.detail = value;
+		});
+
+		memory.path = 'ms-settings:about';
+		memory.asLink = false;
+		memory.isSystemLink = true;
+		memory.type = 'system';
+		this.systemStatus[0] = memory;
+
+		const disk = new Status();
+		disk.status = 4;
+		disk.id = 'disk';
+
+		this.translate.stream('dashboard.systemStatus.diskSpace.title').subscribe((value) => {
+			disk.title = value;
+		});
+
+		this.translate.stream('dashboard.systemStatus.diskSpace.detail.notFound').subscribe((value) => {
+			disk.detail = value;
+		});
+
+		disk.path = 'ms-settings:storagesense';
+		disk.asLink = false;
+		disk.isSystemLink = true;
+		disk.type = 'system';
+		this.systemStatus[1] = disk;
+
+
+		const warranty = new Status();
+		warranty.status = 4;
+		warranty.id = 'warranty';
+
+		this.translate.stream('dashboard.systemStatus.warranty.title').subscribe((value) => {
+			warranty.title = value;
+		});
+
+		this.translate.stream('dashboard.systemStatus.warranty.detail.notFound').subscribe((value) => {
+			warranty.detail = value;
+		});
+
+
+		warranty.path = '/support';
+		warranty.asLink = false;
+		/* warranty.isSystemLink = true; */
+		warranty.isSystemLink = false;
+		warranty.type = 'system';
+		this.systemStatus[2] = warranty;
+
+		const systemUpdate = new Status();
+		systemUpdate.status = 4;
+		systemUpdate.id = 'systemupdate';
+
+		this.translate.stream('dashboard.systemStatus.systemUpdate.title').subscribe((value) => {
+			systemUpdate.title = value;
+		});
+
+		this.translate.stream('dashboard.systemStatus.systemUpdate.detail.update').subscribe((value) => {
+			systemUpdate.detail = value;
+		});
+
+
+		systemUpdate.path = 'device/system-updates';
+		systemUpdate.asLink = true;
+		systemUpdate.isSystemLink = false;
+		systemUpdate.type = 'system';
+		this.systemStatus[3] = systemUpdate;
+
+	}
 	private mapSystemInfoResponse(response: any): Status[] {
 		const systemStatus: Status[] = [];
 		if (response) {
@@ -413,7 +509,7 @@ export class PageDashboardComponent implements OnInit {
 			systemUpdate.title = this.translate.instant('dashboard.systemStatus.systemUpdate.title'); // 'System Update';
 			systemUpdate.detail = this.translate.instant('dashboard.systemStatus.systemUpdate.detail.update'); // 'Update';
 			systemUpdate.path = 'device/system-updates';
-			systemUpdate.asLink = true;
+			systemUpdate.asLink = false;
 			systemUpdate.isSystemLink = false;
 			systemUpdate.type = 'system';
 
@@ -434,6 +530,86 @@ export class PageDashboardComponent implements OnInit {
 			systemStatus.push(systemUpdate);
 		}
 		return systemStatus;
+	}
+
+	private setDefaultSecurityStatus() {
+		const antiVirus = new Status();
+		antiVirus.status = 4;
+		antiVirus.id = 'anti-virus';
+
+		this.translate.stream('common.securityAdvisor.antiVirus').subscribe((value) => {
+			antiVirus.title = value; // 'Anti-Virus';
+		});
+
+		this.translate.stream('common.securityAdvisor.disabled').subscribe((value) => {
+			antiVirus.detail = value;// 'Disabled';
+		});
+
+		antiVirus.path = 'security/anti-virus';
+		antiVirus.type = 'security';
+		this.securityStatus[0] = antiVirus;
+
+		const wiFi = new Status();
+		wiFi.status = 4;
+		wiFi.id = 'wifi-security';
+
+		this.translate.stream('common.securityAdvisor.wifi').subscribe((value) => {
+			wiFi.title = value; // 'WiFi Security';
+		});
+
+		this.translate.stream('common.securityAdvisor.disabled').subscribe((value) => {
+			wiFi.detail = value; // 'Disabled';
+		});
+
+		wiFi.path = 'security/wifi-security';
+		wiFi.type = 'security';
+		this.securityStatus[1] = wiFi;
+
+		const passwordManager = new Status();
+		passwordManager.status = 4;
+		passwordManager.id = 'pwdmgr';
+
+		this.translate.stream('common.securityAdvisor.pswdMgr').subscribe((value) => {
+			passwordManager.title = value; // 'Password Manager';
+		});
+
+		this.translate.stream('common.securityAdvisor.notInstalled').subscribe((value) => {
+			passwordManager.detail = value; // 'Not Installed';
+		});
+
+		passwordManager.path = 'security/password-protection';
+		passwordManager.type = 'security';
+		this.securityStatus[2] = passwordManager;
+
+		const vpn = new Status();
+		vpn.status = 4;
+		vpn.id = 'vpn';
+		this.translate.stream('common.securityAdvisor.vpn').subscribe((value) => {
+			vpn.title = value; // 'VPN';
+		});
+
+		this.translate.stream('common.securityAdvisor.notInstalled').subscribe((value) => {
+			vpn.detail = value; // 'Not Installed';
+		});
+
+		vpn.path = 'security/internet-protection';
+		vpn.type = 'security';
+		this.securityStatus[3] = vpn;
+
+		const windowsHello = new Status();
+		windowsHello.status = 4;
+		windowsHello.id = 'windows-hello';
+		this.translate.stream('common.securityAdvisor.windowsHello').subscribe((value) => {
+			windowsHello.title = value; // 'Windows Hello';
+		});
+
+		this.translate.stream('common.securityAdvisor.disabled').subscribe((value) => {
+			windowsHello.detail = value; // 'Not Installed';
+		});
+
+		windowsHello.path = 'security/windows-hello';
+		windowsHello.type = 'security';
+		this.securityStatus[4] = windowsHello;
 	}
 
 	private mapSecurityStatusResponse(response: any): Status[] {
@@ -547,4 +723,5 @@ export class PageDashboardComponent implements OnInit {
 			}
 		}
 	}
+
 }

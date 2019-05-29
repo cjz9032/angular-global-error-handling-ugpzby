@@ -1,6 +1,96 @@
 {
+    "gaming": {
+        "dashboard": {
+            "device": {
+                "quickSettings": {
+                    "title": "Thermal Mode",
+                    "status": {
+                        "performance": "Performance",
+                        "balance": "Balance",
+                        "quiet": "Quiet"
+                    },
+                    "statusText": {
+                        "perText": "Higher CPU usage, Higher fan speed",
+                        "balText": "Normal CPU and fan speed",
+                        "quietText": "Lower CPU usage, Lower fan speed"
+                    },
+                    "wifiSecurity": "Wifi Security",
+                    "dolby": "Dolby",
+                    "rapidCharge": "Rapid Charge"
+                },
+                "legionEdge": {
+                    "title": "CPU Overclock",
+                    "status": {
+                        "alwayson": "On",
+                        "whenGaming": "When Gaming",
+                        "off": "Off"
+                    },
+                    "statusText": {
+                        "onText": "CPU Overclocking will be activated",
+                        "gamingText": "CPU Overclocking will be activated automatically while game launches",
+                        "offText": "CPU Overclocking will be disabled"
+                    },
+                    "ramOverlock": "Ram Overclock",
+                    "popup": {
+                        "text": "Change will be effective after restarting computer.",
+                        "button": "ok"
+                    },
+                    "autoClose": "Auto Close",
+                    "networkBoost": "Network Boost",
+                    "hybridMode": "Hybrid Mode",
+                    "touchpadLock": "Touchpad Lock"
+                },
+                "systemTools": {
+                    "power": "Power",
+                    "media": "Media",
+                    "macroKey": "Marco Key",
+                    "hardwareScan": "Hardware Scan",
+                    "systemUpdate": "System Update"
+                },
+                "lighting": {
+                    "title": "Lighting Customize"
+                },
+                "legionEdgeModal": {
+                    "line1": "With Vantage Edge, your settings will be automatically tuned based on usage. \n Maximum performance when gaming, longer battery life when you're not.",
+                    "line2": "<b>Feature Management Overview</b> <br> Some features not available on all devices",
+                    "line3": "<b>CPU Overclocking </b><br> Boost the maximum speed for your processor",
+                    "line4": "<b>RAM Overclocking </b><br> Boost the maximum speed for your memory",
+                    "line5": "<b>Network Boost </b><br> Prioritize network traffic for the game you're playing",
+                    "line6": "<b>Dolby </b><br> Tune your audio specifically for gaming with Dolby technology",
+                    "line7": "<b>Hybrid Mode </b><br> Disable advanced GPU settings when not gaming to boost battery performance",
+                    "line8": "<b>Rapid Charge </b><br> Game on the go longer with quicker battery charging",
+                    "line9": "<b>Touchpad Lock </b><br> Prevent mistaken inputs by disabling the touchpad while gaming",
+                    "line10": "<b>Auto Close </b><br> Clear processes that are not needed for gaming before you start playing to maximize available system resources",
+                    "line11": "<b>Thermal Mode </b><br> Set your preferred device profile for fan speed and cooling control"
+                },
+                "systemInfo": {
+                    "systenTooltip": "Hover on CPU/GPU/RAM and different drives to show their descriptions including manufature and model info"
+                }
+            }
+        },
+        "common": {
+            "menu": {
+                "support": {
+                    "title": "Support",
+                    "sub1": "Support",
+                    "sub2": "Facebook",
+                    "sub3": "Instagram"
+                }
+            }
+        },
+        "lightingProfile": {
+            "title": "Lighting"
+        }
+    },
     "common": {
         "menu": {
+            "dashboard": "Dashboard",
+            "device": {
+                "title": "My Device",
+                "sub1": "My Device",
+                "sub2": "My Device Settings",
+                "sub3": "System Updates"
+            },
             "security": {
                 "title": "Sikkerhet",
                 "sub1": "Min sikkerhet",
@@ -10,7 +100,9 @@
                 "sub5": "Internettbeskyttelse",
                 "sub6": "Windows Hello"
             },
-            "homeSecurity": "Connected Home"
+            "support": "Support",
+            "homeSecurity": "Connected Home",
+            "privacy": "Privacy"
         },
         "securityAdvisor": {
             "title": "Sikkerhetsrådgivning",
@@ -26,30 +118,747 @@
             "installed": "INSTALLERT",
             "notInstalled": "IKKE INSTALLERT",
             "loading": "Laster",
+            "installing": "INSTALLERING",
             "notFound": "IKKE FUNNET",
             "registered": "REGISTRERT",
             "notRegistered": "IKKE REGISTRERT"
         },
+        "qAndA": {
+            "title": "Q&A for your machine",
+            "subtitle": "FIND SOME HELPFUL TIPS FOR YOUR DEVICE.",
+            "question1": "Backup and Restore your files",
+            "question2": "How to refresh your PC",
+            "question3": "How to know your machine's CPU",
+            "question4": "Check your machine's battery use",
+            "question5": "Use your PC like a tablet",
+            "question6": "Get to know Cortana, your personal assistant"
+        },
         "ui": {
             "back": "TILBAKE",
             "on": "ON",
-			"off": "OFF",
-			"collapse": "Collapse",
-			"expand": "Expand",
-			"loader": {
-				"text1": "Fetching",
-				"text2": "Status"
-			}
-		}
+            "off": "OFF",
+            "collapse": "Collapse",
+            "expand": "Expand",
+            "loader": {
+                "text1": "Fetching",
+                "text2": "Status"
+            }
+        }
+    },
+    "privacy": {
+        "headerMain": {
+            "title": "Privacy"
+        }
+    },
+    "tutorial": {
+        "almostThere": "Almost there!",
+        "para1": "Just a few more buttons to press before we can have liftoff.",
+        "para2": "Before we can give you the most optimal experience there are still a few things to setup.",
+        "personalise": "START PERSONALIZING",
+        "howIsitUsed": "How will you use it?",
+        "howMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
+        "business": "BUSINESS",
+        "personal": "PERSONAL",
+        "custom": "CUSTOM",
+        "skip": "SKIP",
+        "next": "NEXT",
+        "interests": "What are your interests?",
+        "howOnesMachinUsed": "Click on one of these uses to tell is how you will use this machine?",
+        "games": "GAMES",
+        "news": "NEWS",
+        "entertainment": "ENTERTAINMENT",
+        "arts": "ARTS",
+        "politics": "POLITICS",
+        "sports": "SPORTS",
+        "regionalNews": "REGIONAL NEWS",
+        "technology": "TECHNOLOGY"
+    },
+    "dashboard": {
+        "headerMain": {
+            "title": "Looking energized today "
+        },
+        "offlineInfo": {
+            "title": "No internet connection detected",
+            "subtitle": "Learn more on how to solve connection issues in our",
+            "buttonText": "Get Support"
+        },
+        "feedback": {
+            "title": "Give Feedback",
+            "subtitle": "Tell us what you think about vantage.",
+            "button": "Give feedback",
+            "form": {
+                "email": "Email (optional)",
+                "comments": "Comments...",
+                "button": "Submit",
+                "messages": {
+                    "feedbackSuccess": "Thank you for your feedback !"
+                }
+            }
+        },
+        "quickSettings": {
+            "title": "Your Quick Settings",
+            "microphone": "Microphone",
+            "cameraPrivacy": "Camera Privacy",
+            "eyeCareMode": "Eye Care Mode"
+        },
+        "systemStatus": {
+            "title": "System Status",
+            "subtitle": "QUICK CATCH UP YOUR DEVICE STATUS.",
+            "memory": {
+                "title": "Memory",
+                "detail": {
+                    "notFound": "Memory not found",
+                    "of": "of"
+                }
+            },
+            "diskSpace": {
+                "title": "Disk Space",
+                "detail": {
+                    "notFound": "Disk not found",
+                    "of": "of"
+                }
+            },
+            "warranty": {
+                "title": "Warranty",
+                "detail": {
+                    "notFound": "Warranty not found",
+                    "until": "Until",
+                    "expiredOn": "Warranty expired on",
+                    "notAvailable": "Warranty not available"
+                }
+            },
+            "systemUpdate": {
+                "title": "System Update",
+                "detail": {
+                    "update": "Update"
+                }
+            }
+        }
+    },
+    "device": {
+        "myDevice": {
+            "title": "My Device",
+            "subtitle": "My device status",
+            "serial": "Serial",
+            "productNumber": "Product number",
+            "biosVersion": "Bios version",
+            "learnMore": "Learn more",
+            "freeMemory": "Free memory",
+            "systemUpdate": {
+                "title": "System update",
+                "notFound": "System update not found",
+                "detail": {
+                    "uptoDate": "Software up to date ",
+                    "updatedOn": "updated on ",
+                    "outdated": "Software outdated ",
+                    "neverRanUpdate": "never ran update"
+                }
+            },
+            "extendedWarranty": "Extend warranty",
+            "processor": {
+                "title": "Processor",
+                "notFound": "Processor not found"
+            },
+            "memory": {
+                "title": "Memory",
+                "notFound": "Memory not found",
+                "ram": "RAM"
+            },
+            "diskspace": {
+                "title": "Disk Space",
+                "notFound": "Disk not found"
+            },
+            "software": "Software up to date",
+            "updated": "Updated",
+            "outOfWarranty": "Out of warranty",
+            "expired": "Expired on",
+            "of": "of",
+            "warranty": {
+                "notFound": "Warranty not found",
+                "detail": {
+                    "title": "Extend warranty",
+                    "inWarranty": "In warranty ",
+                    "daysRemaining": "days remaining",
+                    "outOfWarranty": "Out of warranty ",
+                    "expiredOn": "Expired on",
+                    "notAvailable": "Warranty not available",
+                    "support": "Support"
+                }
+            },
+            "helpful": "Helpful Content"
+        },
+        "deviceSettings": {
+            "helpful": "Helpful Content",
+            "batteryGauge": {
+                "title": "BATTERY GAUGE",
+                "subtitle": "Battery health",
+                "hours": "hours",
+                "hour": "hour",
+                "minutes": "minutes",
+                "minute": "minute",
+                "charge": "TIME TO FULLY CHARGE",
+                "button": "SEE BATTERY DETAILS",
+                "details": {
+                    "title": "Battery Details",
+                    "primary": "Primary Battery",
+                    "secondary": "Secondary Battery",
+                    "tertiary": "Tertiary Battery",
+                    "status": "Status",
+                    "wattage": "Wattage",
+                    "barcode": "Bar-Code",
+                    "remainingPercent": "Remaining percentage",
+                    "temp": "Temperature",
+                    "frupn": "FRU part number",
+                    "remainingTime": "Remaining time",
+                    "chargeCompletionTime": "Charge completion time",
+                    "cycleCount": "Cycle count",
+                    "chemistry": "Device chemistry",
+                    "remainingCap": "Remaining capacity",
+                    "manufacturer": "Manufacturer",
+                    "designCap": "Design capacity",
+                    "fullChargeCap": "Full charge capacity",
+                    "manufDt": "Manufacture date",
+                    "designVolt": "Design voltage",
+                    "volts": "Voltage",
+                    "firstUseDt": "First use date",
+                    "firmwareVer": "Firmware version",
+                    "chargeStatusString": {
+                        "error": "ERROR",
+                        "notinstalled": "Not installed",
+                        "noactivity": "No activity",
+                        "charging": "Charging",
+                        "discharging": "Discharging",
+                        "acdischarging": "Discharging (with ac)"
+                    },
+                    "deviceChemistry": {
+                        "li-polymer": "Li-Polymer",
+                        "li-ion": "Li-Ion"
+                    }
+                },
+                "condition": {
+                    "Illegal": {
+                        "title": "This system may not support battery that",
+                        "description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
+                        "description1": "Attention:",
+                        "description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+                    },
+                    "Good": {
+                        "title": "The battery is in good Condition"
+                    },
+                    "Exhaustion": {
+                        "title": "The battery has failed due to normal",
+                        "description": "wear. The battery cannot be charged. Replace the battery."
+                    },
+                    "Bad": {
+                        "title": "A battery error has occurred.",
+                        "description": "The battery cannot be charged/discharged . Replace the battery."
+                    },
+                    "NotDetected": {
+                        "title": "No battery detected or not",
+                        "description": "plugged in battery."
+                    },
+                    "NotGood": {
+                        "title": "The battery is not in a good Condition"
+                    },
+                    "LimitedACAdapterSupport": {
+                        "title": "Limited Support AC Adapter"
+                    },
+                    "NotSupportACAdapter": {
+                        "title": "Not support AC Adapter"
+                    },
+                    "ACAdapterNotSupported": {
+                        "title": "AC adapter not supported.",
+                        "description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
+                    },
+                    "EnoughPowerACAdapter": {
+                        "title": "AC adapter cannot provide enough power",
+                        "description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+                    },
+                    "MissingDriver": {
+                        "title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
+                        "description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
+                    },
+                    "StoreLimitation": {
+                        "title": "The battery can only store",
+                        "description1": "of",
+                        "description2": "it's original full charge capacity"
+                    }
+                }
+            },
+            "power": {
+                "title": "Power",
+                "subtitle": "Power Settings",
+                "description": "This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.",
+                "jumpto": {
+                    "title": "JUMP TO SETTINGS",
+                    "battery": "Battery",
+                    "power": "Power",
+                    "cooling": "Intelligent Cooling",
+                    "other": "Other"
+                },
+                "powerSmartSettings": {
+                    "title": "Power Smart Settings",
+                    "subtitle": "INTELLIGENT COOLING",
+                    "subtitle1": "Battery & Quiet",
+                    "description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
+                    "description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
+                    "description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
+                    "readMore": "Read more.",
+                    "gotoWindows": {
+                        "title": "Go to windows settings",
+                        "modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
+                    },
+                    "intelligentCooling": {
+                        "title": "Intelligent cooling",
+                        "description": "",
+                        "tooltip": "",
+                        "optimize": "optimize system for",
+                        "apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
+                        "options": {
+                            "quiteCool3": "Cool Mode",
+                            "performance3": "High Performance",
+                            "quiteCool4": "Quiet & Cool",
+                            "performance4": "Performance",
+                            "quiteCool5": "Quiet & Cool",
+                            "performance5": "Performance"
+                        },
+                        "readMore": {
+                            "mode1": "Quiet mode",
+                            "mode2": "Balanced mode",
+                            "mode3": "Performance mode",
+                            "line1": "Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
+                            "line2": "Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
+                            "line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                        }
+                    },
+                    "nonintelligentCooling": {
+                        "options": {
+                            "intelligentCooling": "INTELLIGENT COOLING",
+                            "extremeCooling": "EXTREME PERFORMANCE",
+                            "battery&Quite": "BATTERY & QUIET"
+                        }
+                    }
+                },
+                "powerSettings": {
+                    "title": "Power Settings",
+                    "alwaysUSB": {
+                        "title": "Always on USB",
+                        "description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
+                        "checkbox": "Enable USB charging from laptop battery when computer is off."
+                    },
+                    "easyResume": {
+                        "title": "Easy Resume",
+                        "description": "Enable this feature to improve your resume time if you frequently open and close your computer's lid.",
+                        "tooltip": "This feature will improve your resume time if you frequently open and close your computer’s lid. When enabled, your computer will enter a low power mode when you close its lid, but it will resume instantly if you reopen your lid within 15 minutes of closing it. This feature also allows your notebook to attempt to finish pending activities (such as sending email or downloading a file) before the system goes into suspend."
+                    }
+                },
+                "otherSettings": {
+                    "title": "Other Settings",
+                    "vantageToolbar": {
+                        "title": "Lenovo Vantage Toolbar",
+                        "description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
+                    }
+                },
+                "batterySettings": {
+                    "title": "Battery Settings",
+                    "batteryThreshold": {
+                        "title": "Battery Charge Threshold",
+                        "description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
+                        "tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
+                        "settings": {
+                            "title1": "Threshold for Built in battery",
+                            "title2": "Threshold for Removable battery"
+                        },
+                        "popup": {
+                            "title": "Enable Battery Charge Threshold",
+                            "description1": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life.",
+                            "description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                            "enable": "ENABLE",
+                            "cancel": "CANCEL"
+                        }
+                    },
+                    "expressCharging": {
+                        "title": "Express Charging",
+                        "description": "Express Charge allows your battery to a full charge much faster than normal mode.",
+                        "tooltip": "Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
+                    },
+                    "conservationMode": {
+                        "title": "Conservation Mode",
+                        "description": "This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
+                        "tooltip": {
+                            "line1": "This function is useful to extend the lifespan of your battery when plugged.",
+                            "line2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
+                            "line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
+                        }
+                    },
+                    "airPlanePower": {
+                        "title": "Airplane Power Mode",
+                        "description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
+                    }
+                }
+            },
+            "audio": {
+                "title": "Audio",
+                "subtitle": "Audio Settings",
+                "description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
+                "audioSmartsettings": {
+                    "title": "Audio Smart settings",
+                    "subtitle": "APPLICATION-BASED SETTINGS",
+                    "description": "Automatically adjust audio settings according to different apps you are using.",
+                    "dolby": {
+                        "title": "Automatic Dolby Audio settings",
+                        "tooltip": "Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
+                        "options": {
+                            "dynamic": "DYNAMIC",
+                            "movie": "MOVIE",
+                            "music": "MUSIC",
+                            "games": "GAME",
+                            "voip": "VOICE"
+                        }
+                    },
+                    "voip": {
+                        "title": "Automatic Audio Optimization for VoIP",
+                        "tooltip": "Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality."
+                    }
+                },
+                "microphone": {
+                    "title": "Microphone",
+                    "note": {
+                        "title": "Note",
+                        "description": "Lenovo Vantage does not have permission to access your microphone. Please turn on access to your microphone for the Lenovo Vantage app."
+                    },
+                    "microphone": {
+                        "title": "Microphone",
+                        "tooltip": "You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode."
+                    },
+                    "volume": {
+                        "title": "Microphone Volume",
+                        "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
+                        "options": {
+                            "silent": "Silent",
+                            "loud": "Loud"
+                        }
+                    },
+                    "suppress": {
+                        "title": "Suppress keyboard noise",
+                        "tooltip": "Toggle this on to optimize the MIC audio by suppressing keyboard noise."
+                    },
+                    "acoustic": {
+                        "title": "Acoustic Echo Cancellation",
+                        "tooltip": "Toggle on this feature to optimize your MIC audio by reducing acoustic echo."
+                    },
+                    "optimize": {
+                        "title": "Optimize my microphone for:",
+                        "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
+                        "options": {
+                            "VoiceRecognition": "VOICE RECOGNITION",
+                            "OnlyMyVoice": "ONLY MY VOICE",
+                            "Normal": "NORMAL",
+                            "MultipleVoices": "MULTIPLE VOICES"
+                        }
+                    }
+                }
+            },
+            "displayCamera": {
+                "title": "Display & Camera",
+                "subtitle": "Display & Camera Settings",
+                "description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
+                "jumpTo": {
+                    "title": "JUMP TO SETTINGS",
+                    "shortcuts": {
+                        "display": {
+                            "title": "Display"
+                        },
+                        "camera": {
+                            "title": "Camera"
+                        }
+                    }
+                },
+                "display": {
+                    "title": "Display",
+                    "eyeCareMode": {
+                        "title": "Eye Care Mode",
+                        "checkbox": "Schedule eye care mode from sunset to sunrise",
+                        "options": {
+                            "warm": "Warm (Better for eyes)",
+                            "cold": "Cold"
+                        },
+                        "reset": "Reset temperature",
+                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
+                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "note": {
+                            "title": "Note",
+                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                        }
+                    }
+                },
+                "camera": {
+                    "title": "Camera",
+                    "note": {
+                        "title": "Note",
+                        "description": "Lenovo Vantage does not have permissions to access your camera. Please turn on access to your camera for the Lenovo Vantage app."
+                    },
+                    "url": "Go to windows privacy settings",
+                    "cameraPrivacy": {
+                        "title": "Camera privacy mode",
+                        "tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling."
+                    },
+                    "camera": {
+                        "title": "Camera",
+                        "tooltip": "Click here to reset Camera properties to default settings.",
+                        "reset": "Reset factory settings"
+                    },
+                    "brightness": "Brightness",
+                    "contrast": "Contrast",
+                    "autoExposure": "Auto Exposure",
+                    "autoFocus": "Auto focus",
+                    "notAvailable": "Camera Not Available",
+                    "camerablur": {
+                        "title": "Camera Background Blur",
+                        "caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections.",
+                        "blurMode": "Blur mode",
+                        "comicMode": "Comic mode",
+                        "sketchMode": "Sketch mode"
+                    }
+                }
+            },
+            "smartAssist": {
+                "title": "Smart Assist",
+                "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+                "jumpTo": {
+                    "title": "JUMP TO SETTINGS",
+                    "security": "Security",
+                    "screen": "Screen",
+                    "media": "Media",
+                    "voice": "Voice"
+                },
+                "intelligentSecurity": {
+                    "title": "Intelligent Security",
+                    "readMore": "Read more",
+                    "humanPresenceDetection": {
+                        "title": "User Presence Sensing",
+                        "tooltip": "Click here to reset human presence Detection settings."
+                    },
+                    "zeroTouchLogin": {
+                        "title": "Zero Touch Login",
+                        "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
+                    },
+                    "zeroTouchLock": {
+                        "title": "Zero Touch Lock",
+                        "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+                        "autoScreenLockTimer": {
+                            "title": "AUTO SCREEN LOCK TIMER",
+                            "radioButton": {
+                                "fast": "Fast",
+                                "medium": "Medium",
+                                "slow": "Slow"
+                            },
+                            "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+                        }
+                    },
+                    "distanceSensitivityAdjusting": {
+                        "title1": "Distance Sensitivity Adjusting",
+                        "title2": "AUTO DISTANCE SENSITIVITY ADJUSTING",
+                        "caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+                        "options": {
+                            "near": "Near",
+                            "far": "Far"
+                        }
+                    },
+                    "note": {
+                        "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
+                        "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
+                        "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
+                        "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
+                        "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+                    },
+                    "WindowsLink": {
+                        "goToWindowsHello": "Go to Windows Hello Settings",
+                        "screenTimeoutSettings": "Go to Screen timeout settings"
+                    }
+                },
+                "intelligentScreen": {
+                    "title": "Intelligent Screen",
+                    "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                    "autoScreenOff": {
+                        "title": "Auto screen off",
+                        "caption": "Automatically turn off display when face-down or walking.",
+                        "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
+                        "windowsLink": "Go to Power & sleep settings in Windows settings"
+                    },
+                    "keepMyDisplay": {
+                        "title": "Keep my display",
+                        "caption": "Keep my display when I am reading or browsing.",
+                        "displaySlider": {
+                            "startTime": "0 minutes",
+                            "endTime": "60 minutes"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "systemUpdates": {
+        "title": "System Updates",
+        "back": "BACK",
+        "history": "FULL HISTORY",
+        "notAvailable": "Not Available",
+        "notInstalled": "Not Installed",
+        "criticalUpdates": "Critical Update(s)",
+        "recommendedUpdates": "Recommended Update(s)",
+        "optionalUpdates": "Optional Update(s)",
+        "ignoredUpdates": "Ignored Update(s)",
+        "successInstall": "Successfully installed on",
+        "failedInstall": "Failed to installed on",
+        "at": "at",
+        "readMore": "Read more",
+        "popup": {
+            "reboot": "Reboot",
+            "shutdown": "Shut Down",
+            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
+            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
+            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
+            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+            "okayButton": "OK",
+            "cancelButton": "Cancel",
+            "rebootButton": "REBOOT NOW",
+            "dismissButton": "DISMISS",
+            "rebootPending": "Reboot pending"
+        },
+        "autoUpdateSettings": {
+            "title": "Auto update settings",
+            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "critical": {
+                "title": "Critical Updates",
+                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+            },
+            "camera": {
+                "title": "Camera",
+                "tooltip": "Click here to reset Camera properties to default settings.",
+                "reset": "Reset factory settings"
+            },
+            "recommended": {
+                "title": "Recommended Updates",
+                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+            },
+            "windows": {
+                "title": "Windows Updates",
+                "url": "Windows Settings"
+            }
+        },
+        "support": {
+            "title": "Lenovo Support website"
+        },
+        "banner": {
+            "neverChecked": "Welcome to use System Update.",
+            "title": "An up-to-date system is a healthy system.",
+            "last": "Last update was on",
+            "next": "Next updated scan is scheduled on",
+            "checkButton": "CHECK FOR UPDATES ",
+            "checking": "Checking for updates",
+            "downloading": "Downloading updates",
+            "installing": "Installing updates",
+            "percent": "% complete",
+            "cancelCheck": "Cancel check",
+            "cancelUpdates": "CANCEL UPDATES",
+            "available": "Available updates",
+            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
+            "installButton": "INSTALL ALL UPDATES",
+            "result": {
+                "success": "All Updates were installed correctly",
+                "fail": {
+                    "title": "Some updates were not installed correctly.",
+                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                }
+            },
+            "smartAssist": {
+                "title": "Smart Assist",
+                "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+                "jumpTo": {
+                    "title": "JUMP TO SETTINGS",
+                    "security": "Security",
+                    "screen": "Screen",
+                    "media": "Media",
+                    "voice": "Voice"
+                },
+                "intelligentSecurity": {
+                    "title": "Intelligent Security",
+                    "readMore": "Read more",
+                    "HumanPresenceDetection": {
+                        "title": "Human Presence Detection"
+                    },
+                    "autoIrCameraLogin": {
+                        "title": "Zero Touch Login",
+                        "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it. Auto IR camera login"
+                    },
+                    "autoScreenLock": {
+                        "title": "Auto screen lock",
+                        "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+                        "autoScreenLockTimer": {
+                            "title": "AUTO SCREEN LOCK TIMER",
+                            "radioButton": {
+                                "fast": "Fast",
+                                "medium": "Medium",
+                                "slow": "Slow"
+                            },
+                            "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+                        }
+                    },
+                    "distanceSensitivityAdjusting": {
+                        "title": "Distance sensitivity adjusting"
+                    },
+                    "note": {
+                        "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
+                        "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect, save, of leak any personal data or image.",
+                        "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
+                        "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
+                        "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+                    },
+                    "WindowsLink": {
+                        "goToWindowsHello": "Go to Windows Hello Settings",
+                        "screenTimeoutSettings": "Go to Screen timeout settings"
+                    }
+                }
+            }
+        },
+        "updateCheckbox": {
+            "rebootRequired": "Reboot required",
+            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
+            "manufacturer": "Manufacturer: ",
+            "version": "Version: ",
+            "installVersion": "Installed version: ",
+            "downloadSize": "Download size: ",
+            "diskSpaceNeeded": "Disk space needed: ",
+            "ignore": "Ignore",
+            "attend": "Attend"
+        },
+        "availableUpdates": {
+            "title": "Available updates",
+            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
+            "installAllUpdates": "Install all updates",
+            "installSuccessHeader": "All updates were installed correctly",
+            "installFailHeader": "Some updates were not installed correctly",
+            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
+            "optionalUpdates": "Optional updates",
+            "installSelectedUpdates": "Install Selected updates"
+        },
+        "installationHistory": {
+            "name": "Name",
+            "sortByDate": "Sort by Date",
+            "packageSize": "Package Size:",
+            "releaseDate": "Release Date:",
+            "showAll": "Show All",
+            "noInstallationHistory": "No installation history available"
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",
         "ecosystemBlockTitle": "Protect your device ecosystem",
         "overviewBlockTitle": "Your Device Security Overview",
         "thisDevice": "This device",
-		"allDevices": "All Devices",
-		"protected": "Protected",
-		"notProtected": "Not Protected"
+        "allDevices": "All Devices",
+        "protected": "Protected",
+        "notProtected": "Not Protected"
     },
     "support": {
         "common": {
@@ -97,6 +906,11 @@
             "ourWebsite": "Nettstedet vårt",
             "aboutYourDevice": "Om enheten din",
             "copyright": "© 2002–2019 Lenovo. Med enerett."
+        },
+        "quickAccess": {
+            "categories": "Categories",
+            "categoriesDesc": "Find helpful information in our articles",
+            "seeArticles": "SEE ARTICLES"
         }
     },
     "security": {
@@ -131,8 +945,7 @@
                 "poweredBy": "Leveres av McAfee",
                 "privacyTerms": "Les mer i <tag>retningslinjene for personvern</tag> og <tag>vilkår for bruk</tag>",
                 "mcafeePremium": "McAfee Premium-beskyttelse",
-                "protectedBy": "Du er for øyeblikket beskyttet av ",
-                "betterProtected": ".Du kunne imidlertid vært bedre beskyttet med McAfee LiveSafe",
+                "protectedBy": "Du er for øyeblikket beskyttet av {{protectedName}}. Du kunne imidlertid vært bedre beskyttet med McAfee LiveSafe.",
                 "virusScan": "VIRUSSØK",
                 "firewall": "BRANNMUR",
                 "disabled": "DEAKTIVERT",
@@ -196,7 +1009,9 @@
             },
             "threatlocator": {
                 "describe": "Bruk trusseldetektoren til å finne ut hvor sikre nettverkene rundt deg er.",
-                "button": "Kontroller trussel"
+                "button": "Kontroller trussel",
+                "connectionError": "Tilkoblingsfeil",
+                "tryAgain": "Vi finner ikke enheten din på grunn av manglende nettverkstilgang. Koble til Internett, og prøv på nytt."
             },
             "locationmodal": {
                 "title": "Aktiver posisjonstjenester",
@@ -258,6 +1073,14 @@
             "title": "VPN-sikkerhet",
             "header": "SurfEasy VPN",
             "whatIsSufEasy": "SurfEasy VPN krypterer informasjonen du sender og mottar, slik at du sikkert og privat og uten problemer kan bruk PC, Mac®, smarttelefon eller nettbrett på en internettforbindelse.",
+            "whatCanSufEasy1": "A virtual private network provider that protects you while you are online. Without a VPN, your computer may be more vulnerable to attackers and identity theft. The VPN runs silently in the background and provides security and privacy protection.",
+            "startUseSufEasy4": "SurfEasy users can enjoy 250 MB of free traffic every 30 days! Follow the steps on the &quot;Rewards&quot; tab of the SurfEasy app to get more traffic.",
+            "howToGetData": "How to get free traffic:",
+            "howToGetData1": "Confirm email to win +250 MB traffic",
+            "howToGetData2": "Add a second device to win +250 MB of traffic",
+            "howToGetData3": "Refer a friend and win +500 MB of traffic",
+            "howToGetData4": "Like SurfEasy on Facebook, earn +100 MB of traffic,",
+            "howToGetData5": "Follow SurfEasy on Twitter and win +100 MB of traffic",
             "helpKeep": "Bidra til å holde nettaktiviteten din sikker og privat med SurfEasy VPN.",
             "getSufEasy": "Få tak i SurfEasy",
             "openSufEasy": "Åpne SurfEasy",
@@ -270,7 +1093,7 @@
             "howToUseSufEasy": "Slik bruker du SurfEasy VPN",
             "whatCanSufEasy2": "Beskytt privatlivet ditt og aktiver SurfEasy VPN når du kobler til et felles Wi-Fi-tilknytningspunkt. Med et Lenovo Starter VPN-abonnement kan du utføre belønningsaktiviteter for å få mer databåndbreddebeskyttelse. Oppgrader for å beskytte opptil 5 smarttelefoner, nettbrett og maskiner med ubegrenset båndbredde.",
             "getStarted": "Slå på SurfEasy VPN:",
-            "getStarted1": "Klikk på \"Åpne SurfEasy\"-knappen ovenfor for å starte SurfEasy VPN.",
+            "getStarted1": "Klikk på knappen \"Åpne SurfEasy\" ovenfor for å starte SurfEasy VPN.",
             "getStarted2": "Slå på VPN og vent et lite øyeblikk på bekreftelse av en sikker tilkobling.",
             "getStarted3": "Endre region eller plassering hvis du ønsker, og få sikkert og privat nettverk.",
             "poweredBySurfEasy": "Leveres av SurfEasy",
@@ -326,6 +1149,410 @@
             "authentication": "Autentisering med Windows Hello",
             "traditional": "Tradisjonelle passord kan bli stjålet og brukt til å få tilgang til kontoen din fra overalt i verden. Sikrere og mer praktisk. Windows Hello er neste generasjon passord. Bruk fingeravtrykksleseren i stedet for usikre passord til å logge deg på.",
             "howToStart": "Hvordan begynner jeg å bruke Windows Hello?"
+        }
+    },
+    "lenovoId": {
+        "login": "Login",
+        "logout": "Logout",
+        "unlockExclusives": "Unlock Exclusives",
+        "user": "User",
+        "welcomeText": "Looking energized today {{firstName}}!",
+        "welcomeTextWithoutUserName": "Looking energized today!",
+        "helloUser": "Hello, {{firstName}}!",
+        "ssoErrorTitle": "Error",
+        "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
+        "ssoErrorCommonEx": "Unexpected error. Please try again.",
+        "ssoErrorTimeStampIncorrect": "Oops, looks like your PC time is incorrect. Please correct the time on your PC and try again.",
+        "ssoErrorNetworkDisconnected": "Oops! Connection failed! Please check your Internet connection and try again.",
+        "ssoErrorCommunicating": "Network error. Please check your connection and try again.",
+        "ssoErrorAccountPluginNotExist": "Plug-in missing. We will restore the plug-in in the background automatically if you are connected to the internet. This may take some time, please try again later."
+    },
+    "faq": {
+        "footer": {
+            "title": "Not finding what you are looking for?",
+            "description": "NEED ADDITIONAL SUPPORT? DON’T HESITATE TO CONTACT US VIA:",
+            "body": "Lenovo Community",
+            "button": "GO TO FORUM"
+        },
+        "question1": {
+            "title": "Back up and restore your files",
+            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        Back up and restore your files\n    </div>\n    <hr />\n    <div style='margin-bottom:7rem;'>\n        It's always good to have a backup. Keep copies of your files on another drive in case something happens to the\n        originals.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Set up your backup\n    </div>\n    <hr />\n    <div class='mb-5'>\n        Select the <span style='font-weight:bold'>Start</span> button, select\n        <span style='font-weight:bold'>Settings</span> >\n        <span style='font-weight:bold'>Update & security</span> >\n        <span style='font-weight:bold'>Backup</span> > <span style='font-weight:bold'>Add a drive</span> , and then\n        choose an external drive or network location for your backups.\n    </div>\n    <div class='mb-5'>\n        <img src='./../../../../assets/images/qa/1.1.png' />\n    </div>\n    <div class='mb-5'>\n        All set. Every hour, we'll back up everything in your user folder (C:\\Users\\username). To change which files\n        get backed up or how often backups happen, go to\n        <span style='font-weight:bold;'>More options</span>.\n    </div>\n    <div style='font-size:3rem;font-weight:bold;'>\n        Restore your files\n    </div>\n    <div class='mb-5'>\n        If you're missing an important file or folder, here's how to get it back:\n    </div>\n    <div>\n\n        <div class='mb-3'>1. Type <span style='font-weight:bold;'>Restore files</span>\n            in the search box on the taskbar, and then select\n            <span class='font-weight:bold'> Restore your files with File History</span>.</div>\n        <div class='mb-3'>2. Look for the file you need, then use the arrows to see all its versions</div>\n        <div class='mb-3'>3. When you find the version you want, select\n            <span style='font-weight:bold'>Restore</span>\n            to save it in its original location. To save it in a different place, press and hold (or right-click)\n            <span style='font-weight:bold'>Restore</span>, select <span style='font-weight:bold'>Restore to</span>, and\n            then choose a new location.</div>\n\n    </div>\n</div>",
+            "para1": {
+                "line1": "It's always good to have a backup.",
+                "line2": "Keep copies of your files on another drive in case something happens to the originals."
+            },
+            "heading1": "Set up your backup",
+            "para2": {
+                "span1": "Select the",
+                "span2": "Start",
+                "span3": "button, select",
+                "span4": "Settings",
+                "span5": "Update & security",
+                "span6": "Backup",
+                "span7": "Add a drive",
+                "span8": ", and then choose an external drive or network location for your backups."
+            },
+            "para3": {
+                "span1": "All set.",
+                "span2": "Every hour, we'll back up everything in your user folder (C:\\Users\\username).",
+                "span3": "To change which files get backed up or how often backups happen, go to",
+                "span4": "More options."
+            },
+            "heading2": "Restore your files",
+            "para4": "If you're missing an important file or folder, here's how to get it back:",
+            "para5": {
+                "span1": "1. Type",
+                "span2": "Restore files",
+                "span3": "in the search box on the taskbar, and then select",
+                "span4": "Restore your files with File History.",
+                "span5": "2. Look for the file you need, then use the arrows to see all its versions",
+                "span6": "3. When you find the version you want, select",
+                "span7": "Restore",
+                "span8": "to save it in its original location. To save it in a different place, press and hold (or right-click)",
+                "span9": "Restore",
+                "span10": ", select",
+                "span11": "Restore to",
+                "span12": "and then choose a new location."
+            }
+        },
+        "question2": {
+            "title": "How to refresh your PC",
+            "description": "<div>\n    <div style='font-size:4rem;font-weight:bold;'>\n        How to refresh your PC\n    </div>\n    <hr>\n    <div style='font-size:2.5rem;font-weight:bold;padding:5px 0;'>\n        Symptom\n    </div>\n    <div style='padding:5px 0;'>\n        If your PC isn't performing as well as it once did, and you don't know why,\n        you can refresh your PC without deleting any of your personal files or\n        changing your settings. Windows can “refresh” your PC so it’s more like a\n        fresh install without deleting your personal files.\n    </div>\n    <div style='padding:5px 0;'>\n        Refresh your PC, Here is what will happen: your files and personalized\n        settings won’t change\n    </div>\n    <div style='padding:5px 0;'>\n        <ul>\n            <li>Your PC settings will be changed back to its defaults</li>\n            <li>Apps from windows store will be kept</li>\n            <li>Apps you installed from disc or website will be removed</li>\n            <li>A list of removed files will be saved on your desktop</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Affected Brands\n    </div>\n\n    <div>\n        <ul>\n            <li>All Desktop and Laptops</li>\n\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Operation System\n    </div>\n\n    <div>\n        <ul>\n            <li>Windows 8, 8.1 & 10</li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;padding:10px 0;'>\n        Solution\n    </div>\n\n    <div>\n        <ul class='list-unstyled'>\n            <li>\n                <span style='text-decoration: underline;padding:10px 0;font-weight: bold'>Windows 8/8.1</span>\n                <ol>\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Settings </span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Tap or click <span style='font-weight:bold;'> Update and recovery</span>\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        <div>Tap or click <span style='font-weight:bold;'> Recovery</span></div>\n                        <div style='padding:5px 0'>Under Refresh your PC without affecting your files, tap or click\n                            <span style='font-weight:bold;'> Get started.</span></div>\n                        <div><img src='./../../../../assets/images/qa/2.1.png' /></div>\n\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Next'</span>.\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        Click <span style='font-weight:bold;'> 'Refresh' </span>to start the refresh process.\n                    </li>\n                    <li style='padding:5px 0;'>\n                        Once the refresh process is done, you can find a Removed Apps list on the desktop\n                    </li>\n\n                    <li style='padding:5px 0;'>\n                        You can find the removed apps while refreshing your system\n                    </li>\n                </ol>\n            </li>\n            <li style='padding:10px 0;'>\n                <span style='text-decoration: underline;font-weight: bold'>Windows 10</span>\n                <ol>\n                    <li style='padding:5px 0;'> Search for <span style='font-weight:bold;'> refresh </span>in the search\n                        tool available in the Start menu,</li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on <span style='font-weight:bold;'> 'Refresh your PC without affecting your\n                                files'</span> in the search results as shown below.</div>\n                        <div><img src='./../../../../assets/images/qa/2.2.jpg' /></div>\n                    </li>\n                    <li style='padding:5px 0;'>\n                        <div>Click on the\n                            <span style='font-weight:bold;'> Get started </span>\n                            button just below the heading<span style='font-weight:bold;'> 'Refresh your PC without\n                                affecting your files'</span> to start refreshing your Windows 10 PC.</div>\n                        <div><img src='./../../../../assets/images/qa/2.3.jpg' /></div>\n                    </li>\n                </ol>\n            </li>\n        </ul>\n    </div>\n\n    <div style='font-size:2.5rem;font-weight:bold;'>\n        Additional Information\n    </div>\n\n    <div>\n        In most cases, once you start to refresh your PC, it’ll finish on its own.\n        However, if Windows needs missing files, you’ll be asked to insert recovery\n        media, which is typically a DVD disc or thumb drive. If that happens, what\n        you’ll need depends on your PC.\n    </div>\n    <div style='padding:10px 0'>\n        If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use\n        that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact\n        Microsoft Support.\n    </div>\n\n</div>",
+            "heading1": "Symptom",
+            "para1": {
+                "span1": "If your PC isn't performing as well as it once did, and you don't know why, you can refresh your PC without deleting any of your personal files or changing your settings.",
+                "span2": "Windows can “refresh” your PC so it’s more like a fresh install without deleting your personal files."
+            },
+            "para2": "Refresh your PC, Here is what will happen: your files and personalized settings won’t change",
+            "para3": {
+                "span1": "Your PC settings will be changed back to its defaults",
+                "span2": "Apps from windows store will be kept",
+                "span3": "Apps you installed from disc or website will be removed",
+                "span4": "A list of removed files will be saved on your desktop"
+            },
+            "heading2": "Affected Brands",
+            "para4": "All Desktop and Laptops",
+            "heading3": "Operation System",
+            "para5": "Windows 8, 8.1 & 10",
+            "heading4": "Solution",
+            "para6": "Windows 8/8.1",
+            "para7": {
+                "span1": {
+                    "line1": "Tap or click",
+                    "line2": "Settings "
+                },
+                "span2": {
+                    "line1": "Tap or click",
+                    "line2": "Update and recovery"
+                },
+                "span3": {
+                    "line1": "Tap or click",
+                    "line2": "Recovery"
+                },
+                "span4": {
+                    "line1": "Under Refresh your PC without affecting your files, tap or click",
+                    "line2": "Get started."
+                },
+                "span5": {
+                    "line1": "Click",
+                    "line2": "\"Next\"."
+                },
+                "span6": {
+                    "line1": "Click",
+                    "line2": "\"Refresh\"",
+                    "line3": "to start the refresh process."
+                },
+                "span7": "Once the refresh process is done, you can find a Removed Apps list on the desktop",
+                "span8": "You can find the removed apps while refreshing your system"
+            },
+            "para8": "Windows 10",
+            "para9": {
+                "span1": {
+                    "line1": "Search for",
+                    "line2": "refresh",
+                    "line3": "in the search tool available in the Start menu"
+                },
+                "span2": {
+                    "line1": "Click on",
+                    "line2": "\"Refresh your PC without affecting your files\"",
+                    "line3": " in the search results as shown below."
+                },
+                "span3": {
+                    "line1": "Click on the",
+                    "line2": "Get started",
+                    "line3": "button just below the heading",
+                    "line4": "\"Refresh your PC without affecting your files\"",
+                    "line5": "to start refreshing your Windows 10 PC."
+                }
+            },
+            "header5": "Additional Information",
+            "para10": "In most cases, once you start to refresh your PC, it’ll finish on its own. However, if Windows needs missing files, you’ll be asked to insert recovery media, which is typically a DVD disc or thumb drive. If that happens, what you’ll need depends on your PC.",
+            "para11": "If you upgraded your PC to Windows 8.1 or Windows RT 8.1 with a DVD, use that disc. If you don’t have Windows 8.1 or Windows RT 8.1 media, contact Microsoft Support."
+        },
+        "question3": {
+            "title": "How to know your machine's CPU",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    How to know your machine's CPU\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information.\n    The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit\n    system.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n<p>The above symptom is associated with, but not limited to, the following systems:</p>\n<ul>\n    <li>All Desktop and Laptops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operating System</h3>\n<ul>\n    <li>Windows 7 , 8 , 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p><strong><u>Windows 7 or Vista</u></strong></p>\n<ol>\n    <li>Open System by clicking the <strong>Start button </strong>Picture of the <strong>Start button,</strong>\n        right-clicking Computer, and then clicking Properties  </li>\n    <li>Under System, you can view the system type.</li>\n</ol>\n<p><strong><u>Windows 8 and Windows 10</u></strong></p>\n<p><strong>Method 1:</strong> View the System window in Control Panel</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then click\n        <strong>Search.</strong></li>\n    <li>Type <strong>system</strong> in the search box, and then tap or click <strong>Settings.</strong></li>\n    <li>Tap or click <strong>System</strong></li>\n    <li>If you are running a 64-bit version of Windows 8, <strong>64-bit Operating System</strong>\n        is displayed in the System type field under the System heading.\n        If you are running a 32<strong>-bit version of Windows</strong> <strong>8,</strong>\n        <strong>32-bit Operating </strong>System is displayed in the System type field under the System heading.<br />\n         </li>\n</ol>\n<p><strong>Method 2</strong>: View the System Information window</p>\n<ol>\n    <li>Swipe in from the right edge of the screen, and then tap <strong>Search</strong>.\n        Or, if you are using a mouse, point to the lower-right corner of the screen, and then\n        click <strong>Search.</strong></li>\n    <li>In the search box, type <strong>system information</strong></li>\n    <li>Tap or click<strong> System</strong>, tap or click <strong>System Information,</strong> and then\n        click <strong>System Summary.</strong></li>\n    <li>If you are running a <strong>64-bit </strong>version of Windows 8<strong>, </strong>\n        x64-based PC is displayed in the <strong>System type</strong> field under the \n        Item heading. <br /> <br /> If you are running a<strong> 32-bit</strong>\n        version of Windows 8, x86-based PC is displayed in the <strong>System type</strong> field\n        under the Item heading.  </li>\n</ol>\n<p> </p>",
+            "heading1": "Symptom",
+            "para1": "The terms 32-bit and 64-bit refer to the way a computer's processor (also called a CPU), handles information. The 64-bit version of Windows handles large amounts of random access memory (RAM) more effectively than a 32-bit system.",
+            "heading2": "Affected Brands",
+            "para2": "The above symptom is associated with, but not limited to, the following systems:",
+            "para3": "All Desktop and Laptops",
+            "heading3": "Operating System",
+            "para4": "Windows 7, 8, 10",
+            "heading4": "Solution",
+            "para5": "Windows 7 or Vista",
+            "para6": {
+                "span1": {
+                    "line1": "Open System by clicking the",
+                    "line2": "Start button",
+                    "line3": "Picture of the Start button, right-clicking Computer, and then clicking Properties"
+                },
+                "span2": "Under System, you can view the system type."
+            },
+            "para7": "Windows 8 and Windows 10",
+            "para8": {
+                "span1": {
+                    "line1": "Method 1:",
+                    "line2": "View the System window in Control Panel"
+                },
+                "span2": {
+                    "line1": "Swipe in from the right edge of the screen, and then tap",
+                    "line2": "Search.",
+                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
+                    "line4": "Search."
+                },
+                "span3": {
+                    "line1": "Type",
+                    "line2": "system",
+                    "line3": "in the search box, and then tap or click",
+                    "line4": "Settings."
+                },
+                "span4": {
+                    "line1": "Tap or click",
+                    "line2": "System"
+                },
+                "span5": {
+                    "line1": "If you are running a 64-bit version of Windows 8,",
+                    "line2": "64-bit Operating System",
+                    "line3": "is displayed in the System type field under the System heading.",
+                    "line4": "If you are running a 32",
+                    "line5": "-bit version of Windows 8, 32-bit Operating",
+                    "line6": "System is displayed in the System type field under the System heading."
+                },
+                "span6": {
+                    "line1": "Method 2:",
+                    "line2": "View the System Information window"
+                },
+                "span7": {
+                    "line1": "Swipe in from the right edge of the screen, and then tap",
+                    "line2": "Search.",
+                    "line3": "Or, if you are using a mouse, point to the lower-right corner of the screen, and then click",
+                    "line4": "Search."
+                },
+                "span8": {
+                    "line1": "In the search box, type",
+                    "line2": "system information"
+                },
+                "span9": {
+                    "line1": "Tap or click",
+                    "line2": "System",
+                    "line3": ", tap or click",
+                    "line4": "System Information,",
+                    "line5": "and then click",
+                    "line6": "System Summary."
+                },
+                "span10": {
+                    "line1": "If you are running a",
+                    "line2": "64",
+                    "line3": "bit version of Windows 8, 32-bit Operating,",
+                    "line4": "x64-based PC is displayed in the",
+                    "line5": "System type",
+                    "line6": "field under the Item heading."
+                }
+            },
+            "para9": {
+                "line1": "If you are running a",
+                "line2": "32-bit",
+                "line3": "version of Windows 8,x86-based PC is displayed in the",
+                "line4": "System type",
+                "line5": "field under the Item heading."
+            }
+        },
+        "question4": {
+            "title": "Check your machine's battery use",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Check your machine's battery use\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Symptom</h3>\n<p>Windows 10 includes a new &ldquo;<strong>Battery Use&rdquo;</strong> \n    screen that shows you what&rsquo;s draining your laptop&rsquo;s juice.\n    That means it&rsquo;ll tell you exactly what apps&ndash;both desktop and Windows 10 &ldquo;universal&rdquo;\n    apps&ndash;are using too much power.</p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Brands</h3>\n\n<ul>\n    <li>Lenovo laptops, desktops</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Affected Systems</h3>\n<ul>\n    <li>All</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Operationg System</h3>\n<ul>\n    <li>Window 10</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Solution</h3>\n<p>This feature is new in Windows 10, we need to find this feature first as it is not stored in your\n    traditional <strong>control panel </strong>view, this feature is located in the\n    new <strong>&ldquo;Settings&rdquo;</strong> app</p>\n<p><br /> </p>\n<p>\n    <h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>A. Find the Battery Use Screen</h3>\n</p>\n<p>1. Click or Tap the <strong>&ldquo;Settings</strong>&rdquo; option from the start menu</p>\n<p>2. In <strong>Settings </strong>\n    select <strong>&ldquo;System&rdquo;</strong>and then select <strong>&ldquo;Battery saver.&rdquo;<br />\n        <br /> </strong> <strong><br /> <br /> </strong></p>\n<p><img src='./../../../assets/images/qa/4.1.jpg' /></p>\n<p>3. Click or tap the <strong>&ldquo;Battery use&rdquo;</strong> link under this heading to see more details. </p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>B. Analyze Your Power Usage</h3>\n<p>4 You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last\n    from last week</p>\n<p>5 <strong>&ldquo;System,&rdquo;</strong> &ldquo;<strong>Display,</strong>&rdquo; and &ldquo;\n    <strong>Wi-Fi&rdquo;</strong> percentages. This shows how much battery power has been used by system processes,\n    the display,</p>\n<p>6 The <strong>&ldquo;In use&rdquo;</strong> and <strong>&ldquo;Background&rdquo;</strong>\n     options show how much power is used by applications while you&rsquo;re using them, compared to applications\n    running in the background.</p>\n<p>7 If apps are using power in the background, you can click or tap the <strong>\n        &ldquo;Change background app settings&rdquo; </strong>link and configure apps to not run in the background.\n    This only works for universal Windows 10 apps.</p>\n<p>8 Scroll down further and you will see a list of applications, this is considered as the most useful section of this\n    feature.\n    It will display a list of the apps have used battery power in that period, and show you what percentage of your\n    battery power each app has used</p>\n<p><img src='./../../../assets/images/qa/4.2.jpg' /></p>\n<p> </p>",
+            "heading1": "Symptom",
+            "para1": {
+                "span1": "Windows 10 includes a new",
+                "span2": "“Battery Use”",
+                "span3": "screen that shows you what’s draining your laptop’s juice. That means it’ll tell you exactly what apps–both desktop and Windows 10 “universal” apps–are using too much power."
+            },
+            "heading2": "Affected Brands",
+            "para2": "Lenovo laptops, desktops",
+            "heading3": "Affected Systems",
+            "para3": "All",
+            "heading4": "Operating System",
+            "para4": "Windows 10",
+            "heading5": "Solution",
+            "para5": {
+                "line1": "This feature is new in Windows 10, we need to find this feature first as it is not stored in your traditional",
+                "line2": "control panel",
+                "line3": "view, this feature is located in the new",
+                "line4": "“Settings”",
+                "line5": "app"
+            },
+            "para6": {
+                "span1": "A. Find the Battery Use Screen",
+                "span2": {
+                    "line1": "1. Click or Tap the",
+                    "line2": "“Settings”",
+                    "line3": "option from the start menu"
+                },
+                "span3": {
+                    "line1": "2. In",
+                    "line2": "Settings",
+                    "line3": "select",
+                    "line4": "“System”",
+                    "line5": "and then select",
+                    "line6": "“Battery saver.”"
+                },
+                "span4": {
+                    "line1": "3. Click or tap the",
+                    "line2": "“Battery use”",
+                    "line3": "link under this heading to see more details."
+                },
+                "span5": "B. Analyze Your Power Usage",
+                "span6": "4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
+                "span7": {
+                    "line1": "5.",
+                    "line2": "“System”,",
+                    "line3": "“Display”,",
+                    "line4": "and",
+                    "line5": "“Wi-Fi”",
+                    "line6": "percentages. This shows how much battery power has been used by system processes, the display,"
+                },
+                "span8": {
+                    "line1": "6. The",
+                    "line2": "“In use”",
+                    "line3": "and",
+                    "line4": "“Background”",
+                    "line5": "options show how much power is used by applications while you’re using them, compared to applications running in the background."
+                },
+                "span9": {
+                    "line1": "7. If apps are using power in the background, you can click or tap the",
+                    "line2": "“Change background app settings”",
+                    "line3": "link and configure apps to not run in the background. This only works for universal Windows 10 apps."
+                },
+                "span10": "8. Scroll down further and you will see a list of applications, this is considered as the most useful section of this feature. It will display a list of the apps have used battery power in that period, and show you what percentage of your battery power each app has used."
+            }
+        },
+        "question5": {
+            "title": "Use your PC like a tablet",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Use your PC like a tablet\n</div>\n<hr>\n<p>Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use tablet mode</h3>\n<p>To turn on tablet mode, select <strong>action center</strong> on the taskbar, then select <strong>Tablet\n        mode</strong> .</p>\n<p> </p>\n<p><img src='./../../../assets/images/qa/5.1.jpg' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</h3>\n<p>To find out if your device can automatically turn on tablet mode, search for your device \n    on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and\n    how the device was set up by the manufacturer. </p>\n<p> </p>\n<p>In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the\n    screen.</p>\n<p> </p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Tip</h3>\n<p>The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.\n    Select the <strong>Start </strong>button, select <strong>Settings </strong>>\n    <strong>System </strong>> <strong>\n        Tablet mode </strong>, then turn on <strong>Automatically hide the taskbar in tablet mode</strong>.\n    To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there.</p>\n\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Use two apps simultaneously</h3>\n<p>To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and\n    you'll see any open apps next to it.</p>\n<p>In this view, you can also:</p>\n<ul>\n    <li>Use the shared edge between two snapped apps to resize both apps at the same time.</li>\n    <li>Open a new app from task view&mdash;select <strong>Task view</strong> on the taskbar, select an app, then\n        drag it to one side to snap it into your divided screen.</li>\n    <li>Use the back button on the taskbar to go back in an app, or to open an app that you were using before.</li>\n</ul>\n<p> </p>",
+            "para1": "Tablet mode makes Windows more intuitive and easier to use when you have a touchscreen device.",
+            "heading1": "Use tablet mode",
+            "para2": {
+                "span1": "To turn on tablet mode, select",
+                "span2": "action center",
+                "span3": "on the taskbar, then select",
+                "span4": "Tablet mode."
+            },
+            "heading2": "Note",
+            "para3": "To find out if your device can automatically turn on tablet mode, search for your device on the manufacturer's website. Support for this feature depends on the hardware, the driver that's installed, and how the device was set up by the manufacturer.",
+            "para4": "In tablet mode, apps open full screen, giving you more space to work. To close an app, drag it to the bottom of the screen.",
+            "heading3": "Tip",
+            "para5": {
+                "span1": "The taskbar is available when your PC is in tablet mode, but you can hide it if you want more room on the screen.",
+                "span2": "Select the",
+                "span3": "Start",
+                "span4": "button, select",
+                "span5": " Settings",
+                "span6": "System",
+                "span7": "Tablet mode",
+                "span8": ", then turn on",
+                "span9": "Automatically hide the taskbar in tablet mode.",
+                "span10": "To see the hidden taskbar, swipe up from the bottom of the screen, or use your mouse to hover there."
+            },
+            "heading4": "Use two apps simultaneously",
+            "para6": "To use two apps side by side in tablet mode, drag an open app down and to the side. You'll see where it'll snap, and you'll see any open apps next to it.",
+            "para7": "In this view, you can also:",
+            "para8": {
+                "span1": "Use the shared edge between two snapped apps to resize both apps at the same time.",
+                "span2": {
+                    "line1": "Open a new app from task view—select",
+                    "line2": "Task view",
+                    "line3": "on the taskbar, select an app, then drag it to one side to snap it into your divided screen."
+                },
+                "span3": "Use the back button on the taskbar to go back in an app, or to open an app that you were using before."
+            }
+        },
+        "question6": {
+            "title": "Get to know Cortona, your personal assistant",
+            "description": "<div style='font-size:4rem;font-weight:bold;'>\n    Get to know Cortana, your personal assistant\n</div>\n<hr>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>What is Cortana?</h3>\n<hr />\n<p>Cortana is your digital agent. She'll help you get things done.</p>\n<p>The more you use Cortana, the more personalized your experience will be.</p>\n<p>To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing\n    works for all types of PCs, but you need a mic to talk.)</p>\n<p>If you&rsquo;re not sure what to say, you&rsquo;ll see suggestions on your lock screen, and in Cortana home when you\n    select the search box on the taskbar.</p>\n<p><img src='./../../../assets/images/qa/6.1.png' /></p>\n<ol>\n    <li>Home 2. Notebook 3. Settings 4. Feedback</li>\n</ol>\n<p>Here are some things Cortana can do for you:</p>\n<ul>\n    <li>Give you reminders based on time, places, or people.</li>\n    <li>Track packages, teams, interests, and flights.</li>\n    <li>Send emails and texts.</li>\n    <li>Manage your calendar and keep you up to date.</li>\n    <li>Create and manage lists.</li>\n    <li>Chit chat and play games.</li>\n    <li>Find facts, files, places, and info.</li>\n    <li>Open any app on your system.</li>\n</ul>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Try this: Set a reminder</h3>\n<hr />\n\n<p>One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or\n    even people.</p>\n<p>For example, type or say, 'Remind me to congratulate Tanya the next time she calls.'</p>\n<p>The reminder will appear when you get a call from Tanya.</p>\n<p>Extra bonus&mdash;if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync\n    notifications between your PC and phone.</p>\n<p><img src='./../../../assets/images/qa/6.2.png' /></p>\n<h3 style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Hey Cortana?</h3>\n<hr />\n<p>Set Cortana to hear you anytime you say\n    'Hey Cortana.' Select the search box on the taskbar to open Cortana home.\n    Then select <strong>Settings</strong>  and turn on <strong>Let Cortana respond to 'Hey\n        Cortana.'</strong></p>\n<p><img src='./../../../assets/images/qa/6.3.png' /></p>\n<p style='font-weight:bold;font-size:2.5rem;padding:10px 0'>Note</p>\n<p>Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere.\n</p>\n<p> </p>",
+            "heading1": "What is Cortana?",
+            "para1": "Cortana is your digital agent. She'll help you get things done.",
+            "para2": "The more you use Cortana, the more personalized your experience will be.",
+            "para3": "To get started, type a question in the search box, or select the microphone  and talk to Cortana. (Typing works for all types of PCs, but you need a mic to talk.)",
+            "para4": "If you’re not sure what to say, you’ll see suggestions on your lock screen, and in Cortana home when you select the search box on the taskbar.",
+            "para5": " Home 2. Notebook 3. Settings 4. Feedback",
+            "para6": "Here are some things Cortana can do for you:",
+            "bulletset1": {
+                "span1": "Give you reminders based on time, places, or people.",
+                "span2": "Track packages, teams, interests, and flights.",
+                "span3": "Send emails and texts.",
+                "span4": "Manage your calendar and keep you up to date.",
+                "span5": "Create and manage lists.",
+                "span6": "Chit chat and play games.",
+                "span7": "Find facts, files, places, and info.",
+                "span8": "Open any app on your system."
+            },
+            "heading2": "Try this: Set a reminder",
+            "para7": "One of the things Cortana can do is to give you reminders. She can remind you to do things based on time, places, or even people.",
+            "para8": "For example, type or say, “Remind me to congratulate Tanya the next time she calls.”",
+            "para9": "The reminder will appear when you get a call from Tanya.",
+            "para10": "Extra bonus—if you have a Windows phone or Cortana for iPhone or Android, you can set Cortana to sync notifications between your PC and phone.",
+            "heading3": "Hey Cortana?",
+            "para11": {
+                "span1": "Set Cortana to hear you anytime you say “Hey Cortana.” Select the search box on the taskbar to open Cortana home.",
+                "span2": {
+                    "line1": "Then select",
+                    "line2": "Settings",
+                    "line3": "and turn on",
+                    "line4": "Let Cortana respond to “Hey Cortana.”"
+                }
+            },
+            "para12": "Note",
+            "para13": "Cortana is only available in certain countries/regions, and some Cortana features might not be available everywhere."
+        }
+    },
+    "welcometutorial": {
+        "description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
+        "bullets1": "Optimize your system with lorem ipsum dolor set",
+        "bullets2": "Security Advisor makes managing your security easy ",
+        "bullets3": "Automatic updates keep your device in tip top shape",
+        "subtitle1": "How will you be using your device?",
+        "subtitle2": "Tell us about your interests",
+        "personal": "Personal Use",
+        "business": "Business Use",
+        "custom": "Custom",
+        "experience": "Experience",
+        "privacytitle": "Help us improve the quality of the app by allowing anonymous collection of usage statistics.",
+        "moreInterest": "+ more interests",
+        "title1": "Welcome to",
+        "title2": "Lenovo",
+        "title3": "Vantage",
+        "privacypolicy": "Lenovo's Privacy Policy",
+        "interests": {
+            "games": "Games",
+            "news": "News",
+            "entertainment": "Entertainment",
+            "technology": "Technology",
+            "sports": "Sports",
+            "arts": "Arts",
+            "regionalNews": "Regional News",
+            "politics": "Politics",
+            "music": "Music",
+            "science": "Science"
         }
     }
 }

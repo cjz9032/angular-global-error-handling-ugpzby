@@ -7,21 +7,26 @@
 		font-size: 7rem;
 		line-height: 8.2rem;
 	}
-	ul{
-		li{
+
+	ul {
+		li {
 			list-style-type: none;
 		}
 	}
+
 	.caption {
 		max-width: 60rem;
 		padding-left: 2rem;
-		p{
+
+		p {
 			font-size: 1.5rem;
 			color: $main_darker;
 		}
-		a{
+
+		a {
 			text-decoration: underline;
-			&:hover{
+
+			&:hover {
 				text-decoration: underline;
 			}
 		}
@@ -29,48 +34,117 @@
 
 	.feature-note {
 		background-color: $shade_lightest;
-    	border: 1px solid $shade_lighter;
-		p{
+		border: 1px solid $shade_lighter;
+
+		p {
 			font-size: 1.5rem;
 			color: $main_darker;
 		}
-		a{
+
+		a {
 			text-decoration: underline;
-			&:hover{
+
+			&:hover {
 				text-decoration: underline;
 			}
 		}
-		&.screen-lock-note{
+
+		&.screen-lock-note {
 			max-width: 64rem;
 		}
+
+		&.auto-screen-off-note {
+			p {
+				color: $alt;
+			}
+
+			span {
+				font-size: 1.5rem;
+			}
+
+		}
 	}
-	.blur{
+
+	.blur {
 		&.disabled {
 			opacity: 0.65;
 		}
 	}
 
-	.auto-screen-lock-timer{
-		h3{
+	.auto-screen-lock-timer {
+		h3 {
 			font-weight: $weight_bold;
 			color: $main_darker;
 		}
-		fa-icon{
+
+		fa-icon {
 			font-size: 1.8rem;
 			color: $gaming;
+
 			&:hover {
 				color: $highlight;
 			}
 		}
 	}
-	::ng-deep .vtr-ui-rounded-rectangle-radio{
+
+	::ng-deep .vtr-ui-rounded-rectangle-radio {
 		width: 16.5rem;
+		@media #{$mediaquery_X22} {
+			width: 25.5rem;
+		}
+		@media #{$mediaquery_X23} {
+			width: 25.5rem;
+		}
 	}
 
-	.auto-screen-block{
+
+	.auto-screen-block {
+		.auto-screen-block, .auto-screen-off-block {
+			::ng-deep .vtr-ui-switch-row {
+				border-bottom: none;
+			}
+		}
+
+		.int-screen-desc {
+			p {
+				font-size: 1.5rem;
+			}
+		}
+
+		.keep-my-display-block {
+			::ng-deep .vtr-ui-switch-row {
+				border-top: 0.1rem solid $shade_lighter;
+				border-bottom: none;
+			}
+		}
+	}
+
+	.disabled-overlay {
+		background-color: #F6F8F8;
+		z-index: 2;
+		pointer-events: none;
+	}
+
+	.disabled {
+		pointer-events: none;
+	}
+
+	.feature-note {
+		fa-icon {
+			color: red;
+			font-size: 3rem;
+		}
+	}
+
+	.no-border-bottom {
 		::ng-deep .vtr-ui-switch-row {
-			border-bottom: none;
+			border-bottom: none !important;
+		}
+	}
+
+	.bold-title {
+		::ng-deep .vtr-ui-switch-row.white-theme .title {
+			font-weight: 700;
 		}
 	}
 }
-

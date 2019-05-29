@@ -16,6 +16,7 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	public selected = false;
 	public currentOption: string;
 	public currentDescription: string;
+	public selectedDescription: string;
 
 
 	constructor(
@@ -24,16 +25,18 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 
 	ngOnInit() {
 		this.options.forEach(option => {
-			if (option.selectedOption) {
+			if (option.selectedOption && this.currentOption === undefined) {
 				this.optionSelected(option);
-				return;
-			}
-
-			if (option.defaultOption) {
-				this.optionSelected(option);
-				return;
 			}
 		});
+
+		if (this.currentOption === undefined) {
+			this.options.forEach(option => {
+				if (option.defaultOption) {
+					this.optionSelected(option);
+				}
+			});
+		}
 	}
 
 	public toggleOptions() {
@@ -49,13 +52,18 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 
 	public optionSelected(option) {
 		this.currentOption = option.name;
-		this.currentDescription = option.description;
+		this.selectedDescription = option.description;
+		this.currentDescription = this.selectedDescription;
 		this.showOptions = false;
 		this.change.emit(option);
 	}
 
-	public showDescription(option) {
+	public changeDescription(option) {
 		this.currentDescription = option.description;
+	}
+
+	public resetDescription(option) {
+		this.currentDescription = this.selectedDescription;
 	}
 
 	public generalClick(event: Event) {

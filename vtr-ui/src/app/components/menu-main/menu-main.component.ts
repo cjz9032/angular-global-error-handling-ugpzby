@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, DoCheck, HostListener, SimpleChanges, SimpleChange } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 import { ConfigService } from '../../services/config/config.service';
 import { DeviceService } from '../../services/device/device.service';
@@ -296,12 +296,13 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	//  to popup Lenovo ID modal dialog
-	OpenLenovoId() {
-		this.modalService.open(ModalLenovoIdComponent, {
+	OpenLenovoId(appFeature = null) {
+		const modal: NgbModalRef = this.modalService.open(ModalLenovoIdComponent, {
 			backdrop: 'static',
 			centered: true,
 			windowClass: 'lenovo-id-modal-size'
 		});
+		(<ModalLenovoIdComponent>modal.componentInstance).appFeature = appFeature;
 	}
 
 	onLogout() {
@@ -325,12 +326,11 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	onLanguageChange(translation: Translation) {
-		this.getMenuItems().then((items)=>{
-			if (translation && translation.type === TranslationSection.CommonMenu && !this.deviceService.isGaming) {
-				items[0].label = translation.payload.dashboard;
-			}
-		})
-
+		// this.getMenuItems().then((items)=>{
+		// 	if (translation && translation.type === TranslationSection.CommonMenu && !this.deviceService.isGaming) {
+		// 		items[0].label = translation.payload.dashboard;
+		// 	}
+		// })
 	}
 
 	showWindowsHello(windowsHello: WindowsHello) {
