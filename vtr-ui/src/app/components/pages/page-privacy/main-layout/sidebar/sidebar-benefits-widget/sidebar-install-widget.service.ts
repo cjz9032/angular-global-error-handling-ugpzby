@@ -61,4 +61,11 @@ export class SidebarInstallWidgetService {
 			image: 'pitch-block/Img_Pith_Main',
 		}
 	};
+
+	generalizedSettings: InstallWidgetPageSettings = {
+		visible: true,
+		title: 'The choice to be private is here',
+		text: 'Get the app that lets you decide when to share and when to be private, wherever you go online.',
+		image: 'pitch-block/Img_Pith_Main',
+	};
 }
