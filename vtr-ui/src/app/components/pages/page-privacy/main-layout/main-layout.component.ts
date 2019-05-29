@@ -16,12 +16,14 @@ interface PageSettings {
 	showPrivacyScore: boolean;
 	showNavigationBlock: boolean;
 	showSupportBanner: boolean;
+	moveContentToTop: boolean;
 }
 
 const defaultPageSettings: PageSettings = {
 	showPrivacyScore: false,
 	showNavigationBlock: false,
 	showSupportBanner: false,
+	moveContentToTop: false,
 };
 
 @Component({
@@ -35,6 +37,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 	showPrivacyScore = false;
 	showNavigationBlock = false;
 	showSupportBanner = false;
+	moveContentToTop = false;
 
 	pagesSettings: { [path in RoutersName]: PageSettings } = {
 		[RoutersName.LANDING]: defaultPageSettings,
@@ -43,26 +46,31 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 			showPrivacyScore: true,
 			showNavigationBlock: true,
 			showSupportBanner: true,
+			moveContentToTop: true,
 		},
 		[RoutersName.BREACHES]: {
 			showPrivacyScore: true,
 			showNavigationBlock: true,
 			showSupportBanner: true,
+			moveContentToTop: true,
 		},
 		[RoutersName.PRIVACY]: {
 			showPrivacyScore: true,
 			showNavigationBlock: true,
 			showSupportBanner: true,
+			moveContentToTop: true,
 		},
 		[RoutersName.MAIN]: {
 			showPrivacyScore: true,
 			showNavigationBlock: true,
 			showSupportBanner: true,
+			moveContentToTop: true,
 		},
 		[RoutersName.BROWSERACCOUNTS]: {
 			showPrivacyScore: true,
 			showNavigationBlock: true,
 			showSupportBanner: true,
+			moveContentToTop: true,
 		},
 	};
 
@@ -97,6 +105,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 		this.showPrivacyScore = this.pagesSettings[routerPage].showPrivacyScore;
 		this.showNavigationBlock = this.pagesSettings[routerPage].showNavigationBlock;
 		this.showSupportBanner = this.pagesSettings[routerPage].showSupportBanner;
+		this.moveContentToTop = this.pagesSettings[routerPage].moveContentToTop;
 	}
 
 	setPermit(isAllow: boolean, popupId: string) {
