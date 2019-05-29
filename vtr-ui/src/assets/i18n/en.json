@@ -315,7 +315,6 @@
 					"cycleCount": "Cycle count",
 					"chemistry": "Device chemistry",
 					"remainingCap": "Remaining capacity",
-					"manufacturer": "Manufacturer",
 					"designCap": "Design capacity",
 					"fullChargeCap": "Full charge capacity",
 					"manufDt": "Manufacture date",
@@ -333,7 +332,14 @@
 					},
 					"deviceChemistry": {
 						"li-polymer": "Li-Polymer",
-						"li-ion": "Li-Ion"
+						"li-ion": "Li-Ion",
+						"li_polymer": "Li-Polymer",
+						"li_ion": "Li-Ion"
+					},
+					"manufacturer": {
+						"title": "Manufacturer",
+						"celxpert": "Celxpert",
+						"smp": "SMP"
 					}
 				},
 				"condition": {

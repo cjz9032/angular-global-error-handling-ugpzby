@@ -314,7 +314,6 @@
                     "cycleCount": "充放周期数",
                     "chemistry": "设备化学组成",
                     "remainingCap": "剩余电量",
-                    "manufacturer": "制造商",
                     "designCap": "设计电量",
                     "fullChargeCap": "完全充电电量",
                     "manufDt": "制造日期",
@@ -332,8 +331,15 @@
                     },
                     "deviceChemistry": {
                         "li-polymer": "锂聚合物",
-                        "li-ion": "锂离子电池"
-                    }
+                        "li-ion": "锂离子电池",
+                        "li_polymer": "锂聚合物",
+						"li_ion": "锂离子电池"
+                    },
+                    "manufacturer": {
+						"title": "制造商",
+						"celxpert": "Celxpert",
+						"smp": "SMP"
+					}
                 },
                 "condition": {
 					"Illegal": {
