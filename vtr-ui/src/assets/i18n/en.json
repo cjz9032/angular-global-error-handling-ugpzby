@@ -78,6 +78,9 @@
 				}
 			}
 		},
+		"macroKey": {
+			"title": "Macro Key"
+		},
 		"lightingProfile": {
 			"title": "Lighting"
 		}
