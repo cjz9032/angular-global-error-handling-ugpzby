@@ -4,6 +4,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
+import { ActivatedRoute} from '@angular/router';
 
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
@@ -19,6 +20,8 @@ import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { UpdateFailToastMessage } from 'src/app/enums/update.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -36,6 +39,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	private lastUpdatedText = 'systemUpdates.banner.last';
 	private nextScanText = 'systemUpdates.banner.next';
 	private neverCheckedText = 'systemUpdates.banner.neverChecked';
+	private metricHelper: MetricHelper;
 	private lastInstallTime: string;
 	// private lastScanTime = new Date('1970-01-01T01:00:00');
 	private nextScheduleScanTime: string;
@@ -147,9 +151,13 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		private ngZone: NgZone,
 		private modalService: NgbModal,
 		private cmsService: CMSService,
-		private translate: TranslateService
+		private activatedRoute: ActivatedRoute,
+		private translate: TranslateService,
+		shellService: VantageShellService
 	) {
 		this.isOnline = this.commonService.isOnline;
+		this.metricHelper = new MetricHelper(shellService.getMetrics());
+
 		this.fetchCMSArticles();
 		this.getSpecificSupportLink();
 		this.translateStrings();
@@ -198,6 +206,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		const action = this.activatedRoute.snapshot.queryParams['action'];
 		this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
 		this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 		this.percentCompleted = this.systemUpdateService.percentCompleted;
@@ -217,7 +226,11 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		}
 
 		this.getLastUpdateScanDetail();
-		this.systemUpdateService.getUpdateSchedule();
+		if (action && action.toLowerCase() === 'enable') {
+			this.systemUpdateService.setUpdateSchedule(true, false);
+		} else {
+			this.systemUpdateService.getUpdateSchedule();
+		}
 		this.systemUpdateService.getUpdateHistory();
 		this.getScheduleUpdateStatus(false);
 		this.isComponentInitialized = true;
@@ -348,10 +361,10 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		document.body.style.zoom = '1.0';
 	}
 
-	public onIgnoredUpdate($event: any){
+	public onIgnoredUpdate($event: any) {
 		const packageName = $event.packageName;
 		const isIgnored = $event.isIgnored;
-		if (isIgnored === true){
+		if (isIgnored === true) {
 			this.systemUpdateService.ignoreUpdate(packageName);
 		} else {
 			this.systemUpdateService.unIgnoreUpdate(packageName);
@@ -382,7 +395,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			let { criticalAutoUpdates, recommendedAutoUpdates } = this.systemUpdateService.autoUpdateStatus;
 			if (name === 'critical-updates') {
 				criticalAutoUpdates = checked;
-				if(!checked) {
+				if (!checked) {
 					const recommendUpdate = this.autoUpdateOptions.find((update) => {
 						return update.name === 'recommended-updates';
 					});
@@ -394,7 +407,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				const criticalUpdate = this.autoUpdateOptions.find((update) => {
 					return update.name === 'critical-updates';
 				});
-				if(checked && !criticalUpdate.isChecked) {
+				if (checked && !criticalUpdate.isChecked) {
 					criticalUpdate.isChecked = true;
 					criticalAutoUpdates = true;
 				}
@@ -438,7 +451,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				centered: true,
 				windowClass: 'common-confirmation-modal'
 			});
-		modalRef.componentInstance.metricsParent = "Pages.SystemUpdate.RebootRequiredControl";
+		modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.RebootRequiredControl';
 		const { rebootType, packages } = this.systemUpdateService.getRebootType(this.systemUpdateService.updateInfo.updateList, source);
 		let removeDelayedUpdates = false;
 		if (rebootType === UpdateRebootType.RebootDelayed) {
@@ -460,7 +473,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			result => {
 				// on open
 				if (result) {
-					if(this.systemUpdateService.getACAttachedStatus()) {
+					if (this.systemUpdateService.getACAttachedStatus()) {
 						removeDelayedUpdates = false;
 					} else {
 						removeDelayedUpdates = true;
@@ -519,7 +532,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private showToastMessage(updateList: Array<AvailableUpdateDetail>) {
 		const failedUpdates = updateList.find((update) => {
-			return (update.installationStatus === UpdateActionResult.DownloadFailed 
+			return (update.installationStatus === UpdateActionResult.DownloadFailed
 				|| update.installationStatus === UpdateActionResult.InstallFailed);
 		});
 		if (failedUpdates) {
@@ -534,11 +547,47 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		return updates;
 	}
 
+	private filterUpdateByResult(updateList: Array<AvailableUpdateDetail>, updateStatusArray: Array<string>) {
+		const filterArray = updateStatusArray.map(item => item.toLocaleLowerCase());
+		const updates = updateList.filter((value: AvailableUpdateDetail) => {
+			return filterArray.indexOf(value.installationStatus.toLowerCase()) > -1;
+		});
+		return updates;
+	}
+
 	private filterUpdate(updateList: Array<AvailableUpdateDetail>, packageSeverity: string) {
 		const updates = updateList.filter((value: AvailableUpdateDetail) => {
 			return (value.packageSeverity.toLowerCase() === packageSeverity.toLowerCase());
 		});
 		return updates;
+	}
+
+	private sendInstallUpdateMetrics(updateList, ignoredUpdates) {
+		ignoredUpdates = ignoredUpdates ? ignoredUpdates : this.filterIgnoredUpdate(updateList, true);
+		const successUpdates = this.filterUpdateByResult(updateList, [UpdateActionResult.Success]);
+		const failedUpdates = this.filterUpdateByResult(updateList,
+			[UpdateActionResult.DownloadFailed, UpdateActionResult.InstallFailed]);
+
+		if (ignoredUpdates.length > 0) {
+			this.metricHelper.sendInstallUpdateMetric(
+				this.ignoredUpdates.length,
+				this.systemUpdateService.mapPackageListToIdString(this.ignoredUpdates),
+				'success');
+		}
+
+		if (successUpdates.length > 0) {
+			this.metricHelper.sendInstallUpdateMetric(
+				successUpdates.length,
+				this.systemUpdateService.mapPackageListToIdString(successUpdates),
+				'ignored');
+		}
+
+		if (failedUpdates.length > 0) {
+			this.metricHelper.sendInstallUpdateMetric(
+				failedUpdates.length,
+				this.systemUpdateService.mapPackageListToIdString(failedUpdates),
+				'failure');
+		}
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -594,7 +643,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
 					this.checkRebootRequested();
 					this.showToastMessage(payload.updateList);
-					this.setUpdateByCategory(payload.updateList);					
+					this.setUpdateByCategory(payload.updateList);
+					this.sendInstallUpdateMetrics(payload.updateList, this.ignoredUpdates);
 					break;
 				case UpdateProgress.AutoUpdateStatus:
 					this.autoUpdateOptions[0].isChecked = payload.criticalAutoUpdates;

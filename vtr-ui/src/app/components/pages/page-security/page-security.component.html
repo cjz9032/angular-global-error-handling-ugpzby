@@ -64,21 +64,22 @@
 																</div>
 																<div class="col-6 pl-0 ellipsis wifi-good-font"
 																	title="{{wifi.ssid}}">{{wifi.ssid}}</div>
-																<div class="wifi-bg col-4 pl-0 pr-3">
-																	<span class="wifi-good pt-1 pb-1 pr-2 pl-2"
-																		[ngClass]="getWifiStatus(wifi.good)">
+																<div class="wifi-bg col-4 pl-0 pr-3 ellipsis">
+																	<div class="wifi-good pt-1 pb-1 pr-2 pl-2 "
+																		[ngClass]="getWifiStatus(wifi.good)" title="{{getWifiDetail(wifi.good) | translate}}">
 																		{{getWifiDetail(wifi.good) | translate}}
-																	</span>
+																</div>
 																</div>
 															</li>
 															<li class="wifi-link">
-																<a routerLink="wifi-security"
+																<a routerLink="wifi-security" 
 																	id="sa-ov-link-seeAllNetwork"
 																	aria-label="sa-ov-link-seeAllNetwork"
 																	[queryParams]="{isShowMore:false}"
 																	vtrMetrics
 																	metricsEvent="FeatureClick"
-																	metricsItem="seeAllNetwork">
+																	metricsItem="seeAllNetwork"
+																	title="{{'security.landing.seeAllNetwork' | translate}}">
 																	{{'security.landing.seeAllNetwork' | translate}}
 																</a>
 															</li>

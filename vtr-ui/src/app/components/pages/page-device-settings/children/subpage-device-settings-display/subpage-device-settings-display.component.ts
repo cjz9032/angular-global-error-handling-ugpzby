@@ -590,7 +590,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public onCameraBackgroundBlur($event: any) {
 		try {
 			this.cameraBlur.enabled = $event.switchValue
-			this.onCameraBackgroundOptionChange(true, "");
+			this.onCameraBackgroundOptionChange(this.cameraBlur.enabled, "");
 		} catch (error) {
 			console.error(error.message);
 		}
