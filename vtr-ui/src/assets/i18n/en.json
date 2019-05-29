@@ -538,6 +538,15 @@
 							"title": "Note",
 							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
 						}
+					},
+					"oledPowerSettings": {
+						"title": "OLED Power Settings",
+						"reset": "Reset temperature",
+						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display.",
+						"note": {
+							"title": "Note",
+							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+						}
 					}
 				},
 				"camera": {

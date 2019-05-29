@@ -1,0 +1,21 @@
+@import "../../../app.theme.scss";
+
+.vtr-oled-power-settings{
+  .caption{
+    font-size: 1.4rem;
+    color: #6c757d;
+  }
+  .dropdown{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+    section{
+      margin-bottom: 3rem;
+      h5{
+        font-size: 1.4rem;
+        color: #6c757d;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}

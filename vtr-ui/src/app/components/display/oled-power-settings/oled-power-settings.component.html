@@ -1,0 +1,40 @@
+<div class="vtr-oled-power-settings">
+	<div class="row">
+		<div class="col">
+			<p class="caption">
+        Your computer's OLED display can also reduce power consumption and increase battery 
+        life by selectively dimming portions of the display.
+      </p>
+      <p class="caption">
+        It is also recommended to dim the task bar and other areas of the display that 
+        do not change frequently to prolong the overall lifetime of the display.
+      </p>
+    </div>
+  </div>
+  <div class="dropdown">
+    <section>
+      <h5>TASKBAR DIMMER</h5>
+      <vtr-ui-dropdown
+        [list]="[1,2,3,4,5,6,7,8]"
+        [title]="'Minutes'"
+      >
+      </vtr-ui-dropdown>
+    </section>
+    <section>
+      <h5>BACKGROUND DIMMER</h5>
+      <vtr-ui-dropdown
+        [list]="[1,2,3,4,5,6,7,8]"
+        [title]="'Minutes'"
+      >
+      </vtr-ui-dropdown>
+    </section>
+    <section>
+      <h5>DISPLAY DIMMER</h5>
+      <vtr-ui-dropdown
+        [list]="[1,2,3,4,5,6,7,8]"
+        [title]="'Minutes'"
+      >
+      </vtr-ui-dropdown>
+    </section>
+  </div>
+</div>

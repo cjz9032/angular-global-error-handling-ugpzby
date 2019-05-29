@@ -158,6 +158,7 @@ import { PageAutocloseComponent } from './components/pages/page-autoclose/page-a
 import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
 import { PowerSmartSettingsComponent } from './components/widgets/power-smart-settings/power-smart-settings.component';
 import { UiPopoverComponent } from './components/ui/ui-popover/ui-popover.component';
+import { OledPowerSettingsComponent } from './components/display/oled-power-settings/oled-power-settings.component';
 
 // SA Components
 import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
@@ -192,6 +193,8 @@ import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
 import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
 import { UiLightingProfileComponent } from './components/ui/ui-lighting-profile/ui-lighting-profile.component';
+import { UiDropdownComponent } from './components/ui/ui-dropdown/ui-dropdown.component';
+
 
 
 
@@ -347,7 +350,9 @@ library.add(fal);
 		SubpageDeviceSettingsSmartAssistComponent,
 		UiPopoverComponent,
 		WidgetHomeSecurityDeviceComponent,
-		UiLightingProfileComponent
+		UiLightingProfileComponent,
+		OledPowerSettingsComponent,
+		UiDropdownComponent
 	],
 	imports: [
 		BrowserModule,
