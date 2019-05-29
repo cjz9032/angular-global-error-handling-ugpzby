@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { BehaviorSubject, of, Subject, throwError } from 'rxjs';
+import { BehaviorSubject, EMPTY, Observable, of, Subject, throwError } from 'rxjs';
 import { catchError, switchMap, tap } from 'rxjs/operators';
 import { StorageService } from '../../../common/services/storage.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -168,13 +168,18 @@ export class EmailScannerService {
 	}
 
 	getBreachedAccountsWithoutToken() {
+		let response: Observable<never | BreachedAccountsFromServerResponse> = EMPTY;
 		const SHA1HashFromEmail = this.storageService.getItem(USER_EMAIL_HASH) ?
 			this.storageService.getItem(USER_EMAIL_HASH) :
 			getHashCode(this._userEmail$.getValue());
 
-		return this.http.get<BreachedAccountsFromServerResponse>(
-			`${this.environment.backendUrl}/api/v1/vantage/public/emailbreaches?email_hash=${SHA1HashFromEmail}`,
-		);
+		if (this._userEmail$.getValue()) {
+			response = this.http.get<BreachedAccountsFromServerResponse>(
+				`${this.environment.backendUrl}/api/v1/vantage/public/emailbreaches?email_hash=${SHA1HashFromEmail}`,
+			);
+		}
+
+		return response;
 	}
 
 	private transformBreachesFromServer(breaches: BreachedAccountsFromServerResponse) {
