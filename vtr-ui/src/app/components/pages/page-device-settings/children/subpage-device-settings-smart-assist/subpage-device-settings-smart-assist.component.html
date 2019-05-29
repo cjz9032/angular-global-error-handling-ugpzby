@@ -10,6 +10,9 @@
 	<div class="row py-5 smart-assist-card"
 		id="security">
 		<div class="col-10 mx-auto border-bottom">
+
+		<div class="col-10 mx-auto">
+
 			<vtr-container-collapsible
 				[cardTitle]="'device.deviceSettings.smartAssist.intelligentSecurity.title' | translate"
 				componentName="intelligent security"
@@ -18,7 +21,7 @@
 				[theme]="'white'"
 				(toggle)="onCardCollapse($event)">
 				<!-- <ul class="list-group list-group-flush"
-					*ngIf="!isThinkpad">
+					*ngIf="!isThinkPad">
 					<li class="pt-3">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLogin.title1' | translate"
@@ -68,13 +71,13 @@
 							</div>
 						</vtr-ui-row-switch>
 					</li>
-				</ul>
+				</ul> -->
 				<ul class="list-group list-group-flush"
 					*ngIf="isThinkPad">
 					<li class="pt-3">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.smartAssist.intelligentSecurity.humanPresenceDetection.title' | translate"
-							componentName="Human presence detection"
+							componentName="HumanPresenceDetection"
 							[isSwitchVisible]="true"
 							[leftIcon]="['fal', 'gem']"
 							[showChildContent]="true"
@@ -87,7 +90,7 @@
 					<li class="pt-3 pl-5"
 						[class.disabled-overlay]="!intelligentSecurity.humanPresenceDetectionFlag">
 						<vtr-ui-row-switch
-							[title]="'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLogin.title2' | translate"
+							[title]="'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLogin.title' | translate"
 							[caption]=" 'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLogin.caption' | translate"
 							[isSwitchVisible]="true"
 							[leftIcon]="['fal', 'gem']"
@@ -98,8 +101,9 @@
 							[disabled]="!intelligentSecurity.humanPresenceDetectionFlag">
 							<div class="pl-5 bold-title no-border-bottom">
 								<vtr-ui-row-switch [title]="distanceSensitivityTitle | translate"
+									[leftIcon]="['fal', 'gem']"
 									[caption]="'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate"
-									[isSwitchVisible]="true"
+									[isSwitchVisible]="false"
 									[showChildContent]="true"
 									[isSwitchChecked]="intelligentSecurity.distanceSensitivityFlag"
 									(toggleOnOff)="distanceSensitivityStatusToggle($event)"
@@ -134,12 +138,13 @@
 							</div>
 						</vtr-ui-row-switch>
 					</li>
-				</ul> -->
-				<ul class="list-group list-group-flush"
+				</ul>
+				<ul class="list-group list-group-flush pt-3 pl-5"
 					[class.disabled-overlay]="!intelligentSecurity.humanPresenceDetectionFlag"
 					*ngIf="intelligentSecurity.isZeroTouchLockVisible">
 					<li class="pt-3 auto-screen-block">
-						<vtr-ui-row-switch [title]="zeroTouchLockTitle | translate"
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.title' | translate"
 							[caption]=" 'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.caption' | translate"
 							[isSwitchVisible]="true"
 							[leftIcon]="['fal', 'gem']"
@@ -212,5 +217,66 @@
 			</vtr-container-collapsible>
 		</div>
 	</div>
+	<div class="row py-5 smart-assist-card"
+		id="security">
+		<div class="col-10 mx-auto">
+			<vtr-container-collapsible
+				[cardTitle]="'device.deviceSettings.smartAssist.intelligentScreen.title' | translate"
+				componentName="intelligent security"
+				[isCollapsed]="false"
+				[allowCollapse]="true"
+				[theme]="'white'"
+				(toggle)="onCardCollapse($event)">
 
+				<div class="row">
+					<div class="col-auto">
+						<div class="int-screen-desc">
+							<p>{{'device.deviceSettings.smartAssist.intelligentScreen.description' | translate}}</p>
+						</div>
+					</div>
+				</div>
+
+				<ul class="list-group list-group-flush">
+					<li class="pt-3 auto-screen-off-block">
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.smartAssist.intelligentScreen.autoScreenOff.title' | translate"
+							[caption]=" 'device.deviceSettings.smartAssist.intelligentScreen.autoScreenOff.caption' | translate"
+							[isSwitchVisible]="true"
+							[leftIcon]="['fal', 'gem']"
+							[theme]="'white'"></vtr-ui-row-switch>
+						<div class="row">
+							<div class="feature-note auto-screen-off-note p-4 m-4">
+								<p>{{'device.deviceSettings.smartAssist.intelligentScreen.autoScreenOff.note' | translate}}
+								</p>
+								<a
+									href="#"><span>{{'device.deviceSettings.smartAssist.intelligentScreen.autoScreenOff.windowsLink' | translate}}</span></a>
+							</div>
+						</div>
+					</li>
+					<li class="pt-3 keep-my-display-block">
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.smartAssist.intelligentScreen.keepMyDisplay.title' | translate"
+							[caption]="'device.deviceSettings.smartAssist.intelligentScreen.keepMyDisplay.caption' | translate"
+							[leftIcon]="['fal', 'gem']"
+							[theme]="'white'"
+							[isSwitchVisible]="true"
+							[showChildContent]="true"
+							(toggleOnOff)="displayDim($event)"
+							[isSwitchChecked]="keepMyDisplay">
+							>
+							<div class="pl-5 ml-5">
+								<vtr-ui-range-slider
+									[minValueLegend]="'device.deviceSettings.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.startTime' | translate"
+									[minValue]="0"
+									[maxValueLegend]="'device.deviceSettings.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.endTime' | translate"
+									[maxValue]="100"
+									[enableSlider]="!keepMyDisplay">
+								</vtr-ui-range-slider>
+							</div>
+						</vtr-ui-row-switch>
+					</li>
+				</ul>
+			</vtr-container-collapsible>
+		</div>
+	</div>
 </div>

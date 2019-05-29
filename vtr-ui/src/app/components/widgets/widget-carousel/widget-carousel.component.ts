@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import {MockService} from "../../../services/mock/mock.service";
 import {NgbCarouselConfig, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import {ModalArticleDetailComponent} from "../../modal/modal-article-detail/modal-article-detail.component";
-import {id} from "inversify";
 
 @Component({
 	selector: 'vtr-widget-carousel',
@@ -26,7 +26,7 @@ export class WidgetCarouselComponent implements OnInit {
 	@Input() wrap: boolean;
 	@Input() order:number;
 
-	constructor(private config: NgbCarouselConfig) {
+	constructor(private config: NgbCarouselConfig,private MocckService:MockService) {
 
 	}
 

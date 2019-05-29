@@ -46,7 +46,7 @@
 					<div class="row justify-content-center align-items-center next-btn">
 						<div class="col-auto ">
 							<vtr-ui-button
-							metricsParent="modal-welcome"
+							metricsParent="WelcomePage"
 							metricsEvent="featureClick"
 							[metricsItem]="'NEXT'"
 							[label]="'NEXT'"
@@ -147,7 +147,7 @@
 								<label for="radio3" class="centered">{{ "welcometutorial.custom" | translate }}<br>{{ "welcometutorial.experience" | translate }}</label>
 							</div>
 	
-							<div class="row justify-content-center align-items-center font-14-bold">
+							<div class="row justify-content-center align-items-center font-14-bold col-12 margin-top-25">
 								<div class="col-auto title2">
 									{{ "welcometutorial.subtitle2" | translate | uppercase}}
 								</div>
@@ -168,7 +168,7 @@
 									<label [for]="interest + 'checkbox'">{{ "welcometutorial.interests." + interest | translate }}</label>
 								</div>
 							</div>
-							<div *ngIf="!hideMoreInterestBtn" class="row justify-content-center align-items-center font-12-semi more-interest">
+							<div *ngIf="!hideMoreInterestBtn" class="row justify-content-center align-items-center font-12-semi more-interest col-12">
 								<div class="col-auto title2" (click)="moreInterestClicked()">
 									<span class="more-interests">{{ "welcometutorial.moreInterest" | translate | lowercase }}</span>
 								</div>
@@ -189,7 +189,7 @@
 					<div class="row justify-content-center align-items-center next-btn">
 						<div class="col-auto ">
 							<vtr-ui-button
-							metricsParent="modal-welcome"
+							metricsParent="WelcomePage"
 							metricsEvent="featureClick"
 							[metricsItem]="'DONE'"
 							[label]="'DONE'"

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, NgZone, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
+
 @Component({
 	selector: 'vtr-widget-device-update',
 	templateUrl: './widget-device-update.component.html',

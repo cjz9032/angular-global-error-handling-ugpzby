@@ -8,6 +8,7 @@ import { SupportService } from '../../services/support/support.service';
 })
 export class ContainerArticleComponent implements OnInit {
 	@Input() items: any;
+	@Input() type: string;
 
 	metricsDatas: {
 		viewOrder: number

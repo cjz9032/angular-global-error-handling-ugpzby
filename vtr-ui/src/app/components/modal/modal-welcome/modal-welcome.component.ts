@@ -44,6 +44,7 @@ export class ModalWelcomeComponent implements OnInit {
 	}
 
 	next(page) {
+		this.metrics.metricsEnabled = (this.privacyPolicy === true);
 		let tutorialData;
 		if (page < 2) {
 			this.page = page;
@@ -51,13 +52,25 @@ export class ModalWelcomeComponent implements OnInit {
 			tutorialData = new WelcomeTutorial(1, null, null);
 			this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, tutorialData);
 		} else {
-			this.endTime=new Date().getTime();
-			let data={
-				PageName:"Tutorial",
-				PageDuration:(this.endTime-this.startTime)
+			const settingData = {
+				ItemType: 'SettingUpdate',
+				SettingName: 'Accept Privacy Policy',
+				SettingValue: this.privacyPolicy ? 'Enabled' : 'Disabled',
+				SettingParent: 'WelcomePage'
 			}
-			console.log('metrics data',JSON.stringify(data));
+
+			this.metrics.sendAsyncEx(settingData, {
+				forced: true
+			});
+
+			this.endTime = new Date().getTime();
+			let data = {
+				PageName: 'WelcomePage',
+				PageDuration: (this.endTime - this.startTime)
+			}
+			console.log('metrics data', JSON.stringify(data));
 			this.metrics.sendAsync(data);
+
 			tutorialData = new WelcomeTutorial(2, this.data.page2.radioValue, this.checkedArray);
 			this.activeModal.close(tutorialData);
 		}
@@ -92,8 +105,8 @@ export class ModalWelcomeComponent implements OnInit {
 	}
 
 	savePrivacy($event, value) {
+		this.privacyPolicy = $event.target.checked;
 		if ($event.target.checked) {
-			this.privacyPolicy = value;
 			this.progress += 17;
 		} else {
 			this.progress -= 17;

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnDestroy } from '@angular/core';
 import { OneClickScanSteps, OneClickScanStepsService } from './services/one-click-scan-steps.service';
 import { PermitService } from './services/permit.service';
 import { CommonPopupService } from '../../common/services/popups/common-popup.service';
@@ -9,7 +9,7 @@ import { CommonPopupService } from '../../common/services/popups/common-popup.se
 	styleUrls: ['./one-click-scan.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class OneClickScanComponent {
+export class OneClickScanComponent implements OnDestroy {
 	@Input() popupId: string;
 
 	readonly oneClickScanSteps = OneClickScanSteps;
@@ -20,6 +20,10 @@ export class OneClickScanComponent {
 		private permitService: PermitService,
 		private commonPopupService: CommonPopupService,
 	) {	}
+
+	ngOnDestroy() {
+		this.resetScan();
+	}
 
 	handleAllow(permitValue: boolean, step: OneClickScanSteps) {
 		if (permitValue) {

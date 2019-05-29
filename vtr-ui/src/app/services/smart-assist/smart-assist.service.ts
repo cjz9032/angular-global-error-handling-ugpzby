@@ -33,7 +33,7 @@ export class SmartAssistService {
 	}
 
 	// set auto adjust for IdeaPad models
-	public setAutoLockStatus(value: boolean): Promise<boolean> {
+	public setAutoLockStatus(value: string): Promise<boolean> {
 		return this.intelligentSensing.SetHPDPresentLeaveSetting(value);
 	}
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
-import { catchError, share } from 'rxjs/operators';
+import { catchError, map, share, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { EMPTY, from, Observable, throwError } from 'rxjs';
 
 export enum BrowserListType {
@@ -35,9 +35,9 @@ export interface VisitedWebsitesInfo {
 	lastVisitTimeUtc: string;
 }
 
-export type VisitedWebsites = {
-	[browser in BrowserListKey]: VisitedWebsitesInfo[];
-};
+export interface VisitedWebsites {
+	visitedWebsites: VisitedWebsitesInfo[];
+}
 
 @Injectable({
 	providedIn: 'root'
@@ -55,7 +55,7 @@ export class VantageCommunicationService {
 		);
 
 		return this.sendContractToPrivacyCore<InstalledBrowsers>(contract).pipe(
-			share(),
+			shareReplay(),
 			catchError((err) => {
 				console.error('InstalledBrowsers err', err);
 				return EMPTY;
@@ -99,21 +99,22 @@ export class VantageCommunicationService {
 		);
 	}
 
-	getVisitedWebsites(browsers: string[]) {
-		const contract = this.getContractObject(
-			'VantageService.BrowserInfo',
-			'Get-VisitedWebsites',
-			JSON.stringify({
-				browsers,
-				userName: 'current',
-				topVisited: '50'
-			})
-		);
-
-		return this.sendContractToPrivacyCore<VisitedWebsites>(contract).pipe(
-			catchError((err) => {
-				return throwError('VisitedWebsites err', err);
-			})
+	getVisitedWebsites() {
+		return this.getInstalledBrowsers().pipe(
+			map((installedBrowsers) => this.getContractObject(
+					'VantageService.BrowserInfo',
+					'Get-VisitedWebsites',
+					JSON.stringify({
+						browsers: installedBrowsers.browsers,
+						userName: 'current',
+						topVisited: '50'
+					})
+				)),
+			switchMap((contract) => this.sendContractToPrivacyCore<VisitedWebsites>(contract).pipe(
+				catchError((err) => {
+					return throwError('VisitedWebsites err', err);
+				})
+			)),
 		);
 	}
 

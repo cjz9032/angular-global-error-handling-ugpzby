@@ -42,10 +42,9 @@
 											</vtr-widget-device-update>
 										</div>
 									</div>
-
-
 									<vtr-available-updates *ngIf="isUpdateListVisible()"
 										[criticalUpdates]="criticalUpdates"
+
 										[optionalUpdates]="optionalUpdates"
 										[recommendedUpdates]="recommendedUpdates"
 										[ignoredUpdates]="ignoredUpdates"
@@ -185,7 +184,8 @@
 								<div class="row mb-40">
 									<div class="col col-12 cont">
 
-										<vtr-autoupdate-settings [title]="'systemUpdates.autoUpdateSettings.title' | translate"										
+										<vtr-autoupdate-settings
+											[title]="'systemUpdates.autoUpdateSettings.title' | translate"
 											componentName="Auto Update Settings"
 											[description]="'systemUpdates.autoUpdateSettings.subtitle' | translate"
 											[items]="autoUpdateOptions"

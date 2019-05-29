@@ -19,10 +19,6 @@ export class BrowserStoredAccountsComponent implements OnInit {
 		this.browserAccountsService.getInstalledBrowsersDefaultData();
 	}
 
-	showPasswordForBrowser(browserName: string) {
-		this.browserAccountsService.concatPasswords([browserName]);
-	}
-
 	trackByBrowser(index) {
 		return index;
 	}
