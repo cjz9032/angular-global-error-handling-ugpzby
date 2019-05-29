@@ -590,7 +590,13 @@
                             "title": "注",
                             "description": "Lenovo Vantage需要访问您的位置信息，以计算您所在地区的日落和日出时间。"
                         }
-                    }
+					},
+					"privacyGuard": {
+						"title": "Privacy guard",
+						"description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
+						"note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
+						"labelText": "Enable this feature when typing passwords"
+					}
                 },
                 "camera": {
                     "title": "摄像头",
