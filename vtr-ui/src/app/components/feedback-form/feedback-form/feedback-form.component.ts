@@ -1,8 +1,9 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { VantageShellService } from "../../../services/vantage-shell/vantage-shell.service";
+import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { TranslateService } from '@ngx-translate/core';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class FeedbackFormComponent implements OnInit {
 	feedbackButtonText: string;
 
 	constructor(public activeModal: NgbActiveModal, private shellService: VantageShellService,
-		private translate: TranslateService) {
+		private translate: TranslateService, private deviceService: DeviceService) {
 		this.metrics = shellService.getMetrics();
 	}
 	private metrics: any;
@@ -58,5 +59,12 @@ export class FeedbackFormComponent implements OnInit {
 			userEmail: new FormControl('', [Validators.email]),
 			userComment: new FormControl('', [Validators.required, Validators.minLength(1)])
 		});
+	}
+
+	private goToMailUtility() {
+		const email = 'vantageteam@lenovo.com';
+		const subject = 'vantage%203.0%20beta%20program%20feedback';
+		const uriPath = 'mailto:' + email + '?subject=' + subject;
+		this.deviceService.launchUri(uriPath);
 	}
 }
