@@ -1,6 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { takeUntil } from 'rxjs/operators';
-import { AccessTokenService } from '../../../common/services/access-token.service';
 import { EmailScannerService } from '../services/email-scanner.service';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 
@@ -11,7 +10,7 @@ import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance
 })
 export class EmailScannerComponent implements OnInit, OnDestroy {
 	userEmail = '';
-	emailWasScanned = this.accessTokenService.accessTokenIsExist$;
+	emailWasScanned = this.emailScannerService.scanBreachedAccounts$;
 
 	// Static Data for html
 	firstEmailScanData = {
@@ -23,7 +22,6 @@ export class EmailScannerComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private emailScannerService: EmailScannerService,
-		private accessTokenService: AccessTokenService,
 	) {
 	}
 

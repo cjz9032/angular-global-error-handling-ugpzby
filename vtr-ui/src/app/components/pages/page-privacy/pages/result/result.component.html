@@ -6,7 +6,7 @@
 		<vtr-privacy-score></vtr-privacy-score>
 	</div>
 
-	<div *ngIf="(onGetBreachedAccountsCompleted$ | async)" data-analyticsName="BreachedAccountsBlock">
+	<div *ngIf="(onGetBreachedAccountsCompleted$ | async) || (isWasScanned | async)" data-analyticsName="BreachedAccountsBlock">
 		<div *ngIf="!(isFigleafReadyForCommunication$ | async) && !breached_accounts.length" class="email-scanner">
 			<vtr-email-scanner></vtr-email-scanner>
 		</div>
@@ -49,7 +49,7 @@
 		</div>
 	</div>
 	<div class="breaches-block breaches-block__wrapper"
-		 *ngIf="!(isFigleafReadyForCommunication$ | async) && (isWasScanned | async) && !(onGetBreachedAccountsCompleted$ | async)">
+		 *ngIf="!(isFigleafReadyForCommunication$ | async) && !(isWasScanned | async) && !(onGetBreachedAccountsCompleted$ | async)">
 		<vtr-big-loader [text]="textForLoader"></vtr-big-loader>
 	</div>
 

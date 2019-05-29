@@ -57,7 +57,7 @@ export class EmailScannerService {
 	private validationStatusChanged = new Subject<ConfirmationCodeValidationResponse>();
 	validationStatusChanged$ = this.validationStatusChanged.asObservable();
 
-	private scanBreachedAccounts = new Subject<boolean>();
+	private scanBreachedAccounts = new BehaviorSubject<boolean>(false);
 	scanBreachedAccounts$ = this.scanBreachedAccounts.asObservable();
 
 	private loadingStatusChanged = new Subject<boolean>();
@@ -129,12 +129,12 @@ export class EmailScannerService {
 	}
 
 	getBreachedAccounts() {
+		this.loadingStatusChanged.next(true);
 		const accessToken = this.accessTokenService.getAccessToken();
 
 		const getBreachedAccounts = accessToken ? this.getBreachedAccountsByEmailWithToken() : this.getBreachedAccountsWithoutToken();
 
 		return getBreachedAccounts.pipe(
-			tap((breaches) => console.log('breaches', breaches)),
 			switchMap((breaches: BreachedAccountsFromServerResponse) => {
 				this.loadingStatusChanged.next(false);
 				this.setUserEmail(breaches.userEmail);
@@ -143,6 +143,7 @@ export class EmailScannerService {
 			}),
 			catchError((error) => {
 				console.error('Confirmation Error', error);
+				this.loadingStatusChanged.next(false);
 				if (error.status === INVALID_TOKEN) {
 					this.accessTokenService.removeAccessToken();
 					return of([]);
