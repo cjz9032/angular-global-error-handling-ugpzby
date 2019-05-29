@@ -2,9 +2,11 @@
     <vtr-main-header></vtr-main-header>
     <div class="privacy-wrapper__content">
         <div class="privacy-wrapper__main-col">
-            <vtr-privacy-score *ngIf="showPrivacyScore"></vtr-privacy-score>
-            <vtr-nav-tabs *ngIf="showNavigationBlock"></vtr-nav-tabs>
-            <router-outlet></router-outlet>
+            <div class="privacy-wrapper__inner-page">
+                <vtr-privacy-score *ngIf="showPrivacyScore"></vtr-privacy-score>
+                <vtr-nav-tabs *ngIf="showNavigationBlock"></vtr-nav-tabs>
+                <router-outlet></router-outlet>
+            </div>
             <vtr-support-banner *ngIf="showSupportBanner"></vtr-support-banner>
         </div>
         <div class="privacy-wrapper__side-col">
