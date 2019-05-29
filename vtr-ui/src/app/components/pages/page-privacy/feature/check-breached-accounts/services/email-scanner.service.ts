@@ -1,11 +1,10 @@
 import { Inject, Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject, throwError, of, EMPTY } from 'rxjs';
+import { BehaviorSubject, of, Subject, throwError } from 'rxjs';
 import { catchError, switchMap, tap } from 'rxjs/operators';
 import { StorageService } from '../../../common/services/storage.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AccessTokenService } from '../../../common/services/access-token.service';
 import { PRIVACY_ENVIRONMENT } from '../../../utils/injection-tokens';
-import { BreachedAccount } from '../../../common/services/breached-accounts.service';
 import { INVALID_TOKEN } from '../../../utils/error-codes';
 import { getHashCode } from '../../../utils/helpers';
 
