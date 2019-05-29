@@ -37,9 +37,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 	showSupportBanner = false;
 
 	pagesSettings: { [path in RoutersName]: PageSettings } = {
-		[RoutersName.MAIN]: defaultPageSettings,
 		tips: defaultPageSettings,
-		privacy: defaultPageSettings,
 		faq: defaultPageSettings,
 		news: defaultPageSettings,
 		landing: defaultPageSettings,
@@ -50,6 +48,16 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 			showSupportBanner: true,
 		},
 		breaches: {
+			showPrivacyScore: true,
+			showNavigationBlock: true,
+			showSupportBanner: true,
+		},
+		privacy: {
+			showPrivacyScore: true,
+			showNavigationBlock: true,
+			showSupportBanner: true,
+		},
+		[RoutersName.MAIN]: {
 			showPrivacyScore: true,
 			showNavigationBlock: true,
 			showSupportBanner: true,
@@ -92,17 +100,6 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 		this.showPrivacyScore = this.pagesSettings[routerPage].showPrivacyScore;
 		this.showNavigationBlock = this.pagesSettings[routerPage].showNavigationBlock;
 		this.showSupportBanner = this.pagesSettings[routerPage].showSupportBanner;
-	}
-
-	closePopUp(popupId) {
-		this.commonPopupService.close(popupId);
-	}
-
-	choseBrowser(browserValue) {
-		this.choseBrowserService.setBrowser(browserValue);
-		this.trackingMapService.updateTrackingData();
-		this.closePopUp(this.choseBrowserPopupId);
-		this.router.navigateByUrl('/privacy/trackers');
 	}
 
 	setPermit(isAllow: boolean, popupId: string) {

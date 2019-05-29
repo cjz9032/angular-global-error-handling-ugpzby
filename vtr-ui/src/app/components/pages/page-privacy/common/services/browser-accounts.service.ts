@@ -34,6 +34,7 @@ export class BrowserAccountsService {
 		private vantageCommunicationService: VantageCommunicationService,
 		private storageService: StorageService,
 	) {
+		this.getInstalledBrowsersDefaultData();
 	}
 
 	getInstalledBrowsersDefaultData() {
@@ -55,6 +56,7 @@ export class BrowserAccountsService {
 	giveConcent() {
 		this.storageService.setItem('isConsentGiven', 'true');
 		this.isConsentGiven$.next(true);
+		this.getInstalledBrowsersDefaultData();
 	}
 
 	concatPasswords(browserData: InstalledBrowser[]) {

@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FigleafOverviewService } from '../../common/services/figleaf-overview.service';
 import { BrowserAccountsService } from '../../common/services/browser-accounts.service';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { filter, map, take } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
 
@@ -16,7 +16,6 @@ export class NonPrivatePasswordComponent implements OnInit {
 
 	figleafDashboard = this.figleafOverviewService.figleafDashboard$;
 
-	isConsentToGetBrowsersAccountsGiven$ = this.browserAccountsService.isConsentGiven$;
 	isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 	isFigleafInstalled$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 
@@ -34,10 +33,6 @@ export class NonPrivatePasswordComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.isConsentToGetBrowsersAccountsGiven$.pipe(
-			filter(Boolean),
-			take(1)
-		).subscribe(() => this.getBrowserAccountsDetail());
 	}
 
 	openFigleaf() {
@@ -46,10 +41,6 @@ export class NonPrivatePasswordComponent implements OnInit {
 
 	giveConcentToGetBrowserAccounts() {
 		this.browserAccountsService.giveConcent();
-	}
-
-	getBrowserAccountsDetail() {
-		this.browserAccountsService.getInstalledBrowsersDefaultData();
 	}
 
 	private getParamFromUrl(paramName) {
