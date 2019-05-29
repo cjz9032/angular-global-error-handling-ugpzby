@@ -88,6 +88,9 @@
 				}
 			}
 		}
+		.icon-check::before {
+			content: ''
+		}
 
 		.icon-times {
 			.icon-bg {
