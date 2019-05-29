@@ -166,7 +166,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			(response: any) => {
 				if (response.length > 0) {
 					this.articles = response.slice(0, 8);
-					console.log(this.articles);
+					// console.log(this.articles);
 					this.articlesType = 'content';
 				} else {
 					this.fetchCMSContents('EN');
@@ -234,7 +234,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				}
 			},
 			error => {
-				console.log('fetchCMSArticleCategories error', error);
+				console.log('fetchCMSArticles error', error);
 				if (lang !== 'EN') {
 					this.fetchCMSArticles(categoryId, 'EN');
 				}
