@@ -14,11 +14,6 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	breached_accounts: BreachedAccount[];
 	openBreachedId$ = this.getParamFromUrl('openId').pipe(map((val) => Number(val)));
 	isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
-	// static Data transferred to html
-	commonTexts = {
-		title: 'Breached Accounts',
-		text: 'Some of your personal info has been exposed for anyone to see. It happened after a site you have an account with was hacked.'
-	};
 
 	constructor(
 		private breachedAccountsService: BreachedAccountsService,
