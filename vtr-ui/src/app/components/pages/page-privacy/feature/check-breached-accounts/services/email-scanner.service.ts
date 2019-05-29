@@ -45,6 +45,7 @@ export enum ErrorNames {
 	noAccessToken = 'noAccessToken'
 }
 
+const USER_EMAIL_HASH = 'privacy-user-email-hash';
 
 @Injectable()
 export class EmailScannerService {
@@ -77,6 +78,7 @@ export class EmailScannerService {
 
 	setScanBreachedAccounts() {
 		this.scanBreachedAccounts.next(true);
+		this.storageService.setItem(USER_EMAIL_HASH, getHashCode(this._userEmail$.getValue()));
 	}
 
 	setDisplayedUserEmail(userEmail) {
@@ -167,7 +169,9 @@ export class EmailScannerService {
 	}
 
 	getBreachedAccountsWithoutToken() {
-		const SHA1HashFromEmail = getHashCode(this._userEmail$.getValue());
+		const SHA1HashFromEmail = this.storageService.getItem(USER_EMAIL_HASH) ?
+			this.storageService.getItem(USER_EMAIL_HASH) :
+			getHashCode(this._userEmail$.getValue());
 
 		return this.http.get<BreachedAccountsFromServerResponse>(
 			`${this.environment.backendUrl}/api/v1/vantage/public/emailbreaches?email_hash=${SHA1HashFromEmail}`,
