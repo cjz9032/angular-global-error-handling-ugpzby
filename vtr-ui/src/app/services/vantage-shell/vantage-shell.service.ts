@@ -108,7 +108,6 @@ export class VantageShellService {
 					ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
 				});
 				metricClient.isInit = true;
-				metricClient.metricsEnabled = true;
 				metricClient.sendAsyncOrignally = metricClient.sendAsync;
 				metricClient.commonService = this.commonService;
 				metricClient.sendAsync = async function sendAsync(data) {
@@ -440,5 +439,11 @@ export class VantageShellService {
 		if (this.phoenix) {
 			return this.phoenix.hwsettings.lis.intelligentSensing;
 		} return undefined;
+	}
+
+	public getMetricPreferencePlugin() {
+		if (this.phoenix) {
+			return this.phoenix.genericMetricsPreference;
+		}
 	}
 }

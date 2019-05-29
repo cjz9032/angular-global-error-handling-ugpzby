@@ -32,6 +32,7 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	public options: any;
 	public keepMyDisplay: boolean;
 
+
 	headerMenuItems = [
 		{
 			title: 'device.deviceSettings.smartAssist.jumpTo.security',
@@ -167,7 +168,5 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	}
 
 	public onResetIntelligentSecurity() {
-
 	}
-
 }

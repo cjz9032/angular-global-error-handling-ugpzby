@@ -12,6 +12,7 @@
 			list-style-type: none;
 		}
 	}
+
 	.caption {
 		max-width: 60rem;
 		padding-left: 2rem;
@@ -19,8 +20,10 @@
 			font-size: 1.5rem;
 			color: $main_darker;
 		}
+
 		a {
 			text-decoration: underline;
+
 			&:hover {
 				text-decoration: underline;
 			}
@@ -34,15 +37,19 @@
 			font-size: 1.5rem;
 			color: $main_darker;
 		}
+
 		a {
 			text-decoration: underline;
+
 			&:hover {
 				text-decoration: underline;
 			}
 		}
+
 		&.screen-lock-note {
 			max-width: 64rem;
 		}
+
 		&.auto-screen-off-note {
 			p {
 				color: $alt;
@@ -66,6 +73,7 @@
 		fa-icon {
 			font-size: 1.8rem;
 			color: $gaming;
+
 			&:hover {
 				color: $highlight;
 			}
@@ -86,18 +94,18 @@
 		::ng-deep .vtr-ui-switch-row {
 			border-bottom: none;
 		}
-	}
 
-	.int-screen-desc {
-		p {
-			font-size: 1.5rem;
+		.int-screen-desc {
+			p {
+				font-size: 1.5rem;
+			}
 		}
-	}
 
-	.keep-my-display-block {
-		::ng-deep .vtr-ui-switch-row {
-			border-top: 0.1rem solid $shade_lighter;
-			border-bottom: none;
+		.keep-my-display-block {
+			::ng-deep .vtr-ui-switch-row {
+				border-top: 0.1rem solid $shade_lighter;
+				border-bottom: none;
+			}
 		}
 	}
 
@@ -106,6 +114,7 @@
 		z-index: 2;
 		pointer-events: none;
 	}
+
 	.disabled {
 		pointer-events: none;
 	}
@@ -122,17 +131,10 @@
 			border-bottom: none !important;
 		}
 	}
+
 	.bold-title {
 		::ng-deep .vtr-ui-switch-row.white-theme .title {
 			font-weight: 700;
-		}
-	}
-
-	.reset-link {
-		font-size: 1.5rem;
-		text-decoration: underline;
-		&:hover {
-			text-decoration: underline;
 		}
 	}
 }

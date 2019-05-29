@@ -4,15 +4,16 @@
 	[ngClass]="{'item-no-img': !item.Thumbnail, 'item-no-title': !item.Title}">
 	<div class="container-fluid">
 		<div class="row">
-			<a *ngIf="item.Thumbnail"
+			<a href="javascript:;"
+				*ngIf="item.Thumbnail"
 				class="col col-12 image"
 				[style.background-image]="'url('+item.Thumbnail+')'"
 				vtrMetrics
-				metricsEvent="DocClick"
+				metricsEvent="ArticleClick"
 				metricsParent="Page.Support"
-				metricsItemID=""
-				metricsItemCategory=""
-				metricsItemPosition=""
+				metricsItemID="{{ item.Id }}"
+				metricsItemCategory="{{ itemCategory }}"
+				metricsItemPosition="{{ index }}"
 				metricsViewOrder="{{metricsDatas.viewOrder}}"
 				metricsPageNumber="{{metricsDatas.pageNumber}}"
 				(click)="showArticleDetails()">
@@ -29,13 +30,14 @@
 			</a>
 			<div *ngIf="item.Title"
 				class="col col-12 content">
-				<a class="title"
+				<a href="javascript:;"
+					class="title"
 					vtrMetrics
-					metricsEvent="DocClick"
+					metricsEvent="ArticleClick"
 					metricsParent="Page.Support"
-					metricsItemID=""
-					metricsItemCategory=""
-					metricsItemPosition=""
+					metricsItemID="{{ item.Id }}"
+					metricsItemCategory="{{ itemCategory }}"
+					metricsItemPosition="{{ index }}"
 					metricsViewOrder="{{metricsDatas.viewOrder}}"
 					metricsPageNumber="{{metricsDatas.pageNumber}}"
 					(click)="showArticleDetails()">{{item.Title}}</a>
@@ -44,12 +46,13 @@
 				</div>
 				<div *ngIf="item.ReadMore && item.Thumbnail"
 					class="read-more">
-					<a vtrMetrics
-						metricsEvent="DocClick"
+					<a href="javascript:;"
+						vtrMetrics
+						metricsEvent="ArticleClick"
 						metricsParent="Page.Support"
-						metricsItemID=""
-						metricsItemCategory=""
-						metricsItemPosition=""
+						metricsItemID="{{ item.Id }}"
+						metricsItemCategory="{{ itemCategory }}"
+						metricsItemPosition="{{ index }}"
 						metricsViewOrder="{{metricsDatas.viewOrder}}"
 						metricsPageNumber="{{metricsDatas.pageNumber}}"
 						(click)="showArticleDetails()">

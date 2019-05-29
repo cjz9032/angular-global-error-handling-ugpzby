@@ -44,6 +44,7 @@ export class ModalWelcomeComponent implements OnInit {
 	}
 
 	next(page) {
+		this.metrics.metricsEnabled = (this.privacyPolicy === true);
 		let tutorialData;
 		if (page < 2) {
 			this.page = page;
@@ -104,8 +105,8 @@ export class ModalWelcomeComponent implements OnInit {
 	}
 
 	savePrivacy($event, value) {
+		this.privacyPolicy = $event.target.checked;
 		if ($event.target.checked) {
-			this.privacyPolicy = value;
 			this.progress += 17;
 		} else {
 			this.progress -= 17;

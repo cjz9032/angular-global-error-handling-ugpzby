@@ -343,11 +343,6 @@ export class ConfigService {
 				exact: true
 			},
 			subitems: []
-		},{
-			id: 'privacy',
-			label: 'common.menu.privacy',
-			path: 'privacy',
-			icon: ['icomoon', 'icomoon-LE-Figleaf2x'],
 		}, {
 			id: 'wifi-security',
 			label: 'common.menu.security.sub3',

@@ -10,9 +10,6 @@ export class SafeStorageService {
 	vault = new this.windows.Security.Credentials.PasswordVault();
 
 	constructor() {
-		// usage example below
-		// this.setPassword('testResource', 'testUsername', 'testPassword');
-		// console.log('getPassword', this.getPassword('testResource', 'testUsername'));
 	}
 
 	setPassword(resource, username, password) {
@@ -36,7 +33,9 @@ export class SafeStorageService {
 	removePassword(resource, username) {
 		try {
 			const credential = this.vault.retrieve(resource, username);
-			this.vault.remove(credential);
+			if (credential) {
+				this.vault.remove(credential);
+			}
 		} catch (error) {
 			console.error('removePassword error', error);
 		}
