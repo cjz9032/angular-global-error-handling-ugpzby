@@ -29,6 +29,7 @@ import { ModalChsWelcomeContainerComponent } from '../../modal/modal-chs-welcome
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { SecurityService } from 'src/app/services/security/security.service';
+import { HomeSecurityMockService } from 'src/app/services/home-security/home-security.service';
 
 @Component({
 	selector: 'vtr-page-connected-home-security',
@@ -48,6 +49,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit {
 
 	constructor(
 		private vantageShellService: VantageShellService,
+		public  homeSecurityMockService: HomeSecurityMockService,
 		private translateService: TranslateService,
 		private modalService: NgbModal,
 		private commonService: CommonService,
@@ -63,6 +65,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit {
 		this.notifications.items.push(new WidgetItem({id: '1', status: 0, title: 'placeholder1', detail: 'placeholder1'}, this.translateService));
 		this.notifications.items.push(new WidgetItem({id: '1', status: 0, title: 'placeholder2', detail: 'placeholder2'}, this.translateService));
 		this.notifications.items.push(new WidgetItem({id: '1', status: 0, title: 'placeholder3', detail: 'placeholder3'}, this.translateService));
+		this.account = this.homeSecurityMockService.account;
 	}
 
 	ngOnInit() {
