@@ -9,6 +9,7 @@ interface FeatureSettings {
 	image2x: string;
 	issuesCount?: number;
 	state?: string;
+	routerLink?: string;
 }
 
 interface TabsConfig {
@@ -85,9 +86,8 @@ export class NavTabsComponent implements OnInit {
 			},
 		},
 	};
-	breachesConfig = this.tabsConfig.breaches[FeaturesStatuses.undefined];
-	trackersConfig = this.tabsConfig.trackers[FeaturesStatuses.undefined];
-	passwordsConfig = this.tabsConfig.passwords[FeaturesStatuses.undefined];
+
+	featurePagesConfig = [];
 
 	constructor(
 		private userDataGetStateService: UserDataGetStateService,
@@ -98,21 +98,25 @@ export class NavTabsComponent implements OnInit {
 		this.userDataGetStateService.userDataStatus$.pipe(
 			userDataStatus$ => combineLatest(userDataStatus$, ...this.countNumberOfIssuesService.getPrivacyIssuesCount()),
 		).subscribe(([userDataStatuses, breachedAccountsCount, websiteTrackersCount, nonPrivatePasswordCount]) => {
-			this.breachesConfig = {
+			const breachesConfig = {
 				...this.tabsConfig.breaches[userDataStatuses.breachedAccountsResult],
 				issuesCount: breachedAccountsCount,
 				state: userDataStatuses.breachedAccountsResult,
+				routerLink: './breaches',
 			};
-			this.trackersConfig = {
+			const trackersConfig = {
 				...this.tabsConfig.trackers[userDataStatuses.websiteTrackersResult],
 				issuesCount: websiteTrackersCount,
 				state: userDataStatuses.websiteTrackersResult,
+				routerLink: './trackers',
 			};
-			this.passwordsConfig = {
+			const passwordsConfig = {
 				...this.tabsConfig.passwords[userDataStatuses.nonPrivatePasswordResult],
 				issuesCount: nonPrivatePasswordCount,
 				state: userDataStatuses.nonPrivatePasswordResult,
+				routerLink: './browser-accounts',
 			};
+			this.featurePagesConfig = [breachesConfig, trackersConfig, passwordsConfig];
 		});
 	}
 
