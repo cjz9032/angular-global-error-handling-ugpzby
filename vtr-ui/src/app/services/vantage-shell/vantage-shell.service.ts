@@ -6,6 +6,8 @@ import { CommonService } from '../../services/common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
 import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
+import { HybridModeSatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
+import { TouchpadStatus }  from 'src/app/data-models/gaming/touchpad-status.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -446,4 +448,56 @@ export class VantageShellService {
 			return this.phoenix.genericMetricsPreference;
 		}
 	}
+
+	public getHybridModeStatus(): any {
+		if (this.phoenix) {
+			this.phoenix.gaming.gamingHybridMode.getHybridModeStatus().then((hybridModeStatus) => {
+				console.log('get hydbrid mode status js bridge ->', hybridModeStatus);
+				return hybridModeStatus;
+			});
+		}
+		return undefined;
+	}
+
+	public setHybridModeStatus(hybridModeStausObj: HybridModeSatus): any {
+		if (this.phoenix) {
+			this.phoenix.gaming.gamingHybridMode.setHybridModeStatus(hybridModeStausObj.hybridModeStatus).then((response) => {
+				console.log('set hydbrid mode status js bridge ->', response);
+				return response;
+			});
+		}
+		return false;
+	}
+
+
+	public getKeyLockStatus(): any {
+		if (this.phoenix) {
+			this.phoenix.gaming.gamingKeyLock.getKeyLockStatus().then((touchpadStatus) => {
+				console.log('get Touchpad status js bridge ->', touchpadStatus);
+				return touchpadStatus;
+			});
+		}
+		return undefined;
+	}
+
+	public setKeyLockStatus(touchpadStausObj: TouchpadStatus): any {
+		if (this.phoenix) {
+			this.phoenix.gaming.gamingKeyLock.setKeyLockStatus(touchpadStausObj.touchpadStatus).then((response) => {
+				console.log('set Touchpad status js bridge ->', response);
+				return response;
+			});
+		}
+		return false;
+	}
+
+
+
+
+
+
+
+
+
+
+
 }
