@@ -9,7 +9,6 @@
 	</div>
 	<div class="row py-5 smart-assist-card"
 		id="security">
-		<div class="col-10 mx-auto border-bottom">
 
 		<div class="col-10 mx-auto">
 
@@ -156,7 +155,7 @@
 							[disabled]="!intelligentSecurity.humanPresenceDetectionFlag">
 							<div class="row blur"
 								[class.disabled]="!intelligentSecurity.zeroTouchLockFlag">
-								<div class="col-12 py-4 pr-0 d-flex justify-content-between auto-screen-lock-timer">
+								<div class="col-12 py-4 pr-3 d-flex justify-content-between auto-screen-lock-timer">
 									<h3>{{ 'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.title' | translate}}
 									</h3>
 									<a href="javascript:void();"
@@ -164,7 +163,7 @@
 										<fa-icon class="question"
 											triggers="click:blur"
 											placement="auto"
-											[ngbTooltip]="tooltipText | translate"
+											[ngbTooltip]="'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.toolTipContent' | translate"
 											[icon]="['far', 'question-circle']"
 											container="body"
 											tooltipClass="vtr-tooltip"></fa-icon>
@@ -217,6 +216,7 @@
 			</vtr-container-collapsible>
 		</div>
 	</div>
+
 	<div class="row py-5 smart-assist-card"
 		id="security">
 		<div class="col-10 mx-auto">
@@ -279,4 +279,5 @@
 			</vtr-container-collapsible>
 		</div>
 	</div>
+
 </div>
