@@ -10,17 +10,17 @@ export interface FeatureSettings {
 	title?: string;
 }
 
-interface TabsConfig {
-	breaches: {
-		[status in FeaturesStatuses]: FeatureSettings
-	};
-	trackers: {
-		[status in FeaturesStatuses]: FeatureSettings
-	};
-	passwords: {
-		[status in FeaturesStatuses]: FeatureSettings
-	};
+enum features {
+	breaches = 'breaches',
+	trackers = 'trackers',
+	passwords = 'passwords',
 }
+
+type TabsConfig = {
+	[feature in features]: {
+		[status in FeaturesStatuses]: FeatureSettings
+	};
+};
 
 @Injectable({
 	providedIn: 'root'
