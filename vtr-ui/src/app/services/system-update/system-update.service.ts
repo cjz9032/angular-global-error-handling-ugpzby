@@ -333,7 +333,7 @@ export class SystemUpdateService {
 	private updateIgnoredStatus(ignoredUpdates: any) {
 		this.updateInfo.updateList.forEach((update) => {
 			const result = ignoredUpdates.find(x => x.packageName === update.packageName);
-			if (result) {
+			if (result && update.packageSeverity !== UpdateInstallSeverity.Critical) {
 				update.isIgnored = true;
 			}
 			else {
