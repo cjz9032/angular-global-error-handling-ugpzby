@@ -562,6 +562,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		return updates;
 	}
 
+<<<<<<< HEAD
 	private sendInstallUpdateMetrics(updateList, ignoredUpdates) {
 		ignoredUpdates = ignoredUpdates ? ignoredUpdates : this.filterIgnoredUpdate(updateList, true);
 		const successUpdates = this.filterUpdateByResult(updateList, [UpdateActionResult.Success]);
@@ -587,6 +588,36 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				failedUpdates.length,
 				this.systemUpdateService.mapPackageListToIdString(failedUpdates),
 				'failure');
+=======
+	private sendInstallUpdateMetrics(updateList: Array<AvailableUpdateDetail>, ignoredUpdates: Array<AvailableUpdateDetail>) {
+		ignoredUpdates = ignoredUpdates ? ignoredUpdates : this.filterIgnoredUpdate(updateList, true);
+		const successUpdates = this.filterUpdateByResult(updateList, [UpdateActionResult.Success]);
+		let failedUpdates = this.filterUpdateByResult(updateList,
+			[UpdateActionResult.DownloadFailed, UpdateActionResult.InstallFailed]);
+
+		if (ignoredUpdates.length > 0) {
+			failedUpdates = failedUpdates.filter(item => {
+				for (const idx in ignoredUpdates) {
+					if (ignoredUpdates[idx].packageID === item.packageID) {
+						return false;
+					}
+				}
+				return true;
+			});
+
+			const packageIds = this.systemUpdateService.mapPackageListToIdString(ignoredUpdates);
+			this.metricHelper.sendInstallUpdateMetric(ignoredUpdates.length, packageIds, 'Ignored-NotInstallDueToACAdapterNotPluggedIn');
+		}
+
+		if (successUpdates.length > 0) {
+			const packageIds = this.systemUpdateService.mapPackageListToIdString(successUpdates);
+			this.metricHelper.sendInstallUpdateMetric(successUpdates.length, packageIds, 'success');
+		}
+
+		if (failedUpdates.length > 0) {
+			const packageIds = this.systemUpdateService.mapPackageListToIdString(failedUpdates);
+			this.metricHelper.sendInstallUpdateMetric(failedUpdates.length, packageIds, 'failure');
+>>>>>>> feature/mark-van-2748
 		}
 	}
 
@@ -644,7 +675,11 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.checkRebootRequested();
 					this.showToastMessage(payload.updateList);
 					this.setUpdateByCategory(payload.updateList);
+<<<<<<< HEAD
 					this.sendInstallUpdateMetrics(payload.updateList, this.ignoredUpdates);
+=======
+					this.sendInstallUpdateMetrics(payload.updateList, this.systemUpdateService.ignoredRebootDelayUpdates);
+>>>>>>> feature/mark-van-2748
 					break;
 				case UpdateProgress.AutoUpdateStatus:
 					this.autoUpdateOptions[0].isChecked = payload.criticalAutoUpdates;
