@@ -16,6 +16,7 @@ export class NonPrivatePasswordComponent implements OnInit {
 
 	figleafDashboard = this.figleafOverviewService.figleafDashboard$;
 
+	isConsentToGetBrowsersAccountsGiven$ = this.browserAccountsService.isConsentGiven$;
 	isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 	isFigleafInstalled$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 

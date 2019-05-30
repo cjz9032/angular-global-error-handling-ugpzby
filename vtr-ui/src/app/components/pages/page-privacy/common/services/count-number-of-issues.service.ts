@@ -1,49 +1,49 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 import { BreachedAccountsService } from './breached-accounts.service';
 import { BrowserAccountsService } from './browser-accounts.service';
 import { TrackingMapService } from '../../feature/tracking-map/services/tracking-map.service';
-import { filter } from 'rxjs/operators';
+import { filter, map, startWith } from 'rxjs/operators';
 import { typeData } from '../../feature/tracking-map/services/tracking-map.interface';
+import { tap } from 'rxjs/internal/operators/tap';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class CountNumberOfIssuesService {
-	breachedAccountsCount = new BehaviorSubject<number>(0);
-	websiteTrackersCount = new BehaviorSubject<number>(0);
-	nonPrivatePasswordCount = new BehaviorSubject<number>(0);
+	breachedAccountsCount = this.breachedAccountsService.onGetBreachedAccounts$.pipe(
+		map(breachesState => breachesState.breaches.length),
+		startWith(0)
+	);
+	nonPrivatePasswordCount = this.browserAccountsService.installedBrowsersData.pipe(
+		map((installedBrowsersData) => {
+				return installedBrowsersData.browserData.reduce((acc, curr) => {
+					acc += curr.accountsCount;
+					return acc;
+				}, 0);
+			}
+		),
+		tap((val) => console.log('nonPrivatePasswordCount', val)),
+		startWith(0)
+	);
+	websiteTrackersCount = this.trackingMapService.trackingData$.pipe(
+		filter((trackingData) => trackingData.typeData === typeData.Users),
+		map((trackingData) => {
+			return Object.keys(trackingData.trackingData.trackers).length;
+		}),
+		startWith(0)
+	);
 
 	constructor(
 		private breachedAccountsService: BreachedAccountsService,
 		private browserAccountsService: BrowserAccountsService,
 		private trackingMapService: TrackingMapService) {
-
-		this.breachedAccountsService.onGetBreachedAccounts$.subscribe((breachesState) => {
-			this.breachedAccountsCount.next(breachesState.breaches.length);
-		});
-
-		this.browserAccountsService.installedBrowsersData$.subscribe((installedBrowsersData) => {
-			const nonPrivatePasswordcount = installedBrowsersData.browserData.reduce((acc, curr) => {
-				acc += curr.accountsCount;
-				return acc;
-			}, 0);
-			this.nonPrivatePasswordCount.next(nonPrivatePasswordcount);
-		});
-
-		this.trackingMapService.trackingData$.pipe(
-			filter((trackingData) => trackingData.typeData === typeData.Users),
-		).subscribe((trackingData) => {
-			const trackersCount = Object.keys(trackingData.trackingData.trackers).length;
-			this.websiteTrackersCount.next(trackersCount);
-		});
 	}
 
 	getPrivacyIssuesCount() {
-		return {
-			breachedAccountsCount: this.breachedAccountsCount.getValue(),
-			websiteTrackersCount: this.websiteTrackersCount.getValue(),
-			nonPrivatePasswordCount: this.nonPrivatePasswordCount.getValue(),
-		};
+		return [
+			this.breachedAccountsCount,
+			this.websiteTrackersCount,
+			this.nonPrivatePasswordCount,
+		];
 	}
 }

@@ -25,6 +25,7 @@ export class BrowserAccountsService {
 	isConsentGiven$ = new BehaviorSubject(!!this.storageService.getItem('isConsentGiven'));
 
 	installedBrowsersData$ = new BehaviorSubject<InstalledBrowserDataState>({browserData: [], error: null});
+	installedBrowsersData = this.installedBrowsersData$.asObservable();
 
 	taskStartedTime = 0;
 	getNonPrivateStoragesAction$ = new Subject<{ TaskDuration: number }>();

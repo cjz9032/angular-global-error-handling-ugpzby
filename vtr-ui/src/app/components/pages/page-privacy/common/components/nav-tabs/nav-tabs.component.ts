@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserDataGetStateService } from '../../services/user-data-get-state.service';
 import { FeaturesStatuses } from '../../../userDataStatuses';
 import { CountNumberOfIssuesService } from '../../services/count-number-of-issues.service';
+import { combineLatest } from 'rxjs';
 
 interface FeatureSettings {
 	state: string;
@@ -106,8 +107,9 @@ export class NavTabsComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.userDataGetStateService.userDataStatus$.subscribe((userDataStatuses) => {
-			const {breachedAccountsCount, websiteTrackersCount, nonPrivatePasswordCount} = this.countNumberOfIssuesService.getPrivacyIssuesCount();
+		this.userDataGetStateService.userDataStatus$.pipe(
+			userDataStatus$ => combineLatest(userDataStatus$, ...this.countNumberOfIssuesService.getPrivacyIssuesCount()),
+		).subscribe(([userDataStatuses, breachedAccountsCount, websiteTrackersCount, nonPrivatePasswordCount]) => {
 			this.breachesConfig = {...this.tabsConfig.breaches[userDataStatuses.breachedAccountsResult], issuesCount: breachedAccountsCount};
 			this.trackersConfig = {...this.tabsConfig.trackers[userDataStatuses.websiteTrackersResult], issuesCount: websiteTrackersCount};
 			this.passwordsConfig = {...this.tabsConfig.passwords[userDataStatuses.nonPrivatePasswordResult], issuesCount: nonPrivatePasswordCount};
