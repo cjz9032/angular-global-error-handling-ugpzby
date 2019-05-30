@@ -19,8 +19,6 @@ export class GamingSystemUpdateService {
 		const CpuOCStatus = this.shellService.getCPUOCStatus();
 		if (CpuOCStatus !== undefined) {
 			const CpuOCStatusObj = new CPUOCStatus();
-
-
 			CpuOCStatusObj.cpuOCStatus = CpuOCStatus;
 			return CpuOCStatusObj;
 		}
@@ -40,19 +38,20 @@ export class GamingSystemUpdateService {
 		const RamOCStatus = this.shellService.getRAMOCStatus();
 		if (RamOCStatus !== undefined) {
 			const RamOCStatusObj = new RamOCSatus();
-
 			RamOCStatusObj.ramOcStatus = RamOCStatus;
+			this.commonService.setLocalStorageValue(LocalStorageKey.RamOcStatus, RamOCStatusObj);
 			return RamOCStatusObj;
 		}
+		return undefined;
+	}
+
+	public GetRAMOverClockCacheStatus() {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.RamOcStatus);
 	}
 
 	public SetRAMOverClockStatus(RamOCStatus: RamOCSatus): any {
-		const UpdatedRamOCStatus = this.shellService.setRAMOCStatus(RamOCStatus);
-		if (UpdatedRamOCStatus !== undefined) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.RamOcStatus, RamOCStatus);
-			return RamOCStatus;
-		}
-		return undefined;
+		const setRamOCStatusResponse = this.shellService.setRAMOCStatus(RamOCStatus);
+		console.log('setRamOCStatusResponse => ', setRamOCStatusResponse);
+		return setRamOCStatusResponse;
 	}
 }

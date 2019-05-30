@@ -215,6 +215,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 
 	public renderRamOverClockStatus() {
+		this.RamOCSatusObj = this.gamingSystemUpdateService.GetRAMOverClockCacheStatus();
 		this.RamOCSatusObj = this.gamingSystemUpdateService.GetRAMOverClockStatus();
 
 		if (isUndefined(this.RamOCSatusObj)) {

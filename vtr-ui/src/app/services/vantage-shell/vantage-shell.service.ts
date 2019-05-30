@@ -370,9 +370,11 @@ export class VantageShellService {
 		if (this.phoenix) {
 			// TODO Un comment below line when JSBridge is ready for integration.
 			// return this.phoenix.gaming.gamingOverclock.GetCpuOCStatus();
-			return undefined;
+			this.phoenix.gaming.gamingOverclock.GetCpuOCStatus().then((cpuOCStatus) => {
+				console.log('get cpu oc status js bridge ->', cpuOCStatus);
+				return cpuOCStatus;
+			});
 		}
-
 		return undefined;
 	}
 
@@ -380,9 +382,12 @@ export class VantageShellService {
 		if (this.phoenix) {
 			// TODO Un comment below line when JSBridge is ready for integration.
 			// return this.phoenix.gaming.gamingOverclock.SetCpuOCStatus(CpuOCStatus.cpuOCStatus);
-			return CpuOCStatus;
+			this.phoenix.gaming.gamingOverclock.setCpuOCStatus(CpuOCStatus.cpuOCStatus).then((response) => {
+				console.log('set cpu oc status js bridge ->', response);
+				return response;
+			});
 		}
-		return undefined;
+		return false;
 	}
 
 	public getThermalModeStatus(): any {
@@ -407,7 +412,10 @@ export class VantageShellService {
 		if (this.phoenix) {
 			// TODO Un comment below line when JSBridge is ready for integration.
 			// return this.phoenix.gaming.gamingOverclock.GetRamOCStatus();
-			return undefined;
+			this.phoenix.gaming.gamingOverclock.getRamOCStatus().then((ramOCStatus) => {
+				console.log('get ram oc status js bridge ->', ramOCStatus);
+				return ramOCStatus;
+			});
 		}
 		return undefined;
 	}
@@ -416,9 +424,12 @@ export class VantageShellService {
 		if (this.phoenix) {
 			// TODO Un comment below line when JSBridge is ready for integration.
 			// return this.phoenix.gaming.gamingOverclock.SetRamOCStatus(ramOCStausObj.ramOcStatuss);
-			return ramOCStausObj.ramOcStatus;
+			this.phoenix.gaming.gamingOverclock.setRamOCStatus(ramOCStausObj.ramOcStatus).then((response) => {
+				console.log('set ram oc status js bridge ->', response);
+				return response;
+			});
 		}
-		return ramOCStausObj.ramOcStatus;
+		return false;
 	}
 
 	public getGamingAllCapabilities(): any {
