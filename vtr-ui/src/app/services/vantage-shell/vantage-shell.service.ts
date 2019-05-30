@@ -368,24 +368,14 @@ export class VantageShellService {
 
 	public getCPUOCStatus(): any {
 		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingOverclock.GetCpuOCStatus();
-			this.phoenix.gaming.gamingOverclock.GetCpuOCStatus().then((cpuOCStatus) => {
-				console.log('get cpu oc status js bridge ->', cpuOCStatus);
-				return cpuOCStatus;
-			});
+			return this.phoenix.gaming.gamingOverclock.getCpuOCStatus();
 		}
 		return undefined;
 	}
 
 	public setCPUOCStatus(CpuOCStatus: CPUOCStatus): any {
 		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingOverclock.SetCpuOCStatus(CpuOCStatus.cpuOCStatus);
-			this.phoenix.gaming.gamingOverclock.setCpuOCStatus(CpuOCStatus.cpuOCStatus).then((response) => {
-				console.log('set cpu oc status js bridge ->', response);
-				return response;
-			});
+			return this.phoenix.gaming.gamingOverclock.setCpuOCStatus(CpuOCStatus.cpuOCStatus);
 		}
 		return false;
 	}
@@ -410,24 +400,14 @@ export class VantageShellService {
 
 	public getRAMOCStatus(): any {
 		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingOverclock.GetRamOCStatus();
-			this.phoenix.gaming.gamingOverclock.getRamOCStatus().then((ramOCStatus) => {
-				console.log('get ram oc status js bridge ->', ramOCStatus);
-				return ramOCStatus;
-			});
+			return this.phoenix.gaming.gamingOverclock.getRamOCStatus();
 		}
 		return undefined;
 	}
 
 	public setRAMOCStatus(ramOCStausObj: RamOCSatus): any {
 		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingOverclock.SetRamOCStatus(ramOCStausObj.ramOcStatuss);
-			this.phoenix.gaming.gamingOverclock.setRamOCStatus(ramOCStausObj.ramOcStatus).then((response) => {
-				console.log('set ram oc status js bridge ->', response);
-				return response;
-			});
+			return this.phoenix.gaming.gamingOverclock.setRamOCStatus(ramOCStausObj.ramOcStatus);
 		}
 		return false;
 	}
