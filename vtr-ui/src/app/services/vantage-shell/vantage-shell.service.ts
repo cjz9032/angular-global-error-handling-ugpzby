@@ -6,6 +6,8 @@ import { CommonService } from '../../services/common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
 import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
+import { HybridModeSatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
+import { TouchpadStatus }  from 'src/app/data-models/gaming/touchpad-status.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -368,21 +370,16 @@ export class VantageShellService {
 
 	public getCPUOCStatus(): any {
 		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingOverclock.GetCpuOCStatus();
-			return undefined;
+			return this.phoenix.gaming.gamingOverclock.getCpuOCStatus();
 		}
-
 		return undefined;
 	}
 
 	public setCPUOCStatus(CpuOCStatus: CPUOCStatus): any {
 		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingOverclock.SetCpuOCStatus(CpuOCStatus.cpuOCStatus);
-			return CpuOCStatus;
+			return this.phoenix.gaming.gamingOverclock.setCpuOCStatus(CpuOCStatus.cpuOCStatus);
 		}
-		return undefined;
+		return false;
 	}
 
 	public getThermalModeStatus(): any {
@@ -405,20 +402,16 @@ export class VantageShellService {
 
 	public getRAMOCStatus(): any {
 		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingOverclock.GetRamOCStatus();
-			return undefined;
+			return this.phoenix.gaming.gamingOverclock.getRamOCStatus();
 		}
 		return undefined;
 	}
 
 	public setRAMOCStatus(ramOCStausObj: RamOCSatus): any {
 		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingOverclock.SetRamOCStatus(ramOCStausObj.ramOcStatuss);
-			return ramOCStausObj.ramOcStatus;
+			return this.phoenix.gaming.gamingOverclock.setRamOCStatus(ramOCStausObj.ramOcStatus);
 		}
-		return ramOCStausObj.ramOcStatus;
+		return false;
 	}
 
 	public getGamingAllCapabilities(): any {
@@ -446,4 +439,56 @@ export class VantageShellService {
 			return this.phoenix.genericMetricsPreference;
 		}
 	}
+
+	public getHybridModeStatus(): any {
+		if (this.phoenix) {
+			this.phoenix.gaming.gamingHybridMode.getHybridModeStatus().then((hybridModeStatus) => {
+				console.log('get hydbrid mode status js bridge ->', hybridModeStatus);
+				return hybridModeStatus;
+			});
+		}
+		return undefined;
+	}
+
+	public setHybridModeStatus(hybridModeStausObj: HybridModeSatus): any {
+		if (this.phoenix) {
+			this.phoenix.gaming.gamingHybridMode.setHybridModeStatus(hybridModeStausObj.hybridModeStatus).then((response) => {
+				console.log('set hydbrid mode status js bridge ->', response);
+				return response;
+			});
+		}
+		return false;
+	}
+
+
+	public getKeyLockStatus(): any {
+		if (this.phoenix) {
+			this.phoenix.gaming.gamingKeyLock.getKeyLockStatus().then((touchpadStatus) => {
+				console.log('get Touchpad status js bridge ->', touchpadStatus);
+				return touchpadStatus;
+			});
+		}
+		return undefined;
+	}
+
+	public setKeyLockStatus(touchpadStausObj: TouchpadStatus): any {
+		if (this.phoenix) {
+			this.phoenix.gaming.gamingKeyLock.setKeyLockStatus(touchpadStausObj.touchpadStatus).then((response) => {
+				console.log('set Touchpad status js bridge ->', response);
+				return response;
+			});
+		}
+		return false;
+	}
+
+
+
+
+
+
+
+
+
+
+
 }
