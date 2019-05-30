@@ -1,7 +1,7 @@
 <div class="wifi-security-location-modal">
 	<h1>{{ header | translate }} </h1>
 	<div role="button" class="close-btn" id="{{closeButtonId}}" attr.aria-label="{{closeButtonId}}" (click)="onCancelClick($event)">
-		<img src="assets/icons/Close.svg" alt="" srcset="">
+		<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
 	</div>
 	<p class="description">
 		{{ description | translate }}

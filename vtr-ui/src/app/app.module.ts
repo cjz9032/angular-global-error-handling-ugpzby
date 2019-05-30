@@ -197,6 +197,7 @@ import { UiLightingProfileComponent } from './components/ui/ui-lighting-profile/
 import { AutoupdateSettingsComponent } from './components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
 import { UiLightingProfileToggleComponent } from './components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
 import { UiBrightnessSliderComponent } from './components/ui/ui-brightness-slider/ui-brightness-slider.component';
+import { SvgInlinePipe } from './pipe/svg-inline/svg-inline.pipe';
 
 
 
@@ -357,7 +358,8 @@ library.add(fal);
 		ModalChsWelcomeContainerComponent,
 		LoginLenovoIdComponent,
 		UiLightingProfileToggleComponent,
-		UiBrightnessSliderComponent
+		UiBrightnessSliderComponent,
+		SvgInlinePipe
 	],
 	imports: [
 		BrowserModule,

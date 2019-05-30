@@ -2,6 +2,8 @@ import { Component, Input, OnInit, OnDestroy, ContentChild, TemplateRef } from '
 import { CommonPopupService, CommonPopupEventType } from '../../services/popups/common-popup.service';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
+import { AnalyticsService } from '../../services/analytics.service';
+import { GetParentForAnalyticsService } from '../../services/get-parent-for-analytics.service';
 
 @Component({
 	selector: 'vtr-common-popup',
@@ -11,12 +13,33 @@ import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance
 export class CommonPopupComponent implements OnInit, OnDestroy {
 	@ContentChild(TemplateRef) template: TemplateRef<any>;
 	@Input() popUpId: string;
+	@Input() size: 'big' | 'large' | 'default' = 'default';
 
 	isOpen = false;
 
-	@Input() size: 'big' | 'large' | 'default' = 'default';
+	analyticsData = {
+		'confirmation-popup': {
+			ItemName: 'BreachedAccountsClosePopupButton',
+			ItemParent: 'ConfirmYourEmailPopup',
+		},
+		'low-privacy-popup': {
+			ItemName: 'ScorePopupCloseButton',
+			ItemParent: 'ScorePopup',
+		},
+		choseBrowserPopup: {
+			ItemName: 'WebsiteTrackersClosePopupButton',
+			ItemParent: 'WebsiteTrackersPopup',
+		},
+		'support-popup': {
+			ItemName: 'ChatNowClosePopupButton',
+			ItemParent: 'KindOfHelpPopup',
+		}
+	};
 
-	constructor(private commonPopupService: CommonPopupService) {
+	constructor(
+		private commonPopupService: CommonPopupService,
+		private getParentForAnalyticsService: GetParentForAnalyticsService,
+		private analyticsService: AnalyticsService) {
 	}
 
 	ngOnInit() {
@@ -48,6 +71,15 @@ export class CommonPopupComponent implements OnInit, OnDestroy {
 
 	closePopup() {
 		this.commonPopupService.close(this.popUpId);
+
+		const analyticsData = this.analyticsData[this.popUpId];
+		if (analyticsData) {
+			const ItemParent = this.getParentForAnalyticsService.getPageName() + '.' +  analyticsData.ItemParent;
+			this.analyticsService.sendItemClickData({
+				...analyticsData,
+				ItemParent
+			});
+		}
 	}
 
 	preventClick(ev) {

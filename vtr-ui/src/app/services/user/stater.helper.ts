@@ -9,6 +9,8 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 declare var Windows;
 
+
+
 const SOURCE_NAME = 'windows:Lenovo:id.uap.';
 const DEVICE_ID_TYPE = 'imei';
 const LIDUserSettingsXml = 'LenovoID_User_Settings.xml';

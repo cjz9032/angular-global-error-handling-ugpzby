@@ -33,9 +33,11 @@ export class PowerSmartSettingsComponent implements OnInit {
 
 	onIntelligentCoolingToggle(event) {
 		if (event.switchValue) {
+			this.enableIntelligentCoolingToggle = true
 			this.showIntelligentCoolingModes = false;
 		} else {
 			this.showIntelligentCoolingModes = true;
+			this.enableIntelligentCoolingToggle = false;
 			this.setManualModeSetting(IntelligentCoolingModes.Performance);
 		}
 		this.setAutoModeSetting(event);
@@ -71,8 +73,8 @@ export class PowerSmartSettingsComponent implements OnInit {
 					if (this.cQLCapability || this.tIOCapability) {
 						this.showIntelligentCoolingToggle = true;
 						if (mode.type == ICModes.Error) {
-							let event = { switchValue: this.enableIntelligentCoolingToggle }
-							this.onIntelligentCoolingToggle(event);
+							let customEvent = { switchValue: this.enableIntelligentCoolingToggle }
+							this.onIntelligentCoolingToggle(customEvent);
 						}
 					} else {
 						this.showIntelligentCoolingToggle = false;
@@ -97,8 +99,8 @@ export class PowerSmartSettingsComponent implements OnInit {
 					if (this.cQLCapability || this.tIOCapability) {
 						this.showIntelligentCoolingToggle = true;
 						this.enableIntelligentCoolingToggle = await this.getLegacyAutoModeState();
-						let event = { switchValue: this.enableIntelligentCoolingToggle }
-						this.onIntelligentCoolingToggle(event);
+						let customEvent = { switchValue: this.enableIntelligentCoolingToggle }
+						this.onIntelligentCoolingToggle(customEvent);
 					} else {
 						this.showIntelligentCoolingToggle = false;
 					}
@@ -133,17 +135,17 @@ export class PowerSmartSettingsComponent implements OnInit {
 				console.log('manualModeSettingStatus: Cool');
 				this.radioQuietCool = true;
 				this.radioPerformance = false;
-				this.enableIntelligentCoolingToggle = false;
+				//this.enableIntelligentCoolingToggle = false;
 				break;
 			case ICModes.Performance:
 				console.log('manualModeSettingStatus: Performance');
 				this.radioPerformance = true;
 				this.radioQuietCool = false;
-				this.enableIntelligentCoolingToggle = false;
+				//this.enableIntelligentCoolingToggle = false;
 				break;
 			case ICModes.Error:
-				let event = { switchValue: true }
-				this.onIntelligentCoolingToggle(event);
+				let customEvent = { switchValue: true }
+				this.onIntelligentCoolingToggle(customEvent);
 				this.enableIntelligentCoolingToggle = true;
 				console.log('manualModeSettingStatus: error');
 				break;
@@ -190,6 +192,7 @@ export class PowerSmartSettingsComponent implements OnInit {
 		try {
 			if (this.intelligentCoolingModes == IntelligentCoolingHardware.Legacy) {
 				await this.setLegacyManualModeState(mode.status);
+				this.setPerformanceAndCool(mode)
 			}
 			else if (this.powerService.isShellAvailable) {
 				this.powerService

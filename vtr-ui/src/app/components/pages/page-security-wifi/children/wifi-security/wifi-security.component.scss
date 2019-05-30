@@ -180,6 +180,7 @@
 
 			.col-check-location {
 				padding-right: 0rem;
+				margin: auto;
 			}
 
 			.button-box {
@@ -189,6 +190,9 @@
 				text-align: right;
 			}
 		}
+	}
+	.col-check-use-state{
+		margin: auto
 	}
 
 	.content {
@@ -302,6 +306,27 @@
 			
 			.no-gutters {
 				height: 2.7rem;
+				width: 100%;
+				display: flex;
+				.wifisecurity-container-name,
+				.wifisecurity-container-enable span{
+					display: inline-blockl;
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+
+				}
+				.wifisecurity-container-name{
+					min-width: 20%
+				}
+				.wifisecurity-container-enable{
+					max-width: 50%;
+					margin-top: auto;
+					margin-bottom: auto;
+					span{
+						width: 100%
+					}
+				}
 			}
 		}
 
@@ -313,7 +338,8 @@
 			.collapse-control {
 				margin-top: -0.4rem;
 				display: inline-block;
-				width: 15rem;
+				// width: 15rem;
+				max-width: 70%;
 
 				.collapse-text {
 					display: inline-block;
@@ -329,6 +355,11 @@
 					font-size: 2.4rem;
 					color: $main;
 					vertical-align: middle;
+				}
+				button{
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 				}
 			}
 		}
@@ -364,6 +395,8 @@
 			.loading {
 				margin-right: 1rem;
 			}
+			width: 50%;
+			justify-content: flex-start;
 			.circle {
 				background-color: $go;
 				background-image: linear-gradient(313deg, $go_light 25%, $go 100%);
@@ -374,6 +407,7 @@
 				text-align: center;
 				display: inline-block;
 				margin-right: 1rem;
+				flex-shrink: 0;
 
 				fa-icon {
 					font-size: 1.5rem;
@@ -443,16 +477,26 @@
 
 	}
 	.sm-device-responsive{
+		width: 50%;
+		display: flex;
+		justify-content: flex-end;
+
 		vtr-ui-switch-onoff {
 			display: inline-block;
 		}
 		@media #{$mediaquery_12} {
-			position: relative;
-			top: -3rem;
+			// position: relative;
+			// top: -3rem;
 		}
 		.switch-disable {
 			opacity: 0.3;
 			cursor: auto;
+		}
+	}
+	.button-box,
+	#sa-ws-btn-enablewifisecurity{
+		::ng-deep .vtr-ui-button .button-box .button{
+			max-width: 100%;
 		}
 	}
 }
