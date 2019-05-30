@@ -116,7 +116,7 @@ export class PageDeviceSettingsComponent implements OnInit {
 	 * check if HPD related features are supported or not. If yes show Smart Assist tab else hide. Default is hidden
 	 */
 	private getHPDStatus() {
-		this.smartAssist.getHPDCapability()
+		this.smartAssist.getIntelligentSecurityVisibility()
 			.then((isAvailable: boolean) => {
 				console.log('getHPDStatus.getHPDCapability()', isAvailable);
 				isAvailable = true;
