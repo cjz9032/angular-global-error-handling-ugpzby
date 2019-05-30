@@ -196,6 +196,7 @@ import { LoginLenovoIdComponent } from './components/modal/modal-chs-welcome-con
 import { UiLightingProfileComponent } from './components/ui/ui-lighting-profile/ui-lighting-profile.component';
 import { AutoupdateSettingsComponent } from './components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
 import { SvgInlinePipe } from './pipe/svg-inline/svg-inline.pipe';
+import { DisplayColorTempComponent } from './components/display/display-color-temp/display-color-temp.component';
 
 
 
@@ -355,7 +356,8 @@ library.add(fal);
 		UiPopoverComponent,
 		ModalChsWelcomeContainerComponent,
 		LoginLenovoIdComponent,
-		SvgInlinePipe
+		SvgInlinePipe,
+		DisplayColorTempComponent
 	],
 	imports: [
 		BrowserModule,

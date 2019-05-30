@@ -596,6 +596,20 @@
                             "title": "注",
                             "description": "Lenovo Vantage需要访问您的位置信息，以计算您所在地区的日落和日出时间。"
                         }
+                    },
+                    "dispColorTemp": {
+						"title": "Display color temperature",
+						"options": {
+							"warm": "Warm (Better for eyes)",
+							"cold": "Cold"
+						},
+						"reset": "Reset temperature",
+						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
+						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+						"note": {
+							"title": "Note",
+							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+						}
 					},
 					"privacyGuard": {
 						"title": "Privacy guard",

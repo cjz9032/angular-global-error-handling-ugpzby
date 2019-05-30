@@ -17,6 +17,32 @@
 				[theme]="'white'"
 				(toggle)="onCardCollapse($event)">
 				<ul class="list-group list-group-flush">
+						<li class="pt-3"
+						*ngIf="eyeCareModeStatus.available">
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
+							componentName="Display color temperature"
+							[name]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
+							[caption]=""
+							[isSwitchVisible]="false"
+							[leftIcon]="['fal', 'eye']"
+							[readMoreText]="''"
+							[showChildContent]="true"
+							[theme]="'white'"
+							[tooltipText]="'device.deviceSettings.displayCamera.display.dispColorTemp.tooltip' | translate">
+							<div class="row">
+								<div class="col-12">
+									<vtr-display-color-temp [displayColorTempSettings]="eyeCareDataSource"
+										[enableSlider]="false"
+										[manualRefresh]="manualRefresh"
+										(resetTemparature)="onResetTemparature($event)"
+										>
+									</vtr-display-color-temp>
+								</div>
+							</div>
+						</vtr-ui-row-switch>
+					</li>
+
 					<li class="pt-3"
 						*ngIf="eyeCareModeStatus.available">
 						<vtr-ui-row-switch
@@ -46,7 +72,8 @@
 								</div>
 							</div>
 						</vtr-ui-row-switch>
-					</li>
+					</li>			
+
 					<li class="pt-3">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.display.privacyGuard.title' | translate"

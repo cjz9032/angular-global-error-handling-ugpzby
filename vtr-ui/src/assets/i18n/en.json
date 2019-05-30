@@ -598,6 +598,20 @@
 							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
 						}
 					},
+					"dispColorTemp": {
+						"title": "Display color temperature",
+						"options": {
+							"warm": "Warm (Better for eyes)",
+							"cold": "Cold"
+						},
+						"reset": "Reset temperature",
+						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
+						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+						"note": {
+							"title": "Note",
+							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+						}
+					},
 					"privacyGuard": {
 						"title": "Privacy guard",
 						"description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
