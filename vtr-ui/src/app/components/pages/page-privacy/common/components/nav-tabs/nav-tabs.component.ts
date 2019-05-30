@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UserDataGetStateService } from '../../services/user-data-get-state.service';
 import { CountNumberOfIssuesService } from '../../services/count-number-of-issues.service';
 import { combineLatest } from 'rxjs';
 import { FeatureSettings, NavTabsService } from './nav-tabs.service';
+import { takeUntil } from 'rxjs/operators';
+import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 
 @Component({
 	selector: 'vtr-nav-tabs',
 	templateUrl: './nav-tabs.component.html',
 	styleUrls: ['./nav-tabs.component.scss']
 })
-export class NavTabsComponent implements OnInit {
+export class NavTabsComponent implements OnInit, OnDestroy {
 	featurePagesConfig: FeatureSettings[] = [];
 
 	constructor(
@@ -21,6 +23,7 @@ export class NavTabsComponent implements OnInit {
 	ngOnInit() {
 		this.userDataGetStateService.userDataStatus$.pipe(
 			userDataStatus$ => combineLatest(userDataStatus$, ...this.countNumberOfIssuesService.getPrivacyIssuesCount()),
+			takeUntil(instanceDestroyed(this)),
 		).subscribe(([userDataStatuses, breachedAccountsCount, websiteTrackersCount, nonPrivatePasswordCount]) => {
 			const breachesConfig = {
 				...this.navTabsService.tabsConfig.breaches[userDataStatuses.breachedAccountsResult],
@@ -45,6 +48,9 @@ export class NavTabsComponent implements OnInit {
 			};
 			this.featurePagesConfig = [breachesConfig, trackersConfig, passwordsConfig];
 		});
+	}
+
+	ngOnDestroy() {
 	}
 
 }
