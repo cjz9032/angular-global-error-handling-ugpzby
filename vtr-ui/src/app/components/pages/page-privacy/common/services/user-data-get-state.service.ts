@@ -17,9 +17,9 @@ interface UserStatuses {
 
 @Injectable()
 export class UserDataGetStateService {
-	breachedAccountsResult = new BehaviorSubject<FeaturesStatuses>(FeaturesStatuses.undefined);
-	websiteTrackersResult = new BehaviorSubject<FeaturesStatuses>(FeaturesStatuses.undefined);
-	nonPrivatePasswordResult = new BehaviorSubject<FeaturesStatuses>(FeaturesStatuses.undefined);
+	breachedAccountsResult: FeaturesStatuses = FeaturesStatuses.undefined;
+	websiteTrackersResult: FeaturesStatuses = FeaturesStatuses.undefined;
+	nonPrivatePasswordResult: FeaturesStatuses = FeaturesStatuses.undefined;
 	isFigleafReadyForCommunication = false;
 	userDataStatus = new ReplaySubject<UserStatuses>();
 	userDataStatus$ = this.userDataStatus.asObservable();
@@ -39,7 +39,7 @@ export class UserDataGetStateService {
 			if (breachesState.error) {
 				status = FeaturesStatuses.error;
 			}
-			this.breachedAccountsResult.next(status);
+			this.breachedAccountsResult = status;
 			this.updateUserDataSubject();
 		});
 
@@ -53,7 +53,7 @@ export class UserDataGetStateService {
 			if (installedBrowsersData.error) {
 				status = FeaturesStatuses.error;
 			}
-			this.nonPrivatePasswordResult.next(status);
+			this.nonPrivatePasswordResult = status;
 			this.updateUserDataSubject();
 		});
 
@@ -65,7 +65,7 @@ export class UserDataGetStateService {
 			if (trackingData.error) {
 				status = FeaturesStatuses.error;
 			}
-			this.websiteTrackersResult.next(status);
+			this.websiteTrackersResult = status;
 			this.updateUserDataSubject();
 		});
 
@@ -83,9 +83,9 @@ export class UserDataGetStateService {
 
 	private getFeatureStatus() {
 		return {
-			breachedAccountsResult: this.breachedAccountsResult.getValue(),
-			websiteTrackersResult: this.websiteTrackersResult.getValue(),
-			nonPrivatePasswordResult: this.nonPrivatePasswordResult.getValue(),
+			breachedAccountsResult: this.breachedAccountsResult,
+			websiteTrackersResult: this.websiteTrackersResult,
+			nonPrivatePasswordResult: this.nonPrivatePasswordResult,
 		};
 	}
 

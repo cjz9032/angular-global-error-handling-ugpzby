@@ -3,8 +3,8 @@
         <li class="header-nav__item">
             <a class="header-nav__link" routerLink="./breaches" routerLinkActive="active">
                 <img src="{{breachesConfig.image}}" alt="Breached Accounts logo">
-                <span class="header-nav__number" [ngClass]="[breachesConfig.hasOwnProperty('exist') ? 'header-nav__number--exist' : 'header-nav__number--none']">
-                    {{breachesConfig.hasOwnProperty('undefined') ? '' : breachesConfig.issuesCount}}
+                <span class="header-nav__number" [ngClass]="[breachesConfig.state === 'exist' ? 'header-nav__number--exist' : 'header-nav__number--none']">
+                    {{breachesConfig.state === 'undefined' ? '' : breachesConfig.issuesCount}}
                 </span>
                 <p class="header-nav__title">Breached Accounts</p>
             </a>
@@ -12,8 +12,8 @@
         <li class="header-nav__item">
             <a class="header-nav__link" routerLink="./trackers" routerLinkActive="active">
                 <img src="{{trackersConfig.image}}" alt="Trackers logo">
-                <span class="header-nav__number" [ngClass]="[trackersConfig.hasOwnProperty('exist') ? 'header-nav__number--exist' : 'header-nav__number--none']">
-                    {{trackersConfig.hasOwnProperty('undefined') ? '' : trackersConfig.issuesCount}}
+                <span class="header-nav__number" [ngClass]="[trackersConfig.state === 'exist' ? 'header-nav__number--exist' : 'header-nav__number--none']">
+                    {{trackersConfig.state === 'undefined' ? '' : trackersConfig.issuesCount}}
                 </span>
                 <p class="header-nav__title">Visible to Online Trackers</p>
             </a>
@@ -21,8 +21,8 @@
         <li class="header-nav__item">
             <a class="header-nav__link" routerLink="./browser-accounts" routerLinkActive="active">
                 <img src="{{passwordsConfig.image}}" alt="Browser Accounts logo">
-                <span class="header-nav__number" [ngClass]="[passwordsConfig.hasOwnProperty('exist') ? 'header-nav__number--exist' : 'header-nav__number--none']">
-                    {{passwordsConfig.hasOwnProperty('undefined') ? '' : passwordsConfig.issuesCount}}
+                <span class="header-nav__number" [ngClass]="[passwordsConfig.state === 'exist' ? 'header-nav__number--exist' : 'header-nav__number--none']">
+                    {{passwordsConfig.state === 'undefined' ? '' : passwordsConfig.issuesCount}}
                 </span>
                 <p class="header-nav__title">Non-Private Passwords</p>
             </a>

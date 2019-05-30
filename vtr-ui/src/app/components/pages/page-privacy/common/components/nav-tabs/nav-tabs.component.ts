@@ -5,10 +5,10 @@ import { CountNumberOfIssuesService } from '../../services/count-number-of-issue
 import { combineLatest } from 'rxjs';
 
 interface FeatureSettings {
-	state: string;
 	image: string;
 	image2x: string;
 	issuesCount?: number;
+	state?: string;
 }
 
 interface TabsConfig {
@@ -32,66 +32,54 @@ export class NavTabsComponent implements OnInit {
 	tabsConfig: TabsConfig = {
 		breaches: {
 			[FeaturesStatuses.undefined]: {
-				state: 'undefined',
 				image: '/assets/images/privacy-tab/nav-tabs/Breach/Unknown.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Breach/Unknown@2x.png',
 			},
 			[FeaturesStatuses.exist]: {
-				state: 'exist',
 				image: '/assets/images/privacy-tab/nav-tabs/Breach/Bad.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Breach/Bad@2x.png',
 			},
 			[FeaturesStatuses.none]: {
-				state: 'none',
 				image: '/assets/images/privacy-tab/nav-tabs/Breach/Good.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Breach/Good@2x.png',
 			},
 			[FeaturesStatuses.error]: {
-				state: 'undefined',
 				image: '/assets/images/privacy-tab/nav-tabs/Breach/Unknown.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Breach/Unknown@2x.png',
 			},
 		},
 		trackers: {
 			[FeaturesStatuses.undefined]: {
-				state: 'undefined',
 				image: '/assets/images/privacy-tab/nav-tabs/Tracker/Unknown.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Tracker/Unknown@2x.png',
 			},
 			[FeaturesStatuses.exist]: {
-				state: 'exist',
 				image: '/assets/images/privacy-tab/nav-tabs/Tracker/Bad.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Tracker/Bad@2x.png',
 			},
 			[FeaturesStatuses.none]: {
-				state: 'none',
 				image: '/assets/images/privacy-tab/nav-tabs/Tracker/Good.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Tracker/Good@2x.png',
 			},
 			[FeaturesStatuses.error]: {
-				state: 'undefined',
 				image: '/assets/images/privacy-tab/nav-tabs/Tracker/Unknown.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Tracker/Unknown@2x.png',
 			},
 		},
 		passwords: {
 			[FeaturesStatuses.undefined]: {
-				state: 'undefined',
 				image: '/assets/images/privacy-tab/nav-tabs/Pass/Unknown.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Pass/Unknown@2x.png',
 			},
 			[FeaturesStatuses.exist]: {
-				state: 'exist',
 				image: '/assets/images/privacy-tab/nav-tabs/Pass/Bad.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Pass/Bad@2x.png',
 			},
 			[FeaturesStatuses.none]: {
-				state: 'none',
 				image: '/assets/images/privacy-tab/nav-tabs/Pass/Good.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Pass/Good@2x.png',
 			},
 			[FeaturesStatuses.error]: {
-				state: 'undefined',
 				image: '/assets/images/privacy-tab/nav-tabs/Pass/Unknown.png',
 				image2x: '/assets/images/privacy-tab/nav-tabs/Pass/Unknown@2x.png',
 			},
@@ -110,9 +98,21 @@ export class NavTabsComponent implements OnInit {
 		this.userDataGetStateService.userDataStatus$.pipe(
 			userDataStatus$ => combineLatest(userDataStatus$, ...this.countNumberOfIssuesService.getPrivacyIssuesCount()),
 		).subscribe(([userDataStatuses, breachedAccountsCount, websiteTrackersCount, nonPrivatePasswordCount]) => {
-			this.breachesConfig = {...this.tabsConfig.breaches[userDataStatuses.breachedAccountsResult], issuesCount: breachedAccountsCount};
-			this.trackersConfig = {...this.tabsConfig.trackers[userDataStatuses.websiteTrackersResult], issuesCount: websiteTrackersCount};
-			this.passwordsConfig = {...this.tabsConfig.passwords[userDataStatuses.nonPrivatePasswordResult], issuesCount: nonPrivatePasswordCount};
+			this.breachesConfig = {
+				...this.tabsConfig.breaches[userDataStatuses.breachedAccountsResult],
+				issuesCount: breachedAccountsCount,
+				state: userDataStatuses.breachedAccountsResult,
+			};
+			this.trackersConfig = {
+				...this.tabsConfig.trackers[userDataStatuses.websiteTrackersResult],
+				issuesCount: websiteTrackersCount,
+				state: userDataStatuses.websiteTrackersResult,
+			};
+			this.passwordsConfig = {
+				...this.tabsConfig.passwords[userDataStatuses.nonPrivatePasswordResult],
+				issuesCount: nonPrivatePasswordCount,
+				state: userDataStatuses.nonPrivatePasswordResult,
+			};
 		});
 	}
 
