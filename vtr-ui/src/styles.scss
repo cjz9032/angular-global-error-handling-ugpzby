@@ -666,6 +666,11 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	.modal-backdrop.show {
 		opacity: 0.7;
 	}
+	.button-gray {
+		.vtr-ui-button {
+			width: 100%;
+		}
+	}
 	.vtr-ui-button {
 		.button-box {
 			padding: 0px !important;
