@@ -16,238 +16,336 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 	device = [{
 		title: 'homeSecurity.thisDevice',
 		status: 'protected',
-		badge: {
-			lidBadge: {
+		badge: [
+			{
+				type: 'lidBadge',
 				status: 'loading',
-				text: 'loading'
+				text: 'loading',
+				clickEvent() { },
+				expiredUrl: 'javascript:void(0);'
 			},
-			trialBadge: {
-				status: 'loading',
-				text: 'loading'
+			{
+				type: 'accountBadge',
+				status: undefined,
 			},
-			accountBadge: {
-				status: 'loading',
-				text: 'loading'
-			},
-			clickEvent() {}
-		},
-		expiredUrl: 'javascript:void(0);'
+			{
+				type: 'trialBadge',
+				status: undefined
+			}
+		],
 	}];
 	allDevice = [{
 		title: 'homeSecurity.allDevices',
 		status: 'not-protected',
-		badge: {
-			lidBadge: {
+		badge: [
+			{
+				type: 'lidBadge',
 				status: 'loading',
-				text: 'loading'
+				text: 'loading',
+				clickEvent() { },
+				expiredUrl: 'javascript:void(0);'
 			},
-			trialBadge: {
+			{
+				type: 'accountBadge',
 				status: 'loading',
-				text: 'loading'
+				text: 'loading',
+				clickEvent() { },
+				expiredUrl: 'javascript:void(0);'
 			},
-			accountBadge: {
+			{
+				type: 'trialBadge',
 				status: 'loading',
-				text: 'loading'
-			},
-			clickEvent() {}
-		},
-		expiredUrl: 'javascript:void(0);'
+				text: 'loading',
+				clickEvent() { },
+				expiredUrl: 'javascript:void(0);'
+			}
+		],
 	}];
 	constructor(public modalService: NgbModal,
-				public userService: UserService,
-				public homeSecurityMockService: HomeSecurityMockService) {
+		public userService: UserService,
+		public homeSecurityMockService: HomeSecurityMockService) {
 	}
 
-	@HostListener('window:focus')
-	onFocus(): void {
-		this.creatViewModel();
-	}
+	// @HostListener('window:focus')
+	// onFocus(): void {
+	// 	this.creatViewModel();
+	// }
 
 	ngOnInit() {
 		this.creatViewModel();
 	}
 
 	creatViewModel() {
-		const deviceBadge = this.device[0].badge;
+		const deviceBadge = this.device[0];
 		const allDevice = this.allDevice[0];
 		switch (this.subscription) {
 			case 'trial':
 				Object.assign(deviceBadge, {
-					lidBadge: {
-						status: 'enabled',
-						text: 'In Ecosystem'
-					},
-					trialBadge: {
-						status: undefined,
-					},
-					accountBadge: {
-						status: undefined,
-					},
-					clickEvent() {}
+					badge: [
+						{
+							type: 'lidBadge',
+							status: 'enabled',
+							text: 'In Ecosystem',
+							clickEvent() { },
+							expiredUrl: 'javascript:void(0);'
+						},
+						{
+							type: 'accountBadge',
+							status: undefined,
+						},
+						{
+							type: 'trialBadge',
+							status: undefined,
+						}
+					],
 				});
 				Object.assign(allDevice, {
 					status: 'protected',
-					badge: {
-						lidBadge: {
+					badge: [
+						{
+							type: 'lidBadge',
 							status: 'enabled',
-							text: 'Ecosystem Enabled'
+							text: 'Ecosystem Enabled',
+							clickEvent() { },
+							expiredUrl: 'javascript:void(0);'
 						},
-						trialBadge: {
-							status: 'enabled',
-							text: 'In Trial'
-						},
-						accountBadge: {
+						{
+							type: 'accountBadge',
 							status: 'disabled',
-							text: 'Upgrade'
+							text: 'Upgrade',
+							clickEvent() { },
+							expiredUrl: this.url
 						},
-						clickEvent() {}
-					},
-					expiredUrl: this.url
+						{
+							type: 'trialBadge',
+							status: 'enabled',
+							text: 'In Trial',
+							clickEvent() { },
+							expiredUrl: this.url
+						}
+					],
 				});
 				break;
 			case 'trialExpired':
 				Object.assign(deviceBadge, {
-					lidBadge: {
-						status: 'enabled',
-						text: 'In Ecosystem'
-					},
-					trialBadge: {
-						status: undefined,
-					},
-					accountBadge: {
-						status: undefined,
-					},
-					clickEvent() {}
+					badge: [
+						{
+							type: 'lidBadge',
+							status: 'enabled',
+							text: 'In Ecosystem',
+							clickEvent() { },
+							expiredUrl: 'javascript:void(0);'
+						},
+						{
+							type: 'accountBadge',
+							status: undefined,
+						},
+						{
+							type: 'trialBadge',
+							status: undefined,
+						}
+					],
 				});
 				Object.assign(allDevice, {
 					status: 'not-protected',
-					badge: {
-						lidBadge: {
+					badge: [
+						{
+							type: 'lidBadge',
 							status: 'enabled',
-							text: 'Ecosystem Enabled'
+							text: 'Ecosystem Enabled',
+							clickEvent() { },
+							expiredUrl: 'javascript:void(0);'
 						},
-						trialBadge: {
+						{
+							type: 'accountBadge',
 							status: 'disabled',
-							text: 'Trial Expired'
+							text: 'Upgrade',
+							clickEvent() { },
+							expiredUrl: this.url
 						},
-						accountBadge: {
+						{
+							type: 'trialBadge',
 							status: 'disabled',
-							text: 'Upgrade'
-						},
-						clickEvent() {}
-					},
-					expiredUrl: this.url
+							text: 'Trial Expired',
+							clickEvent() { },
+							expiredUrl: this.url
+						}
+					],
 				});
 				break;
 			case 'upgraded':
 				Object.assign(deviceBadge, {
-					lidBadge: {
-						status: 'enabled',
-						text: 'In Ecosystem'
-					},
-					trialBadge: {
-						status: undefined,
-					},
-					accountBadge: {
-						status: undefined,
-					},
-					clickEvent() {}
+					badge: [
+						{
+							type: 'lidBadge',
+							status: 'enabled',
+							text: 'In Ecosystem',
+							clickEvent() { },
+							expiredUrl: 'javascript:void(0);'
+						},
+						{
+							type: 'accountBadge',
+							status: undefined,
+						},
+						{
+							type: 'trialBadge',
+							status: undefined,
+						}
+					],
 				});
 				Object.assign(allDevice, {
 					status: 'protected',
-					badge: {
-						lidBadge: {
+					badge: [
+						{
+							type: 'lidBadge',
 							status: 'enabled',
-							text: 'Ecosystem Enabled'
+							text: 'Ecosystem Enabled',
+							clickEvent() { },
+							expiredUrl: 'javascript:void(0);',
 						},
-						trialBadge: {
+						{
+							type: 'accountBadge',
+							status: 'enabled',
+							text: 'Full Access',
+							clickEvent() { },
+							expiredUrl: 'javascript:void(0);',
+						},
+						{
+							type: 'trialBadge',
 							status: undefined,
-						},
-						accountBadge: {
-							status: 'enabled',
-							text: 'Full Access'
-						},
-						clickEvent() {}
-					},
-					expiredUrl: 'javascript:void(0);',
+						}
+					],
 				});
 				break;
 			case 'upgradedExpired':
 				Object.assign(deviceBadge, {
-					lidBadge: {
-						status: 'enabled',
-						text: 'In Ecosystem'
-					},
-					trialBadge: {
-						status: undefined,
-					},
-					accountBadge: {
-						status: undefined,
-					},
-					clickEvent() {}
+					badge: [
+						{
+							type: 'lidBadge',
+							status: 'enabled',
+							text: 'In Ecosystem',
+							clickEvent() { },
+							expiredUrl: 'javascript:void(0);'
+						},
+						{
+							type: 'accountBadge',
+							status: undefined,
+						},
+						{
+							type: 'trialBadge',
+							status: undefined,
+						}
+					],
 				});
 				Object.assign(allDevice, {
 					status: 'not-protected',
-					badge: {
-						lidBadge: {
+					badge: [
+						{
+							type: 'lidBadge',
 							status: 'enabled',
-							text: 'Ecosystem Enabled'
+							text: 'Ecosystem Enabled',
+							expiredUrl: 'javascript:void(0);',
+							clickEvent() { },
 						},
-						trialBadge: {
-							status: undefined,
-						},
-						accountBadge: {
+						{
+							type: 'accountBadge',
 							status: 'disabled',
-							text: 'Upgrade'
+							text: 'Upgrade',
+							expiredUrl: this.url,
+							clickEvent() { },
 						},
-						clickEvent() {}
-					},
-					expiredUrl: this.url
+						{
+							type: 'trialBadge',
+							status: undefined,
+						}
+					],
 				});
 				break;
 			case 'localAccount':
 				Object.assign(deviceBadge, {
-					lidBadge: {
-						status: 'disabled',
-						text: 'Add to Ecosystem'
-					},
-					trialBadge: {
-						status: undefined,
-					},
-					accountBadge: {
-						status: undefined,
-					},
-					clickEvent: this.launchLenovoId.bind(this),
+					badge: [
+						{
+							type: 'lidBadge',
+							status: 'disabled',
+							text: 'Add to Ecosystem',
+							clickEvent: this.launchLenovoId.bind(this),
+							expiredUrl: 'javascript:void(0);'
+						},
+						{
+							type: 'accountBadge',
+							status: undefined,
+						},
+						{
+							type: 'trialBadge',
+							status: undefined,
+						}
+					],
 				});
 				Object.assign(allDevice, {
 					status: 'not-protected',
-					badge: {
-						lidBadge: {
+					badge: [
+						{
+							type: 'lidBadge',
 							status: 'disabled',
-							text: 'Enable Ecosystem'
+							text: 'Enable Ecosystem',
+							clickEvent: this.launchLenovoId.bind(this),
+							expiredUrl: 'javascript:void(0);'
 						},
-						trialBadge: {
+						{
+							type: 'accountBadge',
 							status: undefined,
 						},
-						accountBadge: {
+						{
+							type: 'trialBadge',
 							status: undefined,
-						},
-						clickEvent: this.launchLenovoId.bind(this),
-					}
+						}
+					],
 				});
 				break;
+			case 'localWithLid':
+				Object.assign(deviceBadge, {
+					badge: [
+						{
+							type: 'lidBadge',
+							status: 'enabled',
+							text: 'In Ecosystem',
+							clickEvent() { },
+							expiredUrl: 'javascript:void(0);'
+						},
+						{
+							type: 'accountBadge',
+							status: undefined,
+						},
+						{
+							type: 'trialBadge',
+							status: undefined,
+						}
+					],
+				});
+				Object.assign(allDevice, {
+					status: 'not-protected',
+					badge: [
+						{
+							type: 'lidBadge',
+							status: 'enabled',
+							text: 'In Ecosystem',
+							clickEvent() { },
+							expiredUrl: 'javascript:void(0);'
+						},
+						{
+							type: 'accountBadge',
+							status: 'disabled',
+							text: 'Start Trial',
+							clickEvent: this.startTrial.bind(this),
+							expiredUrl: 'javascript:void(0);'
+						},
+						{
+							type: 'trialBadge',
+							status: undefined,
+						}
+					],
+				});
 		}
-		// if (this.userService.auth) {
-		// 	deviceBadge.lidBadge.status = 'enabled';
-		// 	deviceBadge.lidBadge.text = 'In Ecosystem';
-		// 	allDevice.badge.lidBadge.status = 'enabled';
-		// 	allDevice.badge.lidBadge.text = 'Ecosystem Enabled';
-		// } else {
-		// 	deviceBadge.lidBadge.status = 'disabled';
-		// 	deviceBadge.lidBadge.text = 'Add to Ecosystem';
-		// 	allDevice.badge.lidBadge.status = 'disabled';
-		// 	allDevice.badge.lidBadge.text = 'Enable Ecosystem';
-		// }
 	}
 
 	launchLenovoId() {
@@ -259,13 +357,18 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 	}
 
 	switchMock() {
-		const subscription = ['upgraded', 'upgradedExpired', 'trial', 'trialExpired', 'localAccount'];
+		const subscription = ['upgraded', 'upgradedExpired', 'trial', 'trialExpired', 'localAccount', 'localWithLid'];
 		const i = this.homeSecurityMockService.id;
 		console.log(this.homeSecurityMockService.id);
-		if (this.homeSecurityMockService.id < 4) {
+		if (this.homeSecurityMockService.id < 5) {
 			this.homeSecurityMockService.id++;
 		} else { this.homeSecurityMockService.id = 0; }
 		this.homeSecurityMockService.account.subscription = subscription[i];
+		this.creatViewModel();
+	}
+
+	startTrial() {
+		this.subscription = 'trial';
 		this.creatViewModel();
 	}
 }

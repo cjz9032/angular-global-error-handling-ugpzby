@@ -31,21 +31,16 @@
 					[metricsItem]="list.metricsItem"
 					[label]="list.buttonTitle | translate" [isRegular]=regular ></vtr-ui-button>
 			</div>
-			<div *ngIf="list.badge" class="badge-item">
-				<h3><span *ngIf="list.badge.lidBadge.status" 
-						class="badge badge-pill ml-3"
-						[ngClass]="list.badge.lidBadge.status | textClass"
-						(click)="list.badge.clickEvent()">
-					{{list.badge.lidBadge.text}}
-				</span>
-				<a [href]="list.expiredUrl | sanitizeUrl"
-					target="_blank"><span *ngIf="list.badge.trialBadge.status" class="badge badge-pill ml-3" [ngClass]="list.badge.trialBadge.status | textClass">
-					{{list.badge.trialBadge.text}}
-				</span></a>
-				<a [href]="list.expiredUrl | sanitizeUrl"
-				target="_blank"><span *ngIf="list.badge.accountBadge.status" class="badge badge-pill ml-3" [ngClass]="list.badge.accountBadge.status | textClass">
-					{{list.badge.accountBadge.text}}
-				</span></a>
+			<div *ngIf="list.badge" class="badge-item row align-item-center">
+				<h3 *ngFor="let badgeItem of list.badge">
+					<a [href]="badgeItem.expiredUrl | sanitizeUrl" target="_blank">
+						<span *ngIf="badgeItem.status" 
+							class="badge badge-pill ml-3"
+							[ngClass]="badgeItem.status | textClass"
+							(click)="badgeItem.clickEvent()">
+							{{badgeItem.text}}
+						</span>
+					</a>
 				</h3>
 			</div>
 		</div>
