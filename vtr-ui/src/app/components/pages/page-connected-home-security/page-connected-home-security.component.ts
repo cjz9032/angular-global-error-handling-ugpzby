@@ -1,7 +1,8 @@
 import {
 	Component,
 	OnInit,
-	NgZone
+	NgZone,
+	OnDestroy
 } from '@angular/core';
 import {
 	HomeSecurityHomeGroup
@@ -30,13 +31,14 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { SecurityService } from 'src/app/services/security/security.service';
 import { HomeSecurityMockService } from 'src/app/services/home-security/home-security.service';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 
 @Component({
 	selector: 'vtr-page-connected-home-security',
 	templateUrl: './page-connected-home-security.component.html',
 	styleUrls: ['./page-connected-home-security.component.scss']
 })
-export class PageConnectedHomeSecurityComponent implements OnInit {
+export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	myFamilyMembers: Map < string,
 	HomeSecurityMemberGroup > ;
 	myHomes: Map < string,
@@ -69,16 +71,26 @@ export class PageConnectedHomeSecurityComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, 'true');
 		const showW = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome);
-		this.ngZone.run(() => {
-			this.modalService.open(ModalChsWelcomeContainerComponent, {
-				backdrop: 'static',
-				size: 'lg',
-				centered: true,
-				windowClass: 'Welcome-container-Modal'
+		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage) === 'true') {
+			if (this.modalService.hasOpenModals()) {
+				return;
+			}
+			this.ngZone.run(() => {
+				this.modalService.open(ModalChsWelcomeContainerComponent, {
+					backdrop: 'static',
+					size: 'lg',
+					centered: true,
+					windowClass: 'Welcome-container-Modal'
+				});
+				this.showWelcome = (showW ? showW : 0) + 1;
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, this.showWelcome);
 			});
-			this.showWelcome = (showW ? showW : 0) + 1;
-			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome, this.showWelcome);
-		});
+		}
+	}
+
+	ngOnDestroy() {
+		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, 'false');
 	}
 }
