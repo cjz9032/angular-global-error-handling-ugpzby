@@ -5,7 +5,7 @@
 				metricsEvent="FeatureClick"
 				metricsParent="{{licenseModalMetrics.pageName}}"
 				(click)="closeModal()">
-		<img src="/assets/icons/Close.svg" alt="" srcset="">
+		<img [src]=" '/assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
 	</div>
 	<div [innerHTML]="articleBody"></div>
 </div>

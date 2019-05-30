@@ -1,7 +1,7 @@
 <div class="home-protection-location-modal">
 	<h1>{{ header | translate }} </h1>
 	<div role="button" class="close-btn" (click)="onCancelClick($event)">
-		<img src="assets/icons/Close.svg" alt="" srcset="">
+		<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
 	</div>
 	<p class="description">
 		{{ description | translate }}

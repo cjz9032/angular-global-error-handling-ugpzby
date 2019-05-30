@@ -9,7 +9,7 @@
 				class="close"
 				aria-label="Close"
 				(click)="modal.dismiss('Cross click')">
-				<img src="assets/icons/Close.svg" />
+				<img [src]=" 'assets/icons/Close.svg' | svgInline | async" />
 			</button>
 		</div>
 		<div class="modal-body">
