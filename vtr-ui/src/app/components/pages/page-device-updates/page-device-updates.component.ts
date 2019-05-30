@@ -4,7 +4,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
-import { ActivatedRoute} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
@@ -522,7 +522,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 
 	private setUpdateByCategory(updateList: Array<AvailableUpdateDetail>) {
 		if (updateList) {
-			this.ignoredUpdates =  this.filterIgnoredUpdate(updateList, true);
+			this.ignoredUpdates = this.filterIgnoredUpdate(updateList, true);
 			const unIgnoredUpdates = this.filterIgnoredUpdate(updateList, false);
 			this.optionalUpdates = this.filterUpdate(unIgnoredUpdates, 'optional');
 			this.recommendedUpdates = this.filterUpdate(unIgnoredUpdates, 'recommended');
@@ -562,33 +562,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		return updates;
 	}
 
-<<<<<<< HEAD
-	private sendInstallUpdateMetrics(updateList, ignoredUpdates) {
-		ignoredUpdates = ignoredUpdates ? ignoredUpdates : this.filterIgnoredUpdate(updateList, true);
-		const successUpdates = this.filterUpdateByResult(updateList, [UpdateActionResult.Success]);
-		const failedUpdates = this.filterUpdateByResult(updateList,
-			[UpdateActionResult.DownloadFailed, UpdateActionResult.InstallFailed]);
-
-		if (ignoredUpdates.length > 0) {
-			this.metricHelper.sendInstallUpdateMetric(
-				this.ignoredUpdates.length,
-				this.systemUpdateService.mapPackageListToIdString(this.ignoredUpdates),
-				'success');
-		}
-
-		if (successUpdates.length > 0) {
-			this.metricHelper.sendInstallUpdateMetric(
-				successUpdates.length,
-				this.systemUpdateService.mapPackageListToIdString(successUpdates),
-				'ignored');
-		}
-
-		if (failedUpdates.length > 0) {
-			this.metricHelper.sendInstallUpdateMetric(
-				failedUpdates.length,
-				this.systemUpdateService.mapPackageListToIdString(failedUpdates),
-				'failure');
-=======
 	private sendInstallUpdateMetrics(updateList: Array<AvailableUpdateDetail>, ignoredUpdates: Array<AvailableUpdateDetail>) {
 		ignoredUpdates = ignoredUpdates ? ignoredUpdates : this.filterIgnoredUpdate(updateList, true);
 		const successUpdates = this.filterUpdateByResult(updateList, [UpdateActionResult.Success]);
@@ -617,7 +590,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		if (failedUpdates.length > 0) {
 			const packageIds = this.systemUpdateService.mapPackageListToIdString(failedUpdates);
 			this.metricHelper.sendInstallUpdateMetric(failedUpdates.length, packageIds, 'failure');
->>>>>>> feature/mark-van-2748
 		}
 	}
 
@@ -675,11 +647,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.checkRebootRequested();
 					this.showToastMessage(payload.updateList);
 					this.setUpdateByCategory(payload.updateList);
-<<<<<<< HEAD
-					this.sendInstallUpdateMetrics(payload.updateList, this.ignoredUpdates);
-=======
 					this.sendInstallUpdateMetrics(payload.updateList, this.systemUpdateService.ignoredRebootDelayUpdates);
->>>>>>> feature/mark-van-2748
 					break;
 				case UpdateProgress.AutoUpdateStatus:
 					this.autoUpdateOptions[0].isChecked = payload.criticalAutoUpdates;
