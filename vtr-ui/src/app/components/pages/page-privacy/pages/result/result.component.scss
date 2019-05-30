@@ -12,6 +12,11 @@
 		@extend %common-block-wrapper;
 	}
 
+	&__title-row {
+		display: flex;
+		justify-content: space-between;
+	}
+
 	&__title {
 		@extend %subtitle;
 	}
@@ -47,6 +52,11 @@
 
 	&__get-figleaf-link {
 
+	}
+
+	&__btn-to-fl {
+		@extend %theme-btn;
+		text-transform: uppercase;
 	}
 }
 

@@ -5,6 +5,8 @@ import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.mode
 import { isUndefined } from 'util';
 import { GamingSystemUpdateService } from 'src/app/services/gaming/gaming-system-update/gaming-system-update.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
+import { HybridModeSatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
+import { TouchpadStatus } from 'src/app/data-models/gaming/touchpad-status.model';
 
 
 @Component({
@@ -15,6 +17,8 @@ import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.mod
 export class WidgetLegionEdgeComponent implements OnInit {
 
 	public RamOCSatusObj = new RamOCSatus();
+	public HybridModeStatusObj = new HybridModeSatus();
+	public TouchpadStatusObj = new TouchpadStatus();
 	public legionUpdate = [
 		{
 			readMoreText: '',
@@ -177,6 +181,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	ngOnInit() {
 		this.legionUpdate[0].isVisible = this.gamingSettings.cpuOCFeature;
 		this.legionUpdate[1].isVisible = this.gamingSettings.memOCFeature;
+		this.legionUpdate[4].isVisible = this.gamingSettings.hybridModeFeature;
+		this.legionUpdate[5].isVisible = this.gamingSettings.touchpadLockFeature;
 
 		if (this.gamingSettings.cpuOCFeature) {
 			this.renderCPUOverClockStatus();
@@ -185,10 +191,18 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		if (this.gamingSettings.memOCFeature) {
 			this.renderRamOverClockStatus();
 		}
+
+		if (this.gamingSettings.hybridModeFeature) {
+			this.renderHybridModeStatus();
+		}
+
+		if (this.gamingSettings.touchpadLockFeature) {
+			this.renderTouchpadStatus();
+		}
 	}
 
 	public renderCPUOverClockStatus() {
-		this.CpuOCStatus = this.gamingSystemUpdateService.GetCPUOverClockStatus();
+		this.CpuOCStatus = this.gamingSystemUpdateService.GetCPUOverClockCacheStatus();
 		if (this.CpuOCStatus !== undefined) {
 			this.edgeopt.forEach((option) => {
 				if (option.value === this.CpuOCStatus.cpuOCStatus) {
@@ -197,6 +211,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				}
 			});
 		}
+
+		this.CpuOCStatus = this.gamingSystemUpdateService.GetCPUOverClockStatus();
 	}
 
 	onOptionSelected(event) {
@@ -215,7 +231,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 
 	public renderRamOverClockStatus() {
-		this.RamOCSatusObj = this.gamingSystemUpdateService.GetRAMOverClockStatus();
+		this.RamOCSatusObj = this.gamingSystemUpdateService.GetRAMOverClockCacheStatus();
 
 		if (isUndefined(this.RamOCSatusObj)) {
 			this.RamOCSatusObj = new RamOCSatus();
@@ -226,7 +242,39 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		if (this.legionUpdate[1].name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			this.legionUpdate[1].isChecked = this.RamOCSatusObj.ramOcStatus;
 		}
+
+		this.RamOCSatusObj = this.gamingSystemUpdateService.GetRAMOverClockStatus();
+		// we need to rerender the component here.
 	}
+
+	public renderHybridModeStatus() {
+		this.HybridModeStatusObj = this.gamingSystemUpdateService.GetHybridModeStatus();
+
+		if (isUndefined(this.HybridModeStatusObj)) {
+			this.HybridModeStatusObj = new HybridModeSatus();
+			this.gamingSystemUpdateService.SetHybridModeStatus(this.HybridModeStatusObj);
+		}
+
+		// Binding to UI
+		if (this.legionUpdate[4].name === 'gaming.dashboard.device.legionEdge.hybridMode') {
+			this.legionUpdate[4].isChecked = this.HybridModeStatusObj.hybridModeStatus;
+		}
+	}
+
+	public renderTouchpadStatus() {
+		this.TouchpadStatusObj = this.gamingSystemUpdateService.GetTouchpadStatus();
+
+		if (isUndefined(this.TouchpadStatusObj)) {
+			this.TouchpadStatusObj = new TouchpadStatus();
+			this.gamingSystemUpdateService.SetTouchpadStatus(this.TouchpadStatusObj);
+		}
+
+		// Binding to UI
+		if (this.legionUpdate[5].name === 'gaming.dashboard.device.legionEdge.touchpadLock') {
+			this.legionUpdate[5].isChecked = this.TouchpadStatusObj.touchpadStatus;
+		}
+	}
+
 
 	public toggleOnOffRamOCStatus($event) {
 		console.log($event);
@@ -241,6 +289,21 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			this.legionUpdate[1].isPopup = false;
 		}
 
+		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
+			this.HybridModeStatusObj.hybridModeStatus = $event.switchValue;
+			this.gamingSystemUpdateService.SetHybridModeStatus(this.HybridModeStatusObj);
+			this.legionUpdate[4].isPopup = $event.switchValue;
+		}
+		else {
+			this.legionUpdate[4].isPopup = false
+		}
+
+		if (name === 'gaming.dashboard.device.legionEdge.touchpadLock') {
+			this.TouchpadStatusObj.touchpadStatus = $event.switchValue;
+			this.gamingSystemUpdateService.SetTouchpadStatus(this.TouchpadStatusObj); 
+			//this.legionUpdate[4].isPopup = $event.switchValue;
+		}
+		
 		if (name === 'gaming.dashboard.device.legionEdge.hybridMode' && $event.switchValue === true) {
 			this.legionUpdate[4].isPopup = true;
 		} else {

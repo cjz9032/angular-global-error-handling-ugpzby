@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WigetHomeSecurityDeviceComponent } from './widget-home-security-device.component';
+import { WidgetHomeSecurityDeviceComponent } from './widget-home-security-device.component';
 
 describe('WigetHomeSecurityDeviceComponent', () => {
-  let component: WigetHomeSecurityDeviceComponent;
-  let fixture: ComponentFixture<WigetHomeSecurityDeviceComponent>;
+  let component: WidgetHomeSecurityDeviceComponent;
+  let fixture: ComponentFixture<WidgetHomeSecurityDeviceComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WigetHomeSecurityDeviceComponent ]
+      declarations: [ WidgetHomeSecurityDeviceComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WigetHomeSecurityDeviceComponent);
+    fixture = TestBed.createComponent(WidgetHomeSecurityDeviceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
