@@ -19,44 +19,55 @@ export class GamingSystemUpdateService {
 	) { }
 
 	public GetCPUOverClockStatus(): any  {
-		const CpuOCStatus = this.shellService.getCPUOCStatus();
-		if (CpuOCStatus !== undefined) {
-			const CpuOCStatusObj = new CPUOCStatus();
+		this.shellService.getCPUOCStatus().then((cpuOCStatus) => {
+			console.log('get cpu oc status js bridge ->', cpuOCStatus);
+			if (cpuOCStatus !== undefined) {
+				const CpuOCStatusObj = new CPUOCStatus();
+				CpuOCStatusObj.cpuOCStatus = cpuOCStatus;
+				return CpuOCStatusObj;
+			}
+			return undefined;
+		});
+	}
 
-
-			CpuOCStatusObj.cpuOCStatus = CpuOCStatus;
-			return CpuOCStatusObj;
-		}
+	public GetCPUOverClockCacheStatus(): any {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus);
 	}
 
 	public SetCPUOverClockStatus(CpuOCStatus: CPUOCStatus): any {
-		const UpdatedCpuOCStatus = this.shellService.setCPUOCStatus(CpuOCStatus);
-		if (UpdatedCpuOCStatus !== undefined) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, CpuOCStatus);
-			return CpuOCStatus;
-		}
-		return undefined;
+		this.shellService.setCPUOCStatus(CpuOCStatus).then((response) => {
+			console.log('set cpu oc status js bridge ->', response);
+			if (response) {
+				this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, CpuOCStatus);
+				return CpuOCStatus;
+			}
+			return false;
+		});
 	}
 
 	public GetRAMOverClockStatus(): any  {
-		const RamOCStatus = this.shellService.getRAMOCStatus();
-		if (RamOCStatus !== undefined) {
-			const RamOCStatusObj = new RamOCSatus();
+		this.shellService.getRAMOCStatus().then((RamOCStatus) => {
+			console.log('get ram oc status js bridge ->', RamOCStatus);
+			if (RamOCStatus !== undefined) {
+				const RamOCStatusObj = new RamOCSatus();
+				RamOCStatusObj.ramOcStatus = RamOCStatus;
+				this.commonService.setLocalStorageValue(LocalStorageKey.RamOcStatus, RamOCStatusObj);
+				return RamOCStatusObj;
+			}
+			return undefined;
+		});
+	}
 
-			RamOCStatusObj.ramOcStatus = RamOCStatus;
-			return RamOCStatusObj;
-		}
+	public GetRAMOverClockCacheStatus() {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.RamOcStatus);
 	}
 
 	public SetRAMOverClockStatus(RamOCStatus: RamOCSatus): any {
-		const UpdatedRamOCStatus = this.shellService.setRAMOCStatus(RamOCStatus);
-		if (UpdatedRamOCStatus !== undefined) {
-			this.commonService.setLocalStorageValue(LocalStorageKey.RamOcStatus, RamOCStatus);
-			return RamOCStatus;
-		}
-		return undefined;
+		this.shellService.setRAMOCStatus(RamOCStatus).then((response) => {
+			console.log('set ram oc status js bridge ->', response);
+			return response;
+		});
+		return false;
 	}
 
 	public GetHybridModeStatus(): any  {

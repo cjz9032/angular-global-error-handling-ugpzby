@@ -202,7 +202,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 
 	public renderCPUOverClockStatus() {
-		this.CpuOCStatus = this.gamingSystemUpdateService.GetCPUOverClockStatus();
+		this.CpuOCStatus = this.gamingSystemUpdateService.GetCPUOverClockCacheStatus();
 		if (this.CpuOCStatus !== undefined) {
 			this.edgeopt.forEach((option) => {
 				if (option.value === this.CpuOCStatus.cpuOCStatus) {
@@ -211,6 +211,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				}
 			});
 		}
+
+		this.CpuOCStatus = this.gamingSystemUpdateService.GetCPUOverClockStatus();
 	}
 
 	onOptionSelected(event) {
@@ -229,7 +231,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 
 	public renderRamOverClockStatus() {
-		this.RamOCSatusObj = this.gamingSystemUpdateService.GetRAMOverClockStatus();
+		this.RamOCSatusObj = this.gamingSystemUpdateService.GetRAMOverClockCacheStatus();
 
 		if (isUndefined(this.RamOCSatusObj)) {
 			this.RamOCSatusObj = new RamOCSatus();
@@ -240,6 +242,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		if (this.legionUpdate[1].name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			this.legionUpdate[1].isChecked = this.RamOCSatusObj.ramOcStatus;
 		}
+
+		this.RamOCSatusObj = this.gamingSystemUpdateService.GetRAMOverClockStatus();
+		// we need to rerender the component here.
 	}
 
 	public renderHybridModeStatus() {
