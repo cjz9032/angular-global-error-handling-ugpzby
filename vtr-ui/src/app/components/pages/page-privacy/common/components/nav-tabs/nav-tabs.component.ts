@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserDataGetStateService } from '../../services/user-data-get-state.service';
 import { CountNumberOfIssuesService } from '../../services/count-number-of-issues.service';
 import { combineLatest } from 'rxjs';
-import { NavTabsService } from './nav-tabs.service';
+import { FeatureSettings, NavTabsService } from './nav-tabs.service';
 
 @Component({
 	selector: 'vtr-nav-tabs',
@@ -10,7 +10,7 @@ import { NavTabsService } from './nav-tabs.service';
 	styleUrls: ['./nav-tabs.component.scss']
 })
 export class NavTabsComponent implements OnInit {
-	featurePagesConfig = [];
+	featurePagesConfig: FeatureSettings[] = [];
 
 	constructor(
 		private userDataGetStateService: UserDataGetStateService,
@@ -40,7 +40,8 @@ export class NavTabsComponent implements OnInit {
 				...this.navTabsService.tabsConfig.passwords[userDataStatuses.nonPrivatePasswordResult],
 				issuesCount: nonPrivatePasswordCount,
 				state: userDataStatuses.nonPrivatePasswordResult,
-				routerLink: 'Non-Private Passwords',
+				routerLink: './browser-accounts',
+				title: 'Non-Private Passwords',
 			};
 			this.featurePagesConfig = [breachesConfig, trackersConfig, passwordsConfig];
 		});

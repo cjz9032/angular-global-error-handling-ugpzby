@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FeaturesStatuses } from '../../../userDataStatuses';
 
-interface FeatureSettings {
+export interface FeatureSettings {
 	image: string;
 	image2x: string;
 	issuesCount?: number;
