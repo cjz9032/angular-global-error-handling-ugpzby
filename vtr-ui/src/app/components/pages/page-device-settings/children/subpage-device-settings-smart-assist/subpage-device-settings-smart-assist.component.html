@@ -9,8 +9,6 @@
 	</div>
 	<div class="row py-5 smart-assist-card"
 		id="security">
-		<div class="col-10 mx-auto border-bottom">
-
 		<div class="col-10 mx-auto">
 
 			<vtr-container-collapsible
@@ -218,7 +216,7 @@
 		</div>
 	</div>
 	<div class="row py-5 smart-assist-card"
-		id="security">
+		id="screen">
 		<div class="col-10 mx-auto">
 			<vtr-container-collapsible
 				[cardTitle]="'device.deviceSettings.smartAssist.intelligentScreen.title' | translate"
@@ -279,4 +277,8 @@
 			</vtr-container-collapsible>
 		</div>
 	</div>
+	<vtr-intelligent-media 
+		id="media"
+		(isMediaSettingHidden)=hideMediaSetting($value) >
+	</vtr-intelligent-media>
 </div>

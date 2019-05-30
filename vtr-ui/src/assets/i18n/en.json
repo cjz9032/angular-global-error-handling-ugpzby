@@ -707,6 +707,12 @@
 							"endTime": "60 minutes"
 						}
 					}
+				},
+				"intelligentMedia": {
+					"heading": "Intelligent Media",
+					"title": "Zero Touch Video Playback",
+					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
 				}
 			}
 		}

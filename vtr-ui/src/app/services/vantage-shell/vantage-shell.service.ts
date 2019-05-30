@@ -481,14 +481,9 @@ export class VantageShellService {
 		return false;
 	}
 
-
-
-
-
-
-
-
-
-
-
+	public getIntelligentMedia(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.lis.intelligentMedia;
+		} return undefined;
+	}
 }
