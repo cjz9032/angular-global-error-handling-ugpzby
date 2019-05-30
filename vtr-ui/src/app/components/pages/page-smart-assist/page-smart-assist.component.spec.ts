@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SubpageDeviceSettingsSmartAssistComponent } from './subpage-device-settings-smart-assist.component';
+import { PageSmartAssistComponent } from './page-smart-assist.component';
 
 describe('SubpageDeviceSettingsSmartAssistComponent', () => {
-	let component: SubpageDeviceSettingsSmartAssistComponent;
-	let fixture: ComponentFixture<SubpageDeviceSettingsSmartAssistComponent>;
+	let component: PageSmartAssistComponent;
+	let fixture: ComponentFixture<PageSmartAssistComponent>;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [SubpageDeviceSettingsSmartAssistComponent]
+			declarations: [PageSmartAssistComponent]
 		})
 			.compileComponents();
 	}));
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(SubpageDeviceSettingsSmartAssistComponent);
+		fixture = TestBed.createComponent(PageSmartAssistComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

@@ -56,7 +56,7 @@ import { AvailableUpdatesComponent } from './components/pages/page-device-update
 import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
 import { SubpageDeviceSettingsDisplayComponent } from './components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
-import { SubpageDeviceSettingsSmartAssistComponent } from './components/pages/page-device-settings/children/subpage-device-settings-smart-assist/subpage-device-settings-smart-assist.component';
+import { PageSmartAssistComponent } from './components/pages/page-smart-assist/page-smart-assist.component';
 
 // APPLICATION WIDGET COMPONENTS
 import { WidgetSwitchIconComponent } from './components/widgets/widget-switch-icon/widget-switch-icon.component';
@@ -231,6 +231,7 @@ library.add(fal);
 		HeaderMainComponent,
 		PageDeviceSettingsComponent,
 		PageDeviceUpdatesComponent,
+		PageSmartAssistComponent,
 		AvailableUpdatesComponent,
 		PageSecurityAntivirusComponent,
 		PageSecurityWifiComponent,
@@ -241,7 +242,6 @@ library.add(fal);
 		SubpageDeviceSettingsPowerComponent,
 		SubpageDeviceSettingsAudioComponent,
 		SubpageDeviceSettingsDisplayComponent,
-		SubpageDeviceSettingsSmartAssistComponent,
 		PageQuestionsComponent,
 		ModalWelcomeComponent,
 		ContainerCollapsibleComponent,
@@ -347,7 +347,6 @@ library.add(fal);
 		PageAutocloseComponent,
 		PageNetworkBoostComponent,
 		PowerSmartSettingsComponent,
-		SubpageDeviceSettingsSmartAssistComponent,
 		WidgetHomeSecurityDeviceComponent,
 		UiLightingProfileComponent,
 		AutoupdateSettingsComponent,

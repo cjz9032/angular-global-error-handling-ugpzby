@@ -1,0 +1,296 @@
+<div class="vtr-page-smart-assist vtr-page">
+	<div class="row vtr-page-header">
+		<div class="col vtr-col">
+			<vtr-header-main [backarrow]="backarrow" [back]="back" [title]="title" [parentPath]="parentPath">
+			</vtr-header-main>
+		</div>
+	</div>
+	<div class="row vtr-page-content">
+		<div class="col vtr-col">
+			<div class="row">
+				<div class="col-lg-8 col-sm-12 vtr-page-left-column">
+					<div class="col">
+						<vtr-ui-header-subpage [items]="headerMenuItems"
+							[caption]="'device.smartAssist.description' | translate"
+							[menuTitle]="'device.smartAssist.jumpTo.title' | translate">
+						</vtr-ui-header-subpage>
+					</div>
+
+					<div class="row py-5 smart-assist-card" id="security">
+						<div class="col-10 mx-auto">
+							<vtr-container-collapsible
+								[cardTitle]="'device.smartAssist.intelligentSecurity.title' | translate"
+								componentName="intelligent security" [isCollapsed]="false" [allowCollapse]="true"
+								[theme]="'white'" (toggle)="onCardCollapse($event)">
+								<ul class="list-group list-group-flush" *ngIf="!isThinkPad">
+									<li class="pt-3">
+										<vtr-ui-row-switch
+											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLogin.title' | translate"
+											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.caption' | translate"
+											[isSwitchVisible]="true" [leftIcon]="['fal', 'gem']"
+											[showChildContent]="true"
+											[isSwitchChecked]="intelligentSecurity.zeroTouchLoginFlag"
+											(toggleOnOff)="onZeroTouchLoginStatusToggle($event)" [theme]="'white'"
+											[disabled]="!intelligentSecurity.humanPresenceDetectionFlag">
+											<div class="pl-5 bold-title no-border-bottom">
+												<vtr-ui-row-switch [title]="distanceSensitivityTitle | translate"
+													[caption]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate"
+													[isSwitchVisible]="true" [showChildContent]="true"
+													[isSwitchChecked]="intelligentSecurity.distanceSensitivityFlag"
+													(toggleOnOff)="distanceSensitivityStatusToggle($event)"
+													[theme]="'white'"
+													[disabled]="!intelligentSecurity.zeroTouchLoginFlag">
+
+													<vtr-ui-range-slider
+														[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
+														[minValue]="0"
+														[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
+														[maxValue]="100" (change)="setHumanDistance($event)"
+														[enableSlider]="!intelligentSecurity.distanceSensitivityFlag"
+														[value]="intelligentSecurity.humanDistance">
+													</vtr-ui-range-slider>
+													<div class="pt-3">
+														<div class="feature-note pr-1 pt-3">
+															<div class="row">
+																<div class="col-auto pl-3">
+																	<fa-icon [icon]="['fal', 'exclamation-circle']">
+																	</fa-icon>
+																</div>
+																<div class="col">
+																	<p>{{'device.smartAssist.intelligentSecurity.note.description1' | translate}}
+																		<a (click)="launchFaceEnrollment()"
+																			href="javascript:void()">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}</a>
+																	</p>
+																</div>
+															</div>
+														</div>
+													</div>
+												</vtr-ui-row-switch>
+											</div>
+										</vtr-ui-row-switch>
+									</li>
+								</ul>
+								<ul class="list-group list-group-flush" *ngIf="isThinkPad">
+									<li class="pt-3">
+										<vtr-ui-row-switch
+											[title]="'device.smartAssist.intelligentSecurity.humanPresenceDetection.title' | translate"
+											componentName="HumanPresenceDetection" [isSwitchVisible]="true"
+											[leftIcon]="['fal', 'gem']" [showChildContent]="true"
+											[isSwitchChecked]="intelligentSecurity.humanPresenceDetectionFlag"
+											(toggleOnOff)="onHumanPresenceDetectStatusToggle($event)" [theme]="'white'">
+										</vtr-ui-row-switch>
+									</li>
+
+									<li class="pt-3 pl-5"
+										[class.disabled-overlay]="!intelligentSecurity.humanPresenceDetectionFlag">
+										<vtr-ui-row-switch
+											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLogin.title' | translate"
+											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.caption' | translate"
+											[isSwitchVisible]="true" [leftIcon]="['fal', 'gem']"
+											[showChildContent]="true"
+											[isSwitchChecked]="intelligentSecurity.zeroTouchLoginFlag"
+											(toggleOnOff)="onZeroTouchLoginStatusToggle($event)" [theme]="'white'"
+											[disabled]="!intelligentSecurity.humanPresenceDetectionFlag">
+										</vtr-ui-row-switch>
+										<div class="pl-5 bold-title no-border-bottom">
+											<vtr-ui-row-switch [title]="distanceSensitivityTitle | translate"
+												[caption]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate"
+												[isSwitchVisible]="true" [showChildContent]="true"
+												[isSwitchChecked]="intelligentSecurity.distanceSensitivityFlag"
+												(toggleOnOff)="distanceSensitivityStatusToggle($event)" [theme]="'white'"
+												[disabled]="!intelligentSecurity.zeroTouchLoginFlag">
+										
+												<vtr-ui-range-slider
+													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
+													[minValue]="0"
+													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
+													[maxValue]="100" (change)="setHumanDistance($event)"
+													[enableSlider]="!intelligentSecurity.distanceSensitivityFlag" [value]="intelligentSecurity.humanDistance">
+												</vtr-ui-range-slider>
+												<div class="pt-3">
+													<div class="feature-note pr-1 pt-3">
+														<div class="row">
+															<div class="col-auto pl-3">
+																<fa-icon [icon]="['fal', 'exclamation-circle']">
+																</fa-icon>
+															</div>
+															<div class="col">
+																<p>{{'device.smartAssist.intelligentSecurity.note.description1' | translate}}
+																	<a (click)="launchFaceEnrollment()"
+																		href="javascript:void()">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}</a>
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</vtr-ui-row-switch>
+										</div>
+									</li>
+								</ul>
+								<ul class="list-group list-group-flush pt-3 pl-5"
+									[class.disabled-overlay]="!intelligentSecurity.humanPresenceDetectionFlag"
+									*ngIf="intelligentSecurity.isZeroTouchLockVisible">
+									<li class="pt-3 auto-screen-block">
+										<vtr-ui-row-switch
+											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLock.title' | translate"
+											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLock.caption' | translate"
+											[isSwitchVisible]="true" [leftIcon]="['fal', 'gem']" [readMoreText]="''"
+											[showChildContent]="true"
+											[isSwitchChecked]="intelligentSecurity.zeroTouchLockFlag"
+											(toggleOnOff)="onChangeZeroTouchLockFlag($event)" [theme]="'white'"
+											[disabled]="!intelligentSecurity.humanPresenceDetectionFlag">
+											<div class="row blur"
+												[class.disabled]="!intelligentSecurity.zeroTouchLockFlag">
+												<div
+													class="col-12 py-4 pr-0 d-flex justify-content-between auto-screen-lock-timer">
+													<h3>{{ 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.title' | translate}}
+													</h3>
+													<a href="javascript:void();" class="d-flex no-pointer">
+														<fa-icon class="question" triggers="click:blur" placement="auto"
+															[ngbTooltip]="tooltipText | translate"
+															[icon]="['far', 'question-circle']" container="body"
+															tooltipClass="vtr-tooltip"></fa-icon>
+													</a>
+												</div>
+												<div class="row no-gutters pl-4 ">
+													<vtr-ui-rounded-rectangle-radio [radioId]="'radio1'"
+														[group]="'radio'"
+														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast' | translate"
+														[value]="'1'"
+														[checked]="intelligentSecurity.autoScreenLockTimer === '1'"
+														(change)="onAutoScreenLockStatusToggle($event, '1')"
+														[disabled]="!intelligentSecurity.zeroTouchLockFlag">
+													</vtr-ui-rounded-rectangle-radio>
+													<vtr-ui-rounded-rectangle-radio [radioId]="'radio2'"
+														[group]="'radio'"
+														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium' | translate"
+														[value]="'2'"
+														[checked]="intelligentSecurity.autoScreenLockTimer === '2'"
+														(change)="onAutoScreenLockStatusToggle($event, '2')"
+														[disabled]="!intelligentSecurity.zeroTouchLockFlag">
+													</vtr-ui-rounded-rectangle-radio>
+													<vtr-ui-rounded-rectangle-radio [radioId]="'radio3'"
+														[group]="'radio'"
+														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow' | translate"
+														[value]="'3'"
+														[checked]="intelligentSecurity.autoScreenLockTimer === '3'"
+														(change)="onAutoScreenLockStatusToggle($event, '3')"
+														[disabled]="!intelligentSecurity.zeroTouchLockFlag">
+													</vtr-ui-rounded-rectangle-radio>
+												</div>
+												<div class="feature-note screen-lock-note p-4 ml-4 mt-2 mb-2 mr-2">
+													<p>{{'device.smartAssist.intelligentSecurity.note.description2' | translate}}
+														<br><a href="javascript:void();"
+															(click)="launchPowerAndSleep();">{{'device.smartAssist.intelligentSecurity.WindowsLink.screenTimeoutSettings' | translate}}</a>
+													</p>
+												</div>
+											</div>
+										</vtr-ui-row-switch>
+									</li>
+
+								</ul>
+								<div class="row">
+									<div class="feature-note p-4 m-4">
+										<p>{{'device.smartAssist.intelligentSecurity.note.description3' | translate}}
+										</p>
+										<p>{{'device.smartAssist.intelligentSecurity.note.description4' | translate}}
+										</p>
+										<p>{{'device.smartAssist.intelligentSecurity.note.description5' | translate}}
+										</p>
+									</div>
+								</div>
+							</vtr-container-collapsible>
+						</div>
+					</div>
+
+					<div class="row py-5 smart-assist-card" id="security">
+						<div class="col-10 mx-auto">
+							<vtr-container-collapsible
+								[cardTitle]="'device.smartAssist.intelligentScreen.title' | translate"
+								componentName="intelligent security" [isCollapsed]="false" [allowCollapse]="true"
+								[theme]="'white'" (toggle)="onCardCollapse($event)">
+
+								<div class="row">
+									<div class="col-auto">
+										<div class="int-screen-desc">
+											<p>{{'device.smartAssist.intelligentScreen.description' | translate}}
+											</p>
+										</div>
+									</div>
+								</div>
+
+								<ul class="list-group list-group-flush">
+									<li class="pt-3 auto-screen-off-block">
+										<vtr-ui-row-switch
+											[title]="'device.smartAssist.intelligentScreen.autoScreenOff.title' | translate"
+											[caption]=" 'device.smartAssist.intelligentScreen.autoScreenOff.caption' | translate"
+											[isSwitchVisible]="true" [leftIcon]="['fal', 'gem']" [theme]="'white'">
+										</vtr-ui-row-switch>
+										<div class="row">
+											<div class="feature-note auto-screen-off-note p-4 m-4">
+												<p>{{'device.smartAssist.intelligentScreen.autoScreenOff.note' | translate}}
+												</p>
+												<a
+													href="#"><span>{{'device.smartAssist.intelligentScreen.autoScreenOff.windowsLink' | translate}}</span></a>
+											</div>
+										</div>
+									</li>
+									<li class="pt-3 keep-my-display-block">
+										<vtr-ui-row-switch
+											[title]="'device.smartAssist.intelligentScreen.keepMyDisplay.title' | translate"
+											[caption]="'device.smartAssist.intelligentScreen.keepMyDisplay.caption' | translate"
+											[leftIcon]="['fal', 'gem']" [theme]="'white'" [isSwitchVisible]="true"
+											[showChildContent]="true" (toggleOnOff)="displayDim($event)"
+											[isSwitchChecked]="keepMyDisplay">
+											>
+											<div class="pl-5 ml-5">
+												<vtr-ui-range-slider
+													[minValueLegend]="'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.startTime' | translate"
+													[minValue]="0"
+													[maxValueLegend]="'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.endTime' | translate"
+													[maxValue]="100" [enableSlider]="!keepMyDisplay">
+												</vtr-ui-range-slider>
+											</div>
+										</vtr-ui-row-switch>
+									</li>
+								</ul>
+							</vtr-container-collapsible>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-sm-12 vtr-page-right-column">
+					<div class="vtr-page-shift-up-medium">
+						<div class="container-fluid">
+							<div class="row mb-40">
+								<div class="col col-12" [ngClass]="{'battery-unavailable': isDesktopMachine}">
+									<vtr-battery-card *ngIf="!isDesktopMachine"> </vtr-battery-card>
+								</div>
+							</div>
+							<div class="row mb-40">
+								<div class="col col-12 cont">
+									<div class="widget-heading mb-40">{{'device.deviceSettings.helpful' | translate}}
+									</div>
+									<vtr-widget-questions [title]="'common.qAndA.title' | translate"
+										[description]="'common.qAndA.subtitle' | translate" [items]="qaService.qas">
+									</vtr-widget-questions>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col col-12">
+									<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+										[caption]="cardContentPositionA.Description"
+										[title]="cardContentPositionA.Title" [logoText]="cardContentPositionA.BrandName"
+										[action]="cardContentPositionA.Action"
+										[actionType]="cardContentPositionA.ActionType"
+										[actionLink]="cardContentPositionA.ActionLink" [type]="'corner-article'"
+										[ratioX]="4" [ratioY]="2" [order]="1" [cornerShift]="'large'">
+									</vtr-container-card>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

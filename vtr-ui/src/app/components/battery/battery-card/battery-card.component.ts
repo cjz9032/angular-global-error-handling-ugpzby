@@ -37,28 +37,28 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 
 	onPowerSupplyStatusEvent(info: any) {
-		console.log("onPowerSupplyStatusEvent: ", info);
-		if(info) {
-			this.batteryInfo = info.batteryInformation
-			this.batteryGauge = info.batteryIndicatorInfo 
+		console.log('onPowerSupplyStatusEvent: ', info);
+		if (info) {
+			this.batteryInfo = info.batteryInformation;
+			this.batteryGauge = info.batteryIndicatorInfo;
 			this.updateBatteryDetails();
 		}
 	}
 
 	onRemainingPercentageEvent(info: any) {
-		console.log("onRemainingPercentageEvent: ", info);
-		if(info) {
-			this.batteryInfo = info.batteryInformation
-			this.batteryGauge = info.batteryIndicatorInfo
+		console.log('onRemainingPercentageEvent: ', info);
+		if (info) {
+			this.batteryInfo = info.batteryInformation;
+			this.batteryGauge = info.batteryIndicatorInfo;
 			this.updateBatteryDetails();
 		}
 	}
 
 	onRemainingTimeEvent(info: any) {
-		console.log("onRemainingTimeEvent: ", info);
-		if(info) {
-			this.batteryInfo = info.batteryInformation
-			this.batteryGauge = info.batteryIndicatorInfo
+		console.log('onRemainingTimeEvent: ', info);
+		if (info) {
+			this.batteryInfo = info.batteryInformation;
+			this.batteryGauge = info.batteryIndicatorInfo;
 			this.updateBatteryDetails();
 		}
 	}
@@ -71,8 +71,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 					.then((response: any) => {
 						console.log('getBatteryDetailOnCard', response);
 						this.batteryInfo = response;
-						this.batteryInfo = response.batteryInformation
-						this.batteryGauge = response.batteryIndicatorInfo
+						this.batteryInfo = response.batteryInformation;
+						this.batteryGauge = response.batteryIndicatorInfo;
 						this.updateBatteryDetails();
 						this.batteryCardTimer = setTimeout(() => {
 							console.log('Trying after 30 seconds');
@@ -83,23 +83,23 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 					});
 			}
 		} catch (error) {
-			console.error("getBatteryDetailOnCard: " + error.message)
+			console.error('getBatteryDetailOnCard: ' + error.message);
 		}
 	}
 
 	public updateBatteryDetails() {
 		this.batteryIndicator.percent = this.batteryGauge.percentage;
-		this.batteryIndicator.charging = this.batteryGauge.isAttached; 
+		this.batteryIndicator.charging = this.batteryGauge.isAttached;
 		this.batteryIndicator.convertMin(this.batteryGauge.time);
 		this.batteryIndicator.timeText = this.batteryGauge.timeType;
 		this.batteryIndicator.expressCharging = this.batteryInfo[0].isExpressCharging;
 		this.batteryIndicator.voltageError = this.batteryInfo[0].isVoltageError;
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo, { detail: this.batteryInfo, gauge: this.batteryGauge });
 		if ( this.cd !== null &&
-            this.cd !== undefined &&
-            ! (this.cd as ViewRef_).destroyed ) {
-                this.cd.detectChanges();
-        }
+			this.cd !== undefined &&
+			! (this.cd as ViewRef_).destroyed ) {
+				this.cd.detectChanges();
+			}
 	}
 
 	public showDetailModal(content: any): void {

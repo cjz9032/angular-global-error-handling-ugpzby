@@ -1,6 +1,20 @@
-@import "../../../../../app.theme.scss";
+@import "../../../app.theme.scss";
 
-.subpage-device-settings-smart-assist {
+.vtr-page {
+	.vtr-page-content {
+		.vtr-page-left-column {
+			background-color: $light;
+		}
+	}
+}
+
+.vtr-page-right-column {
+	background-color: $shade_extralight;
+	.battery-unavailable {
+		height: 8rem;
+	}
+}
+.vtr-page-smart-assist {
 	.title {
 		opacity: 0.8;
 		color: $main_darker;
