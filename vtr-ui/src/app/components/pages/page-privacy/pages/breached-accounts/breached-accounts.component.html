@@ -1,11 +1,9 @@
 <section class="breaches-page"
          vtrSendAnalytics
-		 [metricsEvent]="'PageView'"
-		 [metricsItem]="'BreachedAccounts'"
->
+		 [metricsEvent]="'PageView'">
 	<vtr-common-text [texts]="commonTexts"></vtr-common-text>
 
-	<div class="breached-accounts">
+	<div class="breached-accounts" data-analyticsName="BreachedAccountsBlock">
 
 		<div *ngIf="!(isFigleafReadyForCommunication$ | async) && !breached_accounts?.length" class="email-scanner">
 			<vtr-email-scanner></vtr-email-scanner>

@@ -126,7 +126,7 @@
 							class="title">{{title}}</div>
 						<div *ngIf="actionLink"
 							class="read-more">
-							<a [attr.href]="!actionLink ? null : actionLink">
+							<a [attr.href]="!actionLink ? null : actionLink" target="_blank">
 								<span class="link-label">{{action}}</span>
 								<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 							</a>
