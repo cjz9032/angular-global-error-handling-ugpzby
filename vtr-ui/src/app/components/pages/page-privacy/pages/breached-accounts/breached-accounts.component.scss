@@ -2,11 +2,13 @@
 
 .email-scanner {
   @extend %common-block-wrapper;
+  border-radius: 0 0 1rem 1rem;
   padding: 3.5rem 4rem 4rem 4rem;
 }
 
 .breaches-wrapper {
   @extend %common-block-wrapper;
+  border-radius: 0 0 1rem 1rem;
   padding: 3.5rem 4rem 4rem 4rem;
 }
 
