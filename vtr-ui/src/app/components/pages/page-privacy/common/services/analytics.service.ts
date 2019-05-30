@@ -1,8 +1,15 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
 import { MetricsData } from '../../../../../directives/metrics.directive';
-import { Router } from '@angular/router';
 import { RoutersName } from '../../privacy-routing-name';
+import { UserDataGetStateService } from './user-data-get-state.service';
+import { RouterChangeHandlerService } from './router-change-handler.service';
+
+export enum ItemTypes {
+	TaskAction = 'TaskAction',
+	PageView = 'PageView',
+	ItemClick = 'ItemClick',
+}
 
 interface ExtendedMetricsData extends MetricsData {
 	PageContext?: string;
@@ -22,36 +29,28 @@ interface DataToSendOnPageView {
 }
 
 interface DataToSendOnTaskAction {
-	ItemType: 'TaskAction';
 	TaskName: string;
 	TaskCount: number;
-	TaskParm: string;
+	TaskParm?: string;
 	TaskResult: string;
 	TaskDuration: number;
 }
 
-@Injectable({
-	providedIn: 'root'
-})
+@Injectable()
 export class AnalyticsService {
 
 	metrics = this.shellService.getMetrics();
 
-	metricsParams = { // TODO add real logic
-		BreachedAccountsResult: 'None',
-		WebsiteTrackersResult: 'Node',
-		NonPrivatePasswordsResult: 'Node',
-	};
-
 	constructor(
 		private shellService: VantageShellService,
-		private router: Router) {
+		private userDataGetStateService: UserDataGetStateService,
+		private routerChangeHandlerService: RouterChangeHandlerService) {
 	}
 
 	send(data: ExtendedMetricsData) {
 		console.log('ANALYTICS data: ', data);
 		if (this.metrics && this.metrics.sendAsync) {
-			// this.metrics.sendAsync(JSON.stringify(data)); // TODO LVPT-273
+			this.metrics.sendAsync(data);
 		}
 	}
 
@@ -59,7 +58,7 @@ export class AnalyticsService {
 		const dataToSend = {
 			...data,
 			PageName: this.getPageName(),
-			ItemType: 'PageView',
+			ItemType: ItemTypes.PageView,
 		};
 		this.send(dataToSend);
 	}
@@ -67,29 +66,28 @@ export class AnalyticsService {
 	sendTaskActionData(data: DataToSendOnTaskAction) {
 		const dataToSend = {
 			...data,
-			ItemType: 'TaskAction',
+			ItemType: ItemTypes.TaskAction,
 		};
 		this.send(dataToSend);
 	}
 
 	sendItemClickData(data: DataToSendOnItemClick) {
 		const ItemParam = typeof data.ItemParm === 'string' ? JSON.parse(data.ItemParm) : data.ItemParm;
+		const userDataStatuses = this.userDataGetStateService.getUserDataStatus();
 		const itemParameters = JSON.stringify({
 			...ItemParam,
-			...this.metricsParams
+			...userDataStatuses,
 		});
 		const dataToSend = {
 			...data,
 			ItemParm: itemParameters,
-			ItemType: 'ItemClick',
+			ItemType: ItemTypes.ItemClick,
 		};
 		this.send(dataToSend);
 	}
 
 	private getPageName() {
-		const route = this.router.url;
-		const pageRouteName = route.slice(route.lastIndexOf('/') + 1, route.length);
-		switch (pageRouteName) {
+		switch (this.routerChangeHandlerService.currentRoute) {
 			case RoutersName.PRIVACY:
 				return 'Privacy';
 			case RoutersName.BREACHES:
@@ -99,9 +97,11 @@ export class AnalyticsService {
 			case RoutersName.BROWSERACCOUNTS:
 				return 'NonPrivatePassword';
 			case  RoutersName.NEWS:
-				return 'News.';
+				return 'News';
 			case  RoutersName.TIPS:
-				return 'Tips.';
+				return 'Tips';
+			case  RoutersName.LANDING:
+				return 'LenovoPrivacyLanding';
 			default:
 				return '';
 		}

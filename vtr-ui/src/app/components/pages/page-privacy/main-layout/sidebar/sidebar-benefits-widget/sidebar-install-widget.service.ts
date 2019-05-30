@@ -21,74 +21,62 @@ export class SidebarInstallWidgetService {
 			title: 'The choice to be private is here',
 			text: 'Get the app that lets you decide when to share \n' +
 				'and when to be private, wherever you go online.\n',
-			image: 'privacy-search',
+			image: 'pitch-block/Img_Pith_Main',
 		},
 		tips: {
 			visible: false,
 			title: 'The choice to be private is here',
-			text: 'Get the app that lets you decide when to share \n' +
-				'and when to be private, wherever you go online.\n',
-			image: 'privacy-search',
+			text: '',
+			image: 'pitch-block/Img_Pith_Main',
 		},
 		news: {
 			visible: false,
 			title: 'The choice to be private is here',
-			text: 'Get the app that lets you decide when to share \n' +
-				'and when to be private, wherever you go online.\n',
-			image: 'privacy-search',
+			text: '',
+			image: 'pitch-block/Img_Pith_Main',
 		},
 		landing: {
 			visible: false,
 			title: 'The choice to be private is here',
-			text: 'Get the app that lets you decide when to share \n' +
-				'and when to be private, wherever you go online.\n',
-			image: 'privacy-search',
+			text: '',
+			image: 'pitch-block/Img_Pith_Main',
 		},
 		privacy: {
 			visible: true,
 			title: 'The choice to be private is here',
 			text: 'Get the app that lets you decide when to share \n' +
 				'and when to be private, wherever you go online.\n',
-			image: 'privacy-search',
-		},
-		scan: {
-			visible: false,
-			title: 'The choice to be private is here',
-			text: 'Get the app that lets you decide when to share \n' +
-				'and when to be private, wherever you go online.\n',
-			image: 'privacy-search',
+			image: 'pitch-block/Img_Pith_Main',
 		},
 		breaches: {
 			visible: true,
 			title: 'Fix breaches and watch for future ones',
 			text: '',
-			image: 'gray-safe',
+			image: 'pitch-block/Img_Pith_Breach',
 		},
 		trackers: {
 			visible: true,
 			title: 'Block trackers and stay private with Lenovo Privacy',
 			text: '',
-			image: 'privacy-search',
-		},
-		installed: {
-			visible: false,
-			title: 'The choice to be private is here',
-			text: 'Get the app that lets you decide when to share \n' +
-				'and when to be private, wherever you go online.\n',
-			image: 'privacy-search',
+			image: 'pitch-block/Img_Pith_Trackers',
 		},
 		'browser-accounts': {
 			visible: true,
 			title: 'Take back control over your data with Lenovo Privacy',
 			text: '',
-			image: 'take-bake-control',
+			image: 'pitch-block/Img_Pith_Passwords',
 		},
 		faq: {
 			visible: false,
 			title: 'The choice to be private is here',
-			text: 'Get the app that lets you decide when to share \n' +
-				'and when to be private, wherever you go online.\n',
-			image: 'privacy-search',
+			text: '',
+			image: 'pitch-block/Img_Pith_Main',
+		},
+		articles: {
+			visible: false,
+			title: 'The choice to be private is here',
+			text: '',
+			image: 'pitch-block/Img_Pith_Main',
 		}
 	};
 }

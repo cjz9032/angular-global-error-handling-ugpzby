@@ -1,7 +1,10 @@
 <div class="vtr-page-support vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main [title]="title | translate"></vtr-header-main>
+			<vtr-header-main [title]="title | translate"
+				[backarrow]="'&lt; '"
+				[back]="'common.ui.back' | translate"
+				[backId]="backId"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">

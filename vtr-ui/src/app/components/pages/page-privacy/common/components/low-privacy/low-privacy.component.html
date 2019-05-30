@@ -1,4 +1,4 @@
-<div class="low-privacy" data-analyticsName="HowWeCalculateYourPrivacyScorePopup">
+<div class="low-privacy" data-analyticsName="ScorePopup">
 	<h2 class="low-privacy__title">
 		How we calculate your privacy score
 	</h2>
@@ -16,7 +16,12 @@
 				{{step.title}}
 			</div>
 
-			<a [routerLink]="step.button.link" (click)="handleLinkClick()" class="low-privacy__describe-button">
+			<a [routerLink]="step.button.link"
+			   (click)="handleLinkClick()"
+			   vtrSendAnalytics
+			   [metricsEvent]="'ItemClick'"
+			   [metricsItem]="step.clickEventName"
+			   class="low-privacy__describe-button">
 				{{step.button.name}}
 			</a>
 		</div>

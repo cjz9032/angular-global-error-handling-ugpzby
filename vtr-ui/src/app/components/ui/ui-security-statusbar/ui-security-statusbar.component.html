@@ -16,13 +16,13 @@
 			<div class="col-auto text px-0">
 				{{ list.title | translate | uppercase }}
 			</div>
-			<div class="col-auto mr-auto">
+			<div class="col-auto pr-0">
         <h3><span class="badge badge-pill"
             [ngClass]="list.status | textClass">
           {{ list.status | statusText | translate | uppercase }}
         </span></h3>
 			</div>
-			<div *ngIf="list.buttonTitle && list.status === 'disabled'" class="col-auto pr-2">
+			<div *ngIf="list.buttonTitle && list.status === 'disabled'" class="col-auto pr-2 ml-auto">
 
 				<vtr-ui-button id="sa-av-btn-launchmcafee"
 					aria-label="sa-av-btn-launchmcafee" 
@@ -30,6 +30,23 @@
 					metricsEvent="featureClick" 
 					[metricsItem]="list.metricsItem"
 					[label]="list.buttonTitle | translate" [isRegular]=regular ></vtr-ui-button>
+			</div>
+			<div *ngIf="list.badge" class="badge-item">
+				<h3><span *ngIf="list.badge.lidBadge.status" 
+						class="badge badge-pill ml-3"
+						[ngClass]="list.badge.lidBadge.status | textClass"
+						(click)="list.badge.clickEvent()">
+					{{list.badge.lidBadge.text}}
+				</span>
+				<a [href]="list.expiredUrl | sanitizeUrl"
+					target="_blank"><span *ngIf="list.badge.trialBadge.status" class="badge badge-pill ml-3" [ngClass]="list.badge.trialBadge.status | textClass">
+					{{list.badge.trialBadge.text}}
+				</span></a>
+				<a [href]="list.expiredUrl | sanitizeUrl"
+				target="_blank"><span *ngIf="list.badge.accountBadge.status" class="badge badge-pill ml-3" [ngClass]="list.badge.accountBadge.status | textClass">
+					{{list.badge.accountBadge.text}}
+				</span></a>
+				</h3>
 			</div>
 		</div>
 	</li>

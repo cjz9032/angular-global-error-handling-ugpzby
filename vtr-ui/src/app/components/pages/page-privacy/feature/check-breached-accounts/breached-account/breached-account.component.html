@@ -23,21 +23,27 @@
             <div class="breached-account__details">
                 <button class="breached-account__preview-link"
                         (click)="isFigleafReadyForCommunication ? openFigleaf(account.link) : detailClickEmit(i)"
-                        *ngIf="mode === breachedAccountMode.PREVIEW">
+                        *ngIf="mode === breachedAccountMode.PREVIEW || isFigleafReadyForCommunication"
+                        vtrSendAnalytics
+                        [metricsEvent]="'ItemClick'"
+                        [metricsItem]="'BreachedAccountsDetailItem'">
                     <span>Details</span>
                 </button>
 
                 <button class="breached-account__accordion-button"
-                        *ngIf="mode === breachedAccountMode.FULL"
+                        *ngIf="mode === breachedAccountMode.FULL && !isFigleafReadyForCommunication"
+                        vtrSendAnalytics
+                        [metricsEvent]="'ItemClick'"
+                        [metricsItem]="'BreachedAccountsDetailItem'"
                         [ngClass]="{'breached-account__accordion-button--open': openId === i}"
-                        (click)="isFigleafReadyForCommunication ? openFigleaf(account.link) : openAccordion(i)">
+                        (click)="openAccordion(i)">
                     <span>Details</span>
                 </button>
             </div>
         </div>
 	</div>
 
-	<div *ngIf="openId === i" class="breached-account__description">
+	<div *ngIf="openId === i" class="breached-account__description" data-analyticsName="Details">
 		<vtr-breached-description [breachedAccount]="account"></vtr-breached-description>
 		<vtr-try-product-block
 			[texts]="tryProductText">
