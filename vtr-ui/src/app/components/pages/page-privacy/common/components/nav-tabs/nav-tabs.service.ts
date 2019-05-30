@@ -5,7 +5,7 @@ export interface FeatureSettings {
 	image: string;
 	image2x: string;
 	issuesCount?: number;
-	state?: string;
+	state?: FeaturesStatuses;
 	routerLink?: string;
 	title?: string;
 }
