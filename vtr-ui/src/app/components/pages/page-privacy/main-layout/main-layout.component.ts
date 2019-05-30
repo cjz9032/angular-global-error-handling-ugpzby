@@ -25,6 +25,12 @@ const defaultPageSettings: PageSettings = {
 	showSupportBanner: false,
 	moveBlockToTop: false,
 };
+const featurePageSettings: PageSettings = {
+	showPrivacyScore: true,
+	showNavigationBlock: true,
+	showSupportBanner: true,
+	moveBlockToTop: true,
+};
 
 @Component({
 	// selector: 'vtr-layer',
@@ -42,36 +48,11 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 	pagesSettings: { [path in RoutersName]: PageSettings } = {
 		[RoutersName.LANDING]: defaultPageSettings,
 		[RoutersName.ARTICLES]: defaultPageSettings,
-		[RoutersName.TRACKERS]: {
-			showPrivacyScore: true,
-			showNavigationBlock: true,
-			showSupportBanner: true,
-			moveBlockToTop: true,
-		},
-		[RoutersName.BREACHES]: {
-			showPrivacyScore: true,
-			showNavigationBlock: true,
-			showSupportBanner: true,
-			moveBlockToTop: true,
-		},
-		[RoutersName.PRIVACY]: {
-			showPrivacyScore: true,
-			showNavigationBlock: true,
-			showSupportBanner: true,
-			moveBlockToTop: true,
-		},
-		[RoutersName.MAIN]: {
-			showPrivacyScore: true,
-			showNavigationBlock: true,
-			showSupportBanner: true,
-			moveBlockToTop: true,
-		},
-		[RoutersName.BROWSERACCOUNTS]: {
-			showPrivacyScore: true,
-			showNavigationBlock: true,
-			showSupportBanner: true,
-			moveBlockToTop: true,
-		},
+		[RoutersName.TRACKERS]: featurePageSettings,
+		[RoutersName.BREACHES]: featurePageSettings,
+		[RoutersName.PRIVACY]: featurePageSettings,
+		[RoutersName.MAIN]: featurePageSettings,
+		[RoutersName.BROWSERACCOUNTS]: featurePageSettings,
 	};
 
 	constructor(
