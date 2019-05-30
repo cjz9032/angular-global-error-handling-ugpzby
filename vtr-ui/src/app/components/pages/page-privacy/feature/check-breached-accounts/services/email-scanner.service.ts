@@ -76,8 +76,8 @@ export class EmailScannerService {
 	}
 
 	setScanBreachedAccounts() {
-		this.scanBreachedAccounts.next(true);
 		this.storageService.setItem(USER_EMAIL_HASH, getHashCode(this._userEmail$.getValue()));
+		this.scanBreachedAccounts.next(true);
 	}
 
 	setDisplayedUserEmail(userEmail) {

@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output, OnInit, AfterViewInit } from '@
 import { BreachedAccount } from '../../../common/services/breached-accounts.service';
 import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
+import { AccessTokenService } from '../../../common/services/access-token.service';
 
 export enum BreachedAccountMode {
 	FULL = 'FULL',
@@ -33,9 +34,11 @@ export class BreachedAccountComponent implements OnInit, AfterViewInit {
 	};
 
 	readonly breachedAccountMode = BreachedAccountMode;
+	isUserAuthorize$ = this.accessTokenService.accessTokenIsExist$;
 
 	constructor(
 		private communicationWithFigleafService: CommunicationWithFigleafService,
+		private accessTokenService: AccessTokenService,
 		private vantageCommunicationService: VantageCommunicationService) {
 	}
 

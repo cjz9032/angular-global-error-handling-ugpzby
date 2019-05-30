@@ -97,11 +97,16 @@ $leftIndent: 7.5rem;
 		font-weight: 600;
 		line-height: 2.3rem;
 		letter-spacing: 0.5px;
+		display: none;
 
 		span {
 			@extend %button-link__text;
 			border-bottom: .25rem solid #4A81FD;
 		}
+	}
+
+	&:hover .breached-account__preview-link {
+		display: initial;
 	}
 
 	&__accordion-button {
