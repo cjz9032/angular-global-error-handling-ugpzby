@@ -814,7 +814,34 @@
 		"thisDevice": "This device",
 		"allDevices": "All Devices",
 		"protected": "Protected",
-		"notProtected": "Not Protected"
+		"notProtected": "Not Protected",
+		"tour": {
+			"start": "START TOUR",
+			"done": "DONE",
+			"welcome": "WELCOME",
+			"welcomeDesc": "In just a few click, your will be able to protect your family members, your home, appliances, and digital assets from cyber criminals and hackers. Your 30 day free trial starts now.",
+			"device": "Why CHS for your devices",
+			"deviceDesc": "Protect your devices, and your home network from malicious hackers. Get a warning any time we detect suspicious behaviors br one of your devices, or if we detect an attempt to compromise your home network.",
+			"ensure": "CHS ensures that:",
+			"ensureOne": "your devices is safe, and have not been compromised",
+			"ensureTwo": "It ensures that the networks you are connected to are safe",
+			"ensureThree": "It ensures that other devices connected to your home network are safe.",
+			"create": "Create your account",
+			"lenovoId": "with Lenovo ID",
+			"notifications": "Receive <b>notifications</b> about your home's status",
+			"monitor": "<b>Monitor</b> the safety of your family's devices",
+			"peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
+			"signInLenovoId": "SIGH-UP WITH LENOVO ID",
+			"haveLenovo": "I don't have a <b>Lenovo ID</b>",
+			"createLenovo": "&nbsp;Create a Lenovo ID",
+			"without": "Proceed <b>without an account</b>",
+			"skipAndTrial": "SKIP AND START TRIAL",
+			"alreadyHave": "I already have a <b>Connected Home Security Account</b>",
+			"loginCHS": "Login to existing CHS account",
+			"locationPermission": "Connected Home Security requires your location in order to run. Please enable location services for Lenovo Vantage in Windows Settings.",
+			"yes": "YES",
+			"no": "NO"
+		}
 	},
 	"support": {
 		"common": {

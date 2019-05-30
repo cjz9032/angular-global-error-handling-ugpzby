@@ -29,7 +29,8 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 	switchPage = 1;
 	idLenovoIdLogin: boolean = false;
 	itemsList: Array<any>;
-	url: string = 'ms-settings:privacy-location';
+	url = 'ms-settings:privacy-location';
+	showPageFour: boolean;
 	// wfData: phoenix.WifiSecurity;
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -45,6 +46,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 	ngOnInit() {
 		this.getSwitchPage();
 		this.itemsList = new Array(this.containerPage);
+		this.showPageFour = !this.isLocationServiceOn;
 	}
 
 	closeModal() {
@@ -54,6 +56,12 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 	next(switchPage) {
 		if (switchPage < this.containerPage) {
 			this.switchPage = switchPage + 1;
+		}
+	}
+
+	prev(switchPage) {
+		if (switchPage > 0) {
+			this.switchPage = switchPage - 1;
 		}
 	}
 
@@ -86,9 +94,9 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 	}
 
 	public onOkClick($event: any) {
-		this.activeModal.close(true);
+		// this.activeModal.close(true);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'yes');
 		WinRT.launchUri(this.url);
-		// this.okHandler();
+		this.isLocationServiceOn = true; // get location permission status
 	}
 }
