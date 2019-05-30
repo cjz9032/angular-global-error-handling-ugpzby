@@ -52,5 +52,4 @@ export class NavTabsComponent implements OnInit, OnDestroy {
 
 	ngOnDestroy() {
 	}
-
 }
