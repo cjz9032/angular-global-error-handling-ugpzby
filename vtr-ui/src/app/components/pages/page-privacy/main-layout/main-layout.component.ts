@@ -16,14 +16,14 @@ interface PageSettings {
 	showPrivacyScore: boolean;
 	showNavigationBlock: boolean;
 	showSupportBanner: boolean;
-	moveContentToTop: boolean;
+	moveBlockToTop: boolean;
 }
 
 const defaultPageSettings: PageSettings = {
 	showPrivacyScore: false,
 	showNavigationBlock: false,
 	showSupportBanner: false,
-	moveContentToTop: false,
+	moveBlockToTop: false,
 };
 
 @Component({
@@ -37,7 +37,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 	showPrivacyScore = false;
 	showNavigationBlock = false;
 	showSupportBanner = false;
-	moveContentToTop = false;
+	moveBlockToTop = false;
 
 	pagesSettings: { [path in RoutersName]: PageSettings } = {
 		[RoutersName.LANDING]: defaultPageSettings,
@@ -46,31 +46,31 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 			showPrivacyScore: true,
 			showNavigationBlock: true,
 			showSupportBanner: true,
-			moveContentToTop: true,
+			moveBlockToTop: true,
 		},
 		[RoutersName.BREACHES]: {
 			showPrivacyScore: true,
 			showNavigationBlock: true,
 			showSupportBanner: true,
-			moveContentToTop: true,
+			moveBlockToTop: true,
 		},
 		[RoutersName.PRIVACY]: {
 			showPrivacyScore: true,
 			showNavigationBlock: true,
 			showSupportBanner: true,
-			moveContentToTop: true,
+			moveBlockToTop: true,
 		},
 		[RoutersName.MAIN]: {
 			showPrivacyScore: true,
 			showNavigationBlock: true,
 			showSupportBanner: true,
-			moveContentToTop: true,
+			moveBlockToTop: true,
 		},
 		[RoutersName.BROWSERACCOUNTS]: {
 			showPrivacyScore: true,
 			showNavigationBlock: true,
 			showSupportBanner: true,
-			moveContentToTop: true,
+			moveBlockToTop: true,
 		},
 	};
 
@@ -105,7 +105,7 @@ export class MainLayoutComponent implements OnInit, OnDestroy {
 		this.showPrivacyScore = this.pagesSettings[routerPage].showPrivacyScore;
 		this.showNavigationBlock = this.pagesSettings[routerPage].showNavigationBlock;
 		this.showSupportBanner = this.pagesSettings[routerPage].showSupportBanner;
-		this.moveContentToTop = this.pagesSettings[routerPage].moveContentToTop;
+		this.moveBlockToTop = this.pagesSettings[routerPage].moveBlockToTop;
 	}
 
 	setPermit(isAllow: boolean, popupId: string) {
