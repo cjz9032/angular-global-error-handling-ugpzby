@@ -6,7 +6,7 @@
                 <span class="header-nav__number" [ngClass]="[featureConfig.state === 'exist' ? 'header-nav__number--exist' : 'header-nav__number--none']">
                     {{featureConfig.state === 'undefined' ? '' : featureConfig.issuesCount}}
                 </span>
-                <p class="header-nav__title">Breached Accounts</p>
+                <p class="header-nav__title">{{featureConfig.title}}</p>
             </a>
         </li>
     </ul>

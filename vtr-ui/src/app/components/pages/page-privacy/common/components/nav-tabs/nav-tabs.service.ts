@@ -7,6 +7,7 @@ interface FeatureSettings {
 	issuesCount?: number;
 	state?: string;
 	routerLink?: string;
+	title?: string;
 }
 
 interface TabsConfig {

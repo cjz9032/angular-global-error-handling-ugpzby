@@ -27,18 +27,20 @@ export class NavTabsComponent implements OnInit {
 				issuesCount: breachedAccountsCount,
 				state: userDataStatuses.breachedAccountsResult,
 				routerLink: './breaches',
+				title: 'Breached Accounts',
 			};
 			const trackersConfig = {
 				...this.navTabsService.tabsConfig.trackers[userDataStatuses.websiteTrackersResult],
 				issuesCount: websiteTrackersCount,
 				state: userDataStatuses.websiteTrackersResult,
 				routerLink: './trackers',
+				title: 'Visible to Online Trackers',
 			};
 			const passwordsConfig = {
 				...this.navTabsService.tabsConfig.passwords[userDataStatuses.nonPrivatePasswordResult],
 				issuesCount: nonPrivatePasswordCount,
 				state: userDataStatuses.nonPrivatePasswordResult,
-				routerLink: './browser-accounts',
+				routerLink: 'Non-Private Passwords',
 			};
 			this.featurePagesConfig = [breachesConfig, trackersConfig, passwordsConfig];
 		});
