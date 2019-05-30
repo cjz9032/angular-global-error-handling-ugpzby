@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChoseBrowserGuard } from './chose-browser.guard';
+import { PermitTrackersAndPasswordsGuard } from './permit-trackers-and-passwords.guard';
 
 @NgModule({
 	declarations: [],
@@ -8,7 +8,7 @@ import { ChoseBrowserGuard } from './chose-browser.guard';
 		CommonModule
 	],
 	providers: [
-		ChoseBrowserGuard
+		PermitTrackersAndPasswordsGuard
 	]
 })
 export class GuardsModule {

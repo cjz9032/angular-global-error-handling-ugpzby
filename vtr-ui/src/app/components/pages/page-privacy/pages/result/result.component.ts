@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ChangeDetectorRef } from '@angular/core';
 import { BreachedAccountMode } from '../../feature/check-breached-accounts/breached-account/breached-account.component';
 import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
@@ -6,6 +6,7 @@ import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-de
 import { BreachedAccount, BreachedAccountsService } from '../../common/services/breached-accounts.service';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { AccessTokenService } from '../../common/services/access-token.service';
+import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -31,7 +32,8 @@ export class ResultComponent implements OnInit, OnDestroy {
 		private breachedAccountsService: BreachedAccountsService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private changeDetectorRef: ChangeDetectorRef,
-		private accessTokenService: AccessTokenService
+		private accessTokenService: AccessTokenService,
+		private vantageCommunicationService: VantageCommunicationService,
 	) {
 	}
 
@@ -39,14 +41,12 @@ export class ResultComponent implements OnInit, OnDestroy {
 		this.breachedAccountsService.onGetBreachedAccounts$
 			.pipe(takeUntil(instanceDestroyed(this)))
 			.subscribe((breachedAccounts) => {
-				this.breached_accounts = breachedAccounts.filter((breach) => {
+				this.breached_accounts = breachedAccounts.breaches.filter((breach) => {
 					return !(breach.hasOwnProperty('isFixed') && breach.isFixed === true);
 				});
 				this.breached_accounts_show = this.breached_accounts.slice(0, 3);
 				this.changeDetectorRef.detectChanges();
 			});
-
-		this.breachedAccountsService.getBreachedAccounts();
 	}
 
 	ngOnDestroy() {
@@ -54,5 +54,9 @@ export class ResultComponent implements OnInit, OnDestroy {
 
 	redirectToDetailPage(index: number) {
 		this.router.navigate(['privacy', 'breaches'], {queryParams: {openId: index}});
+	}
+
+	openFigleafApp() {
+		this.vantageCommunicationService.openFigleafByUrl('lenovoprivacy:');
 	}
 }

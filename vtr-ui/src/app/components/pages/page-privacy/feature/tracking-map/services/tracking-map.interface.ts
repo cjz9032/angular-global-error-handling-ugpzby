@@ -24,6 +24,7 @@ export interface TrackingDataDescription {
 export interface TrackingData {
 	typeData: typeData;
 	trackingData: TrackingDataDescription;
+	error: string | null;
 }
 
 export interface TrackerDetail {

@@ -4,16 +4,17 @@
 			<div class="heading">{{'homeSecurity.ecosystemBlockTitle' | translate}}</div>
 		</div>
 		<div class="pull right align-self-center"><img class="coronet_logo"
-			src="../../../../assets/images/coronet-logo.svg" /></div>
+			[src]=" '../../../../assets/images/coronet-logo.svg' | svgInline | async" /></div>
 	</div>
 	<div class="row mt-20">
 		<div class="col">
-			<vtr-ui-security-statusbar [statusList]="[device]"></vtr-ui-security-statusbar>
+			<vtr-ui-security-statusbar [statusList]="device"></vtr-ui-security-statusbar>
 		</div>
 	</div>
 	<div class="row mt-20 mb-3">
 		<div class="col">
-			<vtr-ui-security-statusbar [statusList]="[allDevice]"></vtr-ui-security-statusbar>
+			<vtr-ui-security-statusbar [statusList]="allDevice"></vtr-ui-security-statusbar>
 		</div>
 	</div>
+	<vtr-ui-button (click)="switchMock()" [label]="'switch'"></vtr-ui-button>
 </div>
