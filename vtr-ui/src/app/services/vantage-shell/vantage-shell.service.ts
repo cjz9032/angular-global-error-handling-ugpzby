@@ -6,7 +6,7 @@ import { CommonService } from '../../services/common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
 import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
-import { HybridModeSatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
+import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
 import { TouchpadStatus }  from 'src/app/data-models/gaming/touchpad-status.model';
 
 @Injectable({
@@ -445,6 +445,21 @@ export class VantageShellService {
 			return this.phoenix.genericMetricsPreference;
 		}
 	}
+
+	public getGamingKeyLock() {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingKeyLock;
+		}
+		return undefined;
+	}
+
+	public getGamingHybridMode() {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingHybridMode;
+		}
+		return undefined;
+	}
+
 
 	public getIntelligentMedia(): any {
 		if (this.phoenix) {

@@ -5,11 +5,13 @@ import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.mode
 import { isUndefined } from 'util';
 import { GamingSystemUpdateService } from 'src/app/services/gaming/gaming-system-update/gaming-system-update.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
-import { HybridModeSatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
+import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
 import { TouchpadStatus } from 'src/app/data-models/gaming/touchpad-status.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
+import { GamingKeyLockService } from 'src/app/services/gaming/gaming-keylock/gaming-key-lock.service';
+import { GamingHybridModeService } from 'src/app/services/gaming/gaming-hybrid-mode/gaming-hybrid-mode.service';
 
 
 @Component({
@@ -20,8 +22,10 @@ import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-cap
 export class WidgetLegionEdgeComponent implements OnInit {
 	public ramOcStatus = false;
 	public RamOCSatusObj = new RamOCSatus();
-	public HybridModeStatusObj = new HybridModeSatus();
+	public touchpadStatus = false;
 	public TouchpadStatusObj = new TouchpadStatus();
+	public hybrimodeStatus = false;
+	public HybrimodeStatusObj = new HybridModeStatus();
 	public legionUpdate = [
 		{
 			readMoreText: '',
@@ -185,7 +189,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		private modalService: NgbModal, private ngZone: NgZone,
 		private gamingSystemUpdateService: GamingSystemUpdateService,
 		private gamingAllCapabilities: GamingAllCapabilitiesService,
-		private commonService: CommonService
+		private commonService: CommonService,
+		private gamingKeyLockService: GamingKeyLockService,
+		private gamingHybridModeService: GamingHybridModeService
 	) { }
 
 	ngOnInit() {
@@ -195,6 +201,12 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		}
 		if (this.gamingCapabilities.memOCFeature) {
 			this.renderRamOverClockStatus();
+		}
+		if (this.gamingCapabilities.touchpadLockFeature) {
+			this.renderTouchpadStatus();
+		}
+		if (this.gamingCapabilities.hybridModeFeature) {
+			this.renderHybridModeStatus();
 		}
 	}
 	public getGaminagAllCapabilities() {
@@ -312,7 +324,45 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.RamOcStatus);
 	}
 
+	public renderTouchpadStatus() {
 
+		// Binding to UI
+		this.gamingKeyLockService.getKeyLockStatus().then((touchpadOCStatus) => {
+			console.log('get touchpad status js bridge ->', touchpadOCStatus);
+			this.legionUpdate[5].isChecked = touchpadOCStatus;
+		});
+		// if (this.legionUpdate[5].name === 'gaming.dashboard.device.legionEdge.touchpadLock') {
+		// 	this.gamingKeyLockService.getKeyLockStatus().then((touchpadOCStatus) => {
+		// 		console.log('get touchpad status js bridge ->', touchpadOCStatus);
+		// 		this.legionUpdate[5].isChecked = touchpadOCStatus;
+		// 	});
+		// }
+
+	}
+
+	public GetTouchpadCacheStatus() {
+		return this.commonService.getLocalStorageValue(LocalStorageKey.TouchpadStatus);
+	}
+
+	public renderHybridModeStatus() {
+
+		// Binding to UI
+		this.gamingHybridModeService.getHybridModeStatus().then((hybridModeStatus) => {
+			console.log('get hybridmode status js bridge ->', hybridModeStatus);
+			this.legionUpdate[4].isChecked = hybridModeStatus;
+		});
+		// if (this.legionUpdate[4].name === 'gaming.dashboard.device.legionEdge.hybridMode') {
+		// 	this.gamingHybridModeService.getHybridModeStatus().then((hybridModeStatus) => {
+		// 		console.log('get hybridmode status js bridge ->', hybridModeStatus);
+		// 		this.legionUpdate[4].isChecked = hybridModeStatus;
+		// 	});
+		// }
+
+	}
+
+	public GetHybridModeCacheStatus() {
+		return this.commonService.getLocalStorageValue(LocalStorageKey.HybridModeStatus);
+	}
 	public toggleOnOffRamOCStatus($event) {
 		console.log($event);
 		const { name, checked } = $event.target;
@@ -323,7 +373,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			this.gamingSystemUpdateService
 				.setRamOCStatus(this.RamOCSatusObj.ramOcStatus)
 				.then((value: boolean) => {
-					console.log('setRamOCStatus.then--------------------', value);
+					console.log('setRamOCStatus.then', value);
 				})
 				.catch(error => {
 					console.error('setRamOCStatus', error);
@@ -333,10 +383,29 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		else {
 			this.legionUpdate[1].isPopup = false;
 		}
+		if (name === 'gaming.dashboard.device.legionEdge.touchpadLock') {
+			this.TouchpadStatusObj.touchpadStatus = $event.switchValue;
+			this.gamingKeyLockService
+				.setKeyLockStatus(this.TouchpadStatusObj.touchpadStatus)
+				.then((value: boolean) => {
+					console.log('setKeyLockStatus.then', value);
+				})
+				.catch(error => {
+					console.error('setKeyLockStatus', error);
+				});
+		}
 
-
-		if (name === 'gaming.dashboard.device.legionEdge.hybridMode' && $event.switchValue === true) {
-			this.legionUpdate[4].isPopup = true;
+		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
+			//this.HybrimodeStatusObj.hybridModeStatus = $event.switchValue;
+			this.gamingHybridModeService
+				.setHybridModeStatus($event.switchValue)
+				.then((value: boolean) => {
+					this.legionUpdate[4].isPopup = $event.switchValue;
+					console.log('setHybridModeStatus.then', value);
+				})
+				.catch(error => {
+					console.error('setHybridModeStatus', error);
+				});
 		} else {
 			this.legionUpdate[4].isPopup = false;
 		}
