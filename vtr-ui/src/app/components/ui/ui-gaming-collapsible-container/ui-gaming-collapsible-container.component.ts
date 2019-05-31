@@ -26,14 +26,15 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	ngOnInit() {
 		this.options.forEach(option => {
 			if (option.selectedOption && this.currentOption === undefined) {
-				this.optionSelected(option);
+				console.log('optionSelected', option);
+				this.setDefaultOption(option);
 			}
 		});
 
 		if (this.currentOption === undefined) {
 			this.options.forEach(option => {
 				if (option.defaultOption) {
-					this.optionSelected(option);
+					this.setDefaultOption(option);
 				}
 			});
 		}
@@ -48,6 +49,13 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 		} else {
 			this.buttonName = 'Show';
 		}
+	}
+
+	public setDefaultOption(option){
+		this.currentOption = option.name;
+		this.selectedDescription = option.description;
+		this.currentDescription = this.selectedDescription;
+		this.showOptions = false;
 	}
 
 	public optionSelected(option) {
