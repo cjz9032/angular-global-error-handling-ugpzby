@@ -212,4 +212,8 @@ export class PageSmartAssistComponent implements OnInit {
 			}
 		);
 	}
+
+	public onResetDefaultSettings($event) {
+
+	}
 }

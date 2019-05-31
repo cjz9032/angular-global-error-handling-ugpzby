@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageSmartAssistComponent } from './page-smart-assist.component';
 
-describe('SubpageDeviceSettingsSmartAssistComponent', () => {
+describe('PageSmartAssistComponent', () => {
 	let component: PageSmartAssistComponent;
 	let fixture: ComponentFixture<PageSmartAssistComponent>;
 
