@@ -281,7 +281,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 							if (isAvailable) {
 								myDeviceItem.subitems.splice(4, 0, {
 									id: 'smart-assist',
-									label: 'Smart Assist',
+									label: 'common.menu.device.sub4',
 									path: 'smart-assist',
 									metricsEvent: 'itemClick',
 									metricsParent: 'navbar',

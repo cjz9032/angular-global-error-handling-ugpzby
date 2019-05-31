@@ -89,7 +89,8 @@
                 "title": "我的设备",
                 "sub1": "设备信息",
                 "sub2": "设备设置",
-                "sub3": "系统升级"
+                "sub3": "系统升级",
+                "sub4": "智能助理"
             },
             "security": {
                 "title": "安全顾问",
@@ -687,8 +688,7 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                        "title1": "距离灵敏度调整",
-                        "title2": "自动距离灵敏度调整",
+                        "title": "距离灵敏度调整",
                         "caption": "自动距离调整将通过AI引擎自动更新检测距离。",
                         "options": {
                             "near": "近",
@@ -705,7 +705,8 @@
                     "WindowsLink": {
                         "goToWindowsHello": "转到Windows Hello设置",
                         "screenTimeoutSettings": "转到屏幕超时设置"
-                    }
+                    },
+                    "resetToDefault": "重置为默认设置"
                 },
                 "intelligentScreen": {
                     "title": "Intelligent Screen",

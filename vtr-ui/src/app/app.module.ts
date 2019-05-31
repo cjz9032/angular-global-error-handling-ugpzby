@@ -201,8 +201,6 @@ import { UiBrightnessSliderComponent } from './components/ui/ui-brightness-slide
 import { SvgInlinePipe } from './pipe/svg-inline/svg-inline.pipe';
 import { DisplayColorTempComponent } from './components/display/display-color-temp/display-color-temp.component';
 import { IntelligentMediaComponent } from './components/pages/page-smart-assist/intelligent-media/intelligent-media.component';
-import { SubpageDeviceSettingsSmartAssistComponent } from './components/pages/page-device-settings/children/subpage-device-settings-smart-assist/subpage-device-settings-smart-assist.component';
-
 
 library.add(fas);
 library.add(fab);
@@ -363,8 +361,7 @@ library.add(fal);
 		DisplayColorTempComponent,
 		UiLightingProfileToggleComponent,
 		UiBrightnessSliderComponent,
-		SvgInlinePipe,
-		SubpageDeviceSettingsSmartAssistComponent
+		SvgInlinePipe
 	],
 	imports: [
 		BrowserModule,
