@@ -195,7 +195,10 @@ import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
 import { LoginLenovoIdComponent } from './components/modal/modal-chs-welcome-container/child/login-lenovo-id/login-lenovo-id.component';
 import { UiLightingProfileComponent } from './components/ui/ui-lighting-profile/ui-lighting-profile.component';
 import { AutoupdateSettingsComponent } from './components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
+import { UiLightingProfileToggleComponent } from './components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
+import { UiBrightnessSliderComponent } from './components/ui/ui-brightness-slider/ui-brightness-slider.component';
 import { SvgInlinePipe } from './pipe/svg-inline/svg-inline.pipe';
+import { DisplayColorTempComponent } from './components/display/display-color-temp/display-color-temp.component';
 
 
 
@@ -355,6 +358,9 @@ library.add(fal);
 		UiPopoverComponent,
 		ModalChsWelcomeContainerComponent,
 		LoginLenovoIdComponent,
+		DisplayColorTempComponent,
+		UiLightingProfileToggleComponent,
+		UiBrightnessSliderComponent,
 		SvgInlinePipe
 	],
 	imports: [
