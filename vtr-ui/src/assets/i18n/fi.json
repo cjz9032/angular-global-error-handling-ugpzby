@@ -1017,7 +1017,7 @@
                 "describe": "Määritä uhkien paikantimen avulla ympärilläsi olevien verkkojen turvallisuus.",
                 "button": "Tarkista uhat",
                 "connectionError": "Yhteysvirhe",
-                "tryAgain": "Laitteen paikantaminen ei onnistu, koska verkko ei ole käytettävissä. Muodosta yhteys Internetiin ja yritä uudelleen."
+                "tryAgain": "Uhan paikantaminen ei onnistu, koska verkko ei ole käytettävissä. Muodosta yhteys Internetiin ja yritä uudelleen."
             },
             "locationmodal": {
                 "title": "Ota sijaintipalvelut käyttöön",
@@ -1560,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Oletusasetukset",
+        "settings": "Asetukset",
+        "settingsDescription": "Oletusasetusten määrityssivulla voit ottaa käyttöön tai poistaa käytöstä viesti-ilmoitukset Vantagen viestiluokkien perusteella. Huomaa, että vaikka kaikki viestiluokat on poistettu käytöstä, voit silloin tällöin edelleen saada järjestelmälle tärkeitä viestejä Vantagelta, mikäli tarpeen.",
+        "messagesInLenovoVantage": "Lenovo Vantage -sovelluksen viestit",
+        "appFeatures": "Sovelluksen ominaisuudet",
+        "appFeaturesDescription": "System Update, artikkeleita ja muita merkittäviä ominaisuuksia koskevat viestit.",
+        "marketing": "Markkinointi",
+        "marketingDescription": "Kampanjaviestit, mukaan lukien Lenovon erikoistarjoukset.",
+        "actionTriggered": "Toiminto käynnistetty",
+        "actionTriggeredDescription": "Käyttäjän asetusvalintojen avulla käynnistämät sanomat, kuten tärkeiden tai suositeltujen päivitysten automaattinen asennus.",
+        "OtherSettings": "Muut asetukset",
+        "usageStatistics": "Käyttötilastot",
+        "usageStatisticsDescription": "Lähetä nimettömiä käyttötilastoja Lenovolle.",
+        "Note": "Huomautus: ",
+        "settingsNotes": "Kaikki tämän sivun asetukset tulevat voimaan vasta, kun käyttäjä on käynnistänyt tietokoneen uudelleen."
     }
 }

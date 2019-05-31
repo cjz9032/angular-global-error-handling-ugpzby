@@ -1017,7 +1017,7 @@
                 "describe": "Use o detector de ameaças para determinar a segurança das redes ao seu redor.",
                 "button": "Verificar ameaças",
                 "connectionError": "Erro de conexão",
-                "tryAgain": "Não foi possível localizar seu dispositivo devido à rede não estar disponível, conecte-se à Internet e tente novamente."
+                "tryAgain": "Não foi possível localizar ameaças devido à rede não estar disponível, conecte-se à Internet e tente novamente."
             },
             "locationmodal": {
                 "title": "Ativar serviços de localização",
@@ -1560,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Configurações de preferências",
+        "settings": "Configurações",
+        "settingsDescription": "Na página de configurações de preferências, você pode optar por ativar/desativar a notificação de mensagens com base nas categorias de mensagens do Vantage. Observe que, mesmo que todas as categorias de mensagens estejam desativadas, talvez você ainda receba ocasionalmente mensagens Críticas do Sistema do Vantage, quando necessário.",
+        "messagesInLenovoVantage": "Mensagens no Lenovo Vantage",
+        "appFeatures": "Recursos do aplicativo",
+        "appFeaturesDescription": "Mensagens sobre System Update, artigos e outros recursos notáveis.",
+        "marketing": "Marketing",
+        "marketingDescription": "Mensagens de promoções, incluindo ofertas especiais da Lenovo.",
+        "actionTriggered": "Ação acionadas",
+        "actionTriggeredDescription": "Mensagens acionadas pelo usuário selecionando configurações, como a instalação automática de atualizações críticas/recomendadas.",
+        "OtherSettings": "Outras configurações",
+        "usageStatistics": "Estatísticas de Uso",
+        "usageStatisticsDescription": "Enviar estatísticas anônimas de uso para a Lenovo.",
+        "Note": "Nota: ",
+        "settingsNotes": "todas as configurações nesta página precisarão que os usuários reiniciem para entrar em vigor."
     }
 }
