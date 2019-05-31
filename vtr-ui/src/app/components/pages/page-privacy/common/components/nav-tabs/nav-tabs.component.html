@@ -1,0 +1,13 @@
+<div>
+    <ul class="header-nav">
+        <li class="header-nav__item" *ngFor="let featureConfig of featurePagesConfig">
+            <a class="header-nav__link" routerLink="{{featureConfig.routerLink}}" routerLinkActive="active">
+                <img src="{{featureConfig.image}}" alt="Breached Accounts logo">
+                <span class="header-nav__number" [ngClass]="[featureConfig.state === 'exist' ? 'header-nav__number--exist' : 'header-nav__number--none']">
+                    {{featureConfig.state === 'undefined' ? '' : featureConfig.issuesCount}}
+                </span>
+                <p class="header-nav__title">{{featureConfig.title}}</p>
+            </a>
+        </li>
+    </ul>
+</div>

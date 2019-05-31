@@ -35,19 +35,19 @@ export class FeedbackFormComponent implements OnInit {
 
 	public onFeedBackSubmit($event): void {
 		const formData = this.feedbackForm.value;
-		var data = {
-			"ItemType": "UserFeedback",
-			"ItemName": "Submit",
-			"ItemParent": "Dialog.Feedback",
-			"UserEmail": formData.userEmail,
-			"Content": formData.userComment
-		}
+		const data = {
+			'ItemType': 'UserFeedback',
+			'ItemName': 'Submit',
+			'ItemParent': 'Dialog.Feedback',
+			'UserEmail': formData.userEmail,
+			'Content': formData.userComment
+		};
 		this.metrics.sendAsync(data);
 		console.log('onFeedBackSubmit: ', JSON.stringify(data), $event);
 		this.feedbackForm.reset();
 		// TODO: integrate with API
 		this.feedbackClick.emit($event);
-		this.feedbackButtonText = this.translate.instant('dashboard.feedback.form.messages.feedbackSuccess');  //'Thank you for your feedback !';
+		this.feedbackButtonText = this.translate.instant('dashboard.feedback.form.messages.feedbackSuccess');  // 'Thank you for your feedback !';
 		setTimeout(() => {
 			this.activeModal.close();
 			this.feedbackButtonText = this.buttonText;
@@ -61,7 +61,7 @@ export class FeedbackFormComponent implements OnInit {
 		});
 	}
 
-	private goToMailUtility() {
+	public goToMailUtility() {
 		const email = 'vantageteam@lenovo.com';
 		const subject = 'vantage%203.0%20beta%20program%20feedback';
 		const uriPath = 'mailto:' + email + '?subject=' + subject;

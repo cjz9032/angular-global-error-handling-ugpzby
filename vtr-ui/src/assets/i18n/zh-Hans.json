@@ -596,7 +596,27 @@
                             "title": "注",
                             "description": "Lenovo Vantage需要访问您的位置信息，以计算您所在地区的日落和日出时间。"
                         }
-                    }
+                    },
+                    "dispColorTemp": {
+						"title": "Display color temperature",
+						"options": {
+							"warm": "Warm (Better for eyes)",
+							"cold": "Cold"
+						},
+						"reset": "Reset temperature",
+						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
+						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+						"note": {
+							"title": "Note",
+							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+						}
+					},
+					"privacyGuard": {
+						"title": "Privacy guard",
+						"description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
+						"note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
+						"labelText": "Enable this feature when typing passwords"
+					}
                 },
                 "camera": {
                     "title": "摄像头",
@@ -704,7 +724,13 @@
                             "endTime": "60 minutes"
                         }
                     }
-                }
+                },
+				"intelligentMedia": {
+					"heading": "Intelligent Media",
+					"title": "Zero Touch Video Playback",
+					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+				}
             }
         }
     },
@@ -1488,9 +1514,9 @@
     },
     "welcometutorial": {
         "description": "Vantage使您可以轻松更新驱动程序，运行诊断程序，请求支持以及了解您的设备。快速定制您的体验，并根据您的需求找到有用的信息",
-        "bullets1": "使用lorem ipsum dolor set优化您的系统",
-        "bullets2": "Security Advisor使您可以轻松管理安全性",
-        "bullets3": "自动更新可使您的设备保持最佳状态",
+        "bullets1": "View System Status with Vantage dashboard",
+        "bullets2": "Security Advisor使您可以轻松管理安全性 (在选定系统上可用)",
+        "bullets3": "自动更新可使您的设备保持最佳状态 (在选定系统上可用)",
         "subtitle1": "你将如何使用你的设备？",
         "subtitle2": "告诉我们您的兴趣",
         "personal": "个人使用",

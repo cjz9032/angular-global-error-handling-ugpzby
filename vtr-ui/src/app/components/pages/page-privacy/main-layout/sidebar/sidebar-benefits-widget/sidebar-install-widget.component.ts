@@ -3,8 +3,9 @@ import { RouterChangeHandlerService } from '../../../common/services/router-chan
 import { filter, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { InstallWidgetPageSettings, SidebarInstallWidgetService } from './sidebar-install-widget.service';
-import { RoutersName } from '../../../privacy-routing-name';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
+import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
+import { AppStatuses } from '../../../userDataStatuses';
 
 @Component({
 	selector: 'vtr-sidebar-install-widget',
@@ -14,8 +15,6 @@ import { CommunicationWithFigleafService } from '../../../utils/communication-wi
 export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
 	primaryButtonText = 'Try Lenovo Privacy';
 	linkButtonText = 'Learn more';
-
-	isMainPage = false;
 
 	installWidgetSettings: InstallWidgetPageSettings = {
 		visible: false,
@@ -30,6 +29,7 @@ export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
 		private routerChangeHandler: RouterChangeHandlerService,
 		private sidebarInstallWidgetService: SidebarInstallWidgetService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
+		private userDataGetStateService: UserDataGetStateService,
 	) {
 	}
 
@@ -41,8 +41,11 @@ export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
 			)
 			.subscribe(
 				(currentPath) => {
-					this.isMainPage = currentPath === RoutersName.PRIVACY;
 					this.installWidgetSettings = this.sidebarInstallWidgetService.pagesSettings[currentPath];
+					const {appState} = this.userDataGetStateService.getUserDataStatus();
+					if ( appState === AppStatuses.firstTimeVisitor ) {
+						this.installWidgetSettings = this.sidebarInstallWidgetService.generalizedSettings;
+					}
 				}
 			);
 	}

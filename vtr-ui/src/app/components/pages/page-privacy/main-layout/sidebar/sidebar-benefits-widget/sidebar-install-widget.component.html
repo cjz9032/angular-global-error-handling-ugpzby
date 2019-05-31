@@ -8,20 +8,18 @@
 		</div>
 		<div class="sidebar-install-widget__text">
 			<strong class="sidebar-install-widget__text-strong">{{installWidgetSettings.title}}</strong>
-			<div class="sidebar-install-widget__main-text"
-				 [ngClass]="{'sidebar-install-widget__main-text--sm': !isMainPage}">
+			<div class="sidebar-install-widget__main-text sidebar-install-widget__main-text--sm">
 				<span class="sidebar-install-widget__text-light">{{installWidgetSettings.text}}</span>
 				<p class="sidebar-install-widget__text-light sidebar-install-widget__text-light--bold">
 					Trial duration 14-day. <span class="sidebar-install-widget__text-light">No credit card required.</span>
 				</p>
 			</div>
 		</div>
-		<button class="sidebar-install-widget__button"
+		<button class="sidebar-install-widget__button sidebar-install-widget__button--transparent"
 				vtrOpenFigleafInstaller
 				vtrSendAnalytics
 				[metricsEvent]="'ItemClick'"
-				[metricsItem]="'TryLenovoPrivacyButton'"
-				[ngClass]="{'sidebar-install-widget__button--transparent': isMainPage}">
+				[metricsItem]="'TryLenovoPrivacyButton'">
 			{{primaryButtonText}}
 		</button>
 		<div class="sidebar-install-widget__button-link">

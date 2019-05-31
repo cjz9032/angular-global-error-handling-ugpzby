@@ -1,10 +1,15 @@
 import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
 import { isUndefined } from 'util';
 import { GamingSystemUpdateService } from 'src/app/services/gaming/gaming-system-update/gaming-system-update.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
+import { HybridModeSatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
+import { TouchpadStatus } from 'src/app/data-models/gaming/touchpad-status.model';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 
 
 @Component({
@@ -13,8 +18,10 @@ import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.mod
 	styleUrls: ['./widget-legion-edge.component.scss']
 })
 export class WidgetLegionEdgeComponent implements OnInit {
-
+	public ramOcStatus=false;
 	public RamOCSatusObj = new RamOCSatus();
+	public HybridModeStatusObj = new HybridModeSatus();
+	public TouchpadStatusObj = new TouchpadStatus();
 	public legionUpdate = [
 		{
 			readMoreText: '',
@@ -148,8 +155,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			value: 3,
 		}
 	];
-	public CpuOCStatus: CPUOCStatus;
-	private gamingSettings: any = {
+	public cpuOCStatus: CPUOCStatus;
+	private gamingCapabilities: any = {
 		cpuInfoFeature: true,
 		gpuInfoFeature: true,
 		memoryInfoFeature: true,
@@ -170,63 +177,133 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	};
 
 	constructor(
-		private modalService: NgbModal,
-		private gamingSystemUpdateService: GamingSystemUpdateService
+		private modalService: NgbModal, private ngZone: NgZone,
+		private gamingSystemUpdateService: GamingSystemUpdateService,
+		private gamingAllCapabilities: GamingAllCapabilitiesService,
+		private commonService: CommonService
 	) { }
 
 	ngOnInit() {
-		this.legionUpdate[0].isVisible = this.gamingSettings.cpuOCFeature;
-		this.legionUpdate[1].isVisible = this.gamingSettings.memOCFeature;
-
-		if (this.gamingSettings.cpuOCFeature) {
+		this.getGaminagAllCapabilities();
+		if (this.gamingCapabilities.cpuOCFeature) {
 			this.renderCPUOverClockStatus();
 		}
-
-		if (this.gamingSettings.memOCFeature) {
+		if (this.gamingCapabilities.memOCFeature) {
 			this.renderRamOverClockStatus();
 		}
 	}
+	public getGaminagAllCapabilities() {
+		this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
+			console.log('gamingCapabilities js bridge ->', gamingCapabilities);
+			this.legionUpdate[0].isVisible = this.gamingCapabilities.cpuOCFeature;
+			this.legionUpdate[1].isVisible = this.gamingCapabilities.memOCFeature;
+			this.legionUpdate[4].isVisible = this.gamingCapabilities.hybridModeFeature;
+			this.legionUpdate[5].isVisible = this.gamingCapabilities.touchpadLockFeature;
 
+		});
+	}
 	public renderCPUOverClockStatus() {
-		this.CpuOCStatus = this.gamingSystemUpdateService.GetCPUOverClockStatus();
-		if (this.CpuOCStatus !== undefined) {
-			this.edgeopt.forEach((option) => {
-				if (option.value === this.CpuOCStatus.cpuOCStatus) {
-					option.selectedOption = true;
-					return;
+		try {
+			// this.CpuOCStatus = this.gamingSystemUpdateService.GetCPUOverClockCacheStatus();
+			// if (this.CpuOCStatus !== undefined) {
+			// 	this.edgeopt.forEach((option) => {
+			// 		if (option.value === this.CpuOCStatus.cpuOCStatus) {
+			// 			option.selectedOption = true;
+			// 			return;
+			// 		}
+			// 	});
+			// }
+			this.gamingSystemUpdateService.getCpuOCStatus().then((cpuOCStatus) => {
+				console.log('get cpu oc status js bridge ->', cpuOCStatus);
+				if (cpuOCStatus !== undefined) {
+					const CpuOCStatusObj = new CPUOCStatus();
+					CpuOCStatusObj.cpuOCStatus = cpuOCStatus;
+					this.edgeopt.forEach((option) => {
+						if (option.value === CpuOCStatusObj.cpuOCStatus) {
+							option.selectedOption = true;
+						}
+					});
 				}
+
 			});
+			//	this.CpuOCStatus = this.gamingSystemUpdateService.GetCPUOverClockStatus();
+			// this.ngZone.run(() => {
+			// 	//this.legionUpdate[0].isChecked = this.CpuOCStatus.cpuOCStatus;
+			// 	if (this.CpuOCStatus !== undefined) {
+			// 		console.log('set cpu oc status in ng zone ->', this.CpuOCStatus.cpuOCStatus);
+			// 		this.edgeopt.forEach((option) => {
+			// 			if (option.value === this.CpuOCStatus.cpuOCStatus) {
+			// 				option.selectedOption = true;
+			// 				return;
+			// 			}
+			// 		});
+			// 	}
+			// });
+		} catch (error) {
+			console.error(error.message);
 		}
 	}
 
 	onOptionSelected(event) {
 		if (event.target.name === 'gaming.dashboard.device.legionEdge.title') {
-			if (this.CpuOCStatus === undefined) {
-				this.CpuOCStatus = new CPUOCStatus();
+			if (this.cpuOCStatus === undefined) {
+				this.cpuOCStatus = new CPUOCStatus();
 			}
-			this.CpuOCStatus.cpuOCStatus = event.option.value;
-			this.gamingSystemUpdateService.SetCPUOverClockStatus(this.CpuOCStatus);
+			this.cpuOCStatus.cpuOCStatus = event.option.value;
+			// this.gamingSystemUpdateService.getCpuOCStatus().then((cpuOCStatus) => {
+			// 	console.log('get cpu oc status js bridge ->', cpuOCStatus);
+			// 	if (cpuOCStatus !== undefined) {
+			// 		const CpuOCStatusObj = new CPUOCStatus();
+			// 		CpuOCStatusObj.cpuOCStatus = cpuOCStatus;
+
+			// 	}
+
+			// });
+			//this.gamingSystemUpdateService.setCpuOCStatus(this.CpuOCStatus.cpuOCStatus);
+			this.gamingSystemUpdateService
+				.setCpuOCStatus(this.cpuOCStatus.cpuOCStatus)
+				.then((value: boolean) => {
+					console.log('setCpuOCStatus.then', value);
+
+
+				})
+				.catch(error => {
+					console.error('setCpuOCStatus', error);
+				});
 		}
 	}
 
 	openModal() {
 		// this.modalService.open(ModalWelcomeComponent);
-		this.modalService.open(ModalGamingLegionedgeComponent, {windowClass: 'gaming-help-modal'});
+		this.modalService.open(ModalGamingLegionedgeComponent, { windowClass: 'gaming-help-modal' });
 	}
 
 	public renderRamOverClockStatus() {
-		this.RamOCSatusObj = this.gamingSystemUpdateService.GetRAMOverClockStatus();
+	//	this.RamOCSatusObj = this.GetRAMOverClockCacheStatus();
 
-		if (isUndefined(this.RamOCSatusObj)) {
-			this.RamOCSatusObj = new RamOCSatus();
-			this.gamingSystemUpdateService.SetRAMOverClockStatus(this.RamOCSatusObj);
-		}
+		// if (isUndefined(this.RamOCSatusObj)) {
+		// 	this.RamOCSatusObj = new RamOCSatus();
+		// 	this.gamingSystemUpdateService.setRamOCStatus(this.RamOCSatusObj.ramOcStatus);
+		// }
 
 		// Binding to UI
 		if (this.legionUpdate[1].name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
-			this.legionUpdate[1].isChecked = this.RamOCSatusObj.ramOcStatus;
+			this.gamingSystemUpdateService.getRamOCStatus().then((ramOcStatus) => {
+				console.log('get ram  oc status js bridge ->', ramOcStatus);
+				this.legionUpdate[1].isChecked = ramOcStatus;
+			});
+			//this.legionUpdate[1].isChecked = this.RamOCSatusObj.ramOcStatus;
+
 		}
+
+		//	this.RamOCSatusObj = this.gamingSystemUpdateService.GetRAMOverClockStatus();
+		// we need to rerender the component here.
 	}
+
+	public GetRAMOverClockCacheStatus() {
+		return this.commonService.getLocalStorageValue(LocalStorageKey.RamOcStatus);
+	}
+
 
 	public toggleOnOffRamOCStatus($event) {
 		console.log($event);
@@ -234,12 +311,21 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			this.RamOCSatusObj.ramOcStatus = $event.switchValue;
-			this.gamingSystemUpdateService.SetRAMOverClockStatus(this.RamOCSatusObj);
+			//this.gamingSystemUpdateService.setRamOCStatus(this.RamOCSatusObj.ramOcStatus);
+			this.gamingSystemUpdateService
+			.setRamOCStatus(this.RamOCSatusObj.ramOcStatus)
+			.then((value: boolean) => {
+				console.log('setRamOCStatus.then', value);
+			})
+			.catch(error => {
+				console.error('setRamOCStatus', error);
+			});
 			this.legionUpdate[1].isPopup = $event.switchValue;
 		}
 		else {
 			this.legionUpdate[1].isPopup = false;
 		}
+
 
 		if (name === 'gaming.dashboard.device.legionEdge.hybridMode' && $event.switchValue === true) {
 			this.legionUpdate[4].isPopup = true;

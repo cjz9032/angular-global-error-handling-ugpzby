@@ -1,5 +1,5 @@
 export class HomeSecurityAccount {
-    id: string;
-    name: string;
-    isTrial: boolean;
+	id: string;
+	name: string;
+	subscription: string; // trial trialExpired upgraded upgradedExpired localAccount localWithLid
 }
