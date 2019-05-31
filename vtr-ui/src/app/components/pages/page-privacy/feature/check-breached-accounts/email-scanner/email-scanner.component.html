@@ -1,12 +1,13 @@
 <div class="check-breaches">
-  <p class="check-breaches__title">{{(emailWasScanned | async) ? nextEmailScanData.title : firstEmailScanData.title}}</p>
+  <p class="check-breaches__title">{{(emailWasScanned$ | async) ? nextEmailScanData.title : firstEmailScanData.title}}</p>
 
-  <div *ngIf="!(emailWasScanned | async)" class="check-breaches__text-content">
-    <p class="check-breaches__text">Find out if your personal info has been part of a data breach. Your privacy
-      is important to us, so your email will only be used to show you what we’ve found. Nothing else.</p>
+  <div *ngIf="!(emailWasScanned$ | async)" class="check-breaches__text-content">
+    <p class="check-breaches__text">
+		Find out if your private information is being exposed. We will check the dark web and every known data breach.
+	</p>
   </div>
 
-  <div *ngIf="(emailWasScanned | async)" class="check-breaches__text-content">
+  <div *ngIf="(emailWasScanned$ | async)" class="check-breaches__text-content">
     <p class="check-breaches__text">
       Good news —
       <strong>{{userEmail || 'your email'}}</strong> didn’t come up in our privacy checkup.
@@ -15,12 +16,7 @@
 
   <vtr-check-breaches-form></vtr-check-breaches-form>
 
-  <div *ngIf="!(emailWasScanned | async)"
-       class="check-breaches__description check-breaches__description--first-scan">
-    <vtr-scan-steps [innerIndent]="true" steps="scanSteps"></vtr-scan-steps>
-  </div>
-
-  <div *ngIf="(emailWasScanned | async)"
+  <div *ngIf="(emailWasScanned$ | async)"
        class="check-breaches__description check-breaches__description--next-scan">
     <div class="check-breaches-risks">
       <div class="check-breaches-risks__text-col">

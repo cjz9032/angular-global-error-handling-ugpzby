@@ -1,23 +1,26 @@
 <section class="breaches-page"
-         vtrSendAnalytics
+		 vtrSendAnalytics
 		 [metricsEvent]="'PageView'">
 
 	<div class="breached-accounts" data-analyticsName="BreachedAccountsBlock">
 
-		<div *ngIf="!(isFigleafReadyForCommunication$ | async) && !breached_accounts?.length" class="email-scanner">
+		<div *ngIf="!(isFigleafReadyForCommunication$ | async) && !(breachedAccounts$ | async)?.length" class="email-scanner">
 			<vtr-email-scanner></vtr-email-scanner>
 		</div>
 
-		<div *ngIf="breached_accounts?.length" class="breaches-wrapper">
-			<p class="breached-accounts__text">
-				Looks like some of your personal info is floating around online, making it easy for others to access
-				your accounts without your knowledge. You should change your passwords right now.
-			</p>
-			<button (click)="startVerify()">Verify</button>
+		<div *ngIf="(breachedAccounts$ | async)?.length" class="breaches-wrapper">
+			<div class="breached-accounts__header">
+				<p class="breached-accounts__title">
+					Found <span class="breached-accounts__title--red">{{(breachedAccounts$ | async)?.length}}	</span> breaches
+				</p>
+				<button class="breached-accounts__verify-button"
+						(click)="startVerify()">
+					Verify email
+				</button>
+			</div>
 			<vtr-breached-account
-					[breachedAccounts]="breached_accounts"
-					[openId]="openBreachedId$ | async"
-					(verifyClick)="startVerify()">
+				[breachedAccounts]="(breachedAccounts$ | async)"
+				(verifyClick)="startVerify()">
 			</vtr-breached-account>
 		</div>
 

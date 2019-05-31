@@ -52,9 +52,6 @@ export class EmailScannerService {
 	private _userEmail$ = new BehaviorSubject<string>('');
 	userEmail$ = this._userEmail$.asObservable();
 
-	private _userEmailToShow$ = new Subject<string>();
-	userEmailToShow$ = this._userEmailToShow$.asObservable();
-
 	private validationStatusChanged = new Subject<ConfirmationCodeValidationResponse>();
 	validationStatusChanged$ = this.validationStatusChanged.asObservable();
 
@@ -81,10 +78,6 @@ export class EmailScannerService {
 		this.storageService.setItem(USER_EMAIL_HASH, getHashCode(this._userEmail$.getValue()));
 		this.safeStorageService.setPassword('figleaf-userEmail', this._userEmail$.getValue());
 		this.scanBreachedAccounts.next(true);
-	}
-
-	setDisplayedUserEmail(userEmail) {
-		this._userEmailToShow$.next(userEmail);
 	}
 
 	cancelVerification() {
@@ -141,7 +134,6 @@ export class EmailScannerService {
 			switchMap((breaches: BreachedAccountsFromServerResponse) => {
 				this.loadingStatusChanged.next(false);
 				this.setUserEmail(breaches.userEmail);
-				this.setDisplayedUserEmail(breaches.userEmail);
 				return [this.transformBreachesFromServer(breaches)];
 			}),
 			catchError((error) => {
@@ -173,14 +165,16 @@ export class EmailScannerService {
 
 	getBreachedAccountsWithoutToken() {
 		let response: Observable<never | BreachedAccountsFromServerResponse> = EMPTY;
-		const SHA1HashFromEmail = this.storageService.getItem(USER_EMAIL_HASH) ?
-			this.storageService.getItem(USER_EMAIL_HASH) :
-			getHashCode(this._userEmail$.getValue());
+		const SHA1HashFromEmail = this.storageService.getItem(USER_EMAIL_HASH);
 
-		if (this._userEmail$.getValue()) {
+		if (SHA1HashFromEmail) {
 			response = this.http.get<BreachedAccountsFromServerResponse>(
 				`${this.environment.backendUrl}/api/v1/vantage/public/emailbreaches?email_hash=${SHA1HashFromEmail}`,
 			);
+		}
+
+		if (!SHA1HashFromEmail) {
+			this.loadingStatusChanged.next(false);
 		}
 
 		return response;

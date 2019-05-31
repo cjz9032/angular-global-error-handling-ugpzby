@@ -54,6 +54,7 @@ export class BreachedAccountsService {
 			tap(() => this.onGetBreachedAccountsCompleted$.next(false)),
 			switchMap((isFigleafInstalled) => {
 				this.taskStartedTime = Date.now();
+				console.log('isFigleafInstalled', 123);
 				return isFigleafInstalled ? this.getBreachedAccountsFromApp() : this.getBreachedAccountsFromBackend();
 			}),
 			map((breachedAccounts) => {

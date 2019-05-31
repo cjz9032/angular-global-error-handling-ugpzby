@@ -1,20 +1,26 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { takeUntil } from 'rxjs/operators';
+import { filter, map, takeUntil } from 'rxjs/operators';
 import { EmailScannerService } from '../services/email-scanner.service';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
+import { SafeStorageService } from '../../../common/services/safe-storage.service';
+import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
+import { FeaturesStatuses } from '../../../userDataStatuses';
 
 @Component({
 	selector: 'vtr-email-scanner',
 	templateUrl: './email-scanner.component.html',
-	styleUrls: ['./email-scanner.component.scss']
+	styleUrls: ['./email-scanner.component.scss'],
+
 })
 export class EmailScannerComponent implements OnInit, OnDestroy {
-	userEmail = '';
-	emailWasScanned = this.emailScannerService.scanBreachedAccounts$;
+	userEmail = this.safeStorageService.getPassword('figleaf-userEmail');
+	emailWasScanned$ = this.userDataGetStateService.userDataStatus$.pipe(
+		map((userDataStatus) => userDataStatus.breachedAccountsResult !== FeaturesStatuses.undefined)
+	);
 
 	// Static Data for html
 	firstEmailScanData = {
-		title: 'Check for breached accounts',
+		title: 'Check email for breaches',
 	};
 	nextEmailScanData = {
 		title: 'We didn’t find any breached accounts',
@@ -22,12 +28,15 @@ export class EmailScannerComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private emailScannerService: EmailScannerService,
+		private safeStorageService: SafeStorageService,
+		private userDataGetStateService: UserDataGetStateService,
 	) {
 	}
 
 	ngOnInit() {
-		this.emailScannerService.userEmailToShow$
+		this.emailScannerService.userEmail$
 			.pipe(
+				filter(Boolean),
 				takeUntil(instanceDestroyed(this))
 			)
 			.subscribe((userEmail) => {
