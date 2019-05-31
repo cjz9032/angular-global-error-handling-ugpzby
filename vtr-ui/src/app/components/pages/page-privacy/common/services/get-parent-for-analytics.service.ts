@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { RoutersName } from '../../privacy-routing-name';
+import { RouterChangeHandlerService } from './router-change-handler.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class GetParentForAnalyticsService {
 
-	constructor(private router: Router) {
+	constructor(private routerChangeHandlerService: RouterChangeHandlerService) {
 	}
 
 	getParentName(currentElement) {
-		return this.getPageName() + this.getParentNodeName(currentElement);
+		const parentNodeName = this.getParentNodeName(currentElement);
+		return this.getPageName() + (parentNodeName && '.') + parentNodeName;
 	}
 
 	getParentNodeName(myCurrentElement) {
@@ -30,23 +31,21 @@ export class GetParentForAnalyticsService {
 	}
 
 	getPageName() {
-		const route = this.router.url;
-		const pageRouteName = route.slice(route.lastIndexOf('/') + 1, route.length);
-		switch (pageRouteName) {
+		switch (this.routerChangeHandlerService.currentRoute) {
 			case RoutersName.PRIVACY:
-				return '';
+				return 'Privacy';
 			case RoutersName.BREACHES:
-				return 'BreachedAccounts.';
+				return 'Privacy.BreachedAccounts';
 			case RoutersName.TRACKERS:
-				return 'VisibleToOnlineTrackers.';
+				return 'Privacy.VisibleToOnlineTrackers';
 			case RoutersName.BROWSERACCOUNTS:
-				return 'NonPrivatePassword.';
+				return 'Privacy.NonPrivatePassword';
 			case  RoutersName.LANDING:
-				return 'Landing.';
+				return 'Privacy.Landing';
 			case  RoutersName.NEWS:
-				return 'News.';
+				return 'Privacy.News';
 			case  RoutersName.TIPS:
-				return 'Tips.';
+				return 'Privacy.Tips';
 			default:
 				return '';
 		}

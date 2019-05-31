@@ -10,7 +10,6 @@
 		height: $menu_height;
 		background-color: $main_darker;
 		color: $light;
-		justify-content: left;
 		padding-right: 16px;
 
 		.active .icomoon::before{
@@ -21,7 +20,8 @@
 			font-weight: $weight_bold;
 			width: $menu_height;
 			height: 100%;
-			background-color: $main;
+			//background-color: $main;
+			border: none;
 			text-align: center;
 			color: $light;
 			overflow: hidden;
@@ -29,6 +29,9 @@
 				max-width: 100%;
 				max-height: 100%;
 			}
+		}
+		.navbar-brand a { 
+			border: none;
 		}
 
 		.navbar-text {
@@ -56,12 +59,15 @@
 		}
 
 		.navbar-collapse {
+			&.show {
+				display: block;
+			}
 			.navbar-nav {
 				.nav-item {
 					.nav-link {
-						@media #{$mediaquery_8} {
-							display: none;
-						}
+						// @media #{$mediaquery_7} {
+						// 	display: none;
+						// }
 						display: inline-table;
 						font-size: 1.7rem;
 						font-weight: 400;
@@ -80,10 +86,6 @@
 
 						@media #{$mediaquery_6} {
 							line-height: calc(#{$menu_height} - 0.5rem);
-						}
-
-						@media #{$mediaquery_9} {
-							padding: 0 0;
 						}
 
 						&.active {
@@ -223,14 +225,79 @@
 					}
 				}
 			}
+			@media #{$mediaquery_xl} {
+				position: fixed;
+				top: 9rem;
+				right: 0;
+				background: $main_darker;
+				.navbar-nav {
+					.nav-item {
+						padding: 0 0 2.5rem 0;
+						.nav-link {
+							line-height: 4rem;
+							border-bottom: none;
+							border-left: transparent solid 0.5rem;
+							&.active {
+								border-bottom: none;
+								border-left: $menu_hover solid 0.5rem;
+								.fa-icon {
+									color: $main;
+								}
+							}
+						}
+						.dropdown-toggle {
+							&::before {
+								display: none;
+							}
+							&::after {
+								display: none;
+							}
+							&.user {
+								display: none;
+							}
+						}
+						.dropdown-menu {
+							display: block !important;
+							box-shadow:none;
+							margin-top: 0;
+							padding: 0 4rem 0 5.5rem;
+							background: transparent;
+							&.user {
+								border-top: 1px solid $shade_dark;
+								padding-top: 2rem;
+								margin-left: 0;
+							}
+							.dropdown-item {
+								color: $light;
+								line-height: 4rem;
+								text-decoration: none;
+								&.link {
+									&:hover {
+										font-weight: $weight_regular;
+									}
+								}
+							}
+							fa-icon {
+								&.menu-pointer {
+									display: none;
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 
 		.navbar-toggler {
 			font-size: 5rem;
 			color: $shade_light;
-
 			&:hover {
 				color: $shade_extralight;
+			}
+			.navbar-toggler-icon {
+				fa-icon {
+					vertical-align: middle;
+				}
 			}
 		}
 

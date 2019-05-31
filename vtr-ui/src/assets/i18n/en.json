@@ -190,6 +190,7 @@
 				"email": "Email (optional)",
 				"comments": "Comments...",
 				"button": "Submit",
+				"addScreenshot": "Add ScreenShot",
 				"messages": {
 					"feedbackSuccess": "Thank you for your feedback !"
 				}
@@ -314,7 +315,6 @@
 					"cycleCount": "Cycle count",
 					"chemistry": "Device chemistry",
 					"remainingCap": "Remaining capacity",
-					"manufacturer": "Manufacturer",
 					"designCap": "Design capacity",
 					"fullChargeCap": "Full charge capacity",
 					"manufDt": "Manufacture date",
@@ -332,7 +332,63 @@
 					},
 					"deviceChemistry": {
 						"li-polymer": "Li-Polymer",
-						"li-ion": "Li-Ion"
+						"li-ion": "Li-Ion",
+						"li_polymer": "Li-Polymer",
+						"li_ion": "Li-Ion"
+					},
+					"manufacturer": {
+						"title": "Manufacturer",
+						"celxpert": "Celxpert",
+						"smp": "SMP"
+					}
+				},
+				"condition": {
+					"Illegal": {
+						"title": "This system may not support battery that",
+						"description": "is not genuine Lenovo-made or authorized. The system will continue to boot, but may not charge with unauthorized batteries.",
+						"description1": "Attention:",
+						"description2": "Lenovo has no responsibility for the performance or safety of unauthorized batteries, and provides no warranties for failures or damage arising out of their use."
+					},
+					"Good": {
+						"title": "The battery is in good Condition"
+					},
+					"Exhaustion": {
+						"title": "The battery has failed due to normal",
+						"description": "wear. The battery cannot be charged. Replace the battery."
+					},
+					"Bad": {
+						"title": "A battery error has occurred.",
+						"description": "The battery cannot be charged/discharged . Replace the battery."
+					},
+					"NotDetected": {
+						"title": "No battery detected or not",
+						"description": "plugged in battery."
+					},
+					"NotGood": {
+						"title": "The battery is not in a good Condition"
+					},
+					"LimitedACAdapterSupport": {
+						"title": "Limited Support AC Adapter"
+					},
+					"NotSupportACAdapter": {
+						"title": "Not support AC Adapter"
+					},
+					"ACAdapterNotSupported": {
+						"title":"AC adapter not supported.",
+						"description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
+					},
+					"EnoughPowerACAdapter": {
+						"title": "AC adapter cannot provide enough power",
+						"description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
+					},
+					"MissingDriver": {
+						"title": "The Lenovo Power Manager Driver is not installed or not working properly. Please run Windows Update to install the latest driver",
+						"description": "is not installed or not working properly. Please run Windows Update to install the latest driver"
+					},
+					"StoreLimitation": {
+						"title": "The battery can only store",
+						"description1": "of",
+						"description2":  "it's original full charge capacity"
 					}
 				}
 			},
@@ -541,6 +597,26 @@
 							"title": "Note",
 							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
 						}
+					},
+					"dispColorTemp": {
+						"title": "Display color temperature",
+						"options": {
+							"warm": "Warm (Better for eyes)",
+							"cold": "Cold"
+						},
+						"reset": "Reset temperature",
+						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
+						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+						"note": {
+							"title": "Note",
+							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+						}
+					},
+					"privacyGuard": {
+						"title": "Privacy guard",
+						"description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
+						"note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
+						"labelText": "Enable this feature when typing passwords"
 					}
 				},
 				"camera": {
@@ -646,6 +722,12 @@
 						"startTime": "0 minutes",
 						"endTime": "60 minutes"
 					}
+				},
+				"intelligentMedia": {
+					"heading": "Intelligent Media",
+					"title": "Zero Touch Video Playback",
+					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
 				}
 			}
 		}
@@ -683,11 +765,6 @@
 			"critical": {
 				"title": "Critical Updates",
 				"tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
-			},
-			"camera": {
-				"title": "Camera",
-				"tooltip": "Click here to reset Camera properties to default settings.",
-				"reset": "Reset factory settings"
 			},
 			"recommended": {
 				"title": "Recommended Updates",
@@ -733,7 +810,10 @@
 			"downloadSize": "Download size: ",
 			"diskSpaceNeeded": "Disk space needed: ",
 			"ignore": "Ignore",
-			"attend": "Attend"
+			"attend": "Attend",
+			"rebootRequiredTag": "Reboot Required",
+			"rebootDelayTag": "Reboot Required, Power Source Required",
+			"shutdownRequiredTag": "Shutdown Required"
 		},
 		"availableUpdates": {
 			"title": "Available updates",
@@ -761,7 +841,34 @@
 		"thisDevice": "This device",
 		"allDevices": "All Devices",
 		"protected": "Protected",
-		"notProtected": "Not Protected"
+		"notProtected": "Not Protected",
+		"tour": {
+			"start": "START TOUR",
+			"done": "DONE",
+			"welcome": "WELCOME",
+			"welcomeDesc": "In just a few click, your will be able to protect your family members, your home, appliances, and digital assets from cyber criminals and hackers. Your 30 day free trial starts now.",
+			"device": "Why CHS for your devices",
+			"deviceDesc": "Protect your devices, and your home network from malicious hackers. Get a warning any time we detect suspicious behaviors br one of your devices, or if we detect an attempt to compromise your home network.",
+			"ensure": "CHS ensures that:",
+			"ensureOne": "your devices is safe, and have not been compromised",
+			"ensureTwo": "It ensures that the networks you are connected to are safe",
+			"ensureThree": "It ensures that other devices connected to your home network are safe.",
+			"create": "Create your account",
+			"lenovoId": "with Lenovo ID",
+			"notifications": "Receive <b>notifications</b> about your home's status",
+			"monitor": "<b>Monitor</b> the safety of your family's devices",
+			"peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
+			"signInLenovoId": "SIGH-UP WITH LENOVO ID",
+			"haveLenovo": "I don't have a <b>Lenovo ID</b>",
+			"createLenovo": "&nbsp;Create a Lenovo ID",
+			"without": "Proceed <b>without an account</b>",
+			"skipAndTrial": "SKIP AND START TRIAL",
+			"alreadyHave": "I already have a <b>Connected Home Security Account</b>",
+			"loginCHS": "Login to existing CHS account",
+			"locationPermission": "Connected Home Security requires your location in order to run. Please enable location services for Lenovo Vantage in Windows Settings.",
+			"yes": "YES",
+			"no": "NO"
+		}
 	},
 	"support": {
 		"common": {
@@ -809,6 +916,11 @@
 			"ourWebsite": "Our website",
 			"aboutYourDevice": "About your device",
 			"copyright": "© 2002-2019 Lenovo all rights reserved"
+		},
+		"quickAccess": {
+			"categories": "Categories",
+			"categoriesDesc": "Find helpful information in our articles",
+			"seeArticles": "SEE ARTICLES"
 		}
 	},
 	"security": {
@@ -1004,8 +1116,8 @@
 			"whatIsPmNotInstalled": "The safest, easiest way to save strong, complex passwords and log in instantly on every site.",
 			"whatIsPmInstalled": "A safer digital life is waiting: Add passwords, enable Dark Web Monitoring and autofill personal and payment info.",
 			"startProtect": "Start protecting your online accounts the simple way.",
-			"discount": "Lenovo users enjoy an exclusive 50% off of Dashlane Premium.",
-			"offer": "Offer available for new Dashlane users only!",
+			"discount": "Lenovo users enjoy an exclusive 50% off Dashlane Premium.",
+			"offer": "Offer available to new Dashlane users only!",
 			"getDashLane": "Get Dashlane",
 			"learnMoreAbout": "<tag>Learn more</tag> about making the most of Dashlane",
 			"openDashLane": "Open Dashlane",
@@ -1425,9 +1537,9 @@
 	},
 	"welcometutorial": {
 		"description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-		"bullets1": "Optimize your system with lorem ipsum dolor set",
-		"bullets2": "Security Advisor makes managing your security easy ",
-		"bullets3": "Automatic updates keep your device in tip top shape",
+		"bullets1": "View System Status with Vantage dashboard",
+		"bullets2": "Security Advisor makes managing your security easy (Available on selected systems)",
+		"bullets3": "Automatic updates keep your device in tip top shape (Available on selected systems)",
 		"subtitle1": "How will you be using your device?",
 		"subtitle2": "Tell us about your interests",
 		"personal": "Personal Use",

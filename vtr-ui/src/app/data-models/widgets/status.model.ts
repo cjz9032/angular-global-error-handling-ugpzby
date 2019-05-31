@@ -1,9 +1,13 @@
+import { TranslateService } from '@ngx-translate/core';
+
 /**
  * model for status widgets
  */
 export class Status {
 	constructor(
-	) { }
+	) {
+		this.status = 4;
+	}
 	public status: number;
 	public id: string;
 	public title: string;

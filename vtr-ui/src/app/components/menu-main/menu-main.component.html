@@ -1,25 +1,22 @@
 <div class="vtr-menu-main">
-	<nav class="navbar navbar-expand-md pr-0">
+	<nav class="navbar navbar-expand-xl pr-0">
 		<div *ngIf="!deviceService.isGaming"
-			class="navbar-brand pt-0">
-
+		 class="navbar-brand pt-0">
 			<a vtrMetrics
-				routerLinkActive="link-active"
-				[routerLinkActiveOptions]="items[0].routerLinkActiveOptions"
-				[metricsEvent]="items[0].metricsEvent"
-				[metricsParent]="items[0].metricsParent"
-				[metricsItem]="items[0].metricsItem"
-				routerLink="/{{items.path}}">
-				<img src="../../../assets/icons/Vantage_L_logo.svg"
-					alt="L" />
+			 routerLinkActive="link-active"
+			 [routerLinkActiveOptions]="items[0].routerLinkActiveOptions"
+			 [metricsEvent]="items[0].metricsEvent"
+			 [metricsParent]="items[0].metricsParent"
+			 [metricsItem]="items[0].metricsItem"
+			 routerLink="/{{items.path}}">
+				<img [src]="'../../../assets/icons/Vantage_L_logo.svg'|svgInline|async"
+				 alt="L" />
 			</a>
-
-
 		</div>
 		<div *ngIf="deviceService.isGaming"
-			class="navbar-brand pt-0">
+		 class="navbar-brand pt-0">
 			<img src="../../../assets/images/gaming/gaming-logo-small.png"
-				alt="L" />
+			 alt="L" />
 		</div>
 		<div class="navbar-text clearfix">
 			<div class="app-title">{{configService.appBrand}} <span class="app-name">{{configService.appName}}</span>
@@ -28,95 +25,94 @@
 			<div class="device-type">{{deviceModel}}</div>
 		</div>
 		<button class="navbar-toggler"
-			type="button"
-			data-toggle="collapse"
-			data-target="#navbarSupportedContent"
-			aria-controls="navbarSupportedContent"
-			aria-expanded="false"
-			aria-label="Toggle navigation">
+		 type="button"
+		 (click)="toggleMenu($event)">
+			<span class="navbar-toggler-icon">
+				<fa-icon [icon]="['fas', 'bars']"></fa-icon>
+			</span>
 			<!-- <fa-icon [icon]="['fas', 'bars']">
 			</fa-icon> -->
 		</button>
 
-		<div class="collapse navbar-collapse hidden-xs"
-			id="navbarSupportedContent">
+		<div class="collapse navbar-collapse"
+		 [ngClass]="{'show':showMenu}">
 			<ul class="navbar-nav ml-auto">
 				<ng-container *ngFor="let item of items; let i=index">
 					<li *ngIf="item.subitems.length===0&&item.id!=='user'&&showItem(item)"
-						class="nav-item">
+					 class="nav-item">
 						<a class="nav-link {{item.id}}"
-							vtrMetrics
-							[metricsEvent]="item.metricsEvent"
-							[metricsParent]="item.metricsParent"
-							[metricsItem]="item.metricsItem"
-							routerLink="/{{item.path}}"
-							routerLinkActive="active">
+						 vtrMetrics
+						 [metricsEvent]="item.metricsEvent"
+						 [metricsParent]="item.metricsParent"
+						 [metricsItem]="item.metricsItem"
+						 routerLink="/{{item.path}}"
+						 routerLinkActive="active">
 							<fa-icon *ngIf="item.icon[0]!=='icomoon'"
-								[icon]="item.icon"
-								class="fa-icon"></fa-icon>
+							 [icon]="item.icon"
+							 class="fa-icon"></fa-icon>
 							<span *ngIf="item.icon[0]==='icomoon'"
-								[ngClass]="['navbar-icon',item.icon[0],item.icon[1]]"></span>
+							 [ngClass]="['navbar-icon',item.icon[0],item.icon[1]]"></span>
 							{{item.label | translate}}
 						</a>
 					</li>
 					<li *ngIf="item.subitems.length>0&&item.id!=='user'&&showItem(item)"
-						class="nav-item dropdown"
-						[ngClass]="{'active': isParentActive(item)}">
+					 class="nav-item dropdown"
+					 [ngClass]="{'active': isParentActive(item)}">
 						<a class="nav-link dropdown-toggle {{item.id}}"
-							vtrMetrics
-							[metricsEvent]="item.metricsEvent"
-							[metricsParent]="item.metricsParent"
-							[metricsItem]="item.metricsItem"
-							routerLink="/{{item.path}}"
-							routerLinkActive="active"
-							id="navbarDropdown"
-							role="button"
-							data-toggle="dropdown"
-							aria-haspopup="true"
-							aria-expanded="false">
+						 vtrMetrics
+						 [metricsEvent]="item.metricsEvent"
+						 [metricsParent]="item.metricsParent"
+						 [metricsItem]="item.metricsItem"
+						 routerLink="/{{item.path}}"
+						 routerLinkActive="active"
+						 id="navbarDropdown"
+						 role="button"
+						 data-toggle="dropdown"
+						 aria-haspopup="true"
+						 aria-expanded="false">
 							<fa-icon [icon]="item.icon"
-								class="fa-icon"></fa-icon>
+							 class="fa-icon"></fa-icon>
 							{{item.label | translate}}
 						</a>
 						<div class="dropdown-menu"
-							aria-labelledby="navbarDropdown">
+						 aria-labelledby="navbarDropdown">
 							<fa-icon [icon]="['fas', 'square']"
-								class="menu-pointer"></fa-icon>
-								<span  *ngFor="let subitem of item.subitems; let ii=index">
-									<a *ngIf="subitem.externallink"
-									vtrMetrics
-									routerLinkActive="link-active"
-									[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
-									[metricsEvent]="subitem.metricsEvent"
-									[metricsParent]="subitem.metricsParent"
-									[metricsItem]="subitem.metricsItem"
-									class="dropdown-item link"
-									target="_blank"
-									href = "{{subitem.path}}">{{subitem.label | translate}}</a>
-									<a *ngIf = "!subitem.externallink && subitem.path==='support'"
-									vtrMetrics
-									routerLinkActive="link-active"
-									[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
-									[metricsEvent]="subitem.metricsEvent"
-									[metricsParent]="subitem.metricsParent"
-									[metricsItem]="subitem.metricsItem"
-									class="dropdown-item link"
-									routerLink="{{subitem.path}}">{{subitem.label | translate}}</a>
-									<a *ngIf = "!subitem.externallink  && subitem.path!=='support'"
-									vtrMetrics
-									routerLinkActive="link-active"
-									[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
-									[metricsEvent]="subitem.metricsEvent"
-									[metricsParent]="subitem.metricsParent"
-									[metricsItem]="subitem.metricsItem"
-									class="dropdown-item link"
-									routerLink="/{{item.path}}/{{subitem.path}}">{{subitem.label | translate}}</a>
-								</span>
+							 class="menu-pointer"></fa-icon>
+							<span *ngFor="let subitem of item.subitems; let ii=index">
+								<a *ngIf="subitem.externallink"
+								 vtrMetrics
+								 routerLinkActive="link-active"
+								 [routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
+								 [metricsEvent]="subitem.metricsEvent"
+								 [metricsParent]="subitem.metricsParent"
+								 [metricsItem]="subitem.metricsItem"
+								 class="dropdown-item link"
+								 target="_blank"
+								 href="{{subitem.path}}">{{subitem.label | translate}}</a>
+								<a *ngIf="!subitem.externallink && subitem.path==='support'"
+								 vtrMetrics
+								 routerLinkActive="link-active"
+								 [routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
+								 [metricsEvent]="subitem.metricsEvent"
+								 [metricsParent]="subitem.metricsParent"
+								 [metricsItem]="subitem.metricsItem"
+								 class="dropdown-item link"
+								 routerLink="{{subitem.path}}">{{subitem.label | translate}}</a>
+								<a *ngIf="!subitem.externallink  && subitem.path!=='support'"
+								 vtrMetrics
+								 routerLinkActive="link-active"
+								 [routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
+								 [metricsEvent]="subitem.metricsEvent"
+								 [metricsParent]="subitem.metricsParent"
+								 [metricsItem]="subitem.metricsItem"
+								 class="dropdown-item link"
+								 routerLink="/{{item.path}}/{{subitem.path}}">{{subitem.label | translate}}</a>
+							</span>
 
 						</div>
 					</li>
 					<li *ngIf="item.id==='user'"
-						class="nav-item dropdown">
+					 class="nav-item dropdown">
 						<!-- <a class="nav-link dropdown-toggle {{item.id}}"
 							routerLink="/{{item.path}}"
 							routerLinkActive="active"
@@ -131,45 +127,45 @@
 						</a> -->
 
 						<a class="nav-link {{item.id}}"
-							id="navbarDropdown"
-							[ngClass]="{'dropdown-toggle': true}"
-							role="button"
-							data-toggle="dropdown"
-							aria-haspopup="true"
-							aria-expanded="false">
+						 id="navbarDropdown"
+						 [ngClass]="{'dropdown-toggle': true}"
+						 role="button"
+						 data-toggle="dropdown"
+						 aria-haspopup="true"
+						 aria-expanded="false">
 							<div class="user-initials">
 								{{deviceService.isArm || userService.starter ? 'L' : userService.initials }}
 							</div>
 						</a>
 						<div class="dropdown-menu {{item.id}}"
-							id="navbarDropdownMenu"
-							*ngIf="!deviceService.isArm"
-							aria-labelledby="navbarDropdown">
+						 id="navbarDropdownMenu"
+						 *ngIf="!deviceService.isArm"
+						 aria-labelledby="navbarDropdown">
 							<div class="dropdown-item">{{'lenovoId.helloUser' | translate:{firstName:firstName} }}</div>
 							<a *ngIf="!userService.auth && !userService.starter"
-								vtrMetrics
-								[metricsEvent]="item.metricsEvent"
-								[metricsParent]="item.metricsParent"
-								metricsItem="LenovoIdSignInButton"
-								class="dropdown-item link"
-								href="javascript:void(0)"
-								(click)="OpenLenovoId('NavigationLenovoAccount.Submenu')">{{'lenovoId.login' | translate}}</a>
+							 vtrMetrics
+							 [metricsEvent]="item.metricsEvent"
+							 [metricsParent]="item.metricsParent"
+							 metricsItem="LenovoIdSignInButton"
+							 class="dropdown-item link"
+							 href="javascript:void(0)"
+							 (click)="OpenLenovoId('NavigationLenovoAccount.Submenu')">{{'lenovoId.login' | translate}}</a>
 							<a *ngIf="!userService.auth && userService.starter"
-								vtrMetrics
-								[metricsEvent]="item.metricsEvent"
-								[metricsParent]="item.metricsParent"
-								metricsItem="LenovoIdStarterIdButton"
-								class="dropdown-item link"
-								href="javascript:void(0)"
-								(click)="OpenLenovoId('NavigationLenovoAccount.Submenu')">{{'lenovoId.unlockExclusives' | translate}}</a>
+							 vtrMetrics
+							 [metricsEvent]="item.metricsEvent"
+							 [metricsParent]="item.metricsParent"
+							 metricsItem="LenovoIdStarterIdButton"
+							 class="dropdown-item link"
+							 href="javascript:void(0)"
+							 (click)="OpenLenovoId('NavigationLenovoAccount.Submenu')">{{'lenovoId.unlockExclusives' | translate}}</a>
 							<a *ngIf="userService.auth"
-								vtrMetrics
-								[metricsEvent]="item.metricsEvent"
-								[metricsParent]="item.metricsParent"
-								metricsItem="LenovoIdSignOutButton"
-								class="dropdown-item link"
-								href="javascript:void(0)"
-								(click)="onLogout()">{{'lenovoId.logout' | translate}}</a>
+							 vtrMetrics
+							 [metricsEvent]="item.metricsEvent"
+							 [metricsParent]="item.metricsParent"
+							 metricsItem="LenovoIdSignOutButton"
+							 class="dropdown-item link"
+							 href="javascript:void(0)"
+							 (click)="onLogout()">{{'lenovoId.logout' | translate}}</a>
 						</div>
 					</li>
 				</ng-container>

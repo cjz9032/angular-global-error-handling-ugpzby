@@ -4,13 +4,14 @@
 	[ngClass]="{'item-no-img': !item.FeatureImage, 'item-no-title': !item.Title}">
 	<div class="container-fluid">
 		<div class="row">
-			<a *ngIf="item.FeatureImage"
+			<a href="javascript:;"
+				*ngIf="item.FeatureImage"
 				class="col col-12 image"
 				[style.background-image]="'url('+item.FeatureImage+')'"
 				vtrMetrics
-				metricsEvent="DocClick"
+				metricsEvent="ArticleClick"
 				metricsParent="Page.Support"
-				metricsItemID="{{item.ID}}"
+				metricsItemID="{{item.Id}}"
 				metricsItemCategory=""
 				metricsItemPosition="{{index + 1}}"
 				metricsViewOrder="{{metricsDatas.viewOrder}}"
@@ -29,11 +30,12 @@
 			</a>
 			<div *ngIf="item.Title"
 				class="col col-12 content">
-				<a class="title"
+				<a href="javascript:;"
+					class="title"
 					vtrMetrics
-					metricsEvent="DocClick"
+					metricsEvent="ArticleClick"
 					metricsParent="Page.Support"
-					metricsItemID="{{item.ID}}"
+					metricsItemID="{{item.Id}}"
 					metricsItemCategory=""
 					metricsItemPosition="{{index + 1}}"
 					metricsViewOrder="{{metricsDatas.viewOrder}}"
@@ -44,10 +46,11 @@
 				</div>
 				<div *ngIf="item.ActionLink && item.FeatureImage"
 					class="read-more">
-					<a vtrMetrics
-						metricsEvent="DocClick"
+					<a href="javascript:;"
+						vtrMetrics
+						metricsEvent="ArticleClick"
 						metricsParent="Page.Support"
-						metricsItemID="{{item.ID}}"
+						metricsItemID="{{item.Id}}"
 						metricsItemCategory=""
 						metricsItemPosition="{{index + 1}}"
 						metricsViewOrder="{{metricsDatas.viewOrder}}"

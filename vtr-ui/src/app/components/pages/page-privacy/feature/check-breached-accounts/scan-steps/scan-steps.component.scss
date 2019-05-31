@@ -1,6 +1,11 @@
+@import "../../../styles/variables";
+
 .scan-steps {
   display: flex;
   justify-content: center;
+  @media (max-width: $responsive_s) {
+    flex-direction: column;
+  }
 
   &--inner-indent {
     padding: 0 2rem;
@@ -31,6 +36,16 @@
         width: calc(100% - 9.1rem); // 51px (width of circle) + 20px (from design) + 20px (from design)
         top: 2.5rem;
         left: calc(50% + 5.1rem);
+      }
+    }
+    @media (max-width: $responsive_s) {
+      width: 100%;
+      margin-top: 2rem;
+      &:before {
+        display: none;
+      }
+      &:after {
+        display: none;
       }
     }
   }

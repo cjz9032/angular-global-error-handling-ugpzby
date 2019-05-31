@@ -23,13 +23,13 @@ export class SystemUpdateService {
 		shellService: VantageShellService
 		, private commonService: CommonService) {
 		this.systemUpdateBridge = shellService.getSystemUpdate();
-		this.metricClient = shellService.getMetrics();
+		this.metricHelper = new MetricHelper(shellService.getMetrics());
 		if (this.systemUpdateBridge) {
 			this.isShellAvailable = true;
 		}
 	}
 	private systemUpdateBridge: any;
-	private metricClient: any;
+	private metricHelper: any;
 	public autoUpdateStatus: any;
 	public isShellAvailable = false;
 	public isCheckForUpdateComplete = true;
@@ -128,7 +128,7 @@ export class SystemUpdateService {
 		return errorMessage;
 	}
 
-	private mapPackageListToIdString(updateList: Array<AvailableUpdateDetail>) {
+	public mapPackageListToIdString(updateList: Array<AvailableUpdateDetail>) {
 		return updateList.map(item => item.packageID).join(',');
 	}
 
@@ -153,8 +153,7 @@ export class SystemUpdateService {
 					this.isUpdatesAvailable = true;
 					this.updateInfo = { status: status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
 					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
-					MetricHelper.sendSystemUpdateMetric(
-						this.metricClient,
+					this.metricHelper.sendSystemUpdateMetric(
 						this.updateInfo.updateList.length,
 						this.mapPackageListToIdString(this.updateInfo.updateList),
 						'success',
@@ -164,16 +163,14 @@ export class SystemUpdateService {
 					const payload = { ...response, status };
 					this.isInstallationSuccess = this.getInstallationSuccess(payload);
 					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
-					MetricHelper.sendSystemUpdateMetric(
-						this.metricClient,
+					this.metricHelper.sendSystemUpdateMetric(
 						0,
 						'',
 						this.mapStatusToMessage(status),
 						MetricHelper.timeSpan(new Date(), timeStartSearch));
 				}
 			}).catch((error) => {
-				MetricHelper.sendSystemUpdateMetric(
-					this.metricClient,
+				this.metricHelper.sendSystemUpdateMetric(
 					0,
 					'',
 					error.message,
@@ -336,7 +333,7 @@ export class SystemUpdateService {
 	private updateIgnoredStatus(ignoredUpdates: any) {
 		this.updateInfo.updateList.forEach((update) => {
 			const result = ignoredUpdates.find(x => x.packageName === update.packageName);
-			if (result) {
+			if (result && update.packageSeverity !== UpdateInstallSeverity.Critical) {
 				update.isIgnored = true;
 			}
 			else {
