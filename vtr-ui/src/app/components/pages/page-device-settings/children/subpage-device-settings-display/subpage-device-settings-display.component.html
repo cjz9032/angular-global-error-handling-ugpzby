@@ -7,6 +7,7 @@
 				[menuTitle]="'device.deviceSettings.displayCamera.jumpTo.title' | translate"></vtr-ui-header-subpage>
 		</div>
 	</div>
+
 	<div class="row py-5 smartsettings-card"
 		id="display">
 		<div class="col-10 mx-auto ">
@@ -17,31 +18,32 @@
 				[theme]="'white'"
 				(toggle)="onCardCollapse($event)">
 				<ul class="list-group list-group-flush">
-						<li class="pt-3"
-						*ngIf="eyeCareModeStatus.available">
-						<vtr-ui-row-switch
-							[title]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
-							componentName="Display color temperature"
-							[name]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
-							[caption]=""
-							[isSwitchVisible]="false"
-							[leftIcon]="['fal', 'eye']"
-							[readMoreText]="''"
-							[showChildContent]="true"
-							[theme]="'white'"
-							[tooltipText]="'device.deviceSettings.displayCamera.display.dispColorTemp.tooltip' | translate">
-							<div class="row">
-								<div class="col-12">
-									<vtr-display-color-temp [displayColorTempSettings]="eyeCareDataSource"
-										[enableSlider]="false"
-										[manualRefresh]="manualRefresh"
-										(resetTemparature)="onResetTemparature($event)"
-										>
-									</vtr-display-color-temp>
-								</div>
+					<li class="pt-3"
+					*ngIf="displayColorTempDataSource.available">
+					<vtr-ui-row-switch
+						[title]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
+						componentName="Display color temperature"
+						[name]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
+						[caption]=""
+						[isSwitchVisible]="false"
+						[leftIcon]="['fal', 'eye']"
+						[readMoreText]="''"
+						[showChildContent]="true"
+						[theme]="'white'"
+						[tooltipText]="'device.deviceSettings.displayCamera.display.dispColorTemp.tooltip' | translate">
+						<div class="row">
+							<div class="col-12">
+								<vtr-display-color-temp [displayColorTempSettings]="displayColorTempDataSource"
+									[enableSlider]="false"
+									[manualRefresh]="manualRefresh"
+									(displayColorTempChange)="onSetChangeDisplayColorTemp($event)"
+									(resetTemparature)="resetDaytimeColorTemp($event)"
+									>
+								</vtr-display-color-temp>
 							</div>
-						</vtr-ui-row-switch>
-					</li>
+						</div>
+					</vtr-ui-row-switch>
+				</li>	
 
 					<li class="pt-3"
 						*ngIf="eyeCareModeStatus.available">
