@@ -198,6 +198,9 @@ import { AutoupdateSettingsComponent } from './components/pages/page-device-upda
 import { UiLightingProfileToggleComponent } from './components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
 import { UiBrightnessSliderComponent } from './components/ui/ui-brightness-slider/ui-brightness-slider.component';
 import { SvgInlinePipe } from './pipe/svg-inline/svg-inline.pipe';
+import { UiLightingEffectComponent } from './components/ui/ui-lighting-effect/ui-lighting-effect.component';
+import { UiLightingSingleColorComponent } from './components/ui/ui-lighting-single-color/ui-lighting-single-color.component';
+import { UiLightingColorWheelComponent } from './components/ui/ui-lighting-color-wheel/ui-lighting-color-wheel.component';
 
 
 
@@ -359,7 +362,10 @@ library.add(fal);
 		LoginLenovoIdComponent,
 		UiLightingProfileToggleComponent,
 		UiBrightnessSliderComponent,
-		SvgInlinePipe
+		SvgInlinePipe,
+		UiLightingEffectComponent,
+		UiLightingSingleColorComponent,
+		UiLightingColorWheelComponent
 	],
 	imports: [
 		BrowserModule,
