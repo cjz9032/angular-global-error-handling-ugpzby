@@ -563,12 +563,11 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	private sendInstallUpdateMetrics(updateList: Array<AvailableUpdateDetail>, ignoredUpdates: Array<AvailableUpdateDetail>) {
-		ignoredUpdates = ignoredUpdates ? ignoredUpdates : this.filterIgnoredUpdate(updateList, true);
 		const successUpdates = this.filterUpdateByResult(updateList, [UpdateActionResult.Success]);
 		let failedUpdates = this.filterUpdateByResult(updateList,
 			[UpdateActionResult.DownloadFailed, UpdateActionResult.InstallFailed]);
 
-		if (ignoredUpdates.length > 0) {
+		if (ignoredUpdates && ignoredUpdates.length > 0) {
 			failedUpdates = failedUpdates.filter(item => {
 				for (const idx in ignoredUpdates) {
 					if (ignoredUpdates[idx].packageID === item.packageID) {
