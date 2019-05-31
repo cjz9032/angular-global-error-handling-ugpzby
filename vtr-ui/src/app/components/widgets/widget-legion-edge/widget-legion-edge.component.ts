@@ -18,7 +18,7 @@ import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-cap
 	styleUrls: ['./widget-legion-edge.component.scss']
 })
 export class WidgetLegionEdgeComponent implements OnInit {
-	public ramOcStatus=false;
+	public ramOcStatus = false;
 	public RamOCSatusObj = new RamOCSatus();
 	public HybridModeStatusObj = new HybridModeSatus();
 	public TouchpadStatusObj = new TouchpadStatus();
@@ -129,32 +129,37 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		}
 	];
 
-	public edgeopt = [
-		{
-			header: 'gaming.dashboard.device.legionEdge.status.alwayson',
-			name: 'gaming.dashboard.device.legionEdge.status.alwayson',
-			description: 'gaming.dashboard.device.legionEdge.statusText.onText',
-			selectedOption: false,
-			defaultOption: false,
-			value: 1,
-		},
-		{
-			header: 'gaming.dashboard.device.legionEdge.status.whenGaming',
-			name: 'gaming.dashboard.device.legionEdge.status.whenGaming',
-			description: 'gaming.dashboard.device.legionEdge.statusText.gamingText',
-			selectedOption: false,
-			defaultOption: true,
-			value: 2,
-		},
-		{
-			header: 'gaming.dashboard.device.legionEdge.status.off',
-			name: 'gaming.dashboard.device.legionEdge.status.off',
-			description: 'gaming.dashboard.device.legionEdge.statusText.offText',
-			selectedOption: false,
-			defaultOption: false,
-			value: 3,
-		}
-	];
+	public drop = {
+		curSelected: 1,
+		edgeopt:
+			[
+
+				{
+					header: 'gaming.dashboard.device.legionEdge.status.alwayson',
+					name: 'gaming.dashboard.device.legionEdge.status.alwayson',
+					description: 'gaming.dashboard.device.legionEdge.statusText.onText',
+					// selectedOption: false,
+					// defaultOption: false,
+					value: 1,
+				},
+				{
+					header: 'gaming.dashboard.device.legionEdge.status.whenGaming',
+					name: 'gaming.dashboard.device.legionEdge.status.whenGaming',
+					description: 'gaming.dashboard.device.legionEdge.statusText.gamingText',
+					// selectedOption: false,
+					// defaultOption: true,
+					value: 2,
+				},
+				{
+					header: 'gaming.dashboard.device.legionEdge.status.off',
+					name: 'gaming.dashboard.device.legionEdge.status.off',
+					description: 'gaming.dashboard.device.legionEdge.statusText.offText',
+					// selectedOption: false,
+					// defaultOption: false,
+					value: 3,
+				}
+			]
+	}
 	public cpuOCStatus: CPUOCStatus;
 	private gamingCapabilities: any = {
 		cpuInfoFeature: true,
@@ -194,7 +199,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 	public getGaminagAllCapabilities() {
 		this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
-			console.log('gamingCapabilities js bridge ->', gamingCapabilities);
+			console.log('gamingCapabilities js bridge ------------------------>', JSON.stringify(gamingCapabilities));
 			this.legionUpdate[0].isVisible = this.gamingCapabilities.cpuOCFeature;
 			this.legionUpdate[1].isVisible = this.gamingCapabilities.memOCFeature;
 			this.legionUpdate[4].isVisible = this.gamingCapabilities.hybridModeFeature;
@@ -214,17 +219,20 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			// 	});
 			// }
 			this.gamingSystemUpdateService.getCpuOCStatus().then((cpuOCStatus) => {
-				console.log('get cpu oc status js bridge ->', cpuOCStatus);
+				console.log('get cpu oc status js bridge ---------------->', cpuOCStatus);
 				if (cpuOCStatus !== undefined) {
 					const CpuOCStatusObj = new CPUOCStatus();
 					CpuOCStatusObj.cpuOCStatus = cpuOCStatus;
-					this.edgeopt.forEach((option) => {
-						if (option.value === CpuOCStatusObj.cpuOCStatus) {
-							option.selectedOption = true;
-						}
-					});
-				}
+					this.drop.curSelected=CpuOCStatusObj.cpuOCStatus;
 
+					// this.ngZone.run(() => {
+					// 	this.edgeopt.forEach((option) => {
+					// 		if (option.value === CpuOCStatusObj.cpuOCStatus) {
+					// 			option.selectedOption = true;
+					// 		}
+					// 	});
+					// });
+				}
 			});
 			//	this.CpuOCStatus = this.gamingSystemUpdateService.GetCPUOverClockStatus();
 			// this.ngZone.run(() => {
@@ -289,7 +297,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		// Binding to UI
 		if (this.legionUpdate[1].name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			this.gamingSystemUpdateService.getRamOCStatus().then((ramOcStatus) => {
-				console.log('get ram  oc status js bridge ->', ramOcStatus);
+				console.log('get ram  oc status js bridge ------------------>', ramOcStatus);
 				this.legionUpdate[1].isChecked = ramOcStatus;
 			});
 			//this.legionUpdate[1].isChecked = this.RamOCSatusObj.ramOcStatus;
@@ -313,13 +321,13 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			this.RamOCSatusObj.ramOcStatus = $event.switchValue;
 			//this.gamingSystemUpdateService.setRamOCStatus(this.RamOCSatusObj.ramOcStatus);
 			this.gamingSystemUpdateService
-			.setRamOCStatus(this.RamOCSatusObj.ramOcStatus)
-			.then((value: boolean) => {
-				console.log('setRamOCStatus.then', value);
-			})
-			.catch(error => {
-				console.error('setRamOCStatus', error);
-			});
+				.setRamOCStatus(this.RamOCSatusObj.ramOcStatus)
+				.then((value: boolean) => {
+					console.log('setRamOCStatus.then--------------------', value);
+				})
+				.catch(error => {
+					console.error('setRamOCStatus', error);
+				});
 			this.legionUpdate[1].isPopup = $event.switchValue;
 		}
 		else {
