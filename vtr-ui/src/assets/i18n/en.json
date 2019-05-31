@@ -627,7 +627,8 @@
 				"WindowsLink": {
 					"goToWindowsHello": "Go to Windows Hello Settings",
 					"screenTimeoutSettings": "Go to Screen timeout settings"
-				}
+				},
+				"resetToDefault": "RESET TO DEFAULT SETTINGS"
 			},
 			"intelligentScreen": {
 				"title": "Intelligent Screen",
