@@ -32,6 +32,5 @@ export class BreachedAccountsComponent {
 	startVerify() {
 		this.commonPopupService.open(this.confirmationPopupName);
 		this.emailScannerService.sendConfirmationCode().subscribe();
-
 	}
 }
