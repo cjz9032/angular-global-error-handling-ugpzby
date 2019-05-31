@@ -277,8 +277,7 @@
 			</vtr-container-collapsible>
 		</div>
 	</div>
-	<vtr-intelligent-media 
-		id="media"
-		(isMediaSettingHidden)=hideMediaSetting($value) >
+	<vtr-intelligent-media id="media"
+		(isMediaSettingHidden)="hideMediaSetting($event)">
 	</vtr-intelligent-media>
 </div>

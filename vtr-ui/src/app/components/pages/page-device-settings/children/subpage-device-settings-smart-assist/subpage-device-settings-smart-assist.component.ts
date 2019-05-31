@@ -170,7 +170,7 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 		this.keepMyDisplay = !this.keepMyDisplay;
 	}
 
-	hideMediaSetting() {
+	hideMediaSetting($event) {
 		this.headerMenuItems.splice(2, 1);
 	}
 }
