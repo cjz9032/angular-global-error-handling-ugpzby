@@ -1537,8 +1537,8 @@
 	"welcometutorial": {
 		"description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
 		"bullets1": "View System Status with Vantage dashboard",
-		"bullets2": "Security Advisor makes managing your security easy ",
-		"bullets3": "Automatic updates keep your device in tip top shape",
+		"bullets2": "Security Advisor makes managing your security easy (Available on selected systems)",
+		"bullets3": "Automatic updates keep your device in tip top shape (Available on selected systems)",
 		"subtitle1": "How will you be using your device?",
 		"subtitle2": "Tell us about your interests",
 		"personal": "Personal Use",
