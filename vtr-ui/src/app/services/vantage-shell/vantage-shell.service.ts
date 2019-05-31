@@ -400,30 +400,36 @@ export class VantageShellService {
 		return true;
 	}
 
-	public getRAMOCStatus(): any {
-		if (this.phoenix) {
-			return this.phoenix.gaming.gamingOverclock.getRamOCStatus();
-		}
-		return undefined;
-	}
+	// public getRAMOCStatus(): any {
+	// 	if (this.phoenix) {
+	// 		return this.phoenix.gaming.gamingOverclock.getRamOCStatus();
+	// 	}
+	// 	return undefined;
+	// }
 
-	public setRAMOCStatus(ramOCStausObj: RamOCSatus): any {
-		if (this.phoenix) {
-			return this.phoenix.gaming.gamingOverclock.setRamOCStatus(ramOCStausObj.ramOcStatus);
-		}
-		return false;
-	}
+	// public setRAMOCStatus(ramOCStausObj: RamOCSatus): any {
+	// 	if (this.phoenix) {
+	// 		return this.phoenix.gaming.gamingOverclock.setRamOCStatus(ramOCStausObj.ramOcStatus);
+	// 	}
+	// 	return false;
+	// }
 
 	public getGamingAllCapabilities(): any {
 		if (this.phoenix && this.phoenix.gaming) {
-			return this.phoenix.gaming.gamingAllCapabilities();
+			return this.phoenix.gaming.gamingAllCapabilities;
 		}
 		return undefined;
 	}
 
 	public getGamingLighting(): any {
 		if (this.phoenix && this.phoenix.gaming) {
-			return this.phoenix.gaming.gamingLighting();
+			return this.phoenix.gaming.gamingLighting;
+		}
+		return undefined;
+	}
+	public getGamingOverClock(): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingOverclock;
 		}
 		return undefined;
 	}
@@ -440,46 +446,7 @@ export class VantageShellService {
 		}
 	}
 
-	public getHybridModeStatus(): any {
-		if (this.phoenix) {
-			this.phoenix.gaming.gamingHybridMode.getHybridModeStatus().then((hybridModeStatus) => {
-				console.log('get hydbrid mode status js bridge ->', hybridModeStatus);
-				return hybridModeStatus;
-			});
-		}
-		return undefined;
-	}
 
-	public setHybridModeStatus(hybridModeStausObj: HybridModeSatus): any {
-		if (this.phoenix) {
-			this.phoenix.gaming.gamingHybridMode.setHybridModeStatus(hybridModeStausObj.hybridModeStatus).then((response) => {
-				console.log('set hydbrid mode status js bridge ->', response);
-				return response;
-			});
-		}
-		return false;
-	}
-
-
-	public getKeyLockStatus(): any {
-		if (this.phoenix) {
-			this.phoenix.gaming.gamingKeyLock.getKeyLockStatus().then((touchpadStatus) => {
-				console.log('get Touchpad status js bridge ->', touchpadStatus);
-				return touchpadStatus;
-			});
-		}
-		return undefined;
-	}
-
-	public setKeyLockStatus(touchpadStausObj: TouchpadStatus): any {
-		if (this.phoenix) {
-			this.phoenix.gaming.gamingKeyLock.setKeyLockStatus(touchpadStausObj.touchpadStatus).then((response) => {
-				console.log('set Touchpad status js bridge ->', response);
-				return response;
-			});
-		}
-		return false;
-	}
 
 	public getIntelligentMedia(): any {
 		if (this.phoenix) {

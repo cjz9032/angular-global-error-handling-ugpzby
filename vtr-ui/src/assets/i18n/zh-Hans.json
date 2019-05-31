@@ -596,6 +596,20 @@
                             "title": "注",
                             "description": "Lenovo Vantage需要访问您的位置信息，以计算您所在地区的日落和日出时间。"
                         }
+                    },
+                    "dispColorTemp": {
+						"title": "Display color temperature",
+						"options": {
+							"warm": "Warm (Better for eyes)",
+							"cold": "Cold"
+						},
+						"reset": "Reset temperature",
+						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
+						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+						"note": {
+							"title": "Note",
+							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+						}
 					},
 					"privacyGuard": {
 						"title": "Privacy guard",
@@ -1500,7 +1514,7 @@
     },
     "welcometutorial": {
         "description": "Vantage使您可以轻松更新驱动程序，运行诊断程序，请求支持以及了解您的设备。快速定制您的体验，并根据您的需求找到有用的信息",
-        "bullets1": "使用lorem ipsum dolor set优化您的系统",
+        "bullets1": "View System Status with Vantage dashboard",
         "bullets2": "Security Advisor使您可以轻松管理安全性",
         "bullets3": "自动更新可使您的设备保持最佳状态",
         "subtitle1": "你将如何使用你的设备？",

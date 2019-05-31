@@ -598,6 +598,20 @@
 							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
 						}
 					},
+					"dispColorTemp": {
+						"title": "Display color temperature",
+						"options": {
+							"warm": "Warm (Better for eyes)",
+							"cold": "Cold"
+						},
+						"reset": "Reset temperature",
+						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
+						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+						"note": {
+							"title": "Note",
+							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+						}
+					},
 					"privacyGuard": {
 						"title": "Privacy guard",
 						"description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
@@ -1101,8 +1115,8 @@
 			"whatIsPmNotInstalled": "The safest, easiest way to save strong, complex passwords and log in instantly on every site.",
 			"whatIsPmInstalled": "A safer digital life is waiting: Add passwords, enable Dark Web Monitoring and autofill personal and payment info.",
 			"startProtect": "Start protecting your online accounts the simple way.",
-			"discount": "Lenovo users enjoy an exclusive 50% off of Dashlane Premium.",
-			"offer": "Offer available for new Dashlane users only!",
+			"discount": "Lenovo users enjoy an exclusive 50% off Dashlane Premium.",
+			"offer": "Offer available to new Dashlane users only!",
 			"getDashLane": "Get Dashlane",
 			"learnMoreAbout": "<tag>Learn more</tag> about making the most of Dashlane",
 			"openDashLane": "Open Dashlane",
@@ -1522,7 +1536,7 @@
 	},
 	"welcometutorial": {
 		"description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-		"bullets1": "Optimize your system with lorem ipsum dolor set",
+		"bullets1": "View System Status with Vantage dashboard",
 		"bullets2": "Security Advisor makes managing your security easy ",
 		"bullets3": "Automatic updates keep your device in tip top shape",
 		"subtitle1": "How will you be using your device?",
