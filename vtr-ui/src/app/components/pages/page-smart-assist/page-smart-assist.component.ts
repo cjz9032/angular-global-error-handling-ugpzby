@@ -44,15 +44,15 @@ export class PageSmartAssistComponent implements OnInit {
 			title: 'device.smartAssist.jumpTo.security',
 			path: 'security'
 		},
+		{
+			title: 'device.smartAssist.jumpTo.screen',
+			path: 'screen'
+		},
+		{
+			title: 'device.smartAssist.jumpTo.media',
+			path: 'media'
+		},
 		// enable this when UI is completed for that section
-		// {
-		// 	title: 'device.smartAssist.jumpTo.screen',
-		// 	path: 'screen'
-		// },
-		// {
-		// 	title: 'device.smartAssist.jumpTo.media',
-		// 	path: 'media'
-		// },
 		// {
 		// 	title: 'device.smartAssist.jumpTo.voice',
 		// 	path: 'voice'
@@ -181,6 +181,11 @@ export class PageSmartAssistComponent implements OnInit {
 	public displayDim(event) {
 		this.keepMyDisplay = !this.keepMyDisplay;
 	}
+
+	hideMediaSetting($event) {
+		this.headerMenuItems.splice(2, 1);
+	}
+
 	fetchCMSArticles() {
 		const queryOptions = {
 			'Page': 'device-settings',

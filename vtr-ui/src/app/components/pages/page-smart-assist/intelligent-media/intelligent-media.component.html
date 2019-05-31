@@ -1,7 +1,7 @@
 <div class="row py-5 smart-assist-card" id="intelligentMedia" *ngIf="playbackStatus.available">
   <div class="col-10 mx-auto" id="media">
       <vtr-container-collapsible
-        [cardTitle]="'device.deviceSettings.smartAssist.intelligentMedia.heading' | translate"
+        [cardTitle]="'device.smartAssist.intelligentMedia.heading' | translate"
         componentName="intelligentMediaCollapsible"
         [isCollapsed]="false"
         [allowCollapse]="true"
@@ -10,16 +10,16 @@
       <ul class="list-group list-group-flush">
         <li class="pt-3">
           <vtr-ui-row-switch
-            [title]="'device.deviceSettings.smartAssist.intelligentMedia.title' | translate"
+            [title]="'device.smartAssist.intelligentMedia.title' | translate"
             componentName="intelligentMediaSwitch"
             [isSwitchVisible]="true" 
             [leftIcon]="['fal', 'gem']"
             [rightIcon]="['far', 'question-circle']"
             [showChildContent]="true" 
             [isSwitchChecked]="playbackStatus.status"
-            [tooltipText]="'device.deviceSettings.smartAssist.intelligentMedia.tooltip' | translate"
+            [tooltipText]="'device.smartAssist.intelligentMedia.tooltip' | translate"
             (toggleOnOff)="setVideoPauseResumeStatus($event)"
-            [caption]="'device.deviceSettings.smartAssist.intelligentMedia.desc' | translate"
+            [caption]="'device.smartAssist.intelligentMedia.desc' | translate"
             [theme]="'white'"
             [showLoaderState]="showPlaybackLoader">
           </vtr-ui-row-switch>

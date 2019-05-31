@@ -198,8 +198,8 @@ import { AutoupdateSettingsComponent } from './components/pages/page-device-upda
 import { UiLightingProfileToggleComponent } from './components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
 import { UiBrightnessSliderComponent } from './components/ui/ui-brightness-slider/ui-brightness-slider.component';
 import { SvgInlinePipe } from './pipe/svg-inline/svg-inline.pipe';
-import { IntelligentMediaComponent } from './components/pages/page-device-settings/children/subpage-device-settings-smart-assist/intelligent-media/intelligent-media.component';
 import { DisplayColorTempComponent } from './components/display/display-color-temp/display-color-temp.component';
+import { IntelligentMediaComponent } from './components/pages/page-smart-assist/intelligent-media/intelligent-media.component';
 
 
 
