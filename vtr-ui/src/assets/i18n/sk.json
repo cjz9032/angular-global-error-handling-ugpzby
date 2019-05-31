@@ -1017,7 +1017,7 @@
                 "describe": "Pomocou funkcie Detektor hrozieb určte bezpečnosť okolitých sietí.",
                 "button": "Preveriť hrozbu",
                 "connectionError": "Chyba pripojenia",
-                "tryAgain": "Vaše zariadenie nemôžeme nájsť, pretože sieť nie je k dispozícii. Pripojte sa na Internet a skúste to znova."
+                "tryAgain": "Hrozbu nemôžeme nájsť, pretože sieť nie je k dispozícii. Pripojte sa na Internet a skúste to znova."
             },
             "locationmodal": {
                 "title": "Zapnúť služby na základe polohy",
@@ -1560,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Nastavenia preferencií",
+        "settings": "Nastavenia",
+        "settingsDescription": "Na stránke s nastaveniami preferencií si môžete vybrať zapnutie/vypnutie upozornenia na správy podľa kategórií správy aplikácie Vantage. Je potrebné, aby ste si uvedomili, že aj v prípade, keď sú všetky kategórie správ vypnuté, môžete podľa potreby príležitostne dostávať systémové kritické správy z aplikácie Vantage.",
+        "messagesInLenovoVantage": "Správy v aplikácii Lenovo Vantage",
+        "appFeatures": "Funkcie aplikácie",
+        "appFeaturesDescription": "Správy týkajúce sa System Update, článkov a ďalších zaujímavých funkcií.",
+        "marketing": "Marketing",
+        "marketingDescription": "Propagačné správy vrátane špeciálnych ponúk spoločnosti Lenovo.",
+        "actionTriggered": "Akcia bola spustená",
+        "actionTriggeredDescription": "Správy aktivované nastaveniami používateľa, ako je napríklad automatická inštalácia kritických/odporúčaných aktualizácií.",
+        "OtherSettings": "Ďalšie nastavenia",
+        "usageStatistics": "Štatistika používania",
+        "usageStatisticsDescription": "Odosielať spoločnosti Lenovo anonymnú štatistiku používania.",
+        "Note": "Poznámka: ",
+        "settingsNotes": "použitie všetkých nastavení na tejto stránke si bude vyžadovať reštart."
     }
 }

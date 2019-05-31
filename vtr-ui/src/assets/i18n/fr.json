@@ -1017,7 +1017,7 @@
                 "describe": "Utiliser l'outil de détection des menaces pour déterminer la sécurité des réseaux alentours.",
                 "button": "Vérifier les menaces",
                 "connectionError": "Erreur de connexion",
-                "tryAgain": "Impossible de localiser votre périphérique car le réseau n'est pas disponible. Connectez-vous à Internet et réessayez."
+                "tryAgain": "Impossible de localiser les menaces car le réseau n'est pas disponible. Connectez-vous à Internet et réessayez."
             },
             "locationmodal": {
                 "title": "Activer les services de localisation",
@@ -1560,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Définition des préférences",
+        "settings": "Paramètres",
+        "settingsDescription": "Dans la page des paramètres de préférences, vous pouvez choisir d'activer/désactiver la notification des messages en fonction des catégories de message de Vantage, veuillez noter que même si toutes les catégories de message sont désactivées, il se peut toutefois que vous receviez occasionnellement, lorsque nécessaire, des messages critiques du système de la part de Vantage.",
+        "messagesInLenovoVantage": "Messages dans Lenovo Vantage",
+        "appFeatures": "Fonctionnalités des applications",
+        "appFeaturesDescription": "Messages concernant System Update, des articles et d'autres fonctionnalités utiles.",
+        "marketing": "Marketing",
+        "marketingDescription": "Messages de promotion, y compris les offres spéciales Lenovo.",
+        "actionTriggered": "Action déclenchée",
+        "actionTriggeredDescription": "Messages déclenchés par les paramètres sélectionnés par l'utilisateur, comme les mises à jour critiques ou recommandées, installées automatiquement.",
+        "OtherSettings": "Autres paramètres",
+        "usageStatistics": "Statistiques d'utilisation",
+        "usageStatisticsDescription": "Envoyez des statistiques d'usage à Lenovo.",
+        "Note": "Remarque : ",
+        "settingsNotes": "les utilisateurs doivent effectuer un redémarrage pour que tous les paramètres de cette page soient pris en compte."
     }
 }

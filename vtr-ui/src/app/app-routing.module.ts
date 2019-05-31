@@ -29,6 +29,7 @@ import { LocalStorageKey } from './enums/local-storage-key.enum';
 import { PageAutocloseComponent } from './components/pages/page-autoclose/page-autoclose.component';
 import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
 import { PageSmartAssistComponent } from './components/pages/page-smart-assist/page-smart-assist.component';
+import { PageSettingsComponent } from './components/pages/page-settings/page-settings.component';
 
 const routes: Routes = [
 	{
@@ -239,6 +240,12 @@ const routes: Routes = [
 		canActivate: [GuardService],
 		data: {
 			pageName: 'NetworkBoost'
+		}
+	}, {
+		path: 'settings',
+		component: PageSettingsComponent,
+		data: {
+			pageName: 'Settings'
 		}
 	}
 ];
