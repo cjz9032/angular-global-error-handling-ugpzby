@@ -20,7 +20,7 @@ export class AccessTokenService {
 	setAccessToken(accessToken) {
 		const hashForToken = getHashCode(accessToken).toString();
 		this.storageService.setItem('hashForToken', hashForToken);
-		this.safeStorageService.setPassword( 'figleaf-accessToken', accessToken);
+		this.safeStorageService.setPassword('figleaf-accessToken', accessToken);
 		this.accessTokenIsExist.next(!!accessToken);
 	}
 
