@@ -51,6 +51,7 @@
 							[name]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
 							[caption]=""
 							[isSwitchVisible]="true"
+							[isLastChild]=true
 							[leftIcon]="['fal', 'eye']"
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
@@ -120,6 +121,7 @@
 						<vtr-ui-row-switch [title]="'Display Priority Control'"
 							[caption]="'Configures microphone effect to enhance your audio experience by different scenarios and environment.'"
 							[isSwitchVisible]="false"
+							[isLastChild]=true
 							[leftIcon]="['far', 'gem']"
 							[readMoreText]="''"
 							[showChildContent]="true"
@@ -178,6 +180,7 @@
 							[name]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
 							[type]="'Camera'"
 							[isSwitchVisible]="false"
+							[isLastChild]="!cameraBlur.available || cameraBlur.errorCode !== 0"
 							[leftIcon]="['fal', 'camera']"
 							[showChildContent]="true"
 							[resetText]="'device.deviceSettings.displayCamera.camera.camera.reset' | translate"
@@ -215,6 +218,7 @@
 							componentName="Camera Background Blur"
 							[caption]="'device.deviceSettings.displayCamera.camera.camerablur.caption' | translate"
 							[isSwitchVisible]="true"
+							[isLastChild]=true
 							[leftIcon]="['fal', 'gem']"
 							[rightIcon]="['far', 'question-circle']"
 							[showChildContent]="true"

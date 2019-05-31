@@ -157,6 +157,7 @@ import { CameraBackgroundBlurComponent } from './components/camera-background-bl
 import { PageAutocloseComponent } from './components/pages/page-autoclose/page-autoclose.component';
 import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
 import { PowerSmartSettingsComponent } from './components/widgets/power-smart-settings/power-smart-settings.component';
+import { PageSettingsComponent } from './components/pages/page-settings/page-settings.component';
 import { UiPopoverComponent } from './components/ui/ui-popover/ui-popover.component';
 import { ModalChsWelcomeContainerComponent } from './components/modal/modal-chs-welcome-container/modal-chs-welcome-container.component';
 
@@ -351,6 +352,7 @@ library.add(fal);
 		PageNetworkBoostComponent,
 		PowerSmartSettingsComponent,
 		SubpageDeviceSettingsSmartAssistComponent,
+		PageSettingsComponent,
 		WidgetHomeSecurityDeviceComponent,
 		UiLightingProfileComponent,
 		AutoupdateSettingsComponent,
