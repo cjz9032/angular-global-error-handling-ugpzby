@@ -20,7 +20,8 @@
 									<div class="row">
 										<div class="col col-12">
 											<vtr-widget-offline-info *ngIf="!isOnline"
-												[isButtonVisible]="true"
+												[isButtonVisible]="false"
+												[isSubtitleVisible]="false"
 												[title]="'dashboard.offlineInfo.title' | translate"
 												[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
 												[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
