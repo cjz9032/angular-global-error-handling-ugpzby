@@ -14,12 +14,19 @@
 				Looks like some of your personal info is floating around online, making it easy for others to access
 				your accounts without your knowledge. You should change your passwords right now.
 			</p>
-			<button>Verify</button>
+			<button (click)="startVerify()">Verify</button>
 			<vtr-breached-account
 					[breachedAccounts]="breached_accounts"
-					[openId]="openBreachedId$ | async">
+					[openId]="openBreachedId$ | async"
+					(verifyClick)="startVerify()">
 			</vtr-breached-account>
 		</div>
 
 	</div>
 </section>
+
+<vtr-common-popup [popUpId]="confirmationPopupName">
+	<ng-template>
+		<vtr-confirmation-popup [popupId]="confirmationPopupName"></vtr-confirmation-popup>
+	</ng-template>
+</vtr-common-popup>

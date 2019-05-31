@@ -4,6 +4,8 @@ import { filter, map, takeUntil } from 'rxjs/operators';
 import { BreachedAccount, BreachedAccountsService } from '../../common/services/breached-accounts.service';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
+import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
+import { CommonPopupService } from '../../common/services/popups/common-popup.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -19,10 +21,13 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 		title: 'Breached Accounts',
 		text: 'Some of your personal info has been exposed for anyone to see. It happened after a site you have an account with was hacked.'
 	};
+	confirmationPopupName = 'confirmationPopup';
 
 	constructor(
 		private breachedAccountsService: BreachedAccountsService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
+		private emailScannerService: EmailScannerService,
+		private commonPopupService: CommonPopupService,
 		private route: ActivatedRoute
 	) {
 	}
@@ -43,6 +48,12 @@ export class BreachedAccountsComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
+	}
+
+	startVerify() {
+		this.commonPopupService.open(this.confirmationPopupName);
+		this.emailScannerService.sendConfirmationCode().subscribe();
+
 	}
 
 	private getParamFromUrl(paramName) {

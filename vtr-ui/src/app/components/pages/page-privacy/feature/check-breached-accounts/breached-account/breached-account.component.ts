@@ -19,6 +19,7 @@ export class BreachedAccountComponent implements OnInit, AfterViewInit {
 	@Input() breachedAccounts: BreachedAccount[];
 	@Input() openId = null;
 	@Output() detailClick = new EventEmitter<number>();
+	@Output() verifyClick = new EventEmitter<boolean>();
 
 	isFigleafReadyForCommunication = false;
 
@@ -33,7 +34,6 @@ export class BreachedAccountComponent implements OnInit, AfterViewInit {
 		},
 	};
 
-	readonly breachedAccountMode = BreachedAccountMode;
 	isUserAuthorize$ = this.accessTokenService.accessTokenIsExist$;
 
 	constructor(
@@ -71,7 +71,7 @@ export class BreachedAccountComponent implements OnInit, AfterViewInit {
 		this.vantageCommunicationService.openFigleafByUrl(link);
 	}
 
-	detailClickEmit(i) {
-		this.detailClick.emit(i);
+	verifyClickEmit() {
+		this.verifyClick.emit(true);
 	}
 }

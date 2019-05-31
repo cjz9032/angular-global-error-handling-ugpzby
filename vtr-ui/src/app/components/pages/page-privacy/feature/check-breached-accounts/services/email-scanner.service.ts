@@ -7,6 +7,7 @@ import { AccessTokenService } from '../../../common/services/access-token.servic
 import { PRIVACY_ENVIRONMENT } from '../../../utils/injection-tokens';
 import { INVALID_TOKEN } from '../../../utils/error-codes';
 import { getHashCode } from '../../../utils/helpers';
+import { SafeStorageService } from '../../../common/services/safe-storage.service';
 
 interface ConfirmationCodeValidationResponse {
 	status: string;
@@ -67,6 +68,7 @@ export class EmailScannerService {
 		private storageService: StorageService,
 		private accessTokenService: AccessTokenService,
 		private http: HttpClient,
+		private safeStorageService: SafeStorageService,
 		@Inject(PRIVACY_ENVIRONMENT) private environment
 	) {
 	}
@@ -77,6 +79,7 @@ export class EmailScannerService {
 
 	setScanBreachedAccounts() {
 		this.storageService.setItem(USER_EMAIL_HASH, getHashCode(this._userEmail$.getValue()));
+		this.safeStorageService.setPassword('figleaf-userEmail', this._userEmail$.getValue());
 		this.scanBreachedAccounts.next(true);
 	}
 
@@ -94,7 +97,7 @@ export class EmailScannerService {
 			'Content-Type': 'text/plain;charset=UTF-8',
 		});
 		return this.http.post(`${this.environment.backendUrl}/api/v1/vantage/auth/init`, {
-			'email': this._userEmail$.getValue(),
+			'email': this.safeStorageService.getPassword('figleaf-userEmail'),
 		}, {headers: headers})
 			.pipe(
 				catchError((error) => {
@@ -112,7 +115,7 @@ export class EmailScannerService {
 		return this.http.post<ConfirmationCodeValidationResponse>(
 			`${this.environment.backendUrl}/api/v1/vantage/auth/finish`,
 			{
-				'email': this._userEmail$.getValue(),
+				'email': this.safeStorageService.getPassword('figleaf-userEmail'),
 				'code': code,
 			}, {headers: headers}
 		)

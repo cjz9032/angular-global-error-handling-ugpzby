@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { MockWindows } from '../../utils/moked-api';
 
+const RESOURCE = 'figleaf-privacy-tab';
+
 @Injectable({
 	providedIn: 'root'
 })
@@ -12,27 +14,27 @@ export class SafeStorageService {
 	constructor() {
 	}
 
-	setPassword(resource, username, password) {
+	setPassword(username, password) {
 		const credentials = new this.windows.Security.Credentials.PasswordCredential();
-		credentials.resource = resource;
+		credentials.resource = RESOURCE;
 		credentials.userName = username;
 		credentials.password = password;
 		this.vault.add(credentials);
 	}
 
-	getPassword(resource, username) {
+	getPassword(username) {
 		var password: string;
 		try {
-			password = this.vault.retrieve(resource, username).password;
+			password = this.vault.retrieve(RESOURCE, username).password;
 		} catch (error) {
 			password = null;
 		}
 		return password;
 	}
 
-	removePassword(resource, username) {
+	removePassword(username) {
 		try {
-			const credential = this.vault.retrieve(resource, username);
+			const credential = this.vault.retrieve(RESOURCE, username);
 			if (credential) {
 				this.vault.remove(credential);
 			}
