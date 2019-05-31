@@ -48,4 +48,6 @@ export enum LocalStorageKey {
 	 * 3 means "thinkCenter"
 	 */
 	MachineType = '[LocalStorageKey] MachineType',
+	HybridModeStatus = '[LocalStorageKey] HybridModeStatus',
+	TouchpadStatus = '[LocalStorageKey] TouchpadStatus',
 }
