@@ -694,7 +694,13 @@
                             "endTime": "60 minutes"
                         }
                     }
-                }
+                },
+				"intelligentMedia": {
+					"heading": "Intelligent Media",
+					"title": "Zero Touch Video Playback",
+					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+				}
             }
         }
     },
@@ -1011,7 +1017,7 @@
                 "describe": "Використовуйте детектор загроз, щоб визначити, чи безпечні мережі поблизу.",
                 "button": "Перевірка загроз",
                 "connectionError": "Помилка підключення",
-                "tryAgain": "Не вдалося знайти ваш пристрій, мережа не доступна. Підключіться до Інтернету й повторіть спробу."
+                "tryAgain": "Не вдалося визначити загрозу, оскільки мережа не доступна. Підключіться до Інтернету й повторіть спробу."
             },
             "locationmodal": {
                 "title": "Увімкнути служби геолокації",
@@ -1554,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Настройки параметрів",
+        "settings": "Настройки",
+        "settingsDescription": "На сторінці настройок параметрів можна ввімкнути або вимкнути певні категорії сповіщень у Vantage. Зверніть увагу: навіть якщо всі категорії повідомлень відключені, ви все одно можете час від часу отримувати від Vantage повідомлення про критичні помилки системи.",
+        "messagesInLenovoVantage": "Повідомлення в Lenovo Vantage",
+        "appFeatures": "Функції програми",
+        "appFeaturesDescription": "Повідомлення про System Update, статті та інші важливі функції.",
+        "marketing": "Маркетинг",
+        "marketingDescription": "Рекламні повідомлення, зокрема про спеціальні пропозиції Lenovo.",
+        "actionTriggered": "Сповіщення про дії",
+        "actionTriggeredDescription": "Повідомлення, пов’язані з вибором автоматичної інсталяції критично важливих або рекомендованих оновлень.",
+        "OtherSettings": "Інші настройки",
+        "usageStatistics": "Статистика використання",
+        "usageStatisticsDescription": "Надсилання статистики щодо анонімного використання до компанії Lenovo.",
+        "Note": "Примітка. ",
+        "settingsNotes": "Щоб застосувати зміни, внесені на цій сторінці, необхідно перезавантажити комп'ютер."
     }
 }

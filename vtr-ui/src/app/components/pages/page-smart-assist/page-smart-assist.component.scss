@@ -1,0 +1,153 @@
+@import "../../../app.theme.scss";
+
+.vtr-page {
+	.vtr-page-content {
+		.vtr-page-left-column {
+			background-color: $light;
+		}
+	}
+}
+
+.vtr-page-right-column {
+	background-color: $shade_extralight;
+	.battery-unavailable {
+		height: 8rem;
+	}
+}
+.vtr-page-smart-assist {
+	.title {
+		opacity: 0.8;
+		color: $main_darker;
+		font-size: 7rem;
+		line-height: 8.2rem;
+	}
+	ul{
+		li{
+			list-style-type: none;
+		}
+	}
+	.caption {
+		max-width: 60rem;
+		padding-left: 2rem;
+		p{
+			font-size: 1.5rem;
+			color: $main_darker;
+		}
+		a{
+			text-decoration: underline;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+	.card-body {
+		padding: 2rem 4rem;
+	}
+	.feature-note {
+		background-color: $shade_lightest;
+		border: 1px solid $shade_lighter;
+		p{
+			font-size: 1.5rem;
+			color: $main_darker;
+		}
+		a{
+			text-decoration: underline;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+		&.screen-lock-note{
+			// max-width: 64rem;
+		}
+		&.auto-screen-off-note{
+			p{
+				color: $alt;
+			}
+			span{
+				font-size: 1.5rem;
+			}
+
+		}
+		fa-icon {
+			color: red;
+			font-size: 3rem;
+		}
+	}
+	.blur{
+		&.disabled {
+			opacity: 0.65;
+		}
+	}
+
+	.auto-screen-lock-timer{
+		h3{
+			font-weight: $weight_bold;
+			color: $main_darker;
+		}
+		fa-icon{
+			font-size: 1.8rem;
+			color: $gaming;
+			&:hover {
+				color: $highlight;
+			}
+		}
+	}
+	::ng-deep .vtr-ui-rounded-rectangle-radio{
+		width: 16.5rem;
+			@media #{$mediaquery_X22} {
+				width: 25.5rem;
+			}
+			@media #{$mediaquery_X23} {
+				width: 25.5rem;
+			}
+	}
+
+	.auto-screen-block, .auto-screen-off-block {
+		::ng-deep .vtr-ui-switch-row {
+			border-bottom: none;
+		}
+	}
+
+	.int-screen-desc{
+		p{
+			font-size: 1.5rem;
+		}
+	}
+
+	.keep-my-display-block{
+			::ng-deep .vtr-ui-switch-row {
+				border-top: 0.1rem solid $shade_lighter;
+				border-bottom: none;
+			}
+	}
+
+	.disabled-overlay {
+		background-color: #F6F8F8;
+		z-index: 2;
+		pointer-events: none;
+	}
+	.disabled {
+		pointer-events: none;
+	}
+	
+	.no-border-bottom {
+		::ng-deep .vtr-ui-switch-row {
+			border-bottom: none !important;
+		}
+	}
+	.border-bottom {
+		border-bottom: 0.1rem solid $shade_lighter;
+	}
+	.bold-title {
+		::ng-deep .vtr-ui-switch-row.white-theme .title {
+			font-weight: 700;
+		}
+	}
+	.margin-left-5 {
+		margin-left: 5rem;
+	}
+	.slider-note {
+		margin: 0 1.7rem;
+		padding-right: 1.4rem;
+	}
+}

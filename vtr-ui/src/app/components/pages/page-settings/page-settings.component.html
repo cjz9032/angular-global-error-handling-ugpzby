@@ -1,0 +1,112 @@
+<div class="vtr-page-device-settings vtr-page">
+	<div class="row vtr-page-header">
+		<div class="col vtr-col">
+			<vtr-header-main [backarrow]="backArrow"
+				[back]="'common.ui.back' | translate"
+				[title]="'settings.preferenceSettings' | translate">
+			</vtr-header-main>
+		</div>
+	</div>
+	<div class="row vtr-page-content">
+		<div class="col vtr-col">
+			<div class="row">
+				<div class="col-lg-8 col-sm-12 vtr-page-left-column">
+					<div class="subpage-settings vtr-subpage">
+						<div class="row">
+							<div class="col">
+								<vtr-ui-header-subpage [title]="'settings.settings' | translate"
+									[caption]="'settings.settingsDescription' | translate">
+								</vtr-ui-header-subpage>
+							</div>
+						</div>
+
+						<div class="row py-5"
+							id="settings-messages">
+							<div class="col-10 mx-auto ">
+								<vtr-container-collapsible
+									[cardTitle]="'settings.messagesInLenovoVantage' | translate | lowercase"
+									[isCollapsed]="false">
+									<ul class="list-group list-group-flush">
+										<li>
+											<vtr-ui-row-switch [title]="'settings.appFeatures' | translate"
+												[name]="'settings.appFeatures' | translate"
+												[caption]="'settings.appFeaturesDescription' | translate"
+												[isSwitchVisible]=true
+												[leftIcon]="messageSettings[0].leftImageSource"
+												[tooltipText]=""
+												[isSwitchChecked]="toggleAppFeature"
+												[disabled]="disabledAppFeature"
+												(toggleOnOff)="onToggleOfAppFeature($event)">
+											</vtr-ui-row-switch>
+										</li>
+										<li>
+											<vtr-ui-row-switch [title]="'settings.marketing' | translate"
+												[name]="'settings.marketing' | translate"
+												[caption]="'settings.marketingDescription' | translate"
+												[isSwitchVisible]=true
+												[leftIcon]="messageSettings[1].leftImageSource"
+												[tooltipText]=""
+												[isSwitchChecked]="toggleMarketing"
+												[disabled]="disabledMarketing"
+												(toggleOnOff)="onToggleOfMarketing($event)">
+											</vtr-ui-row-switch>
+										</li>
+										<li>
+											<vtr-ui-row-switch [title]="'settings.actionTriggered' | translate"
+												[name]="'settings.actionTriggered' | translate"
+												[caption]="'settings.actionTriggeredDescription' | translate"
+												[isLastChild]=true
+												[isSwitchVisible]=true
+												[leftIcon]="messageSettings[2].leftImageSource"
+												[tooltipText]=""
+												[isSwitchChecked]="toggleActionTriggered"
+												[disabled]="disabledActionTriggered"
+												(toggleOnOff)="onToggleOfActionTriggered($event)">
+											</vtr-ui-row-switch>
+										</li>
+
+									</ul>
+								</vtr-container-collapsible>
+							</div>
+						</div>
+
+						<div class="row py-5"
+							id="settings-other-settings">
+							<div class="col-10 mx-auto ">
+								<vtr-container-collapsible [cardTitle]="'settings.OtherSettings' | translate "
+									[isCollapsed]="false">
+									<ul class="list-group list-group-flush">
+										<li>
+											<vtr-ui-row-switch [title]="'settings.usageStatistics' | translate"
+												[name]="'settings.usageStatistics' | translate | lowercase"
+												[caption]="'settings.usageStatisticsDescription' | translate"
+												[isLastChild]=true
+												[isSwitchVisible]=true
+												[leftIcon]="otherSettings[0].leftImageSource"
+												[tooltipText]=""
+												[isSwitchChecked]="toggleUsageStatistics"
+												(toggleOnOff)="onToggleOfUsageStatistics($event)">
+											</vtr-ui-row-switch>
+										</li>
+									</ul>
+								</vtr-container-collapsible>
+							</div>
+						</div>
+
+						<div class="row py-5"
+							id="settings-other-settings">
+							<div class="col-10 mx-auto ">
+								<div class="settings-note">
+									<b>{{ 'settings.Note' | translate }}</b>{{ 'settings.settingsNotes' | translate }}
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-lg-4 col-sm-12 vtr-page-right-column">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

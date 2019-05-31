@@ -694,7 +694,13 @@
                             "endTime": "60 minutes"
                         }
                     }
-                }
+                },
+				"intelligentMedia": {
+					"heading": "Intelligent Media",
+					"title": "Zero Touch Video Playback",
+					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+				}
             }
         }
     },
@@ -1011,7 +1017,7 @@
                 "describe": "Utilice el detector de amenazas para determinar la seguridad de las redes a su alrededor.",
                 "button": "Comprobar amenaza",
                 "connectionError": "Error de conexión",
-                "tryAgain": "No encontramos el dispositivo debido a que la red no está disponible, conéctese a Internet y vuelva a intentarlo."
+                "tryAgain": "No encontramos una amenaza para usted debido a que la red no está disponible, conéctese a Internet y vuelva a intentarlo."
             },
             "locationmodal": {
                 "title": "Habilitar servicios de ubicación",
@@ -1554,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Establecimiento de preferencias",
+        "settings": "Configuración",
+        "settingsDescription": "En la página de configuración de preferencias, puede elegir entre activar/desactivar la notificación de mensajes basándose en las categorías de mensaje de Vantage, tenga en cuenta que, incluso si todas las categorías de mensajes están inhabilitadas, puede recibir ocasionalmente un mensaje crítico del sistema de Vantage cuando sea necesario.",
+        "messagesInLenovoVantage": "Mensajes en Lenovo Vantage",
+        "appFeatures": "Características de aplicación",
+        "appFeaturesDescription": "Mensajes pertinentes a la System Update, artículos y otras características destacadas.",
+        "marketing": "Marketing",
+        "marketingDescription": "Mensajes de promoción, incluidas las ofertas especiales de Lenovo.",
+        "actionTriggered": "Acción activada",
+        "actionTriggeredDescription": "Mensajes desencadenados por el usuario seleccionando valores como la instalación automática de las actualizaciones críticas/recomendadas.",
+        "OtherSettings": "Otros valores",
+        "usageStatistics": "Estadísticas de uso",
+        "usageStatisticsDescription": "Enviar estadística de uso anónima a Lenovo.",
+        "Note": "Nota: ",
+        "settingsNotes": "todos los valores de esta página necesitarán que los usuarios reinicien para tener efecto."
     }
 }

@@ -23,8 +23,7 @@ export class BatteryDetailService {
 				return this.battery.getBatteryInformation();
 			}
 			return undefined;
-		}
-		catch (error) {
+		} catch (error) {
 			throw new Error(error.message);
 		}
 	}

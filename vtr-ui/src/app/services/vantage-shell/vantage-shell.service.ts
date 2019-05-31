@@ -446,16 +446,15 @@ export class VantageShellService {
 		}
 	}
 
+	public getIntelligentMedia(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.lis.intelligentMedia;
+		} return undefined;
+	}
 
-
-
-
-
-
-
-
-
-
-
-
+	public getPreferenceSettings() {
+		if (this.phoenix) {
+			return this.phoenix.preferenceSettings;
+		}
+	}
 }

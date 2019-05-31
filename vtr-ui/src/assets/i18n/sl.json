@@ -694,7 +694,13 @@
                             "endTime": "60 minutes"
                         }
                     }
-                }
+                },
+				"intelligentMedia": {
+					"heading": "Intelligent Media",
+					"title": "Zero Touch Video Playback",
+					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+				}
             }
         }
     },
@@ -1011,7 +1017,7 @@
                 "describe": "Če želite ugotoviti, kako varna so omrežja okrog vas, uporabite detektor groženj.",
                 "button": "Preverite, da",
                 "connectionError": "Napaka povezave",
-                "tryAgain": "Vaše naprave ne moremo najti, ker omrežje ni na voljo. Vzpostavite internetno povezavo in poskusite znova."
+                "tryAgain": "Grožnje ne moremo poiskati, ker omrežje ni na voljo. Vzpostavite internetno povezavo in poskusite znova."
             },
             "locationmodal": {
                 "title": "Omogoči lokacijske storitve",
@@ -1554,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Nastavitve učinkovitosti delovanja",
+        "settings": "Nastavitve",
+        "settingsDescription": "Na strani za določanje nastavitev lahko vklopite/izklopite obvestila o sporočilih na podlagi kategorij sporočila orodja Vantage. Pri tem upoštevajte, da lahko po potrebi občasno prejmete nujna sistemska sporočila orodja Vantage, tudi če so vse kategorije sporočil onemogočene.",
+        "messagesInLenovoVantage": "Sporočila v programu Lenovo Vantage",
+        "appFeatures": "Funkcije aplikacije",
+        "appFeaturesDescription": "Sporočila, ki se nanašajo na System Update, članke in druge pomembne funkcije.",
+        "marketing": "Trženje",
+        "marketingDescription": "Promocijska sporočila, vključno s posebnimi ponudbami družbe Lenovo.",
+        "actionTriggered": "Sproženo dejanje",
+        "actionTriggeredDescription": "Sporočila, ki jih sproži uporabnik, ko izbere nastavitve, kot je samodejna namestitev nujnih/priporočenih posodobitev.",
+        "OtherSettings": "Druge nastavitve",
+        "usageStatistics": "Statistični podatki o uporabi",
+        "usageStatisticsDescription": "Pošiljanje anonimnih statističnih podatkov o uporabi podjetju Lenovo.",
+        "Note": "Opomba: ",
+        "settingsNotes": "Za uveljavitev vseh nastavitev na tej strani bodo uporabniki morali znova zagnati sistem."
     }
 }
