@@ -61,6 +61,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public percentCompleted = 0;
 	public isUpdatesAvailable = false;
 	public isUpdateDownloading = false;
+	public isCheckingPluginStatus = true;
 	public installationPercent = 0;
 	public downloadingPercent = 0;
 	public isInstallingAllUpdates = true;
@@ -684,10 +685,12 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			switch (type) {
 				case UpdateProgress.ScheduleUpdateChecking:
 					this.isUpdateCheckInProgress = true;
+					this.isCheckingPluginStatus = false;
 					break;
 				case UpdateProgress.ScheduleUpdateDownloading:
 					this.ngZone.run(() => {
 						this.isUpdateCheckInProgress = false;
+						this.isCheckingPluginStatus = false;
 						this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
 						this.installationPercent = this.systemUpdateService.installationPercent;
 						this.downloadingPercent = this.systemUpdateService.downloadingPercent;
@@ -696,6 +699,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				case UpdateProgress.ScheduleUpdateInstalling:
 					this.ngZone.run(() => {
 						this.isUpdateCheckInProgress = false;
+						this.isCheckingPluginStatus = false;
 						this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
 						this.downloadingPercent = this.systemUpdateService.downloadingPercent;
 						this.installationPercent = this.systemUpdateService.installationPercent;
@@ -703,10 +707,12 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					break;
 				case UpdateProgress.ScheduleUpdateIdle:
 					this.isUpdateCheckInProgress = false;
+					this.isCheckingPluginStatus = false;
 					this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
 					this.resetState();
 					break;
 				case UpdateProgress.ScheduleUpdateCheckComplete:
+					this.isCheckingPluginStatus = false;
 					this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
 					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;
