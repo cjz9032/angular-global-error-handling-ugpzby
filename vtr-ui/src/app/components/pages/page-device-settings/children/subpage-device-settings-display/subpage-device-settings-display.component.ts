@@ -27,6 +27,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	title = 'device.deviceSettings.displayCamera.title';
 	public dataSource: any;
 	public eyeCareDataSource: EyeCareMode;
+	public displayColorTempDataSource: any;
 	public cameraDetails1: ICameraSettingsResponse;
 	public cameraFeatureAccess: CameraFeatureAccess;
 	private cameraDetailSubscription: Subscription;
@@ -137,6 +138,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.displayService.startMonitorForCameraPermission();
 		this.startMonitorForCamera();
 		this.initCameraBlurMethods();
+		this.getDaytimeColorTemperature()
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -413,6 +415,45 @@ export class SubpageDeviceSettingsDisplayComponent
 		}
 	}
 	// End EyeCare Mode
+
+// Display color temperature start here
+public getDaytimeColorTemperature() {
+	this.displayService.getDaytimeColorTemperature().then((response) => {
+		this.displayColorTempDataSource = response
+		console.log('getDisplayColortemperature.then', this.displayColorTempDataSource);
+	});
+}
+
+public onSetChangeDisplayColorTemp($event: ChangeContext) {
+	try {
+		console.log('temparature changed in display',$event);		
+		if (this.displayService.isShellAvailable) {
+			this.displayService
+				.setDaytimeColorTemperature($event.value).then((res) =>{
+
+				});
+		}
+	} catch (error) {
+		console.error(error.message);
+	}
+}
+
+public resetDaytimeColorTemp($event: any) {
+	try {
+		console.log('temparature reset in display', $event);
+		if (this.displayService.isShellAvailable) {
+			this.displayService
+				.resetDaytimeColorTemperature().then((resetData: any) => {
+					console.log('temparature reset data', resetData);
+					this.displayColorTempDataSource.current = resetData || 6500 
+				});
+		}
+	} catch (error) {
+		console.error(error.message);
+	}
+}	
+// Display color temperature end here
+
 	// Start Camera Privacy
 	public onCameraPrivacyModeToggle($event: any) {
 

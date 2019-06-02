@@ -203,6 +203,31 @@ export class DisplayService {
 		}
 		return undefined;
 	}
+
+public getDaytimeColorTemperature(): Promise<FeatureStatus> {
+	if (this.displayEyeCareMode) {
+		return this.displayEyeCareMode.getDaytimeColorTemperature();
+	}
+	return undefined;
+}
+
+public setDaytimeColorTemperature(value: number): Promise<boolean> {
+	if (this.displayEyeCareMode) {			
+		return this.displayEyeCareMode.setDaytimeColorTemperature(value);
+	}
+	return undefined;
+}
+
+public resetDaytimeColorTemperature(): Promise<any> {
+	if (this.displayEyeCareMode) {
+		return this.displayEyeCareMode.resetDaytimeColorTemperature();
+	}
+	return undefined;
+}
+
+
+
+
 	public statusChangedLocationPermission(handler: any) {
 		try {
 			if (this.isShellAvailable) {
