@@ -10,12 +10,15 @@ export class UiDropdownComponent implements OnInit {
   @Input() title :string;
   active :boolean = false;
   value :number = 0;
+  name :string = 'Never';
 
   toggle(){
     this.active = !this.active;
   }
-  select(value){
-    this.value = value;
+  select(i){
+    this.value = i.value;
+    this.name = i.name;
+
     this.active = !this.active;
   }
 

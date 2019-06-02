@@ -57,4 +57,11 @@
 		border-width: 1rem;
 		border-color: $main;
 	}
+
+}
+
+.badge-item{
+	span:hover{
+		cursor: pointer;
+	}
 }

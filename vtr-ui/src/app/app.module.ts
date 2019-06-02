@@ -198,6 +198,7 @@ import { UiLightingProfileComponent } from './components/ui/ui-lighting-profile/
 import { UiDropdownComponent } from './components/ui/ui-dropdown/ui-dropdown.component';
 
 import { AutoupdateSettingsComponent } from './components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
+import { SvgInlinePipe } from './pipe/svg-inline/svg-inline.pipe';
 
 
 
@@ -358,7 +359,8 @@ library.add(fal);
 		AutoupdateSettingsComponent,
 		UiPopoverComponent,
 		ModalChsWelcomeContainerComponent,
-		LoginLenovoIdComponent
+		LoginLenovoIdComponent,
+		SvgInlinePipe
 	],
 	imports: [
 		BrowserModule,

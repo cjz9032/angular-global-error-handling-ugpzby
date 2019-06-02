@@ -2,37 +2,36 @@
 	<div class="row">
 		<div class="col">
 			<p class="caption">
-        Your computer's OLED display can also reduce power consumption and increase battery 
-        life by selectively dimming portions of the display.
+        {{ description[0] }}
       </p>
       <p class="caption">
-        It is also recommended to dim the task bar and other areas of the display that 
-        do not change frequently to prolong the overall lifetime of the display.
+          {{ description[1] }}
       </p>
     </div>
   </div>
-  <div class="dropdown">
-    <section>
+  
+  <div class="dropdown row">
+    <section class="col-sm-12 col-md-3">
       <h5>TASKBAR DIMMER</h5>
       <vtr-ui-dropdown
-        [list]="[1,2,3,4,5,6,7,8]"
-        [title]="'Minutes'"
+        [list]="interval"
+        [title]="title"
       >
       </vtr-ui-dropdown>
     </section>
-    <section>
+    <section class="col-sm-12 col-md-3">
       <h5>BACKGROUND DIMMER</h5>
       <vtr-ui-dropdown
-        [list]="[1,2,3,4,5,6,7,8]"
-        [title]="'Minutes'"
+        [list]="interval"
+        [title]="title"
       >
       </vtr-ui-dropdown>
     </section>
-    <section>
+    <section class="col-sm-12 col-md-3">
       <h5>DISPLAY DIMMER</h5>
       <vtr-ui-dropdown
-        [list]="[1,2,3,4,5,6,7,8]"
-        [title]="'Minutes'"
+        [list]="interval"
+        [title]="title"
       >
       </vtr-ui-dropdown>
     </section>

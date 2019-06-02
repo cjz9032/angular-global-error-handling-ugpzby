@@ -3,17 +3,17 @@
 .vtr-oled-power-settings{
   .caption{
     font-size: 1.4rem;
-    color: #6c757d;
+    color: $main_shade;
   }
   .dropdown{
-    display: flex;
-    justify-content: space-between;
     margin-top: 2.5rem;
     section{
       margin-bottom: 3rem;
+      padding: 0 2rem 0 0;
       h5{
-        font-size: 1.4rem;
-        color: #6c757d;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: $main_shade;
         margin-bottom: 3rem;
       }
     }

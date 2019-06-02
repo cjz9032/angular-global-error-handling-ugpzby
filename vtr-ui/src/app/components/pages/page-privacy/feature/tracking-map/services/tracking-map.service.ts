@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, ReplaySubject } from 'rxjs';
-import { map, shareReplay, startWith, switchMap, take } from 'rxjs/operators';
+import { EMPTY, Observable, of, ReplaySubject, Subject } from 'rxjs';
+import { catchError, map, shareReplay, startWith, switchMap, take } from 'rxjs/operators';
 import { ChoseBrowserService } from '../../../common/services/chose-browser.service';
 import { UserAllowService } from '../../../common/services/user-allow.service';
 import { HttpClient } from '@angular/common/http';
-import { VantageCommunicationService, VisitedWebsitesInfo } from '../../../common/services/vantage-communication.service';
+import {
+	VantageCommunicationService,
+	VisitedWebsitesInfo
+} from '../../../common/services/vantage-communication.service';
 import { topVisitedSites } from './tracking-map-top';
 import {
 	SingleTrackersInfo,
@@ -33,6 +36,9 @@ export class TrackingMapService {
 	private getTrackingSingleData = new ReplaySubject<SingleTrackersInfo>(1);
 	getTrackingSingleData$ = this.getTrackingSingleData.asObservable();
 
+	taskStartedTime = 0;
+	getTrackingDataAction$ = new Subject<{ TaskDuration: number }>();
+
 	private trackersCache$: Observable<TrackersInfo>;
 
 	constructor(
@@ -46,8 +52,11 @@ export class TrackingMapService {
 	}
 
 	updateTrackingData() {
-		this.getTrackingData().subscribe((val: any) => {
+		this.getTrackingData().subscribe((val) => {
 			this.trackingData.next(val);
+			if (val.typeData === typeData.Users) {
+				this.sendTaskAction();
+			}
 		});
 	}
 
@@ -56,19 +65,18 @@ export class TrackingMapService {
 	}
 
 	private getTrackingData() {
+		this.taskStartedTime = Date.now();
 		return this.downloadTrackersInfo().pipe(
 			switchMap((trackersInfo) => {
-					let sites = this.getTopWebsites();
-					if (this.choseBrowserService.isBrowserChose() && this.userAllowService.allowToShow.trackingMap) {
-						sites = this.getVisitedWebsites(this.choseBrowserService.getName());
-					}
-
+					const isAllowScanHistory = this.userAllowService.allowToShow.getValue().trackingMap;
+					const sites = isAllowScanHistory ? this.getVisitedWebsites() : this.getTopWebsites();
 					return sites.pipe(map((userHistory) => ({trackersInfo, userHistory})));
 				}
 			),
 			map(({trackersInfo, userHistory}) => ({
 				typeData: userHistory.typeData,
-				trackingData: this.convertToTrackingData(trackersInfo, userHistory.sites)
+				trackingData: this.convertToTrackingData(trackersInfo, userHistory.sites),
+				error: null,
 			})),
 			take(1)
 		);
@@ -89,11 +97,18 @@ export class TrackingMapService {
 		return {sites, trackers};
 	}
 
-	private getVisitedWebsites(browserName) {
-		return this.vantageCommunicationService.getVisitedWebsites([browserName]).pipe(
-			map((userHistory) => Object.values(userHistory).reduce((acc, val) => acc.concat(val), [])),
-			map((userHistory) => ({typeData: typeData.Users, sites: userHistory}))
-		);
+	private getVisitedWebsites() {
+		return this.vantageCommunicationService.getVisitedWebsites()
+			.pipe(
+				map((userHistory) => userHistory.visitedWebsites),
+				map((userHistory) => ({typeData: typeData.Users, sites: userHistory})),
+				catchError((err) => {
+					this.trackingData.next({typeData: typeData.Users, trackingData: {sites: [], trackers: {}}, error: err});
+					this.sendTaskAction();
+					console.error('VisitedWebsites err', err);
+					return EMPTY;
+				}),
+			);
 	}
 
 	private getTopWebsites() {
@@ -109,4 +124,10 @@ export class TrackingMapService {
 		}
 		return this.trackersCache$;
 	}
+
+	private sendTaskAction() {
+		const taskDuration = (Date.now() - this.taskStartedTime) / 1000;
+		this.getTrackingDataAction$.next({TaskDuration: taskDuration});
+	}
+
 }
