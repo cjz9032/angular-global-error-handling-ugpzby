@@ -1,0 +1,27 @@
+<div class="vtr-ui-lighting-effect">
+  <div class="select-box">
+    <div class="dropdown">
+      <a class="dropdown-toggle" id="gaming-drop" (click)="toggle()">
+        <!-- <span>{{ currentOption | translate }}</span> -->
+        <span>Wave</span>
+        <i class="icon icon-arrowdown"></i>
+      </a>
+
+      <ng-container *ngIf="show">
+        <div class="gaming-dropdown-menu">
+          <ng-container>
+            <li>
+              <a class="dropdown-item"><i class="icon icon-checkline"></i>{{'gaming.lightingProfile.effect.option1' | translate}}</a>
+            </li>
+            <li>
+              <a class="dropdown-item"><i class="icon icon-checkline"></i>Option 2</a>
+            </li>
+            <li>
+              <a class="dropdown-item"><i class="icon icon-checkline"></i>Option 3</a>
+            </li>
+          </ng-container>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
