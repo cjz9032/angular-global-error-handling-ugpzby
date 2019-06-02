@@ -3,13 +3,13 @@
     <div class="installed-browser__detail-col">
       <img class="installed-browser__icon" [src]="installedBrowser.img" alt="">
       <div class="installed-browser__description">
-        <p *ngIf="installedBrowser.accountsCount !== null && installedBrowser.accountsCount > 0"
+        <p *ngIf="installedBrowser.accountsCount > 0"
            class="installed-browser__title">
           <span class="installed-browser__number">{{installedBrowser.accountsCount}}</span>
           account{{installedBrowser.accountsCount > 1 ? 's': ''}}
           stored in {{installedBrowser.name}}
         </p>
-		<p *ngIf="installedBrowser.accountsCount !== null && installedBrowser.accountsCount === 0"
+		<p *ngIf="installedBrowser.accountsCount === 0"
 		   class="installed-browser__title">
 			No saved accounts in {{installedBrowser.name}}
 		</p>
@@ -30,21 +30,22 @@
     <a *ngIf="showDetailAction === 'link' && installedBrowser.accountsCount"
 	   class="installed-browser__btn"
 	   routerLink="./browser-accounts"
+       vtrSendAnalytics
+       [metricsEvent]="'ItemClick'"
+       [metricsItem]="'NonPrivatePasswordsDetailItem'"
 	   [queryParams]="{openId: index}">
 		Show details
 	</a>
     <button *ngIf="showDetailAction === 'expand' && installedBrowser.accountsCount"
 			class="installed-browser__btn" (click)="toggleDetails()"
+            vtrSendAnalytics
+            [metricsEvent]="'ItemClick'"
+            [metricsItem]="'NonPrivatePasswordsDetailItem'"
 			[class.installed-browser__btn--expanded]="isDetailsExpanded">
 		{{isDetailsExpanded ? 'Hide' : 'Show'}} details
 	</button>
   </div>
-  <div *ngIf="isDetailsExpanded" class="installed-browser__content">
-    <div *ngIf="!installedBrowser.accounts" class="browser-preview">
-      <p class="browser-preview__text">Find out why storing passwords in your browser isn't as private as you think.</p>
-      <button class="browser-preview__btn" (click)="showBrowserPasswords()">Show me</button>
-    </div>
-
+  <div *ngIf="isDetailsExpanded" class="installed-browser__content" data-analyticsName="Details">
     <div *ngIf="installedBrowser.accounts" class="browser-accounts__wrapper">
       <div class="accounts-title">
         <div class="accounts-title__img-col"></div>

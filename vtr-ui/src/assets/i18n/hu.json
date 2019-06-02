@@ -694,7 +694,13 @@
                             "endTime": "60 minutes"
                         }
                     }
-                }
+                },
+				"intelligentMedia": {
+					"heading": "Intelligent Media",
+					"title": "Zero Touch Video Playback",
+					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+				}
             }
         }
     },
@@ -1011,7 +1017,7 @@
                 "describe": "A veszélyészlelővel megállapíthatja, mennyire biztonságosak a közeli hálózatok.",
                 "button": "Veszélyforrások ellenőrzése",
                 "connectionError": "Kapcsolódási hiba",
-                "tryAgain": "A hálózat nem érhető el, ezért nem tudjuk megkeresni az eszközét. Csatlakozzon az internethez, és próbálkozzon újra!"
+                "tryAgain": "A hálózat nem érhető el, ezért nem tudjuk megkeresni a veszélyforrást. Csatlakozzon az internethez, és próbálkozzon újra."
             },
             "locationmodal": {
                 "title": "Helyszolgáltatások engedélyezése",
@@ -1527,7 +1533,7 @@
     },
     "welcometutorial": {
         "description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-        "bullets1": "Optimize your system with lorem ipsum dolor set",
+        "bullets1": "View your system's status with the Vantage dashboard.",
         "bullets2": "Security Advisor makes managing your security easy ",
         "bullets3": "Automatic updates keep your device in tip top shape",
         "subtitle1": "How will you be using your device?",
@@ -1554,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Előnyben részesített beállítások",
+        "settings": "Beállítások",
+        "settingsDescription": "Az előnyben részesített beállítások oldalán ki- és bekapcsolhatja az üzenetekről szóló értesítéseket a Vantage üzenetkategóriái alapján. Felhívjuk a figyelmét arra, hogy időnként még akkor is kaphat a rendszerrel kapcsolatos fontos üzeneteket a Vantage alkalmazástól, amikor minden üzenetkategória le van tiltva.",
+        "messagesInLenovoVantage": "A Lenovo Vantage üzenetei",
+        "appFeatures": "Az alkalmazás funkciói",
+        "appFeaturesDescription": "A System Update szolgáltatással kapcsolatos üzenetek, cikkek és további fontos funkciók.",
+        "marketing": "Marketing",
+        "marketingDescription": "Promóciós üzenetek, többek között a Lenovo különleges ajánlatai.",
+        "actionTriggered": "Aktivált művelet",
+        "actionTriggeredDescription": "A felhasználó megadott beállításai által aktivált üzenetek – például a kritikus/javasolt frissítések automatikus telepítése.",
+        "OtherSettings": "Egyéb beállítások",
+        "usageStatistics": "Használati statisztikák",
+        "usageStatisticsDescription": "Névtelen használati statisztikák küldése a Lenovo vállalatnak.",
+        "Note": "Megjegyzés: ",
+        "settingsNotes": "Az ezen az oldalon található beállítások módosítása után a felhasználónak újra kell indítania a rendszert."
     }
 }

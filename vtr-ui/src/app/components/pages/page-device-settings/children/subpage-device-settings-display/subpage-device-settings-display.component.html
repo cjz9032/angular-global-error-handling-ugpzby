@@ -7,6 +7,7 @@
 				[menuTitle]="'device.deviceSettings.displayCamera.jumpTo.title' | translate"></vtr-ui-header-subpage>
 		</div>
 	</div>
+
 	<div class="row py-5 smartsettings-card"
 		id="display">
 		<div class="col-10 mx-auto ">
@@ -18,6 +19,33 @@
 				(toggle)="onCardCollapse($event)">
 				<ul class="list-group list-group-flush">
 					<li class="pt-3"
+					*ngIf="displayColorTempDataSource.available">
+					<vtr-ui-row-switch
+						[title]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
+						componentName="Display color temperature"
+						[name]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
+						[caption]=""
+						[isSwitchVisible]="false"
+						[leftIcon]="['fal', 'eye']"
+						[readMoreText]="''"
+						[showChildContent]="true"
+						[theme]="'white'"
+						[tooltipText]="'device.deviceSettings.displayCamera.display.dispColorTemp.tooltip' | translate">
+						<div class="row">
+							<div class="col-12">
+								<vtr-display-color-temp [displayColorTempSettings]="displayColorTempDataSource"
+									[enableSlider]="false"
+									[manualRefresh]="manualRefresh"
+									(displayColorTempChange)="onSetChangeDisplayColorTemp($event)"
+									(resetTemparature)="resetDaytimeColorTemp($event)"
+									>
+								</vtr-display-color-temp>
+							</div>
+						</div>
+					</vtr-ui-row-switch>
+				</li>	
+
+					<li class="pt-3"
 						*ngIf="eyeCareModeStatus.available">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
@@ -25,6 +53,7 @@
 							[name]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
 							[caption]=""
 							[isSwitchVisible]="true"
+							[isLastChild]=true
 							[leftIcon]="['fal', 'eye']"
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
@@ -47,11 +76,54 @@
 							</div>
 						</vtr-ui-row-switch>
 					</li>
+
+					<!-- <li class="pt-3">
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.displayCamera.display.privacyGuard.title' | translate"
+							componentName="Privacy guard"
+							[caption]=""
+							[isSwitchVisible]="true"
+							[leftIcon]="['fal', 'gem']"
+							[readMoreText]="''"
+							[showChildContent]="true"
+							[theme]="'white'"
+							>
+							<div class="row">
+								<div class="col d-flex justify-content-between pt-2 pr-3">
+									<p class="privacy-guard-caption">{{'device.deviceSettings.displayCamera.display.privacyGuard.description' | translate}}</p>
+									<img src="../../../../../../assets/images/privacy-guard.PNG" alt="Privacy guard">
+								</div>
+							</div>
+							<div class="row">
+								<div class="feature-note p-4 m-4">
+									<p>{{'device.deviceSettings.displayCamera.display.privacyGuard.note' | translate}}</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<div class="custom-control custom-checkbox privacy-checkbox">
+										<input
+										type="checkbox"
+										class="custom-control-input"
+										id="cb-privacy-guard"
+										[checked]=""
+										/>
+										<label class="custom-control-label" for="cb-privacy-guard">
+											<span class="text-capitalize">{{'device.deviceSettings.displayCamera.display.privacyGuard.labelText' | translate}}</span>
+										</label>
+									</div>
+
+								</div>
+							</div>
+
+						</vtr-ui-row-switch>
+					</li> -->
 					<!-- MVP 2 feature -->
 					<!-- <li class="pt-3">
 						<vtr-ui-row-switch [title]="'Display Priority Control'"
 							[caption]="'Configures microphone effect to enhance your audio experience by different scenarios and environment.'"
 							[isSwitchVisible]="false"
+							[isLastChild]=true
 							[leftIcon]="['far', 'gem']"
 							[readMoreText]="''"
 							[showChildContent]="true"
@@ -110,6 +182,7 @@
 							[name]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
 							[type]="'Camera'"
 							[isSwitchVisible]="false"
+							[isLastChild]="!cameraBlur.available || cameraBlur.errorCode !== 0"
 							[leftIcon]="['fal', 'camera']"
 							[showChildContent]="true"
 							[resetText]="'device.deviceSettings.displayCamera.camera.camera.reset' | translate"
@@ -147,6 +220,7 @@
 							componentName="Camera Background Blur"
 							[caption]="'device.deviceSettings.displayCamera.camera.camerablur.caption' | translate"
 							[isSwitchVisible]="true"
+							[isLastChild]=true
 							[leftIcon]="['fal', 'gem']"
 							[rightIcon]="['far', 'question-circle']"
 							[showChildContent]="true"

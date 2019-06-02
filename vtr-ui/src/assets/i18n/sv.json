@@ -694,7 +694,13 @@
                             "endTime": "60 minutes"
                         }
                     }
-                }
+                },
+				"intelligentMedia": {
+					"heading": "Intelligent Media",
+					"title": "Zero Touch Video Playback",
+					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+				}
             }
         }
     },
@@ -1011,7 +1017,7 @@
                 "describe": "Använd hotidentifieraren för att utvärdera säkerheten i nätverken.",
                 "button": "Kontrollera hot",
                 "connectionError": "Anslutningsfel",
-                "tryAgain": "Det gick inte att hitta enheten på grund av att nätverket inte är tillgängligt. Anslut till internet och försök igen."
+                "tryAgain": "Det gick inte att hitta något hot på grund av att nätverket inte är tillgängligt. Anslut till internet och försök igen."
             },
             "locationmodal": {
                 "title": "Aktivera platstjänster",
@@ -1527,7 +1533,7 @@
     },
     "welcometutorial": {
         "description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-        "bullets1": "Optimize your system with lorem ipsum dolor set",
+        "bullets1": "View your system's status with the Vantage dashboard.",
         "bullets2": "Security Advisor makes managing your security easy ",
         "bullets3": "Automatic updates keep your device in tip top shape",
         "subtitle1": "How will you be using your device?",
@@ -1554,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Preferensinställningar",
+        "settings": "Inställningar",
+        "settingsDescription": "På sidan Preferensinställningar kan du välja att aktivera/inaktivera aviseringar baserat på de olika kategorierna av Vantage-meddelanden. Tänk på att om du inaktiverar alla meddelandekategorier kan du fortfarande få systemkritiska meddelanden från Vantage när detta är nödvändigt.",
+        "messagesInLenovoVantage": "Meddelanden i Lenovo Vantage",
+        "appFeatures": "Appfunktioner",
+        "appFeaturesDescription": "Meddelanden som gäller System Update, artiklar och andra relevanta funktioner.",
+        "marketing": "Marknadsföring",
+        "marketingDescription": "Marknadsföringsmeddelanden, bland annat specialerbjudanden från Lenovo.",
+        "actionTriggered": "Åtgärdsbaserat",
+        "actionTriggeredDescription": "Meddelanden som utgår från dina inställningar, till exempel viktiga automatiska installationer eller rekommenderade uppdateringar.",
+        "OtherSettings": "Andra inställningar",
+        "usageStatistics": "Användningsstatistik",
+        "usageStatisticsDescription": "Skicka anonym användningsstatistik till Lenovo.",
+        "Note": "Obs! ",
+        "settingsNotes": "Alla inställningar på denna sida får effekt först efter att enheten har startats om."
     }
 }

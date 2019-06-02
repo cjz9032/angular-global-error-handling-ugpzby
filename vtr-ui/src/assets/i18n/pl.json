@@ -694,7 +694,13 @@
                             "endTime": "60 minutes"
                         }
                     }
-                }
+                },
+				"intelligentMedia": {
+					"heading": "Intelligent Media",
+					"title": "Zero Touch Video Playback",
+					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+				}
             }
         }
     },
@@ -1011,7 +1017,7 @@
                 "describe": "Funkcja Detektor zagrożeń sprawdza bezpieczeństwo sieci wokół Ciebie.",
                 "button": "Sprawdź zagrożenie",
                 "connectionError": "Błąd połączenia",
-                "tryAgain": "Nie możemy zlokalizować Twojego urządzenia z powodu braku dostępu do sieci, połącz się z Internetem i spróbuj ponownie."
+                "tryAgain": "Nie możemy zlokalizować zagrożenia z powodu braku dostępu do sieci, połącz się z Internetem i spróbuj ponownie."
             },
             "locationmodal": {
                 "title": "Włącz usługi lokalizacyjne",
@@ -1527,7 +1533,7 @@
     },
     "welcometutorial": {
         "description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-        "bullets1": "Optimize your system with lorem ipsum dolor set",
+        "bullets1": "View your system's status with the Vantage dashboard.",
         "bullets2": "Security Advisor makes managing your security easy ",
         "bullets3": "Automatic updates keep your device in tip top shape",
         "subtitle1": "How will you be using your device?",
@@ -1554,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Ustawienia preferencji",
+        "settings": "Ustawienia",
+        "settingsDescription": "Na stronie ustawień preferencji możesz włączyć lub wyłączyć powiadomienie o wiadomości na podstawie kategorii wiadomości Vantage. Należy pamiętać, że nawet jeśli wszystkie kategorie wiadomości są wyłączone, nadal mogą być czasami otrzymywane z programu Vantage krytyczne wiadomości dotyczące systemu, gdy jest to konieczne.",
+        "messagesInLenovoVantage": "Wiadomości w aplikacji Lenovo Vantage",
+        "appFeatures": "Funkcje aplikacji",
+        "appFeaturesDescription": "Wiadomości związane z programem System Update, artykułami i innymi ciekawymi funkcjami.",
+        "marketing": "Marketing",
+        "marketingDescription": "Wiadomości promocyjne, w tym oferty specjalne Lenovo.",
+        "actionTriggered": "Wykonane działanie",
+        "actionTriggeredDescription": "Wiadomości uruchamiane przez ustawienia użytkownika, takie jak automatyczne instalowanie krytycznych lub zalecanych aktualizacji.",
+        "OtherSettings": "Inne ustawienia",
+        "usageStatistics": "Statystyki użytkowania",
+        "usageStatisticsDescription": "Wyślij do firmy Lenovo anonimowe statystyki dotyczące użytkowania.",
+        "Note": "Uwaga: ",
+        "settingsNotes": "wszystkie ustawienia na tej stronie będą wymagały ponownego uruchomienia komputera przez użytkowników."
     }
 }

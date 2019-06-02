@@ -694,7 +694,13 @@
                             "endTime": "60 minutes"
                         }
                     }
-                }
+                },
+				"intelligentMedia": {
+					"heading": "Intelligent Media",
+					"title": "Zero Touch Video Playback",
+					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+				}
             }
         }
     },
@@ -1011,7 +1017,7 @@
                 "describe": "Verwenden Sie die Bedrohungssuche, um die Sicherheit der Netzwerke um Sie herum zu ermitteln.",
                 "button": "Bedrohung überprüfen",
                 "connectionError": "Verbindungsfehler",
-                "tryAgain": "Wir konnten Ihre Einheit aufgrund fehlender Netzwerkverbindung nicht orten. Stellen Sie eine Internetverbindung her und versuchen Sie es erneut."
+                "tryAgain": "Wir konnten die Bedrohung aufgrund fehlender Netzwerkverbindung nicht orten. Stellen Sie eine Internetverbindung her und versuchen Sie es erneut."
             },
             "locationmodal": {
                 "title": "Standortdienste aktivieren",
@@ -1527,7 +1533,7 @@
     },
     "welcometutorial": {
         "description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-        "bullets1": "Optimize your system with lorem ipsum dolor set",
+        "bullets1": "View your system's status with the Vantage dashboard.",
         "bullets2": "Security Advisor makes managing your security easy ",
         "bullets3": "Automatic updates keep your device in tip top shape",
         "subtitle1": "How will you be using your device?",
@@ -1554,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Einstellungen",
+        "settings": "Einstellungen",
+        "settingsDescription": "Auf der Einstellungsseite können Sie Ihre Nachrichtenbenachrichtigung basierend auf den Kategorien der Vantage-Nachricht ein- und ausschalten. Bitte beachten Sie, dass Sie auch wenn alle Nachrichtenkategorien deaktiviert sind, gelegentlich noch systemkritische Nachrichten von Vantage erhalten können, wenn nötig.",
+        "messagesInLenovoVantage": "Nachrichten in Lenovo Vantage",
+        "appFeatures": "App-Funktionen",
+        "appFeaturesDescription": "Meldungen zu System Update, Artikeln und anderen nennenswerten Funktionen.",
+        "marketing": "Marketing",
+        "marketingDescription": "Werbemeldungen mit Lenovo Sonderangeboten.",
+        "actionTriggered": "Ausgelöste Aktion",
+        "actionTriggeredDescription": "Nachrichten, die durch die Auswahl von Einstellungen ausgelöst werden, wie z. B. die automatische Installation kritischer/empfohlener Updates.",
+        "OtherSettings": "Weitere Einstellungen",
+        "usageStatistics": "Verwendungsstatistiken",
+        "usageStatisticsDescription": "Anonyme Verwendungsstatistik an Lenovo senden.",
+        "Note": "Hinweis: ",
+        "settingsNotes": "Alle Einstellungen auf dieser Seite erfordern einen Neustart durch den Benutzer, damit sie wirksam werden."
     }
 }
