@@ -14,7 +14,6 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { AppRoutingModule } from './app-routing.module';
 import { TranslationModule } from './modules/translation.module';
 
-
 // APPLICATION BASE COMPONENTS
 import { AppComponent } from './app.component';
 import { MenuMainComponent } from './components/menu-main/menu-main.component';
@@ -40,6 +39,9 @@ import { UiRowSwitchComponent } from './components/ui/ui-row-switch/ui-row-switc
 import { UiListChevronComponent } from './components/ui/ui-list-chevron/ui-list-chevron.component';
 import { UiListCheckboxComponent } from './components/ui/ui-list-checkbox/ui-list-checkbox.component';
 import { UiHeaderSubpageComponent } from './components/ui/ui-header-subpage/ui-header-subpage.component';
+import { UiNumberButtonComponent } from './components/ui/ui-number-button/ui-number-button.component';
+import { UiMacrokeyDetailsComponent } from './components/ui/ui-macrokey-details/ui-macrokey-details.component';
+import { UiMacrokeyRecordedListComponent } from './components/ui/ui-macrokey-recorded-list/ui-macrokey-recorded-list.component';
 
 // APPLICATION PAGE COMPONENTS
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
@@ -50,7 +52,6 @@ import { PageQuestionsComponent } from './components/pages/page-questions/page-q
 import { PageDeviceSettingsComponent } from './components/pages/page-device-settings/page-device-settings.component';
 import { PageDeviceUpdatesComponent } from './components/pages/page-device-updates/page-device-updates.component';
 import { AvailableUpdatesComponent } from './components/pages/page-device-updates/children/available-updates/available-updates.component';
-
 
 // APPLICATION SUBPAGE COMPONENTS
 import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
@@ -69,6 +70,7 @@ import { WidgetQuestionsComponent } from './components/widgets/widget-questions/
 import { WidgetFeedbackComponent } from './components/widgets/widget-feedback/widget-feedback.component';
 import { WidgetDeviceUpdateComponent } from './components/widgets/widget-device-update/widget-device-update.component';
 import { WidgetDeviceUpdateSettingsComponent } from './components/widgets/widget-device-update-settings/widget-device-update-settings.component';
+import { WidgetMacrokeySettingsComponent } from './components/widgets/widget-macrokey-settings/widget-macrokey-settings.component';
 
 // APPLICATION MODALS
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
@@ -98,7 +100,6 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fal } from '@fortawesome/pro-light-svg-icons';
-
 
 import { EyeCareModeComponent } from './components/display/eye-care-mode/eye-care-mode.component';
 import { UiButtonComponent } from './components/ui/ui-button/ui-button.component';
@@ -174,7 +175,6 @@ import { WifiSecurityComponent } from './components/pages/page-security-wifi/chi
 import { AdvisorWifiSecurityComponent } from './components/pages/page-security/children/advisor-wifi-security/advisor-wifi-security.component';
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
 
-
 // SA Widgets
 import { WidgetHomeSecurityDeviceComponent } from './components/widgets/widget-home-security-device/widget-home-security-device.component';
 import { WidgetSecurityStatusComponent } from './components/widgets/widget-security-status/widget-security-status.component';
@@ -195,10 +195,6 @@ import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
 import { LoginLenovoIdComponent } from './components/modal/modal-chs-welcome-container/child/login-lenovo-id/login-lenovo-id.component';
 import { UiLightingProfileComponent } from './components/ui/ui-lighting-profile/ui-lighting-profile.component';
 import { AutoupdateSettingsComponent } from './components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
-
-
-
-
 
 library.add(fas);
 library.add(fab);
@@ -353,7 +349,11 @@ library.add(fal);
 		AutoupdateSettingsComponent,
 		UiPopoverComponent,
 		ModalChsWelcomeContainerComponent,
-		LoginLenovoIdComponent
+		LoginLenovoIdComponent,
+		WidgetMacrokeySettingsComponent,
+		UiNumberButtonComponent,
+		UiMacrokeyDetailsComponent,
+		UiMacrokeyRecordedListComponent
 	],
 	imports: [
 		BrowserModule,
@@ -385,7 +385,7 @@ library.add(fal);
 		RegionService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
-	bootstrap: [AppComponent],
+	bootstrap: [ AppComponent ],
 	entryComponents: [
 		ModalLenovoIdComponent,
 		ModalWelcomeComponent,
@@ -404,9 +404,6 @@ library.add(fal);
 		ModalGamingLegionedgeComponent,
 		ModalChsWelcomeContainerComponent
 	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA
-	]
+	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
-export class AppModule {
-}
+export class AppModule {}
