@@ -27,13 +27,37 @@
                   <div class="row">
                     <div class="col-sm-12 col-md-6 col-lg-12 mb-60">
                       <div class="tryMcAfee card">
-                        <img src="./../../../../assets/images/gaming/try-mcafee.png"/>
+                          <vtr-container-card order="1"
+                          [itemID]="cardContentPositionA.Id"
+                          [img]="cardContentPositionA.FeatureImage"
+                          [title]="cardContentPositionA.Title"
+                          [logoText]="cardContentPositionA.BrandName"
+                          [action]="cardContentPositionA.Action"
+                          [actionType]="cardContentPositionA.ActionType"
+                          [actionLink]="cardContentPositionA.ActionLink"
+                          [type]="'article'"
+                          [ratioX]="4"
+                          [ratioY]="4">
+                        </vtr-container-card>
                       </div>
                     </div>
   
                     <div class="col-sm-12 col-md-6 col-lg-12 mb-60">
                       <div class="manage-pass card">
-                        <img src="./../../../../assets/images/gaming/manage-password.png"/>
+                          <vtr-container-card order="2"
+                          [itemID]="cardContentPositionB.id"
+                          [img]="cardContentPositionB.FeatureImage"
+                          [caption]="cardContentPositionB.Description"
+                          [title]="cardContentPositionB.Title"
+                          [logoText]="cardContentPositionB.BrandName"
+                          [action]="cardContentPositionB.Action"
+                          [actionType]="cardContentPositionB.ActionType"
+                          [actionLink]="cardContentPositionB.ActionLink"
+                          [type]="'corner'"
+                          [ratioX]="4"
+                          [ratioY]="2"
+                          [cornerShift]="'large'">
+                        </vtr-container-card>
                       </div>
                     </div>
                   </div>

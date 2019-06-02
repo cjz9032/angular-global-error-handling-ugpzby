@@ -42,77 +42,62 @@
     }
 
     .gaming-light-options {
-        margin-top: 9rem;
         margin-left: 4rem;
+        width: 50%;
         .light-option {
-            .content-title{
-                color: $gaming_lightest;
-                font-weight: $weight_medium;
-                font-size: 2rem;
-                letter-spacing: -0.02rem;
-                line-height: 2rem;
-            }
-        }
-    }
-    .lighting-list-option {
-        padding-left: 0;
-        list-style: none;
-        margin-top: 2rem;
-        li {
-            margin-bottom: 2rem;
-        }
-    }
-    .gaming-radio {
-        display: block;
-        position: relative;
-        padding-left: 3rem;
-        margin-bottom: 12px;
-        cursor: pointer;
-        font-size: 1.6rem;
-        color: $gaming_lightest;
-        line-height: 3rem;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        input {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-            &:checked {
-                &~.checkmark {
-                    background-color: transparent;
-                    &:after {
-                        display: block;
+            ::ng-deep{
+                .content-title{
+                    color: $gaming_lightest;
+                    font-weight: $weight_medium;
+                    font-size: 2rem;
+                    letter-spacing: -0.02rem;
+                    line-height: 2rem;
+                    margin-bottom: 2rem;
+                    margin-top: 6rem;
+                }
+                .main-title {
+                    font-size: 3rem;
+                    color: $gaming_lightest;
+                    padding: 0;
+                    margin-top: 3.5rem;
+                }
+                vtr-ui-lighting-effect {
+                    ::ng-deep{
+                        &.select-box{
+                            height: 4.8rem;
+                            line-height: 6.8rem;
+                            border-radius: 0.6rem;
+                            background: $gaming_shade;
+                            margin-bottom: 5rem;
+                            .dropdown-toggle {
+                                padding-left: 2rem;
+                                padding-right: 2rem;
+                                line-height: 4.8rem;
+                                .icon {
+                                    top: 0.3rem;
+                                }
+                            }
+                            .gaming-dropdown-menu {
+                                top: 4.9rem;
+                            }
+                        }
                     }
                 }
             }
         }
-        .checkmark {
-            &:after {
-                top: 50%;
-                left: 50%;
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                background:$gaming_light_blue;
-                transform: translateX(-50%) translateY(-50%);
-            }
-        }
     }
-    .checkmark {
-        position: absolute;
-        top: 0.4rem;
-        left: 0;
-        height: 20px;
-        width: 20px;
-        background-color: transparent;
-        border: 0.3rem solid $gaming_light_blue;
-        border-radius: 50%;
-        &:after {
-            content: "";
-            position: absolute;
-            display: none;
+    
+    .footer-part{
+        .link {
+            color: $gaming;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: $weight_bold;
+            font-size: 1.6rem;
+            display: inline-block;
+            margin-top: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid $gaming;
         }
     }
 }
