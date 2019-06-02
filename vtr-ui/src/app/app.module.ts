@@ -199,6 +199,9 @@ import { AutoupdateSettingsComponent } from './components/pages/page-device-upda
 import { UiLightingProfileToggleComponent } from './components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
 import { UiBrightnessSliderComponent } from './components/ui/ui-brightness-slider/ui-brightness-slider.component';
 import { SvgInlinePipe } from './pipe/svg-inline/svg-inline.pipe';
+import { UiLightingEffectComponent } from './components/ui/ui-lighting-effect/ui-lighting-effect.component';
+import { UiLightingSingleColorComponent } from './components/ui/ui-lighting-single-color/ui-lighting-single-color.component';
+import { UiLightingColorWheelComponent } from './components/ui/ui-lighting-color-wheel/ui-lighting-color-wheel.component';
 import { DisplayColorTempComponent } from './components/display/display-color-temp/display-color-temp.component';
 import { IntelligentMediaComponent } from './components/pages/page-smart-assist/intelligent-media/intelligent-media.component';
 import { SubpageDeviceSettingsSmartAssistComponent } from './components/pages/page-device-settings/children/subpage-device-settings-smart-assist/subpage-device-settings-smart-assist.component';
@@ -364,6 +367,9 @@ library.add(fal);
 		UiLightingProfileToggleComponent,
 		UiBrightnessSliderComponent,
 		SvgInlinePipe,
+		UiLightingEffectComponent,
+		UiLightingSingleColorComponent,
+		UiLightingColorWheelComponent,
 		SubpageDeviceSettingsSmartAssistComponent
 	],
 	imports: [
