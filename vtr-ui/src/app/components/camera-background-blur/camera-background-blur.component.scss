@@ -13,4 +13,9 @@
 				height: 100%;
 			}
 	}
+	::ng-deep .vtr-ui-rounded-rectangle-radio {
+		.icon-circle {
+			left: -8.5rem;
+		}
+	}
 }

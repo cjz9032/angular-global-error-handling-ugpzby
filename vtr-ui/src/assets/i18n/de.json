@@ -1017,7 +1017,7 @@
                 "describe": "Verwenden Sie die Bedrohungssuche, um die Sicherheit der Netzwerke um Sie herum zu ermitteln.",
                 "button": "Bedrohung überprüfen",
                 "connectionError": "Verbindungsfehler",
-                "tryAgain": "Wir konnten Ihre Einheit aufgrund fehlender Netzwerkverbindung nicht orten. Stellen Sie eine Internetverbindung her und versuchen Sie es erneut."
+                "tryAgain": "Wir konnten die Bedrohung aufgrund fehlender Netzwerkverbindung nicht orten. Stellen Sie eine Internetverbindung her und versuchen Sie es erneut."
             },
             "locationmodal": {
                 "title": "Standortdienste aktivieren",
@@ -1560,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Einstellungen",
+        "settings": "Einstellungen",
+        "settingsDescription": "Auf der Einstellungsseite können Sie Ihre Nachrichtenbenachrichtigung basierend auf den Kategorien der Vantage-Nachricht ein- und ausschalten. Bitte beachten Sie, dass Sie auch wenn alle Nachrichtenkategorien deaktiviert sind, gelegentlich noch systemkritische Nachrichten von Vantage erhalten können, wenn nötig.",
+        "messagesInLenovoVantage": "Nachrichten in Lenovo Vantage",
+        "appFeatures": "App-Funktionen",
+        "appFeaturesDescription": "Meldungen zu System Update, Artikeln und anderen nennenswerten Funktionen.",
+        "marketing": "Marketing",
+        "marketingDescription": "Werbemeldungen mit Lenovo Sonderangeboten.",
+        "actionTriggered": "Ausgelöste Aktion",
+        "actionTriggeredDescription": "Nachrichten, die durch die Auswahl von Einstellungen ausgelöst werden, wie z. B. die automatische Installation kritischer/empfohlener Updates.",
+        "OtherSettings": "Weitere Einstellungen",
+        "usageStatistics": "Verwendungsstatistiken",
+        "usageStatisticsDescription": "Anonyme Verwendungsstatistik an Lenovo senden.",
+        "Note": "Hinweis: ",
+        "settingsNotes": "Alle Einstellungen auf dieser Seite erfordern einen Neustart durch den Benutzer, damit sie wirksam werden."
     }
 }

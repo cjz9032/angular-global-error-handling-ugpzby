@@ -1017,7 +1017,7 @@
                 "describe": "Utilizați detectorul de amenințări pentru a determina siguranța rețelelor din jurul dvs.",
                 "button": "Verificați amenințarea",
                 "connectionError": "Eroare de conexiune",
-                "tryAgain": "Nu vă putem localiza dispozitivul, deoarece rețeaua nu este disponibilă. Vă rugăm să vă conectați la internet și să încercați din nou."
+                "tryAgain": "Nu putem localiza amenințarea din cauză că rețeaua nu este disponibilă. Conectați-vă la internet și încercați din nou."
             },
             "locationmodal": {
                 "title": "Activare servicii de localizare",
@@ -1560,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Setări de preferințe",
+        "settings": "Setări",
+        "settingsDescription": "În pagina de setare a preferințelor, puteți alege să activați/dezactivați notificările pentru mesaje în funcție de categoria mesajului Vantage. Rețineți că, indiferent dacă toate categoriile de mesaje sunt dezactivate, puteți primi ocazional mesaje critice de sistem din partea Vantage când este necesar.",
+        "messagesInLenovoVantage": "Mesaje în Lenovo Vantage",
+        "appFeatures": "Caracteristici aplicație",
+        "appFeaturesDescription": "Mesaje referitoare la System Update, articole și alte caracteristici notabile.",
+        "marketing": "Comercializare",
+        "marketingDescription": "Mesaje de promovare, inclusiv oferte speciale Lenovo.",
+        "actionTriggered": "Acțiuni declanșate",
+        "actionTriggeredDescription": "Mesaje declanșate de setările alese de utilizator, precum instalarea automată a actualizărilor critice/recomandate.",
+        "OtherSettings": "Alte setări",
+        "usageStatistics": "Statistici utilizare",
+        "usageStatisticsDescription": "Trimiteţi statisticile de utilizare anonimă la Lenovo.",
+        "Note": "Notă: ",
+        "settingsNotes": "toate setările de pe această pagină vor avea efect doar după repornire."
     }
 }

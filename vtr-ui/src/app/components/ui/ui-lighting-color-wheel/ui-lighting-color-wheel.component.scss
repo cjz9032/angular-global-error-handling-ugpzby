@@ -1,0 +1,28 @@
+@import "../../../app.theme.scss";
+
+.color-wheel{
+    .img-responsive {
+        max-width: 30rem;
+        max-height: 30rem;
+    }
+    .rgb-values {
+        .form-group{
+            margin-left: 2rem;
+            label {
+                width: 2.4rem;
+                font-size: 1.6rem;
+                color: $gaming_lightest;
+            }
+            input {
+                height: 3rem;
+                width: 6rem;
+                background: $gaming_shade;
+                font-size: 1.6rem;
+                color: $gaming_lightest;
+                border: none;
+                box-sizing: border-box;
+                padding: 0.6rem;
+            }
+        }
+    }
+}

@@ -333,64 +333,64 @@
                         "li-polymer": "锂聚合物",
                         "li-ion": "锂离子电池",
                         "li_polymer": "锂聚合物",
-						"li_ion": "锂离子电池"
+                        "li_ion": "锂离子电池"
                     },
                     "manufacturer": {
-						"title": "制造商",
-						"celxpert": "Celxpert",
-						"smp": "SMP"
-					}
+                        "title": "制造商",
+                        "celxpert": "Celxpert",
+                        "smp": "SMP"
+                    }
                 },
                 "condition": {
-					"Illegal": {
-						"title": "该系统可能不支持电池",
-						"description": "不是联想制造或授权的正版。系统将继续启动，但可能不会使用未经授权的电池充电。",
-						"description1": "注意：",
-						"description2": "Lenovo对未经授权的电池的性能或安全性不承担任何责任，并且不对因使用而导致的故障或损坏提供任何保证。"
-					},
-					"Good": {
-						"title": "电池状况良好"
-					},
-					"Exhaustion": {
-						"title": "电池因正常而发生故障",
-						"description": "穿。电池无法充电。更换电池。"
-					},
-					"Bad": {
-						"title": "发生电池错误。",
-						"description": "电池无法充电/放电。更换电池。"
-					},
-					"NotDetected": {
-						"title": "没有检测到电池",
-						"description": "插上电池。"
-					},
-					"NotGood": {
-						"title": "电池状况不佳"
-					},
-					"LimitedACAdapterSupport": {
-						"title": "有限支持AC适配器"
-					},
-					"NotSupportACAdapter": {
-						"title": "不支持AC适配器"
-					},
-					"ACAdapterNotSupported": {
-						"title":"不支持AC适配器。",
-						"description": "您的Lenovo计算机不支持此AC适配器。它可能会导致突然关机。请连接正确的AC适配器"
-					},
-					"EnoughPowerACAdapter": {
-						"title": "AC适配器无法提供足够的电量",
-						"description": "您的Lenovo计算机将影响系统性能和充电速度。请重新连接正确的AC适配器。"
-					},
-					"MissingDriver": {
-						"title": "Lenovo Power Manager驱动程序未安装或无法正常工作。请运行Windows Update以安装最新的驱动程序",
-						"description": "未安装或无法正常工作。请运行Windows Update以安装最新的驱动程序"
-					},
-					"StoreLimitation": {
-						"title": "电池只能存放",
-						"description1": "的",
-						"description2":  "它是原始的完全充电容量"
-					}
-				}
-			},
+                    "Illegal": {
+                        "title": "该系统可能不支持电池",
+                        "description": "不是联想制造或授权的正版。系统将继续启动，但可能不会使用未经授权的电池充电。",
+                        "description1": "注意：",
+                        "description2": "Lenovo对未经授权的电池的性能或安全性不承担任何责任，并且不对因使用而导致的故障或损坏提供任何保证。"
+                    },
+                    "Good": {
+                        "title": "电池状况良好"
+                    },
+                    "Exhaustion": {
+                        "title": "电池因正常而发生故障",
+                        "description": "穿。电池无法充电。更换电池。"
+                    },
+                    "Bad": {
+                        "title": "发生电池错误。",
+                        "description": "电池无法充电/放电。更换电池。"
+                    },
+                    "NotDetected": {
+                        "title": "没有检测到电池",
+                        "description": "插上电池。"
+                    },
+                    "NotGood": {
+                        "title": "电池状况不佳"
+                    },
+                    "LimitedACAdapterSupport": {
+                        "title": "有限支持AC适配器"
+                    },
+                    "NotSupportACAdapter": {
+                        "title": "不支持AC适配器"
+                    },
+                    "ACAdapterNotSupported": {
+                        "title": "不支持AC适配器。",
+                        "description": "您的Lenovo计算机不支持此AC适配器。它可能会导致突然关机。请连接正确的AC适配器"
+                    },
+                    "EnoughPowerACAdapter": {
+                        "title": "AC适配器无法提供足够的电量",
+                        "description": "您的Lenovo计算机将影响系统性能和充电速度。请重新连接正确的AC适配器。"
+                    },
+                    "MissingDriver": {
+                        "title": "Lenovo Power Manager驱动程序未安装或无法正常工作。请运行Windows Update以安装最新的驱动程序",
+                        "description": "未安装或无法正常工作。请运行Windows Update以安装最新的驱动程序"
+                    },
+                    "StoreLimitation": {
+                        "title": "电池只能存放",
+                        "description1": "的",
+                        "description2": "它是原始的完全充电容量"
+                    }
+                }
+            },
             "power": {
                 "title": "电源管理",
                 "subtitle": "电源设置",
@@ -812,10 +812,10 @@
             "downloadSize": "Download size: ",
             "diskSpaceNeeded": "Disk space needed: ",
             "ignore": "Ignore",
-			"attend": "Attend",
-			"rebootRequiredTag": "Reboot Required",
-			"rebootDelayTag": "Reboot Required, Power Source Required",
-			"shutdownRequiredTag": "Shutdown Required"
+            "attend": "Attend",
+            "rebootRequiredTag": "Reboot Required",
+            "rebootDelayTag": "Reboot Required, Power Source Required",
+            "shutdownRequiredTag": "Shutdown Required"
         },
         "availableUpdates": {
             "title": "Available updates",
@@ -997,7 +997,7 @@
                 "describe": "使用威胁检测程序来确定您周围网络的安全性。",
                 "button": "检查威胁",
                 "connectionError": "连接错误",
-                "tryAgain": "由于网络不可用，我们无法找到您的设备，请连接因特网并重试。"
+                "tryAgain": "由于网络不可用，我们无法找到针对您的威胁，请连接到因特网并重试。"
             },
             "locationmodal": {
                 "title": "启用位置服务",
@@ -1541,5 +1541,22 @@
             "music": "音乐",
             "science": "科学"
         }
+    },
+    "settings": {
+        "preferenceSettings": "首选项设置",
+        "settings": "设置",
+        "settingsDescription": "在“首选项设置”页面，您可以根据 Vantage 的消息类别来选择开启/关闭消息通知，请注意，即使禁用所有消息类别，您仍可能偶尔收到 Vantage 在必要时发出的系统重要消息。",
+        "messagesInLenovoVantage": "Lenovo Vantage 中的消息",
+        "appFeatures": "应用程序功能",
+        "appFeaturesDescription": "有关 System Update、文章和其他重要功能的消息。",
+        "marketing": "市场营销",
+        "marketingDescription": "包括 Lenovo 特别优惠在内的促销消息。",
+        "actionTriggered": "触发的操作",
+        "actionTriggeredDescription": "用户选择设置（如自动安装关键/推荐更新）触发的消息。",
+        "OtherSettings": "其他设置",
+        "usageStatistics": "使用情况统计信息",
+        "usageStatisticsDescription": "向 Lenovo 发送匿名的使用情况统计信息。",
+        "Note": "注意：",
+        "settingsNotes": "用户需重新启动才能使此页面中的所有设置生效。"
     }
 }
