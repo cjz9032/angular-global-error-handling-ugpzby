@@ -181,6 +181,9 @@ import { WidgetHomeSecurityDeviceComponent } from './components/widgets/widget-h
 import { WidgetSecurityStatusComponent } from './components/widgets/widget-security-status/widget-security-status.component';
 import { WidgetMcafeeComponent } from './components/widgets/widget-mcafee/widget-mcafee.component';
 import { WidgetHomeSecurityAccountStatusComponent } from './components/widgets/widget-home-security-account-status/widget-home-security-account-status.component';
+import { WidgetHomeSecurityMyDeviceComponent } from './components/widgets/widget-home-security-my-device/widget-home-security-my-device.component';
+import { WidgetHomeSecurityAllDevicesComponent } from './components/widgets/widget-home-security-all-devices/widget-home-security-all-devices.component';
+
 
 // SA pipes
 import { JoinclassPipe } from './pipe/security-wifi/join-class.pipe';
@@ -373,7 +376,9 @@ library.add(fal);
 		UiLightingEffectComponent,
 		UiLightingSingleColorComponent,
 		UiLightingColorWheelComponent,
-		SubpageDeviceSettingsSmartAssistComponent
+		SubpageDeviceSettingsSmartAssistComponent,
+		WidgetHomeSecurityMyDeviceComponent,
+		WidgetHomeSecurityAllDevicesComponent
 	],
 	imports: [
 		BrowserModule,

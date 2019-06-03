@@ -161,6 +161,13 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	public getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity {
+		if (this.phoenix) {
+			return this.phoenix.connectedHomeSecurity;
+		}
+		return undefined;
+	}
 	/**
 	 * returns hardware settings object from VantageShellService of JS Bridge
 	 */
