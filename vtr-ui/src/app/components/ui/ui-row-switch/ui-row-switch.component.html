@@ -1,7 +1,8 @@
 <div class="vtr-ui-switch-row"
 	[ngClass]="{
 		'white-theme': theme === 'white',
-		'blue-theme': theme === 'blue'
+		'blue-theme': theme === 'blue',
+		'last-child': isLastChild
 	}">
 	<div class="container-fluid p-0"
 		[ngClass]="{'vtr-disabled': disabled}">

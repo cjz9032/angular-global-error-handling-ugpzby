@@ -694,7 +694,13 @@
                             "endTime": "60 minutes"
                         }
                     }
-                }
+                },
+				"intelligentMedia": {
+					"heading": "Intelligent Media",
+					"title": "Zero Touch Video Playback",
+					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+				}
             }
         }
     },
@@ -1011,7 +1017,7 @@
                 "describe": "위협 감지기를 사용하여 주변 네트워크의 안전성을 확인합니다.",
                 "button": "위협 확인",
                 "connectionError": "접속 오류",
-                "tryAgain": "가용 네트워크가 없어서 기기를 찾을 수 없습니다. 인터넷에 접속하여 다시 시도하십시오."
+                "tryAgain": "가용 네트워크가 없어서 위협을 찾을 수 없습니다. 인터넷에 접속하여 다시 시도하십시오."
             },
             "locationmodal": {
                 "title": "위치 서비스 사용",
@@ -1554,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "기본 설정 지정",
+        "settings": "설정",
+        "settingsDescription": "환경 설정 페이지에서 Vantage의 메시지 범주를 기반으로 메시지 알림을 켜거나 끌 수 있습니다. 모든 메시지 범주가 비활성화되어 있어도 필요에 따라 때때로 Vantage에서 시스템 중요 메시지를 받는 경우가 있습니다.",
+        "messagesInLenovoVantage": "Lenovo Vantage 메시지",
+        "appFeatures": "앱 기능",
+        "appFeaturesDescription": "System Update, 기사 및 기타 추천 기능과 관련된 메시지입니다.",
+        "marketing": "판매",
+        "marketingDescription": "Lenovo 특별제안을 포함한 프로모션 메시지.",
+        "actionTriggered": "트리거된 작업",
+        "actionTriggeredDescription": "중요/권장 업데이트 자동 설치와 같은 사용자 선택 설정에 의해 트리거된 메시지.",
+        "OtherSettings": "기타 설정",
+        "usageStatistics": "사용 현황 통계",
+        "usageStatisticsDescription": "Lenovo에 익명으로 사용 통계 보내기.",
+        "Note": "참고: ",
+        "settingsNotes": "이 페이지의 모든 설정을 적용하려면 사용자를 다시 시작해야 합니다."
     }
 }

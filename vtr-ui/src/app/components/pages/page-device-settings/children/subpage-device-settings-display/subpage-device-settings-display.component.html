@@ -22,11 +22,38 @@
 					<li class="pt-3"
 						*ngIf="eyeCareModeStatus.available">
 						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
+							componentName="Display color temperature"
+							[name]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
+							[caption]=""
+							[isSwitchVisible]="false"
+							[leftIcon]="['fal', 'eye']"
+							[readMoreText]="''"
+							[showChildContent]="true"
+							[theme]="'white'"
+							[tooltipText]="'device.deviceSettings.displayCamera.display.dispColorTemp.tooltip' | translate">
+							<div class="row">
+								<div class="col-12">
+									<vtr-display-color-temp [displayColorTempSettings]="eyeCareDataSource"
+										[enableSlider]="false"
+										[manualRefresh]="manualRefresh"
+										(resetTemparature)="onResetTemparature($event)"
+										>
+									</vtr-display-color-temp>
+								</div>
+							</div>
+						</vtr-ui-row-switch>
+					</li>
+
+					<li class="pt-3"
+						*ngIf="eyeCareModeStatus.available">
+						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
 							componentName="Eye Care Mode"
 							[name]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
 							[caption]=""
 							[isSwitchVisible]="true"
+							[isLastChild]=true
 							[leftIcon]="['fal', 'eye']"
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
@@ -49,8 +76,7 @@
 							</div>
 						</vtr-ui-row-switch>
 					</li>
-					<li class="pt-3"
-						*ngIf="eyeCareModeStatus.available">
+					<li class="pt-3">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.display.oledPowerSettings.title' | translate"
 							componentName="Oled Power Settings"
@@ -74,6 +100,7 @@
 							</div>
 						</vtr-ui-row-switch>
 					</li>
+
 					<li class="pt-3">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.display.privacyGuard.title' | translate"
@@ -120,6 +147,7 @@
 						<vtr-ui-row-switch [title]="'Display Priority Control'"
 							[caption]="'Configures microphone effect to enhance your audio experience by different scenarios and environment.'"
 							[isSwitchVisible]="false"
+							[isLastChild]=true
 							[leftIcon]="['far', 'gem']"
 							[readMoreText]="''"
 							[showChildContent]="true"
@@ -180,6 +208,7 @@
 							[name]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
 							[type]="'Camera'"
 							[isSwitchVisible]="false"
+							[isLastChild]="!cameraBlur.available || cameraBlur.errorCode !== 0"
 							[leftIcon]="['fal', 'camera']"
 							[showChildContent]="true"
 							[resetText]="'device.deviceSettings.displayCamera.camera.camera.reset' | translate"
@@ -217,6 +246,7 @@
 							componentName="Camera Background Blur"
 							[caption]="'device.deviceSettings.displayCamera.camera.camerablur.caption' | translate"
 							[isSwitchVisible]="true"
+							[isLastChild]=true
 							[leftIcon]="['fal', 'gem']"
 							[rightIcon]="['far', 'question-circle']"
 							[showChildContent]="true"

@@ -33,6 +33,7 @@ export class UiListCheckboxComponent implements OnInit {
 	public isIgnored = false;
 	public severity = UpdateInstallSeverity.Optional;
 	public packageName: string;
+	public packageID: string;
 	// Random number is used to have unique id of each input field
 	randomNumber: number = Math.floor(new Date().valueOf() * Math.random());
 
@@ -55,6 +56,7 @@ export class UiListCheckboxComponent implements OnInit {
 
 	onTooltipClick(update: AvailableUpdateDetail, tooltip: NgbTooltip) {
 		if (tooltip && !tooltip.isOpen()) {
+			this.packageID = update.packageID;
 			this.isIgnored = update.isIgnored;
 			this.severity = update.packageSeverity;
 			this.packageName = update.packageName;

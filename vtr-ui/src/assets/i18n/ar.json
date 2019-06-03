@@ -694,7 +694,13 @@
                             "endTime": "60 minutes"
                         }
                     }
-                }
+                },
+				"intelligentMedia": {
+					"heading": "Intelligent Media",
+					"title": "Zero Touch Video Playback",
+					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+				}
             }
         }
     },
@@ -1011,7 +1017,7 @@
                 "describe": "استخدم محدد مواقع التهديدات للتعرف على مدى سلامة الشبكات من حولك.",
                 "button": "التحقق من التهديد",
                 "connectionError": "خطأ في الاتصال",
-                "tryAgain": "تعذر علينا تحديد مكان الجهاز الخاص بك نظرًا لعدم توفر الشبكة، يرجى الاتصال بالإنترنت وحاول مرة أخرى."
+                "tryAgain": "تعذر علينا تحديد مكان التهديد لك نظرًا لعدم توفر الشبكة، يرجى الاتصال بالإنترنت وحاول مرة أخرى."
             },
             "locationmodal": {
                 "title": "تمكين خدمات تحديد الموقع",
@@ -1554,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "إعدادات التفضيل",
+        "settings": "الإعدادات",
+        "settingsDescription": "في صفحة إعداد التفضيلات، يمكنك اختيار تشغيل/إيقاف تشغيل إخطار الرسائل الخاص بك استنادًا إلى فئات رسالة Vantage، يرجى ملاحظة أنه حتى إذا تم تعطيل جميع فئات الرسائل، فربما تظل تتلقى في بعض الأحيان رسالة هامة من نظام Vantage عند الضرورة.",
+        "messagesInLenovoVantage": "الرسائل في Lenovo Vantage",
+        "appFeatures": "ميزات التطبيق",
+        "appFeaturesDescription": "الرسائل المتعلقة System Update والمقالات وغيرها من الميزات المثيرة للاهتمام.",
+        "marketing": "التسويق",
+        "marketingDescription": "رسائل الترويج بما في ذلك العروض الخاصة من Lenovo.",
+        "actionTriggered": "الرسائل التي تشغلها إجراءات",
+        "actionTriggeredDescription": "الرسائل التي يتم تشغيلها عن طريق اختيار المستخدم للإعدادات مثل تثبيت التحديثات الهامة / الموصى بها تلقائيًا.",
+        "OtherSettings": "إعدادات أخرى",
+        "usageStatistics": "إحصائيات الاستخدام",
+        "usageStatisticsDescription": "أرسل إحصائيات استخدام مجهولة الهوية إلى Lenovo.",
+        "Note": "ملاحظة: ",
+        "settingsNotes": "ستحتاج جميع الإعدادات في هذه الصفحة من المستخدمين إلى إعادة التشغيل حتى تصبح نافذة المفعول."
     }
 }

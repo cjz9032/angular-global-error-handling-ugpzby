@@ -13,111 +13,16 @@
         padding: 4rem;
         height: auto;
     }
-
-    .multi-state-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 5rem;
-        width: 80%;
-        border-radius: 5rem;
-        margin: auto;
-        background: $gaming_dark;
-        position: relative;
-        z-index: 0;
-        box-sizing: border-box;
-        background-clip: padding-box;
-        border: solid 0.2rem transparent;
-        &::after {
-            content: ' ';
-            position: absolute;
-            border-radius: 5rem;
-            top: 0rem;
-            left: 0rem;
-            bottom: 0rem;
-            right: 0rem;
-            margin: 0rem;
-            background: $gaming_dark;
-            z-index: -1;
-        }
-        &::before {
-            content: ' ';
-            position: absolute;
-            border-radius: 5rem;
-            top: 0rem;
-            left: 0rem;
-            bottom: 0rem;
-            right: 0rem;
-            margin: -0.2rem;
-            background-image: $gaming_lighting_gradient;
-            z-index: -1;
-        }
-
-        input {
-            opacity: 0;
-            position: absolute;
-            left: 0;
-            margin: 0;
-            padding: 0;
-            & ~ label {
-                color: $gaming;
-                font-size: 1.8rem;
-                width: 25%;
-                height: 4.2rem;
-                border-radius: 4.2rem;
-                margin: 0.4rem 0.2rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: relative;
-                z-index: 1;
-                cursor: pointer;
-            }
-        }
-
-        .toggle {
-            position: absolute;
-            background: $gaming_lighting_gradient;
-            width: 25%;
-            height: 4.2rem;
-            border-radius: 4.2rem;
-            margin: 0.4rem 0.2rem;
-            transition: all .3s ease-in-out;
-            left: 0;
-        }
-        #off_radio:checked {
-            & ~ #off {
-                color: $gaming_lightest;
-            }
-            & ~ .toggle {
-                left: 0%;
-            }
-        }
-        #first_radio:checked {
-            & ~ #first_lbl {
-                color: $gaming_lightest;
-            }
-            & ~ .toggle {
-                left: 25%;
-            }
-        }
-        #second_radio:checked {
-            & ~ #second_lbl {
-                color: $gaming_lightest;
-            }
-            & ~ .toggle {
-                left: 50%;
-            }
-        }
-        #third_radio:checked {
-            & ~ #third_lbl {
-                color: $gaming_lightest;
-            }
-            & ~ .toggle {
-                left: 74.5%;
-            }
-        }
+    vtr-ui-lighting-profile-toggle {
+        width: 75%;
     }
+    vtr-ui-brightness-slider {
+        width: 20%;
+    }
+
+    // brightness slider   
+
+
     .lighting-area {
         min-height: 40rem;
         margin-top: 2.2rem;
@@ -185,12 +90,13 @@
         }
         .checkmark {
             &:after {
-                top: 2px;
-                left: 2px;
+                top: 50%;
+                left: 50%;
                 width: 12px;
                 height: 12px;
                 border-radius: 50%;
                 background:$gaming_light_blue;
+                transform: translateX(-50%) translateY(-50%);
             }
         }
     }
