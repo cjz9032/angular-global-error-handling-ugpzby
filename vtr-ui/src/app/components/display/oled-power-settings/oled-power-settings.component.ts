@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { interval } from '../../../data-models/common/interval.model'
 
 @Component({
   selector: 'vtr-oled-power-settings',
@@ -8,14 +9,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class OledPowerSettingsComponent implements OnInit {
   @Input() description : any ;
   
-  interval: Object[];
+  interval: interval[];
   title: string;
 
 	constructor() { }
 
 	ngOnInit() { 
     this.interval = [{
-      name: 'Always On',
+      name: 'On',
       value: 0
     },
     {
