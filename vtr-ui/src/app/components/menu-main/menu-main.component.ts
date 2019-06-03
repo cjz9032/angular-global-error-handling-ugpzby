@@ -273,9 +273,9 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 					/**
 					* check if HPD related features are supported or not. If yes show Smart Assist tab else hide. Default is hidden
 					*/
-					this.smartAssist.getHPDCapability()
+					this.smartAssist.getHPDAvailability()
 						.then((isAvailable: boolean) => {
-							console.log('getHPDStatus.getHPDCapability()', isAvailable);
+							console.log('getHPDStatus.getHPDAvailability()', isAvailable);
 							isAvailable = true;
 							this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
 							if (isAvailable) {
@@ -293,7 +293,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 							}
 						})
 						.catch(error => {
-							console.log('error in getHPDStatus.getHPDCapability()', error);
+							console.log('error in getHPDStatus.getHPDAvailability()', error);
 						});
 				}
 			}
