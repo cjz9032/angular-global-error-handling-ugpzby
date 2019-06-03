@@ -403,16 +403,33 @@ export class SystemUpdateService {
 	}
 
 	public isRebootRequested(): boolean {
-		if (this.updateInfo) {
-			const delayedPackages = this.updateInfo.updateList.filter(pkg => {
+		if (this.installedUpdates) {
+			const forcedRebootPackages = this.installedUpdates.filter(pkg => {
+				return pkg.packageRebootType.toLowerCase() === 'rebootforced' && pkg.isInstalled;
+			});
+			// if forced reboot packages are there then don't show reboot requested dialog/modal
+			if (forcedRebootPackages.length > 0) {
+				return false;
+			}
+
+			const forcedPowerOffPackages = this.installedUpdates.filter(pkg => {
+				return pkg.packageRebootType.toLowerCase() === 'poweroffforced' && pkg.isInstalled;
+			});
+			// if forced poweroff packages are there then don't show reboot requested dialog/modal
+			if (forcedPowerOffPackages.length > 0) {
+				return false;
+			}
+
+			const delayedPackages = this.installedUpdates.filter(pkg => {
 				return pkg.packageRebootType.toLowerCase() === 'rebootdelayed' && pkg.isInstalled;
 			});
 			// if reboot delayed packages are there then don't show reboot requested dialog/modal
 			if (delayedPackages.length > 0) {
 				return false;
 			}
-			for (let index = 0; index < this.updateInfo.updateList.length; index++) {
-				const update = this.updateInfo.updateList[index];
+
+			for (let index = 0; index < this.installedUpdates.length; index++) {
+				const update = this.installedUpdates[index];
 				if (update.packageRebootType.toLowerCase() === 'rebootrequested' && update.isInstalled) {
 					return true;
 				}
