@@ -257,7 +257,7 @@ export class SystemUpdateService {
 	public installAllUpdates(removeDelayedUpdates: boolean) {
 		if (this.systemUpdateBridge && this.isUpdatesAvailable) {
 			this.selectCoreqUpdateForInstallAll();
-			const unIgnoredUpdates = this.getUnIgnoredUpdates(this.updateInfo.updateList);
+			const unIgnoredUpdates = this.getUnIgnoredUpdatesForInstallAll(this.updateInfo.updateList);
 			const updates = this.mapToInstallRequest(unIgnoredUpdates, removeDelayedUpdates);
 			this.installUpdates(updates, true);
 		}
@@ -361,7 +361,7 @@ export class SystemUpdateService {
 	private selectCoreqUpdateForInstallAll() {
 		if (this.updateInfo.updateList && this.updateInfo.updateList.length > 0) {
 			this.updateInfo.updateList.forEach((update) => {
-				if(update.coreqPackageID) {
+				if(update.coreqPackageID && !update.isIgnored) {
 					const coreqPackages = update.coreqPackageID.split(',');
 					this.selectCoreqUpdate(this.updateInfo.updateList, coreqPackages, true);
 				}
@@ -403,16 +403,33 @@ export class SystemUpdateService {
 	}
 
 	public isRebootRequested(): boolean {
-		if (this.updateInfo) {
-			const delayedPackages = this.updateInfo.updateList.filter(pkg => {
+		if (this.installedUpdates) {
+			const forcedRebootPackages = this.installedUpdates.filter(pkg => {
+				return pkg.packageRebootType.toLowerCase() === 'rebootforced' && pkg.isInstalled;
+			});
+			// if forced reboot packages are there then don't show reboot requested dialog/modal
+			if (forcedRebootPackages.length > 0) {
+				return false;
+			}
+
+			const forcedPowerOffPackages = this.installedUpdates.filter(pkg => {
+				return pkg.packageRebootType.toLowerCase() === 'poweroffforced' && pkg.isInstalled;
+			});
+			// if forced poweroff packages are there then don't show reboot requested dialog/modal
+			if (forcedPowerOffPackages.length > 0) {
+				return false;
+			}
+
+			const delayedPackages = this.installedUpdates.filter(pkg => {
 				return pkg.packageRebootType.toLowerCase() === 'rebootdelayed' && pkg.isInstalled;
 			});
 			// if reboot delayed packages are there then don't show reboot requested dialog/modal
 			if (delayedPackages.length > 0) {
 				return false;
 			}
-			for (let index = 0; index < this.updateInfo.updateList.length; index++) {
-				const update = this.updateInfo.updateList[index];
+
+			for (let index = 0; index < this.installedUpdates.length; index++) {
+				const update = this.installedUpdates[index];
 				if (update.packageRebootType.toLowerCase() === 'rebootrequested' && update.isInstalled) {
 					return true;
 				}
@@ -632,10 +649,10 @@ export class SystemUpdateService {
 		return undefined;
 	}
 
-	public getUnIgnoredUpdates(updateList: Array<AvailableUpdateDetail>): Array<AvailableUpdateDetail> {
+	public getUnIgnoredUpdatesForInstallAll(updateList: Array<AvailableUpdateDetail>): Array<AvailableUpdateDetail> {
 		if (updateList && updateList.length > 0) {
 			const updates = updateList.filter((value) => {
-				return value.isSelected || !value.isIgnored;
+				return !value.isIgnored || (value.isIgnored && value.isDependency);
 			});
 			return updates;
 		}

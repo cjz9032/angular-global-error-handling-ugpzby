@@ -32,7 +32,6 @@ export class PageSmartAssistComponent implements OnInit {
 	public intelligentSecurity: IntelligentSecurity;
 	public intelligentSecurityCopy: IntelligentSecurity;
 	public autoScreenLockTimer = false;
-	public distanceSensitivityTitle: string;
 	public zeroTouchLoginStatus = new FeatureStatus(false, true);
 	public zeroTouchLockTitle: string;
 	public autoScreenLockStatus: boolean[];
@@ -165,9 +164,6 @@ export class PageSmartAssistComponent implements OnInit {
 	public setIsThinkPad(isThinkPad) {
 		// service call to fetch type of device
 		this.isThinkPad = isThinkPad;
-		this.distanceSensitivityTitle = this.isThinkPad ?
-			'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title1' : 'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title2';
-		// this.zeroTouchLockTitle = 'device.smartAssist.intelligentSecurity.zeroTouchLock.title1';
 	}
 
 	public launchPowerAndSleep() {

@@ -84,8 +84,8 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 			}
 			const chemistry: string = response.detail[i].deviceChemistry;
 			response.detail[i].deviceChemistry = this.translate.instant('device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase());
-			const manufacturer: string = response.detail[i].manufacturer;
-			response.detail[i].manufacturer = this.translate.instant('device.deviceSettings.batteryGauge.details.manufacturer.' + manufacturer.toLowerCase());
+			// const manufacturer: string = response.detail[i].manufacturer;
+			// response.detail[i].manufacturer = this.translate.instant('device.deviceSettings.batteryGauge.details.manufacturer.' + manufacturer.toLowerCase());
 		}
 		this.dataSource = response.detail;
 		this.dataSourceGauge = response.gauge;
@@ -108,12 +108,20 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	isValid(val: number) {
-		if (val === undefined || val === 0) {
-			return false;
+	isValid(val: number|string) {
+		if (typeof val === 'number') {
+			if (val === undefined || val === 0) {
+				return false;
+			}
+		}
+		if (typeof val === 'string') {
+			if (val === undefined || val === '') {
+				return false;
+			}
 		}
 		return true;
 	}
+
 
 	ngOnDestroy() {
 		// clearTimeout(this.batteryTimer);

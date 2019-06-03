@@ -4,6 +4,10 @@ import { SupportService } from '../../../services/support/support.service';
 import { DeviceService } from '../../../services/device/device.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { TranslateService } from '@ngx-translate/core';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { CommonService } from 'src/app/services/common/common.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'vtr-page-support',
@@ -22,6 +26,8 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	warranty: any;
 	pageDuration: number;
 	location: any;
+	isOnline: boolean;
+	notificationSubscription: Subscription;
 	warrantyNormalUrl = 'https://pcsupport.lenovo.com/us/en/warrantylookup';
 	langText = 'en';
 	// langText = 'zh-hans';
@@ -90,14 +96,22 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			}
 		],
 	};
+	offlineImages = [
+		'assets/images/support/support-offline-1.jpg',
+		'assets/images/support/support-offline-2.jpg',
+		'assets/images/support/support-offline-3.jpg',
+		'assets/images/support/support-offline-4.jpg',
+	];
 
 	constructor(
 		public mockService: MockService,
 		public supportService: SupportService,
 		public deviceService: DeviceService,
 		private translate: TranslateService,
-		private cmsService: CMSService
+		private cmsService: CMSService,
+		private commonService: CommonService,
 	) {
+		this.isOnline = this.commonService.isOnline;
 	}
 
 	ngOnInit() {
@@ -105,6 +119,9 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		this.getMachineInfo();
 		this.fetchCMSContents(this.langText);
 		this.fetchCMSArticleCategory(this.langText);
+		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
+			this.onNotification(response);
+		});
 		// console.log('Open support page.');
 		this.location = window.location.href.substring(window.location.href.indexOf('#') + 2).split('/').join('.');
 		this.pageDuration = 0;
@@ -123,6 +140,23 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		};
 		this.supportService.sendMetricsAsync(pageViewMetrics);
 		// console.log(pageViewMetrics);
+	}
+
+	onNotification(notification: AppNotification) {
+		if (notification) {
+			const { type, payload } = notification;
+			switch (type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
+		}
+	}
+
+	onGetSupportClick($event: any) {
 	}
 
 	getMachineInfo() {

@@ -1,0 +1,9 @@
+<ul>
+	<ng-container *ngFor="let number of numbers;">
+		<li [ngClass]="{'selected': number.isSelected, 'macro-exists': number.isMacrokeyExists}" (click)="numberClicked(number)">
+			<div>
+				{{ number.value | translate }}
+			</div>
+		</li>
+	</ng-container>
+</ul>
