@@ -3,7 +3,8 @@ import {
 	OnInit,
 	NgZone,
 	OnDestroy,
-	HostListener
+	HostListener,
+	EventEmitter
 } from '@angular/core';
 import {
 	HomeSecurityHomeGroup
@@ -46,17 +47,18 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	myHomes: Map < string,
 	HomeSecurityHomeGroup > ;
 	securityAdvisor: SecurityAdvisor;
-	wifiSecurity: WifiSecurity;
 	notifications: HomeSecurityNotification;
 	account: HomeSecurityAccount;
 	pageStatus: HomeSecurityPageStatus;
+	eventEmitter = new EventEmitter();
 
 	welcomeModel: HomeSecurityWelcome;
 	connectedHomeSecurity: ConnectedHomeSecurity;
 	permission: any;
 
 
-	allDeviceWidgetStatus = 1;
+
+	testStatus = ['lessDevices-secure', 'moreDevices-needAttention', 'noneDevices', 'tralExpired', 'lessDevices-needAttention', 'moreDevices-secure'];
 
 	constructor(
 		private vantageShellService: VantageShellService,
@@ -70,7 +72,6 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		this.connectedHomeSecurity = vantageShellService.getConnectedHomeSecurity();
 		this.permission = vantageShellService.getPermission();
-		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 		this.createMockData();
 		this.welcomeModel = new HomeSecurityWelcome();
 	}
@@ -183,11 +184,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	}
 
 	public switchStatus() {
-		if (this.allDeviceWidgetStatus === 8) {
-			this.allDeviceWidgetStatus = 1;
-		} else {
-			this.allDeviceWidgetStatus += 1;
+		if (this.testStatus.length === 0) {
+			this.testStatus = ['loading', 'lessDevices-secure', 'moreDevices-needAttention', 'noneDevices', 'tralExpired', 'lessDevices-needAttention', 'moreDevices-secure'];
 		}
-		this.wifiSecurity.mitt.emit('switchStatus', this.allDeviceWidgetStatus);
+		this.eventEmitter.emit(this.testStatus.shift());
 	}
 }
