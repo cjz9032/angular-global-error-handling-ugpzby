@@ -32,6 +32,9 @@
         background: $shade_lightest;
         .icon-container {
             border-right: 0.1rem solid $shade_lighter;
+            > .row {
+                height: 100%;
+            }
             .icon {
                 font-size: 5rem;
                 color: $main;
@@ -52,6 +55,12 @@
             }
         }
         .device-info {
+            > .row {
+                height: 100%;
+                > .col-7 {
+                    padding: 0;
+                }
+            }
             .number-container {
                 display: flex;
                 justify-content: center;
@@ -84,6 +93,9 @@
                     font-weight: $weight_bold;
                 }
                 .status {
+                    > .h3 {
+                        margin-bottom: 0rem;
+                    }
                     .button-red {
                         cursor: pointer;
                     }

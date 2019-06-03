@@ -78,6 +78,121 @@
 				}
 			}
 		},
+		"macroKey": {
+			"title": "Macro Key",
+			"introLine": "You can record a series of key input, and use them in gaming or other operations.",
+			"status": {
+				"alwaysEnabled": {
+					"title": "Always Enabled",
+					"description": "Always Enabled"
+				},
+				"whileGaming": {
+					"title": "Enabled Only While Gaming",
+					"description": "It will be enabled when you game and remain as num key when you don't."
+				},
+				"off": {
+					"title": "Off",
+					"description": "Always Off"
+				}
+			},
+			"details": {
+				"intro": {
+					"noNumber": "SELECT A MACRO KEY",
+					"title": "CREATE A MACRO KEY FOR",
+					"line1": "click the start recording button below",
+					"line2": "type in macro key",
+					"line3": "stop recording when finishing typing"
+				},
+				"recording": {
+					"title": "START TYPING",
+					"description": "20 inputs with in 20 seconds can be recorded."
+				},
+				"recorded": {
+					"title": "MACRO KEY FOR ",
+					"deleteKey": "Delete Key",
+					"clear": "Clear",
+					"intervalStatus": {
+						"keep": {
+							"title": "Keep Interval",
+							"description": "Intervals of key actions will be kept and applied when using this macro key."
+						},
+						"ignore": {
+							"title": "Ignore Interval",
+							"description": "Intervals of key actions will be ignored."
+						}
+					},
+					"repeatStatus": {
+						"repeat1": {
+							"title": "No Repeat",
+							"description": "No Repeat"
+						},
+						"repeat2": {
+							"title": "Repeat 2 Times",
+							"description": "Repeats 2 times"
+						},
+						"repeat3": {
+							"title": "Repeat 3 Times",
+							"description": "Repeats 3 times"
+						},
+						"repeat4": {
+							"title": "Repeat 4 Times",
+							"description": "Repeats 4 times"
+						},
+						"repeat5": {
+							"title": "Repeat 5 Times",
+							"description": "Repeats 5 times"
+						},
+						"repeat6": {
+							"title": "Repeat 6 Times",
+							"description": "Repeats 6 times"
+						},
+						"repeat7": {
+							"title": "Repeat 7 Times",
+							"description": "Repeats 7 times"
+						},
+						"repeat8": {
+							"title": "Repeat 8 Times",
+							"description": "Repeats 8 times"
+						},
+						"repeat9": {
+							"title": "Repeat 9 Times",
+							"description": "Repeats 9 times"
+						},
+						"repeat10": {
+							"title": "Repeat 10 Times",
+							"description": "Repeats 10 times"
+						}
+					},
+					"list": {
+						"header": {
+							"col1": "Key Action",
+							"col2": "Interval"
+						},
+						"footer": {
+							"title": "Next input.."
+						}
+					}
+				}
+			},
+			"numberpad": {
+				"number": {
+					"zero": "Num 0",
+					"one": "Num 1",
+					"two": "Num 2",
+					"three": "Num 3",
+					"four": "Num 4",
+					"five": "Num 5",
+					"six": "Num 6",
+					"seven": "Num 7",
+					"eight": "Num 8",
+					"nine": "Num 9"
+				},
+				"macro": {
+					"m1": "M1",
+					"m2": "M2"
+				}
+			}
+		},
 		"lightingProfile": {
 			"title": "Lighting",
 			"effect": {
@@ -380,7 +495,7 @@
 						"title": "Not support AC Adapter"
 					},
 					"ACAdapterNotSupported": {
-						"title":"AC adapter not supported.",
+						"title": "AC adapter not supported.",
 						"description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
 					},
 					"EnoughPowerACAdapter": {
@@ -394,7 +509,7 @@
 					"StoreLimitation": {
 						"title": "The battery can only store",
 						"description1": "of",
-						"description2":  "it's original full charge capacity"
+						"description2": "it's original full charge capacity"
 					}
 				}
 			},
@@ -819,7 +934,8 @@
 			"attend": "Attend",
 			"rebootRequiredTag": "Reboot Required",
 			"rebootDelayTag": "Reboot Required, Power Source Required",
-			"shutdownRequiredTag": "Shutdown Required"
+			"shutdownRequiredTag": "Shutdown Required",
+			"dependedPackage": "depended package"
 		},
 		"availableUpdates": {
 			"title": "Available updates",
