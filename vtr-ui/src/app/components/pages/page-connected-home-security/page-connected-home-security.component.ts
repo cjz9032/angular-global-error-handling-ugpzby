@@ -12,7 +12,7 @@ import {
 	HomeSecurityMemberGroup
 } from '../../../data-models/home-security/home-security-member-group.model';
 import {
-	SecurityAdvisor, EventTypes, ConnectedHomeSecurity
+	SecurityAdvisor, WifiSecurity, EventTypes, ConnectedHomeSecurity
 } from '@lenovo/tan-client-bridge';
 import {
 	VantageShellService
@@ -46,6 +46,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	myHomes: Map < string,
 	HomeSecurityHomeGroup > ;
 	securityAdvisor: SecurityAdvisor;
+	wifiSecurity: WifiSecurity;
 	notifications: HomeSecurityNotification;
 	account: HomeSecurityAccount;
 	pageStatus: HomeSecurityPageStatus;
@@ -54,9 +55,12 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	connectedHomeSecurity: ConnectedHomeSecurity;
 	permission: any;
 
+
+	allDeviceWidgetStatus = 1;
+
 	constructor(
 		private vantageShellService: VantageShellService,
-		public  homeSecurityMockService: HomeSecurityMockService,
+		public  homeSecurityMockService: HomeSecurityMockService, 
 		private translateService: TranslateService,
 		private modalService: NgbModal,
 		private commonService: CommonService,
@@ -66,6 +70,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		this.connectedHomeSecurity = vantageShellService.getConnectedHomeSecurity();
 		this.permission = vantageShellService.getPermission();
+		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 		this.createMockData();
 		this.welcomeModel = new HomeSecurityWelcome();
 	}
@@ -185,5 +190,14 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 				this.welcomeModel.switchPage = 4;
 			}
 		}
+	}
+
+	public switchStatus() {
+		if (this.allDeviceWidgetStatus === 8) {
+			this.allDeviceWidgetStatus = 1;
+		} else {
+			this.allDeviceWidgetStatus += 1;
+		}
+		this.wifiSecurity.mitt.emit('switchStatus', this.allDeviceWidgetStatus);
 	}
 }
