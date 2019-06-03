@@ -150,9 +150,8 @@ export class WidgetMacrokeySettingsComponent implements OnInit {
 		];
 	}
 
-	public optionChanged(option: any, item: any) {
-		const gamingCollapsableContainerEvent = new GamingCollapsableContainerEvent(option, item);
-		this.optionSelected.emit(gamingCollapsableContainerEvent);
+	optionChanged(option: any) {
+		this.optionSelected.emit(option);
 	}
 
 	onNumberSelected(number) {
