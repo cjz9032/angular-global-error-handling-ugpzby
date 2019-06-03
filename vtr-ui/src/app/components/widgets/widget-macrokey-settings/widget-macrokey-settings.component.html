@@ -1,0 +1,38 @@
+<div class="vtr-widget-system-monitor">
+	<div class="widget-container">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12">
+					<p class="intro-text">{{ 'gaming.macroKey.introLine' | translate }}</p>
+				</div>
+				<div class="col-sm-6">
+					<div class="select-wrapper">
+						<vtr-ui-macrokey-collapsible-container
+							[options]="macroKeyOptions"
+							(change)="optionChanged($event)">
+						</vtr-ui-macrokey-collapsible-container>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="macrokey-wrapper" [ngClass]="{numberpad: properties.macroKeyStatus == 0}">
+						<div class="numbers-wrapper">
+							<vtr-ui-number-button
+								[numbers]="numbers"
+								(numberSelected)="onNumberSelected($event)"
+								[isNumberpad]="properties.macroKeyStatus == 0"
+								[recordingStatus]="isRecording">
+							</vtr-ui-number-button>
+						</div>
+						<div class="details-wrapper">
+							<vtr-ui-macrokey-details
+								[number]="selectedNumber"
+								(isRecording)="onRecordingChanged($event)"
+								[recordedData]="recorderKeyData">
+							</vtr-ui-macrokey-details>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
