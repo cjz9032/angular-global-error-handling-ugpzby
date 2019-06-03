@@ -53,7 +53,8 @@
         </div>
         <vtr-ui-button
             id="chs-tour-btn-login-lenovoId"
-            [label]="'homeSecurity.tour.signInLenovoId' | translate"></vtr-ui-button>
+            [label]="'homeSecurity.tour.signInLenovoId' | translate"
+            (click)="openLenovoId()"></vtr-ui-button>
         <div class="chs-create-lenovoId">
           <span [innerHtml]="'homeSecurity.tour.haveLenovo' | translate"></span>
           <a href="javascript:void(0)" [innerHtml]="'homeSecurity.tour.createLenovo' | translate"></a>

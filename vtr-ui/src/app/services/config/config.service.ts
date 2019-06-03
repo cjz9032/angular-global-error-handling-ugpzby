@@ -223,20 +223,21 @@ export class ConfigService {
 			exact: true
 		},
 		forArm: false,
-		subitems: []
-	}, {
-		id: 'home-security',
-		label: 'common.menu.homeSecurity',
-		path: 'home-security',
-		metricsEvent: 'itemClick',
-		metricsParent: 'navbar',
-		metricsItem: 'link.homesecurity',
-		routerLinkActiveOptions: {
-			exact: true
-		},
-		icon: ['fal', 'home-lg-alt'],
-		forArm: false,
-		subitems: []
+        subitems: []
+    // hide connected home-security navigate button temporary
+	// }, {
+	// 	id: 'home-security',
+	// 	label: 'common.menu.homeSecurity',
+	// 	path: 'home-security',
+	// 	metricsEvent: 'itemClick',
+	// 	metricsParent: 'navbar',
+	// 	metricsItem: 'link.homesecurity',
+	// 	routerLinkActiveOptions: {
+	// 		exact: true
+	// 	},
+	// 	icon: ['fal', 'home-lg-alt'],
+	// 	forArm: false,
+	// 	subitems: []
 	}, {
 		id: 'user',
 		label: 'User',
@@ -393,20 +394,21 @@ export class ConfigService {
 			exact: true
 		},
 		forArm: false,
-		subitems: []
-	}, {
-		id: 'home-security',
-		label: 'common.menu.homeSecurity',
-		path: 'home-security',
-		metricsEvent: 'itemClick',
-		metricsParent: 'navbar',
-		metricsItem: 'link.homesecurity',
-		routerLinkActiveOptions: {
-			exact: true
-		},
-		icon: ['fal', 'home-lg-alt'],
-		forArm: false,
-		subitems: []
+        subitems: []
+    // hide connected home-security navigate button temporary
+	// }, {
+	// 	id: 'home-security',
+	// 	label: 'common.menu.homeSecurity',
+	// 	path: 'home-security',
+	// 	metricsEvent: 'itemClick',
+	// 	metricsParent: 'navbar',
+	// 	metricsItem: 'link.homesecurity',
+	// 	routerLinkActiveOptions: {
+	// 		exact: true
+	// 	},
+	// 	icon: ['fal', 'home-lg-alt'],
+	// 	forArm: false,
+	// 	subitems: []
 	}, {
 		id: 'user',
 		label: 'User',

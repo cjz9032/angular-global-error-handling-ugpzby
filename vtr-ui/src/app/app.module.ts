@@ -184,7 +184,6 @@ import { WidgetHomeSecurityAccountStatusComponent } from './components/widgets/w
 import { WidgetHomeSecurityMyDeviceComponent } from './components/widgets/widget-home-security-my-device/widget-home-security-my-device.component';
 import { WidgetHomeSecurityAllDevicesComponent } from './components/widgets/widget-home-security-all-devices/widget-home-security-all-devices.component';
 
-
 // SA pipes
 import { JoinclassPipe } from './pipe/security-wifi/join-class.pipe';
 import { SuccessClassPipe } from './pipe/security-wifi/success-class.pipe';
@@ -209,6 +208,7 @@ import { DisplayColorTempComponent } from './components/display/display-color-te
 import { IntelligentMediaComponent } from './components/pages/page-smart-assist/intelligent-media/intelligent-media.component';
 import { SubpageDeviceSettingsSmartAssistComponent } from './components/pages/page-device-settings/children/subpage-device-settings-smart-assist/subpage-device-settings-smart-assist.component';
 import { UiMacrokeyCollapsibleContainerComponent } from './components/ui/ui-macrokey-collapsible-container/ui-macrokey-collapsible-container.component';
+import { CursorTypePipe } from './pipe/ui-security-statusbar/cursor-type.pipe';
 
 library.add(fas);
 library.add(fab);
@@ -380,7 +380,8 @@ library.add(fal);
 		SubpageDeviceSettingsSmartAssistComponent,
 		WidgetHomeSecurityMyDeviceComponent,
 		WidgetHomeSecurityAllDevicesComponent,
-		UiMacrokeyCollapsibleContainerComponent
+		UiMacrokeyCollapsibleContainerComponent,
+		CursorTypePipe
 	],
 	imports: [
 		BrowserModule,
