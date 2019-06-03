@@ -69,3 +69,4 @@ export class SidebarInstallWidgetService {
 		image: 'pitch-block/Img_Pith_Main',
 	};
 }
+
