@@ -191,6 +191,7 @@ export class EmailScannerService {
 				name: breachData.username,
 				details: breachData.breach.description,
 				image: '',
+				hasPassword: breachData.record_has_password,
 			};
 			acc.push(newData);
 			return acc;

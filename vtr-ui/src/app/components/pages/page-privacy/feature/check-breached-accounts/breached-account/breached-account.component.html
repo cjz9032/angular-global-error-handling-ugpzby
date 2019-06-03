@@ -13,21 +13,27 @@
             <div class="breached-account__social">
                 <div class="breached-account__social-description">
                     <h4 class="breached-account__title">{{transformDomain(account.domain)}}</h4>
-                    <p class="breached-account__email"
-                       title="{{account.email}}" *ngIf="openId !== i">{{account.email}}</p>
+                    <p class="breached-account__date"
+					   *ngIf="openId !== i"
+                       title="{{account.date}}">Breached on {{account.date}}</p>
                 </div>
             </div>
 
-            <span class="breached-account__date" *ngIf="openId !== i">Breached on {{account.date}}</span>
+			<div class="breached-account__chips" *ngIf="openId !== i">
+				<span class="breached-account__chips-item breached-account__chips-item--password"
+					  *ngIf="account.hasPassword">Password</span>
+				<span class="breached-account__chips-item breached-account__chips-item--email"
+					  *ngIf="account.hasEmail">Email</span>
+			</div>
 
             <div class="breached-account__details">
 				<span class="breached-account__details-text"
-					  *ngIf="!(isUserAuthorized$ | async)">
+					  *ngIf="!isUserAuthorized">
 					Verify your email for details
 				</span>
                 <button class="breached-account__preview-link"
                         (click)="verifyClickEmit()"
-                        *ngIf="!(isUserAuthorized$ | async)"
+                        *ngIf="!isUserAuthorized"
                         vtrSendAnalytics
                         [metricsEvent]="'ItemClick'"
                         [metricsItem]="'BreachedAccountsDetailItem'">
@@ -35,7 +41,7 @@
                 </button>
 
                 <button class="breached-account__accordion-button"
-                        *ngIf="(isUserAuthorized$ | async)"
+                        *ngIf="isUserAuthorized"
                         vtrSendAnalytics
                         [metricsEvent]="'ItemClick'"
                         [metricsItem]="'BreachedAccountsDetailItem'"

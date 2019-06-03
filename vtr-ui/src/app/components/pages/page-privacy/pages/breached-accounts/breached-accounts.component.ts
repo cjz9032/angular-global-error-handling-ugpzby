@@ -4,6 +4,7 @@ import { BreachedAccountsService } from '../../common/services/breached-accounts
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
 import { CommonPopupService } from '../../common/services/popups/common-popup.service';
+import { AccessTokenService } from '../../common/services/access-token.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -20,12 +21,14 @@ export class BreachedAccountsComponent {
 		);
 	isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 	confirmationPopupName = 'confirmationPopup';
+	isUserAuthorized$ = this.accessTokenService.accessTokenIsExist$;
 
 	constructor(
 		private breachedAccountsService: BreachedAccountsService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private emailScannerService: EmailScannerService,
 		private commonPopupService: CommonPopupService,
+		private accessTokenService: AccessTokenService,
 	) {
 	}
 

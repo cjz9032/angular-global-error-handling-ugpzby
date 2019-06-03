@@ -1,8 +1,7 @@
-import { Component, EventEmitter, Input, Output, OnInit, AfterViewInit } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BreachedAccount } from '../../../common/services/breached-accounts.service';
 import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { AccessTokenService } from '../../../common/services/access-token.service';
 
 export enum BreachedAccountMode {
 	FULL = 'FULL',
@@ -18,7 +17,7 @@ export class BreachedAccountComponent implements OnInit, AfterViewInit {
 	@Input() mode: BreachedAccountMode = BreachedAccountMode.FULL;
 	@Input() breachedAccounts: BreachedAccount[];
 	@Input() openId = null;
-	@Output() detailClick = new EventEmitter<number>();
+	@Input() isUserAuthorized: boolean;
 	@Output() verifyClick = new EventEmitter<boolean>();
 
 	isFigleafReadyForCommunication = false;
@@ -34,11 +33,8 @@ export class BreachedAccountComponent implements OnInit, AfterViewInit {
 		},
 	};
 
-	isUserAuthorized$ = this.accessTokenService.accessTokenIsExist$;
-
 	constructor(
 		private communicationWithFigleafService: CommunicationWithFigleafService,
-		private accessTokenService: AccessTokenService,
 		private vantageCommunicationService: VantageCommunicationService) {
 	}
 
