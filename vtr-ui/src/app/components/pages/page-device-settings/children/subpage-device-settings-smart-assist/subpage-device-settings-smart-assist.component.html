@@ -9,8 +9,6 @@
 	</div>
 	<div class="row py-5 smart-assist-card"
 		id="security">
-		<div class="col-10 mx-auto border-bottom">
-
 		<div class="col-10 mx-auto">
 
 			<vtr-container-collapsible
@@ -156,7 +154,7 @@
 							[disabled]="!intelligentSecurity.humanPresenceDetectionFlag">
 							<div class="row blur"
 								[class.disabled]="!intelligentSecurity.zeroTouchLockFlag">
-								<div class="col-12 py-4 pr-0 d-flex justify-content-between auto-screen-lock-timer">
+								<div class="col-12 py-4 pr-3 d-flex justify-content-between auto-screen-lock-timer">
 									<h3>{{ 'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.title' | translate}}
 									</h3>
 									<a href="javascript:void();"
@@ -164,7 +162,7 @@
 										<fa-icon class="question"
 											triggers="click:blur"
 											placement="auto"
-											[ngbTooltip]="tooltipText | translate"
+											[ngbTooltip]="'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.toolTipContent' | translate"
 											[icon]="['far', 'question-circle']"
 											container="body"
 											tooltipClass="vtr-tooltip"></fa-icon>
@@ -198,7 +196,7 @@
 								</div>
 								<div class="feature-note screen-lock-note p-4 ml-4 mt-2 mb-2 mr-2">
 									<p>{{'device.deviceSettings.smartAssist.intelligentSecurity.note.description2' | translate}}
-										<br><a href="javascript:void();"
+										<a href="javascript:void();"
 											(click)="launchPowerAndSleep();">{{'device.deviceSettings.smartAssist.intelligentSecurity.WindowsLink.screenTimeoutSettings' | translate}}</a>
 									</p>
 								</div>
@@ -217,8 +215,9 @@
 			</vtr-container-collapsible>
 		</div>
 	</div>
+
 	<div class="row py-5 smart-assist-card"
-		id="security">
+		id="screen">
 		<div class="col-10 mx-auto">
 			<vtr-container-collapsible
 				[cardTitle]="'device.deviceSettings.smartAssist.intelligentScreen.title' | translate"
@@ -263,7 +262,6 @@
 							[showChildContent]="true"
 							(toggleOnOff)="displayDim($event)"
 							[isSwitchChecked]="keepMyDisplay">
-							>
 							<div class="pl-5 ml-5">
 								<vtr-ui-range-slider
 									[minValueLegend]="'device.deviceSettings.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.startTime' | translate"
@@ -279,4 +277,7 @@
 			</vtr-container-collapsible>
 		</div>
 	</div>
+	<vtr-intelligent-media id="media"
+		(isMediaSettingHidden)="hideMediaSetting($event)">
+	</vtr-intelligent-media>
 </div>

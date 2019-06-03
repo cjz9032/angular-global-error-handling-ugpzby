@@ -16,13 +16,14 @@
 			<div class="col-auto text px-0">
 				{{ list.title | translate | uppercase }}
 			</div>
-			<div class="col-auto mr-auto">
+			<div class="col-auto pr-0">
         <h3><span class="badge badge-pill"
-            [ngClass]="list.status | textClass">
+						[ngClass]="list.status | textClass"
+						title="{{list.status | statusText | translate | uppercase}}">
           {{ list.status | statusText | translate | uppercase }}
         </span></h3>
 			</div>
-			<div *ngIf="list.buttonTitle && list.status === 'disabled'" class="col-auto pr-2">
+			<div *ngIf="list.buttonTitle && list.status === 'disabled'" class="col-auto pr-2 ml-auto">
 
 				<vtr-ui-button id="sa-av-btn-launchmcafee"
 					aria-label="sa-av-btn-launchmcafee" 
@@ -30,6 +31,19 @@
 					metricsEvent="featureClick" 
 					[metricsItem]="list.metricsItem"
 					[label]="list.buttonTitle | translate" [isRegular]=regular ></vtr-ui-button>
+			</div>
+			<div *ngIf="list.badge" class="row align-item-center">
+				<h3 *ngFor="let badgeItem of list.badge" [ngClass]="badgeItem | cursorType">
+					<a [href]="badgeItem.expiredUrl | sanitizeUrl" target="_blank">
+						<span *ngIf="badgeItem.status" 
+							class="badge badge-pill ml-3"
+							[ngClass]="badgeItem.status | textClass"
+							(click)="badgeItem.clickEvent()"
+							title="{{badgeItem.text}}">
+							{{badgeItem.text}}
+						</span>
+					</a>
+				</h3>
 			</div>
 		</div>
 	</li>

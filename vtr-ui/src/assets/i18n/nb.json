@@ -694,7 +694,13 @@
                             "endTime": "60 minutes"
                         }
                     }
-                }
+                },
+				"intelligentMedia": {
+					"heading": "Intelligent Media",
+					"title": "Zero Touch Video Playback",
+					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+				}
             }
         }
     },
@@ -1011,7 +1017,7 @@
                 "describe": "Bruk trusseldetektoren til å finne ut hvor sikre nettverkene rundt deg er.",
                 "button": "Kontroller trussel",
                 "connectionError": "Tilkoblingsfeil",
-                "tryAgain": "Vi finner ikke enheten din på grunn av manglende nettverkstilgang. Koble til Internett, og prøv på nytt."
+                "tryAgain": "Vi kan ikke finne noen trusler på grunn av manglende nettverkstilgang. Koble deg til Internett, og prøv på nytt."
             },
             "locationmodal": {
                 "title": "Aktiver posisjonstjenester",
@@ -1527,9 +1533,9 @@
     },
     "welcometutorial": {
         "description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-        "bullets1": "Optimize your system with lorem ipsum dolor set",
-        "bullets2": "Security Advisor makes managing your security easy ",
-        "bullets3": "Automatic updates keep your device in tip top shape",
+        "bullets1": "View your system's status with the Vantage dashboard.",
+        "bullets2": "Security Advisor makes managing your security easy (Available on selected systems)",
+        "bullets3": "Automatic updates keep your device in tip top shape (Available on selected systems)",
         "subtitle1": "How will you be using your device?",
         "subtitle2": "Tell us about your interests",
         "personal": "Personal Use",
@@ -1554,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Preferanser og innstillinger",
+        "settings": "Innstillinger",
+        "settingsDescription": "På siden med preferanser og innstillinger kan du slå meldingsvarsler på/av basert på meldingskategoriene til Vantage. Vær obs på at selv om alle meldingskategoriene deaktiveres, kan du fremdeles få systemkritiske meldinger fra Vantage fra tid til annen.",
+        "messagesInLenovoVantage": "Meldinger i Lenovo Vantage",
+        "appFeatures": "Appfunksjoner",
+        "appFeaturesDescription": "Meldinger relatert til System Update, artikler og andre viktige funksjoner.",
+        "marketing": "Markedsføring",
+        "marketingDescription": "Markedsføringsrelaterte meldinger, inkludert spesialtilbud fra Lenovo.",
+        "actionTriggered": "Utløst av handlinger",
+        "actionTriggeredDescription": "Meldinger som utløses av at man velger innstillinger som automatisk installasjon av kritiske/anbefalte oppdateringer.",
+        "OtherSettings": "Andre innstillinger",
+        "usageStatistics": "Statistikk over bruk",
+        "usageStatisticsDescription": "Send anonym bruksstatistikk til Lenovo.",
+        "Note": "Merk: ",
+        "settingsNotes": "Alle innstillingene på denne siden krever omstart for å tre i kraft."
     }
 }

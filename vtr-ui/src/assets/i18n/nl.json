@@ -694,7 +694,13 @@
                             "endTime": "60 minutes"
                         }
                     }
-                }
+                },
+				"intelligentMedia": {
+					"heading": "Intelligent Media",
+					"title": "Zero Touch Video Playback",
+					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+				}
             }
         }
     },
@@ -1011,7 +1017,7 @@
                 "describe": "Gebruik de dreigingsdetector om de veiligheid van de netwerken om u heen te bepalen.",
                 "button": "Bedreiging controleren",
                 "connectionError": "Verbindingsfout",
-                "tryAgain": "We kunnen uw apparaat niet vinden omdat er geen netwerk beschikbaar is. Maak verbinding met internet en probeer het nog eens."
+                "tryAgain": "We kunnen de bedreiging niet voor u vinden omdat er geen netwerk beschikbaar is. Maak verbinding met internet en probeer het nog eens."
             },
             "locationmodal": {
                 "title": "Locatieservices inschakelen",
@@ -1527,9 +1533,9 @@
     },
     "welcometutorial": {
         "description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-        "bullets1": "Optimize your system with lorem ipsum dolor set",
-        "bullets2": "Security Advisor makes managing your security easy ",
-        "bullets3": "Automatic updates keep your device in tip top shape",
+        "bullets1": "View your system's status with the Vantage dashboard.",
+        "bullets2": "Security Advisor makes managing your security easy (Available on selected systems)",
+        "bullets3": "Automatic updates keep your device in tip top shape (Available on selected systems)",
         "subtitle1": "How will you be using your device?",
         "subtitle2": "Tell us about your interests",
         "personal": "Personal Use",
@@ -1554,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Voorkeursinstellingen",
+        "settings": "Instellingen",
+        "settingsDescription": "Op de pagina met voorkeursinstellingen kunt u uw berichtmeldingen in- of uitschakelen op basis van de categorieën van het Vantage-bericht. Let wel: als alle berichtcategorieën zijn uitgeschakeld, is het mogelijk dat u af en toe en alleen indien nodig een kritiek systeembericht van Vantage ontvangt.",
+        "messagesInLenovoVantage": "Berichten in Lenovo Vantage",
+        "appFeatures": "App-functies",
+        "appFeaturesDescription": "Berichten met betrekking tot System Update, artikelen en andere belangrijke functies.",
+        "marketing": "Marketing",
+        "marketingDescription": "Reclame, inclusief speciale aanbiedingen van Lenovo.",
+        "actionTriggered": "Geactiveerd door handelingen",
+        "actionTriggeredDescription": "Berichten die door de gebruiker zijn geactiveerd door het selecteren van instellingen, zoals het automatisch installeren van essentiële/aanbevolen updates.",
+        "OtherSettings": "Overige instellingen",
+        "usageStatistics": "Gebruiksstatistieken",
+        "usageStatisticsDescription": "Verzend anonieme gebruiksstatistieken naar Lenovo.",
+        "Note": "Opmerking: ",
+        "settingsNotes": "alle instellingen op deze pagina hebben tot gevolg dat gebruikers het systeem opnieuw moeten opstarten."
     }
 }

@@ -694,7 +694,13 @@
                             "endTime": "60 minutes"
                         }
                     }
-                }
+                },
+				"intelligentMedia": {
+					"heading": "Intelligent Media",
+					"title": "Zero Touch Video Playback",
+					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+				}
             }
         }
     },
@@ -1011,7 +1017,7 @@
                 "describe": "Χρησιμοποιήστε τον ανιχνευτή απειλών για να προσδιορίσετε την ασφάλεια των δικτύων γύρω σας.",
                 "button": "Έλεγχος απειλής",
                 "connectionError": "Σφάλμα σύνδεσης",
-                "tryAgain": "Δεν μπορούμε να εντοπίσουμε τη συσκευή σας λόγω μη διαθέσιμου δικτύου, συνδεθείτε στο Internet και δοκιμάστε ξανά."
+                "tryAgain": "Δεν μπορούμε να εντοπίσουμε απειλή εναντίον σας λόγω μη διαθέσιμου δικτύου, συνδεθείτε στο Internet και δοκιμάστε ξανά."
             },
             "locationmodal": {
                 "title": "Ενεργοποίηση υπηρεσιών τοποθεσίας",
@@ -1527,9 +1533,9 @@
     },
     "welcometutorial": {
         "description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-        "bullets1": "Optimize your system with lorem ipsum dolor set",
-        "bullets2": "Security Advisor makes managing your security easy ",
-        "bullets3": "Automatic updates keep your device in tip top shape",
+        "bullets1": "View your system's status with the Vantage dashboard.",
+        "bullets2": "Security Advisor makes managing your security easy (Available on selected systems)",
+        "bullets3": "Automatic updates keep your device in tip top shape (Available on selected systems)",
         "subtitle1": "How will you be using your device?",
         "subtitle2": "Tell us about your interests",
         "personal": "Personal Use",
@@ -1554,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Ρυθμίσεις προτιμήσεων",
+        "settings": "Ρυθμίσεις",
+        "settingsDescription": "Στη σελίδα ρύθμισης προτιμήσεων, μπορείτε να επιλέξετε να ενεργοποιήσετε/απενεργοποιήσετε την ειδοποίησή σας με βάση τις κατηγορίες του μηνύματος Vantage, σημειώστε ότι ακόμη και αν όλες οι κατηγορίες μηνυμάτων είναι απενεργοποιημένες, ενδέχεται να λαμβάνετε περιστασιακά μήνυμα System Critical από Vantage, όταν είναι απαραίτητο.",
+        "messagesInLenovoVantage": "Μηνύματα στο Lenovo Vantage",
+        "appFeatures": "Δυνατότητες εφαρμογής",
+        "appFeaturesDescription": "Μηνύματα σχετικά με την System Update, άρθρα και άλλες αξιοσημείωτες δυνατότητες.",
+        "marketing": "Μάρκετινγκ",
+        "marketingDescription": "Μηνύματα προώθησης, συμπεριλαμβανομένων των ειδικών προσφορών της Lenovo.",
+        "actionTriggered": "Ενέργεια που ενεργοποιείται",
+        "actionTriggeredDescription": "Μηνύματα που ενεργοποιούνται από τον χρήστη επιλέγοντας ρυθμίσεις όπως αυτόματη εγκατάσταση κρίσιμων/προτεινόμενων ενημερώσεων.",
+        "OtherSettings": "Άλλες ρυθμίσεις",
+        "usageStatistics": "Στατιστικά χρήσης",
+        "usageStatisticsDescription": "Να αποστέλλονται ανώνυμα στατιστικά χρήσης στη Lenovo.",
+        "Note": "Σημείωση: ",
+        "settingsNotes": "για να τεθούν σε ισχύ όλες οι ρυθμίσεις σε αυτήν τη σελίδα, απαιτείται επανεκκίνηση από τον χρήστη."
     }
 }

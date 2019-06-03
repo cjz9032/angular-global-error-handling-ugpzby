@@ -6,6 +6,8 @@ import { CommonService } from '../../services/common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
 import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
+import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
+import { TouchpadStatus }  from 'src/app/data-models/gaming/touchpad-status.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -156,6 +158,13 @@ export class VantageShellService {
 	public getPermission(): any {
 		if (this.phoenix) {
 			return this.phoenix.permissions;
+		}
+		return undefined;
+	}
+
+	public getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity {
+		if (this.phoenix) {
+			return this.phoenix.connectedHomeSecurity;
 		}
 		return undefined;
 	}
@@ -368,21 +377,16 @@ export class VantageShellService {
 
 	public getCPUOCStatus(): any {
 		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingOverclock.GetCpuOCStatus();
-			return undefined;
+			return this.phoenix.gaming.gamingOverclock.getCpuOCStatus();
 		}
-
 		return undefined;
 	}
 
 	public setCPUOCStatus(CpuOCStatus: CPUOCStatus): any {
 		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingOverclock.SetCpuOCStatus(CpuOCStatus.cpuOCStatus);
-			return CpuOCStatus;
+			return this.phoenix.gaming.gamingOverclock.setCpuOCStatus(CpuOCStatus.cpuOCStatus);
 		}
-		return undefined;
+		return false;
 	}
 
 	public getThermalModeStatus(): any {
@@ -403,34 +407,36 @@ export class VantageShellService {
 		return true;
 	}
 
-	public getRAMOCStatus(): any {
-		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingOverclock.GetRamOCStatus();
-			return undefined;
-		}
-		return undefined;
-	}
+	// public getRAMOCStatus(): any {
+	// 	if (this.phoenix) {
+	// 		return this.phoenix.gaming.gamingOverclock.getRamOCStatus();
+	// 	}
+	// 	return undefined;
+	// }
 
-	public setRAMOCStatus(ramOCStausObj: RamOCSatus): any {
-		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingOverclock.SetRamOCStatus(ramOCStausObj.ramOcStatuss);
-			return ramOCStausObj.ramOcStatus;
-		}
-		return ramOCStausObj.ramOcStatus;
-	}
+	// public setRAMOCStatus(ramOCStausObj: RamOCSatus): any {
+	// 	if (this.phoenix) {
+	// 		return this.phoenix.gaming.gamingOverclock.setRamOCStatus(ramOCStausObj.ramOcStatus);
+	// 	}
+	// 	return false;
+	// }
 
 	public getGamingAllCapabilities(): any {
 		if (this.phoenix && this.phoenix.gaming) {
-			return this.phoenix.gaming.gamingAllCapabilities();
+			return this.phoenix.gaming.gamingAllCapabilities;
 		}
 		return undefined;
 	}
 
 	public getGamingLighting(): any {
 		if (this.phoenix && this.phoenix.gaming) {
-			return this.phoenix.gaming.gamingLighting();
+			return this.phoenix.gaming.gamingLighting;
+		}
+		return undefined;
+	}
+	public getGamingOverClock(): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingOverclock;
 		}
 		return undefined;
 	}
@@ -444,6 +450,33 @@ export class VantageShellService {
 	public getMetricPreferencePlugin() {
 		if (this.phoenix) {
 			return this.phoenix.genericMetricsPreference;
+		}
+	}
+
+	public getGamingKeyLock() {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingKeyLock;
+		}
+		return undefined;
+	}
+
+	public getGamingHybridMode() {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingHybridMode;
+		}
+		return undefined;
+	}
+
+
+	public getIntelligentMedia(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.lis.intelligentMedia;
+		} return undefined;
+	}
+
+	public getPreferenceSettings() {
+		if (this.phoenix) {
+			return this.phoenix.preferenceSettings;
 		}
 	}
 }

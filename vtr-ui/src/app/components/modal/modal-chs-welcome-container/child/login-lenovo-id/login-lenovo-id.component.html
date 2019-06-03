@@ -5,8 +5,8 @@
     <div class="chs-login-content row">
       <div class="col-7">
         <div class="text-regular mb-5">
-          <p class="h3">Create your account</p>
-          <p class="h1">with Lenovo ID</p>
+          <p class="h3">{{'homeSecurity.tour.create' | translate}}</p>
+          <p class="h1">{{'homeSecurity.tour.lenovoId' | translate}}</p>
         </div>
         <div class="mb-5">
           <ul class="list-unstyled">
@@ -20,9 +20,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col text-regular align-self-center">
-                  Receive <b>notifications</b> about your home's status
-                </div>
+                <div class="col text-regular align-self-center" [innerHtml]="'homeSecurity.tour.notifications' | translate"></div>
               </div>
             </li>
             <li class="text pb-4">
@@ -35,9 +33,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col text-regular align-self-center">
-                    <b>Monitor</b> the safety of your family's devices
-                </div>
+                <div class="col text-regular align-self-center" [innerHtml]="'homeSecurity.tour.monitor' | translate"></div>
               </div>
             </li>
             <li class="text">
@@ -50,36 +46,31 @@
                     </div>
                   </div>
                 </div>
-                <div class="col text-regular align-self-center">
-                  Get <b>peace of mind</b> that you are protected at all times!
-                </div>
+                <div class="col text-regular align-self-center" [innerHtml]="'homeSecurity.tour.peaceOfMind' | translate"></div>
               </div>
             </li>
           </ul>
         </div>
         <vtr-ui-button
             id="chs-tour-btn-login-lenovoId"
-            [label]="'tutorial.signInLenovoId' | translate"></vtr-ui-button>
+            [label]="'homeSecurity.tour.signInLenovoId' | translate"
+            (click)="openLenovoId()"></vtr-ui-button>
         <div class="chs-create-lenovoId">
-          <span>I don't have a <strong>Lenovo ID</strong></span>
-          <a href="javascript:void(0)"> Create a Lenovo ID</a>
+          <span [innerHtml]="'homeSecurity.tour.haveLenovo' | translate"></span>
+          <a href="javascript:void(0)" [innerHtml]="'homeSecurity.tour.createLenovo' | translate"></a>
         </div>
       </div>
       <div class="col-5">
         <div class="start-trial pl-5">
-          <div class="text-regular mb-3">
-            Proceed <b>without an account</b>
-          </div>
+          <div class="text-regular mb-3" [innerHtml]="'homeSecurity.tour.without' | translate"></div>
           <vtr-ui-button
             class="trial-btn button-gray"
-            id="chs-tour-btn-login-lenovoId"
-            [label]="'tutorial.skipAndTrial' | translate"></vtr-ui-button>
+            id="chs-tour-btn-skip-trial"
+            [label]="'homeSecurity.tour.skipAndTrial' | translate"></vtr-ui-button>
         </div>
         <div class="chs-account pl-5">
-          <div class="text-regular mb-4">
-            I already have a <b>Connected Home Security Account</b>
-          </div>
-          <a href="javascript:void(0)">Login to existing CHS account</a>
+          <div class="text-regular mb-4" [innerHtml]="'homeSecurity.tour.alreadyHave' | translate"></div>
+          <a href="javascript:void(0)">{{'homeSecurity.tour.loginCHS' | translate}}</a>
         </div> 
       </div>
     </div>

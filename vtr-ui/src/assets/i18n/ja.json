@@ -694,7 +694,13 @@
                             "endTime": "60 minutes"
                         }
                     }
-                }
+                },
+				"intelligentMedia": {
+					"heading": "Intelligent Media",
+					"title": "Zero Touch Video Playback",
+					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+				}
             }
         }
     },
@@ -1011,7 +1017,7 @@
                 "describe": "脅威検出器を使用して、周囲のネットワークの安全性を判断します。",
                 "button": "脅威を確認",
                 "connectionError": "接続エラー",
-                "tryAgain": "ネットワークが利用できないため、デバイスを見つけることができません。インターネットに接続してからもう一度お試しください。"
+                "tryAgain": "ネットワークが利用できないため、脅威を見つけることができません。インターネットに接続してからもう一度お試しください。"
             },
             "locationmodal": {
                 "title": "位置情報サービスの有効化",
@@ -1527,9 +1533,9 @@
     },
     "welcometutorial": {
         "description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-        "bullets1": "Optimize your system with lorem ipsum dolor set",
-        "bullets2": "Security Advisor makes managing your security easy ",
-        "bullets3": "Automatic updates keep your device in tip top shape",
+        "bullets1": "View your system's status with the Vantage dashboard.",
+        "bullets2": "Security Advisor makes managing your security easy (Available on selected systems)",
+        "bullets3": "Automatic updates keep your device in tip top shape (Available on selected systems)",
         "subtitle1": "How will you be using your device?",
         "subtitle2": "Tell us about your interests",
         "personal": "Personal Use",
@@ -1554,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "設定の変更",
+        "settings": "設定",
+        "settingsDescription": "「設定の変更」ページでは、メッセージ通知のオンオフを Vantage のメッセージのカテゴリーに基づいて選択できます。すべてのメッセージ・カテゴリーが無効になっている場合でも、必要に応じてシステム・クリティカル・メッセージを Vantage から受信する場合があることに注意してください。",
+        "messagesInLenovoVantage": "Lenovo Vantage のメッセージ",
+        "appFeatures": "アプリ機能",
+        "appFeaturesDescription": "System Update、記事、その他の注目すべき機能に関連したメッセージ。",
+        "marketing": "マーケティング",
+        "marketingDescription": "Lenovo の特別オファーを含むプロモーション・メッセージ。",
+        "actionTriggered": "開始されたアクション",
+        "actionTriggeredDescription": "重要な/推奨される更新プログラムの自動インストールなど、ユーザーが選択した設定によってトリガーされるメッセージ。",
+        "OtherSettings": "他の設定",
+        "usageStatistics": "利用統計",
+        "usageStatisticsDescription": "Lenovo に使用状況の統計を匿名で送信する。",
+        "Note": "注:",
+        "settingsNotes": "このページの設定をすべて有効にするには、ユーザーが再起動する必要があります。"
     }
 }

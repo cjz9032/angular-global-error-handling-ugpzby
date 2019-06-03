@@ -694,7 +694,13 @@
                             "endTime": "60 minutes"
                         }
                     }
-                }
+                },
+				"intelligentMedia": {
+					"heading": "Intelligent Media",
+					"title": "Zero Touch Video Playback",
+					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+				}
             }
         }
     },
@@ -1011,7 +1017,7 @@
                 "describe": "Vyhledávač hrozeb vám pomůže zjistit, jak bezpečné jsou sítě kolem vás.",
                 "button": "Zkontrolovat hrozby",
                 "connectionError": "Chyba spojení",
-                "tryAgain": "Vaše zařízení nemůžeme najít, protože síť není k dispozici; připojte se k internetu a zkuste to znovu."
+                "tryAgain": "Z důvodu nedostupné sítě nemůžeme najít hrozbu. Připojte se k internetu a zkuste to znovu."
             },
             "locationmodal": {
                 "title": "Povolit zjišťování polohy",
@@ -1527,9 +1533,9 @@
     },
     "welcometutorial": {
         "description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-        "bullets1": "Optimize your system with lorem ipsum dolor set",
-        "bullets2": "Security Advisor makes managing your security easy ",
-        "bullets3": "Automatic updates keep your device in tip top shape",
+        "bullets1": "View your system's status with the Vantage dashboard.",
+        "bullets2": "Security Advisor makes managing your security easy (Available on selected systems)",
+        "bullets3": "Automatic updates keep your device in tip top shape (Available on selected systems)",
         "subtitle1": "How will you be using your device?",
         "subtitle2": "Tell us about your interests",
         "personal": "Personal Use",
@@ -1554,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Nastavení předvoleb",
+        "settings": "Nastavení",
+        "settingsDescription": "Na stránce nastavení předvoleb můžete zvolit, zda chcete zapnout/vypnout oznámení o zprávách na základě kategorií zpráv aplikace Vantage. Berte na vědomí, že i když zakážete všechny kategorie zpráv, přesto občas můžete v případě potřeby obdržet z aplikace Vantage kritickou zprávu systému.",
+        "messagesInLenovoVantage": "Zprávy v programu Lenovo Vantage",
+        "appFeatures": "Funkce aplikace",
+        "appFeaturesDescription": "Zprávy týkající se System Update, článků a jiných funkcí, které stojí za pozornost.",
+        "marketing": "Marketing",
+        "marketingDescription": "Propagační zprávy včetně speciálních nabídek Lenovo.",
+        "actionTriggered": "Aktivní akce",
+        "actionTriggeredDescription": "Zprávy aktivované uživatelem výběrem nastavení, jako je automatická instalace kritických/doporučených aktualizací.",
+        "OtherSettings": "Další nastavení",
+        "usageStatistics": "Statistiky využití",
+        "usageStatisticsDescription": "Posílat společnosti Lenovo anonymní statistiku využívání.",
+        "Note": "Poznámka: ",
+        "settingsNotes": "Veškerá nastavení na této stránce budou od uživatelů vyžadovat restart systému, aby se projevila."
     }
 }

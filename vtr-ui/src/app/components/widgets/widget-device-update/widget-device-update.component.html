@@ -19,6 +19,7 @@
 							metricsEvent="itemClick"
 							metricsParent="update-to-date"
 							[metricsItem]="'btn.'+buttonText"
+							[disabled]="isCheckingPluginStatus"
 							(click)="onCheckForUpdates()">{{buttonText}}</button>
 					</div>
 				</div>

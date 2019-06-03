@@ -10,11 +10,19 @@
 	<div class="try-product__group-button">
 		<button class="try-product__button"
 				vtrOpenFigleafInstaller
+				vtrSendAnalytics
+				[metricsEvent]="'ItemClick'"
+				[metricsItem]="'TryLenovoPrivacyButton'"
 				*ngIf="texts.buttonText">
 			{{texts.buttonText}}
 		</button>
 		<div class="try-product__button-link" *ngIf="texts.link">
-			<a [href]="texts.link.url"><span>{{texts.link.text}}</span></a>
+			<a [href]="texts.link.url"
+			   vtrSendAnalytics
+			   [metricsEvent]="'ItemClick'"
+			   [metricsItem]="'LenovoPrivacyLearnMoreButton'">
+				<span>{{texts.link.text}}</span>
+			</a>
 		</div>
 	</div>
 </div>
