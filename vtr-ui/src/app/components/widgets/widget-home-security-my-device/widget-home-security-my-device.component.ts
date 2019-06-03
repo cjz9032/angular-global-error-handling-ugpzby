@@ -71,12 +71,14 @@ export class WidgetHomeSecurityMyDeviceComponent implements OnInit {
 		if (this.deviceService.isShellAvailable) {
 			this.deviceService.getDeviceInfo()
 				.then((value: any) => {
-					this.myDevice = value;
-					if (this.myDevice.family.length > 20) {
-						this.deviceName = `${this.myDevice.family.slice(0, 17)}...`;
-					} else {
-						this.deviceName = this.myDevice.family;
-					}
+					this.ngZone.run(() => {
+						this.myDevice = value;
+						if (this.myDevice.family.length > 20) {
+							this.deviceName = `${this.myDevice.family.slice(0, 17)}...`;
+						} else {
+							this.deviceName = this.myDevice.family;
+						}
+					});
 				}).catch(error => {
 					console.error('getDeviceInfo', error);
 				});
