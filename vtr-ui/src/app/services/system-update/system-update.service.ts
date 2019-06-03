@@ -257,7 +257,7 @@ export class SystemUpdateService {
 	public installAllUpdates(removeDelayedUpdates: boolean) {
 		if (this.systemUpdateBridge && this.isUpdatesAvailable) {
 			this.selectCoreqUpdateForInstallAll();
-			const unIgnoredUpdates = this.getUnIgnoredUpdates(this.updateInfo.updateList);
+			const unIgnoredUpdates = this.getUnIgnoredUpdatesForInstallAll(this.updateInfo.updateList);
 			const updates = this.mapToInstallRequest(unIgnoredUpdates, removeDelayedUpdates);
 			this.installUpdates(updates, true);
 		}
@@ -361,7 +361,7 @@ export class SystemUpdateService {
 	private selectCoreqUpdateForInstallAll() {
 		if (this.updateInfo.updateList && this.updateInfo.updateList.length > 0) {
 			this.updateInfo.updateList.forEach((update) => {
-				if(update.coreqPackageID) {
+				if(update.coreqPackageID && !update.isIgnored) {
 					const coreqPackages = update.coreqPackageID.split(',');
 					this.selectCoreqUpdate(this.updateInfo.updateList, coreqPackages, true);
 				}
@@ -649,10 +649,10 @@ export class SystemUpdateService {
 		return undefined;
 	}
 
-	public getUnIgnoredUpdates(updateList: Array<AvailableUpdateDetail>): Array<AvailableUpdateDetail> {
+	public getUnIgnoredUpdatesForInstallAll(updateList: Array<AvailableUpdateDetail>): Array<AvailableUpdateDetail> {
 		if (updateList && updateList.length > 0) {
 			const updates = updateList.filter((value) => {
-				return value.isSelected || !value.isIgnored;
+				return !value.isIgnored || (value.isIgnored && value.isDependency);
 			});
 			return updates;
 		}
