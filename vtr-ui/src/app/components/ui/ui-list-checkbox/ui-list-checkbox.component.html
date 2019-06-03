@@ -39,6 +39,12 @@
 									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.shutdownRequiredTag' | translate}}
 								</div>
 							</div>
+							<div class="button-box pl-1"
+								*ngIf="item.isDependency">
+								<div class="btn-round-sm">
+									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.dependedPackage' | translate}}
+								</div>
+							</div>
 						</div>
 						<a href="javascript:void();">
 							<fa-icon class="question"
