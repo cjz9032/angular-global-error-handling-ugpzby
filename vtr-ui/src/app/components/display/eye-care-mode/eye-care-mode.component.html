@@ -44,9 +44,9 @@
 		*ngIf="sunsetToSunriseStatus.available">
 		<input id="cb-eye-care-schedule"
 			type="checkbox"
-			[disabled]="enableSunsetToSunrise || enableSlider"
+			[disabled]="enableSunsetToSunrise"
 			class="custom-control-input"
-			[checked]="sunsetToSunriseStatus.status && !(enableSunsetToSunrise || enableSlider)"
+			[checked]="sunsetToSunriseStatus.status && !(enableSunsetToSunrise)"
 			(change)="onSunsetToSunrise(sunsetToSunriseStatus)" />
 		<label class="custom-control-label"
 			for="cb-eye-care-schedule">
