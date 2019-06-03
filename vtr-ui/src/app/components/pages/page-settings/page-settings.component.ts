@@ -9,7 +9,7 @@ import { MetricService } from 'src/app/services/metric/metric.service';
 })
 export class PageSettingsComponent implements OnInit, OnDestroy {
 
-	backArrow = '< ';
+	backId = 'setting-page-btn-back';
 
 	toggleAppFeature = false;
 	toggleMarketing = false;
@@ -69,7 +69,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			PageDuration: this.pageDuration,
 			OnlineStatus: ''
 		};
-		this.metrics.sendMetrics(pageViewMetrics);
+		this.sendMetrics(pageViewMetrics);
 	}
 
 	getAllToggles() {

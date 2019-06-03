@@ -1514,7 +1514,7 @@
     },
     "welcometutorial": {
         "description": "Vantage使您可以轻松更新驱动程序，运行诊断程序，请求支持以及了解您的设备。快速定制您的体验，并根据您的需求找到有用的信息",
-        "bullets1": "View System Status with Vantage dashboard",
+        "bullets1": "View your system's status with the Vantage dashboard.",
         "bullets2": "Security Advisor使您可以轻松管理安全性 (在选定系统上可用)",
         "bullets3": "自动更新可使您的设备保持最佳状态 (在选定系统上可用)",
         "subtitle1": "你将如何使用你的设备？",

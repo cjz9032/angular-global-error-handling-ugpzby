@@ -95,4 +95,15 @@ but not to any other element on the page. using ::ng-deep
 			color: $shade_dark;
 		}
 	}
+	.diable-slider-poiner {
+		.ng5-slider {
+			.ng5-slider-pointer {
+				background: #8b91a2!important;
+			}
+	 	}
+	}
+
+	[disabled].ng5-slider .ng5-slider-pointer {
+		background-color: initial;
+	}
 }
