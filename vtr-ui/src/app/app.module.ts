@@ -207,6 +207,7 @@ import { UiLightingSingleColorComponent } from './components/ui/ui-lighting-sing
 import { UiLightingColorWheelComponent } from './components/ui/ui-lighting-color-wheel/ui-lighting-color-wheel.component';
 import { DisplayColorTempComponent } from './components/display/display-color-temp/display-color-temp.component';
 import { IntelligentMediaComponent } from './components/pages/page-smart-assist/intelligent-media/intelligent-media.component';
+import { CursorTypePipe } from './pipe/ui-security-statusbar/cursor-type.pipe';
 
 library.add(fas);
 library.add(fab);
@@ -372,7 +373,8 @@ library.add(fal);
 		UiLightingSingleColorComponent,
 		UiLightingColorWheelComponent,
 		WidgetHomeSecurityMyDeviceComponent,
-		WidgetHomeSecurityAllDevicesComponent
+		WidgetHomeSecurityAllDevicesComponent,
+		CursorTypePipe
 	],
 	imports: [
 		BrowserModule,
