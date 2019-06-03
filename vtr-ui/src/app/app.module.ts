@@ -181,6 +181,9 @@ import { WidgetHomeSecurityDeviceComponent } from './components/widgets/widget-h
 import { WidgetSecurityStatusComponent } from './components/widgets/widget-security-status/widget-security-status.component';
 import { WidgetMcafeeComponent } from './components/widgets/widget-mcafee/widget-mcafee.component';
 import { WidgetHomeSecurityAccountStatusComponent } from './components/widgets/widget-home-security-account-status/widget-home-security-account-status.component';
+import { WidgetHomeSecurityMyDeviceComponent } from './components/widgets/widget-home-security-my-device/widget-home-security-my-device.component';
+import { WidgetHomeSecurityAllDevicesComponent } from './components/widgets/widget-home-security-all-devices/widget-home-security-all-devices.component';
+
 
 // SA pipes
 import { JoinclassPipe } from './pipe/security-wifi/join-class.pipe';
@@ -199,6 +202,9 @@ import { AutoupdateSettingsComponent } from './components/pages/page-device-upda
 import { UiLightingProfileToggleComponent } from './components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
 import { UiBrightnessSliderComponent } from './components/ui/ui-brightness-slider/ui-brightness-slider.component';
 import { SvgInlinePipe } from './pipe/svg-inline/svg-inline.pipe';
+import { UiLightingEffectComponent } from './components/ui/ui-lighting-effect/ui-lighting-effect.component';
+import { UiLightingSingleColorComponent } from './components/ui/ui-lighting-single-color/ui-lighting-single-color.component';
+import { UiLightingColorWheelComponent } from './components/ui/ui-lighting-color-wheel/ui-lighting-color-wheel.component';
 import { DisplayColorTempComponent } from './components/display/display-color-temp/display-color-temp.component';
 import { IntelligentMediaComponent } from './components/pages/page-smart-assist/intelligent-media/intelligent-media.component';
 
@@ -361,7 +367,12 @@ library.add(fal);
 		DisplayColorTempComponent,
 		UiLightingProfileToggleComponent,
 		UiBrightnessSliderComponent,
-		SvgInlinePipe
+		SvgInlinePipe,
+		UiLightingEffectComponent,
+		UiLightingSingleColorComponent,
+		UiLightingColorWheelComponent,
+		WidgetHomeSecurityMyDeviceComponent,
+		WidgetHomeSecurityAllDevicesComponent
 	],
 	imports: [
 		BrowserModule,

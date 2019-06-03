@@ -26,6 +26,11 @@
 											<a href="javascript:;"
 												class="quick-assess-item col col-6 col-sm-3"
 												*ngFor="let category of articleCategories"
+												vtrMetrics
+												metricsItem="Support.CategoryClicked"
+												metricsEvent="featureClick"
+												metricsParam="CategoryId: {{ category.Id }}"
+												metricsParent="Page.Support"
 												(click)="clickCategory(category.Id)">
 												<div class="item-con">
 													<fa-icon [icon]="['fal', 'bolt']"></fa-icon>
