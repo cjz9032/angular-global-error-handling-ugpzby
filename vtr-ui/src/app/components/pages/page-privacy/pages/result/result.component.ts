@@ -22,7 +22,7 @@ export class ResultComponent implements OnInit, OnDestroy {
 	breached_accounts: BreachedAccount[] = [];
 	breached_accounts_show: BreachedAccount[];
 
-	isWasScanned = this.emailScannerService.scanBreachedAccounts$;
+	isWasScanned = this.emailScannerService.scanNotifier$;
 	textForLoader = '';
 
 	onGetBreachedAccountsCompleted$ = this.breachedAccountsService.onGetBreachedAccountsCompleted$;

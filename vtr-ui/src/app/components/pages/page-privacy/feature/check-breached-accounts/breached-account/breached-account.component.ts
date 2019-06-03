@@ -34,7 +34,7 @@ export class BreachedAccountComponent implements OnInit, AfterViewInit {
 		},
 	};
 
-	isUserAuthorize$ = this.accessTokenService.accessTokenIsExist$;
+	isUserAuthorized$ = this.accessTokenService.accessTokenIsExist$;
 
 	constructor(
 		private communicationWithFigleafService: CommunicationWithFigleafService,

@@ -22,12 +22,12 @@
 
             <div class="breached-account__details">
 				<span class="breached-account__details-text"
-					  *ngIf="!(isUserAuthorize$ | async)">
+					  *ngIf="!(isUserAuthorized$ | async)">
 					Verify your email for details
 				</span>
                 <button class="breached-account__preview-link"
                         (click)="verifyClickEmit()"
-                        *ngIf="!(isUserAuthorize$ | async)"
+                        *ngIf="!(isUserAuthorized$ | async)"
                         vtrSendAnalytics
                         [metricsEvent]="'ItemClick'"
                         [metricsItem]="'BreachedAccountsDetailItem'">
@@ -35,7 +35,7 @@
                 </button>
 
                 <button class="breached-account__accordion-button"
-                        *ngIf="(isUserAuthorize$ | async)"
+                        *ngIf="(isUserAuthorized$ | async)"
                         vtrSendAnalytics
                         [metricsEvent]="'ItemClick'"
                         [metricsItem]="'BreachedAccountsDetailItem'"

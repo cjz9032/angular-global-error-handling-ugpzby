@@ -44,7 +44,7 @@ export class BreachedAccountsService {
 
 	getBreachedAccounts(): Subscription {
 		return merge(
-			this.emailScannerService.scanBreachedAccounts$,
+			this.emailScannerService.scanNotifier$,
 			this.emailScannerService.validationStatusChanged$,
 			this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(
 				distinctUntilChanged(),

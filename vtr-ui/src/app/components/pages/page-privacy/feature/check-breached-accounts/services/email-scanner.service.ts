@@ -55,8 +55,8 @@ export class EmailScannerService {
 	private validationStatusChanged = new Subject<ConfirmationCodeValidationResponse>();
 	validationStatusChanged$ = this.validationStatusChanged.asObservable();
 
-	private scanBreachedAccounts = new BehaviorSubject<boolean>(false);
-	scanBreachedAccounts$ = this.scanBreachedAccounts.asObservable();
+	private scanNotifier = new BehaviorSubject<boolean>(false);
+	scanNotifier$ = this.scanNotifier.asObservable();
 
 	private loadingStatusChanged = new Subject<boolean>();
 	loadingStatusChanged$ = this.loadingStatusChanged.asObservable();
@@ -77,7 +77,7 @@ export class EmailScannerService {
 	setScanBreachedAccounts() {
 		this.storageService.setItem(USER_EMAIL_HASH, getHashCode(this._userEmail$.getValue()));
 		this.safeStorageService.setPassword('figleaf-userEmail', this._userEmail$.getValue());
-		this.scanBreachedAccounts.next(true);
+		this.scanNotifier.next(true);
 	}
 
 	cancelVerification() {
