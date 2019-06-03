@@ -135,7 +135,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 	public drop = {
 		curSelected: 1,
-		edgeopt:
+		modeType: 1,
+		dropOptions:
 			[
 
 				{
@@ -165,6 +166,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			]
 	}
 	public cpuOCStatus: CPUOCStatus;
+	public setCpuOCStatus: any;
 	private gamingCapabilities: any = {
 		cpuInfoFeature: true,
 		gpuInfoFeature: true,
@@ -219,46 +221,24 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 		});
 	}
+	public GetCPUOverClockCacheStatus(): any {
+		return this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus);
+	}
 	public renderCPUOverClockStatus() {
 		try {
-			// this.CpuOCStatus = this.gamingSystemUpdateService.GetCPUOverClockCacheStatus();
-			// if (this.CpuOCStatus !== undefined) {
-			// 	this.edgeopt.forEach((option) => {
-			// 		if (option.value === this.CpuOCStatus.cpuOCStatus) {
-			// 			option.selectedOption = true;
-			// 			return;
-			// 		}
-			// 	});
-			// }
+			this.cpuOCStatus = this.GetCPUOverClockCacheStatus();
+			if (this.cpuOCStatus !== undefined) {
+				this.drop.curSelected = this.cpuOCStatus.cpuOCStatus;
+			}
 			this.gamingSystemUpdateService.getCpuOCStatus().then((cpuOCStatus) => {
 				console.log('get cpu oc status js bridge ---------------->', cpuOCStatus);
 				if (cpuOCStatus !== undefined) {
 					const CpuOCStatusObj = new CPUOCStatus();
 					CpuOCStatusObj.cpuOCStatus = cpuOCStatus;
 					this.drop.curSelected = CpuOCStatusObj.cpuOCStatus;
-
-					// this.ngZone.run(() => {
-					// 	this.edgeopt.forEach((option) => {
-					// 		if (option.value === CpuOCStatusObj.cpuOCStatus) {
-					// 			option.selectedOption = true;
-					// 		}
-					// 	});
-					// });
 				}
 			});
-			//	this.CpuOCStatus = this.gamingSystemUpdateService.GetCPUOverClockStatus();
-			// this.ngZone.run(() => {
-			// 	//this.legionUpdate[0].isChecked = this.CpuOCStatus.cpuOCStatus;
-			// 	if (this.CpuOCStatus !== undefined) {
-			// 		console.log('set cpu oc status in ng zone ->', this.CpuOCStatus.cpuOCStatus);
-			// 		this.edgeopt.forEach((option) => {
-			// 			if (option.value === this.CpuOCStatus.cpuOCStatus) {
-			// 				option.selectedOption = true;
-			// 				return;
-			// 			}
-			// 		});
-			// 	}
-			// });
+
 		} catch (error) {
 			console.error(error.message);
 		}
@@ -266,26 +246,21 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 	onOptionSelected(event) {
 		if (event.target.name === 'gaming.dashboard.device.legionEdge.title') {
-			if (this.cpuOCStatus === undefined) {
-				this.cpuOCStatus = new CPUOCStatus();
+			if (this.setCpuOCStatus === undefined) {
+				this.setCpuOCStatus = new CPUOCStatus();
 			}
-			this.cpuOCStatus.cpuOCStatus = event.option.value;
-			// this.gamingSystemUpdateService.getCpuOCStatus().then((cpuOCStatus) => {
-			// 	console.log('get cpu oc status js bridge ->', cpuOCStatus);
-			// 	if (cpuOCStatus !== undefined) {
-			// 		const CpuOCStatusObj = new CPUOCStatus();
-			// 		CpuOCStatusObj.cpuOCStatus = cpuOCStatus;
-
-			// 	}
-
-			// });
-			//this.gamingSystemUpdateService.setCpuOCStatus(this.CpuOCStatus.cpuOCStatus);
+			this.setCpuOCStatus.cpuOCStatus = event.option.value;
 			this.gamingSystemUpdateService
-				.setCpuOCStatus(this.cpuOCStatus.cpuOCStatus)
+				.setCpuOCStatus(this.setCpuOCStatus.cpuOCStatus)
 				.then((value: boolean) => {
 					console.log('setCpuOCStatus.then', value);
-
-
+					if (!value) {
+						this.drop.curSelected = this.GetCPUOverClockCacheStatus();
+					} else {
+						console.log(' got true from  ----- cpu oc status js bridge ->', this.setCpuOCStatus.cpuOCStatus);
+						this.drop.curSelected = this.setCpuOCStatus.cpuOCStatus;
+						this.commonService.setLocalStorageValue(LocalStorageKey.CpuOCStatus, this.cpuOCStatus.cpuOCStatus);
+					}
 				})
 				.catch(error => {
 					console.error('setCpuOCStatus', error);
