@@ -6,18 +6,18 @@
 	</div>
 	<div class="col-sm-6" *ngIf="!recordingStatus">
 		<div class="select-wrapper">
-			<vtr-ui-gaming-collapsible-container
+			<vtr-ui-macrokey-collapsible-container
 				[options]="repeatOptions"
-				(change)="onRepeatChanged($event,item)">
-			</vtr-ui-gaming-collapsible-container>
+				(change)="onRepeatChanged($event)">
+			</vtr-ui-macrokey-collapsible-container>
 		</div>
 	</div>
 	<div class="col-sm-6" *ngIf="!recordingStatus">
 		<div class="select-wrapper">
-			<vtr-ui-gaming-collapsible-container
+			<vtr-ui-macrokey-collapsible-container
 				[options]="intervalOptions"
-				(change)="onIntervalChanged($event,item)">
-			</vtr-ui-gaming-collapsible-container>
+				(change)="onIntervalChanged($event)">
+			</vtr-ui-macrokey-collapsible-container>
 		</div>
 	</div>
 	<div class="col-sm-12">

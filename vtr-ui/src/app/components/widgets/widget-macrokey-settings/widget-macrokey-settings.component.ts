@@ -7,7 +7,7 @@ import { GamingCollapsableContainerEvent } from 'src/app/data-models/gaming/gami
 	styleUrls: [ './widget-macrokey-settings.component.scss' ]
 })
 export class WidgetMacrokeySettingsComponent implements OnInit {
-	options: any = [
+	macroKeyOptions: any = [
 		{
 			title: 'gaming.macroKey.status.alwaysEnabled.title',
 			name: 'gaming.macroKey.status.alwaysEnabled.title',
@@ -117,7 +117,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit {
 	@Output() optionSelected = new EventEmitter<any>();
 	selectedNumber: any;
 	properties: any = {
-		macroKeyStatus: 1
+		macroKeyStatus: 0
 	};
 	isRecording = false;
 	recorderKeyData: any = [];
