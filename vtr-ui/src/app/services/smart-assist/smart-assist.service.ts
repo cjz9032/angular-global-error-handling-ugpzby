@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
+import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -7,12 +8,15 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 export class SmartAssistService {
 
 	private intelligentSensing;
+	private intelligentMedia;
 	public isShellAvailable = false;
 
 	constructor(shellService: VantageShellService) {
 		this.intelligentSensing = shellService.getIntelligentSensing();
+		this.intelligentMedia = shellService.getIntelligentMedia();
 
-		if (this.intelligentSensing) {
+
+		if (this.intelligentSensing && this.intelligentMedia) {
 			this.isShellAvailable = true;
 		}
 	}
@@ -85,5 +89,26 @@ export class SmartAssistService {
 		return this.intelligentSensing.SetHPDLeaveWaitSetting(value);
 	}
 
+	public getVideoPauseResumeStatus(): Promise<FeatureStatus> {
+		try {
+			if (this.isShellAvailable) {
+				return this.intelligentMedia.getVideoPauseResumeStatus();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+		
+	}
 
+	public setVideoPauseResumeStatus(value: boolean): Promise<boolean> {
+		try {
+			if (this.isShellAvailable) {
+				return this.intelligentMedia.setVideoPauseResumeStatus(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 }

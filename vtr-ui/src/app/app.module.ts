@@ -56,7 +56,7 @@ import { AvailableUpdatesComponent } from './components/pages/page-device-update
 import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
 import { SubpageDeviceSettingsDisplayComponent } from './components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
-import { SubpageDeviceSettingsSmartAssistComponent } from './components/pages/page-device-settings/children/subpage-device-settings-smart-assist/subpage-device-settings-smart-assist.component';
+import { PageSmartAssistComponent } from './components/pages/page-smart-assist/page-smart-assist.component';
 
 // APPLICATION WIDGET COMPONENTS
 import { WidgetSwitchIconComponent } from './components/widgets/widget-switch-icon/widget-switch-icon.component';
@@ -157,6 +157,7 @@ import { CameraBackgroundBlurComponent } from './components/camera-background-bl
 import { PageAutocloseComponent } from './components/pages/page-autoclose/page-autoclose.component';
 import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
 import { PowerSmartSettingsComponent } from './components/widgets/power-smart-settings/power-smart-settings.component';
+import { PageSettingsComponent } from './components/pages/page-settings/page-settings.component';
 import { UiPopoverComponent } from './components/ui/ui-popover/ui-popover.component';
 import { ModalChsWelcomeContainerComponent } from './components/modal/modal-chs-welcome-container/modal-chs-welcome-container.component';
 
@@ -195,10 +196,15 @@ import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
 import { LoginLenovoIdComponent } from './components/modal/modal-chs-welcome-container/child/login-lenovo-id/login-lenovo-id.component';
 import { UiLightingProfileComponent } from './components/ui/ui-lighting-profile/ui-lighting-profile.component';
 import { AutoupdateSettingsComponent } from './components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
+import { UiLightingProfileToggleComponent } from './components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
+import { UiBrightnessSliderComponent } from './components/ui/ui-brightness-slider/ui-brightness-slider.component';
 import { SvgInlinePipe } from './pipe/svg-inline/svg-inline.pipe';
-
-
-
+import { UiLightingEffectComponent } from './components/ui/ui-lighting-effect/ui-lighting-effect.component';
+import { UiLightingSingleColorComponent } from './components/ui/ui-lighting-single-color/ui-lighting-single-color.component';
+import { UiLightingColorWheelComponent } from './components/ui/ui-lighting-color-wheel/ui-lighting-color-wheel.component';
+import { DisplayColorTempComponent } from './components/display/display-color-temp/display-color-temp.component';
+import { IntelligentMediaComponent } from './components/pages/page-smart-assist/intelligent-media/intelligent-media.component';
+import { SubpageDeviceSettingsSmartAssistComponent } from './components/pages/page-device-settings/children/subpage-device-settings-smart-assist/subpage-device-settings-smart-assist.component';
 
 
 library.add(fas);
@@ -232,6 +238,7 @@ library.add(fal);
 		HeaderMainComponent,
 		PageDeviceSettingsComponent,
 		PageDeviceUpdatesComponent,
+		PageSmartAssistComponent,
 		AvailableUpdatesComponent,
 		PageSecurityAntivirusComponent,
 		PageSecurityWifiComponent,
@@ -242,7 +249,6 @@ library.add(fal);
 		SubpageDeviceSettingsPowerComponent,
 		SubpageDeviceSettingsAudioComponent,
 		SubpageDeviceSettingsDisplayComponent,
-		SubpageDeviceSettingsSmartAssistComponent,
 		PageQuestionsComponent,
 		ModalWelcomeComponent,
 		ContainerCollapsibleComponent,
@@ -348,14 +354,23 @@ library.add(fal);
 		PageAutocloseComponent,
 		PageNetworkBoostComponent,
 		PowerSmartSettingsComponent,
-		SubpageDeviceSettingsSmartAssistComponent,
+		PageSettingsComponent,
 		WidgetHomeSecurityDeviceComponent,
 		UiLightingProfileComponent,
 		AutoupdateSettingsComponent,
 		UiPopoverComponent,
 		ModalChsWelcomeContainerComponent,
 		LoginLenovoIdComponent,
-		SvgInlinePipe
+		SvgInlinePipe,
+		IntelligentMediaComponent,
+		DisplayColorTempComponent,
+		UiLightingProfileToggleComponent,
+		UiBrightnessSliderComponent,
+		SvgInlinePipe,
+		UiLightingEffectComponent,
+		UiLightingSingleColorComponent,
+		UiLightingColorWheelComponent,
+		SubpageDeviceSettingsSmartAssistComponent
 	],
 	imports: [
 		BrowserModule,

@@ -1,52 +1,51 @@
 <div class="ui-lighting-profile">
-  <div class="multi-state-toggle">
-    <input type="radio" value="" name="lighting-porfile" id="off_radio">
-    <label for="off_radio" id="off">Off</label>
-    <input type="radio" value="" name="lighting-porfile" id="first_radio" checked>
-    <label for="first_radio" id="first_lbl">Profile 1</label>
-    <input type="radio" value="" name="lighting-porfile" id="second_radio">
-    <label for="second_radio" id="second_lbl">Profile 2</label>
-    <input type="radio" value="" name="lighting-porfile" id="third_radio">
-    <label for="third_radio" id="third_lbl">Profile 3</label>
-    <div class="toggle"></div>
+  <div class="d-flex justify-content-around">
+      <vtr-ui-lighting-profile-toggle></vtr-ui-lighting-profile-toggle>
+      <vtr-ui-brightness-slider></vtr-ui-brightness-slider>
   </div>
+  
 
   <div class="lighting-area">
     <div class="d-flex">
-      <div class="gaming-device-image">
-        <img src="./../../../../assets/images/gaming/lighting/ren@2x.png" class="img-responsive" />
+      <div class="gaming-device-image d-flex align-items-center">
+        <img src="./../../../../assets/images/gaming/lighting/T730Front@2x.png" class="img-responsive" />
       </div>
       <div class="gaming-light-options">
-        <div class="light-option one-light only-blink">
-          <h3 class="content-title">Blink Level</h3>
-          <ul class="lighting-list-option">
-            <li>
-              <label class="gaming-radio">Always On
-                <input type="radio" checked="checked" name="radio">
-                <span class="checkmark"></span>
-              </label>
-            </li>
-            <li>
-              <label class="gaming-radio">Fast Blink
-                <input type="radio" name="radio">
-                <span class="checkmark"></span>
-              </label>
-            </li>
-            <li>
-              <label class="gaming-radio">Medium Blink
-                <input type="radio" name="radio">
-                <span class="checkmark"></span>
-              </label>
-            </li>
-            <li>
-              <label class="gaming-radio">Slow Blink
-                <input type="radio" name="radio">
-                <span class="checkmark"></span>
-              </label>
-            </li>
-          </ul>
+        <!-- <div class="light-option one-light only-blink">
+          <vtr-ui-lighting-single-color></vtr-ui-lighting-single-color>
+        </div> -->
+        <div class="light-option rgb-color one-light">
+          <h2 class="main-title">Front Light</h2>
+          <h3 class="content-title">Effect</h3>
+          <vtr-ui-lighting-effect [options]="options"></vtr-ui-lighting-effect>
+          <h3 class="content-title">Color</h3>
+          <vtr-ui-lighting-color-wheel></vtr-ui-lighting-color-wheel>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="lighting-area">
+      <div class="d-flex">
+        <div class="gaming-device-image d-flex align-items-center">
+          <img src="./../../../../assets/images/gaming/lighting/T730Side@2x.png" class="img-responsive" />
+        </div>
+        <div class="gaming-light-options">
+          <!-- <div class="light-option one-light only-blink">
+            <vtr-ui-lighting-single-color></vtr-ui-lighting-single-color>
+          </div> -->
+          <div class="light-option rgb-color one-light">
+            <h2 class="main-title">Side Light</h2>
+            <h3 class="content-title">Effect</h3>
+            <vtr-ui-lighting-effect [options]="options"></vtr-ui-lighting-effect>
+            <h3 class="content-title">Color</h3>
+            <vtr-ui-lighting-color-wheel></vtr-ui-lighting-color-wheel>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="footer-part d-flex flex-row-reverse">
+      <a href="#" class="link">Set to default</a>
+  </div>
+  
 </div>

@@ -79,7 +79,13 @@
 			}
 		},
 		"lightingProfile": {
-			"title": "Lighting"
+			"title": "Lighting",
+			"effect": {
+				"option1": "Wave",
+				"option2": "Option 2",
+				"option3": "Option 3",
+				"option4": "option 4"
+			}
 		}
 	},
 	"common": {
@@ -598,6 +604,20 @@
 							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
 						}
 					},
+					"dispColorTemp": {
+						"title": "Display color temperature",
+						"options": {
+							"warm": "Warm (Better for eyes)",
+							"cold": "Cold"
+						},
+						"reset": "Reset temperature",
+						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
+						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+						"note": {
+							"title": "Note",
+							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+						}
+					},
 					"privacyGuard": {
 						"title": "Privacy guard",
 						"description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
@@ -634,81 +654,87 @@
 						"sketchMode": "Sketch mode"
 					}
 				}
+			}
+		},
+		"smartAssist": {
+			"title": "Smart Assist",
+			"description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+			"jumpTo": {
+				"title": "JUMP TO SETTINGS",
+				"security": "Security",
+				"screen": "Screen",
+				"media": "Media",
+				"voice": "Voice"
 			},
-			"smartAssist": {
-				"title": "Smart Assist",
-				"description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
-				"jumpTo": {
-					"title": "JUMP TO SETTINGS",
-					"security": "Security",
-					"screen": "Screen",
-					"media": "Media",
-					"voice": "Voice"
+			"intelligentSecurity": {
+				"title": "Intelligent Security",
+				"readMore": "Read more",
+				"humanPresenceDetection": {
+					"title": "User Presence Sensing",
+					"tooltip": "Click here to reset human presence Detection settings."
 				},
-				"intelligentSecurity": {
-					"resetSettings":"Reset to default settings",
-					"title": "Intelligent Security",
-					"readMore": "Read more",
-					"humanPresenceDetection": {
-						"title": "User Presence Sensing",
-						"tooltip": "Click here to reset human presence Detection settings."
-					},
-					"zeroTouchLogin": {
-						"title": "Zero Touch Login",
-						"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
-					},
-					"zeroTouchLock": {
-						"title": "Zero Touch Lock",
-						"caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
-						"autoScreenLockTimer": {
-							"title": "AUTO SCREEN LOCK TIMER",
-							"radioButton": {
-								"fast": "Fast",
-								"medium": "Medium",
-								"slow": "Slow"
-							},
-							"toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
-						}
-					},
-					"distanceSensitivityAdjusting": {
-						"title1": "Distance Sensitivity Adjusting",
-						"title2": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-						"caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
-						"options": {
-							"near": "Near",
-							"far": "Far"
-						}
-					},
-					"note": {
-						"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-						"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
-						"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-						"description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-						"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
-					},
-					"WindowsLink": {
-						"goToWindowsHello": "Go to Windows Hello Settings",
-						"screenTimeoutSettings": "Go to Screen timeout settings"
+				"zeroTouchLogin": {
+					"title": "Zero Touch Login",
+					"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
+				},
+				"zeroTouchLock": {
+					"title": "Zero Touch Lock",
+					"caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+					"autoScreenLockTimer": {
+						"title": "AUTO SCREEN LOCK TIMER",
+						"radioButton": {
+							"fast": "Fast",
+							"medium": "Medium",
+							"slow": "Slow"
+						},
+						"toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
 					}
 				},
-				"intelligentScreen": {
-					"title": "Intelligent Screen",
-					"description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
-					"autoScreenOff": {
-						"title": "Auto screen off",
-						"caption": "Automatically turn off display when face-down or walking.",
-						"note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-						"windowsLink": "Go to Power & sleep settings in Windows settings"
-					},
-					"keepMyDisplay": {
-						"title": "Keep my display",
-						"caption": "Keep my display when I am reading or browsing.",
-						"displaySlider": {
-							"startTime": "0 minutes",
-							"endTime": "60 minutes"
-						}
+				"distanceSensitivityAdjusting": {
+					"title1": "DISTANCE SENSITIVITY ADJUSTING",
+					"title2": "AUTO DISTANCE SENSITIVITY ADJUSTING",
+					"caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+					"options": {
+						"near": "Near",
+						"far": "Far"
+					}
+				},
+				"note": {
+					"description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
+					"description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
+					"description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
+					"description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
+					"description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+				},
+				"WindowsLink": {
+					"goToWindowsHello": "Go to Windows Hello Settings",
+					"screenTimeoutSettings": "Go to Screen timeout settings"
+				},
+				"resetToDefault": "RESET TO DEFAULT SETTINGS"
+			},
+			"intelligentScreen": {
+				"title": "Intelligent Screen",
+				"description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+				"autoScreenOff": {
+					"title": "Auto screen off",
+					"caption": "Automatically turn off display when face-down or walking.",
+					"note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
+					"windowsLink": "Go to Power & sleep settings in Windows settings"
+				},
+				"keepMyDisplay": {
+					"title": "Keep my display",
+					"caption": "Keep my display when I am reading or browsing.",
+					"displaySlider": {
+						"startTime": "0 minutes",
+						"endTime": "60 minutes"
 					}
 				}
+			},
+			"intelligentMedia": {
+				"heading": "Intelligent Media",
+				"title": "Zero Touch Video Playback",
+				"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
 			}
 		}
 	},
@@ -1517,9 +1543,9 @@
 	},
 	"welcometutorial": {
 		"description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-		"bullets1": "Optimize your system with lorem ipsum dolor set",
-		"bullets2": "Security Advisor makes managing your security easy ",
-		"bullets3": "Automatic updates keep your device in tip top shape",
+		"bullets1": "View your system's status with the Vantage dashboard.",
+		"bullets2": "Security Advisor makes managing your security easy (Available on selected systems)",
+		"bullets3": "Automatic updates keep your device in tip top shape (Available on selected systems)",
 		"subtitle1": "How will you be using your device?",
 		"subtitle2": "Tell us about your interests",
 		"personal": "Personal Use",
@@ -1544,5 +1570,22 @@
 			"music": "Music",
 			"science": "Science"
 		}
+	},
+	"settings": {
+		"preferenceSettings": "Preference settings",
+		"settings": "Settings",
+		"settingsDescription": "In preference setting page, you can choose to turn on/off your message notification based on the categories of Vantage's message, please be noted that even if all the message categories are disabled, you may still occasionally receive System Critical message from Vantage when necessary.",
+		"messagesInLenovoVantage": "Messages in Lenovo Vantage",
+		"appFeatures": "App features",
+		"appFeaturesDescription": "Messages pertaining System Update, articles and other noteworthy features.",
+		"marketing": "Marketing",
+		"marketingDescription": "Promotion messages including Lenovo special offers.",
+		"actionTriggered": "Action Triggered",
+		"actionTriggeredDescription": "Messages triggered by user selecting settings such as auto-install critical/recommended updates.",
+		"OtherSettings": "Other settings",
+		"usageStatistics": "Usage Statistics",
+		"usageStatisticsDescription": "Send anonymous usage statistics to Lenovo.",
+		"Note": "Note: ",
+		"settingsNotes": "all the settings in this page will need users to restart to take effect."
 	}
 }

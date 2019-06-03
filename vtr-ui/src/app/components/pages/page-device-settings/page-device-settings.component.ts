@@ -7,8 +7,6 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AudioService } from 'src/app/services/audio/audio.service';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
-import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
-import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -53,13 +51,10 @@ export class PageDeviceSettingsComponent implements OnInit {
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
-		public audioService: AudioService,
-		private smartAssist: SmartAssistService,
-		private logger: LoggerService
+		public audioService: AudioService
 	) {
 		this.fetchCMSArticles();
 		this.getMicrophoneSettings();
-		this.getHPDStatus();
 	}
 
 	ngOnInit() {
@@ -111,30 +106,4 @@ export class PageDeviceSettingsComponent implements OnInit {
 			}
 		);
 	}
-
-	/**
-	 * check if HPD related features are supported or not. If yes show Smart Assist tab else hide. Default is hidden
-	 */
-	private getHPDStatus() {
-		this.smartAssist.getIntelligentSecurityVisibility()
-			.then((isAvailable: boolean) => {
-				console.log('getHPDStatus.getHPDCapability()', isAvailable);
-				isAvailable = true;
-				this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
-				if (isAvailable) {
-					this.menuItems.push({
-						id: 'smart-assist',
-						label: 'Smart Assist',
-						path: 'device/device-settings/smart-assist',
-						icon: 'smart-assist',
-						subitems: [],
-						active: false
-					});
-				}
-			})
-			.catch(error => {
-				this.logger.error('error in getHPDStatus.getHPDCapability()', error);
-			});
-	}
-
 }

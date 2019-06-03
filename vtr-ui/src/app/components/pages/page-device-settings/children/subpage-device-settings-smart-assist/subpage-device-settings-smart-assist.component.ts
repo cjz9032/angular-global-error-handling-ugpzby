@@ -38,15 +38,14 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 			title: 'device.deviceSettings.smartAssist.jumpTo.security',
 			path: 'security'
 		},
-		// enable this when UI is completed for that section
-		// {
-		// 	title: 'device.deviceSettings.smartAssist.jumpTo.screen',
-		// 	path: 'screen'
-		// },
-		// {
-		// 	title: 'device.deviceSettings.smartAssist.jumpTo.media',
-		// 	path: 'media'
-		// },
+		{
+			title: 'device.deviceSettings.smartAssist.jumpTo.screen',
+			path: 'screen'
+		},
+		{
+			title: 'device.deviceSettings.smartAssist.jumpTo.media',
+			path: 'media'
+		},
 		// {
 		// 	title: 'device.deviceSettings.smartAssist.jumpTo.voice',
 		// 	path: 'voice'
@@ -168,5 +167,9 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	}
 
 	public onResetIntelligentSecurity() {
+	}
+
+	hideMediaSetting($event) {
+		this.headerMenuItems.splice(2, 1);
 	}
 }
