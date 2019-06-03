@@ -74,7 +74,7 @@ export class EmailScannerService {
 		this._userEmail$.next(userEmail);
 	}
 
-	setScanBreachedAccounts() {
+	scanNotifierEmit() {
 		this.storageService.setItem(USER_EMAIL_HASH, getHashCode(this._userEmail$.getValue()));
 		this.safeStorageService.setPassword('figleaf-userEmail', this._userEmail$.getValue());
 		this.scanNotifier.next(true);

@@ -122,6 +122,6 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	}
 
 	private setScanBreachedAccounts() {
-		this.emailScannerService.setScanBreachedAccounts();
+		this.emailScannerService.scanNotifierEmit();
 	}
 }
