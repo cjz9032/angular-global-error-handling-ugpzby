@@ -61,7 +61,7 @@
 	</div>
 	<!-- end of page2-->
 	<!-- start of page 3-->
-	<div class="page page-three" *ngIf="switchPage === 3 && idLenovoIdLogin === false">
+	<div class="page page-three" *ngIf="switchPage === 3 && isLenovoIdLogin === false">
 		<vtr-login-lenovo-id>
 
 		</vtr-login-lenovo-id>
@@ -75,7 +75,7 @@
     <p class="sub-desc">
         {{'homeSecurity.tour.locationPermission' | translate}}  
     </p>
-		<div class="d-flex" *ngIf="isLocationServiceOn === false">
+		<div class="d-flex" *ngIf="!isLocationServiceOn">
 			<div class="ml-0 mr-4 pl-0">
 				<button id="chs-tour-location-agree-btn" type="button" class="btn btn-default modal-button"
 					(click)="onOkClick($event)" vtrMetrics metricsParent="Security.WifiSecurity"
@@ -118,7 +118,7 @@
 			<div class="col-6">
 				<div class="tour-indicator d-flex justify-content-center align-items-center">
 					<div class="tour-indicator-num d-flex justify-content-center align-items-center m-3"
-						*ngFor="let item of itemsList;let first = first;last as isLast;let i = index"
+						*ngFor="let item of indicatorList;let first = first;last as isLast;let i = index"
 						[ngClass]="{'selected': i+1 === switchPage,'completed': i+1 < switchPage,'unselected': i+1 > switchPage}"
 						id="chs-tour-indicator-{{i}}" (click)="selected(i)">
 						<span>{{i+1 === switchPage ? i+1 : ''}}</span>
