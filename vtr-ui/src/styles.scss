@@ -656,6 +656,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 				background: linear-gradient(135deg, $shade_lighter 0%, $shade_lightest 100%) !important;
 				color: $blue-dark !important;
 				border: 0.1rem solid $shade_light !important;
+				width: 100%;
 			}
 		}
 	}
@@ -664,6 +665,11 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .vtr-modal-chs-welcome-container {
 	.modal-backdrop.show {
 		opacity: 0.7;
+	}
+	.button-gray {
+		.vtr-ui-button {
+			width: 100%;
+		}
 	}
 	.vtr-ui-button {
 		.button-box {

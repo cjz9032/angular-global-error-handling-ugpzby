@@ -51,6 +51,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	hasMore: boolean;
 	switchDisabled = false;
 	locatorButtonDisable = false;
+	cancelClick = false;
 
 	constructor(
 		public modalService: NgbModal,
@@ -81,6 +82,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 					this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);
 				} else if (value) {
 					if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
+						this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
 						this.data.wifiSecurity.enableWifiSecurity().then((res) => {
 							if (res === true) {
 								this.data.isLWSEnabled = true;
@@ -93,6 +95,12 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 					}
 				}
 			});
+		});
+
+		this.data.wifiSecurity.on('cancelClick', () => {
+			this.cancelClick = true;
+		}).on('cancelClickFinish', () => {
+			this.cancelClick = false;
 		});
 	}
 

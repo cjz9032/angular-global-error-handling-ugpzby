@@ -5,7 +5,7 @@
 				<div class="heading">{{'security.wifisecurity.container.title' | translate}}</div>
 			</div>
 			<div class="pull right"><img class="coronet-logo"
-					src="../../../../assets/images/coronet-logo.svg" /></div>
+					[src]=" '../../../../assets/images/coronet-logo.svg' | svgInline | async" /></div>
 		</div>
 		<div class="row mt-20 no-gutters">
 			<div class="col-12">
@@ -40,13 +40,14 @@
 								<div class="col-sm-6 align-items-center text-right sm-device-responsive">
 									<vtr-ui-switch-onoff id="sa-ws-btn-switchstatus"
 										aria-label="sa-ws-btn-switchstatus"
-										[ngClass]="{'switch-disable': isDisableToggle()}"
+										[ngClass]="{'switch-disable': isDisableToggle() || cancelClick}"
 										*ngIf="data.wifiSecurity.state !== 'never-used'"
 										name="wifisecurity"
 										[value]="data.isLWSEnabled"
 										[data]="data"
 										[name]="'wifiSecurity'"
-										[disabled]="switchDisabled"></vtr-ui-switch-onoff>
+										[disabled]="switchDisabled || cancelClick"
+										[isSwitchDisable]="cancelClick"></vtr-ui-switch-onoff>
 									<div class="collapse-control" 
 										id="sa-ws-lnk-collapsecontrol"
 										aria-label="sa-ws-lnk-collapsecontrol"

@@ -694,7 +694,13 @@
                             "endTime": "60 minutes"
                         }
                     }
-                }
+                },
+				"intelligentMedia": {
+					"heading": "Intelligent Media",
+					"title": "Zero Touch Video Playback",
+					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+				}
             }
         }
     },
@@ -1011,7 +1017,7 @@
                 "describe": "С помощью детектора угроз можно найти ближайшие безопасные сети.",
                 "button": "Проверить наличие угроз",
                 "connectionError": "Ошибка подключения",
-                "tryAgain": "Не удается найти ваше устройство, так как сеть недоступна. Обеспечьте подключение к Интернету и повторите попытку."
+                "tryAgain": "Не удается найти угрозу, так как сеть недоступна. Обеспечьте подключение к Интернету и повторите попытку."
             },
             "locationmodal": {
                 "title": "Включить службы определения местоположения",
@@ -1527,7 +1533,7 @@
     },
     "welcometutorial": {
         "description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-        "bullets1": "Optimize your system with lorem ipsum dolor set",
+        "bullets1": "View your system's status with the Vantage dashboard.",
         "bullets2": "Security Advisor makes managing your security easy ",
         "bullets3": "Automatic updates keep your device in tip top shape",
         "subtitle1": "How will you be using your device?",
@@ -1554,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Параметры предпочтений",
+        "settings": "Параметры",
+        "settingsDescription": "На странице параметров предпочтений можно включить или отключить уведомления о сообщениях для тех или иных категорий сообщений Vantage. Обратите внимание, что даже если все категории сообщений отключены, вы по-прежнему можете получать сообщения Vantage о критическом состоянии системы в случае необходимости.",
+        "messagesInLenovoVantage": "Сообщения в Lenovo Vantage",
+        "appFeatures": "Функции приложения",
+        "appFeaturesDescription": "Сообщения, относящиеся к System Update, статьям и другим заслуживающим внимания функциям.",
+        "marketing": "Маркетинг",
+        "marketingDescription": "Рекламные сообщения, включая спецпредложения Lenovo.",
+        "actionTriggered": "Инициированное действие",
+        "actionTriggeredDescription": "Сообщения при выборе пользователем таких параметров, как автоматическая установка критических/рекомендуемых обновлений.",
+        "OtherSettings": "Другие параметры",
+        "usageStatistics": "Статистика использования",
+        "usageStatisticsDescription": "Отправлять анонимную статистику использования в компанию Lenovo.",
+        "Note": "Замечание: ",
+        "settingsNotes": "Для вступления в силу любых параметров на этой странице необходимо перезапустить систему."
     }
 }

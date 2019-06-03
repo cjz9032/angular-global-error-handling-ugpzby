@@ -51,6 +51,12 @@
 					[disabled]="feedbackForm.invalid">
 					{{ feedbackButtonText }}
 				</button>
+				<button type="button" 
+					name="{{'dashboard.feedback.form.addScreenshot' | translate}}"
+					class="btn btn-primary btn-lg user-submit"
+					(click)="goToMailUtility()">
+					{{'dashboard.feedback.form.addScreenshot' | translate}}
+				</button>
 			</div>
 		</div>
 	</form>

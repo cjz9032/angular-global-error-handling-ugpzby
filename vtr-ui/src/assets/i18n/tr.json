@@ -694,7 +694,13 @@
                             "endTime": "60 minutes"
                         }
                     }
-                }
+                },
+				"intelligentMedia": {
+					"heading": "Intelligent Media",
+					"title": "Zero Touch Video Playback",
+					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+				}
             }
         }
     },
@@ -1011,7 +1017,7 @@
                 "describe": "Çevrenizdeki ağların güvenliğini belirlemek için tehdit dedektörünü kullanın.",
                 "button": "Tehdidi denetle",
                 "connectionError": "Bağlantı Hatası",
-                "tryAgain": "Ağ kullanılamadığından cihazınızı bulamıyoruz, lütfen İnternet’e bağlanın ve yeniden deneyin."
+                "tryAgain": "Ağ kullanılamadığından size yönelik tehdidi bulamıyoruz, lütfen İnternet’e bağlanın ve yeniden deneyin."
             },
             "locationmodal": {
                 "title": "Konum hizmetlerini etkinleştir",
@@ -1527,7 +1533,7 @@
     },
     "welcometutorial": {
         "description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-        "bullets1": "Optimize your system with lorem ipsum dolor set",
+        "bullets1": "View your system's status with the Vantage dashboard.",
         "bullets2": "Security Advisor makes managing your security easy ",
         "bullets3": "Automatic updates keep your device in tip top shape",
         "subtitle1": "How will you be using your device?",
@@ -1554,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Tercih ayarları",
+        "settings": "Ayarlar",
+        "settingsDescription": "Tercih ayarı sayfasında, ileti bildirimini Vantage'ın ileti kategorilerine göre açıp kapatabilirsiniz. Tüm ileti kategorileri devre dışı bırakılmış olsa bile Vantage uygulamasından gerektiğinde Sistem Kritik iletileri alabileceğinizi lütfen unutmayın.",
+        "messagesInLenovoVantage": "Lenovo Vantage'da İletiler",
+        "appFeatures": "Uygulama özellikleri",
+        "appFeaturesDescription": "System Update, makaleler ve kayda değer diğer özellikler ile ilgili iletiler.",
+        "marketing": "Pazarlama",
+        "marketingDescription": "Lenovo özel teklifleri de dahil olmak üzere promosyon iletileri.",
+        "actionTriggered": "Tetiklenen Eylem",
+        "actionTriggeredDescription": "Kullanıcının kritik/önerilen güncellemeleri otomatik olarak yükleme gibi ayarları seçmesiyle tetiklenen iletiler.",
+        "OtherSettings": "Diğer ayarlar",
+        "usageStatistics": "Kullanım İstatistikleri",
+        "usageStatisticsDescription": "Lenovo'ya anonim kullanım istatistikleri gönder.",
+        "Note": "Not: ",
+        "settingsNotes": "Bu sayfadaki tüm ayarların geçerli olması için kullanıcının yeniden başlatması gerekir."
     }
 }

@@ -25,6 +25,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	warrantyNormalUrl = 'https://pcsupport.lenovo.com/us/en/warrantylookup';
 	langText = 'en';
 	// langText = 'zh-hans';
+	backId = 'support-page-btn-back';
 	supportDatas = {
 		documentation: [
 			{

@@ -223,20 +223,21 @@ export class ConfigService {
 			exact: true
 		},
 		forArm: false,
-		subitems: []
-	}, {
-		id: 'home-security',
-		label: 'common.menu.homeSecurity',
-		path: 'home-security',
-		metricsEvent: 'itemClick',
-		metricsParent: 'navbar',
-		metricsItem: 'link.homesecurity',
-		routerLinkActiveOptions: {
-			exact: true
-		},
-		icon: ['fal', 'home-lg-alt'],
-		forArm: false,
-		subitems: []
+        subitems: []
+    // hide connected home-security navigate button temporary
+	// }, {
+	// 	id: 'home-security',
+	// 	label: 'common.menu.homeSecurity',
+	// 	path: 'home-security',
+	// 	metricsEvent: 'itemClick',
+	// 	metricsParent: 'navbar',
+	// 	metricsItem: 'link.homesecurity',
+	// 	routerLinkActiveOptions: {
+	// 		exact: true
+	// 	},
+	// 	icon: ['fal', 'home-lg-alt'],
+	// 	forArm: false,
+	// 	subitems: []
 	}, {
 		id: 'user',
 		label: 'User',
@@ -343,11 +344,6 @@ export class ConfigService {
 				exact: true
 			},
 			subitems: []
-		},{
-			id: 'privacy',
-			label: 'common.menu.privacy',
-			path: 'privacy',
-			icon: ['icomoon', 'icomoon-LE-Figleaf2x'],
 		}, {
 			id: 'wifi-security',
 			label: 'common.menu.security.sub3',
@@ -398,20 +394,21 @@ export class ConfigService {
 			exact: true
 		},
 		forArm: false,
-		subitems: []
-	}, {
-		id: 'home-security',
-		label: 'common.menu.homeSecurity',
-		path: 'home-security',
-		metricsEvent: 'itemClick',
-		metricsParent: 'navbar',
-		metricsItem: 'link.homesecurity',
-		routerLinkActiveOptions: {
-			exact: true
-		},
-		icon: ['fal', 'home-lg-alt'],
-		forArm: false,
-		subitems: []
+        subitems: []
+    // hide connected home-security navigate button temporary
+	// }, {
+	// 	id: 'home-security',
+	// 	label: 'common.menu.homeSecurity',
+	// 	path: 'home-security',
+	// 	metricsEvent: 'itemClick',
+	// 	metricsParent: 'navbar',
+	// 	metricsItem: 'link.homesecurity',
+	// 	routerLinkActiveOptions: {
+	// 		exact: true
+	// 	},
+	// 	icon: ['fal', 'home-lg-alt'],
+	// 	forArm: false,
+	// 	subitems: []
 	}, {
 		id: 'user',
 		label: 'User',

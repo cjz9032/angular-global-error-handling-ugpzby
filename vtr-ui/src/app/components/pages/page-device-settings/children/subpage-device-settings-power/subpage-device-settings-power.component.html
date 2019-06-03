@@ -63,6 +63,7 @@
 						<vtr-ui-row-switch [title]="batterySettings.items[1].header"
 							[caption]="batterySettings.items[1].subHeader"
 							[isSwitchVisible]=true
+							[isLastChild]="!conservationModeStatus.available && !expressChargingStatus.available"
 							[leftIcon]="batterySettings.items[1].leftImageSource"
 							[rightIcon]="batterySettings.items[1].rightImageSource"
 							[readMoreText]="batterySettings.items[1].readMoreText"
@@ -93,6 +94,7 @@
 							[name]="'device.deviceSettings.power.batterySettings.expressCharging.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.expressCharging.description' | translate"
 							[isSwitchVisible]=true
+							[isLastChild]="!conservationModeStatus.available"
 							[leftIcon]="batterySettings.items[2].leftImageSource"
 							[tooltipText]="'device.deviceSettings.power.batterySettings.expressCharging.tooltip' | translate"
 							[isSwitchChecked]="expressChargingStatus.status"
@@ -107,6 +109,7 @@
 							[name]="'device.deviceSettings.power.batterySettings.conservationMode.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.conservationMode.description' | translate"
 							[isSwitchVisible]=true
+							[isLastChild]=true
 							[leftIcon]="batterySettings.items[3].leftImageSource"
 							[tooltipText]="'device.deviceSettings.power.batterySettings.conservationMode.tooltip.line1' | translate"
 							[isSwitchChecked]="conservationModeStatus.status"
@@ -132,6 +135,7 @@
 							[name]="'device.deviceSettings.power.powerSettings.alwaysUSB.title' | translate"
 							[caption]="'device.deviceSettings.power.powerSettings.alwaysUSB.description' | translate"
 							[isSwitchVisible]=true
+							[isLastChild]="!showEasyResumeSection"
 							[isSwitchChecked]="alwaysOnUSBStatus.status"
 							[leftIcon]="powerSettings[0].leftImageSource"
 							[rightIcon]="powerSettings[0].rightImageSource"
@@ -187,6 +191,7 @@
 							[name]="'device.deviceSettings.power.powerSettings.easyResume.title' | translate"
 							[caption]="'device.deviceSettings.power.powerSettings.easyResume.description' | translate"
 							[isSwitchVisible]=true
+							[isLastChild]=true
 							[isSwitchChecked]='toggleEasyResumeStatus'
 							[leftIcon]="['icomoon','icomoon-LE-Easy-resume2x']"
 							[rightIcon]="powerSettings[1].rightImageSource"
@@ -215,6 +220,7 @@
 							[title]="'device.deviceSettings.power.otherSettings.vantageToolbar.title' | translate"
 							[caption]="'device.deviceSettings.power.otherSettings.vantageToolbar.description' | translate"
 							[isSwitchVisible]=true
+							[isLastChild]=true
 							[leftIcon]="item.leftImageSource"
 							[isSwitchChecked]="vantageToolbarStatus.status"
 							(toggleOnOff)="onVantageToolBarStatusToggle($event)">

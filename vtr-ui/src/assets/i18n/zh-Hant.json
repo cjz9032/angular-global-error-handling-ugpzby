@@ -694,7 +694,13 @@
                             "endTime": "60 minutes"
                         }
                     }
-                }
+                },
+				"intelligentMedia": {
+					"heading": "Intelligent Media",
+					"title": "Zero Touch Video Playback",
+					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+				}
             }
         }
     },
@@ -1011,7 +1017,7 @@
                 "describe": "使用威脅偵測器判斷您周圍網路的安全性。",
                 "button": "檢查威脅",
                 "connectionError": "連線錯誤",
-                "tryAgain": "網路無法使用，因此我們找不到您的裝置，請連接到網際網路，然後重試。"
+                "tryAgain": "網路無法使用，因此我們找不到對您的威脅，請連接到網際網路，然後重試。"
             },
             "locationmodal": {
                 "title": "啟用位置服務",
@@ -1527,7 +1533,7 @@
     },
     "welcometutorial": {
         "description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-        "bullets1": "Optimize your system with lorem ipsum dolor set",
+        "bullets1": "View your system's status with the Vantage dashboard.",
         "bullets2": "Security Advisor makes managing your security easy ",
         "bullets3": "Automatic updates keep your device in tip top shape",
         "subtitle1": "How will you be using your device?",
@@ -1554,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "喜好設定",
+        "settings": "設定",
+        "settingsDescription": "在喜好設定頁面中，您可以根據 Vantage 的訊息類別選擇開啟/關閉您的訊息通知，請注意即使所有訊息類別皆已停用，必要時您可能偶爾仍會收到 Vantage 的系統重要訊息。",
+        "messagesInLenovoVantage": "Lenovo Vantage 中的訊息",
+        "appFeatures": "應用程式功能",
+        "appFeaturesDescription": "與 System Update、文章和其他重要功能相關的訊息。",
+        "marketing": "行銷",
+        "marketingDescription": "促銷訊息包括 Lenovo 特別優惠。",
+        "actionTriggered": "引發的動作",
+        "actionTriggeredDescription": "使用者選取設定（例如自動安裝重要/建議的更新）所觸發的訊息。",
+        "OtherSettings": "其他設定",
+        "usageStatistics": "使用情形統計資料",
+        "usageStatisticsDescription": "傳送匿名使用方式統計資料給 Lenovo。",
+        "Note": "附註：",
+        "settingsNotes": "使用者必須重新啟動，才能讓此頁面中的所有設定生效。"
     }
 }

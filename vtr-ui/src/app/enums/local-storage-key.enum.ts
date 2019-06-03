@@ -29,6 +29,7 @@ export enum LocalStorageKey {
 	SecurityLandingWindowsHelloFingerprintStatus = '[LocalStorageKey] SecurityLandingWindowsHelloFingerprintStatus',
 	SecurityLandingScore = '[LocalStorageKey] SecurityLandingScore',
 	SecurityLandingMaliciousWifi = '[LocalStorageKey] SecurityLandingMaliciousWifi',
+	HomeProtectionDevicePosture = '[LocalStorageKey] HomeProtectionDevicePosture',
 	DesktopMachine = '[LocalStorageKey] DesktopMachine',
 	HadRunApp = '[LocalStorageKey] HadRunApp',
 	LidFakeDeviceID = '[LocalStorageKey] LidFakeDeviceID',
@@ -48,4 +49,6 @@ export enum LocalStorageKey {
 	 * 3 means "thinkCenter"
 	 */
 	MachineType = '[LocalStorageKey] MachineType',
+	HybridModeStatus = '[LocalStorageKey] HybridModeStatus',
+	TouchpadStatus = '[LocalStorageKey] TouchpadStatus',
 }
