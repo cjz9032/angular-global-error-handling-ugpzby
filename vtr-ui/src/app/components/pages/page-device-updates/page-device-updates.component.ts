@@ -61,7 +61,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public percentCompleted = 0;
 	public isUpdatesAvailable = false;
 	public isUpdateDownloading = false;
-	public isCheckingPluginStatus = true;
+	public isCheckingPluginStatus = false;
 	public installationPercent = 0;
 	public downloadingPercent = 0;
 	public isInstallingAllUpdates = true;
@@ -336,11 +336,11 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public onCheckForUpdates() {
 		if (this.systemUpdateService.isShellAvailable) {
 			this.setUpdateTitle();
-			this.isUserCancelledUpdateCheck = false;
+			this.isUserCancelledUpdateCheck = true;
 			this.isUpdateCheckInProgress = true;
 			this.isUpdatesAvailable = false;
 			this.systemUpdateService.isUpdatesAvailable = false;
-			this.isInstallingAllUpdates = true;
+			this.isInstallingAllUpdates = false;
 			this.systemUpdateService.isInstallingAllUpdates = true;
 			this.resetState();
 			this.systemUpdateService.checkForUpdates();
