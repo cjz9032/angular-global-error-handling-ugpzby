@@ -301,20 +301,22 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 	public renderRamOverClockStatus() {
 		this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
+			console.log('xtu--->' + this.gamingCapabilities.xtuService);
 			if (this.gamingCapabilities.xtuService === true) {
 				if (this.commonService) {
 					this.legionUpdate[1].isChecked = this.GetRAMOverClockCacheStatus();
 				}
 			}
-		});
 
-		this.gamingSystemUpdateService.getRamOCStatus().then((ramOcStatus) => {
-			console.log('get RAMOC status js bridge -->', ramOcStatus);
-			if (ramOcStatus !== undefined) {
-				this.RamOCSatusObj.ramOcStatus = ramOcStatus;
-				this.SetRAMOverClockCacheStatus(ramOcStatus);
-				this.legionUpdate[1].isChecked = ramOcStatus;
-			}
+			this.gamingSystemUpdateService.getRamOCStatus().then((ramOcStatus) => {
+				console.log('get RAMOC status js bridge -->', ramOcStatus);
+				if (ramOcStatus !== undefined) {
+					this.RamOCSatusObj.ramOcStatus = ramOcStatus;
+					this.SetRAMOverClockCacheStatus(ramOcStatus);
+					this.legionUpdate[1].isChecked = ramOcStatus;
+				}
+			});
+
 		});
 
 	}
@@ -379,7 +381,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 					console.log('setRamOc.then', value);
 					if (value !== undefined) {
 						this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
-							//console.log('XTU Service---> ' + this.gamingCapabilities.xtuService);
+							console.log('XTU Service---> ' + this.gamingCapabilities.xtuService);
 							//this.gamingCapabilities.xtuService = true;
 							if (this.gamingCapabilities.xtuService === false) {
 								this.legionUpdate[1].isPopup = $event.switchValue;
