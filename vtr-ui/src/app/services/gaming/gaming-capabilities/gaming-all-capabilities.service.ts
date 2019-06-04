@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
-import { promise, Capabilities } from 'protractor';
-import { BehaviorSubject } from 'rxjs';
+import { CommonService } from '../../common/common.service';
+import { Gaming } from 'src/app/enums/gaming.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -9,9 +9,8 @@ import { BehaviorSubject } from 'rxjs';
 export class GamingAllCapabilitiesService {
 	private gamingAllCapabilities: any;
 	public isShellAvailable = false;
-	public gamingCapablityValues = new BehaviorSubject(undefined);
 
-	constructor(shellService: VantageShellService) {
+	constructor(shellService: VantageShellService, private commonService: CommonService) {
 		this.gamingAllCapabilities = shellService.getGamingAllCapabilities();
 		if (this.gamingAllCapabilities) {
 			this.isShellAvailable = true;
@@ -30,6 +29,6 @@ export class GamingAllCapabilitiesService {
 	}
 
 	setCapabilityValuesGlobally(capabilities: any) {
-		this.gamingCapablityValues.next(capabilities);
+		this.commonService.sendNotification(Gaming.GamingCapablities, capabilities);
 	}
 }
