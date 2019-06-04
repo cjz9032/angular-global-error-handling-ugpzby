@@ -16,12 +16,11 @@ export class WidgetDeviceUpdateComponent implements OnInit, OnChanges {
 	@Input() percent = 0;
 	@Input() showProgress = false;
 	@Input() isUpdateDownloading = false;
-	@Input() isCheckingPluginStatus = true;
+	@Input() isCheckingPluginStatus = false;
 	@Input() downloadingUpdateText = '';
 	@Input() downloadingPercent = 0;
 	@Input() installingUpdateText = 'Installing updates';
 	@Input() installingPercent = 0;
-
 	@Output() checkForUpdate = new EventEmitter();
 	@Output() cancelUpdateCheck = new EventEmitter();
 	@Output() cancelUpdateDownload = new EventEmitter();

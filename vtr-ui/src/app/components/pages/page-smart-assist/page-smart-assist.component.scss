@@ -43,6 +43,9 @@
 	.card-body {
 		padding: 2rem 4rem;
 	}
+	.blur-1 {
+		opacity: 0.65;
+	}
 	.feature-note {
 		background-color: $shade_lightest;
 		border: 1px solid $shade_lighter;
