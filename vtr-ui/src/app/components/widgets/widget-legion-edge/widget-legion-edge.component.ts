@@ -304,6 +304,41 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		return this.commonService.setLocalStorageValue(LocalStorageKey.RamOcStatus, ramOcStatus);
 	}
 
+
+	public renderHybridModeStatus() {
+		this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
+			console.log('xtu --->' + this.gamingCapabilities.xtuService);
+			if (this.gamingCapabilities.xtuService === true) {
+				if (this.commonService) {
+					this.legionUpdate[1].isChecked = this.GetHybridModeCacheStatus();
+				}
+
+
+				this.gamingHybridModeService.getHybridModeStatus().then((hybridModeStatus) => {
+					console.log('get Hybrid Mode status js bridge -->', hybridModeStatus);
+					if (hybridModeStatus !== undefined) {
+						this.SetHybridModeCacheStatus(hybridModeStatus);
+						this.legionUpdate[1].isChecked = hybridModeStatus;
+					}
+				});
+			}
+		});
+
+	}
+	
+
+	public GetHybridModeCacheStatus() {
+		return this.commonService.getLocalStorageValue(LocalStorageKey.HybridModeStatus);
+	}
+
+	public SetHybridModeCacheStatus(hybridModeStatus) {
+		return this.commonService.setLocalStorageValue(LocalStorageKey.HybridModeStatus, hybridModeStatus);
+	}
+
+
+
+
+
 	public renderTouchpadStatus() {
 
 		// Binding to UI
@@ -324,26 +359,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.TouchpadStatus);
 	}
 
-	public renderHybridModeStatus() {
-
-		// Binding to UI
-		this.gamingHybridModeService.getHybridModeStatus().then((hybridModeStatus) => {
-			console.log('get hybridmode status js bridge ->', hybridModeStatus);
-			this.legionUpdate[4].isChecked = hybridModeStatus;
-		});
-		// if (this.legionUpdate[4].name === 'gaming.dashboard.device.legionEdge.hybridMode') {
-		// 	this.gamingHybridModeService.getHybridModeStatus().then((hybridModeStatus) => {
-		// 		console.log('get hybridmode status js bridge ->', hybridModeStatus);
-		// 		this.legionUpdate[4].isChecked = hybridModeStatus;
-		// 	});
-		// }
-
-	}
-
-	public GetHybridModeCacheStatus() {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.HybridModeStatus);
-	}
-
 
 	public toggleOnOffRamOCStatus($event) {
 
@@ -356,10 +371,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 					console.log('setRamOc.then', value);
 					if (value !== undefined) {
 						this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
-							console.log('XTU Service---> ' + this.gamingCapabilities.xtuService);
+							//console.log('XTU Service---> ' + this.gamingCapabilities.xtuService);
 							//this.gamingCapabilities.xtuService = true;
 							if (this.gamingCapabilities.xtuService === false) {
-								this.legionUpdate[1].isPopup = $event.switchValue;
+								this.legionUpdate[1].isPopup = $event;
 							}
 						});
 					}
@@ -369,9 +384,34 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				});
 		}
 		else {
+			//to hide the existing popup which is open(hybridmode, ramoc)
 			this.legionUpdate[1].isPopup = false;
 		}
 
+
+		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
+			
+			this.gamingHybridModeService.setHybridModeStatus($event.switchValue)
+				.then((value: boolean) => {
+					console.log('setHybridModeStatus.then', value);
+					if (value !== undefined) {
+						this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
+							//console.log('XTU Service---> ' + this.gamingCapabilities.xtuService);
+							//this.gamingCapabilities.xtuService = true;
+							if (this.gamingCapabilities.xtuService === false) {
+								this.legionUpdate[4].isPopup = $event;
+							}
+						});
+					}
+				})
+				.catch(error => {
+					console.error('setHybridModeStatus', error);
+				});
+		}
+		else {
+			//to hide the existing popup which is open(hybridmode, ramoc)
+			this.legionUpdate[4].isPopup = false;
+		}
 
 
 		if (name === 'gaming.dashboard.device.legionEdge.touchpadLock') {
@@ -386,21 +426,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				});
 		}
 
-
-		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
-			//this.HybrimodeStatusObj.hybridModeStatus = $event.switchValue;
-			this.gamingHybridModeService
-				.setHybridModeStatus($event.switchValue)
-				.then((value: boolean) => {
-					this.legionUpdate[4].isPopup = $event.switchValue;
-					console.log('setHybridModeStatus.then', value);
-				})
-				.catch(error => {
-					console.error('setHybridModeStatus', error);
-				});
-		} else {
-			this.legionUpdate[4].isPopup = false;
-		}
 
 	}
 }
