@@ -11,6 +11,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit {
 	@Input() public recordsList;
 	@Output() public onRecordDelete = new EventEmitter<any>();
 	@Output() public onClearAll = new EventEmitter<any>();
+	public clearRecordPopup: boolean = false;
 
 	repeatOptions = [
 		{
@@ -123,6 +124,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit {
 	}
 
 	clearRecords() {
+		this.clearRecordPopup = !this.clearRecordPopup;
 		this.onClearAll.emit();
 	}
 }

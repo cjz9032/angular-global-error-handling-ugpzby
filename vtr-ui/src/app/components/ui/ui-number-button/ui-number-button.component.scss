@@ -1,48 +1,92 @@
 @import "../../../app.theme.scss";
-
-ul {
-	padding: 0;
-	li {
-		display: inline-block;
+.numbers-holder {
+	position: relative;
+	.numpad-btn {
+		display: none;
+		padding: 1.2rem 2rem 1.2rem 1.2rem;
+		text-transform: uppercase;
+		font-size: 1.6rem;
+		background-color: $gaming_shade;
+		margin-bottom: 2rem;
+		border-radius: 0.6rem;
 		cursor: pointer;
-		width: 4.8rem;
-		height: 4.8rem;
-		border-radius: 0.8rem;
-		background-color: $gaming_lightest;
-		color: $gaming_dark;
-		font-weight: 800;
-		font-size: 2rem;
-		text-align: center;
-		line-height: 4.8rem;
-		margin-bottom: 1.2rem;
-		box-shadow: 0rem 0.4rem 0rem 0.1rem $gaming_hover;
-		&.selected {
-			color: $gaming_lightest;
-			background-color: $gaming_light_blue;
-			box-shadow: 0rem 0.4rem 0rem 0.1rem $gaming_gstart;
+		svg {
+			margin-right: 1rem;
+		}
+		@media #{$mediaquery_X3} {
+			display: inline-block;
+		}
+	}
+
+	ul {
+		padding: 0;
+		&.numberpad-popup {
+			@media #{$mediaquery_X3} {
+				display: none;
+				padding: 1.4rem;
+				background-color: $gaming_shade;
+				width: 19rem;
+				position: absolute;
+				border-radius: 0.6rem;
+				z-index: 1;
+				top: 5.8rem;
+			}
+			&.show {
+				display: block;
+			}
+		}
+		li {
+			display: inline-block;
+			cursor: pointer;
+			width: 4.8rem;
+			height: 4.8rem;
+			border-radius: 0.8rem;
+			background-color: $gaming_lightest;
+			color: $gaming_dark;
+			font-weight: 800;
+			font-size: 2rem;
+			text-align: center;
+			line-height: 4.8rem;
+			margin-bottom: 1.2rem;
+			margin-right: 0.8rem;
+			&:nth-child(3) {
+				margin-right: 0;
+			}
+			&:nth-child(6) {
+				margin-right: 0;
+			}
+			&:nth-child(9) {
+				margin-right: 0;
+			}
+			box-shadow: 0rem 0.4rem 0rem 0.1rem $gaming_hover;
+			&.selected {
+				color: $gaming_lightest;
+				background-color: $gaming_light_blue;
+				box-shadow: 0rem 0.4rem 0rem 0.1rem $gaming_gstart;
+				&.macro-exists {
+					div {
+						position: relative;
+						&:after {
+							background-color: $gaming_lightest;
+						}
+					}
+				}
+			}
 			&.macro-exists {
 				div {
 					position: relative;
 					&:after {
-						background-color: $gaming_lightest;
+						content: '';
+						width: 0.5rem;
+						height: 0.5rem;
+						background-color: $gaming_dark;
+						position: absolute;
+						bottom: 0.6rem;
+						border-radius: 0.5rem;
+						margin: auto;
+						left: 0px;
+						right: 0px;
 					}
-				}
-			}
-		}
-		&.macro-exists {
-			div {
-				position: relative;
-				&:after {
-					content: '';
-					width: 0.5rem;
-					height: 0.5rem;
-					background-color: $gaming_dark;
-					position: absolute;
-					bottom: 0.6rem;
-					border-radius: 0.5rem;
-					margin: auto;
-					left: 0px;
-					right: 0px;
 				}
 			}
 		}
