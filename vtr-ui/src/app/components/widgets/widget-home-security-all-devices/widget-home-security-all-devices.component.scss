@@ -142,10 +142,14 @@
                 font-size: 1.5rem;
                 font-weight: $weight_medium;
             }
+
             ::ng-deep {
-                .button-box {
-                    display: flex;
-                    justify-content: center;
+                .vtr-ui-button {
+                    display: block;
+                    .button-box {
+                        display: flex;
+                        justify-content: center;
+                    }
                 }
             }
         }
