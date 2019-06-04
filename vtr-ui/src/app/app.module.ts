@@ -160,6 +160,7 @@ import { PageNetworkBoostComponent } from './components/pages/page-network-boost
 import { PowerSmartSettingsComponent } from './components/widgets/power-smart-settings/power-smart-settings.component';
 import { PageSettingsComponent } from './components/pages/page-settings/page-settings.component';
 import { UiPopoverComponent } from './components/ui/ui-popover/ui-popover.component';
+import { UiMacrokeyPopupComponent } from './components/ui/ui-macrokey-popup/ui-macrokey-popup.component';
 import { ModalChsWelcomeContainerComponent } from './components/modal/modal-chs-welcome-container/modal-chs-welcome-container.component';
 
 // SA Components
@@ -361,6 +362,7 @@ library.add(fal);
 		UiLightingProfileComponent,
 		AutoupdateSettingsComponent,
 		UiPopoverComponent,
+		UiMacrokeyPopupComponent,
 		ModalChsWelcomeContainerComponent,
 		LoginLenovoIdComponent,
 		WidgetMacrokeySettingsComponent,
