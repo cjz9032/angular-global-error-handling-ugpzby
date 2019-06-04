@@ -495,10 +495,12 @@
 			cursor: auto;
 		}
 	}
-	.button-box,
-	#sa-ws-btn-enablewifisecurity{
-		::ng-deep .vtr-ui-button .button-box .button{
-			max-width: 100%;
+	vtr-ui-button {
+		::ng-deep .vtr-ui-button{
+			max-width: 100% !important;
+			.button-box .button{
+				max-width: 100% !important;
+			}
 		}
 	}
 }
