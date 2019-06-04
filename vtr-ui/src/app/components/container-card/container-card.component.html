@@ -37,7 +37,7 @@
 	*ngIf="type === 'corner-article'"
 	[style.height.px]="containerHeight">
 	<div class="container-fluid">
-		<div class="row">
+		<div class="row" *ngIf="isOnline">
 			<div class="col col-12 content">
 				<a [attr.href]="!actionLink ? null : actionLink"
 					(click)="linkClicked(actionType, actionLink)"
@@ -64,6 +64,10 @@
 					</div>
 				</a>
 			</div>
+		</div>
+		<div class="row" *ngIf="!isOnline">
+			<img class="col col-12 image"
+				src="../../../assets/images/offline.png">	
 		</div>
 	</div>
 </div>
@@ -173,3 +177,4 @@
 		</div>
 	</div>
 </div>
+
