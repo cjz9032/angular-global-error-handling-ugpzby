@@ -208,6 +208,7 @@ import { DisplayColorTempComponent } from './components/display/display-color-te
 import { IntelligentMediaComponent } from './components/pages/page-smart-assist/intelligent-media/intelligent-media.component';
 import { UiMacrokeyCollapsibleContainerComponent } from './components/ui/ui-macrokey-collapsible-container/ui-macrokey-collapsible-container.component';
 import { CursorTypePipe } from './pipe/ui-security-statusbar/cursor-type.pipe';
+import { UiGamingDriverPopupComponent } from './components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
 
 library.add(fas);
 library.add(fab);
@@ -379,7 +380,8 @@ library.add(fal);
 		WidgetHomeSecurityMyDeviceComponent,
 		WidgetHomeSecurityAllDevicesComponent,
 		UiMacrokeyCollapsibleContainerComponent,
-		CursorTypePipe
+		CursorTypePipe,
+		UiGamingDriverPopupComponent
 	],
 	imports: [
 		BrowserModule,
