@@ -5,9 +5,6 @@ import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
-import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
-import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
-import { TouchpadStatus }  from 'src/app/data-models/gaming/touchpad-status.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -478,5 +475,12 @@ export class VantageShellService {
 		if (this.phoenix) {
 			return this.phoenix.preferenceSettings;
 		}
+	}
+
+	public getJsBridgeVersion() {
+		if (this.phoenix) {
+			return this.phoenix.version;
+		}
+		return '0';
 	}
 }

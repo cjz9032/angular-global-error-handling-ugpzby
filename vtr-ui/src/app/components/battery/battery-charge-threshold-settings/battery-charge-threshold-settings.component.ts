@@ -7,6 +7,9 @@ import { Component, OnInit, Input, ElementRef,Output, EventEmitter} from '@angul
 })
 export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	@Input() title = '';
+	@Input() start = '';
+	@Input() stop = '';
+	@Input() checkboxText = '';
 	@Input() type = 'primary';
 	@Input() displayNoteOnly: boolean = this.displayNoteOnly || false;
 	@Input() startAtChargeOptions: any;

@@ -60,9 +60,9 @@
 					</li>			
 
 					<!-- MVP 2 feature -->
-					<li class="" *ngIf = "machineType ==1">
-						<vtr-ui-row-switch [title]="batterySettings.items[1].header"
-							[caption]="batterySettings.items[1].subHeader"
+					<li class="" >
+						<vtr-ui-row-switch [title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
+							[caption]="'device.deviceSettings.power.batterySettings.batteryThreshold.description' | translate "
 							[isSwitchVisible]=true
 							[isLastChild]="!conservationModeStatus.available && !expressChargingStatus.available"
 							[leftIcon]="batterySettings.items[1].leftImageSource"
@@ -70,10 +70,14 @@
 							[readMoreText]="batterySettings.items[1].readMoreText"
 							[showChildContent]="true"
 							(toggleOnOff)="showBatteryThreshold=$event.switchValue;"
-							[tooltipText]="batterySettings.items[1].tooltipText">
+							[tooltipText]="'device.deviceSettings.power.batterySettings.batteryThreshold.tooltip' | translate">
 							<div *ngIf="showBatteryThreshold">
 								<vtr-battery-charge-threshold-settings [title]="'device.deviceSettings.power.batterySettings.batteryThreshold.settings.title1' | translate"
 								 [type]="'primary'" 
+								 [start] = "'device.deviceSettings.power.batterySettings.batteryThreshold.options.start' | translate"
+								 [stop] = "'device.deviceSettings.power.batterySettings.batteryThreshold.options.stop' | translate"
+								 [checkboxText] = "'device.deviceSettings.power.batterySettings.batteryThreshold.options.checkboxText' | translate "
+								 [noteInfo] = "'device.deviceSettings.power.batterySettings.batteryThreshold.noteInfo' | translate"
 								 [startAtChargeOptions] = "startAtChargeOptions"
 								 [stopAtChargeOptions] = "stopAtChargeOptions"						 
 								 [selectedStopAtCharge] = "selectedStopAtChargeVal"
@@ -86,6 +90,10 @@
 								<vtr-battery-charge-threshold-settings *ngIf = "responseData && responseData.length > 1"
 								[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.settings.title2' | translate"
 								 [type]="'secondary'"
+								 [start] = "'device.deviceSettings.power.batterySettings.batteryThreshold.options.start' | translate"
+								 [stop] = "'device.deviceSettings.power.batterySettings.batteryThreshold.options.stop' | translate"
+								 [checkboxText] = "'device.deviceSettings.power.batterySettings.batteryThreshold.options.checkboxText' | translate "
+								 
 								 [startAtChargeOptions] = "startAtChargeOptions"
 								 [stopAtChargeOptions] = "stopAtChargeOptions"				 
 								[selectedStopAtCharge] = "selectedStopAtChargeVal1"
@@ -95,7 +103,9 @@
 								  (autoChecked) = "autoCheckSelected($event, 2)">
 								</vtr-battery-charge-threshold-settings>
 
-								<vtr-battery-charge-threshold-settings [displayNoteOnly]="true">
+								<vtr-battery-charge-threshold-settings 
+									[displayNoteOnly]="true">
+										
 								</vtr-battery-charge-threshold-settings>
 							</div>
 						</vtr-ui-row-switch>

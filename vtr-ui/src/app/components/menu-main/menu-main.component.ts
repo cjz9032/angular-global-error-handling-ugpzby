@@ -68,7 +68,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 					id: 'windows-hello',
 					label: 'common.menu.security.sub6',
 					path: 'windows-hello',
-                    icon: '',
+					icon: '',
 					metricsEvent: 'itemClick',
 					metricsParent: 'navbar',
 					metricsItem: 'link.windowshello',
@@ -147,11 +147,11 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			if (item.onlyPrivacy) {
 				showItem = false;
 			}
-        }
-        
-        if (item.hasOwnProperty('hide') && item.hide) {
-            showItem = false;
-        }
+		}
+
+		if (item.hasOwnProperty('hide') && item.hide) {
+			showItem = false;
+		}
 
 		return showItem;
 	}
@@ -213,7 +213,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 						id: 'windows-hello',
 						label: 'common.menu.security.sub6',
 						path: 'windows-hello',
-                        icon: '',
+						icon: '',
 						metricsEvent: 'itemClick',
 						metricsParent: 'navbar',
 						metricsItem: 'link.windowshello',
@@ -245,7 +245,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 						securityItemForVpn.subitems.splice(4, 0, {
 							id: 'internet-protection',
 							label: 'common.menu.security.sub5',
-                            path: 'internet-protection',
+							path: 'internet-protection',
 							metricsEvent: 'itemClick',
 							metricsParent: 'navbar',
 							metricsItem: 'link.internetprotection',
@@ -281,7 +281,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 					this.smartAssist.getHPDCapability()
 						.then((isAvailable: boolean) => {
 							console.log('getHPDStatus.getHPDCapability()', isAvailable);
-							isAvailable = true;
+							// isAvailable = true;
 							this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
 							if (isAvailable) {
 								myDeviceItem.subitems.splice(4, 0, {
