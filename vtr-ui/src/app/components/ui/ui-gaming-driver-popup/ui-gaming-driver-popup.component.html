@@ -1,0 +1,18 @@
+<ui-gaming-driver-popup *ngIf="showMePartially">
+	<div class="ui-gaming-driver-popup-head">
+
+	  <button class="close" type="button" (click)="close()">
+		  <i class="icon icon-close"></i>
+	  </button>
+	</div>
+	<p><b>{{'gaming.dashboard.device.legionEdge.driverPopup.headerText' | translate}}</b></p>
+	<div class="ui-gaming-driver-popup-content">
+
+			<p>{{'gaming.dashboard.device.legionEdge.driverPopup.text' | translate}}</p>
+		</div>
+
+	<div class="ui-gaming-driver-popup-footer">
+	  <button class="btn btn-rounded" (click)="close()">{{'gaming.dashboard.device.legionEdge.driverPopup.button' | translate}}</button>
+	&nbsp;&nbsp;<a (click)="close()">{{'gaming.dashboard.device.legionEdge.driverPopup.link' | translate}}</a>
+	</div>
+  </ui-gaming-driver-popup>
