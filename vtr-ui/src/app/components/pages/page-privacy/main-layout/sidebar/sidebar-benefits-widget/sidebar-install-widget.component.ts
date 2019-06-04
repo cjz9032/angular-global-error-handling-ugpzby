@@ -37,24 +37,26 @@ export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		merge(
 			this.userDataGetStateService.userDataStatus$.pipe(
-				takeUntil(instanceDestroyed(this)),
 				tap(({appState}) => {
 					this.isFirstTimeVisitor = appState === AppStatuses.firstTimeVisitor;
 					this.isFigleafInstalled = appState === AppStatuses.figLeafInstalled;
 				})
 			),
 			this.routerChangeHandler.onChange$.pipe(
-				takeUntil(instanceDestroyed(this)),
 				filter((currentPath) => this.sidebarInstallWidgetService.pagesSettings[currentPath]),
 				tap((currentPath) => this.currentPath = currentPath)
 			),
-		).subscribe(() => {
-			if (this.isFirstTimeVisitor) {
-				this.installWidgetSettings = this.sidebarInstallWidgetService.generalizedSettings;
-			} else {
-				this.installWidgetSettings = this.sidebarInstallWidgetService.pagesSettings[this.currentPath];
-			}
-		});
+		)
+			.pipe(
+				takeUntil(instanceDestroyed(this)),
+			)
+			.subscribe(() => {
+				if (this.isFirstTimeVisitor) {
+					this.installWidgetSettings = this.sidebarInstallWidgetService.generalizedSettings;
+				} else {
+					this.installWidgetSettings = this.sidebarInstallWidgetService.pagesSettings[this.currentPath];
+				}
+			});
 	}
 
 	ngOnDestroy() {
