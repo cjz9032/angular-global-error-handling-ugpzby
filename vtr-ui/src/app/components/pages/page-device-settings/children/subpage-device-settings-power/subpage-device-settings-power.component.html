@@ -78,20 +78,21 @@
 								 [stopAtChargeOptions] = "stopAtChargeOptions"						 
 								 [selectedStopAtCharge] = "selectedStopAtChargeVal"
 								  [selectedStartAtCharge] = "selectedStartAtChargeVal"
-								  [isCheckedAuto] = "isCheckedAuto"
-								  (sendBatteryDetails) = "setChargeThresholdValues($event)"
-								  (autoChecked) = "autoCheckSelected()">
+								  [isCheckedAuto] = "primaryCheckBox"
+								  (sendBatteryDetails) = "setChargeThresholdValues($event, 1)"
+								  (autoChecked) = "autoCheckSelected($event, 1)">
 								</vtr-battery-charge-threshold-settings>
 
-								<vtr-battery-charge-threshold-settings [title]="'device.deviceSettings.power.batterySettings.batteryThreshold.settings.title2' | translate"
+								<vtr-battery-charge-threshold-settings *ngIf = "responseData && responseData.length > 1"
+								[title]="'device.deviceSettings.power.batterySettings.batteryThreshold.settings.title2' | translate"
 								 [type]="'secondary'"
 								 [startAtChargeOptions] = "startAtChargeOptions"
 								 [stopAtChargeOptions] = "stopAtChargeOptions"				 
 								[selectedStopAtCharge] = "selectedStopAtChargeVal1"
 								  [selectedStartAtCharge] = "selectedStartAtChargeVal1"
-								  [isCheckedAuto] = "isCheckedAuto"
-								  (sendBatteryDetails) = "setChargeThresholdValues($event)"
-								  (autoChecked) = "autoCheckSelected()">
+								  [isCheckedAuto] = "secondaryCheckBox"
+								  (sendBatteryDetails) = "setChargeThresholdValues($event, 2)"
+								  (autoChecked) = "autoCheckSelected($event, 2)">
 								</vtr-battery-charge-threshold-settings>
 
 								<vtr-battery-charge-threshold-settings [displayNoteOnly]="true">

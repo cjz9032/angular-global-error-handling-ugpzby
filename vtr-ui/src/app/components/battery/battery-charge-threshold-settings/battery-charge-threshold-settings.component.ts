@@ -15,7 +15,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	@Input() selectedStopAtCharge: any;
 	@Input() isCheckedAuto: any;
 	@Output() sendBatteryDetails = new EventEmitter();
-	@Output() autoChecked = new EventEmitter<boolean>()
+	@Output() autoChecked = new EventEmitter<boolean>();
 
 	
 
@@ -30,11 +30,11 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 
 	constructor() { }
 
-	ngOnInit() {
-	}
+	ngOnInit() {	}
 
 	onChargeChange(id: string, newCharge: number, event: Event) {
-		// console.log('onChargeChange' + event + '\n' + id + '\n' + newCharge);
+		 //console.log('onChargeChange' + event.target + '\n' + id + '\n' + newCharge);
+		 //console.log(event)
 
 		if (id === this.startChargeInput) {
 			if (this.selectedStartAtCharge !== newCharge) {
@@ -51,12 +51,10 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 				}
 			}
 		}
-		// Battery num is static need to change 
 		this.selectedOptionsData = {
 			startChargeValue : this.selectedStartAtCharge,
 			stopChargeValue : this.selectedStopAtCharge,
-			autoChecked: this.isCheckedAuto,
-			batteryNum: 1
+			autoChecked: this.isCheckedAuto
 		}
 		this.sendBatteryDetails.emit(this.selectedOptionsData)
 	}
