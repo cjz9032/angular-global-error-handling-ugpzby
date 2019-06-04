@@ -90,18 +90,35 @@ $leftIndent: 7.5rem;
 
 	&__preview-link {
 		@extend %button-link;
-		@extend %button-link--to-right;
 
 		color: #4A81FD;
 		font-size: 1.6rem;
 		font-weight: 600;
 		line-height: 2.3rem;
 		letter-spacing: 0.5px;
+		display: none;
+
+		&:before {
+			display: none;
+		}
 
 		span {
 			@extend %button-link__text;
 			border-bottom: .25rem solid #4A81FD;
 		}
+	}
+
+	&:hover .breached-account__preview-link {
+		display: initial;
+	}
+
+	&__details-text {
+		@extend %text-common;
+		color: #C4C8CC;
+	}
+
+	&:hover .breached-account__details-text {
+		display: none;
 	}
 
 	&__accordion-button {

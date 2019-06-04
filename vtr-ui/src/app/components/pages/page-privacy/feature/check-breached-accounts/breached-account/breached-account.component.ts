@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output, OnInit, AfterViewInit } from '@
 import { BreachedAccount } from '../../../common/services/breached-accounts.service';
 import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
+import { AccessTokenService } from '../../../common/services/access-token.service';
 
 export enum BreachedAccountMode {
 	FULL = 'FULL',
@@ -18,6 +19,7 @@ export class BreachedAccountComponent implements OnInit, AfterViewInit {
 	@Input() breachedAccounts: BreachedAccount[];
 	@Input() openId = null;
 	@Output() detailClick = new EventEmitter<number>();
+	@Output() verifyClick = new EventEmitter<boolean>();
 
 	isFigleafReadyForCommunication = false;
 
@@ -32,10 +34,11 @@ export class BreachedAccountComponent implements OnInit, AfterViewInit {
 		},
 	};
 
-	readonly breachedAccountMode = BreachedAccountMode;
+	isUserAuthorized$ = this.accessTokenService.accessTokenIsExist$;
 
 	constructor(
 		private communicationWithFigleafService: CommunicationWithFigleafService,
+		private accessTokenService: AccessTokenService,
 		private vantageCommunicationService: VantageCommunicationService) {
 	}
 
@@ -68,7 +71,7 @@ export class BreachedAccountComponent implements OnInit, AfterViewInit {
 		this.vantageCommunicationService.openFigleafByUrl(link);
 	}
 
-	detailClickEmit(i) {
-		this.detailClick.emit(i);
+	verifyClickEmit() {
+		this.verifyClick.emit(true);
 	}
 }

@@ -29,6 +29,7 @@ import { ConfirmationComponent } from './confirmation/confirmation.component';
 		BreachedAccountComponent,
 		BreachedDescriptionComponent,
 		ConfirmationComponent,
+		ConfirmationPopupComponent
 	],
 	imports: [
 		CommonModule,

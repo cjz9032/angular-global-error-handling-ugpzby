@@ -5,8 +5,6 @@ import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance
 import { EmailScannerService } from '../services/email-scanner.service';
 import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
 import { BehaviorSubject, from } from 'rxjs';
-import { AccessTokenService } from '../../../common/services/access-token.service';
-import { VantageShellService } from '../../../../../../services/vantage-shell/vantage-shell.service';
 import { UserService } from '../../../../../../services/user/user.service';
 import { validateEmail } from '../../../utils/helpers';
 
@@ -29,7 +27,7 @@ interface UserProfile {
 export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	@Input() size: 'default' | 'small' = 'default';
 	@Output() userEmail = new EventEmitter<string>();
-	emailWasScanned$ = this.accessTokenService.accessTokenIsExist$;
+	emailWasScanned$ = this.emailScannerService.scanNotifier$;
 
 	emailForm = this.formBuilder.group({
 		email: ['', [Validators.required, Validators.email]],
@@ -40,14 +38,11 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	lenovoId: string;
 	islenovoIdOpen = false;
 	isFormFocused = false;
-	confirmationPopupId = 'confirmation-popup';
 
 	constructor(
 		private formBuilder: FormBuilder,
 		private emailScannerService: EmailScannerService,
 		private commonPopupService: CommonPopupService,
-		private accessTokenService: AccessTokenService,
-		private vantageShellService: VantageShellService,
 		private userService: UserService
 	) {
 	}
@@ -107,7 +102,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 		const userEmail = this.emailForm.value.email;
 
 		this.emailScannerService.setUserEmail(userEmail);
-		this.size === 'default' ? this.sendConfirmationCode() : this.userEmail.emit(userEmail);
+		this.size === 'default' ? this.setScanBreachedAccounts() : this.userEmail.emit(userEmail);
 	}
 
 	private handleStartTyping() {
@@ -126,14 +121,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	private sendConfirmationCode() {
-		this.emailScannerService.sendConfirmationCode().pipe(
-			takeUntil(instanceDestroyed(this)),
-		).subscribe((response) => {
-			this.commonPopupService.open(this.confirmationPopupId);
-		}, (error) => {
-			this.serverError$.next(true);
-			console.error('auth error:', error);
-		});
+	private setScanBreachedAccounts() {
+		this.emailScannerService.scanNotifierEmit();
 	}
 }

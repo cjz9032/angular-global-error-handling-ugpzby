@@ -21,22 +21,26 @@
             <span class="breached-account__date" *ngIf="openId !== i">Breached on {{account.date}}</span>
 
             <div class="breached-account__details">
+				<span class="breached-account__details-text"
+					  *ngIf="!(isUserAuthorized$ | async)">
+					Verify your email for details
+				</span>
                 <button class="breached-account__preview-link"
-                        (click)="isFigleafReadyForCommunication ? openFigleaf(account.link) : detailClickEmit(i)"
-                        *ngIf="mode === breachedAccountMode.PREVIEW || isFigleafReadyForCommunication"
+                        (click)="verifyClickEmit()"
+                        *ngIf="!(isUserAuthorized$ | async)"
                         vtrSendAnalytics
                         [metricsEvent]="'ItemClick'"
                         [metricsItem]="'BreachedAccountsDetailItem'">
-                    <span>Details</span>
+                    <span>Verify email</span>
                 </button>
 
                 <button class="breached-account__accordion-button"
-                        *ngIf="mode === breachedAccountMode.FULL && !isFigleafReadyForCommunication"
+                        *ngIf="(isUserAuthorized$ | async)"
                         vtrSendAnalytics
                         [metricsEvent]="'ItemClick'"
                         [metricsItem]="'BreachedAccountsDetailItem'"
                         [ngClass]="{'breached-account__accordion-button--open': openId === i}"
-                        (click)="openAccordion(i)">
+                        (click)="isFigleafReadyForCommunication ? openFigleaf(account.link) : openAccordion(i)">
                     <span>Details</span>
                 </button>
             </div>
