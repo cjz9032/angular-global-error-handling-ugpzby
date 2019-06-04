@@ -7,6 +7,7 @@
 				[menuTitle]="'device.deviceSettings.displayCamera.jumpTo.title' | translate"></vtr-ui-header-subpage>
 		</div>
 	</div>
+
 	<div class="row py-5 smartsettings-card"
 		id="display">
 		<div class="col-10 mx-auto ">
@@ -17,8 +18,8 @@
 				[theme]="'white'"
 				(toggle)="onCardCollapse($event)">
 				<ul class="list-group list-group-flush">
-						<li class="pt-3"
-						*ngIf="eyeCareModeStatus.available">
+					<li class="pt-3"
+						*ngIf="displayColorTempDataSource.available">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
 							componentName="Display color temperature"
@@ -32,11 +33,11 @@
 							[tooltipText]="'device.deviceSettings.displayCamera.display.dispColorTemp.tooltip' | translate">
 							<div class="row">
 								<div class="col-12">
-									<vtr-display-color-temp [displayColorTempSettings]="eyeCareDataSource"
+									<vtr-display-color-temp [displayColorTempSettings]="displayColorTempDataSource"
 										[enableSlider]="false"
 										[manualRefresh]="manualRefresh"
-										(resetTemparature)="onResetTemparature($event)"
-										>
+										(displayColorTempChange)="onSetChangeDisplayColorTemp($event)"
+										(resetTemparature)="resetDaytimeColorTemp($event)">
 									</vtr-display-color-temp>
 								</div>
 							</div>
@@ -51,6 +52,7 @@
 							[name]="'device.deviceSettings.displayCamera.display.eyeCareMode.title' | translate"
 							[caption]=""
 							[isSwitchVisible]="true"
+							[isLastChild]=true
 							[leftIcon]="['fal', 'eye']"
 							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
@@ -71,10 +73,19 @@
 										(sunsetToSunrise)="onSunsetToSunrise($event)"></vtr-eye-care-mode>
 								</div>
 							</div>
+							<div class="row">
+								<div class="col-12 pr-0">
+									<vtr-widget-permission-note
+										[noteTitle]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.title' | translate"
+										[description]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.description' | translate"
+										[path]="'ms-settings:privacy-location'"
+										*ngIf="enableSunsetToSunrise"></vtr-widget-permission-note>
+								</div>
+							</div>
 						</vtr-ui-row-switch>
-					</li>			
+					</li>
 
-					<li class="pt-3">
+					<!-- <li class="pt-3">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.display.privacyGuard.title' | translate"
 							componentName="Privacy guard"
@@ -114,12 +125,13 @@
 							</div>
 
 						</vtr-ui-row-switch>
-					</li>
+					</li> -->
 					<!-- MVP 2 feature -->
 					<!-- <li class="pt-3">
 						<vtr-ui-row-switch [title]="'Display Priority Control'"
 							[caption]="'Configures microphone effect to enhance your audio experience by different scenarios and environment.'"
 							[isSwitchVisible]="false"
+							[isLastChild]=true
 							[leftIcon]="['far', 'gem']"
 							[readMoreText]="''"
 							[showChildContent]="true"
@@ -136,13 +148,10 @@
 							</div>
 						</vtr-ui-row-switch>
 					</li> -->
+
 				</ul>
-				<vtr-widget-permission-note
-					[noteTitle]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.title' | translate"
-					[description]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.description' | translate"
-					[path]="'ms-settings:privacy-location'"
-					*ngIf="enableSunsetToSunrise">
-				</vtr-widget-permission-note>
+
+
 			</vtr-container-collapsible>
 		</div>
 	</div>
@@ -178,6 +187,7 @@
 							[name]="'device.deviceSettings.displayCamera.camera.camera.title' | translate"
 							[type]="'Camera'"
 							[isSwitchVisible]="false"
+							[isLastChild]="!cameraBlur.available || cameraBlur.errorCode !== 0"
 							[leftIcon]="['fal', 'camera']"
 							[showChildContent]="true"
 							[resetText]="'device.deviceSettings.displayCamera.camera.camera.reset' | translate"
@@ -208,24 +218,26 @@
 						</vtr-ui-row-switch>
 					</li>
 
-					<li class="pt-3" *ngIf="cameraBlur.available && cameraBlur.errorCode == 0">
+					<li class="pt-3"
+						*ngIf="cameraBlur.available && cameraBlur.errorCode == 0">
 
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.camera.camerablur.title' | translate"
 							componentName="Camera Background Blur"
 							[caption]="'device.deviceSettings.displayCamera.camera.camerablur.caption' | translate"
 							[isSwitchVisible]="true"
+							[isLastChild]=true
 							[leftIcon]="['fal', 'gem']"
 							[rightIcon]="['far', 'question-circle']"
 							[showChildContent]="true"
 							[isSwitchChecked]="cameraBlur.enabled"
 							(toggleOnOff)="onCameraBackgroundBlur($event)"
 							[theme]="'white'">
-							<div class="row" *ngIf="cameraBlur.enabled">
+							<div class="row"
+								*ngIf="cameraBlur.enabled">
 								<div class="col-12 pr-0 my-3">
-									<vtr-camera-background-blur
-									[option]="cameraBlur"
-									(onOptionChanged)="onCameraBackgroundOptionChange(false, $event)">
+									<vtr-camera-background-blur [option]="cameraBlur"
+										(onOptionChanged)="onCameraBackgroundOptionChange(false, $event)">
 									</vtr-camera-background-blur>
 								</div>
 							</div>

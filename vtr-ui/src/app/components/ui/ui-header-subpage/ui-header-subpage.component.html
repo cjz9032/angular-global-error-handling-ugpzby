@@ -1,12 +1,12 @@
 <div class="vtr-ui-header-subpage container-fluid">
-	<div class="row">
+	<div class="row" *ngIf="title!=undefined">
 		<div class="col">
 			<h2 class="title">
 				{{title}}
 			</h2>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row" [ngClass]="{'no-title': title==undefined}">
 		<div class="col left-border header-subpage-content">
 			<div class="col px-20">
 				<div class="row">

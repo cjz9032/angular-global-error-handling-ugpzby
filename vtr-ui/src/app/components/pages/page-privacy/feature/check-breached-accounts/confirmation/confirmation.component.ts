@@ -24,7 +24,7 @@ export class ConfirmationComponent implements OnInit, OnDestroy, AfterViewInit {
 	@ViewChild('confirmationInput') confirmationInput: ElementRef;
 	@Output() confirmationSuccess = new EventEmitter<boolean>();
 
-	userEmail = this.safeStorageService.getPassword('figleaf-userEmail');
+	userEmail = this.safeStorageService.getEmail();
 	confirmationForm = this.formBuilder.group({
 		confirmationCode: ['', [Validators.required, Validators.minLength(6)]],
 	});

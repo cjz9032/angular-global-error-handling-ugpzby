@@ -699,7 +699,7 @@
 					"heading": "Intelligent Media",
 					"title": "Zero Touch Video Playback",
 					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
 				}
             }
         }
@@ -1017,7 +1017,7 @@
                 "describe": "Utilizza il rilevatore delle minacce per determinare la sicurezza delle reti vicine.",
                 "button": "Verifica minaccia",
                 "connectionError": "Errore di connessione",
-                "tryAgain": "Impossibile individuare il dispositivo poiché la rete non è disponibile; collegarsi a Internet e riprovare."
+                "tryAgain": "Impossibile individuare la minaccia poiché la rete non è disponibile; collegarsi a Internet e riprovare."
             },
             "locationmodal": {
                 "title": "Abilita servizi di localizzazione",
@@ -1533,9 +1533,9 @@
     },
     "welcometutorial": {
         "description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-        "bullets1": "Optimize your system with lorem ipsum dolor set",
-        "bullets2": "Security Advisor makes managing your security easy ",
-        "bullets3": "Automatic updates keep your device in tip top shape",
+        "bullets1": "View your system's status with the Vantage dashboard.",
+        "bullets2": "Security Advisor makes managing your security easy (Available on selected systems)",
+        "bullets3": "Automatic updates keep your device in tip top shape (Available on selected systems)",
         "subtitle1": "How will you be using your device?",
         "subtitle2": "Tell us about your interests",
         "personal": "Personal Use",
@@ -1560,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Impostazioni preferenze",
+        "settings": "Impostazioni",
+        "settingsDescription": "Nella pagina di impostazione delle preferenze è possibile scegliere di attivare o disattivare la notifica del messaggio in base alle categorie del messaggio di Vantage. Tenere presente che anche se tutte le categorie di messaggi sono disabilitate, è possibile che occasionalmente si riceva un messaggio critico di sistema da Vantage, se necessario.",
+        "messagesInLenovoVantage": "Messaggi in Lenovo Vantage",
+        "appFeatures": "Funzioni app",
+        "appFeaturesDescription": "Messaggi relativi a System Update, articoli e altre funzioni importanti.",
+        "marketing": "Marketing",
+        "marketingDescription": "Messaggi promozionali che includono offerte speciali Lenovo.",
+        "actionTriggered": "Azione attivata",
+        "actionTriggeredDescription": "Messaggi attivati dalle impostazioni selezionate dall'utente, come l'installazione automatica degli aggiornamenti critici/consigliati.",
+        "OtherSettings": "Altre impostazioni",
+        "usageStatistics": "Statistiche utilizzo",
+        "usageStatisticsDescription": "Invia statistiche anonime di utilizzo a Lenovo.",
+        "Note": "Nota: ",
+        "settingsNotes": "per rendere effettive le impostazioni di questa pagina è necessario il riavvio del sistema da parte degli utenti."
     }
 }

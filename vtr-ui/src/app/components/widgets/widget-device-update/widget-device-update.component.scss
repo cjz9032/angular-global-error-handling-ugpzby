@@ -51,6 +51,11 @@
 				border: 0rem;
 				cursor: pointer;
 			}
+
+			.action-button:disabled {
+				cursor: not-allowed;
+				opacity: 0.5;
+			}
 		}
 
 		.progress-div {

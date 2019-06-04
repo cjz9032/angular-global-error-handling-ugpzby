@@ -42,4 +42,12 @@ export class SafeStorageService {
 			console.error('removePassword error', error);
 		}
 	}
+
+	setEmail(email) {
+		this.setPassword('figleaf-userEmail', email);
+	}
+
+	getEmail() {
+		return this.getPassword('figleaf-userEmail');
+	}
 }

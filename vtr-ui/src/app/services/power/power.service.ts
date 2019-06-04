@@ -23,7 +23,7 @@ export class PowerService {
 		this.devicePowerThinkPad = shellService.getPowerThinkPad();
 		if (this.devicePowerThinkPad) {
 			this.isShellAvailable = true;
-		}
+		}	
 		this.devicePowerItsIntelligentCooling = shellService.getPowerItsIntelligentCooling();
 		if (this.devicePowerItsIntelligentCooling) {
 			this.isShellAvailable = true;
@@ -365,4 +365,43 @@ export class PowerService {
 
 	// ---------- End Legacy Capable
 	// End Power smart settings
+
+		// ---------- start battery threshold settings
+
+		public getChargeThresholdInfo(): Promise<any> {
+			try {
+				if (this.devicePowerThinkPad) {
+					return this.devicePowerThinkPad.sectionChargeThreshold.getChargeThresholdInfo();
+				}
+				return undefined;
+			} catch (error) {
+				throw new Error(error.message);
+			}
+		}
+
+		public setChargeThresholdValue(value: any): Promise<any> {
+			try {
+				if (this.devicePowerThinkPad) {
+					return this.devicePowerThinkPad.sectionChargeThreshold.setChargeThresholdValue(value);
+				}
+				return undefined;
+			} catch (error) {
+				throw new Error(error.message);
+			}
+		}
+
+		public setCtAutoCheckbox(value: any): Promise<any> {
+			try {
+				if (this.devicePowerThinkPad) {
+					return this.devicePowerThinkPad.sectionChargeThreshold.setCtAutoCheckbox(value);
+				}
+				return undefined;
+			} catch (error) {
+				throw new Error(error.message);
+			}
+		}
+	
+		
+		// End end battery threshold settings
+	
 }

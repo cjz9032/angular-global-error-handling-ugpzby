@@ -699,7 +699,7 @@
 					"heading": "Intelligent Media",
 					"title": "Zero Touch Video Playback",
 					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
 				}
             }
         }
@@ -1017,7 +1017,7 @@
                 "describe": "Upotrijebite alat za lociranje prijetnji da biste utvrdili sigurnost mreža koje su vam dostupne.",
                 "button": "Provjeri prijetnju",
                 "connectionError": "Pogreška prilikom povezivanja",
-                "tryAgain": "Nismo u mogućnosti locirati uređaj uslijed nedostupnosti mreže, povežite se na Internet i pokušajte iznova."
+                "tryAgain": "Nismo u mogućnosti locirati prijetnju uslijed nedostupnosti mreže, povežite se na Internet i pokušajte iznova."
             },
             "locationmodal": {
                 "title": "Omogući lokacijske usluge",
@@ -1533,9 +1533,9 @@
     },
     "welcometutorial": {
         "description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-        "bullets1": "Optimize your system with lorem ipsum dolor set",
-        "bullets2": "Security Advisor makes managing your security easy ",
-        "bullets3": "Automatic updates keep your device in tip top shape",
+        "bullets1": "View your system's status with the Vantage dashboard.",
+        "bullets2": "Security Advisor makes managing your security easy (Available on selected systems)",
+        "bullets3": "Automatic updates keep your device in tip top shape (Available on selected systems)",
         "subtitle1": "How will you be using your device?",
         "subtitle2": "Tell us about your interests",
         "personal": "Personal Use",
@@ -1560,5 +1560,22 @@
             "music": "Music",
             "science": "Science"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Postavke postavki",
+        "settings": "Postavke",
+        "settingsDescription": "Na stranici postavki možete odabrati uključivanje / isključivanje obavijesti o porukama na temelju kategorija Vantageove poruke. Napominjemo da čak i ako su sve kategorije poruka onemogućene, još uvijek možete povremeno primati ključnu poruku sustava Vantage kada je to potrebno.",
+        "messagesInLenovoVantage": "Poruke u aplikaciji Lenovo Vantage",
+        "appFeatures": "Značajke aplikacije",
+        "appFeaturesDescription": "Poruke koje se odnose na System Update, članke i ostale važne značajke.",
+        "marketing": "Marketing",
+        "marketingDescription": "Promotivne poruke uključujući posebne ponude tvrtke Lenovo.",
+        "actionTriggered": "Akcija je pokrenuta",
+        "actionTriggeredDescription": "Poruke koje pokreću korisnici odabirom postavki kao što su automatsko instaliranje kritičnih / preporučenih ažuriranja.",
+        "OtherSettings": "Ostale postavke",
+        "usageStatistics": "Statistički podaci o upotrebi",
+        "usageStatisticsDescription": "Slanje anonimnih statističkih podataka o korištenju tvrtki Lenovo.",
+        "Note": "Napomena: ",
+        "settingsNotes": "Sve postavke na ovoj stranici trebat će korisnici da se ponovno pokrenu kako bi stupili na snagu."
     }
 }
