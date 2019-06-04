@@ -366,7 +366,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 					if (value !== undefined) {
 						this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
 							//console.log('XTU Service---> ' + this.gamingCapabilities.xtuService);
-							this.gamingCapabilities.xtuService = false ;
+							//this.gamingCapabilities.xtuService = false ;
 							if (this.gamingCapabilities.xtuService === false) {
 								this.legionUpdate[1].isDriverPopup = $event;
 								this.legionUpdate[1].isChecked = false;
