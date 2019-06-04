@@ -46,7 +46,7 @@
 										</vtr-ui-row-switch>
 										<div class="margin-left-5 pl-5 bold-title no-border-bottom pb-4 border-bottom"
 											[class.disabled]="!intelligentSecurity.zeroTouchLoginFlag">
-											<vtr-ui-row-switch [title]="distanceSensitivityTitle | translate"
+											<vtr-ui-row-switch [title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
 												[caption]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate"
 												[isSwitchVisible]="true"
 												[showChildContent]="true"
@@ -57,6 +57,7 @@
 											</vtr-ui-row-switch>
 											<div class="slider-note">
 												<vtr-ui-range-slider
+													*ngIf="intelligentSecurity.distanceSensitivityFlag"
 													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
 													[minValue]="0"
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
@@ -65,9 +66,9 @@
 													[enableSlider]="!intelligentSecurity.distanceSensitivityFlag"
 													[value]="intelligentSecurity.humanDistance">
 												</vtr-ui-range-slider>
-												<div class="pt-3">
+												<div class="pt-3" [class.blur-1]="!intelligentSecurity.zeroTouchLoginFlag">
 													<div class="feature-note p-4">
-														<div class="row blur">
+														<div class="row">
 															<!-- <div class="col-auto pl-0">
 																									<fa-icon [icon]="['fal', 'exclamation-circle']">
 																									</fa-icon>
@@ -115,8 +116,8 @@
 											[disabled]="!intelligentSecurity.humanPresenceDetectionFlag">
 										</vtr-ui-row-switch>
 										<div class="margin-left-5 pl-5 bold-title no-border-bottom pb-4 border-bottom">
-											<vtr-ui-row-switch [title]="distanceSensitivityTitle | translate"
-												[caption]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate"
+											<vtr-ui-row-switch 
+												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
 												[isSwitchVisible]="false"
 												[showChildContent]="true"
 												[isSwitchChecked]="intelligentSecurity.distanceSensitivityFlag"
@@ -133,10 +134,9 @@
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
 													[maxValue]="100"
 													(change)="setHumanDistance($event)"
-													[value]="intelligentSecurity.humanDistance"
-													[enableSlider]="!intelligentSecurity.zeroTouchLoginFlag">
+													[value]="intelligentSecurity.humanDistance">
 												</vtr-ui-range-slider>
-												<div class="pt-3">
+												<div class="pt-3" [class.blur-1]="!intelligentSecurity.zeroTouchLoginFlag">
 													<div class="feature-note p-4">
 														<div class="row blur">
 															<!-- <div class="col-auto pl-0">
@@ -236,7 +236,7 @@
 										</p>
 									</div>
 								</div>
-								<div class="row">
+								<div class="row ml-3">
 									<vtr-ui-button (onClick)="onResetDefaultSettings($event)"
 										[upperCaseLabel]="true"
 										[label]="'device.smartAssist.intelligentSecurity.resetToDefault' | translate"
@@ -248,7 +248,7 @@
 					</div>
 
 					<div class="row py-5 smart-assist-card"
-						id="security">
+						id="screen">
 						<div class="col-10 mx-auto">
 							<vtr-container-collapsible
 								[cardTitle]="'device.smartAssist.intelligentScreen.title' | translate"
@@ -280,8 +280,8 @@
 											<div class="feature-note auto-screen-off-note p-4 m-4">
 												<p>{{'device.smartAssist.intelligentScreen.autoScreenOff.note' | translate}}
 												</p>
-												<a
-													href="#"><span>{{'device.smartAssist.intelligentScreen.autoScreenOff.windowsLink' | translate}}</span></a>
+												<a href="javascript:void();"
+													(click)="launchPowerAndSleep();"><span>{{'device.smartAssist.intelligentScreen.autoScreenOff.windowsLink' | translate}}</span></a>
 											</div>
 										</div>
 									</li>
@@ -295,7 +295,6 @@
 											[showChildContent]="true"
 											(toggleOnOff)="displayDim($event)"
 											[isSwitchChecked]="keepMyDisplay">
-											>
 											<div class="pl-5 ml-5">
 												<vtr-ui-range-slider
 													[minValueLegend]="'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.startTime' | translate"

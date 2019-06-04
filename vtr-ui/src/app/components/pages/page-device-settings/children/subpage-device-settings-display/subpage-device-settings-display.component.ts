@@ -138,7 +138,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.displayService.startMonitorForCameraPermission();
 		this.startMonitorForCamera();
 		this.initCameraBlurMethods();
-		this.getDaytimeColorTemperature()
+		this.getDaytimeColorTemperature();
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -416,43 +416,43 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 	// End EyeCare Mode
 
-// Display color temperature start here
-public getDaytimeColorTemperature() {
-	this.displayService.getDaytimeColorTemperature().then((response) => {
-		this.displayColorTempDataSource = response
-		console.log('getDisplayColortemperature.then', this.displayColorTempDataSource);
-	});
-}
-
-public onSetChangeDisplayColorTemp($event: ChangeContext) {
-	try {
-		console.log('temparature changed in display',$event);		
-		if (this.displayService.isShellAvailable) {
-			this.displayService
-				.setDaytimeColorTemperature($event.value).then((res) =>{
-
-				});
-		}
-	} catch (error) {
-		console.error(error.message);
+	// Display color temperature start here
+	public getDaytimeColorTemperature() {
+		this.displayService.getDaytimeColorTemperature().then((response) => {
+			this.displayColorTempDataSource = response;
+			console.log('getDisplayColortemperature.then', this.displayColorTempDataSource);
+		});
 	}
-}
 
-public resetDaytimeColorTemp($event: any) {
-	try {
-		console.log('temparature reset in display', $event);
-		if (this.displayService.isShellAvailable) {
-			this.displayService
-				.resetDaytimeColorTemperature().then((resetData: any) => {
-					console.log('temparature reset data', resetData);
-					this.displayColorTempDataSource.current = resetData || 6500 
-				});
+	public onSetChangeDisplayColorTemp($event: ChangeContext) {
+		try {
+			console.log('temparature changed in display', $event);
+			if (this.displayService.isShellAvailable) {
+				this.displayService
+					.setDaytimeColorTemperature($event.value).then((res) => {
+
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
 		}
-	} catch (error) {
-		console.error(error.message);
 	}
-}	
-// Display color temperature end here
+
+	public resetDaytimeColorTemp($event: any) {
+		try {
+			console.log('temparature reset in display', $event);
+			if (this.displayService.isShellAvailable) {
+				this.displayService
+					.resetDaytimeColorTemperature().then((resetData: any) => {
+						console.log('temparature reset data', resetData);
+						this.displayColorTempDataSource.current = resetData || 6500;
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	// Display color temperature end here
 
 	// Start Camera Privacy
 	public onCameraPrivacyModeToggle($event: any) {
@@ -599,7 +599,7 @@ public resetDaytimeColorTemp($event: any) {
 		this.eyeCareDataSource.current = resetData.colorTemperature;
 		this.eyeCareModeStatus.status = resetData.eyecaremodeState;
 		this.enableSlider = resetData.eyecaremodeState;
-		this.sunsetToSunriseModeStatus.status = (resetData.autoEyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
+		this.sunsetToSunriseModeStatus.status = resetData.autoEyecaremodeState;
 	}
 	public startEyeCareMonitor() {
 		console.log('start eyecare monitor');
@@ -630,8 +630,8 @@ public resetDaytimeColorTemp($event: any) {
 
 	public onCameraBackgroundBlur($event: any) {
 		try {
-			this.cameraBlur.enabled = $event.switchValue
-			this.onCameraBackgroundOptionChange(this.cameraBlur.enabled, "");
+			this.cameraBlur.enabled = $event.switchValue;
+			this.onCameraBackgroundOptionChange(this.cameraBlur.enabled, '');
 		} catch (error) {
 			console.error(error.message);
 		}
@@ -641,7 +641,7 @@ public resetDaytimeColorTemp($event: any) {
 		if (this.cameraFeedService.isShellAvailable) {
 			this.cameraFeedService.getCameraBlurSettings()
 				.then((response: CameraBlur) => {
-					this.cameraBlur = response
+					this.cameraBlur = response;
 					console.log('initCameraBlurMethods', response);
 				}).catch(error => {
 					console.log('initCameraBlurMethods', error);
@@ -650,8 +650,8 @@ public resetDaytimeColorTemp($event: any) {
 	}
 
 	public onCameraBackgroundOptionChange(isEnabling: boolean, mode: string) {
-		console.log("onCameraBackgroundOptionChange: " + isEnabling + ", " + mode);
-		if(mode != "") {
+		console.log('onCameraBackgroundOptionChange: ' + isEnabling + ', ' + mode);
+		if (mode !== '') {
 			this.cameraBlur.currentMode = mode;
 		}
 		if (this.cameraFeedService.isShellAvailable) {

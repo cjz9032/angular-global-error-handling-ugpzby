@@ -1,4 +1,4 @@
-<div class="vtr-ui-range-slider" [class.diable-slider-poiner]="enableSlider">
+<div class="vtr-ui-range-slider" [ngClass]="{'diable-slider-pointer': enableSlider, 'on-hover-slider-icon':onHoverSliderIcon}">
 	<ng5-slider [(value)]="value"
 		[options]="options"
 		(valueChange)="onValueChange($event)"

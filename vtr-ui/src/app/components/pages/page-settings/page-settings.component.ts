@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { MetricService } from 'src/app/services/metric/metric.service';
+import { SettingsService } from 'src/app/services/settings.service';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -9,16 +9,15 @@ import { MetricService } from 'src/app/services/metric/metric.service';
 })
 export class PageSettingsComponent implements OnInit, OnDestroy {
 
-	backArrow = '< ';
+	backId = 'setting-page-btn-back';
 
 	toggleAppFeature = false;
 	toggleMarketing = false;
 	toggleActionTriggered = false;
 	toggleUsageStatistics = false;
 
-	disabledAppFeature = true;
-	disabledMarketing = true;
-	disabledActionTriggered = true;
+	isMessageSettings = false;
+	isToggleUsageStatistics = false;
 
 	valueToBoolean = [false, true, false];
 
@@ -47,6 +46,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private shellService: VantageShellService,
+		private settingsService: SettingsService,
 	) {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
 		this.metrics = shellService.getMetrics();
@@ -69,24 +69,33 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			PageDuration: this.pageDuration,
 			OnlineStatus: ''
 		};
-		this.metrics.sendMetrics(pageViewMetrics);
+		this.sendMetrics(pageViewMetrics);
 	}
 
 	getAllToggles() {
+		if (this.settingsService.isMessageSettings) {
+			this.toggleAppFeature = this.settingsService.toggleAppFeature;
+			this.toggleMarketing = this.settingsService.toggleMarketing;
+			this.toggleActionTriggered = this.settingsService.toggleActionTriggered;
+			this.isMessageSettings = true;
+		} else {
+			this.getPreferenceSettingsValue();
+		}
+		if (this.metrics) {
+			this.toggleUsageStatistics = this.metrics.metricsEnabled;
+			this.isToggleUsageStatistics = true;
+		}
+	}
+	getPreferenceSettingsValue() {
 		if (this.preferenceSettings) {
 			this.preferenceSettings.getMessagingPreference('en').then((messageSettings: any) => {
 				if (messageSettings) {
 					this.toggleAppFeature = this.getMassageStettingValue(messageSettings, 'AppFeatures');
-					this.disabledAppFeature = false;
 					this.toggleMarketing = this.getMassageStettingValue(messageSettings, 'Marketing');
-					this.disabledMarketing = false;
 					this.toggleActionTriggered = this.getMassageStettingValue(messageSettings, 'ActionTriggered');
-					this.disabledActionTriggered = false;
+					this.isMessageSettings = true;
 				}
 			});
-			if (this.metrics && this.metrics.metricsEnabled) {
-				this.toggleUsageStatistics = this.metrics.metricsEnabled;
-			}
 		}
 	}
 
@@ -141,10 +150,10 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	}
 	onToggleOfUsageStatistics(event: any) {
 		this.toggleUsageStatistics = event.switchValue;
-		if (this.metrics && this.metrics.metricsEnabled) {
+		if (this.metrics) {
 			this.metrics.metricsEnabled = event.switchValue;
 		} else {
-			this.metrics.metricsEnabled = !event.switchValue;
+			this.toggleUsageStatistics = !event.switchValue;
 		}
 		this.sendSettingMetrics('SettingUsageStatistics', event.switchValue);
 	}

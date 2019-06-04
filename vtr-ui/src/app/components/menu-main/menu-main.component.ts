@@ -148,6 +148,11 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 				showItem = false;
 			}
 		}
+
+		if (item.hasOwnProperty('hide') && item.hide) {
+			showItem = false;
+		}
+
 		return showItem;
 	}
 
@@ -275,13 +280,13 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 					*/
 					this.smartAssist.getHPDAvailability()
 						.then((isAvailable: boolean) => {
-							console.log('getHPDStatus.getHPDAvailability()', isAvailable);
-							isAvailable = true;
+							console.log('getHPDStatus.getHPDCapability()', isAvailable);
+							// isAvailable = true;
 							this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
 							if (isAvailable) {
 								myDeviceItem.subitems.splice(4, 0, {
 									id: 'smart-assist',
-									label: 'Smart Assist',
+									label: 'common.menu.device.sub4',
 									path: 'smart-assist',
 									metricsEvent: 'itemClick',
 									metricsParent: 'navbar',

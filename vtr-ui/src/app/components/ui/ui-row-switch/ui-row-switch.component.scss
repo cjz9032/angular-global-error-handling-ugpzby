@@ -49,7 +49,7 @@
 		.title {
 			font-size: 1.8rem;
 			color: $color;
-			font-weight: $weight_medium;
+			font-weight: $weight_600;
 			letter-spacing: 0.05rem;
 			text-transform: capitalize;
 		}
@@ -114,5 +114,5 @@
 	}
 }
 
-@include theme(white-theme, $light, $main_darker, $main, $screen_dark_10);
+@include theme(white-theme, $light, $main_darker, $menu_hover, $screen_dark_10);
 @include theme(blue-theme, $gradient_main, $light, $light, $screen_light_15);
