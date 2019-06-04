@@ -61,7 +61,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public percentCompleted = 0;
 	public isUpdatesAvailable = false;
 	public isUpdateDownloading = false;
-	public isCheckingPluginStatus = false;
+	public isCheckingPluginStatus = true;
 	public installationPercent = 0;
 	public downloadingPercent = 0;
 	public isInstallingAllUpdates = true;
