@@ -840,6 +840,7 @@
 					"title": "Keep my display",
 					"caption": "Keep my display when I am reading or browsing.",
 					"displaySlider": {
+						"title": "Minutes Before display dims when browsing",
 						"startTime": "0 minutes",
 						"endTime": "60 minutes"
 					}
