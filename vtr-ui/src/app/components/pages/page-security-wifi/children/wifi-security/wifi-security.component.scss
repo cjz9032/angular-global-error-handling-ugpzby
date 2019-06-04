@@ -129,6 +129,14 @@
 			}
 		}
 	}
+	
+	::ng-deep vtr-ui-switch-onoff {
+		.checkbox {
+			.switch {
+				margin-right: 0rem;
+			}
+		}
+	}
 
 	.button-box {
 		padding: 1rem;
@@ -342,10 +350,11 @@
 				max-width: 70%;
 
 				.collapse-text {
+					margin-left: 1rem;
 					display: inline-block;
 					color: $main;
 					font-size: 1.6rem;
-					margin-right: 1rem;
+					margin-right: 0.7rem;
 					vertical-align: middle;
 					text-decoration: underline;
 					font-weight: 500;
@@ -389,6 +398,7 @@
 				.switch vtr-ui-switch-onoff .checkbox {
 					margin-bottom: 0rem;
 				}
+
 			}
 		}
 
