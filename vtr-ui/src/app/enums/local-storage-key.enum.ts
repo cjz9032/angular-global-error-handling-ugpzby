@@ -51,4 +51,11 @@ export enum LocalStorageKey {
 	MachineType = '[LocalStorageKey] MachineType',
 	HybridModeStatus = '[LocalStorageKey] HybridModeStatus',
 	TouchpadStatus = '[LocalStorageKey] TouchpadStatus',
+	LightingProfileById = '[LocalStorageKey] LightingProfileById',
+	LightingProfileBrightness = '[LocalStorageKey] LightingProfileBrightness',
+	LightingProfileEffectColor = '[LocalStorageKey] LightingProfileEffectColor',
+	LedDriver = '[LocalStorageKey] LedDriver',
+	ProfileBrightness = '[LocalStorageKey] ProfileBrightness',
+	LightingCapabilities = '[LocalStorageKey] LightingCapabilities',
+
 }
