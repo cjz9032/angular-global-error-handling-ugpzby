@@ -24,20 +24,21 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	) {}
 
 	ngOnInit() {
-		this.options.forEach(option => {
-			if (option.selectedOption && this.currentOption === undefined) {
-				console.log('optionSelected', option);
-				this.setDefaultOption(option);
-			}
-		});
+		//this.options.forEach(option => {
+		//	if (option.selectedOption && this.currentOption === undefined) {
+		//		console.log('optionSelected', option);
+		//		this.setDefaultOption(option);
+		//	}
+		//});
 
-		if (this.currentOption === undefined) {
-			this.options.forEach(option => {
-				if (option.defaultOption) {
-					this.setDefaultOption(option);
-				}
-			});
-		}
+		//if (this.currentOption === undefined) {
+		//	this.options.forEach(option => {
+		//		if (option.defaultOption) {
+		//			this.setDefaultOption(option);
+		//		}
+		//	});
+		//}
+this.currentOption =  this.options.edgeopt[this.options.curSelected - 1].name;
 	}
 
 	public toggleOptions() {
@@ -60,6 +61,7 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 
 	public optionSelected(option) {
 		this.currentOption = option.name;
+		//this.options.curSelected = option.value;
 		this.selectedDescription = option.description;
 		this.currentDescription = this.selectedDescription;
 		this.showOptions = false;

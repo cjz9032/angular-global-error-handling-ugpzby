@@ -19,7 +19,8 @@ import { WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { RegionService } from 'src/app/services/region/region.service';
-import { SupportService } from "../../services/support/support.service";
+import { SupportService } from '../../services/support/support.service';
+import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -53,9 +54,11 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 		public deviceService: DeviceService,
 		vantageShellService: VantageShellService,
 		private translate: TranslateService,
-		private regionService: RegionService
+		private regionService: RegionService,
+		private smartAssist: SmartAssistService
 	) {
 		this.showVpn();
+		this.showSmartAssist();
 		this.getMenuItems().then((items) => {
 			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 			if (cacheShowWindowsHello) {
@@ -65,7 +68,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 					id: 'windows-hello',
 					label: 'common.menu.security.sub6',
 					path: 'windows-hello',
-					icon: '',
+                    icon: '',
 					metricsEvent: 'itemClick',
 					metricsParent: 'navbar',
 					metricsItem: 'link.windowshello',
@@ -144,7 +147,12 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			if (item.onlyPrivacy) {
 				showItem = false;
 			}
-		}
+        }
+        
+        if (item.hasOwnProperty('hide') && item.hide) {
+            showItem = false;
+        }
+
 		return showItem;
 	}
 
@@ -205,7 +213,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 						id: 'windows-hello',
 						label: 'common.menu.security.sub6',
 						path: 'windows-hello',
-						icon: '',
+                        icon: '',
 						metricsEvent: 'itemClick',
 						metricsParent: 'navbar',
 						metricsItem: 'link.windowshello',
@@ -215,7 +223,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 				}
 				this.commonService.setLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello, true);
 			}
-		})
+		});
 
 	}
 	showPrivacy() {
@@ -237,7 +245,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 						securityItemForVpn.subitems.splice(4, 0, {
 							id: 'internet-protection',
 							label: 'common.menu.security.sub5',
-							path: 'internet-protection',
+                            path: 'internet-protection',
 							metricsEvent: 'itemClick',
 							metricsParent: 'navbar',
 							metricsItem: 'link.internetprotection',
@@ -252,12 +260,48 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 					}
 				}
 			}
-		})
+		});
 	}
 	getMenuItems(): Promise<any> {
 		return this.configService.getMenuItemsAsync(this.deviceService.isGaming).then((items) => {
 			this.items = items;
 			return this.items;
-		})
+		});
+	}
+
+	private showSmartAssist() {
+		this.getMenuItems().then((items) => {
+			const myDeviceItem = items.find(item => item.id === this.constantDevice);
+			if (myDeviceItem !== undefined) {
+				const smartAssistItem = myDeviceItem.subitems.find(item => item.id === 'smart-assist');
+				if (!smartAssistItem) {
+					/**
+					* check if HPD related features are supported or not. If yes show Smart Assist tab else hide. Default is hidden
+					*/
+					this.smartAssist.getHPDCapability()
+						.then((isAvailable: boolean) => {
+							console.log('getHPDStatus.getHPDCapability()', isAvailable);
+							isAvailable = true;
+							this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
+							if (isAvailable) {
+								myDeviceItem.subitems.splice(4, 0, {
+									id: 'smart-assist',
+									label: 'common.menu.device.sub4',
+									path: 'smart-assist',
+									metricsEvent: 'itemClick',
+									metricsParent: 'navbar',
+									metricsItem: 'link.smartassist',
+									routerLinkActiveOptions: { exact: true },
+									icon: '',
+									subitems: []
+								});
+							}
+						})
+						.catch(error => {
+							console.log('error in getHPDStatus.getHPDCapability()', error);
+						});
+				}
+			}
+		});
 	}
 }

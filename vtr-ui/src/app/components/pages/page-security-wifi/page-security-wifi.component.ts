@@ -51,6 +51,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	securityHealthViewModel: SecurityHealthViewModel;
 	securityHealthArticleId = '9CEBB4794F534648A64C5B376FBC2E39';
 	securityHealthArticleCategory: string;
+	cancelClick = false;
 
 	@HostListener('window:focus')
 	onFocus(): void {
@@ -79,6 +80,11 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		} else if (cacheHomeStatus) {
 			this.isShowInvitationCode = !(cacheHomeStatus === 'joined');
 		}
+		this.wifiSecurity.on('cancelClick', () => {
+			this.cancelClick = true;
+		}).on('cancelClickFinish', () => {
+			this.cancelClick = false;
+		});
 		this.fetchCMSArticles();
 	}
 

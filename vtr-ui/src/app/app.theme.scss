@@ -7,20 +7,20 @@ $main: #4579f0;
 $main_light: #5086cb;
 $main_lighter: #b5d0f4;
 $main_lightest: #eaf2fd;
-$menu_hover: #4A81FD;
+$menu_hover: #4a81fd;
 
 $dark_cell: linear-gradient(0deg, #2e4255, #293c4f);
 $dark_popup_cell: linear-gradient(0deg, #435064, #3d4c5c);
 
-$gaming_darkest: #1F2A42;
+$gaming_darkest: #1f2a42;
 $gaming_darker: #253048;
 $gaming_dark: #293c4f;
-$gaming_shade: #46526B;
+$gaming_shade: #46526b;
 $gaming_gstart: #2d5dcf;
 $gaming: #4579f0;
 $gaming_light: #5086cb;
 $gaming_lighter: #b5d0f4;
-$gaming_lightest: #FBFDFF;
+$gaming_lightest: #fbfdff;
 $gaming_icon_gradient: linear-gradient(45deg, #3592ff, #0078ff);
 $gaming_lighting_gradient: linear-gradient(-90deg, #0078ff, #3592ff);
 $gaming_green_gradient: linear-gradient(90deg, #2fcc74, #33dfa6);
@@ -32,11 +32,11 @@ $gaming_blue_grey_light: #425067;
 $gaming_grey_lightest: #aab0bc;
 $gaming_hover: #545f76;
 $gaming_dark_popup: #404d5f;
-$gaming_light_08: rgba(255,255,255,.8);
-$gaming_light_09: rgba(255,255,255,.9);
+$gaming_light_08: rgba(255, 255, 255, .8);
+$gaming_light_09: rgba(255, 255, 255, .9);
 
-$gaming_lighting_profile_bg: rgba(20,29,49,0.45);
-$gaming_light_blue: #047AFF;
+$gaming_lighting_profile_bg: rgba(20, 29, 49, 0.45);
+$gaming_light_blue: #047aff;
 
 $highlight: #2ec5eb;
 $highlight_bright: #53f9ff;
@@ -69,7 +69,7 @@ $shade_darkest: #333;
 $shade_darker: #6b6b6b;
 $shade_dark: #9d9d9d;
 $shade: #adadad;
-$shade_btn_light:#bdbcbc;
+$shade_btn_light: #bdbcbc;
 $shade_light: #c8cbcb;
 $shade_lighter: #e6e6e6;
 $shade_lightest: #f1f1f1;
@@ -167,7 +167,6 @@ $mediaquery_X21: "only screen and (min-width: 2160px) and (max-width : 3840px) a
 $mediaquery_X22: "only screen and (min-width: 500px) and (max-width : 661px)";
 $mediaquery_X23: "only screen and (min-width: 990px) and (max-width : 1040px)";
 
-
 $dpiquery_0: "max-resolution: 350dpi";
 $dpiquery_1: "max-resolution: 275dpi";
 $dpiquery_2: "max-resolution: 200dpi";
@@ -196,17 +195,15 @@ $pink: #ff7d70;
 $orange: orange;
 $teal: #35e6b9;
 
-
 // for security score
-$danger_dark: #ED5849;
-$danger_light: #F97163;
-$warning_dark: #EE5A08;
-$warning_light: #FF7E3E;
-$caution_dark: #EDE549;
-$caution_light: #F9E163;
-$good_dark: #2FD07E;
-$good_light: #34E1AD;
-
+$danger_dark: #ed5849;
+$danger_light: #f97163;
+$warning_dark: #ee5a08;
+$warning_light: #ff7e3e;
+$caution_dark: #ede549;
+$caution_light: #f9e163;
+$good_dark: #2fd07e;
+$good_light: #34e1ad;
 
 $percent_0_dark: $danger_dark;
 $percent_0_light: $danger_light;
@@ -235,7 +232,6 @@ $menu_height: 9rem;
 $header_height: 20.5rem;
 
 $modal_top_margin: 8rem;
-
 
 /*media screen sizes for gaming*/
 $small-screen: "only screen and (max-width : 767px)";

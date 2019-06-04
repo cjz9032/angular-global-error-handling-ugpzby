@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ElementRef,Output, EventEmitter} from '@angular/core';
 
 @Component({
 	selector: 'vtr-battery-charge-threshold-settings',
@@ -9,14 +9,15 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	@Input() title = '';
 	@Input() type = 'primary';
 	@Input() displayNoteOnly: boolean = this.displayNoteOnly || false;
+	@Input() startAtChargeOptions: any;
+	@Input() stopAtChargeOptions: any;
+	@Input() selectedStartAtCharge: any;
+	@Input() selectedStopAtCharge: any;
+	@Input() isCheckedAuto: any;
+	@Output() sendBatteryDetails = new EventEmitter();
+	@Output() autoChecked = new EventEmitter<boolean>()
 
-	isCheckedAuto: boolean = this.isCheckedAuto || false;
-	selectedStopAtCharge: number = this.selectedStopAtCharge || 75;
-	selectedStartAtCharge: number = this.selectedStartAtCharge || 40;
-
-	chargeOptions: number[] = [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
-	startAtChargeOptions: number[] = this.chargeOptions.slice(0, this.chargeOptions.length - 1);
-	stopAtChargeOptions: number[] = this.chargeOptions.slice(1, this.chargeOptions.length);
+	
 
 	// Random number is used to have unique id of each input field
 	randomNumber: number = Math.floor(new Date().valueOf() * Math.random());
@@ -25,6 +26,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 	startChargeInput = 'startAtCharge';
 	stopAtChargeInput = 'stopAtCharge';
 	isCheckedAutoInput = 'isCheckedAuto';
+	public selectedOptionsData: any = {};
 
 	constructor() { }
 
@@ -49,6 +51,14 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 				}
 			}
 		}
+		// Battery num is static need to change 
+		this.selectedOptionsData = {
+			startChargeValue : this.selectedStartAtCharge,
+			stopChargeValue : this.selectedStopAtCharge,
+			autoChecked: this.isCheckedAuto,
+			batteryNum: 1
+		}
+		this.sendBatteryDetails.emit(this.selectedOptionsData)
 	}
 
 	autoStartStopAtCharge() {
@@ -59,6 +69,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit {
 		// console.log('toggleAutoSettings');
 		if (event) {
 			this.autoStartStopAtCharge();
+			this.autoChecked.emit(true)
 		}
 	}
 }

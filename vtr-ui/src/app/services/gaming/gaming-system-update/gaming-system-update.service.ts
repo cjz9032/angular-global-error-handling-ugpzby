@@ -4,7 +4,7 @@ import { CommonService } from '../../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
-import { HybridModeSatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
+import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
 import { TouchpadStatus } from 'src/app/data-models/gaming/touchpad-status.model';
 
 

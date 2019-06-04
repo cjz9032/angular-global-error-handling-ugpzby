@@ -1,0 +1,50 @@
+@import "../../../app.theme.scss";
+
+ul {
+	padding: 0;
+	li {
+		display: inline-block;
+		cursor: pointer;
+		width: 4.8rem;
+		height: 4.8rem;
+		border-radius: 0.8rem;
+		background-color: $gaming_lightest;
+		color: $gaming_dark;
+		font-weight: 800;
+		font-size: 2rem;
+		text-align: center;
+		line-height: 4.8rem;
+		margin-bottom: 1.2rem;
+		box-shadow: 0rem 0.4rem 0rem 0.1rem $gaming_hover;
+		&.selected {
+			color: $gaming_lightest;
+			background-color: $gaming_light_blue;
+			box-shadow: 0rem 0.4rem 0rem 0.1rem $gaming_gstart;
+			&.macro-exists {
+				div {
+					position: relative;
+					&:after {
+						background-color: $gaming_lightest;
+					}
+				}
+			}
+		}
+		&.macro-exists {
+			div {
+				position: relative;
+				&:after {
+					content: '';
+					width: 0.5rem;
+					height: 0.5rem;
+					background-color: $gaming_dark;
+					position: absolute;
+					bottom: 0.6rem;
+					border-radius: 0.5rem;
+					margin: auto;
+					left: 0px;
+					right: 0px;
+				}
+			}
+		}
+	}
+}
