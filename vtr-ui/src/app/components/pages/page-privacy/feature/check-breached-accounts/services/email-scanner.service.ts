@@ -76,7 +76,7 @@ export class EmailScannerService {
 
 	scanNotifierEmit() {
 		this.storageService.setItem(USER_EMAIL_HASH, getHashCode(this._userEmail$.getValue()));
-		this.safeStorageService.setPassword('figleaf-userEmail', this._userEmail$.getValue());
+		this.safeStorageService.setEmail(this._userEmail$.getValue());
 		this.scanNotifier.next(true);
 	}
 
@@ -90,7 +90,7 @@ export class EmailScannerService {
 			'Content-Type': 'text/plain;charset=UTF-8',
 		});
 		return this.http.post(`${this.environment.backendUrl}/api/v1/vantage/auth/init`, {
-			'email': this.safeStorageService.getPassword('figleaf-userEmail'),
+			'email': this.safeStorageService.getEmail(),
 		}, {headers: headers})
 			.pipe(
 				catchError((error) => {
@@ -108,7 +108,7 @@ export class EmailScannerService {
 		return this.http.post<ConfirmationCodeValidationResponse>(
 			`${this.environment.backendUrl}/api/v1/vantage/auth/finish`,
 			{
-				'email': this.safeStorageService.getPassword('figleaf-userEmail'),
+				'email': this.safeStorageService.getEmail(),
 				'code': code,
 			}, {headers: headers}
 		)

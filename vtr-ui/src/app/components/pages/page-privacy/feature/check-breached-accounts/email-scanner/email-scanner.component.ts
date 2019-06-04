@@ -13,7 +13,7 @@ import { FeaturesStatuses } from '../../../userDataStatuses';
 
 })
 export class EmailScannerComponent implements OnInit, OnDestroy {
-	userEmail = this.safeStorageService.getPassword('figleaf-userEmail');
+	userEmail = this.safeStorageService.getEmail();
 	emailWasScanned$ = this.userDataGetStateService.userDataStatus$.pipe(
 		map((userDataStatus) => userDataStatus.breachedAccountsResult !== FeaturesStatuses.undefined)
 	);
