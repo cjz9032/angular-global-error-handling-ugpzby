@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
+import { isUndefined } from 'util';
 
 @Component({
 	selector: 'vtr-widget-system-tools',
@@ -8,7 +9,7 @@ import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-cap
 })
 export class WidgetSystemToolsComponent implements OnInit, AfterViewInit {
 	@Input() title = '';
-	private gamingProperties: any;
+	public gamingProperties: any = {};
 
 	constructor(private gamingAllCapabilitiesService: GamingAllCapabilitiesService) {}
 
@@ -17,7 +18,7 @@ export class WidgetSystemToolsComponent implements OnInit, AfterViewInit {
 	ngAfterViewInit(): void {
 		if (this.gamingAllCapabilitiesService.isShellAvailable) {
 			this.gamingAllCapabilitiesService.gamingCapablityValues.subscribe((updatedValue) => {
-				if (updatedValue !== undefined) {
+				if (!isUndefined(updatedValue)) {
 					this.gamingProperties = updatedValue;
 				}
 			});
