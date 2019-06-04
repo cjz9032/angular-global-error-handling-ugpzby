@@ -122,6 +122,15 @@
 				border-top: 0.1rem solid $shade_lighter;
 				border-bottom: none;
 			}
+			.display-dim-title {
+				font-size: 1.8rem;
+				color: $main_darker;
+				font-weight: $weight_600;
+				letter-spacing: 0.05rem;
+			}
+			::ng-deep .ng5-slider {
+				margin: 20px 0 15px;
+			}
 	}
 
 	.disabled-overlay {

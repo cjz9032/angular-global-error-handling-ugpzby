@@ -10,6 +10,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ElementRef } from '@ang
 })
 export class UiMacrokeyCollapsibleContainerComponent implements OnInit {
 	@Input() public options;
+	@Input() public enableDescription: Boolean = true;
 	@Output() public change = new EventEmitter<any>();
 	public showOptions = false;
 	public buttonName: any = 'Show';
