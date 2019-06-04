@@ -3,12 +3,12 @@ import { EyeCareMode } from 'src/app/data-models/camera/eyeCareMode.model';
 import { ChangeContext } from 'ng5-slider';
 
 @Component({
-  selector: 'vtr-display-color-temp',
-  templateUrl: './display-color-temp.component.html',
-  styleUrls: ['./display-color-temp.component.scss']
+	selector: 'vtr-display-color-temp',
+	templateUrl: './display-color-temp.component.html',
+	styleUrls: ['./display-color-temp.component.scss']
 })
 export class DisplayColorTempComponent implements OnInit {
- @Input() displayColorTempSettings: EyeCareMode;
+	@Input() displayColorTempSettings: EyeCareMode;
 	@Input() enableSlider: boolean;
 	@Input() manualRefresh: any;
 	@Output() displayColorTempChange: EventEmitter<ChangeContext> = new EventEmitter();
@@ -18,9 +18,10 @@ export class DisplayColorTempComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
-		console.log(this.displayColorTempSettings)
-	 }
-	 public onDisplayColorTemparatureChange($event: ChangeContext) {
+		console.log(this.displayColorTempSettings);
+	}
+
+	public onDisplayColorTemparatureChange($event: ChangeContext) {
 		this.displayColorTempChange.emit($event);
 	}
 

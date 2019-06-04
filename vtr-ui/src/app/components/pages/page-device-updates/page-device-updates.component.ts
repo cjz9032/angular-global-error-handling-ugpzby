@@ -61,7 +61,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public percentCompleted = 0;
 	public isUpdatesAvailable = false;
 	public isUpdateDownloading = false;
-	public isCheckingPluginStatus = false;
+	public isCheckingPluginStatus = true;
 	public installationPercent = 0;
 	public downloadingPercent = 0;
 	public isInstallingAllUpdates = true;
@@ -105,6 +105,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isChecked: true,
+			isDisabled: false,
 			tooltipText: 'systemUpdates.autoUpdateSettings.critical.tooltip',
 			type: 'auto-updates'
 		},
@@ -118,6 +119,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			isCheckBoxVisible: false,
 			isSwitchVisible: true,
 			isChecked: true,
+			isDisabled: false,
 			tooltipText: 'systemUpdates.autoUpdateSettings.recommended.tooltip',
 			type: 'auto-updates'
 		},
@@ -131,6 +133,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			isCheckBoxVisible: false,
 			isSwitchVisible: false,
 			isChecked: true,
+			isDisabled: false,
 			linkText: 'systemUpdates.autoUpdateSettings.windows.url',
 			linkPath: 'ms-settings:windowsupdate',
 			type: 'auto-updates'
@@ -303,6 +306,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					// this.lastScanTime = new Date(value.lastScanTime);
 					this.nextScheduleScanTime = value.nextScheduleScanTime;
 					this.isScheduleScanEnabled = value.scheduleScanEnabled;
+					this.getNextUpdatedScanText();
 					// lastInstallTime: "2019-03-01T10:09:53"
 					// lastScanTime: "2019-03-12T18:24:03"
 					// nextScheduleScanTime: "2019-03-15T10:07:42"
@@ -396,12 +400,15 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			let { criticalAutoUpdates, recommendedAutoUpdates } = this.systemUpdateService.autoUpdateStatus;
 			if (name === 'critical-updates') {
 				criticalAutoUpdates = checked;
+				const recommendUpdate = this.autoUpdateOptions.find((update) => {
+					return update.name === 'recommended-updates';
+				});
 				if (!checked) {
-					const recommendUpdate = this.autoUpdateOptions.find((update) => {
-						return update.name === 'recommended-updates';
-					});
 					recommendedAutoUpdates = false;
 					recommendUpdate.isChecked = false;
+					recommendUpdate.isDisabled = true;
+				} else {
+					recommendUpdate.isDisabled = false;
 				}
 			} else if (name === 'recommended-updates') {
 				recommendedAutoUpdates = checked;
@@ -652,6 +659,13 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				case UpdateProgress.AutoUpdateStatus:
 					this.autoUpdateOptions[0].isChecked = payload.criticalAutoUpdates;
 					this.autoUpdateOptions[1].isChecked = payload.recommendedAutoUpdates;
+					this.isScheduleScanEnabled = payload.criticalAutoUpdates;
+					if (!payload.criticalAutoUpdates) {
+						this.autoUpdateOptions[1].isDisabled = true;
+					} else {
+						this.autoUpdateOptions[1].isDisabled = false;
+					}
+					this.getNextUpdatedScanText();
 					break;
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
