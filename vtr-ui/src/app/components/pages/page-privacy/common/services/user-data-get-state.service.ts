@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, ReplaySubject } from 'rxjs';
+import { ReplaySubject } from 'rxjs';
 import { BreachedAccountsService } from './breached-accounts.service';
 import { BrowserAccountsService } from './browser-accounts.service';
 import { TrackingMapService } from '../../feature/tracking-map/services/tracking-map.service';
@@ -23,6 +23,7 @@ export class UserDataGetStateService {
 	isFigleafReadyForCommunication = false;
 	userDataStatus = new ReplaySubject<UserStatuses>();
 	userDataStatus$ = this.userDataStatus.asObservable();
+	isTrackersBlocked = false;
 
 	constructor(
 		private breachedAccountsService: BreachedAccountsService,
@@ -65,8 +66,19 @@ export class UserDataGetStateService {
 			if (trackingData.error) {
 				status = FeaturesStatuses.error;
 			}
+			if (this.isTrackersBlocked) {
+				status = FeaturesStatuses.none;
+			}
 			this.websiteTrackersResult = status;
 			this.updateUserDataSubject();
+		});
+
+		this.trackingMapService.isTrackersBlocked$.subscribe((isTrackersBlocked) => {
+			this.isTrackersBlocked = isTrackersBlocked;
+			if (isTrackersBlocked) {
+				this.websiteTrackersResult = FeaturesStatuses.none;
+				this.updateUserDataSubject();
+			}
 		});
 
 		this.communicationWithFigleafService.isFigleafReadyForCommunication$.subscribe((isFigleafReadyForCommunication) => {
