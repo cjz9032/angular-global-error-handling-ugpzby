@@ -35,7 +35,6 @@ export class PageDeviceGamingComponent implements OnInit {
 	public securityStatus: Status[] = [];
 	public isOnline = true;
 	private allCapablitiyFlag: Boolean = false;
-
 	heroBannerItems = [];
 	cardContentPositionB: any = {};
 	cardContentPositionC: any = {};
