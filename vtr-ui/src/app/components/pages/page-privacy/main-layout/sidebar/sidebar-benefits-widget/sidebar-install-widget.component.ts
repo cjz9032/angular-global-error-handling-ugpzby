@@ -23,7 +23,7 @@ export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
 		image: '',
 	};
 
-	userDataStatus$ = this.userDataGetStateService.userDataStatus$;
+	isFigleafInstalled = false;
 	isFirstTimeVisitor = false;
 	currentPath = '';
 
@@ -36,9 +36,12 @@ export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		merge(
-			this.userDataStatus$.pipe(
+			this.userDataGetStateService.userDataStatus$.pipe(
 				takeUntil(instanceDestroyed(this)),
-				tap(({appState}) => this.isFirstTimeVisitor = appState === AppStatuses.firstTimeVisitor)
+				tap(({appState}) => {
+					this.isFirstTimeVisitor = appState === AppStatuses.firstTimeVisitor;
+					this.isFigleafInstalled = appState === AppStatuses.figLeafInstalled;
+				})
 			),
 			this.routerChangeHandler.onChange$.pipe(
 				takeUntil(instanceDestroyed(this)),
