@@ -1,11 +1,11 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {RouterChangeHandlerService} from '../../../common/services/router-change-handler.service';
-import {filter, takeUntil, tap} from 'rxjs/operators';
-import {instanceDestroyed} from '../../../utils/custom-rxjs-operators/instance-destroyed';
-import {InstallWidgetPageSettings, SidebarInstallWidgetService} from './sidebar-install-widget.service';
-import {UserDataGetStateService} from '../../../common/services/user-data-get-state.service';
-import {AppStatuses} from '../../../userDataStatuses';
-import {merge} from "rxjs";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { RouterChangeHandlerService } from '../../../common/services/router-change-handler.service';
+import { filter, takeUntil, tap } from 'rxjs/operators';
+import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
+import { InstallWidgetPageSettings, SidebarInstallWidgetService } from './sidebar-install-widget.service';
+import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
+import { AppStatuses } from '../../../userDataStatuses';
+import { merge } from 'rxjs';
 
 @Component({
 	selector: 'vtr-sidebar-install-widget',
