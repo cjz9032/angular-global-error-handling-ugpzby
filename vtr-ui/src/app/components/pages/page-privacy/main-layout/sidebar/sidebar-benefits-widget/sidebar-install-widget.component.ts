@@ -1,11 +1,11 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { RouterChangeHandlerService } from '../../../common/services/router-change-handler.service';
-import { filter, takeUntil } from 'rxjs/operators';
-import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
-import { InstallWidgetPageSettings, SidebarInstallWidgetService } from './sidebar-install-widget.service';
-import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
-import { AppStatuses } from '../../../userDataStatuses';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {RouterChangeHandlerService} from '../../../common/services/router-change-handler.service';
+import {filter, takeUntil, tap} from 'rxjs/operators';
+import {instanceDestroyed} from '../../../utils/custom-rxjs-operators/instance-destroyed';
+import {InstallWidgetPageSettings, SidebarInstallWidgetService} from './sidebar-install-widget.service';
+import {UserDataGetStateService} from '../../../common/services/user-data-get-state.service';
+import {AppStatuses} from '../../../userDataStatuses';
+import {merge} from "rxjs";
 
 @Component({
 	selector: 'vtr-sidebar-install-widget',
@@ -23,31 +23,35 @@ export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
 		image: '',
 	};
 
-	isFigleafInstalled$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
+	userDataStatus$ = this.userDataGetStateService.userDataStatus$;
+	isFirstTimeVisitor = false;
+	currentPath = '';
 
 	constructor(
 		private routerChangeHandler: RouterChangeHandlerService,
 		private sidebarInstallWidgetService: SidebarInstallWidgetService,
-		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private userDataGetStateService: UserDataGetStateService,
 	) {
 	}
 
 	ngOnInit() {
-		this.routerChangeHandler.onChange$
-			.pipe(
+		merge(
+			this.userDataStatus$.pipe(
 				takeUntil(instanceDestroyed(this)),
-				filter((currentPath) => this.sidebarInstallWidgetService.pagesSettings[currentPath])
-			)
-			.subscribe(
-				(currentPath) => {
-					this.installWidgetSettings = this.sidebarInstallWidgetService.pagesSettings[currentPath];
-					const {appState} = this.userDataGetStateService.getUserDataStatus();
-					if ( appState === AppStatuses.firstTimeVisitor ) {
-						this.installWidgetSettings = this.sidebarInstallWidgetService.generalizedSettings;
-					}
-				}
-			);
+				tap(({appState}) => this.isFirstTimeVisitor = appState === AppStatuses.firstTimeVisitor)
+			),
+			this.routerChangeHandler.onChange$.pipe(
+				takeUntil(instanceDestroyed(this)),
+				filter((currentPath) => this.sidebarInstallWidgetService.pagesSettings[currentPath]),
+				tap((currentPath) => this.currentPath = currentPath)
+			),
+		).subscribe(() => {
+			if (this.isFirstTimeVisitor) {
+				this.installWidgetSettings = this.sidebarInstallWidgetService.generalizedSettings;
+			} else {
+				this.installWidgetSettings = this.sidebarInstallWidgetService.pagesSettings[this.currentPath];
+			}
+		});
 	}
 
 	ngOnDestroy() {
