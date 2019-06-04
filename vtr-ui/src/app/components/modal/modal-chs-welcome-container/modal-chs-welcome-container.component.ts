@@ -79,10 +79,6 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 		}
 	}
 
-	selected(num) {
-		this.switchPage = num + 1;
-	}
-
 	public onOkClick($event: any) {
 		if (!this.hasSystemPermissionShowed) {
 			this.permission.requestPermission('geoLocatorStatus').then((status) => {

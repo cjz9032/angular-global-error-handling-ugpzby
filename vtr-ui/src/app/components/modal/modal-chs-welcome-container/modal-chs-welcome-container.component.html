@@ -9,54 +9,21 @@
 	<div class="page page-one" *ngIf="switchPage === 1">
 		<div class="text-center">
 			<div class="page-img">
-				<img src="../../../../assets//images/welcome-one.png" alt="">
+				<img src="../../../../assets//images/connected-home-my-home.png" alt="">
 			</div>
-			<p class="page-title mb-3">{{'homeSecurity.tour.welcome' | translate}}</p>
-			<p class="page-desc">{{'homeSecurity.tour.welcomeDesc' | translate}}</p>
+			<p class="page-title mb-3">{{'homeSecurity.tour.welcome1' | translate}}</p>
+			<p class="page-desc">{{'homeSecurity.tour.welcomeDesc1' | translate}}</p>
     </div>
 	</div>
 	<!-- end of page1-->
 	<!-- start of page 2-->
 	<div class="page page-two" *ngIf="switchPage === 2">
 		<div class="text-center">
-      <p class="page-title mb-3">{{'homeSecurity.tour.device' | translate}}</p>
-			<p class="page-desc">{{'homeSecurity.tour.deviceDesc' | translate}}</p>
-      <p class="page-sub-title">{{'homeSecurity.tour.ensure' | translate}}</p>
-      <ul class="text-center list-group">
-        <li class="d-flex justify-content-center">
-          <div class="bullet-icon-check">
-            <div class="icon-bkg">
-              <fa-icon [icon]="['fas', 'check']">
-              </fa-icon>
-            </div>
-          </div>
-          <div class="page-desc pl-3">
-              {{'homeSecurity.tour.ensureOne' | translate}}
-          </div>
-        </li>
-        <li class="d-flex justify-content-center">
-          <div class="bullet-icon-check">
-            <div class="icon-bkg">
-              <fa-icon [icon]="['fas', 'check']">
-              </fa-icon>
-            </div>
-          </div> 
-          <div class="page-desc pl-3">
-              {{'homeSecurity.tour.ensureTwo' | translate}}
-          </div>
-        </li>
-        <li class="d-flex justify-content-center">
-          <div class="bullet-icon-check">
-            <div class="icon-bkg">
-              <fa-icon [icon]="['fas', 'check']">
-              </fa-icon>
-            </div>
-          </div> 
-          <div class="page-desc pl-3">
-              {{'homeSecurity.tour.ensureThree' | translate}}
-          </div>
-        </li>
-      </ul>
+      <div class="page-img">
+				<img src="../../../../assets/images/welcome-one.png" alt="">
+			</div>
+			<p class="page-title mb-3">{{'homeSecurity.tour.welcome2' | translate}}</p>
+			<p class="page-desc">{{'homeSecurity.tour.welcomeDesc2' | translate}}</p>
 		</div>
 	</div>
 	<!-- end of page2-->
@@ -69,63 +36,40 @@
 	<!-- end of page3-->
 	<!-- start of page 4-->
 	<div class="page page-four" *ngIf="switchPage === 4 && showPageFour === true">
+		<div class="chs-logo w-100 pb-5">
+			<img src="../../../../assets/images/coronet-img.png" alt="">
+		</div>
 		<p class="description">
-			{{'security.wifisecurity.locationmodal.title' | translate}}
+			{{'homeSecurity.tour.locationTitle' | translate}}
     </p>
     <p class="sub-desc">
         {{'homeSecurity.tour.locationPermission' | translate}}  
     </p>
-		<div class="d-flex" *ngIf="!isLocationServiceOn">
+		<div class="d-flex sub-desc">
 			<div class="ml-0 mr-4 pl-0">
-				<button id="chs-tour-location-agree-btn" type="button" class="btn btn-default modal-button"
-					(click)="onOkClick($event)" vtrMetrics metricsParent="Security.WifiSecurity"
-					metricsItem="agreeOpenLocation" metricsEvent="featureClick">
-					{{'homeSecurity.tour.yes' | translate}}
-        </button>        
+				<vtr-ui-button *ngIf="!isLocationServiceOn" id="chs-tour-btn-start"
+          (click)="onOkClick($event)" [label]="'homeSecurity.tour.locationTitle' | translate"></vtr-ui-button>
+				<!-- show done button -->
+				<vtr-ui-button *ngIf="isLocationServiceOn === true" id="chs-tour-location-done-btn"
+          (click)="closeModal()" [label]="'homeSecurity.tour.done' | translate"></vtr-ui-button>
 			</div>
-			<div class="ml-0 mr-4 pl-0">
-				<div id="chs-tour-location-cancel-btn" role="button" class="btn btn-default modal-button-cancel"
-					(click)="closeModal()" vtrMetrics metricsParent="Security.WifiSecurity"
-					metricsItem="cancelOpenLocation" metricsEvent="featureClick">
-					{{'homeSecurity.tour.no' | translate}}
-				</div>
-			</div>
-    </div>
-    <!-- show done button, description to be done -->
-    <div class="d-flex justify-content-center" *ngIf="isLocationServiceOn === true">
-      <button id="chs-tour-location-done-btn" type="button" class="btn btn-default modal-button"
-        (click)="closeModal()" vtrMetrics metricsParent="Security.WifiSecurity"
-        metricsItem="agreeOpenLocation" metricsEvent="featureClick">
-        {{'homeSecurity.tour.done' | translate}}
-      </button>
-    </div>
+    </div> 
 	</div>
 	<!-- end of page4-->
 	<div class="page-indicator">
 		<div *ngIf="switchPage === 1"
 			class="row text-center align-items-center justify-content-center">
-			<div class="button-welcome">
+			<div>
 				<vtr-ui-button *ngIf="switchPage === 1" id="chs-tour-btn-start"
-          (click)="next(switchPage)" [label]="'homeSecurity.tour.start' | translate"></vtr-ui-button>
-        
+          (click)="next(switchPage)" [label]="'tutorial.next' | translate"></vtr-ui-button> 
 			</div>
 		</div>
-		<div *ngIf="switchPage > 1 && switchPage !== 4" class="row text-center align-items-center no-gutters">
-			<div class="col-3">
+		<div *ngIf="switchPage > 1 && switchPage !== 4" class="row text-center justify-content-between align-items-center no-gutters">
+			<div class="button-welcome">
         <vtr-ui-button id="chs-tour-btn-prev" (click)="prev(switchPage)"
           [label]="'common.ui.back' | translate"></vtr-ui-button>
 			</div>
-			<div class="col-6">
-				<div class="tour-indicator d-flex justify-content-center align-items-center">
-					<div class="tour-indicator-num d-flex justify-content-center align-items-center m-3"
-						*ngFor="let item of indicatorList;let first = first;last as isLast;let i = index"
-						[ngClass]="{'selected': i+1 === switchPage,'completed': i+1 < switchPage,'unselected': i+1 > switchPage}"
-						id="chs-tour-indicator-{{i}}" (click)="selected(i)">
-						<span>{{i+1 === switchPage ? i+1 : ''}}</span>
-					</div>
-				</div>
-			</div>
-			<div class="col-3 button-welcome">
+			<div class="button-welcome">
 				<vtr-ui-button *ngIf="switchPage !== containerPage" id="chs-tour-btn-next" (click)="next(switchPage)"
           [label]="'tutorial.next' | translate"></vtr-ui-button>
         <vtr-ui-button *ngIf="switchPage === containerPage && switchPage !== 4" id="chs-tour-btn-done"
