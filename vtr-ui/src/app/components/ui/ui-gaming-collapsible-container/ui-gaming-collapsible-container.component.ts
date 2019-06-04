@@ -61,7 +61,7 @@ this.currentOption =  this.options.edgeopt[this.options.curSelected - 1].name;
 
 	public optionSelected(option) {
 		this.currentOption = option.name;
-		this.options.curSelected = option.value;
+		//this.options.curSelected = option.value;
 		this.selectedDescription = option.description;
 		this.currentDescription = this.selectedDescription;
 		this.showOptions = false;
