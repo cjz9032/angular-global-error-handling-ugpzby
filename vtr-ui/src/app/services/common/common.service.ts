@@ -149,4 +149,8 @@ export class CommonService {
 		}
 		return arguments.length === 1 ? undefined : defaultValue;
 	}
+
+	public removeObjFrom(array: any[], path: string) {
+		return array.filter(e => e.path !== path);
+	}
 }

@@ -235,6 +235,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (this.isDesktopMachine) {
 			this.headerMenuItems.splice(0, 1);
 		}
+		this.hideBatteryLink();
 		this.getMachineInfo();
 		this.startMonitor();
 		this.getVantageToolBarStatus();
@@ -832,4 +833,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 		
 		}
+	hideBatteryLink() {
+		if(this.isDesktopMachine) {
+			//hide battery like
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'battery');
+		} 
+	}
 }
