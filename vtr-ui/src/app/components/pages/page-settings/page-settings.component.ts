@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { MetricService } from 'src/app/services/metric/metric.service';
+import { SettingsService } from 'src/app/services/settings.service';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -16,9 +16,8 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	toggleActionTriggered = false;
 	toggleUsageStatistics = false;
 
-	disabledAppFeature = true;
-	disabledMarketing = true;
-	disabledActionTriggered = true;
+	isMessageSettings = false;
+	isToggleUsageStatistics = false;
 
 	valueToBoolean = [false, true, false];
 
@@ -47,6 +46,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private shellService: VantageShellService,
+		private settingsService: SettingsService,
 	) {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
 		this.metrics = shellService.getMetrics();
@@ -73,20 +73,29 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	getAllToggles() {
+		if (this.settingsService.isMessageSettings) {
+			this.toggleAppFeature = this.settingsService.toggleAppFeature;
+			this.toggleMarketing = this.settingsService.toggleMarketing;
+			this.toggleActionTriggered = this.settingsService.toggleActionTriggered;
+			this.isMessageSettings = true;
+		} else {
+			this.getPreferenceSettingsValue();
+		}
+		if (this.metrics) {
+			this.toggleUsageStatistics = this.metrics.metricsEnabled;
+			this.isToggleUsageStatistics = true;
+		}
+	}
+	getPreferenceSettingsValue() {
 		if (this.preferenceSettings) {
 			this.preferenceSettings.getMessagingPreference('en').then((messageSettings: any) => {
 				if (messageSettings) {
 					this.toggleAppFeature = this.getMassageStettingValue(messageSettings, 'AppFeatures');
-					this.disabledAppFeature = false;
 					this.toggleMarketing = this.getMassageStettingValue(messageSettings, 'Marketing');
-					this.disabledMarketing = false;
 					this.toggleActionTriggered = this.getMassageStettingValue(messageSettings, 'ActionTriggered');
-					this.disabledActionTriggered = false;
+					this.isMessageSettings = true;
 				}
 			});
-			if (this.metrics) {
-				this.toggleUsageStatistics = this.metrics.metricsEnabled;
-			}
 		}
 	}
 

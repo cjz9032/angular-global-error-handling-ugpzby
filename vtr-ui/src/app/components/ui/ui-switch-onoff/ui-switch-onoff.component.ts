@@ -115,6 +115,9 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 						});
 					}
 				}
+			} else if (this.name === 'recommended-updates') {
+				this.disabled = this.isSwitchDisable;
+				this.value = !this.value;
 			} else {
 				this.disabled = false;
 				this.value = !this.value;

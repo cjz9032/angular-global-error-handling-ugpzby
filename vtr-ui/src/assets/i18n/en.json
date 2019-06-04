@@ -976,16 +976,13 @@
 		"trailExpiredSubtext": "Upgrate to protect all of your devices",
 		"upgrade": "upgrade",
 		"tour": {
+			"skip": "Skip",
 			"start": "START TOUR",
 			"done": "DONE",
-			"welcome": "WELCOME",
-			"welcomeDesc": "In just a few click, your will be able to protect your family members, your home, appliances, and digital assets from cyber criminals and hackers. Your 30 day free trial starts now.",
-			"device": "Why CHS for your devices",
-			"deviceDesc": "Protect your devices, and your home network from malicious hackers. Get a warning any time we detect suspicious behaviors br one of your devices, or if we detect an attempt to compromise your home network.",
-			"ensure": "CHS ensures that:",
-			"ensureOne": "your devices is safe, and have not been compromised",
-			"ensureTwo": "It ensures that the networks you are connected to are safe",
-			"ensureThree": "It ensures that other devices connected to your home network are safe.",
+			"welcome1": "Welcome",
+			"welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
+			"welcome2": "Exclusive for Vantage",
+			"welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
 			"create": "Create your account",
 			"lenovoId": "with Lenovo ID",
 			"notifications": "Receive <b>notifications</b> about your home's status",
@@ -998,9 +995,8 @@
 			"skipAndTrial": "SKIP AND START TRIAL",
 			"alreadyHave": "I already have a <b>Connected Home Security Account</b>",
 			"loginCHS": "Login to existing CHS account",
-			"locationPermission": "Connected Home Security requires your location in order to run. Please enable location services for Lenovo Vantage in Windows Settings.",
-			"yes": "YES",
-			"no": "NO"
+			"locationTitle": "Enable location tracking",
+			"locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
 		}
 	},
 	"support": {
@@ -1250,7 +1246,7 @@
 			"whatIsPmInstalled": "A safer digital life is waiting: Add passwords, enable Dark Web Monitoring and autofill personal and payment info.",
 			"startProtect": "Start protecting your online accounts the simple way.",
 			"discount": "Lenovo users enjoy an exclusive 50% off Dashlane Premium.",
-			"offer": "Offer available to new Dashlane users only!",
+			"offer": "Offer available to new Dashlane users only.",
 			"getDashLane": "Get Dashlane",
 			"learnMoreAbout": "<tag>Learn more</tag> about making the most of Dashlane",
 			"openDashLane": "Open Dashlane",
