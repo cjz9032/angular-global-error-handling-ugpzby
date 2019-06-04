@@ -26,6 +26,10 @@
 		width: 16.5rem;
 		margin-right: 1rem;
 	}
+	@media #{$mediaquery_X24} {
+		width: 30rem;
+		margin-right: 1rem;
+	}
 
 	label {
 		box-sizing: border-box;

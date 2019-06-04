@@ -196,7 +196,6 @@ import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
 import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
 import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
-import { LoginLenovoIdComponent } from './components/modal/modal-chs-welcome-container/child/login-lenovo-id/login-lenovo-id.component';
 import { UiLightingProfileComponent } from './components/ui/ui-lighting-profile/ui-lighting-profile.component';
 import { AutoupdateSettingsComponent } from './components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
 import { UiLightingProfileToggleComponent } from './components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
@@ -364,7 +363,6 @@ library.add(fal);
 		UiPopoverComponent,
 		UiMacrokeyPopupComponent,
 		ModalChsWelcomeContainerComponent,
-		LoginLenovoIdComponent,
 		WidgetMacrokeySettingsComponent,
 		UiNumberButtonComponent,
 		UiMacrokeyDetailsComponent,
