@@ -1,10 +1,10 @@
 <div class="vtr-page-device-settings vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main [backarrow]="backArrow"
+			<vtr-header-main [title]="'settings.preferenceSettings' | translate"
+				[backarrow]="'&lt; '"
 				[back]="'common.ui.back' | translate"
-				[title]="'settings.preferenceSettings' | translate">
-			</vtr-header-main>
+				[backId]="backId"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
@@ -29,7 +29,7 @@
 									<ul class="list-group list-group-flush">
 										<li>
 											<vtr-ui-row-switch [title]="'settings.appFeatures' | translate"
-												[name]="'settings.appFeatures' | translate"
+												[name]="'AppFeaturesToggle'"
 												[caption]="'settings.appFeaturesDescription' | translate"
 												[isSwitchVisible]=true
 												[leftIcon]="messageSettings[0].leftImageSource"
@@ -41,7 +41,7 @@
 										</li>
 										<li>
 											<vtr-ui-row-switch [title]="'settings.marketing' | translate"
-												[name]="'settings.marketing' | translate"
+												[name]="'MarketingToggle'"
 												[caption]="'settings.marketingDescription' | translate"
 												[isSwitchVisible]=true
 												[leftIcon]="messageSettings[1].leftImageSource"
@@ -53,7 +53,7 @@
 										</li>
 										<li>
 											<vtr-ui-row-switch [title]="'settings.actionTriggered' | translate"
-												[name]="'settings.actionTriggered' | translate"
+												[name]="'ActionTriggeredToggle'"
 												[caption]="'settings.actionTriggeredDescription' | translate"
 												[isLastChild]=true
 												[isSwitchVisible]=true
@@ -78,7 +78,7 @@
 									<ul class="list-group list-group-flush">
 										<li>
 											<vtr-ui-row-switch [title]="'settings.usageStatistics' | translate"
-												[name]="'settings.usageStatistics' | translate | lowercase"
+												[name]="'UsageStatisticsToggle'"
 												[caption]="'settings.usageStatisticsDescription' | translate"
 												[isLastChild]=true
 												[isSwitchVisible]=true

@@ -9,7 +9,7 @@ import { MetricService } from 'src/app/services/metric/metric.service';
 })
 export class PageSettingsComponent implements OnInit, OnDestroy {
 
-	backArrow = '< ';
+	backId = 'setting-page-btn-back';
 
 	toggleAppFeature = false;
 	toggleMarketing = false;
@@ -69,7 +69,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			PageDuration: this.pageDuration,
 			OnlineStatus: ''
 		};
-		this.metrics.sendMetrics(pageViewMetrics);
+		this.sendMetrics(pageViewMetrics);
 	}
 
 	getAllToggles() {
@@ -84,7 +84,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 					this.disabledActionTriggered = false;
 				}
 			});
-			if (this.metrics && this.metrics.metricsEnabled) {
+			if (this.metrics) {
 				this.toggleUsageStatistics = this.metrics.metricsEnabled;
 			}
 		}
@@ -141,10 +141,10 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	}
 	onToggleOfUsageStatistics(event: any) {
 		this.toggleUsageStatistics = event.switchValue;
-		if (this.metrics && this.metrics.metricsEnabled) {
+		if (this.metrics) {
 			this.metrics.metricsEnabled = event.switchValue;
 		} else {
-			this.metrics.metricsEnabled = !event.switchValue;
+			this.toggleUsageStatistics = !event.switchValue;
 		}
 		this.sendSettingMetrics('SettingUsageStatistics', event.switchValue);
 	}
