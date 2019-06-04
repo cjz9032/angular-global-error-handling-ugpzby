@@ -5,7 +5,7 @@ import {
 	HostListener
 } from '@angular/core';
 import {
-	NgbActiveModal
+	NgbActiveModal, NgbModal
 } from '@ng-bootstrap/ng-bootstrap';
 import {
 	CommonService
@@ -14,6 +14,7 @@ import * as phoenix from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes, WinRT } from '@lenovo/tan-client-bridge';
 import * as Phoenix from '@lenovo/tan-client-bridge';
+import { ModalLenovoIdComponent } from '../modal-lenovo-id/modal-lenovo-id.component';
 
 @Component({
 	selector: 'vtr-modal-chs-welcome-container',
@@ -26,7 +27,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 	isLenovoIdLogin: boolean;
 	indicatorList: Array<any>;
 	url = 'ms-settings:privacy-location';
-	showPageFour: boolean = false;
+	showPageFour = false;
 	hasSystemPermissionShowed: boolean;
 	isLocationServiceOn: boolean;
 	chs: Phoenix.ConnectedHomeSecurity;
@@ -34,7 +35,8 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 	constructor(
 		public activeModal: NgbActiveModal,
 		private vantageShellService: VantageShellService,
-		private commonService: CommonService
+		private commonService: CommonService,
+		public modalService: NgbModal
 	) {
 		this.chs = vantageShellService.getConnectedHomeSecurity();
 		this.permission = vantageShellService.getPermission();
@@ -90,5 +92,13 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 				this.isLocationServiceOn = status;
 			});
 		}
+	}
+
+	openLenovoId() {
+		this.modalService.open(ModalLenovoIdComponent, {
+			backdrop: 'static',
+			centered: true,
+			windowClass: 'lenovo-id-modal-size'
+		});
 	}
 }

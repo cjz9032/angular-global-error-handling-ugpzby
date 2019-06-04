@@ -976,6 +976,7 @@
 		"trailExpiredSubtext": "Upgrate to protect all of your devices",
 		"upgrade": "upgrade",
 		"tour": {
+			"skip": "Skip",
 			"start": "START TOUR",
 			"done": "DONE",
 			"welcome1": "Welcome",
