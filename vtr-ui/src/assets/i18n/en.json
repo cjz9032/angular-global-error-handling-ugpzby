@@ -210,7 +210,8 @@
 				"title": "My Device",
 				"sub1": "My Device",
 				"sub2": "My Device Settings",
-				"sub3": "System Updates"
+				"sub3": "System Updates",
+				"sub4": "Smart Assist"
 			},
 			"security": {
 				"title": "Security",
@@ -806,8 +807,7 @@
 					}
 				},
 				"distanceSensitivityAdjusting": {
-					"title1": "DISTANCE SENSITIVITY ADJUSTING",
-					"title2": "AUTO DISTANCE SENSITIVITY ADJUSTING",
+					"title": "DISTANCE SENSITIVITY ADJUSTING",
 					"caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
 					"options": {
 						"near": "Near",
@@ -849,7 +849,7 @@
 				"heading": "Intelligent Media",
 				"title": "Zero Touch Video Playback",
 				"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
+				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
 			}
 		}
 	},
