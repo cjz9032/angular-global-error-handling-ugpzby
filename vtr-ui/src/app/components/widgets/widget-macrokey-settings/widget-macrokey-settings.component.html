@@ -5,7 +5,7 @@
 				<div class="col-sm-12">
 					<p class="intro-text">{{ 'gaming.macroKey.introLine' | translate }}</p>
 				</div>
-				<div class="col-sm-6">
+				<div class="col-sm-6" *ngIf="properties.macroKeyStatus == 0">
 					<div class="select-wrapper">
 						<vtr-ui-macrokey-collapsible-container
 							[options]="macroKeyOptions"

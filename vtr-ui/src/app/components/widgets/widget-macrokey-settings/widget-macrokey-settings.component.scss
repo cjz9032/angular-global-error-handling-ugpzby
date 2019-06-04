@@ -6,9 +6,13 @@
 		font-size: 1.6rem;
 	}
 	.macrokey-wrapper {
+		margin-top: 1.4rem;
 		.numbers-wrapper {
 			float: left;
 			width: 5rem;
+			@media #{$mediaquery_X3} {
+				width: 0;
+			}
 		}
 		.details-wrapper {
 			width: calc(100% - 5rem);
