@@ -27,6 +27,20 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public conservationModeStatus = new FeatureStatus(false, true);
 	public expressChargingStatus = new FeatureStatus(false, true);
 
+	isCheckedAuto: boolean =  false;
+	selectedStopAtChargeVal: number =  50;
+	selectedStartAtChargeVal: number = 45;
+	selectedStopAtChargeVal1: number =  70;
+	selectedStartAtChargeVal1: number = 45;
+
+	public responseData: any [] = [];
+	public primaryBattery: any = {};
+	machineType: any;
+	test: any;
+	chargeOptions: number[] = [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
+	startAtChargeOptions: number[] = this.chargeOptions.slice(0, this.chargeOptions.length - 1);
+	stopAtChargeOptions: number[] = this.chargeOptions.slice(1, this.chargeOptions.length);
+	
 	toggleAlwaysOnUsbFlag = false;
 	usbChargingCheckboxFlag = false;
 	powerMode = PowerMode.Sleep;
@@ -216,12 +230,17 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine)
+		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+
 		if (this.isDesktopMachine) {
 			this.headerMenuItems.splice(0, 1);
 		}
 		this.getMachineInfo();
 		this.startMonitor();
 		this.getVantageToolBarStatus();
+		if(this.machineType == 1){
+			this.getThresholdInformation()
+	   }
 	}
 
 	ngOnDestroy() {
@@ -742,4 +761,75 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	hidePowerSmartSetting(hide: boolean) {
 		hide ? this.headerMenuItems.splice(0, 1) : "";
 	}
+
+		// start battery threshold settings
+
+		public getThresholdInformation(){
+			if (this.powerService.isShellAvailable) {
+				this.powerService
+					.getChargeThresholdInfo()
+					.then((res) => {
+						this.responseData = res || [];
+						this.selectedStartAtChargeVal = this.responseData[0].startValue;
+						this.selectedStopAtChargeVal = this.responseData[0].stopValue;
+						this.selectedStartAtChargeVal1 = this.responseData[1].startValue;
+						this.selectedStopAtChargeVal1 = this.responseData[1].stopValue;
+						// console.log('battery threshold info here ------@@@@@@@@@', this.responseData)
+					})
+					.catch(error => {
+						console.error('', error);
+					});
+				}
+		}
+		public setChargeThresholdValues(batteryDetails: any) {			
+		try {
+				if (this.powerService.isShellAvailable) {
+					let value = {
+						batteryNumber: batteryDetails.batteryNum,
+						startValue: batteryDetails.startChargeValue,
+						stopValue: batteryDetails.stopChargeValue,
+						checkBoxValue: batteryDetails.autoChecked
+					}
+					this.powerService
+						.setChargeThresholdValue(value)
+						.then((value: any) => {
+							console.log('change threshold value', value);					
+						})
+						.catch(error => {
+							console.error('change threshold value', error);
+						});
+				}
+			} catch (error) {
+				console.error(error.message);
+			}
+		}
+
+		autoCheckSelected(){
+		 this.getThresholdInformation();
+		 // Need to be impliment based on selected battery
+		 if(this.isCheckedAuto){
+			try {
+				if (this.powerService.isShellAvailable) {
+					let value = {
+						batteryNumber: 1,
+						startValue: this.selectedStartAtChargeVal,
+						stopValue: this.selectedStopAtChargeVal,
+					
+						checkBoxValue: this.isCheckedAuto
+					}
+					this.powerService
+						.setCtAutoCheckbox(value)
+						.then((value: any) => {
+							console.log(value);					
+						})
+						.catch(error => {
+							console.error(error);
+						});
+				}
+			} catch (error) {
+				console.error(error.message);
+			}
+		}
+		
+		}
 }

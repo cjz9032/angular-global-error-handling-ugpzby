@@ -189,7 +189,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		this.articlesType = 'loading';
 		const queryOptions = {
 			'Page': 'support',
-			'Lang': lang,
+			'Lang': lang.toLowerCase(),
 			'GEO': 'US',
 			'OEM': 'Lenovo',
 			'OS': 'Windows',
@@ -204,13 +204,13 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 					// console.log(this.articles);
 					this.articlesType = 'content';
 				} else {
-					this.fetchCMSContents('EN');
+					this.fetchCMSContents('en');
 				}
 			},
 			error => {
 				console.log('fetchCMSContent error', error);
-				if (lang !== 'EN') {
-					this.fetchCMSContents('EN');
+				if (lang !== 'en') {
+					this.fetchCMSContents('en');
 				}
 			}
 		);
@@ -218,7 +218,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 	fetchCMSArticleCategory(lang: string) {
 		const queryOptions = {
-			'Lang': lang,
+			'Lang': lang.toLowerCase(),
 			'GEO': 'US',
 			'OEM': 'Lenovo',
 			'OS': 'Windows',
@@ -228,16 +228,17 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 		this.cmsService.fetchCMSArticleCategories(queryOptions).then(
 			(response: any) => {
+				console.log(response);
 				if (response.length > 0) {
 					this.articleCategories = response.slice(0, 4);
 				} else {
-					this.fetchCMSArticleCategory('EN');
+					this.fetchCMSArticleCategory('en');
 				}
 			},
 			error => {
 				console.log('fetchCMSArticleCategories error', error);
-				if (lang !== 'EN') {
-					this.fetchCMSArticleCategory('EN');
+				if (lang !== 'en') {
+					this.fetchCMSArticleCategory('en');
 				}
 			}
 		);
@@ -250,7 +251,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	fetchCMSArticles(categoryId: string, lang: string) {
 		this.articlesType = 'loading';
 		const queryOptions = {
-			'Lang': lang,
+			'Lang': lang.toLowerCase(),
 			'GEO': 'US',
 			'OEM': 'Lenovo',
 			'OS': 'Windows',
@@ -265,13 +266,13 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 					this.articles = response;
 					this.articlesType = 'articles';
 				} else {
-					this.fetchCMSArticles(categoryId, 'EN');
+					this.fetchCMSArticles(categoryId, 'en');
 				}
 			},
 			error => {
 				console.log('fetchCMSArticles error', error);
-				if (lang !== 'EN') {
-					this.fetchCMSArticles(categoryId, 'EN');
+				if (lang !== 'en') {
+					this.fetchCMSArticles(categoryId, 'en');
 				}
 			}
 		);

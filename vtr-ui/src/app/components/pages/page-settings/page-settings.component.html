@@ -27,9 +27,9 @@
 									[cardTitle]="'settings.messagesInLenovoVantage' | translate | lowercase"
 									[isCollapsed]="false">
 									<ul class="list-group list-group-flush">
-										<li>
+										<li *ngIf="isToggleAppFeature">
 											<vtr-ui-row-switch [title]="'settings.appFeatures' | translate"
-												[name]="'settings.appFeatures' | translate"
+												[name]="'AppFeaturesToggle'"
 												[caption]="'settings.appFeaturesDescription' | translate"
 												[isSwitchVisible]=true
 												[leftIcon]="messageSettings[0].leftImageSource"
@@ -39,9 +39,9 @@
 												(toggleOnOff)="onToggleOfAppFeature($event)">
 											</vtr-ui-row-switch>
 										</li>
-										<li>
+										<li *ngIf="isToggleMarketing">
 											<vtr-ui-row-switch [title]="'settings.marketing' | translate"
-												[name]="'settings.marketing' | translate"
+												[name]="'MarketingToggle'"
 												[caption]="'settings.marketingDescription' | translate"
 												[isSwitchVisible]=true
 												[leftIcon]="messageSettings[1].leftImageSource"
@@ -51,9 +51,9 @@
 												(toggleOnOff)="onToggleOfMarketing($event)">
 											</vtr-ui-row-switch>
 										</li>
-										<li>
+										<li *ngIf="isToggleActionTriggered">
 											<vtr-ui-row-switch [title]="'settings.actionTriggered' | translate"
-												[name]="'settings.actionTriggered' | translate"
+												[name]="'ActionTriggeredToggle'"
 												[caption]="'settings.actionTriggeredDescription' | translate"
 												[isLastChild]=true
 												[isSwitchVisible]=true
@@ -76,9 +76,9 @@
 								<vtr-container-collapsible [cardTitle]="'settings.OtherSettings' | translate "
 									[isCollapsed]="false">
 									<ul class="list-group list-group-flush">
-										<li>
+										<li *ngIf="isToggleUsageStatistics">
 											<vtr-ui-row-switch [title]="'settings.usageStatistics' | translate"
-												[name]="'settings.usageStatistics' | translate | lowercase"
+												[name]="'UsageStatisticsToggle'"
 												[caption]="'settings.usageStatisticsDescription' | translate"
 												[isLastChild]=true
 												[isSwitchVisible]=true
@@ -100,7 +100,7 @@
 									<b>{{ 'settings.Note' | translate }}</b>{{ 'settings.settingsNotes' | translate }}
 								</div>
 							</div>
-						</div>
+						</div> 
 
 					</div>
 				</div>

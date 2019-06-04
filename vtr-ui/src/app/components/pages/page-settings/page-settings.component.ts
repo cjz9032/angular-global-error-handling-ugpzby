@@ -16,6 +16,11 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	toggleActionTriggered = false;
 	toggleUsageStatistics = false;
 
+	isToggleAppFeature = false;
+	isToggleMarketing = false;
+	isToggleActionTriggered = false;
+	isToggleUsageStatistics = false;
+
 	disabledAppFeature = true;
 	disabledMarketing = true;
 	disabledActionTriggered = true;
@@ -78,14 +83,18 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 				if (messageSettings) {
 					this.toggleAppFeature = this.getMassageStettingValue(messageSettings, 'AppFeatures');
 					this.disabledAppFeature = false;
+					this.isToggleAppFeature = true;
 					this.toggleMarketing = this.getMassageStettingValue(messageSettings, 'Marketing');
 					this.disabledMarketing = false;
+					this.isToggleMarketing = true;
 					this.toggleActionTriggered = this.getMassageStettingValue(messageSettings, 'ActionTriggered');
 					this.disabledActionTriggered = false;
+					this.isToggleActionTriggered = true;
 				}
 			});
-			if (this.metrics && this.metrics.metricsEnabled) {
+			if (this.metrics) {
 				this.toggleUsageStatistics = this.metrics.metricsEnabled;
+				this.isToggleUsageStatistics = true;
 			}
 		}
 	}
@@ -141,10 +150,10 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	}
 	onToggleOfUsageStatistics(event: any) {
 		this.toggleUsageStatistics = event.switchValue;
-		if (this.metrics && this.metrics.metricsEnabled) {
+		if (this.metrics) {
 			this.metrics.metricsEnabled = event.switchValue;
 		} else {
-			this.metrics.metricsEnabled = !event.switchValue;
+			this.toggleUsageStatistics = !event.switchValue;
 		}
 		this.sendSettingMetrics('SettingUsageStatistics', event.switchValue);
 	}
