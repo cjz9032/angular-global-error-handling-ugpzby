@@ -27,6 +27,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 	chargeCompletionTimeText = '';
 	batteryIndicators = new BatteryIndicator();
 	private notificationSubscription: Subscription;
+	public deviceChemistry: string;
 	constructor(
 		private batteryService: BatteryDetailService,
 		public shellServices: VantageShellService,
@@ -55,13 +56,13 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 			this.translate.instant('device.deviceSettings.batteryGauge.details.tertiary')];
 		this.batteryIndicators.percent = response.gauge.percentage;
 		this.batteryIndicators.charging = response.gauge.isAttached;
-		this.batteryIndicators.convertMin( response.gauge.time);
+		this.batteryIndicators.convertMin(response.gauge.time);
 
 		this.batteryIndicators.timeText = response.gauge.timeType;
 		this.batteryIndicators.expressCharging = response.detail[0].isExpressCharging;
 		this.batteryIndicators.voltageError = response.detail[0].isVoltageError;
 
-		for (let i = 0; i < response.detail.length ; i++) {
+		for (let i = 0; i < response.detail.length; i++) {
 			response.detail[i].remainingCapacity = Math.round(response.detail[i].remainingCapacity * 100) / 100;
 			response.detail[i].fullChargeCapacity = Math.round(response.detail[i].fullChargeCapacity * 100) / 100;
 			response.detail[i].voltage = Math.round(response.detail[i].voltage * 100) / 100;
@@ -70,8 +71,8 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 			const id = response.detail[i].chargeStatus;
 			response.detail[i].chargeStatusString = BatteryChargeStatus.getBatteryChargeStatus(id);
 			if (response.detail[i].chargeStatus === BatteryChargeStatus.NO_ACTIVITY.id
-			|| response.detail[i].chargeStatus === BatteryChargeStatus.ERROR.id
-			|| response.detail[i].chargeStatus === BatteryChargeStatus.NOT_INSTALLED.id) {
+				|| response.detail[i].chargeStatus === BatteryChargeStatus.ERROR.id
+				|| response.detail[i].chargeStatus === BatteryChargeStatus.NOT_INSTALLED.id) {
 				/// if chargeStatus is 'No activity' | 'Error' | 'Not installed'
 				// remaining time will not be displayed
 				response.detail[i].remainingTime = undefined;
@@ -83,15 +84,15 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 				response.detail[i].remainingTimeText = this.remainingTimeText;
 			}
 			const chemistry: string = response.detail[i].deviceChemistry;
-			response.detail[i].deviceChemistry = this.translate.instant('device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase());
+			this.deviceChemistry = this.translate.instant('device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase());
 			// const manufacturer: string = response.detail[i].manufacturer;
 			// response.detail[i].manufacturer = this.translate.instant('device.deviceSettings.batteryGauge.details.manufacturer.' + manufacturer.toLowerCase());
 		}
 		this.dataSource = response.detail;
 		this.dataSourceGauge = response.gauge;
-		if ( this.cd !== null &&
+		if (this.cd !== null &&
 			this.cd !== undefined &&
-			! (this.cd as ViewRef_).destroyed ) {
+			!(this.cd as ViewRef_).destroyed) {
 			this.cd.detectChanges();
 		}
 	}
@@ -102,13 +103,13 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		this.chargeCompletionTimeText = this.translate.instant('device.deviceSettings.batteryGauge.details.chargeCompletionTime');
 		this.dataSource = this.data;
 		this.dataSourceGauge = this.dataGauge;
-		this.preProcessBatteryDetailResponse({ detail: this.dataSource, gauge: this.dataSourceGauge});
+		this.preProcessBatteryDetailResponse({ detail: this.dataSource, gauge: this.dataSourceGauge });
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 	}
 
-	isValid(val: number|string) {
+	isValid(val: number | string) {
 		if (typeof val === 'number') {
 			if (val === undefined || val === 0) {
 				return false;
