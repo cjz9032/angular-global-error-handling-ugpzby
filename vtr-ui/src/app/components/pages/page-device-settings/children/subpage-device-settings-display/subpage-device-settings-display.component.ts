@@ -138,7 +138,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.displayService.startMonitorForCameraPermission();
 		this.startMonitorForCamera();
 		this.initCameraBlurMethods();
-		this.getDaytimeColorTemperature()
+		this.getDaytimeColorTemperature();
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -445,7 +445,7 @@ export class SubpageDeviceSettingsDisplayComponent
 				this.displayService
 					.resetDaytimeColorTemperature().then((resetData: any) => {
 						console.log('temparature reset data', resetData);
-						this.displayColorTempDataSource.current = resetData || 6500
+						this.displayColorTempDataSource.current = resetData || 6500;
 					});
 			}
 		} catch (error) {
@@ -631,7 +631,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public onCameraBackgroundBlur($event: any) {
 		try {
 			this.cameraBlur.enabled = $event.switchValue;
-			this.onCameraBackgroundOptionChange(this.cameraBlur.enabled, "");
+			this.onCameraBackgroundOptionChange(this.cameraBlur.enabled, '');
 		} catch (error) {
 			console.error(error.message);
 		}
@@ -650,7 +650,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	public onCameraBackgroundOptionChange(isEnabling: boolean, mode: string) {
-		console.log("onCameraBackgroundOptionChange: " + isEnabling + ", " + mode);
+		console.log('onCameraBackgroundOptionChange: ' + isEnabling + ', ' + mode);
 		if (mode !== '') {
 			this.cameraBlur.currentMode = mode;
 		}
