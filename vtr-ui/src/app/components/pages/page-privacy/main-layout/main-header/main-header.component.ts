@@ -37,21 +37,9 @@ export class MainHeaderComponent implements OnInit, OnDestroy {
 	pagesSettings: { [path in RoutersName]: PageSettings } = {
 		[RoutersName.MAIN]: defaultPageSettings,
 		privacy: defaultPageSettings,
-		trackers: {
-			title: 'Am I being tracked?',
-			backButton: true,
-			figLeafIcon: false
-		},
-		breaches: {
-			title: 'Breached accounts',
-			backButton: true,
-			figLeafIcon: false
-		},
-		'browser-accounts': {
-			title: 'Accounts stored in Browsers',
-			backButton: true,
-			figLeafIcon: false
-		},
+		trackers: defaultPageSettings,
+		breaches: defaultPageSettings,
+		'browser-accounts': defaultPageSettings,
 		landing: {
 			title: 'Lenovo Privacy by FigLeaf',
 			backButton: true,
