@@ -1,12 +1,13 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { debounceTime, filter, takeUntil } from 'rxjs/operators';
+import { debounceTime, filter, takeUntil, tap } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { EmailScannerService } from '../services/email-scanner.service';
 import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
 import { BehaviorSubject, from } from 'rxjs';
 import { UserService } from '../../../../../../services/user/user.service';
 import { validateEmail } from '../../../utils/helpers';
+import { EMAIL_REGEXP } from '../../../utils/form-validators';
 
 interface UserProfile {
 	addressList: string[];
@@ -30,7 +31,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	emailWasScanned$ = this.emailScannerService.scanNotifier$;
 
 	emailForm = this.formBuilder.group({
-		email: ['', [Validators.required, Validators.email]],
+		email: ['', [Validators.required, Validators.pattern(EMAIL_REGEXP)]],
 	});
 	emailWasSubmitted = false;
 	serverError$ = new BehaviorSubject(false);
@@ -117,6 +118,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 			filter((val) => val.length === 0),
 			takeUntil(instanceDestroyed(this))
 		).subscribe(() => {
+			this.emailForm.reset();
 			this.openLenovoId();
 		});
 	}
