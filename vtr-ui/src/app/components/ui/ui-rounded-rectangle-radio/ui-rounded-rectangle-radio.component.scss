@@ -54,9 +54,6 @@
 			color: $main;
 			top: 1.5rem;
 			left: 1.5rem;
-			@media #{$mediaquery_19} {
-				left: -8.5rem;
-			}
 		}
 
 		fa-icon.icon {

@@ -39,6 +39,12 @@
 									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.shutdownRequiredTag' | translate}}
 								</div>
 							</div>
+							<div class="button-box pl-1"
+								*ngIf="item.isDependency">
+								<div class="btn-round-sm">
+									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.dependedPackage' | translate}}
+								</div>
+							</div>
 						</div>
 						<a href="javascript:void();">
 							<fa-icon class="question"
@@ -138,6 +144,10 @@
 				*ngIf="severity !== 'Critical' && isIgnored === false">
 				<a href="javascript:void(0)"
 					class="ignore"
+					vtrMetrics
+				    metricsItem="ignore"
+					metricsEvent="featureClick"
+					metricsParam="{{ 'packageID=' + packageID }}"
 					(click)="onIgnoreUpdateClick(packageName, true)"
 					>{{'systemUpdates.updateCheckbox.ignore' | translate}}</a>
 			</div>
@@ -145,6 +155,10 @@
 				*ngIf="severity !== 'Critical' && isIgnored === true">
 				<a href="javascript:void(0)"
 					class="ignore"
+					vtrMetrics
+				    metricsItem="attend"
+					metricsEvent="featureClick"
+					metricsParam="{{ 'packageID=' + packageID }}"
 					(click)="onIgnoreUpdateClick(packageName, false)"
 					>{{'systemUpdates.updateCheckbox.attend' | translate}}</a>
 			</div>

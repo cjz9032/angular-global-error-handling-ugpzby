@@ -237,7 +237,7 @@
 								<!--End of Security Card Advisor-->
 								<div class="row">
 									<div class="col col-12">
-										<vtr-container-card id="sa-vpn-lnk-cardcontent"
+										<!--<vtr-container-card id="sa-vpn-lnk-cardcontent"
 											aria-label="sa-vpn-lnk-cardcontent"
 											[img]="cardContentPositionA.FeatureImage"
 											[caption]="cardContentPositionA.Description"
@@ -252,6 +252,22 @@
 											type="corner-article"
 											cornerShift="large"
 											order="r1">
+										</vtr-container-card>-->
+										<vtr-container-card id="sa-vpn-lnk-cardcontent"
+															aria-label="sa-vpn-lnk-cardcontent"
+															[img]="cardContentPositionA.FeatureImage" [itemID]="cardContentPositionA.Id"
+															[caption]="cardContentPositionA.Description"
+															[title]="cardContentPositionA.Title"
+															[logoText]="cardContentPositionA.BrandName"
+															[action]="cardContentPositionA.Action"
+															[actionType]="cardContentPositionA.ActionType"
+															[actionLink]="cardContentPositionA.ActionLink"
+															[type]="'corner-article'"
+															cornerShift="large"
+															order="r1"
+															[ratioX]="4"
+															[ratioY]="2"
+															[cornerShift]="'large'">
 										</vtr-container-card>
 									</div>
 								</div>

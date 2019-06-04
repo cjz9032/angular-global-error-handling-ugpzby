@@ -61,6 +61,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public percentCompleted = 0;
 	public isUpdatesAvailable = false;
 	public isUpdateDownloading = false;
+	public isCheckingPluginStatus = false;
 	public installationPercent = 0;
 	public downloadingPercent = 0;
 	public isInstallingAllUpdates = true;
@@ -335,11 +336,11 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public onCheckForUpdates() {
 		if (this.systemUpdateService.isShellAvailable) {
 			this.setUpdateTitle();
-			this.isUserCancelledUpdateCheck = false;
+			this.isUserCancelledUpdateCheck = true;
 			this.isUpdateCheckInProgress = true;
 			this.isUpdatesAvailable = false;
 			this.systemUpdateService.isUpdatesAvailable = false;
-			this.isInstallingAllUpdates = true;
+			this.isInstallingAllUpdates = false;
 			this.systemUpdateService.isInstallingAllUpdates = true;
 			this.resetState();
 			this.systemUpdateService.checkForUpdates();
@@ -563,12 +564,11 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	private sendInstallUpdateMetrics(updateList: Array<AvailableUpdateDetail>, ignoredUpdates: Array<AvailableUpdateDetail>) {
-		ignoredUpdates = ignoredUpdates ? ignoredUpdates : this.filterIgnoredUpdate(updateList, true);
 		const successUpdates = this.filterUpdateByResult(updateList, [UpdateActionResult.Success]);
 		let failedUpdates = this.filterUpdateByResult(updateList,
 			[UpdateActionResult.DownloadFailed, UpdateActionResult.InstallFailed]);
 
-		if (ignoredUpdates.length > 0) {
+		if (ignoredUpdates && ignoredUpdates.length > 0) {
 			failedUpdates = failedUpdates.filter(item => {
 				for (const idx in ignoredUpdates) {
 					if (ignoredUpdates[idx].packageID === item.packageID) {
@@ -685,10 +685,12 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			switch (type) {
 				case UpdateProgress.ScheduleUpdateChecking:
 					this.isUpdateCheckInProgress = true;
+					this.isCheckingPluginStatus = false;
 					break;
 				case UpdateProgress.ScheduleUpdateDownloading:
 					this.ngZone.run(() => {
 						this.isUpdateCheckInProgress = false;
+						this.isCheckingPluginStatus = false;
 						this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
 						this.installationPercent = this.systemUpdateService.installationPercent;
 						this.downloadingPercent = this.systemUpdateService.downloadingPercent;
@@ -697,6 +699,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				case UpdateProgress.ScheduleUpdateInstalling:
 					this.ngZone.run(() => {
 						this.isUpdateCheckInProgress = false;
+						this.isCheckingPluginStatus = false;
 						this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
 						this.downloadingPercent = this.systemUpdateService.downloadingPercent;
 						this.installationPercent = this.systemUpdateService.installationPercent;
@@ -704,10 +707,12 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					break;
 				case UpdateProgress.ScheduleUpdateIdle:
 					this.isUpdateCheckInProgress = false;
+					this.isCheckingPluginStatus = false;
 					this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
 					this.resetState();
 					break;
 				case UpdateProgress.ScheduleUpdateCheckComplete:
+					this.isCheckingPluginStatus = false;
 					this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
 					this.isInstallationCompleted = this.systemUpdateService.isInstallationCompleted;
 					this.isInstallationSuccess = this.systemUpdateService.isInstallationSuccess;

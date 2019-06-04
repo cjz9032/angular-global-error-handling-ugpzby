@@ -8,63 +8,75 @@ import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.s
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
+import { CMSService } from 'src/app/services/cms/cms.service';
+import { QaService } from 'src/app/services/qa/qa.service';
 
 @Component({
-	selector: 'vtr-subpage-device-settings-smart-assist',
-	templateUrl: './subpage-device-settings-smart-assist.component.html',
-	styleUrls: ['./subpage-device-settings-smart-assist.component.scss']
+	selector: 'vtr-page-smart-assist',
+	templateUrl: './page-smart-assist.component.html',
+	styleUrls: ['./page-smart-assist.component.scss']
 })
-export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
+export class PageSmartAssistComponent implements OnInit {
 
+	title = 'Smart Assist';
+	back = 'BACK';
+	backarrow = '< ';
+	parentPath = 'device';
 	@Output() distanceChange: EventEmitter<ChangeContext> = new EventEmitter();
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	public isThinkPad = true;
-	public tooltipText = 'device.deviceSettings.smartAssist.intelligentSecurity.autoScreenLock.autoScreenLockTimer.toolTipContent';
-	title = 'device.deviceSettings.smartAssist.title';
+	public tooltipText = 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.toolTipContent';
+	// title = 'device.smartAssist.title';
 	public humanPresenceDetectStatus = new FeatureStatus(false, true);
 	public autoIrCameraLoginStatus = new FeatureStatus(false, true);
 	public intelligentSecurity: IntelligentSecurity;
 	public intelligentSecurityCopy: IntelligentSecurity;
 	public autoScreenLockTimer = false;
-	public distanceSensitivityTitle: string;
 	public zeroTouchLoginStatus = new FeatureStatus(false, true);
 	public zeroTouchLockTitle: string;
 	public autoScreenLockStatus: boolean[];
 	public options: any;
 	public keepMyDisplay: boolean;
 
-
 	headerMenuItems = [
 		{
-			title: 'device.deviceSettings.smartAssist.jumpTo.security',
+			title: 'device.smartAssist.jumpTo.security',
 			path: 'security'
 		},
 		{
-			title: 'device.deviceSettings.smartAssist.jumpTo.screen',
+			title: 'device.smartAssist.jumpTo.screen',
 			path: 'screen'
 		},
 		{
-			title: 'device.deviceSettings.smartAssist.jumpTo.media',
+			title: 'device.smartAssist.jumpTo.media',
 			path: 'media'
 		},
+		// enable this when UI is completed for that section
 		// {
-		// 	title: 'device.deviceSettings.smartAssist.jumpTo.voice',
+		// 	title: 'device.smartAssist.jumpTo.voice',
 		// 	path: 'voice'
 		// }
 	];
 
+	cardContentPositionA: any = {};
+	isDesktopMachine = true;
+
 	constructor(
 		private smartAssist: SmartAssistService,
 		private deviceService: DeviceService,
+		public qaService: QaService,
+		private cmsService: CMSService,
 		private logger: LoggerService,
 		private commonService: CommonService
 	) {
 		if (this.smartAssist.isShellAvailable) {
 			this.initSmartAssist();
 		}
+		this.fetchCMSArticles();
 	}
 
 	ngOnInit() {
+		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.autoScreenLockStatus = [false, false, false];
 		this.setIntelligentSecurity();
 		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
@@ -152,9 +164,6 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 	public setIsThinkPad(isThinkPad) {
 		// service call to fetch type of device
 		this.isThinkPad = isThinkPad;
-		this.distanceSensitivityTitle = this.isThinkPad ?
-			'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title1' : 'device.deviceSettings.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title2';
-		// this.zeroTouchLockTitle = 'device.deviceSettings.smartAssist.intelligentSecurity.zeroTouchLock.title1';
 	}
 
 	public launchPowerAndSleep() {
@@ -165,12 +174,42 @@ export class SubpageDeviceSettingsSmartAssistComponent implements OnInit {
 		this.deviceService.launchUri('ms-settings:signinoptions-launchfaceenrollment');
 	}
 
-
 	public displayDim(event) {
 		this.keepMyDisplay = !this.keepMyDisplay;
 	}
 
 	hideMediaSetting($event) {
 		this.headerMenuItems.splice(2, 1);
+	}
+
+	fetchCMSArticles() {
+		const queryOptions = {
+			'Page': 'device-settings',
+			'Lang': 'EN',
+			'GEO': 'US',
+			'OEM': 'Lenovo',
+			'OS': 'Windows',
+			'Segment': 'SMB',
+			'Brand': 'Lenovo'
+		};
+
+		this.cmsService.fetchCMSContent(queryOptions).then(
+			(response: any) => {
+				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				if (cardContentPositionA) {
+					this.cardContentPositionA = cardContentPositionA;
+					if (this.cardContentPositionA.BrandName) {
+						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+					}
+				}
+			},
+			error => {
+				console.log('fetchCMSContent error', error);
+			}
+		);
+	}
+
+	public onResetDefaultSettings($event) {
+
 	}
 }
