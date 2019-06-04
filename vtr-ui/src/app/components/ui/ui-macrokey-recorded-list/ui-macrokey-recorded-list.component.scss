@@ -1,0 +1,132 @@
+@import "../../../app.theme.scss";
+
+.title-main {
+	font-size: 3.4rem;
+	text-transform: uppercase;
+	font-weight: 500;
+	span {
+		color: $gaming;
+		font-weight: 700;
+	}
+}
+
+.record-table {
+	font-size: 1.6rem;
+	text-align: left;
+	.record-header {
+		margin: 0.4rem 0rem;
+		> div {
+			display: inline-block;
+			width: 50%;
+			padding: 0.5rem 1rem;
+			&:first-child {
+				text-align: left;
+			}
+			&:last-child {
+				text-align: right;
+			}
+		}
+	}
+	.record-footer {
+		text-align: center;
+		display: none;
+		font-size: 1.6rem;
+		color: $gaming_hover;
+	}
+	&.recording {
+		.record-footer {
+			display: block;
+		}
+	}
+	.record-list {
+		overflow: auto;
+		height: 40rem;
+		.record-item {
+			cursor: pointer;
+			position: relative;
+
+			&:hover {
+				color: $gaming_light_blue;
+				svg {
+					path {
+						fill: $gaming_light_blue;
+					}
+				}
+				.interval {
+					display: none;
+				}
+				.delete-button {
+					display: inline-block;
+					position: absolute;
+					right: 0;
+					top: 0;
+					width: 2.6rem;
+					cursor: pointer;
+					margin: 0.4rem 1rem;
+					height: 2.6rem;
+					transition: all 0.4s ease-in-out;
+					overflow: hidden;
+					font-weight: 500;
+					color: $gaming_light_blue;
+					&:hover {
+						width: 11rem;
+					}
+				}
+			}
+			.delete-button {
+				display: none;
+				img {
+					width: 2.2rem;
+					height: 2.2rem;
+				}
+			}
+			> div {
+				> div {
+					display: inline-block;
+					width: 50%;
+					padding: 0.5rem 1rem;
+					font-weight: 500;
+					&.key {
+						text-align: left;
+						svg {
+							height: 2rem;
+							width: 2rem;
+							vertical-align: bottom;
+							margin-right: 1rem;
+						}
+					}
+					&.interval {
+						text-align: right;
+					}
+				}
+				&.pressing {
+					background-color: $gaming_hover;
+					border-radius: 0.3rem;
+					.key {
+						svg {
+							opacity: 0.8;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.delete-btn {
+	cursor: pointer;
+	font-size: 1.8rem;
+	font-weight: 700;
+	color: $gaming_light_blue;
+	border-bottom: 0.2rem solid $gaming_light_blue;
+	display: inline-block;
+	margin: 0.2rem 1rem;
+	padding-right: 1.2rem;
+	text-transform: uppercase;
+	img {
+		margin: 0.4rem;
+		height: 2rem;
+		width: 2rem;
+		vertical-align: top;
+	}
+}

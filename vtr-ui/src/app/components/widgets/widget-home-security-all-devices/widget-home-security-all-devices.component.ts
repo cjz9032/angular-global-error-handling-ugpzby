@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { SecurityAdvisor, WifiSecurity } from '@lenovo/tan-client-bridge';
+import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
@@ -14,28 +13,25 @@ export class WidgetHomeSecurityAllDevicesComponent implements OnInit {
 	@Input() upgradeUrl = 'https://vantagestore.lenovo.com/en/shop/product/connectedhomesecurityoneyearlicense-windows';
 	@Input() devicesStatus: string; // secure, needs attention
 	@Input() logonStatus: string; // trail, trail expired, upgrate, upgrate expired, local account
+	@Input() eventEmitter: EventEmitter<string>;
 	deviceMoreThanTen: boolean;
 	pluginAvailable = false;
-	IsShowBadge = true;
+	isShowBadge = true;
 
 
-	securityAdvisor: SecurityAdvisor;
-	wifiSecurity: WifiSecurity;
-	allDeviceWidgetStatus: number;
+	testStatus: string;
 
 	constructor(
 		public shellService: VantageShellService
 	) {
-		this.securityAdvisor = shellService.getSecurityAdvisor();
-		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 		this.judgeDeviceNumber();
-		this.wifiSecurity.on('switchStatus', (allDeviceWidgetStatus) => {
-			this.allDeviceWidgetStatus = allDeviceWidgetStatus;
-			this.switchStatus();
-		});
 	}
 
 	ngOnInit() {
+		this.eventEmitter.subscribe((testStatus) => {
+			this.testStatus = testStatus;
+			this.switchStatus();
+		});
 	}
 
 	judgeDeviceNumber() {
@@ -51,7 +47,9 @@ export class WidgetHomeSecurityAllDevicesComponent implements OnInit {
 
 	showBadge() {
 		if (this.devicesNumber === 0) {
-			this.IsShowBadge = false;
+			this.isShowBadge = false;
+		} else {
+			this.isShowBadge = true;
 		}
 	}
 
@@ -64,45 +62,45 @@ export class WidgetHomeSecurityAllDevicesComponent implements OnInit {
 	}
 
 	switchStatus() {
-		if (!this.allDeviceWidgetStatus || this.allDeviceWidgetStatus === 1) {
+		if (!this.testStatus || this.testStatus === 'loading') {
 			this.pluginAvailable = false;
-		} else if (this.allDeviceWidgetStatus === 2) {
+		} else if (this.testStatus === 'lessDevices-secure') {
 			this.pluginAvailable = true;
 			this.logonStatus = 'trail';
 			this.devicesNumber = 7;
+			this.showBadge();
 			this.devicesStatus = 'secure';
-		} else if (this.allDeviceWidgetStatus === 3) {
+		} else if (this.testStatus === 'moreDevices-needAttention') {
 			this.pluginAvailable = true;
 			this.logonStatus = 'trail';
 			this.devicesNumber = 99;
 			this.judgeDeviceNumber();
+			this.showBadge();
 			this.devicesStatus = 'needs attention';
-		} else if (this.allDeviceWidgetStatus === 4) {
-			this.pluginAvailable = true;
-			this.logonStatus = 'trail';
-			this.devicesNumber = 0;
-			this.devicesStatus = 'secure';
-		} else if (this.allDeviceWidgetStatus === 5) {
-			this.pluginAvailable = true;
-			this.logonStatus = 'trail expired';
-			this.devicesNumber = 0;
-			this.devicesStatus = 'needs attention';
-		} else if (this.allDeviceWidgetStatus === 6) {
-			this.pluginAvailable = true;
-			this.logonStatus = 'trail';
-			this.devicesNumber = 7;
-			this.devicesStatus = 'needs attention';
-		} else if (this.allDeviceWidgetStatus === 7) {
-			this.pluginAvailable = true;
-			this.logonStatus = 'trail';
-			this.devicesNumber = 100;
-			this.judgeDeviceNumber();
-			this.devicesStatus = 'secure';
-		} else {
+		} else if (this.testStatus === 'noneDevices') {
 			this.pluginAvailable = true;
 			this.logonStatus = 'trail';
 			this.devicesNumber = 0;
 			this.showBadge();
+			this.devicesStatus = 'secure';
+		} else if (this.testStatus === 'tralExpired') {
+			this.pluginAvailable = true;
+			this.logonStatus = 'trail expired';
+			this.devicesNumber = 0;
+			this.showBadge();
+			this.devicesStatus = 'needs attention';
+		} else if (this.testStatus === 'lessDevices-needAttention') {
+			this.pluginAvailable = true;
+			this.logonStatus = 'trail';
+			this.devicesNumber = 7;
+			this.showBadge();
+			this.devicesStatus = 'needs attention';
+		} else {
+			this.pluginAvailable = true;
+			this.logonStatus = 'trail';
+			this.devicesNumber = 100;
+			this.showBadge();
+			this.judgeDeviceNumber();
 			this.devicesStatus = 'secure';
 		}
 	}
