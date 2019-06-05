@@ -26,7 +26,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public TouchpadStatusObj = new TouchpadStatus();
 	public hybrimodeStatus = false;
 	public HybrimodeStatusObj = new HybridModeStatus();
-	public gamingCapabilities: any = {};
+	public gamingCapabilities: any;
 	public legionUpdate = [
 		{
 			readMoreText: '',
@@ -355,6 +355,18 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public GetTouchpadCacheStatus() {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.TouchpadStatus);
 	}
+
+	public onPopupClosed($event) {
+		const name = $event.name;
+		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
+			this.commonService.sendNotification(name, this.legionUpdate[1].isChecked);
+		}
+
+		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
+			this.commonService.sendNotification(name, this.legionUpdate[4].isChecked);
+		}
+	}
+
 	public toggleOnOffRamOCStatus($event) {
 		console.log($event);
 		const { name, checked } = $event.target;
@@ -369,7 +381,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 							//this.gamingCapabilities.xtuService = false ;
 							if (this.gamingCapabilities.xtuService === false) {
 								this.legionUpdate[1].isDriverPopup = $event;
-								this.legionUpdate[1].isChecked = false;
 							} else if (this.gamingCapabilities.xtuService === true) {
 								this.legionUpdate[1].isPopup = $event;
 							}

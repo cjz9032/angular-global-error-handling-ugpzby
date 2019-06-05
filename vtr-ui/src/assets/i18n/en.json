@@ -1013,6 +1013,7 @@
 		"trailExpiredSubtext": "Upgrate to protect all of your devices",
 		"upgrade": "upgrade",
 		"tour": {
+			"back": "Back",
 			"skip": "Skip",
 			"start": "START TOUR",
 			"done": "DONE",

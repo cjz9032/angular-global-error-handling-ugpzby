@@ -36,10 +36,14 @@
 												*ngIf="item.isSwitchVisible"
 												class="d-flex no-pointer">
 												<vtr-ui-switch-onoff [name]="item.type"
+													[name]="item.name"
 													(toggle)="onToggleOnOff($event)"
 													[value]="item.isChecked">
 												</vtr-ui-switch-onoff>
-												<vtr-ui-popover [showMePartially]="item.isPopup">
+												<vtr-ui-popover 
+													[item]="item"
+													[showMePartially]="item.isPopup"
+													(closeClicked)="onClosed($event)">
 												</vtr-ui-popover>
 												<vtr-ui-gaming-driver-popup [showMePartially]="item.isDriverPopup">
 												</vtr-ui-gaming-driver-popup>

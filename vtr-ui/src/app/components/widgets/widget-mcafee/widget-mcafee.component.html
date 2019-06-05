@@ -22,6 +22,7 @@
 				[metricsItem]="'launchMcafee'"
 				(onClick)="mcafee.launch()"
 				[label]="'security.antivirus.mcafee.launch' | translate"
+				[title]="'security.antivirus.mcafee.launch' | translate"
 				[upperCaseLabel]="false"
 				*ngIf="install"></vtr-ui-button>
 			<a	id="sa-av-link-visitmcafee"
@@ -33,6 +34,7 @@
 					metricsEvent="FeatureClick"
 					metricsItem="getMcafee"
 					[label]="'security.antivirus.mcafee.getMacfee' | translate"
+					[title]="'security.antivirus.mcafee.getMacfee' | translate"
 					[upperCaseLabel]="false"
 					*ngIf="!install"></vtr-ui-button>
 			</a>
