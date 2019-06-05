@@ -10,10 +10,21 @@
 	}
 }
 
+.col-6 {
+	min-width: 26rem;
+}
+
 .select-wrapper {
 	@media #{$mediaquery_X3} {
 		width: 30rem;
 	}
+}
+
+.bottom-fix {
+	position: absolute;
+	width: 100%;
+	right: 1.4rem;
+	bottom: 4rem;
 }
 
 .record-table {

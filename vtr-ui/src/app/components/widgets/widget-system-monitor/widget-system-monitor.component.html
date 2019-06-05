@@ -119,8 +119,11 @@
 										</div>
 										<div class="hd-item-label">
 											<div class="hd-title">
-												<!-- <fa-icon [icon]="['fab', 'windows']"
-												 *ngIf="hd.system"></fa-icon> -->
+												<span *ngIf="hd.isSystemDisk">
+														<fa-icon [icon]="['fab', 'windows']"
+														></fa-icon>
+												</span>
+
 												{{hd.type}}
 											</div>
 											<div class="hd-status">

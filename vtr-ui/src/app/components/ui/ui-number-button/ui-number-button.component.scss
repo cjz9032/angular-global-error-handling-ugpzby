@@ -35,6 +35,11 @@
 				display: block;
 			}
 		}
+		&.recording {
+			li {
+				opacity: 0.5;
+			}
+		}
 		li {
 			display: inline-block;
 			cursor: pointer;
@@ -60,6 +65,7 @@
 			}
 			box-shadow: 0rem 0.4rem 0rem 0.1rem $gaming_hover;
 			&.selected {
+				opacity: 1;
 				color: $gaming_lightest;
 				background-color: $gaming_light_blue;
 				box-shadow: 0rem 0.4rem 0rem 0.1rem $gaming_gstart;
