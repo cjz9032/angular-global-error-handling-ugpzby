@@ -6,8 +6,6 @@ import { Component, OnInit, Input } from '@angular/core';
 	styleUrls: ['./ui-macrokey-popup.component.scss']
 })
 export class UiMacrokeyPopupComponent implements OnInit {
-	@Input() clearRecordPopup: boolean;
-	@Input() timeoutRecording: boolean;
 	@Input() showModal: boolean;
 	@Input() modalContent: any;
 	constructor() { }
