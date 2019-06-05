@@ -355,6 +355,18 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public GetTouchpadCacheStatus() {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.TouchpadStatus);
 	}
+
+	public onPopupClosed($event) {
+		const name = $event.name;
+		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
+			this.commonService.sendNotification(name, this.legionUpdate[1].isChecked);
+		}
+
+		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
+			this.commonService.sendNotification(name, this.legionUpdate[4].isChecked);
+		}
+	}
+
 	public toggleOnOffRamOCStatus($event) {
 		console.log($event);
 		const { name, checked } = $event.target;
@@ -372,7 +384,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 							} else if (this.gamingCapabilities.xtuService === true) {
 								this.legionUpdate[1].isPopup = $event;
 							}
-							this.legionUpdate[1].isChecked = false;
 						});
 					}
 				})
