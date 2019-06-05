@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ElementRef } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 	templateUrl: './modal-article-detail.component.html',
 	styleUrls: ['./modal-article-detail.component.scss']
 })
-export class ModalArticleDetailComponent implements OnInit {
+export class ModalArticleDetailComponent implements OnInit, OnDestroy {
 	articleId: string;
 	articleTitle = '';
 	articleImage = '';
@@ -66,6 +66,10 @@ export class ModalArticleDetailComponent implements OnInit {
 	}
 
 	closeModal() {
+		this.activeModal.close('close');
+	}
+
+	ngOnDestroy() {
 		if (this.metricClient) {
 			const modalElement = this.element.nativeElement.closest('ngb-modal-window');
 			const metricsData = {
@@ -80,6 +84,5 @@ export class ModalArticleDetailComponent implements OnInit {
 			console.log('------reporting metrics------\n'.concat(JSON.stringify(metricsData)));
 			this.metricClient.sendAsync(metricsData);
 		}
-		this.activeModal.close('close');
 	}
 }
