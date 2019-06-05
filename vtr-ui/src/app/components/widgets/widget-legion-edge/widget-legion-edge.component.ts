@@ -206,7 +206,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		this.commonService.notification.subscribe((response) => {
 			if (response.type === Gaming.GamingCapablities && isUndefined(this.gamingCapabilities)) {
 				this.gamingCapabilities = response.payload;
-
+				console.log('get gamingCapabilities --------------------------------->', this.gamingCapabilities);
 				this.legionUpdate[0].isVisible = this.gamingCapabilities.cpuOCFeature;
 				this.legionUpdate[1].isVisible = this.gamingCapabilities.memOCFeature;
 				this.legionUpdate[2].isVisible = this.gamingCapabilities.autoClose;
