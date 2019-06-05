@@ -111,12 +111,12 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 
 	isValid(val: number | string) {
 		if (typeof val === 'number') {
-			if (val === undefined || val === 0) {
+			if (val === undefined || val === null || val === 0) {
 				return false;
 			}
 		}
 		if (typeof val === 'string') {
-			if (val === undefined || val === '') {
+			if (val === undefined || val === null || val === '') {
 				return false;
 			}
 		}

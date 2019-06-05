@@ -15,7 +15,7 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 	@Input() options;
 	@Output() optionSelected = new EventEmitter<any>();
 	@Output() toggleOnOff = new EventEmitter<any>();
-
+	public showDriversPopup: boolean;
 	constructor(private deviceService: DeviceService) {
 		super();
 	}
@@ -23,6 +23,9 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 	public optionChanged(option: any, item: any) {
 		const gamingCollapsableContainerEvent = new GamingCollapsableContainerEvent(option, item);
 		this.optionSelected.emit(gamingCollapsableContainerEvent);
+	}
+	ngAfterViewInit() {
+		this.showDriversPopup = true;
 	}
 
 	ngOnInit() { }

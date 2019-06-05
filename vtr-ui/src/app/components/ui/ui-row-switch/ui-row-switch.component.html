@@ -28,16 +28,15 @@
 						</div>
 						<div class="col">
 							<div class="title">{{ title }}</div>
-							<div class="caption"
-								*ngIf="caption.length > 0"
-								[innerHTML]="caption">
+							<span class="caption"
+								[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
 								<!-- {{ caption }} -->
-							</div>
-							<div class="read-more"
-								*ngIf="readMoreText.length > 0"
+							</span>
+							<span class="read-more"
+								*ngIf="!contentExpand"
 								(click)="onReadMoreClick($event)">
 								{{ readMoreText }}
-							</div>
+							</span>
 						</div>
 					</div>
 				</div>

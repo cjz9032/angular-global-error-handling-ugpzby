@@ -35,6 +35,12 @@
 						"text": "Change will be effective after restarting computer.",
 						"button": "ok"
 					},
+					"driverPopup": {
+						"headerText": "Driver Install Required",
+						"text": "You need install driver for RAM Overclock to  make it effective",
+						"button": "Install",
+						"link": "cancle"
+					},
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
@@ -191,6 +197,15 @@
 					"m1": "M1",
 					"m2": "M2"
 				}
+			},
+			"actionButton":{
+				"clearAction":{
+					"title":"Are you sure to clear this macro key?",
+					"btnClear":"Clear",
+					"btnCancel":"Cancel"
+				},
+				"btnOk":"OK",
+				"timeoutTitle":"Recording will time out if no input for 20 seconds"
 			}
 		},
 		"lightingProfile": {
@@ -594,6 +609,8 @@
 						"title": "Battery Charge Threshold",
 						"description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
 						"tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
+						"noteInfo": "Note: Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+						
 						"settings": {
 							"title1": "Threshold for Built in battery",
 							"title2": "Threshold for Removable battery"
@@ -604,6 +621,12 @@
 							"description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
 							"enable": "ENABLE",
 							"cancel": "CANCEL"
+						},
+						"options": {
+							"start": "Start charging when below",
+							"checkboxText": "Automatically set to start 'charging at %' to 5% below the 'stop charging at %'",
+							"stop": "Stop charging at"
+							
 						}
 					},
 					"expressCharging": {
@@ -840,6 +863,7 @@
 					"title": "Keep my display",
 					"caption": "Keep my display when I am reading or browsing.",
 					"displaySlider": {
+						"title": "Minutes Before display dims when browsing",
 						"startTime": "0 minutes",
 						"endTime": "60 minutes"
 					}
