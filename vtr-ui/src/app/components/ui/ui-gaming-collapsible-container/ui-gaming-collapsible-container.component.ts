@@ -21,7 +21,7 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 
 	constructor(
 		private elementRef: ElementRef,
-	) {}
+	) { }
 
 	ngOnInit() {
 		//this.options.forEach(option => {
@@ -38,12 +38,12 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 		//		}
 		//	});
 		//}
-this.currentOption =  this.options.edgeopt[this.options.curSelected - 1].name;
+		this.currentOption = this.options.dropOptions[this.options.curSelected - 1].name;
+		this.currentDescription = this.options.dropOptions[this.options.curSelected - 1].description;
 	}
 
-	public toggleOptions() {
+	public toggleOptions(optSelected) {
 		this.showOptions = !this.showOptions;
-
 		// CHANGE THE NAME OF THE BUTTON.
 		if (this.showOptions) {
 			this.buttonName = 'Hide';
@@ -52,7 +52,7 @@ this.currentOption =  this.options.edgeopt[this.options.curSelected - 1].name;
 		}
 	}
 
-	public setDefaultOption(option){
+	public setDefaultOption(option) {
 		this.currentOption = option.name;
 		this.selectedDescription = option.description;
 		this.currentDescription = this.selectedDescription;
@@ -69,11 +69,15 @@ this.currentOption =  this.options.edgeopt[this.options.curSelected - 1].name;
 	}
 
 	public changeDescription(option) {
-		this.currentDescription = option.description;
+		if (this.options.curSelected === option.value) {
+			this.currentDescription = option.description;
+		}
 	}
 
 	public resetDescription(option) {
-		this.currentDescription = this.selectedDescription;
+		if (this.options.curSelected === option.value) {
+			this.currentDescription = option.description;
+		}
 	}
 
 	public generalClick(event: Event) {
