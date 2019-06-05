@@ -81,8 +81,9 @@ export class AppComponent implements OnInit {
 	openWelcomeModal(page: number) {
 		const modalRef = this.modalService.open(ModalWelcomeComponent,
 			{
-				backdrop: 'static'
-				, windowClass: 'welcome-modal-size'
+				backdrop: 'static',
+				centered: true,
+				windowClass: 'welcome-modal-size'
 			});
 		modalRef.componentInstance.page = page;
 		modalRef.result.then(
