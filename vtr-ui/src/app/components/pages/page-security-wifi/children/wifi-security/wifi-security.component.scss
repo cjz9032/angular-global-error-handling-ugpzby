@@ -348,13 +348,11 @@
 				display: inline-block;
 				// width: 15rem;
 				max-width: 70%;
-
+				margin-left: 1rem;
 				.collapse-text {
-					margin-left: 1rem;
 					display: inline-block;
 					color: $main;
 					font-size: 1.6rem;
-					margin-right: 0.7rem;
 					vertical-align: middle;
 					text-decoration: underline;
 					font-weight: 500;
@@ -365,7 +363,7 @@
 					color: $main;
 					vertical-align: middle;
 					cursor: pointer;
-					padding-left: 0 !important;
+					padding-left: 0.8rem !important;
 				}
 				button{
 					overflow: hidden;
