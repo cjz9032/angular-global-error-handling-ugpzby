@@ -18,6 +18,7 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	public capacity: number;
 	public usedDisk: number;
 	public cpuModuleName: string;
+	public showAllHDs = false;
 
 
 	@Input() cpuCurrent = 2.4;
@@ -95,6 +96,12 @@ export class WidgetSystemMonitorComponent implements OnInit {
 		}, 5000);
 	}
 
+	toggleHDs(event) {
+		if (this.hds.length > 1) {
+			this.showAllHDs = !this.showAllHDs;
+		}
+	}
+
 	getLeftDeg(current, max) {
 		const pct = (current / max);
 		const deg = 360 * (pct - .5);
@@ -128,7 +135,7 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	}
 
 	getFloorPct(current, max) {
-		const pct = Math.floor((current / max)*100);
+		const pct = Math.floor((current / max) * 100);
 		return pct;
 	}
 
