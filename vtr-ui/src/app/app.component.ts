@@ -13,6 +13,7 @@ import { WelcomeTutorial } from './data-models/common/welcome-tutorial.model';
 import { NetworkStatus } from './enums/network-status.enum';
 import { KeyPress } from './data-models/common/key-press.model';
 import { VantageShellService } from './services/vantage-shell/vantage-shell.service';
+import { SettingsService } from './services/settings.service';
 
 @Component({
 	selector: 'vtr-root',
@@ -32,6 +33,8 @@ export class AppComponent implements OnInit {
 		private commonService: CommonService,
 		private translate: TranslateService,
 		private userService: UserService,
+		private settingsService: SettingsService,
+
 		private vantageShellService: VantageShellService
 	) {
 		translate.addLangs(['en', 'zh-Hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it',
@@ -135,6 +138,7 @@ export class AppComponent implements OnInit {
 		});
 		this.getMachineInfo();
 		this.checkIsDesktopOrAllInOneMachine();
+		this.settingsService.getPreferenceSettingsValue();
 	}
 
 	private getMachineInfo() {

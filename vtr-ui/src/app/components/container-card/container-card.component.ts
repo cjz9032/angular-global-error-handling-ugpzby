@@ -2,6 +2,9 @@ import { Component, Self, ElementRef, OnInit, AfterViewInit, Input } from '@angu
 import { DisplayService } from '../../services/display/display.service';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from '../modal/modal-article-detail/modal-article-detail.component';
+import { CommonService } from 'src/app/services/common/common.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-container-card',
@@ -26,16 +29,18 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 	@Input() ratioY = 1;
 	@Input() cornerShift: String = '';
 	@Input() order:number;
-	@Input() itemID:string;
+	@Input() itemID:string;	
 
 	ratio = 1;
 	containerHeight = 100;
+	isOnline = true;
 
 	resizeListener;
 
 	constructor(
 		@Self() private element: ElementRef,
 		private displayService: DisplayService,
+		private commonService: CommonService,
 		public modalService: NgbModal
 	) { }
 
@@ -44,6 +49,12 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 		const self = this;
 		this.resizeListener = this.displayService.windowResizeListener().subscribe((event) => {
 			self.calcHeight(self.element);
+		});
+
+		this.isOnline = this.commonService.isOnline;
+
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
 		});
 	}
 
@@ -79,5 +90,18 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 		});
 
 		articleDetailModal.componentInstance.articleId = articleId;
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;			
+				default:
+					break;
+			}
+		}
 	}
 }

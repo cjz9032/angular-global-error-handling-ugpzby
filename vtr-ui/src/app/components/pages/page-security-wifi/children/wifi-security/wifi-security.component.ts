@@ -76,26 +76,6 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		if (this.wifiIsShowMore === 'false') {
 			this.isShowMore = false;
 		}
-		this.data.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
-			this.ngZone.run(() => {
-				if (!value && this.data.wifiSecurity.state === 'enabled') {
-					this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);
-				} else if (value) {
-					if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
-						this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
-						this.data.wifiSecurity.enableWifiSecurity().then((res) => {
-							if (res === true) {
-								this.data.isLWSEnabled = true;
-							} else {
-								this.data.isLWSEnabled = false;
-							}
-						}, (error) => {
-							console.log('no permission');
-						});
-					}
-				}
-			});
-		});
 
 		this.data.wifiSecurity.on('cancelClick', () => {
 			this.cancelClick = true;

@@ -8,6 +8,7 @@ import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-statu
 import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
 import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
 import { TouchpadStatus }  from 'src/app/data-models/gaming/touchpad-status.model';
+import { SystemStatus } from  'src/app/data-models/gaming/system-status.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -463,6 +464,13 @@ export class VantageShellService {
 	public getGamingHybridMode() {
 		if (this.phoenix && this.phoenix.gaming) {
 			return this.phoenix.gaming.gamingHybridMode;
+		}
+		return undefined;
+	}
+
+	public getGamingHwInfo() {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingHwInfo;
 		}
 		return undefined;
 	}

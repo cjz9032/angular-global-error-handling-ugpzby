@@ -30,6 +30,7 @@
 					(onClick)="list.buttonClick()" 
 					metricsEvent="featureClick" 
 					[metricsItem]="list.metricsItem"
+					[title]="list.buttonTitle | translate"
 					[label]="list.buttonTitle | translate" [isRegular]=regular ></vtr-ui-button>
 			</div>
 			<div *ngIf="list.badge" class="row align-item-center">

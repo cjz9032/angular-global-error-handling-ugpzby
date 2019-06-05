@@ -8,6 +8,7 @@
 		<div class="select-wrapper">
 			<vtr-ui-macrokey-collapsible-container
 				[options]="repeatOptions"
+				[enableDescription]="false"
 				(change)="onRepeatChanged($event)">
 			</vtr-ui-macrokey-collapsible-container>
 		</div>
@@ -72,3 +73,4 @@
 		</div>
 	</div>
 </div>
+<vtr-ui-macrokey-popup [clearRecordPopup]="clearRecordPopup"></vtr-ui-macrokey-popup>
