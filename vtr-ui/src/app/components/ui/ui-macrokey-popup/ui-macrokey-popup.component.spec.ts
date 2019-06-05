@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoginLenovoIdComponent } from './login-lenovo-id.component';
+import { UiMacrokeyPopupComponent } from './ui-macrokey-popup.component';
 
-describe('LoginLenovoIdComponent', () => {
-  let component: LoginLenovoIdComponent;
-  let fixture: ComponentFixture<LoginLenovoIdComponent>;
+describe('UiMacrokeyPopupComponent', () => {
+  let component: UiMacrokeyPopupComponent;
+  let fixture: ComponentFixture<UiMacrokeyPopupComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginLenovoIdComponent ]
+      declarations: [ UiMacrokeyPopupComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginLenovoIdComponent);
+    fixture = TestBed.createComponent(UiMacrokeyPopupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
