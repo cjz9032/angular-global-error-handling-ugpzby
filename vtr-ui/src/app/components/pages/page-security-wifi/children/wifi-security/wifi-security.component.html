@@ -53,46 +53,46 @@
 										aria-label="sa-ws-lnk-collapsecontrol"
 										(click)="$event.preventDefault();isCollapsed=!isCollapsed;"
 										[hidden]="!data.isLWSEnabled">
-									<div class="d-flex" vtrMetrics
-										metricsItem="collapseWiFiHistory"
-										metricsEvent="featureClick"
-										data-toggle="collapse"
-										data-target="#wifi-collapse"
-										aria-label="sa-ws-btn-lessinfo"
-										aria-expanded="false"
-										aria-controls="wifi-collapse"
-										*ngIf="isShowMore===false"
-										(click)="isShowMore=true">
-										<button id="sa-ws-btn-lessinfo" 
-											class="btn btn-link collapse-text p-0"
-											type="button"
-											title="{{'security.wifisecurity.container.less' | translate}}">
-											{{'security.wifisecurity.container.less' | translate}} </button>
+										<div class="d-flex" vtrMetrics
+											metricsItem="collapseWiFiHistory"
+											metricsEvent="featureClick"
+											data-toggle="collapse"
+											data-target="#wifi-collapse"
+											aria-label="sa-ws-btn-lessinfo"
+											aria-expanded="false"
+											aria-controls="wifi-collapse"
+											*ngIf="isShowMore===false"
+											(click)="isShowMore=true">
+											<button id="sa-ws-btn-lessinfo" 
+												class="btn btn-link collapse-text p-0"
+												type="button"
+												title="{{'security.wifisecurity.container.less' | translate}}">
+												{{'security.wifisecurity.container.less' | translate}} </button>
 											<fa-icon
 												[icon]="['fas', 'chevron-up']"
 												class="pl-3">
 											</fa-icon>
-									</div>
-									<div class="d-flex" vtrMetrics
-										metricsItem="expandWiFiHistory"
-										metricsEvent="featureClick"
-										data-toggle="collapse"
-										data-target="#wifi-collapse"
-										aria-label="sa-ws-btn-moreinfo"
-										aria-expanded="false"
-										aria-controls="wifi-collapse"
-										*ngIf="isShowMore===true"
-										(click)="isShowMore=false">
-										<button id="sa-ws-btn-moreinfo"
-											class="btn btn-link collapse-text p-0"
-											type="button"
-											title="{{'security.wifisecurity.container.more' | translate}}">
-											{{'security.wifisecurity.container.more' | translate}} </button>
-											<fa-icon
-												[icon]="['fas', 'chevron-down']"
-												class="pl-3">
-											</fa-icon>
-									</div>
+										</div>
+										<div class="d-flex" vtrMetrics
+											metricsItem="expandWiFiHistory"
+											metricsEvent="featureClick"
+											data-toggle="collapse"
+											data-target="#wifi-collapse"
+											aria-label="sa-ws-btn-moreinfo"
+											aria-expanded="false"
+											aria-controls="wifi-collapse"
+											*ngIf="isShowMore===true"
+											(click)="isShowMore=false">
+											<button id="sa-ws-btn-moreinfo"
+												class="btn btn-link collapse-text p-0"
+												type="button"
+												title="{{'security.wifisecurity.container.more' | translate}}">
+												{{'security.wifisecurity.container.more' | translate}} </button>
+												<fa-icon
+													[icon]="['fas', 'chevron-down']"
+													class="pl-3">
+												</fa-icon>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -182,6 +182,7 @@
 									metricsItem="checkYourLocation"
 									[isDisabled]="locatorButtonDisable"
 									(click)="openThreatLocator()"
+									[title]="'security.wifisecurity.threatlocator.button' | translate"
 									[label]="'security.wifisecurity.threatlocator.button' | translate"></vtr-ui-button>
 							</div>
 						</div>
@@ -200,6 +201,7 @@
 					metricsItem="enableWifiSecurity"
 					metricsEvent="featureClick"
 					(click)="enableWifiSecurity()"
+					[title]="'security.wifisecurity.container.button' | translate"
 					[label]="'security.wifisecurity.container.button' | translate"></vtr-ui-button>
 			</div>
 		</div>

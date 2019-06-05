@@ -34,7 +34,7 @@
 							<div class="row">
 								<div class="col-12">
 									<vtr-display-color-temp [displayColorTempSettings]="displayColorTempDataSource"
-										[enableSlider]="false"
+										[enableSlider]="enableSlider"
 										[manualRefresh]="manualRefresh"
 										(displayColorTempChange)="onSetChangeDisplayColorTemp($event)"
 										(resetTemparature)="resetDaytimeColorTemp($event)">
@@ -228,7 +228,6 @@
 							[isSwitchVisible]="true"
 							[isLastChild]=true
 							[leftIcon]="['fal', 'gem']"
-							[rightIcon]="['far', 'question-circle']"
 							[showChildContent]="true"
 							[isSwitchChecked]="cameraBlur.enabled"
 							(toggleOnOff)="onCameraBackgroundBlur($event)"
