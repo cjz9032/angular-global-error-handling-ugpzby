@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import {VantageShellService} from "../../../services/vantage-shell/vantage-shell.service";
@@ -9,7 +9,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 	templateUrl: './modal-welcome.component.html',
 	styleUrls: ['./modal-welcome.component.scss']
 })
-export class ModalWelcomeComponent implements OnInit {
+export class ModalWelcomeComponent implements OnInit ,AfterViewInit{
 	progress = 49;
 	isInterestProgressChanged = false;
 	page = 1;
@@ -18,6 +18,7 @@ export class ModalWelcomeComponent implements OnInit {
 	startTime:number;
 	endTime:number;
 	metrics:any;
+	isDivVisible=false;
 	data: any = {
 		page2: {
 			title: 'How will you use it?',
@@ -115,5 +116,8 @@ export class ModalWelcomeComponent implements OnInit {
 	moreInterestClicked() {
 		this.interestCopy = this.interests;
 		this.hideMoreInterestBtn = true;
+	}
+	ngAfterViewInit(): void {
+		this.isDivVisible=true;
 	}
 }
