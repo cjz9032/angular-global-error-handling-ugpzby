@@ -444,7 +444,7 @@ export class ConfigService {
 			}
 
 			if (this.countryCodes.indexOf(machineInfo.country.toLowerCase()) !== -1) {
-				resultMenu = Object.assign([], this.menuItemsPrivacy);
+				resultMenu = Object.assign([], this.menuItems);
 			} else {
 				resultMenu = Object.assign([], this.menuItems);
 			}
