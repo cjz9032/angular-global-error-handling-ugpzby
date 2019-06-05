@@ -62,6 +62,8 @@ export class NavTabsComponent implements OnInit, OnDestroy {
 				return 0;
 			case FeaturesStatuses.undefined:
 				return '';
+			default:
+				return '';
 		}
 	}
 
