@@ -69,7 +69,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 			response.detail[i].wattage = Math.round(response.detail[i].wattage * 100) / 100;
 			response.detail[i].heading = response.length > 1 ? headings[i] : '';
 			const id = response.detail[i].chargeStatus;
-			response.detail[i].chargeStatusString = BatteryChargeStatus.getBatteryChargeStatus(id);
+			response.detail[i].chargeStatusString = this.translate.instant(BatteryChargeStatus.getBatteryChargeStatus(id));
 			if (response.detail[i].chargeStatus === BatteryChargeStatus.NO_ACTIVITY.id
 				|| response.detail[i].chargeStatus === BatteryChargeStatus.ERROR.id
 				|| response.detail[i].chargeStatus === BatteryChargeStatus.NOT_INSTALLED.id) {
@@ -109,16 +109,15 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	isValid(val: number | string) {
-		if (typeof val === 'number') {
-			if (val === undefined || val === null || val === 0) {
-				return false;
-			}
+	isValid(val: any) {
+		if (val === undefined || val === null) {
+			return false;
 		}
-		if (typeof val === 'string') {
-			if (val === undefined || val === null || val === '') {
-				return false;
-			}
+		if (typeof val === 'number' && val === 0) {
+			return false;
+		}
+		if (typeof val === 'string' && val === '') {
+			return false;
 		}
 		return true;
 	}
