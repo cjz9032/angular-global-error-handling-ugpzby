@@ -88,11 +88,6 @@
 										name="radio"
 										id="radio1"
 										value="personal"
-										vtrMetrics
-										metricsEvent="featureClick"
-										metricsParent="WelcomePage"
-										metricsItem="radio.personal"
-										[metricsValue]="!radio1.checked"
 										#radio1
 										/>
 										<img
@@ -110,11 +105,6 @@
 										name="radio"
 										id="radio2"
 										value="business"
-										vtrMetrics
-										metricsEvent="featureClick"
-										metricsParent="WelcomePage"
-										metricsItem="radio.business"
-										[metricsValue]="!radio2.checked"
 										#radio2
 									/>
 									<img
@@ -131,11 +121,6 @@
 										name="radio"
 										id="radio3"
 										value="custom"
-										vtrMetrics
-										metricsEvent="featureClick"
-										metricsParent="WelcomePage"
-										metricsItem="radio.custom"
-										[metricsValue]="!radio3.checked"
 										#radio3
 									/>
 									<img
@@ -158,11 +143,6 @@
 									<input
 										type="checkbox"
 										[id]="interest + 'checkbox'"
-										vtrMetrics
-										metricsEvent="featureClick"
-										[metricsItem]="'chk.' + interest"
-										metricsParent="WelcomePage"
-										[metricsValue]="!checkbox1.checked"
 										#checkbox1
 										(click)="toggle($event, interest)"
 									/>
