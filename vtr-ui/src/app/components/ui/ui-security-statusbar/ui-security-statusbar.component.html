@@ -41,7 +41,7 @@
 							[ngClass]="badgeItem.status | textClass"
 							(click)="badgeItem.clickEvent()"
 							title="{{badgeItem.text}}">
-							{{badgeItem.text}}
+							{{badgeItem.text | uppercase}}
 						</span>
 					</a>
 				</h3>
