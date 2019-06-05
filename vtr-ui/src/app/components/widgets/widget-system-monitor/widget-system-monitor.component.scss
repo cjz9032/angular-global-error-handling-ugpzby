@@ -3,15 +3,20 @@
 .vtr-widget-system-monitor {
 	.widget-container {
 		border-radius: $border_radius;
-		background: $dark_cell;
+		background-color: $gaming_dark;
 		box-shadow: $drop_shadow_gaming;
 		padding: 6rem;
+		height: 44rem;
+		@media #{$mediaquery_5} {
+			height: 42rem;
+		}
 		@media #{$mediaquery_6} {
 			padding: 4rem;
+			height: 36rem;
 		}
+
 		.monitor-col {
 			padding: 4rem 0;
-			position: relative;
 			@media #{$mediaquery_5} {
 				padding: 3rem 0;
 			}
@@ -20,41 +25,11 @@
 				@media #{$mediaquery_5} {
 					padding-right: 2rem;
 				}
-				@media #{$mediaquery_X3} {
-					padding-right: 0rem;
-					height: 28rem;
-				}
 			}
 			&.right {
 				padding-left: 3rem;
 				@media #{$mediaquery_5} {
 					padding-left: 2rem;
-				}
-				@media #{$mediaquery_X3} {
-					padding-left: 0rem;
-				}
-			}
-			&.link-wrapper {
-				padding: 0.5rem;
-			}
-			.link-container {
-				position: absolute;
-				font-size: 1.6rem;
-				text-transform: uppercase;
-				color: $gaming_gstart;
-				top: -0.3rem;
-				right: 0;
-				display: inline-block;
-				font-weight: $weight_black;
-				display: flex;
-				justify-content: space-between;
-				.icon {
-					background: $gaming_icon_gradient;
-					-webkit-background-clip: text;
-					-webkit-text-fill-color: transparent;
-					transform: scale(-1, 1);
-					margin-left: 0.8rem;
-					font-size: 2rem;
 				}
 			}
 			.monitor-section {
@@ -62,57 +37,19 @@
 				background-color: $gaming_darkest;
 				height: 100%;
 				position: relative;
-				ngb-tooltip-window.tooltip {
-					border-radius: 0.4rem;
-					background-color: $light;
-					box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
-					color:$gaming_dark;
 
-					.tooltip-inner {
-						padding: 1.2rem;
-						color: $main_dark;
-						border-radius: 0.4rem;
-						background-color: $light;
-						font-size: 1.4rem;
-						text-align: left;
+				&.hds {
+					overflow: hidden;
+					&.expanded {
+						height: auto;
+					}
+					.expand-icon {
+						fa-icon {
+							color: $shade;
+						}
 					}
 				}
 
-				.gaming-tooltip{
-					max-width: 85%;
-					padding: 3rem;
-					background: $gaming_lightest;
-					color: $main_dark;
-					border-radius: 0.8rem;
-					position: absolute;
-					display: none;
-					z-index: 99;
-					top:-6rem;
-					left: calc(50% - 42.5%);
-					opacity: 0;
-					transition: all .5s ease-in-out;
-					&::after{
-						content: '';
-						position: absolute;
-						width: 0;
-						height: 0;
-						border-bottom: 3rem solid $gaming_lightest;
-						border-left: 3rem solid transparent;
-						transform: rotate(45deg);
-						bottom: -1rem;
-						left: calc(50% - 1.5rem);
-					}
-					p {
-						font-size: 2rem;
-						line-height: 2.6rem;
-					}
-				}
-				&:hover {
-					.gaming-tooltip {
-						display: inline-block;
-						opacity: 1;
-					}
-				}
 				.monitor-inner {
 					height: 100%;
 					position: absolute;
@@ -145,10 +82,10 @@
 								background-position: 50% 100%;
 								background-repeat: no-repeat;
 								&.gpu {
-									background-image:url('/assets/images/gaming/gaming-gpu-stack.svg');
+									background-image:url('/assets/gaming-gpu-stack.svg');
 								}
 								&.ram {
-									background-image:url('/assets/images/gaming/gaming-ram-stack.svg');
+									background-image:url('/assets/gaming-ram-stack.svg');
 								}
 							}
 							.stack-mask {
@@ -195,7 +132,7 @@
 					}
 					.cpu-ring {
 						// background-color: $highlight;
-						background-image:url('/assets/images/gaming/gaming-cpu-ring.svg');
+						background-image:url('/assets/gaming-cpu-ring.svg');
 						background-size: 100% 100%;
 						background-position: 50% 50%;
 						background-repeat: no-repeat;
@@ -339,7 +276,63 @@
 				}
 				.hd-list {
 					padding: 3rem;
+					&.single {
+						.hd-item {
+							text-align: center;
+							.hd-item-label {
+								display: block;
+							}
+							.monitor-hd {
+								position: relative;
+								left: 1%;
+								margin: 0 auto;
+								display: block;
+								width: $gaming_hd_diameter_lg;
+								height: $gaming_hd_diameter_lg;
+								margin-bottom: calc(.1 * #{$gaming_hd_diameter_lg});
+								@media #{$mediaquery_6} {
+									width: $gaming_hd_diameter_md;
+									height: $gaming_hd_diameter_md;
+									margin-bottom: calc(.1 * #{$gaming_hd_diameter_md});
+								}
+								.hd-mask {
+									.mask-obj {
+										border-radius: calc(.94 * #{$gaming_hd_diameter_lg}) 0 0 calc(.94 * #{$gaming_hd_diameter_lg});
+										@media #{$mediaquery_6} {
+											border-radius: calc(.94 * #{$gaming_hd_diameter_md}) 0 0 calc(.94 * #{$gaming_hd_diameter_md});
+										}
+									}
+									&.right {
+										.mask-obj {
+											border-radius: 0 calc(.94 * #{$gaming_hd_diameter_lg}) calc(.94 * #{$gaming_hd_diameter_lg}) 0;
+											@media #{$mediaquery_6} {
+												border-radius: calc(.94 * #{$gaming_hd_diameter_md}) 0 0 calc(.94 * #{$gaming_hd_diameter_md});
+											}
+										}
+									}
+								}
+								.hd-inner-ring {
+									.hd-inner-circle {
+										.hd-label {
+											.hd-pct {
+												font-size: calc(.25 * #{$gaming_hd_diameter_lg});
+												line-height: calc(.25 * #{$gaming_hd_diameter_lg});
+												@media #{$mediaquery_6} {
+													font-size: calc(.25 * #{$gaming_hd_diameter_md});
+													line-height: calc(.25 * #{$gaming_hd_diameter_md});
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
 					.hd-item {
+						margin-bottom: 2.5rem;
+						@media #{$mediaquery_6} {
+							margin-bottom: 3.5rem;
+						}
 						&.danger {
 							.monitor-hd {
 								.hd-ring {
@@ -356,7 +349,6 @@
 								}
 							}
 						}
-						margin-bottom: 2.5rem;
 						.hd-item-label {
 							display: inline-block;
 							padding-left: 1rem;
@@ -377,92 +369,70 @@
 							vertical-align: middle;
 							position: relative;
 							background-color: $gaming_darkest;
-							width: 8rem;
-							height: 8rem;
+							width: $gaming_hd_diameter_sm;
+							height: $gaming_hd_diameter_sm;
 							border-radius: 50%;
 							@media #{$mediaquery_6} {
-								width: 6rem;
-								height: 6rem;
+								width: $gaming_hd_diameter_xs;
+								height: $gaming_hd_diameter_xs;
 							}
 							.hd-ring {
 								background: linear-gradient(125deg, $main_gstart 50%, $highlight_bright 100%);
-								width: 7.6rem;
-								height: 7.6rem;
+								width: 94%;
+								height: 94%;
 								position: relative;
-								top: 0.2rem;
-								left: 0.2rem;
+								top: 3%;
+								left: 3%;
 								border-radius: 50%;
 								border: 1px solid $gaming_dark;
-								@media #{$mediaquery_6} {
-									width: 5.6rem;
-									height: 5.6rem;
-								}
 							}
 
 							.hd-mask {
 								overflow: hidden;
-								width: 3.8rem;
-								height: 7.6rem;
+								width: 47%;
+								height: 94%;
 								position: absolute;
-								top: 0.2rem;
-								left: 0.2rem;
+								top: 3%;
+								left: 3%;
 								transform-origin: center center;
-								@media #{$mediaquery_6} {
-									width: 2.8rem;
-									height: 5.6rem;
-								}
 								&.hidden {
 									display: none;
 								}
 								.mask-obj {
 									overflow: hidden;
 									background-color: $gaming_dark;
-									width: 3.8rem;
-									height: 7.6rem;
+									width: 100%;
+									height: 100%;
 									position: absolute;
-									border-radius: 3.8rem 0 0 3.8rem;
+									border-radius: calc(.94 * #{$gaming_hd_diameter_sm}) 0 0 calc(.94 * #{$gaming_hd_diameter_sm});
 									transform-origin: right center;
 									@media #{$mediaquery_6} {
-										width: 2.8rem;
-										height: 5.6rem;
-										border-radius: 2.8rem 0 0 2.8rem;
+										border-radius: calc(.94 * #{$gaming_hd_diameter_xs}) 0 0 calc(.94 * #{$gaming_hd_diameter_xs});
 									}
 									.mask-ring {
-										width: 7.6rem;
-										height: 7.6rem;
+										width: 100%;
+										height: 100%;
 										position: absolute;
 										left: 0;
 										border-radius: 50%;
 										background-color: $gaming_dark;
-										@media #{$mediaquery_6} {
-											width: 5.6rem;
-											height: 5.6rem;
-										}
 									}
 								}
 								&.right {
-									left: 4rem;
-									@media #{$mediaquery_6} {
-										left: 3rem;
-									}
+									left: 50%;
 									.mask-obj {
 										background-color: $gaming_dark;
 										content: "";
 										position: absolute;
-										width: 3.8rem;
-										height: 7.6rem;
-										border-radius: 0 3.8rem 3.8rem 0;
+										width: 100%;
+										height: 100%;
+										border-radius: 0 calc(.94 * #{$gaming_hd_diameter_sm}) calc(.94 * #{$gaming_hd_diameter_sm}) 0;
 										transform-origin: left center;
 										@media #{$mediaquery_6} {
-											width: 2.8rem;
-											height: 5.6rem;
-											border-radius: 0 2.8rem 2.8rem 0;
+											border-radius: 0 calc(.94 * #{$gaming_hd_diameter_xs}) calc(.94 * #{$gaming_hd_diameter_xs}) 0;
 										}
 										.mask-ring {
-											left: -3.8rem;
-											@media #{$mediaquery_6} {
-												left: -2.8rem;
-											}
+											left: -50%;
 										}
 									}
 								}
@@ -470,45 +440,34 @@
 
 							.hd-inner-ring {
 								position: absolute;
-								top: 1rem;
-								left: 1rem;
+								top: 12.5%;
+								left: 12.5%;
 								background-color: $gaming_darkest;
-								width: 6rem;
-								height: 6rem;
+								width: 75%;
+								height: 75%;
 								border-radius: 50%;
-								@media #{$mediaquery_6} {
-									width: 4rem;
-									height: 4rem;
-								}
 								.hd-inner-circle {
 									position: relative;
-									top: 0.2rem;
-									left: 0.2rem;
+									top: 3.33%;
+									left: 3.33%;
 									background-color: $gaming_darkest;
-									width: 5.6rem;
-									height: 5.6rem;
+									width: 93.33%;
+									height: 93.33%;
 									border-radius: 50%;
 									text-align: center;
-									@media #{$mediaquery_6} {
-										width: 3.6rem;
-										height: 3.6rem;
-									}
 									.hd-label {
-										margin-top: 1.7rem;
+										margin-top: 30%;
 										display: inline-block;
-										@media #{$mediaquery_6} {
-											margin-top: 1rem;
-										}
 										.hd-pct {
 											color: $gaming_lightest;
-											font-size: 2rem;
-											line-height: 2rem;
+											font-size: calc(.25 * #{$gaming_hd_diameter_sm});
+											line-height: calc(.25 * #{$gaming_hd_diameter_sm});
 											font-weight: $weight_medium;
 											color: $highlight;
 											text-align: center;
 											@media #{$mediaquery_6} {
-												font-size: 1.7rem;
-												line-height: 1.7rem;
+												font-size: calc(.25 * #{$gaming_hd_diameter_xs});
+												line-height: calc(.25 * #{$gaming_hd_diameter_xs});
 											}
 											.pct {
 												font-size: 0.6em;
