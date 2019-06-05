@@ -63,6 +63,22 @@ export class ModalWelcomeComponent implements OnInit {
 				forced: true
 			});
 
+			const usageData = {
+				ItemType: 'featureClick',
+				ItemName: 'UsageType',
+				ItemValue: this.data.page2.radioValue,
+				ItemParent: 'WelcomePage'
+			}
+			this.metrics.sendAsync(usageData);
+
+			const interestData = {
+				ItemType: 'featureClick',
+				ItemName: 'Interest',
+				ItemValue: this.checkedArray,
+				ItemParent: 'WelcomePage'
+			}
+			this.metrics.sendAsync(interestData);
+
 			this.endTime = new Date().getTime();
 			let data = {
 				PageName: 'WelcomePage',
