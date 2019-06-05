@@ -6,20 +6,20 @@
 		<span class="spinner-text">{{ 'common.ui.loader.text1' | translate }} <br/> {{ 'common.ui.loader.text2' | translate }}</span>
 	</div>
 	<div *ngIf="!showLoader" class="checkbox"
-		 [ngClass]="{'switch-disable': isSwitchDisable}">
-		<label vtrMetrics
-			   metricsEvent="featureClick"
-			   [metricsItem]="name"
-			   [metricsValue]="value">
+		[ngClass]="{'switch-disable': isSwitchDisable}">
+		<label>
 			<input type="checkbox"
-				   [name]="name"
-				   class="switch"
-				   [ngClass]="{'wifi-checked': value===true}"
-				   [value]="value"
-				   [checked]="value"
-				   (click)="$event.stopPropogation();"
-				   [disabled]="disabled"
-				   (change)="onChange($event)"/>
+				vtrMetrics
+				metricsEvent="featureClick"
+				[metricsItem]="'chk.'+name"
+				[metricsValue]="value"
+				[name]="name"
+				class="switch"
+				[ngClass]="{'wifi-checked': value===true}"
+				[value]="value"
+				[checked]="value"
+				[disabled]="disabled"
+				(change)="onChange($event)"/>
 
 			<span class="switch {{ size }}" (click)="$event.stopPropagation();"> <small></small> </span>
 			<div *ngIf="!value" (click)="$event.stopPropagation();"
