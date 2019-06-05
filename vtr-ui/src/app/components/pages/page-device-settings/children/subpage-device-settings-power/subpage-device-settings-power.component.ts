@@ -833,14 +833,14 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				 	}
 				 }
 				 //console.log('selected battery information here ------>', batteryInfo)
-				 	this.powerService
-				 		.setCtAutoCheckbox(batteryInfo)
-				 		.then((value: any) => {
-							console.log(value);					
-						})
-			 			.catch(error => {
-							console.error(error);
-				 		});
+				 this.powerService
+				 .setCtAutoCheckbox(batteryInfo);				 
+				 // .then((value: any) => {
+				// 	console.log(value);					
+				// })
+				 // .catch(error => {
+				// 	console.error(error);
+				 // });
 					}
 				} catch (error) {
 				console.error(error.message);
