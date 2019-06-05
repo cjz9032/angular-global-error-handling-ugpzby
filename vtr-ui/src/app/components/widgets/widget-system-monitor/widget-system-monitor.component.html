@@ -17,7 +17,7 @@
 						<div class="col-sm-8 monitor-col left">
 							<div class="monitor-section">
 								<div class="gaming-tooltip">
-									<p>{{'gaming.dashboard.device.systemInfo.systenTooltip'|translate}}</p>
+									<p>{{this.cpuover|translate}}</p>
 								</div>
 								<div class="monitor-inner gpu">
 									<div class="monitor-stack">
@@ -59,7 +59,7 @@
 													CPU
 												</div>
 												<div class="cpu-status">
-													{{ramCurrent}}/{{ramMax}}GHz
+													{{cpuCurrent}}/{{cpuMax}}GHz
 												</div>
 											</div>
 										</div>
@@ -90,20 +90,20 @@
 							<div class="monitor-section">
 								<div class="hd-list">
 									<div class="hd-item"
-									 [ngClass]="{'danger':hd.current/hd.max>.75}"
+									 [ngClass]="{'danger':hd.usedDisk/hd.capacity>.75}"
 									 *ngFor="let hd of hds; let i=index;">
 										<div class="monitor-hd">
 											<div class="hd-ring"></div>
 											<div class="hd-mask left">
 												<div class="mask-obj"
-												 [ngStyle]="{'transform':'rotate('+getLeftDeg(hd.current, hd.max)+'deg)'}">
+												 [ngStyle]="{'transform':'rotate('+getLeftDeg(hd.usedDisk, hd.capacity)+'deg)'}">
 													<div class="mask-ring"></div>
 												</div>
 											</div>
 											<div class="hd-mask right"
-											 [ngClass]="{'hidden':hd.current/hd.max>.5}">
+											 [ngClass]="{'hidden':hd.usedDisk/hd.capacity>.5}">
 												<div class="mask-obj"
-												 [ngStyle]="{'transform':'rotate('+getRightDeg(hd.current, hd.max)+'deg)'}">
+												 [ngStyle]="{'transform':'rotate('+getRightDeg(hd.usedDisk, hd.capacity)+'deg)'}">
 													<div class="mask-ring"></div>
 												</div>
 											</div>
@@ -111,7 +111,7 @@
 												<div class="hd-inner-circle">
 													<div class="hd-label">
 														<div class="hd-pct">
-															{{getFloorPct(hd.current, hd.max)}}<span class="pct">%</span>
+															{{getFloorPct(hd.usedDisk, hd.capacity)}}<span class="pct">%</span>
 														</div>
 													</div>
 												</div>
@@ -121,10 +121,10 @@
 											<div class="hd-title">
 												<!-- <fa-icon [icon]="['fab', 'windows']"
 												 *ngIf="hd.system"></fa-icon> -->
-												{{hd.title}}
+												{{hd.type}}
 											</div>
 											<div class="hd-status">
-												{{getHDSize(hd.current)}}/{{getHDSize(hd.max)}}
+												{{getHDSize(hd.usedDisk)}}/{{getHDSize(hd.capacity)}}
 											</div>
 										</div>
 									</div>

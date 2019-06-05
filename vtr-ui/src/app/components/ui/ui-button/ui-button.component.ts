@@ -25,6 +25,7 @@ export class UiButtonComponent implements OnInit {
 	@Input() isRegular = false;
 	@Input() btnHeight = false;
 	@Input() isGradient = false;
+	@Input() title: string;
 
 	constructor() { }
 

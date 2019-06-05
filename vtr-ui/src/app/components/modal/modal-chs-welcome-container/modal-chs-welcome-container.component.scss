@@ -11,14 +11,12 @@
         }
     }
     .page {
-        // padding: 1rem 5rem 6rem;
         border-bottom: 0.1rem solid $shade_lighter;
         margin: 0 4rem;
         .page-img {
             padding: 1rem 5rem;
             img {
                 width: 100%;
-                height: 250px;
             }
         }
         .page-title {
@@ -73,12 +71,12 @@
             padding: 0 4rem;
         }
 
-        a{
+        a {
             color: $main;
-            font-size: 3rem; 
+            font-size: 3rem;
         }
-        a:hover{
-            cursor: pointer;
+        a:hover {
+            cursor: pointer;            
         }
     }
     .chs-login-content {
