@@ -26,7 +26,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public TouchpadStatusObj = new TouchpadStatus();
 	public hybrimodeStatus = false;
 	public HybrimodeStatusObj = new HybridModeStatus();
-	public gamingCapabilities: any = {};
+	public gamingCapabilities: any;
 	public legionUpdate = [
 		{
 			readMoreText: '',
@@ -369,10 +369,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 							//this.gamingCapabilities.xtuService = false ;
 							if (this.gamingCapabilities.xtuService === false) {
 								this.legionUpdate[1].isDriverPopup = $event;
-								this.legionUpdate[1].isChecked = false;
 							} else if (this.gamingCapabilities.xtuService === true) {
 								this.legionUpdate[1].isPopup = $event;
 							}
+							this.legionUpdate[1].isChecked = false;
 						});
 					}
 				})
