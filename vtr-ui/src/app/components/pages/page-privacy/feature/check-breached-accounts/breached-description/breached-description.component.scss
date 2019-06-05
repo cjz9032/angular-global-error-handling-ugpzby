@@ -1,11 +1,21 @@
 .breached-description {
 	font-size: 1.4rem;
 	font-weight: 500;
+	&__text-wrapper {
+		padding-bottom: 2.4rem;
+	}
 	&__text {
 		color: #667481;
 		font-weight: 300;
 		line-height: 2.2rem;
-		padding-bottom: 2.4rem;
+		::ng-deep button {
+			background: transparent;
+			color: #4A81FD;
+			font-size: 1.3rem;
+			font-weight: 600;
+			border: none;
+			text-transform: uppercase;
+		}
 	}
 
 	&__details-wrapper {

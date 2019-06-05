@@ -29,16 +29,16 @@ export class CutMultilineTextWithDotsDirective implements AfterViewInit {
 		cutHtmlElement.append(appendedTextTag);
 		cutHtmlElement.firstElementChild.innerText = '';
 
-		if (this.addShowMoreBtn) {
+		if (this.addShowMoreBtn && !document.getElementById('show-more-btn')) {
 			const newLink = document.createElement('BUTTON');
 			newLink.innerHTML = 'Show more';
+			newLink.setAttribute('id', 'show-more-btn');
 			cutHtmlElement.appendChild(newLink);
 			newLink.addEventListener('click', () => {
 				cutHtmlElement.firstElementChild.innerText = this.textToAppend;
 				cutHtmlElement.removeChild(newLink);
 			});
 		}
-
 
 		let allowedHeight = 0;
 		let currHeight = 0;
@@ -58,6 +58,11 @@ export class CutMultilineTextWithDotsDirective implements AfterViewInit {
 		if (hasMoreWords && currHeight > allowedHeight) {
 			cutHtmlElement.firstElementChild.innerText = cutHtmlElement.firstElementChild.innerText.replace(` ${textToAdd[lastAddedWordIndex]}`, '...');
 			currHeight = cutHtmlElement.offsetHeight;
+		} else {
+			const appendedShowMoreBtn = document.getElementById('show-more-btn');
+			if (appendedShowMoreBtn) {
+				cutHtmlElement.removeChild(appendedShowMoreBtn);
+			}
 		}
 
 		for (let i = 1; i < textToAdd.length; i++) { // if last word moved to next line after adding '...' or 'Show more btn'
