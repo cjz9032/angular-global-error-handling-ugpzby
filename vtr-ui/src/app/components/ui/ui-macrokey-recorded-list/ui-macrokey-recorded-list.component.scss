@@ -10,6 +10,23 @@
 	}
 }
 
+.col-6 {
+	min-width: 26rem;
+}
+
+.select-wrapper {
+	@media #{$mediaquery_X3} {
+		width: 30rem;
+	}
+}
+
+.bottom-fix {
+	position: absolute;
+	width: 100%;
+	right: 1.4rem;
+	bottom: 4rem;
+}
+
 .record-table {
 	font-size: 1.6rem;
 	text-align: left;
@@ -41,6 +58,9 @@
 	.record-list {
 		overflow: auto;
 		height: 40rem;
+		@media #{$mediaquery_X3} {
+			height: 38rem;
+		}
 		.record-item {
 			cursor: pointer;
 			position: relative;

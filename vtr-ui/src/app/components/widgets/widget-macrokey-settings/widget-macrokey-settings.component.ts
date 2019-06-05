@@ -95,7 +95,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit {
 			title: 'gaming.macroKey.numberpad.number.zero',
 			value: '0',
 			isMacrokeyExists: true,
-			isSelected: false
+			isSelected: true
 		}
 	];
 
@@ -104,7 +104,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit {
 			title: 'gaming.macroKey.numberpad.macro.m1',
 			value: 'M1',
 			isMacrokeyExists: false,
-			isSelected: false
+			isSelected: true
 		},
 		{
 			title: 'gaming.macroKey.numberpad.macro.m2',
