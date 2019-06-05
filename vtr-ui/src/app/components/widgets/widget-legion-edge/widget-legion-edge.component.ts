@@ -210,7 +210,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				this.legionUpdate[0].isVisible = this.gamingCapabilities.cpuOCFeature;
 				this.legionUpdate[1].isVisible = this.gamingCapabilities.memOCFeature;
 				this.legionUpdate[2].isVisible = this.gamingCapabilities.autoClose;
-				this.legionUpdate[3].isVisible = this.gamingCapabilities.networkBoost;
+				this.legionUpdate[3].isVisible = this.gamingCapabilities.networkBoostFeature;
 				this.legionUpdate[4].isVisible = this.gamingCapabilities.hybridModeFeature;
 				this.legionUpdate[5].isVisible = this.gamingCapabilities.touchpadLockFeature;
 
