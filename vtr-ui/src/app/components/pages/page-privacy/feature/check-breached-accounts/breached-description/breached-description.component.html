@@ -1,5 +1,8 @@
 <div class="breached-description">
-	<div class="breached-description__text">{{breachedAccount.details}}</div>
+<!--	<div class="breached-description__text" vtrCutMultilineTextWithDots [textToAppend]="breachedAccount.details"></div>-->
+	<div class="breached-description__text-wrapper">
+		<div class="breached-description__text" vtrCutMultilineTextWithDots [textToAppend]="breachedAccount.details" [addShowMoreBtn]="true"></div>
+	</div>
 
 	<div class="breached-description__details-wrapper">
 		<div>We found your info in a {{breachedAccount.date}} data breach</div>
