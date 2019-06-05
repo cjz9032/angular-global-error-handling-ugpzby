@@ -31,19 +31,18 @@ export class PrivacyScoreService {
 			filter((userDataStatuses) => userDataStatuses.appState !== AppStatuses.firstTimeVisitor),
 			switchMap((userDataStatuses) => {
 				figleafInstalled = userDataStatuses.appState === AppStatuses.figLeafInstalled;
-				return combineLatest(
+				return combineLatest([
 					this.getBreachesScore(),
 					this.getStoragesScore(),
-				).pipe(
-					map(val => {
-						const receivedScoreParam = val.reduce((acc, curr) => ({...acc, ...curr}));
-						return {
-							...receivedScoreParam,
-							monitoringEnabled: figleafInstalled,
-							trackingEnabled: figleafInstalled,
-						};
-					})
-				);
+				]);
+			}),
+			map(val => {
+				const receivedScoreParam = val.reduce((acc, curr) => ({...acc, ...curr}));
+				return {
+					...receivedScoreParam,
+					monitoringEnabled: figleafInstalled,
+					trackingEnabled: figleafInstalled,
+				};
 			}),
 		);
 	}
