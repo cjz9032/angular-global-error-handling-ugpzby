@@ -29,7 +29,7 @@ export class UserService {
 	private lid: any;
 	private metrics: any;
 	private lidStarterHelper: LIDStarterHelper;
-	
+
 	constructor(
 		private cookieService: CookieService,
 		private commsService: CommsService,
@@ -117,7 +117,7 @@ export class UserService {
 								}
 							});
 						}
-		
+
 						self.sendSigninMetrics(loginSuccess ? 'success' : 'failure(rc=UserInteractionRequired)', starterStatus, accountState, 'AppOpen');
 					});
 				} else {
@@ -274,6 +274,11 @@ export class UserService {
 		self.metrics.sendAsync(metricsData).catch((ex) => {
 			self.devService.writeLog('Exception happen when send metric ', ex.message);
 		});
+	}
+
+	isLenovoIdSupported() {
+		// VAN-4798 Disable LID feature temporarily due to design change impact
+		return false;
 	}
 
 }

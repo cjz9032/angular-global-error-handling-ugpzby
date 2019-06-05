@@ -120,7 +120,7 @@ export class AppComponent implements OnInit {
 
 		// When startup try to login Lenovo ID silently (in background),
 		//  if user has already logged in before, this call will login automatically and update UI
-		if (!this.deviceService.isArm) {
+		if (!this.deviceService.isArm && this.userService.isLenovoIdSupported()) {
 			this.userService.loginSilently();
 		}
 
