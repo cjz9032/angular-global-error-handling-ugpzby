@@ -198,14 +198,27 @@
 					"m2": "M2"
 				}
 			},
-			"actionButton":{
-				"clearAction":{
-					"title":"Are you sure to clear this macro key?",
+			"popupContent":{
+				"clearMacrokey":{
+					"title":"Are you sure to clear this macro key?"
+				},
+				"timeoutRecording":{
+					"title":"Time Out For Recording.",
+					"body":"Recording will time out if no input for 20 seconds."
+				},
+				"maximumInput":{
+					"title":"Maximum Input Reached.",
+					"body":"Macro key can only store inputs less than 20."
+				},
+				"inputStopped":{
+					"title":"Time Out For Recording.",
+					"body":"Recording will time out if the input stopped for more than 10 seconds."
+				},
+				"confirmButton":{
 					"btnClear":"Clear",
 					"btnCancel":"Cancel"
 				},
-				"btnOk":"OK",
-				"timeoutTitle":"Recording will time out if no input for 20 seconds"
+				"btnOk":"OK"
 			}
 		},
 		"lightingProfile": {
@@ -625,9 +638,9 @@
 						},
 						"options": {
 							"start": "Start charging when below",
-							"checkboxText": "Automatically set to start 'charging at %' to 5% below the 'stop charging at %'",
+							"checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
 							"stop": "Stop charging at"
-							
+
 						}
 					},
 					"expressCharging": {

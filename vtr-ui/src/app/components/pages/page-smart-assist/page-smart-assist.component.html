@@ -300,10 +300,8 @@
 											[showChildContent]="true"
 											(toggleOnOff)="displayDim($event)"
 											[isSwitchChecked]="keepMyDisplay">
-											<div class="pl-5 ml-5 pt-5">
-												<div class="display-dim-title">
-													{{'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.title' | translate}}
-												</div>
+											<div class="pl-5 ml-5 pt-4">
+												<div class="display-dim-title">{{'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.title' | translate}}</div>
 												<vtr-ui-range-slider
 													[minValueLegend]="'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.startTime' | translate"
 													[minValue]="0"
