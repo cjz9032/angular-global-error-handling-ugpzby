@@ -203,7 +203,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	) {}
 	ngAfterViewInit(): void {}
 	ngOnInit() {
-		//	this.getGaminagAllCapabilities();
+			this.getGaminagAllCapabilities();
 		this.commonService.notification.subscribe((response) => {
 			if (response.type === Gaming.GamingCapablities && isUndefined(this.gamingCapabilities)) {
 				this.gamingCapabilities = response.payload;
@@ -226,16 +226,16 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			}
 		});
 	}
-	// public getGaminagAllCapabilities() {
-	// 	this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
-	// 		console.log('gamingCapabilities js bridge ------------------------>', JSON.stringify(gamingCapabilities));
-	// 		this.legionUpdate[0].isVisible = this.gamingCapabilities.cpuOCFeature;
-	// 		this.legionUpdate[1].isVisible = this.gamingCapabilities.memOCFeature;
-	// 		this.legionUpdate[4].isVisible = this.gamingCapabilities.hybridModeFeature;
-	// 		this.legionUpdate[5].isVisible = this.gamingCapabilities.touchpadLockFeature;
+	public getGaminagAllCapabilities() {
+	//	this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
+		//	console.log('gamingCapabilities js bridge ------------------------>', JSON.stringify(gamingCapabilities));
+			this.legionUpdate[0].isVisible = this.gamingCapabilities.cpuOCFeature;
+			this.legionUpdate[1].isVisible = this.gamingCapabilities.memOCFeature;
+			this.legionUpdate[4].isVisible = this.gamingCapabilities.hybridModeFeature;
+			this.legionUpdate[5].isVisible = this.gamingCapabilities.touchpadLockFeature;
 
-	// 	});
-	// }
+	//	});
+	}
 	public GetCPUOverClockCacheStatus(): any {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus);
 	}
@@ -361,7 +361,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			this.commonService.sendNotification(name, this.legionUpdate[1].isChecked);
 		}
-
 		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
 			this.commonService.sendNotification(name, this.legionUpdate[4].isChecked);
 		}
@@ -384,6 +383,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 							} else if (this.gamingCapabilities.xtuService === true) {
 								this.legionUpdate[1].isPopup = $event;
 							}
+							this.commonService.setLocalStorageValue(
+								LocalStorageKey.RamOcStatus,
+								$event.switchValue
+							);
 						});
 					}
 				})
@@ -408,6 +411,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 							} else if (this.gamingCapabilities.xtuService === false) {
 								this.legionUpdate[4].isDriverPopup = $event;
 							}
+							this.commonService.setLocalStorageValue(
+								LocalStorageKey.HybridModeStatus,
+								$event.switchValue
+							);
 						});
 					}
 				})
