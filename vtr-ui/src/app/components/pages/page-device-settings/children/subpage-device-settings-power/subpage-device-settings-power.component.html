@@ -60,7 +60,7 @@
 					</li>			
 
 					<!-- MVP 2 feature -->
-					<li class="" >
+					<li class=""  *ngIf = "machineType == 1">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.batteryThreshold.description' | translate "
 							[isSwitchVisible]=true

@@ -234,6 +234,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (this.isDesktopMachine) {
 			this.headerMenuItems.splice(0, 1);
 		}
+		this.hideBatteryLink();
 		this.getMachineInfo();
 		this.startMonitor();
 		this.getVantageToolBarStatus();
@@ -833,20 +834,27 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				 	}
 				 }
 				 //console.log('selected battery information here ------>', batteryInfo)
-				 	this.powerService
-				 		.setCtAutoCheckbox(batteryInfo)
-				 		.then((value: any) => {
-							console.log(value);					
-						})
-			 			.catch(error => {
-							console.error(error);
-				 		});
+				 this.powerService
+				 .setCtAutoCheckbox(batteryInfo);				 
+				 // .then((value: any) => {
+				// 	console.log(value);					
+				// })
+				 // .catch(error => {
+				// 	console.error(error);
+				 // });
 					}
 				} catch (error) {
 				console.error(error.message);
 			}
 		
 		}
+		}
+		
+	hideBatteryLink() {
+		if(this.isDesktopMachine) {
+			//hide battery like
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'battery');
+		} 
 		
 	}
 }

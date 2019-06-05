@@ -8,6 +8,7 @@
 				<div class="col-sm-6" *ngIf="properties.macroKeyStatus == 0">
 					<div class="select-wrapper">
 						<vtr-ui-macrokey-collapsible-container
+							[isRecording]="isRecording"
 							[options]="macroKeyOptions"
 							(change)="optionChanged($event)">
 						</vtr-ui-macrokey-collapsible-container>
