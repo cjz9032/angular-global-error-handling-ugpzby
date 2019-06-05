@@ -136,4 +136,8 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 			this.offLabel = translation.payload.off;
 		}
 	}
+
+	stopPropagation(event){
+		event.stopPropagation();
+	}
 }
