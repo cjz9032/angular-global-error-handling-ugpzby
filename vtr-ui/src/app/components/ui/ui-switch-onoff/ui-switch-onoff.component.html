@@ -17,14 +17,13 @@
 				   [ngClass]="{'wifi-checked': value===true}"
 				   [value]="value"
 				   [checked]="value"
-				   (click)="$event.stopPropogation();"
 				   [disabled]="disabled"
 				   (change)="onChange($event)"/>
 
-			<span class="switch {{ size }}" (click)="$event.stopPropagation();"> <small></small> </span>
-			<div *ngIf="!value" (click)="$event.stopPropagation();"
+			<span class="switch {{ size }}" (click)="stopPropagation($event);"> <small></small> </span>
+			<div *ngIf="!value" (click)="stopPropagation($event);"
 				 class="switch-label off-label">{{'common.ui.off' | translate}}</div>
-			<div *ngIf="value" (click)="$event.stopPropagation();"
+			<div *ngIf="value" (click)="stopPropagation($event);"
 				 class="switch-label on-label">{{'common.ui.on' | translate}}</div>
 		</label>
 	</div>

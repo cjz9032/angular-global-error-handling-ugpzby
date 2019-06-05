@@ -17,7 +17,7 @@ import { Gaming } from 'src/app/enums/gaming.enum';
 @Component({
 	selector: 'vtr-widget-legion-edge',
 	templateUrl: './widget-legion-edge.component.html',
-	styleUrls: [ './widget-legion-edge.component.scss' ]
+	styleUrls: ['./widget-legion-edge.component.scss']
 })
 export class WidgetLegionEdgeComponent implements OnInit {
 	public ramOcStatus = false;
@@ -35,7 +35,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			header: 'gaming.dashboard.device.legionEdge.title',
 			name: 'gaming.dashboard.device.legionEdge.title',
 			subHeader: '',
-			isVisible: true,
+			isVisible: false,
 			isCustomizable: false,
 			isCollapsible: true,
 			isCheckBoxVisible: false,
@@ -53,7 +53,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			header: 'gaming.dashboard.device.legionEdge.ramOverlock',
 			name: 'gaming.dashboard.device.legionEdge.ramOverlock',
 			subHeader: '',
-			isVisible: true,
+			isVisible: false,
 			isCustomizable: false,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
@@ -71,7 +71,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			header: 'gaming.dashboard.device.legionEdge.autoClose',
 			name: 'gaming.dashboard.device.legionEdge.autoClose',
 			subHeader: '',
-			isVisible: true,
+			isVisible: false,
 			isCustomizable: true,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
@@ -90,7 +90,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			header: 'gaming.dashboard.device.legionEdge.networkBoost',
 			name: 'gaming.dashboard.device.legionEdge.networkBoost',
 			subHeader: '',
-			isVisible: true,
+			isVisible: false,
 			isCustomizable: true,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
@@ -109,7 +109,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			header: 'gaming.dashboard.device.legionEdge.hybridMode',
 			name: 'gaming.dashboard.device.legionEdge.hybridMode',
 			subHeader: '',
-			isVisible: true,
+			isVisible: false,
 			isCustomizable: false,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
@@ -127,7 +127,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			header: 'gaming.dashboard.device.legionEdge.touchpadLock',
 			name: 'gaming.dashboard.device.legionEdge.touchpadLock',
 			subHeader: '',
-			isVisible: true,
+			isVisible: false,
 			isCustomizable: false,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
@@ -200,13 +200,19 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		private commonService: CommonService,
 		private gamingKeyLockService: GamingKeyLockService,
 		private gamingHybridModeService: GamingHybridModeService
-	) {}
-	ngAfterViewInit(): void {}
+	) { }
+	ngAfterViewInit(): void { }
 	ngOnInit() {
-		//	this.getGaminagAllCapabilities();
 		this.commonService.notification.subscribe((response) => {
 			if (response.type === Gaming.GamingCapablities && isUndefined(this.gamingCapabilities)) {
 				this.gamingCapabilities = response.payload;
+				console.log('get gamingCapabilities --------------------------------->', this.gamingCapabilities);
+				this.legionUpdate[0].isVisible = this.gamingCapabilities.cpuOCFeature;
+				this.legionUpdate[1].isVisible = this.gamingCapabilities.memOCFeature;
+				this.legionUpdate[2].isVisible = this.gamingCapabilities.autoClose;
+				this.legionUpdate[3].isVisible = this.gamingCapabilities.networkBoostFeature;
+				this.legionUpdate[4].isVisible = this.gamingCapabilities.hybridModeFeature;
+				this.legionUpdate[5].isVisible = this.gamingCapabilities.touchpadLockFeature;
 
 				if (this.gamingCapabilities.cpuOCFeature) {
 					this.renderCPUOverClockStatus();
@@ -226,16 +232,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			}
 		});
 	}
-	// public getGaminagAllCapabilities() {
-	// 	this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
-	// 		console.log('gamingCapabilities js bridge ------------------------>', JSON.stringify(gamingCapabilities));
-	// 		this.legionUpdate[0].isVisible = this.gamingCapabilities.cpuOCFeature;
-	// 		this.legionUpdate[1].isVisible = this.gamingCapabilities.memOCFeature;
-	// 		this.legionUpdate[4].isVisible = this.gamingCapabilities.hybridModeFeature;
-	// 		this.legionUpdate[5].isVisible = this.gamingCapabilities.touchpadLockFeature;
 
-	// 	});
-	// }
 	public GetCPUOverClockCacheStatus(): any {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus);
 	}
@@ -361,7 +358,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			this.commonService.sendNotification(name, this.legionUpdate[1].isChecked);
 		}
-
 		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
 			this.commonService.sendNotification(name, this.legionUpdate[4].isChecked);
 		}
@@ -384,6 +380,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 							} else if (this.gamingCapabilities.xtuService === true) {
 								this.legionUpdate[1].isPopup = $event;
 							}
+							this.commonService.setLocalStorageValue(
+								LocalStorageKey.RamOcStatus,
+								$event.switchValue
+							);
 						});
 					}
 				})
@@ -408,6 +408,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 							} else if (this.gamingCapabilities.xtuService === false) {
 								this.legionUpdate[4].isDriverPopup = $event;
 							}
+							this.commonService.setLocalStorageValue(
+								LocalStorageKey.HybridModeStatus,
+								$event.switchValue
+							);
 						});
 					}
 				})
