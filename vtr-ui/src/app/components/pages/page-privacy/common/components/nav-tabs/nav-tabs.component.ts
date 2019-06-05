@@ -26,27 +26,25 @@ export class NavTabsComponent implements OnInit, OnDestroy {
 			userDataStatus$ => combineLatest(userDataStatus$, ...this.countNumberOfIssuesService.getPrivacyIssuesCount()),
 			takeUntil(instanceDestroyed(this)),
 		).subscribe(([userDataStatuses, breachedAccountsCount, websiteTrackersCount, nonPrivatePasswordCount]) => {
-			const breachedAccountsStatus = userDataStatuses.breachedAccountsResult;
-			const websiteTrackersStatus = userDataStatuses.websiteTrackersResult;
-			const nonPrivatePasswordStatus = userDataStatuses.nonPrivatePasswordResult;
+			const { breachedAccountsResult, websiteTrackersResult, nonPrivatePasswordResult } = userDataStatuses;
 			const breachesConfig = {
-				...this.navTabsService.tabsConfig.breaches[breachedAccountsStatus],
-				issuesCount: this.getDisplayedCountValueOfIssues(breachedAccountsStatus, breachedAccountsCount),
-				state: breachedAccountsStatus,
+				...this.navTabsService.tabsConfig.breaches[breachedAccountsResult],
+				issuesCount: this.getDisplayedCountValueOfIssues(breachedAccountsResult, breachedAccountsCount),
+				state: breachedAccountsResult,
 				routerLink: './breaches',
 				title: 'Breached Accounts',
 			};
 			const trackersConfig = {
-				...this.navTabsService.tabsConfig.trackers[websiteTrackersStatus],
-				issuesCount: this.getDisplayedCountValueOfIssues(websiteTrackersStatus, websiteTrackersCount),
-				state: websiteTrackersStatus,
+				...this.navTabsService.tabsConfig.trackers[websiteTrackersResult],
+				issuesCount: this.getDisplayedCountValueOfIssues(websiteTrackersResult, websiteTrackersCount),
+				state: websiteTrackersResult,
 				routerLink: './trackers',
 				title: 'Visible to Online Trackers',
 			};
 			const passwordsConfig = {
-				...this.navTabsService.tabsConfig.passwords[nonPrivatePasswordStatus],
-				issuesCount: this.getDisplayedCountValueOfIssues(nonPrivatePasswordStatus, nonPrivatePasswordCount),
-				state: nonPrivatePasswordStatus,
+				...this.navTabsService.tabsConfig.passwords[nonPrivatePasswordResult],
+				issuesCount: this.getDisplayedCountValueOfIssues(nonPrivatePasswordResult, nonPrivatePasswordCount),
+				state: nonPrivatePasswordResult,
 				routerLink: './browser-accounts',
 				title: 'Non-Private Passwords',
 			};
