@@ -696,48 +696,48 @@
                         }
                     }
                 },
-				"intelligentMedia": {
-					"heading": "Intelligent Media",
-					"title": "Zero Touch Video Playback",
-					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
-				}
+                "intelligentMedia": {
+                    "heading": "Intelligent Media",
+                    "title": "Zero Touch Video Playback",
+                    "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+                    "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "Оновлення системи",
+        "back": "НАЗАД",
+        "history": "ПОВНА ІСТОРІЯ",
+        "notAvailable": "Недоступно",
+        "notInstalled": "Не інстальовано",
+        "criticalUpdates": "Важливі оновлення",
+        "recommendedUpdates": "Рекомендовані оновлення",
+        "optionalUpdates": "Необов'язкові оновлення",
+        "ignoredUpdates": "Пропущені оновлення",
+        "successInstall": "Успішно інстальовано на",
+        "failedInstall": "Не вдалось інсталювати на",
+        "at": "в",
+        "readMore": "Розгорнути",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+            "reboot": "Перезавантажити",
+            "shutdown": "Завершити роботу",
+            "rebootForceMsg": "Якщо інсталювати вибрані оновлення, це автоматично перезавантажить систему або завершить її роботу.",
+            "shutdownForceMsg": "Якщо інсталювати вибрані оновлення, це автоматично завершить роботу системи.",
+            "rebootDelayedMsg": "Після інсталяції вибраних оновлень система перезавантажиться. Під час інсталяції оновлень не вимикайте систему та не від’єднуйте джерело живлення або аксесуари. Рекомендуємо зберегти файли, перш ніж система перезавантажиться.",
+            "rebootRequiredMsg": "Щоб успішно інсталювати оновлення, слід перезавантажити комп'ютер. Це гарантує безпечну та плавну роботу всіх систем.",
             "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "cancelButton": "Скасувати",
+            "rebootButton": "ПЕРЕЗАВАНТАЖИТИ ЗАРАЗ",
+            "dismissButton": "ВІДХИЛИТИ",
+            "rebootPending": "Очікується перезавантаження"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Настройки автоматичного оновлення",
+            "subtitle": "АВТОМАТИЧНО ІНСТАЛЮВАТИ ОНОВЛЕННЯ",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Важливі оновлення",
+                "tooltip": "Важливі оновлення запобігають серйозним проблемам, суттєвим порушенням у роботі системи, неполадкам устаткування та пошкодженню даних."
             },
             "camera": {
                 "title": "Camera",
@@ -745,37 +745,37 @@
                 "reset": "Reset factory settings"
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "Рекомендовані оновлення",
+                "tooltip": "Рекомендовані оновлення драйверів забезпечать найвищу швидкодію комп'ютера."
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Оновлення Windows",
+                "url": "Настройки Windows"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Веб-сайт служби підтримки Lenovo"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "Запрошуємо скористатися функцією System Update.",
+            "title": "Оновлена система — це справна система.",
+            "last": "Останнє оновлення",
+            "next": "Наступна перевірка оновлення запланована на",
+            "checkButton": "ПЕРЕВІРИТИ НАЯВНІСТЬ ОНОВЛЕНЬ ",
+            "checking": "Перевірка наявності оновлень",
+            "downloading": "Завантаження оновлень",
+            "installing": "Інсталяція оновлень",
+            "percent": "% завершено",
+            "cancelCheck": "Скасувати перевірку",
+            "cancelUpdates": "СКАСУВАТИ ОНОВЛЕННЯ",
+            "available": "Доступні оновлення",
+            "description": "Ці пакети містять важливі оновлення для драйверів обладнання й інших системних утиліт, які забезпечують правильну роботу комп'ютера. Важливі оновлення також впливають на захист даних на комп'ютері. Їх потрібно інсталювати, щойно вони стають доступними. Якщо не інсталювати вказані пакети, це може призвести до втрати даних, порушень у роботі системи або відмови устаткування.",
+            "installButton": "ІНСТАЛЮВАТИ ВСІ ОНОВЛЕННЯ",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Усі оновлення інстальовано правильно",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Певні оновлення інстальовано неправильно.",
+                    "description": "Під час завантаження або інсталяції цих оновлень сталася помилка. Перевірте підключення до Інтернету та не вимикайте комп'ютер під час інсталяції оновлень."
                 }
             },
             "smartAssist": {
@@ -829,33 +829,36 @@
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend"
+            "rebootRequired": "Необхідне перезавантаження",
+            "failReason": "Причина помилки: адаптер живлення змінного струму відключений від комп'ютера. ",
+            "manufacturer": "Виробник: ",
+            "version": "Версія: ",
+            "installVersion": "Інстальована версія: ",
+            "downloadSize": "Розмір завантаження: ",
+            "diskSpaceNeeded": "Необхідний дисковий простір: ",
+            "ignore": "Ігнорувати",
+            "attend": "Відвідати",
+            "rebootRequiredTag": "Необхідне перезавантаження",
+            "rebootDelayTag": "Потрібне перезавантаження, підключіть систему до джерела живлення",
+            "shutdownRequiredTag": "Потрібне вимкнення"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "Доступні оновлення",
+            "description": "Ці пакети містять оновлення, важливі для правильної роботи комп'ютера. Важливі оновлення дають змогу краще захистити ваш комп'ютер. їх слід інсталювати, щойно вони стануть доступними. Рекомендовані й необов'язкові оновлення дають змогу підтримувати актуальність ПЗ, а комп'ютер працює в оптимальному режимі.",
+            "installAllUpdates": "Інсталювати всі оновлення",
+            "installSuccessHeader": "Усі оновлення інстальовано правильно",
+            "installFailHeader": "Певні оновлення інстальовано неправильно",
+            "installFailDescription": "Під час завантаження й інсталяції цих оновлень сталася помилка. Перевірте підключення до Інтернету та не вимикайте комп'ютер під час інсталяції оновлень.",
+            "optionalUpdates": "Необов'язкові оновлення",
+            "installSelectedUpdates": "Інсталювати вибрані оновлення"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "Назва",
+            "sortByDate": "Сортувати за датою",
+            "packageSize": "Розмір пакета:",
+            "releaseDate": "Дата випуску:",
+            "showAll": "Показати все",
+            "noInstallationHistory": "Немає доступної історії інсталяції"
         }
     },
     "homeSecurity": {
@@ -915,9 +918,9 @@
             "copyright": "© Lenovo, 2002–2019 р. Усі права захищено."
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "Категорії",
+            "categoriesDesc": "Знайдіть корисну інформацію в наших статтях.",
+            "seeArticles": "ДИВ. СТАТТІ"
         }
     },
     "security": {
@@ -1113,7 +1116,7 @@
             "whatIsPmNotInstalled": "Найбезпечніший, найпростіший спосіб зберігати надійні, складні паролі та миттєво виконувати вхід на сайти.",
             "whatIsPmInstalled": "Безпечне цифрове життя вже поруч: додавайте паролі, використовуйте моніторинг темного Інтернету й автозаповнення особистої та платіжної інформації.",
             "startProtect": "Легко захистіть свої облікові записи в Інтернеті.",
-            "discount": "Користувачам Lenovo безкоштовно надається 6 місяців доступу до преміум-плану Dashlane.",
+            "discount": "Користувачам Lenovo надається ексклюзивна знижка 50% на доступ до преміум-плану Dashlane.",
             "offer": "Ця пропозиція доступна лише для нових користувачів Dashlane.",
             "getDashLane": "Отримати Dashlane",
             "learnMoreAbout": "<tag>Дізнайтеся більше</tag> про всі можливості Dashlane",

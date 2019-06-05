@@ -696,48 +696,48 @@
                         }
                     }
                 },
-				"intelligentMedia": {
-					"heading": "Intelligent Media",
-					"title": "Zero Touch Video Playback",
-					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
-				}
+                "intelligentMedia": {
+                    "heading": "Intelligent Media",
+                    "title": "Zero Touch Video Playback",
+                    "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+                    "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "Обновления системы",
+        "back": "НАЗАД",
+        "history": "ПОЛНЫЙ ЖУРНАЛ",
+        "notAvailable": "Недоступно",
+        "notInstalled": "Не установлено",
+        "criticalUpdates": "Критические обновления",
+        "recommendedUpdates": "Рекомендуемые обновления",
+        "optionalUpdates": "Необязательные обновления",
+        "ignoredUpdates": "Пропущенные обновления",
+        "successInstall": "Успешно установлено на",
+        "failedInstall": "Сбой при установке на",
+        "at": "в",
+        "readMore": "Подробнее",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
-            "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "reboot": "П/загр",
+            "shutdown": "Завершение работы",
+            "rebootForceMsg": "Выбранные обновления после установки приведут к автоматической перезагрузке системы.",
+            "shutdownForceMsg": "Выбранные обновления после установки приведут к автоматическому завершению работы системы.",
+            "rebootDelayedMsg": "Выбранные обновления приведут к перезагрузке системы после установки. Во время установки обновлений не выключайте систему и не удаляйте источник питания и аксессуары. Перед перезагрузкой системы рекомендуется сохранить свою работу.",
+            "rebootRequiredMsg": "Для успешной установки обновлений необходимо перезагрузить компьютер, чтобы обеспечить его беспроблемную работу.",
+            "okayButton": "ОК",
+            "cancelButton": "Отмена",
+            "rebootButton": "ПЕРЕЗАГРУЗИТЬ СЕЙЧАС",
+            "dismissButton": "ЗАКРЫТЬ",
+            "rebootPending": "Ожидание перезагрузки"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Параметры автоматического обновления",
+            "subtitle": "УСТАНАВЛИВАТЬ ОБНОВЛЕНИЯ АВТОМАТИЧЕСКИ",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Критические обновления",
+                "tooltip": "Критические обновления могут предотвращать значительные проблемы, серьезные сбои, сбои оборудования и повреждение данных."
             },
             "camera": {
                 "title": "Camera",
@@ -745,37 +745,37 @@
                 "reset": "Reset factory settings"
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "Рекомендуемые обновления",
+                "tooltip": "Рекомендуемые обновления драйверов поддерживают работу компьютера с максимальной производительностью."
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Обновления Windows",
+                "url": "Настройки Windows"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Веб-сайт поддержки Lenovo"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "Вас приветствует программа System Update.",
+            "title": "Регулярное обновление системы обеспечивает ее исправную работу.",
+            "last": "Дата последнего обновления",
+            "next": "Следующая проверка обновлений запланирована на",
+            "checkButton": "ПРОВЕРИТЬ НАЛИЧИЕ ОБНОВЛЕНИЙ ",
+            "checking": "Проверка обновлений",
+            "downloading": "Загрузка обновлений",
+            "installing": "Установка обновлений",
+            "percent": "% завершено",
+            "cancelCheck": "Отменить проверку",
+            "cancelUpdates": "ОТМЕНИТЬ ОБНОВЛЕНИЯ",
+            "available": "Доступные обновления",
+            "description": "В эти пакеты входят драйверы устройств и другие служебные программы, критически необходимые для нормальной работы компьютера. Кроме того, критические обновления необходимы для защиты данных на вашем компьютере. Такие обновления следует устанавливать, когда они становятся доступными. Отказ от установки этих пакетов обновлений может привести к повреждению или потере данных, серьезному сбою системы или отказу оборудования.",
+            "installButton": "УСТАНОВИТЬ ВСЕ ОБНОВЛЕНИЯ",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Все обновления успешно установлены",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Некоторые обновления не удалось установить.",
+                    "description": "Во время загрузки или установки этих обновлений произошла ошибка. Проверьте наличие подключения к Интернету и не выключайте компьютер при установке обновлений."
                 }
             },
             "smartAssist": {
@@ -829,33 +829,36 @@
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend"
+            "rebootRequired": "Требуется перезагрузка",
+            "failReason": "Причина сбоя: адаптер электропитания не подключен к компьютеру. ",
+            "manufacturer": "Изготовитель: ",
+            "version": "Версия: ",
+            "installVersion": "Установленная версия: ",
+            "downloadSize": "Размер скачивания: ",
+            "diskSpaceNeeded": "Необходимое место на диске: ",
+            "ignore": "Игнорировать",
+            "attend": "Посетить",
+            "rebootRequiredTag": "Требуется перезагрузка",
+            "rebootDelayTag": "Требуется перезагрузка, требуется источник питания",
+            "shutdownRequiredTag": "Требуется завершение работы"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "Доступные обновления",
+            "description": "Эти пакеты включают обновления, которые важны для правильной работы вашего компьютера. Критические обновления помогают сделать ваш компьютер более безопасным и надежным, их следует устанавливать по мере появления. Рекомендованные обновления и дополнительные обновления помогают поддерживать актуальность программного обеспечения и работоспособность компьютера.",
+            "installAllUpdates": "Установить все обновления",
+            "installSuccessHeader": "Все обновления успешно установлены",
+            "installFailHeader": "Некоторые обновления не удалось установить",
+            "installFailDescription": "Во время загрузки и установки этих обновлений произошла ошибка. Проверьте наличие подключения к Интернету и не выключайте компьютер при установке обновлений.",
+            "optionalUpdates": "Необязательные обновления",
+            "installSelectedUpdates": "Установить выбранные обновления"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "Имя",
+            "sortByDate": "Сортировать по дате",
+            "packageSize": "Размер пакета:",
+            "releaseDate": "Дата выпуска:",
+            "showAll": "Показать все",
+            "noInstallationHistory": "История установки недоступна"
         }
     },
     "homeSecurity": {
@@ -915,9 +918,9 @@
             "copyright": "© Lenovo, 2002–2019. Все права защищены"
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "Категории",
+            "categoriesDesc": "Найти ценную информацию в наших статьях.",
+            "seeArticles": "ИЗУЧИТЬ СТАТЬИ"
         }
     },
     "security": {
@@ -1113,7 +1116,7 @@
             "whatIsPmNotInstalled": "Самый безопасный и удобный способ хранения надежных и сложных паролей для мгновенного входа на любой сайт.",
             "whatIsPmInstalled": "Повысьте свою безопасность в цифровом мире: добавляйте пароли, включите функцию мониторинга даркнета и автозаполнение личных и платежных данных.",
             "startProtect": "Обеспечьте удобную защиту своих учетных записей в Интернете.",
-            "discount": "Пользователи устройств Lenovo получают эксклюзивные 6 месяцев бесплатного доступа к Dashlane \"Премиум\".",
+            "discount": "Пользователи Lenovo получают эксклюзивную скидку 50 % на Dashlane \"Премиум\".",
             "offer": "Предложение действует только для новых пользователей Dashlane!",
             "getDashLane": "Получить Dashlane",
             "learnMoreAbout": "<tag>Узнайте подробнее</tag> о возможностях Dashlane",

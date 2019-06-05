@@ -160,6 +160,10 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	}
 
 	getMachineInfo() {
+		const defaultWarranty = {
+			status: 2,
+			url: this.warrantyNormalUrl
+		};
 		try {
 			this.supportService.getMachineInfo().then((machineInfo) => {
 				this.supportService
@@ -168,20 +172,21 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 					// .getWarranty('R90HTPEU')
 					.getWarranty(machineInfo.serialnumber)
 					.then((warranty) => {
-						this.warranty = warranty;
-						if (machineInfo.serialnumber) {
-							this.warranty.url = `https://www.lenovo.com/us/en/warrantyApos?serialNumber=${machineInfo.serialnumber}&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
+						if (warranty) {
+							this.warranty = warranty;
+							if (machineInfo.serialnumber) {
+								this.warranty.url = `https://www.lenovo.com/us/en/warrantyApos?serialNumber=${machineInfo.serialnumber}&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
+							} else {
+								this.warranty.url = this.warrantyNormalUrl;
+							}
 						} else {
-							this.warranty.url = this.warrantyNormalUrl;
+							this.warranty = defaultWarranty;
 						}
 					});
 			});
 		} catch (error) {
 			console.log(error);
-			this.warranty = {
-				status: 2,
-				url: this.warrantyNormalUrl
-			};
+			this.warranty = defaultWarranty;
 		}
 	}
 

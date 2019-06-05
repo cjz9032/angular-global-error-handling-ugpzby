@@ -696,48 +696,48 @@
                         }
                     }
                 },
-				"intelligentMedia": {
-					"heading": "Intelligent Media",
-					"title": "Zero Touch Video Playback",
-					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
-				}
+                "intelligentMedia": {
+                    "heading": "Intelligent Media",
+                    "title": "Zero Touch Video Playback",
+                    "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+                    "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "Ažuriranja sustava",
+        "back": "NATRAG",
+        "history": "CIJELA POVIJEST",
+        "notAvailable": "Nije dostupno",
+        "notInstalled": "Nije instalirano",
+        "criticalUpdates": "Ključna ažuriranja",
+        "recommendedUpdates": "Preporučena ažuriranja",
+        "optionalUpdates": "Neobavezna ažuriranja",
+        "ignoredUpdates": "Zanemarena ažuriranja",
+        "successInstall": "Uspješno instalirano na",
+        "failedInstall": "Instalacija nije uspjela na",
+        "at": "u",
+        "readMore": "Pročitajte više",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
-            "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "reboot": "Ponovno pokreni",
+            "shutdown": "Isključi",
+            "rebootForceMsg": "Ažuriranja koja ste odabrali uzrokovat će automatsko ponovno pokretanje sustava nakon instalacije.",
+            "shutdownForceMsg": "Ažuriranja koja ste instalirali uzrokovat će automatsko isključivanje sustava nakon instalacije.",
+            "rebootDelayedMsg": "Ažuriranja koja ste odabrali uzrokovat će ponovno pokretanje sustava nakon instalacije. Tijekom instalacije ažuriranja nemojte isključiti sustav, ukloniti izvor napajanja ili dodatke. Preporučujemo da prije ponovnog pokretanja sustava spremite sve na čemu radite.",
+            "rebootRequiredMsg": "Kako biste uspješno instalirali ažuriranja te osigurali ispravan i neometan rad, potrebno je ponovno pokrenuti računalo.",
+            "okayButton": "U redu",
+            "cancelButton": "Odustani",
+            "rebootButton": "PONOVNO POKRENI SADA",
+            "dismissButton": "ODBACI",
+            "rebootPending": "Ponovno pokretanje na čekanju"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Postavke automatskog ažuriranja",
+            "subtitle": "AUTOMATSKI INSTALIRAJ AŽURIRANJA",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Ključna ažuriranja",
+                "tooltip": "Kritična ažuriranja mogu spriječiti nastanak problema, veće kvarove, neispravan rad hardvera ili oštećenje podataka."
             },
             "camera": {
                 "title": "Camera",
@@ -745,37 +745,37 @@
                 "reset": "Reset factory settings"
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "Preporučena ažuriranja",
+                "tooltip": "Uz preporučena ažuriranja upravljačkog programa vaše računalo radi optimalno."
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Ažuriranja sustava Windows",
+                "url": "Postavke sustava Windows"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Web-mjesto za podršku tvrtke Lenovo"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "Slobodno se koristite System Update-om (Ažuriranje sustava).",
+            "title": "Ažurirani sustav je zdrav sustav.",
+            "last": "Datum zadnjeg ažuriranja",
+            "next": "Sljedeća provjera ažuriranja planirana je",
+            "checkButton": "POTRAŽI AŽURIRANJA ",
+            "checking": "Traženje ažuriranja",
+            "downloading": "Preuzimanje ažuriranja",
+            "installing": "Instaliranje ažuriranja",
+            "percent": "% dovršeno",
+            "cancelCheck": "Otkaži traženje",
+            "cancelUpdates": "OTKAŽI AŽURIRANJA",
+            "available": "Dostupna ažuriranja",
+            "description": "Ti paketi sadrže ažuriranja za upravljačke programe za hardver i ostale uslužne programe sustava ključne za ispravan rad računala. Kritična ažuriranja također su važna i za zaštitu podataka na računalu te se moraju instalirati čim postanu dostupna. Ako se ti paketi ne instaliraju, može doći do gubitka podataka, neispravnog rada sustava ili kvara hardvera.",
+            "installButton": "INSTALIRAJ SVA AŽURIRANJA",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Sva su ažuriranja instalirana ispravno",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Neka ažuriranja nisu ispravno instalirana.",
+                    "description": "Došlo je do problema tijekom preuzimanja ili instalacije tih ažuriranja. Pobrinite se da ste na mreži i ne gasite računalo tijekom instaliranja ažuriranja."
                 }
             },
             "smartAssist": {
@@ -829,33 +829,36 @@
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend"
+            "rebootRequired": "Potrebno je ponovno pokretanje",
+            "failReason": "Razlog neuspješne instalacije: prilagodnik napajanja nije spojen na računalo. ",
+            "manufacturer": "Proizvođač: ",
+            "version": "Verzija: ",
+            "installVersion": "Instalirana verzija: ",
+            "downloadSize": "Veličina preuzimanja: ",
+            "diskSpaceNeeded": "Potreban slobodan prostor na disku: ",
+            "ignore": "Zanemari",
+            "attend": "Obrati pažnju",
+            "rebootRequiredTag": "Potrebno je ponovno pokretanje",
+            "rebootDelayTag": "Potrebno je ponovno pokretanje, potreban je izvor napajanja",
+            "shutdownRequiredTag": "Obavezno isključivanje"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "Dostupna ažuriranja",
+            "description": "Ovi paketi uključuju ažuriranja ključna za ispravan rad vašeg računala. Kritična ažuriranja pomažu da vaše računalo bude sigurnije i pouzdanije te ih je potrebno instalirati čim postanu dostupna. Preporučena ažuriranja i neobavezna ažuriranja pomažu održati softver ažurnim, a vaše računalo radi u najboljem izdanju.",
+            "installAllUpdates": "Instaliraj sva ažuriranja",
+            "installSuccessHeader": "Sva su ažuriranja instalirana ispravno",
+            "installFailHeader": "Neka ažuriranja nisu ispravno instalirana",
+            "installFailDescription": "Došlo je do problema tijekom preuzimanja i instalacije tih ažuriranja. Pobrinite se da ste na mreži i ne gasite računalo tijekom instaliranja ažuriranja.",
+            "optionalUpdates": "Neobavezna ažuriranja",
+            "installSelectedUpdates": "Instaliraj odabrana ažuriranja"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "Naziv",
+            "sortByDate": "Sortiraj po datumu",
+            "packageSize": "Veličina paketa:",
+            "releaseDate": "Datum izdanja:",
+            "showAll": "Pokaži sve",
+            "noInstallationHistory": "Povijest instalacije nije dostupna"
         }
     },
     "homeSecurity": {
@@ -915,9 +918,9 @@
             "copyright": "© 2002.-2019. Lenovo. Sva prava pridržana."
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "Kategorije",
+            "categoriesDesc": "Pronađite korisne informacije u našim člancima.",
+            "seeArticles": "POGLEDAJ ČLANKE"
         }
     },
     "security": {
@@ -1113,7 +1116,7 @@
             "whatIsPmNotInstalled": "Najsigurniji, najlakši način za spremanje jakih, složenih lozinki i brzu prijavu na svaku stranicu.",
             "whatIsPmInstalled": "Sigurniji digitalni život čeka: dodajte lozinke, omogućite nadzor tzv. tamnog weba (Dark Web) i automatski ispunite osobne podatke te podatke za plaćanje.",
             "startProtect": "Započnite sa zaštitom svojih mrežnih računa na jednostavan način.",
-            "discount": "Korisnici tvrtke Lenovo ekskluzivno upotrebljavaju vrhunsku aplikaciju Dashlane tijekom 6 besplatnih mjeseci.",
+            "discount": "Korisnici tvrtke Lenovo uživaju u ekskluzivnih 50 % popusta na Dashlane tijekom.",
             "offer": "Ponuda je dostupna samo za nove korisnike aplikacije Dashlane!",
             "getDashLane": "Nabavi Dashlane",
             "learnMoreAbout": "<tag>Saznajte više</tag> o tome kako u potpunosti iskoristiti Dashlane",

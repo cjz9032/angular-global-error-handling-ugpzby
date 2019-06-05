@@ -696,48 +696,48 @@
                         }
                     }
                 },
-				"intelligentMedia": {
-					"heading": "Intelligent Media",
-					"title": "Zero Touch Video Playback",
-					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
-				}
+                "intelligentMedia": {
+                    "heading": "Intelligent Media",
+                    "title": "Zero Touch Video Playback",
+                    "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+                    "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "System Update",
+        "back": "TERUG",
+        "history": "VOLLEDIGE GESCHIEDENIS",
+        "notAvailable": "Niet beschikbaar",
+        "notInstalled": "Niet geïnstalleerd",
+        "criticalUpdates": "Essentiële update(s)",
+        "recommendedUpdates": "Aanbevolen update(s)",
+        "optionalUpdates": "Optionele update(s)",
+        "ignoredUpdates": "Genegeerde update(s)",
+        "successInstall": "Geïnstalleerd op",
+        "failedInstall": "Installatie mislukt op",
+        "at": "op",
+        "readMore": "Meer weergeven",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+            "reboot": "Opnieuw opstarten",
+            "shutdown": "Afsluiten",
+            "rebootForceMsg": "Het systeem wordt automatisch opnieuw opgestart nadat de geselecteerde updates zijn geïnstalleerd.",
+            "shutdownForceMsg": "Het systeem wordt automatisch afgesloten nadat de geselecteerde updates zijn geïnstalleerd.",
+            "rebootDelayedMsg": "De update(s) die u hebt geselecteerd, zorgen dat het systeem opnieuw opgestart wordt na de installatie. Schakel tijdens de installatie van updates uw systeem niet uit en verwijder de voedingsbron of accessoires niet. We raden u aan uw werk op te slaan voordat u het systeem opnieuw opstart.",
+            "rebootRequiredMsg": "Om de updates te kunnen installeren, moet de computer opnieuw worden opgestart om te zorgen dat alles veilig en probleemloos werkt.",
             "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "cancelButton": "Annuleren",
+            "rebootButton": "NU OPNIEUW OPSTARTEN",
+            "dismissButton": "SLUITEN",
+            "rebootPending": "Opnieuw opstarten in behandeling"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Instellingen voor automatisch bijwerken",
+            "subtitle": "UPDATES AUTOMATISCH INSTALLEREN",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Essentiële updates",
+                "tooltip": "Met de essentiële updates worden aanzienlijke problemen, ernstige storingen in het systeem, storingen in de hardware en beschadiging van gegevens voorkomen."
             },
             "camera": {
                 "title": "Camera",
@@ -745,37 +745,37 @@
                 "reset": "Reset factory settings"
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "Aanbevolen updates",
+                "tooltip": "Aanbevolen stuurprogramma-updates zorgen ervoor dat uw computer optimaal blijft werken."
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Windows-updates",
+                "url": "Windows-instellingen"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Ondersteuningswebsite van Lenovo"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "Welkom bij het gebruik van System Update.",
+            "title": "Een bijgewerkt systeem is een gezond systeem.",
+            "last": "Laatst bijgewerkt op",
+            "next": "Volgende bijgewerkte scan is gepland op",
+            "checkButton": "CONTROLEREN OP UPDATES ",
+            "checking": "Zoeken naar updates",
+            "downloading": "Updates downloaden",
+            "installing": "Updates installeren",
+            "percent": "% voltooid",
+            "cancelCheck": "Controle annuleren",
+            "cancelUpdates": "UPDATES ANNULEREN",
+            "available": "Beschikbare updates",
+            "description": "Dit zijn pakketten met updates van stuurprogramma's en andere systeemprogramma's die onmisbaar zijn voor een juiste werking van uw computer. Essentiële updates zijn tevens belangrijk voor de bescherming van de gegevens die op uw computer zijn opgeslagen; ze moeten worden geïnstalleerd zodra ze beschikbaar zijn. Het niet installeren van deze pakketten kan leiden tot verlies van gegevens, een onjuiste werking van het systeem of storingen in de hardware.",
+            "installButton": "ALLE UPDATES INSTALLEREN",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Alle updates juist zijn geïnstalleerd",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Enkele updates zijn niet juist geïnstalleerd.",
+                    "description": "Er is iets misgegaan tijdens het downloaden of installeren van deze updates. Zorg dat u online bent en zet de computer niet uit wanneer u updates installeert."
                 }
             },
             "smartAssist": {
@@ -829,33 +829,36 @@
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend"
+            "rebootRequired": "Opnieuw opstarten vereist",
+            "failReason": "Reden van mislukking: de netvoedingsadapter is niet aangesloten op uw computer. ",
+            "manufacturer": "Fabrikant: ",
+            "version": "Versie: ",
+            "installVersion": "Geïnstalleerde versie: ",
+            "downloadSize": "Downloadgrootte: ",
+            "diskSpaceNeeded": "Benodigde schijfruimte: ",
+            "ignore": "Negeren",
+            "attend": "Bijwonen",
+            "rebootRequiredTag": "Opnieuw opstarten vereist",
+            "rebootDelayTag": "Opnieuw opstarten vereist, voedingsbron vereist",
+            "shutdownRequiredTag": "Moet worden uitgeschakeld"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "Beschikbare updates",
+            "description": "Deze pakketten bevatten updates die essentieel zijn voor de juiste werking van uw computer. Essentiële updates zorgen ervoor dat uw computer veiliger en betrouwbaarder blijft; ze moeten worden geïnstalleerd zodra ze beschikbaar zijn. Aanbevolen updates en optionele updates zorgen ervoor dat uw software up-to-date blijft en dat de computer optimaal werkt.",
+            "installAllUpdates": "Alle updates installeren",
+            "installSuccessHeader": "Alle updates zijn juist geïnstalleerd",
+            "installFailHeader": "Enkele updates zijn niet juist geïnstalleerd",
+            "installFailDescription": "Er is iets misgegaan tijdens het downloaden en installeren van deze updates. Zorg dat u online bent en zet de computer niet uit wanneer u updates installeert.",
+            "optionalUpdates": "Optionele updates",
+            "installSelectedUpdates": "Geselecteerd updates installeren"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "Naam",
+            "sortByDate": "Sorteren op datum",
+            "packageSize": "Pakketgrootte:",
+            "releaseDate": "Releasedatum:",
+            "showAll": "Alles weergeven",
+            "noInstallationHistory": "Er is geen installatiegeschiedenis beschikbaar"
         }
     },
     "homeSecurity": {
@@ -915,9 +918,9 @@
             "copyright": "© 2002-2019 Lenovo alle rechten voorbehouden"
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "Categorieën",
+            "categoriesDesc": "Nuttige informatie zoeken in onze artikelen.",
+            "seeArticles": "ARTIKELEN BEKIJKEN"
         }
     },
     "security": {
@@ -1113,7 +1116,7 @@
             "whatIsPmNotInstalled": "De veiligste en eenvoudigste manier om sterke, complexe wachtwoorden op te slaan en u direct aan te melden bij elke website.",
             "whatIsPmInstalled": "Er wacht u een veiliger digitaal leven: voeg wachtwoorden toe, schakel darkweb-bewaking in en laat persoonlijke en betalingsgegevens automatisch invullen.",
             "startProtect": "Beveilig uw online accounts op de makkelijke manier.",
-            "discount": "Lenovo-gebruikers genieten van een exclusieve 6 maanden gratis Dashlane Premium.",
+            "discount": "Lenovo-gebruikers genieten van een exclusieve korting van 50% op Dashlane Premium.",
             "offer": "Deze aanbieding geldt alleen voor nieuwe Dashlane-gebruikers.",
             "getDashLane": "Dashlane downloaden",
             "learnMoreAbout": "<tag>Meer informatie</tag> over hoe u Dashlane optimaal gebruikt",

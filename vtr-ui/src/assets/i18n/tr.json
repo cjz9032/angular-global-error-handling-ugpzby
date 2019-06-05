@@ -696,48 +696,48 @@
                         }
                     }
                 },
-				"intelligentMedia": {
-					"heading": "Intelligent Media",
-					"title": "Zero Touch Video Playback",
-					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
-				}
+                "intelligentMedia": {
+                    "heading": "Intelligent Media",
+                    "title": "Zero Touch Video Playback",
+                    "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+                    "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "Sistem Güncellemeleri",
+        "back": "GERİ",
+        "history": "TAM GEÇMİŞ",
+        "notAvailable": "Kullanılamaz",
+        "notInstalled": "Kurulu Değil",
+        "criticalUpdates": "Kritik Güncellemeler",
+        "recommendedUpdates": "Önerilen Güncellemeler",
+        "optionalUpdates": "İsteğe Bağlı Güncellemeler",
+        "ignoredUpdates": "Yoksayılan Güncellemeler",
+        "successInstall": "Başarılı yükleme tarihi",
+        "failedInstall": "Başarısız yükleme tarihi",
+        "at": "saat",
+        "readMore": "Okumaya devam edin",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
-            "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "reboot": "Yn Ykl",
+            "shutdown": "Kapat",
+            "rebootForceMsg": "Seçtiğiniz güncellemelerin kurulumundan sonra sistem otomatik olarak yeniden yüklenecektir.",
+            "shutdownForceMsg": "Seçtiğiniz güncellemelerin kurulumundan sonra sistem otomatik olarak kapanacaktır.",
+            "rebootDelayedMsg": "Seçtiğiniz güncellemelerin kurulumundan sonra sistem yeniden yüklenecektir. Güncellemelerin kurulumu sırasında lütfen sisteminizi kapatmayın, güç kaynağını veya aksesuarları çıkarmayın. Sisteminizi yeniden yüklemeye hazırlanmak için çalışmanızı kaydetmenizi öneririz.",
+            "rebootRequiredMsg": "Güncellemelerin başarıyla yüklenmesi için sistemin yeniden yüklenip her şeyin güvenli ve sorunsuz bir şekilde çalıştığından emin olunması gerekir.",
+            "okayButton": "TAMAM",
+            "cancelButton": "İptal",
+            "rebootButton": "ŞİMDİ YENİDEN YÜKLE",
+            "dismissButton": "İPTAL ET",
+            "rebootPending": "Yeniden yükleme bekletiliyor"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Otomatik güncelleme ayarları",
+            "subtitle": "GÜNCELLEMELERİ OTOMATİK OLARAK YÜKLE",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Kritik Güncellemeler",
+                "tooltip": "Kritik güncellemeler önemli sorunları, ciddi hataları, donanım arızalarını veya veri bozulmasını önler."
             },
             "camera": {
                 "title": "Camera",
@@ -745,37 +745,37 @@
                 "reset": "Reset factory settings"
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "Önerilen Güncellemeler",
+                "tooltip": "Önerilen sürücü güncellemeleri bilgisayarınızın en iyi performansla çalışmasını sağlar."
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Windows Güncellemeleri",
+                "url": "Windows Ayarları"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Lenovo Destek web sitesi"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "System Update'i kullanmaya hoş geldiniz.",
+            "title": "Güncel bir sistem, sağlıklı sistemdir.",
+            "last": "Son güncelleme tarihi:",
+            "next": "Zamanlanan bir sonraki güncellenmiş tarama",
+            "checkButton": "GÜNCELLEMELERİ DENETLE ",
+            "checking": "Güncellemeler denetleniyor",
+            "downloading": "Güncellemeler indiriliyor",
+            "installing": "Güncellemeler yükleniyor",
+            "percent": "% tamamlandı",
+            "cancelCheck": "Denetlemeyi iptal et",
+            "cancelUpdates": "GÜNCELLEMELERİ İPTAL ET",
+            "available": "Mevcut güncellemeler",
+            "description": "Bu paketler, bilgisayarınızın doğru şekilde çalışması için kritik önem taşıyan donanım sürücülerine ve diğer sistem yardımcı programlarına ilişkin güncellemeleri içerir. Kritik güncellemeler aynı zamanda bilgisayarınızdaki verileri korumak için de önemlidir ve yayınlandıklarında yüklenmelidir. Bu paketlerin yüklenmemesi veri kaybına, sistem hatasına ya da donanım arızasına neden olabilir.",
+            "installButton": "TÜM GÜNCELLEMELERİ YÜKLE",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Tüm Güncellemeler doğru bir şekilde yüklendi",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Bazı güncellemeler doğru bir şekilde yüklenmedi.",
+                    "description": "Bu güncellemeleri indirme veya yükleme işlemi sırasında bir sorun oluştu. Lütfen güncellemeleri yüklerken çevrimiçi olduğunuzdan emin olun ve bilgisayarınızı kapatmayın."
                 }
             },
             "smartAssist": {
@@ -829,33 +829,36 @@
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend"
+            "rebootRequired": "Yeniden yükleme gerekli",
+            "failReason": "Başarısız olma nedeni: AC güç bağdaştırıcısı bilgisayarınıza takılı değildi. ",
+            "manufacturer": "Üretici: ",
+            "version": "Sürüm: ",
+            "installVersion": "Kurulu sürüm: ",
+            "downloadSize": "İndirme boyutu: ",
+            "diskSpaceNeeded": "Gereken disk alanı: ",
+            "ignore": "Yoksay",
+            "attend": "Katıl",
+            "rebootRequiredTag": "Yeniden Yükleme Gerekli",
+            "rebootDelayTag": "Yeniden Yükleme Gerekli, Güç Kaynağı Gerekli",
+            "shutdownRequiredTag": "Kapatılması Gerekiyor"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "Mevcut güncellemeler",
+            "description": "Bu paketler, bilgisayarınızın doğru çalışması için kritik olan güncellemeler içerir. Kritik güncellemeler, bilgisayarınızın daha güvenli ve güvenilir kalmasına yardımcı olur ve yayınlandıklarında yüklenmeleri gerekir. Önerilen güncellemeler ve isteğe bağlı güncellemeler, yazılımınızın güncel kalmasına ve bilgisayarınızın en iyi şekilde çalışmasına yardımcı olur.",
+            "installAllUpdates": "Tüm güncellemeleri yükle",
+            "installSuccessHeader": "Tüm güncellemeler doğru bir şekilde yüklendi",
+            "installFailHeader": "Bazı güncellemeler doğru bir şekilde yüklenmedi",
+            "installFailDescription": "Bu güncellemeleri indirme ve yükleme işlemi sırasında bir sorun oluştu. Lütfen güncellemeleri yüklerken çevrimiçi olduğunuzdan emin olun ve bilgisayarınızı kapatmayın.",
+            "optionalUpdates": "İsteğe bağlı güncellemeler",
+            "installSelectedUpdates": "Seçili güncellemeleri yükle"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "Ad",
+            "sortByDate": "Tarihe Göre Sırala",
+            "packageSize": "Paket Boyutu:",
+            "releaseDate": "Yayınlama Tarihi:",
+            "showAll": "Tümünü Göster",
+            "noInstallationHistory": "Kurulum geçmişi yok"
         }
     },
     "homeSecurity": {
@@ -915,9 +918,9 @@
             "copyright": "© 2002-2019 Lenovo. Her hakkı saklıdır."
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "Kategoriler",
+            "categoriesDesc": "Makalelerimizde faydalı bilgiler bulun.",
+            "seeArticles": "MAKALELERİ GÖSTER"
         }
     },
     "security": {
@@ -1113,7 +1116,7 @@
             "whatIsPmNotInstalled": "Güçlü, karmaşık parolaları kaydetmenin ve her sitede anında oturum açmanın en güvenli, en kolay yolu.",
             "whatIsPmInstalled": "Daha güvenli bir dijital yaşam sizi bekliyor: Parola ekleyin, Karanlık Ağ İzleme özelliğini etkinleştirin, kişisel bilgileri ve ödeme bilgilerini otomatik olarak doldurun.",
             "startProtect": "Çevrimiçi hesaplarınızı basit bir şekilde korumaya başlayın.",
-            "discount": "Lenovo kullanıcıları, özel 6 aylık ücretsiz Dashlane Premium teklifinden yararlanabilir.",
+            "discount": "Lenovo kullanıcıları, Dashlane Premium'da %50 indirim özel teklifinden yararlanabilir.",
             "offer": "Bu teklif yalnızca yeni Dashlane kullanıcıları için geçerlidir!",
             "getDashLane": "Dashlane'i Edinin",
             "learnMoreAbout": "Dashlane'den en iyi şekilde yararlanma hakkında <tag>daha fazla bilgi edinin</tag>",

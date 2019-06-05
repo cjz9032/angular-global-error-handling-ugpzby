@@ -696,48 +696,48 @@
                         }
                     }
                 },
-				"intelligentMedia": {
-					"heading": "Intelligent Media",
-					"title": "Zero Touch Video Playback",
-					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
-				}
+                "intelligentMedia": {
+                    "heading": "Intelligent Media",
+                    "title": "Zero Touch Video Playback",
+                    "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+                    "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                }
             }
         }
     },
     "systemUpdates": {
         "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "back": "חזרה",
+        "history": "ההיסטוריה המלאה",
+        "notAvailable": "לא זמין",
+        "notInstalled": "לא מותקן",
+        "criticalUpdates": "עדכונים קריטיים",
+        "recommendedUpdates": "עדכונים מומלצים",
+        "optionalUpdates": "עדכונים אופציונליים",
+        "ignoredUpdates": "עדכונים שהמערכת התעלמה מהם",
+        "successInstall": "הותקן בהצלחה בתאריך",
+        "failedInstall": "ההתקנה נכשלה בתאריך",
+        "at": "אל",
+        "readMore": "פרטים נוספים",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
-            "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "reboot": "הפעלה מחדש",
+            "shutdown": "כיבוי",
+            "rebootForceMsg": "העדכון (או העדכונים) שנבחר יגרום להפעלה מחדש של המערכת באופן אוטומטי לאחר ההתקנה.",
+            "shutdownForceMsg": "העדכון (או העדכונים) שנבחר יגרום לכיבוי המערכת באופן אוטומטי לאחר ההתקנה.",
+            "rebootDelayedMsg": "העדכונים שבחרתם יגרמו לאתחול מחדש של המערכת לאחר ההתקנה, במהלך התקנת העדכונים, נא לא לכבות את המערכת ולא להסיר את מקור המתח או עזרים אחרים. אנו ממליצים לשמור על העבודה שלכם לפני אתחול המערכת.",
+            "rebootRequiredMsg": "כדי להתקין בהצלחה את העדכונים, נדרשת הפעלה מחדש של המחשב כדי לוודא שהכל פועל בצורה בטוחה וחלקה.",
+            "okayButton": "אישור",
+            "cancelButton": "ביטול",
+            "rebootButton": "הפעל מחדש כעת",
+            "dismissButton": "התעלמות",
+            "rebootPending": "הפעלה מחדש בהמתנה"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "הגדרות עדכון אוטומטי",
+            "subtitle": "התקנת עדכונים באופן אוטומטי",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "עדכונים קריטיים",
+                "tooltip": "עדכונים קריטיים יכולים למנוע בעיות מהותיות, תקלות רציניות, כשלים בחומרה או פגיעה בנתונים."
             },
             "camera": {
                 "title": "Camera",
@@ -745,37 +745,37 @@
                 "reset": "Reset factory settings"
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "עדכונים מומלצים",
+                "tooltip": "עדכונים מומלצים למנהלי התקנים שומרים על ביצועים אופטימליים של המחשב."
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "עדכוני Windows",
+                "url": "הגדרות Windows"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "אתר התמיכה של Lenovo"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "ברוכים הבאים לשימוש ב-System Update.",
+            "title": "מערכת עדכנית היא מערכת תקינה.",
+            "last": "העדכון האחרון נעשה ב-",
+            "next": "חיפוש העדכונים הבא נקבע לתאריך",
+            "checkButton": "חיפוש עדכונים ",
+            "checking": "חיפוש עדכונים",
+            "downloading": "הורדת עדכונים",
+            "installing": "מתקין עדכונים",
+            "percent": "% הושלם",
+            "cancelCheck": "ביטול חיפוש",
+            "cancelUpdates": "ביטול עדכונים",
+            "available": "עדכונים זמינים",
+            "description": "חבילות אלו כוללות עדכוני מנהלי התקנים של חומרה וכלי מערכת אחרים החיוניים לפעולתו התקינה של המחשב. לעדכונים חיוניים יש חשיבות גם מבחינת שמירה על הגנת המידע במחשב, ומומלץ להתקינם מיד לאחר שהם נעשים זמינים. אם לא מתקינים את העדכונים הקריטיים האלה, יש סכנה גדולה יותר של אובדן נתונים, תקלה משמעותית במערכת או כשל חומרה.",
+            "installButton": "התקנת כל העדכונים",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "כל העדכונים הותקנו כראוי",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "עדכונים מסוימים לא הותקנו כראוי.",
+                    "description": "משהו השתבש במהלך ההורדה או ההתקנה של עדכונים אלה. ודאו שאתם נמצאים במצב מקוון ואל תכבו את המחשב בעת התקנת העדכונים."
                 }
             },
             "smartAssist": {
@@ -829,33 +829,36 @@
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend"
+            "rebootRequired": "נדרשת הפעלה מחדש",
+            "failReason": "סיבת הכישלון: מתאם מתח ה-AC לא היה מחובר למחשב. ",
+            "manufacturer": "יצרן: ",
+            "version": "גרסה: ",
+            "installVersion": "גרסה מותקנת: ",
+            "downloadSize": "גודל הורדה: ",
+            "diskSpaceNeeded": "שטח נדרש בדיסק: ",
+            "ignore": "התעלם",
+            "attend": "השתתפו",
+            "rebootRequiredTag": "נדרשת הפעלה מחדש",
+            "rebootDelayTag": "נדרש אתחול מחדש, יש צורך במקור מתח",
+            "shutdownRequiredTag": "נדרש כיבוי‬‏‫"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "עדכונים זמינים",
+            "description": "חבילות אלה כוללות עדכונים החיוניים לפעולתו התקינה של המחשב. עדכונים קריטיים עוזרים לשמור על המחשב מאובטח ואמין יותר, ויש להתקינם מייד כאשר הם נעשים זמינים. עדכונים מומלצים ועדכונים אופציונליים עוזרים לשמור על עדכניות התוכנה, והמחשב פועל במיטבו.",
+            "installAllUpdates": "התקנת כל העדכונים",
+            "installSuccessHeader": "כל העדכונים הותקנו כראוי",
+            "installFailHeader": "עדכונים מסוימים לא הותקנו כראוי",
+            "installFailDescription": "משהו השתבש במהלך ההורדה וההתקנה של עדכונים אלה. ודאו שאתם נמצאים במצב מקוון ואל תכבו את המחשב בעת התקנת העדכונים.",
+            "optionalUpdates": "עדכונים אופציונליים",
+            "installSelectedUpdates": "התקנת עדכונים שנבחרו"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "שם",
+            "sortByDate": "מיון לפי תאריך",
+            "packageSize": "גודל חבילה:",
+            "releaseDate": "תאריך הפצה:",
+            "showAll": "הצגת הכל",
+            "noInstallationHistory": "היסטוריית ההתקנות אינה זמינה"
         }
     },
     "homeSecurity": {
@@ -915,9 +918,9 @@
             "copyright": "© 2002-2019 Lenovo all rights reserved"
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "קטגוריות",
+            "categoriesDesc": "מצאו מידע מועיל במאמרים שלנו.",
+            "seeArticles": "צפייה במאמרים"
         }
     },
     "security": {
@@ -1113,7 +1116,7 @@
             "whatIsPmNotInstalled": "הדרך הבטוחה והקלה ביותר לשמירת סיסמאות חזקות ומורכבות ולכניסה מיידית בכל אתר.",
             "whatIsPmInstalled": "חיים דיגיטליים בטוחים יותר ממתינים לכם: הוספת סיסמאות, הפעלת 'ניטור הרשת האפלה' ומילוי אוטומטי של פרטים אישיים ופרטי תשלום.",
             "startProtect": "התחילו להגן על החשבונות המקוונים שלכם בדרך הפשוטה.",
-            "discount": "משתמשי Lenovo נהנים מהטבה בלעדית של 6 חודשי Dashlane פרימיום ללא עלות.",
+            "discount": "משתמשי Lenovo נהנים מהטבה בלעדית של 50% הנחה על Dashlane פרימיום.",
             "offer": "ההצעה זמינה למשתמשי Dashlane חדשים בלבד!",
             "getDashLane": "רכישת Dashlane",
             "learnMoreAbout": "<tag>למדו עוד</tag> כיצד להפיק את המרב מ-Dashlane",

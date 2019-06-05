@@ -696,48 +696,48 @@
                         }
                     }
                 },
-				"intelligentMedia": {
-					"heading": "Intelligent Media",
-					"title": "Zero Touch Video Playback",
-					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
-				}
+                "intelligentMedia": {
+                    "heading": "Intelligent Media",
+                    "title": "Zero Touch Video Playback",
+                    "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+                    "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "System Update",
+        "back": "EDELLINEN",
+        "history": "KOKO HISTORIA",
+        "notAvailable": "Ei käytettävissä",
+        "notInstalled": "Ei asennettu",
+        "criticalUpdates": "Välttämättömät päivitykset",
+        "recommendedUpdates": "Suositeltavat päivitykset",
+        "optionalUpdates": "Valinnaiset päivitykset",
+        "ignoredUpdates": "Huomiotta jätetyt päivitykset",
+        "successInstall": "Asennus onnistui kohteeseen",
+        "failedInstall": "Asennus epäonnistui kohteeseen",
+        "at": "klo",
+        "readMore": "Lue lisää",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+            "reboot": "Käynnistä uudelleen",
+            "shutdown": "Sammutus",
+            "rebootForceMsg": "Valitsemasi päivitykset aiheuttavat sen, että asennuksen jälkeen järjestelmä käynnistetään uudelleen automaattisesti.",
+            "shutdownForceMsg": "Valitsemasi päivitykset aiheuttavat sen, että asennuksen jälkeen järjestelmä sammutetaan automaattisesti.",
+            "rebootDelayedMsg": "Valitsemasi päivitykset aiheuttavat sen, että järjestelmä käynnistetään uudelleen asennuksen jälkeen. Älä katkaise järjestelmän virtaa tai poista virtalähdettä tai lisävarusteita päivitysten asennuksen aikana. Suosittelemme tallentamaan työt, jotta järjestelmä voidaan valmistella uudelleenkäynnistymistä varten.",
+            "rebootRequiredMsg": "Jotta päivitysten asennus onnistuisi, tietokone on käynnistettävä uudelleen, jotta kaikki toimii turvallisesti ja sujuvasti.",
             "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "cancelButton": "Peruuta",
+            "rebootButton": "KÄYNNISTÄ UUDELLEEN NYT",
+            "dismissButton": "HYLKÄÄ",
+            "rebootPending": "Uudelleenkäynnistys on meneillään"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Automaattisten päivitysten asetukset",
+            "subtitle": "ASENNA PÄIVITYKSET AUTOMAATTISESTI",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Välttämättömät päivitykset",
+                "tooltip": "Välttämättömät päivitykset estävät merkittävien ongelmien, vakavien toimintahäiriöiden ja laitteistohäiriöiden syntymisen sekä tietojen vahingoittumisen."
             },
             "camera": {
                 "title": "Camera",
@@ -745,37 +745,37 @@
                 "reset": "Reset factory settings"
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "Suositeltavat päivitykset",
+                "tooltip": "Suositeltavat ohjainpäivitykset varmistavat, että tietokone toimii optimaalisella tavalla."
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Windows-päivitykset",
+                "url": "Windowsin asetukset"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Lenovon tukisivusto"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "Tervetuloa käyttämään System Update -ohjelmaa.",
+            "title": "Ajan tasalla oleva järjestelmä on terve järjestelmä.",
+            "last": "Edellisen kerran päivitetty",
+            "next": "Seuraava päivitysten tarkistusajankohta on",
+            "checkButton": "TARKISTA PÄIVITYKSET ",
+            "checking": "Tarkistetaan päivityksiä",
+            "downloading": "Päivitysten nouto on meneillään",
+            "installing": "Päivityksiä asennetaan",
+            "percent": "% valmiina",
+            "cancelCheck": "Peruuta tarkistus",
+            "cancelUpdates": "PERUUTA PÄIVITYKSET",
+            "available": "Saatavilla olevat päivitykset",
+            "description": "Näissä paketeissa on päivityksiä laitteisto-ohjaimiin ja järjestelmätoimintoihin, jotka ovat välttämättömiä tietokoneesi toiminnan kannalta. Välttämättömät päivitykset ovat tärkeitä myös tietokoneen tietojen suojauksessa, ja välttämättömät päivitykset pitäisi asentaa heti, kun ne ovat käytettävissä. Näiden pakettien asentamatta jättäminen saattaa johtaa tietojen menetykseen, järjestelmän toimintahäiriöön tai laitteistohäiriöön.",
+            "installButton": "ASENNA KAIKKI PÄIVITYKSET",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Kaikki päivitykset asennettiin oikein",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Joidenkin päivitysten asennus ei onnistunut.",
+                    "description": "Jokin meni vikaan näiden päivitysten latauksen tai asennuksen aikana. Varmista, että laite on verkkoyhteydessä äläkä katkaise tietokoneesta virtaa, kun asennat päivityksiä."
                 }
             },
             "smartAssist": {
@@ -829,33 +829,36 @@
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend"
+            "rebootRequired": "Tietokone on käynnistettävä uudelleen",
+            "failReason": "Epäonnistumisen syy: Verkkolaite ei ollut kytkettynä tietokoneeseen. ",
+            "manufacturer": "Valmistaja: ",
+            "version": "Versio: ",
+            "installVersion": "Asennettu versio: ",
+            "downloadSize": "Latauksen koko: ",
+            "diskSpaceNeeded": "Tarvittava levytila: ",
+            "ignore": "Ohita",
+            "attend": "Osallistu",
+            "rebootRequiredTag": "Tietokone on käynnistettävä uudelleen",
+            "rebootDelayTag": "Uudelleenkäynnistys vaaditaan, virtalähde vaaditaan",
+            "shutdownRequiredTag": "Laite on sammutettava"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "Saatavilla olevat päivitykset",
+            "description": "Nämä paketit sisältävät päivityksiä, jotka ovat tärkeitä tietokoneen oikean toiminnan kannalta. Välttämättömät päivitykset auttavat pitämään tietokoneen suojattuna ja luotettavina, ja ne tulee asentaa heti, kun ne ovat käytettävissä. Suositeltujen päivitysten ja valinnaisten päivitysten avulla ohjelmisto pysyy ajan tasalla ja tietokone toimii parhaimmillaan.",
+            "installAllUpdates": "Asenna kaikki päivitykset",
+            "installSuccessHeader": "Kaikki päivitykset asennettiin oikein",
+            "installFailHeader": "Joidenkin päivitysten asennus ei onnistunut",
+            "installFailDescription": "Jokin meni vikaan näiden päivitysten latauksen ja asennuksen aikana. Varmista, että laite on verkkoyhteydessä äläkä katkaise tietokoneesta virtaa, kun asennat päivityksiä.",
+            "optionalUpdates": "Valinnaiset päivitykset",
+            "installSelectedUpdates": "Asenna valitut päivitykset"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "Nimi",
+            "sortByDate": "Lajittele päivämäärän mukaan",
+            "packageSize": "Paketin koko:",
+            "releaseDate": "Julkaisupäivämäärä:",
+            "showAll": "Näytä kaikki",
+            "noInstallationHistory": "Asennushistoriaa ei ole saatavana"
         }
     },
     "homeSecurity": {
@@ -915,9 +918,9 @@
             "copyright": "© 2002-2019 Lenovo kaikki oikeudet pidätetään"
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "Luokat",
+            "categoriesDesc": "Hyödyllisten tietojen haku artikkeleistamme.",
+            "seeArticles": "KATSO ARTIKKELIT"
         }
     },
     "security": {
@@ -1113,7 +1116,7 @@
             "whatIsPmNotInstalled": "Turvallisin ja helpoin tapa tallentaa vahvoja, monimutkaisia salasanoja ja kirjautua hetkessä jokaiselle sivustolle.",
             "whatIsPmInstalled": "Turvallisempi digitaalinen elämä odottaa: Lisää salasanoja, ota käyttöön pimeän verkon valvonta ja täytä automaattisesti henkilökohtaisia ja maksutietoja.",
             "startProtect": "Aloita verkkotiliesi suojaus yksinkertaisella tavalla.",
-            "discount": "Lenovon käyttäjät saavat erityisetuna Dashlane Premium -palvelun käyttöönsä ilmaiseksi kuuden kuukauden ajaksi.",
+            "discount": "Lenovon käyttäjät saavat erityisetuna Dashlane Premium -palvelun käyttöönsä 50 %:n alennuksella.",
             "offer": "Tarjous on saatavilla on vain uusille Dashlanen käyttäjille!",
             "getDashLane": "Hanki Dashlane",
             "learnMoreAbout": "<tag>Lue lisää</tag> Dashlanen hyödyntämisestä",

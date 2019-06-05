@@ -484,12 +484,11 @@
                             "enable": "启用",
                             "cancel": "取消"
                         },
-						"options": {
+                        "options": {
                             "start": "下面开始充电",
                             "checkboxText": "自动设置以'％charge'开始，'停止充电％'低于5％",
-							"stop": "停止充电"
-							
-						}
+                            "stop": "停止充电"
+                        }
                     },
                     "expressCharging": {
                         "title": "快速充电",
@@ -606,25 +605,25 @@
                         }
                     },
                     "dispColorTemp": {
-						"title": "Display color temperature",
-						"options": {
-							"warm": "Warm (Better for eyes)",
-							"cold": "Cold"
-						},
-						"reset": "Reset temperature",
-						"tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
-						"note": {
-							"title": "Note",
-							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
-						}
-					},
-					"privacyGuard": {
-						"title": "Privacy guard",
-						"description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
-						"note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
-						"labelText": "Enable this feature when typing passwords"
-					}
+                        "title": "Display color temperature",
+                        "options": {
+                            "warm": "Warm (Better for eyes)",
+                            "cold": "Cold"
+                        },
+                        "reset": "Reset temperature",
+                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
+                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "note": {
+                            "title": "Note",
+                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                        }
+                    },
+                    "privacyGuard": {
+                        "title": "Privacy guard",
+                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
+                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
+                        "labelText": "Enable this feature when typing passwords"
+                    }
                 },
                 "camera": {
                     "title": "摄像头",
@@ -734,12 +733,12 @@
                         }
                     }
                 },
-				"intelligentMedia": {
-					"heading": "Intelligent Media",
-					"title": "Zero Touch Video Playback",
-					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
-				}
+                "intelligentMedia": {
+                    "heading": "Intelligent Media",
+                    "title": "Zero Touch Video Playback",
+                    "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+                    "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                }
             }
         }
     },
@@ -747,28 +746,28 @@
         "title": "系统更新",
         "back": "返回",
         "history": "完整历史记录",
-        "notAvailable": "无法使用",
+        "notAvailable": "不可用",
         "notInstalled": "未安装",
         "criticalUpdates": "关键更新",
         "recommendedUpdates": "推荐更新",
         "optionalUpdates": "可选更新",
-        "ignoredUpdates": "忽略的更新",
-        "successInstall": "已成功安装",
-        "failedInstall": "无法安装",
+        "ignoredUpdates": "已忽略的更新",
+        "successInstall": "安装成功",
+        "failedInstall": "安装失败",
         "at": "在",
-        "readMore": "Read more",
+        "readMore": "阅读更多信息",
         "popup": {
-            "reboot": "重启",
-            "shutdown": "关掉",
-            "rebootForceMsg": "您选择的更新将导致系统在安装后自动重新启动。",
-            "shutdownForceMsg": "您选择的更新将导致系统在安装后自动关闭。",
-            "rebootDelayedMsg": "您选择的更新将导致系统在安装后重新启动，在安装更新期间，请不要关闭系统，卸下电源或附件。我们建议您保存工作以准备重新启动系统。",
-            "rebootRequiredMsg": "为了成功安装更新，您的计算机需要重新启动才能确保一切运行安全，顺畅。",
-            "okayButton": "好",
+            "reboot": "重新引导",
+            "shutdown": "关机",
+            "rebootForceMsg": "所选更新将导致系统在安装后自动重新引导。",
+            "shutdownForceMsg": "所选更新将导致系统在安装后自动关机。",
+            "rebootDelayedMsg": "安装所选更新后，系统将重新引导，在安装更新的过程中，请勿关闭系统、断开电源或移除附件。我们建议保存您的工作以便为系统重新引导做好准备。",
+            "rebootRequiredMsg": "要成功安装更新，您的计算机需要重新引导以确保所有内容运行得更快、更顺畅。",
+            "okayButton": "确定",
             "cancelButton": "取消",
-            "rebootButton": "马上重启",
-            "dismissButton": "解雇",
-            "rebootPending": "重新启动等待"
+            "rebootButton": "立即重新引导",
+            "dismissButton": "取消",
+            "rebootPending": "重新引导暂挂"
         },
         "autoUpdateSettings": {
             "title": "自动更新设置",
@@ -787,62 +786,62 @@
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Lenovo 支持网站"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "​保持最新状态的系统才是健康的系统。",
+            "neverChecked": "欢迎使用 System Update。",
+            "title": "保持最新状态的系统才是健康的系统。",
             "last": "上次更新时间为",
             "next": "下次更新扫描计划时间：",
             "checkButton": "检查更新",
             "checking": "正在检查更新",
-            "downloading": "下载更新完成",
+            "downloading": "正在下载更新",
             "installing": "正在安装更新",
             "percent": "% 已完成",
             "cancelCheck": "取消检查",
             "cancelUpdates": "取消更新",
             "available": "可用更新",
-            "description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。关键更新对保护计算机上的数据来说也很重要，一旦可用就应该尽快安装。未能安装这些软件包可能会导致数据丢失、系统故障或硬件故障",
+            "description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。关键更新对保护计算机上的数据来说也很重要，一旦可用就应该尽快安装。安装这些软件包失败可能会导致数据丢失、系统故障或硬件故障。",
             "installButton": "安装所有更新",
             "result": {
-                "success": "所有更新都已正确安装",
+                "success": "已正确安装所有更新",
                 "fail": {
                     "title": "某些更新未正确安装。",
-                    "description": "在下载或安装这些更新期间出现问题。请确保您在线，并且在安装更新时不要关闭计算机。"
+                    "description": "下载或安装这些更新的过程中发生了问题。请确保您处于在线状态，且安装更新的过程中不要关闭计算机。"
                 }
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend",
-            "rebootRequiredTag": "Reboot Required",
-            "rebootDelayTag": "Reboot Required, Power Source Required",
-            "shutdownRequiredTag": "Shutdown Required"
+            "rebootRequired": "需要重启",
+            "failReason": "失败原因：交流电源适配器未连接到您的计算机。",
+            "manufacturer": "制造商：",
+            "version": "版本：",
+            "installVersion": "已安装的版本：",
+            "downloadSize": "下载大小：",
+            "diskSpaceNeeded": "需要的磁盘空间：",
+            "ignore": "忽略",
+            "attend": "处理",
+            "rebootRequiredTag": "需要重新引导",
+            "rebootDelayTag": "需要重新引导，需要电源",
+            "shutdownRequiredTag": "需要关机"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "可用更新",
+            "description": "这些软件包包含对计算机的正常运行至关重要的更新。关键更新有助于使您的计算机更安全、更可靠，一旦可用就应该尽快安装。推荐更新和可选更新有助于使您的软件保持最新，以及使您的计算机保持最佳运行状态。",
+            "installAllUpdates": "安装所有更新",
+            "installSuccessHeader": "已正确安装所有更新",
+            "installFailHeader": "某些更新未正确安装",
+            "installFailDescription": "下载和安装这些更新的过程中发生了问题。请确保您处于在线状态，且安装更新的过程中不要关闭计算机。",
+            "optionalUpdates": "可选更新",
+            "installSelectedUpdates": "安装所选更新"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "名称",
+            "sortByDate": "按日期排序",
+            "packageSize": "包大小：",
+            "releaseDate": "发布日期：",
+            "showAll": "显示所有",
+            "noInstallationHistory": "无安装历史记录"
         }
     },
     "homeSecurity": {
@@ -902,9 +901,9 @@
             "copyright": "© 2002-2019 Lenovo All Rights Reserved"
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "类别",
+            "categoriesDesc": "在我们的文章中查找有用的信息。",
+            "seeArticles": "查看文章"
         }
     },
     "security": {
@@ -1101,7 +1100,7 @@
             "whatIsPmNotInstalled": "提供保存高强度复杂密码和即时登录到每个站点的最安全、简单的方式。",
             "whatIsPmInstalled": "更安全的数字生活正在向您招手：添加密码、启用暗网监控、自动填充个人和支付信息。",
             "startProtect": "开始以简单方式保护您的网上帐户。",
-            "discount": "Lenovo 用户可以专享 6 个月的免费 Dashlane 高级版。",
+            "discount": "Lenovo 用户可以专享 Dashlane 高级版五折优惠。",
             "offer": "此优惠仅面向 Dashlane 新用户！",
             "getDashLane": "获取 Dashlane",
             "learnMoreAbout": "了解充分利用 Dashlane 的<tag>更多信息</tag>",

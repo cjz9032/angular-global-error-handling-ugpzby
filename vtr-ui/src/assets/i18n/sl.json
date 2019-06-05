@@ -696,48 +696,48 @@
                         }
                     }
                 },
-				"intelligentMedia": {
-					"heading": "Intelligent Media",
-					"title": "Zero Touch Video Playback",
-					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
-				}
+                "intelligentMedia": {
+                    "heading": "Intelligent Media",
+                    "title": "Zero Touch Video Playback",
+                    "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+                    "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "Posodobitve sistema",
+        "back": "NAZAJ",
+        "history": "CELOTNA ZGODOVINA",
+        "notAvailable": "Ni na voljo.",
+        "notInstalled": "Ni nameščeno",
+        "criticalUpdates": "Nujne posodobitve",
+        "recommendedUpdates": "Priporočene posodobitve",
+        "optionalUpdates": "Izbirne posodobitve",
+        "ignoredUpdates": "Prezrte posodobitve",
+        "successInstall": "Uspešna namestitev v",
+        "failedInstall": "Neuspešna namestitev v",
+        "at": "na",
+        "readMore": "Preberite več",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
-            "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "reboot": "Znova zaženi",
+            "shutdown": "Zaustavitev",
+            "rebootForceMsg": "Posodobitve, ki ste jih izbrali, bodo povzročile samodejni ponovni zagon sistema po namestitvi.",
+            "shutdownForceMsg": "Posodobitve, ki ste jih izbrali, bodo povzročile samodejno zaustavitev sistema po namestitvi.",
+            "rebootDelayedMsg": "Izbrane posodobitve bodo povzročile ponovni zagon sistema po namestitvi, zato med nastavitvijo posodobitev ne izklapljajte sistema in ne odstranjujte vira napajanja ali dodatne opreme. Priporočamo, da shranite delo v pripravi na ponovni zagon sistema.",
+            "rebootRequiredMsg": "Če želite uspešno namestiti posodobitve, morate znova zagnati računalnik, da zagotovite, da se vse deluje varno in brez težav.",
+            "okayButton": "V redu",
+            "cancelButton": "Prekliči",
+            "rebootButton": "ZNOVA ZAŽENI ZDAJ",
+            "dismissButton": "OPUSTI",
+            "rebootPending": "Vnovičen zagon čaka"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Nastavitve samodejne posodobitve",
+            "subtitle": "SAMODEJNA NAMESTITEV POSODOBITEV",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Nujne posodobitve",
+                "tooltip": "Nujne posodobitve preprečujejo resne težave, večje okvare, okvare strojne opreme ali poškodbe podatkov."
             },
             "camera": {
                 "title": "Camera",
@@ -745,37 +745,37 @@
                 "reset": "Reset factory settings"
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "Priporočene posodobitve",
+                "tooltip": "Priporočene posodobitve gonilnikov zagotavljajo, da računalnik deluje optimalno."
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Posodobitve za Windows",
+                "url": "Nastavitve sistema Windows"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Spletno mesto za podporo Lenovo"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "Uporabite funkcijo System Update.",
+            "title": "Posodobljen sistem je zdrav sistem.",
+            "last": "Zadnja posodobitev je bila dne",
+            "next": "Naslednje načrtovano iskanje posodobitev",
+            "checkButton": "ISKANJE POSODOBITEV ",
+            "checking": "Preverite, ali so na voljo posodobitve",
+            "downloading": "Prenos posodobitev",
+            "installing": "Nameščanje posodobitev",
+            "percent": "% končano",
+            "cancelCheck": "Prekliči iskanje",
+            "cancelUpdates": "PREKLIC POSODOBITEV",
+            "available": "Razpoložljive posodobitve",
+            "description": "Ti paketi vključujejo posodobitve gonilnikov strojne opreme in druge sistemske pripomočke, ki so ključnega pomena za pravilno delovanje računalnika. Kritične posodobitve so prav tako pomembne tudi za zaščito podatkov v vašem računalniku in jih je treba namestiti, ko so na voljo. Če ne namestite teh posodobitev, lahko pride do izgube podatkov, hujše okvare sistema ali okvare strojne opreme.",
+            "installButton": "NAMESTITEV VSEH POSODOBITEV",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Vse posodobitve so bile pravilno nameščene",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Nekatere posodobitve niso bile pravilno nameščene.",
+                    "description": "Med prenosom ali namestitvijo teh posodobitev je prišlo do napake. Poskrbite, da imate vzpostavljeno povezavo in ne izklopite računalnika med nameščanjem posodobitev."
                 }
             },
             "smartAssist": {
@@ -829,33 +829,36 @@
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend"
+            "rebootRequired": "Potreben je vnovični zagon",
+            "failReason": "Vzrok za neuspeh: napajalnik ni bil priključen v računalnik. ",
+            "manufacturer": "Izdelovalec: ",
+            "version": "Različica: ",
+            "installVersion": "Nameščena različica: ",
+            "downloadSize": "Velikost prenosa: ",
+            "diskSpaceNeeded": "Potreben prostor na disku: ",
+            "ignore": "Prezri",
+            "attend": "Ukrepaj",
+            "rebootRequiredTag": "Potreben je vnovični zagon",
+            "rebootDelayTag": "Zahtevan ponovni zagon, zahtevan vir napajanja",
+            "shutdownRequiredTag": "Potrebna je zaustavitev"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "Razpoložljive posodobitve",
+            "description": "Ti paketi vključujejo posodobitve, ki so ključne za pravilno delovanje računalnika. Pomembne posodobitve pomagajo ohranjati vaš računalnik varnejši in zanesljivejši ter jih morate namestiti, ko so na voljo. Priporočene posodobitve in izbirne posodobitve pomagajo, da je vaša programska oprema posodobljena, računalnik pa deluje v najboljšem stanju.",
+            "installAllUpdates": "Namestitev vseh posodobitev",
+            "installSuccessHeader": "Vse posodobitve so bile pravilno nameščene",
+            "installFailHeader": "Nekatere posodobitve niso bile pravilno nameščene",
+            "installFailDescription": "Med prenosom in namestitvijo teh posodobitev je prišlo do napake. Poskrbite, da imate vzpostavljeno povezavo in ne izklopite računalnika med nameščanjem posodobitev.",
+            "optionalUpdates": "Izbirne posodobitve",
+            "installSelectedUpdates": "Namestitev izbranih posodobitev"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "Ime",
+            "sortByDate": "Razvrsti po datumu",
+            "packageSize": "Velikost paketa:",
+            "releaseDate": "Datum izdaje:",
+            "showAll": "Pokaži vse",
+            "noInstallationHistory": "Zgodovina namestitev ni na voljo"
         }
     },
     "homeSecurity": {
@@ -915,9 +918,9 @@
             "copyright": "© 2002–2019 Lenovo – vse pravice so pridržane"
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "Kategorije",
+            "categoriesDesc": "Poiščite koristne informacije v naših člankih.",
+            "seeArticles": "OGLED ČLANKOV"
         }
     },
     "security": {
@@ -1113,7 +1116,7 @@
             "whatIsPmNotInstalled": "Najvarnejši, najlažji način, da shranite močna, zapletena gesla in se prijavite v trenutku na vsaki strani.",
             "whatIsPmInstalled": "Varnejše digitalno življenje čaka: Dodaj gesla, omogoči Dark Web spremljanje in samodejno izpolnjevanje osebnih in plačilnih informacij.",
             "startProtect": "Začnite ščititi vaše spletne račune na preprost način.",
-            "discount": "Lenovo uporabniki uživajo izključno 6 mesecev brez Dashlane Premium.",
+            "discount": "Uporabniki Lenovo lahko izkoristijo 50-odstotni popust za Dashlane Premium.",
             "offer": "Ta ponudba je samo za nove uporabnike Dashlane!",
             "getDashLane": "Pridobijte Dashlane",
             "learnMoreAbout": "<tag>Preberite več</tag> o tem, da večina Dashlane",

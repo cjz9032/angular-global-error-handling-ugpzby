@@ -696,48 +696,48 @@
                         }
                     }
                 },
-				"intelligentMedia": {
-					"heading": "Intelligent Media",
-					"title": "Zero Touch Video Playback",
-					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
-				}
+                "intelligentMedia": {
+                    "heading": "Intelligent Media",
+                    "title": "Zero Touch Video Playback",
+                    "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+                    "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "Actualizări sistem",
+        "back": "ÎNAPOI",
+        "history": "ISTORIC COMPLET",
+        "notAvailable": "Nedisponibil",
+        "notInstalled": "Neinstalată",
+        "criticalUpdates": "Actualizări critice",
+        "recommendedUpdates": "Actualizări recomandate",
+        "optionalUpdates": "Actualizări opționale",
+        "ignoredUpdates": "Actualizări ignorate",
+        "successInstall": "Instalare cu succes în data de",
+        "failedInstall": "Instalare nereușită în data de",
+        "at": "la",
+        "readMore": "Citiți mai multe",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+            "reboot": "Repornire",
+            "shutdown": "Oprire",
+            "rebootForceMsg": "După instalare, actualizările selectate vor duce la repornirea automată a sistemului.",
+            "shutdownForceMsg": "După instalare, actualizările selectate vor duce la oprirea automată a sistemului.",
+            "rebootDelayedMsg": "După instalare, actualizările selectate vor duce la repornirea automată a sistemului. În timpul instalării actualizărilor, nu opriți sistemul și nu îndepărtați sursa de alimentare sau accesoriile. Pentru repornirea sistemului, vă recomandăm salvarea lucrărilor în curs.",
+            "rebootRequiredMsg": "Pentru a instala cu succes actualizările, computerul dvs. trebuie repornit pentru a se asigura că totul funcționează fără probleme.",
             "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "cancelButton": "Anulare",
+            "rebootButton": "REPORNIȚI ACUM",
+            "dismissButton": "RESPINGERE",
+            "rebootPending": "Repornire în așteptare"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Setări automate de actualizare",
+            "subtitle": "ACTUALIZĂRILE SE INSTALEAZĂ AUTOMAT",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Actualizări critice",
+                "tooltip": "Actualizările critice pot împiedica apariția problemelor grave, a defecțiunilor majore, a erorilor de hardware sau a deteriorării datelor."
             },
             "camera": {
                 "title": "Camera",
@@ -745,37 +745,37 @@
                 "reset": "Reset factory settings"
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "Actualizări recomandate",
+                "tooltip": "Actualizările recomandate pentru drivere permit computerului să funcționeze cu performanțe optime."
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Actualizări Windows",
+                "url": "Setări Windows"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Site-ul Web de asistență Lenovo"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "Bun venit la utilizarea System Update.",
+            "title": "Un sistem actualizat este un sistem sănătos.",
+            "last": "Ultima actualizare în",
+            "next": "Scanarea următoarei actualizări este programată pe",
+            "checkButton": "CĂUTAȚI ACTUALIZĂRI ",
+            "checking": "Se caută actualizări",
+            "downloading": "Se descarcă actualizările",
+            "installing": "Se instalează actualizările",
+            "percent": "% finalizat",
+            "cancelCheck": "Anulați căutarea",
+            "cancelUpdates": "ANULAȚI ACTUALIZĂRILE",
+            "available": "Actualizări disponibile",
+            "description": "Aceste pachete includ actualizări ale driverelor hardware și ale altor instrumente de sistem foarte importante pentru funcționarea corespunzătoare a computerului dvs. Actualizările critice sunt importante și pentru protejarea datelor de pe computerul dvs. și trebuie instalate în momentul în care devin disponibile. În cazul în care nu reușiți să instalați aceste pachete, se poate ajunge la pierderea datelor, la o defecțiune majoră a sistemului sau la o defecțiune de hardware.",
+            "installButton": "INSTALAȚI TOATE ACTUALIZĂRILE",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Toate actualizările s-au instalat corect",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Unele actualizări nu au fost instalate corect.",
+                    "description": "A apărut o problemă în timpul descărcării sau instalării acestor actualizări. Asigurați-vă că sunteți online și nu opriți computerul când instalați actualizările."
                 }
             },
             "smartAssist": {
@@ -829,33 +829,36 @@
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend"
+            "rebootRequired": "Repornire necesară",
+            "failReason": "Motivul eșuării: adaptorul de alimentare nu a fost conectat la computerul dvs. ",
+            "manufacturer": "Producător: ",
+            "version": "Versiune: ",
+            "installVersion": "Versiune instalată: ",
+            "downloadSize": "Dimensiune descărcare: ",
+            "diskSpaceNeeded": "Spațiu pe disc necesar: ",
+            "ignore": "Ignorare",
+            "attend": "Participați",
+            "rebootRequiredTag": "Repornire necesară",
+            "rebootDelayTag": "Este necesară repornirea, este necesară sursa de alimentare",
+            "shutdownRequiredTag": "Este necesară oprirea"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "Actualizări disponibile",
+            "description": "Aceste pachete includ actualizări critice pentru operarea corectă a computerului dvs. Actualizările critice vă ajută computerul să fie sigur și fiabil și ar trebui instalate pe măsură ce devin disponibile. Actualizările recomandate și cele opționale vă mențin software-ul la cea mai recentă versiune, iar computerul va oferi performanțe maxime.",
+            "installAllUpdates": "Instalați toate actualizările",
+            "installSuccessHeader": "Toate actualizările s-au instalat corect",
+            "installFailHeader": "Unele actualizări nu au fost instalate corect",
+            "installFailDescription": "A apărut o problemă în timpul descărcării și instalării acestor actualizări. Asigurați-vă că sunteți online și nu opriți computerul când instalați actualizările.",
+            "optionalUpdates": "Actualizări opționale",
+            "installSelectedUpdates": "Instalați actualizările selectate"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "Nume",
+            "sortByDate": "Sortare după dată",
+            "packageSize": "Dimensiune pachet:",
+            "releaseDate": "Data lansării:",
+            "showAll": "Afişare totală",
+            "noInstallationHistory": "Istoricul instalărilor nu este disponibil"
         }
     },
     "homeSecurity": {
@@ -915,9 +918,9 @@
             "copyright": "© 2002-2019 Lenovo toate drepturile sunt rezervate"
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "Categorii",
+            "categoriesDesc": "Găsiți informații utile în articolele noastre.",
+            "seeArticles": "CONSULTAȚI ARTICOLELE"
         }
     },
     "security": {
@@ -1113,7 +1116,7 @@
             "whatIsPmNotInstalled": "Cel mai sigur, cel mai simplu mod de a salva parole puternice, complexe, și de a vă conecta instantaneu la fiecare site.",
             "whatIsPmInstalled": "O viață digitală mai sigură vă așteaptă: adăugați parole, activați monitorizarea dark-web-ului, completați automat date personale și de plată.",
             "startProtect": "Începeți să vă protejați conturile online, în modul simplu.",
-            "discount": "Utilizatorii Lenovo se bucură de Dashlane Premium exclusiv, gratuit 6 luni.",
+            "discount": "Utilizatorii Lenovo se bucură de o reducere de 50% pentru Dashlane Premium.",
             "offer": "Această ofertă este valabilă doar pentru utilizatorii Dashlane!",
             "getDashLane": "Obțineți Dashlane",
             "learnMoreAbout": "<tag>Aflați mai multe</tag> despre a profita la maximum de Dashlane",

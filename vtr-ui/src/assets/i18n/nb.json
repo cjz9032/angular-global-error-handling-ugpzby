@@ -696,48 +696,48 @@
                         }
                     }
                 },
-				"intelligentMedia": {
-					"heading": "Intelligent Media",
-					"title": "Zero Touch Video Playback",
-					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
-				}
+                "intelligentMedia": {
+                    "heading": "Intelligent Media",
+                    "title": "Zero Touch Video Playback",
+                    "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+                    "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "Systemoppdateringer",
+        "back": "TILBAKE",
+        "history": "FULLSTENDIG HISTORIKK",
+        "notAvailable": "Ikke tilgjengelig",
+        "notInstalled": "Ikke installert",
+        "criticalUpdates": "Kritisk(e) oppdatering(er)",
+        "recommendedUpdates": "Anbefalt(e) oppdatering(er)",
+        "optionalUpdates": "Valgfri(e) oppdatering(er)",
+        "ignoredUpdates": "Ignorert(e) oppdatering(er)",
+        "successInstall": "Oppdateringen ble installert",
+        "failedInstall": "Installasjonen mislyktes",
+        "at": "klokken",
+        "readMore": "Les mer",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+            "reboot": "Start på nytt",
+            "shutdown": "Avslutt",
+            "rebootForceMsg": "Oppdateringen(e) du har valgt, fører til at systemet starter på nytt automatisk når installeringen er fullført.",
+            "shutdownForceMsg": "Oppdateringen(e) du har valgt, fører til at systemet avsluttes automatisk når installeringen er fullført.",
+            "rebootDelayedMsg": "Oppdateringen(e) du valgte, vil få systemet til å starte på nytt etter installasjon. Under installeringen av oppdateringene må du ikke slå av systemet, fjerne strømkilden eller tilbehør. Vi anbefaler at du lagrer arbeidet ditt før omstart av systemet.",
+            "rebootRequiredMsg": "Hvis du vil installere oppdateringene, trenger datamaskinen en omstart for å sikre at alt kjører trygt og greit.",
             "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "cancelButton": "Avbryt",
+            "rebootButton": "START PÅ NYTT NÅ",
+            "dismissButton": "AVVIS",
+            "rebootPending": "Omstart venter"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Innstillinger for automatiske oppdateringer",
+            "subtitle": "INSTALLER OPPDATERINGER AUTOMATISK",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Kritiske oppdateringer",
+                "tooltip": "Kritiske oppdateringer kan hindre vesentlige problemer, store systemfeil, maskinvarefeil eller ødelagte data."
             },
             "camera": {
                 "title": "Camera",
@@ -745,37 +745,37 @@
                 "reset": "Reset factory settings"
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "Anbefalte oppdateringer",
+                "tooltip": "De anbefalte driveroppdateringene sikrer at datamaskinen fortsetter å yte best mulig."
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Oppdateringer fra Windows",
+                "url": "Windows-innstillinger"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Nettsted for Lenovos kundestøtte"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "Velkommen som bruker av System Update.",
+            "title": "Et oppdatert system er et velfungerende system.",
+            "last": "Forrige oppdatering:",
+            "next": "Neste oppdateringssøk er planlagt",
+            "checkButton": "SE ETTER OPPDATERINGER ",
+            "checking": "Ser etter oppdateringer",
+            "downloading": "Laster ned oppdateringer",
+            "installing": "Installerer oppdateringer",
+            "percent": "% fullført",
+            "cancelCheck": "Avbryt sjekk",
+            "cancelUpdates": "AVBRYT OPPDATERINGER",
+            "available": "Tilgjengelige oppdateringer",
+            "description": "Disse pakkene inkluderer oppdateringer av maskinvaredrivere og andre systemverktøy som er kritiske for at datamaskinen skal fungere som den skal. Kritiske oppdateringer er også viktige for å beskytte data på datamaskinen din og bør installeres etter hvert som de blir tilgjengelige. Hvis disse pakkene ikke blir installert, kan det føre til tap av data, systemfeil eller maskinvarefeil.",
+            "installButton": "INSTALLER ALLE OPPDATERINGER",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Alle oppdateringer ble installert på riktig måte",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Noen oppdateringer ble ikke installert korrekt.",
+                    "description": "Noe gikk galt under nedlastingen eller installasjonen av disse oppdateringene. Kontroller at du er tilkoblet, og ikke slå av maskinen når du installerer oppdateringer."
                 }
             },
             "smartAssist": {
@@ -829,33 +829,36 @@
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend"
+            "rebootRequired": "Omstart nødvendig",
+            "failReason": "Årsaken til feilen: Strømadapteren var ikke tilkoblet datamaskinen. ",
+            "manufacturer": "Produsent: ",
+            "version": "Versjon: ",
+            "installVersion": "Installert versjon: ",
+            "downloadSize": "Nedlastingsstørrelse: ",
+            "diskSpaceNeeded": "Nødvendig diskplass: ",
+            "ignore": "Overse",
+            "attend": "Behandle",
+            "rebootRequiredTag": "Omstart nødvendig",
+            "rebootDelayTag": "Omstart nødvendig, strømkilde nødvendig",
+            "shutdownRequiredTag": "Avslutning kreves"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "Tilgjengelige oppdateringer",
+            "description": "Disse pakkene inneholder oppdateringer som er kritiske for korrekt drift av datamaskinen din. Kritiske oppdateringer bidrar til å gjøre datamaskinen sikrere og mer pålitelig, og bør installeres når de blir tilgjengelige. Anbefalte oppdateringer og valgfrie oppdateringer hjelper deg med å holde programvaren oppdatert og datamaskinen i best mulig tilstand.",
+            "installAllUpdates": "Installer alle oppdateringer",
+            "installSuccessHeader": "Alle oppdateringer ble installert på riktig måte",
+            "installFailHeader": "Noen oppdateringer ble ikke installert korrekt",
+            "installFailDescription": "Noe gikk galt under nedlastingen og installasjonen av disse oppdateringene. Kontroller at du er tilkoblet, og ikke slå av maskinen når du installerer oppdateringer.",
+            "optionalUpdates": "Valgfrie oppdateringer",
+            "installSelectedUpdates": "Installer valgte oppdateringer"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "Navn",
+            "sortByDate": "Sorter etter dato",
+            "packageSize": "Pakkestørrelse:",
+            "releaseDate": "Utgavedato:",
+            "showAll": "Vis alle",
+            "noInstallationHistory": "Det er ingen installeringslogg tilgjengelig"
         }
     },
     "homeSecurity": {
@@ -915,9 +918,9 @@
             "copyright": "© 2002–2019 Lenovo. Med enerett."
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "Kategorier",
+            "categoriesDesc": "Finn nyttig informasjon i artiklene våre.",
+            "seeArticles": "SE ARTIKLER"
         }
     },
     "security": {
@@ -1113,7 +1116,7 @@
             "whatIsPmNotInstalled": "Den tryggeste, enkleste måten å lagre sterke, komplekse passord og logge deg umiddelbart på hvert område.",
             "whatIsPmInstalled": "Et tryggere digitalt liv venter: Legg til passord, aktivere Dark Web-overvåking og automatisk utfylling av personlig informasjon og betalingsinformasjon.",
             "startProtect": "Start å beskytte internettkontoene dine på en enkel måte.",
-            "discount": "Lenovo-brukere får en eksklusiv 6 måneder gratis bruk av Dashlane Premium.",
+            "discount": "Lenovo-brukere får 50 % avslag på Dashlane Premium.",
             "offer": "Dette tilbudet gjelder bare for nye Dashlane-brukere.",
             "getDashLane": "Få tak i Dashlane",
             "learnMoreAbout": "<tag>Finn ut mer</tag> om hvordan du får mest mulig ut av Dashlane",

@@ -85,7 +85,7 @@
                 "option2": "Option 2",
                 "option3": "Option 3",
                 "option4": "option 4"
-        }
+            }
         }
     },
     "common": {
@@ -616,8 +616,8 @@
                         "note": {
                             "title": "Note",
                             "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
-                    }
-                },
+                        }
+                    },
                     "privacyGuard": {
                         "title": "Privacy guard",
                         "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
@@ -655,190 +655,190 @@
                     }
                 }
             }
+        },
+        "smartAssist": {
+            "title": "Smart Assist",
+            "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+            "jumpTo": {
+                "title": "JUMP TO SETTINGS",
+                "security": "Security",
+                "screen": "Screen",
+                "media": "Media",
+                "voice": "Voice"
             },
-            "smartAssist": {
-                "title": "Smart Assist",
-                "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
-                "jumpTo": {
-                    "title": "JUMP TO SETTINGS",
-                    "security": "Security",
-                    "screen": "Screen",
-                    "media": "Media",
-                    "voice": "Voice"
+            "intelligentSecurity": {
+                "title": "Intelligent Security",
+                "readMore": "Read more",
+                "humanPresenceDetection": {
+                    "title": "User Presence Sensing",
+                    "tooltip": "Click here to reset human presence Detection settings."
                 },
-                "intelligentSecurity": {
-                    "title": "Intelligent Security",
-                    "readMore": "Read more",
-                    "humanPresenceDetection": {
-                        "title": "User Presence Sensing",
-                        "tooltip": "Click here to reset human presence Detection settings."
-                    },
-                    "zeroTouchLogin": {
-                        "title": "Zero Touch Login",
-                        "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
-                    },
-                    "zeroTouchLock": {
-                        "title": "Zero Touch Lock",
-                        "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
-                        "autoScreenLockTimer": {
-                            "title": "AUTO SCREEN LOCK TIMER",
-                            "radioButton": {
-                                "fast": "Fast",
-                                "medium": "Medium",
-                                "slow": "Slow"
-                            },
-                            "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
-                        }
-                    },
-                    "distanceSensitivityAdjusting": {
-                    "title1": "DISTANCE SENSITIVITY ADJUSTING",
-                        "title2": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
-                        "options": {
-                            "near": "Near",
-                            "far": "Far"
-                        }
-                    },
-                    "note": {
-                        "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-                        "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
-                        "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-                        "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-                        "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
-                    },
-                    "WindowsLink": {
-                        "goToWindowsHello": "Go to Windows Hello Settings",
-                        "screenTimeoutSettings": "Go to Screen timeout settings"
+                "zeroTouchLogin": {
+                    "title": "Zero Touch Login",
+                    "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
                 },
-                "resetToDefault": "RESET TO DEFAULT SETTINGS"
-                },
-                "intelligentScreen": {
-                    "title": "Intelligent Screen",
-                    "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
-                    "autoScreenOff": {
-                        "title": "Auto screen off",
-                        "caption": "Automatically turn off display when face-down or walking.",
-                        "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                        "windowsLink": "Go to Power & sleep settings in Windows settings"
-                    },
-                    "keepMyDisplay": {
-                        "title": "Keep my display",
-                        "caption": "Keep my display when I am reading or browsing.",
-                        "displaySlider": {
-                            "title": "Minutes Before display dims when browsing",
-                            "startTime": "0 minutes",
-                            "endTime": "60 minutes"
-                        }
+                "zeroTouchLock": {
+                    "title": "Zero Touch Lock",
+                    "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+                    "autoScreenLockTimer": {
+                        "title": "AUTO SCREEN LOCK TIMER",
+                        "radioButton": {
+                            "fast": "Fast",
+                            "medium": "Medium",
+                            "slow": "Slow"
+                        },
+                        "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
                     }
                 },
-				"intelligentMedia": {
-					"heading": "Intelligent Media",
-					"title": "Zero Touch Video Playback",
-					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
-				}
+                "distanceSensitivityAdjusting": {
+                    "title1": "DISTANCE SENSITIVITY ADJUSTING",
+                    "title2": "AUTO DISTANCE SENSITIVITY ADJUSTING",
+                    "caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+                    "options": {
+                        "near": "Near",
+                        "far": "Far"
+                    }
+                },
+                "note": {
+                    "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
+                    "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
+                    "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
+                    "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
+                    "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+                },
+                "WindowsLink": {
+                    "goToWindowsHello": "Go to Windows Hello Settings",
+                    "screenTimeoutSettings": "Go to Screen timeout settings"
+                },
+                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+            },
+            "intelligentScreen": {
+                "title": "Intelligent Screen",
+                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "autoScreenOff": {
+                    "title": "Auto screen off",
+                    "caption": "Automatically turn off display when face-down or walking.",
+                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
+                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                },
+                "keepMyDisplay": {
+                    "title": "Keep my display",
+                    "caption": "Keep my display when I am reading or browsing.",
+                    "displaySlider": {
+                        "title": "Minutes Before display dims when browsing",
+                        "startTime": "0 minutes",
+                        "endTime": "60 minutes"
+                    }
+                }
+            },
+            "intelligentMedia": {
+                "heading": "Intelligent Media",
+                "title": "Zero Touch Video Playback",
+                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
             }
+        }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "Aktualizace systému",
+        "back": "ZPĚT",
+        "history": "ÚPLNÁ HISTORIE",
+        "notAvailable": "Není dostupná",
+        "notInstalled": "Není nainstalováno",
+        "criticalUpdates": "Kriticky důležité aktualizace",
+        "recommendedUpdates": "Doporučené aktualizace",
+        "optionalUpdates": "Volitelné aktualizace",
+        "ignoredUpdates": "Ignorované aktualizace",
+        "successInstall": "Úspěšně instalováno v systému",
+        "failedInstall": "Neúspěšná instalace v systému",
+        "at": "v",
+        "readMore": "Další informace",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+            "reboot": "Restart",
+            "shutdown": "Vypnout",
+            "rebootForceMsg": "Po instalaci vybraných aktualizací bude systém automaticky restartován.",
+            "shutdownForceMsg": "Po instalaci vybraných aktualizací se systém automaticky vypne.",
+            "rebootDelayedMsg": "Po instalaci vybraných aktualizací se restartuje systém. Během instalace aktualizací systém nevypínejte, ani neodpojujte zdroj napájení ani příslušenství. Během přípravy na restartování systému doporučujeme uložit si rozpracovanou práci.",
+            "rebootRequiredMsg": "Aby bylo možné ve vašem počítači úspěšně nainstalovat aktualizace, počítač je třeba restartovat, aby byl zajištěn jeho bezpečný a hladký chod.",
             "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "cancelButton": "Storno",
+            "rebootButton": "RESTARTOVAT NYNÍ",
+            "dismissButton": "ZRUŠIT",
+            "rebootPending": "Chystá se restart počítače"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Nastavení automatické aktualizace",
+            "subtitle": "AUTOMATICKY INSTALOVAT AKTUALIZACE",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Kriticky důležité aktualizace",
+                "tooltip": "Kriticky důležité aktualizace předcházejí vážným problémům, podstatným poruchám funkce, selhání hardwaru nebo poškození dat."
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "Doporučené aktualizace",
+                "tooltip": "Doporučené aktualizace ovladačů zajistí optimální výkon vašeho počítače."
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Aktualizace systému Windows",
+                "url": "Nastavení operačního systému Windows"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Webová stránka podpory Lenovo"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "Vítejte při použití programu System Update.",
+            "title": "Aktualizovaný systém je zdravým systémem.",
+            "last": "Poslední aktualizace proběhla dne",
+            "next": "Příští kontrola aktualizace je naplánována na",
+            "checkButton": "ZKONTROLOVAT AKTUALIZACE ",
+            "checking": "Kontrola aktualizací",
+            "downloading": "Stahování aktualizací",
+            "installing": "Probíhá instalace aktualizací",
+            "percent": "% dokončeno",
+            "cancelCheck": "Zrušit kontrolu",
+            "cancelUpdates": "ZRUŠIT AKTUALIZACE",
+            "available": "Dostupné aktualizace",
+            "description": "Tyto balíčky obsahují aktualizace ovladačů hardwaru a ostatních systémových nástrojů, které jsou nezbytné pro správné fungování vašeho počítače. Kriticky důležité aktualizace jsou rovněž zásadní pro ochranu dat ve vašem počítači a měli byste je nainstalovat ihned, jakmile jsou k dispozici. Pokud nebudou tyto balíčky nainstalovány, může dojít ke ztrátě dat, chybnému fungování systému nebo selhání hardwaru.",
+            "installButton": "NAINSTALOVAT VŠECHNY AKTUALIZACE",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Všechny aktualizace byly nainstalovány správně",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Některé aktualizace nebyly nainstalovány správně.",
+                    "description": "Během stahování nebo instalace těchto aktualizací se něco pokazilo. Ujistěte se, že jste online, a při instalaci aktualizací nevypínejte počítač."
                 }
-                    }
+            }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend",
-            "rebootRequiredTag": "Reboot Required",
-            "rebootDelayTag": "Reboot Required, Power Source Required",
-            "shutdownRequiredTag": "Shutdown Required"
+            "rebootRequired": "Je nutno restartovat počítač",
+            "failReason": "Důvod selhání: K počítači nebyl připojen napájecí adaptér. ",
+            "manufacturer": "Výrobce: ",
+            "version": "Verze: ",
+            "installVersion": "Instalovaná verze: ",
+            "downloadSize": "Velikost ke stažení: ",
+            "diskSpaceNeeded": "Potřebné místo na disku: ",
+            "ignore": "Ignorovat",
+            "attend": "Zúčastnit se",
+            "rebootRequiredTag": "Je nutno restartovat počítač",
+            "rebootDelayTag": "Je vyžadováno restart počítače, zdroj napájení je nutný",
+            "shutdownRequiredTag": "Je nutno provést restart"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "Dostupné aktualizace",
+            "description": "Tyto balíčky obsahují aktualizace, které jsou kriticky důležité pro správnou činnost počítače. Kriticky důležité aktualizace pomáhají uchovat počítač bezpečnějším a spolehlivějším a měly by být nainstalovány, jakmile budou k dispozici. Doporučené aktualizace a volitelné aktualizace pomáhají udržovat software v aktuálním stavu a maximálně využívat počítač.",
+            "installAllUpdates": "Nainstalovat všechny aktualizace",
+            "installSuccessHeader": "Všechny aktualizace byly nainstalovány správně",
+            "installFailHeader": "Některé aktualizace nebyly nainstalovány správně",
+            "installFailDescription": "Během stahování a instalace těchto aktualizací se něco pokazilo. Ujistěte se, že jste online, a při instalaci aktualizací nevypínejte počítač.",
+            "optionalUpdates": "Volitelné aktualizace",
+            "installSelectedUpdates": "Nainstalovat vybrané aktualizace"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "Název",
+            "sortByDate": "Řadit podle data",
+            "packageSize": "Velikost balíčku:",
+            "releaseDate": "Datum vydání:",
+            "showAll": "Zobrazit vše",
+            "noInstallationHistory": "Není k dispozici žádná historie instalace"
         }
     },
     "homeSecurity": {
@@ -936,9 +936,9 @@
             "copyright": "© 2002–2019 Lenovo všechna práva vyhrazena"
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "Kategorie",
+            "categoriesDesc": "Užitečné informace najdete v našich článcích.",
+            "seeArticles": "VIZ ČLÁNKY"
         }
     },
     "security": {
@@ -1134,7 +1134,7 @@
             "whatIsPmNotInstalled": "Nejbezpečnější a nejsnadnější způsob uchovávání silných, komplexních hesel s okamžitým přihlášením na každém webu.",
             "whatIsPmInstalled": "Bezpečnější digitální život čeká: přidejte svá hesla, zapněte sledování temného webu a nechte si automaticky vyplňovat osobní a platební informace.",
             "startProtect": "Začněte chránit své online účty tímto jednoduchým řešením.",
-            "discount": "Uživatelé Lenovo mají nárok na exkluzivní bezplatnou 6měsíční licenci pro prémiovou verzi Dashlane.",
+            "discount": "Uživatelé Lenovo mají nárok na exkluzivní 50% slevu na prémiovou verzi Dashlane.",
             "offer": "Tato nabídka platí pouze pro nové uživatele Dashlane!",
             "getDashLane": "Získat Dashlane",
             "learnMoreAbout": "<tag>Zjistěte</tag>, jak využít Dashlane na maximum",

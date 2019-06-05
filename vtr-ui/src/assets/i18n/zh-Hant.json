@@ -696,48 +696,48 @@
                         }
                     }
                 },
-				"intelligentMedia": {
-					"heading": "Intelligent Media",
-					"title": "Zero Touch Video Playback",
-					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
-				}
+                "intelligentMedia": {
+                    "heading": "Intelligent Media",
+                    "title": "Zero Touch Video Playback",
+                    "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+                    "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "System Update",
+        "back": "上一步",
+        "history": "完整歷程記錄",
+        "notAvailable": "無法使用",
+        "notInstalled": "未安裝",
+        "criticalUpdates": "重要更新",
+        "recommendedUpdates": "建議更新",
+        "optionalUpdates": "選用更新項目",
+        "ignoredUpdates": "已忽略的更新",
+        "successInstall": "已成功地安裝在",
+        "failedInstall": "安裝失敗",
+        "at": "在",
+        "readMore": "較多內容",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
-            "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "reboot": "重新開機",
+            "shutdown": "關機",
+            "rebootForceMsg": "您選取的更新將在安裝後使系統自動重新開機。",
+            "shutdownForceMsg": "您選取的更新將在安裝後使系統自動關機。",
+            "rebootDelayedMsg": "更新安裝時，您選取的更新將會在安裝後使系統重新開機。請勿關閉系統您的系統、卸下電源或配件。我們建議您儲存工作，為您的系統重新開機預作準備。",
+            "rebootRequiredMsg": "為了成功安裝更新，您的電腦需要重新開機以確保一切運作安全、順暢。",
+            "okayButton": "確定",
+            "cancelButton": "取消",
+            "rebootButton": "立即重新開機",
+            "dismissButton": "關閉",
+            "rebootPending": "重新開機擱置中"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "自動更新設定",
+            "subtitle": "自動安裝更新",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "重要更新",
+                "tooltip": "重要更新可防止出現重大問題、嚴重故障、硬體故障或資料毀損。"
             },
             "camera": {
                 "title": "Camera",
@@ -745,37 +745,37 @@
                 "reset": "Reset factory settings"
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "建議更新",
+                "tooltip": "建議的驅動程式更新可以讓您的電腦以最佳效能運作。"
             },
             "windows": {
                 "title": "Windows Updates",
-                "url": "Windows Settings"
+                "url": "Windows 設定"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Lenovo 支援網站"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "歡迎使用 System Update。",
+            "title": "保持最新狀態的系統才是健康的系統。",
+            "last": "上次更新：",
+            "next": "下次掃描更新排程於",
+            "checkButton": "檢查更新",
+            "checking": "正在檢查更新",
+            "downloading": "正在下載更新",
+            "installing": "正在安裝更新",
+            "percent": "% 已完成",
+            "cancelCheck": "取消檢查",
+            "cancelUpdates": "取消更新",
+            "available": "可用更新",
+            "description": "這些套件包含了對電腦正常運作至關重要的硬體驅動程式更新和其他系統公用程式更新。重要更新項目在保護電腦資料方面也很重要，應該立即安裝。不安裝這些套件可能會導致資料遺失、系統不正常或硬體故障。",
+            "installButton": "安裝所有更新",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "已正確安裝所有更新",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "部分更新項目未正確安裝。",
+                    "description": "下載或安裝這些更新期間出了問題。請確定您處於線上狀態，而且在安裝更新時請勿關閉電腦。"
                 }
             },
             "smartAssist": {
@@ -829,33 +829,36 @@
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend"
+            "rebootRequired": "需要重新開機",
+            "failReason": "失敗原因：AC 電源整流器未連接到您的電腦。",
+            "manufacturer": "製造商：",
+            "version": "版本：",
+            "installVersion": "已安裝的版本：",
+            "downloadSize": "下載大小：",
+            "diskSpaceNeeded": "所需磁碟空間：",
+            "ignore": "忽略",
+            "attend": "處理",
+            "rebootRequiredTag": "需要重新開機",
+            "rebootDelayTag": "需要重新開機，需要使用電源",
+            "shutdownRequiredTag": "需要關機"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "可用更新",
+            "description": "這些套件包含了對電腦正常運作至關重要的更新。重要更新有助於使您的電腦更安全、更可靠，因此應該在可用時立即安裝。建議更新和選用更新有助於使您的軟體保持最新狀態，以及使您的電腦保持最佳運作狀態。",
+            "installAllUpdates": "安裝所有更新",
+            "installSuccessHeader": "已正確安裝所有更新",
+            "installFailHeader": "部分更新項目未正確安裝",
+            "installFailDescription": "下載和安裝這些更新期間出了問題。請確定您處於線上狀態，而且在安裝更新時請勿關閉電腦。",
+            "optionalUpdates": "選用更新項目",
+            "installSelectedUpdates": "安裝選取的更新"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "名稱",
+            "sortByDate": "依日期排列",
+            "packageSize": "套件大小：",
+            "releaseDate": "發行日期：",
+            "showAll": "顯示所有",
+            "noInstallationHistory": "沒有安裝歷程記錄"
         }
     },
     "homeSecurity": {
@@ -915,9 +918,9 @@
             "copyright": "© 2002-2019 Lenovo all rights reserved"
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "類別",
+            "categoriesDesc": "在我們的文章中尋找實用的資訊。",
+            "seeArticles": "查看文章"
         }
     },
     "security": {
@@ -1113,7 +1116,7 @@
             "whatIsPmNotInstalled": "可儲存高保護性的複雜密碼及立即登入每個網站的最安全、最簡單的方法。",
             "whatIsPmInstalled": "更安全的數位生活就在眼前：新增密碼、啟用暗網監視以及自動填入個人和付款資訊。",
             "startProtect": "開始以簡單的方式保護您的線上帳戶。",
-            "discount": "Lenovo 使用者獨享 6 個月免費的 Dashlane 特級。",
+            "discount": "Lenovo 使用者獨享 Dashlane 特級版五折優惠。",
             "offer": "優惠僅適用於新的 Dashlane 使用者！",
             "getDashLane": "取得 Dashlane",
             "learnMoreAbout": "<tag>進一步瞭解</tag>如何充分利用 Dashlane",

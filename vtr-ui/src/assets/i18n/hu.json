@@ -696,48 +696,48 @@
                         }
                     }
                 },
-				"intelligentMedia": {
-					"heading": "Intelligent Media",
-					"title": "Zero Touch Video Playback",
-					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
-				}
+                "intelligentMedia": {
+                    "heading": "Intelligent Media",
+                    "title": "Zero Touch Video Playback",
+                    "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+                    "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "System Update",
+        "back": "VISSZA",
+        "history": "ÖSSZES ELŐZMÉNY",
+        "notAvailable": "Nem érhető el.",
+        "notInstalled": "Nincs telepítve",
+        "criticalUpdates": "Kritikus frissítés(ek)",
+        "recommendedUpdates": "Ajánlott frissítés(ek)",
+        "optionalUpdates": "Választható frissítés(ek)",
+        "ignoredUpdates": "Figyelmen kívül hagyott frissítés(ek)",
+        "successInstall": "Sikeresen telepítve",
+        "failedInstall": "A telepítés sikertelen",
+        "at": "Ekkor",
+        "readMore": "További információ",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+            "reboot": "Újraindítás",
+            "shutdown": "Leállítás",
+            "rebootForceMsg": "A kijelölt frissítés(ek) aktiválásához a rendszer a telepítés után automatikusan újraindul.",
+            "shutdownForceMsg": "A kijelölt frissítés(ek) aktiválásához a rendszer a telepítés után automatikusan leáll.",
+            "rebootDelayedMsg": "A kiválasztott frissítések telepítése után a rendszer újraindul. A frissítések telepítése során ne kapcsolja ki a gépet, és ne távolítsa el az áramforrást vagy a tartozékokat. Javasoljuk, hogy készüljön fel a rendszer leállására, és mentse a munkáját.",
+            "rebootRequiredMsg": "A frissítések sikeres telepítéséhez újra kell indítani a számítógépet; így meggyőződhet róla, hogy minden biztonságosan és megfelelően működik.",
             "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "cancelButton": "Mégse",
+            "rebootButton": "ÚJRAINDÍTÁS MOST",
+            "dismissButton": "ELVETÉS",
+            "rebootPending": "Az újraindítás függőben van"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Automatikus frissítés beállításai",
+            "subtitle": "FRISSÍTÉSEK AUTOMATIKUS TELEPÍTÉSE",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Kritikus frissítések",
+                "tooltip": "A kritikus frissítések megakadályozhatják a jelentős problémákat, a hibás működést, a hardverhibákat és az adatvesztést."
             },
             "camera": {
                 "title": "Camera",
@@ -745,37 +745,37 @@
                 "reset": "Reset factory settings"
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "Ajánlott frissítések",
+                "tooltip": "Az ajánlott illesztőprogram-frissítések segítenek a számítógép optimális teljesítményének fenntartásában."
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Windows-frissítések",
+                "url": "A Windows beállításai"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "A Lenovo támogatási weboldala"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "Üdvözöljük a System Update szolgáltatásban.",
+            "title": "A naprakész rendszer megfelelően működik.",
+            "last": "Utolsó frissítés dátuma:",
+            "next": "A frissítések következő ellenőrzésének ideje",
+            "checkButton": "FRISSÍTÉSEK KERESÉSE ",
+            "checking": "Frissítések keresése",
+            "downloading": "Frissítések letöltése",
+            "installing": "Frissítések telepítése",
+            "percent": "% kész",
+            "cancelCheck": "Ellenőrzés leállítása",
+            "cancelUpdates": "FRISSÍTÉSEK LEÁLLÍTÁSA",
+            "available": "Elérhető frissítések",
+            "description": "Ezek a csomagok olyan hardverillesztőkhöz és egyéb rendszereszközökhöz tartozó frissítéseket tartalmaznak, amelyek kritikus fontosságúak a számítógép megfelelő működéséhez. A kritikus frissítések fontos szerepet játszanak a számítógépen tárolt adatok védelmében is, és a megjelenést követően javasolt a telepítésük. A csomagok telepítésének elmulasztása adatvesztést, a rendszer hibás működését vagy hardverhibát okozhat.",
+            "installButton": "MINDEN FRISSÍTÉS TELEPÍTÉSE",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Minden frissítés megfelelően települt",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Egyes frissítések nem települtek megfelelően.",
+                    "description": "Hiba történt a frissítések letöltése vagy telepítése során. Ellenőrizze az internetkapcsolatot, és a frissítések telepítése alatt ne kapcsolja ki a számítógépet."
                 }
             },
             "smartAssist": {
@@ -829,33 +829,36 @@
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend"
+            "rebootRequired": "Újraindítás szükséges",
+            "failReason": "A hiba oka: A hálózati adapter nem volt csatlakoztatva a számítógéphez. ",
+            "manufacturer": "Gyártó: ",
+            "version": "Verziószám: ",
+            "installVersion": "Telepített verzió: ",
+            "downloadSize": "Letöltési méret: ",
+            "diskSpaceNeeded": "Szükséges lemezterület: ",
+            "ignore": "Kihagyás",
+            "attend": "Részvétel",
+            "rebootRequiredTag": "Újraindítás szükséges",
+            "rebootDelayTag": "Újraindítás szükséges, áramforrás szükséges",
+            "shutdownRequiredTag": "Leállítás szükséges"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "Elérhető frissítések",
+            "description": "Ezek a csomagok olyan frissítéseket tartalmaznak, amelyek kritikus fontosságúak a számítógép megfelelő működéséhez. A kritikus frissítések biztonságosabbá és megbízhatóbbá teszik a számítógépet, és telepíteni kell őket, amint elérhetővé válnak. Az ajánlott frissítések és a választható frissítések segítenek a szoftver naprakészen tartásában és a számítógép optimális működésének fenntartásában.",
+            "installAllUpdates": "Minden frissítés telepítése",
+            "installSuccessHeader": "Minden frissítés megfelelően települt",
+            "installFailHeader": "Egyes frissítések nem települtek megfelelően",
+            "installFailDescription": "Hiba történt ezeknek a frissítéseknek a letöltése és telepítése során. Ellenőrizze az internetkapcsolatot, és a frissítések telepítése alatt ne kapcsolja ki a számítógépet.",
+            "optionalUpdates": "Választható frissítések",
+            "installSelectedUpdates": "Kijelölt frissítések telepítése"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "Név",
+            "sortByDate": "Rendezés dátum szerint",
+            "packageSize": "Csomag mérete:",
+            "releaseDate": "Kiadás dátuma:",
+            "showAll": "Az összes megjelenítése",
+            "noInstallationHistory": "Nem állnak rendelkezésre telepítési előzmények"
         }
     },
     "homeSecurity": {
@@ -915,9 +918,9 @@
             "copyright": "© 2002–2019 Lenovo. Minden jog fenntartva."
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "Kategóriák",
+            "categoriesDesc": "Cikkeinkben hasznos információkat talál.",
+            "seeArticles": "CIKKEK MEGTEKINTÉSE"
         }
     },
     "security": {
@@ -1113,7 +1116,7 @@
             "whatIsPmNotInstalled": "A legbiztonságosabb és legegyszerűbb megoldás az erős és összetett jelszavak mentésére – amellyel bármilyen webhelyen azonnal bejelentkezhet.",
             "whatIsPmInstalled": "Tegye biztonságosabbá a digitális életét: vegyen fel jelszavakat, engedélyezze a „sötét weben” való nyomon követést, és töltse ki automatikusan a személyes és a fizetési adatokat.",
             "startProtect": "Egyszerűen védheti meg az online fiókjait.",
-            "discount": "Exkluzív ajánlat a Lenovo-felhasználók számára: 6 hónapig ingyenesen használhatják a Dashlane prémium verziót.",
+            "discount": "Exkluzív ajánlat a Lenovo-felhasználók számára: 50%-os kedvezmény a Dashlane Prémium verziójára.",
             "offer": "Az ajánlattal csak az új Dashlane-felhasználók élhetnek.",
             "getDashLane": "A Dashlane beszerzése",
             "learnMoreAbout": "<tag>További információ</tag> a Dashlane hatékony használatáról",

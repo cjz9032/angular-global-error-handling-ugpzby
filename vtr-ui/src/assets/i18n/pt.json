@@ -696,48 +696,48 @@
                         }
                     }
                 },
-				"intelligentMedia": {
-					"heading": "Intelligent Media",
-					"title": "Zero Touch Video Playback",
-					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
-				}
+                "intelligentMedia": {
+                    "heading": "Intelligent Media",
+                    "title": "Zero Touch Video Playback",
+                    "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+                    "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+                }
             }
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
-        "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "title": "Atualizações do Sistema",
+        "back": "RETROCEDER",
+        "history": "HISTÓRICO COMPLETO",
+        "notAvailable": "Não Disponível",
+        "notInstalled": "Não instalado",
+        "criticalUpdates": "Atualização(ões) Crítica(s)",
+        "recommendedUpdates": "Atualização(ões) Recomendada(s)",
+        "optionalUpdates": "Atualização(ões) Opcional(ais)",
+        "ignoredUpdates": "Atualização(ões) Ignorada(s)",
+        "successInstall": "Instalada com sucesso em",
+        "failedInstall": "Instalação falhou em",
+        "at": "em",
+        "readMore": "Ler mais",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+            "reboot": "Reini.",
+            "shutdown": "Encerrar",
+            "rebootForceMsg": "A(s) atualização(ões) selecionada(s) farão com que o sistema reinicie automaticamente após a instalação.",
+            "shutdownForceMsg": "A(s) atualização(ões) selecionada(s) farão com que o sistema encerre automaticamente após a instalação.",
+            "rebootDelayedMsg": "A(s) atualização(ões) selecionada(s) farão com que o sistema seja reiniciado após a instalação. Durante a instalação das atualizações, não desligue o sistema, não retire a fonte de alimentação ou os acessórios. Recomendamos que guarde o seu trabalho para preparar a reinicialização do sistema.",
+            "rebootRequiredMsg": "Para instalar as atualizações com êxito, o computador tem de ser reiniciado para garantir que tudo está a funcionar corretamente.",
             "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "cancelButton": "Cancelar",
+            "rebootButton": "REINICIAR AGORA",
+            "dismissButton": "REJEITAR",
+            "rebootPending": "Reinicialização pendente"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Definições da atualização automática",
+            "subtitle": "INSTALAR ATUALIZAÇÕES AUTOMATICAMENTE",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Atualizações Críticas",
+                "tooltip": "As atualizações críticas podem evitar problemas significativos, avarias graves, falhas de hardware ou dados danificados."
             },
             "camera": {
                 "title": "Camera",
@@ -745,37 +745,37 @@
                 "reset": "Reset factory settings"
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "Atualizações Recomendadas",
+                "tooltip": "As atualizações de controladores recomendadas mantêm o computador em condições de funcionamento ideais."
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Atualizações do Windows",
+                "url": "Definições do Windows"
             }
         },
         "support": {
-            "title": "Lenovo Support website"
+            "title": "Sítio de suporte na Web da Lenovo"
         },
         "banner": {
-            "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "neverChecked": "Bem-vindo ao System Update.",
+            "title": "Um sistema atualizado é um sistema em estado de funcionamento ideal.",
+            "last": "Última atualização em",
+            "next": "A próxima verificação de atualizações está agendada para",
+            "checkButton": "VERIFICAR A EXISTÊNCIA DE ATUALIZAÇÕES ",
+            "checking": "A verificar a existência de atualizações",
+            "downloading": "A transferir atualizações",
+            "installing": "A instalar atualizações",
+            "percent": "% concluído",
+            "cancelCheck": "Cancelar verificação",
+            "cancelUpdates": "CANCELAR ATUALIZAÇÕES",
+            "available": "Atualizações disponíveis",
+            "description": "Estes pacotes incluem atualizações aos controladores de hardware e a outros utilitários do sistema críticos para o correto funcionamento do computador. As atualizações críticas também são importantes para proteger os dados no seu computador e devem ser instaladas à medida que são disponibilizadas. A não instalação destes pacotes pode resultar em perda de dados, mau funcionamento do sistema ou numa falha de hardware.",
+            "installButton": "INSTALAR TODAS AS ATUALIZAÇÕES",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Todas as atualizações foram instaladas corretamente",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Algumas atualizações não foram instaladas corretamente.",
+                    "description": "Algo correu mal durante a transferência ou instalação destas atualizações. Certifique-se de que está online e que não desliga o computador durante a instalação de atualizações."
                 }
             },
             "smartAssist": {
@@ -829,33 +829,36 @@
             }
         },
         "updateCheckbox": {
-            "rebootRequired": "Reboot required",
-            "failReason": "Fail reason: The ac power adapter was not connected to your computer. ",
-            "manufacturer": "Manufacturer: ",
-            "version": "Version: ",
-            "installVersion": "Installed version: ",
-            "downloadSize": "Download size: ",
-            "diskSpaceNeeded": "Disk space needed: ",
-            "ignore": "Ignore",
-            "attend": "Attend"
+            "rebootRequired": "Reinicialização necessária",
+            "failReason": "Motivo da falha: o transformador CA não estava ligado ao computador. ",
+            "manufacturer": "Fabricante: ",
+            "version": "Versão: ",
+            "installVersion": "Versão instalada: ",
+            "downloadSize": "Tamanho da transferência: ",
+            "diskSpaceNeeded": "Espaço em disco necessário: ",
+            "ignore": "Ignorar",
+            "attend": "Participar",
+            "rebootRequiredTag": "Reinicialização Necessária",
+            "rebootDelayTag": "Reinicialização Necessária, Fonte de Alimentação Necessária",
+            "shutdownRequiredTag": "Encerramento Necessário"
         },
         "availableUpdates": {
-            "title": "Available updates",
-            "description": "These packages include updates that are critical for the correct operation of your computer. Critical updates help keep your computer more secure and reliable and should be installed as they become available. Recommended updates and optional updates help keep your software up to date and your computer running at its best.",
-            "installAllUpdates": "Install all updates",
-            "installSuccessHeader": "All updates were installed correctly",
-            "installFailHeader": "Some updates were not installed correctly",
-            "installFailDescription": "Something went wrong during the downloading and installation of these updates. Please make sure you are online and don't turn off your computer when installing updates.",
-            "optionalUpdates": "Optional updates",
-            "installSelectedUpdates": "Install Selected updates"
+            "title": "Atualizações disponíveis",
+            "description": "Estes pacotes incluem atualizações críticas para o funcionamento correto do computador. As atualizações críticas ajudam a manter o computador seguro e fiável, devendo ser instaladas à medida que são disponibilizadas. As atualizações recomendadas e opcionais ajudam a manter o software atualizado e o computador a funcionar de forma ideal.",
+            "installAllUpdates": "Instalar todas as atualizações",
+            "installSuccessHeader": "Todas as atualizações foram instaladas corretamente",
+            "installFailHeader": "Algumas atualizações não foram instaladas corretamente",
+            "installFailDescription": "Algo correu mal durante a transferência e instalação destas atualizações. Certifique-se de que está online e que não desliga o computador durante a instalação de atualizações.",
+            "optionalUpdates": "Atualizações opcionais",
+            "installSelectedUpdates": "Instalar atualizações selecionadas"
         },
         "installationHistory": {
-            "name": "Name",
-            "sortByDate": "Sort by Date",
-            "packageSize": "Package Size:",
-            "releaseDate": "Release Date:",
-            "showAll": "Show All",
-            "noInstallationHistory": "No installation history available"
+            "name": "Nome",
+            "sortByDate": "Ordenar por data",
+            "packageSize": "Tamanho do pacote:",
+            "releaseDate": "Data de edição:",
+            "showAll": "Mostrar Todos",
+            "noInstallationHistory": "Histórico de instalação não está disponível"
         }
     },
     "homeSecurity": {
@@ -915,9 +918,9 @@
             "copyright": "© 2002-2019 Lenovo. Todos os direitos reservados"
         },
         "quickAccess": {
-            "categories": "Categories",
-            "categoriesDesc": "Find helpful information in our articles",
-            "seeArticles": "SEE ARTICLES"
+            "categories": "Categorias",
+            "categoriesDesc": "Encontre informações úteis nos nossos artigos.",
+            "seeArticles": "VER ARTIGOS"
         }
     },
     "security": {
@@ -1113,7 +1116,7 @@
             "whatIsPmNotInstalled": "A forma mais segura e fácil de guardar palavras-passe fortes e complexas e iniciar sessão instantaneamente em todos os sites.",
             "whatIsPmInstalled": "Uma vida digital mais segura à sua espera: adicione palavras-passe, ative a Monitorização da Dark Web e preencha automaticamente informações pessoais e de pagamento.",
             "startProtect": "Comece a proteger as suas contas online da forma mais simples.",
-            "discount": "Os utilizadores Lenovo desfrutam de 6 meses gratuitos do Dashlane Premium.",
+            "discount": "Os utilizadores Lenovo desfrutam de um desconto exclusivo de 50% no Dashlane Premium.",
             "offer": "Oferta apenas disponível para novos utilizadores do Dashlane!",
             "getDashLane": "Obter o Dashlane",
             "learnMoreAbout": "<tag>Saiba mais</tag> sobre como tirar o melhor partido do Dashlane",

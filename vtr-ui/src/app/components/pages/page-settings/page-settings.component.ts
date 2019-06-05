@@ -155,7 +155,15 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		} else {
 			this.toggleUsageStatistics = !event.switchValue;
 		}
-		this.sendSettingMetrics('SettingUsageStatistics', event.switchValue);
+		const settingUpdateMetrics = {
+			ItemType: 'SettingUpdate',
+			SettingName: 'SettingUsageStatistics',
+			SettingValue: event.switchValue ? 'Enabled' : 'Disabled',
+			SettingParent: 'Page.Settings'
+		};
+		if (this.metrics && this.metrics.sendAsyncEx) {
+			this.metrics.sendAsyncEx(settingUpdateMetrics, { forced: true });
+		}
 	}
 
 	sendMetrics(data: any) {
