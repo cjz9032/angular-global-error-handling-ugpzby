@@ -62,6 +62,9 @@ export class SmartAssistService {
 		return this.intelligentSensing.SetHPDLeaveWaitSetting(value);
 	}
 
+	/**
+	 * HDP auto video pause
+	 */
 	public getVideoPauseResumeStatus(): Promise<FeatureStatus> {
 		try {
 			if (this.isShellAvailable) {
@@ -71,7 +74,6 @@ export class SmartAssistService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
-		
 	}
 
 	public setVideoPauseResumeStatus(value: boolean): Promise<boolean> {

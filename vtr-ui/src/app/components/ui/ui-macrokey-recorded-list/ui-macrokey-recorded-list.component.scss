@@ -10,6 +10,12 @@
 	}
 }
 
+.select-wrapper {
+	@media #{$mediaquery_X3} {
+		width: 30rem;
+	}
+}
+
 .record-table {
 	font-size: 1.6rem;
 	text-align: left;
@@ -41,6 +47,9 @@
 	.record-list {
 		overflow: auto;
 		height: 40rem;
+		@media #{$mediaquery_X3} {
+			height: 38rem;
+		}
 		.record-item {
 			cursor: pointer;
 			position: relative;

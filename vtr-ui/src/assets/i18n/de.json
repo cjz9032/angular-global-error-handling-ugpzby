@@ -699,7 +699,6 @@
                         "far": "Far"
                     }
                 },
-<<<<<<< HEAD
                 "note": {
                     "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
                     "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
@@ -726,6 +725,7 @@
                     "title": "Keep my display",
                     "caption": "Keep my display when I am reading or browsing.",
                     "displaySlider": {
+                        "title": "Minutes Before display dims when browsing",
                         "startTime": "0 minutes",
                         "endTime": "60 minutes"
                     }
@@ -735,15 +735,7 @@
                 "heading": "Intelligent Media",
                 "title": "Zero Touch Video Playback",
                 "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature"
-=======
-				"intelligentMedia": {
-					"heading": "Intelligent Media",
-					"title": "Zero Touch Video Playback",
-					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
-				}
->>>>>>> develop
+                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
             }
         }
     },

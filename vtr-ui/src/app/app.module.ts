@@ -160,6 +160,7 @@ import { PageNetworkBoostComponent } from './components/pages/page-network-boost
 import { PowerSmartSettingsComponent } from './components/widgets/power-smart-settings/power-smart-settings.component';
 import { PageSettingsComponent } from './components/pages/page-settings/page-settings.component';
 import { UiPopoverComponent } from './components/ui/ui-popover/ui-popover.component';
+import { UiMacrokeyPopupComponent } from './components/ui/ui-macrokey-popup/ui-macrokey-popup.component';
 import { ModalChsWelcomeContainerComponent } from './components/modal/modal-chs-welcome-container/modal-chs-welcome-container.component';
 
 // SA Components
@@ -207,6 +208,7 @@ import { DisplayColorTempComponent } from './components/display/display-color-te
 import { IntelligentMediaComponent } from './components/pages/page-smart-assist/intelligent-media/intelligent-media.component';
 import { UiMacrokeyCollapsibleContainerComponent } from './components/ui/ui-macrokey-collapsible-container/ui-macrokey-collapsible-container.component';
 import { CursorTypePipe } from './pipe/ui-security-statusbar/cursor-type.pipe';
+import { UiGamingDriverPopupComponent } from './components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
 
 library.add(fas);
 library.add(fab);
@@ -360,6 +362,7 @@ library.add(fal);
 		UiLightingProfileComponent,
 		AutoupdateSettingsComponent,
 		UiPopoverComponent,
+		UiMacrokeyPopupComponent,
 		ModalChsWelcomeContainerComponent,
 		WidgetMacrokeySettingsComponent,
 		UiNumberButtonComponent,
@@ -377,7 +380,8 @@ library.add(fal);
 		WidgetHomeSecurityMyDeviceComponent,
 		WidgetHomeSecurityAllDevicesComponent,
 		UiMacrokeyCollapsibleContainerComponent,
-		CursorTypePipe
+		CursorTypePipe,
+		UiGamingDriverPopupComponent
 	],
 	imports: [
 		BrowserModule,

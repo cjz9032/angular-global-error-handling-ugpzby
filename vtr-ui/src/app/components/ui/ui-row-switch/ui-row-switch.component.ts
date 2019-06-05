@@ -49,6 +49,8 @@ export class UiRowSwitchComponent extends BaseComponent {
 	@Output() tooltipClick = new EventEmitter<boolean>();
 	@Output() resetClick = new EventEmitter<Event>();
 
+	public contentExpand = false;
+
 
 	// private tooltip: NgbTooltip;
 
@@ -97,6 +99,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 
 	public onReadMoreClick($event) {
 		this.readMoreClick.emit($event);
+		this.contentExpand = true;
 	}
 
 	public onRightIconClick($event) {
