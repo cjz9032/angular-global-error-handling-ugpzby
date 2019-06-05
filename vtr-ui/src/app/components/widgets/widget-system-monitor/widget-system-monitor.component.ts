@@ -17,7 +17,7 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	public isSystemDisk: boolean;
 	public capacity: number;
 	public usedDisk: number;
-	public gpuModuleName: string;
+	public cpuModuleName: string;
 
 
 	@Input() cpuCurrent = 2.4;
@@ -55,8 +55,8 @@ export class WidgetSystemMonitorComponent implements OnInit {
 				this.gpuMax = parseFloat(this.gpuMaxFrequence);
 				this.memorySize = hwInfo.memorySize.split('GB')[0];
 				this.ramMax = parseFloat(this.memorySize);
-				this.gpuModuleName = hwInfo.gpuModuleName;
-				this.cpuover = this.gpuModuleName;
+				this.cpuModuleName = hwInfo.cpuModuleName;
+				this.cpuover = this.cpuModuleName;
 			});
 		} catch (error) {
 			console.error(error.message);
@@ -70,7 +70,7 @@ export class WidgetSystemMonitorComponent implements OnInit {
 		const self = this;
 		const loop = setInterval(function () {
 			self.getDynamicInfoService();
-		}, 1000);
+		}, 5000);
 	}
 
 	getLeftDeg(current, max) {
