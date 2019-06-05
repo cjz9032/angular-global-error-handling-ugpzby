@@ -624,7 +624,7 @@
 						},
 						"options": {
 							"start": "Start charging when below",
-							"checkboxText": "Automatically set to start 'charging at %' to 5% below the 'stop charging at %'",
+							"checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
 							"stop": "Stop charging at"
 							
 						}
