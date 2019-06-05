@@ -11,17 +11,23 @@ export class UiMacrokeyDetailsComponent implements OnInit {
 	@Output() isRecording = new EventEmitter<any>();
 	@Input() recordedData: any = [];
 	recording = false;
+	public timeoutRecording: boolean = false;
+	stopInterval: any;
 
 	constructor() {}
 
 	ngOnInit() {}
 
 	onStartClicked(event) {
+		this.stopInterval = setInterval(() => {
+			this.timeoutRecording = !this.timeoutRecording;
+		}, 5000);
 		this.toggleRecording();
 	}
 
 	onStopClicked(event) {
 		this.toggleRecording();
+		clearInterval(this.stopInterval);
 	}
 
 	toggleRecording() {
