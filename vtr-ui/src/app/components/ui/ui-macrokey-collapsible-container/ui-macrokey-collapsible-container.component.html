@@ -1,4 +1,4 @@
-<div class="select-box">
+<div class="select-box" [ngClass]="{'disabled': isRecording}">
 	<div class="dropdown">
 		<a class="dropdown-toggle" id="gaming-drop" (click)="toggleOptions()">
 				<span>{{ currentOption | translate }}</span>
