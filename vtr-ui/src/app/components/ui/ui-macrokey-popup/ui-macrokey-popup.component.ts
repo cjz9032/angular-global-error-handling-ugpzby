@@ -8,12 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class UiMacrokeyPopupComponent implements OnInit {
 	@Input() clearRecordPopup: boolean;
 	@Input() timeoutRecording: boolean;
+	@Input() showModal: boolean;
+	@Input() modalContent: any;
 	constructor() { }
 
 	ngOnInit() {
 	}
 	close() {
-		this.clearRecordPopup = false;
-		this.timeoutRecording = false;
+		this.showModal = false;
 	}
 }
