@@ -198,14 +198,27 @@
 					"m2": "M2"
 				}
 			},
-			"actionButton":{
-				"clearAction":{
-					"title":"Are you sure to clear this macro key?",
+			"popupContent":{
+				"clearMacrokey":{
+					"title":"Are you sure to clear this macro key?"
+				},
+				"timeoutRecording":{
+					"title":"Time Out For Recording.",
+					"body":"Recording will time out if no input for 20 seconds."
+				},
+				"maximumInput":{
+					"title":"Maximum Input Reached.",
+					"body":"Macro key can only store inputs less than 20."
+				},
+				"inputStopped":{
+					"title":"Time Out For Recording.",
+					"body":"Recording will time out if the input stopped for more than 10 seconds."
+				},
+				"confirmButton":{
 					"btnClear":"Clear",
 					"btnCancel":"Cancel"
 				},
-				"btnOk":"OK",
-				"timeoutTitle":"Recording will time out if no input for 20 seconds"
+				"btnOk":"OK"
 			}
 		},
 		"lightingProfile": {
@@ -610,7 +623,7 @@
 						"description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
 						"tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
 						"noteInfo": "Note: Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
-						
+
 						"settings": {
 							"title1": "Threshold for Built in battery",
 							"title2": "Threshold for Removable battery"
@@ -626,7 +639,7 @@
 							"start": "Start charging when below",
 							"checkboxText": "Automatically set to start 'charging at %' to 5% below the 'stop charging at %'",
 							"stop": "Stop charging at"
-							
+
 						}
 					},
 					"expressCharging": {
@@ -1000,6 +1013,7 @@
 		"trailExpiredSubtext": "Upgrate to protect all of your devices",
 		"upgrade": "upgrade",
 		"tour": {
+			"back": "Back",
 			"skip": "Skip",
 			"start": "START TOUR",
 			"done": "DONE",
