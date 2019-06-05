@@ -32,10 +32,12 @@ export class SvgInlinePipe implements PipeTransform {
               val=`data:image/svg+xml;base64,${btoa(val+"")}`;
               val= this.sanitizer.bypassSecurityTrustResourceUrl(val+"");
               observer.next(val);
+              observer.complete();
             });
         }
         else{
           observer.next(value);
+          observer.complete();
         }
     });
     }else{
