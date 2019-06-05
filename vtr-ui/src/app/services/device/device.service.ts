@@ -59,14 +59,16 @@ export class DeviceService {
 	}
 
 	private loadGamingDashboard() {
-		if (!this.isGamingDashboardLoaded) {
-			this.isGamingDashboardLoaded = true;
-			if (this.isGaming) {
-				this.router.navigateByUrl('/device-gaming');
-			} else {
-				this.router.navigateByUrl('/dashboard');
-			}
-		}
+		// start of MVP1.5 release hot-fix
+		// if (!this.isGamingDashboardLoaded) {
+		// 	this.isGamingDashboardLoaded = true;
+		// 	if (this.isGaming) {
+		// 		this.router.navigateByUrl('/device-gaming');
+		// 	} else {
+		// 		this.router.navigateByUrl('/dashboard');
+		// 	}
+		// }
+		// end of MVP1.5 release hot-fix
 	}
 
 	// private initIsGaming() {

@@ -60,10 +60,10 @@ export class AppComponent implements OnInit {
 		const tutorial: WelcomeTutorial = commonService.getLocalStorageValue(LocalStorageKey.WelcomeTutorial);
 		if (tutorial === undefined && navigator.onLine) {
 			this.openWelcomeModal(1);
-		} else if(tutorial && tutorial.page == 1 && navigator.onLine) {
+		} else if (tutorial && tutorial.page == 1 && navigator.onLine) {
 			this.openWelcomeModal(2);
 		}
-		
+
 		//#endregion
 
 		window.addEventListener('online', (e) => {
@@ -94,7 +94,7 @@ export class AppComponent implements OnInit {
 			(reason: WelcomeTutorial) => {
 				// on close
 				console.log('welcome-modal-size', reason);
-				if(reason instanceof WelcomeTutorial) {
+				if (reason instanceof WelcomeTutorial) {
 					this.commonService.setLocalStorageValue(LocalStorageKey.WelcomeTutorial, reason);
 				}
 			}
@@ -146,19 +146,23 @@ export class AppComponent implements OnInit {
 			this.deviceService.getMachineInfo()
 				.then((value: any) => {
 					console.log('getMachineInfo.then', value);
-					if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
-						this.translate.use(value.locale.substring(0, 2));
-					} else {
-						if (value && value.locale.substring(0, 2).toLowerCase() === 'pt') {
-							value.locale.toLowerCase() === 'pt-br' ? this.translate.use('pt-BR') : this.translate.use('pt');
-						}
-						if (value && value.locale.toLowerCase() === 'zh-hans') {
-							this.translate.use('zh-Hans');
-						}
-						if (value && value.locale.toLowerCase() === 'zh-hant') {
-							this.translate.use('zh-Hant');
-						}
-					}
+					// start of MVP1.5 release hot-fix
+
+					// if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
+					// 	this.translate.use(value.locale.substring(0, 2));
+					// } else {
+					// 	if (value && value.locale.substring(0, 2).toLowerCase() === 'pt') {
+					// 		value.locale.toLowerCase() === 'pt-br' ? this.translate.use('pt-BR') : this.translate.use('pt');
+					// 	}
+					// 	if (value && value.locale.toLowerCase() === 'zh-hans') {
+					// 		this.translate.use('zh-Hans');
+					// 	}
+					// 	if (value && value.locale.toLowerCase() === 'zh-hant') {
+					// 		this.translate.use('zh-Hant');
+					// 	}
+					// }
+
+					// end of MVP1.5 release hot-fix
 					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
 				}).catch(error => {
 					console.error('getMachineInfo', error);

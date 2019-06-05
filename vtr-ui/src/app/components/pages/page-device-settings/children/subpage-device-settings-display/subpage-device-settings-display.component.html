@@ -18,7 +18,9 @@
 				[theme]="'white'"
 				(toggle)="onCardCollapse($event)">
 				<ul class="list-group list-group-flush">
-					<li class="pt-3"
+
+					<!-- start of MVP1.5 release hot-fix -->
+					<!-- <li class="pt-3"
 						*ngIf="displayColorTempDataSource.available">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.display.dispColorTemp.title' | translate"
@@ -42,7 +44,8 @@
 								</div>
 							</div>
 						</vtr-ui-row-switch>
-					</li>
+					</li> -->
+					<!-- end of MVP1.5 release hot-fix -->
 
 					<li class="pt-3"
 						*ngIf="eyeCareModeStatus.available">

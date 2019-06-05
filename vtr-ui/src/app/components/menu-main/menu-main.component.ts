@@ -58,7 +58,10 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 		private smartAssist: SmartAssistService
 	) {
 		this.showVpn();
-		this.showSmartAssist();
+		// start of MVP1.5 release hot-fix
+		// this.showSmartAssist();
+		// end of MVP1.5 release hot-fix
+
 		this.getMenuItems().then((items) => {
 			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 			if (cacheShowWindowsHello) {
