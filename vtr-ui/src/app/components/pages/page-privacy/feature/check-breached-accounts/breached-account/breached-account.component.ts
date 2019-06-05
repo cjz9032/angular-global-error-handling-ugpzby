@@ -23,14 +23,8 @@ export class BreachedAccountComponent implements OnInit, AfterViewInit {
 	isFigleafReadyForCommunication = false;
 
 	tryProductText = {
-		title: 'Fix & monitor breaches with Lenovo Privacy',
-		text: 'Fix your breached accounts with ease by changing your passwords and mask emails.' +
-			' If any of your accounts stored in Lenovo Privacy by FigLeaf are part of a breach, you’ll know about it. Start 14-day free trial. No credit card required.',
-		buttonText: 'Try Lenovo Privacy',
-		link: {
-			text: 'Learn more',
-			url: '/#/privacy/landing'
-		},
+		risk: 'When your accounts are breached, anyone can access and use your private information.',
+		howToFix: 'You should change passwords for breached accounts. Try Lenovo Privacy by FigLeaf to fix breaches and prevent them in future.'
 	};
 
 	constructor(

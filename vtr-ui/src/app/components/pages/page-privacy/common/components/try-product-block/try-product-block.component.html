@@ -1,39 +1,29 @@
 <div class="try-product">
 	<div class="try-product__block try-product__block--risk">
 		<p class="try-product__block-title">What's the risk?</p>
-		<p class="try-product__block-description">When your accounts are breached, anyone can access and use your private information.</p>
+		<p class="try-product__block-description">{{texts.risk}}</p>
 	</div>
 
 	<div class="try-product__block try-product__block--fix">
 		<p class="try-product__block-title">How to fix?</p>
-		<p class="try-product__block-description">You should change passwords for breached accounts. Try Lenovo Privacy by FigLeaf to fix breaches and prevent them in future.</p>
-
+		<p class="try-product__block-description">{{texts.howToFix}}</p>
+		<div class="try-product__group-button">
+			<div class="try-product__button-link try-product__button-link--download">
+				<a vtrOpenFigleafInstaller
+				   vtrSendAnalytics
+				   [metricsEvent]="'ItemClick'"
+				   [metricsItem]="'TryLenovoPrivacyButton'">
+					<span>Install</span>
+				</a>
+			</div>
+			<div class="try-product__button-link try-product__button-link--to-right">
+				<a routerLink="/privacy/landing"
+				   vtrSendAnalytics
+				   [metricsEvent]="'ItemClick'"
+				   [metricsItem]="'LenovoPrivacyLearnMoreButton'">
+					<span>Learn more</span>
+				</a>
+			</div>
+		</div>
 	</div>
-	
-	<!--<div class="try-product__description">-->
-		<!--<p class="try-product__title">-->
-			<!--{{texts.title}}-->
-		<!--</p>-->
-		<!--<p class="try-product__text">-->
-			<!--{{texts.text}}-->
-		<!--</p>-->
-	<!--</div>-->
-	<!--<div class="try-product__group-button">-->
-		<!--<button class="try-product__button"-->
-				<!--vtrOpenFigleafInstaller-->
-				<!--vtrSendAnalytics-->
-				<!--[metricsEvent]="'ItemClick'"-->
-				<!--[metricsItem]="'TryLenovoPrivacyButton'"-->
-				<!--*ngIf="texts.buttonText">-->
-			<!--{{texts.buttonText}}-->
-		<!--</button>-->
-		<!--<div class="try-product__button-link" *ngIf="texts.link">-->
-			<!--<a [href]="texts.link.url"-->
-			   <!--vtrSendAnalytics-->
-			   <!--[metricsEvent]="'ItemClick'"-->
-			   <!--[metricsItem]="'LenovoPrivacyLearnMoreButton'">-->
-				<!--<span>{{texts.link.text}}</span>-->
-			<!--</a>-->
-		<!--</div>-->
-	<!--</div>-->
 </div>
