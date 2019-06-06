@@ -380,6 +380,7 @@ export class PowerService {
 		}
 
 		public setChargeThresholdValue(value: any): Promise<any> {
+			//console.log('Battery threshold value here ----->', value);
 			try {
 				if (this.devicePowerThinkPad) {
 					return this.devicePowerThinkPad.sectionChargeThreshold.setChargeThresholdValue(value);
@@ -391,6 +392,7 @@ export class PowerService {
 		}
 
 		public setCtAutoCheckbox(value: any): Promise<any> {
+		//console.log('auto check value here ----->', value);
 			try {
 				if (this.devicePowerThinkPad) {
 					return this.devicePowerThinkPad.sectionChargeThreshold.setCtAutoCheckbox(value);

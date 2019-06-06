@@ -60,14 +60,14 @@
 					</li>			
 
 					<!-- MVP 2 feature -->
-					<li class="" >
+					<li class=""  *ngIf = "machineType == 1">
 						<vtr-ui-row-switch [title]="'device.deviceSettings.power.batterySettings.batteryThreshold.title' | translate"
 							[caption]="'device.deviceSettings.power.batterySettings.batteryThreshold.description' | translate "
 							[isSwitchVisible]=true
 							[isLastChild]="!conservationModeStatus.available && !expressChargingStatus.available"
 							[leftIcon]="batterySettings.items[1].leftImageSource"
 							[rightIcon]="batterySettings.items[1].rightImageSource"
-							[readMoreText]="batterySettings.items[1].readMoreText"
+							[readMoreText]="'device.deviceSettings.power.batterySettings.batteryThreshold.readMoreText' | translate"
 							[showChildContent]="true"
 							(toggleOnOff)="showBatteryThreshold=$event.switchValue;"
 							[tooltipText]="'device.deviceSettings.power.batterySettings.batteryThreshold.tooltip' | translate">

@@ -50,7 +50,7 @@
                 .all-device-name {
                     justify-content: center;
                     font-size: 1.5rem;
-                    font-weight: $weight_bold;
+					font-weight: $weight_bold;
                 }
             }
         }
@@ -73,7 +73,10 @@
                     position: absolute;
                     .img-fluid {
                         max-width: 65%;
-                    }
+					}
+					.circle-red {
+						max-width: 85%;
+					}
                 }
                 .device-number {
                     font-size: 5rem;
@@ -90,7 +93,7 @@
                 .device-text {
                     justify-content: center;
                     font-size: 1.5rem;
-                    font-weight: $weight_bold;
+					font-weight: $weight_bold;
                 }
                 .status {
                     > .h3 {
@@ -121,7 +124,7 @@
         .place-holder {
             border-radius: $border_radius;
             background: $shade_lightest;
-            opacity: 0.9;
+            opacity: 0.8;
         }
         .content-container {
             display: flex;

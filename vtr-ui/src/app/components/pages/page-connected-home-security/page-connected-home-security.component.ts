@@ -91,7 +91,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 		if (typeof this.connectedHomeSecurity.hasSystemPermissionShowed === 'boolean') {
 			this.openModal();
 		}
-		this.connectedHomeSecurity.on(EventTypes.hasSystemPermissionShowedEvent, (data) => {
+		this.connectedHomeSecurity.on(EventTypes.chsHasSystemPermissionShowedEvent, (data) => {
 			this.welcomeModel.hasSystemPermissionShowed = data;
 			this.openModal();
 		});

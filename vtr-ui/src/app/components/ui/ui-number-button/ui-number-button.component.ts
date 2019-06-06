@@ -13,7 +13,14 @@ export class UiNumberButtonComponent implements OnInit {
 	@Output() public numberSelected = new EventEmitter<any>();
 	choosenKey: any;
 	isShowingPopup: Boolean = false;
-
+	public showModal: boolean = false;
+	clickCount: number = 0;
+	// Initialize modal content
+	modalContent = {
+		headerTitle: 'gaming.macroKey.popupContent.maximumInput.title',
+		bodyText: 'gaming.macroKey.popupContent.maximumInput.body',
+		btnConfirm: false
+		};
 	constructor() {}
 
 	ngOnInit() {
@@ -26,6 +33,11 @@ export class UiNumberButtonComponent implements OnInit {
 	}
 
 	numberClicked(number) {
+		// Show modal if input is clicked 20 times
+		if (this.clickCount === 20) {
+			this.showModal = !this.showModal;
+		}
+		this.clickCount++;
 		this.isShowingPopup = !this.isShowingPopup;
 
 		if (this.recordingStatus) {

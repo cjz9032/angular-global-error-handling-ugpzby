@@ -17,7 +17,8 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	public isSystemDisk: boolean;
 	public capacity: number;
 	public usedDisk: number;
-	public gpuModuleName: string;
+	public cpuModuleName: string;
+	public showAllHDs = false;
 
 
 	@Input() cpuCurrent = 2.4;
@@ -30,11 +31,33 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	@Input() ramMax = 32;
 	@Input() cpuover = 'Intel';
 
+	// @Input() hds = [
+	// 	{
+	// 		title: 'SSD',
+	// 		system: true,
+	// 		current: 1500,
+	// 		max: 2000
+	// 	},
+	// 	{
+	// 		title: 'HDD 1',
+	// 		system: false,
+	// 		current: 775,
+	// 		max: 2000
+	// 	},
+	// 	{
+	// 		title: 'HDD 2',
+	// 		system: false,
+	// 		current: 100,
+	// 		max: 4000
+	// 	}
+	// ];
+
 	public hds: any;
+
 	constructor(private hwInfoService: HwInfoService) { }
 	public getDynamicInfoService() {
 		this.hwInfoService.getDynamicInformation().then((hwInfo: any) => {
-			console.log('getDynamicInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
+			//console.log('getDynamicInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
 			this.cpuUseFrequency = hwInfo.cpuUseFrequency.split('GHz')[0];;
 			this.cpuCurrent = parseFloat(this.cpuUseFrequency);
 			this.gpuUseFrequency = hwInfo.gpuUseFrequency.split('GB')[0];;
@@ -48,15 +71,15 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	public getMachineInfoService() {
 		try {
 			this.hwInfoService.getMachineInfomation().then((hwInfo: any) => {
-				console.log('getMachineInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
+				//console.log('getMachineInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
 				this.cpuBaseFrequence = hwInfo.cpuBaseFrequence.split('GHz')[0];
 				this.cpuMax = parseFloat(this.cpuBaseFrequence);
 				this.gpuMaxFrequence = hwInfo.gpuMaxFrequence.split('GB')[0];
 				this.gpuMax = parseFloat(this.gpuMaxFrequence);
 				this.memorySize = hwInfo.memorySize.split('GB')[0];
 				this.ramMax = parseFloat(this.memorySize);
-				this.gpuModuleName = hwInfo.gpuModuleName;
-				this.cpuover = this.gpuModuleName;
+				this.cpuModuleName = hwInfo.cpuModuleName;
+				this.cpuover = this.cpuModuleName;
 			});
 		} catch (error) {
 			console.error(error.message);
@@ -70,7 +93,13 @@ export class WidgetSystemMonitorComponent implements OnInit {
 		const self = this;
 		const loop = setInterval(function () {
 			self.getDynamicInfoService();
-		}, 1000);
+		}, 5000);
+	}
+
+	toggleHDs(event) {
+		if (this.hds.length > 1) {
+			this.showAllHDs = !this.showAllHDs;
+		}
 	}
 
 	getLeftDeg(current, max) {
@@ -106,7 +135,7 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	}
 
 	getFloorPct(current, max) {
-		const pct = Math.floor((current / max)*100);
+		const pct = Math.floor((current / max) * 100);
 		return pct;
 	}
 

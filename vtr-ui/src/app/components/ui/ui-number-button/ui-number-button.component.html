@@ -16,7 +16,7 @@
 		</svg>
 		<span>{{ this.choosenKey.title | translate }}</span>
 	</div>
-	<ul [ngClass]="{'show': isShowingPopup, 'numberpad-popup': isNumberpad}">
+	<ul [ngClass]="{'show': isShowingPopup, 'numberpad-popup': isNumberpad, 'recording': recordingStatus}">
 		<ng-container *ngFor="let number of numbers;">
 			<li [ngClass]="{'selected': number.isSelected, 'macro-exists': number.isMacrokeyExists}" (click)="numberClicked(number)">
 				<div>
@@ -26,3 +26,5 @@
 		</ng-container>
 	</ul>
 </div>
+
+<vtr-ui-macrokey-popup [modalContent]="modalContent" [showModal]="showModal"></vtr-ui-macrokey-popup>
