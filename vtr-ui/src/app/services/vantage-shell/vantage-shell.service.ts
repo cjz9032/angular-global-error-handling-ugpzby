@@ -5,6 +5,7 @@ import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
+import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -101,7 +102,7 @@ export class VantageShellService {
 			if (!metricClient.isInit) {
 				metricClient.init({
 					appVersion: environment.appVersion,
-					appId: 'ZN8F02EQU628',
+					appId: MetricHelper.getAppId('dß'),
 					appName: 'vantage3',
 					channel: '',
 					ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
