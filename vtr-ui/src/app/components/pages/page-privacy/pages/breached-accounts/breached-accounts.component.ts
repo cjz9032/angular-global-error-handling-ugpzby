@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { map, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { BreachedAccountsService } from '../../common/services/breached-accounts.service';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
@@ -15,7 +15,6 @@ import { CountNumberOfIssuesService } from '../../common/services/count-number-o
 export class BreachedAccountsComponent {
 	breachedAccounts$ = this.breachedAccountsService.onGetBreachedAccounts$
 		.pipe(
-			tap((breachedAccounts) => console.log('breachedAccounts', breachedAccounts)),
 			map((breachedAccounts) => breachedAccounts.breaches.filter((breach) => {
 					return !(breach.hasOwnProperty('isFixed') && breach.isFixed === true);
 				})
