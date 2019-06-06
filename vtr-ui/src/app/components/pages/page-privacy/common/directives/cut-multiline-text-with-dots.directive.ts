@@ -1,4 +1,5 @@
-import { Directive, ElementRef, Input, AfterViewInit, HostListener } from '@angular/core';
+import { Directive, ElementRef, Input, AfterViewInit, HostListener, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 @Directive({
 	selector: '[vtrCutMultilineTextWithDots]'
@@ -9,6 +10,7 @@ export class CutMultilineTextWithDotsDirective implements AfterViewInit {
 	@Input() addShowMoreBtn?: boolean;
 
 	constructor(
+		@Inject(DOCUMENT) private document: Document,
 		private el: ElementRef,
 	) {
 	}
