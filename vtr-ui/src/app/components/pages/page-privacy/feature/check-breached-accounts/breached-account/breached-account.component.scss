@@ -51,41 +51,41 @@ $leftIndent: 7.5rem;
 	&__chips {
 		width: 33%;
 		display: flex;
+	}
 
-		&-item {
-			background-color: #FFFFFF;
-			border: 1px solid #EBEBEB;
-			border-radius: 12px;
-			padding: 0.4rem 1.8rem 0.6rem 3.2rem;
-			font-weight: bold;
-			color: #667481;
-			font-size: 11px;
-			line-height: 14px;
-			position: relative;
+	&__chips-item {
+		background-color: #FFFFFF;
+		border: 1px solid #EBEBEB;
+		border-radius: 12px;
+		padding: 0.4rem 1.8rem 0.6rem 3.2rem;
+		font-weight: bold;
+		color: #667481;
+		font-size: 11px;
+		line-height: 14px;
+		position: relative;
 
-			&:not(:last-child) {
-				margin-right: 1rem;
-			}
+		&:not(:last-child) {
+			margin-right: 1rem;
+		}
 
-			&:before {
-				content: "";
-				position: absolute;
-				left: 1rem;
-				top: 50%;
-				transform: translateY(-50%);
-				width: 12px;
-				height: 12px;
-				background: none;
-				background-size: contain;
-			}
+		&:before {
+			content: "";
+			position: absolute;
+			left: 1rem;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 12px;
+			height: 12px;
+			background: none;
+			background-size: contain;
+		}
 
-			&--password:before {
-				background: url("/assets/icons/privacy-tab/icon-password-red.svg") 0 0 no-repeat;
-			}
+		&--password:before {
+			background: url("/assets/icons/privacy-tab/icon-password-red.svg") 0 0 no-repeat;
+		}
 
-			&--email:before {
-				background: url("/assets/icons/privacy-tab/icon-email-red.svg") 0 0 no-repeat;
-			}
+		&--email:before {
+			background: url("/assets/icons/privacy-tab/icon-email-red.svg") 0 0 no-repeat;
 		}
 	}
 
