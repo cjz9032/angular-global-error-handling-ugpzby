@@ -11,7 +11,9 @@ import { tap } from 'rxjs/internal/operators/tap';
 })
 export class CountNumberOfIssuesService {
 	breachedAccountsCount = this.breachedAccountsService.onGetBreachedAccounts$.pipe(
-		map(breachesState => breachesState.breaches.length),
+		map((breachesState) =>
+			breachesState.breaches.filter((breach) => breach.domain !== 'n/a')),
+		map((breaches) => breaches.length),
 		startWith(0)
 	);
 	nonPrivatePasswordCount = this.browserAccountsService.installedBrowsersData.pipe(

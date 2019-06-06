@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { BreachedAccount } from '../../../common/services/breached-accounts.service';
+import { BreachedAccount, KeyOfBreachedAccounts } from '../../../common/services/breached-accounts.service';
 import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
+import { BreachedAccountService } from './breached-account.service';
 
 export enum BreachedAccountMode {
 	FULL = 'FULL',
@@ -15,10 +16,21 @@ export enum BreachedAccountMode {
 })
 export class BreachedAccountComponent implements OnInit, AfterViewInit {
 	@Input() mode: BreachedAccountMode = BreachedAccountMode.FULL;
-	@Input() breachedAccounts: BreachedAccount[];
+	@Input() set breachedAccounts(breachedAccounts: BreachedAccount[]) {
+		const {breachedAccountsForShow, keyOfBreachedAccounts, countOfBreachInfo} =
+			this.breachedAccountService.createBreachedAccountsForShow(breachedAccounts);
+		this.breachedAccountsForShow = breachedAccountsForShow;
+		this.keyOfBreachedAccounts = keyOfBreachedAccounts;
+		this.countOfBreachInfo = countOfBreachInfo;
+	}
 	@Input() openId = null;
 	@Input() isUserAuthorized: boolean;
 	@Output() verifyClick = new EventEmitter<boolean>();
+
+	breachedAccountsForShow: BreachedAccount[];
+	otherBreaches: BreachedAccount[];
+	keyOfBreachedAccounts: KeyOfBreachedAccounts[];
+	countOfBreachInfo: number;
 
 	isFigleafReadyForCommunication = false;
 
@@ -29,7 +41,8 @@ export class BreachedAccountComponent implements OnInit, AfterViewInit {
 
 	constructor(
 		private communicationWithFigleafService: CommunicationWithFigleafService,
-		private vantageCommunicationService: VantageCommunicationService) {
+		private vantageCommunicationService: VantageCommunicationService,
+		private breachedAccountService: BreachedAccountService) {
 	}
 
 	ngOnInit() {
@@ -48,7 +61,7 @@ export class BreachedAccountComponent implements OnInit, AfterViewInit {
 
 	transformDomain(domain) {
 		if (domain === 'n/a') {
-			return 'unknown website';
+			return 'Other breach info';
 		}
 		return domain;
 	}

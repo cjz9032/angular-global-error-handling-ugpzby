@@ -5,6 +5,15 @@ export function returnUniqueElementsInArray<T>(arr: T[]): T[] {
 	return Array.from(new Set<T>(arr));
 }
 
+export function returnUniqueElementsInArrayOfObject<T>(arr: T[], keyProps: string[]): T[] {
+	const kvArray = arr.map(entry => {
+		const key = keyProps.map(k => entry[k]).join('|');
+		return [key, entry];
+	});
+	const map = new Map(kvArray);
+	return Array.from(map.values());
+}
+
 export function validateEmail(email) {
 	const regExpForCheckEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	return regExpForCheckEmail.test(String(email).toLowerCase());

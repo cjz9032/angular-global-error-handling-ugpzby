@@ -11,7 +11,24 @@ $leftIndent: 7.5rem;
 
 	&__image {
 		display: flex;
+		position: relative;
 		align-items: center;
+	}
+
+	&__count {
+		position: absolute;
+		border-radius: 50%;
+		padding: 3px;
+		width: 16px;
+		height: 16px;
+		left: 3rem;
+		bottom: 0.5rem;
+		background-color: #E74C3C;
+		text-align: center;
+		color: #FFFFFF;
+		font-size: 9px;
+		font-weight: bold;
+		line-height: 10px;
 	}
 
 	&__text {

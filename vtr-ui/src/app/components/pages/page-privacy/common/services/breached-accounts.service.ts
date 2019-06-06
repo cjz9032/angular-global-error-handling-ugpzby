@@ -3,6 +3,7 @@ import { BehaviorSubject, EMPTY, merge, ReplaySubject, Subject, Subscription } f
 import { catchError, distinctUntilChanged, map, switchMap, switchMapTo, take, tap } from 'rxjs/operators';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { EmailScannerService, ErrorNames } from '../../feature/check-breached-accounts/services/email-scanner.service';
+import { BrowserListType } from './vantage-communication.service';
 
 interface GetBreachedAccountsResponse {
 	type: string;
@@ -28,6 +29,16 @@ interface GetBreachedAccountsState {
 	breaches: BreachedAccount[];
 	error: string | null;
 }
+
+export enum KeyForShow {
+	email = 'email',
+	password = 'password'
+}
+
+export type KeysForShow = keyof typeof KeyForShow;
+export type KeyOfBreachedAccounts = {
+	[value in KeysForShow]: string;
+};
 
 @Injectable()
 export class BreachedAccountsService {
