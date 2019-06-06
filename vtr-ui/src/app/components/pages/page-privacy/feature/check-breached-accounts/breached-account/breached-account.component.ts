@@ -17,20 +17,17 @@ export enum BreachedAccountMode {
 export class BreachedAccountComponent implements OnInit, AfterViewInit {
 	@Input() mode: BreachedAccountMode = BreachedAccountMode.FULL;
 	@Input() set breachedAccounts(breachedAccounts: BreachedAccount[]) {
-		const {breachedAccountsForShow, keyOfBreachedAccounts, countOfBreachInfo} =
+		const {breachedAccountsForShow, otherBreaches} =
 			this.breachedAccountService.createBreachedAccountsForShow(breachedAccounts);
 		this.breachedAccountsForShow = breachedAccountsForShow;
-		this.keyOfBreachedAccounts = keyOfBreachedAccounts;
-		this.countOfBreachInfo = countOfBreachInfo;
+		this.otherBreaches = otherBreaches;
 	}
 	@Input() openId = null;
 	@Input() isUserAuthorized: boolean;
 	@Output() verifyClick = new EventEmitter<boolean>();
 
-	breachedAccountsForShow: BreachedAccount[];
-	otherBreaches: BreachedAccount[];
-	keyOfBreachedAccounts: KeyOfBreachedAccounts[];
-	countOfBreachInfo: number;
+	breachedAccountsForShow: BreachedAccount[] = [];
+	otherBreaches: BreachedAccount[] = [];
 
 	isFigleafReadyForCommunication = false;
 

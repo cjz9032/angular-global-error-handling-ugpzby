@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BreachedAccount, KeyForShow, KeyOfBreachedAccounts } from '../../../common/services/breached-accounts.service';
-import { returnUniqueElementsInArrayOfObject } from '../../../utils/helpers';
+import { BreachedAccount } from '../../../common/services/breached-accounts.service';
 
 @Injectable()
 export class BreachedAccountService {
@@ -14,23 +13,6 @@ export class BreachedAccountService {
 			hasEmail: otherBreaches.findIndex((breachedAccount) => breachedAccount.hasEmail) > -1,
 		});
 
-		const keyOfBreachedAccounts = this.getKeyOfBreachedAccounts(otherBreaches);
-		const countOfBreachInfo = this.getCountOfBreachInfo(otherBreaches);
-
-		return {breachedAccountsForShow, keyOfBreachedAccounts, countOfBreachInfo};
-	}
-
-
-	private getKeyOfBreachedAccounts(otherBreaches: BreachedAccount[]): KeyOfBreachedAccounts[] {
-		return returnUniqueElementsInArrayOfObject(otherBreaches.map((breachAccount) => ({
-				[KeyForShow.email]: breachAccount[KeyForShow.email],
-				[KeyForShow.password]: breachAccount[KeyForShow.password]
-		})), [...Object.keys(KeyForShow)]);
-	}
-
-	private getCountOfBreachInfo(otherBreaches: BreachedAccount[]) {
-		return otherBreaches.filter((breachAccount) =>
-			breachAccount.hasPassword || breachAccount.hasEmail
-		).length;
+		return {breachedAccountsForShow, otherBreaches};
 	}
 }

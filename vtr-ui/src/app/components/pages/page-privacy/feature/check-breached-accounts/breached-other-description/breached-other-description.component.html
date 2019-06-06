@@ -12,16 +12,19 @@
 
 		<div class="breached-description__description">
 			<div class="breached-description__col">
-				<!--<div *ngIf="breachedAccount.email"-->
-					 <!--class="breached-description__item"-->
-					 <!--[ngClass]="{'breached-description__item&#45;&#45;email': breachedAccount.email}">-->
-					<!--{{breachedAccount.email}}-->
-				<!--</div>-->
-				<!--<div *ngIf="breachedAccount.password"-->
-					 <!--class="breached-description__item"-->
-					 <!--[ngClass]="{'breached-description__item&#45;&#45;password': breachedAccount.password}">-->
-					<!--{{breachedAccount.password}}-->
-				<!--</div>-->
+				<ng-container *ngIf="breachedEmails.length > 0">
+					<div *ngFor="let email of breachedEmails"
+						 class="breached-description__item breached-description__item--email">
+						{{email}}
+					</div>
+				</ng-container>
+
+				<ng-container *ngIf="breachedPasswords.length > 0">
+					<div *ngFor="let password of breachedPasswords"
+						 class="breached-description__item breached-description__item--password">
+						{{password}}
+					</div>
+				</ng-container>
 			</div>
 		</div>
 	</div>
