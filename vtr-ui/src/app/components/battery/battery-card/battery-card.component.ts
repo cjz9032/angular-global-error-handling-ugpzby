@@ -79,24 +79,29 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		console.log('In getBatteryDetail');
 		try {
 			if (this.batteryService.isShellAvailable) {
+				this.getBatteryDetails();
+
 				this.batteryCardTimer = setTimeout(() => {
 					console.log('Trying after 30 seconds');
-					// this.getBatteryDetailOnCard();
-					this.batteryService.getBatteryDetail()
-						.then((response: any) => {
-							console.log('getBatteryDetailOnCard', response);
-							this.batteryInfo = response;
-							this.batteryInfo = response.batteryInformation;
-							this.batteryGauge = response.batteryIndicatorInfo;
-							this.updateBatteryDetails();
-						}).catch(error => {
-							console.error('getBatteryDetailOnCard', error);
-						});
+					this.getBatteryDetails();
 				}, 30000);
 			}
 		} catch (error) {
 			console.error('getBatteryDetailOnCard: ' + error.message);
 		}
+	}
+
+	private getBatteryDetails() {
+		this.batteryService.getBatteryDetail()
+			.then((response: any) => {
+				console.log('getBatteryDetailOnCard', response);
+				this.batteryInfo = response;
+				this.batteryInfo = response.batteryInformation;
+				this.batteryGauge = response.batteryIndicatorInfo;
+				this.updateBatteryDetails();
+			}).catch(error => {
+				console.error('getBatteryDetailOnCard', error);
+			});
 	}
 
 	public updateBatteryDetails() {
