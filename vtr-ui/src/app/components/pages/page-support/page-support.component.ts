@@ -147,6 +147,11 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			const { type, payload } = notification;
 			switch (type) {
 				case NetworkStatus.Online:
+					this.isOnline = notification.payload.isOnline;
+					this.getMachineInfo();
+					this.fetchCMSContents(this.langText);
+					this.fetchCMSArticleCategory(this.langText);
+					break;
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
 					break;
