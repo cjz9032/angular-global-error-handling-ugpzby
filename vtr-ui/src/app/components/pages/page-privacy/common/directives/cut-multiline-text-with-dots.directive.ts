@@ -8,6 +8,7 @@ export class CutMultilineTextWithDotsDirective implements AfterViewInit, OnDestr
 	@Input() textToAppend: string;
 	@Input() allowedLinesAmount?: number;
 	@Input() addShowMoreBtn?: boolean;
+	showMoreBtnClickHandler = this.showMoreBtnClick.bind(this);
 
 	constructor(
 		@Inject(DOCUMENT) private document: Document,
@@ -69,7 +70,7 @@ export class CutMultilineTextWithDotsDirective implements AfterViewInit, OnDestr
 		}
 	}
 
-	private showMoreBtnClickHandler() {
+	private showMoreBtnClick() {
 		const appendedShowMoreBtn = document.getElementById('show-more-btn');
 		const cutHtmlElement = this.el.nativeElement;
 		cutHtmlElement.removeChild(appendedShowMoreBtn);
