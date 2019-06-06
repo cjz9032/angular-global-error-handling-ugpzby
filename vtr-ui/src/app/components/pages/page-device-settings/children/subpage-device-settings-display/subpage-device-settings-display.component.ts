@@ -36,6 +36,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public sunsetToSunriseModeStatus = new SunsetToSunriseStatus(true, false, false, '', '');
 	public enableSunsetToSunrise = false;
 	public enableSlider = false;
+	public isEyeCareMode: boolean;
 	public initEyecare = 0;
 	public showHideAutoExposureSlider = false;
 	private notificationSubscription: Subscription;
@@ -138,7 +139,6 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.displayService.startMonitorForCameraPermission();
 		this.startMonitorForCamera();
 		this.initCameraBlurMethods();
-		this.getDaytimeColorTemperature();
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -240,16 +240,17 @@ export class SubpageDeviceSettingsDisplayComponent
 		});
 	}
 	public onEyeCareModeStatusToggle(event: any) {
-		console.log('onEyeCareModeStatusToggle', event.switchValue);
+		this.isEyeCareMode = event.switchValue;
+		console.log('onEyeCareModeStatusToggle', this.isEyeCareMode);		
 		try {
 			if (this.displayService.isShellAvailable) {
 				this.displayService.setEyeCareModeState(event.switchValue)
 					.then((value: any) => {
 						console.log('onEyeCareModeStatusToggle.then', value);
-						this.enableSlider = event.switchValue;
+						this.enableSlider = this.isEyeCareMode;
 						this.eyeCareDataSource.current = value.colorTemperature;
 						const eyeCare = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardEyeCareMode);
-						eyeCare.status = event.switchValue;
+						eyeCare.status = this.isEyeCareMode;
 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, eyeCare);
 					}).catch(error => {
 						console.error('onEyeCareModeStatusToggle', error);
@@ -275,6 +276,7 @@ export class SubpageDeviceSettingsDisplayComponent
 							this.getSunsetToSunrise();
 							this.getEyeCareModeStatus();
 							this.getDisplayColorTemperature();
+							this.getDaytimeColorTemperature();
 						}
 
 					}).catch(error => {
@@ -426,8 +428,8 @@ export class SubpageDeviceSettingsDisplayComponent
 
 	public onSetChangeDisplayColorTemp($event: ChangeContext) {
 		try {
-			console.log('temparature changed in display', $event);
-			if (this.displayService.isShellAvailable) {
+			if (this.displayService.isShellAvailable && !this.isEyeCareMode) {
+				console.log('temparature changed in display', $event);
 				this.displayService
 					.setDaytimeColorTemperature($event.value).then((res) => {
 
