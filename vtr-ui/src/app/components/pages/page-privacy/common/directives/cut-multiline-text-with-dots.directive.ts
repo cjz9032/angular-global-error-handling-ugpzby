@@ -1,10 +1,10 @@
-import { Directive, ElementRef, Input, AfterViewInit, HostListener, Inject } from '@angular/core';
+import { Directive, ElementRef, Input, AfterViewInit, HostListener, Inject, OnDestroy } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 @Directive({
 	selector: '[vtrCutMultilineTextWithDots]'
 })
-export class CutMultilineTextWithDotsDirective implements AfterViewInit {
+export class CutMultilineTextWithDotsDirective implements AfterViewInit, OnDestroy {
 	@Input() textToAppend: string;
 	@Input() allowedLinesAmount?: number;
 	@Input() addShowMoreBtn?: boolean;
@@ -32,7 +32,7 @@ export class CutMultilineTextWithDotsDirective implements AfterViewInit {
 		cutHtmlElement.firstElementChild.innerText = '';
 
 		if (this.addShowMoreBtn && !document.getElementById('show-more-btn')) {
-			this.appendShowMoreButtonToElement(cutHtmlElement);
+			this.appendShowMoreButtonToElement();
 		}
 
 		let allowedHeight = 0;
@@ -69,15 +69,27 @@ export class CutMultilineTextWithDotsDirective implements AfterViewInit {
 		}
 	}
 
-	appendShowMoreButtonToElement(cutHtmlElement) {
+	private showMoreBtnClickHandler() {
+		const appendedShowMoreBtn = document.getElementById('show-more-btn');
+		const cutHtmlElement = this.el.nativeElement;
+		cutHtmlElement.removeChild(appendedShowMoreBtn);
+		cutHtmlElement.firstElementChild.innerText = this.textToAppend;
+	}
+
+	appendShowMoreButtonToElement() {
+		const cutHtmlElement = this.el.nativeElement;
 		const showMoreBtn = document.createElement('BUTTON');
 		showMoreBtn.innerHTML = 'Show more';
 		showMoreBtn.setAttribute('id', 'show-more-btn');
 		cutHtmlElement.appendChild(showMoreBtn);
-		showMoreBtn.addEventListener('click', () => {
-			cutHtmlElement.firstElementChild.innerText = this.textToAppend;
-			cutHtmlElement.removeChild(showMoreBtn);
-		});
+		showMoreBtn.addEventListener('click', this.showMoreBtnClickHandler);
+	}
+
+	ngOnDestroy() {
+		const appendedShowMoreBtn = document.getElementById('show-more-btn');
+		if (appendedShowMoreBtn) {
+			appendedShowMoreBtn.removeEventListener('click', this.showMoreBtnClickHandler);
+		}
 	}
 
 }
