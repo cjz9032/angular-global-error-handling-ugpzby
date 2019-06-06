@@ -25,7 +25,7 @@
 		// border-top-right-radius:1rem;
 		background: url('./../../../../assets/images/welcome/header-1.jpg') no-repeat;
 		//background-size:100% 16rem;
-		height: 27.5rem;
+		height: 24rem;
 		width: 100%;
 		background-position: center;
 
@@ -117,7 +117,7 @@
 				align-items: center;
 				display: flex;
 				justify-content: center;
-				font-weight: $weight_light;
+				font-weight: $weight_bold;
 				z-index: 2;
 			}
 
@@ -188,21 +188,21 @@
 	}
 
 	.content {
-		overflow-y: scroll;
+		overflow-y: auto;
 		color: $dark;
 		padding: 0 3.7rem 0 5.7rem;
 		margin-top: 3rem;
 		margin-right: 2rem;
-		height: 20.5rem;
+		height: 24rem;
 		font-size: 1.5rem;
 		font-weight: $weight_regular;
 
 		ul li {
-			margin-bottom: 1.8rem;
+			margin-bottom: 1.2rem;
 		}
 
 		div.row:first-child {
-			margin-bottom: 2.4rem
+			margin-bottom: 2rem
 		}
 	}
 
