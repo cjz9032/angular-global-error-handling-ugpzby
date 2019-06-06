@@ -32,14 +32,7 @@ export class CutMultilineTextWithDotsDirective implements AfterViewInit {
 		cutHtmlElement.firstElementChild.innerText = '';
 
 		if (this.addShowMoreBtn && !document.getElementById('show-more-btn')) {
-			const newLink = document.createElement('BUTTON');
-			newLink.innerHTML = 'Show more';
-			newLink.setAttribute('id', 'show-more-btn');
-			cutHtmlElement.appendChild(newLink);
-			newLink.addEventListener('click', () => {
-				cutHtmlElement.firstElementChild.innerText = this.textToAppend;
-				cutHtmlElement.removeChild(newLink);
-			});
+			this.appendShowMoreButtonToElement(cutHtmlElement);
 		}
 
 		let allowedHeight = 0;
@@ -74,6 +67,17 @@ export class CutMultilineTextWithDotsDirective implements AfterViewInit {
 				return;
 			}
 		}
+	}
+
+	appendShowMoreButtonToElement(cutHtmlElement) {
+		const showMoreBtn = document.createElement('BUTTON');
+		showMoreBtn.innerHTML = 'Show more';
+		showMoreBtn.setAttribute('id', 'show-more-btn');
+		cutHtmlElement.appendChild(showMoreBtn);
+		showMoreBtn.addEventListener('click', () => {
+			cutHtmlElement.firstElementChild.innerText = this.textToAppend;
+			cutHtmlElement.removeChild(showMoreBtn);
+		});
 	}
 
 }
