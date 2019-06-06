@@ -26,8 +26,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		public shellServices: VantageShellService,
 		private commonService: CommonService,
 		private cd: ChangeDetectorRef) {
-			this.getBatteryDetailOnCard();
-		}
+		this.getBatteryDetailOnCard();
+	}
 	batteryInfo: BatteryDetail[];
 	batteryGauge: BatteryGaugeDetail;
 	batteryCardTimer: any;
@@ -79,20 +79,20 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		console.log('In getBatteryDetail');
 		try {
 			if (this.batteryService.isShellAvailable) {
-				this.batteryService.getBatteryDetail()
-					.then((response: any) => {
-						console.log('getBatteryDetailOnCard', response);
-						this.batteryInfo = response;
-						this.batteryInfo = response.batteryInformation;
-						this.batteryGauge = response.batteryIndicatorInfo;
-						this.updateBatteryDetails();
-						this.batteryCardTimer = setTimeout(() => {
-							console.log('Trying after 30 seconds');
-							this.getBatteryDetailOnCard();
-						}, 30000);
-					}).catch(error => {
-						console.error('getBatteryDetailOnCard', error);
-					});
+				this.batteryCardTimer = setTimeout(() => {
+					console.log('Trying after 30 seconds');
+					// this.getBatteryDetailOnCard();
+					this.batteryService.getBatteryDetail()
+						.then((response: any) => {
+							console.log('getBatteryDetailOnCard', response);
+							this.batteryInfo = response;
+							this.batteryInfo = response.batteryInformation;
+							this.batteryGauge = response.batteryIndicatorInfo;
+							this.updateBatteryDetails();
+						}).catch(error => {
+							console.error('getBatteryDetailOnCard', error);
+						});
+				}, 30000);
 			}
 		} catch (error) {
 			console.error('getBatteryDetailOnCard: ' + error.message);
@@ -107,10 +107,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryIndicator.expressCharging = this.batteryInfo[0].isExpressCharging;
 		this.batteryIndicator.voltageError = this.batteryInfo[0].isVoltageError;
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo, { detail: this.batteryInfo, gauge: this.batteryGauge });
-		if ( this.cd !== null && this.cd !== undefined &&
-			! (this.cd as ViewRef_).destroyed ) {
-				this.cd.detectChanges();
-			}
+		if (this.cd !== null && this.cd !== undefined &&
+			!(this.cd as ViewRef_).destroyed) {
+			this.cd.detectChanges();
+		}
 	}
 
 	public showDetailModal(content: any): void {
@@ -143,8 +143,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 	ngOnDestroy() {
 		clearTimeout(this.batteryCardTimer);
-		this.shellServices.unRegisterEvent(EventTypes.pwrPowerSupplyStatusEvent);
-		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent);
-		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent);
+		this.shellServices.unRegisterEvent(EventTypes.pwrPowerSupplyStatusEvent, this.onPowerSupplyStatusEvent);
+		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingPercentageEvent, this.onRemainingPercentageEvent);
+		this.shellServices.unRegisterEvent(EventTypes.pwrRemainingTimeEvent, this.onRemainingPercentageEvent);
 	}
 }
