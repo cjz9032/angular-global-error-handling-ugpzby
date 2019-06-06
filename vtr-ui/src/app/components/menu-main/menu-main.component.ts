@@ -94,7 +94,6 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 					this.onLanguageChange(translation);
 				});
 		});
-
 	}
 
 	@HostListener('window: focus')
@@ -114,6 +113,9 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			this.onNotification(notification);
 		});
 		this.isDashboard = true;
+
+		this.deviceModel = this.deviceService.getMachineInfoSync().family;
+		this.country = this.deviceService.getMachineInfoSync().country;
 	}
 	ngDoCheck() {
 		if (this.router.url !== null) {
@@ -181,10 +183,6 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			switch (notification.type) {
-				case LocalStorageKey.MachineInfo:
-					this.deviceModel = notification.payload.family;
-					this.country = notification.payload.country;
-					break;
 				case LenovoIdKey.FirstName:
 					this.firstName = notification.payload;
 					break;

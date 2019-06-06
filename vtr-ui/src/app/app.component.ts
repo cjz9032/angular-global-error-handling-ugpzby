@@ -164,7 +164,6 @@ export class AppComponent implements OnInit {
 					// }
 
 					// end of MVP1.5 release hot-fix
-					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
 				}).catch(error => {
 					console.error('getMachineInfo', error);
 				});
