@@ -315,7 +315,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public renderHybridModeStatus() {
 		this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
 			console.log('xtu --->' + this.gamingCapabilities.xtuService);
-			if (this.gamingCapabilities.xtuService === true) {
+		//	if (this.gamingCapabilities.xtuService === true) {
 				if (this.commonService) {
 					this.legionUpdate[4].isChecked = this.GetHybridModeCacheStatus();
 				}
@@ -326,7 +326,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 						this.legionUpdate[4].isChecked = hybridModeStatus;
 					}
 				});
-			}
+			//}
 		});
 	}
 	public GetHybridModeCacheStatus() {
