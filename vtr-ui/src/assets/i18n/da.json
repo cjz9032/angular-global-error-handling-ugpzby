@@ -35,6 +35,12 @@
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
                     },
+                    "driverPopup": {
+						"headerText": "Driver Install Required",
+						"text": "You need install driver for RAM Overclock to  make it effective",
+						"button": "Install",
+						"link": "cancle"
+					},
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
                     "hybridMode": "Hybrid Mode",
@@ -78,6 +84,143 @@
                 }
             }
         },
+        "macroKey": {
+			"title": "Macro Key",
+			"introLine": "You can record a series of key input, and use them in gaming or other operations.",
+			"status": {
+				"alwaysEnabled": {
+					"title": "Always Enabled",
+					"description": "Always Enabled"
+				},
+				"whileGaming": {
+					"title": "Enabled Only While Gaming",
+					"description": "It will be enabled when you game and remain as num key when you don't."
+				},
+				"off": {
+					"title": "Off",
+					"description": "Always Off"
+				}
+			},
+			"details": {
+				"intro": {
+					"noNumber": "SELECT A MACRO KEY",
+					"title": "CREATE A MACRO KEY FOR",
+					"line1": "click the start recording button below",
+					"line2": "type in macro key",
+					"line3": "stop recording when finishing typing"
+				},
+				"recording": {
+					"title": "START TYPING",
+					"description": "20 inputs with in 20 seconds can be recorded."
+				},
+				"recorded": {
+					"title": "MACRO KEY FOR ",
+					"deleteKey": "Delete Key",
+					"clear": "Clear",
+					"intervalStatus": {
+						"keep": {
+							"title": "Keep Interval",
+							"description": "Intervals of key actions will be kept and applied when using this macro key."
+						},
+						"ignore": {
+							"title": "Ignore Interval",
+							"description": "Intervals of key actions will be ignored."
+						}
+					},
+					"repeatStatus": {
+						"repeat1": {
+							"title": "No Repeat",
+							"description": "No Repeat"
+						},
+						"repeat2": {
+							"title": "Repeat 2 Times",
+							"description": "Repeats 2 times"
+						},
+						"repeat3": {
+							"title": "Repeat 3 Times",
+							"description": "Repeats 3 times"
+						},
+						"repeat4": {
+							"title": "Repeat 4 Times",
+							"description": "Repeats 4 times"
+						},
+						"repeat5": {
+							"title": "Repeat 5 Times",
+							"description": "Repeats 5 times"
+						},
+						"repeat6": {
+							"title": "Repeat 6 Times",
+							"description": "Repeats 6 times"
+						},
+						"repeat7": {
+							"title": "Repeat 7 Times",
+							"description": "Repeats 7 times"
+						},
+						"repeat8": {
+							"title": "Repeat 8 Times",
+							"description": "Repeats 8 times"
+						},
+						"repeat9": {
+							"title": "Repeat 9 Times",
+							"description": "Repeats 9 times"
+						},
+						"repeat10": {
+							"title": "Repeat 10 Times",
+							"description": "Repeats 10 times"
+						}
+					},
+					"list": {
+						"header": {
+							"col1": "Key Action",
+							"col2": "Interval"
+						},
+						"footer": {
+							"title": "Next input.."
+						}
+					}
+				}
+			},
+			"numberpad": {
+				"number": {
+					"zero": "Num 0",
+					"one": "Num 1",
+					"two": "Num 2",
+					"three": "Num 3",
+					"four": "Num 4",
+					"five": "Num 5",
+					"six": "Num 6",
+					"seven": "Num 7",
+					"eight": "Num 8",
+					"nine": "Num 9"
+				},
+				"macro": {
+					"m1": "M1",
+					"m2": "M2"
+				}
+			},
+			"popupContent":{
+				"clearMacrokey":{
+					"title":"Are you sure to clear this macro key?"
+				},
+				"timeoutRecording":{
+					"title":"Time Out For Recording.",
+					"body":"Recording will time out if no input for 20 seconds."
+				},
+				"maximumInput":{
+					"title":"Maximum Input Reached.",
+					"body":"Macro key can only store inputs less than 20."
+				},
+				"inputStopped":{
+					"title":"Time Out For Recording.",
+					"body":"Recording will time out if the input stopped for more than 10 seconds."
+				},
+				"confirmButton":{
+					"btnClear":"Clear",
+					"btnCancel":"Cancel"
+				},
+				"btnOk":"OK"
+			}
+		},
         "lightingProfile": {
             "title": "Lighting",
             "effect": {
@@ -95,7 +238,8 @@
                 "title": "My Device",
                 "sub1": "My Device",
                 "sub2": "My Device Settings",
-                "sub3": "System Updates"
+                "sub3": "System Updates",
+				"sub4": "Smart Assist"
             },
             "security": {
                 "title": "Sikkerhed",
@@ -478,6 +622,9 @@
                         "title": "Battery Charge Threshold",
                         "description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
                         "tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
+                        "note":"Note",
+						"readMoreText": "Read more.",
+						"noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
                         "settings": {
                             "title1": "Threshold for Built in battery",
                             "title2": "Threshold for Removable battery"
@@ -488,7 +635,12 @@
                             "description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
                             "enable": "ENABLE",
                             "cancel": "CANCEL"
-                        }
+                        },
+                        "options": {
+							"start": "Start charging when below",
+							"checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
+							"stop": "Stop charging at"
+						}
                     },
                     "expressCharging": {
                         "title": "Express Charging",
@@ -669,6 +821,10 @@
                 "intelligentSecurity": {
                     "title": "Intelligent Security",
                     "readMore": "Read more",
+                    "HumanPresenceDetection": {
+                        "title": "Human presence detection",
+                        "tooltip": "Click here to reset the human presence detection settings."
+                    },
                     "humanPresenceDetection": {
                         "title": "User Presence Sensing",
                         "tooltip": "Click here to reset human presence Detection settings."
@@ -691,8 +847,7 @@
                         }
                     },
                     "distanceSensitivityAdjusting": {
-                    "title1": "DISTANCE SENSITIVITY ADJUSTING",
-                        "title2": "AUTO DISTANCE SENSITIVITY ADJUSTING",
+                        "title": "DISTANCE SENSITIVITY ADJUSTING",
                         "caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
                         "options": {
                             "near": "Near",
@@ -820,7 +975,8 @@
             "attend": "Attend",
 			"rebootRequiredTag": "Reboot Required",
 			"rebootDelayTag": "Reboot Required, Power Source Required",
-			"shutdownRequiredTag": "Shutdown Required"
+			"shutdownRequiredTag": "Shutdown Required",
+			"dependedPackage": "depended package"
         },
         "availableUpdates": {
             "title": "Available updates",
@@ -861,16 +1017,14 @@
 		"trailExpiredSubtext": "Upgrate to protect all of your devices",
 		"upgrade": "upgrade",
 		"tour": {
+            "back": "Back",
+			"skip": "Skip",
 			"start": "START TOUR",
 			"done": "DONE",
-			"welcome": "WELCOME",
-			"welcomeDesc": "In just a few click, your will be able to protect your family members, your home, appliances, and digital assets from cyber criminals and hackers. Your 30 day free trial starts now.",
-			"device": "Why CHS for your devices",
-			"deviceDesc": "Protect your devices, and your home network from malicious hackers. Get a warning any time we detect suspicious behaviors br one of your devices, or if we detect an attempt to compromise your home network.",
-			"ensure": "CHS ensures that:",
-			"ensureOne": "your devices is safe, and have not been compromised",
-			"ensureTwo": "It ensures that the networks you are connected to are safe",
-			"ensureThree": "It ensures that other devices connected to your home network are safe.",
+			"welcome1": "Welcome",
+			"welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
+			"welcome2": "Exclusive for Vantage",
+			"welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
 			"create": "Create your account",
 			"lenovoId": "with Lenovo ID",
 			"notifications": "Receive <b>notifications</b> about your home's status",
@@ -883,9 +1037,8 @@
 			"skipAndTrial": "SKIP AND START TRIAL",
 			"alreadyHave": "I already have a <b>Connected Home Security Account</b>",
 			"loginCHS": "Login to existing CHS account",
-			"locationPermission": "Connected Home Security requires your location in order to run. Please enable location services for Lenovo Vantage in Windows Settings.",
-			"yes": "YES",
-			"no": "NO"
+			"locationTitle": "Enable location tracking",
+			"locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
 		}
     },
     "support": {
@@ -978,6 +1131,7 @@
                 "firewall": "FIREWALL",
                 "disabled": "DEAKTIVERET",
                 "enableVirusScan": "AKTIVÉR VIRUSSCANNING",
+                "enablenFirewall": "AKTIVÉR FIREWALL",
                 "enableFirewall": "AKTIVÉR FIREWALL"
             },
             "windowsDefender": {
@@ -1185,6 +1339,7 @@
         "unlockExclusives": "Unlock Exclusives",
         "user": "User",
         "welcomeText": "Looking energized today {{firstName}}!",
+        "welcomeTextWithouUserName": "Looking energized today!",
         "welcomeTextWithoutUserName": "Looking energized today!",
         "helloUser": "Hello, {{firstName}}!",
         "ssoErrorTitle": "Error",
@@ -1555,7 +1710,7 @@
     },
     "welcometutorial": {
         "description": "Vantage gør det nemt for dig at opdatere dine drivere, foretage fejlfinding, bede om support og få mere at vide om din enhed. Tilpas hurtigt din oplevelse, og få nyttige oplysninger, der er skræddersyet til dig",
-        "bullets1": "Optimer systemet med Lorem Ipsum dolor-sæt",
+        "bullets1": "Se systemets status med Vantage dashboard.",
         "bullets2": "Sikkerhedsrådgiver gør administrationen af sikkerheden nemmere ",
         "bullets3": "Automatiske opdateringer holder din enhed i topform",
         "subtitle1": "Hvordan vil du bruge din enhed?",
@@ -1563,13 +1718,14 @@
         "personal": "Personlig brug",
         "business": "På arbejde",
         "custom": "Tilpasset oplevelse",
-        "experience": "Experience",
+        "experience": "Erfaring",
         "privacytitle": "Hjælp os med at forbedre kvaliteten af denne app ved at tillade anonym indsamling af brugsstatistik.",
-        "moreInterest": "(+) flere interesser",
+        "moreInterest": "+ flere interesser",
         "title1": "Velkommen til",
         "title2": "Lenovo",
         "title3": "Vantage",
         "privacypolicy": "Lenovos praksis vedrørende personlige oplysninger",
+        "done": "FÆRDIG",
         "interests": {
             "games": "Spil",
             "news": "News",

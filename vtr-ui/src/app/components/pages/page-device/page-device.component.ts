@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DeviceService } from '../../../services/device/device.service';
 import { QaService } from '../../../services/qa/qa.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-page-device',
@@ -23,25 +23,29 @@ export class PageDeviceComponent implements OnInit {
 		private translate: TranslateService,
 	) {
 		this.fetchCMSArticles();
-		qaService.setTranslationService(this.translate);
-		qaService.qas.forEach(qa => {
-			try {
-				qa.title = this.translate.instant(qa.title);
-				qa.description = this.translate.instant(qa.description);
-				//console.log(qa.description);
-				this.translate.get(qa.keys).subscribe((translation: [string]) => {
-					//console.log(JSON.stringify(translation));
-					qa.keys = translation;
-					//console.log(JSON.stringify(qa.keys));
-				});
-			}
-			catch (e) {
-				console.log("already translated");
-			}
-			finally {
-				console.log("already translated");
-			}
+		//Evaluate the translations for QA on language Change
+		translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.qaService.setTranslationService(this.translate);
+			this.qaService.qas.forEach(qa => {
+				try {
+					qa.title = this.translate.instant(qa.title);
+					qa.description = this.translate.instant(qa.description);
+					// console.log(qa.description);
+					this.translate.get(qa.keys).subscribe((translation: [string]) => {
+						// console.log(JSON.stringify(translation));
+						qa.keys = translation;
+						// console.log(JSON.stringify(qa.keys));
+					});
+				} catch (e) {
+					console.log('already translated');
+				}
+				finally {
+					console.log('already translated');
+				}
 
+			});
+
+			// this.qas = this.qaService.qas;
 		});
 	}
 
