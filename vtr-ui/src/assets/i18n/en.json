@@ -119,11 +119,11 @@
 					"clear": "Clear",
 					"intervalStatus": {
 						"keep": {
-							"title": "Keep Interval",
+							"title": "Keep Delay",
 							"description": "Intervals of key actions will be kept and applied when using this macro key."
 						},
 						"ignore": {
-							"title": "Ignore Interval",
+							"title": "Ignore Delay",
 							"description": "Intervals of key actions will be ignored."
 						}
 					},
