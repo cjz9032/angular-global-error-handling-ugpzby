@@ -197,8 +197,8 @@
 														name="autoScreenLockTimerFast"
 														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast' | translate"
 														[value]="'1'"
-														[checked]="intelligentSecurity.autoScreenLockTimer === '0'"
-														(change)="onAutoScreenLockStatusToggle($event, '0')"
+														[checked]="intelligentSecurity.autoScreenLockTimer === '1'"
+														(change)="onAutoScreenLockStatusToggle($event, '1')"
 														[disabled]="!intelligentSecurity.zeroTouchLockFlag">
 													</vtr-ui-rounded-rectangle-radio>
 													<vtr-ui-rounded-rectangle-radio [radioId]="'radio2'"
@@ -206,8 +206,8 @@
 														name="autoScreenLockTimerMedium"
 														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium' | translate"
 														[value]="'2'"
-														[checked]="intelligentSecurity.autoScreenLockTimer === '1'"
-														(change)="onAutoScreenLockStatusToggle($event, '1')"
+														[checked]="intelligentSecurity.autoScreenLockTimer === '2'"
+														(change)="onAutoScreenLockStatusToggle($event, '2')"
 														[disabled]="!intelligentSecurity.zeroTouchLockFlag">
 													</vtr-ui-rounded-rectangle-radio>
 													<vtr-ui-rounded-rectangle-radio [radioId]="'radio3'"
@@ -215,8 +215,8 @@
 														name="autoScreenLockTimerSlow"
 														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow' | translate"
 														[value]="'3'"
-														[checked]="intelligentSecurity.autoScreenLockTimer === '2'"
-														(change)="onAutoScreenLockStatusToggle($event, '2')"
+														[checked]="intelligentSecurity.autoScreenLockTimer === '3'"
+														(change)="onAutoScreenLockStatusToggle($event, '3')"
 														[disabled]="!intelligentSecurity.zeroTouchLockFlag">
 													</vtr-ui-rounded-rectangle-radio>
 												</div>

@@ -152,12 +152,11 @@ export class PageSmartAssistComponent implements OnInit {
 		this.autoScreenLockStatus[this.intelligentSecurity.autoScreenLockTimer] = true;
 	}
 
-	public onAutoScreenLockStatusToggle(event: any, value: number) {
-		const option = value.toString();
-		this.intelligentSecurity.autoScreenLockTimer = option;
-		this.smartAssist.setSelectedLockTimer(option)
+	public onAutoScreenLockStatusToggle(event: any, value: string) {
+		this.intelligentSecurity.autoScreenLockTimer = value;
+		this.smartAssist.setSelectedLockTimer(value)
 			.then((isSuccess: boolean) => {
-				console.log('onAutoScreenLockStatusToggle.setSelectedLockTimer', isSuccess, option);
+				console.log('onAutoScreenLockStatusToggle.setSelectedLockTimer', isSuccess, value);
 			});
 	}
 
