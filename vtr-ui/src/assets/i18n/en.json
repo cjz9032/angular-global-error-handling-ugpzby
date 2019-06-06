@@ -640,7 +640,6 @@
 							"start": "Start charging when below",
 							"checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
 							"stop": "Stop charging at"
-
 						}
 					},
 					"expressCharging": {
@@ -1726,7 +1725,7 @@
 		"title2": "Lenovo",
 		"title3": "Vantage",
 		"privacypolicy": "Lenovo's Privacy Policy",
-		"done": "DONEy",
+		"done": "DONE",
 		"interests": {
 			"games": "Games",
 			"news": "News",
