@@ -26,6 +26,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public easyResumeStatus = new FeatureStatus(false, true);
 	public conservationModeStatus = new FeatureStatus(false, true);
 	public expressChargingStatus = new FeatureStatus(false, true);
+	public conservationModeLock = false;
+	public expressChargingLock = false;
 
 	primaryCheckBox: boolean = false;
 	secondaryCheckBox: boolean = false;
@@ -196,6 +198,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		// console.log('after expressCharging :' + this.batterySettings.status.expressCharging);
 		if (mode !== undefined) {
 			if (mode === 'expressCharging') {
+				this.conservationModeLock = true;
+				this.expressChargingLock = false;
 				if (this.conservationModeStatus.status === true && event.switchValue) {
 					await this.setConservationModeStatusIdeaNoteBook(!event.switchValue);
 					await this.setRapidChargeModeStatusIdeaNoteBook(event.switchValue);
@@ -208,7 +212,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					await this.setRapidChargeModeStatusIdeaNoteBook(event.switchValue);
 					this.expressChargingStatus.status = !event.switchValue;
 				}
+				this.conservationModeLock = false;
 			} else if (mode === 'conservationMode') {
+				this.conservationModeLock = false;
+				this.expressChargingLock = true;
 				if (this.expressChargingStatus.status === true && event.switchValue) {
 					await this.setRapidChargeModeStatusIdeaNoteBook(!event.switchValue);
 					await this.setConservationModeStatusIdeaNoteBook(event.switchValue);
@@ -221,6 +228,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					await this.setConservationModeStatusIdeaNoteBook(event.switchValue);
 					this.conservationModeStatus.status = !event.switchValue;
 				}
+				this.expressChargingLock = false;
 			}
 		}
 	}
@@ -669,7 +677,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.log('setRapidChargeModeStatusIdeaNoteBook.then', status);
 
 			if (this.powerService.isShellAvailable) {
-				let value = this.powerService
+				let value = await this.powerService
 					.setRapidChargeModeStatusIdeaNoteBook(status);
 				console.log('setRapidChargeModeStatusIdeaNoteBook.then', value);
 				// this.powerService
