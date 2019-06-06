@@ -625,7 +625,7 @@
 						},
 						"options": {
 							"start": "下面开始充电",
-							"checkboxText": "自动设置以'％charge'开始，'停止充电％'低于5％",
+							"checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
 							"stop": "停止充电"
 						}
 					},
