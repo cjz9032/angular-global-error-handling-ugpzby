@@ -58,4 +58,10 @@ export enum LocalStorageKey {
 	ProfileBrightness = '[LocalStorageKey] ProfileBrightness',
 	LightingCapabilities = '[LocalStorageKey] LightingCapabilities',
 
+	SystemUpdateCriticalUpdateStatus = '[LocalStorageKey] SystemUpdateCriticalUpdateStatus',
+	SystemUpdateRecommendUpdateStatus = '[LocalStorageKey] SystemUpdateRecommendUpdateStatus',
+	SystemUpdateLastScanTime = '[LocalStorageKey] SystemUpdateLastScanTime',
+	SystemUpdateLastInstallTime = '[LocalStorageKey] SystemUpdateLastInstallTime',
+	SystemUpdateNextScheduleScanTime = '[LocalStorageKey] SystemUpdateNextScheduleScanTime',
+	SystemUpdateInstallationHistoryList = '[LocalStorageKey] SystemUpdateInstallationHistoryList',
 }

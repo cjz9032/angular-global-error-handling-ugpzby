@@ -39,8 +39,9 @@
 						"headerText": "Driver Install Required",
 						"text": "You need install driver for RAM Overclock to  make it effective",
 						"button": "Install",
-						"link": "cancle"
+						"link": "cancel"
 					},
+
 					"autoClose": "自动关闭",
 					"networkBoost": "网络提升",
 					"hybridMode": "混合模式",

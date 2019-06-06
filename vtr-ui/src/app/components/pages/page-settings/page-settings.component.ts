@@ -105,6 +105,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 
 	onToggleOfAppFeature(event: any) {
 		this.toggleAppFeature = event.switchValue;
+		this.settingsService.toggleAppFeature = event.switchValue;
 		if (this.preferenceSettings) {
 			const categoryList = [{
 				id: 'AppFeatures',
@@ -113,6 +114,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			this.preferenceSettings.setMessagingPreference(categoryList).then((result: any) => {
 				if (!result || result.Result !== 'Success') {
 					this.toggleAppFeature = !event.switchValue;
+					this.settingsService.toggleAppFeature = !event.switchValue;
 				}
 			});
 		}
@@ -120,6 +122,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	}
 	onToggleOfMarketing(event: any) {
 		this.toggleMarketing = event.switchValue;
+		this.settingsService.toggleMarketing = event.switchValue;
 		if (this.preferenceSettings) {
 			const categoryList = [{
 				id: 'Marketing',
@@ -128,6 +131,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			this.preferenceSettings.setMessagingPreference(categoryList).then((result: any) => {
 				if (!result || result.Result !== 'Success') {
 					this.toggleMarketing = !event.switchValue;
+					this.settingsService.toggleMarketing = !event.switchValue;
 				}
 			});
 		}
@@ -135,6 +139,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	}
 	onToggleOfActionTriggered(event: any) {
 		this.toggleActionTriggered = event.switchValue;
+		this.settingsService.toggleActionTriggered = event.switchValue;
 		if (this.preferenceSettings) {
 			const categoryList = [{
 				id: 'ActionTriggered',
@@ -143,6 +148,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			this.preferenceSettings.setMessagingPreference(categoryList).then((result: any) => {
 				if (!result || result.Result !== 'Success') {
 					this.toggleActionTriggered = !event.switchValue;
+					this.settingsService.toggleActionTriggered = !event.switchValue;
 				}
 			});
 		}
@@ -150,10 +156,12 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	}
 	onToggleOfUsageStatistics(event: any) {
 		this.toggleUsageStatistics = event.switchValue;
+		this.settingsService.toggleUsageStatistics = event.switchValue;
 		if (this.metrics) {
 			this.metrics.metricsEnabled = event.switchValue;
 		} else {
 			this.toggleUsageStatistics = !event.switchValue;
+			this.settingsService.toggleUsageStatistics = !event.switchValue;
 		}
 		this.sendSettingMetrics('SettingUsageStatistics', event.switchValue);
 	}
