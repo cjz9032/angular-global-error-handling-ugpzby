@@ -140,7 +140,7 @@
 						</a>
 						<div class="dropdown-menu {{item.id}}"
 						 id="navbarDropdownMenu"
-						 *ngIf="!deviceService.isArm"
+						 *ngIf="!deviceService.isArm && userService.isLenovoIdSupported()"
 						 aria-labelledby="navbarDropdown">
 							<div class="dropdown-item">{{'lenovoId.helloUser' | translate:{firstName:firstName} }}</div>
 							<a
