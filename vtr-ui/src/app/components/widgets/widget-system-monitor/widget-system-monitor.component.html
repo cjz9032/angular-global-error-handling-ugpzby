@@ -13,10 +13,10 @@
 						</div>
 						<div class="col-sm-8 monitor-col left">
 							<div class="monitor-section">
-								<div class="gaming-tooltip">
-									<p>{{this.cpuover|translate}}</p>
-								</div>
 								<div class="monitor-inner gpu">
+									<div class="gaming-tooltip">
+										<p>{{this.gpuOver|translate}}</p>
+									</div>
 									<div class="monitor-stack">
 										<div class="stack-container">
 											<div class="stack-content gpu"></div>
@@ -35,6 +35,9 @@
 								</div>
 
 								<div class="monitor-cpu">
+									<div class="gaming-tooltip">
+										<p>{{this.cpuover|translate}}</p>
+									</div>
 									<div class="cpu-ring"></div>
 									<div class="cpu-mask left">
 										<div class="mask-obj"
@@ -63,6 +66,9 @@
 								</div>
 
 								<div class="monitor-inner ram">
+									<div class="gaming-tooltip">
+										<p>{{this.ramOver|translate}}</p>
+									</div>
 									<div class="monitor-stack">
 										<div class="stack-container">
 											<div class="stack-content ram"></div>
@@ -83,8 +89,9 @@
 							</div>
 						</div>
 						<div class="col-sm-4 monitor-col right">
-								<div class="monitor-section hds" [ngClass]="{'expanded':showAllHDs}" (click)="toggleHDs($event)">
-										<div class="hd-list" [ngClass]="{'single':hds.length===1}">
+							<div class="monitor-section hds" [ngClass]="{'expanded':showAllHDs}"
+								(click)="toggleHDs($event)">
+								<div class="hd-list" [ngClass]="{'single':hds.length===1}">
 									<div class="hd-item" [ngClass]="{'danger':hd.usedDisk/hd.capacity>.75}"
 										*ngFor="let hd of hds; let i=index;">
 										<div class="monitor-hd">
@@ -106,8 +113,7 @@
 												<div class="hd-inner-circle">
 													<div class="hd-label">
 														<div class="hd-pct">
-															{{hd.diskUsage}}<span
-																class="pct">%</span>
+															{{hd.diskUsage}}<span class="pct">%</span>
 														</div>
 													</div>
 												</div>
@@ -128,8 +134,8 @@
 									</div>
 								</div>
 								<div class="expand-icon">
-										<!-- <fa-icon [icon]="['fas', 'chevron-down']" *ngIf="!showAllHDs&&hds.length>1"></fa-icon> -->
-									</div>
+									<!-- <fa-icon [icon]="['fas', 'chevron-down']" *ngIf="!showAllHDs&&hds.length>1"></fa-icon> -->
+								</div>
 							</div>
 						</div>
 					</div>
