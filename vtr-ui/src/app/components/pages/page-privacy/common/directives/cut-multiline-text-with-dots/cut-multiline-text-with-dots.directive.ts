@@ -80,7 +80,7 @@ export class CutMultilineTextWithDotsDirective implements AfterViewInit, OnDestr
 	appendShowMoreButtonToElement() {
 		const cutHtmlElement = this.el.nativeElement;
 		const showMoreBtn = document.createElement('BUTTON');
-		showMoreBtn.innerHTML = 'Show more';
+		showMoreBtn.innerHTML = 'View more';
 		showMoreBtn.setAttribute('id', 'show-more-btn');
 		cutHtmlElement.appendChild(showMoreBtn);
 		showMoreBtn.addEventListener('click', this.showMoreBtnClickHandler);
