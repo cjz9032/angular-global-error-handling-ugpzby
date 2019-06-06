@@ -9,11 +9,17 @@ import { BreachedAccount } from '../../../common/services/breached-accounts.serv
 export class BreachedOtherDescriptionComponent {
 	@Input() set setBreachData(otherBreachedAccount: BreachedAccount[]) {
 		this.otherBreachedAccount = otherBreachedAccount;
-		this.breachedEmails = otherBreachedAccount.map((account) => account.email);
-		this.breachedPasswords = otherBreachedAccount.map((account) => account.password);
+		this.breachedEmails = this.getValueFromArray(otherBreachedAccount, 'email');
+		this.breachedPasswords = this.getValueFromArray(otherBreachedAccount, 'password');
 	}
 
 	otherBreachedAccount: BreachedAccount[];
 	breachedEmails: string[];
 	breachedPasswords: string[];
+
+	getValueFromArray(breachedAccounts: BreachedAccount[], key: string) {
+		return breachedAccounts
+			.map((breachedAccount) => breachedAccount[key])
+			.filter((value) => !!value);
+	}
 }
