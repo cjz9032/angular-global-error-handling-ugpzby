@@ -8,9 +8,9 @@ function parseError(error) {
   error.split('\n').forEach((line) => {
     const r = regex.exec(line);
     if (Array.isArray(r) && r.length > 0) {
-	  if (result.length == 0 || r[1] != result[result.length - 1]) {
+      if (result.length === 0 || r[1] !== result[result.length - 1]) {
         result.push(r[1]);
-	  }
+      }
     }
   });
   return result;
@@ -19,15 +19,19 @@ function parseError(error) {
 function removeConsoleLine(file) {
   fs.writeFileSync(file,
     fs.readFileSync(file, 'utf-8')
-		  .split('\r\n')
-		  .filter(line => !line.includes('console.'))
-		  .join('\r\n'),
+      .split('\r\n')
+      .filter(line => !line.includes('console.'))
+      .join('\r\n'),
     'utf-8');
 }
 
-exec('tslint --config prebuild/no-console.json --project .', {
-  cwd: path.resolve(__dirname, '..'),
-}, (error, stdout, stderr) => {
-  console.log(stdout);
-  parseError(stdout).forEach(file => removeConsoleLine(file));
+exec('git rev-parse --abbrev-ref HEAD', (error, stdout) => {
+  if (stdout === 'master' || stdout.startsWith('release/')) {
+    exec('tslint --config prebuild/no-console.json --project .', {
+      cwd: path.resolve(__dirname, '..'),
+    }, (err, out) => {
+      console.log(out);
+      parseError(out).forEach(file => removeConsoleLine(file));
+    });
+  }
 });
