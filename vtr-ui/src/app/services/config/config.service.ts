@@ -373,7 +373,7 @@ export class ConfigService {
 		id: 'privacy',
 		label: 'common.menu.privacy',
 		path: 'privacy/breaches',
-		icon: ['icomoon', 'icomoon-LE-Figleaf2x'],
+		icon: ['fal', 'user-shield'],
 		metricsEvent: 'itemClick',
 		metricsParent: 'navbar',
 		metricsItem: 'link.privacy',

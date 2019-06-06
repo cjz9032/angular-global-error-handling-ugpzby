@@ -56,6 +56,7 @@ export class ModalArticleDetailComponent implements OnInit {
 				}
 			},
 			error => {
+				this.articleBody = "<div class='alert alert-danger'>Some Error Occurs Please Try again later</div>";
 				console.log('fetchCMSContent error', error);
 			}
 		);

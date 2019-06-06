@@ -35,6 +35,12 @@
 						"text": "Change will be effective after restarting computer.",
 						"button": "ok"
 					},
+					"driverPopup": {
+						"headerText": "Driver Install Required",
+						"text": "You need install driver for RAM Overclock to  make it effective",
+						"button": "Install",
+						"link": "cancle"
+					},
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
 					"hybridMode": "Hybrid Mode",
@@ -191,6 +197,28 @@
 					"m1": "M1",
 					"m2": "M2"
 				}
+			},
+			"popupContent":{
+				"clearMacrokey":{
+					"title":"Are you sure to clear this macro key?"
+				},
+				"timeoutRecording":{
+					"title":"Time Out For Recording.",
+					"body":"Recording will time out if no input for 20 seconds."
+				},
+				"maximumInput":{
+					"title":"Maximum Input Reached.",
+					"body":"Macro key can only store inputs less than 20."
+				},
+				"inputStopped":{
+					"title":"Time Out For Recording.",
+					"body":"Recording will time out if the input stopped for more than 10 seconds."
+				},
+				"confirmButton":{
+					"btnClear":"Clear",
+					"btnCancel":"Cancel"
+				},
+				"btnOk":"OK"
 			}
 		},
 		"lightingProfile": {
@@ -594,6 +622,9 @@
 						"title": "Battery Charge Threshold",
 						"description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
 						"tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
+						"note":"Note",
+						"readMoreText": "Read more.",
+						"noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
 						"settings": {
 							"title1": "Threshold for Built in battery",
 							"title2": "Threshold for Removable battery"
@@ -604,6 +635,12 @@
 							"description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
 							"enable": "ENABLE",
 							"cancel": "CANCEL"
+						},
+						"options": {
+							"start": "Start charging when below",
+							"checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
+							"stop": "Stop charging at"
+
 						}
 					},
 					"expressCharging": {
@@ -785,6 +822,10 @@
 			"intelligentSecurity": {
 				"title": "Intelligent Security",
 				"readMore": "Read more",
+				"HumanPresenceDetection": {
+					"title": "Human presence detection",
+					"tooltip": "Click here to reset the human presence detection settings."
+				},
 				"humanPresenceDetection": {
 					"title": "User Presence Sensing",
 					"tooltip": "Click here to reset human presence Detection settings."
@@ -840,6 +881,7 @@
 					"title": "Keep my display",
 					"caption": "Keep my display when I am reading or browsing.",
 					"displaySlider": {
+						"title": "Minutes Before display dims when browsing",
 						"startTime": "0 minutes",
 						"endTime": "60 minutes"
 					}
@@ -976,16 +1018,14 @@
 		"trailExpiredSubtext": "Upgrate to protect all of your devices",
 		"upgrade": "upgrade",
 		"tour": {
+			"back": "Back",
+			"skip": "Skip",
 			"start": "START TOUR",
 			"done": "DONE",
-			"welcome": "WELCOME",
-			"welcomeDesc": "In just a few click, your will be able to protect your family members, your home, appliances, and digital assets from cyber criminals and hackers. Your 30 day free trial starts now.",
-			"device": "Why CHS for your devices",
-			"deviceDesc": "Protect your devices, and your home network from malicious hackers. Get a warning any time we detect suspicious behaviors br one of your devices, or if we detect an attempt to compromise your home network.",
-			"ensure": "CHS ensures that:",
-			"ensureOne": "your devices is safe, and have not been compromised",
-			"ensureTwo": "It ensures that the networks you are connected to are safe",
-			"ensureThree": "It ensures that other devices connected to your home network are safe.",
+			"welcome1": "Welcome",
+			"welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
+			"welcome2": "Exclusive for Vantage",
+			"welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
 			"create": "Create your account",
 			"lenovoId": "with Lenovo ID",
 			"notifications": "Receive <b>notifications</b> about your home's status",
@@ -998,9 +1038,8 @@
 			"skipAndTrial": "SKIP AND START TRIAL",
 			"alreadyHave": "I already have a <b>Connected Home Security Account</b>",
 			"loginCHS": "Login to existing CHS account",
-			"locationPermission": "Connected Home Security requires your location in order to run. Please enable location services for Lenovo Vantage in Windows Settings.",
-			"yes": "YES",
-			"no": "NO"
+			"locationTitle": "Enable location tracking",
+			"locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
 		}
 	},
 	"support": {
@@ -1093,6 +1132,7 @@
 				"firewall": "FIREWALL",
 				"disabled": "DISABLED",
 				"enableVirusScan": "ENABLE VIRUS SCAN",
+				"enablenFirewall": "Enable firewall",
 				"enableFirewall": "ENABLE FIREWALL"
 			},
 			"windowsDefender": {
@@ -1250,7 +1290,7 @@
 			"whatIsPmInstalled": "A safer digital life is waiting: Add passwords, enable Dark Web Monitoring and autofill personal and payment info.",
 			"startProtect": "Start protecting your online accounts the simple way.",
 			"discount": "Lenovo users enjoy an exclusive 50% off Dashlane Premium.",
-			"offer": "Offer available to new Dashlane users only!",
+			"offer": "Offer available to new Dashlane users only.",
 			"getDashLane": "Get Dashlane",
 			"learnMoreAbout": "<tag>Learn more</tag> about making the most of Dashlane",
 			"openDashLane": "Open Dashlane",
@@ -1300,6 +1340,7 @@
 		"unlockExclusives": "Unlock Exclusives",
 		"user": "User",
 		"welcomeText": "Looking energized today {{firstName}}!",
+		"welcomeTextWithouUserName": "Looking energized today!",
 		"welcomeTextWithoutUserName": "Looking energized today!",
 		"helloUser": "Hello, {{firstName}}!",
 		"ssoErrorTitle": "Error",
@@ -1685,6 +1726,7 @@
 		"title2": "Lenovo",
 		"title3": "Vantage",
 		"privacypolicy": "Lenovo's Privacy Policy",
+		"done": "DONEy",
 		"interests": {
 			"games": "Games",
 			"news": "News",

@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
-import { distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
+import { filter, map, startWith, switchMap } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
 import { FigleafOverviewService } from '../../../common/services/figleaf-overview.service';
 import { BrowserAccountsService } from '../../../common/services/browser-accounts.service';
-import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { BreachedAccountsService } from '../../../common/services/breached-accounts.service';
+import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
+import { AppStatuses } from '../../../userDataStatuses';
 
 @Injectable()
 export class PrivacyScoreService {
 
 	constructor(
+		private userDataGetStateService: UserDataGetStateService,
 		private figleafOverviewService: FigleafOverviewService,
 		private browserAccountsService: BrowserAccountsService,
-		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private breachedAccountsService: BreachedAccountsService) {
 	}
 
@@ -26,23 +27,22 @@ export class PrivacyScoreService {
 
 	getScoreParametrs() {
 		let figleafInstalled = false;
-		return this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(
-			distinctUntilChanged(),
-			switchMap((isFigleafInstalled) => {
-				figleafInstalled = isFigleafInstalled;
-				return combineLatest(
+		return this.userDataGetStateService.userDataStatus$.pipe(
+			filter((userDataStatuses) => userDataStatuses.appState !== AppStatuses.firstTimeVisitor),
+			switchMap((userDataStatuses) => {
+				figleafInstalled = userDataStatuses.appState === AppStatuses.figLeafInstalled;
+				return combineLatest([
 					this.getBreachesScore(),
 					this.getStoragesScore(),
-				).pipe(
-					map(val => {
-						const receivedScoreParam = val.reduce((acc, curr) => ({...acc, ...curr}));
-						return {
-							...receivedScoreParam,
-							monitoringEnabled: figleafInstalled,
-							trackingEnabled: figleafInstalled,
-						};
-					})
-				);
+				]);
+			}),
+			map(val => {
+				const receivedScoreParam = val.reduce((acc, curr) => ({...acc, ...curr}));
+				return {
+					...receivedScoreParam,
+					monitoringEnabled: figleafInstalled,
+					trackingEnabled: figleafInstalled,
+				};
 			}),
 		);
 	}
@@ -108,7 +108,8 @@ export class PrivacyScoreService {
 					fixedBreaches: fixedBreachesAmount,
 					unfixedBreaches: figleafBreaches.breaches.length - fixedBreachesAmount,
 				};
-			})
+			}),
+			startWith({fixedBreaches: 0, unfixedBreaches: 0})
 		);
 	}
 
@@ -130,6 +131,7 @@ export class PrivacyScoreService {
 						})
 					);
 			}),
+			startWith({fixedStorages: 0, unfixedStorages: 0})
 		);
 	}
 

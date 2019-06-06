@@ -11,6 +11,8 @@ export class UiMacrokeyRecordedListComponent implements OnInit {
 	@Input() public recordsList;
 	@Output() public onRecordDelete = new EventEmitter<any>();
 	@Output() public onClearAll = new EventEmitter<any>();
+	public clearRecordPopup: boolean = false;
+	public showModal: boolean = false;
 
 	repeatOptions = [
 		{
@@ -114,6 +116,12 @@ export class UiMacrokeyRecordedListComponent implements OnInit {
 		}
 	];
 
+	modalContent = {
+		headerTitle: 'gaming.macroKey.popupContent.clearMacrokey.title',
+		bodyText: '',
+		btnConfirm: true
+		};
+
 	constructor() {}
 
 	ngOnInit() {}
@@ -123,6 +131,8 @@ export class UiMacrokeyRecordedListComponent implements OnInit {
 	}
 
 	clearRecords() {
+		this.clearRecordPopup = !this.clearRecordPopup;
+		this.showModal = !this.showModal;
 		this.onClearAll.emit();
 	}
 }

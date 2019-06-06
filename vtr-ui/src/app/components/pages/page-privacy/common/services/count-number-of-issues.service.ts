@@ -4,14 +4,15 @@ import { BrowserAccountsService } from './browser-accounts.service';
 import { TrackingMapService } from '../../feature/tracking-map/services/tracking-map.service';
 import { filter, map, startWith } from 'rxjs/operators';
 import { typeData } from '../../feature/tracking-map/services/tracking-map.interface';
-import { tap } from 'rxjs/internal/operators/tap';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class CountNumberOfIssuesService {
 	breachedAccountsCount = this.breachedAccountsService.onGetBreachedAccounts$.pipe(
-		map(breachesState => breachesState.breaches.length),
+		map((breachesState) =>
+			breachesState.breaches.filter((breach) => breach.domain !== 'n/a')),
+		map((breaches) => breaches.length > 0 ? breaches.length + 1 : breaches.length),
 		startWith(0)
 	);
 	nonPrivatePasswordCount = this.browserAccountsService.installedBrowsersData.pipe(
@@ -22,7 +23,6 @@ export class CountNumberOfIssuesService {
 				}, 0);
 			}
 		),
-		tap((val) => console.log('nonPrivatePasswordCount', val)),
 		startWith(0)
 	);
 	websiteTrackersCount = this.trackingMapService.trackingData$.pipe(

@@ -5,6 +5,7 @@ import { combineLatest } from 'rxjs';
 import { FeatureSettings, NavTabsService } from './nav-tabs.service';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
+import { FeaturesStatuses } from '../../../userDataStatuses';
 
 @Component({
 	selector: 'vtr-nav-tabs',
@@ -25,29 +26,43 @@ export class NavTabsComponent implements OnInit, OnDestroy {
 			userDataStatus$ => combineLatest(userDataStatus$, ...this.countNumberOfIssuesService.getPrivacyIssuesCount()),
 			takeUntil(instanceDestroyed(this)),
 		).subscribe(([userDataStatuses, breachedAccountsCount, websiteTrackersCount, nonPrivatePasswordCount]) => {
+			const { breachedAccountsResult, websiteTrackersResult, nonPrivatePasswordResult } = userDataStatuses;
 			const breachesConfig = {
-				...this.navTabsService.tabsConfig.breaches[userDataStatuses.breachedAccountsResult],
-				issuesCount: breachedAccountsCount,
-				state: userDataStatuses.breachedAccountsResult,
+				...this.navTabsService.tabsConfig.breaches[breachedAccountsResult],
+				issuesCount: this.getDisplayedCountValueOfIssues(breachedAccountsResult, breachedAccountsCount),
+				state: breachedAccountsResult,
 				routerLink: './breaches',
 				title: 'Breached Accounts',
 			};
 			const trackersConfig = {
-				...this.navTabsService.tabsConfig.trackers[userDataStatuses.websiteTrackersResult],
-				issuesCount: websiteTrackersCount,
-				state: userDataStatuses.websiteTrackersResult,
+				...this.navTabsService.tabsConfig.trackers[websiteTrackersResult],
+				issuesCount: this.getDisplayedCountValueOfIssues(websiteTrackersResult, websiteTrackersCount),
+				state: websiteTrackersResult,
 				routerLink: './trackers',
 				title: 'Visible to Online Trackers',
 			};
 			const passwordsConfig = {
-				...this.navTabsService.tabsConfig.passwords[userDataStatuses.nonPrivatePasswordResult],
-				issuesCount: nonPrivatePasswordCount,
-				state: userDataStatuses.nonPrivatePasswordResult,
+				...this.navTabsService.tabsConfig.passwords[nonPrivatePasswordResult],
+				issuesCount: this.getDisplayedCountValueOfIssues(nonPrivatePasswordResult, nonPrivatePasswordCount),
+				state: nonPrivatePasswordResult,
 				routerLink: './browser-accounts',
 				title: 'Non-Private Passwords',
 			};
 			this.featurePagesConfig = [breachesConfig, trackersConfig, passwordsConfig];
 		});
+	}
+
+	private getDisplayedCountValueOfIssues(status, issuesCount) {
+		switch (status) {
+			case FeaturesStatuses.exist:
+				return issuesCount;
+			case FeaturesStatuses.none:
+				return 0;
+			case FeaturesStatuses.undefined:
+				return '';
+			default:
+				return '';
+		}
 	}
 
 	ngOnDestroy() {

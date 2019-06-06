@@ -26,8 +26,8 @@
 								<vtr-container-collapsible
 									[cardTitle]="'settings.messagesInLenovoVantage' | translate | lowercase"
 									[isCollapsed]="false">
-									<ul class="list-group list-group-flush">
-										<li *ngIf="isToggleAppFeature">
+									<ul class="list-group list-group-flush"  *ngIf="isMessageSettings">
+										<li>
 											<vtr-ui-row-switch [title]="'settings.appFeatures' | translate"
 												[name]="'AppFeaturesToggle'"
 												[caption]="'settings.appFeaturesDescription' | translate"
@@ -35,11 +35,10 @@
 												[leftIcon]="messageSettings[0].leftImageSource"
 												[tooltipText]=""
 												[isSwitchChecked]="toggleAppFeature"
-												[disabled]="disabledAppFeature"
 												(toggleOnOff)="onToggleOfAppFeature($event)">
 											</vtr-ui-row-switch>
 										</li>
-										<li *ngIf="isToggleMarketing">
+										<li>
 											<vtr-ui-row-switch [title]="'settings.marketing' | translate"
 												[name]="'MarketingToggle'"
 												[caption]="'settings.marketingDescription' | translate"
@@ -47,11 +46,10 @@
 												[leftIcon]="messageSettings[1].leftImageSource"
 												[tooltipText]=""
 												[isSwitchChecked]="toggleMarketing"
-												[disabled]="disabledMarketing"
 												(toggleOnOff)="onToggleOfMarketing($event)">
 											</vtr-ui-row-switch>
 										</li>
-										<li *ngIf="isToggleActionTriggered">
+										<li>
 											<vtr-ui-row-switch [title]="'settings.actionTriggered' | translate"
 												[name]="'ActionTriggeredToggle'"
 												[caption]="'settings.actionTriggeredDescription' | translate"
@@ -60,7 +58,6 @@
 												[leftIcon]="messageSettings[2].leftImageSource"
 												[tooltipText]=""
 												[isSwitchChecked]="toggleActionTriggered"
-												[disabled]="disabledActionTriggered"
 												(toggleOnOff)="onToggleOfActionTriggered($event)">
 											</vtr-ui-row-switch>
 										</li>

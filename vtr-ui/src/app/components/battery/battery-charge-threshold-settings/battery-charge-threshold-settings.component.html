@@ -9,6 +9,7 @@
 				</div>
 			</div>
 		</div>
+	
 		<!--end of display title in row-->
 		<!--start of display inputs for action in row-->
 		<div class="row"
@@ -28,7 +29,7 @@
 									<div class="row d-flex justify-content-between">
 										<div class="col-auto pl-1 pr-1">
 											<div class="select-title">
-												Start charging when below
+												{{start}}
 											</div>
 
 											<div class="select-text text-left">
@@ -63,7 +64,7 @@
 									<div class="row d-flex justify-content-between">
 										<div class="col-auto pl-1 pr-1">
 											<div class="select-title">
-												Stop charging at
+												{{stop}}
 											</div>
 											<div class="select-text text-left">
 												{{selectedStopAtCharge}}%
@@ -98,7 +99,7 @@
 								 (ngModelChange)='toggleAutoChargeSettings($event)'>
 
 								<label
-								 [for]="isCheckedAutoInput + randomNumber">Automatically set to start "charging at %" to 5% below the "stop charging at %"</label>
+								 [for]="isCheckedAutoInput + randomNumber">{{checkboxText}}</label>
 							</div>
 						</div>
 					</div>
@@ -121,7 +122,8 @@
 			<div class="col px-20">
 				<div class="note-box">
 					<div class="note">
-						<b>Note:</b> Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.
+					<b>{{'device.deviceSettings.power.batterySettings.batteryThreshold.note' | translate}} :</b>
+						{{'device.deviceSettings.power.batterySettings.batteryThreshold.noteInfo' | translate}}
 					</div>
 				</div>
 			</div>

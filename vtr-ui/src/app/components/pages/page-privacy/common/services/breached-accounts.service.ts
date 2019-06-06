@@ -20,6 +20,8 @@ export interface BreachedAccount {
 	details: string;
 	isFixed?: boolean;
 	link?: string;
+	hasPassword?: boolean;
+	hasEmail?: boolean;
 }
 
 interface GetBreachedAccountsState {

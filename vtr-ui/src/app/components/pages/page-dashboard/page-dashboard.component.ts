@@ -140,7 +140,7 @@ export class PageDashboardComponent implements OnInit {
 				const heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
 					return {
 						'albumId': 1,
-						'id': index + 1,
+						'id': record.Id,
 						'source': record.Title,
 						'title': record.Description,
 						'url': record.FeatureImage,

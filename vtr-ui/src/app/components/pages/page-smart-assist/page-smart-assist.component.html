@@ -46,7 +46,8 @@
 										</vtr-ui-row-switch>
 										<div class="margin-left-5 pl-5 bold-title no-border-bottom pb-4 border-bottom"
 											[class.disabled]="!intelligentSecurity.zeroTouchLoginFlag">
-											<vtr-ui-row-switch [title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
+											<vtr-ui-row-switch
+												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
 												[caption]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate"
 												[isSwitchVisible]="true"
 												[showChildContent]="true"
@@ -56,8 +57,7 @@
 												[disabled]="!intelligentSecurity.zeroTouchLoginFlag">
 											</vtr-ui-row-switch>
 											<div class="slider-note">
-												<vtr-ui-range-slider
-													*ngIf="intelligentSecurity.distanceSensitivityFlag"
+												<vtr-ui-range-slider *ngIf="intelligentSecurity.distanceSensitivityFlag"
 													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
 													[minValue]="0"
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
@@ -66,7 +66,8 @@
 													[enableSlider]="!intelligentSecurity.distanceSensitivityFlag"
 													[value]="intelligentSecurity.humanDistance">
 												</vtr-ui-range-slider>
-												<div class="pt-3" [class.blur-1]="!intelligentSecurity.zeroTouchLoginFlag">
+												<div class="pt-3"
+													[class.blur-1]="!intelligentSecurity.zeroTouchLoginFlag">
 													<div class="feature-note p-4">
 														<div class="row">
 															<!-- <div class="col-auto pl-0">
@@ -116,7 +117,7 @@
 											[disabled]="!intelligentSecurity.humanPresenceDetectionFlag">
 										</vtr-ui-row-switch>
 										<div class="margin-left-5 pl-5 bold-title no-border-bottom pb-4 border-bottom">
-											<vtr-ui-row-switch 
+											<vtr-ui-row-switch
 												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
 												[isSwitchVisible]="false"
 												[showChildContent]="true"
@@ -136,7 +137,8 @@
 													(change)="setHumanDistance($event)"
 													[value]="intelligentSecurity.humanDistance">
 												</vtr-ui-range-slider>
-												<div class="pt-3" [class.blur-1]="!intelligentSecurity.zeroTouchLoginFlag">
+												<div class="pt-3"
+													[class.blur-1]="!intelligentSecurity.zeroTouchLoginFlag">
 													<div class="feature-note p-4">
 														<div class="row blur">
 															<!-- <div class="col-auto pl-0">
@@ -192,6 +194,7 @@
 												<div class="row no-gutters pl-4 ">
 													<vtr-ui-rounded-rectangle-radio [radioId]="'radio1'"
 														[group]="'radio'"
+														name="autoScreenLockTimerFast"
 														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast' | translate"
 														[value]="'1'"
 														[checked]="intelligentSecurity.autoScreenLockTimer === '0'"
@@ -200,6 +203,7 @@
 													</vtr-ui-rounded-rectangle-radio>
 													<vtr-ui-rounded-rectangle-radio [radioId]="'radio2'"
 														[group]="'radio'"
+														name="autoScreenLockTimerMedium"
 														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium' | translate"
 														[value]="'2'"
 														[checked]="intelligentSecurity.autoScreenLockTimer === '1'"
@@ -208,6 +212,7 @@
 													</vtr-ui-rounded-rectangle-radio>
 													<vtr-ui-rounded-rectangle-radio [radioId]="'radio3'"
 														[group]="'radio'"
+														name="autoScreenLockTimerSlow"
 														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow' | translate"
 														[value]="'3'"
 														[checked]="intelligentSecurity.autoScreenLockTimer === '2'"
@@ -295,7 +300,8 @@
 											[showChildContent]="true"
 											(toggleOnOff)="displayDim($event)"
 											[isSwitchChecked]="keepMyDisplay">
-											<div class="pl-5 ml-5">
+											<div class="pl-5 ml-5 pt-4">
+												<div class="display-dim-title">{{'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.title' | translate}}</div>
 												<vtr-ui-range-slider
 													[minValueLegend]="'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.startTime' | translate"
 													[minValue]="0"
@@ -320,7 +326,7 @@
 							<div class="row mb-40">
 								<div class="col col-12"
 									[ngClass]="{'battery-unavailable': isDesktopMachine}">
-									<vtr-battery-card *ngIf="!isDesktopMachine"> </vtr-battery-card>
+									<vtr-battery-card *ngIf="!isDesktopMachine"></vtr-battery-card>
 								</div>
 							</div>
 							<div class="row mb-40">
