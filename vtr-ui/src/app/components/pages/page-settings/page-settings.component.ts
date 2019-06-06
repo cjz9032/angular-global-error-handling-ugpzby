@@ -157,7 +157,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		}
 		const settingUpdateMetrics = {
 			ItemType: 'SettingUpdate',
-			SettingName: 'SettingUsageStatistics',
+			SettingName: 'Accept Privacy Policy',
 			SettingValue: event.switchValue ? 'Enabled' : 'Disabled',
 			SettingParent: 'Page.Settings'
 		};
