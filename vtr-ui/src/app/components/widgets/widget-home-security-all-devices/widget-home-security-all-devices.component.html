@@ -10,7 +10,7 @@
 						<fa-icon [icon]="['fal', 'home-lg-alt']"></fa-icon>
 					</div>
 					<div class="col-8 text">
-						<div class="all-device-name">{{'homeSecurity.allDevice' | translate}}</div>
+						<div class="all-device-name text-uppercase">{{'homeSecurity.allDevice' | translate}}</div>
 						<div class="manage">
 							<a target="_blank" href="{{homeSecurityUrl}}"
 								id="chs-lnk-ad-manageAccount"
@@ -33,7 +33,7 @@
 						<div class="device-number" [ngClass]="{'sizeChange': deviceMoreThanTen}" *ngIf="devicesNumber!==0">{{devicesNumber}}</div>
 					</div>
 					<div class="col-7 text" >
-						<div class="device-text">{{'homeSecurity.devices' | translate}}</div>
+						<div class="device-text text-uppercase">{{'homeSecurity.devices' | translate}}</div>
 						<div class="status">
 							<h3 style="margin-bottom: 0rem" *ngIf="isShowBadge">
 								<span class="badge badge-pill badge-danger button-green" *ngIf="devicesStatus==='secure'">
