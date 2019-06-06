@@ -128,6 +128,7 @@ export class DeviceService {
 							this.is64bit = true;
 						}
 					}
+					this.commonService.sendNotification('MachineInfo', this.machineInfo);
 					return info;
 				});
 		}
