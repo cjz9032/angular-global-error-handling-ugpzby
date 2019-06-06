@@ -89,8 +89,6 @@ const routes: Routes = [
 	}, {
 		path: 'device/device-settings',
 		component: PageDeviceSettingsComponent,
-		canDeactivate: [GuardService],
-		canActivate: [GuardService],
 		children: [
 			{
 				path: '',
