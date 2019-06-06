@@ -73,7 +73,10 @@
                     position: absolute;
                     .img-fluid {
                         max-width: 65%;
-                    }
+					}
+					.circle-red {
+						max-width: 85%;
+					}
                 }
                 .device-number {
                     font-size: 5rem;
