@@ -9,9 +9,9 @@ import { GamingCollapsableContainerEvent } from 'src/app/data-models/gaming/gami
 export class WidgetMacrokeySettingsComponent implements OnInit {
 	macroKeyOptions: any = [
 		{
-			title: 'gaming.macroKey.status.alwaysEnabled.title',
-			name: 'gaming.macroKey.status.alwaysEnabled.title',
-			description: 'gaming.macroKey.status.alwaysEnabled.description',
+			title: 'gaming.macroKey.status.on.title',
+			name: 'gaming.macroKey.status.on.title',
+			description: 'gaming.macroKey.status.on.description',
 			selectedOption: false,
 			defaultOption: false,
 			value: 1
