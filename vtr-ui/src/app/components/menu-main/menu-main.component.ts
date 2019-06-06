@@ -112,10 +112,8 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
-		this.isDashboard = true;
 
-		this.deviceModel = this.deviceService.getMachineInfoSync().family;
-		this.country = this.deviceService.getMachineInfoSync().country;
+		this.isDashboard = true;
 	}
 	ngDoCheck() {
 		if (this.router.url !== null) {
@@ -185,6 +183,10 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			switch (notification.type) {
 				case LenovoIdKey.FirstName:
 					this.firstName = notification.payload;
+					break;
+				case 'MachineInfo':
+					this.deviceModel = notification.payload.family;
+					this.country = notification.payload.country;
 					break;
 				default:
 					break;
