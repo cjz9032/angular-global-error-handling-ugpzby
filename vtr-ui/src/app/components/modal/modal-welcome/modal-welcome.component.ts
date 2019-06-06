@@ -96,8 +96,9 @@ export class ModalWelcomeComponent implements OnInit ,AfterViewInit{
 	}
 
 	saveUsageType($event, value) {
+		// console.log("Selected MOD",$event);
 		if ($event.target.checked) {
-			console.log(value);
+			// console.log(value);
 		}
 		if(this.data.page2.radioValue == null) {
 			this.progress += 16;
