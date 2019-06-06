@@ -10,7 +10,9 @@ import { typeData } from '../../feature/tracking-map/services/tracking-map.inter
 })
 export class CountNumberOfIssuesService {
 	breachedAccountsCount = this.breachedAccountsService.onGetBreachedAccounts$.pipe(
-		map(breachesState => breachesState.breaches.length),
+		map((breachesState) =>
+			breachesState.breaches.filter((breach) => breach.domain !== 'n/a')),
+		map((breaches) => breaches.length > 0 ? breaches.length + 1 : breaches.length),
 		startWith(0)
 	);
 	nonPrivatePasswordCount = this.browserAccountsService.installedBrowsersData.pipe(

@@ -11,7 +11,10 @@
 		<div *ngIf="(breachedAccounts$ | async)?.length" class="breaches-wrapper">
 			<div class="breached-accounts__header">
 				<p class="breached-accounts__title">
-					Found <span class="breached-accounts__title--red">{{(breachedAccounts$ | async)?.length}}	</span> breaches
+					Found
+					<span class="breached-accounts__title--red">
+						{{(breachedAccountsCount$ | async)}} </span>
+					breaches
 				</p>
 				<button class="breached-accounts__verify-button"
 						*ngIf="!(isUserAuthorized$ | async)"

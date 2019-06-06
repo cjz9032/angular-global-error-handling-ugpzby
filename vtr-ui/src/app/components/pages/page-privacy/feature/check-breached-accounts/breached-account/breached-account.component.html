@@ -1,4 +1,4 @@
-<div class="breached-account" [ngClass]="{'breached-account_open': i === openId}" *ngFor="let account of breachedAccounts; let i = index">
+<div class="breached-account" [ngClass]="{'breached-account_open': i === openId}" *ngFor="let account of breachedAccountsForShow; let i = index">
 	<div class="breached-account__preview">
 		<div class="breached-account__image">
 			<ng-template #defaultFavicon>
@@ -8,22 +8,26 @@
 				 *ngIf="account.domain | sitesFavicon:'/assets/images/privacy-tab/Unknown.png' | async as favicon; else defaultFavicon"
 				 [src]="account.image || favicon"
 				 [alt]="account.domain">
+			<!--<div class="breached-account__count"-->
+				 <!--*ngIf="account.domain === 'n/a'">-->
+				<!--{{otherBreaches.length}}-->
+			<!--</div>-->
 		</div>
         <div class="breached-account__text">
             <div class="breached-account__social">
                 <div class="breached-account__social-description">
                     <h4 class="breached-account__title">{{transformDomain(account.domain)}}</h4>
                     <p class="breached-account__date"
-					   *ngIf="openId !== i"
+					   *ngIf="openId !== i && account.domain !== 'n/a'"
                        title="{{account.date}}">Breached on {{account.date}}</p>
                 </div>
             </div>
 
 			<div class="breached-account__chips" *ngIf="openId !== i">
 				<span class="breached-account__chips-item breached-account__chips-item--password"
-					  *ngIf="account.hasPassword">Password</span>
+					  *ngIf="account.hasPassword || account.password">Password</span>
 				<span class="breached-account__chips-item breached-account__chips-item--email"
-					  *ngIf="account.hasEmail">Email</span>
+					  *ngIf="account.hasEmail || account.email">Email</span>
 			</div>
 
             <div class="breached-account__details">
@@ -54,9 +58,22 @@
 	</div>
 
 	<div *ngIf="openId === i" class="breached-account__description" data-analyticsName="Details">
-		<vtr-breached-description [breachedAccount]="account"></vtr-breached-description>
+		<vtr-breached-description
+			*ngIf="account.domain !== 'n/a'"
+			[breachedAccount]="account">
+		</vtr-breached-description>
+		<vtr-breached-other-description
+			*ngIf="account.domain === 'n/a'"
+			[setBreachData]="otherBreaches">
+		</vtr-breached-other-description>
+
 		<vtr-try-product-block
 			[texts]="tryProductText">
 		</vtr-try-product-block>
 	</div>
+</div>
+<div *ngIf="openId === null">
+	<vtr-try-product-block
+		[texts]="tryProductText">
+	</vtr-try-product-block>
 </div>
