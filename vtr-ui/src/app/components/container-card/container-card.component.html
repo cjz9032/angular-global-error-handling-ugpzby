@@ -7,6 +7,7 @@
 				<a [attr.href]="!actionLink ? null : actionLink"
 					(click)="linkClicked(actionType, actionLink)"
 					vtrMetrics
+				   metricsParent="Device.myDevice"
 					metricsItemCategory="corner"
 					metricsEvent="docClick"
 					[metricsItemPosition]="order"
