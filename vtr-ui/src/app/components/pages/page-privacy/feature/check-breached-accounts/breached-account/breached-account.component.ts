@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { BreachedAccount, KeyOfBreachedAccounts } from '../../../common/services/breached-accounts.service';
+import { BreachedAccount } from '../../../common/services/breached-accounts.service';
 import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { BreachedAccountService } from './breached-account.service';
