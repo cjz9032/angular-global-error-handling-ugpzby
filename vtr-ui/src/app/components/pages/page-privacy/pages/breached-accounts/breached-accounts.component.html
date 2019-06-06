@@ -3,12 +3,13 @@
 		 [metricsEvent]="'PageView'">
 
 	<div class="breached-accounts" data-analyticsName="BreachedAccountsBlock">
-
-		<div *ngIf="!(isFigleafReadyForCommunication$ | async) && !(breachedAccounts$ | async)?.length" class="email-scanner">
+		<div *ngIf="!(isFigleafReadyForCommunication$ | async) && !(breachedAccounts$ | async)?.length"
+			 class="email-scanner">
 			<vtr-email-scanner></vtr-email-scanner>
 		</div>
 
-		<div *ngIf="(breachedAccounts$ | async)?.length" class="breaches-wrapper">
+		<div *ngIf="(breachedAccounts$ | async)?.length"
+			 class="breaches-wrapper">
 			<div class="breached-accounts__header">
 				<p class="breached-accounts__title">
 					Found

@@ -1,13 +1,14 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { debounceTime, filter, takeUntil, tap } from 'rxjs/operators';
+import { debounceTime, filter, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { EmailScannerService } from '../services/email-scanner.service';
 import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
-import { BehaviorSubject, from } from 'rxjs';
+import { from } from 'rxjs';
 import { UserService } from '../../../../../../services/user/user.service';
 import { validateEmail } from '../../../utils/helpers';
 import { EMAIL_REGEXP } from '../../../utils/form-validators';
+import { BreachedAccountsService } from '../../../common/services/breached-accounts.service';
 
 interface UserProfile {
 	addressList: string[];
@@ -34,7 +35,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 		email: ['', [Validators.required, Validators.pattern(EMAIL_REGEXP)]],
 	});
 	emailWasSubmitted = false;
-	serverError$ = new BehaviorSubject(false);
+	serverError$ = this.breachedAccountsService.onGetBreachedAccountsFailed$;
 	isLoading$ = this.emailScannerService.loadingStatusChanged$;
 	lenovoId: string;
 	islenovoIdOpen = false;
@@ -44,7 +45,8 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 		private formBuilder: FormBuilder,
 		private emailScannerService: EmailScannerService,
 		private commonPopupService: CommonPopupService,
-		private userService: UserService
+		private userService: UserService,
+		private breachedAccountsService: BreachedAccountsService
 	) {
 	}
 
@@ -53,7 +55,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 			debounceTime(100),
 			takeUntil(instanceDestroyed(this)),
 		).subscribe(() => {
-			this.serverError$.next(false);
+			this.breachedAccountsService.setError(false);
 		});
 
 		this.handleStartTyping();

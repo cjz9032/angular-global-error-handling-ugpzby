@@ -31,9 +31,9 @@ interface GetBreachedAccountsState {
 
 @Injectable()
 export class BreachedAccountsService {
-
 	onGetBreachedAccounts$ = new ReplaySubject<GetBreachedAccountsState>(1);
 	onGetBreachedAccountsCompleted$ = new BehaviorSubject(false);
+	onGetBreachedAccountsFailed$ = new BehaviorSubject(false);
 
 	taskStartedTime = 0;
 	scanBreachesAction$ = new Subject<{ TaskDuration: number }>();
@@ -53,7 +53,10 @@ export class BreachedAccountsService {
 			)
 		).pipe(
 			switchMapTo(this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(take(1))),
-			tap(() => this.onGetBreachedAccountsCompleted$.next(false)),
+			tap(() => {
+				this.onGetBreachedAccountsCompleted$.next(false);
+				this.setError(false);
+			}),
 			switchMap((isFigleafInstalled) => {
 				this.taskStartedTime = Date.now();
 				return isFigleafInstalled ? this.getBreachedAccountsFromApp() : this.getBreachedAccountsFromBackend();
@@ -62,16 +65,18 @@ export class BreachedAccountsService {
 				const breaches = breachedAccounts.filter(x => x.domain !== 'n/a');
 				const unknownBreaches = breachedAccounts.filter(x => x.domain === 'n/a');
 				return [...breaches, ...unknownBreaches];
-			})
+			}),
+			catchError((error) => this.handleError(error))
 		).subscribe((response: BreachedAccount[]) => {
 			this.onGetBreachedAccounts$.next({breaches: response, error: null});
 			this.onGetBreachedAccountsCompleted$.next(true);
 			this.sendTaskAcrion();
-		}, (error) => {
-			this.onGetBreachedAccountsCompleted$.next(true);
-			this.onGetBreachedAccounts$.next({breaches: [], error: error});
-			this.sendTaskAcrion();
+
 		});
+	}
+
+	setError(state: boolean) {
+		this.onGetBreachedAccountsFailed$.next(state);
 	}
 
 	private sendTaskAcrion() {
@@ -81,32 +86,22 @@ export class BreachedAccountsService {
 
 	private getBreachedAccountsFromApp() {
 		return this.communicationWithFigleafService.sendMessageToFigleaf({type: 'getFigleafBreachedAccounts'})
-			.pipe(
-				map((response: GetBreachedAccountsResponse) => {
-					return response.payload.breaches;
-				}),
-				catchError((error) => {
-					console.error('getFigleafBreachedAccounts error: ', error);
-					this.onGetBreachedAccountsCompleted$.next(true);
-					this.onGetBreachedAccounts$.next({breaches: [], error: error});
-					this.sendTaskAcrion();
-					return EMPTY;
-				}),
-			);
+			.pipe(map((response: GetBreachedAccountsResponse) => response.payload.breaches));
 	}
 
 	private getBreachedAccountsFromBackend() {
-		return this.emailScannerService.getBreachedAccounts()
-			.pipe(
-				catchError((error) => {
-					console.error('getBreachedAccountsByEmail error', error);
-					this.onGetBreachedAccountsCompleted$.next(true);
-					if (error !== ErrorNames.noAccessToken) {
-						this.onGetBreachedAccounts$.next({breaches: [], error: error});
-						this.sendTaskAcrion();
-					}
-					return EMPTY;
-				})
-			);
+		return this.emailScannerService.getBreachedAccounts().pipe(
+			catchError((error) => this.handleError(error))
+		);
+	}
+
+	private handleError(error: any) {
+		console.log('onGetBreachedAccounts', error);
+		this.onGetBreachedAccountsCompleted$.next(true);
+		if (error !== ErrorNames.noAccessToken) {
+			this.setError(true);
+		}
+		this.sendTaskAcrion();
+		return EMPTY;
 	}
 }
