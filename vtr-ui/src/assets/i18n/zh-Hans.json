@@ -39,8 +39,9 @@
 						"headerText": "Driver Install Required",
 						"text": "You need install driver for RAM Overclock to  make it effective",
 						"button": "Install",
-						"link": "cancle"
+						"link": "cancel"
 					},
+
 					"autoClose": "自动关闭",
 					"networkBoost": "网络提升",
 					"hybridMode": "混合模式",
@@ -198,14 +199,27 @@
 					"m2": "M2"
 				}
 			},
-			"actionButton": {
-				"clearAction": {
-					"title": "Are you sure to clear this macro key?",
-					"btnClear": "Clear",
-					"btnCancel": "Cancel"
+			"popupContent":{
+				"clearMacrokey":{
+					"title":"Are you sure to clear this macro key?"
 				},
-				"btnOk": "OK",
-				"timeoutTitle": "Recording will time out if no input for 20 seconds"
+				"timeoutRecording":{
+					"title":"Time Out For Recording.",
+					"body":"Recording will time out if no input for 20 seconds."
+				},
+				"maximumInput":{
+					"title":"Maximum Input Reached.",
+					"body":"Macro key can only store inputs less than 20."
+				},
+				"inputStopped":{
+					"title":"Time Out For Recording.",
+					"body":"Recording will time out if the input stopped for more than 10 seconds."
+				},
+				"confirmButton":{
+					"btnClear":"Clear",
+					"btnCancel":"Cancel"
+				},
+				"btnOk":"OK"
 			}
 		},
 		"lightingProfile": {
@@ -298,7 +312,7 @@
 		"personal": "个人",
 		"custom": "自定义",
 		"skip": "跳过",
-		"next": "下一步",
+		"next": "下一个",
 		"interests": "您感兴趣的是什么？",
 		"howOnesMachinUsed": "请单击一项符合您使用此计算机的用途描述",
 		"games": "游戏",
@@ -625,7 +639,7 @@
 						},
 						"options": {
 							"start": "下面开始充电",
-							"checkboxText": "自动设置以'％charge'开始，'停止充电％'低于5％",
+							"checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
 							"stop": "停止充电"
 						}
 					},
@@ -1004,6 +1018,7 @@
 		"trailExpiredSubtext": "Upgrate to protect all of your devices",
 		"upgrade": "upgrade",
 		"tour": {
+			"back": "Back",
 			"skip": "Skip",
 			"start": "START TOUR",
 			"done": "DONE",
@@ -1695,10 +1710,10 @@
 		}
 	},
 	"welcometutorial": {
-		"description": "Vantage使您可以轻松更新驱动程序，运行诊断程序，请求支持以及了解您的设备。快速定制您的体验，并根据您的需求找到有用的信息",
-		"bullets1": "View your system's status with the Vantage dashboard.",
-		"bullets2": "Security Advisor使您可以轻松管理安全性 (在选定系统上可用)",
-		"bullets3": "自动更新可使您的设备保持最佳状态 (在选定系统上可用)",
+		"description": "Vantage使您可以轻松更新驱动程序，运行诊断程序，请求支持以及了解您的设备。快速定制您的体验，并根据您的需求找到有用的信息。",
+		"bullets1": "使用Vantage仪表板查看系统的状态。",
+		"bullets2": "安全顾问 使您的安全管理变得简单（在选定的系统上可用）。",
+		"bullets3": "自动更新可使您的设备保持最佳状态 (在选定系统上可用)。",
 		"subtitle1": "你将如何使用你的设备？",
 		"subtitle2": "告诉我们您的兴趣",
 		"personal": "个人使用",

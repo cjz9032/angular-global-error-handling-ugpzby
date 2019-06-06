@@ -27,7 +27,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 	chargeCompletionTimeText = '';
 	batteryIndicators = new BatteryIndicator();
 	private notificationSubscription: Subscription;
-	public deviceChemistry: string;
+	public deviceChemistry = [];
 	constructor(
 		private batteryService: BatteryDetailService,
 		public shellServices: VantageShellService,
@@ -67,7 +67,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 			response.detail[i].fullChargeCapacity = Math.round(response.detail[i].fullChargeCapacity * 100) / 100;
 			response.detail[i].voltage = Math.round(response.detail[i].voltage * 100) / 100;
 			response.detail[i].wattage = Math.round(response.detail[i].wattage * 100) / 100;
-			response.detail[i].heading = response.length > 1 ? headings[i] : '';
+			response.detail[i].heading = response.detail.length > 1 ? headings[i] : '';
 			const id = response.detail[i].chargeStatus;
 			response.detail[i].chargeStatusString = this.translate.instant(BatteryChargeStatus.getBatteryChargeStatus(id));
 			if (response.detail[i].chargeStatus === BatteryChargeStatus.NO_ACTIVITY.id
@@ -84,9 +84,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 				response.detail[i].remainingTimeText = this.remainingTimeText;
 			}
 			const chemistry: string = response.detail[i].deviceChemistry;
-			this.deviceChemistry = this.translate.instant('device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase());
-			// const manufacturer: string = response.detail[i].manufacturer;
-			// response.detail[i].manufacturer = this.translate.instant('device.deviceSettings.batteryGauge.details.manufacturer.' + manufacturer.toLowerCase());
+			this.deviceChemistry[i] = this.translate.instant('device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase());
 		}
 		this.dataSource = response.detail;
 		this.dataSourceGauge = response.gauge;
