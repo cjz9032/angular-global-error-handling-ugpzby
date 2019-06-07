@@ -5,7 +5,9 @@
 	<div class="breached-accounts" data-analyticsName="BreachedAccountsBlock">
 		<div *ngIf="!(isFigleafReadyForCommunication$ | async) && !(breachedAccounts$ | async)?.length"
 			 class="email-scanner">
-			<vtr-email-scanner></vtr-email-scanner>
+			<vtr-email-scanner
+				[userEmail]="userEmail$ | async"
+				[emailWasScanned]="emailWasScanned$ | async"></vtr-email-scanner>
 		</div>
 
 		<div *ngIf="(breachedAccounts$ | async)?.length"

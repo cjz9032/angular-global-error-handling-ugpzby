@@ -3,7 +3,7 @@ import { ReplaySubject } from 'rxjs';
 import { BreachedAccountsService } from './breached-accounts.service';
 import { BrowserAccountsService } from './browser-accounts.service';
 import { TrackingMapService } from '../../feature/tracking-map/services/tracking-map.service';
-import { filter } from 'rxjs/operators';
+import { debounce, debounceTime, distinctUntilChanged, filter, tap } from 'rxjs/operators';
 import { typeData } from '../../feature/tracking-map/services/tracking-map.interface';
 import { AppStatuses, FeaturesStatuses } from '../../userDataStatuses';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
@@ -22,7 +22,10 @@ export class UserDataGetStateService {
 	nonPrivatePasswordResult: FeaturesStatuses = FeaturesStatuses.undefined;
 	isFigleafReadyForCommunication = false;
 	private userDataStatus = new ReplaySubject<UserStatuses>();
-	userDataStatus$ = this.userDataStatus.asObservable();
+	userDataStatus$ = this.userDataStatus.asObservable().pipe(
+		debounceTime(100),
+		distinctUntilChanged()
+	);
 	isTrackersBlocked = false;
 
 	constructor(
