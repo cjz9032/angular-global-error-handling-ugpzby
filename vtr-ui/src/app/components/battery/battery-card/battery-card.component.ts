@@ -26,7 +26,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		public shellServices: VantageShellService,
 		private commonService: CommonService,
 		private cd: ChangeDetectorRef) {
-		this.getBatteryDetailOnCard();
 	}
 	batteryInfo: BatteryDetail[];
 	batteryGauge: BatteryGaugeDetail;
@@ -42,6 +41,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	percentageLimitation = 60;
 
 	ngOnInit() {
+		this.getBatteryDetailOnCard();
+
 		this.shellServices.registerEvent(EventTypes.pwrPowerSupplyStatusEvent, this.onPowerSupplyStatusEvent.bind(this));
 		this.shellServices.registerEvent(EventTypes.pwrRemainingPercentageEvent, this.onRemainingPercentageEvent.bind(this));
 		this.shellServices.registerEvent(EventTypes.pwrRemainingTimeEvent, this.onRemainingTimeEvent.bind(this));
@@ -76,12 +77,11 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	}
 
 	public getBatteryDetailOnCard() {
-		console.log('In getBatteryDetail');
 		try {
 			if (this.batteryService.isShellAvailable) {
 				this.getBatteryDetails();
 
-				this.batteryCardTimer = setTimeout(() => {
+				this.batteryCardTimer = setInterval(() => {
 					console.log('Trying after 30 seconds');
 					this.getBatteryDetails();
 				}, 30000);
@@ -94,13 +94,13 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	private getBatteryDetails() {
 		this.batteryService.getBatteryDetail()
 			.then((response: any) => {
-				console.log('getBatteryDetailOnCard', response);
+				console.log('getBatteryDetails', response);
 				this.batteryInfo = response;
 				this.batteryInfo = response.batteryInformation;
 				this.batteryGauge = response.batteryIndicatorInfo;
 				this.updateBatteryDetails();
 			}).catch(error => {
-				console.error('getBatteryDetailOnCard', error);
+				console.error('getBatteryDetails error', error);
 			});
 	}
 
@@ -144,7 +144,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	reInitValue() {
 		this.flag = false;
-		this.getBatteryDetailOnCard();
+		// this.getBatteryDetailOnCard();
 	}
 	ngOnDestroy() {
 		clearTimeout(this.batteryCardTimer);
