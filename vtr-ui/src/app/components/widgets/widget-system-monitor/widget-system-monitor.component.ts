@@ -9,9 +9,9 @@ import { HwInfoService } from 'src/app/services/gaming/gaming-hwinfo/hw-info.ser
 export class WidgetSystemMonitorComponent implements OnInit {
 	public cpuUseFrequency: string;
 	public cpuBaseFrequence: string;
-	public gpuMaxFrequence: string;
+	public gpuMemorySize: string;
 	public memorySize: string;
-	public gpuUseFrequency: string;
+	public gpuUsedMemory: string;
 	public memoryUsed: string;
 	public type: string;
 	public isSystemDisk: boolean;
@@ -36,16 +36,25 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	@Input() ramMax = 32;
 	//@Input() cpuover = 'Intel';
 
-	public hds: any;
+	public hds: any = [];
 	constructor(private hwInfoService: HwInfoService) { }
 	public getDynamicInfoService() {
 		this.hwInfoService.getDynamicInformation().then((hwInfo: any) => {
 			//console.log('getDynamicInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
-			this.cpuUseFrequency = hwInfo.cpuUseFrequency.split('GHz')[0];;
+			if(hwInfo.cpuUseFrequency !== '')
+			{
+				this.cpuUseFrequency = hwInfo.cpuUseFrequency.split('GHz')[0];
+			}
 			this.cpuCurrent = parseFloat(this.cpuUseFrequency);
-			this.gpuUseFrequency = hwInfo.gpuUseFrequency.split('GB')[0];;
-			this.gpuCurrent = parseFloat(this.gpuUseFrequency);
-			this.memoryUsed = hwInfo.memoryUsed.split('GB')[0];;
+			if(hwInfo.gpuUsedMemory !== '')
+			{
+				this.gpuUsedMemory = hwInfo.gpuUsedMemory.split('GB')[0];
+			}
+			this.gpuCurrent = parseFloat(this.gpuUsedMemory);
+			if(hwInfo.memoryUsed !== '')
+			{
+				this.memoryUsed = hwInfo.memoryUsed.split('GB')[0];
+			}
 			this.ramCurrent = parseFloat(this.memoryUsed);
 			this.hds = hwInfo.diskList;
 		});
@@ -55,11 +64,20 @@ export class WidgetSystemMonitorComponent implements OnInit {
 		try {
 			this.hwInfoService.getMachineInfomation().then((hwInfo: any) => {
 				//console.log('getMachineInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
-				this.cpuBaseFrequence = hwInfo.cpuBaseFrequence.split('GHz')[0];
+				if(hwInfo.cpuBaseFrequence !== '')
+				{
+					this.cpuBaseFrequence = hwInfo.cpuBaseFrequence.split('GHz')[0];
+				}
 				this.cpuMax = parseFloat(this.cpuBaseFrequence);
-				this.gpuMaxFrequence = hwInfo.gpuMaxFrequence.split('GB')[0];
-				this.gpuMax = parseFloat(this.gpuMaxFrequence);
-				this.memorySize = hwInfo.memorySize.split('GB')[0];
+				if(hwInfo.gpuMemorySize !== '')
+				{
+					this.gpuMemorySize = hwInfo.gpuMemorySize.split('GB')[0];
+				}
+				this.gpuMax = parseFloat(this.gpuMemorySize);
+				if(hwInfo.memorySize !== '')
+				{
+					this.memorySize = hwInfo.memorySize.split('GB')[0];
+				}
 				this.ramMax = parseFloat(this.memorySize);
 				this.cpuModuleName = hwInfo.cpuModuleName;
 				this.cpuover = this.cpuModuleName;

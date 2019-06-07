@@ -17,7 +17,7 @@
 			</div>
 			<hr />
 			<!-- repeat battery-detail information -->
-			<div *ngFor="let model of dataSource"
+			<div *ngFor="let model of dataSource; let i=index"
 				class="line-height-2-5 mb-3">
 				<div class="row mb-3">
 					<div class="col">
@@ -99,13 +99,13 @@
 						class="col-2 p-0 battery-value-text">
 						{{ model.cycleCount }}
 					</div>
-					<div *ngIf="isValid(model.deviceChemistry)"
+					<div *ngIf="isValid(deviceChemistry[i])"
 						class="col-2 p-0 battery-label-text">
 						{{'device.deviceSettings.batteryGauge.details.chemistry' | translate }}
 					</div>
-					<div *ngIf="isValid(deviceChemistry)"
+					<div *ngIf="isValid(deviceChemistry[i])"
 						class="col-2 p-0 battery-value-text">
-						{{ deviceChemistry }}
+						{{ deviceChemistry[i] }}
 					</div>
 					<!-- </div> -->
 					<!-- row-4 -->
