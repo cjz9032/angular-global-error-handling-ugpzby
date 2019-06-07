@@ -1,11 +1,15 @@
+@import "../../../common/directives/cut-multiline-text-with-dots/cut-multiline-text-with-dots";
+
 .breached-description {
 	font-size: 1.6rem;
 	font-weight: 500;
+	&__text-wrapper {
+		padding-bottom: 2.4rem;
+	}
 	&__text {
 		color: #34495E;
 		font-weight: 300;
-		line-height: 3rem;
-		padding-bottom: 2.4rem;
+		line-height: 2.2rem;
 	}
 
 	&__details-wrapper {
