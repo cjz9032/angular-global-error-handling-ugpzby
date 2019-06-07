@@ -88,12 +88,12 @@
 			"title": "Macro Key",
 			"introLine": "You can record a series of key input, and use them in gaming or other operations.",
 			"status": {
-				"alwaysEnabled": {
-					"title": "Always Enabled",
+				"on": {
+					"title": "On",
 					"description": "Always Enabled"
 				},
 				"whileGaming": {
-					"title": "Enabled Only While Gaming",
+					"title": "Macro Key enabled only when gaming",
 					"description": "It will be enabled when you game and remain as num key when you don't."
 				},
 				"off": {
@@ -123,11 +123,11 @@
 					"clear": "Clear",
 					"intervalStatus": {
 						"keep": {
-							"title": "Keep Interval",
+							"title": "Keep Delay",
 							"description": "Intervals of key actions will be kept and applied when using this macro key."
 						},
 						"ignore": {
-							"title": "Ignore Interval",
+							"title": "Ignore Delay",
 							"description": "Intervals of key actions will be ignored."
 						}
 					},
@@ -1136,7 +1136,7 @@
 				"disabled": "已禁用",
 				"enableVirusScan": "启用病毒扫描",
 				"enablenFirewall": "启用防火墙",
-				"enableFirewall": "ENABLE FIREWALL"
+				"enableFirewall": "启用防火墙"
 			},
 			"windowsDefender": {
 				"optimallyProtected": "未受最佳保护",

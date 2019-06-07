@@ -37,10 +37,55 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	//@Input() cpuover = 'Intel';
 
 	public hds: any = [];
+
+	// @Input() hds = [
+	// 	{
+	// 		capacity: 476,
+	// 		diskUsage: "14",
+	// 		hddName: "LENSE30512GMSP34MEAT3TA",
+	// 		isSystemDisk: "true",
+	// 		type: "SSD",
+	// 		usedDisk: "71"
+	// 	},
+	// 	{
+	// 		capacity: 2000,
+	// 		diskUsage: "75",
+	// 		hddName: "LENSE30512GMSP34MEAT3TB",
+	// 		isSystemDisk: "false",
+	// 		type: "HDD",
+	// 		usedDisk: "1500"
+	// 	},
+	// 	{
+	// 		capacity: 4000,
+	// 		diskUsage: "25",
+	// 		hddName: "LENSE30512GMSP34MEAT3TC",
+	// 		isSystemDisk: "false",
+	// 		type: "HDD",
+	// 		usedDisk: "1000"
+	// 	},
+	// 	{
+	// 		capacity: 2000,
+	// 		diskUsage: "75",
+	// 		hddName: "LENSE30512GMSP34MEAT3TD",
+	// 		isSystemDisk: "false",
+	// 		type: "HDD",
+	// 		usedDisk: "1500"
+	// 	},
+	// 	{
+	// 		capacity: 4000,
+	// 		diskUsage: "25",
+	// 		hddName: "LENSE30512GMSP34MEAT3TE",
+	// 		isSystemDisk: "false",
+	// 		type: "HDD",
+	// 		usedDisk: "1000"
+	// 	}
+	// ];
+
 	constructor(private hwInfoService: HwInfoService) { }
 	public getDynamicInfoService() {
 		this.hwInfoService.getDynamicInformation().then((hwInfo: any) => {
-			//console.log('getDynamicInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
+			// console.log('getDynamicInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
+			console.log('DYNAMIC SYSTEM INFO', hwInfo);
 			if(hwInfo.cpuUseFrequency !== '')
 			{
 				this.cpuUseFrequency = hwInfo.cpuUseFrequency.split('GHz')[0];
@@ -108,8 +153,11 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	}
 
 	getLeftDeg(current, max) {
-		const pct = (current / max);
+		let pct = (current / max);
 		const deg = 360 * (pct - .5);
+		if(pct > 1) {
+			pct = 1;
+		}
 		if (pct > .5) {
 			return deg;
 		} else {
@@ -118,13 +166,19 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	}
 
 	getRightDeg(current, max) {
-		const pct = (current / max);
+		let pct = (current / max);
+		if(pct > 1) {
+			pct = 1;
+		}
 		const deg = 360 * pct;
 		return deg;
 	}
 
 	getStackHeight(current, max) {
-		const pct = (current / max);
+		let pct = (current / max);
+		if(pct > 1) {
+			pct = 1;
+		}
 		const mask = 1 - pct;
 		const height = 100 * mask;
 		return height;
