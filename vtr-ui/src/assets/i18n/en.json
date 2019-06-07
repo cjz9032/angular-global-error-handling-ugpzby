@@ -228,10 +228,21 @@
 		"lightingProfile": {
 			"title": "Lighting",
 			"effect": {
-				"option1": "Wave",
-				"option2": "Option 2",
-				"option3": "Option 3",
-				"option4": "option 4"
+				"option1": {
+					"title": "Wave"
+				},
+				"option2": {
+					"title": "Smooth"
+				},
+				"option3": {
+					"title": "Breath"
+				},
+				"option4": {
+					"title": "CPU Temperature"
+				},
+				"option5": {
+					"title": "CPU Utilization"
+				}
 			}
 		}
 	},

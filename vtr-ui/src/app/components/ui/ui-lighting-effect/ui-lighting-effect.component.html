@@ -1,27 +1,31 @@
-<div class="vtr-ui-lighting-effect">
-  <div class="select-box">
-    <div class="dropdown">
-      <a class="dropdown-toggle" id="gaming-drop" (click)="toggle()">
-        <!-- <span>{{ currentOption | translate }}</span> -->
-        <span>Wave</span>
-        <i class="icon icon-arrowdown"></i>
-      </a>
+<div class="select-box">
+	<div class="dropdown">
+		<a class="dropdown-toggle"
+			id="gaming-drop"
+			(click)="toggleOptions(options.curSelected)">
+			<!-- <span>{{ currentOption | translate }}</span> -->
+			<span *ngIf="options.curSelected==1" > {{options.dropOptions[0].name  | translate}}</span>
+			<span *ngIf="options.curSelected==2" > {{options.dropOptions[1].name  | translate}}</span>
+			<span *ngIf="options.curSelected==3" > {{options.dropOptions[2].name  | translate}}</span>
+			<span *ngIf="options.curSelected==4" > {{options.dropOptions[3].name  | translate}}</span>
+			<span *ngIf="options.curSelected==5" > {{options.dropOptions[4].name  | translate}}</span>
+			<i class="icon icon-arrowdown"></i>
+		</a>
+		<ng-container *ngIf="showOptions">
+			<div class="gaming-dropdown-menu">
+				<ng-container *ngFor="let option of options.dropOptions; index as i">
+					<li [ngClass]="{ 'selected': options.curSelected===(i+1) }"
+						(click)="optionSelected(option)" 	(mouseenter)="changeDescription(option)"
+						(mouseleave)="resetDescription(option)">
+						<a class="dropdown-item"><i class="icon icon-checkline"></i>{{option.name | translate}}</a>
+					</li>
 
-      <ng-container *ngIf="show">
-        <div class="gaming-dropdown-menu">
-          <ng-container>
-            <li>
-              <a class="dropdown-item"><i class="icon icon-checkline"></i>{{'gaming.lightingProfile.effect.option1' | translate}}</a>
-            </li>
-            <li>
-              <a class="dropdown-item"><i class="icon icon-checkline"></i>Option 2</a>
-            </li>
-            <li>
-              <a class="dropdown-item"><i class="icon icon-checkline"></i>Option 3</a>
-            </li>
-          </ng-container>
-        </div>
-      </ng-container>
-    </div>
-  </div>
+				</ng-container>
+
+				<!-- <div class="information">
+				  <p>{{ currentDescription | translate }}</p>
+				</div> -->
+			</div>
+		</ng-container>
+	</div>
 </div>
