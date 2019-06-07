@@ -194,7 +194,7 @@
 			height: 116px;
 		}
 		ul li {
-			margin-bottom: 18px;
+			margin-bottom: 24px;
 		}
 		div.row:first-child {
 			margin-bottom: 24px
@@ -299,12 +299,17 @@
 
 	input[type="radio"]:checked + img {
 		border: 2pt solid #21C48A;
-		//opacity: 0.7 !important;
+	}
+	// div.device-image > input[type="radio"]:checked + div.device-image > input[type="radio"]:not(:checked) + img{
+	// 	opacity: 0.5 !important;
+	// }
+	div.radio-is-selected input[type="radio"]:not(:checked) + img{
+		opacity: 0.5 !important;
 	}
 
-	.radio-is-selected img {
-		//opacity: 0.5 !important;
-	}
+	// .radio-is-selected img {
+	// 	opacity: 0.5 !important;
+	// }
 
 	.content-page-2 .interests input[type="checkbox"] {
 		opacity: 0;

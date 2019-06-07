@@ -123,11 +123,11 @@
 					"clear": "Clear",
 					"intervalStatus": {
 						"keep": {
-							"title": "Keep Interval",
+							"title": "Keep Delay",
 							"description": "Intervals of key actions will be kept and applied when using this macro key."
 						},
 						"ignore": {
-							"title": "Ignore Interval",
+							"title": "Ignore Delay",
 							"description": "Intervals of key actions will be ignored."
 						}
 					},
@@ -228,10 +228,21 @@
 		"lightingProfile": {
 			"title": "Lighting",
 			"effect": {
-				"option1": "Wave",
-				"option2": "Option 2",
-				"option3": "Option 3",
-				"option4": "option 4"
+				"option1": {
+					"title": "Wave"
+				},
+				"option2": {
+					"title": "Smooth"
+				},
+				"option3": {
+					"title": "Breath"
+				},
+				"option4": {
+					"title": "CPU Temperature"
+				},
+				"option5": {
+					"title": "CPU Utilization"
+				}
 			}
 		}
 	},
@@ -1713,10 +1724,10 @@
 		}
 	},
 	"welcometutorial": {
-		"description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
+		"description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs.",
 		"bullets1": "View your system's status with the Vantage dashboard.",
-		"bullets2": "Security Advisor makes managing your security easy (Available on selected systems)",
-		"bullets3": "Automatic updates keep your device in tip top shape (Available on selected systems)",
+		"bullets2": "Security Advisor makes managing your security easy (Available on selected systems).",
+		"bullets3": "Automatic updates keep your device in tip top shape (Available on selected systems).",
 		"subtitle1": "How will you be using your device?",
 		"subtitle2": "Tell us about your interests",
 		"personal": "Personal Use",
@@ -1729,7 +1740,7 @@
 		"title2": "Lenovo",
 		"title3": "Vantage",
 		"privacypolicy": "Lenovo's Privacy Policy",
-		"done": "DONEy",
+		"done": "DONE",
 		"interests": {
 			"games": "Games",
 			"news": "News",
