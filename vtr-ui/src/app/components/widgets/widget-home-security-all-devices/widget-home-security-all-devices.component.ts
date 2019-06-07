@@ -64,44 +64,35 @@ export class WidgetHomeSecurityAllDevicesComponent implements OnInit {
 	switchStatus() {
 		if (!this.testStatus || this.testStatus === 'loading') {
 			this.pluginAvailable = false;
-		} else if (this.testStatus === 'lessDevices-secure') {
-			this.pluginAvailable = true;
-			this.logonStatus = 'trail';
-			this.devicesNumber = 7;
-			this.showBadge();
-			this.devicesStatus = 'secure';
-		} else if (this.testStatus === 'moreDevices-needAttention') {
-			this.pluginAvailable = true;
-			this.logonStatus = 'trail';
-			this.devicesNumber = 99;
-			this.judgeDeviceNumber();
-			this.showBadge();
-			this.devicesStatus = 'needs attention';
-		} else if (this.testStatus === 'noneDevices') {
-			this.pluginAvailable = true;
-			this.logonStatus = 'trail';
-			this.devicesNumber = 0;
-			this.showBadge();
-			this.devicesStatus = 'secure';
-		} else if (this.testStatus === 'tralExpired') {
-			this.pluginAvailable = true;
-			this.logonStatus = 'trail expired';
-			this.devicesNumber = 0;
-			this.showBadge();
-			this.devicesStatus = 'needs attention';
-		} else if (this.testStatus === 'lessDevices-needAttention') {
-			this.pluginAvailable = true;
-			this.logonStatus = 'trail';
-			this.devicesNumber = 7;
-			this.showBadge();
-			this.devicesStatus = 'needs attention';
 		} else {
+			if (this.testStatus === 'lessDevices-secure') {
+				this.logonStatus = 'trail';
+				this.devicesNumber = 7;
+				this.devicesStatus = 'secure';
+			} else if (this.testStatus === 'moreDevices-needAttention') {
+				this.logonStatus = 'trail';
+				this.devicesNumber = 99;
+				this.devicesStatus = 'needs attention';
+			} else if (this.testStatus === 'noneDevices') {
+				this.logonStatus = 'trail';
+				this.devicesNumber = 0;
+				this.devicesStatus = 'secure';
+			} else if (this.testStatus === 'tralExpired') {
+				this.logonStatus = 'trail expired';
+				this.devicesNumber = 0;
+				this.devicesStatus = 'needs attention';
+			} else if (this.testStatus === 'lessDevices-needAttention') {
+				this.logonStatus = 'trail';
+				this.devicesNumber = 7;
+				this.devicesStatus = 'needs attention';
+			} else {
+				this.logonStatus = 'trail';
+				this.devicesNumber = 100;
+				this.devicesStatus = 'secure';
+			}
 			this.pluginAvailable = true;
-			this.logonStatus = 'trail';
-			this.devicesNumber = 100;
-			this.showBadge();
 			this.judgeDeviceNumber();
-			this.devicesStatus = 'secure';
+			this.showBadge();
 		}
 	}
 }

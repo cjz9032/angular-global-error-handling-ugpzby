@@ -6,7 +6,7 @@ import { isUndefined } from 'util';
 import { GamingSystemUpdateService } from 'src/app/services/gaming/gaming-system-update/gaming-system-update.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
-import { TouchpadStatus } from 'src/app/data-models/gaming/touchpad-status.model';
+import { TouchpadLockStatus } from 'src/app/data-models/gaming/touchpad-lock-status.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
@@ -17,16 +17,16 @@ import { Gaming } from 'src/app/enums/gaming.enum';
 @Component({
 	selector: 'vtr-widget-legion-edge',
 	templateUrl: './widget-legion-edge.component.html',
-	styleUrls: [ './widget-legion-edge.component.scss' ]
+	styleUrls: ['./widget-legion-edge.component.scss']
 })
 export class WidgetLegionEdgeComponent implements OnInit {
 	public ramOcStatus = false;
 	public RamOCSatusObj = new RamOCSatus();
-	public touchpadStatus = false;
-	public TouchpadStatusObj = new TouchpadStatus();
 	public hybrimodeStatus = false;
 	public HybrimodeStatusObj = new HybridModeStatus();
-	public gamingCapabilities: any = {};
+	public gamingCapabilities: any;
+	public touchpadLockStatus: any;
+	public TouchpadLockStatusObj = new TouchpadLockStatus();
 	public legionUpdate = [
 		{
 			readMoreText: '',
@@ -35,7 +35,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			header: 'gaming.dashboard.device.legionEdge.title',
 			name: 'gaming.dashboard.device.legionEdge.title',
 			subHeader: '',
-			isVisible: true,
+			isVisible: false,
 			isCustomizable: false,
 			isCollapsible: true,
 			isCheckBoxVisible: false,
@@ -53,7 +53,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			header: 'gaming.dashboard.device.legionEdge.ramOverlock',
 			name: 'gaming.dashboard.device.legionEdge.ramOverlock',
 			subHeader: '',
-			isVisible: true,
+			isVisible: false,
 			isCustomizable: false,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
@@ -71,7 +71,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			header: 'gaming.dashboard.device.legionEdge.autoClose',
 			name: 'gaming.dashboard.device.legionEdge.autoClose',
 			subHeader: '',
-			isVisible: true,
+			isVisible: false,
 			isCustomizable: true,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
@@ -90,7 +90,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			header: 'gaming.dashboard.device.legionEdge.networkBoost',
 			name: 'gaming.dashboard.device.legionEdge.networkBoost',
 			subHeader: '',
-			isVisible: true,
+			isVisible: false,
 			isCustomizable: true,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
@@ -109,7 +109,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			header: 'gaming.dashboard.device.legionEdge.hybridMode',
 			name: 'gaming.dashboard.device.legionEdge.hybridMode',
 			subHeader: '',
-			isVisible: true,
+			isVisible: false,
 			isCustomizable: false,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
@@ -127,14 +127,14 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			header: 'gaming.dashboard.device.legionEdge.touchpadLock',
 			name: 'gaming.dashboard.device.legionEdge.touchpadLock',
 			subHeader: '',
-			isVisible: true,
+			isVisible: false,
 			isCustomizable: false,
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isPopup: false,
 			isDriverPopup: false,
-			isChecked: false,
+			isChecked: true,
 			tooltipText: '',
 			type: 'gaming.dashboard.device.legionEdge.touchpadLock'
 		}
@@ -200,13 +200,19 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		private commonService: CommonService,
 		private gamingKeyLockService: GamingKeyLockService,
 		private gamingHybridModeService: GamingHybridModeService
-	) {}
-	ngAfterViewInit(): void {}
+	) { }
+	ngAfterViewInit(): void { }
 	ngOnInit() {
-		//	this.getGaminagAllCapabilities();
 		this.commonService.notification.subscribe((response) => {
 			if (response.type === Gaming.GamingCapablities && isUndefined(this.gamingCapabilities)) {
 				this.gamingCapabilities = response.payload;
+				console.log('get gamingCapabilities --------------------------------->', this.gamingCapabilities);
+				this.legionUpdate[0].isVisible = this.gamingCapabilities.cpuOCFeature;
+				this.legionUpdate[1].isVisible = this.gamingCapabilities.memOCFeature;
+				this.legionUpdate[2].isVisible = this.gamingCapabilities.autoClose;
+				this.legionUpdate[3].isVisible = this.gamingCapabilities.networkBoostFeature;
+				this.legionUpdate[4].isVisible = this.gamingCapabilities.hybridModeFeature;
+				this.legionUpdate[5].isVisible = this.gamingCapabilities.touchpadLockFeature;
 
 				if (this.gamingCapabilities.cpuOCFeature) {
 					this.renderCPUOverClockStatus();
@@ -216,8 +222,8 @@ export class WidgetLegionEdgeComponent implements OnInit {
 					this.renderRamOverClockStatus();
 				}
 
-				if (this.gamingCapabilities.touchpadLockFeature) {
-					this.renderTouchpadStatus();
+				if (this.gamingCapabilities.touchpadLockFeature  && this.gamingCapabilities.winKeyLockFeature) {
+					this.renderTouchpadLockStatus();
 				}
 
 				if (this.gamingCapabilities.hybridModeFeature) {
@@ -226,16 +232,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			}
 		});
 	}
-	// public getGaminagAllCapabilities() {
-	// 	this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
-	// 		console.log('gamingCapabilities js bridge ------------------------>', JSON.stringify(gamingCapabilities));
-	// 		this.legionUpdate[0].isVisible = this.gamingCapabilities.cpuOCFeature;
-	// 		this.legionUpdate[1].isVisible = this.gamingCapabilities.memOCFeature;
-	// 		this.legionUpdate[4].isVisible = this.gamingCapabilities.hybridModeFeature;
-	// 		this.legionUpdate[5].isVisible = this.gamingCapabilities.touchpadLockFeature;
 
-	// 	});
-	// }
 	public GetCPUOverClockCacheStatus(): any {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus);
 	}
@@ -312,49 +309,77 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public GetRAMOverClockCacheStatus() {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.RamOcStatus);
 	}
-	public SetRAMOverClockCacheStatus(ramOcStatus) {
+	public SetRAMOverClockCacheStatus(ramOcStatus: Boolean) {
 		return this.commonService.setLocalStorageValue(LocalStorageKey.RamOcStatus, ramOcStatus);
 	}
+
+
 	public renderHybridModeStatus() {
-		this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
-			console.log('xtu --->' + this.gamingCapabilities.xtuService);
-			if (this.gamingCapabilities.xtuService === true) {
-				if (this.commonService) {
-					this.legionUpdate[4].isChecked = this.GetHybridModeCacheStatus();
-				}
-				this.gamingHybridModeService.getHybridModeStatus().then((hybridModeStatus) => {
-					console.log('get Hybrid Mode status js bridge -->', hybridModeStatus);
-					if (hybridModeStatus !== undefined) {
-						this.SetHybridModeCacheStatus(hybridModeStatus);
-						this.legionUpdate[4].isChecked = hybridModeStatus;
-					}
-				});
+
+		if (this.commonService) {
+			this.legionUpdate[4].isChecked = this.GetHybridModeCacheStatus();
+		}
+		this.gamingHybridModeService.getHybridModeStatus().then((hybridModeStatus) => {
+			//console.log('get Hybrid Mode status js bridge -->', hybridModeStatus);
+			if (hybridModeStatus !== undefined) {
+				this.HybrimodeStatusObj.hybridModeStatus = hybridModeStatus;
+				this.SetHybridModeCacheStatus(hybridModeStatus);
+				this.legionUpdate[4].isChecked = hybridModeStatus;
 			}
 		});
 	}
+
 	public GetHybridModeCacheStatus() {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.HybridModeStatus);
 	}
 
-	public SetHybridModeCacheStatus(hybridModeStatus) {
+	public SetHybridModeCacheStatus(hybridModeStatus: Boolean) {
 		return this.commonService.setLocalStorageValue(LocalStorageKey.HybridModeStatus, hybridModeStatus);
 	}
-	public renderTouchpadStatus() {
-		// Binding to UI
-		this.gamingKeyLockService.getKeyLockStatus().then((touchpadOCStatus) => {
-			console.log('get touchpad status js bridge ->', touchpadOCStatus);
-			this.legionUpdate[5].isChecked = touchpadOCStatus;
+
+
+	public renderTouchpadLockStatus() {
+		//value from cache
+		if (this.commonService !== undefined) {
+			this.touchpadLockStatus = this.GetTouchpadLockCacheStatus();
+			if (this.touchpadLockStatus !== undefined) {
+				this.legionUpdate[5].isChecked = this.touchpadLockStatus;
+			}
+			else {
+				//set default value from model property
+				this.legionUpdate[5].isChecked = this.TouchpadLockStatusObj.touchpadLockStatus;
+				this.SetTouchpadLockCacheStatus(this.TouchpadLockStatusObj.touchpadLockStatus);
+			}
+		}
+		//value from js bridge
+		this.gamingKeyLockService.getKeyLockStatus().then((touchpadLockStatus) => {
+			//console.log('touchpad Lock status from js bridge ->', touchpadLockStatus);
+			if (touchpadLockStatus !== undefined) {
+				this.TouchpadLockStatusObj.touchpadLockStatus = touchpadLockStatus;
+				this.SetTouchpadLockCacheStatus(touchpadLockStatus);
+				this.legionUpdate[5].isChecked = touchpadLockStatus;
+			}
 		});
-		// if (this.legionUpdate[5].name === 'gaming.dashboard.device.legionEdge.touchpadLock') {
-		// 	this.gamingKeyLockService.getKeyLockStatus().then((touchpadOCStatus) => {
-		// 		console.log('get touchpad status js bridge ->', touchpadOCStatus);
-		// 		this.legionUpdate[5].isChecked = touchpadOCStatus;
-		// 	});
-		// }
 	}
-	public GetTouchpadCacheStatus() {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.TouchpadStatus);
+
+	public GetTouchpadLockCacheStatus() {
+		return this.commonService.getLocalStorageValue(LocalStorageKey.TouchpadLockStatus);
 	}
+
+	public SetTouchpadLockCacheStatus(touchpadLockStatus: boolean) {
+		return this.commonService.setLocalStorageValue(LocalStorageKey.TouchpadLockStatus, touchpadLockStatus);
+	}
+
+	public onPopupClosed($event) {
+		const name = $event.name;
+		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
+			this.commonService.sendNotification(name, this.legionUpdate[1].isChecked);
+		}
+		if (name === 'gaming.dashboard.device.legionEdge.hybridMode') {
+			this.commonService.sendNotification(name, this.legionUpdate[4].isChecked);
+		}
+	}
+
 	public toggleOnOffRamOCStatus($event) {
 		console.log($event);
 		const { name, checked } = $event.target;
@@ -369,10 +394,13 @@ export class WidgetLegionEdgeComponent implements OnInit {
 							//this.gamingCapabilities.xtuService = false ;
 							if (this.gamingCapabilities.xtuService === false) {
 								this.legionUpdate[1].isDriverPopup = $event;
-								this.legionUpdate[1].isChecked = false;
 							} else if (this.gamingCapabilities.xtuService === true) {
 								this.legionUpdate[1].isPopup = $event;
 							}
+							this.commonService.setLocalStorageValue(
+								LocalStorageKey.RamOcStatus,
+								$event.switchValue
+							);
 						});
 					}
 				})
@@ -390,13 +418,21 @@ export class WidgetLegionEdgeComponent implements OnInit {
 					console.log('setHybridModeStatus.then', value);
 					if (value !== undefined) {
 						this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
-							//console.log('XTU Service---> ' + this.gamingCapabilities.xtuService);
-							//this.gamingCapabilities.xtuService = false;
-							if (this.gamingCapabilities.xtuService === true) {
-								this.legionUpdate[4].isPopup = $event;
-							} else if (this.gamingCapabilities.xtuService === false) {
-								this.legionUpdate[4].isDriverPopup = $event;
-							}
+
+							// removing xtuService checking and only driver popup
+							// if (this.gamingCapabilities.xtuService === true) {
+							// 	this.legionUpdate[4].isPopup = $event;
+							// } else if (this.gamingCapabilities.xtuService === false) {
+							// 	this.legionUpdate[4].isDriverPopup = $event;
+							// }
+
+							//change will effect after restart popup
+							this.legionUpdate[4].isPopup = $event;
+
+							this.commonService.setLocalStorageValue(
+								LocalStorageKey.HybridModeStatus,
+								$event.switchValue
+							);
 						});
 					}
 				})
@@ -409,11 +445,12 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		}
 
 		if (name === 'gaming.dashboard.device.legionEdge.touchpadLock') {
-			this.TouchpadStatusObj.touchpadStatus = $event.switchValue;
+			this.TouchpadLockStatusObj.touchpadLockStatus = $event.switchValue;
 			this.gamingKeyLockService
-				.setKeyLockStatus(this.TouchpadStatusObj.touchpadStatus)
+				.setKeyLockStatus($event.switchValue)
 				.then((value: boolean) => {
 					console.log('setKeyLockStatus.then', value);
+					this.SetTouchpadLockCacheStatus(value);
 				})
 				.catch((error) => {
 					console.error('setKeyLockStatus', error);

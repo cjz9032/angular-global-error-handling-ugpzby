@@ -5,6 +5,10 @@ import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
+import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
+import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
+import { TouchpadLockStatus }  from 'src/app/data-models/gaming/touchpad-lock-status.model';
+import { SystemStatus } from  'src/app/data-models/gaming/system-status.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -37,10 +41,8 @@ export class VantageShellService {
 		});
 	}
 
-	public unRegisterEvent(eventType: any) {
-		this.phoenix.off(eventType, (val) => {
-			console.log('unRegister Event: ', eventType);
-		});
+	public unRegisterEvent(eventType: any, handler: any) {
+		this.phoenix.off(eventType, handler);
 	}
 	private getVantageShell(): any {
 		const win: any = window;
@@ -464,6 +466,13 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getGamingHwInfo() {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingHwInfo;
+		}
+		return undefined;
+	}
+
 
 	public getIntelligentMedia(): any {
 		if (this.phoenix) {
@@ -475,12 +484,5 @@ export class VantageShellService {
 		if (this.phoenix) {
 			return this.phoenix.preferenceSettings;
 		}
-	}
-
-	public getJsBridgeVersion() {
-		if (this.phoenix) {
-			return this.phoenix.version;
-		}
-		return '0';
 	}
 }

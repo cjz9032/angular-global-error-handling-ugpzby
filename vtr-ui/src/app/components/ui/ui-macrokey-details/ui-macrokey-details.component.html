@@ -80,7 +80,7 @@
 			metricsParent="WelcomePage"
 			metricsEvent="featureClick"
 			[metricsItem]="'STOP RECORDING'"
-			[label]="'STOP'"
+			[label]="'STOP RECORDING'"
 			[btnHeight]=true
 			[isGradient]=true
 			(onClick)="onStopClicked($event)">
@@ -89,4 +89,4 @@
 	</div>
 </div>
 
-<vtr-ui-macrokey-popup [timeoutRecording]="timeoutRecording"></vtr-ui-macrokey-popup>
+<vtr-ui-macrokey-popup [modalContent]="modalContent" [showModal]="showModal"></vtr-ui-macrokey-popup>

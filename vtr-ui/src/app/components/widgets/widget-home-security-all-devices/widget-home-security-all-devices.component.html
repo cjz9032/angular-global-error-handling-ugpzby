@@ -10,7 +10,7 @@
 						<fa-icon [icon]="['fal', 'home-lg-alt']"></fa-icon>
 					</div>
 					<div class="col-8 text">
-						<div class="all-device-name">{{'homeSecurity.allDevice' | translate}}</div>
+						<div class="all-device-name text-uppercase">{{'homeSecurity.allDevice' | translate}}</div>
 						<div class="manage">
 							<a target="_blank" href="{{homeSecurityUrl}}"
 								id="chs-lnk-ad-manageAccount"
@@ -27,12 +27,13 @@
 				<div class="row">
 					<div class="col-5 number-container">
 						<div class="icon">
-							<img class="img-fluid" src="assets/images/connected-home-security/ecosystem-circle-green2x.png" />
+							<img class="img-fluid" src="assets/images/connected-home-security/ecosystem-circle-green2x.png" *ngIf="logonStatus!=='trail expired'"/>
+							<img class="img-fluid circle-red" src="assets/images/connected-home-security/ecosystem-circle-red.svg" *ngIf="logonStatus==='trail expired'"/>
 						</div>
 						<div class="device-number" [ngClass]="{'sizeChange': deviceMoreThanTen}" *ngIf="devicesNumber!==0">{{devicesNumber}}</div>
 					</div>
 					<div class="col-7 text" >
-						<div class="device-text">{{'homeSecurity.devices' | translate}}</div>
+						<div class="device-text text-uppercase">{{'homeSecurity.devices' | translate}}</div>
 						<div class="status">
 							<h3 style="margin-bottom: 0rem" *ngIf="isShowBadge">
 								<span class="badge badge-pill badge-danger button-green" *ngIf="devicesStatus==='secure'">
@@ -56,16 +57,17 @@
 								metricsEvent="featureClick">{{'homeSecurity.seeProtectedDevices' | translate}}</a>
 						</div>
 					</div>
-				</div>	
+				</div>
 			</div>
 			<div class="col-3 add-device">
-				<vtr-ui-button 
+				<vtr-ui-button
 					id="chs-btnlnk-ad-addDevice"
 					aria-label="chs-btn-ad-addDevice"
 					vtrMetrics
 					metricsItem="addDeviceAllDevice"
 					metricsEvent="featureClick"
 					(click)="openCornet()"
+					[title]="'homeSecurity.addDevice' | translate"
 					[label]="'homeSecurity.addDevice' | translate">
 				</vtr-ui-button>
 			</div>
@@ -75,13 +77,14 @@
 		<div class="col-4 content-container">
 			<div class="text">{{'homeSecurity.trailExpired' | translate}}</div>
 			<div class="text-description">{{'homeSecurity.trailExpiredSubtext' | translate}}</div>
-			<vtr-ui-button 
+			<vtr-ui-button
 				id="chs-btn-ad-upgrade"
 				aria-label="chs-btn-ad-upgrade"
 				vtrMetrics
 				metricsItem="upgradeAllDevice"
 				metricsEvent="featureClick"
 				(click)="openUpgrade()"
+				[title]="'homeSecurity.upgrade' | translate"
 				[label]="'homeSecurity.upgrade' | translate">
 			</vtr-ui-button>
 		</div>
