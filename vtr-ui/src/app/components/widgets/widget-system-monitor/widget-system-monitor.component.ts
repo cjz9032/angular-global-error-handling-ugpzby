@@ -40,7 +40,7 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	constructor(private hwInfoService: HwInfoService) { }
 	public getDynamicInfoService() {
 		this.hwInfoService.getDynamicInformation().then((hwInfo: any) => {
-			console.log('getDynamicInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
+			//console.log('getDynamicInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
 			if(hwInfo.cpuUseFrequency !== '')
 			{
 				this.cpuUseFrequency = hwInfo.cpuUseFrequency.split('GHz')[0];
@@ -63,7 +63,7 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	public getMachineInfoService() {
 		try {
 			this.hwInfoService.getMachineInfomation().then((hwInfo: any) => {
-				console.log('getMachineInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
+				//console.log('getMachineInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
 				if(hwInfo.cpuBaseFrequence !== '')
 				{
 					this.cpuBaseFrequence = hwInfo.cpuBaseFrequence.split('GHz')[0];
@@ -97,7 +97,7 @@ export class WidgetSystemMonitorComponent implements OnInit {
 		this.getMachineInfoService();
 		const self = this;
 		const loop = setInterval(function () {
-			//self.getDynamicInfoService();
+			self.getDynamicInfoService();
 		}, 5000);
 	}
 
