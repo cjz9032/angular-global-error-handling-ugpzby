@@ -8,7 +8,7 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 	styleUrls: ['./page-lightingcustomize.component.scss']
 })
 export class PageLightingcustomizeComponent implements OnInit {
-	public currentProfileData:any;
+	public currentProfileData: any;
 	[x: string]: any;
 	public homePage = {
 		didSuccess: [
@@ -311,10 +311,9 @@ export class PageLightingcustomizeComponent implements OnInit {
 		this.setProfile = this.lightingProfileById2;
 		this.lightingEffectData.drop[0].curSelected = this.setProfile.lightInfo[0].lightEffectType;
 		this.lightingEffectData.drop[1].curSelected = this.setProfile.lightInfo[1].lightEffectType;
-		this.currentProfileData=3;
+		this.currentProfileData = 3;
 	}
-	setDefaultProfileFromLighting()
-	{
-console.log("profile button clicked------------------------");
+	setDefaultProfileFromLighting($event) {
+		console.log("profile button clicked------------------------");
 	}
 }
