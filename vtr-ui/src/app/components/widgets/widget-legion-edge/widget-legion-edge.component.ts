@@ -309,33 +309,34 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public GetRAMOverClockCacheStatus() {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.RamOcStatus);
 	}
-	public SetRAMOverClockCacheStatus(ramOcStatus) {
+	public SetRAMOverClockCacheStatus(ramOcStatus: Boolean) {
 		return this.commonService.setLocalStorageValue(LocalStorageKey.RamOcStatus, ramOcStatus);
 	}
+
+
 	public renderHybridModeStatus() {
-		this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
-			console.log('xtu --->' + this.gamingCapabilities.xtuService);
-			if (this.gamingCapabilities.xtuService === true) {
-				if (this.commonService) {
-					this.legionUpdate[4].isChecked = this.GetHybridModeCacheStatus();
-				}
-				this.gamingHybridModeService.getHybridModeStatus().then((hybridModeStatus) => {
-					console.log('get Hybrid Mode status js bridge -->', hybridModeStatus);
-					if (hybridModeStatus !== undefined) {
-						this.SetHybridModeCacheStatus(hybridModeStatus);
-						this.legionUpdate[4].isChecked = hybridModeStatus;
-					}
-				});
+
+		if (this.commonService) {
+			this.legionUpdate[4].isChecked = this.GetHybridModeCacheStatus();
+		}
+		this.gamingHybridModeService.getHybridModeStatus().then((hybridModeStatus) => {
+			//console.log('get Hybrid Mode status js bridge -->', hybridModeStatus);
+			if (hybridModeStatus !== undefined) {
+				this.HybrimodeStatusObj.hybridModeStatus = hybridModeStatus;
+				this.SetHybridModeCacheStatus(hybridModeStatus);
+				this.legionUpdate[4].isChecked = hybridModeStatus;
 			}
 		});
 	}
+
 	public GetHybridModeCacheStatus() {
 		return this.commonService.getLocalStorageValue(LocalStorageKey.HybridModeStatus);
 	}
 
-	public SetHybridModeCacheStatus(hybridModeStatus) {
+	public SetHybridModeCacheStatus(hybridModeStatus: Boolean) {
 		return this.commonService.setLocalStorageValue(LocalStorageKey.HybridModeStatus, hybridModeStatus);
 	}
+
 
 	public renderTouchpadLockStatus() {
 		//value from cache
@@ -417,13 +418,17 @@ export class WidgetLegionEdgeComponent implements OnInit {
 					console.log('setHybridModeStatus.then', value);
 					if (value !== undefined) {
 						this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
-							//console.log('XTU Service---> ' + this.gamingCapabilities.xtuService);
-							//this.gamingCapabilities.xtuService = false;
-							if (this.gamingCapabilities.xtuService === true) {
-								this.legionUpdate[4].isPopup = $event;
-							} else if (this.gamingCapabilities.xtuService === false) {
-								this.legionUpdate[4].isDriverPopup = $event;
-							}
+
+							// removing xtuService checking and only driver popup
+							// if (this.gamingCapabilities.xtuService === true) {
+							// 	this.legionUpdate[4].isPopup = $event;
+							// } else if (this.gamingCapabilities.xtuService === false) {
+							// 	this.legionUpdate[4].isDriverPopup = $event;
+							// }
+
+							//change will effect after restart popup
+							this.legionUpdate[4].isPopup = $event;
+
 							this.commonService.setLocalStorageValue(
 								LocalStorageKey.HybridModeStatus,
 								$event.switchValue
