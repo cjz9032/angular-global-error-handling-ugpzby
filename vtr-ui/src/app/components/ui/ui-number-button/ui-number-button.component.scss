@@ -1,12 +1,35 @@
 @import "../../../app.theme.scss";
 .numbers-holder {
 	position: relative;
+	&.recording {
+		.numpad-btn-wrapper {
+			position: relative;
+			opacity: 0.8;
+			span {
+				opacity: 0.8;
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+			}
+		}
+		ul {
+			li {
+				opacity: 0.5;
+			}
+		}
+	}
+
 	.numpad-btn {
 		display: none;
 		padding: 1.2rem 2rem 1.2rem 1.2rem;
 		text-transform: uppercase;
 		font-size: 1.6rem;
-		background-color: $gaming_shade;
+		background-color: $gaming_hover;
 		margin-bottom: 2rem;
 		border-radius: 0.6rem;
 		cursor: pointer;
@@ -35,6 +58,7 @@
 				display: block;
 			}
 		}
+
 		li {
 			display: inline-block;
 			cursor: pointer;
@@ -60,6 +84,7 @@
 			}
 			box-shadow: 0rem 0.4rem 0rem 0.1rem $gaming_hover;
 			&.selected {
+				opacity: 1;
 				color: $gaming_lightest;
 				background-color: $gaming_light_blue;
 				box-shadow: 0rem 0.4rem 0rem 0.1rem $gaming_gstart;

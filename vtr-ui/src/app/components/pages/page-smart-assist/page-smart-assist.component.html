@@ -64,7 +64,7 @@
 													[maxValue]="100"
 													(change)="setZeroTouchLoginSensitivity($event)"
 													[enableSlider]="!intelligentSecurity.distanceSensitivityFlag"
-													[value]="intelligentSecurity.humanDistance">
+													[value]="intelligentSecurity.zeroTouchLoginSensitivity">
 												</vtr-ui-range-slider>
 												<div class="pt-3"
 													[class.blur-1]="!intelligentSecurity.zeroTouchLoginFlag">
@@ -300,8 +300,9 @@
 											[showChildContent]="true"
 											(toggleOnOff)="displayDim($event)"
 											[isSwitchChecked]="keepMyDisplay">
-											<div class="pl-5 ml-5 pt-5">
-												<div class="display-dim-title">Minutes Before display dims when browsing
+											<div class="pl-5 ml-5 pt-4">
+												<div class="display-dim-title">
+													{{'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.title' | translate}}
 												</div>
 												<vtr-ui-range-slider
 													[minValueLegend]="'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.startTime' | translate"

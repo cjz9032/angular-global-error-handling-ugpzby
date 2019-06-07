@@ -36,7 +36,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	public responseData: any [] = [];	
 	machineType: any;	
-	chargeOptions: number[] = [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
+	chargeOptions: number[] = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
 	startAtChargeOptions: number[] = this.chargeOptions.slice(0, this.chargeOptions.length - 1);
 	stopAtChargeOptions: number[] = this.chargeOptions.slice(1, this.chargeOptions.length);
 	
@@ -234,6 +234,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		if (this.isDesktopMachine) {
 			this.headerMenuItems.splice(0, 1);
 		}
+		this.hideBatteryLink();
 		this.getMachineInfo();
 		this.startMonitor();
 		this.getVantageToolBarStatus();
@@ -794,11 +795,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						stopValue: batteryDetails.stopChargeValue,
 						checkBoxValue: batteryDetails.autoChecked
 				}
-					//console.log('set values', value);	
+					//console.log('set values -->', batteryInfo);	
 					this.powerService
 						.setChargeThresholdValue(batteryInfo)
 						.then((value: any) => {
-							console.log('change threshold value', value);					
+							console.log('change threshold value', value);
+							//this.getBatteryThresholdInformation();					
 						})
 						.catch(error => {
 							console.error('change threshold value', error);
@@ -809,44 +811,39 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			}
 		}
 
-		public autoCheckSelected(evnt, batteryNum: any){			
-	
+		public autoCheckSelected(batteryDetails: any, batteryNum: any){		
 		let batteryInfo: any = {};
 		if (this.powerService.isShellAvailable) {		
 			try {
-				if(evnt && batteryNum && this.responseData && this.responseData.length > 0){
-				 	if (batteryNum ==  1) {
-						 // sending primary battery info
-				 		batteryInfo = {
+				if(batteryDetails && batteryNum){
+					batteryInfo = {
 						batteryNumber: batteryNum,
-						startValue: this.responseData[0].startValue,
-						stopValue: this.responseData[0].stopValue,				
-				 		checkBoxValue: evnt
-				 	}
-				 } else{
-					// sending secondary battery info
-				 	batteryInfo = {
-						batteryNumber: batteryNum,
-						startValue: this.responseData[1].startValue,
-						stopValue: this.responseData[1].stopValue,				
-						checkBoxValue: evnt
-				 	}
-				 }
-				 //console.log('selected battery information here ------>', batteryInfo)
-				 	this.powerService
-				 		.setCtAutoCheckbox(batteryInfo)
-				 		.then((value: any) => {
-							console.log(value);					
-						})
-			 			.catch(error => {
-							console.error(error);
-				 		});
+						startValue: batteryDetails.startChargeValue,
+						stopValue: batteryDetails.stopChargeValue,
+						checkBoxValue: batteryDetails.autoChecked
+				}
+				console.log('selected battery information here ------>', batteryInfo)
+				 this.powerService
+				 .setCtAutoCheckbox(batteryInfo);				 
+				 // .then((value: any) => {
+				// 	console.log(value);					
+				// })
+				 // .catch(error => {
+				// 	console.error(error);
+				 // });
 					}
 				} catch (error) {
 				console.error(error.message);
 			}
 		
 		}
+		}
+		
+	hideBatteryLink() {
+		if(this.isDesktopMachine) {
+			//hide battery like
+			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'battery');
+		} 
 		
 	}
 }

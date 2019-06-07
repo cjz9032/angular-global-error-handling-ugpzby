@@ -56,6 +56,7 @@ export class ModalArticleDetailComponent implements OnInit {
 				}
 			},
 			error => {
+				this.articleBody = "<div class='alert alert-danger'>Some Error Occurs Please Try again later</div>";
 				console.log('fetchCMSContent error', error);
 			}
 		);
@@ -74,7 +75,7 @@ export class ModalArticleDetailComponent implements OnInit {
 				ItemParent: this.metricsParent,
 				ItemCategory: this.articleCategory,
 				Duration: (new Date().getTime() - this.enterTime) / 1000,
-				DocReadPosition: Math.round((modalElement.scrollTop + window.innerHeight) / modalElement.scrollHeight * 100),
+				DocReadPosition: Math.round((modalElement.scrollTop + window.innerHeight) / (modalElement.scrollHeight) * 100),
 				MediaReadPosition: 0
 			};
 			console.log('------reporting metrics------\n'.concat(JSON.stringify(metricsData)));

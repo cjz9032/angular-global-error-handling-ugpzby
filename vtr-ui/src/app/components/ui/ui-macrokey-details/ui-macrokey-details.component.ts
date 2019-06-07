@@ -11,17 +11,29 @@ export class UiMacrokeyDetailsComponent implements OnInit {
 	@Output() isRecording = new EventEmitter<any>();
 	@Input() recordedData: any = [];
 	recording = false;
-	public timeoutRecording: boolean = false;
+	public showModal: boolean = false;
 	stopInterval: any;
+
+	modalContent = {
+		headerTitle: 'gaming.macroKey.popupContent.timeoutRecording.title',
+		bodyText: 'gaming.macroKey.popupContent.timeoutRecording.body',
+		btnConfirm: false
+		};
 
 	constructor() {}
 
 	ngOnInit() {}
 
 	onStartClicked(event) {
+		// Show warning if no input is given for 10 seconds
+		setTimeout(() => {
+			this.modalContent.bodyText = 'gaming.macroKey.popupContent.inputStopped.body';
+			this.showModal = !this.showModal;
+		}, 10000);
 		this.stopInterval = setInterval(() => {
-			this.timeoutRecording = !this.timeoutRecording;
-		}, 5000);
+			this.modalContent.bodyText = 'gaming.macroKey.popupContent.timeoutRecording.body';
+			this.showModal = !this.showModal;
+		}, 20000);
 		this.toggleRecording();
 	}
 

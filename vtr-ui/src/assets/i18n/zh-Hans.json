@@ -35,6 +35,12 @@
 						"text": "重新启动计算机后更改将生效。",
 						"button": "好"
 					},
+					"driverPopup": {
+						"headerText": "Driver Install Required",
+						"text": "You need install driver for RAM Overclock to  make it effective",
+						"button": "Install",
+						"link": "cancel"
+					},
 					"autoClose": "自动关闭",
 					"networkBoost": "网络提升",
 					"hybridMode": "混合模式",
@@ -78,8 +84,151 @@
 				}
 			}
 		},
+		"macroKey": {
+			"title": "Macro Key",
+			"introLine": "You can record a series of key input, and use them in gaming or other operations.",
+			"status": {
+				"alwaysEnabled": {
+					"title": "Always Enabled",
+					"description": "Always Enabled"
+				},
+				"whileGaming": {
+					"title": "Enabled Only While Gaming",
+					"description": "It will be enabled when you game and remain as num key when you don't."
+				},
+				"off": {
+					"title": "Off",
+					"description": "Always Off"
+				}
+			},
+			"details": {
+				"intro": {
+					"noNumber": "SELECT A MACRO KEY",
+					"title": "CREATE A MACRO KEY FOR",
+					"line1": "click the start recording button below",
+					"line2": "type in macro key",
+					"line3": "stop recording when finishing typing"
+				},
+				"recording": {
+					"title": "START TYPING",
+					"description": "20 inputs with in 20 seconds can be recorded."
+				},
+				"recorded": {
+					"title": "MACRO KEY FOR ",
+					"deleteKey": "Delete Key",
+					"clear": "Clear",
+					"intervalStatus": {
+						"keep": {
+							"title": "Keep Interval",
+							"description": "Intervals of key actions will be kept and applied when using this macro key."
+						},
+						"ignore": {
+							"title": "Ignore Interval",
+							"description": "Intervals of key actions will be ignored."
+						}
+					},
+					"repeatStatus": {
+						"repeat1": {
+							"title": "No Repeat",
+							"description": "No Repeat"
+						},
+						"repeat2": {
+							"title": "Repeat 2 Times",
+							"description": "Repeats 2 times"
+						},
+						"repeat3": {
+							"title": "Repeat 3 Times",
+							"description": "Repeats 3 times"
+						},
+						"repeat4": {
+							"title": "Repeat 4 Times",
+							"description": "Repeats 4 times"
+						},
+						"repeat5": {
+							"title": "Repeat 5 Times",
+							"description": "Repeats 5 times"
+						},
+						"repeat6": {
+							"title": "Repeat 6 Times",
+							"description": "Repeats 6 times"
+						},
+						"repeat7": {
+							"title": "Repeat 7 Times",
+							"description": "Repeats 7 times"
+						},
+						"repeat8": {
+							"title": "Repeat 8 Times",
+							"description": "Repeats 8 times"
+						},
+						"repeat9": {
+							"title": "Repeat 9 Times",
+							"description": "Repeats 9 times"
+						},
+						"repeat10": {
+							"title": "Repeat 10 Times",
+							"description": "Repeats 10 times"
+						}
+					},
+					"list": {
+						"header": {
+							"col1": "Key Action",
+							"col2": "Interval"
+						},
+						"footer": {
+							"title": "Next input.."
+						}
+					}
+				}
+			},
+			"numberpad": {
+				"number": {
+					"zero": "Num 0",
+					"one": "Num 1",
+					"two": "Num 2",
+					"three": "Num 3",
+					"four": "Num 4",
+					"five": "Num 5",
+					"six": "Num 6",
+					"seven": "Num 7",
+					"eight": "Num 8",
+					"nine": "Num 9"
+				},
+				"macro": {
+					"m1": "M1",
+					"m2": "M2"
+				}
+			},
+			"popupContent": {
+				"clearMacrokey": {
+					"title": "Are you sure to clear this macro key?"
+				},
+				"timeoutRecording": {
+					"title": "Time Out For Recording.",
+					"body": "Recording will time out if no input for 20 seconds."
+				},
+				"maximumInput": {
+					"title": "Maximum Input Reached.",
+					"body": "Macro key can only store inputs less than 20."
+				},
+				"inputStopped": {
+					"title": "Time Out For Recording.",
+					"body": "Recording will time out if the input stopped for more than 10 seconds."
+				},
+				"confirmButton": {
+					"btnClear": "Clear",
+					"btnCancel": "Cancel"
+				},
+				"btnOk": "OK"
+			}
+		},
 		"lightingProfile": {
-			"title": "Lighting"
+			"title": "Lighting",
+			"effect": {
+				"option1": "Wave",
+				"option2": "Option 2",
+				"option3": "Option 3",
+				"option4": "option 4"
+			}
 		}
 	},
 	"common": {
@@ -162,7 +311,7 @@
 		"personal": "个人",
 		"custom": "自定义",
 		"skip": "跳过",
-		"next": "下一步",
+		"next": "下一个",
 		"interests": "您感兴趣的是什么？",
 		"howOnesMachinUsed": "请单击一项符合您使用此计算机的用途描述",
 		"games": "游戏",
@@ -191,6 +340,7 @@
 				"email": "联系方式（如果您不喜欢可留空）",
 				"comments": "内容",
 				"button": "提交",
+				"addScreenshot": "Add ScreenShot",
 				"messages": {
 					"feedbackSuccess": "感谢您的反馈意见 ！"
 				}
@@ -472,7 +622,9 @@
 						"title": "电池充电阈值",
 						"description": "如果主要在连接交流电源适配器时使用计算机，仅偶尔使用电池供电，则可通过将最大电量值设置为低于 100%，延长电池使用期限。这一点很有用，因为偶尔使用的电池保持不充满的电量可延长使用期限。",
 						"tooltip": "如果电池当前的充电电量高于停止充电阈值，则需要拔下电源，直至电池放电至停止充电阈值或低于停止充电阈值。 根据电池状态（新旧程度），开始或停止充电的精确点最大可有 2% 的相差幅度。如果启用此功能，建议偶尔执行一次&ldquo;电池量表重置&rdquo;，以确保电池运行状况报告准确。",
-						"noteInfo": "注意：电池充电阈值仍未完全激活。拔下电源线，让电池电量耗尽或低于停止充电阈值。",
+						"note": "注意",
+						"noteInfo": "电池充电阈值仍未完全激活。拔下电源线，让电池电量耗尽或低于停止充电阈值。",
+						"readMoreText": "阅读更多。",
 						"settings": {
 							"title1": "内置电池的阈值",
 							"title2": "可拆卸电池的阈值"
@@ -486,7 +638,7 @@
 						},
 						"options": {
 							"start": "下面开始充电",
-							"checkboxText": "自动设置以'％charge'开始，'停止充电％'低于5％",
+							"checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
 							"stop": "停止充电"
 						}
 					},
@@ -605,7 +757,7 @@
 						}
 					},
 					"dispColorTemp": {
-						"title": "Display color temperature",
+						"title": "显示色温",
 						"options": {
 							"warm": "Warm (Better for eyes)",
 							"cold": "Cold"
@@ -654,91 +806,91 @@
 						"sketchMode": "草图模式"
 					}
 				}
+			}
+		},
+		"smartAssist": {
+			"title": "智能助手",
+			"description": "Lenovo Intelligent Sensing结合了计算机上的传感器来检测您的活动，调整设置以实现最佳电源管理并保护您的隐私。",
+			"jumpTo": {
+				"title": "跳到设置",
+				"security": "安全",
+				"screen": "屏幕",
+				"media": "媒体",
+				"voice": "语音"
 			},
-			"smartAssist": {
-				"title": "智能助手",
-				"description": "Lenovo Intelligent Sensing结合了计算机上的传感器来检测您的活动，调整设置以实现最佳电源管理并保护您的隐私。",
-				"jumpTo": {
-					"title": "跳到设置",
-					"security": "安全",
-					"screen": "屏幕",
-					"media": "媒体",
-					"voice": "语音"
+			"intelligentSecurity": {
+				"title": "智能安全",
+				"readMore": "阅读更多",
+				"HumanPresenceDetection": {
+					"title": "人体存在检测",
+					"tooltip": "单击此处重置人体存在检测设置。"
 				},
-				"intelligentSecurity": {
-					"title": "智能安全",
-					"readMore": "阅读更多",
-					"HumanPresenceDetection": {
-						"title": "人体存在检测",
-						"tooltip": "单击此处重置人体存在检测设置。"
-					},
-					"humanPresenceDetection": {
-						"title": "User Presence Sensing",
-						"tooltip": "Click here to reset human presence Detection settings."
-					},
-					"zeroTouchLogin": {
-						"title": "零接触登录",
-						"caption": "当您在电脑前或接近电脑时，此功能会自动解锁或唤醒电脑。"
-					},
-					"zeroTouchLock": {
-						"title": "零接触锁定",
-						"caption": "当未检测到用户状态时，此功能将使显示屏变暗并锁定计算机。当您离开计算机无人看管和解锁时，它可以减少未经授权访问计算机的机会。当您未检测到存在时，它还可以通过将系统置于Modern Standby来降低功耗。",
-						"autoScreenLockTimer": {
-							"title": "自动屏幕锁定时器",
-							"radioButton": {
-								"fast": "快速",
-								"medium": "介质",
-								"slow": "慢"
-							},
-							"toolTipContent": "选择所需选项，以便在未检测到状态时以快/中/慢速度锁定屏幕。但是，屏幕锁定的时间也会受到实际用户方案，传感器功能和Windows屏幕超时设置的影响。因此，我们强烈建议您在离开前立即锁定系统。"
-						}
-					},
-					"distanceSensitivityAdjusting": {
-						"title": "距离灵敏度调整",
-						"caption": "自动距离调整将通过AI引擎自动更新检测距离。",
-						"options": {
-							"near": "近",
-							"far": "远"
-						}
-					},
-					"note": {
-						"description1": "此功能依赖于Windows Hello。确保在Windows设置中打开了脸部识别功能。",
-						"description2": "该功能使用传感器和相机来检测您的存在。但是，该功能不会收集，保存泄漏任何个人数据或图像。",
-						"description3": "1.如果您的计算机处于帐篷，平板电脑或支架模式，则这些功能可能无法正常工作。",
-						"description4": "2.如果您的计算机处于休眠模式或已关闭。自动红外摄像机登录无效。",
-						"description5": "3.请将电脑屏幕调整到合适的角度，以便红外热像仪能识别您的脸部以便自动登录。"
-					},
-					"WindowsLink": {
-						"goToWindowsHello": "转到Windows Hello设置",
-						"screenTimeoutSettings": "转到屏幕超时设置"
-					},
-					"resetToDefault": "重置为默认设置"
+				"humanPresenceDetection": {
+					"title": "用户存在感知",
+					"tooltip": "单击此处重置人体存在检测设置。"
 				},
-				"intelligentScreen": {
-					"title": "Intelligent Screen",
-					"description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
-					"autoScreenOff": {
-						"title": "Auto screen off",
-						"caption": "Automatically turn off display when face-down or walking.",
-						"note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-						"windowsLink": "Go to Power & sleep settings in Windows settings"
-					},
-					"keepMyDisplay": {
-						"title": "Keep my display",
-						"caption": "Keep my display when I am reading or browsing.",
-						"displaySlider": {
-							"title": "Minutes Before display dims when browsing",
-							"startTime": "0 minutes",
-							"endTime": "60 minutes"
-						}
+				"zeroTouchLogin": {
+					"title": "零接触登录",
+					"caption": "当您在电脑前或接近电脑时，此功能会自动解锁或唤醒电脑。"
+				},
+				"zeroTouchLock": {
+					"title": "零接触锁定",
+					"caption": "当未检测到用户状态时，此功能将使显示屏变暗并锁定计算机。当您离开计算机无人看管和解锁时，它可以减少未经授权访问计算机的机会。当您未检测到存在时，它还可以通过将系统置于Modern Standby来降低功耗。",
+					"autoScreenLockTimer": {
+						"title": "自动屏幕锁定时器",
+						"radioButton": {
+							"fast": "快速",
+							"medium": "介质",
+							"slow": "慢"
+						},
+						"toolTipContent": "选择所需选项，以便在未检测到状态时以快/中/慢速度锁定屏幕。但是，屏幕锁定的时间也会受到实际用户方案，传感器功能和Windows屏幕超时设置的影响。因此，我们强烈建议您在离开前立即锁定系统。"
 					}
 				},
-				"intelligentMedia": {
-					"heading": "Intelligent Media",
-					"title": "Zero Touch Video Playback",
-					"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
-					"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
+				"distanceSensitivityAdjusting": {
+					"title": "距离灵敏度调整",
+					"caption": "自动距离调整将通过AI引擎自动更新检测距离。",
+					"options": {
+						"near": "近",
+						"far": "远"
+					}
+				},
+				"note": {
+					"description1": "此功能依赖于Windows Hello。确保在Windows设置中打开了脸部识别功能。",
+					"description2": "该功能使用传感器和相机来检测您的存在。但是，该功能不会收集，保存泄漏任何个人数据或图像。",
+					"description3": "1.如果您的计算机处于帐篷，平板电脑或支架模式，则这些功能可能无法正常工作。",
+					"description4": "2.如果您的计算机处于休眠模式或已关闭。自动红外摄像机登录无效。",
+					"description5": "3.请将电脑屏幕调整到合适的角度，以便红外热像仪能识别您的脸部以便自动登录。"
+				},
+				"WindowsLink": {
+					"goToWindowsHello": "转到Windows Hello设置",
+					"screenTimeoutSettings": "转到屏幕超时设置"
+				},
+				"resetToDefault": "重置为默认设置"
+			},
+			"intelligentScreen": {
+				"title": "智能屏幕",
+				"description": "Lenovo Intelligent Sensing结合了计算机上的各种传感器来检测您的活动并调整电源管理设置。例如，如果检测到您正在行走，它会使您的显示屏变暗，但如果检测到您正在阅读，则不会使其变暗。",
+				"autoScreenOff": {
+					"title": "自动关闭屏幕",
+					"caption": "面朝下或行走时自动关闭显示。",
+					"note": "如果在Windows设置系统部分中将电源计划设置设置为永不关闭电池屏幕，则此功能不可用。请选择“从不”以外的值以启用此功能。",
+					"windowsLink": "转到Windows设置中的电源和睡眠设置"
+				},
+				"keepMyDisplay": {
+					"title": "保持我的显示",
+					"caption": "在我阅读或浏览时保持显示。",
+					"displaySlider": {
+						"title": "分钟在浏览时显示变暗之前",
+						"startTime": "0 分钟",
+						"endTime": "60 分钟"
+					}
 				}
+			},
+			"intelligentMedia": {
+				"heading": "智能媒体",
+				"title": "零接触视频播放",
+				"desc": "当您离开计算机时，此功能将暂停视频，并在您返回时恢复视频。",
+				"tooltip": "此功能不适用于网络视频播放器。流行的本地视频播放器，如Windows Media Player，5KPlayer等，支持此功能。"
 			}
 		}
 	},
@@ -755,7 +907,7 @@
 		"successInstall": "已成功安装",
 		"failedInstall": "无法安装",
 		"at": "在",
-		"readMore": "Read more",
+		"readMore": "阅读更多",
 		"popup": {
 			"reboot": "重启",
 			"shutdown": "关掉",
@@ -823,7 +975,8 @@
 			"attend": "Attend",
 			"rebootRequiredTag": "Reboot Required",
 			"rebootDelayTag": "Reboot Required, Power Source Required",
-			"shutdownRequiredTag": "Shutdown Required"
+			"shutdownRequiredTag": "Shutdown Required",
+			"dependedPackage": "depended package"
 		},
 		"availableUpdates": {
 			"title": "Available updates",
@@ -851,7 +1004,42 @@
 		"thisDevice": "这个设备",
 		"allDevices": "所有设备",
 		"protected": "受保护",
-		"notProtected": "不受保护"
+		"notProtected": "不受保护",
+		"myDevice": "My Device",
+		"allDevice": "All Devices",
+		"secure": "SECURE",
+		"needAttention": "NEEDS ATTENTION",
+		"manageAccount": "Manage Account",
+		"devices": "Devices",
+		"seeProtectedDevices": "See protected devices",
+		"addDevice": "add device",
+		"trailExpired": "Trail expired",
+		"trailExpiredSubtext": "Upgrate to protect all of your devices",
+		"upgrade": "upgrade",
+		"tour": {
+			"back": "Back",
+			"skip": "Skip",
+			"start": "START TOUR",
+			"done": "DONE",
+			"welcome1": "Welcome",
+			"welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
+			"welcome2": "Exclusive for Vantage",
+			"welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
+			"create": "Create your account",
+			"lenovoId": "with Lenovo ID",
+			"notifications": "Receive <b>notifications</b> about your home's status",
+			"monitor": "<b>Monitor</b> the safety of your family's devices",
+			"peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
+			"signInLenovoId": "SIGH-UP WITH LENOVO ID",
+			"haveLenovo": "I don't have a <b>Lenovo ID</b>",
+			"createLenovo": "&nbsp;Create a Lenovo ID",
+			"without": "Proceed <b>without an account</b>",
+			"skipAndTrial": "SKIP AND START TRIAL",
+			"alreadyHave": "I already have a <b>Connected Home Security Account</b>",
+			"loginCHS": "Login to existing CHS account",
+			"locationTitle": "Enable location tracking",
+			"locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+		}
 	},
 	"support": {
 		"common": {
@@ -1521,10 +1709,10 @@
 		}
 	},
 	"welcometutorial": {
-		"description": "Vantage使您可以轻松更新驱动程序，运行诊断程序，请求支持以及了解您的设备。快速定制您的体验，并根据您的需求找到有用的信息",
-		"bullets1": "View your system's status with the Vantage dashboard.",
-		"bullets2": "Security Advisor使您可以轻松管理安全性 (在选定系统上可用)",
-		"bullets3": "自动更新可使您的设备保持最佳状态 (在选定系统上可用)",
+		"description": "Vantage使您可以轻松更新驱动程序，运行诊断程序，请求支持以及了解您的设备。快速定制您的体验，并根据您的需求找到有用的信息。",
+		"bullets1": "使用Vantage仪表板查看系统的状态。",
+		"bullets2": "安全顾问 使您的安全管理变得简单（在选定的系统上可用）。",
+		"bullets3": "自动更新可使您的设备保持最佳状态 (在选定系统上可用)。",
 		"subtitle1": "你将如何使用你的设备？",
 		"subtitle2": "告诉我们您的兴趣",
 		"personal": "个人使用",
@@ -1536,7 +1724,8 @@
 		"title1": "欢迎来到",
 		"title2": "Lenovo",
 		"title3": "Vantage",
-		"privacypolicy": "联想隐私政策",
+		"privacypolicy": "Lenovo 的隐私政策",
+		"done": "DONE",
 		"interests": {
 			"games": "游戏",
 			"news": "新闻",

@@ -1,4 +1,4 @@
-<div class="vtr-body vtr-modal-welcome" [ngSwitch]="page">
+<div class="vtr-body vtr-modal-welcome" [ngSwitch]="page" [ngStyle]="{'visibility':isDivVisible ? 'visible' : 'hidden'}">
 	<!-- <div class="modal-header">
 		<button type="button"
 			class="close close-button"
@@ -46,10 +46,10 @@
 					<div class="row justify-content-center align-items-center next-btn">
 						<div class="col-auto ">
 							<vtr-ui-button
-							metricsParent="WelcomePage"
+							metricsParent="modal.Welcome"
 							metricsEvent="featureClick"
-							[metricsItem]="'NEXT'"
-							[label]="'NEXT'"
+							[metricsItem]="'tutorial.next' | translate"
+							[label]="'tutorial.next' | translate"
 							[btnHeight]=true
 							[isGradient]=true
 							(onClick)="next(1)">
@@ -178,11 +178,11 @@
 								<div class="custom-control custom-checkbox">
 									<input type="checkbox" (click)="savePrivacy($event, 'PRIVACYPOLICY')" class="custom-control-input" id="defaultUnchecked">
 									<label class="custom-control-label font-14-semi" for="defaultUnchecked">
-										<!--{{ "welcometutorial.privacytitle" | translate }}-->
-										Help us improve the quality of the app by allowing anonymous collection of usage statistics
+										{{ "welcometutorial.privacytitle" | translate }}
+										<!-- Help us improve the quality of the app by allowing anonymous collection of usage statistics -->
 										<a class="linktext" href="https://www.lenovo.com/us/en/privacy" target="_blank">
-											<!--{{ "welcometutorial.privacypolicy" | translate }}-->
-											Lenovo's Privacy Policy
+											{{ "welcometutorial.privacypolicy" | translate }}
+											<!-- Lenovo's Privacy Policy -->
 										</a>
 									</label>
 								</div>
@@ -192,10 +192,10 @@
 					<div class="row justify-content-center align-items-center next-btn">
 						<div class="col-auto ">
 							<vtr-ui-button
-							metricsParent="WelcomePage"
+							metricsParent="Modal.Welcome"
 							metricsEvent="featureClick"
-							[metricsItem]="'DONE'"
-							[label]="'DONE'"
+							[metricsItem]="'welcometutorial.done' | translate"
+							[label]="'welcometutorial.done' | translate"
 							[btnHeight]=true
 							[isGradient]=true
 							(onClick)="next(2)">
