@@ -337,16 +337,17 @@
 						}
 						.cpu-inner-circle {
 							position: relative;
-							top: 1.5rem;
-							left: 1.5rem;
+							top: 50%;
+							left: 50%;
+							transform: translateX(-50%) translateY(-50%);
 							background-color: $gaming_darkest;
 							width: 21.5rem;
 							height: 21.5rem;
 							border-radius: 50%;
 							text-align: center;
 							@media #{$mediaquery_6} {
-								top: 1rem;
-								left: 1rem;
+								// top: 1rem;
+								// left: 1rem;
 								width: 18rem;
 								height: 18rem;
 							}
