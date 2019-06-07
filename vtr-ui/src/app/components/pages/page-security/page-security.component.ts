@@ -159,7 +159,7 @@ export class PageSecurityComponent implements OnInit {
 		});
 		wifiSecurity.on(EventTypes.wsStateEvent, () => {
 			this.getScore();
-		}).on(EventTypes.geolocatorPermissionEvent, (data) => {
+		}).on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
 			this.ngZone.run(() => {
 				this.getScore();
 			});

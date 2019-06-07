@@ -7,6 +7,7 @@
 				<a [attr.href]="!actionLink ? null : actionLink"
 					(click)="linkClicked(actionType, actionLink)"
 					vtrMetrics
+				   metricsParent="Device.myDevice"
 					metricsItemCategory="corner"
 					metricsEvent="docClick"
 					[metricsItemPosition]="order"
@@ -37,14 +38,15 @@
 	*ngIf="type === 'corner-article'"
 	[style.height.px]="containerHeight">
 	<div class="container-fluid">
-		<div class="row">
+		<div class="row" *ngIf="isOnline">
 			<div class="col col-12 content">
 				<a [attr.href]="!actionLink ? null : actionLink"
 					(click)="linkClicked(actionType, actionLink)"
 					target="_blank"
 					class="card-image"
 					vtrMetrics
-					metricsEvent="docClick"
+				   metricsParent="Device.MyDevice"
+				   metricsEvent="ArticleClick"
 					metricsItemCategory="corner-article"
 					[metricsItemPosition]="order"
 					[metricsItemID]="itemID"
@@ -64,6 +66,10 @@
 					</div>
 				</a>
 			</div>
+		</div>
+		<div class="row" *ngIf="!isOnline">
+			<img class="col col-12 image"
+				src="../../../assets/images/offline.png">	
 		</div>
 	</div>
 </div>
@@ -126,7 +132,7 @@
 							class="title">{{title}}</div>
 						<div *ngIf="actionLink"
 							class="read-more">
-							<a [attr.href]="!actionLink ? null : actionLink">
+							<a [attr.href]="!actionLink ? null : actionLink" target="_blank">
 								<span class="link-label">{{action}}</span>
 								<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 							</a>
@@ -173,3 +179,4 @@
 		</div>
 	</div>
 </div>
+

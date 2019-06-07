@@ -29,13 +29,6 @@
                 }
             }
         }
-        .well {
-            padding: 15px;
-            background: #225faa;
-            border-radius: 10px;
-            opacity: 0.9;
-            font-size: 1.7rem;
-        }
     }
     li vtr-ui-row-switch div {
         margin-left: -10px;
@@ -44,7 +37,31 @@
         color: $light;
         font-size: 1.6rem;
         font-weight: 700;
-        margin-bottom: 10px
+        margin-bottom: 10px;
+        margin-top: 2rem;
+	}
+	::ng-deep .vtr-ui-rounded-rectangle-radio {
+		&.border-grey {
+			border: none;
+		}
+		@media #{$mediaquery_X25} {
+			width: 25rem;
+		}
+    }
+    .well {
+        padding: 15px;
+        background: #225faa;
+        border-radius: 10px;
+        opacity: 0.9;
+        font-size: 1.7rem;
+        color: $light;
+    }
+    .alignment {
+        margin-top: 1rem;
+        margin-left: -5px !important;
+    }
+    .list-group.list-group-flush {
+        list-style-type: none;
     }
 }
 

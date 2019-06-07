@@ -19,7 +19,7 @@
 								</figure>
 							</a>
 						</li>
-						<li>
+						<li *ngIf="gamingProperties !== undefined && gamingProperties.macroKeyFeature">
 							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.macroKey' | translate"
 								metricsEvent="featureClick" routerLink="/macrokey">
 								<figure>
@@ -59,7 +59,7 @@
 							</a>
 						</li>
 
-						<li>
+						<!-- <li>
 							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.media' | translate"
 								metricsEvent="featureClick" routerLink="/hardwarescan">
 								<figure>
@@ -70,7 +70,7 @@
 									</figcaption>
 								</figure>
 							</a>
-						</li>
+						</li> -->
 					</ul>
 				</div>
 			</div>

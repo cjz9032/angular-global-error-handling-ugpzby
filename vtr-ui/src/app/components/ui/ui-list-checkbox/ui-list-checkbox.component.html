@@ -24,7 +24,25 @@
 							<div class="button-box pl-1"
 								*ngIf="item.packageRebootType === 'RebootForced'">
 								<div class="btn-round-sm">
-									<fa-icon [icon]="['fas', 'undo']"></fa-icon> Reboot required
+									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.rebootRequiredTag' | translate}}
+								</div>
+							</div>
+							<div class="button-box pl-1"
+								*ngIf="item.packageRebootType === 'RebootDelayed'">
+								<div class="btn-round-sm">
+									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.rebootDelayTag' | translate}}
+								</div>
+							</div>
+							<div class="button-box pl-1"
+								*ngIf="item.packageRebootType === 'PowerOffForced'">
+								<div class="btn-round-sm">
+									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.shutdownRequiredTag' | translate}}
+								</div>
+							</div>
+							<div class="button-box pl-1"
+								*ngIf="item.isDependency">
+								<div class="btn-round-sm">
+									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.dependedPackage' | translate}}
 								</div>
 							</div>
 						</div>
@@ -76,7 +94,7 @@
 								<div class="row">
 									<div class="col">
 										<div class="d-flex justify-content-between align-items-center w-100">
-											<div class="fail-reason" *ngIf="item.installationStatus.toLocaleLowerCase() === 'installfailed' && item.packageRebootType.toLocaleLowerCase() === 'rebootdelayed'">Fail reason: The ac power adapter was not connected to your computer. </div>
+											<div class="fail-reason" *ngIf="item.installationStatus.toLocaleLowerCase() === 'installfailed' && item.packageRebootType.toLocaleLowerCase() === 'rebootdelayed'">{{'systemUpdates.updateCheckbox.failReason' | translate}}</div>
 										</div>
 									</div>
 								</div>
@@ -103,22 +121,12 @@
 </div>
 <ng-template #systemUpdateTooltip>
 	<div class="tooltip-container">
-		<div href="#"
-			*ngIf="packageRebootType === 'RebootForced'"
-			class="reboot-text">
-			<div class="row">
-				<div class="col-auto pl-0 pr-0">
-					<fa-icon [icon]="['fas', 'undo']"></fa-icon>
-				</div>
-				<div class="col">Reboot required</div>
-			</div>
-		</div>
 		<ul>
-			<li>Manufacturer: <span>{{ manufacturer }}</span></li>
-			<li>Version: <span>{{ version }}</span></li>
-			<li>Installed version: <span>{{ installedVersion | translate }}</span></li>
-			<li>Download size: <span>{{ downloadSize }}</span> </li>
-			<li>Disk space needed: <span>{{ diskSpaceNeeded }}</span></li>
+			<li>{{'systemUpdates.updateCheckbox.manufacturer' | translate}}<span>{{ manufacturer }}</span></li>
+			<li>{{'systemUpdates.updateCheckbox.version' | translate}}<span>{{ version }}</span></li>
+			<li>{{'systemUpdates.updateCheckbox.installVersion' | translate}}<span>{{ installedVersion | translate }}</span></li>
+			<li>{{'systemUpdates.updateCheckbox.downloadSize' | translate}}<span>{{ downloadSize }}</span> </li>
+			<li>{{'systemUpdates.updateCheckbox.diskSpaceNeeded' | translate}}<span>{{ diskSpaceNeeded }}</span></li>
 		</ul>
 		<div class="row"
 			*ngIf="isReadMeAvailable || severity !== 'Critical'">
@@ -129,22 +137,30 @@
 				   vtrMetrics
 				   metricsItem="readme"
 				   metricsEvent="featureClick"
-				   (click)="onReadMoreClick($event)">Read more</a>
+				   (click)="onReadMoreClick($event)">{{'systemUpdates.readMore' | translate}}</a>
 			</div>
 			<!-- required in MVP 2 -->
 			<div class="col-6 pl-0 pr-0 text-left"
 				*ngIf="severity !== 'Critical' && isIgnored === false">
 				<a href="javascript:void(0)"
 					class="ignore"
+					vtrMetrics
+				    metricsItem="ignore"
+					metricsEvent="featureClick"
+					metricsParam="{{ 'packageID=' + packageID }}"
 					(click)="onIgnoreUpdateClick(packageName, true)"
-					>Ignore</a>
+					>{{'systemUpdates.updateCheckbox.ignore' | translate}}</a>
 			</div>
 			<div class="col-6 pl-0 pr-0 text-left"
 				*ngIf="severity !== 'Critical' && isIgnored === true">
 				<a href="javascript:void(0)"
 					class="ignore"
+					vtrMetrics
+				    metricsItem="attend"
+					metricsEvent="featureClick"
+					metricsParam="{{ 'packageID=' + packageID }}"
 					(click)="onIgnoreUpdateClick(packageName, false)"
-					>Attend</a>
+					>{{'systemUpdates.updateCheckbox.attend' | translate}}</a>
 			</div>
 		</div>
 	</div>

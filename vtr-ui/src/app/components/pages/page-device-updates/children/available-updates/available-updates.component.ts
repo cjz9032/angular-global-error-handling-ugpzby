@@ -12,10 +12,25 @@ export class AvailableUpdatesComponent implements OnInit {
 	@Input() criticalUpdates: AvailableUpdateDetail[];
 	@Input() recommendedUpdates: AvailableUpdateDetail[];
 	@Input() optionalUpdates: AvailableUpdateDetail[];
-	@Input() ignoredUpdates: AvailableUpdateDetail[];
 	@Input() isInstallationSuccess = false;
-	@Input() isInstallationCompleted = false;
 	@Input() isInstallingAllUpdates = true;
+
+	@Input() set ignoredUpdates(value: AvailableUpdateDetail[]) {
+		this._ignoredUpdates = value;
+		this.expandIgnoredForDependencyUpdates();
+	};
+	get ignoredUpdates() : AvailableUpdateDetail[] {
+		return this._ignoredUpdates;
+	};
+	
+	@Input() set isInstallationCompleted(value: boolean) {
+		this._isInstallationCompleted = value;
+		this.expandIgnoredForInstallationResult();
+	};
+	get isInstallationCompleted() : boolean {
+		return this._isInstallationCompleted;
+	}
+
 
 	@Output() checkChange = new EventEmitter<any>();
 	@Output() ignoreUpdate = new EventEmitter<any>();
@@ -25,6 +40,9 @@ export class AvailableUpdatesComponent implements OnInit {
 	public isUpdateSelected = false;
 
 	public isCollapsed = true;
+
+	private _isInstallationCompleted = false;
+	private _ignoredUpdates: AvailableUpdateDetail[];
 
 	constructor(private systemUpdateService: SystemUpdateService) { }
 
@@ -46,12 +64,10 @@ export class AvailableUpdatesComponent implements OnInit {
 	}
 
 	onInstallAllUpdates(event) {
-		console.log('installUpdates', event);
 		this.installAllUpdate.emit(event);
 	}
 
 	onInstallSelectedUpdates(event) {
-		console.log('installSelectedUpdates', event);
 		this.installSelectedUpdate.emit(event);
 	}
 
@@ -71,5 +87,21 @@ export class AvailableUpdatesComponent implements OnInit {
 	private checkSelectedUpdateStatus() {
 		const selectedUpdates = this.systemUpdateService.getSelectedUpdates(this.systemUpdateService.updateInfo.updateList);
 		this.isUpdateSelected = selectedUpdates.length > 0;
+		this.expandIgnoredForDependencyUpdates();
+	}
+	
+	private expandIgnoredForDependencyUpdates() {
+		if (this.isCollapsed) {
+			const dependencyInIgnored = this.ignoredUpdates.find(x => x.isDependency);
+			if (dependencyInIgnored) {
+				this.isCollapsed = false;
+			} 
+		} 	
+	}
+
+	private expandIgnoredForInstallationResult() {
+		if (this._isInstallationCompleted && this.ignoredUpdates.length > 0 && this.isCollapsed) {
+			this.isCollapsed = false;
+		}
 	}
 }

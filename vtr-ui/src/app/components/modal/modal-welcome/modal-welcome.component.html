@@ -1,4 +1,4 @@
-<div class="vtr-body vtr-modal-welcome" [ngSwitch]="page">
+<div class="vtr-body vtr-modal-welcome" [ngSwitch]="page" [ngStyle]="{'visibility':isDivVisible ? 'visible' : 'hidden'}">
 	<!-- <div class="modal-header">
 		<button type="button"
 			class="close close-button"
@@ -46,24 +46,24 @@
 					<div class="row justify-content-center align-items-center next-btn">
 						<div class="col-auto ">
 							<vtr-ui-button
-							metricsParent="modal-welcome"
+							metricsParent="modal.Welcome"
 							metricsEvent="featureClick"
-							[metricsItem]="'NEXT'"
-							[label]="'NEXT'"
+							[metricsItem]="'tutorial.next' | translate"
+							[label]="'tutorial.next' | translate"
 							[btnHeight]=true
 							[isGradient]=true
 							(onClick)="next(1)">
 							</vtr-ui-button>
 						</div>
 					</div>
-					<div class="vtr-progress-bar">
+					<!-- <div class="vtr-progress-bar">
 						<ul id="skill">
 							<li>
 								<span class="bar1 html-css" [style.width]="progress + '%'"></span>
 								<span class="bar2"></span>
 							</li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -75,147 +75,143 @@
 					<div class="banner-page-2 row justify-content-center align-items-center">
 					</div>
 					<div class="content-page-2" id="welcome-body-scroll">
-						<div class="row justify-content-center align-items-center font-14-bold">
-							<div class="col-auto title2">
-								{{ "welcometutorial.subtitle1" | translate | uppercase }}
+						<div class="padding-right-1">
+							<div class="row justify-content-center align-items-center font-14-bold">
+								<div class="col-auto title2">
+									{{ "welcometutorial.subtitle1" | translate | uppercase }}
+								</div>
 							</div>
-						</div>
-						<div class="row top-margin" [ngClass]="{'radio-is-selected' : data.page2.radioValue !== null }">
-							<div class="col-4 device-image" (click)="saveUsageType($event, 'PERSONAL')">
-								<input
-									type="radio"
-									name="radio"
-									id="radio1"
-									value="personal"
-									vtrMetrics
-									metricsEvent="featureClick"
-									metricsParent="WelcomePage"
-									metricsItem="radio.personal"
-									[metricsValue]="!radio1.checked"
-									#radio1
+							<div class="row top-margin" [ngClass]="{'radio-is-selected' : data.page2.radioValue !== null }">
+								<div class="col-4 device-image" (click)="saveUsageType($event, 'PERSONAL')">
+									<input
+										type="radio"
+										name="radio"
+										id="radio1"
+										value="personal"
+										vtrMetrics
+										metricsEvent="featureClick"
+										metricsParent="WelcomePage"
+										metricsItem="radio.personal"
+										[metricsValue]="!radio1.checked"
+										#radio1
+										/>
+										<img
+										for="radio1"
+										alt="Personal Use"
+										for="radio1"
+										src="./../../../../assets/images/welcome/personal-use.jpg"
+										class=""
+										/>
+									<label for="radio1" class="centered">{{ "welcometutorial.personal" | translate }}</label>
+								</div>
+								<div class="col-4 device-image" (click)="saveUsageType($event, 'BUSINESS')">
+									<input
+										type="radio"
+										name="radio"
+										id="radio2"
+										value="business"
+										vtrMetrics
+										metricsEvent="featureClick"
+										metricsParent="WelcomePage"
+										metricsItem="radio.business"
+										[metricsValue]="!radio2.checked"
+										#radio2
 									/>
 									<img
-									for="radio1"
-									alt="Personal Use"
-									for="radio1"
-									src="./../../../../assets/images/welcome/personal-use.jpg"
-									class=""
+										alt="Business Use"
+										for="radio2"
+										src="./../../../../assets/images/welcome/business-use.jpg"
+										class="business"
 									/>
-								<label for="radio1" class="centered">{{ "welcometutorial.personal" | translate }}</label>
+									<label for="radio2" class="centered">{{ "welcometutorial.business" | translate }}</label>
+								</div>
+								<div class="col-4 device-image" (click)="saveUsageType($event, 'CUSTOM')">
+									<input
+										type="radio"
+										name="radio"
+										id="radio3"
+										value="custom"
+										vtrMetrics
+										metricsEvent="featureClick"
+										metricsParent="WelcomePage"
+										metricsItem="radio.custom"
+										[metricsValue]="!radio3.checked"
+										#radio3
+									/>
+									<img
+										alt="Custom Experience"
+										for="radio3"
+										src="./../../../../assets/images/welcome/custom-use.jpg"
+										class="custom"
+									/>
+									<label for="radio3" class="centered">{{ "welcometutorial.custom" | translate }}<br>{{ "welcometutorial.experience" | translate }}</label>
+								</div>
 							</div>
-							<div class="col-4 device-image" (click)="saveUsageType($event, 'BUSINESS')">
-								<input
-									type="radio"
-									name="radio"
-									id="radio2"
-									value="business"
-									vtrMetrics
-									metricsEvent="featureClick"
-									metricsParent="WelcomePage"
-									metricsItem="radio.business"
-									[metricsValue]="!radio2.checked"
-									#radio2
-								/>
-								<img
-									alt="Business Use"
-									for="radio2"
-									src="./../../../../assets/images/welcome/business-use.jpg"
-									class="business"
-								/>
-								<label for="radio2" class="centered">{{ "welcometutorial.business" | translate }}</label>
+	
+							<div class="row justify-content-center align-items-center font-14-bold col-12 margin-top-25">
+								<div class="col-auto title2">
+									{{ "welcometutorial.subtitle2" | translate | uppercase}}
+								</div>
 							</div>
-							<div class="col-4 device-image" (click)="saveUsageType($event, 'CUSTOM')">
-								<input
-									type="radio"
-									name="radio"
-									id="radio3"
-									value="custom"
-									vtrMetrics
-									metricsEvent="featureClick"
-									metricsParent="WelcomePage"
-									metricsItem="radio.custom"
-									[metricsValue]="!radio3.checked"
-									#radio3
-								/>
-								<img
-									alt="Custom Experience"
-									for="radio3"
-									src="./../../../../assets/images/welcome/custom-use.jpg"
-									class="custom"
-								/>
-								<label for="radio3" class="centered">{{ "welcometutorial.custom" | translate }}</label>
+							<div class="row d-flex justify-content-center interests">
+								<div class="col-auto inline-block" *ngFor="let interest of interestCopy">
+									<input
+										type="checkbox"
+										[id]="interest + 'checkbox'"
+										vtrMetrics
+										metricsEvent="featureClick"
+										[metricsItem]="'chk.' + interest"
+										metricsParent="WelcomePage"
+										[metricsValue]="!checkbox1.checked"
+										#checkbox1
+										(click)="toggle($event, interest)"
+									/>
+									<label [for]="interest + 'checkbox'">{{ "welcometutorial.interests." + interest | translate }}</label>
+								</div>
 							</div>
-						</div>
-
-						<div class="row justify-content-center align-items-center font-14-bold">
-							<div class="col-auto title2">
-								{{ "welcometutorial.subtitle2" | translate | uppercase}}
+							<div *ngIf="!hideMoreInterestBtn" class="row justify-content-center align-items-center font-12-semi more-interest col-12">
+								<div class="col-auto title2" (click)="moreInterestClicked()">
+									<span class="more-interests">{{ "welcometutorial.moreInterest" | translate | lowercase }}</span>
+								</div>
 							</div>
-						</div>
-						<div class="row d-flex justify-content-center interests">
-							<div class="col-auto inline-block" *ngFor="let interest of interestCopy">
-								<input
-									type="checkbox"
-									[id]="interest + 'checkbox'"
-									vtrMetrics
-									metricsEvent="featureClick"
-									[metricsItem]="'chk.' + interest"
-									metricsParent="WelcomePage"
-									[metricsValue]="!checkbox1.checked"
-									#checkbox1
-									(click)="toggle($event, interest)"
-								/>
-								<label [for]="interest + 'checkbox'">{{ "welcometutorial.interests." + interest | translate }}</label>
-							</div>
-						</div>
-						<div *ngIf="!hideMoreInterestBtn" class="row justify-content-center align-items-center font-12-semi more-interest">
-							<div class="col-auto title2" (click)="moreInterestClicked()">
-								<span class="more-interests">{{ "welcometutorial.moreInterest" | translate | lowercase }}</span>
-							</div>
-						</div>
-						<div class="row privacy-check">
-							<div class="custom-control custom-checkbox">
-								<input type="checkbox" (click)="savePrivacy($event, 'PRIVACYPOLICY')" class="custom-control-input" id="defaultUnchecked">
-								<label class="custom-control-label font-14-semi" for="defaultUnchecked">
-									{{ "welcometutorial.privacytitle" | translate }}&nbsp;
-									<a class="linktext" href="https://www.lenovo.com/us/en/privacy" target="_blank">
-										{{ "welcometutorial.privacypolicy" | translate }}
-									</a>
-								</label>
+							<div class="row privacy-check">
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" (click)="savePrivacy($event, 'PRIVACYPOLICY')" class="custom-control-input" id="defaultUnchecked">
+									<label class="custom-control-label font-14-semi" for="defaultUnchecked">
+										{{ "welcometutorial.privacytitle" | translate }}
+										<!-- Help us improve the quality of the app by allowing anonymous collection of usage statistics -->
+										<a class="linktext" href="https://www.lenovo.com/us/en/privacy" target="_blank">
+											{{ "welcometutorial.privacypolicy" | translate }}
+											<!-- Lenovo's Privacy Policy -->
+										</a>
+									</label>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div class="row justify-content-center align-items-center next-btn">
 						<div class="col-auto ">
 							<vtr-ui-button
-							metricsParent="modal-welcome"
+							metricsParent="Modal.Welcome"
 							metricsEvent="featureClick"
-							[metricsItem]="'DONE'"
-							[label]="'DONE'"
+							[metricsItem]="'welcometutorial.done' | translate"
+							[label]="'welcometutorial.done' | translate"
 							[btnHeight]=true
 							[isGradient]=true
 							(onClick)="next(2)">
 							</vtr-ui-button>
 						</div>
 					</div>
-					<div class="vtr-progress-bar">
+					<!-- <div class="vtr-progress-bar">
 						<ul id="skill">
 							<li>
 								<span class="bar1 html-css" [style.width]="progress + '%'"></span>
 								<span class="bar2"></span>
 							</li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
-		<!-- <div class="vtr-progress-bar">
-			<ul id="skill">
-				<li>
-					<span class="bar1 html-css" [style.width]="progress + '%'"></span>
-					<span class="bar2"></span>
-				</li>
-			</ul>
-		</div> -->
 </div>
 

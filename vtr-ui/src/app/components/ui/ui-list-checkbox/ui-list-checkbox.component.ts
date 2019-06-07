@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgbTooltip, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateService } from '@ngx-translate/core';
 
 import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -32,13 +33,20 @@ export class UiListCheckboxComponent implements OnInit {
 	public isIgnored = false;
 	public severity = UpdateInstallSeverity.Optional;
 	public packageName: string;
+	public packageID: string;
 	// Random number is used to have unique id of each input field
 	randomNumber: number = Math.floor(new Date().valueOf() * Math.random());
 
+	private notInstalledText = 'systemUpdates.notInstalled';
+	private notAvailableText = 'systemUpdates.notAvailable';
+
 	constructor(
-		private commonService: CommonService
-		, private modalService: NgbModal
-	) { }
+		private commonService: CommonService,
+		private modalService: NgbModal,
+		private translate: TranslateService
+	) {
+		this.translateString();
+	}
 
 	ngOnInit() { }
 
@@ -48,6 +56,7 @@ export class UiListCheckboxComponent implements OnInit {
 
 	onTooltipClick(update: AvailableUpdateDetail, tooltip: NgbTooltip) {
 		if (tooltip && !tooltip.isOpen()) {
+			this.packageID = update.packageID;
 			this.isIgnored = update.isIgnored;
 			this.severity = update.packageSeverity;
 			this.packageName = update.packageName;
@@ -63,11 +72,11 @@ export class UiListCheckboxComponent implements OnInit {
 			}
 
 			if (update.currentInstalledVersion === null || update.currentInstalledVersion === undefined) {
-				this.installedVersion = 'device.systemUpdates.notInstalled';
+				this.installedVersion = this.notInstalledText;
 			} else if (update.currentInstalledVersion.trim() === '' || update.currentInstalledVersion.trim().length === 0) {
-				this.installedVersion = 'device.systemUpdates.notInstalled';
+				this.installedVersion = this.notInstalledText;
 			} else if (update.currentInstalledVersion === '0') {
-				this.installedVersion = 'device.systemUpdates.notAvailable';
+				this.installedVersion = this.notAvailableText;
 			} else {
 				this.installedVersion = update.currentInstalledVersion;
 			}
@@ -89,5 +98,14 @@ export class UiListCheckboxComponent implements OnInit {
 
 	public onIgnoreUpdateClick(packageName: string, isIgnored: boolean) {
 		this.ignoreUpdate.emit({packageName, isIgnored});
+	}
+
+	private translateString() {
+		this.translate.stream(this.notAvailableText).subscribe((res) => {
+			this.notAvailableText = res;
+		});
+		this.translate.stream(this.notInstalledText).subscribe((res) => {
+			this.notInstalledText = res;
+		});
 	}
 }

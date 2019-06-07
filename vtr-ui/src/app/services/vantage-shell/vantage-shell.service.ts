@@ -1,11 +1,14 @@
-/// <reference path='../../../../node_modules/@lenovo/tan-client-bridge/src/index.js' />
-
 import { Injectable } from '@angular/core';
 import * as inversify from 'inversify';
 import * as Phoenix from '@lenovo/tan-client-bridge';
-import { EventTypes } from '@lenovo/tan-client-bridge';
 import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
+import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
+import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
+import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
+import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
+import { TouchpadLockStatus }  from 'src/app/data-models/gaming/touchpad-lock-status.model';
+import { SystemStatus } from  'src/app/data-models/gaming/system-status.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -38,10 +41,8 @@ export class VantageShellService {
 		});
 	}
 
-	public unRegisterEvent(eventType: any) {
-		this.phoenix.off(eventType, (val) => {
-			console.log('unRegister Event: ', eventType);
-		});
+	public unRegisterEvent(eventType: any, handler: any) {
+		this.phoenix.off(eventType, handler);
 	}
 	private getVantageShell(): any {
 		const win: any = window;
@@ -108,7 +109,6 @@ export class VantageShellService {
 					ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
 				});
 				metricClient.isInit = true;
-				metricClient.metricsEnabled = true;
 				metricClient.sendAsyncOrignally = metricClient.sendAsync;
 				metricClient.commonService = this.commonService;
 				metricClient.sendAsync = async function sendAsync(data) {
@@ -157,6 +157,13 @@ export class VantageShellService {
 	public getPermission(): any {
 		if (this.phoenix) {
 			return this.phoenix.permissions;
+		}
+		return undefined;
+	}
+
+	public getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity {
+		if (this.phoenix) {
+			return this.phoenix.connectedHomeSecurity;
 		}
 		return undefined;
 	}
@@ -310,7 +317,7 @@ export class VantageShellService {
 		if (this.phoenix) {
 			try {
 				const deviceFilterResult = await this.phoenix.deviceFilter.eval(filter);
-				console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
+				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 				return deviceFilterResult;
 			} catch (error) {
 				console.log('In VantageShellService.deviceFilter. Error:', error);
@@ -358,5 +365,124 @@ export class VantageShellService {
 		}
 
 		return undefined;
+	}
+
+	public getCameraBlur(): any {
+		if (this.phoenix && this.phoenix.hwsettings.camera.cameraBlur) {
+			return this.phoenix.hwsettings.camera.cameraBlur;
+		}
+		return undefined;
+	}
+
+	public getCPUOCStatus(): any {
+		if (this.phoenix) {
+			return this.phoenix.gaming.gamingOverclock.getCpuOCStatus();
+		}
+		return undefined;
+	}
+
+	public setCPUOCStatus(CpuOCStatus: CPUOCStatus): any {
+		if (this.phoenix) {
+			return this.phoenix.gaming.gamingOverclock.setCpuOCStatus(CpuOCStatus.cpuOCStatus);
+		}
+		return false;
+	}
+
+	public getThermalModeStatus(): any {
+		if (this.phoenix) {
+			// TODO Un comment below line when JSBridge is ready for integration.
+			// return this.phoenix.gaming.gamingThermal.getThermalModeStatus();
+			return undefined;
+		}
+		return undefined;
+	}
+
+	public setThermalModeStatus(ThermalModeStatusObj: ThermalModeStatus): Boolean {
+		if (this.phoenix) {
+			// TODO Un comment below line when JSBridge is ready for integration.
+			// return this.phoenix.gaming.gamingThermal.setThermalModeStatus(ThermalModeStatusObj.thermalModeStatus);
+			return true;
+		}
+		return true;
+	}
+
+	// public getRAMOCStatus(): any {
+	// 	if (this.phoenix) {
+	// 		return this.phoenix.gaming.gamingOverclock.getRamOCStatus();
+	// 	}
+	// 	return undefined;
+	// }
+
+	// public setRAMOCStatus(ramOCStausObj: RamOCSatus): any {
+	// 	if (this.phoenix) {
+	// 		return this.phoenix.gaming.gamingOverclock.setRamOCStatus(ramOCStausObj.ramOcStatus);
+	// 	}
+	// 	return false;
+	// }
+
+	public getGamingAllCapabilities(): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingAllCapabilities;
+		}
+		return undefined;
+	}
+
+	public getGamingLighting(): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingLighting;
+		}
+		return undefined;
+	}
+	public getGamingOverClock(): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingOverclock;
+		}
+		return undefined;
+	}
+
+	public getIntelligentSensing(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.lis.intelligentSensing;
+		} return undefined;
+	}
+
+	public getMetricPreferencePlugin() {
+		if (this.phoenix) {
+			return this.phoenix.genericMetricsPreference;
+		}
+	}
+
+	public getGamingKeyLock() {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingKeyLock;
+		}
+		return undefined;
+	}
+
+	public getGamingHybridMode() {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingHybridMode;
+		}
+		return undefined;
+	}
+
+	public getGamingHwInfo() {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingHwInfo;
+		}
+		return undefined;
+	}
+
+
+	public getIntelligentMedia(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.lis.intelligentMedia;
+		} return undefined;
+	}
+
+	public getPreferenceSettings() {
+		if (this.phoenix) {
+			return this.phoenix.preferenceSettings;
+		}
 	}
 }

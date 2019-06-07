@@ -7,38 +7,38 @@
 		width: 100%;
 		background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
 		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+		padding: 4rem 6rem;
 
 		.title {
 			color: $light;
 			font-size: 3.5rem;
 			font-weight: $weight_light;
 			line-height: 4.2rem;
-			padding-left: 5rem;
-			padding-top: 5rem;
-			padding-bottom: 2rem;
-			padding-right: 5rem;
 		}
 
 		.subtitle {
 			opacity: 0.5;
 			color: $light;
-			font-size: 1.4rem;
+			font-size: 1.5rem;
 			line-height: 2.1rem;
-			padding-left: 5rem;
-			padding-top: 0rem;
-			padding-right: 5rem;
+			padding-top: 1rem;
 		}
 
-		.icon {
-			color: $light;
-			font-size: 10rem;
+		.offline-icon{
+
+			.icon {
+				color: $light;
+				font-size: 7.5rem;
+			}
 		}
+
+		.offline-content{
+			padding-left: 5rem;
+		}
+
 
 		.button-row {
-			padding-left: 5rem;
-			padding-bottom: 5rem;
-			padding-top: 3rem;
-			padding-right: 5rem;
+			padding-top: 1.8rem;
 
 			.action-button {
 				border-radius: 2.5rem;

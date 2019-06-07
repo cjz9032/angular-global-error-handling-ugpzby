@@ -98,7 +98,7 @@ export class DisplayService {
 			if (this.cameraPrivacyStatus) {
 				return this.cameraPrivacyStatus.stopMonitor();
 			}
-			
+
 			return undefined;
 		} catch(error) {
 			throw new Error(error.message);
@@ -139,7 +139,7 @@ export class DisplayService {
 		}
 		return undefined;
 	}
-	public setCameraContrst(value: number): Promise<boolean> {
+	public setCameraContrast(value: number): Promise<boolean> {
 		if (this.cameraSettings) {
 			return this.cameraSettings.setCameraContrast(value);
 		}
@@ -203,6 +203,31 @@ export class DisplayService {
 		}
 		return undefined;
 	}
+
+public getDaytimeColorTemperature(): Promise<FeatureStatus> {
+	if (this.displayEyeCareMode) {
+		return this.displayEyeCareMode.getDaytimeColorTemperature();
+	}
+	return undefined;
+}
+
+public setDaytimeColorTemperature(value: number): Promise<boolean> {
+	if (this.displayEyeCareMode) {			
+		return this.displayEyeCareMode.setDaytimeColorTemperature(value);
+	}
+	return undefined;
+}
+
+public resetDaytimeColorTemperature(): Promise<any> {
+	if (this.displayEyeCareMode) {
+		return this.displayEyeCareMode.resetDaytimeColorTemperature();
+	}
+	return undefined;
+}
+
+
+
+
 	public statusChangedLocationPermission(handler: any) {
 		try {
 			if (this.isShellAvailable) {

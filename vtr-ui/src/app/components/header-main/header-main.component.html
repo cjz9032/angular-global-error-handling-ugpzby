@@ -3,9 +3,10 @@
 		<a vtrMetrics
 			metricsEvent="FeatureClick"
 			metricsItem="back"
-		   metricsParent="device.mydevice"
+		    metricsParent="device.mydevice"
 			(click)="goBack()" 
-			id="{{backId}}">
+			id="{{backId}}"
+			attr.aria-label="{{backId}}">
 			{{back}}
 		</a>
 	</div>

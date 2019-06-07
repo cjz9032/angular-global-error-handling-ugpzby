@@ -40,12 +40,16 @@ export class UiRowSwitchComponent extends BaseComponent {
 	@Input() disabledAll = false;
 	@Input() type = undefined;
 	@Input() resetTextAsButton = false;
+	@Input() isLastChild = false;
+	@Input() showLoaderState = false;
 
 
 	@Output() toggleOnOff = new EventEmitter<boolean>();
 	@Output() readMoreClick = new EventEmitter<boolean>();
 	@Output() tooltipClick = new EventEmitter<boolean>();
 	@Output() resetClick = new EventEmitter<Event>();
+
+	public contentExpand = false;
 
 
 	// private tooltip: NgbTooltip;
@@ -95,6 +99,7 @@ export class UiRowSwitchComponent extends BaseComponent {
 
 	public onReadMoreClick($event) {
 		this.readMoreClick.emit($event);
+		this.contentExpand = true;
 	}
 
 	public onRightIconClick($event) {

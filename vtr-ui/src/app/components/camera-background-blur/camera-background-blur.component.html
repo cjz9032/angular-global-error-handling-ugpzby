@@ -1,33 +1,38 @@
-<div class="vtr-camera-background-blur" *ngIf="showHideCameraBackground">
+<div class="vtr-camera-background-blur">
 	<div class="row">
 		<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 pl-0 pr-0">
 			<div class="img-preview">
-				<img *ngIf="imageMode === 'blur'" src="../../../assets/images/camera-background-blur/blur-mode.png" />
-				<img *ngIf="imageMode === 'comic'" src="../../../assets/images/camera-background-blur/comic-mode.png" />
-				<img *ngIf="imageMode === 'sketch'" src="../../../assets/images/camera-background-blur/sketch-mode.png" />
+				<img *ngIf="option.currentMode.toLowerCase() === 'blur'"
+					src="assets/images/camera-background-blur/blur-mode.png" />
+				<img *ngIf="option.currentMode.toLowerCase() === 'comic'"
+					src="assets/images/camera-background-blur/comic-mode.png" />
+				<img *ngIf="option.currentMode.toLowerCase() === 'sketch'"
+					src="assets/images/camera-background-blur/sketch-mode.png" />
 			</div>
 		</div>
 		<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item border-top">
-						<div class="mt-4 text-center">
-								<vtr-ui-rounded-rectangle-radio [radioId]="'radio1'"
-									[group]="'radio'"
-									[label]="'Blur mode'"
-									[value]="'blur'"
-									[checked]="true"
-									(change)="onChange($event)"></vtr-ui-rounded-rectangle-radio>
-								<vtr-ui-rounded-rectangle-radio [radioId]="'radio2'"
-									[group]="'radio'"
-									[label]="'Comic mode'"
-									[value]="'comic'"
-									(change)="onChange($event)"></vtr-ui-rounded-rectangle-radio>
-								<vtr-ui-rounded-rectangle-radio [radioId]="'radio3'"
-									[group]="'radio'"
-									[label]="'Sketch mode'"
-									[value]="'sketch'"
-									(change)="onChange($event)"></vtr-ui-rounded-rectangle-radio>
-							</div>
+					<div class="mt-4">
+						<vtr-ui-rounded-rectangle-radio [radioId]="'radio1'"
+							[group]="'radio'"
+							[label]="'device.deviceSettings.displayCamera.camera.camerablur.blurMode' | translate"
+							[value]="'Blur'"
+							[checked]="option.currentMode.toLowerCase() === 'blur'"
+							(change)="onChange($event)"></vtr-ui-rounded-rectangle-radio>
+						<vtr-ui-rounded-rectangle-radio [radioId]="'radio2'"
+							[group]="'radio'"
+							[label]="'device.deviceSettings.displayCamera.camera.camerablur.comicMode' | translate"
+							[value]="'Comic'"
+							[checked]="option.currentMode.toLowerCase() === 'comic'"
+							(change)="onChange($event)"></vtr-ui-rounded-rectangle-radio>
+						<vtr-ui-rounded-rectangle-radio [radioId]="'radio3'"
+							[group]="'radio'"
+							[label]="'device.deviceSettings.displayCamera.camera.camerablur.sketchMode' | translate"
+							[value]="'Sketch'"
+							[checked]="option.currentMode.toLowerCase() === 'sketch'"
+							(change)="onChange($event)"></vtr-ui-rounded-rectangle-radio>
+					</div>
 				</li>
 			</ul>
 		</div>

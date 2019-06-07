@@ -1,7 +1,8 @@
 <div class="vtr-ui-switch-row"
 	[ngClass]="{
 		'white-theme': theme === 'white',
-		'blue-theme': theme === 'blue'
+		'blue-theme': theme === 'blue',
+		'last-child': isLastChild
 	}">
 	<div class="container-fluid p-0"
 		[ngClass]="{'vtr-disabled': disabled}">
@@ -14,28 +15,28 @@
 							*ngIf="leftIcon.length > 0">
 							<div class="left-icon-block">
 								<fa-icon *ngIf="leftIcon[0]!=='icomoon' && leftIcon[0]!=='svg'"
-								class="left-icon"
-								[icon]="leftIcon"></fa-icon>
+									class="left-icon"
+									[icon]="leftIcon"></fa-icon>
 								<svg-icon *ngIf="leftIcon[0]==='svg'"
-								[applyCss]="true"
-								[stretch]="true"
-								class="left-icon"
-								[src]="'assets/icons/'+leftIcon[1]+'.svg'"></svg-icon>
-								<span *ngIf="leftIcon[0]==='icomoon'"[ngClass]="'icomoon '+leftIcon[1]"></span>
+									[applyCss]="true"
+									[stretch]="true"
+									class="left-icon"
+									[src]="'assets/icons/'+leftIcon[1]+'.svg'"></svg-icon>
+								<span *ngIf="leftIcon[0]==='icomoon'"
+									[ngClass]="'icomoon '+leftIcon[1]"></span>
 							</div>
 						</div>
 						<div class="col">
 							<div class="title">{{ title }}</div>
-							<div class="caption"
-								*ngIf="caption.length > 0"
-								[innerHTML]="caption">
+							<span class="caption"
+								[innerHTML]="caption.length > 70  && !contentExpand  && readMoreText.length > 0 ? (caption | slice: 0:70) : caption">
 								<!-- {{ caption }} -->
-							</div>
-							<div class="read-more"
-								*ngIf="readMoreText.length > 0"
+							</span>
+							<span class="read-more"
+								*ngIf="!contentExpand"
 								(click)="onReadMoreClick($event)">
 								{{ readMoreText }}
-							</div>
+							</span>
 						</div>
 					</div>
 				</div>
@@ -45,7 +46,8 @@
 					<div class="p-0"
 						[ngClass]="{'ml-auto': type!=='Camera'}"
 						*ngIf="resetText.length > 0">
-						<button type="button" [disabled]="disabledAll"
+						<button type="button"
+							[disabled]="disabledAll"
 							class="btn"
 							[ngClass]="{'btn-link text':!resetTextAsButton ,'btn-label':resetTextAsButton}"
 							(click)="onResetClick($event)">
@@ -58,7 +60,9 @@
 						<vtr-ui-switch-onoff [name]="name"
 							[value]="isSwitchChecked"
 							[disabled]="disabled"
-							(toggle)="onOnOffChange($event)"></vtr-ui-switch-onoff>
+							(toggle)="onOnOffChange($event)"
+							[showLoader]="showLoaderState"
+							[theme]="theme"></vtr-ui-switch-onoff>
 					</div>
 					<div *ngIf="!isSwitchVisible && linkText"
 						class="p-0 link-text">

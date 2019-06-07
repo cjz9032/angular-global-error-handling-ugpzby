@@ -94,6 +94,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	private metrics: any;
 	private starterStatus: any;
 	private everSignIn: any;
+	public appFeature = null;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -312,9 +313,14 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 					self.activeModal.dismiss();
 					return;
 				} else {
-					// Get current system local and set to url
+					// Change UI language to current system local or user selection saved in cookie
 					self.supportService.getMachineInfo().then((machineInfo) => {
-						loginUrl += "&lang=" + self.getLidSupportedLanguageFromLocale(machineInfo.locale);
+						let lang = self.userService.getLidLanguageSelectionFromCookies('https://passport.lenovo.com');
+						if (lang != '') {
+							loginUrl += "&lang=" + lang;
+						} else {
+							loginUrl += "&lang=" + self.getLidSupportedLanguageFromLocale(machineInfo.locale);
+						}
 						webView.src = loginUrl;
 						self.devService.writeLog('Loading login page ', loginUrl);
 					}, error => {
@@ -361,7 +367,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 									self.activeModal.dismiss();
 									self.devService.writeLog('MSWebViewNavigationCompleted: Login success!');
 									//the metrics need to be sent after enabling sso, some data like user guid would be available after that.
-									self.userService.sendSigninMetrics('success', self.starterStatus,  self.everSignIn);
+									self.userService.sendSigninMetrics('success', self.starterStatus, self.everSignIn, self.appFeature);
 								}
 							});
 						} catch (error) {
@@ -373,7 +379,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 			} else {
 				// Handle error
 				//self.activeModal.dismiss();
-				self.userService.sendSigninMetrics('failure', self.starterStatus, self.everSignIn);
+				self.userService.sendSigninMetrics('failure', self.starterStatus, self.everSignIn, self.appFeature);
 				self.devService.writeLog('MSWebViewNavigationCompleted: Login failed!');
 			}
 		});
@@ -418,7 +424,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	
 
 	onClose(): void {
-		this.userService.sendSigninMetrics('failure(rc=UserCancelled)', this.starterStatus, this.everSignIn);
+		this.userService.sendSigninMetrics('failure(rc=UserCancelled)', this.starterStatus, this.everSignIn, this.appFeature);
 		this.activeModal.dismiss();
 	}
 

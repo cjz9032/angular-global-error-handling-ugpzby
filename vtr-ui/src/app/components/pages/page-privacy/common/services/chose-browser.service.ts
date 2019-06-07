@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { StorageService } from './storage.service';
 import { BrowserListType, VantageCommunicationService } from './vantage-communication.service';
 import { map } from 'rxjs/operators';
-import { of } from 'rxjs';
 import { convertBrowserNameToBrowserData } from '../../utils/helpers';
 
 @Injectable({

@@ -4,7 +4,7 @@
 			<vtr-header-main [title]=""
 			 [forwardLink]="">
 				<img class="gaming-header-image"
-				 src="./../../../../assets/images/gaming/gaming-logo-full.svg" />
+				 [src]=" './../../../../assets/images/gaming/gaming-logo-full.svg' | svgInline | async" />
 			</vtr-header-main>
 		</div>
 	</div>
@@ -53,11 +53,11 @@
 									</div>
 
 									<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
-										<vtr-widget-quicksettings-list></vtr-widget-quicksettings-list>
+										<vtr-widget-quicksettings-list title="Quick Settings"></vtr-widget-quicksettings-list>
 									</div>
 
 									<div class="col-sm-12 col-md-6 col-lg-12 mb-60">
-										<vtr-widget-lighting></vtr-widget-lighting>
+										<vtr-widget-lighting title="Lighting"></vtr-widget-lighting>
 									</div>
 								</div>
 							</div>

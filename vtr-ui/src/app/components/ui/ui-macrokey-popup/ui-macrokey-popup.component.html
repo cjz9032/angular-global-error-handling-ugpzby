@@ -1,0 +1,29 @@
+<div class="modal-main-wrapper" *ngIf="showModal">
+	<ui-popover>
+		<div class="ui-popover-head">
+			<button class="close" type="button" (click)="close()">
+				<i class="icon icon-close"></i>
+			</button>
+		</div>
+		<div class="ui-popover-content">
+			<div>
+				<p>{{modalContent.headerTitle | translate}}</p>
+			</div>
+			<div class="body-content">
+				<p>{{modalContent.bodyText | translate}}</p>
+			</div>
+		</div>
+		<div class="ui-popover-footer">
+			<div *ngIf="modalContent.btnConfirm">
+				<button class="btn btn-rounded"
+					(click)="close()">{{'gaming.macroKey.popupContent.confirmButton.btnClear' | translate}}</button>
+				<button class="btn btn-default"
+					(click)="close()">{{'gaming.macroKey.popupContent.confirmButton.btnCancel' | translate}}</button>
+			</div>
+			<div *ngIf="!modalContent.btnConfirm">
+				<button class="btn btn-rounded"
+					(click)="close()">{{'gaming.macroKey.popupContent.btnOk' | translate}}</button>
+			</div>
+		</div>
+	</ui-popover>
+</div>
