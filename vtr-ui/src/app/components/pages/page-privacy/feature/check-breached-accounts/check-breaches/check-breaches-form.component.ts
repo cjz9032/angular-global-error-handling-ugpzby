@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { debounceTime, filter, map, takeUntil } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, mapTo, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { EmailScannerService } from '../services/email-scanner.service';
 import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
-import { from } from 'rxjs';
+import { from, merge } from 'rxjs';
 import { UserService } from '../../../../../../services/user/user.service';
 import { validateEmail } from '../../../utils/helpers';
 import { EMAIL_REGEXP } from '../../../utils/form-validators';
@@ -35,9 +35,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 		email: ['', [Validators.required, Validators.pattern(EMAIL_REGEXP)]],
 	});
 	emailWasSubmitted = false;
-	serverError$ = this.breachedAccountsService.onGetBreachedAccounts$.pipe(
-		map((breachedAccounts) => breachedAccounts.error !== null)
-	);
+	serverError$ = this.listenError();
 	isLoading$ = this.emailScannerService.loadingStatusChanged$;
 	lenovoId: string;
 	islenovoIdOpen = false;
@@ -53,13 +51,6 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.emailForm.valueChanges.pipe(
-			debounceTime(100),
-			takeUntil(instanceDestroyed(this)),
-		).subscribe(() => {
-			// this.breachedAccountsService.setError(false);
-		});
-
 		this.handleStartTyping();
 	}
 
@@ -129,5 +120,17 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 
 	private setScanBreachedAccounts() {
 		this.emailScannerService.scanNotifierEmit();
+	}
+
+	private listenError() {
+		return merge(
+			this.emailForm.valueChanges.pipe(
+				debounceTime(100),
+				mapTo(false),
+			),
+			this.breachedAccountsService.onGetBreachedAccounts$.pipe(
+				map((breachedAccounts) => breachedAccounts.error !== null)
+			)
+		).pipe(distinctUntilChanged());
 	}
 }
