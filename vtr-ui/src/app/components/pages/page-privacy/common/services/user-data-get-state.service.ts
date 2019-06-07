@@ -21,7 +21,7 @@ export class UserDataGetStateService {
 	websiteTrackersResult: FeaturesStatuses = FeaturesStatuses.undefined;
 	nonPrivatePasswordResult: FeaturesStatuses = FeaturesStatuses.undefined;
 	isFigleafReadyForCommunication = false;
-	userDataStatus = new ReplaySubject<UserStatuses>();
+	private userDataStatus = new ReplaySubject<UserStatuses>();
 	userDataStatus$ = this.userDataStatus.asObservable();
 	isTrackersBlocked = false;
 
@@ -36,7 +36,9 @@ export class UserDataGetStateService {
 		// TODO add combineLatest instead of 3 subscribers
 
 		this.breachedAccountsService.onGetBreachedAccounts$.subscribe((breachesState) => {
-			let status = breachesState.breaches.length ? FeaturesStatuses.exist : FeaturesStatuses.none;
+			let status = breachesState.breaches !== null && breachesState.breaches.length ?
+				FeaturesStatuses.exist :
+				FeaturesStatuses.none;
 			if (breachesState.error) {
 				status = FeaturesStatuses.error;
 			}

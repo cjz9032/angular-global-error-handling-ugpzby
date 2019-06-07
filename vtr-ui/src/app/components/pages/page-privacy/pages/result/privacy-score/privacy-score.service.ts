@@ -102,6 +102,7 @@ export class PrivacyScoreService {
 
 	private getBreachesScore() {
 		return this.breachedAccountsService.onGetBreachedAccounts$.pipe(
+			filter((breachedAccounts) => breachedAccounts.error === null),
 			map((figleafBreaches) => {
 				const fixedBreachesAmount = figleafBreaches.breaches.filter(breach => !!breach.isFixed).length;
 				return {
