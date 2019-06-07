@@ -11,9 +11,11 @@ import { typeData } from '../../feature/tracking-map/services/tracking-map.inter
 export class CountNumberOfIssuesService {
 	breachedAccountsCount = this.breachedAccountsService.onGetBreachedAccounts$.pipe(
 		filter((breachedAccounts) => breachedAccounts.error === null),
-		map((breachesState) =>
-			breachesState.breaches.filter((breach) => breach.domain !== 'n/a')),
-		map((breaches) => breaches.length > 0 ? breaches.length + 1 : breaches.length),
+		map((breachesState) => {
+			const mainBreaches = breachesState.breaches.filter((breach) => breach.domain !== 'n/a');
+			const otherBreaches = breachesState.breaches.filter((breach) => breach.domain === 'n/a');
+			return otherBreaches.length > 0 ? mainBreaches.length + 1 : mainBreaches.length;
+		}),
 		startWith(0)
 	);
 	nonPrivatePasswordCount = this.browserAccountsService.installedBrowsersData.pipe(

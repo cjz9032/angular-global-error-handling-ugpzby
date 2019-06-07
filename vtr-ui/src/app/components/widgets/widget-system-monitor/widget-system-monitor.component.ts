@@ -18,6 +18,11 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	public capacity: number;
 	public usedDisk: number;
 	public cpuModuleName: string;
+	public cpuover: string;
+	public gpuModuleName: string;
+	public gpuOver: string;
+	public memoryModuleName: string;
+	public ramOver: string;
 	public showAllHDs = false;
 
 
@@ -29,31 +34,9 @@ export class WidgetSystemMonitorComponent implements OnInit {
 
 	@Input() ramCurrent = 15.7;
 	@Input() ramMax = 32;
-	@Input() cpuover = 'Intel';
-
-	// @Input() hds = [
-	// 	{
-	// 		title: 'SSD',
-	// 		system: true,
-	// 		current: 1500,
-	// 		max: 2000
-	// 	},
-	// 	{
-	// 		title: 'HDD 1',
-	// 		system: false,
-	// 		current: 775,
-	// 		max: 2000
-	// 	},
-	// 	{
-	// 		title: 'HDD 2',
-	// 		system: false,
-	// 		current: 100,
-	// 		max: 4000
-	// 	}
-	// ];
+	//@Input() cpuover = 'Intel';
 
 	public hds: any;
-
 	constructor(private hwInfoService: HwInfoService) { }
 	public getDynamicInfoService() {
 		this.hwInfoService.getDynamicInformation().then((hwInfo: any) => {
@@ -80,6 +63,10 @@ export class WidgetSystemMonitorComponent implements OnInit {
 				this.ramMax = parseFloat(this.memorySize);
 				this.cpuModuleName = hwInfo.cpuModuleName;
 				this.cpuover = this.cpuModuleName;
+				this.gpuModuleName = hwInfo.gpuModuleName;
+				this.gpuOver = this.gpuModuleName;
+				this.memoryModuleName = hwInfo.memoryModuleName;
+				this.ramOver = this.memoryModuleName;
 			});
 		} catch (error) {
 			console.error(error.message);
