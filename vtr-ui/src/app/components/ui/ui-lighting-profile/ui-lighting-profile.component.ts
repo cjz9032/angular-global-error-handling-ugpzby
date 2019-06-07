@@ -13,6 +13,7 @@ export class UiLightingProfileComponent implements OnInit {
 	@Output() public changeDefaultProfile = new EventEmitter<any>();
 	@Output() public setDefaultProfileFromLighting = new EventEmitter<any>();
 	public isProfileOff: boolean;
+	public isOff: number;
 	constructor() { }
 
 	ngOnInit() {
@@ -31,9 +32,9 @@ export class UiLightingProfileComponent implements OnInit {
 		this.changeDefaultProfile.emit($event);
 	}
 	setDefaultProfile(event) {
-		let val1: number = event.target.value;
-		console.log("inprofile clickevent....................................", val1);
-		if (val1 === 1) {
+		this.isOff = Number(event.target.value);
+		console.log("inprofile clickevent....................................", this.isOff);
+		if (this.isOff === 1) {
 			this.isProfileOff = true;
 		}
 		else {

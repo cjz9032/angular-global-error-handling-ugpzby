@@ -2,7 +2,7 @@
 	<div class="d-flex justify-content-around">
 		<vtr-ui-lighting-profile-toggle (setDefaultProfile)="setDefaultProfile($event)"
 			[currentProfile]="currentProfile"></vtr-ui-lighting-profile-toggle>
-		<vtr-ui-brightness-slider [lightingData]="lightingData"></vtr-ui-brightness-slider>
+		<vtr-ui-brightness-slider *ngIf="!isProfileOff" [lightingData]="lightingData"></vtr-ui-brightness-slider>
 	</div>
 
 
@@ -57,7 +57,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="footer-part d-flex flex-row-reverse">
+	<div *ngIf="!isProfileOff" class="footer-part d-flex flex-row-reverse">
 		<a href="javascript:void(0);"
 			class="link"
 			(click)="setDeafultLightingSettings($event)">Set to default</a>
