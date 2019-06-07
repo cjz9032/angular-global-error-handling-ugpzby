@@ -1,38 +1,45 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'vtr-ui-lighting-profile',
-  templateUrl: './ui-lighting-profile.component.html',
-  styleUrls: ['./ui-lighting-profile.component.scss']
+	selector: 'vtr-ui-lighting-profile',
+	templateUrl: './ui-lighting-profile.component.html',
+	styleUrls: ['./ui-lighting-profile.component.scss']
 })
 export class UiLightingProfileComponent implements OnInit {
+	@Input() currentProfile: any;
+	@Input() effectData: any;
 	@Input() public options: any;
-  constructor() { }
+	@Input() lightingData: any;
+	@Output() public changeDefaultProfile = new EventEmitter<any>();
+	@Output() public setDefaultProfileFromLighting = new EventEmitter<any>();
+	public isProfileOff: boolean;
+	constructor() { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+		this.isProfileOff = false;
+		this.options = this.effectData;
+		this.effectData.drop[0].curSelected = this.lightingData.lightInfo[0].lightEffectType;
+		this.effectData.drop[1].curSelected = this.lightingData.lightInfo[1].lightEffectType;
+	}
+	public optionChanged($event, item) { };
 
-
-  
-public effectopt = [
-  {      
-      name: 'gaming.lightingProfile.effect.option1',
-      selectedOption: false,
-      defaultOption: false,
-      value: 1,
-  },
-  {     
-      name: 'gaming.lightingProfile.effect.option2',
-      selectedOption: false,
-      defaultOption: true,
-      value: 2,
-  },
-  {      
-      name: 'gaming.lightingProfile.effect.option3',
-      selectedOption: false,
-      defaultOption: false,
-      value: 3,
-  }
-];
-
+	setDeafultLightingSettings($event) {
+		this.options = this.effectData;
+		this.options.drop[0].curSelected = this.lightingData.lightInfo[0].lightEffectType;
+		this.options.drop[1].curSelected = this.lightingData.lightInfo[1].lightEffectType;
+		this.currentProfile = 2; //to do
+		this.changeDefaultProfile.emit($event);
+	}
+	setDefaultProfile(event) {
+		let val1: number = event.target.value;
+		console.log("inprofile clickevent....................................", val1);
+		if (val1 === 1) {
+			this.isProfileOff = true;
+		}
+		else {
+			this.isProfileOff = false;
+		}
+		this.setDefaultProfileFromLighting.emit(event);
+	}
 }
+

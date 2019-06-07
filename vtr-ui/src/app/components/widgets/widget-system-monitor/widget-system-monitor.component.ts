@@ -36,7 +36,7 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	@Input() ramMax = 32;
 	//@Input() cpuover = 'Intel';
 
-	public hds: any;
+	public hds: any = [];
 	constructor(private hwInfoService: HwInfoService) { }
 	public getDynamicInfoService() {
 		this.hwInfoService.getDynamicInformation().then((hwInfo: any) => {
