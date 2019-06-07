@@ -19,7 +19,7 @@
                     <h4 class="breached-account__title">{{transformDomain(account.domain)}}</h4>
                     <p class="breached-account__date"
 					   *ngIf="openId !== i && account.domain !== 'n/a'"
-                       title="{{account.date}}">Breached on {{account.date}}</p>
+                       title="{{account.date | date:'MMM d, y'}}">Breached on {{account.date}}</p>
                 </div>
             </div>
 
