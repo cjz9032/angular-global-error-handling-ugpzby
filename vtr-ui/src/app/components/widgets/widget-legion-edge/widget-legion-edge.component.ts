@@ -347,6 +347,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			else {
 				//set default value from model property
 				this.legionUpdate[5].isChecked = this.TouchpadLockStatusObj.touchpadLockStatus;
+				this.SetTouchpadLockCacheStatus(this.TouchpadLockStatusObj.touchpadLockStatus);
 			}
 		}
 		//value from js bridge
@@ -356,10 +357,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				this.TouchpadLockStatusObj.touchpadLockStatus = touchpadLockStatus;
 				this.SetTouchpadLockCacheStatus(touchpadLockStatus);
 				this.legionUpdate[5].isChecked = touchpadLockStatus;
-			}
-			else {
-				//set default value from model property
-				this.legionUpdate[5].isChecked = this.TouchpadLockStatusObj.touchpadLockStatus;
 			}
 		});
 	}
