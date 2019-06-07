@@ -33,7 +33,6 @@ interface GetBreachedAccountsState {
 export class BreachedAccountsService {
 	onGetBreachedAccounts$ = new ReplaySubject<GetBreachedAccountsState>(1);
 	onGetBreachedAccountsCompleted$ = new BehaviorSubject(false);
-	onGetBreachedAccountsFailed$ = new BehaviorSubject(false);
 
 	taskStartedTime = 0;
 	scanBreachesAction$ = new Subject<{ TaskDuration: number }>();
@@ -55,7 +54,6 @@ export class BreachedAccountsService {
 			switchMapTo(this.communicationWithFigleafService.isFigleafReadyForCommunication$.pipe(take(1))),
 			tap(() => {
 				this.onGetBreachedAccountsCompleted$.next(false);
-				this.setError(false);
 			}),
 			switchMap((isFigleafInstalled) => {
 				this.taskStartedTime = Date.now();
@@ -75,10 +73,6 @@ export class BreachedAccountsService {
 		});
 	}
 
-	setError(state: boolean) {
-		this.onGetBreachedAccountsFailed$.next(state);
-	}
-
 	private sendTaskAcrion() {
 		const taskDuration = (Date.now() - this.taskStartedTime) / 1000;
 		this.scanBreachesAction$.next({TaskDuration: taskDuration});
@@ -96,10 +90,10 @@ export class BreachedAccountsService {
 	}
 
 	private handleError(error: any) {
-		console.log('onGetBreachedAccounts', error);
+		console.error('onGetBreachedAccounts', error);
 		this.onGetBreachedAccountsCompleted$.next(true);
 		if (error !== ErrorNames.noAccessToken) {
-			this.setError(true);
+			this.onGetBreachedAccounts$.next({breaches: null, error: error});
 		}
 		this.sendTaskAcrion();
 		return EMPTY;

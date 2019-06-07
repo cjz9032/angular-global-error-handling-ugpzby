@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { debounceTime, filter, takeUntil } from 'rxjs/operators';
+import { debounceTime, filter, map, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { EmailScannerService } from '../services/email-scanner.service';
 import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
@@ -35,7 +35,9 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 		email: ['', [Validators.required, Validators.pattern(EMAIL_REGEXP)]],
 	});
 	emailWasSubmitted = false;
-	serverError$ = this.breachedAccountsService.onGetBreachedAccountsFailed$;
+	serverError$ = this.breachedAccountsService.onGetBreachedAccounts$.pipe(
+		map((breachedAccounts) => breachedAccounts.error !== null)
+	);
 	isLoading$ = this.emailScannerService.loadingStatusChanged$;
 	lenovoId: string;
 	islenovoIdOpen = false;
@@ -55,7 +57,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 			debounceTime(100),
 			takeUntil(instanceDestroyed(this)),
 		).subscribe(() => {
-			this.breachedAccountsService.setError(false);
+			// this.breachedAccountsService.setError(false);
 		});
 
 		this.handleStartTyping();

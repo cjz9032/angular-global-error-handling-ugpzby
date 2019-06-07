@@ -10,6 +10,7 @@ import { typeData } from '../../feature/tracking-map/services/tracking-map.inter
 })
 export class CountNumberOfIssuesService {
 	breachedAccountsCount = this.breachedAccountsService.onGetBreachedAccounts$.pipe(
+		filter((breachedAccounts) => breachedAccounts.error === null),
 		map((breachesState) =>
 			breachesState.breaches.filter((breach) => breach.domain !== 'n/a')),
 		map((breaches) => breaches.length > 0 ? breaches.length + 1 : breaches.length),
