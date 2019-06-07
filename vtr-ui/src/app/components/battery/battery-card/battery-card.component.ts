@@ -46,7 +46,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.shellServices.registerEvent(EventTypes.pwrPowerSupplyStatusEvent, this.onPowerSupplyStatusEvent.bind(this));
 		this.shellServices.registerEvent(EventTypes.pwrRemainingPercentageEvent, this.onRemainingPercentageEvent.bind(this));
 		this.shellServices.registerEvent(EventTypes.pwrRemainingTimeEvent, this.onRemainingTimeEvent.bind(this));
-		this.getBatteryCondition();
 	}
 
 	onPowerSupplyStatusEvent(info: any) {
@@ -98,6 +97,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryInfo = response;
 				this.batteryInfo = response.batteryInformation;
 				this.batteryGauge = response.batteryIndicatorInfo;
+				this.getBatteryCondition();
 				this.updateBatteryDetails();
 			}).catch(error => {
 				console.error('getBatteryDetails error', error);
@@ -114,8 +114,8 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo, { detail: this.batteryInfo, gauge: this.batteryGauge });
 		if (this.cd !== null && this.cd !== undefined &&
 			!(this.cd as ViewRef_).destroyed) {
-			this.cd.detectChanges();
-		}
+				this.cd.detectChanges();
+			}
 	}
 
 	public showDetailModal(content: any): void {
@@ -137,8 +137,24 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	public getBatteryCondition() {
 		// server api call to fetch battery conditions
-		this.batteryCondition = new BatteryConditionModel(1, 2);
-		console.log('Battery Condition', this.batteryCondition);
+		let batteryHealth = -1;
+		this.batteryInfo.forEach((battery) => {
+			if (battery.batteryHealth > batteryHealth) {
+				batteryHealth = battery.batteryHealth;
+			}
+		});
+		switch (batteryHealth) {
+			case 3:
+				batteryHealth = 1;
+				break;
+			case 4:
+				batteryHealth = 2;
+				break;
+			case 5:
+				batteryHealth = 2;
+				break;
+		}
+		this.batteryCondition = new BatteryConditionModel(batteryHealth, 2);
 		this.batteryConditionTranslation = this.batteryCondition.getBatteryCondition(this.batteryConditionsEnum[this.batteryCondition.condition]);
 	}
 
