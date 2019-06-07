@@ -25,6 +25,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public hybrimodeStatus = false;
 	public HybrimodeStatusObj = new HybridModeStatus();
 	public gamingCapabilities: any;
+	public touchpadLockStatus: any;
 	public TouchpadLockStatusObj = new TouchpadLockStatus();
 	public legionUpdate = [
 		{
@@ -338,16 +339,28 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 	public renderTouchpadLockStatus() {
 		//value from cache
-		if (this.commonService) {
-			this.legionUpdate[5].isChecked = this.GetTouchpadLockCacheStatus();
-			console.log('Touchpad ITPEOPLE common ' +this.GetTouchpadLockCacheStatus());
+		if (this.commonService !== undefined) {
+			this.touchpadLockStatus = this.GetTouchpadLockCacheStatus();
+			if (this.touchpadLockStatus !== undefined) {
+				this.legionUpdate[5].isChecked = this.touchpadLockStatus;
+			}
+			else {
+				//set default value from model property
+				this.legionUpdate[5].isChecked = this.TouchpadLockStatusObj.touchpadLockStatus;
+			}
 		}
 		//value from js bridge
 		this.gamingKeyLockService.getKeyLockStatus().then((touchpadLockStatus) => {
-			console.log('touchpad Lock status from js bridge ->', touchpadLockStatus);
-			this.TouchpadLockStatusObj.touchpadLockStatus = touchpadLockStatus;
-			this.SetTouchpadLockCacheStatus(touchpadLockStatus);
-			this.legionUpdate[5].isChecked = touchpadLockStatus;
+			//console.log('touchpad Lock status from js bridge ->', touchpadLockStatus);
+			if (touchpadLockStatus !== undefined) {
+				this.TouchpadLockStatusObj.touchpadLockStatus = touchpadLockStatus;
+				this.SetTouchpadLockCacheStatus(touchpadLockStatus);
+				this.legionUpdate[5].isChecked = touchpadLockStatus;
+			}
+			else {
+				//set default value from model property
+				this.legionUpdate[5].isChecked = this.TouchpadLockStatusObj.touchpadLockStatus;
+			}
 		});
 	}
 
@@ -435,11 +448,11 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				.setKeyLockStatus($event.switchValue)
 				.then((value: boolean) => {
 					console.log('setKeyLockStatus.then', value);
+					this.SetTouchpadLockCacheStatus(value);
 				})
 				.catch((error) => {
 					console.error('setKeyLockStatus', error);
 				});
-			this.SetTouchpadLockCacheStatus($event.switchValue);
 		}
 	}
 }
