@@ -21,9 +21,44 @@ export class SmartAssistService {
 		}
 	}
 
-	public getHPDCapability(): Promise<boolean> {
+	/**
+	 * Intelligent Security card can be shown on UI
+	 */
+	public getSmartAssistVisibility(): Promise<boolean> {
 		// Is (Intelligent Security) supported
-		return this.intelligentSensing.GetHPDCapability();
+		return this.intelligentSensing.GetHPDGlobalCapability();
+	}
+
+	/**
+	 * User Presence Sensing global toggle can be shown on UI
+	 */
+	public getHPDVisibility(): Promise<boolean> {
+		// HPD global switch status. true means show, false means hide
+		return this.intelligentSensing.GetHPDGlobalSetting();
+	}
+
+	/**
+	 * Set Zero Touch Login toggle button status,
+	 */
+	public setZeroTouchLoginStatus(value: string): Promise<boolean> {
+		// HPD global switch status. true means enable, false means disable
+		return this.intelligentSensing.SetHPDApproachSetting(value);
+	}
+
+	/**
+	 * Set Zero Touch Login toggle button status,
+	 */
+	public setZeroTouchLoginDistance(value: string): Promise<boolean> {
+		// HPD global switch status. true means enable, false means disable
+		return this.intelligentSensing.SetHPDApproachSetting(value);
+	}
+
+	/**
+	 * User Presence Sensing global toggle enable/disable state on UI,
+	 */
+	public getHPDStatus(): Promise<boolean> {
+		// HPD global switch status. true means enable, false means disable
+		return this.intelligentSensing.GetHPDGlobalSetting();
 	}
 
 	public getAutoLockVisibility(): Promise<boolean> {
@@ -85,5 +120,12 @@ export class SmartAssistService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
+	}
+
+	public resetHPDSetting(): Promise<boolean> {
+		if (this.isShellAvailable) {
+			return this.intelligentMedia.HPDSettingReset();
+		}
+		return undefined;
 	}
 }
