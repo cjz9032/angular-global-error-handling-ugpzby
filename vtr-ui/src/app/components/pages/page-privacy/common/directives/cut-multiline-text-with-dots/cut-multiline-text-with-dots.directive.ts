@@ -28,11 +28,11 @@ export class CutMultilineTextWithDotsDirective implements AfterViewInit, OnDestr
 	addCutText() {
 		const textToAdd = this.textToAppend.split(' ');
 		const cutHtmlElement = this.el.nativeElement;
-		const appendedTextTag = document.createElement('span');
+		const appendedTextTag = this.document.createElement('span');
 		cutHtmlElement.append(appendedTextTag);
 		cutHtmlElement.firstElementChild.innerText = '';
 
-		if (this.addShowMoreBtn && !document.getElementById('show-more-btn')) {
+		if (this.addShowMoreBtn && !cutHtmlElement.getElementsByClassName('js-show-more-btn')[0]) {
 			this.appendShowMoreButtonToElement();
 		}
 
@@ -55,7 +55,7 @@ export class CutMultilineTextWithDotsDirective implements AfterViewInit, OnDestr
 			cutHtmlElement.firstElementChild.innerText = cutHtmlElement.firstElementChild.innerText.replace(` ${textToAdd[lastAddedWordIndex]}`, '...');
 			currHeight = cutHtmlElement.offsetHeight;
 		} else {
-			const appendedShowMoreBtn = document.getElementById('show-more-btn');
+			const appendedShowMoreBtn = document.getElementsByClassName('js-show-more-btn')[0];
 			if (appendedShowMoreBtn) {
 				cutHtmlElement.removeChild(appendedShowMoreBtn);
 			}
@@ -71,7 +71,7 @@ export class CutMultilineTextWithDotsDirective implements AfterViewInit, OnDestr
 	}
 
 	private showMoreBtnClick() {
-		const appendedShowMoreBtn = document.getElementById('show-more-btn');
+		const appendedShowMoreBtn = document.getElementsByClassName('js-show-more-btn')[0];
 		const cutHtmlElement = this.el.nativeElement;
 		cutHtmlElement.removeChild(appendedShowMoreBtn);
 		cutHtmlElement.firstElementChild.innerText = this.textToAppend;
@@ -81,13 +81,13 @@ export class CutMultilineTextWithDotsDirective implements AfterViewInit, OnDestr
 		const cutHtmlElement = this.el.nativeElement;
 		const showMoreBtn = document.createElement('BUTTON');
 		showMoreBtn.innerHTML = 'View more';
-		showMoreBtn.setAttribute('id', 'show-more-btn');
+		showMoreBtn.setAttribute('class', 'js-show-more-btn');
 		cutHtmlElement.appendChild(showMoreBtn);
 		showMoreBtn.addEventListener('click', this.showMoreBtnClickHandler);
 	}
 
 	ngOnDestroy() {
-		const appendedShowMoreBtn = document.getElementById('show-more-btn');
+		const appendedShowMoreBtn = document.getElementsByClassName('js-show-more-btn')[0];
 		if (appendedShowMoreBtn) {
 			appendedShowMoreBtn.removeEventListener('click', this.showMoreBtnClickHandler);
 		}
