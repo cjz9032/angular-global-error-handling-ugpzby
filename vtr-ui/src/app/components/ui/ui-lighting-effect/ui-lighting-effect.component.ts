@@ -1,99 +1,70 @@
 import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'vtr-ui-lighting-effect',
-  templateUrl: './ui-lighting-effect.component.html',
-  styleUrls: ['./ui-lighting-effect.component.scss']
+	selector: 'vtr-ui-lighting-effect',
+	templateUrl: './ui-lighting-effect.component.html',
+	styleUrls: ['./ui-lighting-effect.component.scss'],
+	host: {
+		'(document:click)': 'generalClick($event)'
+	},
 })
 export class UiLightingEffectComponent implements OnInit {
-  @Input() public options;
+	@Input() public options;
+	@Input() lightingData: any;
 	@Output() public change = new EventEmitter<any>();
-	//public showOptions = false;
-	//public buttonName: any = 'Show';
+
+	public showOptions = false;
+	public buttonName: any = 'Show';
 	public selected = false;
 	public currentOption: string;
 	public currentDescription: string;
-  public selectedDescription: string;
-  public show:boolean = false;
-  public buttonName:any = 'Show';
+	public selectedDescription: string;
 
 
-  constructor(
+	constructor(
 		private elementRef: ElementRef,
-	) {}
+	) { }
 
-  ngOnInit() {
-    // this.options.forEach(option => {
-		// 	if (option.selectedOption && this.currentOption === undefined) {
-		// 		console.log('optionSelected', option);
-		// 		this.setDefaultOption(option);
-		// 	}
-		//});
+	ngOnInit() {
+		this.currentOption = this.options.dropOptions[this.options.curSelected ].name;
+	}
 
-		// if (this.currentOption === undefined) {
-		// 	this.options.forEach(option => {
-		// 		if (option.defaultOption) {
-		// 			this.setDefaultOption(option);
-		// 		}
-		// 	});
-		// }
-  }
-  toggle() {
-    this.show = !this.show;
+	public toggleOptions(optSelected) {
+		this.showOptions = !this.showOptions;
+		// CHANGE THE NAME OF THE BUTTON.
+		if (this.showOptions) {
+			this.buttonName = 'Hide';
+		} else {
+			this.buttonName = 'Show';
+		}
+	}
 
-    // CHANGE THE NAME OF THE BUTTON.
-    if(this.show)  
-      this.buttonName = "Hide";
-    else
-      this.buttonName = "Show";
-  }
+	public setDefaultOption(option) {
+		this.currentOption = option.name;
+		this.showOptions = false;
+	}
 
-  // public toggleOptions() {
-	// 	this.showOptions = !this.showOptions;
+	public optionSelected(option) {
+		this.currentOption = option.name;
+		this.showOptions = false;
+		this.change.emit(option);
+	}
 
-	// 	// CHANGE THE NAME OF THE BUTTON.
-	// 	if (this.showOptions) {
-	// 		this.buttonName = 'Hide';
-	// 	} else {
-	// 		this.buttonName = 'Show';
-	// 	}
-	// }
+	public changeDescription(option) {
+		this.options.curSelected = option.value;
+	}
 
-	// public setDefaultOption(option){
-	// 	this.currentOption = option.name;
-	// 	this.selectedDescription = option.description;
-	// 	this.currentDescription = this.selectedDescription;
-	// 	this.showOptions = false;
-	// }
+	public resetDescription(option) {
+		this.options.curSelected = option.value;
+	}
 
-	// public optionSelected(option) {
-	// 	this.currentOption = option.name;
-	// 	this.selectedDescription = option.description;
-	// 	this.currentDescription = this.selectedDescription;
-	// 	this.showOptions = false;
-	// 	this.change.emit(option);
-	// }
-
-	// public changeDescription(option) {
-	// 	this.currentDescription = option.description;
-	// }
-
-	// public resetDescription(option) {
-	// 	this.currentDescription = this.selectedDescription;
-	// }
-
-	// public generalClick(event: Event) {
-	// 	if (this.elementRef.nativeElement) {
-	// 		if (!this.elementRef.nativeElement.contains(event.target)) {
-	// 			if (this.showOptions) {
-	// 				this.showOptions = false;
-	// 			}
-	// 		}
-	// 	}
-  // }
-  
- 
-
-
-
+	public generalClick(event: Event) {
+		if (this.elementRef.nativeElement) {
+			if (!this.elementRef.nativeElement.contains(event.target)) {
+				if (this.showOptions) {
+					this.showOptions = false;
+				}
+			}
+		}
+	}
 }
