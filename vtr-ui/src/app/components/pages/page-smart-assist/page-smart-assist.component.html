@@ -62,9 +62,9 @@
 													[minValue]="0"
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
 													[maxValue]="100"
-													(change)="setHumanDistance($event)"
+													(change)="setZeroTouchLoginSensitivity($event)"
 													[enableSlider]="!intelligentSecurity.distanceSensitivityFlag"
-													[value]="intelligentSecurity.humanDistance">
+													[value]="intelligentSecurity.zeroTouchLoginSensitivity">
 												</vtr-ui-range-slider>
 												<div class="pt-3"
 													[class.blur-1]="!intelligentSecurity.zeroTouchLoginFlag">
@@ -131,11 +131,11 @@
 												[class.disabled]="!intelligentSecurity.zeroTouchLoginFlag">
 												<vtr-ui-range-slider
 													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
-													[minValue]="0"
+													[minValue]="1"
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
-													[maxValue]="100"
-													(change)="setHumanDistance($event)"
-													[value]="intelligentSecurity.humanDistance">
+													[maxValue]="3"
+													(change)="setZeroTouchLoginSensitivity($event)"
+													[value]="intelligentSecurity.zeroTouchLoginSensitivity">
 												</vtr-ui-range-slider>
 												<div class="pt-3"
 													[class.blur-1]="!intelligentSecurity.zeroTouchLoginFlag">
@@ -197,8 +197,8 @@
 														name="autoScreenLockTimerFast"
 														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast' | translate"
 														[value]="'1'"
-														[checked]="intelligentSecurity.autoScreenLockTimer === '0'"
-														(change)="onAutoScreenLockStatusToggle($event, '0')"
+														[checked]="intelligentSecurity.autoScreenLockTimer === '1'"
+														(change)="onAutoScreenLockStatusToggle($event, '1')"
 														[disabled]="!intelligentSecurity.zeroTouchLockFlag">
 													</vtr-ui-rounded-rectangle-radio>
 													<vtr-ui-rounded-rectangle-radio [radioId]="'radio2'"
@@ -206,8 +206,8 @@
 														name="autoScreenLockTimerMedium"
 														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium' | translate"
 														[value]="'2'"
-														[checked]="intelligentSecurity.autoScreenLockTimer === '1'"
-														(change)="onAutoScreenLockStatusToggle($event, '1')"
+														[checked]="intelligentSecurity.autoScreenLockTimer === '2'"
+														(change)="onAutoScreenLockStatusToggle($event, '2')"
 														[disabled]="!intelligentSecurity.zeroTouchLockFlag">
 													</vtr-ui-rounded-rectangle-radio>
 													<vtr-ui-rounded-rectangle-radio [radioId]="'radio3'"
@@ -215,8 +215,8 @@
 														name="autoScreenLockTimerSlow"
 														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow' | translate"
 														[value]="'3'"
-														[checked]="intelligentSecurity.autoScreenLockTimer === '2'"
-														(change)="onAutoScreenLockStatusToggle($event, '2')"
+														[checked]="intelligentSecurity.autoScreenLockTimer === '3'"
+														(change)="onAutoScreenLockStatusToggle($event, '3')"
 														[disabled]="!intelligentSecurity.zeroTouchLockFlag">
 													</vtr-ui-rounded-rectangle-radio>
 												</div>
@@ -301,7 +301,9 @@
 											(toggleOnOff)="displayDim($event)"
 											[isSwitchChecked]="keepMyDisplay">
 											<div class="pl-5 ml-5 pt-4">
-												<div class="display-dim-title">{{'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.title' | translate}}</div>
+												<div class="display-dim-title">
+													{{'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.title' | translate}}
+												</div>
 												<vtr-ui-range-slider
 													[minValueLegend]="'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.startTime' | translate"
 													[minValue]="0"

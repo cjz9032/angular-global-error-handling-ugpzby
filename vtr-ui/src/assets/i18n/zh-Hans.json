@@ -41,7 +41,6 @@
 						"button": "Install",
 						"link": "cancel"
 					},
-
 					"autoClose": "自动关闭",
 					"networkBoost": "网络提升",
 					"hybridMode": "混合模式",
@@ -199,27 +198,27 @@
 					"m2": "M2"
 				}
 			},
-			"popupContent":{
-				"clearMacrokey":{
-					"title":"Are you sure to clear this macro key?"
+			"popupContent": {
+				"clearMacrokey": {
+					"title": "Are you sure to clear this macro key?"
 				},
-				"timeoutRecording":{
-					"title":"Time Out For Recording.",
-					"body":"Recording will time out if no input for 20 seconds."
+				"timeoutRecording": {
+					"title": "Time Out For Recording.",
+					"body": "Recording will time out if no input for 20 seconds."
 				},
-				"maximumInput":{
-					"title":"Maximum Input Reached.",
-					"body":"Macro key can only store inputs less than 20."
+				"maximumInput": {
+					"title": "Maximum Input Reached.",
+					"body": "Macro key can only store inputs less than 20."
 				},
-				"inputStopped":{
-					"title":"Time Out For Recording.",
-					"body":"Recording will time out if the input stopped for more than 10 seconds."
+				"inputStopped": {
+					"title": "Time Out For Recording.",
+					"body": "Recording will time out if the input stopped for more than 10 seconds."
 				},
-				"confirmButton":{
-					"btnClear":"Clear",
-					"btnCancel":"Cancel"
+				"confirmButton": {
+					"btnClear": "Clear",
+					"btnCancel": "Cancel"
 				},
-				"btnOk":"OK"
+				"btnOk": "OK"
 			}
 		},
 		"lightingProfile": {
