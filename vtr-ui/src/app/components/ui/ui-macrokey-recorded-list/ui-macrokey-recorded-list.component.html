@@ -4,15 +4,16 @@
 			{{ 'gaming.macroKey.details.recorded.title' | translate }}<span>{{ number.title | translate }}</span>
 		</div>
 	</div>
-	<div class="col-sm-6" *ngIf="!recordingStatus">
+	<div class="col-6" *ngIf="!recordingStatus">
 		<div class="select-wrapper">
 			<vtr-ui-macrokey-collapsible-container
 				[options]="repeatOptions"
+				[enableDescription]="false"
 				(change)="onRepeatChanged($event)">
 			</vtr-ui-macrokey-collapsible-container>
 		</div>
 	</div>
-	<div class="col-sm-6" *ngIf="!recordingStatus">
+	<div class="col-6" *ngIf="!recordingStatus">
 		<div class="select-wrapper">
 			<vtr-ui-macrokey-collapsible-container
 				[options]="intervalOptions"
@@ -24,7 +25,7 @@
 		<div class="record-table"  [ngClass]="{'recording': recordingStatus}">
 			<div class="record-header">
 				<div>{{ 'gaming.macroKey.details.recorded.list.header.col1' | translate }}</div>
-				<div>{{ 'gaming.macroKey.details.recorded.list.header.col2' | translate }}</div>
+				<div class="interval" [ngClass]="{'hide': ignoreInterval}">{{ 'gaming.macroKey.details.recorded.list.header.col2' | translate }}</div>
 			</div>
 			<div class="record-list">
 				<div class="record-item" *ngFor="let record of recordsList">
@@ -37,7 +38,7 @@
 							</svg>
 							{{ record.key | translate }}
 						</div>
-						<div class="interval">
+						<div class="interval" [ngClass]="{'hide': ignoreInterval}">
 							{{ record.interval  | translate}}
 						</div>
 					</div>
@@ -50,7 +51,7 @@
 							</svg>
 							{{ record.key | translate }}
 						</div>
-						<div class="interval">
+						<div class="interval" [ngClass]="{'hide': ignoreInterval}">
 							{{ record.interval | translate }}
 						</div>
 					</div>
@@ -64,7 +65,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-12" *ngIf="!recordingStatus">
+	<div class="col-sm-12 bottom-fix" *ngIf="!recordingStatus">
 		<div class="text-right">
 			<div class="delete-btn" (click)="clearRecords()">
 				<img src="../../../../assets/gaming-icons/bin.svg" class="icon"/>{{ 'gaming.macroKey.details.recorded.clear' | translate }}
@@ -72,3 +73,8 @@
 		</div>
 	</div>
 </div>
+<vtr-ui-macrokey-popup 
+	[modalContent]="modalContent" 
+	[clearRecordPopup]="clearRecordPopup" 
+	[showModal]="showModal">
+</vtr-ui-macrokey-popup>

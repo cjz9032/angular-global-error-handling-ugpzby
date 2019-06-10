@@ -161,6 +161,7 @@ import { PowerSmartSettingsComponent } from './components/widgets/power-smart-se
 import { PageSettingsComponent } from './components/pages/page-settings/page-settings.component';
 import { UiPopoverComponent } from './components/ui/ui-popover/ui-popover.component';
 import { OledPowerSettingsComponent } from './components/display/oled-power-settings/oled-power-settings.component';
+import { UiMacrokeyPopupComponent } from './components/ui/ui-macrokey-popup/ui-macrokey-popup.component';
 import { ModalChsWelcomeContainerComponent } from './components/modal/modal-chs-welcome-container/modal-chs-welcome-container.component';
 
 // SA Components
@@ -196,7 +197,6 @@ import { StatusTextPipe } from './pipe/ui-security-statusbar/status-text.pipe';
 import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
 import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
-import { LoginLenovoIdComponent } from './components/modal/modal-chs-welcome-container/child/login-lenovo-id/login-lenovo-id.component';
 import { UiLightingProfileComponent } from './components/ui/ui-lighting-profile/ui-lighting-profile.component';
 import { UiDropdownComponent } from './components/ui/ui-dropdown/ui-dropdown.component';
 
@@ -209,9 +209,9 @@ import { UiLightingSingleColorComponent } from './components/ui/ui-lighting-sing
 import { UiLightingColorWheelComponent } from './components/ui/ui-lighting-color-wheel/ui-lighting-color-wheel.component';
 import { DisplayColorTempComponent } from './components/display/display-color-temp/display-color-temp.component';
 import { IntelligentMediaComponent } from './components/pages/page-smart-assist/intelligent-media/intelligent-media.component';
-import { SubpageDeviceSettingsSmartAssistComponent } from './components/pages/page-device-settings/children/subpage-device-settings-smart-assist/subpage-device-settings-smart-assist.component';
 import { UiMacrokeyCollapsibleContainerComponent } from './components/ui/ui-macrokey-collapsible-container/ui-macrokey-collapsible-container.component';
 import { CursorTypePipe } from './pipe/ui-security-statusbar/cursor-type.pipe';
+import { UiGamingDriverPopupComponent } from './components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
 
 library.add(fas);
 library.add(fab);
@@ -367,8 +367,8 @@ library.add(fal);
 		UiDropdownComponent,
 		AutoupdateSettingsComponent,
 		UiPopoverComponent,
+		UiMacrokeyPopupComponent,
 		ModalChsWelcomeContainerComponent,
-		LoginLenovoIdComponent,
 		WidgetMacrokeySettingsComponent,
 		UiNumberButtonComponent,
 		UiMacrokeyDetailsComponent,
@@ -382,11 +382,11 @@ library.add(fal);
 		UiLightingEffectComponent,
 		UiLightingSingleColorComponent,
 		UiLightingColorWheelComponent,
-		SubpageDeviceSettingsSmartAssistComponent,
 		WidgetHomeSecurityMyDeviceComponent,
 		WidgetHomeSecurityAllDevicesComponent,
 		UiMacrokeyCollapsibleContainerComponent,
-		CursorTypePipe
+		CursorTypePipe,
+		UiGamingDriverPopupComponent
 	],
 	imports: [
 		BrowserModule,

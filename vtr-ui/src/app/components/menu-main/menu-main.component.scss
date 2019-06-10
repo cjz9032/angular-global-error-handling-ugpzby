@@ -5,6 +5,9 @@
 	top: 0;
 	z-index: 100;
 	width: 100%;
+	@media #{$mediaquery_xl} {
+		position: relative;
+	}
 
 	.navbar {
 		height: $menu_height;
@@ -12,8 +15,8 @@
 		color: $light;
 		padding-right: 16px;
 
-		.active .icomoon::before{
-			color:$main;
+		.active .icomoon::before {
+			color: $main;
 		}
 		.navbar-brand {
 			font-size: 5rem;
@@ -30,13 +33,15 @@
 				max-height: 100%;
 			}
 		}
-		.navbar-brand a { 
+		.navbar-brand a {
 			border: none;
 		}
 
 		.navbar-text {
 			margin-left: 2rem;
-
+			@media #{$mediaquery_xl} {
+				text-align: center;
+			}
 			.app-title {
 				text-transform: uppercase;
 				font-size: 2rem;
@@ -105,7 +110,6 @@
 							line-height: 4.6rem;
 							border-bottom: none;
 							background-color: $main_darkest;
-
 
 							.user-initials {
 								display: inline-block;
@@ -188,9 +192,9 @@
 							padding-right: 3rem;
 
 							&::after {
-							 	border: none;
-							 	content: "";
-							 	position: absolute;
+								border: none;
+								content: "";
+								position: absolute;
 								height: 1.4rem;
 								width: 0.2rem;
 								background-color: white;
@@ -199,9 +203,9 @@
 								top: 4rem;
 							}
 							&::before {
-							 	border: none;
-							 	content: "";
-							 	position: absolute;
+								border: none;
+								content: "";
+								position: absolute;
 								height: 1.4rem;
 								width: 0.2rem;
 								background-color: white;
@@ -209,15 +213,15 @@
 								right: 2rem;
 								top: 4rem;
 							}
-							&.user{
+							&.user {
 								padding-right: 5.2rem;
 								@media #{$mediaquery_9} {
 									padding-right: 4.2rem;
 								}
-								&::after{
+								&::after {
 									right: 3rem;
 								}
-								&::before{
+								&::before {
 									right: 4rem;
 								}
 							}
@@ -226,7 +230,7 @@
 				}
 			}
 			@media #{$mediaquery_xl} {
-				position: fixed;
+				position: absolute;
 				top: 9rem;
 				right: 0;
 				background: $main_darker;
@@ -258,7 +262,7 @@
 						}
 						.dropdown-menu {
 							display: block !important;
-							box-shadow:none;
+							box-shadow: none;
 							margin-top: 0;
 							padding: 0 4rem 0 5.5rem;
 							background: transparent;
@@ -272,6 +276,7 @@
 								line-height: 4rem;
 								text-decoration: none;
 								&.link {
+									background: transparent;
 									&:hover {
 										font-weight: $weight_regular;
 									}
@@ -307,13 +312,12 @@
 			padding-right: 0.3rem;
 			font-size: 2.1rem;
 		}
-		.navbar-icon{
-            display: inline-block;
-			position:relative;
-			top:0.3rem;
+		.navbar-icon {
+			display: inline-block;
+			position: relative;
+			top: 0.3rem;
 		}
 	}
-
 }
 /*
 @media screen and (min-width: 1200px) {

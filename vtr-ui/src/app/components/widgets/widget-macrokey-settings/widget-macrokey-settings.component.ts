@@ -9,9 +9,9 @@ import { GamingCollapsableContainerEvent } from 'src/app/data-models/gaming/gami
 export class WidgetMacrokeySettingsComponent implements OnInit {
 	macroKeyOptions: any = [
 		{
-			title: 'gaming.macroKey.status.alwaysEnabled.title',
-			name: 'gaming.macroKey.status.alwaysEnabled.title',
-			description: 'gaming.macroKey.status.alwaysEnabled.description',
+			title: 'gaming.macroKey.status.on.title',
+			name: 'gaming.macroKey.status.on.title',
+			description: 'gaming.macroKey.status.on.description',
 			selectedOption: false,
 			defaultOption: false,
 			value: 1
@@ -95,7 +95,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit {
 			title: 'gaming.macroKey.numberpad.number.zero',
 			value: '0',
 			isMacrokeyExists: true,
-			isSelected: false
+			isSelected: true
 		}
 	];
 
@@ -104,7 +104,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit {
 			title: 'gaming.macroKey.numberpad.macro.m1',
 			value: 'M1',
 			isMacrokeyExists: false,
-			isSelected: false
+			isSelected: true
 		},
 		{
 			title: 'gaming.macroKey.numberpad.macro.m2',

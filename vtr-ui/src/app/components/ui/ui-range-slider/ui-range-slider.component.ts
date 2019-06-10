@@ -20,6 +20,8 @@ export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 
 	@Input() enableSlider;
 
+	@Input() onHoverSliderIcon: boolean; // on hover eyecare mode
+
 	@Input() value = 0; // initial slider value
 	@Input() minValue = 0; // slider minimum end value
 	@Input() maxValue = 10; // slider maximum end value

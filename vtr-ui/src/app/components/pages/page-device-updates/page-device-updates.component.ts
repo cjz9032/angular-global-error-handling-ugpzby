@@ -105,6 +105,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isChecked: true,
+			isDisabled: false,
 			tooltipText: 'systemUpdates.autoUpdateSettings.critical.tooltip',
 			type: 'auto-updates'
 		},
@@ -118,6 +119,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			isCheckBoxVisible: false,
 			isSwitchVisible: true,
 			isChecked: true,
+			isDisabled: false,
 			tooltipText: 'systemUpdates.autoUpdateSettings.recommended.tooltip',
 			type: 'auto-updates'
 		},
@@ -131,6 +133,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			isCheckBoxVisible: false,
 			isSwitchVisible: false,
 			isChecked: true,
+			isDisabled: false,
 			linkText: 'systemUpdates.autoUpdateSettings.windows.url',
 			linkPath: 'ms-settings:windowsupdate',
 			type: 'auto-updates'
@@ -162,6 +165,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.fetchCMSArticles();
 		this.getSpecificSupportLink();
 		this.translateStrings();
+		this.getCashValue();
 	}
 
 	private translateStrings() {
@@ -238,6 +242,29 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		this.setUpdateTitle();
 	}
 
+	getCashValue() {
+		let cashData = this.commonService.getLocalStorageValue(LocalStorageKey.SystemUpdateCriticalUpdateStatus);
+		if (typeof(cashData) !== 'undefined') {
+			this.autoUpdateOptions[0].isChecked = cashData;
+			this.isScheduleScanEnabled = cashData;
+		}
+		cashData = this.commonService.getLocalStorageValue(LocalStorageKey.SystemUpdateRecommendUpdateStatus);
+		if (typeof(cashData) !== 'undefined') {
+			this.autoUpdateOptions[1].isChecked = cashData;
+			if (!this.autoUpdateOptions[0].isChecked) {
+				this.autoUpdateOptions[1].isDisabled = true;
+			}
+		}
+		cashData = this.commonService.getLocalStorageValue(LocalStorageKey.SystemUpdateLastInstallTime);
+		if (cashData) {
+			this.lastInstallTime = cashData;
+		}
+		cashData = this.commonService.getLocalStorageValue(LocalStorageKey.SystemUpdateNextScheduleScanTime);
+		if (cashData) {
+			this.nextScheduleScanTime = cashData;
+		}
+
+	}
 	fetchCMSArticles() {
 		const queryOptions = {
 			'Page': 'system-updates',
@@ -299,10 +326,13 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					// console.log('getLastUpdateScanDetail.then', value);
 					if (value.lastInstallTime && value.lastInstallTime.length > 0) {
 						this.lastInstallTime = value.lastInstallTime;
+						this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateLastInstallTime, this.lastInstallTime);
 					}
 					// this.lastScanTime = new Date(value.lastScanTime);
 					this.nextScheduleScanTime = value.nextScheduleScanTime;
+					this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateNextScheduleScanTime, this.nextScheduleScanTime);
 					this.isScheduleScanEnabled = value.scheduleScanEnabled;
+					this.getNextUpdatedScanText();
 					// lastInstallTime: "2019-03-01T10:09:53"
 					// lastScanTime: "2019-03-12T18:24:03"
 					// nextScheduleScanTime: "2019-03-15T10:07:42"
@@ -336,11 +366,11 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	public onCheckForUpdates() {
 		if (this.systemUpdateService.isShellAvailable) {
 			this.setUpdateTitle();
-			this.isUserCancelledUpdateCheck = false;
+			this.isUserCancelledUpdateCheck = true;
 			this.isUpdateCheckInProgress = true;
 			this.isUpdatesAvailable = false;
 			this.systemUpdateService.isUpdatesAvailable = false;
-			this.isInstallingAllUpdates = true;
+			this.isInstallingAllUpdates = false;
 			this.systemUpdateService.isInstallingAllUpdates = true;
 			this.resetState();
 			this.systemUpdateService.checkForUpdates();
@@ -396,12 +426,15 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			let { criticalAutoUpdates, recommendedAutoUpdates } = this.systemUpdateService.autoUpdateStatus;
 			if (name === 'critical-updates') {
 				criticalAutoUpdates = checked;
+				const recommendUpdate = this.autoUpdateOptions.find((update) => {
+					return update.name === 'recommended-updates';
+				});
 				if (!checked) {
-					const recommendUpdate = this.autoUpdateOptions.find((update) => {
-						return update.name === 'recommended-updates';
-					});
 					recommendedAutoUpdates = false;
 					recommendUpdate.isChecked = false;
+					recommendUpdate.isDisabled = true;
+				} else {
+					recommendUpdate.isDisabled = false;
 				}
 			} else if (name === 'recommended-updates') {
 				recommendedAutoUpdates = checked;
@@ -652,6 +685,15 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				case UpdateProgress.AutoUpdateStatus:
 					this.autoUpdateOptions[0].isChecked = payload.criticalAutoUpdates;
 					this.autoUpdateOptions[1].isChecked = payload.recommendedAutoUpdates;
+					this.isScheduleScanEnabled = payload.criticalAutoUpdates;
+					this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateCriticalUpdateStatus, payload.criticalAutoUpdates);
+					this.commonService.setLocalStorageValue(LocalStorageKey.SystemUpdateRecommendUpdateStatus, payload.recommendedAutoUpdates);
+					if (!payload.criticalAutoUpdates) {
+						this.autoUpdateOptions[1].isDisabled = true;
+					} else {
+						this.autoUpdateOptions[1].isDisabled = false;
+					}
+					this.getNextUpdatedScanText();
 					break;
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:

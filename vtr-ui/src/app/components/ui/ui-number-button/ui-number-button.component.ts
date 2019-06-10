@@ -8,15 +8,38 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 })
 export class UiNumberButtonComponent implements OnInit {
 	@Input() public numbers;
+	@Input() public isNumberpad;
 	@Input() public recordingStatus: Boolean;
 	@Output() public numberSelected = new EventEmitter<any>();
 	choosenKey: any;
-
+	isShowingPopup: Boolean = false;
+	public showModal: boolean = false;
+	clickCount: number = 0;
+	// Initialize modal content
+	modalContent = {
+		headerTitle: 'gaming.macroKey.popupContent.maximumInput.title',
+		bodyText: 'gaming.macroKey.popupContent.maximumInput.body',
+		btnConfirm: false
+		};
 	constructor() {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		this.numbers.forEach((number) => {
+			if (number.isSelected) {
+				this.choosenKey = number;
+				this.numberSelected.emit(number);
+			}
+		});
+	}
 
 	numberClicked(number) {
+		// Show modal if input is clicked 20 times
+		if (this.clickCount === 20) {
+			this.showModal = !this.showModal;
+		}
+		this.clickCount++;
+		this.isShowingPopup = !this.isShowingPopup;
+
 		if (this.recordingStatus) {
 			alert('Stop recording to change');
 			return;
@@ -32,15 +55,6 @@ export class UiNumberButtonComponent implements OnInit {
 			});
 			this.numberSelected.emit(number);
 			this.choosenKey = number;
-			return;
-		}
-
-		if (this.choosenKey.value === number.value) {
-			this.numbers.forEach((numberObj) => {
-				numberObj.isSelected = false;
-			});
-			this.numberSelected.emit(undefined);
-			this.choosenKey = undefined;
 			return;
 		}
 	}

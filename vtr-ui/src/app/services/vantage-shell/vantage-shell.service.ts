@@ -7,7 +7,8 @@ import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.mod
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
 import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
 import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
-import { TouchpadStatus }  from 'src/app/data-models/gaming/touchpad-status.model';
+import { TouchpadLockStatus }  from 'src/app/data-models/gaming/touchpad-lock-status.model';
+import { SystemStatus } from  'src/app/data-models/gaming/system-status.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -40,10 +41,8 @@ export class VantageShellService {
 		});
 	}
 
-	public unRegisterEvent(eventType: any) {
-		this.phoenix.off(eventType, (val) => {
-			console.log('unRegister Event: ', eventType);
-		});
+	public unRegisterEvent(eventType: any, handler: any) {
+		this.phoenix.off(eventType, handler);
 	}
 	private getVantageShell(): any {
 		const win: any = window;
@@ -463,6 +462,13 @@ export class VantageShellService {
 	public getGamingHybridMode() {
 		if (this.phoenix && this.phoenix.gaming) {
 			return this.phoenix.gaming.gamingHybridMode;
+		}
+		return undefined;
+	}
+
+	public getGamingHwInfo() {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingHwInfo;
 		}
 		return undefined;
 	}

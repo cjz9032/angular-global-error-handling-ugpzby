@@ -5,17 +5,18 @@ import { GamingCollapsableContainerEvent } from 'src/app/data-models/gaming/gami
 @Component({
 	selector: 'vtr-widget-device-update-settings',
 	templateUrl: './widget-device-update-settings.component.html',
-	styleUrls: ['./widget-device-update-settings.component.scss']
+	styleUrls: [ './widget-device-update-settings.component.scss' ]
 })
 export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implements OnInit {
-
 	@Input() title: string;
 	@Input() description: string;
 	@Input() items: any[];
 	@Input() options;
 	@Output() optionSelected = new EventEmitter<any>();
 	@Output() toggleOnOff = new EventEmitter<any>();
+	@Output() popupClosed = new EventEmitter<any>();
 
+	public showDriversPopup: boolean;
 	constructor(private deviceService: DeviceService) {
 		super();
 	}
@@ -24,8 +25,11 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 		const gamingCollapsableContainerEvent = new GamingCollapsableContainerEvent(option, item);
 		this.optionSelected.emit(gamingCollapsableContainerEvent);
 	}
+	ngAfterViewInit() {
+		this.showDriversPopup = true;
+	}
 
-	ngOnInit() { }
+	ngOnInit() {}
 	showVar: boolean = false;
 
 	public onToggleOnOff($event: any) {
@@ -37,5 +41,8 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 			this.deviceService.launchUri(path);
 		}
 	}
-}
 
+	public onClosed($event: any) {
+		this.popupClosed.emit($event);
+	}
+}

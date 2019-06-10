@@ -43,6 +43,9 @@
 	.card-body {
 		padding: 2rem 4rem;
 	}
+	.blur-1 {
+		opacity: 0.65;
+	}
 	.feature-note {
 		background-color: $shade_lightest;
 		border: 1px solid $shade_lighter;
@@ -118,6 +121,15 @@
 			::ng-deep .vtr-ui-switch-row {
 				border-top: 0.1rem solid $shade_lighter;
 				border-bottom: none;
+			}
+			.display-dim-title {
+				font-size: 1.8rem;
+				color: $main_darker;
+				font-weight: $weight_600;
+				letter-spacing: 0.05rem;
+			}
+			::ng-deep .ng5-slider {
+				margin: 20px 0 15px;
 			}
 	}
 

@@ -18,7 +18,8 @@
 				[items]="legionUpdate"
 				[options]="drop"
 				(toggleOnOff)="toggleOnOffRamOCStatus($event)"
-				(optionSelected)="onOptionSelected($event)">
+				(optionSelected)="onOptionSelected($event)"
+				(popupClosed)="onPopupClosed($event)">
 			</vtr-widget-device-update-settings>
 		</div>
 	</div>

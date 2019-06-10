@@ -38,6 +38,7 @@ export class AvailableUpdatesComponent implements OnInit {
 	@Output() installSelectedUpdate = new EventEmitter<any>();
 
 	public isUpdateSelected = false;
+
 	public isCollapsed = true;
 
 	private _isInstallationCompleted = false;

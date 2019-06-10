@@ -68,7 +68,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 					id: 'windows-hello',
 					label: 'common.menu.security.sub6',
 					path: 'windows-hello',
-                    icon: '',
+					icon: '',
 					metricsEvent: 'itemClick',
 					metricsParent: 'navbar',
 					metricsItem: 'link.windowshello',
@@ -147,11 +147,11 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			if (item.onlyPrivacy) {
 				showItem = false;
 			}
-        }
-        
-        if (item.hasOwnProperty('hide') && item.hide) {
-            showItem = false;
-        }
+		}
+
+		if (item.hasOwnProperty('hide') && item.hide) {
+			showItem = false;
+		}
 
 		return showItem;
 	}
@@ -213,7 +213,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 						id: 'windows-hello',
 						label: 'common.menu.security.sub6',
 						path: 'windows-hello',
-                        icon: '',
+						icon: '',
 						metricsEvent: 'itemClick',
 						metricsParent: 'navbar',
 						metricsItem: 'link.windowshello',
@@ -245,7 +245,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 						securityItemForVpn.subitems.splice(4, 0, {
 							id: 'internet-protection',
 							label: 'common.menu.security.sub5',
-                            path: 'internet-protection',
+							path: 'internet-protection',
 							metricsEvent: 'itemClick',
 							metricsParent: 'navbar',
 							metricsItem: 'link.internetprotection',
@@ -278,16 +278,16 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 					/**
 					* check if HPD related features are supported or not. If yes show Smart Assist tab else hide. Default is hidden
 					*/
-					this.smartAssist.getHPDCapability()
+					this.smartAssist.getSmartAssistVisibility()
 						.then((isAvailable: boolean) => {
-							console.log('getHPDStatus.getHPDCapability()', isAvailable);
-							isAvailable = true;
+							console.log('getSmartAssistVisibility()', isAvailable);
+							// isAvailable = true;
 							this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
 							if (isAvailable) {
 								myDeviceItem.subitems.splice(4, 0, {
 									id: 'smart-assist',
-									label: 'Smart Assist',
-                                    path: 'smart-assist',
+									label: 'common.menu.device.sub4',
+									path: 'smart-assist',
 									metricsEvent: 'itemClick',
 									metricsParent: 'navbar',
 									metricsItem: 'link.smartassist',
@@ -298,7 +298,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 							}
 						})
 						.catch(error => {
-							console.log('error in getHPDStatus.getHPDCapability()', error);
+							console.log('error in getSmartAssistVisibility()', error);
 						});
 				}
 			}

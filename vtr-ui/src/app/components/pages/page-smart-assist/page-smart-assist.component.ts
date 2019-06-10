@@ -32,7 +32,6 @@ export class PageSmartAssistComponent implements OnInit {
 	public intelligentSecurity: IntelligentSecurity;
 	public intelligentSecurityCopy: IntelligentSecurity;
 	public autoScreenLockTimer = false;
-	public distanceSensitivityTitle: string;
 	public zeroTouchLoginStatus = new FeatureStatus(false, true);
 	public zeroTouchLockTitle: string;
 	public autoScreenLockStatus: boolean[];
@@ -89,12 +88,19 @@ export class PageSmartAssistComponent implements OnInit {
 		Promise.all([
 			this.smartAssist.getAutoLockVisibility(),
 			this.smartAssist.getAutoLockStatus(),
-			this.smartAssist.getSelectedLockTimer()
+			this.smartAssist.getSelectedLockTimer(),
+			this.smartAssist.getAutoLockVisibility(),
+			this.smartAssist.getAutoLockStatus(),
+			this.smartAssist.getHPDStatus()
 		]).then((responses: any[]) => {
 
 			this.intelligentSecurity.isZeroTouchLockVisible = responses[0];
 			this.intelligentSecurity.zeroTouchLockFlag = responses[1];
 			this.intelligentSecurity.autoScreenLockTimer = responses[2].toString();
+			this.intelligentSecurity.isZeroTouchLoginVisible = responses[3];
+			this.intelligentSecurity.zeroTouchLoginFlag = responses[4];
+			this.intelligentSecurity.humanPresenceDetectionFlag = responses[5];
+
 			console.log('initSmartAssist.Promise.all()', responses);
 		}).catch(error => {
 			this.logger.error('error in initSmartAssist.Promise.all()', error);
@@ -121,12 +127,13 @@ export class PageSmartAssistComponent implements OnInit {
 		}
 	}
 
-	public onAutoIRCameraLoginStatusToggle($event) {
-		this.intelligentSecurity.zeroTouchLockFlag = !this.intelligentSecurity.zeroTouchLockFlag;
-	}
-
 	public onZeroTouchLoginStatusToggle($event) {
 		this.intelligentSecurity.zeroTouchLoginFlag = !this.intelligentSecurity.zeroTouchLoginFlag;
+		const option = this.intelligentSecurity.zeroTouchLoginFlag ? 'True' : 'False';
+		this.smartAssist.setZeroTouchLoginStatus(option)
+			.then((isSuccess: boolean) => {
+				console.log('onZeroTouchLoginStatusToggle.setZeroTouchLoginStatus', isSuccess, this.intelligentSecurity.zeroTouchLockFlag);
+			});
 	}
 
 	// this is invoked when auto lock feature is toggled
@@ -138,18 +145,18 @@ export class PageSmartAssistComponent implements OnInit {
 				console.log('onChangeZeroTouchLockFlag.setAutoLockStatus', isSuccess, this.intelligentSecurity.zeroTouchLockFlag);
 			});
 	}
+
 	public setIntelligentSecurity() {
 		// service call to fetch Intelligent Security Properties
-		this.intelligentSecurity = new IntelligentSecurity(true, 10, true, true, '0', true, false);
+		this.intelligentSecurity = new IntelligentSecurity(true, 1, true, true, '0', true, false, false);
 		this.autoScreenLockStatus[this.intelligentSecurity.autoScreenLockTimer] = true;
 	}
 
-	public onAutoScreenLockStatusToggle(event: any, value: number) {
-		const option = value.toString();
-		this.intelligentSecurity.autoScreenLockTimer = option;
-		this.smartAssist.setSelectedLockTimer(option)
+	public onAutoScreenLockStatusToggle(event: any, value: string) {
+		this.intelligentSecurity.autoScreenLockTimer = value;
+		this.smartAssist.setSelectedLockTimer(value)
 			.then((isSuccess: boolean) => {
-				console.log('onAutoScreenLockStatusToggle.setSelectedLockTimer', isSuccess, option);
+				console.log('onAutoScreenLockStatusToggle.setSelectedLockTimer', isSuccess, value);
 			});
 	}
 
@@ -157,17 +164,19 @@ export class PageSmartAssistComponent implements OnInit {
 		this.intelligentSecurity.distanceSensitivityFlag = !this.intelligentSecurity.distanceSensitivityFlag;
 	}
 
-	public setHumanDistance(event: ChangeContext) {
+	public setZeroTouchLoginSensitivity(event: ChangeContext) {
 		console.log('Human Distance changed', event);
-		this.intelligentSecurity.humanDistance = event.value;
+		this.intelligentSecurity.zeroTouchLoginSensitivity = event.value;
+		const option = event.value.toString();
+		this.smartAssist.setSelectedLockTimer(option)
+			.then((isSuccess: boolean) => {
+				console.log('onAutoScreenLockStatusToggle.setSelectedLockTimer', isSuccess, option);
+			});
 	}
 
 	public setIsThinkPad(isThinkPad) {
 		// service call to fetch type of device
 		this.isThinkPad = isThinkPad;
-		this.distanceSensitivityTitle = this.isThinkPad ?
-			'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title1' : 'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title2';
-		// this.zeroTouchLockTitle = 'device.smartAssist.intelligentSecurity.zeroTouchLock.title1';
 	}
 
 	public launchPowerAndSleep() {
@@ -214,6 +223,9 @@ export class PageSmartAssistComponent implements OnInit {
 	}
 
 	public onResetDefaultSettings($event) {
-
+		this.smartAssist.resetHPDSetting()
+			.then((isSuccess: boolean) => {
+				console.log('onResetDefaultSettings.resetHPDSetting', isSuccess);
+			});
 	}
 }

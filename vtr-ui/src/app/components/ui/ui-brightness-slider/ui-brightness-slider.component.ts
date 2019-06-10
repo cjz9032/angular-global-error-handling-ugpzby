@@ -15,14 +15,14 @@ import { Options, ChangeContext, ValueToPositionFunction } from 'ng5-slider';
 })
 export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked {
 	// package url https://angular-slider.github.io/ng5-slider/demos
-
+	@Input() lightingData: any;
 	public options: Options;
 
 	@Input() enableSlider;
 
 	@Input() value = 0; // initial slider value
 	@Input() minValue = 0; // slider minimum end value
-	@Input() maxValue = 100; // slider maximum end value
+	@Input() maxValue = 3; // slider maximum end value
 	@Input() step = 1; // ticks or steps to change on each slide
 	@Input() minValueLegend = ''; // label to display at the start of slider
 	@Input() maxValueLegend = ''; // label to display at the end of slider
@@ -52,6 +52,7 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 			ceil: this.maxValue, // max value
 			step: this.step // value to change on each slide, default is 1
 		};
+console.log("lighting data---------------------------------------------------", JSON.stringify(this.lightingData));
 	}
 
 	/**

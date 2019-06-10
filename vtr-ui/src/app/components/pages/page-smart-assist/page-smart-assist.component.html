@@ -46,7 +46,8 @@
 										</vtr-ui-row-switch>
 										<div class="margin-left-5 pl-5 bold-title no-border-bottom pb-4 border-bottom"
 											[class.disabled]="!intelligentSecurity.zeroTouchLoginFlag">
-											<vtr-ui-row-switch [title]="distanceSensitivityTitle | translate"
+											<vtr-ui-row-switch
+												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
 												[caption]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate"
 												[isSwitchVisible]="true"
 												[showChildContent]="true"
@@ -56,18 +57,19 @@
 												[disabled]="!intelligentSecurity.zeroTouchLoginFlag">
 											</vtr-ui-row-switch>
 											<div class="slider-note">
-												<vtr-ui-range-slider
+												<vtr-ui-range-slider *ngIf="intelligentSecurity.distanceSensitivityFlag"
 													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
 													[minValue]="0"
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
 													[maxValue]="100"
-													(change)="setHumanDistance($event)"
+													(change)="setZeroTouchLoginSensitivity($event)"
 													[enableSlider]="!intelligentSecurity.distanceSensitivityFlag"
-													[value]="intelligentSecurity.humanDistance">
+													[value]="intelligentSecurity.zeroTouchLoginSensitivity">
 												</vtr-ui-range-slider>
-												<div class="pt-3">
+												<div class="pt-3"
+													[class.blur-1]="!intelligentSecurity.zeroTouchLoginFlag">
 													<div class="feature-note p-4">
-														<div class="row blur">
+														<div class="row">
 															<!-- <div class="col-auto pl-0">
 																									<fa-icon [icon]="['fal', 'exclamation-circle']">
 																									</fa-icon>
@@ -115,8 +117,8 @@
 											[disabled]="!intelligentSecurity.humanPresenceDetectionFlag">
 										</vtr-ui-row-switch>
 										<div class="margin-left-5 pl-5 bold-title no-border-bottom pb-4 border-bottom">
-											<vtr-ui-row-switch [title]="distanceSensitivityTitle | translate"
-												[caption]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate"
+											<vtr-ui-row-switch
+												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
 												[isSwitchVisible]="false"
 												[showChildContent]="true"
 												[isSwitchChecked]="intelligentSecurity.distanceSensitivityFlag"
@@ -129,14 +131,14 @@
 												[class.disabled]="!intelligentSecurity.zeroTouchLoginFlag">
 												<vtr-ui-range-slider
 													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
-													[minValue]="0"
+													[minValue]="1"
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
-													[maxValue]="100"
-													(change)="setHumanDistance($event)"
-													[value]="intelligentSecurity.humanDistance"
-													[enableSlider]="!intelligentSecurity.zeroTouchLoginFlag">
+													[maxValue]="3"
+													(change)="setZeroTouchLoginSensitivity($event)"
+													[value]="intelligentSecurity.zeroTouchLoginSensitivity">
 												</vtr-ui-range-slider>
-												<div class="pt-3">
+												<div class="pt-3"
+													[class.blur-1]="!intelligentSecurity.zeroTouchLoginFlag">
 													<div class="feature-note p-4">
 														<div class="row blur">
 															<!-- <div class="col-auto pl-0">
@@ -192,26 +194,29 @@
 												<div class="row no-gutters pl-4 ">
 													<vtr-ui-rounded-rectangle-radio [radioId]="'radio1'"
 														[group]="'radio'"
+														name="autoScreenLockTimerFast"
 														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast' | translate"
 														[value]="'1'"
-														[checked]="intelligentSecurity.autoScreenLockTimer === '0'"
-														(change)="onAutoScreenLockStatusToggle($event, '0')"
-														[disabled]="!intelligentSecurity.zeroTouchLockFlag">
-													</vtr-ui-rounded-rectangle-radio>
-													<vtr-ui-rounded-rectangle-radio [radioId]="'radio2'"
-														[group]="'radio'"
-														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium' | translate"
-														[value]="'2'"
 														[checked]="intelligentSecurity.autoScreenLockTimer === '1'"
 														(change)="onAutoScreenLockStatusToggle($event, '1')"
 														[disabled]="!intelligentSecurity.zeroTouchLockFlag">
 													</vtr-ui-rounded-rectangle-radio>
-													<vtr-ui-rounded-rectangle-radio [radioId]="'radio3'"
+													<vtr-ui-rounded-rectangle-radio [radioId]="'radio2'"
 														[group]="'radio'"
-														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow' | translate"
-														[value]="'3'"
+														name="autoScreenLockTimerMedium"
+														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium' | translate"
+														[value]="'2'"
 														[checked]="intelligentSecurity.autoScreenLockTimer === '2'"
 														(change)="onAutoScreenLockStatusToggle($event, '2')"
+														[disabled]="!intelligentSecurity.zeroTouchLockFlag">
+													</vtr-ui-rounded-rectangle-radio>
+													<vtr-ui-rounded-rectangle-radio [radioId]="'radio3'"
+														[group]="'radio'"
+														name="autoScreenLockTimerSlow"
+														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow' | translate"
+														[value]="'3'"
+														[checked]="intelligentSecurity.autoScreenLockTimer === '3'"
+														(change)="onAutoScreenLockStatusToggle($event, '3')"
 														[disabled]="!intelligentSecurity.zeroTouchLockFlag">
 													</vtr-ui-rounded-rectangle-radio>
 												</div>
@@ -236,7 +241,7 @@
 										</p>
 									</div>
 								</div>
-								<div class="row">
+								<div class="row ml-3">
 									<vtr-ui-button (onClick)="onResetDefaultSettings($event)"
 										[upperCaseLabel]="true"
 										[label]="'device.smartAssist.intelligentSecurity.resetToDefault' | translate"
@@ -248,7 +253,7 @@
 					</div>
 
 					<div class="row py-5 smart-assist-card"
-						id="security">
+						id="screen">
 						<div class="col-10 mx-auto">
 							<vtr-container-collapsible
 								[cardTitle]="'device.smartAssist.intelligentScreen.title' | translate"
@@ -280,8 +285,8 @@
 											<div class="feature-note auto-screen-off-note p-4 m-4">
 												<p>{{'device.smartAssist.intelligentScreen.autoScreenOff.note' | translate}}
 												</p>
-												<a
-													href="#"><span>{{'device.smartAssist.intelligentScreen.autoScreenOff.windowsLink' | translate}}</span></a>
+												<a href="javascript:void();"
+													(click)="launchPowerAndSleep();"><span>{{'device.smartAssist.intelligentScreen.autoScreenOff.windowsLink' | translate}}</span></a>
 											</div>
 										</div>
 									</li>
@@ -295,8 +300,10 @@
 											[showChildContent]="true"
 											(toggleOnOff)="displayDim($event)"
 											[isSwitchChecked]="keepMyDisplay">
-											>
-											<div class="pl-5 ml-5">
+											<div class="pl-5 ml-5 pt-4">
+												<div class="display-dim-title">
+													{{'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.title' | translate}}
+												</div>
 												<vtr-ui-range-slider
 													[minValueLegend]="'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.startTime' | translate"
 													[minValue]="0"
@@ -321,7 +328,7 @@
 							<div class="row mb-40">
 								<div class="col col-12"
 									[ngClass]="{'battery-unavailable': isDesktopMachine}">
-									<vtr-battery-card *ngIf="!isDesktopMachine"> </vtr-battery-card>
+									<vtr-battery-card *ngIf="!isDesktopMachine"></vtr-battery-card>
 								</div>
 							</div>
 							<div class="row mb-40">
