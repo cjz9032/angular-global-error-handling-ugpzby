@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { debounceTime, filter, takeUntil } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, mapTo, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
 import { EmailScannerService } from '../services/email-scanner.service';
 import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
-import { BehaviorSubject, from } from 'rxjs';
-import { AccessTokenService } from '../../../common/services/access-token.service';
-import { VantageShellService } from '../../../../../../services/vantage-shell/vantage-shell.service';
+import { from, merge } from 'rxjs';
 import { UserService } from '../../../../../../services/user/user.service';
 import { validateEmail } from '../../../utils/helpers';
+import { EMAIL_REGEXP } from '../../../utils/form-validators';
+import { BreachedAccountsService } from '../../../common/services/breached-accounts.service';
 
 interface UserProfile {
 	addressList: string[];
@@ -29,37 +29,28 @@ interface UserProfile {
 export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 	@Input() size: 'default' | 'small' = 'default';
 	@Output() userEmail = new EventEmitter<string>();
-	emailWasScanned$ = this.accessTokenService.accessTokenIsExist$;
+	emailWasScanned$ = this.emailScannerService.scanNotifier$;
 
 	emailForm = this.formBuilder.group({
-		email: ['', [Validators.required, Validators.email]],
+		email: ['', [Validators.required, Validators.pattern(EMAIL_REGEXP)]],
 	});
 	emailWasSubmitted = false;
-	serverError$ = new BehaviorSubject(false);
+	serverError$ = this.listenError();
 	isLoading$ = this.emailScannerService.loadingStatusChanged$;
 	lenovoId: string;
 	islenovoIdOpen = false;
 	isFormFocused = false;
-	confirmationPopupId = 'confirmation-popup';
 
 	constructor(
 		private formBuilder: FormBuilder,
 		private emailScannerService: EmailScannerService,
 		private commonPopupService: CommonPopupService,
-		private accessTokenService: AccessTokenService,
-		private vantageShellService: VantageShellService,
-		private userService: UserService
+		private userService: UserService,
+		private breachedAccountsService: BreachedAccountsService
 	) {
 	}
 
 	ngOnInit() {
-		this.emailForm.valueChanges.pipe(
-			debounceTime(100),
-			takeUntil(instanceDestroyed(this)),
-		).subscribe(() => {
-			this.serverError$.next(false);
-		});
-
 		this.handleStartTyping();
 	}
 
@@ -107,7 +98,7 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 		const userEmail = this.emailForm.value.email;
 
 		this.emailScannerService.setUserEmail(userEmail);
-		this.size === 'default' ? this.sendConfirmationCode() : this.userEmail.emit(userEmail);
+		this.size === 'default' ? this.setScanBreachedAccounts() : this.userEmail.emit(userEmail);
 	}
 
 	private handleStartTyping() {
@@ -122,18 +113,24 @@ export class CheckBreachesFormComponent implements OnInit, OnDestroy {
 			filter((val) => val.length === 0),
 			takeUntil(instanceDestroyed(this))
 		).subscribe(() => {
+			this.emailForm.reset();
 			this.openLenovoId();
 		});
 	}
 
-	private sendConfirmationCode() {
-		this.emailScannerService.sendConfirmationCode().pipe(
-			takeUntil(instanceDestroyed(this)),
-		).subscribe((response) => {
-			this.commonPopupService.open(this.confirmationPopupId);
-		}, (error) => {
-			this.serverError$.next(true);
-			console.error('auth error:', error);
-		});
+	private setScanBreachedAccounts() {
+		this.emailScannerService.scanNotifierEmit();
+	}
+
+	private listenError() {
+		return merge(
+			this.emailForm.valueChanges.pipe(
+				debounceTime(100),
+				mapTo(false),
+			),
+			this.breachedAccountsService.onGetBreachedAccounts$.pipe(
+				map((breachedAccounts) => breachedAccounts.error !== null)
+			)
+		).pipe(distinctUntilChanged());
 	}
 }

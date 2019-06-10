@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonPopupService } from '../../../common/services/popups/common-popup.service';
-import { DescribeStep } from '../../../common/components/low-privacy/low-privacy.component';
 import { PrivacyScoreService } from './privacy-score.service';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
