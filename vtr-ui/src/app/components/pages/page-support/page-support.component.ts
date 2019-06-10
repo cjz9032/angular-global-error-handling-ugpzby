@@ -19,7 +19,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	title = 'support.common.getSupport';
 	searchWords = '';
 	searchCount = 1;
-	articles: any;
+	articles: any = [];
 	/** content | articles */
 	articlesType = 'loading';
 	articleCategories: any = [];
@@ -116,12 +116,12 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		if (this.translate.currentLang) { this.langText = this.translate.currentLang; }
-		this.getMachineInfo();
-		this.fetchCMSContents(this.langText);
-		this.fetchCMSArticleCategory(this.langText);
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
+		this.getMachineInfo();
+		this.fetchCMSContents(this.langText);
+		this.fetchCMSArticleCategory(this.langText);
 		// console.log('Open support page.');
 		this.location = window.location.href.substring(window.location.href.indexOf('#') + 2).split('/').join('.');
 		this.pageDuration = 0;
@@ -147,13 +147,31 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			const { type, payload } = notification;
 			switch (type) {
 				case NetworkStatus.Online:
-					this.isOnline = notification.payload.isOnline;
-					this.getMachineInfo();
-					this.fetchCMSContents(this.langText);
-					this.fetchCMSArticleCategory(this.langText);
-					break;
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
+
+					const retryInterval = setInterval(() => {
+						if (this.isOnline) {
+							if (this.articleCategories.length > 0 &&
+								this.articles.length > 0 &&
+								this.warranty
+							) {
+								clearInterval(retryInterval);
+								return;
+							}
+							if (this.articleCategories.length === 0) {
+								this.fetchCMSArticleCategory(this.langText);
+							}
+							if (this.articles.length === 0) {
+								this.fetchCMSContents(this.langText);
+							}
+							if (!this.warranty) {
+								this.getMachineInfo();
+							}
+						} else {
+							clearInterval(retryInterval);
+						}
+					}, 2000);
 					break;
 				default:
 					break;
@@ -209,7 +227,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				if (response.length > 0) {
+				if (response && response.length > 0) {
 					this.articles = response.slice(0, 8);
 					// console.log(this.articles);
 					this.articlesType = 'content';
@@ -238,8 +256,8 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 		this.cmsService.fetchCMSArticleCategories(queryOptions).then(
 			(response: any) => {
-				console.log(response);
-				if (response.length > 0) {
+				// console.log(response);
+				if (response && response.length > 0) {
 					this.articleCategories = response.slice(0, 4);
 				} else {
 					this.fetchCMSArticleCategory('en');
@@ -272,7 +290,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 		this.cmsService.fetchCMSArticles(queryOptions, true).then(
 			(response: any) => {
-				if (response.length > 0) {
+				if (response && response.length > 0) {
 					this.articles = response;
 					this.articlesType = 'articles';
 				} else {

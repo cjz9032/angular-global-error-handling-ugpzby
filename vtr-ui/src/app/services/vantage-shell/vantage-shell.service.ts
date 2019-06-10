@@ -38,10 +38,8 @@ export class VantageShellService {
 		});
 	}
 
-	public unRegisterEvent(eventType: any) {
-		this.phoenix.off(eventType, (val) => {
-			console.log('unRegister Event: ', eventType);
-		});
+	public unRegisterEvent(eventType: any, handler: any) {
+		this.phoenix.off(eventType, handler);
 	}
 	private getVantageShell(): any {
 		const win: any = window;

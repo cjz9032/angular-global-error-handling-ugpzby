@@ -7,6 +7,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AudioService } from 'src/app/services/audio/audio.service';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -51,10 +52,31 @@ export class PageDeviceSettingsComponent implements OnInit {
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
-		public audioService: AudioService
+		public audioService: AudioService,
+		private translate: TranslateService,
 	) {
 		this.fetchCMSArticles();
 		this.getMicrophoneSettings();
+		qaService.setTranslationService(this.translate);
+		qaService.qas.forEach(qa => {
+			try {
+				qa.title = this.translate.instant(qa.title);
+				qa.description = this.translate.instant(qa.description);
+				//console.log(qa.description);
+				this.translate.get(qa.keys).subscribe((translation: [string]) => {
+					//console.log(JSON.stringify(translation));
+					qa.keys = translation;
+					//console.log(JSON.stringify(qa.keys));
+				});
+			}
+			catch (e) {
+				console.log("already translated");
+			}
+			finally {
+				console.log("already translated");
+			}
+
+		});
 	}
 
 	ngOnInit() {

@@ -26,13 +26,15 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public easyResumeStatus = new FeatureStatus(false, true);
 	public conservationModeStatus = new FeatureStatus(false, true);
 	public expressChargingStatus = new FeatureStatus(false, true);
+	public conservationModeLock = false;
+	public expressChargingLock = false;
 
-	primaryCheckBox: boolean = false;
-	secondaryCheckBox: boolean = false;
-	selectedStopAtChargeVal: number = 70;
-	selectedStartAtChargeVal: number = 45;
-	selectedStopAtChargeVal1: number = 70;
-	selectedStartAtChargeVal1: number = 45;
+	primaryCheckBox = false;
+	secondaryCheckBox = false;
+	selectedStopAtChargeVal = 70;
+	selectedStartAtChargeVal = 45;
+	selectedStopAtChargeVal1 = 70;
+	selectedStartAtChargeVal1 = 45;
 
 	public responseData: any[] = [];
 	machineType: any;
@@ -147,7 +149,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
 			isSwitchChecked: this.toggleAlwaysOnUsbFlag,
-			checkboxDesc: "Enable USB charging from battery power when the computer is off."
+			checkboxDesc: 'Enable USB charging from battery power when the computer is off.'
 		},
 		{
 			readMoreText: 'Read More',
@@ -196,6 +198,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		// console.log('after expressCharging :' + this.batterySettings.status.expressCharging);
 		if (mode !== undefined) {
 			if (mode === 'expressCharging') {
+				this.conservationModeLock = true;
+				this.expressChargingLock = false;
 				if (this.conservationModeStatus.status === true && event.switchValue) {
 					await this.setConservationModeStatusIdeaNoteBook(!event.switchValue);
 					await this.setRapidChargeModeStatusIdeaNoteBook(event.switchValue);
@@ -208,7 +212,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					await this.setRapidChargeModeStatusIdeaNoteBook(event.switchValue);
 					this.expressChargingStatus.status = !event.switchValue;
 				}
+				this.conservationModeLock = false;
 			} else if (mode === 'conservationMode') {
+				this.conservationModeLock = false;
+				this.expressChargingLock = true;
 				if (this.expressChargingStatus.status === true && event.switchValue) {
 					await this.setRapidChargeModeStatusIdeaNoteBook(!event.switchValue);
 					await this.setConservationModeStatusIdeaNoteBook(event.switchValue);
@@ -221,6 +228,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					await this.setConservationModeStatusIdeaNoteBook(event.switchValue);
 					this.conservationModeStatus.status = !event.switchValue;
 				}
+				this.expressChargingLock = false;
 			}
 		}
 	}
@@ -230,7 +238,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		public modalService: NgbModal) { }
 
 	ngOnInit() {
-		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine)
+		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 
 		if (this.isDesktopMachine) {
@@ -240,7 +248,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.startMonitor();
 		this.getVantageToolBarStatus();
 		if (this.machineType == 1) {
-			this.getBatteryThresholdInformation()
+			this.getBatteryThresholdInformation();
 		}
 	}
 
@@ -646,7 +654,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		try {
 			console.log('setConservationModeStatusIdeaNoteBook.then', status);
 			if (this.powerService.isShellAvailable) {
-				let value = await this.powerService
+				const value = await this.powerService
 					.setConservationModeStatusIdeaNoteBook(status);
 				console.log('setConservationModeStatusIdeaNoteBook.then', value);
 
@@ -669,7 +677,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			console.log('setRapidChargeModeStatusIdeaNoteBook.then', status);
 
 			if (this.powerService.isShellAvailable) {
-				let value = this.powerService
+				const value = await this.powerService
 					.setRapidChargeModeStatusIdeaNoteBook(status);
 				console.log('setRapidChargeModeStatusIdeaNoteBook.then', value);
 				// this.powerService
@@ -760,7 +768,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	hidePowerSmartSetting(hide: boolean) {
-		hide ? this.headerMenuItems.splice(0, 1) : "";
+		hide ? this.headerMenuItems.splice(0, 1) : '';
 	}
 
 	// start battery threshold settings
@@ -771,14 +779,15 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				.getChargeThresholdInfo()
 				.then((res) => {
 					this.responseData = res || [];
-					//console.log('battery threshold info here ------@@@@@@@@@', this.responseData[0])
 					if (this.responseData && this.responseData.length > 0) {
 						this.selectedStartAtChargeVal = this.responseData[0].startValue;
 						this.selectedStopAtChargeVal = this.responseData[0].stopValue;
 						this.primaryCheckBox = this.responseData[0].checkBoxValue;
-						this.secondaryCheckBox = this.responseData[1].checkBoxValue
-						this.selectedStartAtChargeVal1 = this.responseData[1].startValue;
-						this.selectedStopAtChargeVal1 = this.responseData[1].stopValue;
+						if (this.responseData.length === 2) {
+							this.secondaryCheckBox = this.responseData[1].checkBoxValue;
+							this.selectedStartAtChargeVal1 = this.responseData[1].startValue;
+							this.selectedStopAtChargeVal1 = this.responseData[1].stopValue;
+						}
 					}
 				})
 				.catch(error => {
@@ -795,8 +804,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					startValue: batteryDetails.startChargeValue,
 					stopValue: batteryDetails.stopChargeValue,
 					checkBoxValue: batteryDetails.autoChecked
-				}
-				//console.log('set values', value);
+				};
+				// console.log('set values', value);
 				this.powerService
 					.setChargeThresholdValue(batteryInfo)
 					.then((value: any) => {
@@ -824,7 +833,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 							startValue: this.responseData[0].startValue,
 							stopValue: this.responseData[0].stopValue,
 							checkBoxValue: evnt
-						}
+						};
 					} else {
 						// sending secondary battery info
 						batteryInfo = {
@@ -832,9 +841,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 							startValue: this.responseData[1].startValue,
 							stopValue: this.responseData[1].stopValue,
 							checkBoxValue: evnt
-						}
+						};
 					}
-					//console.log('selected battery information here ------>', batteryInfo)
+					// console.log('selected battery information here ------>', batteryInfo)
 					this.powerService
 						.setCtAutoCheckbox(batteryInfo)
 						.then((value: any) => {

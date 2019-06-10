@@ -670,6 +670,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.getNextUpdatedScanText();
 					break;
 				case NetworkStatus.Online:
+					if (this.isCheckingPluginStatus) {
+						this.getScheduleUpdateStatus(false);
+					}
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
 					this.offlineSubtitle = `${this.getLastUpdatedText()}<br>${this.getNextUpdatedScanText()}`;
