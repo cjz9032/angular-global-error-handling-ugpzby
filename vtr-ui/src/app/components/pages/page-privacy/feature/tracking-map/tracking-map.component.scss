@@ -2,6 +2,7 @@
 
 .trackers {
 	@extend %common-block-wrapper;
+	border-radius: 0 0 1rem 1rem;
 
 	&__header-row {
 		display: flex;

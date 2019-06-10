@@ -3,27 +3,49 @@
 .try-product {
 	padding: 3rem 0;
 	display: flex;
-	flex-flow: column;
+	flex-flow: row;
 	justify-content: space-between;
+	align-items: flex-start;
 	background-color: inherit;
 
-	&__description {
-		display: flex;
-		flex-flow: column;
+	&__block {
+		width: 48%;
+		padding: 1.5rem 3rem 1.5rem 2rem;
+		background-color: #FFFFFF;
+		border-radius: 10px;
+		border: 1px solid #EBEBEB;
+		position: relative;
+		overflow: hidden;
+
+		&:before {
+			content: '';
+			position: absolute;
+			height: 100%;
+			width: 3px;
+			left: 0;
+			top: 0;
+		}
+
+		&--risk:before {
+			background-color: #E74C3C;
+		}
+
+		&--fix:before {
+			background-color: #2ECC71;
+		}
 	}
 
-	&__title {
+	&__block-title {
 		@extend %text-common;
-		font-weight: bold;
 		text-transform: uppercase;
-		letter-spacing: 0.89px;
+		font-weight: bold;
 		color: #34495E;
 	}
 
-	&__text {
+	&__block-description {
 		@extend %text-common;
+		color: #34495E;
 	}
-
 	&__group-button {
 		display: flex;
 		flex-flow: row;
@@ -31,20 +53,37 @@
 		margin-top: 2rem;
 	}
 
-	&__button {
-		@extend %theme-btn;
-		margin-right: 2rem;
-	}
-
 	&__button-link {
 		text-align: center;
+		cursor: pointer;
 
 		a {
 			@extend %button-link;
-			@extend %button-link--to-right;
 
 			span {
 				border-bottom: 1px solid;
+				font-weight: 600;
+			}
+		}
+
+		&:not(:last-child) {
+			margin-right: 4rem;
+		}
+
+		&--to-right {
+			a {
+				@extend %button-link--to-right;
+			}
+		}
+
+		&--download {
+			a:before {
+				transform: translateY(-50%);
+				width: 1.4rem;
+				height: 1.2rem;
+				right: 5px;
+				top: 60%;
+				background-image: url("/assets/icons/privacy-tab/icon-download.svg");
 			}
 		}
 	}

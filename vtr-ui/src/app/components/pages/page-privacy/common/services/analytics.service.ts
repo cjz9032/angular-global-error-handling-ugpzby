@@ -96,10 +96,6 @@ export class AnalyticsService {
 				return 'VisibleToOnlineTrackers';
 			case RoutersName.BROWSERACCOUNTS:
 				return 'NonPrivatePassword';
-			case  RoutersName.NEWS:
-				return 'News';
-			case  RoutersName.TIPS:
-				return 'Tips';
 			case  RoutersName.LANDING:
 				return 'LenovoPrivacyLanding';
 			default:

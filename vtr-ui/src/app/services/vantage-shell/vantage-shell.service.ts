@@ -7,8 +7,8 @@ import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.mod
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
 import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
 import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
-import { TouchpadStatus }  from 'src/app/data-models/gaming/touchpad-status.model';
-import { SystemStatus } from  'src/app/data-models/gaming/system-status.model';
+import { TouchpadLockStatus } from 'src/app/data-models/gaming/touchpad-lock-status.model';
+import { SystemStatus } from 'src/app/data-models/gaming/system-status.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -21,15 +21,12 @@ export class VantageShellService {
 		if (this.shell) {
 			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
 			const powerClient = this.shell.PowerClient ? this.shell.PowerClient() : null;
-			this.phoenix = Phoenix.default(
-				new inversify.Container(),
-				{
-					metricsBroker: metricClient,
-					hsaPowerBroker: powerClient,
-					hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
-					hsaForteBroker: this.shell.ForteRpcClient ? this.shell.ForteRpcClient.getInstance() : null
-				}
-			);
+			this.phoenix = Phoenix.default(new inversify.Container(), {
+				metricsBroker: metricClient,
+				hsaPowerBroker: powerClient,
+				hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
+				hsaForteBroker: this.shell.ForteRpcClient ? this.shell.ForteRpcClient.getInstance() : null
+			});
 		}
 	}
 
@@ -443,7 +440,8 @@ export class VantageShellService {
 	public getIntelligentSensing(): any {
 		if (this.phoenix) {
 			return this.phoenix.hwsettings.lis.intelligentSensing;
-		} return undefined;
+		}
+		return undefined;
 	}
 
 	public getMetricPreferencePlugin() {
@@ -473,16 +471,23 @@ export class VantageShellService {
 		return undefined;
 	}
 
-
 	public getIntelligentMedia(): any {
 		if (this.phoenix) {
 			return this.phoenix.hwsettings.lis.intelligentMedia;
-		} return undefined;
+		}
+		return undefined;
 	}
 
 	public getPreferenceSettings() {
 		if (this.phoenix) {
 			return this.phoenix.preferenceSettings;
 		}
+	}
+
+	public getGamingMacroKey(): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey;
+		}
+		return undefined;
 	}
 }

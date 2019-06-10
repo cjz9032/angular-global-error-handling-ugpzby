@@ -36,12 +36,12 @@
                         "button": "ok"
                     },
                     "driverPopup": {
-						"headerText": "Driver Install Required",
-						"text": "You need install driver for RAM Overclock to  make it effective",
-						"button": "Install",
-						"link": "cancle"
-					},
-					"autoClose": "Auto Close",
+                        "headerText": "Driver Install Required",
+                        "text": "You need install driver for RAM Overclock to  make it effective",
+                        "button": "Install",
+                        "link": "cancel"
+                    },
+                    "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
                     "hybridMode": "Hybrid Mode",
                     "touchpadLock": "Touchpad Lock"
@@ -88,12 +88,12 @@
             "title": "Macro Key",
             "introLine": "You can record a series of key input, and use them in gaming or other operations.",
             "status": {
-                "alwaysEnabled": {
-                    "title": "Always Enabled",
+                "on": {
+                    "title": "On",
                     "description": "Always Enabled"
                 },
                 "whileGaming": {
-                    "title": "Enabled Only While Gaming",
+                    "title": "Macro Key enabled only when gaming",
                     "description": "It will be enabled when you game and remain as num key when you don't."
                 },
                 "off": {
@@ -109,6 +109,10 @@
                     "line2": "type in macro key",
                     "line3": "stop recording when finishing typing"
                 },
+                "buttons": {
+                    "start": "START RECORDING",
+                    "stop": "STOP RECORDING"
+                },
                 "recording": {
                     "title": "START TYPING",
                     "description": "20 inputs with in 20 seconds can be recorded."
@@ -119,11 +123,11 @@
                     "clear": "Clear",
                     "intervalStatus": {
                         "keep": {
-                            "title": "Keep Interval",
+                            "title": "Keep Delay",
                             "description": "Intervals of key actions will be kept and applied when using this macro key."
                         },
                         "ignore": {
-                            "title": "Ignore Interval",
+                            "title": "Ignore Delay",
                             "description": "Intervals of key actions will be ignored."
                         }
                     },
@@ -198,28 +202,28 @@
                     "m2": "M2"
                 }
             },
-			"popupContent":{
-				"clearMacrokey":{
-					"title":"Are you sure to clear this macro key?"
-				},
-				"timeoutRecording":{
-					"title":"Time Out For Recording.",
-					"body":"Recording will time out if no input for 20 seconds."
-				},
-				"maximumInput":{
-					"title":"Maximum Input Reached.",
-					"body":"Macro key can only store inputs less than 20."
-				},
-				"inputStopped":{
-					"title":"Time Out For Recording.",
-					"body":"Recording will time out if the input stopped for more than 10 seconds."
-				},
-				"confirmButton":{
-					"btnClear":"Clear",
-					"btnCancel":"Cancel"
-				},
-				"btnOk":"OK"
-			}
+            "popupContent": {
+                "clearMacrokey": {
+                    "title": "Are you sure to clear this macro key?"
+                },
+                "timeoutRecording": {
+                    "title": "Time Out For Recording.",
+                    "body": "Recording will time out if no input for 20 seconds."
+                },
+                "maximumInput": {
+                    "title": "Maximum Input Reached.",
+                    "body": "Macro key can only store inputs less than 20."
+                },
+                "inputStopped": {
+                    "title": "Time Out For Recording.",
+                    "body": "Recording will time out if the input stopped for more than 10 seconds."
+                },
+                "confirmButton": {
+                    "btnClear": "Clear",
+                    "btnCancel": "Cancel"
+                },
+                "btnOk": "OK"
+            }
         },
         "lightingProfile": {
             "title": "Lighting",
@@ -622,10 +626,10 @@
                         "title": "Battery Charge Threshold",
                         "description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
                         "tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
-                        "note":"Note",
-						"readMoreText": "Read more.",
-						"noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
-						"settings": {
+                        "note": "Note",
+                        "readMoreText": "Read more.",
+                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
+                        "settings": {
                             "title1": "Threshold for Built in battery",
                             "title2": "Threshold for Removable battery"
                         },
@@ -636,11 +640,11 @@
                             "enable": "ENABLE",
                             "cancel": "CANCEL"
                         },
-						"options": {
-							"start": "Start charging when below",
-							"checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
-							"stop": "Stop charging at"
-						}
+                        "options": {
+                            "start": "Start charging when below",
+                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
+                            "stop": "Stop charging at"
+                        }
                     },
                     "expressCharging": {
                         "title": "Express Charging",
@@ -822,10 +826,10 @@
                 "title": "Intelligent Security",
                 "readMore": "Read more",
                 "HumanPresenceDetection": {
-					"title": "Human presence detection",
-					"tooltip": "Click here to reset the human presence detection settings."
-				},
-				"humanPresenceDetection": {
+                    "title": "Human presence detection",
+                    "tooltip": "Click here to reset the human presence detection settings."
+                },
+                "humanPresenceDetection": {
                     "title": "User Presence Sensing",
                     "tooltip": "Click here to reset human presence Detection settings."
                 },
@@ -881,7 +885,7 @@
                     "caption": "Keep my display when I am reading or browsing.",
                     "displaySlider": {
                         "title": "Minutes Before display dims when browsing",
-						"startTime": "0 minutes",
+                        "startTime": "0 minutes",
                         "endTime": "60 minutes"
                     }
                 }
@@ -973,10 +977,10 @@
             "diskSpaceNeeded": "Disk space needed: ",
             "ignore": "Ignore",
             "attend": "Attend",
-			"rebootRequiredTag": "Reboot Required",
-			"rebootDelayTag": "Reboot Required, Power Source Required",
-			"shutdownRequiredTag": "Shutdown Required",
-			"dependedPackage": "depended package"
+            "rebootRequiredTag": "Reboot Required",
+            "rebootDelayTag": "Reboot Required, Power Source Required",
+            "shutdownRequiredTag": "Shutdown Required",
+            "dependedPackage": "Depended Package"
         },
         "availableUpdates": {
             "title": "Available updates",
@@ -1005,41 +1009,41 @@
         "allDevices": "All Devices",
         "protected": "Protected",
         "notProtected": "Not Protected",
-		"myDevice": "My Device",
-		"allDevice": "All Devices",
-		"secure": "SECURE",
-		"needAttention": "NEEDS ATTENTION",
-		"manageAccount": "Manage Account",
-		"devices": "Devices",
-		"seeProtectedDevices": "See protected devices",
-		"addDevice": "add device",
-		"trailExpired": "Trail expired",
-		"trailExpiredSubtext": "Upgrate to protect all of your devices",
+        "myDevice": "My Device",
+        "allDevice": "All Devices",
+        "secure": "SECURE",
+        "needAttention": "NEEDS ATTENTION",
+        "manageAccount": "Manage Account",
+        "devices": "Devices",
+        "seeProtectedDevices": "See protected devices",
+        "addDevice": "add device",
+        "trailExpired": "Trail expired",
+        "trailExpiredSubtext": "Upgrate to protect all of your devices",
         "upgrade": "upgrade",
         "tour": {
-			"back": "Back",
-			"skip": "Skip",
-			"start": "START TOUR",
-			"done": "DONE",
-			"welcome1": "Welcome",
-			"welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
-			"welcome2": "Exclusive for Vantage",
-			"welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
-			"create": "Create your account",
-			"lenovoId": "with Lenovo ID",
-			"notifications": "Receive <b>notifications</b> about your home's status",
-			"monitor": "<b>Monitor</b> the safety of your family's devices",
-			"peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
-			"signInLenovoId": "SIGH-UP WITH LENOVO ID",
-			"haveLenovo": "I don't have a <b>Lenovo ID</b>",
-			"createLenovo": "&nbsp;Create a Lenovo ID",
-			"without": "Proceed <b>without an account</b>",
-			"skipAndTrial": "SKIP AND START TRIAL",
-			"alreadyHave": "I already have a <b>Connected Home Security Account</b>",
-			"loginCHS": "Login to existing CHS account",
-			"locationTitle": "Enable location tracking",
-			"locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
-		}
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcome1": "Welcome",
+            "welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
+            "welcome2": "Exclusive for Vantage",
+            "welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
+            "create": "Create your account",
+            "lenovoId": "with Lenovo ID",
+            "notifications": "Receive <b>notifications</b> about your home's status",
+            "monitor": "<b>Monitor</b> the safety of your family's devices",
+            "peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
+            "signInLenovoId": "SIGH-UP WITH LENOVO ID",
+            "haveLenovo": "I don't have a <b>Lenovo ID</b>",
+            "createLenovo": "&nbsp;Create a Lenovo ID",
+            "without": "Proceed <b>without an account</b>",
+            "skipAndTrial": "SKIP AND START TRIAL",
+            "alreadyHave": "I already have a <b>Connected Home Security Account</b>",
+            "loginCHS": "Login to existing CHS account",
+            "locationTitle": "Enable location tracking",
+            "locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+        }
     },
     "support": {
         "common": {

@@ -34,7 +34,7 @@ export class SmartAssistService {
 	 */
 	public getHPDVisibility(): Promise<boolean> {
 		// HPD global switch status. true means show, false means hide
-		return this.intelligentSensing.GetHPDGlobalSetting();
+		return this.intelligentSensing.GetHPDCapability();
 	}
 
 	/**

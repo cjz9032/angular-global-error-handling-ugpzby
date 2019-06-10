@@ -95,6 +95,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	private starterStatus: any;
 	private everSignIn: any;
 	public appFeature = null;
+	private webView = null;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -109,12 +110,16 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		this.isBroswerVisible = false;
 		this.isOnline = this.commonService.isOnline;
 		this.metrics = vantageShellService.getMetrics();
+		const win: any = window;
+		if (win.webviewPopup) {
+			this.webView = win.webviewPopup;
+		}
 		this.starterStatus = this.userService.getStarterIdStatus();
 		this.everSignIn = this.userService.hadEverSignIn();
 		if (!this.metrics) {
 			this.devService.writeLog('ModalLenovoIdComponent constructor: metrics object is undefined');
 			this.metrics = {
-				sendAsync() {}
+				sendAsync() { }
 			};
 		}
 	}
@@ -180,28 +185,126 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 	}
 
 	ngOnInit() {
-
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
 
-		if (!this.isOnline) {
-			this.popupErrorMessage(ssoErroType.SSO_ErrorType_DisConnect);
+		if (!this.webView) {
+			this.devService.writeLog('ModalLenovoIdComponent constructor: webView object is undefined, critical error exit!');
 			this.activeModal.dismiss();
 			return;
 		}
 
-		interface MsWebView {
-			src?: string;
-		}
+		this.webView.create("<div style='display: block;position: fixed;z-index: 1;padding-top: 30px;left: 0;top: 0;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4);'>  <div style='position: relative;background-color: #fefefe;margin: auto;padding: 0;border: 1px solid #888;width: 520px;height: 600px;'>  <style>.close {  color: black;  float: right;  font-size: 28px;  font-weight: bold;}.close:hover,.close:focus {  color: black;  text-decoration: none;  cursor: pointer;} @keyframes spinner {  to {transform: rotate(360deg);}} .spinner:before {  content: '';  box-sizing: border-box;  position: absolute;  top: 50%;  left: 50%;  width: 60px;  height: 60px;  margin-top: -15px;  margin-left: -30px;  border-radius: 50%;  border: 3px solid #ccc;  border-top-color: #07d;  animation: spinner .6s linear infinite;} </style>  <div id='btnClose' style='padding: 2px 16px;background-color: white;color: black;'>  <span class='close'>&times;</span>    </div>    <div style='height: 100%;' id='webviewBorder'> <div id='spinnerCtrl' class='spinner'></div> <div id='webviewPlaceHolder'></div>    </div>  </div></div>");
+		this.webView.show();
+		this.webView.addEventListener("eventtriggered", this.onEvent.bind(this));
+		this.webView.addEventListener("navigationstarting", this.onNavigationStart.bind(this));
+		this.webView.addEventListener("navigationcompleted", this.onNavigationCompleted.bind(this));
 
-		const webView = document.querySelector('#lid-webview') as MsWebView;
 		if (!this.cacheCleared) {
+			// Hide browser while clearing cache
+			this.webView.changeVisibility('webviewPlaceHolder', false);
 			// This is the link for SSO production environment
-			webView.src = 'https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null';
+			this.webView.navigate('https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
 			// This is the link for SSO dev environment
-			//webView.src = 'https://uss-test.lenovomm.cn/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null';
+			//this.webView.navigate('https://uss-test.lenovomm.cn/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
 			this.cacheCleared = true;
+		}
+	}
+
+	onEvent(e) {
+		if (!e.target) {
+			return;
+		}
+		const eventData = JSON.parse(e.target);
+		if (eventData && eventData.event === 'click' && eventData.id === 'btnClose') {
+			this.userService.sendSigninMetrics('failure(rc=UserCancelled)', this.starterStatus, this.everSignIn, this.appFeature);
+			this.activeModal.dismiss();
+		}
+	}
+
+	//
+	// Create facebook new account within webview control will increase memory rapidly and crash app finally,
+	//  this maybe issue with script running in facebook page.
+	//  this is workaround borrow from Vantage 2.x to launch external browser and avoid the crash. 
+	//  The side effect are:
+	//  1, user have to back to the app and log in again after he/she created account in the brwoser; 
+	//  2, if url was changed by facebook the workaround will not work anymore.
+	//
+	onNavigationStart(e) {
+		const self = this;
+		if (!e.target) {
+			return;
+		}
+		const eventData = JSON.parse(e.target);
+		if (eventData.url.indexOf("facebook.com/r.php") != -1 ||
+			eventData.url.indexOf("facebook.com/reg/") != -1) {
+			// Open new window to launch default browser to create facebook account
+			if (window) {
+				window.open(eventData.url);
+			}
+			// BUGBUG: no such function
+			// Prevent navigations to create facebook account
+			//EventArgs.preventDefault();
+			return;
+		} else {
+			self.webView.changeVisibility('webviewPlaceHolder', false);
+		}
+	}
+
+	onNavigationCompleted(e) {
+		const self = this;
+		if (!e.target) {
+			return;
+		}
+		const eventData = JSON.parse(e.target);
+		if (eventData.isSuccess) {
+			if (eventData.url.startsWith('https://passport.lenovo.com/wauthen5/userLogout?')) {
+				return;
+			}
+			//if (eventData.url.startsWith('https://uss-test.lenovomm.cn/wauthen5/userLogout?')) {
+			//	return;
+			//}
+			self.webView.changeVisibility('spinnerCtrl', false);
+			self.webView.changeVisibility('webviewPlaceHolder', true);
+			let htmlContent = eventData.content;
+			try {
+				// Parse html content to get user info
+				const parser = new DOMParser();
+				const doc = parser.parseFromString(htmlContent, 'text/html');
+				const el = doc.documentElement;
+				const title = doc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+				if (title.startsWith('Login success')) {
+					const username = (el.querySelector('#username') as HTMLInputElement).value;
+					const useruad = (el.querySelector('#useruad') as HTMLInputElement).value;
+					const userid = (el.querySelector('#userid') as HTMLInputElement).value;
+					const userguid = (el.querySelector('#userguid') as HTMLInputElement).value;
+					const firstname = (el.querySelector('#firstname') as HTMLInputElement).value;
+					const lastname = (el.querySelector('#lastname') as HTMLInputElement).value;
+					// Default to enable SSO after login success
+					self.userService.enableSSO(useruad, username, userid, userguid).then(function (result) {
+						if (result.success && result.status === 0) {
+							self.userService.setName(firstname, lastname);
+							self.userService.setToken(useruad);
+							self.userService.setAuth(true);
+							// Close logon dialog
+							self.webView.close();
+							self.activeModal.dismiss();
+							self.devService.writeLog('onNavigationCompleted: Login success!');
+							// The metrics need to be sent after enabling sso, some data like user guid would be available after that.
+							self.userService.sendSigninMetrics('success', self.starterStatus, self.everSignIn, self.appFeature);
+						}
+					});
+				}
+			}
+			catch (error) {
+				self.devService.writeLog('onNavigationCompleted: ' + error);
+			}
+		} else {
+			// Handle error
+			self.activeModal.dismiss();
+			self.userService.sendSigninMetrics('failure', self.starterStatus, self.everSignIn, self.appFeature);
+			self.devService.writeLog('onNavigationCompleted: Login failed!');
 		}
 	}
 
@@ -255,15 +358,15 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 				lang = "ja_JP";
 				break;
 			case "ko":
-				lang = "ko_kR";
+				lang = "ko_KR";
 				break;
-			case "no":
+			case "nb":
 				lang = "no_NO";
 				break;
 			case "nl":
 				lang = "nl_NL";
 				break;
-			case "pt_BR":
+			case "pt-br":
 				lang = "pt_BR";
 				break;
 			case "pt":
@@ -288,22 +391,13 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		return lang;
 	}
 
+	isLidSupportedLanguage(lang) {
+		let supportedLangs = ["zh_CN", "zh_HANT", "da_DK", "de_DE", "en_US", "fr_FR", "it_IT", "ja_JP", "ko_KR", "no_NO", "nl_NL", "pt_BR", "pt_PT", "fi_FI", "es_ES", "sv_SE", "ru_RU"];
+		return supportedLangs.includes(lang, 0);
+	}
+
 	ngAfterViewInit() {
-		// For typescript we need to declare the data types for ms-webView and variables exist in the functions and events
-		interface WebViewEvent {
-			isSuccess?: boolean;
-			hasContent?: boolean;
-		}
-
-		interface MsWebView {
-			src?: string;
-			navigate?: Function;
-			addEventListener?: Function;
-			invokeScriptAsync?: Function;
-		}
-
 		const self = this;
-		const webView = document.querySelector('#lid-webview') as MsWebView;
 		// Get logon url and navigate to it
 		self.userService.getLoginUrl().then((result) => {
 			if (result.success && result.status === ssoErroType.SSO_ErrorType_NoErr) {
@@ -317,95 +411,29 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 					self.supportService.getMachineInfo().then((machineInfo) => {
 						let lang = self.userService.getLidLanguageSelectionFromCookies('https://passport.lenovo.com');
 						if (lang != '') {
-							loginUrl += "&lang=" + lang;
+							if (self.isLidSupportedLanguage(lang)) {
+								loginUrl += "&lang=" + lang;
+							} else {
+								loginUrl += "&lang=en_US";
+							}
 						} else {
 							loginUrl += "&lang=" + self.getLidSupportedLanguageFromLocale(machineInfo.locale);
 						}
-						webView.src = loginUrl;
+						self.webView.navigate(loginUrl);
 						self.devService.writeLog('Loading login page ', loginUrl);
 					}, error => {
-						webView.src = loginUrl;
+						self.webView.navigate(loginUrl);
 						self.devService.writeLog('getMachineInfo() failed ' + error + ', loading default login page ' + loginUrl);
 					});
 				}
 			} else {
-				this.popupErrorMessage(result.status);
+				self.webView.close();
+				self.popupErrorMessage(result.status);
 				self.devService.writeLog('getLoginUrl() failed ' + result.status);
 				self.activeModal.dismiss();
 			}
 		});
 
-		webView.addEventListener('MSWebViewNavigationCompleted', (EventArgs) => {
-			const webViewEvent = EventArgs as WebViewEvent;
-			if (webViewEvent.isSuccess) {
-				if (EventArgs.uri.startsWith('https://passport.lenovo.com/wauthen5/userLogout?')) {
-					return;
-				}
-				//if (EventArgs.uri.startsWith('https://uss-test.lenovomm.cn/wauthen5/userLogout?')) {
-				//	return;
-				//}
-				self.isBroswerVisible = true;
-				if (EventArgs.srcElement.documentTitle.startsWith('Login success')) {
-					self.captureWebViewContent(webView).then((htmlContent: any) => {
-						try {
-							// Parse html content to get user info
-							const parser = new DOMParser();
-							const el = parser.parseFromString(htmlContent, 'text/html').documentElement;
-							const username = (el.querySelector('#username') as HTMLInputElement).value;
-							const useruad = (el.querySelector('#useruad') as HTMLInputElement).value;
-							const userid = (el.querySelector('#userid') as HTMLInputElement).value;
-							const userguid = (el.querySelector('#userguid') as HTMLInputElement).value;
-							const firstname = (el.querySelector('#firstname') as HTMLInputElement).value;
-							const lastname = (el.querySelector('#lastname') as HTMLInputElement).value;
-							// Default to enable SSO after login success
-							self.userService.enableSSO(useruad, username, userid, userguid).then(function (result) {
-								if (result.success && result.status === 0) {
-									self.userService.setName(firstname, lastname);
-									self.userService.setToken(useruad);
-									self.userService.setAuth(true);
-									// Close logon dialog
-									self.activeModal.dismiss();
-									self.devService.writeLog('MSWebViewNavigationCompleted: Login success!');
-									//the metrics need to be sent after enabling sso, some data like user guid would be available after that.
-									self.userService.sendSigninMetrics('success', self.starterStatus, self.everSignIn, self.appFeature);
-								}
-							});
-						} catch (error) {
-							self.devService.writeLog('MSWebViewNavigationCompleted: ' + error);
-						}
-					})
-						.catch(console.error);
-				}
-			} else {
-				// Handle error
-				//self.activeModal.dismiss();
-				self.userService.sendSigninMetrics('failure', self.starterStatus, self.everSignIn, self.appFeature);
-				self.devService.writeLog('MSWebViewNavigationCompleted: Login failed!');
-			}
-		});
-
-		//
-		// Create facebook new account within webview control will increase memory rapidly and crash app finally,
-		//  this maybe issue with script running in facebook page.
-		//  this is workaround borrow from Vantage 2.x to launch external browser and avoid the crash. 
-		//  The side effect are:
-		//  1, user have to back to the app and log in again after he/she created account in the brwoser; 
-		//  2, if url was changed by facebook the workaround will not work anymore.
-		//
-		webView.addEventListener('MSWebViewNavigationStarting', (EventArgs) => {
-			if (EventArgs.uri.indexOf("facebook.com/r.php") != -1 ||
-				EventArgs.uri.indexOf("facebook.com/reg/") != -1) {
-				// Open new window to launch default browser to create facebook account
-				if (window) {
-					window.open(EventArgs.uri);
-				}
-				// Prevent navigations to create facebook account
-				EventArgs.preventDefault();
-				return;
-			} else {
-				this.isBroswerVisible = false;
-			}
-		});
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -421,13 +449,7 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		}
 	}
 
-	
-
-	onClose(): void {
-		this.userService.sendSigninMetrics('failure(rc=UserCancelled)', this.starterStatus, this.everSignIn, this.appFeature);
-		this.activeModal.dismiss();
-	}
-
 	ngOnDestroy(): void {
+		this.webView.close();
 	}
 }
