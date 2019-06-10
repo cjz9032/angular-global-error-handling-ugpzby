@@ -38,7 +38,9 @@ export class OneClickScanComponent implements OnDestroy {
 	}
 
 	getStepForScanning() {
-		return this.permitService.getPermits();
+		return this.permitService.getPermits().length === 0 ?
+			this.resetScan() :
+			this.permitService.getPermits();
 	}
 
 	private nextStep() {
