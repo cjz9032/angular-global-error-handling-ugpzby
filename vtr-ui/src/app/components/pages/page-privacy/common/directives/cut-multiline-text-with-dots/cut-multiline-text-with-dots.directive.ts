@@ -52,7 +52,10 @@ export class CutMultilineTextWithDotsDirective implements AfterViewInit, OnDestr
 		});
 		const hasMoreWords = lastAddedWordIndex <= textToAdd.length - 1;
 		if (hasMoreWords && currHeight > allowedHeight) {
-			cutHtmlElement.firstElementChild.innerText = cutHtmlElement.firstElementChild.innerText.replace(` ${textToAdd[lastAddedWordIndex]}`, '...');
+			const str = cutHtmlElement.firstElementChild.innerText;
+			const wordToRemove = ` ${textToAdd[lastAddedWordIndex]}`;
+			const n = str.lastIndexOf(wordToRemove);
+			cutHtmlElement.firstElementChild.innerText = str.slice(0, n) + str.slice(n).replace(wordToRemove, '...');
 			currHeight = cutHtmlElement.offsetHeight;
 		} else {
 			const appendedShowMoreBtn = document.getElementsByClassName('js-show-more-btn')[0];
