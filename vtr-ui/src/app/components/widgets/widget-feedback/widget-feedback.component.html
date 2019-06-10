@@ -10,7 +10,11 @@
 				</div>
 				<div *ngIf="actionName"
 					class="button-box">
-					<vtr-ui-button (onClick)="feedback($event)" metricsEvent="featureClick" metricsParent="Dashboard" metricsItem="btn.givefeedback"
+					<vtr-ui-button (onClick)="feedback($event)"
+								   vtrMetrics
+								   metricsEvent="featureClick"
+								   metricsParent="Dashboard"
+								   metricsItem="btn.givefeedback"
 						[isFullWidth]="true"
 						[label]="actionName"></vtr-ui-button>
 				</div>

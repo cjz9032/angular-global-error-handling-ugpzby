@@ -124,6 +124,36 @@ export class PageLightingcustomizeComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option5.title',
 						name: 'gaming.lightingProfile.effect.option5.title',
 						value: 5
+					},
+					{
+						header: 'gaming.lightingProfile.effect.option6.title',
+						name: 'gaming.lightingProfile.effect.option6.title',
+						value: 6
+					},
+					{
+						header: 'gaming.lightingProfile.effect.option7.title',
+						name: 'gaming.lightingProfile.effect.option7.title',
+						value: 7
+					},
+					{
+						header: 'gaming.lightingProfile.effect.option8.title',
+						name: 'gaming.lightingProfile.effect.option8.title',
+						value: 8
+					},
+					{
+						header: 'gaming.lightingProfile.effect.option9.title',
+						name: 'gaming.lightingProfile.effect.option9.title',
+						value: 9
+					},
+					{
+						header: 'gaming.lightingProfile.effect.option10.title',
+						name: 'gaming.lightingProfile.effect.option10.title',
+						value: 10
+					},
+					{
+						header: 'gaming.lightingProfile.effect.option11.title',
+						name: 'gaming.lightingProfile.effect.option11.title',
+						value: 11
 					}
 				]
 			},
@@ -155,12 +185,42 @@ export class PageLightingcustomizeComponent implements OnInit {
 						header: 'gaming.lightingProfile.effect.option5.title',
 						name: 'gaming.lightingProfile.effect.option5.title',
 						value: 5
+					},
+					{
+						header: 'gaming.lightingProfile.effect.option6.title',
+						name: 'gaming.lightingProfile.effect.option6.title',
+						value: 6
+					},
+					{
+						header: 'gaming.lightingProfile.effect.option7.title',
+						name: 'gaming.lightingProfile.effect.option7.title',
+						value: 7
+					},
+					{
+						header: 'gaming.lightingProfile.effect.option8.title',
+						name: 'gaming.lightingProfile.effect.option8.title',
+						value: 8
+					},
+					{
+						header: 'gaming.lightingProfile.effect.option9.title',
+						name: 'gaming.lightingProfile.effect.option9.title',
+						value: 9
+					},
+					{
+						header: 'gaming.lightingProfile.effect.option10.title',
+						name: 'gaming.lightingProfile.effect.option10.title',
+						value: 10
+					},
+					{
+						header: 'gaming.lightingProfile.effect.option11.title',
+						name: 'gaming.lightingProfile.effect.option11.title',
+						value: 11
 					}
 				]
 			}
 
 		]
-	}
+	};
 
 	public drop = {
 		curSelected: 1,
@@ -190,6 +250,36 @@ export class PageLightingcustomizeComponent implements OnInit {
 				header: 'gaming.lightingProfile.effect.option5.title',
 				name: 'gaming.lightingProfile.effect.option5.title',
 				value: 5
+			},
+			{
+				header: 'gaming.lightingProfile.effect.option6.title',
+				name: 'gaming.lightingProfile.effect.option6.title',
+				value: 6
+			},
+			{
+				header: 'gaming.lightingProfile.effect.option7.title',
+				name: 'gaming.lightingProfile.effect.option7.title',
+				value: 7
+			},
+			{
+				header: 'gaming.lightingProfile.effect.option8.title',
+				name: 'gaming.lightingProfile.effect.option8.title',
+				value: 8
+			},
+			{
+				header: 'gaming.lightingProfile.effect.option9.title',
+				name: 'gaming.lightingProfile.effect.option9.title',
+				value: 9
+			},
+			{
+				header: 'gaming.lightingProfile.effect.option10.title',
+				name: 'gaming.lightingProfile.effect.option10.title',
+				value: 10
+			},
+			{
+				header: 'gaming.lightingProfile.effect.option11.title',
+				name: 'gaming.lightingProfile.effect.option11.title',
+				value: 11
 			}
 		]
 	};
@@ -221,6 +311,36 @@ export class PageLightingcustomizeComponent implements OnInit {
 				header: 'gaming.lightingProfile.effect.option5.title',
 				name: 'gaming.lightingProfile.effect.option5.title',
 				value: 5
+			},
+			{
+				header: 'gaming.lightingProfile.effect.option6.title',
+				name: 'gaming.lightingProfile.effect.option6.title',
+				value: 6
+			},
+			{
+				header: 'gaming.lightingProfile.effect.option7.title',
+				name: 'gaming.lightingProfile.effect.option7.title',
+				value: 7
+			},
+			{
+				header: 'gaming.lightingProfile.effect.option8.title',
+				name: 'gaming.lightingProfile.effect.option8.title',
+				value: 8
+			},
+			{
+				header: 'gaming.lightingProfile.effect.option9.title',
+				name: 'gaming.lightingProfile.effect.option9.title',
+				value: 9
+			},
+			{
+				header: 'gaming.lightingProfile.effect.option10.title',
+				name: 'gaming.lightingProfile.effect.option10.title',
+				value: 10
+			},
+			{
+				header: 'gaming.lightingProfile.effect.option11.title',
+				name: 'gaming.lightingProfile.effect.option11.title',
+				value: 11
 			}
 		]
 	};
@@ -275,20 +395,18 @@ export class PageLightingcustomizeComponent implements OnInit {
 	// 	]
 	// }
 	//	};
-	constructor(
-		private cmsService: CMSService
-	) { }
+	constructor(private cmsService: CMSService) {}
 
 	ngOnInit() {
 		this.setProfile = this.lightingProfileById;
 		const queryOptions = {
-			'Page': 'dashboard',
-			'Lang': 'EN',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			Page: 'dashboard',
+			Lang: 'EN',
+			GEO: 'US',
+			OEM: 'Lenovo',
+			OS: 'Windows',
+			Segment: 'SMB',
+			Brand: 'Lenovo'
 		};
 
 		this.cmsService.fetchCMSContent(queryOptions).then((response: any) => {
@@ -306,14 +424,15 @@ export class PageLightingcustomizeComponent implements OnInit {
 			}
 		});
 	}
-	setDeafultProfile($event) {
-		console.log("fired.....");
+	setDefaultProfile($event) {
+		console.log('fired.....');
 		this.setProfile = this.lightingProfileById2;
 		this.lightingEffectData.drop[0].curSelected = this.setProfile.lightInfo[0].lightEffectType;
 		this.lightingEffectData.drop[1].curSelected = this.setProfile.lightInfo[1].lightEffectType;
 		this.currentProfileData = 3;
+		this.lightingPage.brightness = this.setProfile.brightness;
 	}
 	setDefaultProfileFromLighting($event) {
-		console.log("profile button clicked------------------------");
+		console.log('profile button clicked------------------------');
 	}
 }

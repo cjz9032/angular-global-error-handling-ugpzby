@@ -98,6 +98,7 @@
 				img {
 					width: 2.2rem;
 					height: 2.2rem;
+					vertical-align: bottom;
 				}
 			}
 			> div {
@@ -129,6 +130,11 @@
 					}
 				}
 			}
+		}
+	}
+	.interval {
+		&.hide {
+			display: none !important;
 		}
 	}
 }
