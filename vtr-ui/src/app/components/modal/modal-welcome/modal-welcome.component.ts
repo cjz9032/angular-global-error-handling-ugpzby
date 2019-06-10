@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
-import {VantageShellService} from "../../../services/vantage-shell/vantage-shell.service";
+import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 @Component({
@@ -15,9 +15,9 @@ export class ModalWelcomeComponent implements OnInit {
 	page = 1;
 	privacyPolicy: boolean;
 	checkedArray: string[] = [];
-	startTime:number;
-	endTime:number;
-	metrics:any;
+	startTime: number;
+	endTime: number;
+	metrics: any;
 	data: any = {
 		page2: {
 			title: 'How will you use it?',
@@ -26,17 +26,17 @@ export class ModalWelcomeComponent implements OnInit {
 		}
 	};
 	interests = [
-		"games", "news", "entertainment", "technology",
-		"sports", "arts", "regionalNews", "politics",
-		"music", "science"
+		'games', 'news', 'entertainment', 'technology',
+		'sports', 'arts', 'regionalNews', 'politics',
+		'music', 'science'
 	];
 	// to show small list. on click of More Interest show all.
-	interestCopy = this.interests.slice(0,8);
+	interestCopy = this.interests.slice(0, 8);
 	hideMoreInterestBtn = false;
 	constructor(public activeModal: NgbActiveModal,
 		shellService: VantageShellService,
 		public commonService: CommonService) {
-		this.startTime=new Date().getTime();
+		this.startTime = new Date().getTime();
 		this.metrics = shellService.getMetrics();
 	}
 
@@ -57,7 +57,7 @@ export class ModalWelcomeComponent implements OnInit {
 				SettingName: 'Accept Privacy Policy',
 				SettingValue: this.privacyPolicy ? 'Enabled' : 'Disabled',
 				SettingParent: 'WelcomePage'
-			}
+			};
 
 			this.metrics.sendAsyncEx(settingData, {
 				forced: true
@@ -68,7 +68,7 @@ export class ModalWelcomeComponent implements OnInit {
 				ItemName: 'UsageType',
 				ItemValue: this.data.page2.radioValue,
 				ItemParent: 'WelcomePage'
-			}
+			};
 			this.metrics.sendAsync(usageData);
 
 			const interestData = {
@@ -76,21 +76,21 @@ export class ModalWelcomeComponent implements OnInit {
 				ItemName: 'Interest',
 				ItemValue: this.checkedArray,
 				ItemParent: 'WelcomePage'
-			}
+			};
 			this.metrics.sendAsync(interestData);
 
 			this.endTime = new Date().getTime();
-			let data = {
+			const data = {
 				PageName: 'WelcomePage',
 				PageDuration: (this.endTime - this.startTime)
-			}
+			};
 			console.log('metrics data', JSON.stringify(data));
 			this.metrics.sendAsync(data);
 
 			tutorialData = new WelcomeTutorial(2, this.data.page2.radioValue, this.checkedArray);
 			this.activeModal.close(tutorialData);
 		}
-		this.page = ++page;;
+		this.page = ++page;
 	}
 
 	toggle($event, value) {
@@ -101,7 +101,7 @@ export class ModalWelcomeComponent implements OnInit {
 		}
 		console.log(this.checkedArray);
 		console.log(this.checkedArray.length);
-		if(!this.isInterestProgressChanged) {
+		if (!this.isInterestProgressChanged) {
 			this.progress += 16;
 			this.isInterestProgressChanged = true;
 		} else if (this.checkedArray.length === 0) {
@@ -114,10 +114,10 @@ export class ModalWelcomeComponent implements OnInit {
 		if ($event.target.checked) {
 			console.log(value);
 		}
-		if(this.data.page2.radioValue == null) {
+		if (this.data.page2.radioValue == null) {
 			this.progress += 16;
 		}
-		this.data.page2.radioValue= value
+		this.data.page2.radioValue = value;
 	}
 
 	savePrivacy($event, value) {

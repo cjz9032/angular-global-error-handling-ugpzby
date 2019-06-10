@@ -23,7 +23,7 @@
 	.banner {
 		// border-top-left-radius:1rem;
 		// border-top-right-radius:1rem;
-		background: url('./../../../../assets/images/welcome/header-1.jpg') no-repeat;
+		background: url("./../../../../assets/images/welcome/header-1.jpg") no-repeat;
 		//background-size:100% 16rem;
 		height: 24rem;
 		width: 100%;
@@ -32,7 +32,7 @@
 		.title-alignment {
 			align-self: flex-end;
 			margin-bottom: 3.7rem;
-			line-height: 6.0rem;
+			line-height: 6rem;
 
 			.title1 {
 				color: $light;
@@ -46,7 +46,7 @@
 	}
 
 	.banner-page-2 {
-		background: url('./../../../../assets/images/welcome/header-2.jpg') no-repeat;
+		background: url("./../../../../assets/images/welcome/header-2.jpg") no-repeat;
 		height: 10rem;
 		width: 100%;
 		background-position: center;
@@ -99,7 +99,7 @@
 			overflow: hidden;
 
 			&::after {
-				content: '';
+				content: "";
 				top: 0;
 				bottom: 0;
 				left: 0;
@@ -133,8 +133,8 @@
 		}
 
 		.interests {
-			margin-left: .1rem;
-			margin-right: .1rem;
+			margin-left: 0.1rem;
+			margin-right: 0.1rem;
 
 			div {
 				margin-left: 1rem;
@@ -153,10 +153,10 @@
 
 		.privacy-check {
 			opacity: 1;
-			margin-left: .6rem;
+			margin-left: 0.6rem;
 
 			.linktext {
-				color: #6F7170;
+				color: #6f7170;
 				text-decoration: underline;
 			}
 
@@ -202,7 +202,7 @@
 		}
 
 		div.row:first-child {
-			margin-bottom: 2rem
+			margin-bottom: 2rem;
 		}
 	}
 
@@ -212,7 +212,7 @@
 
 	.vtr-progress-bar {
 		//padding: 4.4rem .7rem 2.2rem .7rem;
-		padding: 1rem .7rem 1.5rem .7rem;
+		padding: 1rem 0.7rem 1.5rem 0.7rem;
 	}
 
 	.screen1 {
@@ -298,8 +298,8 @@
 	// 	vertical-align: middle;
 	// }
 
-	input[type="radio"]:checked+img {
-		border: 2pt solid #21C48A;
+	input[type="radio"]:checked + img {
+		border: 2pt solid $go_dark;
 		//opacity: 0.7 !important;
 	}
 
@@ -311,7 +311,7 @@
 		opacity: 0;
 	}
 
-	.content-page-2 .interests input[type="checkbox"]+label {
+	.content-page-2 .interests input[type="checkbox"] + label {
 		padding: 0.3rem 2rem;
 		border: 0.1rem solid $shade_btn_light;
 		border-radius: 2.5rem;
@@ -330,10 +330,10 @@
 	// 	content: "";
 	// }
 
-	.content-page-2 .interests input[type="checkbox"]:checked+label {
+	.content-page-2 .interests input[type="checkbox"]:checked + label {
 		//box-shadow: 0.2rem solid $go_light;
-		border: 1pt solid #21C48A;
-		background: #F5F7F8;
+		border: 0.1rem solid #21c48a;
+		background: #f5f7f8;
 	}
 
 	.content-page-2 .interests label {
@@ -390,8 +390,8 @@
 	}
 
 	.padding3 {
-		padding-top: 3.0rem;
-		padding-bottom: 3.0rem;
+		padding-top: 3rem;
+		padding-bottom: 3rem;
 	}
 
 	.padding4 {
@@ -405,12 +405,12 @@
 	}
 
 	.padding6 {
-		padding-right: 1.0rem;
+		padding-right: 1rem;
 		padding-bottom: 3.8rem;
 	}
 
 	.padding7 {
-		padding-top: 12.0rem;
+		padding-top: 12rem;
 		// padding-bottom: 3.2rem;
 	}
 
@@ -426,14 +426,14 @@
 
 	#skill li {
 		background: $shade_dark;
-		background-image: -webkit-gradient(linear, left top, left bottom, from(#191C28), to(#2F3447));
-		background-image: -webkit-linear-gradient(to right, #191C28, #2F3447);
-		background-image: -moz-linear-gradient(to right, #191C28, #2F3447);
-		background-image: -ms-linear-gradient(to right, #191C28, #2F3447);
-		background-image: -o-linear-gradient(to right, #191C28, #2F3447);
-		background-image: linear-gradient(to right, #191C28, #2F3447);
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#191c28), to(#2f3447));
+		background-image: -webkit-linear-gradient(to right, #191c28, #2f3447);
+		background-image: -moz-linear-gradient(to right, #191c28, #2f3447);
+		background-image: -ms-linear-gradient(to right, #191c28, #2f3447);
+		background-image: -o-linear-gradient(to right, #191c28, #2f3447);
+		background-image: linear-gradient(to right, #191c28, #2f3447);
 		height: 2rem;
-		padding: 0 .5rem;
+		padding: 0 0.5rem;
 		border-radius: 1rem;
 		// -moz-box-shadow: 0 .1rem 0 #bebbb9 inset, 0 .1rem 0 #fcfcfc;
 		// -webkit-box-shadow: 0 .1rem 0 #bebbb9 inset, 0 .1rem 0 #fcfcfc;
@@ -444,21 +444,20 @@
 		padding: 0;
 	}
 
-
 	.bar1 {
-		height: .6rem;
+		height: 0.6rem;
 		position: absolute;
 		z-index: 1000;
 		top: 50%;
 		transform: translateY(-50%);
 		border-radius: 1rem;
-		width: 0% // -moz-box-shadow: 0 .1rem 0 #fcfcfc inset, 0 .1rem 0 #bebbb9;
-			// -webkit-box-shadow: 0 .1rem 0 #fcfcfc inset, 0 .1rem 0 #bebbb9;
-			// box-shadow: 0 .1rem 0 #fcfcfc inset, 0 .1rem 0 #bebbb9;
+		width: 0%; // -moz-box-shadow: 0 .1rem 0 #fcfcfc inset, 0 .1rem 0 #bebbb9;
+		// -webkit-box-shadow: 0 .1rem 0 #fcfcfc inset, 0 .1rem 0 #bebbb9;
+		// box-shadow: 0 .1rem 0 #fcfcfc inset, 0 .1rem 0 #bebbb9;
 	}
 
 	.bar2 {
-		height: .2rem;
+		height: 0.2rem;
 		width: 98%;
 		position: absolute;
 		background: white;
@@ -469,45 +468,40 @@
 		// -moz-box-shadow: 0 .1rem 0 #fcfcfc inset, 0 .1rem 0 #fcfcfc;
 		// -webkit-box-shadow: 0 .1rem 0 #fcfcfc inset, 0 .1rem 0 #fcfcfc;
 		// box-shadow: 0 .1rem 0 #fcfcfc inset, 0 .1rem 0 #fcfcfc;
-
 	}
 
 	.more-interests {
 		cursor: pointer;
 	}
 
-
-
 	.html-css {
 		width: 2%;
-		background-color: #35E6B9;
-		background-image: -webkit-gradient(linear, left top, left bottom, from(#2ECC71), to(#35E6B9));
-		background-image: -webkit-linear-gradient(to right, #2ECC71, #35E6B9);
-		background-image: -moz-linear-gradient(to right, #2ECC71, #35E6B9);
-		background-image: -ms-linear-gradient(to right, #2ECC71, #35E6B9);
-		background-image: -o-linear-gradient(to right, #2ECC71, #35E6B9);
-		background-image: linear-gradient(to right, #2ECC71, #35E6B9);
+		background-color: #35e6b9;
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#2ecc71), to(#35e6b9));
+		background-image: -webkit-linear-gradient(to right, #2ecc71, #35e6b9);
+		background-image: -moz-linear-gradient(to right, #2ecc71, #35e6b9);
+		background-image: -ms-linear-gradient(to right, #2ecc71, #35e6b9);
+		background-image: -o-linear-gradient(to right, #2ecc71, #35e6b9);
+		background-image: linear-gradient(to right, #2ecc71, #35e6b9);
 	}
 
 	#welcome-body-scroll::-webkit-scrollbar {
-		width: .5rem;
+		width: 0.5rem;
 	}
 
 	#welcome-body-scroll::-webkit-scrollbar-thumb {
 		background-color: $shade;
 	}
 
-	.content-page-2 .interests input[type="checkbox"]+label,
+	.content-page-2 .interests input[type="checkbox"] + label,
 	.content-page-2 .privacy-check .custom-checkbox {
 		cursor: pointer;
 	}
 
-	.content-page-2 div.more-interest:hover,
+	.content-page-2 span.more-interests:hover,
 	.content-page-2 .privacy-check .linktext:hover {
-		color: blue;
+		color: $main_gstart;
 	}
-
-
 
 	@-moz-keyframes html-css {
 		0% {
@@ -528,5 +522,4 @@
 			width: 90%;
 		}
 	}
-
 }
