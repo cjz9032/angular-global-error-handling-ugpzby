@@ -19,6 +19,7 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { PermitTrackersAndPasswordsComponent } from './permit-trackers-and-passwords/permit-trackers-and-passwords.component';
 import { SupportWidgetComponent } from './support-widget/support-widget.component';
 import { SupportPopupComponent } from './support-popup/support-popup.component';
+import { NavTabsComponent } from './nav-tabs/nav-tabs.component';
 
 @NgModule({
 	declarations: [
@@ -36,6 +37,7 @@ import { SupportPopupComponent } from './support-popup/support-popup.component';
 		ProgressBarComponent,
 		SupportWidgetComponent,
 		SupportPopupComponent,
+		NavTabsComponent,
 		PermitTrackersAndPasswordsComponent
 	],
 	exports: [
@@ -51,6 +53,8 @@ import { SupportPopupComponent } from './support-popup/support-popup.component';
 		BigLoaderComponent,
 		StepsViewComponent,
 		ProgressBarComponent,
+		SupportWidgetComponent,
+		NavTabsComponent,
 		PermitTrackersAndPasswordsComponent,
 		SupportWidgetComponent
 	],

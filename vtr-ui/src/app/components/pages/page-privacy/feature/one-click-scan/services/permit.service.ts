@@ -29,7 +29,7 @@ export class PermitService {
 					this.setPermitTrackersAndPassword();
 					break;
 				case this.oneClickScanSteps.VERIFY_EMAIL:
-					this.emailScannerService.setScanBreachedAccounts();
+					this.emailScannerService.scanNotifierEmit();
 					break;
 				default:
 					break;

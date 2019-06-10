@@ -1,12 +1,12 @@
-import { Component, OnDestroy, OnInit, ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { BreachedAccountMode } from '../../feature/check-breached-accounts/breached-account/breached-account.component';
 import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
 import { BreachedAccount, BreachedAccountsService } from '../../common/services/breached-accounts.service';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { AccessTokenService } from '../../common/services/access-token.service';
 import { VantageCommunicationService } from '../../common/services/vantage-communication.service';
+import { EmailScannerService } from '../../feature/check-breached-accounts/services/email-scanner.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -22,7 +22,7 @@ export class ResultComponent implements OnInit, OnDestroy {
 	breached_accounts: BreachedAccount[] = [];
 	breached_accounts_show: BreachedAccount[];
 
-	isWasScanned = this.accessTokenService.accessTokenIsExist$;
+	isWasScanned = this.emailScannerService.scanNotifier$;
 	textForLoader = '';
 
 	onGetBreachedAccountsCompleted$ = this.breachedAccountsService.onGetBreachedAccountsCompleted$;
@@ -32,7 +32,7 @@ export class ResultComponent implements OnInit, OnDestroy {
 		private breachedAccountsService: BreachedAccountsService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
 		private changeDetectorRef: ChangeDetectorRef,
-		private accessTokenService: AccessTokenService,
+		private emailScannerService: EmailScannerService,
 		private vantageCommunicationService: VantageCommunicationService,
 	) {
 	}
