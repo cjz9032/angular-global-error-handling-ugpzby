@@ -3,12 +3,14 @@
 		<div class="col">
 			<vtr-ui-header-subpage [items]="headerMenuItems" [title]="title | translate"
 				[caption]="'device.deviceSettings.displayCamera.description' | translate"
-				[menuTitle]="'device.deviceSettings.displayCamera.jumpTo.title' | translate"></vtr-ui-header-subpage>
+				[menuTitle]="'device.deviceSettings.displayCamera.jumpTo.title' | translate">
+			</vtr-ui-header-subpage>
 		</div>
 	</div>
 
 	<div class="row py-5 smartsettings-card" id="display">
 		<div class="col-10 mx-auto ">
+			<!-- Display -->
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.displayCamera.display.title' | translate"
 				componentName="display" [isCollapsed]="false" [allowCollapse]="true" [theme]="'white'"
 				(toggle)="onCardCollapse($event)">
@@ -74,8 +76,33 @@
 							</div>
 						</vtr-ui-row-switch>
 					</li>
+					
+					<li class="pt-3">
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.displayCamera.display.oledPowerSettings.title' | translate"
+							componentName="Oled Power Settings"
+							[name]="'device.deviceSettings.displayCamera.display.oledPowerSettings.title' | translate"
+							
+							[isSwitchVisible]="false"
+							[leftIcon]="['fal', 'tv']"
+							[rightIcon]="['far', 'question-circle']"
+							[readMoreText]="''"
+							[showChildContent]="true"
+							[isSwitchChecked]="eyeCareModeStatus.status"
+							(toggleOnOff)="onEyeCareModeStatusToggle($event)"
+							[theme]="'white'"
+							[tooltipText]="'device.deviceSettings.displayCamera.display.oledPowerSettings.tooltip' | translate">
+							<div class="row">
+								<div class="col-12">
+									<vtr-oled-power-settings
+									[description]=" 'device.deviceSettings.displayCamera.display.oledPowerSettings.description' | translate">
+									</vtr-oled-power-settings>
+								</div>
+							</div>
+						</vtr-ui-row-switch>
+					</li>
 
-					<!-- <li class="pt-3">
+					<li class="pt-3">
 						<vtr-ui-row-switch
 							[title]="'device.deviceSettings.displayCamera.display.privacyGuard.title' | translate"
 							componentName="Privacy guard"
@@ -115,7 +142,7 @@
 							</div>
 
 						</vtr-ui-row-switch>
-					</li> -->
+					</li>
 					<!-- MVP 2 feature -->
 					<!-- <li class="pt-3">
 						<vtr-ui-row-switch [title]="'Display Priority Control'"
@@ -145,6 +172,8 @@
 			</vtr-container-collapsible>
 		</div>
 	</div>
+	
+	<!-- Camera -->
 	<div class="row py-5 smartsettings-card" id="camera">
 		<div class="col-10 mx-auto ">
 			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.displayCamera.camera.title' | translate"

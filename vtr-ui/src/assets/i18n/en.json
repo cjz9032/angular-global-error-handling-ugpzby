@@ -789,6 +789,13 @@
 							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
 						}
 					},
+					"oledPowerSettings": {
+						"title": "OLED Power Settings",
+						"description": ["Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
+										"It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."],
+						"reset": "Reset temperature",
+						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
+					},
 					"dispColorTemp": {
 						"title": "Display color temperature",
 						"options": {
