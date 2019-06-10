@@ -1,4 +1,4 @@
-export interface interval{
-    name: string,
-    value: number
+export interface Interval {
+	name: string;
+	value: number;
 }
