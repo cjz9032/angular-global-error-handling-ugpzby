@@ -229,19 +229,37 @@
 			"title": "Lighting",
 			"effect": {
 				"option1": {
-					"title": "Wave"
+					"title": "Static"
 				},
 				"option2": {
-					"title": "Smooth"
+					"title": "Flicker"
 				},
 				"option3": {
 					"title": "Breath"
 				},
 				"option4": {
-					"title": "CPU Temperature"
+					"title": "Wave"
 				},
 				"option5": {
+					"title": "Music"
+				},
+				"option6": {
+					"title": "Smooth"
+				},
+				"option7": {
+					"title": "CPU Temperature"
+				},
+				"option8": {
 					"title": "CPU Utilization"
+				},
+				"option9": {
+					"title": "Response"
+				},
+				"option10": {
+					"title": "Ripple"
+				},
+				"option11": {
+					"title": "No Light"
 				}
 			}
 		}
