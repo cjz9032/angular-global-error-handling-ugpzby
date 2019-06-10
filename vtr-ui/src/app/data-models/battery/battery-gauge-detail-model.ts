@@ -4,6 +4,7 @@ class BatteryGaugeDetail {
     public timeType: string;
     public isAttached: boolean;
     public isAirplaneModeEnabled: boolean;
+    public isExpressCharging: boolean;
 }
 
 export default BatteryGaugeDetail;

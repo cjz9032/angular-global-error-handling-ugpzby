@@ -104,8 +104,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryIndicator.charging = this.batteryGauge.isAttached;
 		this.batteryIndicator.convertMin(this.batteryGauge.time);
 		this.batteryIndicator.timeText = this.batteryGauge.timeType;
-		this.batteryIndicator.expressCharging = this.batteryInfo[0].isExpressCharging;
-		this.batteryIndicator.voltageError = this.batteryInfo[0].isVoltageError;
+		this.batteryIndicator.expressCharging = this.batteryGauge.isExpressCharging;
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo, { detail: this.batteryInfo, gauge: this.batteryGauge });
 		if ( this.cd !== null && this.cd !== undefined &&
 			! (this.cd as ViewRef_).destroyed ) {
