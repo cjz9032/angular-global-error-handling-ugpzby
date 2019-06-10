@@ -14,8 +14,8 @@ export class UiMacrokeyPopupComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	close(canDelete: boolean= false) {
+	submitAction(isConfirm: boolean = false) {
 		//this.showModal = false;
-		this.action.emit(canDelete);
+		this.action.emit(isConfirm);
 	}
 }
