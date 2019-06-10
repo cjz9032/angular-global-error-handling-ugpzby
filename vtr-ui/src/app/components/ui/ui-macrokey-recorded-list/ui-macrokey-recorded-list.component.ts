@@ -13,7 +13,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit {
 	@Output() public onClearAll = new EventEmitter<any>();
 	public clearRecordPopup: Boolean = false;
 	public showModal: Boolean = false;
-	private ignoreInterval: Boolean = false;
+	public ignoreInterval: Boolean = false;
 
 	repeatOptions = [
 		{
