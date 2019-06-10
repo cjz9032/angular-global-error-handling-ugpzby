@@ -20,13 +20,10 @@ export class UiLightingEffectComponent implements OnInit {
 	public currentDescription: string;
 	public selectedDescription: string;
 
-
-	constructor(
-		private elementRef: ElementRef,
-	) { }
+	constructor(private elementRef: ElementRef) {}
 
 	ngOnInit() {
-		this.currentOption = this.options.dropOptions[this.options.curSelected ].name;
+		this.currentOption = this.options.dropOptions[this.options.curSelected].name;
 	}
 
 	public toggleOptions(optSelected) {

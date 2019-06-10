@@ -88,12 +88,12 @@
 			"title": "Macro Key",
 			"introLine": "You can record a series of key input, and use them in gaming or other operations.",
 			"status": {
-				"alwaysEnabled": {
-					"title": "Always Enabled",
+				"on": {
+					"title": "On",
 					"description": "Always Enabled"
 				},
 				"whileGaming": {
-					"title": "Enabled Only While Gaming",
+					"title": "Macro Key enabled only when gaming",
 					"description": "It will be enabled when you game and remain as num key when you don't."
 				},
 				"off": {
@@ -109,6 +109,10 @@
 					"line2": "type in macro key",
 					"line3": "stop recording when finishing typing"
 				},
+				"buttons": {
+					"start": "START RECORDING",
+					"stop": "STOP RECORDING"
+				},
 				"recording": {
 					"title": "START TYPING",
 					"description": "20 inputs with in 20 seconds can be recorded."
@@ -119,11 +123,11 @@
 					"clear": "Clear",
 					"intervalStatus": {
 						"keep": {
-							"title": "Keep Interval",
+							"title": "Keep Delay",
 							"description": "Intervals of key actions will be kept and applied when using this macro key."
 						},
 						"ignore": {
-							"title": "Ignore Interval",
+							"title": "Ignore Delay",
 							"description": "Intervals of key actions will be ignored."
 						}
 					},
@@ -224,10 +228,39 @@
 		"lightingProfile": {
 			"title": "Lighting",
 			"effect": {
-				"option1": "Wave",
-				"option2": "Option 2",
-				"option3": "Option 3",
-				"option4": "option 4"
+				"option1": {
+					"title": "Static"
+				},
+				"option2": {
+					"title": "Flicker"
+				},
+				"option3": {
+					"title": "Breath"
+				},
+				"option4": {
+					"title": "Wave"
+				},
+				"option5": {
+					"title": "Music"
+				},
+				"option6": {
+					"title": "Smooth"
+				},
+				"option7": {
+					"title": "CPU Temperature"
+				},
+				"option8": {
+					"title": "CPU Utilization"
+				},
+				"option9": {
+					"title": "Response"
+				},
+				"option10": {
+					"title": "Ripple"
+				},
+				"option11": {
+					"title": "No Light"
+				}
 			}
 		}
 	},
@@ -638,7 +671,7 @@
 						},
 						"options": {
 							"start": "下面开始充电",
-							"checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
+							"checkboxText": "自动将启动充电阈值设置为低于停止充电阈值5个百分点。",
 							"stop": "停止充电"
 						}
 					},
@@ -976,7 +1009,7 @@
 			"rebootRequiredTag": "Reboot Required",
 			"rebootDelayTag": "Reboot Required, Power Source Required",
 			"shutdownRequiredTag": "Shutdown Required",
-			"dependedPackage": "depended package"
+			"dependedPackage": "Depended Package"
 		},
 		"availableUpdates": {
 			"title": "Available updates",
@@ -1132,7 +1165,7 @@
 				"disabled": "已禁用",
 				"enableVirusScan": "启用病毒扫描",
 				"enablenFirewall": "启用防火墙",
-				"enableFirewall": "ENABLE FIREWALL"
+				"enableFirewall": "启用防火墙"
 			},
 			"windowsDefender": {
 				"optimallyProtected": "未受最佳保护",
@@ -1711,7 +1744,7 @@
 	"welcometutorial": {
 		"description": "Vantage使您可以轻松更新驱动程序，运行诊断程序，请求支持以及了解您的设备。快速定制您的体验，并根据您的需求找到有用的信息。",
 		"bullets1": "使用Vantage仪表板查看系统的状态。",
-		"bullets2": "安全顾问 使您的安全管理变得简单（在选定的系统上可用）。",
+		"bullets2": "安全顾问 使您的安全管理变得简单（在选定的系统上可用)。",
 		"bullets3": "自动更新可使您的设备保持最佳状态 (在选定系统上可用)。",
 		"subtitle1": "你将如何使用你的设备？",
 		"subtitle2": "告诉我们您的兴趣",
