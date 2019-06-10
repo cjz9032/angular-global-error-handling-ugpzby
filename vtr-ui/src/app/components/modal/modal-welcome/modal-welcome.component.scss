@@ -303,8 +303,8 @@
 	// div.device-image > input[type="radio"]:checked + div.device-image > input[type="radio"]:not(:checked) + img{
 	// 	opacity: 0.5 !important;
 	// }
-	div.radio-is-selected input[type="radio"]:not(:checked) + img {
-		opacity: 0.5 !important;
+	div.radio-is-selected input[type="radio"]:not(:checked) + img{
+		opacity: 0.4 !important;
 	}
 
 	// .radio-is-selected img {
