@@ -1,3 +1,3 @@
-export class LightingProfile {
+export class LightingBrightness {
 	lightingBrightnessLevel: number;
 }

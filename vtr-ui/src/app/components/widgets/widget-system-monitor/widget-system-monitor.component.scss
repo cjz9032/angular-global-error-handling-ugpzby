@@ -1,18 +1,20 @@
 @import "../../../app.theme.scss";
 
 .vtr-widget-system-monitor {
+	position: relative;
+	z-index: 2;
 	.widget-container {
 		border-radius: $border_radius;
 		background: $dark_cell;
 		box-shadow: $drop_shadow_gaming;
 		padding: 6rem;
-		height: 44rem;
+		height: auto;
 		@media #{$mediaquery_5} {
-			height: 42rem;
+			height: auto;
 		}
 		@media #{$mediaquery_6} {
 			padding: 4rem;
-			height: 36rem;
+			height: auto;
 		}
 
 		.monitor-col {
@@ -66,15 +68,33 @@
 			.monitor-section {
 				border-radius: $border_radius_sm;
 				background-color: $gaming_darkest;
-				height: 100%;
+				height: 24rem;
 				position: relative;
-
+				@media #{$mediaquery_6} {
+					height: 22rem;
+				}
 				&.hds {
 					overflow: hidden;
+					position: absolute;
+					width: 100%;
+					border: 1px solid $gaming_darkest;
 					&.expanded {
 						height: auto;
+						border: 1px solid $gaming_dark;
+					}
+					&:hover {
+						.expand-icon {
+							fa-icon {
+								color: $shade_lighter;
+							}
+						}
 					}
 					.expand-icon {
+						position: absolute;
+						bottom: .3rem;
+						width: 100%;
+						font-size: 2rem;
+						text-align: center;
 						fa-icon {
 							color: $shade;
 						}
@@ -97,16 +117,16 @@
 				}
 
 				.gaming-tooltip{
-					max-width: 85%;
-					padding: 3rem;
+					padding: 2.4rem;
 					background: $gaming_lightest;
 					color: $main_dark;
 					border-radius: 0.8rem;
+					text-align: center;
 					position: absolute;
-					display: none;
+					display: inline-block;
 					z-index: 99;
 					top:-6rem;
-					left: calc(50% - 42.5%);
+					left: calc(50% - 45%);
 					opacity: 0;
 					transition: all .5s ease-in-out;
 					&::after{
@@ -121,14 +141,9 @@
 						left: calc(50% - 1.5rem);
 					}
 					p {
-						font-size: 2rem;
-						line-height: 2.6rem;
-					}
-				}
-				&:hover {
-					.gaming-tooltip {
-						display: inline-block;
-						opacity: 1;
+						font-size: 1.6rem;
+						line-height: 2.2rem;
+						text-align: center;
 					}
 				}
 				.monitor-inner {
@@ -140,6 +155,28 @@
 							.stack-label {
 								right: 1.5rem;
 								text-align: right;
+							}
+						}
+						.gaming-tooltip {
+							width: 15rem;
+							left: calc(50% - 7.5rem);
+						}
+						&:hover {
+							.gaming-tooltip {
+								display: inline-block;
+								opacity: 1;
+							}
+						}
+					}
+					&.gpu {
+						.gaming-tooltip {
+							width: 15rem;
+							left: calc(50% - 7.5rem);
+						}
+						&:hover {
+							.gaming-tooltip {
+								display: inline-block;
+								opacity: 1;
 							}
 						}
 					}
@@ -206,7 +243,7 @@
 					height: 38rem;
 					border-radius: 50%;
 					@media #{$mediaquery_6} {
-						top: -3rem;
+						top: -3.5rem;
 						width: 29rem;
 						height: 29rem;
 						margin-left: -14.5rem;
@@ -320,18 +357,19 @@
 						}
 						.cpu-inner-circle {
 							position: relative;
-							top: 1.5rem;
-							left: 1.5rem;
+							top: 50%;
+							left: 50%;
+							transform: translateX(-50%) translateY(-50%);
 							background-color: $gaming_darkest;
 							width: 21.5rem;
 							height: 21.5rem;
 							border-radius: 50%;
 							text-align: center;
 							@media #{$mediaquery_6} {
-								top: 1rem;
-								left: 1rem;
-								width: 18rem;
-								height: 18rem;
+								// top: 1rem;
+								// left: 1rem;
+								width: 16rem;
+								height: 16rem;
 							}
 							.cpu-label {
 								margin-top: 5rem;
@@ -345,6 +383,10 @@
 									font-size: 7rem;
 									line-height: 10rem;
 									font-weight: $weight_light;
+									@media #{$mediaquery_6} {
+										font-size: 5rem;
+										line-height: 8rem;
+									}
 								}
 								.cpu-status {
 									color: $shade;
@@ -354,10 +396,20 @@
 							}
 						}
 					}
+					&:hover {
+						.gaming-tooltip {
+							display: inline-block;
+							opacity: 1;
+						}
+					}
 				}
 				.hd-list {
-					padding: 3rem;
+					padding: 2rem 3rem;
+					@media #{$mediaquery_6} {
+						padding: 3rem;
+					}
 					&.single {
+						padding: 3rem;
 						.hd-item {
 							text-align: center;
 							.hd-item-label {

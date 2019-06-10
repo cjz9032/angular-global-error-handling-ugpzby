@@ -1,0 +1,21 @@
+<section>
+  <div class="input" (click)="toggle()">
+      <div class="time">
+        <p>{{title | uppercase }}</p>
+        <span>{{name}}</span>
+      </div>
+      <p class="chevron">
+        <fa-icon *ngIf="!active"
+        [icon]="['fas', 'chevron-down']">
+        </fa-icon>
+        <fa-icon *ngIf="active"
+          [icon]="['fas', 'chevron-up']">
+        </fa-icon>
+      </p>
+    </div>
+    <div class="list" *ngIf="active">
+      <ul>
+        <li (click)="select(i)" *ngFor="let i of list">{{i.name}}</li>
+      </ul>
+    </div>
+</section>

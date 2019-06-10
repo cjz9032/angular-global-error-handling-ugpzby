@@ -18,6 +18,9 @@ export class ModalWelcomeComponent implements OnInit ,AfterViewInit{
 	startTime:number;
 	endTime:number;
 	metrics:any;
+	image1=new Image();
+	image2=new Image();
+	image3=new Image();
 	isDivVisible=false;
 	data: any = {
 		page2: {
@@ -39,6 +42,7 @@ export class ModalWelcomeComponent implements OnInit ,AfterViewInit{
 		public commonService: CommonService) {
 		this.startTime=new Date().getTime();
 		this.metrics = shellService.getMetrics();
+		this.preLoadImage();
 	}
 
 	ngOnInit() {
@@ -96,8 +100,9 @@ export class ModalWelcomeComponent implements OnInit ,AfterViewInit{
 	}
 
 	saveUsageType($event, value) {
+		// console.log("Selected MOD",$event);
 		if ($event.target.checked) {
-			console.log(value);
+			// console.log(value);
 		}
 		if(this.data.page2.radioValue == null) {
 			this.progress += 16;
@@ -119,5 +124,11 @@ export class ModalWelcomeComponent implements OnInit ,AfterViewInit{
 	}
 	ngAfterViewInit(): void {
 		this.isDivVisible=true;
+	}
+	preLoadImage(){
+		this.image1.src="./../../../../assets/images/welcome/custom-use.jpg";
+		this.image2.src="./../../../../assets/images/welcome/personal-use.jpg"
+		this.image3.src="./../../../../assets/images/welcome/business-use.jpg";
+
 	}
 }

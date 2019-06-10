@@ -5,25 +5,28 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
 	selector: 'vtr-widget-lighting',
 	templateUrl: './widget-lighting.component.html',
-	styleUrls: ['./widget-lighting.component.scss']
+	styleUrls: [ './widget-lighting.component.scss' ]
 })
 export class WidgetLightingComponent implements OnInit {
-public response:any;
+	public response: any;
 	@Input() title = '';
 
-	constructor(private gamingLightingService:GamingLightingService,
-		private gamingAllCapabilities: GamingAllCapabilitiesService) { }
+	constructor(
+		private gamingLightingService: GamingLightingService,
+		private gamingAllCapabilities: GamingAllCapabilitiesService
+	) {}
 
 	ngOnInit() {
-
 		this.getGaminagLightingCapabilities();
-
-
 	}
 	public getGaminagLightingCapabilities() {
-		this.gamingLightingService.getLightingCapabilities().then((response: any) => {
-			console.log('gaming Lighting Capabilities js bridge ------------------------>', JSON.stringify(response));
-		});
+		if (this.gamingLightingService.isShellAvailable) {
+			this.gamingLightingService.getLightingCapabilities().then((response: any) => {
+				console.log(
+					'gaming Lighting Capabilities js bridge ------------------------>',
+					JSON.stringify(response)
+				);
+			});
+		}
 	}
-
 }

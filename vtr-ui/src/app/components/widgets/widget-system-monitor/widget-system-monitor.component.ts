@@ -9,15 +9,20 @@ import { HwInfoService } from 'src/app/services/gaming/gaming-hwinfo/hw-info.ser
 export class WidgetSystemMonitorComponent implements OnInit {
 	public cpuUseFrequency: string;
 	public cpuBaseFrequence: string;
-	public gpuMaxFrequence: string;
+	public gpuMemorySize: string;
 	public memorySize: string;
-	public gpuUseFrequency: string;
+	public gpuUsedMemory: string;
 	public memoryUsed: string;
 	public type: string;
 	public isSystemDisk: boolean;
 	public capacity: number;
 	public usedDisk: number;
 	public cpuModuleName: string;
+	public cpuover: string;
+	public gpuModuleName: string;
+	public gpuOver: string;
+	public memoryModuleName: string;
+	public ramOver: string;
 	public showAllHDs = false;
 
 
@@ -29,40 +34,72 @@ export class WidgetSystemMonitorComponent implements OnInit {
 
 	@Input() ramCurrent = 15.7;
 	@Input() ramMax = 32;
-	@Input() cpuover = 'Intel';
+	//@Input() cpuover = 'Intel';
+
+	public hds: any = [];
 
 	// @Input() hds = [
 	// 	{
-	// 		title: 'SSD',
-	// 		system: true,
-	// 		current: 1500,
-	// 		max: 2000
+	// 		capacity: 476,
+	// 		diskUsage: "14",
+	// 		hddName: "LENSE30512GMSP34MEAT3TA",
+	// 		isSystemDisk: "true",
+	// 		type: "SSD",
+	// 		usedDisk: "71"
 	// 	},
 	// 	{
-	// 		title: 'HDD 1',
-	// 		system: false,
-	// 		current: 775,
-	// 		max: 2000
+	// 		capacity: 2000,
+	// 		diskUsage: "75",
+	// 		hddName: "LENSE30512GMSP34MEAT3TB",
+	// 		isSystemDisk: "false",
+	// 		type: "HDD",
+	// 		usedDisk: "1500"
 	// 	},
 	// 	{
-	// 		title: 'HDD 2',
-	// 		system: false,
-	// 		current: 100,
-	// 		max: 4000
+	// 		capacity: 4000,
+	// 		diskUsage: "25",
+	// 		hddName: "LENSE30512GMSP34MEAT3TC",
+	// 		isSystemDisk: "false",
+	// 		type: "HDD",
+	// 		usedDisk: "1000"
+	// 	},
+	// 	{
+	// 		capacity: 2000,
+	// 		diskUsage: "75",
+	// 		hddName: "LENSE30512GMSP34MEAT3TD",
+	// 		isSystemDisk: "false",
+	// 		type: "HDD",
+	// 		usedDisk: "1500"
+	// 	},
+	// 	{
+	// 		capacity: 4000,
+	// 		diskUsage: "25",
+	// 		hddName: "LENSE30512GMSP34MEAT3TE",
+	// 		isSystemDisk: "false",
+	// 		type: "HDD",
+	// 		usedDisk: "1000"
 	// 	}
 	// ];
-
-	public hds: any;
 
 	constructor(private hwInfoService: HwInfoService) { }
 	public getDynamicInfoService() {
 		this.hwInfoService.getDynamicInformation().then((hwInfo: any) => {
-			//console.log('getDynamicInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
-			this.cpuUseFrequency = hwInfo.cpuUseFrequency.split('GHz')[0];;
+			// console.log('getDynamicInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
+			console.log('DYNAMIC SYSTEM INFO', hwInfo);
+			if(hwInfo.cpuUseFrequency !== '')
+			{
+				this.cpuUseFrequency = hwInfo.cpuUseFrequency.split('GHz')[0];
+			}
 			this.cpuCurrent = parseFloat(this.cpuUseFrequency);
-			this.gpuUseFrequency = hwInfo.gpuUseFrequency.split('GB')[0];;
-			this.gpuCurrent = parseFloat(this.gpuUseFrequency);
-			this.memoryUsed = hwInfo.memoryUsed.split('GB')[0];;
+			if(hwInfo.gpuUsedMemory !== '')
+			{
+				this.gpuUsedMemory = hwInfo.gpuUsedMemory.split('GB')[0];
+			}
+			this.gpuCurrent = parseFloat(this.gpuUsedMemory);
+			if(hwInfo.memoryUsed !== '')
+			{
+				this.memoryUsed = hwInfo.memoryUsed.split('GB')[0];
+			}
 			this.ramCurrent = parseFloat(this.memoryUsed);
 			this.hds = hwInfo.diskList;
 		});
@@ -72,14 +109,27 @@ export class WidgetSystemMonitorComponent implements OnInit {
 		try {
 			this.hwInfoService.getMachineInfomation().then((hwInfo: any) => {
 				//console.log('getMachineInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
-				this.cpuBaseFrequence = hwInfo.cpuBaseFrequence.split('GHz')[0];
+				if(hwInfo.cpuBaseFrequence !== '')
+				{
+					this.cpuBaseFrequence = hwInfo.cpuBaseFrequence.split('GHz')[0];
+				}
 				this.cpuMax = parseFloat(this.cpuBaseFrequence);
-				this.gpuMaxFrequence = hwInfo.gpuMaxFrequence.split('GB')[0];
-				this.gpuMax = parseFloat(this.gpuMaxFrequence);
-				this.memorySize = hwInfo.memorySize.split('GB')[0];
+				if(hwInfo.gpuMemorySize !== '')
+				{
+					this.gpuMemorySize = hwInfo.gpuMemorySize.split('GB')[0];
+				}
+				this.gpuMax = parseFloat(this.gpuMemorySize);
+				if(hwInfo.memorySize !== '')
+				{
+					this.memorySize = hwInfo.memorySize.split('GB')[0];
+				}
 				this.ramMax = parseFloat(this.memorySize);
 				this.cpuModuleName = hwInfo.cpuModuleName;
 				this.cpuover = this.cpuModuleName;
+				this.gpuModuleName = hwInfo.gpuModuleName;
+				this.gpuOver = this.gpuModuleName;
+				this.memoryModuleName = hwInfo.memoryModuleName;
+				this.ramOver = this.memoryModuleName;
 			});
 		} catch (error) {
 			console.error(error.message);
@@ -103,8 +153,11 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	}
 
 	getLeftDeg(current, max) {
-		const pct = (current / max);
+		let pct = (current / max);
 		const deg = 360 * (pct - .5);
+		if(pct > 1) {
+			pct = 1;
+		}
 		if (pct > .5) {
 			return deg;
 		} else {
@@ -113,13 +166,19 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	}
 
 	getRightDeg(current, max) {
-		const pct = (current / max);
+		let pct = (current / max);
+		if(pct > 1) {
+			pct = 1;
+		}
 		const deg = 360 * pct;
 		return deg;
 	}
 
 	getStackHeight(current, max) {
-		const pct = (current / max);
+		let pct = (current / max);
+		if(pct > 1) {
+			pct = 1;
+		}
 		const mask = 1 - pct;
 		const height = 100 * mask;
 		return height;
