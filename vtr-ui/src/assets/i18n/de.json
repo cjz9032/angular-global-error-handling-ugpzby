@@ -980,7 +980,7 @@
 			"rebootRequiredTag": "Reboot Required",
 			"rebootDelayTag": "Reboot Required, Power Source Required",
 			"shutdownRequiredTag": "Shutdown Required",
-			"dependedPackage": "depended package"
+			"dependedPackage": "Depended Package"
 		},
 		"availableUpdates": {
 			"title": "Available updates",
