@@ -134,7 +134,7 @@ export class PageSmartAssistComponent implements OnInit {
 		const option = this.intelligentSecurity.zeroTouchLoginFlag ? 'True' : 'False';
 		this.smartAssist.setZeroTouchLoginStatus(option)
 			.then((isSuccess: boolean) => {
-				console.log('onZeroTouchLoginStatusToggle.setZeroTouchLoginStatus', isSuccess, this.intelligentSecurity.zeroTouchLockFlag);
+				console.log('onZeroTouchLoginStatusToggle.setZeroTouchLoginStatus', isSuccess, this.intelligentSecurity.zeroTouchLoginFlag);
 			});
 	}
 
