@@ -11,8 +11,9 @@ import {
 import { FormBuilder, Validators } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 import { EmailScannerService } from '../services/email-scanner.service';
-import { debounceTime, takeUntil } from 'rxjs/operators';
+import { debounceTime, filter, takeUntil } from 'rxjs/operators';
 import { instanceDestroyed } from '../../../utils/custom-rxjs-operators/instance-destroyed';
+import { SafeStorageService } from '../../../common/services/safe-storage.service';
 
 @Component({
 	selector: 'vtr-confirmation',
@@ -23,6 +24,7 @@ export class ConfirmationComponent implements OnInit, OnDestroy, AfterViewInit {
 	@ViewChild('confirmationInput') confirmationInput: ElementRef;
 	@Output() confirmationSuccess = new EventEmitter<boolean>();
 
+	userEmail = this.safeStorageService.getEmail();
 	confirmationForm = this.formBuilder.group({
 		confirmationCode: ['', [Validators.required, Validators.minLength(6)]],
 	});
@@ -31,6 +33,7 @@ export class ConfirmationComponent implements OnInit, OnDestroy, AfterViewInit {
 
 	constructor(
 		private formBuilder: FormBuilder,
+		private safeStorageService: SafeStorageService,
 		private emailScannerService: EmailScannerService) {
 	}
 
@@ -42,6 +45,15 @@ export class ConfirmationComponent implements OnInit, OnDestroy, AfterViewInit {
 			)
 			.subscribe(() => {
 				this.isError.next(false);
+			});
+
+		this.emailScannerService.userEmail$
+			.pipe(
+				filter(Boolean),
+				takeUntil(instanceDestroyed(this))
+			)
+			.subscribe((userEmail) => {
+				this.userEmail = userEmail;
 			});
 	}
 
