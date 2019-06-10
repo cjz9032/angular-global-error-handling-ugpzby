@@ -7,8 +7,8 @@ import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.mod
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
 import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
 import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
-import { TouchpadLockStatus }  from 'src/app/data-models/gaming/touchpad-lock-status.model';
-import { SystemStatus } from  'src/app/data-models/gaming/system-status.model';
+import { TouchpadLockStatus } from 'src/app/data-models/gaming/touchpad-lock-status.model';
+import { SystemStatus } from 'src/app/data-models/gaming/system-status.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -484,5 +484,15 @@ export class VantageShellService {
 		if (this.phoenix) {
 			return this.phoenix.preferenceSettings;
 		}
+	}
+
+	/**
+     * returns macroKeyClearInfo object from VantageShellService of JS Bridge
+     */
+	public setMacroKeyClear(macroKey: string): any {
+		if (this.phoenix) {
+			return this.phoenix.gaming.gamingMacroKey.setClear(macroKey);
+		}
+		return undefined;
 	}
 }
