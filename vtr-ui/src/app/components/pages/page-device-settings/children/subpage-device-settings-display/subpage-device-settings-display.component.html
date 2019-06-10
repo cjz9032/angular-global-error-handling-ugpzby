@@ -39,7 +39,8 @@
 										[enableSlider]="false"
 										[manualRefresh]="manualRefresh"
 										(displayColorTempChange)="onSetChangeDisplayColorTemp($event)"
-										(resetTemparature)="resetDaytimeColorTemp($event)">
+										(resetTemparature)="resetDaytimeColorTemp($event)"
+										(colorPreviewValue) = "setToEyeCareMode()">
 									</vtr-display-color-temp>
 								</div>
 							</div>
