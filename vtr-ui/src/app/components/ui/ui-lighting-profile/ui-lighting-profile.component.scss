@@ -83,10 +83,20 @@
                         }
                     }
                 }
+			}
+			&.lighting-off {
+                height:100%;
+                display: flex;
+                p {
+                    color: $gaming_lightest;
+                    font-size: 2rem;
+                    line-height: 3rem;
+                }
             }
-        }
+		}
+
     }
-    
+
     .footer-part{
         .link {
             color: $gaming;

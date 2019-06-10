@@ -121,7 +121,7 @@
 										</div>
 										<div class="hd-item-label">
 											<div class="hd-title">
-												<span *ngIf="hd.isSystemDisk">
+												<span *ngIf="hd.type==='SSD'">
 													<fa-icon [icon]="['fab', 'windows']"></fa-icon>
 												</span>
 
@@ -134,7 +134,8 @@
 									</div>
 								</div>
 								<div class="expand-icon">
-									<!-- <fa-icon [icon]="['fas', 'chevron-down']" *ngIf="!showAllHDs&&hds.length>1"></fa-icon> -->
+									<fa-icon [icon]="['fas', 'chevron-down']" *ngIf="!showAllHDs&&hds.length>2"></fa-icon>
+									<fa-icon [icon]="['fas', 'chevron-up']" *ngIf="showAllHDs&&hds.length>2"></fa-icon>
 								</div>
 							</div>
 						</div>

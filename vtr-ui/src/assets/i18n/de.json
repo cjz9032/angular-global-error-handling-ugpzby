@@ -39,7 +39,7 @@
 						"headerText": "Driver Install Required",
 						"text": "You need install driver for RAM Overclock to  make it effective",
 						"button": "Install",
-						"link": "cancle"
+						"link": "cancel"
 					},
 					"autoClose": "Auto Close",
 					"networkBoost": "Network Boost",
@@ -88,12 +88,12 @@
 			"title": "Macro Key",
 			"introLine": "You can record a series of key input, and use them in gaming or other operations.",
 			"status": {
-				"alwaysEnabled": {
-					"title": "Always Enabled",
+				"on": {
+					"title": "On",
 					"description": "Always Enabled"
 				},
 				"whileGaming": {
-					"title": "Enabled Only While Gaming",
+					"title": "Macro Key enabled only when gaming",
 					"description": "It will be enabled when you game and remain as num key when you don't."
 				},
 				"off": {
@@ -109,6 +109,10 @@
 					"line2": "type in macro key",
 					"line3": "stop recording when finishing typing"
 				},
+				"buttons": {
+					"start": "START RECORDING",
+					"stop": "STOP RECORDING"
+				},
 				"recording": {
 					"title": "START TYPING",
 					"description": "20 inputs with in 20 seconds can be recorded."
@@ -119,11 +123,11 @@
 					"clear": "Clear",
 					"intervalStatus": {
 						"keep": {
-							"title": "Keep Interval",
+							"title": "Keep Delay",
 							"description": "Intervals of key actions will be kept and applied when using this macro key."
 						},
 						"ignore": {
-							"title": "Ignore Interval",
+							"title": "Ignore Delay",
 							"description": "Intervals of key actions will be ignored."
 						}
 					},
@@ -976,7 +980,7 @@
 			"rebootRequiredTag": "Reboot Required",
 			"rebootDelayTag": "Reboot Required, Power Source Required",
 			"shutdownRequiredTag": "Shutdown Required",
-			"dependedPackage": "depended package"
+			"dependedPackage": "Depended Package"
 		},
 		"availableUpdates": {
 			"title": "Available updates",
