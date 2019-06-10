@@ -91,7 +91,8 @@ export class PageSmartAssistComponent implements OnInit {
 			this.smartAssist.getSelectedLockTimer(),
 			this.smartAssist.getAutoLockVisibility(),
 			this.smartAssist.getAutoLockStatus(),
-			this.smartAssist.getHPDStatus()
+			this.smartAssist.getHPDStatus(),
+			this.smartAssist.getHPDVisibility()
 		]).then((responses: any[]) => {
 
 			this.intelligentSecurity.isZeroTouchLockVisible = responses[0];
@@ -100,6 +101,7 @@ export class PageSmartAssistComponent implements OnInit {
 			this.intelligentSecurity.isZeroTouchLoginVisible = responses[3];
 			this.intelligentSecurity.zeroTouchLoginFlag = responses[4];
 			this.intelligentSecurity.humanPresenceDetectionFlag = responses[5];
+			this.intelligentSecurity.isIntelligentSecuritySupported = responses[6];
 
 			console.log('initSmartAssist.Promise.all()', responses);
 		}).catch(error => {
@@ -132,7 +134,7 @@ export class PageSmartAssistComponent implements OnInit {
 		const option = this.intelligentSecurity.zeroTouchLoginFlag ? 'True' : 'False';
 		this.smartAssist.setZeroTouchLoginStatus(option)
 			.then((isSuccess: boolean) => {
-				console.log('onZeroTouchLoginStatusToggle.setZeroTouchLoginStatus', isSuccess, this.intelligentSecurity.zeroTouchLockFlag);
+				console.log('onZeroTouchLoginStatusToggle.setZeroTouchLoginStatus', isSuccess, this.intelligentSecurity.zeroTouchLoginFlag);
 			});
 	}
 
@@ -148,7 +150,7 @@ export class PageSmartAssistComponent implements OnInit {
 
 	public setIntelligentSecurity() {
 		// service call to fetch Intelligent Security Properties
-		this.intelligentSecurity = new IntelligentSecurity(true, 1, true, true, '0', true, false, false);
+		this.intelligentSecurity = new IntelligentSecurity(true, 1, true, true, '0', true, false, false, false);
 		this.autoScreenLockStatus[this.intelligentSecurity.autoScreenLockTimer] = true;
 	}
 

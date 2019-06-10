@@ -198,7 +198,7 @@ import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
 import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
 import { UiLightingProfileComponent } from './components/ui/ui-lighting-profile/ui-lighting-profile.component';
-import { UiDropdownComponent } from './components/ui/ui-dropdown/ui-dropdown.component';
+import { UiDropDownComponent } from './components/ui/ui-dropdown/ui-dropdown.component';
 
 import { AutoupdateSettingsComponent } from './components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
 import { UiLightingProfileToggleComponent } from './components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
@@ -364,7 +364,7 @@ library.add(fal);
 		WidgetHomeSecurityDeviceComponent,
 		UiLightingProfileComponent,
 		OledPowerSettingsComponent,
-		UiDropdownComponent,
+		UiDropDownComponent,
 		AutoupdateSettingsComponent,
 		UiPopoverComponent,
 		UiMacrokeyPopupComponent,
@@ -418,7 +418,7 @@ library.add(fal);
 		RegionService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
-	bootstrap: [ AppComponent ],
+	bootstrap: [AppComponent],
 	entryComponents: [
 		ModalLenovoIdComponent,
 		ModalWelcomeComponent,
@@ -437,6 +437,6 @@ library.add(fal);
 		ModalGamingLegionedgeComponent,
 		ModalChsWelcomeContainerComponent
 	],
-	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule {}
+export class AppModule { }

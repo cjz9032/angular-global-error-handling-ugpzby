@@ -1,25 +1,25 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UiDropdownComponent } from './ui-dropdown.component';
+import { UiDropDownComponent } from './ui-dropdown.component';
 
 describe('UiDropdownComponent', () => {
-  let component: UiDropdownComponent;
-  let fixture: ComponentFixture<UiDropdownComponent>;
+	let component: UiDropDownComponent;
+	let fixture: ComponentFixture<UiDropDownComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ UiDropdownComponent ]
-    })
-    .compileComponents();
-  }));
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [UiDropDownComponent]
+		})
+			.compileComponents();
+	}));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(UiDropdownComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(UiDropDownComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });
