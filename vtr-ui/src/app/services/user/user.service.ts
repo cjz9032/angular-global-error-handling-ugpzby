@@ -80,11 +80,12 @@ export class UserService {
 		const cookieManager = myFilter.cookieManager;
 		const myCookieJar = cookieManager.getCookies(new Windows.Foundation.Uri(domain));
 		if (myCookieJar) {
-			myCookieJar.forEach(cookie => {
+			for (let cookie of myCookieJar) {
 				if (cookie.name === 'lang') {
 					lang = cookie.value;
+					break;
 				}
-			});
+			};
 		}
 		return lang;
 	}
