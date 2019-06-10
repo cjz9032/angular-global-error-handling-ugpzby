@@ -6,36 +6,21 @@ import { Component, OnInit, Input } from '@angular/core';
 	styleUrls: ['./ui-dropdown.component.scss']
 })
 export class UiDropdownComponent implements OnInit {
-<<<<<<< HEAD
-  @Input() list :[];
-  @Input() title :string;
-  active :boolean = false;
-  value :number = 0;
-  name :string = 'Never';
-
-  toggle(){
-    this.active = !this.active;
-  }
-  select(i){
-    this.value = i.value;
-    this.name = i.name;
-
-    this.active = !this.active;
-  }
-=======
 	@Input() list: [];
 	@Input() title: string;
 	active = false;
 	value = 0;
+	name = 'Never';
 
 	toggle() {
 		this.active = !this.active;
 	}
-	select(value) {
-		this.value = value;
+	select(i) {
+		this.value = i.value;
+		this.name = i.name;
+
 		this.active = !this.active;
 	}
->>>>>>> b8006f0e0e36ee254a4be04a4c5130b359954e6e
 
 	constructor() { }
 
