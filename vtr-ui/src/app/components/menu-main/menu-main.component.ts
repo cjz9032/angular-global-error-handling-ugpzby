@@ -281,7 +281,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 					this.smartAssist.getSmartAssistVisibility()
 						.then((isAvailable: boolean) => {
 							console.log('getSmartAssistVisibility()', isAvailable);
-							isAvailable = true;
+							// isAvailable = true;
 							this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
 							if (isAvailable) {
 								myDeviceItem.subitems.splice(4, 0, {

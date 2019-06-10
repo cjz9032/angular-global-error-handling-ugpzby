@@ -228,10 +228,39 @@
 		"lightingProfile": {
 			"title": "Lighting",
 			"effect": {
-				"option1": "Wave",
-				"option2": "Option 2",
-				"option3": "Option 3",
-				"option4": "option 4"
+				"option1": {
+					"title": "Static"
+				},
+				"option2": {
+					"title": "Flicker"
+				},
+				"option3": {
+					"title": "Breath"
+				},
+				"option4": {
+					"title": "Wave"
+				},
+				"option5": {
+					"title": "Music"
+				},
+				"option6": {
+					"title": "Smooth"
+				},
+				"option7": {
+					"title": "CPU Temperature"
+				},
+				"option8": {
+					"title": "CPU Utilization"
+				},
+				"option9": {
+					"title": "Response"
+				},
+				"option10": {
+					"title": "Ripple"
+				},
+				"option11": {
+					"title": "No Light"
+				}
 			}
 		}
 	},
@@ -980,7 +1009,7 @@
 			"rebootRequiredTag": "Reboot Required",
 			"rebootDelayTag": "Reboot Required, Power Source Required",
 			"shutdownRequiredTag": "Shutdown Required",
-			"dependedPackage": "depended package"
+			"dependedPackage": "Depended Package"
 		},
 		"availableUpdates": {
 			"title": "Available updates",
@@ -1116,7 +1145,10 @@
 			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
 			"good": "GOOD",
 			"malicious": "MALICIOUS",
-			"suspicious": "SUSPICIOUS"
+			"suspicious": "SUSPICIOUS",
+			"titleOffline": "No internet connection detected",
+			"subTitleOffline": "Learn more on how to solve connection issues in our"
+
 		},
 		"antivirus": {
 			"common": {
