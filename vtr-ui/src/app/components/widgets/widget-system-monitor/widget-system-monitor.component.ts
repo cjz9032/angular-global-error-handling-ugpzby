@@ -23,6 +23,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public gpuOver: string;
 	public memoryModuleName: string;
 	public ramOver: string;
+	public showIcon: boolean = false;
 	public showAllHDs = false;
 	public loop: any;
 
@@ -37,7 +38,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	@Input() ramMax = 32;
 	//@Input() cpuover = 'Intel';
 
-	public hds: any = [];
+	public hds: any=[];
 
 	// @Input() hds = [
 	// 	{
@@ -85,8 +86,8 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	constructor(private hwInfoService: HwInfoService) { }
 	public getDynamicInfoService() {
 		this.hwInfoService.getDynamicInformation().then((hwInfo: any) => {
-			// console.log('getDynamicInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
-			console.log('DYNAMIC SYSTEM INFO', hwInfo);
+			//console.log('getDynamicInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
+			//console.log('DYNAMIC SYSTEM INFO', hwInfo);
 			if (hwInfo.cpuUseFrequency !== '') {
 				this.cpuUseFrequency = hwInfo.cpuUseFrequency.split('GHz')[0];
 			}
@@ -100,6 +101,21 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			}
 			this.ramCurrent = parseFloat(this.memoryUsed);
 			this.hds = hwInfo.diskList;
+			this.hds.forEach((hd) => {
+				if (this.convertToBoolean(hd.isSystemDisk) === true) {
+					this.showIcon = true;
+				}
+			});
+			for (var _i = 0; _i < hwInfo.diskList.length; _i++) {
+				var hd = JSON.stringify(hwInfo.diskList[_i]);
+				if (_i === 0 && this.showIcon === true) {
+					hwInfo.diskList[0].isSystemDisk = true;
+				}
+				else {
+					hwInfo.diskList[_i].isSystemDisk = false;
+				}
+			}
+
 		});
 	}
 
@@ -130,6 +146,18 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			console.error(error.message);
 		}
 	}
+
+
+	convertToBoolean(input: string): boolean | undefined {
+		try {
+			return JSON.parse(input);
+		}
+		catch (e) {
+			return undefined;
+		}
+	}
+
+
 
 	ngOnInit() {
 		this.getDynamicInfoService();
