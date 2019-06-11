@@ -203,6 +203,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	) { }
 	ngAfterViewInit(): void { }
 	ngOnInit() {
+		console.log('CPU get status',this.GetCPUOverClockCacheStatus());
 		this.commonService.notification.subscribe((response) => {
 			if (response.type === Gaming.GamingCapablities && isUndefined(this.gamingCapabilities)) {
 				this.gamingCapabilities = response.payload;
@@ -234,7 +235,11 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 
 	public GetCPUOverClockCacheStatus(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus);
+		if(this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus)=== undefined) {
+			return this.cpuOCStatus.cpuOCStatus;
+		}else{
+			this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus);
+		}
 	}
 	public renderCPUOverClockStatus() {
 		try {
@@ -243,7 +248,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				this.drop.curSelected = this.cpuOCStatus.cpuOCStatus;
 			}
 			this.gamingSystemUpdateService.getCpuOCStatus().then((cpuOCStatus) => {
-				console.log('get cpu oc status js bridge ---------------->', cpuOCStatus);
+				//console.log('get cpu oc status js bridge ---------------->', cpuOCStatus);
 				if (cpuOCStatus !== undefined) {
 					const CpuOCStatusObj = new CPUOCStatus();
 					CpuOCStatusObj.cpuOCStatus = cpuOCStatus;
@@ -269,13 +274,13 @@ export class WidgetLegionEdgeComponent implements OnInit {
 						this.drop.curSelected = this.GetCPUOverClockCacheStatus();
 					} else {
 						console.log(
-							' got true from  ----- cpu oc status js bridge ->',
+							//' got true from  ----- cpu oc status js bridge ->',
 							this.setCpuOCStatus.cpuOCStatus
 						);
 						this.drop.curSelected = this.setCpuOCStatus.cpuOCStatus;
 						this.commonService.setLocalStorageValue(
 							LocalStorageKey.CpuOCStatus,
-							this.cpuOCStatus.cpuOCStatus
+							this.drop.curSelected
 						);
 					}
 				})
@@ -290,13 +295,16 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 	public renderRamOverClockStatus() {
 		this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
-			console.log('xtu--->' + this.gamingCapabilities.xtuService);
+			//console.log('xtu--->' + this.gamingCapabilities.xtuService);
 			if (this.gamingCapabilities.xtuService === true) {
 				if (this.commonService) {
 					this.legionUpdate[1].isChecked = this.GetRAMOverClockCacheStatus();
+				}else {
+					this.legionUpdate[1].isChecked = this.RamOCSatusObj.ramOcStatus;
+					this.SetRAMOverClockCacheStatus(this.RamOCSatusObj.ramOcStatus);
 				}
 				this.gamingSystemUpdateService.getRamOCStatus().then((ramOcStatus) => {
-					console.log('get RAMOC status js bridge -->', ramOcStatus);
+					//console.log('get RAMOC status js bridge -->', ramOcStatus);
 					if (ramOcStatus !== undefined) {
 						this.RamOCSatusObj.ramOcStatus = ramOcStatus;
 						this.SetRAMOverClockCacheStatus(ramOcStatus);
@@ -318,6 +326,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 		if (this.commonService) {
 			this.legionUpdate[4].isChecked = this.GetHybridModeCacheStatus();
+		} 
+		else {
+			this.legionUpdate[4].isChecked = this.HybrimodeStatusObj.hybridModeStatus;
+			this.SetHybridModeCacheStatus(this.HybrimodeStatusObj.hybridModeStatus);
 		}
 		this.gamingHybridModeService.getHybridModeStatus().then((hybridModeStatus) => {
 			//console.log('get Hybrid Mode status js bridge -->', hybridModeStatus);

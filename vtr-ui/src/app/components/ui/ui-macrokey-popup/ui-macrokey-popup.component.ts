@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
 	selector: 'vtr-ui-macrokey-popup',
@@ -8,11 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class UiMacrokeyPopupComponent implements OnInit {
 	@Input() showModal: boolean;
 	@Input() modalContent: any;
+	@Output() action = new EventEmitter<boolean>();
 	constructor() { }
 
 	ngOnInit() {
 	}
-	close() {
-		this.showModal = false;
+
+	submitAction(isConfirm: boolean = false) {
+		//this.showModal = false;
+		this.action.emit(isConfirm);
 	}
 }

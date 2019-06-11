@@ -6,11 +6,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 	styleUrls: [ './ui-macrokey-recorded-list.component.scss' ]
 })
 export class UiMacrokeyRecordedListComponent implements OnInit {
-	@Input() public number;
-	@Input() public recordingStatus;
-	@Input() public recordsList;
-	@Output() public onRecordDelete = new EventEmitter<any>();
-	@Output() public onClearAll = new EventEmitter<any>();
+	@Input() number: any;
+	@Input() recordingStatus: any;
+	@Input() recordsList: any;
+	@Output() deleteRecords = new EventEmitter<any>();
+	@Output() clearAll = new EventEmitter<any>();
 	public clearRecordPopup: Boolean = false;
 	public showModal: Boolean = false;
 	public ignoreInterval: Boolean = false;
@@ -127,14 +127,20 @@ export class UiMacrokeyRecordedListComponent implements OnInit {
 
 	ngOnInit() {}
 
-	recordDelete(record) {
-		this.onRecordDelete.emit(record);
+	recordDelete(...record) {
+		// console.log(record);
+		this.deleteRecords.emit(record);
 	}
 
 	clearRecords() {
+		this.showModal = true;
 		this.clearRecordPopup = !this.clearRecordPopup;
-		this.showModal = !this.showModal;
-		this.onClearAll.emit();
+	}
+
+	deleteAllMacros(canDelete) {
+		if (canDelete) {
+		this.recordDelete(...this.recordsList);
+		}
 	}
 
 	onIntervalChanged($event) {
@@ -144,4 +150,5 @@ export class UiMacrokeyRecordedListComponent implements OnInit {
 		}
 		this.ignoreInterval = false;
 	}
+
 }
