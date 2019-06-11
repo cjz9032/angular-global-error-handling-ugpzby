@@ -34,7 +34,6 @@ export class PageSmartAssistComponent implements OnInit {
 	public autoScreenLockTimer = false;
 	public zeroTouchLoginStatus = new FeatureStatus(false, true);
 	public zeroTouchLockTitle: string;
-	public autoScreenLockStatus: boolean[];
 	public options: any;
 	public keepMyDisplay: boolean;
 
@@ -59,7 +58,6 @@ export class PageSmartAssistComponent implements OnInit {
 	];
 
 	cardContentPositionA: any = {};
-	isDesktopMachine = true;
 
 	constructor(
 		private smartAssist: SmartAssistService,
@@ -76,34 +74,52 @@ export class PageSmartAssistComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
-		this.autoScreenLockStatus = [false, false, false];
 		this.setIntelligentSecurity();
 		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
 		this.setIsThinkPad(machineType === 1);
 	}
 
+	private setIntelligentSecurity() {
+		// service call to fetch Intelligent Security Properties
+		// this.intelligentSecurity = new IntelligentSecurity(true, 1, true, true, '0', true, false, false, false);
+		this.intelligentSecurity = new IntelligentSecurity();
+		this.intelligentSecurity.isHPDEnabled = true;
+		this.intelligentSecurity.zeroTouchLoginDistance = 1;
+		this.intelligentSecurity.isZeroTouchLoginEnabled = true;
+		this.intelligentSecurity.isZeroTouchLockEnabled = true;
+		this.intelligentSecurity.autoScreenLockTimer = '0';
+		this.intelligentSecurity.isZeroTouchLockVisible = true;
+		this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = false;
+		this.intelligentSecurity.isZeroTouchLoginVisible = false;
+		this.intelligentSecurity.isIntelligentSecuritySupported = false;
+	}
+
 	// invoke HPD related JS bridge calls
 	private initSmartAssist() {
 		Promise.all([
-			this.smartAssist.getAutoLockVisibility(),
-			this.smartAssist.getAutoLockStatus(),
+			this.smartAssist.getZeroTouchLockVisibility(),
+			this.smartAssist.getZeroTouchLockStatus(),
 			this.smartAssist.getSelectedLockTimer(),
-			this.smartAssist.getAutoLockVisibility(),
-			this.smartAssist.getAutoLockStatus(),
+			this.smartAssist.getZeroTouchLoginVisibility(),
+			this.smartAssist.getZeroTouchLoginStatus(),
 			this.smartAssist.getHPDStatus(),
-			this.smartAssist.getHPDVisibility()
+			this.smartAssist.getHPDVisibilityInIdeaPad(),
+			this.smartAssist.getZeroTouchLoginDistance(),
+			this.smartAssist.getZeroTouchLoginAdjustVisibility(),
+			this.smartAssist.getZeroTouchLoginAdjustStatus()
 		]).then((responses: any[]) => {
 
 			this.intelligentSecurity.isZeroTouchLockVisible = responses[0];
-			this.intelligentSecurity.zeroTouchLockFlag = responses[1];
+			this.intelligentSecurity.isZeroTouchLockEnabled = responses[1];
 			this.intelligentSecurity.autoScreenLockTimer = responses[2].toString();
 			this.intelligentSecurity.isZeroTouchLoginVisible = responses[3];
-			this.intelligentSecurity.zeroTouchLoginFlag = responses[4];
-			this.intelligentSecurity.humanPresenceDetectionFlag = responses[5];
+			this.intelligentSecurity.isZeroTouchLoginEnabled = responses[4];
+			this.intelligentSecurity.isHPDEnabled = responses[5];
 			this.intelligentSecurity.isIntelligentSecuritySupported = responses[6];
-
-			console.log('initSmartAssist.Promise.all()', responses);
+			this.intelligentSecurity.zeroTouchLoginDistance = responses[7];
+			this.intelligentSecurity.isDistanceSensitivityVisible = responses[8];
+			this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = responses[9];
+			console.log('initSmartAssist.Promise.all()', responses, this.intelligentSecurity);
 		}).catch(error => {
 			this.logger.error('error in initSmartAssist.Promise.all()', error);
 		});
@@ -116,74 +132,71 @@ export class PageSmartAssistComponent implements OnInit {
 	}
 
 	public onHumanPresenceDetectStatusToggle($event) {
-		this.intelligentSecurity.humanPresenceDetectionFlag = !this.intelligentSecurity.humanPresenceDetectionFlag;
-		if (!this.intelligentSecurity.humanPresenceDetectionFlag) {
+		this.intelligentSecurity.isHPDEnabled = !this.intelligentSecurity.isHPDEnabled;
+		if (!this.intelligentSecurity.isHPDEnabled) {
 			this.intelligentSecurityCopy = { ...this.intelligentSecurity };
-			this.intelligentSecurity.zeroTouchLoginFlag = false;
-			this.intelligentSecurity.zeroTouchLockFlag = false;
-			this.intelligentSecurity.distanceSensitivityFlag = false;
+			this.intelligentSecurity.isZeroTouchLoginEnabled = false;
+			this.intelligentSecurity.isZeroTouchLockEnabled = false;
+			this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = false;
 		} else {
-			this.intelligentSecurity.zeroTouchLoginFlag = this.intelligentSecurityCopy.zeroTouchLoginFlag;
-			this.intelligentSecurity.zeroTouchLockFlag = this.intelligentSecurityCopy.zeroTouchLockFlag;
-			this.intelligentSecurity.distanceSensitivityFlag = this.intelligentSecurityCopy.distanceSensitivityFlag;
+			this.intelligentSecurity.isZeroTouchLoginEnabled = this.intelligentSecurityCopy.isZeroTouchLoginEnabled;
+			this.intelligentSecurity.isZeroTouchLockEnabled = this.intelligentSecurityCopy.isZeroTouchLockEnabled;
+			this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = this.intelligentSecurityCopy.isZeroTouchLoginAdjustEnabled;
 		}
 	}
 
-	public onZeroTouchLoginStatusToggle($event) {
-		this.intelligentSecurity.zeroTouchLoginFlag = !this.intelligentSecurity.zeroTouchLoginFlag;
-		const option = this.intelligentSecurity.zeroTouchLoginFlag ? 'True' : 'False';
-		this.smartAssist.setZeroTouchLoginStatus(option)
+	public onZeroTouchLoginStatusToggle(event: any) {
+		this.intelligentSecurity.isZeroTouchLoginEnabled = event.switchValue;
+		this.smartAssist.setZeroTouchLoginStatus(this.intelligentSecurity.isZeroTouchLoginEnabled)
 			.then((isSuccess: boolean) => {
-				console.log('onZeroTouchLoginStatusToggle.setZeroTouchLoginStatus', isSuccess, this.intelligentSecurity.zeroTouchLoginFlag);
+				console.log('onZeroTouchLoginStatusToggle.setZeroTouchLoginStatus', isSuccess, this.intelligentSecurity.isZeroTouchLoginEnabled);
+			});
+	}
+
+	public setZeroTouchLoginSensitivity(event: ChangeContext) {
+		console.log('setZeroTouchLoginSensitivity', event);
+		this.intelligentSecurity.zeroTouchLoginDistance = event.value;
+		this.smartAssist.setZeroTouchLoginDistance(event.value)
+			.then((isSuccess: boolean) => {
+				console.log('setZeroTouchLoginSensitivity.setSelectedLockTimer', isSuccess, event.value);
 			});
 	}
 
 	// this is invoked when auto lock feature is toggled
-	public onChangeZeroTouchLockFlag($event) {
-		this.intelligentSecurity.zeroTouchLockFlag = !this.intelligentSecurity.zeroTouchLockFlag;
-		const option = this.intelligentSecurity.zeroTouchLockFlag ? 'True' : 'False';
-		this.smartAssist.setAutoLockStatus(option)
+	public onZeroTouchLockStatusToggle(event: any) {
+		this.intelligentSecurity.isZeroTouchLockEnabled = event.switchValue;
+		this.smartAssist.setZeroTouchLockStatus(this.intelligentSecurity.isZeroTouchLockEnabled)
 			.then((isSuccess: boolean) => {
-				console.log('onChangeZeroTouchLockFlag.setAutoLockStatus', isSuccess, this.intelligentSecurity.zeroTouchLockFlag);
+				console.log('onChangeZeroTouchLockFlag.setAutoLockStatus', isSuccess, this.intelligentSecurity.isZeroTouchLockEnabled);
 			});
 	}
 
-	public setIntelligentSecurity() {
-		// service call to fetch Intelligent Security Properties
-		this.intelligentSecurity = new IntelligentSecurity(true, 1, true, true, '0', true, false, false, false);
-		this.autoScreenLockStatus[this.intelligentSecurity.autoScreenLockTimer] = true;
-	}
-
-	public onAutoScreenLockStatusToggle(event: any, value: string) {
+	public onZeroTouchLockTimerChange(event: any, value: string) {
 		this.intelligentSecurity.autoScreenLockTimer = value;
 		this.smartAssist.setSelectedLockTimer(value)
 			.then((isSuccess: boolean) => {
-				console.log('onAutoScreenLockStatusToggle.setSelectedLockTimer', isSuccess, value);
+				console.log('onZeroTouchLockTimerChange.setSelectedLockTimer', isSuccess, value);
 			});
 	}
 
-	public distanceSensitivityStatusToggle(event: ChangeContext) {
-		this.intelligentSecurity.distanceSensitivityFlag = !this.intelligentSecurity.distanceSensitivityFlag;
-	}
-
-	public setZeroTouchLoginSensitivity(event: ChangeContext) {
-		console.log('Human Distance changed', event);
-		this.intelligentSecurity.zeroTouchLoginSensitivity = event.value;
-		const option = event.value.toString();
-		this.smartAssist.setSelectedLockTimer(option)
+	public onDistanceSensitivityAdjustToggle(event: any) {
+		this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = event.switchValue;
+		this.smartAssist.setZeroTouchLoginAdjustStatus(this.intelligentSecurity.isZeroTouchLoginAdjustEnabled)
 			.then((isSuccess: boolean) => {
-				console.log('onAutoScreenLockStatusToggle.setSelectedLockTimer', isSuccess, option);
+				console.log('onDistanceSensitivityAdjustToggle.setZeroTouchLoginAdjustStatus', isSuccess, this.intelligentSecurity.isZeroTouchLoginAdjustEnabled);
 			});
 	}
 
-	public setIsThinkPad(isThinkPad) {
+
+
+	private setIsThinkPad(isThinkPad) {
 		// service call to fetch type of device
 		this.isThinkPad = isThinkPad;
 	}
 
-	public launchPowerAndSleep() {
-		this.deviceService.launchUri('ms-settings:powersleep');
-	}
+	// public launchPowerAndSleep() {
+	// 	this.deviceService.launchUri('ms-settings:powersleep');
+	// }
 
 	public launchFaceEnrollment() {
 		this.deviceService.launchUri('ms-settings:signinoptions-launchfaceenrollment');

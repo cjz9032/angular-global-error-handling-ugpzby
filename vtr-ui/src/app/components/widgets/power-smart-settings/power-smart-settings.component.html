@@ -44,7 +44,7 @@
     </div>
   </div>
 
-  <div *ngIf="showIC===4 || showIC===3">
+  <div *ngIf="showIC===4 || showIC===3 || showIC===14">
     <div class="row py-5 smartsettings-card" id="cooling">
       <div class="col-10 mx-auto ">
         <vtr-container-collapsible
@@ -65,6 +65,7 @@
                 (toggleOnOff)="onIntelligentCoolingToggle($event)">
                 <div class="alignment">
                     <div class="well" *ngIf="showIC===3 && !apsStatus"> {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.apsHint' | translate }} </div>
+                    <div class="well" *ngIf="showIC===14"> {{ selectedModeText }} </div>
                     <div *ngIf="showIC===3 && showIntelligentCoolingModes" class="optimize">
                       {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.optimize' | translate | uppercase }} </div>
                     <div class="row no-gutters" *ngIf="showIntelligentCoolingModes">
@@ -83,6 +84,15 @@
                         [value]="'QUIET & COOL'"
                         [checked]="radioQuietCool"
                         (change)="changeQuietCool($event)">
+                      </vtr-ui-rounded-rectangle-radio>
+                      <vtr-ui-rounded-rectangle-radio
+                        *ngIf="showIC===14"
+                        [radioId]="'radio3'"
+                        [group]="'radio'"
+                        [label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.batterySaving' | translate"
+                        [value]="'Battery Saving'"
+                        [checked]="radioBatterySaving"
+                        (change)="changeBatterySaving($event)">
                       </vtr-ui-rounded-rectangle-radio>
                     </div>
                 </div>
