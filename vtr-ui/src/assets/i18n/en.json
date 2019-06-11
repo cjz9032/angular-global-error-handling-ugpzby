@@ -797,7 +797,7 @@
 						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
 					},
 					"dispColorTemp": {
-						"title": "Display color temperature",
+						"title": "Daytime color temperature",
 						"options": {
 							"warm": "Warm (Better for eyes)",
 							"cold": "Cold"
@@ -807,7 +807,7 @@
 						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
 						"note": {
 							"title": "Note",
-							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+							"description": "When the Eye care mode is enabled. this color temperature does not take effect. However,  you can drag the slide to get a preview of it. To make it effective. turn off the Eye care mode"
 						}
 					},
 					"privacyGuard": {
