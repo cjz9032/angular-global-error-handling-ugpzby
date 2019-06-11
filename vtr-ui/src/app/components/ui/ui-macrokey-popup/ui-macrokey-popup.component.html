@@ -1,7 +1,7 @@
-<div class="modal-main-wrapper" *ngIf="showModal">
+<div class="modal-main-wrapper">
 	<ui-popover>
 		<div class="ui-popover-head">
-			<button class="close" type="button" (click)="close()">
+			<button class="close" type="button" (click)="submitAction(false)">
 				<i class="icon icon-close"></i>
 			</button>
 		</div>
@@ -16,13 +16,13 @@
 		<div class="ui-popover-footer">
 			<div *ngIf="modalContent.btnConfirm">
 				<button class="btn btn-rounded"
-					(click)="close()">{{'gaming.macroKey.popupContent.confirmButton.btnClear' | translate}}</button>
+					(click)="submitAction(true)">{{'gaming.macroKey.popupContent.confirmButton.btnClear' | translate}}</button>
 				<button class="btn btn-default"
-					(click)="close()">{{'gaming.macroKey.popupContent.confirmButton.btnCancel' | translate}}</button>
+					(click)="submitAction(false)">{{'gaming.macroKey.popupContent.confirmButton.btnCancel' | translate}}</button>
 			</div>
 			<div *ngIf="!modalContent.btnConfirm">
 				<button class="btn btn-rounded"
-					(click)="close()">{{'gaming.macroKey.popupContent.btnOk' | translate}}</button>
+					(click)="submitAction(true)">{{'gaming.macroKey.popupContent.btnOk' | translate}}</button>
 			</div>
 		</div>
 	</ui-popover>

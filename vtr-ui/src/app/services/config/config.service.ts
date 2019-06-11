@@ -119,7 +119,7 @@ export class ConfigService {
 		subitems: [{
 			id: 'device',
 			label: 'common.menu.device.sub1',
-			path: '',
+			path: 'Device',
 			icon: '',
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
@@ -439,13 +439,15 @@ export class ConfigService {
 				return resultMenu;
 			}
 
-			if (this.countryCodes.indexOf(machineInfo.country.toLowerCase()) !== -1) {
+			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
+
+			if (this.countryCodes.indexOf(country.toLowerCase()) !== -1) {
 				resultMenu = Object.assign([], this.menuItemsPrivacy);
 			} else {
 				resultMenu = Object.assign([], this.menuItems);
 			}
 
-			if (machineInfo.country.toLowerCase() !== 'us') {
+			if (country.toLowerCase() !== 'us') {
 				resultMenu = resultMenu.filter(item => item.id !== 'home-security');
 			}
 
