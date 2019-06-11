@@ -58,7 +58,6 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 		private smartAssist: SmartAssistService
 	) {
 		this.showVpn();
-		this.showSmartAssist();
 		this.getMenuItems().then((items) => {
 			const cacheShowWindowsHello = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityShowWindowsHello);
 			if (cacheShowWindowsHello) {
@@ -92,6 +91,11 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 				});
 		});
 
+		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		// if IdeaPad or ThinkPad then call below function
+		if (machineType === 0 || machineType === 1) {
+			this.showSmartAssist();
+		}
 	}
 
 	@HostListener('window: focus')
@@ -277,9 +281,9 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 					/**
 					* check if HPD related features are supported or not. If yes show Smart Assist tab else hide. Default is hidden
 					*/
-					this.smartAssist.getSmartAssistVisibility()
+					this.smartAssist.getHPDVisibilityInIdeaPad()
 						.then((isAvailable: boolean) => {
-							console.log('getSmartAssistVisibility()', isAvailable);
+							console.log('getHPDVisibilityInIdeaPad()', isAvailable);
 							// isAvailable = true;
 							this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
 							if (isAvailable) {
@@ -297,7 +301,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 							}
 						})
 						.catch(error => {
-							console.log('error in getSmartAssistVisibility()', error);
+							console.log('error in getHPDVisibilityInIdeaPad()', error);
 						});
 				}
 			}
