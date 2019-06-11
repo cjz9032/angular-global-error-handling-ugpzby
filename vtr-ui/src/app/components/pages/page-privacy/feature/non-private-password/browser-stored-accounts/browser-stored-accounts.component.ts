@@ -16,7 +16,6 @@ export class BrowserStoredAccountsComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.browserAccountsService.getInstalledBrowsersDefaultData();
 	}
 
 	trackByBrowser(index) {

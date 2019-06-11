@@ -28,7 +28,8 @@
 								[isCollapsed]="false"
 								[allowCollapse]="true"
 								[theme]="'white'"
-								(toggle)="onCardCollapse($event)">
+								(toggle)="onCardCollapse($event)"
+								*ngIf="intelligentSecurity.isIntelligentSecuritySupported">
 								<ul class="list-group list-group-flush"
 									*ngIf="!isThinkPad">
 									<li class="no-border-bottom"

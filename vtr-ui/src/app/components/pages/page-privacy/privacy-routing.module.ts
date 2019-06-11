@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ResultComponent } from './pages/result/result.component';
 import { BrowserAccountsComponent } from './pages/browser-accounts/browser-accounts.component';
 import { BreachedAccountsComponent } from './pages/breached-accounts/breached-accounts.component';
 import { TrackersComponent } from './pages/trackers/trackers.component';
@@ -17,7 +16,8 @@ const adminRoutes: Routes = [
 		children: [
 			{
 				path: RoutersName.MAIN, // /privacy
-				component: ResultComponent,
+				redirectTo: RoutersName.BREACHES,
+				pathMatch: 'full',
 			}, {
 				path: RoutersName.BREACHES,
 				component: BreachedAccountsComponent

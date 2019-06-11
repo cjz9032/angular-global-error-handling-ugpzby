@@ -13,6 +13,7 @@ export class DisplayColorTempComponent implements OnInit {
 	@Input() manualRefresh: any;
 	@Output() displayColorTempChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() resetTemparature: EventEmitter<any> = new EventEmitter();
+	@Output() colorPreviewValue: EventEmitter<ChangeContext> = new EventEmitter();
 
 
 	constructor() { }
@@ -30,4 +31,7 @@ export class DisplayColorTempComponent implements OnInit {
 		this.resetTemparature.emit($event);
 	}
 
+	public dragChangeValue($event: any){
+		this.colorPreviewValue.emit($event);
+	}
 }

@@ -16,10 +16,10 @@
 			<vtr-battery-detail [data]="batteryInfo" [dataGauge]="batteryGauge"> </vtr-battery-detail>
 		</div>
 	</ng-template>
-	<!-- <div class="container p-5" [ngClass]="{'background-green':batteryQuality[batteryCondition.quality]== 'Good',
-		'background-orange': batteryQuality[batteryCondition.quality]== 'Fair',
-		'background-red':batteryQuality[batteryCondition.quality]== 'Poor'}"> -->
-	<div class="container p-5">
+	<div class="container p-5" 
+		[ngClass]="{'background-green':batteryQuality[batteryCondition.quality]== 'Good',
+					'background-orange': batteryQuality[batteryCondition.quality]== 'Fair',
+					'background-red':batteryQuality[batteryCondition.quality]== 'Poor'}">
 		<div class="battery-gauge-label text-uppercase">
 			{{'device.deviceSettings.batteryGauge.title' | translate}}
 		</div>
@@ -28,7 +28,9 @@
 		</div>
 		{{batteryIndicator.percent == 0 && flag ? reInitValue(): ""}}
 		<div class="pt-4 battery-frame pr-3">
-			<vtr-battery-indicator [remainingHour]="batteryIndicator.hours"
+			<vtr-battery-indicator 
+				[batteryHealth]= "batteryQuality[batteryCondition.quality]"
+				[remainingHour]="batteryIndicator.hours"
 				[remainingMinutes]="batteryIndicator.minutes"
 				[percentage]="batteryIndicator.percent"
 				[isCharging]="batteryIndicator.charging"
@@ -39,7 +41,7 @@
 		</div>
 		<!-- <div class="p-3 row">
 			<div class="p-0 pr-2 col-auto battery-conditions-icon">
-				<fa-icon *ngIf="batteryQuality[batteryCondition.quality]== 'Good'" 
+				<fa-icon *ngIf="batteryQuality[batteryCondition.quality]== 'Good'"
 						[icon]="['fas', 'check-circle']" 
 						class="good">
 				</fa-icon>
