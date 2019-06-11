@@ -9,6 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 // CUSTOM MODULES
 import { AppRoutingModule } from './app-routing.module';
@@ -402,7 +403,8 @@ library.add(fal);
 		// ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 		TranslationModule,
 		BrowserAnimationsModule,
-		PrivacyModule
+		PrivacyModule,
+		ColorPickerModule
 	],
 	providers: [
 		CookieService,
