@@ -29,6 +29,7 @@
 							[caption]=""
 							[isSwitchVisible]="false"
 							[leftIcon]="['fal', 'eye']"
+							[rightIcon]="['far', 'question-circle']"
 							[readMoreText]="''"
 							[showChildContent]="true"
 							[theme]="'white'"
@@ -40,8 +41,14 @@
 										[manualRefresh]="manualRefresh"
 										(displayColorTempChange)="onSetChangeDisplayColorTemp($event)"
 										(resetTemparature)="resetDaytimeColorTemp($event)"
-										(colorPreviewValue) = "setToEyeCareMode()">
+										(colorPreviewValue) = "setToEyeCareMode()">									
 									</vtr-display-color-temp>
+									<div class="row">
+										<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4">
+											<p>{{'device.deviceSettings.displayCamera.display.dispColorTemp.note.description' | translate}}
+											</p>
+										</div>
+									</div>
 								</div>
 							</div>
 						</vtr-ui-row-switch>
