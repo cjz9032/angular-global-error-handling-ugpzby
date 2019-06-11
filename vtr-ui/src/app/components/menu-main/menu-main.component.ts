@@ -233,8 +233,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	showVpn() {
 		this.regionService.getRegion().subscribe({
 			next: x => { this.region = x; },
-			error: err => { console.error(err); },
-			complete: () => { console.log('Done'); }
+			error: err => { this.region = 'US'; }
 		});
 		this.getMenuItems().then((items) => {
 			const securityItemForVpn = items.find(item => item.id === 'security');
