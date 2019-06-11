@@ -212,11 +212,8 @@ import { IntelligentMediaComponent } from './components/pages/page-smart-assist/
 import { UiMacrokeyCollapsibleContainerComponent } from './components/ui/ui-macrokey-collapsible-container/ui-macrokey-collapsible-container.component';
 import { CursorTypePipe } from './pipe/ui-security-statusbar/cursor-type.pipe';
 import { UiGamingDriverPopupComponent } from './components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
-<<<<<<< HEAD
 import { UiCircleRadioWithCheckboxComponent } from './components/ui/ui-circle-radio-with-checkbox/ui-circle-radio-with-checkbox.component';
-=======
 import { UiChsStatusbarComponent } from './components/ui/ui-chs-statusbar/ui-chs-statusbar.component';
->>>>>>> 27df15ceeae80ff5355e9555c9f9629c1d040765
 
 library.add(fas);
 library.add(fab);
@@ -392,11 +389,8 @@ library.add(fal);
 		UiMacrokeyCollapsibleContainerComponent,
 		CursorTypePipe,
 		UiGamingDriverPopupComponent,
-<<<<<<< HEAD
-		UiCircleRadioWithCheckboxComponent
-=======
+		UiCircleRadioWithCheckboxComponent,
 		UiChsStatusbarComponent
->>>>>>> 27df15ceeae80ff5355e9555c9f9629c1d040765
 	],
 	imports: [
 		BrowserModule,
