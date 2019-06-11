@@ -91,7 +91,7 @@ export class OledPowerSettingsComponent implements OnInit {
 			text: never
 		},
 		{
-			name: 'Half time',
+			name: halfTime,
 			value: 10,
 			placeholder: '',
 			text: halfTime
