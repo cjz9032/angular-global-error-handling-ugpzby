@@ -1,3 +1,3 @@
 export class CPUOCStatus {
-	public cpuOCStatus: number;
+	public cpuOCStatus: number = 1;
 }
