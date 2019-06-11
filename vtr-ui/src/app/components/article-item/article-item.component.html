@@ -13,7 +13,7 @@
 				metricsParent="Page.Support"
 				metricsItemID="{{ item.Id }}"
 				metricsItemCategory="{{ itemCategory }}"
-				metricsItemPosition="{{ index }}"
+				metricsItemPosition="{{ index + 1 }}"
 				metricsViewOrder="{{metricsDatas.viewOrder}}"
 				metricsPageNumber="{{metricsDatas.pageNumber}}"
 				(click)="showArticleDetails()">
@@ -37,7 +37,7 @@
 					metricsParent="Page.Support"
 					metricsItemID="{{ item.Id }}"
 					metricsItemCategory="{{ itemCategory }}"
-					metricsItemPosition="{{ index }}"
+					metricsItemPosition="{{ index + 1 }}"
 					metricsViewOrder="{{metricsDatas.viewOrder}}"
 					metricsPageNumber="{{metricsDatas.pageNumber}}"
 					(click)="showArticleDetails()">{{item.Title}}</a>
@@ -52,7 +52,7 @@
 						metricsParent="Page.Support"
 						metricsItemID="{{ item.Id }}"
 						metricsItemCategory="{{ itemCategory }}"
-						metricsItemPosition="{{ index }}"
+						metricsItemPosition="{{ index + 1 }}"
 						metricsViewOrder="{{metricsDatas.viewOrder}}"
 						metricsPageNumber="{{metricsDatas.pageNumber}}"
 						(click)="showArticleDetails()">
