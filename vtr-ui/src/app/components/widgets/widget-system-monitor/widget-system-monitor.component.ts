@@ -113,7 +113,6 @@ export class WidgetSystemMonitorComponent implements OnInit {
 				else {
 					hwInfo.diskList[_i].isSystemDisk = false;
 				}
-				console.log("showicons" + hd);
 			}
 
 		});
