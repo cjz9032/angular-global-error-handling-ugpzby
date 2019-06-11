@@ -24,10 +24,6 @@ export class InstalledBrowserComponent {
 	constructor(private communicationWithFigleafService: CommunicationWithFigleafService) {
 	}
 
-	toggleDetails() {
-		// this.isDetailsExpanded = !this.isDetailsExpanded;
-	}
-
 	trackAccountsById(index) {
 		return index;
 	}

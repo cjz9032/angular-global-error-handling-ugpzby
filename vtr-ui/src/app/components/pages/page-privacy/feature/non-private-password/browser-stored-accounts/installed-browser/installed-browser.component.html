@@ -37,7 +37,7 @@
 		Show details
 	</a>
     <button *ngIf="showDetailAction === 'expand' && installedBrowser.accountsCount"
-			class="installed-browser__btn" (click)="toggleDetails()"
+			class="installed-browser__btn"
             vtrSendAnalytics
             [metricsEvent]="'ItemClick'"
             [metricsItem]="'NonPrivatePasswordsDetailItem'"
