@@ -66,22 +66,21 @@ export enum LocalStorageKey {
 	SystemUpdateInstallationHistoryList = '[LocalStorageKey] SystemUpdateInstallationHistoryList',
 
 	// this enum is for local storage keys. new keys can be added here. Please give meaningful names to key
-	cpuInfoFeature= '[LocalStorageKey] cpuInfoFeature',
-	gpuInfoFeature= '[LocalStorageKey] gpuInfoFeature',
-	memoryInfoFeature= '[LocalStorageKey] memoryInfoFeature',
-	hddInfoFeature= '[LocalStorage] hddInfoFeature',
-	touchPadLedfeature= '[LocalStorageKey] touchPadLedfeature',
-	winKeyLockfeature= '[LocalStorageKey] winKeyLockFeature',
-	networkBoostFeature= '[LocalStorageKey] networkBoostFeature',
-	cpuOCFeature= '[LocalStorageKey] cpuOCFeature',
-	ledSetFeature= '[LocalStorageKey] ledSetFeature',
-	memOCFeature= '[LocalStorageKey] memOCFeature',
-	macroKeyFeature= '[LocalStorageKey] macroKeyFeature',
-	hybridModeFeature= '[LocalStorageKey] hybridModeFeature',
-	optimizationFeature= '[LocalStorageKey] optimizationFeature',
-	smartFanFeature= '[LocalStorageKey] smartFanFeature',
+	cpuInfoFeature = '[LocalStorageKey] cpuInfoFeature',
+	gpuInfoFeature = '[LocalStorageKey] gpuInfoFeature',
+	memoryInfoFeature = '[LocalStorageKey] memoryInfoFeature',
+	hddInfoFeature = '[LocalStorage] hddInfoFeature',
+	touchPadLedfeature = '[LocalStorageKey] touchPadLedfeature',
+	winKeyLockfeature = '[LocalStorageKey] winKeyLockFeature',
+	networkBoostFeature = '[LocalStorageKey] networkBoostFeature',
+	cpuOCFeature = '[LocalStorageKey] cpuOCFeature',
+	ledSetFeature = '[LocalStorageKey] ledSetFeature',
+	memOCFeature = '[LocalStorageKey] memOCFeature',
+	macroKeyFeature = '[LocalStorageKey] MacroKeyFeature',
+	hybridModeFeature = '[LocalStorageKey] hybridModeFeature',
+	optimizationFeature = '[LocalStorageKey] optimizationFeature',
+	smartFanFeature = '[LocalStorageKey] smartFanFeature',
 	xtuService = '[LocalStorageKey] xtuService',
-	fbNetFilter= '[LocalStorageKey] fbNetFilter',
-	ledDriver= '[LocalStorageKey] ledDriver'
-
+	fbNetFilter = '[LocalStorageKey] fbNetFilter',
+	ledDriver = '[LocalStorageKey] ledDriver'
 }

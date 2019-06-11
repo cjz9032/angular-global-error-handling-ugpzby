@@ -20,10 +20,12 @@ export class WidgetSystemToolsComponent implements OnInit {
 	ngOnInit() {
 		// TODO: Get macrokey capblity from local storage.
 		// set this.gamingProperties.<macroKey> = local storage value;
-		this.gamingProperties.macroKeyfeature = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.macroKeyFeature);
+		this.gamingProperties.macroKeyFeature = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.macroKeyFeature
+		);
 
 		this.commonService.notification.subscribe((response) => {
-			if (response.type === Gaming.GamingCapablities && isUndefined(this.gamingProperties)) {
+			if (response.type === Gaming.GamingCapablities) {
 				this.gamingProperties = response.payload;
 			}
 		});
