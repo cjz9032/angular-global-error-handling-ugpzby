@@ -42,7 +42,7 @@
             [metricsEvent]="'ItemClick'"
             [metricsItem]="'NonPrivatePasswordsDetailItem'"
 			[class.installed-browser__btn--expanded]="isDetailsExpanded">
-		{{isDetailsExpanded ? 'Hide' : 'Show'}} details
+		<span>Details</span>
 	</button>
   </div>
   <div *ngIf="isDetailsExpanded" class="installed-browser__content" data-analyticsName="Details">

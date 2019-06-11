@@ -31,13 +31,12 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 	defaultIcon = DEFAULT_ICON;
 
 	tryProductText = {
-		title: 'Block online trackers with lenovo privacy by figleaf',
-		text: 'Do what you love online without being tracked by advertisers and others. Start your 14-day free trial. No credit card required.',
-		buttonText: 'Try Lenovo Privacy',
-		link: {
-			text: 'Learn more',
-			url: '/#/privacy/landing'
-		},
+		risk: 'Most websites collect your IP address, location, social profile information, ' +
+			'and even shopping history to personalize your experience, show targeted ads, ' +
+			'or suggest things based on your interests.',
+		howToFix: 'You can block some tracking tools by turning on the ‘Do Not Track’ feature in your browser. ' +
+			'Or install Lenovo Privacy by FigLeaf and block them ' +
+			'completely from collecting your personal information.'
 	};
 
 	textForLoader = 'Creating tracker map for the most popular websitess';
