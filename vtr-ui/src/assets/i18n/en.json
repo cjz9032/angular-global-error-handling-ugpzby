@@ -926,6 +926,18 @@
 					}
 				}
 			},
+			"activeProtectionSystem": {
+				"title": "Active Protection System",
+				"description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+				"activeProtection": {
+					"title": "Active Protection",
+					"caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection"
+				},
+				"manualActiveProtectionSuspension": {
+					"title": "Manual Active Protection Suspension",
+					"caption": "Allow me to manually suspend the Active Protection System"
+				}
+			},
 			"intelligentMedia": {
 				"heading": "Intelligent Media",
 				"title": "Zero Touch Video Playback",
