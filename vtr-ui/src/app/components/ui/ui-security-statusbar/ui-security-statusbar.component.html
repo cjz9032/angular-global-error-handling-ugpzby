@@ -33,19 +33,6 @@
 					[title]="list.buttonTitle | translate"
 					[label]="list.buttonTitle | translate" [isRegular]=regular ></vtr-ui-button>
 			</div>
-			<div *ngIf="list.badge" class="row align-item-center">
-				<h3 *ngFor="let badgeItem of list.badge" [ngClass]="badgeItem | cursorType">
-					<a [href]="badgeItem.expiredUrl | sanitizeUrl" target="_blank">
-						<span *ngIf="badgeItem.status"
-							class="badge badge-pill ml-3 text-uppercase"
-							[ngClass]="badgeItem.status | textClass"
-							(click)="badgeItem.clickEvent()"
-							title="{{badgeItem.text}}">
-							{{badgeItem.text}}
-						</span>
-					</a>
-				</h3>
-			</div>
 		</div>
 	</li>
 </ul>
