@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Input, Output, OnInit, AfterViewInit } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BreachedAccount } from '../../../common/services/breached-accounts.service';
 import { VantageCommunicationService } from '../../../common/services/vantage-communication.service';
 import { CommunicationWithFigleafService } from '../../../utils/communication-with-figleaf/communication-with-figleaf.service';
+import { BreachedAccountService } from './breached-account.service';
 
 export enum BreachedAccountMode {
 	FULL = 'FULL',
@@ -15,28 +16,30 @@ export enum BreachedAccountMode {
 })
 export class BreachedAccountComponent implements OnInit, AfterViewInit {
 	@Input() mode: BreachedAccountMode = BreachedAccountMode.FULL;
-	@Input() breachedAccounts: BreachedAccount[];
+	@Input() set breachedAccounts(breachedAccounts: BreachedAccount[]) {
+		const {breachedAccountsForShow, otherBreaches} =
+			this.breachedAccountService.createBreachedAccountsForShow(breachedAccounts);
+		this.breachedAccountsForShow = breachedAccountsForShow;
+		this.otherBreaches = otherBreaches;
+	}
 	@Input() openId = null;
-	@Output() detailClick = new EventEmitter<number>();
+	@Input() isUserAuthorized: boolean;
+	@Output() verifyClick = new EventEmitter<boolean>();
+
+	breachedAccountsForShow: BreachedAccount[] = [];
+	otherBreaches: BreachedAccount[] = [];
 
 	isFigleafReadyForCommunication = false;
 
 	tryProductText = {
-		title: 'Fix & monitor breaches with Lenovo Privacy',
-		text: 'Fix your breached accounts with ease by changing your passwords and mask emails.' +
-			' If any of your accounts stored in Lenovo Privacy by FigLeaf are part of a breach, you’ll know about it. Start 14-day free trial. No credit card required.',
-		buttonText: 'Try Lenovo Privacy',
-		link: {
-			text: 'Learn more',
-			url: '/#/privacy/landing'
-		},
+		risk: 'When your accounts are breached, anyone can access and use your private information.',
+		howToFix: 'You should change passwords for breached accounts. Try Lenovo Privacy by FigLeaf to fix breaches and prevent them in future.'
 	};
-
-	readonly breachedAccountMode = BreachedAccountMode;
 
 	constructor(
 		private communicationWithFigleafService: CommunicationWithFigleafService,
-		private vantageCommunicationService: VantageCommunicationService) {
+		private vantageCommunicationService: VantageCommunicationService,
+		private breachedAccountService: BreachedAccountService) {
 	}
 
 	ngOnInit() {
@@ -55,7 +58,7 @@ export class BreachedAccountComponent implements OnInit, AfterViewInit {
 
 	transformDomain(domain) {
 		if (domain === 'n/a') {
-			return 'unknown website';
+			return 'Other breach info';
 		}
 		return domain;
 	}
@@ -68,7 +71,7 @@ export class BreachedAccountComponent implements OnInit, AfterViewInit {
 		this.vantageCommunicationService.openFigleafByUrl(link);
 	}
 
-	detailClickEmit(i) {
-		this.detailClick.emit(i);
+	verifyClickEmit() {
+		this.verifyClick.emit(true);
 	}
 }

@@ -6,22 +6,12 @@
 		<div class="confirm-content">
 			<div class="confirm-content__container-top" [class.confirm-content__container-top--error]="isError$ | async">
 				<div class="confirm-content__inner-wrapper">
-					<p class="confirm-content__title">Enter code</p>
+					<p class="confirm-content__title">Email with a verification code has been sent to</p>
+					<p class="confirm-content__title"><span class="confirm-content__title--bold">{{userEmail}}</span>. Enter the code below to continue.</p>
 					<div class="verification-input">
 						<input #confirmationInput class="verification-input__input" [class.verification-input__input--error]="isError$ | async"
 							   type="text" maxlength="6" vtrNumbersOnly
 							   formControlName="confirmationCode">
-					</div>
-					<div class="confirm-failure">
-						<p class="confirm-failure__text">Didn't get the code?</p>
-						<button type="reset"
-								class="confirm-failure__btn"
-								vtrSendAnalytics
-								[metricsEvent]="'ItemClick'"
-								[metricsItem]="'BreachedAccountsSendItAgainLink'"
-								(click)="resendConfirmationCode()">
-							send it again
-						</button>
 					</div>
 				</div>
 			</div>
@@ -30,11 +20,6 @@
 				<img class="confirm-error__img" src="/assets/icons/privacy-tab/error-white.svg" alt="">
 				<p class="confirm-error__text">Sorry, the code you entered is not valid. Please try again.</p>
 			</div>
-
-			<div class="confirm-content__steps">
-				<vtr-scan-steps steps="verifyPopUpSteps"></vtr-scan-steps>
-			</div>
-
 		</div>
 
 		<div class="confirm__confirm-btn-wrapper">
@@ -44,7 +29,15 @@
 					[metricsItem]="'BreachedAccountsConfirmEmailButton'"
 					[class.confirm__confirm-btn--error]="confirmationForm.get('confirmationCode').dirty && confirmationForm.get('confirmationCode').invalid || (isError$ | async)"
 					type="submit">
-				Confirm email
+				Confirm
+			</button>
+			<button type="reset"
+					class="confirm-failure__btn"
+					vtrSendAnalytics
+					[metricsEvent]="'ItemClick'"
+					[metricsItem]="'BreachedAccountsSendItAgainLink'"
+					(click)="resendConfirmationCode()">
+				Send the code again
 			</button>
 		</div>
 	</form>

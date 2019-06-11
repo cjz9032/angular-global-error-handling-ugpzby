@@ -5,7 +5,7 @@
              	'check-breaches__input-wrapper--small': size === 'small',
 			 	'check-breaches__input-wrapper--focused': isFormFocused,
 			 	'check-breaches__input-wrapper--validation-error': emailWasSubmitted && emailForm.dirty && emailForm.touched && emailForm.invalid,
-			 	'check-breaches__input-wrapper--server-error': (serverError$ | async)
+			 	'check-breaches__input-wrapper--server-error': (serverError$ | async) && size !== 'small'
 			 }">
             <div class="check-breaches__input-with-id">
                 <input class="check-breaches__input" type="text"
@@ -29,7 +29,7 @@
             </div>
             <button class="check-breaches__button"
                     [class.check-breaches__button--error]="(emailForm.dirty && emailForm.touched && emailForm.invalid || (isLoading$ | async))"
-                    vtrSendAnalytics
+					vtrSendAnalytics
                     [metricsEvent]="'ItemClick'"
                     [metricsItem]="'BreachedAccountsRunCheckupButton'"
                     type='submit'>
@@ -42,15 +42,9 @@
             <img class="check-error__img" src="/assets/icons/privacy-tab/error-white.svg" alt="warning-icon">
             <p class="check-error__text">Please enter a valid email address.</p>
         </div>
-        <div *ngIf="(serverError$ | async)" class="check-error check-error--server">
+        <div *ngIf="(serverError$ | async) && size !== 'small'" class="check-error check-error--server">
             <img class="check-error__img" src="/assets/icons/privacy-tab/error-white.svg" alt="warning-icon">
             <p class="check-error__text">Sorry, the server is not available at the moment. Please try again later.</p>
         </div>
     </form>
 </div>
-
-<vtr-common-popup popUpId="{{confirmationPopupId}}" size="default">
-    <ng-template>
-        <vtr-confirmation-popup popupId="{{confirmationPopupId}}"></vtr-confirmation-popup>
-    </ng-template>
-</vtr-common-popup>

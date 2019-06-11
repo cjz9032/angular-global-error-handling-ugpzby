@@ -21,15 +21,12 @@ export class VantageShellService {
 		if (this.shell) {
 			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
 			const powerClient = this.shell.PowerClient ? this.shell.PowerClient() : null;
-			this.phoenix = Phoenix.default(
-				new inversify.Container(),
-				{
-					metricsBroker: metricClient,
-					hsaPowerBroker: powerClient,
-					hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
-					hsaForteBroker: this.shell.ForteRpcClient ? this.shell.ForteRpcClient.getInstance() : null
-				}
-			);
+			this.phoenix = Phoenix.default(new inversify.Container(), {
+				metricsBroker: metricClient,
+				hsaPowerBroker: powerClient,
+				hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
+				hsaForteBroker: this.shell.ForteRpcClient ? this.shell.ForteRpcClient.getInstance() : null
+			});
 		}
 	}
 
@@ -443,7 +440,8 @@ export class VantageShellService {
 	public getIntelligentSensing(): any {
 		if (this.phoenix) {
 			return this.phoenix.hwsettings.lis.intelligentSensing;
-		} return undefined;
+		}
+		return undefined;
 	}
 
 	public getMetricPreferencePlugin() {
@@ -473,11 +471,11 @@ export class VantageShellService {
 		return undefined;
 	}
 
-
 	public getIntelligentMedia(): any {
 		if (this.phoenix) {
 			return this.phoenix.hwsettings.lis.intelligentMedia;
-		} return undefined;
+		}
+		return undefined;
 	}
 
 	public getPreferenceSettings() {
@@ -492,6 +490,12 @@ export class VantageShellService {
 	public setMacroKeyClear(macroKey: string): any {
 		if (this.phoenix) {
 			return this.phoenix.gaming.gamingMacroKey.setClear(macroKey);
+		}
+		return undefined;
+	}
+	public getGamingMacroKey(): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey;
 		}
 		return undefined;
 	}

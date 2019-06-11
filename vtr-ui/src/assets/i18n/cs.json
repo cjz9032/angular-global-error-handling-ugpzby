@@ -228,10 +228,39 @@
         "lightingProfile": {
             "title": "Lighting",
             "effect": {
-                "option1": "Wave",
-                "option2": "Option 2",
-                "option3": "Option 3",
-                "option4": "option 4"
+                "option1": {
+                    "title": "Static"
+                },
+                "option2": {
+                    "title": "Flicker"
+                },
+                "option3": {
+                    "title": "Breath"
+                },
+                "option4": {
+                    "title": "Wave"
+                },
+                "option5": {
+                    "title": "Music"
+                },
+                "option6": {
+                    "title": "Smooth"
+                },
+                "option7": {
+                    "title": "CPU Temperature"
+                },
+                "option8": {
+                    "title": "CPU Utilization"
+                },
+                "option9": {
+                    "title": "Response"
+                },
+                "option10": {
+                    "title": "Ripple"
+                },
+                "option11": {
+                    "title": "No Light"
+                }
             }
         }
     },
@@ -1116,7 +1145,9 @@
             "maliciousNetwork": "Tento měsíc byl váš počítač ochráněn před {{maliciousWifi}} škodlivými sítěmi.",
             "good": "V POŘÁDKU",
             "malicious": "ŠKODLIVÝ KÓD",
-            "suspicious": "PODEZŘELÝ KÓD"
+            "suspicious": "PODEZŘELÝ KÓD",
+            "titleOffline": "No internet connection detected",
+            "subTitleOffline": "Learn more on how to solve connection issues in our"
         },
         "antivirus": {
             "common": {
@@ -1550,7 +1581,7 @@
                 },
                 "span10": {
                     "line1": "If you are running a",
-                    "line2": "64",
+                    "line2": 64,
                     "line3": "bit version of Windows 8, 32-bit Operating,",
                     "line4": "x64-based PC is displayed in the",
                     "line5": "System type",
@@ -1611,7 +1642,7 @@
                 "span5": "B. Analyze Your Power Usage",
                 "span6": "4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
                 "span7": {
-                    "line1": "5.",
+                    "line1": 5,
                     "line2": "“System”,",
                     "line3": "“Display”,",
                     "line4": "and",

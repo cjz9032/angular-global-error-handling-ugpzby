@@ -7,6 +7,7 @@ export class IntelligentSecurity {
 		public autoScreenLockTimer: string,
 		public isZeroTouchLockVisible: boolean,
 		public distanceSensitivityFlag: boolean,
-		public isZeroTouchLoginVisible: boolean
+		public isZeroTouchLoginVisible: boolean,
+		public isIntelligentSecuritySupported: boolean
 	) { }
 }
