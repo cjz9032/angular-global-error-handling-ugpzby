@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { QA } from '../../data-models/qa/qa.model';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Injectable({
 	providedIn: 'root'
@@ -733,7 +733,7 @@ export class QaService {
 		}
 	];
 
-	constructor(private translate: TranslateService) {}
+	constructor(private translate: TranslateService) { }
 
 	setTranslationService(translate: TranslateService) {
 		this.translate = translate;
@@ -743,5 +743,63 @@ export class QaService {
 		return this.qas.find((element, index, array) => {
 			return element.id === id;
 		});
+	}
+	setCurrentLangTranslations() {
+		//Evaluate the translations for QA on language Change
+		this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+
+			this.qas.forEach(qa => {
+				try {
+					qa.title = this.translate.instant(qa.title);
+					this.translate.stream(qa.title).subscribe((value) => {
+						qa.title = value;
+					});
+
+					qa.description = this.translate.instant(qa.description);
+					// console.log(qa.description);
+					this.translate.get(qa.keys).subscribe((translation: [string]) => {
+						// console.log(JSON.stringify(translation));
+						qa.keys = translation;
+						// console.log(JSON.stringify(qa.keys));
+					});
+				} catch (e) {
+					console.log('already translated');
+				}
+				finally {
+					console.log('already translated');
+				}
+
+			});
+
+			// this.qas = this.qaService.qas;
+		});
+
+
+		this.qas.forEach(qa => {
+			try {
+				qa.title = this.translate.instant(qa.title);
+				this.translate.stream(qa.title).subscribe((value) => {
+					qa.title = value;
+				});
+
+
+				qa.description = this.translate.instant(qa.description);
+				//console.log(qa.description);
+				this.translate.get(qa.keys).subscribe((translation: [string]) => {
+					//console.log(JSON.stringify(translation));
+					qa.keys = translation;
+					//console.log(JSON.stringify(qa.keys));
+				});
+			}
+			catch (e) {
+				console.log("already translated");
+			}
+			finally {
+				console.log("already translated");
+			}
+
+		});
+
+		//return this.qas;
 	}
 }
