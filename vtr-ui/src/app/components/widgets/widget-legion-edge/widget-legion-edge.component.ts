@@ -13,6 +13,7 @@ import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-cap
 import { GamingKeyLockService } from 'src/app/services/gaming/gaming-keylock/gaming-key-lock.service';
 import { GamingHybridModeService } from 'src/app/services/gaming/gaming-hybrid-mode/gaming-hybrid-mode.service';
 import { Gaming } from 'src/app/enums/gaming.enum';
+import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
 
 @Component({
 	selector: 'vtr-widget-legion-edge',
@@ -27,6 +28,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public gamingCapabilities: any;
 	public touchpadLockStatus: any;
 	public TouchpadLockStatusObj = new TouchpadLockStatus();
+	public gamingProperties: any = new GamingAllCapabilities();
 	public legionUpdate = [
 		{
 			readMoreText: '',
@@ -172,25 +174,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	};
 	public cpuOCStatus: CPUOCStatus;
 	public setCpuOCStatus: any;
-	// private gamingCapabilities: any = {
-	// 	cpuInfoFeature: true,
-	// 	gpuInfoFeature: true,
-	// 	memoryInfoFeature: true,
-	// 	hddInfoFeature: true,
-	// 	winKeyLockFeature: true,
-	// 	touchpadLockFeature: true,
-	// 	networkBoostFeature: true,
-	// 	cpuOCFeature: true,
-	// 	ledSetFeature: false,
-	// 	memOCFeature: true,
-	// 	macroKeyFeature: false,
-	// 	hybridModeFeature: true,
-	// 	optimizationFeature: true,
-	// 	smartFanFeature: false,
-	// 	xtuService: false,
-	// 	fbnetFilter: true,
-	// 	ledDriver: false
-	// };
 
 	constructor(
 		private modalService: NgbModal,
@@ -199,38 +182,63 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		private gamingAllCapabilities: GamingAllCapabilitiesService,
 		private commonService: CommonService,
 		private gamingKeyLockService: GamingKeyLockService,
-		private gamingHybridModeService: GamingHybridModeService
+		private gamingHybridModeService: GamingHybridModeService,
+		private gamingCapabilityService: GamingAllCapabilitiesService
 	) { }
-	ngAfterViewInit(): void { }
 	ngOnInit() {
+		this.gamingProperties.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.hybridModeFeature
+		);
+		this.gamingProperties.cpuOCFeature = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.cpuOCFeature
+		);
+		this.gamingProperties.memOCFeature = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.memOCFeature
+		);
+		this.gamingProperties.networkBoostFeature = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.networkBoostFeature
+		);
+		this.gamingProperties.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.hybridModeFeature
+		);
+		this.gamingProperties.touchpadLockFeature = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.touchpadLockFeature
+		);
+		this.gamingProperties.winKeyLockFeature = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.winKeyLockFeature
+		);
+		// Initialize Legion Edge component from cache
+		this.legionEdgeInit(this.gamingProperties);
 		this.commonService.notification.subscribe((response) => {
-			if (response.type === Gaming.GamingCapablities && isUndefined(this.gamingCapabilities)) {
-				this.gamingCapabilities = response.payload;
-				console.log('get gamingCapabilities --------------------------------->', this.gamingCapabilities);
-				this.legionUpdate[0].isVisible = this.gamingCapabilities.cpuOCFeature;
-				this.legionUpdate[1].isVisible = this.gamingCapabilities.memOCFeature;
-				this.legionUpdate[2].isVisible = this.gamingCapabilities.autoClose;
-				this.legionUpdate[3].isVisible = this.gamingCapabilities.networkBoostFeature;
-				this.legionUpdate[4].isVisible = this.gamingCapabilities.hybridModeFeature;
-				this.legionUpdate[5].isVisible = this.gamingCapabilities.touchpadLockFeature;
-
-				if (this.gamingCapabilities.cpuOCFeature) {
-					this.renderCPUOverClockStatus();
-				}
-
-				if (this.gamingCapabilities.memOCFeature) {
-					this.renderRamOverClockStatus();
-				}
-
-				if (this.gamingCapabilities.touchpadLockFeature  && this.gamingCapabilities.winKeyLockFeature) {
-					this.renderTouchpadLockStatus();
-				}
-
-				if (this.gamingCapabilities.hybridModeFeature) {
-					this.renderHybridModeStatus();
-				}
-			}
+		if (response.type === Gaming.GamingCapablities) {
+		this.gamingCapabilities = response.payload;
+		this.legionEdgeInit(this.gamingCapabilities);
+		}
 		});
+	}
+
+	legionEdgeInit(gamingStatus: any) {
+		this.legionUpdate[0].isVisible = gamingStatus.cpuOCFeature;
+		this.legionUpdate[1].isVisible = gamingStatus.memOCFeature;
+		this.legionUpdate[3].isVisible = gamingStatus.networkBoostFeature;
+		this.legionUpdate[4].isVisible = gamingStatus.hybridModeFeature;
+		this.legionUpdate[5].isVisible = gamingStatus.touchpadLockFeature;
+
+		if (gamingStatus.cpuOCFeature) {
+			this.renderCPUOverClockStatus();
+		}
+
+		if (gamingStatus.memOCFeature) {
+			this.renderRamOverClockStatus();
+		}
+
+		if (gamingStatus.touchpadLockFeature  && gamingStatus.winKeyLockFeature) {
+			this.renderTouchpadLockStatus();
+		}
+
+		if (gamingStatus.hybridModeFeature) {
+			this.renderHybridModeStatus();
+		}
 	}
 
 	public GetCPUOverClockCacheStatus(): any {
@@ -243,7 +251,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				this.drop.curSelected = this.cpuOCStatus.cpuOCStatus;
 			}
 			this.gamingSystemUpdateService.getCpuOCStatus().then((cpuOCStatus) => {
-				console.log('get cpu oc status js bridge ---------------->', cpuOCStatus);
 				if (cpuOCStatus !== undefined) {
 					const CpuOCStatusObj = new CPUOCStatus();
 					CpuOCStatusObj.cpuOCStatus = cpuOCStatus;

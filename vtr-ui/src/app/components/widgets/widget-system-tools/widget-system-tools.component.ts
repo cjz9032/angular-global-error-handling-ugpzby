@@ -13,17 +13,13 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 })
 export class WidgetSystemToolsComponent implements OnInit {
 	@Input() title = '';
-	public GamingAllCapabilities: any;
 	public gamingProperties: any = new GamingAllCapabilities();
 	constructor(private commonService: CommonService, private gamingCapabilityService: GamingAllCapabilitiesService) {}
 
 	ngOnInit() {
-		// TODO: Get macrokey capblity from local storage.
-		// set this.gamingProperties.<macroKey> = local storage value;
 		this.gamingProperties.macroKeyFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.macroKeyFeature
 		);
-
 		this.commonService.notification.subscribe((response) => {
 			if (response.type === Gaming.GamingCapablities) {
 				this.gamingProperties = response.payload;
