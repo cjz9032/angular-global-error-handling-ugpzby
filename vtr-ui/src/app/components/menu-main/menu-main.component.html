@@ -33,7 +33,6 @@
 			<!-- <fa-icon [icon]="['fas', 'bars']">
 			</fa-icon> -->
 		</button>
-
 		<div class="collapse navbar-collapse"
 		 [ngClass]="{'show':showMenu}">
 			<ul class="navbar-nav ml-auto">
@@ -46,7 +45,7 @@
 						 [metricsParent]="item.metricsParent"
 						 [metricsItem]="item.metricsItem"
 						 routerLink="/{{item.path}}"
-						 routerLinkActive="active">
+						 routerLinkActive="active" (click)="showMenu = false">
 							<fa-icon *ngIf="item.icon[0]!=='icomoon'"
 							 [icon]="item.icon"
 							 class="fa-icon"></fa-icon>
@@ -69,7 +68,7 @@
 						 role="button"
 						 data-toggle="dropdown"
 						 aria-haspopup="true"
-						 aria-expanded="false">
+						 aria-expanded="false" (click)="showMenu = false">
 							<fa-icon [icon]="item.icon"
 							 class="fa-icon"></fa-icon>
 							{{item.label | translate}}
@@ -88,7 +87,7 @@
 								 [metricsItem]="subitem.metricsItem"
 								 class="dropdown-item link"
 								 target="_blank"
-								 href="{{subitem.path}}">{{subitem.label | translate}}</a>
+								 href="{{subitem.path}}" (click)="showMenu = false">{{subitem.label | translate}}</a>
 								<a *ngIf="!subitem.externallink && subitem.path==='support'"
 								 vtrMetrics
 								 routerLinkActive="link-active"
@@ -97,7 +96,7 @@
 								 [metricsParent]="subitem.metricsParent"
 								 [metricsItem]="subitem.metricsItem"
 								 class="dropdown-item link"
-								 routerLink="{{subitem.path}}">{{subitem.label | translate}}</a>
+								 routerLink="{{subitem.path}}" (click)="showMenu = false">{{subitem.label | translate}}</a>
 								<a *ngIf="!subitem.externallink  && subitem.path!=='support'"
 								 vtrMetrics
 								 routerLinkActive="link-active"
@@ -106,7 +105,7 @@
 								 [metricsParent]="subitem.metricsParent"
 								 [metricsItem]="subitem.metricsItem"
 								 class="dropdown-item link"
-								 routerLink="/{{item.path}}/{{subitem.path}}">{{subitem.label | translate}}</a>
+								 routerLink="/{{item.path}}/{{subitem.path}}" (click)="showMenu = false">{{subitem.label | translate}}</a>
 							</span>
 
 						</div>
@@ -132,7 +131,7 @@
 						 role="button"
 						 data-toggle="dropdown"
 						 aria-haspopup="true"
-						 aria-expanded="false">
+						 aria-expanded="false" (click)="showMenu = false">
 							<div class="user-initials">
 								{{deviceService.isArm || userService.starter ? 'L' : userService.initials }}
 							</div>
@@ -149,7 +148,7 @@
 								metricsItem="SettingsButton"
 								class="dropdown-item link"
 								href="javascript:void(0)"
-								routerLink="settings">{{ 'settings.preferenceSettings' | translate }}</a>
+								routerLink="settings" (click)="showMenu = false">{{ 'settings.preferenceSettings' | translate }}</a>
 							<a *ngIf="!userService.auth && !userService.starter"
 							 vtrMetrics
 							 [metricsEvent]="item.metricsEvent"
@@ -157,7 +156,7 @@
 							 metricsItem="LenovoIdSignInButton"
 							 class="dropdown-item link"
 							 href="javascript:void(0)"
-							 (click)="OpenLenovoId('NavigationLenovoAccount.Submenu')">{{'lenovoId.login' | translate}}</a>
+							 (click)="OpenLenovoId('NavigationLenovoAccount.Submenu'); showMenu = false">{{'lenovoId.login' | translate}}</a>
 							<a *ngIf="!userService.auth && userService.starter"
 							 vtrMetrics
 							 [metricsEvent]="item.metricsEvent"
@@ -165,7 +164,7 @@
 							 metricsItem="LenovoIdStarterIdButton"
 							 class="dropdown-item link"
 							 href="javascript:void(0)"
-							 (click)="OpenLenovoId('NavigationLenovoAccount.Submenu')">{{'lenovoId.unlockExclusives' | translate}}</a>
+							 (click)="OpenLenovoId('NavigationLenovoAccount.Submenu'); showMenu = false">{{'lenovoId.unlockExclusives' | translate}}</a>
 							<a *ngIf="userService.auth"
 							 vtrMetrics
 							 [metricsEvent]="item.metricsEvent"
@@ -173,7 +172,7 @@
 							 metricsItem="LenovoIdSignOutButton"
 							 class="dropdown-item link"
 							 href="javascript:void(0)"
-							 (click)="onLogout()">{{'lenovoId.logout' | translate}}</a>
+							 (click)="onLogout(); showMenu = false">{{'lenovoId.logout' | translate}}</a>
 						</div>
 					</li>
 				</ng-container>

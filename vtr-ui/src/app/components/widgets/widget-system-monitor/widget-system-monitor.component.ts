@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { HwInfoService } from 'src/app/services/gaming/gaming-hwinfo/hw-info.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { HwInfoService } from 'src/app/services/gaming/gaming-hwinfo/hw-info.ser
 	templateUrl: './widget-system-monitor.component.html',
 	styleUrls: ['./widget-system-monitor.component.scss']
 })
-export class WidgetSystemMonitorComponent implements OnInit {
+export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public cpuUseFrequency: string;
 	public cpuBaseFrequence: string;
 	public gpuMemorySize: string;
@@ -25,6 +25,7 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	public ramOver: string;
 	public showIcon: boolean = false;
 	public showAllHDs = false;
+	public loop: any;
 
 
 	@Input() cpuCurrent = 2.4;
@@ -159,13 +160,15 @@ export class WidgetSystemMonitorComponent implements OnInit {
 
 
 	ngOnInit() {
-
 		this.getDynamicInfoService();
 		this.getMachineInfoService();
-		const self = this;
-		const loop = setInterval(function () {
-			self.getDynamicInfoService();
+		this.loop = setInterval(() => {
+			this.getDynamicInfoService();
 		}, 5000);
+	}
+
+	ngOnDestroy() {
+		clearInterval(this.loop);
 	}
 
 	toggleHDs(event) {
