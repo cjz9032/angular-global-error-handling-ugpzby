@@ -32,7 +32,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		}
 	];
 
-	macroKeyStatusSelectedOption = this.macroKeyOptions[0];
+	macroKeyStatusSelectedOption = this.macroKeyOptions[2];
 
 	numbers: any = [];
 
@@ -153,14 +153,14 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	onGamingMacroKeyInitializeEvent(status: any) {
-		if (status) {
-			this.onMacroKeyTypeStausChanged(status);
+	onGamingMacroKeyInitializeEvent(macroKeyTypeEventResponse: any) {
+		if (macroKeyTypeEventResponse) {
+			this.onMacroKeyTypeStausChanged(macroKeyTypeEventResponse);
 		}
 	}
 
-	onMacroKeyTypeStausChanged(macroKeyTypeStatus) {
-		this.macroKeyTypeStatus = status;
+	onMacroKeyTypeStausChanged(macroKeyTypeEventStatus) {
+		this.macroKeyTypeStatus = macroKeyTypeEventStatus;
 		if (this.macroKeyTypeStatus.MacroKeyType === 1) {
 			this.numbers = this.macroButtons;
 			this.numberSelected = this.macroButtons[0];
@@ -170,6 +170,9 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			this.numberSelected = this.numberPadbottons[9];
 			this.isNumpad = true;
 		}
+		this.macroKeyStatusSelectedOption = this.macroKeyOptions.filter(
+			(option) => option.value === this.macroKeyTypeStatus.MacroKeyStatus
+		)[0];
 	}
 
 	optionChanged(option: any) {
