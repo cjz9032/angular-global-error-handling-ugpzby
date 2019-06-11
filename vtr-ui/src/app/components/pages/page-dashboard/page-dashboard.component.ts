@@ -18,6 +18,7 @@ import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { UserService } from '../../../services/user/user.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { QA } from 'src/app/data-models/qa/qa.model';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -33,7 +34,6 @@ export class PageDashboardComponent implements OnInit {
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
 	public isOnline = true;
-	// qas: QA[] = [];
 
 	heroBannerItems = [];
 	cardContentPositionA: any = {};
@@ -76,34 +76,15 @@ export class PageDashboardComponent implements OnInit {
 			this.feedbackButtonText = this.submit;
 		});
 
-		//Evaluate the translations for QA on language Change
-		translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			this.qaService.setTranslationService(this.translate);
-			this.qaService.qas.forEach(qa => {
-				try {
-					qa.title = this.translate.instant(qa.title);
-					qa.description = this.translate.instant(qa.description);
-					// console.log(qa.description);
-					this.translate.get(qa.keys).subscribe((translation: [string]) => {
-						// console.log(JSON.stringify(translation));
-						qa.keys = translation;
-						// console.log(JSON.stringify(qa.keys));
-					});
-				} catch (e) {
-					console.log('already translated');
-				}
-				finally {
-					console.log('already translated');
-				}
-
-			});
-
-			// this.qas = this.qaService.qas;
-		});
+		this.qaService.setTranslationService(this.translate);
+		this.qaService.setCurrentLangTranslations();
 
 	}
 
 	ngOnInit() {
+
+
+
 		// reroute default application's default URL if gaming device
 		if (this.deviceService.isGaming) {
 			this.router.navigateByUrl(this.configService.getMenuItems(this.deviceService.isGaming)[0].path);
