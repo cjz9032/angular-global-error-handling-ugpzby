@@ -209,6 +209,7 @@ import { IntelligentMediaComponent } from './components/pages/page-smart-assist/
 import { UiMacrokeyCollapsibleContainerComponent } from './components/ui/ui-macrokey-collapsible-container/ui-macrokey-collapsible-container.component';
 import { CursorTypePipe } from './pipe/ui-security-statusbar/cursor-type.pipe';
 import { UiGamingDriverPopupComponent } from './components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
+import { UiCircleRadioWithCheckboxComponent } from './components/ui/ui-circle-radio-with-checkbox/ui-circle-radio-with-checkbox.component';
 
 library.add(fas);
 library.add(fab);
@@ -381,7 +382,8 @@ library.add(fal);
 		WidgetHomeSecurityAllDevicesComponent,
 		UiMacrokeyCollapsibleContainerComponent,
 		CursorTypePipe,
-		UiGamingDriverPopupComponent
+		UiGamingDriverPopupComponent,
+		UiCircleRadioWithCheckboxComponent
 	],
 	imports: [
 		BrowserModule,
