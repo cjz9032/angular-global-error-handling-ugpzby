@@ -186,7 +186,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		private gamingCapabilityService: GamingAllCapabilitiesService
 	) { }
 	ngOnInit() {
-<<<<<<< HEAD
 		this.gamingProperties.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.hybridModeFeature
 		);
@@ -210,9 +209,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		);
 		// Initialize Legion Edge component from cache
 		this.legionEdgeInit(this.gamingProperties);
-=======
 		console.log('CPU get status',this.GetCPUOverClockCacheStatus());
->>>>>>> 9658ef30e339720a8f77abce54d221cf2813c3fb
 		this.commonService.notification.subscribe((response) => {
 		if (response.type === Gaming.GamingCapablities) {
 		this.gamingCapabilities = response.payload;
@@ -259,10 +256,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				this.drop.curSelected = this.cpuOCStatus.cpuOCStatus;
 			}
 			this.gamingSystemUpdateService.getCpuOCStatus().then((cpuOCStatus) => {
-<<<<<<< HEAD
-=======
-				//console.log('get cpu oc status js bridge ---------------->', cpuOCStatus);
->>>>>>> 9658ef30e339720a8f77abce54d221cf2813c3fb
 				if (cpuOCStatus !== undefined) {
 					const CpuOCStatusObj = new CPUOCStatus();
 					CpuOCStatusObj.cpuOCStatus = cpuOCStatus;
