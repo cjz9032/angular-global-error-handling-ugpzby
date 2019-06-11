@@ -29,4 +29,4 @@
 	</ul>
 </div>
 
-<vtr-ui-macrokey-popup [modalContent]="modalContent" [showModal]="showModal"></vtr-ui-macrokey-popup>
+<vtr-ui-macrokey-popup *ngIf="showModal" [modalContent]="modalContent" (action)="showModal = false"></vtr-ui-macrokey-popup>
