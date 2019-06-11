@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { HwInfoService } from 'src/app/services/gaming/gaming-hwinfo/hw-info.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { HwInfoService } from 'src/app/services/gaming/gaming-hwinfo/hw-info.ser
 	templateUrl: './widget-system-monitor.component.html',
 	styleUrls: ['./widget-system-monitor.component.scss']
 })
-export class WidgetSystemMonitorComponent implements OnInit {
+export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public cpuUseFrequency: string;
 	public cpuBaseFrequence: string;
 	public gpuMemorySize: string;
@@ -24,6 +24,7 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	public memoryModuleName: string;
 	public ramOver: string;
 	public showAllHDs = false;
+	public loop: any;
 
 
 	@Input() cpuCurrent = 2.4;
@@ -86,18 +87,15 @@ export class WidgetSystemMonitorComponent implements OnInit {
 		this.hwInfoService.getDynamicInformation().then((hwInfo: any) => {
 			// console.log('getDynamicInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
 			console.log('DYNAMIC SYSTEM INFO', hwInfo);
-			if(hwInfo.cpuUseFrequency !== '')
-			{
+			if (hwInfo.cpuUseFrequency !== '') {
 				this.cpuUseFrequency = hwInfo.cpuUseFrequency.split('GHz')[0];
 			}
 			this.cpuCurrent = parseFloat(this.cpuUseFrequency);
-			if(hwInfo.gpuUsedMemory !== '')
-			{
+			if (hwInfo.gpuUsedMemory !== '') {
 				this.gpuUsedMemory = hwInfo.gpuUsedMemory.split('GB')[0];
 			}
 			this.gpuCurrent = parseFloat(this.gpuUsedMemory);
-			if(hwInfo.memoryUsed !== '')
-			{
+			if (hwInfo.memoryUsed !== '') {
 				this.memoryUsed = hwInfo.memoryUsed.split('GB')[0];
 			}
 			this.ramCurrent = parseFloat(this.memoryUsed);
@@ -109,18 +107,15 @@ export class WidgetSystemMonitorComponent implements OnInit {
 		try {
 			this.hwInfoService.getMachineInfomation().then((hwInfo: any) => {
 				//console.log('getMachineInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
-				if(hwInfo.cpuBaseFrequence !== '')
-				{
+				if (hwInfo.cpuBaseFrequence !== '') {
 					this.cpuBaseFrequence = hwInfo.cpuBaseFrequence.split('GHz')[0];
 				}
 				this.cpuMax = parseFloat(this.cpuBaseFrequence);
-				if(hwInfo.gpuMemorySize !== '')
-				{
+				if (hwInfo.gpuMemorySize !== '') {
 					this.gpuMemorySize = hwInfo.gpuMemorySize.split('GB')[0];
 				}
 				this.gpuMax = parseFloat(this.gpuMemorySize);
-				if(hwInfo.memorySize !== '')
-				{
+				if (hwInfo.memorySize !== '') {
 					this.memorySize = hwInfo.memorySize.split('GB')[0];
 				}
 				this.ramMax = parseFloat(this.memorySize);
@@ -137,13 +132,15 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	}
 
 	ngOnInit() {
-
 		this.getDynamicInfoService();
 		this.getMachineInfoService();
-		const self = this;
-		const loop = setInterval(function () {
-			self.getDynamicInfoService();
+		this.loop = setInterval(() => {
+			this.getDynamicInfoService();
 		}, 5000);
+	}
+
+	ngOnDestroy() {
+		clearInterval(this.loop);
 	}
 
 	toggleHDs(event) {
@@ -155,7 +152,7 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	getLeftDeg(current, max) {
 		let pct = (current / max);
 		const deg = 360 * (pct - .5);
-		if(pct > 1) {
+		if (pct > 1) {
 			pct = 1;
 		}
 		if (pct > .5) {
@@ -167,7 +164,7 @@ export class WidgetSystemMonitorComponent implements OnInit {
 
 	getRightDeg(current, max) {
 		let pct = (current / max);
-		if(pct > 1) {
+		if (pct > 1) {
 			pct = 1;
 		}
 		const deg = 360 * pct;
@@ -176,7 +173,7 @@ export class WidgetSystemMonitorComponent implements OnInit {
 
 	getStackHeight(current, max) {
 		let pct = (current / max);
-		if(pct > 1) {
+		if (pct > 1) {
 			pct = 1;
 		}
 		const mask = 1 - pct;
