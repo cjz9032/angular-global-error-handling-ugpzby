@@ -231,6 +231,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		if (this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isInstallationCompleted) {
 			this.systemUpdateService.isUpdatesAvailable = true;
 			this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
+		} else if (this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.installedUpdates) {
+			this.setUpdateByCategory(this.systemUpdateService.installedUpdates);
 		}
 
 		this.getLastUpdateScanDetail();
@@ -795,7 +797,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.isUpdateCheckInProgress = false;
 					this.isCheckingPluginStatus = false;
 					this.isUpdateDownloading = this.systemUpdateService.isUpdateDownloading;
-					this.resetState();
 					break;
 				case UpdateProgress.ScheduleUpdateCheckComplete:
 					this.isCheckingPluginStatus = false;
