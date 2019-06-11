@@ -6,7 +6,10 @@ import {
 	IntelligentCoolingModes, 
 	IntelligentCoolingHardware } from 'src/app/enums/intelligent-cooling.enum';
 import { TranslateService } from '@ngx-translate/core';
-
+import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+const thinkpad = "thinkpad";
+const ideapad = "ideapad";
 @Component({
 	selector: 'vtr-power-smart-settings',
 	templateUrl: './power-smart-settings.component.html',
@@ -21,28 +24,43 @@ export class PowerSmartSettingsComponent implements OnInit {
 	showIntelligentCoolingToggle = true;
 	radioPerformance = false;
 	radioQuietCool = false;
+	radioBatterySaving = false;
+	selectedModeText = "";
 	enableIntelligentCoolingToggle = false;
 	apsStatus = false;
 	showIntelligentCoolingModes = true;
 	captionText = ""
+	machineType = "";
+	add = 0;
 	@Output() isPowerSmartSettingHidden = new EventEmitter<any>();
 
 	constructor(
 		public powerService: PowerService, 
-		private translate: TranslateService) { }
+		private translate: TranslateService,
+		public commonService: CommonService) { }
 
 	ngOnInit() {
-		this.initPowerSmartSettings();
+		
+		let machineInfo = this.commonService.getLocalStorageValue(LocalStorageKey.MachineInfo);
+		this.machineType = machineInfo.subBrand.toLocaleLowerCase();
+		console.log("Machine Type: " + this.machineType)
+		if(thinkpad == this.machineType) {
+			this.add = 0;//thinkpad
+			this.initPowerSmartSettingsForThinkPad();
+		} else if(ideapad == this.machineType) {
+			this.add = 10;//Ideapad
+			this.initPowerSmartSettingsForIdeaPad();
+		}
 	}
 
-	onIntelligentCoolingToggle(event) {
+	onIntelligentCoolingToggle(event, isSetManualMode: boolean = true) {
 		if (event.switchValue) {
 			this.enableIntelligentCoolingToggle = true
 			this.showIntelligentCoolingModes = false;
 		} else {
 			this.showIntelligentCoolingModes = true;
 			this.enableIntelligentCoolingToggle = false;
-			this.setManualModeSetting(IntelligentCoolingModes.Performance);
+			isSetManualMode ? this.setManualModeSetting(IntelligentCoolingModes.Performance) : "";
 		}
 		this.setAutoModeSetting(event);
 	}
@@ -56,8 +74,58 @@ export class PowerSmartSettingsComponent implements OnInit {
 		console.log('Performance');
 		this.setManualModeSetting(IntelligentCoolingModes.Performance);
 	}
-	// Power Smart Settings
-	async initPowerSmartSettings() {
+
+	changeBatterySaving(event) {
+		console.log('BatterySaving');
+		this.setManualModeSetting(IntelligentCoolingModes.BatterySaving);
+	}
+
+	// Start Power Smart Settings for IdeaPad
+	async initPowerSmartSettingsForIdeaPad() {
+		let response = await this.powerService.getITSModeForICIdeapad();
+		console.log("getITSModeForICIdeapad: " + response);
+		if(response 
+			&& response.available 
+			&& response.errorCode 
+			&& response.itsVersion == 4) {
+			this.intelligentCoolingModes = IntelligentCoolingHardware.ITS14;
+			this.showIntelligentCoolingToggle = false;
+			this.showIC = response.itsVersion + this.add;
+			this.captionText = this.translate.instant("device.deviceSettings.power.powerSmartSettings.description14");
+			let currentMode = IntelligentCoolingModes.getMode(response.currentMode);
+			this.updateSelectedModeText(currentMode);
+			this.setPerformanceAndCool(currentMode);
+		}
+	}
+
+	updateSelectedModeText(mode: IntelligentCoolingModes) {
+		switch(mode) {
+			case IntelligentCoolingModes.Cool:
+				this.selectedModeText = this.translate.instant("device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.quiteCool");
+				break;
+			case IntelligentCoolingModes.Performance:
+					this.selectedModeText = this.translate.instant("device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.performance");
+					break;
+			case IntelligentCoolingModes.BatterySaving:
+					this.selectedModeText = this.translate.instant("device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.batterySaving");
+					break;
+		}
+	}
+
+	private setPowerSmartSettingsForIdeaPad(value: string) {
+		try {
+			if (this.powerService.isShellAvailable) {
+				return this.powerService.setITSModeForICIdeapad(value);
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+
+
+	// End Power Smart Settings for IdeaPad
+	//=================== Start Power Smart Settings for ThinkPad
+	async initPowerSmartSettingsForThinkPad() {
 		try {
 			let isITS = false;
 			let its = await this.getDYTCRevision();
@@ -105,13 +173,14 @@ export class PowerSmartSettingsComponent implements OnInit {
 					if (this.cQLCapability || this.tIOCapability) {
 						this.showIntelligentCoolingToggle = true;
 						this.enableIntelligentCoolingToggle = await this.getLegacyAutoModeState();
+						
 						let customEvent = { switchValue: this.enableIntelligentCoolingToggle }
-						this.onIntelligentCoolingToggle(customEvent);
+						this.onIntelligentCoolingToggle(customEvent, false);
 					} else {
 						this.showIntelligentCoolingToggle = false;
 					}
-					let status = await this.getLegacyManualModeState();
-					let modeType = status ? ICModes.Cool : ICModes.Performance;
+					let modeStatus = await this.getLegacyManualModeState();
+					let modeType = modeStatus ? ICModes.Cool : ICModes.Performance;
 					let mode = IntelligentCoolingModes.getMode(modeType);
 					this.setPerformanceAndCool(mode);
 					this.apsStatus = await this.getAPSState();
@@ -141,12 +210,14 @@ export class PowerSmartSettingsComponent implements OnInit {
 				console.log('manualModeSettingStatus: Cool');
 				this.radioQuietCool = true;
 				this.radioPerformance = false;
+				this.radioBatterySaving = false;
 				//this.enableIntelligentCoolingToggle = false;
 				break;
 			case ICModes.Performance:
 				console.log('manualModeSettingStatus: Performance');
 				this.radioPerformance = true;
 				this.radioQuietCool = false;
+				this.radioBatterySaving = false;
 				//this.enableIntelligentCoolingToggle = false;
 				break;
 			case ICModes.Error:
@@ -154,6 +225,12 @@ export class PowerSmartSettingsComponent implements OnInit {
 				this.onIntelligentCoolingToggle(customEvent);
 				this.enableIntelligentCoolingToggle = true;
 				console.log('manualModeSettingStatus: error');
+				break;
+			case IntelligentCoolingModes.BatterySaving.ideapadType:
+				console.log('manualModeSettingStatus: Performance');
+				this.radioPerformance = false;
+				this.radioQuietCool = false;
+				this.radioBatterySaving = true;
 				break;
 		}
 	}
@@ -196,6 +273,10 @@ export class PowerSmartSettingsComponent implements OnInit {
 	}
 	private async setManualModeSetting(mode: IntelligentCoolingMode) {
 		try {
+			if (this.intelligentCoolingModes == IntelligentCoolingHardware.ITS14) {
+				await this.powerService.setITSModeForICIdeapad(mode.ideapadType);
+				this.setPerformanceAndCool(mode)
+			}
 			if (this.intelligentCoolingModes == IntelligentCoolingHardware.Legacy) {
 				await this.setLegacyManualModeState(mode.status);
 				this.setPerformanceAndCool(mode)
@@ -273,10 +354,12 @@ export class PowerSmartSettingsComponent implements OnInit {
 			console.error(error.message);
 		}
 	}
-	private getLegacyManualModeState() {
+	private async getLegacyManualModeState() {
 		try {
 			if (this.powerService.isShellAvailable) {
-				return this.powerService.getLegacyManualModeState()
+				let mode1 = await this.powerService.getLegacyManualModeState();
+				console.log("getLegacyManualModeState: " + mode1)
+				return mode1;
 			}
 		} catch (error) {
 			console.error(error.message);
@@ -300,6 +383,6 @@ export class PowerSmartSettingsComponent implements OnInit {
 			console.error(error.message);
 		}
 	}
-	//=============== Start End 
-	// End Power Smart Settings
+	//=============== End Legacy
+	//=================== End Power Smart Settings for ThinkPad
 }

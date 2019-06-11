@@ -488,6 +488,12 @@ export class VantageShellService {
 		if (this.phoenix && this.phoenix.gaming) {
 			return this.phoenix.gaming.gamingMacroKey;
 		}
+	}
+	
+	public getIntelligentCoolingForIdeaPad(): any {
+		if(this.getPowerIdeaNoteBook()) {
+			return this.getPowerIdeaNoteBook().its;
+		}
 		return undefined;
 	}
 }
