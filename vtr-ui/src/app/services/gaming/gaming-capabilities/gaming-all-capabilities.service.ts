@@ -1,3 +1,4 @@
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 import { CommonService } from '../../common/common.service';
@@ -9,7 +10,7 @@ import { Gaming } from 'src/app/enums/gaming.enum';
 export class GamingAllCapabilitiesService {
 	private gamingAllCapabilities: any;
 	public isShellAvailable = false;
-
+	public macrokey: any;
 	constructor(shellService: VantageShellService, private commonService: CommonService) {
 		this.gamingAllCapabilities = shellService.getGamingAllCapabilities();
 		if (this.gamingAllCapabilities) {
@@ -30,11 +31,10 @@ export class GamingAllCapabilitiesService {
 
 	setCapabilityValuesGlobally(capabilities: any) {
 		this.commonService.sendNotification(Gaming.GamingCapablities, capabilities);
-		// TODO: Set capability values to local storage.
-		// this.commonService.setLocalStorageValue(LocalStorageKey.<keyName>, capabilities.<keyValue>);
+		this.commonService.setLocalStorageValue(LocalStorageKey.macroKeyFeature, capabilities.macroKeyFeature);
 	}
 
-	getCapablityFromCache(LocalStorageKey) {
-		return this.commonService.getLocalStorageValue(LocalStorageKey);
+	getCapabilityFromCache(storageKey: any) {
+		return this.commonService.getLocalStorageValue(storageKey);
 	}
 }
