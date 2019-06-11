@@ -46,10 +46,22 @@
 		<div class="row">
 			<div class="col text-center">
 				<button type="submit"
-					name="{{'dashboard.feedback.form.button' | translate}}"
+						vtrMetrics
+				       itemtype= "UserFeedback"
+						metricsItem="Submit"
+						ItemParent="Dialog.Feadback"
+						UserEmail= "sample@lenovo.com"
+				Content="Vantage is a very good product(sample)"
+						name="{{'dashboard.feedback.form.button' | translate}}"
 					class="btn btn-primary btn-lg user-submit"
 					[disabled]="feedbackForm.invalid">
 					{{ feedbackButtonText }}
+				</button>
+				<button type="button" 
+					name="{{'dashboard.feedback.form.addScreenshot' | translate}}"
+					class="btn btn-primary btn-lg user-submit"
+					(click)="goToMailUtility()">
+					{{'dashboard.feedback.form.addScreenshot' | translate}}
 				</button>
 			</div>
 		</div>

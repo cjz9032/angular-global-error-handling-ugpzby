@@ -7,13 +7,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class TryProductBlockComponent {
 	@Input() texts: {
-		title: string;
-		text: string;
-		buttonText?: string;
-		link?: {
-			text: string;
-			url: string;
-		}
+		risk: string;
+		howToFix: string;
 	};
 
 	@Output() buttonClick = new EventEmitter();

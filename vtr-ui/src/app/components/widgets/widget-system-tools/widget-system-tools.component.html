@@ -19,7 +19,7 @@
 								</figure>
 							</a>
 						</li>
-						<li>
+						<li *ngIf="gamingProperties.macroKeyFeature">
 							<a vtrMetrics [metricsItem]="'gaming.dashboard.device.systemTools.macroKey' | translate"
 								metricsEvent="featureClick" routerLink="/macrokey">
 								<figure>

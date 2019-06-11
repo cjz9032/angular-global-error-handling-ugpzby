@@ -18,6 +18,10 @@
 		color: $main_lightest;
 		background-color: $main_gstart;
 	}
+
+	span:hover {
+		cursor: default;
+	}
 }
 
 .bullet-icon {
@@ -56,5 +60,24 @@
 	.icon-dot {
 		border-width: 1rem;
 		border-color: $main;
+	}
+
+}
+
+
+
+.badge-item{
+	a:hover{
+		cursor: default;
+	}
+}
+
+.badge-item-click{
+	a:hover{
+		cursor: pointer;
+	}
+
+	span:hover{
+		cursor: pointer;
 	}
 }

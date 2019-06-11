@@ -27,6 +27,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	title = 'device.deviceSettings.displayCamera.title';
 	public dataSource: any;
 	public eyeCareDataSource: EyeCareMode;
+	public displayColorTempDataSource: any;
 	public cameraDetails1: ICameraSettingsResponse;
 	public cameraFeatureAccess: CameraFeatureAccess;
 	private cameraDetailSubscription: Subscription;
@@ -35,6 +36,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	public sunsetToSunriseModeStatus = new SunsetToSunriseStatus(true, false, false, '', '');
 	public enableSunsetToSunrise = false;
 	public enableSlider = false;
+	public isEyeCareMode: boolean;
 	public initEyecare = 0;
 	public showHideAutoExposureSlider = false;
 	private notificationSubscription: Subscription;
@@ -238,20 +240,29 @@ export class SubpageDeviceSettingsDisplayComponent
 		});
 	}
 	public onEyeCareModeStatusToggle(event: any) {
-		console.log('onEyeCareModeStatusToggle', event.switchValue);
+		this.isEyeCareMode = event.switchValue;
+		console.log('onEyeCareModeStatusToggle', this.isEyeCareMode);		
 		try {
 			if (this.displayService.isShellAvailable) {
 				this.displayService.setEyeCareModeState(event.switchValue)
 					.then((value: any) => {
 						console.log('onEyeCareModeStatusToggle.then', value);
-						this.enableSlider = event.switchValue;
+						this.enableSlider = this.isEyeCareMode;
 						this.eyeCareDataSource.current = value.colorTemperature;
 						const eyeCare = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardEyeCareMode);
-						eyeCare.status = event.switchValue;
+						eyeCare.status = this.isEyeCareMode;
 						this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, eyeCare);
 					}).catch(error => {
 						console.error('onEyeCareModeStatusToggle', error);
 					});
+
+					if(this.isEyeCareMode){
+						this.setToEyeCareMode();
+					}else {
+						this.displayColorTempDataSource.current = this.displayColorTempDataSource.maximum;
+						//this.onSetChangeDisplayColorTemp({value: this.displayColorTempDataSource.current})			
+
+					}
 			}
 		} catch (error) {
 			console.error(error.message);
@@ -273,6 +284,7 @@ export class SubpageDeviceSettingsDisplayComponent
 							this.getSunsetToSunrise();
 							this.getEyeCareModeStatus();
 							this.getDisplayColorTemperature();
+							this.getDaytimeColorTemperature();
 						}
 
 					}).catch(error => {
@@ -308,6 +320,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					console.log('getEyeCareModeState.then', featureStatus);
 					this.eyeCareModeStatus = featureStatus;
 					this.enableSlider = featureStatus.status;
+					this.isEyeCareMode = this.eyeCareModeStatus.status;
 					if (this.eyeCareModeStatus.available === true) {
 						console.log('eyeCareModeStatus.available', featureStatus.available);
 					}
@@ -413,6 +426,48 @@ export class SubpageDeviceSettingsDisplayComponent
 		}
 	}
 	// End EyeCare Mode
+
+	// Display color temperature start here
+	public getDaytimeColorTemperature() {
+		this.displayService.getDaytimeColorTemperature().then((response) => {
+			this.displayColorTempDataSource = response;
+			console.log('getDisplayColortemperature.then', this.displayColorTempDataSource);
+		});
+	}
+
+	public onSetChangeDisplayColorTemp($event: any) {
+		try {
+			console.log('temparature changed in display', $event);
+			if (this.displayService.isShellAvailable) {				
+					this.displayService.setDaytimeColorTemperature($event.value).then((res) => {});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	public setToEyeCareMode() {
+		if(this.isEyeCareMode){
+			this.displayColorTempDataSource.current = this.eyeCareDataSource.current;
+			this.onSetChangeDisplayColorTemp({value: this.eyeCareDataSource.current})			
+		}
+	}
+
+	public resetDaytimeColorTemp($event: any) {
+		try {
+			if (this.displayService.isShellAvailable && !this.isEyeCareMode) {
+				console.log('temparature reset in display', $event);
+				this.displayService
+					.resetDaytimeColorTemperature().then((resetData: any) => {
+						console.log('temparature reset data', resetData);
+						this.displayColorTempDataSource.current = resetData || 6500;
+					});
+			}
+		} catch (error) {
+			console.error(error.message);
+		}
+	}
+	// Display color temperature end here
+
 	// Start Camera Privacy
 	public onCameraPrivacyModeToggle($event: any) {
 
@@ -558,7 +613,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.eyeCareDataSource.current = resetData.colorTemperature;
 		this.eyeCareModeStatus.status = resetData.eyecaremodeState;
 		this.enableSlider = resetData.eyecaremodeState;
-		this.sunsetToSunriseModeStatus.status = (resetData.autoEyecaremodeState.toLowerCase() as string) === 'false' ? false : true;
+		this.sunsetToSunriseModeStatus.status = resetData.autoEyecaremodeState;
 	}
 	public startEyeCareMonitor() {
 		console.log('start eyecare monitor');
@@ -589,8 +644,8 @@ export class SubpageDeviceSettingsDisplayComponent
 
 	public onCameraBackgroundBlur($event: any) {
 		try {
-			this.cameraBlur.enabled = $event.switchValue
-			this.onCameraBackgroundOptionChange(this.cameraBlur.enabled, "");
+			this.cameraBlur.enabled = $event.switchValue;
+			this.onCameraBackgroundOptionChange(this.cameraBlur.enabled, '');
 		} catch (error) {
 			console.error(error.message);
 		}
@@ -600,7 +655,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		if (this.cameraFeedService.isShellAvailable) {
 			this.cameraFeedService.getCameraBlurSettings()
 				.then((response: CameraBlur) => {
-					this.cameraBlur = response
+					this.cameraBlur = response;
 					console.log('initCameraBlurMethods', response);
 				}).catch(error => {
 					console.log('initCameraBlurMethods', error);
@@ -609,8 +664,8 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 
 	public onCameraBackgroundOptionChange(isEnabling: boolean, mode: string) {
-		console.log("onCameraBackgroundOptionChange: " + isEnabling + ", " + mode);
-		if(mode != "") {
+		console.log('onCameraBackgroundOptionChange: ' + isEnabling + ', ' + mode);
+		if (mode !== '') {
 			this.cameraBlur.currentMode = mode;
 		}
 		if (this.cameraFeedService.isShellAvailable) {

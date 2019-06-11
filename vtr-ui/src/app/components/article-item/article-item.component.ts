@@ -15,6 +15,7 @@ export class ArticleItemComponent implements OnInit, AfterViewInit {
 	@Input() index: any;
 	@ViewChild('articleItemDiv') articleItemDiv;
 
+	itemCategory = '';
 	ratioX = 1;
 	ratioY = 0.5;
 	ratio = 1;
@@ -38,6 +39,9 @@ export class ArticleItemComponent implements OnInit, AfterViewInit {
 	}
 
 	ngOnInit() {
+		if (this.item.Category && this.item.Category.length > 0 && this.item.Category[0].Id) {
+			this.itemCategory = this.item.Category[0].Id;
+		}
 		this.resizeListener = this.displayService.windowResizeListener().subscribe((event) => {
 			this.calcHeight();
 		});
@@ -68,6 +72,7 @@ export class ArticleItemComponent implements OnInit, AfterViewInit {
 		this.metricsDatas.viewOrder++;
 
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
+			backdrop: 'static',
 			size: 'lg',
 			centered: true,
 			windowClass: 'Article-Detail-Modal'

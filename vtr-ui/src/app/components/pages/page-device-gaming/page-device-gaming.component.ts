@@ -22,12 +22,10 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
 	selector: 'vtr-page-device-gaming',
 	templateUrl: './page-device-gaming.component.html',
-	styleUrls: ['./page-device-gaming.component.scss'],
-	providers: [NgbModalConfig, NgbModal]
-
+	styleUrls: [ './page-device-gaming.component.scss' ],
+	providers: [ NgbModalConfig, NgbModal ]
 })
 export class PageDeviceGamingComponent implements OnInit {
-
 	firstName = 'User';
 	submit = 'Submit';
 	feedbackButtonText = this.submit;
@@ -35,7 +33,6 @@ export class PageDeviceGamingComponent implements OnInit {
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
 	public isOnline = true;
-
 	heroBannerItems = [];
 	cardContentPositionB: any = {};
 	cardContentPositionC: any = {};
@@ -57,7 +54,7 @@ export class PageDeviceGamingComponent implements OnInit {
 		private systemUpdateService: SystemUpdateService,
 		public userService: UserService,
 		private translate: TranslateService,
-		vantageShellService: VantageShellService
+		vantageShellService: VantageShellService,
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -65,8 +62,7 @@ export class PageDeviceGamingComponent implements OnInit {
 	}
 
 	ngOnInit() {
-
-		const self = this
+		const self = this;
 		this.translate.stream('lenovoId.user').subscribe((value) => {
 			if (!self.userService.auth) {
 				self.firstName = value;
@@ -82,32 +78,38 @@ export class PageDeviceGamingComponent implements OnInit {
 		this.setDefaultCMSContent();
 
 		const queryOptions = {
-			'Page': 'dashboard',
-			'Lang': 'EN',
-			'GEO': 'US',
-			'OEM': 'Lenovo',
-			'OS': 'Windows',
-			'Segment': 'SMB',
-			'Brand': 'Lenovo'
+			Page: 'dashboard',
+			Lang: 'EN',
+			GEO: 'US',
+			OEM: 'Lenovo',
+			OS: 'Windows',
+			Segment: 'SMB',
+			Brand: 'Lenovo'
 		};
 
 		this.cmsService.fetchCMSContent(queryOptions).then(
 			(response: any) => {
-				const heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
-					return {
-						'albumId': 1,
-						'id': index + 1,
-						'source': record.Title,
-						'title': record.Description,
-						'url': record.FeatureImage,
-						'ActionLink': record.ActionLink
-					};
-				});
+				const heroBannerItems = this.cmsService
+					.getOneCMSContent(response, 'home-page-hero-banner', 'position-A')
+					.map((record, index) => {
+						return {
+							albumId: 1,
+							id: index + 1,
+							source: record.Title,
+							title: record.Description,
+							url: record.FeatureImage,
+							ActionLink: record.ActionLink
+						};
+					});
 				if (heroBannerItems && heroBannerItems.length) {
 					this.heroBannerItems = heroBannerItems;
 				}
 
-				const cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+				const cardContentPositionB = this.cmsService.getOneCMSContent(
+					response,
+					'half-width-title-description-link-image',
+					'position-B'
+				)[0];
 				if (cardContentPositionB) {
 					this.cardContentPositionB = cardContentPositionB;
 					if (this.cardContentPositionB.BrandName) {
@@ -115,7 +117,11 @@ export class PageDeviceGamingComponent implements OnInit {
 					}
 				}
 
-				const cardContentPositionC = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
+				const cardContentPositionC = this.cmsService.getOneCMSContent(
+					response,
+					'half-width-title-description-link-image',
+					'position-C'
+				)[0];
 				if (cardContentPositionC) {
 					this.cardContentPositionC = cardContentPositionC;
 					if (this.cardContentPositionC.BrandName) {
@@ -123,22 +129,34 @@ export class PageDeviceGamingComponent implements OnInit {
 					}
 				}
 
-				const cardContentPositionD = this.cmsService.getOneCMSContent(response, 'full-width-title-image-background', 'position-D')[0];
+				const cardContentPositionD = this.cmsService.getOneCMSContent(
+					response,
+					'full-width-title-image-background',
+					'position-D'
+				)[0];
 				if (cardContentPositionD) {
 					this.cardContentPositionD = cardContentPositionD;
 				}
 
-				const cardContentPositionE = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-E')[0];
+				const cardContentPositionE = this.cmsService.getOneCMSContent(
+					response,
+					'half-width-top-image-title-link',
+					'position-E'
+				)[0];
 				if (cardContentPositionE) {
 					this.cardContentPositionE = cardContentPositionE;
 				}
 
-				const cardContentPositionF = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-F')[0];
+				const cardContentPositionF = this.cmsService.getOneCMSContent(
+					response,
+					'half-width-top-image-title-link',
+					'position-F'
+				)[0];
 				if (cardContentPositionF) {
 					this.cardContentPositionF = cardContentPositionF;
 				}
 			},
-			error => {
+			(error) => {
 				console.log('fetchCMSContent error', error);
 			}
 		);
@@ -148,18 +166,19 @@ export class PageDeviceGamingComponent implements OnInit {
 		});
 	}
 
-	public onConnectivityClick($event: any) {
-	}
+	public onConnectivityClick($event: any) {}
 
 	private setDefaultCMSContent() {
-		this.heroBannerItems = [{
-			albumId: 1,
-			id: 1,
-			source: 'Vantage Beta',
-			title: 'Welcome to the next generation of Lenovo Vantage!',
-			url: './../../../../assets/cms-cache/Vantage3Hero-zone0.png',
-			ActionLink: null
-		}];
+		this.heroBannerItems = [
+			{
+				albumId: 1,
+				id: 1,
+				source: 'Vantage Beta',
+				title: 'Welcome to the next generation of Lenovo Vantage!',
+				url: './../../../../assets/cms-cache/Vantage3Hero-zone0.png',
+				ActionLink: null
+			}
+		];
 
 		this.cardContentPositionB = {
 			Title: '',
@@ -253,21 +272,25 @@ export class PageDeviceGamingComponent implements OnInit {
 	}
 
 	private getSystemInfo() {
-		this.dashboardService.getSystemInfo()
+		this.dashboardService
+			.getSystemInfo()
 			.then((value: any) => {
 				this.systemStatus = this.mapSystemInfoResponse(value);
 				console.log('getSystemInfo.then', value, this.systemStatus);
-			}).catch(error => {
+			})
+			.catch((error) => {
 				console.error('getSystemInfo', error);
 			});
 	}
 
 	private getSecurityStatus() {
-		this.dashboardService.getSecurityStatus()
+		this.dashboardService
+			.getSecurityStatus()
 			.then((value: any) => {
 				this.securityStatus = this.mapSecurityStatusResponse(value);
 				console.log('getSecurityStatus.then', value);
-			}).catch(error => {
+			})
+			.catch((error) => {
 				console.error('getSecurityStatus', error);
 			});
 	}
@@ -287,8 +310,10 @@ export class PageDeviceGamingComponent implements OnInit {
 
 			if (response.memory) {
 				const { total, used } = response.memory;
-				memory.detail = `${this.commonService.formatBytes(used, 1)} ${this.translate.instant('dashboard.systemStatus.memory.detail.of')} ${this.commonService.formatBytes(total, 1)}`;
-				const percent = parseInt(((used / total) * 100).toFixed(0), 10);
+				memory.detail = `${this.commonService.formatBytes(used, 1)} ${this.translate.instant(
+					'dashboard.systemStatus.memory.detail.of'
+				)} ${this.commonService.formatBytes(total, 1)}`;
+				const percent = parseInt((used / total * 100).toFixed(0), 10);
 				// const percent = (used / total) * 100;
 				if (percent > 70) {
 					memory.status = 1;
@@ -310,8 +335,10 @@ export class PageDeviceGamingComponent implements OnInit {
 
 			if (response.disk) {
 				const { total, used } = response.disk;
-				disk.detail = `${this.commonService.formatBytes(used, 1)} ${this.translate.instant('dashboard.systemStatus.diskSpace.detail.of')} ${this.commonService.formatBytes(total, 1)}`;
-				const percent = parseInt(((used / total) * 100).toFixed(0), 10);
+				disk.detail = `${this.commonService.formatBytes(used, 1)} ${this.translate.instant(
+					'dashboard.systemStatus.diskSpace.detail.of'
+				)} ${this.commonService.formatBytes(total, 1)}`;
+				const percent = parseInt((used / total * 100).toFixed(0), 10);
 				// const percent = (used / total) * 100;
 				if (percent > 90) {
 					disk.status = 1;
@@ -336,10 +363,14 @@ export class PageDeviceGamingComponent implements OnInit {
 				const warrantyDate = this.commonService.formatDate(response.warranty.expired);
 				// in warranty
 				if (response.warranty.status === 0) {
-					warranty.detail = `${this.translate.instant('dashboard.systemStatus.warranty.detail.until')} ${warrantyDate}`; // `Until ${warrantyDate}`;
+					warranty.detail = `${this.translate.instant(
+						'dashboard.systemStatus.warranty.detail.until'
+					)} ${warrantyDate}`; // `Until ${warrantyDate}`;
 					warranty.status = 0;
 				} else if (response.warranty.status === 1) {
-					warranty.detail = `${this.translate.instant('dashboard.systemStatus.warranty.detail.expiredOn')} ${warrantyDate}`; // `Warranty expired on ${warrantyDate}`;
+					warranty.detail = `${this.translate.instant(
+						'dashboard.systemStatus.warranty.detail.expiredOn'
+					)} ${warrantyDate}`; // `Warranty expired on ${warrantyDate}`;
 					warranty.status = 1;
 				} else {
 					warranty.detail = this.translate.instant('dashboard.systemStatus.warranty.detail.notAvailable'); // 'Warranty not available';
@@ -487,5 +518,4 @@ export class PageDeviceGamingComponent implements OnInit {
 			}
 		}
 	}
-
 }

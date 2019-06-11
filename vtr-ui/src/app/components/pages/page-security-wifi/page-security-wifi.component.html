@@ -75,6 +75,7 @@
 																role="status"></div>
 														</div>
 														<vtr-ui-list-chevron [items]="securityHealthViewModel.homeDevicePosture"
+															metricsEvent="featureClick"
 															[chevronVisibility]='false'
 															[clickable]="false"
 															*ngIf="securityHealthViewModel.isLWSEnabled===true && securityHealthViewModel.homeDevicePosture.length > 0">
@@ -95,7 +96,9 @@
 																		metricsEvent="FeatureClick"
 																		metricsItem="enableWiFiSecurity"
 																		(onClick)="enableWiFiSecurity($event)"
-																		[label]="'security.homeprotection.securityhealth.button' | translate">
+																		[isDisabled]="cancelClick"
+																		[label]="'security.homeprotection.securityhealth.button' | translate"
+																		[title]="'security.homeprotection.securityhealth.button' | translate">
 																	</vtr-ui-button>
 																</div>
 															</div>

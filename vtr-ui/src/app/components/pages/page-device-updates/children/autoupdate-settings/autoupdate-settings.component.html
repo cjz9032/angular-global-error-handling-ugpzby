@@ -22,7 +22,7 @@
                         *ngIf="item.isSwitchVisible"
                         class="d-flex no-pointer">
                         <vtr-ui-switch-onoff [name]="item.name"
-                          (toggle)="onToggleOnOff($event)" [value]="item.isChecked">
+                          (toggle)="onToggleOnOff($event)" [value]="item.isChecked" [isSwitchDisable]="item.isDisabled" [disabled]="item.isDisabled">
                         </vtr-ui-switch-onoff>
   
                         <fa-icon class="question"

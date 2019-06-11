@@ -374,11 +374,16 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		overflow-y: initial !important;
 	}
 
+	.modal-dialog-centered{
+		height: calc(100vh - 3.5rem);
+		min-height: calc(100vh - 3.5rem);
+	}
+
 	.modal-content {
 		border-radius: 1rem;
 		background: $light;
-		padding: 4rem;
-		min-height: calc(100vh - 3.5rem);
+		padding: 3rem 0 0 4rem;
+		overflow: hidden;
 
 		h1,
 		h2,
@@ -656,6 +661,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 				background: linear-gradient(135deg, $shade_lighter 0%, $shade_lightest 100%) !important;
 				color: $blue-dark !important;
 				border: 0.1rem solid $shade_light !important;
+				width: 100%;
 			}
 		}
 	}
@@ -664,6 +670,11 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 .vtr-modal-chs-welcome-container {
 	.modal-backdrop.show {
 		opacity: 0.7;
+	}
+	.button-gray {
+		.vtr-ui-button {
+			width: 100%;
+		}
 	}
 	.vtr-ui-button {
 		.button-box {
@@ -794,7 +805,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 }
 .icomoon-FA-Plug2x:before {
 	content: "\e916";
-	color: #4a81fd;
+	color: #34495e;
 }
 .icomoon-FA-Question-circle2x:before {
 	content: "\e917";
@@ -925,7 +936,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 }
 .icomoon-LE-expressCharging2x:before {
 	content: "\e937";
-	color: #4a81fd;
+	color: #34495e;
 }
 .icomoon-LE-face-detection2x:before {
 	content: "\e938";

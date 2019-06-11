@@ -11,13 +11,12 @@
         }
     }
     .page {
-        // padding: 1rem 5rem 6rem;
         border-bottom: 0.1rem solid $shade_lighter;
         margin: 0 4rem;
         .page-img {
+            padding: 1rem 5rem;
             img {
                 width: 100%;
-                height: 250px;
             }
         }
         .page-title {
@@ -25,88 +24,94 @@
             color: $shade_darker;
             margin-bottom: 2rem;
         }
+        .page-sub-title {
+            font-size: 3rem;
+            color: $shade_darker;
+        }
         .page-desc {
             font-size: 2rem;
             color: $shade_dark;
             line-height: 3.5rem;
             padding: 0 5rem 2rem;
         }
+        .chs-logo {
+            border-bottom: 0.1rem solid $shade_extralight;
+            img {
+                height: 7rem;
+            }
+        }
+        
     }
-    .page-four {
+    .page-four, .page-three{
         border-bottom: none;
+        color: $main_dark;
         .description {
             font-size: 2.5rem;
             font-weight: $weight_bold;
-            color: $main_dark;
             letter-spacing: 0;
-            padding-bottom: 1.5rem;
-            margin-bottom: 2rem;
-            border-bottom: 0.1rem solid $main_lightest;
         }
         .sub-desc {
-            font-size: 1.5rem;
-            color: $main_dark;
+            font-size: 2rem;
             margin-bottom: 5rem;
         }
         .modal-button {
             background: $gradient_main;
             border-radius: 5rem;
             padding: 0 3rem;
-            height: 4rem;
-            font-size: 1.5rem;
+            height: 6rem;
+            font-size: 2rem;
             color: $light;
             font-weight: $weight_medium;
-        }
-        .modal-button-cancel {
-            cursor: pointer;
-            background: none;
-            color: $main;
-            font-size: 1.3rem;
-            font-weight: $weight_medium;
-            padding: 1.5rem 0 0.5rem;
-            height: 3.8rem;
-            border-radius: 0;
-            border-bottom: 0.2rem solid $main;
         }
     }
     .page-indicator {
         margin-bottom: 2rem;
         margin-top: 2rem;
-        .tour-indicator {
-            color: $light;
-            .tour-indicator-num {
-                width: 2rem;
-                height: 2rem;
-                border-radius: 100%;
-                background-color: $shade_light;
-                cursor: pointer;
-                font-size: 1.5rem;
-                &.selected {
-                    width: 3.5rem;
-                    height: 3.5rem;
-                    background-color: $main;
-                }
-        
-                &.completed {
-                    width: 2rem;
-                    height: 2rem;
-                    background-color: $main;
-                }
-        
-                &.unselected {
-                    width: 2rem;
-                    height: 2rem;
-                    background-color: $shade_light;
-                }
-            }
-        }   
-        .skip {
-            font-size: 2rem;
+        .button-welcome {
+            padding: 0 4rem;
+        }
+
+        a {
             color: $main;
-            text-decoration: underline;
+            font-size: 3rem;
+        }
+        a:hover {
+            cursor: pointer;            
         }
     }
-    .button-welcome {
+    .chs-login-content {
+        margin-top: 2rem;
+        padding-bottom: 2rem;
+        .bullet-icon-check {
+            .icon-bkg {
+                width: 2.3rem;
+                height: 2.3rem;
+                fa-icon {
+                    font-size: 1.2rem;
+                    line-height: 1.7rem;
+                }
+            }
+        }
+        .text-regular {
+            color: $blue-dark;
+            font-size: 1.5rem;
+            .h4 {
+                font-weight: $weight_medium;
+            }
+            .h1 {
+                font-weight: $weight_bold;
+            }
+        }
+
+        ul {
+            .text {
+                color: $shade_darker;
+            }
+        }
+
+        img{
+            width: 25rem;
+        }
         
     }
 }

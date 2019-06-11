@@ -7,8 +7,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AudioService } from 'src/app/services/audio/audio.service';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
-import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
-import { LoggerService } from 'src/app/services/logger/logger.service';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -54,12 +53,35 @@ export class PageDeviceSettingsComponent implements OnInit {
 		private commonService: CommonService,
 		public deviceService: DeviceService,
 		public audioService: AudioService,
-		private smartAssist: SmartAssistService,
-		private logger: LoggerService
+		private translate: TranslateService,
+
 	) {
 		this.fetchCMSArticles();
 		this.getMicrophoneSettings();
-		this.getHPDStatus();
+		//Evaluate the translations for QA on language Change
+		translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.qaService.setTranslationService(this.translate);
+			this.qaService.qas.forEach(qa => {
+				try {
+					qa.title = this.translate.instant(qa.title);
+					qa.description = this.translate.instant(qa.description);
+					// console.log(qa.description);
+					this.translate.get(qa.keys).subscribe((translation: [string]) => {
+						// console.log(JSON.stringify(translation));
+						qa.keys = translation;
+						// console.log(JSON.stringify(qa.keys));
+					});
+				} catch (e) {
+					console.log('already translated');
+				}
+				finally {
+					console.log('already translated');
+				}
+
+			});
+
+			// this.qas = this.qaService.qas;
+		});
 	}
 
 	ngOnInit() {
@@ -111,30 +133,4 @@ export class PageDeviceSettingsComponent implements OnInit {
 			}
 		);
 	}
-
-	/**
-	 * check if HPD related features are supported or not. If yes show Smart Assist tab else hide. Default is hidden
-	 */
-	private getHPDStatus() {
-		this.smartAssist.getHPDCapability()
-			.then((isAvailable: boolean) => {
-				console.log('getHPDStatus.getHPDCapability()', isAvailable);
-				// isAvailable = true;
-				this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
-				if (isAvailable) {
-					this.menuItems.push({
-						id: 'smart-assist',
-						label: 'Smart Assist',
-						path: 'device/device-settings/smart-assist',
-						icon: 'smart-assist',
-						subitems: [],
-						active: false
-					});
-				}
-			})
-			.catch(error => {
-				this.logger.error('error in getHPDStatus.getHPDCapability()', error);
-			});
-	}
-
 }

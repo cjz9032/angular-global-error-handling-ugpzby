@@ -8,7 +8,7 @@
 		[disabled]="disabled"
 		#radio
 		(click)="onChange(value)" />
-	<label for="{{radioId}}">
+	<label for="{{radioId}}" vtrMetrics metricsEvent="featureClick" [metricsItem]="name" [metricsValue]="value">
 		<fa-layers [fixedWidth]="true"
 			class="icon-circle">
 			<fa-icon [icon]="['fal', 'circle']"></fa-icon>

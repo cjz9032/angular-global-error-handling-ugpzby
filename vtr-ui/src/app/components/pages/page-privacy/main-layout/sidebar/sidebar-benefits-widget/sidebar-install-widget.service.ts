@@ -19,76 +19,52 @@ export class SidebarInstallWidgetService {
 		[RoutersName.MAIN]: {
 			visible: true,
 			title: 'The choice to be private is here',
-			text: 'Get the app that lets you decide when to share \n' +
-				'and when to be private, wherever you go online.\n',
-			image: 'privacy-search',
+			text: 'Now you decide when to share and when to be private online. Trial duration 14-day. No credit card required.',
+			image: 'pitch-block/Img_Pith_Main',
 		},
-		tips: {
+		[RoutersName.LANDING]: {
 			visible: false,
 			title: 'The choice to be private is here',
-			text: 'Get the app that lets you decide when to share \n' +
-				'and when to be private, wherever you go online.\n',
-			image: 'privacy-search',
+			text: 'Trial duration 14-day. No credit card required.',
+			image: 'pitch-block/Img_Pith_Main',
 		},
-		news: {
-			visible: false,
-			title: 'The choice to be private is here',
-			text: 'Get the app that lets you decide when to share \n' +
-				'and when to be private, wherever you go online.\n',
-			image: 'privacy-search',
-		},
-		landing: {
-			visible: false,
-			title: 'The choice to be private is here',
-			text: 'Get the app that lets you decide when to share \n' +
-				'and when to be private, wherever you go online.\n',
-			image: 'privacy-search',
-		},
-		privacy: {
+		[RoutersName.PRIVACY]: {
 			visible: true,
 			title: 'The choice to be private is here',
-			text: 'Get the app that lets you decide when to share \n' +
-				'and when to be private, wherever you go online.\n',
-			image: 'privacy-search',
+			text: 'Now you decide when to share and when to be private online. Trial duration 14-day. No credit card required.',
+			image: 'pitch-block/Img_Pith_Main',
 		},
-		scan: {
-			visible: false,
-			title: 'The choice to be private is here',
-			text: 'Get the app that lets you decide when to share \n' +
-				'and when to be private, wherever you go online.\n',
-			image: 'privacy-search',
-		},
-		breaches: {
+		[RoutersName.BREACHES]: {
 			visible: true,
 			title: 'Fix breaches and watch for future ones',
-			text: '',
-			image: 'gray-safe',
+			text: 'Trial duration 14-day. No credit card required.',
+			image: 'pitch-block/Img_Pith_Breach',
 		},
-		trackers: {
+		[RoutersName.TRACKERS]: {
 			visible: true,
 			title: 'Block trackers and stay private with Lenovo Privacy',
-			text: '',
-			image: 'privacy-search',
+			text: 'Trial duration 14-day. No credit card required.',
+			image: 'pitch-block/Img_Pith_Trackers',
 		},
-		installed: {
-			visible: false,
-			title: 'The choice to be private is here',
-			text: 'Get the app that lets you decide when to share \n' +
-				'and when to be private, wherever you go online.\n',
-			image: 'privacy-search',
-		},
-		'browser-accounts': {
+		[RoutersName.BROWSERACCOUNTS]: {
 			visible: true,
 			title: 'Take back control over your data with Lenovo Privacy',
-			text: '',
-			image: 'take-bake-control',
+			text: 'Trial duration 14-day. No credit card required.',
+			image: 'pitch-block/Img_Pith_Passwords',
 		},
-		faq: {
+		[RoutersName.ARTICLES]: {
 			visible: false,
 			title: 'The choice to be private is here',
-			text: 'Get the app that lets you decide when to share \n' +
-				'and when to be private, wherever you go online.\n',
-			image: 'privacy-search',
+			text: 'Trial duration 14-day. No credit card required.',
+			image: 'pitch-block/Img_Pith_Main',
 		}
 	};
+
+	generalizedSettings: InstallWidgetPageSettings = {
+		visible: true,
+		title: 'The choice to be private is here',
+		text: 'Now you decide when to share and when to be private online. Trial duration 14-day. No credit card required.',
+		image: 'pitch-block/Img_Pith_Main',
+	};
 }
+

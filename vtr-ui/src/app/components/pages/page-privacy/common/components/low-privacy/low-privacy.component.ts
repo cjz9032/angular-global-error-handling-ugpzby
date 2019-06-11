@@ -5,6 +5,7 @@ export interface DescribeStep {
 	img: string;
 	img2x: string;
 	title: string;
+	clickEventName: string;
 	button: {
 		name: string;
 		link: string;
@@ -19,14 +20,6 @@ export interface DescribeStep {
 export class LowPrivacyComponent {
 	@Input() steps: DescribeStep[] = [];
 	@Input() popupId: string;
-
-	promoVideoData = {
-		image_url: '/assets/images/privacy-tab/Video.png'
-	};
-	promoVideoPopupData = {
-		title: 'Promo for breached accaunts page',
-		video_url: 'https://www.youtube.com/embed/tgbNymZ7vqY'
-	};
 
 	constructor(private commonPopupService: CommonPopupService) {
 	}

@@ -43,7 +43,7 @@
 												<div class="security-widget-wifi">
 													<vtr-ui-object-title [objects]="wifiSecurityLandingViewModel.subject">
 													</vtr-ui-object-title>
-													<vtr-ui-list-chevron [items]="wifiSecurityLandingViewModel.statusList">
+													<vtr-ui-list-chevron [items]="wifiSecurityLandingViewModel.statusList" metricsEvent="featureClick">
 													</vtr-ui-list-chevron>
 													<div class="wifi-history"
 														*ngIf="wifiHistory && wifiSecurityLandingViewModel.subject.status === 0 && wifiHistory.length !== 0">
@@ -72,7 +72,7 @@
 																</div>
 															</li>
 															<li class="wifi-link">
-																<a routerLink="wifi-security" 
+																<a routerLink="wifi-security"
 																	id="sa-ov-link-seeAllNetwork"
 																	aria-label="sa-ov-link-seeAllNetwork"
 																	[queryParams]="{isShowMore:false}"
@@ -87,7 +87,7 @@
 													</div>
 												</div>
 												<div class="pull"><img class="coronet-logo"
-														src="{{wifiSecurityLandingViewModel.imgUrl}}" />
+														[src]="wifiSecurityLandingViewModel.imgUrl|svgInline|async" />
 												</div>
 											</div>
 										</div>
