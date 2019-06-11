@@ -23,6 +23,7 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	public gpuOver: string;
 	public memoryModuleName: string;
 	public ramOver: string;
+	public showIcon: boolean = false;
 	public showAllHDs = false;
 
 
@@ -36,7 +37,7 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	@Input() ramMax = 32;
 	//@Input() cpuover = 'Intel';
 
-	public hds: any = [];
+	public hds: any=[];
 
 	// @Input() hds = [
 	// 	{
@@ -84,24 +85,36 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	constructor(private hwInfoService: HwInfoService) { }
 	public getDynamicInfoService() {
 		this.hwInfoService.getDynamicInformation().then((hwInfo: any) => {
-			// console.log('getDynamicInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
-			console.log('DYNAMIC SYSTEM INFO', hwInfo);
-			if(hwInfo.cpuUseFrequency !== '')
-			{
+			//console.log('getDynamicInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
+			//console.log('DYNAMIC SYSTEM INFO', hwInfo);
+			if (hwInfo.cpuUseFrequency !== '') {
 				this.cpuUseFrequency = hwInfo.cpuUseFrequency.split('GHz')[0];
 			}
 			this.cpuCurrent = parseFloat(this.cpuUseFrequency);
-			if(hwInfo.gpuUsedMemory !== '')
-			{
+			if (hwInfo.gpuUsedMemory !== '') {
 				this.gpuUsedMemory = hwInfo.gpuUsedMemory.split('GB')[0];
 			}
 			this.gpuCurrent = parseFloat(this.gpuUsedMemory);
-			if(hwInfo.memoryUsed !== '')
-			{
+			if (hwInfo.memoryUsed !== '') {
 				this.memoryUsed = hwInfo.memoryUsed.split('GB')[0];
 			}
 			this.ramCurrent = parseFloat(this.memoryUsed);
 			this.hds = hwInfo.diskList;
+			this.hds.forEach((hd) => {
+				if (this.convertToBoolean(hd.isSystemDisk) === true) {
+					this.showIcon = true;
+				}
+			});
+			for (var _i = 0; _i < hwInfo.diskList.length; _i++) {
+				var hd = JSON.stringify(hwInfo.diskList[_i]);
+				if (_i === 0 && this.showIcon === true) {
+					hwInfo.diskList[0].isSystemDisk = true;
+				}
+				else {
+					hwInfo.diskList[_i].isSystemDisk = false;
+				}
+			}
+
 		});
 	}
 
@@ -109,18 +122,15 @@ export class WidgetSystemMonitorComponent implements OnInit {
 		try {
 			this.hwInfoService.getMachineInfomation().then((hwInfo: any) => {
 				//console.log('getMachineInfoService js bridge ------------------------>', JSON.stringify(hwInfo));
-				if(hwInfo.cpuBaseFrequence !== '')
-				{
+				if (hwInfo.cpuBaseFrequence !== '') {
 					this.cpuBaseFrequence = hwInfo.cpuBaseFrequence.split('GHz')[0];
 				}
 				this.cpuMax = parseFloat(this.cpuBaseFrequence);
-				if(hwInfo.gpuMemorySize !== '')
-				{
+				if (hwInfo.gpuMemorySize !== '') {
 					this.gpuMemorySize = hwInfo.gpuMemorySize.split('GB')[0];
 				}
 				this.gpuMax = parseFloat(this.gpuMemorySize);
-				if(hwInfo.memorySize !== '')
-				{
+				if (hwInfo.memorySize !== '') {
 					this.memorySize = hwInfo.memorySize.split('GB')[0];
 				}
 				this.ramMax = parseFloat(this.memorySize);
@@ -135,6 +145,18 @@ export class WidgetSystemMonitorComponent implements OnInit {
 			console.error(error.message);
 		}
 	}
+
+
+	convertToBoolean(input: string): boolean | undefined {
+		try {
+			return JSON.parse(input);
+		}
+		catch (e) {
+			return undefined;
+		}
+	}
+
+
 
 	ngOnInit() {
 
@@ -155,7 +177,7 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	getLeftDeg(current, max) {
 		let pct = (current / max);
 		const deg = 360 * (pct - .5);
-		if(pct > 1) {
+		if (pct > 1) {
 			pct = 1;
 		}
 		if (pct > .5) {
@@ -167,7 +189,7 @@ export class WidgetSystemMonitorComponent implements OnInit {
 
 	getRightDeg(current, max) {
 		let pct = (current / max);
-		if(pct > 1) {
+		if (pct > 1) {
 			pct = 1;
 		}
 		const deg = 360 * pct;
@@ -176,7 +198,7 @@ export class WidgetSystemMonitorComponent implements OnInit {
 
 	getStackHeight(current, max) {
 		let pct = (current / max);
-		if(pct > 1) {
+		if (pct > 1) {
 			pct = 1;
 		}
 		const mask = 1 - pct;
