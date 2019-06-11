@@ -10,6 +10,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ElementRef } from '@ang
 })
 export class UiMacrokeyCollapsibleContainerComponent implements OnInit {
 	@Input() public options;
+	@Input() public selectedOption;
 	@Input() public enableDescription: Boolean = true;
 	@Input() isRecording: Boolean = false;
 	@Output() public change = new EventEmitter<any>();
@@ -22,21 +23,7 @@ export class UiMacrokeyCollapsibleContainerComponent implements OnInit {
 
 	constructor(private elementRef: ElementRef) {}
 
-	ngOnInit() {
-		this.options.forEach((option) => {
-			if (option.selectedOption && this.currentOption === undefined) {
-				this.setDefaultOption(option);
-			}
-		});
-
-		if (this.currentOption === undefined) {
-			this.options.forEach((option) => {
-				if (option.defaultOption) {
-					this.setDefaultOption(option);
-				}
-			});
-		}
-	}
+	ngOnInit() {}
 
 	public toggleOptions() {
 		this.showOptions = !this.showOptions;
@@ -50,17 +37,12 @@ export class UiMacrokeyCollapsibleContainerComponent implements OnInit {
 	}
 
 	public setDefaultOption(option) {
-		this.currentOption = option.name;
-		this.selectedDescription = option.description;
-		this.currentDescription = this.selectedDescription;
+		this.selectedOption = option;
 		this.showOptions = false;
 	}
 
 	public optionSelected(option) {
-		this.currentOption = option.name;
-		this.options.curSelected = option.value;
-		this.selectedDescription = option.description;
-		this.currentDescription = this.selectedDescription;
+		this.selectedOption = option;
 		this.showOptions = false;
 		this.change.emit(option);
 	}

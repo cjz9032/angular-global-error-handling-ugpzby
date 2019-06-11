@@ -5,22 +5,23 @@
 				<div class="col-sm-12">
 					<p class="intro-text">{{ 'gaming.macroKey.introLine' | translate }}</p>
 				</div>
-				<div class="col-sm-6" *ngIf="properties.macroKeyStatus == 0">
+				<div class="col-sm-6" *ngIf="isNumpad">
 					<div class="select-wrapper">
 						<vtr-ui-macrokey-collapsible-container
 							[isRecording]="isRecording"
 							[options]="macroKeyOptions"
+							[selectedOption]="macroKeyStatusSelectedOption"
 							(change)="optionChanged($event)">
 						</vtr-ui-macrokey-collapsible-container>
 					</div>
 				</div>
 				<div class="col-sm-12">
-					<div class="macrokey-wrapper" [ngClass]="{numberpad: properties.macroKeyStatus == 0}">
+					<div class="macrokey-wrapper" [ngClass]="{numberpad: isNumpad}">
 						<div class="numbers-wrapper">
 							<vtr-ui-number-button
 								[numbers]="numbers"
 								(numberSelected)="onNumberSelected($event)"
-								[isNumberpad]="properties.macroKeyStatus == 0"
+								[isNumberpad]="isNumpad"
 								[recordingStatus]="isRecording">
 							</vtr-ui-number-button>
 						</div>

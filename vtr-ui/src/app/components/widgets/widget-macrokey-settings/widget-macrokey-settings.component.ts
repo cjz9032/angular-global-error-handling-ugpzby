@@ -10,32 +10,28 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 	styleUrls: [ './widget-macrokey-settings.component.scss' ]
 })
 export class WidgetMacrokeySettingsComponent implements OnInit {
-	macroKeyOptions: any = [
+	private macroKeyOptions: any = [
 		{
 			title: 'gaming.macroKey.status.on.title',
 			name: 'gaming.macroKey.status.on.title',
 			description: 'gaming.macroKey.status.on.description',
-			selectedOption: false,
-			defaultOption: false,
 			value: 1
 		},
 		{
 			title: 'gaming.macroKey.status.whileGaming.title',
 			name: 'gaming.macroKey.status.whileGaming.title',
 			description: 'gaming.macroKey.status.whileGaming.description',
-			selectedOption: false,
-			defaultOption: false,
-			value: 1
+			value: 2
 		},
 		{
 			title: 'gaming.macroKey.status.off.title',
 			name: 'gaming.macroKey.status.off.title',
 			description: 'gaming.macroKey.status.off.description',
-			selectedOption: false,
-			defaultOption: true,
-			value: 1
+			value: 3
 		}
 	];
+
+	macroKeyStatusSelectedOption = this.macroKeyOptions[2];
 
 	numbers: any = [];
 
@@ -119,20 +115,25 @@ export class WidgetMacrokeySettingsComponent implements OnInit {
 
 	@Output() optionSelected = new EventEmitter<any>();
 	selectedNumber: any;
-	properties: any = {
-		macroKeyStatus: 0
+	macroKeyTypeStatus: any = {
+		MacroKeyType: 0,
+		MacroKeyStatus: 0
 	};
+	isNumpad: Boolean = true;
 	isRecording = false;
 	recorderKeyData: any = [];
 
 	constructor(private macroKeyService: MacrokeyService, private shellService: VantageShellService) {}
 
 	ngOnInit() {
-		if (this.properties.macroKeyStatus === 1) {
+		if (this.macroKeyTypeStatus.MacroKeyType === 1) {
 			this.numbers = this.macroButtons;
+			this.isNumpad = false;
 		} else {
 			this.numbers = this.numberPadbottons;
+			this.isNumpad = true;
 		}
+
 		this.recorderKeyData = [
 			{ status: 1, key: '1', interval: 0 },
 			{ status: 0, key: '1', interval: 100 },
@@ -144,17 +145,18 @@ export class WidgetMacrokeySettingsComponent implements OnInit {
 
 	public initMacroKey() {
 		if (this.macroKeyService.isMacroKeyAvailable) {
-			console.log('registering event');
+			this.macroKeyService.gamingMacroKeyInitializeEvent();
 			this.shellService.registerEvent(
 				EventTypes.gamingMacroKeyInitializeEvent,
 				this.onGamingMacroKeyInitializeEvent.bind(this)
 			);
-			this.macroKeyService.getMacroKeyInitEvent();
 		}
 	}
 
 	onGamingMacroKeyInitializeEvent(status: any) {
-		console.log('Macrokey Status', status);
+		if (status) {
+			// this.properties = status;
+		}
 	}
 
 	optionChanged(option: any) {
