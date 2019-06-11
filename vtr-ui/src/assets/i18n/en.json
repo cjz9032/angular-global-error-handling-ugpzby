@@ -517,7 +517,8 @@
 						"li-polymer": "Li-Polymer",
 						"li-ion": "Li-Ion",
 						"li_polymer": "Li-Polymer",
-						"li_ion": "Li-Ion"
+						"li_ion": "Li-Ion",
+						"unknown": "Unknown"
 					},
 					"manufacturer": {
 						"title": "Manufacturer",
