@@ -487,7 +487,6 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 				centered: true,
 				windowClass: 'common-confirmation-modal'
 			});
-		modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.RebootRequiredControl';
 		const { rebootType, packages } = this.systemUpdateService.getRebootType(this.systemUpdateService.updateInfo.updateList, source);
 		let removeDelayedUpdates = false;
 		if (rebootType === UpdateRebootType.RebootDelayed) {
@@ -505,6 +504,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		modalRef.componentInstance.packages = packages;
 		modalRef.componentInstance.OkText = 'systemUpdates.popup.okayButton';
 		modalRef.componentInstance.CancelText = 'systemUpdates.popup.cancelButton';
+		modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.RebootRequiredControl';
+
 		modalRef.result.then(
 			result => {
 				// on open
@@ -800,6 +801,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 			modalRef.componentInstance.description = description;
 			modalRef.componentInstance.OkText = 'systemUpdates.popup.rebootButton';
 			modalRef.componentInstance.CancelText = 'systemUpdates.popup.dismissButton';
+			modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.RebootRequiredControl';
 			modalRef.result.then(
 				(result) => {
 					if (result) {
