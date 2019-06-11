@@ -21,6 +21,13 @@
     justify-content: space-between;
     border: 2px solid transparent;
     transition: border-color .1s linear;
+
+	&--small {
+	  border-radius: 25px;
+	  padding: 0;
+	  min-height: 5rem;
+	  border: none;
+	}
     &--focused {
       border: 2px solid #4A81FD;
     }
@@ -60,6 +67,7 @@
     align-self: center;
     cursor: pointer;
     &--error {
+	  cursor: default;
       background: linear-gradient(270deg, #E2E2E2 0%, #C2C6CF 100%);
     }
   }

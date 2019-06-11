@@ -48,12 +48,18 @@
 		}
 	}
 
+	&__item-top {
+		display: flex;
+		align-items: center;
+	}
+
 	&__item-title {
 		color: #34495E;
 		font-size: 1.3rem;
 		line-height: 1.6;
-		padding: 1.8rem 4.2rem 1.8rem 2rem;
+		padding: 1.8rem 4.2rem 1.5rem 2rem;
 		position: relative;
+		width: 100%;
 
 		&:after {
 			content: "";
@@ -72,6 +78,14 @@
 				transform: translateY(-50%) rotate(0);
 			}
 		}
+	}
+
+	&__item-icon {
+		color: #4A81FD;
+		max-width: 2.2rem;
+		margin-left: 1.8rem;
+		font-size: 2.4rem;
+		text-align: center;
 	}
 
 	&__item-description {

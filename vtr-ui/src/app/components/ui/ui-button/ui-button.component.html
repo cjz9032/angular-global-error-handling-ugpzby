@@ -2,6 +2,7 @@
 	<div class="button-box"
 		*ngIf="label">
 		<button *ngIf="alreadyJoinGroup !== 'joined'"
+			title="{{title}}"
 			[disabled]="isDisabled"
 			type="button"
 			class="btn button"
@@ -12,12 +13,15 @@
 			[metricsValue]="metricsValue"
 			[metricsItemPosition]="metricsItemPosition"
 			[metricsPageNumber]="metricsPageNumber"
+			[metricsItemID]="metricsItemID"
+			[metricsItemCategory]="metricsItemCategory"
 			[metricsParent]="metricsParent"
 			[ngClass]="{'fullWidth': isFullWidth === true,'text-upper-case': upperCaseLabel,
 						'regular-width': isRegular, 'min-height': btnHeight, 
 						'btn-gradient': isGradient}"
 			(click)="onClickButton($event)">{{label}} </button>
 		<button *ngIf="alreadyJoinGroup === 'joined'"
+			title="{{title}}"
 			type="button"
 			class="button disable"
 			[disabled]="false"
@@ -28,6 +32,8 @@
 			[metricsValue]="metricsValue"
 			[metricsItemPosition]="metricsItemPosition"
 			[metricsPageNumber]="metricsPageNumber"
+			[metricsItemID]="metricsItemID"
+			[metricsItemCategory]="metricsItemCategory"
 			[metricsParent]="metricsParent"
 			[ngClass]="{'fullWidth': isFullWidth === true ,'text-upper-case': upperCaseLabel}"
 			(click)="onClickButton($event)">{{label}} </button>

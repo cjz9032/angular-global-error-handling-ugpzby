@@ -1,4 +1,4 @@
-<div class="choose-browser">
+<div class="choose-browser" data-analyticsName="WebsiteTrackersPopup">
 	<ng-container *ngIf="!isBrowserListEmpty">
 		<h2 class="choose-browser__title">
 			Can we check your browser?
@@ -51,6 +51,9 @@
 			class="choose-browser__button"
 			*ngIf="!isBrowserListEmpty"
 			(click)="browserEmit()"
+			vtrSendAnalytics
+			[metricsEvent]="'ItemClick'"
+			[metricsItem]="'WebsiteTrackersCheckNowButton'"
 		>Check now</button>
 		<button
 			type="button"
@@ -62,6 +65,9 @@
 			type="button"
 			class="choose-browser__button choose-browser__button--grey"
 			(click)="rejection.emit()"
+			vtrSendAnalytics
+			[metricsEvent]="'ItemClick'"
+			[metricsItem]="'WebsiteTrackersNoThanksButton'"
 		>No thanks</button>
 	</div>
 </div>

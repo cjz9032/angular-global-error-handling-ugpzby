@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { CommonPopupService } from './common-popup.service';
 
-describe('ComonPopupService', () => {
+describe('CommonPopupService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {

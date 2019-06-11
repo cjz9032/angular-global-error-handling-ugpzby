@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { CommsService } from 'src/app/services/comms/comms.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { NgZone } from '@angular/core';
+import { SecurityService } from 'src/app/services/security/security.service';
 
 
 interface DevicePostureDetail {
@@ -27,7 +28,13 @@ export class WifiHomeViewModel {
 	homeStatus: string;
 	tryNowEnable = false;
 
-	constructor(wifiSecurity: phoenix.WifiSecurity, homeProtection: phoenix.HomeProtection, private commonService: CommonService, private ngZone: NgZone) {
+	constructor(
+		wifiSecurity: phoenix.WifiSecurity,
+		homeProtection: phoenix.HomeProtection,
+		private commonService: CommonService,
+		private ngZone: NgZone,
+		private securityService: SecurityService
+		) {
 		const cacheWifiSecurityState = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityState);
 		const cacheWifiSecurityHistory = commonService.getLocalStorageValue(LocalStorageKey.SecurityWifiSecurityHistorys);
 		const cacheWifiSecurityChsConsoleUrl = commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionChsConsoleUrl);
@@ -41,20 +48,29 @@ export class WifiHomeViewModel {
 			}
 		});
 		wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
-			if (value !== undefined) {
-				if (this.wifiSecurity.state) {
-					this.isLWSEnabled = (value && this.wifiSecurity.state === 'enabled');
+			this.ngZone.run(() => {
+				if (value !== undefined) {
+					if (this.wifiSecurity.state) {
+						this.isLWSEnabled = (this.wifiSecurity.state === 'enabled' && value);
+					}
+					if (!value && this.wifiSecurity.state === 'enabled') {
+						this.securityService.wifiSecurityLocationDialog(this.wifiSecurity);
+					} else if (value) {
+						if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
+							this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
+							this.wifiSecurity.enableWifiSecurity().then((res) => {
+								if (res === true) {
+									this.isLWSEnabled = true;
+								} else {
+									this.isLWSEnabled = false;
+								}
+							}, (error) => {
+								console.log('no permission');
+							});
+						}
+					}
 				}
-			}
-		});
-		wifiSecurity.on(EventTypes.geolocatorPermissionEvent, (value) => {
-            this.ngZone.run(() => {
-                if (value !== undefined) {
-                    if (this.wifiSecurity.state) {
-                        this.isLWSEnabled = (this.wifiSecurity.state === 'enabled' && value);
-                    }
-                }
-            });
+			});
 		});
 		wifiSecurity.on(EventTypes.wsWifiHistoryEvent, (value) => {
 			if (value) {
@@ -208,26 +224,21 @@ export class SecurityHealthViewModel {
 			}
 		});
 		wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
-			if (value !== undefined) {
-				if (wifiSecurity.state) {
-					this.isLWSEnabled = (value && wifiSecurity.state === 'enabled');
+			this.ngZone.run(() => {
+				if (value !== undefined) {
+					if (wifiSecurity.state) {
+						this.isLWSEnabled = (wifiSecurity.state === 'enabled' && value);
+					}
 				}
-			}
-		});
-		wifiSecurity.on(EventTypes.geolocatorPermissionEvent, (value) => {
-            this.ngZone.run(() => {
-                if (value !== undefined) {
-                    if (wifiSecurity.state) {
-                        this.isLWSEnabled = (wifiSecurity.state === 'enabled' && value);
-                    }
-                }
-            });
+			});
 		});
 		homeProtection.on(EventTypes.homeDevicePostureEvent, (value) => {
-			if (value) {
-				commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, value);
-				this.createHomeDevicePosture(value);
-			}
+			this.ngZone.run(() => {
+				if (value) {
+					commonService.setLocalStorageValue(LocalStorageKey.SecurityHomeProtectionDevicePosture, value);
+					this.createHomeDevicePosture(value);
+				}
+			});
 		});
 	}
 

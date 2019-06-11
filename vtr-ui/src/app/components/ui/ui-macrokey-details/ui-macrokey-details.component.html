@@ -1,0 +1,92 @@
+<div class="macrokey-wrapper" [ngClass]="{'recording': recording && number}">
+	<div class="header-component" *ngIf="number && !number.isMacrokeyExists">
+		<div class="title-main">
+			Recording Macro Key For {{ number.title | translate }}
+		</div>
+	</div>
+	<div class="section-details">
+		<div class="intro" [ngClass]="{'no-key': !number, 'data-exists': number && number.isMacrokeyExists, 'recording-data': recording && recordedData.length > 0}">
+			<div class="select-key" *ngIf="!number">
+				<div class="title-main">
+					<p>
+						{{ 'gaming.macroKey.details.intro.noNumber' | translate }}
+					</p>
+				</div>
+			</div>
+			<div *ngIf="number && !number.isMacrokeyExists">
+				<div class="can-record" *ngIf="!recording">
+					<div class="title-main">
+						<p>
+							{{ 'gaming.macroKey.details.intro.title' | translate }}
+						</p>
+						<p>
+							{{ number.title | translate }}
+						</p>
+					</div>
+					<div class="description">
+						<p>{{ 'gaming.macroKey.details.intro.line1' | translate }}</p>
+						<p>{{ 'gaming.macroKey.details.intro.line2' | translate }}</p>
+						<p>{{ 'gaming.macroKey.details.intro.line3' | translate }}</p>
+					</div>
+				</div>
+				<div class="is-recording" *ngIf="recording">
+					<div class="initalize" *ngIf="recordedData.length == 0">
+						<div class="title-main">
+							<p>
+								{{ 'gaming.macroKey.details.recording.title' | translate }}
+							</p>
+							<p>
+								{{ 'gaming.macroKey.details.recording.description' | translate }}
+							</p>
+						</div>
+						<div class="description"></div>
+					</div>
+					<div class="recorded-data" *ngIf="recordedData.length > 0">
+						<vtr-ui-macrokey-recorded-list
+							[number]="number"
+							[recordingStatus]="recording"
+							[recordsList]="recordedData"
+							(onRecordDelete)="recordDeleted($event)"
+							(onClearAll)="clearRecords($event)">
+						</vtr-ui-macrokey-recorded-list>
+					</div>
+				</div>
+			</div>
+			<div *ngIf="number && number.isMacrokeyExists">
+				<vtr-ui-macrokey-recorded-list
+					[number]="number"
+					[recordingStatus]="recording"
+					[recordsList]="recordedData"
+					(onRecordDelete)="recordDeleted($event)"
+					(onClearAll)="clearRecords($event)">
+				</vtr-ui-macrokey-recorded-list>
+			</div>
+		</div>
+	</div>
+	<div class="footer-component text-center" *ngIf="number && !number.isMacrokeyExists">
+		<div class="start-button">
+			<vtr-ui-button
+			metricsParent="WelcomePage"
+			metricsEvent="featureClick"
+			[metricsItem]="'START RECORDING'"
+			[label]="'START RECORDING'"
+			[btnHeight]=true
+			[isGradient]=true
+			(onClick)="onStartClicked($event)">
+			</vtr-ui-button>
+		</div>
+		<div class="stop-button">
+			<vtr-ui-button
+			metricsParent="WelcomePage"
+			metricsEvent="featureClick"
+			[metricsItem]="'STOP RECORDING'"
+			[label]="'STOP RECORDING'"
+			[btnHeight]=true
+			[isGradient]=true
+			(onClick)="onStopClicked($event)">
+			</vtr-ui-button>
+		</div>
+	</div>
+</div>
+
+<vtr-ui-macrokey-popup [modalContent]="modalContent" [showModal]="showModal"></vtr-ui-macrokey-popup>

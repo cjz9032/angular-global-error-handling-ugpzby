@@ -1,0 +1,33 @@
+<section class="scanning">
+	<ng-container [ngSwitch]="currentSlide">
+		<ng-container *ngSwitchCase="oneClickScanSteps.VERIFY_EMAIL">
+			<figure class="scanning__figure">
+				<img src="/assets/images/privacy-tab/breaches-scan-monitoring.png"
+					 srcset="/assets/images/privacy-tab/breaches-scan-monitoring@2x.png 2x"
+					 alt="breaches scan">
+			</figure>
+
+			<h2 class="scanning__title">
+				Scanning your email for breaches...
+			</h2>
+		</ng-container>
+		<ng-container *ngSwitchCase="oneClickScanSteps.PERMIT_TRACKERS_AND_PASSWORD">
+			<figure class="scanning__figure">
+				<img src="/assets/images/privacy-tab/breaches-scan-monitoring.png"
+					 srcset="/assets/images/privacy-tab/breaches-scan-monitoring@2x.png 2x"
+					 alt="breaches scan">
+			</figure>
+
+			<h2 class="scanning__title">
+				Scanning your browser for tracking tools and non-private passwords...
+			</h2>
+		</ng-container>
+	</ng-container>
+
+	<vtr-progress-bar [progress]="progressTime$ | async"
+					  class="scanning__progress-bar">
+	</vtr-progress-bar>
+	<button class="scanning__button--skip" (click)="disallowEmitter()">
+		Cancel check
+	</button>
+</section>

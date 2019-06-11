@@ -3,8 +3,8 @@
 		<div class="col vtr-col">
 			<vtr-header-main
 				[backarrow]="backarrow"
-				[back]="back | translate"
-				[title]="title | translate"
+				[back]="'common.ui.back' | translate"
+				[title]="'security.antivirus.common.title' | translate"
 				[backId]="backId"></vtr-header-main>
 		</div>
 	</div>
@@ -30,12 +30,16 @@
 												[innerHTML]="'security.antivirus.windowsDefender.subtitle' | translate">
 											</div>
 											<div class="p-3">
-												<vtr-ui-button id="sa-av-btn-learnmore"
+												<vtr-ui-button id="sa-av-btn-learnmore" 
+													aria-label="sa-av-btn-learnmore"
 													metricsItem="learnMoreAboutMcafee"
 													metricsEvent="ArticleClick"
 													metricsItemPosition="1"
 													metricsPageNumber="1"
+													[metricsItemID]="urlGetMcAfee"
+													[metricsItemCategory]="mcafeeArticleCategory"
 													[label]="'security.antivirus.windowsDefender.learnMore' | translate"
+													[title]="'security.antivirus.windowsDefender.learnMore' | translate"
 													(onClick)="openArticle()"
 													[upperCaseLabel]=false></vtr-ui-button>
 											</div>
@@ -148,6 +152,7 @@
 											*vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
 
 											<a	id="sa-av-link-privacypolicy"
+												aria-label="sa-av-link-privacypolicy"
 												vtrMetrics
 												metricsEvent="featureClick"
 
@@ -157,6 +162,7 @@
 												target="_blank"></a>
 
 											<a	id="sa-av-link-termsofservices"
+												aria-label="sa-av-link-termsofservices"
 												vtrMetrics
 												metricsEvent="featureClick"
 
@@ -168,7 +174,7 @@
 									</div>
 									<div class="col-auto align-self-center px-0">
 										<img class="mcafee-logo"
-											src="../../../../assets/images/mcafee_logo.svg" />
+											[src]=" '../../../../assets/images/mcafee_logo.svg' | svgInline | async" />
 									</div>
 								</div>
 							</div>
@@ -186,7 +192,7 @@
 										</div>
 										<div class="col-auto px-0">
 											<img class="mcafee-logo"
-												src="../../../../assets/images/mcafee_logo.svg" />
+												[src]=" '../../../../assets/images/mcafee_logo.svg' | svgInline | async" />
 										</div>
 									</div>
 									<div class="subtitle pb-5">{{'security.antivirus.mcafee.subtitle' | translate}}
@@ -208,6 +214,7 @@
 												<span>
 													<a *ngIf="viewModel.mcafee?.trialUrl && viewModel.mcafee?.trialUrl !== 'unknown'"
 														id="sa-av-link-upgrademcafee"
+														aria-label="sa-av-link-upgrademcafee"
 														vtrMetrics
 														metricsItem="upgradeMcafee"
 														metricsEvent="featureClick"
@@ -219,10 +226,12 @@
 										</div>
 										<div class="col-auto py-5">
 											<vtr-ui-button id="sa-av-btn-launchmcafee"
+												aria-label="sa-av-btn-launchmcafee"
 												metricsEvent="FeatureClick"
 												metricsItem="launchMcafee"
 												(onClick)=" viewModel.mcafee?.launch()"
 												[label]="'security.antivirus.mcafee.launch' | translate"
+												[title]="'security.antivirus.mcafee.launch' | translate"
 												[upperCaseLabel]=false></vtr-ui-button>
 										</div>
 									</div>
@@ -345,6 +354,7 @@
 										<p class="text-regular mt-10"
 											*vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
 											<a	id="sa-av-link-privacypolicy"
+												aria-label="sa-av-link-privacypolicy"
 												vtrMetrics
 												metricsEvent="itemClick"
 												metricsItem="privacyPolicy"
@@ -352,6 +362,7 @@
 												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
 												target="_blank"></a>
 											<a 	id="sa-av-link-termsofservices"
+												aria-label="sa-av-link-termsofservices"
 												vtrMetrics
 												metricsEvent="itemClick"
 												metricsItem="termsOfServices"
@@ -362,7 +373,7 @@
 									</div>
 									<div class="col-auto align-self-center px-0">
 										<img class="mcafee-logo"
-											src="../../../../assets/images/mcafee_logo.svg" />
+											[src]=" '../../../../assets/images/mcafee_logo.svg' | svgInline | async" />
 									</div>
 								</div>
 							</div>
@@ -491,6 +502,7 @@
 										<p class="text-regular mt-10"
 											*vtrTranslate="'security.antivirus.common.privacyTerms' | translate">
 											<a	id="sa-av-link-privacypolicy"
+												aria-label="sa-av-link-privacypolicy"
 												vtrMetrics
 												metricsEvent="itemClick"
 												metricsItem="privacyPolicy"
@@ -498,6 +510,7 @@
 												href="https://www.mcafee.com/consumer/en-us/policy/global/legal.html"
 												target="_blank"></a>
 											<a	id="sa-av-link-termsofservices"
+												aria-label="sa-av-link-termsofservices"
 												vtrMetrics
 												metricsEvent="itemClick"
 												metricsItem="termsOfServices"
@@ -508,7 +521,7 @@
 									</div>
 									<div class="col-auto align-self-center px-0">
 										<img class="mcafee-logo"
-											src="../../../../assets/images/mcafee_logo.svg" />
+											[src]=" '../../../../assets/images/mcafee_logo.svg' | svgInline | async" />
 									</div>
 								</div>
 							</div>
@@ -529,6 +542,7 @@
 								<div class="row">
 									<div class="col col-12">
 										<vtr-container-card id="sa-av-btn-mcafeearticle"
+											aria-label="sa-av-btn-mcafeearticle"
 											[img]="cardContentPositionA.FeatureImage"
 											[caption]="cardContentPositionA.Description"
 											[title]="cardContentPositionA.Title"

@@ -9,7 +9,7 @@
 		metricsEvent="FeatureClick"
 		metricsParent="Page.Support.WeChat"
 		(click)="onCancelClick()">
-		<img src="/assets/icons/Close.svg"
+		<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
 			alt=""
 			srcset="">
 	</a>

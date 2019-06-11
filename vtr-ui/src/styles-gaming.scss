@@ -2,15 +2,15 @@
 
 	@font-face {
 		font-family: "gaming-icon";
-		src:url("./assets/gaming-icons/gaming-icon.eot");
-		src:url("./assets/gaming-icons/gaming-icon.eot?#iefix") format("embedded-opentype"),
-			url("./assets/gaming-icons/gaming-icon.woff") format("woff"),
-			url("./assets/gaming-icons/gaming-icon.ttf") format("truetype"),
-			url("./assets/gaming-icons/gaming-icon.svg#gaming-icon") format("svg");
+		src:url("./assets/gaming-icons/gaming-icons.eot");
+		src:url("./assets/gaming-icons/gaming-icons.eot?#iefix") format("embedded-opentype"),
+			url("./assets/gaming-icons/gaming-icons.woff") format("woff"),
+			url("./assets/gaming-icons/gaming-icons.ttf") format("truetype"),
+			url("./assets/gaming-icons/gaming-icons.svg#gaming-icons") format("svg");
 		font-weight: normal;
 		font-style: normal;
 	}
-	
+
 	[data-icon]:before {
 		font-family: "gaming-icon" !important;
 		content: attr(data-icon);
@@ -23,7 +23,7 @@
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
-	
+
 	[class^="icon-"]:before,
 	[class*=" icon-"]:before {
 		font-family: "gaming-icon" !important;
@@ -36,7 +36,7 @@
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
-	
+
 	.icon-add:before {
 		content: "\61";
 	}
@@ -115,7 +115,12 @@
 	.icon-macrokey:before {
 		content: "\7a";
 	}
-	
+	.icon-hardwarescan:before {
+        content: "\41";
+    }
+	.icon-sunny:before {
+		content: "\42";
+	}
 
 .is-gaming {
 	.vtr-page {
@@ -147,6 +152,14 @@
 		background: $gaming_darkest;
 		width: 100%;
 		clear: both;
-		margin-top: 2.2rem;  
+		margin-top: 2.2rem;
 	}
+}
+.gaming-help-modal {
+	.modal-dialog {
+		top: 16rem;	
+	}
+}
+button:focus, *:focus{
+	outline:0;
 }

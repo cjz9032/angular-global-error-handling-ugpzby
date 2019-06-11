@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'vtr-ui-rounded-rectangle-radio',
-  templateUrl: './ui-rounded-rectangle-radio.component.html',
-  styleUrls: ['./ui-rounded-rectangle-radio.component.scss']
+	selector: 'vtr-ui-rounded-rectangle-radio',
+	templateUrl: './ui-rounded-rectangle-radio.component.html',
+	styleUrls: ['./ui-rounded-rectangle-radio.component.scss']
 })
 export class UiRoundedRectangleRadioComponent implements OnInit {
 	@Input() radioId: string;
@@ -11,19 +11,20 @@ export class UiRoundedRectangleRadioComponent implements OnInit {
 	@Input() label: string;
 	@Input() tooltip: string;
 	@Input() value: string;
-	@Input() checked: boolean;
+	@Input() checked = false;
 	@Input() disabled = false;
+	@Input() name:string;
 
 	@Output() change: EventEmitter<any> = new EventEmitter();
-	hideIcon: boolean = false;
+	hideIcon = false;
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
 
-  onChange(event) {
-	this.change.emit(event);
-}
+	onChange(event) {
+		this.change.emit(event);
+	}
 
 }

@@ -1,5 +1,6 @@
-<div class="trackers-page">
-	<vtr-common-text [texts]="commonTexts"></vtr-common-text>
+<div class="trackers-page"
+	 vtrSendAnalytics
+	 [metricsEvent]="'PageView'">
 
 	<vtr-tracking-map [animate]="true"></vtr-tracking-map>
 </div>

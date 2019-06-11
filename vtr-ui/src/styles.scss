@@ -23,7 +23,7 @@ html {
 	width: 100%;
 	height: 100%;
 	font-size: 62.5%;
-	letter-spacing: 0.1em;
+	letter-spacing: 0;
 }
 
 @media #{$dpiquery_0} {
@@ -349,7 +349,15 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 /*Battery-charge-threshold-modal-styles*/
 .Battery-Charge-Threshold-Modal {
 	.modal-dialog {
-		max-width: 32%;
+		max-width: 35%;
+		@media #{$mediaquery_11} {
+			max-width: 75%;
+			margin: 0 auto;
+		}
+
+		@media #{$mediaquery_X8} {
+			max-width: 50%;
+		}
 	}
 
 	.modal-content {
@@ -426,7 +434,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 		p,
 		li,
-		ul 
+		ul
 		{
 			word-wrap: break-word;
 		}
@@ -476,7 +484,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 				height: auto !important;
 			}
 		}
-	}	
+	}
 }
 
 .license-Modal {
@@ -640,6 +648,36 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	background: linear-gradient(135deg, $go 0%, $go_light 100%);
 }
 
+.vtr-login-lenovo-id {
+	.start-trial {
+		.button-box {			
+			.button {
+				min-height: 5rem !important;
+				background: linear-gradient(135deg, $shade_lighter 0%, $shade_lightest 100%) !important;
+				color: $blue-dark !important;
+				border: 0.1rem solid $shade_light !important;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.vtr-modal-chs-welcome-container {
+	.modal-backdrop.show {
+		opacity: 0.7;
+	}
+	.button-gray {
+		.vtr-ui-button {
+			width: 100%;
+		}
+	}
+	.vtr-ui-button {
+		.button-box {
+			padding: 0px !important;
+			margin: 0px !important;
+		}
+	}
+}
 // gaming overrides need to be at the bottom here
 @import "./styles-gaming.scss";
 
@@ -762,7 +800,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 }
 .icomoon-FA-Plug2x:before {
 	content: "\e916";
-	color: #4a81fd;
+	color: #34495e;
 }
 .icomoon-FA-Question-circle2x:before {
 	content: "\e917";
@@ -893,7 +931,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 }
 .icomoon-LE-expressCharging2x:before {
 	content: "\e937";
-	color: #4a81fd;
+	color: #34495e;
 }
 .icomoon-LE-face-detection2x:before {
 	content: "\e938";

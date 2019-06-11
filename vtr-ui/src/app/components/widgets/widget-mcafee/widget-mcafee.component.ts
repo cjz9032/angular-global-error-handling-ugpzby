@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import isString from 'lodash/isString';
-
+import { RegionService } from 'src/app/services/region/region.service';
 
 @Component({
 	selector: 'vtr-widget-mcafee',
@@ -13,12 +14,12 @@ export class WidgetMcafeeComponent implements OnInit {
 	@Input() name: string;
 	@Input() mcafee: any;
 	urlGetMcAfee: string;
+	country: string;
 	nls = new Map([
-		['cs', 'CZ'],
-		['da', 'DK'],
-		['nl', 'NL'],
-		['en-GB', 'En-GB'],
-		['en-US', 'En-US'],
+		['cs', 'Cs-CZ'],
+		['da', 'Da-DK'],
+		['nl', 'Nl-NL'],
+		['gb', 'En-GB'],
 		['fi', 'Fi-FI'],
 		['fr', 'Fr-FR'],
 		['de', 'De-DE'],
@@ -33,18 +34,37 @@ export class WidgetMcafeeComponent implements OnInit {
 		['tr', 'Tr-TR'],
 		['*', 'En-US'],
 	]);
+	statusList = [{
+		status: 'disabled',
+		title: 'security.antivirus.common.virusScan',
+	}, {
+		status: 'disabled',
+		title: 'security.antivirus.common.firewall',
+	}];
+
+	constructor(public translate: TranslateService,
+		public regionService: RegionService) { }
 
 	ngOnInit() {
 		this.urlGetMcAfee = `https://home.mcafee.com/root/campaign.aspx?cid=233426&affid=714&culture=${this.getLanguageIdentifier()}`;
 	}
 
 	getLanguageIdentifier() {
-		if (this.nls.has(navigator.language)) { return this.nls.get(navigator.language); }
-		const language = isString(navigator.language) ? navigator.language.substring(0, 2) : '*';
-		if (this.nls.has(language)) { return this.nls.get(language); }
+		const language = isString(this.translate.currentLang) ? this.translate.currentLang.substring(0, 2) : '*';
+		this.regionService.getRegion().subscribe({
+			next: x => {
+				this.country = x;
+			},
+			error: err => {
+				this.country = 'US';
+			},
+		});
+		if (language === 'en' && this.country === 'GB') {
+			return this.nls.get('gb');
+		}
+		if (this.nls.has(language)) {
+			return this.nls.get(language);
+		}
 		return this.nls.get('*');
 	}
 }
-
-
-

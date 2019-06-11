@@ -2,7 +2,7 @@
 
 .vtr-ui-rounded-rectangle-radio {
 	box-sizing: border-box;
-	background-color: $shade_lightest;
+	background: linear-gradient(to left, $light, $shade_extralight);
 	display: inline-block;
 	margin-right: 1.5rem;
 	margin-bottom: 1rem;
@@ -10,8 +10,8 @@
 	width: 25rem;
 	height: 6.5rem;
 	border-radius: 20rem;
-	border: 2px solid $main;
 	cursor: pointer;
+
 	@media #{$mediaquery_X20} {
 		width: 40rem;
 	}
@@ -26,6 +26,10 @@
 		width: 16.5rem;
 		margin-right: 1rem;
 	}
+	@media #{$mediaquery_X24} {
+		width: 30rem;
+		margin-right: 1rem;
+	}
 
 	label {
 		box-sizing: border-box;
@@ -37,47 +41,23 @@
 		z-index: 2;
 		overflow: hidden;
 
-		&:before {
-			box-sizing: border-box;
-			position: absolute;
-			left: 1.5rem;
-			top: 2rem;
-			width: 2.2rem;
-			height: 2.2rem;
-			content: "";
-			border: 1px solid $main;
-			background-color: $light;
-			border-radius: 1rem;
-			z-index: 2;
-			cursor: pointer;
-			transition: all 200ms ease-in;
-		}
-
-		&:after {
-			box-sizing: border-box;
-			position: absolute;
-			left: 1.85rem;
-			top: 2.3rem;
-			width: 1.5rem;
-			height: 1.5rem;
-			content: "";
-			background-color: $main;
-			border-radius: 1rem;
-			z-index: 2;
-			cursor: pointer;
-			transition: all 200ms ease-in;
-		}
-
 		.label {
 			position: absolute;
-			left: 4.8rem;
-			top: 2rem;
+			top: 1.8rem;
+			left: 6rem;
 			color: $main_darkest;
-			font-size: 1.4rem;
+			font-size: 1.5rem;
 			font-weight: bold;
 			word-wrap: break-word;
 			word-break: break-all;
 			padding-right: 1rem;
+		}
+
+		.icon-circle {
+			font-size: 3rem;
+			color: $main;
+			top: 1.5rem;
+			left: 1.5rem;
 		}
 
 		fa-icon.icon {
@@ -108,5 +88,14 @@
 	input {
 		position: absolute;
 		visibility: hidden;
+	}
+
+	&.border-blue {
+		border: 0.3rem solid $main;
+		// transition: all 50ms ease-in;
+	}
+	&.border-grey {
+		border: 0.3rem solid $shade_lightest;
+		// transition: all 50ms ease-in;
 	}
 }

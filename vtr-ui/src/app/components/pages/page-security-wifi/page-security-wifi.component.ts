@@ -38,9 +38,6 @@ interface HomeProtectionDeviceInfo {
 	styleUrls: ['./page-security-wifi.component.scss']
 })
 export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewInit {
-
-	title = 'security.wifisecurity.header.title';
-	back = 'security.wifisecurity.header.back';
 	backarrow = '< ';
 	backId = 'sa-ws-btn-back';
 	viewSecChkRoute = 'viewSecChkRoute';
@@ -52,6 +49,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	isShowInvitationCode: boolean;
 	wifiHomeViewModel: WifiHomeViewModel;
 	securityHealthViewModel: SecurityHealthViewModel;
+	securityHealthArticleId = '9CEBB4794F534648A64C5B376FBC2E39';
+	securityHealthArticleCategory: string;
+	cancelClick = false;
 
 	@HostListener('window:focus')
 	onFocus(): void {
@@ -71,13 +71,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.securityAdvisor = shellService.getSecurityAdvisor();
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 		this.homeProtection = this.securityAdvisor.homeProtection;
-		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.ngZone );
+		this.wifiHomeViewModel = new WifiHomeViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.ngZone, this.securityService);
 		this.securityHealthViewModel = new SecurityHealthViewModel(this.wifiSecurity, this.homeProtection, this.commonService, this.translate, this.ngZone);
-		this.wifiSecurity.refresh();
-		this.homeProtection.refresh();
-		this.wifiSecurity.getWifiSecurityState(this.getActivateDeviceStateHandler.bind(this));
-		this.homeProtection.getActivateDeviceState(this.ShowInvitationhandler.bind(this));
-		this.homeProtection.getDevicePosture(this.startGetDevicePosture.bind(this));
 		const cacheHomeStatus = this.commonService.getLocalStorageValue(LocalStorageKey.SecurityHomeProtectionStatus);
 		if (this.homeProtection.status) {
 			this.isShowInvitationCode = !(this.homeProtection.status === 'joined');
@@ -85,11 +80,18 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		} else if (cacheHomeStatus) {
 			this.isShowInvitationCode = !(cacheHomeStatus === 'joined');
 		}
+		this.wifiSecurity.on('cancelClick', () => {
+			this.cancelClick = true;
+		}).on('cancelClickFinish', () => {
+			this.cancelClick = false;
+		});
 		this.fetchCMSArticles();
 	}
 
 	ngOnInit() {
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, 'true');
+		this.wifiSecurity.refresh();
+		this.homeProtection.refresh();
 		this.wifiSecurity.getWifiState().then((res) => {}, (error) => {
 			this.securityService.wifiSecurityLocationDialog(this.wifiSecurity);
 		});
@@ -166,6 +168,12 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 				console.log('fetchCMSContent error', error);
 			}
 		);
+
+		this.cmsService.fetchCMSArticle(this.securityHealthArticleId, {'Lang': 'EN'}).then((response: any) => {
+			if (response && response.Results && response.Results.Category) {
+				this.securityHealthArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
+			}
+		});
 	}
 
 	enableWiFiSecurity(event): void {
@@ -194,6 +202,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			windowClass: 'Article-Detail-Modal'
 		});
 
-		articleDetailModal.componentInstance.articleId = '9CEBB4794F534648A64C5B376FBC2E39';
+		articleDetailModal.componentInstance.articleId = this.securityHealthArticleId;
 	}
 }

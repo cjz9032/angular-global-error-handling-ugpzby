@@ -1,0 +1,41 @@
+@import "../../../app.theme.scss";
+
+.vtr-page {
+	.vtr-page-content {
+		.vtr-page-left-column {
+			background-color: $light;
+		}
+	}
+}
+
+.vtr-page-right-column {
+	background-color: $shade_extralight;
+
+	.battery-unavailable {
+		height: 8rem;
+	}
+}
+
+.subpage-settings {
+	.title {
+		opacity: 0.8;
+		color: $main_darker;
+		font-size: 7rem;
+		line-height: 8.2rem;
+	}
+
+	ul.list-group {
+		list-style-type: none;
+		padding-bottom: 1rem;
+	}
+
+	.settings-note {
+		padding: 2.4rem;
+		font-size: 1.5rem;
+		color: $shade_blue;
+
+		border: 1px solid #ECF0F1;
+		border-radius: 0.4rem;
+		background-color: #F5F7F8;
+	}
+}

@@ -7,6 +7,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AudioService } from 'src/app/services/audio/audio.service';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -19,7 +20,7 @@ export class PageDeviceSettingsComponent implements OnInit {
 	back = 'BACK';
 	backarrow = '< ';
 	parentPath = 'device';
-	menuItems = [
+	public menuItems = [
 		{
 			id: 'power',
 			label: 'Power',
@@ -51,15 +52,41 @@ export class PageDeviceSettingsComponent implements OnInit {
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
-		public audioService: AudioService
+		public audioService: AudioService,
+		private translate: TranslateService,
+
 	) {
 		this.fetchCMSArticles();
 		this.getMicrophoneSettings();
+		//Evaluate the translations for QA on language Change
+		translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.qaService.setTranslationService(this.translate);
+			this.qaService.qas.forEach(qa => {
+				try {
+					qa.title = this.translate.instant(qa.title);
+					qa.description = this.translate.instant(qa.description);
+					// console.log(qa.description);
+					this.translate.get(qa.keys).subscribe((translation: [string]) => {
+						// console.log(JSON.stringify(translation));
+						qa.keys = translation;
+						// console.log(JSON.stringify(qa.keys));
+					});
+				} catch (e) {
+					console.log('already translated');
+				}
+				finally {
+					console.log('already translated');
+				}
+
+			});
+
+			// this.qas = this.qaService.qas;
+		});
 	}
 
 	ngOnInit() {
 		this.devService.writeLog('DEVICE SETTINGS INIT', this.menuItems);
-		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine)
+		this.isDesktopMachine = this.commonService.getLocalStorageValue(LocalStorageKey.DesktopMachine);
 	}
 
 	getMicrophoneSettings() {
@@ -68,9 +95,9 @@ export class PageDeviceSettingsComponent implements OnInit {
 				this.audioService.getMicrophoneSettings()
 					.then((microphone: Microphone) => {
 						console.log('getMicrophoneSettings', microphone);
-						 if (!microphone.available) {
+						if (!microphone.available) {
 							this.menuItems.splice(1, 1);
-						 }
+						}
 					}).catch(error => {
 						console.error('getMicrophoneSettings', error);
 					});
@@ -106,5 +133,4 @@ export class PageDeviceSettingsComponent implements OnInit {
 			}
 		);
 	}
-
 }

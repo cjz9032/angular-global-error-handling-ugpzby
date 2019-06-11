@@ -1,0 +1,36 @@
+<div class="vtr-oled-power-settings">
+	<div class="row">
+		<div class="col">
+			<p class="caption">
+				{{ description[0] }}
+			</p>
+			<p class="caption">
+				{{ description[1] }}
+			</p>
+		</div>
+	</div>
+
+	<div class="dropdown row">
+		<section class="col-sm-12 col-md-4">
+			<h5>TASKBAR DIMMER</h5>
+			<vtr-ui-dropdown [list]="intervals"
+				[value]="taskBarDimmerValue"
+				(change)="onTaskBarDimmerChange($event)">
+			</vtr-ui-dropdown>
+		</section>
+		<section class="col-sm-12 col-md-4">
+			<h5>BACKGROUND DIMMER</h5>
+			<vtr-ui-dropdown [list]="intervals"
+				[value]="backgroundDimmerValue"
+				(change)="onBackgroundDimmerChange($event)">
+			</vtr-ui-dropdown>
+		</section>
+		<section class="col-sm-12 col-md-4">
+			<h5>DISPLAY DIMMER</h5>
+			<vtr-ui-dropdown [list]="intervals"
+				[value]="displayDimmerValue"
+				(change)="onDisplayDimmerChange($event)">
+			</vtr-ui-dropdown>
+		</section>
+	</div>
+</div>

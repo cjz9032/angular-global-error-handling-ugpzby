@@ -40,6 +40,14 @@
 						height: 1.8rem;
 					}
 				}
+				&.custom-checkbox{
+					.custom-control-input:disabled ~ .custom-control-label::before {
+						background-color: #bbb;
+					}
+					.custom-control-input:disabled:checked ~ .custom-control-label::before {
+						border-color: #aaa;
+					}
+				}
 			}
 
 			.update-title {
@@ -50,6 +58,11 @@
 				.update-number {
 					font-weight: normal;
 				}
+			}
+
+			.fail-reason {
+				padding-left: 0rem;
+				font-size: 1.5rem;
 			}
 
 			.question {
@@ -74,6 +87,9 @@
 					color: $light;
 				}
 			}
+		}
+		.icon-check::before {
+			content: ''
 		}
 
 		.icon-times {

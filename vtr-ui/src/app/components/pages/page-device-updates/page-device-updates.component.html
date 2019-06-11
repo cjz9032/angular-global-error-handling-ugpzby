@@ -19,21 +19,23 @@
 
 									<div class="row">
 										<div class="col col-12">
-											<!-- enable once offline mode implementation is done VAN-314 -->
-											<!-- <vtr-widget-offline-info [title]="'No internet connection detected'"
-												*ngIf="!isOnline"
-												[subtitle]="offlineSubtitle | safeDom : 'html'"
-												[buttonText]="'Get Support'"
-												(buttonClick)="onGetSupportClick($event)"></vtr-widget-offline-info> -->
+											<vtr-widget-offline-info *ngIf="!isOnline"
+												[isButtonVisible]="false"
+												[isSubtitleVisible]="false"
+												[title]="'dashboard.offlineInfo.title' | translate"
+												[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+												[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
+												(buttonClick)="onGetSupportClick($event)"></vtr-widget-offline-info>
 
 											<vtr-widget-device-update [title]="updateTitle"
 												*ngIf="isOnline"
 												[subTitle1]="getLastUpdatedText()"
 												[subTitle2]="getNextUpdatedScanText()"
-												[buttonText]="'Check For Updates'"
+												[buttonText]="'systemUpdates.banner.checkButton' | translate"
 												[percent]="percentCompleted"
 												[showProgress]="isUpdateCheckInProgress"
 												[isUpdateDownloading]="isUpdateDownloading"
+												[isCheckingPluginStatus]="isCheckingPluginStatus"
 												[installingPercent]="installationPercent"
 												[downloadingPercent]="downloadingPercent"
 												(checkForUpdate)="onCheckForUpdates()"
@@ -42,15 +44,16 @@
 											</vtr-widget-device-update>
 										</div>
 									</div>
-
-									<vtr-available-updates
+									<vtr-available-updates *ngIf="isUpdateListVisible()"
 										[criticalUpdates]="criticalUpdates"
-										[optionalUpdates]="optionalUpdates"
+														   [optionalUpdates]="optionalUpdates"
 										[recommendedUpdates]="recommendedUpdates"
+										[ignoredUpdates]="ignoredUpdates"
 										[isInstallationCompleted]="systemUpdateService.isInstallationCompleted"
 										[isInstallationSuccess]="systemUpdateService.isInstallationSuccess"
 										[isInstallingAllUpdates]="systemUpdateService.isInstallingAllUpdates"
 										(checkChange)="onUpdateSelectionChange($event)"
+										(ignoreUpdate)="onIgnoredUpdate($event)"
 										(installAllUpdate)="showInstallConfirmation('all')"
 										(installSelectedUpdate)="showInstallConfirmation('selected')">
 									</vtr-available-updates>
@@ -165,7 +168,7 @@
 										</div> -->
 
 											<vtr-container-collapsible
-												[cardTitle]="'device.systemUpdates.history' | translate | lowercase"
+												[cardTitle]="'systemUpdates.history' | translate | lowercase"
 												[isCollapsed]="false">
 												<vtr-installation-history (reinstallUpdate)="onReinstallUpdate($event)">
 												</vtr-installation-history>
@@ -182,22 +185,23 @@
 								<div class="row mb-40">
 									<div class="col col-12 cont">
 
-										<vtr-widget-device-update-settings [title]="'Auto update settings'"
+										<vtr-autoupdate-settings
+											[title]="'systemUpdates.autoUpdateSettings.title' | translate"
 											componentName="Auto Update Settings"
-											[description]="'Automatically Install Updates'"
+											[description]="'systemUpdates.autoUpdateSettings.subtitle' | translate"
 											[items]="autoUpdateOptions"
 											(toggleOnOff)="onUpdateToggleOnOff($event)">
-										</vtr-widget-device-update-settings>
+										</vtr-autoupdate-settings>
 									</div>
 								</div>
 
 								<div class="row">
 									<div class="col col-12 mb-40">
 										<vtr-container-card [img]="'assets/images/support.jpg'"
-											[title]="'Lenovo Support website'"
+											[title]="'systemUpdates.support.title' | translate"
 											[action]="'Read More'"
 											[actionType]="'External'"
-											[actionLink]="'https://pcsupport.lenovo.com/'"
+											[actionLink]="supportLink"
 											[type]="'partnerarticle'"
 											[order]="1"
 											[ratioX]="4"
@@ -209,6 +213,7 @@
 								<div class="row">
 									<div class="col col-12 mb-40">
 										<vtr-container-card [img]="cardContentPositionA.FeatureImage"
+															[itemID]="cardContentPositionA.Id"
 											[caption]="cardContentPositionA.Description"
 											[title]="cardContentPositionA.Title"
 											[logoText]="cardContentPositionA.BrandName"

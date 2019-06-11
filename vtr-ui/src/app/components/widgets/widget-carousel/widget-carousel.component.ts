@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import {MockService} from "../../../services/mock/mock.service";
+import {NgbCarouselConfig, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
+import {ModalArticleDetailComponent} from "../../modal/modal-article-detail/modal-article-detail.component";
 
 @Component({
 	selector: 'vtr-widget-carousel',
@@ -12,7 +13,6 @@ import {MockService} from "../../../services/mock/mock.service";
 export class WidgetCarouselComponent implements OnInit {
 	// images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
 	carouselModel: CarouselModel[] = [];
-
 	@Input() cardTitle: string;
 	@Input() source: string;
 	@Input() image: string;
@@ -24,6 +24,7 @@ export class WidgetCarouselComponent implements OnInit {
 	@Input() showNavigationArrows: boolean;
 	@Input() showNavigationIndicators: boolean;
 	@Input() wrap: boolean;
+	@Input() order:number;
 
 	constructor(private config: NgbCarouselConfig,private MocckService:MockService) {
 
@@ -68,20 +69,22 @@ export class WidgetCarouselComponent implements OnInit {
 
 		for (var i = 0; i < this.data.length; i++) {
 			this.carouselModel.push({
+				id:this.data[i].id,
 				source: this.data[i].source,
 				cardTitle: this.data[i].title,
 				image: this.data[i].url,
 				link: this.data[i].ActionLink ? this.data[i].ActionLink : ''
 			})
 		}
-		console.log('###################', this.carouselModel);
 	}
 
 	linkClicked($event, link) {
 		if (!link) {
 			$event.preventDefault();
+
 		}
 	}
+
 }
 
 interface CarouselModel {
@@ -89,6 +92,7 @@ interface CarouselModel {
 	source: string;
 	image: string;
 	link: string;
+	id:string;
 }
 
 

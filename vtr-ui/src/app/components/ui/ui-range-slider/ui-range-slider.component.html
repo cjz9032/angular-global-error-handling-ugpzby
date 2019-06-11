@@ -1,9 +1,11 @@
-<div class="vtr-ui-range-slider">
+<div class="vtr-ui-range-slider" [ngClass]="{'diable-slider-pointer': enableSlider, 'on-hover-slider-icon':onHoverSliderIcon}">
 	<ng5-slider [(value)]="value"
 		[options]="options"
 		(valueChange)="onValueChange($event)"
 		(userChange)="onChange($event)"
-		[manualRefresh]="manualRefresh"></ng5-slider>
+		[manualRefresh]="manualRefresh"
+		(userChangeEnd)="dragEnd()">
+	</ng5-slider>
 	<div class="row label"
 		*ngIf="minValueLegend.length > 0 || maxValueLegend.length > 0">
 		<div class="col">{{ minValueLegend }}</div>

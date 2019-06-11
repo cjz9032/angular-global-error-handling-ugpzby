@@ -1,4 +1,4 @@
-<div class="sidebar-install-widget" *ngIf="installWidgetSettings.visible && !(isFigleafInstalled$ | async)">
+<div class="sidebar-install-widget" data-analyticsName="PromotionBlock" *ngIf="installWidgetSettings.visible && !isFigleafInstalled">
 	<div class="sidebar-install-widget__inner">
 		<div>
 			<img class="sidebar-install-widget__main-image"
@@ -8,21 +8,23 @@
 		</div>
 		<div class="sidebar-install-widget__text">
 			<strong class="sidebar-install-widget__text-strong">{{installWidgetSettings.title}}</strong>
-			<div class="sidebar-install-widget__main-text"
-				 [ngClass]="{'sidebar-install-widget__main-text--sm': !isMainPage}">
-				<span class="sidebar-install-widget__text-light">{{installWidgetSettings.text}}</span>
-				<p class="sidebar-install-widget__text-light sidebar-install-widget__text-light--bold">
-					14-day free trial. <span class="sidebar-install-widget__text-light">No credit card required.</span>
-				</p>
+			<div class="sidebar-install-widget__main-text sidebar-install-widget__main-text--sm">
+				<p class="sidebar-install-widget__text-light">{{installWidgetSettings.text}}</p>
 			</div>
 		</div>
-		<button class="sidebar-install-widget__button"
+		<button class="sidebar-install-widget__button sidebar-install-widget__button--transparent"
 				vtrOpenFigleafInstaller
-				[ngClass]="{'sidebar-install-widget__button--transparent': isMainPage}">
+				vtrSendAnalytics
+				[metricsEvent]="'ItemClick'"
+				[metricsItem]="'TryLenovoPrivacyButton'">
 			{{primaryButtonText}}
 		</button>
 		<div class="sidebar-install-widget__button-link">
-			<a class="sidebar-install-widget__show-more" routerLink="/privacy/landing">
+			<a class="sidebar-install-widget__show-more"
+			   vtrSendAnalytics
+			   [metricsEvent]="'ItemClick'"
+			   [metricsItem]="'LenovoPrivacyLearnMoreButton'"
+			   routerLink="/privacy/landing">
 				<span class="sidebar-install-widget__show-more-text">{{linkButtonText}}</span>
 			</a>
 		</div>

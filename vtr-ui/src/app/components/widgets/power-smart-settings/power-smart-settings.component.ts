@@ -5,6 +5,7 @@ import {
 	IntelligentCoolingMode, 
 	IntelligentCoolingModes, 
 	IntelligentCoolingHardware } from 'src/app/enums/intelligent-cooling.enum';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-power-smart-settings',
@@ -23,9 +24,12 @@ export class PowerSmartSettingsComponent implements OnInit {
 	enableIntelligentCoolingToggle = false;
 	apsStatus = false;
 	showIntelligentCoolingModes = true;
+	captionText = ""
 	@Output() isPowerSmartSettingHidden = new EventEmitter<any>();
 
-	constructor(public powerService: PowerService) { }
+	constructor(
+		public powerService: PowerService, 
+		private translate: TranslateService) { }
 
 	ngOnInit() {
 		this.initPowerSmartSettings();
@@ -33,9 +37,11 @@ export class PowerSmartSettingsComponent implements OnInit {
 
 	onIntelligentCoolingToggle(event) {
 		if (event.switchValue) {
+			this.enableIntelligentCoolingToggle = true
 			this.showIntelligentCoolingModes = false;
 		} else {
 			this.showIntelligentCoolingModes = true;
+			this.enableIntelligentCoolingToggle = false;
 			this.setManualModeSetting(IntelligentCoolingModes.Performance);
 		}
 		this.setAutoModeSetting(event);
@@ -60,6 +66,7 @@ export class PowerSmartSettingsComponent implements OnInit {
 				isITS = true;
 				this.intelligentCoolingModes = IntelligentCoolingHardware.ITS
 				if (its == 4) {
+					this.captionText = this.translate.instant("device.deviceSettings.power.powerSmartSettings.description1");
 					// DYTC 4 supported
 					console.log("DYTC 4 supported");
 					this.showIC = 4;
@@ -71,8 +78,8 @@ export class PowerSmartSettingsComponent implements OnInit {
 					if (this.cQLCapability || this.tIOCapability) {
 						this.showIntelligentCoolingToggle = true;
 						if (mode.type == ICModes.Error) {
-							let event = { switchValue: this.enableIntelligentCoolingToggle }
-							this.onIntelligentCoolingToggle(event);
+							let customEvent = { switchValue: this.enableIntelligentCoolingToggle }
+							this.onIntelligentCoolingToggle(customEvent);
 						}
 					} else {
 						this.showIntelligentCoolingToggle = false;
@@ -91,14 +98,15 @@ export class PowerSmartSettingsComponent implements OnInit {
 				let legacyManualModeCapability = await this.getLegacyManualModeCapability();
 				if (this.cQLCapability || this.tIOCapability || legacyManualModeCapability) {
 					// Legacy Capable or DYTC 3.0
+					this.captionText = this.translate.instant("device.deviceSettings.power.powerSmartSettings.description3");
 					this.showIC = 3;
 					this.intelligentCoolingModes = IntelligentCoolingHardware.Legacy;
 					console.log("DYTC 3.0 supported");
 					if (this.cQLCapability || this.tIOCapability) {
 						this.showIntelligentCoolingToggle = true;
 						this.enableIntelligentCoolingToggle = await this.getLegacyAutoModeState();
-						let event = { switchValue: this.enableIntelligentCoolingToggle }
-						this.onIntelligentCoolingToggle(event);
+						let customEvent = { switchValue: this.enableIntelligentCoolingToggle }
+						this.onIntelligentCoolingToggle(customEvent);
 					} else {
 						this.showIntelligentCoolingToggle = false;
 					}
@@ -133,17 +141,17 @@ export class PowerSmartSettingsComponent implements OnInit {
 				console.log('manualModeSettingStatus: Cool');
 				this.radioQuietCool = true;
 				this.radioPerformance = false;
-				this.enableIntelligentCoolingToggle = false;
+				//this.enableIntelligentCoolingToggle = false;
 				break;
 			case ICModes.Performance:
 				console.log('manualModeSettingStatus: Performance');
 				this.radioPerformance = true;
 				this.radioQuietCool = false;
-				this.enableIntelligentCoolingToggle = false;
+				//this.enableIntelligentCoolingToggle = false;
 				break;
 			case ICModes.Error:
-				let event = { switchValue: true }
-				this.onIntelligentCoolingToggle(event);
+				let customEvent = { switchValue: true }
+				this.onIntelligentCoolingToggle(customEvent);
 				this.enableIntelligentCoolingToggle = true;
 				console.log('manualModeSettingStatus: error');
 				break;
@@ -190,6 +198,7 @@ export class PowerSmartSettingsComponent implements OnInit {
 		try {
 			if (this.intelligentCoolingModes == IntelligentCoolingHardware.Legacy) {
 				await this.setLegacyManualModeState(mode.status);
+				this.setPerformanceAndCool(mode)
 			}
 			else if (this.powerService.isShellAvailable) {
 				this.powerService
