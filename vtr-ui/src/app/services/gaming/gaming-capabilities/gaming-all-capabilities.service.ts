@@ -30,5 +30,11 @@ export class GamingAllCapabilitiesService {
 
 	setCapabilityValuesGlobally(capabilities: any) {
 		this.commonService.sendNotification(Gaming.GamingCapablities, capabilities);
+		// TODO: Set capability values to local storage.
+		// this.commonService.setLocalStorageValue(LocalStorageKey.<keyName>, capabilities.<keyValue>);
+	}
+
+	getCapablityFromCache(LocalStorageKey) {
+		return this.commonService.getLocalStorageValue(LocalStorageKey);
 	}
 }
