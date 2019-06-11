@@ -414,8 +414,18 @@ export class PageDashboardComponent implements OnInit {
 			const memory = new Status();
 			memory.status = 1;
 			memory.id = 'memory';
+
 			memory.title = this.translate.instant('dashboard.systemStatus.memory.title'); // 'Memory';
+
 			memory.detail = this.translate.instant('dashboard.systemStatus.memory.detail.notFound'); // 'Memory not found';
+
+			this.translate.stream('dashboard.systemStatus.memory.title').subscribe((value) => {
+				memory.title = value;
+			});
+			this.translate.stream('dashboard.systemStatus.memory.detail.notFound').subscribe((value) => {
+				memory.detail = value;
+			});
+
 			memory.path = 'ms-settings:about';
 			memory.asLink = false;
 			memory.isSystemLink = true;
@@ -437,8 +447,18 @@ export class PageDashboardComponent implements OnInit {
 			const disk = new Status();
 			disk.status = 1;
 			disk.id = 'disk';
+
 			disk.title = this.translate.instant('dashboard.systemStatus.diskSpace.title'); // 'Disk Space';
 			disk.detail = this.translate.instant('dashboard.systemStatus.diskSpace.detail.notFound'); // 'Disk not found';
+
+			this.translate.stream('dashboard.systemStatus.diskSpace.title').subscribe((value) => {
+				disk.title = value;
+			});
+
+			this.translate.stream('dashboard.systemStatus.diskSpace.detail.notFound').subscribe((value) => {
+				disk.detail = value;
+			});
+
 			disk.path = 'ms-settings:storagesense';
 			disk.asLink = false;
 			disk.isSystemLink = true;
@@ -461,7 +481,17 @@ export class PageDashboardComponent implements OnInit {
 			warranty.status = 1;
 			warranty.id = 'warranty';
 			warranty.title = this.translate.instant('dashboard.systemStatus.warranty.title'); // 'Warranty';
-			warranty.detail = this.translate.instant('dashboard.systemStatus.warranty.detail.notFound'); // 'Warranty not found';
+			warranty.detail = this.translate.instant('dashboard.systemStatus.warranty.detail.notFound'); //	'Warranty not found';
+
+
+			this.translate.stream('dashboard.systemStatus.warranty.title').subscribe((value) => {
+				warranty.title = value;
+			});
+			this.translate.stream('dashboard.systemStatus.warranty.detail.notFound').subscribe((value) => {
+				warranty.detail = value;
+			});
+
+
 			warranty.path = '/support';
 			warranty.asLink = false;
 			/* warranty.isSystemLink = true; */
@@ -489,6 +519,14 @@ export class PageDashboardComponent implements OnInit {
 			systemUpdate.id = 'systemupdate';
 			systemUpdate.title = this.translate.instant('dashboard.systemStatus.systemUpdate.title'); // 'System Update';
 			systemUpdate.detail = this.translate.instant('dashboard.systemStatus.systemUpdate.detail.update'); // 'Update';
+
+			this.translate.stream('dashboard.systemStatus.systemUpdate.title').subscribe((value) => {
+				systemUpdate.title = value;
+			});
+			this.translate.stream('dashboard.systemStatus.systemUpdate.detail.update').subscribe((value) => {
+				systemUpdate.detail = value;
+			});
+
 			systemUpdate.path = 'device/system-updates';
 			systemUpdate.asLink = false;
 			systemUpdate.isSystemLink = false;
