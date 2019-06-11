@@ -1,15 +1,16 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { GamingCollapsableContainerEvent } from 'src/app/data-models/gaming/gaming-collapsable-container-event';
 import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes } from '@lenovo/tan-client-bridge';
+import { MacroKeyTypeStatus } from 'src/app/data-models/gaming/macrokey/macrokey-type-status.model';
 
 @Component({
 	selector: 'vtr-widget-macrokey-settings',
 	templateUrl: './widget-macrokey-settings.component.html',
 	styleUrls: [ './widget-macrokey-settings.component.scss' ]
 })
-export class WidgetMacrokeySettingsComponent implements OnInit {
+export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	private macroKeyOptions: any = [
 		{
 			title: 'gaming.macroKey.status.on.title',
@@ -31,7 +32,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit {
 		}
 	];
 
-	macroKeyStatusSelectedOption = this.macroKeyOptions[2];
+	macroKeyStatusSelectedOption = this.macroKeyOptions[0];
 
 	numbers: any = [];
 
@@ -113,12 +114,11 @@ export class WidgetMacrokeySettingsComponent implements OnInit {
 		}
 	];
 
+	numberSelected = this.numberPadbottons[0];
+
 	@Output() optionSelected = new EventEmitter<any>();
 	selectedNumber: any;
-	macroKeyTypeStatus: any = {
-		MacroKeyType: 0,
-		MacroKeyStatus: 0
-	};
+	macroKeyTypeStatus: any = new MacroKeyTypeStatus();
 	isNumpad: Boolean = true;
 	isRecording = false;
 	recorderKeyData: any = [];
@@ -126,24 +126,24 @@ export class WidgetMacrokeySettingsComponent implements OnInit {
 	constructor(private macroKeyService: MacrokeyService, private shellService: VantageShellService) {}
 
 	ngOnInit() {
-		if (this.macroKeyTypeStatus.MacroKeyType === 1) {
-			this.numbers = this.macroButtons;
-			this.isNumpad = false;
-		} else {
-			this.numbers = this.numberPadbottons;
-			this.isNumpad = true;
-		}
-
 		this.recorderKeyData = [
 			{ status: 1, key: '1', interval: 0 },
 			{ status: 0, key: '1', interval: 100 },
 			{ status: 0, key: '3', interval: 100 }
 		];
 
-		this.initMacroKey();
+		// TODO: Check if macrokey feature is enabled
+		this.initMacroKeyEvents();
 	}
 
-	public initMacroKey() {
+	ngOnDestroy() {
+		this.shellService.unRegisterEvent(
+			EventTypes.gamingMacroKeyInitializeEvent,
+			this.onGamingMacroKeyInitializeEvent
+		);
+	}
+
+	public initMacroKeyEvents() {
 		if (this.macroKeyService.isMacroKeyAvailable) {
 			this.macroKeyService.gamingMacroKeyInitializeEvent();
 			this.shellService.registerEvent(
@@ -155,7 +155,20 @@ export class WidgetMacrokeySettingsComponent implements OnInit {
 
 	onGamingMacroKeyInitializeEvent(status: any) {
 		if (status) {
-			// this.properties = status;
+			this.onMacroKeyTypeStausChanged(status);
+		}
+	}
+
+	onMacroKeyTypeStausChanged(macroKeyTypeStatus) {
+		this.macroKeyTypeStatus = status;
+		if (this.macroKeyTypeStatus.MacroKeyType === 1) {
+			this.numbers = this.macroButtons;
+			this.numberSelected = this.macroButtons[0];
+			this.isNumpad = false;
+		} else {
+			this.numbers = this.numberPadbottons;
+			this.numberSelected = this.numberPadbottons[9];
+			this.isNumpad = true;
 		}
 	}
 
