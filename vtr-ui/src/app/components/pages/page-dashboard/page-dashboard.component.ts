@@ -82,9 +82,6 @@ export class PageDashboardComponent implements OnInit {
 	}
 
 	ngOnInit() {
-
-
-
 		// reroute default application's default URL if gaming device
 		if (this.deviceService.isGaming) {
 			this.router.navigateByUrl(this.configService.getMenuItems(this.deviceService.isGaming)[0].path);
