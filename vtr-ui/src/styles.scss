@@ -374,11 +374,16 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		overflow-y: initial !important;
 	}
 
+	.modal-dialog-centered{
+		height: calc(100vh - 3.5rem);
+		min-height: calc(100vh - 3.5rem);
+	}
+
 	.modal-content {
 		border-radius: 1rem;
 		background: $light;
-		padding: 4rem;
-		min-height: calc(100vh - 3.5rem);
+		padding: 3rem 0 0 4rem;
+		overflow: hidden;
 
 		h1,
 		h2,

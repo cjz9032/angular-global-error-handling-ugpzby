@@ -10,7 +10,9 @@
 		<img [src]=" '/assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
 	</div>
 	<h1>{{articleTitle}}</h1>
-	<img src="{{articleImage}}"
-		alt="">
-	<div [innerHTML]="articleBody"> </div>
+	<div class="article-content">
+		<img src="{{articleImage}}"
+			alt="">
+		<div class="article-body" [innerHTML]="articleBody"> </div>
+	</div>
 </div>
