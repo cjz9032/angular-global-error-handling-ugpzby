@@ -5,6 +5,6 @@ import { Component, Input } from '@angular/core';
 	templateUrl: './common-text.component.html',
 	styleUrls: ['./common-text.component.scss']
 })
-export class CommonTextComponent {
+export class CommonTextComponent { // TODO check in new design if need
 	@Input() texts: {title: string; text: string};
 }

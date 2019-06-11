@@ -23,10 +23,14 @@
 		font-weight: 400;
 	}
 	&__confirm-btn-wrapper {
-		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 4rem;
 	}
 	&__confirm-btn {
 		@extend %theme-btn;
+		min-width: 25rem;
 		&--error {
 			background: linear-gradient(270deg, #E2E2E2 0%, #C2C6CF 100%);
 		}
@@ -37,13 +41,10 @@
 	border-radius: 10px;
 	background-color: #fff;
 	border: 1px solid #ECF0F1;
-	margin: 0 0 3rem 0;
 	&__container-top {
 		background: #F5F7F8;
 		width: 100%;
-		display: flex;
-		justify-content: center;
-		padding: 3rem 1.5rem 1.8rem 1.5rem;
+		padding: 2rem;
 		&--error {
 			border-radius: 10px 0 0 10px;
 		}
@@ -51,19 +52,14 @@
 	&__inner-wrapper {
 		min-width: 30rem;
 		flex-shrink: 1;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
 	}
 	&__title {
-		text-transform: uppercase;
-		color: #34495E;
-		font-size: 1.4rem;
-		font-weight: bold;
-		line-height: 2.3rem;
-		text-align: center;
-		margin: 0 0 1rem 0;
+		@extend %text-common;
+		margin: 0;
+
+		&--bold {
+			font-weight: 500;
+		}
 	}
 	&__steps {
 		padding: 3rem 1.5rem 2.8rem 1.5rem;
@@ -71,13 +67,14 @@
 }
 
 .verification-input {
+	margin-top: 2rem;
 	&__input {
-		height: 5rem;
-		width: 30rem;
+		height: 6rem;
+		width: 100%;
 		border: 2px solid #E6EAEB;
 		border-radius: 6px;
 		text-align: center;
-		letter-spacing: 2rem;
+		letter-spacing: 5rem;
 		color: #34495E;
 		font-size: 25px;
 		font-weight: 500;
@@ -117,6 +114,7 @@
 		background: transparent;
 		text-transform: uppercase;
 		font-size: 1.4rem;
+		font-weight: 500;
 		line-height: 2.3rem;
 		margin: 0;
 		padding: 0;

@@ -255,6 +255,14 @@ export class SubpageDeviceSettingsDisplayComponent
 					}).catch(error => {
 						console.error('onEyeCareModeStatusToggle', error);
 					});
+
+					if(this.isEyeCareMode){
+						this.setToEyeCareMode();
+					}else {
+						this.displayColorTempDataSource.current = this.displayColorTempDataSource.maximum;
+						//this.onSetChangeDisplayColorTemp({value: this.displayColorTempDataSource.current})			
+
+					}
 			}
 		} catch (error) {
 			console.error(error.message);
@@ -312,6 +320,7 @@ export class SubpageDeviceSettingsDisplayComponent
 					console.log('getEyeCareModeState.then', featureStatus);
 					this.eyeCareModeStatus = featureStatus;
 					this.enableSlider = featureStatus.status;
+					this.isEyeCareMode = this.eyeCareModeStatus.status;
 					if (this.eyeCareModeStatus.available === true) {
 						console.log('eyeCareModeStatus.available', featureStatus.available);
 					}
@@ -426,24 +435,27 @@ export class SubpageDeviceSettingsDisplayComponent
 		});
 	}
 
-	public onSetChangeDisplayColorTemp($event: ChangeContext) {
+	public onSetChangeDisplayColorTemp($event: any) {
 		try {
-			if (this.displayService.isShellAvailable && !this.isEyeCareMode) {
-				console.log('temparature changed in display', $event);
-				this.displayService
-					.setDaytimeColorTemperature($event.value).then((res) => {
-
-					});
+			console.log('temparature changed in display', $event);
+			if (this.displayService.isShellAvailable) {				
+					this.displayService.setDaytimeColorTemperature($event.value).then((res) => {});
 			}
 		} catch (error) {
 			console.error(error.message);
 		}
 	}
+	public setToEyeCareMode() {
+		if(this.isEyeCareMode){
+			this.displayColorTempDataSource.current = this.eyeCareDataSource.current;
+			this.onSetChangeDisplayColorTemp({value: this.eyeCareDataSource.current})			
+		}
+	}
 
 	public resetDaytimeColorTemp($event: any) {
 		try {
-			console.log('temparature reset in display', $event);
-			if (this.displayService.isShellAvailable) {
+			if (this.displayService.isShellAvailable && !this.isEyeCareMode) {
+				console.log('temparature reset in display', $event);
 				this.displayService
 					.resetDaytimeColorTemperature().then((resetData: any) => {
 						console.log('temparature reset data', resetData);

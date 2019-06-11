@@ -34,6 +34,8 @@ export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 
 	@Output() change: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() valueChange: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() valueChangeEnd: EventEmitter<ChangeContext> = new EventEmitter();
+
 
 	constructor() { }
 
@@ -76,5 +78,8 @@ export class UiRangeSliderComponent implements OnInit, AfterContentChecked {
 
 	public onSliderChanged(event: any) {
 		console.log('slider changed');
+	}
+	public dragEnd(){
+		this.valueChangeEnd.emit();
 	}
 }
