@@ -1,5 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { GamingCollapsableContainerEvent } from 'src/app/data-models/gaming/gaming-collapsable-container-event';
+import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { EventTypes } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'vtr-widget-macrokey-settings',
@@ -122,7 +125,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit {
 	isRecording = false;
 	recorderKeyData: any = [];
 
-	constructor() {}
+	constructor(private macroKeyService: MacrokeyService, private shellService: VantageShellService) {}
 
 	ngOnInit() {
 		if (this.properties.macroKeyStatus === 1) {
@@ -131,23 +134,27 @@ export class WidgetMacrokeySettingsComponent implements OnInit {
 			this.numbers = this.numberPadbottons;
 		}
 		this.recorderKeyData = [
-			{
-				key: 'A',
-				interval: '120ms'
-			},
-			{
-				key: 'L.SHIFT',
-				interval: '150ms'
-			},
-			{
-				key: 'R.CTR',
-				interval: '220ms'
-			},
-			{
-				key: 'Q',
-				interval: '370ms'
-			}
+			{ status: 1, key: '1', interval: 0 },
+			{ status: 0, key: '1', interval: 100 },
+			{ status: 0, key: '3', interval: 100 }
 		];
+
+		this.initMacroKey();
+	}
+
+	public initMacroKey() {
+		if (this.macroKeyService.isMacroKeyAvailable) {
+			console.log('registering event');
+			this.shellService.registerEvent(
+				EventTypes.gamingMacroKeyInitializeEvent,
+				this.onGamingMacroKeyInitializeEvent.bind(this)
+			);
+			this.macroKeyService.getMacroKeyInitEvent();
+		}
+	}
+
+	onGamingMacroKeyInitializeEvent(status: any) {
+		console.log('Macrokey Status', status);
 	}
 
 	optionChanged(option: any) {

@@ -490,4 +490,11 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	public getMacroKeyInitializeEvent(): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.initMacroKey();
+		}
+		return undefined;
+	}
 }

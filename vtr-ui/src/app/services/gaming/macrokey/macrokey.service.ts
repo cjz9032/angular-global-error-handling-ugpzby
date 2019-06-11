@@ -8,10 +8,16 @@ export class MacrokeyService {
 	private macroKey: any;
 	public isMacroKeyAvailable: Boolean = false;
 
-	constructor(shellService: VantageShellService) {
+	constructor(private shellService: VantageShellService) {
 		this.macroKey = shellService.getGamingMacroKey();
 		if (this.macroKey) {
 			this.isMacroKeyAvailable = true;
+		}
+	}
+
+	public getMacroKeyInitEvent() {
+		if (this.isMacroKeyAvailable) {
+			this.shellService.getMacroKeyInitializeEvent();
 		}
 	}
 }
