@@ -13,6 +13,7 @@ import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-cap
 import { GamingKeyLockService } from 'src/app/services/gaming/gaming-keylock/gaming-key-lock.service';
 import { GamingHybridModeService } from 'src/app/services/gaming/gaming-hybrid-mode/gaming-hybrid-mode.service';
 import { Gaming } from 'src/app/enums/gaming.enum';
+import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
 
 @Component({
 	selector: 'vtr-widget-legion-edge',
@@ -20,13 +21,13 @@ import { Gaming } from 'src/app/enums/gaming.enum';
 	styleUrls: ['./widget-legion-edge.component.scss']
 })
 export class WidgetLegionEdgeComponent implements OnInit {
-	public ramOcStatus = false;
+	// public ramOcStatus = false;
 	public RamOCSatusObj = new RamOCSatus();
 	public hybrimodeStatus = false;
 	public HybrimodeStatusObj = new HybridModeStatus();
-	public gamingCapabilities: any;
 	public touchpadLockStatus: any;
 	public TouchpadLockStatusObj = new TouchpadLockStatus();
+	public gamingCapabilities: any = new GamingAllCapabilities();
 	public legionUpdate = [
 		{
 			readMoreText: '',
@@ -172,25 +173,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	};
 	public cpuOCStatus: CPUOCStatus;
 	public setCpuOCStatus: any;
-	// private gamingCapabilities: any = {
-	// 	cpuInfoFeature: true,
-	// 	gpuInfoFeature: true,
-	// 	memoryInfoFeature: true,
-	// 	hddInfoFeature: true,
-	// 	winKeyLockFeature: true,
-	// 	touchpadLockFeature: true,
-	// 	networkBoostFeature: true,
-	// 	cpuOCFeature: true,
-	// 	ledSetFeature: false,
-	// 	memOCFeature: true,
-	// 	macroKeyFeature: false,
-	// 	hybridModeFeature: true,
-	// 	optimizationFeature: true,
-	// 	smartFanFeature: false,
-	// 	xtuService: false,
-	// 	fbnetFilter: true,
-	// 	ledDriver: false
-	// };
 
 	constructor(
 		private modalService: NgbModal,
@@ -199,42 +181,73 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		private gamingAllCapabilities: GamingAllCapabilitiesService,
 		private commonService: CommonService,
 		private gamingKeyLockService: GamingKeyLockService,
-		private gamingHybridModeService: GamingHybridModeService
+		private gamingHybridModeService: GamingHybridModeService,
+		private gamingCapabilityService: GamingAllCapabilitiesService
 	) { }
-	ngAfterViewInit(): void { }
 	ngOnInit() {
+		this.gamingCapabilities.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.hybridModeFeature
+		);
+		this.gamingCapabilities.cpuOCFeature = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.cpuOCFeature
+		);
+		this.gamingCapabilities.memOCFeature = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.memOCFeature
+		);
+		this.gamingCapabilities.networkBoostFeature = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.networkBoostFeature
+		);
+		this.gamingCapabilities.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.hybridModeFeature
+		);
+		this.gamingCapabilities.touchpadLockFeature = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.touchpadLockFeature
+		);
+		this.gamingCapabilities.winKeyLockFeature = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.winKeyLockFeature
+		);
+		// Initialize Legion Edge component from cache
+		this.legionEdgeInit();
+		console.log('CPU get status',this.GetCPUOverClockCacheStatus());
 		this.commonService.notification.subscribe((response) => {
-			if (response.type === Gaming.GamingCapablities && isUndefined(this.gamingCapabilities)) {
-				this.gamingCapabilities = response.payload;
-				console.log('get gamingCapabilities --------------------------------->', this.gamingCapabilities);
-				this.legionUpdate[0].isVisible = this.gamingCapabilities.cpuOCFeature;
-				this.legionUpdate[1].isVisible = this.gamingCapabilities.memOCFeature;
-				this.legionUpdate[2].isVisible = this.gamingCapabilities.autoClose;
-				this.legionUpdate[3].isVisible = this.gamingCapabilities.networkBoostFeature;
-				this.legionUpdate[4].isVisible = this.gamingCapabilities.hybridModeFeature;
-				this.legionUpdate[5].isVisible = this.gamingCapabilities.touchpadLockFeature;
-
-				if (this.gamingCapabilities.cpuOCFeature) {
-					this.renderCPUOverClockStatus();
-				}
-
-				if (this.gamingCapabilities.memOCFeature) {
-					this.renderRamOverClockStatus();
-				}
-
-				if (this.gamingCapabilities.touchpadLockFeature  && this.gamingCapabilities.winKeyLockFeature) {
-					this.renderTouchpadLockStatus();
-				}
-
-				if (this.gamingCapabilities.hybridModeFeature) {
-					this.renderHybridModeStatus();
-				}
-			}
+		if (response.type === Gaming.GamingCapablities) {
+		this.gamingCapabilities = response.payload;
+		this.legionEdgeInit();
+		}
 		});
 	}
 
+	legionEdgeInit() {
+		const gamingStatus = this.gamingCapabilities;
+		this.legionUpdate[0].isVisible = gamingStatus.cpuOCFeature;
+		this.legionUpdate[1].isVisible = gamingStatus.memOCFeature;
+		this.legionUpdate[3].isVisible = gamingStatus.networkBoostFeature;
+		this.legionUpdate[4].isVisible = gamingStatus.hybridModeFeature;
+		this.legionUpdate[5].isVisible = gamingStatus.touchpadLockFeature;
+
+		if (gamingStatus.cpuOCFeature) {
+			this.renderCPUOverClockStatus();
+		}
+
+		if (gamingStatus.memOCFeature) {
+			this.renderRamOverClockStatus();
+		}
+
+		if (gamingStatus.touchpadLockFeature  && gamingStatus.winKeyLockFeature) {
+			this.renderTouchpadLockStatus();
+		}
+
+		if (gamingStatus.hybridModeFeature) {
+			this.renderHybridModeStatus();
+		}
+	}
+
 	public GetCPUOverClockCacheStatus(): any {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus);
+		if(this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus)=== undefined) {
+			return this.cpuOCStatus.cpuOCStatus;
+		}else{
+			this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus);
+		}
 	}
 	public renderCPUOverClockStatus() {
 		try {
@@ -243,7 +256,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				this.drop.curSelected = this.cpuOCStatus.cpuOCStatus;
 			}
 			this.gamingSystemUpdateService.getCpuOCStatus().then((cpuOCStatus) => {
-				console.log('get cpu oc status js bridge ---------------->', cpuOCStatus);
 				if (cpuOCStatus !== undefined) {
 					const CpuOCStatusObj = new CPUOCStatus();
 					CpuOCStatusObj.cpuOCStatus = cpuOCStatus;
@@ -269,13 +281,13 @@ export class WidgetLegionEdgeComponent implements OnInit {
 						this.drop.curSelected = this.GetCPUOverClockCacheStatus();
 					} else {
 						console.log(
-							' got true from  ----- cpu oc status js bridge ->',
+							//' got true from  ----- cpu oc status js bridge ->',
 							this.setCpuOCStatus.cpuOCStatus
 						);
 						this.drop.curSelected = this.setCpuOCStatus.cpuOCStatus;
 						this.commonService.setLocalStorageValue(
 							LocalStorageKey.CpuOCStatus,
-							this.cpuOCStatus.cpuOCStatus
+							this.drop.curSelected
 						);
 					}
 				})
@@ -290,13 +302,17 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 	public renderRamOverClockStatus() {
 		this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
-			console.log('xtu--->' + this.gamingCapabilities.xtuService);
+			//console.log('xtu--->' + this.gamingCapabilities.xtuService);
+			
 			if (this.gamingCapabilities.xtuService === true) {
 				if (this.commonService) {
 					this.legionUpdate[1].isChecked = this.GetRAMOverClockCacheStatus();
+				}else {
+					this.legionUpdate[1].isChecked = this.RamOCSatusObj.ramOcStatus;
+					this.SetRAMOverClockCacheStatus(this.RamOCSatusObj.ramOcStatus);
 				}
 				this.gamingSystemUpdateService.getRamOCStatus().then((ramOcStatus) => {
-					console.log('get RAMOC status js bridge -->', ramOcStatus);
+					//console.log('get RAMOC status js bridge -->', ramOcStatus);
 					if (ramOcStatus !== undefined) {
 						this.RamOCSatusObj.ramOcStatus = ramOcStatus;
 						this.SetRAMOverClockCacheStatus(ramOcStatus);
@@ -318,6 +334,10 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 		if (this.commonService) {
 			this.legionUpdate[4].isChecked = this.GetHybridModeCacheStatus();
+		} 
+		else {
+			this.legionUpdate[4].isChecked = this.HybrimodeStatusObj.hybridModeStatus;
+			this.SetHybridModeCacheStatus(this.HybrimodeStatusObj.hybridModeStatus);
 		}
 		this.gamingHybridModeService.getHybridModeStatus().then((hybridModeStatus) => {
 			//console.log('get Hybrid Mode status js bridge -->', hybridModeStatus);

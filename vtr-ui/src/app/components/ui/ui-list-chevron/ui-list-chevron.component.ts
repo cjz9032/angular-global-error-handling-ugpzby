@@ -17,6 +17,7 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 	/**** passing to ItemParent from metrics ****/
 	@Input() metricsParent: string;
 	@Input() clickable = true;
+	@Input() metricsEvent: string;
 
 	/** object having item class list*/
 	itemStatusClass = {

@@ -34,6 +34,7 @@ class BatteryDetail {
 	public isVoltageError: boolean;
 	public isExpressCharging: boolean;
 	public batteryHealth: number;
+	public batteryCondition: string[];
 	//#endregion
 }
 

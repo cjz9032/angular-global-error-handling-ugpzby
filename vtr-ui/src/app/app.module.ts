@@ -9,6 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 // CUSTOM MODULES
 import { AppRoutingModule } from './app-routing.module';
@@ -215,6 +216,8 @@ import { UiGamingDriverPopupComponent } from './components/ui/ui-gaming-driver-p
 import { ActiveProtectionSystemComponent } from './components/pages/page-smart-assist/active-protection-system/active-protection-system.component';
 import { UiApsSliderComponent } from './components/ui/ui-aps-slider/ui-aps-slider.component';
 import { UiCheckboxComponent } from './components/ui/ui-checkbox/ui-checkbox.component';
+import { UiCircleRadioWithCheckboxComponent } from './components/ui/ui-circle-radio-with-checkbox/ui-circle-radio-with-checkbox.component';
+import { UiChsStatusbarComponent } from './components/ui/ui-chs-statusbar/ui-chs-statusbar.component';
 
 library.add(fas);
 library.add(fab);
@@ -392,7 +395,9 @@ library.add(fal);
 		UiGamingDriverPopupComponent,
 		ActiveProtectionSystemComponent,
 		UiApsSliderComponent,
-		UiCheckboxComponent
+		UiCheckboxComponent,
+		UiCircleRadioWithCheckboxComponent,
+		UiChsStatusbarComponent
 	],
 	imports: [
 		BrowserModule,
@@ -408,7 +413,8 @@ library.add(fal);
 		// ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 		TranslationModule,
 		BrowserAnimationsModule,
-		PrivacyModule
+		PrivacyModule,
+		ColorPickerModule
 	],
 	providers: [
 		CookieService,

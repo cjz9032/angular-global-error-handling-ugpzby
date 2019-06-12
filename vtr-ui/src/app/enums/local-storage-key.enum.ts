@@ -48,6 +48,7 @@ export enum LocalStorageKey {
 	 * 2 means "ideaCenter",
 	 * 3 means "thinkCenter"
 	 */
+	ConnectedHomeSecurityDeviceName = '[LocalStorageKey] ConnectedHomeSecurityDeviceName',
 	MachineType = '[LocalStorageKey] MachineType',
 	HybridModeStatus = '[LocalStorageKey] HybridModeStatus',
 	TouchpadLockStatus = '[LocalStorageKey] TouchpadLockStatus',
@@ -64,4 +65,24 @@ export enum LocalStorageKey {
 	SystemUpdateLastInstallTime = '[LocalStorageKey] SystemUpdateLastInstallTime',
 	SystemUpdateNextScheduleScanTime = '[LocalStorageKey] SystemUpdateNextScheduleScanTime',
 	SystemUpdateInstallationHistoryList = '[LocalStorageKey] SystemUpdateInstallationHistoryList',
+
+	// this enum is for local storage keys. new keys can be added here. Please give meaningful names to key
+	cpuInfoFeature = '[LocalStorageKey] CpuInfoFeature',
+	gpuInfoFeature = '[LocalStorageKey] GpuInfoFeature',
+	memoryInfoFeature = '[LocalStorageKey] MemoryInfoFeature',
+	hddInfoFeature = '[LocalStorage] HddInfoFeature',
+	touchpadLockFeature = '[LocalStorageKey] TouchpadLockFeature',
+	winKeyLockfeature = '[LocalStorageKey] WinKeyLockFeature',
+	networkBoostFeature = '[LocalStorageKey] NetworkBoostFeature',
+	cpuOCFeature = '[LocalStorageKey] CpuOCFeature',
+	ledSetFeature = '[LocalStorageKey] LedSetFeature',
+	memOCFeature = '[LocalStorageKey] MemOCFeature',
+	macroKeyFeature = '[LocalStorageKey] MacroKeyFeature',
+	hybridModeFeature = '[LocalStorageKey] HybridModeFeature',
+	optimizationFeature = '[LocalStorageKey] OptimizationFeature',
+	smartFanFeature = '[LocalStorageKey] SmartFanFeature',
+	xtuService = '[LocalStorageKey] XtuService',
+	fbNetFilter = '[LocalStorageKey] FbNetFilter',
+	ledDriver = '[LocalStorageKey] LedDriver',
+	winKeyLockFeature = '[LocalStorageKey] WinKeyLockFeature'
 }
