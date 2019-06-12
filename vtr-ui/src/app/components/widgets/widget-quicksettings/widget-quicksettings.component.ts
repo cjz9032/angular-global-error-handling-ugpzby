@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy, NgZone } from '@angular/core';
 
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
@@ -7,9 +7,8 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { DisplayService } from 'src/app/services/display/display.service';
-import { SunsetToSunriseStatus } from 'src/app/data-models/camera/eyeCareMode.model';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-widget-quicksettings',
@@ -41,14 +40,15 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	constructor(
 		public dashboardService: DashboardService,
 		public displayService: DisplayService,
-		private commonService: CommonService) { }
+		private commonService: CommonService,
+		private deviceService: DeviceService,
+		private ngZone: NgZone) { }
 
 	ngOnInit() {
 		this.getQuickSettingStatus();
 		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
 			this.onNotification(response);
 		});
-		this.startMonitorForCamera();
 	}
 
 	ngOnDestroy() {
@@ -56,6 +56,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			this.notificationSubscription.unsubscribe();
 		}
 		this.stopMonitorForCamera();
+		this.deviceService.stopMicrophoneMonitor();
 	}
 
 	//#region private functions
@@ -66,8 +67,10 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			switch (type) {
 				case DeviceMonitorStatus.MicrophoneStatus:
 					console.log('DeviceMonitorStatus.MicrophoneStatus', payload);
-					this.microphoneStatus.status = payload.muteDisabled;
-					this.microphoneStatus.permission = payload.permission;
+					this.ngZone.run(() => {
+						this.microphoneStatus.status = payload.muteDisabled;
+						this.microphoneStatus.permission = payload.permission;
+					});
 					break;
 				default:
 					break;
@@ -79,6 +82,9 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		const microphone = this.commonService.getSessionStorageValue(SessionStorageKey.DashboardMicrophone);
 		if (microphone) {
 			this.microphoneStatus = microphone;
+			if (microphone.available) {
+				this.deviceService.startMicrophoneMonitor();
+			}
 		} else {
 			this.getMicrophoneStatus();
 		}
@@ -92,7 +98,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 		this.initEyecaremodeSettings();
 	}
-	
+
 	// public getCameraPermission() {
 	// 	try {
 	// 		if (this.displayService.isShellAvailable) {
@@ -142,6 +148,10 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 					console.log('getCameraStatus.then', featureStatus);
 					this.cameraStatus = featureStatus;
 					this.commonService.setSessionStorageValue(SessionStorageKey.DashboardCameraPrivacy, featureStatus);
+					// if privacy available then start monitoring
+					if (featureStatus.available) {
+						this.startMonitorForCamera();
+					}
 				})
 				.catch(error => {
 					console.error('getCameraStatus', error);
@@ -162,7 +172,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				this.displayService.startMonitorForCamera(this.startMonitorHandlerForCamera.bind(this))
 					.then((val) => {
 						console.log('startMonitorForCamera.then', val);
-						
+
 					}).catch(error => {
 						console.error('startMonitorForCamera', error);
 					});
@@ -195,6 +205,9 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 					console.log('getMicrophoneStatus.then', featureStatus);
 					this.microphoneStatus = featureStatus;
 					this.commonService.setSessionStorageValue(SessionStorageKey.DashboardMicrophone, featureStatus);
+					if (featureStatus.available) {
+						this.deviceService.startMicrophoneMonitor();
+					}
 				})
 				.catch(error => {
 					console.error('getCameraStatus', error);
@@ -209,7 +222,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				.then((featureStatus: FeatureStatus) => {
 					console.log('getEyeCareMode.then', featureStatus);
 					this.eyeCareModeStatus.available = featureStatus.available;
-					this.eyeCareModeStatus.status = featureStatus.status
+					this.eyeCareModeStatus.status = featureStatus.status;
 					this.commonService.setSessionStorageValue(SessionStorageKey.DashboardEyeCareMode, featureStatus);
 				})
 				.catch(error => {

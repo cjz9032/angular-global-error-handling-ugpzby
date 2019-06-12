@@ -22,7 +22,7 @@ export class SmartAssistService {
 	}
 
 	/**
-	 * IDEAPAD Only : User Presence Sensing global toggle can be shown on UI
+	 * IdeaPad Only : User Presence Sensing global toggle can be shown on UI
 	 */
 	public getHPDVisibilityInIdeaPad(): Promise<boolean> {
 		// HPD global switch status. true means show, false means hide
@@ -30,7 +30,7 @@ export class SmartAssistService {
 	}
 
 	/**
-	 * IDEAPAD Only : User Presence Sensing global toggle can be shown on UI
+	 * ThinkPad Only : User Presence Sensing global toggle can be shown on UI
 	 */
 	public getHPDVisibilityInThinkPad(): Promise<boolean> {
 		// HPD global switch status. true means show, false means hide
@@ -166,6 +166,13 @@ export class SmartAssistService {
 	public resetHPDSetting(): Promise<boolean> {
 		if (this.isShellAvailable) {
 			return this.intelligentMedia.HPDSettingReset();
+		}
+		return undefined;
+	}
+
+	public getWindowsHelloStatus(): Promise<boolean> {
+		if (this.isShellAvailable) {
+			return this.intelligentMedia.GetFacialFeatureRegistered();
 		}
 		return undefined;
 	}

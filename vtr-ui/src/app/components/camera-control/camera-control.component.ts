@@ -21,6 +21,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	@Output() contrastChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureToggle: EventEmitter<any> = new EventEmitter();
+	@Output() cameraAvailable = new EventEmitter();
 
 	public cameraDetail = new CameraDetail();
 	private cameraPreview: ElementRef;
@@ -109,8 +110,6 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		console.log('InitializeCameraAsync');
 		const self = this;
 		try {
-
-
 			// Get available devices for capturing pictures
 			return this.findCameraDeviceByPanelAsync(this.Windows.Devices.Enumeration.Panel.front)
 				.then((camera) => {
@@ -118,6 +117,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 						console.log('No camera device found!');
 						return;
 					}
+
+					this.cameraAvailable.emit();
 					self.oMediaCapture = new self.Windows.Media.Capture.MediaCapture();
 
 					// Register for a notification when something goes wrong
@@ -182,7 +183,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 	public onAutoExposureChange($event: any) {
 		try {
-			console.log('onAutoExposureChange', this.cameraSettings.exposure.supported);
+			console.log('onAutoExposureChange', this.cameraSettings.exposure);
 			this.exposureToggle.emit($event);
 		} catch (error) {
 			console.error(error.message);

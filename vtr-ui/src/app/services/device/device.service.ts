@@ -49,9 +49,9 @@ export class DeviceService {
 		if (this.device && this.sysInfo) {
 			this.isShellAvailable = true;
 		}
-		if (this.microphone) {
-			this.startDeviceMonitor();
-		}
+		// if (this.microphone) {
+		// 	this.startDeviceMonitor();
+		// }
 		this.initIsArm();
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
@@ -152,13 +152,22 @@ export class DeviceService {
 		}
 	}
 
-	private startDeviceMonitor() {
+	public startMicrophoneMonitor() {
 		if (this.microphone) {
 			this.microphone.startMonitor((response: Microphone) => {
 				this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
 			});
 		}
 	}
+
+	public stopMicrophoneMonitor() {
+		if (this.microphone) {
+			this.microphone.stopMonitor((response) => {
+				console.log('stopMicrophoneMonitor', response);
+			});
+		}
+	}
+
 	getMachineType(): Promise<number> {
 		if (this.sysInfo) {
 			return this.sysInfo.getMachineType();

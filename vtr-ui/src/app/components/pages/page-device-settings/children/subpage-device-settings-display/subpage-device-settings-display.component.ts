@@ -42,6 +42,8 @@ export class SubpageDeviceSettingsDisplayComponent
 	private notificationSubscription: Subscription;
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	public shouldCameraSectionDisabled = true;
+	public isCameraAvailable = false;
+
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
 	headerMenuItems = [
@@ -241,7 +243,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 	public onEyeCareModeStatusToggle(event: any) {
 		this.isEyeCareMode = event.switchValue;
-		console.log('onEyeCareModeStatusToggle', this.isEyeCareMode);		
+		console.log('onEyeCareModeStatusToggle', this.isEyeCareMode);
 		try {
 			if (this.displayService.isShellAvailable) {
 				this.displayService.setEyeCareModeState(event.switchValue)
@@ -256,13 +258,13 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.error('onEyeCareModeStatusToggle', error);
 					});
 
-					if(this.isEyeCareMode){
-						this.setToEyeCareMode();
-					}else {
-						this.displayColorTempDataSource.current = this.displayColorTempDataSource.maximum;
-						//this.onSetChangeDisplayColorTemp({value: this.displayColorTempDataSource.current})			
+				if (this.isEyeCareMode) {
+					this.setToEyeCareMode();
+				} else {
+					this.displayColorTempDataSource.current = this.displayColorTempDataSource.maximum;
+					// this.onSetChangeDisplayColorTemp({value: this.displayColorTempDataSource.current})
 
-					}
+				}
 			}
 		} catch (error) {
 			console.error(error.message);
@@ -438,17 +440,17 @@ export class SubpageDeviceSettingsDisplayComponent
 	public onSetChangeDisplayColorTemp($event: any) {
 		try {
 			console.log('temparature changed in display', $event);
-			if (this.displayService.isShellAvailable) {				
-					this.displayService.setDaytimeColorTemperature($event.value).then((res) => {});
+			if (this.displayService.isShellAvailable) {
+				this.displayService.setDaytimeColorTemperature($event.value).then((res) => { });
 			}
 		} catch (error) {
 			console.error(error.message);
 		}
 	}
 	public setToEyeCareMode() {
-		if(this.isEyeCareMode){
+		if (this.isEyeCareMode) {
 			this.displayColorTempDataSource.current = this.eyeCareDataSource.current;
-			this.onSetChangeDisplayColorTemp({value: this.eyeCareDataSource.current})			
+			this.onSetChangeDisplayColorTemp({ value: this.eyeCareDataSource.current });
 		}
 	}
 
@@ -676,5 +678,10 @@ export class SubpageDeviceSettingsDisplayComponent
 					console.log('onCameraBackgroundOptionChange', error);
 				});
 		}
+	}
+
+	public onCameraAvailable() {
+		console.log('Camera is available');
+		this.isCameraAvailable = true;
 	}
 }

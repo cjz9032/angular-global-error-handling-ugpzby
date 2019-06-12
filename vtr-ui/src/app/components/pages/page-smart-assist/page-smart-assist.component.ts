@@ -58,6 +58,7 @@ export class PageSmartAssistComponent implements OnInit {
 	];
 
 	cardContentPositionA: any = {};
+	private machineType: number;
 
 	constructor(
 		private smartAssist: SmartAssistService,
@@ -75,8 +76,8 @@ export class PageSmartAssistComponent implements OnInit {
 
 	ngOnInit() {
 		this.setIntelligentSecurity();
-		const machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
-		this.setIsThinkPad(machineType === 1);
+		this.machineType = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType);
+		this.setIsThinkPad(this.machineType === 1);
 	}
 
 	private setIntelligentSecurity() {
@@ -92,6 +93,7 @@ export class PageSmartAssistComponent implements OnInit {
 		this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = false;
 		this.intelligentSecurity.isZeroTouchLoginVisible = false;
 		this.intelligentSecurity.isIntelligentSecuritySupported = false;
+		this.intelligentSecurity.isWindowsHelloRegistered = false;
 	}
 
 	// invoke HPD related JS bridge calls
@@ -100,26 +102,41 @@ export class PageSmartAssistComponent implements OnInit {
 			this.smartAssist.getZeroTouchLockVisibility(),
 			this.smartAssist.getZeroTouchLockStatus(),
 			this.smartAssist.getSelectedLockTimer(),
-			this.smartAssist.getZeroTouchLoginVisibility(),
-			this.smartAssist.getZeroTouchLoginStatus(),
 			this.smartAssist.getHPDStatus(),
 			this.smartAssist.getHPDVisibilityInIdeaPad(),
-			this.smartAssist.getZeroTouchLoginDistance(),
-			this.smartAssist.getZeroTouchLoginAdjustVisibility(),
-			this.smartAssist.getZeroTouchLoginAdjustStatus()
+			this.smartAssist.getHPDVisibilityInThinkPad()
 		]).then((responses: any[]) => {
-
 			this.intelligentSecurity.isZeroTouchLockVisible = responses[0];
 			this.intelligentSecurity.isZeroTouchLockEnabled = responses[1];
 			this.intelligentSecurity.autoScreenLockTimer = responses[2].toString();
-			this.intelligentSecurity.isZeroTouchLoginVisible = responses[3];
-			this.intelligentSecurity.isZeroTouchLoginEnabled = responses[4];
-			this.intelligentSecurity.isHPDEnabled = responses[5];
-			this.intelligentSecurity.isIntelligentSecuritySupported = responses[6];
-			this.intelligentSecurity.zeroTouchLoginDistance = responses[7];
-			this.intelligentSecurity.isDistanceSensitivityVisible = responses[8];
-			this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = responses[9];
+			this.intelligentSecurity.isHPDEnabled = responses[3];
+			if (this.machineType === 0) {
+				this.intelligentSecurity.isIntelligentSecuritySupported = responses[4];
+			} else {
+				this.intelligentSecurity.isIntelligentSecuritySupported = responses[5];
+			}
+
 			console.log('initSmartAssist.Promise.all()', responses, this.intelligentSecurity);
+		}).catch(error => {
+			this.logger.error('error in initSmartAssist.Promise.all()', error);
+		});
+
+		// ZeroTouchLogin
+		Promise.all([
+			this.smartAssist.getZeroTouchLoginVisibility(),
+			this.smartAssist.getZeroTouchLoginStatus(),
+			this.smartAssist.getZeroTouchLoginDistance(),
+			this.smartAssist.getZeroTouchLoginAdjustVisibility(),
+			this.smartAssist.getZeroTouchLoginAdjustStatus(),
+			this.smartAssist.getWindowsHelloStatus()
+		]).then((responses: any[]) => {
+			this.intelligentSecurity.isZeroTouchLoginVisible = responses[0];
+			this.intelligentSecurity.isZeroTouchLoginEnabled = responses[1];
+			this.intelligentSecurity.zeroTouchLoginDistance = responses[2];
+			this.intelligentSecurity.isDistanceSensitivityVisible = responses[3];
+			this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = responses[4];
+			this.intelligentSecurity.isWindowsHelloRegistered = responses[5];
+			console.log('initSmartAssist.Promise.ZeroTouchLogin()', responses, this.intelligentSecurity);
 		}).catch(error => {
 			this.logger.error('error in initSmartAssist.Promise.all()', error);
 		});
@@ -186,8 +203,6 @@ export class PageSmartAssistComponent implements OnInit {
 				console.log('onDistanceSensitivityAdjustToggle.setZeroTouchLoginAdjustStatus', isSuccess, this.intelligentSecurity.isZeroTouchLoginAdjustEnabled);
 			});
 	}
-
-
 
 	private setIsThinkPad(isThinkPad) {
 		// service call to fetch type of device

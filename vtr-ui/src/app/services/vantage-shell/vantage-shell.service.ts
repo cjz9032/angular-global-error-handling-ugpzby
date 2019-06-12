@@ -32,8 +32,7 @@ export class VantageShellService {
 
 	public registerEvent(eventType: any, handler: any) {
 		this.phoenix.on(eventType, (val) => {
-			console.log('Event fired: ', eventType);
-			console.log('Event value: ', val);
+			console.log('Event fired: ', eventType, val);
 			handler(val);
 		});
 	}
@@ -498,9 +497,9 @@ export class VantageShellService {
 			return this.phoenix.gaming.gamingMacroKey;
 		}
 	}
-	
+
 	public getIntelligentCoolingForIdeaPad(): any {
-		if(this.getPowerIdeaNoteBook()) {
+		if (this.getPowerIdeaNoteBook()) {
 			return this.getPowerIdeaNoteBook().its;
 		}
 		return undefined;
