@@ -1,7 +1,9 @@
 import {
 	Component,
 	OnInit,
-    Input
+	Input,
+	Output,
+	EventEmitter
 } from '@angular/core';
 import { BaseComponent } from '../../base/base.component';
 
@@ -11,12 +13,31 @@ import { BaseComponent } from '../../base/base.component';
 	styleUrls: ['./widget-home-security-account-status.component.scss']
 })
 export class WidgetHomeSecurityAccountStatusComponent extends BaseComponent implements OnInit {
-	@Input() title: string = this.title || '';
-	@Input() description: string = this.description || '';
+	@Input() status: string;
+	@Input() remainingDays: number;
+	@Input() expiredDate: Date = new Date();
+	@Output() manageAccount = new EventEmitter<boolean>();
+	@Output() upgradeAccount = new EventEmitter<boolean>();
+	@Output() startTrial = new EventEmitter<boolean>();
+
 	constructor() {
-        super();
-    }
+		super();
+	}
 
-	ngOnInit() {}
+	ngOnInit() { }
 
+	emitManageAccount() {
+		this.manageAccount.emit();
+		this.status = 'localAccount';
+	}
+
+	emitUpgradeAccount() {
+		this.upgradeAccount.emit();
+		this.status = this.status === 'trial' ? 'trialExpired' : 'upgraded';
+	}
+
+	emitStartTrial() {
+		this.startTrial.emit();
+		this.status = 'trial';
+	}
 }
