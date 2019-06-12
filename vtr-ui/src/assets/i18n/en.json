@@ -935,7 +935,9 @@
 				},
 				"manualActiveProtectionSuspension": {
 					"title": "Manual Active Protection Suspension",
-					"caption": "Allow me to manually suspend the Active Protection System"
+					"caption": "Allow me to manually suspend the Active Protection System",
+					"dropdown-title": "Suspend for",
+					"button": "Suspend"
 				}
 			},
 			"intelligentMedia": {

@@ -212,6 +212,9 @@ import { IntelligentMediaComponent } from './components/pages/page-smart-assist/
 import { UiMacrokeyCollapsibleContainerComponent } from './components/ui/ui-macrokey-collapsible-container/ui-macrokey-collapsible-container.component';
 import { CursorTypePipe } from './pipe/ui-security-statusbar/cursor-type.pipe';
 import { UiGamingDriverPopupComponent } from './components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
+import { ActiveProtectionSystemComponent } from './components/pages/page-smart-assist/active-protection-system/active-protection-system.component';
+import { UiApsSliderComponent } from './components/ui/ui-aps-slider/ui-aps-slider.component';
+import { UiCheckboxComponent } from './components/ui/ui-checkbox/ui-checkbox.component';
 
 library.add(fas);
 library.add(fab);
@@ -386,7 +389,10 @@ library.add(fal);
 		WidgetHomeSecurityAllDevicesComponent,
 		UiMacrokeyCollapsibleContainerComponent,
 		CursorTypePipe,
-		UiGamingDriverPopupComponent
+		UiGamingDriverPopupComponent,
+		ActiveProtectionSystemComponent,
+		UiApsSliderComponent,
+		UiCheckboxComponent
 	],
 	imports: [
 		BrowserModule,

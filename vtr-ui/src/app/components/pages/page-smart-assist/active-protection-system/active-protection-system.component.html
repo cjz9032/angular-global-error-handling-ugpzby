@@ -1,0 +1,57 @@
+<div class="aps">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<p class="caption">
+					{{'device.smartAssist.activeProtectionSystem.description' | translate}}
+				</p>
+			</div>
+
+			<div class="col-12">
+				<ul class="list-group list-group-flush">
+					<li class="auto-screen-off-block bb">
+						<div class="switch">
+							<vtr-ui-row-switch
+								[title]="'device.smartAssist.activeProtectionSystem.activeProtection.title' | translate"
+								[caption]=" 'device.smartAssist.activeProtectionSystem.activeProtection.caption' | translate"
+								[isSwitchVisible]="true" [leftIcon]="['fal', 'gem']" [theme]="'white'">
+							</vtr-ui-row-switch>
+						</div>
+						<div class="slider">
+							<vtr-ui-aps-slider [legends]="['Low Sensitivity', 'Medium Sensitivity', 'High Sensitivity']"
+								[minValue]="0" [maxValue]="100" [enableSlider]="" [theme]="'white'">
+							</vtr-ui-aps-slider>
+						</div>
+						<div class="checkbox">
+							<vtr-ui-checkbox [label]="'Ignore repetative shocks, such as that of train or cars'">
+							</vtr-ui-checkbox>
+						</div>
+					</li>
+					<li class="pt-3 keep-my-display-block auto-screen-off-block">
+						<vtr-ui-row-switch
+							[title]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.title' | translate"
+							[caption]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.caption' | translate"
+							[leftIcon]="['fal', 'gem']" [theme]="'white'" [isSwitchVisible]="true"
+							[showChildContent]="true" (toggleOnOff)="displayDim($event)"
+							[isSwitchChecked]="keepMyDisplay">
+						</vtr-ui-row-switch>
+						<div class="dropdown row">
+							<section class="col-sm-6">
+								<p>{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.dropdown-title' | translate }}</p>
+								<vtr-ui-dropdown [list]="intervals" [value]="10">
+								</vtr-ui-dropdown>
+							</section>
+							<section class="col-sm-5">
+								<div class="pt-4 text-center">
+									<button type="button" class="btn btn-primary btn-block btn-lg battery-detail-button text-uppercase">
+										{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.button' | translate }}
+									</button>
+								</div>
+							</section>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
