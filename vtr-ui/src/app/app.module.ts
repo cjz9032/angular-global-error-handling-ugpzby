@@ -9,6 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 // CUSTOM MODULES
 import { AppRoutingModule } from './app-routing.module';
@@ -212,6 +213,8 @@ import { IntelligentMediaComponent } from './components/pages/page-smart-assist/
 import { UiMacrokeyCollapsibleContainerComponent } from './components/ui/ui-macrokey-collapsible-container/ui-macrokey-collapsible-container.component';
 import { CursorTypePipe } from './pipe/ui-security-statusbar/cursor-type.pipe';
 import { UiGamingDriverPopupComponent } from './components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
+import { UiCircleRadioWithCheckboxComponent } from './components/ui/ui-circle-radio-with-checkbox/ui-circle-radio-with-checkbox.component';
+import { UiChsStatusbarComponent } from './components/ui/ui-chs-statusbar/ui-chs-statusbar.component';
 
 library.add(fas);
 library.add(fab);
@@ -386,7 +389,9 @@ library.add(fal);
 		WidgetHomeSecurityAllDevicesComponent,
 		UiMacrokeyCollapsibleContainerComponent,
 		CursorTypePipe,
-		UiGamingDriverPopupComponent
+		UiGamingDriverPopupComponent,
+		UiCircleRadioWithCheckboxComponent,
+		UiChsStatusbarComponent
 	],
 	imports: [
 		BrowserModule,
@@ -402,7 +407,8 @@ library.add(fal);
 		// ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 		TranslationModule,
 		BrowserAnimationsModule,
-		PrivacyModule
+		PrivacyModule,
+		ColorPickerModule
 	],
 	providers: [
 		CookieService,

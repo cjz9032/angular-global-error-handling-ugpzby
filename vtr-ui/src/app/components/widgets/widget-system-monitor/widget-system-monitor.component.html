@@ -94,6 +94,9 @@
 								<div class="hd-list" [ngClass]="{'single':hds.length===1}">
 									<div class="hd-item" [ngClass]="{'danger':hd.usedDisk/hd.capacity>.75}"
 										*ngFor="let hd of hds; let i=index;">
+										<div class="gaming-tooltip">
+											<p>{{hd.hddName}}</p>
+										</div>
 										<div class="monitor-hd">
 											<div class="hd-ring"></div>
 											<div class="hd-mask left">
@@ -111,6 +114,7 @@
 											</div>
 											<div class="hd-inner-ring">
 												<div class="hd-inner-circle">
+
 													<div class="hd-label">
 														<div class="hd-pct">
 															{{hd.diskUsage}}<span class="pct">%</span>
@@ -121,7 +125,7 @@
 										</div>
 										<div class="hd-item-label">
 											<div class="hd-title">
-												<span *ngIf="hd.type==='SSD'">
+												<span *ngIf="hd.isSystemDisk">
 													<fa-icon [icon]="['fab', 'windows']"></fa-icon>
 												</span>
 

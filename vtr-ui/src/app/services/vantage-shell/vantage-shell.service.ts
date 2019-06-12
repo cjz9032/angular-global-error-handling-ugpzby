@@ -484,9 +484,24 @@ export class VantageShellService {
 		}
 	}
 
+	/**
+     * returns macroKeyClearInfo object from VantageShellService of JS Bridge
+     */
+	public setMacroKeyClear(macroKey: string): any {
+		if (this.phoenix) {
+			return this.phoenix.gaming.gamingMacroKey.setClear(macroKey);
+		}
+		return undefined;
+	}
 	public getGamingMacroKey(): any {
 		if (this.phoenix && this.phoenix.gaming) {
 			return this.phoenix.gaming.gamingMacroKey;
+		}
+	}
+	
+	public getIntelligentCoolingForIdeaPad(): any {
+		if(this.getPowerIdeaNoteBook()) {
+			return this.getPowerIdeaNoteBook().its;
 		}
 		return undefined;
 	}

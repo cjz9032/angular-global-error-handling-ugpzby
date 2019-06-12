@@ -268,7 +268,7 @@
 		"menu": {
 			"dashboard": "Dashboard",
 			"device": {
-				"title": "My Device",
+				"title": "Device",
 				"sub1": "My Device",
 				"sub2": "My Device Settings",
 				"sub3": "System Updates",
@@ -517,7 +517,8 @@
 						"li-polymer": "Li-Polymer",
 						"li-ion": "Li-Ion",
 						"li_polymer": "Li-Polymer",
-						"li_ion": "Li-Ion"
+						"li_ion": "Li-Ion",
+						"unknown": "Unknown"
 					},
 					"manufacturer": {
 						"title": "Manufacturer",
@@ -593,6 +594,7 @@
 					"description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
 					"description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
 					"description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
+					"description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
 					"readMore": "Read more.",
 					"gotoWindows": {
 						"title": "Go to windows settings",
@@ -610,7 +612,13 @@
 							"quiteCool4": "Quiet & Cool",
 							"performance4": "Performance",
 							"quiteCool5": "Quiet & Cool",
-							"performance5": "Performance"
+							"performance5": "Performance",
+							"batterySaving": "Battery Saving"
+						},
+						"selectedModeText": {
+							"quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
+							"batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
+							"performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
 						},
 						"readMore": {
 							"mode1": "Quiet mode",
@@ -797,7 +805,7 @@
 						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
 					},
 					"dispColorTemp": {
-						"title": "Display color temperature",
+						"title": "Daytime color temperature",
 						"options": {
 							"warm": "Warm (Better for eyes)",
 							"cold": "Cold"
@@ -807,7 +815,7 @@
 						"onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
 						"note": {
 							"title": "Note",
-							"description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+							"description": "When the Eye care mode is enabled. this color temperature does not take effect. However,  you can drag the slide to get a preview of it. To make it effective. turn off the Eye care mode"
 						}
 					},
 					"privacyGuard": {
@@ -1053,8 +1061,8 @@
 		"devices": "Devices",
 		"seeProtectedDevices": "See protected devices",
 		"addDevice": "add device",
-		"trailExpired": "Trail expired",
-		"trailExpiredSubtext": "Upgrate to protect all of your devices",
+		"trialExpired": "Trial Expired",
+		"trialExpiredSubtext": "Upgrate to protect all of your devices",
 		"upgrade": "upgrade",
 		"tour": {
 			"back": "Back",
