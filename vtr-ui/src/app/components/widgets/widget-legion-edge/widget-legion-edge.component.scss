@@ -28,6 +28,14 @@
 			box-shadow: none;
 			border: none;
 			.settings-container{
+				.off-state {
+					position: absolute;
+					z-index: 9;
+					height: 2.5rem;
+					width: auto;
+					top: 0.5rem;
+					display: inline-block;
+				}
 				.list-group-item{
 					background: transparent;
 					color: white;
