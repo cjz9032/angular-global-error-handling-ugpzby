@@ -513,6 +513,13 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public macroKeySetApplyStatus(key): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setApplyStatus(key);
+		}
+		return undefined;
+	}
+
 	public macroKeySetStartRecording(key): any {
 		if (this.phoenix && this.phoenix.gaming) {
 			return this.phoenix.gaming.gamingMacroKey.setStartRecording(key);

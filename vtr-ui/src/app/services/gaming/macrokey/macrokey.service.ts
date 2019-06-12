@@ -22,6 +22,13 @@ export class MacrokeyService {
 		return undefined;
 	}
 
+	public setMacroKeyApplyStatus(selectedNumber: String) {
+		if (this.isMacroKeyAvailable) {
+			return this.shellService.macroKeySetApplyStatus(selectedNumber);
+		}
+		return undefined;
+	}
+
 	public setStartRecording(selectedNumber: String) {
 		if (this.isMacroKeyAvailable) {
 			return this.shellService.macroKeySetStartRecording(selectedNumber);

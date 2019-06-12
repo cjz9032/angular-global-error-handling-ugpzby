@@ -159,7 +159,13 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	optionChanged(option: any) {}
+	optionChanged(option: any) {
+		this.macroKeyService.setMacroKeyApplyStatus(option.value).then((responseStatus) => {
+			if (responseStatus) {
+				this.macroKeyTypeStatus.MacroKeyStatus = option.value;
+			}
+		});
+	}
 
 	onNumberSelected(number) {
 		this.macroKeyService.setKey(number.key);
