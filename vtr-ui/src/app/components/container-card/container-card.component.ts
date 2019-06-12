@@ -49,11 +49,18 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 	}
 
 	ngOnInit() {
-		let image = new Image();
-		image.onload = () => {
-			setTimeout(()=>{this.isLoading=false;},1000)
+		console.log(this.img,"+++++++++---------");
+		if(this.img){
+			this.isLoading=false;
+		}else{
+			let image = new Image();
+			image.onload = () => {
+				this.isLoading=false;
+			}
+			image.src = this.img;
 		}
-		image.src = this.img;
+
+
 		this.ratio = this.ratioY / this.ratioX;
 		const self = this;
 		this.resizeListener = this.displayService.windowResizeListener().subscribe((event) => {
