@@ -268,7 +268,7 @@
         "menu": {
             "dashboard": "Dashboard",
             "device": {
-                "title": "My Device",
+                "title": "Device",
                 "sub1": "My Device",
                 "sub2": "My Device Settings",
                 "sub3": "System Updates",
@@ -475,7 +475,7 @@
             "helpful": "Helpful Content",
             "batteryGauge": {
                 "title": "BATTERY GAUGE",
-                "subtitle": "Battery health",
+                "subtitle": "Battery",
                 "hours": "hours",
                 "hour": "hour",
                 "minutes": "minutes",
@@ -808,6 +808,15 @@
                         "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
                         "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
                         "labelText": "Enable this feature when typing passwords"
+                    },
+                    "oledPowerSettings": {
+                        "title": "OLED Power Settings",
+                        "description": [
+                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
+                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                        ],
+                        "reset": "Reset temperature",
+                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
                     }
                 },
                 "camera": {
@@ -1046,9 +1055,12 @@
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trailExpired": "Trail expired",
-        "trailExpiredSubtext": "Upgrate to protect all of your devices",
-        "upgrade": "upgrade",
+		"trialExpired": "Trial expired",
+		"trialExpiredSubtext": "Upgrate to protect all of your devices",
+		"upgrade": "upgrade",
+		"freeTrial": "Free 30 day trial",
+		"protectAllDevices": "Protect all of your devices",
+		"startTrial": "Start Trial",
         "tour": {
             "back": "Back",
             "skip": "Skip",

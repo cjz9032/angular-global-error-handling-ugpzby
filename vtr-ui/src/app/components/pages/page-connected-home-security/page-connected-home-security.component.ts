@@ -58,7 +58,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 
 
 
-	testStatus = ['lessDevices-secure', 'moreDevices-needAttention', 'noneDevices', 'tralExpired', 'lessDevices-needAttention', 'moreDevices-secure'];
+	testStatus = ['lessDevices-secure', 'moreDevices-needAttention', 'noneDevices', 'trialExpired', 'lessDevices-needAttention', 'moreDevices-secure', 'localAccount'];
 
 	constructor(
 		private vantageShellService: VantageShellService,
@@ -91,10 +91,10 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 		if (typeof this.connectedHomeSecurity.hasSystemPermissionShowed === 'boolean') {
 			this.openModal();
 		}
-		// this.connectedHomeSecurity.on(EventTypes.chsHasSystemPermissionShowedEvent, (data) => {
-		// 	this.welcomeModel.hasSystemPermissionShowed = data;
-		// 	this.openModal();
-		// });
+		this.connectedHomeSecurity.on(EventTypes.chsHasSystemPermissionShowedEvent, (data) => {
+			this.welcomeModel.hasSystemPermissionShowed = data;
+			this.openModal();
+		});
 	}
 
 	ngOnDestroy() {
@@ -185,7 +185,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 
 	public switchStatus() {
 		if (this.testStatus.length === 0) {
-			this.testStatus = ['loading', 'lessDevices-secure', 'moreDevices-needAttention', 'noneDevices', 'tralExpired', 'lessDevices-needAttention', 'moreDevices-secure'];
+			this.testStatus = ['loading', 'lessDevices-secure', 'moreDevices-needAttention', 'noneDevices', 'trialExpired', 'lessDevices-needAttention', 'moreDevices-secure', 'localAccount'];
 		}
 		this.eventEmitter.emit(this.testStatus.shift());
 	}

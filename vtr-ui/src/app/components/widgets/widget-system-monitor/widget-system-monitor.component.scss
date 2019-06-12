@@ -8,15 +8,16 @@
 		background: $dark_cell;
 		box-shadow: $drop_shadow_gaming;
 		padding: 6rem;
-		height: auto;
-		@media #{$mediaquery_5} {
+		height: 40rem;
+		@media #{$large-screen}{
+			height: 40rem;
+		}
+		@media #{$medium-screen}{
+			height: 40rem;
+		}
+		@media #{$small-screen}{
 			height: auto;
 		}
-		@media #{$mediaquery_6} {
-			padding: 4rem;
-			height: auto;
-		}
-
 		.monitor-col {
 			padding: 4rem 0;
 			position: relative;
@@ -69,35 +70,54 @@
 				border-radius: $border_radius_sm;
 				background-color: $gaming_darkest;
 				height: 24rem;
-				position: relative;
+				// position: relative;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
 				@media #{$mediaquery_6} {
 					height: 22rem;
 				}
 				&.hds {
 					overflow: hidden;
-					position: absolute;
+					//position: absolute;
 					width: 100%;
 					border: 1px solid $gaming_darkest;
+					align-items: flex-start;
 					&.expanded {
 						height: auto;
 						border: 1px solid $gaming_dark;
-					}
-					&:hover {
 						.expand-icon {
+							display: none;
+						}
+					}
+					.expand-icon {
+						position: absolute;
+						bottom: -2.5rem;
+						width: 4rem;
+						height: 4rem;
+						font-size: 2rem;
+						text-align: center;
+						left: calc(50% - 2rem);
+						border-radius: 50%;
+						display: block;
+						padding-top: 0.6rem;
+						fa-icon {
+							color: $shade;
+						}
+						&:hover {
+							display: block;
+							background-color: $gaming_darker;
 							fa-icon {
 								color: $shade_lighter;
 							}
 						}
 					}
-					.expand-icon {
+					&:hover .gaming-tooltip {
+						display: block;
+					}
+					.gaming-tooltip{
 						position: absolute;
-						bottom: .3rem;
-						width: 100%;
-						font-size: 2rem;
-						text-align: center;
-						fa-icon {
-							color: $shade;
-						}
+						display: none;
 					}
 				}
 				ngb-tooltip-window.tooltip {
@@ -125,7 +145,7 @@
 					position: absolute;
 					display: inline-block;
 					z-index: 99;
-					top:-6rem;
+					top:2rem;
 					left: calc(50% - 45%);
 					opacity: 0;
 					transition: all .5s ease-in-out;
@@ -148,7 +168,7 @@
 				}
 				.monitor-inner {
 					height: 100%;
-					position: absolute;
+					position: relative;
 					&.ram {
 						right: 0;
 						.monitor-stack {
@@ -160,6 +180,7 @@
 						.gaming-tooltip {
 							width: 15rem;
 							left: calc(50% - 7.5rem);
+							top: -5rem;
 						}
 						&:hover {
 							.gaming-tooltip {
@@ -172,12 +193,16 @@
 						.gaming-tooltip {
 							width: 15rem;
 							left: calc(50% - 7.5rem);
+							top: -5rem;
 						}
 						&:hover {
 							.gaming-tooltip {
 								display: inline-block;
 								opacity: 1;
 							}
+						}
+						.stack-label {
+							left: 1rem;
 						}
 					}
 					.monitor-stack {
@@ -191,6 +216,7 @@
 							padding: 0.5rem;
 							width: 4rem;
 							height: calc(100% - 6rem);
+							right: -1rem;
 							.stack-content {
 								position: absolute;
 								bottom: 0.5rem;
@@ -215,7 +241,7 @@
 							}
 						}
 						.stack-label {
-							position: absolute;
+							position: relative;
 							bottom: 1rem;
 							padding: 0 0.5rem;
 							.stack-title {
@@ -234,19 +260,20 @@
 				}
 
 				.monitor-cpu {
-					position: absolute;
-					left: 50%;
-					top: -7rem;
-					margin-left: -19rem;
+					///position: absolute;
+					//left: 50%;
+					//top: -7rem;
+					//margin-left: -19rem;
 					background-color: $gaming_dark;
 					width: 38rem;
 					height: 38rem;
 					border-radius: 50%;
+					position: relative;
 					@media #{$mediaquery_6} {
-						top: -3.5rem;
+						//top: -3.5rem;
 						width: 29rem;
 						height: 29rem;
-						margin-left: -14.5rem;
+						//margin-left: -14.5rem;
 					}
 					.cpu-ring {
 						// background-color: $highlight;
@@ -396,6 +423,9 @@
 							}
 						}
 					}
+					.gaming-tooltip{
+						top:-2rem;
+					}
 					&:hover {
 						.gaming-tooltip {
 							display: inline-block;
@@ -404,7 +434,8 @@
 					}
 				}
 				.hd-list {
-					padding: 2rem 3rem;
+					padding: 3rem;
+					width: 100%;
 					@media #{$mediaquery_6} {
 						padding: 3rem;
 					}
@@ -412,6 +443,15 @@
 						padding: 3rem;
 						.hd-item {
 							text-align: center;
+							.gaming-tooltip {
+								top: -3rem;
+							}
+							&:hover {
+								.gaming-tooltip {
+									display: inline-block;
+									opacity: 1;
+								}
+							}
 							.hd-item-label {
 								display: block;
 							}
@@ -469,6 +509,17 @@
 						margin-bottom: 2.5rem;
 						@media #{$mediaquery_6} {
 							margin-bottom: 3.5rem;
+						}
+						.gaming-tooltip {
+							width: 15rem;
+							left: calc(50% - 7.5rem);
+							top: -2rem;
+						}
+						&:hover {
+							.gaming-tooltip {
+								display: inline-block;
+								opacity: 1;
+							}
 						}
 						&.danger {
 							.monitor-hd {
@@ -622,5 +673,9 @@
 				}
 			}
 		}
+	}
+	.info-link {
+		padding-bottom: 0.1rem;
+		border-bottom: 0.2rem solid #4579f0;
 	}
 }
