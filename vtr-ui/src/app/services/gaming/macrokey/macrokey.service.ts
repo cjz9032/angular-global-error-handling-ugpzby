@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
+import { MacroKeyInput } from 'src/app/data-models/gaming/macrokey/macrokey-input.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -53,6 +54,27 @@ export class MacrokeyService {
 	public clearKey(selectedNumber: String) {
 		if (this.isMacroKeyAvailable) {
 			return this.shellService.macroKeyClearKey(selectedNumber);
+		}
+		return undefined;
+	}
+
+	public setRepeat(selectedNumber: String, repeatValue: Number) {
+		if (this.isMacroKeyAvailable) {
+			return this.shellService.macroKeySetRepeat(selectedNumber, repeatValue);
+		}
+		return undefined;
+	}
+
+	public setInterval(selectedNumber: String, intervalValue: Number) {
+		if (this.isMacroKeyAvailable) {
+			return this.shellService.macroKeySetInterval(selectedNumber, intervalValue);
+		}
+		return undefined;
+	}
+
+	public setMacroKey(selectedNumber: String, remainingInputs: MacroKeyInput[]) {
+		if (this.isMacroKeyAvailable) {
+			return this.shellService.macroKeySetMacroKey(selectedNumber, remainingInputs);
 		}
 		return undefined;
 	}

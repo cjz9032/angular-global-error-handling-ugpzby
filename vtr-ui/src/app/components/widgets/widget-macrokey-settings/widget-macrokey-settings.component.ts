@@ -142,6 +142,11 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 
 	updateMacroKeyRecordedStatusDetails(macroKeyRecordedChangeEventStatus) {
 		this.macroKeyRecordedStatus = macroKeyRecordedChangeEventStatus;
+		if (!isUndefined(this.numberSelected)) {
+			this.numberSelected = this.macroKeyRecordedStatus.filter(
+				(number) => number.key === this.numberSelected.key
+			)[0];
+		}
 	}
 
 	onGamingMacroKeyKeyChangeEvent(macroKeyKeyChangeEventResponse: any) {
@@ -162,6 +167,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	optionChanged(option: any) {
 		this.macroKeyService.setMacroKeyApplyStatus(option.value).then((responseStatus) => {
 			if (responseStatus) {
+				// TODO: Set macroKey Type Status to cache
 				this.macroKeyTypeStatus.MacroKeyStatus = option.value;
 			}
 		});

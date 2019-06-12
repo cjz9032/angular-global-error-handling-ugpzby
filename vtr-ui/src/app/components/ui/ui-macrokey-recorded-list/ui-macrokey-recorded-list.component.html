@@ -58,7 +58,7 @@
 								{{ recordsList[i+1].interval + ' ms' | translate }}
 							</div>
 						</div>
-						<div class="delete-button" (click)="recordDelete(record)">
+						<div class="delete-button" (click)="recordDelete(record.key)">
 							<img src="../../../../assets/gaming-icons/bin.svg" class="icon"/> {{ 'gaming.macroKey.details.recorded.deleteKey' | translate }}
 						</div>
 					</div>
@@ -77,7 +77,8 @@
 		</div>
 	</div>
 </div>
+
 <vtr-ui-macrokey-popup *ngIf="showModal"
 	[modalContent]="modalContent"
-	(action)="showModal=false;deleteAllMacros($event)">
+	(action)="showModal=false; deleteAllMacros($event)">
 </vtr-ui-macrokey-popup>

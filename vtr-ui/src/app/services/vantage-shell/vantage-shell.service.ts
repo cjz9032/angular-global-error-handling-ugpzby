@@ -547,4 +547,25 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	public macroKeySetRepeat(key, repeat): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setRepeat(key, repeat);
+		}
+		return undefined;
+	}
+
+	public macroKeySetInterval(key, interval): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setInterval(key, interval);
+		}
+		return undefined;
+	}
+
+	public macroKeySetMacroKey(key, inputs): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setMacroKey(key, inputs);
+		}
+		return undefined;
+	}
 }

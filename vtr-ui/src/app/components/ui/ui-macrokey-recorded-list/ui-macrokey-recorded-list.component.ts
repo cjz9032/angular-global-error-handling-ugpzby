@@ -2,6 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter, OnChanges, DoCheck } fr
 import { isUndefined } from 'util';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.service';
+import { MacroKeyRepeat } from 'src/app/enums/macrokey-repeat.enum';
+import { MacroKeyInterval } from 'src/app/enums/macrokey-interval.enum.1';
 
 @Component({
 	selector: 'vtr-ui-macrokey-recorded-list',
@@ -25,69 +27,69 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 			title: 'gaming.macroKey.details.recorded.repeatStatus.repeat1.title',
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat1.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat1.description',
-			value: 1
+			value: MacroKeyRepeat.Repeat1
 		},
 		{
 			title: 'gaming.macroKey.details.recorded.repeatStatus.repeat2.title',
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat2.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat2.description',
 
-			value: 2
+			value: MacroKeyRepeat.Repeat2
 		},
 		{
 			title: 'gaming.macroKey.details.recorded.repeatStatus.repeat3.title',
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat3.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat3.description',
 
-			value: 3
+			value: MacroKeyRepeat.Repeat3
 		},
 		{
 			title: 'gaming.macroKey.details.recorded.repeatStatus.repeat4.title',
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat4.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat4.description',
 
-			value: 4
+			value: MacroKeyRepeat.Repeat4
 		},
 		{
 			title: 'gaming.macroKey.details.recorded.repeatStatus.repeat5.title',
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat5.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat5.description',
 
-			value: 5
+			value: MacroKeyRepeat.Repeat5
 		},
 		{
 			title: 'gaming.macroKey.details.recorded.repeatStatus.repeat6.title',
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat6.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat6.description',
 
-			value: 6
+			value: MacroKeyRepeat.Repeat6
 		},
 		{
 			title: 'gaming.macroKey.details.recorded.repeatStatus.repeat7.title',
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat7.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat7.description',
 
-			value: 7
+			value: MacroKeyRepeat.Repeat7
 		},
 		{
 			title: 'gaming.macroKey.details.recorded.repeatStatus.repeat8.title',
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat8.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat8.description',
 
-			value: 8
+			value: MacroKeyRepeat.Repeat8
 		},
 		{
 			title: 'gaming.macroKey.details.recorded.repeatStatus.repeat9.title',
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat9.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat9.description',
 
-			value: 9
+			value: MacroKeyRepeat.Repeat9
 		},
 		{
 			title: 'gaming.macroKey.details.recorded.repeatStatus.repeat10.title',
 			name: 'gaming.macroKey.details.recorded.repeatStatus.repeat10.title',
 			description: 'gaming.macroKey.details.recorded.repeatStatus.repeat10.description',
-			value: 10
+			value: MacroKeyRepeat.Repeat10
 		}
 	];
 
@@ -96,13 +98,13 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 			title: 'gaming.macroKey.details.recorded.intervalStatus.keep.title',
 			name: 'gaming.macroKey.details.recorded.intervalStatus.keep.title',
 			description: 'gaming.macroKey.details.recorded.intervalStatus.keep.description',
-			value: 1
+			value: MacroKeyInterval.KeepInterval
 		},
 		{
 			title: 'gaming.macroKey.details.recorded.intervalStatus.ignore.title',
 			name: 'gaming.macroKey.details.recorded.intervalStatus.ignore.title',
 			description: 'gaming.macroKey.details.recorded.intervalStatus.ignore.description',
-			value: 2
+			value: MacroKeyInterval.IgnoreInterval
 		}
 	];
 
@@ -119,29 +121,24 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 
 	ngOnInit() {}
 
-	recordDelete(...record) {
-		// console.log(record);
-		this.deleteRecords.emit(record);
+	recordDelete(inputKey) {
+		const remainingInputs = this.recordsData.inputs.filter((records) => records.key !== inputKey);
+		this.macrokeyService.setMacroKey(this.number.key, remainingInputs).then((responseStatus) => {
+			if (responseStatus) {
+				this.recordsData.inputs = remainingInputs;
+			}
+		});
 	}
 
 	clearRecords() {
 		this.showModal = true;
 		this.clearRecordPopup = !this.clearRecordPopup;
-		this.macrokeyService.clearKey(this.number.key);
 	}
 
 	deleteAllMacros(canDelete) {
 		if (canDelete) {
-			this.recordDelete(...this.recordsData);
+			this.macrokeyService.clearKey(this.number.key);
 		}
-	}
-
-	onIntervalChanged($event) {
-		if ($event.value === 2) {
-			this.ignoreInterval = true;
-			return;
-		}
-		this.ignoreInterval = false;
 	}
 
 	ngOnChanges(changes) {
@@ -164,5 +161,30 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 		if (this.recordsList !== this.recordsData.inputs) {
 			this.recordsList = this.recordsData.inputs;
 		}
+	}
+
+	onRepeatChanged(repeatOption) {
+		this.macrokeyService.setRepeat(this.number.key, repeatOption.value).then((responseStatus) => {
+			console.log('########################## Set repeat status: ', responseStatus);
+			console.log('########################## Set repeat option: ', repeatOption.value);
+			if (responseStatus) {
+				this.recordsData.repeat = repeatOption.value;
+			}
+		});
+	}
+
+	onIntervalChanged(intervalOption) {
+		if (intervalOption.value === 2) {
+			this.ignoreInterval = true;
+			return;
+		}
+		this.ignoreInterval = false;
+		this.macrokeyService.setInterval(this.number.key, intervalOption.value).then((responseStatus) => {
+			console.log('########################## Set interval status: ', responseStatus);
+			console.log('########################## Set interval option: ', intervalOption.value);
+			if (responseStatus) {
+				this.recordsData.interval = intervalOption.value;
+			}
+		});
 	}
 }
