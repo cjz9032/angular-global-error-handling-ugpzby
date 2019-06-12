@@ -21,14 +21,13 @@ import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-cap
 	styleUrls: ['./widget-legion-edge.component.scss']
 })
 export class WidgetLegionEdgeComponent implements OnInit {
-	public ramOcStatus = false;
+	// public ramOcStatus = false;
 	public RamOCSatusObj = new RamOCSatus();
 	public hybrimodeStatus = false;
 	public HybrimodeStatusObj = new HybridModeStatus();
-	public gamingCapabilities: any;
 	public touchpadLockStatus: any;
 	public TouchpadLockStatusObj = new TouchpadLockStatus();
-	public gamingProperties: any = new GamingAllCapabilities();
+	public gamingCapabilities: any = new GamingAllCapabilities();
 	public legionUpdate = [
 		{
 			readMoreText: '',
@@ -186,39 +185,40 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		private gamingCapabilityService: GamingAllCapabilitiesService
 	) { }
 	ngOnInit() {
-		this.gamingProperties.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
+		this.gamingCapabilities.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.hybridModeFeature
 		);
-		this.gamingProperties.cpuOCFeature = this.gamingCapabilityService.getCapabilityFromCache(
+		this.gamingCapabilities.cpuOCFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.cpuOCFeature
 		);
-		this.gamingProperties.memOCFeature = this.gamingCapabilityService.getCapabilityFromCache(
+		this.gamingCapabilities.memOCFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.memOCFeature
 		);
-		this.gamingProperties.networkBoostFeature = this.gamingCapabilityService.getCapabilityFromCache(
+		this.gamingCapabilities.networkBoostFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.networkBoostFeature
 		);
-		this.gamingProperties.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
+		this.gamingCapabilities.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.hybridModeFeature
 		);
-		this.gamingProperties.touchpadLockFeature = this.gamingCapabilityService.getCapabilityFromCache(
+		this.gamingCapabilities.touchpadLockFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.touchpadLockFeature
 		);
-		this.gamingProperties.winKeyLockFeature = this.gamingCapabilityService.getCapabilityFromCache(
+		this.gamingCapabilities.winKeyLockFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.winKeyLockFeature
 		);
 		// Initialize Legion Edge component from cache
-		this.legionEdgeInit(this.gamingProperties);
+		this.legionEdgeInit();
 		console.log('CPU get status',this.GetCPUOverClockCacheStatus());
 		this.commonService.notification.subscribe((response) => {
 		if (response.type === Gaming.GamingCapablities) {
 		this.gamingCapabilities = response.payload;
-		this.legionEdgeInit(this.gamingCapabilities);
+		this.legionEdgeInit();
 		}
 		});
 	}
 
-	legionEdgeInit(gamingStatus: any) {
+	legionEdgeInit() {
+		const gamingStatus = this.gamingCapabilities;
 		this.legionUpdate[0].isVisible = gamingStatus.cpuOCFeature;
 		this.legionUpdate[1].isVisible = gamingStatus.memOCFeature;
 		this.legionUpdate[3].isVisible = gamingStatus.networkBoostFeature;
@@ -303,6 +303,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	public renderRamOverClockStatus() {
 		this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
 			//console.log('xtu--->' + this.gamingCapabilities.xtuService);
+			
 			if (this.gamingCapabilities.xtuService === true) {
 				if (this.commonService) {
 					this.legionUpdate[1].isChecked = this.GetRAMOverClockCacheStatus();
