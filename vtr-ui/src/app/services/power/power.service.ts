@@ -11,6 +11,7 @@ export class PowerService {
 	private devicePowerSmartSettings: any;
 	private devicePowerItsIntelligentCooling: any;
 	public isShellAvailable = false;
+	public intelligentCoolingForIdeaPad: any;
 	constructor(shellService: VantageShellService) {
 		this.devicePower = shellService.getVantageToolBar();
 		if (this.devicePower) {
@@ -26,6 +27,10 @@ export class PowerService {
 		}	
 		this.devicePowerItsIntelligentCooling = shellService.getPowerItsIntelligentCooling();
 		if (this.devicePowerItsIntelligentCooling) {
+			this.isShellAvailable = true;
+		}
+		this.intelligentCoolingForIdeaPad = shellService.getIntelligentCoolingForIdeaPad();
+		if(this.intelligentCoolingForIdeaPad) {
 			this.isShellAvailable = true;
 		}
 	}
@@ -364,6 +369,52 @@ export class PowerService {
 	}
 
 	// ---------- End Legacy Capable
+
+	//-------------Start IdeaPad
+	public getITSModeForICIdeapad() {
+		try {
+			if (this.intelligentCoolingForIdeaPad) {
+				return this.intelligentCoolingForIdeaPad.GetITSMode();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public setITSModeForICIdeapad(mode: string) {
+		try {
+			if (this.intelligentCoolingForIdeaPad) {
+				return this.intelligentCoolingForIdeaPad.SetITSMode(mode);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	public startMonitorForICIdeapad() {
+		try {
+			if (this.intelligentCoolingForIdeaPad) {
+				return this.intelligentCoolingForIdeaPad.startMonitor();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	public stopMonitorForICIdeapad() {
+		try {
+			if (this.intelligentCoolingForIdeaPad) {
+				return this.intelligentCoolingForIdeaPad.stopMonitor();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+	//-------------End IdeaPad
+
 	// End Power smart settings
 
 		// ---------- start battery threshold settings

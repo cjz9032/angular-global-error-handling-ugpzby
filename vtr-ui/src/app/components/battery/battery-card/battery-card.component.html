@@ -17,9 +17,9 @@
 		</div>
 	</ng-template>
 	<div class="container p-5" 
-		[ngClass]="{'background-green':batteryQuality[batteryCondition.quality]== 'Good',
-					'background-orange': batteryQuality[batteryCondition.quality]== 'Fair',
-					'background-red':batteryQuality[batteryCondition.quality]== 'Poor'}">
+		[ngClass]="{'background-green':batteryIndicator.batteryHealth== 'Good',
+					'background-orange': batteryIndicator.batteryHealth== 'Fair',
+					'background-red':batteryIndicator.batteryHealth== 'Poor'}">
 		<div class="battery-gauge-label text-uppercase">
 			{{'device.deviceSettings.batteryGauge.title' | translate}}
 		</div>
@@ -29,7 +29,7 @@
 		{{batteryIndicator.percent == 0 && flag ? reInitValue(): ""}}
 		<div class="pt-4 battery-frame pr-3">
 			<vtr-battery-indicator 
-				[batteryHealth]= "batteryQuality[batteryCondition.quality]"
+				[batteryHealth]= "batteryIndicator.batteryHealth"
 				[remainingHour]="batteryIndicator.hours"
 				[remainingMinutes]="batteryIndicator.minutes"
 				[percentage]="batteryIndicator.percent"
@@ -39,7 +39,8 @@
 				[timeText]="batteryIndicator.timeText">
 			</vtr-battery-indicator>
 		</div>
-		<!-- <div class="p-3 row">
+
+		<!-- <div class="p-3 row" *ngFor="let batteryConditionTranslation of batteryConditionTranslations; let i = index">
 			<div class="p-0 pr-2 col-auto battery-conditions-icon">
 				<fa-icon *ngIf="batteryQuality[batteryCondition.quality]== 'Good'"
 						[icon]="['fas', 'check-circle']" 
@@ -59,23 +60,23 @@
 			</div>
 		
 			<div class="col">
-				<span class="battery-conditions-title">{{batteryConditionTranslation.title | translate}}</span>&nbsp;
+				<span class="battery-conditions-title" *ngIf="batteryConditionTranslation?.title">
+					{{batteryConditionTranslation.title | translate}}
+				</span>&nbsp;
 				<span class="battery-conditions-description" 
-					*ngIf="batteryConditionTranslation.description.length > 0">
+					*ngIf="batteryConditionTranslation?.description.length > 0">
 						{{batteryConditionTranslation.description | translate}}
 				</span>
 				<span class="battery-conditions-title" 
 					*ngIf="batteryConditionsEnum[batteryCondition.condition]== 'StoreLimitation'">
 						{{percentageLimitation}}%
 				</span>
-				<span *ngIf="batteryConditionsEnum[batteryCondition.condition]== 'Illegal'"><br></span>
 				<span class="battery-conditions-title" 
-					*ngIf="batteryConditionTranslation.description1.length > 0">
+					*ngIf="batteryConditionTranslation?.description1.length > 0">
 						{{batteryConditionTranslation.description1 | translate}}
 				</span>
-				<span *ngIf="batteryConditionsEnum[batteryCondition.condition]== 'Illegal'"><br></span>
 				<span class="battery-conditions-description" 
-					*ngIf="batteryConditionTranslation.description2.length > 0">
+					*ngIf="batteryConditionTranslation?.description2.length > 0">
 						{{batteryConditionTranslation.description2 | translate}}
 				</span>
 				
