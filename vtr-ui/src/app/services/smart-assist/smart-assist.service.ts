@@ -22,35 +22,19 @@ export class SmartAssistService {
 	}
 
 	/**
-	 * Intelligent Security card can be shown on UI
+	 * IDEAPAD Only : User Presence Sensing global toggle can be shown on UI
 	 */
-	public getSmartAssistVisibility(): Promise<boolean> {
-		// Is (Intelligent Security) supported
-		return this.intelligentSensing.GetHPDGlobalCapability();
-	}
-
-	/**
-	 * User Presence Sensing global toggle can be shown on UI
-	 */
-	public getHPDVisibility(): Promise<boolean> {
+	public getHPDVisibilityInIdeaPad(): Promise<boolean> {
 		// HPD global switch status. true means show, false means hide
 		return this.intelligentSensing.GetHPDCapability();
 	}
 
 	/**
-	 * Set Zero Touch Login toggle button status,
+	 * IDEAPAD Only : User Presence Sensing global toggle can be shown on UI
 	 */
-	public setZeroTouchLoginStatus(value: string): Promise<boolean> {
-		// HPD global switch status. true means enable, false means disable
-		return this.intelligentSensing.SetHPDApproachSetting(value);
-	}
-
-	/**
-	 * Set Zero Touch Login toggle button status,
-	 */
-	public setZeroTouchLoginDistance(value: string): Promise<boolean> {
-		// HPD global switch status. true means enable, false means disable
-		return this.intelligentSensing.SetHPDApproachSetting(value);
+	public getHPDVisibilityInThinkPad(): Promise<boolean> {
+		// HPD global switch status. true means show, false means hide
+		return this.intelligentSensing.GetHPDGlobalCapability();
 	}
 
 	/**
@@ -61,19 +45,76 @@ export class SmartAssistService {
 		return this.intelligentSensing.GetHPDGlobalSetting();
 	}
 
-	public getAutoLockVisibility(): Promise<boolean> {
+	public getZeroTouchLockVisibility(): Promise<boolean> {
 		// Get Auto Screen Lock section visibility
 		return this.intelligentSensing.GetHPDLeaveCapability();
 	}
 
-	public getAutoLockStatus(): Promise<boolean> {
+	public getZeroTouchLockStatus(): Promise<boolean> {
 		// Get Auto Screen Lock setting
 		return this.intelligentSensing.GetHPDPresentLeaveSetting();
 	}
 
 	// set auto adjust for IdeaPad models
-	public setAutoLockStatus(value: string): Promise<boolean> {
-		return this.intelligentSensing.SetHPDPresentLeaveSetting(value);
+	public setZeroTouchLockStatus(value: boolean): Promise<boolean> {
+		const option = value ? 'True' : 'False';
+		return this.intelligentSensing.SetHPDPresentLeaveSetting(option);
+	}
+
+	public getZeroTouchLoginVisibility(): Promise<boolean> {
+		// Get Auto Screen Lock section visibility
+		return this.intelligentSensing.GetHPDApproachCapability();
+	}
+
+
+	public getZeroTouchLoginStatus(): Promise<boolean> {
+		// Get Auto Screen Login setting
+		return this.intelligentSensing.GetHPDApproachSetting();
+	}
+
+	public getZeroTouchLoginDistance(): Promise<number> {
+		// Get Auto Screen Login setting
+		return this.intelligentSensing.GetHPDApproachDistance();
+	}
+
+	/**
+	 * Set Zero Touch Login toggle button status,
+	 */
+	public setZeroTouchLoginStatus(value: boolean): Promise<boolean> {
+		// HPD global switch status. true means enable, false means disable
+		const option = value ? 'True' : 'False';
+		return this.intelligentSensing.SetHPDApproachSetting(option);
+	}
+
+	public getZeroTouchLoginAdjustVisibility(): Promise<number> {
+		// Get Auto Screen Login setting
+		return this.intelligentSensing.GetHPDAutoAdjustCapability();
+	}
+
+	public getZeroTouchLoginAdjustStatus(): Promise<number> {
+		// Get Auto Screen Login setting
+		return this.intelligentSensing.GetHPDAutoAdjustSetting();
+	}
+
+	/**
+	 * Set Zero Touch Login toggle button status,
+	 */
+	public setZeroTouchLoginAdjustStatus(value: boolean): Promise<boolean> {
+		// HPD global switch status. true means enable, false means disable
+		const option = value ? 'True' : 'False';
+		return this.intelligentSensing.SetHPDAutoAdjustSetting(option);
+	}
+
+	/**
+	 * Get currently selected lock screen timer value
+	 * 1 = Near,
+	 * 2 = Middle/Medium,
+	 * 3 = Far
+	 */
+	public setZeroTouchLoginDistance(value: number): Promise<boolean> {
+		// HPD global switch status. true means enable, false means disable
+		const option = value.toString();
+		return this.intelligentSensing.SetHPDApproachDistanceSetting(option);
 	}
 
 	/**

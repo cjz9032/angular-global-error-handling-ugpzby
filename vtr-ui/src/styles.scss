@@ -376,11 +376,16 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		overflow-y: initial !important;
 	}
 
+	.modal-dialog-centered{
+		height: calc(100vh - 3.5rem);
+		min-height: calc(100vh - 3.5rem);
+	}
+
 	.modal-content {
 		border-radius: 1rem;
 		background: $light;
-		padding: 4rem;
-		min-height: calc(100vh - 3.5rem);
+		padding: 3rem 0 0 4rem;
+		overflow: hidden;
 
 		h1,
 		h2,
@@ -496,11 +501,16 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		overflow-y: initial !important;
 	}
 
+	.modal-dialog-centered{
+		height: calc(100vh - 3.5rem);
+		min-height: calc(100vh - 3.5rem);
+	}
+
 	.modal-content {
 		border-radius: 1rem;
 		background: $light;
-		padding: 4rem;
-		min-height: calc(100vh - 3.5rem);
+		padding: 4rem 0 0 4rem;
+		overflow: hidden;
 
 		h1,
 		h2,
@@ -652,7 +662,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 .vtr-login-lenovo-id {
 	.start-trial {
-		.button-box {			
+		.button-box {
 			.button {
 				min-height: 5rem !important;
 				background: linear-gradient(135deg, $shade_lighter 0%, $shade_lightest 100%) !important;
@@ -968,11 +978,11 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	color: #4a81fd;
 }
 .icomoon-LE-IntelligentCooling2x:before {
-	content: "\e940";
+	content: "\e941";
 	color: #4a81fd;
 }
 .icomoon-LE-Intelligent-dual-fan-2x:before {
-	content: "\e941";
+	content: "\e942";
 	color: #4a81fd;
 }
 .icomoon-LE-IR2x:before {

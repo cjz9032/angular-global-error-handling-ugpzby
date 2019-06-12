@@ -73,8 +73,7 @@
 		</div>
 	</div>
 </div>
-<vtr-ui-macrokey-popup 
-	[modalContent]="modalContent" 
-	[clearRecordPopup]="clearRecordPopup" 
-	[showModal]="showModal">
+<vtr-ui-macrokey-popup *ngIf="showModal"
+	[modalContent]="modalContent"
+	(action)="showModal=false;deleteAllMacros($event)">
 </vtr-ui-macrokey-popup>

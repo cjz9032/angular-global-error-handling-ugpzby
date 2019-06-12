@@ -112,6 +112,13 @@
 							}
 						}
 					}
+					&:hover .gaming-tooltip {
+						display: block;
+					}
+					.gaming-tooltip{
+						position: absolute;
+						display: none;
+					}
 				}
 				ngb-tooltip-window.tooltip {
 					border-radius: 0.4rem;
@@ -436,6 +443,15 @@
 						padding: 3rem;
 						.hd-item {
 							text-align: center;
+							.gaming-tooltip {
+								top: -3rem;
+							}
+							&:hover {
+								.gaming-tooltip {
+									display: inline-block;
+									opacity: 1;
+								}
+							}
 							.hd-item-label {
 								display: block;
 							}

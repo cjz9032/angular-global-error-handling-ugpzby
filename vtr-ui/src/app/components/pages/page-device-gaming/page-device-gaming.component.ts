@@ -18,7 +18,6 @@ import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { UserService } from '../../../services/user/user.service';
 import { TranslateService } from '@ngx-translate/core';
-import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 
 @Component({
 	selector: 'vtr-page-device-gaming',
@@ -34,7 +33,6 @@ export class PageDeviceGamingComponent implements OnInit {
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
 	public isOnline = true;
-	private allCapablitiyFlag: Boolean = false;
 	heroBannerItems = [];
 	cardContentPositionB: any = {};
 	cardContentPositionC: any = {};
@@ -57,7 +55,6 @@ export class PageDeviceGamingComponent implements OnInit {
 		public userService: UserService,
 		private translate: TranslateService,
 		vantageShellService: VantageShellService,
-		private gamingAllCapabilitiesService: GamingAllCapabilitiesService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -65,13 +62,6 @@ export class PageDeviceGamingComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		if (!this.allCapablitiyFlag) {
-			this.gamingAllCapabilitiesService.getCapabilities().then((response) => {
-				this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
-			});
-			this.allCapablitiyFlag = true;
-		}
-
 		const self = this;
 		this.translate.stream('lenovoId.user').subscribe((value) => {
 			if (!self.userService.auth) {
