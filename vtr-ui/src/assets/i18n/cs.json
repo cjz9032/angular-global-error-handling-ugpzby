@@ -1057,7 +1057,10 @@
         "addDevice": "add device",
         "trialExpired": "Trial expired",
         "trialExpiredSubtext": "Upgrate to protect all of your devices",
-        "upgrade": "upgrade",
+		"upgrade": "upgrade",
+		"freeTrial": "Free 30 day trial",
+		"protectAllDevices": "Protect all of your devices",
+		"startTrial": "Start Trial",
         "tour": {
             "back": "Back",
             "skip": "Skip",
