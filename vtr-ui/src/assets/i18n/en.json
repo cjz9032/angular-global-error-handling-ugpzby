@@ -1061,8 +1061,8 @@
 		"devices": "Devices",
 		"seeProtectedDevices": "See protected devices",
 		"addDevice": "add device",
-		"trailExpired": "Trail expired",
-		"trailExpiredSubtext": "Upgrate to protect all of your devices",
+		"trialExpired": "Trial Expired",
+		"trialExpiredSubtext": "Upgrate to protect all of your devices",
 		"upgrade": "upgrade",
 		"tour": {
 			"back": "Back",

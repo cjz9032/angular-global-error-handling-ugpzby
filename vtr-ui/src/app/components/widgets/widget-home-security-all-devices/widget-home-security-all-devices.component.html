@@ -27,8 +27,8 @@
 				<div class="row">
 					<div class="col-5 number-container">
 						<div class="icon">
-							<img class="img-fluid circle" src="assets/images/connected-home-security/ecosystem-circle-green.svg" *ngIf="logonStatus!=='trail expired'"/>
-							<img class="img-fluid circle" src="assets/images/connected-home-security/ecosystem-circle-red.svg" *ngIf="logonStatus==='trail expired'"/>
+							<img class="img-fluid circle" src="assets/images/connected-home-security/ecosystem-circle-green.svg" *ngIf="logonStatus!=='trial expired'"/>
+							<img class="img-fluid circle" src="assets/images/connected-home-security/ecosystem-circle-red.svg" *ngIf="logonStatus==='trial expired'"/>
 						</div>
 						<div class="device-number" [ngClass]="{'sizeChange': deviceMoreThanTen}" *ngIf="devicesNumber!==0">{{devicesNumber}}</div>
 					</div>
@@ -72,11 +72,11 @@
 				</vtr-ui-button>
 			</div>
 	</div>
-	<div class="row overlay" [ngClass]="{'show-overlay':logonStatus === 'trail expired'}" *ngIf="pluginAvailable">
+	<div class="row overlay" [ngClass]="{'show-overlay':logonStatus === 'trial expired'}" *ngIf="pluginAvailable">
 		<div class="col-8 place-holder"></div>
 		<div class="col-4 content-container">
-			<div class="text">{{'homeSecurity.trailExpired' | translate}}</div>
-			<div class="text-description">{{'homeSecurity.trailExpiredSubtext' | translate}}</div>
+			<div class="text">{{'homeSecurity.trialExpired' | translate}}</div>
+			<div class="text-description">{{'homeSecurity.trialExpiredSubtext' | translate}}</div>
 			<vtr-ui-button
 				id="chs-btn-ad-upgrade"
 				aria-label="chs-btn-ad-upgrade"
