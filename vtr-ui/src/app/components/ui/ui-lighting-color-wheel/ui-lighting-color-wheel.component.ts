@@ -35,16 +35,16 @@ export class UiLightingColorWheelComponent implements OnInit {
 		const delay = setTimeout(function(){
 			self.showPicker = true;
 		}, 500)
-		console.log('WHEEL CONTAINER WIDTH', this.pickerContainerWidth);
+		// console.log('WHEEL CONTAINER WIDTH', this.pickerContainerWidth);
 	}
 
 	colorChanged(event){
-		console.log('COLOR CHANGED', event);
+		// console.log('COLOR CHANGED', event);
 		const colors = event.replace('rgb(','').replace(')','').split(",");
 		this.red = parseInt(colors[0]);
 		this.green = parseInt(colors[1]);
 		this.blue = parseInt(colors[2]);
-		console.log('COLORS SET', this.red, this.green, this.blue);
+		// console.log('COLORS SET', this.red, this.green, this.blue);
 	}
 
 }
