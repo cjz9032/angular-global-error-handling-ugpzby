@@ -268,7 +268,7 @@
         "menu": {
             "dashboard": "Dashboard",
             "device": {
-                "title": "My Device",
+                "title": "Device",
                 "sub1": "My Device",
                 "sub2": "My Device Settings",
                 "sub3": "System Updates",
@@ -382,7 +382,7 @@
         "quickSettings": {
             "title": "Your Quick Settings",
             "microphone": "Microphone",
-            "cameraPrivacy": "Camera Privacy",
+            "cameraPrivacy": "Camera",
             "eyeCareMode": "Eye Care Mode"
         },
         "systemStatus": {
@@ -421,103 +421,104 @@
     },
     "device": {
         "myDevice": {
-            "title": "My Device",
-            "subtitle": "My device status",
+            "title": "Meu Dispositivo",
+            "subtitle": "Status do meu dispositivo",
             "serial": "Serial",
-            "productNumber": "Product number",
-            "biosVersion": "Bios version",
-            "learnMore": "Learn more",
-            "freeMemory": "Free memory",
+            "productNumber": "Número do produto",
+            "biosVersion": "Versão do BIOS",
+            "learnMore": "Saber mais",
+            "freeMemory": "Memoria livre",
             "systemUpdate": {
-                "title": "System update",
-                "notFound": "System update not found",
+                "title": "Atualização de sistema",
+                "notFound": "Atualização do sistema não encontrada",
                 "detail": {
-                    "uptoDate": "Software up to date ",
-                    "updatedOn": "updated on ",
-                    "outdated": "Software outdated ",
-                    "neverRanUpdate": "never ran update"
+                    "uptoDate": "Software atualizado",
+                    "updatedOn": "atualizado em",
+                    "outdated": "Software desatualizado",
+                    "neverRanUpdate": "atualização nunca executada"
                 }
             },
-            "extendedWarranty": "Extend warranty",
+            "extendedWarranty": "Garantia estendida",
             "processor": {
-                "title": "Processor",
-                "notFound": "Processor not found"
+                "title": "Processador",
+                "notFound": "Processador não encontrado"
             },
             "memory": {
-                "title": "Memory",
-                "notFound": "Memory not found",
+                "title": "Memória",
+                "notFound": "Memória não encontrada",
                 "ram": "RAM"
             },
             "diskspace": {
-                "title": "Disk Space",
-                "notFound": "Disk not found"
+                "title": "Espaço em disco",
+                "notFound": "Disco não encontrado"
             },
-            "software": "Software up to date",
-            "updated": "Updated",
-            "outOfWarranty": "Out of warranty",
-            "expired": "Expired on",
-            "of": "of",
+            "software": "Software atualizado",
+            "updated": "Atualizado",
+            "outOfWarranty": "Fora da garantia",
+            "expired": "Expirado em",
+            "of": "de",
             "warranty": {
-                "notFound": "Warranty not found",
+                "notFound": "Garantia não encontrada",
                 "detail": {
-                    "title": "Extend warranty",
-                    "inWarranty": "In warranty ",
-                    "daysRemaining": "days remaining",
-                    "outOfWarranty": "Out of warranty ",
-                    "expiredOn": "Expired on",
-                    "notAvailable": "Warranty not available",
-                    "support": "Support"
+                    "title": "Garantia estendida",
+                    "inWarranty": "Na garantia",
+                    "daysRemaining": "dias restantes",
+                    "outOfWarranty": "Fora da garantia",
+                    "expiredOn": "Expirado em",
+                    "notAvailable": "Garantia não disponível",
+                    "support": "Suporte"
                 }
             },
-            "helpful": "Helpful Content"
+            "helpful": "Conteúdo útil"
         },
         "deviceSettings": {
-            "helpful": "Helpful Content",
+            "helpful": "Conteúdo útil",
             "batteryGauge": {
-                "title": "BATTERY GAUGE",
-                "subtitle": "Battery",
-                "hours": "hours",
-                "hour": "hour",
-                "minutes": "minutes",
-                "minute": "minute",
-                "charge": "TIME TO FULLY CHARGE",
-                "button": "SEE BATTERY DETAILS",
+                "title": "MEDIDOR DA BATERIA",
+                "subtitle": "Integridade da bateria",
+                "hours": "horas",
+                "hour": "hora",
+                "minutes": "minutos",
+                "minute": "minuto",
+                "charge": "TEMPO PARA A CARGA TOTAL",
+                "button": "VER DETALHES DA BATERIA",
                 "details": {
-                    "title": "Battery Details",
-                    "primary": "Primary Battery",
-                    "secondary": "Secondary Battery",
-                    "tertiary": "Tertiary Battery",
+                    "title": "Detalhes da bateria",
+                    "primary": "Bateria principal",
+                    "secondary": "Bateria Secundária",
+                    "tertiary": "Bateria terciária",
                     "status": "Status",
-                    "wattage": "Wattage",
-                    "barcode": "Bar-Code",
-                    "remainingPercent": "Remaining percentage",
-                    "temp": "Temperature",
-                    "frupn": "FRU part number",
-                    "remainingTime": "Remaining time",
-                    "chargeCompletionTime": "Charge completion time",
-                    "cycleCount": "Cycle count",
-                    "chemistry": "Device chemistry",
-                    "remainingCap": "Remaining capacity",
-                    "designCap": "Design capacity",
-                    "fullChargeCap": "Full charge capacity",
-                    "manufDt": "Manufacture date",
-                    "designVolt": "Design voltage",
-                    "volts": "Voltage",
-                    "firstUseDt": "First use date",
-                    "firmwareVer": "Firmware version",
+                    "wattage": "Potência",
+                    "barcode": "Código de barras",
+                    "remainingPercent": "Percentual restante",
+                    "temp": "Temperatura",
+                    "frupn": "Número de peça FRU",
+                    "remainingTime": "Tempo restante",
+                    "chargeCompletionTime": "Tempo de conclusão da carga",
+                    "cycleCount": "Contagem de ciclos",
+                    "chemistry": "Química do dispositivo",
+                    "remainingCap": "Capacidade restante",
+                    "designCap": "Capacidade nominal",
+                    "fullChargeCap": "Capacidade da carga máxima",
+                    "manufDt": "Data de fabricação",
+                    "designVolt": "Voltagem nominal",
+                    "volts": "Voltagem",
+                    "firstUseDt": "Data do primeiro uso",
+                    "firmwareVer": "Versão do firmware",
                     "chargeStatusString": {
-                        "error": "ERROR",
-                        "notinstalled": "Not installed",
-                        "noactivity": "No activity",
-                        "charging": "Charging",
-                        "discharging": "Discharging",
-                        "acdischarging": "Discharging (with ac)"
+                        "error": "ERRO",
+                        "notinstalled": "Não instalado",
+                        "noactivity": "Nenhuma atividade",
+                        "charging": "Carregando",
+                        "discharging": "Descarregando",
+                        "acdischarging": "Descarregando (com CA)"
                     },
                     "deviceChemistry": {
                         "li-polymer": "Li-Polymer",
                         "li-ion": "Li-Ion",
                         "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion"
+                        "li_ion": "Li-Ion",
+                        "unknown": "Unknown"
                     },
                     "manufacturer": {
                         "title": "Manufacturer",
@@ -576,65 +577,72 @@
                 }
             },
             "power": {
-                "title": "Power",
-                "subtitle": "Power Settings",
-                "description": "This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.",
+                "title": "Energia",
+                "subtitle": "Configurações de energia",
+                "description": "Esta seção permite ajustar dinamicamente o desempenho térmico e maximizar a vida útil da bateria.Ela também possui outros recursos populares relacionados à energia. Você pode verificar as configurações padrão nesta seção e personalizar o sistema de acordo com suas necessidades.",
                 "jumpto": {
-                    "title": "JUMP TO SETTINGS",
-                    "battery": "Battery",
-                    "power": "Power",
-                    "cooling": "Intelligent Cooling",
-                    "other": "Other"
+                    "title": "PULA PARA CONFIGURAÇÕES",
+                    "battery": "Bateria",
+                    "power": "Energia",
+                    "cooling": "Resfriamento Inteligente",
+                    "other": "Outro"
                 },
                 "powerSmartSettings": {
-                    "title": "Power Smart Settings",
-                    "subtitle": "INTELLIGENT COOLING",
-                    "subtitle1": "Battery & Quiet",
-                    "description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
-                    "description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
-                    "readMore": "Read more.",
+                    "title": "Configurações inteligentes de energia",
+                    "subtitle": "RESFRIAMENTO INTELIGENTE",
+                    "subtitle1": "Bateria e silêncio",
+                    "description1": "Este recurso ajusta dinamicamente as configurações térmicas aos seus requisitos.",
+                    "description2": "O Resfriamento inteligente ajusta a velocidade do ventilador, a temperatura máxima da superfície e o desempenho.Esse recurso tem os modos listados abaixo e agora é acessível pelo controle deslizante de energia de desempenho do Windows.",
+                    "description3": "O Resfriamento Inteligente equilibra automaticamente o desempenho térmico de acordo com suas necessidades.O recurso de Resfriamento Inteligente ajusta as configurações de desempenho para proporcionar uma superfície mais fria para seu maior conforto quando o notebook é segurado com as mãos. ",
+                    "readMore": "Leia mais.",
                     "gotoWindows": {
-                        "title": "Go to windows settings",
-                        "modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
+                        "title": "Ir para as configurações do Windows",
+                        "modalBodyText1": "Clique no ícone da bateria do Windows na bandeja do sistema para acessar o controle deslizante de energia de desempenho do Windows"
                     },
                     "intelligentCooling": {
-                        "title": "Intelligent cooling",
+                        "title": "Resfriamento inteligente",
                         "description": "",
                         "tooltip": "",
-                        "optimize": "optimize system for",
-                        "apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
+                        "optimize": "otimizar sistema para",
+                        "apsHint": "Para ativar o Resfriamento inteligente, é necessário instalar e ativar o Lenovo Active Protection System.",
                         "options": {
-                            "quiteCool3": "Cool Mode",
-                            "performance3": "High Performance",
-                            "quiteCool4": "Quiet & Cool",
-                            "performance4": "Performance",
-                            "quiteCool5": "Quiet & Cool",
-                            "performance5": "Performance"
+                            "quiteCool3": "Modo frio",
+                            "performance3": "Alto Desempenho",
+                            "quiteCool4": "Silencioso e refrigerado",
+                            "performance4": "Desempenho",
+                            "quiteCool5": "Silencioso e refrigerado",
+                            "performance5": "Desempenho",
+                            "batterySaving": "Battery Saving"
                         },
                         "readMore": {
-                            "mode1": "Quiet mode",
-                            "mode2": "Balanced mode",
-                            "mode3": "Performance mode",
-                            "line1": "Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "line2": "Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
-                            "line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "mode1": "Modo silencioso",
+                            "mode2": "Modo equilibrado",
+                            "mode3": "Modo de desempenho",
+                            "line1": "O controle deslizante está na extremidade à esquerda.A velocidade e desempenho do ventilador são diminuídos para oferecer um computador mais frio e silencioso e uma melhor vida útil da bateria.",
+                            "line2": "O controle deslizante está no centro.A velocidade e desempenho do ventilador são equilibrados dinamicamente para oferecer uma melhor experiência.",
+                            "line3": "O controle deslizante está na extremidade à direita. A velocidade do ventilador e a temperatura da superfície permitida são aumentadas para oferecer o máximo de desempenho."
+                        },
+                        "selectedModeText": {
+                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
+                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
+                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
                         }
                     },
                     "nonintelligentCooling": {
                         "options": {
-                            "intelligentCooling": "INTELLIGENT COOLING",
-                            "extremeCooling": "EXTREME PERFORMANCE",
-                            "battery&Quite": "BATTERY & QUIET"
+                            "intelligentCooling": "RESFRIAMENTO INTELIGENTE",
+                            "extremeCooling": "DESEMPENHO EXTREMO",
+                            "battery&Quite": "BATERIA E SILÊNCIO"
                         }
-                    }
+                    },
+                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar."
                 },
                 "powerSettings": {
-                    "title": "Power Settings",
+                    "title": "Configurações de energia",
                     "alwaysUSB": {
-                        "title": "Always on USB",
-                        "description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
-                        "checkbox": "Enable USB charging from laptop battery when computer is off."
+                        "title": "USB Sempre Ativo",
+                        "description": "Carregue dispositivos USB através do conector USB Sempre Ativo do computador quando ele estiver no modo de suspensão ou hibernação ou mesmo desligado.Um smartphone ou tablet pode ser rapidamente carregado a partir do conector USB codificado em amarelo ou que possui estes ícones impressos:",
+                        "checkbox": "Ative o carregamento USB da bateria do laptop quando o computador estiver desligado."
                     },
                     "easyResume": {
                         "title": "Easy Resume",
@@ -643,31 +651,31 @@
                     }
                 },
                 "otherSettings": {
-                    "title": "Other Settings",
+                    "title": "Outras configurações",
                     "vantageToolbar": {
-                        "title": "Lenovo Vantage Toolbar",
-                        "description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
+                        "title": "Barra de ferramentas do Lenovo Vantage",
+                        "description": "Fixe a Barra de Ferramentas do Vantage à barra de tarefas do Windows para obter facilmente mais detalhes da bateria e acessar suas configurações rápidas."
                     }
                 },
                 "batterySettings": {
-                    "title": "Battery Settings",
+                    "title": "Configurações da bateria",
                     "batteryThreshold": {
-                        "title": "Battery Charge Threshold",
-                        "description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
-                        "tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
+                        "title": "Limite de Carga da Bateria",
+                        "description": "Se você usa seu computador conectado ao adaptador de energia CA na maioria das vezes, e só usa a energia da bateria ocasionalmente,poderá aumentar a vida útil da bateria configurando o valor de carga máximo para abaixo de 100%. Isso é útil porque as baterias que são usadas com pouca frequência possuem uma vida útil maior quando são mantidas com carga inferior à máxima.",
+                        "tooltip": "Se a bateria estiver carregada acima do limite de interrupção de carga, desconecte a energia para que a bateria descarregue até o limite de interrupção de carga ou abaixo dele.",
                         "note": "Note",
                         "readMoreText": "Read more.",
                         "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
                         "settings": {
-                            "title1": "Threshold for Built in battery",
-                            "title2": "Threshold for Removable battery"
+                            "title1": "Limite da bateria interna",
+                            "title2": "Limite da bateria removível"
                         },
                         "popup": {
-                            "title": "Enable Battery Charge Threshold",
-                            "description1": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life.",
-                            "description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
-                            "enable": "ENABLE",
-                            "cancel": "CANCEL"
+                            "title": "Ativar Limite de Carga da Bateria",
+                            "description1": "Ativar uma carga de bateria personalizada permitirá que a integridade geral da bateria dure mais conforme você usar este dispositivo.",
+                            "description2": "Para ativar completamente esse recurso, desconecte sua máquina epermita que a bateria descarregue até ou abaixo do limite de interrupção de carga.",
+                            "enable": "ATIVAR",
+                            "cancel": "CANCELAR"
                         },
                         "options": {
                             "start": "Start charging when below",
@@ -676,65 +684,65 @@
                         }
                     },
                     "expressCharging": {
-                        "title": "Express Charging",
-                        "description": "Express Charge allows your battery to a full charge much faster than normal mode.",
-                        "tooltip": "Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
+                        "title": "Carga expressa",
+                        "description": "A Carga expressa permite que sua bateria chegue à carga máxima muito mais rápido que o modo normal.",
+                        "tooltip": "A Carga expressa permite carregar a bateria do sistema muito mais rápido,mas isso pode reduzir a vida útil da bateria."
                     },
                     "conservationMode": {
-                        "title": "Conservation Mode",
-                        "description": "This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
+                        "title": "Modo de conservação",
+                        "description": "Essa função é útil para estender a vida útil da bateria quando conectada.",
                         "tooltip": {
-                            "line1": "This function is useful to extend the lifespan of your battery when plugged.",
-                            "line2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
-                            "line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
+                            "line1": "Essa função é útil para estender a vida útil da bateria quando conectada.",
+                            "line2": "Quando esse modo é ativado, a bateria será carregada apenas até 55-60% da capacidade e a duração da bateria poderá ser maximizada.",
+                            "line3": "Nota: o modo de Carregamento expresso e o modo de Conservação não podem funcionar ao mesmo tempo."
                         }
                     },
                     "airPlanePower": {
-                        "title": "Airplane Power Mode",
-                        "description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
+                        "title": "Modo de Energia de Avião",
+                        "description": "Proteja a tomada elétrica CA dos aviões ao controlar o consumo de energia do seu sistema."
                     }
                 }
             },
             "audio": {
-                "title": "Audio",
-                "subtitle": "Audio Settings",
-                "description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
+                "title": "Áudio",
+                "subtitle": "Configurações de áudio",
+                "description": "Esta seção permite otimizar automaticamente ou",
                 "audioSmartsettings": {
-                    "title": "Audio Smart settings",
-                    "subtitle": "APPLICATION-BASED SETTINGS",
-                    "description": "Automatically adjust audio settings according to different apps you are using.",
+                    "title": "Configurações inteligentes de áudio",
+                    "subtitle": "CONFIGURAÇÕES BASEADAS NO APLICATIVO",
+                    "description": "Ajuste automaticamente configurações de áudio de acordo com os diferentes aplicativos que você estiver usando.",
                     "dolby": {
-                        "title": "Automatic Dolby Audio settings",
-                        "tooltip": "Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
+                        "title": "Configurações de áudio Dolby automáticas",
+                        "tooltip": "As configurações de áudio Dolby automáticas ajustam as configurações de áudio Dolby para omodo adequado para os diferentes aplicativos que você estiver usando para aprimorar sua experiência de áudio.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "DINÂMICO",
+                            "movie": "FILME",
+                            "music": "MÚSICA",
+                            "games": "JOGO",
+                            "voip": "VOZ"
                         }
                     },
                     "voip": {
-                        "title": "Automatic Audio Optimization for VoIP",
-                        "tooltip": "Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality."
+                        "title": "Otimização Automática de Áudio para VoIP",
+                        "tooltip": "Alterne automaticamente o modo de Voz Dolby durante chamadas VoIP para fornecer qualidade de vozclara e consistente."
                     }
                 },
                 "microphone": {
-                    "title": "Microphone",
+                    "title": "Microfone",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permission to access your microphone. Please turn on access to your microphone for the Lenovo Vantage app."
+                        "title": "nota",
+                        "description": "O Lenovo Vantage não tem permissão para acessar seu microfone.Ative o acesso do aplicativo Lenovo Vantage ao seu microfone."
                     },
                     "microphone": {
-                        "title": "Microphone",
-                        "tooltip": "You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode."
+                        "title": "Microfone",
+                        "tooltip": "Você pode personalizar o efeito do MICROFONE, ajustando o volume do microfonee especificando o modo apropriado."
                     },
                     "volume": {
                         "title": "Microphone Volume",
                         "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
                         "options": {
-                            "silent": "Silent",
-                            "loud": "Loud"
+                            "silent": "Silêncio",
+                            "loud": "Alto"
                         }
                     },
                     "suppress": {
@@ -749,23 +757,23 @@
                         "title": "Optimize my microphone for:",
                         "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
                         "options": {
-                            "VoiceRecognition": "VOICE RECOGNITION",
-                            "OnlyMyVoice": "ONLY MY VOICE",
+                            "VoiceRecognition": "RECONHECIMENTO DE VOZ",
+                            "OnlyMyVoice": "SOMENTE MINHA VOZ",
                             "Normal": "NORMAL",
-                            "MultipleVoices": "MULTIPLE VOICES"
+                            "MultipleVoices": "VÁRIAS VOZES"
                         }
                     }
                 }
             },
             "displayCamera": {
-                "title": "Display & Camera",
-                "subtitle": "Display & Camera Settings",
-                "description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
+                "title": "Monitor e câmera",
+                "subtitle": "Configurações do monitor e da câmera",
+                "description": "Esta seção permite melhorar sua experiência visual e configurar as propriedades da câmera.Explore mais recursos e personalize sua experiência de vídeo aqui.",
                 "jumpTo": {
-                    "title": "JUMP TO SETTINGS",
+                    "title": "PULA PARA CONFIGURAÇÕES",
                     "shortcuts": {
                         "display": {
-                            "title": "Display"
+                            "title": "Exibir"
                         },
                         "camera": {
                             "title": "Camera"
@@ -773,24 +781,24 @@
                     }
                 },
                 "display": {
-                    "title": "Display",
+                    "title": "Exibir",
                     "eyeCareMode": {
-                        "title": "Eye Care Mode",
-                        "checkbox": "Schedule eye care mode from sunset to sunrise",
+                        "title": "Modo Proteção Ocular",
+                        "checkbox": "Agendar o modo proteção ocular do pôr do sol ao nascer do sol",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Quente (melhor para os olhos)",
+                            "cold": "Fria"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Redefinir temperatura",
+                        "tooltip": "O Modo Proteção Ocular ajusta a temperatura das cores do monitor para filtrar a luz azul e reduzir a tensão ocular.",
+                        "onSunsetToSunriseScheduleDescription": "Agendar o modo proteção ocular do pôr do sol ao nascer do sol",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "Nota",
+                            "description": "O Lenovo Vantage precisa acessar suas informações de localização para calcular o horário do pôr do sol e do nascer do sol da sua região."
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Display color temperature",
+                        "title": "Daytime color temperature",
                         "options": {
                             "warm": "Warm (Better for eyes)",
                             "cold": "Cold"
@@ -800,7 +808,7 @@
                         "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
                         "note": {
                             "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "description": "When the Eye care mode is enabled. this color temperature does not take effect. However,  you can drag the slide to get a preview of it. To make it effective. turn off the Eye care mode"
                         }
                     },
                     "privacyGuard": {
@@ -820,29 +828,29 @@
                     }
                 },
                 "camera": {
-                    "title": "Camera",
+                    "title": "Câmera",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permissions to access your camera. Please turn on access to your camera for the Lenovo Vantage app."
+                        "title": "Nota",
+                        "description": "O Lenovo Vantage não tem permissão para acessar sua câmera.Ative o acesso do aplicativo Lenovo Vantage à sua câmera."
                     },
-                    "url": "Go to windows privacy settings",
+                    "url": "Ir para as configurações de privacidade do Windows",
                     "cameraPrivacy": {
-                        "title": "Camera privacy mode",
-                        "tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling."
+                        "title": "Modo de privacidade da câmera",
+                        "tooltip": "A câmera para de enviar imagens ao vivo quando a configuração de privacidade é ativada. Ative essa configuração somente quando não desejar compartilhar suas imagens com outras pessoas durante chamadas com vídeo."
                     },
                     "camera": {
-                        "title": "Camera",
-                        "tooltip": "Click here to reset Camera properties to default settings.",
-                        "reset": "Reset factory settings"
+                        "title": "Câmera",
+                        "tooltip": "Clique aqui para redefinir as propriedades da câmera para as configurações padrão.",
+                        "reset": "Redefinir configurações de fábrica"
                     },
-                    "brightness": "Brightness",
-                    "contrast": "Contrast",
-                    "autoExposure": "Auto Exposure",
-                    "autoFocus": "Auto focus",
-                    "notAvailable": "Camera Not Available",
+                    "brightness": "Brilho",
+                    "contrast": "Contraste",
+                    "autoExposure": "Exposição automática",
+                    "autoFocus": "Foco automático",
+                    "notAvailable": "Cartão não disponível",
                     "camerablur": {
-                        "title": "Camera Background Blur",
-                        "caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections.",
+                        "title": "Fundo Desfocado da Câmera",
+                        "caption": "Esta função desfoca o fundo quando a câmera é usada para qualquer chamada de vídeo ou registro de fotos.Você pode escolher efeitos diferentes entre as seleções abaixo:",
                         "blurMode": "Blur mode",
                         "comicMode": "Comic mode",
                         "sketchMode": "Sketch mode"
@@ -852,60 +860,60 @@
         },
         "smartAssist": {
             "title": "Smart Assist",
-            "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+            "description": "A Detecção inteligente da Lenovo combina sensores no computador para detectar suas atividades,ajustar as configurações para gerenciamento de energia ideal e proteger sua privacidade.",
             "jumpTo": {
-                "title": "JUMP TO SETTINGS",
-                "security": "Security",
-                "screen": "Screen",
-                "media": "Media",
-                "voice": "Voice"
+                "title": "PULA PARA CONFIGURAÇÕES",
+                "security": "Segurança",
+                "screen": "Tela",
+                "media": "Mídia",
+                "voice": "Voz"
             },
             "intelligentSecurity": {
-                "title": "Intelligent Security",
-                "readMore": "Read more",
+                "title": "Segurança inteligente",
+                "readMore": "Ler mais",
                 "HumanPresenceDetection": {
-                    "title": "Human presence detection",
-                    "tooltip": "Click here to reset the human presence detection settings."
+                    "title": "Detecção de presença humana",
+                    "tooltip": "Clique aqui para redefinir as configurações de Detecção de presença humana."
                 },
                 "humanPresenceDetection": {
                     "title": "User Presence Sensing",
                     "tooltip": "Click here to reset human presence Detection settings."
                 },
                 "zeroTouchLogin": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
+                    "title": "Login sem toques",
+                    "caption": "Esse recurso desbloqueia ou ativa o computador automaticamente quando você está na frente dele ou se aproximando."
                 },
                 "zeroTouchLock": {
-                    "title": "Zero Touch Lock",
-                    "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+                    "title": "Bloqueio sem toques",
+                    "caption": "Este recurso esmaecerá a tela e bloqueará o computador quando a presença do usuário não for detectada.Ele pode reduzir as chances de acesso não autorizado ao computador quando você deixar o computador sem supervisão e desbloqueado. ",
                     "autoScreenLockTimer": {
-                        "title": "AUTO SCREEN LOCK TIMER",
+                        "title": "TEMPORIZADOR DE BLOQUEIO AUTOMÁTICO DE TELA",
                         "radioButton": {
-                            "fast": "Fast",
-                            "medium": "Medium",
-                            "slow": "Slow"
+                            "fast": "Rápido",
+                            "medium": "Médio",
+                            "slow": "Lento"
                         },
-                        "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+                        "toolTipContent": "Selecione a opção desejada para bloquear a tela em uma velocidade rápida/média/lenta quando sua presença não for detectada."
                     }
                 },
                 "distanceSensitivityAdjusting": {
                     "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+                    "caption": "O Ajuste de distância automático atualizará automaticamentea distância de detecção por um mecanismo de IA.",
                     "options": {
-                        "near": "Near",
-                        "far": "Far"
+                        "near": "Perto",
+                        "far": "Distante"
                     }
                 },
                 "note": {
-                    "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-                    "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
-                    "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-                    "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-                    "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+                    "description1": "Esse recurso depende do Windows Hello.Verifique se o reconhecimento facial está ativado nas configurações do Windows.",
+                    "description2": "O recurso usa sensores e câmera para detectar sua presença.",
+                    "description3": "1. Se o computador estiver no modo de tenda, de tablet ou de base,esses recursos podem não funcionar devidamente.",
+                    "description4": "2. Se o computador estiver no modo de hibernação ou tiver sido desligado.O login automático da câmera IR não funcionará.",
+                    "description5": "3. Ajuste a tela do computador em um ângulo adequadopara que a câmara IR possa reconhecer o seu rosto para fazer login automático."
                 },
                 "WindowsLink": {
-                    "goToWindowsHello": "Go to Windows Hello Settings",
-                    "screenTimeoutSettings": "Go to Screen timeout settings"
+                    "goToWindowsHello": "Ir para as configurações do Windows Hello",
+                    "screenTimeoutSettings": "Vá para Configurações de tempo limite de tela"
                 },
                 "resetToDefault": "RESET TO DEFAULT SETTINGS"
             },
@@ -937,46 +945,46 @@
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
+        "title": "Atualizações do Sistema",
         "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "history": "HISTÓRICO COMPLETO",
+        "notAvailable": "Não Disponível",
+        "notInstalled": "Não instalado",
+        "criticalUpdates": "Atualizações críticas",
+        "recommendedUpdates": "Atualizações recomendadas",
+        "optionalUpdates": "Atualizações opcionais",
+        "ignoredUpdates": "Atualizações ignoradas",
+        "successInstall": "Instalada com êxito em",
+        "failedInstall": "Falha ao instalar em",
+        "at": "em",
+        "readMore": "Ler mais",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+            "reboot": "Reinicializar",
+            "shutdown": "Desligar",
+            "rebootForceMsg": "O sistema será reiniciado automaticamente após a instalação das atualizaçõesselecionadas.",
+            "shutdownForceMsg": "O sistema será desligado automaticamente após a instalação das atualizaçõesselecionadas.",
+            "rebootDelayedMsg": "O sistema será reiniciado após a instalação das atualizações selecionadas,",
+            "rebootRequiredMsg": "Para instalar as atualizações com êxito, o computador precisa de umareinicialização para garantir que tudo esteja funcionando de forma segura e correta.",
             "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "cancelButton": "Cancelar",
+            "rebootButton": "REINICIALIZAR AGORA",
+            "dismissButton": "FECHAR",
+            "rebootPending": "Reinicialização pendente"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Configurações da atualização automática",
+            "subtitle": "INSTALAR ATUALIZAÇÕES AUTOMATICAMENTE",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Atualizações Críticas",
+                "tooltip": "As atualizações críticas podem evitar problemas significativos,"
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "推荐更新",
+                "tooltip": "推荐的驱动程序更新使计算机运行保持最佳性能。"
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Atualizações do Windows",
+                "url": "Configurações do Windows"
             }
         },
         "support": {
@@ -984,24 +992,24 @@
         },
         "banner": {
             "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "title": "Um sistema atualizado é um sistema saudável.",
+            "last": "Atualizado pela última vez em",
+            "next": "Próxima verificação de atualização agendada em",
+            "checkButton": "VERIFICAR ATUALIZAÇÕES",
+            "checking": "Verificando atualizações",
+            "downloading": "Download de atualizações concluído",
+            "installing": "Instalando atualizações",
+            "percent": "% concluído",
+            "cancelCheck": "Cancelar verificação",
+            "cancelUpdates": "CANCELAR ATUALIZAÇÕES",
+            "available": "Atualizações disponíveis",
+            "description": "Esses pacotes incluem atualizações para drivers de hardware eoutros utilitários do sistema que são fundamentais para o funcionamento correto do computador. As atualizações críticas também são importantes para a proteção dos dados no computador e devem ser instaladas assim que forem disponibilizadas. ",
+            "installButton": "INSTALAR TODAS AS ATUALIZAÇÕES",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Todas as atualizações foram instaladas corretamente",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Algumas atualizações não foram instaladas corretamente.",
+                    "description": "Ocorreu um erro durante o download ou a instalação dessas atualizações.Verifique se você está online e não desligue o computador ao instalar as atualizações."
                 }
             }
         },
