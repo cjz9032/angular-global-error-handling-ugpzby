@@ -35,6 +35,7 @@
 											<a href="javascript:void();"
 												*ngIf="item.isSwitchVisible"
 												class="d-flex no-pointer">
+												<img class="off-state" src="../../../../assets/images/off-state.png"/>
 												<vtr-ui-switch-onoff [name]="item.type"
 													[name]="item.name"
 													(toggle)="onToggleOnOff($event)"
