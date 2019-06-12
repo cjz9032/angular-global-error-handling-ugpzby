@@ -42,6 +42,13 @@ export class PageDeviceSettingsComponent implements OnInit {
 			icon: 'display-camera',
 			subitems: [],
 			active: false
+		},{
+			id: 'input-accessories',
+			label: 'Input & Accessories',
+			path: 'device-settings/input-accessories',
+			icon: 'input-accessories',
+			subitems: [],
+			active: false
 		}
 	];
 	cardContentPositionA: any = {};

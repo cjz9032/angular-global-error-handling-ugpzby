@@ -854,6 +854,18 @@
 						"sketchMode": "Sketch mode"
 					}
 				}
+			},
+				"inputAccessories": {
+				"title": "Input & Accessories",
+				"subtitle": "Input & Accessories Settings",
+				"description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+				"inputAccessory": {
+					"title": "Intelligent Keyboard",			
+						"hiddenKeyboardFunctions": {
+						"title": "Hidden keyboard functions",
+						"description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
+					}
+				}
 			}
 		},
 		"smartAssist": {
