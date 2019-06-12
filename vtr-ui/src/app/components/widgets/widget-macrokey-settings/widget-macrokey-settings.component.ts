@@ -4,6 +4,12 @@ import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.servi
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { MacroKeyTypeStatus } from 'src/app/data-models/gaming/macrokey/macrokey-type-status.model';
+import { Router } from '@angular/router';
+import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { Gaming } from 'src/app/enums/gaming.enum';
+import { CommonService } from 'src/app/services/common/common.service';
+import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 
 @Component({
 	selector: 'vtr-widget-macrokey-settings',
@@ -34,106 +40,86 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 
 	macroKeyStatusSelectedOption = this.macroKeyOptions[2];
 
-	numbers: any = [];
-
 	numberPadbottons = [
 		{
-			title: 'gaming.macroKey.numberpad.number.one',
-			value: '1',
-			isMacrokeyExists: false,
-			isSelected: false
+			key: '7',
+			status: false
 		},
 		{
-			title: 'gaming.macroKey.numberpad.number.two',
-			value: '2',
-			isMacrokeyExists: false,
-			isSelected: false
+			key: '8',
+			status: false
 		},
 		{
-			title: 'gaming.macroKey.numberpad.number.three',
-			value: '3',
-			isMacrokeyExists: false,
-			isSelected: false
+			key: '9',
+			status: false
 		},
 		{
-			title: 'gaming.macroKey.numberpad.number.four',
-			value: '4',
-			isMacrokeyExists: false,
-			isSelected: false
+			key: '4',
+			status: false
 		},
 		{
-			title: 'gaming.macroKey.numberpad.number.five',
-			value: '5',
-			isMacrokeyExists: false,
-			isSelected: false
+			key: '5',
+			status: false
 		},
 		{
-			title: 'gaming.macroKey.numberpad.number.six',
-			value: '6',
-			isMacrokeyExists: false,
-			isSelected: false
+			key: '6',
+			status: false
 		},
 		{
-			title: 'gaming.macroKey.numberpad.number.seven',
-			value: '7',
-			isMacrokeyExists: false,
-			isSelected: false
+			key: '1',
+			status: false
 		},
 		{
-			title: 'gaming.macroKey.numberpad.number.eight',
-			value: '8',
-			isMacrokeyExists: false,
-			isSelected: false
+			key: '2',
+			status: false
 		},
 		{
-			title: 'gaming.macroKey.numberpad.number.nine',
-			value: '9',
-			isMacrokeyExists: false,
-			isSelected: false
+			key: '3',
+			status: false
 		},
 		{
-			title: 'gaming.macroKey.numberpad.number.zero',
-			value: '0',
-			isMacrokeyExists: true,
-			isSelected: true
+			key: '0',
+			status: false
 		}
 	];
-
-	macroButtons = [
-		{
-			title: 'gaming.macroKey.numberpad.macro.m1',
-			value: 'M1',
-			isMacrokeyExists: false,
-			isSelected: true
-		},
-		{
-			title: 'gaming.macroKey.numberpad.macro.m2',
-			value: 'M2',
-			isMacrokeyExists: true,
-			isSelected: false
-		}
-	];
-
-	numberSelected = this.numberPadbottons[0];
+	numbers = this.numberPadbottons;
+	numberSelected;
 
 	@Output() optionSelected = new EventEmitter<any>();
-	selectedNumber: any;
 	macroKeyTypeStatus: any = new MacroKeyTypeStatus();
 	isNumpad: Boolean = true;
-	isRecording = false;
+	isRecording: Boolean = false;
 	recorderKeyData: any = [];
+	public gamingProperties: any = new GamingAllCapabilities();
 
-	constructor(private macroKeyService: MacrokeyService, private shellService: VantageShellService) {}
+	constructor(
+		private macroKeyService: MacrokeyService,
+		private shellService: VantageShellService,
+		private router: Router,
+		private commonService: CommonService,
+		private gamingCapabilityService: GamingAllCapabilitiesService
+	) {}
 
 	ngOnInit() {
-		this.recorderKeyData = [
-			{ status: 1, key: '1', interval: 0 },
-			{ status: 0, key: '1', interval: 100 },
-			{ status: 0, key: '3', interval: 100 }
-		];
+		this.gamingProperties.macroKeyFeature = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.macroKeyFeature
+		);
 
-		// TODO: Check if macrokey feature is enabled
-		this.initMacroKeyEvents();
+		this.initMacroKeySubpage();
+		this.commonService.notification.subscribe((response) => {
+			if (response.type === Gaming.GamingCapablities) {
+				this.gamingProperties = response.payload;
+				this.initMacroKeySubpage();
+			}
+		});
+	}
+
+	initMacroKeySubpage() {
+		if (this.gamingProperties.macroKeyFeature) {
+			this.initMacroKeyEvents();
+		} else {
+			this.redirectBack();
+		}
 	}
 
 	ngOnDestroy() {
@@ -141,33 +127,50 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			EventTypes.gamingMacroKeyInitializeEvent,
 			this.onGamingMacroKeyInitializeEvent
 		);
+		this.shellService.unRegisterEvent(
+			EventTypes.gamingMacroKeyRecordedChangeEvent,
+			this.onGamingMacroKeyRecordedChangeEvent
+		);
 	}
 
 	public initMacroKeyEvents() {
 		if (this.macroKeyService.isMacroKeyAvailable) {
-			this.macroKeyService.gamingMacroKeyInitializeEvent();
+			this.macroKeyService.gamingMacroKeyInitializeEvent().then((macroKeyInitStatus) => {
+				if (!macroKeyInitStatus) {
+					this.redirectBack();
+				}
+			});
 			this.shellService.registerEvent(
 				EventTypes.gamingMacroKeyInitializeEvent,
 				this.onGamingMacroKeyInitializeEvent.bind(this)
 			);
+			this.shellService.registerEvent(
+				EventTypes.gamingMacroKeyRecordedChangeEvent,
+				this.onGamingMacroKeyRecordedChangeEvent.bind(this)
+			);
+			this.shellService.registerEvent(
+				EventTypes.gamingMacroKeyKeyChangeEvent,
+				this.onGamingMacroKeyKeyChangeEvent.bind(this)
+			);
 		}
+	}
+
+	redirectBack() {
+		this.router.navigate([ 'dashboard' ]);
 	}
 
 	onGamingMacroKeyInitializeEvent(macroKeyTypeEventResponse: any) {
 		if (macroKeyTypeEventResponse) {
-			this.onMacroKeyTypeStausChanged(macroKeyTypeEventResponse);
+			this.updateMacroKeyTypeStatusDetails(macroKeyTypeEventResponse);
 		}
 	}
 
-	onMacroKeyTypeStausChanged(macroKeyTypeEventStatus) {
+	updateMacroKeyTypeStatusDetails(macroKeyTypeEventStatus) {
+		// TODO: Update chace for macrokeytypestatus
 		this.macroKeyTypeStatus = macroKeyTypeEventStatus;
 		if (this.macroKeyTypeStatus.MacroKeyType === 1) {
-			this.numbers = this.macroButtons;
-			this.numberSelected = this.macroButtons[0];
 			this.isNumpad = false;
 		} else {
-			this.numbers = this.numberPadbottons;
-			this.numberSelected = this.numberPadbottons[9];
 			this.isNumpad = true;
 		}
 		this.macroKeyStatusSelectedOption = this.macroKeyOptions.filter(
@@ -175,12 +178,40 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		)[0];
 	}
 
+	onGamingMacroKeyRecordedChangeEvent(macroKeyRecordedChangeEventResponse: any) {
+		if (macroKeyRecordedChangeEventResponse) {
+			this.updateMacroKeyRecordedStatusDetails(macroKeyRecordedChangeEventResponse);
+		}
+	}
+
+	updateMacroKeyRecordedStatusDetails(macroKeyRecordedChangeEventStatus) {
+		this.numbers = macroKeyRecordedChangeEventStatus;
+		if (this.macroKeyTypeStatus.MacroKeyType === 1) {
+			this.numberSelected = this.numbers[0];
+		} else {
+			this.numberSelected = this.numbers[this.numbers.length - 1];
+		}
+	}
+
+	onGamingMacroKeyKeyChangeEvent(macroKeyKeyChangeEventResponse: any) {
+		if (macroKeyKeyChangeEventResponse) {
+			this.updateMacroKeyKeyChangeDetails(macroKeyKeyChangeEventResponse);
+		}
+	}
+
+	updateMacroKeyKeyChangeDetails(macroKeyKeyChangeEventData) {
+		if (macroKeyKeyChangeEventData) {
+			this.numberSelected = this.numbers.filter((number) => number.key === macroKeyKeyChangeEventData.key)[0];
+			this.recorderKeyData = macroKeyKeyChangeEventData.macro;
+		}
+	}
+
 	optionChanged(option: any) {
 		this.optionSelected.emit(option);
 	}
 
 	onNumberSelected(number) {
-		this.selectedNumber = number;
+		this.numberSelected = number;
 	}
 
 	onRecordingChanged(isRecording) {

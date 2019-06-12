@@ -1,11 +1,11 @@
 <div class="macrokey-wrapper" [ngClass]="{'recording': recording && number}">
-	<div class="header-component" *ngIf="number && !number.isMacrokeyExists">
+	<div class="header-component" *ngIf="number && !number.status">
 		<div class="title-main">
-			Recording Macro Key For {{ number.title | translate }}
+			Recording Macro Key For <span *ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span> {{ number.key | translate }}
 		</div>
 	</div>
 	<div class="section-details">
-		<div class="intro" [ngClass]="{'no-key': !number, 'data-exists': number && number.isMacrokeyExists, 'recording-data': recording && recordedData.length > 0}">
+		<div class="intro" [ngClass]="{'no-key': !number, 'data-exists': number && number.status, 'recording-data': recording && recordedData.length > 0}">
 			<div class="select-key" *ngIf="!number">
 				<div class="title-main">
 					<p>
@@ -13,14 +13,14 @@
 					</p>
 				</div>
 			</div>
-			<div *ngIf="number && !number.isMacrokeyExists">
+			<div *ngIf="number && !number.status">
 				<div class="can-record" *ngIf="!recording">
 					<div class="title-main">
 						<p>
 							{{ 'gaming.macroKey.details.intro.title' | translate }}
 						</p>
 						<p>
-							{{ number.title | translate }}
+							<span *ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span> {{ number.key | translate }}
 						</p>
 					</div>
 					<div class="description">
@@ -52,7 +52,7 @@
 					</div>
 				</div>
 			</div>
-			<div *ngIf="number && number.isMacrokeyExists">
+			<div *ngIf="number && number.status">
 				<vtr-ui-macrokey-recorded-list
 					[number]="number"
 					[recordingStatus]="recording"
@@ -63,7 +63,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="footer-component text-center" *ngIf="number && !number.isMacrokeyExists">
+	<div class="footer-component text-center" *ngIf="number && !number.status">
 		<div class="start-button">
 			<vtr-ui-button
 			metricsParent="WelcomePage"

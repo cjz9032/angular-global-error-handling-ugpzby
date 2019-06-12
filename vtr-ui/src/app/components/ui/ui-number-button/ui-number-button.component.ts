@@ -21,7 +21,9 @@ export class UiNumberButtonComponent implements OnInit {
 
 	constructor() {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		console.log(this.selectedNumber);
+	}
 
 	numberClicked(number) {
 		if (this.recordingStatus) {
@@ -29,7 +31,7 @@ export class UiNumberButtonComponent implements OnInit {
 			return;
 		}
 
-		if (isUndefined(this.selectedNumber) || this.selectedNumber.value !== number.value) {
+		if (isUndefined(this.selectedNumber) || this.selectedNumber.key !== number.key) {
 			this.numberSelected.emit(number);
 			this.selectedNumber = number;
 			return;

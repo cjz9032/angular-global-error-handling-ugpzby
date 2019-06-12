@@ -17,7 +17,8 @@ export class MacrokeyService {
 
 	public gamingMacroKeyInitializeEvent() {
 		if (this.isMacroKeyAvailable) {
-			this.shellService.getMacroKeyInitializeEvent();
+			return this.shellService.macroKeyInitializeEvent();
 		}
+		return undefined;
 	}
 }
