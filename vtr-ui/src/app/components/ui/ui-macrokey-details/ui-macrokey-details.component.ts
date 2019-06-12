@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, DoCheck } from '@angular/core';
-import { isUndefined } from 'util';
+import { MacrokeyService } from './../../../services/gaming/macrokey/macrokey.service';
 
 @Component({
 	selector: 'vtr-ui-macrokey-details',
@@ -24,7 +24,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, DoCheck {
 		btnConfirm: false
 	};
 
-	constructor() {}
+	constructor(private macroKeyService: MacrokeyService) {}
 
 	ngOnInit() {}
 

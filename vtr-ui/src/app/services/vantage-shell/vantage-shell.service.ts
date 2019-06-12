@@ -120,7 +120,7 @@ export class VantageShellService {
 
 						return await this.sendAsyncOrignally(data);
 					} catch (ex) {
-						console.log('an error ocurr when sending metrics event');
+						console.log('an error ocurr when sending metrics event', ex);
 						return Promise.resolve({
 							status: 0,
 							desc: 'ok'
@@ -489,10 +489,12 @@ export class VantageShellService {
      */
 	public setMacroKeyClear(macroKey: string): any {
 		if (this.phoenix) {
+			console.log('Deleting the following macro key ---->', macroKey);
 			return this.phoenix.gaming.gamingMacroKey.setClear(macroKey);
 		}
 		return undefined;
 	}
+
 	public getGamingMacroKey(): any {
 		if (this.phoenix && this.phoenix.gaming) {
 			return this.phoenix.gaming.gamingMacroKey;

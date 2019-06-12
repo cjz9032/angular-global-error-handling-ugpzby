@@ -4,16 +4,19 @@
 	display: inline-block;
 	position: relative;
 	cursor: pointer;
+	label {
+		cursor: pointer;
+	}
 	&.switch-disable {
 		opacity: 0.3;
-		cursor: auto;
+		cursor: pointer;
 		
 		.switch {
-			cursor: auto;
+			cursor: pointer;
 		}
 
 		.switch-label {
-			cursor: auto;
+			cursor: pointer;
 		}
 	}
 }
