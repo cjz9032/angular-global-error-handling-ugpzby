@@ -8,8 +8,6 @@ import * as page6 from './pages/article3a.html';
 import * as page7 from './pages/article3b.html';
 import { RoutersName } from '../../privacy-routing-name';
 import { UserDataGetStateService } from '../../common/services/user-data-get-state.service';
-import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
-import { UserDataStatuses } from '../../userDataStatuses';
 
 export interface Article {
 	id: string;
@@ -31,15 +29,8 @@ interface ArticlesByPathSettings {
 	providedIn: 'root'
 })
 export class ArticlesService {
-	isFigleafReadyForCommunication = false;
 
-	constructor(
-		private userDataGetStateService: UserDataGetStateService,
-		private communicationWithFigleafService: CommunicationWithFigleafService
-	) {
-		this.communicationWithFigleafService.isFigleafReadyForCommunication$.subscribe((isReady) => {
-			this.isFigleafReadyForCommunication = isReady;
-		});
+	constructor(private userDataGetStateService: UserDataGetStateService) {
 	}
 
 	articles: Articles = {
@@ -100,12 +91,6 @@ export class ArticlesService {
 		[RoutersName.MAIN]: {
 			visible: true,
 		},
-		[RoutersName.TIPS]: {
-			visible: false,
-		},
-		[RoutersName.NEWS]: {
-			visible: false,
-		},
 		[RoutersName.LANDING]: {
 			visible: true,
 		},
@@ -121,25 +106,13 @@ export class ArticlesService {
 		[RoutersName.BROWSERACCOUNTS]: {
 			visible: true,
 		},
-		[RoutersName.FAQ]: {
-			visible: false,
-		},
 		[RoutersName.ARTICLES]: {
 			visible: false,
 		}
 	};
 
 	private getUserCategory() {
-		if (this.isFigleafReadyForCommunication) {
-			return 'FigLeafInstalled';
-		}
-		const userDataStatus = this.userDataGetStateService.getUserDataStatus();
-		for (const dataState of Object.keys(userDataStatus)) {
-			if (userDataStatus[dataState] !== UserDataStatuses.undefined) {
-				return 'ScanPerformed';
-			}
-		}
-		return 'FirstTimeVisitor';
+		return this.userDataGetStateService.getUserDataStatus().appState;
 	}
 
 	getFilteredArticlesByUserStatus() {

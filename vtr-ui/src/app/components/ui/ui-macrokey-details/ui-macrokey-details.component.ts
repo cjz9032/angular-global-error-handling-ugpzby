@@ -10,9 +10,9 @@ export class UiMacrokeyDetailsComponent implements OnInit {
 	@Input() isNumberpad = false;
 	@Output() isRecording = new EventEmitter<any>();
 	@Input() recordedData: any = [];
-	recording = false;
-	public showModal: boolean = false;
-	stopInterval: any;
+	public recording = false;
+	public showModal = false;
+	public stopInterval: any;
 
 	modalContent = {
 		headerTitle: 'gaming.macroKey.popupContent.timeoutRecording.title',
@@ -45,5 +45,12 @@ export class UiMacrokeyDetailsComponent implements OnInit {
 	toggleRecording() {
 		this.recording = !this.recording;
 		this.isRecording.emit(this.recording);
+	}
+	recordsDelete(records) {
+		records = records || [];
+		records.forEach((record: any, ri: number) => {
+			console.log(record);
+			console.log(ri, 'Index');
+		});
 	}
 }

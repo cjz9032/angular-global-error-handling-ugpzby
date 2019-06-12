@@ -32,9 +32,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	batteryCardTimer: any;
 	batteryIndicator = new BatteryIndicator();
 	flag = true;
-	batteryCondition: BatteryConditionModel;
+	batteryConditions: BatteryConditionModel;
 	batteryConditionsEnum = BatteryConditionsEnum;
-	batteryConditionTranslation: BatteryConditionTranslation;
+	batteryConditionTranslations: BatteryConditionTranslation[];
 	batteryQuality = BatteryQuality;
 
 	// percentageLimitation: Store Limitation Percentage
@@ -46,7 +46,6 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.shellServices.registerEvent(EventTypes.pwrPowerSupplyStatusEvent, this.onPowerSupplyStatusEvent.bind(this));
 		this.shellServices.registerEvent(EventTypes.pwrRemainingPercentageEvent, this.onRemainingPercentageEvent.bind(this));
 		this.shellServices.registerEvent(EventTypes.pwrRemainingTimeEvent, this.onRemainingTimeEvent.bind(this));
-		this.getBatteryCondition();
 	}
 
 	onPowerSupplyStatusEvent(info: any) {
@@ -99,6 +98,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryInfo = response.batteryInformation;
 				this.batteryGauge = response.batteryIndicatorInfo;
 				this.updateBatteryDetails();
+				this.getBatteryCondition();
 			}).catch(error => {
 				console.error('getBatteryDetails error', error);
 			});
@@ -109,13 +109,14 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryIndicator.charging = this.batteryGauge.isAttached;
 		this.batteryIndicator.convertMin(this.batteryGauge.time);
 		this.batteryIndicator.timeText = this.batteryGauge.timeType;
+		this.batteryIndicator.batteryHealth = this.batteryIndicator.getBatteryHealth(this.batteryInfo[0].batteryHealth);
 		this.batteryIndicator.expressCharging = this.batteryInfo[0].isExpressCharging;
 		this.batteryIndicator.voltageError = this.batteryInfo[0].isVoltageError;
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo, { detail: this.batteryInfo, gauge: this.batteryGauge });
 		if (this.cd !== null && this.cd !== undefined &&
 			!(this.cd as ViewRef_).destroyed) {
-			this.cd.detectChanges();
-		}
+				this.cd.detectChanges();
+			}
 	}
 
 	public showDetailModal(content: any): void {
@@ -137,9 +138,51 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	public getBatteryCondition() {
 		// server api call to fetch battery conditions
-		this.batteryCondition = new BatteryConditionModel(1, 2);
-		console.log('Battery Condition', this.batteryCondition);
-		this.batteryConditionTranslation = this.batteryCondition.getBatteryCondition(this.batteryConditionsEnum[this.batteryCondition.condition]);
+		const batteryConditions = [];
+		batteryConditions.push(this.batteryInfo[0].batteryHealth);
+		this.batteryInfo[0].batteryCondition.forEach((condition) => {
+			switch (condition.toLocaleLowerCase()) {
+				case 'normal':
+					batteryConditions.push(6);
+					break;
+				case 'hightemperature':
+					batteryConditions.push(7);
+					break;
+				case 'tricklecharge':
+					batteryConditions.push(8);
+					break;
+				case 'overheatedbattery':
+					batteryConditions.push(9);
+					break;
+				case 'permanenterror':
+					batteryConditions.push(10);
+					break;
+				case 'hardwareauthenticationerror':
+					batteryConditions.push(11);
+					break;
+			}
+		});
+		if (this.batteryGauge.isPowerDriverMissing) {
+			batteryConditions.push(12);
+		}
+		if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
+			batteryConditions.push(13);
+		}
+		if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'notsupported') {
+			batteryConditions.push(14);
+		}
+
+		this.batteryConditions = new BatteryConditionModel(batteryConditions);
+		console.log('Battery conditions length', this.batteryConditions.conditions.length);
+		this.batteryConditionTranslations = [];
+		this.batteryConditions.conditions.forEach((condition) => {
+			console.log('Condition', condition);
+			const translation = this.batteryConditions.getBatteryCondition(condition);
+			console.log('Translation==>', translation);
+			if (translation !== undefined) {
+				this.batteryConditionTranslations.push(translation);
+			}
+		});
 	}
 
 	reInitValue() {

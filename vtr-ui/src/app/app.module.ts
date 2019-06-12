@@ -9,6 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 // CUSTOM MODULES
 import { AppRoutingModule } from './app-routing.module';
@@ -160,6 +161,7 @@ import { PageNetworkBoostComponent } from './components/pages/page-network-boost
 import { PowerSmartSettingsComponent } from './components/widgets/power-smart-settings/power-smart-settings.component';
 import { PageSettingsComponent } from './components/pages/page-settings/page-settings.component';
 import { UiPopoverComponent } from './components/ui/ui-popover/ui-popover.component';
+import { OledPowerSettingsComponent } from './components/display/oled-power-settings/oled-power-settings.component';
 import { UiMacrokeyPopupComponent } from './components/ui/ui-macrokey-popup/ui-macrokey-popup.component';
 import { ModalChsWelcomeContainerComponent } from './components/modal/modal-chs-welcome-container/modal-chs-welcome-container.component';
 
@@ -197,6 +199,8 @@ import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
 import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
 import { UiLightingProfileComponent } from './components/ui/ui-lighting-profile/ui-lighting-profile.component';
+import { UiDropDownComponent } from './components/ui/ui-dropdown/ui-dropdown.component';
+
 import { AutoupdateSettingsComponent } from './components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
 import { UiLightingProfileToggleComponent } from './components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
 import { UiBrightnessSliderComponent } from './components/ui/ui-brightness-slider/ui-brightness-slider.component';
@@ -209,6 +213,8 @@ import { IntelligentMediaComponent } from './components/pages/page-smart-assist/
 import { UiMacrokeyCollapsibleContainerComponent } from './components/ui/ui-macrokey-collapsible-container/ui-macrokey-collapsible-container.component';
 import { CursorTypePipe } from './pipe/ui-security-statusbar/cursor-type.pipe';
 import { UiGamingDriverPopupComponent } from './components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
+import { UiCircleRadioWithCheckboxComponent } from './components/ui/ui-circle-radio-with-checkbox/ui-circle-radio-with-checkbox.component';
+import { UiChsStatusbarComponent } from './components/ui/ui-chs-statusbar/ui-chs-statusbar.component';
 
 library.add(fas);
 library.add(fab);
@@ -360,6 +366,8 @@ library.add(fal);
 		PageSettingsComponent,
 		WidgetHomeSecurityDeviceComponent,
 		UiLightingProfileComponent,
+		OledPowerSettingsComponent,
+		UiDropDownComponent,
 		AutoupdateSettingsComponent,
 		UiPopoverComponent,
 		UiMacrokeyPopupComponent,
@@ -381,7 +389,9 @@ library.add(fal);
 		WidgetHomeSecurityAllDevicesComponent,
 		UiMacrokeyCollapsibleContainerComponent,
 		CursorTypePipe,
-		UiGamingDriverPopupComponent
+		UiGamingDriverPopupComponent,
+		UiCircleRadioWithCheckboxComponent,
+		UiChsStatusbarComponent
 	],
 	imports: [
 		BrowserModule,
@@ -397,7 +407,8 @@ library.add(fal);
 		// ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 		TranslationModule,
 		BrowserAnimationsModule,
-		PrivacyModule
+		PrivacyModule,
+		ColorPickerModule
 	],
 	providers: [
 		CookieService,
@@ -413,7 +424,7 @@ library.add(fal);
 		RegionService,
 		{ provide: BaseCameraDetail, useClass: CameraDetailMockService }
 	],
-	bootstrap: [ AppComponent ],
+	bootstrap: [AppComponent],
 	entryComponents: [
 		ModalLenovoIdComponent,
 		ModalWelcomeComponent,
@@ -432,6 +443,6 @@ library.add(fal);
 		ModalGamingLegionedgeComponent,
 		ModalChsWelcomeContainerComponent
 	],
-	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule {}
+export class AppModule { }

@@ -358,15 +358,15 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 				lang = "ja_JP";
 				break;
 			case "ko":
-				lang = "ko_kR";
+				lang = "ko_KR";
 				break;
-			case "no":
+			case "nb":
 				lang = "no_NO";
 				break;
 			case "nl":
 				lang = "nl_NL";
 				break;
-			case "pt_BR":
+			case "pt-br":
 				lang = "pt_BR";
 				break;
 			case "pt":
@@ -391,6 +391,11 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 		return lang;
 	}
 
+	isLidSupportedLanguage(lang) {
+		let supportedLangs = ["zh_CN", "zh_HANT", "da_DK", "de_DE", "en_US", "fr_FR", "it_IT", "ja_JP", "ko_KR", "no_NO", "nl_NL", "pt_BR", "pt_PT", "fi_FI", "es_ES", "sv_SE", "ru_RU"];
+		return supportedLangs.includes(lang, 0);
+	}
+
 	ngAfterViewInit() {
 		const self = this;
 		// Get logon url and navigate to it
@@ -406,7 +411,11 @@ export class ModalLenovoIdComponent implements OnInit, AfterViewInit, OnDestroy 
 					self.supportService.getMachineInfo().then((machineInfo) => {
 						let lang = self.userService.getLidLanguageSelectionFromCookies('https://passport.lenovo.com');
 						if (lang != '') {
-							loginUrl += "&lang=" + lang;
+							if (self.isLidSupportedLanguage(lang)) {
+								loginUrl += "&lang=" + lang;
+							} else {
+								loginUrl += "&lang=en_US";
+							}
 						} else {
 							loginUrl += "&lang=" + self.getLidSupportedLanguageFromLocale(machineInfo.locale);
 						}

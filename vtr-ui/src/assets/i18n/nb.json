@@ -89,11 +89,11 @@
             "introLine": "You can record a series of key input, and use them in gaming or other operations.",
             "status": {
                 "on": {
-					"title": "On",
+                    "title": "On",
                     "description": "Always Enabled"
                 },
                 "whileGaming": {
-					"title": "Macro Key enabled only when gaming",
+                    "title": "Macro Key enabled only when gaming",
                     "description": "It will be enabled when you game and remain as num key when you don't."
                 },
                 "off": {
@@ -110,10 +110,10 @@
                     "line3": "stop recording when finishing typing"
                 },
                 "buttons": {
-					"start": "START RECORDING",
-					"stop": "STOP RECORDING"
-				},
-				"recording": {
+                    "start": "START RECORDING",
+                    "stop": "STOP RECORDING"
+                },
+                "recording": {
                     "title": "START TYPING",
                     "description": "20 inputs with in 20 seconds can be recorded."
                 },
@@ -228,10 +228,39 @@
         "lightingProfile": {
             "title": "Lighting",
             "effect": {
-                "option1": "Wave",
-                "option2": "Option 2",
-                "option3": "Option 3",
-                "option4": "option 4"
+                "option1": {
+                    "title": "Static"
+                },
+                "option2": {
+                    "title": "Flicker"
+                },
+                "option3": {
+                    "title": "Breath"
+                },
+                "option4": {
+                    "title": "Wave"
+                },
+                "option5": {
+                    "title": "Music"
+                },
+                "option6": {
+                    "title": "Smooth"
+                },
+                "option7": {
+                    "title": "CPU Temperature"
+                },
+                "option8": {
+                    "title": "CPU Utilization"
+                },
+                "option9": {
+                    "title": "Response"
+                },
+                "option10": {
+                    "title": "Ripple"
+                },
+                "option11": {
+                    "title": "No Light"
+                }
             }
         }
     },
@@ -446,7 +475,7 @@
             "helpful": "Helpful Content",
             "batteryGauge": {
                 "title": "BATTERY GAUGE",
-                "subtitle": "Battery health",
+                "subtitle": "Battery",
                 "hours": "hours",
                 "hour": "hour",
                 "minutes": "minutes",
@@ -779,6 +808,15 @@
                         "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
                         "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
                         "labelText": "Enable this feature when typing passwords"
+                    },
+                    "oledPowerSettings": {
+                        "title": "OLED Power Settings",
+                        "description": [
+                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
+                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                        ],
+                        "reset": "Reset temperature",
+                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
                     }
                 },
                 "camera": {
@@ -977,10 +1015,10 @@
             "diskSpaceNeeded": "Disk space needed: ",
             "ignore": "Ignore",
             "attend": "Attend",
-			"rebootRequiredTag": "Reboot Required",
-			"rebootDelayTag": "Reboot Required, Power Source Required",
-			"shutdownRequiredTag": "Shutdown Required",
-			"dependedPackage": "Depended Package"
+            "rebootRequiredTag": "Reboot Required",
+            "rebootDelayTag": "Reboot Required, Power Source Required",
+            "shutdownRequiredTag": "Shutdown Required",
+            "dependedPackage": "Depended Package"
         },
         "availableUpdates": {
             "title": "Available updates",
@@ -1009,41 +1047,41 @@
         "allDevices": "All Devices",
         "protected": "Protected",
         "notProtected": "Not Protected",
-		"myDevice": "My Device",
-		"allDevice": "All Devices",
-		"secure": "SECURE",
-		"needAttention": "NEEDS ATTENTION",
-		"manageAccount": "Manage Account",
-		"devices": "Devices",
-		"seeProtectedDevices": "See protected devices",
-		"addDevice": "add device",
-		"trailExpired": "Trail expired",
-		"trailExpiredSubtext": "Upgrate to protect all of your devices",
+        "myDevice": "My Device",
+        "allDevice": "All Devices",
+        "secure": "SECURE",
+        "needAttention": "NEEDS ATTENTION",
+        "manageAccount": "Manage Account",
+        "devices": "Devices",
+        "seeProtectedDevices": "See protected devices",
+        "addDevice": "add device",
+        "trailExpired": "Trail expired",
+        "trailExpiredSubtext": "Upgrate to protect all of your devices",
         "upgrade": "upgrade",
         "tour": {
-			"back": "Back",
-			"skip": "Skip",
-			"start": "START TOUR",
-			"done": "DONE",
-			"welcome1": "Welcome",
-			"welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
-			"welcome2": "Exclusive for Vantage",
-			"welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
-			"create": "Create your account",
-			"lenovoId": "with Lenovo ID",
-			"notifications": "Receive <b>notifications</b> about your home's status",
-			"monitor": "<b>Monitor</b> the safety of your family's devices",
-			"peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
-			"signInLenovoId": "SIGH-UP WITH LENOVO ID",
-			"haveLenovo": "I don't have a <b>Lenovo ID</b>",
-			"createLenovo": "&nbsp;Create a Lenovo ID",
-			"without": "Proceed <b>without an account</b>",
-			"skipAndTrial": "SKIP AND START TRIAL",
-			"alreadyHave": "I already have a <b>Connected Home Security Account</b>",
-			"loginCHS": "Login to existing CHS account",
-			"locationTitle": "Enable location tracking",
-			"locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
-		}
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcome1": "Welcome",
+            "welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
+            "welcome2": "Exclusive for Vantage",
+            "welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
+            "create": "Create your account",
+            "lenovoId": "with Lenovo ID",
+            "notifications": "Receive <b>notifications</b> about your home's status",
+            "monitor": "<b>Monitor</b> the safety of your family's devices",
+            "peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
+            "signInLenovoId": "SIGH-UP WITH LENOVO ID",
+            "haveLenovo": "I don't have a <b>Lenovo ID</b>",
+            "createLenovo": "&nbsp;Create a Lenovo ID",
+            "without": "Proceed <b>without an account</b>",
+            "skipAndTrial": "SKIP AND START TRIAL",
+            "alreadyHave": "I already have a <b>Connected Home Security Account</b>",
+            "loginCHS": "Login to existing CHS account",
+            "locationTitle": "Enable location tracking",
+            "locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+        }
     },
     "support": {
         "common": {
@@ -1116,7 +1154,9 @@
             "maliciousNetwork": "Hindret at datamaskinen ble med i {{maliciousWifi}}skadelig nettverk denne måneden.",
             "good": "GOD",
             "malicious": "SKADELIG",
-            "suspicious": "MISTENKELIG"
+            "suspicious": "MISTENKELIG",
+            "titleOffline": "No internet connection detected",
+            "subTitleOffline": "Learn more on how to solve connection issues in our"
         },
         "antivirus": {
             "common": {
@@ -1344,7 +1384,7 @@
         "user": "User",
         "welcomeText": "Looking energized today {{firstName}}!",
         "welcomeTextWithouUserName": "Looking energized today!",
-		"welcomeTextWithoutUserName": "Looking energized today!",
+        "welcomeTextWithoutUserName": "Looking energized today!",
         "helloUser": "Hello, {{firstName}}!",
         "ssoErrorTitle": "Error",
         "ssoErrorCommon": "Oops, we’ve encountered an error. Please try again.",
@@ -1550,7 +1590,7 @@
                 },
                 "span10": {
                     "line1": "If you are running a",
-                    "line2": "64",
+                    "line2": 64,
                     "line3": "bit version of Windows 8, 32-bit Operating,",
                     "line4": "x64-based PC is displayed in the",
                     "line5": "System type",
@@ -1611,7 +1651,7 @@
                 "span5": "B. Analyze Your Power Usage",
                 "span6": "4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
                 "span7": {
-                    "line1": "5.",
+                    "line1": 5,
                     "line2": "“System”,",
                     "line3": "“Display”,",
                     "line4": "and",
@@ -1730,7 +1770,7 @@
         "title3": "Vantage",
         "privacypolicy": "Lenovos personvernerklæring",
         "done": "FERDIG",
-		"interests": {
+        "interests": {
             "games": "Spill",
             "news": "News",
             "entertainment": "Underholdning",

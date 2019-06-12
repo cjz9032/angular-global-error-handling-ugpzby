@@ -28,46 +28,50 @@
 								[isCollapsed]="false"
 								[allowCollapse]="true"
 								[theme]="'white'"
-								(toggle)="onCardCollapse($event)">
+								(toggle)="onCardCollapse($event)"
+								*ngIf="intelligentSecurity.isIntelligentSecuritySupported">
+								<!-- IdeaPad section -->
 								<ul class="list-group list-group-flush"
 									*ngIf="!isThinkPad">
 									<li class="no-border-bottom"
-										[class.disabled-overlay]="!intelligentSecurity.humanPresenceDetectionFlag">
+										[class.disabled-overlay]="!intelligentSecurity.isHPDEnabled">
 										<vtr-ui-row-switch
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLogin.title' | translate"
 											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.caption' | translate"
 											[isSwitchVisible]="true"
 											[leftIcon]="['fal', 'gem']"
 											[showChildContent]="true"
-											[isSwitchChecked]="intelligentSecurity.zeroTouchLoginFlag"
+											[isSwitchChecked]="intelligentSecurity.isZeroTouchLoginEnabled"
 											(toggleOnOff)="onZeroTouchLoginStatusToggle($event)"
 											[theme]="'white'"
-											[disabled]="!intelligentSecurity.humanPresenceDetectionFlag">
+											[disabled]="!intelligentSecurity.isHPDEnabled">
 										</vtr-ui-row-switch>
 										<div class="margin-left-5 pl-5 bold-title no-border-bottom pb-4 border-bottom"
-											[class.disabled]="!intelligentSecurity.zeroTouchLoginFlag">
+											*ngIf="intelligentSecurity.isDistanceSensitivityVisible"
+											[class.disabled]="!intelligentSecurity.isZeroTouchLoginEnabled">
 											<vtr-ui-row-switch
 												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
 												[caption]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.caption' | translate"
 												[isSwitchVisible]="true"
-												[showChildContent]="true"
-												[isSwitchChecked]="intelligentSecurity.distanceSensitivityFlag"
-												(toggleOnOff)="distanceSensitivityStatusToggle($event)"
+												[showChildContent]="intelligentSecurity.isZeroTouchLoginAdjustEnabled"
+												[isSwitchChecked]="intelligentSecurity.isZeroTouchLoginAdjustEnabled"
+												(toggleOnOff)="onDistanceSensitivityAdjustToggle($event)"
 												[theme]="'white'"
-												[disabled]="!intelligentSecurity.zeroTouchLoginFlag">
+												[disabled]="!intelligentSecurity.isZeroTouchLoginEnabled">
 											</vtr-ui-row-switch>
 											<div class="slider-note">
-												<vtr-ui-range-slider *ngIf="intelligentSecurity.distanceSensitivityFlag"
+												<vtr-ui-range-slider
+													*ngIf="intelligentSecurity.isZeroTouchLoginAdjustEnabled"
 													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
-													[minValue]="0"
+													[minValue]="1"
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
-													[maxValue]="100"
+													[maxValue]="3"
 													(change)="setZeroTouchLoginSensitivity($event)"
-													[enableSlider]="!intelligentSecurity.distanceSensitivityFlag"
-													[value]="intelligentSecurity.zeroTouchLoginSensitivity">
+													[enableSlider]="!intelligentSecurity.isZeroTouchLoginAdjustEnabled"
+													[value]="intelligentSecurity.zeroTouchLoginDistance">
 												</vtr-ui-range-slider>
 												<div class="pt-3"
-													[class.blur-1]="!intelligentSecurity.zeroTouchLoginFlag">
+													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled">
 													<div class="feature-note p-4">
 														<div class="row">
 															<!-- <div class="col-auto pl-0">
@@ -87,6 +91,7 @@
 										</div>
 									</li>
 								</ul>
+								<!-- ThinkPad section -->
 								<ul class="list-group list-group-flush"
 									*ngIf="isThinkPad">
 									<li>
@@ -96,49 +101,49 @@
 											[isSwitchVisible]="true"
 											[leftIcon]="['fal', 'gem']"
 											[showChildContent]="true"
-											[isSwitchChecked]="intelligentSecurity.humanPresenceDetectionFlag"
+											[isSwitchChecked]="intelligentSecurity.isHPDEnabled"
 											(toggleOnOff)="onHumanPresenceDetectStatusToggle($event)"
 											[theme]="'white'">
 										</vtr-ui-row-switch>
 									</li>
 
 									<li class="pt-3 pl-5 no-border-bottom"
-										[class.disabled-overlay]="!intelligentSecurity.humanPresenceDetectionFlag"
-										[class.disabled]="!intelligentSecurity.humanPresenceDetectionFlag">
+										[class.disabled-overlay]="!intelligentSecurity.isHPDEnabled"
+										[class.disabled]="!intelligentSecurity.isHPDEnabled">
 										<vtr-ui-row-switch
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLogin.title' | translate"
 											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.caption' | translate"
 											[isSwitchVisible]="true"
 											[leftIcon]="['fal', 'gem']"
 											[showChildContent]="true"
-											[isSwitchChecked]="intelligentSecurity.zeroTouchLoginFlag"
+											[isSwitchChecked]="intelligentSecurity.isZeroTouchLoginEnabled"
 											(toggleOnOff)="onZeroTouchLoginStatusToggle($event)"
 											[theme]="'white'"
-											[disabled]="!intelligentSecurity.humanPresenceDetectionFlag">
+											[disabled]="!intelligentSecurity.isHPDEnabled">
 										</vtr-ui-row-switch>
 										<div class="margin-left-5 pl-5 bold-title no-border-bottom pb-4 border-bottom">
 											<vtr-ui-row-switch
 												[title]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.title' | translate"
 												[isSwitchVisible]="false"
 												[showChildContent]="true"
-												[isSwitchChecked]="intelligentSecurity.distanceSensitivityFlag"
-												(toggleOnOff)="distanceSensitivityStatusToggle($event)"
+												[isSwitchChecked]="intelligentSecurity.isZeroTouchLoginAdjustEnabled"
+												(toggleOnOff)="onDistanceSensitivityAdjustToggle($event)"
 												[theme]="'white'"
-												[disabled]="!intelligentSecurity.zeroTouchLoginFlag">
+												[disabled]="!intelligentSecurity.isZeroTouchLoginEnabled">
 											</vtr-ui-row-switch>
-											<!-- Add appropriate [enableSlider]="!intelligentSecurity.distanceSensitivityFlag" -->
+											<!-- Add appropriate [enableSlider]="!intelligentSecurity.isZeroTouchLoginAdjustEnabled" -->
 											<div class="slider-note"
-												[class.disabled]="!intelligentSecurity.zeroTouchLoginFlag">
+												[class.disabled]="!intelligentSecurity.isZeroTouchLoginEnabled">
 												<vtr-ui-range-slider
 													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
 													[minValue]="1"
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
 													[maxValue]="3"
 													(change)="setZeroTouchLoginSensitivity($event)"
-													[value]="intelligentSecurity.zeroTouchLoginSensitivity">
+													[value]="intelligentSecurity.zeroTouchLoginDistance">
 												</vtr-ui-range-slider>
 												<div class="pt-3"
-													[class.blur-1]="!intelligentSecurity.zeroTouchLoginFlag">
+													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled">
 													<div class="feature-note p-4">
 														<div class="row blur">
 															<!-- <div class="col-auto pl-0">
@@ -160,7 +165,7 @@
 								</ul>
 								<ul class="list-group list-group-flush pt-3"
 									[class.pl-5]="isThinkPad"
-									[class.disabled-overlay]="!intelligentSecurity.humanPresenceDetectionFlag"
+									[class.disabled-overlay]="!intelligentSecurity.isHPDEnabled"
 									*ngIf="intelligentSecurity.isZeroTouchLockVisible">
 									<li class="auto-screen-block">
 										<vtr-ui-row-switch
@@ -170,12 +175,12 @@
 											[leftIcon]="['fal', 'gem']"
 											[readMoreText]="''"
 											[showChildContent]="true"
-											[isSwitchChecked]="intelligentSecurity.zeroTouchLockFlag"
-											(toggleOnOff)="onChangeZeroTouchLockFlag($event)"
+											[isSwitchChecked]="intelligentSecurity.isZeroTouchLockEnabled"
+											(toggleOnOff)="onZeroTouchLockStatusToggle($event)"
 											[theme]="'white'"
-											[disabled]="!intelligentSecurity.humanPresenceDetectionFlag">
+											[disabled]="!intelligentSecurity.isHPDEnabled">
 											<div class="row blur"
-												[class.disabled]="!intelligentSecurity.zeroTouchLockFlag">
+												[class.disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
 												<div
 													class="col-12 py-4 pr-0 d-flex justify-content-between auto-screen-lock-timer">
 													<h3>{{ 'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.title' | translate}}
@@ -198,8 +203,8 @@
 														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.fast' | translate"
 														[value]="'1'"
 														[checked]="intelligentSecurity.autoScreenLockTimer === '1'"
-														(change)="onAutoScreenLockStatusToggle($event, '1')"
-														[disabled]="!intelligentSecurity.zeroTouchLockFlag">
+														(change)="onZeroTouchLockTimerChange($event, '1')"
+														[disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
 													</vtr-ui-rounded-rectangle-radio>
 													<vtr-ui-rounded-rectangle-radio [radioId]="'radio2'"
 														[group]="'radio'"
@@ -207,8 +212,8 @@
 														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.medium' | translate"
 														[value]="'2'"
 														[checked]="intelligentSecurity.autoScreenLockTimer === '2'"
-														(change)="onAutoScreenLockStatusToggle($event, '2')"
-														[disabled]="!intelligentSecurity.zeroTouchLockFlag">
+														(change)="onZeroTouchLockTimerChange($event, '2')"
+														[disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
 													</vtr-ui-rounded-rectangle-radio>
 													<vtr-ui-rounded-rectangle-radio [radioId]="'radio3'"
 														[group]="'radio'"
@@ -216,14 +221,14 @@
 														[label]="'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.radioButton.slow' | translate"
 														[value]="'3'"
 														[checked]="intelligentSecurity.autoScreenLockTimer === '3'"
-														(change)="onAutoScreenLockStatusToggle($event, '3')"
-														[disabled]="!intelligentSecurity.zeroTouchLockFlag">
+														(change)="onZeroTouchLockTimerChange($event, '3')"
+														[disabled]="!intelligentSecurity.isZeroTouchLockEnabled">
 													</vtr-ui-rounded-rectangle-radio>
 												</div>
 												<div class="feature-note screen-lock-note p-4 ml-4 mt-2 mb-2 mr-2">
 													<p>{{'device.smartAssist.intelligentSecurity.note.description2' | translate}}
-														<a href="javascript:void();"
-															(click)="launchPowerAndSleep();">{{'device.smartAssist.intelligentSecurity.WindowsLink.screenTimeoutSettings' | translate}}</a>
+														<!-- <a href="javascript:void();"
+															(click)="launchPowerAndSleep();">{{'device.smartAssist.intelligentSecurity.WindowsLink.screenTimeoutSettings' | translate}}</a> -->
 													</p>
 												</div>
 											</div>
@@ -285,8 +290,8 @@
 											<div class="feature-note auto-screen-off-note p-4 m-4">
 												<p>{{'device.smartAssist.intelligentScreen.autoScreenOff.note' | translate}}
 												</p>
-												<a href="javascript:void();"
-													(click)="launchPowerAndSleep();"><span>{{'device.smartAssist.intelligentScreen.autoScreenOff.windowsLink' | translate}}</span></a>
+												<!-- <a href="javascript:void();"
+													(click)="launchPowerAndSleep();"><span>{{'device.smartAssist.intelligentScreen.autoScreenOff.windowsLink' | translate}}</span></a> -->
 											</div>
 										</div>
 									</li>
@@ -325,22 +330,6 @@
 				<div class="col-lg-4 col-sm-12 vtr-page-right-column">
 					<div class="vtr-page-shift-up-medium">
 						<div class="container-fluid">
-							<div class="row mb-40">
-								<div class="col col-12"
-									[ngClass]="{'battery-unavailable': isDesktopMachine}">
-									<vtr-battery-card *ngIf="!isDesktopMachine"></vtr-battery-card>
-								</div>
-							</div>
-							<div class="row mb-40">
-								<div class="col col-12 cont">
-									<div class="widget-heading mb-40">{{'device.deviceSettings.helpful' | translate}}
-									</div>
-									<vtr-widget-questions [title]="'common.qAndA.title' | translate"
-										[description]="'common.qAndA.subtitle' | translate"
-										[items]="qaService.qas">
-									</vtr-widget-questions>
-								</div>
-							</div>
 							<div class="row">
 								<div class="col col-12">
 									<vtr-container-card [img]="cardContentPositionA.FeatureImage"
@@ -358,6 +347,17 @@
 									</vtr-container-card>
 								</div>
 							</div>
+							<div class="row">
+								<div class="col col-12 cont">
+									<div class="widget-heading mb-40">{{'device.deviceSettings.helpful' | translate}}
+									</div>
+									<vtr-widget-questions [title]="'common.qAndA.title' | translate"
+										[description]="'common.qAndA.subtitle' | translate"
+										[items]="qaService.qas">
+									</vtr-widget-questions>
+								</div>
+							</div>
+
 						</div>
 					</div>
 				</div>

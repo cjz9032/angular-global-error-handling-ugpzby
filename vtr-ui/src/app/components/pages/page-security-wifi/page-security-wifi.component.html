@@ -75,6 +75,7 @@
 																role="status"></div>
 														</div>
 														<vtr-ui-list-chevron [items]="securityHealthViewModel.homeDevicePosture"
+															metricsEvent="featureClick"
 															[chevronVisibility]='false'
 															[clickable]="false"
 															*ngIf="securityHealthViewModel.isLWSEnabled===true && securityHealthViewModel.homeDevicePosture.length > 0">
