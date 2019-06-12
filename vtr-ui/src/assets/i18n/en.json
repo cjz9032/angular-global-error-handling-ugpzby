@@ -515,9 +515,13 @@
 					},
 					"deviceChemistry": {
 						"li-polymer": "Li-Polymer",
-						"li-ion": "Li-Ion",
 						"li_polymer": "Li-Polymer",
+						"li-ion": "Li-Ion",
 						"li_ion": "Li-Ion",
+						"silver-zinc": "Silver-Zinc",
+						"silver_zinc": "Silver-Zinc",
+						"nicd": "NiCd",
+						"nimh": "NiMH",
 						"unknown": "Unknown"
 					},
 					"manufacturer": {

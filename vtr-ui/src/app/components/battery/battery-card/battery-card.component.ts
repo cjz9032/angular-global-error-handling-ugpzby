@@ -36,7 +36,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 	batteryConditionsEnum = BatteryConditionsEnum;
 	batteryConditionTranslations: BatteryConditionTranslation[];
 	batteryQuality = BatteryQuality;
-
+	isBatteryDetailsBtnDisabled = true;
 	// percentageLimitation: Store Limitation Percentage
 	percentageLimitation = 60;
 
@@ -97,6 +97,9 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 				this.batteryInfo = response;
 				this.batteryInfo = response.batteryInformation;
 				this.batteryGauge = response.batteryIndicatorInfo;
+				this.isBatteryDetailsBtnDisabled =
+					this.batteryGauge.isPowerDriverMissing || this.batteryInfo.length === 0 ||
+					this.batteryInfo[0] === undefined || this.batteryInfo[0] === null;
 				this.updateBatteryDetails();
 				this.getBatteryCondition();
 			}).catch(error => {
@@ -109,6 +112,10 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryIndicator.charging = this.batteryGauge.isAttached;
 		this.batteryIndicator.convertMin(this.batteryGauge.time);
 		this.batteryIndicator.timeText = this.batteryGauge.timeType;
+		if (this.batteryInfo.length === 0 && (this.batteryInfo[0].batteryHealth === null
+			|| this.batteryInfo[0].batteryHealth === undefined)) {
+			this.batteryInfo[0].batteryHealth = 0;
+		}
 		this.batteryIndicator.batteryHealth = this.batteryIndicator.getBatteryHealth(this.batteryInfo[0].batteryHealth);
 		this.batteryIndicator.expressCharging = this.batteryInfo[0].isExpressCharging;
 		this.batteryIndicator.voltageError = this.batteryInfo[0].isVoltageError;
