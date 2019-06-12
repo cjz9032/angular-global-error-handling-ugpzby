@@ -4,10 +4,8 @@ import { map, tap } from 'rxjs/operators';
 import { UserAllowService } from '../../common/services/user-allow.service';
 import { TrackingMapService } from './services/tracking-map.service';
 import { SingleTrackersInfo, TrackersInfo, typeData } from './services/tracking-map.interface';
-import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { AnalyticsService } from '../../common/services/analytics.service';
 import { GetParentForAnalyticsService } from '../../common/services/get-parent-for-analytics.service';
-import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
 
 export const DEFAULT_ICON = {
 	site: '/assets/images/privacy-tab/Website_Standart.png',
@@ -21,24 +19,13 @@ export const DEFAULT_ICON = {
 })
 export class TrackingMapComponent implements OnInit, OnDestroy {
 	@Input() animate = false;
-	isFigleafInstalled$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
-	isConsentGiven$ = this.userAllowService.allowToShow.pipe(map((value) => value['trackingMap']));
-	websiteTrackersCount$ = this.countNumberOfIssuesService.websiteTrackersCount;
+
 	percentOfTrack = 0;
 	readonly trackingMapSinglePopupId = 'trackingMapSingle';
 	isUserData = false;
 	trackingData$ = this.getTrackingData();
 	isTrackersBlocked$ = this.trackingMapService.isTrackersBlocked$;
 	defaultIcon = DEFAULT_ICON;
-
-	tryProductText = {
-		risk: 'Most websites collect your IP address, location, social profile information, ' +
-			'and even shopping history to personalize your experience, show targeted ads, ' +
-			'or suggest things based on your interests.',
-		howToFix: 'You can block some tracking tools by turning on the ‘Do Not Track’ feature in your browser. ' +
-			'Or install Lenovo Privacy by FigLeaf and block them ' +
-			'completely from collecting your personal information.'
-	};
 
 	textForLoader = 'Creating tracker map for the most popular websitess';
 
@@ -48,8 +35,6 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 		private userAllowService: UserAllowService,
 		private analyticsService: AnalyticsService,
 		private getParentForAnalyticsService: GetParentForAnalyticsService,
-		private communicationWithFigleafService: CommunicationWithFigleafService,
-		private countNumberOfIssuesService: CountNumberOfIssuesService
 	) {
 	}
 
@@ -77,10 +62,6 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 			ItemName: 'WebsiteTrackersDetailItem',
 			ItemParent: this.getParentForAnalyticsService.getPageName() + '.' + 'WebsiteTrackersBlock',
 		});
-	}
-
-	giveConcent() {
-		this.userAllowService.setShowTrackingMap(true);
 	}
 
 	private getPercentOfTrack(trackerData: SingleTrackersInfo, trackingsData: TrackersInfo) {
