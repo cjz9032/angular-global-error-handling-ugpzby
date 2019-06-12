@@ -27,8 +27,8 @@
 				<div class="row">
 					<div class="col-5 number-container">
 						<div class="icon">
-							<img class="img-fluid" src="assets/images/connected-home-security/ecosystem-circle-green2x.png" *ngIf="logonStatus!=='trail expired'"/>
-							<img class="img-fluid circle-red" src="assets/images/connected-home-security/ecosystem-circle-red.svg" *ngIf="logonStatus==='trail expired'"/>
+							<img class="img-fluid circle" src="assets/images/connected-home-security/ecosystem-circle-green.svg" *ngIf="logonStatus!=='trail expired'"/>
+							<img class="img-fluid circle" src="assets/images/connected-home-security/ecosystem-circle-red.svg" *ngIf="logonStatus==='trail expired'"/>
 						</div>
 						<div class="device-number" [ngClass]="{'sizeChange': deviceMoreThanTen}" *ngIf="devicesNumber!==0">{{devicesNumber}}</div>
 					</div>
