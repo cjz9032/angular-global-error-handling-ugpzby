@@ -1,13 +1,13 @@
-<ng-container *ngFor="let browser of (installedBrowsers$ | async).browserData; trackBy: trackByBrowser; let i = index">
+<div *ngFor="let browser of (installedBrowsers$ | async).browserData; trackBy: trackByBrowser; let i = index">
 	<vtr-installed-browser
 		[installedBrowser]="browser"
 		[showDetailAction]="inputData.showDetailAction"
 		[index]="i"
 		[isDetailsExpanded]="i === openPasswordId"
-		(click)="openAccordion(i)">
+		(openAccordion)="openAccordion($event)">
 	</vtr-installed-browser>
-</ng-container>
+</div>
 <vtr-try-product-block
-	*ngIf="openPasswordId === null"
+	*ngIf="openPasswordId === null && (isShowTryBlock$ | async)"
 	[texts]="tryProductText">
 </vtr-try-product-block>

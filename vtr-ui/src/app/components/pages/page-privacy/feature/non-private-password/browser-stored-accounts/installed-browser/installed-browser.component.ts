@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { InstalledBrowser } from '../../../../common/services/browser-accounts.service';
 import { CommunicationWithFigleafService } from '../../../../utils/communication-with-figleaf/communication-with-figleaf.service';
 
@@ -13,6 +13,8 @@ export class InstalledBrowserComponent {
 	@Input() installedBrowser: InstalledBrowser;
 	@Input() index: number;
 	@Input() isDetailsExpanded = false;
+
+	@Output() openAccordion = new EventEmitter<number>();
 
 	tryProductText = {
 		risk: 'People often reuse the same password for many websites. This leads to multiple account breaches if the password exposed.',

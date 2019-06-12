@@ -150,6 +150,13 @@ $topIndent: -5.6rem;
 			transform: translateY(-50%) rotate(0deg);
 		}
 	}
+
+	&--disabled {
+		&:before {
+			background-image: url("/assets/icons/privacy-tab/icon-grey-arrow.svg");
+			transform: translateY(-50%) rotate(0deg);
+		}
+	}
 }
 
 %button-text {

@@ -14,39 +14,28 @@
 			No saved accounts in {{installedBrowser.name}}
 		</p>
 		<p *ngIf="installedBrowser.accountsCount === null" class="installed-browser__title">{{installedBrowser.name}}</p>
-        <p class="installed-browser__text">
-          You should consider a more private place to store your emails and passwords.
-        </p>
       </div>
     </div>
     <!--before concent-->
     <button disabled *ngIf="installedBrowser.accountsCount === null"
 			class="installed-browser__btn installed-browser__btn--disabled">
-		See details
+		Details
 	</button>
     <!--browser does NOT have stored passwords-->
     <div *ngIf="installedBrowser.accountsCount === 0" class="accounts-safe"></div>
     <!--browser has stored passwords-->
-    <a *ngIf="showDetailAction === 'link' && installedBrowser.accountsCount"
-	   class="installed-browser__btn"
-	   routerLink="./browser-accounts"
-       vtrSendAnalytics
-       [metricsEvent]="'ItemClick'"
-       [metricsItem]="'NonPrivatePasswordsDetailItem'"
-	   [queryParams]="{openId: index}">
-		Show details
-	</a>
     <button *ngIf="showDetailAction === 'expand' && installedBrowser.accountsCount"
 			class="installed-browser__btn"
             vtrSendAnalytics
             [metricsEvent]="'ItemClick'"
             [metricsItem]="'NonPrivatePasswordsDetailItem'"
-			[class.installed-browser__btn--expanded]="isDetailsExpanded">
-		<span>Details</span>
+			[class.installed-browser__btn--expanded]="isDetailsExpanded"
+			(click)="openAccordion.emit(index)">
+		Details
 	</button>
   </div>
-  <div *ngIf="isDetailsExpanded" class="installed-browser__content" data-analyticsName="Details">
-    <div *ngIf="installedBrowser.accounts" class="browser-accounts__wrapper">
+  <div [hidden]="!isDetailsExpanded" class="installed-browser__content" data-analyticsName="Details">
+    <div [hidden]="!installedBrowser.accounts" class="browser-accounts__wrapper">
       <div class="accounts-title">
         <div class="accounts-title__img-col"></div>
         <div class="accounts-title__text-wrapper">

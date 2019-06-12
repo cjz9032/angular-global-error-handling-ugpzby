@@ -13,7 +13,7 @@ import { merge } from 'rxjs';
 	styleUrls: ['./sidebar-install-widget.component.scss']
 })
 export class SidebarInstallWidgetComponent implements OnInit, OnDestroy {
-	primaryButtonText = 'Try Lenovo Privacy';
+	primaryButtonText = 'Install Lenovo Privacy';
 	linkButtonText = 'Learn more';
 
 	installWidgetSettings: InstallWidgetPageSettings = {

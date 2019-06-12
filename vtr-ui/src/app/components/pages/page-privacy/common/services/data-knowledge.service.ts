@@ -36,6 +36,7 @@ export class DataKnowledgeService {
 	}
 
 	private getKnowledgeBase() {
+		console.log('this.dataKnowledgeCache$', this.dataKnowledgeCache$);
 		if (!this.dataKnowledgeCache$) {
 			this.dataKnowledgeCache$ = this.requestDataKnowledge().pipe(
 				expand((response) => {

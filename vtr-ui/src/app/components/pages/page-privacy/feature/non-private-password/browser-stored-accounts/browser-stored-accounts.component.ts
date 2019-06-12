@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BrowserAccountsService } from '../../../common/services/browser-accounts.service';
+import { BrowserAccountsService, InstalledBrowser } from '../../../common/services/browser-accounts.service';
+import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
+import { distinctUntilChanged, map } from 'rxjs/operators';
+import { FeaturesStatuses } from '../../../userDataStatuses';
 
 @Component({
 	selector: 'vtr-browser-stored-accounts',
@@ -16,11 +19,22 @@ export class BrowserStoredAccountsComponent implements OnInit {
 		howToFix: 'Avoid reusing and storing your passwords in your browsers. Create strong, unique passwords for every account with Lenovo Privacy by FigLeaf and store them in encrypted form on your PC.'
 	};
 
+	isShowTryBlock$ = this.userDataGetStateService.userDataStatus$.pipe(
+		map((userDataStatus) =>
+			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.undefined &&
+			userDataStatus.nonPrivatePasswordResult !== FeaturesStatuses.error),
+		distinctUntilChanged(),
+	);
+
+
 	openAccordion(index) {
 		this.openPasswordId = this.openPasswordId === index ? null : index;
 	}
 
-	constructor(private browserAccountsService: BrowserAccountsService) {
+	constructor(
+		private browserAccountsService: BrowserAccountsService,
+		private userDataGetStateService: UserDataGetStateService
+	) {
 	}
 
 	ngOnInit() {

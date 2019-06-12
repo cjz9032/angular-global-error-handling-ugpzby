@@ -56,7 +56,7 @@ Use your browser to view websites, and come back here later, then we can show wh
 	</div>
 
 	<vtr-try-product-block
-		*ngIf="animate && !(isFigleafInstalled$ | async)"
+		*ngIf="isUserData && !(isFigleafInstalled$ | async)"
 		[texts]="tryProductText">
 	</vtr-try-product-block>
 

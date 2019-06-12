@@ -45,19 +45,25 @@
 
 	&__btn {
 		@extend %button-link;
-		cursor: pointer;
 		color: #4A81FD;
 		font-size: 1.6rem;
 		font-weight: 500;
 		line-height: 2.3rem;
 		letter-spacing: 0.5px;
 
-		&--disabled {
-			background: linear-gradient(270deg, #E2E2E2 0%, #C2C6CF 100%);
-		}
-
 		&--expanded {
 			@extend %button-link--open;
+		}
+
+		&--disabled {
+			@extend %button-link--disabled;
+			text-transform: initial;
+			color: #667481;
+			cursor: default;
+
+			&:hover{
+				color: #667481;
+			}
 		}
   }
   &__content {
