@@ -1,6 +1,6 @@
 @import "../../../app.theme.scss";
 
-.color-wheel {
+.picker-container {
 	.color-display {
 		width: 0;
 		height: 0;
@@ -29,9 +29,38 @@
 }
 
 /deep/ {
-	.color-wheel {
+	.picker-container {
 		.color-picker {
-			width: 100% !important;
+			border: 0;
+			border-radius: $border_radius_sm;
+			background: $gaming_shade;
+			.saturation-lightness {
+				border-radius: $border_radius_sm $border_radius_sm 0 0;
+			}
+			.hue-alpha {
+				.selected-color-background {
+					opacity: 0;
+				}
+			}
+			.selected-color {
+				border: 0;
+			}
+			.rgba-text {
+				.box {
+					padding: 0 8px 8px 8px;
+					div {
+						color: $gaming_lighter;
+					}
+					input {
+						color: $gaming_lightest;
+						background: $gaming_darker;
+						border: 0
+					}
+				}
+			}
+			.type-policy {
+				display: none;
+			}
 		}
 	}
 }

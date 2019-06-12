@@ -1,6 +1,6 @@
-<div class="color-wheel">
-	<input class="color-display" [(colorPicker)]="color" [style.background]="color" [cpAlphaChannel]="'disabled'" [cpDialogDisplay]="'inline'" 
-	[cpOutputFormat]="'rgba'" [cpToggle]="true"/>
+<div class="picker-container" #pickerContainer>
+	<input *ngIf="showPicker" class="color-display" [(colorPicker)]="color" [style.background]="color" [cpAlphaChannel]="'disabled'" [cpDialogDisplay]="'inline'" 
+	[cpOutputFormat]="'rgba'" [cpToggle]="true" [cpWidth]="pickerContainerWidth" (colorPickerChange)="colorChanged($event)"/>
 	<!-- <div class="rgb-values">
 		<div class="form-group d-flex">
 			<label>R:</label>
