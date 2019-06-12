@@ -12,6 +12,7 @@ export class UiNumberButtonComponent implements OnInit {
 	@Input() public recordingStatus: Boolean;
 	@Input() public selectedNumber;
 	@Output() public numberSelected = new EventEmitter<any>();
+	isShowingPopup: Boolean = false;
 
 	modalContent = {
 		headerTitle: 'gaming.macroKey.popupContent.maximumInput.title',
