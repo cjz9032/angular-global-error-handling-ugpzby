@@ -10,7 +10,7 @@ export class UiMacrokeyDetailsComponent implements OnInit {
 	@Input() number;
 	@Input() isNumberpad = false;
 	@Output() isRecording = new EventEmitter<any>();
-	@Input() recordedData: any;
+	@Input() keyData: any;
 	public recording = false;
 	public showModal = false;
 	public stopInterval: any;

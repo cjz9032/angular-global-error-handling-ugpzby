@@ -11,6 +11,8 @@ import { Gaming } from 'src/app/enums/gaming.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { isUndefined } from 'util';
+import { MacroKeyRecordedChange } from 'src/app/data-models/gaming/macrokey/macrokey-recorded-change.model';
+import { MacroKeyInputChange } from 'src/app/data-models/gaming/macrokey/macrokey-input-change.model';
 
 @Component({
 	selector: 'vtr-widget-macrokey-settings',
@@ -18,7 +20,7 @@ import { isUndefined } from 'util';
 	styleUrls: [ './widget-macrokey-settings.component.scss' ]
 })
 export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
-	private macroKeyOptions: any = [
+	macroKeyOptions: any = [
 		{
 			title: 'gaming.macroKey.status.on.title',
 			name: 'gaming.macroKey.status.on.title',
@@ -39,58 +41,14 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		}
 	];
 
-	macroKeyStatusSelectedValue = 1;
-
-	numberPadbottons = [
-		{
-			key: '7',
-			status: false
-		},
-		{
-			key: '8',
-			status: false
-		},
-		{
-			key: '9',
-			status: false
-		},
-		{
-			key: '4',
-			status: false
-		},
-		{
-			key: '5',
-			status: false
-		},
-		{
-			key: '6',
-			status: false
-		},
-		{
-			key: '1',
-			status: false
-		},
-		{
-			key: '2',
-			status: false
-		},
-		{
-			key: '3',
-			status: false
-		},
-		{
-			key: '0',
-			status: false
-		}
-	];
-	numbers = this.numberPadbottons;
 	numberSelected;
-
-	macroKeyTypeStatus: any = new MacroKeyTypeStatus();
 	isNumpad: Boolean = true;
 	isRecording: Boolean = false;
 	recordedKeyData: any;
-	public gamingProperties: any = new GamingAllCapabilities();
+	gamingProperties: GamingAllCapabilities = new GamingAllCapabilities();
+	macroKeyTypeStatus: MacroKeyTypeStatus = new MacroKeyTypeStatus();
+	macroKeyRecordedStatus: MacroKeyRecordedChange[];
+	macroKeyInputData: MacroKeyInputChange = new MacroKeyInputChange();
 
 	constructor(
 		private macroKeyService: MacrokeyService,
@@ -174,7 +132,6 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		} else {
 			this.isNumpad = true;
 		}
-		this.macroKeyStatusSelectedValue = this.macroKeyTypeStatus.MacroKeyStatus;
 	}
 
 	onGamingMacroKeyRecordedChangeEvent(macroKeyRecordedChangeEventResponse: any) {
@@ -184,7 +141,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	}
 
 	updateMacroKeyRecordedStatusDetails(macroKeyRecordedChangeEventStatus) {
-		this.numbers = macroKeyRecordedChangeEventStatus;
+		this.macroKeyRecordedStatus = macroKeyRecordedChangeEventStatus;
 	}
 
 	onGamingMacroKeyKeyChangeEvent(macroKeyKeyChangeEventResponse: any) {
@@ -195,8 +152,10 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 
 	updateMacroKeyKeyChangeDetails(macroKeyKeyChangeEventData) {
 		if (macroKeyKeyChangeEventData) {
-			this.numberSelected = this.numbers.filter((number) => number.key === macroKeyKeyChangeEventData.key)[0];
-			this.recordedKeyData = macroKeyKeyChangeEventData.macro;
+			this.macroKeyInputData = macroKeyKeyChangeEventData;
+			this.numberSelected = this.macroKeyRecordedStatus.filter(
+				(number) => number.key === macroKeyKeyChangeEventData.key
+			)[0];
 		}
 	}
 
@@ -232,7 +191,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 
 	updateMacroKeyInputDetails(macroKeyInputChangeData) {
 		if (macroKeyInputChangeData) {
-			this.recordedKeyData = macroKeyInputChangeData;
+			this.macroKeyInputData.macro.inputs = macroKeyInputChangeData;
 		}
 	}
 }

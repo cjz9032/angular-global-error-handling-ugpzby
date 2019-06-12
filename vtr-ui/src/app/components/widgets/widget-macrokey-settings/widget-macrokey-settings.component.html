@@ -10,7 +10,7 @@
 						<vtr-ui-macrokey-collapsible-container
 							[isRecording]="isRecording"
 							[options]="macroKeyOptions"
-							[selectedValue]="macroKeyStatusSelectedValue"
+							[selectedValue]="macroKeyTypeStatus.MacroKeyStatus"
 							(change)="optionChanged($event)">
 						</vtr-ui-macrokey-collapsible-container>
 					</div>
@@ -19,7 +19,7 @@
 					<div class="macrokey-wrapper" [ngClass]="{numberpad: isNumpad}">
 						<div class="numbers-wrapper">
 							<vtr-ui-number-button
-								[numbers]="numbers"
+								[numbers]="macroKeyRecordedStatus"
 								(numberSelected)="onNumberSelected($event)"
 								[isNumberpad]="isNumpad"
 								[selectedNumber]="numberSelected"
@@ -31,9 +31,7 @@
 								[number]="numberSelected"
 								[isNumberpad]="isNumpad"
 								(isRecording)="onRecordingChanged($event)"
-								[intervalValue]=""
-								[repeatValue]=""
-								[recordedData]="recordedKeyData">
+								[keyData]="macroKeyInputData.macro">
 							</vtr-ui-macrokey-details>
 						</div>
 					</div>
