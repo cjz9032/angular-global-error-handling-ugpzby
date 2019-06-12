@@ -1,13 +1,13 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CommonPopupService } from '../../common/services/popups/common-popup.service';
-import { filter, map, takeUntil, tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { UserAllowService } from '../../common/services/user-allow.service';
-import { instanceDestroyed } from '../../utils/custom-rxjs-operators/instance-destroyed';
 import { TrackingMapService } from './services/tracking-map.service';
 import { SingleTrackersInfo, TrackersInfo, typeData } from './services/tracking-map.interface';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
 import { AnalyticsService } from '../../common/services/analytics.service';
 import { GetParentForAnalyticsService } from '../../common/services/get-parent-for-analytics.service';
+import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
 
 export const DEFAULT_ICON = {
 	site: '/assets/images/privacy-tab/Website_Standart.png',
@@ -22,7 +22,8 @@ export const DEFAULT_ICON = {
 export class TrackingMapComponent implements OnInit, OnDestroy {
 	@Input() animate = false;
 	isFigleafInstalled$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
-
+	isConsentGiven$ = this.userAllowService.allowToShow.pipe(map((value) => value['trackingMap']));
+	websiteTrackersCount$ = this.countNumberOfIssuesService.websiteTrackersCount;
 	percentOfTrack = 0;
 	readonly trackingMapSinglePopupId = 'trackingMapSingle';
 	isUserData = false;
@@ -48,11 +49,11 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 		private analyticsService: AnalyticsService,
 		private getParentForAnalyticsService: GetParentForAnalyticsService,
 		private communicationWithFigleafService: CommunicationWithFigleafService,
+		private countNumberOfIssuesService: CountNumberOfIssuesService
 	) {
 	}
 
 	ngOnInit() {
-		this.listenPermit();
 	}
 
 	ngOnDestroy() {
@@ -78,6 +79,10 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 		});
 	}
 
+	giveConcent() {
+		this.userAllowService.setShowTrackingMap(true);
+	}
+
 	private getPercentOfTrack(trackerData: SingleTrackersInfo, trackingsData: TrackersInfo) {
 		return Math.round((trackerData.sites.length / Object.keys(trackingsData.sites).length) * 100);
 	}
@@ -87,12 +92,5 @@ export class TrackingMapComponent implements OnInit, OnDestroy {
 			tap((val) => this.isUserData = val.typeData === typeData.Users),
 			map((val) => val.trackingData)
 		);
-	}
-
-	private listenPermit() {
-		this.userAllowService.allowToShow.pipe(
-			filter((value) => value.hasOwnProperty('trackingMap')),
-			takeUntil(instanceDestroyed(this)),
-		).subscribe(() => this.trackingMapService.updateTrackingData());
 	}
 }
