@@ -374,7 +374,7 @@ export class PowerService {
 	public getITSModeForICIdeapad() {
 		try {
 			if (this.intelligentCoolingForIdeaPad) {
-				return this.intelligentCoolingForIdeaPad.GetITSMode();
+				return this.intelligentCoolingForIdeaPad.getITSSettings();
 			}
 			return undefined;
 		} catch (error) {
@@ -385,7 +385,7 @@ export class PowerService {
 	public setITSModeForICIdeapad(mode: string) {
 		try {
 			if (this.intelligentCoolingForIdeaPad) {
-				return this.intelligentCoolingForIdeaPad.SetITSMode(mode);
+				return this.intelligentCoolingForIdeaPad.setITSSettings(mode);
 			}
 			return undefined;
 		} catch (error) {

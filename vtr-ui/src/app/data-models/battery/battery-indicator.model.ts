@@ -15,7 +15,7 @@ class BatteryIndicator {
         this.minutes = Math.trunc(totalMin % 60);
     }
 
-    getBatteryHealth(batteryHealth): string {
+    getBatteryHealth(batteryHealth: number): string {
         switch (batteryHealth) {
             case 3:
                 batteryHealth = 1;
