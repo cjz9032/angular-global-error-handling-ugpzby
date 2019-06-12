@@ -382,7 +382,7 @@
 		"quickSettings": {
 			"title": "Your Quick Settings",
 			"microphone": "Microphone",
-			"cameraPrivacy": "Camera Privacy",
+			"cameraPrivacy": "Camera",
 			"eyeCareMode": "Eye Care Mode"
 		},
 		"systemStatus": {
@@ -515,9 +515,13 @@
 					},
 					"deviceChemistry": {
 						"li-polymer": "Li-Polymer",
-						"li-ion": "Li-Ion",
 						"li_polymer": "Li-Polymer",
+						"li-ion": "Li-Ion",
 						"li_ion": "Li-Ion",
+						"silver-zinc": "Silver-Zinc",
+						"silver_zinc": "Silver-Zinc",
+						"nicd": "NiCd",
+						"nimh": "NiMH",
 						"unknown": "Unknown"
 					},
 					"manufacturer": {
@@ -594,6 +598,7 @@
 					"description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
 					"description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
 					"description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
+					"description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
 					"description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
 					"readMore": "Read more.",
 					"gotoWindows": {
@@ -613,7 +618,11 @@
 							"performance4": "Performance",
 							"quiteCool5": "Quiet & Cool",
 							"performance5": "Performance",
-							"batterySaving": "Battery Saving"
+							"batterySaving": "Battery Saving",
+							"performance13": "Performance",
+							"quiteCool13": "Quiet & Cool",
+							"performance14": "Extreme Performance",
+							"quiteCool14": "Intelligent Cooling"
 						},
 						"selectedModeText": {
 							"quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
