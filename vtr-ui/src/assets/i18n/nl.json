@@ -268,7 +268,7 @@
         "menu": {
             "dashboard": "Dashboard",
             "device": {
-                "title": "My Device",
+                "title": "Device",
                 "sub1": "My Device",
                 "sub2": "My Device Settings",
                 "sub3": "System Updates",
@@ -382,7 +382,7 @@
         "quickSettings": {
             "title": "Your Quick Settings",
             "microphone": "Microphone",
-            "cameraPrivacy": "Camera Privacy",
+            "cameraPrivacy": "Camera",
             "eyeCareMode": "Eye Care Mode"
         },
         "systemStatus": {
@@ -421,103 +421,104 @@
     },
     "device": {
         "myDevice": {
-            "title": "My Device",
-            "subtitle": "My device status",
-            "serial": "Serial",
-            "productNumber": "Product number",
-            "biosVersion": "Bios version",
-            "learnMore": "Learn more",
-            "freeMemory": "Free memory",
+            "title": "Mijn apparaat",
+            "subtitle": "Mijn apparaatstatus",
+            "serial": "Serieel",
+            "productNumber": "Productnummer",
+            "biosVersion": "BIOS-versie",
+            "learnMore": "Meer informatie",
+            "freeMemory": "Vrij geheugen",
             "systemUpdate": {
-                "title": "System update",
-                "notFound": "System update not found",
+                "title": "Systeemupdate",
+                "notFound": "Systeemupdate niet gevonden",
                 "detail": {
-                    "uptoDate": "Software up to date ",
-                    "updatedOn": "updated on ",
-                    "outdated": "Software outdated ",
-                    "neverRanUpdate": "never ran update"
+                    "uptoDate": "Software bijgewerkt",
+                    "updatedOn": "bijgewerkt op",
+                    "outdated": "Software verouderd",
+                    "neverRanUpdate": "update nooit uitgevoerd"
                 }
             },
-            "extendedWarranty": "Extend warranty",
+            "extendedWarranty": "Garantie uitbreiden",
             "processor": {
                 "title": "Processor",
-                "notFound": "Processor not found"
+                "notFound": "Processor niet gevonden"
             },
             "memory": {
-                "title": "Memory",
-                "notFound": "Memory not found",
-                "ram": "RAM"
+                "title": "Geheugen",
+                "notFound": "Geheugen niet gevonden",
+                "ram": "RAM-geheugen"
             },
             "diskspace": {
-                "title": "Disk Space",
-                "notFound": "Disk not found"
+                "title": "Schijfruimte",
+                "notFound": "Schijf niet gevonden"
             },
-            "software": "Software up to date",
-            "updated": "Updated",
-            "outOfWarranty": "Out of warranty",
-            "expired": "Expired on",
-            "of": "of",
+            "software": "Software bijgewerkt",
+            "updated": "Bijgewerkt",
+            "outOfWarranty": "Valt buiten de garantie",
+            "expired": "Verlopen op",
+            "of": "van",
             "warranty": {
-                "notFound": "Warranty not found",
+                "notFound": "Garantie niet gevonden",
                 "detail": {
-                    "title": "Extend warranty",
-                    "inWarranty": "In warranty ",
-                    "daysRemaining": "days remaining",
-                    "outOfWarranty": "Out of warranty ",
-                    "expiredOn": "Expired on",
-                    "notAvailable": "Warranty not available",
-                    "support": "Support"
+                    "title": "Garantie uitbreiden",
+                    "inWarranty": "Valt binnen garantie",
+                    "daysRemaining": "dagen over",
+                    "outOfWarranty": "Valt buiten de garantie",
+                    "expiredOn": "Verlopen op",
+                    "notAvailable": "Garantie niet beschikbaar",
+                    "support": "Ondersteuning"
                 }
             },
-            "helpful": "Helpful Content"
+            "helpful": "Nuttige inhoud"
         },
         "deviceSettings": {
-            "helpful": "Helpful Content",
+            "helpful": "Nuttige inhoud",
             "batteryGauge": {
-                "title": "BATTERY GAUGE",
-                "subtitle": "Battery",
-                "hours": "hours",
-                "hour": "hour",
-                "minutes": "minutes",
-                "minute": "minute",
-                "charge": "TIME TO FULLY CHARGE",
-                "button": "SEE BATTERY DETAILS",
+                "title": "BATTERIJMETER",
+                "subtitle": "Batterijconditie",
+                "hours": "uur",
+                "hour": "uur",
+                "minutes": "minuten",
+                "minute": "minuut",
+                "charge": "TIJD OM VOLLEDIG OP TE LADEN",
+                "button": "ZIE BATTERIJDETAILS",
                 "details": {
-                    "title": "Battery Details",
-                    "primary": "Primary Battery",
-                    "secondary": "Secondary Battery",
-                    "tertiary": "Tertiary Battery",
+                    "title": "Batterijdetails",
+                    "primary": "Primaire batterij",
+                    "secondary": "Secundaire batterij",
+                    "tertiary": "Tertiaire batterij",
                     "status": "Status",
                     "wattage": "Wattage",
-                    "barcode": "Bar-Code",
-                    "remainingPercent": "Remaining percentage",
-                    "temp": "Temperature",
-                    "frupn": "FRU part number",
-                    "remainingTime": "Remaining time",
-                    "chargeCompletionTime": "Charge completion time",
-                    "cycleCount": "Cycle count",
-                    "chemistry": "Device chemistry",
-                    "remainingCap": "Remaining capacity",
-                    "designCap": "Design capacity",
-                    "fullChargeCap": "Full charge capacity",
-                    "manufDt": "Manufacture date",
-                    "designVolt": "Design voltage",
-                    "volts": "Voltage",
-                    "firstUseDt": "First use date",
-                    "firmwareVer": "Firmware version",
+                    "barcode": "Streepjescode",
+                    "remainingPercent": "Resterend percentage",
+                    "temp": "Temperatuur",
+                    "frupn": "FRU-onderdeelnummer",
+                    "remainingTime": "Resterende tijd",
+                    "chargeCompletionTime": "Tijd tot volledig opgeladen",
+                    "cycleCount": "Telling van cyclus",
+                    "chemistry": "Chemische samenstelling van apparaat",
+                    "remainingCap": "Resterende capaciteit",
+                    "designCap": "Ontworpen capaciteit",
+                    "fullChargeCap": "Capaciteit bij volledig geladen",
+                    "manufDt": "Productiedatum",
+                    "designVolt": "Ontworpen spanning",
+                    "volts": "Spanning",
+                    "firstUseDt": "Datum eerste keer gebruikt",
+                    "firmwareVer": "Firmwareversie",
                     "chargeStatusString": {
-                        "error": "ERROR",
-                        "notinstalled": "Not installed",
-                        "noactivity": "No activity",
-                        "charging": "Charging",
-                        "discharging": "Discharging",
-                        "acdischarging": "Discharging (with ac)"
+                        "error": "FOUT",
+                        "notinstalled": "Niet geïnstalleerd",
+                        "noactivity": "Geen activiteit",
+                        "charging": "Bezig met opladen",
+                        "discharging": "Bezig met ontladen...",
+                        "acdischarging": "Bezig met ontladen (op netvoeding)"
                     },
                     "deviceChemistry": {
                         "li-polymer": "Li-Polymer",
                         "li-ion": "Li-Ion",
                         "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion"
+                        "li_ion": "Li-Ion",
+                        "unknown": "Unknown"
                     },
                     "manufacturer": {
                         "title": "Manufacturer",
@@ -576,65 +577,72 @@
                 }
             },
             "power": {
-                "title": "Power",
-                "subtitle": "Power Settings",
-                "description": "This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.",
+                "title": "Energiebeheer",
+                "subtitle": "Energie-instellingen",
+                "description": "In dit gedeelte kunt u de thermische prestaties dynamisch aanpassen en de levensduur van de batterij maximaliseren.U vindt ook andere populaire functies voor energiebeheer. U kunt de standaardinstellingen in dit gedeelte controleren en uw systeem aanpassen aan uw behoeften.",
                 "jumpto": {
-                    "title": "JUMP TO SETTINGS",
-                    "battery": "Battery",
-                    "power": "Power",
-                    "cooling": "Intelligent Cooling",
-                    "other": "Other"
+                    "title": "NAAR INSTELLINGEN GAAN",
+                    "battery": "Batterij",
+                    "power": "Energiebeheer",
+                    "cooling": "Intelligent koelen",
+                    "other": "Andere"
                 },
                 "powerSmartSettings": {
-                    "title": "Power Smart Settings",
-                    "subtitle": "INTELLIGENT COOLING",
-                    "subtitle1": "Battery & Quiet",
-                    "description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
-                    "description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
-                    "readMore": "Read more.",
+                    "title": "Slimme energiebeheerinstellingen",
+                    "subtitle": "INTELLIGENT KOELEN",
+                    "subtitle1": "Batterij en stille modus",
+                    "description1": "Deze functie past de thermische instellingen dynamisch aan uw behoeften aan.",
+                    "description2": "Intelligent koelen regelt de ventilatorsnelheid, maximale temperatuur van de buitenkant van de computer en de prestaties.Deze functie biedt onderstaande modi en is nu toegankelijk via de prestatieschuif in Windows.",
+                    "description3": "Met Intelligent koelen worden de thermische prestaties automatisch afgestemd op uw behoeften.De functie Intelligent koelen past de prestatie-instellingen zodanig aan dat de notebookcomputer een koeler oppervlak krijgt wanneer u deze vasthoudt. Dit verhoogt uw comfort. ",
+                    "readMore": "Meer weergeven.",
                     "gotoWindows": {
-                        "title": "Go to windows settings",
-                        "modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
+                        "title": "Ga naar Windows-instellingen",
+                        "modalBodyText1": "Klik op het Windows-batterijpictogram in het systeemvak voor toegang tot de prestatieschuif in Windows"
                     },
                     "intelligentCooling": {
-                        "title": "Intelligent cooling",
+                        "title": "Intelligent koelen",
                         "description": "",
                         "tooltip": "",
-                        "optimize": "optimize system for",
-                        "apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
+                        "optimize": "systeem optimaliseren voor",
+                        "apsHint": "Als u Intelligent koelen wilt inschakelen, moet u het Lenovo Active Protection System installeren en inschakelen.",
                         "options": {
-                            "quiteCool3": "Cool Mode",
+                            "quiteCool3": "Koelmodus",
                             "performance3": "High Performance",
-                            "quiteCool4": "Quiet & Cool",
-                            "performance4": "Performance",
-                            "quiteCool5": "Quiet & Cool",
-                            "performance5": "Performance"
+                            "quiteCool4": "Stil en koel",
+                            "performance4": "Prestaties",
+                            "quiteCool5": "Stil en koel",
+                            "performance5": "Prestaties",
+                            "batterySaving": "Battery Saving"
                         },
                         "readMore": {
-                            "mode1": "Quiet mode",
-                            "mode2": "Balanced mode",
-                            "mode3": "Performance mode",
-                            "line1": "Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "line2": "Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
-                            "line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "mode1": "Stille modus",
+                            "mode2": "Gebalanceerde modus",
+                            "mode3": "Prestatiemodus",
+                            "line1": "De schuifregelaar is uiterst links.",
+                            "line2": "De schuifregelaar is in het midden.De ventilatorsnelheid en prestaties worden dynamisch gebalanceerd voor een optimale beleving.",
+                            "line3": "De schuifregelaar is uiterst rechts. Er worden een hogere ventilatorsnelheid en een hogere temperatuur van de buitenkant van de computer toegelaten voor maximale prestaties."
+                        },
+                        "selectedModeText": {
+                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
+                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
+                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
                         }
                     },
                     "nonintelligentCooling": {
                         "options": {
-                            "intelligentCooling": "INTELLIGENT COOLING",
-                            "extremeCooling": "EXTREME PERFORMANCE",
-                            "battery&Quite": "BATTERY & QUIET"
+                            "intelligentCooling": "INTELLIGENT KOELEN",
+                            "extremeCooling": "EXTREME PRESTATIES",
+                            "battery&Quite": "BATTERIJ EN STILLE MODUS"
                         }
-                    }
+                    },
+                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar."
                 },
                 "powerSettings": {
-                    "title": "Power Settings",
+                    "title": "Energie-instellingen",
                     "alwaysUSB": {
-                        "title": "Always on USB",
-                        "description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
-                        "checkbox": "Enable USB charging from laptop battery when computer is off."
+                        "title": "USB altijd aan",
+                        "description": "Via de USB altijd aan-aansluiting van de computer laadt u op elk moment USB-apparaten op, zelfs als de computer zich in de sluimerstand of slaapstand bevindt of als deze is uitgeschakeld.Een smartphone of tablet kan snel worden geladen via de USB-aansluiting die een gele codering of zeefdrukprint heeft in deze pictogrammen:",
+                        "checkbox": "Schakel laden via USB vanuit de computeraccu in wanneer de computer uit staat."
                     },
                     "easyResume": {
                         "title": "Easy Resume",
@@ -643,31 +651,31 @@
                     }
                 },
                 "otherSettings": {
-                    "title": "Other Settings",
+                    "title": "Overige instellingen",
                     "vantageToolbar": {
-                        "title": "Lenovo Vantage Toolbar",
-                        "description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
+                        "title": "Werkbalk van Lenovo Vantage",
+                        "description": "Maak de werkbalk van Lenovo Vantage vast aan de Windows-taakbalk om snel meer batterijgegevens en toegang tot snelle instellingen te krijgen."
                     }
                 },
                 "batterySettings": {
-                    "title": "Battery Settings",
+                    "title": "Batterij-instellingen",
                     "batteryThreshold": {
-                        "title": "Battery Charge Threshold",
-                        "description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
-                        "tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
+                        "title": "Drempelwaarde voor batterijlading",
+                        "description": "Als u de computer meestal gebruikt met stroom van het lichtnet en slechts zelden op stroom van de batterij,kunt u de levensduur van de batterij verlengen door de maximale oplaadwaarde in te stellen op minder dan 100%.",
+                        "tooltip": "Als de batterij meer is opgeladen dan de bovenste drempelwaarde, koppelt u de netvoeding los totdat de batterij tot aan de onderste drempelwaarde is ontladen.",
                         "note": "Note",
                         "readMoreText": "Read more.",
                         "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
                         "settings": {
-                            "title1": "Threshold for Built in battery",
-                            "title2": "Threshold for Removable battery"
+                            "title1": "Drempel voor ingebouwde batterij",
+                            "title2": "Drempel voor verwijderbare batterij"
                         },
                         "popup": {
-                            "title": "Enable Battery Charge Threshold",
-                            "description1": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life.",
-                            "description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
-                            "enable": "ENABLE",
-                            "cancel": "CANCEL"
+                            "title": "Drempelwaarde voor batterijlading inschakelen",
+                            "description1": "Als u opladen tot een aangepast niveau inschakelt, blijft de batterij tijdens het gebruik van het apparaat langer in goede conditie.",
+                            "description2": "Haal de stekker uit het stopcontact en ontlaad de batterij tot onder het niveauwaarop het opladen wordt gestopt om deze functie volledig te activeren.",
+                            "enable": "INSCHAKELEN",
+                            "cancel": "ANNULEREN"
                         },
                         "options": {
                             "start": "Start charging when below",
@@ -676,65 +684,65 @@
                         }
                     },
                     "expressCharging": {
-                        "title": "Express Charging",
-                        "description": "Express Charge allows your battery to a full charge much faster than normal mode.",
-                        "tooltip": "Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
+                        "title": "Snel opladen",
+                        "description": "Met Snel opladen kan de batterij veel sneller volledig worden opgeladen dan in de normale modus.",
+                        "tooltip": "Met Snel opladen kunt u de systeembatterij veel sneller opladen,maar de levensduur van de batterij kan hierdoor minder lang worden."
                     },
                     "conservationMode": {
-                        "title": "Conservation Mode",
-                        "description": "This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
+                        "title": "Behoudmodus",
+                        "description": "Deze functie is handig om de levensduur van de batterij te verlengen bij aansluiting.",
                         "tooltip": {
-                            "line1": "This function is useful to extend the lifespan of your battery when plugged.",
-                            "line2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
-                            "line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
+                            "line1": "Deze functie is handig om de levensduur van de batterij te verlengen bij aansluiting.",
+                            "line2": "Als u deze modus inschakelt, wordt de batterij slechts opgeladen tot 55-60% van de capaciteit en kan de levensduur van de batterij worden gemaximaliseerd.",
+                            "line3": "Opmerking: Snel opladen en de Behoudmodus kunnen niet tegelijkertijd actief zijn."
                         }
                     },
                     "airPlanePower": {
-                        "title": "Airplane Power Mode",
-                        "description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
+                        "title": "Energiemodus aan boord van een vliegtuig",
+                        "description": "Bescherm het stopcontact aan boord door het energieverbruik van uw systeem te beheren."
                     }
                 }
             },
             "audio": {
                 "title": "Audio",
-                "subtitle": "Audio Settings",
-                "description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
+                "subtitle": "Audio-instellingen",
+                "description": "In dit gedeelte kunt u uw audio-instellingen automatisch optimaliseren of",
                 "audioSmartsettings": {
-                    "title": "Audio Smart settings",
-                    "subtitle": "APPLICATION-BASED SETTINGS",
-                    "description": "Automatically adjust audio settings according to different apps you are using.",
+                    "title": "Slimme audio-instellingen",
+                    "subtitle": "OP TOEPASSINGEN GEBASEERDE INSTELLINGEN",
+                    "description": "Audio- en beeldscherminstellingen automatisch aanpassen voor de verschillende apps die u gebruikt.",
                     "dolby": {
-                        "title": "Automatic Dolby Audio settings",
-                        "tooltip": "Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
+                        "title": "Automatische Dolby-audio-instellingen",
+                        "tooltip": "Met automatische Dolby audio-instellingen worden Dolby audio-instellingen geconfigureerd voor de juiste modus voor verschillende apps die u gebruikt om uw audio te verbeteren.",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "DYNAMISCH",
+                            "movie": "FILM",
+                            "music": "MUZIEK",
+                            "games": "SPEL",
+                            "voip": "SPRAAK"
                         }
                     },
                     "voip": {
-                        "title": "Automatic Audio Optimization for VoIP",
-                        "tooltip": "Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality."
+                        "title": "Automatische audio-optimalisatie voor VoIP",
+                        "tooltip": "Automatisch overschakelen naar de Dolby-spraakmodus tijdens VoIP-aanroepen"
                     }
                 },
                 "microphone": {
-                    "title": "Microphone",
+                    "title": "Microfoon",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permission to access your microphone. Please turn on access to your microphone for the Lenovo Vantage app."
+                        "title": "opmerking",
+                        "description": "Lenovo Vantage heeft geen toestemming om uw microfoon te gebruiken.Schakel de toegang tot uw microfoon in voor de Lenovo Vantage-app."
                     },
                     "microphone": {
-                        "title": "Microphone",
-                        "tooltip": "You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode."
+                        "title": "Microfoon",
+                        "tooltip": "U kunt uw microfooneffect aanpassen door het microfoonvolume aan te passenen de juiste modus in te stellen."
                     },
                     "volume": {
                         "title": "Microphone Volume",
                         "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
                         "options": {
-                            "silent": "Silent",
-                            "loud": "Loud"
+                            "silent": "Stil",
+                            "loud": "Luid"
                         }
                     },
                     "suppress": {
@@ -749,23 +757,23 @@
                         "title": "Optimize my microphone for:",
                         "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
                         "options": {
-                            "VoiceRecognition": "VOICE RECOGNITION",
-                            "OnlyMyVoice": "ONLY MY VOICE",
-                            "Normal": "NORMAL",
-                            "MultipleVoices": "MULTIPLE VOICES"
+                            "VoiceRecognition": "SPRAAKHERKENNING",
+                            "OnlyMyVoice": "ALLEEN MIJN STEM",
+                            "Normal": "NORMAAL",
+                            "MultipleVoices": "MEERDERE STEMMEN"
                         }
                     }
                 }
             },
             "displayCamera": {
-                "title": "Display & Camera",
-                "subtitle": "Display & Camera Settings",
-                "description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
+                "title": "Weergave en camera",
+                "subtitle": "Instellingen weergave en camera",
+                "description": "In dit gedeelte kunt u uw visuele ervaring verbeteren en de eigenschappen van de camera configureren.Bekijk hier meer functies en pas uw weergave aan.",
                 "jumpTo": {
-                    "title": "JUMP TO SETTINGS",
+                    "title": "NAAR INSTELLINGEN GAAN",
                     "shortcuts": {
                         "display": {
-                            "title": "Display"
+                            "title": "Weergave"
                         },
                         "camera": {
                             "title": "Camera"
@@ -773,24 +781,24 @@
                     }
                 },
                 "display": {
-                    "title": "Display",
+                    "title": "Weergave",
                     "eyeCareMode": {
-                        "title": "Eye Care Mode",
-                        "checkbox": "Schedule eye care mode from sunset to sunrise",
+                        "title": "Oogzorg-modus",
+                        "checkbox": "Oogzorg-modus voor zonsondergang tot zonsopgang plannen",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Warm (beter voor de ogen)",
+                            "cold": "Koud"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Temperatuur opnieuw instellen",
+                        "tooltip": "In de Oogzorg-modus wordt de kleurtemperatuur van uw beeldscherm aangepast om blauw licht eruit te filteren en uw ogen minder te belasten.",
+                        "onSunsetToSunriseScheduleDescription": "Oogzorg-modus voor zonsondergang tot zonsopgang plannen",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "Opmerking",
+                            "description": "Lenovo Vantage heeft toegang nodig tot uw locatiegegevens voor het berekenen van de tijd voor zonsondergang en zonsopgang van uw regio."
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Display color temperature",
+                        "title": "Daytime color temperature",
                         "options": {
                             "warm": "Warm (Better for eyes)",
                             "cold": "Cold"
@@ -800,7 +808,7 @@
                         "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
                         "note": {
                             "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "description": "When the Eye care mode is enabled. this color temperature does not take effect. However,  you can drag the slide to get a preview of it. To make it effective. turn off the Eye care mode"
                         }
                     },
                     "privacyGuard": {
@@ -822,27 +830,27 @@
                 "camera": {
                     "title": "Camera",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permissions to access your camera. Please turn on access to your camera for the Lenovo Vantage app."
+                        "title": "Opmerking",
+                        "description": "Lenovo Vantage heeft geen toestemming om uw camera te gebruiken.Schakel de toegang tot uw camera in voor de Lenovo Vantage-app."
                     },
-                    "url": "Go to windows privacy settings",
+                    "url": "Ga naar Windows-privacyinstellingen",
                     "cameraPrivacy": {
-                        "title": "Camera privacy mode",
-                        "tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling."
+                        "title": "Privacy-modus camera",
+                        "tooltip": "De camera verstuurt geen live-beelden meer als de privacyinstelling is ingesteld. Schakel deze instelling alleen in als u uw foto's niet meer met anderen wilt delen tijdens een videogesprek."
                     },
                     "camera": {
                         "title": "Camera",
-                        "tooltip": "Click here to reset Camera properties to default settings.",
-                        "reset": "Reset factory settings"
+                        "tooltip": "Klik hier om de camera-eigenschappen te herstellen naar de standaardwaarden.",
+                        "reset": "Fabrieksinstellingen herstellen"
                     },
-                    "brightness": "Brightness",
+                    "brightness": "Helderheid",
                     "contrast": "Contrast",
-                    "autoExposure": "Auto Exposure",
-                    "autoFocus": "Auto focus",
-                    "notAvailable": "Camera Not Available",
+                    "autoExposure": "Automatische belichting",
+                    "autoFocus": "Automatisch scherpstellen",
+                    "notAvailable": "Camera niet beschikbaar",
                     "camerablur": {
-                        "title": "Camera Background Blur",
-                        "caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections.",
+                        "title": "Vervaging camera-achtergrond",
+                        "caption": "Deze functie vervaagt de achtergrond wanneer u de camera gebruikt voor een videogesprek of het maken van foto's.U kunt kiezen uit de onderstaande effecten.",
                         "blurMode": "Blur mode",
                         "comicMode": "Comic mode",
                         "sketchMode": "Sketch mode"
@@ -852,60 +860,60 @@
         },
         "smartAssist": {
             "title": "Smart Assist",
-            "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+            "description": "Lenovo Intelligente detectie combineert verschillende sensoren van uw computer",
             "jumpTo": {
-                "title": "JUMP TO SETTINGS",
-                "security": "Security",
-                "screen": "Screen",
+                "title": "NAAR INSTELLINGEN GAAN",
+                "security": "Beveiliging",
+                "screen": "Scherm",
                 "media": "Media",
-                "voice": "Voice"
+                "voice": "Spraak"
             },
             "intelligentSecurity": {
-                "title": "Intelligent Security",
-                "readMore": "Read more",
+                "title": "Intelligente beveiliging",
+                "readMore": "Meer weergeven",
                 "HumanPresenceDetection": {
-                    "title": "Human presence detection",
-                    "tooltip": "Click here to reset the human presence detection settings."
+                    "title": "Aanwezigheidsdetectie personen",
+                    "tooltip": "Klik hier om de instellingen voor de aanwezigheidsdetectie van personen opnieuw in te stellen."
                 },
                 "humanPresenceDetection": {
                     "title": "User Presence Sensing",
                     "tooltip": "Click here to reset human presence Detection settings."
                 },
                 "zeroTouchLogin": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
+                    "title": "Aanmelding bij nul aanraken",
+                    "caption": "Met deze functie wordt de computer automatisch ontgrendeld of uit de slaapstand gehaald wanneer u ervoor zit of er dicht bij komt."
                 },
                 "zeroTouchLock": {
-                    "title": "Zero Touch Lock",
-                    "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+                    "title": "Vergrendeling bij nul aanraken",
+                    "caption": "Deze functie dimt het beeldscherm en vergrendelt de computer wanneer wordt gedetecteerd dat de gebruiker niet aanwezig is.",
                     "autoScreenLockTimer": {
-                        "title": "AUTO SCREEN LOCK TIMER",
+                        "title": "TIMER AUTOMATISCHE SCHERMVERGRENDELING",
                         "radioButton": {
-                            "fast": "Fast",
-                            "medium": "Medium",
-                            "slow": "Slow"
+                            "fast": "Snel",
+                            "medium": "Gemiddeld",
+                            "slow": "Traag"
                         },
-                        "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+                        "toolTipContent": "Selecteer de gewenste optie om het scherm te vergrendelen met een hoge/gemiddelde/lage snelheid als uw aanwezigheid niet wordt gedetecteerd."
                     }
                 },
                 "distanceSensitivityAdjusting": {
                     "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+                    "caption": "De detectieafstand wordt via een AI-engineautomatisch bijgewerkt.",
                     "options": {
-                        "near": "Near",
-                        "far": "Far"
+                        "near": "Dichtbij",
+                        "far": "Ver"
                     }
                 },
                 "note": {
-                    "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-                    "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
-                    "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-                    "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-                    "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+                    "description1": "Deze functie maakt gebruik van Windows Hello.Zorg dat gezichtsherkenning is ingeschakeld in Windows-instellingen.",
+                    "description2": "De functie gebruikt sensoren en de camera om uw aanwezigheid te detecteren.",
+                    "description3": "1. Als uw computer in Tent-, Tablet- of Standaardmodus staat,werken deze functies mogelijk niet helemaal naar wens.",
+                    "description4": "2. Als uw computer in de sluimerstand staat of is uitgeschakeld.Automatische aanmelding via IR-camera werkt niet.",
+                    "description5": "3. Zet uw computerscherm in een hoek waarin de IR-camerauw gezicht kan herkennen voor automatisch aanmelden."
                 },
                 "WindowsLink": {
-                    "goToWindowsHello": "Go to Windows Hello Settings",
-                    "screenTimeoutSettings": "Go to Screen timeout settings"
+                    "goToWindowsHello": "Ga naar Windows Hello-instellingen",
+                    "screenTimeoutSettings": "Ga naar de instellingen voor de time-out van het beeldscherm"
                 },
                 "resetToDefault": "RESET TO DEFAULT SETTINGS"
             },
@@ -937,46 +945,46 @@
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
+        "title": "System Update",
         "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "history": "VOLLEDIGE GESCHIEDENIS",
+        "notAvailable": "Niet beschikbaar",
+        "notInstalled": "Niet geïnstalleerd",
+        "criticalUpdates": "Essentiële update(s)",
+        "recommendedUpdates": "Aanbevolen update(s)",
+        "optionalUpdates": "Optionele update(s)",
+        "ignoredUpdates": "Genegeerde update(s)",
+        "successInstall": "Geïnstalleerd op",
+        "failedInstall": "Installatie mislukt op",
+        "at": "op",
+        "readMore": "Meer weergeven",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+            "reboot": "Opnieuw opstarten",
+            "shutdown": "Afsluiten",
+            "rebootForceMsg": "Het systeem wordt automatisch opnieuw opgestart nadat degeselecteerde update(s) zijn geïnstalleerd.",
+            "shutdownForceMsg": "Het systeem wordt automatisch afgesloten nadat degeselecteerde update(s) zijn geïnstalleerd.",
+            "rebootDelayedMsg": "De update(s) die u hebt geselecteerd, zorgen dat het systeem opnieuw opgestart wordt na de installatie.Schakel tijdens de installatie van updates uw systeem niet uit en verwijder de voedingsbron of accessoires niet. We raden u aan uw werk op te slaan voordat u het systeem opnieuw opstart.",
+            "rebootRequiredMsg": "Om de updates te kunnen installeren, moet de computeropnieuw worden opgestart om te zorgen dat alles veilig en probleemloos werkt.",
             "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "cancelButton": "Annuleren",
+            "rebootButton": "NU OPNIEUW OPSTARTEN",
+            "dismissButton": "NEGEREN",
+            "rebootPending": "Opnieuw opstarten in behandeling"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Instellingen automatisch bijwerken",
+            "subtitle": "UPDATES AUTOMATISCH INSTALLEREN",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Essentiële updates",
+                "tooltip": "Met de essentiële updates worden aanzienlijke problemen,"
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "推荐更新",
+                "tooltip": "推荐的驱动程序更新使计算机运行保持最佳性能。"
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Windows-updates",
+                "url": "Windows-instellingen"
             }
         },
         "support": {
@@ -984,24 +992,24 @@
         },
         "banner": {
             "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "title": "Een bijgewerkt systeem is een gezond systeem.",
+            "last": "Laatst bijgewerkt op",
+            "next": "Volgende bijgewerkte scan is gepland op",
+            "checkButton": "CONTROLEREN OP UPDATES",
+            "checking": "Zoeken naar updates",
+            "downloading": "Updates downloaden voltooid",
+            "installing": "Updates installeren",
+            "percent": "% voltooid",
+            "cancelCheck": "Controle annuleren",
+            "cancelUpdates": "UPDATES ANNULEREN",
+            "available": "Beschikbare updates",
+            "description": "Dit zijn pakketten met updates van stuurprogramma's enandere systeemprogramma's die onmisbaar zijn voor een juiste werking van uw computer. Cruciale updates zijn tevens belangrijk voor de bescherming ",
+            "installButton": "ALLE UPDATES INSTALLEREN",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Alle updates juist zijn geïnstalleerd",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Sommige updates zijn niet juist geïnstalleerd.",
+                    "description": "Er is iets misgegaan tijdens het downloaden of installeren van deze updates.Zorg dat u online bent en zet de computer niet uit wanneer u updates installeert."
                 }
             }
         },
@@ -1055,9 +1063,12 @@
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trialExpired": "Trial expired",
-        "trialExpiredSubtext": "Upgrate to protect all of your devices",
-        "upgrade": "upgrade",
+		"trialExpired": "Trial expired",
+		"trialExpiredSubtext": "Upgrate to protect all of your devices",
+		"upgrade": "upgrade",
+		"freeTrial": "Free 30 day trial",
+		"protectAllDevices": "Protect all of your devices",
+		"startTrial": "Start Trial",
         "tour": {
             "back": "Back",
             "skip": "Skip",

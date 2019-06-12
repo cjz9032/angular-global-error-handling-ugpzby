@@ -18,13 +18,24 @@
 	.description {
 		color: $main_shade;
 		font-size: 1.5rem;
-		text-transform: uppercase;
 		font-weight: $weight_medium;
-    }
-    
-    .account-settings {
+
+		.trial-description {
+			color: $warning_dark;
+		}
+
+		.trial-expired-description {
+			color: $danger_dark;
+		}
+
+		.upgraded-description {
+			color: $good_dark;
+		}
+
+	}
+
+    .already-account {
         font-size: 1.5rem;
-        text-transform: uppercase;
         font-weight: $weight_bold;
     }
 
