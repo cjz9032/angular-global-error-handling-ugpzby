@@ -170,6 +170,7 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 		// }
 	}
 
+	// TODO have to test the functionality from going to another screen to this after JS bridge is done
 	onOptionSelected(event) {
 		if (this.gamingSettings.smartFanFeature) {
 			if (event.target.name === 'gaming.dashboard.device.quickSettings.title') {
@@ -179,6 +180,7 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 				this.thermalModeStatusObj.thermalModeStatus = event.option.value;
 				const oldThermalModeStatusObj = this.gamingQuickSettingsService.GetThermalModeStatus();
 				this.gamingQuickSettingsService.setThermalModeStatus(this.thermalModeStatusObj, oldThermalModeStatusObj);
+				this.drop.curSelected = this.thermalModeStatusObj.thermalModeStatus;
 			}
 		}
 	}
