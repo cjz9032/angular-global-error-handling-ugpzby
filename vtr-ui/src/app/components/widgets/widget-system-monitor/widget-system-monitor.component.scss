@@ -8,15 +8,16 @@
 		background: $dark_cell;
 		box-shadow: $drop_shadow_gaming;
 		padding: 6rem;
-		height: 45rem;
-		@media #{$mediaquery_5} {
-			height: 45rem;
+		height: 40rem;
+		@media #{$large-screen}{
+			height: 40rem;
 		}
-		@media #{$mediaquery_6} {
-			padding: 4rem;
+		@media #{$medium-screen}{
+			height: 40rem;
+		}
+		@media #{$small-screen}{
 			height: auto;
 		}
-
 		.monitor-col {
 			padding: 4rem 0;
 			position: relative;
