@@ -46,8 +46,8 @@
 							[number]="number"
 							[recordingStatus]="recording"
 							[recordsList]="recordedData"
-							(deleteRecords)="recordsDelete($event)"
-							(onClearAll)="clearRecords($event)">
+							(deleteRecord)="deleteRecord($event)"
+							(clearAll)="clearMacroRecords($event)">
 						</vtr-ui-macrokey-recorded-list>
 					</div>
 				</div>
@@ -57,8 +57,8 @@
 					[number]="number"
 					[recordingStatus]="recording"
 					[recordsList]="recordedData"
-					(deleteRecords)="recordsDelete($event)"
-					(onClearAll)="clearRecords($event)">
+					(deleteRecord)="deleteRecord($event)"
+					(clearAll)="clearMacroRecords($event)">
 				</vtr-ui-macrokey-recorded-list>
 			</div>
 		</div>
