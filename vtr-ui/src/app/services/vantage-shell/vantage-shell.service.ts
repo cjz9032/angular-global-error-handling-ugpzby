@@ -489,10 +489,12 @@ export class VantageShellService {
      */
 	public setMacroKeyClear(macroKey: string): any {
 		if (this.phoenix) {
+			console.log('Deleting the following macro key ---->', macroKey);
 			return this.phoenix.gaming.gamingMacroKey.setClear(macroKey);
 		}
 		return undefined;
 	}
+
 	public getGamingMacroKey(): any {
 		if (this.phoenix && this.phoenix.gaming) {
 			return this.phoenix.gaming.gamingMacroKey;
