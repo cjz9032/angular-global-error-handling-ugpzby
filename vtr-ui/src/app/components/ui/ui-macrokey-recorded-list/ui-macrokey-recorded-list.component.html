@@ -1,12 +1,13 @@
 <div class="row">
 	<div class="col-sm-12" *ngIf="!recordingStatus">
 		<div class="title-main">
-			{{ 'gaming.macroKey.details.recorded.title' | translate }}<span>{{ number.title | translate }}</span>
+			{{ 'gaming.macroKey.details.recorded.title' | translate }}<span><span *ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span> {{ number.key | translate }}</span>
 		</div>
 	</div>
 	<div class="col-6" *ngIf="!recordingStatus">
 		<div class="select-wrapper">
 			<vtr-ui-macrokey-collapsible-container
+				[selectedValue]="repeatSelectedValue"
 				[options]="repeatOptions"
 				[enableDescription]="false"
 				(change)="onRepeatChanged($event)">
@@ -16,6 +17,7 @@
 	<div class="col-6" *ngIf="!recordingStatus">
 		<div class="select-wrapper">
 			<vtr-ui-macrokey-collapsible-container
+				[selectedValue]="delaySelectedValue"
 				[options]="intervalOptions"
 				(change)="onIntervalChanged($event)">
 			</vtr-ui-macrokey-collapsible-container>
@@ -28,8 +30,8 @@
 				<div class="interval" [ngClass]="{'hide': ignoreInterval}">{{ 'gaming.macroKey.details.recorded.list.header.col2' | translate }}</div>
 			</div>
 			<div class="record-list">
-				<div class="record-item" *ngFor="let record of recordsList; let i = index;">
-					<ng-container *ngIf="i%2==0">
+				<ng-container *ngFor="let record of recordsList; let i = index;">
+					<div class="record-item" *ngIf="i%2==0">
 						<div class="pressing">
 							<div class="key">
 								<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1">
@@ -43,7 +45,7 @@
 								{{ record.interval + ' ms' | translate}}
 							</div>
 						</div>
-						<div class="releasing" *ngIf="recordsList[i+1]">
+						<div class="releasing">
 							<div class="key">
 								<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1">
 									<g id="10.Subpages/macroKey/release" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -59,8 +61,8 @@
 						<div class="delete-button" (click)="recordDelete(record)">
 							<img src="../../../../assets/gaming-icons/bin.svg" class="icon"/> {{ 'gaming.macroKey.details.recorded.deleteKey' | translate }}
 						</div>
-					</ng-container>
-				</div>
+					</div>
+				</ng-container>
 			</div>
 			<div class="record-footer">
 				{{ 'gaming.macroKey.details.recorded.list.footer.title' | translate }}

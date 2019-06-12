@@ -21,4 +21,32 @@ export class MacrokeyService {
 		}
 		return undefined;
 	}
+
+	public setStartRecording(selectedNumber: String) {
+		if (this.isMacroKeyAvailable) {
+			return this.shellService.macroKeySetStartRecording(selectedNumber);
+		}
+		return undefined;
+	}
+
+	public setStopRecording(selectedNumber: String, isSuccess: Boolean, message: String) {
+		if (this.isMacroKeyAvailable) {
+			return this.shellService.macroKeySetStopRecording(selectedNumber, isSuccess, message);
+		}
+		return undefined;
+	}
+
+	public setKey(selectedNumber: String) {
+		if (this.isMacroKeyAvailable) {
+			return this.shellService.macroKeySetKey(selectedNumber);
+		}
+		return undefined;
+	}
+
+	public clearKey(selectedNumber: String) {
+		if (this.isMacroKeyAvailable) {
+			return this.shellService.macroKeyClearKey(selectedNumber);
+		}
+		return undefined;
+	}
 }

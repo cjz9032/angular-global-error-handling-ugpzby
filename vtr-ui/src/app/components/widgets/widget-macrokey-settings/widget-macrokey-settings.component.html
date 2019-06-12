@@ -10,7 +10,7 @@
 						<vtr-ui-macrokey-collapsible-container
 							[isRecording]="isRecording"
 							[options]="macroKeyOptions"
-							[selectedOption]="macroKeyStatusSelectedOption"
+							[selectedValue]="macroKeyStatusSelectedValue"
 							(change)="optionChanged($event)">
 						</vtr-ui-macrokey-collapsible-container>
 					</div>
@@ -31,7 +31,9 @@
 								[number]="numberSelected"
 								[isNumberpad]="isNumpad"
 								(isRecording)="onRecordingChanged($event)"
-								[recordedData]="recorderKeyData">
+								[intervalValue]=""
+								[repeatValue]=""
+								[recordedData]="recordedKeyData">
 							</vtr-ui-macrokey-details>
 						</div>
 					</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { isUndefined } from 'util';
 
 @Component({
 	selector: 'vtr-ui-macrokey-details',
@@ -9,16 +10,17 @@ export class UiMacrokeyDetailsComponent implements OnInit {
 	@Input() number;
 	@Input() isNumberpad = false;
 	@Output() isRecording = new EventEmitter<any>();
-	@Input() recordedData: any = [];
+	@Input() recordedData: any;
 	public recording = false;
 	public showModal = false;
 	public stopInterval: any;
+	public recordsList: any = [];
 
 	modalContent = {
 		headerTitle: 'gaming.macroKey.popupContent.timeoutRecording.title',
 		bodyText: 'gaming.macroKey.popupContent.timeoutRecording.body',
 		btnConfirm: false
-		};
+	};
 
 	constructor() {}
 
@@ -46,6 +48,7 @@ export class UiMacrokeyDetailsComponent implements OnInit {
 		this.recording = !this.recording;
 		this.isRecording.emit(this.recording);
 	}
+
 	recordsDelete(records) {
 		records = records || [];
 		records.forEach((record: any, ri: number) => {

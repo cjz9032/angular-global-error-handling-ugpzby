@@ -5,7 +5,7 @@
 		</div>
 	</div>
 	<div class="section-details">
-		<div class="intro" [ngClass]="{'no-key': !number, 'data-exists': number && number.status, 'recording-data': recording && recordedData.length > 0}">
+		<div class="intro" [ngClass]="{'no-key': !number, 'data-exists': number && number.status, 'recording-data': recording && recordsList.length > 0}">
 			<div class="select-key" *ngIf="!number">
 				<div class="title-main">
 					<p>
@@ -30,7 +30,7 @@
 					</div>
 				</div>
 				<div class="is-recording" *ngIf="recording">
-					<div class="initalize" *ngIf="recordedData.length == 0">
+					<div class="initalize" *ngIf="recordsList.length == 0">
 						<div class="title-main">
 							<p>
 								{{ 'gaming.macroKey.details.recording.title' | translate }}
@@ -41,11 +41,12 @@
 						</div>
 						<div class="description"></div>
 					</div>
-					<div class="recorded-data" *ngIf="recordedData.length > 0">
+					<div class="recorded-data" *ngIf="recordsList.length > 0">
 						<vtr-ui-macrokey-recorded-list
 							[number]="number"
+							[isNumberpad]="isNumberpad"
 							[recordingStatus]="recording"
-							[recordsList]="recordedData"
+							[recordsData]="recordedData"
 							(deleteRecords)="recordsDelete($event)"
 							(onClearAll)="clearRecords($event)">
 						</vtr-ui-macrokey-recorded-list>
@@ -55,8 +56,9 @@
 			<div *ngIf="number && number.status">
 				<vtr-ui-macrokey-recorded-list
 					[number]="number"
+					[isNumberpad]="isNumberpad"
 					[recordingStatus]="recording"
-					[recordsList]="recordedData"
+					[recordsData]="recordedData"
 					(deleteRecords)="recordsDelete($event)"
 					(onClearAll)="clearRecords($event)">
 				</vtr-ui-macrokey-recorded-list>

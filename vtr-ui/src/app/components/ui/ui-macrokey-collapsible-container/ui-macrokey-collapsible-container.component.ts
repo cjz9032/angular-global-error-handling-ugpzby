@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, OnChanges } from '@angular/core';
+import { isUndefined } from 'util';
 
 @Component({
 	selector: 'vtr-ui-macrokey-collapsible-container',
@@ -8,16 +9,16 @@ import { Component, OnInit, Input, Output, EventEmitter, ElementRef } from '@ang
 		'(document:click)': 'generalClick($event)'
 	}
 })
-export class UiMacrokeyCollapsibleContainerComponent implements OnInit {
+export class UiMacrokeyCollapsibleContainerComponent implements OnInit, OnChanges {
 	@Input() public options;
-	@Input() public selectedOption;
+	@Input() public selectedValue;
 	@Input() public enableDescription: Boolean = true;
 	@Input() isRecording: Boolean = false;
 	@Output() public change = new EventEmitter<any>();
 	public showOptions = false;
 	public buttonName: any = 'Show';
 	public selected = false;
-	public currentOption: string;
+	public selectedOption: string;
 	public currentDescription: string;
 	public selectedDescription: string;
 
@@ -60,6 +61,18 @@ export class UiMacrokeyCollapsibleContainerComponent implements OnInit {
 			if (!this.elementRef.nativeElement.contains(event.target)) {
 				if (this.showOptions) {
 					this.showOptions = false;
+				}
+			}
+		}
+	}
+
+	ngOnChanges(changes) {
+		if (!isUndefined(this.options)) {
+			if (!isUndefined(this.options)) {
+				if (!isUndefined(changes.selectedValue)) {
+					this.selectedOption = this.options.filter(
+						(option) => option.value === changes.selectedValue.currentValue
+					)[0];
 				}
 			}
 		}

@@ -512,4 +512,32 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	public macroKeySetStartRecording(key): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setStartRecording(key);
+		}
+		return undefined;
+	}
+
+	public macroKeySetStopRecording(key, isSuccess, message): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setStopRecording(key, isSuccess, message);
+		}
+		return undefined;
+	}
+
+	public macroKeySetKey(key): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setKey(key);
+		}
+		return undefined;
+	}
+
+	public macroKeyClearKey(key): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setClear(key);
+		}
+		return undefined;
+	}
 }

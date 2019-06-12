@@ -10,6 +10,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Gaming } from 'src/app/enums/gaming.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
+import { isUndefined } from 'util';
 
 @Component({
 	selector: 'vtr-widget-macrokey-settings',
@@ -38,7 +39,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		}
 	];
 
-	macroKeyStatusSelectedOption = this.macroKeyOptions[2];
+	macroKeyStatusSelectedValue = 1;
 
 	numberPadbottons = [
 		{
@@ -85,11 +86,10 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	numbers = this.numberPadbottons;
 	numberSelected;
 
-	@Output() optionSelected = new EventEmitter<any>();
 	macroKeyTypeStatus: any = new MacroKeyTypeStatus();
 	isNumpad: Boolean = true;
 	isRecording: Boolean = false;
-	recorderKeyData: any = [];
+	recordedKeyData: any;
 	public gamingProperties: any = new GamingAllCapabilities();
 
 	constructor(
@@ -131,6 +131,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			EventTypes.gamingMacroKeyRecordedChangeEvent,
 			this.onGamingMacroKeyRecordedChangeEvent
 		);
+		this.shellService.unRegisterEvent(EventTypes.gamingMacroKeyKeyChangeEvent, this.onGamingMacroKeyKeyChangeEvent);
 	}
 
 	public initMacroKeyEvents() {
@@ -166,16 +167,14 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	}
 
 	updateMacroKeyTypeStatusDetails(macroKeyTypeEventStatus) {
-		// TODO: Update chace for macrokeytypestatus
+		// TODO: Update cache for macrokeytypestatus
 		this.macroKeyTypeStatus = macroKeyTypeEventStatus;
 		if (this.macroKeyTypeStatus.MacroKeyType === 1) {
 			this.isNumpad = false;
 		} else {
 			this.isNumpad = true;
 		}
-		this.macroKeyStatusSelectedOption = this.macroKeyOptions.filter(
-			(option) => option.value === this.macroKeyTypeStatus.MacroKeyStatus
-		)[0];
+		this.macroKeyStatusSelectedValue = this.macroKeyTypeStatus.MacroKeyStatus;
 	}
 
 	onGamingMacroKeyRecordedChangeEvent(macroKeyRecordedChangeEventResponse: any) {
@@ -186,11 +185,6 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 
 	updateMacroKeyRecordedStatusDetails(macroKeyRecordedChangeEventStatus) {
 		this.numbers = macroKeyRecordedChangeEventStatus;
-		if (this.macroKeyTypeStatus.MacroKeyType === 1) {
-			this.numberSelected = this.numbers[0];
-		} else {
-			this.numberSelected = this.numbers[this.numbers.length - 1];
-		}
 	}
 
 	onGamingMacroKeyKeyChangeEvent(macroKeyKeyChangeEventResponse: any) {
@@ -202,19 +196,43 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	updateMacroKeyKeyChangeDetails(macroKeyKeyChangeEventData) {
 		if (macroKeyKeyChangeEventData) {
 			this.numberSelected = this.numbers.filter((number) => number.key === macroKeyKeyChangeEventData.key)[0];
-			this.recorderKeyData = macroKeyKeyChangeEventData.macro;
+			this.recordedKeyData = macroKeyKeyChangeEventData.macro;
 		}
 	}
 
-	optionChanged(option: any) {
-		this.optionSelected.emit(option);
-	}
+	optionChanged(option: any) {}
 
 	onNumberSelected(number) {
+		this.macroKeyService.setKey(number.key);
 		this.numberSelected = number;
 	}
 
 	onRecordingChanged(isRecording) {
 		this.isRecording = isRecording;
+		if (this.isRecording) {
+			this.macroKeyService.setStartRecording(this.numberSelected.key);
+			this.shellService.registerEvent(
+				EventTypes.gamingMacroKeyInputChageEvent,
+				this.onGamingMacroKeyInputChangeEvent.bind(this)
+			);
+		} else {
+			this.macroKeyService.setStopRecording(this.numberSelected.key, true, 'normal');
+			this.shellService.unRegisterEvent(
+				EventTypes.gamingMacroKeyKeyChangeEvent,
+				this.onGamingMacroKeyInputChangeEvent
+			);
+		}
+	}
+
+	onGamingMacroKeyInputChangeEvent(macroKeyInputChangeEventResponse: any) {
+		if (macroKeyInputChangeEventResponse) {
+			this.updateMacroKeyInputDetails(macroKeyInputChangeEventResponse);
+		}
+	}
+
+	updateMacroKeyInputDetails(macroKeyInputChangeData) {
+		if (macroKeyInputChangeData) {
+			this.recordedKeyData = macroKeyInputChangeData;
+		}
 	}
 }
