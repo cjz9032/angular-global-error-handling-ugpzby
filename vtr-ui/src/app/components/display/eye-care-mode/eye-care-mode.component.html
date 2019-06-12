@@ -47,7 +47,7 @@
 		<input id="cb-eye-care-schedule"
 			type="checkbox"
 			class="custom-control-input"
-			[checked]="enableSunsetToSunrise ? false : sunsetToSunriseStatus.status"
+			[checked]="sunsetToSunriseStatus.status"
 			[disabled]="enableSunsetToSunrise"
 			(change)="onSunsetToSunrise(sunsetToSunriseStatus)" />
 		<label class="custom-control-label"
