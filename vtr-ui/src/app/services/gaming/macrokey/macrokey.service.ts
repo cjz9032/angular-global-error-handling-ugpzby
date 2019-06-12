@@ -8,10 +8,22 @@ export class MacrokeyService {
 	private macroKey: any;
 	public isMacroKeyAvailable: Boolean = false;
 
-	constructor(shellService: VantageShellService) {
+	constructor(private shellService: VantageShellService) {
 		this.macroKey = shellService.getGamingMacroKey();
 		if (this.macroKey) {
 			this.isMacroKeyAvailable = true;
+		}
+	}
+
+	public clearMacroKey(macroKey: string): Promise<any> {
+		try {
+			if (this.isMacroKeyAvailable) {
+				console.log('Deleting the following macro key ---->', macroKey);
+				return this.macroKey.setClear(macroKey);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
 		}
 	}
 }
