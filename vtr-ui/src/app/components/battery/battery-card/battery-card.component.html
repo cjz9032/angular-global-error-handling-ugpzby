@@ -29,7 +29,7 @@
 		{{batteryIndicator.percent == 0 && flag ? reInitValue(): ""}}
 		<div class="pt-4 battery-frame pr-3">
 			<vtr-battery-indicator 
-				[batteryHealth]= "batteryIndicator.batteryHealth"
+				[batteryHealth]= "batteryIndicator?.batteryHealth"
 				[remainingHour]="batteryIndicator.hours"
 				[remainingMinutes]="batteryIndicator.minutes"
 				[percentage]="batteryIndicator.percent"
@@ -83,9 +83,14 @@
 			</div>
 		</div> -->
 		<div class="pt-4 text-center">
-			<button type="button" vtrMetrics metricsItem="see battery details" metricsParent="battery-gauge" metricsEvent="itemClick"
+			<button type="button" 
+				vtrMetrics 
+				metricsItem="see battery details" 
+				metricsParent="battery-gauge" 
+				metricsEvent="itemClick"
 				class="btn btn-primary btn-block btn-lg battery-detail-button text-uppercase"
-				(click)="showDetailModal(batteryDetail)">
+				(click)="showDetailModal(batteryDetail)"
+				[disabled]="isBatteryDetailsBtnDisabled">
 				{{'device.deviceSettings.batteryGauge.button' | translate }}
 			</button>
 		</div>

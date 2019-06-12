@@ -30,7 +30,7 @@
 						"gamingText": "CPU Overclocking will be activated automatically while game launches",
 						"offText": "CPU Overclocking will be disabled"
 					},
-					"ramOverlock": "Ram Overclock",
+					"ramOverlock": "RAM Overclock",
 					"popup": {
 						"text": "Change will be effective after restarting computer.",
 						"button": "ok"
@@ -515,9 +515,13 @@
 					},
 					"deviceChemistry": {
 						"li-polymer": "Li-Polymer",
-						"li-ion": "Li-Ion",
 						"li_polymer": "Li-Polymer",
+						"li-ion": "Li-Ion",
 						"li_ion": "Li-Ion",
+						"silver-zinc": "Silver-Zinc",
+						"silver_zinc": "Silver-Zinc",
+						"nicd": "NiCd",
+						"nimh": "NiMH",
 						"unknown": "Unknown"
 					},
 					"manufacturer": {
@@ -1061,9 +1065,12 @@
 		"devices": "Devices",
 		"seeProtectedDevices": "See protected devices",
 		"addDevice": "add device",
-		"trailExpired": "Trail expired",
-		"trailExpiredSubtext": "Upgrate to protect all of your devices",
+		"trialExpired": "Trial Expired",
+		"trialExpiredSubtext": "Upgrate to protect all of your devices",
 		"upgrade": "upgrade",
+		"freeTrial": "Free 30 day trial",
+		"protectAllDevices": "Protect all of your devices",
+		"startTrial": "Start Trial",
 		"tour": {
 			"back": "Back",
 			"skip": "Skip",
@@ -1087,6 +1094,20 @@
 			"loginCHS": "Login to existing CHS account",
 			"locationTitle": "Enable location tracking",
 			"locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+		},
+		"accountStatus": {
+			"title": "My Connected Home Security",
+			"startTrial": "Start Trial",
+			"manageAccount": "Manage Account",
+			"upgradeAccount": "Upgrade Account",
+			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+			"trialExpiredDetail1": "Your trial has expired.",
+			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+			"upgradedDetail1": "You account is active until {{expiredDate}}.",
+			"upgradedDetail2": "Your device ecosystem is currently being protected.",
+			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
+			"alreadyHaveAccount": "Already have an activation code?"
 		}
 	},
 	"support": {

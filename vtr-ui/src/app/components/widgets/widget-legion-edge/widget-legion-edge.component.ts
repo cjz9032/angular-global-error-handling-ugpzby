@@ -1,3 +1,4 @@
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { Component, OnInit, NgZone } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -21,14 +22,13 @@ import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-cap
 	styleUrls: ['./widget-legion-edge.component.scss']
 })
 export class WidgetLegionEdgeComponent implements OnInit {
-	public ramOcStatus = false;
+	// public ramOcStatus = false;
 	public RamOCSatusObj = new RamOCSatus();
 	public hybrimodeStatus = false;
 	public HybrimodeStatusObj = new HybridModeStatus();
-	public gamingCapabilities: any;
 	public touchpadLockStatus: any;
 	public TouchpadLockStatusObj = new TouchpadLockStatus();
-	public gamingProperties: any = new GamingAllCapabilities();
+	public gamingCapabilities: any = new GamingAllCapabilities();
 	public legionUpdate = [
 		{
 			readMoreText: '',
@@ -186,44 +186,53 @@ export class WidgetLegionEdgeComponent implements OnInit {
 		private gamingCapabilityService: GamingAllCapabilitiesService
 	) { }
 	ngOnInit() {
-		this.gamingProperties.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
+		this.gamingCapabilities.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.hybridModeFeature
 		);
-		this.gamingProperties.cpuOCFeature = this.gamingCapabilityService.getCapabilityFromCache(
+		this.gamingCapabilities.cpuOCFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.cpuOCFeature
 		);
-		this.gamingProperties.memOCFeature = this.gamingCapabilityService.getCapabilityFromCache(
+		this.gamingCapabilities.memOCFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.memOCFeature
 		);
-		this.gamingProperties.networkBoostFeature = this.gamingCapabilityService.getCapabilityFromCache(
+		this.gamingCapabilities.networkBoostFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.networkBoostFeature
 		);
-		this.gamingProperties.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
+		this.gamingCapabilities.hybridModeFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.hybridModeFeature
 		);
-		this.gamingProperties.touchpadLockFeature = this.gamingCapabilityService.getCapabilityFromCache(
+		this.gamingCapabilities.hybridStatus = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.HybridModeStatus
+		);
+		this.gamingCapabilities.touchpadLockFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.touchpadLockFeature
 		);
-		this.gamingProperties.winKeyLockFeature = this.gamingCapabilityService.getCapabilityFromCache(
+		this.gamingCapabilities.touchpadLockStatus = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.TouchpadLockStatus
+		);
+		this.gamingCapabilities.winKeyLockFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.winKeyLockFeature
 		);
 		// Initialize Legion Edge component from cache
-		this.legionEdgeInit(this.gamingProperties);
-		console.log('CPU get status',this.GetCPUOverClockCacheStatus());
+		this.legionEdgeInit();
+		console.log('CPU get status', this.GetCPUOverClockCacheStatus());
 		this.commonService.notification.subscribe((response) => {
-		if (response.type === Gaming.GamingCapablities) {
-		this.gamingCapabilities = response.payload;
-		this.legionEdgeInit(this.gamingCapabilities);
-		}
+			if (response.type === Gaming.GamingCapablities) {
+				this.gamingCapabilities = response.payload;
+				this.legionEdgeInit();
+			}
 		});
 	}
 
-	legionEdgeInit(gamingStatus: any) {
+	legionEdgeInit() {
+		const gamingStatus = this.gamingCapabilities;
 		this.legionUpdate[0].isVisible = gamingStatus.cpuOCFeature;
 		this.legionUpdate[1].isVisible = gamingStatus.memOCFeature;
 		this.legionUpdate[3].isVisible = gamingStatus.networkBoostFeature;
 		this.legionUpdate[4].isVisible = gamingStatus.hybridModeFeature;
+		this.legionUpdate[4].isChecked = gamingStatus.hybridStatus;
 		this.legionUpdate[5].isVisible = gamingStatus.touchpadLockFeature;
+		this.legionUpdate[5].isChecked = gamingStatus.touchpadLockStatus;
 
 		if (gamingStatus.cpuOCFeature) {
 			this.renderCPUOverClockStatus();
@@ -233,7 +242,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			this.renderRamOverClockStatus();
 		}
 
-		if (gamingStatus.touchpadLockFeature  && gamingStatus.winKeyLockFeature) {
+		if (gamingStatus.touchpadLockFeature && gamingStatus.winKeyLockFeature) {
 			this.renderTouchpadLockStatus();
 		}
 
@@ -243,9 +252,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 
 	public GetCPUOverClockCacheStatus(): any {
-		if(this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus)=== undefined) {
+		if (this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus) === undefined) {
 			return this.cpuOCStatus.cpuOCStatus;
-		}else{
+		} else {
 			this.commonService.getLocalStorageValue(LocalStorageKey.CpuOCStatus);
 		}
 	}
@@ -306,7 +315,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			if (this.gamingCapabilities.xtuService === true) {
 				if (this.commonService) {
 					this.legionUpdate[1].isChecked = this.GetRAMOverClockCacheStatus();
-				}else {
+				} else {
 					this.legionUpdate[1].isChecked = this.RamOCSatusObj.ramOcStatus;
 					this.SetRAMOverClockCacheStatus(this.RamOCSatusObj.ramOcStatus);
 				}
@@ -333,7 +342,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 
 		if (this.commonService) {
 			this.legionUpdate[4].isChecked = this.GetHybridModeCacheStatus();
-		} 
+		}
 		else {
 			this.legionUpdate[4].isChecked = this.HybrimodeStatusObj.hybridModeStatus;
 			this.SetHybridModeCacheStatus(this.HybrimodeStatusObj.hybridModeStatus);
@@ -400,7 +409,6 @@ export class WidgetLegionEdgeComponent implements OnInit {
 	}
 
 	public toggleOnOffRamOCStatus($event) {
-		console.log($event);
 		const { name, checked } = $event.target;
 		if (name === 'gaming.dashboard.device.legionEdge.ramOverlock') {
 			this.gamingSystemUpdateService
@@ -462,14 +470,17 @@ export class WidgetLegionEdgeComponent implements OnInit {
 			//to hide the existing popup which is open(hybridmode, ramoc)
 			this.legionUpdate[4].isPopup = false;
 		}
-
 		if (name === 'gaming.dashboard.device.legionEdge.touchpadLock') {
 			this.TouchpadLockStatusObj.touchpadLockStatus = $event.switchValue;
 			this.gamingKeyLockService
 				.setKeyLockStatus($event.switchValue)
 				.then((value: boolean) => {
 					console.log('setKeyLockStatus.then', value);
-					this.SetTouchpadLockCacheStatus(value);
+					if (value) {
+						this.SetTouchpadLockCacheStatus($event.switchValue);
+					} else {
+						this.TouchpadLockStatusObj.touchpadLockStatus = !$event.switchValue;
+					}
 				})
 				.catch((error) => {
 					console.error('setKeyLockStatus', error);

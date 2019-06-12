@@ -3,13 +3,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
 	selector: 'vtr-ui-macrokey-recorded-list',
 	templateUrl: './ui-macrokey-recorded-list.component.html',
-	styleUrls: [ './ui-macrokey-recorded-list.component.scss' ]
+	styleUrls: ['./ui-macrokey-recorded-list.component.scss']
 })
 export class UiMacrokeyRecordedListComponent implements OnInit {
 	@Input() number: any;
 	@Input() recordingStatus: any;
 	@Input() recordsList: any;
-	@Output() deleteRecords = new EventEmitter<any>();
+	@Output() deleteRecord = new EventEmitter<any>();
 	@Output() clearAll = new EventEmitter<any>();
 	public clearRecordPopup: Boolean = false;
 	public showModal: Boolean = false;
@@ -123,13 +123,13 @@ export class UiMacrokeyRecordedListComponent implements OnInit {
 		btnConfirm: true
 	};
 
-	constructor() {}
+	constructor() { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
-	recordDelete(...record) {
+	recordDelete(record) {
 		// console.log(record);
-		this.deleteRecords.emit(record);
+		this.deleteRecord.emit(record);
 	}
 
 	clearRecords() {
@@ -139,7 +139,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit {
 
 	deleteAllMacros(canDelete) {
 		if (canDelete) {
-		this.recordDelete(...this.recordsList);
+			this.clearAll.emit(this.number.title);
 		}
 	}
 

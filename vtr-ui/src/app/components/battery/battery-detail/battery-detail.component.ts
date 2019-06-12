@@ -61,6 +61,9 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		this.batteryIndicators.timeText = response.gauge.timeType;
 		this.batteryIndicators.expressCharging = response.detail[0].isExpressCharging;
 		this.batteryIndicators.voltageError = response.detail[0].isVoltageError;
+		if (response.detail[0].batteryHealth === null || response.detail[0].batteryHealth === undefined) {
+			response.detail[0].batteryHealth = 0;
+		}
 		this.batteryIndicators.batteryHealth = this.batteryIndicators.getBatteryHealth(response.detail[0].batteryHealth);
 		for (let i = 0; i < response.detail.length; i++) {
 			response.detail[i].remainingCapacity = Math.round(response.detail[i].remainingCapacity * 100) / 100;
