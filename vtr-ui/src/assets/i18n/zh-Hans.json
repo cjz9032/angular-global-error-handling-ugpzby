@@ -268,7 +268,7 @@
         "menu": {
             "dashboard": "首页",
             "device": {
-                "title": "我的设备",
+                "title": "Device",
                 "sub1": "设备信息",
                 "sub2": "设备设置",
                 "sub3": "系统升级",
@@ -382,7 +382,7 @@
         "quickSettings": {
             "title": "您的设置",
             "microphone": "麦克风",
-            "cameraPrivacy": "摄像头挡板",
+            "cameraPrivacy": "相机",
             "eyeCareMode": "护眼模式"
         },
         "systemStatus": {
@@ -421,36 +421,36 @@
     },
     "device": {
         "myDevice": {
-            "title": "设备信息",
-            "subtitle": "设备状态",
+            "title": "我的设备",
+            "subtitle": "我的设备状态",
             "serial": "序列号",
             "productNumber": "产品编号",
             "biosVersion": "BIOS 版本",
             "learnMore": "了解更多信息",
             "freeMemory": "可用内存",
             "systemUpdate": {
-                "title": "系统升级",
+                "title": "系统更新",
                 "notFound": "未找到系统更新",
                 "detail": {
-                    "uptoDate": "软件已更新",
-                    "updatedOn": "更新",
+                    "uptoDate": "软件为最新",
+                    "updatedOn": "更新时间",
                     "outdated": "软件已过时",
-                    "neverRanUpdate": "从未运行过更新"
+                    "neverRanUpdate": "从不运行更新"
                 }
             },
             "extendedWarranty": "延长保修",
             "processor": {
                 "title": "处理器",
-                "notFound": "找不到处理器"
+                "notFound": "未找到处理器"
             },
             "memory": {
                 "title": "内存",
-                "notFound": "找不到记忆",
-                "ram": "内存"
+                "notFound": "未找到内存",
+                "ram": "RAM"
             },
             "diskspace": {
                 "title": "磁盘空间",
-                "notFound": "磁盘未找到"
+                "notFound": "未找到磁盘"
             },
             "software": "软件为最新",
             "updated": "已更新",
@@ -458,35 +458,35 @@
             "expired": "到期时间：",
             "of": "/",
             "warranty": {
-                "notFound": "保修未找到",
+                "notFound": "未找到保修",
                 "detail": {
                     "title": "延长保修",
                     "inWarranty": "在保修期内",
                     "daysRemaining": "剩余天数",
-                    "outOfWarranty": "保修期已过 ",
+                    "outOfWarranty": "保修期已过",
                     "expiredOn": "到期时间：",
-                    "notAvailable": "无保修信息",
-                    "support": "支持"
+                    "notAvailable": "保修不可用",
+                    "support": "支持服务"
                 }
             },
-            "helpful": "常见问题"
+            "helpful": "帮助内容"
         },
         "deviceSettings": {
             "helpful": "帮助内容",
             "batteryGauge": {
                 "title": "电池量表",
-                "subtitle": "Battery",
+                "subtitle": "电池运行状况",
                 "hours": "小时",
                 "hour": "小时",
                 "minutes": "分钟",
-                "minute": "分钟",
+                "minute": "分",
                 "charge": "充满电所需的时间",
                 "button": "查看电池详细信息",
                 "details": {
                     "title": "电池详细信息",
                     "primary": "主电池",
                     "secondary": "备用电池",
-                    "tertiary": "仪表板",
+                    "tertiary": "三级电池",
                     "status": "状态",
                     "wattage": "功率",
                     "barcode": "条码",
@@ -508,16 +508,17 @@
                     "chargeStatusString": {
                         "error": "错误",
                         "notinstalled": "未安装",
-                        "noactivity": "没有活动",
-                        "charging": "充电",
-                        "discharging": "放电",
-                        "acdischarging": "放电（带交流）"
+                        "noactivity": "无活动",
+                        "charging": "正在充电",
+                        "discharging": "正在放电",
+                        "acdischarging": "正在放电（使用交流电）"
                     },
                     "deviceChemistry": {
                         "li-polymer": "锂聚合物",
                         "li-ion": "锂离子电池",
                         "li_polymer": "锂聚合物",
-                        "li_ion": "锂离子电池"
+                        "li_ion": "锂离子电池",
+                        "unknown": "Unknown"
                     },
                     "manufacturer": {
                         "title": "制造商",
@@ -578,7 +579,7 @@
             "power": {
                 "title": "电源管理",
                 "subtitle": "电源设置",
-                "description": "在此部分中可动态调节散热性能并最大化电池使用时间。它还具有其他常用的电源相关功能。您可以检查此部分中的缺省设置，并根据需要自定义您的系统。",
+                "description": "在此部分中可动态调节散热性能并最大限度提升电池寿命。它还具有其他常用的电源相关功能。您可以检查此部分中的缺省设置，并根据需要自定义您的系统。",
                 "jumpto": {
                     "title": "跳到设置",
                     "battery": "电池",
@@ -588,52 +589,59 @@
                 },
                 "powerSmartSettings": {
                     "title": "电源智能设置",
-                    "subtitle": "智能冷却",
-                    "subtitle1": "电池和安静",
+                    "subtitle": "智能散热",
+                    "subtitle1": "电池和安静状态",
                     "description1": "此功能动态调节散热设置以满足您的需求。此功能开启时，在手持或空闲状态下可调节设置使设备保持较低温度或较低噪声。而设备放置在稳定平面上时，此功能可优化性能。此功能关闭时，您可以手动设置散热优先级。",
                     "description2": "智能散热可调节风扇速度、最高表面温度和性能。此功能具有以下模式，且现在支持通过 Windows 性能电源滑块访问。",
-                    "description3": "智能散热可自动平衡散热性能，以根据您的需求进行调整。智能散热功能可调节性能设置，以便在握持笔记本电脑时提供更舒适的表面。当设备位于桌面上时，此功能可优化性能。",
-                    "readMore": "阅读更多.",
+                    "description3": "智能冷却功能自动平衡散热性能以满足您的需求。当笔记本电脑处于手持状态时，智能冷却功能可调整性能设置，提供一个温度较低的表面，从而使握持者感到舒适。当该设备放置在桌面上时，此功能可优化性能。",
+                    "readMore": "阅读更多信息。",
                     "gotoWindows": {
                         "title": "转到 Windows 设置",
-                        "modalBodyText1": "单击系统托盘上的Windows电池图标以访问Windows性能电源滑块"
+                        "modalBodyText1": "单击系统托盘上的 Windows 电池图标以访问 Windows 性能电源滑块"
                     },
                     "intelligentCooling": {
-                        "title": "智能冷却",
+                        "title": "智能散热",
                         "description": "",
                         "tooltip": "",
-                        "optimize": "优化系统",
-                        "apsHint": "要启用智能散热，您必须安装并启用Lenovo Active Protection System。",
+                        "optimize": "优化系统以",
+                        "apsHint": "要启用智能冷却，必须安装并启用 Lenovo Active Protection System。",
                         "options": {
-                            "quiteCool3": "酷模式",
+                            "quiteCool3": "低温模式",
                             "performance3": "高性能",
                             "quiteCool4": "安静和低温模式",
                             "performance4": "性能",
                             "quiteCool5": "安静和低温模式",
-                            "performance5": "性能"
+                            "performance5": "性能",
+                            "batterySaving": "Battery Saving"
                         },
                         "readMore": {
                             "mode1": "安静模式",
                             "mode2": "平衡模式",
                             "mode3": "性能模式",
-                            "line1": "滑块位于最左边。降低风扇速度和性能以使计算机温度更低、更安静，并且可获得最佳的电池使用时间。",
+                            "line1": "滑块位于最左边。降低风扇速度和性能以使计算机温度更低、更安静，并且可获得最佳的电池寿命。",
                             "line2": "滑块位于中央。以动态方式平衡风扇速度和性能以获得最佳体验。",
                             "line3": "滑块位于最右边。提高风扇速度和允许的表面温度以获得最大性能。"
+                        },
+                        "selectedModeText": {
+                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
+                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
+                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
                         }
                     },
                     "nonintelligentCooling": {
                         "options": {
-                            "intelligentCooling": "智能冷却",
-                            "extremeCooling": "极端的表现",
-                            "battery&Quite": "电池和安静"
+                            "intelligentCooling": "智能散热",
+                            "extremeCooling": "极致性能",
+                            "battery&Quite": "电池和安静状态"
                         }
-                    }
+                    },
+                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar."
                 },
                 "powerSettings": {
                     "title": "电源设置",
                     "alwaysUSB": {
                         "title": "持续 USB 供电",
-                        "description": "计算机处于睡眠、休眠或关机模式时，通过计算机上的持续 USB 供电接口为 USB 设备充电。可从黄色或有这些丝网印刷图标的 USB 接口为智能手机或平板电脑快速充电：",
+                        "description": "计算机处于睡眠、休眠或关机模式时，通过计算机上的持续 USB 供电接口为 USB 设备充电。可从黄色或以丝网方式印刷这些图标的 USB 接口为智能手机或平板电脑快速充电：",
                         "checkbox": "计算机处于关闭状态时支持从笔记本电脑电池进行 USB 充电。"
                     },
                     "easyResume": {
@@ -653,18 +661,18 @@
                     "title": "电池设置",
                     "batteryThreshold": {
                         "title": "电池充电阈值",
-                        "description": "如果主要在连接交流电源适配器时使用计算机，仅偶尔使用电池供电，则可通过将最大电量值设置为低于 100%，延长电池使用期限。这一点很有用，因为偶尔使用的电池保持不充满的电量可延长使用期限。",
-                        "tooltip": "如果电池当前的充电电量高于停止充电阈值，则需要拔下电源，直至电池放电至停止充电阈值或低于停止充电阈值。 根据电池状态（新旧程度），开始或停止充电的精确点最大可有 2% 的相差幅度。如果启用此功能，建议偶尔执行一次&ldquo;电池量表重置&rdquo;，以确保电池运行状况报告准确。",
+                        "description": "如果主要在连接交流电源适配器时使用计算机，仅偶尔使用电池供电，则可通过将最大充电量设置为低于 100% 的值，以延长电池寿命。这一点很有用，因为偶尔使用的电池保持不充满的电量可延长使用期限。",
+                        "tooltip": "如果电池当前的充电电量高于停止充电阈值，则需要拔下电源，直至电池放电至停止充电阈值或低于停止充电阈值。根据电池状态（新旧程度），开始或停止充电的精确点位最多可有 2% 的相差幅度。如果启用此功能，建议偶尔执行一次“电池量表重置”，以确保电池运行状况报告准确。",
                         "note": "注意",
                         "noteInfo": "电池充电阈值仍未完全激活。拔下电源线，让电池电量耗尽或低于停止充电阈值。",
                         "readMoreText": "阅读更多。",
                         "settings": {
-                            "title1": "内置电池的阈值",
-                            "title2": "可拆卸电池的阈值"
+                            "title1": "内置电池阈值",
+                            "title2": "可拆卸电池阈值"
                         },
                         "popup": {
                             "title": "启用电池充电阈值",
-                            "description1": "在您使用此设备时，启用自定义电池充电可延长电池的整体使用寿命。然而，未能完全充满电将减少电池使用寿命。",
+                            "description1": "在您使用此设备时，启用自定义电池充电可延长电池的整体使用寿命。然而，未能完全充满电将缩短电池寿命。",
                             "description2": "为完全发挥此功能的作用，请拔下计算机的电源插头并消耗电池电量，使电池电量达到或低于停止充电阈值。",
                             "enable": "启用",
                             "cancel": "取消"
@@ -678,14 +686,14 @@
                     "expressCharging": {
                         "title": "快速充电",
                         "description": "快速充电可用比常规模式更快的速度将电池充满电。",
-                        "tooltip": "快速充电可用比常规模式更快的速度将电池充满电。"
+                        "tooltip": "快速充电能够以更快的速度为系统电池充电，但这样可能会缩短电池寿命。"
                     },
                     "conservationMode": {
                         "title": "节电模式",
-                        "description": "此功能可有助于延长插电使用时的电池寿命。<br>启用此模式时，电池只充至容量的 55-60%，从而最大化电池使用寿命。但是，这将缩短断开交流电源后的计算机使用时间。",
+                        "description": "此功能有助于延长插电使用时的电池寿命。<br>启用此模式时，电池只充至容量的 55-60%，从而最大限度提升电池寿命。但是，这将缩短断开交流电源后的计算机使用时间。",
                         "tooltip": {
-                            "line1": "此功能可有助于延长插电使用时的电池寿命。",
-                            "line2": "启用此模式时，电池只充至容量的 55-60%，从而最大化电池使用寿命。但是，这将缩短断开交流电源后的计算机使用时间。",
+                            "line1": "此功能有助于延长插电使用时的电池寿命。",
+                            "line2": "启用此模式时，电池只充至容量的 55-60%，从而最大限度提升电池寿命。但是，这将缩短断开交流电源后的计算机使用时间。",
                             "line3": "注：快速充电和节电模式无法同时进行。如果启用其中一个模式，则将自动关闭另一个模式。"
                         }
                     },
@@ -705,7 +713,7 @@
                     "description": "根据您使用的不同应用程序自动调节音频设置。",
                     "dolby": {
                         "title": "自动 Dolby 音频设置",
-                        "tooltip": "自动Dolby Audio设置可将Dolby音频设置配置为适用于您正在使用的不同应用程序的模式，以增强您的音频体验。",
+                        "tooltip": "自动 Dolby 音频设置可将 Dolby 音频设置配置为适用于您正在使用的不同应用程序的适当模式，从而提升音频体验。",
                         "options": {
                             "dynamic": "动态",
                             "movie": "影片",
@@ -716,25 +724,25 @@
                     },
                     "voip": {
                         "title": "自动 VoIP 音频优化",
-                        "tooltip": "在VoIP呼叫期间自动切换到Dolby Voice模式，以提供清晰，一致的语音质量。"
+                        "tooltip": "在 VoIP 通话中自动切换到 Dolby 语音模式以实现清晰、连续的语音质量。"
                     }
                 },
                 "microphone": {
                     "title": "麦克风",
                     "note": {
-                        "title": "注",
-                        "description": "Lenovo Vantage无权访问您的麦克风。请打开Lenovo Vantage应用程序的麦克风访问权限。"
+                        "title": "便笺",
+                        "description": "Lenovo Vantage 无权访问您的麦克风。请允许 Lenovo Vantage 应用程序访问您的麦克风。"
                     },
                     "microphone": {
                         "title": "麦克风",
-                        "tooltip": "可以通过调整麦克风音量并指定合适的模式来定制您的麦克风效果。"
+                        "tooltip": "您可以通过调整麦克风音量并指定合适的模式来自定义您的麦克风效果。"
                     },
                     "volume": {
                         "title": "麦克风音量",
                         "description": "Dolby 音频可为您喜爱的所有内容提供丰富、清晰、震撼的音效，请为您的内容和设备选择合适的模式。",
                         "options": {
                             "silent": "静音",
-                            "loud": "大音量​"
+                            "loud": "大音量"
                         }
                     },
                     "suppress": {
@@ -750,7 +758,7 @@
                         "tooltip": "配置麦克风效果以增强不同场景和环境下的音频体验。",
                         "options": {
                             "VoiceRecognition": "语音识别",
-                            "OnlyMyVoice": "仅我的语音",
+                            "OnlyMyVoice": "仅我的语言",
                             "Normal": "正常",
                             "MultipleVoices": "多个语音"
                         }
@@ -778,19 +786,19 @@
                         "title": "护眼模式",
                         "checkbox": "设定从日出到日落的护眼模式",
                         "options": {
-                            "warm": "暖（更护眼）​",
+                            "warm": "暖（更护眼）",
                             "cold": "冷"
                         },
                         "reset": "重置温度",
                         "tooltip": "护眼模式会调节显示屏色温以过滤掉蓝光，从而减轻视疲劳。",
-                        "onSunsetToSunriseScheduleDescription": "安排从日落到日出的眼保健模式",
+                        "onSunsetToSunriseScheduleDescription": "设定从日出到日落的护眼模式",
                         "note": {
                             "title": "注",
-                            "description": "Lenovo Vantage需要访问您的位置信息，以计算您所在地区的日落和日出时间。"
+                            "description": "Lenovo Vantage 需要访问您的位置信息以计算您所在地区的日出日落时间。"
                         }
                     },
                     "dispColorTemp": {
-                        "title": "显示色温",
+                        "title": "Daytime color temperature",
                         "options": {
                             "warm": "Warm (Better for eyes)",
                             "cold": "Cold"
@@ -800,7 +808,7 @@
                         "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
                         "note": {
                             "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "description": "When the Eye care mode is enabled. this color temperature does not take effect. However,  you can drag the slide to get a preview of it. To make it effective. turn off the Eye care mode"
                         }
                     },
                     "privacyGuard": {
@@ -823,12 +831,12 @@
                     "title": "摄像头",
                     "note": {
                         "title": "注",
-                        "description": "Lenovo Vantage 无权访问您的摄像头。请允许 Lenovo Vantage 应用访问您的摄像头。"
+                        "description": "Lenovo Vantage 无权访问您的摄像头。请允许 Lenovo Vantage 应用程序访问您的摄像头。"
                     },
                     "url": "转到 Windows 隐私设置",
                     "cameraPrivacy": {
                         "title": "摄像头隐私模式",
-                        "tooltip": "启用&ldquo;隐私&rdquo;设置后，摄像头停止发送实时图像。请仅在不希望在视频通话时与其他人共享您的图像时开启此设置。"
+                        "tooltip": "启用“隐私”设置后，摄像头停止发送实时图像。请仅在不希望在视频通话时与其他人共享您的图像时开启此设置。"
                     },
                     "camera": {
                         "title": "摄像头",
@@ -839,10 +847,10 @@
                     "contrast": "对比度",
                     "autoExposure": "自动曝光",
                     "autoFocus": "自动对焦",
-                    "notAvailable": "相机不可用",
+                    "notAvailable": "摄像头不可用",
                     "camerablur": {
-                        "title": "相机背景模糊",
-                        "caption": "当您使用相机进行任何视频通话或拍照时，此功能会模糊您的背景。您可以从以下选项中选择不同的效果。",
+                        "title": "摄像头背景模糊",
+                        "caption": "当您使用摄像头进行视频通话或拍摄照片时，该功能可以使背景变得模糊。您可以从下面的选项中选择不同效果。",
                         "blurMode": "模糊模式",
                         "comicMode": "漫画模式",
                         "sketchMode": "草图模式"
@@ -851,61 +859,61 @@
             }
         },
         "smartAssist": {
-            "title": "智能助手",
-            "description": "Lenovo Intelligent Sensing结合了计算机上的传感器来检测您的活动，调整设置以实现最佳电源管理并保护您的隐私。",
+            "title": "Smart Assist",
+            "description": "Lenovo 智能感知结合计算机上的各种传感器来检测您的活动，调整设置以实现最优电源管理并保护您的隐私。",
             "jumpTo": {
                 "title": "跳到设置",
-                "security": "安全",
+                "security": "安全性",
                 "screen": "屏幕",
                 "media": "媒体",
                 "voice": "语音"
             },
             "intelligentSecurity": {
                 "title": "智能安全",
-                "readMore": "阅读更多",
+                "readMore": "阅读更多信息",
                 "HumanPresenceDetection": {
-                    "title": "人体存在检测",
-                    "tooltip": "单击此处重置人体存在检测设置。"
+                    "title": "人类存在检测",
+                    "tooltip": "单击此处以重置人类存在检测设置。"
                 },
                 "humanPresenceDetection": {
                     "title": "用户存在感知",
                     "tooltip": "单击此处重置人体存在检测设置。"
                 },
                 "zeroTouchLogin": {
-                    "title": "零接触登录",
-                    "caption": "当您在电脑前或接近电脑时，此功能会自动解锁或唤醒电脑。"
+                    "title": "零触摸登录",
+                    "caption": "当您坐在计算机前或接近计算机时，此功能会自动解锁或唤醒计算机。"
                 },
                 "zeroTouchLock": {
-                    "title": "零接触锁定",
-                    "caption": "当未检测到用户状态时，此功能将使显示屏变暗并锁定计算机。当您离开计算机无人看管和解锁时，它可以减少未经授权访问计算机的机会。当您未检测到存在时，它还可以通过将系统置于Modern Standby来降低功耗。",
+                    "title": "零触摸锁定",
+                    "caption": "此功能将使显示变暗并在未检测到用户存在时锁定计算机。当您在无人看管且未锁定的状态离开计算机时，它可以降低未经授权访问计算机的机会。它还可以在未检测到您的存在时让系统进入现代待机状态，从而减少耗电量。",
                     "autoScreenLockTimer": {
-                        "title": "自动屏幕锁定时器",
+                        "title": "自动屏幕锁定计时器",
                         "radioButton": {
-                            "fast": "快速",
-                            "medium": "介质",
+                            "fast": "快",
+                            "medium": "中等",
                             "slow": "慢"
                         },
-                        "toolTipContent": "选择所需选项，以便在未检测到状态时以快/中/慢速度锁定屏幕。但是，屏幕锁定的时间也会受到实际用户方案，传感器功能和Windows屏幕超时设置的影响。因此，我们强烈建议您在离开前立即锁定系统。"
+                        "toolTipContent": "当未检测到您的存在时，选择希望的方式以较快/中等/较慢的速度来锁定屏幕。然而，屏幕锁定的时间也会受到实际用户场景、传感器功能和 Windows 屏幕超时设置的影响。因此，我们强烈建议您在离开时即锁定系统。"
                     }
                 },
                 "distanceSensitivityAdjusting": {
                     "title": "距离灵敏度调整",
-                    "caption": "自动距离调整将通过AI引擎自动更新检测距离。",
+                    "caption": "自动距离调整将会通过人工智能引擎自动更新检测距离。",
                     "options": {
-                        "near": "近",
-                        "far": "远"
+                        "near": "附近",
+                        "far": "较远"
                     }
                 },
                 "note": {
-                    "description1": "此功能依赖于Windows Hello。确保在Windows设置中打开了脸部识别功能。",
-                    "description2": "该功能使用传感器和相机来检测您的存在。但是，该功能不会收集，保存泄漏任何个人数据或图像。",
-                    "description3": "1.如果您的计算机处于帐篷，平板电脑或支架模式，则这些功能可能无法正常工作。",
-                    "description4": "2.如果您的计算机处于休眠模式或已关闭。自动红外摄像机登录无效。",
-                    "description5": "3.请将电脑屏幕调整到合适的角度，以便红外热像仪能识别您的脸部以便自动登录。"
+                    "description1": "此功能依赖于 Windows Hello。确保在 Windows 设置中已开启面部识别。",
+                    "description2": "该功能使用传感器和摄像头来检测您的存在。然而，该功能不会收集、保存或泄露任何个人数据或图像。",
+                    "description3": "1.如果您的计算机处于帐篷模式、平板电脑模式或站立模式，则这些功能可能无法正常工作。",
+                    "description4": "2.如果您的计算机处于休眠模式或已关机。自动红外摄像头登录将无法工作。",
+                    "description5": "3.请将计算机屏幕调整至适当的角度，以便红外摄像头能够识别您的面部，进行自动登录。"
                 },
                 "WindowsLink": {
-                    "goToWindowsHello": "转到Windows Hello设置",
-                    "screenTimeoutSettings": "转到屏幕超时设置"
+                    "goToWindowsHello": "转到 Windows Hello 设置",
+                    "screenTimeoutSettings": "转至屏幕超时设置"
                 },
                 "resetToDefault": "重置为默认设置"
             },
@@ -940,28 +948,28 @@
         "title": "系统更新",
         "back": "返回",
         "history": "完整历史记录",
-        "notAvailable": "无法使用",
+        "notAvailable": "不可用",
         "notInstalled": "未安装",
         "criticalUpdates": "关键更新",
         "recommendedUpdates": "推荐更新",
         "optionalUpdates": "可选更新",
-        "ignoredUpdates": "忽略的更新",
-        "successInstall": "已成功安装",
-        "failedInstall": "无法安装",
+        "ignoredUpdates": "已忽略的更新",
+        "successInstall": "安装成功",
+        "failedInstall": "安装失败",
         "at": "在",
-        "readMore": "阅读更多",
+        "readMore": "阅读更多信息",
         "popup": {
-            "reboot": "重启",
-            "shutdown": "关掉",
-            "rebootForceMsg": "您选择的更新将导致系统在安装后自动重新启动。",
-            "shutdownForceMsg": "您选择的更新将导致系统在安装后自动关闭。",
-            "rebootDelayedMsg": "您选择的更新将导致系统在安装后重新启动，在安装更新期间，请不要关闭系统，卸下电源或附件。我们建议您保存工作以准备重新启动系统。",
-            "rebootRequiredMsg": "为了成功安装更新，您的计算机需要重新启动才能确保一切运行安全，顺畅。",
-            "okayButton": "好",
+            "reboot": "重新引导",
+            "shutdown": "关机",
+            "rebootForceMsg": "安装所选更新后，系统将自动重新引导。",
+            "shutdownForceMsg": "安装所选更新后，系统将自动关机。",
+            "rebootDelayedMsg": "安装所选更新后，系统将重新引导，在安装更新的过程中，请勿关闭系统、断开电源或移除附件。我们建议保存您的工作，以便为系统重新引导做好准备。",
+            "rebootRequiredMsg": "要成功安装更新，您的计算机需要重新引导以确保所有内容运行得更快、更顺畅。",
+            "okayButton": "确定",
             "cancelButton": "取消",
-            "rebootButton": "马上重启",
-            "dismissButton": "解雇",
-            "rebootPending": "重新启动等待"
+            "rebootButton": "立即重新引导",
+            "dismissButton": "取消",
+            "rebootPending": "重新引导暂挂"
         },
         "autoUpdateSettings": {
             "title": "自动更新设置",
@@ -984,7 +992,7 @@
         },
         "banner": {
             "neverChecked": "Welcome to use System Update.",
-            "title": "​保持最新状态的系统才是健康的系统。",
+            "title": "保持最新状态的系统才是健康的系统。",
             "last": "上次更新时间为",
             "next": "下次更新扫描计划时间：",
             "checkButton": "检查更新",
@@ -995,13 +1003,13 @@
             "cancelCheck": "取消检查",
             "cancelUpdates": "取消更新",
             "available": "可用更新",
-            "description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。关键更新对保护计算机上的数据来说也很重要，一旦可用就应该尽快安装。未能安装这些软件包可能会导致数据丢失、系统故障或硬件故障",
+            "description": "这些软件包包含对计算机的正常运行至关重要的硬件驱动程序更新和其他系统实用程序更新。关键更新对保护计算机上的数据来说也很重要，一旦可用就应该尽快安装。未能安装这些软件包可能会导致数据丢失、系统故障或硬件故障。",
             "installButton": "安装所有更新",
             "result": {
-                "success": "所有更新都已正确安装",
+                "success": "已正确安装所有更新",
                 "fail": {
                     "title": "某些更新未正确安装。",
-                    "description": "在下载或安装这些更新期间出现问题。请确保您在线，并且在安装更新时不要关闭计算机。"
+                    "description": "下载或安装这些更新的过程中发生了问题。请确保您处于在线状态，且安装更新的过程中不要关闭计算机。"
                 }
             }
         },
