@@ -218,6 +218,7 @@ import { UiApsSliderComponent } from './components/ui/ui-aps-slider/ui-aps-slide
 import { UiCheckboxComponent } from './components/ui/ui-checkbox/ui-checkbox.component';
 import { UiCircleRadioWithCheckboxComponent } from './components/ui/ui-circle-radio-with-checkbox/ui-circle-radio-with-checkbox.component';
 import { UiChsStatusbarComponent } from './components/ui/ui-chs-statusbar/ui-chs-statusbar.component';
+import { ActiveProtectionSystemAdvancedComponent } from './components/pages/page-smart-assist/active-protection-system-advanced/active-protection-system-advanced.component';
 
 library.add(fas);
 library.add(fab);
@@ -397,7 +398,8 @@ library.add(fal);
 		UiApsSliderComponent,
 		UiCheckboxComponent,
 		UiCircleRadioWithCheckboxComponent,
-		UiChsStatusbarComponent
+		UiChsStatusbarComponent,
+		ActiveProtectionSystemAdvancedComponent
 	],
 	imports: [
 		BrowserModule,
