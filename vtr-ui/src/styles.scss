@@ -25,7 +25,9 @@ html {
 	font-size: 62.5%;
 	letter-spacing: 0;
 }
-
+*:not(a), input:not([type=radio]):not([type=checkbox]){
+	cursor: default;
+}
 @media #{$dpiquery_0} {
 }
 

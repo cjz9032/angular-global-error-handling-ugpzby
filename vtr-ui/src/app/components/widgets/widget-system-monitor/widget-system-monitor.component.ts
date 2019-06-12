@@ -36,50 +36,50 @@ export class WidgetSystemMonitorComponent implements OnInit {
 	@Input() ramMax = 32;
 	//@Input() cpuover = 'Intel';
 
-	public hds: any = [];
+	//public hds: any = [];
 
-	// @Input() hds = [
-	// 	{
-	// 		capacity: 476,
-	// 		diskUsage: "14",
-	// 		hddName: "LENSE30512GMSP34MEAT3TA",
-	// 		isSystemDisk: "true",
-	// 		type: "SSD",
-	// 		usedDisk: "71"
-	// 	},
-	// 	{
-	// 		capacity: 2000,
-	// 		diskUsage: "75",
-	// 		hddName: "LENSE30512GMSP34MEAT3TB",
-	// 		isSystemDisk: "false",
-	// 		type: "HDD",
-	// 		usedDisk: "1500"
-	// 	},
-	// 	{
-	// 		capacity: 4000,
-	// 		diskUsage: "25",
-	// 		hddName: "LENSE30512GMSP34MEAT3TC",
-	// 		isSystemDisk: "false",
-	// 		type: "HDD",
-	// 		usedDisk: "1000"
-	// 	},
-	// 	{
-	// 		capacity: 2000,
-	// 		diskUsage: "75",
-	// 		hddName: "LENSE30512GMSP34MEAT3TD",
-	// 		isSystemDisk: "false",
-	// 		type: "HDD",
-	// 		usedDisk: "1500"
-	// 	},
-	// 	{
-	// 		capacity: 4000,
-	// 		diskUsage: "25",
-	// 		hddName: "LENSE30512GMSP34MEAT3TE",
-	// 		isSystemDisk: "false",
-	// 		type: "HDD",
-	// 		usedDisk: "1000"
-	// 	}
-	// ];
+	@Input() hds = [
+		{
+			capacity: 476,
+			diskUsage: "14",
+			hddName: "LENSE30512GMSP34MEAT3TA",
+			isSystemDisk: "true",
+			type: "SSD",
+			usedDisk: "71"
+		},
+		{
+			capacity: 2000,
+			diskUsage: "75",
+			hddName: "LENSE30512GMSP34MEAT3TB",
+			isSystemDisk: "false",
+			type: "HDD",
+			usedDisk: "1500"
+		},
+		{
+			capacity: 4000,
+			diskUsage: "25",
+			hddName: "LENSE30512GMSP34MEAT3TC",
+			isSystemDisk: "false",
+			type: "HDD",
+			usedDisk: "1000"
+		},
+		{
+			capacity: 2000,
+			diskUsage: "75",
+			hddName: "LENSE30512GMSP34MEAT3TD",
+			isSystemDisk: "false",
+			type: "HDD",
+			usedDisk: "1500"
+		},
+		{
+			capacity: 4000,
+			diskUsage: "25",
+			hddName: "LENSE30512GMSP34MEAT3TE",
+			isSystemDisk: "false",
+			type: "HDD",
+			usedDisk: "1000"
+		}
+	];
 
 	constructor(private hwInfoService: HwInfoService) { }
 	public getDynamicInfoService() {
@@ -138,11 +138,11 @@ export class WidgetSystemMonitorComponent implements OnInit {
 
 	ngOnInit() {
 
-		this.getDynamicInfoService();
+		//this.getDynamicInfoService();
 		this.getMachineInfoService();
 		const self = this;
 		const loop = setInterval(function () {
-			self.getDynamicInfoService();
+			//self.getDynamicInfoService();
 		}, 5000);
 	}
 
