@@ -46,8 +46,13 @@
                         <div class="container-fluid">
                             <div class="row mb-40">
                                 <div class="col col-12">
-                                    <vtr-widget-home-security-account-status [title]="'My connected home security'"
-                                        [description]="'placeholder'">
+									<vtr-widget-home-security-account-status
+									[status]="connectedHomeSecurity.account.state"
+									[remainingDays]="27"
+									[expiredDate]="connectedHomeSecurity.account.ExpirationDate"
+									(startTrial)="onStartTrial()"
+									(manageAccount)="onManageAccount()"
+									(upgradeAccount)="onUpgradeAccount()">
                                     </vtr-widget-home-security-account-status>
                                 </div>
                             </div>
