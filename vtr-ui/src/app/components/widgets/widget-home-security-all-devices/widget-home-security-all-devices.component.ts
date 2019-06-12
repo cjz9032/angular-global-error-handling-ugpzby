@@ -12,7 +12,7 @@ export class WidgetHomeSecurityAllDevicesComponent implements OnInit {
 	@Input() homeSecurityUrl = 'https://homesecurity.coro.net/';
 	@Input() upgradeUrl = 'https://vantagestore.lenovo.com/en/shop/product/connectedhomesecurityoneyearlicense-windows';
 	@Input() devicesStatus: string; // secure, needs attention
-	@Input() logonStatus: string; // trail, trail expired, upgrate, upgrate expired, local account
+	@Input() logonStatus: string; // trial, trial expired, upgrate, upgrate expired, local account
 	@Input() eventEmitter: EventEmitter<string>;
 	deviceMoreThanTen: boolean;
 	pluginAvailable = false;
@@ -66,27 +66,27 @@ export class WidgetHomeSecurityAllDevicesComponent implements OnInit {
 			this.pluginAvailable = false;
 		} else {
 			if (this.testStatus === 'lessDevices-secure') {
-				this.logonStatus = 'trail';
+				this.logonStatus = 'trial';
 				this.devicesNumber = 7;
 				this.devicesStatus = 'secure';
 			} else if (this.testStatus === 'moreDevices-needAttention') {
-				this.logonStatus = 'trail';
+				this.logonStatus = 'trial';
 				this.devicesNumber = 99;
 				this.devicesStatus = 'needs attention';
 			} else if (this.testStatus === 'noneDevices') {
-				this.logonStatus = 'trail';
+				this.logonStatus = 'trial';
 				this.devicesNumber = 0;
 				this.devicesStatus = 'secure';
 			} else if (this.testStatus === 'tralExpired') {
-				this.logonStatus = 'trail expired';
+				this.logonStatus = 'trial expired';
 				this.devicesNumber = 0;
 				this.devicesStatus = 'needs attention';
 			} else if (this.testStatus === 'lessDevices-needAttention') {
-				this.logonStatus = 'trail';
+				this.logonStatus = 'trial';
 				this.devicesNumber = 7;
 				this.devicesStatus = 'needs attention';
 			} else {
-				this.logonStatus = 'trail';
+				this.logonStatus = 'trial';
 				this.devicesNumber = 100;
 				this.devicesStatus = 'secure';
 			}
