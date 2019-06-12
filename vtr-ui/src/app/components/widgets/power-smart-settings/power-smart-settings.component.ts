@@ -82,32 +82,36 @@ export class PowerSmartSettingsComponent implements OnInit {
 
 	// Start Power Smart Settings for IdeaPad
 	async initPowerSmartSettingsForIdeaPad() {
-		let response = await this.powerService.getITSModeForICIdeapad();
-		console.log("getITSModeForICIdeapad: " + response);
-		if(response && response.available && response.errorCode) {
-			if(response.itsVersion == 3) {
-				this.intelligentCoolingModes = IntelligentCoolingHardware.ITS13;
-				this.showIntelligentCoolingToggle = true;
-				this.showIC = response.itsVersion + this.add;
-				this.captionText = this.translate.instant("device.deviceSettings.power.powerSmartSettings.description13");
-				let currentMode = IntelligentCoolingModes.getModeForIdeaPadITS3(response.currentMode);
-				if(currentMode == IntelligentCoolingModes.Error) { 
-					// need to make toggle button on
-					let customEvent = { switchValue: true }
-					this.onIntelligentCoolingToggle(customEvent, false);
-				} else {
-					// need to make toggle button off
+		try {
+			let response = await this.powerService.getITSModeForICIdeapad();
+			console.log("getITSModeForICIdeapad: " + response);
+			if(response && response.available && response.errorCode) {
+				if(response.itsVersion == 3) {
+					this.intelligentCoolingModes = IntelligentCoolingHardware.ITS13;
+					this.showIntelligentCoolingToggle = true;
+					this.showIC = response.itsVersion + this.add;
+					this.captionText = this.translate.instant("device.deviceSettings.power.powerSmartSettings.description13");
+					let currentMode = IntelligentCoolingModes.getModeForIdeaPadITS3(response.currentMode);
+					if(currentMode == IntelligentCoolingModes.Error) { 
+						// need to make toggle button on
+						let customEvent = { switchValue: true }
+						this.onIntelligentCoolingToggle(customEvent, false);
+					} else {
+						// need to make toggle button off
+						this.setPerformanceAndCool(currentMode);
+					} 
+				} else if(response.itsVersion == 4) {
+					this.intelligentCoolingModes = IntelligentCoolingHardware.ITS14;
+					this.showIntelligentCoolingToggle = false;
+					this.showIC = response.itsVersion + this.add;
+					this.captionText = this.translate.instant("device.deviceSettings.power.powerSmartSettings.description14");
+					let currentMode = IntelligentCoolingModes.getMode(response.currentMode);
+					this.updateSelectedModeText(currentMode);
 					this.setPerformanceAndCool(currentMode);
 				} 
-			} else if(response.itsVersion == 4) {
-				this.intelligentCoolingModes = IntelligentCoolingHardware.ITS14;
-				this.showIntelligentCoolingToggle = false;
-				this.showIC = response.itsVersion + this.add;
-				this.captionText = this.translate.instant("device.deviceSettings.power.powerSmartSettings.description14");
-				let currentMode = IntelligentCoolingModes.getMode(response.currentMode);
-				this.updateSelectedModeText(currentMode);
-				this.setPerformanceAndCool(currentMode);
-			} 
+			}
+		} catch (error) {
+			console.error("initPowerSmartSettingsForIdeaPad: " + error.message);
 		}
 	}
 
