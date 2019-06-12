@@ -83,6 +83,7 @@ export class CommonService {
 	 * @param value value to store in local storage
 	 */
 	public setLocalStorageValue(key: LocalStorageKey, value: any) {
+		console.log(`Setting the value for ${key}, Value => ${value}`);
 		window.localStorage.setItem(key, JSON.stringify(value));
 		// notify component that local storage value updated.
 		this.sendNotification(key, value);
@@ -148,5 +149,9 @@ export class CommonService {
 			}
 		}
 		return arguments.length === 1 ? undefined : defaultValue;
+	}
+
+	public removeObjFrom(array: any[], path: string) {
+		return array.filter(e => e.path !== path);
 	}
 }

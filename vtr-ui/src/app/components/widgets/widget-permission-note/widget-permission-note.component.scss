@@ -1,12 +1,13 @@
-@import '../../../app.theme.scss';
+@import "../../../app.theme.scss";
 .vtr-widget-permission-note {
-    background-color: $shade_lightest;
-    font-size: 1.4rem;
-    color: $alt;
-    border: 1px solid $shade_lighter;
+	width: 100%;
+	background-color: $shade_lightest;
+	font-size: 1.4rem;
+	color: $alt;
+	border: 1px solid $shade_lighter;
 
-    .privacy-button {
-        font-size: 1.2rem;
-        letter-spacing: 0.76px;
-    }
+	.privacy-button {
+		font-size: 1.2rem;
+		letter-spacing: 0.76px;
+	}
 }

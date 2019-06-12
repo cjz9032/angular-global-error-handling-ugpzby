@@ -7,7 +7,7 @@
 		[metricsParent]="metricsParent"
 		class="close-btn"
 		(click)="onCancelClick($event)">
-		<img src="assets/icons/Close.svg"
+		<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
 			alt=""
 			srcset="">
 	</div>

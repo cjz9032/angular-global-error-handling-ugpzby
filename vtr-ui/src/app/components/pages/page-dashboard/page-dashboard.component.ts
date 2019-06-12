@@ -75,31 +75,9 @@ export class PageDashboardComponent implements OnInit {
 			this.submit = value;
 			this.feedbackButtonText = this.submit;
 		});
-
 		//Evaluate the translations for QA on language Change
-		translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			this.qaService.setTranslationService(this.translate);
-			this.qaService.qas.forEach(qa => {
-				try {
-					qa.title = this.translate.instant(qa.title);
-					qa.description = this.translate.instant(qa.description);
-					// console.log(qa.description);
-					this.translate.get(qa.keys).subscribe((translation: [string]) => {
-						// console.log(JSON.stringify(translation));
-						qa.keys = translation;
-						// console.log(JSON.stringify(qa.keys));
-					});
-				} catch (e) {
-					console.log('already translated');
-				}
-				finally {
-					console.log('already translated');
-				}
-
-			});
-
-			// this.qas = this.qaService.qas;
-		});
+		this.qaService.setTranslationService(this.translate);
+		this.qaService.setCurrentLangTranslations();
 
 	}
 
@@ -140,7 +118,7 @@ export class PageDashboardComponent implements OnInit {
 				const heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
 					return {
 						'albumId': 1,
-						'id': index + 1,
+						'id': record.Id,
 						'source': record.Title,
 						'title': record.Description,
 						'url': record.FeatureImage,
@@ -435,6 +413,12 @@ export class PageDashboardComponent implements OnInit {
 			memory.id = 'memory';
 			memory.title = this.translate.instant('dashboard.systemStatus.memory.title'); // 'Memory';
 			memory.detail = this.translate.instant('dashboard.systemStatus.memory.detail.notFound'); // 'Memory not found';
+			this.translate.stream('dashboard.systemStatus.memory.title').subscribe((value) => {
+				memory.title = value;
+			});
+			this.translate.stream('dashboard.systemStatus.memory.detail.notFound').subscribe((value) => {
+				memory.detail = value;
+			});
 			memory.path = 'ms-settings:about';
 			memory.asLink = false;
 			memory.isSystemLink = true;
@@ -458,6 +442,15 @@ export class PageDashboardComponent implements OnInit {
 			disk.id = 'disk';
 			disk.title = this.translate.instant('dashboard.systemStatus.diskSpace.title'); // 'Disk Space';
 			disk.detail = this.translate.instant('dashboard.systemStatus.diskSpace.detail.notFound'); // 'Disk not found';
+
+			this.translate.stream('dashboard.systemStatus.diskSpace.title').subscribe((value) => {
+				disk.title = value;
+			});
+
+			this.translate.stream('dashboard.systemStatus.diskSpace.detail.notFound').subscribe((value) => {
+				disk.detail = value;
+			});
+
 			disk.path = 'ms-settings:storagesense';
 			disk.asLink = false;
 			disk.isSystemLink = true;
@@ -481,6 +474,14 @@ export class PageDashboardComponent implements OnInit {
 			warranty.id = 'warranty';
 			warranty.title = this.translate.instant('dashboard.systemStatus.warranty.title'); // 'Warranty';
 			warranty.detail = this.translate.instant('dashboard.systemStatus.warranty.detail.notFound'); // 'Warranty not found';
+
+			this.translate.stream('dashboard.systemStatus.warranty.title').subscribe((value) => {
+				warranty.title = value;
+			});
+			this.translate.stream('dashboard.systemStatus.warranty.detail.notFound').subscribe((value) => {
+				warranty.detail = value;
+			});
+
 			warranty.path = '/support';
 			warranty.asLink = false;
 			/* warranty.isSystemLink = true; */
@@ -508,6 +509,12 @@ export class PageDashboardComponent implements OnInit {
 			systemUpdate.id = 'systemupdate';
 			systemUpdate.title = this.translate.instant('dashboard.systemStatus.systemUpdate.title'); // 'System Update';
 			systemUpdate.detail = this.translate.instant('dashboard.systemStatus.systemUpdate.detail.update'); // 'Update';
+			this.translate.stream('dashboard.systemStatus.systemUpdate.title').subscribe((value) => {
+				systemUpdate.title = value;
+			});
+			this.translate.stream('dashboard.systemStatus.systemUpdate.detail.update').subscribe((value) => {
+				systemUpdate.detail = value;
+			});
 			systemUpdate.path = 'device/system-updates';
 			systemUpdate.asLink = false;
 			systemUpdate.isSystemLink = false;

@@ -5,18 +5,16 @@ import {
 	HostListener
 } from '@angular/core';
 import {
-	NgbActiveModal
+	NgbActiveModal, NgbModal
 } from '@ng-bootstrap/ng-bootstrap';
-import {
-	LocalStorageKey
-} from 'src/app/enums/local-storage-key.enum';
 import {
 	CommonService
 } from 'src/app/services/common/common.service';
 import * as phoenix from '@lenovo/tan-client-bridge';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes, WinRT } from '@lenovo/tan-client-bridge';
-import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import * as Phoenix from '@lenovo/tan-client-bridge';
+import { ModalLenovoIdComponent } from '../modal-lenovo-id/modal-lenovo-id.component';
 
 @Component({
 	selector: 'vtr-modal-chs-welcome-container',
@@ -25,26 +23,46 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 })
 export class ModalChsWelcomeContainerComponent implements OnInit {
 	containerPage: number;
-	isLocationServiceOn: boolean = false;
-	switchPage = 1;
-	idLenovoIdLogin: boolean = false;
-	itemsList: Array<any>;
-	url: string = 'ms-settings:privacy-location';
-	// wfData: phoenix.WifiSecurity;
+	switchPage: number;
+	isLenovoIdLogin: boolean;
+	indicatorList: Array<any>;
+	url = 'ms-settings:privacy-location';
+	showPageFour = false;
+	hasSystemPermissionShowed: boolean;
+	isLocationServiceOn: boolean;
+	chs: Phoenix.ConnectedHomeSecurity;
+	permission: any;
 	constructor(
 		public activeModal: NgbActiveModal,
 		private vantageShellService: VantageShellService,
-		private commonService: CommonService
-	) {	}
+		private commonService: CommonService,
+		public modalService: NgbModal
+	) {
+		this.chs = vantageShellService.getConnectedHomeSecurity();
+		this.permission = vantageShellService.getPermission();
+	}
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		// this.wfData.refresh();
+		this.refreshPage();
 	}
 
 	ngOnInit() {
-		this.getSwitchPage();
-		this.itemsList = new Array(this.containerPage);
+		this.refreshPage();
+	}
+
+	refreshPage() {
+		if (this.hasSystemPermissionShowed) {
+			this.permission.requestPermission('geoLocatorStatus').then((status) => {
+				this.isLocationServiceOn = status;
+			});
+		}
+		if (this.switchPage === 4) {
+			this.showPageFour = true;
+		} else {
+			this.showPageFour = this.isLocationServiceOn ? false : true;
+		}
+		this.indicatorList = new Array(this.containerPage);
 	}
 
 	closeModal() {
@@ -57,38 +75,30 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 		}
 	}
 
-	getContainerPage(isLocationServiceOn, idLenovoIdLogin) {
-		if (!isLocationServiceOn && !idLenovoIdLogin) {
-			this.containerPage = 4;
-		} else if (!isLocationServiceOn || !this.idLenovoIdLogin) {
-			this.containerPage = 3;
-		} else {
-			this.containerPage = 2;
+	prev(switchPage) {
+		if (switchPage > 0) {
+			this.switchPage = switchPage - 1;
 		}
-	}
-
-	getSwitchPage() {
-		const showW: number = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityShowWelcome);
-		this.getContainerPage(this.isLocationServiceOn, this.idLenovoIdLogin);
-		if (showW < 3) {
-			this.switchPage = 1;
-		} else {
-			if (!this.isLocationServiceOn) {
-				this.switchPage = 4;
-			} else {
-				this.closeModal();
-			}
-		}
-	}
-
-	selected(num) {
-		this.switchPage = num + 1;
 	}
 
 	public onOkClick($event: any) {
-		this.activeModal.close(true);
-		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'yes');
-		WinRT.launchUri(this.url);
-		// this.okHandler();
+		if (!this.hasSystemPermissionShowed) {
+			this.permission.requestPermission('geoLocatorStatus').then((status) => {
+				this.isLocationServiceOn = status;
+			});
+		} else {
+			WinRT.launchUri(this.url);
+			this.permission.requestPermission('geoLocatorStatus').then((status) => {
+				this.isLocationServiceOn = status;
+			});
+		}
+	}
+
+	openLenovoId() {
+		this.modalService.open(ModalLenovoIdComponent, {
+			backdrop: 'static',
+			centered: true,
+			windowClass: 'lenovo-id-modal-size'
+		});
 	}
 }

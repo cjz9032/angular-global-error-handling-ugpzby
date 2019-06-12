@@ -98,5 +98,13 @@
 				padding-left: 7rem;
 			}
 		}
+		.offline-icon {
+			fa-icon {
+				font-size: 10rem;
+				::ng-deep svg {
+					color: $light;
+				}
+			}
+		}
 	}
 }

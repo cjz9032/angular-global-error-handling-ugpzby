@@ -1,26 +1,42 @@
 <section class="breaches-page"
-         vtrSendAnalytics
-		 [metricsEvent]="'PageView'"
-		 [metricsItem]="'BreachedAccounts'"
->
-	<vtr-common-text [texts]="commonTexts"></vtr-common-text>
+		 vtrSendAnalytics
+		 [metricsEvent]="'PageView'">
 
-	<div class="breached-accounts">
-
-		<div *ngIf="!(isFigleafReadyForCommunication$ | async) && !breached_accounts?.length" class="email-scanner">
-			<vtr-email-scanner></vtr-email-scanner>
+	<div class="breached-accounts" data-analyticsName="BreachedAccountsBlock">
+		<div *ngIf="!(isFigleafReadyForCommunication$ | async) && !(breachedAccounts$ | async)?.length"
+			 class="email-scanner">
+			<vtr-email-scanner
+				[userEmail]="userEmail$ | async"
+				[emailWasScanned]="emailWasScanned$ | async"></vtr-email-scanner>
 		</div>
 
-		<div *ngIf="breached_accounts?.length" class="breaches-wrapper">
-			<p class="breached-accounts__text">
-				Looks like some of your personal info is floating around online, making it easy for others to access
-				your accounts without your knowledge. You should change your passwords right now.
-			</p>
+		<div *ngIf="(breachedAccounts$ | async)?.length"
+			 class="breaches-wrapper">
+			<div class="breached-accounts__header">
+				<p class="breached-accounts__title">
+					Found
+					<span class="breached-accounts__title--red">
+						{{(breachedAccountsCount$ | async)}} </span>
+					breaches
+				</p>
+				<button class="breached-accounts__verify-button"
+						*ngIf="!(isUserAuthorized$ | async)"
+						(click)="startVerify()">
+					Verify email
+				</button>
+			</div>
 			<vtr-breached-account
-					[breachedAccounts]="breached_accounts"
-					[openId]="openBreachedId$ | async">
+				[breachedAccounts]="(breachedAccounts$ | async)"
+				[isUserAuthorized]="isUserAuthorized$ | async"
+				(verifyClick)="startVerify()">
 			</vtr-breached-account>
 		</div>
 
 	</div>
 </section>
+
+<vtr-common-popup [popUpId]="confirmationPopupName">
+	<ng-template>
+		<vtr-confirmation-popup [popupId]="confirmationPopupName"></vtr-confirmation-popup>
+	</ng-template>
+</vtr-common-popup>

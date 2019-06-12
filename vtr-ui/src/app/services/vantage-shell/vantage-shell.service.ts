@@ -6,6 +6,9 @@ import { CommonService } from '../../services/common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
 import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
+import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
+import { TouchpadLockStatus } from 'src/app/data-models/gaming/touchpad-lock-status.model';
+import { SystemStatus } from 'src/app/data-models/gaming/system-status.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -18,15 +21,12 @@ export class VantageShellService {
 		if (this.shell) {
 			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
 			const powerClient = this.shell.PowerClient ? this.shell.PowerClient() : null;
-			this.phoenix = Phoenix.default(
-				new inversify.Container(),
-				{
-					metricsBroker: metricClient,
-					hsaPowerBroker: powerClient,
-					hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
-					hsaForteBroker: this.shell.ForteRpcClient ? this.shell.ForteRpcClient.getInstance() : null
-				}
-			);
+			this.phoenix = Phoenix.default(new inversify.Container(), {
+				metricsBroker: metricClient,
+				hsaPowerBroker: powerClient,
+				hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
+				hsaForteBroker: this.shell.ForteRpcClient ? this.shell.ForteRpcClient.getInstance() : null
+			});
 		}
 	}
 
@@ -38,10 +38,8 @@ export class VantageShellService {
 		});
 	}
 
-	public unRegisterEvent(eventType: any) {
-		this.phoenix.off(eventType, (val) => {
-			console.log('unRegister Event: ', eventType);
-		});
+	public unRegisterEvent(eventType: any, handler: any) {
+		this.phoenix.off(eventType, handler);
 	}
 	private getVantageShell(): any {
 		const win: any = window;
@@ -122,7 +120,7 @@ export class VantageShellService {
 
 						return await this.sendAsyncOrignally(data);
 					} catch (ex) {
-						console.log('an error ocurr when sending metrics event');
+						console.log('an error ocurr when sending metrics event', ex);
 						return Promise.resolve({
 							status: 0,
 							desc: 'ok'
@@ -156,6 +154,13 @@ export class VantageShellService {
 	public getPermission(): any {
 		if (this.phoenix) {
 			return this.phoenix.permissions;
+		}
+		return undefined;
+	}
+
+	public getConnectedHomeSecurity(): Phoenix.ConnectedHomeSecurity {
+		if (this.phoenix) {
+			return this.phoenix.connectedHomeSecurity;
 		}
 		return undefined;
 	}
@@ -368,21 +373,16 @@ export class VantageShellService {
 
 	public getCPUOCStatus(): any {
 		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingOverclock.GetCpuOCStatus();
-			return undefined;
+			return this.phoenix.gaming.gamingOverclock.getCpuOCStatus();
 		}
-
 		return undefined;
 	}
 
 	public setCPUOCStatus(CpuOCStatus: CPUOCStatus): any {
 		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingOverclock.SetCpuOCStatus(CpuOCStatus.cpuOCStatus);
-			return CpuOCStatus;
+			return this.phoenix.gaming.gamingOverclock.setCpuOCStatus(CpuOCStatus.cpuOCStatus);
 		}
-		return undefined;
+		return false;
 	}
 
 	public getThermalModeStatus(): any {
@@ -403,34 +403,36 @@ export class VantageShellService {
 		return true;
 	}
 
-	public getRAMOCStatus(): any {
-		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingOverclock.GetRamOCStatus();
-			return undefined;
-		}
-		return undefined;
-	}
+	// public getRAMOCStatus(): any {
+	// 	if (this.phoenix) {
+	// 		return this.phoenix.gaming.gamingOverclock.getRamOCStatus();
+	// 	}
+	// 	return undefined;
+	// }
 
-	public setRAMOCStatus(ramOCStausObj: RamOCSatus): any {
-		if (this.phoenix) {
-			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingOverclock.SetRamOCStatus(ramOCStausObj.ramOcStatuss);
-			return ramOCStausObj.ramOcStatus;
-		}
-		return ramOCStausObj.ramOcStatus;
-	}
+	// public setRAMOCStatus(ramOCStausObj: RamOCSatus): any {
+	// 	if (this.phoenix) {
+	// 		return this.phoenix.gaming.gamingOverclock.setRamOCStatus(ramOCStausObj.ramOcStatus);
+	// 	}
+	// 	return false;
+	// }
 
 	public getGamingAllCapabilities(): any {
 		if (this.phoenix && this.phoenix.gaming) {
-			return this.phoenix.gaming.gamingAllCapabilities();
+			return this.phoenix.gaming.gamingAllCapabilities;
 		}
 		return undefined;
 	}
 
 	public getGamingLighting(): any {
 		if (this.phoenix && this.phoenix.gaming) {
-			return this.phoenix.gaming.gamingLighting();
+			return this.phoenix.gaming.gamingLighting;
+		}
+		return undefined;
+	}
+	public getGamingOverClock(): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingOverclock;
 		}
 		return undefined;
 	}
@@ -438,12 +440,71 @@ export class VantageShellService {
 	public getIntelligentSensing(): any {
 		if (this.phoenix) {
 			return this.phoenix.hwsettings.lis.intelligentSensing;
-		} return undefined;
+		}
+		return undefined;
 	}
 
 	public getMetricPreferencePlugin() {
 		if (this.phoenix) {
 			return this.phoenix.genericMetricsPreference;
 		}
+	}
+
+	public getGamingKeyLock() {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingKeyLock;
+		}
+		return undefined;
+	}
+
+	public getGamingHybridMode() {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingHybridMode;
+		}
+		return undefined;
+	}
+
+	public getGamingHwInfo() {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingHwInfo;
+		}
+		return undefined;
+	}
+
+	public getIntelligentMedia(): any {
+		if (this.phoenix) {
+			return this.phoenix.hwsettings.lis.intelligentMedia;
+		}
+		return undefined;
+	}
+
+	public getPreferenceSettings() {
+		if (this.phoenix) {
+			return this.phoenix.preferenceSettings;
+		}
+	}
+
+	/**
+     * returns macroKeyClearInfo object from VantageShellService of JS Bridge
+     */
+	public setMacroKeyClear(macroKey: string): any {
+		if (this.phoenix) {
+			console.log('Deleting the following macro key ---->', macroKey);
+			return this.phoenix.gaming.gamingMacroKey.setClear(macroKey);
+		}
+		return undefined;
+	}
+
+	public getGamingMacroKey(): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey;
+		}
+	}
+	
+	public getIntelligentCoolingForIdeaPad(): any {
+		if(this.getPowerIdeaNoteBook()) {
+			return this.getPowerIdeaNoteBook().its;
+		}
+		return undefined;
 	}
 }

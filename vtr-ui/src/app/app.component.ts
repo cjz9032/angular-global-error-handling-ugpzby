@@ -13,7 +13,8 @@ import { WelcomeTutorial } from './data-models/common/welcome-tutorial.model';
 import { NetworkStatus } from './enums/network-status.enum';
 import { KeyPress } from './data-models/common/key-press.model';
 import { VantageShellService } from './services/vantage-shell/vantage-shell.service';
-
+import { SettingsService } from './services/settings.service';
+import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
@@ -22,6 +23,7 @@ import { VantageShellService } from './services/vantage-shell/vantage-shell.serv
 export class AppComponent implements OnInit {
 
 	title = 'vtr-ui';
+	private allCapablitiyFlag: Boolean = false;
 
 	constructor(
 		private devService: DevService,
@@ -32,6 +34,8 @@ export class AppComponent implements OnInit {
 		private commonService: CommonService,
 		private translate: TranslateService,
 		private userService: UserService,
+		private settingsService: SettingsService,
+		private gamingAllCapabilitiesService: GamingAllCapabilitiesService,
 		private vantageShellService: VantageShellService
 	) {
 		translate.addLangs(['en', 'zh-Hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it',
@@ -99,6 +103,13 @@ export class AppComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		if (!this.allCapablitiyFlag) {
+			this.gamingAllCapabilitiesService.getCapabilities().then((response) => {
+				this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
+			});
+			this.allCapablitiyFlag = true;
+		}
+
 		this.devService.writeLog('APP INIT', window.location.href, window.devicePixelRatio);
 
 		// use when deviceService.isArm is set to true
@@ -135,6 +146,7 @@ export class AppComponent implements OnInit {
 		});
 		this.getMachineInfo();
 		this.checkIsDesktopOrAllInOneMachine();
+		this.settingsService.getPreferenceSettingsValue();
 	}
 
 	private getMachineInfo() {

@@ -1,6 +1,6 @@
 import { Directive, ElementRef, HostListener, Input, OnInit, OnDestroy } from '@angular/core';
 import { GetParentForAnalyticsService } from '../services/get-parent-for-analytics.service';
-import { AnalyticsService } from '../services/analytics.service';
+import { AnalyticsService, ItemTypes } from '../services/analytics.service';
 
 @Directive({
 	selector: '[vtrSendAnalytics]'
@@ -10,9 +10,10 @@ export class SendAnalyticsDirective implements OnInit, OnDestroy {
 
 	@Input() metricsEvent: string; // ItemType
 	@Input() metricsItem: string; // ItemName
-	@Input() metricsValue: string; // ItemValue
-	@Input() metricsParam: string | object; // ItemParm
-	@Input() pageContext: string; // PageContext
+	@Input() metricsValue?: string; // ItemValue
+	@Input() metricsParam?: string | object; // ItemParm
+	@Input() pageContext?: string; // PageContext
+	@Input() metricsParent?: string; // ItemParent
 
 	pageDuration: number;
 
@@ -27,12 +28,16 @@ export class SendAnalyticsDirective implements OnInit, OnDestroy {
 	}
 
 	@HostListener('click', ['$event']) onClick() {
+		if (this.metricsEvent !== ItemTypes.ItemClick) {
+			return;
+		}
+
 		const ItemParent = this.getParentForAnalyticsService.getParentName(this.myCurrentElement);
 
 		const dataToSendOnItemClick = {
 			ItemName: this.metricsItem,
 			ItemParm: this.metricsParam,
-			ItemParent,
+			ItemParent: this.metricsParent || ItemParent,
 			ItemValue: this.metricsValue,
 		};
 
@@ -40,20 +45,22 @@ export class SendAnalyticsDirective implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		if (this.metricsEvent === 'PageView') {
+		if (this.metricsEvent === ItemTypes.PageView) {
 			this.pageInitTime = +Date.now();
 		}
 	}
 
 	ngOnDestroy() {
-		this.pageDestroyTime = +Date.now();
-		this.pageDuration = this.pageDestroyTime - this.pageInitTime;
+		if (this.metricsEvent === ItemTypes.PageView) {
+			this.pageDestroyTime = +Date.now();
+			this.pageDuration = (this.pageDestroyTime - this.pageInitTime) / 1000;
 
-		const dataToSendOnPageView = {
-			PageContext: this.pageContext,
-			PageDuration: this.pageDuration,
-		};
+			const dataToSendOnPageView = {
+				PageContext: this.pageContext,
+				PageDuration: this.pageDuration,
+			};
 
-		this.analyticsService.sendPageViewData(dataToSendOnPageView);
+			this.analyticsService.sendPageViewData(dataToSendOnPageView);
+		}
 	}
 }

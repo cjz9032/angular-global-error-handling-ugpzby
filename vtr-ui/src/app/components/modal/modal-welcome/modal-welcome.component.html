@@ -1,4 +1,4 @@
-<div class="vtr-body vtr-modal-welcome" [ngSwitch]="page">
+<div class="vtr-body vtr-modal-welcome" [ngSwitch]="page" [ngStyle]="{'visibility':isDivVisible ? 'visible' : 'hidden'}">
 	<!-- <div class="modal-header">
 		<button type="button"
 			class="close close-button"
@@ -46,10 +46,10 @@
 					<div class="row justify-content-center align-items-center next-btn">
 						<div class="col-auto ">
 							<vtr-ui-button
-							metricsParent="WelcomePage"
+							metricsParent="modal.Welcome"
 							metricsEvent="featureClick"
-							[metricsItem]="'NEXT'"
-							[label]="'NEXT'"
+							[metricsItem]="'tutorial.next' | translate"
+							[label]="'tutorial.next' | translate"
 							[btnHeight]=true
 							[isGradient]=true
 							(onClick)="next(1)">
@@ -104,47 +104,48 @@
 										/>
 									<label for="radio1" class="centered">{{ "welcometutorial.personal" | translate }}</label>
 								</div>
-							<div class="col-4 device-image" (click)="saveUsageType($event, 'BUSINESS')">
-								<input
-									type="radio"
-									name="radio"
-									id="radio2"
-									value="business"
-									vtrMetrics
-									metricsEvent="featureClick"
-									metricsParent="WelcomePage"
-									metricsItem="radio.business"
-									[metricsValue]="!radio2.checked"
-									#radio2
-								/>
-								<img
-									alt="Business Use"
-									for="radio2"
-									src="./../../../../assets/images/welcome/business-use.jpg"
-									class="business"
-								/>
-								<label for="radio2" class="centered">{{ "welcometutorial.business" | translate }}</label>
-							</div>
-							<div class="col-4 device-image" (click)="saveUsageType($event, 'CUSTOM')">
-								<input
-									type="radio"
-									name="radio"
-									id="radio3"
-									value="custom"
-									vtrMetrics
-									metricsEvent="featureClick"
-									metricsParent="WelcomePage"
-									metricsItem="radio.custom"
-									[metricsValue]="!radio3.checked"
-									#radio3
-								/>
-								<img
-									alt="Custom Experience"
-									for="radio3"
-									src="./../../../../assets/images/welcome/custom-use.jpg"
-									class="custom"
-								/>
-								<label for="radio3" class="centered">{{ "welcometutorial.custom" | translate }}<br>{{ "welcometutorial.experience" | translate }}</label>
+								<div class="col-4 device-image" (click)="saveUsageType($event, 'BUSINESS')">
+									<input
+										type="radio"
+										name="radio"
+										id="radio2"
+										value="business"
+										vtrMetrics
+										metricsEvent="featureClick"
+										metricsParent="WelcomePage"
+										metricsItem="radio.business"
+										[metricsValue]="!radio2.checked"
+										#radio2
+									/>
+									<img
+										alt="Business Use"
+										for="radio2"
+										src="./../../../../assets/images/welcome/business-use.jpg"
+										class="business"
+									/>
+									<label for="radio2" class="centered">{{ "welcometutorial.business" | translate }}</label>
+								</div>
+								<div class="col-4 device-image" (click)="saveUsageType($event, 'CUSTOM')">
+									<input
+										type="radio"
+										name="radio"
+										id="radio3"
+										value="custom"
+										vtrMetrics
+										metricsEvent="featureClick"
+										metricsParent="WelcomePage"
+										metricsItem="radio.custom"
+										[metricsValue]="!radio3.checked"
+										#radio3
+									/>
+									<img
+										alt="Custom Experience"
+										for="radio3"
+										src="./../../../../assets/images/welcome/custom-use.jpg"
+										class="custom"
+									/>
+									<label for="radio3" class="centered">{{ "welcometutorial.custom" | translate }}<br>{{ "welcometutorial.experience" | translate }}</label>
+								</div>
 							</div>
 	
 							<div class="row justify-content-center align-items-center font-14-bold col-12 margin-top-25">
@@ -177,9 +178,11 @@
 								<div class="custom-control custom-checkbox">
 									<input type="checkbox" (click)="savePrivacy($event, 'PRIVACYPOLICY')" class="custom-control-input" id="defaultUnchecked">
 									<label class="custom-control-label font-14-semi" for="defaultUnchecked">
-										{{ "welcometutorial.privacytitle" | translate }}&nbsp;
+										{{ "welcometutorial.privacytitle" | translate }}
+										<!-- Help us improve the quality of the app by allowing anonymous collection of usage statistics -->
 										<a class="linktext" href="https://www.lenovo.com/us/en/privacy" target="_blank">
 											{{ "welcometutorial.privacypolicy" | translate }}
+											<!-- Lenovo's Privacy Policy -->
 										</a>
 									</label>
 								</div>
@@ -189,10 +192,10 @@
 					<div class="row justify-content-center align-items-center next-btn">
 						<div class="col-auto ">
 							<vtr-ui-button
-							metricsParent="WelcomePage"
+							metricsParent="Modal.Welcome"
 							metricsEvent="featureClick"
-							[metricsItem]="'DONE'"
-							[label]="'DONE'"
+							[metricsItem]="'welcometutorial.done' | translate"
+							[label]="'welcometutorial.done' | translate"
 							[btnHeight]=true
 							[isGradient]=true
 							(onClick)="next(2)">

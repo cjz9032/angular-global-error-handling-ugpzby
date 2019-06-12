@@ -119,7 +119,7 @@ export class ConfigService {
 		subitems: [{
 			id: 'device',
 			label: 'common.menu.device.sub1',
-			path: '',
+			path: 'Device',
 			icon: '',
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
@@ -228,6 +228,7 @@ export class ConfigService {
 		id: 'home-security',
 		label: 'common.menu.homeSecurity',
 		path: 'home-security',
+		hide: true,
 		metricsEvent: 'itemClick',
 		metricsParent: 'navbar',
 		metricsItem: 'link.homesecurity',
@@ -343,11 +344,6 @@ export class ConfigService {
 				exact: true
 			},
 			subitems: []
-		},{
-			id: 'privacy',
-			label: 'common.menu.privacy',
-			path: 'privacy',
-			icon: ['icomoon', 'icomoon-LE-Figleaf2x'],
 		}, {
 			id: 'wifi-security',
 			label: 'common.menu.security.sub3',
@@ -376,8 +372,8 @@ export class ConfigService {
 	},  {
 		id: 'privacy',
 		label: 'common.menu.privacy',
-		path: 'privacy',
-		icon: ['fal', 'eye'],
+		path: 'privacy/breaches',
+		icon: ['fal', 'user-shield'],
 		metricsEvent: 'itemClick',
 		metricsParent: 'navbar',
 		metricsItem: 'link.privacy',
@@ -403,6 +399,7 @@ export class ConfigService {
 		id: 'home-security',
 		label: 'common.menu.homeSecurity',
 		path: 'home-security',
+		hide: true,
 		metricsEvent: 'itemClick',
 		metricsParent: 'navbar',
 		metricsItem: 'link.homesecurity',
@@ -442,13 +439,15 @@ export class ConfigService {
 				return resultMenu;
 			}
 
-			if (this.countryCodes.indexOf(machineInfo.country.toLowerCase()) !== -1) {
+			const country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
+
+			if (this.countryCodes.indexOf(country.toLowerCase()) !== -1) {
 				resultMenu = Object.assign([], this.menuItemsPrivacy);
 			} else {
 				resultMenu = Object.assign([], this.menuItems);
 			}
 
-			if (machineInfo.country.toLowerCase() !== 'us') {
+			if (country.toLowerCase() !== 'us') {
 				resultMenu = resultMenu.filter(item => item.id !== 'home-security');
 			}
 

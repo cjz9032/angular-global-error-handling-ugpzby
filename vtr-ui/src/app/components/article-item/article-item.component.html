@@ -12,8 +12,8 @@
 				metricsEvent="ArticleClick"
 				metricsParent="Page.Support"
 				metricsItemID="{{ item.Id }}"
-				metricsItemCategory="{{ item.Category[0].Id }}"
-				metricsItemPosition="{{ index }}"
+				metricsItemCategory="{{ itemCategory }}"
+				metricsItemPosition="{{ index + 1 }}"
 				metricsViewOrder="{{metricsDatas.viewOrder}}"
 				metricsPageNumber="{{metricsDatas.pageNumber}}"
 				(click)="showArticleDetails()">
@@ -36,8 +36,8 @@
 					metricsEvent="ArticleClick"
 					metricsParent="Page.Support"
 					metricsItemID="{{ item.Id }}"
-					metricsItemCategory="{{ item.Category[0].Id }}"
-					metricsItemPosition="{{ index }}"
+					metricsItemCategory="{{ itemCategory }}"
+					metricsItemPosition="{{ index + 1 }}"
 					metricsViewOrder="{{metricsDatas.viewOrder}}"
 					metricsPageNumber="{{metricsDatas.pageNumber}}"
 					(click)="showArticleDetails()">{{item.Title}}</a>
@@ -51,8 +51,8 @@
 						metricsEvent="ArticleClick"
 						metricsParent="Page.Support"
 						metricsItemID="{{ item.Id }}"
-						metricsItemCategory="{{ item.Category[0].Id }}"
-						metricsItemPosition="{{ index }}"
+						metricsItemCategory="{{ itemCategory }}"
+						metricsItemPosition="{{ index + 1 }}"
 						metricsViewOrder="{{metricsDatas.viewOrder}}"
 						metricsPageNumber="{{metricsDatas.pageNumber}}"
 						(click)="showArticleDetails()">

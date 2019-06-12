@@ -1,18 +1,44 @@
 <div class="vtr-page-support vtr-page">
 	<div class="row vtr-page-header">
 		<div class="col vtr-col">
-			<vtr-header-main [title]="title | translate"></vtr-header-main>
+			<vtr-header-main [title]="title | translate"
+				[backarrow]="'&lt; '"
+				[back]="'common.ui.back' | translate"
+				[backId]="backId"></vtr-header-main>
 		</div>
 	</div>
 	<div class="row vtr-page-content">
 		<div class="col vtr-col">
 			<div class="container-fluid">
+
 				<div class="row">
 					<div class="col-lg-8 col-sm-12 vtr-page-left-column">
 						<div class="vtr-page-shift-up nmx-40">
 
 							<div class="row"
-								*ngIf="articleCategories.length > 0">
+								*ngIf="!isOnline">
+								<div class="col col-12 px-40 pb-40">
+									<vtr-widget-offline-info [isButtonVisible]="false"
+										[isSubtitleVisible]="false"
+										[title]="'dashboard.offlineInfo.title' | translate"
+										[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+										[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
+										(buttonClick)="onGetSupportClick($event)"></vtr-widget-offline-info>
+								</div>
+							</div>
+							<div class="row pb-40"
+								*ngIf="!isOnline">
+								<div class="col-6 p-40"
+									*ngFor="let offlineImage of offlineImages">
+									<div class="offline-article-item">
+										<img class="w-100"
+											[src]="offlineImage" />
+									</div>
+								</div>
+							</div>
+
+							<div class="row"
+								*ngIf="articleCategories.length > 0 && isOnline">
 								<div class="col col-12 px-40 pb-40">
 									<div class="card quick-access">
 										<div class="quick-access-title">
@@ -23,6 +49,11 @@
 											<a href="javascript:;"
 												class="quick-assess-item col col-6 col-sm-3"
 												*ngFor="let category of articleCategories"
+												vtrMetrics
+												metricsItem="Support.CategoryClicked"
+												metricsEvent="featureClick"
+												metricsParam="CategoryId: {{ category.Id }}"
+												metricsParent="Page.Support"
 												(click)="clickCategory(category.Id)">
 												<div class="item-con">
 													<fa-icon [icon]="['fal', 'bolt']"></fa-icon>
@@ -92,6 +123,7 @@
 								</div>
 							</div> -->
 							<vtr-container-article [items]="articles"
+								*ngIf="isOnline"
 								[type]="articlesType">
 							</vtr-container-article>
 						</div>
@@ -101,7 +133,7 @@
 							<div class="container-fluid">
 
 								<div class="row"
-									*ngIf="warranty">
+									*ngIf="warranty && isOnline">
 									<div class="col col-12 pb-60">
 										<vtr-widget-warranty [item]="warranty"></vtr-widget-warranty>
 									</div>

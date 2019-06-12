@@ -21,27 +21,29 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 
 	constructor(
 		private elementRef: ElementRef,
-	) {}
+	) { }
 
 	ngOnInit() {
-		this.options.forEach(option => {
-			if (option.selectedOption && this.currentOption === undefined) {
-				this.optionSelected(option);
-			}
-		});
+		//this.options.forEach(option => {
+		//	if (option.selectedOption && this.currentOption === undefined) {
+		//		console.log('optionSelected', option);
+		//		this.setDefaultOption(option);
+		//	}
+		//});
 
-		if (this.currentOption === undefined) {
-			this.options.forEach(option => {
-				if (option.defaultOption) {
-					this.optionSelected(option);
-				}
-			});
-		}
+		//if (this.currentOption === undefined) {
+		//	this.options.forEach(option => {
+		//		if (option.defaultOption) {
+		//			this.setDefaultOption(option);
+		//		}
+		//	});
+		//}
+		this.currentOption = this.options.dropOptions[this.options.curSelected - 1].name;
+		this.currentDescription = this.options.dropOptions[this.options.curSelected - 1].description;
 	}
 
-	public toggleOptions() {
+	public toggleOptions(optSelected) {
 		this.showOptions = !this.showOptions;
-
 		// CHANGE THE NAME OF THE BUTTON.
 		if (this.showOptions) {
 			this.buttonName = 'Hide';
@@ -50,8 +52,16 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 		}
 	}
 
+	public setDefaultOption(option) {
+		this.currentOption = option.name;
+		this.selectedDescription = option.description;
+		this.currentDescription = this.selectedDescription;
+		this.showOptions = false;
+	}
+
 	public optionSelected(option) {
 		this.currentOption = option.name;
+		//this.options.curSelected = option.value;
 		this.selectedDescription = option.description;
 		this.currentDescription = this.selectedDescription;
 		this.showOptions = false;
@@ -59,11 +69,15 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	}
 
 	public changeDescription(option) {
-		this.currentDescription = option.description;
+		if (this.options.curSelected === option.value) {
+			this.currentDescription = option.description;
+		}
 	}
 
 	public resetDescription(option) {
-		this.currentDescription = this.selectedDescription;
+		if (this.options.curSelected === option.value) {
+			this.currentDescription = option.description;
+		}
 	}
 
 	public generalClick(event: Event) {

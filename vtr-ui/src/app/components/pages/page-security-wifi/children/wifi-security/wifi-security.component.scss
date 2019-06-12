@@ -129,6 +129,14 @@
 			}
 		}
 	}
+	
+	::ng-deep vtr-ui-switch-onoff {
+		.checkbox {
+			.switch {
+				margin-right: 0rem;
+			}
+		}
+	}
 
 	.button-box {
 		padding: 1rem;
@@ -340,12 +348,11 @@
 				display: inline-block;
 				// width: 15rem;
 				max-width: 70%;
-
+				margin-left: 1rem;
 				.collapse-text {
 					display: inline-block;
 					color: $main;
 					font-size: 1.6rem;
-					margin-right: 1rem;
 					vertical-align: middle;
 					text-decoration: underline;
 					font-weight: 500;
@@ -355,6 +362,8 @@
 					font-size: 2.4rem;
 					color: $main;
 					vertical-align: middle;
+					cursor: pointer;
+					padding-left: 0.8rem !important;
 				}
 				button{
 					overflow: hidden;
@@ -387,6 +396,7 @@
 				.switch vtr-ui-switch-onoff .checkbox {
 					margin-bottom: 0rem;
 				}
+
 			}
 		}
 
@@ -493,10 +503,12 @@
 			cursor: auto;
 		}
 	}
-	.button-box,
-	#sa-ws-btn-enablewifisecurity{
-		::ng-deep .vtr-ui-button .button-box .button{
-			max-width: 100%;
+	vtr-ui-button {
+		::ng-deep .vtr-ui-button{
+			max-width: 100% !important;
+			.button-box .button{
+				max-width: 100% !important;
+			}
 		}
 	}
 }

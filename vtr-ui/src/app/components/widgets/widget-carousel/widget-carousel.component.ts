@@ -69,13 +69,13 @@ export class WidgetCarouselComponent implements OnInit {
 
 		for (var i = 0; i < this.data.length; i++) {
 			this.carouselModel.push({
+				id:this.data[i].id,
 				source: this.data[i].source,
 				cardTitle: this.data[i].title,
 				image: this.data[i].url,
 				link: this.data[i].ActionLink ? this.data[i].ActionLink : ''
 			})
 		}
-		console.log('###################', this.carouselModel);
 	}
 
 	linkClicked($event, link) {
@@ -92,6 +92,7 @@ interface CarouselModel {
 	source: string;
 	image: string;
 	link: string;
+	id:string;
 }
 
 

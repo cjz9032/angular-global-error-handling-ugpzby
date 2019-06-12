@@ -35,6 +35,12 @@
                         "text": "Change will be effective after restarting computer.",
                         "button": "ok"
                     },
+                    "driverPopup": {
+                        "headerText": "Driver Install Required",
+                        "text": "You need install driver for RAM Overclock to  make it effective",
+                        "button": "Install",
+                        "link": "cancel"
+                    },
                     "autoClose": "Auto Close",
                     "networkBoost": "Network Boost",
                     "hybridMode": "Hybrid Mode",
@@ -78,8 +84,184 @@
                 }
             }
         },
+        "macroKey": {
+            "title": "Macro Key",
+            "introLine": "You can record a series of key input, and use them in gaming or other operations.",
+            "status": {
+                "on": {
+                    "title": "On",
+                    "description": "Always Enabled"
+                },
+                "whileGaming": {
+                    "title": "Macro Key enabled only when gaming",
+                    "description": "It will be enabled when you game and remain as num key when you don't."
+                },
+                "off": {
+                    "title": "Off",
+                    "description": "Always Off"
+                }
+            },
+            "details": {
+                "intro": {
+                    "noNumber": "SELECT A MACRO KEY",
+                    "title": "CREATE A MACRO KEY FOR",
+                    "line1": "click the start recording button below",
+                    "line2": "type in macro key",
+                    "line3": "stop recording when finishing typing"
+                },
+                "buttons": {
+                    "start": "START RECORDING",
+                    "stop": "STOP RECORDING"
+                },
+                "recording": {
+                    "title": "START TYPING",
+                    "description": "20 inputs with in 20 seconds can be recorded."
+                },
+                "recorded": {
+                    "title": "MACRO KEY FOR ",
+                    "deleteKey": "Delete Key",
+                    "clear": "Clear",
+                    "intervalStatus": {
+                        "keep": {
+                            "title": "Keep Delay",
+                            "description": "Intervals of key actions will be kept and applied when using this macro key."
+                        },
+                        "ignore": {
+                            "title": "Ignore Delay",
+                            "description": "Intervals of key actions will be ignored."
+                        }
+                    },
+                    "repeatStatus": {
+                        "repeat1": {
+                            "title": "No Repeat",
+                            "description": "No Repeat"
+                        },
+                        "repeat2": {
+                            "title": "Repeat 2 Times",
+                            "description": "Repeats 2 times"
+                        },
+                        "repeat3": {
+                            "title": "Repeat 3 Times",
+                            "description": "Repeats 3 times"
+                        },
+                        "repeat4": {
+                            "title": "Repeat 4 Times",
+                            "description": "Repeats 4 times"
+                        },
+                        "repeat5": {
+                            "title": "Repeat 5 Times",
+                            "description": "Repeats 5 times"
+                        },
+                        "repeat6": {
+                            "title": "Repeat 6 Times",
+                            "description": "Repeats 6 times"
+                        },
+                        "repeat7": {
+                            "title": "Repeat 7 Times",
+                            "description": "Repeats 7 times"
+                        },
+                        "repeat8": {
+                            "title": "Repeat 8 Times",
+                            "description": "Repeats 8 times"
+                        },
+                        "repeat9": {
+                            "title": "Repeat 9 Times",
+                            "description": "Repeats 9 times"
+                        },
+                        "repeat10": {
+                            "title": "Repeat 10 Times",
+                            "description": "Repeats 10 times"
+                        }
+                    },
+                    "list": {
+                        "header": {
+                            "col1": "Key Action",
+                            "col2": "Interval"
+                        },
+                        "footer": {
+                            "title": "Next input.."
+                        }
+                    }
+                }
+            },
+            "numberpad": {
+                "number": {
+                    "zero": "Num 0",
+                    "one": "Num 1",
+                    "two": "Num 2",
+                    "three": "Num 3",
+                    "four": "Num 4",
+                    "five": "Num 5",
+                    "six": "Num 6",
+                    "seven": "Num 7",
+                    "eight": "Num 8",
+                    "nine": "Num 9"
+                },
+                "macro": {
+                    "m1": "M1",
+                    "m2": "M2"
+                }
+            },
+            "popupContent": {
+                "clearMacrokey": {
+                    "title": "Are you sure to clear this macro key?"
+                },
+                "timeoutRecording": {
+                    "title": "Time Out For Recording.",
+                    "body": "Recording will time out if no input for 20 seconds."
+                },
+                "maximumInput": {
+                    "title": "Maximum Input Reached.",
+                    "body": "Macro key can only store inputs less than 20."
+                },
+                "inputStopped": {
+                    "title": "Time Out For Recording.",
+                    "body": "Recording will time out if the input stopped for more than 10 seconds."
+                },
+                "confirmButton": {
+                    "btnClear": "Clear",
+                    "btnCancel": "Cancel"
+                },
+                "btnOk": "OK"
+            }
+        },
         "lightingProfile": {
-            "title": "Lighting"
+            "title": "Lighting",
+            "effect": {
+                "option1": {
+                    "title": "Static"
+                },
+                "option2": {
+                    "title": "Flicker"
+                },
+                "option3": {
+                    "title": "Breath"
+                },
+                "option4": {
+                    "title": "Wave"
+                },
+                "option5": {
+                    "title": "Music"
+                },
+                "option6": {
+                    "title": "Smooth"
+                },
+                "option7": {
+                    "title": "CPU Temperature"
+                },
+                "option8": {
+                    "title": "CPU Utilization"
+                },
+                "option9": {
+                    "title": "Response"
+                },
+                "option10": {
+                    "title": "Ripple"
+                },
+                "option11": {
+                    "title": "No Light"
+                }
+            }
         }
     },
     "common": {
@@ -89,7 +271,8 @@
                 "title": "My Device",
                 "sub1": "My Device",
                 "sub2": "My Device Settings",
-                "sub3": "System Updates"
+                "sub3": "System Updates",
+                "sub4": "Smart Assist"
             },
             "security": {
                 "title": "Zabezpečenie",
@@ -190,6 +373,7 @@
                 "email": "Email (optional)",
                 "comments": "Comments...",
                 "button": "Submit",
+                "addScreenshot": "Add ScreenShot",
                 "messages": {
                     "feedbackSuccess": "Thank you for your feedback !"
                 }
@@ -291,7 +475,7 @@
             "helpful": "Helpful Content",
             "batteryGauge": {
                 "title": "BATTERY GAUGE",
-                "subtitle": "Battery health",
+                "subtitle": "Battery",
                 "hours": "hours",
                 "hour": "hour",
                 "minutes": "minutes",
@@ -314,7 +498,6 @@
                     "cycleCount": "Cycle count",
                     "chemistry": "Device chemistry",
                     "remainingCap": "Remaining capacity",
-                    "manufacturer": "Manufacturer",
                     "designCap": "Design capacity",
                     "fullChargeCap": "Full charge capacity",
                     "manufDt": "Manufacture date",
@@ -332,7 +515,14 @@
                     },
                     "deviceChemistry": {
                         "li-polymer": "Li-Polymer",
-                        "li-ion": "Li-Ion"
+                        "li-ion": "Li-Ion",
+                        "li_polymer": "Li-Polymer",
+                        "li_ion": "Li-Ion"
+                    },
+                    "manufacturer": {
+                        "title": "Manufacturer",
+                        "celxpert": "Celxpert",
+                        "smp": "SMP"
                     }
                 },
                 "condition": {
@@ -465,6 +655,9 @@
                         "title": "Battery Charge Threshold",
                         "description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
                         "tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
+                        "note": "Note",
+                        "readMoreText": "Read more.",
+                        "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
                         "settings": {
                             "title1": "Threshold for Built in battery",
                             "title2": "Threshold for Removable battery"
@@ -475,6 +668,11 @@
                             "description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
                             "enable": "ENABLE",
                             "cancel": "CANCEL"
+                        },
+                        "options": {
+                            "start": "Start charging when below",
+                            "checkboxText": "Automatically set the start charging threshold 5 percentage points below the stop charging threshold.",
+                            "stop": "Stop charging at"
                         }
                     },
                     "expressCharging": {
@@ -590,6 +788,35 @@
                             "title": "Note",
                             "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
                         }
+                    },
+                    "dispColorTemp": {
+                        "title": "Display color temperature",
+                        "options": {
+                            "warm": "Warm (Better for eyes)",
+                            "cold": "Cold"
+                        },
+                        "reset": "Reset temperature",
+                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
+                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "note": {
+                            "title": "Note",
+                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                        }
+                    },
+                    "privacyGuard": {
+                        "title": "Privacy guard",
+                        "description": "This feature prevents other people from peeking at your screen. When on, it changes the viewing angle of your display, keeping it private from those around you. You also can toggle modes by pressing the \"Fn+D\" keys.",
+                        "note": "Privacy Guard does not work in screen portrait mode. In this mode, your screen is still visible from the sides.",
+                        "labelText": "Enable this feature when typing passwords"
+                    },
+                    "oledPowerSettings": {
+                        "title": "OLED Power Settings",
+                        "description": [
+                            "Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
+                            "It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+                        ],
+                        "reset": "Reset temperature",
+                        "tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
                     }
                 },
                 "camera": {
@@ -621,80 +848,91 @@
                         "sketchMode": "Sketch mode"
                     }
                 }
+            }
+        },
+        "smartAssist": {
+            "title": "Smart Assist",
+            "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+            "jumpTo": {
+                "title": "JUMP TO SETTINGS",
+                "security": "Security",
+                "screen": "Screen",
+                "media": "Media",
+                "voice": "Voice"
             },
-            "smartAssist": {
-                "title": "Smart Assist",
-                "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
-                "jumpTo": {
-                    "title": "JUMP TO SETTINGS",
-                    "security": "Security",
-                    "screen": "Screen",
-                    "media": "Media",
-                    "voice": "Voice"
+            "intelligentSecurity": {
+                "title": "Intelligent Security",
+                "readMore": "Read more",
+                "HumanPresenceDetection": {
+                    "title": "Human presence detection",
+                    "tooltip": "Click here to reset the human presence detection settings."
                 },
-                "intelligentSecurity": {
-                    "title": "Intelligent Security",
-                    "readMore": "Read more",
-                    "humanPresenceDetection": {
-                        "title": "User Presence Sensing",
-                        "tooltip": "Click here to reset human presence Detection settings."
-                    },
-                    "zeroTouchLogin": {
-                        "title": "Zero Touch Login",
-                        "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
-                    },
-                    "zeroTouchLock": {
-                        "title": "Zero Touch Lock",
-                        "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
-                        "autoScreenLockTimer": {
-                            "title": "AUTO SCREEN LOCK TIMER",
-                            "radioButton": {
-                                "fast": "Fast",
-                                "medium": "Medium",
-                                "slow": "Slow"
-                            },
-                            "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
-                        }
-                    },
-                    "distanceSensitivityAdjusting": {
-                        "title1": "Distance Sensitivity Adjusting",
-                        "title2": "AUTO DISTANCE SENSITIVITY ADJUSTING",
-                        "caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
-                        "options": {
-                            "near": "Near",
-                            "far": "Far"
-                        }
-                    },
-                    "note": {
-                        "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-                        "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
-                        "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-                        "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-                        "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
-                    },
-                    "WindowsLink": {
-                        "goToWindowsHello": "Go to Windows Hello Settings",
-                        "screenTimeoutSettings": "Go to Screen timeout settings"
+                "humanPresenceDetection": {
+                    "title": "User Presence Sensing",
+                    "tooltip": "Click here to reset human presence Detection settings."
+                },
+                "zeroTouchLogin": {
+                    "title": "Zero Touch Login",
+                    "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
+                },
+                "zeroTouchLock": {
+                    "title": "Zero Touch Lock",
+                    "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+                    "autoScreenLockTimer": {
+                        "title": "AUTO SCREEN LOCK TIMER",
+                        "radioButton": {
+                            "fast": "Fast",
+                            "medium": "Medium",
+                            "slow": "Slow"
+                        },
+                        "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
                     }
                 },
-                "intelligentScreen": {
-                    "title": "Intelligent Screen",
-                    "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
-                    "autoScreenOff": {
-                        "title": "Auto screen off",
-                        "caption": "Automatically turn off display when face-down or walking.",
-                        "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
-                        "windowsLink": "Go to Power & sleep settings in Windows settings"
-                    },
-                    "keepMyDisplay": {
-                        "title": "Keep my display",
-                        "caption": "Keep my display when I am reading or browsing.",
-                        "displaySlider": {
-                            "startTime": "0 minutes",
-                            "endTime": "60 minutes"
-                        }
+                "distanceSensitivityAdjusting": {
+                    "title": "DISTANCE SENSITIVITY ADJUSTING",
+                    "caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+                    "options": {
+                        "near": "Near",
+                        "far": "Far"
+                    }
+                },
+                "note": {
+                    "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
+                    "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
+                    "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
+                    "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
+                    "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+                },
+                "WindowsLink": {
+                    "goToWindowsHello": "Go to Windows Hello Settings",
+                    "screenTimeoutSettings": "Go to Screen timeout settings"
+                },
+                "resetToDefault": "RESET TO DEFAULT SETTINGS"
+            },
+            "intelligentScreen": {
+                "title": "Intelligent Screen",
+                "description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+                "autoScreenOff": {
+                    "title": "Auto screen off",
+                    "caption": "Automatically turn off display when face-down or walking.",
+                    "note": "This feature is not available if your Power Plan settings are set to \"never turn off the screen on battery \" in the Windows Settings \"System section\". Please select a value other than \"Never\" to enable this feature.",
+                    "windowsLink": "Go to Power & sleep settings in Windows settings"
+                },
+                "keepMyDisplay": {
+                    "title": "Keep my display",
+                    "caption": "Keep my display when I am reading or browsing.",
+                    "displaySlider": {
+                        "title": "Minutes Before display dims when browsing",
+                        "startTime": "0 minutes",
+                        "endTime": "60 minutes"
                     }
                 }
+            },
+            "intelligentMedia": {
+                "heading": "Intelligent Media",
+                "title": "Zero Touch Video Playback",
+                "desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
+                "tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
             }
         }
     },
@@ -732,11 +970,6 @@
                 "title": "Critical Updates",
                 "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
             },
-            "camera": {
-                "title": "Camera",
-                "tooltip": "Click here to reset Camera properties to default settings.",
-                "reset": "Reset factory settings"
-            },
             "recommended": {
                 "title": "Recommended Updates",
                 "tooltip": "Recommended driver updates keep your computer running at optimal performance."
@@ -770,55 +1003,6 @@
                     "title": "Some updates were not installed correctly.",
                     "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
                 }
-            },
-            "smartAssist": {
-                "title": "Smart Assist",
-                "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
-                "jumpTo": {
-                    "title": "JUMP TO SETTINGS",
-                    "security": "Security",
-                    "screen": "Screen",
-                    "media": "Media",
-                    "voice": "Voice"
-                },
-                "intelligentSecurity": {
-                    "title": "Intelligent Security",
-                    "readMore": "Read more",
-                    "HumanPresenceDetection": {
-                        "title": "Human Presence Detection"
-                    },
-                    "autoIrCameraLogin": {
-                        "title": "Zero Touch Login",
-                        "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it. Auto IR camera login"
-                    },
-                    "autoScreenLock": {
-                        "title": "Auto screen lock",
-                        "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
-                        "autoScreenLockTimer": {
-                            "title": "AUTO SCREEN LOCK TIMER",
-                            "radioButton": {
-                                "fast": "Fast",
-                                "medium": "Medium",
-                                "slow": "Slow"
-                            },
-                            "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
-                        }
-                    },
-                    "distanceSensitivityAdjusting": {
-                        "title": "Distance sensitivity adjusting"
-                    },
-                    "note": {
-                        "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-                        "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect, save, of leak any personal data or image.",
-                        "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-                        "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-                        "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
-                    },
-                    "WindowsLink": {
-                        "goToWindowsHello": "Go to Windows Hello Settings",
-                        "screenTimeoutSettings": "Go to Screen timeout settings"
-                    }
-                }
             }
         },
         "updateCheckbox": {
@@ -830,7 +1014,11 @@
             "downloadSize": "Download size: ",
             "diskSpaceNeeded": "Disk space needed: ",
             "ignore": "Ignore",
-            "attend": "Attend"
+            "attend": "Attend",
+            "rebootRequiredTag": "Reboot Required",
+            "rebootDelayTag": "Reboot Required, Power Source Required",
+            "shutdownRequiredTag": "Shutdown Required",
+            "dependedPackage": "Depended Package"
         },
         "availableUpdates": {
             "title": "Available updates",
@@ -854,11 +1042,49 @@
     "homeSecurity": {
         "title": "Connected Home Security",
         "ecosystemBlockTitle": "Protect your device ecosystem",
-        "overviewBlockTitle": "Your Device Security Overview",
+        "overviewBlockTitle": "Your Ecosystem Security Overview",
         "thisDevice": "This device",
         "allDevices": "All Devices",
         "protected": "Protected",
-        "notProtected": "Not Protected"
+        "notProtected": "Not Protected",
+        "myDevice": "My Device",
+        "allDevice": "All Devices",
+        "secure": "SECURE",
+        "needAttention": "NEEDS ATTENTION",
+        "manageAccount": "Manage Account",
+        "devices": "Devices",
+        "seeProtectedDevices": "See protected devices",
+        "addDevice": "add device",
+		"trialExpired": "Trial expired",
+		"trialExpiredSubtext": "Upgrate to protect all of your devices",
+		"upgrade": "upgrade",
+		"freeTrial": "Free 30 day trial",
+		"protectAllDevices": "Protect all of your devices",
+		"startTrial": "Start Trial",
+        "tour": {
+            "back": "Back",
+            "skip": "Skip",
+            "start": "START TOUR",
+            "done": "DONE",
+            "welcome1": "Welcome",
+            "welcomeDesc1": "In just a few clicks you’ll be able to protect PCs, mobile devices, and connected devices for you and your family. Start your free 30 day trial now.",
+            "welcome2": "Exclusive for Vantage",
+            "welcomeDesc2": "Connected Home Security is built directly in to Vantage for quick access to the protection status of your ecosystem and security alerts.",
+            "create": "Create your account",
+            "lenovoId": "with Lenovo ID",
+            "notifications": "Receive <b>notifications</b> about your home's status",
+            "monitor": "<b>Monitor</b> the safety of your family's devices",
+            "peaceOfMind": "Get <b>peace of mind</b> that you are protected at all times!",
+            "signInLenovoId": "SIGH-UP WITH LENOVO ID",
+            "haveLenovo": "I don't have a <b>Lenovo ID</b>",
+            "createLenovo": "&nbsp;Create a Lenovo ID",
+            "without": "Proceed <b>without an account</b>",
+            "skipAndTrial": "SKIP AND START TRIAL",
+            "alreadyHave": "I already have a <b>Connected Home Security Account</b>",
+            "loginCHS": "Login to existing CHS account",
+            "locationTitle": "Enable location tracking",
+            "locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+        }
     },
     "support": {
         "common": {
@@ -931,7 +1157,9 @@
             "maliciousNetwork": "Tento mesiac sa zabránilo počítaču pripojiť k {{maliciousWifi}} škodlivým sieťam.",
             "good": "DOBRÉ",
             "malicious": "ŠKODLIVÉ",
-            "suspicious": "PODOZRIVÉ"
+            "suspicious": "PODOZRIVÉ",
+            "titleOffline": "No internet connection detected",
+            "subTitleOffline": "Learn more on how to solve connection issues in our"
         },
         "antivirus": {
             "common": {
@@ -950,6 +1178,7 @@
                 "firewall": "BRÁNA FIREWALL",
                 "disabled": "VYPNUTÉ",
                 "enableVirusScan": "ZAPNÚŤ KONTROLU VÍRUSOV",
+                "enablenFirewall": "ZAPNÚŤ BRÁNU FIREWALL",
                 "enableFirewall": "ZAPNÚŤ BRÁNU FIREWALL"
             },
             "windowsDefender": {
@@ -1011,7 +1240,7 @@
                 "describe": "Pomocou funkcie Detektor hrozieb určte bezpečnosť okolitých sietí.",
                 "button": "Preveriť hrozbu",
                 "connectionError": "Chyba pripojenia",
-                "tryAgain": "Vaše zariadenie nemôžeme nájsť, pretože sieť nie je k dispozícii. Pripojte sa na Internet a skúste to znova."
+                "tryAgain": "Hrozbu nemôžeme nájsť, pretože sieť nie je k dispozícii. Pripojte sa na Internet a skúste to znova."
             },
             "locationmodal": {
                 "title": "Zapnúť služby na základe polohy",
@@ -1157,6 +1386,7 @@
         "unlockExclusives": "Unlock Exclusives",
         "user": "User",
         "welcomeText": "Looking energized today {{firstName}}!",
+        "welcomeTextWithouUserName": "Looking energized today!",
         "welcomeTextWithoutUserName": "Looking energized today!",
         "helloUser": "Hello, {{firstName}}!",
         "ssoErrorTitle": "Error",
@@ -1363,7 +1593,7 @@
                 },
                 "span10": {
                     "line1": "If you are running a",
-                    "line2": "64",
+                    "line2": 64,
                     "line3": "bit version of Windows 8, 32-bit Operating,",
                     "line4": "x64-based PC is displayed in the",
                     "line5": "System type",
@@ -1424,7 +1654,7 @@
                 "span5": "B. Analyze Your Power Usage",
                 "span6": "4. You can change to make the battery use screen to display battery use from last 24 hours to last 48 hours or last from last week",
                 "span7": {
-                    "line1": "5.",
+                    "line1": 5,
                     "line2": "“System”,",
                     "line3": "“Display”,",
                     "line4": "and",
@@ -1526,33 +1756,51 @@
         }
     },
     "welcometutorial": {
-        "description": "Vantage makes it simple for you to update your drivers, run diagnostics, request support, and learn about your device. Quickly customize your experience and ﬁnd helpful information tailored to your needs",
-        "bullets1": "Optimize your system with lorem ipsum dolor set",
-        "bullets2": "Security Advisor makes managing your security easy ",
-        "bullets3": "Automatic updates keep your device in tip top shape",
-        "subtitle1": "How will you be using your device?",
-        "subtitle2": "Tell us about your interests",
-        "personal": "Personal Use",
-        "business": "Business Use",
-        "custom": "Custom",
-        "experience": "Experience",
-        "privacytitle": "Help us improve the quality of the app by allowing anonymous collection of usage statistics.",
-        "moreInterest": "+ more interests",
-        "title1": "Welcome to",
+        "description": "Aplikácia Vantage zjednodušuje aktualizáciu ovládačov, spúšťanie diagnostiky, žiadosť o technickú podporu a získanie informácií o zariadení.Rýchlo prispôsobte svoje nastavenie a nájdite užitočné informácie prispôsobené vaším potrebám",
+        "bullets1": "Zobrazenie stavu systému pomocou panela Vantage.",
+        "bullets2": "Poradca zabezpečením uľahčuje správu zabezpečenia ",
+        "bullets3": "Automatické aktualizácie udržujú vaše zariadenie v špičkovom stave",
+        "subtitle1": "Ako budete používať svoje zariadenie?",
+        "subtitle2": "Povedzte nám o svojich záujmoch",
+        "personal": "Osobné použitie",
+        "business": "Pracovné použitie",
+        "custom": "Vlastné prostredie",
+        "experience": "skúsenosť",
+        "privacytitle": "Pomôžte nám zlepšiť kvalitu aplikácie povolením zhromažďovania anonymnej štatistiky používania.",
+        "moreInterest": "+ viac záujmov",
+        "title1": "Víta vás aplikácia WRITEit",
         "title2": "Lenovo",
         "title3": "Vantage",
-        "privacypolicy": "Lenovo's Privacy Policy",
+        "privacypolicy": "Zásady ochrany osobných údajov spoločnosti Lenovo",
+        "done": "HOTOVÝ",
         "interests": {
-            "games": "Games",
-            "news": "News",
-            "entertainment": "Entertainment",
-            "technology": "Technology",
-            "sports": "Sports",
-            "arts": "Arts",
-            "regionalNews": "Regional News",
-            "politics": "Politics",
-            "music": "Music",
-            "science": "Science"
+            "games": "Hry",
+            "news": "Správy",
+            "entertainment": "Zábava",
+            "technology": "Technológia",
+            "sports": "Šport",
+            "arts": "Umenie",
+            "regionalNews": "Regionálne správy",
+            "politics": "Politika",
+            "music": "Hudba",
+            "science": "Veda"
         }
+    },
+    "settings": {
+        "preferenceSettings": "Nastavenia preferencií",
+        "settings": "Nastavenia",
+        "settingsDescription": "Na stránke s nastaveniami preferencií si môžete vybrať zapnutie/vypnutie upozornenia na správy podľa kategórií správy aplikácie Vantage. Je potrebné, aby ste si uvedomili, že aj v prípade, keď sú všetky kategórie správ vypnuté, môžete podľa potreby príležitostne dostávať systémové kritické správy z aplikácie Vantage.",
+        "messagesInLenovoVantage": "Správy v aplikácii Lenovo Vantage",
+        "appFeatures": "Funkcie aplikácie",
+        "appFeaturesDescription": "Správy týkajúce sa System Update, článkov a ďalších zaujímavých funkcií.",
+        "marketing": "Marketing",
+        "marketingDescription": "Propagačné správy vrátane špeciálnych ponúk spoločnosti Lenovo.",
+        "actionTriggered": "Akcia bola spustená",
+        "actionTriggeredDescription": "Správy aktivované nastaveniami používateľa, ako je napríklad automatická inštalácia kritických/odporúčaných aktualizácií.",
+        "OtherSettings": "Ďalšie nastavenia",
+        "usageStatistics": "Štatistika používania",
+        "usageStatisticsDescription": "Odosielať spoločnosti Lenovo anonymnú štatistiku používania.",
+        "Note": "Poznámka: ",
+        "settingsNotes": "použitie všetkých nastavení na tejto stránke si bude vyžadovať reštart."
     }
 }

@@ -10,7 +10,6 @@ import { PageDeviceSettingsComponent } from './components/pages/page-device-sett
 import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
 import { SubpageDeviceSettingsDisplayComponent } from './components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
-import { SubpageDeviceSettingsSmartAssistComponent } from './components/pages/page-device-settings/children/subpage-device-settings-smart-assist/subpage-device-settings-smart-assist.component';
 import { PageDeviceUpdatesComponent } from './components/pages/page-device-updates/page-device-updates.component';
 import { PageSecurityComponent } from './components/pages/page-security/page-security.component';
 import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
@@ -29,6 +28,8 @@ import { GuardService } from './services/guard/security-guardService.service';
 import { LocalStorageKey } from './enums/local-storage-key.enum';
 import { PageAutocloseComponent } from './components/pages/page-autoclose/page-autoclose.component';
 import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
+import { PageSmartAssistComponent } from './components/pages/page-smart-assist/page-smart-assist.component';
+import { PageSettingsComponent } from './components/pages/page-settings/page-settings.component';
 
 const routes: Routes = [
 	{
@@ -88,8 +89,6 @@ const routes: Routes = [
 	}, {
 		path: 'device/device-settings',
 		component: PageDeviceSettingsComponent,
-		canDeactivate: [GuardService],
-		canActivate: [GuardService],
 		children: [
 			{
 				path: '',
@@ -122,17 +121,17 @@ const routes: Routes = [
 				data: {
 					pageName: 'Device.MyDeviceSettings'
 				}
-			},
-			{
-				path: 'smart-assist',
-				component: SubpageDeviceSettingsSmartAssistComponent,
-				canDeactivate: [GuardService],
-				canActivate: [GuardService],
-				data: {
-					pageName: 'Device.MyDeviceSettings'
-				}
 			}
 		]
+	},
+	{
+		path: 'device/smart-assist',
+		component: PageSmartAssistComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
+		data: {
+			pageName: 'Device.MyDeviceSettings'
+		}
 	},
 	{
 		path: 'device/system-updates',
@@ -239,6 +238,12 @@ const routes: Routes = [
 		canActivate: [GuardService],
 		data: {
 			pageName: 'NetworkBoost'
+		}
+	}, {
+		path: 'settings',
+		component: PageSettingsComponent,
+		data: {
+			pageName: 'Settings'
 		}
 	}
 ];
