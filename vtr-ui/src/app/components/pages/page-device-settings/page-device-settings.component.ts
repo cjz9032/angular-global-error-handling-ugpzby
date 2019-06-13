@@ -42,6 +42,13 @@ export class PageDeviceSettingsComponent implements OnInit {
 			icon: 'display-camera',
 			subitems: [],
 			active: false
+		},{
+			id: 'input-accessories',
+			label: 'Input & Accessories',
+			path: 'device-settings/input-accessories',
+			icon: 'input-accessories',
+			subitems: [],
+			active: false
 		}
 	];
 	cardContentPositionA: any = {};
@@ -111,5 +118,22 @@ export class PageDeviceSettingsComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
+		this.cardContentPositionA = {
+			Title: '',
+			ShortTitle: '',
+			Description: '',
+			FeatureImage: './../../../../assets/cms-cache/Alexa4x3-zone1.png',
+			Action: '',
+			ActionType: 'External',
+			ActionLink: null,
+			BrandName: '',
+			BrandImage: '',
+			Priority: 'P1',
+			Page: 'dashboard',
+			Template: 'half-width-title-description-link-image',
+			Position: 'position-B',
+			ExpirationDate: null,
+			Filters: null
+		};
 	}
 }

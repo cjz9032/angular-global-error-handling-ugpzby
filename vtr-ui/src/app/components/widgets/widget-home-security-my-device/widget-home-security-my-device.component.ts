@@ -24,7 +24,6 @@ export class WidgetHomeSecurityMyDeviceComponent implements OnInit {
 	myDevice: MyDevice;
 	devicePosture: Array<DevicePostureDetail>  = [];
 	deviceName: string;
-	setDeviceName: any;
 	event = new EventEmitter();
 	securityAdvisor: SecurityAdvisor;
 	homeProtection: HomeProtection;
@@ -40,7 +39,11 @@ export class WidgetHomeSecurityMyDeviceComponent implements OnInit {
 		this.securityAdvisor = shellService.getSecurityAdvisor();
 		this.homeProtection = this.securityAdvisor.homeProtection;
 		const cacheHomeDevicePosture = commonService.getLocalStorageValue(LocalStorageKey.HomeProtectionDevicePosture);
+		const cacheHomeDeviceName = commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDeviceName);
 		this.myDevice = new MyDevice();
+		if (cacheHomeDeviceName) {
+			this.deviceName = cacheHomeDeviceName;
+		}
 		if (this.homeProtection.devicePosture && this.homeProtection.devicePosture.length !== 0) {
 			this.ngZone.run(() => {
 				commonService.setLocalStorageValue(LocalStorageKey.HomeProtectionDevicePosture, this.homeProtection.devicePosture);
@@ -72,12 +75,16 @@ export class WidgetHomeSecurityMyDeviceComponent implements OnInit {
 			this.deviceService.getDeviceInfo()
 				.then((value: any) => {
 					this.ngZone.run(() => {
+						if (!value || !value.family) {
+							return false;
+						}
 						this.myDevice = value;
 						if (this.myDevice.family.length > 20) {
 							this.deviceName = `${this.myDevice.family.slice(0, 17)}...`;
 						} else {
 							this.deviceName = this.myDevice.family;
 						}
+						this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecurityDeviceName, this.deviceName);
 					});
 				}).catch(error => {
 					console.error('getDeviceInfo', error);

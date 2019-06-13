@@ -12,10 +12,10 @@
 		</div>
 		<div class="device-status">
 			<h3>
-				<span class="badge badge-pill badge-danger button-green" *ngIf="deviceStatus==='secure'">
+				<span class="badge badge-pill badge-success" *ngIf="deviceStatus==='secure'">
 					{{'homeSecurity.secure' | translate}}
 				</span>
-				<span class="badge badge-pill badge-danger button-red" *ngIf="deviceStatus==='needs attention'">
+				<span class="badge badge-pill badge-danger" *ngIf="deviceStatus==='needs attention'">
 					{{'homeSecurity.needAttention' | translate}}
 				</span>
 			</h3>
