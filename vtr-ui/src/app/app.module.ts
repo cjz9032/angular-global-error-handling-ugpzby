@@ -9,11 +9,11 @@ import { CookieService } from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng5SliderModule } from 'ng5-slider';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 // CUSTOM MODULES
 import { AppRoutingModule } from './app-routing.module';
 import { TranslationModule } from './modules/translation.module';
-
 
 // APPLICATION BASE COMPONENTS
 import { AppComponent } from './app.component';
@@ -40,6 +40,9 @@ import { UiRowSwitchComponent } from './components/ui/ui-row-switch/ui-row-switc
 import { UiListChevronComponent } from './components/ui/ui-list-chevron/ui-list-chevron.component';
 import { UiListCheckboxComponent } from './components/ui/ui-list-checkbox/ui-list-checkbox.component';
 import { UiHeaderSubpageComponent } from './components/ui/ui-header-subpage/ui-header-subpage.component';
+import { UiNumberButtonComponent } from './components/ui/ui-number-button/ui-number-button.component';
+import { UiMacrokeyDetailsComponent } from './components/ui/ui-macrokey-details/ui-macrokey-details.component';
+import { UiMacrokeyRecordedListComponent } from './components/ui/ui-macrokey-recorded-list/ui-macrokey-recorded-list.component';
 
 // APPLICATION PAGE COMPONENTS
 import { PageDashboardComponent } from './components/pages/page-dashboard/page-dashboard.component';
@@ -51,12 +54,11 @@ import { PageDeviceSettingsComponent } from './components/pages/page-device-sett
 import { PageDeviceUpdatesComponent } from './components/pages/page-device-updates/page-device-updates.component';
 import { AvailableUpdatesComponent } from './components/pages/page-device-updates/children/available-updates/available-updates.component';
 
-
 // APPLICATION SUBPAGE COMPONENTS
 import { SubpageDeviceSettingsPowerComponent } from './components/pages/page-device-settings/children/subpage-device-settings-power/subpage-device-settings-power.component';
 import { SubpageDeviceSettingsAudioComponent } from './components/pages/page-device-settings/children/subpage-device-settings-audio/subpage-device-settings-audio.component';
 import { SubpageDeviceSettingsDisplayComponent } from './components/pages/page-device-settings/children/subpage-device-settings-display/subpage-device-settings-display.component';
-import { SubpageDeviceSettingsSmartAssistComponent } from './components/pages/page-device-settings/children/subpage-device-settings-smart-assist/subpage-device-settings-smart-assist.component';
+import { PageSmartAssistComponent } from './components/pages/page-smart-assist/page-smart-assist.component';
 
 // APPLICATION WIDGET COMPONENTS
 import { WidgetSwitchIconComponent } from './components/widgets/widget-switch-icon/widget-switch-icon.component';
@@ -69,6 +71,7 @@ import { WidgetQuestionsComponent } from './components/widgets/widget-questions/
 import { WidgetFeedbackComponent } from './components/widgets/widget-feedback/widget-feedback.component';
 import { WidgetDeviceUpdateComponent } from './components/widgets/widget-device-update/widget-device-update.component';
 import { WidgetDeviceUpdateSettingsComponent } from './components/widgets/widget-device-update-settings/widget-device-update-settings.component';
+import { WidgetMacrokeySettingsComponent } from './components/widgets/widget-macrokey-settings/widget-macrokey-settings.component';
 
 // APPLICATION MODALS
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
@@ -98,7 +101,6 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fal } from '@fortawesome/pro-light-svg-icons';
-
 
 import { EyeCareModeComponent } from './components/display/eye-care-mode/eye-care-mode.component';
 import { UiButtonComponent } from './components/ui/ui-button/ui-button.component';
@@ -157,7 +159,11 @@ import { CameraBackgroundBlurComponent } from './components/camera-background-bl
 import { PageAutocloseComponent } from './components/pages/page-autoclose/page-autoclose.component';
 import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
 import { PowerSmartSettingsComponent } from './components/widgets/power-smart-settings/power-smart-settings.component';
+import { PageSettingsComponent } from './components/pages/page-settings/page-settings.component';
 import { UiPopoverComponent } from './components/ui/ui-popover/ui-popover.component';
+import { OledPowerSettingsComponent } from './components/display/oled-power-settings/oled-power-settings.component';
+import { UiMacrokeyPopupComponent } from './components/ui/ui-macrokey-popup/ui-macrokey-popup.component';
+import { ModalChsWelcomeContainerComponent } from './components/modal/modal-chs-welcome-container/modal-chs-welcome-container.component';
 
 // SA Components
 import { PageSecurityAntivirusComponent } from './components/pages/page-security-antivirus/page-security-antivirus.component';
@@ -173,12 +179,13 @@ import { WifiSecurityComponent } from './components/pages/page-security-wifi/chi
 import { AdvisorWifiSecurityComponent } from './components/pages/page-security/children/advisor-wifi-security/advisor-wifi-security.component';
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
 
-
 // SA Widgets
 import { WidgetHomeSecurityDeviceComponent } from './components/widgets/widget-home-security-device/widget-home-security-device.component';
 import { WidgetSecurityStatusComponent } from './components/widgets/widget-security-status/widget-security-status.component';
 import { WidgetMcafeeComponent } from './components/widgets/widget-mcafee/widget-mcafee.component';
 import { WidgetHomeSecurityAccountStatusComponent } from './components/widgets/widget-home-security-account-status/widget-home-security-account-status.component';
+import { WidgetHomeSecurityMyDeviceComponent } from './components/widgets/widget-home-security-my-device/widget-home-security-my-device.component';
+import { WidgetHomeSecurityAllDevicesComponent } from './components/widgets/widget-home-security-all-devices/widget-home-security-all-devices.component';
 
 // SA pipes
 import { JoinclassPipe } from './pipe/security-wifi/join-class.pipe';
@@ -192,10 +199,23 @@ import { TextClassPipe } from './pipe/ui-security-statusbar/text-class.pipe';
 import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transform.pipe';
 import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
 import { UiLightingProfileComponent } from './components/ui/ui-lighting-profile/ui-lighting-profile.component';
+import { UiDropDownComponent } from './components/ui/ui-dropdown/ui-dropdown.component';
 
-
-
-
+import { AutoupdateSettingsComponent } from './components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
+import { UiLightingProfileToggleComponent } from './components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
+import { UiBrightnessSliderComponent } from './components/ui/ui-brightness-slider/ui-brightness-slider.component';
+import { SvgInlinePipe } from './pipe/svg-inline/svg-inline.pipe';
+import { UiLightingEffectComponent } from './components/ui/ui-lighting-effect/ui-lighting-effect.component';
+import { UiLightingSingleColorComponent } from './components/ui/ui-lighting-single-color/ui-lighting-single-color.component';
+import { UiLightingColorWheelComponent } from './components/ui/ui-lighting-color-wheel/ui-lighting-color-wheel.component';
+import { DisplayColorTempComponent } from './components/display/display-color-temp/display-color-temp.component';
+import { IntelligentMediaComponent } from './components/pages/page-smart-assist/intelligent-media/intelligent-media.component';
+import { UiMacrokeyCollapsibleContainerComponent } from './components/ui/ui-macrokey-collapsible-container/ui-macrokey-collapsible-container.component';
+import { CursorTypePipe } from './pipe/ui-security-statusbar/cursor-type.pipe';
+import { UiGamingDriverPopupComponent } from './components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
+import { UiCircleRadioWithCheckboxComponent } from './components/ui/ui-circle-radio-with-checkbox/ui-circle-radio-with-checkbox.component';
+import { UiChsStatusbarComponent } from './components/ui/ui-chs-statusbar/ui-chs-statusbar.component';
+import { SubpageDeviceSettingsInputAccessoryComponent } from './components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
 
 library.add(fas);
 library.add(fab);
@@ -228,6 +248,7 @@ library.add(fal);
 		HeaderMainComponent,
 		PageDeviceSettingsComponent,
 		PageDeviceUpdatesComponent,
+		PageSmartAssistComponent,
 		AvailableUpdatesComponent,
 		PageSecurityAntivirusComponent,
 		PageSecurityWifiComponent,
@@ -238,7 +259,6 @@ library.add(fal);
 		SubpageDeviceSettingsPowerComponent,
 		SubpageDeviceSettingsAudioComponent,
 		SubpageDeviceSettingsDisplayComponent,
-		SubpageDeviceSettingsSmartAssistComponent,
 		PageQuestionsComponent,
 		ModalWelcomeComponent,
 		ContainerCollapsibleComponent,
@@ -344,10 +364,36 @@ library.add(fal);
 		PageAutocloseComponent,
 		PageNetworkBoostComponent,
 		PowerSmartSettingsComponent,
-		SubpageDeviceSettingsSmartAssistComponent,
-		UiPopoverComponent,
+		PageSettingsComponent,
 		WidgetHomeSecurityDeviceComponent,
-		UiLightingProfileComponent
+		UiLightingProfileComponent,
+		OledPowerSettingsComponent,
+		UiDropDownComponent,
+		AutoupdateSettingsComponent,
+		UiPopoverComponent,
+		UiMacrokeyPopupComponent,
+		ModalChsWelcomeContainerComponent,
+		WidgetMacrokeySettingsComponent,
+		UiNumberButtonComponent,
+		UiMacrokeyDetailsComponent,
+		UiMacrokeyRecordedListComponent,
+		SvgInlinePipe,
+		IntelligentMediaComponent,
+		DisplayColorTempComponent,
+		UiLightingProfileToggleComponent,
+		UiBrightnessSliderComponent,
+		SvgInlinePipe,
+		UiLightingEffectComponent,
+		UiLightingSingleColorComponent,
+		UiLightingColorWheelComponent,
+		WidgetHomeSecurityMyDeviceComponent,
+		WidgetHomeSecurityAllDevicesComponent,
+		UiMacrokeyCollapsibleContainerComponent,
+		CursorTypePipe,
+		UiGamingDriverPopupComponent,
+		UiCircleRadioWithCheckboxComponent,
+		UiChsStatusbarComponent,
+		SubpageDeviceSettingsInputAccessoryComponent
 	],
 	imports: [
 		BrowserModule,
@@ -363,7 +409,8 @@ library.add(fal);
 		// ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 		TranslationModule,
 		BrowserAnimationsModule,
-		PrivacyModule
+		PrivacyModule,
+		ColorPickerModule
 	],
 	providers: [
 		CookieService,
@@ -395,11 +442,9 @@ library.add(fal);
 		ModalAboutComponent,
 		ModalSupportWechatComponent,
 		ModalLicenseComponent,
-		ModalGamingLegionedgeComponent
+		ModalGamingLegionedgeComponent,
+		ModalChsWelcomeContainerComponent
 	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA
-	]
+	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule {
-}
+export class AppModule { }

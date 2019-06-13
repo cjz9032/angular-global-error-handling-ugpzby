@@ -4,3 +4,12 @@
 export enum LenovoIdKey {
 	FirstName = '[LenovoIdKey] FirstName'
 }
+
+export enum LenovoIdStatus {
+	Unknown = '[LenovoIdStatus] Unknown',
+	StarterId = '[LenovoIdStatus] StarterId',
+	SignedIn = '[LenovoIdStatus] SignedIn',
+	SignedOut = '[LenovoIdStatus] SignedOut',
+	Disabled = '[LenovoIdStatus] Disabled',
+	Pending = '[LenovoIdStatus] Pending'
+}

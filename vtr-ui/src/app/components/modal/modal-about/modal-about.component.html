@@ -3,7 +3,7 @@
 	<div class="content">
 		<div class="img-con pt-4">
 			<img class="qr-img"
-				src="/assets/icons/Vantage_L_logo.svg"
+				[src]=" '/assets/icons/Vantage_L_logo.svg' | svgInline | async"
 				alt="Lenovo Vantage Logo" />
 		</div>
 		<div class="text-center title mb-2">Lenovo Vantage</div>
@@ -58,7 +58,7 @@
 		metricsEvent="FeatureClick"
 		metricsParent="Page.Support.About"
 		(click)="closeModal()">
-		<img src="/assets/icons/Close.svg"
+		<img [src]=" '/assets/icons/Close.svg' | svgInline | async"
 			alt=""
 			srcset="">
 	</a>

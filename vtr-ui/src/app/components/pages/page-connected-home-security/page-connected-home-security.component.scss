@@ -7,16 +7,41 @@
 		background-color: $light;
         padding: 1.5rem;
 		width: 100%;
-        .title {
-            color: $main_dark;
-            font-size: 3.5rem;
-            font-weight: $weight_medium;
-        }
-        .description {
-            color: $main_dark;
-            font-size: 2rem;
-            font-weight: $weight_medium;
-        }
+		.fix-height {
+			.title {
+				color: $main_dark;
+				font-size: 3.5rem;
+				font-weight: $weight_medium;
+				margin-bottom: 2rem;
+			}
+			.sub-container {
+				.sub-title {
+					display: flex;
+					align-items: center;
+					color: $main_dark;
+					font-size: 2rem;
+					font-weight: $weight_bold;
+					margin-bottom: 0.6rem;
+					::ng-deep {
+						.button-box {
+							.button {
+								min-height: 3rem !important;
+							}
+						}
+					}
+				}
+				.device-card, .home-card {
+					background-color: $shade_lightest;
+					border: 0.1rem solid $shade_lighter;
+					border-radius: $border_radius;
+				}
+				.device-card {
+				}
+				.home-card {
+					height: 14rem;
+				}
+			}
+		}
     }
 
 	.title {
@@ -196,8 +221,5 @@
 			padding: 4rem 4rem 4rem 8.5rem;
 		}
 	}
-	
-	.fix-height{
-		height: 35rem;
-	}
+
 }

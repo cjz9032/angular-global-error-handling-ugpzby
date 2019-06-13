@@ -16,9 +16,9 @@ export class WidgetMcafeeComponent implements OnInit {
 	urlGetMcAfee: string;
 	country: string;
 	nls = new Map([
-		['cs', 'CZ'],
-		['da', 'DK'],
-		['nl', 'NL'],
+		['cs', 'Cs-CZ'],
+		['da', 'Da-DK'],
+		['nl', 'Nl-NL'],
 		['gb', 'En-GB'],
 		['fi', 'Fi-FI'],
 		['fr', 'Fr-FR'],
@@ -34,6 +34,13 @@ export class WidgetMcafeeComponent implements OnInit {
 		['tr', 'Tr-TR'],
 		['*', 'En-US'],
 	]);
+	statusList = [{
+		status: 'disabled',
+		title: 'security.antivirus.common.virusScan',
+	}, {
+		status: 'disabled',
+		title: 'security.antivirus.common.firewall',
+	}];
 
 	constructor(public translate: TranslateService,
 		public regionService: RegionService) { }

@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GamingQuickSettingsService } from 'src/app/services/gaming/gaming-quick-settings/gaming-quick-settings.service';
 import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+
 @Component({
 	selector: 'vtr-widget-quicksettings-list',
 	templateUrl: './widget-quicksettings-list.component.html',
@@ -40,7 +42,7 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
-			isChecked: true,
+			isChecked: false,
 			tooltipText: '',
 			type: 'auto-updates'
 		},
@@ -57,7 +59,7 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
-			isChecked: true,
+			isChecked: false,
 			tooltipText: '',
 			type: 'auto-updates'
 		},
@@ -74,38 +76,43 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			isCollapsible: false,
 			isCheckBoxVisible: true,
 			isSwitchVisible: true,
-			isChecked: true,
+			isChecked: false,
 			tooltipText: '',
 			type: 'auto-updates'
 		}
 	];
 
-	public listingopt = [
-		{
-			header: 'gaming.dashboard.device.quickSettings.status.performance',
-			name: 'gaming.dashboard.device.quickSettings.status.performance',
-			description: 'gaming.dashboard.device.quickSettings.statusText.perText',
-			selectedOption: false,
-			defaultOption: false,
-			value: 3
-		},
-		{
-			header: 'gaming.dashboard.device.quickSettings.status.balance',
-			name: 'gaming.dashboard.device.quickSettings.status.balance',
-			description: 'gaming.dashboard.device.quickSettings.statusText.balText',
-			selectedOption: false,
-			defaultOption: true,
-			value: 2
-		},
-		{
-			header: 'gaming.dashboard.device.quickSettings.status.quiet',
-			name: 'gaming.dashboard.device.quickSettings.status.quiet',
-			description: 'gaming.dashboard.device.quickSettings.statusText.quietText',
-			selectedOption: false,
-			defaultOption: false,
-			value: 1
-		}
-	];
+	public drop = {
+		curSelected: 2,
+		modeType: 2,
+		dropOptions:
+			[
+				{
+					header: 'gaming.dashboard.device.quickSettings.status.performance',
+					name: 'gaming.dashboard.device.quickSettings.status.performance',
+					description: 'gaming.dashboard.device.quickSettings.statusText.perText',
+					//selectedOption: false,
+					//defaultOption: false,
+					value: 1
+				},
+				{
+					header: 'gaming.dashboard.device.quickSettings.status.balance',
+					name: 'gaming.dashboard.device.quickSettings.status.balance',
+					description: 'gaming.dashboard.device.quickSettings.statusText.balText',
+					//selectedOption: false,
+					//defaultOption: true,
+					value: 2
+				},
+				{
+					header: 'gaming.dashboard.device.quickSettings.status.quiet',
+					name: 'gaming.dashboard.device.quickSettings.status.quiet',
+					description: 'gaming.dashboard.device.quickSettings.statusText.quietText',
+					//selectedOption: false,
+					//defaultOption: false,
+					value: 3
+				}
+			]
+	}
 	public thermalModeStatusObj: ThermalModeStatus;
 	public gamingSettings: any = {
 		cpuInfoFeature: true,
@@ -134,6 +141,7 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
+		this.getGamingQuickSettings();
 		if (!this.gamingSettings.smartFanFeature) {
 			this.quickSettings[0].isVisible = false;
 		}
@@ -150,21 +158,22 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 			this.quickSettings[3].isVisible = false;
 		}
 
-		if (this.gamingSettings.smartFanFeature) {
-			this.thermalModeStatusObj = this.gamingQuickSettingsService.GetThermalModeStatus();
-			if (this.thermalModeStatusObj !== undefined) {
-				this.listingopt.forEach((option) => {
-					if (this.thermalModeStatusObj.thermalModeStatus === option.value) {
-						option.selectedOption = true;
-					}
-				});
-			} else {
-				this.thermalModeStatusObj = new ThermalModeStatus();
-				this.gamingQuickSettingsService.setThermalModeStatus(this.thermalModeStatusObj, this.thermalModeStatusObj);
-			}
-		}
+		// if (this.gamingSettings.smartFanFeature) {
+		// 	this.thermalModeStatusObj = this.gamingQuickSettingsService.GetThermalModeStatus();
+		// 	if (this.thermalModeStatusObj !== undefined) {
+		// 		this.listingopt.forEach((option) => {
+		// 			if (this.thermalModeStatusObj.thermalModeStatus === option.value) {
+		// 				option.selectedOption = true;
+		// 			}
+		// 		});
+		// 	} else {
+		// 		this.thermalModeStatusObj = new ThermalModeStatus();
+		// 		this.gamingQuickSettingsService.setThermalModeStatus(this.thermalModeStatusObj, this.thermalModeStatusObj);
+		// 	}
+		// }
 	}
 
+	// TODO have to test the functionality from going to another screen to this after JS bridge is done
 	onOptionSelected(event) {
 		if (this.gamingSettings.smartFanFeature) {
 			if (event.target.name === 'gaming.dashboard.device.quickSettings.title') {
@@ -174,7 +183,13 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 				this.thermalModeStatusObj.thermalModeStatus = event.option.value;
 				const oldThermalModeStatusObj = this.gamingQuickSettingsService.GetThermalModeStatus();
 				this.gamingQuickSettingsService.setThermalModeStatus(this.thermalModeStatusObj, oldThermalModeStatusObj);
+				this.drop.curSelected = this.thermalModeStatusObj.thermalModeStatus;
 			}
 		}
+	}
+
+	public getGamingQuickSettings() {
+		const status: any = this.gamingQuickSettingsService.GetThermalModeStatus() || new ThermalModeStatus();
+		this.drop.curSelected = status.thermalModeStatus;
 	}
 }

@@ -23,13 +23,13 @@ export class SystemUpdateService {
 		shellService: VantageShellService
 		, private commonService: CommonService) {
 		this.systemUpdateBridge = shellService.getSystemUpdate();
-		this.metricClient = shellService.getMetrics();
+		this.metricHelper = new MetricHelper(shellService.getMetrics());
 		if (this.systemUpdateBridge) {
 			this.isShellAvailable = true;
 		}
 	}
 	private systemUpdateBridge: any;
-	private metricClient: any;
+	private metricHelper: any;
 	public autoUpdateStatus: any;
 	public isShellAvailable = false;
 	public isCheckForUpdateComplete = true;
@@ -94,6 +94,7 @@ export class SystemUpdateService {
 			this.systemUpdateBridge.setUpdateSchedule(request)
 				.then((response) => {
 					console.log('setUpdateSchedule', response);
+					this.getUpdateSchedule();
 				}).catch((error) => {
 					// get current status
 					this.getUpdateSchedule();
@@ -127,7 +128,7 @@ export class SystemUpdateService {
 		return errorMessage;
 	}
 
-	private mapPackageListToIdString(updateList: Array<AvailableUpdateDetail>) {
+	public mapPackageListToIdString(updateList: Array<AvailableUpdateDetail>) {
 		return updateList.map(item => item.packageID).join(',');
 	}
 
@@ -152,8 +153,7 @@ export class SystemUpdateService {
 					this.isUpdatesAvailable = true;
 					this.updateInfo = { status: status, updateList: this.mapAvailableUpdateResponse(response.updateList) };
 					this.commonService.sendNotification(UpdateProgress.UpdatesAvailable, this.updateInfo);
-					MetricHelper.sendSystemUpdateMetric(
-						this.metricClient,
+					this.metricHelper.sendSystemUpdateMetric(
 						this.updateInfo.updateList.length,
 						this.mapPackageListToIdString(this.updateInfo.updateList),
 						'success',
@@ -163,16 +163,14 @@ export class SystemUpdateService {
 					const payload = { ...response, status };
 					this.isInstallationSuccess = this.getInstallationSuccess(payload);
 					this.commonService.sendNotification(UpdateProgress.UpdateCheckCompleted, payload);
-					MetricHelper.sendSystemUpdateMetric(
-						this.metricClient,
+					this.metricHelper.sendSystemUpdateMetric(
 						0,
 						'',
 						this.mapStatusToMessage(status),
 						MetricHelper.timeSpan(new Date(), timeStartSearch));
 				}
 			}).catch((error) => {
-				MetricHelper.sendSystemUpdateMetric(
-					this.metricClient,
+				this.metricHelper.sendSystemUpdateMetric(
 					0,
 					'',
 					error.message,
@@ -259,7 +257,7 @@ export class SystemUpdateService {
 	public installAllUpdates(removeDelayedUpdates: boolean) {
 		if (this.systemUpdateBridge && this.isUpdatesAvailable) {
 			this.selectCoreqUpdateForInstallAll();
-			const unIgnoredUpdates = this.getUnIgnoredUpdates(this.updateInfo.updateList);
+			const unIgnoredUpdates = this.getUnIgnoredUpdatesForInstallAll(this.updateInfo.updateList);
 			const updates = this.mapToInstallRequest(unIgnoredUpdates, removeDelayedUpdates);
 			this.installUpdates(updates, true);
 		}
@@ -335,7 +333,7 @@ export class SystemUpdateService {
 	private updateIgnoredStatus(ignoredUpdates: any) {
 		this.updateInfo.updateList.forEach((update) => {
 			const result = ignoredUpdates.find(x => x.packageName === update.packageName);
-			if (result) {
+			if (result && update.packageSeverity !== UpdateInstallSeverity.Critical) {
 				update.isIgnored = true;
 			}
 			else {
@@ -363,7 +361,7 @@ export class SystemUpdateService {
 	private selectCoreqUpdateForInstallAll() {
 		if (this.updateInfo.updateList && this.updateInfo.updateList.length > 0) {
 			this.updateInfo.updateList.forEach((update) => {
-				if(update.coreqPackageID) {
+				if(update.coreqPackageID && !update.isIgnored) {
 					const coreqPackages = update.coreqPackageID.split(',');
 					this.selectCoreqUpdate(this.updateInfo.updateList, coreqPackages, true);
 				}
@@ -405,16 +403,33 @@ export class SystemUpdateService {
 	}
 
 	public isRebootRequested(): boolean {
-		if (this.updateInfo) {
-			const delayedPackages = this.updateInfo.updateList.filter(pkg => {
+		if (this.installedUpdates) {
+			const forcedRebootPackages = this.installedUpdates.filter(pkg => {
+				return pkg.packageRebootType.toLowerCase() === 'rebootforced' && pkg.isInstalled;
+			});
+			// if forced reboot packages are there then don't show reboot requested dialog/modal
+			if (forcedRebootPackages.length > 0) {
+				return false;
+			}
+
+			const forcedPowerOffPackages = this.installedUpdates.filter(pkg => {
+				return pkg.packageRebootType.toLowerCase() === 'poweroffforced' && pkg.isInstalled;
+			});
+			// if forced poweroff packages are there then don't show reboot requested dialog/modal
+			if (forcedPowerOffPackages.length > 0) {
+				return false;
+			}
+
+			const delayedPackages = this.installedUpdates.filter(pkg => {
 				return pkg.packageRebootType.toLowerCase() === 'rebootdelayed' && pkg.isInstalled;
 			});
 			// if reboot delayed packages are there then don't show reboot requested dialog/modal
 			if (delayedPackages.length > 0) {
 				return false;
 			}
-			for (let index = 0; index < this.updateInfo.updateList.length; index++) {
-				const update = this.updateInfo.updateList[index];
+
+			for (let index = 0; index < this.installedUpdates.length; index++) {
+				const update = this.installedUpdates[index];
 				if (update.packageRebootType.toLowerCase() === 'rebootrequested' && update.isInstalled) {
 					return true;
 				}
@@ -634,10 +649,10 @@ export class SystemUpdateService {
 		return undefined;
 	}
 
-	public getUnIgnoredUpdates(updateList: Array<AvailableUpdateDetail>): Array<AvailableUpdateDetail> {
+	public getUnIgnoredUpdatesForInstallAll(updateList: Array<AvailableUpdateDetail>): Array<AvailableUpdateDetail> {
 		if (updateList && updateList.length > 0) {
 			const updates = updateList.filter((value) => {
-				return value.isSelected || !value.isIgnored;
+				return !value.isIgnored || (value.isIgnored && value.isDependency);
 			});
 			return updates;
 		}

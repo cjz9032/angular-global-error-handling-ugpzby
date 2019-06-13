@@ -33,7 +33,7 @@ export class PageDashboardComponent implements OnInit {
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
 	public isOnline = true;
-	//qas: QA[] = [];
+	// qas: QA[] = [];
 
 	heroBannerItems = [];
 	cardContentPositionA: any = {};
@@ -68,31 +68,16 @@ export class PageDashboardComponent implements OnInit {
 		config.keyboard = false;
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 
+		this.setDefaultSystemStatus();
+		this.setDefaultSecurityStatus();
+
+		translate.stream('dashboard.feedback.form.button').subscribe((value) => {
+			this.submit = value;
+			this.feedbackButtonText = this.submit;
+		});
 		//Evaluate the translations for QA on language Change
-		translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			this.qaService.setTranslationService(this.translate);
-			this.qaService.qas.forEach(qa => {
-				try {
-					qa.title = this.translate.instant(qa.title);
-					qa.description = this.translate.instant(qa.description);
-					// console.log(qa.description);
-					this.translate.get(qa.keys).subscribe((translation: [string]) => {
-						// console.log(JSON.stringify(translation));
-						qa.keys = translation;
-						// console.log(JSON.stringify(qa.keys));
-					});
-				}
-				catch (e) {
-					console.log('already translated');
-				}
-				finally {
-					console.log('already translated');
-				}
-
-			});
-
-			//this.qas = this.qaService.qas;
-		})
+		this.qaService.setTranslationService(this.translate);
+		this.qaService.setCurrentLangTranslations();
 
 	}
 
@@ -133,7 +118,7 @@ export class PageDashboardComponent implements OnInit {
 				const heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
 					return {
 						'albumId': 1,
-						'id': index + 1,
+						'id': record.Id,
 						'source': record.Title,
 						'title': record.Description,
 						'url': record.FeatureImage,
@@ -213,7 +198,7 @@ export class PageDashboardComponent implements OnInit {
 	// 	}, 3000);
 	// }
 
-	public onGetSupportClick($event: any) {
+	public onConnectivityClick($event: any) {
 	}
 
 	private setDefaultCMSContent() {
@@ -342,6 +327,84 @@ export class PageDashboardComponent implements OnInit {
 			});
 	}
 
+	private setDefaultSystemStatus() {
+		let memory = new Status();
+		memory.status = 4;
+		memory.id = 'memory';
+
+		this.translate.stream('dashboard.systemStatus.memory.title').subscribe((value) => {
+			memory.title = value;
+		});
+
+		this.translate.stream('dashboard.systemStatus.memory.detail.notFound').subscribe((value) => {
+			memory.detail = value;
+		});
+
+		memory.path = 'ms-settings:about';
+		memory.asLink = false;
+		memory.isSystemLink = true;
+		memory.type = 'system';
+		this.systemStatus[0] = memory;
+
+		const disk = new Status();
+		disk.status = 4;
+		disk.id = 'disk';
+
+		this.translate.stream('dashboard.systemStatus.diskSpace.title').subscribe((value) => {
+			disk.title = value;
+		});
+
+		this.translate.stream('dashboard.systemStatus.diskSpace.detail.notFound').subscribe((value) => {
+			disk.detail = value;
+		});
+
+		disk.path = 'ms-settings:storagesense';
+		disk.asLink = false;
+		disk.isSystemLink = true;
+		disk.type = 'system';
+		this.systemStatus[1] = disk;
+
+
+		const warranty = new Status();
+		warranty.status = 4;
+		warranty.id = 'warranty';
+
+		this.translate.stream('dashboard.systemStatus.warranty.title').subscribe((value) => {
+			warranty.title = value;
+		});
+
+		this.translate.stream('dashboard.systemStatus.warranty.detail.notFound').subscribe((value) => {
+			warranty.detail = value;
+		});
+
+
+		warranty.path = '/support';
+		warranty.asLink = false;
+		/* warranty.isSystemLink = true; */
+		warranty.isSystemLink = false;
+		warranty.type = 'system';
+		this.systemStatus[2] = warranty;
+
+		const systemUpdate = new Status();
+		systemUpdate.status = 4;
+		systemUpdate.id = 'systemupdate';
+
+		this.translate.stream('dashboard.systemStatus.systemUpdate.title').subscribe((value) => {
+			systemUpdate.title = value;
+		});
+
+		this.translate.stream('dashboard.systemStatus.systemUpdate.detail.update').subscribe((value) => {
+			systemUpdate.detail = value;
+		});
+
+
+		systemUpdate.path = 'device/system-updates';
+		systemUpdate.asLink = true;
+		systemUpdate.isSystemLink = false;
+		systemUpdate.type = 'system';
+		this.systemStatus[3] = systemUpdate;
+
+	}
 	private mapSystemInfoResponse(response: any): Status[] {
 		const systemStatus: Status[] = [];
 		if (response) {
@@ -350,6 +413,12 @@ export class PageDashboardComponent implements OnInit {
 			memory.id = 'memory';
 			memory.title = this.translate.instant('dashboard.systemStatus.memory.title'); // 'Memory';
 			memory.detail = this.translate.instant('dashboard.systemStatus.memory.detail.notFound'); // 'Memory not found';
+			this.translate.stream('dashboard.systemStatus.memory.title').subscribe((value) => {
+				memory.title = value;
+			});
+			this.translate.stream('dashboard.systemStatus.memory.detail.notFound').subscribe((value) => {
+				memory.detail = value;
+			});
 			memory.path = 'ms-settings:about';
 			memory.asLink = false;
 			memory.isSystemLink = true;
@@ -373,6 +442,15 @@ export class PageDashboardComponent implements OnInit {
 			disk.id = 'disk';
 			disk.title = this.translate.instant('dashboard.systemStatus.diskSpace.title'); // 'Disk Space';
 			disk.detail = this.translate.instant('dashboard.systemStatus.diskSpace.detail.notFound'); // 'Disk not found';
+
+			this.translate.stream('dashboard.systemStatus.diskSpace.title').subscribe((value) => {
+				disk.title = value;
+			});
+
+			this.translate.stream('dashboard.systemStatus.diskSpace.detail.notFound').subscribe((value) => {
+				disk.detail = value;
+			});
+
 			disk.path = 'ms-settings:storagesense';
 			disk.asLink = false;
 			disk.isSystemLink = true;
@@ -396,6 +474,14 @@ export class PageDashboardComponent implements OnInit {
 			warranty.id = 'warranty';
 			warranty.title = this.translate.instant('dashboard.systemStatus.warranty.title'); // 'Warranty';
 			warranty.detail = this.translate.instant('dashboard.systemStatus.warranty.detail.notFound'); // 'Warranty not found';
+
+			this.translate.stream('dashboard.systemStatus.warranty.title').subscribe((value) => {
+				warranty.title = value;
+			});
+			this.translate.stream('dashboard.systemStatus.warranty.detail.notFound').subscribe((value) => {
+				warranty.detail = value;
+			});
+
 			warranty.path = '/support';
 			warranty.asLink = false;
 			/* warranty.isSystemLink = true; */
@@ -423,6 +509,12 @@ export class PageDashboardComponent implements OnInit {
 			systemUpdate.id = 'systemupdate';
 			systemUpdate.title = this.translate.instant('dashboard.systemStatus.systemUpdate.title'); // 'System Update';
 			systemUpdate.detail = this.translate.instant('dashboard.systemStatus.systemUpdate.detail.update'); // 'Update';
+			this.translate.stream('dashboard.systemStatus.systemUpdate.title').subscribe((value) => {
+				systemUpdate.title = value;
+			});
+			this.translate.stream('dashboard.systemStatus.systemUpdate.detail.update').subscribe((value) => {
+				systemUpdate.detail = value;
+			});
 			systemUpdate.path = 'device/system-updates';
 			systemUpdate.asLink = false;
 			systemUpdate.isSystemLink = false;
@@ -445,6 +537,86 @@ export class PageDashboardComponent implements OnInit {
 			systemStatus.push(systemUpdate);
 		}
 		return systemStatus;
+	}
+
+	private setDefaultSecurityStatus() {
+		const antiVirus = new Status();
+		antiVirus.status = 4;
+		antiVirus.id = 'anti-virus';
+
+		this.translate.stream('common.securityAdvisor.antiVirus').subscribe((value) => {
+			antiVirus.title = value; // 'Anti-Virus';
+		});
+
+		this.translate.stream('common.securityAdvisor.disabled').subscribe((value) => {
+			antiVirus.detail = value;// 'Disabled';
+		});
+
+		antiVirus.path = 'security/anti-virus';
+		antiVirus.type = 'security';
+		this.securityStatus[0] = antiVirus;
+
+		const wiFi = new Status();
+		wiFi.status = 4;
+		wiFi.id = 'wifi-security';
+
+		this.translate.stream('common.securityAdvisor.wifi').subscribe((value) => {
+			wiFi.title = value; // 'WiFi Security';
+		});
+
+		this.translate.stream('common.securityAdvisor.disabled').subscribe((value) => {
+			wiFi.detail = value; // 'Disabled';
+		});
+
+		wiFi.path = 'security/wifi-security';
+		wiFi.type = 'security';
+		this.securityStatus[1] = wiFi;
+
+		const passwordManager = new Status();
+		passwordManager.status = 4;
+		passwordManager.id = 'pwdmgr';
+
+		this.translate.stream('common.securityAdvisor.pswdMgr').subscribe((value) => {
+			passwordManager.title = value; // 'Password Manager';
+		});
+
+		this.translate.stream('common.securityAdvisor.notInstalled').subscribe((value) => {
+			passwordManager.detail = value; // 'Not Installed';
+		});
+
+		passwordManager.path = 'security/password-protection';
+		passwordManager.type = 'security';
+		this.securityStatus[2] = passwordManager;
+
+		const vpn = new Status();
+		vpn.status = 4;
+		vpn.id = 'vpn';
+		this.translate.stream('common.securityAdvisor.vpn').subscribe((value) => {
+			vpn.title = value; // 'VPN';
+		});
+
+		this.translate.stream('common.securityAdvisor.notInstalled').subscribe((value) => {
+			vpn.detail = value; // 'Not Installed';
+		});
+
+		vpn.path = 'security/internet-protection';
+		vpn.type = 'security';
+		this.securityStatus[3] = vpn;
+
+		const windowsHello = new Status();
+		windowsHello.status = 4;
+		windowsHello.id = 'windows-hello';
+		this.translate.stream('common.securityAdvisor.windowsHello').subscribe((value) => {
+			windowsHello.title = value; // 'Windows Hello';
+		});
+
+		this.translate.stream('common.securityAdvisor.disabled').subscribe((value) => {
+			windowsHello.detail = value; // 'Not Installed';
+		});
+
+		windowsHello.path = 'security/windows-hello';
+		windowsHello.type = 'security';
+		this.securityStatus[4] = windowsHello;
 	}
 
 	private mapSecurityStatusResponse(response: any): Status[] {

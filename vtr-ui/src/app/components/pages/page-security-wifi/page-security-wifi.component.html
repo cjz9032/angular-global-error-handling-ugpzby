@@ -50,6 +50,7 @@
 															<span *vtrTranslate="'security.homeprotection.securityhealth.learnMoreAboutSecurityHealth' | translate">
 
 																<a vtrMetrics  id="sa-ws-lnk-sh-learnmore"
+																    aria-label="sa-ws-lnk-sh-learnmore"
 																	metricsEvent="ArticleClick"
 																	metricsItem="learnMoreAboutSecurityHealth"
 																	metricsItemPosition="1"
@@ -68,15 +69,16 @@
 													<div class="col">
 
 														<!--Start of Security Health Advisor When LWS is enabled-->
-														<div *ngIf="securityHealthViewModel.isLWSEnabled===undefined"
+														<div *ngIf="securityHealthViewModel.isLWSEnabled===undefined || (securityHealthViewModel.isLWSEnabled===true && securityHealthViewModel.homeDevicePosture.length === 0)"
 															class="loading">
 															<div class="spinner-border text-primary progress-spinner"
 																role="status"></div>
 														</div>
 														<vtr-ui-list-chevron [items]="securityHealthViewModel.homeDevicePosture"
+															metricsEvent="featureClick"
 															[chevronVisibility]='false'
 															[clickable]="false"
-															*ngIf="securityHealthViewModel.isLWSEnabled===true">
+															*ngIf="securityHealthViewModel.isLWSEnabled===true && securityHealthViewModel.homeDevicePosture.length > 0">
 														</vtr-ui-list-chevron>
 														<!--end of Security Health Advisor When LWS is enabled-->
 
@@ -90,10 +92,13 @@
 																</div>
 																<div class="button-box">
 																	<vtr-ui-button id="sa-ws-btn-sh-enablewifisecurity"
+																		aria-label="sa-ws-btn-sh-enablewifisecurity"
 																		metricsEvent="FeatureClick"
 																		metricsItem="enableWiFiSecurity"
 																		(onClick)="enableWiFiSecurity($event)"
-																		[label]="'security.homeprotection.securityhealth.button' | translate">
+																		[isDisabled]="cancelClick"
+																		[label]="'security.homeprotection.securityhealth.button' | translate"
+																		[title]="'security.homeprotection.securityhealth.button' | translate">
 																	</vtr-ui-button>
 																</div>
 															</div>
@@ -126,7 +131,8 @@
 
 								<div class="row">
 									<div class="col col-12">
-										<vtr-container-card id="sa-ws-lnk-cardcontent" 
+										<vtr-container-card id="sa-ws-lnk-cardcontent"
+											aria-label="sa-ws-lnk-cardcontent"
 											[img]="cardContentPositionA.FeatureImage"
 											[caption]="cardContentPositionA.Description"
 											[title]="cardContentPositionA.Title"

@@ -44,48 +44,69 @@
     </div>
   </div>
 
-  <div *ngIf="showIC===4 || showIC===3">
+  <div *ngIf="showIC===4 || showIC===3 || showIC===14">
     <div class="row py-5 smartsettings-card" id="cooling">
       <div class="col-10 mx-auto ">
         <vtr-container-collapsible
           [cardTitle]="'device.deviceSettings.power.powerSmartSettings.title' | translate | lowercase"
-          [isCollapsed]="false" [allowCollapse]="false" [theme]="'blue'">
-          <div class="row">
-            <div class="col-auto text-wrap subtitle">
-              <h3>
-                {{'device.deviceSettings.power.powerSmartSettings.subtitle' | translate |  lowercase }}
-              </h3>
-              <p *ngIf="showIC===4"> {{'device.deviceSettings.power.powerSmartSettings.description1' | translate}}</p>
-              <p *ngIf="showIC===3"> {{'device.deviceSettings.power.powerSmartSettings.description3' | translate}}</p>
-              <p class="well" *ngIf="showIC===3"> {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.apsHint' | translate }} </p>
-            </div>
-          </div>
+          [isCollapsed]="false" 
+          [allowCollapse]="false" 
+          [theme]="'blue'">
           <ul class=" list-group
               list-group-flush">
             <li class="">
-              <vtr-ui-row-switch [caption]="''" [isSwitchVisible]="showIntelligentCoolingToggle"
-                [isSwitchChecked]="enableIntelligentCoolingToggle" [readMoreText]="''" [showChildContent]="true"
-                [theme]="'blue'" (toggleOnOff)="onIntelligentCoolingToggle($event)">
-                <div *ngIf="showIC===3 && showIntelligentCoolingModes" class="optimize">
-                  {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.optimize' | translate | uppercase }} </div>
-                <div class="row no-gutters" *ngIf="showIntelligentCoolingModes">
-                  <vtr-ui-rounded-rectangle-radio 
-                    [radioId]="'radio1'"
-                    [group]="'radio'"
-                    [label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' + showIC | translate"
-                    [value]="'PERFORMANCE'"
-                    [checked]="radioPerformance"
-                    (change)="changePerformance($event)">
-                  </vtr-ui-rounded-rectangle-radio>
-                  <vtr-ui-rounded-rectangle-radio 
-                    [radioId]="'radio2'"
-                    [group]="'radio'"
-                    [label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool' + showIC | translate"
-                    [value]="'QUIET & COOL'"
-                    [checked]="radioQuietCool"
-                    (change)="changeQuietCool($event)">
-                  </vtr-ui-rounded-rectangle-radio>
+              <vtr-ui-row-switch 
+                [title]="'device.deviceSettings.power.powerSmartSettings.subtitle' | translate |  lowercase"
+                [caption]="captionText"
+                [isSwitchVisible]="showIntelligentCoolingToggle"
+                [isSwitchChecked]="enableIntelligentCoolingToggle"
+                [showChildContent]="true"
+                [theme]="'blue'" 
+                (toggleOnOff)="onIntelligentCoolingToggle($event)">
+                <div class="alignment">
+                    <div class="well" *ngIf="showIC===3 && !apsStatus"> {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.apsHint' | translate }} </div>
+                    <div class="well" *ngIf="showIC===14"> {{ selectedModeText }} </div>
+                    <div *ngIf="showIC===3 && showIntelligentCoolingModes" class="optimize">
+                      {{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.optimize' | translate | uppercase }} </div>
+                    <div class="row no-gutters" *ngIf="showIntelligentCoolingModes">
+                      <vtr-ui-circle-radio-with-checkbox
+                        *ngIf="showIC!==14"
+                        [radioId]="'radio1'"
+                        [group]="'radio'"
+                        [label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' + showIC | translate"
+                        [value]="'performance'"
+                        [checked]="radioPerformance"
+                        (change)="changePerformance($event)">
+                      </vtr-ui-circle-radio-with-checkbox>
+                      <vtr-ui-circle-radio-with-checkbox
+                        [radioId]="'radio2'"
+                        [group]="'radio'"
+                        [label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.quiteCool' + showIC | translate"
+                        [value]="'LE-IntelligentCooling2x'"
+                        [checked]="radioQuietCool"
+                        (change)="changeQuietCool($event)">
+                      </vtr-ui-circle-radio-with-checkbox>
+                      <vtr-ui-circle-radio-with-checkbox
+                        *ngIf="showIC===14"
+                        [radioId]="'radio1'"
+                        [group]="'radio'"
+                        [label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.performance' + showIC | translate"
+                        [value]="'performance'"
+                        [checked]="radioPerformance"
+                        (change)="changePerformance($event)">
+                      </vtr-ui-circle-radio-with-checkbox>
+                      <vtr-ui-circle-radio-with-checkbox
+                        *ngIf="showIC===14"
+                        [radioId]="'radio3'"
+                        [group]="'radio'"
+                        [label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.options.batterySaving' | translate"
+                        [value]="'LE-Battery-Life-mode2x'"
+                        [checked]="radioBatterySaving"
+                        (change)="changeBatterySaving($event)">
+                      </vtr-ui-circle-radio-with-checkbox>
+                    </div>
                 </div>
+                
               </vtr-ui-row-switch>
             </li>
           </ul>

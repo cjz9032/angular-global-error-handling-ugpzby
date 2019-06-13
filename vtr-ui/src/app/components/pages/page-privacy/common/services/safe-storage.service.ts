@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { MockWindows } from '../../utils/moked-api';
 
+const RESOURCE = 'figleaf-privacy-tab';
+
 @Injectable({
 	providedIn: 'root'
 })
@@ -10,35 +12,42 @@ export class SafeStorageService {
 	vault = new this.windows.Security.Credentials.PasswordVault();
 
 	constructor() {
-		// usage example below
-		// this.setPassword('testResource', 'testUsername', 'testPassword');
-		// console.log('getPassword', this.getPassword('testResource', 'testUsername'));
 	}
 
-	setPassword(resource, username, password) {
+	setPassword(username, password) {
 		const credentials = new this.windows.Security.Credentials.PasswordCredential();
-		credentials.resource = resource;
+		credentials.resource = RESOURCE;
 		credentials.userName = username;
 		credentials.password = password;
 		this.vault.add(credentials);
 	}
 
-	getPassword(resource, username) {
+	getPassword(username) {
 		var password: string;
 		try {
-			password = this.vault.retrieve(resource, username).password;
+			password = this.vault.retrieve(RESOURCE, username).password;
 		} catch (error) {
 			password = null;
 		}
 		return password;
 	}
 
-	removePassword(resource, username) {
+	removePassword(username) {
 		try {
-			const credential = this.vault.retrieve(resource, username);
-			this.vault.remove(credential);
+			const credential = this.vault.retrieve(RESOURCE, username);
+			if (credential) {
+				this.vault.remove(credential);
+			}
 		} catch (error) {
 			console.error('removePassword error', error);
 		}
+	}
+
+	setEmail(email) {
+		this.setPassword('figleaf-userEmail', email);
+	}
+
+	getEmail() {
+		return this.getPassword('figleaf-userEmail');
 	}
 }

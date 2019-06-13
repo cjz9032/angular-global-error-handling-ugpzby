@@ -172,12 +172,19 @@
 			@media #{$mediaquery_X21} {
 				top: 10%;
 			}
+			@media #{$mediaquery_X23} {
+				left: 0%;
+			}
 			.transparent {
 				color: transparent;
 			}
 		}
 		.icomoon:before{
-			font-size:48px;
+			font-size:28px;
+			position: absolute;
+			top:10px;
+			height:28px;
+			width:20.25px;
 		}
 	}
 }

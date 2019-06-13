@@ -34,7 +34,7 @@ export class WidgetSecurityComponent implements OnInit {
 		this.fetchCMSArticleCategory();
 	}
 
-	ngOnInit() { }
+	ngOnInit() {}
 
 	fetchCMSArticleCategory() {
 		this.cmsService.fetchCMSArticle(this.articleId, {'Lang': 'EN'}).then((response: any) => {

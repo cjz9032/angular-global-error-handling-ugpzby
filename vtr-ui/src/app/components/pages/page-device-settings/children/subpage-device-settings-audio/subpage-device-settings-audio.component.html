@@ -83,7 +83,8 @@
 				[cardTitle]="'device.deviceSettings.audio.microphone.title' | translate"
 				[isCollapsed]="false"
 				[allowCollapse]="true"
-				[theme]="'white'">
+				[theme]="'white'"
+				(toggle)="onCardCollapse($event)">
 				<vtr-widget-permission-note
 					[noteTitle]="'device.deviceSettings.audio.microphone.note.title' | translate"
 					[description]="'device.deviceSettings.audio.microphone.note.description' | translate"
@@ -131,7 +132,8 @@
 										[maxValue]="100"
 										(change)="setVolume($event)"
 										[enableSlider]="!microphoneProperties.permission"
-										[value]="microphoneProperties.volume">
+										[value]="microphoneProperties.volume"
+										[manualRefresh]="manualRefresh">
 									</vtr-ui-range-slider>
 								</div>
 								<div class="col-2"></div>

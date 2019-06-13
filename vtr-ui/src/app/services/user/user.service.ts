@@ -4,7 +4,7 @@ import { CommsService } from '../comms/comms.service';
 import { DevService } from '../dev/dev.service';
 import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
+import { LenovoIdKey, LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DeviceService } from '../../services/device/device.service';
@@ -29,6 +29,7 @@ export class UserService {
 	private lid: any;
 	private metrics: any;
 	private lidStarterHelper: LIDStarterHelper;
+	
 	constructor(
 		private cookieService: CookieService,
 		private commsService: CommsService,
@@ -79,11 +80,12 @@ export class UserService {
 		const cookieManager = myFilter.cookieManager;
 		const myCookieJar = cookieManager.getCookies(new Windows.Foundation.Uri(domain));
 		if (myCookieJar) {
-			myCookieJar.forEach(cookie => {
+			for (let cookie of myCookieJar) {
 				if (cookie.name === 'lang') {
 					lang = cookie.value;
+					break;
 				}
-			});
+			};
 		}
 		return lang;
 	}
@@ -99,6 +101,7 @@ export class UserService {
 
 	loginSilently(appFeature = null) {
 		const self = this;
+		this.commonService.sendNotification(LenovoIdStatus.Pending, this.auth);
 		const accountState = this.hadEverSignIn();
 		const starterStatus = this.getStarterIdStatus();
 		let loginSuccess = false;
@@ -122,12 +125,15 @@ export class UserService {
 					self.lidStarterHelper.getStarterAccountToken().then((token) => {
 						if (token && self.lidStarterHelper.isStarterToken(token)) {
 							self.starter = true;
+							self.commonService.sendNotification(LenovoIdStatus.StarterId, self.auth);
 						}
 					})
 				}
 			}
 		})
-
+		if (!this.auth && !this.starter) {
+			this.commonService.sendNotification(LenovoIdStatus.SignedOut, this.auth);
+		}
 		this.devService.writeLog('LOGIN(SILENTLY): ', self.auth);
 	}
 
@@ -172,7 +178,10 @@ export class UserService {
 		}
 		this.devService.writeLog('SET AUTH');
 		this.devService.writeLog('LOGIN RES', auth);
-		this.auth = auth;
+		if (this.auth != auth) {
+			this.auth = auth;
+			this.commonService.sendNotification(auth ? LenovoIdStatus.SignedIn : LenovoIdStatus.SignedOut, auth);
+		}
 	}
 
 	removeAuth() {
@@ -194,7 +203,7 @@ export class UserService {
 					self.translate.stream('lenovoId.user').subscribe((value) => {
 						self.setName(value, '');
 					});
-					self.auth = false;
+					self.setAuth(false);
 					metricsData = {
 						ItemType: 'TaskAction',
 						TaskName: 'LID.SignOut',

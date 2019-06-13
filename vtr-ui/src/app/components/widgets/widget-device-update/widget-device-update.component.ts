@@ -1,4 +1,6 @@
 import { Component, Input, OnInit, NgZone, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
 	selector: 'vtr-widget-device-update',
@@ -14,31 +16,30 @@ export class WidgetDeviceUpdateComponent implements OnInit, OnChanges {
 	@Input() percent = 0;
 	@Input() showProgress = false;
 	@Input() isUpdateDownloading = false;
+	@Input() isCheckingPluginStatus = true;
 	@Input() downloadingUpdateText = '';
 	@Input() downloadingPercent = 0;
 	@Input() installingUpdateText = 'Installing updates';
 	@Input() installingPercent = 0;
-
 	@Output() checkForUpdate = new EventEmitter();
 	@Output() cancelUpdateCheck = new EventEmitter();
 	@Output() cancelUpdateDownload = new EventEmitter();
 
-	cancelCheck = 'Cancel Check';
-	checkingForUpdates = 'Checking for updates';
-	complete = 'complete';
 	public progressValue = 0;
 	public downloadingIcon = 'spinner';
 	public installingIcon = 'spinner';
-	private downloadingText = 'Downloading updates';
+	private downloadingText = 'systemUpdates.banner.downloading';
 
-	constructor() { }
+	constructor(private translate: TranslateService) { 
+		this.translateString();
+	}
 
 	ngOnInit() { }
 
 	ngOnChanges(changes: SimpleChanges) {
 		if (changes && changes.downloadingPercent) {
 			if (changes.downloadingPercent.currentValue === 100) {
-				this.downloadingUpdateText = `${this.downloadingText} done`;
+				this.downloadingUpdateText = `${this.downloadingText}`;
 			} else {
 				this.downloadingUpdateText = this.downloadingText;
 			}
@@ -55,5 +56,11 @@ export class WidgetDeviceUpdateComponent implements OnInit, OnChanges {
 
 	onCancelUpdateDownload() {
 		this.cancelUpdateDownload.emit();
+	}
+
+	private translateString() {
+		this.translate.stream(this.downloadingText).subscribe((res) => {
+			this.downloadingText = res;
+		});
 	}
 }

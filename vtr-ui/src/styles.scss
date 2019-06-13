@@ -25,7 +25,9 @@ html {
 	font-size: 62.5%;
 	letter-spacing: 0;
 }
-
+*:not(a), input:not([type=radio]):not([type=checkbox]){
+	cursor: default;
+}
 @media #{$dpiquery_0} {
 }
 
@@ -374,11 +376,16 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		overflow-y: initial !important;
 	}
 
+	.modal-dialog-centered{
+		height: calc(100vh - 3.5rem);
+		min-height: calc(100vh - 3.5rem);
+	}
+
 	.modal-content {
 		border-radius: 1rem;
 		background: $light;
-		padding: 4rem;
-		min-height: calc(100vh - 3.5rem);
+		padding: 3rem 0 0 4rem;
+		overflow: hidden;
 
 		h1,
 		h2,
@@ -494,11 +501,16 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		overflow-y: initial !important;
 	}
 
+	.modal-dialog-centered{
+		height: calc(100vh - 3.5rem);
+		min-height: calc(100vh - 3.5rem);
+	}
+
 	.modal-content {
 		border-radius: 1rem;
 		background: $light;
-		padding: 4rem;
-		min-height: calc(100vh - 3.5rem);
+		padding: 4rem 0 0 4rem;
+		overflow: hidden;
 
 		h1,
 		h2,
@@ -648,6 +660,36 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	background: linear-gradient(135deg, $go 0%, $go_light 100%);
 }
 
+.vtr-login-lenovo-id {
+	.start-trial {
+		.button-box {
+			.button {
+				min-height: 5rem !important;
+				background: linear-gradient(135deg, $shade_lighter 0%, $shade_lightest 100%) !important;
+				color: $blue-dark !important;
+				border: 0.1rem solid $shade_light !important;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.vtr-modal-chs-welcome-container {
+	.modal-backdrop.show {
+		opacity: 0.7;
+	}
+	.button-gray {
+		.vtr-ui-button {
+			width: 100%;
+		}
+	}
+	.vtr-ui-button {
+		.button-box {
+			padding: 0px !important;
+			margin: 0px !important;
+		}
+	}
+}
 // gaming overrides need to be at the bottom here
 @import "./styles-gaming.scss";
 
@@ -770,7 +812,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 }
 .icomoon-FA-Plug2x:before {
 	content: "\e916";
-	color: #4a81fd;
+	color: #34495e;
 }
 .icomoon-FA-Question-circle2x:before {
 	content: "\e917";
@@ -901,7 +943,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 }
 .icomoon-LE-expressCharging2x:before {
 	content: "\e937";
-	color: #4a81fd;
+	color: #34495e;
 }
 .icomoon-LE-face-detection2x:before {
 	content: "\e938";
@@ -936,11 +978,11 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	color: #4a81fd;
 }
 .icomoon-LE-IntelligentCooling2x:before {
-	content: "\e940";
+	content: "\e941";
 	color: #4a81fd;
 }
 .icomoon-LE-Intelligent-dual-fan-2x:before {
-	content: "\e941";
+	content: "\e942";
 	color: #4a81fd;
 }
 .icomoon-LE-IR2x:before {

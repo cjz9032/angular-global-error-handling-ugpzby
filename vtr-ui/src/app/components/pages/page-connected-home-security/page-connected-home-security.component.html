@@ -15,13 +15,26 @@
                             <div class="container-fluid">
                                 <div class="row mb-40 content-container p-40">
                                     <div class="container-fluid">
-                                        <vtr-widget-home-security-device></vtr-widget-home-security-device>
+                                        <vtr-widget-home-security-device [subscription]="account.subscription"></vtr-widget-home-security-device>
                                     </div>
                                 </div>
                                 <div class="row content-container p-40">
                                     <div class="container-fluid fix-height">
                                         <div class="row title">{{'homeSecurity.overviewBlockTitle' | translate}}</div>
-                                        <div class="row description">placeholder placeholder placeholder placeholder placeholder</div>
+                                        <div class="container-fluid sub-container">
+                                            <div class="row sub-title">{{'homeSecurity.myDevice' | translate}}</div>
+                                            <div class="row container-fluid h-50 device-card">
+                                                <vtr-widget-home-security-my-device class="container-fluid"></vtr-widget-home-security-my-device>
+                                            </div>
+                                            <div class="row sub-title">{{'homeSecurity.allDevices' | translate}}
+                                                <vtr-ui-button
+                                                (click)="switchStatus()"
+                                                [label]="'switch'"></vtr-ui-button>
+                                            </div>
+                                            <div class="row container-fluid home-card">
+                                                <vtr-widget-home-security-all-devices class="container-fluid" [eventEmitter]="eventEmitter"></vtr-widget-home-security-all-devices>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -33,17 +46,22 @@
                         <div class="container-fluid">
                             <div class="row mb-40">
                                 <div class="col col-12">
-                                    <vtr-widget-home-security-account-status [title]="'My connected home security'"
-                                        [description]="'placeholder'">
+									<vtr-widget-home-security-account-status
+									[status]="connectedHomeSecurity.account.state"
+									[remainingDays]="27"
+									[expiredDate]="connectedHomeSecurity.account.ExpirationDate"
+									(startTrial)="onStartTrial()"
+									(manageAccount)="onManageAccount()"
+									(upgradeAccount)="onUpgradeAccount()">
                                     </vtr-widget-home-security-account-status>
                                 </div>
                             </div>
                             <div class="row mb-40">
                                 <div class="col col-12">
-                                    <vtr-widget-status [title]="'Notifications'"
-                                        [description]="'Recent notifications'"
+                                    <vtr-widget-questions [title]="'homeSecurity.notification' | translate"
+                                        [description]="'homeSecurity.recent' | translate "
                                         [items]="notifications.items">
-                                    </vtr-widget-status>
+                                    </vtr-widget-questions>
                                 </div>
                             </div>
                         </div>

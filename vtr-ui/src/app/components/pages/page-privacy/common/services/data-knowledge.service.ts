@@ -39,7 +39,7 @@ export class DataKnowledgeService {
 		if (!this.dataKnowledgeCache$) {
 			this.dataKnowledgeCache$ = this.requestDataKnowledge().pipe(
 				expand((response) => {
-					const hasNextSince = response.items && !response.message;
+					const hasNextSince = (response.items && response.items.length > 0) && !response.message;
 					return hasNextSince ?
 						this.requestDataKnowledge(response.next_since) : EMPTY;
 				}),

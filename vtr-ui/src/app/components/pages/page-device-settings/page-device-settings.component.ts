@@ -7,8 +7,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AudioService } from 'src/app/services/audio/audio.service';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
-import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
-import { LoggerService } from 'src/app/services/logger/logger.service';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-page-device-settings',
@@ -43,6 +42,13 @@ export class PageDeviceSettingsComponent implements OnInit {
 			icon: 'display-camera',
 			subitems: [],
 			active: false
+		},{
+			id: 'input-accessories',
+			label: 'Input & Accessories',
+			path: 'device-settings/input-accessories',
+			icon: 'input-accessories',
+			subitems: [],
+			active: false
 		}
 	];
 	cardContentPositionA: any = {};
@@ -54,12 +60,14 @@ export class PageDeviceSettingsComponent implements OnInit {
 		private commonService: CommonService,
 		public deviceService: DeviceService,
 		public audioService: AudioService,
-		private smartAssist: SmartAssistService,
-		private logger: LoggerService
+		private translate: TranslateService,
+
 	) {
 		this.fetchCMSArticles();
 		this.getMicrophoneSettings();
-		this.getHPDStatus();
+		//Evaluate the translations for QA on language Change
+		this.qaService.setTranslationService(this.translate);
+		this.qaService.setCurrentLangTranslations();
 	}
 
 	ngOnInit() {
@@ -110,31 +118,22 @@ export class PageDeviceSettingsComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
+		this.cardContentPositionA = {
+			Title: '',
+			ShortTitle: '',
+			Description: '',
+			FeatureImage: './../../../../assets/cms-cache/Alexa4x3-zone1.png',
+			Action: '',
+			ActionType: 'External',
+			ActionLink: null,
+			BrandName: '',
+			BrandImage: '',
+			Priority: 'P1',
+			Page: 'dashboard',
+			Template: 'half-width-title-description-link-image',
+			Position: 'position-B',
+			ExpirationDate: null,
+			Filters: null
+		};
 	}
-
-	/**
-	 * check if HPD related features are supported or not. If yes show Smart Assist tab else hide. Default is hidden
-	 */
-	private getHPDStatus() {
-		this.smartAssist.getHPDCapability()
-			.then((isAvailable: boolean) => {
-				console.log('getHPDStatus.getHPDCapability()', isAvailable);
-				// isAvailable = true;
-				this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
-				if (isAvailable) {
-					this.menuItems.push({
-						id: 'smart-assist',
-						label: 'Smart Assist',
-						path: 'device/device-settings/smart-assist',
-						icon: 'smart-assist',
-						subitems: [],
-						active: false
-					});
-				}
-			})
-			.catch(error => {
-				this.logger.error('error in getHPDStatus.getHPDCapability()', error);
-			});
-	}
-
 }
