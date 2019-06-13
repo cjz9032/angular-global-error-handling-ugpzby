@@ -1,0 +1,17 @@
+<div class="vtr-ui-color-wheel picker-container">
+	<div id="color-wheel"></div>
+	<div class="rgb-values">
+		<div class="form-group d-flex">
+			<label>R:</label>
+			<input id="rgb-r" type="number" min="0" max="255" class="input-color" oninput="colorWheel.rgb = [parseInt(this.value, 10), colorWheel.rgb[1], colorWheel.rgb[2]]">
+		</div>
+		<div class="form-group d-flex">
+			<label>G:</label>
+			<input id="rgb-g" type="number" min="0" max="255" class="input-color" oninput="colorWheel.rgb = [colorWheel.rgb[0], this.value, colorWheel.rgb[2]]">
+		</div>
+		<div class="form-group d-flex">
+			<label>B:</label>
+			<input id="rgb-b" type="number" min="0" max="255" class="input-color" oninput="colorWheel.rgb = [colorWheel.rgb[0], colorWheel.rgb[1], this.value]">
+		</div>
+	</div>
+</div>

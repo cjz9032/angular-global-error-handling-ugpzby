@@ -215,6 +215,7 @@ import { CursorTypePipe } from './pipe/ui-security-statusbar/cursor-type.pipe';
 import { UiGamingDriverPopupComponent } from './components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
 import { UiCircleRadioWithCheckboxComponent } from './components/ui/ui-circle-radio-with-checkbox/ui-circle-radio-with-checkbox.component';
 import { UiChsStatusbarComponent } from './components/ui/ui-chs-statusbar/ui-chs-statusbar.component';
+import { UiColorWheelComponent } from './components/ui/ui-color-wheel/ui-color-wheel.component';
 
 library.add(fas);
 library.add(fab);
@@ -391,7 +392,8 @@ library.add(fal);
 		CursorTypePipe,
 		UiGamingDriverPopupComponent,
 		UiCircleRadioWithCheckboxComponent,
-		UiChsStatusbarComponent
+		UiChsStatusbarComponent,
+		UiColorWheelComponent
 	],
 	imports: [
 		BrowserModule,
