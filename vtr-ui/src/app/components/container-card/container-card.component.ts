@@ -1,10 +1,10 @@
-import { Component, Self, ElementRef, OnInit, AfterViewInit, Input } from '@angular/core';
-import { DisplayService } from '../../services/display/display.service';
-import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalArticleDetailComponent } from '../modal/modal-article-detail/modal-article-detail.component';
-import { CommonService } from 'src/app/services/common/common.service';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import {Component, Self, ElementRef, OnInit, AfterViewInit, Input, ChangeDetectorRef} from '@angular/core';
+import {DisplayService} from '../../services/display/display.service';
+import {NgbModalRef, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {ModalArticleDetailComponent} from '../modal/modal-article-detail/modal-article-detail.component';
+import {CommonService} from 'src/app/services/common/common.service';
+import {AppNotification} from 'src/app/data-models/common/app-notification.model';
+import {NetworkStatus} from 'src/app/enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-container-card',
@@ -28,8 +28,10 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 	@Input() ratioX = 1;
 	@Input() ratioY = 1;
 	@Input() cornerShift: String = '';
-	@Input() order:number;
-	@Input() itemID:string;	
+	@Input() order: number;
+	@Input() itemID: string;
+
+	isLoading = true;
 
 	ratio = 1;
 	containerHeight = 100;
@@ -41,10 +43,24 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 		@Self() private element: ElementRef,
 		private displayService: DisplayService,
 		private commonService: CommonService,
-		public modalService: NgbModal
-	) { }
+		public modalService: NgbModal,
+		private changeDetectorRef: ChangeDetectorRef
+	) {
+	}
 
 	ngOnInit() {
+		console.log(this.img,"+++++++++---------");
+		if(this.img){
+			this.isLoading=false;
+		}else{
+			let image = new Image();
+			image.onload = () => {
+				this.isLoading=false;
+			}
+			image.src = this.img;
+		}
+
+
 		this.ratio = this.ratioY / this.ratioX;
 		const self = this;
 		this.resizeListener = this.displayService.windowResizeListener().subscribe((event) => {
@@ -60,9 +76,10 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 
 	ngAfterViewInit() {
 		const self = this;
-		const delay = setTimeout(function () {
+		const delay = setTimeout(() => {
 			self.calcHeight(self.element);
-		}, 500);
+
+		}, 0);
 	}
 
 	calcHeight(containerCard) {
@@ -98,7 +115,7 @@ export class ContainerCardComponent implements OnInit, AfterViewInit {
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
-					break;			
+					break;
 				default:
 					break;
 			}

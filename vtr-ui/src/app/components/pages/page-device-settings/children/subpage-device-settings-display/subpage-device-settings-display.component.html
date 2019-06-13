@@ -20,6 +20,7 @@
 				[theme]="'white'"
 				(toggle)="onCardCollapse($event)">
 				<ul class="list-group list-group-flush">
+					<!-- current selected value is : {{displayColorTempDataSource.current}} -->
 					<li class="pt-3"
 						*ngIf="displayColorTempDataSource && displayColorTempDataSource.available">
 						<vtr-ui-row-switch

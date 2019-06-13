@@ -268,7 +268,7 @@
         "menu": {
             "dashboard": "Dashboard",
             "device": {
-                "title": "My Device",
+                "title": "Device",
                 "sub1": "My Device",
                 "sub2": "My Device Settings",
                 "sub3": "System Updates",
@@ -382,7 +382,7 @@
         "quickSettings": {
             "title": "Your Quick Settings",
             "microphone": "Microphone",
-            "cameraPrivacy": "Camera Privacy",
+            "cameraPrivacy": "Camera",
             "eyeCareMode": "Eye Care Mode"
         },
         "systemStatus": {
@@ -421,103 +421,104 @@
     },
     "device": {
         "myDevice": {
-            "title": "My Device",
-            "subtitle": "My device status",
-            "serial": "Serial",
-            "productNumber": "Product number",
-            "biosVersion": "Bios version",
-            "learnMore": "Learn more",
-            "freeMemory": "Free memory",
+            "title": "Mé zařízení",
+            "subtitle": "Stav mého zařízení",
+            "serial": "Sériové číslo",
+            "productNumber": "Číslo produktu",
+            "biosVersion": "Verze systému BIOS",
+            "learnMore": "Dozvědět se více",
+            "freeMemory": "Volná paměť",
             "systemUpdate": {
-                "title": "System update",
-                "notFound": "System update not found",
+                "title": "Aktualizace systému",
+                "notFound": "Aktualizace systému nebyla nalezena",
                 "detail": {
-                    "uptoDate": "Software up to date ",
-                    "updatedOn": "updated on ",
-                    "outdated": "Software outdated ",
-                    "neverRanUpdate": "never ran update"
+                    "uptoDate": "Software je aktuální",
+                    "updatedOn": "aktualizováno",
+                    "outdated": "Software je zastaralý",
+                    "neverRanUpdate": "nikdy nespouštět aktualizaci"
                 }
             },
-            "extendedWarranty": "Extend warranty",
+            "extendedWarranty": "Prodloužit záruku",
             "processor": {
-                "title": "Processor",
-                "notFound": "Processor not found"
+                "title": "Procesor",
+                "notFound": "Procesor nebyl nalezen"
             },
             "memory": {
-                "title": "Memory",
-                "notFound": "Memory not found",
+                "title": "Paměť",
+                "notFound": "Paměť nebyla nalezena",
                 "ram": "RAM"
             },
             "diskspace": {
-                "title": "Disk Space",
-                "notFound": "Disk not found"
+                "title": "Místo na disku",
+                "notFound": "Disk nebyl nalezen"
             },
-            "software": "Software up to date",
-            "updated": "Updated",
-            "outOfWarranty": "Out of warranty",
-            "expired": "Expired on",
-            "of": "of",
+            "software": "Software je aktuální",
+            "updated": "Aktualizováno",
+            "outOfWarranty": "Po záruce",
+            "expired": "Platnost vypršela",
+            "of": "z",
             "warranty": {
-                "notFound": "Warranty not found",
+                "notFound": "Záruka nebyla nalezena.",
                 "detail": {
-                    "title": "Extend warranty",
-                    "inWarranty": "In warranty ",
-                    "daysRemaining": "days remaining",
-                    "outOfWarranty": "Out of warranty ",
-                    "expiredOn": "Expired on",
-                    "notAvailable": "Warranty not available",
-                    "support": "Support"
+                    "title": "Prodloužit záruku",
+                    "inWarranty": "V záruce",
+                    "daysRemaining": "dnů zbývá",
+                    "outOfWarranty": "Po záruce",
+                    "expiredOn": "Platnost vypršela",
+                    "notAvailable": "Záruka není k dispozici",
+                    "support": "Podpora"
                 }
             },
-            "helpful": "Helpful Content"
+            "helpful": "Užitečný obsah"
         },
         "deviceSettings": {
-            "helpful": "Helpful Content",
+            "helpful": "Užitečný obsah",
             "batteryGauge": {
-                "title": "BATTERY GAUGE",
-                "subtitle": "Battery",
-                "hours": "hours",
-                "hour": "hour",
-                "minutes": "minutes",
-                "minute": "minute",
-                "charge": "TIME TO FULLY CHARGE",
-                "button": "SEE BATTERY DETAILS",
+                "title": "UKAZATEL STAVU BATERIE",
+                "subtitle": "Stav baterie",
+                "hours": "hodiny",
+                "hour": "hodina",
+                "minutes": "minuty",
+                "minute": "minuta",
+                "charge": "ČAS POTŘEBNÝ K PLNÉMU NABITÍ",
+                "button": "ZOBRAZIT PODROBNOSTI O BATERII",
                 "details": {
-                    "title": "Battery Details",
-                    "primary": "Primary Battery",
-                    "secondary": "Secondary Battery",
-                    "tertiary": "Tertiary Battery",
-                    "status": "Status",
-                    "wattage": "Wattage",
-                    "barcode": "Bar-Code",
-                    "remainingPercent": "Remaining percentage",
-                    "temp": "Temperature",
-                    "frupn": "FRU part number",
-                    "remainingTime": "Remaining time",
-                    "chargeCompletionTime": "Charge completion time",
-                    "cycleCount": "Cycle count",
-                    "chemistry": "Device chemistry",
-                    "remainingCap": "Remaining capacity",
-                    "designCap": "Design capacity",
-                    "fullChargeCap": "Full charge capacity",
-                    "manufDt": "Manufacture date",
-                    "designVolt": "Design voltage",
-                    "volts": "Voltage",
-                    "firstUseDt": "First use date",
-                    "firmwareVer": "Firmware version",
+                    "title": "Podrobnosti o baterii",
+                    "primary": "Primární baterie",
+                    "secondary": "Druhá baterie",
+                    "tertiary": "Terciální baterie",
+                    "status": "Stav",
+                    "wattage": "Výkon",
+                    "barcode": "Čárový kód",
+                    "remainingPercent": "Zbývá procent",
+                    "temp": "teplota",
+                    "frupn": "Číslo součásti FRU",
+                    "remainingTime": "Zbývající čas",
+                    "chargeCompletionTime": "Čas potřebný k nabití",
+                    "cycleCount": "Počet cyklů",
+                    "chemistry": "Chemické složení zařízení",
+                    "remainingCap": "Zbývající kapacita",
+                    "designCap": "Nominální kapacita",
+                    "fullChargeCap": "Kapacita při plném nabití",
+                    "manufDt": "Datum výroby",
+                    "designVolt": "Nominální napětí",
+                    "volts": "Napětí",
+                    "firstUseDt": "Datum prvního použití",
+                    "firmwareVer": "Verze firmwaru",
                     "chargeStatusString": {
-                        "error": "ERROR",
-                        "notinstalled": "Not installed",
-                        "noactivity": "No activity",
-                        "charging": "Charging",
-                        "discharging": "Discharging",
-                        "acdischarging": "Discharging (with ac)"
+                        "error": "CHYBA",
+                        "notinstalled": "Není instalován",
+                        "noactivity": "Nečinná",
+                        "charging": "Nabíjení",
+                        "discharging": "Vybíjení",
+                        "acdischarging": "Vybíjení (napájení ze sítě)"
                     },
                     "deviceChemistry": {
                         "li-polymer": "Li-Polymer",
                         "li-ion": "Li-Ion",
                         "li_polymer": "Li-Polymer",
-                        "li_ion": "Li-Ion"
+                        "li_ion": "Li-Ion",
+                        "unknown": "Unknown"
                     },
                     "manufacturer": {
                         "title": "Manufacturer",
@@ -576,65 +577,72 @@
                 }
             },
             "power": {
-                "title": "Power",
-                "subtitle": "Power Settings",
-                "description": "This section enables you to dynamically adjust thermal performance and maximize the battery life. It also has other popular power-related features. You can check the default settings in this section and customize your system according to your needs.",
+                "title": "Napájení",
+                "subtitle": "Nastavení napájení",
+                "description": "V tomto oddílu můžete dynamicky nastavovat tepelný výkon a maximalizovat výdrž baterie.Má také další populární funkce související s napájením.V této části můžete zkontrolovat výchozí nastavení a přizpůsobit systém podle svých potřeb.",
                 "jumpto": {
-                    "title": "JUMP TO SETTINGS",
-                    "battery": "Battery",
-                    "power": "Power",
-                    "cooling": "Intelligent Cooling",
-                    "other": "Other"
+                    "title": "PŘEJÍT K NASTAVENÍ",
+                    "battery": "baterie",
+                    "power": "Napájení",
+                    "cooling": "Inteligentní chlazení",
+                    "other": "Jiná"
                 },
                 "powerSmartSettings": {
-                    "title": "Power Smart Settings",
-                    "subtitle": "INTELLIGENT COOLING",
-                    "subtitle1": "Battery & Quiet",
-                    "description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
-                    "description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
-                    "description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
-                    "readMore": "Read more.",
+                    "title": "Inteligentní nastavení napájení",
+                    "subtitle": "INTELIGENTNÍ CHLAZENÍ",
+                    "subtitle1": "Baterie a ticho",
+                    "description1": "Tato funkce dynamicky upraví tepelná nastavení dle vašich potřeb.",
+                    "description2": "Funkce Inteligentní chlazení upravuje rychlost ventilátoru, maximální teplotu povrchu a výkon.Tato funkce má následující režimy a nyní je přístupná pomocí posuvníku výkonu systému Windows.",
+                    "description3": "Inteligentní chlazení automaticky přizpůsobuje množství tepla produkované počítačem vašim potřebám.",
+                    "readMore": "Další informace.",
                     "gotoWindows": {
-                        "title": "Go to windows settings",
-                        "modalBodyText1": "Click on Windows battery icon on System tray to access Windows performance power slider"
+                        "title": "Přejít k nastavení systému Windows",
+                        "modalBodyText1": "Chcete-li získat přístup k posuvníku výkonu systému Windows, klikněte na ikonu baterie na hlavním panelu systému Windows"
                     },
                     "intelligentCooling": {
-                        "title": "Intelligent cooling",
+                        "title": "Inteligentní chlazení",
                         "description": "",
                         "tooltip": "",
-                        "optimize": "optimize system for",
-                        "apsHint": "To enable Intelligent Cooling, you must install and enable Lenovo Active Protection System.",
+                        "optimize": "optimalizuje systém pro",
+                        "apsHint": "Aktivace chytrého chlazení je možná až po instalaci a aktivaci systém Lenovo Active Protection System.",
                         "options": {
-                            "quiteCool3": "Cool Mode",
-                            "performance3": "High Performance",
-                            "quiteCool4": "Quiet & Cool",
-                            "performance4": "Performance",
-                            "quiteCool5": "Quiet & Cool",
-                            "performance5": "Performance"
+                            "quiteCool3": "Chladný režim",
+                            "performance3": "Vysoký výkon",
+                            "quiteCool4": "Klidný a chladný",
+                            "performance4": "Výkon",
+                            "quiteCool5": "Klidný a chladný",
+                            "performance5": "Výkon",
+                            "batterySaving": "Battery Saving"
                         },
                         "readMore": {
-                            "mode1": "Quiet mode",
-                            "mode2": "Balanced mode",
-                            "mode3": "Performance mode",
-                            "line1": "Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
-                            "line2": "Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
-                            "line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+                            "mode1": "Tichý režim",
+                            "mode2": "Vyvážený režim",
+                            "mode3": "Režim výkonu",
+                            "line1": "Posuvník je v levé části.",
+                            "line2": "Posuvník je uprostřed.Dynamická vyváženost rychlosti a výkonu ventilátoru zajišťuje nejvyrovnanější výkon.",
+                            "line3": "Posuvník je v pravé části.Rychlost ventilátoru a přípustná teplota povrchu jsou vyšší a počítač pracuje na maximální výkon."
+                        },
+                        "selectedModeText": {
+                            "quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
+                            "batterySaving": "This mode enables the maximum battery life by automatically adjusting the brightness, changing the power settings, disabling features on advanced image processing, etc.",
+                            "performance": "This mode enables the maximum system performance. In this mode, the fast fan speed might cause big noise."
                         }
                     },
                     "nonintelligentCooling": {
                         "options": {
-                            "intelligentCooling": "INTELLIGENT COOLING",
-                            "extremeCooling": "EXTREME PERFORMANCE",
-                            "battery&Quite": "BATTERY & QUIET"
+                            "intelligentCooling": "INTELIGENTNÍ CHLAZENÍ",
+                            "extremeCooling": "EXTRÉMNÍ VÝKON",
+                            "battery&Quite": "BATERIE A TICHO"
                         }
-                    }
+                    },
+                    "description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar."
                 },
                 "powerSettings": {
-                    "title": "Power Settings",
+                    "title": "Nastavení napájení",
                     "alwaysUSB": {
                         "title": "Always on USB",
-                        "description": "Charge USB devices through the Always on USB connector on the computer, when the computer is in sleep, hibernation, or off mode. A smartphone or tablet can be charged quickly from the USB connector that is yellow-coded or silk-printed with these icons:",
-                        "checkbox": "Enable USB charging from laptop battery when computer is off."
+                        "description": "Pomocí trvale zapnutého konektoru USB ve vašem počítači můžete nabíjet zařízení USB i v době, kdy je počítač ve spánkovém režimu, v režimu hibernace nebo kdy je vypnut.Chytrý telefon nebo tablet lze rychle nabít z konektoru USB označeného žlutou barvou nebo těmito piktogramy:",
+                        "checkbox": "Povolit USB nabíjení z akumulátoru, když je počítač vypnutý."
                     },
                     "easyResume": {
                         "title": "Easy Resume",
@@ -643,31 +651,31 @@
                     }
                 },
                 "otherSettings": {
-                    "title": "Other Settings",
+                    "title": "Další nastavení",
                     "vantageToolbar": {
-                        "title": "Lenovo Vantage Toolbar",
-                        "description": "Pin Vantage Toolbar to the Windows task bar to easily get more battery details and access to your quick settings."
+                        "title": "Nástrojová lišta Lenovo Vantage",
+                        "description": "Chcete-li snadno získat další podrobnosti o baterii a získat přístup k rychlým možnostem nastavení, je třeba panel nástrojů Vantage připnout na hlavní panel systému Windows."
                     }
                 },
                 "batterySettings": {
-                    "title": "Battery Settings",
+                    "title": "Nastavení baterie",
                     "batteryThreshold": {
-                        "title": "Battery Charge Threshold",
-                        "description": "If you primarily use your computer with the AC adapter attached and only infrequently use battery power, you can increase the lifespan of the battery by setting the maximum charge value to below 100%. This is useful because batteries that are used infrequently have a longer lifespan when they are maintained at less than a full charge.",
-                        "tooltip": "If your battery is currently charged above the stop-charging threshold, detach the power until the battery discharges to or below the stop-charging threshold. Depending on the battery status (old or new), the exact point at which the charging starts or stops might vary by up to 2 percentage points. If you enable the feature, it is recommended that you perform a Battery Gauge Reset occasionally to ensure an accurate report of the battery health.",
+                        "title": "Limit nabíjení baterie",
+                        "description": "Pokud k napájení počítače používáte zejména napájecí adaptér a baterii používáte jen zřídka,můžete její životnost prodloužit nastavením maximální úrovně nabití na méně než 100 %.",
+                        "tooltip": "Je-li baterie momentálně nabita nad nastavený horní limit, je třeba odpojit napájení a ponechat ho odpojený, dokud nabití baterie neklesne minimálně na limit.",
                         "note": "Note",
                         "readMoreText": "Read more.",
                         "noteInfo": " Battery Charge Threshold is still not fully active. Please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
                         "settings": {
-                            "title1": "Threshold for Built in battery",
-                            "title2": "Threshold for Removable battery"
+                            "title1": "Prahová hodnota pro vestavěnou baterii",
+                            "title2": "Prahová hodnota pro vyjímatelnou baterii"
                         },
                         "popup": {
-                            "title": "Enable Battery Charge Threshold",
-                            "description1": "Enabling a custom battery charge will allow for the overall battery health to last longer as you use this device. However, not having a full charge will allow less runtime battery life.",
-                            "description2": "In order to fully enable this feature, please unplug your machine and allow your battery to drain to or below the stop-charging threshold.",
-                            "enable": "ENABLE",
-                            "cancel": "CANCEL"
+                            "title": "Povolit limit nabíjení baterie",
+                            "description1": "Aktivací vlastního nabíjení baterie umožníte prodloužení celkové výdrže baterie při používání tohoto zařízení.Bez nabíjení do plna se však zkrátí provozní životnost baterie.",
+                            "description2": "Chcete-li tuto funkci plně aktivovat, odpojte počítač a nechtebaterii vybít na nebo pod limit nabíjení baterie.",
+                            "enable": "POVOLIT",
+                            "cancel": "STORNO"
                         },
                         "options": {
                             "start": "Start charging when below",
@@ -676,65 +684,65 @@
                         }
                     },
                     "expressCharging": {
-                        "title": "Express Charging",
-                        "description": "Express Charge allows your battery to a full charge much faster than normal mode.",
-                        "tooltip": "Express Charge allows you to charge your system battery much faster but this may reduce the lifetime of the battery."
+                        "title": "Expresní nabíjení",
+                        "description": "Expresní nabíjení umožňuje baterii plně nabít mnohem rychleji než v normálním režimu.",
+                        "tooltip": "Expresní nabíjení umožňuje mnohem rychlejší nabíjení baterie,může ale zkrátit její životnost."
                     },
                     "conservationMode": {
-                        "title": "Conservation Mode",
-                        "description": "This function is useful to  extend the lifespan of your battery when plugged. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
+                        "title": "Režim ochrany baterie",
+                        "description": "Tato funkce je užitečná pro prodloužení životnosti baterie při zapojení.",
                         "tooltip": {
-                            "line1": "This function is useful to extend the lifespan of your battery when plugged.",
-                            "line2": "When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. However, this will shorten the time you use your computer after it is disconnected from the AC power source.",
-                            "line3": "Note: Express Charging and Conservation mode cannot work at the same time. IF one of the modes is turned on, the other one will be automatically turned off."
+                            "line1": "Tato funkce je užitečná pro prodloužení životnosti baterie při zapojení.",
+                            "line2": "V tomto režimu se baterie bude nabíjet pouze na 55–60 % své kapacity, což může prodloužit její životnost.",
+                            "line3": "Poznámka: režim expresního nabíjení a režim ochrany baterie nemohou fungovat současně."
                         }
                     },
                     "airPlanePower": {
-                        "title": "Airplane Power Mode",
-                        "description": "Protect the airplane AC power outlet by controlling the power consumption of your system. When Airplane Power Mode is enabled, the computer reduces power consumption by limiting the battery charging rate and system performance."
+                        "title": "Napájecí schéma Letadlo",
+                        "description": "Chrání elektrickou zásuvku v letadle řízením spotřeby vašeho počítače."
                     }
                 }
             },
             "audio": {
-                "title": "Audio",
-                "subtitle": "Audio Settings",
-                "description": "This section enables you to automatically optimize or fully configure your audio settings manually, such as Dolby settings, microphone, etc.",
+                "title": "Zvuk",
+                "subtitle": "Nastavení zvuku",
+                "description": "Tato část umožňuje automaticky optimalizovat nebo plně",
                 "audioSmartsettings": {
-                    "title": "Audio Smart settings",
-                    "subtitle": "APPLICATION-BASED SETTINGS",
-                    "description": "Automatically adjust audio settings according to different apps you are using.",
+                    "title": "Inteligentní nastavení zvuku",
+                    "subtitle": "NASTAVENÍ PŘIZPŮSOBENÉ APLIKACI",
+                    "description": "Automaticky přizpůsobuje nastavení zvuku a zobrazení podle vámi používaných aplikací.",
                     "dolby": {
-                        "title": "Automatic Dolby Audio settings",
-                        "tooltip": "Automatic Dolby Audio settings configures Dolby audio settings to the appropriate mode for different apps you are using to enhance your audio experience.",
+                        "title": "Automatické nastavení zvuku Dolby",
+                        "tooltip": "Automatické nastavení zvuku Dolby konfiguruje nastavení zvuku Dolby na vhodný",
                         "options": {
-                            "dynamic": "DYNAMIC",
-                            "movie": "MOVIE",
-                            "music": "MUSIC",
-                            "games": "GAME",
-                            "voip": "VOICE"
+                            "dynamic": "DYNAMICKÉ",
+                            "movie": "FILM",
+                            "music": "HUDBA",
+                            "games": "HRA",
+                            "voip": "HLAS"
                         }
                     },
                     "voip": {
-                        "title": "Automatic Audio Optimization for VoIP",
-                        "tooltip": "Automatically switch to Dolby Voice mode during VoIP calls to deliver clear, consistent voice quality."
+                        "title": "Automatická optimalizace zvuku pro VoIP",
+                        "tooltip": "Během hovorů VoIP automaticky přepne do režimu Dolby Voice, aby byl hlaszřetelný a jeho kvalita konzistentní."
                     }
                 },
                 "microphone": {
-                    "title": "Microphone",
+                    "title": "Mikrofon",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permission to access your microphone. Please turn on access to your microphone for the Lenovo Vantage app."
+                        "title": "poznámka",
+                        "description": "Program Lenovo Vantage nemá oprávnění k přístupu k mikrofonu.Povolte tedy programu Lenovo Vantage přístup k mikrofonu."
                     },
                     "microphone": {
-                        "title": "Microphone",
-                        "tooltip": "You can customize your MIC effect by adjusting the microphone volume and specify appropriate mode."
+                        "title": "Mikrofon",
+                        "tooltip": "Efekt MIC můžete upravit úpravou hlasitosti mikrofonu a zadánímpříslušného režimu."
                     },
                     "volume": {
                         "title": "Microphone Volume",
                         "description": "Dolby Audio delivers rich, clear, powerful sound from all the content you enjoy, select appropriate mode for your content and equipment.",
                         "options": {
-                            "silent": "Silent",
-                            "loud": "Loud"
+                            "silent": "Tiché",
+                            "loud": "Hlasité"
                         }
                     },
                     "suppress": {
@@ -749,23 +757,23 @@
                         "title": "Optimize my microphone for:",
                         "tooltip": "Configure microphone effect to enhance your audio experience by different scenarios and environment.",
                         "options": {
-                            "VoiceRecognition": "VOICE RECOGNITION",
-                            "OnlyMyVoice": "ONLY MY VOICE",
-                            "Normal": "NORMAL",
-                            "MultipleVoices": "MULTIPLE VOICES"
+                            "VoiceRecognition": "ROZPOZNÁNÍ ŘEČI",
+                            "OnlyMyVoice": "POUZE MŮJ HLAS",
+                            "Normal": "BĚŽNÉ",
+                            "MultipleVoices": "VÍCE HLASŮ"
                         }
                     }
                 }
             },
             "displayCamera": {
-                "title": "Display & Camera",
-                "subtitle": "Display & Camera Settings",
-                "description": "This section enables you to improve your visual experience and configure your camera properties. Explore more features and customize your display experience here.",
+                "title": "Displej a kamera",
+                "subtitle": "Nastavení displeje a kamery",
+                "description": "V této části můžete vylepšit vizuální zážitek a nakonfigurovat vlastnosti kamery.Prohlédněte si další funkce a přizpůsobte si možnosti zobrazení.",
                 "jumpTo": {
-                    "title": "JUMP TO SETTINGS",
+                    "title": "PŘEJÍT K NASTAVENÍ",
                     "shortcuts": {
                         "display": {
-                            "title": "Display"
+                            "title": "Displej"
                         },
                         "camera": {
                             "title": "Camera"
@@ -773,24 +781,24 @@
                     }
                 },
                 "display": {
-                    "title": "Display",
+                    "title": "Displej",
                     "eyeCareMode": {
-                        "title": "Eye Care Mode",
-                        "checkbox": "Schedule eye care mode from sunset to sunrise",
+                        "title": "Režim Péče o oči",
+                        "checkbox": "Naplánovat režim péče o zrak od západu do východu slunce",
                         "options": {
-                            "warm": "Warm (Better for eyes)",
-                            "cold": "Cold"
+                            "warm": "Teplé (lepší pro oči)",
+                            "cold": "Studená"
                         },
-                        "reset": "Reset temperature",
-                        "tooltip": "Eye Care Mode adjusts the color temperature of your display to filter out blue light and reduce eye strain.",
-                        "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
+                        "reset": "Resetovat teplotu",
+                        "tooltip": "Režim Péče o oči upravuje teplotu barev displeje tak, aby odfiltroval modré světlo a snížil tak únavu očí.",
+                        "onSunsetToSunriseScheduleDescription": "Naplánovat režim péče o zrak od západu do východu slunce",
                         "note": {
-                            "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "title": "Poznámka",
+                            "description": "Program Lenovo Vantage potřebuje získat přístup k informacím o umístění pro výpočet času západu a východu slunce."
                         }
                     },
                     "dispColorTemp": {
-                        "title": "Display color temperature",
+                        "title": "Daytime color temperature",
                         "options": {
                             "warm": "Warm (Better for eyes)",
                             "cold": "Cold"
@@ -800,7 +808,7 @@
                         "onSunsetToSunriseScheduleDescription": "Schedule eye care mode from sunset to sunrise",
                         "note": {
                             "title": "Note",
-                            "description": "Lenovo Vantage need to access your location information for calculating the sunset and sunrise time of your region."
+                            "description": "When the Eye care mode is enabled. this color temperature does not take effect. However,  you can drag the slide to get a preview of it. To make it effective. turn off the Eye care mode"
                         }
                     },
                     "privacyGuard": {
@@ -820,29 +828,29 @@
                     }
                 },
                 "camera": {
-                    "title": "Camera",
+                    "title": "Fotoaparát",
                     "note": {
-                        "title": "Note",
-                        "description": "Lenovo Vantage does not have permissions to access your camera. Please turn on access to your camera for the Lenovo Vantage app."
+                        "title": "Poznámka",
+                        "description": "Program Lenovo Vantage nemá oprávnění k přístupu ke kameře.Povolte tedy programu Lenovo Vantage přístup ke kameře."
                     },
-                    "url": "Go to windows privacy settings",
+                    "url": "Přejít na nastavení ochrany soukromí systému Windows",
                     "cameraPrivacy": {
-                        "title": "Camera privacy mode",
-                        "tooltip": "The camera stops sending live images when the privacy setting is enabled. Turn this setting on, only when you do not want to share your images to others while video calling."
+                        "title": "Režim soukromí kamery",
+                        "tooltip": "Je-li aktivní nastavení soukromí, přestane kamera odesílat živý obraz."
                     },
                     "camera": {
-                        "title": "Camera",
-                        "tooltip": "Click here to reset Camera properties to default settings.",
-                        "reset": "Reset factory settings"
+                        "title": "Fotoaparát",
+                        "tooltip": "Kliknutím sem obnovíte výchozí nastavení vlastností kamery.",
+                        "reset": "Obnovit nastavení z výroby"
                     },
-                    "brightness": "Brightness",
-                    "contrast": "Contrast",
-                    "autoExposure": "Auto Exposure",
-                    "autoFocus": "Auto focus",
-                    "notAvailable": "Camera Not Available",
+                    "brightness": "Jas",
+                    "contrast": "Kontrast",
+                    "autoExposure": "Automatická expozice",
+                    "autoFocus": "Automatické ostření",
+                    "notAvailable": "Kamera není dostupná",
                     "camerablur": {
-                        "title": "Camera Background Blur",
-                        "caption": "This feature blurs your background when you use the camera for any video call, or taking photos. You could choose different effect from below selections.",
+                        "title": "Rozostření pozadí při použití kamery",
+                        "caption": "Tato funkce rozostří pozadí při použití kamery pro libovolný videohovor nebo fotografování.V následujících volbách si můžete vybrat jiný efekt.",
                         "blurMode": "Blur mode",
                         "comicMode": "Comic mode",
                         "sketchMode": "Sketch mode"
@@ -852,60 +860,60 @@
         },
         "smartAssist": {
             "title": "Smart Assist",
-            "description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+            "description": "Technologie inteligentní detekce Lenovo rozpoznává pomocí snímačů v počítači vašiaktuální činnost a přizpůsobuje podle ní řízení spotřeby a chrání vaše soukromí.",
             "jumpTo": {
-                "title": "JUMP TO SETTINGS",
-                "security": "Security",
-                "screen": "Screen",
-                "media": "Media",
-                "voice": "Voice"
+                "title": "PŘEJÍT K NASTAVENÍ",
+                "security": "Zabezpečení",
+                "screen": "Obrazovka",
+                "media": "Média",
+                "voice": "Hlas"
             },
             "intelligentSecurity": {
-                "title": "Intelligent Security",
-                "readMore": "Read more",
+                "title": "Inteligentní zabezpečení",
+                "readMore": "Další informace",
                 "HumanPresenceDetection": {
-                    "title": "Human presence detection",
-                    "tooltip": "Click here to reset the human presence detection settings."
+                    "title": "Rozpoznání přítomnosti lidí",
+                    "tooltip": "Kliknutím sem obnovíte nastavení rozpoznání přítomnosti lidí."
                 },
                 "humanPresenceDetection": {
                     "title": "User Presence Sensing",
                     "tooltip": "Click here to reset human presence Detection settings."
                 },
                 "zeroTouchLogin": {
-                    "title": "Zero Touch Login",
-                    "caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it."
+                    "title": "Bezkontaktní přihlášení",
+                    "caption": "Tato funkce počítač automaticky odemkne nebo probudí,když si před něj sednete nebo když se k němu přiblížíte."
                 },
                 "zeroTouchLock": {
-                    "title": "Zero Touch Lock",
-                    "caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
+                    "title": "Bezkontaktní uzamčení",
+                    "caption": "Tato funkce zhasne displej a uzamkne počítač, když není rozpoznána přítomnost uživatele.",
                     "autoScreenLockTimer": {
-                        "title": "AUTO SCREEN LOCK TIMER",
+                        "title": "ČASOVAČ AUTOMATICKÉHO UZAMČENÍ OBRAZOVKY",
                         "radioButton": {
-                            "fast": "Fast",
-                            "medium": "Medium",
-                            "slow": "Slow"
+                            "fast": "Rychlá",
+                            "medium": "Střední",
+                            "slow": "Pomalá"
                         },
-                        "toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+                        "toolTipContent": "Výběrem požadované možnosti uzamkněte obrazovku rychle/středně/pomalu, pokud není zjištěna přítomnost."
                     }
                 },
                 "distanceSensitivityAdjusting": {
                     "title": "DISTANCE SENSITIVITY ADJUSTING",
-                    "caption": "Auto Distance Adjusting will automatically update the detection distance via an AI engine.",
+                    "caption": "Automatická úprava vzdálenosti rozpoznávání automaticky aktualizujevzdálenost rozpoznávání pomocí jádra umělé inteligence.",
                     "options": {
-                        "near": "Near",
-                        "far": "Far"
+                        "near": "Malá",
+                        "far": "Velká"
                     }
                 },
                 "note": {
-                    "description1": "This feature relies on Windows Hello. Make sure face recognition is turned on in windows settings.",
-                    "description2": "The feature uses sensors and camera to detect your presence. However, the feature does NOT collect any personal data.",
-                    "description3": "1. If your computer is in Tent, Tablet or Stand mode, these features might not work appropriately.",
-                    "description4": "2. If your computer is in hibernation mode or has been turned off. Auto IR camera login will not work.",
-                    "description5": "3. Please adjust your computer screen to an appropriate angle so that IR camera can recognize your face for auto login."
+                    "description1": "Tato funkce závisí na Windows Hello.",
+                    "description2": "Tato funkce využívá ke zjištění vaší přítomnosti snímače a fotoaparát.Tato funkce však neshromažďuje žádné osobní údaje a snímky ani je neukládá.",
+                    "description3": "1.Tyto funkce nemusí pracovat správně, pokud je počítač",
+                    "description4": "2.Když je počítač v režimu hibernace nebo vypnutý.Automatické přihlášení pomocí infračervené kamery nebude funkční.",
+                    "description5": "3.Nastavte obrazovku počítače do odpovídajícího úhlu, aby infračervenákamera mohla rozpoznat váš obličej pro automatické přihlášení."
                 },
                 "WindowsLink": {
-                    "goToWindowsHello": "Go to Windows Hello Settings",
-                    "screenTimeoutSettings": "Go to Screen timeout settings"
+                    "goToWindowsHello": "Přejít na nastavení programu Windows Hello",
+                    "screenTimeoutSettings": "Přechod na nastavení časového limitu vypnutí obrazovky"
                 },
                 "resetToDefault": "RESET TO DEFAULT SETTINGS"
             },
@@ -937,46 +945,46 @@
         }
     },
     "systemUpdates": {
-        "title": "System Updates",
+        "title": "Aktualizace systému",
         "back": "BACK",
-        "history": "FULL HISTORY",
-        "notAvailable": "Not Available",
-        "notInstalled": "Not Installed",
-        "criticalUpdates": "Critical Update(s)",
-        "recommendedUpdates": "Recommended Update(s)",
-        "optionalUpdates": "Optional Update(s)",
-        "ignoredUpdates": "Ignored Update(s)",
-        "successInstall": "Successfully installed on",
-        "failedInstall": "Failed to installed on",
-        "at": "at",
-        "readMore": "Read more",
+        "history": "ÚPLNÁ HISTORIE",
+        "notAvailable": "Není dostupná",
+        "notInstalled": "Není nainstalováno",
+        "criticalUpdates": "Kriticky důležité aktualizace",
+        "recommendedUpdates": "Doporučené aktualizace",
+        "optionalUpdates": "Volitelné aktualizace",
+        "ignoredUpdates": "Ignorované aktualizace",
+        "successInstall": "Úspěšně instalováno v systému",
+        "failedInstall": "Neúspěšná instalace v systému",
+        "at": "v",
+        "readMore": "Další informace",
         "popup": {
-            "reboot": "Reboot",
-            "shutdown": "Shut Down",
-            "rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
-            "shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
-            "rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",
-            "rebootRequiredMsg": "In order to successfully install the updates your computer needs a reboot to ensure everything is running safe and smoothly.",
+            "reboot": "Restart",
+            "shutdown": "Vypnout",
+            "rebootForceMsg": "Po instalaci vybraných aktualizací bude systém automatickyrestartován.",
+            "shutdownForceMsg": "Po instalaci vybraných aktualizací se systém automatickyvypne.",
+            "rebootDelayedMsg": "Po instalaci vybraných aktualizací se restartuje systém. Během instalaceaktualizací systém nevypínejte ani neodpojujte zdroj napájení ani příslušenství.Během přípravy na restartování systému doporučujeme uložit si rozpracovanou práci.",
+            "rebootRequiredMsg": "Aby bylo možné ve vašem počítači úspěšně nainstalovat aktualizace, počítač",
             "okayButton": "OK",
-            "cancelButton": "Cancel",
-            "rebootButton": "REBOOT NOW",
-            "dismissButton": "DISMISS",
-            "rebootPending": "Reboot pending"
+            "cancelButton": "Storno",
+            "rebootButton": "RESTARTOVAT NYNÍ",
+            "dismissButton": "ZRUŠIT",
+            "rebootPending": "Chystá se restart počítače"
         },
         "autoUpdateSettings": {
-            "title": "Auto update settings",
-            "subtitle": "AUTOMATICALLY INSTALL UPDATES",
+            "title": "Nastavení automatické aktualizace",
+            "subtitle": "AUTOMATICKY INSTALOVAT AKTUALIZACE",
             "critical": {
-                "title": "Critical Updates",
-                "tooltip": "Critical updates can prevent significant problem, major malfunctions, hardware failure, or data corruption."
+                "title": "Kriticky důležité aktualizace",
+                "tooltip": "Kriticky důležité aktualizace předcházejí vážným problémům,"
             },
             "recommended": {
-                "title": "Recommended Updates",
-                "tooltip": "Recommended driver updates keep your computer running at optimal performance."
+                "title": "推荐更新",
+                "tooltip": "推荐的驱动程序更新使计算机运行保持最佳性能。"
             },
             "windows": {
-                "title": "Windows Updates",
-                "url": "Windows Settings"
+                "title": "Aktualizace systému Windows",
+                "url": "Nastavení operačního systému Windows"
             }
         },
         "support": {
@@ -984,24 +992,24 @@
         },
         "banner": {
             "neverChecked": "Welcome to use System Update.",
-            "title": "An up-to-date system is a healthy system.",
-            "last": "Last update was on",
-            "next": "Next updated scan is scheduled on",
-            "checkButton": "CHECK FOR UPDATES ",
-            "checking": "Checking for updates",
-            "downloading": "Downloading updates",
-            "installing": "Installing updates",
-            "percent": "% complete",
-            "cancelCheck": "Cancel check",
-            "cancelUpdates": "CANCEL UPDATES",
-            "available": "Available updates",
-            "description": "These packages include updates to hardware drivers and other system utilities that are critical for the correct operation of your computer. Critical updates are also important for protecting data on your computer and should be installed as they become available. Failure to install these packages could result in data loss, system malfunction, or hardware failure.",
-            "installButton": "INSTALL ALL UPDATES",
+            "title": "Aktualizovaný systém je zdravým systémem.",
+            "last": "Poslední aktualizace proběhla dne",
+            "next": "Příští kontrola aktualizace je naplánována na",
+            "checkButton": "ZKONTROLOVAT AKTUALIZACE",
+            "checking": "Kontrola aktualizací",
+            "downloading": "Stahování aktualizací je dokončeno",
+            "installing": "Probíhá instalace aktualizací",
+            "percent": "% dokončeno",
+            "cancelCheck": "Zrušit kontrolu",
+            "cancelUpdates": "ZRUŠIT AKTUALIZACE",
+            "available": "Dostupné aktualizace",
+            "description": "Tyto balíčky obsahují aktualizace ovladačů hardwaru a ostatních systémových",
+            "installButton": "NAINSTALOVAT VŠECHNY AKTUALIZACE",
             "result": {
-                "success": "All Updates were installed correctly",
+                "success": "Všechny aktualizace byly nainstalovány správně",
                 "fail": {
-                    "title": "Some updates were not installed correctly.",
-                    "description": "Something went wrong during the downloading or installation of these updates. Please make sure you are online and don't turn off your computer when installing updates."
+                    "title": "Některé aktualizace nebyly nainstalovány správně.",
+                    "description": "Během stahování nebo instalace těchto aktualizací se něco pokazilo."
                 }
             }
         },
@@ -1055,9 +1063,12 @@
         "devices": "Devices",
         "seeProtectedDevices": "See protected devices",
         "addDevice": "add device",
-        "trailExpired": "Trail expired",
-        "trailExpiredSubtext": "Upgrate to protect all of your devices",
-        "upgrade": "upgrade",
+        "trialExpired": "Trial expired",
+        "trialExpiredSubtext": "Upgrate to protect all of your devices",
+		"upgrade": "upgrade",
+		"freeTrial": "Free 30 day trial",
+		"protectAllDevices": "Protect all of your devices",
+		"startTrial": "Start Trial",
         "tour": {
             "back": "Back",
             "skip": "Skip",
