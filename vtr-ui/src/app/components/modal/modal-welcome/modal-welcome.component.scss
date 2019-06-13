@@ -1,5 +1,10 @@
 @import "../../../app.theme.scss";
 
+::ng-deep span.more-interests:hover, ::ng-deep .content-page-2 .privacy-check .linktext:hover{
+	color: $main_gstart !important;
+	cursor: pointer;
+}
+
 .vtr-modal-welcome {
 	border: none;
 	// scroll-behavior: auto;
