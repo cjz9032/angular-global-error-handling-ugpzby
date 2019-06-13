@@ -13,6 +13,7 @@ import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail
 import { BatteryConditionsEnum, BatteryQuality } from 'src/app/enums/battery-conditions.enum';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
 import { BatteryConditionNote } from 'src/app/data-models/battery/battery-condition-translations.model';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Component({
 	selector: 'vtr-battery-card',
@@ -122,7 +123,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.commonService.sendNotification(BatteryInformation.BatteryInfo, { detail: this.batteryInfo, gauge: this.batteryGauge });
 		if (this.cd !== null && this.cd !== undefined &&
 			!(this.cd as ViewRef_).destroyed) {
-				this.cd.detectChanges();
+			this.cd.detectChanges();
 		}
 	}
 
@@ -151,38 +152,43 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 			&& this.batteryInfo[0].batteryHealth !== undefined) {
 			batteryHealth = this.batteryInfo[0].batteryHealth;
 		}
+		const isThinkpad = this.commonService.getLocalStorageValue(LocalStorageKey.MachineType) === 1;
+		if (isThinkpad && batteryHealth === 1 || batteryHealth === 2) {
+			batteryHealth = BatteryConditionsEnum.StoreLimitation;
+		}
 		batteryConditions.push(new BatteryConditionModel(batteryHealth,
 			this.batteryQuality[this.batteryIndicator.batteryHealth]));
 		this.batteryInfo[0].batteryCondition.forEach((condition) => {
 			switch (condition.toLocaleLowerCase()) {
 				case 'normal':
-					batteryConditions.push(new BatteryConditionModel(6, 1));
+					batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.Normal,
+						BatteryQuality.Fair));
 					break;
 				case 'hightemperature':
-					batteryConditions.push(new BatteryConditionModel(7, 1));
+					batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.HighTemperature, BatteryQuality.Fair));
 					break;
 				case 'tricklecharge':
-					batteryConditions.push(new BatteryConditionModel(8, 1));
+					batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.TrickleCharge, BatteryQuality.Fair));
 					break;
 				case 'overheatedbattery':
-					batteryConditions.push(new BatteryConditionModel(9, 1));
+					batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.OverheatedBattery, BatteryQuality.Fair));
 					break;
 				case 'permanenterror':
-					batteryConditions.push(new BatteryConditionModel(10, 1));
+					batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.PermanentError, BatteryQuality.Fair));
 					break;
 				case 'hardwareauthenticationerror':
-					batteryConditions.push(new BatteryConditionModel(11, 1));
+					batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.HardwareAuthenticationError, BatteryQuality.Fair));
 					break;
 			}
 		});
 		if (this.batteryGauge.isPowerDriverMissing) {
-			batteryConditions.push(new BatteryConditionModel(12, 2));
+			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryQuality.Poor));
 		}
 		if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'limited') {
-			batteryConditions.push(new BatteryConditionModel(13, 1));
+			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.LimitedACAdapterSupport, BatteryQuality.Fair));
 		}
 		if (this.batteryGauge.acAdapterStatus.toLocaleLowerCase() === 'notsupported') {
-			batteryConditions.push(new BatteryConditionModel(14, 2));
+			batteryConditions.push(new BatteryConditionModel(BatteryConditionsEnum.NotSupportACAdapter, BatteryQuality.Poor));
 		}
 
 		this.batteryConditions = batteryConditions;

@@ -556,17 +556,11 @@
 					"NotGood": {
 						"title": "The battery is not in a good Condition"
 					},
-					"LimitedACAdapterSupport": {
-						"title": "Limited Support AC Adapter"
-					},
 					"NotSupportACAdapter": {
-						"title": "Not support AC Adapter"
-					},
-					"ACAdapterNotSupported": {
 						"title": "AC adapter not supported.",
 						"description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
 					},
-					"EnoughPowerACAdapter": {
+					"LimitedACAdapterSupport": {
 						"title": "AC adapter cannot provide enough power",
 						"description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
 					},
@@ -867,13 +861,13 @@
 					}
 				}
 			},
-				"inputAccessories": {
+			"inputAccessories": {
 				"title": "Input & Accessories",
 				"subtitle": "Input & Accessories Settings",
 				"description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
 				"inputAccessory": {
-					"title": "Intelligent Keyboard",			
-						"hiddenKeyboardFunctions": {
+					"title": "Intelligent Keyboard",
+					"hiddenKeyboardFunctions": {
 						"title": "Hidden keyboard functions",
 						"description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
 					}
