@@ -7,7 +7,8 @@ import { DropDownInterval } from '../../../../data-models/common/drop-down-inter
   styleUrls: ['./active-protection-system.component.scss']
 })
 export class ActiveProtectionSystemComponent implements OnInit {
-  title: string;
+	title: string;
+	advanced: boolean;
 	public intervals: DropDownInterval[];
 	public taskBarDimmerValue: number;
 
@@ -43,10 +44,14 @@ export class ActiveProtectionSystemComponent implements OnInit {
 			text: `3 ${minutes}`
 		}];
   }
-  
+	
+	toggleAdvanced(){
+		this.advanced = !this.advanced;
+	}
   constructor() { }
 
   ngOnInit() {
+		this.advanced = false;
     this.populateIntervals();
    }
 

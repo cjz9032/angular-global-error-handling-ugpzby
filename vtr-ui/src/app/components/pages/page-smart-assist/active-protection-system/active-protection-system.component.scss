@@ -52,5 +52,23 @@
             margin-top: 3rem;
         }
     }
+    .advanced{
+        padding-bottom: 3rem;
+        h4{
+            color: $main_darkest;
+            font-weight: 700;
+            letter-spacing: 0.1rem;
+            margin-bottom: 1.5rem;
+        }
+        a{
+            p{
+                font-weight: 700;
+                font-size: 1.3rem;
+                color: $main;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
  
 }

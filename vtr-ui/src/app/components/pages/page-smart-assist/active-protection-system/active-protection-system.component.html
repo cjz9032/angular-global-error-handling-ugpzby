@@ -9,6 +9,7 @@
 
 			<div class="col-12">
 				<ul class="list-group list-group-flush">
+					<!-- APS Slider -->
 					<li class="auto-screen-off-block bb">
 						<div class="switch">
 							<vtr-ui-row-switch
@@ -27,6 +28,8 @@
 							</vtr-ui-checkbox>
 						</div>
 					</li>
+
+					<!-- Manual Overide -->
 					<li class="pt-3 keep-my-display-block auto-screen-off-block">
 						<vtr-ui-row-switch
 							[title]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.title' | translate"
@@ -49,6 +52,18 @@
 								</div>
 							</section>
 						</div>
+					</li>
+
+					<!-- Advanced section -->
+					<li class="advanced pt-3 keep-my-display-block auto-screen-off-block">
+						<h4 *ngIf="!advanced">MORE</h4>
+						<a *ngIf="!advanced" (click)="toggleAdvanced()"><p>ADVANCED SETTINGS</p></a>
+						
+						<section *ngIf="advanced">
+							<h4>ADVANCED SETTINGS</h4>
+							<vtr-active-protection-system-advanced></vtr-active-protection-system-advanced>
+							<a (click)="toggleAdvanced()"><p>HIDE ADVANCED SETTINGS</p></a>
+						</section>
 					</li>
 				</ul>
 			</div>
