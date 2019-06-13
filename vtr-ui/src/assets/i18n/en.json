@@ -636,7 +636,16 @@
 							"mode3": "Performance mode",
 							"line1": "Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
 							"line2": "Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
-							"line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+							"line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance.",
+							"line4": "More info"
+						},
+						"intelligentCoolingModesModal": {
+							"title": "Change intelligent cooling modes",
+							"close": "close",
+							"coolingModesList": {
+								"list1": "Click on the windows battery-icon in the toolbar",
+								"list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+							}
 						}
 					},
 					"nonintelligentCooling": {
@@ -872,7 +881,7 @@
 				"subtitle": "Input & Accessories Settings",
 				"description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
 				"inputAccessory": {
-					"title": "Intelligent Keyboard",			
+					"title": "Intelligent Keyboard",
 						"hiddenKeyboardFunctions": {
 						"title": "Hidden keyboard functions",
 						"description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
