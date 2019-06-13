@@ -20,6 +20,7 @@ import { PermitTrackersAndPasswordsComponent } from './permit-trackers-and-passw
 import { SupportWidgetComponent } from './support-widget/support-widget.component';
 import { SupportPopupComponent } from './support-popup/support-popup.component';
 import { NavTabsComponent } from './nav-tabs/nav-tabs.component';
+import { FeatureHeaderComponent } from './feature-header/feature-header.component';
 
 @NgModule({
 	declarations: [
@@ -38,7 +39,8 @@ import { NavTabsComponent } from './nav-tabs/nav-tabs.component';
 		SupportWidgetComponent,
 		SupportPopupComponent,
 		NavTabsComponent,
-		PermitTrackersAndPasswordsComponent
+		PermitTrackersAndPasswordsComponent,
+		FeatureHeaderComponent
 	],
 	exports: [
 		SimpleLoaderComponent,
@@ -56,7 +58,8 @@ import { NavTabsComponent } from './nav-tabs/nav-tabs.component';
 		SupportWidgetComponent,
 		NavTabsComponent,
 		PermitTrackersAndPasswordsComponent,
-		SupportWidgetComponent
+		SupportWidgetComponent,
+		FeatureHeaderComponent
 	],
 	imports: [
 		CommonModule,

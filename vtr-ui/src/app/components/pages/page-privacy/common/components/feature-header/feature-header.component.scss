@@ -1,0 +1,17 @@
+@import "../../../styles/common-blocks";
+
+.feature-header {
+	&__title {
+		@extend %subtitle;
+		margin-bottom: 2rem;
+
+		&--red {
+			color: red;
+		}
+	}
+
+	&__text {
+		@extend %text-common;
+		font-size: 1.6rem;
+	}
+}

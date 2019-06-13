@@ -1,0 +1,14 @@
+<ng-container *ngIf="!isShowCountIssues">
+	<p class="feature-header__title">{{texts.title}}</p>
+	<p class="feature-header__text" *ngIf="!isFigleafInstalled">
+		{{texts.figleafUninstalled}}
+	</p>
+	<p class="feature-header__text" *ngIf="isFigleafInstalled">
+		{{texts.figleafInstalled}}
+	</p>
+</ng-container>
+<ng-container *ngIf="isShowCountIssues">
+	<p class="feature-header__title">
+		<ng-content></ng-content>
+	</p>
+</ng-container>

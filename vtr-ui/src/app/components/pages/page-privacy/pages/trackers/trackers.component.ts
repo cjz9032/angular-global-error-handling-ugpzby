@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { distinctUntilChanged, map, startWith } from 'rxjs/operators';
 import { UserAllowService } from '../../common/services/user-allow.service';
 import { CountNumberOfIssuesService } from '../../common/services/count-number-of-issues.service';
 import { CommunicationWithFigleafService } from '../../utils/communication-with-figleaf/communication-with-figleaf.service';
+import { FeaturesStatuses } from '../../userDataStatuses';
+import { UserDataGetStateService } from '../../common/services/user-data-get-state.service';
 
 @Component({
 	// selector: 'app-admin',
@@ -11,9 +13,24 @@ import { CommunicationWithFigleafService } from '../../utils/communication-with-
 })
 export class TrackersComponent {
 	isConsentGiven$ = this.userAllowService.allowToShow.pipe(map((value) => value['trackingMap']));
-	websiteTrackersCount$ = this.countNumberOfIssuesService.websiteTrackersCount;
+	websiteTrackersCount$ = this.countNumberOfIssuesService.websiteTrackersCount.pipe(
+		startWith(0)
+	);
 	isFigleafInstalled$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
-	isUserData = true;
+	isWebsiteTrackersWasScanned$ = this.userDataGetStateService.userDataStatus$.pipe(
+		map((userDataStatus) =>
+			userDataStatus.websiteTrackersResult !== FeaturesStatuses.undefined &&
+			userDataStatus.websiteTrackersResult !== FeaturesStatuses.error),
+		distinctUntilChanged(),
+	);
+
+	textForFeatureHeader = {
+		title: 'Check for tracking tools',
+		figleafInstalled: 'Lenovo Privacy by FigLeaf has blocked trackers on sites within the green bubble below, keeping you private ' +
+			'while you do the things you love online.',
+		figleafUninstalled: 'Some websites use tracking tools to collect information about you. ' +
+			'They may share it with third-party partners without notifying you.',
+	};
 
 	tryProductText = {
 		risk: 'Most websites collect your IP address, location, social profile information, ' +
@@ -27,13 +44,9 @@ export class TrackersComponent {
 	constructor(
 		private userAllowService: UserAllowService,
 		private countNumberOfIssuesService: CountNumberOfIssuesService,
-		private communicationWithFigleafService: CommunicationWithFigleafService
-	){
-	}
-
-	ngOnInit() {
-
-	}
+		private communicationWithFigleafService: CommunicationWithFigleafService,
+		private userDataGetStateService: UserDataGetStateService
+	) {	}
 
 	giveConcent() {
 		this.userAllowService.setShowTrackingMap(true);

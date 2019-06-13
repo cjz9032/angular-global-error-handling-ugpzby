@@ -1,21 +1,12 @@
 <div class="trackers-page"
 	 vtrSendAnalytics
 	 [metricsEvent]="'PageView'">
-	<ng-container *ngIf="!isUserData">
-		<p class="trackers__title">Check for tracking tools</p>
-		<p class="trackers__text" *ngIf="!(isFigleafInstalled$ | async)">
-			Some websites use tracking tools to collect information about you.
-			They may share it with third-party partners without notifying you.
-		</p>
-		<p class="trackers__text" *ngIf="(isFigleafInstalled$ | async)">
-			Lenovo Privacy by FigLeaf has blocked trackers on sites within the green bubble below, keeping you private while you do the things you love online.
-		</p>
-	</ng-container>
-	<ng-container *ngIf="isUserData">
-		<p class="trackers__title">
-			<span class="trackers__title--red">{{websiteTrackersCount$ | async}}</span> tracking tools found
-		</p>
-	</ng-container>
+	<vtr-feature-header
+		[texts]="textForFeatureHeader"
+		[isShowCountIssues]="isWebsiteTrackersWasScanned$ | async"
+		[isFigleafInstalled]="isFigleafInstalled$ | async">
+		<span class="trackers-page__title--red">{{websiteTrackersCount$ | async}}</span> tracking tools found
+	</vtr-feature-header>
 	<div class="trackers-concent"
 		 *ngIf="!(isConsentGiven$ | async)">
 		<div class="trackers-concent__text-wrapper">
@@ -36,7 +27,7 @@
 
 	<vtr-tracking-map [animate]="true"></vtr-tracking-map>
 	<vtr-try-product-block
-		*ngIf="isUserData && !(isFigleafInstalled$ | async)"
+		*ngIf="(websiteTrackersCount$ | async) && !(isFigleafInstalled$ | async)"
 		[texts]="tryProductText">
 	</vtr-try-product-block>
 </div>
