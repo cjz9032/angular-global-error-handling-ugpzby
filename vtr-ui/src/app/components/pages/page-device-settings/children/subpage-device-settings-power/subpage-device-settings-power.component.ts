@@ -796,11 +796,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					stopValue: batteryDetails.stopChargeValue,
 					checkBoxValue: batteryDetails.autoChecked
 				};
-				// console.log('set values -->', batteryInfo);
+				 console.log('set values -->', batteryInfo);
 				this.powerService
 					.setChargeThresholdValue(batteryInfo)
 					.then((value: any) => {
-						console.log('change threshold value', value);
+						console.log('change threshold value------------------->>>>>>>>>', value);
 						// this.getBatteryThresholdInformation();
 					})
 					.catch(error => {
