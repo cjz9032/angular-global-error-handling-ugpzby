@@ -21,13 +21,14 @@
 			<div class="gaming-dropdown-menu">
 				<ng-container *ngFor="let option of options.dropOptions; index as i">
 					<li [ngClass]="{ 'selected': options.curSelected===(i+1) }"
-						(click)="optionSelected(option)" 	(mouseenter)="changeDescription(option)"
-						(mouseleave)="resetDescription(option)">
+						(click)="optionSelected(option)"
+
+						>
 						<a class="dropdown-item"><i class="icon icon-checkline"></i>{{option.name | translate}}</a>
 					</li>
 
 				</ng-container>
-
+				<!-- (mouseenter)="changeDescription(option)" (mouseleave)="resetDescription(option)" -->
 				<!-- <div class="information">
 				  <p>{{ currentDescription | translate }}</p>
 				</div> -->
