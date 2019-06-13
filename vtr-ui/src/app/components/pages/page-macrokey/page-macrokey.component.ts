@@ -7,8 +7,12 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 	styleUrls: [ './page-macrokey.component.scss' ]
 })
 export class PageMacrokeyComponent implements OnInit {
-	cardContentPositionA: any;
-	cardContentPositionB: any;
+	cardContentPositionA: any = {
+		FeatureImage: './../../../../assets/cms-cache/content-card-4x4-support.jpg'
+	};
+	cardContentPositionB: any = {
+		FeatureImage: './../../../../assets/cms-cache/Security4x3-zone2.png'
+	};
 	backId = 'vtr-gaming-macrokey-btn-back';
 
 	constructor(private cmsService: CMSService) {}
