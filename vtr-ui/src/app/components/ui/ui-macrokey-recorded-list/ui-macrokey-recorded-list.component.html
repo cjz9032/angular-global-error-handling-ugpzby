@@ -58,7 +58,7 @@
 								{{ recordsList[i+1].interval + ' ms' | translate }}
 							</div>
 						</div>
-						<div class="delete-button" (click)="recordDelete(record.key)">
+						<div class="delete-button" *ngIf="!recordingStatus" (click)="recordDelete(record, i)">
 							<img src="../../../../assets/gaming-icons/bin.svg" class="icon"/> {{ 'gaming.macroKey.details.recorded.deleteKey' | translate }}
 						</div>
 					</div>

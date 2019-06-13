@@ -32,8 +32,7 @@ export class VantageShellService {
 
 	public registerEvent(eventType: any, handler: any) {
 		this.phoenix.on(eventType, (val) => {
-			console.log('Event fired: ', eventType);
-			console.log('Event value: ', val);
+			console.log('Event fired: ', eventType, val);
 			handler(val);
 		});
 	}
