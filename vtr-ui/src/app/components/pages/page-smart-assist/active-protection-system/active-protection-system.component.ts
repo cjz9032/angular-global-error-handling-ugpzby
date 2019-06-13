@@ -7,16 +7,15 @@ import { DropDownInterval } from '../../../../data-models/common/drop-down-inter
   styleUrls: ['./active-protection-system.component.scss']
 })
 export class ActiveProtectionSystemComponent implements OnInit {
-	title: string;
+	// title: string;
 	advanced: boolean;
 	public intervals: DropDownInterval[];
-	public taskBarDimmerValue: number;
+	// public taskBarDimmerValue: number;
 
   private populateIntervals() {
 		const seconds = 'seconds';
 		const minute = 'minute';
 		const minutes = 'minutes';
-		const alwaysOn = 'Always on';
 
 		this.intervals = [
 		{

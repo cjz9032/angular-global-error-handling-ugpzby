@@ -35,12 +35,11 @@
 							[title]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.title' | translate"
 							[caption]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.caption' | translate"
 							[leftIcon]="['fal', 'gem']" [theme]="'white'" [isSwitchVisible]="true"
-							[showChildContent]="true" (toggleOnOff)="displayDim($event)"
-							[isSwitchChecked]="keepMyDisplay">
+							[showChildContent]="true">
 						</vtr-ui-row-switch>
 						<div class="dropdown row">
 							<section class="col-sm-6">
-								<p>{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.dropdown-title' | translate }}</p>
+								<p class="text-uppercase">{{ 'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.dropdown-title' | translate }}</p>
 								<vtr-ui-dropdown [list]="intervals" [value]="10">
 								</vtr-ui-dropdown>
 							</section>

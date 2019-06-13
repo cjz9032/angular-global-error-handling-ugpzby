@@ -111,7 +111,8 @@
 				},
 				"buttons": {
 					"start": "START RECORDING",
-					"stop": "STOP RECORDING"
+					"stop": "STOP RECORDING",
+					"numberPrefix": "NUM"
 				},
 				"recording": {
 					"title": "START TYPING",
@@ -382,7 +383,7 @@
 		"quickSettings": {
 			"title": "Your Quick Settings",
 			"microphone": "Microphone",
-			"cameraPrivacy": "Camera Privacy",
+			"cameraPrivacy": "Camera",
 			"eyeCareMode": "Eye Care Mode"
 		},
 		"systemStatus": {
@@ -515,9 +516,13 @@
 					},
 					"deviceChemistry": {
 						"li-polymer": "Li-Polymer",
-						"li-ion": "Li-Ion",
 						"li_polymer": "Li-Polymer",
+						"li-ion": "Li-Ion",
 						"li_ion": "Li-Ion",
+						"silver-zinc": "Silver-Zinc",
+						"silver_zinc": "Silver-Zinc",
+						"nicd": "NiCd",
+						"nimh": "NiMH",
 						"unknown": "Unknown"
 					},
 					"manufacturer": {
@@ -594,6 +599,7 @@
 					"description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
 					"description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
 					"description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
+					"description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
 					"description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
 					"readMore": "Read more.",
 					"gotoWindows": {
@@ -613,7 +619,11 @@
 							"performance4": "Performance",
 							"quiteCool5": "Quiet & Cool",
 							"performance5": "Performance",
-							"batterySaving": "Battery Saving"
+							"batterySaving": "Battery Saving",
+							"performance13": "Performance",
+							"quiteCool13": "Quiet & Cool",
+							"performance14": "Extreme Performance",
+							"quiteCool14": "Intelligent Cooling"
 						},
 						"selectedModeText": {
 							"quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
@@ -799,8 +809,10 @@
 					},
 					"oledPowerSettings": {
 						"title": "OLED Power Settings",
-						"description": ["Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-										"It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."],
+						"description": [
+							"Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
+							"It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+						],
 						"reset": "Reset temperature",
 						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
 					},
@@ -852,6 +864,18 @@
 						"blurMode": "Blur mode",
 						"comicMode": "Comic mode",
 						"sketchMode": "Sketch mode"
+					}
+				}
+			},
+				"inputAccessories": {
+				"title": "Input & Accessories",
+				"subtitle": "Input & Accessories Settings",
+				"description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+				"inputAccessory": {
+					"title": "Intelligent Keyboard",			
+						"hiddenKeyboardFunctions": {
+						"title": "Hidden keyboard functions",
+						"description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
 					}
 				}
 			}
@@ -945,7 +969,22 @@
 					"title": "Manual Active Protection Suspension",
 					"caption": "Allow me to manually suspend the Active Protection System",
 					"dropdown-title": "Suspend for",
-					"button": "Suspend"
+					"button": "Suspend Now"
+				},
+				"advanced":{
+					"description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+					"pen":{
+						"title": "Pen Input",
+						"description": "When pen input is used, Enable APS when pen input is out of range"
+					},
+					"touch":{
+						"title": "Touch Input",
+						"description": "When Touch input is used, Enable APS when touch input is not detected"
+					},
+					"hand":{
+						"title": "Hand proximity sensing on computer edges",
+						"description": "When tablet mode is enabled, Enable APS when hand is not detected"
+					}
 				}
 			},
 			"intelligentMedia": {
@@ -1104,6 +1143,20 @@
 			"loginCHS": "Login to existing CHS account",
 			"locationTitle": "Enable location tracking",
 			"locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+		},
+		"accountStatus": {
+			"title": "My Connected Home Security",
+			"startTrial": "Start Trial",
+			"manageAccount": "Manage Account",
+			"upgradeAccount": "Upgrade Account",
+			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+			"trialExpiredDetail1": "Your trial has expired.",
+			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+			"upgradedDetail1": "You account is active until {{expiredDate}}.",
+			"upgradedDetail2": "Your device ecosystem is currently being protected.",
+			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
+			"alreadyHaveAccount": "Already have an activation code?"
 		}
 	},
 	"support": {
@@ -1180,7 +1233,6 @@
 			"suspicious": "SUSPICIOUS",
 			"titleOffline": "No internet connection detected",
 			"subTitleOffline": "Learn more on how to solve connection issues in our"
-
 		},
 		"antivirus": {
 			"common": {

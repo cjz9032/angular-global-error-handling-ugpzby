@@ -256,13 +256,17 @@ export class SubpageDeviceSettingsDisplayComponent
 						console.error('onEyeCareModeStatusToggle', error);
 					});
 
-					if(this.isEyeCareMode){
-						this.setToEyeCareMode();
-					}else {
-						this.displayColorTempDataSource.current = this.displayColorTempDataSource.maximum;
-						//this.onSetChangeDisplayColorTemp({value: this.displayColorTempDataSource.current})			
-
+					if(!this.isEyeCareMode){
+						this.onSetChangeDisplayColorTemp({value: this.displayColorTempDataSource.current})
 					}
+
+					// if(this.isEyeCareMode){
+					// 	this.setToEyeCareMode();
+					// }else {
+					// 	this.displayColorTempDataSource.current = this.displayColorTempDataSource.maximum;
+					// 	//this.onSetChangeDisplayColorTemp({value: this.displayColorTempDataSource.current})			
+
+					// }
 			}
 		} catch (error) {
 			console.error(error.message);
@@ -437,7 +441,7 @@ export class SubpageDeviceSettingsDisplayComponent
 
 	public onSetChangeDisplayColorTemp($event: any) {
 		try {
-			console.log('temparature changed in display', $event);
+			console.log('temparature changed in display ----->', $event);
 			if (this.displayService.isShellAvailable) {				
 					this.displayService.setDaytimeColorTemperature($event.value).then((res) => {});
 			}
@@ -447,7 +451,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	}
 	public setToEyeCareMode() {
 		if(this.isEyeCareMode){
-			this.displayColorTempDataSource.current = this.eyeCareDataSource.current;
+			//this.displayColorTempDataSource.current = this.eyeCareDataSource.current;
 			this.onSetChangeDisplayColorTemp({value: this.eyeCareDataSource.current})			
 		}
 	}
