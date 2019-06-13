@@ -37,9 +37,15 @@
     font-size: 1.4rem;
   }
 
+  /*  .custom-control-input:disabled ~ .custom-control-label::before {
+    background-color: $light-grey;
+    border-color: $shade;
+  } */
+
   .custom-control-input:disabled ~ .custom-control-label {
     cursor: not-allowed;
   }
+
   .custom-control-label {
     padding-left: 0.5rem;
     line-height: 1.15;
