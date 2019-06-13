@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BrowserAccountsService, InstalledBrowser } from '../../../common/services/browser-accounts.service';
+import { BrowserAccountsService } from '../../../common/services/browser-accounts.service';
 import { UserDataGetStateService } from '../../../common/services/user-data-get-state.service';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 import { FeaturesStatuses } from '../../../userDataStatuses';

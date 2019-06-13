@@ -16,7 +16,6 @@ export class NonPrivatePasswordComponent implements OnInit {
 
 	figleafDashboard = this.figleafOverviewService.figleafDashboard$;
 
-	isConsentToGetBrowsersAccountsGiven$ = this.browserAccountsService.isConsentGiven$;
 	isFigleafReadyForCommunication$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 	isFigleafInstalled$ = this.communicationWithFigleafService.isFigleafReadyForCommunication$;
 
@@ -39,10 +38,6 @@ export class NonPrivatePasswordComponent implements OnInit {
 
 	openFigleaf() {
 		this.vantageCommunicationService.openFigleafByUrl('lenovoprivacy:');
-	}
-
-	giveConcentToGetBrowserAccounts() {
-		this.browserAccountsService.giveConcent();
 	}
 
 	private getParamFromUrl(paramName) {

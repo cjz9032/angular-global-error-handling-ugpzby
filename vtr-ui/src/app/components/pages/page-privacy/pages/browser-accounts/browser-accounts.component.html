@@ -2,6 +2,30 @@
 		 vtrSendAnalytics
 		 [metricsEvent]="'PageView'">
 
+	<vtr-feature-header
+		[texts]="textForFeatureHeader"
+		[isShowCountIssues]="isNonPrivatePasswordWasScanned$ | async"
+		[isFigleafInstalled]="isFigleafInstalled$ | async">
+		<span class="browser-accounts-page__title--red">{{nonPrivatePasswordCount$ | async}}</span> Non-private passwords found
+	</vtr-feature-header>
+
+	<div *ngIf="!(isConsentToGetBrowsersAccountsGiven$ | async)" class="browser-accounts-concent">
+		<div class="browser-accounts-concent__text-wrapper">
+			<p class="browser-accounts-concent__text">
+				Show me what private information can be collected by third-party apps.
+			</p>
+		</div>
+		<div class="browser-accounts-concent__btn-wrapper">
+			<button class="browser-accounts-concent__btn"
+					vtrSendAnalytics
+					[metricsEvent]="'ItemClick'"
+					[metricsItem]="'NonPrivatePasswordsPermissionToAccessButton'"
+					(click)="giveConcentToGetBrowserAccounts()">
+				ACCEPT & SHOW
+			</button>
+		</div>
+	</div>
+
 	<vtr-non-private-password [browserStoredAccountsData]="browserStoredAccountsData"></vtr-non-private-password>
 
 </section>

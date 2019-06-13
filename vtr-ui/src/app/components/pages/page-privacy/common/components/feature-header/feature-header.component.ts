@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
 	selector: 'vtr-feature-header',
@@ -9,5 +9,5 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
 export class FeatureHeaderComponent {
 	@Input() isShowCountIssues = false;
 	@Input() isFigleafInstalled = false;
-	@Input() texts: {title: string, figleafInstalled: string, figleafUninstalled: string}
+	@Input() texts: { title: string, figleafInstalled: string, figleafUninstalled: string };
 }
