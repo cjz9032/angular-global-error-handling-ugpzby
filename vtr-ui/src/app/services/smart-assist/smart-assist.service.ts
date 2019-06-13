@@ -21,6 +21,8 @@ export class SmartAssistService {
 		}
 	}
 
+	//#region HPD section
+
 	/**
 	 * IdeaPad Only : User Presence Sensing global toggle can be shown on UI
 	 */
@@ -138,6 +140,27 @@ export class SmartAssistService {
 		return this.intelligentSensing.SetHPDLeaveWaitSetting(value);
 	}
 
+
+
+	public resetHPDSetting(): Promise<boolean> {
+		if (this.isShellAvailable) {
+			return this.intelligentSensing.HPDSettingReset();
+		}
+		return undefined;
+	}
+
+	public getWindowsHelloStatus(): Promise<boolean> {
+		if (this.isShellAvailable) {
+			return this.intelligentSensing.GetFacialFeatureRegistered();
+		}
+		return undefined;
+	}
+
+	//#endregion
+
+
+	//#region Intelligent Media section
+
 	/**
 	 * HDP auto video pause
 	 */
@@ -163,17 +186,78 @@ export class SmartAssistService {
 		}
 	}
 
-	public resetHPDSetting(): Promise<boolean> {
+	//#endregion
+
+
+	//#region Intelligent Sensing (Intelligent screen) section
+
+	public getIntelligentScreenVisibility(): Promise<boolean> {
 		if (this.isShellAvailable) {
-			return this.intelligentMedia.HPDSettingReset();
+			return this.intelligentSensing.GetSmartSenseCapability();
 		}
 		return undefined;
 	}
 
-	public getWindowsHelloStatus(): Promise<boolean> {
+	public getAutoScreenOffVisibility(): Promise<boolean> {
 		if (this.isShellAvailable) {
-			return this.intelligentMedia.GetFacialFeatureRegistered();
+			return this.intelligentSensing.GetWalkingCapability();
 		}
 		return undefined;
 	}
+
+	public getAutoScreenOffStatus(): Promise<boolean> {
+		if (this.isShellAvailable) {
+			return this.intelligentSensing.GetWalkingSetting();
+		}
+		return undefined;
+	}
+
+	/**
+	 * if value returned is true then show note
+	 */
+	public getAutoScreenOffNoteStatus(): Promise<boolean> {
+		if (this.isShellAvailable) {
+			return this.intelligentSensing.GetWalkingCautionVisibility();
+		}
+		return undefined;
+	}
+
+	public getReadingOrBrowsingVisibility(): Promise<boolean> {
+		if (this.isShellAvailable) {
+			return this.intelligentSensing.GetBrowsingCapability();
+		}
+		return undefined;
+	}
+
+	public getReadingOrBrowsingStatus(): Promise<boolean> {
+		if (this.isShellAvailable) {
+			return this.intelligentSensing.GetBrowsingSetting();
+		}
+		return undefined;
+	}
+
+	public setReadingOrBrowsingStatus(value: boolean): Promise<boolean> {
+		if (this.isShellAvailable) {
+			const option = value ? 'True' : 'False';
+			return this.intelligentSensing.SetBrowsingMode(option);
+		}
+		return undefined;
+	}
+
+	public getReadingOrBrowsingTime(): Promise<boolean> {
+		if (this.isShellAvailable) {
+			return this.intelligentSensing.GetBrowsingTime();
+		}
+		return undefined;
+	}
+
+	public setReadingOrBrowsingTime(value: number): Promise<boolean> {
+		if (this.isShellAvailable) {
+			const option = value * 60;
+			return this.intelligentSensing.SetBrowsingTime(option);
+		}
+		return undefined;
+	}
+
+	//#endregion
 }

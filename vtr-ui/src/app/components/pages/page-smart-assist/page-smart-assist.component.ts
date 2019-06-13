@@ -39,10 +39,6 @@ export class PageSmartAssistComponent implements OnInit {
 
 	headerMenuItems = [
 		{
-			title: 'device.smartAssist.jumpTo.security',
-			path: 'security'
-		},
-		{
 			title: 'device.smartAssist.jumpTo.screen',
 			path: 'screen'
 		},
@@ -98,6 +94,7 @@ export class PageSmartAssistComponent implements OnInit {
 
 	// invoke HPD related JS bridge calls
 	private initSmartAssist() {
+		// ZeroTouchLock
 		Promise.all([
 			this.smartAssist.getZeroTouchLockVisibility(),
 			this.smartAssist.getZeroTouchLockStatus(),
@@ -114,6 +111,13 @@ export class PageSmartAssistComponent implements OnInit {
 				this.intelligentSecurity.isIntelligentSecuritySupported = responses[4];
 			} else {
 				this.intelligentSecurity.isIntelligentSecuritySupported = responses[5];
+			}
+
+			if (this.intelligentSecurity.isIntelligentSecuritySupported) {
+				this.headerMenuItems.unshift({
+					title: 'device.smartAssist.jumpTo.security',
+					path: 'security'
+				});
 			}
 
 			console.log('initSmartAssist.Promise.all()', responses, this.intelligentSecurity);
@@ -140,6 +144,26 @@ export class PageSmartAssistComponent implements OnInit {
 		}).catch(error => {
 			this.logger.error('error in initSmartAssist.Promise.all()', error);
 		});
+
+		// Intelligent Screen
+		// Promise.all([
+		// 	this.smartAssist.getZeroTouchLoginVisibility(),
+		// 	this.smartAssist.getZeroTouchLoginStatus(),
+		// 	this.smartAssist.getZeroTouchLoginDistance(),
+		// 	this.smartAssist.getZeroTouchLoginAdjustVisibility(),
+		// 	this.smartAssist.getZeroTouchLoginAdjustStatus(),
+		// 	this.smartAssist.getWindowsHelloStatus()
+		// ]).then((responses: any[]) => {
+		// 	// this.intelligentSecurity.isZeroTouchLoginVisible = responses[0];
+		// 	// this.intelligentSecurity.isZeroTouchLoginEnabled = responses[1];
+		// 	// this.intelligentSecurity.zeroTouchLoginDistance = responses[2];
+		// 	// this.intelligentSecurity.isDistanceSensitivityVisible = responses[3];
+		// 	// this.intelligentSecurity.isZeroTouchLoginAdjustEnabled = responses[4];
+		// 	// this.intelligentSecurity.isWindowsHelloRegistered = responses[5];
+		// 	console.log('initSmartAssist.Promise.IntelligentScreen()', responses, this.intelligentSecurity);
+		// }).catch(error => {
+		// 	this.logger.error('error in initSmartAssist.Promise.all()', error);
+		// });
 	}
 
 	public onCardCollapse(isCollapsed: boolean) {
@@ -255,6 +279,9 @@ export class PageSmartAssistComponent implements OnInit {
 	public onResetDefaultSettings($event) {
 		this.smartAssist.resetHPDSetting()
 			.then((isSuccess: boolean) => {
+				if (this.smartAssist.isShellAvailable) {
+					this.initSmartAssist();
+				}
 				console.log('onResetDefaultSettings.resetHPDSetting', isSuccess);
 			});
 	}

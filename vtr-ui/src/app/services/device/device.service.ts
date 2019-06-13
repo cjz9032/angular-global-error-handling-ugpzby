@@ -162,9 +162,9 @@ export class DeviceService {
 
 	public stopMicrophoneMonitor() {
 		if (this.microphone) {
-			this.microphone.stopMonitor((response) => {
-				console.log('stopMicrophoneMonitor', response);
-			});
+			// this.microphone.stopMonitor((response) => {
+			// 	console.log('stopMicrophoneMonitor', response);
+			// });
 		}
 	}
 

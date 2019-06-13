@@ -288,7 +288,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 						console.log('showSmartAssist.Promise.all()', responses);
 						const isAvailable = (responses[0] || responses[1]);
 						this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
-						if (isAvailable) {
+						if (true) {
 							myDeviceItem.subitems.splice(4, 0, {
 								id: 'smart-assist',
 								label: 'common.menu.device.sub4',

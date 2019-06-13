@@ -169,7 +169,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		console.log('startMonitorForCamera');
 		try {
 			if (this.displayService.isShellAvailable) {
-				this.displayService.startMonitorForCamera(this.startMonitorHandlerForCamera.bind(this))
+				this.displayService.startCameraPrivacyMonitor(this.startMonitorHandlerForCamera.bind(this))
 					.then((val) => {
 						console.log('startMonitorForCamera.then', val);
 
@@ -185,7 +185,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	stopMonitorForCamera() {
 		try {
 			if (this.displayService.isShellAvailable) {
-				this.displayService.stopMonitorForCamera()
+				this.displayService.stopCameraPrivacyMonitor()
 					.then((value: any) => {
 						console.log('stopMonitorForCamera.then', value);
 					}).catch(error => {

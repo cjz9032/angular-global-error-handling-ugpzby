@@ -42,7 +42,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	private notificationSubscription: Subscription;
 	public manualRefresh: EventEmitter<void> = new EventEmitter<void>();
 	public shouldCameraSectionDisabled = true;
-	public isCameraAvailable = false;
+	public isCameraAvailable = true;
 
 	headerCaption = 'device.deviceSettings.displayCamera.description';
 	headerMenuTitle = 'device.deviceSettings.displayCamera.jumpTo.title';
@@ -140,7 +140,6 @@ export class SubpageDeviceSettingsDisplayComponent
 		this.statusChangedLocationPermission();
 		this.displayService.startMonitorForCameraPermission();
 		this.startMonitorForCamera();
-		this.initCameraBlurMethods();
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -193,7 +192,7 @@ export class SubpageDeviceSettingsDisplayComponent
 			// 	.catch(error => {
 			// 		console.log(error);
 			// 	});
-			console.log('Inside');
+			// console.log('Inside');
 			this.displayService.getCameraSettingsInfo().then((response) => {
 				console.log('getCameraDetails.then', response);
 				this.dataSource = response;
@@ -516,7 +515,7 @@ export class SubpageDeviceSettingsDisplayComponent
 		console.log('startMonitorForCamera');
 		try {
 			if (this.displayService.isShellAvailable) {
-				this.displayService.startMonitorForCamera(this.startMonitorHandlerForCamera.bind(this))
+				this.displayService.startCameraPrivacyMonitor(this.startMonitorHandlerForCamera.bind(this))
 					.then((val) => {
 						console.log('startMonitorForCamera.then', val);
 
@@ -532,7 +531,7 @@ export class SubpageDeviceSettingsDisplayComponent
 	stopMonitorForCamera() {
 		try {
 			if (this.displayService.isShellAvailable) {
-				this.displayService.stopMonitorForCamera()
+				this.displayService.stopCameraPrivacyMonitor()
 					.then((value: any) => {
 						console.log('stopMonitorForCamera.then', value);
 					}).catch(error => {
@@ -680,8 +679,11 @@ export class SubpageDeviceSettingsDisplayComponent
 		}
 	}
 
-	public onCameraAvailable() {
-		console.log('Camera is available');
-		this.isCameraAvailable = true;
+	public onCameraAvailable(isCameraAvailable: boolean) {
+		console.log('Camera isAvailable', isCameraAvailable);
+		this.isCameraAvailable = isCameraAvailable;
+		if (isCameraAvailable) {
+			this.initCameraBlurMethods();
+		}
 	}
 }

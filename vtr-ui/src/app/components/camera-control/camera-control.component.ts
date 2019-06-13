@@ -21,7 +21,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	@Output() contrastChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureToggle: EventEmitter<any> = new EventEmitter();
-	@Output() cameraAvailable = new EventEmitter();
+	@Output() cameraAvailable: EventEmitter<boolean> = new EventEmitter();
 
 	public cameraDetail = new CameraDetail();
 	private cameraPreview: ElementRef;
@@ -114,17 +114,17 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 			return this.findCameraDeviceByPanelAsync(this.Windows.Devices.Enumeration.Panel.front)
 				.then((camera) => {
 					if (!camera) {
-						console.log('No camera device found!');
+						this.cameraAvailable.emit(false);
 						return;
 					}
 
-					this.cameraAvailable.emit();
+					this.cameraAvailable.emit(true);
 					self.oMediaCapture = new self.Windows.Media.Capture.MediaCapture();
 
 					// Register for a notification when something goes wrong
 					// TODO: define the fail handle callback and show error message maybe... there's a chance another app is previewing camera, that's when failed happen.
-					self.oMediaCapture.addEventListener('failed', () => {
-						console.log('failed to capture camera');
+					self.oMediaCapture.addEventListener('failed', (error) => {
+						console.log('failed to capture camera', error);
 						self.cleanupCameraAsync();
 					});
 
@@ -138,7 +138,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 				}, (error) => {
 					this.disabledAll = true;
-					console.log(error.message);
+					console.log('findCameraDeviceByPanelAsync error', error.message);
 				}).then(function () {
 					return self.startPreviewAsync();
 				}).done();
