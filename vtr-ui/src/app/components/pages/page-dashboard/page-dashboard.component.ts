@@ -82,10 +82,13 @@ export class PageDashboardComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		// start of MVP1.5 release hot-fix
 		// reroute default application's default URL if gaming device
-		if (this.deviceService.isGaming) {
-			this.router.navigateByUrl(this.configService.getMenuItems(this.deviceService.isGaming)[0].path);
-		}
+		// if (this.deviceService.isGaming) {
+		// 	this.router.release/MVP1.5(this.configService.getMenuItems(this.deviceService.isGaming)[0].path);
+		// }
+		// end of MVP1.5 release hot-fix
+
 		const self = this;
 		this.translate.stream('lenovoId.user').subscribe((value) => {
 			if (!self.userService.auth) {
@@ -328,7 +331,7 @@ export class PageDashboardComponent implements OnInit {
 	}
 
 	private setDefaultSystemStatus() {
-		let memory = new Status();
+		const memory = new Status();
 		memory.status = 4;
 		memory.id = 'memory';
 
@@ -478,7 +481,7 @@ export class PageDashboardComponent implements OnInit {
 			warranty.status = 1;
 			warranty.id = 'warranty';
 			warranty.title = this.translate.instant('dashboard.systemStatus.warranty.title'); // 'Warranty';
-			warranty.detail = this.translate.instant('dashboard.systemStatus.warranty.detail.notFound'); //	'Warranty not found';
+			warranty.detail = this.translate.instant('dashboard.systemStatus.warranty.detail.notFound'); // 	'Warranty not found';
 
 
 			this.translate.stream('dashboard.systemStatus.warranty.title').subscribe((value) => {
@@ -558,7 +561,7 @@ export class PageDashboardComponent implements OnInit {
 		});
 
 		this.translate.stream('common.securityAdvisor.disabled').subscribe((value) => {
-			antiVirus.detail = value;// 'Disabled';
+			antiVirus.detail = value; // 'Disabled';
 		});
 
 		antiVirus.path = 'security/anti-virus';

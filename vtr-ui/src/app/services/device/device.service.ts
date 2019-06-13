@@ -116,10 +116,12 @@ export class DeviceService {
 			return this.sysInfo.getMachineInfo()
 				.then((info) => {
 					this.machineInfo = info;
-					if (info && info.isGaming) {
-						this.isGaming = info.isGaming;
-						this.loadGamingDashboard();
-					}
+					// start of MVP1.5 release hot-fix
+					// if (info && info.isGaming) {
+					// 	this.isGaming = info.isGaming;
+					// 	this.loadGamingDashboard();
+					// }
+					// end of MVP1.5 release hot-fix
 
 					if (info && info.cpuArchitecture) {
 						if (info.cpuArchitecture.indexOf('64') === -1) {
