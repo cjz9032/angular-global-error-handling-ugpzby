@@ -388,8 +388,7 @@ export class VantageShellService {
 	public getThermalModeStatus(): any {
 		if (this.phoenix) {
 			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingThermal.getThermalModeStatus();
-			return undefined;
+			return this.phoenix.gaming.gamingThermalmode.getThermalModeStatus();
 		}
 		return undefined;
 	}
@@ -397,10 +396,9 @@ export class VantageShellService {
 	public setThermalModeStatus(ThermalModeStatusObj: ThermalModeStatus): Boolean {
 		if (this.phoenix) {
 			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingThermal.setThermalModeStatus(ThermalModeStatusObj.thermalModeStatus);
-			return true;
+		    return this.phoenix.gaming.gamingThermalmode.setThermalModeStatus(ThermalModeStatusObj.thermalModeStatus);
 		}
-		return true;
+		return undefined;
 	}
 
 	// public getRAMOCStatus(): any {
