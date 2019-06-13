@@ -29,7 +29,7 @@
 		{{batteryIndicator.percent == 0 && flag ? reInitValue(): ""}}
 		<div class="pt-4 battery-frame pr-3">
 			<vtr-battery-indicator 
-				[batteryHealth]= "batteryIndicator?.batteryHealth"
+				[batteryHealth]= "batteryIndicator.batteryHealth"
 				[remainingHour]="batteryIndicator.hours"
 				[remainingMinutes]="batteryIndicator.minutes"
 				[percentage]="batteryIndicator.percent"
@@ -40,17 +40,17 @@
 			</vtr-battery-indicator>
 		</div>
 
-		<!-- <div class="p-3 row" *ngFor="let batteryConditionTranslation of batteryConditionTranslations; let i = index">
+		<div class="p-3 row" *ngFor="let batteryConditionNote of batteryConditionNotes; let i = index">
 			<div class="p-0 pr-2 col-auto battery-conditions-icon">
-				<fa-icon *ngIf="batteryQuality[batteryCondition.quality]== 'Good'"
+				<fa-icon *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Good"
 						[icon]="['fas', 'check-circle']" 
 						class="good">
 				</fa-icon>
-				<fa-icon *ngIf="batteryQuality[batteryCondition.quality]== 'Poor'" 
+				<fa-icon *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Poor" 
 						[icon]="['fas', 'times-circle']" 
 						class="poor">
 				</fa-icon>
-				<fa-layers *ngIf="batteryQuality[batteryCondition.quality]== 'Fair'" 
+				<fa-layers *ngIf="batteryConditions[i].conditionStatus == batteryQuality.Fair" 
 						[fixedWidth]="true">
 					<fa-icon [icon]="['fas', 'circle']" class="fair"></fa-icon>
 					<fa-icon [icon]="['fas', 'exclamation-triangle']" transform="shrink-6" 
@@ -60,28 +60,32 @@
 			</div>
 		
 			<div class="col">
-				<span class="battery-conditions-title" *ngIf="batteryConditionTranslation?.title">
-					{{batteryConditionTranslation.title | translate}}
+				<span class="battery-conditions-title" *ngIf="batteryConditionNote?.title">
+					{{batteryConditionNote.title | translate}}
 				</span>&nbsp;
 				<span class="battery-conditions-description" 
-					*ngIf="batteryConditionTranslation?.description.length > 0">
-						{{batteryConditionTranslation.description | translate}}
+					*ngIf="batteryConditionNote?.description.length > 0">
+						{{batteryConditionNote.description | translate}}
 				</span>
-				<span class="battery-conditions-title" 
+				<!-- <span class="battery-conditions-title" 
 					*ngIf="batteryConditionsEnum[batteryCondition.condition]== 'StoreLimitation'">
 						{{percentageLimitation}}%
+				</span> -->
+				<span class="battery-conditions-title" 
+					*ngIf="batteryConditionsEnum[batteryConditions[i].condition]== 'Illegal'">
+						<br>
 				</span>
 				<span class="battery-conditions-title" 
-					*ngIf="batteryConditionTranslation?.description1.length > 0">
-						{{batteryConditionTranslation.description1 | translate}}
+					*ngIf="batteryConditionNote?.description1.length > 0">
+						{{batteryConditionNote.description1 | translate}}
 				</span>
 				<span class="battery-conditions-description" 
-					*ngIf="batteryConditionTranslation?.description2.length > 0">
-						{{batteryConditionTranslation.description2 | translate}}
+					*ngIf="batteryConditionNote?.description2.length > 0">
+						{{batteryConditionNote.description2 | translate}}
 				</span>
 				
 			</div>
-		</div> -->
+		</div>
 		<div class="pt-4 text-center">
 			<button type="button" 
 				vtrMetrics 
