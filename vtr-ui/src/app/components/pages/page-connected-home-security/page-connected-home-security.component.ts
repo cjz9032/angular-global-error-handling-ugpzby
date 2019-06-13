@@ -45,7 +45,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	eventEmitter = new EventEmitter();
 
 	welcomeModel: HomeSecurityWelcome;
-	connectedHomeSecurity: ConnectedHomeSecurity;
+	connectedHomeSecurity: any;
 	permission: any;
 
 
