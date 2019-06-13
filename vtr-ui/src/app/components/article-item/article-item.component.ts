@@ -75,7 +75,9 @@ export class ArticleItemComponent implements OnInit, AfterViewInit {
 			backdrop: 'static',
 			size: 'lg',
 			centered: true,
-			windowClass: 'Article-Detail-Modal'
+			windowClass: 'Article-Detail-Modal',
+			keyboard : false,
+			backdrop: 'static'
 		});
 
 		articleDetailModal.componentInstance.articleId = this.item.Id;
