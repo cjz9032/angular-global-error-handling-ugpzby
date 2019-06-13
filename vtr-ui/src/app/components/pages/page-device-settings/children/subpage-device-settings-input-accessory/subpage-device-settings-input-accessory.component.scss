@@ -1,0 +1,29 @@
+@import "../../../../../app.theme.scss";
+
+.subpage-device-settings-input-accessories {
+	ul.list-group {
+		list-style-type: none;
+		padding-bottom: 1rem;
+	}	
+	.hidden-keyboard-text {
+		font-size: 1.5rem;
+		color: $main_darker;
+		// max-width: 60rem;
+		// padding-left: 2rem;
+		// padding-right: 2rem;
+	}
+	.caption-tittle{
+		color: #565a5d;
+		font-weight: 600;
+		font-size: 14px;
+	}
+	.img-preview {
+		object-fit: contain;
+		width: 100%;
+		margin-top: 1rem;
+		img{
+			width: 100%;
+			height: 100%;
+		}
+}
+}
