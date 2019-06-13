@@ -309,4 +309,10 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 			}
 		});
 	}
+	
+	public openExternalLink(link) {
+		if (link) {
+			window.open(link);
+		}
+	}
 }

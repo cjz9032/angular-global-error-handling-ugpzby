@@ -48,7 +48,10 @@
         }
         .sub-desc {
             font-size: 2rem;
-            margin-bottom: 5rem;
+			margin-bottom: 5rem;
+			::ng-deep .button {
+				font-size: 2rem;
+			}
         }
         .modal-button {
             background: $gradient_main;
