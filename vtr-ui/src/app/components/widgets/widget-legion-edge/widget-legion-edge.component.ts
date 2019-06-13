@@ -1,9 +1,7 @@
-import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { Component, OnInit, NgZone } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RamOCSatus } from 'src/app/data-models/gaming/ram-overclock-status.model';
-import { isUndefined } from 'util';
 import { GamingSystemUpdateService } from 'src/app/services/gaming/gaming-system-update/gaming-system-update.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { HybridModeStatus } from 'src/app/data-models/gaming/hybrid-mode-status.model';
@@ -416,7 +414,16 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				.then((value: boolean) => {
 					console.log('setRamOc.then', value);
 					if (value !== undefined) {
-						this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
+						if (this.gamingCapabilities.xtuService === false) {
+							this.legionUpdate[1].isDriverPopup = $event;
+						} else if (this.gamingCapabilities.xtuService === true) {
+							this.legionUpdate[1].isPopup = $event;
+						}
+						this.commonService.setLocalStorageValue(
+							LocalStorageKey.RamOcStatus,
+							$event.switchValue);
+							this.gamingCapabilities.RamOCSatus = $event.switchValue;
+						/* this.gamingAllCapabilities.getCapabilities().then((gamingCapabilities: any) => {
 							//console.log('XTU Service---> ' + this.gamingCapabilities.xtuService);
 							//this.gamingCapabilities.xtuService = false ;
 							if (this.gamingCapabilities.xtuService === false) {
@@ -425,10 +432,9 @@ export class WidgetLegionEdgeComponent implements OnInit {
 								this.legionUpdate[1].isPopup = $event;
 							}
 							this.commonService.setLocalStorageValue(
-								LocalStorageKey.RamOcStatus,
-								$event.switchValue
-							);
-						});
+							LocalStorageKey.RamOcStatus,
+							$event.switchValue);
+						}); */
 					}
 				})
 				.catch((error) => {

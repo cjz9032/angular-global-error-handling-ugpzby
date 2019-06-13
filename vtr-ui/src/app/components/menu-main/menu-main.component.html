@@ -87,7 +87,7 @@
 								 [metricsItem]="subitem.metricsItem"
 								 class="dropdown-item link"
 								 target="_blank"
-								 href="{{subitem.path}}" (click)="showMenu = false">{{subitem.label | translate}}</a>
+								 (click)="showMenu = false; openExternalLink(subitem.path)">{{subitem.label | translate}}</a>
 								<a *ngIf="!subitem.externallink && subitem.path==='support'"
 								 vtrMetrics
 								 routerLinkActive="link-active"
