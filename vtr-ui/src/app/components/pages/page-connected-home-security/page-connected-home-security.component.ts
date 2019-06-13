@@ -69,9 +69,22 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 
 	private createMockData() {
 		this.notifications = {items: []};
-		this.notifications.items.push(new WidgetItem({id: '1', status: 0, title: 'placeholder1', detail: 'placeholder1'}, this.translateService));
-		this.notifications.items.push(new WidgetItem({id: '1', status: 0, title: 'placeholder2', detail: 'placeholder2'}, this.translateService));
-		this.notifications.items.push(new WidgetItem({id: '1', status: 0, title: 'placeholder3', detail: 'placeholder3'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '2', title: '5 minutes disconnect', iconPath: 'assets/images/qa/svg_icon_qa_backup.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '3', title: '10 minutes disconnect', iconPath: 'assets/images/qa/svg_icon_qa_pcbit.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '1', title: 'Antivirus was disabled', iconPath: 'assets/images/qa/svg_icon_qa_battery.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '1', title: 'Passcode lock disabled 3 hours', iconPath: 'assets/images/qa/svg_icon_qa_tablet.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '1', title: '3 hours disconnect', iconPath: 'assets/images/qa/svg_icon_qa_cortana.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '1', title: '8 minutes disconnect', iconPath: 'assets/images/qa/svg_icon_qa_battery.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '1', title: 'Antivirus was disabled', iconPath: 'assets/images/qa/svg_icon_qa_pcbit.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '1', title: 'Passcode lock disabled 3 hours', iconPath: 'assets/images/qa/svg_icon_qa_refresh.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
 		this.account = this.homeSecurityMockService.account;
 		this.connectedHomeSecurity.account = {
 			id: '',
