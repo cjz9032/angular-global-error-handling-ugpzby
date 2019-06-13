@@ -4,7 +4,7 @@ import { MacrokeyService } from './../../../services/gaming/macrokey/macrokey.se
 @Component({
 	selector: 'vtr-ui-macrokey-details',
 	templateUrl: './ui-macrokey-details.component.html',
-	styleUrls: [ './ui-macrokey-details.component.scss' ]
+	styleUrls: ['./ui-macrokey-details.component.scss']
 })
 export class UiMacrokeyDetailsComponent implements OnInit, DoCheck {
 	@Input() number;
@@ -24,9 +24,9 @@ export class UiMacrokeyDetailsComponent implements OnInit, DoCheck {
 		btnConfirm: false
 	};
 
-	constructor(private macroKeyService: MacrokeyService) {}
+	constructor(private macroKeyService: MacrokeyService) { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	onStartClicked(event) {
 		setTimeout(() => {
@@ -48,15 +48,6 @@ export class UiMacrokeyDetailsComponent implements OnInit, DoCheck {
 		this.recording = !this.recording;
 		this.isRecording.emit(this.recording);
 	}
-
-	recordsDelete(records) {
-		records = records || [];
-		records.forEach((record: any, ri: number) => {
-			console.log(record);
-			console.log(ri, 'Index');
-		});
-	}
-
 	ngDoCheck() {
 		// const currentKeyData = this.keyData;
 		// if (this.recording) {
