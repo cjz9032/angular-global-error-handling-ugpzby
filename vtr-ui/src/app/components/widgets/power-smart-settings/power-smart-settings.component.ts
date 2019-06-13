@@ -85,7 +85,7 @@ export class PowerSmartSettingsComponent implements OnInit {
 		try {
 			let response = await this.powerService.getITSModeForICIdeapad();
 			console.log("getITSModeForICIdeapad: " + response);
-			if(response && response.available && response.errorCode) {
+			if(response && response.available) {
 				if(response.itsVersion == 3) {
 					this.intelligentCoolingModes = IntelligentCoolingHardware.ITS13;
 					this.showIntelligentCoolingToggle = true;
@@ -302,6 +302,7 @@ export class PowerSmartSettingsComponent implements OnInit {
 				this.setPerformanceAndCool(mode)
 			}
 			if (this.intelligentCoolingModes == IntelligentCoolingHardware.ITS14) {
+				this.updateSelectedModeText(mode);
 				await this.powerService.setITSModeForICIdeapad(mode.ideapadType4);
 				this.setPerformanceAndCool(mode)
 			}
