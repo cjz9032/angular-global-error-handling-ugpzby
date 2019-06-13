@@ -1,12 +1,10 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { TranslationService } from 'src/app/services/translation/translation.service';
 import Translation from 'src/app/data-models/translation/translation';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { TranslationSection } from 'src/app/enums/translation-section.enum';
-import { WifiHomeViewModel } from 'src/app/data-models/security-advisor/wifisecurity.model';
 import { CommonService } from '../../../services/common/common.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { SecurityService } from 'src/app/services/security/security.service';
 
 @Component({
 	selector: 'vtr-ui-switch-onoff',
@@ -16,7 +14,6 @@ import { SecurityService } from 'src/app/services/security/security.service';
 export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	@Output() toggle: EventEmitter<any> = new EventEmitter();
 	@Input() value: boolean;
-	@Input() data: WifiHomeViewModel;
 	@Input() name: string;
 	@Input() disabled = false;
 	@Input() showLoader = false;
@@ -33,9 +30,7 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	constructor(
 		public translationService: TranslationService,
 		public commonService: CommonService,
-		public modalService: NgbModal,
-		private securityService: SecurityService,
-		private cd: ChangeDetectorRef
+		public modalService: NgbModal
 	) {
 		this.uiSubscription = this.translationService.subscription.subscribe((translation: Translation) => {
 			this.onLanguageChange(translation);
@@ -58,58 +53,12 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 
 	onChange($event) {
 		this.disabled = true;
-		try {
-			if (this.name === 'wifiSecurity') {
-				// this.cd.detach();
-				this.isSwitchDisable = true;
-				// this.cd.detectChanges();
-				if (this.data) {
-					if (this.value) {
-						this.data.wifiSecurity.disableWifiSecurity().then((res) => {
-							if (res === true) {
-								this.data.isLWSEnabled = false;
-								this.value = false;
-							} else {
-								this.data.isLWSEnabled = true;
-								this.value = true;
-							}
-							this.disabled = false;
-							this.isSwitchDisable = false;
-							// this.cd.reattach();
-						});
-					} else {
-						this.data.wifiSecurity.enableWifiSecurity().then(
-							(res) => {
-								if (res === true) {
-									this.data.isLWSEnabled = true;
-									this.value = true;
-								} else {
-									this.data.isLWSEnabled = false;
-									this.value = false;
-								}
-								this.disabled = false;
-								this.isSwitchDisable = false;
-								// this.cd.reattach();
-							},
-							(error) => {
-								this.securityService.wifiSecurityLocationDialog(this.data.wifiSecurity);
-								this.disabled = false;
-								this.isSwitchDisable = false;
-								// this.cd.reattach();
-							}
-						);
-					}
-				}
-			} else if (this.name === 'recommended-updates') {
-				this.disabled = this.isSwitchDisable;
-				this.value = !this.value;
-			} else {
-				this.disabled = false;
-				this.value = !this.value;
-			}
-		} catch (err) {
+		if (this.name === 'recommended-updates') {
+			this.disabled = this.isSwitchDisable;
+			this.value = !this.value;
+		} else if (this.name !== 'wifiSecurity') {
 			this.disabled = false;
-			throw new Error('wifiSecurity is null');
+			this.value = !this.value;
 		}
 		$event.switchValue = this.value;
 		this.toggle.emit($event);
