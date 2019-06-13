@@ -174,11 +174,6 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 	}
 
 	onIntervalChanged(intervalOption) {
-		if (intervalOption.value === 2) {
-			this.ignoreInterval = true;
-			return;
-		}
-		this.ignoreInterval = false;
 		this.macrokeyService.setInterval(this.number.key, intervalOption.value).then((responseStatus) => {
 			console.log('########################## Set interval status: ', responseStatus);
 			console.log('########################## Set interval option: ', intervalOption.value);
@@ -186,5 +181,11 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 				this.recordsData.interval = intervalOption.value;
 			}
 		});
+
+		if (intervalOption.value === 2) {
+			this.ignoreInterval = true;
+			return;
+		}
+		this.ignoreInterval = false;
 	}
 }
