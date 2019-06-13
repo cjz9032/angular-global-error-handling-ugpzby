@@ -45,6 +45,13 @@ import {
 	RegionService
 } from 'src/app/services/region/region.service';
 
+import {
+	AppNotification
+} from 'src/app/data-models/common/app-notification.model';
+import {
+	NetworkStatus
+} from 'src/app/enums/network-status.enum';
+
 @Component({
 	selector: 'vtr-page-security',
 	templateUrl: './page-security.component.html',
@@ -70,6 +77,7 @@ export class PageSecurityComponent implements OnInit {
 	maliciousWifi: number;
 	cardContentPositionA: any = {};
 	region: string;
+	isOnline: boolean;
 	backId = 'sa-ov-btn-back';
 	itemStatusClass = {
 		0: 'good',
@@ -81,6 +89,7 @@ export class PageSecurityComponent implements OnInit {
 		1: 'security.landing.suspicious',
 		2: 'security.landing.malicious'
 	};
+
 	constructor(
 		public vantageShellService: VantageShellService,
 		private cmsService: CMSService,
@@ -107,6 +116,10 @@ export class PageSecurityComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		this.isOnline = this.commonService.isOnline;
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
 		this.refreshAll();
 		this.fetchCMSArticles();
 	}
@@ -251,6 +264,19 @@ export class PageSecurityComponent implements OnInit {
 			this.windowsHelloLandingViewModel = new WindowsHelloLandingViewModel(this.translate, windowsHello, this.commonService);
 		} else {
 			this.windowsHelloLandingViewModel = null;
+		}
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
 		}
 	}
 }

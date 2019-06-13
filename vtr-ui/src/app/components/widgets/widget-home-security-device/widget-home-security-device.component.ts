@@ -20,7 +20,7 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 			{
 				type: 'lidBadge',
 				status: 'loading',
-				text: 'loading',
+				text: 'common.securityAdvisor.loading',
 				clickEvent() { },
 				expiredUrl: 'javascript:void(0);'
 			},
@@ -41,21 +41,21 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 			{
 				type: 'lidBadge',
 				status: 'loading',
-				text: 'loading',
+				text: 'common.securityAdvisor.loading',
 				clickEvent() { },
 				expiredUrl: 'javascript:void(0);'
 			},
 			{
 				type: 'accountBadge',
 				status: 'loading',
-				text: 'loading',
+				text: 'common.securityAdvisor.loading',
 				clickEvent() { },
 				expiredUrl: 'javascript:void(0);'
 			},
 			{
 				type: 'trialBadge',
 				status: 'loading',
-				text: 'loading',
+				text: 'common.securityAdvisor.loading',
 				clickEvent() { },
 				expiredUrl: 'javascript:void(0);'
 			}
@@ -85,7 +85,7 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 						{
 							type: 'lidBadge',
 							status: 'enabled',
-							text: 'In Ecosystem',
+							text: 'homeSecurity.inEcosystem',
 							clickEvent() { },
 							expiredUrl: 'javascript:void(0);'
 						},
@@ -105,21 +105,21 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 						{
 							type: 'lidBadge',
 							status: 'enabled',
-							text: 'Ecosystem Enabled',
+							text: 'homeSecurity.ecosystemEnable',
 							clickEvent() { },
 							expiredUrl: 'javascript:void(0);'
 						},
 						{
 							type: 'accountBadge',
 							status: 'disabled',
-							text: 'Upgrade',
+							text: 'homeSecurity.upgrade',
 							clickEvent() { },
 							expiredUrl: this.url
 						},
 						{
 							type: 'trialBadge',
 							status: 'enabled',
-							text: 'In Trial',
+							text: 'homeSecurity.inTrial',
 							clickEvent() { },
 							expiredUrl: this.url
 						}
@@ -132,7 +132,7 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 						{
 							type: 'lidBadge',
 							status: 'enabled',
-							text: 'In Ecosystem',
+							text: 'homeSecurity.inEcosystem',
 							clickEvent() { },
 							expiredUrl: 'javascript:void(0);'
 						},
@@ -152,21 +152,21 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 						{
 							type: 'lidBadge',
 							status: 'enabled',
-							text: 'Ecosystem Enabled',
+							text: 'homeSecurity.ecosystemEnable',
 							clickEvent() { },
 							expiredUrl: 'javascript:void(0);'
 						},
 						{
 							type: 'accountBadge',
 							status: 'disabled',
-							text: 'Upgrade',
+							text: 'homeSecurity.upgrade',
 							clickEvent() { },
 							expiredUrl: this.url
 						},
 						{
 							type: 'trialBadge',
 							status: 'disabled',
-							text: 'Trial Expired',
+							text: 'homeSecurity.trialExpired',
 							clickEvent() { },
 							expiredUrl: this.url
 						}
@@ -179,7 +179,7 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 						{
 							type: 'lidBadge',
 							status: 'enabled',
-							text: 'In Ecosystem',
+							text: 'homeSecurity.inEcosystem',
 							clickEvent() { },
 							expiredUrl: 'javascript:void(0);'
 						},
@@ -199,14 +199,14 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 						{
 							type: 'lidBadge',
 							status: 'enabled',
-							text: 'Ecosystem Enabled',
+							text: 'homeSecurity.ecosystemEnable',
 							clickEvent() { },
 							expiredUrl: 'javascript:void(0);',
 						},
 						{
 							type: 'accountBadge',
 							status: 'enabled',
-							text: 'Full Access',
+							text: 'homeSecurity.fullAccess',
 							clickEvent() { },
 							expiredUrl: 'javascript:void(0);',
 						},
@@ -223,7 +223,7 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 						{
 							type: 'lidBadge',
 							status: 'enabled',
-							text: 'In Ecosystem',
+							text: 'homeSecurity.inEcosystem',
 							clickEvent() { },
 							expiredUrl: 'javascript:void(0);'
 						},
@@ -243,14 +243,14 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 						{
 							type: 'lidBadge',
 							status: 'enabled',
-							text: 'Ecosystem Enabled',
+							text: 'homeSecurity.ecosystemEnable',
 							expiredUrl: 'javascript:void(0);',
 							clickEvent() { },
 						},
 						{
 							type: 'accountBadge',
 							status: 'disabled',
-							text: 'Upgrade',
+							text: 'homeSecurity.renew',
 							expiredUrl: this.url,
 							clickEvent() { },
 						},
@@ -267,7 +267,7 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 						{
 							type: 'lidBadge',
 							status: 'disabled',
-							text: 'Add to Ecosystem',
+							text: 'homeSecurity.addEcosystem',
 							clickEvent: this.launchLenovoId.bind(this),
 							expiredUrl: 'javascript:void(0);'
 						},
@@ -287,7 +287,7 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 						{
 							type: 'lidBadge',
 							status: 'disabled',
-							text: 'Enable Ecosystem',
+							text: 'homeSecurity.enableEcosystem',
 							clickEvent: this.launchLenovoId.bind(this),
 							expiredUrl: 'javascript:void(0);'
 						},
@@ -308,7 +308,7 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 						{
 							type: 'lidBadge',
 							status: 'enabled',
-							text: 'In Ecosystem',
+							text: 'homeSecurity.inEcosystem',
 							clickEvent() { },
 							expiredUrl: 'javascript:void(0);'
 						},
@@ -328,20 +328,20 @@ export class WidgetHomeSecurityDeviceComponent implements OnInit {
 						{
 							type: 'lidBadge',
 							status: 'enabled',
-							text: 'In Ecosystem',
+							text: 'homeSecurity.ecosystemEnable',
 							clickEvent() { },
 							expiredUrl: 'javascript:void(0);'
 						},
 						{
 							type: 'accountBadge',
-							status: 'disabled',
-							text: 'Start Trial',
-							clickEvent: this.startTrial.bind(this),
-							expiredUrl: 'javascript:void(0);'
+							status: undefined,
 						},
 						{
 							type: 'trialBadge',
-							status: undefined,
+							status: 'disabled',
+							text: 'homeSecurity.startTrial',
+							clickEvent: this.startTrial.bind(this),
+							expiredUrl: 'javascript:void(0);'
 						}
 					],
 				});
