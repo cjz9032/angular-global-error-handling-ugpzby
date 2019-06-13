@@ -19,6 +19,12 @@ export class UiLightingProfileComponent implements OnInit {
 	public currentProfile: number = 3;
 	public lightingData: any;
 	public isOff: number;
+	public brightness: any;
+	public response: any;
+	public defbrgtval: 1;
+	public cacheval: number;
+	public tempval: number;
+	public didSuccess:boolean;
 	public lightingPage = {
 		didSuccess: [
 			{
@@ -246,7 +252,8 @@ export class UiLightingProfileComponent implements OnInit {
 	public panelImage2: string;
 
 	constructor(private gamingLightingService: GamingLightingService,
-		private gamingAllCapabilities: GamingAllCapabilitiesService) { }
+		private gamingAllCapabilities: GamingAllCapabilitiesService,
+		private commonService:CommonService) { }
 
 	ngOnInit() {
 		this.getGamingLightingCapabilities();
@@ -256,6 +263,7 @@ export class UiLightingProfileComponent implements OnInit {
 		this.options = this.effectData;
 		this.effectData.drop[0].curSelected = this.lightingData.lightInfo[0].lightEffectType;
 		this.effectData.drop[1].curSelected = this.lightingData.lightInfo[1].lightEffectType;
+		this.getLightingBrightness();
 	}
 	public optionChanged($event, item) { };
 
@@ -330,6 +338,34 @@ export class UiLightingProfileComponent implements OnInit {
 
 			});
 		}
+	}
+
+	setLightingBrightness(event) {
+		event = event + 1;
+		console.log("in eventval--------------------------------" + event);
+		if (this.gamingLightingService.isShellAvailable) {
+			this.gamingLightingService.setLightingProfileBrightness(event).then((response: any) => {
+				this.didSuccess = response.didSuccess;
+				this.brightness = response.brightness;
+				//this.didSuccess = false;
+				console.log('setLightingProfileBrightness---------------------------->',
+					JSON.stringify(response));
+
+				if (!this.didSuccess) {
+					this.getLightingBrightness();
+
+				} else {
+					this.commonService.setLocalStorageValue(LocalStorageKey.ProfileBrightness, this.brightness);
+					this.getLightingBrightness();
+				}
+			});
+		}
+	}
+
+	public getLightingBrightness() {
+		this.tempval = this.commonService.getLocalStorageValue(LocalStorageKey.ProfileBrightness) || 0;
+		this.setProfile.brightness = (this.tempval) - 1;
+		console.log('cache value  ----------------', this.setProfile.brightness);
 	}
 }
 
