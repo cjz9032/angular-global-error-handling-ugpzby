@@ -1200,9 +1200,7 @@
 			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
 			"good": "GOOD",
 			"malicious": "MALICIOUS",
-			"suspicious": "SUSPICIOUS",
-			"titleOffline": "No internet connection detected",
-			"subTitleOffline": "Learn more on how to solve connection issues in our"
+			"suspicious": "SUSPICIOUS"
 		},
 		"antivirus": {
 			"common": {
