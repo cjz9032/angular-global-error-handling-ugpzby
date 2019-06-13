@@ -8,16 +8,15 @@
 		background: $dark_cell;
 		box-shadow: $drop_shadow_gaming;
 		padding: 6rem;
-		height: 40rem;
-		@media #{$large-screen}{
-			height: 40rem;
-		}
-		@media #{$medium-screen}{
-			height: 40rem;
-		}
-		@media #{$small-screen}{
+		height: auto;
+		@media #{$mediaquery_5} {
 			height: auto;
 		}
+		@media #{$mediaquery_6} {
+			padding: 4rem;
+			height: auto;
+		}
+
 		.monitor-col {
 			padding: 4rem 0;
 			position: relative;
@@ -29,9 +28,8 @@
 				@media #{$mediaquery_5} {
 					padding-right: 2rem;
 				}
-				@media #{$mediaquery_X3} {
+				@media #{$mediaquery_sm} {
 					padding-right: 0rem;
-					height: 28rem;
 				}
 			}
 			&.right {
@@ -39,7 +37,7 @@
 				@media #{$mediaquery_5} {
 					padding-left: 2rem;
 				}
-				@media #{$mediaquery_X3} {
+				@media #{$mediaquery_sm} {
 					padding-left: 0rem;
 				}
 			}
@@ -70,46 +68,37 @@
 				border-radius: $border_radius_sm;
 				background-color: $gaming_darkest;
 				height: 24rem;
-				// position: relative;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
+				position: relative;
 				@media #{$mediaquery_6} {
 					height: 22rem;
 				}
 				&.hds {
 					overflow: hidden;
-					//position: absolute;
+					position: absolute;
 					width: 100%;
 					border: 1px solid $gaming_darkest;
-					align-items: flex-start;
+					@media #{$mediaquery_sm} {
+						position: relative;
+					}
 					&.expanded {
 						height: auto;
 						border: 1px solid $gaming_dark;
+					}
+					&:hover {
 						.expand-icon {
-							display: none;
+							fa-icon {
+								color: $shade_lighter;
+							}
 						}
 					}
 					.expand-icon {
 						position: absolute;
-						bottom: -2.5rem;
-						width: 4rem;
-						height: 4rem;
+						bottom: .3rem;
+						width: 100%;
 						font-size: 2rem;
 						text-align: center;
-						left: calc(50% - 2rem);
-						border-radius: 50%;
-						display: block;
-						padding-top: 0.6rem;
 						fa-icon {
 							color: $shade;
-						}
-						&:hover {
-							display: block;
-							background-color: $gaming_darker;
-							fa-icon {
-								color: $shade_lighter;
-							}
 						}
 					}
 					&:hover .gaming-tooltip {
@@ -145,7 +134,7 @@
 					position: absolute;
 					display: inline-block;
 					z-index: 99;
-					top:2rem;
+					top:-6rem;
 					left: calc(50% - 45%);
 					opacity: 0;
 					transition: all .5s ease-in-out;
@@ -168,7 +157,7 @@
 				}
 				.monitor-inner {
 					height: 100%;
-					position: relative;
+					position: absolute;
 					&.ram {
 						right: 0;
 						.monitor-stack {
@@ -178,10 +167,8 @@
 							}
 						}
 						.gaming-tooltip {
-							width: 20rem;
-							left: calc(50% - 10rem);
-							top: -5rem;
-							word-break: break-all;
+							width: 15rem;
+							left: calc(50% - 7.5rem);
 						}
 						&:hover {
 							.gaming-tooltip {
@@ -192,19 +179,14 @@
 					}
 					&.gpu {
 						.gaming-tooltip {
-							width: 20rem;
-							left: calc(50% - 10rem);
-							top: -5rem;
-							word-break: break-all;
+							width: 15rem;
+							left: calc(50% - 7.5rem);
 						}
 						&:hover {
 							.gaming-tooltip {
 								display: inline-block;
 								opacity: 1;
 							}
-						}
-						.stack-label {
-							left: 1rem;
 						}
 					}
 					.monitor-stack {
@@ -218,7 +200,6 @@
 							padding: 0.5rem;
 							width: 4rem;
 							height: calc(100% - 6rem);
-							right: -1rem;
 							.stack-content {
 								position: absolute;
 								bottom: 0.5rem;
@@ -243,7 +224,7 @@
 							}
 						}
 						.stack-label {
-							position: relative;
+							position: absolute;
 							bottom: 1rem;
 							padding: 0 0.5rem;
 							.stack-title {
@@ -262,20 +243,19 @@
 				}
 
 				.monitor-cpu {
-					///position: absolute;
-					//left: 50%;
-					//top: -7rem;
-					//margin-left: -19rem;
+					position: absolute;
+					left: 50%;
+					top: -7rem;
+					margin-left: -19rem;
 					background-color: $gaming_dark;
 					width: 38rem;
 					height: 38rem;
 					border-radius: 50%;
-					position: relative;
 					@media #{$mediaquery_6} {
-						//top: -3.5rem;
+						top: -3.5rem;
 						width: 29rem;
 						height: 29rem;
-						//margin-left: -14.5rem;
+						margin-left: -14.5rem;
 					}
 					.cpu-ring {
 						// background-color: $highlight;
@@ -344,7 +324,7 @@
 						&.right {
 							left: 19rem;
 							@media #{$mediaquery_6} {
-								left: 16rem;
+								left: 14.5rem;
 							}
 							.mask-obj {
 								background-color: $gaming_dark;
@@ -425,9 +405,6 @@
 							}
 						}
 					}
-					.gaming-tooltip{
-						top:-2rem;
-					}
 					&:hover {
 						.gaming-tooltip {
 							display: inline-block;
@@ -436,8 +413,7 @@
 					}
 				}
 				.hd-list {
-					padding: 3rem;
-					width: 100%;
+					padding: 2rem 3rem;
 					@media #{$mediaquery_6} {
 						padding: 3rem;
 					}
@@ -445,15 +421,6 @@
 						padding: 3rem;
 						.hd-item {
 							text-align: center;
-							.gaming-tooltip {
-								top: -3rem;
-							}
-							&:hover {
-								.gaming-tooltip {
-									display: inline-block;
-									opacity: 1;
-								}
-							}
 							.hd-item-label {
 								display: block;
 							}
@@ -484,8 +451,8 @@
 											border-radius: 0 calc(0.94 * #{$gaming_hd_diameter_lg})
 												calc(0.94 * #{$gaming_hd_diameter_lg}) 0;
 											@media #{$mediaquery_6} {
-												border-radius: calc(0.94 * #{$gaming_hd_diameter_md}) 0 0
-													calc(0.94 * #{$gaming_hd_diameter_md});
+												border-radius: 0 calc(0.94 * #{$gaming_hd_diameter_md}) 
+													calc(0.94 * #{$gaming_hd_diameter_md}) 0;
 											}
 										}
 									}
@@ -508,22 +475,7 @@
 						}
 					}
 					.hd-item {
-						margin-bottom: 2.5rem;
-						@media #{$mediaquery_6} {
-							margin-bottom: 3.5rem;
-						}
-						.gaming-tooltip {
-							width: 20rem;
-							left: calc(50% - 10rem);
-							top: -2rem;
-							word-break: break-all;
-						}
-						&:hover {
-							.gaming-tooltip {
-								display: inline-block;
-								opacity: 1;
-							}
-						}
+						margin-bottom: 3.5rem;
 						&.danger {
 							.monitor-hd {
 								.hd-ring {
@@ -569,11 +521,11 @@
 							}
 							.hd-ring {
 								background: linear-gradient(125deg, $main_gstart 50%, $highlight_bright 100%);
-								width: 94%;
-								height: 94%;
+								width: 95%;
+								height: 95%;
 								position: relative;
-								top: 3%;
-								left: 3%;
+								top: 2.5%;
+								left: 2.5%;
 								border-radius: 50%;
 								border: 1px solid $gaming_dark;
 							}
@@ -607,7 +559,7 @@
 										height: 100%;
 										position: absolute;
 										left: 0;
-										border-radius: 50%;
+										// border-radius: 50%;
 										background-color: $gaming_dark;
 									}
 								}

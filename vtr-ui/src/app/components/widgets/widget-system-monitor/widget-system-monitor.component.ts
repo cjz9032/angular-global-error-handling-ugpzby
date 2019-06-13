@@ -28,8 +28,8 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public loop: any;
 
 
-	@Input() cpuCurrent = 2.4;
-	@Input() cpuMax = 0;
+	@Input() cpuCurrent = .4;
+	@Input() cpuMax = 2.2;
 
 	@Input() gpuCurrent = 1.8;
 	@Input() gpuMax = 3.3;
@@ -39,6 +39,17 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	//@Input() cpuover = 'Intel';
 
 	public hds: any=[];
+
+	// @Input() hds = [
+	// 	{
+	// 		capacity: 476,
+	// 		diskUsage: "84",
+	// 		hddName: "LENSE30512GMSP34MEAT3TA",
+	// 		isSystemDisk: "true",
+	// 		type: "SSD",
+	// 		usedDisk: "400"
+	// 	}
+	// ];
 
 	// @Input() hds = [
 	// 	{
@@ -101,6 +112,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			}
 			this.ramCurrent = parseFloat(this.memoryUsed);
 			this.hds = hwInfo.diskList;
+			console.log('HDS', this.hds);
 			this.hds.forEach((hd) => {
 				if (this.convertToBoolean(hd.isSystemDisk) === true) {
 					this.showIcon = true;
@@ -162,7 +174,8 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.getDynamicInfoService();
 		this.getMachineInfoService();
-		this.loop = setInterval(() => {
+		let int = 0;
+		this.loop = setTimeout(() => {
 			this.getDynamicInfoService();
 		}, 5000);
 	}
@@ -179,10 +192,11 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 
 	getLeftDeg(current, max) {
 		let pct = (current / max);
-		const deg = 360 * (pct - .5);
+		// console.log('LEFT DEG', current, max, pct);
 		if (pct > 1) {
 			pct = 1;
 		}
+		const deg = parseFloat((360 * (pct - .5)).toFixed(1));
 		if (pct > .5) {
 			return deg;
 		} else {
@@ -192,10 +206,11 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 
 	getRightDeg(current, max) {
 		let pct = (current / max);
+		// console.log('RIGHT DEG', current, max, pct);
 		if (pct > 1) {
 			pct = 1;
 		}
-		const deg = 360 * pct;
+		const deg = parseFloat((360 * pct).toFixed(1));
 		return deg;
 	}
 
