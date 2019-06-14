@@ -970,7 +970,24 @@
 				},
 				"manualActiveProtectionSuspension": {
 					"title": "Manual Active Protection Suspension",
-					"caption": "Allow me to manually suspend the Active Protection System"
+					"caption": "Allow me to manually suspend the Active Protection System",
+					"dropdown-title": "Suspend for",
+					"button": "Suspend Now"
+				},
+				"advanced":{
+					"description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+					"pen":{
+						"title": "Pen Input",
+						"description": "When pen input is used, Enable APS when pen input is out of range"
+					},
+					"touch":{
+						"title": "Touch Input",
+						"description": "When Touch input is used, Enable APS when touch input is not detected"
+					},
+					"hand":{
+						"title": "Hand proximity sensing on computer edges",
+						"description": "When tablet mode is enabled, Enable APS when hand is not detected"
+					}
 				}
 			},
 			"intelligentMedia": {
@@ -1099,7 +1116,7 @@
 		"devices": "Devices",
 		"seeProtectedDevices": "See protected devices",
 		"addDevice": "add device",
-		"trialExpired": "Trial Expired",
+		"trialExpired": "Trial expired",
 		"trialExpiredSubtext": "Upgrade to protect all of your devices",
 		"upgrade": "upgrade",
 		"freeTrial": "Free 30 day trial",
@@ -1202,7 +1219,7 @@
 		},
 		"quickAccess": {
 			"categories": "Categories",
-			"categoriesDesc": "Find helpful information in our articles",
+			"categoriesDesc": "Find helpful information in our articles.",
 			"seeArticles": "SEE ARTICLES"
 		}
 	},
