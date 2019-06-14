@@ -189,7 +189,9 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 	}
 
 	public getGamingQuickSettings() {
-		const status: any = this.gamingQuickSettingsService.GetThermalModeStatus() || new ThermalModeStatus();
+		const status: any = this.gamingQuickSettingsService.GetThermalModeStatus().then(res => {
+			console.log('RESPONSE from the SET ----------------------<>', res);
+		}) || new ThermalModeStatus();
 		this.drop.curSelected = status.thermalModeStatus;
 	}
 }

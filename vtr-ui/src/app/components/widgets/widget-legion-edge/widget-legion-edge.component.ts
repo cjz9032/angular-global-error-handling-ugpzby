@@ -414,11 +414,7 @@ export class WidgetLegionEdgeComponent implements OnInit {
 				.then((value: boolean) => {
 					console.log('setRamOc.then', value);
 					if (value !== undefined) {
-						if (this.gamingCapabilities.xtuService === false) {
-							this.legionUpdate[1].isDriverPopup = $event;
-						} else if (this.gamingCapabilities.xtuService === true) {
 							this.legionUpdate[1].isPopup = $event;
-						}
 						this.commonService.setLocalStorageValue(
 							LocalStorageKey.RamOcStatus,
 							$event.switchValue);
