@@ -1,0 +1,12 @@
+{
+	"linterOptions": {
+		"exclude": [
+			"**/*.js"
+		]
+	},
+	"rules": {
+		"no-console": [
+			true
+		]
+	}
+}

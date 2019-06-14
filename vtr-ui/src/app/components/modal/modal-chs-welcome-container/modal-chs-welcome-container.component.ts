@@ -25,7 +25,6 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 	containerPage: number;
 	switchPage: number;
 	isLenovoIdLogin: boolean;
-	indicatorList: Array<any>;
 	url = 'ms-settings:privacy-location';
 	showPageFour = false;
 	hasSystemPermissionShowed: boolean;
@@ -62,7 +61,16 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 		} else {
 			this.showPageFour = this.isLocationServiceOn ? false : true;
 		}
-		this.indicatorList = new Array(this.containerPage);
+
+		this.chs.on(EventTypes.chsHasSystemPermissionShowedEvent, (data) => {
+			this.hasSystemPermissionShowed = data;
+		});
+
+		this.chs.on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
+			this.isLocationServiceOn = data;
+			this.getContainerPage(data, this.isLenovoIdLogin);
+			this.showPageFour = data ? false : true;
+		});
 	}
 
 	closeModal() {
@@ -78,6 +86,16 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 	prev(switchPage) {
 		if (switchPage > 0) {
 			this.switchPage = switchPage - 1;
+		}
+	}
+
+	getContainerPage(isLocationServiceOn, isLenovoIdLogin) {
+		if (isLocationServiceOn === false && isLenovoIdLogin === false) {
+			this.containerPage = 4;
+		} else if (isLocationServiceOn && isLenovoIdLogin) {
+			this.containerPage = 2;
+		} else {
+			this.containerPage = 3;
 		}
 	}
 

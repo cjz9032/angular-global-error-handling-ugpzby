@@ -21,6 +21,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	@Output() contrastChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureChange: EventEmitter<ChangeContext> = new EventEmitter();
 	@Output() exposureToggle: EventEmitter<any> = new EventEmitter();
+	@Output() cameraAvailable: EventEmitter<boolean> = new EventEmitter();
 
 	public cameraDetail = new CameraDetail();
 	private cameraPreview: ElementRef;
@@ -109,21 +110,21 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 		console.log('InitializeCameraAsync');
 		const self = this;
 		try {
-
-
 			// Get available devices for capturing pictures
 			return this.findCameraDeviceByPanelAsync(this.Windows.Devices.Enumeration.Panel.front)
 				.then((camera) => {
 					if (!camera) {
-						console.log('No camera device found!');
+						this.cameraAvailable.emit(false);
 						return;
 					}
+
+					this.cameraAvailable.emit(true);
 					self.oMediaCapture = new self.Windows.Media.Capture.MediaCapture();
 
 					// Register for a notification when something goes wrong
 					// TODO: define the fail handle callback and show error message maybe... there's a chance another app is previewing camera, that's when failed happen.
-					self.oMediaCapture.addEventListener('failed', () => {
-						console.log('failed to capture camera');
+					self.oMediaCapture.addEventListener('failed', (error) => {
+						console.log('failed to capture camera', error);
 						self.cleanupCameraAsync();
 					});
 
@@ -137,7 +138,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 				}, (error) => {
 					this.disabledAll = true;
-					console.log(error.message);
+					console.log('findCameraDeviceByPanelAsync error', error.message);
 				}).then(function () {
 					return self.startPreviewAsync();
 				}).done();
@@ -182,7 +183,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 
 	public onAutoExposureChange($event: any) {
 		try {
-			console.log('onAutoExposureChange', this.cameraSettings.exposure.supported);
+			console.log('onAutoExposureChange', this.cameraSettings.exposure);
 			this.exposureToggle.emit($event);
 		} catch (error) {
 			console.error(error.message);

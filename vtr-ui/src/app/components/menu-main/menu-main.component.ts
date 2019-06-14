@@ -12,15 +12,14 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslationService } from 'src/app/services/translation/translation.service';
 import Translation from 'src/app/data-models/translation/translation';
-import { TranslationSection } from 'src/app/enums/translation-section.enum';
 import { environment } from '../../../environments/environment';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
 import { WindowsHello, EventTypes } from '@lenovo/tan-client-bridge';
 import { LenovoIdKey } from 'src/app/enums/lenovo-id-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { RegionService } from 'src/app/services/region/region.service';
-import { SupportService } from '../../services/support/support.service';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -55,7 +54,8 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 		vantageShellService: VantageShellService,
 		private translate: TranslateService,
 		private regionService: RegionService,
-		private smartAssist: SmartAssistService
+		private smartAssist: SmartAssistService,
+		private logger: LoggerService
 	) {
 		this.showVpn();
 		this.getMenuItems().then((items) => {
@@ -114,6 +114,7 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+
 		this.isDashboard = true;
 	}
 	ngDoCheck() {
@@ -182,12 +183,12 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			switch (notification.type) {
-				case LocalStorageKey.MachineInfo:
-					this.deviceModel = notification.payload.family;
-					this.country = notification.payload.country;
-					break;
 				case LenovoIdKey.FirstName:
 					this.firstName = notification.payload;
+					break;
+				case 'MachineInfo':
+					this.deviceModel = notification.payload.family;
+					this.country = notification.payload.country;
 					break;
 				default:
 					break;
@@ -281,32 +282,62 @@ export class MenuMainComponent implements OnInit, DoCheck, OnDestroy {
 					/**
 					* check if HPD related features are supported or not. If yes show Smart Assist tab else hide. Default is hidden
 					*/
-					this.smartAssist.getHPDVisibilityInIdeaPad()
-						.then((isAvailable: boolean) => {
-							console.log('getSmartAssistVisibility()', isAvailable);
-							isAvailable = true;
-							console.log('getHPDVisibilityInIdeaPad()', isAvailable);
-							// isAvailable = true;
-							this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
-							if (isAvailable) {
-								myDeviceItem.subitems.splice(4, 0, {
-									id: 'smart-assist',
-									label: 'common.menu.device.sub4',
-									path: 'smart-assist',
-									metricsEvent: 'itemClick',
-									metricsParent: 'navbar',
-									metricsItem: 'link.smartassist',
-									routerLinkActiveOptions: { exact: true },
-									icon: '',
-									subitems: []
-								});
-							}
-						})
-						.catch(error => {
-							console.log('error in getHPDVisibilityInIdeaPad()', error);
-						});
+					// this.smartAssist.getHPDVisibilityInIdeaPad()
+					// 	.then((isAvailable: boolean) => {
+					// 		console.log('getSmartAssistVisibility()', isAvailable);
+					// 		isAvailable = true;
+					// 		console.log('getHPDVisibilityInIdeaPad()', isAvailable);
+					// 		// isAvailable = true;
+					// 		this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
+					// 		if (isAvailable) {
+					// 			myDeviceItem.subitems.splice(4, 0, {
+					// 				id: 'smart-assist',
+					// 				label: 'common.menu.device.sub4',
+					// 				path: 'smart-assist',
+					// 				metricsEvent: 'itemClick',
+					// 				metricsParent: 'navbar',
+					// 				metricsItem: 'link.smartassist',
+					// 				routerLinkActiveOptions: { exact: true },
+					// 				icon: '',
+					// 				subitems: []
+					// 			});
+					// 		}
+					// 	})
+					// 	.catch(error => {
+					// 		console.log('error in getHPDVisibilityInIdeaPad()', error);
+					// 	});
+
+					Promise.all([
+						this.smartAssist.getHPDVisibilityInIdeaPad(),
+						this.smartAssist.getHPDVisibilityInThinkPad()
+					]).then((responses: any[]) => {
+						console.log('showSmartAssist.Promise.all()', responses);
+						const isAvailable = (responses[0] || responses[1]);
+						this.commonService.setLocalStorageValue(LocalStorageKey.IsHPDSupported, isAvailable);
+						if (isAvailable) {
+							myDeviceItem.subitems.splice(4, 0, {
+								id: 'smart-assist',
+								label: 'common.menu.device.sub4',
+								path: 'smart-assist',
+								metricsEvent: 'itemClick',
+								metricsParent: 'navbar',
+								metricsItem: 'link.smartassist',
+								routerLinkActiveOptions: { exact: true },
+								icon: '',
+								subitems: []
+							});
+						}
+					}).catch(error => {
+						this.logger.error('error in initSmartAssist.Promise.all()', error);
+					});
 				}
 			}
 		});
+	}
+
+	public openExternalLink(link) {
+		if (link) {
+			window.open(link);
+		}
 	}
 }

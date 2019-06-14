@@ -82,25 +82,25 @@ export class DisplayService {
 		return undefined;
 	}
 
-	public startMonitorForCamera(callback: any): Promise<FeatureStatus> {
+	public startCameraPrivacyMonitor(callback: any): Promise<FeatureStatus> {
 		try {
 			if (this.cameraPrivacyStatus) {
 				return this.cameraPrivacyStatus.startMonitor(callback);
 			}
 			return undefined;
-		} catch(error) {
+		} catch (error) {
 			throw new Error(error.message);
 		}
 	}
 
-	public stopMonitorForCamera(): Promise<FeatureStatus> {
+	public stopCameraPrivacyMonitor(): Promise<FeatureStatus> {
 		try {
 			if (this.cameraPrivacyStatus) {
 				return this.cameraPrivacyStatus.stopMonitor();
 			}
 
 			return undefined;
-		} catch(error) {
+		} catch (error) {
 			throw new Error(error.message);
 		}
 	}
@@ -204,26 +204,26 @@ export class DisplayService {
 		return undefined;
 	}
 
-public getDaytimeColorTemperature(): Promise<FeatureStatus> {
-	if (this.displayEyeCareMode) {
-		return this.displayEyeCareMode.getDaytimeColorTemperature();
+	public getDaytimeColorTemperature(): Promise<FeatureStatus> {
+		if (this.displayEyeCareMode) {
+			return this.displayEyeCareMode.getDaytimeColorTemperature();
+		}
+		return undefined;
 	}
-	return undefined;
-}
 
-public setDaytimeColorTemperature(value: number): Promise<boolean> {
-	if (this.displayEyeCareMode) {			
-		return this.displayEyeCareMode.setDaytimeColorTemperature(value);
+	public setDaytimeColorTemperature(value: number): Promise<boolean> {
+		if (this.displayEyeCareMode) {
+			return this.displayEyeCareMode.setDaytimeColorTemperature(value);
+		}
+		return undefined;
 	}
-	return undefined;
-}
 
-public resetDaytimeColorTemperature(): Promise<any> {
-	if (this.displayEyeCareMode) {
-		return this.displayEyeCareMode.resetDaytimeColorTemperature();
+	public resetDaytimeColorTemperature(): Promise<any> {
+		if (this.displayEyeCareMode) {
+			return this.displayEyeCareMode.resetDaytimeColorTemperature();
+		}
+		return undefined;
 	}
-	return undefined;
-}
 
 
 
@@ -254,8 +254,8 @@ public resetDaytimeColorTemperature(): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
 				return this.cameraSettings.startMonitor((response: any) => {
-					console.log("startMonitorForCameraPermission", response);
-					if (response.permission != undefined) {
+					console.log('startMonitorForCameraPermission', response);
+					if (response.permission !== undefined) {
 						this.commonService.sendNotification(DeviceMonitorStatus.CameraStatus, response.permission);
 					}
 				});
@@ -270,7 +270,7 @@ public resetDaytimeColorTemperature(): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
 				return this.cameraSettings.stopMonitor((response: boolean) => {
-					console.log("stopMonitorForCameraPermission", response);
+					console.log('stopMonitorForCameraPermission', response);
 				});
 			}
 			return undefined;
@@ -282,7 +282,7 @@ public resetDaytimeColorTemperature(): Promise<any> {
 	public stopEyeCareMonitor() {
 		if (this.isShellAvailable) {
 			this.displayEyeCareMode.stopMonitor((response: boolean) => {
-				//this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
+				// this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
 			});
 		}
 	}

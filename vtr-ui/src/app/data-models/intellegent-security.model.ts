@@ -3,10 +3,11 @@ export class IntelligentSecurity {
 	public zeroTouchLoginDistance: number;
 	public isZeroTouchLoginEnabled: boolean;
 	public isZeroTouchLockEnabled: boolean;
-	public autoScreenLockTimer: string;
+	public autoScreenLockTimer: any;
 	public isZeroTouchLockVisible: boolean;
 	public isZeroTouchLoginAdjustEnabled: boolean;
 	public isZeroTouchLoginVisible: boolean;
 	public isIntelligentSecuritySupported: boolean;
 	public isDistanceSensitivityVisible: boolean;
+	public isWindowsHelloRegistered: boolean;
 }

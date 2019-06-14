@@ -20,7 +20,8 @@
 					</div>
 
 					<div class="row py-5 smart-assist-card"
-						id="security">
+						id="security"
+						*ngIf="intelligentSecurity.isIntelligentSecuritySupported">
 						<div class="col-10 mx-auto">
 							<vtr-container-collapsible
 								[cardTitle]="'device.smartAssist.intelligentSecurity.title' | translate"
@@ -28,13 +29,11 @@
 								[isCollapsed]="false"
 								[allowCollapse]="true"
 								[theme]="'white'"
-								(toggle)="onCardCollapse($event)"
-								*ngIf="intelligentSecurity.isIntelligentSecuritySupported">
+								(toggle)="onCardCollapse($event)">
 								<!-- IdeaPad section -->
 								<ul class="list-group list-group-flush"
 									*ngIf="!isThinkPad">
-									<li class="no-border-bottom"
-										[class.disabled-overlay]="!intelligentSecurity.isHPDEnabled">
+									<li class="no-border-bottom">
 										<vtr-ui-row-switch
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLogin.title' | translate"
 											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.caption' | translate"
@@ -61,17 +60,18 @@
 											</vtr-ui-row-switch>
 											<div class="slider-note">
 												<vtr-ui-range-slider
-													*ngIf="intelligentSecurity.isZeroTouchLoginAdjustEnabled"
+													*ngIf="!intelligentSecurity.isZeroTouchLoginAdjustEnabled"
 													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
 													[minValue]="1"
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
 													[maxValue]="3"
 													(change)="setZeroTouchLoginSensitivity($event)"
-													[enableSlider]="!intelligentSecurity.isZeroTouchLoginAdjustEnabled"
-													[value]="intelligentSecurity.zeroTouchLoginDistance">
+													[value]="intelligentSecurity.zeroTouchLoginDistance"
+													[enableSlider]="false">
 												</vtr-ui-range-slider>
 												<div class="pt-3"
-													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled">
+													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled"
+													*ngIf="intelligentSecurity.isWindowsHelloRegistered">
 													<div class="feature-note p-4">
 														<div class="row">
 															<!-- <div class="col-auto pl-0">
@@ -140,10 +140,12 @@
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
 													[maxValue]="3"
 													(change)="setZeroTouchLoginSensitivity($event)"
-													[value]="intelligentSecurity.zeroTouchLoginDistance">
+													[value]="intelligentSecurity.zeroTouchLoginDistance"
+													[enableSlider]="false">
 												</vtr-ui-range-slider>
 												<div class="pt-3"
-													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled">
+													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled"
+													*ngIf="intelligentSecurity.isWindowsHelloRegistered">
 													<div class="feature-note p-4">
 														<div class="row blur">
 															<!-- <div class="col-auto pl-0">
@@ -377,7 +379,6 @@
 									</vtr-widget-questions>
 								</div>
 							</div>
-
 						</div>
 					</div>
 				</div>

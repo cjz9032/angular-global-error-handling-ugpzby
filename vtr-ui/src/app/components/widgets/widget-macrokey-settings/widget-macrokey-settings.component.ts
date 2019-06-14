@@ -90,6 +90,13 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			this.onGamingMacroKeyRecordedChangeEvent
 		);
 		this.shellService.unRegisterEvent(EventTypes.gamingMacroKeyKeyChangeEvent, this.onGamingMacroKeyKeyChangeEvent);
+		if (this.isRecording) {
+			this.macroKeyService.setStopRecording(this.numberSelected.key, false, true);
+			this.shellService.unRegisterEvent(
+				EventTypes.gamingMacroKeyKeyChangeEvent,
+				this.onGamingMacroKeyInputChangeEvent
+			);
+		}
 	}
 
 	public initMacroKeyEvents() {
@@ -178,8 +185,8 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		this.numberSelected = number;
 	}
 
-	onRecordingChanged(isRecording) {
-		this.isRecording = isRecording;
+	onRecordingChanged(recordingChangeData) {
+		this.isRecording = recordingChangeData.recordingStatus;
 		if (this.isRecording) {
 			this.macroKeyService.setStartRecording(this.numberSelected.key);
 			this.shellService.registerEvent(
@@ -187,7 +194,11 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 				this.onGamingMacroKeyInputChangeEvent.bind(this)
 			);
 		} else {
-			this.macroKeyService.setStopRecording(this.numberSelected.key, true, 'normal');
+			this.macroKeyService.setStopRecording(
+				this.numberSelected.key,
+				!recordingChangeData.stopType,
+				recordingChangeData.stopType
+			);
 			this.shellService.unRegisterEvent(
 				EventTypes.gamingMacroKeyKeyChangeEvent,
 				this.onGamingMacroKeyInputChangeEvent
