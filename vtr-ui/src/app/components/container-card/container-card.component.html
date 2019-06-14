@@ -18,7 +18,6 @@
 					<a [attr.href]="!actionLink ? null : actionLink"
 					   (click)="linkClicked(actionType, actionLink)"
 					   vtrMetrics
-					   metricsParent="Device.myDevice"
 					   metricsItemCategory="corner"
 					   metricsEvent="docClick"
 					   [metricsItemPosition]="order"
@@ -56,7 +55,6 @@
 					   target="_blank"
 					   class="card-image"
 					   vtrMetrics
-					   metricsParent="Device.MyDevice"
 					   metricsEvent="ArticleClick"
 					   metricsItemCategory="corner-article"
 					   [metricsItemPosition]="order"
