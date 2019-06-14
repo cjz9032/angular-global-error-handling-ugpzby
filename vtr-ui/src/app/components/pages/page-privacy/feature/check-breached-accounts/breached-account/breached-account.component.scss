@@ -172,6 +172,7 @@ $leftIndent: 7.5rem;
 
 	&__accordion-button {
 		@extend %button-link;
+		text-transform: capitalize;
 		cursor: pointer;
 		color: #4A81FD;
 		font-size: 1.6rem;
@@ -188,6 +189,7 @@ $leftIndent: 7.5rem;
 		}
 
 		&--to-right {
+			text-transform: uppercase;
 			@extend %button-link--to-right;
 
 			& span {

@@ -16,9 +16,9 @@
 				</div>
 			</div>
 
-			<div *ngIf="isError$ | async" class="confirm-error">
+			<div *ngIf="confirmationForm.touched && confirmationForm.dirty && confirmationForm.invalid || (isError$ | async)" class="confirm-error">
 				<img class="confirm-error__img" src="/assets/icons/privacy-tab/error-white.svg" alt="">
-				<p class="confirm-error__text">Sorry, the code you entered is not valid. Please try again.</p>
+				<p class="confirm-error__text">Invalid code.</p>
 			</div>
 		</div>
 
@@ -27,7 +27,7 @@
 					vtrSendAnalytics
 					[metricsEvent]="'ItemClick'"
 					[metricsItem]="'BreachedAccountsConfirmEmailButton'"
-					[class.confirm__confirm-btn--error]="confirmationForm.get('confirmationCode').dirty && confirmationForm.get('confirmationCode').invalid || (isError$ | async)"
+					[class.confirm__confirm-btn--error]="confirmationForm.touched && confirmationForm.dirty && confirmationForm.invalid || (isError$ | async)"
 					type="submit">
 				Confirm
 			</button>

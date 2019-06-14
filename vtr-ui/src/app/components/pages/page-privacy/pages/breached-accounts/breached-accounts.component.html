@@ -10,9 +10,11 @@
 			[isFigleafReadyToCommunication]="isFigleafReadyForCommunication$ | async">
 			Found <span class="breaches-page__title--red">{{breachedAccountsCount$ | async}}</span> breaches
 		</vtr-feature-header>
-
 		<button class="breaches-page__button"
-				*ngIf="!(isUserAuthorized$ | async) && !(isFigleafReadyForCommunication$ | async)"
+				*ngIf="(emailWasScanned$ | async) &&
+				(breachedAccounts$ | async)?.length &&
+				!(isUserAuthorized$ | async) &&
+				!(isFigleafReadyForCommunication$ | async)"
 				(click)="startVerify()">
 			Verify email
 		</button>
