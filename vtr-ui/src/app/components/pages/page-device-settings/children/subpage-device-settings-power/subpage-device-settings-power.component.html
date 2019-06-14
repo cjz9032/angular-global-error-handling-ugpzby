@@ -260,4 +260,24 @@
 		</div>
 	</div>
 
+	<div class="row py-5" *ngIf = "machineType == 1">
+		<div class="col-10 mx-auto ">
+			<vtr-container-collapsible
+				componentName="'device.deviceSettings.power.energyStar.title' | translate | lowercase"
+				[cardTitle]="'device.deviceSettings.power.energyStar.title' | translate"
+				[isCollapsed]="false">
+				
+					<div class="row energystar-container">
+						<div class="col-lg-2 col-md-2 col-sm-12">
+							<img class="img-fluid mx-auto d-block" src="/assets/images/energystar.png">
+						</div>
+						<div class="col-lg-10 col-md-10 col-sm-12 align-self-center">
+							<p class="energystar-text">{{'device.deviceSettings.power.energyStar.description' | translate}}</p>
+						</div>
+					</div>
+				
+			</vtr-container-collapsible>
+		</div>
+	</div>
+	
 </div>
