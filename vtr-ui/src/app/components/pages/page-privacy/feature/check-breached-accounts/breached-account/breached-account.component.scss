@@ -179,8 +179,20 @@ $leftIndent: 7.5rem;
 		line-height: 2.3rem;
 		letter-spacing: 0.5px;
 
+		& span {
+			cursor: pointer;
+		}
+
 		&--open {
 			@extend %button-link--open;
+		}
+
+		&--to-right {
+			@extend %button-link--to-right;
+
+			& span {
+				border-bottom: 1px solid #2D62D8;
+			}
 		}
 	}
 

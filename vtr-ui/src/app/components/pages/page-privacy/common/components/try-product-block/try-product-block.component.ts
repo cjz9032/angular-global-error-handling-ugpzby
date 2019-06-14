@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
 	selector: 'vtr-try-product-block',
@@ -6,10 +6,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 	styleUrls: ['./try-product-block.component.scss']
 })
 export class TryProductBlockComponent {
+	@Input() isFigleafReadyToCommunication = false;
 	@Input() texts: {
 		risk: string;
 		howToFix: string;
+		riskAfterInstallFigleaf?: string;
+		howToFixAfterInstallFigleaf?: string;
 	};
-
-	@Output() buttonClick = new EventEmitter();
 }

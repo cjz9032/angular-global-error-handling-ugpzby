@@ -18,9 +18,15 @@
 		</button>
 
 		<button class="breaches-page__button"
-				*ngIf="(isFigleafReadyForCommunication$ | async)"
+				*ngIf="(isFigleafReadyForCommunication$ | async) && !(breachedAccounts$ | async)?.length"
 				(click)="openFigleafApp()">
 			View in Lenovo Privacy
+		</button>
+
+		<button class="breaches-page__button"
+				*ngIf="(isFigleafReadyForCommunication$ | async) && (breachedAccounts$ | async)?.length"
+				(click)="openFigleafApp()">
+			Fix in Lenovo Privacy
 		</button>
 	</div>
 
