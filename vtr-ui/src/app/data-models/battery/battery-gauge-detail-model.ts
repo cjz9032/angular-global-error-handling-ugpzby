@@ -6,6 +6,7 @@ class BatteryGaugeDetail {
 	public isAirplaneModeEnabled: boolean;
 	public acAdapterStatus: string;
 	public isPowerDriverMissing: boolean;
+	public isExpressCharging: boolean;
 }
 
 export default BatteryGaugeDetail;
