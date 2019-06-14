@@ -4,27 +4,30 @@
 	@media #{$mediaquery_11} {
 		padding-top: 8.5rem;
 	}
-	@media #{$mediaquery_X5} {
-		padding-left: 8.5rem;
-		padding-top: 12.5rem;
-	}
+	// @media #{$mediaquery_X5} {
+	// 	padding-left: 8.5rem;
+	// 	padding-top: 12.5rem;
+	// }
 	.background-red {
-		background-image: url(../../../../assets/images/battery/Red--Top.png), url(../../../../assets/images/battery/Red--Bottom.png);
+		background-image: url(../../../../assets/images/battery/Red--Top.png),
+			url(../../../../assets/images/battery/Red--Bottom.png);
 	}
 	.background-green {
-		background-image: url(../../../../assets/images/battery/Green-Top.png), url(../../../../assets/images/battery/Green-Bottom.png);
+		background-image: url(../../../../assets/images/battery/Green-Top.png),
+			url(../../../../assets/images/battery/Green-Bottom.png);
 	}
 	.background-orange {
-		background-image: url(../../../../assets/images/battery/Orange--Top.png), url(../../../../assets/images/battery/Orange--Bottom.png);
+		background-image: url(../../../../assets/images/battery/Orange--Top.png),
+			url(../../../../assets/images/battery/Orange--Bottom.png);
 	}
-	
+
 	.container {
 		border-radius: 1rem;
 		background-color: $light;
 		box-shadow: $drop_shadow;
-        background-position: right top, right bottom;
-        background-repeat: no-repeat;
-        background-size: contain;
+		background-position: right top, right bottom;
+		background-repeat: no-repeat;
+		background-size: contain;
 		.battery-gauge-label {
 			opacity: 0.58;
 			color: $main_dark;
@@ -72,7 +75,7 @@
 			letter-spacing: 0;
 		}
 		.battery-conditions-icon {
-			font-size: 2.0rem;
+			font-size: 2rem;
 		}
 		.good {
 			color: #{$go_light};
@@ -83,7 +86,7 @@
 		.fair {
 			color: #{$orange};
 		}
-		.fair-inner-icon{
+		.fair-inner-icon {
 			color: #{$light};
 		}
 	}

@@ -575,4 +575,10 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	public getGamingThermalMode() {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingThermalmode;
+		}
+	}
 }
