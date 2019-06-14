@@ -8,6 +8,8 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
@@ -29,6 +31,7 @@ export class PageSecurityAntivirusComponent implements OnInit {
 	enableFirewall = 'security.antivirus.common.enableFirewall';
 	backId = 'sa-av-btn-back';
 	mcafeeArticleCategory: string;
+	isOnline = true;
 
 	@HostListener('window:focus')
 	onFocus(): void {
@@ -48,6 +51,10 @@ export class PageSecurityAntivirusComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		this.isOnline = this.commonService.isOnline;
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
 		if (this.antiVirus.mcafee) {
 			this.viewModel.mcafee = this.antiVirus.mcafee;
 			this.commonService.setLocalStorageValue(LocalStorageKey.SecurityMcAfee, this.viewModel.mcafee);
@@ -234,5 +241,18 @@ export class PageSecurityAntivirusComponent implements OnInit {
 		});
 
 		articleDetailModal.componentInstance.articleId = this.urlGetMcAfee;
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
+		}
 	}
 }

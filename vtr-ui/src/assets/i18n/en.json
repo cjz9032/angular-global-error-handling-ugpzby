@@ -556,17 +556,11 @@
 					"NotGood": {
 						"title": "The battery is not in a good Condition"
 					},
-					"LimitedACAdapterSupport": {
-						"title": "Limited Support AC Adapter"
-					},
 					"NotSupportACAdapter": {
-						"title": "Not support AC Adapter"
-					},
-					"ACAdapterNotSupported": {
 						"title": "AC adapter not supported.",
 						"description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
 					},
-					"EnoughPowerACAdapter": {
+					"LimitedACAdapterSupport": {
 						"title": "AC adapter cannot provide enough power",
 						"description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
 					},
@@ -636,7 +630,16 @@
 							"mode3": "Performance mode",
 							"line1": "Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
 							"line2": "Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
-							"line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+							"line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance.",
+							"line4": "More info"
+						},
+						"intelligentCoolingModesModal": {
+							"title": "Change intelligent cooling modes",
+							"close": "close",
+							"coolingModesList": {
+								"list1": "Click on the windows battery-icon in the toolbar",
+								"list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+							}
 						}
 					},
 					"nonintelligentCooling": {
@@ -867,13 +870,13 @@
 					}
 				}
 			},
-				"inputAccessories": {
+			"inputAccessories": {
 				"title": "Input & Accessories",
 				"subtitle": "Input & Accessories Settings",
 				"description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
 				"inputAccessory": {
 					"title": "Intelligent Keyboard",
-						"hiddenKeyboardFunctions": {
+					"hiddenKeyboardFunctions": {
 						"title": "Hidden keyboard functions",
 						"description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
 					}
@@ -956,6 +959,18 @@
 						"startTime": "0 minutes",
 						"endTime": "60 minutes"
 					}
+				}
+			},
+			"activeProtectionSystem": {
+				"title": "Active Protection System",
+				"description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+				"activeProtection": {
+					"title": "Active Protection",
+					"caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection"
+				},
+				"manualActiveProtectionSuspension": {
+					"title": "Manual Active Protection Suspension",
+					"caption": "Allow me to manually suspend the Active Protection System"
 				}
 			},
 			"intelligentMedia": {
@@ -1084,7 +1099,7 @@
 		"devices": "Devices",
 		"seeProtectedDevices": "See protected devices",
 		"addDevice": "add device",
-		"trialExpired": "Trial Expired",
+		"trialExpired": "Trial expired",
 		"trialExpiredSubtext": "Upgrade to protect all of your devices",
 		"upgrade": "upgrade",
 		"freeTrial": "Free 30 day trial",
@@ -1137,7 +1152,7 @@
 			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
 			"alreadyHaveAccount": "Already have an activation code?"
 		}
-	}, 
+	},
 	"support": {
 		"common": {
 			"getSupport": "Get Support"
@@ -1187,7 +1202,7 @@
 		},
 		"quickAccess": {
 			"categories": "Categories",
-			"categoriesDesc": "Find helpful information in our articles",
+			"categoriesDesc": "Find helpful information in our articles.",
 			"seeArticles": "SEE ARTICLES"
 		}
 	},
@@ -1313,7 +1328,7 @@
 				"homeSecurityAffect3": "Connected Home Security ensures that other devices connected to your home network are safe.",
 				"describe": "Unsafe devices and networks can introduce malware, lead to identity theft, and leak private and financial information. Enable this feature to reduce the risk of having your device, and your home network exposed to attackers",
 				"subtitle": "Peace of Mind",
-				"subtitleDescribe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more in about Connected Home Security in Tips and Tricks.",
+				"subtitleDescribe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more about Connected Home Security <tag>here</tag>.",
 				"tryNow": "Try Now"
 			},
 			"invitationcode": {
@@ -1422,13 +1437,13 @@
 			"whyWindowsHelloDescription1": "Windows Hello makes logging into your PC easier and more secure, and can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello.",
 			"startUsingToday": "Start using Windows Hello Today",
 			"visitAndRegister": "Visit the Windows Hello page and register your fingerprint.",
-			"visitInSettings": "<tag> Visit Windows Hello</tag> in system settings",
+			"visitInSettings": "<tag> Visit Windows Hello</tag> in system settings.",
 			"unlock": "Use Windows Hello to log into and unlock your PC with a touch of a finger on the sensor.",
 			"startUsingWindowsHello": "Start using Windows Hello to log into Microsoft Apps such as Outlook, OneDrive, Office 365 and Xbox Live.",
 			"visitMicrosoft": "Visit Microsoft",
 			"poweredByWindowsHello": "Powered By Windows Hello",
 			"privacyPolicy": "Read more on the <tag>Privacy Policy</tag>",
-			"whyWindowsHelloDescription2": "Windows Hello makes logging into your PC easier and more secure. And you can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello",
+			"whyWindowsHelloDescription2": "Windows Hello makes logging into your PC easier and more secure. And you can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello.",
 			"authentication": "Windows Hello Authentication",
 			"traditional": "Traditional passwords can be stolen and used to access your account from anywhere in the world. More secure and convenient. Windows Hello is the next generation of a password. Use your fingerprint reader instead of insecure passwords to log in.",
 			"howToStart": "How do I start using Windows Hello?"
