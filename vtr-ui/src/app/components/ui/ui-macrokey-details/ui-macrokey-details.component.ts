@@ -1,23 +1,32 @@
-import { Component, OnInit, Input, Output, EventEmitter, DoCheck } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	Input,
+	Output,
+	EventEmitter,
+	DoCheck,
+	OnChanges,
+	SimpleChange,
+	SimpleChanges
+} from '@angular/core';
 import { MacrokeyService } from './../../../services/gaming/macrokey/macrokey.service';
+import { isUndefined } from 'util';
 
 @Component({
 	selector: 'vtr-ui-macrokey-details',
 	templateUrl: './ui-macrokey-details.component.html',
 	styleUrls: [ './ui-macrokey-details.component.scss' ]
 })
-export class UiMacrokeyDetailsComponent implements OnInit, DoCheck {
+export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 	@Input() number;
 	@Input() isNumberpad = false;
 	@Output() isRecording = new EventEmitter<any>();
 	@Input() keyData: any;
+	@Input() recordingData: any = 0;
 	public recording: Boolean = false;
-	public showModal: Boolean = false;
-	public stopInterval: any;
 	public recordsList: any = [];
-	public inputProvided: Boolean = false;
-	public waitingDone: Boolean = false;
-
+	timeout: any;
+	showModal: Boolean = false;
 	modalContent = {
 		headerTitle: 'gaming.macroKey.popupContent.timeoutRecording.title',
 		bodyText: 'gaming.macroKey.popupContent.timeoutRecording.body',
@@ -29,10 +38,12 @@ export class UiMacrokeyDetailsComponent implements OnInit, DoCheck {
 	ngOnInit() {}
 
 	onStartClicked(event) {
-		setTimeout(() => {
-			console.log('wait done!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
-			this.waitingDone = true;
-		}, 10000);
+		this.timeout = setTimeout(() => {
+			const myChanges: SimpleChanges = {
+				recordingData: new SimpleChange(this.recordingData, this.recordingData, true)
+			};
+			this.ngOnChanges(myChanges);
+		}, 20 * 1000);
 		this.toggleRecording();
 	}
 
@@ -41,12 +52,16 @@ export class UiMacrokeyDetailsComponent implements OnInit, DoCheck {
 			this.number.status = true;
 		}
 		this.toggleRecording();
-		clearInterval(this.stopInterval);
+		clearTimeout(this.timeout);
 	}
 
-	toggleRecording() {
+	toggleRecording(isAbnormalStop: Boolean = false) {
 		this.recording = !this.recording;
-		this.isRecording.emit(this.recording);
+		const recordingChangeData = {
+			recordingStatus: this.recording,
+			stopType: isAbnormalStop
+		};
+		this.isRecording.emit(recordingChangeData);
 	}
 
 	recordsDelete(records) {
@@ -57,25 +72,25 @@ export class UiMacrokeyDetailsComponent implements OnInit, DoCheck {
 		});
 	}
 
-	ngDoCheck() {
-		// const currentKeyData = this.keyData;
-		// if (this.recording) {
-		// 	if (currentKeyData.inputs.length > 0) {
-		// 		this.inputProvided = true;
-		// 	} else {
-		// 		if (this.waitingDone) {
-		// 			if (currentKeyData.inputs.length === 0) {
-		// 				if (this.inputProvided) {
-		// 					this.modalContent.bodyText = 'gaming.macroKey.popupContent.inputStopped.body';
-		// 					this.showModal = !this.showModal;
-		// 				} else {
-		// 					this.modalContent.bodyText = 'gaming.macroKey.popupContent.timeoutRecording.body';
-		// 					this.showModal = !this.showModal;
-		// 				}
-		// 				this.toggleRecording();
-		// 			}
-		// 		}
-		// 	}
-		// }
+	ngOnChanges(changes) {
+		if (!isUndefined(changes.recordingData)) {
+			if (this.recording) {
+				if (changes.recordingData.currentValue.length === 0) {
+					if (changes.recordingData.previousValue.length > 0) {
+						this.modalContent.bodyText = 'gaming.macroKey.popupContent.inputStopped.body';
+						this.showModal = !this.showModal;
+					} else {
+						this.modalContent.bodyText = 'gaming.macroKey.popupContent.timeoutRecording.body';
+						this.showModal = !this.showModal;
+					}
+					this.toggleRecording(true);
+				} else if (changes.recordingData.currentValue.length === 40) {
+					this.modalContent.headerTitle = 'gaming.macroKey.popupContent.maximumInput.title';
+					this.modalContent.bodyText = 'gaming.macroKey.popupContent.maximumInput.body';
+					this.showModal = !this.showModal;
+					this.toggleRecording(true);
+				}
+			}
+		}
 	}
 }

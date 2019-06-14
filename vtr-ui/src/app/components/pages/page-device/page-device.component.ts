@@ -23,7 +23,7 @@ export class PageDeviceComponent implements OnInit {
 		private translate: TranslateService,
 	) {
 		this.fetchCMSArticles();
-		//Evaluate the translations for QA on language Change
+		// Evaluate the translations for QA on language Change
 		this.qaService.setTranslationService(this.translate);
 		this.qaService.setCurrentLangTranslations();
 	}

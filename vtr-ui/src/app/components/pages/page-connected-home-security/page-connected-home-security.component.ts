@@ -45,7 +45,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	eventEmitter = new EventEmitter();
 
 	welcomeModel: HomeSecurityWelcome;
-	connectedHomeSecurity: ConnectedHomeSecurity;
+	connectedHomeSecurity: any;
 	permission: any;
 
 
@@ -69,9 +69,22 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 
 	private createMockData() {
 		this.notifications = {items: []};
-		this.notifications.items.push(new WidgetItem({id: '1', status: 0, title: 'placeholder1', detail: 'placeholder1'}, this.translateService));
-		this.notifications.items.push(new WidgetItem({id: '1', status: 0, title: 'placeholder2', detail: 'placeholder2'}, this.translateService));
-		this.notifications.items.push(new WidgetItem({id: '1', status: 0, title: 'placeholder3', detail: 'placeholder3'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '2', title: '5 minutes disconnect', iconPath: 'assets/images/qa/svg_icon_qa_backup.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '3', title: '10 minutes disconnect', iconPath: 'assets/images/qa/svg_icon_qa_pcbit.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '1', title: 'Antivirus was disabled', iconPath: 'assets/images/qa/svg_icon_qa_battery.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '1', title: 'Passcode lock disabled 3 hours', iconPath: 'assets/images/qa/svg_icon_qa_tablet.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '1', title: '3 hours disconnect', iconPath: 'assets/images/qa/svg_icon_qa_cortana.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '1', title: '8 minutes disconnect', iconPath: 'assets/images/qa/svg_icon_qa_battery.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '1', title: 'Antivirus was disabled', iconPath: 'assets/images/qa/svg_icon_qa_pcbit.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
+		this.notifications.items.push(new WidgetItem({id: '1', title: 'Passcode lock disabled 3 hours', iconPath: 'assets/images/qa/svg_icon_qa_refresh.svg',
+		notificationDetail: 'Antivirus was disabled'}, this.translateService));
 		this.account = this.homeSecurityMockService.account;
 		this.connectedHomeSecurity.account = {
 			id: '',
@@ -89,13 +102,22 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.welcomeModel.isLenovoIdLogin = false; // mock data;
 		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, true);
-		this.welcomeModel.hasSystemPermissionShowed = this.connectedHomeSecurity.hasSystemPermissionShowed;
-		if (typeof this.connectedHomeSecurity.hasSystemPermissionShowed === 'boolean') {
+		const cacheSystemLocationShow = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed);
+		if (typeof cacheSystemLocationShow === 'boolean') {
+			this.welcomeModel.hasSystemPermissionShowed = cacheSystemLocationShow;
 			this.openModal();
+		} else {
+			this.permission.getSystemPermissionShowed().then((response) =>  {
+				this.welcomeModel.hasSystemPermissionShowed = response;
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed, response);
+				if (typeof this.welcomeModel.hasSystemPermissionShowed === 'boolean') {
+					this.openModal();
+				}
+			});
 		}
 		this.connectedHomeSecurity.on(EventTypes.chsHasSystemPermissionShowedEvent, (data) => {
 			this.welcomeModel.hasSystemPermissionShowed = data;
-			this.openModal();
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed, data);
 		});
 	}
 
@@ -105,8 +127,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		this.connectedHomeSecurity.refresh();
-		this.welcomeModel.hasSystemPermissionShowed = this.connectedHomeSecurity.hasSystemPermissionShowed;
+		this.permission.getSystemPermissionShowed().then(response =>  {
+			this.welcomeModel.hasSystemPermissionShowed = response;
+		});
 		this.welcomeModel.isLenovoIdLogin = false; // mock data;
 	}
 
