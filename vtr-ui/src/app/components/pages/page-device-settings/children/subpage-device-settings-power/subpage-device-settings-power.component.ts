@@ -850,7 +850,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	showPowerSettings() {
 
-		if (!(false)) {
+		if (!(!this.isDesktopMachine || this.showEasyResumeSection)) {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'power');
 		}
 
