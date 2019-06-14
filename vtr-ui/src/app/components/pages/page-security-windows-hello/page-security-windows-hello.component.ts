@@ -5,6 +5,8 @@ import { VantageShellService } from '../../../services/vantage-shell/vantage-she
 import { CMSService } from '../../../services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
+import {AppNotification} from 'src/app/data-models/common/app-notification.model';
+import {NetworkStatus} from 'src/app/enums/network-status.enum';
 
 @Component({
 	selector: 'vtr-page-security-windows-hello',
@@ -18,6 +20,7 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 	cardContentPositionA: any = {};
 	securityAdvisor: SecurityAdvisor;
 	backId = 'sa-wh-btn-back';
+	isOnline = this.commonService.isOnline;
 
 	constructor(
 		public mockService: MockService,
@@ -38,7 +41,11 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 		this.fetchCMSArticles();
 	}
 
-	ngOnInit() { }
+	ngOnInit() {
+		this.commonService.notification.subscribe((notification: AppNotification) => {
+			this.onNotification(notification);
+		});
+	}
 
 	setUpWindowsHello(): void {
 		this.windowsHello.launch();
@@ -89,5 +96,18 @@ export class PageSecurityWindowsHelloComponent implements OnInit {
 				console.log('fetchCMSContent error', error);
 			}
 		);
+	}
+
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
+		}
 	}
 }
