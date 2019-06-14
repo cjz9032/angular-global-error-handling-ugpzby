@@ -85,12 +85,12 @@ export class MacrokeyService {
 	}
 
 	// update the macrokey status with cache
-	setMacrokeyStatusCache(macrokeyStatusType: MacroKeyTypeStatus) {
+	setMacrokeyTypeStatusCache(macrokeyStatusType: MacroKeyTypeStatus) {
 		this.commonService.setLocalStorageValue(LocalStorageKey.MacroKeyType, macrokeyStatusType.MacroKeyType);
 		this.commonService.setLocalStorageValue(LocalStorageKey.MacroKeyStatus, macrokeyStatusType.MacroKeyStatus);
 	}
 
-	getMacrokeyStatusCache(): MacroKeyTypeStatus {
+	getMacrokeyTypeStatusCache(): MacroKeyTypeStatus {
 		const macrokeyStatusType = new MacroKeyTypeStatus();
 		macrokeyStatusType.MacroKeyType = this.commonService.getLocalStorageValue(LocalStorageKey.MacroKeyType);
 		macrokeyStatusType.MacroKeyStatus = this.commonService.getLocalStorageValue(LocalStorageKey.MacroKeyStatus);
@@ -125,11 +125,23 @@ export class MacrokeyService {
 
 	// Set Macrokey change status
 
-	setMacrokeyChangeStatusCache(changeStatus: Number) {
-		this.commonService.setLocalStorageValue(LocalStorageKey.MacroKeyChangeStatus, changeStatus);
-	}
+	// setMacrokeyTypeCache(macrokeyStatusType: MacroKeyTypeStatus) {
+	// 	this.commonService.setLocalStorageValue(LocalStorageKey.MacroKeyType, macrokeyStatusType.MacroKeyType);
+	// }
 
-	getMacrokeyChangeStatusCache() {
-		return this.commonService.getLocalStorageValue(LocalStorageKey.MacroKeyChangeStatus);
-	}
+	// getMacrokeyTypeCache(): MacroKeyTypeStatus {
+	// 	const macrokeyType = new MacroKeyTypeStatus();
+	// 	macrokeyType.MacroKeyType = this.commonService.getLocalStorageValue(LocalStorageKey.MacroKeyType);
+	// 	return macrokeyType;
+	// }
+
+	// setMacrokeyChangeStatusCache(macrokeyStatusType: MacroKeyTypeStatus) {
+	// 	this.commonService.setLocalStorageValue(LocalStorageKey.MacroKeyStatus, macrokeyStatusType.MacroKeyStatus);
+	// }
+
+	// getMacrokeyChangeStatusCache(): MacroKeyTypeStatus {
+	// 	const macroKeyChangeStatus = new MacroKeyTypeStatus();
+	// 	macroKeyChangeStatus.MacroKeyStatus = this.commonService.getLocalStorageValue(LocalStorageKey.MacroKeyStatus);
+	// 	return macroKeyChangeStatus;
+	// }
 }
