@@ -1,13 +1,15 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PowerService } from 'src/app/services/power/power.service';
-import { 
-	ICModes, 
-	IntelligentCoolingMode, 
-	IntelligentCoolingModes, 
+import {
+	ICModes,
+	IntelligentCoolingMode,
+	IntelligentCoolingModes,
 	IntelligentCoolingHardware } from 'src/app/enums/intelligent-cooling.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalIntelligentCoolingModesComponent } from '../../modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
 const thinkpad = "thinkpad";
 const ideapad = "ideapad";
 @Component({
@@ -32,15 +34,17 @@ export class PowerSmartSettingsComponent implements OnInit {
 	captionText = ""
 	machineType = "";
 	add = 0;
+	onReadMoreClick: boolean;
 	@Output() isPowerSmartSettingHidden = new EventEmitter<any>();
 
 	constructor(
-		public powerService: PowerService, 
+		public powerService: PowerService,
 		private translate: TranslateService,
-		public commonService: CommonService) { }
+		public commonService: CommonService,
+		public modalService: NgbModal) { }
 
 	ngOnInit() {
-		
+
 		let machineInfo = this.commonService.getLocalStorageValue(LocalStorageKey.MachineInfo);
 		this.machineType = machineInfo.subBrand.toLocaleLowerCase();
 		console.log("Machine Type: " + this.machineType)
@@ -92,14 +96,14 @@ export class PowerSmartSettingsComponent implements OnInit {
 					this.showIC = response.itsVersion + this.add;
 					this.captionText = this.translate.instant("device.deviceSettings.power.powerSmartSettings.description13");
 					let currentMode = IntelligentCoolingModes.getModeForIdeaPadITS3(response.currentMode);
-					if(currentMode == IntelligentCoolingModes.Error) { 
+					if(currentMode == IntelligentCoolingModes.Error) {
 						// need to make toggle button on
 						let customEvent = { switchValue: true }
 						this.onIntelligentCoolingToggle(customEvent, false);
 					} else {
 						// need to make toggle button off
 						this.setPerformanceAndCool(currentMode);
-					} 
+					}
 				} else if(response.itsVersion == 4) {
 					this.intelligentCoolingModes = IntelligentCoolingHardware.ITS14;
 					this.showIntelligentCoolingToggle = false;
@@ -108,7 +112,7 @@ export class PowerSmartSettingsComponent implements OnInit {
 					let currentMode = IntelligentCoolingModes.getMode(response.currentMode);
 					this.updateSelectedModeText(currentMode);
 					this.setPerformanceAndCool(currentMode);
-				} 
+				}
 			}
 		} catch (error) {
 			console.error("initPowerSmartSettingsForIdeaPad: " + error.message);
@@ -190,7 +194,7 @@ export class PowerSmartSettingsComponent implements OnInit {
 					if (this.cQLCapability || this.tIOCapability) {
 						this.showIntelligentCoolingToggle = true;
 						this.enableIntelligentCoolingToggle = await this.getLegacyAutoModeState();
-						
+
 						let customEvent = { switchValue: this.enableIntelligentCoolingToggle }
 						this.onIntelligentCoolingToggle(customEvent, false);
 					} else {
@@ -413,4 +417,28 @@ export class PowerSmartSettingsComponent implements OnInit {
 	}
 	//=============== End Legacy
 	//=================== End Power Smart Settings for ThinkPad
+
+	coolingModesPopUp() {
+		console.log("modal open");
+		this.modalService.open(ModalIntelligentCoolingModesComponent,  {
+			backdrop: 'static',
+			size: 'sm',
+			centered: true,
+			windowClass: 'Intelligent-Cooling-Modes-Modal'
+		}).result.then(
+			result => {
+				if (result === 'enable') {
+					// this.toggleOnOff.emit($event);
+				} else if (result === 'close') {
+					// this.isSwitchChecked = !this.isSwitchChecked;
+				}
+			},
+			reason => {
+			}
+		);
+	}
+
+	readMore() {
+		this.onReadMoreClick = true;
+	}
 }

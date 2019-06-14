@@ -79,7 +79,7 @@ export class MetricsDirective {
 			case 'articleclick':
 			case 'docclick': {
 				data.ItemType = 'ArticleClick';
-				data.ItemParent = this.metricsParent;
+				this.metricsParent = this.metricsParent.toLowerCase();
 				if (this.metricsItem) {
 					data.ItemName = this.metricsItem;
 				}
