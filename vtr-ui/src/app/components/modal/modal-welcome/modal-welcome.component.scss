@@ -1,15 +1,30 @@
 @import "../../../app.theme.scss";
 
-::ng-deep span.more-interests:hover, ::ng-deep .content-page-2 .privacy-check .linktext:hover{
+::ng-deep span.more-interests:hover,
+::ng-deep .content-page-2 .privacy-check .linktext:hover {
 	color: $main_gstart !important;
 	cursor: pointer;
 }
 
+:host {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+}
+
 .vtr-modal-welcome {
-	border: none;
-	// scroll-behavior: auto;
-	// overflow-y:scroll;
+	border-radius: $border_radius;
+	background-size: cover;
+	color: $main_dark;
+	box-shadow: $drop_shadow;
+	padding: 0;
+	position: relative;
+	width: 60rem;
+	max-width: 60rem !important;
+	height: 60rem;
 	background: $shade_lightest;
+	overflow: hidden;
 
 	.container {
 		width: 55rem;
@@ -22,17 +37,18 @@
 		// border-top-left-radius:1rem;
 		// border-top-right-radius:1rem;
 		background: url("./../../../../assets/images/welcome/header-1.jpg") no-repeat;
-		//background-size:100% 160px;
-		height: 275px;
+		//background-size:100% 16rem;
+		height: 24rem;
 		width: 100%;
 		background-position: center;
+
 		@media #{$mediaquery_11} {
 			height: 160px;
 		}
 
 		.title-alignment {
 			align-self: flex-end;
-			margin-bottom: 37px;
+			margin-bottom: 3.7rem;
 			line-height: 6rem;
 
 			.title1 {
@@ -50,17 +66,11 @@
 	}
 
 	.banner-page-2 {
-		// border-top-left-radius:1rem;
-		// border-top-right-radius:1rem;
 		background: url("./../../../../assets/images/welcome/header-2.jpg") no-repeat;
-		//background-size:100% 160px;
-		height: 100px;
+		height: 10rem;
 		width: 100%;
 		background-position: center;
-		margin-bottom: 30px;
-		@media #{$mediaquery_11} {
-			height: 44px;
-		}
+		margin-bottom: 3rem;
 	}
 
 	.font-14-semi {
@@ -93,9 +103,10 @@
 		overflow-y: auto;
 		overflow-x: hidden;
 		color: $dark;
-		padding: 0px 37px 0px 72px;
-		margin-right: 20px;
-		height: 364px;
+		margin: 25px 0px 25px -6px;
+		padding: 0 3.7rem 0 7.2rem;
+		margin-right: 2rem;
+		height: 38rem;
 		@media #{$mediaquery_11} {
 			height: 236px;
 			padding: 0px 0px 0px 32px;
@@ -104,18 +115,20 @@
 
 		img {
 			width: 100%;
-			height: 65px;
+			height: 6.5rem;
 		}
 
-		.top-margin {
-			margin: 25px 0px 25px -6px;
+		.device-image-content {
+			padding: 0 0.6rem;
 		}
 
 		.device-image {
 			cursor: pointer;
-			padding-right: 6px;
-			padding-left: 6px;
+			width: 100%;
+			height: 100%;
 			position: relative;
+			border-radius: $border_radius_sm;
+			overflow: hidden;
 
 			&::after {
 				content: "";
@@ -126,18 +139,17 @@
 				background: rgba(0, 0, 0, 0.3);
 				position: absolute;
 				z-index: 1;
-				margin-left: 6px;
-				margin-right: 6px;
 			}
 
 			label {
 				font-size: 1.8rem;
-				font-weight: bold;
 				width: 100%;
 				height: 100%;
+				line-height: 2rem;
 				align-items: center;
 				display: flex;
 				justify-content: center;
+				font-weight: $weight_bold;
 				z-index: 2;
 			}
 
@@ -153,14 +165,13 @@
 		}
 
 		.interests {
-			margin-top: 25px;
-			margin-left: 1px;
-			margin-right: 1px;
+			margin-left: 0.1rem;
+			margin-right: 0.1rem;
 
 			div {
-				margin-left: 10px;
-				padding-left: 0px;
-				padding-right: 0px;
+				margin-left: 1rem;
+				padding-left: 0;
+				padding-right: 0;
 
 				input {
 					display: none !important;
@@ -172,13 +183,9 @@
 			}
 		}
 
-		.more-interest {
-			margin-bottom: 28px;
-		}
-
 		.privacy-check {
 			opacity: 1;
-			margin-left: 6px;
+			margin-left: 0.6rem;
 
 			.linktext {
 				color: #6f7170;
@@ -191,62 +198,58 @@
 		}
 
 		.custom-control-label {
-			padding-left: 23px;
-			line-height: 1.15;
+			padding-left: 2.2rem;
+			line-height: 1.8rem;
+			font-size: 1.5rem;
+			font-weight: $weight_regular;
 
 			// rounded square-box background
 			&::before {
-				top: 0.6rem;
-				width: 2rem;
-				height: 2rem;
+				width: 1.8rem;
+				height: 1.8rem;
 			}
 
 			// tick mark
 			&::after {
-				top: 0.5rem;
-				width: 2.4rem;
-				height: 2.4rem;
-				left: -1.7rem;
+				top: 0;
+				width: 2rem;
+				height: 2rem;
+				left: -1.6rem;
 			}
 		}
 	}
 
 	.content {
-		overflow-y: scroll;
+		overflow-y: auto;
 		color: $dark;
-		padding: 0px 37px 0px 57px;
-		margin-top: 29px;
-		margin-right: 20px;
-		height: 184px;
-		font-weight: 300;
+		padding: 0 3.7rem 0 5.7rem;
+		margin-top: 3rem;
+		margin-right: 2rem;
+		height: 24rem;
+		font-size: 1.5rem;
+		font-weight: $weight_regular;
+
 		@media #{$mediaquery_11} {
-			padding: 0px 0px 0px 17px;
-			height: 116px;
+			padding: 0px 0px 0px 1.7rem;
+			height: 11.6rem;
 		}
 
 		ul li {
-			margin-bottom: 24px;
+			margin-bottom: 1.2rem;
 		}
 
 		div.row:first-child {
-			margin-bottom: 24px;
+			margin-bottom: 2rem;
 		}
 	}
 
 	.next-btn {
-		margin-bottom: 15px;
-		margin-top: 30px;
-		@media #{$mediaquery_11} {
-			margin-top: 16px;
-		}
+		height: 9rem;
 	}
 
 	.vtr-progress-bar {
-		//padding: 44px 7px 22px 7px;
-		padding: 10px 7px 15px 7px;
-		@media #{$mediaquery_11} {
-			padding: 10px 7px 15px 7px;
-		}
+		//padding: 4.4rem .7rem 2.2rem .7rem;
+		padding: 1rem 0.7rem 1.5rem 0.7rem;
 	}
 
 	.screen1 {
@@ -340,7 +343,6 @@
 	// 	opacity: 0.5 !important;
 	// }
 	div.radio-is-selected input[type="radio"]:not(:checked) + img {
-
 		div.radio-is-selected input[type="radio"]:not(:checked) + img {
 			opacity: 0.4 !important;
 		}

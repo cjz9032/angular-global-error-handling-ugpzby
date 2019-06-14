@@ -26,6 +26,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public easyResumeStatus = new FeatureStatus(false, true);
 	public conservationModeStatus = new FeatureStatus(false, true);
 	public expressChargingStatus = new FeatureStatus(false, true);
+	public conservationModeLock = false;
+	public expressChargingLock = false;
 
 	primaryCheckBox = false;
 	secondaryCheckBox = false;
@@ -57,10 +59,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	showBatteryThreshold = false;
 	value = 1;
 	headerMenuItems = [
-		{
-			title: 'device.deviceSettings.power.jumpto.cooling',
-			path: 'cooling'
-		},
+		// start of MVP1.5 release hot-fix
+		// {
+		// 	title: 'device.deviceSettings.power.jumpto.cooling',
+		// 	path: 'cooling'
+		// },
+		// end of MVP1.5 release hot-fix
 		{
 			title: 'device.deviceSettings.power.jumpto.battery',
 			path: 'battery',
@@ -194,6 +198,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		// console.log('after expressCharging :' + this.batterySettings.status.expressCharging);
 		if (mode !== undefined) {
 			if (mode === 'expressCharging') {
+				this.conservationModeLock = true;
+				this.expressChargingLock = false;
 				if (this.conservationModeStatus.status === true && event.switchValue) {
 					await this.setConservationModeStatusIdeaNoteBook(!event.switchValue);
 					await this.setRapidChargeModeStatusIdeaNoteBook(event.switchValue);
@@ -206,7 +212,10 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					await this.setRapidChargeModeStatusIdeaNoteBook(event.switchValue);
 					this.expressChargingStatus.status = !event.switchValue;
 				}
+				this.conservationModeLock = false;
 			} else if (mode === 'conservationMode') {
+				this.conservationModeLock = false;
+				this.expressChargingLock = true;
 				if (this.expressChargingStatus.status === true && event.switchValue) {
 					await this.setRapidChargeModeStatusIdeaNoteBook(!event.switchValue);
 					await this.setConservationModeStatusIdeaNoteBook(event.switchValue);
@@ -219,6 +228,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					await this.setConservationModeStatusIdeaNoteBook(event.switchValue);
 					this.conservationModeStatus.status = !event.switchValue;
 				}
+				this.expressChargingLock = false;
 			}
 		}
 	}
@@ -796,7 +806,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					stopValue: batteryDetails.stopChargeValue,
 					checkBoxValue: batteryDetails.autoChecked
 				};
-				 console.log('set values -->', batteryInfo);
+				console.log('set values -->', batteryInfo);
 				this.powerService
 					.setChargeThresholdValue(batteryInfo)
 					.then((value: any) => {
@@ -836,7 +846,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			} catch (error) {
 				console.error(error.message);
 			}
-
 		}
 	}
 
@@ -849,8 +858,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	showPowerSettings() {
-		//return !this.isDesktopMachine || this.showEasyResumeSection || this.usbChargingInBatteryModeStatus;
-		//return false;
+		// return !this.isDesktopMachine || this.showEasyResumeSection || this.usbChargingInBatteryModeStatus;
+		// return false;
 		return !this.isDesktopMachine || this.showEasyResumeSection;
 	}
 }

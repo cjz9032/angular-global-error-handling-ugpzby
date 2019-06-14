@@ -83,8 +83,9 @@ export class AppComponent implements OnInit {
 	openWelcomeModal(page: number) {
 		const modalRef = this.modalService.open(ModalWelcomeComponent,
 			{
-				backdrop: 'static'
-				, windowClass: 'welcome-modal-size'
+				backdrop: 'static',
+				centered: true,
+				windowClass: 'welcome-modal-size'
 			});
 		modalRef.componentInstance.page = page;
 		modalRef.result.then(
@@ -132,7 +133,7 @@ export class AppComponent implements OnInit {
 
 		// When startup try to login Lenovo ID silently (in background),
 		//  if user has already logged in before, this call will login automatically and update UI
-		if (!this.deviceService.isArm) {
+		if (!this.deviceService.isArm && this.userService.isLenovoIdSupported()) {
 			this.userService.loginSilently();
 		}
 
@@ -159,20 +160,23 @@ export class AppComponent implements OnInit {
 			this.deviceService.getMachineInfo()
 				.then((value: any) => {
 					console.log('getMachineInfo.then', value);
-					if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
-						this.translate.use(value.locale.substring(0, 2));
-					} else {
-						if (value && value.locale.substring(0, 2).toLowerCase() === 'pt') {
-							value.locale.toLowerCase() === 'pt-br' ? this.translate.use('pt-BR') : this.translate.use('pt');
-						}
-						if (value && value.locale.toLowerCase() === 'zh-hans') {
-							this.translate.use('zh-Hans');
-						}
-						if (value && value.locale.toLowerCase() === 'zh-hant') {
-							this.translate.use('zh-Hant');
-						}
-					}
-					this.commonService.setLocalStorageValue(LocalStorageKey.MachineInfo, value);
+					// start of MVP1.5 release hot-fix
+
+					// if (value && !['zh', 'pt'].includes(value.locale.substring(0, 2).toLowerCase())) {
+					// 	this.translate.use(value.locale.substring(0, 2));
+					// } else {
+					// 	if (value && value.locale.substring(0, 2).toLowerCase() === 'pt') {
+					// 		value.locale.toLowerCase() === 'pt-br' ? this.translate.use('pt-BR') : this.translate.use('pt');
+					// 	}
+					// 	if (value && value.locale.toLowerCase() === 'zh-hans') {
+					// 		this.translate.use('zh-Hans');
+					// 	}
+					// 	if (value && value.locale.toLowerCase() === 'zh-hant') {
+					// 		this.translate.use('zh-Hant');
+					// 	}
+					// }
+
+					// end of MVP1.5 release hot-fix
 				}).catch(error => {
 					console.error('getMachineInfo', error);
 				});

@@ -13,9 +13,9 @@ export class ConfigService {
 	appBrand = 'Lenovo';
 	appName = 'Vantage';
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
-	constructor(private deviceService: DeviceService) {}
+	constructor(private deviceService: DeviceService) { }
 
-	menuItemsGaming: Array < any > = [{
+	menuItemsGaming: Array<any> = [{
 		id: 'device',
 		label: 'common.menu.device.title',
 		path: 'device-gaming',
@@ -94,7 +94,7 @@ export class ConfigService {
 		forArm: true,
 		subitems: []
 	}];
-	menuItems: Array < any > = [{
+	menuItems: Array<any> = [{
 		id: 'dashboard',
 		label: 'common.menu.dashboard',
 		path: 'dashboard',
@@ -252,7 +252,7 @@ export class ConfigService {
 		forArm: true,
 		subitems: []
 	}];
-	menuItemsPrivacy: Array < any > = [{
+	menuItemsPrivacy: Array<any> = [{
 		id: 'dashboard',
 		label: 'common.menu.dashboard',
 		path: 'dashboard',
@@ -369,7 +369,7 @@ export class ConfigService {
 			icon: '',
 			subitems: []
 		}]
-	},  {
+	}, {
 		id: 'privacy',
 		label: 'common.menu.privacy',
 		path: 'privacy/breaches',
@@ -382,7 +382,7 @@ export class ConfigService {
 		},
 		forArm: false,
 		subitems: []
-	},  {
+	}, {
 		id: 'support',
 		label: 'common.menu.support',
 		path: 'support',
@@ -422,7 +422,7 @@ export class ConfigService {
 		},
 		forArm: true,
 		subitems: []
-	}, ];
+	},];
 	getMenuItems(isGaming) {
 		if (isGaming) {
 			return this.menuItemsGaming;

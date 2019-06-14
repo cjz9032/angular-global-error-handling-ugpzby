@@ -18,6 +18,7 @@ import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { UserService } from '../../../services/user/user.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { QA } from 'src/app/data-models/qa/qa.model';
 
 @Component({
 	selector: 'vtr-page-dashboard',
@@ -33,7 +34,6 @@ export class PageDashboardComponent implements OnInit {
 	public systemStatus: Status[] = [];
 	public securityStatus: Status[] = [];
 	public isOnline = true;
-	// qas: QA[] = [];
 
 	heroBannerItems = [];
 	cardContentPositionA: any = {};
@@ -75,17 +75,20 @@ export class PageDashboardComponent implements OnInit {
 			this.submit = value;
 			this.feedbackButtonText = this.submit;
 		});
-		//Evaluate the translations for QA on language Change
+		// Evaluate the translations for QA on language Change
 		this.qaService.setTranslationService(this.translate);
 		this.qaService.setCurrentLangTranslations();
 
 	}
 
 	ngOnInit() {
+		// start of MVP1.5 release hot-fix
 		// reroute default application's default URL if gaming device
-		if (this.deviceService.isGaming) {
-			this.router.navigateByUrl(this.configService.getMenuItems(this.deviceService.isGaming)[0].path);
-		}
+		// if (this.deviceService.isGaming) {
+		// 	this.router.release/MVP1.5(this.configService.getMenuItems(this.deviceService.isGaming)[0].path);
+		// }
+		// end of MVP1.5 release hot-fix
+
 		const self = this;
 		this.translate.stream('lenovoId.user').subscribe((value) => {
 			if (!self.userService.auth) {
@@ -328,7 +331,7 @@ export class PageDashboardComponent implements OnInit {
 	}
 
 	private setDefaultSystemStatus() {
-		let memory = new Status();
+		const memory = new Status();
 		memory.status = 4;
 		memory.id = 'memory';
 
@@ -411,7 +414,9 @@ export class PageDashboardComponent implements OnInit {
 			const memory = new Status();
 			memory.status = 1;
 			memory.id = 'memory';
+
 			memory.title = this.translate.instant('dashboard.systemStatus.memory.title'); // 'Memory';
+
 			memory.detail = this.translate.instant('dashboard.systemStatus.memory.detail.notFound'); // 'Memory not found';
 			this.translate.stream('dashboard.systemStatus.memory.title').subscribe((value) => {
 				memory.title = value;
@@ -440,6 +445,7 @@ export class PageDashboardComponent implements OnInit {
 			const disk = new Status();
 			disk.status = 1;
 			disk.id = 'disk';
+
 			disk.title = this.translate.instant('dashboard.systemStatus.diskSpace.title'); // 'Disk Space';
 			disk.detail = this.translate.instant('dashboard.systemStatus.diskSpace.detail.notFound'); // 'Disk not found';
 
@@ -549,7 +555,7 @@ export class PageDashboardComponent implements OnInit {
 		});
 
 		this.translate.stream('common.securityAdvisor.disabled').subscribe((value) => {
-			antiVirus.detail = value;// 'Disabled';
+			antiVirus.detail = value; // 'Disabled';
 		});
 
 		antiVirus.path = 'security/anti-virus';
