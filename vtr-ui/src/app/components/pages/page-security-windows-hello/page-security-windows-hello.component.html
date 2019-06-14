@@ -136,26 +136,6 @@
 													</div>
 												</div>
 											</li>
-											<!-- <li class="good">
-												<div class="container-fluid">
-													<div class="row align-items-center">
-														<div class="col-auto">
-															<div class="bullet-icon">
-																<div class="icon-bkg">
-																	<fa-icon [icon]="['fas', 'check']"></fa-icon>
-																</div>
-															</div>
-														</div>
-														<div class="col">
-															<div class="text-regular">
-																Start using SurfEasy to protect yourself while browsing
-																the internet. Enjoy the no-log VPN for every device
-															</div>
-
-														</div>
-													</div>
-												</div>
-											</li> -->
 											<li class="good">
 												<div class="container-fluid">
 													<div class="row align-items-center">
@@ -169,7 +149,7 @@
 														<div class="col">
 															<div class="text-regular">
 																{{'security.windowsHello.startUsingWindowsHello' | translate}}
-																<a id="sa-wh-lnk-visitmicrosoft"
+																<a *ngIf="isOnline; else spanText" id="sa-wh-lnk-visitmicrosoft"
 																	aria-label="sa-wh-lnk-visitmicrosoft"
 																	target="_blank"
 																	vtrMetrics
@@ -178,6 +158,7 @@
 																	href="https://support.microsoft.com/en-us/help/17215/windows-10-what-is-hello">
 																	{{'security.windowsHello.visitMicrosoft' | translate}}
 																</a>
+																<ng-template #spanText>{{'security.windowsHello.visitMicrosoft' | translate}}</ng-template>
 															</div>
 														</div>
 													</div>

@@ -172,9 +172,6 @@ import { PageSecurityPasswordComponent } from './components/pages/page-security-
 import { PageSecurityInternetComponent } from './components/pages/page-security-internet/page-security-internet.component';
 import { PageSecurityHomeSecurityComponent } from './components/pages/page-security-home-security/page-security-home-security.component';
 import { PageSecurityComponent } from './components/pages/page-security/page-security.component';
-import { PageConnectedHomeSecurityComponent } from './components/pages/page-connected-home-security/page-connected-home-security.component';
-import { ConnectedHomeComponent } from './components/pages/page-security-wifi/children/connected-home/connected-home.component';
-import { ConnectedHomeMyHomeComponent } from './components/pages/page-security-wifi/children/connected-home-my-home/connected-home-my-home.component';
 import { WifiSecurityComponent } from './components/pages/page-security-wifi/children/wifi-security/wifi-security.component';
 import { AdvisorWifiSecurityComponent } from './components/pages/page-security/children/advisor-wifi-security/advisor-wifi-security.component';
 import { PageSecurityWindowsHelloComponent } from './components/pages/page-security-windows-hello/page-security-windows-hello.component';
@@ -183,9 +180,6 @@ import { PageSecurityWindowsHelloComponent } from './components/pages/page-secur
 import { WidgetHomeSecurityDeviceComponent } from './components/widgets/widget-home-security-device/widget-home-security-device.component';
 import { WidgetSecurityStatusComponent } from './components/widgets/widget-security-status/widget-security-status.component';
 import { WidgetMcafeeComponent } from './components/widgets/widget-mcafee/widget-mcafee.component';
-import { WidgetHomeSecurityAccountStatusComponent } from './components/widgets/widget-home-security-account-status/widget-home-security-account-status.component';
-import { WidgetHomeSecurityMyDeviceComponent } from './components/widgets/widget-home-security-my-device/widget-home-security-my-device.component';
-import { WidgetHomeSecurityAllDevicesComponent } from './components/widgets/widget-home-security-all-devices/widget-home-security-all-devices.component';
 
 // SA pipes
 import { JoinclassPipe } from './pipe/security-wifi/join-class.pipe';
@@ -200,6 +194,19 @@ import { StatusTransformPipe } from './pipe/ui-security-statusbar/status-transfo
 import { PipeInstallPipe } from './pipe/security-antivirus/pipe-install.pipe';
 import { UiLightingProfileComponent } from './components/ui/ui-lighting-profile/ui-lighting-profile.component';
 import { UiDropDownComponent } from './components/ui/ui-dropdown/ui-dropdown.component';
+
+// CHS Components
+import { PageConnectedHomeSecurityComponent } from './components/pages/page-connected-home-security/page-connected-home-security.component';
+import { ConnectedHomeComponent } from './components/pages/page-security-wifi/children/connected-home/connected-home.component';
+import { ConnectedHomeMyHomeComponent } from './components/pages/page-security-wifi/children/connected-home-my-home/connected-home-my-home.component';
+
+// CHS widgets
+import { WidgetHomeSecurityAccountStatusComponent } from './components/widgets/widget-home-security-account-status/widget-home-security-account-status.component';
+import { WidgetHomeSecurityMyDeviceComponent } from './components/widgets/widget-home-security-my-device/widget-home-security-my-device.component';
+import { WidgetHomeSecurityAllDevicesComponent } from './components/widgets/widget-home-security-all-devices/widget-home-security-all-devices.component';
+
+// CHS pipes
+import { DaysIntervalPipe } from './pipe/connected-home-security/account-status/days-interval.pipe';
 
 import { AutoupdateSettingsComponent } from './components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
 import { UiLightingProfileToggleComponent } from './components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
@@ -397,7 +404,8 @@ library.add(fal);
 		UiChsStatusbarComponent,
 		UiColorWheelComponent,
 		SubpageDeviceSettingsInputAccessoryComponent,
-		ModalIntelligentCoolingModesComponent
+		ModalIntelligentCoolingModesComponent,
+		DaysIntervalPipe
 	],
 	imports: [
 		BrowserModule,
