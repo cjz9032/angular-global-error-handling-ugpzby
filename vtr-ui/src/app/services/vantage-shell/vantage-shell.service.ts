@@ -393,6 +393,13 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	public getQuickSettings() {
+		if (this.phoenix) {
+			return this.phoenix.gaming.gamingThermalmode;
+		}
+		return undefined;
+	}
+
 	public setThermalModeStatus(ThermalModeStatusObj: ThermalModeStatus): Boolean {
 		if (this.phoenix) {
 			// TODO Un comment below line when JSBridge is ready for integration.

@@ -157,20 +157,6 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 		if (!this.gamingSettings.dolbySoundFeature) {
 			this.quickSettings[3].isVisible = false;
 		}
-
-		// if (this.gamingSettings.smartFanFeature) {
-		// 	this.thermalModeStatusObj = this.gamingQuickSettingsService.GetThermalModeStatus();
-		// 	if (this.thermalModeStatusObj !== undefined) {
-		// 		this.listingopt.forEach((option) => {
-		// 			if (this.thermalModeStatusObj.thermalModeStatus === option.value) {
-		// 				option.selectedOption = true;
-		// 			}
-		// 		});
-		// 	} else {
-		// 		this.thermalModeStatusObj = new ThermalModeStatus();
-		// 		this.gamingQuickSettingsService.setThermalModeStatus(this.thermalModeStatusObj, this.thermalModeStatusObj);
-		// 	}
-		// }
 	}
 
 	// TODO have to test the functionality from going to another screen to this after JS bridge is done
@@ -189,9 +175,12 @@ export class WidgetQuicksettingsListComponent implements OnInit {
 	}
 
 	public getGamingQuickSettings() {
-		const status: any = this.gamingQuickSettingsService.GetThermalModeStatus().then(res => {
-			console.log('RESPONSE from the SET ----------------------<>', res);
-		}) || new ThermalModeStatus();
-		this.drop.curSelected = status.thermalModeStatus;
+		const thermalModeCacheStatus = this.gamingQuickSettingsService.getThermalModeCacheStatus(LocalStorageKey.CurrentThermalModeStatus);
+		if (thermalModeCacheStatus) {
+		this.drop.curSelected = thermalModeCacheStatus.thermalModeStatus;
+		}
+		this.gamingQuickSettingsService.GetThermalModeStatus().then((res: any) => {
+			// this.drop.curSelected = res;
+		});
 	}
 }
