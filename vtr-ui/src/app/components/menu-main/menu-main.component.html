@@ -87,7 +87,7 @@
 								 [metricsItem]="subitem.metricsItem"
 								 class="dropdown-item link"
 								 target="_blank"
-								 href="{{subitem.path}}" (click)="showMenu = false">{{subitem.label | translate}}</a>
+								 (click)="showMenu = false; openExternalLink(subitem.path)">{{subitem.label | translate}}</a>
 								<a *ngIf="!subitem.externallink && subitem.path==='support'"
 								 vtrMetrics
 								 routerLinkActive="link-active"
@@ -136,7 +136,7 @@
 								{{deviceService.isArm || userService.starter ? 'L' : userService.initials }}
 							</div>
 						</a>
-						<div class="dropdown-menu {{item.id}}"
+						<div class="dropdown-menu {{item.id}}" style="min-width: 22.5rem"
 						 id="navbarDropdownMenu"
 						 *ngIf="!deviceService.isArm"
 						 aria-labelledby="navbarDropdown">

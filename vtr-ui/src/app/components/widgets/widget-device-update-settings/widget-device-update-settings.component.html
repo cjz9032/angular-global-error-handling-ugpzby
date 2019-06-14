@@ -35,12 +35,13 @@
 											<a href="javascript:void();"
 												*ngIf="item.isSwitchVisible"
 												class="d-flex no-pointer">
+												<!-- <img class="off-state" src="../../../../assets/images/off-state.png"/> -->
 												<vtr-ui-switch-onoff [name]="item.type"
 													[name]="item.name"
 													(toggle)="onToggleOnOff($event)"
 													[value]="item.isChecked">
 												</vtr-ui-switch-onoff>
-												<vtr-ui-popover 
+												<vtr-ui-popover
 													[item]="item"
 													[showMePartially]="item.isPopup"
 													(closeClicked)="onClosed($event)">

@@ -28,9 +28,8 @@
 				@media #{$mediaquery_5} {
 					padding-right: 2rem;
 				}
-				@media #{$mediaquery_X3} {
+				@media #{$mediaquery_sm} {
 					padding-right: 0rem;
-					height: 28rem;
 				}
 			}
 			&.right {
@@ -38,7 +37,7 @@
 				@media #{$mediaquery_5} {
 					padding-left: 2rem;
 				}
-				@media #{$mediaquery_X3} {
+				@media #{$mediaquery_sm} {
 					padding-left: 0rem;
 				}
 			}
@@ -74,10 +73,13 @@
 					height: 22rem;
 				}
 				&.hds {
-					overflow: visible;
+					overflow: hidden;
 					position: absolute;
 					width: 100%;
 					border: 1px solid $gaming_darkest;
+					@media #{$mediaquery_sm} {
+						position: relative;
+					}
 					&.expanded {
 						height: auto;
 						border: 1px solid $gaming_dark;
@@ -322,7 +324,7 @@
 						&.right {
 							left: 19rem;
 							@media #{$mediaquery_6} {
-								left: 16rem;
+								left: 14.5rem;
 							}
 							.mask-obj {
 								background-color: $gaming_dark;
@@ -419,15 +421,6 @@
 						padding: 3rem;
 						.hd-item {
 							text-align: center;
-							.gaming-tooltip {
-								top: -3rem;
-							}
-							&:hover {
-								.gaming-tooltip {
-									display: inline-block;
-									opacity: 1;
-								}
-							}
 							.hd-item-label {
 								display: block;
 							}
@@ -458,8 +451,8 @@
 											border-radius: 0 calc(0.94 * #{$gaming_hd_diameter_lg})
 												calc(0.94 * #{$gaming_hd_diameter_lg}) 0;
 											@media #{$mediaquery_6} {
-												border-radius: calc(0.94 * #{$gaming_hd_diameter_md}) 0 0
-													calc(0.94 * #{$gaming_hd_diameter_md});
+												border-radius: 0 calc(0.94 * #{$gaming_hd_diameter_md}) 
+													calc(0.94 * #{$gaming_hd_diameter_md}) 0;
 											}
 										}
 									}
@@ -482,10 +475,7 @@
 						}
 					}
 					.hd-item {
-						margin-bottom: 2.5rem;
-						@media #{$mediaquery_6} {
-							margin-bottom: 3.5rem;
-						}
+						margin-bottom: 3.5rem;
 						&.danger {
 							.monitor-hd {
 								.hd-ring {
@@ -531,11 +521,11 @@
 							}
 							.hd-ring {
 								background: linear-gradient(125deg, $main_gstart 50%, $highlight_bright 100%);
-								width: 94%;
-								height: 94%;
+								width: 95%;
+								height: 95%;
 								position: relative;
-								top: 3%;
-								left: 3%;
+								top: 2.5%;
+								left: 2.5%;
 								border-radius: 50%;
 								border: 1px solid $gaming_dark;
 							}
@@ -569,7 +559,7 @@
 										height: 100%;
 										position: absolute;
 										left: 0;
-										border-radius: 50%;
+										// border-radius: 50%;
 										background-color: $gaming_dark;
 									}
 								}

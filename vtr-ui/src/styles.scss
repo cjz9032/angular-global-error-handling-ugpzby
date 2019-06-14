@@ -25,7 +25,9 @@ html {
 	font-size: 62.5%;
 	letter-spacing: 0;
 }
-
+*:not(a), input:not([type=radio]):not([type=checkbox]){
+	cursor: default;
+}
 @media #{$dpiquery_0} {
 }
 
@@ -348,6 +350,27 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 /*Battery-charge-threshold-modal-styles*/
 .Battery-Charge-Threshold-Modal {
+	.modal-dialog {
+		max-width: 35%;
+		@media #{$mediaquery_11} {
+			max-width: 75%;
+			margin: 0 auto;
+		}
+
+		@media #{$mediaquery_X8} {
+			max-width: 50%;
+		}
+	}
+
+	.modal-content {
+		border-radius: 1rem;
+		background: $light;
+		padding: 4rem;
+	}
+}
+
+/*modal-intelligent-cooling-modes-styles*/
+.Intelligent-Cooling-Modes-Modal {
 	.modal-dialog {
 		max-width: 35%;
 		@media #{$mediaquery_11} {

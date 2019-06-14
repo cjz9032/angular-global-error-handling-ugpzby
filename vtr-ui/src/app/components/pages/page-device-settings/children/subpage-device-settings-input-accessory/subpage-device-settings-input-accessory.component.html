@@ -1,0 +1,72 @@
+<div class="subpage-device-settings-input-accessories vtr-subpage">
+	<div class="row">
+		<div class="col">
+			<vtr-ui-header-subpage 
+				[title]="title | translate"
+				[caption]="'device.deviceSettings.inputAccessories.description' | translate"
+				>
+			</vtr-ui-header-subpage>
+		</div>
+	</div>
+
+	<div class="row py-5 smartsettings-card"
+		id="Input & Accessories">
+		<div class="col-10 mx-auto ">
+			<!-- Input & Accessories -->
+			<vtr-container-collapsible [cardTitle]="'device.deviceSettings.inputAccessories.inputAccessory.title' | translate"
+				componentName="Input & Accessories"
+				[isCollapsed]="false"
+				[allowCollapse]="true"
+				[theme]="'white'">
+				<ul class="list-group list-group-flush">
+				<li class="pt-3">
+						<vtr-ui-row-switch
+							[title]="'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.title' | translate"
+							componentName="Privacy guard"
+							[caption]=""
+							[isSwitchVisible]="false"
+							[leftIcon]="['fal', 'gem']"
+							[readMoreText]="''"
+							[showChildContent]="true"
+							[theme]="'white'">
+							<div class="row">
+								<div class="col d-flex justify-content-between">
+									<p class="hidden-keyboard-text">
+										{{'device.deviceSettings.inputAccessories.inputAccessory.hiddenKeyboardFunctions.description' | translate}}
+									</p>									
+								</div>
+							</div>
+
+							<div class="row">
+									<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 pl-0 pr-0">
+											<div class="img-preview">
+												<img 
+													src="assets/images/keyboard-images/KeyboardMap_Images/Belgium.png" />											
+											</div>
+								</div>
+							</div>
+							<div class="row mt-2" *ngFor = "let key of keyboardShortcuts">
+									<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 pl-0 pr-0 d-flex">
+											<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+														<h4 class="mb-0 caption-tittle">
+															{{key.tittle}}
+														</h4>	
+											</div>
+											<div class="col-sm-9 col-md-9 col-lg-9 col-xl-9">
+													<p class="hidden-keyboard-text mb-0">
+													{{key.description}}	
+													</p>									
+											</div>
+								</div>
+							</div>
+						</vtr-ui-row-switch>
+					</li>			
+				
+
+				</ul>
+
+
+			</vtr-container-collapsible>
+		</div>
+	</div>
+</div>

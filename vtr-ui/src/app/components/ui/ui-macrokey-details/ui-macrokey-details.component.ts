@@ -1,43 +1,45 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, DoCheck } from '@angular/core';
+import { MacrokeyService } from './../../../services/gaming/macrokey/macrokey.service';
 
 @Component({
 	selector: 'vtr-ui-macrokey-details',
 	templateUrl: './ui-macrokey-details.component.html',
-	styleUrls: [ './ui-macrokey-details.component.scss' ]
+	styleUrls: ['./ui-macrokey-details.component.scss']
 })
-export class UiMacrokeyDetailsComponent implements OnInit {
+export class UiMacrokeyDetailsComponent implements OnInit, DoCheck {
 	@Input() number;
 	@Input() isNumberpad = false;
 	@Output() isRecording = new EventEmitter<any>();
-	@Input() recordedData: any = [];
-	public recording = false;
-	public showModal = false;
+	@Input() keyData: any;
+	public recording: Boolean = false;
+	public showModal: Boolean = false;
 	public stopInterval: any;
+	public recordsList: any = [];
+	public inputProvided: Boolean = false;
+	public waitingDone: Boolean = false;
 
 	modalContent = {
 		headerTitle: 'gaming.macroKey.popupContent.timeoutRecording.title',
 		bodyText: 'gaming.macroKey.popupContent.timeoutRecording.body',
 		btnConfirm: false
-		};
+	};
 
-	constructor() {}
+	constructor(private macroKeyService: MacrokeyService) { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	onStartClicked(event) {
-		// Show warning if no input is given for 10 seconds
 		setTimeout(() => {
-			this.modalContent.bodyText = 'gaming.macroKey.popupContent.inputStopped.body';
-			this.showModal = !this.showModal;
+			console.log('wait done!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+			this.waitingDone = true;
 		}, 10000);
-		this.stopInterval = setInterval(() => {
-			this.modalContent.bodyText = 'gaming.macroKey.popupContent.timeoutRecording.body';
-			this.showModal = !this.showModal;
-		}, 20000);
 		this.toggleRecording();
 	}
 
 	onStopClicked(event) {
+		if (this.keyData.inputs.length > 0) {
+			this.number.status = true;
+		}
 		this.toggleRecording();
 		clearInterval(this.stopInterval);
 	}
@@ -46,11 +48,25 @@ export class UiMacrokeyDetailsComponent implements OnInit {
 		this.recording = !this.recording;
 		this.isRecording.emit(this.recording);
 	}
-	recordsDelete(records) {
-		records = records || [];
-		records.forEach((record: any, ri: number) => {
-			console.log(record);
-			console.log(ri, 'Index');
-		});
+	ngDoCheck() {
+		// const currentKeyData = this.keyData;
+		// if (this.recording) {
+		// 	if (currentKeyData.inputs.length > 0) {
+		// 		this.inputProvided = true;
+		// 	} else {
+		// 		if (this.waitingDone) {
+		// 			if (currentKeyData.inputs.length === 0) {
+		// 				if (this.inputProvided) {
+		// 					this.modalContent.bodyText = 'gaming.macroKey.popupContent.inputStopped.body';
+		// 					this.showModal = !this.showModal;
+		// 				} else {
+		// 					this.modalContent.bodyText = 'gaming.macroKey.popupContent.timeoutRecording.body';
+		// 					this.showModal = !this.showModal;
+		// 				}
+		// 				this.toggleRecording();
+		// 			}
+		// 		}
+		// 	}
+		// }
 	}
 }

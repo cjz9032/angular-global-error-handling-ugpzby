@@ -1,176 +1,42 @@
-<div class="container-card card-{{type}}"
-	*ngIf="type === 'corner'"
-	[style.height.px]="containerHeight">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col col-12 content">
-				<a [attr.href]="!actionLink ? null : actionLink"
-					(click)="linkClicked(actionType, actionLink)"
-					vtrMetrics
-				   metricsParent="Device.myDevice"
-					metricsItemCategory="corner"
-					metricsEvent="docClick"
-					[metricsItemPosition]="order"
-				   [metricsItemID]="itemID"
-					target="_blank"
-					class="card-image"
-					[style.background-image]="'url(' + img + ')'">
-					<div class="inner-content">
-						<div *ngIf="title"
-							class="title">{{title}}</div>
-						<div *ngIf="caption"
-							class="caption">{{caption}}</div>
-						<div *ngIf="logo || logoText"
-							class="logo">
-							<span class="logo-img">
-								<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
-							</span>
-							<span class="logo-text">{{logoText}}</span>
-						</div>
-					</div>
-				</a>
+<div *ngIf="isLoading"  >
+	<div class="container-card" [style.height.px]="containerHeight">
+		<div class="container-fluid position-relative">
+			<div class="loader center-block">
+				<div class="spinner-border text-secondary progress-spinner" role="status"></div>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="container-card card-{{type}}"
-	*ngIf="type === 'corner-article'"
-	[style.height.px]="containerHeight">
-	<div class="container-fluid">
-		<div class="row" *ngIf="isOnline">
-			<div class="col col-12 content">
-				<a [attr.href]="!actionLink ? null : actionLink"
-					(click)="linkClicked(actionType, actionLink)"
-					target="_blank"
-					class="card-image"
-					vtrMetrics
-				   metricsParent="Device.MyDevice"
-				   metricsEvent="ArticleClick"
-					metricsItemCategory="corner-article"
-					[metricsItemPosition]="order"
-					[metricsItemID]="itemID"
-					[style.background-image]="'url(' + img + ')'">
-					<div class="inner-content">
-						<div *ngIf="title"
-							class="title">{{title}}</div>
-						<div *ngIf="caption"
-							class="caption">{{caption}}</div>
-						<div *ngIf="logo || logoText"
-							class="logo">
-							<span class="logo-img">
-								<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
-							</span>
-							<span class="logo-text">{{logoText}}</span>
-						</div>
-					</div>
-				</a>
-			</div>
-		</div>
-		<div class="row" *ngIf="!isOnline">
-			<img class="col col-12 image"
-				src="../../../assets/images/offline.png">	
-		</div>
-	</div>
-</div>
-
-<div class="container-card card-{{type}}"
-	*ngIf="type === 'highlight'"
-	[style.height.px]="containerHeight">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col col-12 content">
-				<a [attr.href]="!actionLink ? null : actionLink"
-					metricsItemCategory="highlight"
-					vtrMetrics
-					metricsEvent="docClick"
-					[metricsItemPosition]="order"
-					[metricsItemID]="itemID"
-					target="_blank"
-					class="card-image"
-					[style.background-image]="'url(' + img + ')'">
-					<div class="inner-content">
-						<div *ngIf="title"
-							class="title"
-							[innerHTML]="title"></div>
-					</div>
-				</a>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="container-card card-{{type}}"
-	*ngIf="type === 'article'"
-	[style.height.px]="containerHeight">
-	<div class="container-fluid">
-		<a [attr.href]="!actionLink ? null : actionLink"
-			metricsItemCategory="article"
-			vtrMetrics
-			metricsEvent="docClick"
-			[metricsItemPosition]="order"
-			[metricsItemID]="itemID"
-			target="_blank">
+<div *ngIf="!isLoading">
+	<div class="container-card card-{{type}}"
+		 *ngIf="type === 'corner'"
+		 [style.height.px]="containerHeight">
+		<div class="container-fluid">
 			<div class="row">
-				<div class="col col-12 image-container">
+				<div class="col col-12 content">
 					<a [attr.href]="!actionLink ? null : actionLink"
-						target="_blank"
-						class="card-image"
-						[style.background-image]="'url(' + img + ')'">
-						<div *ngIf="logo || logoText"
-							class="logo">
+					   (click)="linkClicked(actionType, actionLink)"
+					   vtrMetrics
+					   metricsParent="Device.myDevice"
+					   metricsItemCategory="corner"
+					   metricsEvent="docClick"
+					   [metricsItemPosition]="order"
+					   [metricsItemID]="itemID"
+					   target="_blank"
+					   class="card-image"
+					   [style.background-image]="'url(' + img + ')'">
+						<div class="inner-content">
+							<div *ngIf="title"
+								 class="title">{{title}}</div>
+							<div *ngIf="caption"
+								 class="caption">{{caption}}</div>
+							<div *ngIf="logo || logoText"
+								 class="logo">
 							<span class="logo-img">
 								<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
 							</span>
-							<span class="logo-text">{{logoText}}</span>
-						</div>
-					</a>
-				</div>
-				<div class="row">
-					<div class="col col-12 content">
-						<div *ngIf="title"
-							class="title">{{title}}</div>
-						<div *ngIf="actionLink"
-							class="read-more">
-							<a [attr.href]="!actionLink ? null : actionLink" target="_blank">
-								<span class="link-label">{{action}}</span>
-								<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</a>
-	</div>
-</div>
-
-<div class="container-card card-{{type}}"
-	*ngIf="type === 'partnerarticle'"
-	[style.height.px]="containerHeight">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col col-12 image"
-				[style.background-image]="'url('+img+')'">
-				<div *ngIf="logo || logoText"
-					class="logo">
-					<span class="logo-img">
-						<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
-					</span>
-					<span class="logo-text">{{logoText}}</span>
-				</div>
-				<div class="row">
-					<a [attr.href]="!actionLink ? null : actionLink"
-						target="_blank"
-						vtrMetrics
-						metricsEvent="docClick"
-						[metricsItemID]="itemID"
-						[metricsItemPosition]="order"
-						metricsItemCategory="partnerarticle">
-						<div class="col col-12 content">
-							<div *ngIf="title"
-								class="title">{{title}}</div>
-							<div *ngIf="actionLink"
-								class="read-more">
+								<span class="logo-text">{{logoText}}</span>
 							</div>
 						</div>
 					</a>
@@ -178,5 +44,151 @@
 			</div>
 		</div>
 	</div>
-</div>
 
+	<div class="container-card card-{{type}}"
+		 *ngIf="type === 'corner-article'"
+		 [style.height.px]="containerHeight">
+		<div class="container-fluid">
+			<div class="row" *ngIf="isOnline">
+				<div class="col col-12 content">
+					<a [attr.href]="!actionLink ? null : actionLink"
+					   (click)="linkClicked(actionType, actionLink)"
+					   target="_blank"
+					   class="card-image"
+					   vtrMetrics
+					   metricsParent="Device.MyDevice"
+					   metricsEvent="ArticleClick"
+					   metricsItemCategory="corner-article"
+					   [metricsItemPosition]="order"
+					   [metricsItemID]="itemID"
+					   [style.background-image]="'url(' + img + ')'">
+						<div class="inner-content">
+							<div *ngIf="title"
+								 class="title">{{title}}</div>
+							<div *ngIf="caption"
+								 class="caption">{{caption}}</div>
+							<div *ngIf="logo || logoText"
+								 class="logo">
+							<span class="logo-img">
+								<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
+							</span>
+								<span class="logo-text">{{logoText}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="row" *ngIf="!isOnline">
+				<img class="col col-12 image"
+					 src="../../../assets/images/offline.png">
+			</div>
+		</div>
+	</div>
+
+	<div class="container-card card-{{type}}"
+		 *ngIf="type === 'highlight'"
+		 [style.height.px]="containerHeight">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col col-12 content">
+					<a [attr.href]="!actionLink ? null : actionLink"
+					   metricsItemCategory="highlight"
+					   vtrMetrics
+					   metricsEvent="docClick"
+					   [metricsItemPosition]="order"
+					   [metricsItemID]="itemID"
+					   target="_blank"
+					   class="card-image"
+					   [style.background-image]="'url(' + img + ')'">
+						<div class="inner-content">
+							<div *ngIf="title"
+								 class="title"
+								 [innerHTML]="title"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-card card-{{type}}"
+		 *ngIf="type === 'article'"
+		 [style.height.px]="containerHeight">
+		<div class="container-fluid">
+			<a [attr.href]="!actionLink ? null : actionLink"
+			   metricsItemCategory="article"
+			   vtrMetrics
+			   metricsEvent="docClick"
+			   [metricsItemPosition]="order"
+			   [metricsItemID]="itemID"
+			   target="_blank">
+				<div class="row">
+					<div class="col col-12 image-container">
+						<a [attr.href]="!actionLink ? null : actionLink"
+						   target="_blank"
+						   class="card-image"
+						   [style.background-image]="'url(' + img + ')'">
+							<div *ngIf="logo || logoText"
+								 class="logo">
+							<span class="logo-img">
+								<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
+							</span>
+								<span class="logo-text">{{logoText}}</span>
+							</div>
+						</a>
+					</div>
+					<div class="row">
+						<div class="col col-12 content">
+							<div *ngIf="title"
+								 class="title">{{title}}</div>
+							<div *ngIf="actionLink"
+								 class="read-more">
+								<a [attr.href]="!actionLink ? null : actionLink" target="_blank">
+									<span class="link-label">{{action}}</span>
+									<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="container-card card-{{type}}"
+		 *ngIf="type === 'partnerarticle'"
+		 [style.height.px]="containerHeight">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col col-12 image"
+					 [style.background-image]="'url('+img+')'">
+					<div *ngIf="logo || logoText"
+						 class="logo">
+					<span class="logo-img">
+						<fa-icon [icon]="['fab', 'stumbleupon-circle']"></fa-icon>
+					</span>
+						<span class="logo-text">{{logoText}}</span>
+					</div>
+					<div class="row">
+						<a [attr.href]="!actionLink ? null : actionLink"
+						   target="_blank"
+						   vtrMetrics
+						   metricsEvent="docClick"
+						   [metricsItemID]="itemID"
+						   [metricsItemPosition]="order"
+						   metricsItemCategory="partnerarticle">
+							<div class="col col-12 content">
+								<div *ngIf="title"
+									 class="title">{{title}}</div>
+								<div *ngIf="actionLink"
+									 class="read-more">
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

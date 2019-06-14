@@ -3,33 +3,33 @@ import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.s
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 
 @Component({
-  selector: 'vtr-intelligent-media',
-  templateUrl: './intelligent-media.component.html',
-  styleUrls: ['./intelligent-media.component.scss']
+	selector: 'vtr-intelligent-media',
+	templateUrl: './intelligent-media.component.html',
+	styleUrls: ['./intelligent-media.component.scss']
 })
 export class IntelligentMediaComponent implements OnInit {
 
-  playbackStatus = new FeatureStatus(true, true);
-  showPlaybackLoader = true;
+	playbackStatus = new FeatureStatus(true, true);
+	showPlaybackLoader = true;
 
-  @Output() isMediaSettingHidden: EventEmitter<any> = new EventEmitter();
+	@Output() isMediaSettingHidden: EventEmitter<any> = new EventEmitter();
 
-  constructor(private smartAssist: SmartAssistService) { }
+	constructor(private smartAssist: SmartAssistService) { }
 
-  ngOnInit() {
-    this.getVideoPauseResumeStatus();
-  }
+	ngOnInit() {
+		this.getVideoPauseResumeStatus();
+	}
 
-  getVideoPauseResumeStatus() {
-    console.log('getVideoPauseResumeStatus');
+	getVideoPauseResumeStatus() {
+		console.log('getVideoPauseResumeStatus');
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.getVideoPauseResumeStatus()
 					.then((response: FeatureStatus) => {
-            this.playbackStatus = response;
-            this.showPlaybackLoader = false;
-            this.playbackStatus.available = true;
-            this.remoteMediaLink();
+						this.playbackStatus = response;
+						this.showPlaybackLoader = false;
+						this.playbackStatus.available = true;
+						this.remoteMediaLink();
 						console.log('getVideoPauseResumeStatus.then:', response);
 					}).catch(error => {
 						console.error('getVideoPauseResumeStatus.error', error);
@@ -38,11 +38,11 @@ export class IntelligentMediaComponent implements OnInit {
 		} catch (error) {
 			console.error('getVideoPauseResumeStatus' + error.message);
 		}
-  }
-  
-  public setVideoPauseResumeStatus(event) {
-    this.playbackStatus.status = event.switchValue;
-    console.log('setVideoPauseResumeStatus');
+	}
+
+	public setVideoPauseResumeStatus(event) {
+		this.playbackStatus.status = event.switchValue;
+		console.log('setVideoPauseResumeStatus');
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.setVideoPauseResumeStatus(event.switchValue)
@@ -57,10 +57,10 @@ export class IntelligentMediaComponent implements OnInit {
 		}
 	}
 
-  remoteMediaLink() {
-    if (!this.playbackStatus.available) {
-      this.isMediaSettingHidden.emit(true);
-    }
-  }
-  
+	remoteMediaLink() {
+		if (!this.playbackStatus.available) {
+			this.isMediaSettingHidden.emit(true);
+		}
+	}
+
 }

@@ -32,8 +32,7 @@ export class VantageShellService {
 
 	public registerEvent(eventType: any, handler: any) {
 		this.phoenix.on(eventType, (val) => {
-			console.log('Event fired: ', eventType);
-			console.log('Event value: ', val);
+			console.log('Event fired: ', eventType, val);
 			handler(val);
 		});
 	}
@@ -120,7 +119,7 @@ export class VantageShellService {
 
 						return await this.sendAsyncOrignally(data);
 					} catch (ex) {
-						console.log('an error ocurr when sending metrics event');
+						console.log('an error ocurr when sending metrics event', ex);
 						return Promise.resolve({
 							status: 0,
 							desc: 'ok'
@@ -388,8 +387,7 @@ export class VantageShellService {
 	public getThermalModeStatus(): any {
 		if (this.phoenix) {
 			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingThermal.getThermalModeStatus();
-			return undefined;
+			return this.phoenix.gaming.gamingThermalmode.getThermalModeStatus();
 		}
 		return undefined;
 	}
@@ -397,10 +395,9 @@ export class VantageShellService {
 	public setThermalModeStatus(ThermalModeStatusObj: ThermalModeStatus): Boolean {
 		if (this.phoenix) {
 			// TODO Un comment below line when JSBridge is ready for integration.
-			// return this.phoenix.gaming.gamingThermal.setThermalModeStatus(ThermalModeStatusObj.thermalModeStatus);
-			return true;
+		    return this.phoenix.gaming.gamingThermalmode.setThermalModeStatus(ThermalModeStatusObj.thermalModeStatus);
 		}
-		return true;
+		return undefined;
 	}
 
 	// public getRAMOCStatus(): any {
@@ -489,19 +486,84 @@ export class VantageShellService {
      */
 	public setMacroKeyClear(macroKey: string): any {
 		if (this.phoenix) {
+			console.log('Deleting the following macro key ---->', macroKey);
 			return this.phoenix.gaming.gamingMacroKey.setClear(macroKey);
 		}
 		return undefined;
 	}
+
 	public getGamingMacroKey(): any {
 		if (this.phoenix && this.phoenix.gaming) {
 			return this.phoenix.gaming.gamingMacroKey;
 		}
 	}
-	
+
 	public getIntelligentCoolingForIdeaPad(): any {
-		if(this.getPowerIdeaNoteBook()) {
+		if (this.getPowerIdeaNoteBook()) {
 			return this.getPowerIdeaNoteBook().its;
+		}
+		return undefined;
+	}
+
+	public macroKeyInitializeEvent(): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.initMacroKey();
+		}
+		return undefined;
+	}
+
+	public macroKeySetApplyStatus(key): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setApplyStatus(key);
+		}
+		return undefined;
+	}
+
+	public macroKeySetStartRecording(key): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setStartRecording(key);
+		}
+		return undefined;
+	}
+
+	public macroKeySetStopRecording(key, isSuccess, message): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setStopRecording(key, isSuccess, message);
+		}
+		return undefined;
+	}
+
+	public macroKeySetKey(key): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setKey(key);
+		}
+		return undefined;
+	}
+
+	public macroKeyClearKey(key): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setClear(key);
+		}
+		return undefined;
+	}
+
+	public macroKeySetRepeat(key, repeat): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setRepeat(key, repeat);
+		}
+		return undefined;
+	}
+
+	public macroKeySetInterval(key, interval): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setInterval(key, interval);
+		}
+		return undefined;
+	}
+
+	public macroKeySetMacroKey(key, inputs): any {
+		if (this.phoenix && this.phoenix.gaming) {
+			return this.phoenix.gaming.gamingMacroKey.setMacroKey(key, inputs);
 		}
 		return undefined;
 	}
