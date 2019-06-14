@@ -19,7 +19,6 @@ import { VantageCommunicationService } from '../../common/services/vantage-commu
 export class BreachedAccountsComponent implements OnInit {
 	breachedAccounts$ = this.breachedAccountsService.onGetBreachedAccounts$
 		.pipe(
-			tap((val) => console.log('breachedAccounts breachedAccounts', val)),
 			filter((breachedAccounts) => breachedAccounts.error === null),
 			map((breachedAccounts) => breachedAccounts.breaches.filter((breach) => {
 					return !(breach.hasOwnProperty('isFixed') && breach.isFixed === true);
