@@ -4,8 +4,8 @@
 
 	<vtr-feature-header
 		[texts]="textForFeatureHeader"
-		[isShowCountIssues]="isNonPrivatePasswordWasScanned$ | async"
-		[isFigleafInstalled]="isFigleafInstalled$ | async">
+		[isFeatureWasScanned]="isNonPrivatePasswordWasScanned$ | async"
+		[isFigleafReadyToCommunication]="isFigleafInstalled$ | async">
 		<span class="browser-accounts-page__title--red">{{nonPrivatePasswordCount$ | async}}</span> Non-private passwords found
 	</vtr-feature-header>
 
