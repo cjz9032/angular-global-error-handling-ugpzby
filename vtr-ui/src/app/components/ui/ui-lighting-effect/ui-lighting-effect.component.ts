@@ -43,6 +43,7 @@ export class UiLightingEffectComponent implements OnInit {
 
 	public optionSelected(option) {
 		this.currentOption = option.name;
+		this.options.curSelected = option.value;
 		this.showOptions = false;
 		this.change.emit(option);
 	}

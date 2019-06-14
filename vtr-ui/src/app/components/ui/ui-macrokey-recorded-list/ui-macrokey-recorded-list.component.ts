@@ -121,8 +121,11 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 
 	ngOnInit() {}
 
-	recordDelete(inputKey) {
-		const remainingInputs = this.recordsData.inputs.filter((records) => records.key !== inputKey);
+	recordDelete(record, i) {
+		// console.log(this.recordsData.inputs);
+		// const remainingInputs = this.recordsData.inputs.filter((records: any) => records.key !== record.key);
+		this.recordsData.inputs.splice(i, 2);
+		const remainingInputs = this.recordsData.inputs
 		this.macrokeyService.setMacroKey(this.number.key, remainingInputs).then((responseStatus) => {
 			if (responseStatus) {
 				this.recordsData.inputs = remainingInputs;
@@ -158,7 +161,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 	}
 
 	ngDoCheck() {
-		if (this.recordsList !== this.recordsData.inputs) {
+		if (!isUndefined(this.recordsData) && this.recordsList !== this.recordsData.inputs) {
 			this.recordsList = this.recordsData.inputs;
 		}
 	}
@@ -174,11 +177,6 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 	}
 
 	onIntervalChanged(intervalOption) {
-		if (intervalOption.value === 2) {
-			this.ignoreInterval = true;
-			return;
-		}
-		this.ignoreInterval = false;
 		this.macrokeyService.setInterval(this.number.key, intervalOption.value).then((responseStatus) => {
 			console.log('########################## Set interval status: ', responseStatus);
 			console.log('########################## Set interval option: ', intervalOption.value);
@@ -186,5 +184,11 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 				this.recordsData.interval = intervalOption.value;
 			}
 		});
+
+		if (intervalOption.value === 2) {
+			this.ignoreInterval = true;
+			return;
+		}
+		this.ignoreInterval = false;
 	}
 }
