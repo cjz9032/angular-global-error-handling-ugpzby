@@ -125,23 +125,15 @@ export class MacrokeyService {
 
 	// Set Macrokey change status
 
-	// setMacrokeyTypeCache(macrokeyStatusType: MacroKeyTypeStatus) {
-	// 	this.commonService.setLocalStorageValue(LocalStorageKey.MacroKeyType, macrokeyStatusType.MacroKeyType);
-	// }
+	setMacrokeyChangeStatusCache(macrokeyStatusType: MacroKeyTypeStatus) {
+		this.commonService.setLocalStorageValue(LocalStorageKey.MacroKeyStatus, macrokeyStatusType.MacroKeyStatus);
+	}
 
-	// getMacrokeyTypeCache(): MacroKeyTypeStatus {
-	// 	const macrokeyType = new MacroKeyTypeStatus();
-	// 	macrokeyType.MacroKeyType = this.commonService.getLocalStorageValue(LocalStorageKey.MacroKeyType);
-	// 	return macrokeyType;
-	// }
+	setOnRepeatStatusCache(selectRepeatChange: Number) {
+		this.commonService.setLocalStorageValue(LocalStorageKey.CurrentMacroKeyRepeat, selectRepeatChange);
+	}
 
-	// setMacrokeyChangeStatusCache(macrokeyStatusType: MacroKeyTypeStatus) {
-	// 	this.commonService.setLocalStorageValue(LocalStorageKey.MacroKeyStatus, macrokeyStatusType.MacroKeyStatus);
-	// }
-
-	// getMacrokeyChangeStatusCache(): MacroKeyTypeStatus {
-	// 	const macroKeyChangeStatus = new MacroKeyTypeStatus();
-	// 	macroKeyChangeStatus.MacroKeyStatus = this.commonService.getLocalStorageValue(LocalStorageKey.MacroKeyStatus);
-	// 	return macroKeyChangeStatus;
-	// }
+	setOnIntervalStatusCache(intervalStatus: Number) {
+		this.commonService.setLocalStorageValue(LocalStorageKey.CurrentMacroKeyInterval, intervalStatus);
+	}
 }

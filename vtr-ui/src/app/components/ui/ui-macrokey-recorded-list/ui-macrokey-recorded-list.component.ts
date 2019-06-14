@@ -1,3 +1,4 @@
+import { Validators } from '@angular/forms';
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges, DoCheck } from '@angular/core';
 import { isUndefined } from 'util';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
@@ -8,7 +9,7 @@ import { MacroKeyInterval } from 'src/app/enums/macrokey-interval.enum.1';
 @Component({
 	selector: 'vtr-ui-macrokey-recorded-list',
 	templateUrl: './ui-macrokey-recorded-list.component.html',
-	styleUrls: [ './ui-macrokey-recorded-list.component.scss' ]
+	styleUrls: ['./ui-macrokey-recorded-list.component.scss']
 })
 export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoCheck {
 	@Input() number: any;
@@ -117,9 +118,9 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 		btnConfirm: true
 	};
 
-	constructor(private macrokeyService: MacrokeyService) {}
+	constructor(private macrokeyService: MacrokeyService) { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	recordDelete(record, i) {
 		// console.log(this.recordsData.inputs);
@@ -172,6 +173,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 			console.log('########################## Set repeat option: ', repeatOption.value);
 			if (responseStatus) {
 				this.recordsData.repeat = repeatOption.value;
+				this.macrokeyService.setOnRepeatStatusCache(repeatOption.value);
 			}
 		});
 	}
@@ -182,6 +184,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 			console.log('########################## Set interval option: ', intervalOption.value);
 			if (responseStatus) {
 				this.recordsData.interval = intervalOption.value;
+				this.macrokeyService.setOnIntervalStatusCache(intervalOption.value);
 			}
 		});
 
