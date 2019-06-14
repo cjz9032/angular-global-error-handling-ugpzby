@@ -47,12 +47,12 @@
                             <div class="row mb-40">
                                 <div class="col col-12">
 									<vtr-widget-home-security-account-status
-									[status]="connectedHomeSecurity.account.state"
-									[remainingDays]="27"
-									[expiredDate]="connectedHomeSecurity.account.ExpirationDate"
-									(startTrial)="onStartTrial()"
-									(manageAccount)="onManageAccount()"
-									(upgradeAccount)="onUpgradeAccount()">
+										[status]="connectedHomeSecurity.account.state"
+										[standardTime]="connectedHomeSecurity.account.serverTimeUTC"
+										[expiredDate]="connectedHomeSecurity.account.expiration"
+										(startTrial)="onStartTrial()"
+										(manageAccount)="onManageAccount($event)"
+										(upgradeAccount)="onUpgradeAccount()">
                                     </vtr-widget-home-security-account-status>
                                 </div>
                             </div>

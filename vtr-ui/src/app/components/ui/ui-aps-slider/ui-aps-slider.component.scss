@@ -1,0 +1,121 @@
+@import "./../../../app.theme.scss";
+
+/*
+component styles to cascade to all child elements of this component,
+but not to any other element on the page. using ::ng-deep
+*/
+// ng-deep required, without this style cannot be overridden.
+::ng-deep {
+	.vtr-ui-aps-slider {
+		$thumb-size: 2.8rem;
+
+		.ng5-slider {
+			/* main slider bar */
+			.ng5-slider-bar {
+				background: $shade_lightest;
+				border: 0.1rem solid $shade_lighter;
+				height: 0.8rem;
+				border-radius: 0.5rem;
+			}
+			/* slider selected area*/
+			.ng5-slider-selection {
+				background: $main;
+			}
+			/* slider thumb */
+			.ng5-slider-pointer {
+				top: calc(100% - 1.6rem);
+				height: $thumb-size;
+				width: $thumb-size;
+				border-radius: 2.8rem;
+				background: linear-gradient($gradient_angle_reverse, $main_light 0%, $main 100%),
+					linear-gradient($gradient_angle, $light 0%, $light 100%);
+				&::after {
+					background: transparent;
+					font-family: FontAwesome;
+					font-size: 1.6rem;
+					top: calc(100% - 2.3rem);
+					left: calc(100% - 2.5rem);
+					font-weight: normal;
+					color: $light;
+					content: url('../../../../assets/images/arrow-icon.PNG'); // unicode for font awesome two sided arrow
+				}
+				&:focus {
+					outline: none;
+				}
+				&:hover {
+					&::after {
+						background: transparent;
+					}
+				}
+				&.ng5-slider-pointer {
+					&:after {
+						background-color: transparent;
+					}
+				}
+			}
+
+			.ng5-slider-bubble {
+				bottom: 1.4rem;
+			}
+			.ng5-slider-limit {
+				font-weight: bold;
+			}
+			.ng5-slider-tick {
+				width: 0.2rem;
+				height: 2rem;
+				margin-left: 0.4rem;
+				border-radius: 0;
+				background: $shade_lighter;
+				top: -1.6rem;
+				left: 0.9rem;
+
+				&.ng5-slider-selected {
+					background: $shade_lighter;
+				}
+				.ng5-slider-tick-legend {
+					top: -1.2rem;
+					max-width: none;
+					width: 9rem;
+					font-size: 1rem;
+					color: $dark;
+				}
+				&:first-child {
+					display: none;
+				}
+				&:last-child {
+					display: none;
+				}
+			}
+		}
+
+		.label {
+			font-size: 1.2rem;
+			font-weight: 300;
+			line-height: 2.3rem;
+            color: $shade_dark;
+            display: flex;
+            justify-content: space-between;
+		}
+	}
+	.diable-slider-pointer {
+		.ng5-slider {
+			.ng5-slider-pointer {
+				background: #8b91a2!important;
+			}
+	 	}
+	}
+
+	[disabled].ng5-slider .ng5-slider-pointer {
+		background-color: initial;
+	}
+
+	.on-hover-slider-icon{
+		.ng5-slider{
+			.ng5-slider-pointer{
+				&:hover{
+					background: #8b91a2!important;
+				}
+			}
+		}
+	}
+}

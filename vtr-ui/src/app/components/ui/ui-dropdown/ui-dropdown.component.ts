@@ -12,8 +12,8 @@ export class UiDropDownComponent implements OnInit {
 	@Input() value: number;
 	@Output() change: EventEmitter<any> = new EventEmitter<any>();
 	public isDropDownOpen = false;
-	public name = '';
-	public placeholder = '';
+	public name = 'Select';
+	public placeholder = 'Time';
 
 	constructor() { }
 
