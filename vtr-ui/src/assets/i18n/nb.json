@@ -1267,7 +1267,7 @@
                 "homeSecurityAffect3": "Sikkerhet for tilkoblede hjem sikrer at andre enheter som er koblet til hjemmenettverket ditt er sikre.",
                 "describe": "Usikre enheter og nettverk kan medføre skadelig programvare, føre til identitetstyveri og lekke private og økonomiske opplysninger. Aktiver denne funksjonen for å redusere risikoen for enheten din og at hjemmenettverket ditt utsettes for angripere",
                 "subtitle": "Trygghet",
-                "subtitleDescribe": "Sikkerhet for tilkoblede hjem sender deg et varsel hvis den oppdager et sikkerhetsproblem i enheten eller hjemmenettverket, eller hvis du er koblet til et skadelig nettverk. Finn ut mer om Sikkerhet for tilkoblede hjem i Tips og triks.",
+                "subtitleDescribe": "Sikkerhet for tilkoblede hjem sender deg et varsel hvis den oppdager et sikkerhetsproblem i enheten eller hjemmenettverket, eller hvis du er koblet til et skadelig nettverk. Finn ut mer om Sikkerhet for tilkoblede hjem i <tag>her</tag>.",
                 "tryNow": "Prøv nå"
             },
             "invitationcode": {

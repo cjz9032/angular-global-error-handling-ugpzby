@@ -1267,7 +1267,7 @@
                 "homeSecurityAffect3": "Sicherstellung, dass andere Geräte, die sich mit Ihrem privaten Netzwerk verbinden, sicher sind.",
                 "describe": "Unsichere Geräte und Netzwerke können Malware einschleusen, zu Identitätsdiebstahl führen und private sowie finanzielle Informationen preisgeben. Aktivieren Sie diese Funktion, um das Risiko zu verringern, dass Ihr Gerät und Ihr privates Netzwerk Angreifern ausgesetzt werden.",
                 "subtitle": "Immer auf Nummer sicher",
-                "subtitleDescribe": "Die Funktion \"Sicherheit für das verbundene Zuhause\" sendet Ihnen eine Warnung, wenn sie eine angreifbare Stelle in Ihrem Gerät oder privaten Netzwerk erkennt oder wenn Sie sich mit einem potenziell zerstörerischen Netzwerk verbinden. Weitere Informationen hierzu finden Sie im Abschnitt \"Sicherheit für das verbundene Zuhause\" unter \"Tipps und Tricks\".",
+                "subtitleDescribe": "Die Funktion \"Sicherheit für das verbundene Zuhause\" sendet Ihnen eine Warnung, wenn sie eine angreifbare Stelle in Ihrem Gerät oder privaten Netzwerk erkennt oder wenn Sie sich mit einem potenziell zerstörerischen Netzwerk verbinden. Weitere Informationen hierzu finden Sie im Abschnitt \"Sicherheit für das verbundene Zuhause\" unter <tag>hier</tag>.",
                 "tryNow": "Jetzt testen"
             },
             "invitationcode": {

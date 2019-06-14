@@ -1267,7 +1267,7 @@
                 "homeSecurityAffect3": "Connected Home-beveiliging zorgt ervoor dat de andere apparaten die op uw thuisnetwerk zijn aangesloten, veilig zijn.",
                 "describe": "Onveilige apparaten en netwerken kunnen malware binnenbrengen, diefstal van identiteit mogelijk maken en persoonlijke en financiële informatie doen lekken. Schakel deze functie in om het risico te verkleinen dat uw apparaat en uw thuiswerk toegankelijk zijn voor aanvallers.",
                 "subtitle": "Geen zorgen meer",
-                "subtitleDescribe": "Connected Home-beveiliging stuurt u een waarschuwing als er een beveiligingsprobleem in uw apparaat of thuisnetwerk is gedetecteerd of als u bent verbonden met een mogelijk schadelijk netwerk. Lees nog meer over Connected Home-beveiliging in Tips en trucs.",
+                "subtitleDescribe": "Connected Home-beveiliging stuurt u een waarschuwing als er een beveiligingsprobleem in uw apparaat of thuisnetwerk is gedetecteerd of als u bent verbonden met een mogelijk schadelijk netwerk. Lees nog meer over Connected Home-beveiliging in <tag>hier</tag>.",
                 "tryNow": "Probeer het nu"
             },
             "invitationcode": {

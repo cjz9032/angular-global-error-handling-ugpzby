@@ -1152,7 +1152,7 @@
 			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
 			"alreadyHaveAccount": "Already have an activation code?"
 		}
-	}, 
+	},
 	"support": {
 		"common": {
 			"getSupport": "Get Support"
@@ -1328,7 +1328,7 @@
 				"homeSecurityAffect3": "Connected Home Security ensures that other devices connected to your home network are safe.",
 				"describe": "Unsafe devices and networks can introduce malware, lead to identity theft, and leak private and financial information. Enable this feature to reduce the risk of having your device, and your home network exposed to attackers",
 				"subtitle": "Peace of Mind",
-				"subtitleDescribe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more in about Connected Home Security in Tips and Tricks.",
+				"subtitleDescribe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more about Connected Home Security <tag>here</tag>.",
 				"tryNow": "Try Now"
 			},
 			"invitationcode": {

@@ -1267,7 +1267,7 @@
                 "homeSecurityAffect3": "La Sécurité domestique connectée garantit que les autres périphériques connectés à votre réseau domestique sont sécurisés.",
                 "describe": "Les réseaux et les périphériques non sécurisés peuvent laisser entrer des logiciels malveillants, favoriser le vol d'identité et provoquer la perte d'informations confidentielles et financières. Activez cette fonctionnalité pour réduire le risque que votre ordinateur et votre réseau domestique soient exposés à des pirates informatiques",
                 "subtitle": "Tranquillité d'esprit",
-                "subtitleDescribe": "La Sécurité domestique connectée vous enverra une alerte si elle détecte une vulnérabilité dans votre périphérique ou votre réseau domestique ou si vous êtes connecté à un réseau potentiellement malveillant. Apprenez-en davantage sur la Sécurité domestique connectée dans Conseils et astuces.",
+                "subtitleDescribe": "La Sécurité domestique connectée vous enverra une alerte si elle détecte une vulnérabilité dans votre périphérique ou votre réseau domestique ou si vous êtes connecté à un réseau potentiellement malveillant. Apprenez-en davantage sur la Sécurité domestique connectée dans <tag>ici</tag>.",
                 "tryNow": "Essayer maintenant"
             },
             "invitationcode": {

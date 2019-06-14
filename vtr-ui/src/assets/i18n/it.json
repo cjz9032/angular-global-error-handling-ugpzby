@@ -1267,7 +1267,7 @@
                 "homeSecurityAffect3": "Protezione abitazione connessa verifica che i dispositivi connessi alla rete domestica siano sicuri.",
                 "describe": "Le reti e i dispositivi non sicuri possono introdurre malware, causare furti di identità e provocare la perdita di informazioni private e finanziarie. Abilita questa funzione per ridurre il rischio di esporre il dispositivo in uso e la rete domestica agli autori di un attacco",
                 "subtitle": "Protezione garantita",
-                "subtitleDescribe": "Protezione abitazione connessa ti invierà un avviso se rileva una vulnerabilità del dispositivo o della rete domestica in uso o se sei collegato a una rete potenzialmente dannosa. Ulteriori informazioni su Protezione abitazione connessa sono disponibili in Suggerimenti e consigli.",
+                "subtitleDescribe": "Protezione abitazione connessa ti invierà un avviso se rileva una vulnerabilità del dispositivo o della rete domestica in uso o se sei collegato a una rete potenzialmente dannosa. Ulteriori informazioni su Protezione abitazione connessa sono disponibili in <tag>qui</tag>.",
                 "tryNow": "Provalo ora"
             },
             "invitationcode": {

@@ -1267,7 +1267,7 @@
                 "homeSecurityAffect3": "Bezpieczny Dom zapewnia bezpieczeństwo innych urządzeń podłączonych do sieci domowej.",
                 "describe": "Niebezpieczne urządzenia i sieci mogą wprowadzać złośliwe oprogramowanie, prowadzić do kradzieży tożsamości oraz wyciekać prywatne i finansowe informacje. Włącz tę funkcję, aby ograniczyć ryzyko, że Twoje urządzenie i sieć domowa staną się celem napastników",
                 "subtitle": "Spokojny sen",
-                "subtitleDescribe": "Bezpieczny Dom wyśle zawiadomienie, jeśli wykryje lukę w Twoim urządzeniu lub sieci domowej, lub jeśli zostaniesz połączony z potencjalnie złośliwą siecią. Dowiedz się jeszcze więcej o aplikacji Bezpieczny Dom w sekcji Porady i Wskazówki.",
+                "subtitleDescribe": "Bezpieczny Dom wyśle zawiadomienie, jeśli wykryje lukę w Twoim urządzeniu lub sieci domowej, lub jeśli zostaniesz połączony z potencjalnie złośliwą siecią. Dowiedz się jeszcze więcej o aplikacji Bezpieczny Dom w <tag>tutaj</tag>.",
                 "tryNow": "„Wypróbuj teraz”"
             },
             "invitationcode": {
