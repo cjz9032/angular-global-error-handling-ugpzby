@@ -572,6 +572,31 @@
 						"title": "The battery can only store",
 						"description1": "of",
 						"description2": "it's original full charge capacity"
+					},
+					"HighTemperature": {
+						"title": "Discharging",
+						"description": "has been stopped because the",
+						"description1": "battery temperature is too high"
+					},
+					"TrickleCharge": {
+						"description": "The battery was ",
+						"description1": "completely discharged",
+						"description2": "and needs to be recharged. This might take ten hours or more."
+					},
+					"OverheatedBattery": {
+						"description": "The battery is",
+						"description1": "too hot.",
+						"description2": "Remove it from the computer and cool it to room temperature."
+					},
+					"PermanentError": {
+						"description": "The battery has",
+						"description1": "failed due to normal wear.",
+						"description2": "The battery cannot be charged. Replace the battery."
+					},
+					"HardwareAuthenticationError": {
+						"description": "The battery installed is",
+						"description1": "is not supported",
+						"description2": "by the system and will not charge. Please replace the battery with the correct battery Lenovo battery for this system."
 					}
 				}
 			},
@@ -1104,16 +1129,16 @@
 		"upgrade": "upgrade",
 		"freeTrial": "Free 30 day trial",
 		"protectAllDevices": "Protect all of your devices",
-		"inEcosystem":"In Ecosystem",
-		"ecosystemEnable":"Ecosystem Enabled",
-		"inTrial":"In trial",
-		"addEcosystem":"Add to Ecosystem",
-		"enableEcosystem":"Enable Ecosystem",
-		"startTrial":"Start Trial",
-		"fullAccess":"Full Access",
-		"recent":"Recent security notifications",
-		"notification":"Notifications",
-		"renew":"Renew",
+		"inEcosystem": "In Ecosystem",
+		"ecosystemEnable": "Ecosystem Enabled",
+		"inTrial": "In trial",
+		"addEcosystem": "Add to Ecosystem",
+		"enableEcosystem": "Enable Ecosystem",
+		"startTrial": "Start Trial",
+		"fullAccess": "Full Access",
+		"recent": "Recent security notifications",
+		"notification": "Notifications",
+		"renew": "Renew",
 		"tour": {
 			"back": "Back",
 			"skip": "Skip",

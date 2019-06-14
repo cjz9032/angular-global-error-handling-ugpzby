@@ -1,42 +1,49 @@
 <div class="vtr-battery-indicator"
- #batteryIndicator>
+	#batteryIndicator>
 	<div class="cell">
 		<div class="battery-shadow"></div>
 		<div #battery
-		 class="battery">
+			class="battery">
 			<div class="acid-container">
 				<div class="fill"></div>
 				<div class="percentage"
-				 *ngIf="!isVoltageError">
+					*ngIf="!isVoltageError && !batteryNotDetected">
 					{{ percentage }}
 					<span class="percentage-symbol">
 						%
 					</span>
 				</div>
 				<div class="battery-error"
-				 *ngIf="isVoltageError">
+					*ngIf="isVoltageError">
 					<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon>
 					<span class="voltage-incorrect"> Battery voltage incorrect</span>
 				</div>
+				<div class="battery-error"
+					*ngIf="batteryNotDetected">
+					<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon>
+					<span class="voltage-incorrect"> No Battery Detected</span>
+				</div>
 			</div>
 
-			<div *ngIf="!isVoltageError && !hideRemainingTimeTxt">
+			<div *ngIf="!isVoltageError && !batteryNotDetected && !hideRemainingTimeTxt">
 				<div class="remaining-time">
 					{{ getTimeRemaining() }}
 				</div>
 				<div class="remaining-text text-uppercase"
-				 *ngIf="timeText === 'timeRemaining'">
+					*ngIf="timeText === 'timeRemaining'">
 					{{'device.deviceSettings.batteryGauge.details.remainingTime' | translate}}
 				</div>
 				<div class="remaining-text text-uppercase"
-				 *ngIf="timeText === 'timeCompletion'">
+					*ngIf="timeText === 'timeCompletion'">
 					{{'device.deviceSettings.batteryGauge.charge' | translate}}
 				</div>
 			</div>
 			<div class="battery-charging"
-			 *ngIf="!isVoltageError">
-				<span  *ngIf="(isCharging && !isExpressCharging)" class="icomoon icomoon-FA-Plug2x"></span>
-				<span  *ngIf="(isCharging && isExpressCharging)" class="icomoon icomoon-LE-expressCharging2x"></span>
+				*ngIf="!isVoltageError && !batteryNotDetected">
+				<span *ngIf="(isCharging && !isExpressCharging)"
+					class="icomoon icomoon-FA-Plug2x"></span>
+				<span *ngIf="(isCharging && isExpressCharging)"
+					class="icomoon icomoon-LE-expressCharging2x"></span>
 			</div>
 		</div>
 	</div>

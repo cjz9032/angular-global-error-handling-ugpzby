@@ -34,6 +34,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 	@Input() remainingHour = 0; // number of hours remaining
 	@Input() remainingMinutes = 0; // number of minutes remaining
 	@Input() timeText = '';
+	@Input() batteryNotDetected = false;
 
 	constructor(public translate: TranslateService) {
 	}
@@ -67,7 +68,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 			fillWidth = 0;
 		let percentage = this.percentage;
 
-		if (this.isVoltageError) {
+		if (this.isVoltageError || this.batteryNotDetected) {
 			percentage = 0;
 		}
 
