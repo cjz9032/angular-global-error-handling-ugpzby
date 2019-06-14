@@ -879,8 +879,14 @@
 					"hiddenKeyboardFunctions": {
 						"title": "Hidden keyboard functions",
 						"description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
-					}
+					},
+					"firstKeyObj": {"tittle":  "Fn + Tab" , "description": "enable zoom feature on high resolution displays", "image": ""},						
+					"secondKeyObj": {"tittle":  "Fn + 4" , "description": "enter sleep mode", "image": ""},
+					"thirdKeyObj": {"tittle":  "Fn + D" , "description": "turn on and off Privacy Guard", "image": ""},
+					"fourthKeyObj": {"tittle":  "Fn + Q" , "description": "change between Performance mode and Quiet mode", "image": ""},
+					"fifthKeyObj": {"tittle":  "Fn + Space" , "description": "change keyboard backlight states", "image": ""}
 				}
+		
 			}
 		},
 		"smartAssist": {
