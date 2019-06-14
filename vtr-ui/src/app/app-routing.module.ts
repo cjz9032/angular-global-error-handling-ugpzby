@@ -30,6 +30,7 @@ import { PageAutocloseComponent } from './components/pages/page-autoclose/page-a
 import { PageNetworkBoostComponent } from './components/pages/page-network-boost/page-network-boost.component';
 import { PageSmartAssistComponent } from './components/pages/page-smart-assist/page-smart-assist.component';
 import { PageSettingsComponent } from './components/pages/page-settings/page-settings.component';
+import { SubpageDeviceSettingsInputAccessoryComponent } from './components/pages/page-device-settings/children/subpage-device-settings-input-accessory/subpage-device-settings-input-accessory.component';
 
 const routes: Routes = [
 	{
@@ -121,6 +122,15 @@ const routes: Routes = [
 				data: {
 					pageName: 'Device.MyDeviceSettings'
 				}
+			},
+			{
+				path: 'input-accessories',
+				component: SubpageDeviceSettingsInputAccessoryComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService],
+				data: {
+					pageName: 'Device.MyDeviceSettings'
+				}	
 			}
 		]
 	},
@@ -243,7 +253,7 @@ const routes: Routes = [
 		path: 'settings',
 		component: PageSettingsComponent,
 		data: {
-			pageName: 'Settings'
+			pageName: 'Page.Settings'
 		}
 	}
 ];

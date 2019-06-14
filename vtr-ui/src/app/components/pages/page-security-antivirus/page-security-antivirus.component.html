@@ -30,7 +30,7 @@
 												[innerHTML]="'security.antivirus.windowsDefender.subtitle' | translate">
 											</div>
 											<div class="p-3">
-												<vtr-ui-button id="sa-av-btn-learnmore" 
+												<vtr-ui-button id="sa-av-btn-learnmore"
 													aria-label="sa-av-btn-learnmore"
 													metricsItem="learnMoreAboutMcafee"
 													metricsEvent="ArticleClick"
@@ -41,6 +41,7 @@
 													[label]="'security.antivirus.windowsDefender.learnMore' | translate"
 													[title]="'security.antivirus.windowsDefender.learnMore' | translate"
 													(onClick)="openArticle()"
+													[isDisabled]="!isOnline"
 													[upperCaseLabel]=false></vtr-ui-button>
 											</div>
 										</div>

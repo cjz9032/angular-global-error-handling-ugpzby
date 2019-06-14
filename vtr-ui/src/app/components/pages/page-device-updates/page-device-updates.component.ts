@@ -22,6 +22,7 @@ import { UpdateFailToastMessage } from 'src/app/enums/update.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { MetricHelper } from 'src/app/data-models/metrics/metric-helper.model';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -157,7 +158,8 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 		private cmsService: CMSService,
 		private activatedRoute: ActivatedRoute,
 		private translate: TranslateService,
-		shellService: VantageShellService
+		shellService: VantageShellService,
+		private deviceService: DeviceService
 	) {
 		this.isOnline = this.commonService.isOnline;
 		this.metricHelper = new MetricHelper(shellService.getMetrics());
@@ -299,7 +301,7 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 	}
 
 	private getSpecificSupportLink() {
-		const machineInfo = this.commonService.getLocalStorageValue(LocalStorageKey.MachineInfo);
+		const machineInfo = this.deviceService.getMachineInfoSync();
 		if (machineInfo && machineInfo.serialnumber && machineInfo.mtm && machineInfo.mtm.toLowerCase() !== 'invalid') {
 			const specificSupportLink = `${this.supportLink}qrcode?sn=${machineInfo.serialnumber}&mtm=${machineInfo.mtm}`;
 			this.supportLink = specificSupportLink;
@@ -696,6 +698,9 @@ export class PageDeviceUpdatesComponent implements OnInit, OnDestroy {
 					this.getNextUpdatedScanText();
 					break;
 				case NetworkStatus.Online:
+					if (this.isCheckingPluginStatus) {
+						this.getScheduleUpdateStatus(false);
+					}
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
 					this.offlineSubtitle = `${this.getLastUpdatedText()}<br>${this.getNextUpdatedScanText()}`;

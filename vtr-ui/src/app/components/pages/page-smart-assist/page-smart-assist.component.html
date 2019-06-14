@@ -20,7 +20,8 @@
 					</div>
 
 					<div class="row py-5 smart-assist-card"
-						id="security">
+						id="security"
+						*ngIf="intelligentSecurity.isIntelligentSecuritySupported">
 						<div class="col-10 mx-auto">
 							<vtr-container-collapsible
 								[cardTitle]="'device.smartAssist.intelligentSecurity.title' | translate"
@@ -28,13 +29,11 @@
 								[isCollapsed]="false"
 								[allowCollapse]="true"
 								[theme]="'white'"
-								(toggle)="onCardCollapse($event)"
-								*ngIf="intelligentSecurity.isIntelligentSecuritySupported">
+								(toggle)="onCardCollapse($event)">
 								<!-- IdeaPad section -->
 								<ul class="list-group list-group-flush"
 									*ngIf="!isThinkPad">
-									<li class="no-border-bottom"
-										[class.disabled-overlay]="!intelligentSecurity.isHPDEnabled">
+									<li class="no-border-bottom">
 										<vtr-ui-row-switch
 											[title]="'device.smartAssist.intelligentSecurity.zeroTouchLogin.title' | translate"
 											[caption]=" 'device.smartAssist.intelligentSecurity.zeroTouchLogin.caption' | translate"
@@ -61,17 +60,18 @@
 											</vtr-ui-row-switch>
 											<div class="slider-note">
 												<vtr-ui-range-slider
-													*ngIf="intelligentSecurity.isZeroTouchLoginAdjustEnabled"
+													*ngIf="!intelligentSecurity.isZeroTouchLoginAdjustEnabled"
 													[minValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.near' | translate"
 													[minValue]="1"
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
 													[maxValue]="3"
 													(change)="setZeroTouchLoginSensitivity($event)"
-													[enableSlider]="!intelligentSecurity.isZeroTouchLoginAdjustEnabled"
-													[value]="intelligentSecurity.zeroTouchLoginDistance">
+													[value]="intelligentSecurity.zeroTouchLoginDistance"
+													[enableSlider]="false">
 												</vtr-ui-range-slider>
 												<div class="pt-3"
-													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled">
+													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled"
+													*ngIf="intelligentSecurity.isWindowsHelloRegistered">
 													<div class="feature-note p-4">
 														<div class="row">
 															<!-- <div class="col-auto pl-0">
@@ -140,10 +140,12 @@
 													[maxValueLegend]="'device.smartAssist.intelligentSecurity.distanceSensitivityAdjusting.options.far' | translate"
 													[maxValue]="3"
 													(change)="setZeroTouchLoginSensitivity($event)"
-													[value]="intelligentSecurity.zeroTouchLoginDistance">
+													[value]="intelligentSecurity.zeroTouchLoginDistance"
+													[enableSlider]="false">
 												</vtr-ui-range-slider>
 												<div class="pt-3"
-													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled">
+													[class.blur-1]="!intelligentSecurity.isZeroTouchLoginEnabled"
+													*ngIf="intelligentSecurity.isWindowsHelloRegistered">
 													<div class="feature-note p-4">
 														<div class="row blur">
 															<!-- <div class="col-auto pl-0">
@@ -323,10 +325,82 @@
 							</vtr-container-collapsible>
 						</div>
 					</div>
+
 					<vtr-intelligent-media id="media"
 						(isMediaSettingHidden)="hideMediaSetting($event)">
 					</vtr-intelligent-media>
+
+					<div class="row py-5 smart-assist-card"
+						id="screen">
+						<div class="col-10 mx-auto">
+							<vtr-container-collapsible
+								[cardTitle]="'device.smartAssist.activeProtectionSystem.title' | translate"
+								componentName=""
+								[isCollapsed]="false"
+								[allowCollapse]="true"
+								[theme]="'white'"
+								(toggle)="onCardCollapse($event)">
+
+								<div class="container">
+									<div class="row">
+										<div class="col-auto">
+											<div class="int-screen-desc">
+												<p>{{'device.smartAssist.activeProtectionSystem.description' | translate}}
+												</p>
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+								<ul class="list-group list-group-flush">
+									<li class="auto-screen-off-block">
+										<vtr-ui-row-switch
+											[title]="'device.smartAssist.activeProtectionSystem.activeProtection.title' | translate"
+											[caption]=" 'device.smartAssist.activeProtectionSystem.activeProtection.caption' | translate"
+											[isSwitchVisible]="true"
+											[leftIcon]="['fal', 'gem']"
+											[theme]="'white'">
+										</vtr-ui-row-switch>
+										<div class="container">
+											<div class="row">
+												<div class="col">
+													<div class="pl-5 ml-5 pt-4">
+														<div class="display-dim-title">
+															{{'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.title' | translate}}
+														</div>
+														<vtr-ui-range-slider
+															[minValueLegend]="'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.startTime' | translate"
+															[minValue]="0"
+															[maxValueLegend]="'device.smartAssist.intelligentScreen.keepMyDisplay.displaySlider.endTime' | translate"
+															[maxValue]="100"
+															[enableSlider]="!keepMyDisplay">
+														</vtr-ui-range-slider>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="pt-3 keep-my-display-block">
+										<vtr-ui-row-switch
+											[title]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.title' | translate"
+											[caption]="'device.smartAssist.activeProtectionSystem.manualActiveProtectionSuspension.caption' | translate"
+											[leftIcon]="['fal', 'gem']"
+											[theme]="'white'"
+											[isSwitchVisible]="true"
+											[showChildContent]="true"
+											(toggleOnOff)="displayDim($event)"
+											[isSwitchChecked]="keepMyDisplay">
+
+										</vtr-ui-row-switch>
+									</li>
+								</ul>
+							</vtr-container-collapsible>
+						</div>
+					</div>
+
 				</div>
+
 				<div class="col-lg-4 col-sm-12 vtr-page-right-column">
 					<div class="vtr-page-shift-up-medium">
 						<div class="container-fluid">
@@ -357,7 +431,6 @@
 									</vtr-widget-questions>
 								</div>
 							</div>
-
 						</div>
 					</div>
 				</div>

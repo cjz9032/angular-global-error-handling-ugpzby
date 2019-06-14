@@ -10,7 +10,7 @@
 						<fa-icon [icon]="['fal', 'home-lg-alt']"></fa-icon>
 					</div>
 					<div class="col-8 text">
-						<div class="all-device-name text-uppercase">{{'homeSecurity.allDevice' | translate}}</div>
+						<div class="all-device-name text-uppercase">{{'homeSecurity.allDevices' | translate}}</div>
 						<div class="manage">
 							<a target="_blank" href="{{homeSecurityUrl}}"
 								id="chs-lnk-ad-manageAccount"
@@ -27,8 +27,8 @@
 				<div class="row">
 					<div class="col-5 number-container">
 						<div class="icon">
-							<img class="img-fluid circle" src="assets/images/connected-home-security/ecosystem-circle-green.svg" *ngIf="logonStatus!=='trial expired'"/>
-							<img class="img-fluid circle" src="assets/images/connected-home-security/ecosystem-circle-red.svg" *ngIf="logonStatus==='trial expired'"/>
+							<img class="img-fluid circle" src="assets/images/connected-home-security/ecosystem-circle-green.svg" *ngIf="devicesStatus==='secure'"/>
+							<img class="img-fluid circle" src="assets/images/connected-home-security/ecosystem-circle-red.svg" *ngIf="devicesStatus==='needs attention'"/>
 						</div>
 						<div class="device-number" [ngClass]="{'sizeChange': deviceMoreThanTen}" *ngIf="devicesNumber!==0">{{devicesNumber}}</div>
 					</div>
@@ -36,10 +36,10 @@
 						<div class="device-text text-uppercase">{{'homeSecurity.devices' | translate}}</div>
 						<div class="status">
 							<h3 style="margin-bottom: 0rem" *ngIf="isShowBadge">
-								<span class="badge badge-pill badge-danger button-green" *ngIf="devicesStatus==='secure'">
+								<span class="badge badge-pill badge-success" *ngIf="devicesStatus==='secure'">
 									{{'homeSecurity.secure' | translate}}
 								</span>
-								<span class="badge badge-pill badge-danger button-red" (click)="openCornet()" *ngIf="devicesStatus==='needs attention'"
+								<span class="badge badge-pill badge-danger" (click)="openCornet()" *ngIf="devicesStatus==='needs attention'"
 									id="chs-btn-ad-needAttention"
 									aria-label="chs-btn-ad-needAttention"
 									vtrMetrics
@@ -72,9 +72,9 @@
 				</vtr-ui-button>
 			</div>
 	</div>
-	<div class="row overlay" [ngClass]="{'show-overlay':logonStatus === 'trial expired'}" *ngIf="pluginAvailable">
+	<div class="row overlay" [ngClass]="{'show-overlay':logonStatus === 'trial expired' || logonStatus === 'local account'}" *ngIf="pluginAvailable">
 		<div class="col-8 place-holder"></div>
-		<div class="col-4 content-container">
+		<div class="col-4 content-container" *ngIf="logonStatus === 'trial expired'">
 			<div class="text">{{'homeSecurity.trialExpired' | translate}}</div>
 			<div class="text-description">{{'homeSecurity.trialExpiredSubtext' | translate}}</div>
 			<vtr-ui-button
@@ -86,6 +86,19 @@
 				(click)="openUpgrade()"
 				[title]="'homeSecurity.upgrade' | translate"
 				[label]="'homeSecurity.upgrade' | translate">
+			</vtr-ui-button>
+		</div>
+		<div class="col-4 content-container" *ngIf="logonStatus === 'local account'">
+			<div class="text">{{'homeSecurity.freeTrial' | translate}}</div>
+			<div class="text-description">{{'homeSecurity.protectAllDevices' | translate}}</div>
+			<vtr-ui-button
+				id="chs-btn-ad-startTrial"
+				aria-label="chs-btn-ad-startTrial"
+				vtrMetrics
+				metricsItem="startTrialAllDevice"
+				metricsEvent="featureClick"
+				(click)="startTrial()"
+				[label]="'homeSecurity.startTrial' | translate">
 			</vtr-ui-button>
 		</div>
 	</div>

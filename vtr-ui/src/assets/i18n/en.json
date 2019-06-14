@@ -111,7 +111,8 @@
 				},
 				"buttons": {
 					"start": "START RECORDING",
-					"stop": "STOP RECORDING"
+					"stop": "STOP RECORDING",
+					"numberPrefix": "NUM"
 				},
 				"recording": {
 					"title": "START TYPING",
@@ -382,7 +383,7 @@
 		"quickSettings": {
 			"title": "Your Quick Settings",
 			"microphone": "Microphone",
-			"cameraPrivacy": "Camera Privacy",
+			"cameraPrivacy": "Camera",
 			"eyeCareMode": "Eye Care Mode"
 		},
 		"systemStatus": {
@@ -515,9 +516,13 @@
 					},
 					"deviceChemistry": {
 						"li-polymer": "Li-Polymer",
-						"li-ion": "Li-Ion",
 						"li_polymer": "Li-Polymer",
+						"li-ion": "Li-Ion",
 						"li_ion": "Li-Ion",
+						"silver-zinc": "Silver-Zinc",
+						"silver_zinc": "Silver-Zinc",
+						"nicd": "NiCd",
+						"nimh": "NiMH",
 						"unknown": "Unknown"
 					},
 					"manufacturer": {
@@ -551,17 +556,11 @@
 					"NotGood": {
 						"title": "The battery is not in a good Condition"
 					},
-					"LimitedACAdapterSupport": {
-						"title": "Limited Support AC Adapter"
-					},
 					"NotSupportACAdapter": {
-						"title": "Not support AC Adapter"
-					},
-					"ACAdapterNotSupported": {
 						"title": "AC adapter not supported.",
 						"description": "Your Lenovo computer doesn't support this AC adapter. It may cause sudden shutdown.Please connect a correct AC adapter"
 					},
-					"EnoughPowerACAdapter": {
+					"LimitedACAdapterSupport": {
 						"title": "AC adapter cannot provide enough power",
 						"description": "to your Lenovo computer that will impact system performance and charging speed. Please reconnect the proper AC adapter."
 					},
@@ -594,6 +593,7 @@
 					"description1": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
 					"description2": "Intelligent Cooling adjusts fan speed, maximum surface temperature and performance. This feature has below modes and are now accessible by Windows performance power slider.",
 					"description3": "Intelligent Cooling automatically balances thermal performance to adjust to your needs. The Intelligent Cooling feature adjusts performance settings to provide a cooler surface for your comfort, when the notebook is being held. When the device is on a desktop surface, this feature optimizes performance.",
+					"description13": "This feature dynamically adjusts thermal settings to your needs. When on, it adjusts settings to keep the device cooler or quiet, while being held or idle. Otherwise, it optimizes performance while the device is on a stable surface. When off, you can manually set thermal priority.",
 					"description14": "This feature enables you to adjust your fan speed, maximize the system performance, or extend your battery life if needed. It has three modes below. You also can switch the modes using hotkeys (Fn+Q) or from Lenovo Vantage Toolbar.",
 					"readMore": "Read more.",
 					"gotoWindows": {
@@ -613,7 +613,11 @@
 							"performance4": "Performance",
 							"quiteCool5": "Quiet & Cool",
 							"performance5": "Performance",
-							"batterySaving": "Battery Saving"
+							"batterySaving": "Battery Saving",
+							"performance13": "Performance",
+							"quiteCool13": "Quiet & Cool",
+							"performance14": "Extreme Performance",
+							"quiteCool14": "Intelligent Cooling"
 						},
 						"selectedModeText": {
 							"quiteCool": "This mode enables the best experience with fan speed and system performance balanced. For example, when in gaming, it optimizes the performance. While in the office, it reduces the noise.",
@@ -626,7 +630,16 @@
 							"mode3": "Performance mode",
 							"line1": "Slider is far left. The fan speed and performance are lowered for a cooler, quieter computer and best battery life.",
 							"line2": "Slider is in the center. Fan speed and performance are dynamically balanced for the best experience.",
-							"line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance."
+							"line3": "Slider is far right. Fan speed and permissible surface temperature are higher for maximum performance.",
+							"line4": "More info"
+						},
+						"intelligentCoolingModesModal": {
+							"title": "Change intelligent cooling modes",
+							"close": "close",
+							"coolingModesList": {
+								"list1": "Click on the windows battery-icon in the toolbar",
+								"list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
+							}
 						}
 					},
 					"nonintelligentCooling": {
@@ -799,8 +812,10 @@
 					},
 					"oledPowerSettings": {
 						"title": "OLED Power Settings",
-						"description": ["Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
-										"It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."],
+						"description": [
+							"Your computer's OLED display can also reduce power consumption and increase battery life by selectively dimming portions of the display.",
+							"It is also recommended to dim the task bar and other areas of the display that do not change frequently to prolong the overall lifetime of the display."
+						],
 						"reset": "Reset temperature",
 						"tooltip": "This feature can reduce power consumption and increase battery life by selectively dimming portions of the display."
 					},
@@ -852,6 +867,18 @@
 						"blurMode": "Blur mode",
 						"comicMode": "Comic mode",
 						"sketchMode": "Sketch mode"
+					}
+				}
+			},
+			"inputAccessories": {
+				"title": "Input & Accessories",
+				"subtitle": "Input & Accessories Settings",
+				"description": "Lenovo Intelligent Sensing combines various sensors on your computer to detect your activities and adjust settings for optimal power management",
+				"inputAccessory": {
+					"title": "Intelligent Keyboard",
+					"hiddenKeyboardFunctions": {
+						"title": "Hidden keyboard functions",
+						"description": "You can press the Fn key, on the bottom left of your keyboard, simultaneously with other keys to invoke the commands shown in the keyboard map below."
 					}
 				}
 			}
@@ -932,6 +959,18 @@
 						"startTime": "0 minutes",
 						"endTime": "60 minutes"
 					}
+				}
+			},
+			"activeProtectionSystem": {
+				"title": "Active Protection System",
+				"description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+				"activeProtection": {
+					"title": "Active Protection",
+					"caption": "Change the sentivity, in low sensitive mode, only harder shocks will activate protection"
+				},
+				"manualActiveProtectionSuspension": {
+					"title": "Manual Active Protection Suspension",
+					"caption": "Allow me to manually suspend the Active Protection System"
 				}
 			},
 			"intelligentMedia": {
@@ -1054,16 +1093,27 @@
 		"protected": "Protected",
 		"notProtected": "Not Protected",
 		"myDevice": "My Device",
-		"allDevice": "All Devices",
 		"secure": "SECURE",
 		"needAttention": "NEEDS ATTENTION",
 		"manageAccount": "Manage Account",
 		"devices": "Devices",
 		"seeProtectedDevices": "See protected devices",
 		"addDevice": "add device",
-		"trialExpired": "Trial Expired",
-		"trialExpiredSubtext": "Upgrate to protect all of your devices",
+		"trialExpired": "Trial expired",
+		"trialExpiredSubtext": "Upgrade to protect all of your devices",
 		"upgrade": "upgrade",
+		"freeTrial": "Free 30 day trial",
+		"protectAllDevices": "Protect all of your devices",
+		"inEcosystem":"In Ecosystem",
+		"ecosystemEnable":"Ecosystem Enabled",
+		"inTrial":"In trial",
+		"addEcosystem":"Add to Ecosystem",
+		"enableEcosystem":"Enable Ecosystem",
+		"startTrial":"Start Trial",
+		"fullAccess":"Full Access",
+		"recent":"Recent security notifications",
+		"notification":"Notifications",
+		"renew":"Renew",
 		"tour": {
 			"back": "Back",
 			"skip": "Skip",
@@ -1087,6 +1137,20 @@
 			"loginCHS": "Login to existing CHS account",
 			"locationTitle": "Enable location tracking",
 			"locationPermission": "In order for this feature to function correctly you will need to enable location tracking for this device"
+		},
+		"accountStatus": {
+			"title": "My Connected Home Security",
+			"startTrial": "Start Trial",
+			"manageAccount": "Manage Account",
+			"upgradeAccount": "Upgrade Account",
+			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+			"trialExpiredDetail1": "Your trial has expired.",
+			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+			"upgradedDetail1": "You account is active until {{expiredDate}}.",
+			"upgradedDetail2": "Your device ecosystem is currently being protected.",
+			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
+			"alreadyHaveAccount": "Already have an activation code?"
 		}
 	},
 	"support": {
@@ -1138,7 +1202,7 @@
 		},
 		"quickAccess": {
 			"categories": "Categories",
-			"categoriesDesc": "Find helpful information in our articles",
+			"categoriesDesc": "Find helpful information in our articles.",
 			"seeArticles": "SEE ARTICLES"
 		}
 	},
@@ -1160,10 +1224,7 @@
 			"maliciousNetwork": "Prevented your computer from joining {{maliciousWifi}} malicious networks this month.",
 			"good": "GOOD",
 			"malicious": "MALICIOUS",
-			"suspicious": "SUSPICIOUS",
-			"titleOffline": "No internet connection detected",
-			"subTitleOffline": "Learn more on how to solve connection issues in our"
-
+			"suspicious": "SUSPICIOUS"
 		},
 		"antivirus": {
 			"common": {
@@ -1252,6 +1313,10 @@
 				"describe2": "To use Connected Home Security, you need to enable location services for Lenovo Vantage. Would you like to enable location now?",
 				"agree": "AGREE",
 				"cancel": "CANCEL"
+			},
+			"errorMessage": {
+				"headerText": "Error",
+				"bodyText": "We've detected that you are missing critical pieces of Vantage. These pieces will download in the background. Please try again later."
 			}
 		},
 		"homeprotection": {
@@ -1263,7 +1328,7 @@
 				"homeSecurityAffect3": "Connected Home Security ensures that other devices connected to your home network are safe.",
 				"describe": "Unsafe devices and networks can introduce malware, lead to identity theft, and leak private and financial information. Enable this feature to reduce the risk of having your device, and your home network exposed to attackers",
 				"subtitle": "Peace of Mind",
-				"subtitleDescribe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more in about Connected Home Security in Tips and Tricks.",
+				"subtitleDescribe": "Connected Home Security will send you an alert if it detects a vulnerability in your device or home network, or if you are connected to a potentially malicious network. Learn even more about Connected Home Security <tag>here</tag>.",
 				"tryNow": "Try Now"
 			},
 			"invitationcode": {
@@ -1372,13 +1437,13 @@
 			"whyWindowsHelloDescription1": "Windows Hello makes logging into your PC easier and more secure, and can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello.",
 			"startUsingToday": "Start using Windows Hello Today",
 			"visitAndRegister": "Visit the Windows Hello page and register your fingerprint.",
-			"visitInSettings": "<tag> Visit Windows Hello</tag> in system settings",
+			"visitInSettings": "<tag> Visit Windows Hello</tag> in system settings.",
 			"unlock": "Use Windows Hello to log into and unlock your PC with a touch of a finger on the sensor.",
 			"startUsingWindowsHello": "Start using Windows Hello to log into Microsoft Apps such as Outlook, OneDrive, Office 365 and Xbox Live.",
 			"visitMicrosoft": "Visit Microsoft",
 			"poweredByWindowsHello": "Powered By Windows Hello",
 			"privacyPolicy": "Read more on the <tag>Privacy Policy</tag>",
-			"whyWindowsHelloDescription2": "Windows Hello makes logging into your PC easier and more secure. And you can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello",
+			"whyWindowsHelloDescription2": "Windows Hello makes logging into your PC easier and more secure. And you can also be used for your online Microsoft apps. Follow the instructions below to begin using Windows Hello.",
 			"authentication": "Windows Hello Authentication",
 			"traditional": "Traditional passwords can be stolen and used to access your account from anywhere in the world. More secure and convenient. Windows Hello is the next generation of a password. Use your fingerprint reader instead of insecure passwords to log in.",
 			"howToStart": "How do I start using Windows Hello?"

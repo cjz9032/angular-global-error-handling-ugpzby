@@ -1,12 +1,12 @@
 <div class="vtr-camera-control">
 	<div class="row">
 		<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 pl-0 pr-0">
-			<div class="camera-preview"
+			<div class="camera-preview text-center"
 				[hidden]="disabledAll">
 				<video #cameraPreview
 					class="feed"></video>
 			</div>
-			<div class="camera-preview"
+			<div class="camera-preview text-center"
 				*ngIf="disabledAll">
 				<img class="feed disable"
 					src="../../../assets/images/camera-disable.png"
