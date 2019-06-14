@@ -73,6 +73,7 @@ export class DeviceService {
 	// }
 
 	private initIsArm() {
+		this.isArm = this.androidService.isAndroid;
 		try {
 			if (this.isShellAvailable) {
 				this.getMachineInfo()
