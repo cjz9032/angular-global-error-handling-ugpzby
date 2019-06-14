@@ -102,13 +102,22 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.welcomeModel.isLenovoIdLogin = false; // mock data;
 		this.commonService.setSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, true);
-		this.welcomeModel.hasSystemPermissionShowed = this.connectedHomeSecurity.hasSystemPermissionShowed;
-		if (typeof this.connectedHomeSecurity.hasSystemPermissionShowed === 'boolean') {
+		const cacheSystemLocationShow = this.commonService.getLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed);
+		if (typeof cacheSystemLocationShow === 'boolean') {
+			this.welcomeModel.hasSystemPermissionShowed = cacheSystemLocationShow;
 			this.openModal();
+		} else {
+			this.permission.getSystemPermissionShowed().then((response) =>  {
+				this.welcomeModel.hasSystemPermissionShowed = response;
+				this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed, response);
+				if (typeof this.welcomeModel.hasSystemPermissionShowed === 'boolean') {
+					this.openModal();
+				}
+			});
 		}
 		this.connectedHomeSecurity.on(EventTypes.chsHasSystemPermissionShowedEvent, (data) => {
 			this.welcomeModel.hasSystemPermissionShowed = data;
-			this.openModal();
+			this.commonService.setLocalStorageValue(LocalStorageKey.ConnectedHomeSecuritySystemLocationPermissionShowed, data);
 		});
 	}
 
@@ -118,8 +127,9 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy {
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		this.connectedHomeSecurity.refresh();
-		this.welcomeModel.hasSystemPermissionShowed = this.connectedHomeSecurity.hasSystemPermissionShowed;
+		this.permission.getSystemPermissionShowed().then(response =>  {
+			this.welcomeModel.hasSystemPermissionShowed = response;
+		});
 		this.welcomeModel.isLenovoIdLogin = false; // mock data;
 	}
 
